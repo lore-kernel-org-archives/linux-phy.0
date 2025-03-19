@@ -4,44 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B01B2C35FFA
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 13:26:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48C45C36000
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 13:27:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iE9HzkKM6bgixJalI4WRkIUXWMlnB8N3AgXe4jZEArw=; b=TsIRK8XRAcuhRB
-	Jn0HwlFL00QiVXSDB4ffvMvc1qLaKJkIZwDfbb17qdIInoxholEgmmEqls6mRMAoFjTup5M/b4Hz+
-	TzYzEYHTZdfwqx54zidSgf27BYnuWgPw22mm5s/vZP9OoQX1mmjbzUY1SNkfz3KkF3zv5p+oAG7b4
-	2h8lgIlQdorvmbaR15Yuy8BE4tGfy+2L/m6B2Dcl2DzqtjPo5pEJIcoyhvdVyiXAyABx9uJSTML86
-	rYhaFdwN7hLgF/te4m0NJb/5rIGBzE0qu9LFfS0fdJ/cmO0Frh+WHN/G/WdZTM+xODeUfrVDrjSjd
-	Ch1DBjb0ZkeO768XqHQg==;
+	List-Owner; bh=iE9HzkKM6bgixJalI4WRkIUXWMlnB8N3AgXe4jZEArw=; b=iu5tRYSRN1qQ8x
+	6aHeKHyPlpe6J+lOBhT6jnD//T08Fyh1RZS+Swr3XhrtMxk+NAbofuC4j8iqALBI/qspG7Bcsaalq
+	TlTNIDeZ7reJTjXTttO1w7F984/E2iBpMWdL1XJi3siN8hVXvF6j8aAPgXP6M8Jj1Vt8S3fTsrbpx
+	anNpDgbC5t1J/P3KFOy6Fky4Q/1IEh5PvlBWKWZ9tPHuvSm46IgRt72x8J1WQIcihErzEohXaIyX/
+	UbFAMWW5JdF1NbkY4HSiDH61g59yvfIlspu8rsPbLWp7/1RBqWr4NY8bXxp+lzQBSd4TXTEB9YlwN
+	ZN95ZHg6adTiISskqYZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tutRN-000000095HJ-1vhw;
-	Wed, 19 Mar 2025 13:26:37 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1tutST-000000095Qm-0DQH;
+	Wed, 19 Mar 2025 13:27:45 +0000
+Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tutQn-0000000958V-2S0C
+	id 1tutSQ-000000095Q0-00E9
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 13:26:06 +0000
+	Wed, 19 Mar 2025 13:27:43 +0000
 Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed80:1557:27ad:a073:92ed])
-	by laurent.telenet-ops.be with cmsmtp
-	id SdRt2E0010FbbzD01dRtAa; Wed, 19 Mar 2025 14:25:56 +0100
+	by andre.telenet-ops.be with cmsmtp
+	id SdTY2E00C0FbbzD01dTYDn; Wed, 19 Mar 2025 14:27:36 +0100
 Received: from rox.of.borg ([192.168.97.57])
 	by ramsan.of.borg with esmtp (Exim 4.97)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1tutQ9-0000000EmS6-1drF;
-	Wed, 19 Mar 2025 14:25:49 +0100
+	id 1tutRp-0000000EmSK-0Mtr;
+	Wed, 19 Mar 2025 14:27:32 +0100
 Received: from geert by rox.of.borg with local (Exim 4.97)
 	(envelope-from <geert@linux-m68k.org>)
-	id 1tutQa-0000000BlRv-460m;
-	Wed, 19 Mar 2025 14:25:48 +0100
+	id 1tutSG-0000000BlTG-33Bn;
+	Wed, 19 Mar 2025 14:27:32 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Rob@rox.of.borg,
-	Herring@rox.of.borg,
+To: Rob Herring <robh@kernel.org>,
 	Marc Kleine-Budde <mkl@pengutronix.de>,
 	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -54,13 +53,13 @@ Cc: linux-can@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Geert Uytterhoeven <geert+renesas@glider.be>
 Subject: [PATCH] phy: can-transceiver: Re-instate "mux-states" property presence check
-Date: Wed, 19 Mar 2025 14:25:47 +0100
+Date: Wed, 19 Mar 2025 14:27:31 +0100
 Message-ID: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
 X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_062601_758708_9996E97E 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20250319_062742_174318_CF00B299 
+X-CRM114-Status: GOOD (  13.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,6 +75,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
+Message-ID: <20250319132731.VqjG49E_joxSxVzio6v-9kEnPcYLLiSPT8S4xaXEH_o@z>
 
 On the Renesas Gray Hawk Single development board:
 
