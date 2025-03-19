@@ -4,94 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44C09C35FFC
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 15:44:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94EFEC35FFA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 15:48:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QKFcDDgo5WiIZclbiwIebnCpCIQE7ipzfjneFsEngDM=; b=QWXjzsTYX8oY+G
-	7U6stv7QBfgKsWxMl9HpwBukt8YYQ/FNlWIQc92xuqIlHceMXeoWdj0fd6NdstHL2Jt+5cja7pxXI
-	MuN2b1FTAvDHIB5INoey5aUVV7PufHyXCK4ijbqMw8kGmA0yUTuCuZ+gMjwolLqlZjs7zymn48iOs
-	Baf6ErvkVTC7n6HRy+P1cC7wBBkBIDs6W9AaGvYMoA91yPA9nN+NnG6zLwWza2YXUZGZucmgn6E+a
-	PSwBuZLwDFfxP2TSmVi1U6YDN1Yd85+FppHTHDj27XVEyPxUSu/7Mh+KKhqkUT86GRY7LIF5UyUWu
-	nlE5DFK3BfJmd+PYfB4A==;
+	List-Owner; bh=P4H2mYs8qIQFDxa9VyRr5Z4K8cHjvnxTKX3zXDPT0JA=; b=052a9yph2HRt0S
+	fvGqAwdOOZDoJYLjPkh8KEBe6XOxXcg0LPgP79LuzNf6KWu19++nyzFUfl208f2XCUvIqSUYkPLGu
+	0TZ/ahKatW8tRlDx5tlobt5CrOgJ11MIcmeB/UEmsmgCIHb0qJoaD+28SuO0iRpSiztPkkWjlpogb
+	dKGSxm+npd/4xgbKo7EWbek6fLFAlgTlCRBQu3Atxl1r8Utdv/UT6F5B2INs6mMrm1jcj/MvDuplv
+	ZDJOqBaE08duJzkXwx648eIKhufGdIzevQm17feo5Xc/Ia00IIMTz/q0KkjyUu3yHm5D9UZ4pVTxj
+	XDGzEaoep9FTNGkkJXbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuvam-00000009Qho-2trB;
-	Wed, 19 Mar 2025 15:44:28 +0000
-Received: from mx01.omp.ru ([90.154.21.10])
+	id 1tuvea-00000009S52-1UPT;
+	Wed, 19 Mar 2025 15:48:24 +0000
+Received: from out-18.smtpout.orange.fr ([193.252.22.18] helo=out.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuvSg-00000009PBm-2Zuc
+	id 1tuveX-00000009S4P-0VeB
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 15:36:10 +0000
-Received: from [192.168.2.102] (213.87.131.243) by msexch01.omp.ru
- (10.188.4.12) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.1258.12; Wed, 19 Mar
- 2025 18:35:48 +0300
-Message-ID: <5691f9a6-07f0-4295-a25d-cb5bc572e824@omp.ru>
-Date: Wed, 19 Mar 2025 18:35:47 +0300
+	Wed, 19 Mar 2025 15:48:23 +0000
+Received: from [172.16.82.72] ([124.33.176.97])
+	by smtp.orange.fr with ESMTPA
+	id uveJtyP6dQBhYuveOtlLnP; Wed, 19 Mar 2025 16:48:17 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1742399297;
+	bh=drRXaJR0UoQ5nPULEuhz5/B+tox7MBOIWrTIUebRvQg=;
+	h=Message-ID:Date:MIME-Version:Subject:From:To;
+	b=RTXnJnGX4JF+onW8BdM2h1yrn9bbnTWZ+u8CV4sHASwQ7dD1n9Otl1R7l5ne9HkTf
+	 9f4Nbs0mls1/zZgh98YNzlK4e9Uka5uXCRGaWHx4E4ENOI4Q4lSFrf2f1niqHC+VlX
+	 pt+tqg6EAX1Q6FUfEds6dcKCbUDhma2aPSQCBJjAHB50ZWie7JLbnBPZmBKpbv+ku6
+	 WCaTdTkQJWMSM7L8WE6v2h9PL0gzUaRpvm2DIGzrShlabVFjwZg+77svuJEW0q20gg
+	 14rFIHTfWJ3ThQJJ+tnrv6ioFLI8WAuJ0X6Ui/Ty5+OqFfcQz0eenD9MjGqydJxbG8
+	 xrwaG/mJJBfBw==
+X-ME-Helo: [172.16.82.72]
+X-ME-Auth: bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI=
+X-ME-Date: Wed, 19 Mar 2025 16:48:17 +0100
+X-ME-IP: 124.33.176.97
+Message-ID: <4c221c24-05c4-4be2-ad9b-e5a58968b5b0@wanadoo.fr>
+Date: Thu, 20 Mar 2025 00:48:06 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] phy: can-transceiver: Re-instate "mux-states" property
  presence check
-To: Geert Uytterhoeven <geert+renesas@glider.be>, Rob Herring
-	<robh@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol
-	<mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, Aswath
- Govindraju <a-govindraju@ti.com>
-CC: <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-renesas-soc@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+From: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-renesas-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Peter Rosin <peda@axentia.se>, Aswath Govindraju <a-govindraju@ti.com>
 References: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
+ <9875d99a-4e16-4f0e-9249-69f0acc4c890@wanadoo.fr>
 Content-Language: en-US
-From: Sergey Shtylyov <s.shtylyov@omp.ru>
-Organization: Open Mobile Platform
-In-Reply-To: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
-X-Originating-IP: [213.87.131.243]
-X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
- (10.188.4.12)
-X-KSE-ServerInfo: msexch01.omp.ru, 9
-X-KSE-AntiSpam-Interceptor-Info: scan successful
-X-KSE-AntiSpam-Version: 6.1.1, Database issued on: 03/19/2025 15:24:30
-X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
-X-KSE-AntiSpam-Method: none
-X-KSE-AntiSpam-Rate: 19
-X-KSE-AntiSpam-Info: Lua profiles 191947 [Mar 19 2025]
-X-KSE-AntiSpam-Info: Version: 6.1.1.11
-X-KSE-AntiSpam-Info: Envelope from: s.shtylyov@omp.ru
-X-KSE-AntiSpam-Info: LuaCore: 51 0.3.51
- 68896fb0083a027476849bf400a331a2d5d94398
-X-KSE-AntiSpam-Info: {rep_avail}
-X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
-X-KSE-AntiSpam-Info: {SMTP from is not routable}
-X-KSE-AntiSpam-Info: {Found in DNSBL: 213.87.131.243 in (user)
- b.barracudacentral.org}
-X-KSE-AntiSpam-Info: {Found in DNSBL: 213.87.131.243 in (user)
- dbl.spamhaus.org}
-X-KSE-AntiSpam-Info: 127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
-X-KSE-AntiSpam-Info: {Tracking_ip_hunter}
-X-KSE-AntiSpam-Info: FromAlignment: s
-X-KSE-AntiSpam-Info: ApMailHostAddress: 213.87.131.243
-X-KSE-AntiSpam-Info: {DNS response errors}
-X-KSE-AntiSpam-Info: Rate: 19
-X-KSE-AntiSpam-Info: Status: not_detected
-X-KSE-AntiSpam-Info: Method: none
-X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
- smtp.mailfrom=omp.ru;dkim=none
-X-KSE-Antiphishing-Info: Clean
-X-KSE-Antiphishing-ScanningType: Heuristic
-X-KSE-Antiphishing-Method: None
-X-KSE-Antiphishing-Bases: 03/19/2025 15:27:00
-X-KSE-Antivirus-Interceptor-Info: scan successful
-X-KSE-Antivirus-Info: Clean, bases: 3/19/2025 12:11:00 PM
-X-KSE-Attachment-Filter-Triggered-Rules: Clean
-X-KSE-Attachment-Filter-Triggered-Filters: Clean
-X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
+Autocrypt: addr=mailhol.vincent@wanadoo.fr; keydata=
+ xjMEZluomRYJKwYBBAHaRw8BAQdAf+/PnQvy9LCWNSJLbhc+AOUsR2cNVonvxhDk/KcW7FvN
+ LFZpbmNlbnQgTWFpbGhvbCA8bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI+wrIEExYKAFoC
+ GwMFCQp/CJcFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AWIQTtj3AFdOZ/IOV06OKrX+uI
+ bbuZwgUCZx41XhgYaGtwczovL2tleXMub3BlbnBncC5vcmcACgkQq1/riG27mcIYiwEAkgKK
+ BJ+ANKwhTAAvL1XeApQ+2NNNEwFWzipVAGvTRigA+wUeyB3UQwZrwb7jsQuBXxhk3lL45HF5
+ 8+y4bQCUCqYGzjgEZx4y8xIKKwYBBAGXVQEFAQEHQJrbYZzu0JG5w8gxE6EtQe6LmxKMqP6E
+ yR33sA+BR9pLAwEIB8J+BBgWCgAmFiEE7Y9wBXTmfyDldOjiq1/riG27mcIFAmceMvMCGwwF
+ CQPCZwAACgkQq1/riG27mcJU7QEA+LmpFhfQ1aij/L8VzsZwr/S44HCzcz5+jkxnVVQ5LZ4B
+ ANOCpYEY+CYrld5XZvM8h2EntNnzxHHuhjfDOQ3MAkEK
+In-Reply-To: <9875d99a-4e16-4f0e-9249-69f0acc4c890@wanadoo.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_083606_655442_AADB06DB 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20250319_084821_564885_BC4994B9 
+X-CRM114-Status: GOOD (  15.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,43 +85,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/19/25 4:27 PM, Geert Uytterhoeven wrote:
-
-> On the Renesas Gray Hawk Single development board:
-> 
->     can-transceiver-phy can-phy0: /can-phy0: failed to get mux-state (0)
-> 
-> "mux-states" is an optional property for CAN transceivers.  However,
-> mux_get() always prints an error message in case of an error, including
-> when the property is not present, confusing the user.
-> 
-> Fix this by re-instating the property presence check.
-> 
-> This is bascially a revert of commit d02dfd4ceb2e9f34 ("phy:
-
-   Basically. :-)
-
-> can-transceiver: Drop unnecessary "mux-states" property presence
-> check"), with two changes:
->   1. Use the proper API for checking whether a property is present,
->   2. Do not print an error message, as the mux core already takes care
->      of that.
-> 
-> Fixes: d02dfd4ceb2e9f34 ("phy: can-transceiver: Drop unnecessary "mux-states" property presence check")
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> Alternatively, the multiplexer subsystem needs to gain support for
-> getting an optional mux...
-[...]
-MBR, Sergey
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTkvMDMvMjAyNSBhdCAyMzowNiwgVmluY2VudCBNYWlsaG9sIHdyb3RlOgo+IEZvciBzb21l
+IHJlYXNvbnMsIEkgcmVjZWl2ZWQgeW91ciBtZXNzYWdlIHR3aWNlICh3aXRoIGEgdHdvIG1pbnV0
+ZXMKPiBpbnRlcnZhbCBiZXR3ZWVuIGJvdGggbWVzc2FnZXMpLiBUaGVzZSBsb29rIGlkZW50aWNh
+bC4gScKgYW0gYW5zd2VyaW5nCj4gdGhlIG1vc3QgcmVjZW50LiA6KQo+IAo+IE9uIDE5LzAzLzIw
+MjUgYXQgMjI6MjcsIEdlZXJ0IFV5dHRlcmhvZXZlbiB3cm90ZToKPj4gT24gdGhlIFJlbmVzYXMg
+R3JheSBIYXdrIFNpbmdsZSBkZXZlbG9wbWVudCBib2FyZDoKPj4KPj4gICAgIGNhbi10cmFuc2Nl
+aXZlci1waHkgY2FuLXBoeTA6IC9jYW4tcGh5MDogZmFpbGVkIHRvIGdldCBtdXgtc3RhdGUgKDAp
+Cj4+Cj4+ICJtdXgtc3RhdGVzIiBpcyBhbiBvcHRpb25hbCBwcm9wZXJ0eSBmb3IgQ0FOIHRyYW5z
+Y2VpdmVycy4gIEhvd2V2ZXIsCj4+IG11eF9nZXQoKSBhbHdheXMgcHJpbnRzIGFuIGVycm9yIG1l
+c3NhZ2UgaW4gY2FzZSBvZiBhbiBlcnJvciwgaW5jbHVkaW5nCj4+IHdoZW4gdGhlIHByb3BlcnR5
+IGlzIG5vdCBwcmVzZW50LCBjb25mdXNpbmcgdGhlIHVzZXIuCj4gCj4gSG1tbSwgSSB1bmRlcnN0
+YW5kIHdoeSB5b3UgYXJlIGRvaW5nIHRoaXMgcGF0Y2guIEJ1dCBvbiB0aGUgbG9uZyB0ZXJtLAo+
+IHdvdWxkbid0IGl0IG1ha2UgbW9yZSBzZW5zZSB0byBoYXZlIGEgZGV2bV9tdXhfc3RhdGVfZ2V0
+X29wdGlvbmFsKCk/IE9yCj4gbWF5YmUgYWRkIGEgcHJvcGVydHkgc29tZXdoZXJlIHRvIGluZm9y
+bSBkZXZtX211eF9zdGF0ZV9nZXQoKSB0aGF0IHRoaXMKPiBpcyBvcHRpb25hbD8KPiAKPiBSZWdh
+cmRsZXNzLCBqdXN0IHNlZSB0aGlzIGFzIGFuIG9wZW4gcXVlc3Rpb24uIEkgYW0gT0sgd2l0aCB0
+aGUgYXBwcm9hY2gKPiBvZiB5b3VyIHBhdGNoLgoKQWgsIGFuZCBJIGp1c3QgcmVhbGl6ZWQgdGhh
+dCB5b3UgbWVudGlvbmVkIHRoZSBleGFjdCBzYW1lIHRoaW5nIHVuZGVyCnRoZSAtLS0gY3V0dGVy
+LCB3aGljaCBmb3Igc29tZSByZWFzb25zIG15IGV5ZXMgcmVmdXNlZCB0byBzZWUuCgpTb3JyeSBm
+b3IgdGhlIG5vaXNlLgoKPj4gRml4IHRoaXMgYnkgcmUtaW5zdGF0aW5nIHRoZSBwcm9wZXJ0eSBw
+cmVzZW5jZSBjaGVjay4KPj4KPj4gVGhpcyBpcyBiYXNjaWFsbHkgYSByZXZlcnQgb2YgY29tbWl0
+IGQwMmRmZDRjZWIyZTlmMzQgKCJwaHk6Cj4+IGNhbi10cmFuc2NlaXZlcjogRHJvcCB1bm5lY2Vz
+c2FyeSAibXV4LXN0YXRlcyIgcHJvcGVydHkgcHJlc2VuY2UKPj4gY2hlY2siKSwgd2l0aCB0d28g
+Y2hhbmdlczoKPj4gICAxLiBVc2UgdGhlIHByb3BlciBBUEkgZm9yIGNoZWNraW5nIHdoZXRoZXIg
+YSBwcm9wZXJ0eSBpcyBwcmVzZW50LAo+PiAgIDIuIERvIG5vdCBwcmludCBhbiBlcnJvciBtZXNz
+YWdlLCBhcyB0aGUgbXV4IGNvcmUgYWxyZWFkeSB0YWtlcyBjYXJlCj4+ICAgICAgb2YgdGhhdC4K
+Pj4KPj4gRml4ZXM6IGQwMmRmZDRjZWIyZTlmMzQgKCJwaHk6IGNhbi10cmFuc2NlaXZlcjogRHJv
+cCB1bm5lY2Vzc2FyeSAibXV4LXN0YXRlcyIgcHJvcGVydHkgcHJlc2VuY2UgY2hlY2siKT4gU2ln
+bmVkLW9mZi1ieTogR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydCtyZW5lc2FzQGdsaWRlci5iZT4K
+PiAKPiBOb3R3aXRoc3RhbmRpbmcgb2YgYWJvdmUgY29tbWVudDoKPiAKPiBSZXZpZXdlZC1ieTog
+VmluY2VudCBNYWlsaG9sIDxtYWlsaG9sLnZpbmNlbnRAd2FuYWRvby5mcj4KCllvdXJzIHNpbmNl
+cmVseSwKVmluY2VudCBNYWlsaG9sCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
