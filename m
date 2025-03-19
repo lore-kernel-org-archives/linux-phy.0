@@ -4,96 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34029C35FFF
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 09:55:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35AF3C35FFA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 10:20:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cynnHCTLmn7ImDL7D9slj03IUtXj2f4n4JbsX7zmNBY=; b=eOfQv8TdUa1BGK
-	llZeQd++TjRFejX6QV8sByUCqnuArASnFsld1LYgaPrHG98/EM0j/B2R5x2mvcHpZnihwzxrfEz/j
-	nqfXJUXrd8wLSaoDJ2Oloequz9lDysOCwtUkoizwXyKH/DWgHkhcK8aeV4EXJ71zs9qqjNB3InOw6
-	cEK6tewDMaqq3y5/H6D6AYo1UjZ5FwEPs/fLS6wPBCyHxYmxubcjEZvrjexBT/1VO379JiwkAd6kx
-	+5sHOjyhdVRmcKSjivF0dKvAXptK+GQLGp9PXgHCTw5smjzK7IY/krPXn92oTqk3iZlZzmDNIjfSF
-	CjWhvgOds+zpgToBKuTA==;
+	List-Owner; bh=eFqUFBcfMwCByfkSpZl0DgZbFqPrhMmvutwcsb1iiKM=; b=c9ZN3uZdhg0yJC
+	NfWpI2cDmuBPW1FaGKC3CY0flEo1zNad+KNPf06JN1tJfOd04uW2+7RS4V3pKwrPtqxia9Aq5N3nZ
+	jrkk4Ut4XcK1Djd09dBi+D5agistUo2eeD0mvNRBa/L9y5eDnBGF5fvYVVfQ2v6bx/d+cOugErNjQ
+	Wizt/EuqxoxKE7Ri3qK8Km6qAH82JplOaUbK0Uarbb0iNk+OwT/iztLFIRIXy1M/nxeThgspgSGKw
+	T2HIpIAkshPKtNKJgEL1EMiqMOVFyNbK+eD2hdhu2Gu+TwL6W7ZeK7wXybtUGf8l4lCVthR0EYBX5
+	3Z/uuXka2eUHCtYpJZEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuq9U-00000008aSE-3z2w;
-	Wed, 19 Mar 2025 09:55:56 +0000
+	id 1tuqX1-00000008djd-3zw0;
+	Wed, 19 Mar 2025 10:20:15 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tupzs-00000008YIL-3jl0
+	id 1tuqWz-00000008djE-1nBl
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 09:46:03 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52J4lhKD020628;
-	Wed, 19 Mar 2025 09:45:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=SjbrJ+4y1th
-	uhBq6GFJC4JU0gjub7Z7SSpdjeSiPx9Q=; b=HWhTYyFUFdT5F8r2MRWYKs058Np
-	xiAaQnLqOH3FcFMw3C/W5sU+yeGATrbk0wtHNQ9A1YazaRTu+7yn+A2BIcB/x0vm
-	6HqBukNCyTcuFMcOaW3hL52cdTpXHQKXtJXwnNcCZJ8/A9PUvVzmxl0LXtc+nEEA
-	0GIQOSWaYvQq/MoccxvbsDYM3rNKJnQE7ZPU+iyfGN9XMZwVPcWagONGIjVwjDil
-	yDWMpaOmPCuVdTifOt569pvyNbyYvG+9yaM3waIVNgqG68A7yoqNyBXz34PXdFOG
-	1iAo7vOYxiTRrmx0iZlzqbJc6hKM3oQS6QN3p6uIqdCVTRepicnipnfhJ/Q==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45exx34v42-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 19 Mar 2025 09:45:54 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 52J9jqmH031618;
-	Wed, 19 Mar 2025 09:45:52 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 45dk9w2rd9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 19 Mar 2025 09:45:52 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 52J9jqJm031606;
-	Wed, 19 Mar 2025 09:45:52 GMT
-Received: from cbsp-sh-gv.ap.qualcomm.com (CBSP-SH-gv.ap.qualcomm.com [10.231.249.68])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 52J9jqpn031605
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 19 Mar 2025 09:45:52 +0000
-Received: by cbsp-sh-gv.ap.qualcomm.com (Postfix, from userid 4635958)
-	id 4EB48410A5; Wed, 19 Mar 2025 17:45:51 +0800 (CST)
-From: Wenbin Yao <quic_wenbyao@quicinc.com>
-To: vkoul@kernel.org, kishon@kernel.org, p.zabel@pengutronix.de,
-        dmitry.baryshkov@linaro.org, abel.vesa@linaro.org,
-        quic_qianyu@quicinc.com, neil.armstrong@linaro.org,
-        manivannan.sadhasivam@linaro.org, quic_devipriy@quicinc.com,
-        konrad.dybcio@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Cc: quic_wenbyao@quicinc.com
-Subject: [PATCH v6 2/2] phy: qcom: qmp-pcie: Add PHY register retention support
-Date: Wed, 19 Mar 2025 17:45:44 +0800
-Message-Id: <20250319094544.3980357-3-quic_wenbyao@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
-References: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
+	Wed, 19 Mar 2025 10:20:14 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52J4loHG020878
+	for <linux-phy@lists.infradead.org>; Wed, 19 Mar 2025 10:20:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=zSDknMN5As4J/WBF6m6Okwmi
+	u2zvdRItiGG5o6Mrxbs=; b=iLzs9K6OR5bSG4jkdExY7bPXDKJs/mlEOzokoyWC
+	P58EXN8Yi+wBkeex/UzZINhNOD6uf4OJi4WkBxmPPGJhyQEbvzCfXE00kBCPQOsJ
+	x3zmRoahp8FWYnYnbxnHnonLTcE1P8NqcJwzVrFkle95+hYAwyHmJ3zyVBVIVOSz
+	opU5FreRapXtI1Vink1/jb7GUFmtMI6XeV7fbTa+ILHX9bx1BxsFTYp5wEEKPzmG
+	fU/SG5c94kSFFj0XxuyEAf7EeLyNyTrQpL9SwoLklcnraGlBOofjUu1rLc3upfI/
+	dN1CmyqCFtoVBthcMlccfirJFxZIHuANaGw4m4LKVytgvw==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45exxbmvfm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 19 Mar 2025 10:20:12 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-476900d10caso154148481cf.0
+        for <linux-phy@lists.infradead.org>; Wed, 19 Mar 2025 03:20:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742379611; x=1742984411;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=zSDknMN5As4J/WBF6m6Okwmiu2zvdRItiGG5o6Mrxbs=;
+        b=avx1zxkytjbmRr6Jdo5cap329HLO3mEMuJr7u/gy01/nDodNhD8Z27fDN2153x5MZn
+         sZQeJFusZtkiiOkZ6g5i0Tx/K0tuopZjfIwE5SLm9lkbvyaStf8r0UwCKQWrUFQXC2Gk
+         l3JGQ2JagBLwVuVcuAIs2hc2j3mN17s3vm5kGxFwqZyMz2cndJZwt4Ez7Smp6M+SVHZY
+         737t8JNpzesPWO9swjl/rnh7b1mgG27aBAQAoWiLWvl/pslgcSOx2eYH1B2qs7AJnkU6
+         Awb1s8Ffw4ZKRZHYih17qxvid8uD+Kzkm2QP75HQiEY/c3Ieu9t+vCLDoo9HkrZOZXpZ
+         uWsw==
+X-Forwarded-Encrypted: i=1; AJvYcCV0CmqO3l8Z19+/zPnP7hxXrDhV2VUVR4nTh+zuFKAjn+9v40c4RDNNSdDlZOvu/f1MZl+N86cDkhU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyU/avCS9QqqVVlqpVjxtC06FeiPnKOZS6RHfWXV/1AjEs2I1h2
+	EALjZ81kFE+hcvCHJHR5z9p6G/a8tZHkz1e8mWmxkGOp8si9aJmikJMte77zElGhWUc62qsGm8i
+	SmK8+DaqqaO8FhVcI9zgXsCotxPrgBIm5Pv0m3D0xxNCLI81AsKdyROk3faDhlMg7
+X-Gm-Gg: ASbGncvCT5k68lRNnWAmRhfMu3XHXyy54Dj8TvT6ZAZ8pPNRzBNsutHpTAZDP2BV9Uu
+	RXECxWQTTxqC/eSP58frCyI8BmYVWN4Aa+iOmPOk+INRENq9Isyic6HLu0MDFlmRE+qk2SGdWiX
+	aa5QGi0Fjja/lB4nC+RZ+ihuf6OeIfuWH1PTLp1J6l9wkPf+t/V7GvUtjkwx+JXJlOhtzRnApSD
+	bWah/qL+3j6jxrYCUaDhmyv3L0mcnHF2e8l5WFa/upHNVcuRaMFK23YqIhKJqymyH8HrImlikyv
+	vACNSUT2icznwo+EhIvn7yn1HNtREhGxqJyACuKj3wXeCU5qpGG3wLhpKiS0CFxoNgnjq+Ss+ZX
+	W/6o=
+X-Received: by 2002:a05:622a:58c6:b0:476:8fcb:9aa3 with SMTP id d75a77b69052e-4770831c5b0mr45277191cf.13.1742379611514;
+        Wed, 19 Mar 2025 03:20:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH9RzAEw1/ZnVam3afB+N6GWTqWyZBkCWAuOXlcPn+0/cRH8L2YZEzxU+pqqrdx3zDScY+I/A==
+X-Received: by 2002:a05:622a:58c6:b0:476:8fcb:9aa3 with SMTP id d75a77b69052e-4770831c5b0mr45276621cf.13.1742379611000;
+        Wed, 19 Mar 2025 03:20:11 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-549ba7bec74sm1990650e87.59.2025.03.19.03.20.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 19 Mar 2025 03:20:10 -0700 (PDT)
+Date: Wed, 19 Mar 2025 12:20:07 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: bjorn.andersson@oss.qualcomm.com
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Aleksandrs Vinarskis <alex.vinarskis@gmail.com>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 1/2] phy: qcom: phy-qcom-snps-eusb2: Make repeater
+ optional
+Message-ID: <6yykvszzbhonc3dkwhva55arsdvp4hv4p2fo2vv6ftwr46httm@wnofgs4jaqaa>
+References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
+ <20250318-xps13-fingerprint-v1-1-fbb02d5a34a7@oss.qualcomm.com>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=b+uy4sGx c=1 sm=1 tr=0 ts=67da9252 cx=c_pps a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=tqIfmRrofTIwFCb1_2sA:9 a=TjNXssC_j7lpFel5tvFf:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: bEGVUJTuPfgto-LHrKsapo7ZdXDx-p38
-X-Proofpoint-GUID: bEGVUJTuPfgto-LHrKsapo7ZdXDx-p38
+Content-Disposition: inline
+In-Reply-To: <20250318-xps13-fingerprint-v1-1-fbb02d5a34a7@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=QN1oRhLL c=1 sm=1 tr=0 ts=67da9a5c cx=c_pps a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=JfrnYn6hAAAA:8 a=EUspDBNiAAAA:8 a=lyNVp9QpP5gxZ78EsksA:9 a=CjuIK1q_8ugA:10
+ a=dawVfQjAaf238kedN5IG:22 a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-ORIG-GUID: suv_6f3fBYQ1LoituwL4sP9VhxcFd5Q_
+X-Proofpoint-GUID: suv_6f3fBYQ1LoituwL4sP9VhxcFd5Q_
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-19_03,2025-03-17_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 phishscore=0
- bulkscore=0 clxscore=1015 mlxlogscore=999 priorityscore=1501 mlxscore=0
- lowpriorityscore=0 malwarescore=0 impostorscore=0 adultscore=0
- suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503190067
+ definitions=2025-03-19_03,2025-03-19_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 clxscore=1015
+ phishscore=0 spamscore=0 impostorscore=0 suspectscore=0 mlxlogscore=985
+ priorityscore=1501 lowpriorityscore=0 malwarescore=0 adultscore=0
+ bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503190071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_024600_938133_F954CB04 
-X-CRM114-Status: GOOD (  19.96  )
+X-CRM114-CacheID: sfid-20250319_032013_473334_D48AFB1F 
+X-CRM114-Status: GOOD (  28.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,187 +127,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Qiang Yu <quic_qianyu@quicinc.com>
+On Tue, Mar 18, 2025 at 10:22:56PM -0500, Bjorn Andersson via B4 Relay wrote:
+> From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+> 
+> In a multiport configuration based on the SNPS eUSB2 PHY it's not
+> necessary that all ports are connected to something.
+> 
+> While this is allowed by the Devicetree binding, the implementation
+> current fails probing for such PHYs, which also prevents the multiport
+> controller from probing.
+> 
+> The lack of repeater does not alter the fact that the PHY is there and
+> attempts at describing only the used PHYs in Devicetree results in
+> failures to initialize the USB controller.
+> 
+> Make the repeater optional, to allow the these PHYs to be described in
+> the DeviceTree and for the associated multiport controller to operate
+> the other ports.
+> 
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-snps-eusb2.c | 10 +++++++---
+>  1 file changed, 7 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+> index 1484691a41d59a7eaf257ef44300827c668bf7e0..8897d2072ccfcaa5b4a510c17761dcdeed5bad0f 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+> @@ -401,9 +401,13 @@ static int qcom_snps_eusb2_hsphy_probe(struct platform_device *pdev)
+>  				     "failed to get regulator supplies\n");
+>  
+>  	phy->repeater = devm_of_phy_get_by_index(dev, np, 0);
+> -	if (IS_ERR(phy->repeater))
+> -		return dev_err_probe(dev, PTR_ERR(phy->repeater),
+> -				     "failed to get repeater\n");
+> +	if (IS_ERR(phy->repeater)) {
+> +		if (PTR_ERR(phy->repeater) == -ENODEV)
+> +			phy->repeater = NULL;
+> +		else
+> +			return dev_err_probe(dev, PTR_ERR(phy->repeater),
+> +					     "failed to get repeater\n");
 
-Some QCOM PCIe PHYs support no_csr reset. Unlike BCR reset which resets the
-whole PHY (hardware and register), no_csr reset only resets PHY hardware
-but retains register values, which means PHY setting can be skipped during
-PHY init if PCIe link is enabled in bootloader and only no_csr is toggled
-after that.
+Can you use devm_of_phy_optional_get() or devm_phy_optional_get()
+instead?
 
-Hence, determine whether the PHY has been enabled in bootloader by
-verifying QPHY_START_CTRL register. If it's programmed and no_csr reset is
-available, skip BCR reset and PHY register setting to establish the PCIe
-link with bootloader - programmed PHY settings.
+> +	}
+>  
+>  	generic_phy = devm_phy_create(dev, NULL, &qcom_snps_eusb2_hsphy_ops);
+>  	if (IS_ERR(generic_phy)) {
+> 
+> -- 
+> 2.48.1
+> 
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
-Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 69 ++++++++++++++++++++----
- 1 file changed, 59 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 38dbe690f2d5..23a57152e8fd 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -2981,6 +2981,7 @@ struct qmp_pcie {
- 
- 	const struct qmp_phy_cfg *cfg;
- 	bool tcsr_4ln_config;
-+	bool skip_init;
- 
- 	void __iomem *serdes;
- 	void __iomem *pcs;
-@@ -4229,18 +4230,38 @@ static int qmp_pcie_init(struct phy *phy)
- {
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	void __iomem *pcs = qmp->pcs;
-+	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
- 	int ret;
- 
-+	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
-+	/*
-+	 * We need to check the existence of init sequences in two cases:
-+	 * 1. The PHY doesn't support no_csr reset.
-+	 * 2. The PHY supports no_csr reset but isn't initialized by bootloader.
-+	 * As we can't skip init in these two cases.
-+	 */
-+	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
-+		dev_err(qmp->dev, "Init sequence not available\n");
-+		return -ENODATA;
-+	}
-+
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
- 	if (ret) {
- 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
- 		return ret;
- 	}
- 
--	ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
--	if (ret) {
--		dev_err(qmp->dev, "reset assert failed\n");
--		goto err_disable_regulators;
-+	/*
-+	 * Toggle BCR reset for PHY that doesn't support no_csr reset or has not
-+	 * been initialized.
-+	 */
-+	if (!qmp->skip_init) {
-+		ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+		if (ret) {
-+			dev_err(qmp->dev, "reset assert failed\n");
-+			goto err_disable_regulators;
-+		}
- 	}
- 
- 	ret = reset_control_assert(qmp->nocsr_reset);
-@@ -4251,10 +4272,12 @@ static int qmp_pcie_init(struct phy *phy)
- 
- 	usleep_range(200, 300);
- 
--	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
--	if (ret) {
--		dev_err(qmp->dev, "reset deassert failed\n");
--		goto err_assert_reset;
-+	if (!qmp->skip_init) {
-+		ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
-+		if (ret) {
-+			dev_err(qmp->dev, "reset deassert failed\n");
-+			goto err_assert_reset;
-+		}
- 	}
- 
- 	ret = clk_bulk_prepare_enable(ARRAY_SIZE(qmp_pciephy_clk_l), qmp->clks);
-@@ -4264,7 +4287,8 @@ static int qmp_pcie_init(struct phy *phy)
- 	return 0;
- 
- err_assert_reset:
--	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+	if (!qmp->skip_init)
-+		reset_control_bulk_assert(cfg->num_resets, qmp->resets);
- err_disable_regulators:
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
- 
-@@ -4276,7 +4300,10 @@ static int qmp_pcie_exit(struct phy *phy)
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
--	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
-+	if (qmp->nocsr_reset)
-+		reset_control_assert(qmp->nocsr_reset);
-+	else
-+		reset_control_bulk_assert(cfg->num_resets, qmp->resets);
- 
- 	clk_bulk_disable_unprepare(ARRAY_SIZE(qmp_pciephy_clk_l), qmp->clks);
- 
-@@ -4295,6 +4322,13 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	unsigned int mask, val;
- 	int ret;
- 
-+	/*
-+	 * Write CSR register for PHY that doesn't support no_csr reset or has not
-+	 * been initialized.
-+	 */
-+	if (qmp->skip_init)
-+		goto skip_tbls_init;
-+
- 	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
- 			cfg->pwrdn_ctrl);
- 
-@@ -4306,6 +4340,7 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	qmp_pcie_init_registers(qmp, &cfg->tbls);
- 	qmp_pcie_init_registers(qmp, mode_tbls);
- 
-+skip_tbls_init:
- 	ret = clk_bulk_prepare_enable(qmp->num_pipe_clks, qmp->pipe_clks);
- 	if (ret)
- 		return ret;
-@@ -4316,6 +4351,9 @@ static int qmp_pcie_power_on(struct phy *phy)
- 		goto err_disable_pipe_clk;
- 	}
- 
-+	if (qmp->skip_init)
-+		goto skip_serdes_start;
-+
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
-@@ -4325,6 +4363,7 @@ static int qmp_pcie_power_on(struct phy *phy)
- 	if (!cfg->skip_start_delay)
- 		usleep_range(1000, 1200);
- 
-+skip_serdes_start:
- 	status = pcs + cfg->regs[QPHY_PCS_STATUS];
- 	mask = cfg->phy_status;
- 	ret = readl_poll_timeout(status, val, !(val & mask), 200,
-@@ -4349,6 +4388,15 @@ static int qmp_pcie_power_off(struct phy *phy)
- 
- 	clk_bulk_disable_unprepare(qmp->num_pipe_clks, qmp->pipe_clks);
- 
-+	/*
-+	 * While powering off the PHY, only qmp->nocsr_reset needs to be checked. In
-+	 * this way, no matter whether the PHY settings were initially programmed by
-+	 * bootloader or PHY driver itself, we can reuse them when PHY is powered on
-+	 * next time.
-+	 */
-+	if (qmp->nocsr_reset)
-+		goto skip_phy_deinit;
-+
- 	/* PHY reset */
- 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
-@@ -4360,6 +4408,7 @@ static int qmp_pcie_power_off(struct phy *phy)
- 	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
- 			cfg->pwrdn_ctrl);
- 
-+skip_phy_deinit:
- 	return 0;
- }
- 
 -- 
-2.34.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
