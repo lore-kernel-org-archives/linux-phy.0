@@ -4,83 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 099FCC36000
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 15:05:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44C09C35FFC
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 15:44:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3/btEXX0bCEjDwYViOKHdHbmwXR0MtM2mgk3s7HqttY=; b=F0dEFxJ2hSBePC
-	oUQrBqXSR0IRK2HF1HoKy4HAKeC1OcaCGGmZombvKgGN4hbWJjRilAOp7SsIa2OkEVIk/wHG3CZMN
-	TEzpP0dHullWbQ/tOUfBwmYcWy19qqEYr2umlciRmLzdedju8lR7zO/gB7giztRAPZQeAJmX63EWk
-	YwFgXyRuxtC7Eqp2+kbAMeFq29t0AcMgfJDK0PjawTB7netOWGksQgdnQjyZmMK7Bojz4H2dI8peH
-	BTw1lKyCLoxsvrWVuuNed3A0G9rBqesN3HAjkFasjbuMWBwiLtZN9XY5rZCVNLR3HDco1cz7tnuqK
-	0zhaTgDTG2h48BqzUPzg==;
+	List-Owner; bh=QKFcDDgo5WiIZclbiwIebnCpCIQE7ipzfjneFsEngDM=; b=QWXjzsTYX8oY+G
+	7U6stv7QBfgKsWxMl9HpwBukt8YYQ/FNlWIQc92xuqIlHceMXeoWdj0fd6NdstHL2Jt+5cja7pxXI
+	MuN2b1FTAvDHIB5INoey5aUVV7PufHyXCK4ijbqMw8kGmA0yUTuCuZ+gMjwolLqlZjs7zymn48iOs
+	Baf6ErvkVTC7n6HRy+P1cC7wBBkBIDs6W9AaGvYMoA91yPA9nN+NnG6zLwWza2YXUZGZucmgn6E+a
+	PSwBuZLwDFfxP2TSmVi1U6YDN1Yd85+FppHTHDj27XVEyPxUSu/7Mh+KKhqkUT86GRY7LIF5UyUWu
+	nlE5DFK3BfJmd+PYfB4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuuzU-00000009JbU-2fmA;
-	Wed, 19 Mar 2025 15:05:56 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1tuvam-00000009Qho-2trB;
+	Wed, 19 Mar 2025 15:44:28 +0000
+Received: from mx01.omp.ru ([90.154.21.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuuzS-00000009Jac-3dDA
+	id 1tuvSg-00000009PBm-2Zuc
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 15:05:56 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-39129fc51f8so6216905f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 19 Mar 2025 08:05:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1742396753; x=1743001553; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=HOyGSoTfNZpOOzMSJjC6LVqzO57/1qzFZh1n8PH/Tyo=;
-        b=HpILflwCmoa2GeaSARxGfE+PsSK9a4wlfXoq4uAQBmm16GYL+m+OkSrFTA6u+O0GWi
-         bPfMQQvK6t+7cZuOORfBWJBM7P5Cn20MBZ3rqHH0CooUw5UsxTYtT2d1PI7/l5tAWxA3
-         OTKlCKsX/YOkld7qmRNMfI1znkLj+0GmaJOkXZ8oWAu1OhxIrjOjh7ASKkKdprTZ4gcH
-         Q0ugXHFUd1ewOILVOCXujCuemKhP6DG/1OonNi4RnQXnouj+mYgZE6cbDBU3A8V9BIO+
-         Y6Ix5pIB39XsiED8ztxEWA1ItsGPuZ/6L7lT+P3hhEBVX/iKbHgk7Gw930U9rfN5D8P2
-         0Cug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742396753; x=1743001553;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=HOyGSoTfNZpOOzMSJjC6LVqzO57/1qzFZh1n8PH/Tyo=;
-        b=jKhWjtqFS+P5C5UbiPf6qpKGKlUX6gDcVzxNug211fh2SzqMV8kY1h4rZW7UqKOYUg
-         BDq+khOD0dRMcNGh1c9vVjazncZDTWrfHTglM3wNxl70qO6UQVba3iZFfwMbYve/5Frk
-         RD/+uajEMhvUg5Z136emSGRf+LkF8gmMEAfN7v41clztDHU/fDt4bkM+JSAgZ7HlfkuE
-         eyCuE1PP59x+T51Jv9EZ10gREVDlWARS75DfYbpyXz1Zu10R+H6DhLYVBJgxZsKhHhsz
-         cliiXt8kNjULgPg2qJOhlgu38yeQglNxlmkNYyJLnu7aUQKNi5L7lykAXQ+rr62zOD0W
-         WJZA==
-X-Forwarded-Encrypted: i=1; AJvYcCV9nEevo7uOi0RcP/VdTtaZRtM9qNgTSe5z3/XIZVNJhvzAkqtQ1/IonU7Zs+DeaDwqElNo0F/Ekts=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy3GoeXfBtXwABDRVO5D/yZmDF0SkN9YznEM1T6MsFZcbD/SoHp
-	Qxl+CGbULJEtlPHyJLOOs1U4rIJ2pa75xkBbeKISOv6Nk3N2d0uuJiv4e/k02O5MTuXuryewa+s
-	TKfXK9tgzbfxxn+2zz6NgaxfijA==
-X-Gm-Gg: ASbGnct5C/3TQufkhC/dToqPqcKQyYD/Y4ZGe7GPYoB8DEw0OwPaPex7OYtXeba/Oyr
-	G8NuePgtiXtcex4fs1dFmrcWGAfW1YMJU3DEJGNtXcFNqkl0RjNSelUJhO2FnUxqG1VCsMnllF7
-	zbY2KaJ3IqoKAfkz8cvl7GFJl1
-X-Google-Smtp-Source: AGHT+IGC/R96rPwTERLJePIydO6jKIySRg2zYE+ph5TmCcY3KwvMWmVEkhFCZCeurqMtuMEnbnzNGRWgGuqjV8M2Z0E=
-X-Received: by 2002:a05:6000:1a8d:b0:390:f358:85db with SMTP id
- ffacd0b85a97d-399739cb803mr2722684f8f.30.1742396751967; Wed, 19 Mar 2025
- 08:05:51 -0700 (PDT)
+	Wed, 19 Mar 2025 15:36:10 +0000
+Received: from [192.168.2.102] (213.87.131.243) by msexch01.omp.ru
+ (10.188.4.12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.1258.12; Wed, 19 Mar
+ 2025 18:35:48 +0300
+Message-ID: <5691f9a6-07f0-4295-a25d-cb5bc572e824@omp.ru>
+Date: Wed, 19 Mar 2025 18:35:47 +0300
 MIME-Version: 1.0
-References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com> <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
-In-Reply-To: <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
-From: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>
-Date: Wed, 19 Mar 2025 16:05:41 +0100
-X-Gm-Features: AQ5f1JpkAuHBa-ujJG783-R3MMWDYz5CK-ClmB7izDMWS65sqz5YqQlN7PR71j8
-Message-ID: <CAMcHhXoE+UvoKmy1ULJoAq1nrr+PO6qie3vxLuqQbUpiE=SMBQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
- fingerprint sensor
-To: bjorn.andersson@oss.qualcomm.com
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: can-transceiver: Re-instate "mux-states" property
+ presence check
+To: Geert Uytterhoeven <geert+renesas@glider.be>, Rob Herring
+	<robh@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol
+	<mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, Aswath
+ Govindraju <a-govindraju@ti.com>
+CC: <linux-can@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-renesas-soc@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+References: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
+Content-Language: en-US
+From: Sergey Shtylyov <s.shtylyov@omp.ru>
+Organization: Open Mobile Platform
+In-Reply-To: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
+X-Originating-IP: [213.87.131.243]
+X-ClientProxiedBy: msexch01.omp.ru (10.188.4.12) To msexch01.omp.ru
+ (10.188.4.12)
+X-KSE-ServerInfo: msexch01.omp.ru, 9
+X-KSE-AntiSpam-Interceptor-Info: scan successful
+X-KSE-AntiSpam-Version: 6.1.1, Database issued on: 03/19/2025 15:24:30
+X-KSE-AntiSpam-Status: KAS_STATUS_NOT_DETECTED
+X-KSE-AntiSpam-Method: none
+X-KSE-AntiSpam-Rate: 19
+X-KSE-AntiSpam-Info: Lua profiles 191947 [Mar 19 2025]
+X-KSE-AntiSpam-Info: Version: 6.1.1.11
+X-KSE-AntiSpam-Info: Envelope from: s.shtylyov@omp.ru
+X-KSE-AntiSpam-Info: LuaCore: 51 0.3.51
+ 68896fb0083a027476849bf400a331a2d5d94398
+X-KSE-AntiSpam-Info: {rep_avail}
+X-KSE-AntiSpam-Info: {Tracking_from_domain_doesnt_match_to}
+X-KSE-AntiSpam-Info: {SMTP from is not routable}
+X-KSE-AntiSpam-Info: {Found in DNSBL: 213.87.131.243 in (user)
+ b.barracudacentral.org}
+X-KSE-AntiSpam-Info: {Found in DNSBL: 213.87.131.243 in (user)
+ dbl.spamhaus.org}
+X-KSE-AntiSpam-Info: 127.0.0.199:7.1.2;omp.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1
+X-KSE-AntiSpam-Info: {Tracking_ip_hunter}
+X-KSE-AntiSpam-Info: FromAlignment: s
+X-KSE-AntiSpam-Info: ApMailHostAddress: 213.87.131.243
+X-KSE-AntiSpam-Info: {DNS response errors}
+X-KSE-AntiSpam-Info: Rate: 19
+X-KSE-AntiSpam-Info: Status: not_detected
+X-KSE-AntiSpam-Info: Method: none
+X-KSE-AntiSpam-Info: Auth:dmarc=temperror header.from=omp.ru;spf=temperror
+ smtp.mailfrom=omp.ru;dkim=none
+X-KSE-Antiphishing-Info: Clean
+X-KSE-Antiphishing-ScanningType: Heuristic
+X-KSE-Antiphishing-Method: None
+X-KSE-Antiphishing-Bases: 03/19/2025 15:27:00
+X-KSE-Antivirus-Interceptor-Info: scan successful
+X-KSE-Antivirus-Info: Clean, bases: 3/19/2025 12:11:00 PM
+X-KSE-Attachment-Filter-Triggered-Rules: Clean
+X-KSE-Attachment-Filter-Triggered-Filters: Clean
+X-KSE-BulkMessagesFiltering-Scan-Result: InTheLimit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_080554_902303_D96BF57A 
-X-CRM114-Status: GOOD (  19.75  )
+X-CRM114-CacheID: sfid-20250319_083606_655442_AADB06DB 
+X-CRM114-Status: GOOD (  10.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,130 +108,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 19 Mar 2025 at 04:22, Bjorn Andersson via B4 Relay
-<devnull+bjorn.andersson.oss.qualcomm.com@kernel.org> wrote:
->
-> From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
->
-> The fingerprint sensor, hidden in the power button, is connected to one
-> of the USB multiport ports; while the other port is unused.
->
-> Describe the USB controller, the four phys and the repeater involved to
-> make the fingerprint sensor operational.
->
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+On 3/19/25 4:27 PM, Geert Uytterhoeven wrote:
+
+> On the Renesas Gray Hawk Single development board:
+> 
+>     can-transceiver-phy can-phy0: /can-phy0: failed to get mux-state (0)
+> 
+> "mux-states" is an optional property for CAN transceivers.  However,
+> mux_get() always prints an error message in case of an error, including
+> when the property is not present, confusing the user.
+> 
+> Fix this by re-instating the property presence check.
+> 
+> This is bascially a revert of commit d02dfd4ceb2e9f34 ("phy:
+
+   Basically. :-)
+
+> can-transceiver: Drop unnecessary "mux-states" property presence
+> check"), with two changes:
+>   1. Use the proper API for checking whether a property is present,
+>   2. Do not print an error message, as the mux core already takes care
+>      of that.
+> 
+> Fixes: d02dfd4ceb2e9f34 ("phy: can-transceiver: Drop unnecessary "mux-states" property presence check")
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > ---
+> Alternatively, the multiplexer subsystem needs to gain support for
+> getting an optional mux...
+[...]
+MBR, Sergey
 
-Thanks for getting to the bottom of this, it was certainly a long
-awaited feature :)
-
->  .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
->  1 file changed, 57 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> index 967f6dba0878b51a985fd7c9570b8c4e71afe57d..a35557c562d771e2ce209fca05b82c1943d70f63 100644
-> --- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> +++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> @@ -744,8 +744,21 @@ touchscreen@10 {
->
->  &i2c9 {
->         clock-frequency = <400000>;
-> -       status = "disabled";
-> -       /* USB3 retimer device @0x4f */
-> +       status = "okay";
-> +
-> +       eusb6_repeater: redriver@4f {
-> +               compatible = "nxp,ptn3222";
-> +               reg = <0x4f>;
-> +               #phy-cells = <0>;
-> +
-> +               vdd3v3-supply = <&vreg_l13b_3p0>;
-> +               vdd1v8-supply = <&vreg_l4b_1p8>;
-> +
-> +               reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
-> +
-> +               pinctrl-0 = <&eusb6_reset_n>;
-> +               pinctrl-names = "default";
-> +       };
->  };
->
->  &i2c17 {
-> @@ -967,6 +980,14 @@ edp_reg_en: edp-reg-en-state {
->                 bias-disable;
->         };
->
-> +       eusb6_reset_n: eusb6-reset-n-state {
-> +               pins = "gpio184";
-> +               function = "gpio";
-> +               drive-strength = <2>;
-> +               bias-disable;
-> +               output-low;
-> +       };
-> +
->         hall_int_n_default: hall-int-n-state {
->                 pins = "gpio92";
->                 function = "gpio";
-> @@ -1172,3 +1193,37 @@ &usb_1_ss1_dwc3_hs {
->  &usb_1_ss1_qmpphy_out {
->         remote-endpoint = <&retimer_ss1_ss_in>;
->  };
-> +
-> +&usb_mp {
-> +       status = "okay";
-> +};
-> +
-> +&usb_mp_hsphy0 {
-> +       vdd-supply = <&vreg_l2e_0p8>;
-> +       vdda12-supply = <&vreg_l3e_1p2>;
-> +
-> +       phys = <&eusb6_repeater>;
-
-I was under the impression that the fingerprint reader is on the 2nd
-port of the root hub, as:
-* In ACPI, the only USB device of MP is listed under PRT1, PRT0 is empty
-* On Windows the device is listed as PORT2...HUB1...
-* `lsusb -t` for the device gives `Port 002: Dev 002,...12M`
-
-Do `usb_mp_hsphy0` and `usb_mp_hsphy1` translate to port 1 and 2
-respectively? Because if yes, repeater may belong to `usb_mp_hsphy1`
-instead?
-
-Current series works. Moving `phys = <&eusb6_repeater>;` to
-`usb_mp_hsphy1` also works, I'm assuming because we are not actually
-disabling unused phys.
-
-Tested-by: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>
-
-
-> +
-> +       status = "okay";
-> +};
-> +
-> +&usb_mp_hsphy1 {
-> +       vdd-supply = <&vreg_l2e_0p8>;
-> +       vdda12-supply = <&vreg_l3e_1p2>;
-> +
-> +       status = "okay";
-> +};
-> +
-> +&usb_mp_qmpphy0 {
-> +       vdda-phy-supply = <&vreg_l3e_1p2>;
-> +       vdda-pll-supply = <&vreg_l3c_0p9>;
-> +
-> +       status = "okay";
-> +};
-> +
-> +&usb_mp_qmpphy1 {
-> +       vdda-phy-supply = <&vreg_l3e_1p2>;
-> +       vdda-pll-supply = <&vreg_l3c_0p9>;
-> +
-> +       status = "okay";
-> +};
->
-> --
-> 2.48.1
->
->
 
 -- 
 linux-phy mailing list
