@@ -4,104 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2368EC282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 20:45:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 797AAC35FF3
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 03:23:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l2jm35e/bvWi12C84l1ps13W+zlhYprpdwekSvgOPU4=; b=AXklMLWlQxM2+S
-	p+sexaNgPa1gP3ktLsli94CE9lCNbgYLKdmAwh0XmrRFnJTFz6T0oUuxHsrjLdeEvV1Vnwgn13esT
-	bRSSqGwfUseVoB9DcB7yV1RdxWOp+yMC6DMxj0nknxyT3Ua+OkORIZFwMKR0kI1jKnDNIq+c1vVxB
-	iW0z+Yu0zAwN8neMMsHClvnYioPMx/c20+EXbxX9NbEVviV0YXcpLdpyFR+YBousbC36dED8gwJDj
-	S/ANU5C6Ji2Hxfug7CcovNtJZ0YKf9SdLFA4QsFslTcnZ33xHvo63imnTTLcOjSvi5s9beccIjc9/
-	KIpvLepTLSmAoMVjSs2Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C2DRjmtExrAXOWquKZ5JG/JcvVQ0fF7VPtsduldNBXk=; b=ofbfDif0UIJFHj
+	V7XuMnHh+o918aTANyxqRYc3jS1bVa0+PO0qoErEP4x+7zVRKHDVgnfIu1BsZONGvaIj8owq9vKX1
+	hJN0W6xUGnZ6fOMphHh9VwdaCXS3W5c4kHlmIo0IQJBddqe5Wkeivf5brv7wzeVMYFZldfz9iNQvW
+	9W3kxSM52f8T9yP3RRfr4QSceddusHiy7ISVf1IWPF6iDqPWQmDEDcMVzFHhk5AW/CqSRyI+/ZQTO
+	sk3qrXhE9h+x7Gpq2HpBqbMJiw3Xt11d4Y0zIX/bWVodoMIaVF8iCqmpZLJwYpPQUZVp9jp4MLDFZ
+	PFoU6gfT/qmfSoYSiRqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tudoy-000000072wV-2rfe;
-	Tue, 18 Mar 2025 20:45:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tuk1F-00000007syr-0DEv;
+	Wed, 19 Mar 2025 03:23:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tudov-000000072wA-2748
+	id 1tuk1C-00000007sxT-0icD
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 20:45:54 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52ICeCUP029922;
-	Tue, 18 Mar 2025 20:45:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+JCvgkzNThz1hf8hNzsnQUDSkHaYz3SwncuZ+rmg82o=; b=Ys/qtZN+5Rbs0ohA
-	OU5D2VvcZpc3Lwe+fuA+Ur2sECpS19A/lHipmtAWzWahYwKeal+T0RPWvaUAbqeb
-	ruoJxGE2E+Ht6tNU/+KWLGPD/EAG4roN7KqsITowKZpJryeDLnCnsFgojMylLNTe
-	5rMls8VGJC2VxBKajOacKaTsx/in11+b5JVN01fU2M7f/hfulIEaKmxOPbDyRBiv
-	nNRs0zVtu4gCGEv0hg9z6BehwHeiuW8yy2UimnOXNusoqnXa1KwXOBWrURe+GNbD
-	48mMQ8MXHbyPZEFu9gsoNS3VhxJJuMcahBFE2ZI4pw19zwrw62jHwnlRXk8WKPC3
-	vLlsPw==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45f91t1a3r-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 20:45:36 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52IKjZt1027943
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 20:45:35 GMT
-Received: from [10.110.120.126] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 18 Mar
- 2025 13:45:35 -0700
-Message-ID: <2448dd34-25e6-4d4f-8c13-d98debc0753e@quicinc.com>
-Date: Tue, 18 Mar 2025 13:45:34 -0700
+	Wed, 19 Mar 2025 03:22:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1C26E5C59EA;
+	Wed, 19 Mar 2025 03:20:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id AA10BC4CEDD;
+	Wed, 19 Mar 2025 03:22:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742354576;
+	bh=OIzJIfkOFGoCE9pBG/Lr5IOf9VKdk7vbd7YcXAXXAEo=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=SNu/RMkYh2+8GNgZvWtiZZlQBpWr3PEuwWMvJuWkLyrHEDD9sSnxga8hgCx98jOMz
+	 JFHWnrMnFhFq25VZU2yOq+IpBdWh53nFPO5WHFZHdEcPCfBxdQ1JEL6bcG3NPjS0cx
+	 Eo04JjCACoH7t2kcvqxUwFxC587xys1yd50suGCPVaW/Eh82ejVa04ZB6XqARtfsEv
+	 iX4uipBIIVzPAtIULs4YMIQx3R1vEBPicwCj3NyVIvnMi63Gzl4OO+FnfpnTZiXkCm
+	 oIgDH2k9D3vwog+YZjtn5Em3q2SwVW9TFNFd5CaBl/a6ZPOOYKAb51uSlOpDkDifGy
+	 BJ/CFuXLiIMew==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 94BD7C35FFB;
+	Wed, 19 Mar 2025 03:22:56 +0000 (UTC)
+From: Bjorn Andersson via B4 Relay <devnull+bjorn.andersson.oss.qualcomm.com@kernel.org>
+Subject: [PATCH 0/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
+ fingerprint sensor
+Date: Tue, 18 Mar 2025 22:22:55 -0500
+Message-Id: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 4/6] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
- SoC
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@wdc.com>,
-        Bart Van Assche <bvanassche@acm.org>,
-        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Satya Durga Srinivasu Prabhala
-	<quic_satyap@quicinc.com>,
-        Trilok Soni <quic_tsoni@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-        Nitin Rawat <quic_nitirawa@quicinc.com>,
-        "Manish Pandey" <quic_mapa@quicinc.com>
-References: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
- <20250310-sm8750_ufs_master-v2-4-0dfdd6823161@quicinc.com>
- <20250318052841.bdiqbzxrpzwqf7h7@thinkpad>
-Content-Language: en-US
-From: Melody Olvera <quic_molvera@quicinc.com>
-In-Reply-To: <20250318052841.bdiqbzxrpzwqf7h7@thinkpad>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: J5jzGRzhnljgSotgqMER08QiY3fZwYfh
-X-Authority-Analysis: v=2.4 cv=Xrz6OUF9 c=1 sm=1 tr=0 ts=67d9db70 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=4sn12QoEtl80kFXXyQYA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: J5jzGRzhnljgSotgqMER08QiY3fZwYfh
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-18_09,2025-03-17_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- bulkscore=0 impostorscore=0 mlxlogscore=999 clxscore=1015 mlxscore=0
- priorityscore=1501 phishscore=0 suspectscore=0 adultscore=0 spamscore=0
- malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503180150
+X-B4-Tracking: v=1; b=H4sIAI842mcC/x2MywqAIBAAfyX2nJBr0eNXooPZWnsxWSOE6N+Tj
+ sMw80AiYUowVQ8I3Zz4DAV0XYE7bNhJ8VYYsMGuMXpQOSZtlOeiJAqHS9ner4T9iA5bKF0U8pz
+ /57y87wdfDSP4YwAAAA==
+X-Change-ID: 20250318-xps13-fingerprint-a7fbe2792c24
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1742354576; l=770;
+ i=bjorn.andersson@oss.qualcomm.com; s=20250318; h=from:subject:message-id;
+ bh=OIzJIfkOFGoCE9pBG/Lr5IOf9VKdk7vbd7YcXAXXAEo=;
+ b=xPdarBZ6Wboru3bGIBrX//UgIq+TafbLcKFRcVMI2nbSEI5CvAFcun9STrbiGIKfJIMr0AlgF
+ 8qRciq7cCFgBd/GMkcO9od9WJ6yd77Y9k8jHNNoIYd04EkVb84UcJFE
+X-Developer-Key: i=bjorn.andersson@oss.qualcomm.com; a=ed25519;
+ pk=rD3O9C9Erg+mUPBRBNw91AGaIaDVqquHZbnn6N6xh6s=
+X-Endpoint-Received: by B4 Relay for
+ bjorn.andersson@oss.qualcomm.com/20250318 with auth_id=362
+X-Original-From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_134553_576842_B905FBB2 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20250318_202258_271459_80C73A93 
+X-CRM114-Status: UNSURE (   5.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,153 +91,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: bjorn.andersson@oss.qualcomm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Make the repeater optional in the SNSP eUSB2 PHY driver and describe the
+involved components for enabling the fingerprint reader in the Dell
+XPS13.
 
+Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+---
+Bjorn Andersson (2):
+      phy: qcom: phy-qcom-snps-eusb2: Make repeater optional
+      arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable fingerprint sensor
 
-On 3/17/2025 10:28 PM, Manivannan Sadhasivam wrote:
-> On Mon, Mar 10, 2025 at 02:12:32PM -0700, Melody Olvera wrote:
->> From: Nitin Rawat <quic_nitirawa@quicinc.com>
->>
->> Add UFS host controller and PHY nodes for SM8750 SoC.
->>
->> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
->> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
->> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
->> ---
->>   arch/arm64/boot/dts/qcom/sm8750.dtsi | 106 +++++++++++++++++++++++++++++++++++
->>   1 file changed, 106 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
->> index 529e4e4e1d0ea9e99e89c12d072e27c45091f29e..72f69e717ce049bb0c524aa389d837ecd1459535 100644
->> --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
->> @@ -13,6 +13,7 @@
->>   #include <dt-bindings/power/qcom,rpmhpd.h>
->>   #include <dt-bindings/power/qcom-rpmpd.h>
->>   #include <dt-bindings/soc/qcom,rpmh-rsc.h>
->> +#include <dt-bindings/gpio/gpio.h>
-> Sort includes alphabetically.
+ .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c         | 10 ++--
+ 2 files changed, 64 insertions(+), 5 deletions(-)
+---
+base-commit: c4d4884b67802c41fd67399747165d65c770621a
+change-id: 20250318-xps13-fingerprint-a7fbe2792c24
 
-Ack.
+Best regards,
+-- 
+Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
 
->
->>   
->>   / {
->>   	interrupt-parent = <&intc>;
->> @@ -2675,6 +2676,111 @@ gic_its: msi-controller@16040000 {
->>   			};
->>   		};
->>   
->> +		ufs_mem_phy: phy@1d80000 {
->> +			compatible = "qcom,sm8750-qmp-ufs-phy";
->> +			reg = <0 0x01d80000 0 0x2000>;
-> Use 0x0 for consistency.
-
-Ack.
-
->
->> +
->> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
->> +				<&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
->> +				 <&tcsrcc TCSR_UFS_CLKREF_EN>;
-> Please align the clocks.
-
-Ack.
-
->
->> +
->> +			clock-names = "ref",
->> +				      "ref_aux",
->> +				      "qref";
->> +
->> +			resets = <&ufs_mem_hc 0>;
->> +			reset-names = "ufsphy";
->> +
->> +			power-domains = <&gcc GCC_UFS_MEM_PHY_GDSC>;
->> +
->> +			#clock-cells = <1>;
->> +			#phy-cells = <0>;
->> +
->> +			status = "disabled";
->> +			};
-> Here too.
-
-I'm assuming you mean the curly brace; ack.
-
->
->> +
->> +		ufs_mem_hc: ufs@1d84000 {
->> +			compatible = "qcom,sm8750-ufshc",
->> +				     "qcom,ufshc",
->> +				     "jedec,ufs-2.0";
-> Compatibles can be ordered in the same line.
-
-Ack.
-
->
->> +			reg = <0 0x01d84000 0 0x3000>;
-> 0x0
-
-Ack.
-
->
->> +
->> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
->> +
->> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
->> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
->> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
->> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
->> +				 <&rpmhcc RPMH_LN_BB_CLK3>,
->> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
->> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
->> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_1_CLK>;
->> +			clock-names = "core_clk",
->> +				      "bus_aggr_clk",
->> +				      "iface_clk",
->> +				      "core_clk_unipro",
->> +				      "ref_clk",
->> +				      "tx_lane0_sync_clk",
->> +				      "rx_lane0_sync_clk",
->> +				      "rx_lane1_sync_clk";
->> +
->> +			operating-points-v2 = <&ufs_opp_table>;
->> +
->> +			resets = <&gcc GCC_UFS_PHY_BCR>;
->> +			reset-names = "rst";
->> +
->> +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
->> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
->> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
->> +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ACTIVE_ONLY>;
->> +			interconnect-names = "ufs-ddr",
->> +					     "cpu-ufs";
->> +
->> +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
->> +			required-opps = <&rpmhpd_opp_nom>;
->> +
->> +			iommus = <&apps_smmu 0x60 0>;
->> +			dma-coherent;
->> +
->> +			lanes-per-direction = <2>;
->> +
->> +			phys = <&ufs_mem_phy>;
->> +			phy-names = "ufsphy";
->> +
->> +			#reset-cells = <1>;
->> +
->> +			status = "disabled";
->> +
-> Extra newline
-
-Will remove.
-
-Thanks,
-Melody
 
 
 -- 
