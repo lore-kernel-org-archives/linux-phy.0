@@ -4,79 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C5BC35FF3
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 03:23:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E119EC28B28
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 07:42:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4XKu/eOZ6nyZNm5CfX+YFEVmh8Ut8B9aJMIGAOERqWQ=; b=AdAlTfzBsKonke
-	ugFLTiOd+yhwxKAar57unQiNMPSWOeALvEcuyD4XUfmuZojJnRaw/MVriFqbqWnDYRMPi817lsfCF
-	3OOPRDzBfOA06D5PCvS7zskS/2Dy4Gf9MZ6QLskinuCO/Qht2Vaorfl3C7Eiv7boLbC5fhVwtruGq
-	/YsdF6nzaeXpX2QIXe2rPpriOBkH7tSzVfbJTjsdwZrqqBG1Nc2/WGIU8ab21BoHCvCiLqKQWkO9q
-	zERKzWjEJSJDQLVB8f1Gvh6Sbt0qfLGcAuHBL3u/SifhkvfXjsix5QxasQQ9iskL290j1NS5OsCwx
-	ZVVRPLayS5Fvrt+0fVvw==;
+	List-Owner; bh=2+HNav59x4JrIcLfhu9hezH3A03MAlxq/SsG9HHH3ls=; b=x/Kf7ZJhJO9SC9
+	6S4Lmp33jqxs1iQgYXUwFyM56XkSdfgssQ/MVzZ/ApXwdUtks/VSlWSIN1wPHQOu+i9xbyJ99UHsT
+	QpB8moIdcxCXwxyZPqGHOuZwb86c/piR6lujrbJFYldH8a9Suf6j3x+Bt9Hnvc5FGTXgxfaEbXTvs
+	ZfVd58gNBFg0+eBx1k3ws9BS0N0UCgq8IRiKnZd0L3qn20qTo3V/mrrP93KE84HXnApKSKgSmpQHh
+	UAyogVF1iv/JPKK8BmYaL/HMKG20PdJ8CGGc1CQql7UBEck0EmpgQpA2hB1Gu2lDrOjZRRho52dNz
+	rl1SblOL8Z+E2ASH7n6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuk1H-00000007szt-3KIQ;
-	Wed, 19 Mar 2025 03:23:03 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tuo4R-00000008FYh-25it;
+	Wed, 19 Mar 2025 07:42:35 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuk1C-00000007sxb-1f0E
-	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 03:23:00 +0000
+	id 1tuo22-00000008F9v-2kMc;
+	Wed, 19 Mar 2025 07:40:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8E1F95C59F9;
-	Wed, 19 Mar 2025 03:20:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id D4540C4CEF1;
-	Wed, 19 Mar 2025 03:22:56 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3BBF7A48FC8;
+	Wed, 19 Mar 2025 07:34:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B4F4C4CEE9;
+	Wed, 19 Mar 2025 07:39:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742354576;
-	bh=A+qGhWclSTQgJLfO6HsVTrl9lT2YLZYjDUmxW1OxdLg=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=aXZaKHMuPh9SMOMyJIU2qNcHonFUYFKzCoruEMpmgJwGko0OmlQArTa1+Mu5aLN/Y
-	 Zn89NaWXrjH97f7ByzqXzxQ4vggEpOUA1xIIKJLP7e5iTdEPS5qUtSnAkti3sBbWBK
-	 wuSHMaQu9XDZQmzNP1cdASBObYl4mXvxuIGGXANwQy4VowdFqDiSOad3uVjWNAKZJk
-	 6zyVxWNYtemH3hGqGTX7U7FD+rMKPNMk//hEQUyenYQ5Y4+o+gqxQGrOqVP4xqXP0h
-	 ajhZNbnBVg0FhHUs6AGYmG7PyWEhsXiPm+QvfA+tS5s49Aq0T3JMq6waP30dxc/IhE
-	 EMcxKoQv+JIKA==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BA79DC35FF3;
-	Wed, 19 Mar 2025 03:22:56 +0000 (UTC)
-From: Bjorn Andersson via B4 Relay <devnull+bjorn.andersson.oss.qualcomm.com@kernel.org>
-Date: Tue, 18 Mar 2025 22:22:57 -0500
-Subject: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
- fingerprint sensor
+	s=k20201202; t=1742370005;
+	bh=tKIbx2+7UEC6SU/Ci8glYFwYES+rjaNTdcbdH+R6TS4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=iTC2J7vI9gdw4qI2bdHDiMSymEqGhCe2EaCZpTpfQ2DERnFKR7kQs4qTvHQnTr7Tf
+	 Ng+DPcHm19bSxSO0miPkBpWLO9gbiq1xESNFLalNDHqTCSKQCmbd3l20qsrxk52w7E
+	 1h+0v7377B0cpcqmfluYlpWf/kC4rT5P6xGzjjlq9e/M9/O33V9w2INM76kL2Cdj/P
+	 BfD+wdg8rSDUGHcoR4q3cB/LF3zf9aViOVfjBrvSYFhbuZWGQRR9UO2pkjT8JYGzm5
+	 f2jqjFYo3VhcjJWuf2wRJ3A6viyEJjxq4lLg20lqwORpgH2hKficXCrNhSLVw+6SiB
+	 w0dToPGlDelcA==
+Message-ID: <cd445f29-ea01-4e57-b1b7-4e9c3bfbcc8f@kernel.org>
+Date: Wed, 19 Mar 2025 08:39:52 +0100
 MIME-Version: 1.0
-Message-Id: <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
-References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
-In-Reply-To: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1742354576; l=2311;
- i=bjorn.andersson@oss.qualcomm.com; s=20250318; h=from:subject:message-id;
- bh=KSwrj8xKMzxf6ypfNwkySkK2Q48YHl4Qf210H7WoC74=;
- b=p4E23SmrYTjT4d3hpFlI9Hk/U1ZFSFLDMzYhgP7g98WcIrxdMTwAnsDGcJ40o5WVDjwTVMyUa
- 6UAUGhcdcoIAE2ziNSxH2EgRJa/qBXHOdwBBpylHI6W8+1DTAxn2zBS
-X-Developer-Key: i=bjorn.andersson@oss.qualcomm.com; a=ed25519;
- pk=rD3O9C9Erg+mUPBRBNw91AGaIaDVqquHZbnn6N6xh6s=
-X-Endpoint-Received: by B4 Relay for
- bjorn.andersson@oss.qualcomm.com/20250318 with auth_id=362
-X-Original-From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
+ AN7581 USB PHY
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
+ Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
+ Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
+ Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
+ upstream@airoha.com
+References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+ <20250309132959.19045-10-ansuelsmth@gmail.com>
+ <4f16d239-f540-45d5-b67a-767b09f1c70c@kernel.org>
+ <67d0862f.df0a0220.375bd.6b15@mx.google.com>
+ <4a9ac302-dfbe-4d76-a634-a445957c313c@kernel.org>
+ <67d95979.050a0220.166852.25e6@mx.google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <67d95979.050a0220.166852.25e6@mx.google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_202258_540171_04FB1608 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20250319_004006_832904_8099F2F0 
+X-CRM114-Status: GOOD (  22.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,111 +131,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: bjorn.andersson@oss.qualcomm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+On 18/03/2025 12:31, Christian Marangi wrote:
+> On Sun, Mar 16, 2025 at 06:01:02PM +0100, Krzysztof Kozlowski wrote:
+>> On 11/03/2025 19:51, Christian Marangi wrote:
+>>>>
+>>>>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>>>>> +    enum: [0, 1]
+>>>>
+>>>> I don't understand why do you need index property here (which are
+>>>> usually not allowed).
+>>>>
+>>>
+>>> Eh... As said in the description this is really to differentiate the 2
+>>> different physical port...
+>>>
+>>> Each port have a dedicated oscillator for calibration and these
+>>> calibration are identified by an offset (all placed one after another in
+>>> a separate register space).
+>>
+>> So different oscillators? Then describe the oscillator and its differences.
+>>
+>> Different programing model? Different compatible.
+>>
+>> Other difference? Depending what is the difference.
+>>
+>> But there is no such thing as "different port ID" based on your
+>> description above. You just claimed that they are different, but you do
+>> not put that difference to hardware description. Instead you encode that
+>> difference in the drivers and it should be opposite. The DTS, so the
+>> hardware description, should tell you the difference. And I am sorry,
+>> but in 99% of cases "I am the first phy" and "I am the second" is not
+>> the actual difference we are interested in.
+>>
+> 
+> Ok to make it as clear as possible. (hope I don't contraddict with the
+> previous statement) (actually yes the "separate register space statement
+> was wrong and sorry for the confusion")
+> 
+> - 2 USB port
+> - USB 2.0 needs to be calibrated with an oscillator
+> - Each USB port have his own dedicated oscillator somewhere in the HW
+> - Each USB port have at the same offset a register to SELECT the
+>   oscillator. This register refer to the same oscillator selection in
+>   the HW.
+>   
+>   Example:
+>   reg 0x1fac0100 MASK 27:26 can be set to source out of oscillator 0,1,2
+>   reg 0x1fae0100 MASK 27:26 can be set to source out of oscillator 0,1,2
 
-The fingerprint sensor, hidden in the power button, is connected to one
-of the USB multiport ports; while the other port is unused.
+So that's your difference between devices - you choose the oscillator.
 
-Describe the USB controller, the four phys and the repeater involved to
-make the fingerprint sensor operational.
+> 
+>   Both register refer to the same oscillators in hardware (hence each
+>   port should select the correct one)
+>   Selecting oscillator 0 for both USB port is problematic.
+> 
+> With this in mind is it ok if I describe this with something like
+> 
+> airoha,usb2-monitor-clk-sel = <AIROHA_USB2_MONCLK_SEL0>;
+> 
+> and some dt-bindings include
+> 
+> #define AIROHA_USB2_MONCLK_SEL0 0
+> #define AIROHA_USB2_MONCLK_SEL1 1
+> #define AIROHA_USB2_MONCLK_SEL2 2
+> #define AIROHA_USB2_MONCLK_SEL3 3
+> 
+> Or an enum of string like "osc0", "osc1", "osc2"...?
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
----
- .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
- 1 file changed, 57 insertions(+), 2 deletions(-)
+Both are fine.
 
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-index 967f6dba0878b51a985fd7c9570b8c4e71afe57d..a35557c562d771e2ce209fca05b82c1943d70f63 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-@@ -744,8 +744,21 @@ touchscreen@10 {
- 
- &i2c9 {
- 	clock-frequency = <400000>;
--	status = "disabled";
--	/* USB3 retimer device @0x4f */
-+	status = "okay";
-+
-+	eusb6_repeater: redriver@4f {
-+		compatible = "nxp,ptn3222";
-+		reg = <0x4f>;
-+		#phy-cells = <0>;
-+
-+		vdd3v3-supply = <&vreg_l13b_3p0>;
-+		vdd1v8-supply = <&vreg_l4b_1p8>;
-+
-+		reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
-+
-+		pinctrl-0 = <&eusb6_reset_n>;
-+		pinctrl-names = "default";
-+	};
- };
- 
- &i2c17 {
-@@ -967,6 +980,14 @@ edp_reg_en: edp-reg-en-state {
- 		bias-disable;
- 	};
- 
-+	eusb6_reset_n: eusb6-reset-n-state {
-+		pins = "gpio184";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-disable;
-+		output-low;
-+	};
-+
- 	hall_int_n_default: hall-int-n-state {
- 		pins = "gpio92";
- 		function = "gpio";
-@@ -1172,3 +1193,37 @@ &usb_1_ss1_dwc3_hs {
- &usb_1_ss1_qmpphy_out {
- 	remote-endpoint = <&retimer_ss1_ss_in>;
- };
-+
-+&usb_mp {
-+	status = "okay";
-+};
-+
-+&usb_mp_hsphy0 {
-+	vdd-supply = <&vreg_l2e_0p8>;
-+	vdda12-supply = <&vreg_l3e_1p2>;
-+
-+	phys = <&eusb6_repeater>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_hsphy1 {
-+	vdd-supply = <&vreg_l2e_0p8>;
-+	vdda12-supply = <&vreg_l3e_1p2>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_qmpphy0 {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-pll-supply = <&vreg_l3c_0p9>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_qmpphy1 {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-pll-supply = <&vreg_l3c_0p9>;
-+
-+	status = "okay";
-+};
-
--- 
-2.48.1
-
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
