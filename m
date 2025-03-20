@@ -4,64 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92B21C35FFA
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Mar 2025 19:45:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C938CC36000
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 10:25:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JD88veVw6qBd75Lv5qv0+xweCid7vrCFSChQScmE8k8=; b=UIKuSm7dNWk2Kv
-	z9M4ksNlfspw96RlUhdULInaOukUOrgo7gAixFXq7SjwYmN0WnS4gwetG39DJdsp6asZqwe4lDjJf
-	V+NIb6PUTqgDXuyqEgCFwX9vbxO0ak14XHkws332molgnbHE6z5nEikIzgDNxu9bHpG3RFjxoYcXb
-	0U3QqkycmRGI6t1uvdm0NvaF6EJEcEmVSXpxp9/f9HjwA/eRLJ9iWfZ+h376y8oCpsGNckpaZfaIi
-	KxQ/OtQ3l3p/yBQbkXR/7DEgPVIY5nLshVdknPPq6pR0NLgyLn2KxUnj7bERmGu4M4c5vrUoSxj8A
-	Ri+N2osK1UwBa8gVwkYw==;
+	List-Owner; bh=7YBZWaatwSiZInef1yLuSWdOup7pGwfk+s+FRCE0bJ4=; b=bKfzdFEAj5iJ+h
+	TQpV8rtTm4HWUmLoAh1m0s5n28zgQkGbWzRekQDG3SJrunR2GuwRtDQ38SW5mZb1TI5CEXwf7OzPs
+	04pC+y72CisPLZvZApWVrvg4pWWZmJN4L5dEyTiL40EusjnVTADePbzjYz02p2uX7Aofpp8S5dRgl
+	GWyFLIfDHeupUxbpwEW6wQogNaAA3tZEmfwa6q/lnN6iHnQgB5hixnQcyFqy2O/ZibItvbZzg+2xN
+	NRuvhqLIUrmFUMNCrX04aZKKHfSglcLIwq4B01OPrX4gmBFt15Zaw+WO/cuOJYsES1Owy8YCy1G27
+	zE6miBsuXaWvATWj7WGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuzM8-0000000A0to-0iVD;
-	Wed, 19 Mar 2025 19:45:36 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tvD5v-0000000Bo6q-1iZG;
+	Thu, 20 Mar 2025 10:25:47 +0000
+Received: from mail-vk1-f179.google.com ([209.85.221.179])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuzM5-0000000A0tQ-00dA
+	id 1tvD5s-0000000Bo6P-19QG
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Mar 2025 19:45:34 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4CBC05C6261;
-	Wed, 19 Mar 2025 19:43:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 194F1C4CEE4;
-	Wed, 19 Mar 2025 19:45:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742413532;
-	bh=Myrbj9m3hCsLiGJ67e/0Ahc4o+JFpDhFwC5X4tYyaWQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=k83A1uajWbT+HjRfBwWMJPneWcAaqV8JUKcAotRtn3xRccysHf6Se8rOR6tPMmIRx
-	 MRaiXTRZ3l2DSxZNErw8zsSjnDQ14rm0PJ1zS29pTXfGn7vASw0CMSPOiYObcExFLk
-	 sxAr1VvnTVur/2PG9RUpkq77dounwhdqyNcqIjaHoBj74JBsVwM6aP0q2sacTOCqOO
-	 /e/66r7FNUHCQdGe6AHAI+qsfL99iNMlMKcRxWSSxFIDeKjLK8Iroa8SO0WgJxJsDJ
-	 pcygy6FToNzIz85JZ3cqVwsfXV6BL0A2rkytbN+EKRCTPMB0RLv7JFPQsHkiwOLEjk
-	 //6tSSP1ZNk8w==
-Date: Wed, 19 Mar 2025 14:45:29 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>
-Cc: bjorn.andersson@oss.qualcomm.com, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
- fingerprint sensor
-Message-ID: <4kh3zg3ohqzarbhv4r64iapi5x7paz2r7z3wkesgbjmm5fvgsy@dkkbbgmgt6mo>
-References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
- <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
- <CAMcHhXoE+UvoKmy1ULJoAq1nrr+PO6qie3vxLuqQbUpiE=SMBQ@mail.gmail.com>
+	Thu, 20 Mar 2025 10:25:45 +0000
+Received: by mail-vk1-f179.google.com with SMTP id 71dfb90a1353d-52410fb2afeso616208e0c.3
+        for <linux-phy@lists.infradead.org>; Thu, 20 Mar 2025 03:25:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742466342; x=1743071142;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=d9Vl8stWRp4XCmhjIQ4x29/EadE6k2Y0g/CcM3o/k34=;
+        b=LBYvE0bqOFc0AU+OIOghBAA4h6WRoSqrVIa5NfOa9OLK4JJ/i9unS5XiknqbvXmDSZ
+         erJHNcSHQI4BD5GsbOm2e0fFEn2vEV8CMLd3eX2t3Zw4K2qhEKmxR8++b/RWz7AMPfMi
+         j/d93qY07hXW0MDNWD8Eiyu1bgqwkqZpBeGPhTdjtonF3Z7P4RZjDVNveHdmbo0RZf9g
+         3a9u8Y/53OBn8kBlsV4AbwxEG0fEKhGvBvVLditwFhU0vUS0M+IGwUA+XC34oUb1omjY
+         wLS1Pddl1D+fkh/v0qnvuDr/P/w9ojpDYWCFAsKNXk4O6b75alWRj/LP3+sbZt4Yiabb
+         kVJA==
+X-Forwarded-Encrypted: i=1; AJvYcCUlnpcMSqL1YyjjRbSJBGyy++gaKlIScOXz7eLqF8qKW6L1AOcq7wdLH0lkWocYtNw8YN1IJhMMCqc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yymt9K9YJZA6yVv7+1KlG9s3md8MKcdHaPcgrxJPNniBCR4aKwS
+	k3HaDB294867i511srUgZHXUTh414QsvEF1F7rH5frdYRx8QJyH1yDFVH8fu
+X-Gm-Gg: ASbGncsGpt3a+9gIuBAC5UPV74jXKzz6qEqIXY1mBDNncVA7tO4XSIwbZ/cPHnS91kq
+	YHGTzybrQxAM15A3GK2aZ/ME6Iej85xI4kUZQyoaWO3QFBQs3EVmtHoxwhFdrWFsEJsSc0bLT7C
+	Pn7YvHfgK5XXeluXoWQTbYGIdQCz0tr6o/Qg396qqaM9WWpcCv5cHhTCWX09Wjc58vEeHyh5Big
+	XmHFQGoJymA7DAWVcorcozj3F3mfCBYcyQcyLzJsjGcWktYJZ5XBIB0Cqh6IkKNSVDgYKKANTPm
+	ProjKUZKmdbrxC6TS90WqPYfRt1Cli7so+RpA3WO6Njtz9lRR1WM0RNWfNMTIkT0BjRSNTgZRHv
+	N4G3SvcSMI4Xq6MoC8w==
+X-Google-Smtp-Source: AGHT+IHifQGdCmWIq3kx7jnkyiraoX0Xj5eg5cGndwNdtwRFTeuFNE+6o1x08BfiiTwtQd/qcHLRew==
+X-Received: by 2002:a05:6102:4a85:b0:4c1:83c4:8562 with SMTP id ada2fe7eead31-4c4fcd97c2bmr1792761137.13.1742466341929;
+        Thu, 20 Mar 2025 03:25:41 -0700 (PDT)
+Received: from mail-ua1-f52.google.com (mail-ua1-f52.google.com. [209.85.222.52])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-4c37546544fsm2665015137.30.2025.03.20.03.25.41
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 20 Mar 2025 03:25:41 -0700 (PDT)
+Received: by mail-ua1-f52.google.com with SMTP id a1e0cc1a2514c-86d3ac0fec0so561138241.1
+        for <linux-phy@lists.infradead.org>; Thu, 20 Mar 2025 03:25:41 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCVj5f0UruiUvpPn4XqaQYA/88mOWwQ3PDXCDgBp7PVDpnei0dmSGcnJP/g2PjFRgK2j4cgwhAG4ULQ=@lists.infradead.org
+X-Received: by 2002:a05:6102:5e8b:b0:4c4:e451:6f24 with SMTP id
+ ada2fe7eead31-4c4fce5a0b8mr1981078137.22.1742466340794; Thu, 20 Mar 2025
+ 03:25:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMcHhXoE+UvoKmy1ULJoAq1nrr+PO6qie3vxLuqQbUpiE=SMBQ@mail.gmail.com>
+References: <6bcfde63b3a6b25640a56be2e24a357e41f8400f.1742390569.git.geert+renesas@glider.be>
+ <9875d99a-4e16-4f0e-9249-69f0acc4c890@wanadoo.fr>
+In-Reply-To: <9875d99a-4e16-4f0e-9249-69f0acc4c890@wanadoo.fr>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 20 Mar 2025 11:25:27 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVCmchuN1LyHGoE6A0TEpc9R1unXi2KNYO94cmT1WwOHA@mail.gmail.com>
+X-Gm-Features: AQ5f1JoPHL7qu1sdjzScQ0pkORkgvrvYYtjHhU4AbcOVfFrVPVM4tJGLITEYQz0
+Message-ID: <CAMuHMdVCmchuN1LyHGoE6A0TEpc9R1unXi2KNYO94cmT1WwOHA@mail.gmail.com>
+Subject: Re: [PATCH] phy: can-transceiver: Re-instate "mux-states" property
+ presence check
+To: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-renesas-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	Rob Herring <robh@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, 
+	Aswath Govindraju <a-govindraju@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250319_124533_127713_34CAA24F 
-X-CRM114-Status: GOOD (  28.82  )
+X-CRM114-CacheID: sfid-20250320_032544_311735_E45A2DC3 
+X-CRM114-Status: GOOD (  30.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,152 +100,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 19, 2025 at 04:05:41PM +0100, Aleksandrs Vinarskis wrote:
-> On Wed, 19 Mar 2025 at 04:22, Bjorn Andersson via B4 Relay
-> <devnull+bjorn.andersson.oss.qualcomm.com@kernel.org> wrote:
-> >
-> > From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-> >
-> > The fingerprint sensor, hidden in the power button, is connected to one
-> > of the USB multiport ports; while the other port is unused.
-> >
-> > Describe the USB controller, the four phys and the repeater involved to
-> > make the fingerprint sensor operational.
-> >
-> > Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-> > ---
-> 
-> Thanks for getting to the bottom of this, it was certainly a long
-> awaited feature :)
-> 
+Hi Vincent,
 
-Didn't think it was something I wanted, but now that it's working I
-proved myself wrong ;)
+On Wed, 19 Mar 2025 at 15:07, Vincent Mailhol
+<mailhol.vincent@wanadoo.fr> wrote:
+> For some reasons, I received your message twice (with a two minutes
+> interval between both messages). These look identical. I am answering
 
-> >  .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
-> >  1 file changed, 57 insertions(+), 2 deletions(-)
+My scripting didn't handle the comment in Rob's address correctly,
+so I resent the patch with the fixed address.
+
+> the most recent. :)
+
+Good ;-)
+
+> On 19/03/2025 at 22:27, Geert Uytterhoeven wrote:
+> > On the Renesas Gray Hawk Single development board:
 > >
-> > diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> > index 967f6dba0878b51a985fd7c9570b8c4e71afe57d..a35557c562d771e2ce209fca05b82c1943d70f63 100644
-> > --- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> > +++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> > @@ -744,8 +744,21 @@ touchscreen@10 {
+> >     can-transceiver-phy can-phy0: /can-phy0: failed to get mux-state (0)
 > >
-> >  &i2c9 {
-> >         clock-frequency = <400000>;
-> > -       status = "disabled";
-> > -       /* USB3 retimer device @0x4f */
-> > +       status = "okay";
-> > +
-> > +       eusb6_repeater: redriver@4f {
-> > +               compatible = "nxp,ptn3222";
-> > +               reg = <0x4f>;
-> > +               #phy-cells = <0>;
-> > +
-> > +               vdd3v3-supply = <&vreg_l13b_3p0>;
-> > +               vdd1v8-supply = <&vreg_l4b_1p8>;
-> > +
-> > +               reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
-> > +
-> > +               pinctrl-0 = <&eusb6_reset_n>;
-> > +               pinctrl-names = "default";
-> > +       };
-> >  };
+> > "mux-states" is an optional property for CAN transceivers.  However,
+> > mux_get() always prints an error message in case of an error, including
+> > when the property is not present, confusing the user.
+>
+> Hmmm, I understand why you are doing this patch. But on the long term,
+> wouldn't it make more sense to have a devm_mux_state_get_optional()? Or
+> maybe add a property somewhere to inform devm_mux_state_get() that this
+> is optional?
+>
+> Regardless, just see this as an open question. I am OK with the approach
+> of your patch.
+
+Alternatively, we can be proactive and add a temporary local wrapper:
+
+    /* Dummy wrapper until optional muxes are supported */
+    static inline struct mux_state *
+    devm_mux_state_get_optional(struct device *dev, const char *mux_name)
+    {
+            if (!of_property_present(dev->of_node, "mux-states"))
+                    return NULL;
+
+            return devm_mux_state_get(dev, mux_name);
+    }
+
+and call that instead?  Then the probe function needs no future changes
+when the real devm_mux_state_get_optional() arrives.
+
+> > Fix this by re-instating the property presence check.
 > >
-> >  &i2c17 {
-> > @@ -967,6 +980,14 @@ edp_reg_en: edp-reg-en-state {
-> >                 bias-disable;
-> >         };
+> > This is bascially a revert of commit d02dfd4ceb2e9f34 ("phy:
+> > can-transceiver: Drop unnecessary "mux-states" property presence
+> > check"), with two changes:
+> >   1. Use the proper API for checking whether a property is present,
+> >   2. Do not print an error message, as the mux core already takes care
+> >      of that.
 > >
-> > +       eusb6_reset_n: eusb6-reset-n-state {
-> > +               pins = "gpio184";
-> > +               function = "gpio";
-> > +               drive-strength = <2>;
-> > +               bias-disable;
-> > +               output-low;
-> > +       };
-> > +
-> >         hall_int_n_default: hall-int-n-state {
-> >                 pins = "gpio92";
-> >                 function = "gpio";
-> > @@ -1172,3 +1193,37 @@ &usb_1_ss1_dwc3_hs {
-> >  &usb_1_ss1_qmpphy_out {
-> >         remote-endpoint = <&retimer_ss1_ss_in>;
-> >  };
-> > +
-> > +&usb_mp {
-> > +       status = "okay";
-> > +};
-> > +
-> > +&usb_mp_hsphy0 {
-> > +       vdd-supply = <&vreg_l2e_0p8>;
-> > +       vdda12-supply = <&vreg_l3e_1p2>;
-> > +
-> > +       phys = <&eusb6_repeater>;
-> 
-> I was under the impression that the fingerprint reader is on the 2nd
-> port of the root hub, as:
-> * In ACPI, the only USB device of MP is listed under PRT1, PRT0 is empty
-> * On Windows the device is listed as PORT2...HUB1...
-> * `lsusb -t` for the device gives `Port 002: Dev 002,...12M`
-> 
-> Do `usb_mp_hsphy0` and `usb_mp_hsphy1` translate to port 1 and 2
-> respectively? Because if yes, repeater may belong to `usb_mp_hsphy1`
-> instead?
-> 
+> > Fixes: d02dfd4ceb2e9f34 ("phy: can-transceiver: Drop unnecessary "mux-states" property presence check")> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+>
+> Notwithstanding of above comment:
+>
+> Reviewed-by: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
 
-That would be more logical, I'll dig up some documentation for the
-SoC and see if I can better understand the naming of these instances.
+Thanks!
 
-> Current series works. Moving `phys = <&eusb6_repeater>;` to
-> `usb_mp_hsphy1` also works, I'm assuming because we are not actually
-> disabling unused phys.
-> 
+Gr{oetje,eeting}s,
 
-While not being used for any communication, the PHY is there and the
-multiport controller seems to need them both to be present. Further
-regardless of something being connected to the PHY, it's still there, so
-it seems correct to represent it in the dtsi. That said, I didn't dig
-deeper into the exact details here.
+                        Geert
 
-> Tested-by: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>
-> 
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-Thanks.
-
-Regards,
-Bjorn
-
-> 
-> > +
-> > +       status = "okay";
-> > +};
-> > +
-> > +&usb_mp_hsphy1 {
-> > +       vdd-supply = <&vreg_l2e_0p8>;
-> > +       vdda12-supply = <&vreg_l3e_1p2>;
-> > +
-> > +       status = "okay";
-> > +};
-> > +
-> > +&usb_mp_qmpphy0 {
-> > +       vdda-phy-supply = <&vreg_l3e_1p2>;
-> > +       vdda-pll-supply = <&vreg_l3c_0p9>;
-> > +
-> > +       status = "okay";
-> > +};
-> > +
-> > +&usb_mp_qmpphy1 {
-> > +       vdda-phy-supply = <&vreg_l3e_1p2>;
-> > +       vdda-pll-supply = <&vreg_l3c_0p9>;
-> > +
-> > +       status = "okay";
-> > +};
-> >
-> > --
-> > 2.48.1
-> >
-> >
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
