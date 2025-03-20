@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5469BC36006
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E433BC3600A
 	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ht+JtOGp/3yIWp3whle9yDOfxL+xslExGOOaIuqehT0=; b=NPcmuC6peidDvJ
-	9lSyo6PR4JZlQDjzzC8q3TxbkZ4A5cN3FlRy66j52BP9Sh8J2efUR9KiH1vk84EuiFro6KW8W+Pfz
-	IzPTDXitcZCQddxFw/e5jFy3Dz9Q0vUU+ogu1DQWzYDrivV4ty8LB6dlN04UKtPQVJU1k4O9phKYR
-	guOPdqVsuRG9+nL1gxVyeSMnumf3QQJ426pqTHaan3s7oHQbMvIxSDcCET1kmLLSwjqPEHNCS/Klw
-	2KYPbc3DAHyHF7MDCKrsgZ4U1e+6VlwC9u+lIL1/xDzMLuWHEGYHuK4hvqAZIkVzHUdleapmETM5b
-	kyR+kEHthCQ/B1bcstiQ==;
+	List-Owner; bh=53wmY16O2zOTwJ+RlBZMZTe9SR7sXPtu426oNQO8IoE=; b=MJGugncKDe5I1j
+	CTfclN4e4jWZLIuPD/uycPDCbBBR2XFcSfop4FuTGPnL3gigfPjDFs5L6DqVX+JYzVNAxbEk0asH/
+	nFzQ7lIOlhw0dZTBjgjqwwGeaeQFM8ExLtH3ceKHsx4TInDqvj4hMgOdB1VYo4LjF1n8VDNGBBWbY
+	bSV39gzwlyrAvH4ViX4FOXHoEgs0VQELsN0pqARIxq5JcZlLU+0P2fv5sWtyozfSKkmndkRYM7wQP
+	TG9tKyBAKUuN5evZZIOK11xmHF73c6xUxGhdK2ZV4OcBXEian3Cw5ZDPVkjhoqVDMGKZbsbSK/MlV
+	DBlh94i2m/ViILAhkHoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIMN-0000000CcBd-2Djk;
-	Thu, 20 Mar 2025 16:03:07 +0000
+	id 1tvIMO-0000000CcDE-0kAt;
+	Thu, 20 Mar 2025 16:03:08 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIJw-0000000CbBr-3pbt
+	id 1tvIJx-0000000CbBt-0Gtc
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Mar 2025 16:00:38 +0000
+	Thu, 20 Mar 2025 16:00:39 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 333C6836;
-	Thu, 20 Mar 2025 16:58:47 +0100 (CET)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7B20BE79;
+	Thu, 20 Mar 2025 16:58:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1742486328;
-	bh=tWpzu7ba133Zdaj4dIf8mfTY5P/FzEw3AwQGlLkB6nY=;
+	s=mail; t=1742486330;
+	bh=gtqh/kQ+FSvOAIyc0nyrUTvwCry4fqrHaREohqBK1ho=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Jo6hJDzx4MMVutviFoW6uze0v/t/ZUm3X99o4o+jspdo0aHxYvjZr5GZqfyHXe72l
-	 cVOWAeLOIYol7UZjpp2ic1QNh6dyw0QY5HSFa/V1rBRn+Dmt0oLVbMTdU9nPjjWvRp
-	 f5azgycs2yk3KZQDl9kPW2S6tLE5LGaoHomhfRJc=
+	b=C1LbG1x+kks7/QaEImuHKmR+gD+7H5t45ByYL1ZCbVcGcW6sM3jM6WMvsITP0Rgzh
+	 NaBTHEALohMFDUl+SKphnitRAs+ddUyTrp0BEihjww5Q+JE6aqDwgq5PD6cme+vJQG
+	 X7wx9yBngH7dAhWdi24eaLDEQ+JfQSIAXcgsOMRw=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Thu, 20 Mar 2025 17:59:56 +0200
-Subject: [PATCH 01/18] drm/tidss: Fix missing includes and struct decls
+Date: Thu, 20 Mar 2025 17:59:58 +0200
+Subject: [PATCH 03/18] drm/tidss: Add mode_fixup to adjust the clock based
+ on HW
 MIME-Version: 1.0
-Message-Id: <20250320-cdns-dsi-impro-v1-1-725277c5f43b@ideasonboard.com>
+Message-Id: <20250320-cdns-dsi-impro-v1-3-725277c5f43b@ideasonboard.com>
 References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 In-Reply-To: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -59,27 +60,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2118;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3379;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=tWpzu7ba133Zdaj4dIf8mfTY5P/FzEw3AwQGlLkB6nY=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuW0VeV/16xby0waSsVTa5y/p9LuoqqSPndU
- 5qCby6XyN6JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lgAKCRD6PaqMvJYe
- 9dQ0D/9sDS7OWljZibT3MD38u4WdeOEtCPLTN1jQCfDoLLOLHAfQUc+o+a4qSO7UTE/cwMA6PPL
- /vB4NvQh55DDELk66YfnQh7/FtRB5yDEIrP1RLuZWYY5Cz6TAmoB76WsjRqP+9axnYTYy5GFiP6
- 5gDJKn3Vmdh+xCqc21B65a6f23OGqzwDvkedeFjBuMp5H2pKJFoU+33s0t7SLbeT6XiumAqkQzu
- 8k4W82fykMZZnoZQDWCNDVOX6hkJCWUJucgV3ImF3UmPqy6uDo0XVs6TXDaDGjC3yvYMrBtWl5Q
- /pnXmA93cICYvkxW0jRsP7DXw/VpWddrvuF9OSioi1cfNxvucKp6brh75Ox1d0Uma52+aVOCYsk
- Fws048xy7UkFtnDRuMTH0172iX5a3uwxVSxT0Jq3nZjPsO2jsTNLUsnlKo5TaObi0KLTlwjP13H
- ggG04o92RTjt93ztMubmHVmpjVmm/3QoEOypvKycMyLQ9H3+r+idMSZrmGaAZZNqm0oEIO4CLzb
- YAlRi70GtFcrO9uN3dZGgTL8vjJkKppyAnmxX9V4ChjuqZYnoYKaiMSsUYGNUt+P7mk1Oq9Zj7P
- GQvFstwP99RXtjk0naJTT9N3/3vhbCo34aBtQ2IDx+I8StOcRzUTzfe1+I9cYd/w6YeoJWsAXRl
- 6MXwh1eLPU6BTpA==
+ bh=gtqh/kQ+FSvOAIyc0nyrUTvwCry4fqrHaREohqBK1ho=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuXZx0mMf8Cp7DeWkdwpcH4hdkzaIGIKRTDw
+ 0S/v1ftQBGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lwAKCRD6PaqMvJYe
+ 9WWHD/4t6z5B8DYLhbI2QE1Ia/cgOOXPkuTRSVibN/keUjPxdj0Hr9V0fG0wK5Vuw3JTZL1+ByI
+ MpqSopoTnJ65Hbwwka633RRmED6m9tbEOeFUC5EZBFL15VwIocxTFlTcRsJFoidbeV4qM/9G3S7
+ se7PQEa25FmWP9Ch9uTbIU7wigIcj+gq+NvS/UEYDWrFONxs5qJBm5KwvVRG9qCQp5s8/EVCxtd
+ JVakTOelh3MrbmvjfhO1gPhEpRnaLgCpwtsrS5MikdPdK3Xn6rfpMKZgYx7lylvZs6a8tbA+c8O
+ 9+jlPDEEIeeFAxYBx1GUH4YFR1jD4I1gd2z4cAAi/gmXfScA/AqZlMc5jDa46olPsyopJVkkCyA
+ ZR7fhOzXQZfv6a0XcYnH7nR6Fh+GJRHbA6trRqSv2azsaL3ClVMqvtB6Xfyz60zG3Qf+6UwsEto
+ M3vwptC7uc+Yd+fh8ig1TB84CRivb938fbe+P4HxoPNbKInhIOyJV1dufhYMoN8svHWn0tMUFGJ
+ HDPD9KAY1mRmlBDkZ/Qj+G4FUJBwMNgmoy5CP+Az7dbl8KSoRrf7DDjtD8FugDqArkKrVyWag7d
+ LJe6lfMfHpJiVZFNzzRBVVEefm0B+yZGPiZwzVMPh1UwXRnA++wkudygRb2rHIAdWREd1QPCazc
+ ECKY3ubFOGDeAWA==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_090037_098240_80DF68D8 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250320_090037_268102_842CCBA0 
+X-CRM114-Status: GOOD (  14.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,75 +96,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix missing includes and struct declarations. Even if these don't cause
-any compile issues at the moment, it's good to have them correct.
+At the moment the driver just sets the clock rate with clk_set_rate(),
+and if the resulting rate is not the same as requested, prints a debug
+print, but nothing else.
+
+Add mode_fixup(), in which the clk_round_rate() is used to get the
+"rounded" rate, and set that to the adjusted_mode.
+
+In practice, with the current K3 SoCs, the display PLL is capable of
+producing very exact clocks, so most likely the rounded rate is the same
+as the original one.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/tidss/tidss_dispc.h       | 3 +++
- drivers/gpu/drm/tidss/tidss_drv.h         | 2 ++
- drivers/gpu/drm/tidss/tidss_plane.h       | 2 ++
- drivers/gpu/drm/tidss/tidss_scale_coefs.h | 2 ++
- 4 files changed, 9 insertions(+)
+ drivers/gpu/drm/tidss/tidss_crtc.c  | 22 ++++++++++++++++++++++
+ drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
+ drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
+ 3 files changed, 30 insertions(+)
 
+diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
+index 1604eca265ef..b3338dac25bc 100644
+--- a/drivers/gpu/drm/tidss/tidss_crtc.c
++++ b/drivers/gpu/drm/tidss/tidss_crtc.c
+@@ -309,7 +309,29 @@ enum drm_mode_status tidss_crtc_mode_valid(struct drm_crtc *crtc,
+ 	return dispc_vp_mode_valid(tidss->dispc, tcrtc->hw_videoport, mode);
+ }
+ 
++static bool tidss_crtc_mode_fixup(struct drm_crtc *crtc,
++				  const struct drm_display_mode *mode,
++				  struct drm_display_mode *adjusted_mode)
++{
++	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
++	struct drm_device *ddev = crtc->dev;
++	struct tidss_device *tidss = to_tidss(ddev);
++	long rate;
++
++	rate = dispc_vp_round_clk_rate(tidss->dispc, tcrtc->hw_videoport,
++				       adjusted_mode->clock * 1000);
++	if (rate < 0)
++		return false;
++
++	adjusted_mode->clock = rate / 1000;
++
++	drm_mode_set_crtcinfo(adjusted_mode, 0);
++
++	return true;
++}
++
+ static const struct drm_crtc_helper_funcs tidss_crtc_helper_funcs = {
++	.mode_fixup = tidss_crtc_mode_fixup,
+ 	.atomic_check = tidss_crtc_atomic_check,
+ 	.atomic_flush = tidss_crtc_atomic_flush,
+ 	.atomic_enable = tidss_crtc_atomic_enable,
+diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
+index a5107f2732b1..3930fb7f03c2 100644
+--- a/drivers/gpu/drm/tidss/tidss_dispc.c
++++ b/drivers/gpu/drm/tidss/tidss_dispc.c
+@@ -1318,6 +1318,12 @@ unsigned int dispc_pclk_diff(unsigned long rate, unsigned long real_rate)
+ 	return (unsigned int)(abs(((rr - r) * 100) / r));
+ }
+ 
++long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
++			     unsigned long rate)
++{
++	return clk_round_rate(dispc->vp_clk[hw_videoport], rate);
++}
++
+ int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
+ 			  unsigned long rate)
+ {
 diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/tidss_dispc.h
-index 086327d51a90..c31b477a18b0 100644
+index c31b477a18b0..d4c335e918fb 100644
 --- a/drivers/gpu/drm/tidss/tidss_dispc.h
 +++ b/drivers/gpu/drm/tidss/tidss_dispc.h
-@@ -7,11 +7,14 @@
- #ifndef __TIDSS_DISPC_H__
- #define __TIDSS_DISPC_H__
- 
-+#include <drm/drm_color_mgmt.h>
-+
- #include "tidss_drv.h"
- 
- struct dispc_device;
- 
- struct drm_crtc_state;
-+struct drm_plane_state;
- 
- enum tidss_gamma_type { TIDSS_GAMMA_8BIT, TIDSS_GAMMA_10BIT };
- 
-diff --git a/drivers/gpu/drm/tidss/tidss_drv.h b/drivers/gpu/drm/tidss/tidss_drv.h
-index 7f4f4282bc04..56a2020e20d0 100644
---- a/drivers/gpu/drm/tidss/tidss_drv.h
-+++ b/drivers/gpu/drm/tidss/tidss_drv.h
-@@ -9,6 +9,8 @@
- 
- #include <linux/spinlock.h>
- 
-+#include <drm/drm_device.h>
-+
- #define TIDSS_MAX_PORTS 4
- #define TIDSS_MAX_PLANES 4
- 
-diff --git a/drivers/gpu/drm/tidss/tidss_plane.h b/drivers/gpu/drm/tidss/tidss_plane.h
-index aecaf2728406..92c560c3a621 100644
---- a/drivers/gpu/drm/tidss/tidss_plane.h
-+++ b/drivers/gpu/drm/tidss/tidss_plane.h
-@@ -7,6 +7,8 @@
- #ifndef __TIDSS_PLANE_H__
- #define __TIDSS_PLANE_H__
- 
-+#include <drm/drm_plane.h>
-+
- #define to_tidss_plane(p) container_of((p), struct tidss_plane, plane)
- 
- struct tidss_device;
-diff --git a/drivers/gpu/drm/tidss/tidss_scale_coefs.h b/drivers/gpu/drm/tidss/tidss_scale_coefs.h
-index 9c560d0fdac0..9824d02d9d1f 100644
---- a/drivers/gpu/drm/tidss/tidss_scale_coefs.h
-+++ b/drivers/gpu/drm/tidss/tidss_scale_coefs.h
-@@ -9,6 +9,8 @@
- 
- #include <linux/types.h>
- 
-+struct device;
-+
- struct tidss_scale_coefs {
- 	s16 c2[16];
- 	s16 c1[16];
+@@ -120,6 +120,8 @@ enum drm_mode_status dispc_vp_mode_valid(struct dispc_device *dispc,
+ 					 const struct drm_display_mode *mode);
+ int dispc_vp_enable_clk(struct dispc_device *dispc, u32 hw_videoport);
+ void dispc_vp_disable_clk(struct dispc_device *dispc, u32 hw_videoport);
++long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
++			     unsigned long rate);
+ int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
+ 			  unsigned long rate);
+ void dispc_vp_setup(struct dispc_device *dispc, u32 hw_videoport,
 
 -- 
 2.43.0
