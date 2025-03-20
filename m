@@ -4,72 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC5CEC28B30
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 18:28:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDDC8C28B30
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 22:24:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=v1G3oPXOe0LlxtfQ0y5r7zZcosf6PDUJOTxKlezRPaE=; b=FntMfXTcpmPBpBOuSzVpj0kHbu
-	KvsrFp0NQ53De228J7iQe7+lxjP+2Nk4FPzAL/hxpTQpztaRBqjZP07zNcs3tvUOuGYb1UOX8iXWH
-	SBE7Z8bQ4SDpnH6+v4GedG6UYbjIWwFrkvTHOFPSZtD6g5uHU6u2fSp9eZyh/xf6kYYzPt1bl/+mB
-	0shrt2Wf9CiNYv8rDnTERU6TYElTQuBsfiwLYQ2Ifz38u5e/UndUhXzKLNCv2lAVuHYr6QzGBPNTu
-	r5Tyg5rfLm9vTu6tkYdmDFgJ/InGBy7yi5isigm0COWLManBBJ777NB2vYLpO6KQIGtI4O971A8g3
-	9CFbREcg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kFQpJV2So5Heh3lYBWxEtEZUIVNKMImHFW80N/boOv4=; b=vZCvFMGPjZw3zr
+	4eh/VEzg2q4C30rVruIZKsCAAYueXkYyclrja9KiSRIGQ7GhUXCWqAgl2doobMCw79noHg+aI94TS
+	7HDi5XHgpaUK2jji3e6uT502jPy/SV7tccBp/QEXW5ROfILmHDs4c+ElPQd6r04iDRMD14jPuMQA2
+	HfWLCNONkA2wCpqdIoAG/0bnHpqM+oJFO49x5pFmcDC13czA1Vj9+nNyk3kpBUOFj2+jl40o3SAvv
+	YXc6rRhSUhIsAZ0G1sKWzR1nInHr3wj2DL6Nctqt6pr10wKFekEMzSBZd1PtjkXAYqZ36GrbsCmUp
+	qApKYixGy336erkClWjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvKcc-0000000Cwb8-1UaL;
-	Thu, 20 Mar 2025 18:28:02 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1tvOJI-0000000DMAD-2YSK;
+	Thu, 20 Mar 2025 22:24:21 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvKat-0000000CwOH-25zP;
-	Thu, 20 Mar 2025 18:26:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4EA1644382;
-	Thu, 20 Mar 2025 18:26:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 691C4C4CEDD;
-	Thu, 20 Mar 2025 18:26:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742495174;
-	bh=WqjD83gS59KXnxcWN0xrv2Qy66XqwIZlhcsvnHNzlD0=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=JYloGAYRUHZ9s4ndZMNiZ/YXTnxxxYiyDHj0Hp2VzGq3o+btOYbamd9ZiuFhWFMet
-	 ie3338Y/XRLdUCpjJyC3jborHQ/CXIIcVuOUVVK9U/rgIm5/VFx7Y1YS4wkFLVCDtw
-	 NxtFT5PZepI7IN/DrIOQSmiiHzyZN6y4L/goZn/FeHhICSNh+acqedzYpPcX+zCvRz
-	 zhiyJ8Z6cpsyttti+B/CqOcRvhgWw3QnIpYjK0Go3Z+AU3KMHdGzRyH2j6HzO8MXH/
-	 AjBZ8JDhSha0K3F92CqtjR4pU4dQ8OkZTVExZRrdd4MLrd7BZtl3cpcRusyzQ7ISi7
-	 Mu66NbJSYYULA==
-Date: Thu, 20 Mar 2025 13:26:13 -0500
+	id 1tvOBq-0000000DLFI-0Lrz
+	for linux-phy@lists.infradead.org;
+	Thu, 20 Mar 2025 22:16:39 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-43cfebc343dso9661235e9.2
+        for <linux-phy@lists.infradead.org>; Thu, 20 Mar 2025 15:16:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1742508997; x=1743113797; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=WfPnk7WQgtcfoHo8JXsI+oWzDaDs3bw9jASaZ3sIJgg=;
+        b=w3WGelmgebScGUQZmyRkVEbr+P0cZRVjoQeLfUqcMUBIPu+UhMoVbGLjWXAm1NVuBe
+         w8UPCmwJCr4mRc2p87mbVVY0tYlFhPs1OxM3rUKrf128prO9Ib3CzfgSDZM4uvUZkBsk
+         vw6HKQ2VUojOQYRaoJJvdlmtFRsQDI79aMeGcWNl/Tr3N2Ol1OHcPNTdvwa5Ag7zG2Hn
+         ijRGVPjVsTvbXGp0d/Rism7LErqF/h6JgKacMJJv/flPTiFfcuoc2HHpWEJQaTXYbOWl
+         tmEwjdeAS3WNm7Thn+hy2GWs0DSnzTjL5WRbCdfP3lgKg9AHrpuAWTlrqnXSpTRR0Wgq
+         V15Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742508997; x=1743113797;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WfPnk7WQgtcfoHo8JXsI+oWzDaDs3bw9jASaZ3sIJgg=;
+        b=LsC76PFBdtSya7cLUyp2dWVfYZqnA4LevfGf2lwywcBvEZZczyy0ve4cy7F7qhSMuT
+         3DUPwPbzxj277cvSEpmftQKn4x9MHrnWtOuJnBlyyyLHhzDRy7G6Tb26FeOplSwg+i9E
+         MYHMwlhyZ2xqAF25U9VjIlpkkCD0eg/urexsjPkRWvcK7dKzB97ukML3jCMJFn+Enp0p
+         uv4GSPemXURXmcrlzChYBFbaABTaF+PNl0q9MASXDzKS3LZTCoJv5vi+OF1HOn2exVKI
+         7Zp9UqnM7WooT2ftVqxWF9E9lHvTHcCKwZSbBG/wI9XiOdUipZYKIJoKaC1onuOBzn7g
+         9kAw==
+X-Forwarded-Encrypted: i=1; AJvYcCXpJLCQbDcHcC7z4MExreoeZx41RBtGlxhy2ug10s6chrvidl6pQig7gqm9tk5tKA2z/AZnLRk0zBo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwpnJH91KYlor5IUWJSitz4199Gl0hg9eHzZLek4H2i3K7h8+SI
+	16k6vs21liJ8lG1NKMTBp8ww3gxKaIiDpd0nUYsaRkTq3/gftTbhvUeYXpF1QXg=
+X-Gm-Gg: ASbGnctD7u9lC+sfoTi44f0ao66zqE1anUadvHKSp8Dd7gwShewXH4TfyAeR8Oe1YwD
+	anRIUXNwAtrHUS5SAbMXmv6PL2UEaLKVb0ZTXj5LiKet735BmqsPlf09/MXQeYpsr9/jqfrrbYx
+	rlTdyWr9tSJMmqMfgztaCG57exFb3VGmhOK1ipAF/vq3xuDWLgOZneo504oYmx1kvyEWLeKil3P
+	Fp0b2ZZOJID8MXQKvEVv3YmgBhDZj8NTc4gn4vAmgULYOGvQaJfHc9T8HtcYBsu18Pq918s5FnM
+	xH+kkddl5jnRwm/no8PmO0wGsruNIcbajuJasw41QPLKi5FCTOYvsXkcctsS4I1441PWa3W8Z2u
+	Fokg3qWbplg==
+X-Google-Smtp-Source: AGHT+IHNuD3oxALNHIxu9dYwYRUPmP+cyvEmCJ1ayFakdYJH3c8S+O6yOUzhs//I8smCyDXpzHD2VQ==
+X-Received: by 2002:a05:600c:3155:b0:43c:f81d:34 with SMTP id 5b1f17b1804b1-43d509eae2dmr5415125e9.9.1742508996459;
+        Thu, 20 Mar 2025 15:16:36 -0700 (PDT)
+Received: from [192.168.0.34] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43d4fdbd348sm9042715e9.39.2025.03.20.15.16.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 20 Mar 2025 15:16:35 -0700 (PDT)
+Message-ID: <d64b222b-0b4f-4a17-a4db-74079502f7f4@linaro.org>
+Date: Thu, 20 Mar 2025 22:16:34 +0000
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Yangyu Chen <cyy@cyyself.name>, Conor Dooley <conor+dt@kernel.org>, 
- Lorenzo Bianconi <lorenzo@kernel.org>, 
- Alexander Sverdlin <alexander.sverdlin@gmail.com>, 
- Felix Fietkau <nbd@nbd.name>, devicetree@vger.kernel.org, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Michael Turquette <mturquette@baylibre.com>, Arnd Bergmann <arnd@arndb.de>, 
- linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
- linux-clk@vger.kernel.org, Nikita Shubin <nikita.shubin@maquefel.me>, 
- upstream@airoha.com, linux-mediatek@lists.infradead.org, 
- Ben Hutchings <ben@decadent.org.uk>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Daniel Danzberger <dd@embedd.com>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- linux-usb@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>, 
- Linus Walleij <linus.walleij@linaro.org>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- linux-phy@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>, 
- linux-kernel@vger.kernel.org
-To: Christian Marangi <ansuelsmth@gmail.com>
-In-Reply-To: <20250320130054.4804-1-ansuelsmth@gmail.com>
-References: <20250320130054.4804-1-ansuelsmth@gmail.com>
-Message-Id: <174249492019.658064.14719387276656076364.robh@kernel.org>
-Subject: Re: [PATCH v2 00/11] airoha: en7581: clk cleanup + USB support
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
+ fingerprint sensor
+To: bjorn.andersson@oss.qualcomm.com, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
+ <1nCVo0cfBlz7dR2Jqu8M0rjyv_aRuYvO5M8Ho3sHTuU7-BfteG7JQ6iklpXIsiVEheMKOx4-JSJNsdf37ObJag==@protonmail.internalid>
+ <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
+Content-Language: en-US
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+In-Reply-To: <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_112615_580850_91D82002 
-X-CRM114-Status: GOOD (  25.86  )
+X-CRM114-CacheID: sfid-20250320_151638_130089_6164A858 
+X-CRM114-Status: GOOD (  17.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,130 +103,125 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 19/03/2025 03:22, Bjorn Andersson via B4 Relay wrote:
+> From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+> 
+> The fingerprint sensor, hidden in the power button, is connected to one
+> of the USB multiport ports; while the other port is unused.
+> 
+> Describe the USB controller, the four phys and the repeater involved to
+> make the fingerprint sensor operational.
+> 
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+> ---
+>   .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
+>   1 file changed, 57 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
+> index 967f6dba0878b51a985fd7c9570b8c4e71afe57d..a35557c562d771e2ce209fca05b82c1943d70f63 100644
+> --- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
+> +++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
+> @@ -744,8 +744,21 @@ touchscreen@10 {
+> 
+>   &i2c9 {
+>   	clock-frequency = <400000>;
+> -	status = "disabled";
+> -	/* USB3 retimer device @0x4f */
+> +	status = "okay";
+> +
+> +	eusb6_repeater: redriver@4f {
 
-On Thu, 20 Mar 2025 14:00:23 +0100, Christian Marangi wrote:
-> This series implement all the changes required to correctly handle
-> USB support for the Airoha EN7581 SoC.
+How about
+
+eusb6_frp_repeater: redriver@4f
+
+leading to> +		compatible = "nxp,ptn3222";
+> +		reg = <0x4f>;
+> +		#phy-cells = <0>;
+> +
+> +		vdd3v3-supply = <&vreg_l13b_3p0>;
+> +		vdd1v8-supply = <&vreg_l4b_1p8>;
+> +
+> +		reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
+> +
+> +		pinctrl-0 = <&eusb6_reset_n>;
+> +		pinctrl-names = "default";
+> +	};
+>   };
 > 
-> The first few patch are cleanup for the clock driver and the
-> introduction of the SCU SSR SoC driver.
+>   &i2c17 {
+> @@ -967,6 +980,14 @@ edp_reg_en: edp-reg-en-state {
+>   		bias-disable;
+>   	};
 > 
-> The SoC always support USB 2.0 but for USB 3.0 it needs additional
-> configuration for the Serdes port. Such port can be either configured
-> for USB usage or for PCIe lines or HSGMII and these are configured
-> in the SCU space.
-> 
-> The xHCI USB is based on the Mediatek implementation but the PHY
-> handling although conceptually similar, is indded different compared
-> to Mediatek due to SSR checks and different port power up.
-> 
-> The SSR driver expose an API to poll the current status of the Serdes
-> port and the USB PHY driver validates it. Refer to the specific commit
-> for additional info.
-> 
-> Consider that there is currently an inconsistency as AN7581 and
-> EN7581 refer to the same thing. This is due to the fact that
-> the SoC born under EcoNet but then was acquired by Airoha.
-> 
-> Changes v2:
-> - Drop changes for simple-mfd
-> - Rework PHY node structure to single node
-> - Drop port-id property in favor of serdes-port and
->   usb2-monitor-clock-sel
-> - Make the SSR driver probe from the clock driver
-> 
-> Christian Marangi (11):
->   clk: en7523: convert driver to regmap API
->   clk: en7523: generalize register clocks function
->   dt-bindings: clock: en7523: add Documentation for Airoha AN7581 SCU
->     SSR
->   soc: airoha: add support for configuring SCU SSR Serdes port
->   clk: en7523: define and register SoC SCU SSR driver for EN7581
->   soc: airoha: scu-ssr: expose API to read current Serdes Port mode
->   dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
->   phy: move Airoha PCIe PHY driver to dedicated directory
->   phy: airoha: Add support for Airoha AN7581 USB PHY
->   usb: host: add ARCH_AIROHA in XHCI MTK dependency
->   arm64: dts: airoha: en7581: add USB nodes
-> 
->  .../bindings/clock/airoha,en7523-scu.yaml     |  101 +-
->  .../bindings/phy/airoha,an7581-usb-phy.yaml   |   83 ++
->  MAINTAINERS                                   |   21 +-
->  arch/arm64/boot/dts/airoha/en7581.dtsi        |   49 +
->  drivers/clk/clk-en7523.c                      |  340 +++--
->  drivers/phy/Kconfig                           |   11 +-
->  drivers/phy/Makefile                          |    5 +-
->  drivers/phy/airoha/Kconfig                    |   23 +
->  drivers/phy/airoha/Makefile                   |    4 +
->  drivers/phy/airoha/phy-airoha-pcie-regs.h     |  494 +++++++
->  drivers/phy/airoha/phy-airoha-pcie.c          | 1290 +++++++++++++++++
->  drivers/phy/airoha/phy-airoha-usb.c           |  571 ++++++++
->  drivers/soc/Kconfig                           |    1 +
->  drivers/soc/Makefile                          |    1 +
->  drivers/soc/airoha/Kconfig                    |   18 +
->  drivers/soc/airoha/Makefile                   |    3 +
->  drivers/soc/airoha/airoha-scu-ssr.c           |  271 ++++
->  drivers/usb/host/Kconfig                      |    2 +-
->  .../dt-bindings/phy/airoha,an7581-usb-phy.h   |   11 +
->  include/dt-bindings/soc/airoha,scu-ssr.h      |   11 +
->  include/linux/clk/clk-en7523.h                |   10 +
->  include/linux/soc/airoha/airoha-scu-ssr.h     |   34 +
->  22 files changed, 3202 insertions(+), 152 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
->  create mode 100644 drivers/phy/airoha/Kconfig
->  create mode 100644 drivers/phy/airoha/Makefile
->  create mode 100644 drivers/phy/airoha/phy-airoha-pcie-regs.h
->  create mode 100644 drivers/phy/airoha/phy-airoha-pcie.c
->  create mode 100644 drivers/phy/airoha/phy-airoha-usb.c
->  create mode 100644 drivers/soc/airoha/Kconfig
->  create mode 100644 drivers/soc/airoha/Makefile
->  create mode 100644 drivers/soc/airoha/airoha-scu-ssr.c
->  create mode 100644 include/dt-bindings/phy/airoha,an7581-usb-phy.h
->  create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
->  create mode 100644 include/linux/clk/clk-en7523.h
->  create mode 100644 include/linux/soc/airoha/airoha-scu-ssr.h
+> +	eusb6_reset_n: eusb6-reset-n-state {
+> +		pins = "gpio184";
+> +		function = "gpio";
+> +		drive-strength = <2>;
+> +		bias-disable;
+> +		output-low;
+> +	};
+> +
+>   	hall_int_n_default: hall-int-n-state {
+>   		pins = "gpio92";
+>   		function = "gpio";
+> @@ -1172,3 +1193,37 @@ &usb_1_ss1_dwc3_hs {
+>   &usb_1_ss1_qmpphy_out {
+>   	remote-endpoint = <&retimer_ss1_ss_in>;
+>   };
+> +
+> +&usb_mp {
+> +	status = "okay";
+> +};
+> +
+> +&usb_mp_hsphy0 {
+> +	vdd-supply = <&vreg_l2e_0p8>;
+> +	vdda12-supply = <&vreg_l3e_1p2>;
+> +
+> +	phys = <&eusb6_repeater>;
+
+phys = <&eusb6_frp_repeater>;
+
+That's how I did it on Insprion14 and it helps me make sense of the dts 
+back to the schematic.
+
+> +
+> +	status = "okay";
+> +};
+> +
+> +&usb_mp_hsphy1 {
+> +	vdd-supply = <&vreg_l2e_0p8>;
+> +	vdda12-supply = <&vreg_l3e_1p2>;
+> +
+> +	status = "okay";
+> +};
+> +
+> +&usb_mp_qmpphy0 {
+> +	vdda-phy-supply = <&vreg_l3e_1p2>;
+> +	vdda-pll-supply = <&vreg_l3c_0p9>;
+> +
+> +	status = "okay";
+> +};
+> +
+> +&usb_mp_qmpphy1 {
+> +	vdda-phy-supply = <&vreg_l3e_1p2>;
+> +	vdda-pll-supply = <&vreg_l3c_0p9>;
+> +
+> +	status = "okay";
+> +};
 > 
 > --
 > 2.48.1
 > 
 > 
 > 
-
-
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/airoha/' for 20250320130054.4804-1-ansuelsmth@gmail.com:
-
-arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fab0000: compatible:0: 'mediatek,mtk-xhci' is not one of ['mediatek,mt2701-xhci', 'mediatek,mt2712-xhci', 'mediatek,mt7622-xhci', 'mediatek,mt7623-xhci', 'mediatek,mt7629-xhci', 'mediatek,mt7986-xhci', 'mediatek,mt7988-xhci', 'mediatek,mt8173-xhci', 'mediatek,mt8183-xhci', 'mediatek,mt8186-xhci', 'mediatek,mt8188-xhci', 'mediatek,mt8192-xhci', 'mediatek,mt8195-xhci', 'mediatek,mt8365-xhci']
-	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
-arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fab0000: compatible: ['mediatek,mtk-xhci'] is too short
-	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
-arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fad0000: compatible:0: 'mediatek,mtk-xhci' is not one of ['mediatek,mt2701-xhci', 'mediatek,mt2712-xhci', 'mediatek,mt7622-xhci', 'mediatek,mt7623-xhci', 'mediatek,mt7629-xhci', 'mediatek,mt7986-xhci', 'mediatek,mt7988-xhci', 'mediatek,mt8173-xhci', 'mediatek,mt8183-xhci', 'mediatek,mt8186-xhci', 'mediatek,mt8188-xhci', 'mediatek,mt8192-xhci', 'mediatek,mt8195-xhci', 'mediatek,mt8365-xhci']
-	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
-arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fad0000: compatible: ['mediatek,mtk-xhci'] is too short
-	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
-
-
-
-
-
+Completely optional obviously.
+Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 
 -- 
 linux-phy mailing list
