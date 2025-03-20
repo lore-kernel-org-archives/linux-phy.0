@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C855C3600B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D36F5C3600C
 	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZ+/BNvwH91A8zSDp6ifjLUwkED2oL9naptAsGQlFo4=; b=3Hjl/Aqj+8waX0
-	h+6p6CvtJ9n9IJSE/w1amVJU2i9ebIweO3j2H37ZwHen1tHJ24AKRO2/t2mvRgQHf0wzbLNDiwjcm
-	3yXvpgKJJNSqz0JCIqkTe2drWk5AIG9cAxwfFTUiMr5mEXg6rJ5qDR/2+Uk/eYar7+//ga17i0SwY
-	O3tyZYuPvUhj7fbzSxl8Nl5iUl6MGcyTDjqBVipeFkV3JItJ9uOq9WBwPOr1jSqiqt0B09KzSAQ6W
-	fOt0vWH6ayt234qTCiD8Ph0/eSjqT6kxE5Mo+v6bKe6RklITwHjRguuHseQnzGlnxRREZ3nBXi0Fu
-	etvWZH/X40QggUlX0i/Q==;
+	List-Owner; bh=IR2X/81c+obyg3GFd4T/Nlclm2SW9hbrvlzlqtKUEUA=; b=BtVK1sLCYEOV8k
+	bEIoEmoVNbZVLwZoyXa3JnZuFbL0aAr99ziN95dRuanTy9fFNF+CT9M/kW9bgOyYab6Qi1lT5dCtd
+	DJ67RleBcAWm5oWx4C02Y1e50VBGZueGssvV0PScawcnSLl3rw0WouvU8fAZujuA0XhUOICaqM6If
+	B5+xV8VVg1jXscuyWkkjGmMJIPRoKGA3iiQZSAdlo+nkmY+JaA9cWlXoQkT5Bjf3Y/bumKQuUrnld
+	1zx18mwHJtmbyFUecT+k/o96T4baPyp7Wo5NQpF41sbSeIsRHTn86U+LDqehyv54RZubjljKi4I52
+	w/lGvymkzvmI3DYWGseQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIMO-0000000CcES-3Eyr;
-	Thu, 20 Mar 2025 16:03:08 +0000
+	id 1tvIMP-0000000CcFT-0kwq;
+	Thu, 20 Mar 2025 16:03:09 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIJy-0000000CbDg-26yY
+	id 1tvIJy-0000000CbDe-2637
 	for linux-phy@lists.infradead.org;
 	Thu, 20 Mar 2025 16:00:40 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id EE90D146B;
-	Thu, 20 Mar 2025 16:58:52 +0100 (CET)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id C4DC211D9;
+	Thu, 20 Mar 2025 16:58:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1742486333;
-	bh=3CN4uj1iCwxXdJquhx40R2NHzb/pS+FOmacXJwz76L8=;
+	s=mail; t=1742486332;
+	bh=c1oUALt2KZgajaeiEy/9OAK/9/j14NZ5nS73HsxdZOA=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=RKH8u5aSXVWsTLqp/iq+B2eLlGuIKtp8yp6U8d9FdFOWASpbjUHjrHLqHbSitf13P
-	 ACOJSC1bGA2okVuZQOt/zqy6jTFhkE4W35LsmBV2w0t6dz/pGrYD4C0/iaB0eCAU96
-	 Li151bvaXHLJIBmy2f8ssdfo5zyXtTmXO9MD2vgQ=
+	b=CzsG3UQ3P+BFjeqjvNttXI1wQZV9UVcYua46Bv9y5moC+fnyiWZ2m+E0BM8LyWkNL
+	 0nVmHfF3YZ9jLMVFVNv/2ah4mRPmajdqUA1ycz+yoXL6Sop+eMvPqZopiG/2aQfztF
+	 mayEFlT4oW4VvMl3wWcO8Ls3xikcnGupsww8ools=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Thu, 20 Mar 2025 18:00:01 +0200
-Subject: [PATCH 06/18] drm/bridge: cdns-dsi: Adjust mode to negative syncs
+Date: Thu, 20 Mar 2025 18:00:00 +0200
+Subject: [PATCH 05/18] phy: cdns-dphy: Remove leftover code
 MIME-Version: 1.0
-Message-Id: <20250320-cdns-dsi-impro-v1-6-725277c5f43b@ideasonboard.com>
+Message-Id: <20250320-cdns-dsi-impro-v1-5-725277c5f43b@ideasonboard.com>
 References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 In-Reply-To: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -59,27 +59,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1357;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2173;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=3CN4uj1iCwxXdJquhx40R2NHzb/pS+FOmacXJwz76L8=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuYyWm6CSFiIS3732epB8+j6o1f/O1a2vr9q
- I8LpGvZRp6JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7mAAKCRD6PaqMvJYe
- 9RGwD/9Qoue7FFcb2i00+wCg7odetrkFYOyeaQHLPdbNDLKZk/WvAoAgmExwsuKA75iHSToZIHT
- wtbt+HK1lSzRyzJiiHD53qzqdmcEilVvroRWPXszOSiqNkGZX+vgK1IW2OR2wuPYWuVelmYP7Q9
- E2NUB+Iv1l/0jFV5nxRrxxadhwxPCwlAvV3VLuKPdIbPfQGi5pQXuDlRTRrRFpJ9cxqDLS6P8Dg
- jrn0DbByZPGh78x4i8DAIHhoHr//yxkL58FM/GPHB8ZiZ8QHZrwYLkB0pTZ5jdNoYS1Lo60Qtg/
- pjY4/sih/rgu36wcpTWvQjsiU0n0TkIbCfnvON1eK+DtMX+E79X2D5ipqg3RYbPPIWyuqMIJNmA
- kwgJcV+EAaHEaXMSTa38ZeZuf8PglWSOXzjQZhQojFR3qTJsukMCHJI8lqTLuFpOMUvLropA2p6
- k89FXwEg5BuWw9Am4QJt3Xc7F0A9NvFX+wqWMf5d9L5IW9CkoCuRvRYlu1MI4TBBy8oGDPvXMwN
- 84GFr6sJQ4EQqpXlGU1/9NVZ0J5IjCGn6PbWMJls1Z3sUzoMDTvOXVnaLY3IoVvD95HMRJvleBF
- P08a+5NTQtp6a346g1+szlRa8czlRaiL9D83lxz79+qM7gHGNog5bpC3fUCFjccrpp8PBE54nJ3
- HzU7PtRpKTK8gbA==
+ bh=c1oUALt2KZgajaeiEy/9OAK/9/j14NZ5nS73HsxdZOA=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuXfrbZgb5HrB7SFJHZvRCd5XaWzMnIWXgYf
+ iBzaJo2AZaJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lwAKCRD6PaqMvJYe
+ 9QYnD/9SaANQrGkZJO7Zmwlo0W7xTjRHCWOhTeqcEynVVwMAO+RVr0kriNrx5BwgX6n+YAtJv6o
+ RT70WTwbL4JWMjhRLvsPkyXU6qrURFb/B3NEzVPkQRBfn8CTY5ZQ+YOHlQj2pig5U7gOVhrvWHU
+ frqxUuO7DcNFF9C4LeMH6jn49tAYjU3qpkOxuRFcUt3oAZRAIDbMUhM0VTIpFQiMF9RncNysBNC
+ JAYul/Uk7YN83kA8ghEWZBJqYanUlpALW2slT7VH6T7gEMQhxhs44NjVO3SAccOS9nHdGgMQt2Q
+ IHsksmPUGQvhTNJxZGMogeBLnJKJztkhRstSn0AYqcyGjOkVM2vkSVXfGyN1V8KJC/XKd6hrNuR
+ EM8jujdmT9FW2eDPWRagHRQEQiPX+1wZhCJHKeHv2+l80JNiWBRwnNGJ8MNp10DNgI3B94fy+0Y
+ Fd51034Ze7gBiej00SmxqhX6CMW37U/a+ORgFUGKW+bO3GjMTnP/hkYqsI6MRaNWxG3B/Yt+F/D
+ FErSRtSNFvEbqOYIW/8Vfqvu7MxJGlUq50uYo24RnQ+l91eykgZ3eleigcx3M0e16Yl+BHDlQAT
+ E6jkzLLd66EKOGbSOeu2vgqYBez8E+GbmuG2PN/YPzWje7F26fsIimCTLUE8CkudCzFeJLIJGa/
+ jEuKCgGoINUTRtQ==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_090038_698880_8F536454 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250320_090038_707435_21498FF8 
+X-CRM114-Status: GOOD (  11.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,34 +95,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Cadence DSI requires negative syncs from the incoming video signal,
-but at the moment that requirement is not expressed in any way. If the
-crtc decides to use positive syncs, things break down.
-
-Use the adjusted_mode in atomic_check to set the sync flags to negative
-ones.
+The code in cdns-dphy has probably been part of a DSI driver in the
+past. Remove DSI defines and variables which are not used or do not
+actually do anything. Also rename cdns_dsi_get_dphy_pll_cfg() to
+cdns_get_dphy_pll_cfg(), i.e. drop the "dsi", as it's not relevant here.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/phy/cadence/cdns-dphy.c | 19 ++++---------------
+ 1 file changed, 4 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 8a320bd4d34d..53322407c1b0 100644
---- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-+++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -992,6 +992,11 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
- 	struct cdns_dsi_bridge_state *dsi_state = to_cdns_dsi_bridge_state(bridge_state);
- 	const struct drm_display_mode *mode = &crtc_state->mode;
- 	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
-+	struct drm_display_mode *adjusted_crtc_mode = &crtc_state->adjusted_mode;
-+
-+	/* cdns-dsi requires negative syncs */
-+	adjusted_crtc_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
-+	adjusted_crtc_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
+diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+index f79ec4fab409..7f8b70ec10c5 100644
+--- a/drivers/phy/cadence/cdns-dphy.c
++++ b/drivers/phy/cadence/cdns-dphy.c
+@@ -55,14 +55,6 @@
+ #define DPHY_PSM_CFG_FROM_REG		BIT(0)
+ #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
  
- 	return cdns_dsi_check_conf(dsi, mode, dsi_cfg, false);
- }
+-#define DSI_HBP_FRAME_OVERHEAD		12
+-#define DSI_HSA_FRAME_OVERHEAD		14
+-#define DSI_HFP_FRAME_OVERHEAD		6
+-#define DSI_HSS_VSS_VSE_FRAME_OVERHEAD	4
+-#define DSI_BLANKING_FRAME_OVERHEAD	6
+-#define DSI_NULL_FRAME_OVERHEAD		6
+-#define DSI_EOT_PKT_SIZE		4
+-
+ #define DPHY_TX_J721E_WIZ_PLL_CTRL	0xF04
+ #define DPHY_TX_J721E_WIZ_STATUS	0xF08
+ #define DPHY_TX_J721E_WIZ_RST_CTRL	0xF0C
+@@ -117,10 +109,9 @@ static const unsigned int tx_bands[] = {
+ 	870, 950, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2500
+ };
+ 
+-static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
+-				     struct cdns_dphy_cfg *cfg,
+-				     struct phy_configure_opts_mipi_dphy *opts,
+-				     unsigned int *dsi_hfp_ext)
++static int cdns_get_dphy_pll_cfg(struct cdns_dphy *dphy,
++				 struct cdns_dphy_cfg *cfg,
++				 struct phy_configure_opts_mipi_dphy *opts)
+ {
+ 	unsigned long pll_ref_hz = clk_get_rate(dphy->pll_ref_clk);
+ 	u64 dlane_bps;
+@@ -289,15 +280,13 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+ 				      struct cdns_dphy_cfg *cfg)
+ {
+ 	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+-	unsigned int dsi_hfp_ext = 0;
+ 	int ret;
+ 
+ 	ret = phy_mipi_dphy_config_validate(opts);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = cdns_dsi_get_dphy_pll_cfg(dphy, cfg,
+-					opts, &dsi_hfp_ext);
++	ret = cdns_get_dphy_pll_cfg(dphy, cfg, opts);
+ 	if (ret)
+ 		return ret;
+ 
 
 -- 
 2.43.0
