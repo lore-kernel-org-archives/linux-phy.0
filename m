@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01C6FC36007
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 878EAC36008
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=77EVB8dNqc5cppwMV5LG/Nvdp0UPZaCmLVR4TWL0iqc=; b=DlYKV01kAphNoQ
-	k3t/xwyTrKO5zmmsqHBi/my8oE3lITsTcfYedJwG9jfLGoDUkt4dlbvLzLUywZLRR31lgsBiCSSaK
-	x0JgPt0uhPT0oJf4VxDC+ClO1ZwoK6/guM1RdiZds8BdSDtPvjl25C+UQrO1Ghk3SA8NqqS7H6qJe
-	3kCqq1CbwhRdZ6WiuaNyJ52NdjWeKvhhnTBe0cNTjomVXqOMTkntBJ7mXz2+mHw4y6vZRfkt+EMNS
-	kWSR4kZCBSnetpHOf9jJGKb3oocNJZNWy8+ZO+8WZxJGTm/banP6ExIDTgHaaW2+w2kAL9qrEb58E
-	qeg+uu5x44JCGtsmpd6w==;
+	List-Owner; bh=h89WJQZcVWa3pHogTdIjFi/p+QiEIWsTeJvpFp2+Iyo=; b=Wk+bsccPAGC3Hj
+	7D4yx8dOPAW0i9yZfx1Zt6sH4FvMtKTFermgsN044jvDh651r6mFlVVrPqYHJuorgwuJo+Yfogp1T
+	NmDLxhOLaBXyRjw8a9rzCN06ne9IWE6pJ2JBLmRcnP+sX76husUDc7i08lzNeTyIQfu3snV4Kp59i
+	l+XOpoHCC1It/ucGpSXJZSrrrCaSSDcUAjIstRl7Zriqq+7oNtPxDGKoi1MxRxtIRaPkuAlUH/dMe
+	x+qvlO36YdTqCw110Q7OYaHlfUiwLNe5SbySjL6AHmRNsffBzay7+2iCFOo8Wyrk7ZbtLep1N71wI
+	fpxeGHOr7SiLNGk0y6Lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIMR-0000000CcIr-0T36;
+	id 1tvIMR-0000000CcKo-3iXM;
 	Thu, 20 Mar 2025 16:03:11 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIK1-0000000CbGo-47uV
+	id 1tvIK3-0000000CbHf-0iaq
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Mar 2025 16:00:43 +0000
+	Thu, 20 Mar 2025 16:00:44 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6F923187B;
-	Thu, 20 Mar 2025 16:58:56 +0100 (CET)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 94CC8198A;
+	Thu, 20 Mar 2025 16:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1742486337;
-	bh=PM3qn/s33KHnLl3YvY8GLYvLdFsywv9G587wE6W8Bwk=;
+	s=mail; t=1742486338;
+	bh=terDw8VLDSycV/I6fcyF4BbvPpfjEASKJADXJuIxv/I=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=a2GD44YjfgYan56h/9MmD7/HfbWCIT+rsU0mi4dXgLdgncWmONx1Fqr/aE+gOca/1
-	 Sx3RaQfs+Us/MPZo3Gb57tNaFJ82EywRdwJCzW6hxRlIcUkDzdj7sObkgYaUaWq+99
-	 BpRB0AkUMpsFnQJDoak80OGloewv+Eyfkhmn2ABg=
+	b=gWpS68SdlnTAhThXUWyhBC1sOU9As+/9lFtpxjZCMcM/AnAJ8huFBtufPe/HVRFwe
+	 SgY3JfLAGbpRsuwhQ/s9Qas2CjG1V5JzMHaQ1VButDPmpCdD4luARWBQBFn2Kh9zLA
+	 spx6TTXgMB2EMIXMCm0UZxZJu4DCAc556/E0glL0=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Thu, 20 Mar 2025 18:00:04 +0200
-Subject: [PATCH 09/18] drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
+Date: Thu, 20 Mar 2025 18:00:05 +0200
+Subject: [PATCH 10/18] drm/bridge: cdns-dsi: Fix event mode
 MIME-Version: 1.0
-Message-Id: <20250320-cdns-dsi-impro-v1-9-725277c5f43b@ideasonboard.com>
+Message-Id: <20250320-cdns-dsi-impro-v1-10-725277c5f43b@ideasonboard.com>
 References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 In-Reply-To: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -59,26 +59,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1914;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2987;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=PM3qn/s33KHnLl3YvY8GLYvLdFsywv9G587wE6W8Bwk=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuZloA+exiVEum1Q6IiqSYRfYHq0oMCRsYYe
- 0Ewlqz9wMSJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7mQAKCRD6PaqMvJYe
- 9aG3EACZaRefFebSDtsTRi5sPJx//iUij0iLw0822RCYY/BLgg2ClMcNAcgZN/d8e7ezSqsXqcM
- iptPCOsHKggzQGtZ9ZnRZeng3Ie+rmb/BsqpKBiOuwWtsOGJfrt6GWoE93nm8ZkPqyyKSCdDqIk
- jTHniVzGMwrKEd2gTkox26qG1MECgmpeO8XFhSXft4B2BGu+/ZQrP7aC9cFZ/0RhAhxn6wVstFY
- BDDGGIDKIMd6tdIBD5z1xG1LzbeCuSprHUNMdKhQ2TCTXFG7lB83uLO493ZIrVNryYwgEqk3Fj/
- x2pFS2vFeVCf1aHMcGWb56QsTiWMEWC+5OsrL8E3kIxS5WO71VTk68Hc7NuIDBqWv4z6OQxx598
- TSOSDvwrQ6rGD8M2W0XDi8W4SVcKAIJK9V+hSDJjrpRLtishgFS0GLui5DDhaJEDXCqua04zJv2
- 2I1tD58/5OrRydynC+7jdAAB1BD5OocNpBNGFcKtEBqsNWfovxNRA6dFSAVS218C3NiFVNk5SEY
- 58Wxd/rGARUmVTnHCTFNWK+MDf9FXGzBnX6yS23JNyJCgtkcK7qfyN8+85zwH0+7R3yJlGP+5D9
- PoMI9auXgGutPJymhWGUsHxI+tT+/0ufJqKkfkZAyOA5q5viCH2k1ZIUFUORtmnlWuMfzg50/Ps
- jawDxvJJpfUYppw==
+ bh=terDw8VLDSycV/I6fcyF4BbvPpfjEASKJADXJuIxv/I=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuZkHnzR/F8F8Ug9BlIx5Si+wdF0XuGnWHqi
+ ACEvI5opwGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7mQAKCRD6PaqMvJYe
+ 9SYjEACnDKiS2EnDtKeTX1MpGReOU17c1E1CUXdq6S5Gz5f03HJFnSJ0aw22XXMtd4SFXDeiPXY
+ pmIKbXTXzfUX0s9JM4LEHCfqZuwjBVHUngjNB2fH1U0XV6NfKUkMyY7VnyJoEliEAy6qFvjRaxZ
+ URK7A6EJmtmCsnjxB2TXX9ysx/LY09kq6BtS7GY9NbtS2GZRmPNuzHwdMDv34MKaa8diXU20iGo
+ nnOSx2wsqqbYc6nfKPwZEqB4foDpykIkvFDwKv3Ol7KruA3X91xJIscm9rM+Yj8ePNhwJnAeiIj
+ rbrqxHEUkKJcOTknJxVSwgooaw0pLR2zcX984zvVssCgPlwlnObaTO7YAZ87VH7QNisrWH+89zI
+ 6zgTV/YxFFPRGdhMiEW5pFrKyObARUTAz65fcum9gdNl8UMXs3dTWQSLA7VfXlBM7OMx9IKnD7u
+ M6Dt8Qv5uJBaBSpIe4682gZzTmmPjDwqAfSmj3Gz6rpqiBDB/dZS/46wVad9Wk/IfE4Kqfr/gIS
+ NBjrdn3p9MIRmezk/KOM3hcUClJg7LfK6y9ItUeNqCSdm4s7uNJw6jaoDlPowPpTNDwqd5iKZS7
+ XdgPmEPG3aYxcGRMdABr7CUIrvpPVrZe6Cm6+KZzoaIc+JqS+iSO/xtfntxEc0dpnqvjY8oUTmS
+ 20k4+VK354F8RcA==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_090042_176229_F92BCC85 
-X-CRM114-Status: GOOD (  15.33  )
+X-CRM114-CacheID: sfid-20250320_090043_391564_BF60A947 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,47 +95,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver tries to calculate the value for REG_WAKEUP_TIME. However,
-the calculation itself is not correct, and to add on it, the resulting
-value is almost always larger than the field's size, so the actual
-result is more or less random.
-
-According to the docs, figuring out the value for REG_WAKEUP_TIME
-requires HW characterization and there's no way to have a generic
-algorithm to come up with the value. That doesn't help at all...
-
-However, we know that the value must be smaller than the line time, and,
-at least in my understanding, the proper value for it is quite small.
-Testing shows that setting it to 1/10 of the line time seems to work
-well. All video modes from my HDMI monitor work with this algorithm.
-
-Hopefully we'll get more information on how to calculate the value, and
-we can then update this.
+The timings calculation gets it wrong for DSI event mode, resulting in
+too large hbp value. Fix the issue by taking into account the
+pulse/event mode difference.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 33 ++++++++++++++++++--------
+ 1 file changed, 23 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 0aaa1d06b21c..62811631341b 100644
+index 62811631341b..9797e6faa29d 100644
 --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -882,7 +882,13 @@ static void cdns_dsi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
+@@ -417,7 +417,8 @@
+ #define DSI_OUTPUT_PORT			0
+ #define DSI_INPUT_PORT(inputid)		(1 + (inputid))
  
- 	tx_byte_period = DIV_ROUND_DOWN_ULL((u64)NSEC_PER_SEC * 8,
- 					    phy_cfg->hs_clk_rate);
--	reg_wakeup = (phy_cfg->hs_prepare + phy_cfg->hs_zero) / tx_byte_period;
+-#define DSI_HBP_FRAME_OVERHEAD		12
++#define DSI_HBP_FRAME_PULSE_OVERHEAD	12
++#define DSI_HBP_FRAME_EVENT_OVERHEAD	16
+ #define DSI_HSA_FRAME_OVERHEAD		14
+ #define DSI_HFP_FRAME_OVERHEAD		6
+ #define DSI_HSS_VSS_VSE_FRAME_OVERHEAD	4
+@@ -503,12 +504,18 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+ 
+ 	bpp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
+ 
+-	dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp + (sync_pulse ? 0 : dpi_hsa),
+-					 bpp, DSI_HBP_FRAME_OVERHEAD);
++	if (sync_pulse) {
++		dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp, bpp,
++						 DSI_HBP_FRAME_PULSE_OVERHEAD);
+ 
+-	if (sync_pulse)
+-		dsi_cfg->hsa =
+-			dpi_to_dsi_timing(dpi_hsa, bpp, DSI_HSA_FRAME_OVERHEAD);
++		dsi_cfg->hsa = dpi_to_dsi_timing(dpi_hsa, bpp,
++						 DSI_HSA_FRAME_OVERHEAD);
++	} else {
++		dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp + dpi_hsa, bpp,
++						 DSI_HBP_FRAME_EVENT_OVERHEAD);
 +
-+	/*
-+	 * Estimated time [in clock cycles] to perform LP->HS on D-PHY.
-+	 * It is not clear how to calculate this, so for now,
-+	 * set it to 1/10 of the total number of clocks in a line.
-+	 */
-+	reg_wakeup = dsi_cfg.htotal / nlanes / 10;
- 	writel(REG_WAKEUP_TIME(reg_wakeup) | REG_LINE_DURATION(tmp),
- 	       dsi->regs + VID_DPHY_TIME);
++		dsi_cfg->hsa = 0;
++	}
  
+ 	dsi_cfg->hact = dpi_to_dsi_timing(dpi_hact, bpp, 0);
+ 
+@@ -532,9 +539,12 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+ 	unsigned int dsi_hfp_ext;
+ 	unsigned int lanes = output->dev->lanes;
+ 
+-	dsi_htotal = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
+-	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
++	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
++		dsi_htotal = dsi_cfg->hbp + DSI_HBP_FRAME_PULSE_OVERHEAD;
+ 		dsi_htotal += dsi_cfg->hsa + DSI_HSA_FRAME_OVERHEAD;
++	} else {
++		dsi_htotal = dsi_cfg->hbp + DSI_HBP_FRAME_EVENT_OVERHEAD;
++	}
+ 
+ 	dsi_htotal += dsi_cfg->hact;
+ 	dsi_htotal += dsi_cfg->hfp + DSI_HFP_FRAME_OVERHEAD;
+@@ -607,9 +617,12 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+ 		return -EINVAL;
+ 	}
+ 
+-	dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
+-	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
++	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
++		dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_PULSE_OVERHEAD;
+ 		dsi_hss_hsa_hse_hbp += dsi_cfg->hsa + DSI_HSA_FRAME_OVERHEAD;
++	} else {
++		dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_EVENT_OVERHEAD;
++	}
+ 
+ 	/*
+ 	 * Make sure DPI(HFP) > DSI(HSS+HSA+HSE+HBP) to guarantee that the FIFO
 
 -- 
 2.43.0
