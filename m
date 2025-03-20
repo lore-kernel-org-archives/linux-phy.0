@@ -4,49 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9B99C36007
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D20F2C35FFF
 	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6i6jDnx7lgn5ScuLbnC3uUj/vH0gUUOfR1OGUu3e4+I=; b=pT3fArSO4BI3/Q
-	ptsqhBDe/f0wnBuT7HOzQVUurRzUykR8zEOxtI5w5rnQE3PD4et6p3KXp6Jd9RN8LTD1GvcBXX4WN
-	vXgiKmoVyUS2sm2DxGRgWhilsIJ80OIQkXRgGKqJEYUbFc41SIwIpMkBH+sx59pwrsR6HHmKrAtHI
-	QqTmUkcGY6DF6vRtFkFlSYJ+xSs8VbQHIecCosMaS0ujZbHVudRr0mNqqPoUEalbRA+VsJpxNtx+g
-	7/dqhhf+aEheWcntyhFXpukANUZtVv/ykxfLaZr7yp1P3pML8OmwOdKNze+Zl/c2GkluVUVUP8SXW
-	N+xOJOQiDPnNOQS/nEWQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sJvI34xiFjRXVlrRx0CfhPncbxfVw9QzOIS8v8AAplw=; b=D38GzWzPsneewb
+	yiP4UfVGpNfYWyLG4rWaWSrBJrpryqnCHUuiS4fGEee4VO977YZKVLt5aMV/gCRHl8jAhYf+qP0Yz
+	+g1lsR5jTO6aQXqG0In+nNP2QG6Z4XYyQVaOL+71VUj2pR7XVp/Ree3TRaesyBDgTpDHowxCrQBo1
+	dvNvny7/IN+Wqt6JykVvxloMlgr3uQ0WK7CUUBELII5wQZjGL4PKH6zX2KyGhPbYC5P+NdhSaeBCE
+	4krFXPFxMipwGPTKmGaHSEXAYI5KjX8CIAIi+/09ABrBe+O4ZFozwlSaK2uKIS2mw1mjelR766KeM
+	NR0ft4Aku70iFWttp+AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIMM-0000000Cc9o-1rsJ;
-	Thu, 20 Mar 2025 16:03:06 +0000
+	id 1tvIML-0000000Cc8r-3hcz;
+	Thu, 20 Mar 2025 16:03:05 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIJv-0000000CbBd-3OUa
+	id 1tvIJv-0000000CbBj-42g1
 	for linux-phy@lists.infradead.org;
 	Thu, 20 Mar 2025 16:00:37 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0B916743;
-	Thu, 20 Mar 2025 16:58:45 +0100 (CET)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5633BA98;
+	Thu, 20 Mar 2025 16:58:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1742486327;
-	bh=lSyopKruZvmWIQmZ7p24moYnW97sugfhmwKElLeEU/Q=;
-	h=From:Subject:Date:To:Cc:From;
-	b=AI38E/CjQ6vKKm0uRFJnelHpS++zAm9FBjwkLQm067nMlBN8BbbohkFj1JdzU8kw8
-	 d+KvTK1Std1ZcOj2rqw73Z6YQuu796YNCm+qaFiPZPLV+RP2GAFXXV+Ka9rS3SvDoe
-	 Sr1SW2zqTsXr+1PLFmd3VE2a0iu7UFWVzYnWjfM8=
+	s=mail; t=1742486329;
+	bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=T5Vls0GFxnPD5hn1unW34oSBxrMO4OhNp9j7+A6Cd/7trv98Dlxt18y3spIQ/h0i7
+	 OrNwM13+SUvs/qwg4Bu91rsBZ6ltlm6QJ3rLP7Q8en7StCMqAq22FDMzAExbVc4o/6
+	 RfqhiV1GJzDDtv4TQHxhYOohXdZeXjMira+mO67c=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: [PATCH 00/18] drm/bridge: cdns-dsi: Make it work a bit better
-Date: Thu, 20 Mar 2025 17:59:55 +0200
-Message-Id: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
+Date: Thu, 20 Mar 2025 17:59:57 +0200
+Subject: [PATCH 02/18] drm/tidss: Use the crtc_* timings when programming
+ the HW
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAH073GcC/yWOwW7CMBBEfyXyuY7ijR1sTv2PisPau2lWahKwA
- wIh/h03HN9I82aeqnAWLurYPFXmmxRZlwrmq1FpwuWXtVBlBR24rodOJ1qKpiJa5nNedU9+jHT
- w1pNRtXTOPMp9F/6cPpz5cq3e7ROqmUvB3XtsdivAYJwD8K0bLPigjcaMND2wjRNugt9/slzvL
- fHtfyFiYZ3WeZat/uwGOxBhgmAOsTcpeJd4HDu2wUOygCEFsFGdXq83VsiLNewAAAA=
-X-Change-ID: 20250320-cdns-dsi-impro-3d8fbd7848d1
+Message-Id: <20250320-cdns-dsi-impro-v1-2-725277c5f43b@ideasonboard.com>
+References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
+In-Reply-To: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
@@ -62,26 +60,27 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3532;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2447;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=lSyopKruZvmWIQmZ7p24moYnW97sugfhmwKElLeEU/Q=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuQitCmeAn1z5CKfMvn9KlKyHrqUimYENrj9
- FzRaAvEFdGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7kAAKCRD6PaqMvJYe
- 9Y56D/0Z+Q6zQ7cSoyEqQcuuqAgQ308kt5ZtP2h0r9qur2lkI9ipQMvoyYMbIsIFYvWGS9ZQGUA
- 7O0zLFBoJLmMa14GF9xLR6FFQdgRsXTqRLUNJQ30O9NUyk0EmujbQtsB1EvfaJvrLwNUaQ1bIgY
- d6u5hlf7HdSAIxx8EHyyRFCYo8bDto92xtwD0xw6keeJ71nZdPnUjxdI9SVk6U6LVZGo71fgp5e
- lexn1GbPu7uqYiV+YzG+for7LCxi9nmZAbSQ+OjRoJa88Xc9ovIqEpiM8O6YUjavDRCl0sCDgMu
- fugFiTuB3Xdx8LeHhXza1wmzMr6ltDXjHyXeJ5xyG1+dctXk5/O6t8PkUE3W+iCEtSwSgdPGWrj
- AnzR5FL6O3jLtqjl0gxh6s4ME+APRzi3r8/Ko1TejoWgLJbs/I3zJWCD+DlxV1ExNW2wqmKd0K6
- 07ivamlcP3D74qc+4MCHmxX2jaSTUx9Q1+77bhkJnvZiBnXhKLRCrKV7AmSZ7u4En1mkLi4Tem/
- rfI/KO1z3u31iOBQDC+ch/LRbfMGTtoJ+raTNLr62FZnDwAPhY9tLlnmQB/U3UsugW16/UX2cL8
- yS/iSw22o9WXwarlPxeQtbW4JjuVxEZw4sx6+rUL71MklZxXYVF8Xko9n/rHBlXpib234DMDPlS
- ovszSeior+ZZiHw==
+ bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuWAhb6U3BLt5lLhsPChcq8E4oZSETUJXSx5
+ z12mq0p56KJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lgAKCRD6PaqMvJYe
+ 9Th3EACjcrw6JZ9VPnH9olNkIpUQhmsh0DkbdGgOZ2y8ivDMJb390ebjUjcycXeJzVAwa11yzjv
+ ARnz9GkQYtX1PSm6EMaxo6GvwryU4NcgJYUbeQvL8ZIRcYhggMFmIFOih5Xwor3BjRPg5tn2oMG
+ 67zYVSK9YdQ3JnTmEWXyzSo164E8/nhJRoWz4/28U8ywqbeAWrBImTxgsPcP4D95I74h+bmdMe3
+ qov6INwon7Bgg85T+1DEyXjcjZWjGenn7gXSJIqgjr6x8KX2KIC3ObutCIMuKXq4KuZdBvB4KFn
+ tBlgqVWeJYXXaxTfRLgKvYVF5QE8HcOA3QJO1IdjNVAkJ7kdpWOxt0G6w/JdI5XFP5gLusf4eA4
+ fP6bDH7iGRh4FLnzzYBC2CN6hVo1I2SQeygB8ZXJiTCa1ULxtJMwUpan/MlqfnmBaSZeRFqsjtU
+ 1X1C+hZE/HKKon9Mx/GXPb64iHJfvAc1Nc+bX/9+baLDDjdAtOGoyXBcDRwBseUV8e+v1+0cmjw
+ E6Et+9k44cpM9Dj9G2ppuF3lNjMtyYhCuceqzmu2DUrCF51U1ZPMdhz3YX6LG0bUlsiHwC6UfFc
+ 8uIdeiCbMnT6+m/B8SdTag2o0UoMxWtT7+7MSTLAH0DAZv/0L9/plFbDBbXQ+om+MdZNwy4lD+f
+ DhEeFcQOT4L1Jkw==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_090035_996639_0D7D79F9 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20250320_090036_148227_AA1AE056 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,76 +97,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While trying to get the cdns-dsi to work on Toradex's AM69 Aquila
-platform, I hit multiple issues in the driver. Basicaly nothing worked
-for with the board.
-
-This series fixes those issues. While I itch to make much larger changes
-to the cdns-dsi driver, I opted to keep this series relatively simple to
-make the fixes more clear and possibly help with backporting.
-
-The series also touches tidss, but those changes are not strictly
-needed, and can be merged separately. And the series also touches
-cdns-dphy, and those changes are needed.
-
-This has been tested on Toradex AM69 Aquila, with:
-- HDMI output using lontium lt8912b
-- LVDS panel (sn65dsi84 + panel-lvds)
-
- Tomi
+Use the crtc_* fields from drm_display_mode, instead of the "logical"
+fields. This shouldn't change anything in practice, but afaiu the crtc_*
+fields are the correct ones to use here.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
-Tomi Valkeinen (18):
-      drm/tidss: Fix missing includes and struct decls
-      drm/tidss: Use the crtc_* timings when programming the HW
-      drm/tidss: Add mode_fixup to adjust the clock based on HW
-      phy: cdns-dphy: Store hs_clk_rate and return it
-      phy: cdns-dphy: Remove leftover code
-      drm/bridge: cdns-dsi: Adjust mode to negative syncs
-      drm/bridge: cdns-dsi: Fail if HS rate changed when validating PHY config
-      drm/bridge: cdns-dsi: Clean up cdns_dsi_mode2cfg()
-      drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
-      drm/bridge: cdns-dsi: Fix event mode
-      drm/bridge: cdns-dsi: Remove broken fifo emptying check
-      drm/bridge: cdns-dsi: Drop checks that shouldn't be in .mode_valid()
-      drm/bridge: cdns-dsi: Do not use crtc_* values
-      drm/bridge: cdns-dsi: Use videomode internally
-      drm/bridge: cdns-dsi: Tune adjusted_mode->clock according to dsi needs
-      drm/bridge: cdns-dsi: Update htotal in cdns_dsi_mode2cfg()
-      drm/bridge: cdns-dsi: Drop cdns_dsi_adjust_phy_config()
-      drm/bridge: cdns-dsi: Don't fail on MIPI_DSI_MODE_VIDEO_BURST
+ drivers/gpu/drm/tidss/tidss_crtc.c  |  2 +-
+ drivers/gpu/drm/tidss/tidss_dispc.c | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
 
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 224 +++++++++++--------------
- drivers/gpu/drm/tidss/tidss_crtc.c             |  24 ++-
- drivers/gpu/drm/tidss/tidss_dispc.c            |  22 ++-
- drivers/gpu/drm/tidss/tidss_dispc.h            |   5 +
- drivers/gpu/drm/tidss/tidss_drv.h              |   2 +
- drivers/gpu/drm/tidss/tidss_plane.h            |   2 +
- drivers/gpu/drm/tidss/tidss_scale_coefs.h      |   2 +
- drivers/phy/cadence/cdns-dphy.c                |  24 +--
- 8 files changed, 158 insertions(+), 147 deletions(-)
----
-base-commit: 10646ddac2917b31c985ceff0e4982c42a9c924b
-change-id: 20250320-cdns-dsi-impro-3d8fbd7848d1
-prerequisite-message-id: 20250226155228.564289-1-aradhya.bhatia@linux.dev
-prerequisite-patch-id: 46845a8d15042dd343a29a17fc0b9d0eec2605f5
-prerequisite-patch-id: 7ce82c26cb9e18884492d2282a72ff2a760aefda
-prerequisite-patch-id: ec2071425cab81da72e0805ad92fc52731d7a24d
-prerequisite-patch-id: 32cde02288e0c36ed687f67778937a61f78b2d90
-prerequisite-patch-id: 5f302e2bead8994763699a909ad0b5501f09ed9f
-prerequisite-patch-id: 30611df6ef38c7872107d6bf6dde4504d46ab224
-prerequisite-patch-id: 99831bcaa13e25b957d83a6320f34bcec223b939
-prerequisite-patch-id: b0ad38bc6b323ceea7a1d2266b0fab8deaa6b05e
-prerequisite-patch-id: 38dbce2b9302a764be9dbdc551578f02d797dfcc
-prerequisite-patch-id: 133f8b1dab4f47d429b1924df981564ce3736233
-prerequisite-patch-id: 879c546693a53e4b72c1ee25954c894ae57a441f
-prerequisite-patch-id: 3e7edc818ac078a138f0e42e3f47fd685fffb84f
-prerequisite-patch-id: 673b9f0b1936b5a49973b71cab5d13774583de38
+diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
+index 94f8e3178df5..1604eca265ef 100644
+--- a/drivers/gpu/drm/tidss/tidss_crtc.c
++++ b/drivers/gpu/drm/tidss/tidss_crtc.c
+@@ -225,7 +225,7 @@ static void tidss_crtc_atomic_enable(struct drm_crtc *crtc,
+ 	tidss_runtime_get(tidss);
+ 
+ 	r = dispc_vp_set_clk_rate(tidss->dispc, tcrtc->hw_videoport,
+-				  mode->clock * 1000);
++				  mode->crtc_clock * 1000);
+ 	if (r != 0)
+ 		return;
+ 
+diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
+index cacb5f3d8085..a5107f2732b1 100644
+--- a/drivers/gpu/drm/tidss/tidss_dispc.c
++++ b/drivers/gpu/drm/tidss/tidss_dispc.c
+@@ -1084,13 +1084,13 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
+ 
+ 	dispc_set_num_datalines(dispc, hw_videoport, fmt->data_width);
+ 
+-	hfp = mode->hsync_start - mode->hdisplay;
+-	hsw = mode->hsync_end - mode->hsync_start;
+-	hbp = mode->htotal - mode->hsync_end;
++	hfp = mode->crtc_hsync_start - mode->crtc_hdisplay;
++	hsw = mode->crtc_hsync_end - mode->crtc_hsync_start;
++	hbp = mode->crtc_htotal - mode->crtc_hsync_end;
+ 
+-	vfp = mode->vsync_start - mode->vdisplay;
+-	vsw = mode->vsync_end - mode->vsync_start;
+-	vbp = mode->vtotal - mode->vsync_end;
++	vfp = mode->crtc_vsync_start - mode->crtc_vdisplay;
++	vsw = mode->crtc_vsync_end - mode->crtc_vsync_start;
++	vbp = mode->crtc_vtotal - mode->crtc_vsync_end;
+ 
+ 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_TIMING_H,
+ 		       FLD_VAL(hsw - 1, 7, 0) |
+@@ -1132,8 +1132,8 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
+ 		       FLD_VAL(ivs, 12, 12));
+ 
+ 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_SIZE_SCREEN,
+-		       FLD_VAL(mode->hdisplay - 1, 11, 0) |
+-		       FLD_VAL(mode->vdisplay - 1, 27, 16));
++		       FLD_VAL(mode->crtc_hdisplay - 1, 11, 0) |
++		       FLD_VAL(mode->crtc_vdisplay - 1, 27, 16));
+ 
+ 	VP_REG_FLD_MOD(dispc, hw_videoport, DISPC_VP_CONTROL, 1, 0, 0);
+ }
 
-Best regards,
 -- 
-Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+2.43.0
 
 
 -- 
