@@ -4,45 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D20F2C35FFF
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DF08C36009
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 16:03:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sJvI34xiFjRXVlrRx0CfhPncbxfVw9QzOIS8v8AAplw=; b=D38GzWzPsneewb
-	yiP4UfVGpNfYWyLG4rWaWSrBJrpryqnCHUuiS4fGEee4VO977YZKVLt5aMV/gCRHl8jAhYf+qP0Yz
-	+g1lsR5jTO6aQXqG0In+nNP2QG6Z4XYyQVaOL+71VUj2pR7XVp/Ree3TRaesyBDgTpDHowxCrQBo1
-	dvNvny7/IN+Wqt6JykVvxloMlgr3uQ0WK7CUUBELII5wQZjGL4PKH6zX2KyGhPbYC5P+NdhSaeBCE
-	4krFXPFxMipwGPTKmGaHSEXAYI5KjX8CIAIi+/09ABrBe+O4ZFozwlSaK2uKIS2mw1mjelR766KeM
-	NR0ft4Aku70iFWttp+AQ==;
+	List-Owner; bh=sMT0Oxm58ee/kvrYwSxVBLsfj7DPooOgf+YP6+tbTA4=; b=YtanzCb/pmXBGB
+	JQDKBfOa3NRnVgCMRLPt+8dAZrvf+HESHK/paYWX1LiZhRV1an9S3O//v3uVylEC/vMO8UwEUKO8L
+	GeJ2IYM/lnd20RsYV7/fsuGx41YQLTDAroFvWqFJE8HjutDgP7NvOvqTbTkZi2qvQTkjD6/6NG009
+	eQQwIcQccIF+eS8lTDXBTqFPrjH8TZqmy7Uqynq+9dP9RtiRJPqo8KcYRgVt12+kz8ulbbP1cLIcy
+	0Crre+wMDsvgjVKi8iXHOsp2p3JMWLofJkFflXqqyanZNviI+YWKSVVUAGy6aKX2QIserxXuByoGp
+	7qfBwIPaOADUqWgYJTjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIML-0000000Cc8r-3hcz;
-	Thu, 20 Mar 2025 16:03:05 +0000
+	id 1tvIMM-0000000CcAm-3Tuk;
+	Thu, 20 Mar 2025 16:03:06 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvIJv-0000000CbBj-42g1
+	id 1tvIJw-0000000CbBv-2D91
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Mar 2025 16:00:37 +0000
+	Thu, 20 Mar 2025 16:00:38 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5633BA98;
-	Thu, 20 Mar 2025 16:58:48 +0100 (CET)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9E655101F;
+	Thu, 20 Mar 2025 16:58:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1742486329;
-	bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
+	s=mail; t=1742486331;
+	bh=0rz+qtGwR8012ibx7Ol/9THyUm6cLrG8rh2vtI7MsMc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=T5Vls0GFxnPD5hn1unW34oSBxrMO4OhNp9j7+A6Cd/7trv98Dlxt18y3spIQ/h0i7
-	 OrNwM13+SUvs/qwg4Bu91rsBZ6ltlm6QJ3rLP7Q8en7StCMqAq22FDMzAExbVc4o/6
-	 RfqhiV1GJzDDtv4TQHxhYOohXdZeXjMira+mO67c=
+	b=NTHkmRqUive4W7hbO15NPmv0p227neoRU/cCyQS7KfcSKPoPhggNfo6lM2xwuWIKw
+	 oLHNwoIfHR+JoMXLy3xDGlXX7AowtxAaNBedntnyHF0+Cfylv23hpwZ8DgRM6tJFon
+	 YMHOmfbQbZQv2MOpRkQBtpEOF+b7GUIUlfnW6jms=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Thu, 20 Mar 2025 17:59:57 +0200
-Subject: [PATCH 02/18] drm/tidss: Use the crtc_* timings when programming
- the HW
+Date: Thu, 20 Mar 2025 17:59:59 +0200
+Subject: [PATCH 04/18] phy: cdns-dphy: Store hs_clk_rate and return it
 MIME-Version: 1.0
-Message-Id: <20250320-cdns-dsi-impro-v1-2-725277c5f43b@ideasonboard.com>
+Message-Id: <20250320-cdns-dsi-impro-v1-4-725277c5f43b@ideasonboard.com>
 References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 In-Reply-To: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -60,26 +59,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2447;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1212;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuWAhb6U3BLt5lLhsPChcq8E4oZSETUJXSx5
- z12mq0p56KJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lgAKCRD6PaqMvJYe
- 9Th3EACjcrw6JZ9VPnH9olNkIpUQhmsh0DkbdGgOZ2y8ivDMJb390ebjUjcycXeJzVAwa11yzjv
- ARnz9GkQYtX1PSm6EMaxo6GvwryU4NcgJYUbeQvL8ZIRcYhggMFmIFOih5Xwor3BjRPg5tn2oMG
- 67zYVSK9YdQ3JnTmEWXyzSo164E8/nhJRoWz4/28U8ywqbeAWrBImTxgsPcP4D95I74h+bmdMe3
- qov6INwon7Bgg85T+1DEyXjcjZWjGenn7gXSJIqgjr6x8KX2KIC3ObutCIMuKXq4KuZdBvB4KFn
- tBlgqVWeJYXXaxTfRLgKvYVF5QE8HcOA3QJO1IdjNVAkJ7kdpWOxt0G6w/JdI5XFP5gLusf4eA4
- fP6bDH7iGRh4FLnzzYBC2CN6hVo1I2SQeygB8ZXJiTCa1ULxtJMwUpan/MlqfnmBaSZeRFqsjtU
- 1X1C+hZE/HKKon9Mx/GXPb64iHJfvAc1Nc+bX/9+baLDDjdAtOGoyXBcDRwBseUV8e+v1+0cmjw
- E6Et+9k44cpM9Dj9G2ppuF3lNjMtyYhCuceqzmu2DUrCF51U1ZPMdhz3YX6LG0bUlsiHwC6UfFc
- 8uIdeiCbMnT6+m/B8SdTag2o0UoMxWtT7+7MSTLAH0DAZv/0L9/plFbDBbXQ+om+MdZNwy4lD+f
- DhEeFcQOT4L1Jkw==
+ bh=0rz+qtGwR8012ibx7Ol/9THyUm6cLrG8rh2vtI7MsMc=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn3DuXTm8DWstHYZiT7ZPCrlACEVpYsmjpJd3y0
+ QBj5ORV2oaJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ9w7lwAKCRD6PaqMvJYe
+ 9SfqEACCTF2FJTxSw7IUW/P5BnGlL122hDnWa1b6I1ygMVwlK1cebNYuFukf3/TCDcYm97s8Jry
+ KjoM6eJFPmYYFU5bma3NiWXEm8T9l9Li9PNUiUiwIAm6WE3JTvq9BBHQq537/wnu7j2VaFdpdn9
+ jsms8xLwSWfn4yCmuNciMZyzhmk08/+Z3vG0yg4E+prZv1MhpEiQ5OKK8aBFp5tE3rTZgtocDng
+ 4YUykJ5nJFStwPUNVXU1r5OaH+9Ik4DosCN9ZCTLe1YeZTWEcSaRmCAv/m6z9mFbkZ0rFlGxQ4N
+ tLlfjgEn4P6NQrM0wPi0zZydp83JDQ0v4UArB1JXicQrqbevP38/awJeiil9KGxbrf5GALMufQZ
+ xZ48R/Z0W4MJP3DNT2QpSL2+l1LG5Ubgg7hc7AfWyQLqVYnT+4em6vQ0TFhLCCKJhuI8izBJE7A
+ HmAn4wjTDiUu2dOxyTqR4JPP/Hwey4hjbW0OY0vwuLGNBgVI4UUs/3h/OxMGhB7NpyrQtYhOUW7
+ 1+f2CV8f+OEytONkN/LhWcf12yTc5sj7lUf947Tv+4AXaXoTpQw8zUF0Dymd0aVJkeOqxAm5+oG
+ y9Yr6wUuSZft2mH6Mrthrf9P+wDnIyzseOLPH1WwcPqCKdZY7GZapOtMeCMmdXrdSXAHrpOQt8n
+ ivgFaYXPhmmkMDg==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_090036_148227_AA1AE056 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20250320_090036_710839_DA0ABBC2 
+X-CRM114-Status: UNSURE (   9.74  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,64 +96,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use the crtc_* fields from drm_display_mode, instead of the "logical"
-fields. This shouldn't change anything in practice, but afaiu the crtc_*
-fields are the correct ones to use here.
+The DPHY driver does not return the actual hs_clk_rate, so the DSI
+driver has no idea what clock was actually achieved. Set the realized
+hs_clk_rate to the opts struct, so that the DSI driver gets it back.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/tidss/tidss_crtc.c  |  2 +-
- drivers/gpu/drm/tidss/tidss_dispc.c | 16 ++++++++--------
- 2 files changed, 9 insertions(+), 9 deletions(-)
+ drivers/phy/cadence/cdns-dphy.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
-index 94f8e3178df5..1604eca265ef 100644
---- a/drivers/gpu/drm/tidss/tidss_crtc.c
-+++ b/drivers/gpu/drm/tidss/tidss_crtc.c
-@@ -225,7 +225,7 @@ static void tidss_crtc_atomic_enable(struct drm_crtc *crtc,
- 	tidss_runtime_get(tidss);
+diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+index ed87a3970f83..f79ec4fab409 100644
+--- a/drivers/phy/cadence/cdns-dphy.c
++++ b/drivers/phy/cadence/cdns-dphy.c
+@@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
+ 	u8 pll_ipdiv;
+ 	u8 pll_opdiv;
+ 	u16 pll_fbdiv;
++	u32 hs_clk_rate;
+ 	unsigned int nlanes;
+ };
  
- 	r = dispc_vp_set_clk_rate(tidss->dispc, tcrtc->hw_videoport,
--				  mode->clock * 1000);
-+				  mode->crtc_clock * 1000);
- 	if (r != 0)
- 		return;
+@@ -154,6 +155,9 @@ static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
+ 					  cfg->pll_ipdiv,
+ 					  pll_ref_hz);
  
-diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
-index cacb5f3d8085..a5107f2732b1 100644
---- a/drivers/gpu/drm/tidss/tidss_dispc.c
-+++ b/drivers/gpu/drm/tidss/tidss_dispc.c
-@@ -1084,13 +1084,13 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
- 
- 	dispc_set_num_datalines(dispc, hw_videoport, fmt->data_width);
- 
--	hfp = mode->hsync_start - mode->hdisplay;
--	hsw = mode->hsync_end - mode->hsync_start;
--	hbp = mode->htotal - mode->hsync_end;
-+	hfp = mode->crtc_hsync_start - mode->crtc_hdisplay;
-+	hsw = mode->crtc_hsync_end - mode->crtc_hsync_start;
-+	hbp = mode->crtc_htotal - mode->crtc_hsync_end;
- 
--	vfp = mode->vsync_start - mode->vdisplay;
--	vsw = mode->vsync_end - mode->vsync_start;
--	vbp = mode->vtotal - mode->vsync_end;
-+	vfp = mode->crtc_vsync_start - mode->crtc_vdisplay;
-+	vsw = mode->crtc_vsync_end - mode->crtc_vsync_start;
-+	vbp = mode->crtc_vtotal - mode->crtc_vsync_end;
- 
- 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_TIMING_H,
- 		       FLD_VAL(hsw - 1, 7, 0) |
-@@ -1132,8 +1132,8 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
- 		       FLD_VAL(ivs, 12, 12));
- 
- 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_SIZE_SCREEN,
--		       FLD_VAL(mode->hdisplay - 1, 11, 0) |
--		       FLD_VAL(mode->vdisplay - 1, 27, 16));
-+		       FLD_VAL(mode->crtc_hdisplay - 1, 11, 0) |
-+		       FLD_VAL(mode->crtc_vdisplay - 1, 27, 16));
- 
- 	VP_REG_FLD_MOD(dispc, hw_videoport, DISPC_VP_CONTROL, 1, 0, 0);
++	cfg->hs_clk_rate = div_u64((u64)pll_ref_hz * cfg->pll_fbdiv,
++				   2 * cfg->pll_opdiv * cfg->pll_ipdiv);
++
+ 	return 0;
  }
+ 
+@@ -297,6 +301,7 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+ 	if (ret)
+ 		return ret;
+ 
++	opts->hs_clk_rate = cfg->hs_clk_rate;
+ 	opts->wakeup = cdns_dphy_get_wakeup_time_ns(dphy) / 1000;
+ 
+ 	return 0;
 
 -- 
 2.43.0
