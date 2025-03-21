@@ -4,77 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72EE5C35FF3
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 04:18:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C3D7C35FFF
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 09:10:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UZzSPFZrTMfbGO2x43h2Zv3Fzw0iViSmW/S75JSPX34=; b=kCSUW7SR7bhNQH
-	E7xqxL62ZloUvrTBIeOCJv9sqz8/nMUgpxBh4ecXvQ1LKLjPp4Ttb0PCSOBeUV3S4bAxaT0RPZSVF
-	Rguwt1RW41dCYPkTg2tnbyX1w0GP85yn+9cA+UQUT358uJGGiRHCpp1dma8cNrLzrCCZKI3KWip2X
-	eyS7PW+CSID5ZC0hXlan36F/7+QrdxuHEyHVL9Ws5/QMtdai4nhCWDh85hTkxYDXuJEu3Qg0BeClr
-	bL2/ax08l9yremO68FmndcVFLO+mIylGsXc8KLUqylfk4lCFZUf+u20CcIrWpSwxA2+PnIU+7llvB
-	3r0LNlr9X7hUUngrIyWQ==;
+	List-Owner; bh=tNrtiG4A/DWZgY4JDo1XL2gWAHkRwZAQHLjZQp4L15I=; b=OGL+HlsYEtuUkN
+	QF8pSoEZEDrOOeKx+2G3BvzjelO0fyfo4+1qRUa0+W6FhOuvRegv2DcLF3+Ea9JKH2Frx+JY6ExEi
+	WnjHSlIPCMtQAPu4pL+pgIJd6FQSQPT9dUMLsn1tqlQXDOuA+/p89gscgcWlubzpOCBNzWsyJqTSi
+	Jg4Lx/FsHBhNSlcgVmnaheO3hZ9Q+BYeZ9FxKLHn+Kw3uqRKKmIiwAFCmuZ6OxPBzQfkxxS+MNuXo
+	39tYqcb04ebzgWLQYZRK+g1/ZXfJZdqO5IP4hpiFk917aWXRXIo9m9S2Hs/LQM4tDd+PQX4DmlZgV
+	t5s+xVlqO0/ock8TThnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvTqE-0000000Do2Q-3gqO;
-	Fri, 21 Mar 2025 04:18:42 +0000
-Received: from out-71.smtpout.orange.fr ([193.252.22.71] helo=out.smtpout.orange.fr)
+	id 1tvYO7-0000000EKbx-40tq;
+	Fri, 21 Mar 2025 09:09:59 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvTqB-0000000Do1q-2Bh2
+	id 1tvYO5-0000000EKZO-0kKm
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 04:18:41 +0000
-Received: from [172.16.82.72] ([124.33.176.97])
-	by smtp.orange.fr with ESMTPA
-	id vTpqtuCVJpih5vTpvtXDey; Fri, 21 Mar 2025 05:18:29 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1742530710;
-	bh=RfTovQ5pBBPXl/sQntAxGWbDNnwENYAK9Bt2Ch93r58=;
-	h=Message-ID:Date:MIME-Version:Subject:To:From;
-	b=KxUvipl/mBH9mc3/+Jxp2x1493gZQeZOd7O1dWUrPtM6thSRht5eemzsz0bAhoVki
-	 UK6CTEtCyIr0B2njVsiL/Rbr4irCB0+2uOw5H+lalCF9jyZTppgCSLooDDJSUxSqiP
-	 KLwOa3oQaBRKfU1w7HcWDEh8qDV9uKdiX8SEa3TJYLNcfQMoUqnv/Y+c4nKoVmstXw
-	 QtOzdhj2FmatopgmqctXNjsEuD+W5CATzJW4ecmjZKK+YxcyTexp8CHwQ510jgHD3x
-	 Q85cTm7l4Tdfae2YGjxEcK0z2m8NKPbDmVd5zGOqFiHSeZzl8e/qDzEFkGwqSLiRK8
-	 h/GCI4MlrBSDQ==
-X-ME-Helo: [172.16.82.72]
-X-ME-Auth: bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI=
-X-ME-Date: Fri, 21 Mar 2025 05:18:30 +0100
-X-ME-IP: 124.33.176.97
-Message-ID: <7805e0db-7c17-438d-9985-f4feec644da6@wanadoo.fr>
-Date: Fri, 21 Mar 2025 13:18:18 +0900
+	Fri, 21 Mar 2025 09:09:58 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2C3F9A49845;
+	Fri, 21 Mar 2025 09:04:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 0C5A3C4CEEC;
+	Fri, 21 Mar 2025 09:09:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742548196;
+	bh=FkOn0IjuH79qFq1TeqcZzJ6FLwLXQqmZ+ZrnVIsRnKw=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=EGGkOQT4pxgTLka3uVyjX0TuGPhidEksXoPwE27siSo3s98R6u/H4aGamxRAJ2Zyl
+	 wCVB4xxbBS0U1MRlm0T6vbPDS4Pgb137zRCFOogZK6AfjugE2m0CIp3IvpWiJzWiMc
+	 gtIxjvvifZAr9m1SxuWKLNq4Z6Bkla8RdZioi3lqa6ArQtgOarFKw1rmj4GKH77vAj
+	 R7SRJG9K8evYVeuQikviWy67iXdITWJjSAn9eEZ1yHLoGvE9liWHIPiIySU4AE0sGG
+	 JNTq9VCxHZYQ8TckWacCDh9TGN3cNBfOop8qaUAOBnedI5VM6Oq7VxtdhB0dsfPW85
+	 0p3smKLtV7Vtg==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EF3D4C36007;
+	Fri, 21 Mar 2025 09:09:55 +0000 (UTC)
+From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
+Date: Fri, 21 Mar 2025 13:09:54 +0400
+Subject: [PATCH v5 5/6] arm64: dts: qcom: ipq5018: Add PCIe related nodes
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: can-transceiver: Re-instate "mux-states" property
- presence check
-To: Geert Uytterhoeven <geert+renesas@glider.be>,
- Rob Herring <robh@kernel.org>
-Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-renesas-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>,
- Aswath Govindraju <a-govindraju@ti.com>,
- Biju Das <biju.das.jz@bp.renesas.com>
-References: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
-Content-Language: en-US
-From: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
-Autocrypt: addr=mailhol.vincent@wanadoo.fr; keydata=
- xjMEZluomRYJKwYBBAHaRw8BAQdAf+/PnQvy9LCWNSJLbhc+AOUsR2cNVonvxhDk/KcW7FvN
- LFZpbmNlbnQgTWFpbGhvbCA8bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI+wrIEExYKAFoC
- GwMFCQp/CJcFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AWIQTtj3AFdOZ/IOV06OKrX+uI
- bbuZwgUCZx41XhgYaGtwczovL2tleXMub3BlbnBncC5vcmcACgkQq1/riG27mcIYiwEAkgKK
- BJ+ANKwhTAAvL1XeApQ+2NNNEwFWzipVAGvTRigA+wUeyB3UQwZrwb7jsQuBXxhk3lL45HF5
- 8+y4bQCUCqYGzjgEZx4y8xIKKwYBBAGXVQEFAQEHQJrbYZzu0JG5w8gxE6EtQe6LmxKMqP6E
- yR33sA+BR9pLAwEIB8J+BBgWCgAmFiEE7Y9wBXTmfyDldOjiq1/riG27mcIFAmceMvMCGwwF
- CQPCZwAACgkQq1/riG27mcJU7QEA+LmpFhfQ1aij/L8VzsZwr/S44HCzcz5+jkxnVVQ5LZ4B
- ANOCpYEY+CYrld5XZvM8h2EntNnzxHHuhjfDOQ3MAkEK
-In-Reply-To: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
+Message-Id: <20250321-ipq5018-pcie-v5-5-aae2caa1f418@outlook.com>
+References: <20250321-ipq5018-pcie-v5-0-aae2caa1f418@outlook.com>
+In-Reply-To: <20250321-ipq5018-pcie-v5-0-aae2caa1f418@outlook.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Nitheesh Sekar <quic_nsekar@quicinc.com>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-pci@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>, 
+ 20250317100029.881286-2-quic_varada@quicinc.com, 
+ Sricharan R <quic_srichara@quicinc.com>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1742548192; l=7376;
+ i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
+ bh=WAeuLjqK9NUk+ZyBqC1MGZazKF8I8F2kraQ/dHrYTKM=;
+ b=77Oey4DZWN86vNqNk+bHpDsFUC8f6mlP9aChh64D0BOmUkhHl7xENSBjeyZJzoIWUq39rwJdp
+ 2Q2sxmFzfnoCdLnqCn/xO3yIrJ8xH+OjFjI+YMDZaXjLdgfBtcX1bnn
+X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
+ pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
+X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
+ with auth_id=364
+X-Original-From: George Moussalem <george.moussalem@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_211839_965522_58B7B5B3 
-X-CRM114-Status: GOOD (  22.78  )
+X-CRM114-CacheID: sfid-20250321_020957_357961_1F72007F 
+X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,66 +94,291 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: george.moussalem@outlook.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjEvMDMvMjAyNSBhdCAwMDoxNSwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+IE9uIHRo
-ZSBSZW5lc2FzIEdyYXkgSGF3ayBTaW5nbGUgZGV2ZWxvcG1lbnQgYm9hcmQ6Cj4gCj4gICAgIGNh
-bi10cmFuc2NlaXZlci1waHkgY2FuLXBoeTA6IC9jYW4tcGh5MDogZmFpbGVkIHRvIGdldCBtdXgt
-c3RhdGUgKDApCj4gCj4gIm11eC1zdGF0ZXMiIGlzIGFuIG9wdGlvbmFsIHByb3BlcnR5IGZvciBD
-QU4gdHJhbnNjZWl2ZXJzLiAgSG93ZXZlciwKPiBtdXhfZ2V0KCkgYWx3YXlzIHByaW50cyBhbiBl
-cnJvciBtZXNzYWdlIGluIGNhc2Ugb2YgYW4gZXJyb3IsIGluY2x1ZGluZwo+IHdoZW4gdGhlIHBy
-b3BlcnR5IGlzIG5vdCBwcmVzZW50LCBjb25mdXNpbmcgdGhlIHVzZXIuCj4gCj4gRml4IHRoaXMg
-YnkgcmUtaW5zdGF0aW5nIHRoZSBwcm9wZXJ0eSBwcmVzZW5jZSBjaGVjayAodGhpcyB0aW1lIHVz
-aW5nCj4gdGhlIHByb3BlciBBUEkpIGluIGEgd3JhcHBlciBhcm91bmQgZGV2bV9tdXhfc3RhdGVf
-Z2V0KCkuICBXaGVuIHRoZQo+IG11bHRpcGxleGVyIHN1YnN5c3RlbSBnYWlucyBzdXBwb3J0IGZv
-ciBvcHRpb25hbCBtdXhlcywgdGhlIHdyYXBwZXIgY2FuCj4ganVzdCBiZSByZW1vdmVkLgo+IAo+
-IEluIGFkZGl0aW9uLCBwcm9wYWdhdGUgYWxsIHJlYWwgZXJyb3JzIHVwc3RyZWFtLCBpbnN0ZWFk
-IG9mIGlnbm9yaW5nCj4gdGhlbS4KCkkgd291bGQgbGlrZSB0byBoZWFyIFJvYidzIG9waW5pb24g
-b24gdGhpcy4gSW4gZDAyZGZkNGNlYjJlOWYzNCBSb2IKcHVycG9zZWx5IGNoYW5nZWQgdGhlIGZ1
-bmN0aW9uIHRvIGlnbm9yZSBlcnJvcnMgb3RoZXIgdGhhbiBFUFJPQkVfREVGRVIuCgpSaWdodCBu
-b3csIEkgZG8gbm90IHNlZSBhIHJlYXNvbiBub3QgdG8gcHJvcGFnYXRlIHRoZSBvdGhlciBlcnJv
-cnMsIHNvCknCoGFtIGluIGZhdm9yIG9mIHRoaXMgcm9sbCBiYWNrLiBCdXQgbWF5YmUgd2UgYXJl
-IG1pc3Npbmcgc29tZXRoaW5nPwoKT3RoZXJ3aXNlLCB0aGUgcGF0Y2ggbG9va3MgZ29vZCB0byBt
-ZS4gTmljZSBpbXByb3ZlbWVudCBvdmVyIHRoZSB2MS4gSQp3aWxsIHdhaXQgZm9yIFJvYidzIGNv
-bW1lbnQgdG8gZ2l2ZSBteSByZXZpZXcgdGFnLgoKPiBGaXhlczogZDAyZGZkNGNlYjJlOWYzNCAo
-InBoeTogY2FuLXRyYW5zY2VpdmVyOiBEcm9wIHVubmVjZXNzYXJ5ICJtdXgtc3RhdGVzIiBwcm9w
-ZXJ0eSBwcmVzZW5jZSBjaGVjayIpCj4gU2lnbmVkLW9mZi1ieTogR2VlcnQgVXl0dGVyaG9ldmVu
-IDxnZWVydCtyZW5lc2FzQGdsaWRlci5iZT4KPiAtLS0KPiBBbHRlcm5hdGl2ZWx5LCB0aGUgbXVs
-dGlwbGV4ZXIgc3Vic3lzdGVtIG5lZWRzIHRvIGdhaW4gc3VwcG9ydCBmb3IKPiBnZXR0aW5nIGFu
-IG9wdGlvbmFsIG11eC4uLgo+IAo+IHYyOgo+ICAgLSBBZGQgYW5kIHVzZSBkZXZtX211eF9zdGF0
-ZV9nZXRfb3B0aW9uYWwoKSwKPiAgIC0gTm8gZ2l2ZW4gdGFncyBhZGRlZCwgYXMgdGhlIG5ldyBz
-b2x1dGlvbiBpcyBkaWZmZXJlbnQuCj4gLS0tCj4gIGRyaXZlcnMvcGh5L3BoeS1jYW4tdHJhbnNj
-ZWl2ZXIuYyB8IDIyICsrKysrKysrKysrKysrKy0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDE1
-IGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L3BoeS1jYW4tdHJhbnNjZWl2ZXIuYyBiL2RyaXZlcnMvcGh5L3BoeS1jYW4tdHJhbnNjZWl2
-ZXIuYwo+IGluZGV4IDJiZWM3MDYxNTQ0OWY5NGQuLmY1OWNhZmY0YjNkNGMyNjcgMTAwNjQ0Cj4g
-LS0tIGEvZHJpdmVycy9waHkvcGh5LWNhbi10cmFuc2NlaXZlci5jCj4gKysrIGIvZHJpdmVycy9w
-aHkvcGh5LWNhbi10cmFuc2NlaXZlci5jCj4gQEAgLTkzLDYgKzkzLDE2IEBAIHN0YXRpYyBjb25z
-dCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIGNhbl90cmFuc2NlaXZlcl9waHlfaWRzW10gPSB7Cj4gIH07
-Cj4gIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGNhbl90cmFuc2NlaXZlcl9waHlfaWRzKTsKPiAg
-Cj4gKy8qIFRlbXBvcmFyeSB3cmFwcGVyIHVudGlsIHRoZSBtdWx0aXBsZXhlciBzdWJzeXN0ZW0g
-c3VwcG9ydHMgb3B0aW9uYWwgbXV4ZXMgKi8KPiArc3RhdGljIGlubGluZSBzdHJ1Y3QgbXV4X3N0
-YXRlICoKPiArZGV2bV9tdXhfc3RhdGVfZ2V0X29wdGlvbmFsKHN0cnVjdCBkZXZpY2UgKmRldiwg
-Y29uc3QgY2hhciAqbXV4X25hbWUpCj4gK3sKPiArCWlmICghb2ZfcHJvcGVydHlfcHJlc2VudChk
-ZXYtPm9mX25vZGUsICJtdXgtc3RhdGVzIikpCj4gKwkJcmV0dXJuIE5VTEw7Cj4gKwo+ICsJcmV0
-dXJuIGRldm1fbXV4X3N0YXRlX2dldChkZXYsIG11eF9uYW1lKTsKPiArfQo+ICsKPiAgc3RhdGlj
-IGludCBjYW5fdHJhbnNjZWl2ZXJfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBk
-ZXYpCj4gIHsKPiAgCXN0cnVjdCBwaHlfcHJvdmlkZXIgKnBoeV9wcm92aWRlcjsKPiBAQCAtMTE0
-LDEzICsxMjQsMTEgQEAgc3RhdGljIGludCBjYW5fdHJhbnNjZWl2ZXJfcGh5X3Byb2JlKHN0cnVj
-dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAltYXRjaCA9IG9mX21hdGNoX25vZGUoY2FuX3Ry
-YW5zY2VpdmVyX3BoeV9pZHMsIHBkZXYtPmRldi5vZl9ub2RlKTsKPiAgCWRydmRhdGEgPSBtYXRj
-aC0+ZGF0YTsKPiAgCj4gLQltdXhfc3RhdGUgPSBkZXZtX211eF9zdGF0ZV9nZXQoZGV2LCBOVUxM
-KTsKPiAtCWlmIChJU19FUlIobXV4X3N0YXRlKSkgewo+IC0JCWlmIChQVFJfRVJSKG11eF9zdGF0
-ZSkgPT0gLUVQUk9CRV9ERUZFUik+IC0JCQlyZXR1cm4gUFRSX0VSUihtdXhfc3RhdGUpOwo+IC0J
-fSBlbHNlIHsKPiAtCQljYW5fdHJhbnNjZWl2ZXJfcGh5LT5tdXhfc3RhdGUgPSBtdXhfc3RhdGU7
-Cj4gLQl9Cj4gKwltdXhfc3RhdGUgPSBkZXZtX211eF9zdGF0ZV9nZXRfb3B0aW9uYWwoZGV2LCBO
-VUxMKTsKPiArCWlmIChJU19FUlIobXV4X3N0YXRlKSkKPiArCQlyZXR1cm4gUFRSX0VSUihtdXhf
-c3RhdGUpOwo+ICsKPiArCWNhbl90cmFuc2NlaXZlcl9waHktPm11eF9zdGF0ZSA9IG11eF9zdGF0
-ZTsKPiAgCj4gIAlwaHkgPSBkZXZtX3BoeV9jcmVhdGUoZGV2LCBkZXYtPm9mX25vZGUsCj4gIAkJ
-CSAgICAgICZjYW5fdHJhbnNjZWl2ZXJfcGh5X29wcyk7CgpZb3VycyBzaW5jZXJlbHksClZpbmNl
-bnQgTWFpbGhvbAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+
+Add phy and controller nodes for a 2-lane Gen2 and
+a 1-lane Gen2 PCIe bus. IPQ5018 has 8 MSI SPI interrupts and
+one global interrupt.
+
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Signed-off-by: Sricharan R <quic_srichara@quicinc.com>
+Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+---
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi | 234 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 232 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+index 8914f2ef0bc4..d08034b57e80 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+@@ -147,6 +147,40 @@ usbphy0: phy@5b000 {
+ 			status = "disabled";
+ 		};
+ 
++		pcie1_phy: phy@7e000{
++			compatible = "qcom,ipq5018-uniphy-pcie-phy";
++			reg = <0x0007e000 0x800>;
++
++			clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
++
++			resets = <&gcc GCC_PCIE1_PHY_BCR>,
++				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
++
++			#clock-cells = <0>;
++			#phy-cells = <0>;
++
++			num-lanes = <1>;
++
++			status = "disabled";
++		};
++
++		pcie0_phy: phy@86000{
++			compatible = "qcom,ipq5018-uniphy-pcie-phy";
++			reg = <0x00086000 0x800>;
++
++			clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
++
++			resets = <&gcc GCC_PCIE0_PHY_BCR>,
++				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
++
++			#clock-cells = <0>;
++			#phy-cells = <0>;
++
++			num-lanes = <2>;
++
++			status = "disabled";
++		};
++
+ 		tlmm: pinctrl@1000000 {
+ 			compatible = "qcom,ipq5018-tlmm";
+ 			reg = <0x01000000 0x300000>;
+@@ -170,8 +204,8 @@ gcc: clock-controller@1800000 {
+ 			reg = <0x01800000 0x80000>;
+ 			clocks = <&xo_board_clk>,
+ 				 <&sleep_clk>,
+-				 <0>,
+-				 <0>,
++				 <&pcie0_phy>,
++				 <&pcie1_phy>,
+ 				 <0>,
+ 				 <0>,
+ 				 <0>,
+@@ -387,6 +421,202 @@ frame@b128000 {
+ 				status = "disabled";
+ 			};
+ 		};
++
++		pcie1: pcie@80000000 {
++			compatible = "qcom,pcie-ipq5018";
++			reg = <0x80000000 0xf1d>,
++			      <0x80000f20 0xa8>,
++			      <0x80001000 0x1000>,
++			      <0x00078000 0x3000>,
++			      <0x80100000 0x1000>,
++			      <0x0007b000 0x1000>;
++			reg-names = "dbi",
++				    "elbi",
++				    "atu",
++				    "parf",
++				    "config",
++				    "mhi";
++			device_type = "pci";
++			linux,pci-domain = <0>;
++			bus-range = <0x00 0xff>;
++			num-lanes = <1>;
++			max-link-speed = <2>;
++			#address-cells = <3>;
++			#size-cells = <2>;
++
++			phys = <&pcie1_phy>;
++			phy-names ="pciephy";
++
++			ranges = <0x01000000 0 0x00000000 0x80200000 0 0x00100000>,
++				 <0x02000000 0 0x80300000 0x80300000 0 0x10000000>;
++
++			msi-map = <0x0 &v2m0 0x0 0xff8>;
++
++			interrupts = <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7",
++					  "global";
++
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 142 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 143 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 144 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 145 IRQ_TYPE_LEVEL_HIGH>;
++
++			clocks = <&gcc GCC_SYS_NOC_PCIE1_AXI_CLK>,
++				 <&gcc GCC_PCIE1_AXI_M_CLK>,
++				 <&gcc GCC_PCIE1_AXI_S_CLK>,
++				 <&gcc GCC_PCIE1_AHB_CLK>,
++				 <&gcc GCC_PCIE1_AUX_CLK>,
++				 <&gcc GCC_PCIE1_AXI_S_BRIDGE_CLK>;
++			clock-names = "iface",
++				      "axi_m",
++				      "axi_s",
++				      "ahb",
++				      "aux",
++				      "axi_bridge";
++
++			resets = <&gcc GCC_PCIE1_PIPE_ARES>,
++				 <&gcc GCC_PCIE1_SLEEP_ARES>,
++				 <&gcc GCC_PCIE1_CORE_STICKY_ARES>,
++				 <&gcc GCC_PCIE1_AXI_MASTER_ARES>,
++				 <&gcc GCC_PCIE1_AXI_SLAVE_ARES>,
++				 <&gcc GCC_PCIE1_AHB_ARES>,
++				 <&gcc GCC_PCIE1_AXI_MASTER_STICKY_ARES>,
++				 <&gcc GCC_PCIE1_AXI_SLAVE_STICKY_ARES>;
++			reset-names = "pipe",
++				      "sleep",
++				      "sticky",
++				      "axi_m",
++				      "axi_s",
++				      "ahb",
++				      "axi_m_sticky",
++				      "axi_s_sticky";
++
++			status = "disabled";
++
++			pcie@0 {
++				device_type = "pci";
++				reg = <0x0 0x0 0x0 0x0 0x0>;
++
++				#address-cells = <3>;
++				#size-cells = <2>;
++				ranges;
++			};
++		};
++
++		pcie0: pcie@a0000000 {
++			compatible = "qcom,pcie-ipq5018";
++			reg = <0xa0000000 0xf1d>,
++			      <0xa0000f20 0xa8>,
++			      <0xa0001000 0x1000>,
++			      <0x00080000 0x3000>,
++			      <0xa0100000 0x1000>,
++			      <0x00083000 0x1000>;
++			reg-names = "dbi",
++				    "elbi",
++				    "atu",
++				    "parf",
++				    "config",
++				    "mhi";
++			device_type = "pci";
++			linux,pci-domain = <1>;
++			bus-range = <0x00 0xff>;
++			num-lanes = <2>;
++			max-link-speed = <2>;
++			#address-cells = <3>;
++			#size-cells = <2>;
++
++			phys = <&pcie0_phy>;
++			phy-names ="pciephy";
++
++			ranges = <0x01000000 0 0x00000000 0xa0200000 0 0x00100000>,
++				 <0x02000000 0 0xa0300000 0xa0300000 0 0x10000000>;
++
++			msi-map = <0x0 &v2m0 0x0 0xff8>;
++
++			interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7",
++					  "global";
++
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 75 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 78 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 79 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 83 IRQ_TYPE_LEVEL_HIGH>;
++
++			clocks = <&gcc GCC_SYS_NOC_PCIE0_AXI_CLK>,
++				 <&gcc GCC_PCIE0_AXI_M_CLK>,
++				 <&gcc GCC_PCIE0_AXI_S_CLK>,
++				 <&gcc GCC_PCIE0_AHB_CLK>,
++				 <&gcc GCC_PCIE0_AUX_CLK>,
++				 <&gcc GCC_PCIE0_AXI_S_BRIDGE_CLK>;
++			clock-names = "iface",
++				      "axi_m",
++				      "axi_s",
++				      "ahb",
++				      "aux",
++				      "axi_bridge";
++
++			resets = <&gcc GCC_PCIE0_PIPE_ARES>,
++				 <&gcc GCC_PCIE0_SLEEP_ARES>,
++				 <&gcc GCC_PCIE0_CORE_STICKY_ARES>,
++				 <&gcc GCC_PCIE0_AXI_MASTER_ARES>,
++				 <&gcc GCC_PCIE0_AXI_SLAVE_ARES>,
++				 <&gcc GCC_PCIE0_AHB_ARES>,
++				 <&gcc GCC_PCIE0_AXI_MASTER_STICKY_ARES>,
++				 <&gcc GCC_PCIE0_AXI_SLAVE_STICKY_ARES>;
++			reset-names = "pipe",
++				      "sleep",
++				      "sticky",
++				      "axi_m",
++				      "axi_s",
++				      "ahb",
++				      "axi_m_sticky",
++				      "axi_s_sticky";
++
++			status = "disabled";
++
++			pcie@0 {
++				device_type = "pci";
++				reg = <0x0 0x0 0x0 0x0 0x0>;
++
++				#address-cells = <3>;
++				#size-cells = <2>;
++				ranges;
++			};
++		};
+ 	};
+ 
+ 	timer {
+
+-- 
+2.48.1
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
