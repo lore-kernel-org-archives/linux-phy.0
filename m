@@ -4,94 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDDC8C28B30
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Mar 2025 22:24:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72EE5C35FF3
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 04:18:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kFQpJV2So5Heh3lYBWxEtEZUIVNKMImHFW80N/boOv4=; b=vZCvFMGPjZw3zr
-	4eh/VEzg2q4C30rVruIZKsCAAYueXkYyclrja9KiSRIGQ7GhUXCWqAgl2doobMCw79noHg+aI94TS
-	7HDi5XHgpaUK2jji3e6uT502jPy/SV7tccBp/QEXW5ROfILmHDs4c+ElPQd6r04iDRMD14jPuMQA2
-	HfWLCNONkA2wCpqdIoAG/0bnHpqM+oJFO49x5pFmcDC13czA1Vj9+nNyk3kpBUOFj2+jl40o3SAvv
-	YXc6rRhSUhIsAZ0G1sKWzR1nInHr3wj2DL6Nctqt6pr10wKFekEMzSBZd1PtjkXAYqZ36GrbsCmUp
-	qApKYixGy336erkClWjQ==;
+	List-Owner; bh=UZzSPFZrTMfbGO2x43h2Zv3Fzw0iViSmW/S75JSPX34=; b=kCSUW7SR7bhNQH
+	E7xqxL62ZloUvrTBIeOCJv9sqz8/nMUgpxBh4ecXvQ1LKLjPp4Ttb0PCSOBeUV3S4bAxaT0RPZSVF
+	Rguwt1RW41dCYPkTg2tnbyX1w0GP85yn+9cA+UQUT358uJGGiRHCpp1dma8cNrLzrCCZKI3KWip2X
+	eyS7PW+CSID5ZC0hXlan36F/7+QrdxuHEyHVL9Ws5/QMtdai4nhCWDh85hTkxYDXuJEu3Qg0BeClr
+	bL2/ax08l9yremO68FmndcVFLO+mIylGsXc8KLUqylfk4lCFZUf+u20CcIrWpSwxA2+PnIU+7llvB
+	3r0LNlr9X7hUUngrIyWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvOJI-0000000DMAD-2YSK;
-	Thu, 20 Mar 2025 22:24:21 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1tvTqE-0000000Do2Q-3gqO;
+	Fri, 21 Mar 2025 04:18:42 +0000
+Received: from out-71.smtpout.orange.fr ([193.252.22.71] helo=out.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvOBq-0000000DLFI-0Lrz
+	id 1tvTqB-0000000Do1q-2Bh2
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Mar 2025 22:16:39 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-43cfebc343dso9661235e9.2
-        for <linux-phy@lists.infradead.org>; Thu, 20 Mar 2025 15:16:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742508997; x=1743113797; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=WfPnk7WQgtcfoHo8JXsI+oWzDaDs3bw9jASaZ3sIJgg=;
-        b=w3WGelmgebScGUQZmyRkVEbr+P0cZRVjoQeLfUqcMUBIPu+UhMoVbGLjWXAm1NVuBe
-         w8UPCmwJCr4mRc2p87mbVVY0tYlFhPs1OxM3rUKrf128prO9Ib3CzfgSDZM4uvUZkBsk
-         vw6HKQ2VUojOQYRaoJJvdlmtFRsQDI79aMeGcWNl/Tr3N2Ol1OHcPNTdvwa5Ag7zG2Hn
-         ijRGVPjVsTvbXGp0d/Rism7LErqF/h6JgKacMJJv/flPTiFfcuoc2HHpWEJQaTXYbOWl
-         tmEwjdeAS3WNm7Thn+hy2GWs0DSnzTjL5WRbCdfP3lgKg9AHrpuAWTlrqnXSpTRR0Wgq
-         V15Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742508997; x=1743113797;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WfPnk7WQgtcfoHo8JXsI+oWzDaDs3bw9jASaZ3sIJgg=;
-        b=LsC76PFBdtSya7cLUyp2dWVfYZqnA4LevfGf2lwywcBvEZZczyy0ve4cy7F7qhSMuT
-         3DUPwPbzxj277cvSEpmftQKn4x9MHrnWtOuJnBlyyyLHhzDRy7G6Tb26FeOplSwg+i9E
-         MYHMwlhyZ2xqAF25U9VjIlpkkCD0eg/urexsjPkRWvcK7dKzB97ukML3jCMJFn+Enp0p
-         uv4GSPemXURXmcrlzChYBFbaABTaF+PNl0q9MASXDzKS3LZTCoJv5vi+OF1HOn2exVKI
-         7Zp9UqnM7WooT2ftVqxWF9E9lHvTHcCKwZSbBG/wI9XiOdUipZYKIJoKaC1onuOBzn7g
-         9kAw==
-X-Forwarded-Encrypted: i=1; AJvYcCXpJLCQbDcHcC7z4MExreoeZx41RBtGlxhy2ug10s6chrvidl6pQig7gqm9tk5tKA2z/AZnLRk0zBo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwpnJH91KYlor5IUWJSitz4199Gl0hg9eHzZLek4H2i3K7h8+SI
-	16k6vs21liJ8lG1NKMTBp8ww3gxKaIiDpd0nUYsaRkTq3/gftTbhvUeYXpF1QXg=
-X-Gm-Gg: ASbGnctD7u9lC+sfoTi44f0ao66zqE1anUadvHKSp8Dd7gwShewXH4TfyAeR8Oe1YwD
-	anRIUXNwAtrHUS5SAbMXmv6PL2UEaLKVb0ZTXj5LiKet735BmqsPlf09/MXQeYpsr9/jqfrrbYx
-	rlTdyWr9tSJMmqMfgztaCG57exFb3VGmhOK1ipAF/vq3xuDWLgOZneo504oYmx1kvyEWLeKil3P
-	Fp0b2ZZOJID8MXQKvEVv3YmgBhDZj8NTc4gn4vAmgULYOGvQaJfHc9T8HtcYBsu18Pq918s5FnM
-	xH+kkddl5jnRwm/no8PmO0wGsruNIcbajuJasw41QPLKi5FCTOYvsXkcctsS4I1441PWa3W8Z2u
-	Fokg3qWbplg==
-X-Google-Smtp-Source: AGHT+IHNuD3oxALNHIxu9dYwYRUPmP+cyvEmCJ1ayFakdYJH3c8S+O6yOUzhs//I8smCyDXpzHD2VQ==
-X-Received: by 2002:a05:600c:3155:b0:43c:f81d:34 with SMTP id 5b1f17b1804b1-43d509eae2dmr5415125e9.9.1742508996459;
-        Thu, 20 Mar 2025 15:16:36 -0700 (PDT)
-Received: from [192.168.0.34] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43d4fdbd348sm9042715e9.39.2025.03.20.15.16.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 20 Mar 2025 15:16:35 -0700 (PDT)
-Message-ID: <d64b222b-0b4f-4a17-a4db-74079502f7f4@linaro.org>
-Date: Thu, 20 Mar 2025 22:16:34 +0000
+	Fri, 21 Mar 2025 04:18:41 +0000
+Received: from [172.16.82.72] ([124.33.176.97])
+	by smtp.orange.fr with ESMTPA
+	id vTpqtuCVJpih5vTpvtXDey; Fri, 21 Mar 2025 05:18:29 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1742530710;
+	bh=RfTovQ5pBBPXl/sQntAxGWbDNnwENYAK9Bt2Ch93r58=;
+	h=Message-ID:Date:MIME-Version:Subject:To:From;
+	b=KxUvipl/mBH9mc3/+Jxp2x1493gZQeZOd7O1dWUrPtM6thSRht5eemzsz0bAhoVki
+	 UK6CTEtCyIr0B2njVsiL/Rbr4irCB0+2uOw5H+lalCF9jyZTppgCSLooDDJSUxSqiP
+	 KLwOa3oQaBRKfU1w7HcWDEh8qDV9uKdiX8SEa3TJYLNcfQMoUqnv/Y+c4nKoVmstXw
+	 QtOzdhj2FmatopgmqctXNjsEuD+W5CATzJW4ecmjZKK+YxcyTexp8CHwQ510jgHD3x
+	 Q85cTm7l4Tdfae2YGjxEcK0z2m8NKPbDmVd5zGOqFiHSeZzl8e/qDzEFkGwqSLiRK8
+	 h/GCI4MlrBSDQ==
+X-ME-Helo: [172.16.82.72]
+X-ME-Auth: bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI=
+X-ME-Date: Fri, 21 Mar 2025 05:18:30 +0100
+X-ME-IP: 124.33.176.97
+Message-ID: <7805e0db-7c17-438d-9985-f4feec644da6@wanadoo.fr>
+Date: Fri, 21 Mar 2025 13:18:18 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
- fingerprint sensor
-To: bjorn.andersson@oss.qualcomm.com, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: Aleksandrs Vinarskis <alex.vinarskis@gmail.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com>
- <1nCVo0cfBlz7dR2Jqu8M0rjyv_aRuYvO5M8Ho3sHTuU7-BfteG7JQ6iklpXIsiVEheMKOx4-JSJNsdf37ObJag==@protonmail.internalid>
- <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
+Subject: Re: [PATCH v2] phy: can-transceiver: Re-instate "mux-states" property
+ presence check
+To: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Rob Herring <robh@kernel.org>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-renesas-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Marc Kleine-Budde <mkl@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>,
+ Aswath Govindraju <a-govindraju@ti.com>,
+ Biju Das <biju.das.jz@bp.renesas.com>
+References: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
 Content-Language: en-US
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-In-Reply-To: <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
+From: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
+Autocrypt: addr=mailhol.vincent@wanadoo.fr; keydata=
+ xjMEZluomRYJKwYBBAHaRw8BAQdAf+/PnQvy9LCWNSJLbhc+AOUsR2cNVonvxhDk/KcW7FvN
+ LFZpbmNlbnQgTWFpbGhvbCA8bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI+wrIEExYKAFoC
+ GwMFCQp/CJcFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AWIQTtj3AFdOZ/IOV06OKrX+uI
+ bbuZwgUCZx41XhgYaGtwczovL2tleXMub3BlbnBncC5vcmcACgkQq1/riG27mcIYiwEAkgKK
+ BJ+ANKwhTAAvL1XeApQ+2NNNEwFWzipVAGvTRigA+wUeyB3UQwZrwb7jsQuBXxhk3lL45HF5
+ 8+y4bQCUCqYGzjgEZx4y8xIKKwYBBAGXVQEFAQEHQJrbYZzu0JG5w8gxE6EtQe6LmxKMqP6E
+ yR33sA+BR9pLAwEIB8J+BBgWCgAmFiEE7Y9wBXTmfyDldOjiq1/riG27mcIFAmceMvMCGwwF
+ CQPCZwAACgkQq1/riG27mcJU7QEA+LmpFhfQ1aij/L8VzsZwr/S44HCzcz5+jkxnVVQ5LZ4B
+ ANOCpYEY+CYrld5XZvM8h2EntNnzxHHuhjfDOQ3MAkEK
+In-Reply-To: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_151638_130089_6164A858 
-X-CRM114-Status: GOOD (  17.60  )
+X-CRM114-CacheID: sfid-20250320_211839_965522_58B7B5B3 
+X-CRM114-Status: GOOD (  22.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,127 +86,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19/03/2025 03:22, Bjorn Andersson via B4 Relay wrote:
-> From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-> 
-> The fingerprint sensor, hidden in the power button, is connected to one
-> of the USB multiport ports; while the other port is unused.
-> 
-> Describe the USB controller, the four phys and the repeater involved to
-> make the fingerprint sensor operational.
-> 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-> ---
->   .../boot/dts/qcom/x1e80100-dell-xps13-9345.dts     | 59 +++++++++++++++++++++-
->   1 file changed, 57 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> index 967f6dba0878b51a985fd7c9570b8c4e71afe57d..a35557c562d771e2ce209fca05b82c1943d70f63 100644
-> --- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> +++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-> @@ -744,8 +744,21 @@ touchscreen@10 {
-> 
->   &i2c9 {
->   	clock-frequency = <400000>;
-> -	status = "disabled";
-> -	/* USB3 retimer device @0x4f */
-> +	status = "okay";
-> +
-> +	eusb6_repeater: redriver@4f {
-
-How about
-
-eusb6_frp_repeater: redriver@4f
-
-leading to> +		compatible = "nxp,ptn3222";
-> +		reg = <0x4f>;
-> +		#phy-cells = <0>;
-> +
-> +		vdd3v3-supply = <&vreg_l13b_3p0>;
-> +		vdd1v8-supply = <&vreg_l4b_1p8>;
-> +
-> +		reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
-> +
-> +		pinctrl-0 = <&eusb6_reset_n>;
-> +		pinctrl-names = "default";
-> +	};
->   };
-> 
->   &i2c17 {
-> @@ -967,6 +980,14 @@ edp_reg_en: edp-reg-en-state {
->   		bias-disable;
->   	};
-> 
-> +	eusb6_reset_n: eusb6-reset-n-state {
-> +		pins = "gpio184";
-> +		function = "gpio";
-> +		drive-strength = <2>;
-> +		bias-disable;
-> +		output-low;
-> +	};
-> +
->   	hall_int_n_default: hall-int-n-state {
->   		pins = "gpio92";
->   		function = "gpio";
-> @@ -1172,3 +1193,37 @@ &usb_1_ss1_dwc3_hs {
->   &usb_1_ss1_qmpphy_out {
->   	remote-endpoint = <&retimer_ss1_ss_in>;
->   };
-> +
-> +&usb_mp {
-> +	status = "okay";
-> +};
-> +
-> +&usb_mp_hsphy0 {
-> +	vdd-supply = <&vreg_l2e_0p8>;
-> +	vdda12-supply = <&vreg_l3e_1p2>;
-> +
-> +	phys = <&eusb6_repeater>;
-
-phys = <&eusb6_frp_repeater>;
-
-That's how I did it on Insprion14 and it helps me make sense of the dts 
-back to the schematic.
-
-> +
-> +	status = "okay";
-> +};
-> +
-> +&usb_mp_hsphy1 {
-> +	vdd-supply = <&vreg_l2e_0p8>;
-> +	vdda12-supply = <&vreg_l3e_1p2>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&usb_mp_qmpphy0 {
-> +	vdda-phy-supply = <&vreg_l3e_1p2>;
-> +	vdda-pll-supply = <&vreg_l3c_0p9>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&usb_mp_qmpphy1 {
-> +	vdda-phy-supply = <&vreg_l3e_1p2>;
-> +	vdda-pll-supply = <&vreg_l3c_0p9>;
-> +
-> +	status = "okay";
-> +};
-> 
-> --
-> 2.48.1
-> 
-> 
-> 
-Completely optional obviously.
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMjEvMDMvMjAyNSBhdCAwMDoxNSwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+IE9uIHRo
+ZSBSZW5lc2FzIEdyYXkgSGF3ayBTaW5nbGUgZGV2ZWxvcG1lbnQgYm9hcmQ6Cj4gCj4gICAgIGNh
+bi10cmFuc2NlaXZlci1waHkgY2FuLXBoeTA6IC9jYW4tcGh5MDogZmFpbGVkIHRvIGdldCBtdXgt
+c3RhdGUgKDApCj4gCj4gIm11eC1zdGF0ZXMiIGlzIGFuIG9wdGlvbmFsIHByb3BlcnR5IGZvciBD
+QU4gdHJhbnNjZWl2ZXJzLiAgSG93ZXZlciwKPiBtdXhfZ2V0KCkgYWx3YXlzIHByaW50cyBhbiBl
+cnJvciBtZXNzYWdlIGluIGNhc2Ugb2YgYW4gZXJyb3IsIGluY2x1ZGluZwo+IHdoZW4gdGhlIHBy
+b3BlcnR5IGlzIG5vdCBwcmVzZW50LCBjb25mdXNpbmcgdGhlIHVzZXIuCj4gCj4gRml4IHRoaXMg
+YnkgcmUtaW5zdGF0aW5nIHRoZSBwcm9wZXJ0eSBwcmVzZW5jZSBjaGVjayAodGhpcyB0aW1lIHVz
+aW5nCj4gdGhlIHByb3BlciBBUEkpIGluIGEgd3JhcHBlciBhcm91bmQgZGV2bV9tdXhfc3RhdGVf
+Z2V0KCkuICBXaGVuIHRoZQo+IG11bHRpcGxleGVyIHN1YnN5c3RlbSBnYWlucyBzdXBwb3J0IGZv
+ciBvcHRpb25hbCBtdXhlcywgdGhlIHdyYXBwZXIgY2FuCj4ganVzdCBiZSByZW1vdmVkLgo+IAo+
+IEluIGFkZGl0aW9uLCBwcm9wYWdhdGUgYWxsIHJlYWwgZXJyb3JzIHVwc3RyZWFtLCBpbnN0ZWFk
+IG9mIGlnbm9yaW5nCj4gdGhlbS4KCkkgd291bGQgbGlrZSB0byBoZWFyIFJvYidzIG9waW5pb24g
+b24gdGhpcy4gSW4gZDAyZGZkNGNlYjJlOWYzNCBSb2IKcHVycG9zZWx5IGNoYW5nZWQgdGhlIGZ1
+bmN0aW9uIHRvIGlnbm9yZSBlcnJvcnMgb3RoZXIgdGhhbiBFUFJPQkVfREVGRVIuCgpSaWdodCBu
+b3csIEkgZG8gbm90IHNlZSBhIHJlYXNvbiBub3QgdG8gcHJvcGFnYXRlIHRoZSBvdGhlciBlcnJv
+cnMsIHNvCknCoGFtIGluIGZhdm9yIG9mIHRoaXMgcm9sbCBiYWNrLiBCdXQgbWF5YmUgd2UgYXJl
+IG1pc3Npbmcgc29tZXRoaW5nPwoKT3RoZXJ3aXNlLCB0aGUgcGF0Y2ggbG9va3MgZ29vZCB0byBt
+ZS4gTmljZSBpbXByb3ZlbWVudCBvdmVyIHRoZSB2MS4gSQp3aWxsIHdhaXQgZm9yIFJvYidzIGNv
+bW1lbnQgdG8gZ2l2ZSBteSByZXZpZXcgdGFnLgoKPiBGaXhlczogZDAyZGZkNGNlYjJlOWYzNCAo
+InBoeTogY2FuLXRyYW5zY2VpdmVyOiBEcm9wIHVubmVjZXNzYXJ5ICJtdXgtc3RhdGVzIiBwcm9w
+ZXJ0eSBwcmVzZW5jZSBjaGVjayIpCj4gU2lnbmVkLW9mZi1ieTogR2VlcnQgVXl0dGVyaG9ldmVu
+IDxnZWVydCtyZW5lc2FzQGdsaWRlci5iZT4KPiAtLS0KPiBBbHRlcm5hdGl2ZWx5LCB0aGUgbXVs
+dGlwbGV4ZXIgc3Vic3lzdGVtIG5lZWRzIHRvIGdhaW4gc3VwcG9ydCBmb3IKPiBnZXR0aW5nIGFu
+IG9wdGlvbmFsIG11eC4uLgo+IAo+IHYyOgo+ICAgLSBBZGQgYW5kIHVzZSBkZXZtX211eF9zdGF0
+ZV9nZXRfb3B0aW9uYWwoKSwKPiAgIC0gTm8gZ2l2ZW4gdGFncyBhZGRlZCwgYXMgdGhlIG5ldyBz
+b2x1dGlvbiBpcyBkaWZmZXJlbnQuCj4gLS0tCj4gIGRyaXZlcnMvcGh5L3BoeS1jYW4tdHJhbnNj
+ZWl2ZXIuYyB8IDIyICsrKysrKysrKysrKysrKy0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDE1
+IGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+cGh5L3BoeS1jYW4tdHJhbnNjZWl2ZXIuYyBiL2RyaXZlcnMvcGh5L3BoeS1jYW4tdHJhbnNjZWl2
+ZXIuYwo+IGluZGV4IDJiZWM3MDYxNTQ0OWY5NGQuLmY1OWNhZmY0YjNkNGMyNjcgMTAwNjQ0Cj4g
+LS0tIGEvZHJpdmVycy9waHkvcGh5LWNhbi10cmFuc2NlaXZlci5jCj4gKysrIGIvZHJpdmVycy9w
+aHkvcGh5LWNhbi10cmFuc2NlaXZlci5jCj4gQEAgLTkzLDYgKzkzLDE2IEBAIHN0YXRpYyBjb25z
+dCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIGNhbl90cmFuc2NlaXZlcl9waHlfaWRzW10gPSB7Cj4gIH07
+Cj4gIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGNhbl90cmFuc2NlaXZlcl9waHlfaWRzKTsKPiAg
+Cj4gKy8qIFRlbXBvcmFyeSB3cmFwcGVyIHVudGlsIHRoZSBtdWx0aXBsZXhlciBzdWJzeXN0ZW0g
+c3VwcG9ydHMgb3B0aW9uYWwgbXV4ZXMgKi8KPiArc3RhdGljIGlubGluZSBzdHJ1Y3QgbXV4X3N0
+YXRlICoKPiArZGV2bV9tdXhfc3RhdGVfZ2V0X29wdGlvbmFsKHN0cnVjdCBkZXZpY2UgKmRldiwg
+Y29uc3QgY2hhciAqbXV4X25hbWUpCj4gK3sKPiArCWlmICghb2ZfcHJvcGVydHlfcHJlc2VudChk
+ZXYtPm9mX25vZGUsICJtdXgtc3RhdGVzIikpCj4gKwkJcmV0dXJuIE5VTEw7Cj4gKwo+ICsJcmV0
+dXJuIGRldm1fbXV4X3N0YXRlX2dldChkZXYsIG11eF9uYW1lKTsKPiArfQo+ICsKPiAgc3RhdGlj
+IGludCBjYW5fdHJhbnNjZWl2ZXJfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBk
+ZXYpCj4gIHsKPiAgCXN0cnVjdCBwaHlfcHJvdmlkZXIgKnBoeV9wcm92aWRlcjsKPiBAQCAtMTE0
+LDEzICsxMjQsMTEgQEAgc3RhdGljIGludCBjYW5fdHJhbnNjZWl2ZXJfcGh5X3Byb2JlKHN0cnVj
+dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAltYXRjaCA9IG9mX21hdGNoX25vZGUoY2FuX3Ry
+YW5zY2VpdmVyX3BoeV9pZHMsIHBkZXYtPmRldi5vZl9ub2RlKTsKPiAgCWRydmRhdGEgPSBtYXRj
+aC0+ZGF0YTsKPiAgCj4gLQltdXhfc3RhdGUgPSBkZXZtX211eF9zdGF0ZV9nZXQoZGV2LCBOVUxM
+KTsKPiAtCWlmIChJU19FUlIobXV4X3N0YXRlKSkgewo+IC0JCWlmIChQVFJfRVJSKG11eF9zdGF0
+ZSkgPT0gLUVQUk9CRV9ERUZFUik+IC0JCQlyZXR1cm4gUFRSX0VSUihtdXhfc3RhdGUpOwo+IC0J
+fSBlbHNlIHsKPiAtCQljYW5fdHJhbnNjZWl2ZXJfcGh5LT5tdXhfc3RhdGUgPSBtdXhfc3RhdGU7
+Cj4gLQl9Cj4gKwltdXhfc3RhdGUgPSBkZXZtX211eF9zdGF0ZV9nZXRfb3B0aW9uYWwoZGV2LCBO
+VUxMKTsKPiArCWlmIChJU19FUlIobXV4X3N0YXRlKSkKPiArCQlyZXR1cm4gUFRSX0VSUihtdXhf
+c3RhdGUpOwo+ICsKPiArCWNhbl90cmFuc2NlaXZlcl9waHktPm11eF9zdGF0ZSA9IG11eF9zdGF0
+ZTsKPiAgCj4gIAlwaHkgPSBkZXZtX3BoeV9jcmVhdGUoZGV2LCBkZXYtPm9mX25vZGUsCj4gIAkJ
+CSAgICAgICZjYW5fdHJhbnNjZWl2ZXJfcGh5X29wcyk7CgpZb3VycyBzaW5jZXJlbHksClZpbmNl
+bnQgTWFpbGhvbAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXBoeQo=
