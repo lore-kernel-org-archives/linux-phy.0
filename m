@@ -4,56 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D44BBC36000
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 12:14:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49EABC36007
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 12:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1S8VBU5kg3h9AGK3ZZ7xV6c7jrIAqTk+bvr386o1mNQ=; b=yS218IrPO5SghQ
-	CUTTaj7Ha8n2eZaZMtPNsHAzzN46bfrzz2SXww3chSNS0DhwrcPnbBECDZxt4lGQXXIUK92v9JtT7
-	YE1gyvfisp+b6pjZe5i0f88886ZFncAwTY7pbPNG3l3Atg2IZrAUP6aKIHth/H12zCAb9RkZPNLjQ
-	lsC1X0ASsMmh+fqCCj1cuXSq4eSs+SrI2XbKjUNzDeSYcRAAhQHuzu9i7pdWoesbxT6h/hqiZkhjA
-	er5FWaULEwAWnIrZ9HW9oRV8p52wJKNekPHlkOkQNfzMxZqUPIm4pYlimtB9goCVIg7R7Q1J7Q0fs
-	DgVM1G6rIa2aAdLE9tLA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tC10nDo9lkdpMfHyQVUeFkOY/2VEBpu0oRzMkyMLNaE=; b=BbulMvpKX/YAh+
+	5Ltk2Dosp0k9mrV1YTTQnowZK303MnUODH265N75HXFbGH2ZMNosk6MWGF9aCzcuW2JNs4KfuX/DF
+	QXHKvCWheN14eS11t3j8bGfEc8OtQnqgOHIWVNV9gHU9iTmRO9maPZlbuyLM0E5EOtiACWXFT61Vu
+	weuQCsRykjO6Eb08odtNAQON3Itw0rqlhijJKkjLARmeu3gBxfHlElKocWll4Ij4V54jVDohsavNu
+	Yy+SxjITSR5+mfRGIenzjYLVsuxlF0kK2mBnc5TN8PhElLUW5SbtPUz3Ekvlcvzd1rxmpK62+TyzG
+	zi5P1UEFBpmX9cPI2gwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvbGy-0000000Ejhq-1DPu;
-	Fri, 21 Mar 2025 12:14:48 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1tvbH0-0000000Ejit-0F2H;
+	Fri, 21 Mar 2025 12:14:50 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvbGw-0000000EjgF-15NH
+	id 1tvbGx-0000000Ejgs-34uA
 	for linux-phy@lists.infradead.org;
 	Fri, 21 Mar 2025 12:14:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 900A143C67;
-	Fri, 21 Mar 2025 12:14:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C4653C4CEE3;
+	by tor.source.kernel.org (Postfix) with ESMTP id 65DB7615D6;
+	Fri, 21 Mar 2025 12:14:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id F0E10C4CEEF;
 	Fri, 21 Mar 2025 12:14:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742559285;
-	bh=m1VPIuo5vZSZGVGPIyjDJGkECuuIKNQjt+mSRkRxpoQ=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=Fo7LJsD65aFXCdaMWiR9wJYJcNAQqRSEOTuFc5M7mDsESsGaj8KzuOIWrPLWZmrEd
-	 8qqO1NMzwYxIh/ilmv78vLmFL6KHZtMTblNq2XvaGicKcnq7pB7U8i3q5i3iB2JunR
-	 jMjq2QiKx4sboOlL2HZSCtFkthXCVoBBVjG0AM5HdFMInZHz+0bNk7F/+bT3SzJUFL
-	 tYoUqlTtsmzKYpqZ+IYHlqjASn5kznabs6RVUoQBb5+UVCN3z8ND8tkOmnr5qlhQ9c
-	 y2L6X25Rj9SxcVJBadXlS/v1SeilCqmN+ivienXZ6U4fafCi8ByUnRT5n7Blb0lKQu
-	 6yRL2coZCMZ6Q==
+	s=k20201202; t=1742559286;
+	bh=g1aNlT6mR+0lzBikCDDy3QE+nBuvGIYwMOVapKIIDCU=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=Dr5Q2lQwM0Yn0le6dcbWEz73T7tcLk907yOdC8n3T2sxy+TnmEC5Y2AgJMMm9lNa/
+	 Ym4rl8l5cEBhtpoQmDnxTv/8epxQPXLGMy3EONhUZD2vRIEaWLuv4yq3y3jFo9Bklc
+	 6ZxgXMUm4gfKBozNSd1EUE1CZKbT/yeO95izh1cq56+OW3NJQyJaunrWMZMGui7+iT
+	 HmcUrMKjkqtd7pExy2/SppdLywWLKvVJO1B57ZSbtmHr/b7f4mV0yhDZTX9PN55UPE
+	 8HY2olzBPIvqA94klD4Zaxzd5VXWndBkbEF/fatCBrnuUEQ0Ocm3PdXTHAXCKE5caA
+	 YmUErXMXvkx0Q==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BA5CBC35FFF;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E58CCC36007;
 	Fri, 21 Mar 2025 12:14:45 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Subject: [PATCH v6 0/6] Enable IPQ5018 PCI support
-Date: Fri, 21 Mar 2025 16:14:38 +0400
-Message-Id: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
+Date: Fri, 21 Mar 2025 16:14:40 +0400
+Subject: [PATCH v6 2/6] phy: qualcomm: qcom-uniphy-pcie 28LP add support
+ for IPQ5018
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAC5Y3WcC/22OwQ6CMBBEf8X0bEl3oVI8AaI3E6NH46FCkUalt
- SjREP5d4Gbi8U123mxHGuW0ashy1hGnWt1oUw+wmM9IXsn6oqguBibIkDMfgWr74AwEtblWFIo
- gkOeSKSw5GSrWqVK/J93xNHClm6dxn8newpiS7BDu9hBtUyGEv0HuiyQJMxaEa/BXwDCNsgwx/
- jnzanm3roDIs84Unnk9b8ZcvdzcybjS8sn8/8WWU0alVJhLCWUAIv6p933/BTWaCY4EAQAA
+Message-Id: <20250321-ipq5018-pcie-v6-2-b7d659a76205@outlook.com>
+References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
+In-Reply-To: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -72,19 +71,16 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  20250317100029.881286-2-quic_varada@quicinc.com, 
  Sricharan Ramabadhran <quic_srichara@quicinc.com>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1742559282; l=4765;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1742559282; l=2412;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=m1VPIuo5vZSZGVGPIyjDJGkECuuIKNQjt+mSRkRxpoQ=;
- b=tFK4Yh9hIxkOVHYsz+sbGqZw75VR3chKQwuSFrMLNjiMt+SM8beXcxTOxA7Gi5lkZliFIIvJ6
- POKuhvr00yTAwodqbTjgnrtpDAnCpsnvwyPO66X67JzNXalJUjWsu/a
+ bh=J/nwlaH52lH5Y8C/GSWQOuJkQODLSqbcJAs7EDLQiiU=;
+ b=6YgoV6IU2BviKAIuZronVq4XXd/UPdZN/tAlWig/d2rvBUMW5uCbEdcpJ/5JsZSZ/m4blnqVo
+ ZVEk3BGDHqNBfRAS+aXTasmspVPQdsmq/zo+N8mGIix66q4MN7xN6ty
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
  with auth_id=364
 X-Original-From: George Moussalem <george.moussalem@outlook.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_051446_346323_82BDF035 
-X-CRM114-Status: GOOD (  11.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,105 +98,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds the relevant phy and controller
-DT configurations for enabling PCI gen2 support
-on IPQ5018. IPQ5018 has two phys and two controllers, 
-one dual-lane and one single-lane.
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 
-Last patch series (v3) submitted dates back to August 30, 2024.
-As I've worked to add IPQ5018 platform support in OpenWrt, I'm
-continuing the efforts to add Linux kernel support.
+The Qualcomm UNIPHY PCIe PHY 28LP is found on both IPQ5332 and IPQ5018.
+Adding the PHY init sequence, pipe clock rate, and compatible for IPQ5018.
 
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
-Changes in v6:
-- Fixed issues reported by 'make dt_bindings_check' as per Rob's bot
-- Removed Krzysztof's Ack-tag on  
-- Link to v5: https://lore.kernel.org/r/20250321-ipq5018-pcie-v5-0-aae2caa1f418@outlook.com
+ drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c | 45 ++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
 
-Changes in v5:
-- Re-ordered reg and reg-names in dt-bindings and dts to align with
-  other IPQ SoCs
-- Corrected nr of interrupts in dt-bindings: phy: qcom: Add IPQ5018 SoC
-- Corrected ranges property of pcie controller nodes
-- Removed newlines between cells properties in pcie phy nodes
-- Modified dt bindings to add descriptions and separate conditions for
-  ipq5018 and ipq5332 as they have different nr of clocks and resets
-  As such, also removed Krzysztof's RB tag for validation
-- Ran dtbs_check and fixed:
-  interrupt-map property in pcie nodes:
-  /soc@0/pcie@80000000:interrupt-map: Cell 13 is not a phandle(0)
-  /soc@0/pcie@a0000000:interrupt-map: Cell 13 is not a phandle(0)
-- Added missing gpio header file to ipq5018-rdp432-c2.dts
-- Added MHI register requirement to bindings and to PCIe nodes as per:
-  Depends-on: <20250317100029.881286-2-quic_varada@quicinc.com>
-- Link to v4: https://lore.kernel.org/all/DS7PR19MB8883F2538AA7D047E13C102B9DD22@DS7PR19MB8883.namprd19.prod.outlook.com/
+diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+index c8b2a3818880..324c0a5d658e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
++++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+@@ -75,6 +75,40 @@ struct qcom_uniphy_pcie {
+ 
+ #define phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
+ 
++static const struct qcom_uniphy_pcie_regs ipq5018_regs[] = {
++	{
++		.offset = SSCG_CTRL_REG_4,
++		.val = 0x1cb9,
++	}, {
++		.offset = SSCG_CTRL_REG_5,
++		.val = 0x023a,
++	}, {
++		.offset = SSCG_CTRL_REG_3,
++		.val = 0xd360,
++	}, {
++		.offset = SSCG_CTRL_REG_1,
++		.val = 0x1,
++	}, {
++		.offset = SSCG_CTRL_REG_2,
++		.val = 0xeb,
++	}, {
++		.offset = CDR_CTRL_REG_4,
++		.val = 0x3f9,
++	}, {
++		.offset = CDR_CTRL_REG_5,
++		.val = 0x1c9,
++	}, {
++		.offset = CDR_CTRL_REG_2,
++		.val = 0x419,
++	}, {
++		.offset = CDR_CTRL_REG_1,
++		.val = 0x200,
++	}, {
++		.offset = PCS_INTERNAL_CONTROL_2,
++		.val = 0xf101,
++	},
++};
++
+ static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
+ 	{
+ 		.offset = PHY_CFG_PLLCFG,
+@@ -88,6 +122,14 @@ static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
+ 	},
+ };
+ 
++static const struct qcom_uniphy_pcie_data ipq5018_data = {
++	.lane_offset	= 0x800,
++	.phy_type	= PHY_TYPE_PCIE_GEN2,
++	.init_seq	= ipq5018_regs,
++	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
++	.pipe_clk_rate	= 125 * MEGA,
++};
++
+ static const struct qcom_uniphy_pcie_data ipq5332_data = {
+ 	.lane_offset	= 0x800,
+ 	.phy_type	= PHY_TYPE_PCIE_GEN3,
+@@ -212,6 +254,9 @@ static inline int phy_pipe_clk_register(struct qcom_uniphy_pcie *phy, int id)
+ 
+ static const struct of_device_id qcom_uniphy_pcie_id_table[] = {
+ 	{
++		.compatible = "qcom,ipq5018-uniphy-pcie-phy",
++		.data = &ipq5018_data,
++	}, {
+ 		.compatible = "qcom,ipq5332-uniphy-pcie-phy",
+ 		.data = &ipq5332_data,
+ 	}, {
 
-Changes in v4:
-- removed dependency as the following have been applied:
-	dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
-	phy: qcom: Introduce PCIe UNIPHY 28LP driver
-	dt-bindings: PCI: qcom: Document the IPQ5332 PCIe controller
-  Link: https://lore.kernel.org/all/20250313080600.1719505-1-quic_varada@quicinc.com/
-- added Mani's RB tag to: PCI: qcom: Add support for IPQ5018
-- Removed power-domains property requirement in dt-bindings for IPQ5018
-  and removed Krzysztof's RB tag from:
-  dt-bindings: PCI: qcom: Add IPQ5018 SoC
-- fixed author chain and retained Sricharan Ramabadhran in SoB tags and
-  kept Nitheesh Sekar as the original author
-- Removed comments as per Konrad's comment in:
-  arm64: dts: qcom: ipq5018: Add PCIe related nodes
-- Link to v3 submitted by Sricharan Ramabadhran:
-  Link: https://lore.kernel.org/all/20240830081132.4016860-1-quic_srichara@quicinc.com/
-- Link to v3, incorrectly versioned:
-  Link: https://lore.kernel.org/all/DS7PR19MB8883BC190797BECAA78EC50F9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com/
-
-Changes in v3 (incorrectly versioned):
-- Depends on
-  Link: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
-- Added 8 MSI SPI and 1 global interrupts (Thanks Mani for confirming)
-- Added hw revision (internal/synopsys) and nr of lanes in patch 4
-  commit msg
-- Sorted reg addresses and moved PCIe nodes accordingly
-- Moved to GIC based interrupts
-- Added rootport node in controller nodes
-- Tested on Linksys devices (MX5500/SPNMX56)
-- Link to v2: https://lore.kernel.org/all/20240827045757.1101194-1-quic_srichara com/
-
-Changes in v3:
- - Added Reviewed-by tag for patch#1.
- - Fixed dev_err_probe usage in patch#3.
- - Added pinctrl/wak pins for pcie1 in patch#6.
-
-Changes in v2:
- - Fixed all review comments from Krzysztof, Robert Marko,
-   Dmitry Baryshkov, Manivannan Sadhasivam, Konrad Dybcio.
- - Updated the respective patches for their changes.
- - Link to v1: https://lore.kernel.org/lkml/32389b66-48f3-8ee8-e2f1-1613feed3cc7@gmail.com/T/
-
----
-Nitheesh Sekar (6):
-      dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018 compatible
-      phy: qualcomm: qcom-uniphy-pcie 28LP add support for IPQ5018
-      dt-bindings: PCI: qcom: Add IPQ5018 SoC
-      PCI: qcom: Add support for IPQ5018
-      arm64: dts: qcom: ipq5018: Add PCIe related nodes
-      arm64: dts: qcom: ipq5018: Enable PCIe
-
- .../devicetree/bindings/pci/qcom,pcie.yaml         |  50 +++++
- .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml |  49 ++++-
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts     |  40 ++++
- arch/arm64/boot/dts/qcom/ipq5018.dtsi              | 234 ++++++++++++++++++++-
- drivers/pci/controller/dwc/pcie-qcom.c             |   1 +
- drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c   |  45 ++++
- 6 files changed, 409 insertions(+), 10 deletions(-)
----
-base-commit: 5744a64fddfc33629f3bcc9a06a646f7443077a7
-change-id: 20250321-ipq5018-pcie-1d44abf0e2f5
-
-Best regards,
 -- 
-George Moussalem <george.moussalem@outlook.com>
+2.48.1
 
 
 
