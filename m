@@ -4,125 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E06AC36001
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:38:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52471C36000
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:43:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LQWGqOixxyUPU3Qjht0oQOOTkBSPrEhQxhz67QV3bIA=; b=OSNG7Fu4mvED2qukpbA7/66ZoS
-	I6jonWERtDTvIw8jglIs0bRpH9Vdwlk3lcMf7hCOt4tKA2bHjLpmzuIbu1MmCNweAVDt8+WjMMsGp
-	dhNKHilRPJAgKOCmavGDii3zGwUjHFNyEiHRwtPLK2UHH3AoDq/etwxoKfYMEYcNPG7Mdx7nSxh7i
-	GDufhHHs333t/zvXJgFXJF04c9p4+AFXaK6VfLWKz8x354ITzfpwVK8Qn/3v9L2bCO8PWA51jCf82
-	4dTgOaP/Fitje8l99Y3jpFK5Hb8l//A+kPw1ebqD25CZGlZ++fdR+IdSu35ICLDSx4FwoPmfjmlsl
-	l8tZl+UA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VgnpER5e9t1H2Uik9vXbdZIM8artGIPHFMzpnBRjBoQ=; b=Gjr+G3WJj41c8z
+	UrXWO23BgOwkjXA4miE6vFUZdVDhEn6hxqz1iUFzJCzYum/8bjkJXLKYzC4bxP8IsMMiqhI3/P8Co
+	Mvj9Aq6QPZrD9Wof577Jm6Jw5e2Ob3gpPCVw+zqP0aFNarFhRwnpitdt+wvnHLd3PdGfJ1deCuO09
+	cINdv8/8Ul31CuubebCZANinWSJNnzI69LPE41/R5afajogJDjZPtLewF8+p61aRMvRHplKfw2mH2
+	ii+dS3+KrD79FesVaMpMjDAdL9tBPwKrYp0bsZQ4LbWGA9g+8iuZiwSnVznYKVABxhcYoZ26nDGUG
+	DyQHagwfoL0ucq4MPrww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdVv-0000000F97A-34Dc;
-	Fri, 21 Mar 2025 14:38:23 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1tvdat-0000000FATj-0IL5;
+	Fri, 21 Mar 2025 14:43:31 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdSd-0000000F8AB-3scL
+	id 1tvdTy-0000000F8aM-3c2f
+	for linux-phy@bombadil.infradead.org;
+	Fri, 21 Mar 2025 14:36:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=Ra/8DYijPPPXyKfJwTLkvfoC8/C3kF5QcCpYx+TRQN4=; b=oVzpjopst71Lgs+5D37sF4Gzx6
+	O1cggH+c0piW5+U/MgWjrs6HcamSAB1cSY395YJcdXQ2jXw+NiPwAyPDpkvoH84JWnsVZQb/BHA54
+	q/nAH8N8g7bMMnYf9sZHhat8FovQx7KWu13KD/ZmxNDp/O3urMfqLQ4ZJmvDdgZs4EyNzleNrKr4D
+	6Q4mhi/kys5kWx6QB00qVaeRgyZx0dSl4WI0WipJn6gbI3FAVlMYEHLYXZpKaXK5548DSIC04Wdb2
+	ykNbu4e6Y9YFLiqvedthjlbRMzWUf+cTI34ifaDoqoV15P30XU/vMrPLxkWoGBzzU54OVpUg7i00K
+	MfqsVkGA==;
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tvdTv-00000004OH1-2sb1
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 14:35:01 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-38f2f391864so1153458f8f.3
-        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 07:34:59 -0700 (PDT)
+	Fri, 21 Mar 2025 14:36:21 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-43948f77f1aso13077365e9.0
+        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 07:36:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742567698; x=1743172498; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Y6Qr8QAI+Mok+bWdMsFd6M7n8U4F8tUmQSbLyZ4Fyg0=;
-        b=SrLWAgr5Gd+AOK7DymkO3BxXTWWfd96RYJn+upOZeFDz7yhd6iULrpXA1rKzo05iBK
-         BKu4sxKhWvvpUSGKkVcP+OCGkk0xQCsDbSGomhjXLGngCbfAS7+UqW0VTp2Q0h660pdk
-         1GrsajM42ENJgYJo+Nx12lL9QYL6hf0nVIYduiEtNaV0OqXf/KNCPr0VcLJ8TrsaDnos
-         OCf47MH+Asn4QivtQMq/dJuvy8n1cbD3JCanNFDpvNsX7hYWMIo1vyocLKFj6crfBeMm
-         hdk8w1jYmazAdXRtAh5P/9sv6gq3hCCOKXrlA/jXYuouGTBJ+5dhX33Iq4bCpWMQLHny
-         y6lQ==
+        d=linaro.org; s=google; t=1742567777; x=1743172577; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Ra/8DYijPPPXyKfJwTLkvfoC8/C3kF5QcCpYx+TRQN4=;
+        b=Z0NMazvr0nzcqJW/VWvxSR6atAaNkXYoKsr2eLGq3gUI5qBHXovmECwh7mQMUV7dxA
+         MPBwWmvTSG2mbpQBSCmIrRjytB7n/FGi+TGkKihjpt/BGLXEM+ljk5Nz1etMNomudnfg
+         zPcxaIuvLJrLJAtgq6xKe9ukmnUMEqNHk5aW+CuH6OfBQAlJqISdMtxZgvq7F3CQRAum
+         6nsMt5swMY9sUxLieWNTHGegekFUlpQdm+b6ALrNeb5IBZ3V4aa7JuRfYjTA7rkVfMuw
+         uFh6VAfqNIyH7Jxf/ChP6gysE3nsaNdSq1xuRnIXKwNnTAUzSWU4knvIBI+nR/VhKKUu
+         uHjQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742567698; x=1743172498;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=Y6Qr8QAI+Mok+bWdMsFd6M7n8U4F8tUmQSbLyZ4Fyg0=;
-        b=v/ELleFZ9v1SXtWFpvjxUfF45FPRnEMAJmBWjugft0jbrdOQyARABz2k+cLh68ts2M
-         VWBX+VUb4I76Uo0WhxbPLjYQ/9SDNB4bTurfy40HjabpmS6kMI6PU6LQoEC+UTbRPqIE
-         6ucHFE4V18IwLh079exaQwk9zS/xH+cBNNAV4uoN2tHDzljyoDKEtB0kV3/fgtW/03o8
-         UMNnBE7VFlmqwA4IRMrPVFUo5STAS0kvuh8/D22GWOA4ZuFftO5h2xBOqRAy3nGaoSgz
-         tgffIQ2dxVZHSwFgddLaLYVtlVyTUdr32H3U7EThbCpkn9KZ1R2/Fwo0++ahYg3LU54e
-         toKA==
-X-Forwarded-Encrypted: i=1; AJvYcCWyViuXZ2usNs1iBmiRE+ME+0Q7P3jFeV/wai0fjBTxXo87IQ1i76mW0b96tuWOJndh7Lr8Vtsf+4I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxfT5MGcJDZ8U42v9Z43+aoo1A51AKuzmEPNXrx/Nx1fSYet+Os
-	JVTCIvJoilaZhee5Bre+RO71eUOSAm59ymOrTanwhmq3PCAVMhaTt6zh3Ujghqk=
-X-Gm-Gg: ASbGnctxxlNdr/FEYOzMNLjnMblVgCDnBaEP4bc+/n3Wg8P+EaqHqp10WsqeAj/r5Lx
-	UDpnA7FFy2LFzbH+snxSYrrv+CntJDhlcVmZN+2U/yJYpxslPrfAznd+3KBMwH7SmQsBheLnQyl
-	aCLzgfWkOWjgvkRn9kJomuGCQ8X+aDmQEWBpNKniIRKAyNZhzdZ7IwwSCOfNX9/3KwHTua5IDP5
-	LFsNEH0NbzGAuSgYhAC+ZmlQghlK0TAVygdi9hKJuGW6dHmIWxvcx+kOyUcJ9r5X9f2tLHuo4Ng
-	5QK+3Lq4f4e9TClk77PRHA18/C/X8QN4L0xvnMF4huhB3ogoqPVc5Cn3DBrHBjbnM2x3vqhHigs
-	f7YCxvDxqr1hvsHtu80Lw/w==
-X-Google-Smtp-Source: AGHT+IGa8KHeqSfvai4gM0A+MR712S3ariHHnp5X7yo+cWqQtSzUkx4fPOGLLduFzalQxzqnA/R9mw==
-X-Received: by 2002:a5d:6485:0:b0:391:2d8f:dd59 with SMTP id ffacd0b85a97d-3997f90d943mr3320018f8f.24.1742567698365;
-        Fri, 21 Mar 2025 07:34:58 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:5080:77b0:43f2:5276? ([2a01:e0a:3d9:2080:5080:77b0:43f2:5276])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3997f9b55cdsm2544183f8f.52.2025.03.21.07.34.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 21 Mar 2025 07:34:57 -0700 (PDT)
-Message-ID: <2b572981-7e63-4052-8186-4ba17f530cca@linaro.org>
-Date: Fri, 21 Mar 2025 15:34:57 +0100
+        d=1e100.net; s=20230601; t=1742567777; x=1743172577;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ra/8DYijPPPXyKfJwTLkvfoC8/C3kF5QcCpYx+TRQN4=;
+        b=t1NGj4urltVyNp05QF2Gh8OlhER3aDBl35+JfE23wFfiG54Nu2eDEgO+19u4jmzs4H
+         vGRplpypnN6/pzFUuPzK9YhyLa19/q5WporTHoKgKwquQCoNTknRROJH7Ox1g/yjjK21
+         2rBuWVATa/YudWR9b2Qf1SEDwksRspIplV4XEaeIPMQx0jH8EwHQ4l3PbxPjZLrW+Nns
+         7/jY/veZBr4+c6IHjT3XPu/coHl+rt51Jql455k2r/iubHl26KzeZEaop2D8nkeQaNyB
+         F3xHofpXTrnTxZhVuCoJE7Z7ctK8XKc5iJgkgIy1/16FsH79CYaIJVyxRWUFUQZnkCg4
+         jT0g==
+X-Forwarded-Encrypted: i=1; AJvYcCUzqMKgMp5hlkU0dg/VC0MXipmCuvyrkWKETzhbQM7/2FzNfjDib4gKOgeum0chPlocYFynWyOgrU0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwSsGt61+fZ+Evl8UT49GsdqrzZopeokm8NE+piEceHqOsmXvxo
+	0dzqp1rQm0i3sNTZ6B2XnWukVK0sZMSzV6nQ3Z32UvZSLusDr1WyKXCsbythFdo=
+X-Gm-Gg: ASbGnctJq2EvK9bC1jsmFUdnKj71+Kor9IFXRGt14+3jPEwn5ihkIypvnVoEak/L5gS
+	VDN2sgzu+BUjQafHh0jywEyPyr8wxVES6lxkrQjuXRfhIGRIMPTFd2sz4Bv1rwEJcnFKtJyb5UR
+	sjFRQmni2rWY7nvMxKYyJROeYfa+4B36FjmhQByE1PWm0Q5fuuoxd8oPKX/gOZFdxxWLs5YOgmv
+	N8BMkc976V+vOSlR3ZOOVsIL0A1CgBVsca8mo+tTVMVruy34sSXHf3cplTdykde1+1sg1Sz9DvB
+	TYey0PP2nRazquANnQ5R6Jj4LPZb05a9YwO9op3WmTMRmQEIqQ==
+X-Google-Smtp-Source: AGHT+IEBLRuGXXY3Hg/ewdBvYCF4zvDlD21Rbhn+1Z3hKO681e8YV9SPfJqpV9SZgDhIe4keKF4QkQ==
+X-Received: by 2002:a05:600c:8719:b0:43d:53c:1ad6 with SMTP id 5b1f17b1804b1-43d50a4ae7dmr28254255e9.26.1742567776837;
+        Fri, 21 Mar 2025 07:36:16 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with UTF8SMTPSA id 5b1f17b1804b1-43d4fceafacsm29121045e9.6.2025.03.21.07.36.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 21 Mar 2025 07:36:16 -0700 (PDT)
+Date: Fri, 21 Mar 2025 17:36:14 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: Heiko Stuebner <heiko.stuebner@cherry.de>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org
+Subject: [PATCH next] phy: rockchip-samsung-dcphy: Add missing assignment
+Message-ID: <e64265a4-9543-4728-a49f-ea910fccef7c@stanley.mountain>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v3 05/10] phy: phy-snps-eusb2: split phy init code
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, Abel Vesa
- <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org
-References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
- <20250321135854.1431375-6-ivo.ivanov.ivanov1@gmail.com>
- <7v3xkvldjnpqakrndwl6wb6vdsl3idbirlhddpqhwtt3ddadzr@kjafi3updcsb>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <7v3xkvldjnpqakrndwl6wb6vdsl3idbirlhddpqhwtt3ddadzr@kjafi3updcsb>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_073459_971457_80F1E797 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20250321_143619_804757_E769E775 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,70 +111,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/03/2025 15:31, Dmitry Baryshkov wrote:
-> On Fri, Mar 21, 2025 at 03:58:49PM +0200, Ivaylo Ivanov wrote:
->> The current phy init consists of hardware power-up, as well as
->> QCOM-specific eUSB2 init code. Split it into two parts, to make room
->> for such non-QCOM init code.
->>
->> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
->> ---
->>   drivers/phy/phy-snps-eusb2.c | 96 +++++++++++++++++++++++-------------
->>   1 file changed, 63 insertions(+), 33 deletions(-)
->>
->> @@ -378,6 +401,11 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
->>   	if (!phy)
->>   		return -ENOMEM;
->>   
->> +	drv_data = of_device_get_match_data(dev);
->> +	if (!drv_data)
->> +		return -EINVAL;
->> +	phy->data = drv_data;
-> 
-> Nit and completely bikeshedding, but this looks simpler:
-> 
-> 	phy->data = of_device_get_match_data(dev);
-> 	if (!phy->data)
-> 		return -EINVAL;
+The "ret = " was accidentally dropped so the error handling doesn't work.
 
-Please use device_get_match_data() instead.
+Fixes: b2a1a2ae7818 ("phy: rockchip: Add Samsung MIPI D-/C-PHY driver")
+Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+---
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Neil
-
-> 
-> 
-> Anyway:
-> 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> 
-> 
->> +
->>   	phy->base = devm_platform_ioremap_resource(pdev, 0);
->>   	if (IS_ERR(phy->base))
->>   		return PTR_ERR(phy->base);
->> @@ -424,8 +452,10 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
->>   }
->>   
->>   static const struct of_device_id snps_eusb2_hsphy_of_match_table[] = {
->> -	{ .compatible = "qcom,sm8550-snps-eusb2-phy", },
->> -	{ },
->> +	{
->> +		.compatible = "qcom,sm8550-snps-eusb2-phy",
->> +		.data = &sm8550_snps_eusb2_phy,
->> +	}, { },
->>   };
->>   MODULE_DEVICE_TABLE(of, snps_eusb2_hsphy_of_match_table);
->>   
->> -- 
->> 2.43.0
->>
-> 
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+index 08c78c1bafc9..28a052e17366 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+@@ -1653,7 +1653,7 @@ static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct device *dev)
+ 		return ret;
+ 	}
+ 
+-	clk_prepare_enable(samsung->ref_clk);
++	ret = clk_prepare_enable(samsung->ref_clk);
+ 	if (ret) {
+ 		dev_err(samsung->dev, "Failed to enable reference clock, %d\n", ret);
+ 		clk_disable_unprepare(samsung->pclk);
+-- 
+2.47.2
 
 
 -- 
