@@ -4,71 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71DB6C36000
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 15:07:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B807CC36001
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 15:15:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5difdbl7ZQi7tynRege29FggN1WpLzMAn9j8bP1r8IY=; b=onwMOT/qMwE1O0srrxFRcYQvfh
-	3CHMFdR7bYsYAkUGW10NO6kY9lfwg5utcxf6otkfs+rImOjGY0UmovrzS3voa/msQOfbj+04sBHXX
-	BujETuuW0eys/XqArgtjnl+sqdaJ7L2fU24qr6gUFAZ/rxoLbaeYN2TIfPbTq2/QVg/allMgxqSEI
-	3D/TdLrVHb/RAYiwv23Ik2X0VajELsin3Q7GAPc6POLnfFSp4MWv+nI5liUrOV+3+4m5bQGjRzecL
-	gFgXd0MybGnEou0ptBqjWDzLGjN7KnxGf+dYH5jG9JxsIqDKmbWgm6KyLwIP9ncPYXWDz1xPbHsEa
-	5hmhRYww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EpWxGjiFBcYVAVb7YppLl3ADi1ToOgKze2O95p6VvR4=; b=BpVj6IZvYUr6aO
+	BZTPwOBfNMQTEMCNAUysly/3IplXrOd8ix2+phY2SGdfpo0xyIS6KLiGiwuQgYBH9L3UYYx3507U5
+	vZRYAwG7WvQXuxYKFRMQQkQeQwg3KQ4PgE9B6Z7ZOQuBIi/GxH2DFXIjUn9gC5dyrFWSOcC2hNMJf
+	7rlWynk46vV5cWyJKTRqQCG4t1YqOZKnRKVS1tTR9hgg423OBpp5smqJE08Sx/tW/HIAPZ4mgb6jb
+	W6UxpLj+M44DmzL050yjZB0SJy9gqEwW0JWaTTNY53DkzdAETX9gXQO2abUY3l+TPpKRYY5HdnNL+
+	L3Jd/kmP/8d2JeBi8bRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdyJ-0000000FFcM-0713;
-	Fri, 21 Mar 2025 15:07:43 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1tve5h-0000000FGo1-28FM;
+	Fri, 21 Mar 2025 15:15:21 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdwG-0000000FFD8-1Ndz
+	id 1tve3z-0000000FGWU-1uTk
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 15:05:37 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 698AB43DE1;
-	Fri, 21 Mar 2025 15:05:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CCD3C4CEE3;
-	Fri, 21 Mar 2025 15:05:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742569535;
-	bh=LDK5i2JsWcIPqbJqtViwb+7u1TmV0WXlcCRoTF0x1ks=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=APwaGSfdOEZrLVz5s3iLIusVTnKNqhTX6atbo8GEnSd/YOyeb04Bc8bgUQ1oxbRE/
-	 r9zNcRcV9lbtb/V3eXCaZZwaQqc9o5d5js5Bup1jPoR69+wzM9SwBfFAJwM4IymAaR
-	 G41weHV5ez+olm0xsIB3vIb7nmDoQ6tru4GSboK7TCIhZHnS8bbirWxn6qvGCQ8gry
-	 LUCfa83Cv8aQk3qp3Oua8U46noRp2YuWCaw4fA3730xOquBLgd6WpxO9s0lvNyGyrl
-	 5U0mQDzaJKDHnCq/2QANzTpK0a59FQs2sc9tHcZ3wVh9SbjObtio6ygYYluqOXoqKT
-	 vTHQhJl6C+D9A==
-Date: Fri, 21 Mar 2025 10:05:34 -0500
+	Fri, 21 Mar 2025 15:13:37 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LAThVj032645
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 15:13:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=xMZqwFdk5KSv8eArmzuOQClA
+	gGlpgEE5tdbkxdpxDLQ=; b=h/6WsxSIpkBW/1vpvBD4bsmbgrPtvlQotX2E+c3P
+	l6lUuTmlKhEoKuu1aFsMZLe+kZd72mFSYJyZQxtw5NnuS6SawRGqz+0sL31k5xqE
+	YCTHuQKTtQrBVWupRyfq7nOGIUd5YKJbkHBByxPZWBHO31EF+wUbc0fUDGP9Ync8
+	4b60IeJb8RzC4RQj6hqN2dITSuYivsSbTKi6Ev7lVfom1Rjc9UxtSP8SshRsyjuV
+	9bUcTkeDeFhtQpAZAh/wJwIrUFMXWpBPmIHlB5W8GEZc2wJELyVkT/P7D9uPfoIm
+	SnmSU5CEHREX/2k6N1Q7QH9QsXPs7L8AhgXeTIg1RBw6xg==
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45gt5kjj8e-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 15:13:34 +0000 (GMT)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-6e8f6443ed5so52917006d6.1
+        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 08:13:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742570013; x=1743174813;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=xMZqwFdk5KSv8eArmzuOQClAgGlpgEE5tdbkxdpxDLQ=;
+        b=Jhh7PvKLFiXm7Kt0VzuUDM0mYY/5jq5FTxSLLUseSvPXRGJVpcw+WL/Pz1unXdb3Aw
+         Jt360Qsw+vmRZxkcihi3nWvWfCeYo5OlNoMEkImE+JCQFy5x4JLmXNGY+w2gIYjeqYFQ
+         V07oF52NNC/VWU4rO+CDVHYCL0CK8CFhzi8x3OHrPpq4DcyKlp4ywoleZHhzVlLjRjxR
+         DNE57BJNlCUcpt8OKgQ+HTYQymDRw77QQpZAI2QgkVu6nqdUH5RUpJNLWGLNjdUptKyU
+         TyarLGwHGNORr/hhgewKf9kyVLtgav4GKtMbX6+1d7Dutuncxg2AjQXgd1Y/bdoAQT4b
+         52Tw==
+X-Forwarded-Encrypted: i=1; AJvYcCUmggnIw0rtL3Gy6aViRozhunmsC8hPb42bL9iy7VTCiVM/pY/WWImxjQo+QqkRsk+Yo6Gl1WzDQlI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyjWl5fNQZb+wIkyibMBGiNi+Lnv+YYmN2kfYJaBWhjNevKUZUP
+	lLMRv+iMNLIiJ6gQU/spjScCWaPFmEYF8COA91gpSUm2JAuwMJiHcuMMyhbEHYc0t8N5VQrlPG+
+	rcDu4FNb40pSnJTZ2fWiqVMh+bVQGz/dgxaBAg4hIolMBxPaSHhVDfQiGWCdjm/vCEb9xlZEkjE
+	k=
+X-Gm-Gg: ASbGncvRbLmgtsNO35TUJqF9mFEbq3GXJN6XccmQK2ETFpIbV4orpmMITbWwgmBxhRw
+	AC87ySdrVuCNuFZz8g1UDA6hpRTSEGY7SNFVda6PmVeUEgsue+areknbTOSMsBTuhmuZEEPnAQ9
+	QYE0Fsn/ls4wf9K/QTosTp+DdsSRL1rJBhS6QikxoOG8RkKHJqU0KYYyGcqhV6Z3RdvZ8slzKFZ
+	FZbv0aKVPcE7VvHbxmYd1/iHG5CReUiCB99yYSa9ZK0gDEu7LFwX77tpU6TgcOGsqOj4axp0jor
+	buS7eBI0JCy3SPzunsOy6Dr3h0urc3vUn6mEL8aXew3H2HCT7Wz8CBbEZnYWz+Lad1Ji7sQTBHN
+	L1Q8=
+X-Received: by 2002:a05:6214:2504:b0:6e4:5a38:dd0f with SMTP id 6a1803df08f44-6eb348e09bdmr117295156d6.4.1742570013188;
+        Fri, 21 Mar 2025 08:13:33 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEV2qUsrf8Ji8k4NQXXY0QZJ3uWE9bmcYzJL0crOi3WG2aGplZZOmwLfnoE3lH8ycAUmOl/vQ==
+X-Received: by 2002:a05:6214:2504:b0:6e4:5a38:dd0f with SMTP id 6a1803df08f44-6eb348e09bdmr117294576d6.4.1742570012721;
+        Fri, 21 Mar 2025 08:13:32 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-30d7d8f4f79sm2679021fa.77.2025.03.21.08.13.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 21 Mar 2025 08:13:31 -0700 (PDT)
+Date: Fri, 21 Mar 2025 17:13:29 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Marek Szyprowski <m.szyprowski@samsung.com>,
+        Sylwester Nawrocki <s.nawrocki@samsung.com>,
+        Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+        linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v3 06/10] phy: phy-snps-eusb2: make repeater optional
+Message-ID: <m6uabp57a2kskyspnrz65frcf7dqkljmdeffupqkcni5qbgya7@cwmdcac5eh52>
+References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250321135854.1431375-7-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Nitheesh Sekar <quic_nsekar@quicinc.com>, linux-phy@lists.infradead.org, 
- Bjorn Andersson <andersson@kernel.org>, 
- 20250317100029.881286-2-quic_varada@quicinc.com, 
- Conor Dooley <conor+dt@kernel.org>, 
- Varadarajan Narayanan <quic_varada@quicinc.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>
-To: George Moussalem <george.moussalem@outlook.com>
-In-Reply-To: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
-References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
-Message-Id: <174256796512.3336836.9071668590061212281.robh@kernel.org>
-Subject: Re: [PATCH v6 0/6] Enable IPQ5018 PCI support
+Content-Disposition: inline
+In-Reply-To: <20250321135854.1431375-7-ivo.ivanov.ivanov1@gmail.com>
+X-Proofpoint-GUID: qxI-gjTbLhiYijR_Qo7mkBIWZl9Ta5E6
+X-Proofpoint-ORIG-GUID: qxI-gjTbLhiYijR_Qo7mkBIWZl9Ta5E6
+X-Authority-Analysis: v=2.4 cv=PsuTbxM3 c=1 sm=1 tr=0 ts=67dd821e cx=c_pps a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=pGLkceISAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=zXIZtLy0MoHwQ1NDvSoA:9 a=CjuIK1q_8ugA:10
+ a=zZCYzV9kfG8A:10 a=iYH6xdkBrDN1Jqds4HTS:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-21_05,2025-03-21_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ phishscore=0 adultscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
+ bulkscore=0 clxscore=1015 malwarescore=0 suspectscore=0 impostorscore=0
+ mlxlogscore=780 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503210111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_080536_412059_085EA6A0 
-X-CRM114-Status: GOOD (  23.15  )
+X-CRM114-CacheID: sfid-20250321_081335_513558_C2E21EB6 
+X-CRM114-Status: GOOD (  20.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,149 +131,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 21 Mar 2025 16:14:38 +0400, George Moussalem wrote:
-> This patch series adds the relevant phy and controller
-> DT configurations for enabling PCI gen2 support
-> on IPQ5018. IPQ5018 has two phys and two controllers,
-> one dual-lane and one single-lane.
+On Fri, Mar 21, 2025 at 03:58:50PM +0200, Ivaylo Ivanov wrote:
+> As described in the device tree bindings, it's not necessary for the
+> SNPS eUSB2 phy to be connected to a repeater. In configurations where
+> there are such instances, the driver probing fails and the usb
+> controller does not work.
 > 
-> Last patch series (v3) submitted dates back to August 30, 2024.
-> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
-> continuing the efforts to add Linux kernel support.
+> Make the repeater optional to avoid that, which also lets us use
+> the eUSB2 phy when it's connected to a repeater that is not configurable
+> by the kernel (for example it's missing a driver), as long as it has
+> been configured beforehand (usually by the bootloader).
 > 
-> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+> Acked-by: Neil Armstrong <neil.armstrong@linaro.org>
 > ---
-> Changes in v6:
-> - Fixed issues reported by 'make dt_bindings_check' as per Rob's bot
-> - Removed Krzysztof's Ack-tag on
-> - Link to v5: https://lore.kernel.org/r/20250321-ipq5018-pcie-v5-0-aae2caa1f418@outlook.com
-> 
-> Changes in v5:
-> - Re-ordered reg and reg-names in dt-bindings and dts to align with
->   other IPQ SoCs
-> - Corrected nr of interrupts in dt-bindings: phy: qcom: Add IPQ5018 SoC
-> - Corrected ranges property of pcie controller nodes
-> - Removed newlines between cells properties in pcie phy nodes
-> - Modified dt bindings to add descriptions and separate conditions for
->   ipq5018 and ipq5332 as they have different nr of clocks and resets
->   As such, also removed Krzysztof's RB tag for validation
-> - Ran dtbs_check and fixed:
->   interrupt-map property in pcie nodes:
->   /soc@0/pcie@80000000:interrupt-map: Cell 13 is not a phandle(0)
->   /soc@0/pcie@a0000000:interrupt-map: Cell 13 is not a phandle(0)
-> - Added missing gpio header file to ipq5018-rdp432-c2.dts
-> - Added MHI register requirement to bindings and to PCIe nodes as per:
->   Depends-on: <20250317100029.881286-2-quic_varada@quicinc.com>
-> - Link to v4: https://lore.kernel.org/all/DS7PR19MB8883F2538AA7D047E13C102B9DD22@DS7PR19MB8883.namprd19.prod.outlook.com/
-> 
-> Changes in v4:
-> - removed dependency as the following have been applied:
-> 	dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
-> 	phy: qcom: Introduce PCIe UNIPHY 28LP driver
-> 	dt-bindings: PCI: qcom: Document the IPQ5332 PCIe controller
->   Link: https://lore.kernel.org/all/20250313080600.1719505-1-quic_varada@quicinc.com/
-> - added Mani's RB tag to: PCI: qcom: Add support for IPQ5018
-> - Removed power-domains property requirement in dt-bindings for IPQ5018
->   and removed Krzysztof's RB tag from:
->   dt-bindings: PCI: qcom: Add IPQ5018 SoC
-> - fixed author chain and retained Sricharan Ramabadhran in SoB tags and
->   kept Nitheesh Sekar as the original author
-> - Removed comments as per Konrad's comment in:
->   arm64: dts: qcom: ipq5018: Add PCIe related nodes
-> - Link to v3 submitted by Sricharan Ramabadhran:
->   Link: https://lore.kernel.org/all/20240830081132.4016860-1-quic_srichara@quicinc.com/
-> - Link to v3, incorrectly versioned:
->   Link: https://lore.kernel.org/all/DS7PR19MB8883BC190797BECAA78EC50F9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com/
-> 
-> Changes in v3 (incorrectly versioned):
-> - Depends on
->   Link: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
-> - Added 8 MSI SPI and 1 global interrupts (Thanks Mani for confirming)
-> - Added hw revision (internal/synopsys) and nr of lanes in patch 4
->   commit msg
-> - Sorted reg addresses and moved PCIe nodes accordingly
-> - Moved to GIC based interrupts
-> - Added rootport node in controller nodes
-> - Tested on Linksys devices (MX5500/SPNMX56)
-> - Link to v2: https://lore.kernel.org/all/20240827045757.1101194-1-quic_srichara com/
-> 
-> Changes in v3:
->  - Added Reviewed-by tag for patch#1.
->  - Fixed dev_err_probe usage in patch#3.
->  - Added pinctrl/wak pins for pcie1 in patch#6.
-> 
-> Changes in v2:
->  - Fixed all review comments from Krzysztof, Robert Marko,
->    Dmitry Baryshkov, Manivannan Sadhasivam, Konrad Dybcio.
->  - Updated the respective patches for their changes.
->  - Link to v1: https://lore.kernel.org/lkml/32389b66-48f3-8ee8-e2f1-1613feed3cc7@gmail.com/T/
-> 
-> ---
-> Nitheesh Sekar (6):
->       dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018 compatible
->       phy: qualcomm: qcom-uniphy-pcie 28LP add support for IPQ5018
->       dt-bindings: PCI: qcom: Add IPQ5018 SoC
->       PCI: qcom: Add support for IPQ5018
->       arm64: dts: qcom: ipq5018: Add PCIe related nodes
->       arm64: dts: qcom: ipq5018: Enable PCIe
-> 
->  .../devicetree/bindings/pci/qcom,pcie.yaml         |  50 +++++
->  .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml |  49 ++++-
->  arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts     |  40 ++++
->  arch/arm64/boot/dts/qcom/ipq5018.dtsi              | 234 ++++++++++++++++++++-
->  drivers/pci/controller/dwc/pcie-qcom.c             |   1 +
->  drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c   |  45 ++++
->  6 files changed, 409 insertions(+), 10 deletions(-)
-> ---
-> base-commit: 5744a64fddfc33629f3bcc9a06a646f7443077a7
-> change-id: 20250321-ipq5018-pcie-1d44abf0e2f5
-> 
-> Best regards,
-> --
-> George Moussalem <george.moussalem@outlook.com>
-> 
-> 
+>  drivers/phy/phy-snps-eusb2.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com:
-
-arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dtb: pcie@80000000: reg: [[2147483648, 3869], [2147487520, 168], [2147487744, 4096], [491520, 12288], [2148532224, 4096], [503808, 4096]] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dtb: pcie@80000000: reg-names: ['dbi', 'elbi', 'atu', 'parf', 'config', 'mhi'] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dtb: pcie@a0000000: reg: [[2684354560, 3869], [2684358432, 168], [2684358656, 4096], [524288, 12288], [2685403136, 4096], [536576, 4096]] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dtb: pcie@a0000000: reg-names: ['dbi', 'elbi', 'atu', 'parf', 'config', 'mhi'] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-tplink-archer-ax55-v1.dtb: pcie@80000000: reg: [[2147483648, 3869], [2147487520, 168], [2147487744, 4096], [491520, 12288], [2148532224, 4096], [503808, 4096]] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-tplink-archer-ax55-v1.dtb: pcie@80000000: reg-names: ['dbi', 'elbi', 'atu', 'parf', 'config', 'mhi'] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-tplink-archer-ax55-v1.dtb: pcie@a0000000: reg: [[2684354560, 3869], [2684358432, 168], [2684358656, 4096], [524288, 12288], [2685403136, 4096], [536576, 4096]] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-arch/arm64/boot/dts/qcom/ipq5018-tplink-archer-ax55-v1.dtb: pcie@a0000000: reg-names: ['dbi', 'elbi', 'atu', 'parf', 'config', 'mhi'] is too long
-	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie.yaml#
-
-
-
-
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
