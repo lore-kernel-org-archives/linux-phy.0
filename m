@@ -4,120 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B61F7C36002
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:21:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3C4EC36000
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:22:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HJKjruWRYbbOSDc6eal1G042CkwwB3udqP22xoW8XEs=; b=Jee5d9eRG6DfaW
-	3lQMv1xgzXhOH8O3SY36EU2GBjRHbIK91ucLXhdIwMoSJZl3G8MOTjJc++v+YcDD7iqJAohvIpw2k
-	DAd5ud0eXT7FgjyWIwhiw/lqu9Th6vfYHSdcpjawqJQOwYnvHnsHyeeap+iEY6tqn33dXmNFhZPtr
-	ptkrEuHhAsSffexJQtwIPledAp1j6EyLg6cvPfI02rW20kM99m13p4kLrS44J0og6vNwaMlBKJha5
-	2Xep5RmDXAkMBfj3plYtTPhzw24CM1LvUJ0Awf+1GojZrB4A9ICz99+VXrJVIRYvl68Omx9wvOEM9
-	x/zO0jc7F8EEaUAHiQMw==;
+	List-Owner; bh=Rsv+M4HIyBC2FfEbqi3mJUVrqfYozNRLKZf9BFprXh8=; b=0vB/zYGZ18aP5c
+	aK8YR4QiJ4dM/7hdoSlgCjozamM78dCPSp6Lzhx+OG+b7UiPkCb4xpAhhIsplOB8P4+zACypL2DK/
+	pK5G5oHIzAEj5F+7/oYZUxrJ6lMDkseQfbUDson6J6lpukVyP0uSsJXWx5m9zgZE77IYDw1jjrtta
+	f0Pf64UogdsFM8kGdjqUB4L2iJVYqDKXfEXD+qglKQ3Y02/QSTRKgV8u4Lz+IqfYM7DjUYmEsacYZ
+	D4bRyNN3IIYVsAaCJQfvk3PdGJ2L8PijnZT/MVk/jDps2dDANnDHKusvdCs00MYAR3jfgdmvV6szo
+	CwZrcoefyJYgGmVhN1Kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdFN-0000000F5MT-22jO;
-	Fri, 21 Mar 2025 14:21:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tvdH1-0000000F5kV-2HqJ;
+	Fri, 21 Mar 2025 14:22:59 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvd80-0000000F3ab-1lTp
-	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 14:13:41 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LATD70001588
-	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 14:13:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=/OpsejO/nFX3sSiWvHtSM8e/
-	VQXv7bXmKGj+8glzoBM=; b=FPVlj4zzrVAJVgRA0tFAUrVa2rWZvCfOke+pU7tr
-	Hpu3XPD8rb8vPqIY3TTEBf50hszdjHgJDzd+tg8X/+H++klmbMvOY0ehw99aCSa7
-	uq2dQ+4QA4QKRvUXCxsYOrv+eyLW6cigopp0orb8wcW7LxFYs7RjfMmfFxHMedhc
-	4V7HSUn1rEfmnK9dz8P1aCLCRmbluP+r90Y3sb2Z3yjN1e0IsJk0z0D2l1iUI5n7
-	rxDbBJERCAAltD+oclMWWZiR9XON8zcIPDBpn7VOjRwnEAJ4ivxEX+tVmhfQ439U
-	YGgE87sWNhZuCBD00bqsTaO45IlZH4rzKMoBbEXlCmRSZQ==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45g3sf6790-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 14:13:39 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-476753132a8so17370051cf.3
-        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 07:13:39 -0700 (PDT)
+	id 1tvdBh-0000000F4Ux-2ad2;
+	Fri, 21 Mar 2025 14:17:30 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-43cf257158fso14307295e9.2;
+        Fri, 21 Mar 2025 07:17:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742566648; x=1743171448; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ytG4OhmvAoifvIavHR89GwgHjeqU42K8UC/AJE3bg8s=;
+        b=kLa922Hy2QvIm2EDbTMM3RMzl+jRv2b18n3hDKk63CwDf6WL+WwPRN5+habLAJDJ2C
+         wCh1tqRkzujoKCMf0Zt0YZZSQ9M+4pGZiWZl7tXJqa6Ta18TG8ohTcjhTw9rG1D9unW8
+         1YOaC0GVKmUJKdAwFSNdKExlYLR4hgPPTHcEHIiriaV4J7x87RJw6YwnxrNvaqx2Noyw
+         hflBQ7BRckrsAiE+my5LPyx+tqyZ2etvUpxzkbtrWM2glo7ptJNivknROobjR2rEmaOn
+         K3YpPaYcmGniS4suaBEhwvXEy2LJQ3RQtL0V244D/r2M4Q8b0HWLuLTp4t1DCnjD4F+g
+         Tasw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742566418; x=1743171218;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/OpsejO/nFX3sSiWvHtSM8e/VQXv7bXmKGj+8glzoBM=;
-        b=TV1PsdjLeXPUvTDD7Bh0rWeWwmsQJJJdemVc2InX8bgn8gwS3Q9V0PnLoyLtbQVRrR
-         RtsD2wdVr+1MRlqzbjKgdXVY8UaNpz+ZOl5MVWWxyiCWo+89qHH9MJWXLnfnCfPeLSgy
-         7EJz13wirecA63ITgP6oKU98atVUf5Z4kE2AmU4EFPwIBhXijMiJC8MsLMZYFYCU9qF0
-         gUxsPmIIDRjo0/p/Hc0pOCMC1Sq27PyVjJoh0xqVSTNrcxK4b6SlCuo5aC6ydRx8UsSD
-         5MRInpj/yzg6m8Jj1mLTP2HpThEPA6hb0z6qPEf3ooB8kLWcHhnUdB7lziHmAvBdLXHw
-         FiYA==
-X-Forwarded-Encrypted: i=1; AJvYcCW6vago+G5pEZo+vv3gZNGV/cGGYFsIWAQSiMMzgSj+Q2PvV9PkS1ilGss4O96oPsXQNYXlSV/iTYQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxGPg7+Qh95/0y8VgjUBxmVDtaZa5snfnXeDiVlawFsmCYzY1PH
-	ysHBhREQyjvemcaENnTeLUT1S2zvptMuI41rwUdlcDayiem5qE3dxqT0f/i+1+UyA3MmmoAiu0R
-	odZyi8TKQIvRO2W+OBPQ69LPHl6vQFUOjMExBmRiqFG4yy5Q/Hfn8tMPjGLlypVLN
-X-Gm-Gg: ASbGncvF7SPY2clO0EqD13FRp4/z42rquwaYEYjufsGdDcTc3onfWkvr3aIxi6Va9BC
-	Gn1zcL4JOE4pyaRNjBvIWHK9W6ET2p+sNyaEbW4shwKG3OK7r+mnHHIibGreUh783c9uJzG79lp
-	PKYQW9equNRnsKXbiElE2VMk2pPwNeFqcFslgSEm0G01+EKdv9D+qyXzBRaIzt0WkqapvbpAKf8
-	08oErXcMhNwtdHgP6iaICx7iKEyNFOQMJBlUhWMmbvPa1JcEsb5HUAfP+gPcNqpQV0akVTfwXRo
-	lBCVWgVm0D5s0CIkbWvaOINr9weOgLkChpR9l2Vb69KzgF7y7hlq+cpgzC6w7fIKWFlxjlrNolp
-	98AY=
-X-Received: by 2002:a05:622a:1896:b0:476:8225:dacc with SMTP id d75a77b69052e-4771de6129amr63272401cf.49.1742566418634;
-        Fri, 21 Mar 2025 07:13:38 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGcpv7lxv7hq3U7s9ctlOYQCQmLNU4dbw+zXD/Ekb+GQhj36pTR5y+EtUBwPhZ6EX2Ma2zidw==
-X-Received: by 2002:a05:622a:1896:b0:476:8225:dacc with SMTP id d75a77b69052e-4771de6129amr63271671cf.49.1742566418102;
-        Fri, 21 Mar 2025 07:13:38 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ad64805c8sm194189e87.90.2025.03.21.07.13.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Mar 2025 07:13:37 -0700 (PDT)
-Date: Fri, 21 Mar 2025 16:13:34 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: george.moussalem@outlook.com
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Nitheesh Sekar <quic_nsekar@quicinc.com>,
-        Varadarajan Narayanan <quic_varada@quicinc.com>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        20250317100029.881286-2-quic_varada@quicinc.com,
-        Sricharan Ramabadhran <quic_srichara@quicinc.com>
-Subject: Re: [PATCH v6 6/6] arm64: dts: qcom: ipq5018: Enable PCIe
-Message-ID: <5seajsw64e7mber5yga3ezcnvip3e4o2wylg3uhvaiu5pob47i@ea3rnxqrigcx>
-References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
- <20250321-ipq5018-pcie-v6-6-b7d659a76205@outlook.com>
+        d=1e100.net; s=20230601; t=1742566648; x=1743171448;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ytG4OhmvAoifvIavHR89GwgHjeqU42K8UC/AJE3bg8s=;
+        b=Sb75vqhF46w9yIKQEZQxRiSvvByuw93fxckWs/xkZ70hSxWMK4lpgXXR0CJ2oH4pEU
+         AYphorNgNYA00J8oQ6mI/ZzKR1BMEJTi/zmeZvjTPWAZVYbNmOBhxJ+YIVapGYpCj+6l
+         c+0afliTAbjK7BGBJP6cfXqCXdRoU2wuqWTy4cCtXyTXpX96i+zuTs2LKheLkUrKa3OL
+         yQjb5AGbxTJOdsXw+FAO1mGqmMuQBB0sE7orxfEYEYv5s5PdiPTIPqiy9Af6xdePddW8
+         e7ehWhmySXuWO/c6mpBON1WEjTRJsn0VFP57PHFEDUVzzQTltDXEfZaXjMG8pl39FK8D
+         /JQg==
+X-Forwarded-Encrypted: i=1; AJvYcCUK9qOG0jF+SzHSmO4XmzRVM+WZz+sm/AUT82BJ7952M+jDG9u9MVgNYK/jfDky5QBny7453tO2KRxnI8SprW1d@lists.infradead.org, AJvYcCW0TFjQ7mewrYTLJ31Ny3R3bO+dDEn+b31yYBcLxhVjWH4WF+BBLE9xSmlo3OXpSJfK91PygrCxJB5w@lists.infradead.org
+X-Gm-Message-State: AOJu0YxwOgFgDfvQRF8mDqd/iBHi1MiwOIUwx1i3kRZSXHWJX+TnUg8u
+	CFx6BDD/UXDp7ZDa8I2pmOPX1mpglgELAvs2xgr8mTzlhUpXUbI1
+X-Gm-Gg: ASbGncsESBKNaiC+0F9TULUdBiItVvsQCDs8GvwpxM5pVTd9fzVegAqzmF603YPEvW5
+	ZnMfZzZBU/+W/HHAene7O2HxVXCdgO3RVTOgZn0uuwW0ZqkPHW/+sRy4IVvTy24FTZYLO/1Mpso
+	lrP08QDKph8b8RA7kQnF5uvFhF2Z0FJq53unXG2IebfvUwUlk5OSJSipujysNGM2+HtI1QtGqil
+	beqrRYgjdGSu7jKU7N478BDrjmfudqi1fgqupDHNeOcwwrIkMXbUHAF+8/fUC5o9Her9UjlByWG
+	Bj2fmoNc2fSww8JduGj0R4fzEk9yCrgnYB4FeItYqQTKkuo0h2qWcvywoIk3SmtMXA7nYzqU9pj
+	TZA3yt5rSibEHwNQJw5RXzcQ=
+X-Google-Smtp-Source: AGHT+IHhU4LPTyHnNGvQrOFARSFPEWbuV6vlNsGOFbI3T/MO3rQl7YpluNrCNXFAx8Jyi8/qc5iipw==
+X-Received: by 2002:a05:600c:1d87:b0:43b:ca39:6c7d with SMTP id 5b1f17b1804b1-43d509e6544mr37272295e9.3.1742566647738;
+        Fri, 21 Mar 2025 07:17:27 -0700 (PDT)
+Received: from [192.168.1.105] (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3997f9a3428sm2517405f8f.26.2025.03.21.07.17.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 21 Mar 2025 07:17:27 -0700 (PDT)
+Message-ID: <782c2211-aa75-43b1-995a-2c93d75d75e7@gmail.com>
+Date: Fri, 21 Mar 2025 16:17:25 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250321-ipq5018-pcie-v6-6-b7d659a76205@outlook.com>
-X-Proofpoint-GUID: YCHMnLdyYdwfgacY1XXQjV43T_QZa67L
-X-Proofpoint-ORIG-GUID: YCHMnLdyYdwfgacY1XXQjV43T_QZa67L
-X-Authority-Analysis: v=2.4 cv=R9IDGcRX c=1 sm=1 tr=0 ts=67dd7413 cx=c_pps a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=UqCG9HQmAAAA:8 a=EUspDBNiAAAA:8 a=zzgNwz6f6jWhJtTWXysA:9 a=CjuIK1q_8ugA:10
- a=a_PwQJl-kcHnX1M80qC6:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-21_05,2025-03-20_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0 adultscore=0
- suspectscore=0 clxscore=1015 mlxscore=0 priorityscore=1501 malwarescore=0
- mlxlogscore=544 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503210103
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 03/10] phy: move phy-qcom-snps-eusb2 out of its vendor
+ sub-directory
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, Abel Vesa
+ <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250321135854.1431375-4-ivo.ivanov.ivanov1@gmail.com>
+ <vzlylhf5r5xy4ip4hkcolt3iye4stiabzxc4jwdzenbhll45ct@hx5gwpzrd33y>
+Content-Language: en-US
+From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+In-Reply-To: <vzlylhf5r5xy4ip4hkcolt3iye4stiabzxc4jwdzenbhll45ct@hx5gwpzrd33y>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_071340_580727_35474D87 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20250321_071729_657451_38506613 
+X-CRM114-Status: GOOD (  14.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,38 +111,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 21, 2025 at 04:14:44PM +0400, George Moussalem via B4 Relay wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> 
-> Enable the PCIe controller and PHY nodes for RDP 432-c2.
-> 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
-> ---
->  arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 40 ++++++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
+On 3/21/25 16:15, Dmitry Baryshkov wrote:
+> On Fri, Mar 21, 2025 at 03:58:47PM +0200, Ivaylo Ivanov wrote:
+>> As not only Qualcomm, but also Samsung is using the Synopsys eUSB2 IP
+>> (albeit with a different register layout) in their newer SoCs, move the
+>> driver out of its vendor sub-directory and rename it to phy-snps-eusb2.
+>>
+>> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+>> Suggested-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> Please fix the order of the tags. SoB should come after Suggested-by
+> (and usually it is the last one).
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Hm? I haven't had issues with SoB at the top in the past.
 
-Minor question below.
+>
+>> ---
+>>  drivers/phy/Kconfig                                      | 8 ++++++++
+>>  drivers/phy/Makefile                                     | 1 +
+>>  .../{qualcomm/phy-qcom-snps-eusb2.c => phy-snps-eusb2.c} | 0
+>>  drivers/phy/qualcomm/Kconfig                             | 9 ---------
+>>  drivers/phy/qualcomm/Makefile                            | 1 -
+>>  5 files changed, 9 insertions(+), 10 deletions(-)
+>>  rename drivers/phy/{qualcomm/phy-qcom-snps-eusb2.c => phy-snps-eusb2.c} (100%)
+> With that fixed:
+>
+>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-> +
-> +&pcie0_phy {
-> +	status = "okay";
+Thanks!
 
-If you have schematics, are you sure that there are no supplies for the
-PCIe PHY / PCIe PLLs on this board?
+Best regards,
+Ivaylo
 
-> +};
-> +
->  &sdhc_1 {
->  	pinctrl-0 = <&sdc_default_state>;
->  	pinctrl-names = "default";
+>
+>
 
--- 
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
