@@ -4,116 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03495C36000
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 15:57:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B2D8C36000
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 16:24:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vTSQ/C4Qs/3SkF4wbNcRcGgolG20Gzl4CWY2ig8p6o4=; b=QHNS9OmOAdVJ6r
-	aMTP27AU6WzrGWMAs/eQbiNhznmbuBeVBubUOzL/uC4vq7+FmeBzFM2bLmv3+egjYQCfBZbzvCK3l
-	wN0BVZ12qIfsM7emt5sULicSG5vOxpoToYVvBpiYHYEtrUZQ8ZmQSmu2sZBBcBrqJZLpFOg9cPSmC
-	vu0rpTL/Sp8esnJFK9BsLU+o/GsisbzozjWsfetKnTMbQYnnsa/6NESPjTbG0DwYpyfJzQ9k8PrOI
-	RJRu0+RFSQHnXgjbMqT/6wTERuvIk2ayDy/vgzPexIPBKh/PTy37aMwPAR1BNNEAlMM9trr4liubQ
-	EzTu362E2CGx7G0qbQdQ==;
+	List-Owner; bh=IpADpcmF42RMplZmL+GL0QGx2O/+NrJybnIWlj2G3M0=; b=mDThGXQbcG8YcD
+	BVPCH6JLedj6YMEfcpZaaW+QcQv9H6aSWhTImi+PybdHTc6YKhU2vXcu0YDvY4lOkf9c3uEK1Jnoh
+	Ikc52w/Z6YEyw1iuT3/lVk6lITOtVJxETZA3egG7LhmOxAz+D3qXtJuDO5eU870VBNF8IQmI38B82
+	vgr4w3LusYlrEFBWIxWjUVxl+AQFJuJIiQIXigFWD9iChCUVjoBhh031h/+aFn6G+w3kDS8g4RaJ1
+	z2tkzXDR6ts6O5+cX2LzVBEwmP1mzi5xJgkiEd4xCEZiEAvnEleiN1ZA4ci91ykpRk4EvIYtAv9Aq
+	QOfjpfjbD/cEmJITsa9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvekm-0000000FNxB-3DfA;
-	Fri, 21 Mar 2025 15:57:48 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tvfAk-0000000FUiX-0YTf;
+	Fri, 21 Mar 2025 16:24:38 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvegs-0000000FN9H-13PP
+	id 1tvfAh-0000000FUgj-1Jo9
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 15:53:48 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LATCDl011433
-	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 15:53:45 GMT
+	Fri, 21 Mar 2025 16:24:36 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LATLZv001150
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 16:24:35 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=LptmSOduTXZdmxLfabby/f0q
-	YD+OOd89CLB3+Homj/E=; b=XwOqSwMLn6z4nHVnDSkjrjKFlzyirWWCntc4tipp
-	mdieX75XroXRDdyorNmXzvbcciaq9pQf0LkT+vPXhl1tTisgbArrLN6Ph6XSZ44v
-	PHwfbPbgHbs5PX8XZVoXC4/+yhO7XBakxe3gIuCGR3htwRDz22CgcWUycxORItcW
-	pA2ZMdE3ZJxmcxw750xmNfalecsyaLy8KbhYk5suDi2RT6GD2cPITOt0xOrs6PIl
-	xU5BZUQZ/bZ1e/a+8lfPk4uJljvvUX/DmuetZz8cAPTpO4klaZJdCdxxPAbl7H1x
-	QrAzjuAtzNmsEZ/dSBZICyAlxmsNm6/Nc10mLWvE0EK2KQ==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45g15y6xvf-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ezUvZQcZtwMrgBYlUmzB77M/ia6WCeZ5frQ98fyadU8=; b=ZtbrNKnjtpjQrL4p
+	ofV1Qu+ShD8CFFWgmB+lu1aU3ZVNz8K9Sn7/Fabi5p5bphNEkQ0rtdMlR7NMoADQ
+	c4fUcprPbP2b2U1uFkOcZQoqMvWgwoFWpCETImYmNMTUQf0OuIijCcaUS6lrO6xC
+	AM1v1jlDboyDc/6ffHPUNg7jZpGDWo9yQsP8AXrfkL7f2TSS55YJqB2C/mhnmjy6
+	d2vL4iIGUqJWukz6SFeZD/3eMI7Cdr59fB1wbPcrya0VJFyYn/Z7WwYxQ4aHj3SC
+	FLYOEkPchfiPNE8nQRLwuHAW/T7lxcrfvXkwD0HLD6W8jtiZckSdbX+4q/IzAdBf
+	mL6KVA==
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45h4u9s8yu-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 15:53:45 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-6e905e89798so27239666d6.3
-        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 08:53:45 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 16:24:34 +0000 (GMT)
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-6e8f6443ed5so54210936d6.1
+        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 09:24:34 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742572424; x=1743177224;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LptmSOduTXZdmxLfabby/f0qYD+OOd89CLB3+Homj/E=;
-        b=o3WMM//ilrhZZA0B7cpaSQPgAVov0rMPRjQgqPKT2AitoLkzytK9Ft6kdBSqSJSe6R
-         64ctHHx2pGHZ8YDhdJ1KnZnSwdjBQQGfc1dD/CL8Q5jsED/UbbMK1RiFrFCDOuY9hwjT
-         +1ldpnIgRgWPccOWnDjv97I4b5GQWatHw49kIjh6R02g7cF5otI3SEUHtPX4iaJsTPTz
-         hVUcRHZMl7mM5Y7rLR49ObCRS6xKaD/tctAoqRZgxxjrtNzrDI3wHHLegRb4HnSvKQfP
-         wwvyeGkFGdOL/SPUSmVSu1mwsvqKqAjAf3XcezZdM8rPpDlgksMWIH8FX6rg5U2kDTnC
-         QWCQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXTyjRe7002EQUe/TzlPAwJwU8EuFho44YBYgUilCD/fRsTWtWrhQi6oSlihapsAthLE5KNCTgi9io=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzU8TcG9dc+sh6zoQaqqXY7RdBCJtv1JQuY61ja5i8f2xwC8ylq
-	Ol43aMRnuouFYowzOQRQ0n4UW6qsMYDxO7ruIpDz8tU1Egif4Z+eQETWxov6AhtTRZfF/B5mH/Q
-	pCKM8N7Fvw2t8HnsTBczJ3GRxSqMqEXudxgV16yOPgzUlvRAzYf4lxg2027/LMY1T
-X-Gm-Gg: ASbGncvL7gjS4/05RlRchozWEakKOi13ueU/HfBXdrkDPeKHJOtwe5n1Npmv1QarONk
-	/b626JHnxOnNZs8I6R1LHazj8w3NxlCNSO/aFnSLkck0TAo3F800kI8NmsKI4CU8xpUg0pFEmII
-	vBNXzjdy3ebQ8FZGKcCpr2LbX8YjHD8VENdvdqmUII5UubDGG2HI2I10LyA+haL1+zYTmIUBNK7
-	mHJFP8lhZIWi2TqeZPsPlkSPP083vHxpfRuWV7ERqKyLnuVP1gAMOPOLLIgE+vKddsxI0SR9j/T
-	l+SqEbhQXwzDMYko72no7k7PTNjcDR9z+uXMFphbdOHQlGFfEtAyo/LEv1RrWRKoJOmnpJH0QPX
-	beME=
-X-Received: by 2002:ad4:5de7:0:b0:6e8:ea17:8587 with SMTP id 6a1803df08f44-6eb3f3b7b50mr46274706d6.42.1742572424178;
-        Fri, 21 Mar 2025 08:53:44 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFNM19+y0wvr0/rSNbRv08Ya/wFMH3feSKKK/Zb7YMAXHSS6ZMZj7DV4uHlqvystkp4UnLvjQ==
-X-Received: by 2002:ad4:5de7:0:b0:6e8:ea17:8587 with SMTP id 6a1803df08f44-6eb3f3b7b50mr46274196d6.42.1742572423624;
-        Fri, 21 Mar 2025 08:53:43 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ad651237fsm209084e87.242.2025.03.21.08.53.40
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 21 Mar 2025 08:53:41 -0700 (PDT)
-Date: Fri, 21 Mar 2025 17:53:38 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Marek Szyprowski <m.szyprowski@samsung.com>,
-        Sylwester Nawrocki <s.nawrocki@samsung.com>,
-        Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-        linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v3 09/10] phy: phy-snps-eusb2: add support for exynos2200
-Message-ID: <wwvjm4576r437tf2thbqseca5fobedgrhjk52iegwz5qnlhfv4@pnsl3pvsefwq>
-References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
- <20250321135854.1431375-10-ivo.ivanov.ivanov1@gmail.com>
+        d=1e100.net; s=20230601; t=1742574273; x=1743179073;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ezUvZQcZtwMrgBYlUmzB77M/ia6WCeZ5frQ98fyadU8=;
+        b=qD8EqIjvjFJ/tm2zbRVHjcdeAORIQpq0njJdTtdZE1eQK74OcP51TYLSZfshHqZeXU
+         64Focn1spvgB/7RQHbGAYRwmIjVqSDmmecZY0XoKtiEWvAZgTBSoF5DE3YPr2DJtURfO
+         CbE0BtQu3lvBx9W0TBXP8wKyNIeoehSCbhGVFHp23PNckM2eWe0Ft7hVkOt2LTjEzSjM
+         hA0Lms++Egs1Bdo8M3N7EfvV3/+qKzPWLpf5eZkKyrus9U4SyL6yK7OLK0vYrf3GBfij
+         JRjI5H3h4pxYJpVH2h0Hn/OVVb/e+SEAVHPNPYq68/5gkmeOpOnKO0GXefYW+/9PPeUl
+         sl/A==
+X-Forwarded-Encrypted: i=1; AJvYcCUbv6HUFgJbsZIpTdxOfuMomjnrc4A9GWDmNybai+dLW+Yogw+LkPmDLYGycU+INhe4Y+oq5+AqzNk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YycuTXHsKW7FkPSuFZKgMORDCOOe1w2oSueif74GXO4flLDXBHT
+	fLzhga3koXk+V50GaMjy+T8xcZZxuPX5NLDjfpPFVyOmF6EWcItacHUGNZpLOqpC6ekYByyotJY
+	01/CUBEXVUqM+AN1uMVAqu/eR6HEqw84WxdA8/6p7ofZhEKIrBJM8Ndh3wnkjc7Gg
+X-Gm-Gg: ASbGncuf7mfttNoYzGwONJbjI6m8No3I8VbdC8fq2lSNUuw22tqZLWNEjPtcWV2o0FE
+	DhNQy4UptHD5d6IB93vCM48+HK1WtZzxwQOhxiVjjYp/ARb1ARnWFNphZ8HKw48C1Ctb7qg1JkD
+	kkizI3gQrS9mWk7RuuC7+yI6gctjRIgAE+hiEOcOs+RanMU/NNH31k/QcyMeXdZXu5vZxuIEbRO
+	cnOHRJ+lRQKThFOH731hJAmWEBB9+DOGogt8/ej/DFX3VIYLp7uNhMJsodFRImQ+7cPAUOroIWI
+	EddVAfO7FDjI14+z0mlYC2TXinCS6lROenAzzJKgOiAOCkbBYrk6invchKpYlNcBf8BDJlkI9AC
+	otCY9VKWkWB4f0iIgVna4vpMDVsJUtZ/opuu8Io0WMHxI1wSObVwbLN21swgZ0TgaMm9U
+X-Received: by 2002:ad4:5caa:0:b0:6ea:d604:9e4f with SMTP id 6a1803df08f44-6eb34a27d9emr122911926d6.19.1742574273449;
+        Fri, 21 Mar 2025 09:24:33 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFfSGRUC3naAh8M1yxzEOqb0ryoZ43qJS30vtSLWnzr26EwF+jPBOlX+Bn9WciwgRg5g9565g==
+X-Received: by 2002:ad4:5caa:0:b0:6ea:d604:9e4f with SMTP id 6a1803df08f44-6eb34a27d9emr122911386d6.19.1742574273001;
+        Fri, 21 Mar 2025 09:24:33 -0700 (PDT)
+Received: from ?IPV6:2001:14bb:c2:310f:a0b3:1d12:b116:f8e6? (2001-14bb-c2-310f-a0b3-1d12-b116-f8e6.rev.dnainternet.fi. [2001:14bb:c2:310f:a0b3:1d12:b116:f8e6])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ad647b423sm214685e87.64.2025.03.21.09.24.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 21 Mar 2025 09:24:30 -0700 (PDT)
+Message-ID: <8eba44d0-1f4d-44df-a13f-994bd766dd31@oss.qualcomm.com>
+Date: Fri, 21 Mar 2025 18:24:28 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250321135854.1431375-10-ivo.ivanov.ivanov1@gmail.com>
-X-Proofpoint-GUID: DAfCpnD4nW7dTzE81Sji3i8RJepWRnJK
-X-Proofpoint-ORIG-GUID: DAfCpnD4nW7dTzE81Sji3i8RJepWRnJK
-X-Authority-Analysis: v=2.4 cv=VaD3PEp9 c=1 sm=1 tr=0 ts=67dd8b89 cx=c_pps a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=VxB2ctdoYg6PJSLCJaAA:9 a=CjuIK1q_8ugA:10
- a=pJ04lnu7RYOZP9TFuWaZ:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 08/14] phy: rockchip: samsung-hdptx: Avoid Hz<->hHz
+ unit conversion overhead
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Heiko Stuebner <heiko@sntech.de>
+Cc: Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>,
+        Maxime Ripard <mripard@kernel.org>, kernel@collabora.com,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-arm-kernel@lists.infradead.org,
+        linux-rockchip@lists.infradead.org,
+        Dmitry Baryshkov <lumag@kernel.org>
+References: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
+ <20250318-phy-sam-hdptx-bpc-v6-8-8cb1678e7663@collabora.com>
+Content-Language: en-US
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+In-Reply-To: <20250318-phy-sam-hdptx-bpc-v6-8-8cb1678e7663@collabora.com>
+X-Proofpoint-ORIG-GUID: 9LCSKnU2R6zB7kFI9wBmAgLM7-L4yZeF
+X-Authority-Analysis: v=2.4 cv=FYE3xI+6 c=1 sm=1 tr=0 ts=67dd92c2 cx=c_pps a=wEM5vcRIz55oU/E2lInRtA==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=QX4gbG5DAAAA:8 a=EUspDBNiAAAA:8 a=_XDy0L4iob18M6GPC-sA:9 a=QEXdDO2ut3YA:10
+ a=OIgjcC2v60KrkQgK7BGD:22 a=AbAUZ8qAyYyZVLSsDulk:22
+X-Proofpoint-GUID: 9LCSKnU2R6zB7kFI9wBmAgLM7-L4yZeF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-21_05,2025-03-21_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- bulkscore=0 lowpriorityscore=0 adultscore=0 mlxlogscore=712 phishscore=0
- spamscore=0 priorityscore=1501 suspectscore=0 mlxscore=0 malwarescore=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ impostorscore=0 mlxlogscore=999 mlxscore=0 priorityscore=1501 bulkscore=0
+ phishscore=0 spamscore=0 clxscore=1015 adultscore=0 lowpriorityscore=0
  classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503210116
+ definitions=main-2503210120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_085346_408912_028310F4 
-X-CRM114-Status: GOOD (  13.81  )
+X-CRM114-CacheID: sfid-20250321_092435_359711_67DBCAC1 
+X-CRM114-Status: GOOD (  11.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,25 +125,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 21, 2025 at 03:58:53PM +0200, Ivaylo Ivanov wrote:
-> The Exynos2200 SoC reuses the Synopsis eUSB2 PHY IP, alongside an
-> external repeater, for USB 2.0. Add support for it to the existing
-> driver, while keeping in mind that it requires enabled more than the
-> reference clock.
+On 18/03/2025 14:35, Cristian Ciocaltea wrote:
+> The ropll_tmds_cfg table used to identify the configuration params for
+> the supported rates expects the search key, i.e. bit_rate member of
+> struct ropll_config, to be provided in hHz rather than Hz (1 hHz = 100
+> Hz).  This requires multiple conversions between these units being
+> performed at runtime.
 > 
-> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+> Improve implementation clarity and efficiency by consistently using the
+> Hz unit throughout driver's internal data structures and functions.
+> Also rename the rather misleading struct member.
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > ---
->  drivers/phy/Kconfig          |   2 +-
->  drivers/phy/phy-snps-eusb2.c | 162 ++++++++++++++++++++++++++++++++++-
->  2 files changed, 159 insertions(+), 5 deletions(-)
-> 
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 79 +++++++++++------------
+>   1 file changed, 39 insertions(+), 40 deletions(-)
 
-Acked-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
 -- 
 With best wishes
