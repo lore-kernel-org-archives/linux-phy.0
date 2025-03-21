@@ -4,66 +4,132 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8A3EC36000
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:26:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82291C36000
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 14:34:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fI7kpBlYakjtVbWpsDDNOq3MbmuVbxFMLPQQBZ0IFAE=; b=m/VqbOL0rbHXKV6qth0lnzbZjU
-	WJQUktSlTIfHez0qCy2Ov+0SzozNScjHAp4MSuFQoBBu2HgaBMvB9uziYAHDQeAI+cY8TnWfVquLV
-	X4uLM52kUbjjsa/z2VKgXaTghXuiFeTaGd9OrQVCZPCV0Q64w44R9OwUEc3FwySFXcwp27UG9QXCI
-	p1lpchvssg0xEeug0czNWxl3DxZubA6sy49zPwMgBzfcCiKlvi2DAT5CVam31luG3KUGtlK6N788O
-	wxP6SX0qcj726hbJjzEwwCzlOu08oiH9YbHhAWkbD2/7rBBKG6DiRp/Z91yZ4gnNBsyDdGzoFvuzU
-	cPeCJf5A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8H+ArpvcJwhRbP/IalO5WKkWXoZIaSQQoFtRWeNPYrw=; b=MOb/sjVKzUhRbx
+	zkDIxrk4Bt/gs28/l2J2I+SIPMSYddoYligAcx6y6B6+mBCwHHw1O0cEk4o8hsbh9LLWZtGmVYhnv
+	5Fj1Zxatbsmzon5bR3FKXJ3MKd+XWeudB+ZQUcLaIhSGl+T2ILaPxP23fjYYYGHC+I77z9EDAVjR7
+	ugm82DmT3P8U5421COqGq6pfhGd8hBYd9BQvuq82z4FFfs7GiwlqO71ARZEpjuQa+O0tM22zvhkJ+
+	ToQpAplaoROYzjq57SKtZDYnH0OFyo9YWwZuVeiqe79Lj13obn6mmrsNdVVbwl2YwIIIbO4UBLj29
+	3oTeYmUTm84N8ao/on8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdKK-0000000F6R2-28Yl;
-	Fri, 21 Mar 2025 14:26:24 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tvdSb-0000000F89U-0XXX;
+	Fri, 21 Mar 2025 14:34:57 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvdCD-0000000F4cA-0XCM
+	id 1tvdPt-0000000F7a9-35Rx
+	for linux-phy@bombadil.infradead.org;
+	Fri, 21 Mar 2025 14:32:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=ASbCVF6IGoyY2N0TjxdPMAgZr4dHNvrD/QqrVeipMWU=; b=mHU5WVRg1hJ+ZIv65lNzNzK9er
+	CZUBXOK7CPrBmZy35ewd+/Z3dEmVpsGkuzp/I7MAoZnMyDXROYpYah5DjLfhgA+63sFD1t2QdLzBc
+	nm/qFXR8whXd0wVsTi9xw8KX4M419JU/cgLq4DF5Zf3MAknq7wVf9piKcyMlVtTl+HKq/1mAs74Nf
+	akfCzPblP8CS3g30XdeqmWkR557as1HuV81HiMr2PZIhTdwW9lmIC580CV4wunXQHOB3ToNJZwhcx
+	6jUQP+feUX7aapweV/NrNcSgiuy/PJcMbXkOTONwqfeMA2gm4zUDzclRZ3Wgh0/VLV0Bv6J6Vufcm
+	Fy7Ug9pA==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tvdPq-00000004O88-19JZ
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Mar 2025 14:18:02 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id F28D4A468B3;
-	Fri, 21 Mar 2025 14:12:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77ACFC4CEEC;
-	Fri, 21 Mar 2025 14:17:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742566680;
-	bh=0amfkrO3B1zq5t8fnOfrUB4M+QOIpfFLARmwtZZfJw4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=h28JaQj+Cuj1LkqH51sg7oXGnIp4dVVxPZLz+0RAoJ/cvMEaPF8oIsuaNLxg6oydV
-	 r1yJNsBhghnpG5hehz+YWKOib6wlXmRNYJP7ecTb3km28qnRD6pBOoGxDewxc4Udqp
-	 M3VCQqx7xzCwXw05YFYf0I++tTrBW3LCeKuiIctyDlwgH9flhmRhKbywagZErNUwkl
-	 z+mg2s7FssEr24uOfvVkTLbAuEnEKhf3y/Qzh1gNfpYQYjqJpFejFsahS/CASq8/IB
-	 ZlJyi2L7eqISoLmTCRdL3u9zf1QNz6RraU3518vXPG/QTtwiQLFWd2PA6UUZZMcqLT
-	 qZ8Zkfy0Bycew==
-Date: Fri, 21 Mar 2025 15:17:57 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Cc: Jyri Sarha <jyri.sarha@iki.fi>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>, 
-	Aradhya Bhatia <aradhya.bhatia@linux.dev>, Devarsh Thakkar <devarsht@ti.com>
-Subject: Re: [PATCH 03/18] drm/tidss: Add mode_fixup to adjust the clock
- based on HW
-Message-ID: <20250321-adaptable-astonishing-adder-ceeb6f@houat>
-References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
- <20250320-cdns-dsi-impro-v1-3-725277c5f43b@ideasonboard.com>
+	Fri, 21 Mar 2025 14:32:08 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52LATHbK001879
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 14:32:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=ASbCVF6IGoyY2N0TjxdPMAgZ
+	r4dHNvrD/QqrVeipMWU=; b=j5/rvATVRl6e8otFJk7TbSloKEolYfxdsRjzEMzg
+	ahv0NV3EzON7+NlL2LG+x07BVD1G8E2LXmCAqs6xepVXisQWj5WOYaNhCE9+uC+7
+	2QdprtEUMU1KEes4JYdCFKdWDiOKqjBIfgD7cTX/4jBIq5s3o6gXIWFciWpsoRaV
+	hgeIjdTpqO+YtrYjBBhgbamNBdrIRLQVDtUuCuni2MOCH9fk1zCfI1xQYPYov8gO
+	I/yYtk099O770kxqToSM5yJuDhflwyBv34Z4q7gg4yRaXHFSiRqwS56wjKrP08/E
+	BIO4BQrb1UG+nx+sT9ArT0tL9Oc1Nd9XF3BpCXJOGohTLg==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45g3sf68re-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 14:32:00 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7c54a6b0c70so204150185a.0
+        for <linux-phy@lists.infradead.org>; Fri, 21 Mar 2025 07:32:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742567519; x=1743172319;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ASbCVF6IGoyY2N0TjxdPMAgZr4dHNvrD/QqrVeipMWU=;
+        b=kPABpNHMAtBT1TH6yBqPFAiH3HstsDdenUi+7yE1kf2UJVCnEHEE434tapSAtHpLLD
+         ZPb+kYw9qq6X4Qa9eiF16sbectOhB3deJYRhoA+XAo0nQ5rhXA6tA5gQlRVEy+Uu48HM
+         nOJSgAbGFivYKZ+6A56nc+ZiHAFZhBkDp4wL3KvbIoeLRP653D01EwdZBSfxB8RWPmNZ
+         hUV5kdwT/zSkUQcrsujHeFuUCoHnIGa4Etb+3V4+2a5kfdAD67+LJbvc02whca5CrZCz
+         hUhXSJogJC/ZhqSPe9OEJbg1O/llAa4nRoEjXHPInkzgWnZ7I3abQcALGwegXro8D08T
+         2H+A==
+X-Forwarded-Encrypted: i=1; AJvYcCXO5ZY4cIxKH193mNXPBOVWdePO8nQCageWYrgSTLQ4pVJHIkHETpRqxrhQlCi3rhMV4fwmirfErhQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzCsTUh8Ii7XiGrx5SDgtu/EQy6TuppDNobbzBORcyRaxWLeDlV
+	jAgCfRSD08tU9YUZ0lf721aDCdE3QHo9xDPn50mXsgs366J1wdhokL36ctl9KpVPJ0nl3LEjh1/
+	ikYl8PphGqHdEWwpxUt+t1EG7Kik4Z7tSYgkHmF6EXJil1JSES5cTH3fdxnG0ExXtfuhrdZZ+Pq
+	g=
+X-Gm-Gg: ASbGncvwIlFtV90rxkFe56jIwmrDdtmMj4qhqGd6YpBuhRvHKESJWCGLs6S9PLCa4R9
+	+YxlXjBEgRoADCqItM4XFGl04CpjOxjdRu9qxDqtGmz4JTc8b5Bw6YICxhUc4nQOfUqlZf3HibH
+	g12feI+4nmT/32h7+zEOXz63ZaIZFixTw1LbbwBlVDWrCj8S7D6CjHuTQ0dGOU66YghQUauunU5
+	7ruqfLfNcktu8480N2XR7BLsf/5niE61dF/UhWP/y/FniGCagNsjq6EWEZTGPp48Hcm/r1g82is
+	AF9wQOxChOZLsmODsdP1apXTqp7FN/oSjbUMM/z1Hlm+KhPbadKOojTUoE0QYZFxSqBu/KfQqii
+	GyQQ=
+X-Received: by 2002:a05:620a:461f:b0:7c5:5e5b:2fdb with SMTP id af79cd13be357-7c5ba211392mr509661785a.41.1742567519277;
+        Fri, 21 Mar 2025 07:31:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHTvGJ85KG70hDc3USgHc+qZKoWAZnYtaXcPyp6rUDakGGGOGIHCJQh/uHXW8DEKPu0mfBeXA==
+X-Received: by 2002:a05:620a:461f:b0:7c5:5e5b:2fdb with SMTP id af79cd13be357-7c5ba211392mr509654385a.41.1742567518714;
+        Fri, 21 Mar 2025 07:31:58 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ad646bd42sm194861e87.26.2025.03.21.07.31.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 21 Mar 2025 07:31:56 -0700 (PDT)
+Date: Fri, 21 Mar 2025 16:31:55 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Marek Szyprowski <m.szyprowski@samsung.com>,
+        Sylwester Nawrocki <s.nawrocki@samsung.com>,
+        Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+        linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v3 05/10] phy: phy-snps-eusb2: split phy init code
+Message-ID: <7v3xkvldjnpqakrndwl6wb6vdsl3idbirlhddpqhwtt3ddadzr@kjafi3updcsb>
+References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250321135854.1431375-6-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20250320-cdns-dsi-impro-v1-3-725277c5f43b@ideasonboard.com>
+Content-Disposition: inline
+In-Reply-To: <20250321135854.1431375-6-ivo.ivanov.ivanov1@gmail.com>
+X-Proofpoint-GUID: KBFc4lzAb6ExkAp5GBsj286WjHGzuDUO
+X-Proofpoint-ORIG-GUID: KBFc4lzAb6ExkAp5GBsj286WjHGzuDUO
+X-Authority-Analysis: v=2.4 cv=R9IDGcRX c=1 sm=1 tr=0 ts=67dd7860 cx=c_pps a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=Vs1iUdzkB0EA:10 a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=XJ2MQsQTle-X_OudA-YA:9 a=CjuIK1q_8ugA:10
+ a=IoWCM6iH3mJn3m4BftBB:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-21_05,2025-03-20_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ lowpriorityscore=0 bulkscore=0 spamscore=0 phishscore=0 adultscore=0
+ suspectscore=0 clxscore=1015 mlxscore=0 priorityscore=1501 malwarescore=0
+ mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503210106
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_071801_293036_4E9CA1B4 
-X-CRM114-Status: GOOD (  22.19  )
+X-CRM114-CacheID: sfid-20250321_143206_642484_24F9C0A0 
+X-CRM114-Status: GOOD (  18.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,105 +141,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3789142753375998592=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3789142753375998592==
-Content-Type: multipart/signed; micalg=pgp-sha384;
-	protocol="application/pgp-signature"; boundary="bchtvmz6w2bii2si"
-Content-Disposition: inline
-
-
---bchtvmz6w2bii2si
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 03/18] drm/tidss: Add mode_fixup to adjust the clock
- based on HW
-MIME-Version: 1.0
-
-On Thu, Mar 20, 2025 at 05:59:58PM +0200, Tomi Valkeinen wrote:
-> At the moment the driver just sets the clock rate with clk_set_rate(),
-> and if the resulting rate is not the same as requested, prints a debug
-> print, but nothing else.
->=20
-> Add mode_fixup(), in which the clk_round_rate() is used to get the
-> "rounded" rate, and set that to the adjusted_mode.
->=20
-> In practice, with the current K3 SoCs, the display PLL is capable of
-> producing very exact clocks, so most likely the rounded rate is the same
-> as the original one.
->=20
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+On Fri, Mar 21, 2025 at 03:58:49PM +0200, Ivaylo Ivanov wrote:
+> The current phy init consists of hardware power-up, as well as
+> QCOM-specific eUSB2 init code. Split it into two parts, to make room
+> for such non-QCOM init code.
+> 
+> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 > ---
->  drivers/gpu/drm/tidss/tidss_crtc.c  | 22 ++++++++++++++++++++++
->  drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
->  drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
->  3 files changed, 30 insertions(+)
->=20
-> diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/t=
-idss_crtc.c
-> index 1604eca265ef..b3338dac25bc 100644
-> --- a/drivers/gpu/drm/tidss/tidss_crtc.c
-> +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
-> @@ -309,7 +309,29 @@ enum drm_mode_status tidss_crtc_mode_valid(struct dr=
-m_crtc *crtc,
->  	return dispc_vp_mode_valid(tidss->dispc, tcrtc->hw_videoport, mode);
+>  drivers/phy/phy-snps-eusb2.c | 96 +++++++++++++++++++++++-------------
+>  1 file changed, 63 insertions(+), 33 deletions(-)
+> 
+> @@ -378,6 +401,11 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
+>  	if (!phy)
+>  		return -ENOMEM;
+>  
+> +	drv_data = of_device_get_match_data(dev);
+> +	if (!drv_data)
+> +		return -EINVAL;
+> +	phy->data = drv_data;
+
+Nit and completely bikeshedding, but this looks simpler:
+
+	phy->data = of_device_get_match_data(dev);
+	if (!phy->data)
+		return -EINVAL;
+
+
+Anyway:
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+
+
+> +
+>  	phy->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(phy->base))
+>  		return PTR_ERR(phy->base);
+> @@ -424,8 +452,10 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
 >  }
-> =20
-> +static bool tidss_crtc_mode_fixup(struct drm_crtc *crtc,
-> +				  const struct drm_display_mode *mode,
-> +				  struct drm_display_mode *adjusted_mode)
-> +{
-> +	struct tidss_crtc *tcrtc =3D to_tidss_crtc(crtc);
-> +	struct drm_device *ddev =3D crtc->dev;
-> +	struct tidss_device *tidss =3D to_tidss(ddev);
-> +	long rate;
-> +
-> +	rate =3D dispc_vp_round_clk_rate(tidss->dispc, tcrtc->hw_videoport,
-> +				       adjusted_mode->clock * 1000);
-> +	if (rate < 0)
-> +		return false;
-> +
-> +	adjusted_mode->clock =3D rate / 1000;
-> +
-> +	drm_mode_set_crtcinfo(adjusted_mode, 0);
-> +
-> +	return true;
-> +}
+>  
+>  static const struct of_device_id snps_eusb2_hsphy_of_match_table[] = {
+> -	{ .compatible = "qcom,sm8550-snps-eusb2-phy", },
+> -	{ },
+> +	{
+> +		.compatible = "qcom,sm8550-snps-eusb2-phy",
+> +		.data = &sm8550_snps_eusb2_phy,
+> +	}, { },
+>  };
+>  MODULE_DEVICE_TABLE(of, snps_eusb2_hsphy_of_match_table);
+>  
+> -- 
+> 2.43.0
+> 
 
-mode_fixup is deprecated in favor of atomic_check. If you can't use it
-for some reason, it should be documented one way or another.
-
-Maxime
-
---bchtvmz6w2bii2si
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCZ911EQAKCRAnX84Zoj2+
-dgndAYCh/YgKmD2eT0IGBSW4oFScUbO0JiE0c6rJgT/fOlLd8ZyEQUmNR3/ihtKv
-L3mLPUwBgN2SlLXG4F2ri8LKeYXjbpOagi9fMufwxwGrEzWDluOQ6RSb6Ak7/Y/H
-uemPVUoFyg==
-=QyZO
------END PGP SIGNATURE-----
-
---bchtvmz6w2bii2si--
-
-
---===============3789142753375998592==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3789142753375998592==--
-
