@@ -4,76 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2962DC36001
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Mar 2025 22:39:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69653C35FFC
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Mar 2025 20:16:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Im7usFOpG8bP4VMqI8VfBe/Es8K7wJ4lDCHoNJwcEoA=; b=UNH83rQ3fnLR7x
-	uY+YTQU4Ry7I7qnWMLALadV5/mMquI9/jCtCDQwrcaFt48GVZvR30rh4hqN/t+gcE/zPY6ZuK7PpD
-	nIz5CxyJgMtRDwsph70NfK7UMTaCoNLdrkZivEMZ679KFXqMVWBX3WveMfYguaG05y2TxdzuiIU7H
-	urh5PWi0XHd0lvXbttDln4oP3ba/DqwAU9kbkPLChd+h5fJKieVDfTPhVHR1Tr7AuVDUG87KaGjOX
-	+462wCVgiijSytISSmHkfbHkMJuEGv2bjErxz61TP8uJX59VMwLRLszhsEnLYAHC2xXd4xR3PtD0C
-	no/Wd/ZbKvEYiY1MU3yw==;
+	List-Owner; bh=a8gqgh+v4BA1qZKE04NCF3A1e/dj8bq9iAnsJePKXDg=; b=Ezul9fac9sz4Kg
+	/lVUddNNNT1gK656yosHSnvCPbaEQnyMhri4pMtSaD5+FQJ3H9WdVOsCfgoULGviHDjPQVT1Iusi9
+	nA7LhjbSJwZJFMEALuT4z3SaPuD0w8xXYrtbk3h76p4Lcs8hOgJW9pVVJvPvSJAgirvTwl93d7CBk
+	i8BGHULAI48GTzWNo5ebtUxC1s8K7uNep4L8C8U6zJexx2Oya5ZsDue6HhrIkXH7guyduaaT5pi+5
+	rLyuB37qVwWkIHvb5o56gGmSpz1pcAty5chJgXJ25oYGS5mcKkJNyV752T5EP1t7+BThgLvNqO3c/
+	SD/DVN6g1zjSiH9Fcu0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvl1N-0000000GVDd-2vee;
-	Fri, 21 Mar 2025 22:39:21 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1tw5GT-00000000Gpz-2TcI;
+	Sat, 22 Mar 2025 20:16:17 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvkzg-0000000GV4O-2SPG;
-	Fri, 21 Mar 2025 22:37:37 +0000
+	id 1tw5GS-00000000Gpo-0MTR
+	for linux-phy@lists.infradead.org;
+	Sat, 22 Mar 2025 20:16:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9586943754;
-	Fri, 21 Mar 2025 22:37:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BD08C4CEE3;
-	Fri, 21 Mar 2025 22:37:35 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 66D5D615F4;
+	Sat, 22 Mar 2025 20:16:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD3A2C4CEDD;
+	Sat, 22 Mar 2025 20:16:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742596655;
-	bh=ramSATIM6Gfyw9DQk/rIg5hUgUc4Aq61YIxEdbWpWAc=;
+	s=k20201202; t=1742674574;
+	bh=wG6yAeIvUo6cSeHVafODK9l9ixZ9Z1WMTlZDD5+ozSg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=u/b5e3XwA10wQ0+gzZsAmrh+PYEPBTqOTPwQCOEJmGQ72ZsBAs4AUVs6sGkyH/oCm
-	 OWh72S7LLTL5DxzFvdSVgJM05lo4MiYSGkdaANNFI7HR/8FtIQh08BqBmmYhZP/ldO
-	 U3oL9HVf6BXs+eapmm7aKRLfGJQhcMI2zTLB7ahA4kLIvR71WujKLPNXhhxJ09PWNH
-	 dLlWWMcr/3JOadEK6bvLKreEPEgWRHTlPVHQKyqypBDzcPN1PYgvavIhgMIqlbIe4a
-	 Y26LDPTZ5wsqjo3Tn2S6/fmAZ82NZi6oHL8CNGEyRnkbS2KBvmAFiFSMTSn7PLiEhS
-	 6vAgxK49Xc4wA==
-Date: Fri, 21 Mar 2025 17:37:34 -0500
-From: Rob Herring <robh@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
+	b=EtX7M70jBfnFvZxZYHEHqcW1hrL/wSrQ2OerVfeABCqaRzjfX/lolndYDCTi+SExi
+	 Gmkp+tgxoIPavEepxwiUTjh5AxJyaD53cpkrByFt0wIjVHvzfLdKmu2nFnYgJlgs4h
+	 auauWj0I39DLdf04e9GLeL94RLYT8HNCO006oka5KrfxBYjH7LacCBbX1FpVl/Q2dN
+	 CNMRC7S+R7MkMT+AdLuD7xyXUcKZRB3GuqVCaQfpix+MwcbHkB5JlM+MNXVW2ze1pU
+	 bLAlYZFWAuzXjq+OyKO54fiZY1u1WOwsNy1Y8v9wGcOOsuX3w+ocSfEY5dxPA5iMEb
+	 Kb3tCRaECrvfw==
+Date: Sat, 22 Mar 2025 15:16:13 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: George Moussalem <george.moussalem@outlook.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Sricharan Ramabadhran <quic_srichara@quicinc.com>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
-	Alexander Sverdlin <alexander.sverdlin@gmail.com>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
-	Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
-	upstream@airoha.com
-Subject: Re: [PATCH v2 03/11] dt-bindings: clock: en7523: add Documentation
- for Airoha AN7581 SCU SSR
-Message-ID: <20250321223734.GA6837-robh@kernel.org>
-References: <20250320130054.4804-1-ansuelsmth@gmail.com>
- <20250320130054.4804-4-ansuelsmth@gmail.com>
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	Bjorn Andersson <andersson@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Nitheesh Sekar <quic_nsekar@quicinc.com>,
+	Varadarajan Narayanan <quic_varada@quicinc.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	20250317100029.881286-2-quic_varada@quicinc.com,
+	linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Subject: Re: [PATCH v6 1/6] dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018
+ compatible
+Message-ID: <174267455671.1906457.16602134107538739913.robh@kernel.org>
+References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
+ <20250321-ipq5018-pcie-v6-1-b7d659a76205@outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250320130054.4804-4-ansuelsmth@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250321_153736_667592_F50F4F7F 
-X-CRM114-Status: GOOD (  25.17  )
+In-Reply-To: <20250321-ipq5018-pcie-v6-1-b7d659a76205@outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,156 +85,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Mar 20, 2025 at 02:00:26PM +0100, Christian Marangi wrote:
-> The Airoha AN7581 SoC have in the SCU register space particular
-> address that control how some peripheral are configured.
+
+On Fri, 21 Mar 2025 16:14:39 +0400, George Moussalem wrote:
+> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > 
-> These are toggeled in the System Status Register and are used to
-> toggle Serdes port for USB 3.0 mode or HSGMII, USB 3.0 mode or PCIe2
-> or setup port for PCIe mode or Ethrnet mode (HSGMII/USXGMII).
+> The IPQ5018 SoC contains a Gen2 1 and 2-lane PCIe UNIPHY which is the
+> same as the one found in IPQ5332. As such, add IPQ5018 compatible.
 > 
-> Modes are mutually exclusive and selecting one mode cause the
-> other feature to not work (example a mode in USB 3.0 cause PCIe
-> port 2 to not work) This depends also on what is physically
-> connected to the Hardware and needs to correctly reflect the
-> System Status Register bits.
-> 
-> Special care is needed for PCIe port 0 in 2 line mode that
-> requires both WiFi1 and WiFi2 Serdes port set to PCIe0 2 Line
-> mode.
-> 
-> Expose these configuration as an enum of strings in the SCU node and
-> also add dt-bindings header to reference each serdes port in DT.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 > ---
->  .../bindings/clock/airoha,en7523-scu.yaml     | 101 ++++++++++++++++--
->  MAINTAINERS                                   |   7 ++
->  include/dt-bindings/soc/airoha,scu-ssr.h      |  11 ++
->  3 files changed, 110 insertions(+), 9 deletions(-)
->  create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
+>  .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml | 49 ++++++++++++++++++----
+>  1 file changed, 41 insertions(+), 8 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml b/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
-> index fe2c5c1baf43..637ce0e06619 100644
-> --- a/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
-> +++ b/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
-> @@ -9,6 +9,7 @@ title: EN7523 Clock
->  maintainers:
->    - Felix Fietkau <nbd@nbd.name>
->    - John Crispin <nbd@nbd.name>
-> +  - Christian Marangi <ansuelsmth@gmail.com>
->  
->  description: |
->    This node defines the System Control Unit of the EN7523 SoC,
-> @@ -26,6 +27,23 @@ description: |
->  
->    The clocks are provided inside a system controller node.
->  
-> +  The System Control Unit may also set different mode for the Serdes ports
-> +  present on the SoC.
-> +
-> +  These are toggeled in the System Status Register and are used to
-> +  toggle Serdes port for USB 3.0 mode or HSGMII, USB 3.0 mode or PCIe2
-> +  or setup port for PCIe mode or Ethernet mode (HSGMII/USXGMII).
-> +
-> +  Modes are mutually exclusive and selecting one mode cause the
-> +  other feature to not work (example a mode in USB 3.0 cause PCIe
-> +  port 2 to not work) This depends also on what is physically
-> +  connected to the Hardware and needs to correctly reflect the
-> +  System Status Register bits.
-> +
-> +  Special care is needed for PCIe port 0 in 2 line mode that
-> +  requires both WiFi1 and WiFi2 Serdes port set to PCIe0 2 Line
-> +  mode.
-> +
->  properties:
->    compatible:
->      items:
-> @@ -49,6 +67,40 @@ properties:
->      description: ID of the controller reset line
->      const: 1
->  
-> +  airoha,serdes-wifi1:
-> +    description: Configure the WiFi1 Serdes port
-> +    $ref: /schemas/types.yaml#/definitions/string
-> +    enum:
-> +      - pcie0_x2
-> +      - pcie0_x1
-> +      - ethernet
-> +    default: pcie0_x1
-> +
-> +  airoha,serdes-wifi2:
-> +    description: Configure the WiFi2 Serdes port
-> +    $ref: /schemas/types.yaml#/definitions/string
-> +    enum:
-> +      - pcie0_x2
-> +      - pcie1_x1
-> +      - ethernet
-> +    default: pcie1_x1
-> +
-> +  airoha,serdes-usb1:
-> +    description: Configure the USB1 Serdes port
-> +    $ref: /schemas/types.yaml#/definitions/string
-> +    enum:
-> +      - usb3
-> +      - ethernet
-> +    default: usb3
-> +
-> +  airoha,serdes-usb2:
-> +    description: Configure the USB2 Serdes port
-> +    $ref: /schemas/types.yaml#/definitions/string
-> +    enum:
-> +      - usb3
-> +      - pcie2_x1
-> +    default: usb3
 
-Couldn't you make this a phy provider and use the mode flags in the 
-phy cells?
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-> +
->  required:
->    - compatible
->    - reg
-> @@ -64,6 +116,12 @@ allOf:
->          reg:
->            minItems: 2
->  
-> +        airoha,serdes-wifi1: false
-> +        airoha,serdes-wifi2: false
-> +
-> +        airoha,serdes-usb1: false
-> +        airoha,serdes-usb2: false
-> +
->          '#reset-cells': false
->  
->    - if:
-> @@ -75,6 +133,24 @@ allOf:
->          reg:
->            maxItems: 1
->  
-> +  - if:
-> +      properties:
-> +        airoha,serdes-wifi1:
-> +          const: pcie0_x2
-
-This is also true if airoha,serdes-wifi1 is not present. Probably not 
-what you intended.
-
-> +    then:
-> +      properties:
-> +        airoha,serdes-wifi2:
-> +          const: pcie0_x2
-> +
-> +  - if:
-> +      properties:
-> +        airoha,serdes-wifi2:
-> +          const: pcie0_x2
-> +    then:
-> +      properties:
-> +        airoha,serdes-wifi1:
-> +          const: pcie0_x2
-> +
->  additionalProperties: false
 
 -- 
 linux-phy mailing list
