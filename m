@@ -4,85 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF76CC36002
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Mar 2025 14:16:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48C95C3600B
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Mar 2025 15:52:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ThLXwJTNoAQ/R0rVAP9oNvNgkxqmHLDclH2PQs5ht+g=; b=mYPQnI8I+cJpoQ
-	PKxtfmDAlhqSjQFaG9ZD28yNXd7o0zSygX7/ae3UgUGrRUEIOfoIACFpAU16xOHx/HAIQaHT5+f3n
-	f1rtVOT/sLot25SecF4pCT0sHJQ7d6P0s0QowQWBvTGaHHSO1FuKOGyf2ofuuqrsIJ9LQJmR/6PB3
-	am2WOT21pPRd9MA6l9DN1m9RVYU/DGyPeNpdLC24Hd165iN8p3UD1JIF3rzMZqypFmn1q/zc1BnJH
-	rSsIGsdA9vyY/GfibZ/HT3nYTNzLzpDUONYLoW5BNJrDy/JIkzdbc+3BTQRuhvLfseKQ2uFHsDKox
-	7juyqUcjlTYaRWha3IVw==;
+	List-Owner; bh=ht+DFccdiQxeH/gK25Sa2dKVgtkCc0WbD5ypJvX0MRE=; b=QOmTMOTdXhahBK
+	ArJ2b1ZcNFJUaHTVsJvsdtdniHZUik8nB171mGbY4AOi1tENfVRRX0mzloCxQ5ZQfQM5PizG6yvbK
+	K1LepzQclcqRadUdK+WM/vfJYmzr4Id+/71sjHV1EQT2cVmf43cbM53So4NLWaAKt13LNroHOQa6b
+	/VlEsBOJRepnwj4++YZJTryXtNyfdAj5vf278VWN3UmyJEZ+qjGI3p2735Zn0akoSqygXHoSNwytb
+	14lC0aSnDJIReplgIaHfcr5u1635BIn1uIJR8nNIQnYAbI2c2cIs8SGY1OYQUHNVaw4ovXDqxs5xb
+	7+6d/MVhkwboDN2XT+wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twiau-00000003MaI-1S3U;
-	Mon, 24 Mar 2025 14:16:00 +0000
-Received: from mail-qv1-xf36.google.com ([2607:f8b0:4864:20::f36])
+	id 1twk6L-00000003Z6g-34M7;
+	Mon, 24 Mar 2025 15:52:33 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twiar-00000003MZr-3Nlf
-	for linux-phy@lists.infradead.org;
-	Mon, 24 Mar 2025 14:15:59 +0000
-Received: by mail-qv1-xf36.google.com with SMTP id 6a1803df08f44-6e8f4c50a8fso37519846d6.1
-        for <linux-phy@lists.infradead.org>; Mon, 24 Mar 2025 07:15:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742825756; x=1743430556; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=/YTUkjHZHGEAKDUjwWiEYmGKnaxSbNIbQRJt9OczQAk=;
-        b=yqprPp1O98S6u8D9U12z8RdAnuFCaoVjyH4HSQaJ6TPk7znfiVNooNCWaAF0c6CJtT
-         586K/RBC0QnZJEhdNlSEgmEDp5MrzXwAp0JYynKXcliRM9+uS/1jZpHYJWSPPw+RP0Jr
-         7WqXT3ZkfabeFT3W02oMp60rpvIIJyvOK/3xZtVyeYmJjqs0WysxGFQtbBWYwp1TYXkP
-         cvkq3Ul+3sb/aTC/mPw+K9u95J8fKPVqlDoK83UOYSvLCnhodYuk5+EWn7Sh1zmTylwD
-         lSHQRai1MgmDb1e8aeq7w7bCUOEiQkUFFhpHPltr3iytpY1KKN2JFNioxQq2ZcXRDWID
-         wa1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742825756; x=1743430556;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/YTUkjHZHGEAKDUjwWiEYmGKnaxSbNIbQRJt9OczQAk=;
-        b=NvdOyzT2jtNMS8737WGh7+Tar7EE/M5GY5JUeXcjq1OE7OdC1Ps4ez4fFAhOO8AAhC
-         z3EcxpykNFafEYD5PVdMMRuFzEcbxvc4HDGY6uBn9gLqKWRF8B7bosPbWGClpG7C8IHI
-         tFuLGCCaDUl6hN0VDvJCejKMdpuvXgY1WD/l176q1TkQxoWdblVrekB9IDxdUKSPp4NM
-         PPfIU42cFuRJldAzH3SdXjkok1PJmIe2cpi1k/wgw4b5m1hizKj3nQbplxfGW4hYaDUd
-         pZHfMNvFjwXbRFu11orYOOPZRSMDvvstqSFJsf+4LQPJj+2AmDPssmNRzAIswuLDTtXk
-         DEjQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXCZTw1ibOJHvEHWnKwYcF6eNna5lNC+6AHv1z0SbItpGAfY8Dq/J9SHpS43LtqkXb8TDnlnjmCAZE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxpusqztNUIv/H2nrSMdHPXUl8pcVPWhlLVx0fH9ZD6Vr/ZJn9e
-	HOzEzQpf5fMW6ffZRPFj4g8YeVkxEp+0kXtw+KQyUc/sLvuTZncn4Ds+2iL7JnP9eP5ILeYUfjF
-	wrp4Hkt2lvZmLPkqPDi6h1RM4tRbFaKafNvYayw==
-X-Gm-Gg: ASbGncveEUqXFxTrYI3GjXQJcI1bot/iSkV7i6iJw6Sv/J2nh4sRkQwJjcr40L3I27d
-	eV+5xZlTdNzqliHrD4eRns5hsi/Vo+tt92Ojl6ei93RSVn9LIhaNBsbppIVRbpW+FiTsUZajPlJ
-	y52bUAWL6wicGSnGV2m7CudW4M9frPyYdVun2I
-X-Google-Smtp-Source: AGHT+IET01HrGYkfdsNQwuLGnPKedTxLw+MZzq0YOj9OYp+aXXjQ99ek0X4dg6AMPBw2zvLeAvxl7AVAjVE/wKcQkdg=
-X-Received: by 2002:a05:6214:21e8:b0:6e6:6ba9:9e84 with SMTP id
- 6a1803df08f44-6eb3f2e89e9mr158682316d6.26.1742825755791; Mon, 24 Mar 2025
- 07:15:55 -0700 (PDT)
+	id 1twk3G-00000003YMj-3FhL;
+	Mon, 24 Mar 2025 15:49:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id B57566158E;
+	Mon, 24 Mar 2025 15:49:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09D86C4CEDD;
+	Mon, 24 Mar 2025 15:49:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742831360;
+	bh=mTbzGdF585SBjs9qPph8XaC8lrk++6aRMnH/YTASE/0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Wxhn0Z9z3nh/2wuc6gVgU5ZwFdAmyHEABI9c/8nJRe+t6Dq7cGxBiYHE2vOpYwF7r
+	 kRU5ydtcI91sDHKqlW/e6G6qPs9OwF8Cclr3X3CexKDR8Tv7ddkISF3S4aAKEs4GXL
+	 f52tEdkI/RTCG1iQ9jcKj2ThSWq1sxi1qITtC0eDbbXOmdLqnEG18WXxJEoHaEaQMr
+	 Aaz8RHgWJ3PvYJayX1I4CULlm5YHWjJ3aeb5GtJNMhhyknUdv5xVlYF67UN6nluWcQ
+	 JNi5Dy/1JWSwgOK1gXUo/kEC/u9tmXqoaUxhqdZi5PokB5tDeg+yUfqJlHS8zCbHkX
+	 j1WFmI+6TM55A==
+Date: Mon, 24 Mar 2025 10:49:19 -0500
+From: Rob Herring <robh@kernel.org>
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
+	Alexander Sverdlin <alexander.sverdlin@gmail.com>,
+	Nikita Shubin <nikita.shubin@maquefel.me>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
+	Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
+	upstream@airoha.com
+Subject: Re: [PATCH v2 07/11] dt-bindings: phy: Add documentation for Airoha
+ AN7581 USB PHY
+Message-ID: <20250324154919.GA101272-robh@kernel.org>
+References: <20250320130054.4804-1-ansuelsmth@gmail.com>
+ <20250320130054.4804-8-ansuelsmth@gmail.com>
 MIME-Version: 1.0
-References: <20250318-xps13-fingerprint-v1-0-fbb02d5a34a7@oss.qualcomm.com> <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
-In-Reply-To: <20250318-xps13-fingerprint-v1-2-fbb02d5a34a7@oss.qualcomm.com>
-From: Stefan Schmidt <stefan.schmidt@linaro.org>
-Date: Mon, 24 Mar 2025 15:15:45 +0100
-X-Gm-Features: AQ5f1JpC0RoI-SQpmS4z7rQW8vsesIlMQfF1ceo6NxFQog8bjicko6I-EYu81x0
-Message-ID: <CAEvtbuuyz_5xm1=juJFW5nOo+xL71TeuY-SV=YbTnAOsHW5yeg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm64: dts: qcom: x1e80100-dell-xps13-9345: Enable
- fingerprint sensor
-To: bjorn.andersson@oss.qualcomm.com
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Aleksandrs Vinarskis <alex.vinarskis@gmail.com>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	devicetree@vger.kernel.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250324_071557_849289_66AEB87A 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20250320130054.4804-8-ansuelsmth@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,27 +87,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Bjorn,
+On Thu, Mar 20, 2025 at 02:00:30PM +0100, Christian Marangi wrote:
+> Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
+> for the USB controller.
+> 
+> Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
+> always supported. The USB 3.0 mode is optional and depends on the Serdes
+> mode currently configured on the system for the USB port.
+> 
+> If the airoha,serdes-port property is not declared, it's assumed USB 3.0
+> mode is not supported, as the Serdes mode can't be validated.
+> 
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> ---
+>  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 83 +++++++++++++++++++
+>  MAINTAINERS                                   |  7 ++
+>  .../dt-bindings/phy/airoha,an7581-usb-phy.h   | 11 +++
+>  3 files changed, 101 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+>  create mode 100644 include/dt-bindings/phy/airoha,an7581-usb-phy.h
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..39ceaded5d0e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+> @@ -0,0 +1,83 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/airoha,an7581-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Airoha AN7581 SoC USB PHY
+> +
+> +maintainers:
+> +  - Christian Marangi <ansuelsmth@gmail.com>
+> +
+> +description: >
+> +  The Airoha AN7581 SoC USB PHY describes the USB PHY for the USB controller.
+> +
+> +  Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
+> +  always supported. The USB 3.0 mode is optional and depends on the Serdes
+> +  mode currently configured on the system for the USB port.
+> +
+> +  If the airoha,serdes-port property is not declared, it's assumed USB 3.0
+> +  mode is not supported, as the Serdes mode can't be validated.
+> +
+> +properties:
+> +  compatible:
+> +    const: airoha,an7581-usb-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +
+> +  airoha,usb2-monitor-clk-sel:
+> +    description: Describe what oscillator across the available 4
+> +      should be selected for USB 2.0 Slew Rate calibration.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    enum: [0, 1, 2, 3]
+> +
+> +  airoha,serdes-port:
+> +    description: Describe what Serdes Port is attached to the USB 3.0 port.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    enum: [0, 1, 2, 3]
 
-On Wed, 19 Mar 2025 at 04:23, Bjorn Andersson via B4 Relay
-<devnull+bjorn.andersson.oss.qualcomm.com@kernel.org> wrote:
->
-> From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
->
-> The fingerprint sensor, hidden in the power button, is connected to one
-> of the USB multiport ports; while the other port is unused.
->
-> Describe the USB controller, the four phys and the repeater involved to
-> make the fingerprint sensor operational.
->
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+Since you only have a single value here, does that mean only only one of 
+the 2 ports/phys supports USB3?
 
-Goodix Fingerprint USB Device fingerprint device shows up on my XPS 9345 now.
+> +
+> +  airoha,scu:
+> +    description: Phandle to the SCU node for USB 3.0 Serdes mode validation.
+> +    $ref: /schemas/types.yaml#/definitions/phandle
 
-Tested-by: Stefan Schmidt <stefan.schmidt@linaro.org>
+A bit unusual, but you could use the phys binding here instead of these 
+2 properties. The phy for the phy...
 
-regards
-Stefan Schmidt
+> +
+> +  '#phy-cells':
+> +    const: 1
+
+Please add a description of what's in the cell.
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - airoha,usb2-monitor-clk-sel
+> +  - '#phy-cells'
+> +
+> +dependentRequired:
+> +  airoha,serdes-port: [ 'airoha,scu' ]
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/phy/airoha,an7581-usb-phy.h>
+> +    #include <dt-bindings/soc/airoha,scu-ssr.h>
+> +
+> +    phy@1fac0000 {
+> +        compatible = "airoha,an7581-usb-phy";
+> +        reg = <0x1fac0000 0x10000>;
+> +
+> +        airoha,usb2-monitor-clk-sel = <AIROHA_USB2_MONCLK_SEL1>;
+> +        airoha,scu = <&scu>;
+> +        airoha,serdes-port = <AIROHA_SCU_SERDES_USB1>;
+> +
+> +        #phy-cells = <1>;
+> +    };
+> +
+> +    phy@1fae0000 {
+> +        compatible = "airoha,an7581-usb-phy";
+> +        reg = <0x1fae0000 0x10000>;
+> +
+> +        airoha,usb2-monitor-clk-sel = <AIROHA_USB2_MONCLK_SEL2>;
+> +
+> +        #phy-cells = <1>;
+> +    };
+
+Drop the 2nd example.
+
+Rob
 
 -- 
 linux-phy mailing list
