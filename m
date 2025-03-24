@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84F00C36002
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Mar 2025 07:47:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AEEFC36002
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Mar 2025 07:52:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pj+2zznauOhma50TiFM2kXf1xtQOANHqWzKl8pVzHac=; b=e8Zq9KqD7dQkHg
-	dUq60OMmsL6nnGEH8dTx6/IE1WXMI4iEBLGmrFXZ+kNjRSrIf4JBGhmaCiuHhFBDmWWbv7oePtq9k
-	myb+iEH60SWTCKjh5WG97tDqDaSRzb0s+L7R4bLdT8gx2cGyvmDGasyfpDa8E61OSINZ2pgfUf4UY
-	uWMdiT5bNpTdnSWVQA6clFVkuCHTpinpVrvVvPtPC2sNJDzNtf46C9BhUebiIWReiKDiFbPrAmRWT
-	xI6zkEcNV//WGmTdSp8fkbhIPWJUOST0aKwNK5WvQ7ZJ931n1hj89L6t3qqdubdwHqYHSlKLujpFE
-	gdikAvLFKhAAtjcB24BA==;
+	List-Owner; bh=jEHWpWU0C2nNE9U87sfPl85WXyt+S5X6w4EiK3zwDPo=; b=nTPkfrMngeV6LA
+	0uireo4rzB0gqScyF1FBbpY0LTMAshdhlibSI6oOR7Kpz2BuRYjb3D5ANf3HuXtePNQavvQSjRduo
+	YVyPh27z0oJN1dEXAdygYeqs1eGEMR2yZKrD97AJqcDigMOyz/n9QgwwcKDd9SBPbhO/5NPpWiXQ6
+	zUbH3DEc5Pax+slkheoYfSCU+s03u+bC4zdYUqWaRj7YWk1ylN6oK+of+BCi2J6W3eeMr3g/GloLA
+	24pYLFooOmOUeXv3EbfEE5p49d4rG85UfqmXfPZa4/CO8UF2EqWPGqBViJv7vHzdE0ckNOaoXOO9h
+	M/zCsvhCApPaB9KJptYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twcX8-00000002UUb-0Mzt;
-	Mon, 24 Mar 2025 07:47:42 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1twcbZ-00000002V1N-0zwP;
+	Mon, 24 Mar 2025 07:52:17 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twcX6-00000002UUP-3psr
+	id 1twcZl-00000002UqO-3sMb
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Mar 2025 07:47:40 +0000
+	Mon, 24 Mar 2025 07:50:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4EDD761149;
-	Mon, 24 Mar 2025 07:47:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A27FDC4CEDD;
-	Mon, 24 Mar 2025 07:47:38 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 42B5143753;
+	Mon, 24 Mar 2025 07:50:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 85DDCC4CEDD;
+	Mon, 24 Mar 2025 07:50:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742802459;
-	bh=6SxKcj4gUIOYK9hOLL2QqT3WFOWrHJL1z+V3xAU4HWY=;
+	s=k20201202; t=1742802625;
+	bh=mCJVEVFLift9Eye+00vD3JluUEBLGyRiq6JmsMqAy80=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=D0tyseSFxU48myJcXGHrQB2TW2AnkXD2C/jDngzz5RL/CNYsjCJnGs57CZNZ34y5q
-	 /I2syGM1xIJ3kXqKyUCe9ITk9r69JaTQZisUvY3nm8tE1mKmjNyy75RDgeHeMAzQoC
-	 DQ416BwJ4gUyFp2J2WKlmjf4kUw3P5K/x8CIgZt1/4cIhamVL4iFzQDA9AKmJIUdJ+
-	 JFuJHbtc/NK0kF3A3nu9bqdRDTD0+qbsd06WEZAAp17AJmUeDsz1XxUwU+s/AMIj24
-	 c10wvpKsyPMQ8y0dBSQvSBqDwMlZUz6DPCGTPB5bMGzPcdAGV/5wAzeB3uVpidCGuH
-	 LsvdFyPrtK/gg==
-Date: Mon, 24 Mar 2025 08:47:35 +0100
+	b=SgJNRZslYyer7oKuYSsTjXGy1I4wrYapQgM6QroZKKtU744GwQt2AxYm2jlybjnTe
+	 9LCAAaB7pbrysnlu63ECR6CCSo9G8Xc66PUniMWfpifID6HcJYm5RD60CSGqXld6b+
+	 ozBBXRnuUcKzqFcATV5sMNGeiwuYuQhxidL+y50muiese0tAckpa/id3TEcw5oLoAI
+	 RprEF96GKpzUKkNpjHnJcLlVzgSe6virir95NAmgRzx8IXZMLL7kx7EuwXW8ZIDE0b
+	 VQfZMa4riUf9mhUDvQtOAQHYDpn5lOPVsMEwbXjyJlajOylPCQWENskA89z5S3Md1S
+	 iP2xYpDuCF8WQ==
+Date: Mon, 24 Mar 2025 08:50:21 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: George Moussalem <george.moussalem@outlook.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -55,12 +55,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
 	20250317100029.881286-2-quic_varada@quicinc.com, Sricharan Ramabadhran <quic_srichara@quicinc.com>
-Subject: Re: [PATCH v6 0/6] Enable IPQ5018 PCI support
-Message-ID: <20250324-shrew-of-total-philosophy-4fddc2@krzk-bin>
+Subject: Re: [PATCH v6 3/6] dt-bindings: PCI: qcom: Add IPQ5018 SoC
+Message-ID: <20250324-knowing-vagabond-grebe-fa0a00@krzk-bin>
 References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
+ <20250321-ipq5018-pcie-v6-3-b7d659a76205@outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
+In-Reply-To: <20250321-ipq5018-pcie-v6-3-b7d659a76205@outlook.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250324_005025_985422_B098EC6E 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,35 +82,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 21, 2025 at 04:14:38PM +0400, George Moussalem wrote:
-> This patch series adds the relevant phy and controller
-> DT configurations for enabling PCI gen2 support
-> on IPQ5018. IPQ5018 has two phys and two controllers, 
-> one dual-lane and one single-lane.
+On Fri, Mar 21, 2025 at 04:14:41PM +0400, George Moussalem wrote:
+> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > 
-> Last patch series (v3) submitted dates back to August 30, 2024.
-> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
-> continuing the efforts to add Linux kernel support.
+> Add support for the PCIe controller on the Qualcomm
+> IPQ5108 SoC to the bindings.
 > 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
 > Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 > ---
-> Changes in v6:
-> - Fixed issues reported by 'make dt_bindings_check' as per Rob's bot
-> - Removed Krzysztof's Ack-tag on  
+>  .../devicetree/bindings/pci/qcom,pcie.yaml         | 50 ++++++++++++++++++++++
+>  1 file changed, 50 insertions(+)
 
-Why?
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Again, I cannot compare this serie:
-
-  b4 diff '20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com'
-  Grabbing thread from lore.kernel.org/all/20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com/t.mbox.gz
-  Checking for older revisions
-  Grabbing search results from lore.kernel.org
-  Nothing matching that query.
-  ---
-  Analyzing 12 messages in the thread
-  Could not find lower series to compare against.
-
+Best regards,
+Krzysztof
 
 
 -- 
