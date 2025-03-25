@@ -4,159 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17928C35FFC
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Mar 2025 07:55:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33810C3600B
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Mar 2025 16:38:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Sv/pq3PUhimGaWIq/i4U0j4CNpq2sgm7mqnL85PH0hg=; b=mbNY3zn85MSGl/RmoY1/YMP1jH
-	VsKPbeES3nE54oy5H5zMktW19O3TpxqeDtGrQgdCi0GM3LgQWW1mFW50nXzaxyJwWv6zk1Ev05nmx
-	vqBzAVu/jDYM93yQLVozXnY81oiKBjqTC77KSPnGe+43EzwlxmG3pCaljWyKqOLG3Ov6Joo9cGyO5
-	7ZqqE9HByHoRvw4oO31NijrlpbnbJ2eIq/p108SI87+Wv8RneJ+BsCdiiXcb+/FijJ2+6ws5PBj/b
-	XAgzEJLHlZO/c3Q31FKHRj34+voyTGeG26WR+h5TQooBQqyftd73prdVIpCxb5DxQrgpoQaE3kOU0
-	hslX16vg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qrubXiSsf1dv+dekzTuucSpi1tzrdY9uW5wcFlBZ0JY=; b=GW4NdQM9qiVIWP
+	yV/Cg65nQX5iHJa46WbawoSlSNvAqinGMQrnhOy1214wYixOfqeONPkrGODRpO08Xs1oDg/dD1OZ8
+	mpJeZ+fz/ClUtJHvhQ2mNTQ0e+sF+O0zGDZ2kRKFIkwEIqISL0/6YBdcfZfHHrrrdGg0MJ9LyPKWe
+	wYIOSYXxparoxq5gULyl7crNMpdqb1uslc84M811yUS3d6mW/LECVSgslB0L5e3yifOxkVbrACl2d
+	891y90kMXFib8m08JxaUK14PEhyLQI/4NZYasQSyGMMKepPx3B2cpCjj/LpfCQxHB93VLbk3rRdKc
+	utLtind3vqfQnZpfkRyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twz82-000000058Ty-2scu;
-	Tue, 25 Mar 2025 07:55:18 +0000
-Received: from mail-dm6nam04olkn20809.outbound.protection.outlook.com ([2a01:111:f403:2c09::809] helo=NAM04-DM6-obe.outbound.protection.outlook.com)
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twz80-000000058T4-3bb9
-	for linux-phy@lists.infradead.org;
-	Tue, 25 Mar 2025 07:55:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=srlUK74xHWp3iuwf7d57Yfk4apLOCrFCu4nUQa7W/6tj7SMSzN+hjD0uQyJ/VOtMhrQEN4rQMxfOkSrsR722v+b3CQpNG0bYo/PBBu5cw8SWG85RhdRTDCifc4eyHD9ji2P5ioqBwfdF5OijfKMLGk7J/os54DXLVZMGLRIMuq/4NDJxCuguHgVrjgY+WJQv1JMIo76y+Z6ntIZJyJJPVxETdWW9bWpzpsFwgIfVdJhoq/VN/dDAPp0zTlq4a+PB9FABrClwf2BF24I1AubKNPvMpES4oJACmLKhDmntFPU3CUPTkv+OIN4Z7YdWisgHOs4jEyl4Nmytyc6A+6lYEw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wDijx2iyotOdHPX9Y7so6wOaNsHeebWtG3mlS8olbDo=;
- b=wjRxOLYXKIlApSR26mbTWx0GGxYbeJtgykDwA+Un7kp526NGJ0N3XymePP6dV1Myfe7qqgg5lUt0nCcrtv28Xsupi+fzgZ2daLf1XJj4NiKi5l3pHW0MERbtZyLnuBlU3f8bEjMdKxeacCZsJZzfm3TRXsckxa6pdJIYgwi6aSJbjFn3S8e3F0ZQSSnQKvAY+VMOtquB1gdIGY83/koQYgmbXXAYruVclN0sxmBf0XT6GXuCghylRPAnhUk9fnmgVGuv2lyCnQOdpiCegyxQP9/BekHKWacuOtu/LIKFjemKOIFkBKjZKFoBiM5ipZCzliaclysSOyekvSumHE3hjQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wDijx2iyotOdHPX9Y7so6wOaNsHeebWtG3mlS8olbDo=;
- b=TeYr/vcO7w3ckFG2jMtftyMofUinYR0gWSdHh3Tnr7LHT5lq73mi6zMAbrYQbGW4+wpc395yFrWl3917YTwcLNVF/sK+iIej5AKPQLcbnhCxt9qkbB3HH2ql2b1m6ZxltIE5A3eEyxb3QlZ2Q+DF2WANciUxY0PMAT7wkQfxooR+zPpgNEjJTkikN+NTVLKAlfPsj/Cn7gJ4zm2BoLU1I3sIpXDZnyczhrwV2du/kdva6l2RV4GGr3UyeOkKo02Aby2kuu26NmeKDeIE288sVDhIjYLpJka2KmiVtwjqSAnkR/JfJbwJJVqp3o6ksGAb8K35cw4Sn+LtyRRoooDdgQ==
-Received: from DS7PR19MB8883.namprd19.prod.outlook.com (2603:10b6:8:253::16)
- by CY8PR19MB7082.namprd19.prod.outlook.com (2603:10b6:930:56::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8534.42; Tue, 25 Mar
- 2025 07:55:12 +0000
-Received: from DS7PR19MB8883.namprd19.prod.outlook.com
- ([fe80::e0c2:5b31:534:4305]) by DS7PR19MB8883.namprd19.prod.outlook.com
- ([fe80::e0c2:5b31:534:4305%6]) with mapi id 15.20.8534.040; Tue, 25 Mar 2025
- 07:55:11 +0000
-Message-ID: <DS7PR19MB88834DFB6D5E574BA89D5A5A9DA72@DS7PR19MB8883.namprd19.prod.outlook.com>
-Date: Tue, 25 Mar 2025 11:55:00 +0400
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 0/6] Enable IPQ5018 PCI support
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Nitheesh Sekar <quic_nsekar@quicinc.com>,
- Varadarajan Narayanan <quic_varada@quicinc.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- 20250317100029.881286-2-quic_varada@quicinc.com,
- Sricharan Ramabadhran <quic_srichara@quicinc.com>
-References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
- <20250324-shrew-of-total-philosophy-4fddc2@krzk-bin>
-Content-Language: en-US
-From: George Moussalem <george.moussalem@outlook.com>
-In-Reply-To: <20250324-shrew-of-total-philosophy-4fddc2@krzk-bin>
-X-ClientProxiedBy: DX0P273CA0009.AREP273.PROD.OUTLOOK.COM
- (2603:1086:300:26::17) To DS7PR19MB8883.namprd19.prod.outlook.com
- (2603:10b6:8:253::16)
-X-Microsoft-Original-Message-ID: <c4ee737a-29be-4f21-a5df-2cd452265e30@outlook.com>
+	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
+	id 1tx7IW-00000006VXA-3Hw2;
+	Tue, 25 Mar 2025 16:38:40 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
+	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
+	id 1tx60j-00000006JFp-1QOZ;
+	Tue, 25 Mar 2025 15:16:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 7ED11A493C1;
+	Tue, 25 Mar 2025 15:10:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E88A6C4CEE4;
+	Tue, 25 Mar 2025 15:16:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742915772;
+	bh=5ByUJpks9hkZhuJoceNmjpMgpU8NiVFGUeBDfoAE150=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=vLPVmvDcdWcHF5VNb//6QuBceDBAFsUxvouEhOfevFwX7zzpHqTD7Z2q4DJvRmlFB
+	 GQv1gvCsygYRFHv/ja5UWu4+WwEr1my4iRzZQPi9S1P3dCtAutlpaKrsV8AW3L5Uto
+	 GqaKna3ic6X4bfMn91rlM047BCW+Dz/DM00Ld9yAJISCgFtC73NjcItqk3jIbkk51P
+	 fMr+TeBbaJy0F2tl7TqWhL7UwehxwVTrq3m5i9vgrRqtKk8I5jBlwlT7QIfHztKbxR
+	 vqQr78kIqdwVTfurkMxTojgv1Wz7bZxQuiWMoNU5vCFuOJI+kdOpM8DYxnnec0XaQ3
+	 G9cZsUGQP+61w==
+Date: Tue, 25 Mar 2025 10:16:11 -0500
+From: Rob Herring <robh@kernel.org>
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v3 02/10] dt-bindings: phy: samsung,usb3-drd-phy: add
+ exynos2200 support
+Message-ID: <20250325151611.GA2057949-robh@kernel.org>
+References: <20250321135854.1431375-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250321135854.1431375-3-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS7PR19MB8883:EE_|CY8PR19MB7082:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1bc25a3c-e3d5-4407-872f-08dd6b725e61
-X-Microsoft-Antispam: BCL:0;ARA:14566002|8060799006|19110799003|5072599009|6090799003|15080799006|461199028|7092599003|10035399004|440099028|3412199025|4302099013|1602099012;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?QlRCRERPWElxWEJxK3dHams4ZVkzL2I5YjFZY1hBY1B5MS9mMnU1OThTbG9h?=
- =?utf-8?B?VXJ4NXlPMHJyakd3ZS9HejYwTWZ1MTRybk5JaTRPbWRCSVRmSmVCcXljbDV4?=
- =?utf-8?B?YjZSb2xyK3ZPcVZvTmxSODhBYnZCTWo1YlZzdjQ3cnJmL3AzM2VVbVExalVM?=
- =?utf-8?B?cHdkR0lpOHlmVVIvcHk0M0VIanhXTVd6S3hHQmhkaHR1Q3ZlbWZhbXBpTE8z?=
- =?utf-8?B?LzJHMXJydTdvNnpYaE04UTEvQTZhNG4zNEhqSTVhVnQxSm9VaWppa0w0dmVN?=
- =?utf-8?B?VE51K29OdEhoeWZKS1pVNDB6Rmo4ejZLMU01MjZadkF0TVZwTlZMclphK1Vk?=
- =?utf-8?B?SHFsUEg3VXNnelQ1cHYvVjR4eTYxbzRuZVpaRllxUDk1bHQyWkF3cWxFM3pn?=
- =?utf-8?B?S0JmN2dheEpYdXViL0NtMFFXNkkxeXFweWp6ZTV5eEZBcFdHMkRVNkhmQXFh?=
- =?utf-8?B?cXQvVnhYQmNlVGtGRnRtTytMTnAvNk12VzFPWFhYT0x3QzBhWVlVWEhkSFo5?=
- =?utf-8?B?eUs1NnNsem1RYVN2ZnM2YTFodEZGNU1zSDFMallyZ004R2hUNXNkeFZRNkVN?=
- =?utf-8?B?QW9kejBHdWpsaVlzcUZua0ZLUklYd3lRZ2JaUmxFcnFYYlhPRTZlSExrRkFv?=
- =?utf-8?B?LzBsbW94Skd4RWpTV1FTV0R4WndjZUhjaUJsWHdlMGZtYUpQZzh3QVlBWFZT?=
- =?utf-8?B?TDF5TjR0NFozZzBlSmdvUVh2L3BEWHpQalhnUFhESHVxT1JkcUQxWHEzY3Z1?=
- =?utf-8?B?ZTNyaUZncVR0UXdvUVI1Tk5DRHpwamdxMk5RdXR0MWR4Qyt6a1hXOWRTclhh?=
- =?utf-8?B?QnRZcHhnNGFkeHVzYjMzOVBiaTF5ZThxa0ZUUS9EQVVMQkE5cUlFeUhITW9R?=
- =?utf-8?B?TXRKN3JKSWRLUEF1MHpmYkZpNjV5ZmpWODQ4R2ZpeVpaZFZDR1FQQ29aMTFR?=
- =?utf-8?B?d3hubnI2WFNWMERjWnIvT0FoUkJIVUZPWWp1Y3dnZGxORFZZelFjdUhNTldw?=
- =?utf-8?B?czdsMExKWUZZVytzRytVVXNOSEhFL09kdU1vbk1ucnI0dFczTlI0ZG9NMVZE?=
- =?utf-8?B?amgwSU1kN0phTTRjUE1UOFVyNFQ5cDhEVFY2RGlWalJCYk5MR251Yk83bDZi?=
- =?utf-8?B?dmx6aFBNM3Z1azA3eWZSa3dGSnFETkxuTTVJQ0xzZEpyNzRXMy9YY09iZTdk?=
- =?utf-8?B?NjJoVGFONEIyK2dvaFBJbVA0QXBXMmQ5b3lKU2pXcE5yVWord3ZvcmRGK29Q?=
- =?utf-8?B?bzJJYlZzdDBuMjFrVTFzMVVyZVl2MFIyTTBmL09ZbVgyN0ptK3lOV1p4VGc3?=
- =?utf-8?B?OG1lbStQN2xzMUxJY0NsaC9zYUFyTDA2aUhEQ2lUU2lZQ3QrU1lXMFh6NkxI?=
- =?utf-8?B?WHJ0SzJyTTFYa0VRVUloUHJ0RUFGOXBSd0xLclZVUHNaL3AvMFJqVFdobGt0?=
- =?utf-8?B?b3lQV0t2ME9oaHZtdXRHVGJBMU80Mmpqd2xtRjNzTHIvZ3JoWEtxc0NFZy9Z?=
- =?utf-8?B?a1J4OHYvNTBBdThOMGZhZlhYc21PcktuNFNaa1RHaEVCcXlUWnQwVFFTWStk?=
- =?utf-8?B?RkE5YjQ4SkM0V3ExODNBbnIzK1NucVlYTEJJNXNrL1NqNzR4KzJCZmNyUGxI?=
- =?utf-8?B?SWhsNnRqRU1wUXV6MjJNV0NFZm42VTdCUU1jOERhQXc1aHNyQm42MzI1Wm5G?=
- =?utf-8?Q?L/xQaorBYsmGoqQtwBFb?=
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aWMzVTA1cHAwOUdIUFVKbnVHbUh5cm1GWTJsQmVCUmduSmVkT1JZMmdDWUJF?=
- =?utf-8?B?eWFyMDFoR2JkQVNIc013RmNFRE9ORDJud0pjMFQ0VzFDenNtcXBmbDJITWZw?=
- =?utf-8?B?S2ptbjBvanhhbHFSMUtIMER5VzF2aWZna1NmUlNVMlkvVW83MFFnMXp0Mjgw?=
- =?utf-8?B?amswemVLR2xMNWREaXgxNS9mYXRVQlI1dU5Kc2s5NVdKb1h2U2MyeXZDM3M3?=
- =?utf-8?B?dC9kMTd1SExFOHJrYjVQeEZqbzQxSkRJdVRpYkM2VW9KbDl4TzNBOGd5UDZi?=
- =?utf-8?B?cEwvQ1JtODU4TVFjRDZJN1MyakVhVEZ3cjE3UW1oTXBoY05NazlmamZNUGJZ?=
- =?utf-8?B?TCsyaGVWMHo1b2p2UDhKdzhieE5SSWtuRnF0STNBaXRINTNEQk84VFd0T1lR?=
- =?utf-8?B?QmUyMERFdGhjU2pQMTArVkUxMlh3WER4Q0J2bWd2Rlg3TjZSQXg1YUJIU1Iy?=
- =?utf-8?B?TzcwTThIcldpZWRaK2dkVGZCVmhPaVRNaE5tQytORUsvR0MzdVZLUGZkYUlZ?=
- =?utf-8?B?eWZQTkxNWGtjZUtCZ29hbTBhaTdYVVljL0FRV1NESDVraHM4KzEzY09RTWFo?=
- =?utf-8?B?ZFdORTV2Mk1uRkx0bVE1b3FiNVU1SjQ5dWZvM2Rma2ZNbUtibGJnL1A1UUZJ?=
- =?utf-8?B?ZzhwUHBRQVoyL0Noc0ZiM2VqRjF1SytaMnJrWmd3VERDb3gydmVkTDRKMi9i?=
- =?utf-8?B?TzhOcjFNdDJ0TnRRV1Z1d0F6a3dUSTJNMmVlbU9aa3JQYnI4ZndiRG4wQ1dC?=
- =?utf-8?B?NmE3ZDFrL1ZmWGpOemhWQU5QMDR3bDRVT1EwQlBLOUJkSjkzZ0ZvY09Sc2dK?=
- =?utf-8?B?ZzF2RG1tamZKRVlONHVvM3B1KytTSHc2d3ExdGYwaEhkSUQvb1REZ3dSSDRE?=
- =?utf-8?B?OU1MblJVNnR5VGtPWW02NHVjbTFnZjQyZUplVlJqcHdnbXU1RjBmMWZWUEJQ?=
- =?utf-8?B?TFNBMXRLa1FUelJnaVhhOTZqVEN1WlEwa2pFMlFMelhNVHZEOFc3OXBtWXJQ?=
- =?utf-8?B?OTBFMGN0enllRVQwTEhCbnFQaVIzV290YXNzWHNCbFRyMUo2T1ZjRVc4MnhB?=
- =?utf-8?B?VUF1WG4rMVFPZ3gyYVNabGRWNzlMSlkrSHp3dVVTcEY0cnFXN1VjQWM2a2dV?=
- =?utf-8?B?WXhvbGNqYnltcVE4clRzczcvbVdkOS9wMEpjSHNMankyOENMeXl0UUpxekJh?=
- =?utf-8?B?RnVjWGlKdy82L1hiS0FyanhCUW5HWWZMTkFVbk1PMWR3L1R0QU1IckFHZGdN?=
- =?utf-8?B?UmZxKzBIdHVRL0V1THMzMnlGTERRcjdibEltN3FUbngxSzZsUHBzKzdpQXpp?=
- =?utf-8?B?aXdzd24zUzhyci9TaFlMdFZxWkx4YkRvTjhQcFQxUm1EQUQ1VDBaTms0ZFVL?=
- =?utf-8?B?RkE2ZnBhallwTnYySnk4RVlkNy9hWE80RGFnbUFVWUJYYW5oME9DVThUeXBS?=
- =?utf-8?B?RVRMLzJ1UGJhQkpHcDF0S3FFYW1SMUkxTHRCSURGeUMrdEd6VmtRYUgyb0J1?=
- =?utf-8?B?a3A0ZVZMaXRNRUh2SGpDRExoM1poSUZpSklmZ3RJM2pYaUhLcWl5bXFuOXN3?=
- =?utf-8?B?Y2dwd3didWFVWGhUQXdIcUJkdEVpKzVBS0xwajNNcjhKTHl1T01tR1NUbTkx?=
- =?utf-8?B?WTVzS2o2Tjc4ajExbkFrdGlPT3dIaFJJSmRaTWxTVFN1WWxPdDJsenZyMHo1?=
- =?utf-8?Q?Pp3Ph98gJGW9W8KwykQD?=
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1bc25a3c-e3d5-4407-872f-08dd6b725e61
-X-MS-Exchange-CrossTenant-AuthSource: DS7PR19MB8883.namprd19.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Mar 2025 07:55:11.6055
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR19MB7082
+Content-Disposition: inline
+In-Reply-To: <20250321135854.1431375-3-ivo.ivanov.ivanov1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250325_005516_915449_09E106A3 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20250325_081613_510841_06C57138 
+X-CRM114-Status: GOOD (  16.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,64 +78,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 3/24/25 11:47, Krzysztof Kozlowski wrote:
-> On Fri, Mar 21, 2025 at 04:14:38PM +0400, George Moussalem wrote:
->> This patch series adds the relevant phy and controller
->> DT configurations for enabling PCI gen2 support
->> on IPQ5018. IPQ5018 has two phys and two controllers,
->> one dual-lane and one single-lane.
->>
->> Last patch series (v3) submitted dates back to August 30, 2024.
->> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
->> continuing the efforts to add Linux kernel support.
->>
->> Signed-off-by: George Moussalem <george.moussalem@outlook.com>
->> ---
->> Changes in v6:
->> - Fixed issues reported by 'make dt_bindings_check' as per Rob's bot
->> - Removed Krzysztof's Ack-tag on
+On Fri, Mar 21, 2025 at 03:58:46PM +0200, Ivaylo Ivanov wrote:
+> Document support for Exynos2200. As the USBDRD 3.2 4nm controller
+> consists of Synopsys eUSB2.0 phy and USBDP/SS combophy, which will
+> be handled by external drivers, define only the bus clocked used
+> by the link controller.
 > 
-> Why?
-
-In v5, I modified dt bindings (patch 1) to add descriptions and separate 
-conditions for ipq5018 and ipq5332 as they have different nr of clocks 
-and resets but left your tag in there. I removed it in v6 to run the 
-changes past you again.
-
-I intend to send the next version with comments addressed in patch 5 (to 
-add a comment above the max-link-speed property). Anything else you 
-would like to see addressed?
-
+> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+> ---
+>  .../bindings/phy/samsung,usb3-drd-phy.yaml    | 38 +++++++++++++++++--
+>  1 file changed, 34 insertions(+), 4 deletions(-)
 > 
-> Again, I cannot compare this serie:
-> 
->    b4 diff '20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com'
->    Grabbing thread from lore.kernel.org/all/20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com/t.mbox.gz
->    Checking for older revisions
->    Grabbing search results from lore.kernel.org
->    Nothing matching that query.
->    ---
->    Analyzing 12 messages in the thread
->    Could not find lower series to compare against.
-> 
+> diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+> index 16321cdd4..819e4afe6 100644
+> --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+> @@ -26,6 +26,7 @@ properties:
+>    compatible:
+>      enum:
+>        - google,gs101-usb31drd-phy
+> +      - samsung,exynos2200-usb32drd-phy
+>        - samsung,exynos5250-usbdrd-phy
+>        - samsung,exynos5420-usbdrd-phy
+>        - samsung,exynos5433-usbdrd-phy
+> @@ -33,24 +34,32 @@ properties:
+>        - samsung,exynos850-usbdrd-phy
+>  
+>    clocks:
+> -    minItems: 2
+> +    minItems: 1
+>      maxItems: 5
+>  
+>    clock-names:
+> -    minItems: 2
+> +    minItems: 1
+>      maxItems: 5
+>      description: |
+> -      At least two clocks::
+> +      Typically two clocks::
 
-I tried 'b4 prep -n <topical branch> -F <message-ID>' to try and preseve 
-the history but that didn't work, unfortunately. Instead I used -f and 
-forked it off the master branch of linux-next.
+Don't need double colon.
 
+>          - Main PHY clock (same as USB DRD controller i.e. DWC3 IP clock), used
+>            for register access.
+>          - PHY reference clock (usually crystal clock), used for PHY operations,
+>            associated by phy name. It is used to determine bit values for clock
+>            settings register.  For Exynos5420 this is given as 'sclk_usbphy30'
+> -          in the CMU.
+> +          in the CMU. It's not needed for Exynos2200.
+>  
+>    "#phy-cells":
+>      const: 1
+>  
+> +  phys:
+> +    maxItems: 1
+> +    description:
+> +      Phandle to USBDRD-underlying high-speed PHY
+
+Drop 'phandle to'.
+
+> +
+> +  phy-names:
+> +    const: hs
+> +
+>    port:
+>      $ref: /schemas/graph.yaml#/properties/port
+>      description:
+> @@ -137,6 +146,27 @@ allOf:
+>          - vdda-usbdp-supply
+>          - vddh-usbdp-supply
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - samsung,exynos2200-usb32drd-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 1
+> +        clock-names:
+> +          items:
+> +            - const: phy
+> +        reg:
+> +          maxItems: 1
+> +        reg-names:
+> +          maxItems: 1
+> +      required:
+> +        - phys
+> +        - phy-names
+> +
+>    - if:
+>        properties:
+>          compatible:
+> -- 
+> 2.43.0
 > 
-> 
-
-Best regards,
-George
-
 
 -- 
 linux-phy mailing list
