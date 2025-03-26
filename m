@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A629C3600E
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Mar 2025 08:18:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9BA7C36013
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Mar 2025 08:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TgH+5wv+n3t4RfFpSG3s+zmgevyM1Ph0BdUybEQydeA=; b=t3QIJYDVA2uQF9
-	rMAU6LmcbMn5RhxHwhbimQpaNzeejO297Ut6LtoOAWiERneXUPlvH3XLLTQHNrMLLOv3poSPWkyE+
-	TloJW/88yYuxFdBYuUlqB8Jnm1sTwykb/7O2gj9Nanw+/g02RUl8iSvce+ioNXeGgC7vzNnCL2QA5
-	LN3tbELJY1SZ2wpUuWQ+j2rVIyEjQdJb636ZzRpSAkFD+zdrYaRcUWUuwDCfJZlEGwNM52eP/pMIo
-	4B6a0rsC3lW1oDzMVL31QIVzxGtuljMwyiq3vfVzDBTWRlQ/DPQwsFTJbMV1aXxD+4ohCoWb40gk3
-	f+woIs/0nOC+3eamr0Iw==;
+	List-Owner; bh=YH5NpWI6SSsBukxYoAAQ0opQdJn7rWzqkk8Qxqy4i8w=; b=iUaw2Gu72Z6g95
+	urZTJfSuftwn1fLOWUIlxCyy8WxnT0soFBzjMi3zIHhAhf0aJCihAfsdFSXYlM3m1lVkyOkmGHWsl
+	jerokpouRxFIujKMSwvfv7nFDiRsLtFAJI5pLsvr+X1ObkUj/3l4TeB+Q4NNC5t+8B8HbB6yrRkgF
+	bxMtAr8A9oBmHF6fhKyRtzB6gunN1+vTUYTArDlHYmWm11S43p0PzOr7cxm7JP/41HJSh38fM64BZ
+	qlU8K+KOA/iY2XH2aQISwT9JUnRQ51ylF8N7z32uA+68uukgc7Ind53J5J/13sVxAFF6eS3+tcC3V
+	fvQOeAU8NSi7kTs+tERA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txLxk-00000007u6y-1Y8p;
-	Wed, 26 Mar 2025 08:18:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1txLxl-00000007u8N-21l8;
+	Wed, 26 Mar 2025 08:18:13 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txLqr-00000007soI-0klB
+	id 1txLqr-00000007soE-1Nbb
 	for linux-phy@lists.infradead.org;
-	Wed, 26 Mar 2025 08:11:07 +0000
+	Wed, 26 Mar 2025 08:11:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 452C8440F8;
-	Wed, 26 Mar 2025 08:11:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 1E8FEC2BC86;
-	Wed, 26 Mar 2025 08:11:04 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 55861A40D46;
+	Wed, 26 Mar 2025 08:05:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id B4659C4CEEE;
+	Wed, 26 Mar 2025 08:11:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742976664;
-	bh=EePur+oXQTN/Q0Mfo8DIsWZ0cPCciOMp+Cc7Bx6MPW8=;
+	s=k20201202; t=1742976663;
+	bh=/Vpaz4x9fwZAnHLG6IUAAxI34tMKek2Ai8IRZhy83/o=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=VTJsqd6Su6ExmfRB6upU29+8pFoan9fbDwvFlz/p5cTUJMv71kNhh19ulmKM3/DMv
-	 9BXidMtPHHHLtQXWu1QCbapzfNKQOREMG2tz/z9RucMX9HsA7FKy1AmWLY8HvCoQD8
-	 hgIcLpRw+VCDaoy57HyCJdFTxQV7JbHE9HYPN8PcP5S2XnAuezatg/9IjmllXajx/d
-	 Q4L7FoWL6dvTvrQAsuI1zuGYA1a4RJjf5xeiK6sFrXZWbAxPJVgu5pd51Jz3DE9AMQ
-	 wRGBYLTaskDQPJQ9OIpkAkEHrfxPW4BtrD4GfzqihQ4QRBLo474UMfdoaKaIwRBbF1
-	 FhkTPPYt6WL3A==
+	b=KTxD9f33jCY0ifiaGstq1XH3RQug2uFPDjuOzo9cVNfO2585VVDbXF+wcuAgfu8XB
+	 qTSLqw0NZrlxaRiKpuNnf/H/ugCtZPFilkR3ZneZPNeXQ46ml3LjH649YNIWCuuaJG
+	 gHDDukl0RF2lDSDg5qVuh3XNyPCOOBdWB8W8cS1SByKjkzHlM4i65p5K8Hv6J0iib9
+	 a3TDO86xeOIaLquSzU+/c5tv51ZYmN7O7Cj3pGxWRV5E2Fmacig8J+ebEpi0Dzj9kX
+	 uLeGA5oEyam7OY0/jnX+S6yNBrbpDIFdsHN0eHF8vClyTljwaBwsJzZD9b43Q7qJRG
+	 hY8R+albo0XHg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 08D2AC36010;
-	Wed, 26 Mar 2025 08:11:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9658FC36010;
+	Wed, 26 Mar 2025 08:11:03 +0000 (UTC)
 From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Wed, 26 Mar 2025 12:11:00 +0400
-Subject: [PATCH v7 6/6] arm64: dts: qcom: ipq5018: Enable PCIe
+Date: Wed, 26 Mar 2025 12:10:55 +0400
+Subject: [PATCH v7 1/6] dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018
+ compatible
 MIME-Version: 1.0
-Message-Id: <20250326-ipq5018-pcie-v7-6-e1828fef06c9@outlook.com>
+Message-Id: <20250326-ipq5018-pcie-v7-1-e1828fef06c9@outlook.com>
 References: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
 In-Reply-To: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -70,23 +71,21 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-pci@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>, 
  20250317100029.881286-1-quic_varada@quicinc.com, 
  20250317100029.881286-2-quic_varada@quicinc.com, 
- Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+ Sricharan Ramabadhran <quic_srichara@quicinc.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1742976660; l=2062;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1742976660; l=2649;
  i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=OKmTrcmt0ksiQwz9dz8aVIs/K+GfvvlMVFo78Mfk/ZA=;
- b=R8864Q3jSMy5CJI5tbESukf0aiOmCd8LsHj2rv+3Q7yzjSwArSn95riZx5X2BDe0bL7voz296
- T4Q3eFT6wJTDPiWOhty/o7WwnBE8TO6A5YYCujLFOXBw13PIOlaPwU5
+ bh=RzhX10TqIYEMB/NTuvqI/PKN5F5WXtFaWjatLWvgFzo=;
+ b=We7QB78QZlBFHrnitOO1crJOewYZbnsm+wFqF8GMYO4mDAoi39LqgTDfWSRsKwbk5JS6DOMns
+ 4m2j+S/p4SeCATSyFaa2NTvp1ioS0J+sMT4G+JUb1pF1U4mGWJXikdF
 X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
  pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
 X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
  with auth_id=364
 X-Original-From: George Moussalem <george.moussalem@outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250326_011105_326524_36C66B2E 
-X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-CacheID: sfid-20250326_011105_514237_81896C08 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -107,83 +106,96 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 
-Enable the PCIe controller and PHY nodes for RDP 432-c2.
+The IPQ5018 SoC contains a Gen2 1 and 2-lane PCIe UNIPHY which is the
+same as the one found in IPQ5332. As such, add IPQ5018 compatible.
 
 Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
 Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: George Moussalem <george.moussalem@outlook.com>
 ---
- arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts | 40 ++++++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+ .../bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml | 49 ++++++++++++++++++----
+ 1 file changed, 41 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-index 8460b538eb6a3e2d6b971bd9637309809e0c0f0c..43def95e9275258041e7522ba4098a3767be3df1 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts
-@@ -9,6 +9,8 @@
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+index e39168d55d23c6d361b6f89f00a897e121479714..6e9df81441e94d82d78761aa4a25ea4ece65d36a 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+@@ -11,26 +11,24 @@ maintainers:
+   - Varadarajan Narayanan <quic_varada@quicinc.com>
  
- #include "ipq5018.dtsi"
+ description:
+-  PCIe and USB combo PHY found in Qualcomm IPQ5332 SoC
++  PCIe and USB combo PHY found in Qualcomm IPQ5018 & IPQ5332 SoCs
  
-+#include <dt-bindings/gpio/gpio.h>
-+
- / {
- 	model = "Qualcomm Technologies, Inc. IPQ5018/AP-RDP432.1-C2";
- 	compatible = "qcom,ipq5018-rdp432-c2", "qcom,ipq5018";
-@@ -28,6 +30,20 @@ &blsp1_uart1 {
- 	status = "okay";
- };
+ properties:
+   compatible:
+     enum:
++      - qcom,ipq5018-uniphy-pcie-phy
+       - qcom,ipq5332-uniphy-pcie-phy
  
-+&pcie0 {
-+	pinctrl-0 = <&pcie0_default>;
-+	pinctrl-names = "default";
-+
-+	perst-gpios = <&tlmm 15 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 16 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie0_phy {
-+	status = "okay";
-+};
-+
- &sdhc_1 {
- 	pinctrl-0 = <&sdc_default_state>;
- 	pinctrl-names = "default";
-@@ -43,6 +59,30 @@ &sleep_clk {
- };
+   reg:
+     maxItems: 1
  
- &tlmm {
-+	pcie0_default: pcie0-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio14";
-+			function = "pcie0_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
+   clocks:
+-    items:
+-      - description: pcie pipe clock
+-      - description: pcie ahb clock
++    minItems: 1
++    maxItems: 2
+ 
+   resets:
+-    items:
+-      - description: phy reset
+-      - description: ahb reset
+-      - description: cfg reset
++    minItems: 2
++    maxItems: 3
+ 
+   "#phy-cells":
+     const: 0
+@@ -53,6 +51,41 @@ required:
+ 
+ additionalProperties: false
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq5018-uniphy-pcie-phy
++    then:
++      properties:
++        clocks:
++          items:
++            - description: pcie pipe clock
++        resets:
++          items:
++            - description: phy reset
++            - description: cfg reset
 +
-+		perst-n-pins {
-+			pins = "gpio15";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,ipq5332-uniphy-pcie-phy
++    then:
++      properties:
++        clocks:
++          items:
++            - description: pcie pipe clock
++            - description: pcie ahb clock
++        resets:
++          items:
++            - description: phy reset
++            - description: ahb reset
++            - description: cfg reset
 +
-+		wake-n-pins {
-+			pins = "gpio16";
-+			function = "pcie0_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	sdc_default_state: sdc-default-state {
- 		clk-pins {
- 			pins = "gpio9";
+ examples:
+   - |
+     #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
 
 -- 
 2.49.0
