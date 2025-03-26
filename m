@@ -4,94 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1791AC3600B
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Mar 2025 16:53:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B59C8C36008
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Mar 2025 07:52:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W72PQXBJMkt5Yq+vV04sHbK5SR4RWzotdxH9ZrkCAvM=; b=GA/pmlcqk3/95Y
-	/Gd1IoDvIjorOfCFV+9znR1bFFg+71L1CfrHSb8hqfVbpDj7jT/NZvpfGezMdMKpi4UMj33LZmsPo
-	r6x2fMEyuulZtWVxfFkmzXxNUnFMrSO+j1vUqqW/xUgo/9yORJEDUGqiCxglDT3S9f0ESXSvkobg6
-	IM/NoadKXow2S7X52iYSg1XuNiWJa31jqG2RWa5fg9wY9u7yIkzGAcMyJFqa43YvHzamlAEHBe66m
-	YwkY1d2ds5YesTAyZR8S+doCU9qYFVwZQtyxWsEgo7BGZni5ypwPe3ozku5TOtnunRTOsApS9j9Gz
-	doUqaG+ycRrzpqSk6lmw==;
+	List-Owner; bh=2xYcSL745T8IvC+Y4RzM/ZJLlg+JG6mF/wDKo3vCLko=; b=GIcUo8A0TXWALH
+	InCDtQzhyk2umq1nMeyWWV/bIA5HAXpKSNX6BaPt+sB285d4qu25c+ZMjOkFUWxmu7h+mB7ORYP9y
+	uE8Mf47FL7fu36619ZCJzi5Kckp+WOFAmAnb4KEP+BColzU+OU86qIkye7/V6L2WJ8fmzQC6ba+dy
+	EH73P8ehe8ll1ljpg/AQlKxvYdB6xenM8l1QZTowFWP8+7WKoJKjpzEApfNTvCh/z2Pe7oDAtyhy4
+	HQmVo+je5mp0G12xYXduCguIRBuWFJ2Eh6dgsRISjm7jaOxz7Ct8inAcWbJQ6I5pm518yG1P61guZ
+	q1I7f7XE/CBzD5RxWP+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tx7Wj-00000006Xgx-2oy1;
-	Tue, 25 Mar 2025 16:53:21 +0000
-Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
+	id 1txLYT-00000007pTm-1GB8;
+	Wed, 26 Mar 2025 07:52:05 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tx7Wh-00000006XgO-0d8S
+	id 1txLOe-00000007oR4-23uT
 	for linux-phy@lists.infradead.org;
-	Tue, 25 Mar 2025 16:53:20 +0000
-Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-227d6b530d8so45642645ad.3
-        for <linux-phy@lists.infradead.org>; Tue, 25 Mar 2025 09:53:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742921598; x=1743526398; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=5L9ZiZQAjB02Svt4Qm10JSTX6pFY5X9IvVK51QfXpvc=;
-        b=kqoDV2x5kZybNAHpvU6BgLoBjuKD1lv4bRo4NUbTL+pZGXnDAyI2jGu8l58yH5uadi
-         a2oH8h3sdhZJy0woshKGFVGlnMLpKe+LWlyMKuSRiF/6wQqPXDc5Dt7TjF7YglQyEXdl
-         xUw5ls0xndb0uukkyXXVwPNafpBuiLNFKAkdKMW+Rt0F2IgVYl6ntia5SpyTMiCjMETs
-         wek7bKXq6FS+Ox21o/5X8H60AuijRYBiddcyEiwz1jgXsE5CkBgrWL97zXEUPgW+Miqg
-         cpuHJq1H0IhjnH+Igl5JihIJ22EqkCrqYBUqkYLN/VJyf5LjgAg2Q2np5wJ+MeCLI90l
-         n04g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742921598; x=1743526398;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=5L9ZiZQAjB02Svt4Qm10JSTX6pFY5X9IvVK51QfXpvc=;
-        b=m3LquhPOAr22YJTvDEWWiXehgD1PhaZq6iLXCuTS8Dqh52bjU5xiLJA8Nrq76aN17A
-         YP1cVqFsgVL7z04pAHJ9++/o58EDPGyzPbhkR9xmB4vU6uHJKKt/0MnSFoFU+5XEbCrL
-         57oZUEeiKduX+ECXGL+PKAga16FqNBYD9neCzUBcqFDhk+3f+6J0FCb45bsvWIVAOh+d
-         LbSDcfEAcHmNZm/u6u2N71SuDQyZzOu0s4BCIma7I6beysfleLO+HG5UrxGzakDz6QTJ
-         eiiO5hYtyxn4kMxEw/dG5daijHm4aaOhJr7bBPsS9LN9z9WvAaOwj+OVJO6FNZOjdGin
-         zg2Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUL6bTbikvsvRHWVJv7PT6zAKOUo9/NC/28U/GGMFh5hDxOtSN3JSMS7ORC9J3iwxPQ8xceaGQSk04=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwTGAyamvfr3i2AFTEG+U1lcHqMGLxXAoiCWOb515klbA6sKs1H
-	vvBFKfqtUG+Jw0zKE0eyecXsSZApI3QIq9W71Rw3r5HM5pUwsDfXu6mqBAF9OQ==
-X-Gm-Gg: ASbGnctLgUzDwmmuzCOy38lCRplKEXbel9ArIy8hg5WcmP9yCLje66eYaHcSUzfU9KV
-	Yr7KamkuXSsjDTt5jR0oRjhfWL82H8HV4z8fDF3SmmaH7XtUs814GyIPDc9Q7r9FJXFWlQwUEqB
-	L3XG6w227yXxwl3y4TRKSTLaO3qNPxKkC3kFHQEaS6GczvPb0vCH/vesTAv0l3BBc/WpFCof05O
-	Yjv0Kkq+8JOP0dxxiFiu2Z0AuBDG8TKLGKUPwlxqeI1Rd/K2oJ8lKm/z1rtg9ZhulSc0V4tCyjy
-	b1ciJMMSqb46zHnoGPcdh/9zKA3OxL3caUp0J8yrnz08WIMWASKvdRAT
-X-Google-Smtp-Source: AGHT+IE9jFkoNlNzUIhIhtPYr1hz43laKNyex5k4hiZRJylP0309zHaG4irN98J58MRDRzo0Phd2MA==
-X-Received: by 2002:a05:6a00:84d:b0:736:a540:c9b5 with SMTP id d2e1a72fcca58-73905a2763bmr24061167b3a.22.1742921598338;
-        Tue, 25 Mar 2025 09:53:18 -0700 (PDT)
-Received: from thinkpad ([120.60.136.104])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-af8a28059e8sm9333330a12.20.2025.03.25.09.53.13
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 25 Mar 2025 09:53:17 -0700 (PDT)
-Date: Tue, 25 Mar 2025 22:23:10 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Praveenkumar I <quic_ipkumar@quicinc.com>
-Cc: george.moussalem@outlook.com, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Nitheesh Sekar <quic_nsekar@quicinc.com>, Varadarajan Narayanan <quic_varada@quicinc.com>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
-	20250317100029.881286-2-quic_varada@quicinc.com, Sricharan R <quic_srichara@quicinc.com>
+	Wed, 26 Mar 2025 07:41:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52Q737jj023557;
+	Wed, 26 Mar 2025 07:41:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	GkRvfCij4pd3uVBUt5aRBIESRSztyKt9Ey8pjtoRQmg=; b=gzizc3WKUwwo3BnW
+	Srwe+oav/ojUDIRnwr5sNWLZ+zhEDWWg5vSepW0+QoQu9yBfnJmJghz+Vk16sIUO
+	HT2HiwujaFeNvCPPxwYAF7S4se8PMw4LiGAMjRQFw4cA+lpqhKXBqhylqm34OSD5
+	C3qGIWxv7x3I8ecFe9PTPpR7vmn+9uz/O2CgXsZNEkgAc5OzKg0vHtvlpBT4Xnpm
+	LuQGjXNPdUqJYWNEqsNzgXFcZ2ojWtFxb+X3IePWKQjt2qR9w2EI8afL04ip5/n/
+	Cp12e/niOcAFkshw/Zkgl3exu8fbmdbu1dMr8gpOET6eTLGHKdLtJvOukJTMVX3a
+	LeyH0g==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45m7nf0smg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 26 Mar 2025 07:41:45 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52Q7fiKl027437
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 26 Mar 2025 07:41:44 GMT
+Received: from [10.50.18.203] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 26 Mar
+ 2025 00:41:38 -0700
+Message-ID: <988510be-ee5f-49c9-a5a4-074c51245f95@quicinc.com>
+Date: Wed, 26 Mar 2025 13:11:35 +0530
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v6 5/6] arm64: dts: qcom: ipq5018: Add PCIe related nodes
-Message-ID: <ycv74l5nop5mptj6uobuacffnwho2gvznh4dhxagupt5gh6x4k@vgik7ouydy6f>
+Content-Language: en-US
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: <george.moussalem@outlook.com>, Vinod Koul <vkoul@kernel.org>,
+        "Kishon
+ Vijay Abraham I" <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>,
+        "Nitheesh Sekar" <quic_nsekar@quicinc.com>,
+        Varadarajan Narayanan <quic_varada@quicinc.com>,
+        Bjorn Helgaas
+	<bhelgaas@google.com>,
+        "Lorenzo Pieralisi" <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+        Bjorn Andersson
+	<andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>,
+        <20250317100029.881286-2-quic_varada@quicinc.com>,
+        Sricharan R
+	<quic_srichara@quicinc.com>
 References: <20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com>
  <20250321-ipq5018-pcie-v6-5-b7d659a76205@outlook.com>
  <a4n3w62bg6x2iux4z7enu3po56hr5pcavjfmvtzdcwv2w4ptrr@ssvfdrltfg5y>
  <6fa2bd30-762b-4a3a-b94f-8798c027764a@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6fa2bd30-762b-4a3a-b94f-8798c027764a@quicinc.com>
+ <ycv74l5nop5mptj6uobuacffnwho2gvznh4dhxagupt5gh6x4k@vgik7ouydy6f>
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
+In-Reply-To: <ycv74l5nop5mptj6uobuacffnwho2gvznh4dhxagupt5gh6x4k@vgik7ouydy6f>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: imIP0sofuN1yHsf_tMzzQw6yL0oxWwZm
+X-Proofpoint-GUID: imIP0sofuN1yHsf_tMzzQw6yL0oxWwZm
+X-Authority-Analysis: v=2.4 cv=IMMCChvG c=1 sm=1 tr=0 ts=67e3afb9 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=UqCG9HQmAAAA:8 a=KKAkSRfTAAAA:8
+ a=P2ilW47UxfeQljOifu4A:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-25_10,2025-03-26_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ impostorscore=0 malwarescore=0 mlxscore=0 clxscore=1015 phishscore=0
+ priorityscore=1501 mlxlogscore=999 adultscore=0 lowpriorityscore=0
+ bulkscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503260045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250325_095319_197270_68575F8C 
-X-CRM114-Status: GOOD (  22.57  )
+X-CRM114-CacheID: sfid-20250326_004156_541566_115868D6 
+X-CRM114-Status: GOOD (  18.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,79 +120,140 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBNYXIgMjQsIDIwMjUgYXQgMDQ6NDg6MzRQTSArMDUzMCwgUHJhdmVlbmt1bWFyIEkg
-d3JvdGU6Cj4gCj4gCj4gT24gMy8yNC8yMDI1IDE6MjYgUE0sIE1hbml2YW5uYW4gU2FkaGFzaXZh
-bSB3cm90ZToKPiA+IE9uIEZyaSwgTWFyIDIxLCAyMDI1IGF0IDA0OjE0OjQzUE0gKzA0MDAsIEdl
-b3JnZSBNb3Vzc2FsZW0gdmlhIEI0IFJlbGF5IHdyb3RlOgo+ID4gPiBGcm9tOiBOaXRoZWVzaCBT
-ZWthcjxxdWljX25zZWthckBxdWljaW5jLmNvbT4KPiA+ID4gCj4gPiA+IEFkZCBwaHkgYW5kIGNv
-bnRyb2xsZXIgbm9kZXMgZm9yIGEgMi1sYW5lIEdlbjIgYW5kCj4gPiBDb250cm9sbGVyIGlzIEdl
-biAzIGNhcGFibGUgYnV0IHlvdSBhcmUgbGltaXRpbmcgaXQgdG8gR2VuIDIuCj4gPiAKPiA+ID4g
-YSAxLWxhbmUgR2VuMiBQQ0llIGJ1cy4gSVBRNTAxOCBoYXMgOCBNU0kgU1BJIGludGVycnVwdHMg
-YW5kCj4gPiA+IG9uZSBnbG9iYWwgaW50ZXJydXB0Lgo+ID4gPiAKPiA+ID4gU2lnbmVkLW9mZi1i
-eTogTml0aGVlc2ggU2VrYXI8cXVpY19uc2VrYXJAcXVpY2luYy5jb20+Cj4gPiA+IFNpZ25lZC1v
-ZmYtYnk6IFNyaWNoYXJhbiBSPHF1aWNfc3JpY2hhcmFAcXVpY2luYy5jb20+Cj4gPiA+IFNpZ25l
-ZC1vZmYtYnk6IEdlb3JnZSBNb3Vzc2FsZW08Z2VvcmdlLm1vdXNzYWxlbUBvdXRsb29rLmNvbT4K
-PiA+IE9uZSBjb21tZW50IGJlbG93LiBXaXRoIHRoYXQgYWRkcmVzc2VkLAo+ID4gCj4gPiBSZXZp
-ZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFtPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5h
-cm8ub3JnPgo+ID4gCj4gPiA+IC0tLQo+ID4gPiAgIGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9p
-cHE1MDE4LmR0c2kgfCAyMzQgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrLQo+ID4g
-PiAgIDEgZmlsZSBjaGFuZ2VkLCAyMzIgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPiA+
-ID4gCj4gPiA+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxNTAxOC5k
-dHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUwMTguZHRzaQo+ID4gPiBpbmRleCA4
-OTE0ZjJlZjBiYzQuLmQwODAzNGI1N2U4MCAxMDA2NDQKPiA+ID4gLS0tIGEvYXJjaC9hcm02NC9i
-b290L2R0cy9xY29tL2lwcTUwMTguZHRzaQo+ID4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRz
-L3Fjb20vaXBxNTAxOC5kdHNpCj4gPiA+IEBAIC0xNDcsNiArMTQ3LDQwIEBAIHVzYnBoeTA6IHBo
-eUA1YjAwMCB7Cj4gPiA+ICAgCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPiA+ID4gICAJCX07Cj4g
-PiA+ICsJCXBjaWUxX3BoeTogcGh5QDdlMDAwewo+ID4gPiArCQkJY29tcGF0aWJsZSA9ICJxY29t
-LGlwcTUwMTgtdW5pcGh5LXBjaWUtcGh5IjsKPiA+ID4gKwkJCXJlZyA9IDwweDAwMDdlMDAwIDB4
-ODAwPjsKPiA+ID4gKwo+ID4gPiArCQkJY2xvY2tzID0gPCZnY2MgR0NDX1BDSUUxX1BJUEVfQ0xL
-PjsKPiA+ID4gKwo+ID4gPiArCQkJcmVzZXRzID0gPCZnY2MgR0NDX1BDSUUxX1BIWV9CQ1I+LAo+
-ID4gPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFQSFlfUEhZX0JDUj47Cj4gPiA+ICsKPiA+ID4gKwkJ
-CSNjbG9jay1jZWxscyA9IDwwPjsKPiA+ID4gKwkJCSNwaHktY2VsbHMgPSA8MD47Cj4gPiA+ICsK
-PiA+ID4gKwkJCW51bS1sYW5lcyA9IDwxPjsKPiA+ID4gKwo+ID4gPiArCQkJc3RhdHVzID0gImRp
-c2FibGVkIjsKPiA+ID4gKwkJfTsKPiA+ID4gKwo+ID4gPiArCQlwY2llMF9waHk6IHBoeUA4NjAw
-MHsKPiA+ID4gKwkJCWNvbXBhdGlibGUgPSAicWNvbSxpcHE1MDE4LXVuaXBoeS1wY2llLXBoeSI7
-Cj4gPiA+ICsJCQlyZWcgPSA8MHgwMDA4NjAwMCAweDgwMD47Cj4gPiA+ICsKPiA+ID4gKwkJCWNs
-b2NrcyA9IDwmZ2NjIEdDQ19QQ0lFMF9QSVBFX0NMSz47Cj4gPiA+ICsKPiA+ID4gKwkJCXJlc2V0
-cyA9IDwmZ2NjIEdDQ19QQ0lFMF9QSFlfQkNSPiwKPiA+ID4gKwkJCQkgPCZnY2MgR0NDX1BDSUUw
-UEhZX1BIWV9CQ1I+Owo+ID4gPiArCj4gPiA+ICsJCQkjY2xvY2stY2VsbHMgPSA8MD47Cj4gPiA+
-ICsJCQkjcGh5LWNlbGxzID0gPDA+Owo+ID4gPiArCj4gPiA+ICsJCQludW0tbGFuZXMgPSA8Mj47
-Cj4gPiA+ICsKPiA+ID4gKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gPiA+ICsJCX07Cj4gPiA+
-ICsKPiA+ID4gICAJCXRsbW06IHBpbmN0cmxAMTAwMDAwMCB7Cj4gPiA+ICAgCQkJY29tcGF0aWJs
-ZSA9ICJxY29tLGlwcTUwMTgtdGxtbSI7Cj4gPiA+ICAgCQkJcmVnID0gPDB4MDEwMDAwMDAgMHgz
-MDAwMDA+Owo+ID4gPiBAQCAtMTcwLDggKzIwNCw4IEBAIGdjYzogY2xvY2stY29udHJvbGxlckAx
-ODAwMDAwIHsKPiA+ID4gICAJCQlyZWcgPSA8MHgwMTgwMDAwMCAweDgwMDAwPjsKPiA+ID4gICAJ
-CQljbG9ja3MgPSA8JnhvX2JvYXJkX2Nsaz4sCj4gPiA+ICAgCQkJCSA8JnNsZWVwX2Nsaz4sCj4g
-PiA+IC0JCQkJIDwwPiwKPiA+ID4gLQkJCQkgPDA+LAo+ID4gPiArCQkJCSA8JnBjaWUwX3BoeT4s
-Cj4gPiA+ICsJCQkJIDwmcGNpZTFfcGh5PiwKPiA+ID4gICAJCQkJIDwwPiwKPiA+ID4gICAJCQkJ
-IDwwPiwKPiA+ID4gICAJCQkJIDwwPiwKPiA+ID4gQEAgLTM4Nyw2ICs0MjEsMjAyIEBAIGZyYW1l
-QGIxMjgwMDAgewo+ID4gPiAgIAkJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ID4gPiAgIAkJCX07
-Cj4gPiA+ICAgCQl9Owo+ID4gPiArCj4gPiA+ICsJCXBjaWUxOiBwY2llQDgwMDAwMDAwIHsKPiA+
-ID4gKwkJCWNvbXBhdGlibGUgPSAicWNvbSxwY2llLWlwcTUwMTgiOwo+ID4gPiArCQkJcmVnID0g
-PDB4ODAwMDAwMDAgMHhmMWQ+LAo+ID4gPiArCQkJICAgICAgPDB4ODAwMDBmMjAgMHhhOD4sCj4g
-PiA+ICsJCQkgICAgICA8MHg4MDAwMTAwMCAweDEwMDA+LAo+ID4gPiArCQkJICAgICAgPDB4MDAw
-NzgwMDAgMHgzMDAwPiwKPiA+ID4gKwkJCSAgICAgIDwweDgwMTAwMDAwIDB4MTAwMD4sCj4gPiA+
-ICsJCQkgICAgICA8MHgwMDA3YjAwMCAweDEwMDA+Owo+ID4gPiArCQkJcmVnLW5hbWVzID0gImRi
-aSIsCj4gPiA+ICsJCQkJICAgICJlbGJpIiwKPiA+ID4gKwkJCQkgICAgImF0dSIsCj4gPiA+ICsJ
-CQkJICAgICJwYXJmIiwKPiA+ID4gKwkJCQkgICAgImNvbmZpZyIsCj4gPiA+ICsJCQkJICAgICJt
-aGkiOwo+ID4gPiArCQkJZGV2aWNlX3R5cGUgPSAicGNpIjsKPiA+ID4gKwkJCWxpbnV4LHBjaS1k
-b21haW4gPSA8MD47Cj4gPiA+ICsJCQlidXMtcmFuZ2UgPSA8MHgwMCAweGZmPjsKPiA+ID4gKwkJ
-CW51bS1sYW5lcyA9IDwxPjsKPiA+ID4gKwkJCW1heC1saW5rLXNwZWVkID0gPDI+Owo+ID4gVGhp
-cyBzdGlsbCBuZWVkcyBzb21lIGp1c3RpZmljYXRpb24uIElmIFFjb20gZm9sa3MgZGlkbid0IHJl
-cGx5LCBhdGxlYXN0IG1vdmUKPiA+IHRoaXMgdG8gYm9hcmQgZHRzIHdpdGggYSBjb21tZW50IHNh
-eWluZyB0aGF0IHRoZSBsaW5rIGlzIG5vdCBjb21pbmcgdXAgd2l0aAo+ID4gR2VuMy4KPiA+IAo+
-ID4gLSBNYW5pCj4gVGhlIElQUTUwMTggUENJZSBjb250cm9sbGVyIGNhbiBzdXBwb3J0IEdlbjMs
-IGJ1dCB0aGUgUENJZSBwaHkgaXMgbGltaXRlZAo+IEdlbjIgYW5kIGRvZXMgbm90IHN1cHBvcnRl
-ZCBHZW4zLgoKSG1tLCBzbyBpZiBhIEdlbiAzIGNhcGFibGUgZGV2aWNlIGlzIGNvbm5lY3RlZCwg
-dGhlIGxpbmsgd2lsbCBub3Qgd29yayBhdCBHZW4gMj8KSXQgc2VlbXMgc28gZnJvbSB0aGUgZXJy
-b3IgdGhhdCBHZW9yZ2Ugc2hhcmVkIHByZXZpb3VzbHkuCgo+IEhlbmNlLCBpdCBpcyByZXN0cmlj
-dGVkIHVzaW5nIHRoZSBEVFNJIHByb3BlcnR5Lgo+IAoKT2suIEdlb3JnZSwgcGxlYXNlIGFkZCBh
-IGNvbW1lbnQgZm9yIHRoZSBwcm9wZXJ0eSBzdGF0aW5nIHRoZSByZWFzb24uCgotIE1hbmkKCi0t
-IArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+
+On 3/25/2025 10:23 PM, Manivannan Sadhasivam wrote:
+> On Mon, Mar 24, 2025 at 04:48:34PM +0530, Praveenkumar I wrote:
+>>
+>> On 3/24/2025 1:26 PM, Manivannan Sadhasivam wrote:
+>>> On Fri, Mar 21, 2025 at 04:14:43PM +0400, George Moussalem via B4 Relay wrote:
+>>>> From: Nitheesh Sekar<quic_nsekar@quicinc.com>
+>>>>
+>>>> Add phy and controller nodes for a 2-lane Gen2 and
+>>> Controller is Gen 3 capable but you are limiting it to Gen 2.
+>>>
+>>>> a 1-lane Gen2 PCIe bus. IPQ5018 has 8 MSI SPI interrupts and
+>>>> one global interrupt.
+>>>>
+>>>> Signed-off-by: Nitheesh Sekar<quic_nsekar@quicinc.com>
+>>>> Signed-off-by: Sricharan R<quic_srichara@quicinc.com>
+>>>> Signed-off-by: George Moussalem<george.moussalem@outlook.com>
+>>> One comment below. With that addressed,
+>>>
+>>> Reviewed-by: Manivannan Sadhasivam<manivannan.sadhasivam@linaro.org>
+>>>
+>>>> ---
+>>>>    arch/arm64/boot/dts/qcom/ipq5018.dtsi | 234 +++++++++++++++++++++++++++++++++-
+>>>>    1 file changed, 232 insertions(+), 2 deletions(-)
+>>>>
+>>>> diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+>>>> index 8914f2ef0bc4..d08034b57e80 100644
+>>>> --- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+>>>> +++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
+>>>> @@ -147,6 +147,40 @@ usbphy0: phy@5b000 {
+>>>>    			status = "disabled";
+>>>>    		};
+>>>> +		pcie1_phy: phy@7e000{
+>>>> +			compatible = "qcom,ipq5018-uniphy-pcie-phy";
+>>>> +			reg = <0x0007e000 0x800>;
+>>>> +
+>>>> +			clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
+>>>> +
+>>>> +			resets = <&gcc GCC_PCIE1_PHY_BCR>,
+>>>> +				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
+>>>> +
+>>>> +			#clock-cells = <0>;
+>>>> +			#phy-cells = <0>;
+>>>> +
+>>>> +			num-lanes = <1>;
+>>>> +
+>>>> +			status = "disabled";
+>>>> +		};
+>>>> +
+>>>> +		pcie0_phy: phy@86000{
+>>>> +			compatible = "qcom,ipq5018-uniphy-pcie-phy";
+>>>> +			reg = <0x00086000 0x800>;
+>>>> +
+>>>> +			clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
+>>>> +
+>>>> +			resets = <&gcc GCC_PCIE0_PHY_BCR>,
+>>>> +				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
+>>>> +
+>>>> +			#clock-cells = <0>;
+>>>> +			#phy-cells = <0>;
+>>>> +
+>>>> +			num-lanes = <2>;
+>>>> +
+>>>> +			status = "disabled";
+>>>> +		};
+>>>> +
+>>>>    		tlmm: pinctrl@1000000 {
+>>>>    			compatible = "qcom,ipq5018-tlmm";
+>>>>    			reg = <0x01000000 0x300000>;
+>>>> @@ -170,8 +204,8 @@ gcc: clock-controller@1800000 {
+>>>>    			reg = <0x01800000 0x80000>;
+>>>>    			clocks = <&xo_board_clk>,
+>>>>    				 <&sleep_clk>,
+>>>> -				 <0>,
+>>>> -				 <0>,
+>>>> +				 <&pcie0_phy>,
+>>>> +				 <&pcie1_phy>,
+>>>>    				 <0>,
+>>>>    				 <0>,
+>>>>    				 <0>,
+>>>> @@ -387,6 +421,202 @@ frame@b128000 {
+>>>>    				status = "disabled";
+>>>>    			};
+>>>>    		};
+>>>> +
+>>>> +		pcie1: pcie@80000000 {
+>>>> +			compatible = "qcom,pcie-ipq5018";
+>>>> +			reg = <0x80000000 0xf1d>,
+>>>> +			      <0x80000f20 0xa8>,
+>>>> +			      <0x80001000 0x1000>,
+>>>> +			      <0x00078000 0x3000>,
+>>>> +			      <0x80100000 0x1000>,
+>>>> +			      <0x0007b000 0x1000>;
+>>>> +			reg-names = "dbi",
+>>>> +				    "elbi",
+>>>> +				    "atu",
+>>>> +				    "parf",
+>>>> +				    "config",
+>>>> +				    "mhi";
+>>>> +			device_type = "pci";
+>>>> +			linux,pci-domain = <0>;
+>>>> +			bus-range = <0x00 0xff>;
+>>>> +			num-lanes = <1>;
+>>>> +			max-link-speed = <2>;
+>>> This still needs some justification. If Qcom folks didn't reply, atleast move
+>>> this to board dts with a comment saying that the link is not coming up with
+>>> Gen3.
+>>>
+>>> - Mani
+>> The IPQ5018 PCIe controller can support Gen3, but the PCIe phy is limited
+>> Gen2 and does not supported Gen3.
+> Hmm, so if a Gen 3 capable device is connected, the link will not work at Gen 2?
+> It seems so from the error that George shared previously.
+No, that is not the case. The link will work with a Gen3 capable device 
+at Gen2 speed. The failure log shared by George indicates a PHY failure, 
+which is due to IPQ5018 PHY's hardware limitation.
+>
+>> Hence, it is restricted using the DTSI property.
+>>
+> Ok. George, please add a comment for the property stating the reason.
+>
+> - Mani
+>
+--
+Thanks,
+Praveenkumar
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
