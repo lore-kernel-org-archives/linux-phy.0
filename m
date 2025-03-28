@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECB37C28B20
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Mar 2025 08:25:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BBE2C28B20
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Mar 2025 09:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pV7sWfYyOPOaCv87+OjzNsA9bouXM6M66bncIxbS7O4=; b=Wa+f370+GUpNV7
-	36fhlNvpBoCqc7eeGaNopme/gn6zt2cU8QGvAFw6rYVBwa9tMTqbUi6ZeOBBPyp5a0ZCSi9nhGCh3
-	WGwot4dPkmGzfZq46FvU7lZaBVb6KSbhVS45nbi3ImauzACP67gOjClwTYrbD44asrw9o2MBPzSML
-	Ui8QK1vJQ/9Z8CFWIMl4UiVa58nDc1EzOuGRJ4EhnPLz069TSAO7aKlyMvfB0Ow7fGaxbq33qH1rP
-	3kZi1H6PYirKyX69eEeGc8nhp6ycR/+6K/H2mG3Tu4gnGPqoGPDD0WytuARgJxKY2N5xQbnkgbCrD
-	Dji4vkM8C7m8aknufhbw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:From:Mime-Version:
+	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=pY/3r25JLu44m8SY+9nDVRe+8H3yIvRtS+Sz8fJ2H+Q=; b=qd5
+	7h3GcOwkJlWSs40cLiSLKZuAJmyEPa+9t8/gwqdFQH/yuRn8jNepbDvBUoJRFjlDvFKumj1MlQ1HI
+	mRut/3TPij2DlGR+LRbY+muHtC1Qbb8+Cl/2/YZdK0MODvIHZCoNraIyzQ1yeQS8gBa0v/4kOjz79
+	bQ/Kj06baEKOfd9vrOvPPws09VJhYOhYbge0PRNfFmZmZC8cg0VMPjwJI/BxT6gGaNrXKXtwWhuFS
+	TIwxGtId0uSEjQIteDUNXdnsUQj5DjBloSZtDxOMH6NlSKlvXAnYJQ1k6Dhqs8d/gQUZRwC2IBMX6
+	6j4HlSRqyc+OJB0fceaETieLkKzqAyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1ty52A-0000000Cuf5-2zcV;
-	Fri, 28 Mar 2025 08:25:46 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1ty5dq-0000000Czbw-38bD;
+	Fri, 28 Mar 2025 09:04:42 +0000
+Received: from mxhk.zte.com.cn ([63.216.63.40])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1ty50Q-0000000CuN6-3xjw;
-	Fri, 28 Mar 2025 08:24:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E288DA41318;
-	Fri, 28 Mar 2025 08:18:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA09DC4CEE4;
-	Fri, 28 Mar 2025 08:23:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1743150237;
-	bh=EChM5lZ02vQW3NFPu4SvlJhSoekdEWsTAF8Ta+yEhxs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kfdEU50tAlrImVBnCDiKUb91BGet1mqQjVmlmN0LJxzj3fb6Zx+gnBwOkbROkkaAy
-	 VkPuX5MSz7e8ApRUdk12TUrQp1q/IEPIEKPQ+Mq6/J8H75jsOr79xrFQOzv8VT8bRn
-	 GnAiYg3pgDS/lt6qLw/HsNRhTcVnlk/9VKDUywnGyqQBsT5B2AG/jX8IkAdKPfiOQC
-	 VYGVP89JlLmIG78fyih0GYUoqKKz2xf1T99Bw0FT+pHDQR0bSXWlF8at/5KhtiZHkS
-	 O0nh+26hROskyWX6ySHBkfPokPVHjPhT/aemHaTCLeaGA1o1yZIVgd5o2gCWVTLqCw
-	 DWoOV+bRBxhjg==
-Date: Fri, 28 Mar 2025 09:23:53 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: justin.chen@broadcom.com
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, rafal@milecki.pl, alcooperx@gmail.com, 
-	bcm-kernel-feedback-list@broadcom.com, florian.fainelli@broadcom.com, conor+dt@kernel.org, 
-	krzk+dt@kernel.org, robh@kernel.org, kishon@kernel.org, vkoul@kernel.org
-Subject: Re: [PATCH 2/2] dt-bindings: phy: brcmstb-usb-phy: Add support for
- bcm74110
-Message-ID: <20250328-acrid-pygmy-dogfish-babce2@krzk-bin>
-References: <20250327185623.3047893-1-justin.chen@broadcom.com>
- <20250327185623.3047893-3-justin.chen@broadcom.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250327185623.3047893-3-justin.chen@broadcom.com>
+	id 1ty5c4-0000000CzKb-300b;
+	Fri, 28 Mar 2025 09:02:55 +0000
+Received: from mse-fl1.zte.com.cn (unknown [10.5.228.132])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mxhk.zte.com.cn (FangMail) with ESMTPS id 4ZPF0b0RnZz8RTZV;
+	Fri, 28 Mar 2025 17:02:39 +0800 (CST)
+Received: from xaxapp01.zte.com.cn ([10.88.99.176])
+	by mse-fl1.zte.com.cn with SMTP id 52S92TvK075798;
+	Fri, 28 Mar 2025 17:02:29 +0800 (+08)
+	(envelope-from shao.mingyin@zte.com.cn)
+Received: from mapi (xaxapp04[null])
+	by mapi (Zmail) with MAPI id mid32;
+	Fri, 28 Mar 2025 17:02:32 +0800 (CST)
+Date: Fri, 28 Mar 2025 17:02:32 +0800 (CST)
+X-Zmail-TransId: 2afb67e665a80d0-b5d3b
+X-Mailer: Zmail v1.0
+Message-ID: <20250328170232003DGEGnXtJuqky8ri8DWMFQ@zte.com.cn>
+Mime-Version: 1.0
+From: <shao.mingyin@zte.com.cn>
+To: <vkoul@kernel.org>
+Cc: <kishon@kernel.org>, <wens@csie.org>, <jernej.skrabec@gmail.com>,
+        <samuel@sholland.org>, <zhang.enpei@zte.com.cn>,
+        <linux-phy@lists.infradead.org>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-sunxi@lists.linux.dev>,
+        <linux-kernel@vger.kernel.org>, <yang.yang29@zte.com.cn>,
+        <xu.xin16@zte.com.cn>, <ye.xingchen@zte.com.cn>
+Subject: =?UTF-8?B?W1BBVENIXSBwaHkvYWxsd2lubmVyOiBwaHktc3VuNTBpLXVzYjM6IFVzZSBkZXZfZXJyX3Byb2JlKCk=?=
+X-MAIL: mse-fl1.zte.com.cn 52S92TvK075798
+X-Fangmail-Anti-Spam-Filtered: true
+X-Fangmail-MID-QID: 67E665AF.000/4ZPF0b0RnZz8RTZV
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250328_012359_047381_206B6FE2 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20250328_020252_903218_3D46FDED 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,39 +75,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Mar 27, 2025 at 11:56:23AM -0700, justin.chen@broadcom.com wrote:
-> From: Justin Chen <justin.chen@broadcom.com>
-> 
-> bcm74110 brcmstb usb phy adds further power savings during suspend
-> states.
-> 
-> Signed-off-by: Justin Chen <justin.chen@broadcom.com>
+From: Zhang Enpei <zhang.enpei@zte.com.cn>
 
-Please order the patches as stated in DT submitting patches.
+Replace the open-code with dev_err_probe() to simplify the code.
 
-> ---
->  Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
-> index 580fbe37b37f..2e668935b454 100644
-> --- a/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
-> @@ -15,6 +15,7 @@ maintainers:
->  properties:
->    compatible:
->      enum:
-> +      - brcm,bcm74110-usb-phy
->        - brcm,bcm4908-usb-phy
->        - brcm,bcm7211-usb-phy
->        - brcm,bcm7216-usb-phy
+Signed-off-by: Zhang Enpei <zhang.enpei@zte.com.cn>
+Signed-off-by: Shao Mingyin <shao.mingyin@zte.com.cn>
+---
+ drivers/phy/allwinner/phy-sun50i-usb3.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-That's incomplete. Where are the updates for constraints? Look at entire
-file, not just top 10 lines.
+diff --git a/drivers/phy/allwinner/phy-sun50i-usb3.c b/drivers/phy/allwinner/phy-sun50i-usb3.c
+index 363f9a0df503..b03faffc160d 100644
+--- a/drivers/phy/allwinner/phy-sun50i-usb3.c
++++ b/drivers/phy/allwinner/phy-sun50i-usb3.c
+@@ -141,11 +141,9 @@ static int sun50i_usb3_phy_probe(struct platform_device *pdev)
+ 		return -ENOMEM;
 
-Best regards,
-Krzysztof
+ 	phy->clk = devm_clk_get(dev, NULL);
+-	if (IS_ERR(phy->clk)) {
+-		if (PTR_ERR(phy->clk) != -EPROBE_DEFER)
+-			dev_err(dev, "failed to get phy clock\n");
+-		return PTR_ERR(phy->clk);
+-	}
++	if (IS_ERR(phy->clk))
++		return dev_err_probe(dev, PTR_ERR(phy->clk),
++				     "failed to get phy clock\n");
 
+ 	phy->reset = devm_reset_control_get(dev, NULL);
+ 	if (IS_ERR(phy->reset)) {
+-- 
+2.25.1
 
 -- 
 linux-phy mailing list
