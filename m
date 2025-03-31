@@ -4,58 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0440BC36017
-	for <linux-phy@archiver.kernel.org>; Mon, 31 Mar 2025 06:50:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6BF8C3600C
+	for <linux-phy@archiver.kernel.org>; Mon, 31 Mar 2025 08:58:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ftboaDFtQWmeXYIHGVan0sz3po+ZO7M4ldKZSIOyhC8=; b=3AqJcADn49sKdh
-	c5TTwovdaLOYMCUriw2VxhABsmwFkFs1hmWTbYfgtsZADqZbUi8HyzvaqPjqA5sjv+duT7xirgWwW
-	2o0VQv1aEq4BuoFFjS/mvU51dsB6LmjVdLQK+9VOOhEdANVC7kZZzTLjuPXGmROdUEtWQJlUZTWd0
-	JHciptJgB21tVAETfyhHphwYxGnjTrWZoVUmtbhvydjIwHJziMw8YsXGjhBlE1zed8bTxbrYF1GQp
-	lq/KqUKQEXKgyAJ6qBnGzEPVzF/l9i7JlbjzFlYrfgzDL0lUY/NQScZq5kJR2mi1V22lCLk9+55n6
-	+COoSCcBw0IQpdwaIWtA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sNOmflGKa+W5URDNOaOBPxNwYC0hnX/BfY9Q0DhnniY=; b=Cs+Q3uOUGP2IoSAUfjaIDPFOAw
+	Pu/8oURpYP1/Yfr2ocvQgO0F/5J1vqW9NKG25zJ2W3QArNbPY0z8bzWMX8Q4e/YQItpPyMMco1YPw
+	T5FYtN7MW8QRlxiEgsFS3NpeallE0IGiHTvP9TOY1dAIo9I4TimUGTyHREIWAPzpRGtys7wZX21Q5
+	fDwl6iFL/kUzR9PgxLdzbVcxANFQFccYGsmA1thXfV2PjMzKLpjBcWpcedprfkGHy3Od8/6mMSh8p
+	iRnfHVMXTZvAZwxwLW+RjXVMXB1tqHk7vNTCQojCACdhsQvaAeZ0Wo27/sgjez0uiBjcgE5g6KQzf
+	6a1OyQEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tz8yR-0000000H8UJ-31cM;
-	Mon, 31 Mar 2025 06:50:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1tzAyq-0000000HRCe-1XuN;
+	Mon, 31 Mar 2025 08:58:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tz8wj-0000000H8GP-1vz0;
-	Mon, 31 Mar 2025 06:48:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0B05861120;
-	Mon, 31 Mar 2025 06:48:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77E4BC4CEE3;
-	Mon, 31 Mar 2025 06:48:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1743403712;
-	bh=ftEA5HkR9HKgNZtzyjrtkfCte/96vO2XvKPBChSlxXM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=MlSNfO3dzGoTsrUyJAiKxpFMAj41Kt3P37e+V7vO6XpUDVBH6wBCJhe9XNMDpsq5s
-	 qZT/qinvZsOfzYPcW/ifHdmqGctNLOqwAoI9kc5fDTNg4bliRMbo4P+9FTLl/zDLMo
-	 GxDidqjcd7N97JJE0clAUSU6EC2H59lYPQt2te2f36jg+Yqa1p2xO8qQ24TFoyWEEr
-	 tuG2MrO1wJmaNX6b3/PV1sVS6+AE0/dSJ555cq16MYr/DS3akUb/sc/F8tcN2QA4TL
-	 U9gQeWGnjP+ia6QKbwKvnrgJFiHUWof7eUGRkD1iQ9PrFLk7onFlcnlJc4Qo13B9my
-	 LSbKcT6ePfhlg==
-Date: Mon, 31 Mar 2025 12:18:26 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: shao.mingyin@zte.com.cn
-Cc: krzk@kernel.org, kishon@kernel.org, wens@csie.org,
-	jernej.skrabec@gmail.com, samuel@sholland.org,
-	zhang.enpei@zte.com.cn, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, yang.yang29@zte.com.cn,
-	xu.xin16@zte.com.cn, ye.xingchen@zte.com.cn
-Subject: Re: [PATCH] phy/allwinner: phy-sun50i-usb3: Use dev_err_probe()
-Message-ID: <Z+o6uhfMCsqru2v+@vaman>
-References: <20250331103257372kkrgDrRRskdABmXRnmbID@zte.com.cn>
+	id 1tzAyn-0000000HRC4-4C5N
+	for linux-phy@lists.infradead.org;
+	Mon, 31 Mar 2025 08:58:51 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52V6kalQ018068;
+	Mon, 31 Mar 2025 08:58:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	QV8GBKh3sQeIYtKF7q/MnzVhUuUgMdWKanrtEHlbBvg=; b=JjhLup+Q1j6zn7Zu
+	IJBBfmvI8JBlW1OMz3G8WQlUT5RMncT4kAI2eiNUzxz/FmMyupqVf/tPeMz6/x3q
+	GhSWMMiaY7BR5jA//84wjlsf3ui2zkGQghDPghlfkegKxcsu6YD++0LEvMQrFl7b
+	qKqejzSsSWvyY5vK+rgbyUVNv55vRWQcELYws87NpLsjfuVcZ9m0o4wpShwu/X8F
+	K2LTMy7ULqCi6SaDcDXtj86ilCUPSx6Eol5jDw9DTjzvx4SClyeH9P04VhYC57jQ
+	0y4lF4f08LvhbTwyjMuUIWwG3zN5ZoqNZbrs4RBm/X6CGUwmLpn8abkikbyOVYxM
+	ioGmcw==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45p7tvc2ht-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 31 Mar 2025 08:58:45 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52V8wieW002926
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 31 Mar 2025 08:58:44 GMT
+Received: from [10.233.19.224] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 31 Mar
+ 2025 01:58:40 -0700
+Message-ID: <4c7059a0-46a0-424d-9068-60894c6cec1c@quicinc.com>
+Date: Mon, 31 Mar 2025 16:58:35 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250331103257372kkrgDrRRskdABmXRnmbID@zte.com.cn>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 0/2] phy: qcom: qmp-pcie: Add PCIe PHY no_csr reset
+ support
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <p.zabel@pengutronix.de>,
+        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
+        <quic_qianyu@quicinc.com>, <neil.armstrong@linaro.org>,
+        <manivannan.sadhasivam@linaro.org>, <quic_devipriy@quicinc.com>,
+        <konrad.dybcio@oss.qualcomm.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
+Content-Language: en-US
+From: "Wenbin Yao (Consultant)" <quic_wenbyao@quicinc.com>
+In-Reply-To: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=OIon3TaB c=1 sm=1 tr=0 ts=67ea5945 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=7YptvZ3fydEw2Y-QB6AA:9
+ a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: Kamf8tevKSEoCK18clT0CMX_0XkzY-0f
+X-Proofpoint-GUID: Kamf8tevKSEoCK18clT0CMX_0XkzY-0f
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-31_04,2025-03-27_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ mlxlogscore=999 lowpriorityscore=0 malwarescore=0 mlxscore=0 clxscore=1015
+ adultscore=0 bulkscore=0 phishscore=0 suspectscore=0 impostorscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503310063
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250331_015850_068460_FB0DEBE9 
+X-CRM114-Status: GOOD (  21.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,37 +100,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31-03-25, 10:32, shao.mingyin@zte.com.cn wrote:
-> >On 28/03/2025 10:02, shao.mingyin@zte.com.cn wrote:
-> >> From: Zhang Enpei <zhang.enpei@zte.com.cn>
-> >> 
-> >> Replace the open-code with dev_err_probe() to simplify the code.
-> >> 
-> >> Signed-off-by: Zhang Enpei <zhang.enpei@zte.com.cn>
-> >> Signed-off-by: Shao Mingyin <shao.mingyin@zte.com.cn>
-> >
-> >Why are you sending patch-by-patch? Organize your work for the same
-> >subsystem into one patchset so we see entire picture at once, not spread
-> >onto 10 separate threads.
-> >
-> >Best regards,
-> >Krzysztof
-> 
-> Dear Krzysztof,
-> Thank you for the constructive feedback.
-> We apologize for any inconvenience caused.We will regroup the patches 
-> targeting the same subsystem into a consolidated series.
+On 3/19/2025 5:45 PM, Wenbin Yao wrote:
+> The series aims to skip phy register programming and drive PCIe PHY with
+> register setting programmed in bootloader by simply toggling no_csr reset,
+> which once togglled, PHY hardware will be reset while PHY registers are
+> retained.
+>
+> First, determine whether PHY setting can be skipped by checking
+> QPHY_START_CTRL register and the existence of nocsr reset. If it is
+> programmed and no_csr reset is supported, do no_csr reset and skip BCR
+> reset which will reset entire PHY.
+>
+> This series also remove has_nocsr_reset flag in qmp_phy_cfg structure and
+> decide whether the PHY supports nocsr reset by checking the existence of
+> nocsr reset in device tree.
+>
+> The series are tested on X1E80100-QCP and HDK8550.
+>
+> The commit messages of this patchset have been modified based on comments
+> and suggestions.
+>
+> Changes in v6:
+> - Return -ENODATA instead of -EINVAL when init sequence is not available.
+> - Link to v5: https://lore.kernel.org/all/20250226103600.1923047-1-quic_wenbyao@quicinc.com/
+>
+> Changes in v5:
+> - Add a check whether the init sequences are exist if the PHY needs to be
+>    initialized to Patch 2/2.
+> - Link to v4: https://lore.kernel.org/all/20250220102253.755116-1-quic_wenbyao@quicinc.com/
+>
+> Changes in v4:
+> - Add Philipp's Reviewed-by tag to Patch 1/2.
+> - Use PHY instead of phy in comments in Patch 2/2.
+> - Use "if (qmp->nocsr_reset)" instead of "if (!qmp->nocsr_reset)" in
+>    function qmp_pcie_exit for readability in Patch 2/2.
+> - Use goto statements in function qmp_pcie_power_on and qmp_pcie_power_off
+>    for readability in Patch 2/2.
+> - Refine the comment of why not checking qmp->skip_init when reset PHY in
+>    function qmp_pcie_power_off in Patch 2/2.
+> - Link to v3: https://lore.kernel.org/all/20250214104539.281846-1-quic_wenbyao@quicinc.com/
+>
+> Changes in v3:
+> - Replace devm_reset_control_get_exclusive with
+>    devm_reset_control_get_optional_exclusive when get phy_nocsr reset
+>    control in Patch 1/2.
+> - Do not ignore -EINVAL when get phy_nocsr reset control in Patch 1/2.
+> - Replace phy_initialized with skip_init in struct qmp_pcie in Patch 2/2.
+> - Add a comment to why not check qmp->skip_init in function
+>    qmp_pcie_power_off in Patch 2/2.
+> - Link to v2: https://lore.kernel.org/all/20250211094231.1813558-1-quic_wenbyao@quicinc.com/
+>
+> Changes in v2:
+> - Add Abel's and Manivannan's Reviewed-by tag to Patch 1/2.
+> - Refine commit msg of Patch 2/2.
+> - Link to v1: https://lore.kernel.org/all/20250121094140.4006801-1-quic_wenbyao@quicinc.com/
+>
+> Konrad Dybcio (1):
+>    phy: qcom: pcie: Determine has_nocsr_reset dynamically
+>
+> Qiang Yu (1):
+>    phy: qcom: qmp-pcie: Add PHY register retention support
+>
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 86 +++++++++++++++++-------
+>   1 file changed, 63 insertions(+), 23 deletions(-)
+>
+>
+> base-commit: b18ac9a805efdbc2e2720dded42b1ed26acadb24
 
-Nice, while at it, please see the subsystem tagging style. Here it
-should be "phy: allwinner: xxxxx"
+Hello, do you have any futher comments?
 
 -- 
-~Vinod
+With best wishes
+Wenbin
+
 
 -- 
 linux-phy mailing list
