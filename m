@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E891AC36010
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D4B0C3601A
 	for <linux-phy@archiver.kernel.org>; Tue,  1 Apr 2025 21:12:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=asMWzt9qiki3AdKJoxXUV9zbO80XMyP7poOgKPPo8RE=; b=sfvhqG0b+A7tE0
-	w0eGQIY21f+77lL88SGKAzIR6HNmNYZzIsBVMMCjjRTLnGmXLdcwaA2+UZy2UimU0x9Cfr1UpxSLL
-	K95iOaMCCHt1Dgn8n7UcnNhq0p5EqtShm0Ei/0nbl0HGVEEz1B/b1tFA1kIdtwAR1jIQwBzZNX1JV
-	3HGHN5YiFaTzFrbeBLLAmwL8/l794UHHCciUas/QeyBoM99UAVTwUZmWJz2ht16n2pjJJPrYwZulI
-	a7M6Far4ofHSCGgjSXvOOLqzIHFd4Bep5wj7mR6jp40mHSYzfC8Hegx6B6oivAsK4FFD1rAsiM9/V
-	vV6bZNM9TdeApyxumllA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7PY9qadBYXfOQH/pyty/+r+O7QrdHKYsjMi+DD8/L8Y=; b=c0CmK5jwwxzwpP
+	7CmdJvA4gAmJQh0XC/A7rNyflQUT31NjXkASXAK1d0u4gWle94GbA/a6K6RnC4XkVn+9UWZ4aoYIL
+	NTuQiLjoDxJxn/Cr7uyf55Ppt1ZMYnZBpRDtCiQM2L24c1+vE0yvLxOlysz/pk58gyG6WFSM/8XSx
+	qDTPhmY41Ujv5AtCCDr0134+bOpxUJaFhMXvi7bG8LiGUzVXNarAZInsQroh6bbNljPFvK/SUhImI
+	q9EQD40Kr9PGaIdrJsaTyUV/W7sBGXnU4Aiyrcp7GJLXqnEKzIm8jvB53gGL2mC68WLxW/8lNxno1
+	ehhekjppX9I80Ac5cDjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tziuO-00000004QAz-1N3n;
+	id 1tziuO-00000004QBH-2XtF;
 	Tue, 01 Apr 2025 21:12:32 +0000
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
+Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tziph-00000004P2T-0u2l
+	id 1tzipi-00000004P2l-1RPx
 	for linux-phy@lists.infradead.org;
-	Tue, 01 Apr 2025 21:07:42 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-2295d78b433so25638245ad.2
-        for <linux-phy@lists.infradead.org>; Tue, 01 Apr 2025 14:07:40 -0700 (PDT)
+	Tue, 01 Apr 2025 21:07:43 +0000
+Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-22409077c06so160891185ad.1
+        for <linux-phy@lists.infradead.org>; Tue, 01 Apr 2025 14:07:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1743541660; x=1744146460; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=lVQoemYUlfCPwZiQBfRAg9BVnj4fMqGZfUkpdiHtqKg=;
-        b=QFvy9sFY6Q8rJ8tZOuaNifcrtLqeRmAuSjA/rCINziSbWskJggITf+JEV/Rrr55d5v
-         Y1VaOCU1t0ZGNQ1qPkgKubQmp0QAZnh6aLq/s1lAGA/gLo2+yqi0FX/8YNav1yMk/kXe
-         UD/RvGJgFaJNd7WM9g2ftCts/ekbWUIrQH/C8=
+        d=broadcom.com; s=google; t=1743541661; x=1744146461; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=fh6IUA26lEyrJEifWIUg0Aon6jE68Po+06xiKRDzRZA=;
+        b=VTdcog1jMqllPgZJjEt6TJ8tczN1HVc7ehAUUeiQ0OAXHM5Rdvp+1+Ogm2c1TGP44Q
+         mQmZEZ6hItznFy79bK1e0uy0ASZVXCMSKVAKeQgMGV7R/WO6+p8Wf/SE2dFF8PEWS/Gv
+         3DOdCGARhxhd7YAp7KYc/7w5AwsBYyhSs5GsQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743541660; x=1744146460;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=lVQoemYUlfCPwZiQBfRAg9BVnj4fMqGZfUkpdiHtqKg=;
-        b=Ee4w3fqU0dmghXMBm3v9Nyim5rpkU1c7l4m9oEYkU8kNz2wMVf5mPH9q+4Ol/+CyWX
-         ZHJK2/sJgQQCPTusFS4/HelwZ28R1bEznuVS2ubTykNep3vcO6JAybqJttu+rRHN6O21
-         tVccLnqe49yppiET0kJwLkh2uE7IvoqifLlMiDiuqt7+zI3qIfch/+54zN6hn2b/uVkx
-         2Ukq8W4ymXfAplvRVqg9Cw3AXvk3vurGCCyVwP7sjKUqnvkISAgyNX2Bqtc8Y+8GniII
-         laDtAhbz48RS+L/gs8tMbHPjuEi5vP68rF2l5uyldUG7HWlFtY8QY1uM/ooSAgrqaclp
-         uxmg==
-X-Forwarded-Encrypted: i=1; AJvYcCV/n69J6MHhsEVReVzDgpmCXIeHavUP+DseGLnW0fhiKZKfOtCopjMMatDaSCfru5ER8e1IL/3luRM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz097Tk8Y3xBDEi3bFkeFHD4ok7qXQtUt1ayDwuCBGhd4dB0ybA
-	tBkzFjoX8gpmlWMORT5XNOY/0A8j0Xf7HQnfiCueatuOsq15nIEk7zhJoXxW4Q==
-X-Gm-Gg: ASbGnctEklaQP7AlV0x711K1VcWomKbBpNpCSxNvOjPTxpcdmVnloKkXxWF4CRTEKJk
-	C2p5XMD4s+JI1YPEGoX4Q+HFS2u/Zig6t+/EO82D0smGf1d4hOzgBMVWvyym5WOFDXqE1yVlKBS
-	dxvMXQ6ZYsABKyauieRC7iPfl3/h/9GJ9dK6T+hu37GB7celE4D4TlNSVp5Bh9SQfN5ihWiNagq
-	nVkvWCIu/zetnpmEN5M+rE6H/AHnqhUD4d3pJT3zoZ2eRZj8k0uoHjzlvIEAdYPnTh/NBy6qwmR
-	2sTbyVGyrVQyHcFBYwuTOWwjyZt7LS3GirQIdw5VkXTjdCepQ3Fa1bRxaCD9G4PwPbFNL4iQz54
-	ZmD9hhdCeAlztvlJJQKPwcg==
-X-Google-Smtp-Source: AGHT+IH0PQ7taRoykgUfWzcSREeHMofrh9rV4j0LFTSx412vSYptiSojp7iGvTEFiYHXeqxqmv5rHw==
-X-Received: by 2002:a05:6a21:3a4a:b0:1f5:7710:fd18 with SMTP id adf61e73a8af0-2009f609379mr21130355637.17.1743541660157;
-        Tue, 01 Apr 2025 14:07:40 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1743541661; x=1744146461;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=fh6IUA26lEyrJEifWIUg0Aon6jE68Po+06xiKRDzRZA=;
+        b=sLQu+tViE/UcFUqBcIoWffL5qtSjRgLvaxOmhlXGC1hIDQTNAHRjkQV7J1aZJhHgvI
+         1eZtuAb1W80MRgPzISJEgj/N70OaMmbJ9TLDUTGj1CBEItK+PiPur+3mnLTy4Ybf3lUq
+         VGdFsHnvLOHyhKOjiDc5Vil4+iEn2kKtUsciroW6os2Pi1vNg+jAmaB9D/ZPwbvjp0y4
+         AE1MpZ0DNM0YZFrPiTADSadVbxKic2epkeVCeriJdCL14L/6o6AxiMB0PBkXFNIPRfEN
+         59xQS3UYH0gX8DKv4D8rGNWQ6WhtEfJ7ZoQ3jv783Hu6nAFnfC2hf8TVCXqzXRUK1zAP
+         VK1w==
+X-Forwarded-Encrypted: i=1; AJvYcCWA+A65aE9JGyykAHQ3ynyS/YCiwkpNxtN4HCB5b/18Ijwp11bYSUdIg7igpO4DYn1U2YUKMwDFLDw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyep32sYZYjzshPsEA0QJpjqUboreH7B/5w1TQsY2oZttmi3Y0Q
+	ctiX5gCK8tT3a/rVVeFPQKYRz/uBlrvDuJn8GJYb2BSXIK02EiRZj8/8saCH0A==
+X-Gm-Gg: ASbGnctQHtUwgkHZQqsJG+zuJcpbMTZzIdZNuWSl5Xq3zM9OTjdEIMIDgABir9o/3G/
+	VLYGzfICWiIFCcVZW2h+Q6CFso35S5gyZj9yAnij3LHwdjhvAjmsvbCWul9zwJBrM7E7Gh3uxLg
+	/hTjmMQsDDiRB97sNlSpAzdP7YOuyp8kLhgJ5Q+/KqBYxP+mhVFzlwMkrEdSXEclAabAV5dwIEk
+	pRwX55wshHmBK6EdV0mpWZUGnrCmU7t0gXSBJjagf2songsMlF1P0hf2+fCL6fBQAWROF0X/rB1
+	KOT2GOrmkPaYuOqtGu4IesmOou9cjrRvl7w+nJLkTjo3CtmWLM0K88+/jkc4+zJp34UB/BluprI
+	qpRndIvc3Y0fnH0Q3OGH2uw==
+X-Google-Smtp-Source: AGHT+IGf9oq+B6UHqEuTrughCDWV/clMEy9Ly7iIk2+4GYzd43PWpBaNMRG0niwSdY027BBWwPy/rw==
+X-Received: by 2002:a05:6a00:2da1:b0:736:4b85:ee05 with SMTP id d2e1a72fcca58-739803c5d57mr21662614b3a.11.1743541661474;
+        Tue, 01 Apr 2025 14:07:41 -0700 (PDT)
 Received: from stbirv-lnx-1.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73970deef7fsm9414995b3a.9.2025.04.01.14.07.38
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73970deef7fsm9414995b3a.9.2025.04.01.14.07.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Apr 2025 14:07:39 -0700 (PDT)
+        Tue, 01 Apr 2025 14:07:41 -0700 (PDT)
 From: Justin Chen <justin.chen@broadcom.com>
 To: linux-arm-kernel@lists.infradead.org,
 	devicetree@vger.kernel.org,
@@ -79,14 +80,16 @@ Cc: rafal@milecki.pl,
 	kishon@kernel.org,
 	vkoul@kernel.org,
 	Justin Chen <justin.chen@broadcom.com>
-Subject: [PATCH v2 0/2] phy: usb: add support for bcm74110
-Date: Tue,  1 Apr 2025 14:07:34 -0700
-Message-Id: <20250401210736.2613748-1-justin.chen@broadcom.com>
+Subject: [PATCH v2 1/2] dt-bindings: phy: brcmstb-usb-phy: Add support for bcm74110
+Date: Tue,  1 Apr 2025 14:07:35 -0700
+Message-Id: <20250401210736.2613748-2-justin.chen@broadcom.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250401210736.2613748-1-justin.chen@broadcom.com>
+References: <20250401210736.2613748-1-justin.chen@broadcom.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250401_140741_259254_4B80E7B4 
-X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-CacheID: sfid-20250401_140742_382658_BF4128ED 
+X-CRM114-Status: UNSURE (   8.87  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,19 +107,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-bcm74110 adds a freerun utmi/ref clock that saves furether power during
-suspend states. A tune is also necessary to pass USB compliance test.
+bcm74110 brcmstb usb phy adds further power savings during suspend
+states.
 
-Justin Chen (2):
-  dt-bindings: phy: brcmstb-usb-phy: Add support for bcm74110
-  phy: usb: add support for bcm74110
+Signed-off-by: Justin Chen <justin.chen@broadcom.com>
+---
+v2:
+	Sorted compat string odering
+	Add new compat string to constraints
 
- .../bindings/phy/brcm,brcmstb-usb-phy.yaml    |  7 ++-
- .../phy/broadcom/phy-brcm-usb-init-synopsys.c | 61 +++++++++++++++++++
- drivers/phy/broadcom/phy-brcm-usb-init.h      |  1 +
- drivers/phy/broadcom/phy-brcm-usb.c           | 14 +++++
- 4 files changed, 81 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml      | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
+diff --git a/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
+index 580fbe37b37f..28906bb664f4 100644
+--- a/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/brcm,brcmstb-usb-phy.yaml
+@@ -15,9 +15,10 @@ maintainers:
+ properties:
+   compatible:
+     enum:
+-      - brcm,bcm4908-usb-phy
++      - brcm,bcm74110-usb-phy
+       - brcm,bcm7211-usb-phy
+       - brcm,bcm7216-usb-phy
++      - brcm,bcm4908-usb-phy
+       - brcm,brcmstb-usb-phy
+ 
+   reg:
+@@ -139,7 +140,9 @@ allOf:
+       properties:
+         compatible:
+           contains:
+-            const: brcm,bcm7216-usb-phy
++            enum:
++              - brcm,bcm74110-usb-phy
++              - brcm,bcm7216-usb-phy
+     then:
+       properties:
+         reg:
 -- 
 2.34.1
 
