@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8971C3601E
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2BC5C369A0
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mvc1wbz6ZD33tB1Fvhv0bYStUP/jftbYcDxRKNozxE4=; b=RXbGcTCZWle+s8
-	s/hAN6AARbTIf0o6nuUNRrq2I0VSoVYfTZO1rynsSfrQ7tVan0HSlO7duR56vEs0XUFA1tOq2WrLQ
-	+zKsuZrzUfq+Fjg10RqddlZZqLAprgXPCHT6whLnSUkprTvWcXcYaoSHvpOmdrIowXR/HdIaAFVWk
-	3TXpEPiFIXzRiiGMpgHO4vW1XZzx10pNoACwtOXVHP+dX+SzGG30shpqOwWuFgOjQ4SEcJZ5pSsnl
-	Cs8Inx1OeR4BUlqkvEnrFsKlr5BkueJpHG+2vIP76HZUcDw7V5SKQ24h+X9QL2+zE6t8/u/fTj7vT
-	LUTMFkTRFAZuAkdsII5g==;
+	List-Owner; bh=z5/0MrEh7r3CSRDW35pNFgJ7lQ9a72uerB8boV73sCE=; b=U1M2NPf608FxHI
+	J6PY3xUicSdxANtd+qGRO881zQnAOWvPCdC2ibBkhDrSlrq7UpePB+WZFrYaEeHIGOtteRJf1rIb7
+	KBMNythXqLi/lT5osigBAZGVRJbDLY1FInAG5LZyra+tQqSoy6k+scsXwSCxtwA24DFV9VOFOz3Jr
+	M6gVrgWeWBTJl+gRp21itennfAYRLPDa9ypmevn3X2izSft8Uq/cHIHOwsIlmH9AYbESdGvwTbBur
+	2zYiTq4yrcmyyz+cTwA77QBIPS8A0yTZ7+8JSOybiQCGNBKFdhUUmDAOACIiig8X/AloKZ1JqbprG
+	ZnUU8taF3TwX4SOfzF9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyHw-00000006Gkt-26FJ;
-	Wed, 02 Apr 2025 13:37:52 +0000
+	id 1tzyHx-00000006GmQ-1tz2;
+	Wed, 02 Apr 2025 13:37:53 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyBd-00000006F8I-3E4T
+	id 1tzyBg-00000006F9o-2YE6
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 13:31:23 +0000
+	Wed, 02 Apr 2025 13:31:25 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3BD7618D7;
-	Wed,  2 Apr 2025 15:29:25 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id D0A2E19E1;
+	Wed,  2 Apr 2025 15:29:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743600566;
-	bh=ye/JSU6RkHhBBCfydm73XwRK9B4EaT5qH6JR7AJ+l70=;
+	s=mail; t=1743600570;
+	bh=S8uUUDEaNeicbiSY8YvRq9DMlAGVbKYKCtdKJ0sZaN8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=ernYpvSOioCibN7IuvbvF7/jfNl3aNOXg1fJd16OOoWZ9TOvQGQJdTg1zlBcLPxTG
-	 mFFzFf3Rgi+24oi/gaw9jZkDM7xjZGJnU+ifDS6/ORhD35v1qFmTi95ZfVsKAxHk5v
-	 O4gr0ByK+z6yre1/ulHGxtFK+mIwQHVBtKU1tExo=
+	b=TbQrJStTAPF/eX2uVj21oQLUiAQSdSbuRTR8bEbdfA1mEtwLCjQNHwn9xj/cNFzqg
+	 bRrN/9IxkjOov7R65sbDIpt1ExDvfOSYFub3T8h0VHPPjShL+SrFUAoyv5IyYTUT1f
+	 qB/8V5uw8CvyXOxrbIzWhj0QWZPElZn9/571LhF8=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 02 Apr 2025 16:30:45 +0300
-Subject: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
- capabilities
+Date: Wed, 02 Apr 2025 16:30:49 +0300
+Subject: [PATCH v2 07/18] drm/bridge: cdns-dsi: Fail if HS rate changed
+ when validating PHY config
 MIME-Version: 1.0
-Message-Id: <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
+Message-Id: <20250402-cdns-dsi-impro-v2-7-4a093eaa5e27@ideasonboard.com>
 References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 In-Reply-To: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -60,26 +60,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3735;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2073;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=ye/JSU6RkHhBBCfydm73XwRK9B4EaT5qH6JR7AJ+l70=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7Twc2escEfItlPXesG8FIeup/1y8543dNTdaB
- i4LBDgP+8eJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08HAAKCRD6PaqMvJYe
- 9dSQD/9pkps9DnK+/7diEOjwiA0BDCFcQ1JC+JDSASXO8elUhhgqL0ULOQJp4YE2OTt9HTu+tMN
- QQNa/DZiRsrZeStCyq/gR/2ulYvPYseaGQVPQZ5AS9uwiJWVe0FCqu/+Ht9eG6enBon/+2E6O8j
- La315wTP6NOqY+dNj6V6VQrN38Q+eCLKQ0g7yXVQj724m+mWBmqT+zGC47xK80AIhsPpg32QaTS
- On+g4uJaI4Z+vUqoTGU/01k53r3rzAKrexnPdvl8m5YfLzdeF6TcZe7gRtauo6heYvLhUfLf5nU
- ytU8TeHyTymbKJapftCnLhyAlE26DXdSgz7ddN2jeGzZXcSNZe2uiUgvhce2rARtyCQBY9Zmkmd
- URIWI5LKtYpA1G3AMYYVNaLq5Ld0OKj7fmetN3b7fO37hRNSwOALNvUse3gy3sJI24yVGsbf6Bd
- ABqwOsP7tf+lUqOzTLpqeCN8IaFoxYp52XH+tRuTT1bdQjarDwAg8VkT1+m8Zb597wlZOhEDw++
- Tv2sVhO639/y9Mbxm8jnFlES9jeMMvXHH/1pQR2sjbPktWTRRjZ/vhPFWnbH8wGFovXy+wDMfRa
- Lq9q5Dlu0O1EytKTDHzbmpqLGhgoKj2KZ3+cBZcYsvZ9ad32oo3Gfw/80t6dV1ULhIRKlOL3oZd
- JxmcmBJhYsMQyWg==
+ bh=S8uUUDEaNeicbiSY8YvRq9DMlAGVbKYKCtdKJ0sZaN8=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7Twd0AEPulojI4YQTGxGlw6WhL0s6oojtNNCo
+ xGjiLne1PSJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08HQAKCRD6PaqMvJYe
+ 9YEcD/0bgooVvLCuu3FLtqeH3YC4ZA8SY/8y8p73Uq7oomgpTBroT3IKCHwFz5CGjRwFwKyvKWU
+ 49YHzXWtvHKvaG5zkLT4/DBlXEshXP6ss5n2mSE6cUres/zdcuLKUw34XI23inbILk5hQ9STkFA
+ ydYNpT/3gwzcfi8YEL99Z1YnkcBNDNTbEhugwFiZin620DQyVS75prnbIpKtoV8w5ZWP0Qil7WC
+ IEfpDvajZ9YgClKsudDokHQQbYdfYKPE32S/O1uESrHiC0hukSDENMiCovaMsUfgZVEV35Qlkdk
+ g36FPQQuQTBb57Q6rENl62mfPACfkA470gD5eMCLWE/KfwDk/ztpblrh8/VbII1VRZH029ybkOf
+ cbe+JBhQO03GlaI3XY7h+xGu2uEEhm3yVr4JrQCQueKk1dDMF9GVMqNKR2vFUqIj/RfAHc4FeLh
+ fFttc4ylimhxsqb14tzONvAZViku9y05/6Z/2947F3shnrzBz2dFk611s5ClKK4aTujvexVjz3d
+ ltQIzcJzOSYQp8tkfb/iOe9kh78TVN0H9gZer9Sw5VWfZ3Dt4SVfjhMhkQS3aLFHFtAdNx5c6Yo
+ RywJDjX0/pfoIinfbZeLodLfe6cVHrqDdvbZjJaowgpPnuxG5E+T8IedpBrRBjis/o4LdsVOA4K
+ oGfwJfwi+7y+85w==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_063121_951272_B5A287FA 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20250402_063124_804918_8B96CA1C 
+X-CRM114-Status: GOOD (  10.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,98 +96,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-At the moment the driver just sets the clock rate with clk_set_rate(),
-and if the resulting rate is not the same as requested, prints a debug
-print, but nothing else.
+The phy_validate() can change the HS clock rate we passed to it in the
+PHY config, depending on what the HW can actually do. The driver just
+ignores this at the moment, but if the actual HS clock rate is different
+than the requested one, the pipeline will fail as all the DSI timing
+calculations will be incorrect.
 
-Add functionality to atomic_check(), in which the clk_round_rate() is
-used to get the "rounded" rate, and set that to the adjusted_mode.
-
-In practice, with the current K3 SoCs, the display PLL is capable of
-producing very exact clocks, so most likely the rounded rate is the same
-as the original one.
+There are ways to improve DSI operation for various clock rates, but for
+now, just add a check to see if the rate changed, and return an error if
+that happens.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/tidss/tidss_crtc.c  | 23 +++++++++++++++++++----
- drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
- drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
- 3 files changed, 27 insertions(+), 4 deletions(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
-index 1604eca265ef..6c3967f70510 100644
---- a/drivers/gpu/drm/tidss/tidss_crtc.c
-+++ b/drivers/gpu/drm/tidss/tidss_crtc.c
-@@ -91,7 +91,7 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
- 	struct dispc_device *dispc = tidss->dispc;
- 	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
- 	u32 hw_videoport = tcrtc->hw_videoport;
--	const struct drm_display_mode *mode;
-+	struct drm_display_mode *adjusted_mode;
- 	enum drm_mode_status ok;
+diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+index 53322407c1b0..9238acf69823 100644
+--- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
++++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+@@ -580,6 +580,7 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+ 	unsigned long dsi_hss_hsa_hse_hbp;
+ 	unsigned int nlanes = output->dev->lanes;
+ 	int mode_clock = (mode_valid_check ? mode->clock : mode->crtc_clock);
++	unsigned long req_hs_clk_rate;
+ 	int ret;
  
- 	dev_dbg(ddev->dev, "%s\n", __func__);
-@@ -99,12 +99,27 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
- 	if (!crtc_state->enable)
- 		return 0;
+ 	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg, mode_valid_check);
+@@ -596,10 +597,20 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+ 	if (ret)
+ 		return ret;
  
--	mode = &crtc_state->adjusted_mode;
-+	adjusted_mode = &crtc_state->adjusted_mode;
++	req_hs_clk_rate = output->phy_opts.mipi_dphy.hs_clk_rate;
+ 	ret = phy_validate(dsi->dphy, PHY_MODE_MIPI_DPHY, 0, &output->phy_opts);
+ 	if (ret)
+ 		return ret;
  
--	ok = dispc_vp_mode_valid(dispc, hw_videoport, mode);
-+	if (drm_atomic_crtc_needs_modeset(crtc_state)) {
-+		long rate;
-+
-+		rate = dispc_vp_round_clk_rate(tidss->dispc,
-+					       tcrtc->hw_videoport,
-+					       adjusted_mode->clock * 1000);
-+		if (rate < 0)
-+			return -EINVAL;
-+
-+		adjusted_mode->clock = rate / 1000;
-+
-+		drm_mode_set_crtcinfo(adjusted_mode, 0);
++	if (req_hs_clk_rate != output->phy_opts.mipi_dphy.hs_clk_rate) {
++		dev_err(&dsi->dphy->dev,
++			"validation changed hs_clk_rate from %lu to %lu, diff %lu\n",
++			req_hs_clk_rate, output->phy_opts.mipi_dphy.hs_clk_rate,
++			output->phy_opts.mipi_dphy.hs_clk_rate -
++				req_hs_clk_rate);
++		return -EINVAL;
 +	}
 +
-+	ok = dispc_vp_mode_valid(dispc, hw_videoport, adjusted_mode);
- 	if (ok != MODE_OK) {
- 		dev_dbg(ddev->dev, "%s: bad mode: %ux%u pclk %u kHz\n",
--			__func__, mode->hdisplay, mode->vdisplay, mode->clock);
-+			__func__, adjusted_mode->hdisplay,
-+			adjusted_mode->vdisplay, adjusted_mode->clock);
- 		return -EINVAL;
- 	}
- 
-diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
-index a5107f2732b1..3930fb7f03c2 100644
---- a/drivers/gpu/drm/tidss/tidss_dispc.c
-+++ b/drivers/gpu/drm/tidss/tidss_dispc.c
-@@ -1318,6 +1318,12 @@ unsigned int dispc_pclk_diff(unsigned long rate, unsigned long real_rate)
- 	return (unsigned int)(abs(((rr - r) * 100) / r));
- }
- 
-+long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
-+			     unsigned long rate)
-+{
-+	return clk_round_rate(dispc->vp_clk[hw_videoport], rate);
-+}
-+
- int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
- 			  unsigned long rate)
- {
-diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/tidss_dispc.h
-index c31b477a18b0..d4c335e918fb 100644
---- a/drivers/gpu/drm/tidss/tidss_dispc.h
-+++ b/drivers/gpu/drm/tidss/tidss_dispc.h
-@@ -120,6 +120,8 @@ enum drm_mode_status dispc_vp_mode_valid(struct dispc_device *dispc,
- 					 const struct drm_display_mode *mode);
- int dispc_vp_enable_clk(struct dispc_device *dispc, u32 hw_videoport);
- void dispc_vp_disable_clk(struct dispc_device *dispc, u32 hw_videoport);
-+long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
-+			     unsigned long rate);
- int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
- 			  unsigned long rate);
- void dispc_vp_setup(struct dispc_device *dispc, u32 hw_videoport,
+ 	dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
+ 	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+ 		dsi_hss_hsa_hse_hbp += dsi_cfg->hsa + DSI_HSA_FRAME_OVERHEAD;
 
 -- 
 2.43.0
