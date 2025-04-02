@@ -4,45 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51808C369A4
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E85C369A6
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mv35+eMi01I12UdkG1Nvx8xObd44Pu9Ut19A72FjCCs=; b=JPAftRyqT6/PqU
-	Je7dcatA+lWtfDUjr0sOmZa3GdkwcGqgSUfwsBcvlPHmXyE4CTvc/wzjIRSkERHx+2d3Zg3WDm71Z
-	F5WMRQZ9v7JiizGZZhaJppch979iadDBlevVXT4C1QVYqbrjt21aLHmVGTzwAxRSZE+rMjSzcabST
-	OkgoAW2MOQF5+ZV27guoSdTidU/CFn7oEjt3dGZ+aUCHN9Jr8a9nrKujzfDmnYm8j9lFuod0V7iPX
-	B3yBufAfe08EYIGGk7n4qH3+rdQc0x12kaoOZ0vqHyRogb7j0JRd8HXMM2yWflxc3z4C3IOkIi6GY
-	NzreTjxlJitV7v+U1HMw==;
+	List-Owner; bh=p6wtw8Q0jF7qvle4bWEZgGO+Q63Aig728jE8v+uIBIQ=; b=HbJJW0Y2P3btt1
+	ZiPeOjb2zBPN6Wcp06b5pNDYJRxZQ1z63UG49xxn2hONsjO21NTr6AHQ+AJxdkrHXytsLr0/mGLiw
+	dRfXo5PlYDC3E6vPCM6HnRxC3HXYuu9tTllJyOoWsu4oQcOzIkQjA21yFMGDLEYZG5kp4kwv27dQ6
+	JZH29nV6IKTNhuLG2iYu+srF2hREN7zfsELHlRS8D9AfLA/fKb2q987UpvvPQex+J1gFAMFqofrNj
+	SQBuoZPNRabTeTrb+n5xXsfOMwjrfFsVdgOY9ZDKcXoeB1lKtPP8sWceSMkLszicROA8o0rvS7RTh
+	9f8N2xmJENZ3CdjjM5Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyHz-00000006GoF-0CW4;
+	id 1tzyHz-00000006GpL-40df;
 	Wed, 02 Apr 2025 13:37:55 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyBl-00000006FCU-1AU1
+	id 1tzyBo-00000006FFY-3Tf3
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 13:31:30 +0000
+	Wed, 02 Apr 2025 13:31:34 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7A82A245E;
-	Wed,  2 Apr 2025 15:29:34 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0252D25EC;
+	Wed,  2 Apr 2025 15:29:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743600575;
-	bh=2qJfC7oDxsjuiQHnkQy9vy3BrMM57VcAHQdpuKoTbDE=;
+	s=mail; t=1743600579;
+	bh=IIDKgphBR8Z+MRb90fam19Jh4edh+nhVkDzVKuQW/rY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=MBGQt6G1K+JaPOeF4nizPZ8kWrecJo1iwuq/b5SUlW+V6bxcccpy7J0NJz2kXqAgx
-	 fbdvvtMyzn85QXtwtFLbFBpszDjFVYE4zTg5FgcktugZitCiElEFoKHiqcPX0pYT/8
-	 KKHj3vDTBEtAtHMuGwzVywRSbk20VBxF/Hz9Va0Q=
+	b=ewM5tG4L4CyDBKjLkSnh7Rr31MZz7fmacUoHMQMziVAXkIX7yD4ZQ3F3N6n2wdbv/
+	 HzBWmdmMDQX4K8btkW357qlv0EAC8avTWIiuEe+GPkZzs6wkWK/efBrhmIbzC16QJd
+	 yumSuguNH+GOaHJSTfiUiF4x9yycs/yfPj50xyts=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 02 Apr 2025 16:30:53 +0300
-Subject: [PATCH v2 11/18] drm/bridge: cdns-dsi: Remove broken fifo emptying
- check
+Date: Wed, 02 Apr 2025 16:30:56 +0300
+Subject: [PATCH v2 14/18] drm/bridge: cdns-dsi: Use videomode internally
 MIME-Version: 1.0
-Message-Id: <20250402-cdns-dsi-impro-v2-11-4a093eaa5e27@ideasonboard.com>
+Message-Id: <20250402-cdns-dsi-impro-v2-14-4a093eaa5e27@ideasonboard.com>
 References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 In-Reply-To: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -60,26 +59,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2637;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4546;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=2qJfC7oDxsjuiQHnkQy9vy3BrMM57VcAHQdpuKoTbDE=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7TwfNSdCSAxRQ7FWWHrv+ucmbrxQItEOhvwxd
- 8wtdX1XYAaJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08HwAKCRD6PaqMvJYe
- 9c39D/wPtEvIKBRT0+zWyqwf1N+KagKV5o3nGkcvDwRIswnJJEK4SSUUGwmtshFXIttWQ3gFjFj
- kYsY0xqd1Kis9EhELKPE4/v4foX/AiP4os8/cci6iekicrTq9+51XGozSx8dHGS5xDcjVmuH/xt
- WXqO6A6ofc+63+BOx5u56ocun59IJyxLu2aU1LfOX0b6vtbdgnfnH7ah9x1/PWTqA+ZEFsoimb0
- i1IGBJOpdItLZ8aGqz/PaMQoHMK8YW+80oSIqp7U3JlLpsrQ5902mgebD0lcb3k8xNIrJtQJEnw
- mY8vrT/ypwkxxZtmQVZwcAOum9gB0i8eQ46SSxJYKtr68Pra+d/iBXnuPhz+5YkNmbODhnOAa40
- ettMRlNFDNh0uGG8XrW3LOkoRsRjls+R5UgbKXs3pOOa14gTc/SilBSHYdBfc0jIP8fd4Ge61PI
- tyS4+MgoHlC6AQi4RJ4VbheqyCLHrFO/G9cIlDLTAs1DwmFgFiMYKohRZRb0S6uIo5CT4y8spRt
- 39d0T2mcveoGUAL3tJAS0nXYNbb0clid/9gJWZVSz4+Jdv8UcRWJRhuyYE1+r2w/c8l9dei0gzy
- WE8yHsTrstJ2oehxi0DZTX31fk5Q9YfHEeD7MvLjJtHgixKEhQ6RgIcfKLq8BEVej/DHKVocni/
- CQAGqQXza3Rnzdw==
+ bh=IIDKgphBR8Z+MRb90fam19Jh4edh+nhVkDzVKuQW/rY=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7TwgE/Bvc7519Sav63c0+qQ9diO63TzZq0FQt
+ bfZL9SrcD2JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08IAAKCRD6PaqMvJYe
+ 9VncD/9A2IAiZBtLzbDk1nuBNFg+G5KREDNLS8B4zuMU3PYMZaXqSsVkC7XtLfeNq7K7sqyUFWJ
+ TOAu0B5cX6KqWqSMjJMk2O40xrNBfoC8X9LSwk0dWekEvYkgk0MEhk4bx0aPrV90XQh5hWSc7ou
+ nn17eQTJm+++ctGVPCQ2CEyoRnA5yxyuXUDKWV+wM+lE7kEL6sQXrfN66aUHV0HEwKgbVM9kQIk
+ YK1KXS/Ing/hhEn5jwAeq1AzInP6wNvu6UOMjz1qYKoRWobkYw4ccAPK6+X47PTq1L6mVw1oBgs
+ 9CRLlRS/jhzzURio7IedIGL9oW8U9EihYeYo3ao8IKygZDQH288xX3qLDLVWLypVcktZvmIiMDA
+ zX273jVH+BrLsooaYPk5fGLMVOCNEWjtlvPpcQSL7IBjZKgKM0Gv7fa6Q5cCSx47tTcrY3TOoYQ
+ v5atM+ropp+FV9Q4MV8Onvw3hur+38pdZB+ZNzb471C8dWlsGmnS/tKbBkIH8CfkuH02nVNXAnw
+ F4P882pDYymsmLJlp7C8ND3GaRFXNmSJZ34rlpoxjfP7zwXDGP9O7F3b8xTmIELWjalqC4Pi99p
+ KJZs7q9fY092WkvCOtBMdb2vqDeDzPYhSjj/siufqhqs1ZAVbphJU7BHmUA6j+Q8khTD/IExsPH
+ XBrm62/72WB7nMg==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_063129_482205_EE6E2E5D 
-X-CRM114-Status: GOOD (  14.18  )
+X-CRM114-CacheID: sfid-20250402_063133_181861_B9F43444 
+X-CRM114-Status: GOOD (  12.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,75 +95,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver check if "DPI(HFP) > DSI(HSS+HSA+HSE+HBP)", and rejects the
-mode if not.
+The drm_display_mode is a bit difficult one to use (we need hfp, hbp,
+... instead of hsync_start, hsync_end, ...) and understand (when to use
+crtc_* fields).
 
-However, testing shows that this doesn't hold at all. I can set the hfp
-to very small values, with no errors. The feedback from the HW team also
-was that the check is not right, although it's not clear if there's a
-way to validate the FIFO emptying.
-
-The check rejects quite a lot of modes, apparently for no good reason,
-so drop the check.
+To simplify the code, use struct videomode internally which cleans up
+the code. If in the future we want to use crtc_* fields in some code
+patchs, that can be easily achieved by creating a videomode from the
+crtc_* fields, and no change to the functions that do the work is
+needed.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 28 --------------------------
- 1 file changed, 28 deletions(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 31 +++++++++++++++-----------
+ 1 file changed, 18 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 9797e6faa29d..e85c8652c96e 100644
+index 220213f5cb09..1a30e2f7d402 100644
 --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -453,15 +453,6 @@ bridge_to_cdns_dsi_input(struct drm_bridge *bridge)
- 	return container_of(bridge, struct cdns_dsi_input, bridge);
+@@ -9,6 +9,7 @@
+ #include <drm/drm_drv.h>
+ #include <drm/drm_probe_helper.h>
+ #include <video/mipi_display.h>
++#include <video/videomode.h>
+ 
+ #include <linux/clk.h>
+ #include <linux/interrupt.h>
+@@ -468,7 +469,7 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
  }
  
--static unsigned int mode_to_dpi_hfp(const struct drm_display_mode *mode,
--				    bool mode_valid_check)
--{
--	if (mode_valid_check)
--		return mode->hsync_start - mode->hdisplay;
--
--	return mode->crtc_hsync_start - mode->crtc_hdisplay;
--}
--
- static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
- 				      unsigned int dpi_bpp,
- 				      unsigned int dsi_pkt_overhead)
-@@ -583,7 +574,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+-			     const struct drm_display_mode *mode,
++			     const struct videomode *vm,
+ 			     struct cdns_dsi_cfg *dsi_cfg)
  {
  	struct cdns_dsi_output *output = &dsi->output;
- 	struct phy_configure_opts_mipi_dphy *phy_cfg = &output->phy_opts.mipi_dphy;
--	unsigned long dsi_hss_hsa_hse_hbp;
- 	unsigned int nlanes = output->dev->lanes;
- 	int mode_clock = (mode_valid_check ? mode->clock : mode->crtc_clock);
- 	unsigned long req_hs_clk_rate;
-@@ -617,24 +607,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 		return -EINVAL;
- 	}
+@@ -476,10 +477,10 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+ 	bool sync_pulse;
+ 	int bpp;
  
--	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
--		dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_PULSE_OVERHEAD;
--		dsi_hss_hsa_hse_hbp += dsi_cfg->hsa + DSI_HSA_FRAME_OVERHEAD;
--	} else {
--		dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_EVENT_OVERHEAD;
--	}
--
--	/*
--	 * Make sure DPI(HFP) > DSI(HSS+HSA+HSE+HBP) to guarantee that the FIFO
--	 * is empty before we start a receiving a new line on the DPI
--	 * interface.
--	 */
--	if ((u64)phy_cfg->hs_clk_rate *
--	    mode_to_dpi_hfp(mode, mode_valid_check) * nlanes <
--	    (u64)dsi_hss_hsa_hse_hbp *
--	    (mode_valid_check ? mode->clock : mode->crtc_clock) * 1000)
--		return -EINVAL;
--
- 	return 0;
+-	dpi_hsa = mode->hsync_end - mode->hsync_start;
+-	dpi_hbp = mode->htotal - mode->hsync_end;
+-	dpi_hfp =  mode->hsync_start - mode->hdisplay;
+-	dpi_hact = mode->hdisplay;
++	dpi_hsa = vm->hsync_len;
++	dpi_hbp = vm->hback_porch;
++	dpi_hfp = vm->hfront_porch;
++	dpi_hact = vm->hactive;
+ 
+ 	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
+ 
+@@ -510,7 +511,7 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+ 			      struct cdns_dsi_cfg *dsi_cfg,
+ 			      struct phy_configure_opts_mipi_dphy *phy_cfg,
+-			      const struct drm_display_mode *mode)
++			      const struct videomode *vm)
+ {
+ 	struct cdns_dsi_output *output = &dsi->output;
+ 	unsigned long long dlane_bps;
+@@ -540,11 +541,12 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+ 	if (dsi_htotal % lanes)
+ 		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
+ 
+-	dpi_hz = mode->clock * 1000;
++	dpi_hz = vm->pixelclock;
+ 	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
+ 
+ 	/* data rate in bytes/sec is not an integer, refuse the mode. */
+-	dpi_htotal = mode->htotal;
++	dpi_htotal = vm->hactive + vm->hfront_porch + vm->hback_porch +
++		     vm->hsync_len;
+ 	if (do_div(dlane_bps, lanes * dpi_htotal))
+ 		return -EINVAL;
+ 
+@@ -559,7 +561,7 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
  }
  
+ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+-			       const struct drm_display_mode *mode,
++			       const struct videomode *vm,
+ 			       struct cdns_dsi_cfg *dsi_cfg)
+ {
+ 	struct cdns_dsi_output *output = &dsi->output;
+@@ -568,17 +570,17 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+ 	unsigned long req_hs_clk_rate;
+ 	int ret;
+ 
+-	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg);
++	ret = cdns_dsi_mode2cfg(dsi, vm, dsi_cfg);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = phy_mipi_dphy_get_default_config(mode->clock * 1000,
++	ret = phy_mipi_dphy_get_default_config(vm->pixelclock,
+ 					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
+ 					       nlanes, phy_cfg);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode);
++	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, vm);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -975,12 +977,15 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
+ 	const struct drm_display_mode *mode = &crtc_state->mode;
+ 	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
+ 	struct drm_display_mode *adjusted_crtc_mode = &crtc_state->adjusted_mode;
++	struct videomode vm;
+ 
+ 	/* cdns-dsi requires negative syncs */
+ 	adjusted_crtc_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
+ 	adjusted_crtc_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
+ 
+-	return cdns_dsi_check_conf(dsi, mode, dsi_cfg);
++	drm_display_mode_to_videomode(mode, &vm);
++
++	return cdns_dsi_check_conf(dsi, &vm, dsi_cfg);
+ }
+ 
+ static struct drm_bridge_state *
 
 -- 
 2.43.0
