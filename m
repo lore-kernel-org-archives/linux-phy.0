@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68BB1C3601A
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 11:52:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25B71C3601A
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 11:59:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wpLd1/qoOQo8uwfqA7tMMreFV+a1zWAEaKwxZl82PjM=; b=BKV3/IFucA/4M8
-	wEERYTfbh6KnMGHm9dFlrGWS1E3RHu+XiQxPgH3B1VIoe9rO+Y12sKlT+owapW9sc/pV4cIbplX4b
-	3lGPbF6oQqqSND7YU3w91BEq5a7gOk40zolb81/TQEgCm5J2DaT1fCuqydR6B0vZk5xjyMK05r7HL
-	N3RQ8ZfvJHaFDlEQs1WVwFDHkGUm3vzhN+SFDT5MDewdBWven6OrWB+04v4/rRP5UOwtcsQZpNu7C
-	ZFkHp+6v2fs95ZeyOU0XDD0vp6lzNtTTj5BZ+AFKWRNte31h5tEqdBNZTz6fHAPL1NYwZo8+ZYf3H
-	1fUeD/egyuTM2VDWJ4nA==;
+	List-Owner; bh=fZljKCFiw0F1iomDe6tnFXUCeAdmAw84PEHeKY+4rBg=; b=O3T/NVvYBiMWJ8
+	okIojAor5zT+IA8RiC2S3kCPX5LsK73E0502Thx2OBRIz4ozUaiCN1sHMN8BYJT5W4je0SgZ/2gMT
+	7bU4uOVDQcuBHTPCB800juA2k2wwJK8FGCo8HQvpuTF/0bim2ZckZxp+GrPpTkIzMSPeMyOFfIJex
+	Kgnd3W31RrejVBwJ72pbbSUTOCtuF95KZ447MyAuOThzI40k+hbi1VGJMtFDQumbez+5L/gASe4QG
+	wwHOygCMlf3du+SIbfjZqCrnMIR3dlCsIIwkif1je6AJbzs4J5rp9wL2CTCOyvLAY1pgVEUQjWf+H
+	CDfnT4oV9XemxjUtlIWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzwdV-00000005yVx-0ZUo;
-	Wed, 02 Apr 2025 11:52:01 +0000
+	id 1tzwkX-00000005zqb-3n7q;
+	Wed, 02 Apr 2025 11:59:17 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzwUA-00000005who-18mj
+	id 1tzwh9-00000005zDR-1LzB
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 11:42:23 +0000
+	Wed, 02 Apr 2025 11:55:48 +0000
 Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 8D6336A2;
-	Wed,  2 Apr 2025 13:40:24 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id AB54CB2B;
+	Wed,  2 Apr 2025 13:53:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743594025;
-	bh=br6xgjpyF0FbbDpugM+ibdJL1SvA1hVnKm/fceQ7q4k=;
+	s=mail; t=1743594833;
+	bh=iGhjInuiPiD0DP7HTJx5NFPI1h8LtskqPtR5XYjHJYQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Rk44w3Cxmi/ojwfgpzH+kURiqrJU8vCttpX/VK3vTY9gnS0I7VZCKj4+JBl6bDmHv
-	 tIOoXwXOnDSRitmeGUm8eILwsjNeC+M2l8HWmUPHIp/HhrAp7Y0ZqiLvJsdb0s9tg/
-	 yUm748WA5c3fETWPvqsKiLAgVt5T9P8WrC0AdutM=
-Message-ID: <5465d2dd-d81a-4e33-b76f-cbbd3386c725@ideasonboard.com>
-Date: Wed, 2 Apr 2025 14:42:14 +0300
+	b=BCjU3XgZCnj4JJZsLV5kgFc2AS1M6AXm0lgqAPeJBlUdJ7inRHDw4XXNzjltAblGF
+	 EYyQ8zBQD0sHU+/xpU2IV5wM6UE7TEJ5PIBN92oKBetz2V2l85cZY2FSM/uXWIRx3Z
+	 sfW/2VChQu/4bbr78hx39OFxHiYgHnlok/mAdwvk=
+Message-ID: <cddb8c30-c614-4fae-9cbd-f5776f930165@ideasonboard.com>
+Date: Wed, 2 Apr 2025 14:55:42 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] phy: cadence: cdns-dphy: Update calibration wait
- time for startup state machine
-To: Devarsh Thakkar <devarsht@ti.com>
+Subject: Re: [PATCH v2 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
+ O_CMN_READY polling
+To: Devarsh Thakkar <devarsht@ti.com>, vkoul@kernel.org, kishon@kernel.org,
+ mripard@kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Cc: sakari.ailus@linux.intel.com, u.kleine-koenig@baylibre.com,
- vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com,
- r-donadkar@ti.com, vkoul@kernel.org, kishon@kernel.org, mripard@kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+ vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com
 References: <20250326152320.3835249-1-devarsht@ti.com>
- <20250326152320.3835249-3-devarsht@ti.com>
+ <20250326152320.3835249-2-devarsht@ti.com>
 Content-Language: en-US
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
@@ -95,10 +95,10 @@ Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
  ueeIlwJl5CpT5l8RpoZXEOVtXYn8zzOJ7oGZYINRV9Pf8qKGLf3Dft7zKBP832I3PQjeok7F
  yjt+9S+KgSFSHP3Pa4E7lsSdWhSlHYNdG/czhoUkSCN09C0rEK93wxACx3vtxPLjXu6RptBw
  3dRq7n+mQChEB1am0BueV1JZaBboIL0AGlSJkm23kw==
-In-Reply-To: <20250326152320.3835249-3-devarsht@ti.com>
+In-Reply-To: <20250326152320.3835249-2-devarsht@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_044222_454875_BDF7288F 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20250402_045547_835290_D08FF220 
+X-CRM114-Status: GOOD (  20.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,52 +118,139 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 Hi,
 
 On 26/03/2025 17:23, Devarsh Thakkar wrote:
-> Use system characterized reset value specified in TRM [1] to program
-> calibration wait time which defines number of cycles to wait for after
-> startup state machine is in bandgap enable state.
-> 
-> This fixes PLL lock timeout error faced while using RPi DSI Panel on TI's
-> AM62L and J721E SoC [2].
-> 
-> [1] AM62P TRM (Section ):
-> https://www.ti.com/lit/pdf/spruj83
-> 
-> [2]:
-> Link: https://gist.github.com/devarsht/89e4830e886774fcd50aa6e29cce3a79
+> PLL lockup and O_CMN_READY assertion can only happen after common state
+> machine gets enabled, but driver was polling them before the common state
+> machine was enabled. To fix this, add new function callbacks polling on PLL
+> lock and O_CMN_READY assertion and call them only after common state
+> machine gets enabled.
 > 
 > Cc: stable@vger.kernel.org
 > Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
 > Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
 > ---
-> V2: Introduced this as as separate patch
+> V2:
+> - Return error code on polling timeout
+> - Moved out calibration logic to separate patch
 > 
->   drivers/phy/cadence/cdns-dphy.c | 3 +++
->   1 file changed, 3 insertions(+)
+>   drivers/phy/cadence/cdns-dphy.c | 57 ++++++++++++++++++++++++++++-----
+>   1 file changed, 49 insertions(+), 8 deletions(-)
 > 
 > diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index c4de9e4d3e93..11fbffe5aafd 100644
+> index ed87a3970f83..c4de9e4d3e93 100644
 > --- a/drivers/phy/cadence/cdns-dphy.c
 > +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -30,6 +30,7 @@
+> @@ -99,6 +99,8 @@ struct cdns_dphy_ops {
+>   	void (*set_pll_cfg)(struct cdns_dphy *dphy,
+>   			    const struct cdns_dphy_cfg *cfg);
+>   	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
+> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
+> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
+>   };
 >   
->   #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
->   #define DPHY_CMN_SSM_EN			BIT(0)
-> +#define DPHY_CMN_SSM_CAL_WAIT_TIME	GENMASK(8, 1)
->   #define DPHY_CMN_TX_MODE_EN		BIT(9)
+>   struct cdns_dphy {
+> @@ -191,6 +193,26 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   	return dphy->ops->get_wakeup_time_ns(dphy);
+>   }
 >   
->   #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
-> @@ -405,6 +406,8 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->   	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
+> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_pll_lock)
+> +		ret = dphy->ops->wait_for_pll_lock(dphy);
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_cmn_ready)
+> +		ret = dphy->ops->wait_for_cmn_ready(dphy);
+> +
+> +	return ret;
+> +}
+> +
+>   static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   {
+>   	/* Default wakeup time is 800 ns (in a simulated environment). */
+> @@ -232,7 +254,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>   					const struct cdns_dphy_cfg *cfg)
+>   {
+> -	u32 status;
+>   
+>   	/*
+>   	 * set the PWM and PLL Byteclk divider settings to recommended values
+> @@ -249,13 +270,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>   
+>   	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
+>   	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
+> -			   POLL_TIMEOUT_US);
+>   }
+>   
+>   static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+> @@ -263,6 +277,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+>   	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
+>   }
+>   
+> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
+> +}
+> +
+> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
+> +			       POLL_TIMEOUT_US);
+> +}
+> +
+>   /*
+>    * This is the reference implementation of DPHY hooks. Specific integration of
+>    * this IP may have to re-implement some of them depending on how they decided
+> @@ -278,6 +309,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
+>   	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
+>   	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
+>   	.set_psm_div = cdns_dphy_j721e_set_psm_div,
+> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
+> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
+>   };
+>   
+>   static int cdns_dphy_config_from_opts(struct phy *phy,
+> @@ -373,6 +406,14 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
 >   	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
 >   	writel(reg, dphy->regs + DPHY_BAND_CFG);
-> +	writel(FIELD_PREP(DPHY_CMN_SSM_CAL_WAIT_TIME, 0x14) | DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
-> +	       dphy->regs + DPHY_CMN_SSM);
+>   
+> +	ret = cdns_dphy_wait_for_pll_lock(dphy);
+> +	if (ret)
+> +		dev_err(&dphy->phy->dev, "Failed to lock PLL with err %d\n", ret);
+> +
+> +	ret = cdns_dphy_wait_for_cmn_ready(dphy);
+> +	if (ret)
+> +		dev_err(&dphy->phy->dev, "O_CMN_READY signal failed to assert with err %d\n", ret);
+> +
 
-This sounds like a TI specific characterized value, but the function 
-here is a generic one. Also, is the value same for all TI SoCs? Or is it 
-per-soc?
+Shouldn't these return an error? Or what's the reason these are ok (and 
+if so, should the prints be dev_dbg?)
 
   Tomi
+
+>   	return 0;
+>   }
+>   
 
 
 -- 
