@@ -4,110 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A08EC28B20
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 12:17:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84EFFC36017
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tXXudkKhplthvR3JvWbtHCK6cIKwDeLYV2LHDjn73oM=; b=fjHfDA6o5qzC7H
-	shtmAfOMsbJe8F8+tpLuxjyIC5W9PHbjIhTyxu6BAEfkeqYsfxRYi6JUzpdREyFbFkb5WWyD8AW2m
-	gGYMh6Ri3v+1G1UIdWF9np1Aw9k82oQf496hazabK94o5NEG8dL0AV3fEmkq/ddhaBauJQrLSELNb
-	VJ8CKrGEzLZ5PmoEyGK6f2P0tG/5T1jj50UD/BrCsuWSbkC3WW9nu5QVKctWH7n+dJMCU9oXDKIvZ
-	GxY8JjSARcAxAF5RzU6XLCMlH7BwhNJrjUA15W5wXQrg/fYBy8heSZPPiWJfa6S4xnr3dyLnXNrEU
-	7Bi5b7b2oHnqWvQ+74UQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FqXmBRY4SQBOP37sJtjwBSNNnX7heT3FgzK9LkQ1FyQ=; b=WAXOVBRGnlmle+
+	Edup6YLA37WLKblRhxjsJXs0ITYccehAeHVJWXpUaSF99qounTOvh5RYYMnKQXS2sl9f+EEnR+f9r
+	8GndAAKbm7jmUSEfWeMVuRlnrjc2QPRitYxsX7cXtSOa+QqV7HftNaVFQviKnx0b40dvTa8rOhQjW
+	T/4HvmNIM1FA/dLe1p9V+4AnDz862n1aMhJYdBlQfy8fc3k+gCCkiG7bUc1UJC3cb2rTc+zxPLZ5k
+	umjy8iEnfoyDl6W9IWXEZ5ez6uve101cGGnb2glRSO5V4DjCa+HTBCcGYfhHm2YZsfRqtpSMLrCpr
+	4mFxlL4ElmH87eP5wOIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzx21-000000062fN-2cc4;
-	Wed, 02 Apr 2025 12:17:21 +0000
+	id 1tzyHv-00000006GjL-1DLj;
+	Wed, 02 Apr 2025 13:37:51 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzx1F-000000062Wg-0VP6
+	id 1tzyBZ-00000006F6t-0niz
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 12:16:34 +0000
-Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B799363B;
-	Wed,  2 Apr 2025 14:14:37 +0200 (CEST)
+	Wed, 02 Apr 2025 13:31:18 +0000
+Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id C062C415;
+	Wed,  2 Apr 2025 15:29:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743596078;
-	bh=9XGspcGsRk9OARSrJZ44ohMWyXksbFBKnxf+YpqSPqg=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=bnK2rLkdGvxef8/fAlHtdngqHA/u5IbtmzLm5mpaQQ6jixe3KARc97SV4DAYUgZgo
-	 aNkwHF3RJ+TB5W83svznCifj+7ZzT4cqucqfYzd4+bW+vj7QJfwCDxFqT4VIsWNsvF
-	 uVMyK+vXVlKiMiG/Pi/Eb1+dDNZHG1w1D95XuRo0=
-Message-ID: <6ea0ee71-7cf6-4e96-aab0-6f4c72613bd1@ideasonboard.com>
-Date: Wed, 2 Apr 2025 15:16:26 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 03/18] drm/tidss: Add mode_fixup to adjust the clock based
- on HW
-To: Maxime Ripard <mripard@kernel.org>
-Cc: Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>,
- Simona Vetter <simona@ffwll.ch>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Aradhya Bhatia <aradhya.bhatia@linux.dev>, Devarsh Thakkar <devarsht@ti.com>
-References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
- <20250320-cdns-dsi-impro-v1-3-725277c5f43b@ideasonboard.com>
- <20250321-adaptable-astonishing-adder-ceeb6f@houat>
-Content-Language: en-US
+	s=mail; t=1743600562;
+	bh=EXsPshiIoDYGDEyH1ssoZWs7SUk1ozHqA0IubK0bN00=;
+	h=From:Subject:Date:To:Cc:From;
+	b=B3R2KBr+lPNNTWY+x+Ruimy9WpR9p74+jE7sxl6/7TGnp8DrIk8/0fN90NRUN68uQ
+	 VWAL6N+lZHUIPtja8cbH+gnZVQS9zZNNNslsKL+wWxH1aRahT/fqTKFROwkSG4Nyve
+	 0quBjdgkAAR9JRXJQJ6nYJ+SlYaAozZp0uPRzGNk=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
- 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
-In-Reply-To: <20250321-adaptable-astonishing-adder-ceeb6f@houat>
+Subject: [PATCH v2 00/18] drm/bridge: cdns-dsi: Make it work a bit better
+Date: Wed, 02 Apr 2025 16:30:42 +0300
+Message-Id: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAM87WcC/3WPQW7DIBBFrxKxLhaMwYasco8qC2DGNVJtEnCsR
+ JHvXuysu3wjzfv/v1mhHKmw8+nNMq2xxDRXgK8TC6Obf4hHrMxAgBYtCB5wLhxL5HG65cRbNIP
+ H3iiDktWnW6YhPg/h9/XDme6P6l0+RzZRKe7w1pjdCtBJrQFMozsFxnLJXXY4vlzjR7dEd/mN8
+ +PZIK17gneFeEjTFJfzSYpOdYgugJW9b2WwRgcaBkHKGggKnA0WlGd7lzGWJeXXsXWVR5n/Zq2
+ SC96Dhr4PelCtv0QkV9Lsk8vY1Hh23bbtD3FUfXQ/AQAA
+X-Change-ID: 20250320-cdns-dsi-impro-3d8fbd7848d1
+To: Jyri Sarha <jyri.sarha@iki.fi>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Andrzej Hajda <andrzej.hajda@intel.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>
+Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>, 
+ Aradhya Bhatia <aradhya.bhatia@linux.dev>, 
+ Devarsh Thakkar <devarsht@ti.com>, 
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+X-Mailer: b4 0.15-dev-c25d1
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3726;
+ i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
+ bh=EXsPshiIoDYGDEyH1ssoZWs7SUk1ozHqA0IubK0bN00=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7TwXJpDfvBWXbZPgxgthnPmSkLRB1SKElVV9f
+ 7NoCOz25N+JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08FwAKCRD6PaqMvJYe
+ 9aCyEACKvtpBZCJo8bk+tTUvShRGAu0rYd3Nhrsw+lDC1Swe8/nqKUNKw8Cnd04hmV6pCxL9ecf
+ j+j4avMt78zxBxDjbFozH76niNajFf76/tFZ/RffBnHmIetL3Nwk5tNUxtBpTS6SUnA4IzsxC7o
+ PCWoklxlZLoRCu1Lyp4xmltuSlmuinv4gW4uU+UldzrlShwybRKpmO4LHq/VxRk4wFPlVMlxPNu
+ zRGBrw0Bk7PDi+omxD67aSJ7qn+a4c6SxBtClLlHyKkdx7mr697Bon10TDiCUJ7D6+sPVqeckjg
+ 01KdlLlir7/t2Bjx+VsmRXpxiLwi+0JnlCKwUwbSAaIMn75xtqRnuLCjjZCQE3wTHIMIADmlDdO
+ K7KN4Mkdc6YxdKmR4Hhe/eIym6IWTmLKIU41EtOUsqIVaTHwtwnR2UHpq7brFl2l8Fos6IDTsfZ
+ 7mXSd8WrjHhmDp840uJ5QEYrNcNq/IBuH32O5gikQ1n3tcK4BRIHOwi0ZsGhcSbhrGfnOUD8SuA
+ w0ZQAv1nY5tV15VpDIJfUK9V21pG1+MZvcqcKNEMy1IXoPI7NlFE4jIvLT+XjkoIugfYc8EtFO0
+ sN5t6ofm05qvRrmb62cnf7YFhwkcG5ZcYAeGzsOlVMNcOfPiWHI/nzD6VMUHdJdaH8Eo01qOUb4
+ OnLpyI6kY0q4LRA==
+X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
+ fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_051633_355567_6E0E1F85 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20250402_063117_374238_E21D3F73 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,71 +94,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+While trying to get the cdns-dsi to work on Toradex's AM69 Aquila
+platform, I hit multiple issues in the driver. Basicaly nothing worked
+for with the board.
 
-On 21/03/2025 16:17, Maxime Ripard wrote:
-> On Thu, Mar 20, 2025 at 05:59:58PM +0200, Tomi Valkeinen wrote:
->> At the moment the driver just sets the clock rate with clk_set_rate(),
->> and if the resulting rate is not the same as requested, prints a debug
->> print, but nothing else.
->>
->> Add mode_fixup(), in which the clk_round_rate() is used to get the
->> "rounded" rate, and set that to the adjusted_mode.
->>
->> In practice, with the current K3 SoCs, the display PLL is capable of
->> producing very exact clocks, so most likely the rounded rate is the same
->> as the original one.
->>
->> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
->> ---
->>   drivers/gpu/drm/tidss/tidss_crtc.c  | 22 ++++++++++++++++++++++
->>   drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
->>   drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
->>   3 files changed, 30 insertions(+)
->>
->> diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
->> index 1604eca265ef..b3338dac25bc 100644
->> --- a/drivers/gpu/drm/tidss/tidss_crtc.c
->> +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
->> @@ -309,7 +309,29 @@ enum drm_mode_status tidss_crtc_mode_valid(struct drm_crtc *crtc,
->>   	return dispc_vp_mode_valid(tidss->dispc, tcrtc->hw_videoport, mode);
->>   }
->>   
->> +static bool tidss_crtc_mode_fixup(struct drm_crtc *crtc,
->> +				  const struct drm_display_mode *mode,
->> +				  struct drm_display_mode *adjusted_mode)
->> +{
->> +	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
->> +	struct drm_device *ddev = crtc->dev;
->> +	struct tidss_device *tidss = to_tidss(ddev);
->> +	long rate;
->> +
->> +	rate = dispc_vp_round_clk_rate(tidss->dispc, tcrtc->hw_videoport,
->> +				       adjusted_mode->clock * 1000);
->> +	if (rate < 0)
->> +		return false;
->> +
->> +	adjusted_mode->clock = rate / 1000;
->> +
->> +	drm_mode_set_crtcinfo(adjusted_mode, 0);
->> +
->> +	return true;
->> +}
-> 
-> mode_fixup is deprecated in favor of atomic_check. If you can't use it
-> for some reason, it should be documented one way or another.
+This series fixes those issues. While I itch to make much larger changes
+to the cdns-dsi driver, I opted to keep this series relatively simple to
+make the fixes more clear and possibly help with backporting.
 
-Ok. I didn't see a note about it being deprecated (just optional), so I 
-went with fixup. Atomic check is called for every commit, and this 
-should be only done before enabling a ctrc. I need to dig that 
-"going-to-be-enabled" from the state.
+The series also touches tidss, but those changes are not strictly
+needed, and can be merged separately. And the series also touches
+cdns-dphy, and those changes are needed.
 
-  Tomi
+This has been tested on Toradex AM69 Aquila, with:
+- HDMI output using lontium lt8912b
+- LVDS panel (sn65dsi84 + panel-lvds)
+
+ Tomi
+
+Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+---
+Changes in v2:
+- Change the tidss clock adjustment from mode_fixup() to atomic_check()
+- Link to v1: https://lore.kernel.org/r/20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com
+
+---
+Tomi Valkeinen (18):
+      drm/tidss: Fix missing includes and struct decls
+      drm/tidss: Use the crtc_* timings when programming the HW
+      drm/tidss: Adjust the pclk based on the HW capabilities
+      phy: cdns-dphy: Store hs_clk_rate and return it
+      phy: cdns-dphy: Remove leftover code
+      drm/bridge: cdns-dsi: Adjust mode to negative syncs
+      drm/bridge: cdns-dsi: Fail if HS rate changed when validating PHY config
+      drm/bridge: cdns-dsi: Clean up cdns_dsi_mode2cfg()
+      drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
+      drm/bridge: cdns-dsi: Fix event mode
+      drm/bridge: cdns-dsi: Remove broken fifo emptying check
+      drm/bridge: cdns-dsi: Drop checks that shouldn't be in .mode_valid()
+      drm/bridge: cdns-dsi: Do not use crtc_* values
+      drm/bridge: cdns-dsi: Use videomode internally
+      drm/bridge: cdns-dsi: Tune adjusted_mode->clock according to dsi needs
+      drm/bridge: cdns-dsi: Update htotal in cdns_dsi_mode2cfg()
+      drm/bridge: cdns-dsi: Drop cdns_dsi_adjust_phy_config()
+      drm/bridge: cdns-dsi: Don't fail on MIPI_DSI_MODE_VIDEO_BURST
+
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 224 +++++++++++--------------
+ drivers/gpu/drm/tidss/tidss_crtc.c             |  25 ++-
+ drivers/gpu/drm/tidss/tidss_dispc.c            |  22 ++-
+ drivers/gpu/drm/tidss/tidss_dispc.h            |   5 +
+ drivers/gpu/drm/tidss/tidss_drv.h              |   2 +
+ drivers/gpu/drm/tidss/tidss_plane.h            |   2 +
+ drivers/gpu/drm/tidss/tidss_scale_coefs.h      |   2 +
+ drivers/phy/cadence/cdns-dphy.c                |  24 +--
+ 8 files changed, 155 insertions(+), 151 deletions(-)
+---
+base-commit: 10646ddac2917b31c985ceff0e4982c42a9c924b
+change-id: 20250320-cdns-dsi-impro-3d8fbd7848d1
+prerequisite-message-id: 20250226155228.564289-1-aradhya.bhatia@linux.dev
+prerequisite-patch-id: 46845a8d15042dd343a29a17fc0b9d0eec2605f5
+prerequisite-patch-id: 7ce82c26cb9e18884492d2282a72ff2a760aefda
+prerequisite-patch-id: ec2071425cab81da72e0805ad92fc52731d7a24d
+prerequisite-patch-id: 32cde02288e0c36ed687f67778937a61f78b2d90
+prerequisite-patch-id: 5f302e2bead8994763699a909ad0b5501f09ed9f
+prerequisite-patch-id: 30611df6ef38c7872107d6bf6dde4504d46ab224
+prerequisite-patch-id: 99831bcaa13e25b957d83a6320f34bcec223b939
+prerequisite-patch-id: b0ad38bc6b323ceea7a1d2266b0fab8deaa6b05e
+prerequisite-patch-id: 38dbce2b9302a764be9dbdc551578f02d797dfcc
+prerequisite-patch-id: 133f8b1dab4f47d429b1924df981564ce3736233
+prerequisite-patch-id: 879c546693a53e4b72c1ee25954c894ae57a441f
+prerequisite-patch-id: 3e7edc818ac078a138f0e42e3f47fd685fffb84f
+prerequisite-patch-id: 673b9f0b1936b5a49973b71cab5d13774583de38
+
+Best regards,
+-- 
+Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 
 
 -- 
