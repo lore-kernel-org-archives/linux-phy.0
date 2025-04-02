@@ -4,45 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C850C3601B
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5079C369A5
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 13:37:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IvUSKUyKI+s+g2FwYm5s/tutyB908LOcxJFhCZztYbs=; b=I7IrM9iBqr+J4Z
-	fwGS6mPOjPiV1LY741l35Vt7PNg/3R7lxLcLBcDS8S7FarEujeTqziuZRPtqAn7XdRkRVxJrhr6Qu
-	caWtvxtKeVsDXGTQZjK/YPk07sIz7bwD2KAmUSIP0ccGYoMTKi+8U/he7eRJ6G2uiZ7PX9YMJXk7N
-	9VWzEnDVejrkn89ogCL00OPggjTtLaEUGE7vZngF949iHDfa8z2aZ2Z7guhqVvbdYo08SLIwDd6tI
-	AxvJ0y+RpODYEYQuFxvsx4bv13VyVqfENAQQUgHXSrHuc6DGf91vCJ6uZ+H+HBDHV7ZGY78oD+LDg
-	oXHphAWSUaAvUpdsckpg==;
+	List-Owner; bh=o70PmHLfHb3nw8mR3Lw4+7HbhjnXxdSKQOJM9Qm/WEs=; b=h7j2E60mI1pgVf
+	iZTISvXE8UfC/BOdoXyEsVo2kgEmmoUezivKjnoXGYKDOgHaq8CaY8Tb5YtpWadsz6vo2kbQ+jFio
+	A508w1EwIeVIn5mZUvgtIYsuGT8C4P1GMnrR3ZThbZJkX/FRP3LVY1cA4D3QK/VdA2fuO45B5qw5p
+	PX7hItfQ5gh7DOmmudytwdY1MNCYQfEkoILG0XzPPON7fZBuOGoGfhowOJvwAGyWGD+i7S8Oba3pG
+	Ge8Gz8Ix6XRb2T5H1Sj4kZaCvcbRZjoHXuAKHlVNlrkJqrLL9S9fgVkn+mOzQa9E1eXwuIj/IT4u5
+	Q9zAqp8IHrE3t6IQqVFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyI0-00000006Gqg-3KLj;
-	Wed, 02 Apr 2025 13:37:56 +0000
+	id 1tzyHz-00000006Gp3-2lRy;
+	Wed, 02 Apr 2025 13:37:55 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzyBs-00000006FJS-1US9
+	id 1tzyBn-00000006FEA-2h6v
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 13:31:38 +0000
+	Wed, 02 Apr 2025 13:31:33 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 90C11245A;
-	Wed,  2 Apr 2025 15:29:41 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id CC2ED2462;
+	Wed,  2 Apr 2025 15:29:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743600582;
-	bh=0UMDOMabLZ6w671e9DBv9w+zXTuDsT+vgr965ZIFrf0=;
+	s=mail; t=1743600577;
+	bh=NRiwCTHabbz+p81RY4GkrUeFRgzVyalNNk+RjRNcX5o=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=A2zIJxOSh4XVWTvMJjRDfkBgB+RsfQj9wPFsDZqSx/cwEdq2D6oJi3/WjZj4DmrzK
-	 niZnSSrBewdKqqgVcqZ87sYgvZc4J+73igz1XDCsRtxNu8Gl+Huq4Ejz5Q6mUQQdF8
-	 PPSy3pMDjP9zgnxhzS2/+6a3ZIqOdslnYT/jPiR8=
+	b=R1/1KBExfXLQe7uYnRhUvVpwZ+6WqqfR911hFWDEsBUCpjWJThhB4tgINO8soYh+a
+	 PWOlEM5yeGFgsWDWQcxsM9xOejA4m7yTQ2JeohXkRxCOpbWaBimDai6YdRza/S/q15
+	 u79JPCyG7NtIXZxUQ0jhQRoLq1tv23Mzqp6FIyKM=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 02 Apr 2025 16:30:59 +0300
-Subject: [PATCH v2 17/18] drm/bridge: cdns-dsi: Drop
- cdns_dsi_adjust_phy_config()
+Date: Wed, 02 Apr 2025 16:30:55 +0300
+Subject: [PATCH v2 13/18] drm/bridge: cdns-dsi: Do not use crtc_* values
 MIME-Version: 1.0
-Message-Id: <20250402-cdns-dsi-impro-v2-17-4a093eaa5e27@ideasonboard.com>
+Message-Id: <20250402-cdns-dsi-impro-v2-13-4a093eaa5e27@ideasonboard.com>
 References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 In-Reply-To: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -60,26 +59,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4069;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3185;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=0UMDOMabLZ6w671e9DBv9w+zXTuDsT+vgr965ZIFrf0=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7TwhA7IHku8zSkXQAiP3vYa5d/Pj3/ZzKiRIC
- UCck3nPKAqJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08IQAKCRD6PaqMvJYe
- 9Xr1D/9ID3aP/PTXdAJ9kg0Ake+CiIWI00AUqxp4kNOx32MwSOyBawJTDy91HQOQPpVSJP1QLc2
- j+ag3vKPjHTk3tC9GAqpDbPZ67pTDFDz1n013N4ZSBNWaP7RLyB4rtgWsuuUpFEUBb6ubDioYny
- RPuNACMPIlX0Tbg2lcGQ62t8Kh0zrSx2bSXsYold6e39CPd3qE6xTXwmUpo72k7ikLNYkXBW93Z
- WUUmUTNa5oWJBGdfyCTFtMUaLYZuOEiAXI5U6QvoORyoKj/BBWgDf7Hl3LudV40XugembxyDxoy
- nDL1WL5RdCDVeb6LiSqD2VW/XqHS6oYzN/aHjvNOzABDqrsY+P9wv6Sz+OjGNcYmHJXRibeO+nt
- GtPVvhDc2P/oJlJO8+Ke6UokDrW2gbUrUWtLseXMySLX95lmtWVaAG5w5RQFPFDv5/YUawOOfdh
- 1Y1PZSFxbkXncOOXnWqS93iiRboyuNQqhyE+2Cx1yKnAdbC+NvFJmtP8WId1aOg1vWjLPJvErkh
- Tt7ueZnezqSgiQicSiiAIw6bLNL/PfzfRUFBnKS2tNmBh+Iw5psVaP683XjPUrMlpeb8Xu+K45M
- 2Pj4BmqdIHp80AsG5xaf6rwL+9O4FpDyxzAzrXpF7CcKoCd3Q9pW4StAcgCZkamQ2cga4j9/v/w
- Jof9f4/350hpgLw==
+ bh=NRiwCTHabbz+p81RY4GkrUeFRgzVyalNNk+RjRNcX5o=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn7TwgEslEJvR9Rc4ug3uU1XdfqYhOfdiaYk1nK
+ v92vYpcJQGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ+08IAAKCRD6PaqMvJYe
+ 9dWUD/9ATKuRhrpAf5dk5R+z7ZUL3tLNU0Wz7KDGDLopcmgFyARqJwBE8pSz7MkS61+QZHM1rzK
+ NL6V46R64DfI+o4NrGiCkFbc895Y4E8c4ycvQCYoDSsfW0qtzP7eNdnPys7NKy2KNgtG35daKSt
+ MRIz+ZRzGe7nkfTFXa9ansPgtUQzEbXeokS33MrjKQDfkxwixFGqsLwOUBYUqTZQY9n66oXimIJ
+ mFtusdSOJjrBb/jjmsS92crz2AzxUlFNwPqTmsuJv6ShWK8SWjdl0cxQGO+Aki7gNfh5JiC3E17
+ A/uSf1J/ODbH56U3CZ/9T0gElZh04t36our6aAS1EKZj/LxmU1k0y/sC/ZdE7h0NGKU+J99GzPT
+ LFjx1PoAfj0hQbmT5uu/rh/yATkZHif9Ix5slv69LPEnfVOvx3Enne2sJX9b6ZAedgYb0PyZ+/Y
+ sMef89w3/Ax6m1eCNvNQ9Ieu7SWv999/Uku99PINMBHouCnQsn0+hu5DzNG7qClAbmXFEXDivRj
+ tEN5+dSjXc10GQPu2BURm64p1pzxcRUkI2hT3porcs9WJatofIcOExJMxTpp3ty8zx1uB4V9fXS
+ C/fM/giH9iGBa4d3nYUXeKqKT1/94sZb0lOyRokUOjML1KNpshtJkVjsSMJOq/Ehud7ir/74B6i
+ 3p4sfe9y0bgLSAw==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_063136_630070_DC78B9B2 
-X-CRM114-Status: GOOD (  18.76  )
+X-CRM114-CacheID: sfid-20250402_063131_837478_F5B34A7E 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,109 +95,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-cdns_dsi_adjust_phy_config() is called from
-cdns_dsi_adjust_phy_config(), which is called from .atomic_check(). It
-checks the DSI htotal and adjusts it to align on the DSI lane boundary
-by changing hfp and then recalculating htotal and HS clock rate.
+The driver uses crtc_* fields from the mode. While I think in the
+enable-path this would be correct, I do not think it's correct in the
+check phase, as the crtc hasn't had a chance to update the crtc_* fields
+yet.
 
-This has a few problems.
+Overall, my understanding is that the crtc_* fields are relevant only in
+cases where we have things like interlace or double pixel mode, where we
+have a logical and real timings. We never use those with DSI, so the
+crtc_* fields should just always match the normal values.
 
-First is the fact that the whole thing is not needed: we do not need to
-align on the lane boundary. The whole frame is sent in HS mode, and it
-is fine if the line's last byte clock tick fills, say, only 2 of the 4
-lanes. The next line will just continue from there. Assuming the
-DSI timing values have been calculated to match the incoming DPI stream,
-and the HS clock is compatible with the DPI pixel clock, the "uneven"
-DSI lines will even out when multiple lines are being sent.
-
-But we could do the align, aligning is not a problem as such. However,
-adding more bytes to the hfp, as the function currently does, makes the
-DSI line time longer, so the function then adjusts the HS clock rate.
-This is where things fail: we don't know what rates we can get from the
-HS clock, and at least in TI K3 SoC case the rates are quite coarsely
-grained. Thus small adjustment to hfp will lead to a big change in HS
-clock rate, and things break down.
-
-We could do a loop here, adjusting hfp, adjusting clock, checking clock
-rate, adjusting hfp again, etc., but considering that the whole
-adjustment shouldn't be needed at all, it's easier to just remove the
-function.
-
-Something like this function should be added back later, when adding
-burst mode support, but that's a bigger change and I don't think this
-function would help that work in any way.
+So, drop the use of crtc_* values.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 48 --------------------------
- 1 file changed, 48 deletions(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 2a272fd8ea3e..0bb55584cb44 100644
+index cf783680b1b4..220213f5cb09 100644
 --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -517,50 +517,6 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
- 	return 0;
- }
+@@ -476,10 +476,10 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+ 	bool sync_pulse;
+ 	int bpp;
  
--static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
--			      struct cdns_dsi_cfg *dsi_cfg,
--			      struct phy_configure_opts_mipi_dphy *phy_cfg,
--			      const struct videomode *vm)
--{
--	struct cdns_dsi_output *output = &dsi->output;
--	unsigned long long dlane_bps;
--	unsigned long adj_dsi_htotal;
--	unsigned long dsi_htotal;
--	unsigned long dpi_htotal;
--	unsigned long dpi_hz;
--	unsigned int dsi_hfp_ext;
--	unsigned int lanes = output->dev->lanes;
--
--	dsi_htotal = dsi_cfg->htotal;
--
--	/*
--	 * Make sure DSI htotal is aligned on a lane boundary when calculating
--	 * the expected data rate. This is done by extending HFP in case of
--	 * misalignment.
--	 */
--	adj_dsi_htotal = dsi_htotal;
--	if (dsi_htotal % lanes)
--		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
--
--	dpi_hz = vm->pixelclock;
--	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
--
--	/* data rate in bytes/sec is not an integer, refuse the mode. */
--	dpi_htotal = vm->hactive + vm->hfront_porch + vm->hback_porch +
--		     vm->hsync_len;
--	if (do_div(dlane_bps, lanes * dpi_htotal))
--		return -EINVAL;
--
--	/* data rate was in bytes/sec, convert to bits/sec. */
--	phy_cfg->hs_clk_rate = dlane_bps * 8;
--
--	dsi_hfp_ext = adj_dsi_htotal - dsi_htotal;
--	dsi_cfg->hfp += dsi_hfp_ext;
--	dsi_cfg->htotal = dsi_htotal + dsi_hfp_ext;
--
--	return 0;
--}
--
- static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 			       const struct videomode *vm,
- 			       struct cdns_dsi_cfg *dsi_cfg)
-@@ -581,10 +537,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+-	dpi_hsa = mode->crtc_hsync_end - mode->crtc_hsync_start;
+-	dpi_hbp = mode->crtc_htotal - mode->crtc_hsync_end;
+-	dpi_hfp =  mode->crtc_hsync_start - mode->crtc_hdisplay;
+-	dpi_hact = mode->crtc_hdisplay;
++	dpi_hsa = mode->hsync_end - mode->hsync_start;
++	dpi_hbp = mode->htotal - mode->hsync_end;
++	dpi_hfp =  mode->hsync_start - mode->hdisplay;
++	dpi_hact = mode->hdisplay;
+ 
+ 	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
+ 
+@@ -540,11 +540,11 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+ 	if (dsi_htotal % lanes)
+ 		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
+ 
+-	dpi_hz = mode->crtc_clock * 1000;
++	dpi_hz = mode->clock * 1000;
+ 	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
+ 
+ 	/* data rate in bytes/sec is not an integer, refuse the mode. */
+-	dpi_htotal = mode->crtc_htotal;
++	dpi_htotal = mode->htotal;
+ 	if (do_div(dlane_bps, lanes * dpi_htotal))
+ 		return -EINVAL;
+ 
+@@ -572,7 +572,7 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
  	if (ret)
  		return ret;
  
--	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, vm);
--	if (ret)
--		return ret;
--
- 	req_hs_clk_rate = output->phy_opts.mipi_dphy.hs_clk_rate;
- 	ret = phy_validate(dsi->dphy, PHY_MODE_MIPI_DPHY, 0, &output->phy_opts);
+-	ret = phy_mipi_dphy_get_default_config(mode->crtc_clock * 1000,
++	ret = phy_mipi_dphy_get_default_config(mode->clock * 1000,
+ 					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
+ 					       nlanes, phy_cfg);
  	if (ret)
+@@ -822,11 +822,11 @@ static void cdns_dsi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
+ 	writel(HFP_LEN(dsi_cfg.hfp) | HACT_LEN(dsi_cfg.hact),
+ 	       dsi->regs + VID_HSIZE2);
+ 
+-	writel(VBP_LEN(mode->crtc_vtotal - mode->crtc_vsync_end - 1) |
+-	       VFP_LEN(mode->crtc_vsync_start - mode->crtc_vdisplay) |
+-	       VSA_LEN(mode->crtc_vsync_end - mode->crtc_vsync_start + 1),
++	writel(VBP_LEN(mode->vtotal - mode->vsync_end - 1) |
++	       VFP_LEN(mode->vsync_start - mode->vdisplay) |
++	       VSA_LEN(mode->vsync_end - mode->vsync_start + 1),
+ 	       dsi->regs + VID_VSIZE1);
+-	writel(mode->crtc_vdisplay, dsi->regs + VID_VSIZE2);
++	writel(mode->vdisplay, dsi->regs + VID_VSIZE2);
+ 
+ 	tmp = dsi_cfg.htotal -
+ 	      (dsi_cfg.hsa + DSI_BLANKING_FRAME_OVERHEAD +
 
 -- 
 2.43.0
