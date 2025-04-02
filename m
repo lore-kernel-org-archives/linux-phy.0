@@ -4,92 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3F2EC28B20
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 18:55:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 576ABC36018
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 20:59:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=faKuVWeCBaM+u7u5gMgqRGQWcYzWKe0HNJAlBFCJh5w=; b=wWbTBRz1rNZCRR
-	vGZkcTJb4CpBRdi4AmnXUMaMV/lQjtplGdLExdXGM6McGVaEYAF+CANIzLXSe1eRAwCyynVWhQNpP
-	qdm0WnYuuh97gT/bJ5S+KWz8viy5i3ZhP+E48Qd8YPrrgDUGsNTBK/Nr55/DnPt+kUy9zrBgkG3Xb
-	lOJMTMGdedBgwZHOR0f2qouXU8iqxUG1wtoAhTnY2XMs7e/nwL1bYbIh0ulRtaKePMV3m9UpkiL5u
-	6CTDc179C/sHVqUFF7UF3m84tibWdNUu85JdMHVhM9CwBcY/1oUe7UxLIcaNjihw+Amol8O6v9j28
-	/GeFrkBD0+ps1UBt7iRg==;
+	List-Owner; bh=76odgxrN6IiLy7EKyfap8Lv2d1xzngif4IBShArPrkg=; b=OdsGLtJHQp2Xbo
+	TTOtV1V2GfzzhOcgpL4XEKS+tyB0Tr9Uo0cz9hdyLnx18NJ/i/agrYAcE3ZwfFRDGHBgiKgTcLzw9
+	ZF8Y+qF1eh+3Bh6tSP6qQGvmq68gCc6ObM4ARTIZK6wnagU9o2FVKAfdL6AGoOC9TldPBsYYwDj54
+	e/CtTd5/dKgOpFGWAmX8zf33iWbMhMJ0qoNn8W6HHwR8DtrNqZnKr0aJHFDiFakXLLEnWeXb+Ho/S
+	n5xm7AZ0SD16R1d+JAzdaWPaxfTanRT3wpOw6d6NgMzmQQ7IXXID5eZOwAGtLFmrMIGmPhn7VUtjp
+	abwLCH4I37KW672BV4Bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u03Fb-00000006ytx-21eL;
-	Wed, 02 Apr 2025 18:55:47 +0000
-Received: from mail-oo1-xc33.google.com ([2607:f8b0:4864:20::c33])
+	id 1u05Bf-00000007C0R-3onL;
+	Wed, 02 Apr 2025 20:59:51 +0000
+Received: from mail-oi1-x22d.google.com ([2607:f8b0:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u03C9-00000006yXG-0mNo
-	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 18:52:14 +0000
-Received: by mail-oo1-xc33.google.com with SMTP id 006d021491bc7-601b6146b9cso60021eaf.0
-        for <linux-phy@lists.infradead.org>; Wed, 02 Apr 2025 11:52:12 -0700 (PDT)
+	id 1u056Z-00000007BMW-2uE2;
+	Wed, 02 Apr 2025 20:54:36 +0000
+Received: by mail-oi1-x22d.google.com with SMTP id 5614622812f47-3f556b90790so76370b6e.0;
+        Wed, 02 Apr 2025 13:54:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1743619932; x=1744224732; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=pC89xsTA3P9IUFJRwEIvyPFg1dVGPyboyapluIQiVZ8=;
-        b=g2N9vS/uTpTGQWzaexw0Zypl9r0Lbsm/t2aIUpPApuNlvaneZGO0EY5GYm5OFh/Dib
-         CMov2JS7w8hNQ3qBfhG9ToSR75wWnAIBuCDCg/9Bs+iOxxMEV9yHDlIxYWSVSAUwGkx7
-         e0GOpvBoETmcAChlBKcGhvHuL78JP7Pd9A9Sw=
+        d=gmail.com; s=20230601; t=1743627274; x=1744232074; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=axaar2VlAPDiKK+PKSGROMc+IrZ+2WgRihymKGXra8Y=;
+        b=U4I2ii6JqOnSQRnMp+diQX0ILE7pdWP3S6+pUv2Bf5QkGGrMJUbfYvBY+KGE/QAUpU
+         h8Q7AaulUWQQ2xDfk9AhnMCYoQPcX7EzY0d//VWQO1d58034UxDn0aY6Mz0HsvZs8Rt7
+         72L/pyFSDDPWvJa6J5dkdukJJVNrg3OH+3bf3Ql1QjdhyKaWUiFpH0EevwvTR4QsnnH1
+         AwuMrl4V75d3vKgmoNpmYRpyEBc/Ba0f1Jm/L+wk4Nj3OxVVQgrBRBw5m2vsFmTGtyqI
+         i6o4Zpd7UkIKUc12vLeLH3IGnmjQqIi1+w4So0sjZCMVlhGTrNgtmXwoBGJxI3gE46gm
+         1blQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743619932; x=1744224732;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=pC89xsTA3P9IUFJRwEIvyPFg1dVGPyboyapluIQiVZ8=;
-        b=Cpk9oLXGTrcLhSi6+qWw3Fj7Eaa9rvHIMVD2QnMdPaBjCTUkArCQdRYJKYO8DOZSMZ
-         IKSUCzSQkUR+kBG4mdCuDklCfRhlobWCqk4wF9jtQ5axjAqKUiZCo4K/wP/Uo4DObFt+
-         mHJFkpFOGGLTGekZAUkya3Nbv97cTnVCeYTnyXeV2NouKdyfkDKHL7YZIByr5qmmjZqj
-         RIqLeqUbFyBO6y9ahTPlz8llLHNq7mIdyx9NuGKpXATFkqHxtIBIwnlMILCRwSa7KUXP
-         HNl8on9SOeTen/N+hYjRjdYROwi/mKTGqpocaq36X6z0OW6U/421MxlNAVFU0TkxPl9+
-         8Rxw==
-X-Forwarded-Encrypted: i=1; AJvYcCVe/D3HTCFe5EyEU76yaMXXddHAyrPQQODZYaa8EGP6iiUZD0rivStyjLz2TFzszjPF3actly5k27I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwzkQpWzslcg4Ya88rq4CxE6xqU2UMEJvwXnTxUWihUJEpwcMZv
-	4c+kXyaHUZUXU1H3SLPpq4YXsDvjw1EAgfq5aCBa4a14tOqQXs5GpdlIYc55aQ==
-X-Gm-Gg: ASbGnctpjKRfK8+39WtcRO4HoMiMO0LEgIqlph9nwv2oKTmw1DIb+vvbgfS6Q6Me7MP
-	xw/NDi6HgGsm9IebpRuVARCZTONCb+vAwIWvCT+Q4cc2io90amdg7+uO+nK54siR+egfJsN3rU6
-	BG7hzg2Dx5OBd7xur8RqvpYEzZHTqxtnO1y8K+R5J4ody5OInXrUG/2UFK3WyZONsOyANIA8i8F
-	7TKEf3AHy0arMYMur5wBf+aOUclf/eqZcMtP5hsQUw13S4sdLtWomVaC/tNTQxnZJTJ3b/Z6+lb
-	ttf5gjGjCh2ZBCavsH8Gfiavw6mv9VaOK7o05OccnRQlkvt4lybCFcCIdhG+pFZ7vFcw12tFqK1
-	asHIbCN/8FI3C1Y8knK3epg==
-X-Google-Smtp-Source: AGHT+IEsmqOHB5gS1eO00vX+adpCsduyiPqTQoQz9A0b9vatapqVYnqJpz+KZ7UBWUUYEebCPIuu+A==
-X-Received: by 2002:a05:6808:2e45:b0:3f6:a400:8216 with SMTP id 5614622812f47-3ff0f500249mr11232579b6e.13.1743619932128;
-        Wed, 02 Apr 2025 11:52:12 -0700 (PDT)
-Received: from stbirv-lnx-1.igp.broadcom.net ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-3ff051aaf60sm2470462b6e.28.2025.04.02.11.52.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 02 Apr 2025 11:52:11 -0700 (PDT)
-From: justin.chen@broadcom.com
-To: linux-arm-kernel@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: rafal@milecki.pl,
-	alcooperx@gmail.com,
-	bcm-kernel-feedback-list@broadcom.com,
-	florian.fainelli@broadcom.com,
-	conor+dt@kernel.org,
-	krzk+dt@kernel.org,
-	robh@kernel.org,
-	kishon@kernel.org,
-	vkoul@kernel.org,
-	Justin Chen <justin.chen@broadcom.com>
-Subject: [PATCH v3 2/2] phy: usb: add support for bcm74110
-Date: Wed,  2 Apr 2025 11:51:59 -0700
-Message-Id: <20250402185159.2976920-3-justin.chen@broadcom.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250402185159.2976920-1-justin.chen@broadcom.com>
-References: <20250402185159.2976920-1-justin.chen@broadcom.com>
+        d=1e100.net; s=20230601; t=1743627274; x=1744232074;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=axaar2VlAPDiKK+PKSGROMc+IrZ+2WgRihymKGXra8Y=;
+        b=Is6etMFQ0FkUJ5u443GdyxFM3KgOdqGWRZZQJGoEZBk4anjKJ2ZgajLRo1OwnPbVoC
+         UpLM0p94ajEPUTjv8ibizVy2RwQpinfGf3XG2clhiwr9afQ8VxWCO5pyeNbEFD+OLnp9
+         Hx+kI12MIukDcBgvdRHTdSNvfTZAnjiIJJqtBYT9cDQCD6VHx6/dkuOAQJWECPjWo8Q+
+         wXl85E1N61MbrszXxBo+dPFjzPbqUNupavKms8sWnPfJQw6Ki8OR+ZcPWv/TW+ycfrVW
+         kkSZMTj08Jt6z+SIDDtJ2yq7qszxQ0YpahV89Ln2dI42H4Q5vk5wQFF/rwi0uwe1hjrd
+         NmvQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUDpQx7FclJVTW9bZXkk32NSiMY1CjiWqxW/IbYgnciHomwMwyq+Qjfu2BDTn6NjEhxaQU9LfzVCBQJ@lists.infradead.org, AJvYcCXapykgUPeIgUtl6lIExqcGUbDL6WMv2fCgdVc9wEBRFfW6asYRgO/dlBPQCR+tpNUJUr9gQDrLL8J0ww8Vs62E@lists.infradead.org
+X-Gm-Message-State: AOJu0YyBWd6MHlhQ/rb/Cxk5sLqFFGW3Nc7FdEDzO377uyNUn0quP6n9
+	HQZZE2imtPqpMxmViwUF1Yf0Sc2qX9E1D4Ru+IivTUp4isHpmLop
+X-Gm-Gg: ASbGncuye13la89NH7+Oo9K0SvPEdh3f7NhFc++ZPZLU0Iov/R4zZayIlcQK7EU13BW
+	udW/ny7RWlJhR+NA8ZfIalU6sx2rAIpv0LJoZEsD48ysI6l59qOKlpPtfwqPzrkXmjhsjadk1SU
+	J20YYwZyorTf7Cs9hf/a47LRkve3Wq4csE8BFLTtDrShPfmqyDa8CEjNtdOKX2CELExvO/Bi3T4
+	XXxFseOJiNdtPF+Cgc7CvwdkY1Zj2RmWNGggrZt/pEJbyHWvM0y9sR6ObRW6bUaTfwIXI7JxwE5
+	WDWrDwfUMnpe14hTa6bTKO+WHrLeRW8YCWvTvaZsMAhKkbSAL/oVybUfH6JUB1QoNbbS4CoV
+X-Google-Smtp-Source: AGHT+IH2b+JHdE/FBb9nWD74IxzVIWkU7YyKDyxMB0+FTs+MT6TBpL3trGIfLfIBnxkIqC+eExplRA==
+X-Received: by 2002:a05:6808:2f0f:b0:3f6:8c64:8bc8 with SMTP id 5614622812f47-4003ea3185emr151555b6e.38.1743627274471;
+        Wed, 02 Apr 2025 13:54:34 -0700 (PDT)
+Received: from [10.67.48.245] ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-3ff052799d2sm2550146b6e.34.2025.04.02.13.54.31
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 02 Apr 2025 13:54:33 -0700 (PDT)
+Message-ID: <4bdbb732-fd58-4ac3-a33b-5c89df03e510@gmail.com>
+Date: Wed, 2 Apr 2025 13:54:31 -0700
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 2/2] phy: usb: add support for bcm74110
+To: justin.chen@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: rafal@milecki.pl, alcooperx@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, florian.fainelli@broadcom.com,
+ conor+dt@kernel.org, krzk+dt@kernel.org, robh@kernel.org, kishon@kernel.org,
+ vkoul@kernel.org
+References: <20250402185159.2976920-1-justin.chen@broadcom.com>
+ <20250402185159.2976920-3-justin.chen@broadcom.com>
+Content-Language: en-US
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ WlfRzlpjIPmdjgoicA==
+In-Reply-To: <20250402185159.2976920-3-justin.chen@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_115213_240014_78D09315 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20250402_135435_737268_0E8681EB 
+X-CRM114-Status: UNSURE (   7.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,170 +132,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Justin Chen <justin.chen@broadcom.com>
+On 4/2/25 11:51, justin.chen@broadcom.com wrote:
+> From: Justin Chen <justin.chen@broadcom.com>
+> 
+> bcm74110 adds a freerun utmi/ref clock that saves further power during
+> suspend states. A tune is also necessary to pass USB compliance test.
+> 
+> Signed-off-by: Justin Chen <justin.chen@broadcom.com>
 
-bcm74110 adds a freerun utmi/ref clock that saves further power during
-suspend states. A tune is also necessary to pass USB compliance test.
-
-Signed-off-by: Justin Chen <justin.chen@broadcom.com>
----
- .../phy/broadcom/phy-brcm-usb-init-synopsys.c | 61 +++++++++++++++++++
- drivers/phy/broadcom/phy-brcm-usb-init.h      |  1 +
- drivers/phy/broadcom/phy-brcm-usb.c           | 14 +++++
- 3 files changed, 76 insertions(+)
-
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-index dc452610934a..8a5ed50f2da0 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
-@@ -43,6 +43,8 @@
- #define   USB_CTRL_SETUP_tca_drv_sel_MASK		BIT(24)
- #define   USB_CTRL_SETUP_STRAP_IPP_SEL_MASK		BIT(25)
- #define USB_CTRL_USB_PM			0x04
-+#define   USB_CTRL_USB_PM_REF_S2_CLK_SWITCH_EN_MASK	BIT(1)
-+#define   USB_CTRL_USB_PM_UTMI_S2_CLK_SWITCH_EN_MASK	BIT(2)
- #define   USB_CTRL_USB_PM_XHC_S2_CLK_SWITCH_EN_MASK	BIT(3)
- #define   USB_CTRL_USB_PM_XHC_PME_EN_MASK		BIT(4)
- #define   USB_CTRL_USB_PM_XHC_SOFT_RESETB_MASK		BIT(22)
-@@ -61,6 +63,13 @@
- #define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK		BIT(18)
- #define USB_CTRL_P0_U2PHY_CFG1		0x68
- #define   USB_CTRL_P0_U2PHY_CFG1_COMMONONN_MASK		BIT(10)
-+#define USB_CTRL_P0_U2PHY_CFG2		0x6c
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXVREFTUNE0_MASK	GENMASK(20, 17)
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXVREFTUNE0_SHIFT	17
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXRESTUNE0_MASK	GENMASK(24, 23)
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXRESTUNE0_SHIFT	23
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXPREEMPAMPTUNE0_MASK	GENMASK(26, 25)
-+#define   USB_CTRL_P0_U2PHY_CFG2_TXPREEMPAMPTUNE0_SHIFT	25
- 
- /* Register definitions for the USB_PHY block in 7211b0 */
- #define USB_PHY_PLL_CTL			0x00
-@@ -369,6 +378,42 @@ static void usb_uninit_common_7216(struct brcm_usb_init_params *params)
- 	}
- }
- 
-+static void usb_init_common_74110(struct brcm_usb_init_params *params)
-+{
-+	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+	u32 reg;
-+
-+	reg = brcm_usb_readl(USB_CTRL_REG(ctrl, USB_PM));
-+	reg &= ~(USB_CTRL_MASK(USB_PM, REF_S2_CLK_SWITCH_EN) |
-+		USB_CTRL_MASK(USB_PM, UTMI_S2_CLK_SWITCH_EN));
-+	brcm_usb_writel(reg, USB_CTRL_REG(ctrl, USB_PM));
-+
-+	usb_init_common_7216(params);
-+
-+	reg = brcm_usb_readl(USB_CTRL_REG(ctrl, P0_U2PHY_CFG2));
-+	reg &= ~(USB_CTRL_P0_U2PHY_CFG2_TXVREFTUNE0_MASK |
-+		 USB_CTRL_P0_U2PHY_CFG2_TXRESTUNE0_MASK |
-+		 USB_CTRL_P0_U2PHY_CFG2_TXPREEMPAMPTUNE0_MASK);
-+	reg |= (0x6 << USB_CTRL_P0_U2PHY_CFG2_TXVREFTUNE0_SHIFT) |
-+		(0x3 << USB_CTRL_P0_U2PHY_CFG2_TXRESTUNE0_SHIFT) |
-+		(0x2 << USB_CTRL_P0_U2PHY_CFG2_TXPREEMPAMPTUNE0_SHIFT);
-+	brcm_usb_writel(reg, USB_CTRL_REG(ctrl, P0_U2PHY_CFG2));
-+}
-+
-+static void usb_uninit_common_74110(struct brcm_usb_init_params *params)
-+{
-+	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+	u32 reg;
-+
-+	if (params->wake_enabled) {
-+		reg = brcm_usb_readl(USB_CTRL_REG(ctrl, USB_PM));
-+		reg |= (USB_CTRL_MASK(USB_PM, REF_S2_CLK_SWITCH_EN) |
-+		       USB_CTRL_MASK(USB_PM, UTMI_S2_CLK_SWITCH_EN));
-+		brcm_usb_writel(reg, USB_CTRL_REG(ctrl, USB_PM));
-+	}
-+	usb_uninit_common_7216(params);
-+}
-+
- static void usb_uninit_common_7211b0(struct brcm_usb_init_params *params)
- {
- 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-@@ -426,6 +471,16 @@ static void usb_set_dual_select(struct brcm_usb_init_params *params)
- 	brcm_usb_writel(reg, USB_CTRL_REG(ctrl, USB_DEVICE_CTL1));
- }
- 
-+static const struct brcm_usb_init_ops bcm74110_ops = {
-+	.init_ipp = usb_init_ipp,
-+	.init_common = usb_init_common_74110,
-+	.init_xhci = usb_init_xhci,
-+	.uninit_common = usb_uninit_common_74110,
-+	.uninit_xhci = usb_uninit_xhci,
-+	.get_dual_select = usb_get_dual_select,
-+	.set_dual_select = usb_set_dual_select,
-+};
-+
- static const struct brcm_usb_init_ops bcm7216_ops = {
- 	.init_ipp = usb_init_ipp,
- 	.init_common = usb_init_common_7216,
-@@ -446,6 +501,12 @@ static const struct brcm_usb_init_ops bcm7211b0_ops = {
- 	.set_dual_select = usb_set_dual_select,
- };
- 
-+void brcm_usb_dvr_init_74110(struct brcm_usb_init_params *params)
-+{
-+	params->family_name = "74110";
-+	params->ops = &bcm74110_ops;
-+}
-+
- void brcm_usb_dvr_init_7216(struct brcm_usb_init_params *params)
- {
- 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
-index c1a88f5cd4cd..4c7be78d0b14 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.h
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
-@@ -72,6 +72,7 @@ struct  brcm_usb_init_params {
- 	bool wake_enabled;
- };
- 
-+void brcm_usb_dvr_init_74110(struct brcm_usb_init_params *params);
- void brcm_usb_dvr_init_4908(struct brcm_usb_init_params *params);
- void brcm_usb_dvr_init_7445(struct brcm_usb_init_params *params);
- void brcm_usb_dvr_init_7216(struct brcm_usb_init_params *params);
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index 6362ca5b7fb6..0666864c2f77 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -283,6 +283,16 @@ static const struct attribute_group brcm_usb_phy_group = {
- 	.attrs = brcm_usb_phy_attrs,
- };
- 
-+static const struct match_chip_info chip_info_74110 = {
-+	.init_func = &brcm_usb_dvr_init_74110,
-+	.required_regs = {
-+		BRCM_REGS_CTRL,
-+		BRCM_REGS_XHCI_EC,
-+		BRCM_REGS_XHCI_GBL,
-+		-1,
-+	},
-+};
-+
- static const struct match_chip_info chip_info_4908 = {
- 	.init_func = &brcm_usb_dvr_init_4908,
- 	.required_regs = {
-@@ -325,6 +335,10 @@ static const struct match_chip_info chip_info_7445 = {
- };
- 
- static const struct of_device_id brcm_usb_dt_ids[] = {
-+	{
-+		.compatible = "brcm,bcm74110-usb-phy",
-+		.data = &chip_info_74110,
-+	},
- 	{
- 		.compatible = "brcm,bcm4908-usb-phy",
- 		.data = &chip_info_4908,
+Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
 -- 
-2.34.1
-
+Florian
 
 -- 
 linux-phy mailing list
