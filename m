@@ -4,52 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25B71C3601A
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 11:59:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A08EC28B20
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Apr 2025 12:17:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZljKCFiw0F1iomDe6tnFXUCeAdmAw84PEHeKY+4rBg=; b=O3T/NVvYBiMWJ8
-	okIojAor5zT+IA8RiC2S3kCPX5LsK73E0502Thx2OBRIz4ozUaiCN1sHMN8BYJT5W4je0SgZ/2gMT
-	7bU4uOVDQcuBHTPCB800juA2k2wwJK8FGCo8HQvpuTF/0bim2ZckZxp+GrPpTkIzMSPeMyOFfIJex
-	Kgnd3W31RrejVBwJ72pbbSUTOCtuF95KZ447MyAuOThzI40k+hbi1VGJMtFDQumbez+5L/gASe4QG
-	wwHOygCMlf3du+SIbfjZqCrnMIR3dlCsIIwkif1je6AJbzs4J5rp9wL2CTCOyvLAY1pgVEUQjWf+H
-	CDfnT4oV9XemxjUtlIWg==;
+	List-Owner; bh=tXXudkKhplthvR3JvWbtHCK6cIKwDeLYV2LHDjn73oM=; b=fjHfDA6o5qzC7H
+	shtmAfOMsbJe8F8+tpLuxjyIC5W9PHbjIhTyxu6BAEfkeqYsfxRYi6JUzpdREyFbFkb5WWyD8AW2m
+	gGYMh6Ri3v+1G1UIdWF9np1Aw9k82oQf496hazabK94o5NEG8dL0AV3fEmkq/ddhaBauJQrLSELNb
+	VJ8CKrGEzLZ5PmoEyGK6f2P0tG/5T1jj50UD/BrCsuWSbkC3WW9nu5QVKctWH7n+dJMCU9oXDKIvZ
+	GxY8JjSARcAxAF5RzU6XLCMlH7BwhNJrjUA15W5wXQrg/fYBy8heSZPPiWJfa6S4xnr3dyLnXNrEU
+	7Bi5b7b2oHnqWvQ+74UQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzwkX-00000005zqb-3n7q;
-	Wed, 02 Apr 2025 11:59:17 +0000
+	id 1tzx21-000000062fN-2cc4;
+	Wed, 02 Apr 2025 12:17:21 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzwh9-00000005zDR-1LzB
+	id 1tzx1F-000000062Wg-0VP6
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Apr 2025 11:55:48 +0000
+	Wed, 02 Apr 2025 12:16:34 +0000
 Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id AB54CB2B;
-	Wed,  2 Apr 2025 13:53:52 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B799363B;
+	Wed,  2 Apr 2025 14:14:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1743594833;
-	bh=iGhjInuiPiD0DP7HTJx5NFPI1h8LtskqPtR5XYjHJYQ=;
+	s=mail; t=1743596078;
+	bh=9XGspcGsRk9OARSrJZ44ohMWyXksbFBKnxf+YpqSPqg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=BCjU3XgZCnj4JJZsLV5kgFc2AS1M6AXm0lgqAPeJBlUdJ7inRHDw4XXNzjltAblGF
-	 EYyQ8zBQD0sHU+/xpU2IV5wM6UE7TEJ5PIBN92oKBetz2V2l85cZY2FSM/uXWIRx3Z
-	 sfW/2VChQu/4bbr78hx39OFxHiYgHnlok/mAdwvk=
-Message-ID: <cddb8c30-c614-4fae-9cbd-f5776f930165@ideasonboard.com>
-Date: Wed, 2 Apr 2025 14:55:42 +0300
+	b=bnK2rLkdGvxef8/fAlHtdngqHA/u5IbtmzLm5mpaQQ6jixe3KARc97SV4DAYUgZgo
+	 aNkwHF3RJ+TB5W83svznCifj+7ZzT4cqucqfYzd4+bW+vj7QJfwCDxFqT4VIsWNsvF
+	 uVMyK+vXVlKiMiG/Pi/Eb1+dDNZHG1w1D95XuRo0=
+Message-ID: <6ea0ee71-7cf6-4e96-aab0-6f4c72613bd1@ideasonboard.com>
+Date: Wed, 2 Apr 2025 15:16:26 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
- O_CMN_READY polling
-To: Devarsh Thakkar <devarsht@ti.com>, vkoul@kernel.org, kishon@kernel.org,
- mripard@kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Cc: sakari.ailus@linux.intel.com, u.kleine-koenig@baylibre.com,
- vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com
-References: <20250326152320.3835249-1-devarsht@ti.com>
- <20250326152320.3835249-2-devarsht@ti.com>
+Subject: Re: [PATCH 03/18] drm/tidss: Add mode_fixup to adjust the clock based
+ on HW
+To: Maxime Ripard <mripard@kernel.org>
+Cc: Jyri Sarha <jyri.sarha@iki.fi>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>,
+ Simona Vetter <simona@ffwll.ch>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
+ Aradhya Bhatia <aradhya.bhatia@linux.dev>, Devarsh Thakkar <devarsht@ti.com>
+References: <20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com>
+ <20250320-cdns-dsi-impro-v1-3-725277c5f43b@ideasonboard.com>
+ <20250321-adaptable-astonishing-adder-ceeb6f@houat>
 Content-Language: en-US
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
@@ -95,10 +104,10 @@ Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
  ueeIlwJl5CpT5l8RpoZXEOVtXYn8zzOJ7oGZYINRV9Pf8qKGLf3Dft7zKBP832I3PQjeok7F
  yjt+9S+KgSFSHP3Pa4E7lsSdWhSlHYNdG/czhoUkSCN09C0rEK93wxACx3vtxPLjXu6RptBw
  3dRq7n+mQChEB1am0BueV1JZaBboIL0AGlSJkm23kw==
-In-Reply-To: <20250326152320.3835249-2-devarsht@ti.com>
+In-Reply-To: <20250321-adaptable-astonishing-adder-ceeb6f@houat>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250402_045547_835290_D08FF220 
-X-CRM114-Status: GOOD (  20.99  )
+X-CRM114-CacheID: sfid-20250402_051633_355567_6E0E1F85 
+X-CRM114-Status: GOOD (  18.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,140 +126,64 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi,
 
-On 26/03/2025 17:23, Devarsh Thakkar wrote:
-> PLL lockup and O_CMN_READY assertion can only happen after common state
-> machine gets enabled, but driver was polling them before the common state
-> machine was enabled. To fix this, add new function callbacks polling on PLL
-> lock and O_CMN_READY assertion and call them only after common state
-> machine gets enabled.
+On 21/03/2025 16:17, Maxime Ripard wrote:
+> On Thu, Mar 20, 2025 at 05:59:58PM +0200, Tomi Valkeinen wrote:
+>> At the moment the driver just sets the clock rate with clk_set_rate(),
+>> and if the resulting rate is not the same as requested, prints a debug
+>> print, but nothing else.
+>>
+>> Add mode_fixup(), in which the clk_round_rate() is used to get the
+>> "rounded" rate, and set that to the adjusted_mode.
+>>
+>> In practice, with the current K3 SoCs, the display PLL is capable of
+>> producing very exact clocks, so most likely the rounded rate is the same
+>> as the original one.
+>>
+>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+>> ---
+>>   drivers/gpu/drm/tidss/tidss_crtc.c  | 22 ++++++++++++++++++++++
+>>   drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
+>>   drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
+>>   3 files changed, 30 insertions(+)
+>>
+>> diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
+>> index 1604eca265ef..b3338dac25bc 100644
+>> --- a/drivers/gpu/drm/tidss/tidss_crtc.c
+>> +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
+>> @@ -309,7 +309,29 @@ enum drm_mode_status tidss_crtc_mode_valid(struct drm_crtc *crtc,
+>>   	return dispc_vp_mode_valid(tidss->dispc, tcrtc->hw_videoport, mode);
+>>   }
+>>   
+>> +static bool tidss_crtc_mode_fixup(struct drm_crtc *crtc,
+>> +				  const struct drm_display_mode *mode,
+>> +				  struct drm_display_mode *adjusted_mode)
+>> +{
+>> +	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
+>> +	struct drm_device *ddev = crtc->dev;
+>> +	struct tidss_device *tidss = to_tidss(ddev);
+>> +	long rate;
+>> +
+>> +	rate = dispc_vp_round_clk_rate(tidss->dispc, tcrtc->hw_videoport,
+>> +				       adjusted_mode->clock * 1000);
+>> +	if (rate < 0)
+>> +		return false;
+>> +
+>> +	adjusted_mode->clock = rate / 1000;
+>> +
+>> +	drm_mode_set_crtcinfo(adjusted_mode, 0);
+>> +
+>> +	return true;
+>> +}
 > 
-> Cc: stable@vger.kernel.org
-> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
-> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
-> ---
-> V2:
-> - Return error code on polling timeout
-> - Moved out calibration logic to separate patch
-> 
->   drivers/phy/cadence/cdns-dphy.c | 57 ++++++++++++++++++++++++++++-----
->   1 file changed, 49 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index ed87a3970f83..c4de9e4d3e93 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -99,6 +99,8 @@ struct cdns_dphy_ops {
->   	void (*set_pll_cfg)(struct cdns_dphy *dphy,
->   			    const struct cdns_dphy_cfg *cfg);
->   	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
-> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
-> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
->   };
->   
->   struct cdns_dphy {
-> @@ -191,6 +193,26 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
->   	return dphy->ops->get_wakeup_time_ns(dphy);
->   }
->   
-> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
-> +{
-> +	int ret = 0;
-> +
-> +	if (dphy->ops->wait_for_pll_lock)
-> +		ret = dphy->ops->wait_for_pll_lock(dphy);
-> +
-> +	return ret;
-> +}
-> +
-> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
-> +{
-> +	int ret = 0;
-> +
-> +	if (dphy->ops->wait_for_cmn_ready)
-> +		ret = dphy->ops->wait_for_cmn_ready(dphy);
-> +
-> +	return ret;
-> +}
-> +
->   static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
->   {
->   	/* Default wakeup time is 800 ns (in a simulated environment). */
-> @@ -232,7 +254,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
->   static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
->   					const struct cdns_dphy_cfg *cfg)
->   {
-> -	u32 status;
->   
->   	/*
->   	 * set the PWM and PLL Byteclk divider settings to recommended values
-> @@ -249,13 +270,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
->   
->   	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
->   	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
-> -
-> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
-> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
-> -
-> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
-> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
-> -			   POLL_TIMEOUT_US);
->   }
->   
->   static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
-> @@ -263,6 +277,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
->   	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
->   }
->   
-> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
-> +{
-> +	u32 status;
-> +
-> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
-> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
-> +}
-> +
-> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
-> +{
-> +	u32 status;
-> +
-> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
-> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
-> +			       POLL_TIMEOUT_US);
-> +}
-> +
->   /*
->    * This is the reference implementation of DPHY hooks. Specific integration of
->    * this IP may have to re-implement some of them depending on how they decided
-> @@ -278,6 +309,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
->   	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
->   	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
->   	.set_psm_div = cdns_dphy_j721e_set_psm_div,
-> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
-> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
->   };
->   
->   static int cdns_dphy_config_from_opts(struct phy *phy,
-> @@ -373,6 +406,14 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->   	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
->   	writel(reg, dphy->regs + DPHY_BAND_CFG);
->   
-> +	ret = cdns_dphy_wait_for_pll_lock(dphy);
-> +	if (ret)
-> +		dev_err(&dphy->phy->dev, "Failed to lock PLL with err %d\n", ret);
-> +
-> +	ret = cdns_dphy_wait_for_cmn_ready(dphy);
-> +	if (ret)
-> +		dev_err(&dphy->phy->dev, "O_CMN_READY signal failed to assert with err %d\n", ret);
-> +
+> mode_fixup is deprecated in favor of atomic_check. If you can't use it
+> for some reason, it should be documented one way or another.
 
-Shouldn't these return an error? Or what's the reason these are ok (and 
-if so, should the prints be dev_dbg?)
+Ok. I didn't see a note about it being deprecated (just optional), so I 
+went with fixup. Atomic check is called for every commit, and this 
+should be only done before enabling a ctrc. I need to dig that 
+"going-to-be-enabled" from the state.
 
   Tomi
-
->   	return 0;
->   }
->   
 
 
 -- 
