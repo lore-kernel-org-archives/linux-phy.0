@@ -4,89 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D70F1C3600C
-	for <linux-phy@archiver.kernel.org>; Thu,  3 Apr 2025 17:39:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1572EC36010
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Apr 2025 08:18:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rPPpJDtvoDRdlYFA4vRf1ztAJCtt//G/My+cP+gMLMA=; b=dvcX4OY3sHRHeB
-	I3QkK0Vza1K+XeWHFzMsLe34Nku5GeJMmIZZXKpSDG2ocCXTus77xoSPHfBmbSqDP0HCJ5WCD/o4J
-	YtgaTjFV4ox+QB2diwIiDPLP0orCoKGUjhDEP5DDdDZ/UXvpw4dMa7/iADwXVJtZYZuhw9epbnmwc
-	MvcM0KL8QJXGAlLHUM68UYpaiZlNJPxFvxEXxAE+eNPNN8NuYAo3dMPQnb0lD9HsizA3UmL943qIR
-	oPPjNVe/rtEW6ECsYXMFrP1GaC1OdcjWBTfRFzOrika/dgI6wIRZxHWZPYk5QmjgCecvb83SoZMoS
-	bbnbanOWWhkJkwVtabtA==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
+	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zIwrUVMOwMkS2wM3F2I10wE9IWxmlT5Qwt0MR+4/1zU=; b=fYJhq41xk8bsmq
+	IDF8ic1fh5rh/8WLKM4rh8cUlkglTRafqEjOn//wILzW44be1tELXWZ5wLIniYyIUnOBfrY1cBBK9
+	kzsxhDtKPHovVooYChAOOYT4gJiih7gfs5Nf9vyOoZ8N16RwHpgplVCCR0GaD8kJiQHFCWdPkoYFJ
+	7j4LUhPFekXP7hlr9LWM1f301kbDNEMp4G20iGVX4FYGelKzjtxrQ+jgQtj2z0QoUZ4DdszSkV9qK
+	+pii4E0n/AB0puMkii5hsW8NKp3OJ9zdCTmao8RejDHlzHoWQJ4ykaWObDiwc4+B1fmwmblV5PNB/
+	CoT27YrEDH8xnxTAdO4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0OXL-00000009TpU-1mEq;
-	Thu, 03 Apr 2025 17:39:31 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1u0cG6-0000000B7RV-2j91;
+	Fri, 04 Apr 2025 08:18:38 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u0OXJ-00000009Tof-0Iaa;
-	Thu, 03 Apr 2025 17:39:30 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-39c1ef4acf2so825644f8f.0;
-        Thu, 03 Apr 2025 10:39:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1743701967; x=1744306767; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=xNO/JA0foT2DpdUYBUk7pcZAoPgEl1mlc8h7/c2UazE=;
-        b=F1fWeSTviQkF7rJDQ4KCJOBlqPnvopkEi7awWGOhAmDDR+fh8Xj+Y6tu/qbHvQLZg7
-         OAB6/8BYMSuTEJwtCzLwDVLorx+U6EgODwGR4r3w/DuwBwZ4Wd8eswLVJ1ZdsBBJ2qXA
-         TYZD8k09WsrkN8Li4Wj1i9ehVlHqHuQicxGJ0d0gMNQvxSzgjN/tiArDFathWPQDyjmS
-         QXj+mwV2hJpGHwF/5wlsfpT64md2JmzXXwpb2whNroadyj80+iq2tkvuiOmgPr+lBET6
-         roJYsYP6go9GRyHwu98BaJA7mMoyjIM5q+YlEsTzFy3lg115B6Pl6PiOtn1MjXfiAH/O
-         1NTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1743701967; x=1744306767;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=xNO/JA0foT2DpdUYBUk7pcZAoPgEl1mlc8h7/c2UazE=;
-        b=nzH9f6AepwTzHMbbFava//Wi2Esa0gX9sfbEs+NeHJwhBY/oIURImY6In5HbdAj6kh
-         q1CFOXI9kRga1WhVbFJaq+AtCyvuXJ73MIQ134xo9/9Ty5gtxbA1JNGkqbqpmSom6y7T
-         4Wwj8A15yEwzGpT38cl5dmt5UVK0C9IWS0u4POxiabQ2L3GL5eEQuf7otBH1lce1/F0J
-         B11UtxJjBM6YtlZCG+0bUmdvLwC4FisScOaSbTiIppT3hbT7Pod7NyiZ5ZSGYktp1N/F
-         BS6wbZPeVyNRe10GxQP/rlzKwaVRC/opvM8fkRW5z+u1CXmANRYGAFEPTtjOMqxVaLOQ
-         qF7Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXkKH4sDDZ3NwuOoUTM29VoRPJRWyQo+CjZ4GPS6YuazsDySj/lTo2bdkY/FX+H3o+yvhs/y/9X/xQwP6JjKqcT@lists.infradead.org, AJvYcCXlYAqKYiyBXAn1eMOlWjK0euq37unbL4cOPpxlmi8XHVM6CBmvBMjJnkN7GcTgMJ+emO2W4IGgeOO9QfQnmyo=@lists.infradead.org, AJvYcCXu9pbp5bYgv5p2neuE6hpVyjMCoCLxSEcyG5nUdlq5Nt00aGi0KhgQmmcDsEIgyJK/Xhf19uUQl3TM@lists.infradead.org
-X-Gm-Message-State: AOJu0YyoY55SdushSZIzPO34pJE3OQXBsFrogHswSQ+D1gkgsXxPkvSl
-	S6Cxr/lW9RrK66rTa7fKp5/Bw9HflPT2EXkLlYFTlfn5SLlUgqcLroHtNQ==
-X-Gm-Gg: ASbGncvotnmKuY42F26PQM+Tg45rLUp8C+6dP5pQPSMhVLLKhRQp6MHhfITzcmeFAWd
-	NTHQWBJKkSG6pxZii1RjSZ7X67iSQHZ0G4iYTNnwDVBYVAZHfcjgrh/C9h/rrWHb/U77tpkdNnD
-	4N71sDjPzAkZylNZWifGV95Kq6QuzOp3jKqL9QbCZ1KlSBUDc8JLgXav7F/7p7SYG/x4AH43G66
-	rQCVGhAkGrqtK5FmwHj3jJbS6MTt85+XFww95pmQKN+n6GUPK5WtsMujdoA4IDhD1TQnenJyfiY
-	kb0r5FFJuvbdTY5Ulw5OtweEhbzfHAnHGpSTZGnunFaf958xqZaXwuroHtRUqyMt3CJ934dMGIY
-	jjmFqpgSyOKEBN/GW5FH1
-X-Google-Smtp-Source: AGHT+IFMIi4hovLxofIkRnajXomszFrujt7/tyePth8kw2e++hEC+Kp0OE+ILwmXrxf3oLN23kvKDw==
-X-Received: by 2002:a05:6000:2907:b0:391:4999:778b with SMTP id ffacd0b85a97d-39cb35bda01mr174975f8f.28.1743701966921;
-        Thu, 03 Apr 2025 10:39:26 -0700 (PDT)
-Received: from jernej-laptop.localnet (86-58-6-171.dynamic.telemach.net. [86.58.6.171])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-39c30096923sm2385018f8f.17.2025.04.03.10.39.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 03 Apr 2025 10:39:26 -0700 (PDT)
-From: Jernej =?UTF-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: vkoul@kernel.org, robert.marko@sartura.hr, shao.mingyin@zte.com.cn
-Cc: kishon@kernel.org, wens@csie.org, samuel@sholland.org,
- zhang.enpei@zte.com.cn, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, luka.perkov@sartura.hr,
- linux-arm-msm@vger.kernel.org, heiko@sntech.de,
- linux-rockchip@lists.infradead.org, yang.yang29@zte.com.cn,
- xu.xin16@zte.com.cn, ye.xingchen@zte.com.cn
-Subject: Re: [PATCH linux-next 1/5] phy: allwinner: phy-sun50i-usb3: Use
- dev_err_probe()
-Date: Thu, 03 Apr 2025 19:39:24 +0200
-Message-ID: <2773791.mvXUDI8C0e@jernej-laptop>
-In-Reply-To: <20250402194203426goMMzm9R9_yQBb7SMNGj1@zte.com.cn>
-References: <20250402194203426goMMzm9R9_yQBb7SMNGj1@zte.com.cn>
+	id 1u0cG6-0000000B7RP-0b18
+	for linux-phy@lists.infradead.org;
+	Fri, 04 Apr 2025 08:18:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 2C9DE6113B;
+	Fri,  4 Apr 2025 08:18:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E39AFC4CEDD;
+	Fri,  4 Apr 2025 08:18:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1743754717;
+	bh=zKyWCqOQmeoLND24mpf/CYQJKMUyhqV3An79AoIIz5w=;
+	h=From:Date:Subject:To:Cc:Reply-To:From;
+	b=WOKJH+ViZJTy1m+7Trmr9VyxHl6IVP53xPYaz7/P7gz8MPYgKPR5OPEOpQdLoY6kQ
+	 LPHE9ox2jPzhGK37YrvefRcZHmkOvr8YBtb96YYhWYZvSPOw5NQXf2ePTKkbthcYlL
+	 3COAz5JHWs5YHVmJB6bMJT+OujIleVnghRzSztWdEpl2pXczRVPjlGG3fdA+m3RGAH
+	 GD4XehcujTSotX21ZdFSJKsqQn3I2r7GCNSkGfRpC7JIaXqHn2danwJ4Ow+uWgNKBh
+	 /5Sxg0bNgjak1Dn5aYK4NPzlkEa4WOxE/JPGJe9t7u5mixL1eM6DldY46U47nXxCoC
+	 oHKzHIfuS97Ew==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CCFECC36010;
+	Fri,  4 Apr 2025 08:18:35 +0000 (UTC)
+From: Aaron Kling via B4 Relay <devnull+webgeek1234.gmail.com@kernel.org>
+Date: Fri, 04 Apr 2025 03:17:29 -0500
+Subject: [PATCH] phy: tegra: xusb: Default otg mode to peripheral
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250403_103929_109717_D6E0A162 
-X-CRM114-Status: GOOD (  13.41  )
+Message-Id: <20250404-xusb-peripheral-v1-1-99c184b9bf5f@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAJiV72cC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDEwMT3YrS4iTdAqCmgozUosQc3WQT0yRDM2PzNGPjJCWgroKi1LTMCrC
+ J0bG1tQD44iNRYQAAAA==
+X-Change-ID: 20250404-xusb-peripheral-c45b1637f33b
+To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Thierry Reding <thierry.reding@gmail.com>, 
+ Jonathan Hunter <jonathanh@nvidia.com>
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Aaron Kling <webgeek1234@gmail.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1743754715; l=1543;
+ i=webgeek1234@gmail.com; s=20250217; h=from:subject:message-id;
+ bh=02vuqpYVHM7yfAaBTJbe6AZ084fOjTN9Ney/idMUyM4=;
+ b=Ifh17Js/Rv1KGxy41smqbJVdAi2qz971idOpYHlEA3F0lbHVFg4YbFSKOKSuHaYqYT+88Gfgv
+ LSng9B9NDvwArVJDIx7gn8g5nSzee5su96037mRcIZOdi8SV3jsbh71
+X-Developer-Key: i=webgeek1234@gmail.com; a=ed25519;
+ pk=TQwd6q26txw7bkK7B8qtI/kcAohZc7bHHGSD7domdrU=
+X-Endpoint-Received: by B4 Relay for webgeek1234@gmail.com/20250217 with
+ auth_id=342
+X-Original-From: Aaron Kling <webgeek1234@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,33 +82,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: webgeek1234@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RG5lIHNyZWRhLCAyLiBhcHJpbCAyMDI1IG9iIDEzOjQyOjAzIFNyZWRuamVldnJvcHNraSBwb2xl
-dG5pIMSNYXMgamUgc2hhby5taW5neWluQHp0ZS5jb20uY24gbmFwaXNhbChhKToKPiBGcm9tOiBa
-aGFuZyBFbnBlaSA8emhhbmcuZW5wZWlAenRlLmNvbS5jbj4KPiAKPiBSZXBsYWNlIHRoZSBvcGVu
-LWNvZGUgd2l0aCBkZXZfZXJyX3Byb2JlKCkgdG8gc2ltcGxpZnkgdGhlIGNvZGUuCj4gCj4gU2ln
-bmVkLW9mZi1ieTogWmhhbmcgRW5wZWkgPHpoYW5nLmVucGVpQHp0ZS5jb20uY24+Cj4gU2lnbmVk
-LW9mZi1ieTogU2hhbyBNaW5neWluIDxzaGFvLm1pbmd5aW5AenRlLmNvbS5jbj4KCkFja2VkLWJ5
-OiBKZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAZ21haWwuY29tPgoKQmVzdCByZWdhcmRz
-LApKZXJuZWoKCj4gLS0tCj4gIGRyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3VuNTBpLXVzYjMu
-YyB8IDggKysrLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgNSBkZWxl
-dGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW41
-MGktdXNiMy5jIGIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW41MGktdXNiMy5jCj4gaW5k
-ZXggMzYzZjlhMGRmNTAzLi5iMDNmYWZmYzE2MGQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkv
-YWxsd2lubmVyL3BoeS1zdW41MGktdXNiMy5jCj4gKysrIGIvZHJpdmVycy9waHkvYWxsd2lubmVy
-L3BoeS1zdW41MGktdXNiMy5jCj4gQEAgLTE0MSwxMSArMTQxLDkgQEAgc3RhdGljIGludCBzdW41
-MGlfdXNiM19waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCQlyZXR1
-cm4gLUVOT01FTTsKPiAKPiAgCXBoeS0+Y2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgTlVMTCk7Cj4g
-LQlpZiAoSVNfRVJSKHBoeS0+Y2xrKSkgewo+IC0JCWlmIChQVFJfRVJSKHBoeS0+Y2xrKSAhPSAt
-RVBST0JFX0RFRkVSKQo+IC0JCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBnZXQgcGh5IGNsb2Nr
-XG4iKTsKPiAtCQlyZXR1cm4gUFRSX0VSUihwaHktPmNsayk7Cj4gLQl9Cj4gKwlpZiAoSVNfRVJS
-KHBoeS0+Y2xrKSkKPiArCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIFBUUl9FUlIocGh5LT5j
-bGspLAo+ICsJCQkJICAgICAiZmFpbGVkIHRvIGdldCBwaHkgY2xvY2tcbiIpOwo+IAo+ICAJcGh5
-LT5yZXNldCA9IGRldm1fcmVzZXRfY29udHJvbF9nZXQoZGV2LCBOVUxMKTsKPiAgCWlmIChJU19F
-UlIocGh5LT5yZXNldCkpIHsKPiAKCgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Aaron Kling <webgeek1234@gmail.com>
+
+Currently, if usb-role-switch is set and role-switch-default-mode is
+not, a xusb port will be inoperable until that port is hotplugged,
+because the driver defaults to role none. Instead of requiring all
+devices to set the default mode, assume that the port is primarily
+intended for use in device mode. This assumption already has precedence
+in the synopsys dwc3 driver.
+
+Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
+---
+ drivers/phy/tegra/xusb.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 79d4814d758d5e1f0e8200d61e131606adbb0e2d..c56e83216d0f566a09b67377172fb04c8406f4cf 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -731,13 +731,11 @@ static void tegra_xusb_parse_usb_role_default_mode(struct tegra_xusb_port *port)
+ 
+ 	if (mode == USB_DR_MODE_HOST)
+ 		role = USB_ROLE_HOST;
+-	else if (mode == USB_DR_MODE_PERIPHERAL)
++	else
+ 		role = USB_ROLE_DEVICE;
+ 
+-	if (role != USB_ROLE_NONE) {
+-		usb_role_switch_set_role(port->usb_role_sw, role);
+-		dev_dbg(&port->dev, "usb role default mode is %s", modes[mode]);
+-	}
++	usb_role_switch_set_role(port->usb_role_sw, role);
++	dev_dbg(&port->dev, "usb role default mode is %s", modes[mode]);
+ }
+ 
+ static int tegra_xusb_usb2_port_parse_dt(struct tegra_xusb_usb2_port *usb2)
+
+---
+base-commit: 91e5bfe317d8f8471fbaa3e70cf66cae1314a516
+change-id: 20250404-xusb-peripheral-c45b1637f33b
+
+Best regards,
+-- 
+Aaron Kling <webgeek1234@gmail.com>
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
