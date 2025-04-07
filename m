@@ -4,112 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3A50C3601E
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 12:43:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1B77C36010
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 13:02:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sbMXEkp4/jPBGJ00oXuoxA0T4eY/IxKENnrjCSz+R9o=; b=brZqRXqVSTvObz
-	pAQTowUGHHbE1O50tH82KPoYSw83CwsnK6GsZ7oK5bPU3sqXA819FPoJeOvM47em+KEgdMNHGISLR
-	c+8w1FPRfGOR2M960VE9z6rc5sfi60yQ2ddhlzmykWeJBCmiUIOmYAqKyk6bBRB0J2dVBnd+pJ4Oz
-	MjmyhRiXhhs5n/ATJGd4eIn9c6/pUgNoYgDQJR3QDCBprk4x4lFQD51HbcCWnD3CUXoy942Uykd+E
-	IVtTMu9siXs2hFoTi9XaAZnXZ1atY3vzj3ATeP1yV+fICqTCq3iQze8nvNbo6h2dOlXYNfz6NhYnB
-	exRLq3BYSpYa06Y5jILA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aLmcQkSy/tjFLFfpDwIgymJcAFzlI73H9/Ghv3xItGE=; b=uFcspnT7sBjPn7
+	3YDD/xF/IaUqwuJOclt1l4/+6q5ssJUtOer/xAi3zhIgi+1gELqeoRdJ2iD+KMyx7XjMwEtdL47Gd
+	CUhpf6YWRe/kRaRiiRc91r0kxr3N5XiUYVc+LsAHIt5wufifIWY3f+qKHZq8xRXT7fqkTgFPBgZDi
+	jD8a0iF/W5qouDBJZNI36iILBA1xNjmwuhIlHmmf1srILBFuRMQb3T8JpewgWQh0VR0A6IKKs1sdt
+	1kaqVJRyxPIRgsgR39CZjtHts6B0a4ZnoICjv8QP3TjAK4dhHXJszFCys+3GbThZTZiS4nj9qrVIp
+	ei5474SoHxrfWFjqYy+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1lod-00000000KGN-1h4L;
-	Mon, 07 Apr 2025 12:43:03 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u1m7t-00000000Ojd-3t3E;
+	Mon, 07 Apr 2025 13:02:57 +0000
+Received: from mail-m155101.qiye.163.com ([101.71.155.101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1lNz-00000000Cgu-3TXR
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Apr 2025 12:15:33 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5378doqU017417;
-	Mon, 7 Apr 2025 12:15:12 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	lpKXWdbZ6uDIt0ao6qPO3cTRr0H9W284LRqjSX/AeZ8=; b=OaJDKY/RLDzcQL0p
-	8FfQUF4idUJD+fa1rIkq22jFHszLuGd1MxtfZFbfHAnnG3MNd9Ix1UecjjP+xNgA
-	HrEk82CIIEg341gEBc+F/Lx/FX2GlYnzer1CxcyLeD/Qu2lLy23PutjNMEm+UOT2
-	8U497EJkHVREywRPNMrRALVllTMhrnMA9jXSU7uQAXsYLWe/UnIbY/Q+jU/4V9t0
-	LTPfKpbpKXf1jXeNZT6gXyYSCDcyuP4YXGD2ZN2f305rIW+JbadRXidjA6larizf
-	OPN+BnSSABdyHeKDO3P0qQuJ0iOm80HvqzOJjlGEP610F6m1NJpn0EidU9OhQq05
-	BkMgoA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twg3c4gf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 07 Apr 2025 12:15:11 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 537CFASi026799
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 7 Apr 2025 12:15:10 GMT
-Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 7 Apr 2025
- 05:15:04 -0700
-Message-ID: <d92c40bd-80e4-4001-beec-d25684217718@quicinc.com>
-Date: Mon, 7 Apr 2025 17:45:00 +0530
+	id 1u1llR-00000000JI6-0LIJ;
+	Mon, 07 Apr 2025 12:39:47 +0000
+Received: from [127.0.0.1] (gy-adaptive-ssl-proxy-2-entmail-virt205.gy.ntes [27.18.106.237])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 10ef566e5;
+	Mon, 7 Apr 2025 20:39:25 +0800 (GMT+08:00)
+From: Ze Huang <huangze@whut.edu.cn>
+Subject: [PATCH 0/7] Add USB3.0 PHY and host controller support for
+ SpacemiT K1 SoC
+Date: Mon, 07 Apr 2025 20:38:45 +0800
+Message-Id: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/6] phy: qcom-qmp-ufs: Add PHY Configuration support
- for sm8750
-To: <neil.armstrong@linaro.org>, Melody Olvera <quic_molvera@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Manivannan Sadhasivam
-	<manivannan.sadhasivam@linaro.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@wdc.com>,
-        Bart Van Assche <bvanassche@acm.org>,
-        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Satya Durga Srinivasu Prabhala
-	<quic_satyap@quicinc.com>,
-        Trilok Soni <quic_tsoni@quicinc.com>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>, Manish Pandey <quic_mapa@quicinc.com>,
-        "Linux
- regressions mailing list" <regressions@lists.linux.dev>
-References: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
- <20250310-sm8750_ufs_master-v2-2-0dfdd6823161@quicinc.com>
- <1526d8a4-9606-4fb3-bb86-79bd8eb8a789@linaro.org>
- <430ed11c-0490-45be-897b-27cad9682371@quicinc.com>
- <731f1ad1-8979-49a1-b168-56e24b94f4fb@linaro.org>
- <7b08c860-e5f1-4665-8e5e-2a6a3e26a2fa@quicinc.com>
- <58471b67-98ab-4452-8508-d6276d47695e@linaro.org>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <58471b67-98ab-4452-8508-d6276d47695e@linaro.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: pD71VMtoaa71k-ZBT0D462_dEvIZrDD7
-X-Proofpoint-ORIG-GUID: pD71VMtoaa71k-ZBT0D462_dEvIZrDD7
-X-Authority-Analysis: v=2.4 cv=I/9lRMgg c=1 sm=1 tr=0 ts=67f3c1cf cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=qC_FGOx9AAAA:8 a=KKAkSRfTAAAA:8 a=COk6AnOGAAAA:8
- a=dZRP316qtkZ-GG2u8pwA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=fsdK_YakeE02zTmptMdW:22 a=cvBusfyB2V15izCimMoJ:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-07_03,2025-04-03_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
- phishscore=0 suspectscore=0 mlxlogscore=999 lowpriorityscore=0 spamscore=0
- clxscore=1015 malwarescore=0 adultscore=0 priorityscore=1501
- impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504070086
+X-B4-Tracking: v=1; b=H4sIAFbH82cC/3WOQW6DMBBFr4K87iB77MGAqoiseoaqysLAlFgJ0
+ NgENYpy97pkneUb6f03dxE5eI6izu4i8Oqjn6cE6i0T3dFNA4PvEwuUSNJIC62Bk4JrbDWsGhB
+ UUaJzpkKiSiTrJ/C3/90Wvw5PDny5puHleRStiwzdPI5+qbO1yBVB6NS/O3KMbkvW2ftW1LJQl
+ izJHNGUMvWOfDvz5G6N6TGfw7B7IWKJSqLWuZLWSk2ggM89hyb42MXFhTy98EJGLJSiiix8fO4
+ NkSybgadlnnfi8Hj8AT3ztXI0AQAA
+X-Change-ID: 20250407-b4-k1-usb3-v3-2-1682aa492559
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>, 
+ Ze Huang <huangze@whut.edu.cn>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Paul Walmsley <paul.walmsley@sifive.com>, 
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+ Alexandre Ghiti <alex@ghiti.fr>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1744029565; l=3284;
+ i=huangze@whut.edu.cn; s=20250325; h=from:subject:message-id;
+ bh=guydDGrxtfiF0QxuG+IbBP1EBPIlelU7O0fNN/qWZUY=;
+ b=Ghi1yoX13LsL5SLUgC8pQHW4O7dQb14bN9AeNv91Q+HWvOJWXFbLeEsB2kpBYQQlEISEzAiFr
+ zTTHHmy28hhD9VK+mM5N7b4F11BN+cuWUUXYa2rT4UkbdGbiiSbzdB+
+X-Developer-Key: i=huangze@whut.edu.cn; a=ed25519;
+ pk=C3zfn/kH6oMJickaXBa8dxTZO68EBiD93F+tAenboRA=
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZHR4dVh0fGBpNQkNOQkhMGVYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0lPT09LVUpLS1VLWQ
+	Y+
+X-HM-Tid: 0a961043447103a1kunm10ef566e5
+X-HM-MType: 10
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OCo6Aww5HzIMIUwtOBU3GjQt
+	KBwwChJVSlVKTE9PS0lCTkxJQk9CVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VKS01VSUhMWVdZCAFZQU5KQ0M3Bg++
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_051531_989926_F8865751 
-X-CRM114-Status: GOOD (  17.19  )
+X-CRM114-CacheID: sfid-20250407_053945_317586_A36C6CA0 
+X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,96 +87,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiA0LzcvMjAyNSAxMjo1MiBQTSwgbmVpbC5hcm1zdHJvbmdAbGluYXJvLm9yZyB3cm90ZToK
-PiBIaSwKPiAKPiBPbiAyNS8wMy8yMDI1IDA4OjM3LCBOaXRpbiBSYXdhdCB3cm90ZToKPj4KPj4K
-Pj4gT24gMy8yNS8yMDI1IDE6MDQgUE0sIG5laWwuYXJtc3Ryb25nQGxpbmFyby5vcmcgd3JvdGU6
-Cj4+PiBIaSwKPj4+Cj4+PiBPbiAyNS8wMy8yMDI1IDA0OjEyLCBOaXRpbiBSYXdhdCB3cm90ZToK
-Pj4+Pgo+Pj4+Cj4+Pj4gT24gMy8yNC8yMDI1IDExOjQwIFBNLCBOZWlsIEFybXN0cm9uZyB3cm90
-ZToKPj4+Pj4gSGksCj4+Pj4+Cj4+Pj4+IE9uIDEwLzAzLzIwMjUgMjI6MTIsIE1lbG9keSBPbHZl
-cmEgd3JvdGU6Cj4+Pj4+PiBGcm9tOiBOaXRpbiBSYXdhdCA8cXVpY19uaXRpcmF3YUBxdWljaW5j
-LmNvbT4KPj4+Pj4+Cj4+Pj4+PiBBZGQgU004NzUwIHNwZWNpZmljIHJlZ2lzdGVyIGxheW91dCBh
-bmQgdGFibGUgY29uZmlncy4gVGhlIHNlcmRlcwo+Pj4+Pj4gVFggUlggcmVnaXN0ZXIgb2Zmc2V0
-IGhhcyBjaGFuZ2VkIGZvciBTTTg3NTAgYW5kIGhlbmNlIGtlZXAgVUZTCj4+Pj4+PiBzcGVjaWZp
-YyBzZXJkZXMgb2Zmc2V0cyBpbiBhIGRlZGljYXRlZCBoZWFkZXIgZmlsZS4KPj4+Pj4+Cj4+Pj4+
-PiBSZXZpZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcgPG5laWwuYXJtc3Ryb25nQGxpbmFyby5vcmc+
-Cj4+Pj4+PiBDby1kZXZlbG9wZWQtYnk6IE1hbmlzaCBQYW5kZXkgPHF1aWNfbWFwYUBxdWljaW5j
-LmNvbT4KPj4+Pj4+IFNpZ25lZC1vZmYtYnk6IE1hbmlzaCBQYW5kZXkgPHF1aWNfbWFwYUBxdWlj
-aW5jLmNvbT4KPj4+Pj4+IFNpZ25lZC1vZmYtYnk6IE5pdGluIFJhd2F0IDxxdWljX25pdGlyYXdh
-QHF1aWNpbmMuY29tPgo+Pj4+Pj4gLS0tCj4+Pj4+PiDCoCBkcml2ZXJzL3BoeS9xdWFsY29tbS9w
-aHktcWNvbS1xbXAtcXNlcmRlcy1jb20tdjYuaCB8wqDCoCA3ICsKPj4+Pj4+IMKgIC4uLi9xdWFs
-Y29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy10eHJ4LXVmcy12Ny5owqDCoMKgIHzCoCA2NyArKysr
-KysrKwo+Pj4+Pj4gwqAgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCB8IDE4MCArKysrKysrIAo+Pj4+Pj4gKysgKysgKysrKysrKysr
-LQo+Pj4+Pj4gwqAgMyBmaWxlcyBjaGFuZ2VkLCAyNDYgaW5zZXJ0aW9ucygrKSwgOCBkZWxldGlv
-bnMoLSkKPj4+Pj4+Cj4+Pj4+Cj4+Pj4+IDxzbmlwPgo+Pj4+Pgo+Pj4+PiBUaGlzIGNoYW5nZSBi
-cmVha3MgVUZTIG9uIHRoZSBTTTg1NTAtSERLOgo+Pj4+Pgo+Pj4+PiBbwqDCoMKgIDcuNDE4MTYx
-XSBxY29tLXFtcC11ZnMtcGh5IDFkODAwMDAucGh5OiBwaHkgaW5pdGlhbGl6YXRpb24gCj4+Pj4+
-IHRpbWVkLW91dAo+Pj4+PiBbwqDCoMKgIDcuNDI3MDIxXSBwaHkgcGh5LTFkODAwMDAucGh5LjA6
-IHBoeSBwb3dlcm9uIGZhaWxlZCAtLT4gLTExMAo+Pj4+PiBbwqDCoMKgIDcuNDkzNTE0XSB1ZnNo
-Y2QtcWNvbSAxZDg0MDAwLnVmc2hjOiBFbmFibGluZyB0aGUgY29udHJvbGxlciAKPj4+Pj4gZmFp
-bGVkCj4+Pj4+IC4uLgo+Pj4+Cj4+Pj4gSGkgTmVpbCwKPj4+Pgo+Pj4+IFRoYW5rcyBmb3IgdGVz
-dGluZyBhbmQgcmVwb3J0aW5nLgo+Pj4+IEkgZGlkIHRlc3RlZCB0aGlzIHBhdGNoIG9uIFNNODc1
-MCBNVFAsIFNNODc1MCBRUkQsIFNNODY1MCBNVFAsIAo+Pj4+IFNNODU1MCBNVFAgYW5kIFNNODg1
-MCBRUkQgYWxsIG9mIHRoZXNlIGhhdmUgcmF0ZSBCIGFuZCBoZW5jZSBubyBpc3N1ZS4KPj4+Pgo+
-Pj4+IFVuZm9ydHVuYXRlbHkgb25seSBTTTg1NTAgSERLIHBsYXRmb3JtIHdoaWNoIFVGUzQuMCBh
-bmQgUmF0ZUEgCj4+Pj4gY291bGRuJ3QgZ2V0IHRlc3RlZC4gQXMgd2Uga25vdyBTTTg1NTAgd2l0
-aCBnZWFyIDUgb25seSBzdXBwb3J0IHJhdGUgQS4KPj4+Pgo+Pj4+IEkgd2FzIGFwcGx5aW5nIHJh
-dGUgQiBzZXR0aW5nIHdpdGhvdXQgY2hlY2tpbmcgZm9yIG1vZGUgdHlwZS4gU2luY2UKPj4+PiBT
-TTg1NTAgaXMgb25seSBwbGF0Zm9ybSB3aGljaCBzdXBwb3J0IG9ubHkgcmF0ZSBBIHdpdGggVUZT
-NC4wIC4gSGVuY2UKPj4+PiB0aGlzIGNvdWxkIGJlIHRoZSBpc3N1ZS4KPj4+Pgo+Pj4+IE1lYW53
-aGlsZSBjYW4geW91IGhlbHAgdGVzdCBhdCB5b3VyIGVuZCB3aXRoIGJlbG93IGNoYW5nZSBhbmQg
-bGV0IG1lIAo+Pj4+IGlmIGl0IHJlc29sdmVzIGZvciB5b3UuIEkgd2lsbCBhbHNvIHRyeSBhdCBt
-eSBlbmQgdG8gdGVzdCBhcyB3ZWxsLgo+Pj4+Cj4+Pj4gPT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KPj4+
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIGIv
-ZHJpdmVycy9waHkvIAo+Pj4+IHF1YWxjb21tL3BoeS1xY29tLXFtcC11ZnMuYwo+Pj4+IGluZGV4
-IDQ1YjNiNzkyNjk2ZS4uYjMzZTJlMmI1MDE0IDEwMDY0NAo+Pj4+IC0tLSBhL2RyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLXFtcC11ZnMuYwo+Pj4+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxj
-b21tL3BoeS1xY29tLXFtcC11ZnMuYwo+Pj4+IEBAIC0xNzU0LDcgKzE3NTQsOCBAQCBzdGF0aWMg
-dm9pZCBxbXBfdWZzX2luaXRfcmVnaXN0ZXJzKHN0cnVjdCAKPj4+PiBxbXBfdWZzICpxbXAsIGNv
-bnN0IHN0cnVjdCBxbXBfcGh5X2NmZwo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHFtcF91ZnNfaW5pdF9hbGwocW1wLCAmY2ZnLT50YmxzX2hzX292ZXJsYXlbaV0pOwo+Pj4+
-IMKgwqDCoMKgwqDCoMKgwqAgfQo+Pj4+Cj4+Pj4gLcKgwqDCoMKgwqDCoCBxbXBfdWZzX2luaXRf
-YWxsKHFtcCwgJmNmZy0+dGJsc19oc19iKTsKPj4+PiArwqDCoMKgwqDCoMKgIGlmIChxbXAtPm1v
-ZGUgPT0gUEhZX01PREVfVUZTX0hTX0IpCj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgcW1wX3Vmc19pbml0X2FsbChxbXAsICZjZmctPnRibHNfaHNfYik7Cj4+Pj4gwqDCoH0KPj4+
-Pgo+Pj4+ID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQo+Pj4KPj4+IFdpdGggdGhpcyBjaGFuZ2Ug
-dGhlIFVGUyB3b3JrcyBhZ2Fpbi4KPj4KPj4gVGhhbmtzIE5laWwgZm9yIHF1aWNrIHJldmVydC4g
-SSdsbCByYWlzZSB0aGUgb2ZmaWNpYWwgY2hhbmdlLgo+IAo+IEFueSBuZXdzIG9mIGEgZml4IGhl
-cmUgPwoKSGkgTmVpbCwKU29ycnkgZm9yIGRlbGF5LiBJIGp1c3QgcG9zdGVkIHRoZSBwYXRjaC4K
-ClRoYW5rcywKTml0aW4KCj4gCj4gVGhhbmtzLAo+IE5laWwKPiAKPj4KPj4gUmVnYXJkcywKPj4g
-bml0aW4KPj4KPj4+Cj4+PiBUaGFua3MsCj4+PiBOZWlsCj4+Pgo+Pj4+Cj4+Pj4KPj4+PiBUaGFu
-a3MsCj4+Pj4gTml0aW4KPj4+Pgo+Pj4+Pgo+Pj4+PiBHSVQgYmlzZWN0IHBvaW50cyB0bzoKPj4+
-Pj4gYjAyY2M5YTE3Njc5M2IyMDdlOTU5NzAxYWYxZWMyNjIyMjA5M2IwNSBpcyB0aGUgZmlyc3Qg
-YmFkIGNvbW1pdAo+Pj4+PiBBdXRob3I6IE5pdGluIFJhd2F0IDxxdWljX25pdGlyYXdhQHF1aWNp
-bmMuY29tPgo+Pj4+PiBEYXRlOsKgwqAgTW9uIE1hciAxMCAxNDoxMjozMCAyMDI1IC0wNzAwCj4+
-Pj4+Cj4+Pj4+IMKgwqDCoMKgIHBoeTogcWNvbS1xbXAtdWZzOiBBZGQgUEhZIENvbmZpZ3VyYXRp
-b24gc3VwcG9ydCBmb3Igc204NzUwCj4+Pj4+Cj4+Pj4+IGJpc2VjdCBsb2c6Cj4+Pj4+IGdpdCBi
-aXNlY3Qgc3RhcnQgJ2ZmN2Y5YjE5OWUzZicgJ3Y2LjE0LXJjMScKPj4+Pj4gZ2l0IGJpc2VjdCBn
-b29kIDM2YzE4YzU2Mjg0NjMwMGQ0ZTU5ZjFhNjUwMDg4MDBiNzg3ZjRmZTQKPj4+Pj4gZ2l0IGJp
-c2VjdCBnb29kIDg1Y2YwMjkzYzNhNzU3MjZlN2JjNTRkM2VmZGM1ZGM3ODNkZWJjMDcKPj4+Pj4g
-Z2l0IGJpc2VjdCBnb29kIGIyY2Q3M2UxOGNlYzc1ZjkxN2QxNGI5MTg4ZjgyYTJmZGVmNjRlYmUK
-Pj4+Pj4gZ2l0IGJpc2VjdCBiYWQgYjI0NzYzOWQzM2FkMTZlYTc2Nzk3MjY4ZmQwZWVmMDhkODAy
-N2RmZAo+Pj4+PiBnaXQgYmlzZWN0IGdvb2QgOWIzZjJkZmRhZDFjYzBhYjkwYTBmYTM3MWM4Y2Jl
-ZTA4YjI0NDZlMwo+Pj4+PiBnaXQgYmlzZWN0IGJhZCA4ZGMzMGMzZTRjZjhjNGUzNzBjZjA4YmQw
-OWViODdiMGRlY2NkM2RlCj4+Pj4+IGdpdCBiaXNlY3QgYmFkIDEwMGFlYjAzYTQzN2YzMDMwMDg5
-NDA5MTYyN2U0NDA2NjA1ZWUzY2IKPj4+Pj4gZ2l0IGJpc2VjdCBiYWQgYjJhMWEyYWU3ODE4Yzlk
-OGRhMTJiZjdiMTk4M2M4YjlmNWZiNzEyYgo+Pj4+PiBnaXQgYmlzZWN0IGdvb2QgOGY4MzFmMjcy
-YjRjODlhYTEzYjQ1YmQwMTBjMmMxOGFkOTdhM2YxYgo+Pj4+PiBnaXQgYmlzZWN0IGdvb2QgZTQ1
-Y2M2MmMyMzQyOGVlZmJhZTE4YTliNGQ4OGQxMDc0OTc0MWJkZAo+Pj4+PiBnaXQgYmlzZWN0IGJh
-ZCBlYmYxOThmMTdiNWFjOTY3ZGI2MjU2ZjQwODNiYmNiZGNjMmEzMTAwCj4+Pj4+IGdpdCBiaXNl
-Y3QgZ29vZCAxMjE4NWJjMzhmNzY2N2IxZDg5NWIyMTY1YThhNDczMzVhNGNmMzFiCj4+Pj4+IGdp
-dCBiaXNlY3QgYmFkIGU0NmU1OWI3N2E5ZTZmMzIyZWYxYWQwOGE4ODc0MjExZjM4OWNmNDcKPj4+
-Pj4gZ2l0IGJpc2VjdCBiYWQgYjAyY2M5YTE3Njc5M2IyMDdlOTU5NzAxYWYxZWMyNjIyMjA5M2Iw
-NQo+Pj4+Pgo+Pj4+PiBDSSBydW46IGh0dHBzOi8vZ2l0LmNvZGVsaW5hcm8ub3JnL2xpbmFyby9x
-Y29tbHQvY2kvc3RhZ2luZy9jZGJhLSAKPj4+Pj4gdGVzdGVyLy0vam9icy8yMjk4ODAjTDEyODEK
-Pj4+Pj4KPj4+Pj4gI3JlZ3pib3QgaW50cm9kdWNlZDogYjAyY2M5YTE3Njc5Cj4+Pj4+Cj4+Pj4+
-IE5laWwKPj4+Pgo+Pj4KPj4KPiAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+This patch series introduces support for the USB on the SpacemiT K1 SoC,
+including DWC3 host controller, PCIe/USB3.0 combo PHY and the USB2.0 PHY.
+The implementation has been tested on the Milk-V Jupiter and BananaPi-f3.
+
+USB3.0 PHY for usb2 is shared with PCIe port A, meaning that only one of
+these interfaces (PCIe or USB3.0) can be active at a given time.
+
+Overview of USB controllers on K1 SoC[1]:
+
+Link: https://developer.spacemit.com/documentation?token=AjHDwrW78igAAEkiHracBI9HnTb#part5 [1]
+---
+Ze Huang (7):
+      dt-bindings: phy: spacemit: add K1 USB2 PHY
+      dt-bindings: phy: spacemit: add K1 PCIe/USB3 combo PHY
+      dt-bindings: usb: add SpacemiT K1 DWC3 glue
+      phy: spacemit: support K1 USB2.0 PHY controller
+      phy: spacemit: add USB3 support for K1 PCIe/USB3 combo PHY
+      usb: dwc3: add spacemit dwc3 glue layer driver
+      riscv: dts: spacemit: add usb3.0 support for K1
+
+ .../bindings/phy/spacemit,k1-combphy.yaml          |  53 +++++
+ .../devicetree/bindings/phy/spacemit,usb2-phy.yaml |  40 ++++
+ .../devicetree/bindings/usb/spacemit,k1-dwc3.yaml  |  78 +++++++
+ arch/riscv/boot/dts/spacemit/k1-bananapi-f3.dts    |  55 +++++
+ arch/riscv/boot/dts/spacemit/k1.dtsi               |  52 +++++
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/spacemit/Kconfig                       |  20 ++
+ drivers/phy/spacemit/Makefile                      |   3 +
+ drivers/phy/spacemit/phy-k1-combphy.c              | 229 +++++++++++++++++++++
+ drivers/phy/spacemit/phy-k1-usb2.c                 | 132 ++++++++++++
+ drivers/usb/dwc3/Kconfig                           |   7 +
+ drivers/usb/dwc3/Makefile                          |   1 +
+ drivers/usb/dwc3/dwc3-spacemit.c                   | 127 ++++++++++++
+ 14 files changed, 799 insertions(+)
+---
+base-commit: 64e9fdfc89a76fed38d8ddeed72d42ec71957ed9
+change-id: 20250407-b4-k1-usb3-v3-2-1682aa492559
+prerequisite-message-id: <20250306175750.22480-2-heylenay@4d2.org>
+prerequisite-patch-id: e0f9037d659502b7f10588f15b80505724eb9e35
+prerequisite-patch-id: 4414e37b16b1bc0039239f07da8c35935efb1601
+prerequisite-patch-id: 1e65bc4c0c0d41baef743819c311ad53f6696094
+prerequisite-patch-id: 43ef72522e30620f0244e0e22bd844884d89b0cd
+prerequisite-patch-id: 73008ee7c04e90cd4e825a3f5bd2e44ec24d8ad3
+prerequisite-message-id: <20250328210233.1077035-1-elder@riscstar.com>
+prerequisite-patch-id: 9b026005eb6ee1430ab7ca67edfc21de85a19dd2
+prerequisite-patch-id: 8ee238181e50c76d92458b149b72fa4909e0fede
+prerequisite-patch-id: 66f3ee8eb1cc016112dace699bce292b617a3186
+prerequisite-patch-id: c2deec49fc0308a08908fd9badadc10f921af348
+prerequisite-patch-id: 99afc2efdffc0fffe47a31e7b07b72af9d1d2e18
+prerequisite-patch-id: d06e8cd0fae4c405dbb56832a1fe48bfaa4e0fab
+prerequisite-patch-id: 5f53f8bf16fb067628092daebc4831293261aa01
+prerequisite-message-id: <20250226115957-GYA45508@gentoo>
+prerequisite-patch-id: 82dd2631d36c3fafb82768d3d89022ed956020c6
+prerequisite-patch-id: 5cc63738ba2d463e1840a91a94357f43199bd68f
+prerequisite-patch-id: f44247679d46a51c242703eca370ce0e3db2e61f
+prerequisite-patch-id: 9d4cd8be42a37798815d0aaae21d3c022f815414
+
+Best regards,
+-- 
+Ze Huang <huangze@whut.edu.cn>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
