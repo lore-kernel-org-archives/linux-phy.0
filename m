@@ -4,60 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26777C3601E
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 16:27:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34D61C369A3
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rir6RNgmDvL/kGwICEiiC88SmFkXTiI7GzpOLI9x7uw=; b=npAjNvfZRZeDf/NFuruTHPQ4Ci
-	E4VsG7UD+6vZ6aNDfhIkI/tdXdxU+oaqX05XQq6e7vaDsCTxGzqZtvHE21fHkJfiFWZHIlkTg7sjT
-	ELnJU0SUmXGlmnI1/P35WdEjJXMbcpsZ1zrzvuR2gNLYxRpm/qm//3RxoilYzsJSwiMgDd1p34q93
-	q8hXzQCn+Mk3erg+udho5/TCV50rmXMgKHHsOgE6wcOx1MzT3S1pJea7156RjNVbBjK3Td5N/mtc5
-	XS+6shiMR1zkrv1VYbhapXQwtutCEStEKtbS5bFVujXLDM9ZIO54ZGzFIpBFlx44ZnJWcg5dZ4DuP
-	E/RXocbg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UcMjcHSqJ6EDveMZIGs/mRtrlv/QEj1zyRv/g6uUuO0=; b=4/PGs12VlilZSh
+	U1UmBia5G3G7whVcWuWqYd5LHCVXHBVm7jV2MceLzuPglOuszT16jFscypoBi1D7ymqC8g66MAjWW
+	I8/5n+pC7cQqUjuTQRorW3Y0+Xpj4sKqSvSeEZLBt2g6X6zhXtzK1K5AiAqS6R3Rtyk2gK+ABTthM
+	/75TEzcq2jNL0roYUoWdI9+47XAxTjhC7PEaoORfA0HE7e8SzSS1oaIVkqYcYpgt13cDSkaKJzOzN
+	5HN+tnN4xiMXQR8z8sFQTbMGxgnPiRnDVJmLr9xg2MhHbJCZY8+PChNnq7LOvWTHLJHLiU1Jwq4ZA
+	RnLybyx8akiBlXrOaxKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1pJz-00000001Aei-3ONm;
-	Mon, 07 Apr 2025 16:27:39 +0000
+	id 1u1r1U-00000001VG8-3phM;
+	Mon, 07 Apr 2025 18:16:40 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1ltN-00000000LgO-0IzR
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Apr 2025 12:47:57 +0000
+	id 1u1oj6-0000000110Z-2vCt;
+	Mon, 07 Apr 2025 15:49:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id E2A116113B;
-	Mon,  7 Apr 2025 12:47:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0AA3C4CEDD;
-	Mon,  7 Apr 2025 12:47:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744030076;
-	bh=+IgO/E1P2X9+2yuR3YvVnFoL9ihGcuvDSLanfznzRRA=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=kpT8c2cv1xcz5ZHuC/5PEcmSVqNA3JxyZM+ffBQBgaRZFR7rMxiV4lYnjdFRlihyw
-	 i1VsA5BelYISKVWIYxkh16w1iduFyQkzYRF/wCNqhglkUVXRvWk6KpvzjBG+hnxEdg
-	 ul97TWkE4jge8PmxIEGSMUPv+T7vRz7QBG1ZpvDc6dYQ6pB22L9KGwN3bWpG64Mx39
-	 krGyHe6R3ZFoUIk2Itd7rzBGNRxZhKnEXiaOhkui+mQuYnFzruoV7lbE3GnFMz2eI8
-	 4FTw35xUBvkdNBb1ruSsBs6oaXVPaXCakyBc0EWXNi4dbdmBaIwGcOEI/6iAGalDa3
-	 0YcZ3G+JdTVug==
-Date: Mon, 07 Apr 2025 07:47:54 -0500
+	by tor.source.kernel.org (Postfix) with ESMTP id 797D36115E;
+	Mon,  7 Apr 2025 15:49:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 824D1C4CEDD;
+	Mon,  7 Apr 2025 15:49:31 +0000 (UTC)
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id C8D385F9F2;
+	Mon,  7 Apr 2025 23:49:28 +0800 (CST)
+From: Chen-Yu Tsai <wens@csie.org>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Samuel Holland <samuel@sholland.org>, 
+ Andre Przywara <andre.przywara@arm.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc@vger.kernel.org, 
+ Wim Van Sebroeck <wim@linux-watchdog.org>, 
+ Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org, 
+ Thomas Gleixner <tglx@linutronix.de>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org
+In-Reply-To: <20250307005712.16828-1-andre.przywara@arm.com>
+References: <20250307005712.16828-1-andre.przywara@arm.com>
+Subject: Re: (subset) [PATCH v3 00/15] arm64: dts: allwinner: Add basic
+ Allwinner A523 support
+Message-Id: <174404096879.829294.8545896192881134098.b4-ty@csie.org>
+Date: Mon, 07 Apr 2025 23:49:28 +0800
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
- Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
- Bjorn Andersson <andersson@kernel.org>, linux-kernel@vger.kernel.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-To: Pengyu Luo <mitltlatltl@gmail.com>
-In-Reply-To: <20250405174319.405975-1-mitltlatltl@gmail.com>
-References: <20250405174319.405975-1-mitltlatltl@gmail.com>
-Message-Id: <174402971815.1782886.2804255933275419532.robh@kernel.org>
-Subject: Re: [PATCH] phy: qualcomm: phy-qcom-eusb2-repeater: rework reg
- override handler
+X-Mailer: b4 0.14.2
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,58 +71,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Sun, 06 Apr 2025 01:43:18 +0800, Pengyu Luo wrote:
-> In downstream tree, many registers need to be overrided, it varies
-> from devices and platforms, not only HS trasmit amplitude(0x51),
-> HS disconnect threshold(0x53), Tx pre-emphasis tuning(0x57).
+On Fri, 07 Mar 2025 00:56:57 +0000, Andre Przywara wrote:
+> this in an update to the series introducing the basic DT support for the
+> Allwinner A523 SoC. It now comes with DTs for three boards, using
+> slightly different packages of that SoC.[1]
+> Functionality-wise it relies on the pinctrl[2] and clock[3] support
+> series, though there are no direct code dependency series between the
+> series. Two binding patches from there are required to pass dtbs_check,
+> git put their patch IDs in the footer below.
+> Compared to v2 only small fixes in the NMI controller driver: renaming
+> the struct to better reflect its new usage, add adding the DS pin to
+> the eMMC pingroup list. Adding accrued tags on the way, many thanks to
+> the diligent reviewers! More detailed changelog below.
 > 
-> The device I plan to upstream also uses it, so I write the patch for
-> it (Oneplus Pad Pro / Oneplus Pad 2, sm8650-mtp based).
-> 
-> In upstream, only Sony Xperia 1 V is using this, so fixing it for sony,
-> in downstream, some crd, mtp, htk devices also use it, I have no
-> such device, don't set it for them.
-> 
-> Signed-off-by: Pengyu Luo <mitltlatltl@gmail.com>
-> ---
->  .../qcom/sm8550-sony-xperia-yodo-pdx234.dts   |  5 +-
->  .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 86 +++++++++++++++----
->  2 files changed, 72 insertions(+), 19 deletions(-)
-> 
+> [...]
 
+Applied to dt-for-6.16 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+[08/15] arm64: dts: allwinner: Add Allwinner A523 .dtsi file
+        commit: 35ac96f796649346c9b0440413dc6c5138249b3e
+[09/15] dt-bindings: vendor-prefixes: Add YuzukiHD name
+        commit: acf5b947cff1b991ceb7fa53c66555242ff4c87b
+[10/15] dt-bindings: arm: sunxi: Add new board names for A523 generation
+        commit: f9d55227839199e928a41574e41089288a43a2d6
+[11/15] arm64: dts: allwinner: a523: add Avaota-A1 router support
+        commit: 3a1883f32b9b5083883624f9b39a3c6edfa6d490
+[12/15] arm64: dts: allwinner: a523: add X96Q-Pro+ support
+        commit: 66611715c473a9820b65322c94401a367711acd7
+[13/15] arm64: dts: allwinner: a523: add Radxa A5E support
+        commit: 80e0fb4e491b4994434e42c33c1387a46b7986bc
+[14/15] dt-bindings: arm: sunxi: Add YuzukiHD Chameleon board name
+        commit: 7273c0e2e4229bca42c70e6f3c33f1756902301a
+[15/15] arm64: dts: allwinner: h616: add YuzukiHD Chameleon support
+        commit: 6d1cb8de157382facedf50f1a80ee033243b8494
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: attempting to guess base-commit...
- Base: tags/v6.14-rc6-274-gf4e35e5f940c (exact match)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20250405174319.405975-1-mitltlatltl@gmail.com:
-
-arch/arm64/boot/dts/qcom/sm8550-sony-xperia-yodo-pdx234.dtb: pmic@7 (qcom,pm8550): phy@fd00: 'qcom,host-param-override-seq', 'qcom,param-override-seq' do not match any of the regexes: 'pinctrl-[0-9]+'
-	from schema $id: http://devicetree.org/schemas/mfd/qcom,spmi-pmic.yaml#
-arch/arm64/boot/dts/qcom/sm8550-sony-xperia-yodo-pdx234.dtb: phy@fd00 (qcom,pm8550b-eusb2-repeater): 'qcom,host-param-override-seq', 'qcom,param-override-seq' do not match any of the regexes: 'pinctrl-[0-9]+'
-	from schema $id: http://devicetree.org/schemas/phy/qcom,snps-eusb2-repeater.yaml#
-
-
-
-
+Best regards,
+-- 
+Chen-Yu Tsai <wens@csie.org>
 
 
 -- 
