@@ -4,44 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 068E2C369A1
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:51:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4143EC36010
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:51:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3dPVl4d2OFk2n3s2ko/sSnmjLe5E5H7xRY1QCKqzPw=; b=tpS25pMAY9tfEv
-	Lw8fnfXvQ+VvihrQPwcpDzfH4C99A6B8w3nif1v9kG7ctnQhcBQAxbZT2hy1dwIXMmcEjind1m4V8
-	kDWaQ4WYGJH6J3+m5z0itlpDBw0cAvQxU89f7j4lNT0WtOtybPKoJ0jfdHEWZVEccVzf8Y3I5lk9V
-	B99eahguZRRONnGSW619zbWB86Uhn3NeuXgnug+ehJg6NUocnPWyqRn8v8mhJM+JIZ53RbxKvuXp1
-	n4ZCCSc6KNq9zzXkzMlPZKJh8CsUlGeqJMvvrA4/75eDWYAmEp9hWwIsEgLpyQytcaJMU+I/yACAv
-	oowgG5XfR2g/qiz2fX3Q==;
+	List-Owner; bh=ijE7F2pF7m/mVkkEsJh00o02Ngk3ttIQHyeG2CuU6X0=; b=gyzYgDTmR/aWch
+	Ve7mDAWzaK17yyaxvNT3O+Y9v1KnTSCRDEcw4owkDMpmxWIpYqIKhG9BWEtDkiraepfvejAC4g+nZ
+	RefrqcJcdy5TI0YFZXABZYmDgoqL4tLNx5kyD3cGAzy5DZ3HLO1D7G5ZCqq38mdt1ALD3lx7Y+uNp
+	APPt3AJPreOt/XumbI3J0fbWrJMoa+R/VB85P9RlNHmZ+eL1qDAQxZsk35fM0VQ6aJi32XXbgnPwK
+	WG8Y7NE7tJLiqwsB3+1mfPab+sBPYGIjnrQsm2DoAA8kWk42Rz6MLeRTqduUYp/sUwj0xSlLEwhz6
+	O5MuRbnzYXH/3jGTKOCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1rZT-00000001ewl-2SIg;
-	Mon, 07 Apr 2025 18:51:47 +0000
-Received: from out-179.mta0.migadu.com ([91.218.175.179])
+	id 1u1rZV-00000001ezt-0ScN;
+	Mon, 07 Apr 2025 18:51:49 +0000
+Received: from out-181.mta0.migadu.com ([2001:41d0:1004:224b::b5])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1q8z-00000001Lmk-42YW
+	id 1u1qE4-00000001MJj-42vV
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Apr 2025 17:20:23 +0000
-Message-ID: <3fdfd450-6624-4621-bcae-5457da7cacc7@linux.dev>
+	Mon, 07 Apr 2025 17:25:38 +0000
+Message-ID: <874b566f-8e19-4af8-bb6b-e0e5eff7b5f5@linux.dev>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1744046419;
+	t=1744046734;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=KXRWft0X5vqZc806dG3f8UT9bd4FnC+vOrHSKFqZhi0=;
-	b=CWbW93grZ9qPup6CaE6mEnjqWauqK0oVhtuflAXlR3ZkbwO+FDKQwsH4kdb3oJ0feFh8QP
-	4QZOrDXBmVQcqjUvzOULDxa1Ln6FPbuZ03uuDbICGy8UBZUj7Hy/KZdzcZwtiK9CY9pHHa
-	muZIk67GG8PrVwJNg9sU5aWN4x0RaeI=
-Date: Mon, 7 Apr 2025 22:50:09 +0530
+	bh=ZHM7lHGP8muDGkPak7XcuoIV5Sq2eECb4HN6J4ncuwY=;
+	b=oFbmJpme/vhWb25/PtxCTNlmlE6Hk9GVpsnEPaiQJLu8+l+zEXJJylVSYilpIDBtgvKrJL
+	zqA5IYo0qDxuil41M7QAZv6h0NLWQVwBZEPcTJPyktDGGmv2QAVAAY5/ncNBe+XlGQ6YHO
+	OANqbYgjV/bFKBPaC9OlMrhqhjy8dUQ=
+Date: Mon, 7 Apr 2025 22:54:41 +0530
 MIME-Version: 1.0
-Subject: Re: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
- capabilities
+Subject: Re: [PATCH v2 05/18] phy: cdns-dphy: Remove leftover code
 To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
  Jyri Sarha <jyri.sarha@iki.fi>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
@@ -56,15 +55,15 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
  Devarsh Thakkar <devarsht@ti.com>
 References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
- <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
+ <20250402-cdns-dsi-impro-v2-5-4a093eaa5e27@ideasonboard.com>
 Content-Language: en-US
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-In-Reply-To: <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
+In-Reply-To: <20250402-cdns-dsi-impro-v2-5-4a093eaa5e27@ideasonboard.com>
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_102022_151406_AE014ADF 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20250407_102537_148735_2555A145 
+X-CRM114-Status: GOOD (  17.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,27 +80,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Tomi,
 
+Thank you for the patches!
 
 On 02/04/25 19:00, Tomi Valkeinen wrote:
-> At the moment the driver just sets the clock rate with clk_set_rate(),
-> and if the resulting rate is not the same as requested, prints a debug
-> print, but nothing else.
-> 
-> Add functionality to atomic_check(), in which the clk_round_rate() is
-> used to get the "rounded" rate, and set that to the adjusted_mode.
-> 
-> In practice, with the current K3 SoCs, the display PLL is capable of
-> producing very exact clocks, so most likely the rounded rate is the same
-> as the original one.
+> The code in cdns-dphy has probably been part of a DSI driver in the
+> past. Remove DSI defines and variables which are not used or do not
+> actually do anything. Also rename cdns_dsi_get_dphy_pll_cfg() to
+> cdns_get_dphy_pll_cfg(), i.e. drop the "dsi", as it's not relevant here.
 > 
 > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 > ---
->  drivers/gpu/drm/tidss/tidss_crtc.c  | 23 +++++++++++++++++++----
->  drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
->  drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
->  3 files changed, 27 insertions(+), 4 deletions(-)
+>  drivers/phy/cadence/cdns-dphy.c | 19 ++++---------------
+>  1 file changed, 4 insertions(+), 15 deletions(-)
 > 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index f79ec4fab409..7f8b70ec10c5 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -55,14 +55,6 @@
+>  #define DPHY_PSM_CFG_FROM_REG		BIT(0)
+>  #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
+>  
+> -#define DSI_HBP_FRAME_OVERHEAD		12
+> -#define DSI_HSA_FRAME_OVERHEAD		14
+> -#define DSI_HFP_FRAME_OVERHEAD		6
+> -#define DSI_HSS_VSS_VSE_FRAME_OVERHEAD	4
+> -#define DSI_BLANKING_FRAME_OVERHEAD	6
+> -#define DSI_NULL_FRAME_OVERHEAD		6
+> -#define DSI_EOT_PKT_SIZE		4
+> -
+>  #define DPHY_TX_J721E_WIZ_PLL_CTRL	0xF04
+>  #define DPHY_TX_J721E_WIZ_STATUS	0xF08
+>  #define DPHY_TX_J721E_WIZ_RST_CTRL	0xF0C
+> @@ -117,10 +109,9 @@ static const unsigned int tx_bands[] = {
+>  	870, 950, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2500
+>  };
+>  
+> -static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
+> -				     struct cdns_dphy_cfg *cfg,
+> -				     struct phy_configure_opts_mipi_dphy *opts,
+> -				     unsigned int *dsi_hfp_ext)
+> +static int cdns_get_dphy_pll_cfg(struct cdns_dphy *dphy,
+
+nit: cdns_dphy_get_pll_cfg seems more appropriate. We even have a
+cdns_dphy_set_pll_cfg.
+
+> +				 struct cdns_dphy_cfg *cfg,
+> +				 struct phy_configure_opts_mipi_dphy *opts)
+>  {
+>  	unsigned long pll_ref_hz = clk_get_rate(dphy->pll_ref_clk);
+>  	u64 dlane_bps;
+> @@ -289,15 +280,13 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+>  				      struct cdns_dphy_cfg *cfg)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -	unsigned int dsi_hfp_ext = 0;
+>  	int ret;
+>  
+>  	ret = phy_mipi_dphy_config_validate(opts);
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = cdns_dsi_get_dphy_pll_cfg(dphy, cfg,
+> -					opts, &dsi_hfp_ext);
+> +	ret = cdns_get_dphy_pll_cfg(dphy, cfg, opts);
+>  	if (ret)
+>  		return ret;
+>  
+> 
+
+Apart from the small comment above,
 
 Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 
