@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8106CC369A4
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:52:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7434C369A5
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:52:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GyhWwcva8Do1RXmW3yGwiO/hnCWjZ7OuNEE3kxjbhfY=; b=qxec2gNyv4zK4w
-	0UFOeySwyjSRmW3aG/lsOo77IfXIAW+QcHOIXafi2MZggsNscvf1iKQ1l/Ts1kVznOTdonPi85z3k
-	e29BjotW4gv1v+vF9ku5pGgXHuP9+SEbnA88/KTo1PsqGbsgSktEsshvAWBo7YNMudX1NHDZ/USA9
-	VReB2t4pik2Pm+MatYjnffQCb0f3WCx6MqM30zXRQVMgFmjkh+AQC/r1dNPMCd89cSycjjKudEN4J
-	g53x3dUM25XX8GcnV9rfWAxP8CGmM0lOco0NxfwBGs37DEdBQcPCqpziFBDnikEnDuXJYr8Vumg7S
-	EnhX0jpP+UHNR7kJWH1w==;
+	List-Owner; bh=ppwFrrnda34ZGBF1tXQyGQKQ5aHnGO+hYcNJdl2cs84=; b=bsYMehv2HBAiKH
+	Q+gOei+uNahSf1Iz0PwG6wwf6XQC38r2dIg8DbIJkMp40IV0viJspxoR7T3SCXRRvtgE2PEW+FWaA
+	3cqrvzmmcCHYkoavAkjoEW7Oh63MS/7ZDPuhxT5iZ9BZAaY5wtLmy0eJouUQiCxV0e4DlhBS/CFOX
+	W3fJEBmJH8zpktKVNvcN9p4Gk3Ae7gRdBhN7GuLQibvkP0c/k37ooSr+8WKexcdYhDlfVUZE+zYXC
+	NMegC6opn5yVrmUZH/chqn5ig5vp+S1wf3lsczI9nWiExU7gYbZK3Cs3MrbqGYKLgz3kL3slB6SDw
+	Tfq4T7KspUF2gJrNVLug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1raU-00000001gnC-0eMQ;
-	Mon, 07 Apr 2025 18:52:50 +0000
+	id 1u1raV-00000001gqH-20eP;
+	Mon, 07 Apr 2025 18:52:51 +0000
 Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1quz-00000001Tga-3nZ8;
-	Mon, 07 Apr 2025 18:09:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1744049386; cv=none; 
+	id 1u1qv8-00000001TjQ-37fr;
+	Mon, 07 Apr 2025 18:10:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1744049394; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=SRDEYS6j7qhew185kGpHfxeaN4cvGqAabO/XZ/1tkRb6AGo9vfk+FnKWZvX+jzWjRkYmsDv2G1Osl/9YHzsbul1rGCP1SRutcB5TkJIdJH1gto3fNjW5vWcQ7PbU0NTngFrDg7FkI2v+K4386sEAoRwEAqFKQ/y1S0bCMYarIY8=
+	b=K6IiAeHqBHlNrWiqQn+3MNldAf/eENA+BvXOKM7nbKf1rlWU+6fUObV15o6Rm6AzFG6GgOEtfu0XIpDc8C0GFToquzvl87oy2p6ABernLurSxNOjQglpzYwNJNglrILRb0r22iJejThpPi1wf3L6VWQrwvwgIWNorUtwpX/WALQ=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1744049386; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Hsk96FSguk/Ky1tsPSxd4I1gk9mUryoWRi27TGtLokQ=; 
-	b=ddnwQZSeCMBZzuXQSpkEIVK7rEE1SzrACFBi2Xkif1UW3cOOXt61RQBDvDyRJx+k04qI7PXVTXPRK8zw+H0NWDCJpy0IRwUCuuRFiFNWWk+w/F7aTFfz6ShkX8X7sL7BOk3GB5pUvuLGiIAAnCcYbkwu6/1yaYhMKLyZ/FKEY4U=
+	t=1744049394; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=znUavP/BrlHSUj49dkNncKOBHc7iyfaD5tE24M8Y1yg=; 
+	b=NXh8bDoXXWwwOExleJ5437igv5RzEKqCGSEovzd4+KtJN2D/EGSY3B8ycbC31KnJP8R8YkF0sSnDU1LdYgNcNJ6Fvs2aqT8u/ZjryWDtOcmiIhNiT7JSoFvJ0mNtUGEg6DeI8DLfYJrFI/8fzjWmZ1zdRTAFQFdx+QFOEdz0D6k=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1744049386;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1744049394;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=Hsk96FSguk/Ky1tsPSxd4I1gk9mUryoWRi27TGtLokQ=;
-	b=ivoK+cH/E3m7x3WDEoPCvqr/fH9WPvYqfA4ggDfOCrchVl6Wb+YFCM6VWnPIhuIY
-	rJSmK1axaj6w6jWu+GQXPemHEka0uTYf3UhUVSNXdG230dwT5BiO8x1gpFSAiTDO8X6
-	p2MwAmrGGlgOnwfNwFcdGomYKDgi0Rel2Cmyhq5g=
-Received: by mx.zohomail.com with SMTPS id 1744049384577926.4016780097427;
-	Mon, 7 Apr 2025 11:09:44 -0700 (PDT)
+	bh=znUavP/BrlHSUj49dkNncKOBHc7iyfaD5tE24M8Y1yg=;
+	b=RwpDAbGcZNxlG/P6vQDHPFyHVr7ljwNalyK6/Nd34ZnUbpXUgs6R2H3OfuaWiSLp
+	gnHapHdlFh770AYbaJvZTiPxdoNrvOi1rMaW5zbLWhcGZ0JkREGGZ3swN8pMQ6jUzm0
+	nJf56irj5oDDC5GLmNZ6ihhSktGDII90JP717cGU=
+Received: by mx.zohomail.com with SMTPS id 1744049392553406.29570236196037;
+	Mon, 7 Apr 2025 11:09:52 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 07 Apr 2025 20:09:14 +0200
-Subject: [PATCH 1/4] dt-bindings: phy: rockchip,inno-usb2phy: add port
- property
+Date: Mon, 07 Apr 2025 20:09:16 +0200
+Subject: [PATCH 3/4] arm64: dts: rockchip: add phy suspend quirk to usb on
+ rk3576
 MIME-Version: 1.0
-Message-Id: <20250407-rk3576-sige5-usb-v1-1-67eec166f82f@collabora.com>
+Message-Id: <20250407-rk3576-sige5-usb-v1-3-67eec166f82f@collabora.com>
 References: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
 In-Reply-To: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -67,8 +67,8 @@ Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_110958_006090_E2BA0630 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20250407_111006_842858_ECC9EED4 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,38 +85,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-USB connectors like to have OF graph connections to high-speed related
-nodes to do various things. In the case of the RK3576, we can make use
-of a port in the usb2 PHY to detect whether the OTG controller is
-connected to a type C port and apply some special behaviour accordingly.
+The dwc3 controllers on RK3576 appear to have some quirky behaviour
+relating to runtime power suspension. Specifically, they will cause
+SError aborts on register reads in the xhci code when setting the device
+role.
 
-The usefulness of having different bits of a fully functioning USB stack
-point to each other is more general though, and not constrained to
-RK3576 at all, even for this use-case.
+Downstream appears to work around this by manually checking for the
+rk3576 compatible in the dwc3 core driver, and then setting the
+autosuspend delay to 200. This appears to be smaller than what mainline
+uses, and I'm not quite sure how that fixes it, but I could also be
+reading the code wrong. The important takeaway is that the RK3399 uses
+the same codepath.
 
-Add a port property to the binding.
+Looking at RK3399 in mainline then, we see that it has one quirk that
+RK3576 doesn't have in its dwc3 controllers: snps,dis_u2_susphy_quirk.
 
+Long story short, adding the snps,dis_u2_susphy_quirk property to
+rk3576.dtsi's dwc3 controllers fixes the issue. Quite suspicious that
+this is not needed among usb controllers based on dwc3 in other Rockchip
+designs, especially other RK35xx ones.
+
+Fixes: 23ec57a32da4 ("arm64: dts: rockchip: add usb related nodes for rk3576")
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3576.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-index 6a7ef556414cebad63c10de754778f84fd4486ee..3a662bfc353250a8ad9386ebb5575d1e84c1b5ba 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-@@ -78,6 +78,11 @@ properties:
-       When set the driver will request its phandle as one companion-grf
-       for some special SoCs (e.g rv1108).
- 
-+  port:
-+    $ref: /schemas/graph.yaml#/properties/port
-+    description:
-+      A port node to link the PHY to a USB connector's "high-speed" port.
-+
-   host-port:
-     type: object
-     additionalProperties: false
+diff --git a/arch/arm64/boot/dts/rockchip/rk3576.dtsi b/arch/arm64/boot/dts/rockchip/rk3576.dtsi
+index ebb5fc8bb8b1363127b9d3782801c4a79b678a92..71c71f5a2b77c52b251bea16e4deaa4b0109715a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3576.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3576.dtsi
+@@ -470,6 +470,7 @@ usb_drd0_dwc3: usb@23000000 {
+ 			snps,dis-u2-freeclk-exists-quirk;
+ 			snps,dis-del-phy-power-chg-quirk;
+ 			snps,dis-tx-ipgap-linecheck-quirk;
++			snps,dis_u2_susphy_quirk;
+ 			snps,parkmode-disable-hs-quirk;
+ 			snps,parkmode-disable-ss-quirk;
+ 			status = "disabled";
+@@ -496,6 +497,7 @@ usb_drd1_dwc3: usb@23400000 {
+ 			snps,dis-del-phy-power-chg-quirk;
+ 			snps,dis-tx-ipgap-linecheck-quirk;
+ 			snps,dis_rxdet_inp3_quirk;
++			snps,dis_u2_susphy_quirk;
+ 			snps,parkmode-disable-hs-quirk;
+ 			snps,parkmode-disable-ss-quirk;
+ 			dma-coherent;
 
 -- 
 2.49.0
