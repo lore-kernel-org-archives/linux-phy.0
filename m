@@ -4,36 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AAC0C369A2
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 15:12:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47827C369A3
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 15:12:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=udD9pdPTQOpVBCDtDoaWcCN6sVxSY3LU9LnnBd3FzxI=; b=XJTQPIJvfW3zNb
-	DbeY2gsO3Z9tEY+GXVyAnvJu68QuKbTBuDtEcnkGQJyr63tUTs3XAATS5PN4ov+ckfGJG+3GmkJjG
-	2kHOA3Yt74/zYj0D7ItQ53pBppT+/OSTeRxlQ6bMp7uHw9Nt/8Y36YdXj8hI0pbTlMN+SSQcXATHJ
-	wVnZpbRVF9ebraN2HHPtaz2wI1acgKTwtas9iUSmxQD9+S04UBQfStKjKa++GuixmaXEl5H2W+dnt
-	g6dYBDzmCrMpXu0emzzmewEbepUJoZ8OZDDvFemV/n12j9A9RNBI/Ry6Qy/cqWL00Ea5HwVyy/Isw
-	1DB1f4e7ARIGM2ioXMyA==;
+	List-Owner; bh=qSeH/gnccUveL8x5tR168Ph86GdlGi3cL/bdNLYQ/pA=; b=PVREusqzJ+VX6K
+	lG6W5Aj3Z1Tz65EVDtak9SO3v4CRgF5wlNgCUEaGk7OvGNEv9ExTohAgBRDYGfbgCUFYdD+SE3BU8
+	e6KYEu+h1J/bH0wWUvRQsKtkbgCkuJ96zn5JNstIQGkgk8H0iBA28xfrO1QLPjXZR7msPK/qh5erW
+	VKvX7YG5MEKQ2Y/eyKjW0mr8LqLLWsDfBdNnlOgHYw0GGjDsGUKxM0RH4yLkfklwfeR3bnvEvzyPA
+	eviV0lZLZtfnq/LRwnwdU2AJCdERWwzhF/AK0a6Ei+8M5H05wsP71BePltw35CWjHyUPkeIpxraCz
+	oJv5hzLIntfLijsMoCEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1o9M-00000000tiJ-0bb2;
-	Mon, 07 Apr 2025 15:12:36 +0000
-Received: from mail-m49198.qiye.163.com ([45.254.49.198])
+	id 1u1o9N-00000000tjR-06NA;
+	Mon, 07 Apr 2025 15:12:37 +0000
+Received: from mail-m49197.qiye.163.com ([45.254.49.197])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1lld-00000000JO8-1hv5;
-	Mon, 07 Apr 2025 12:39:58 +0000
+	id 1u1lll-00000000JQd-291z;
+	Mon, 07 Apr 2025 12:40:06 +0000
 Received: from [127.0.0.1] (gy-adaptive-ssl-proxy-2-entmail-virt205.gy.ntes [27.18.106.237])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 10ef566ef;
-	Mon, 7 Apr 2025 20:39:48 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 10ef566f5;
+	Mon, 7 Apr 2025 20:39:56 +0800 (GMT+08:00)
 From: Ze Huang <huangze@whut.edu.cn>
-Date: Mon, 07 Apr 2025 20:38:48 +0800
-Subject: [PATCH 3/7] dt-bindings: usb: add SpacemiT K1 DWC3 glue
+Date: Mon, 07 Apr 2025 20:38:49 +0800
+Subject: [PATCH 4/7] phy: spacemit: support K1 USB2.0 PHY controller
 MIME-Version: 1.0
-Message-Id: <20250407-b4-k1-usb3-v3-2-v1-3-bf0bcc41c9ba@whut.edu.cn>
+Message-Id: <20250407-b4-k1-usb3-v3-2-v1-4-bf0bcc41c9ba@whut.edu.cn>
 References: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
 In-Reply-To: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -51,26 +51,25 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
  linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1744029565; l=2481;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1744029565; l=6373;
  i=huangze@whut.edu.cn; s=20250325; h=from:subject:message-id;
- bh=Ur2UYtwusU/2jhypNHuXu4S43HheHrAbZbGlidbsqbw=;
- b=T7LLTfJr2rsbvI8oM55Upyk0Uwva1Xpbcb+1KdT75dXJ1H793CI1zzouVqa3+uuqOpRVchxkI
- 83BOogxo8ubD3QYxoS1b1+rZpFw+qHlsjYKJJEngIl2p0QxuefQWXfU
+ bh=fCF4W2ae2Sg3St3Ptz8ICrLtEbsAhI1y2Cp5Zv2SiSU=;
+ b=Te6E216u1vE3ivQjnt7vNdYTz3acA0nO/FnbrOifcGbUCfMBFvpLyehy1XgPhBpBm73V0s3aV
+ epdPXL0WvzgC1kc66ejNkvIwvU27RkRTKeyyvzcnOTMAD/5B0Nh3yxv
 X-Developer-Key: i=huangze@whut.edu.cn; a=ed25519;
  pk=C3zfn/kH6oMJickaXBa8dxTZO68EBiD93F+tAenboRA=
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCHk1LVkxMGkwYQksdSRhJQlYeHw5VEwETFhoSFy
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCSE5IVkxKSUMYTBlDQ0tISlYeHw5VEwETFhoSFy
 	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0hKTkxOVUpLS1VKQk
 	tLWQY+
-X-HM-Tid: 0a9610439daa03a1kunm10ef566ef
+X-HM-Tid: 0a961043bb2003a1kunm10ef566f5
 X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Ngg6Fio5OTJLA0wiKBYKGjIL
-	FRUwFC1VSlVKTE9PS0lCTkJOTUNNVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VKS01VSUhMWVdZCAFZQU9KSk03Bg++
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NBw6ETo*DzJMVkwdAhUxGist
+	Dy4wCwFVSlVKTE9PS0lCTUtISEhOVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VKS01VSUhMWVdZCAFZQUNLSkk3Bg++
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_053957_617765_2D38F839 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250407_054005_760710_ACE90D3A 
+X-CRM114-Status: GOOD (  18.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,98 +86,205 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for SpacemiT DWC3 glue driver, which manages interrupt,
-reset and clock resource.
+Add support for SpacemiT K1 USB2.0 PHY.
 
 Signed-off-by: Ze Huang <huangze@whut.edu.cn>
 ---
- .../devicetree/bindings/usb/spacemit,k1-dwc3.yaml  | 78 ++++++++++++++++++++++
- 1 file changed, 78 insertions(+)
+ drivers/phy/Kconfig                |   1 +
+ drivers/phy/Makefile               |   1 +
+ drivers/phy/spacemit/Kconfig       |  12 ++++
+ drivers/phy/spacemit/Makefile      |   2 +
+ drivers/phy/spacemit/phy-k1-usb2.c | 132 +++++++++++++++++++++++++++++++++++++
+ 5 files changed, 148 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/spacemit,k1-dwc3.yaml b/Documentation/devicetree/bindings/usb/spacemit,k1-dwc3.yaml
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 8d58efe998ec5fd50054eed2c90d6ecce6bd5dd8..fca589aa7926eb5bce14e99785cf32cf0395202e 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -114,6 +114,7 @@ source "drivers/phy/renesas/Kconfig"
+ source "drivers/phy/rockchip/Kconfig"
+ source "drivers/phy/samsung/Kconfig"
+ source "drivers/phy/socionext/Kconfig"
++source "drivers/phy/spacemit/Kconfig"
+ source "drivers/phy/st/Kconfig"
+ source "drivers/phy/starfive/Kconfig"
+ source "drivers/phy/sunplus/Kconfig"
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index e281442acc752820fe0bd638dfe38986a37c2a78..05993ff8a15daf7e2583b5f9b9b37ac584a30609 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -34,6 +34,7 @@ obj-y					+= allwinner/	\
+ 					   rockchip/	\
+ 					   samsung/	\
+ 					   socionext/	\
++					   spacemit/	\
+ 					   st/		\
+ 					   starfive/	\
+ 					   sunplus/	\
+diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..40ce3fd1330d5f371ec69155c237e10a65a9d8f4
+index 0000000000000000000000000000000000000000..f0c2a33f53cc810e71c6140ae957aa68a2b6ff0c
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/usb/spacemit,k1-dwc3.yaml
-@@ -0,0 +1,78 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/usb/spacemit,k1-dwc3.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/phy/spacemit/Kconfig
+@@ -0,0 +1,12 @@
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Phy drivers for SpacemiT platforms
++#
++config PHY_SPACEMIT_K1_USB2
++	tristate "SpacemiT K1 USB 2.0 PHY support"
++	depends on USB || USB_GADGET
++	depends on ARCH_SPACEMIT || COMPILE_TEST
++	select USB_PHY
++	help
++	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
++	  enabling and clock setup and will be used by K1 udc/ehci/otg driver.
+diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
+new file mode 100644
+index 0000000000000000000000000000000000000000..fec0b425a948541b39b814caef0b05e1e002d92f
+--- /dev/null
++++ b/drivers/phy/spacemit/Makefile
+@@ -0,0 +1,2 @@
++# SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
+diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..acbf6a0ebad0ee6b53cc7fd89bad4780c7b7cab5
+--- /dev/null
++++ b/drivers/phy/spacemit/phy-k1-usb2.c
+@@ -0,0 +1,132 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * SpacemiT K1 USB 2.0 PHY driver
++ *
++ * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
++ * Copyright (C) 2025 Ze Huang <huangze@whut.edu.cn>
++ */
 +
-+title: SpacemiT K1 SuperSpeed DWC3 USB SoC Controller Glue
++#include <linux/clk.h>
++#include <linux/iopoll.h>
++#include <linux/platform_device.h>
++#include <linux/usb/of.h>
 +
-+maintainers:
-+  - Ze Huang <huangze@whut.edu.cn>
++#define USB2_PHY_REG01			0x04
++#define  USB2_PHY_REG01_VAL		0x60ef
++#define  USB2_PHY_REG01_PLL_IS_READY	BIT(0)
++#define USB2_PHY_REG04			0x10
++#define  USB2_PHY_REG04_AUTO_CLEAR_DIS	BIT(2)
++#define USB2_PHY_REG0D			0x34
++#define  USB2_PHY_REG0D_VAL		0x1c
++#define USB2_PHY_REG26			0x98
++#define  USB2_PHY_REG26_VAL		0xbec4
 +
-+properties:
-+  compatible:
-+    const: spacemit,k1-dwc3
++#define USB2D_CTRL_RESET_TIME_MS	50
 +
-+  ranges:
-+    maxItems: 1
++struct spacemit_usb2phy {
++	struct phy	*phy;
++	struct clk	*clk;
++	void __iomem	*base;
++};
 +
-+  clocks:
-+    maxItems: 1
++static int spacemit_usb2phy_init(struct phy *phy)
++{
++	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
++	void __iomem *base = sphy->base;
++	u32 val;
++	int ret;
 +
-+  resets:
-+    maxItems: 1
++	ret = clk_prepare_enable(sphy->clk);
++	if (ret) {
++		dev_err(&phy->dev, "failed to enable clock\n");
++		return ret;
++	}
 +
-+  interrupts:
-+    maxItems: 1
++	/*
++	 * make sure the usb controller is not under reset process before
++	 * any configuration
++	 */
++	usleep_range(150, 200);
++	writel(USB2_PHY_REG26_VAL, base + USB2_PHY_REG26); /* 24M ref clk */
 +
-+  interconnects:
-+    description:
-+      On SpacemiT K1, USB performs DMA through bus other than parent DT node.
-+      The 'interconnects' property explicitly describes this path, ensuring
-+      correct address translation.
++	ret = read_poll_timeout(readl, val, (val & USB2_PHY_REG01_PLL_IS_READY),
++				500, USB2D_CTRL_RESET_TIME_MS * 1000, true,
++				base + USB2_PHY_REG01);
++	if (ret) {
++		dev_err(&phy->dev, "wait PHY_REG01[PLLREADY] timeout\n");
++		return ret;
++	}
 +
-+  interconnect-names:
-+    const: dma-mem
++	/* release usb2 phy internal reset and enable clock gating */
++	writel(USB2_PHY_REG01_VAL, base + USB2_PHY_REG01);
++	writel(USB2_PHY_REG0D_VAL, base + USB2_PHY_REG0D);
 +
-+  # optional
-+  vbus-supply:
-+    description: A phandle to the regulator supplying the VBUS voltage.
++	/* auto clear host disc */
++	val = readl(base + USB2_PHY_REG04);
++	val |= USB2_PHY_REG04_AUTO_CLEAR_DIS;
++	writel(val, base + USB2_PHY_REG04);
 +
-+patternProperties:
-+  '^usb@':
-+    $ref: snps,dwc3.yaml#
++	return 0;
++}
 +
-+additionalProperties: false
++static int spacemit_usb2phy_exit(struct phy *phy)
++{
++	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
 +
-+required:
-+  - compatible
-+  - ranges
-+  - clocks
-+  - resets
-+  - interrupts
-+  - interconnects
-+  - interconnect-names
++	clk_disable_unprepare(sphy->clk);
 +
-+examples:
-+  - |
-+    usb@c0a00000 {
-+        compatible = "spacemit,k1-dwc3";
-+        clocks = <&syscon_apmu 16>;
-+        interrupts = <149>;
-+        interconnects = <&dram_range0>;
-+        interconnect-names = "dma-mem";
-+        ranges = <0x0 0xc0a00000 0x10000>;
-+        resets = <&syscon_apmu 8>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        status = "disabled";
++	return 0;
++}
 +
-+        usb@0 {
-+            compatible = "snps,dwc3";
-+            reg = <0x0 0x0 0x0 0x10000>;
-+            interrupt-parent = <&plic>;
-+            interrupts = <125>;
-+            phys = <&usb_phy2>, <&usb_phy3 2>;
-+            phy-names = "usb2-phy", "usb3-phy";
-+        };
-+    };
++static const struct phy_ops spacemit_usb_phy_ops = {
++	.init = spacemit_usb2phy_init,
++	.exit = spacemit_usb2phy_exit,
++	.owner = THIS_MODULE,
++};
++
++static int spacemit_usb2phy_probe(struct platform_device *pdev)
++{
++	struct phy_provider *phy_provider;
++	struct device *dev = &pdev->dev;
++	struct spacemit_usb2phy *sphy;
++
++	sphy = devm_kzalloc(dev, sizeof(*sphy), GFP_KERNEL);
++	if (!sphy)
++		return -ENOMEM;
++
++	sphy->clk = devm_clk_get_prepared(&pdev->dev, NULL);
++	if (IS_ERR(sphy->clk))
++		return dev_err_probe(dev, PTR_ERR(sphy->clk), "Failed to get clock\n");
++
++	sphy->base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(sphy->base))
++		return PTR_ERR(sphy->base);
++
++	sphy->phy = devm_phy_create(dev, NULL, &spacemit_usb_phy_ops);
++	if (IS_ERR(sphy->phy))
++		return dev_err_probe(dev, PTR_ERR(sphy->phy), "Failed to create phy\n");
++
++	phy_set_drvdata(sphy->phy, sphy);
++	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct of_device_id spacemit_usb2phy_dt_match[] = {
++	{ .compatible = "spacemit,k1-usb2-phy", },
++	{ /* sentinal */ }
++};
++MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
++
++static struct platform_driver spacemit_usb2_phy_driver = {
++	.probe	= spacemit_usb2phy_probe,
++	.driver = {
++		.name   = "spacemit-usb2-phy",
++		.owner  = THIS_MODULE,
++		.of_match_table = spacemit_usb2phy_dt_match,
++	},
++};
++module_platform_driver(spacemit_usb2_phy_driver);
++
++MODULE_DESCRIPTION("Spacemit USB 2.0 PHY driver");
++MODULE_LICENSE("GPL");
 
 -- 
 2.49.0
