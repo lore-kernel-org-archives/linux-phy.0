@@ -4,67 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD362C36010
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:52:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1E47C36018
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Apr 2025 18:52:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JYaFG0lnbaOq3ReXOmsnFVyplYJGohg0q8VMc2VD1NA=; b=w6R+/QAFTIVAGi
-	DKS90Ff8wyV6MPTpRh/ieLze1t3Wbn4mAaRPGkWRqexd2JsEt9/0dxjFc64tQNwWqJM+iARrOiTqS
-	v1nsAs+mzBFIiffJBQ8SqtJMzc/zu3xOiiO5Z+dpKWQ+WaWJmGnPr2nr1q8lH6zdmQZdX86aifDkR
-	tWAVLMBQa01/Sr8Aps2Ij7RDhoWieDuUvOFI+jqDJDlX8bHi6dtaHHG/BEZI9dA71emwN45efaGLa
-	mn9szvPCOk9Wh6lrtq7lzXybI5y+K5HvYM0RbD0qlxjWzGN8/vIswSCtc4LZi5roLXbQXWOuohZ+y
-	dUv9q/krBJ7j1jH5ANLQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jSCPZxmxalsy3yaa9RidxYI6tNUDB/dO8rW/2ZLNaBY=; b=yaYSLSMj6Nacj3
+	t/ApQOk+N0YmZnUU8l8J3vAxz1p0GUaDmgqpeLGBqlq4Xeu27oInffFIxp0YXmrdZa7mALBSXoDh2
+	o/EzByG/JvYBcXQRnMSst/jSZ32kKle8Kcd7hAZ+vquUq5IOmeh2/wsp5+zH5S2igLPNl2y8U82ru
+	jp2pTQ1YRaXXroTjGgVOVXf2Chdwr3SyYO7FwGiq7SYKBX/3Ap4fObA9pOZNYu9p62z/a0JoZPR/P
+	kc8KMWrZ9hgFAacn2t7ENMXnmUrzD1pikNmxfV+JfSyXitjQSrls9tP9L0zUUfaccYO4LHU8Se/05
+	Ir+zqYTSTwqJvRaz6R5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1rZv-00000001fm3-0mfY;
-	Mon, 07 Apr 2025 18:52:15 +0000
-Received: from out-187.mta1.migadu.com ([2001:41d0:203:375::bb])
+	id 1u1raS-00000001gkl-3ait;
+	Mon, 07 Apr 2025 18:52:48 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1qm9-00000001SJq-16S7
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Apr 2025 18:00:50 +0000
-Message-ID: <46dc6803-47f0-4434-9794-08307604e450@linux.dev>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1744048846;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=LYQgn5/fy4dHXJLjzY7D/eH42PtSSXiU5EQQrf/mBGI=;
-	b=QEPXk48XAIJwFjsEkynJHh8BkD7K6R7O3WxD+ynoOmVgsn3k4PmYUCzmmB8MkHr7AN0G6g
-	Edf5aQOyIkfIPSNRLd6br718NyzzNT5EVVzm3orqZ8iTpgHbKEiiBu/nFsKZuKQaEa/BU7
-	EJ/AhQ9vJrNKR2TUnoIDZwg0gn/FJ7c=
-Date: Mon, 7 Apr 2025 23:29:55 +0530
+	id 1u1quz-00000001TfX-2LFg;
+	Mon, 07 Apr 2025 18:09:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1744049382; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=MA29WiSaM/qGw8Ez5IWEq+k0N2YAnfiNfAhPgQHriNRPs3EL3yjtKFFtGwEbVGsyo3QmNx0TTr8siu2V121Ox4gfxO8Lnz60I6ZI+pK7jPSNwtlEgfVtFnXaWFk+dJilbETEQ2Ob1jpwG7IHHKL2QDQlRQoXjvn6yDoyRnv6ZJg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1744049382; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=i7yUmtcPXYs5jDz4UO9uvLqV1/UD2ocMo6ScIwBAIPA=; 
+	b=MzysafK93/6rHCj0cYFISDahwz2lsGydQU5sYBwQBuLQo1Vo5UbN0PHoTIAojVuGMDnLH4JwQGsJTHWxImSERg5GqWGlb92nJBrpiq2dBZAgGYrsnzbx4O9KySgYEqT2zhzGULJUEEnDicmtAfNE0Bz/atsW4cR9xR91i+0DD1o=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1744049382;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding:To:To:Cc:Cc:Reply-To;
+	bh=i7yUmtcPXYs5jDz4UO9uvLqV1/UD2ocMo6ScIwBAIPA=;
+	b=aMYIGLxLmuS8LHedJmkzvIWJCZ21bwD1Ms9cqEuChNGK7MNfmvOdJdPQv40ImOev
+	8fmXjtvGPgf649q2yQnwB1xLrMnC7pBaYu2E1ujWsCSSP/jWjJvjs2LJQihe4UEsQy5
+	FJ0aXsuuj/ukpo4MjOIU6/YUezwv01Ach2y1GsSo=
+Received: by mx.zohomail.com with SMTPS id 1744049380397611.0260384445199;
+	Mon, 7 Apr 2025 11:09:40 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: [PATCH 0/4] RK3576 USB Enablement
+Date: Mon, 07 Apr 2025 20:09:13 +0200
+Message-Id: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2 12/18] drm/bridge: cdns-dsi: Drop checks that shouldn't
- be in .mode_valid()
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Devarsh Thakkar <devarsht@ti.com>
-References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
- <20250402-cdns-dsi-impro-v2-12-4a093eaa5e27@ideasonboard.com>
-Content-Language: en-US
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-In-Reply-To: <20250402-cdns-dsi-impro-v2-12-4a093eaa5e27@ideasonboard.com>
-X-Migadu-Flow: FLOW_OUT
+X-B4-Tracking: v=1; b=H4sIAMkU9GcC/yXMywqDQAyF4VcZsm7KXBhbfJXiYpxGG4raJioF8
+ d076PI7cP4NlIRJoTYbCK2sPI0F7mIgv9LYE/KzGLz10QZ/R3mHeKtQuaeIi7bog3XWJ6KUE5T
+ bR6jj35F8NKeFvkspz+cIbVLCPA0Dz7VZq6uLKNlBs+9/rj/QuI8AAAA=
+X-Change-ID: 20250328-rk3576-sige5-usb-230102aeeaca
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Frank Wang <frank.wang@rock-chips.com>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ kernel@collabora.com, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_110049_446998_C71CA6FC 
-X-CRM114-Status: GOOD (  23.50  )
+X-CRM114-CacheID: sfid-20250407_110957_643582_36D55DDD 
+X-CRM114-Status: GOOD (  18.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,159 +86,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Tomi,
+This series is the result of what I thought would be a quick 10 minute
+job, but turned out to be more like 3 days of pain, suffering, and
+confusion. This should be expected with USB Type C though.
 
-On 02/04/25 19:00, Tomi Valkeinen wrote:
-> The docs say about mode_valid():
-> 
-> "it is not allowed to look at anything else but the passed-in mode, and
-> validate it against configuration-invariant hardware constraints"
-> 
-> We're doing a lot more than just looking at the mode. The main issue
-> here is that we're doing checks based on the pixel clock, before we know
-> what the pixel clock from the crtc actually is.
-> 
-> So, drop the checks from .mode_valid(). This also allows us to remove
-> the 'mode_valid_check' parameter from internal functions, and the
-> related code.
-> 
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-> ---
->  drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 44 ++++++++------------------
->  1 file changed, 14 insertions(+), 30 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> index e85c8652c96e..cf783680b1b4 100644
-> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> @@ -469,25 +469,17 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
->  
->  static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
->  			     const struct drm_display_mode *mode,
-> -			     struct cdns_dsi_cfg *dsi_cfg,
-> -			     bool mode_valid_check)
-> +			     struct cdns_dsi_cfg *dsi_cfg)
->  {
->  	struct cdns_dsi_output *output = &dsi->output;
->  	u32 dpi_hsa, dpi_hbp, dpi_hfp, dpi_hact;
->  	bool sync_pulse;
->  	int bpp;
->  
-> -	if (mode_valid_check) {
-> -		dpi_hsa = mode->hsync_end - mode->hsync_start;
-> -		dpi_hbp = mode->htotal - mode->hsync_end;
-> -		dpi_hfp = mode->hsync_start - mode->hdisplay;
-> -		dpi_hact = mode->hdisplay;
-> -	} else {
-> -		dpi_hsa = mode->crtc_hsync_end - mode->crtc_hsync_start;
-> -		dpi_hbp = mode->crtc_htotal - mode->crtc_hsync_end;
-> -		dpi_hfp =  mode->crtc_hsync_start - mode->crtc_hdisplay;
-> -		dpi_hact = mode->crtc_hdisplay;
-> -	}
-> +	dpi_hsa = mode->crtc_hsync_end - mode->crtc_hsync_start;
-> +	dpi_hbp = mode->crtc_htotal - mode->crtc_hsync_end;
-> +	dpi_hfp =  mode->crtc_hsync_start - mode->crtc_hdisplay;
-> +	dpi_hact = mode->crtc_hdisplay;
->  
->  	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
->  
-> @@ -518,8 +510,7 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
->  static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
->  			      struct cdns_dsi_cfg *dsi_cfg,
->  			      struct phy_configure_opts_mipi_dphy *phy_cfg,
-> -			      const struct drm_display_mode *mode,
-> -			      bool mode_valid_check)
-> +			      const struct drm_display_mode *mode)
->  {
->  	struct cdns_dsi_output *output = &dsi->output;
->  	unsigned long long dlane_bps;
-> @@ -549,11 +540,11 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
->  	if (dsi_htotal % lanes)
->  		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
->  
-> -	dpi_hz = (mode_valid_check ? mode->clock : mode->crtc_clock) * 1000;
-> +	dpi_hz = mode->crtc_clock * 1000;
->  	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
->  
->  	/* data rate in bytes/sec is not an integer, refuse the mode. */
-> -	dpi_htotal = mode_valid_check ? mode->htotal : mode->crtc_htotal;
-> +	dpi_htotal = mode->crtc_htotal;
->  	if (do_div(dlane_bps, lanes * dpi_htotal))
->  		return -EINVAL;
->  
-> @@ -569,27 +560,25 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
->  
->  static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
->  			       const struct drm_display_mode *mode,
-> -			       struct cdns_dsi_cfg *dsi_cfg,
-> -			       bool mode_valid_check)
-> +			       struct cdns_dsi_cfg *dsi_cfg)
->  {
->  	struct cdns_dsi_output *output = &dsi->output;
->  	struct phy_configure_opts_mipi_dphy *phy_cfg = &output->phy_opts.mipi_dphy;
->  	unsigned int nlanes = output->dev->lanes;
-> -	int mode_clock = (mode_valid_check ? mode->clock : mode->crtc_clock);
->  	unsigned long req_hs_clk_rate;
->  	int ret;
->  
-> -	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg, mode_valid_check);
-> +	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg);
->  	if (ret)
->  		return ret;
->  
-> -	ret = phy_mipi_dphy_get_default_config(mode_clock * 1000,
-> +	ret = phy_mipi_dphy_get_default_config(mode->crtc_clock * 1000,
->  					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
->  					       nlanes, phy_cfg);
->  	if (ret)
->  		return ret;
->  
-> -	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode, mode_valid_check);
-> +	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode);
->  	if (ret)
->  		return ret;
->  
-> @@ -635,8 +624,7 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
->  	struct cdns_dsi_input *input = bridge_to_cdns_dsi_input(bridge);
->  	struct cdns_dsi *dsi = input_to_dsi(input);
->  	struct cdns_dsi_output *output = &dsi->output;
-> -	struct cdns_dsi_cfg dsi_cfg;
-> -	int bpp, ret;
-> +	int bpp;
->  
->  	/*
->  	 * VFP_DSI should be less than VFP_DPI and VFP_DSI should be at
-> @@ -654,10 +642,6 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
->  	if ((mode->hdisplay * bpp) % 32)
->  		return MODE_H_ILLEGAL;
->  
-> -	ret = cdns_dsi_check_conf(dsi, mode, &dsi_cfg, true);
-> -	if (ret)
-> -		return MODE_BAD;
-> -
->  	return MODE_OK;
->  }
->  
-> @@ -996,7 +980,7 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
->  	adjusted_crtc_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
->  	adjusted_crtc_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
->  
-> -	return cdns_dsi_check_conf(dsi, mode, dsi_cfg, false);
-> +	return cdns_dsi_check_conf(dsi, mode, dsi_cfg);
+The first patch in the series extends the inno usb2 PHY binding in order
+for us to be able to do what the second patch in the series does, which
+is fiddle with some GRF flags in that driver when the PHY is connected
+to a USB Type C port. Without this change, devices on USB-C simply don't
+enumerate at all, as the state machine gets stuck waiting for vbus to go
+low or something along those lines.
 
-With this patch, the driver shifts to using the crtc_* values during the
-check phase, and then, it is brought back to using non crtc_* values in
-the next patch.
+An alternate way to implement this would've been a vendor property in
+the PHY binding which is then checked for in the driver and needs to be
+present in all rockchip inno u2phy instances that happen to be connected
+to a USB Type C connector. This is what downstream does, for example.
 
-Should this patch just drop the cdns_dsi_check_conf() check from
-.mode_valid() instead, and let the next patch phase out the
-mdoe_valid_check parameter as the driver simultaneously shifts to using
-the non crtc_* values throughout?
+Patch 3 was really lovely to run into and needed a good amount of
+sleuthing. I'm still certain this is "the wrong" fix, as it simply keeps
+the PHY on, but it's a fix nonetheless, and one which has precedent,
+namely in the RK3399. If someone is on a hunt to save milliamps in the
+future, they might want to invest the time to come up with a less
+sledgehammer sized solution for this problem, e.g. by disabling power
+management until the controller is fully initialised.
 
+Patch 4 adds the USB related nodes, including associated regulators and
+Type C controllers, to the Sige5 tree.
 
+As it stands, superspeed on the Sige 5's Type C port is still finnicky;
+after a full day of debugging I still can't figure out why superspeed
+only works in one cable orientation. I did a thorough pick through the
+usbdp PHY driver, comparing it with what downstream has, etc. etc.
+Because everything to do with testing Type-C ultimately comes down to
+narrowing down the search space of non-compliant devices and
+non-compliant cables to where you can sort of guess at the bug, it's a
+huge time investment to debug this, and I'd rather submit the series
+as-is right now for review and maybe some additional insight and testing
+from someone with a wider variety of USB Type C cables and devices.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+Nicolas Frattaroli (4):
+      dt-bindings: phy: rockchip,inno-usb2phy: add port property
+      phy: rockchip: inno-usb2: add soft vbusvalid control
+      arm64: dts: rockchip: add phy suspend quirk to usb on rk3576
+      arm64: dts: rockchip: enable USB on Sige5
+
+ .../bindings/phy/rockchip,inno-usb2phy.yaml        |   5 +
+ .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 153 +++++++++++++++++++++
+ arch/arm64/boot/dts/rockchip/rk3576.dtsi           |   2 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c      |  78 ++++++++++-
+ 4 files changed, 234 insertions(+), 4 deletions(-)
+---
+base-commit: 64e9fdfc89a76fed38d8ddeed72d42ec71957ed9
+change-id: 20250328-rk3576-sige5-usb-230102aeeaca
+
+Best regards,
 -- 
-Regards
-Aradhya
+Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
 
 -- 
