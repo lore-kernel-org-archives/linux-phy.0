@@ -4,104 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5731C36010
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Apr 2025 02:33:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7FEC3601E
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Apr 2025 03:25:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iNJW3ZvaGDSivFw5Uhc5GYnp2aL6ndfoBzEMUgmmgFU=; b=G6haJH46GMvgGL
-	gc4oo8OAG2wvsmS4oisPz8UAkYQjE5RmmGoSQYpF7bmUfXgYPNFy1UYyhMwBOmh3VrVgXYPPyD0JF
-	5BBG6wtKYRFo5jqNUX1yo3dIc+f5C21vWtojpK1j7DOow7Byjx4b8Ajqz75dkt9HRTheZ6H0zmCJ3
-	rGI+HtLueRrY7fZh4imow3arpbtuQIt3Rafqc+p2vgwet+rZDcxGgGwO20hiDktdo6LDtA1ALxGb7
-	qcdaKNgz2ZCDq6g4m/gcp06u0+NCiDcZGOdWEx1doYjjrAZvBrMv3yO5d9PTYwFm2Ti7+/oWrMgDc
-	Nc+tbnT9Z2aejtsX647A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NZTgcugSLxWbjDUIfqO5tiZvLjYxpXmQJ82BM8BDTiA=; b=EnGf0Pdt8krCc5
+	ZEVkGJzGpp/SJsqNTI50+j6IuQbuV7T+1q0AM08lAHPYkiONQKqelA2zdY9oyXaID8S339qmYgjD6
+	V8+1nngaq4BC3DNTLQVsVrM8rRcljhq6g2a0zVR1BEHF7CDByDluYt93vSiPCxjS+Q6M9ovpS1n9U
+	0AmTgT38ioJFBBR57NjaUmKkoI0aqdO8ltIpEfEb7g/lpSGYkpdjicaINc4JgQqtsg3I2/2TBCTtV
+	Hsjk3tkvHgEbuFaaBl9az0y6aBldg9iz2dyua5zx19NNWutbQk1UxjXTf4pB0bYsig/3nK0phDZ5i
+	pkuWjPQZzNzy/Eqok2cQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1ymL-00000002Wpo-1o65;
-	Tue, 08 Apr 2025 02:33:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u1zaG-00000002cRM-1Opa;
+	Tue, 08 Apr 2025 03:25:08 +0000
+Received: from mail-dm6nam12on20607.outbound.protection.outlook.com ([2a01:111:f403:2417::607] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1ymI-00000002Wn1-2tT0;
-	Tue, 08 Apr 2025 02:33:32 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5382GPej019664;
-	Tue, 8 Apr 2025 02:32:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	8tkLU/q9k4bzXOFaIPnKaXKZ9vxRAORbRLbV0GT2sj4=; b=SIAaWqhZKCRyXT5b
-	LPOPvCKqjpkCu4mwv6zyomN6MHZkgmlw0so8HPOIgFTvYq9Cf0A5r6JjZrxaZXeX
-	OvSmKVyc0wqaJiV6Ici0LY8qoLGCe9CFuvsFTbncuBBYcapvFSp6QRA+NlhNZBMA
-	YZracMLeBdI3rOiAtyyfMvzSSgrV9iS26Q/4pRmCEW59Rb+JkDisEovKEPAZMAHx
-	8G92RknUmauD2coG9zoNEIUFGGyckGXdiK/JEne37Ai79LhaYsRwU7OyUnl9SneG
-	MYCt2UZ2tEpMAw3SRTBU9KAAYZ8jF8DTs4J/VIldsAvFodejUY9NvJbK+gTiWQSq
-	pD0VDg==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twg3e566-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 08 Apr 2025 02:32:56 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5382WtF9000584
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 8 Apr 2025 02:32:55 GMT
-Received: from [10.110.75.38] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 7 Apr 2025
- 19:32:54 -0700
-Message-ID: <73499d82-e7e5-b88a-41a4-160529efc988@quicinc.com>
-Date: Mon, 7 Apr 2025 19:32:53 -0700
+	id 1u1zL6-00000002arz-3kre
+	for linux-phy@lists.infradead.org;
+	Tue, 08 Apr 2025 03:09:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=WTpnIpcy0OBD8Q71vt+grCKstbv/E3mVhrJ03sKuYQxL2yhXL/sShOxFJ+OEWafNPz88nwfKOA2CFw/GTZO1N5Z/F9uTs4SDLtLJdmFxdQ7hpRtmk/L9ZkDdZoeS1UXNT+2x0fOpmOY6nmI2GcslAxZ2vuVLUI2X3zpAeIcQOGN6hiSGAQoHCh9dMP01K1hrLQuQWtQyA78NEqkgz/G9Wc4IEc9Fzou0NmuqhoegSJKjzuCiIZq5jwgyPoQPCUYw4JQhB2Cm6htHk3Z060sUteGdFbefemAxcj43IbUrQqR6iUp5tIQ6HMVIdVyAcCrxUi4FMffHcRFxD6V8ONo7hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Q6X0IH5qSMC3NspQcC8Jpdc5d7pOaui/yy5XH8Uo7nY=;
+ b=y36skmCcsqbLjUbyobgSRmLS6bE10AJtRYmJe9/x/+Flp8b6Fq0RLYU5o8a8w8SBPrZJlvU/X5JvggvtYkBB6QbOJtS8I+/+VptDEcgTHx/CXgrBD1+BI+4/yHOYt4MgziFZIV/miBptrvqWZMEeMcNrRfy/lxoIwJtytDeorra1GcgF2jo0KJBIwt9sPc7y1D8EkWCRicrikqT5sMoe1JxaHIq5U6olKBsiCnKSyz/aF3kLaiCRGcHYvEmA/fSStJ24/hyaU8S/4MN/sn+NBg2wfotr6jbzJLpEUiTQdtkEwzbTMtFM3ep4voiGzUYaOXdEEXh7Tz1RdWBhUfo7Iw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=gmail.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Q6X0IH5qSMC3NspQcC8Jpdc5d7pOaui/yy5XH8Uo7nY=;
+ b=fywo3f8IcvIP4AX2yWo88InWReGisfk8Up83VgShoUG4xAOWPePC5vopKTCrn33n/kSrVvO6FeEOd1lGTKZbLOzUobh7088u8Q2Qip6g5iiTWNhCDoVCcEDtE1MO3xsk7s0gp0s1F7QoXQzU2lSlA+6DMV8sEFmkKhaq0z4vf7kQyu8VYeej77+KlEqlc8l8IRbGuIzDEl7yVvf773/2+ksjCsn2zFLsec/DrBcmojALHnT206lCjwe+mIwZmTq14JGAeznY5IYIlm4q7fSomoHbarkWJzM2YrsEU6+8fl9qCuwxdyMQaAsstI7snu+t8AXZmMvFAELFxf3eSkWpCw==
+Received: from CH0PR03CA0278.namprd03.prod.outlook.com (2603:10b6:610:e6::13)
+ by LV8PR12MB9112.namprd12.prod.outlook.com (2603:10b6:408:184::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8606.35; Tue, 8 Apr
+ 2025 03:09:23 +0000
+Received: from CH3PEPF00000016.namprd21.prod.outlook.com
+ (2603:10b6:610:e6:cafe::79) by CH0PR03CA0278.outlook.office365.com
+ (2603:10b6:610:e6::13) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8606.35 via Frontend Transport; Tue,
+ 8 Apr 2025 03:09:22 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ CH3PEPF00000016.mail.protection.outlook.com (10.167.244.121) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8655.0 via Frontend Transport; Tue, 8 Apr 2025 03:09:22 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Mon, 7 Apr 2025
+ 20:09:10 -0700
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.14; Mon, 7 Apr
+ 2025 20:09:09 -0700
+Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
+ mail.nvidia.com (10.129.68.9) with Microsoft SMTP Server id 15.2.1544.14 via
+ Frontend Transport; Mon, 7 Apr 2025 20:09:08 -0700
+From: Wayne Chang <waynec@nvidia.com>
+To: <waynec@nvidia.com>, <jonathanh@nvidia.com>, <thierry.reding@gmail.com>,
+	<jckuo@nvidia.com>, <vkoul@kernel.org>, <kishon@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+Subject: [PATCH V3 1/1] phy: tegra: xusb: Use a bitmask for UTMI pad power state tracking
+Date: Tue, 8 Apr 2025 11:09:05 +0800
+Message-ID: <20250408030905.990474-1-waynec@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v3 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
-Content-Language: en-US
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Melody Olvera
-	<quic_molvera@quicinc.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        "Bjorn
- Andersson" <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Catalin Marinas <catalin.marinas@arm.com>,
-        Will Deacon <will@kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
-References: <20250324-sm8750_usb_master-v3-0-13e096dc88fd@quicinc.com>
- <20250324-sm8750_usb_master-v3-6-13e096dc88fd@quicinc.com>
- <kj5dyy7bclmkft7x4hdpzpo7n35cu5nkpksj47phb7jt5lceab@7fb5i6gluqwz>
-From: Wesley Cheng <quic_wcheng@quicinc.com>
-In-Reply-To: <kj5dyy7bclmkft7x4hdpzpo7n35cu5nkpksj47phb7jt5lceab@7fb5i6gluqwz>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 21XJomGnkL8m6ur2pvtTBprBrwIZ3tQc
-X-Proofpoint-ORIG-GUID: 21XJomGnkL8m6ur2pvtTBprBrwIZ3tQc
-X-Authority-Analysis: v=2.4 cv=I/9lRMgg c=1 sm=1 tr=0 ts=67f48ad8 cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=IJHOkPr1J-CqusO2T_sA:9 a=QEXdDO2ut3YA:10
- a=RVmHIydaz68A:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-07_07,2025-04-07_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
- phishscore=0 suspectscore=0 mlxlogscore=999 lowpriorityscore=0 spamscore=0
- clxscore=1015 malwarescore=0 adultscore=0 priorityscore=1501
- impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504080016
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: AnonymousSubmission
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CH3PEPF00000016:EE_|LV8PR12MB9112:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0644fda7-80a9-426c-6861-08dd764ac31c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|1800799024|82310400026|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?TUCrWvAiRDNoHxJEdqRyloHWvMdg+1qSxD+t4hPOrC/Ieb905vu6t0OYYoJ+?=
+ =?us-ascii?Q?fo2FO9QDcaiRzB08i4kDFmkAj6HlmX5b+dwApE+SmhCTp80fllXnJ7oLEiFT?=
+ =?us-ascii?Q?s6sZy1MpV0EUeuIAAWx5fwEYqmQdRLA//EfCmpvhJrQ0b9T9cXSSYlcQPh11?=
+ =?us-ascii?Q?q4FPDpKU/QtxFXjYd3Mi7kkmyVlpJrD4Hav7kfLRYUgzAoMLiPDyM4psF0el?=
+ =?us-ascii?Q?M15VXT0MWCUW3X6qsBOmJjMRn0kq6LfAWO0OpzIs4hBoYYThSAEiN+NRl/4N?=
+ =?us-ascii?Q?wC0R2HNGEYjR4pWYR9anmFay/3pIvjGWs29SWIyggwd3JRx7HtENYl/4fcbN?=
+ =?us-ascii?Q?uOlVrNPR9vimw/EimtCI0rN3puuko/Z3PdQGekyBnEm5BQ1zHRFp63WBjwqI?=
+ =?us-ascii?Q?aKVRqrLHL0ntXgi9p0Z0QGQTCUyGAxXiE3xdMCi/EuwhFFQPbXkitgjnW7T5?=
+ =?us-ascii?Q?eOh1YfE51kec5rmqTG02kHH3TvzngyTXoNu5iyaH3fw6PWdbCFTvUqQHpM2z?=
+ =?us-ascii?Q?CEkkdpXme218BArfuzfQECRam/QRkc58W7a9R9EjQJZmZRtop7b7COZWe+v1?=
+ =?us-ascii?Q?0jM3OJitK4ROe8tlOJQHiBNrz0a1KJwFloZpisrMgZpkZ/TswrJCSMIJaDI5?=
+ =?us-ascii?Q?4a0sWQnIb570DtEQlqkxIHB5LHPb4nIDi0xmb27Jr+1As/5LB3tqKTXeYFoS?=
+ =?us-ascii?Q?7a/P8XXAE/vesCbadZeixHtzz0ihlsx5f9a0gWQbEb9tSNkSXFjcdbAcq7iA?=
+ =?us-ascii?Q?6MKk0QfXxQtGOyYdz3CdSqgXPJ3E7ulfPI2ITDjYZfjU4dAY7PAo/kQASKGe?=
+ =?us-ascii?Q?DLNcY9mQSxIJIVz0UgiENsk5m0tzSunWulZ/CQUkjH3OsITZZr8fEeUyQ0da?=
+ =?us-ascii?Q?7WTYVotGlpePiO5bDb5i5k4q7WenA39OCCtlp22coD3gLOIIROzw0LgyfeQG?=
+ =?us-ascii?Q?KRm3WzwTTcIYCBrhsHL0U4qdbUvY0todCXfefrB58fJbajqY4msF6DiL2EKU?=
+ =?us-ascii?Q?3ErmCla7OVUVbT7DVGLShoRtOsV1Y5Aath7g8fkmJ/ZopeVY5k3WgvV/MW4M?=
+ =?us-ascii?Q?BPzdafbhQUtIQszRLvsQv/9nE3J8Fzp5UTrO1qu9Vst2MamL2wXHuh7Os5B4?=
+ =?us-ascii?Q?K9B8y1STrf9ODngMdHNSjy7o3irimtfRM+X1BQYCnybbPe0nMHwD7sTKPVeL?=
+ =?us-ascii?Q?pAEaDOz74UjNyC51QyNd9E1roHUNDeM9zI9/+xxKs82r0fHtfWK43HA5b6OQ?=
+ =?us-ascii?Q?0mfh9Of/WLDRmeSd0yYEMb4VqTneehglGnOQNniFE3KwfR2KEAX9x4KxQJUV?=
+ =?us-ascii?Q?OHDdeAlIa5zmY0kack9cst8pbvNJfS1u9GCMirVHPPOXn1c7GfV5Bn6vmUMy?=
+ =?us-ascii?Q?HVIKTOV5W8aJh61czTneFo27pdlz1ajXCKNmGOSYXU23d6pVQ6YhPQNHO07B?=
+ =?us-ascii?Q?ds4sF1uXLutuOcANPkWGwOrkQP8gUD8psUjkP/CQUANHFCBnJ4sZLt2UWygQ?=
+ =?us-ascii?Q?gKSYPDGl/3uw7m8=3D?=
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700013)(1800799024)(82310400026)(376014);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Apr 2025 03:09:22.7973
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0644fda7-80a9-426c-6861-08dd764ac31c
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CH3PEPF00000016.namprd21.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR12MB9112
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_193330_875460_F2D8E0C7 
-X-CRM114-Status: GOOD (  20.50  )
+X-CRM114-CacheID: sfid-20250407_200928_935178_9C9B01B9 
+X-CRM114-Status: GOOD (  17.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,155 +144,195 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+The current implementation uses bias_pad_enable as a reference count to
+manage the shared bias pad for all UTMI PHYs. However, during system
+suspension with connected USB devices, multiple power-down requests for
+the UTMI pad result in a mismatch in the reference count, which in turn
+produces warnings such as:
 
-On 3/26/2025 7:33 AM, Dmitry Baryshkov wrote:
-> On Mon, Mar 24, 2025 at 01:18:34PM -0700, Melody Olvera wrote:
->> From: Wesley Cheng <quic_wcheng@quicinc.com>
->>
->> SM8750 utilizes an eUSB2 PHY from M31.  Add the initialization
->> sequences to bring it out of reset and into an operational state.  This
->> differs to the M31 USB driver, in that the M31 eUSB2 driver will
->> require a connection to an eUSB2 repeater.  This PHY driver will handle
->> the initialization of the associated eUSB2 repeater when required.
->>
->> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
->> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
->> ---
->>   drivers/phy/qualcomm/Kconfig              |  10 +
->>   drivers/phy/qualcomm/Makefile             |   1 +
->>   drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 297 ++++++++++++++++++++++++++++++
->>   3 files changed, 308 insertions(+)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
->> new file mode 100644
->> index 0000000000000000000000000000000000000000..b18aab968122683e2e87287a4b570321d376870a
->> --- /dev/null
->> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
->> @@ -0,0 +1,297 @@
->> +// SPDX-License-Identifier: GPL-2.0+
-> 
-> GPL-2.0-only
-> 
+[  237.762967] WARNING: CPU: 10 PID: 1618 at tegra186_utmi_pad_power_down+0x160/0x170
+[  237.763103] Call trace:
+[  237.763104]  tegra186_utmi_pad_power_down+0x160/0x170
+[  237.763107]  tegra186_utmi_phy_power_off+0x10/0x30
+[  237.763110]  phy_power_off+0x48/0x100
+[  237.763113]  tegra_xusb_enter_elpg+0x204/0x500
+[  237.763119]  tegra_xusb_suspend+0x48/0x140
+[  237.763122]  platform_pm_suspend+0x2c/0xb0
+[  237.763125]  dpm_run_callback.isra.0+0x20/0xa0
+[  237.763127]  __device_suspend+0x118/0x330
+[  237.763129]  dpm_suspend+0x10c/0x1f0
+[  237.763130]  dpm_suspend_start+0x88/0xb0
+[  237.763132]  suspend_devices_and_enter+0x120/0x500
+[  237.763135]  pm_suspend+0x1ec/0x270
 
-Will fix.
+The root cause was traced back to the dynamic power-down changes
+introduced in commit a30951d31b25 ("xhci: tegra: USB2 pad power controls"),
+where the UTMI pad was being powered down without verifying its current
+state. This unbalanced behavior led to discrepancies in the reference
+count.
 
->> +/*
->> + * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
->> + */
->> +
->> +#include <linux/clk.h>
->> +#include <linux/delay.h>
->> +#include <linux/err.h>
->> +#include <linux/io.h>
->> +#include <linux/kernel.h>
->> +#include <linux/module.h>
->> +#include <linux/of.h>
->> +#include <linux/phy/phy.h>
->> +#include <linux/platform_device.h>
->> +#include <linux/reset.h>
->> +#include <linux/slab.h>
->> +
->> +#include <linux/regulator/consumer.h>
->> +
->> +#define USB_PHY_UTMI_CTRL0		(0x3c)
->> +
->> +#define USB_PHY_UTMI_CTRL5		(0x50)
->> +
->> +#define USB_PHY_HS_PHY_CTRL_COMMON0	(0x54)
->> +#define FSEL				GENMASK(6, 4)
->> +#define FSEL_38_4_MHZ_VAL		(0x6)
->> +
->> +#define USB_PHY_HS_PHY_CTRL2		(0x64)
->> +
->> +#define USB_PHY_CFG0			(0x94)
->> +#define USB_PHY_CFG1			(0x154)
->> +
->> +#define USB_PHY_FSEL_SEL		(0xb8)
->> +
->> +#define USB_PHY_XCFGI_39_32		(0x16c)
->> +#define USB_PHY_XCFGI_71_64		(0x17c)
->> +#define USB_PHY_XCFGI_31_24		(0x168)
->> +#define USB_PHY_XCFGI_7_0		(0x15c)
->> +
->> +#define M31_EUSB_PHY_INIT_CFG(o, b, v)	\
->> +{				\
->> +	.off = o,		\
->> +	.mask = b,		\
->> +	.val = v,		\
->> +}
->> +
->> +struct m31_phy_tbl_entry {
->> +	u32 off;
->> +	u32 mask;
->> +	u32 val;
->> +};
->> +
->> +struct m31_eusb2_priv_data {
->> +	const struct m31_phy_tbl_entry	*setup_seq;
->> +	unsigned int			setup_seq_nregs;
->> +	const struct m31_phy_tbl_entry	*override_seq;
->> +	unsigned int			override_seq_nregs;
->> +	const struct m31_phy_tbl_entry	*reset_seq;
->> +	unsigned int			reset_seq_nregs;
->> +	unsigned int			fsel;
->> +};
->> +
->> +static const struct m31_phy_tbl_entry m31_eusb2_setup_tbl[] = {
->> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, BIT(1), 1),
->> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, BIT(1), 1),
->> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, BIT(0), 1),
->> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_FSEL_SEL, BIT(0), 1),
-> 
-> I suppose, we can not expect to have #defines for all used bitfields?
-> 
+To rectify this issue, this patch replaces the single reference counter
+with a bitmask, renamed to utmi_pad_enabled. Each bit in the mask
+corresponds to one of the four USB2 PHYs, allowing us to track each pad's
+enablement status individually.
 
-Added the bitfields as requested.
+With this change:
+  - The bias pad is powered on only when the mask is clear.
+  - Each UTMI pad is powered on or down based on its corresponding bit
+    in the mask, preventing redundant operations.
+  - The overall power state of the shared bias pad is maintained
+    correctly during suspend/resume cycles.
 
->> +};
->> +
-> 
-> [...]
-> 
->> +
->> +static const struct phy_ops m31eusb2_phy_gen_ops = {
->> +	.init	= m31eusb2_phy_init,
->> +	.exit	= m31eusb2_phy_exit,
-> 
-> I think, you have a missing .set_mode callback here.
-> 
+The mutex used to prevent race conditions during UTMI pad enable/disable
+operations has been moved from the tegra186_utmi_bias_pad_power_on/off
+functions to the parent functions tegra186_utmi_pad_power_on/down. This
+change ensures that there are no race conditions when updating the bitmask.
 
-Added this to properly set the mode on the repeater as well.
+Cc: stable@vger.kernel.org
+Fixes: a30951d31b25 ("xhci: tegra: USB2 pad power controls")
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+---
+V1 -> V2: holding the padctl->lock to protect shared bitmask
+V2 -> V3: updating the commit message with the mutex changes
+ drivers/phy/tegra/xusb-tegra186.c | 44 +++++++++++++++++++------------
+ 1 file changed, 27 insertions(+), 17 deletions(-)
 
->> +	.owner	= THIS_MODULE,
->> +};
->> +
->> +static int m31eusb2_phy_probe(struct platform_device *pdev)
->> +{
->> +	struct phy_provider *phy_provider;
->> +	const struct m31_eusb2_priv_data *data;
->> +	struct device *dev = &pdev->dev;
->> +	struct m31eusb2_phy *phy;
->> +	int ret;
->> +
->> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
->> +	if (!phy)
->> +		return -ENOMEM;
->> +
->> +	data = of_device_get_match_data(dev);
-> 
-> device_get_match_data()
-> 
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index fae6242aa730..cc7b8a6a999f 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -237,6 +237,8 @@
+ #define   DATA0_VAL_PD				BIT(1)
+ #define   USE_XUSB_AO				BIT(4)
+ 
++#define TEGRA_UTMI_PAD_MAX 4
++
+ #define TEGRA186_LANE(_name, _offset, _shift, _mask, _type)		\
+ 	{								\
+ 		.name = _name,						\
+@@ -269,7 +271,7 @@ struct tegra186_xusb_padctl {
+ 
+ 	/* UTMI bias and tracking */
+ 	struct clk *usb2_trk_clk;
+-	unsigned int bias_pad_enable;
++	DECLARE_BITMAP(utmi_pad_enabled, TEGRA_UTMI_PAD_MAX);
+ 
+ 	/* padctl context */
+ 	struct tegra186_xusb_padctl_context context;
+@@ -603,12 +605,8 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
+ 	u32 value;
+ 	int err;
+ 
+-	mutex_lock(&padctl->lock);
+-
+-	if (priv->bias_pad_enable++ > 0) {
+-		mutex_unlock(&padctl->lock);
++	if (!bitmap_empty(priv->utmi_pad_enabled, TEGRA_UTMI_PAD_MAX))
+ 		return;
+-	}
+ 
+ 	err = clk_prepare_enable(priv->usb2_trk_clk);
+ 	if (err < 0)
+@@ -667,17 +665,8 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
+ 	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
+ 	u32 value;
+ 
+-	mutex_lock(&padctl->lock);
+-
+-	if (WARN_ON(priv->bias_pad_enable == 0)) {
+-		mutex_unlock(&padctl->lock);
+-		return;
+-	}
+-
+-	if (--priv->bias_pad_enable > 0) {
+-		mutex_unlock(&padctl->lock);
++	if (!bitmap_empty(priv->utmi_pad_enabled, TEGRA_UTMI_PAD_MAX))
+ 		return;
+-	}
+ 
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
+ 	value |= USB2_PD_TRK;
+@@ -690,13 +679,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
+ 		clk_disable_unprepare(priv->usb2_trk_clk);
+ 	}
+ 
+-	mutex_unlock(&padctl->lock);
+ }
+ 
+ static void tegra186_utmi_pad_power_on(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
+ 	struct tegra_xusb_usb2_port *port;
+ 	struct device *dev = padctl->dev;
+ 	unsigned int index = lane->index;
+@@ -705,9 +694,16 @@ static void tegra186_utmi_pad_power_on(struct phy *phy)
+ 	if (!phy)
+ 		return;
+ 
++	mutex_lock(&padctl->lock);
++	if (test_bit(index, priv->utmi_pad_enabled)) {
++		mutex_unlock(&padctl->lock);
++		return;
++	}
++
+ 	port = tegra_xusb_find_usb2_port(padctl, index);
+ 	if (!port) {
+ 		dev_err(dev, "no port found for USB2 lane %u\n", index);
++		mutex_unlock(&padctl->lock);
+ 		return;
+ 	}
+ 
+@@ -724,18 +720,28 @@ static void tegra186_utmi_pad_power_on(struct phy *phy)
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 	value &= ~USB2_OTG_PD_DR;
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
++
++	set_bit(index, priv->utmi_pad_enabled);
++	mutex_unlock(&padctl->lock);
+ }
+ 
+ static void tegra186_utmi_pad_power_down(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
++	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
+ 	unsigned int index = lane->index;
+ 	u32 value;
+ 
+ 	if (!phy)
+ 		return;
+ 
++	mutex_lock(&padctl->lock);
++	if (!test_bit(index, priv->utmi_pad_enabled)) {
++		mutex_unlock(&padctl->lock);
++		return;
++	}
++
+ 	dev_dbg(padctl->dev, "power down UTMI pad %u\n", index);
+ 
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
+@@ -748,7 +754,11 @@ static void tegra186_utmi_pad_power_down(struct phy *phy)
+ 
+ 	udelay(2);
+ 
++	clear_bit(index, priv->utmi_pad_enabled);
++
+ 	tegra186_utmi_bias_pad_power_off(padctl);
++
++	mutex_unlock(&padctl->lock);
+ }
+ 
+ static int tegra186_xusb_padctl_vbus_override(struct tegra_xusb_padctl *padctl,
+-- 
+2.25.1
 
-Done.
-
-Thanks
-Wesley Cheng
 
 -- 
 linux-phy mailing list
