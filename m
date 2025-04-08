@@ -4,135 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7FEC3601E
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Apr 2025 03:25:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 995C3C369A6
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Apr 2025 06:12:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NZTgcugSLxWbjDUIfqO5tiZvLjYxpXmQJ82BM8BDTiA=; b=EnGf0Pdt8krCc5
-	ZEVkGJzGpp/SJsqNTI50+j6IuQbuV7T+1q0AM08lAHPYkiONQKqelA2zdY9oyXaID8S339qmYgjD6
-	V8+1nngaq4BC3DNTLQVsVrM8rRcljhq6g2a0zVR1BEHF7CDByDluYt93vSiPCxjS+Q6M9ovpS1n9U
-	0AmTgT38ioJFBBR57NjaUmKkoI0aqdO8ltIpEfEb7g/lpSGYkpdjicaINc4JgQqtsg3I2/2TBCTtV
-	Hsjk3tkvHgEbuFaaBl9az0y6aBldg9iz2dyua5zx19NNWutbQk1UxjXTf4pB0bYsig/3nK0phDZ5i
-	pkuWjPQZzNzy/Eqok2cQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eogNij7OW3ZKakT4khNbfrMJ5B0s54g7kGMYnCGLpN0=; b=3dGQl8Ivpmk5nH
+	zhOoQBN3JDfA/Y0+5aaAasf/XpNuIaqZNaEjlfpLw+gm0Mcx9kdy8vucff+ZJyac5KbSzQd6tLm6x
+	drgJrHb9OTTHW+Uo8/tlj6Cd3jOUpEbOccL4AYk/785TfgRii2HPSHvzmoNtPnfWwbOha9TtKpWIx
+	4jhVHqq9OBeRG0O8kgjqshVs+5Co8eHR8I+aUgksqkp6/jF1qIGeR7SV/Q8SuQ2gZhqCcBUFDfVSN
+	6JoibI1rfk5i2czdyOh95FfYjq+RDEoqH9ltFjZybjePuL0l3qLhy74j8DciScFV1hks03nsD/QPt
+	181Iju039WUtTfzp/M7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1zaG-00000002cRM-1Opa;
-	Tue, 08 Apr 2025 03:25:08 +0000
-Received: from mail-dm6nam12on20607.outbound.protection.outlook.com ([2a01:111:f403:2417::607] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1u22C1-00000002rvr-0g1C;
+	Tue, 08 Apr 2025 06:12:17 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1zL6-00000002arz-3kre
+	id 1u229U-00000002rKV-3kHo
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Apr 2025 03:09:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WTpnIpcy0OBD8Q71vt+grCKstbv/E3mVhrJ03sKuYQxL2yhXL/sShOxFJ+OEWafNPz88nwfKOA2CFw/GTZO1N5Z/F9uTs4SDLtLJdmFxdQ7hpRtmk/L9ZkDdZoeS1UXNT+2x0fOpmOY6nmI2GcslAxZ2vuVLUI2X3zpAeIcQOGN6hiSGAQoHCh9dMP01K1hrLQuQWtQyA78NEqkgz/G9Wc4IEc9Fzou0NmuqhoegSJKjzuCiIZq5jwgyPoQPCUYw4JQhB2Cm6htHk3Z060sUteGdFbefemAxcj43IbUrQqR6iUp5tIQ6HMVIdVyAcCrxUi4FMffHcRFxD6V8ONo7hw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Q6X0IH5qSMC3NspQcC8Jpdc5d7pOaui/yy5XH8Uo7nY=;
- b=y36skmCcsqbLjUbyobgSRmLS6bE10AJtRYmJe9/x/+Flp8b6Fq0RLYU5o8a8w8SBPrZJlvU/X5JvggvtYkBB6QbOJtS8I+/+VptDEcgTHx/CXgrBD1+BI+4/yHOYt4MgziFZIV/miBptrvqWZMEeMcNrRfy/lxoIwJtytDeorra1GcgF2jo0KJBIwt9sPc7y1D8EkWCRicrikqT5sMoe1JxaHIq5U6olKBsiCnKSyz/aF3kLaiCRGcHYvEmA/fSStJ24/hyaU8S/4MN/sn+NBg2wfotr6jbzJLpEUiTQdtkEwzbTMtFM3ep4voiGzUYaOXdEEXh7Tz1RdWBhUfo7Iw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.161) smtp.rcpttodomain=gmail.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Q6X0IH5qSMC3NspQcC8Jpdc5d7pOaui/yy5XH8Uo7nY=;
- b=fywo3f8IcvIP4AX2yWo88InWReGisfk8Up83VgShoUG4xAOWPePC5vopKTCrn33n/kSrVvO6FeEOd1lGTKZbLOzUobh7088u8Q2Qip6g5iiTWNhCDoVCcEDtE1MO3xsk7s0gp0s1F7QoXQzU2lSlA+6DMV8sEFmkKhaq0z4vf7kQyu8VYeej77+KlEqlc8l8IRbGuIzDEl7yVvf773/2+ksjCsn2zFLsec/DrBcmojALHnT206lCjwe+mIwZmTq14JGAeznY5IYIlm4q7fSomoHbarkWJzM2YrsEU6+8fl9qCuwxdyMQaAsstI7snu+t8AXZmMvFAELFxf3eSkWpCw==
-Received: from CH0PR03CA0278.namprd03.prod.outlook.com (2603:10b6:610:e6::13)
- by LV8PR12MB9112.namprd12.prod.outlook.com (2603:10b6:408:184::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8606.35; Tue, 8 Apr
- 2025 03:09:23 +0000
-Received: from CH3PEPF00000016.namprd21.prod.outlook.com
- (2603:10b6:610:e6:cafe::79) by CH0PR03CA0278.outlook.office365.com
- (2603:10b6:610:e6::13) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.8606.35 via Frontend Transport; Tue,
- 8 Apr 2025 03:09:22 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.161) by
- CH3PEPF00000016.mail.protection.outlook.com (10.167.244.121) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.8655.0 via Frontend Transport; Tue, 8 Apr 2025 03:09:22 +0000
-Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
- (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Mon, 7 Apr 2025
- 20:09:10 -0700
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail202.nvidia.com
- (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.14; Mon, 7 Apr
- 2025 20:09:09 -0700
-Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
- mail.nvidia.com (10.129.68.9) with Microsoft SMTP Server id 15.2.1544.14 via
- Frontend Transport; Mon, 7 Apr 2025 20:09:08 -0700
-From: Wayne Chang <waynec@nvidia.com>
-To: <waynec@nvidia.com>, <jonathanh@nvidia.com>, <thierry.reding@gmail.com>,
-	<jckuo@nvidia.com>, <vkoul@kernel.org>, <kishon@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
-Subject: [PATCH V3 1/1] phy: tegra: xusb: Use a bitmask for UTMI pad power state tracking
-Date: Tue, 8 Apr 2025 11:09:05 +0800
-Message-ID: <20250408030905.990474-1-waynec@nvidia.com>
-X-Mailer: git-send-email 2.25.1
+	Tue, 08 Apr 2025 06:09:42 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 400BD6EC;
+	Tue,  8 Apr 2025 08:07:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1744092461;
+	bh=vhXBokbuWGYspCF6AqeNVcQchcJ+M8f9eehf7OIPPDc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=juup8+LdOCXqEMyUuGoBzG9MWQsEPRUhHBAm+XfxOxn/chkqQWDXRBKRNgM/Th/KB
+	 5U/sxSPIt2OBqHzDhjO5Z/u8D1y1/RCZQvw4/9fVIMP44IKZ/TmbeSoaBnNeXEknEY
+	 bUioxqrhH68EYYYIZz+iuQ6lMAI+C//8ozA+93wM=
+Message-ID: <daa8c462-e2c7-47fa-9ccd-b72dc3c6b9cc@ideasonboard.com>
+Date: Tue, 8 Apr 2025 09:09:34 +0300
 MIME-Version: 1.0
-X-NVConfidentiality: public
-X-NV-OnPremToCloud: AnonymousSubmission
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CH3PEPF00000016:EE_|LV8PR12MB9112:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0644fda7-80a9-426c-6861-08dd764ac31c
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|1800799024|82310400026|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?TUCrWvAiRDNoHxJEdqRyloHWvMdg+1qSxD+t4hPOrC/Ieb905vu6t0OYYoJ+?=
- =?us-ascii?Q?fo2FO9QDcaiRzB08i4kDFmkAj6HlmX5b+dwApE+SmhCTp80fllXnJ7oLEiFT?=
- =?us-ascii?Q?s6sZy1MpV0EUeuIAAWx5fwEYqmQdRLA//EfCmpvhJrQ0b9T9cXSSYlcQPh11?=
- =?us-ascii?Q?q4FPDpKU/QtxFXjYd3Mi7kkmyVlpJrD4Hav7kfLRYUgzAoMLiPDyM4psF0el?=
- =?us-ascii?Q?M15VXT0MWCUW3X6qsBOmJjMRn0kq6LfAWO0OpzIs4hBoYYThSAEiN+NRl/4N?=
- =?us-ascii?Q?wC0R2HNGEYjR4pWYR9anmFay/3pIvjGWs29SWIyggwd3JRx7HtENYl/4fcbN?=
- =?us-ascii?Q?uOlVrNPR9vimw/EimtCI0rN3puuko/Z3PdQGekyBnEm5BQ1zHRFp63WBjwqI?=
- =?us-ascii?Q?aKVRqrLHL0ntXgi9p0Z0QGQTCUyGAxXiE3xdMCi/EuwhFFQPbXkitgjnW7T5?=
- =?us-ascii?Q?eOh1YfE51kec5rmqTG02kHH3TvzngyTXoNu5iyaH3fw6PWdbCFTvUqQHpM2z?=
- =?us-ascii?Q?CEkkdpXme218BArfuzfQECRam/QRkc58W7a9R9EjQJZmZRtop7b7COZWe+v1?=
- =?us-ascii?Q?0jM3OJitK4ROe8tlOJQHiBNrz0a1KJwFloZpisrMgZpkZ/TswrJCSMIJaDI5?=
- =?us-ascii?Q?4a0sWQnIb570DtEQlqkxIHB5LHPb4nIDi0xmb27Jr+1As/5LB3tqKTXeYFoS?=
- =?us-ascii?Q?7a/P8XXAE/vesCbadZeixHtzz0ihlsx5f9a0gWQbEb9tSNkSXFjcdbAcq7iA?=
- =?us-ascii?Q?6MKk0QfXxQtGOyYdz3CdSqgXPJ3E7ulfPI2ITDjYZfjU4dAY7PAo/kQASKGe?=
- =?us-ascii?Q?DLNcY9mQSxIJIVz0UgiENsk5m0tzSunWulZ/CQUkjH3OsITZZr8fEeUyQ0da?=
- =?us-ascii?Q?7WTYVotGlpePiO5bDb5i5k4q7WenA39OCCtlp22coD3gLOIIROzw0LgyfeQG?=
- =?us-ascii?Q?KRm3WzwTTcIYCBrhsHL0U4qdbUvY0todCXfefrB58fJbajqY4msF6DiL2EKU?=
- =?us-ascii?Q?3ErmCla7OVUVbT7DVGLShoRtOsV1Y5Aath7g8fkmJ/ZopeVY5k3WgvV/MW4M?=
- =?us-ascii?Q?BPzdafbhQUtIQszRLvsQv/9nE3J8Fzp5UTrO1qu9Vst2MamL2wXHuh7Os5B4?=
- =?us-ascii?Q?K9B8y1STrf9ODngMdHNSjy7o3irimtfRM+X1BQYCnybbPe0nMHwD7sTKPVeL?=
- =?us-ascii?Q?pAEaDOz74UjNyC51QyNd9E1roHUNDeM9zI9/+xxKs82r0fHtfWK43HA5b6OQ?=
- =?us-ascii?Q?0mfh9Of/WLDRmeSd0yYEMb4VqTneehglGnOQNniFE3KwfR2KEAX9x4KxQJUV?=
- =?us-ascii?Q?OHDdeAlIa5zmY0kack9cst8pbvNJfS1u9GCMirVHPPOXn1c7GfV5Bn6vmUMy?=
- =?us-ascii?Q?HVIKTOV5W8aJh61czTneFo27pdlz1ajXCKNmGOSYXU23d6pVQ6YhPQNHO07B?=
- =?us-ascii?Q?ds4sF1uXLutuOcANPkWGwOrkQP8gUD8psUjkP/CQUANHFCBnJ4sZLt2UWygQ?=
- =?us-ascii?Q?gKSYPDGl/3uw7m8=3D?=
-X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700013)(1800799024)(82310400026)(376014);DIR:OUT;SFP:1101;
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Apr 2025 03:09:22.7973
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0644fda7-80a9-426c-6861-08dd764ac31c
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: CH3PEPF00000016.namprd21.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR12MB9112
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 12/18] drm/bridge: cdns-dsi: Drop checks that shouldn't
+ be in .mode_valid()
+To: Aradhya Bhatia <aradhya.bhatia@linux.dev>
+Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
+ Devarsh Thakkar <devarsht@ti.com>, Jyri Sarha <jyri.sarha@iki.fi>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>
+References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
+ <20250402-cdns-dsi-impro-v2-12-4a093eaa5e27@ideasonboard.com>
+ <46dc6803-47f0-4434-9794-08307604e450@linux.dev>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ xsFNBE6ms0cBEACyizowecZqXfMZtnBniOieTuFdErHAUyxVgtmr0f5ZfIi9Z4l+uUN4Zdw2
+ wCEZjx3o0Z34diXBaMRJ3rAk9yB90UJAnLtb8A97Oq64DskLF81GCYB2P1i0qrG7UjpASgCA
+ Ru0lVvxsWyIwSfoYoLrazbT1wkWRs8YBkkXQFfL7Mn3ZMoGPcpfwYH9O7bV1NslbmyJzRCMO
+ eYV258gjCcwYlrkyIratlHCek4GrwV8Z9NQcjD5iLzrONjfafrWPwj6yn2RlL0mQEwt1lOvn
+ LnI7QRtB3zxA3yB+FLsT1hx0va6xCHpX3QO2gBsyHCyVafFMrg3c/7IIWkDLngJxFgz6DLiA
+ G4ld1QK/jsYqfP2GIMH1mFdjY+iagG4DqOsjip479HCWAptpNxSOCL6z3qxCU8MCz8iNOtZk
+ DYXQWVscM5qgYSn+fmMM2qN+eoWlnCGVURZZLDjg387S2E1jT/dNTOsM/IqQj+ZROUZuRcF7
+ 0RTtuU5q1HnbRNwy+23xeoSGuwmLQ2UsUk7Q5CnrjYfiPo3wHze8avK95JBoSd+WIRmV3uoO
+ rXCoYOIRlDhg9XJTrbnQ3Ot5zOa0Y9c4IpyAlut6mDtxtKXr4+8OzjSVFww7tIwadTK3wDQv
+ Bus4jxHjS6dz1g2ypT65qnHen6mUUH63lhzewqO9peAHJ0SLrQARAQABzTBUb21pIFZhbGtl
+ aW5lbiA8dG9taS52YWxrZWluZW5AaWRlYXNvbmJvYXJkLmNvbT7CwY4EEwEIADgWIQTEOAw+
+ ll79gQef86f6PaqMvJYe9QUCX/HruAIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRD6
+ PaqMvJYe9WmFD/99NGoD5lBJhlFDHMZvO+Op8vCwnIRZdTsyrtGl72rVh9xRfcSgYPZUvBuT
+ VDxE53mY9HaZyu1eGMccYRBaTLJSfCXl/g317CrMNdY0k40b9YeIX10feiRYEWoDIPQ3tMmA
+ 0nHDygzcnuPiPT68JYZ6tUOvAt7r6OX/litM+m2/E9mtp8xCoWOo/kYO4mOAIoMNvLB8vufi
+ uBB4e/AvAjtny4ScuNV5c5q8MkfNIiOyag9QCiQ/JfoAqzXRjVb4VZG72AKaElwipiKCWEcU
+ R4+Bu5Qbaxj7Cd36M/bI54OrbWWETJkVVSV1i0tghCd6HHyquTdFl7wYcz6cL1hn/6byVnD+
+ sR3BLvSBHYp8WSwv0TCuf6tLiNgHAO1hWiQ1pOoXyMEsxZlgPXT+wb4dbNVunckwqFjGxRbl
+ Rz7apFT/ZRwbazEzEzNyrBOfB55xdipG/2+SmFn0oMFqFOBEszXLQVslh64lI0CMJm2OYYe3
+ PxHqYaztyeXsx13Bfnq9+bUynAQ4uW1P5DJ3OIRZWKmbQd/Me3Fq6TU57LsvwRgE0Le9PFQs
+ dcP2071rMTpqTUteEgODJS4VDf4lXJfY91u32BJkiqM7/62Cqatcz5UWWHq5xeF03MIUTqdE
+ qHWk3RJEoWHWQRzQfcx6Fn2fDAUKhAddvoopfcjAHfpAWJ+ENc7BTQROprNHARAAx0aat8GU
+ hsusCLc4MIxOQwidecCTRc9Dz/7U2goUwhw2O5j9TPqLtp57VITmHILnvZf6q3QAho2QMQyE
+ DDvHubrdtEoqaaSKxKkFie1uhWNNvXPhwkKLYieyL9m2JdU+b88HaDnpzdyTTR4uH7wk0bBa
+ KbTSgIFDDe5lXInypewPO30TmYNkFSexnnM3n1PBCqiJXsJahE4ZQ+WnV5FbPUj8T2zXS2xk
+ 0LZ0+DwKmZ0ZDovvdEWRWrz3UzJ8DLHb7blPpGhmqj3ANXQXC7mb9qJ6J/VSl61GbxIO2Dwb
+ xPNkHk8fwnxlUBCOyBti/uD2uSTgKHNdabhVm2dgFNVuS1y3bBHbI/qjC3J7rWE0WiaHWEqy
+ UVPk8rsph4rqITsj2RiY70vEW0SKePrChvET7D8P1UPqmveBNNtSS7In+DdZ5kUqLV7rJnM9
+ /4cwy+uZUt8cuCZlcA5u8IsBCNJudxEqBG10GHg1B6h1RZIz9Q9XfiBdaqa5+CjyFs8ua01c
+ 9HmyfkuhXG2OLjfQuK+Ygd56mV3lq0aFdwbaX16DG22c6flkkBSjyWXYepFtHz9KsBS0DaZb
+ 4IkLmZwEXpZcIOQjQ71fqlpiXkXSIaQ6YMEs8WjBbpP81h7QxWIfWtp+VnwNGc6nq5IQDESH
+ mvQcsFS7d3eGVI6eyjCFdcAO8eMAEQEAAcLBXwQYAQIACQUCTqazRwIbDAAKCRD6PaqMvJYe
+ 9fA7EACS6exUedsBKmt4pT7nqXBcRsqm6YzT6DeCM8PWMTeaVGHiR4TnNFiT3otD5UpYQI7S
+ suYxoTdHrrrBzdlKe5rUWpzoZkVK6p0s9OIvGzLT0lrb0HC9iNDWT3JgpYDnk4Z2mFi6tTbq
+ xKMtpVFRA6FjviGDRsfkfoURZI51nf2RSAk/A8BEDDZ7lgJHskYoklSpwyrXhkp9FHGMaYII
+ m9EKuUTX9JPDG2FTthCBrdsgWYPdJQvM+zscq09vFMQ9Fykbx5N8z/oFEUy3ACyPqW2oyfvU
+ CH5WDpWBG0s5BALp1gBJPytIAd/pY/5ZdNoi0Cx3+Z7jaBFEyYJdWy1hGddpkgnMjyOfLI7B
+ CFrdecTZbR5upjNSDvQ7RG85SnpYJTIin+SAUazAeA2nS6gTZzumgtdw8XmVXZwdBfF+ICof
+ 92UkbYcYNbzWO/GHgsNT1WnM4sa9lwCSWH8Fw1o/3bX1VVPEsnESOfxkNdu+gAF5S6+I6n3a
+ ueeIlwJl5CpT5l8RpoZXEOVtXYn8zzOJ7oGZYINRV9Pf8qKGLf3Dft7zKBP832I3PQjeok7F
+ yjt+9S+KgSFSHP3Pa4E7lsSdWhSlHYNdG/czhoUkSCN09C0rEK93wxACx3vtxPLjXu6RptBw
+ 3dRq7n+mQChEB1am0BueV1JZaBboIL0AGlSJkm23kw==
+In-Reply-To: <46dc6803-47f0-4434-9794-08307604e450@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_200928_935178_9C9B01B9 
-X-CRM114-Status: GOOD (  17.15  )
+X-CRM114-CacheID: sfid-20250407_230941_261165_603807CA 
+X-CRM114-Status: GOOD (  20.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,194 +118,166 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The current implementation uses bias_pad_enable as a reference count to
-manage the shared bias pad for all UTMI PHYs. However, during system
-suspension with connected USB devices, multiple power-down requests for
-the UTMI pad result in a mismatch in the reference count, which in turn
-produces warnings such as:
+Hi,
 
-[  237.762967] WARNING: CPU: 10 PID: 1618 at tegra186_utmi_pad_power_down+0x160/0x170
-[  237.763103] Call trace:
-[  237.763104]  tegra186_utmi_pad_power_down+0x160/0x170
-[  237.763107]  tegra186_utmi_phy_power_off+0x10/0x30
-[  237.763110]  phy_power_off+0x48/0x100
-[  237.763113]  tegra_xusb_enter_elpg+0x204/0x500
-[  237.763119]  tegra_xusb_suspend+0x48/0x140
-[  237.763122]  platform_pm_suspend+0x2c/0xb0
-[  237.763125]  dpm_run_callback.isra.0+0x20/0xa0
-[  237.763127]  __device_suspend+0x118/0x330
-[  237.763129]  dpm_suspend+0x10c/0x1f0
-[  237.763130]  dpm_suspend_start+0x88/0xb0
-[  237.763132]  suspend_devices_and_enter+0x120/0x500
-[  237.763135]  pm_suspend+0x1ec/0x270
+On 07/04/2025 20:59, Aradhya Bhatia wrote:
+> Hi Tomi,
+> 
+> On 02/04/25 19:00, Tomi Valkeinen wrote:
+>> The docs say about mode_valid():
+>>
+>> "it is not allowed to look at anything else but the passed-in mode, and
+>> validate it against configuration-invariant hardware constraints"
+>>
+>> We're doing a lot more than just looking at the mode. The main issue
+>> here is that we're doing checks based on the pixel clock, before we know
+>> what the pixel clock from the crtc actually is.
+>>
+>> So, drop the checks from .mode_valid(). This also allows us to remove
+>> the 'mode_valid_check' parameter from internal functions, and the
+>> related code.
+>>
+>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+>> ---
+>>   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 44 ++++++++------------------
+>>   1 file changed, 14 insertions(+), 30 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> index e85c8652c96e..cf783680b1b4 100644
+>> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> @@ -469,25 +469,17 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
+>>   
+>>   static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+>>   			     const struct drm_display_mode *mode,
+>> -			     struct cdns_dsi_cfg *dsi_cfg,
+>> -			     bool mode_valid_check)
+>> +			     struct cdns_dsi_cfg *dsi_cfg)
+>>   {
+>>   	struct cdns_dsi_output *output = &dsi->output;
+>>   	u32 dpi_hsa, dpi_hbp, dpi_hfp, dpi_hact;
+>>   	bool sync_pulse;
+>>   	int bpp;
+>>   
+>> -	if (mode_valid_check) {
+>> -		dpi_hsa = mode->hsync_end - mode->hsync_start;
+>> -		dpi_hbp = mode->htotal - mode->hsync_end;
+>> -		dpi_hfp = mode->hsync_start - mode->hdisplay;
+>> -		dpi_hact = mode->hdisplay;
+>> -	} else {
+>> -		dpi_hsa = mode->crtc_hsync_end - mode->crtc_hsync_start;
+>> -		dpi_hbp = mode->crtc_htotal - mode->crtc_hsync_end;
+>> -		dpi_hfp =  mode->crtc_hsync_start - mode->crtc_hdisplay;
+>> -		dpi_hact = mode->crtc_hdisplay;
+>> -	}
+>> +	dpi_hsa = mode->crtc_hsync_end - mode->crtc_hsync_start;
+>> +	dpi_hbp = mode->crtc_htotal - mode->crtc_hsync_end;
+>> +	dpi_hfp =  mode->crtc_hsync_start - mode->crtc_hdisplay;
+>> +	dpi_hact = mode->crtc_hdisplay;
+>>   
+>>   	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
+>>   
+>> @@ -518,8 +510,7 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+>>   static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+>>   			      struct cdns_dsi_cfg *dsi_cfg,
+>>   			      struct phy_configure_opts_mipi_dphy *phy_cfg,
+>> -			      const struct drm_display_mode *mode,
+>> -			      bool mode_valid_check)
+>> +			      const struct drm_display_mode *mode)
+>>   {
+>>   	struct cdns_dsi_output *output = &dsi->output;
+>>   	unsigned long long dlane_bps;
+>> @@ -549,11 +540,11 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+>>   	if (dsi_htotal % lanes)
+>>   		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
+>>   
+>> -	dpi_hz = (mode_valid_check ? mode->clock : mode->crtc_clock) * 1000;
+>> +	dpi_hz = mode->crtc_clock * 1000;
+>>   	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
+>>   
+>>   	/* data rate in bytes/sec is not an integer, refuse the mode. */
+>> -	dpi_htotal = mode_valid_check ? mode->htotal : mode->crtc_htotal;
+>> +	dpi_htotal = mode->crtc_htotal;
+>>   	if (do_div(dlane_bps, lanes * dpi_htotal))
+>>   		return -EINVAL;
+>>   
+>> @@ -569,27 +560,25 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
+>>   
+>>   static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
+>>   			       const struct drm_display_mode *mode,
+>> -			       struct cdns_dsi_cfg *dsi_cfg,
+>> -			       bool mode_valid_check)
+>> +			       struct cdns_dsi_cfg *dsi_cfg)
+>>   {
+>>   	struct cdns_dsi_output *output = &dsi->output;
+>>   	struct phy_configure_opts_mipi_dphy *phy_cfg = &output->phy_opts.mipi_dphy;
+>>   	unsigned int nlanes = output->dev->lanes;
+>> -	int mode_clock = (mode_valid_check ? mode->clock : mode->crtc_clock);
+>>   	unsigned long req_hs_clk_rate;
+>>   	int ret;
+>>   
+>> -	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg, mode_valid_check);
+>> +	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg);
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> -	ret = phy_mipi_dphy_get_default_config(mode_clock * 1000,
+>> +	ret = phy_mipi_dphy_get_default_config(mode->crtc_clock * 1000,
+>>   					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
+>>   					       nlanes, phy_cfg);
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> -	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode, mode_valid_check);
+>> +	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode);
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> @@ -635,8 +624,7 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
+>>   	struct cdns_dsi_input *input = bridge_to_cdns_dsi_input(bridge);
+>>   	struct cdns_dsi *dsi = input_to_dsi(input);
+>>   	struct cdns_dsi_output *output = &dsi->output;
+>> -	struct cdns_dsi_cfg dsi_cfg;
+>> -	int bpp, ret;
+>> +	int bpp;
+>>   
+>>   	/*
+>>   	 * VFP_DSI should be less than VFP_DPI and VFP_DSI should be at
+>> @@ -654,10 +642,6 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
+>>   	if ((mode->hdisplay * bpp) % 32)
+>>   		return MODE_H_ILLEGAL;
+>>   
+>> -	ret = cdns_dsi_check_conf(dsi, mode, &dsi_cfg, true);
+>> -	if (ret)
+>> -		return MODE_BAD;
+>> -
+>>   	return MODE_OK;
+>>   }
+>>   
+>> @@ -996,7 +980,7 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
+>>   	adjusted_crtc_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
+>>   	adjusted_crtc_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
+>>   
+>> -	return cdns_dsi_check_conf(dsi, mode, dsi_cfg, false);
+>> +	return cdns_dsi_check_conf(dsi, mode, dsi_cfg);
+> 
+> With this patch, the driver shifts to using the crtc_* values during the
+> check phase, and then, it is brought back to using non crtc_* values in
+> the next patch.
+> 
+> Should this patch just drop the cdns_dsi_check_conf() check from
+> .mode_valid() instead, and let the next patch phase out the
+> mdoe_valid_check parameter as the driver simultaneously shifts to using
+> the non crtc_* values throughout?
 
-The root cause was traced back to the dynamic power-down changes
-introduced in commit a30951d31b25 ("xhci: tegra: USB2 pad power controls"),
-where the UTMI pad was being powered down without verifying its current
-state. This unbalanced behavior led to discrepancies in the reference
-count.
+Yes.
 
-To rectify this issue, this patch replaces the single reference counter
-with a bitmask, renamed to utmi_pad_enabled. Each bit in the mask
-corresponds to one of the four USB2 PHYs, allowing us to track each pad's
-enablement status individually.
-
-With this change:
-  - The bias pad is powered on only when the mask is clear.
-  - Each UTMI pad is powered on or down based on its corresponding bit
-    in the mask, preventing redundant operations.
-  - The overall power state of the shared bias pad is maintained
-    correctly during suspend/resume cycles.
-
-The mutex used to prevent race conditions during UTMI pad enable/disable
-operations has been moved from the tegra186_utmi_bias_pad_power_on/off
-functions to the parent functions tegra186_utmi_pad_power_on/down. This
-change ensures that there are no race conditions when updating the bitmask.
-
-Cc: stable@vger.kernel.org
-Fixes: a30951d31b25 ("xhci: tegra: USB2 pad power controls")
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
----
-V1 -> V2: holding the padctl->lock to protect shared bitmask
-V2 -> V3: updating the commit message with the mutex changes
- drivers/phy/tegra/xusb-tegra186.c | 44 +++++++++++++++++++------------
- 1 file changed, 27 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index fae6242aa730..cc7b8a6a999f 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -237,6 +237,8 @@
- #define   DATA0_VAL_PD				BIT(1)
- #define   USE_XUSB_AO				BIT(4)
- 
-+#define TEGRA_UTMI_PAD_MAX 4
-+
- #define TEGRA186_LANE(_name, _offset, _shift, _mask, _type)		\
- 	{								\
- 		.name = _name,						\
-@@ -269,7 +271,7 @@ struct tegra186_xusb_padctl {
- 
- 	/* UTMI bias and tracking */
- 	struct clk *usb2_trk_clk;
--	unsigned int bias_pad_enable;
-+	DECLARE_BITMAP(utmi_pad_enabled, TEGRA_UTMI_PAD_MAX);
- 
- 	/* padctl context */
- 	struct tegra186_xusb_padctl_context context;
-@@ -603,12 +605,8 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
- 	u32 value;
- 	int err;
- 
--	mutex_lock(&padctl->lock);
--
--	if (priv->bias_pad_enable++ > 0) {
--		mutex_unlock(&padctl->lock);
-+	if (!bitmap_empty(priv->utmi_pad_enabled, TEGRA_UTMI_PAD_MAX))
- 		return;
--	}
- 
- 	err = clk_prepare_enable(priv->usb2_trk_clk);
- 	if (err < 0)
-@@ -667,17 +665,8 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
- 	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
- 	u32 value;
- 
--	mutex_lock(&padctl->lock);
--
--	if (WARN_ON(priv->bias_pad_enable == 0)) {
--		mutex_unlock(&padctl->lock);
--		return;
--	}
--
--	if (--priv->bias_pad_enable > 0) {
--		mutex_unlock(&padctl->lock);
-+	if (!bitmap_empty(priv->utmi_pad_enabled, TEGRA_UTMI_PAD_MAX))
- 		return;
--	}
- 
- 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL1);
- 	value |= USB2_PD_TRK;
-@@ -690,13 +679,13 @@ static void tegra186_utmi_bias_pad_power_off(struct tegra_xusb_padctl *padctl)
- 		clk_disable_unprepare(priv->usb2_trk_clk);
- 	}
- 
--	mutex_unlock(&padctl->lock);
- }
- 
- static void tegra186_utmi_pad_power_on(struct phy *phy)
- {
- 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
- 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-+	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
- 	struct tegra_xusb_usb2_port *port;
- 	struct device *dev = padctl->dev;
- 	unsigned int index = lane->index;
-@@ -705,9 +694,16 @@ static void tegra186_utmi_pad_power_on(struct phy *phy)
- 	if (!phy)
- 		return;
- 
-+	mutex_lock(&padctl->lock);
-+	if (test_bit(index, priv->utmi_pad_enabled)) {
-+		mutex_unlock(&padctl->lock);
-+		return;
-+	}
-+
- 	port = tegra_xusb_find_usb2_port(padctl, index);
- 	if (!port) {
- 		dev_err(dev, "no port found for USB2 lane %u\n", index);
-+		mutex_unlock(&padctl->lock);
- 		return;
- 	}
- 
-@@ -724,18 +720,28 @@ static void tegra186_utmi_pad_power_on(struct phy *phy)
- 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
- 	value &= ~USB2_OTG_PD_DR;
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
-+
-+	set_bit(index, priv->utmi_pad_enabled);
-+	mutex_unlock(&padctl->lock);
- }
- 
- static void tegra186_utmi_pad_power_down(struct phy *phy)
- {
- 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
- 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
-+	struct tegra186_xusb_padctl *priv = to_tegra186_xusb_padctl(padctl);
- 	unsigned int index = lane->index;
- 	u32 value;
- 
- 	if (!phy)
- 		return;
- 
-+	mutex_lock(&padctl->lock);
-+	if (!test_bit(index, priv->utmi_pad_enabled)) {
-+		mutex_unlock(&padctl->lock);
-+		return;
-+	}
-+
- 	dev_dbg(padctl->dev, "power down UTMI pad %u\n", index);
- 
- 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL0(index));
-@@ -748,7 +754,11 @@ static void tegra186_utmi_pad_power_down(struct phy *phy)
- 
- 	udelay(2);
- 
-+	clear_bit(index, priv->utmi_pad_enabled);
-+
- 	tegra186_utmi_bias_pad_power_off(padctl);
-+
-+	mutex_unlock(&padctl->lock);
- }
- 
- static int tegra186_xusb_padctl_vbus_override(struct tegra_xusb_padctl *padctl,
--- 
-2.25.1
+  Tomi
 
 
 -- 
