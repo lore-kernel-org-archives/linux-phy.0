@@ -4,68 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA57FC36002
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Apr 2025 08:20:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B26A8C36002
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Apr 2025 08:31:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hY9Wzr7yohVAMny+1rNaRdwxDrfqTEpMfjU1FbTIe3Y=; b=auJzebpBVksNvn
-	FcbzGI22VQ95HS29DerLmXSFmbtoFLkhWTHbP8QovY2NODLDIWQk0/25pcdRphv9pv3IOVaQYr3i5
-	Pz6NN1VcrtJkTFBhEbKOU4rxR3tNI/5AT1rfRoAaFn/i1CjCrN+dvPqq5szRyc94QKLJ7CdVkJDFd
-	JXe2BKHDT8XYhQTJZ6dALEAPx0rJA/LZV01NqLMrAexUCFAB8HjkDmjQmY9MRI9yQ1TER1XzhuSY2
-	gfXvgN0jN5ir+BOLsTfXVGOsN1IcX5o7RT2X7WM5o9ecmIQwvIuxlpOpsaI9KwVCOek5h5D65jLbQ
-	ghGAm5hKx8Pgw/vraHpQ==;
+	List-Owner; bh=xnDz1Rf0udYkJelazMeH+6OP++0nadti+rlOpJGJoaU=; b=t+xwnaB55dEwjF
+	iYuP/++4VW03WBM6WaQfTfx8Eem/sgJhch372/VveUXKCGZjeFopQRn9BMg9A1b5Albei87BONx9y
+	k0RC1cj58pwxj9uZX827kcURk8hN3/IqDXk2CYn9Dhx4rLx1ZG7BhBVhl6z9OZLv7pxYMTVyMDowA
+	IEEdT9Qjig6utcu+gIDZ2LEaD0OcDoNYdiYxBgiprWGJjaxgUOuP7ppph8h3N7GAB3Cw1V72hA7qQ
+	KB+JODH2diaoh5un0FQuhp1AaGzzTMZRvT1zkymGMQ7Js/tneg10l0BmPDlqufdof7KZRRjDckTiL
+	KtrIOxByGxmE3fpAXXow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2Qg4-00000006Ymr-2tkq;
-	Wed, 09 Apr 2025 08:20:56 +0000
-Received: from mail-m49198.qiye.163.com ([45.254.49.198])
+	id 1u2Qqi-00000006aeU-3pnz;
+	Wed, 09 Apr 2025 08:31:57 +0000
+Received: from mail-m49197.qiye.163.com ([45.254.49.197])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2Qdj-00000006YMJ-4823;
-	Wed, 09 Apr 2025 08:18:33 +0000
-Received: from [198.18.0.1] (gy-adaptive-ssl-proxy-2-entmail-virt205.gy.ntes [27.18.106.237])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 1135140cf;
-	Wed, 9 Apr 2025 16:18:22 +0800 (GMT+08:00)
-Message-ID: <2986e9bd-0e01-4361-86ed-e4d92406c911@whut.edu.cn>
-Date: Wed, 9 Apr 2025 16:18:22 +0800
+	id 1u2QpT-00000006aRT-3yGZ;
+	Wed, 09 Apr 2025 08:30:43 +0000
+Received: from [198.18.0.1] (gy-adaptive-ssl-proxy-4-entmail-virt151.gy.ntes [27.18.106.237])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 113514274;
+	Wed, 9 Apr 2025 16:30:29 +0800 (GMT+08:00)
+Message-ID: <756177ef-f2a7-4a8a-afa4-a68d68e5c733@whut.edu.cn>
+Date: Wed, 9 Apr 2025 16:30:29 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/7] phy: spacemit: support K1 USB2.0 PHY controller
-To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
+Subject: Re: [PATCH 3/7] dt-bindings: usb: add SpacemiT K1 DWC3 glue
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Conor Dooley <conor+dt@kernel.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Palmer Dabbelt
+ <palmer@dabbelt.com>, linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ Yixun Lan <dlan@gentoo.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Alexandre Ghiti <alex@ghiti.fr>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Alexandre Ghiti <alex@ghiti.fr>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Albert Ou <aou@eecs.berkeley.edu>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
+ spacemit@lists.linux.dev, linux-kernel@vger.kernel.org
 References: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
- <20250407-b4-k1-usb3-v3-2-v1-4-bf0bcc41c9ba@whut.edu.cn>
- <abac53a6-cba7-4962-9f34-ab2eac9e6e3d@kernel.org>
+ <20250407-b4-k1-usb3-v3-2-v1-3-bf0bcc41c9ba@whut.edu.cn>
+ <174403387085.2155711.16403180293126338183.robh@kernel.org>
 Content-Language: en-US
 From: Ze Huang <huangze@whut.edu.cn>
-In-Reply-To: <abac53a6-cba7-4962-9f34-ab2eac9e6e3d@kernel.org>
+In-Reply-To: <174403387085.2155711.16403180293126338183.robh@kernel.org>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZH05CVkMfH0tOGB5IGUIeSlYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0hKTkxPVUpLS1VKQk
-	tLWQY+
-X-HM-Tid: 0a9619a0fb7503a1kunm1135140cf
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCHh1OVk9MHksZTUlPGUIYSVYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0lCTUpKVUpLS1VLWQ
+	Y+
+X-HM-Tid: 0a9619ac159503a1kunm113514274
 X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NlE6GQw6ITIBPD1JGVYxAS09
-	DCgKFD5VSlVKTE9PSkNNTEtCTklPVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VKS01VSUhMWVdZCAFZQUlLTkI3Bg++
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PDo6CSo*CjJOQz1NN1FJAUkf
+	ExgwCklVSlVKTE9PSkNMT0hMSUlJVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VKS01VSUhMWVdZCAFZQUhMSE83Bg++
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_011832_211884_31E3E2F7 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250409_013040_140733_C716D52E 
+X-CRM114-Status: GOOD (  14.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,39 +75,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/7/25 9:25 PM, Krzysztof Kozlowski wrote:
-> On 07/04/2025 14:38, Ze Huang wrote:
->> +static const struct of_device_id spacemit_usb2phy_dt_match[] = {
->> +	{ .compatible = "spacemit,k1-usb2-phy", },
->> +	{ /* sentinal */ }
->> +};
->> +MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
->> +
->> +static struct platform_driver spacemit_usb2_phy_driver = {
->> +	.probe	= spacemit_usb2phy_probe,
->> +	.driver = {
->> +		.name   = "spacemit-usb2-phy",
->> +		.owner  = THIS_MODULE,
->
-> Take recent drivers and use them as base. There is no such 'owner' since
-> 10 years.
-
-Will follow. Thank you for pointing that out.
-
->
->
-> Best regards,
-> Krzysztof
->
->
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gNC83LzI1IDk6NTEgUE0sIFJvYiBIZXJyaW5nIChBcm0pIHdyb3RlOgo+IE9uIE1vbiwgMDcg
+QXByIDIwMjUgMjA6Mzg6NDggKzA4MDAsIFplIEh1YW5nIHdyb3RlOgo+PiBBZGQgc3VwcG9ydCBm
+b3IgU3BhY2VtaVQgRFdDMyBnbHVlIGRyaXZlciwgd2hpY2ggbWFuYWdlcyBpbnRlcnJ1cHQsCj4+
+IHJlc2V0IGFuZCBjbG9jayByZXNvdXJjZS4KPj4KPj4gU2lnbmVkLW9mZi1ieTogWmUgSHVhbmcg
+PGh1YW5nemVAd2h1dC5lZHUuY24+Cj4+IC0tLQo+PiAgIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdz
+L3VzYi9zcGFjZW1pdCxrMS1kd2MzLnlhbWwgIHwgNzggKysrKysrKysrKysrKysrKysrKysrKwo+
+PiAgIDEgZmlsZSBjaGFuZ2VkLCA3OCBpbnNlcnRpb25zKCspCj4+Cj4gTXkgYm90IGZvdW5kIGVy
+cm9ycyBydW5uaW5nICdtYWtlIGR0X2JpbmRpbmdfY2hlY2snIG9uIHlvdXIgcGF0Y2g6Cj4KPiB5
+YW1sbGludCB3YXJuaW5ncy9lcnJvcnM6Cj4KPiBkdHNjaGVtYS9kdGMgd2FybmluZ3MvZXJyb3Jz
+Ogo+IC9idWlsZHMvcm9iaGVycmluZy9kdC1yZXZpZXctY2kvbGludXgvRG9jdW1lbnRhdGlvbi9k
+ZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9zcGFjZW1pdCxrMS1kd2MzLmV4YW1wbGUuZHRiOiB1c2JA
+YzBhMDAwMDAgKHNwYWNlbWl0LGsxLWR3YzMpOiAnI2FkZHJlc3MtY2VsbHMnLCAnI3NpemUtY2Vs
+bHMnIGRvIG5vdCBtYXRjaCBhbnkgb2YgdGhlIHJlZ2V4ZXM6ICdedXNiQCcsICdwaW5jdHJsLVsw
+LTldKycKPiAJZnJvbSBzY2hlbWEgJGlkOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvc2NoZW1hcy91
+c2Ivc3BhY2VtaXQsazEtZHdjMy55YW1sIwo+IC9idWlsZHMvcm9iaGVycmluZy9kdC1yZXZpZXct
+Y2kvbGludXgvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9zcGFjZW1pdCxr
+MS1kd2MzLmV4YW1wbGUuZHRiOiB1c2JAYzBhMDAwMDAgKHNwYWNlbWl0LGsxLWR3YzMpOiB1c2JA
+MDpyZWc6IFtbMCwgMF0sIFswLCA2NTUzNl1dIGlzIHRvbyBsb25nCj4gCWZyb20gc2NoZW1hICRp
+ZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvdXNiL3NwYWNlbWl0LGsxLWR3YzMueWFt
+bCMKPiAvYnVpbGRzL3JvYmhlcnJpbmcvZHQtcmV2aWV3LWNpL2xpbnV4L0RvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy91c2Ivc3BhY2VtaXQsazEtZHdjMy5leGFtcGxlLmR0YjogdXNi
+QDAgKHNucHMsZHdjMyk6IHJlZzogW1swLCAwXSwgWzAsIDY1NTM2XV0gaXMgdG9vIGxvbmcKPiAJ
+ZnJvbSBzY2hlbWEgJGlkOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvc2NoZW1hcy91c2Ivc25wcyxk
+d2MzLnlhbWwjCgpUaGFua3MgZm9yIHRoZSByZXBvcnQhCknigJlsbCBhZGQgJyNhZGRyZXNzLWNl
+bGxzJyBhbmQgJyNzaXplLWNlbGxzJyB1bmRlciBwcm9wZXJ0aWVzIHRvIHJlc29sdmUgCnRoZSBl
+cnJvci4KYmVjYXVzZSBpZiBJIGRyb3AgdGhlbSBmcm9tIHRoZSBleGFtcGxlLCBJIGdldCB3YXJu
+aW5ncyBsaWtlOgoKV2FybmluZyAoYXZvaWRfZGVmYXVsdF9hZGRyX3NpemUpOiAvZXhhbXBsZS0w
+L3VzYkBjMGEwMDAwMC91c2JAMDogClJlbHlpbmcgb24gZGVmYXVsdCAjYWRkcmVzcy1jZWxscyB2
+YWx1ZQoKPgo+IGRvYyByZWZlcmVuY2UgZXJyb3JzIChtYWtlIHJlZmNoZWNrZG9jcyk6Cj4KPiBT
+ZWUgaHR0cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9wcm9qZWN0L2RldmljZXRyZWUtYmluZGlu
+Z3MvcGF0Y2gvMjAyNTA0MDctYjQtazEtdXNiMy12My0yLXYxLTMtYmYwYmNjNDFjOWJhQHdodXQu
+ZWR1LmNuCj4KPiBUaGUgYmFzZSBmb3IgdGhlIHNlcmllcyBpcyBnZW5lcmFsbHkgdGhlIGxhdGVz
+dCByYzEuIEEgZGlmZmVyZW50IGRlcGVuZGVuY3kKPiBzaG91bGQgYmUgbm90ZWQgaW4gKnRoaXMq
+IHBhdGNoLgo+Cj4gSWYgeW91IGFscmVhZHkgcmFuICdtYWtlIGR0X2JpbmRpbmdfY2hlY2snIGFu
+ZCBkaWRuJ3Qgc2VlIHRoZSBhYm92ZQo+IGVycm9yKHMpLCB0aGVuIG1ha2Ugc3VyZSAneWFtbGxp
+bnQnIGlzIGluc3RhbGxlZCBhbmQgZHQtc2NoZW1hIGlzIHVwIHRvCj4gZGF0ZToKPgo+IHBpcDMg
+aW5zdGFsbCBkdHNjaGVtYSAtLXVwZ3JhZGUKPgo+IFBsZWFzZSBjaGVjayBhbmQgcmUtc3VibWl0
+IGFmdGVyIHJ1bm5pbmcgdGhlIGFib3ZlIGNvbW1hbmQgeW91cnNlbGYuIE5vdGUKPiB0aGF0IERU
+X1NDSEVNQV9GSUxFUyBjYW4gYmUgc2V0IHRvIHlvdXIgc2NoZW1hIGZpbGUgdG8gc3BlZWQgdXAg
+Y2hlY2tpbmcKPiB5b3VyIHNjaGVtYS4gSG93ZXZlciwgaXQgbXVzdCBiZSB1bnNldCB0byB0ZXN0
+IGFsbCBleGFtcGxlcyB3aXRoIHlvdXIgc2NoZW1hLgo+Cj4KPgoKCi0tIApsaW51eC1waHkgbWFp
+bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
