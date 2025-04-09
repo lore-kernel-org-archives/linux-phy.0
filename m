@@ -4,36 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCEE1C36002
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Apr 2025 08:12:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BE3DC36002
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Apr 2025 08:20:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IaBGmSjS/68kG8pUznuX2MVb+PpTp4568aA/vWJuniU=; b=DZJFC96XkCe4Bi
-	SLQI3QbFkSx/4RwMEuq7sP0UQHEGv6wZpd2CChEjQiGWtBQMCCeOhNJIQZpKbHppbqgiN7FMIY6ZT
-	nQ29sGbkSOghQHoy2aGTl+DlQbiMdp39QQf7nZq6G6QTQVvlleeZob3XtvX48EPwMJjeFaJ38oThS
-	iFCTaCzdMX5B+y9OqkBb9XsEpbUYiX+XoKw3dqIkIs/Mn41I32vKT0AC+lG19dTVu+RXjJwHSsmd8
-	l9z8nBwORUV/StXiiW55CsXORJv+acTz5OSSj8xD1ylt5L8L5qFmYhZ3CUVBh8MXco5uIAD4+wPGo
-	jZbng2JwUAgu2Vp1Pg2A==;
+	List-Owner; bh=W4DUlvh83Dnmaz7+cNcTuu2zk79LQ261zy9pVe6B1Mc=; b=kU21nrK5NuEiHt
+	mN+5AT8E5Az21k48w/kc2+6/1UF2RxYMf/9eV5AC5ShDvBHh6DCHALN0xhBykHEW1bUbMPQj30aDG
+	Pz/7SEcZwGxQkPFwjzcb+dyFMae4Tj0gk1W3HDSlXc6JTJqtrV0f6LJ3atUPPwuK9NlOzFZJIvcqs
+	xclmaFW9Vp7w6670ke659brrI/bH4ykZRJvoRi1NXiVogkDs9UbCATwhxuG18xcNjeqeH5nMTswv0
+	DxYbbL0DT1JgUgWr+rp2f4TVwNdSlY/eCz3UtzKaW/ab2dkL+SvzQGr+OhH7RcVynJoZD6fxCjR1i
+	TCwAYmSsHHyxcnoPJ5mA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2QYM-00000006XY0-2CAN;
-	Wed, 09 Apr 2025 08:12:58 +0000
-Received: from mail-m49198.qiye.163.com ([45.254.49.198])
+	id 1u2QfO-00000006Yb6-0n08;
+	Wed, 09 Apr 2025 08:20:15 +0000
+Received: from mail-m155101.qiye.163.com ([101.71.155.101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2QNE-00000006VOh-1aMy;
-	Wed, 09 Apr 2025 08:01:30 +0000
-Received: from [198.18.0.1] (gy-adaptive-ssl-proxy-2-entmail-virt205.gy.ntes [27.18.106.237])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 1133fc98e;
-	Wed, 9 Apr 2025 16:01:09 +0800 (GMT+08:00)
-Message-ID: <2a862d73-2aaf-48ad-8e01-2138241d9bea@whut.edu.cn>
-Date: Wed, 9 Apr 2025 16:01:09 +0800
+	id 1u2QRi-00000006WIT-4AMn;
+	Wed, 09 Apr 2025 08:06:08 +0000
+Received: from [198.18.0.1] (gy-adaptive-ssl-proxy-4-entmail-virt151.gy.ntes [27.18.106.237])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 1133fca57;
+	Wed, 9 Apr 2025 16:05:57 +0800 (GMT+08:00)
+Message-ID: <4937e5ce-8bb9-4bcf-b463-f7d1a1eb2b4f@whut.edu.cn>
+Date: Wed, 9 Apr 2025 16:05:57 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/7] dt-bindings: phy: spacemit: add K1 USB2 PHY
+Subject: Re: [PATCH 2/7] dt-bindings: phy: spacemit: add K1 PCIe/USB3 combo
+ PHY
 To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -48,24 +49,23 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
  linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
 References: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
- <20250407-b4-k1-usb3-v3-2-v1-1-bf0bcc41c9ba@whut.edu.cn>
- <02157e96-9524-4590-9ca6-e4390176d74e@kernel.org>
+ <20250407-b4-k1-usb3-v3-2-v1-2-bf0bcc41c9ba@whut.edu.cn>
+ <74bb9d27-fd6f-4332-9965-e967c3a31c63@kernel.org>
 Content-Language: en-US
 From: Ze Huang <huangze@whut.edu.cn>
-In-Reply-To: <02157e96-9524-4590-9ca6-e4390176d74e@kernel.org>
+In-Reply-To: <74bb9d27-fd6f-4332-9965-e967c3a31c63@kernel.org>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCGhkfVktMSkJIQxhPT0gYHVYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0hKTkxOVUpLS1VKQk
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkaTUJOVh9LHR4dGRhITExOTVYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlJTFVKQ1VKS01VSUhMWVdZFhoPEhUdFFlBWU9LSFVKS0hKTkxPVUpLS1VKQk
 	tLWQY+
-X-HM-Tid: 0a9619913a0703a1kunm1133fc98e
+X-HM-Tid: 0a9619959d2903a1kunm1133fca57
 X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PU06Thw5EDJCPD0DMD8PLlEU
-	ViFPCVFVSlVKTE9PSkNOTUxMSUxJVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VKS01VSUhMWVdZCAFZQUpDQkI3Bg++
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Ngw6UTo*ODJWLD0JCj8jLTAL
+	MSIKCyJVSlVKTE9PSkNOQk1PTk1PVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VKS01VSUhMWVdZCAFZQUhIQk43Bg++
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_010128_613539_B4C46121 
-X-CRM114-Status: UNSURE (   6.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250409_010607_209844_6068E2FF 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,27 +82,79 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/7/25 9:18 PM, Krzysztof Kozlowski wrote:
+On 4/7/25 9:20 PM, Krzysztof Kozlowski wrote:
 > On 07/04/2025 14:38, Ze Huang wrote:
+>> Introduce support for SpacemiT K1 PCIe/USB3 combo PHY controller.
+>>
+>> PCIe portA and USB3 controller share this phy, only one of them can work
+>> at any given application scenario.
+>>
+>> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+>> ---
+>>   .../bindings/phy/spacemit,k1-combphy.yaml          | 53 ++++++++++++++++++++++
+>>   1 file changed, 53 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml
+>> new file mode 100644
+>> index 0000000000000000000000000000000000000000..450157b65410b27129603ea1f3523776a1b0a75e
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml
+>> @@ -0,0 +1,53 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combphy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Spacemit K1 PCIe/USB3 PHY
+>> +
+>> +maintainers:
+>> +  - Ze Huang <huangze@whut.edu.cn>
+>> +
+>> +description:
+>> +  Combo PHY on SpacemiT K1 SoC.PCIe port A and USB3 controller share this
+>> +  phy, only one of PCIe port A and USB3 port can work at any given application
+>> +  scenario.
 >> +
 >> +properties:
 >> +  compatible:
->> +    const: spacemit,k1-usb2-phy
+>> +    const: spacemit,k1-combphy
 >> +
 >> +  reg:
->> +    maxItems: 1
+>> +    maxItems: 2
+> List and describe the items instead
+
+OK, they are phy control and usb/pcie selection
+
+>
 >> +
->> +  clocks:
+>> +  reg-names:
+>> +    items:
+>> +      - const: phy_ctrl
+> drop phy_
+>
+>> +      - const: phy_sel
+> ditto
+
+Will do
+
+>
+>> +
+>> +  resets:
 >> +    maxItems: 1
 >> +
 >> +  "#phy-cells":
->> +    const: 0
->> +
-> No supplies? No resets? Are you sure hardware does not use them?
+>> +    const: 1
+> What is the cell argument?
 
-No resets are used for the USB 2.0 PHY, but there is a VBUS supply, which
-I included in the DWC3 glue nodes.
+It's usb/pcie selection, will add description
 
+>
+> Also no supplies?
+
+vbus supply was included in dwc3 glue node
+
+>
 >
 > Best regards,
 > Krzysztof
