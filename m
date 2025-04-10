@@ -4,65 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E15FC369A1
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 02:41:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3D3EC3601E
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 03:21:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mKZt7HV2hx8mn0gYlmdjE2Z1Ksjg70tqK+E6wohbfkk=; b=1Y2ZFv2ArGKYHxt38FpsoY2Mex
-	Nqvyfm8lDsadera3y23XnKp+3lS5ld0ZHODFt9K56+k8ew5FUYNtYNQpbYAqR6soorXAsS788gfVC
-	G8ErzuHDjTU9Ze/hSmd2CyRBnrRJSOhLMkY/hfb+Vyq5dk8H9Cy9QC2VXSP2qASmVwWOltKT2kSNK
-	0wmcn9UDAa/YnRFvgsLmbipjYSw94mAx7h0uwDFeE0gzX+Sa8CW2OCyxx9yBB5H+xIP4ogkuuZWy6
-	280YrV7ZICI0k6vwGHUU8Wr1DIKVt/wZnmL2Pxq8fzgvA0ykyWJxhagvwpgDiza1Hmg8Mg03vPMPI
-	BAe0GEXg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VBuke7qWKXkeAca9hdylD+FLFL8upU+HOeCL7heAWZs=; b=D9Sl7J6ePCkRzt
+	5dD1fCYitGji0oG3IX/XtL+mqSQ9s5a2EoDOlyin1jUS0JHhbQbLmHTctIEZgszMct3iKMS/gMzSA
+	SKvaE6TToQ0LKSHdf/GBAjh+v16XlNcw5HjaBOMCYnsJnktSyjMAIJjJ3X7SZYhzysBeKz9+WkyLQ
+	1TDMTWvAf4/ZvurOuwLIMfgE86W3kK4vU2ZKREBJmimumT0nO8NWSAKfr4NLXdy60IdPVv1EUbWuj
+	d0YvzxQF77gCHfagIXB8/+/W5EuyVu1VPtiJWUwzSmoes4DGpYpchPfvTp1wEUDdFnuA50nNu4Wux
+	/L/XMp/Qcz5dJx14ev4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2hqp-000000093Wt-285S;
-	Thu, 10 Apr 2025 02:41:11 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1u2iUG-0000000974g-0LY6;
+	Thu, 10 Apr 2025 03:21:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2hoA-000000093Cv-2Hev;
-	Thu, 10 Apr 2025 02:38:26 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id F2C476112C;
-	Thu, 10 Apr 2025 02:38:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CF99C4CEE2;
-	Thu, 10 Apr 2025 02:38:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744252705;
-	bh=paI2iYkqHH9JNN2Kzhxw10YZ5U6tiwmffxf7SjfF7ZM=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=kJWEVjiol+oAz565mJrlnO0DmB4RDnil7BM5NMSBfi3jLuBwelpAC6x6VE3plgt6+
-	 /wqJnlJprj9vCYtXwFh/HjIDfoZJVf73EJB6pP6ahLQbP76zp83aH7YlB1dX7nlia8
-	 T3zG5mPKU0R5gTQoNP7AwO3aicL1yjFW71wCmjSjWetNTbB7OAQH1syDNM2EK0YSwI
-	 lYFMLV9PPS3iHPBDYPFgGgoDkkGu8NgEhs7xxbmY72EtQ/TRdeIOh0s03zNwVXBzsH
-	 1u4SBbH2kij/4Vmpl3AhGVLkENexdAudjITCMR93UWTnAp9GFuRb0+QZWUTvp2U4jD
-	 AIcv0NFZpaCAw==
-Date: Wed, 09 Apr 2025 21:38:24 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>, linux-phy@lists.infradead.org, 
- Dmitry Baryshkov <lumag@kernel.org>, linux-arm-kernel@lists.infradead.org, 
- Will Deacon <will@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Catalin Marinas <catalin.marinas@arm.com>, linux-arm-msm@vger.kernel.org, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org, 
- Wesley Cheng <quic_wcheng@quicinc.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, devicetree@vger.kernel.org, 
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- linux-usb@vger.kernel.org
+	id 1u2iUD-0000000973h-0CIu
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Apr 2025 03:21:54 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 539H4KqW014992
+	for <linux-phy@lists.infradead.org>; Thu, 10 Apr 2025 03:21:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=BM6/NjkfUI/1vA52IvXfXFtW
+	Pqd6Fba8LY2OaYR/Rto=; b=Haax56Epy5hm1YbDbfEKLQDm3mqExVRkZE6GyJcd
+	q/TO79XMedlAbmsd+6FPXwVqdHusbWJN2N/xaQNMPwj019tqFrBRTLuCXNFHb/Yk
+	iGW8buMSyBfh7arI9p5RWr6p2vhuKbfY2POgyAZvgDy2upy7FfjQpvcVSiufVrY6
+	PZwPiJLa0JyyxdxEyuhXD6oBI8d9jpKfSL5DVEqDOFXXMO2yxIVWoGSqSAbkjldk
+	1e7Qx8pDXc1ulYo9aojMhDj6nsmQckfh+44ZBgdPdqK0ajwhP6w8sSVD49FUozqD
+	eeYmGLtJFYdzhiQq6K1H3+Tm6m/UKSQP/LvjVSiLN72S6g==
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twbunfw7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 10 Apr 2025 03:21:50 +0000 (GMT)
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-6ed16cc6e39so5337376d6.1
+        for <linux-phy@lists.infradead.org>; Wed, 09 Apr 2025 20:21:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744255309; x=1744860109;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=BM6/NjkfUI/1vA52IvXfXFtWPqd6Fba8LY2OaYR/Rto=;
+        b=LET90W3AvDXtRK5FtJMOskO3ARx30g4+Zvytkl9joK4MLM0lHsD7kqC//lDilNaO1U
+         PFK4CGjKB9DAt1CGARqqOUdkKCWwyeagEVz6sG66QMcY8195zG4h0xtNqdx1rbXZhzr4
+         1QNkvUnLCgH9P41edS1Qd5GMFjQIE9OjW1C1F8LTv2oaIyQR+6dohskHxG/+vw7UI2gs
+         hsWu+ukTsvDz3/uj0oHgvWWp+nDcVilio+alGeO/lr5L9P2kBVs9wZKbNO+PzYXP0TOo
+         ErqPztEAdf7PzWXdrz/YDsasVVLNL4nn1mCKRujh+UFW7GtbOH3QSamMNwSx/Y7UXC/n
+         u8PQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX87rJtpKTZa3gQlwydGtCPyKqT1ImcOeMlgbdpCKR95r4Ym5qSKHr58iI1TFDYjmBFW6vogr+HMUM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHKow8EeTOu7wR2fwyEiGD0NGzFifblPVskkbxTQVn2aS9OfEd
+	WnnK4nEviDGduOure03+YdoGndYFea1nTQMb3UvpYcD011LEKnWJbTATcwPzBkUtkpndBnzhd7Q
+	6m0tdnAT+4aUNf8FopTEEpkvzd+J/ghenMQoOcH+4Dl6iMyJ8+kyn3KmtEgJPF1v1
+X-Gm-Gg: ASbGnctpzLndwxu74OZR+5bg+aMXpyGLX+vEkZVYfyX9UbquiAbK4bdWT9khqCo10bR
+	cTHO+0ODrawK9wcWunjoGinPHFGxeGRFf32vOGfX2xWXyWkItoczJH67H6/uIe7YvlIeJtLzR9W
+	foTEXrMx/9j8AUw7nFUVWywtQ22DZrPyh1+tXVrpRsGdrgYH27oD71CxwVUmMgaNVzPCEAQd25b
+	uAu6TdYzRStTl0y0IwuOkVpiPwINgHdKWHPSvShrp/9r6u3uCBp6q9OGEEklrLAHVCTRUFWS5Ut
+	4kaZksEW6Jyn5z9EF4PzxggOqe5QB+GgGRgZ26DiTPlKvHUbAlOnsBTuaZBoe4P69NlurElocT4
+	=
+X-Received: by 2002:a05:6214:2687:b0:6e8:f0fc:d6c4 with SMTP id 6a1803df08f44-6f0e75fc07emr6848846d6.6.1744255309707;
+        Wed, 09 Apr 2025 20:21:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHYIqjaenrrYWCNqFjWK4JuegWJuudSnIunDlsPqtfRTCxjlrwo2zihuMXwTVE6JJddNv1Etg==
+X-Received: by 2002:a05:6214:2687:b0:6e8:f0fc:d6c4 with SMTP id 6a1803df08f44-6f0e75fc07emr6848576d6.6.1744255309329;
+        Wed, 09 Apr 2025 20:21:49 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-30f465d23casm3432091fa.79.2025.04.09.20.21.48
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 09 Apr 2025 20:21:48 -0700 (PDT)
+Date: Thu, 10 Apr 2025 06:21:46 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 To: Melody Olvera <melody.olvera@oss.qualcomm.com>
-In-Reply-To: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Catalin Marinas <catalin.marinas@arm.com>,
+        Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+        linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v4 04/10] phy: qcom: qmp-combo: Add new PHY sequences for
+ SM8750
+Message-ID: <o3ixtpmvueravt7uwpp7cu7fmucia5lonor2jmfepee5bramhp@uhnxvywjqvz3>
 References: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
-Message-Id: <174425260896.2271002.12988489456571693265.robh@kernel.org>
-Subject: Re: [PATCH v4 00/10] phy: qcom: Introduce USB support for SM8750
+ <20250409-sm8750_usb_master-v4-4-6ec621c98be6@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250409-sm8750_usb_master-v4-4-6ec621c98be6@oss.qualcomm.com>
+X-Proofpoint-GUID: jeiXcCbmJ2ghdxbALIZUjmoJHivCzRo4
+X-Proofpoint-ORIG-GUID: jeiXcCbmJ2ghdxbALIZUjmoJHivCzRo4
+X-Authority-Analysis: v=2.4 cv=dbeA3WXe c=1 sm=1 tr=0 ts=67f7394e cx=c_pps a=wEM5vcRIz55oU/E2lInRtA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=dtmsXWtYh8RDwc6_VsYA:9 a=CjuIK1q_8ugA:10
+ a=OIgjcC2v60KrkQgK7BGD:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-04-09_06,2025-04-08_04,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 mlxlogscore=978 phishscore=0 mlxscore=0 spamscore=0
+ malwarescore=0 clxscore=1015 adultscore=0 priorityscore=1501
+ lowpriorityscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502280000 definitions=main-2504100023
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250409_202153_104615_92313255 
+X-CRM114-Status: GOOD (  18.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,115 +133,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Wed, 09 Apr 2025 10:48:11 -0700, Melody Olvera wrote:
-> Add support for the PHYs and controllers used for USB on SM8750 SoCs.
+On Wed, Apr 09, 2025 at 10:48:15AM -0700, Melody Olvera wrote:
+> From: Wesley Cheng <quic_wcheng@quicinc.com>
 > 
+> Add new register offsets and PHY values for SM8750. Some of the previous
+> definitions can be leveraged from older PHY versions as offsets within
+> registers have not changed. This also updates the PHY sequence that is
+> recommended after running hardware characterization.
+> 
+> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
+> Signed-off-by: Melody Olvera <melody.olvera@oss.qualcomm.com>
 > ---
-> Changes in v4:
-> - Made some fixups to the M31 eUSB2 driver
-> - Moved TCSR refclk_en to the QMP PHY DT node
-> - Link to v3: https://lore.kernel.org/r/20250324-sm8750_usb_master-v3-0-13e096dc88fd@quicinc.com
-> 
-> Changes in v3:
-> - Split platform DTs into separate commits.
-> - Fixed up M31 eUSB2 PHY driver with feedback received.
-> - Reordered DT properties based on feedback.
-> - Rewrote commit message for enabling EUSB driver.
-> - Link to v2: https://lore.kernel.org/r/20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com
-> 
-> Changes in v2:
-> - Added new QMP PHY register definitions for v8 based QMP phys.
-> - Made changes to clean up some code in the M31 eUSB2 PHY driver based
-> on feedback received.
-> - Added bulk regulator operations in M31 eUSB2 PHY, to ensure that
-> both the vdd and vdda12 regulators are properly voted for.
-> - Removed external references to other dt bindings in M31 example for
-> the DT bindings change.
-> - Split DT patches between SoC and plaform changes, as well as the
-> PHY subsystem Kconfig changes when introducing the M31 eUSB2 PHY.
-> - Added orientation switch and port definitions in the DT changes.EDITME: describe what is new in this series revision.
-> - Link to v1: https://lore.kernel.org/r/20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com
-> 
-> ---
-> Melody Olvera (1):
->       arm64: defconfig: Add M31 eUSB2 PHY config for SM8750
-> 
-> Wesley Cheng (9):
->       dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8750 to QMP PHY
->       dt-bindings: phy: Add the M31 based eUSB2 PHY bindings
->       dt-bindings: usb: qcom,dwc3: Add SM8750 compatible
->       phy: qcom: qmp-combo: Add new PHY sequences for SM8750
->       phy: qcom: Update description for QCOM based eUSB2 repeater
->       phy: qcom: Add M31 based eUSB2 PHY driver
->       arm64: dts: qcom: sm8750: Add USB support to SM8750 SoCs
->       arm64: dts: qcom: sm8750: Add USB support for SM8750 MTP platform
->       arm64: dts: qcom: sm8750: Add USB support for SM8750 QRD platform
-> 
->  .../bindings/phy/qcom,m31-eusb2-phy.yaml           |  79 +++++
->  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   2 +
->  .../devicetree/bindings/usb/qcom,dwc3.yaml         |   3 +
->  arch/arm64/boot/dts/qcom/sm8750-mtp.dts            |  24 ++
->  arch/arm64/boot/dts/qcom/sm8750-qrd.dts            |  24 ++
->  arch/arm64/boot/dts/qcom/sm8750.dtsi               | 164 +++++++++++
->  arch/arm64/configs/defconfig                       |   1 +
->  drivers/phy/qualcomm/Kconfig                       |  16 +-
->  drivers/phy/qualcomm/Makefile                      |   1 +
->  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c          | 325 +++++++++++++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 223 +++++++++++++-
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v8.h     |  38 +++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8.h         |  32 ++
->  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h |  64 ++++
->  .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v8.h    |  68 +++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 223 ++++++++++++++++++++-
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v8.h     |  38 ++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8.h         |  32 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h |  64 ++++++
+>  .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v8.h    |  68 +++++++
 >  drivers/phy/qualcomm/phy-qcom-qmp.h                |   5 +
->  16 files changed, 1065 insertions(+), 4 deletions(-)
-> ---
-> base-commit: 46086739de22d72319e37c37a134d32db52e1c5c
-> change-id: 20241223-sm8750_usb_master-f27aed7f6d40
-> 
-> Best regards,
-> --
-> Melody Olvera <melody.olvera@oss.qualcomm.com>
-> 
-> 
-> 
+>  6 files changed, 429 insertions(+), 1 deletion(-)
 
+> @@ -1739,7 +1895,7 @@ static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
+>  
+>  /* list of clocks required by phy */
+>  static const char * const qmp_combo_phy_clk_l[] = {
+> -	"aux", "cfg_ahb", "ref", "com_aux",
+> +	"aux", "cfg_ahb", "ref", "com_aux", "refclk_src",
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+This clock isn't described in bindings and isn't used in the DT.
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
+>  };
+>  
+>  /* list of resets */
 
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: using specified base-commit 46086739de22d72319e37c37a134d32db52e1c5c
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com:
-
-arch/arm64/boot/dts/qcom/sm8750-mtp.dtb: usb@a6f8800 (qcom,sm8750-dwc3): clock-names: ['cfg_noc', 'core', 'iface', 'sleep', 'mock_utmi'] is too short
-	from schema $id: http://devicetree.org/schemas/usb/qcom,dwc3.yaml#
-arch/arm64/boot/dts/qcom/sm8750-mtp.dtb: usb@a6f8800 (qcom,sm8750-dwc3): clocks: [[35, 11], [35, 156], [35, 3], [35, 161], [35, 158]] is too short
-	from schema $id: http://devicetree.org/schemas/usb/qcom,dwc3.yaml#
-arch/arm64/boot/dts/qcom/sm8750-qrd.dtb: usb@a6f8800 (qcom,sm8750-dwc3): clock-names: ['cfg_noc', 'core', 'iface', 'sleep', 'mock_utmi'] is too short
-	from schema $id: http://devicetree.org/schemas/usb/qcom,dwc3.yaml#
-arch/arm64/boot/dts/qcom/sm8750-qrd.dtb: usb@a6f8800 (qcom,sm8750-dwc3): clocks: [[35, 11], [35, 156], [35, 3], [35, 161], [35, 158]] is too short
-	from schema $id: http://devicetree.org/schemas/usb/qcom,dwc3.yaml#
-
-
-
-
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
