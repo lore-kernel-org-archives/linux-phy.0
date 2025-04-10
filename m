@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AB08C3601E
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 20:53:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BAE3C3601E
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 21:13:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MvY08JVtTl1hyxKKgobNERn3KHLh6byiLcdmemYf5Mc=; b=ELYwacYLC+mXlD
-	Pp0o3ZCjgHRtwiu0Dp5tVlRop5OkHKzPUjRZiTIsfoa3t8V7ipm345I1nfWHax1SXIAaJ1pbGI74f
-	pzePpioyuOhI+R/bWWkE1HdDaMJ3Vs1Fjz3ccUZdZ4vTL+HcPWyrrnqnJTa7957yH7rLIsR3QuBAw
-	f/XQJbzfR5dn2u6dvJweHA0skFXVAzsDMKchIhPchkom7kH8ppZ6PBGzW3EsRNBl+6XQTSryChK3G
-	JsuNq7Mymz6D/pK7OPMmtpq+VRgh2RwspcgiZpl9Z+APZRRHPARw+w9ZDOC2DF15VjMJE6rgPGx2I
-	aGdXLNet22AFjZr1nz8A==;
+	List-Owner; bh=tRD2pWRY6PjSJ/KqGfT+hRFGROI2Q6/6b2TVYJkE6GQ=; b=JJiK4twT+vysXh
+	9zbiYWzNRHVUKICDVdXDhfFguNV6IiG9na7BZ0wE52CyeJYD+DNWzlr3LbS0wFzN6M+fdwIMMtdU7
+	SjzusSezoAeubCuUWl6NbNnTH7g1iL+VOqm3nwwR9s8VIomM7CbrKWspQBGvYDC/64/12HYYkYwNj
+	1WBx2XbBRnbXHgYLIcQIiAPDNkJ5GBew/JZeAHhvOc6jDGtu2i4DR8Hk/YycFLawjKetpJcoGAvBh
+	Vhq4A+ukhlJCFEbv2bgmxIu96i3rw6as++hLZ1mNlWqn7ZE7FNQy5nrnfjoz6nyzcjo8CL0vG6yxD
+	xjPRrO2daWfKaiRuQB4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2ytr-0000000BqU7-34Sd;
-	Thu, 10 Apr 2025 20:53:27 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1u2zD1-0000000Bspl-2shb;
+	Thu, 10 Apr 2025 21:13:15 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2ytq-0000000BqTO-0k7M;
-	Thu, 10 Apr 2025 20:53:26 +0000
+	id 1u2zBF-0000000Bshk-0T4C;
+	Thu, 10 Apr 2025 21:11:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B62BE68452;
-	Thu, 10 Apr 2025 20:53:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9B6DC4CEE9;
-	Thu, 10 Apr 2025 20:53:24 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E9E2149E77;
+	Thu, 10 Apr 2025 21:11:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BF6DC4CEDD;
+	Thu, 10 Apr 2025 21:11:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744318404;
-	bh=BALhi4UrMbOHA37ho5uqHpYpjwN+INMK6vrW7q6TxLY=;
+	s=k20201202; t=1744319484;
+	bh=owtnRJWwM8yKkJmYEoQiWQDaxSjXp0C7FQsxarVWC9g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=T8Vyz6cfJb/zRX/vLBSm8X+PPVyWrHbSmVVfybfeJ25+JlQOaUtD0X9QKcHfOSUY4
-	 ejqEG36LkwZ0X1thU8D3+5KGySCJJ8OoPMp5rz7kuVNnZVIjl0HZbO5h3FvCpOLbuo
-	 ZjsGQNqEj8XqjX9icWiqTZlPyy5NOVoomW6aFXTar7Tv49ayJuvgef0UU6SNq1S2vI
-	 rKphEYb/zcsM2gzUVXGW1EwI9a+su8oreolWTPBWzhlDtBWeO11xFdmAGfP3Ivtz8L
-	 GgiKk8Bg3NmuHJSLAcD5HYi7qNOKhMbI1juoCitot4icgIVzohwjBbgLmW1f/kglbS
-	 +p8eQKJSg+/Bg==
-Date: Thu, 10 Apr 2025 15:53:23 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Ze Huang <huangze@whut.edu.cn>
-Cc: Conor Dooley <conor+dt@kernel.org>, Alexandre Ghiti <alex@ghiti.fr>,
-	linux-usb@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Yixun Lan <dlan@gentoo.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org, spacemit@lists.linux.dev,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
+	b=rkEMYfFO8PkNupW9d53Fn+Gf8hLHqpXXnFBqrr4YHQ+uXfsfFycXhKSeCia8matlF
+	 zQOaWWBWviVuR6W/FCo6YVIw254fwMVQCtqE+P+/irD5u3rZQI+mZVMybVzLXHD9z9
+	 XGujbwykQyPlGuSVyfocqgCS49KLORfNgbm5G0ZHfF6fl/QuVxX5wFCOf7ikf7EAlX
+	 /1x4xcxwEj6vTw+fhJWYX7qvgMchl9Ni102t6obZMqBa15ZPU0YRXq0nOgABs2AfuW
+	 UDGi+qYxJVRN/ELF3KV4II6z0Fc7EHY8yhIHz8gcbLoMRxUSeWTAj+TEI5gP4wz+m8
+	 Kp3eiepPvvPXA==
+Date: Thu, 10 Apr 2025 16:11:23 -0500
+From: Rob Herring <robh@kernel.org>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-riscv@lists.infradead.org,
-	Palmer Dabbelt <palmer@dabbelt.com>
-Subject: Re: [PATCH 1/7] dt-bindings: phy: spacemit: add K1 USB2 PHY
-Message-ID: <174431840229.1041655.15249977458763916963.robh@kernel.org>
-References: <20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn>
- <20250407-b4-k1-usb3-v3-2-v1-1-bf0bcc41c9ba@whut.edu.cn>
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	kernel@collabora.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: rockchip,inno-usb2phy: add port
+ property
+Message-ID: <20250410211123.GA1071510-robh@kernel.org>
+References: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
+ <20250407-rk3576-sige5-usb-v1-1-67eec166f82f@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250407-b4-k1-usb3-v3-2-v1-1-bf0bcc41c9ba@whut.edu.cn>
+In-Reply-To: <20250407-rk3576-sige5-usb-v1-1-67eec166f82f@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250410_141125_166780_1C18D6DB 
+X-CRM114-Status: GOOD (  21.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,18 +82,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Mon, 07 Apr 2025 20:38:46 +0800, Ze Huang wrote:
-> Add support for USB2 PHY found on SpacemiT K1 SoC.
+On Mon, Apr 07, 2025 at 08:09:14PM +0200, Nicolas Frattaroli wrote:
+> USB connectors like to have OF graph connections to high-speed related
+> nodes to do various things. In the case of the RK3576, we can make use
+> of a port in the usb2 PHY to detect whether the OTG controller is
+> connected to a type C port and apply some special behaviour accordingly.
 > 
-> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+> The usefulness of having different bits of a fully functioning USB stack
+> point to each other is more general though, and not constrained to
+> RK3576 at all, even for this use-case.
+> 
+> Add a port property to the binding.
+> 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 > ---
->  .../devicetree/bindings/phy/spacemit,usb2-phy.yaml | 40 ++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
+>  Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> index 6a7ef556414cebad63c10de754778f84fd4486ee..3a662bfc353250a8ad9386ebb5575d1e84c1b5ba 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> @@ -78,6 +78,11 @@ properties:
+>        When set the driver will request its phandle as one companion-grf
+>        for some special SoCs (e.g rv1108).
+>  
+> +  port:
+> +    $ref: /schemas/graph.yaml#/properties/port
+> +    description:
+> +      A port node to link the PHY to a USB connector's "high-speed" port.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+I don't think this is correct. The HS port of the connector goes to the 
+controller. The controller has the link to the phy.
 
+If the PHY is also what handles USB-C muxing or orientation switching, 
+then it might have ports, but then it needs input and output ports.
+
+Rob
 
 -- 
 linux-phy mailing list
