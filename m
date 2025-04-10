@@ -4,91 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A33FBC3601E
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 13:45:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 441C8C3601E
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Apr 2025 13:50:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dbwy8SZt4127HVzvUDUa8Eyz6V2lx+e2JLWdQ9AZEKQ=; b=cVQgMq044Ngwrq
-	vaKeekEio9b/0Y++d2jKGNR8pPMkG0n5IPR2UBcqZJb6h11EjWWAfK06F0xBDsi2a3irOnT5WmIUQ
-	cOgt5RYrw3pvxnDW5I5z8TPMLUPKW2pz30NXlOlLzkGOXt60UqSYKyh5mFpI3u30BmTuWJ7sZMb+u
-	aeCAafmEAwaOQQLh6+wa6E+vNHAc3CJdxsPbWfNezKN0UlwaeW8LZaoyc88ZrSAVgFMLfVJRnUrW3
-	5ChhnSkvVVO2TISPbwTTi3HVCBCtstvvN4ffWcZbMAoE9djW1+fmhzsMjkahEKZoGa9uI+BsVZw37
-	ydAzUrwaKrb4pKZutC6Q==;
+	List-Owner; bh=+BytkBSTen0lYqIJ8zHYNUJBOQ8m7LAxxphECoqGj8Y=; b=UfZVVCjaEiuM11
+	o5Wb+qhItkz/lFodUBa7neIwEtVXX1Y18jMp2DI3+vrIyRpgco/9QdCNpR3cxxGxhWjDzp9dFIAMO
+	/rLvHZhEnpA7VEaaq9gZyiVknvr0t5gZ8N6rQoVNR8BswTjmoxXyCzbzlnac3krU3ddyepLm5EGhN
+	yMzeEdMuKbkdm9kGtbLZWMklQla8TeDIvpYBWsU5anf631plf55VUrTmlDX0wsWFxhR00Ne/L1KRX
+	YKCK186yDVMPpaCOqfQf7kHFdq3wq1aSISrSeJjNXUJlvub3RNOVaoFBrwW6onqPCI3AGFnB730oG
+	cFLP3+debsmgwzKaOHOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2sDd-0000000Aio3-0v3o;
-	Thu, 10 Apr 2025 13:45:25 +0000
-Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
+	id 1u2sIu-0000000Ak2v-08oW;
+	Thu, 10 Apr 2025 13:50:52 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2s2v-0000000AgWx-2qRz;
-	Thu, 10 Apr 2025 13:34:23 +0000
-Received: by mail-pl1-x62a.google.com with SMTP id d9443c01a7336-2254e0b4b79so10495835ad.2;
-        Thu, 10 Apr 2025 06:34:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744292061; x=1744896861; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=snDm+R9HSu34qLr874FxLnOvyHahTzryBYCxyI70mec=;
-        b=UEzqj60Zh+PhpdILO3rFtG8tkeg98HbFt65EGvFdk3H2mx2GYxM5zt11Iui5aHO9X1
-         99S0WwdtUT1CSYjhfEQGeANf5Kjnadwt1dG5a1IzF/OLWZ0BLpw+cLS2KRdxLOwpSZzv
-         YYq8I+s6AKXCy9gAWfS243ZigxPtFt07rd/JgTlsVDQDY+5EPyv9yMK3SYL/bu+S5zub
-         mDXzGUWF8SS5q4ybHcL6x1DfWVkObnQrt17Pa1W/+0SdRnZIk5VpXa+6bDCi5IUxe5HX
-         U64VSmcfvWn5CgkP0bqgu+Yz1ywpLcxqDlhAO34RllsB90gQsuFVakASwQrTSzNs6u1+
-         2bkA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744292061; x=1744896861;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=snDm+R9HSu34qLr874FxLnOvyHahTzryBYCxyI70mec=;
-        b=qkkfuFG2qH8venFjfqzjyQa9Zo74Aw2qYfgUfR4M4AbwoNzAvpfqpgA0KU9UsPJDBj
-         NDaLWKOiYYPTgBATb0oVxJe+N3yqqiCTdxVYCVNpduG1E2fE5o194HKchsAIzLwr1kXI
-         zqyyHwb4bOKDqWRK+BtnmoMXlcjOHui0EOcj+NTwdO5D+Jc0gvbzCSkF9+o/s98iywpM
-         B4oZqeepwyEHPd3O7zCUDG9MNfASc863CBQuOI2tzjgIX7Gzn4cmTwia0i1tCrrJvaBk
-         2VphbyFKrYU14WxV3+1OAidLVNuDTeuzzi7AHJLXCIlL39rUPN7dGMy3fKwsiUXTNBRy
-         8wQg==
-X-Forwarded-Encrypted: i=1; AJvYcCW7qA6aStfpIKUiWLLf/yMuGtXkZmp/zrQN1aLBLxwZggzIvZay2u00XmM2k2r1P5dFqBD7nnXofarO@lists.infradead.org, AJvYcCWHUNzTWSoyBY99r1/dt5e3GWav+kE6NJUE9XgabSPnCibY/NjdaEPmmAdLIR3kGi1misSLZhz8xNcvZ5FJ8mqsvA==@lists.infradead.org, AJvYcCXxF9ydFeNp7Z9OxHVxDnjXZGDe8FdyKsipVi6ApI+k4t39tXTs1sHDVqcV++qmscuySEuZRpgQ+k0uVZ2y@lists.infradead.org
-X-Gm-Message-State: AOJu0YxrmehVFkTvui71DlhmECMHayFx4dAWpyVt6vgXsppfFu3E9teF
-	KQEVubDFjFZTWGKKqQeGqvAZ9m3eL/3n7r2zdDIzN0naFUuPX6yL
-X-Gm-Gg: ASbGncu/SehULYC54JmdHi2YGpUBaegnwsysnx2qZPth5vefxo4LvDMLbn1QEvATAlV
-	6eQ8WReAHZpGQN5LDxulVhH0o3CZkn2fqmh/vANZSB7CteO2gRzty60Qjvw9HypeP0y8dIzhWfu
-	MYqcztdFzdie7By0uJYNQy6sJEp83IHKn1ipTqj6Igqpxsxk/BktveUGa9I7KFlaBePhQrntfzR
-	a43FvhO0ONOZnJkGmf/5crnXDxn76eTIQKZs8pXGBV0V3elbuk9fT9Q6fB5Kd9VQ8DCdQI8YgfA
-	IA99IlTCwYCPQnmohqPPRA38fiS+gM7pbT2dJGrQ97Q95YLh2OYvxes=
-X-Google-Smtp-Source: AGHT+IG8FTT4kfyWPBOyAb7OIrEAVZZGG4LdxWb3S85G2ZZGHkha/cC8RTwaJM0VFBFY0ZFSfbmjFw==
-X-Received: by 2002:a17:902:e748:b0:229:1cef:4c83 with SMTP id d9443c01a7336-22be02d9318mr30954625ad.4.1744292060733;
-        Thu, 10 Apr 2025 06:34:20 -0700 (PDT)
-Received: from localhost.localdomain ([103.221.69.50])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7cb0400sm30121475ad.160.2025.04.10.06.34.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 10 Apr 2025 06:34:20 -0700 (PDT)
-From: Anand Moon <linux.amoon@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Jerome Brunet <jbrunet@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Amlogic Meson SoC support),
-	linux-amlogic@lists.infradead.org (open list:ARM/Amlogic Meson SoC support),
-	linux-kernel@vger.kernel.org (open list)
-Cc: Anand Moon <linux.amoon@gmail.com>
-Subject: [PATCH v1 6/6] phy: amlogic: phy-meson-axg-pcie: Fix PHY creation order in axg-pcie probe
-Date: Thu, 10 Apr 2025 19:03:21 +0530
-Message-ID: <20250410133332.294556-7-linux.amoon@gmail.com>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250410133332.294556-1-linux.amoon@gmail.com>
-References: <20250410133332.294556-1-linux.amoon@gmail.com>
+	id 1u2sF9-0000000AjCP-0c4Z
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Apr 2025 13:47:00 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 9C964A48973;
+	Thu, 10 Apr 2025 13:41:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C33DC4CEE8;
+	Thu, 10 Apr 2025 13:46:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1744292817;
+	bh=zwA4d25ah+mvZoYrC4tRowa2RLqWtvgbqQJWlfZnLMM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=JUoJWD8uYX4yM7s6elH8ae0Xd1wm1WehC7D3FSe3d4Mk+njp9fOTgIL1N+N2uylJ4
+	 JQNUiatvFap/4ndjE7iJRZKc4dNVEtMWEGyHZaMqIc+UnTFxe4o+BEBADAj75HZ7Vw
+	 unCOiZc+CpwjAEyZZGPwGkXjb5693vTD0hi/dCanPlK1kS6IGYwFshMmY7qVJC1n+z
+	 9IgZwHHdREjOCsSvDn/wQyAsHmijCsClwg62wjtJXz8jQdMzcYcrJF1ccpZLdtFxCh
+	 sGOYMXowBdBD9lyNriCrnebMIZ523012k862xWlSxmrIwOJNg8hjr+yvR3EvPkhzkj
+	 fFsFk4F+InQ/g==
+Date: Thu, 10 Apr 2025 19:16:54 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: markus.stockhausen@gmx.de
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, chris.packham@alliedtelesis.co.nz
+Subject: Re: [PATCH v5 2/2] phy: Realtek Otto SerDes driver
+Message-ID: <Z/fLzpuj13WRe1/0@vaman>
+References: <20241017162400.3881609-1-markus.stockhausen@gmx.de>
+ <20241017162400.3881609-3-markus.stockhausen@gmx.de>
+ <Z1XLheRVQYu43hI+@vaman>
+ <138401dba84e$04bc0cf0$0e3426d0$@gmx.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <138401dba84e$04bc0cf0$0e3426d0$@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250410_063421_718121_17F65C3A 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20250410_064659_249860_EA309B31 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,47 +77,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reorder the PHY creation in the axg-pcie probe function to ensure all
-the resource is mapped before creating the PHY. This change addresses
-the issue where the PHY creation was attempted before
-mapping the necessary resources, potentially causing failures.
+On 08-04-25, 08:18, markus.stockhausen@gmx.de wrote:
+> > Von: Vinod Koul <vkoul@kernel.org>
+> > Gesendet: Sonntag, 8. Dezember 2024 17:38
+> > An: Markus Stockhausen <markus.stockhausen@gmx.de>
+> > Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
+> conor+dt@kernel.org; linux-phy@lists.infradead.org;
+> devicetree@vger.kernel.org; chris.packham@alliedtelesis.co.nz
+> > Betreff: Re: [PATCH v5 2/2] phy: Realtek Otto SerDes driver
+> >
+> > On 17-10-24, 12:24, Markus Stockhausen wrote:
+> > > The Realtek Otto platform is a series of 4 different MIPS32 based
+> > > network switch SoCs. They consist of:
+> > >
+> > > ....
+> > > +DEFINE_SHOW_ATTRIBUTE(rtsds_dbg_polarity);
+> > > +
+> > > +static void rtsds_dbg_init(struct rtsds_ctrl *ctrl, u32 sid) {
+> > > +	debugfs_create_file("mode", 0600, ctrl->sds[sid].phy->debugfs,
+> > > +			    &ctrl->sds[sid].phy->dev, &rtsds_dbg_mode_fops);
+> > > +
+> > > +	debugfs_create_file("reset", 0200, ctrl->sds[sid].phy->debugfs,
+> > > +			    &ctrl->sds[sid].phy->dev,
+> &rtsds_dbg_reset_fops);
+> > > +
+> > > +	debugfs_create_file("polarity", 0400, ctrl->sds[sid].phy->debugfs,
+> > > +			    &ctrl->sds[sid].phy->dev,
+> &rtsds_dbg_polarity_fops);
+> > > +
+> > > +	debugfs_create_file("registers", 0600, ctrl->sds[sid].phy->debugfs,
+> > > +			    &ctrl->sds[sid].phy->dev,
+> &rtsds_dbg_registers_fops); }
+> >
+> > Please create a driver directory and add files to that please
+> 
+> Sorry for the late response as I have been busy otherwise. I will take care
+> about the things you noted. Regarding this advise: Do you want me to create
+> a separate directory in the debugfs or for the driver source code?
 
-Signed-off-by: Anand Moon <linux.amoon@gmail.com>
----
- drivers/phy/amlogic/phy-meson-axg-pcie.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+Debugfs please
 
-diff --git a/drivers/phy/amlogic/phy-meson-axg-pcie.c b/drivers/phy/amlogic/phy-meson-axg-pcie.c
-index 54baf7b8930e1..14dee73f9cb57 100644
---- a/drivers/phy/amlogic/phy-meson-axg-pcie.c
-+++ b/drivers/phy/amlogic/phy-meson-axg-pcie.c
-@@ -136,11 +136,6 @@ static int phy_axg_pcie_probe(struct platform_device *pdev)
- 	if (!priv)
- 		return -ENOMEM;
- 
--	priv->phy = devm_phy_create(dev, np, &phy_axg_pcie_ops);
--	if (IS_ERR(priv->phy))
--		return dev_err_probe(dev, PTR_ERR(priv->phy),
--				     "failed to create PHY\n");
--
- 	base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
-@@ -158,6 +153,11 @@ static int phy_axg_pcie_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->analog))
- 		return PTR_ERR(priv->analog);
- 
-+	priv->phy = devm_phy_create(dev, np, &phy_axg_pcie_ops);
-+	if (IS_ERR(priv->phy))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy),
-+				     "failed to create PHY\n");
-+
- 	phy_set_drvdata(priv->phy, priv);
- 	dev_set_drvdata(dev, priv);
- 	pphy = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
 -- 
-2.49.0
-
+~Vinod
 
 -- 
 linux-phy mailing list
