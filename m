@@ -4,77 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC2F3C369A9
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:21:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96A66C36010
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:25:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D89V5cq+E9wnXPJa3+QDOHnrHihlNeVnZYNunee6+KQ=; b=TmPr0sKyy89klC
-	aHnT0knnDSm5tqncjkKjHxxCRlhdCexOGUPPO6w55eX1cYyFcrKT+KytTNLiuDfqFOZX7igWUOsxJ
-	Cc7Kg59AqJ2eeDIp7Hk9osWwfWbxxmSneqWljom94czf28FmO4IzOX5s0sOSPQYXraHk8NIGAXbgy
-	qkDcnHDAdxixk4Eaa1CuToreKGJPOSwzguFQXTJh6w3dvndfAdqap8FHFCyIVMm821lOQb2O4d9Ap
-	5TNiz5+GUH9as2pvQoG0xHD0gj3ige0NhcME5J0Zc5AXYoI+QndhHhO3HTTP7h+Nl6sGmq06y68x8
-	Us3bMRMcYu0okzOnc4RA==;
+	List-Owner; bh=6rGrulSEG8In8tww6L0uGCxKFTXaiOKWtOL9yUb/iYM=; b=drKSJyI4Jhasc+
+	MqiaatqXuOEyyKNyQ8RrSzApYeWaO8PsAMy0V00rxV5ISzILMHkC1c3BIiPbVvrBplmbNTXXbL5Bv
+	PQ/FWKGG6Ef0PhAAAm3j/3gwLr/l5icU2rfX6M6CVE1vEXmgA5/pWReR1L4D8efKC856hC0iWMN1N
+	CNr4Oy9UuvSh/JZbgWBjimJBicxZ9Xd5syDexTjxyZ7GEgHmH6t/SOxhki0ANMY4jQViY6cAozvML
+	lICAVPhS/QomAg6c6oACQSQaexFLIWPSLX0dMsdJrIFgKGFx0kfJ3SOCqxBrKwD3bfS7cdEqEWqNG
+	iCIvNs8hsDf0TxjJQ+BA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DO4-0000000DihY-28bT;
-	Fri, 11 Apr 2025 12:21:36 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1u3DRf-0000000DjQG-1WiL;
+	Fri, 11 Apr 2025 12:25:19 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DE4-0000000Dggv-1z7X
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 12:11:18 +0000
+	id 1u3DE8-0000000DgiG-1HuH;
+	Fri, 11 Apr 2025 12:11:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 3CC3CA4AADF;
-	Fri, 11 Apr 2025 12:05:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E48BC4CEE2;
-	Fri, 11 Apr 2025 12:11:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8B36068459;
+	Fri, 11 Apr 2025 12:11:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12A5DC4CEEC;
+	Fri, 11 Apr 2025 12:11:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744373475;
-	bh=kbUcZPoXi79WtS45+fL3/oWI2wWgCZEwrEDv3Xo/gxY=;
+	s=k20201202; t=1744373479;
+	bh=12U8A9tqFraTkbX8UucQrHYVXY0lsm8Dl+Z4zRDU7+M=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=oXfReTdO98Js7+lVoMrKowkY/dHKuDTcIXRPKrWKJk5X7+RY5+egJLrKqFXdsYjEC
-	 5wLKayQ1r3Tgymu3bg2fgBKj+3MbAanhYpUzqS3NE+uAs8XITlEqaTdh6svcJc68Mn
-	 c3M/HAtl2EbjFc7+khBRMqryHMHJzNv5s4oAJdwvpSglnEjlQtOhUIRv6Tj8AXLoC1
-	 IQV+9SQstnRyR+LX+GVypm2DDXIkhOeefXaTRdElniPQFX1u9NzQvR9F+7++Tes60S
-	 vme+tAt7hKQiBD13P/PmV5PFVVCSgX487Ob9P2+rH02DvZS8hRw4kzKCRsZjC5cSlE
-	 sLUxz2hT515OA==
+	b=K3dSX4tRj7rJ9O1JP0isV71y1pRkYOkWhdxA4/IoSEK64MYcwp+4fRUgs4XuosURC
+	 FJ+eVvLwRBH/Xmz4HsgLa4bMNianpOCI+1O66a+ekF5/AkNzXrzzt5h1nxS0ASDF54
+	 X6pa08EMqcgJvIZJQp0EJZPkQLX8YvbtdvAKHlUQ2ZE2VBdtUCCDew4Bk6M+g5HXbX
+	 X9+QYoUY94VJuma7WoS7l7Vv3fOsbLjPmaLHgkE3M71MsTcvmAsm8z6duGH46ePTIh
+	 ukJZUFxvECbyl6MxIm/kK0tV1+SKSPH5KhZQRoxIj4Ey+hkEoxQtPq2VkBQD9c3dW6
+	 yJUZQmyGxClgw==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Nitheesh Sekar <quic_nsekar@quicinc.com>, 
- Varadarajan Narayanan <quic_varada@quicinc.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Praveenkumar I <quic_ipkumar@quicinc.com>, 
- George Moussalem <george.moussalem@outlook.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-pci@vger.kernel.org, 20250317100029.881286-1-quic_varada@quicinc.com, 
- 20250317100029.881286-2-quic_varada@quicinc.com, 
- Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>, 
  Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
-References: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
-Subject: Re: (subset) [PATCH v7 0/6] Enable IPQ5018 PCI support
-Message-Id: <174437346895.673939.17282327012259130391.b4-ty@kernel.org>
-Date: Fri, 11 Apr 2025 17:41:08 +0530
+ Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ Dmitry Baryshkov <lumag@kernel.org>
+In-Reply-To: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
+References: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
+Subject: Re: [PATCH v6 00/14] phy: rockchip: samsung-hdptx: Support high
+ color depth management
+Message-Id: <174437347571.673939.550787962753296084.b4-ty@kernel.org>
+Date: Fri, 11 Apr 2025 17:41:15 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_051116_588919_0B4FC1B1 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,24 +76,46 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 26 Mar 2025 12:10:54 +0400, George Moussalem wrote:
-> This patch series adds the relevant phy and controller
-> DT configurations for enabling PCI gen2 support
-> on IPQ5018. IPQ5018 has two phys and two controllers,
-> one dual-lane and one single-lane.
+On Tue, 18 Mar 2025 14:35:34 +0200, Cristian Ciocaltea wrote:
+> This series relies on the new HDMI PHY configuration options [1] (patch
+> included here for convenience) to provide high color depth management
+> for rockchip-samsung-hdptx, and to introduce a proper solution to setup
+> the TMDS character rate on this PHY.
 > 
-> Last patch series (v3) submitted dates back to August 30, 2024.
-> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
-> continuing the efforts to add Linux kernel support.
+> [1] https://lore.kernel.org/lkml/d1cff6c03ec3732d2244022029245ab2d954d997.1734340233.git.Sandor.yu@nxp.com/
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018 compatible
-      commit: aae29082b6620c664e97a1e2f2062abc6a58659d
-[2/6] phy: qualcomm: qcom-uniphy-pcie 28LP add support for IPQ5018
-      commit: dfc820d2f8a8ea90bbc02269b5362e3678e58cac
+[01/14] phy: Add HDMI configuration options
+        commit: 10ed34d6eaaf86e301a8f2dd190d26dfbc9799bd
+[02/14] phy: hdmi: Add color depth configuration
+        commit: 3bb9286f4ece6acbc1fbaa9f192a82645d30efbf
+[03/14] phy: rockchip: samsung-hdptx: Fix clock ratio setup
+        commit: 0422253ac1919fea8292381c85f11a9decff1bb1
+[04/14] phy: rockchip: samsung-hdptx: Do no set rk_hdptx_phy->rate in case of errors
+        commit: 1f4d382769e3b38dfc498c806811dae856e40f31
+[05/14] phy: rockchip: samsung-hdptx: Drop unused struct lcpll_config
+        commit: 6218c3fd6702a5bc4ab323fed25714cde127684c
+[06/14] phy: rockchip: samsung-hdptx: Drop unused phy_cfg driver data
+        commit: bcd61d182618c6a77d0841fcdc3333e125725360
+[07/14] phy: rockchip: samsung-hdptx: Drop superfluous cfgs driver data
+        commit: bacf2fe750dab6bc7ed50556aaadd3ab107fc643
+[08/14] phy: rockchip: samsung-hdptx: Avoid Hz<->hHz unit conversion overhead
+        commit: 0edf9d2bb9b4ba7566dfdc7605883e04575129d9
+[09/14] phy: rockchip: samsung-hdptx: Setup TMDS char rate via phy_configure_opts_hdmi
+        commit: c871a311edf0ebb1b934946a84a6c532cac0c035
+[10/14] phy: rockchip: samsung-hdptx: Provide config params validation support
+        commit: 2392050a2cb94ff3397949e109e4b9f0285ee085
+[11/14] phy: rockchip: samsung-hdptx: Restrict altering TMDS char rate via CCF
+        commit: 6efbd0f46dd8ae1d2b91b41d98c2800c60ab1f5e
+[12/14] phy: rockchip: samsung-hdptx: Rename ambiguous rk_hdptx_phy->rate
+        commit: 37f335dbfd028c008d0a7940ca5a270d1e2f6b81
+[13/14] phy: rockchip: samsung-hdptx: Optimize internal rate handling
+        commit: 45b14bdcf4acfd483d9890396197c35c23821124
+[14/14] phy: rockchip: samsung-hdptx: Add high color depth management
+        commit: 9d0ec51d7c227c3ae837e22832eaed219e25f126
 
 Best regards,
 -- 
