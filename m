@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1192C369A8
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 07:30:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C24FDC369A2
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 07:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gB+D8dAIzpJyEG/F+rx84ki520tubIlejk2+mTdMIx4=; b=Ia1+dnDxSbTk8n
-	TOePmueX0NgM0sFY/WwufwsRCthB4nZ7L6ljFgCo58zAzGrHCw9lRLcquEQX4ezY644PAklbFBgbP
-	zYE30uxGGAd1K7y6RzUzasT3CvoxL5fnn9DMzpAhnaJzqiBSPPk7jXDy2uesM+l8Tfx+sjyBt7dok
-	ZHcmFOwNyGDR7v+lBY3o8y1AtXUKGfVYoRCeKUb5jv3spA9NL7rcx7N8fu6CXfZYghNyA1WDAyMN7
-	B+bGfGxRNyxolFcutHjWushLZT6XijjoFuHRi+N/1cxLn+nBQJe1gCw48zIAqvAMeMYIQjYX/b3Wp
-	fbim/ofSPykCndLLBL0A==;
+	List-Owner; bh=RXTy4BDhk1lnNO51aoQbORpIOSh9qRHla2BbPBaTDig=; b=EKfLTJscz/je8w
+	sX8nIFTtmc1FwlrwmP0WwjxM5wKnxfvFdHKG5/0kIQSuiefmwlSamuCdKskivN0dxeFXi/VU4tmQl
+	orftihwtHuHaTpDQEmeJRnRxORr0i+okXsAp3bJ3E01l1o7VHDnGgeXAXPvFDllFRbaC9PoDbPKTa
+	o4MhgRKfQHemgYgev1V/FWcE88tUcnb9IyxQwVDk5e0DbvatiLb/9qmtMaJJWHIzsUeu6vEZ38iEw
+	3IidFXtZ7z2Ggwl7iuQ8PyAAVFPAp+/Sggwj4EVMOQmcYDHUK4OunmPyzh8Y5srFExZc2ucf7r5Yw
+	sR4pBy2SyVR1ENyUCRGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u38qI-0000000Cs1L-0zxp;
-	Fri, 11 Apr 2025 07:30:26 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1u38qm-0000000Csak-2AF5;
+	Fri, 11 Apr 2025 07:30:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u38Qx-0000000CoPn-2cAn
+	id 1u38ph-0000000CrsO-0m3v
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 07:04:16 +0000
+	Fri, 11 Apr 2025 07:29:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 37EEDA4A761;
-	Fri, 11 Apr 2025 06:58:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF37DC4CEE2;
-	Fri, 11 Apr 2025 07:04:13 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 89AA161135;
+	Fri, 11 Apr 2025 07:29:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76DDCC4CEE2;
+	Fri, 11 Apr 2025 07:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744355054;
-	bh=AjLGdudkEww13Nz7cV5HJs58X3vRvdgMVqM4PyTJpeA=;
+	s=k20201202; t=1744356588;
+	bh=FpvFJBCNZeQwsrZwlHDgycSPFQVP2F3VGtux5Rvt/7g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=QMVJvaKIvCEhjqbl5AqKs0cpHMyvu1N9cmHbvDrhBSxs7Kdh9vGOrbqCV8OyzU1oj
-	 MoAAUhaKELSnT1jYgtHsWFZBKmuto0m8G1IXj1Nq3YBPlyB7bbpOfObfcyroYfONfz
-	 JkM7glCX0GBEqBz8N3wVhBliQdK6gIybFR9tGH+6TgjPJma7eFyN2ZhnZn5+BhDYMp
-	 Xe6XktaRK5r+dvJK6M12cOtwfUp5pssjCa21VPmtLv0sGiAVEUFBEOFsucn+0HNebo
-	 5UufgYKdWdB7vcKKMQLZ6LQ82uZg91TUzR/+WTVa9WieLyWaJExYxLoPI58HaKOWYE
-	 ybvRBYUI1P+WQ==
-Date: Fri, 11 Apr 2025 12:34:10 +0530
+	b=X7KDETyqBKkomQxqCqCT5fjZcfO0jb23vcPrDVG2sfYqceJ+FujzpC3NdTw+6+eH8
+	 ymkaW9HwrpugRm1tkoiu4yyUCbdE6FFc9uyLC0Ghx+MzXCJ+yIldW9qrRB5ZQGc6cg
+	 dTrVb61IvUc7ne+xSt6VbTT+bKA4Q6v6m1795KE38u8ULO4YsP9VGBOAFtcximuSaZ
+	 ds4phx3rmrS8DodJf1vyl/Q4qBfPbu2EnvZX2GWhDM7BPZ37w3ljtnP/Grsp9trsg+
+	 xCYkh7D5KkMbLl+Ao0NYtw6nK6MpFesNfCjGTR8zzzdJ/vbQnezh9J8wofR6ynMDVQ
+	 ebSTpatkqc3IQ==
+Date: Fri, 11 Apr 2025 12:59:44 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Varadarajan Narayanan <quic_varada@quicinc.com>,
-	Dmitry Baryshkov <lumag@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qusb2: Update the phy settings for IPQ5424
-Message-ID: <Z/i+6k6VseihdQ69@vaman>
-References: <20250407-revert_hs_phy_settings-v1-1-ec94e316ea19@oss.qualcomm.com>
+To: Wenbin Yao <quic_wenbyao@quicinc.com>
+Cc: kishon@kernel.org, p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org,
+	abel.vesa@linaro.org, quic_qianyu@quicinc.com,
+	neil.armstrong@linaro.org, manivannan.sadhasivam@linaro.org,
+	quic_devipriy@quicinc.com, konrad.dybcio@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 0/2] phy: qcom: qmp-pcie: Add PCIe PHY no_csr reset
+ support
+Message-ID: <Z/jE6FzW4MM98hgv@vaman>
+References: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250407-revert_hs_phy_settings-v1-1-ec94e316ea19@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_000415_723609_4DE1D1F0 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250319094544.3980357-1-quic_wenbyao@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,18 +74,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-04-25, 19:51, Kathiravan Thirumoorthy wrote:
-> Update the phy settings for IPQ5424 to meet compliance requirements.
-
-Can you specify which requirements are these?
-
-> The current settings do not meet the requirements, and the design team
-> has requested to use the settings used for IPQ6018.
+On 19-03-25, 17:45, Wenbin Yao wrote:
+> The series aims to skip phy register programming and drive PCIe PHY with
+> register setting programmed in bootloader by simply toggling no_csr reset,
+> which once togglled, PHY hardware will be reset while PHY registers are
+> retained.
 > 
-> Revert the commit 9c56a1de296e ("phy: qcom-qusb2: add QUSB2 support for
-> IPQ5424") and reuse the IPQ6018 settings.
+> First, determine whether PHY setting can be skipped by checking
+> QPHY_START_CTRL register and the existence of nocsr reset. If it is
+> programmed and no_csr reset is supported, do no_csr reset and skip BCR
+> reset which will reset entire PHY.
+> 
+> This series also remove has_nocsr_reset flag in qmp_phy_cfg structure and
+> decide whether the PHY supports nocsr reset by checking the existence of
+> nocsr reset in device tree.
+> 
+> The series are tested on X1E80100-QCP and HDK8550.
+> 
+> The commit messages of this patchset have been modified based on comments
+> and suggestions.
 
-Why not do revert first and then add the settings?
+This does not apply for me on phy/next, pls rebase and resend
 
 -- 
 ~Vinod
