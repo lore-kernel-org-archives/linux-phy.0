@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7097EC369A8
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 11:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFABC36010
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:10:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UCgrwWqodVK6S/dFey596/kU0ukpiEJWoYzmjXUSsPg=; b=UmQ1KAEiTLBUJ0
-	dYDUQ98Tos55zP+pYAgAWjC4pWm3QQaPA1j58vixkLVmwosx/LhgAtwOMGyBRpH252XlPL4xqJvmz
-	9oM9MCsj6SCZNKM4C1IJtApQFowskuECvRPpGRT/5D0G3Gvq1vQsB8lSNZbK7UNayt6mf7ksd6/rB
-	0CMIAQghDKv8clj3afpNtIXxb51UABNG71LxJGTc0AqTORtkU0edVF+mHxS4BUycsjtdZnl+WYWYy
-	5KBloCNbEFDaPSHGZeHt2vyZWFRgdn8QjoQ8iSeYBrOM6BsS8kDrhZXcwuTYSXvvLKLQAAbthHB9f
-	YqFvid45Te9ZndawjxYg==;
+	List-Owner; bh=DhqWLTQD+bMhsgTX/COPpXgiTgrHPgvIfFj9idnwTsA=; b=ZpT/jnHyBz611U
+	jmn28BD0Lud+yE8zhPEKFAaIHgke5tqHzVE18rG9O7NnmHWI+aLWt2uwJOBFkRVYlpkwi00MswADc
+	5pHfmk08xPPgjFdk9GC2V7miSc+FGDlUhrQEeNw3NJEZwMh6bX7+Udkm88BGSZNtdKYQC2cG9BqP7
+	DIUrK30uvzB4R/LrPYWNxQIa9qKfMGyCDwJzfey5P6wHA4s1AGEorqOkjs/rBCmauMzEjA5XH/vxh
+	W6jZJ8EsPLlw+nsxJt7/xDmPRN7ImSjOrWj8tD4Z8c8sSGUxX4OP8cOUD3cPDXWqBij0IgaOi95pt
+	8AaJFDRXDLWJPkZHsr3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3CoL-0000000DcRc-0rqC;
-	Fri, 11 Apr 2025 11:44:41 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1u3DDB-0000000DgS1-1uJC;
+	Fri, 11 Apr 2025 12:10:21 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3CfT-0000000DaYt-0CPh
+	id 1u3DD9-0000000DgR5-17Td
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 11:35:32 +0000
+	Fri, 11 Apr 2025 12:10:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5C4655C677A;
-	Fri, 11 Apr 2025 11:33:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59453C4CEE7;
-	Fri, 11 Apr 2025 11:35:29 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 8DCE0A4AADF;
+	Fri, 11 Apr 2025 12:04:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 564EFC4CEE2;
+	Fri, 11 Apr 2025 12:10:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744371330;
-	bh=ZHpRmlxi0N8UYKKEPd33twsru7ukxPU6RRFGjJueWLo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YtzGtOeI6RXdDJWLkuG5+oLCHHjqqKyUaVr2+/eUUMUheu1SmJnT6/0CQ4pdeGN7f
-	 8EWsWZniLDnUaLfdMuk3dovnwAJNuhDT6vw77iXrXgvt/gl9Dbjqkrx0fX2LHO/xYy
-	 DbWJ+ZhoBUjskHCl+2X4/go5vHczuBFY/U78BDFyXArgnr6s85mq4R2r2A6BCOSGpI
-	 CYJ2nY5E64Qb1NzaazPOLgk9DJ07KZw2+mclhd30BETTwy4kPfogwBg8cfwV7EtrNj
-	 AMMq9TqDQpDP3i6Q16wZ+UgE1DGwLv7t8vWcZIZXjHn3bfywfB93OPxnBbJjqvuLUy
-	 qrIYtHqYbF3Hg==
-Date: Fri, 11 Apr 2025 17:05:26 +0530
+	s=k20201202; t=1744373417;
+	bh=Ncgr/bHwGWav0++g7h6qO7mSC7ga7BpzOJD/jKK+NKU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=N/wQGC7vrzvR7qbFAp5Haf03GN3YrAALauuaUPTYuw+nVIhvcnISJshYgzU0YIfh2
+	 tYTPw+CfexM8MVtYpICAiQWAPWskohNC8N1T5YEXa09WC3TT3+M2x6+zfayEQ6q8bb
+	 tGrolWJCtIHrRBRZ7cACRs4oQIZlyBqzizYlUaXjT9Tspb2fEwOItRST8aUac3IIrR
+	 QBwvoXHFwseNY10lnv4L5CWKoEO/hNxG9+WSPGFZUW07hHDJmRYSqxdVzkYIH+UNG9
+	 ul21nt68g8eFPYkqbrDUh8Ls+mQrBhbWybepk6BkBoZ0eCeoFquqdfL89Dz9H7Eo4f
+	 8r/An6v9qRyqg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Varadarajan Narayanan <quic_varada@quicinc.com>,
-	Dmitry Baryshkov <lumag@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qusb2: Update the phy settings for IPQ5424
-Message-ID: <Z/j+fs6hCVhGKLcH@vaman>
-References: <20250407-revert_hs_phy_settings-v1-1-ec94e316ea19@oss.qualcomm.com>
- <Z/i+6k6VseihdQ69@vaman>
- <734cf70a-1d96-4a87-bc7e-c070c1e7dc8c@oss.qualcomm.com>
+To: jonathanh@nvidia.com, thierry.reding@gmail.com, jckuo@nvidia.com, 
+ kishon@kernel.org, Wayne Chang <waynec@nvidia.com>
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+In-Reply-To: <20250408030905.990474-1-waynec@nvidia.com>
+References: <20250408030905.990474-1-waynec@nvidia.com>
+Subject: Re: [PATCH V3 1/1] phy: tegra: xusb: Use a bitmask for UTMI pad
+ power state tracking
+Message-Id: <174437341497.673813.4496801277326172956.b4-ty@kernel.org>
+Date: Fri, 11 Apr 2025 17:40:14 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <734cf70a-1d96-4a87-bc7e-c070c1e7dc8c@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_043531_139740_BE60E5C0 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20250411_051019_371515_CBC4E8BD 
+X-CRM114-Status: UNSURE (   5.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,38 +75,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-04-25, 14:29, Kathiravan Thirumoorthy wrote:
-> 
-> On 4/11/2025 12:34 PM, Vinod Koul wrote:
-> > On 07-04-25, 19:51, Kathiravan Thirumoorthy wrote:
-> > > Update the phy settings for IPQ5424 to meet compliance requirements.
-> > Can you specify which requirements are these?
-> 
-> The eye diagram (Host High-speed Signal Quality) tests are failed with the
-> current settings. So design team asked to revert.
 
-That would be good to mention in changelog.. am sure you wont recall 6
-months down the line, which requirement this triggered the change!
-
-> > > The current settings do not meet the requirements, and the design team
-> > > has requested to use the settings used for IPQ6018.
-> > > 
-> > > Revert the commit 9c56a1de296e ("phy: qcom-qusb2: add QUSB2 support for
-> > > IPQ5424") and reuse the IPQ6018 settings.
-> > Why not do revert first and then add the settings?
+On Tue, 08 Apr 2025 11:09:05 +0800, Wayne Chang wrote:
+> The current implementation uses bias_pad_enable as a reference count to
+> manage the shared bias pad for all UTMI PHYs. However, during system
+> suspension with connected USB devices, multiple power-down requests for
+> the UTMI pad result in a mismatch in the reference count, which in turn
+> produces warnings such as:
 > 
+> [  237.762967] WARNING: CPU: 10 PID: 1618 at tegra186_utmi_pad_power_down+0x160/0x170
+> [  237.763103] Call trace:
+> [  237.763104]  tegra186_utmi_pad_power_down+0x160/0x170
+> [  237.763107]  tegra186_utmi_phy_power_off+0x10/0x30
+> [  237.763110]  phy_power_off+0x48/0x100
+> [  237.763113]  tegra_xusb_enter_elpg+0x204/0x500
+> [  237.763119]  tegra_xusb_suspend+0x48/0x140
+> [  237.763122]  platform_pm_suspend+0x2c/0xb0
+> [  237.763125]  dpm_run_callback.isra.0+0x20/0xa0
+> [  237.763127]  __device_suspend+0x118/0x330
+> [  237.763129]  dpm_suspend+0x10c/0x1f0
+> [  237.763130]  dpm_suspend_start+0x88/0xb0
+> [  237.763132]  suspend_devices_and_enter+0x120/0x500
+> [  237.763135]  pm_suspend+0x1ec/0x270
 > 
-> I thought of submitting it separately. But what-if only the first patch
-> merged and second one didn't due to some issue, it will break the USB
-> feature. So, I thought it would be better to keep it in single commit.
-> Please let me know, I can send V2 with 2 patches with the merging strategy
-> (both patches should go together to avoid the USB breakage) in cover letter.
+> [...]
 
-Series is applied together and you can mention the dependency on cover
-letter
+Applied, thanks!
 
+[1/1] phy: tegra: xusb: Use a bitmask for UTMI pad power state tracking
+      commit: b47158fb42959c417ff2662075c0d46fb783d5d1
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
