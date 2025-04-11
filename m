@@ -4,62 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B9D6C36010
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC2F3C369A9
 	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:21:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fn3E2OrgX4I6qb7FIkhX0J2g40U4YXAcaR0qDOXbcIM=; b=RH6egpiCuZ4YLD
-	KeOuXV69uRf1Jk+y773HyrMh++MoLH2ejdQx0F1aRXOnBSTNfAIOM2W6fMjiBJ9Wsb2KblF9np3bq
-	hbdUmrmtehL25nadEPku75KXLMTlxsIf0STJyOdzR8fMAogzVEQlWE7dX6EVxLAa/HvodRE75uY6Z
-	Bir3oLuhMfU+xj1CVBFXJkSUc1wgGW1/GNeLAa9zdi8wYkoRNwq4+IxzrlVTK+yO05uCN0IBx6b7v
-	5Ca+ngoBTwZ7Nuw8YKpQQZINP1+yvBaIWRS0TOYoZlJAgu+MLsET6k1+epHVs/XNCVcNmgMyL7AaC
-	uGJeEOUi1RyeVXM9lGKg==;
+	List-Owner; bh=D89V5cq+E9wnXPJa3+QDOHnrHihlNeVnZYNunee6+KQ=; b=TmPr0sKyy89klC
+	aHnT0knnDSm5tqncjkKjHxxCRlhdCexOGUPPO6w55eX1cYyFcrKT+KytTNLiuDfqFOZX7igWUOsxJ
+	Cc7Kg59AqJ2eeDIp7Hk9osWwfWbxxmSneqWljom94czf28FmO4IzOX5s0sOSPQYXraHk8NIGAXbgy
+	qkDcnHDAdxixk4Eaa1CuToreKGJPOSwzguFQXTJh6w3dvndfAdqap8FHFCyIVMm821lOQb2O4d9Ap
+	5TNiz5+GUH9as2pvQoG0xHD0gj3ige0NhcME5J0Zc5AXYoI+QndhHhO3HTTP7h+Nl6sGmq06y68x8
+	Us3bMRMcYu0okzOnc4RA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DO3-0000000DihB-3yDe;
-	Fri, 11 Apr 2025 12:21:35 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1u3DO4-0000000DihY-28bT;
+	Fri, 11 Apr 2025 12:21:36 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DDs-0000000Dge4-3AI8;
-	Fri, 11 Apr 2025 12:11:05 +0000
+	id 1u3DE4-0000000Dggv-1z7X
+	for linux-phy@lists.infradead.org;
+	Fri, 11 Apr 2025 12:11:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2D5085C684F;
-	Fri, 11 Apr 2025 12:08:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 478BBC4CEE2;
-	Fri, 11 Apr 2025 12:11:01 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3CC3CA4AADF;
+	Fri, 11 Apr 2025 12:05:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E48BC4CEE2;
+	Fri, 11 Apr 2025 12:11:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744373463;
-	bh=EVla19k7Xz+stoAyJo+yqYuYF6XV6eRPPI+AlLJ62TU=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=qT6QbywFqYsrdZFdqe20nIlTmNihKMZ+lrEgG5/C7gEaUewM5LBELkTBrqpdZjuRI
-	 O/DjsxQpgNfd2xZrhmjeGVszCnpmAFkEgA40zr4Nhm9ZsGgIzup3Qir7rbxSSTpL3Q
-	 xpGU7cToXWwkXxApwWT3pxdwEwwnzu1ZY3U3ftgWvnKiK1IGW78X6c6kVAVQ1l/REu
-	 RFNrCBsL0tHgiXPkCRBdmbGrpCLc3j82Yr9wXGp1HtaBQAdF4j1DKsmrmdfA5XssOS
-	 gjXithieX0VGwQFLQkNqVLZwNguljxQcmOgMTbf62mw/LL7k4lusUfSR9xMhoacxKC
-	 euYyM3VAwNCyg==
+	s=k20201202; t=1744373475;
+	bh=kbUcZPoXi79WtS45+fL3/oWI2wWgCZEwrEDv3Xo/gxY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=oXfReTdO98Js7+lVoMrKowkY/dHKuDTcIXRPKrWKJk5X7+RY5+egJLrKqFXdsYjEC
+	 5wLKayQ1r3Tgymu3bg2fgBKj+3MbAanhYpUzqS3NE+uAs8XITlEqaTdh6svcJc68Mn
+	 c3M/HAtl2EbjFc7+khBRMqryHMHJzNv5s4oAJdwvpSglnEjlQtOhUIRv6Tj8AXLoC1
+	 IQV+9SQstnRyR+LX+GVypm2DDXIkhOeefXaTRdElniPQFX1u9NzQvR9F+7++Tes60S
+	 vme+tAt7hKQiBD13P/PmV5PFVVCSgX487Ob9P2+rH02DvZS8hRw4kzKCRsZjC5cSlE
+	 sLUxz2hT515OA==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Anand Moon <linux.amoon@gmail.com>
-In-Reply-To: <20250410133332.294556-1-linux.amoon@gmail.com>
-References: <20250410133332.294556-1-linux.amoon@gmail.com>
-Subject: Re: [PATCH v1 0/6] Messon: Simplify error handling with
- dev_err_probe()
-Message-Id: <174437346092.673939.9321583863717790007.b4-ty@kernel.org>
-Date: Fri, 11 Apr 2025 17:41:00 +0530
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Nitheesh Sekar <quic_nsekar@quicinc.com>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Praveenkumar I <quic_ipkumar@quicinc.com>, 
+ George Moussalem <george.moussalem@outlook.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-pci@vger.kernel.org, 20250317100029.881286-1-quic_varada@quicinc.com, 
+ 20250317100029.881286-2-quic_varada@quicinc.com, 
+ Sricharan Ramabadhran <quic_srichara@quicinc.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
+References: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com>
+Subject: Re: (subset) [PATCH v7 0/6] Enable IPQ5018 PCI support
+Message-Id: <174437346895.673939.17282327012259130391.b4-ty@kernel.org>
+Date: Fri, 11 Apr 2025 17:41:08 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_051104_850258_26A63D0E 
-X-CRM114-Status: UNSURE (   4.85  )
+X-CRM114-CacheID: sfid-20250411_051116_588919_0B4FC1B1 
+X-CRM114-Status: UNSURE (   8.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,30 +92,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 10 Apr 2025 19:03:15 +0530, Anand Moon wrote:
-> Use dev_err_probe() for phy resources to indicate the deferral
-> reason when waiting for the resource to come up.
+On Wed, 26 Mar 2025 12:10:54 +0400, George Moussalem wrote:
+> This patch series adds the relevant phy and controller
+> DT configurations for enabling PCI gen2 support
+> on IPQ5018. IPQ5018 has two phys and two controllers,
+> one dual-lane and one single-lane.
 > 
-> Note: The following patch for RTC:
-> 
-> phy: amlogic: phy-meson-axg-pcie: Fix PHY creation order in axg-pcie probe
+> Last patch series (v3) submitted dates back to August 30, 2024.
+> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
+> continuing the efforts to add Linux kernel support.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] phy: amlogic: phy-meson-gxl-usb2: Simplify error handling with dev_err_probe()
-      commit: 05457917e50c3d6bf75d2e3b99c7e6709a4a6844
-[2/6] phy: amlogic: phy-meson-g12a-usb2: Simplify error handling with dev_err_probe()
-      commit: 9bff4ef29a6409850c27df705da54277a8e836f2
-[3/6] phy: amlogic: phy-meson-axg-mipi-pcie-analog: Simplify error handling with dev_err_probe()
-      commit: de39730f9258e9984892c0af68a3e884ad19acea
-[4/6] phy: amlogic: phy-meson-axg-mipi-dphy: Simplify error handling with dev_err_probe()
-      commit: a77e2e899841937798bff0924c03d4d0e4963aa3
-[5/6] phy: amlogic: phy-meson-axg-pcie: Simplify error handling with dev_err_probe()
-      commit: fef364bd4c9cf712c91e0013f5f304f4e7f09198
-[6/6] phy: amlogic: phy-meson-axg-pcie: Fix PHY creation order in axg-pcie probe
-      commit: bdeff6d8a211c832f5ce1a65aff17f4a5e6de00f
+[1/6] dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018 compatible
+      commit: aae29082b6620c664e97a1e2f2062abc6a58659d
+[2/6] phy: qualcomm: qcom-uniphy-pcie 28LP add support for IPQ5018
+      commit: dfc820d2f8a8ea90bbc02269b5362e3678e58cac
 
 Best regards,
 -- 
