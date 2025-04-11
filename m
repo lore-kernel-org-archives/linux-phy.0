@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34476C36010
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:10:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D02DC36010
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:12:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Th9I5sTTZlnkXZKvcsgHYY4gAJ/30c40yDBizyGTIPw=; b=fDMVTuco614M/f
-	yGGajg7Lr0QLzxaTbNc2pZYftNOCKF67tKeAo9Qa5cF/yHY0jRLTlf7VDey+hekHebWKt7S7P5IFW
-	dlIL1UNFgRZXv4Nnr8pbEgHwfzLqcOM8POCgZpJgT/zJ8GFQI1sm9nRnjyuiKQzYc4ILM06eq/Ujz
-	G9Q+CsVkW5aUWg7WBSBvc7gOZ07gt7QSno7fv2LT114QXSMewtpy+X8nuJkN1RtXb4pPbLUS5OZ74
-	EH4wDUz6aXNsH7QlA7TrbNxWtLpkxa5bbN/G8KzylWGmXnK4b3sJuok46VqRWtRa2AVE7+nrgI3FM
-	xTwGVWxA4RqJcSCp+sxA==;
+	List-Owner; bh=8mT/Sbqd81Qxfc6Nc8YmBpjCS8SrW1CDE3xBB/dMPww=; b=Gn+TT8ue/6qf1I
+	0DRRm2BqEWVR2v+zvV+grF+7RAwPyRP3MhfxTGC63ktjwakQOktZwKJYQvQqvv2/eHGHTBiJJVEmj
+	13Fr5jWZTT2A/ntcC2d/nDsSkz4Nd+S+JRTtZId/CYvz3yNDLOWK17/w5yUdEuOcC0UYqmzLwdlFt
+	T0YtjkdqeXO+1rFmtOpOq6Q3YFuscfDTJGiHXjLl8K8QWL7m/O0vsOxaMRu0WIzSxEGQAUX9R/gTI
+	IusmuHwrtmaYyARI9heYT1U++xyLpHGvkzTImF1k/Px93F3jmNO6qPQgqnnJV2lu3VQ8ISflXueLQ
+	EhQ+6Xg0S3g2emjM6IHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DDG-0000000DgUJ-43dZ;
-	Fri, 11 Apr 2025 12:10:26 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1u3DF8-0000000DgvA-3gK9;
+	Fri, 11 Apr 2025 12:12:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DDF-0000000DgTY-0VlF
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 12:10:26 +0000
+	id 1u3DDI-0000000DgUi-2cM8;
+	Fri, 11 Apr 2025 12:10:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E0FCF4A4EB;
-	Fri, 11 Apr 2025 12:10:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 757CDC4CEE2;
-	Fri, 11 Apr 2025 12:10:21 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 225645C691E;
+	Fri, 11 Apr 2025 12:08:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44787C4CEE7;
+	Fri, 11 Apr 2025 12:10:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744373424;
-	bh=qXkPvfz3L7QpP8yVqLZ0PU/tFO/qVu8LhU3z4fOHiro=;
+	s=k20201202; t=1744373428;
+	bh=ma8HZgD9JZlh64w2TGnecb0nKKh08kqyZOYZMMtYpZc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=TWN2NuBdVDDlw3kPSmU0YMURJZS1GCuKN7uiC7/aztJz0NLViIJIOmRq1+ficTjXL
-	 bY+9dTyD5rvl1zPjLrS3+qqlQNFcqO1DMIqo6fqeU/pfYn/n4LYXAXteAnndXFtspL
-	 d5s/7ZEBGSJjpb7nCCa1j3K+RDa6zDRbnU6z+MWORYiyzXLsMKYEko4tPJXmgorYMR
-	 TMT/lXOP25xwZL6QUZX/c0aycsGcV9eCPdvqmtW37FnPHz/3cd1T8hZZjL4AdOowAv
-	 exwd8vw0fz4J/e4iMp/tuNfiNckeOhdC/exsKeFDDKF/9Erkol7OCvZVFbsve/VJOD
-	 ajDbGi0+0n/7w==
+	b=ae+o/cyx/enaKuzdD4bQBh/9s+5M5131Dr+2RiZwwfY5LAiT3IEoCPvAOXERoleSi
+	 sRq8Y2YFvVkDjW34zP9dk++8HSs4Rw+ZXUCXkvYr9/PMc2XX6gJNGDx4vW0Q0TBTlq
+	 7YSIJK7i2sY7X3tv5aZUeHzJSRSxOnoGIaMBfoQZrCEaMcyYdEv0r+xpOqSvQg2yTg
+	 tDJUYRJIFVbAySqmhQouOka/cTTn5x4ufHEdAw5xQ+B4L0rQ06qEcr/uMJS7nUc620
+	 a4q1SZgvu/oVfyFaMygtVr2g6dR1MzQ8IWDtv6V7LB2eNRMEKB3lbrRfQ2Hi9f5enF
+	 6l7yMKHi8ZQxw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Rob Herring <robh@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, 
- Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, 
- Aswath Govindraju <a-govindraju@ti.com>, 
- Biju Das <biju.das.jz@bp.renesas.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-renesas-soc@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
-References: <3d7e0d723908284e8cf06ad1f7950c03173178f3.1742483710.git.geert+renesas@glider.be>
-Subject: Re: [PATCH v2] phy: can-transceiver: Re-instate "mux-states"
- property presence check
-Message-Id: <174437342110.673813.5478003699967879937.b4-ty@kernel.org>
-Date: Fri, 11 Apr 2025 17:40:21 +0530
+To: Heiko Stuebner <heiko.stuebner@cherry.de>, 
+ Dan Carpenter <dan.carpenter@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel-janitors@vger.kernel.org
+In-Reply-To: <e64265a4-9543-4728-a49f-ea910fccef7c@stanley.mountain>
+References: <e64265a4-9543-4728-a49f-ea910fccef7c@stanley.mountain>
+Subject: Re: [PATCH next] phy: rockchip-samsung-dcphy: Add missing
+ assignment
+Message-Id: <174437342490.673813.7534992392289400859.b4-ty@kernel.org>
+Date: Fri, 11 Apr 2025 17:40:24 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_051025_184444_23D80D3A 
-X-CRM114-Status: UNSURE (   6.20  )
+X-CRM114-CacheID: sfid-20250411_051028_709585_5329CF7E 
+X-CRM114-Status: UNSURE (   4.01  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,21 +79,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 20 Mar 2025 16:15:42 +0100, Geert Uytterhoeven wrote:
-> On the Renesas Gray Hawk Single development board:
+On Fri, 21 Mar 2025 17:36:14 +0300, Dan Carpenter wrote:
+> The "ret = " was accidentally dropped so the error handling doesn't work.
 > 
->     can-transceiver-phy can-phy0: /can-phy0: failed to get mux-state (0)
 > 
-> "mux-states" is an optional property for CAN transceivers.  However,
-> mux_get() always prints an error message in case of an error, including
-> when the property is not present, confusing the user.
-> 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: can-transceiver: Re-instate "mux-states" property presence check
-      commit: e153fdea9db04dd0e2e536e2eb125b16bbbc2af7
+[1/1] phy: rockchip-samsung-dcphy: Add missing assignment
+      commit: 9cf118aafd6682793c40dde31b5f24d271da3996
 
 Best regards,
 -- 
