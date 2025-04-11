@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70DE1C36010
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B781FC369A2
 	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 08:39:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,72 +12,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:Subject:From:
 	MIME-Version:Date:Message-ID:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C9n5RcuVGrgW1ktKUNLmlnRhSt0HKia8XFRAkKYfpqs=; b=ej+ZFeJoDgivzDEqukNrJm1WtO
-	HIJcbupGIb2yXvqYAODjrLvNvotQvxzPUbsTmkvRoPb+JB2OrDFEh0bK9OLecJsTVrs+5QtX+V4TY
-	r5X44ilAntr1L/MPSqX+egmywTCkXvYSaMO9ZDL1AMZQ5Lpbu94ePZe+pTjkFdJ2JdDt4WRhZjlBF
-	gzsxCpeewoEh/dre10Qb0X0OoU7CALYIuX70Vw0z8Ng+q37+8A03hH9OJisEOEZfxgsEr31l0lxPD
-	lJstUCV8+sF01b9VrOZZvM75Z9PwPyj26FI2xHOI1ZU5BZ2exQ5CzXcj5lP5ChGvBusI2q+kHiH7o
-	AYJfsSgw==;
+	bh=vGKCUx7c9lXrOcCJkNFafSLtshuPTfhzx32jZQ3AZCQ=; b=iUgf2YlRZ9aarPUXonBRGFNLOU
+	cqZ/cWICCNRj+rFkWcHUioaYvIx1sRWP2YqnRGhklCxPbIqrftBQyHH/P6yZ2k747msbjl6/jp/Lx
+	CdhzjTBdPvMzkNMaiqb9sxIqBhT8YDc37iJYYVdeEzZEvO0JbFsTSP3TNbLeZRFGNdRhOs+wGhKmS
+	1zO+UF/SdQjga41hD4SHZyB49koLFiY3gcIyIDcO0HL8B2+bD3sLDv/kYa0YHjxcWFCjL2Jq9vNp9
+	UP+qnrJwqXAiknEjYUZBs32iFEC8iNi3fsCqGdO2WQdJr+XijRaO4Z0zf81N7TmfATBYAEwfSJlMG
+	ouwBu7TA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u39vZ-0000000D3P0-0vil;
+	id 1u39vZ-0000000D3PB-23yl;
 	Fri, 11 Apr 2025 08:39:57 +0000
 Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u39oa-0000000D1pM-2bae
+	id 1u39og-0000000D1rg-2sZF
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 08:32:46 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-43edecbfb94so18039605e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Apr 2025 01:32:44 -0700 (PDT)
+	Fri, 11 Apr 2025 08:32:51 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-43cfba466b2so17254665e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 11 Apr 2025 01:32:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1744360363; x=1744965163; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1744360369; x=1744965169; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=kqY4hSJTXleEE1pz/7Bi05zwmg/nHE6Bf0rPkLEdWGw=;
-        b=gN22GXKMN7MzD26wRuT3QOx+5PbETv5417cxurmk0WS1P4LAhyr+AWNYAzwNBd6kPN
-         1CdIFdcthArD6ClUKwFlo7ZPMQyM/9f5DJ8+nys6eBgBPOl/KgpozCwBqYBCxcDgOX56
-         BHZ7vu0z+7l3ckswvqHIxs1ChrwSK2E2x6slUr3GJIuN/HfCitGyNKA7r8qnUNv8seqH
-         KJzXcCl4APZNBzQkUzjpMYDRCq4m5L4aBDtWAsukpDCVqrC18e3sPqx3envXWaqBXPhm
-         xfecym8pgOI6S1sTiRptTTXZC/Qlz+5hz6bvp1vKcMcO6kN18Y1wq7r2hQx4bRNFpjos
-         2U4Q==
+        bh=IbVkeLK39LFwQz4RDz6whx6Ldo7wvDT7KsOAIVNVIN0=;
+        b=fUEpTuAdi4COWi1gNC3CGR6rXvOE55ZEa7DNRLK5hXpHBnaf69C//h276H0QLHYeFY
+         yIBVgg7OnA6I08kcyizvkOmJ/XmwVN+bPlVlMnq5f3pxQ2Mrc6luFlFZY7/SEjGmbCKG
+         YzaksFEr/xSBmyrcVF+YFqdM6mOZRCdkdwSTkjSXv5z9LPu7SJLj6vPZrSbTDI4n4Rqu
+         TPni0ub2N+epMQSaZcbEV6TN12V7LRZaMrYCe8XFOw0OxAwWXID2eTzWkD+Tj6UzSt6U
+         o9QD8WNKeB8WdzRZSqqi7ZJ2JJ/WBfbbnjFe7jEKHnH4dbEKIxlhFousRpKYgYgGHpeq
+         8Irg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744360363; x=1744965163;
+        d=1e100.net; s=20230601; t=1744360369; x=1744965169;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=kqY4hSJTXleEE1pz/7Bi05zwmg/nHE6Bf0rPkLEdWGw=;
-        b=ZVwtnBP5NQqJQMFoO8yLx2b9k6AzEzDlXXFnBcBppPtKoPAwVfdtNa7arMZMNTDiTx
-         ajyA9u6gxvfgErAetg2oSe8L8vME6WcNdEj9pwXCfATHKgOeNbrJAWNCNsgbv//ONvoa
-         a06sPkcPmHPHeQIaz1KLiJiEt4D0h6cciY7J5jxAxM3WJL/5nUAGe14eViA4HJVaybIK
-         pHtF3hN79AS9RPbj8pVnpbz7faetRSv4G7GgnXML2fCP0R2UIcoP7PBnf5Lby1lUQTxT
-         RHh0g3C/LXuhqtPzfuFikXhMen4KtRfBbrltcJyw9sFJeWVjNK3h+XpYs8bm8TLRjPwq
-         IfPA==
-X-Forwarded-Encrypted: i=1; AJvYcCWLNcZ13Ns0oXrcmsTAsAeMlb6+D8hN8HuASY1ZkDPJtDrFT6rZ8NXVapsH2ZPdgalfdpuISDS8avI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwiDLzihIUZYnHleShdYh1MhRfK4fEkNNt0n/v3SzoGpj7L4RX1
-	R3D0fSc+5ZG/tVf75U2eY9OzPvN6XU71py3l8R3l8487IEal3mzhPHeSr5hask4=
-X-Gm-Gg: ASbGncvTSBwTxuOL2YP131aBR8w794NCuSk3pnQLbXyfAa5ldxMwI4qOpcRwj0jmJ73
-	gfhu7p31exQsW/61i49bLJtkriFxlCaM0fUAFzS7SVRXvQ0hwGuhRUnfaz6LX4njaMTFCpGuomd
-	HO3kZAc8FK7XDPC0ipIyUiFL9Mh0TcYovmPo64Bx1soryxDwZmmbdyA1isFwL/tOShna6s3UUOk
-	wzloMs7bca7MYwdR9Hu8cAhiZLdL9Kj1jVCes5lBvphA3Vy9ZnM0aAnIQAMj9bJ4W+OsW17BnaD
-	tEUrXGB9BQ6QHXSy/aqNsEZMhegKZMP4quFn5TaxAINSW8fIhh/YOLL3KVZ037BUuOkJsjLGyV4
-	uwBGkzh0YtpCSK3uDcg==
-X-Google-Smtp-Source: AGHT+IFbIZHLwiFcr56HmOrCgzLC1RMK5T2F6MjZ5bzHBQpsQ3xTezUFx3R0z93GsoU8XdzOaPimXQ==
-X-Received: by 2002:a05:600c:3b0d:b0:43c:fdbe:43be with SMTP id 5b1f17b1804b1-43f3a9beb77mr15610705e9.27.1744360362941;
-        Fri, 11 Apr 2025 01:32:42 -0700 (PDT)
+        bh=IbVkeLK39LFwQz4RDz6whx6Ldo7wvDT7KsOAIVNVIN0=;
+        b=aK5sYj0FCSz/wCCZmWgfQAg9ZGH768wP6gLHYb5qNh0EPMIUc1FZM8P1nCv0qYAq0u
+         CBp05dVkVZ1oW1VkqiXjJDeOMFClw2H4yTJpjHH7xy2szTF+o++7MORJ6/0y19cBJJjN
+         04cGs+JLJaf6NzELZ7fN68HE271M0o8/jMQi0oHc5jAqMKgtgkm5ETbYIygSO4ajR/xG
+         BLF9doOoCOPj3Tv2D7r9+33DgBozAeD5N/zIzYWBvgi+Qm1p2h6jNRziEXsD7Dc+1+Mc
+         S9ySH2Z6AyIMTHsaC9F0BO9YvKyJWuzzPBkQrJLFCTZTKMp5pcgToW29hO+Zl+/muwJ9
+         i38A==
+X-Forwarded-Encrypted: i=1; AJvYcCXNpkyX+l8mRb5w0SuCgDNRhTNc0UM76nJnNCFe4XJrlcLxZfmNHMAOSN+GfYtHlZhjV40Ogu9dUyk=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywv6nby5mYcacqCcPRbFLk9yu9fZe7JdFXzZXF386byI8ACKanZ
+	IhFqwzhGwC/zDPlFhbVD7EANqCY91WsKtYUq5RKB4+ZUeRWYVTOdOhaG0Ji/eW8=
+X-Gm-Gg: ASbGncs+0fONsWWKPuOpbRESicKsvNTSg7VykehPI/LpmTsOpJR8NuPfwtn3DpD0eEJ
+	vlogzJpO0aCr6L4eit32swVcCnIcKvkGAndTlZ8lOwgTCGC5K+j+ApXweHt2UBj2w3zoxNVFWmx
+	HcakVL899K9PnclVZGBujyVm7OIN2gnskHnj7HmJq7rh4n+NjIko9TDt/vXh6oqN2bULrSl84MG
+	8WeTxD4A+vUmwKy6+Xmu642h6J5DJB/BQu+pfD8BqQlY4wlZQSSp63be1WcHCPSbvN3f4dr7i59
+	vOEOIGwjx4hUuGyJc4HvJYh5+pKmPjIuBc4hpBoWvt1jIMPxMjWFIoRKBg0qTWlZ0KS9Fnfc22+
+	yEPMLQj20UtjVnBj5Aw==
+X-Google-Smtp-Source: AGHT+IGH2fzidsFm+EDJBudyWzrKTJzkhwFaqOYPlAnwX3LCJSEq7mJu+xZyf3CKma7vYDj28bKAxQ==
+X-Received: by 2002:a05:600c:5008:b0:43c:fc00:f94f with SMTP id 5b1f17b1804b1-43f3a9aa623mr13734005e9.23.1744360369350;
+        Fri, 11 Apr 2025 01:32:49 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:f77b:949e:1d61:69a8? ([2a01:e0a:3d9:2080:f77b:949e:1d61:69a8])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43f207c914csm78489115e9.39.2025.04.11.01.32.42
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43f207c914csm78489115e9.39.2025.04.11.01.32.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Apr 2025 01:32:42 -0700 (PDT)
-Message-ID: <3b62ab93-a1f8-4bc7-99a9-45ef3d18c562@linaro.org>
-Date: Fri, 11 Apr 2025 10:32:42 +0200
+        Fri, 11 Apr 2025 01:32:49 -0700 (PDT)
+Message-ID: <fc00e007-3248-4b4b-a6e0-2f362b0ae996@linaro.org>
+Date: Fri, 11 Apr 2025 10:32:48 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v1 3/6] phy: amlogic: phy-meson-axg-mipi-pcie-analog:
- Simplify error handling with dev_err_probe()
+Subject: Re: [PATCH v1 4/6] phy: amlogic: phy-meson-axg-mipi-dphy: Simplify
+ error handling with dev_err_probe()
 To: Anand Moon <linux.amoon@gmail.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>,
  Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>,
@@ -88,7 +88,7 @@ To: Anand Moon <linux.amoon@gmail.com>, Vinod Koul <vkoul@kernel.org>,
  "open list:ARM/Amlogic Meson SoC support"
  <linux-amlogic@lists.infradead.org>, open list <linux-kernel@vger.kernel.org>
 References: <20250410133332.294556-1-linux.amoon@gmail.com>
- <20250410133332.294556-4-linux.amoon@gmail.com>
+ <20250410133332.294556-5-linux.amoon@gmail.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -115,10 +115,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250410133332.294556-4-linux.amoon@gmail.com>
+In-Reply-To: <20250410133332.294556-5-linux.amoon@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_013244_676781_C2DE2453 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20250411_013250_732907_903FB3F0 
+X-CRM114-Status: GOOD (  12.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,37 +142,30 @@ On 10/04/2025 15:33, Anand Moon wrote:
 > 
 > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 > ---
->   drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c | 10 +++-------
+>   drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c | 10 +++-------
 >   1 file changed, 3 insertions(+), 7 deletions(-)
 > 
-> diff --git a/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c b/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> index ae898f93f97b2..c0ba2852dbb8e 100644
-> --- a/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> +++ b/drivers/phy/amlogic/phy-meson-axg-mipi-pcie-analog.c
-> @@ -200,7 +200,6 @@ static int phy_axg_mipi_pcie_analog_probe(struct platform_device *pdev)
->   	struct phy_axg_mipi_pcie_analog_priv *priv;
->   	struct device_node *np = dev->of_node, *parent_np;
->   	struct regmap *map;
-> -	int ret;
+> diff --git a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
+> index 08a86962d9492..c4a56b9d32897 100644
+> --- a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
+> +++ b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
+> @@ -377,13 +377,9 @@ static int phy_meson_axg_mipi_dphy_probe(struct platform_device *pdev)
+>   		return ret;
 >   
->   	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
->   	if (!priv)
-> @@ -219,12 +218,9 @@ static int phy_axg_mipi_pcie_analog_probe(struct platform_device *pdev)
->   	priv->regmap = map;
->   
->   	priv->phy = devm_phy_create(dev, np, &phy_axg_mipi_pcie_analog_ops);
-> -	if (IS_ERR(priv->phy)) {
-> -		ret = PTR_ERR(priv->phy);
+>   	phy = devm_phy_create(dev, NULL, &phy_meson_axg_mipi_dphy_ops);
+> -	if (IS_ERR(phy)) {
+> -		ret = PTR_ERR(phy);
 > -		if (ret != -EPROBE_DEFER)
 > -			dev_err(dev, "failed to create PHY\n");
+> -
 > -		return ret;
 > -	}
-> +	if (IS_ERR(priv->phy))
-> +		return dev_err_probe(dev, PTR_ERR(priv->phy),
+> +	if (IS_ERR(phy))
+> +		return dev_err_probe(dev, PTR_ERR(phy),
 > +				     "failed to create PHY\n");
 >   
->   	phy_set_drvdata(priv->phy, priv);
->   	dev_set_drvdata(dev, priv);
+>   	phy_set_drvdata(phy, priv);
+>   
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
