@@ -4,61 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96A66C36010
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 12:25:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7614FC36010
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 13:24:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6rGrulSEG8In8tww6L0uGCxKFTXaiOKWtOL9yUb/iYM=; b=drKSJyI4Jhasc+
-	MqiaatqXuOEyyKNyQ8RrSzApYeWaO8PsAMy0V00rxV5ISzILMHkC1c3BIiPbVvrBplmbNTXXbL5Bv
-	PQ/FWKGG6Ef0PhAAAm3j/3gwLr/l5icU2rfX6M6CVE1vEXmgA5/pWReR1L4D8efKC856hC0iWMN1N
-	CNr4Oy9UuvSh/JZbgWBjimJBicxZ9Xd5syDexTjxyZ7GEgHmH6t/SOxhki0ANMY4jQViY6cAozvML
-	lICAVPhS/QomAg6c6oACQSQaexFLIWPSLX0dMsdJrIFgKGFx0kfJ3SOCqxBrKwD3bfS7cdEqEWqNG
-	iCIvNs8hsDf0TxjJQ+BA==;
+	List-Owner; bh=Ai+BxIn0o6g4j5zKtR6w0qP7D9Yho4hqJIFc0ji/eYk=; b=V8GSJjYmsI1B8W
+	gU+bbXRW3Xx4Xp6ckCtyGcBeyjZIjLDf56Oe1EUif1DEQywHH095LYk+GzK6h3fwJEdRvQgChSZEn
+	gWZQcNPCciPvDM24wExvFqDrYGZ8lciBWE74S5+ixrH3pRukHKNSaG0XxNLJb4qbWKqy/dBqh+2aw
+	5YPwhMqs9Eg9IHxi3RATKGkDR4n9Ro2TwhDgkWSkj2XrVocK8Z8/W18VI/AkIfCH8k4LQn/vco/TI
+	ertw8ZC215EX5I83IBzeM87BzjLyGOV60gz8EMj7X3og1jmHLo6dWKFvsUZhKNTfMPgAIJjKrieFX
+	KQdCfR49/QXDRS6LPG6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DRf-0000000DjQG-1WiL;
-	Fri, 11 Apr 2025 12:25:19 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1u3EMp-0000000Du20-0BTb;
+	Fri, 11 Apr 2025 13:24:23 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3DE8-0000000DgiG-1HuH;
-	Fri, 11 Apr 2025 12:11:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8B36068459;
-	Fri, 11 Apr 2025 12:11:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12A5DC4CEEC;
-	Fri, 11 Apr 2025 12:11:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744373479;
-	bh=12U8A9tqFraTkbX8UucQrHYVXY0lsm8Dl+Z4zRDU7+M=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=K3dSX4tRj7rJ9O1JP0isV71y1pRkYOkWhdxA4/IoSEK64MYcwp+4fRUgs4XuosURC
-	 FJ+eVvLwRBH/Xmz4HsgLa4bMNianpOCI+1O66a+ekF5/AkNzXrzzt5h1nxS0ASDF54
-	 X6pa08EMqcgJvIZJQp0EJZPkQLX8YvbtdvAKHlUQ2ZE2VBdtUCCDew4Bk6M+g5HXbX
-	 X9+QYoUY94VJuma7WoS7l7Vv3fOsbLjPmaLHgkE3M71MsTcvmAsm8z6duGH46ePTIh
-	 ukJZUFxvECbyl6MxIm/kK0tV1+SKSPH5KhZQRoxIj4Ey+hkEoxQtPq2VkBQD9c3dW6
-	 yJUZQmyGxClgw==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, 
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- Dmitry Baryshkov <lumag@kernel.org>
-In-Reply-To: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
-References: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
-Subject: Re: [PATCH v6 00/14] phy: rockchip: samsung-hdptx: Support high
- color depth management
-Message-Id: <174437347571.673939.550787962753296084.b4-ty@kernel.org>
-Date: Fri, 11 Apr 2025 17:41:15 +0530
+	id 1u3Dvp-0000000Dp9H-44Pd
+	for linux-phy@lists.infradead.org;
+	Fri, 11 Apr 2025 12:56:31 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53B55Fbk018376
+	for <linux-phy@lists.infradead.org>; Fri, 11 Apr 2025 12:56:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	CMvxg5D4cmEiDoMOwRUc1Nn+M/99Mlhq5+0RDjA73no=; b=iARYEuE1NWygdwH6
+	UKWKY3z7djZ5qarxVEM3NZg7vw7a8PUC5MIF4rrs21Ati++mdCQwhhBTa1eO/A6+
+	uHp8Yl9cEUqwqlVoNRWEvh2PllK2DSr0Y99jz5tijGKGR/E+lINvDOldn/8+PaNA
+	72Lo57tzAUyRTfQGAwEe3NB+RKDK4CWjFwxPTSwCXKz2hzvcklVjU8C15GAQgPv6
+	7BDkBlSGn2lsDYp3AjujfQFjh3QrGvUQic4EwrbVuv3a2ZdwDZiGp8OtUugnZXoS
+	/BHJvudYAlREQzTpYfCCtgl+ozuAT0HGM3cBpfRFSDB+1jG0wM4PTCwNVJdMXj/i
+	3KjKxg==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45twtbahg6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 11 Apr 2025 12:56:29 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-73009f59215so2251841b3a.1
+        for <linux-phy@lists.infradead.org>; Fri, 11 Apr 2025 05:56:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744376188; x=1744980988;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=CMvxg5D4cmEiDoMOwRUc1Nn+M/99Mlhq5+0RDjA73no=;
+        b=NjJHbFz/B1x+CA1CYzlEhPbczl65ZinqEVPdjTwreng9alse2xDYHbeB6wUwyVwinO
+         GVtR0ARZZB93YKXsTX4nhRjzXOhnv15PjLw54UVGCls4haDGoRLCGzSgQ3uToxZiDZda
+         6zLfP+pr5M0IjQOFOKU9ZKhTto+MpuO3oI0uAy/1rdw8y1GPS6mCML1s7/gwK3YPxFTK
+         G8b2Awd78gswsBF320wMOPaec7i//YO2auHwP187fWaIbFClJtHapACzbthadgRdJl5q
+         4r7RoJVBvg84o4wLo/IIbhAm4oDAVRyBFuX2f4CcLhKvjEXR/kvx+Z3xahE6eRlY0ueE
+         c4YQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWa7ejj+lixRdddmneYrMkpAtpivYeZRtx8HFWnU2sjIkjPhtNb7/WLRLLUYosTVxU9LecKGXmIi7Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxPtq3z05h9dqZtGeu41mRyfpjHLIpu/AxD9y0Ncfes+j7Bklp8
+	rZvtIKojj/sDoyGuoRWs/akboIpSuwacIKzweUqNYYfpp9sU2yRXC/n7Eg2rgVD1WsCciS1hT5f
+	8C+WMA6/msi85H1ae3YeLlS70Ry52sCJE+pkgY/3sD2wZQNonzJMT/0t3m4SQj3lC
+X-Gm-Gg: ASbGncvT+LncOw0dFYY9l1nL4IydGkk14wJdHnN3Qdm/GDvdw0d3wMQyTbwIdBoNemE
+	i8eUsDDl7QwPjXfoayrA2sUnwWJoJm2ZQpVsJJ9m72in+l5tYw7tZFs1sKicfFq6hwn2S9beUMb
+	md49zMgsF8nP/oNPCVVe5jqozoDhIK93qJIbuCoaDw23F/p+8xcFP0YO9uGbC54aSZyNpo2upix
+	Q2wl0CBZLxT8s6kmk6p0tsUg/r1b3XCaFYTsDdiP6MCQ1wv4COr8lFKYjaA7+RgjUpaKhrTidRY
+	ocFjGd+f6wK353SdiRmVtibt1MM7RKVfhjZgN5X1DexDFDWXIp9t
+X-Received: by 2002:a05:6a21:3281:b0:1f5:889c:3cdb with SMTP id adf61e73a8af0-20179787801mr4522239637.8.1744376188251;
+        Fri, 11 Apr 2025 05:56:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGzqIKT2YA5sP6Tn3NINcpTsJ5x6Bui+ZmBQb0oUO6uDlCc9CZJV9wpDBiw/Mrmpl1rkjrz5A==
+X-Received: by 2002:a05:6a21:3281:b0:1f5:889c:3cdb with SMTP id adf61e73a8af0-20179787801mr4522201637.8.1744376187801;
+        Fri, 11 Apr 2025 05:56:27 -0700 (PDT)
+Received: from [192.168.1.2] ([122.164.81.245])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b02a0cf374asm4611147a12.26.2025.04.11.05.56.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 11 Apr 2025 05:56:27 -0700 (PDT)
+Message-ID: <74c9c5c2-6195-4c32-ad34-a3889de0ea53@oss.qualcomm.com>
+Date: Fri, 11 Apr 2025 18:26:23 +0530
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qcom-qusb2: Update the phy settings for IPQ5424
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+        Varadarajan Narayanan <quic_varada@quicinc.com>,
+        Dmitry Baryshkov <lumag@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250407-revert_hs_phy_settings-v1-1-ec94e316ea19@oss.qualcomm.com>
+ <Z/i+6k6VseihdQ69@vaman>
+ <734cf70a-1d96-4a87-bc7e-c070c1e7dc8c@oss.qualcomm.com>
+ <Z/j+fs6hCVhGKLcH@vaman>
+From: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+In-Reply-To: <Z/j+fs6hCVhGKLcH@vaman>
+X-Proofpoint-GUID: Kxb7jcNJvDGWy06VufDw1mdKAO0k7cYk
+X-Authority-Analysis: v=2.4 cv=LLlmQIW9 c=1 sm=1 tr=0 ts=67f9117d cx=c_pps a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=uB/6cedsP4G8bgUXdgZ7XA==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=rZc7fG3luCRD_x8UD3oA:9 a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-ORIG-GUID: Kxb7jcNJvDGWy06VufDw1mdKAO0k7cYk
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-04-11_04,2025-04-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
+ clxscore=1015 mlxlogscore=934 malwarescore=0 phishscore=0
+ lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 adultscore=0
+ suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504110083
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250411_055630_031554_40429483 
+X-CRM114-Status: GOOD (  15.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,57 +119,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 18 Mar 2025 14:35:34 +0200, Cristian Ciocaltea wrote:
-> This series relies on the new HDMI PHY configuration options [1] (patch
-> included here for convenience) to provide high color depth management
-> for rockchip-samsung-hdptx, and to introduce a proper solution to setup
-> the TMDS character rate on this PHY.
-> 
-> [1] https://lore.kernel.org/lkml/d1cff6c03ec3732d2244022029245ab2d954d997.1734340233.git.Sandor.yu@nxp.com/
-> 
-> [...]
+On 4/11/2025 5:05 PM, Vinod Koul wrote:
+> On 11-04-25, 14:29, Kathiravan Thirumoorthy wrote:
+>> On 4/11/2025 12:34 PM, Vinod Koul wrote:
+>>> On 07-04-25, 19:51, Kathiravan Thirumoorthy wrote:
+>>>> Update the phy settings for IPQ5424 to meet compliance requirements.
+>>> Can you specify which requirements are these?
+>> The eye diagram (Host High-speed Signal Quality) tests are failed with the
+>> current settings. So design team asked to revert.
+> That would be good to mention in changelog.. am sure you wont recall 6
+> months down the line, which requirement this triggered the change!
 
-Applied, thanks!
 
-[01/14] phy: Add HDMI configuration options
-        commit: 10ed34d6eaaf86e301a8f2dd190d26dfbc9799bd
-[02/14] phy: hdmi: Add color depth configuration
-        commit: 3bb9286f4ece6acbc1fbaa9f192a82645d30efbf
-[03/14] phy: rockchip: samsung-hdptx: Fix clock ratio setup
-        commit: 0422253ac1919fea8292381c85f11a9decff1bb1
-[04/14] phy: rockchip: samsung-hdptx: Do no set rk_hdptx_phy->rate in case of errors
-        commit: 1f4d382769e3b38dfc498c806811dae856e40f31
-[05/14] phy: rockchip: samsung-hdptx: Drop unused struct lcpll_config
-        commit: 6218c3fd6702a5bc4ab323fed25714cde127684c
-[06/14] phy: rockchip: samsung-hdptx: Drop unused phy_cfg driver data
-        commit: bcd61d182618c6a77d0841fcdc3333e125725360
-[07/14] phy: rockchip: samsung-hdptx: Drop superfluous cfgs driver data
-        commit: bacf2fe750dab6bc7ed50556aaadd3ab107fc643
-[08/14] phy: rockchip: samsung-hdptx: Avoid Hz<->hHz unit conversion overhead
-        commit: 0edf9d2bb9b4ba7566dfdc7605883e04575129d9
-[09/14] phy: rockchip: samsung-hdptx: Setup TMDS char rate via phy_configure_opts_hdmi
-        commit: c871a311edf0ebb1b934946a84a6c532cac0c035
-[10/14] phy: rockchip: samsung-hdptx: Provide config params validation support
-        commit: 2392050a2cb94ff3397949e109e4b9f0285ee085
-[11/14] phy: rockchip: samsung-hdptx: Restrict altering TMDS char rate via CCF
-        commit: 6efbd0f46dd8ae1d2b91b41d98c2800c60ab1f5e
-[12/14] phy: rockchip: samsung-hdptx: Rename ambiguous rk_hdptx_phy->rate
-        commit: 37f335dbfd028c008d0a7940ca5a270d1e2f6b81
-[13/14] phy: rockchip: samsung-hdptx: Optimize internal rate handling
-        commit: 45b14bdcf4acfd483d9890396197c35c23821124
-[14/14] phy: rockchip: samsung-hdptx: Add high color depth management
-        commit: 9d0ec51d7c227c3ae837e22832eaed219e25f126
+Sure, let me mention in the commit message. And yes, as of now, all the 
+compliance requirements are met.
 
-Best regards,
--- 
-~Vinod
 
+>
+>>>> The current settings do not meet the requirements, and the design team
+>>>> has requested to use the settings used for IPQ6018.
+>>>>
+>>>> Revert the commit 9c56a1de296e ("phy: qcom-qusb2: add QUSB2 support for
+>>>> IPQ5424") and reuse the IPQ6018 settings.
+>>> Why not do revert first and then add the settings?
+>>
+>> I thought of submitting it separately. But what-if only the first patch
+>> merged and second one didn't due to some issue, it will break the USB
+>> feature. So, I thought it would be better to keep it in single commit.
+>> Please let me know, I can send V2 with 2 patches with the merging strategy
+>> (both patches should go together to avoid the USB breakage) in cover letter.
+> Series is applied together and you can mention the dependency on cover
+> letter
+
+Sure, will send V2 accordingly.
 
 
 -- 
