@@ -4,93 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CBCCC369A9
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 11:19:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4564C36010
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 11:28:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uO9M7rQ8Dwky2ATxoy63ttiCfo8ksqJGzhl3iNCWcSs=; b=C4CHEs6+9Bk+iq
-	LnnAAK+cFDJiNv2DwZxlbHkQTfG0fXbuhxoylluJ4bJmwN/FLw/O0BxAw25WIIHi/7yanXERsX4/6
-	+xraQVRy8UKKvh6KlSb4QnIQBBDDTQeJev9XQC0Tz4Xyp5HGp+jRSkQkTZ1uxRO45pjwQzWKSb0gi
-	uCq5lrAxeWl+jQNhHHfalb4TNpWi+XsY0Td23SVUKlNRkuEM3qXIJiijwUX/IJ0LGeY5w2w8ioJKX
-	AZxVpygFz5AfJJeBLSlMyOPbB+jaq9zEZKMho8W0QSIf501q5/YT0kOemZGyb8qjwHoKufVsezDFq
-	qVnrKtRpLYze+NC3ukWQ==;
+	List-Owner; bh=Vc5MID7Vi6sKIxtjgMUqc27PQ3ySGWuxmRxMmvez3ow=; b=KvvKaVjKvoXCtV
+	ISfYBi+T9XR2HL0otOlcr/cA1Fw1blTCobNeJR++0K473YkBpRoRKgyiT9bZn2IBSjoz2A8fQ4HZF
+	BkuK6majrs4Ejemc9fUz/he6rIUT5MaMi0SmFgAFkZGJcqGejg2ERYsuiwT+SxidWgqdLaVvEPpl5
+	xnHisvT1ZRSdVzk+PtK0BjhniavwMGTL4m2DoCf/0Beb3SEvJJqzSgoQChhHKkWz+DI5WwgAOouwV
+	/8ft0s0bKRvqz5QiQ6ucezngldGXC05shEbfvad6PmE6ChJ8Ef3JiF404j/pMtAP7ML/3wB4r8jZ8
+	Qc3pFG2n8+5W0oGwmyhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3CQA-0000000DVqx-3QoU;
-	Fri, 11 Apr 2025 11:19:42 +0000
-Received: from lelvem-ot02.ext.ti.com ([198.47.23.235])
+	id 1u3CYE-0000000DYhp-2L58;
+	Fri, 11 Apr 2025 11:28:02 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3CIb-0000000DToz-3YOf
+	id 1u3CRO-0000000DX4s-2ioH
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Apr 2025 11:11:55 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by lelvem-ot02.ext.ti.com (8.15.2/8.15.2) with ESMTPS id 53BBBElL2056187
-	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 11 Apr 2025 06:11:14 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1744369874;
-	bh=KUv3PKJ0NE2QBMX7XjP2F9mwfnk+UQuovzzUVGFJY7w=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=QjBiot04UKMGvFmt4k2sNJ1LKNKiffARtS49pD2YCi2Hqk+o3FKA1KHjo8EcWQ3U6
-	 yr962v38fUl+pIamKtJyDbO0xC7vH5JkUvjhT529NSzD5CXTiNWQtGHDvH/bDwsVv9
-	 OeupQxDZyfYi+kzUwmfYxZgiv5WNCK4TJ+suhwwM=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 53BBBElb087629
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 11 Apr 2025 06:11:14 -0500
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Fri, 11
- Apr 2025 06:11:13 -0500
-Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Fri, 11 Apr 2025 06:11:13 -0500
-Received: from [10.24.72.182] (jayesh-hp-z2-tower-g5-workstation.dhcp.ti.com [10.24.72.182])
-	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 53BBB7gT071481;
-	Fri, 11 Apr 2025 06:11:08 -0500
-Message-ID: <ce7d7865-126c-4119-bcc5-1b4feae94f8c@ti.com>
-Date: Fri, 11 Apr 2025 16:41:07 +0530
+	Fri, 11 Apr 2025 11:20:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id E372E5C6889;
+	Fri, 11 Apr 2025 11:18:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02767C4CEE2;
+	Fri, 11 Apr 2025 11:20:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1744370457;
+	bh=EcYG/g8DZi4Q6gr2HP2qs4xQZ+9z5aVwORnINoywG58=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=SMWg3Bl0WAbkrm9olDCQ76zjOG/UbZQ8tQw4h7dTIFJzz9w7M04BLeKjNWyH2mFBa
+	 GmHSog+f6PkiOWjnq9SjJP4jBiiMBHnbNhk0z8n3c8B+fJng+vpyPMCv2R0nqXk40h
+	 ldIyU20oTl9kreSWjwd3T12IluKzS9e9tK9I2wr259PSgGj13Zmsc9sVrIus/xTDtl
+	 al3296xXsbd9XJzMUGibEjxwBooTtB5VYMnnUC2xmmU2E1exd6gf0saMtPbOgzDN2h
+	 aMr6tj9eDKjuKAHItPI7GHHFafvER6DdOV9sQ7Nj3izWvUfmVueeSkNNok1/lmLfvX
+	 0nmn/kCgPRZqA==
+Date: Fri, 11 Apr 2025 16:50:53 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: shao.mingyin@zte.com.cn
+Cc: miquel.raynal@bootlin.com, jckuo@nvidia.com, kishon@kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	thierry.reding@gmail.com, jonathanh@nvidia.com,
+	linux-tegra@vger.kernel.org, yang.yang29@zte.com.cn,
+	xu.xin16@zte.com.cn, ye.xingchen@zte.com.cn, xie.ludan@zte.com.cn
+Subject: Re: [PATCH 1/2] phy: =?iso-8859-1?Q?marvel?=
+ =?iso-8859-1?Q?l=3A_a3700-comphy=3A_Use=A0devm=5Fplatform=5Fioremap=5Fres?=
+ =?iso-8859-1?Q?ource=5Fbyname?=
+Message-ID: <Z/j7FWmvhS83FnrA@vaman>
+References: <20250401193134281Nbc40spYmxjVmftwF0KTZ@zte.com.cn>
+ <20250401193836885cYSO33OlICvYYYmEMlB5J@zte.com.cn>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 00/18] drm/bridge: cdns-dsi: Make it work a bit better
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
-        Jyri Sarha
-	<jyri.sarha@iki.fi>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Vinod Koul
-	<vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Andrzej Hajda
-	<andrzej.hajda@intel.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Robert
- Foss <rfoss@kernel.org>,
-        Laurent Pinchart
-	<Laurent.pinchart@ideasonboard.com>,
-        Jonas Karlman <jonas@kwiboo.se>,
-        Jernej
- Skrabec <jernej.skrabec@gmail.com>
-CC: <dri-devel@lists.freedesktop.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>,
-        Francesco Dolcini <francesco@dolcini.it>,
-        Aradhya Bhatia <aradhya.bhatia@linux.dev>,
-        Devarsh Thakkar <devarsht@ti.com>
-References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
-Content-Language: en-US
-From: Jayesh Choudhary <j-choudhary@ti.com>
-In-Reply-To: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Content-Disposition: inline
+In-Reply-To: <20250401193836885cYSO33OlICvYYYmEMlB5J@zte.com.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_041154_027682_DDCA6B6E 
-X-CRM114-Status: GOOD (  20.76  )
+X-CRM114-CacheID: sfid-20250411_042058_776552_F7A9AC53 
+X-CRM114-Status: GOOD (  13.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,97 +73,70 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Tomi,
-
-On 02/04/25 19:00, Tomi Valkeinen wrote:
-> While trying to get the cdns-dsi to work on Toradex's AM69 Aquila
-> platform, I hit multiple issues in the driver. Basicaly nothing worked
-> for with the board.
+On 01-04-25, 19:38, shao.mingyin@zte.com.cn wrote:
+> From: Xie Ludan <xie.ludan@zte.com.cn>
 > 
-> This series fixes those issues. While I itch to make much larger changes
-> to the cdns-dsi driver, I opted to keep this series relatively simple to
-> make the fixes more clear and possibly help with backporting.
+> Introduce devm_platform_ioremap_resource_byname() to simplify resource
+> retrieval and mapping.This new function consolidates
+> platform_get_resource_byname() and devm_ioremap_resource() into
+> a single call, improving code readability and reducing API call overhead.
 > 
-> The series also touches tidss, but those changes are not strictly
-> needed, and can be merged separately. And the series also touches
-> cdns-dphy, and those changes are needed.
-> 
-> This has been tested on Toradex AM69 Aquila, with:
-> - HDMI output using lontium lt8912b
-> - LVDS panel (sn65dsi84 + panel-lvds)
-> 
->   Tomi
-> 
-
-I have tested this series for TI SoCs J784S4 and J721S2 as well where
-we use the following pipeline:
-DSS -> CDNS_DSI -> SN65DSI86 -> DisplayConnector
-(https://lore.kernel.org/all/20250411105155.303657-1-j-choudhary@ti.com/)
-
-
-Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
-
-
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+> Signed-off-by: Xie Ludan <xie.ludan@zte.com.cn>
+> Signed-off-by: Shao Mingyin <shao.mingyin@zte.com.cn>
 > ---
-> Changes in v2:
-> - Change the tidss clock adjustment from mode_fixup() to atomic_check()
-> - Link to v1: https://lore.kernel.org/r/20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com
+>  drivers/phy/marvell/phy-mvebu-a3700-comphy.c | 16 +++++-----------
+>  1 file changed, 5 insertions(+), 11 deletions(-)
 > 
-> ---
-> Tomi Valkeinen (18):
->        drm/tidss: Fix missing includes and struct decls
->        drm/tidss: Use the crtc_* timings when programming the HW
->        drm/tidss: Adjust the pclk based on the HW capabilities
->        phy: cdns-dphy: Store hs_clk_rate and return it
->        phy: cdns-dphy: Remove leftover code
->        drm/bridge: cdns-dsi: Adjust mode to negative syncs
->        drm/bridge: cdns-dsi: Fail if HS rate changed when validating PHY config
->        drm/bridge: cdns-dsi: Clean up cdns_dsi_mode2cfg()
->        drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
->        drm/bridge: cdns-dsi: Fix event mode
->        drm/bridge: cdns-dsi: Remove broken fifo emptying check
->        drm/bridge: cdns-dsi: Drop checks that shouldn't be in .mode_valid()
->        drm/bridge: cdns-dsi: Do not use crtc_* values
->        drm/bridge: cdns-dsi: Use videomode internally
->        drm/bridge: cdns-dsi: Tune adjusted_mode->clock according to dsi needs
->        drm/bridge: cdns-dsi: Update htotal in cdns_dsi_mode2cfg()
->        drm/bridge: cdns-dsi: Drop cdns_dsi_adjust_phy_config()
->        drm/bridge: cdns-dsi: Don't fail on MIPI_DSI_MODE_VIDEO_BURST
+> diff --git a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+> index 1d1db1737422..e629a1a73214 100644
+> --- a/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+> +++ b/drivers/phy/marvell/phy-mvebu-a3700-comphy.c
+> @@ -1253,26 +1253,20 @@ static int mvebu_a3700_comphy_probe(struct platform_device *pdev)
 > 
->   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 224 +++++++++++--------------
->   drivers/gpu/drm/tidss/tidss_crtc.c             |  25 ++-
->   drivers/gpu/drm/tidss/tidss_dispc.c            |  22 ++-
->   drivers/gpu/drm/tidss/tidss_dispc.h            |   5 +
->   drivers/gpu/drm/tidss/tidss_drv.h              |   2 +
->   drivers/gpu/drm/tidss/tidss_plane.h            |   2 +
->   drivers/gpu/drm/tidss/tidss_scale_coefs.h      |   2 +
->   drivers/phy/cadence/cdns-dphy.c                |  24 +--
->   8 files changed, 155 insertions(+), 151 deletions(-)
-> ---
-> base-commit: 10646ddac2917b31c985ceff0e4982c42a9c924b
-> change-id: 20250320-cdns-dsi-impro-3d8fbd7848d1
-> prerequisite-message-id: 20250226155228.564289-1-aradhya.bhatia@linux.dev
-> prerequisite-patch-id: 46845a8d15042dd343a29a17fc0b9d0eec2605f5
-> prerequisite-patch-id: 7ce82c26cb9e18884492d2282a72ff2a760aefda
-> prerequisite-patch-id: ec2071425cab81da72e0805ad92fc52731d7a24d
-> prerequisite-patch-id: 32cde02288e0c36ed687f67778937a61f78b2d90
-> prerequisite-patch-id: 5f302e2bead8994763699a909ad0b5501f09ed9f
-> prerequisite-patch-id: 30611df6ef38c7872107d6bf6dde4504d46ab224
-> prerequisite-patch-id: 99831bcaa13e25b957d83a6320f34bcec223b939
-> prerequisite-patch-id: b0ad38bc6b323ceea7a1d2266b0fab8deaa6b05e
-> prerequisite-patch-id: 38dbce2b9302a764be9dbdc551578f02d797dfcc
-> prerequisite-patch-id: 133f8b1dab4f47d429b1924df981564ce3736233
-> prerequisite-patch-id: 879c546693a53e4b72c1ee25954c894ae57a441f
-> prerequisite-patch-id: 3e7edc818ac078a138f0e42e3f47fd685fffb84f
-> prerequisite-patch-id: 673b9f0b1936b5a49973b71cab5d13774583de38
+>  	spin_lock_init(&priv->lock);
 > 
-> Best regards,
+> -	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "comphy");
+
+res is unused so this should lead to warnings by this patch, did you at
+least compile test it?
+
+> -	priv->comphy_regs = devm_ioremap_resource(&pdev->dev, res);
+> +	priv->comphy_regs = devm_platform_ioremap_resource_byname(pdev, "comphy");
+>  	if (IS_ERR(priv->comphy_regs))
+>  		return PTR_ERR(priv->comphy_regs);
+> 
+> -	res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> -					   "lane1_pcie_gbe");
+> -	priv->lane1_phy_regs = devm_ioremap_resource(&pdev->dev, res);
+> +	priv->lane1_phy_regs = devm_platform_ioremap_resource_byname(pdev, "lane1_pcie_gbe");
+>  	if (IS_ERR(priv->lane1_phy_regs))
+>  		return PTR_ERR(priv->lane1_phy_regs);
+> 
+> -	res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> -					   "lane0_usb3_gbe");
+> -	priv->lane0_phy_regs = devm_ioremap_resource(&pdev->dev, res);
+> +	priv->lane0_phy_regs = devm_platform_ioremap_resource_byname(pdev, "lane0_usb3_gbe");
+>  	if (IS_ERR(priv->lane0_phy_regs))
+>  		return PTR_ERR(priv->lane0_phy_regs);
+> 
+> -	res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> -					   "lane2_sata_usb3");
+> -	priv->lane2_phy_indirect = devm_ioremap_resource(&pdev->dev, res);
+> +	priv->lane2_phy_indirect = devm_platform_ioremap_resource_byname(pdev,
+> +									 "lane2_sata_usb3");
+>  	if (IS_ERR(priv->lane2_phy_indirect))
+>  		return PTR_ERR(priv->lane2_phy_indirect);
+> 
+> -- 
+> 2.25.1
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
