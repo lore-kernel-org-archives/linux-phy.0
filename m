@@ -4,61 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A9A9C369A2
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Apr 2025 19:44:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D491CC369AB
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Apr 2025 17:53:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5mr5mG8ihGkGxGBN4tWYtmiH0Bk7dwuXm/eDUiodgCo=; b=tOKIb7+DP5Mt2h
-	4ZdZ3JwT6FM087D28/TDVZy4Qy+0yMdjwqGMRNsS4fLeiamSpy40eEv0UmpCBKLgEW6pcjlCBcXTe
-	lcUC72ZD7O3jR1LcA/AAY0E76EwTFQcjiyHk4UO3y6UdU3kj79hnr1YaUiduYBdlEFelKTWjTReEU
-	7Z3bZBDQBh9iBryc4PUqPDxu1BE4ohrUJLZ/6fbnkizZ7aifI1IpbFb5DRdKBeuzT8lvW7N0uo/DW
-	cPOjnOoOuZFxSOnqCFxapmgX801rdV1Fpv5TSzLH/Aw4UZ3ry30gmmkZ8BtbdQf616nF37Kete1lQ
-	+p66RIQOQgX8n+5/Pzmg==;
+	List-Owner; bh=LuHi3hreSb6/4zmsah5ZuzuQsGyPLoHD/GgS2IthQPY=; b=nFXigvHoIcoO67
+	oi/nyQH/zY8MARjAtl5zr5TiVe13BAbm85zXeRicHWG+S9x9Kf5XG/BEgad9SRDMgD6+L26ziYCkD
+	v0vE3rH6qo6Srsb+Tr8C7dVa3Q7aagZWMvmegHVumAvEIR0nR1bJBhS+cwH60giokKQHkFE6CjohO
+	BGdETHt9GaGkil7TdEBQGltpzXlm8oXn0rwpSg8FVw6696wYqw+0R0ZksSpBJ9k2oTZNWVuT9o00Z
+	JmLfR2ivnPLkuqy7SnhaGjHJ/0wDjDBp8cZLb/r13HyMHRcTBF4+shq5pvAR4erd5Jw0N6/f874OB
+	KZtFqXipdvU9WBwivqwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3KIQ-0000000Ekt5-3bM3;
-	Fri, 11 Apr 2025 19:44:14 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1u3f2L-0000000GE7D-0uTj;
+	Sat, 12 Apr 2025 17:53:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3KGa-0000000Ekav-41Ki;
-	Fri, 11 Apr 2025 19:42:22 +0000
+	id 1u3f0U-0000000GDx6-3RWy;
+	Sat, 12 Apr 2025 17:51:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 5DD6BA4A954;
-	Fri, 11 Apr 2025 19:36:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BFBDC4CEE2;
-	Fri, 11 Apr 2025 19:42:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0701E5C3E56;
+	Sat, 12 Apr 2025 17:48:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E8CEC4CEE3;
+	Sat, 12 Apr 2025 17:51:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744400539;
-	bh=GIcyZThvoYXaHxUFa3uu98idbETsxCqqaZINj5bP1Rg=;
+	s=k20201202; t=1744480264;
+	bh=TagZ0zYvwJ13raGmBK79thcRSiS9AqEKrO4KwU9hXwI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=bx69LwlN4gDJwXWMTiGjpADgGOkfzd6DpRdh3i2THAnBow67TMqLPFbO4HOP5i0He
-	 wobzWvKUHEoOAJcNuiK8Sm6MaP7ffQbzasARcRWK13LHUmH0xkEIScK7/9xVuhLbAG
-	 pkIrHBOpapVCoLZ+jODtWHwH4Dko1rjr1iU5oPENOw4Lm94uC2pbH7K+7/zheP95SH
-	 usTcfyQ2uav6fw3pR3xAXK/i3s3P3llCGBLimEAZEhuAf0skxxbqg4AwnYxdTB4eEK
-	 i/vdgOG4Ot0YCr2gL2wH/dg75Vk+KgMU7yyFrpnBY4w/mGtKTnygugNfGPd8cA+zU8
-	 sY4ksq2isZECQ==
-Date: Fri, 11 Apr 2025 14:42:18 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	krzk+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
-	kishon@kernel.org, srk@ti.com, yamonkar@cadence.com,
-	sjakhade@cadence.com, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, vkoul@kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: cadence-torrent: enable
- PHY_TYPE_USXGMII
-Message-ID: <174440053779.3778537.10228186490743369615.robh@kernel.org>
-References: <20250411055743.623135-1-s-vadapalli@ti.com>
+	b=iTqhljt3uPGXOeeokGvoiePR+ULT/F/3X/m+FFA8bnGCvHHgn1lA86i5BCPVlTue9
+	 Lg8uCC4kUbFvrXYIyu+4OVIeTLuR58HAIuTLiLcr39nOf8n8/SmfLUi2y6ZowcVpUI
+	 MC45dp6RnmgWOe36zHHuNMUhhpftX+9ShMiOJKEYOirhtwQm3i8AJ/0c8UuG9zVRPQ
+	 +Gxz6jQka4/gc4k+c17o2pILuWGPlyIvlqFvUVO61/wbGE4Dr8bqMGk42DVUr/Txe3
+	 CnFR5sXe+eG9zSNkjbun7sQ2JGWSbNSJ51i9Sb13getv+rIldGbjcJQBklc5Nfq+Vg
+	 mRsKOkC/lr8BQ==
+Date: Sat, 12 Apr 2025 12:51:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	kernel@collabora.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: rockchip,inno-usb2phy: add port
+ property
+Message-ID: <20250412175103.GA1366427-robh@kernel.org>
+References: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
+ <20250407-rk3576-sige5-usb-v1-1-67eec166f82f@collabora.com>
+ <20250410211123.GA1071510-robh@kernel.org>
+ <6743970.MhkbZ0Pkbq@workhorse>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250411055743.623135-1-s-vadapalli@ti.com>
+In-Reply-To: <6743970.MhkbZ0Pkbq@workhorse>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250411_124221_061265_E893BA7C 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20250412_105106_977754_2AD17ACB 
+X-CRM114-Status: GOOD (  40.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,29 +84,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, Apr 11, 2025 at 04:31:38PM +0200, Nicolas Frattaroli wrote:
+> On Thursday, 10 April 2025 23:11:23 Central European Summer Time Rob Herring wrote:
+> > On Mon, Apr 07, 2025 at 08:09:14PM +0200, Nicolas Frattaroli wrote:
+> > > USB connectors like to have OF graph connections to high-speed related
+> > > nodes to do various things. In the case of the RK3576, we can make use
+> > > of a port in the usb2 PHY to detect whether the OTG controller is
+> > > connected to a type C port and apply some special behaviour accordingly.
+> > > 
+> > > The usefulness of having different bits of a fully functioning USB stack
+> > > point to each other is more general though, and not constrained to
+> > > RK3576 at all, even for this use-case.
+> > > 
+> > > Add a port property to the binding.
+> > > 
+> > > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml | 5 +++++
+> > >  1 file changed, 5 insertions(+)
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> > > index 6a7ef556414cebad63c10de754778f84fd4486ee..3a662bfc353250a8ad9386ebb5575d1e84c1b5ba 100644
+> > > --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> > > +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> > > @@ -78,6 +78,11 @@ properties:
+> > >        When set the driver will request its phandle as one companion-grf
+> > >        for some special SoCs (e.g rv1108).
+> > >  
+> > > +  port:
+> > > +    $ref: /schemas/graph.yaml#/properties/port
+> > > +    description:
+> > > +      A port node to link the PHY to a USB connector's "high-speed" port.
+> > 
+> > I don't think this is correct. The HS port of the connector goes to the 
+> > controller. The controller has the link to the phy.
+> > 
+> > If the PHY is also what handles USB-C muxing or orientation switching, 
+> > then it might have ports, but then it needs input and output ports.
+> > 
+> > Rob
+> > 
+> 
+> Hi Rob,
+> 
+> thank you for the quick response.
+> 
+> I've feared this would be the case, but chose to go ahead with this solution
+> anyway because I'm not super stoked about the alternatives I can think of. The
+> problem is that I need to go from the USB PHY node to the USB connector somehow,
+> but there's no way I can see to get from the PHY node to the USB2 controller
+> it's connected to, unless I'm missing something obvious.
+> 
+> So I see two alternatives:
+> 1. Extend the usb connector binding to add additional ports for PHYs that handle
+>    vbus detection or something, then extend either the inno2 binding or a more
+>    general usb PHY binding to add that port definition.
+> 2. Revert to what the downstream vendor kernel does and simply add a boolean
+>    flag property to the inno usb2phy binding that tells it whether it's
+>    connected to a USB-C port and should therefore expect vbusdet to remain high.
+> 
+> Let me know if there's any better alternatives I missed. If there's some OF
+> driver function to enumerate all controllers a PHY is referenced by, then that
+> would probably work as well, allowing me to just point the HS port to the
+> controller instead as intended.
 
-On Fri, 11 Apr 2025 11:27:43 +0530, Siddharth Vadapalli wrote:
-> The Cadence Torrent SERDES supports USXGMII protocol. Hence, update the
-> bindings to allow PHY_TYPE_USXGMII. Since PHY_TYPE_USXGMII has the value
-> of "12" while the existing maximum allowed PHY TYPE is "9", switch back to
-> using "enum" property in the bindings to account for this discontinuity.
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-> ---
-> 
-> Hello,
-> 
-> This patch is based on linux-next tagged next-20250411.
-> 
-> Regards,
-> Siddharth.
-> 
->  Documentation/devicetree/bindings/phy/phy-cadence-torrent.yaml | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
-> 
+The building blocks are there. You can iterate over nodes with 'phys' 
+with for_each_node_with_property(), then on each entry in 'phys' check 
+if it matches your node. Then you need to iterate over the ports to 
+check for connection to usb-c-connector. 
+of_graph_get_remote_port_parent() will help you there. Not terribly 
+efficient, but you're only doing it once.
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Another option is extend phy modes to distinguish USB-C or not. Then you 
+can set the mode either with the 'phy-mode' property or in phy cells. 
+Though if you have to add a cell, that's an ABI change (not sure if the 
+existing kernel would accept another cell).
 
+I rather see the kernel use the information that's already there rather 
+than have 2 sources of information.
+
+Rob
 
 -- 
 linux-phy mailing list
