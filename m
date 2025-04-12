@@ -4,70 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D491CC369AB
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Apr 2025 17:53:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0774C369AB
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Apr 2025 20:27:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LuHi3hreSb6/4zmsah5ZuzuQsGyPLoHD/GgS2IthQPY=; b=nFXigvHoIcoO67
-	oi/nyQH/zY8MARjAtl5zr5TiVe13BAbm85zXeRicHWG+S9x9Kf5XG/BEgad9SRDMgD6+L26ziYCkD
-	v0vE3rH6qo6Srsb+Tr8C7dVa3Q7aagZWMvmegHVumAvEIR0nR1bJBhS+cwH60giokKQHkFE6CjohO
-	BGdETHt9GaGkil7TdEBQGltpzXlm8oXn0rwpSg8FVw6696wYqw+0R0ZksSpBJ9k2oTZNWVuT9o00Z
-	JmLfR2ivnPLkuqy7SnhaGjHJ/0wDjDBp8cZLb/r13HyMHRcTBF4+shq5pvAR4erd5Jw0N6/f874OB
-	KZtFqXipdvU9WBwivqwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7CurrA5SsekHVfbiC+GCJU7oLar5kTrQGYhdv7h7oRY=; b=nugfC8V1Uu3suE
+	tHzfWIqW8iGevbdtTMC+DrA4nwYl/aX0Xtqopjxxb4TcHBYO4ls2yk4bGCby3P1xHGQXPAqeJy/wI
+	4ROluvPdGuVLwoWR3ehjEUEom6dRaBd/TEuRxEDQjRXv7iPKM8cYi5oSApGyUpZsty616Oyz0iW4r
+	ho/5i1YTgO7urgkFJ0RxW97fUE3qxQZZ1Bcs1MbDEW3LgcIFVe76r3UXLn6M8mfJ4nYiy/lMUfh0v
+	8Choznym75lc+R0Zcig7xNCYIMvQNInDoRS3nlfcYdMuWlG/AFpi4x87eQ8Am2V2ZQqgfKUXBXTtm
+	56vXWQI5Ew/FGx/DnWMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3f2L-0000000GE7D-0uTj;
-	Sat, 12 Apr 2025 17:53:01 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1u3hRN-0000000GP02-15MK;
+	Sat, 12 Apr 2025 20:27:01 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3f0U-0000000GDx6-3RWy;
-	Sat, 12 Apr 2025 17:51:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0701E5C3E56;
-	Sat, 12 Apr 2025 17:48:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E8CEC4CEE3;
-	Sat, 12 Apr 2025 17:51:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744480264;
-	bh=TagZ0zYvwJ13raGmBK79thcRSiS9AqEKrO4KwU9hXwI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iTqhljt3uPGXOeeokGvoiePR+ULT/F/3X/m+FFA8bnGCvHHgn1lA86i5BCPVlTue9
-	 Lg8uCC4kUbFvrXYIyu+4OVIeTLuR58HAIuTLiLcr39nOf8n8/SmfLUi2y6ZowcVpUI
-	 MC45dp6RnmgWOe36zHHuNMUhhpftX+9ShMiOJKEYOirhtwQm3i8AJ/0c8UuG9zVRPQ
-	 +Gxz6jQka4/gc4k+c17o2pILuWGPlyIvlqFvUVO61/wbGE4Dr8bqMGk42DVUr/Txe3
-	 CnFR5sXe+eG9zSNkjbun7sQ2JGWSbNSJ51i9Sb13getv+rIldGbjcJQBklc5Nfq+Vg
-	 mRsKOkC/lr8BQ==
-Date: Sat, 12 Apr 2025 12:51:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	id 1u3hRK-0000000GOyt-0I9E;
+	Sat, 12 Apr 2025 20:26:59 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-43cf680d351so24006085e9.0;
+        Sat, 12 Apr 2025 13:26:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744489616; x=1745094416; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=pt8x7MsG2eaE/5Lv28czLfNqjIaR0J4hccDPHzanxb8=;
+        b=fftlR6r6GwEvZtTIg4/VvZCznSszeUk3QSyFi95j1ntEIKRXYw9VSsovS4aS+WxwPx
+         siqQT8q+VQ1nXTkUrFA18eBRiJQeaf6BCaWd3bPeTXqiaOtIoxj2rTJtcr935B3K7OiU
+         sgD45acju62mp3B3lHqio2lmQQeXEPP08KjsVsacGrgWwleMX11GZPzZ4hhAPclI9XVn
+         Ot1ntmu7PU9M2Q/RY8FaC2uOdxeeFQmvKKudl6T83XcJ0NnEfKTL2GKLcCKSvu2LPrvJ
+         +ghAYqse6+alA7N58GX9O9k7Mctu0hbm8lXDArpQvEVKWd//tGodC8Ul/pFdNJJAOUXx
+         hUUA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744489616; x=1745094416;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=pt8x7MsG2eaE/5Lv28czLfNqjIaR0J4hccDPHzanxb8=;
+        b=O6pzFaKJHNfgorchQ/ajDMjeIMKOT2+/gZ2XV3Vug3YWhvPeFytvWUyHMNVM3Xu8zH
+         xZs9nyFcErQhDF7Wku1/6aBXC89oTPCJQS66WVH6iFZdW0At8X1Qexwl5OpBa9zLA8Xq
+         Leywr7w28GYLC/Yzhbb2Z750tZnffCzST3Agsy3M1J4mAbbwPKo26WxrlYcA06ZEiSft
+         HozCFcEfP25hh1/vqo+2HwS7n+Q50zTUSRrBB4UdfgQaR2qa4n8hJYXfK9t0WVS/Aor+
+         Wpmns4hfuOVTsy9j0g3UzI2/BLHsRTGsgBxGN/UtcreE9r/8wnp7rHvXiOOIf1e5tiKp
+         8IUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW47OTSRyTu2UbnGcxep5zNkFDOtUC7UeCjU7VTjXDw7cSiDzo9ujcOeT0vGty9b7AGAjQTE996OVX6IYy3ARNp@lists.infradead.org, AJvYcCXyx6RupVyohzK6xOjRjB4AwtsRUv/orQucBMAvKM8q3a/lKw+klTLQwx+YhPxjNBzq6yJSOh6nn+yO@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzn5W/erzak28h6v0zDcdB14hAwz2TXvE8I0NWzgw0oJusZp/S/
+	mGgFDt1lAY3adUYT/+bboLUorL/zOOmL27DCi87C9921fM7ybCDERoa9Sw==
+X-Gm-Gg: ASbGncsyCeGFT1K0sV48OBkWys1KbejEbjcnHgJIrTs+jzmw7yyXxQGkHT7JrqgCw02
+	fN/jXg/F6QJncr02u8GzMQ0AlgBuQvApgtqiX+ZgZTXX9V4nFbdRmIItQetWL6rWRRp6CI++PNg
+	wmY2vkmQDTDUB/BpYgkzE0bWKy0VamLNMT8xLzjWcjvRxvM3wlOQOch0v+JtYY8dwqfEBGyRGor
+	bhWMqwNuY7cd1WLTnVOXveb73HCI2yOU0GkFEzx+oGA9pmq3yft5mZRnjStL0kjyr/d+UU20PcZ
+	gR0KmkuOQwQXlrq0FPd1JneZyd9Fusm8EtSMU5/C/zkpufoFPeGQox1oorE2wt8idW/cgqGjdGA
+	I20BDFQYFppCdqmiY
+X-Google-Smtp-Source: AGHT+IFTVjJVaiqOWTJvgSlXy0IDFIlrMIPfubQkZClUTft4KlMYZTec77RN03cNec003jQi0G1xXg==
+X-Received: by 2002:a05:6000:4022:b0:38d:e0a9:7e5e with SMTP id ffacd0b85a97d-39d8f2676a3mr8510788f8f.6.1744489615366;
+        Sat, 12 Apr 2025 13:26:55 -0700 (PDT)
+Received: from ivaylo-T580.. (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43f2338d802sm131797845e9.1.2025.04.12.13.26.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 12 Apr 2025 13:26:54 -0700 (PDT)
+From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Kever Yang <kever.yang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	kernel@collabora.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/4] dt-bindings: phy: rockchip,inno-usb2phy: add port
- property
-Message-ID: <20250412175103.GA1366427-robh@kernel.org>
-References: <20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com>
- <20250407-rk3576-sige5-usb-v1-1-67eec166f82f@collabora.com>
- <20250410211123.GA1071510-robh@kernel.org>
- <6743970.MhkbZ0Pkbq@workhorse>
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-samsung-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org
+Subject: [PATCH v4 00/10] phy: samsung: add Exynos2200 SNPS eUSB2 driver
+Date: Sat, 12 Apr 2025 23:26:10 +0300
+Message-ID: <20250412202620.738150-1-ivo.ivanov.ivanov1@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6743970.MhkbZ0Pkbq@workhorse>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250412_105106_977754_2AD17ACB 
-X-CRM114-Status: GOOD (  40.16  )
+X-CRM114-CacheID: sfid-20250412_132658_111658_8102C938 
+X-CRM114-Status: GOOD (  21.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,86 +105,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 11, 2025 at 04:31:38PM +0200, Nicolas Frattaroli wrote:
-> On Thursday, 10 April 2025 23:11:23 Central European Summer Time Rob Herring wrote:
-> > On Mon, Apr 07, 2025 at 08:09:14PM +0200, Nicolas Frattaroli wrote:
-> > > USB connectors like to have OF graph connections to high-speed related
-> > > nodes to do various things. In the case of the RK3576, we can make use
-> > > of a port in the usb2 PHY to detect whether the OTG controller is
-> > > connected to a type C port and apply some special behaviour accordingly.
-> > > 
-> > > The usefulness of having different bits of a fully functioning USB stack
-> > > point to each other is more general though, and not constrained to
-> > > RK3576 at all, even for this use-case.
-> > > 
-> > > Add a port property to the binding.
-> > > 
-> > > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> > > ---
-> > >  Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml | 5 +++++
-> > >  1 file changed, 5 insertions(+)
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-> > > index 6a7ef556414cebad63c10de754778f84fd4486ee..3a662bfc353250a8ad9386ebb5575d1e84c1b5ba 100644
-> > > --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-> > > @@ -78,6 +78,11 @@ properties:
-> > >        When set the driver will request its phandle as one companion-grf
-> > >        for some special SoCs (e.g rv1108).
-> > >  
-> > > +  port:
-> > > +    $ref: /schemas/graph.yaml#/properties/port
-> > > +    description:
-> > > +      A port node to link the PHY to a USB connector's "high-speed" port.
-> > 
-> > I don't think this is correct. The HS port of the connector goes to the 
-> > controller. The controller has the link to the phy.
-> > 
-> > If the PHY is also what handles USB-C muxing or orientation switching, 
-> > then it might have ports, but then it needs input and output ports.
-> > 
-> > Rob
-> > 
-> 
-> Hi Rob,
-> 
-> thank you for the quick response.
-> 
-> I've feared this would be the case, but chose to go ahead with this solution
-> anyway because I'm not super stoked about the alternatives I can think of. The
-> problem is that I need to go from the USB PHY node to the USB connector somehow,
-> but there's no way I can see to get from the PHY node to the USB2 controller
-> it's connected to, unless I'm missing something obvious.
-> 
-> So I see two alternatives:
-> 1. Extend the usb connector binding to add additional ports for PHYs that handle
->    vbus detection or something, then extend either the inno2 binding or a more
->    general usb PHY binding to add that port definition.
-> 2. Revert to what the downstream vendor kernel does and simply add a boolean
->    flag property to the inno usb2phy binding that tells it whether it's
->    connected to a USB-C port and should therefore expect vbusdet to remain high.
-> 
-> Let me know if there's any better alternatives I missed. If there's some OF
-> driver function to enumerate all controllers a PHY is referenced by, then that
-> would probably work as well, allowing me to just point the HS port to the
-> controller instead as intended.
+Hey folks,
 
-The building blocks are there. You can iterate over nodes with 'phys' 
-with for_each_node_with_property(), then on each entry in 'phys' check 
-if it matches your node. Then you need to iterate over the ports to 
-check for connection to usb-c-connector. 
-of_graph_get_remote_port_parent() will help you there. Not terribly 
-efficient, but you're only doing it once.
+This patchset adds Exynos2200 support to the existing eUSB2 phy driver,
+as well as USBDRD support for that SoC.
 
-Another option is extend phy modes to distinguish USB-C or not. Then you 
-can set the mode either with the 'phy-mode' property or in phy cells. 
-Though if you have to add a cell, that's an ABI change (not sure if the 
-existing kernel would accept another cell).
+The SoC features the same (as far as I can tell from comparing code)
+USBDRD 3.2 4nm block that Exynos2400 has, hence the common denominator.
+It consists of a SEC USB link controller, Synopsys eUSB2 and Synopsys
+USBDP combophy, which are independent underlying hardware blocks of
+the USBDRD controller.
 
-I rather see the kernel use the information that's already there rather 
-than have 2 sources of information.
+In the vendor kernel, everything is handled in the usbdrd controller
+driver, with helpers for underlying hardware block functions outside it.
+Clocks and regulators are specified and enabled in one node, which makes
+it difficult to separate what clocks and regulators go where without
+access to schematics or TRMs. The following gates are defined for USB:
 
-Rob
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_USBSUBCTL_APB_PCLK
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_USBDPPHY_CTRL_PCLK
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_USBDPPHY_TCA_APB_CLK
+
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_USBLINK_ACLK
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_USB32DRD_REF_CLK_40
+
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_EUSB_CTRL_PCLK
+CLK_BLK_HSI0_UID_USB32DRD_IPCLKPORT_I_EUSB_APB_CLK
+CLK_BLK_HSI0_UID_AS_APB_EUSBPHY_HSI0_IPCLKPORT_PCLKM
+CLK_BLK_HSI0_UID_RSTNSYNC_CLK_HSI0_EUSB_IPCLKPORT_CLK
+
+The vendor kernel specifies 4 regulators, 2 of which are for eUSB
+and the other 2 for the repeater. The rest of the PHYs and the dwc3
+controller are on a single power domain (hsi0), so they're most likely
+sharing power rails.
+
+As Qualcomm is also using the eUSB2 IP, the approach taken here is to
+rename the driver so that it can be used by other SoC vendors as well
+while keeping compatibles SoC-vendor prefixed (different vendors have
+different implementations of the IP with different register maps),
+add support for exynos2200 in it and implement support for exynos2200
+in the existing exynos5-usbdrd driver (with link controller init).
+
+A new USBDP driver will be added later on, so that super-speed can be
+configured.
+
+Bindings have been tested:
+
+$ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 dt_binding_check DT_SCHEMA_FILES="Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml"
+  SCHEMA  Documentation/devicetree/bindings/processed-schema.json
+Documentation/devicetree/bindings/iio/light/brcm,apds9160.yaml: ps-cancellation-current-picoamp: missing type definition
+  CHKDT   ./Documentation/devicetree/bindings
+  LINT    ./Documentation/devicetree/bindings
+  DTEX    Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.example.dts
+  DTC [C] Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.example.dtb
+
+Best regards,
+Ivaylo
+
+Changes in v4:
+EUSB2 changes:
+- make a new separate binding for eusb2 ip found in samsung socs
+- fix order of tags in 03/10
+- change 'SNPS' to 'Synopsys' in the MODULE_DESCRIPTION in 04/10
+- simplify code around device_get_match_data in 05/10
+USBDRD changes:
+- drop double colons and 'phandle to' in binding
+
+Changes in v3:
+USBCON changes:
+- drop the driver and introduce it all in existing exynos5-usbdrd driver
+EUSB2 changes:
+- split changes into multiple commits with clear diff
+- add a commit to do table-based lookup for refclk
+- clean up here and there
+- correct the cover letter according to my new knowledge of how the
+  hardware functions
+- change commit message of the optional repeater patch
+
+Changes in v2:
+USBCON changes:
+- drop unused header includes
+- sanitize the binding
+- proper init and exit power management
+- shorten some variables
+- unrelax reads and writes
+- update commit description
+- remodel to take other phys
+- drop specified regulators as these are for the repeater
+- make the kconfig description better
+- general cleanup
+EUSB2 changes:
+- merge the previous separate driver into the qualcomm one
+- drop the previous model of taking usbcon phandle
+
+Ivaylo Ivanov (10):
+  dt-bindings: phy: add exynos2200 eusb2 phy support
+  dt-bindings: phy: samsung,usb3-drd-phy: add exynos2200 support
+  phy: move phy-qcom-snps-eusb2 out of its vendor sub-directory
+  phy: phy-snps-eusb2: refactor constructs names
+  phy: phy-snps-eusb2: split phy init code
+  phy: phy-snps-eusb2: make repeater optional
+  phy: phy-snps-eusb2: make reset control optional
+  phy: phy-snps-eusb2: refactor reference clock init
+  phy: phy-snps-eusb2: add support for exynos2200
+  phy: exynos5-usbdrd: support Exynos USBDRD 3.2 4nm controller
+
+ .../bindings/phy/samsung,snps-eusb2-phy.yaml  |  79 +++
+ .../bindings/phy/samsung,usb3-drd-phy.yaml    |  38 +-
+ drivers/phy/Kconfig                           |   8 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-snps-eusb2.c                  | 627 ++++++++++++++++++
+ drivers/phy/qualcomm/Kconfig                  |   9 -
+ drivers/phy/qualcomm/Makefile                 |   1 -
+ drivers/phy/qualcomm/phy-qcom-snps-eusb2.c    | 442 ------------
+ drivers/phy/samsung/phy-exynos5-usbdrd.c      | 227 ++++++-
+ include/linux/soc/samsung/exynos-regs-pmu.h   |   3 +
+ 10 files changed, 964 insertions(+), 471 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
+ create mode 100644 drivers/phy/phy-snps-eusb2.c
+ delete mode 100644 drivers/phy/qualcomm/phy-qcom-snps-eusb2.c
+
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
