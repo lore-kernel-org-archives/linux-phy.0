@@ -4,74 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75C0AC3601E
-	for <linux-phy@archiver.kernel.org>; Sun, 13 Apr 2025 09:09:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 297DBC3601E
+	for <linux-phy@archiver.kernel.org>; Sun, 13 Apr 2025 10:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rsllP2f7pm4xR9VUVLOkPB359MOx1a01wGE6uZ7tN6c=; b=jOpqr5yRyYXtt6
-	u+rFO83cQpP+dc89UCihdr1nSwo4+agliVo0AxZDh5oDfKyoKWEJSIFt0hf1E3Ni0feuib7RQbjZ0
-	KVD5tDIPXz9TGBT/enBbJdsNAGi2moSuquUE+I8eBrY6To202nJ6yEPuZclB/Wm7xbhL3hQICzR37
-	0px9SLGPNyAGkwnoCKQ5ZtSt8HxKkvYj28e4n30KelOMg3rRWs7fkfuN3tHgYD1haMsGB+aNOMN5E
-	aaggfhFUkqfmJa4aECAExJJU5L/Pkv57zzAY9AHmkD2RzaffP42D6KXyquMl41/YuIr/rcw5yaWeH
-	9DW17XSJ+O+FowLCtUYA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zJufe+3P/TxTE+CNB0W+FCnUPDzlMmZ1/Lp1EPrBbnY=; b=XM6NWZYj2MJJdQzaZEX3qLsj8D
+	zsDipmdMG6OtxxSNscRSQnd85E+X5CIQgeFc8/BBcXlxzELUYBvVe++rUP6ForO1YsUln1rZmXe9K
+	tF4fbuyj1gYahWz7G3fhodK6iEIgzTpdygFmoOi7kbJIw2tnZ1kRkH/jtP26qQ+BG2Qc0OAI22i5d
+	Gk1PG/vGtD8iHx7XkVOXRS+BPp+cAblAYsI04AKDjExutAUoTR3/eDN/ntnMUD+ElKE7MMM1HWRBc
+	EafrM+TLFUIXzmcm2JUq7O839V0yKkq6WuxXmbMqpHquZkAw0Kx5CjwrjHZT3ebDfQ2pQOKW1LGDF
+	iCJkQ+rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3tLT-0000000GzuZ-0uRT;
-	Sun, 13 Apr 2025 09:09:43 +0000
-Received: from mxout3.routing.net ([2a03:2900:1:a::8])
+	id 1u3up1-0000000H62i-2F5L;
+	Sun, 13 Apr 2025 10:44:19 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u3tAP-0000000GymF-245V;
-	Sun, 13 Apr 2025 08:58:19 +0000
-Received: from mxbox1.masterlogin.de (unknown [192.168.10.88])
-	by mxout3.routing.net (Postfix) with ESMTP id 155CE60536;
-	Sun, 13 Apr 2025 08:58:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1744534696;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fUg/DncS2AhYG89VBxFJm1aq8shzU0lzttlOs1DPzvU=;
-	b=ZjnUgL6ARihXC/nQO4jManNDUvZw6u+ojM0IQH9iESkQE8HMOY166SZ/i4TH41Yccj0yk9
-	0tpOCkWLhxjn8fCV5/kpZCig7MQx8AWMZhZz7GfhgS4SYZVu7fAlIPV9Ybokzwu1ChNSD1
-	MY0azaWWbG1pUBbOyk4ybi8mTNQFC0A=
-Received: from frank-u24.. (fttx-pool-194.15.86.153.bambit.de [194.15.86.153])
-	by mxbox1.masterlogin.de (Postfix) with ESMTPSA id 2D57940089;
-	Sun, 13 Apr 2025 08:58:15 +0000 (UTC)
-From: Frank Wunderlich <linux@fw-web.de>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Frank Wunderlich <frank-w@public-files.de>,
-	Daniel Golle <daniel@makrotopia.org>,
-	Sam Shih <sam.shih@mediatek.com>,
-	MandyJH Liu <mandyjh.liu@mediatek.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC 5/5] arm64: dts: mediatek: mt7988: Add xsphy for ssusb0/pcie2
-Date: Sun, 13 Apr 2025 10:58:05 +0200
-Message-ID: <20250413085806.8544-6-linux@fw-web.de>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250413085806.8544-1-linux@fw-web.de>
-References: <20250413085806.8544-1-linux@fw-web.de>
+	id 1u3un9-0000000H5t6-1TMd;
+	Sun, 13 Apr 2025 10:42:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3C520A41717;
+	Sun, 13 Apr 2025 10:36:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B2CFC4CEDD;
+	Sun, 13 Apr 2025 10:42:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1744540942;
+	bh=+rVcpgNtIzq+wNAjUzyP7ADEcJbJHlPGwgRaSM2PZYs=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=JwiUZdXNvgCm5rC9KB0QbwTvs1csueUgHMAU+OTSyb3HbnXDC/yBC2ZrTgu614nBc
+	 Fg5EGg65YnsSq8WQFz3lxh/duqGl9vpR/wCTIdXunTVgKum8GvlgGCMMjhjXB07t+/
+	 FkyKwFwCnoguoWCT1Rn1bTDs9aGkV1zCoMXGh72qvoxCgx/hgqwcZBRDSUQuENCoO7
+	 6VQXyWp1wuXRbGyrkW8H3dwmCwmFt2n2e0ofmT8xS5/CnoU9HhVdH01ozAe0nsXKhq
+	 gGW42B/OcYDVhbbEp9ACCARXTDumXS4ssYApO/ffmI7rYZsZ0C767tkNnPhy4UPzRr
+	 EIakemrI9smIQ==
+Date: Sun, 13 Apr 2025 05:42:20 -0500
 MIME-Version: 1.0
-X-Mail-ID: bf08c37c-044c-4f9f-90b3-b87e6ed8eae5
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+ Daniel Golle <daniel@makrotopia.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-phy@lists.infradead.org, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, devicetree@vger.kernel.org, 
+ linux-mediatek@lists.infradead.org, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ MandyJH Liu <mandyjh.liu@mediatek.com>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Frank Wunderlich <frank-w@public-files.de>, 
+ Sam Shih <sam.shih@mediatek.com>
+To: Frank Wunderlich <linux@fw-web.de>
+In-Reply-To: <20250413085806.8544-4-linux@fw-web.de>
+References: <20250413085806.8544-1-linux@fw-web.de>
+ <20250413085806.8544-4-linux@fw-web.de>
+Message-Id: <174454094043.2074029.12190125666379219189.robh@kernel.org>
+Subject: Re: [RFC 3/5] dt-bindings: power: Add binding for MediaTek MT7988
+ topmisc power controller
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250413_015817_676327_FDB30BA6 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250413_034223_452640_5176D1E0 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,82 +83,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Frank Wunderlich <frank-w@public-files.de>
 
-First usb and third pcie controller on mt7988 need a xs-phy to work
-properly.
+On Sun, 13 Apr 2025 10:58:03 +0200, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> Topmisc is a systemcontroller used for xs-phy and ethernet on  mt7988.
+> Add binding for it.
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+>  .../power/mediatek,power-controller.yaml      | 35 +++++++++++++------
+>  1 file changed, 24 insertions(+), 11 deletions(-)
+> 
 
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
- arch/arm64/boot/dts/mediatek/mt7988a.dtsi | 39 +++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+My bot found errors running 'make dt_binding_check' on your patch:
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-index 88b56a24efca..10525d977007 100644
---- a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-@@ -334,6 +334,8 @@ usb@11190000 {
- 				 <&infracfg CLK_INFRA_133M_USB_HCK>,
- 				 <&infracfg CLK_INFRA_USB_XHCI>;
- 			clock-names = "sys_ck", "ref_ck", "mcu_ck", "dma_ck", "xhci_ck";
-+			phys = <&xphyu2port0 PHY_TYPE_USB2>,
-+			       <&xphyu3port0 PHY_TYPE_USB3>;
- 			status = "disabled";
- 		};
- 
-@@ -398,6 +400,9 @@ pcie2: pcie@11280000 {
- 			pinctrl-0 = <&pcie2_pins>;
- 			status = "disabled";
- 
-+			phys = <&xphyu3port0 PHY_TYPE_PCIE>;
-+			phy-names = "pcie-phy";
-+
- 			#interrupt-cells = <1>;
- 			interrupt-map-mask = <0 0 0 0x7>;
- 			interrupt-map = <0 0 0 1 &pcie_intc2 0>,
-@@ -548,6 +553,40 @@ tphyu3port0: usb-phy@11c50700 {
- 			};
- 		};
- 
-+		topmisc: power-controller@11d10000 {
-+			compatible = "mediatek,mt7988-topmisc", "syscon",
-+				     "mediatek,mt7988-power-controller";
-+			reg = <0 0x11d10000 0 0x10000>;
-+			#clock-cells = <1>;
-+			#power-domain-cells = <1>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		xs-phy@11e10000 {
-+			compatible = "mediatek,mt7988-xsphy",
-+				     "mediatek,xsphy";
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+			status = "disabled";
-+
-+			xphyu2port0: usb-phy@11e10000 {
-+				reg = <0 0x11e10000 0 0x400>;
-+				clocks = <&infracfg CLK_INFRA_USB_UTMI>;
-+				clock-names = "ref";
-+				#phy-cells = <1>;
-+			};
-+
-+			xphyu3port0: usb-phy@11e13000 {
-+				reg = <0 0x11e13400 0 0x500>;
-+				clocks = <&infracfg CLK_INFRA_USB_PIPE>;
-+				clock-names = "ref";
-+				#phy-cells = <1>;
-+				mediatek,syscon-type = <&topmisc 0x218 0>;
-+			};
-+		};
-+
- 		clock-controller@11f40000 {
- 			compatible = "mediatek,mt7988-xfi-pll";
- 			reg = <0 0x11f40000 0 0x1000>;
--- 
-2.43.0
+yamllint warnings/errors:
+./Documentation/devicetree/bindings/power/mediatek,power-controller.yaml:27:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+./Documentation/devicetree/bindings/power/mediatek,power-controller.yaml:28:11: [warning] wrong indentation: expected 12 but found 10 (indentation)
+./Documentation/devicetree/bindings/power/mediatek,power-controller.yaml:39:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+./Documentation/devicetree/bindings/power/mediatek,power-controller.yaml:40:11: [warning] wrong indentation: expected 12 but found 10 (indentation)
+
+dtschema/dtc warnings/errors:
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250413085806.8544-4-linux@fw-web.de
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
