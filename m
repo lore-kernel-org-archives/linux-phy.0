@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34F16C369B5
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 08:13:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74863C369B5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 10:42:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1X893QXCdys+iQtM6tXOgQaPFOZm8Ju4lOOqEOWzy+4=; b=he9li1p7jP+HTv
-	EQyx4HUYU8SS1kmtpUgjQhGA6K79lXsSljUjFUGMoBDREP/ZXrgH8UP3mtF/JrsrjLxNnw/tEBQm8
-	wGNq9NC8yt6YRpmbuoS7HoPIHtkwUjs9eGE5UMCvO9AWXyt8fbhGOKMtm9+mDCXPCYfhRy43OVsRm
-	ZmAclZ9O1F7uq7qVLKmIwjwyumgINI7AMG0GBR9rRbvWKloFMjPLeHrefnlxDjp/aZEzLKItG9cx/
-	XpGCKUDxVPfbmOvlYUY61W/dzHmonZFvULrmmZZXoE/cItiNCZQD24jlaRZaj9zHvhufVkQZYwQEc
-	/EFonXd9pbf2nNPX2Spw==;
+	List-Owner; bh=OMqHOHQr5gSjnJoMtHdxUJ09iucdfqWItAdQfCctTAU=; b=X/0+4LTZp383t1
+	G4NKO13HJWSkQvZC7g5rpLPlq1Pexh/4N//3vSlSaHXvUCDpR+543M/aX2knv7vfdEmwEE7fqycsv
+	70jt6+FYGVHOjDkP48dhBSE+WU6ggAlgEJ3yoH2zjPFHjJ1L/dYhPccnOl6DDv84J3pZ8mmC6LBQA
+	KrlF6i0FaMTrZjIJMc5R/CwBJTMP222uHM5kmqdx3SGW3OvVYF5W8BnPe85jkA9k29bMBzBc3jBI1
+	qMTUcfCpccn5O6AGR9CwJzXc5cBWhbUvWClPJ1ExlBQomv5i8LFzV2gWM8YLkQgdNcqjD8VawaPDa
+	7p3gN6MLEhX7T61ATiDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Ewv-0000000132Y-44h3;
-	Mon, 14 Apr 2025 08:13:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1u4HHD-00000001ai1-0msf;
+	Mon, 14 Apr 2025 10:42:55 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Ewt-0000000131l-1dJg
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Apr 2025 08:13:48 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D5D135C1120;
-	Mon, 14 Apr 2025 08:11:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88A79C4CEE2;
-	Mon, 14 Apr 2025 08:13:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744618426;
-	bh=/GliPvWxqmWkfViSv1OxAlqTAyRsqoblIC/0Lf7EkFM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rxXdKqWribRXynbgV7o3GDzN2oslDuc1R0xhHvkUN73fltLvhGPwB3GdIpID/30zV
-	 NK9sDhneTmHDTc7VNkc92ieX2mDNwAb8xuufHOx+7qIt6vf3tPW/pb3nE6qf+Fdx4v
-	 mYNGgzlI6jVS5J+fTbaid5jA2YKVcIBCLZZHUDsQlr6oXF6hLkbKBHsGkJ8/KAbvfy
-	 7uYDM1aE/8iBEVoAhSXLkdpwQwpbsSfj6pXL+SYUdDtQeRkCAfGTH08wuF3tFWV89V
-	 KaHlrQY6IkuF94u808CWE+Y1U0OSoTu6HaA2EIKGLGyASZocH/pW+goowlEVcKyxw5
-	 CjRgstDAy5n1A==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1u4Ewn-000000002q1-2onL;
-	Mon, 14 Apr 2025 10:13:42 +0200
-Date: Mon, 14 Apr 2025 10:13:41 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Chenyuan Yang <chenyuan0y@gmail.com>, vkoul@kernel.org,
-	kishon@kernel.org, lumag@kernel.org, quic_kriskura@quicinc.com,
-	manivannan.sadhasivam@linaro.org, konrad.dybcio@oss.qualcomm.com,
-	quic_varada@quicinc.com, quic_kbajaj@quicinc.com,
-	johan+linaro@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qmp-usb: Fix an NULL vs IS_ERR() bug
-Message-ID: <Z_zDtfEsgXsFodG9@hovoldconsulting.com>
-References: <20250413212518.2625540-1-chenyuan0y@gmail.com>
- <22ec4fc8-9368-4955-ac97-c49b3317d3b3@kernel.org>
- <Z_y73a5IDO66AzY1@hovoldconsulting.com>
- <f3b77aa4-e7a4-475f-a633-48aab59fa9b1@kernel.org>
+	id 1u4H0I-00000001WCH-1Y78;
+	Mon, 14 Apr 2025 10:25:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1744626324;
+	bh=oNovNC7Tc5LqT/Tmjvy+D6kZkuhR+8/8x/Z4YPaWM+o=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=TGlGR5BI5wWU982+Co1FkL4MEWOr6ukC6p0+7hQ0e72iwzO4JfKHUT0rBMTwt9AJQ
+	 RYcdJNJwB3L26X0BjLXO6pbsO2C1jySokkDhDGX9oxV1NK+lsXDME+NnCien0vI+cc
+	 rYVyteZwOCurZFAY5zvZHTyy6LJzDMp3DibyIcdffH0lks6poPioJR/HYJ0QDUtnKS
+	 UQmCLC3zaFfwY7mAfg6+TWwlTjt96uqDmkV5HlCLIvSAKtVWmEU+0Kc/s4nQe9b1Ie
+	 1/XpVpGYkd/VDju6iRXSUi+pkcVSNdIxvTAP5NeQ3ju3WN49IdTkYyuUqATgs0u+QX
+	 lDXhjeLyKhpgA==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DD01817E1034;
+	Mon, 14 Apr 2025 12:25:23 +0200 (CEST)
+Message-ID: <700af1ab-f43e-4583-8f0e-27e5d4424338@collabora.com>
+Date: Mon, 14 Apr 2025 12:25:23 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f3b77aa4-e7a4-475f-a633-48aab59fa9b1@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC 3/5] dt-bindings: power: Add binding for MediaTek MT7988
+ topmisc power controller
+To: Frank Wunderlich <linux@fw-web.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Frank Wunderlich <frank-w@public-files.de>,
+ Daniel Golle <daniel@makrotopia.org>, Sam Shih <sam.shih@mediatek.com>,
+ MandyJH Liu <mandyjh.liu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250413085806.8544-1-linux@fw-web.de>
+ <20250413085806.8544-4-linux@fw-web.de>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20250413085806.8544-4-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_011347_471634_7A002F4C 
-X-CRM114-Status: UNSURE (   8.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250414_032526_633919_13DD4269 
+X-CRM114-Status: GOOD (  13.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,27 +79,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 14, 2025 at 10:08:18AM +0200, Krzysztof Kozlowski wrote:
-> On 14/04/2025 09:40, Johan Hovold wrote:
+Il 13/04/25 10:58, Frank Wunderlich ha scritto:
+> From: Frank Wunderlich <frank-w@public-files.de>
+> 
+> Topmisc is a systemcontroller used for xs-phy and ethernet on  mt7988.
+> Add binding for it.
 
-> > I'm afraid you're mistaken here. See __devm_ioremap() which can return
-> > NULL.
-> > 
-> Uh, you are right, I only checked devm_of_iomap in qmp_usb_iomap().
-> Anyway, the fix should be different - given function should either
-> return ERR or NULL, not both, so devm_ioremap return value needs to be
-> wrapped in ERR_PTR.
+That's the wrong binding... check mfd/syscon.yaml :-)
 
-Right, I already suggested that:
+P.S.: Is there any reset controller in topmisc? Any clock?
+       If yes, syscon.yaml is also wrong, and you need a driver for that.
+       Remember: If it turns out *later* that this has clk/resets and the
+       bindings are already set for just a syscon, it's gonna be way harder!
 
-	https://lore.kernel.org/lkml/Z_yxxoa12N9rNn2z@hovoldconsulting.com/
+Cheers,
+Angelo
 
-Johan
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+>   .../power/mediatek,power-controller.yaml      | 35 +++++++++++++------
+>   1 file changed, 24 insertions(+), 11 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/power/mediatek,power-controller.yaml b/Documentation/devicetree/bindings/power/mediatek,power-controller.yaml
+> index 591a080ca3ff..60d2fc7963e5 100644
+> --- a/Documentation/devicetree/bindings/power/mediatek,power-controller.yaml
+> +++ b/Documentation/devicetree/bindings/power/mediatek,power-controller.yaml
+> @@ -22,17 +22,27 @@ properties:
+>       pattern: '^power-controller(@[0-9a-f]+)?$'
+>   
+>     compatible:
+> -    enum:
+> -      - mediatek,mt6735-power-controller
+> -      - mediatek,mt6795-power-controller
+> -      - mediatek,mt8167-power-controller
+> -      - mediatek,mt8173-power-controller
+> -      - mediatek,mt8183-power-controller
+> -      - mediatek,mt8186-power-controller
+> -      - mediatek,mt8188-power-controller
+> -      - mediatek,mt8192-power-controller
+> -      - mediatek,mt8195-power-controller
+> -      - mediatek,mt8365-power-controller
+> +    oneOf:
+> +      - items:
+> +        - enum:
+> +          - mediatek,mt6735-power-controller
+> +          - mediatek,mt6795-power-controller
+> +          - mediatek,mt8167-power-controller
+> +          - mediatek,mt8173-power-controller
+> +          - mediatek,mt8183-power-controller
+> +          - mediatek,mt8186-power-controller
+> +          - mediatek,mt8188-power-controller
+> +          - mediatek,mt8192-power-controller
+> +          - mediatek,mt8195-power-controller
+> +          - mediatek,mt8365-power-controller
+> +      - items:
+> +        - enum:
+> +          - mediatek,mt7988-topmisc
+> +        - const: syscon
+> +        - const: mediatek,mt7988-power-controller
+> +
+> +  reg:
+> +    maxItems: 1
+>   
+>     '#power-domain-cells':
+>       const: 1
+> @@ -43,6 +53,9 @@ properties:
+>     '#size-cells':
+>       const: 0
+>   
+> +  '#clock-cells':
+> +    const: 1
+> +
+>   patternProperties:
+>     "^power-domain@[0-9a-f]+$":
+>       $ref: "#/$defs/power-domain-node"
+
+
 
 -- 
 linux-phy mailing list
