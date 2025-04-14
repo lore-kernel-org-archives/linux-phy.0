@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F1ACC369B8
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 11:16:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A19FC369BC
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 11:16:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pz3/I9S+dnPbZGv+65Nvp/3QYBYW2l9u3Lbv4R83lwk=; b=LIxNOW8BEygOIB
-	sAFDenk5p2UnKujh2GIRPfmRruSWZps8gik7/RthRcVlSxy3xiMEpPydAeq8bPO/1mxWuuDzLfYm+
-	+ZANaKJE8tEB7ZopqjNzeWpLLXbXWpLeBlhRa46+Z6b8n9Av5LH+CCC8uwC+xLksEmoB0yAQapaeg
-	ewnnK9U5MoOcdQ7f8IoIhcyDHrH/rm4GpLzbAPZhVkXn+wgzG4pgIuJVKRi+zHzjVUGs5arATduKH
-	/ZQq5dQfQvmnvYwLVpby29F17DbbZgOP35KbPlWmrnOi+NWuapwUpfomec6jjDrmJg2XEBRwAR4A+
-	ERLX1ndah3GI7b3tDWYA==;
+	List-Owner; bh=sJvI34xiFjRXVlrRx0CfhPncbxfVw9QzOIS8v8AAplw=; b=aTNz7B6KEoQoHC
+	yDbsu0sR3cxIqZOSjlcjn2QSaQCvKD3KiZXaYo71D8UFGLnTc1HWzlg98wptQOCDekB98cZCBvMuH
+	ZF/3fuVPpU64uqPEp3egb+TLq4Wnhqb8G0gtC4BlMWlvplhngORAYdu8pkZEfoZwSjWcRj9s60gpG
+	HhuUsq4cgtZ+EKq4PI6yjuS4T2HXgOCB0jxqqEkGISAaQrKsa8y4BR4ngXY5Ck/o45FLDVUuKoTLT
+	sGAXXWqas15+JIvApV6DI+aCFCPxH7AG4LfTRo86fLTHX81xlbu+AwIm3J6i4vl26dFi9Cz25qMt4
+	/Fc08xG42nYvGB9YSmiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4HnI-00000001iiX-1TdE;
-	Mon, 14 Apr 2025 11:16:04 +0000
+	id 1u4HnJ-00000001ikC-18Un;
+	Mon, 14 Apr 2025 11:16:05 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4HjW-00000001h7Z-39ZG
+	id 1u4HjW-00000001h7Q-2zHr
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Apr 2025 11:12:13 +0000
+	Mon, 14 Apr 2025 11:12:14 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5A48313D7;
-	Mon, 14 Apr 2025 13:10:05 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 251D799F;
+	Mon, 14 Apr 2025 13:10:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1744629006;
-	bh=G+qNFKvRQA6UIRWDHc0oLkdtE/hQiPBzkhVP6XpdPZ8=;
+	s=mail; t=1744629005;
+	bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=eOEjbSuU/QYw71ZlgAI019/xWa3ly8n+A5r/NQz3DpXi3rOYAfN5jxt8FG+2ITI1u
-	 8A0B37x5fAB2NEuE2NjWLkEH5ZBW7La5kGVojs0IuWKpxkV1sEyNeRPxn0X2qRigtr
-	 j/0yUFeKV14Wyfy5uMM6hdWUqwLS9Jg/i+p06igI=
+	b=YXODpftwi3BM7VaheebN3guCOGsi+4bU+ojza8T7/Ro0Whez6IaRkUVHMYZA3EOxz
+	 8P+adz/oBT6VdbYR89I3+vyFR9xzdI08DQOiQzyrAO3r2aUmfEuc7CczvDWbEa0hCu
+	 ZGvdyVv0jVY2Xxa1yBQsp1Z7bru1mGQNfFeuSgis=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Mon, 14 Apr 2025 14:11:12 +0300
-Subject: [PATCH v3 03/17] drm/tidss: Adjust the pclk based on the HW
- capabilities
+Date: Mon, 14 Apr 2025 14:11:11 +0300
+Subject: [PATCH v3 02/17] drm/tidss: Use the crtc_* timings when
+ programming the HW
 MIME-Version: 1.0
-Message-Id: <20250414-cdns-dsi-impro-v3-3-4e52551d4f07@ideasonboard.com>
+Message-Id: <20250414-cdns-dsi-impro-v3-2-4e52551d4f07@ideasonboard.com>
 References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
 In-Reply-To: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -61,26 +61,27 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Devarsh Thakkar <devarsht@ti.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3791;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2447;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=G+qNFKvRQA6UIRWDHc0oLkdtE/hQiPBzkhVP6XpdPZ8=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn/O19VN5zgt8TbTJnGRZrWkT/4F+Gnn/RJSs2f
- 5Taed9kmpmJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ/ztfQAKCRD6PaqMvJYe
- 9dqAD/9wWA2Bc4bvstLEt2pn4wU2tuyQ1RBXP7gDPBS5dZv01z9aMqKPntK631G0h8A0+AXmRA2
- om7GtakvctartQeTc8eQUX8dHEfUHC8uwSdBforv7ycuKDrqLDM9FVkiXkxymQ8bQQV902GJH98
- vY6dJ+EJMT/USOYNpktNipz7Ex0GB6V1ZTv9dcdsanoWDRr4UQJmiwZlw4+Blutkb9NEFtIlJI5
- JuQwc3FO8k39CL9nWlk51CFREO9eYmojhLAjD8Fcyxoki2Xq7LjAE7HA7KmFSM5M1lmkVRYfMxS
- XRhbHYYRX9LOd1JEon9XVu+nwLFnUl6U7iRD8AYQmaCjNXKTSCBnjeud9TWpkZmURLWpTSXuavc
- S1fBMICX96UG5NfO3cTIo/81M66xvkTnIsTLcTSEOSZ5Dm+pMMnVcZ2CPTnaEYnpTBTDN6kzVcX
- ZJvHz8p0uOBbwCeWn6/gaKyeYPHgV2gGGd/sesuQ8nYUeAoID0B63nDbQiyLB3l8WO7s/eHz9oK
- dPABOXcsB+iezKGI24t3e9u6oAKyBWg3TBAK+LKkvTu9M98jGgSuQnudUBdPdj8X/cPGcyF1Su9
- xq1I8CqvBgUC8GGfjO3sKyjMTMtAayCBBJsQ605sELTooBP3lskefDSTyYiN2t9okCV71SQ4eN8
- SmUo0JrvHd9EY2A==
+ bh=lEa3BxN/6LhqthWXir58vTyZRT4d8BUmsi3iv05b4SI=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBn/O18ncL1CiafBlZG0MdVYTCpi14Z+sY+pMcV+
+ N2TzX0IjNOJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCZ/ztfAAKCRD6PaqMvJYe
+ 9UDGD/9zR9ZDJsIojm4mZ7+2bW6e+6cv4XGLsdp3L8ADCwFgZAhxlpmVFk/Vu2fcbep/nC2iooT
+ VI/+m1K7ffOfeEwqgGnTAjF3O4ziyuPuRioEOsAXiZ3E6Vbx+ic5nZqFyTnfQRsWq/PBqNHg+9j
+ zQqBplSUfO/o/irY78+EKXcoTKpdJ1KZC9Styh9B8tXixEFdFZ3ZXWMBm0Ws2yDdBs/mrpoTpBI
+ U0sBX963jPAyvfNqYfVZKeT8X3O3ewY1gn6nqSUAn+HNu4DjLMMsH7UicNBW5dfh94CQ75GBNI+
+ D6nMJxQibK+5OYOkMhfXpg+ZoD+ymbbOtk8JzciwjwKrDvJt4fZ0nBOSBgDmEt/sTIqT2BDRT5J
+ PDVRhMF5xG06SWTvN/4Diu1igLXpO6ahM1jKZP8eW3FniD5b/ytv7pnDj9mxi3zdZHVpDj2Skn7
+ wDGwhR2HqcfRaQREYyxvmWHiCW2TA3zIGsZGqH9CGFgFNKkO98tEz06gJJ2r+R6ofqSNTKf2eE0
+ rRG36ttzNcR2voVbcQvg9n6n+7Ju9z6OoHzHhgNzOWgn3dbVbAWQ1xSpzwmfTOr826EGJ614iUU
+ C58xLYD9LPvsunxpM1nkEEU5XWjJJSj4qu5vW02HC4+Nwn6QARfoLxqZ0exDFKkdQbkyJNwjc+R
+ 8xZbtWBYftQbJHg==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_041210_957298_1FF875D7 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20250414_041210_952403_958C6D2D 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,99 +98,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-At the moment the driver just sets the clock rate with clk_set_rate(),
-and if the resulting rate is not the same as requested, prints a debug
-print, but nothing else.
-
-Add functionality to atomic_check(), in which the clk_round_rate() is
-used to get the "rounded" rate, and set that to the adjusted_mode.
-
-In practice, with the current K3 SoCs, the display PLL is capable of
-producing very exact clocks, so most likely the rounded rate is the same
-as the original one.
+Use the crtc_* fields from drm_display_mode, instead of the "logical"
+fields. This shouldn't change anything in practice, but afaiu the crtc_*
+fields are the correct ones to use here.
 
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 ---
- drivers/gpu/drm/tidss/tidss_crtc.c  | 23 +++++++++++++++++++----
- drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
- drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
- 3 files changed, 27 insertions(+), 4 deletions(-)
+ drivers/gpu/drm/tidss/tidss_crtc.c  |  2 +-
+ drivers/gpu/drm/tidss/tidss_dispc.c | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
-index 1604eca265ef..6c3967f70510 100644
+index 94f8e3178df5..1604eca265ef 100644
 --- a/drivers/gpu/drm/tidss/tidss_crtc.c
 +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
-@@ -91,7 +91,7 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
- 	struct dispc_device *dispc = tidss->dispc;
- 	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
- 	u32 hw_videoport = tcrtc->hw_videoport;
--	const struct drm_display_mode *mode;
-+	struct drm_display_mode *adjusted_mode;
- 	enum drm_mode_status ok;
+@@ -225,7 +225,7 @@ static void tidss_crtc_atomic_enable(struct drm_crtc *crtc,
+ 	tidss_runtime_get(tidss);
  
- 	dev_dbg(ddev->dev, "%s\n", __func__);
-@@ -99,12 +99,27 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
- 	if (!crtc_state->enable)
- 		return 0;
- 
--	mode = &crtc_state->adjusted_mode;
-+	adjusted_mode = &crtc_state->adjusted_mode;
- 
--	ok = dispc_vp_mode_valid(dispc, hw_videoport, mode);
-+	if (drm_atomic_crtc_needs_modeset(crtc_state)) {
-+		long rate;
-+
-+		rate = dispc_vp_round_clk_rate(tidss->dispc,
-+					       tcrtc->hw_videoport,
-+					       adjusted_mode->clock * 1000);
-+		if (rate < 0)
-+			return -EINVAL;
-+
-+		adjusted_mode->clock = rate / 1000;
-+
-+		drm_mode_set_crtcinfo(adjusted_mode, 0);
-+	}
-+
-+	ok = dispc_vp_mode_valid(dispc, hw_videoport, adjusted_mode);
- 	if (ok != MODE_OK) {
- 		dev_dbg(ddev->dev, "%s: bad mode: %ux%u pclk %u kHz\n",
--			__func__, mode->hdisplay, mode->vdisplay, mode->clock);
-+			__func__, adjusted_mode->hdisplay,
-+			adjusted_mode->vdisplay, adjusted_mode->clock);
- 		return -EINVAL;
- 	}
+ 	r = dispc_vp_set_clk_rate(tidss->dispc, tcrtc->hw_videoport,
+-				  mode->clock * 1000);
++				  mode->crtc_clock * 1000);
+ 	if (r != 0)
+ 		return;
  
 diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
-index a5107f2732b1..3930fb7f03c2 100644
+index cacb5f3d8085..a5107f2732b1 100644
 --- a/drivers/gpu/drm/tidss/tidss_dispc.c
 +++ b/drivers/gpu/drm/tidss/tidss_dispc.c
-@@ -1318,6 +1318,12 @@ unsigned int dispc_pclk_diff(unsigned long rate, unsigned long real_rate)
- 	return (unsigned int)(abs(((rr - r) * 100) / r));
- }
+@@ -1084,13 +1084,13 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
  
-+long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
-+			     unsigned long rate)
-+{
-+	return clk_round_rate(dispc->vp_clk[hw_videoport], rate);
-+}
-+
- int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
- 			  unsigned long rate)
- {
-diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/tidss_dispc.h
-index c31b477a18b0..d4c335e918fb 100644
---- a/drivers/gpu/drm/tidss/tidss_dispc.h
-+++ b/drivers/gpu/drm/tidss/tidss_dispc.h
-@@ -120,6 +120,8 @@ enum drm_mode_status dispc_vp_mode_valid(struct dispc_device *dispc,
- 					 const struct drm_display_mode *mode);
- int dispc_vp_enable_clk(struct dispc_device *dispc, u32 hw_videoport);
- void dispc_vp_disable_clk(struct dispc_device *dispc, u32 hw_videoport);
-+long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
-+			     unsigned long rate);
- int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
- 			  unsigned long rate);
- void dispc_vp_setup(struct dispc_device *dispc, u32 hw_videoport,
+ 	dispc_set_num_datalines(dispc, hw_videoport, fmt->data_width);
+ 
+-	hfp = mode->hsync_start - mode->hdisplay;
+-	hsw = mode->hsync_end - mode->hsync_start;
+-	hbp = mode->htotal - mode->hsync_end;
++	hfp = mode->crtc_hsync_start - mode->crtc_hdisplay;
++	hsw = mode->crtc_hsync_end - mode->crtc_hsync_start;
++	hbp = mode->crtc_htotal - mode->crtc_hsync_end;
+ 
+-	vfp = mode->vsync_start - mode->vdisplay;
+-	vsw = mode->vsync_end - mode->vsync_start;
+-	vbp = mode->vtotal - mode->vsync_end;
++	vfp = mode->crtc_vsync_start - mode->crtc_vdisplay;
++	vsw = mode->crtc_vsync_end - mode->crtc_vsync_start;
++	vbp = mode->crtc_vtotal - mode->crtc_vsync_end;
+ 
+ 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_TIMING_H,
+ 		       FLD_VAL(hsw - 1, 7, 0) |
+@@ -1132,8 +1132,8 @@ void dispc_vp_enable(struct dispc_device *dispc, u32 hw_videoport,
+ 		       FLD_VAL(ivs, 12, 12));
+ 
+ 	dispc_vp_write(dispc, hw_videoport, DISPC_VP_SIZE_SCREEN,
+-		       FLD_VAL(mode->hdisplay - 1, 11, 0) |
+-		       FLD_VAL(mode->vdisplay - 1, 27, 16));
++		       FLD_VAL(mode->crtc_hdisplay - 1, 11, 0) |
++		       FLD_VAL(mode->crtc_vdisplay - 1, 27, 16));
+ 
+ 	VP_REG_FLD_MOD(dispc, hw_videoport, DISPC_VP_CONTROL, 1, 0, 0);
+ }
 
 -- 
 2.43.0
