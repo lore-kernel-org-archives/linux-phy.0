@@ -4,70 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31606C369B2
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 10:43:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E013C369B5
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 11:06:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2evC64DYZOAORYIUklJwUTRhXlS/je0McevC3ZtQFwY=; b=NYb8G9WnpPYz4M
-	aeI1RWWnkMWHr0ngyskHGWe50/9V0qKPnlHlKqLYcAWtrY5AHWAHEWFpCQGpaHqaXgDqRbp0/lvuu
-	EsVzySM+bjT10f+64Jpnnu3v/wG4YSCGbEgTgray5xB1wtQPwR8M/gv/V8usLCv6Pi8ltfpCHQV4Q
-	s0BUJODBnNGISEFTi/FBmCsaTgA0Mhn6OOsi/Lo+9lrcVAIK1Une/FWwsMkPJvlgrThTkf000vDvq
-	GZFcS/1/9nCj8RIs7koVrxp8HNTTxhtUPU+oPajDrKwgALgm+wpwQk00X1SkbZHJYZZjdbHgarvqv
-	waIFNhrBmXBbPX8Z0a6Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
+	References:In-Reply-To:Subject:CC:To:From:Date:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uR6UQTEvhDs57daa8WmqVjdQ++PYSEpYgrCr647h5Gw=; b=JePBbg7dh1Epuv
+	GcgS4MGmIAV/4VGkWA6opYbYlCj85R9EsqehuI/JLJBb+5LcSPf5TOGzm7Opt10cxZEr2LzaYMTa8
+	aW9JzNSOiDKjyNau0WnpPJ2JuTbfrQWJO9jcAA0Lf9B9lMFhsSpMh4MDLXpo2+l5K+yDb5sl9NX9G
+	u/LPP6ed0Km5aX0GKK4h6pFpVTT+B8Kmyqv1rb8cgFgJ8kJd++elIgjpuBHWp/CtuYbbV7HU9XbfR
+	k0LHLYDHQNgBNwLXrHB8g058wuwHSarJCb5P/aH+6qmK4FaudzIhCwmwv2UJgGmfQkbiie7EbGPCL
+	DK2DvYt1X2J3R3GeCQRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4HHY-00000001aoa-3yJG;
-	Mon, 14 Apr 2025 10:43:16 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1u4He0-00000001fAT-2GJw;
+	Mon, 14 Apr 2025 11:06:28 +0000
+Received: from mout.gmx.net ([212.227.17.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4H2L-00000001Wun-2nyo;
-	Mon, 14 Apr 2025 10:27:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1744626451;
-	bh=kh41PVQ169ONxY8zyLUhq7Qb7ay3Ohg0lpouG+/0TLU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=S9nq3Eq3LbgcNAFS71/6y0Loiki36qKw4lTfmjLUQIg569/6wtxPY33vUfuackdB2
-	 jIUUgl6E4af0L+/hPW/2bbvBspm7c+li4HdhUiNSOKspXpujLCNcWoKEFGCtDfpiit
-	 ujYWEPyEq30v2l8yJd2TYnk8lIfR8bfYUAFyY9CtNozZm0nY/dSavqjYOIgH6B+beS
-	 M28pmaVNC6YsJ4jVTe+V6wFZLTeKmD62r20+VJwLLQmrpYgG0arFjvIBRnxSEzoWuC
-	 EfFKDv+Bux+rDy2OWXm7uFWcqrEuh0ZNm4kY2MyMmL98PicI57Io57ma468ZE6GG3u
-	 aEunzGofAW6Ew==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0B9FD17E1034;
-	Mon, 14 Apr 2025 12:27:30 +0200 (CEST)
-Message-ID: <e243cca4-40d7-4cd6-804a-7e63bb5581b0@collabora.com>
-Date: Mon, 14 Apr 2025 12:27:30 +0200
+	id 1u4HVM-00000001dDl-1xcT;
+	Mon, 14 Apr 2025 10:57:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=public-files.de;
+	s=s31663417; t=1744628230; x=1745233030; i=frank-w@public-files.de;
+	bh=Dox/3saUSMc6oBn1CpgQrpJElpnKUg5l+Q9XBb5++k4=;
+	h=X-UI-Sender-Class:Date:From:To:CC:Subject:Reply-to:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:cc:content-transfer-encoding:
+	 content-type:date:from:message-id:mime-version:reply-to:subject:
+	 to;
+	b=qYm6Eu8HjkxRq+gksNLYnlblLxQeP/SfqiGgjk/IZYaMAvhpdeEKBD9rMyZAM5xM
+	 ZpcQ+vcehLK7IxyovlXIBVVFEUd8IxJvIjwaBm49zeZul6hi7HhDUthrdxKaTGwG6
+	 0gP/fq4PhkH8BHtcXWDMCBjI+S33NCPZshFiJpS5vbkwPQdri2p1Vx24T4Ed/3jr6
+	 Eif0GWfm4Wv3TeW6uUj3j6qIpM2ZVvZXI8faJ2LDGiQDV8Y4bvlNlxZ0Ol8Mx+ddq
+	 4ISXphfQS1gzcPKL3o0G8NmKWHIT5jT1tCCUobengwlg7TGYmxNoDjtdf+A0ei20N
+	 IyWxTr2+4dX8LBIQ+w==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from [127.0.0.1] ([217.61.148.208]) by mail.gmx.net (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1ML9yc-1tnA5U2KKg-00KTDb; Mon, 14
+ Apr 2025 12:57:10 +0200
+Date: Mon, 14 Apr 2025 12:57:06 +0200
+From: Frank Wunderlich <frank-w@public-files.de>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Frank Wunderlich <linux@fw-web.de>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+CC: Daniel Golle <daniel@makrotopia.org>, Sam Shih <sam.shih@mediatek.com>,
+ MandyJH Liu <mandyjh.liu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BRFC_5/5=5D_arm64=3A_dts=3A_mediatek=3A?=
+ =?US-ASCII?Q?_mt7988=3A_Add_xsphy_for_ssusb0/pcie2?=
+User-Agent: K-9 Mail for Android
+In-Reply-To: <e243cca4-40d7-4cd6-804a-7e63bb5581b0@collabora.com>
+References: <20250413085806.8544-1-linux@fw-web.de> <20250413085806.8544-6-linux@fw-web.de> <e243cca4-40d7-4cd6-804a-7e63bb5581b0@collabora.com>
+Message-ID: <E469EB89-A879-4B03-A3DF-C96D207E946D@public-files.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC 5/5] arm64: dts: mediatek: mt7988: Add xsphy for
- ssusb0/pcie2
-To: Frank Wunderlich <linux@fw-web.de>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Cc: Frank Wunderlich <frank-w@public-files.de>,
- Daniel Golle <daniel@makrotopia.org>, Sam Shih <sam.shih@mediatek.com>,
- MandyJH Liu <mandyjh.liu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250413085806.8544-1-linux@fw-web.de>
- <20250413085806.8544-6-linux@fw-web.de>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <20250413085806.8544-6-linux@fw-web.de>
+X-Provags-ID: V03:K1:yi7cluxJXDq4OrQaFqXXh5JHsaAJJapY8vwQzCpkAbguc1XlrM5
+ 4Sdn2WvMB5StASOjsrQk4j+LwJh6ZnFxqayr4OGRuIqK9fj8sF9hXDWUfm5Rsy/dbM+Oabn
+ uQ+J6oY5hVmp/Z+sdVHpMBXBdn3FghQBYSG6OyH7gCdIbYf62ADzYgd8c5SUNpVoP84n9wR
+ qBqeARj2vXUvi9LqpESCg==
+UI-OutboundReport: notjunk:1;M01:P0:8QFW5mxT33E=;p9eKydGBnkydZTV5Tm8SBn3MzjQ
+ zrEOtq6nYRDx84ugB0KbO22SzU8HCOwAg3QP8DZSk7r0aksEaBJ+3rapipjBW4neZOHrTfRsn
+ Qp9r3s1mQiPQ1okWqdXSxl4rVC5z/GhSrqbO5keQrh9MjF6Q0YqGRr+EM/RwYveBlYaqY4xrS
+ NMrH6uN4b5tBsxBhLWcVY3UzIm0BToz4iDgid1e76Pt4ivZJ/K7mQvFdCBQ1m2U0QQe28mZSj
+ yqTKfrezqLu2Yzc9ANdjtT1gWriDSkUcBMsBQX/gUqIP0urMzKFiL2t2L+7WEtea77nkSsJ17
+ Q1ep/vfvqrxhGL1fkBWPfDyGGP7k+gtCu3S/g81VdA3AN1msv2RRA5GSX97vf2cR6YBtSjZfe
+ vkQig0b/U/J/Kv+sJlrcuAB13QbU03LMVzox6dSsIZh1PGOkk52NwffcoqmfLLL+5G5DNidvw
+ zkadNDsfhN1xCmfF28SA0B7qB58b5S/55ihNqeVExyMp6GPJu0wvmX/fkEOGt6CJABqYXLSLR
+ X78yJFURF4Ww6Vh7W3KI7vzCR103tAQuRVQKHD1YN7D93HaN+x8yp1K+GOoLxLRwwz2p4Qsb8
+ 5FwYv8ktLf2rcHw2jTQcZhuktJOnBlbldXWuPP+y5B5uS2Q/HIE1bcgPviLx/zeBmmFY1dH42
+ 82Sy9JAV1Kdc4Yj652ONnQ+4VjSLDxS3H/ht8vY50qAP+UIn4GcUVxRW9mNlLW5rUcKrNz2Ts
+ UAYv27mou96tsYraliQ+BUDmkWnYJsS0d+d0dUKKEpTcB5+/XLSmOaGqCyJnWclA+x6lg2LBJ
+ AuzMOLLBabSvIVXkgBCvPORzdGtdcjkIu8Dnks8JHvr4uTiFNavC4WSj2GwO3z3eKz9QOoiRk
+ tS93ukqYYyoSxZm8cgcDwZ+25NT4IfO2s1KRcoSI+zB6PCaunoSEyvyO0ytN0EPmKrT4LJFrn
+ vgleb0Mv9nQlOv76GFkxE6FKETr/n3/qOEdLJTyDbWkf9ZsTXzPpNVO1VwGJvSnJTa+V/k4ba
+ X4X6Dpq0lUm3biCw6fEyyYP1oZ42NjCZTfGXAAVPMA5GR3+jzAyEgzSPp/qzL0iK5c8NYPrXi
+ nb216mq/VAyxIkf7g3LuJdoBfWD8ZLwDhQTIx6WDzXvidxxPvixxl0BNO5TZYv4nwz6XuRI7b
+ HXOmUg70tx8YJLTJLKTuCxPeKV/SAXc4E0dP3whvXmOJfF7H/4sOgqWtEKRoYjSgPmPdyRxnz
+ szIAvbEjsLCsbNzZ9iuEtYFOsf9eHW7kUi7+husJIWa2dNFKHhVfkpv4gOrRZpiZ73av0QgY3
+ h4PTdgydjIwkIJGUf6kQqfJ+teC9TtFSoL4G/opL5viSTh6Nr3+J+iaIzFx3Kxbbac5WvfBxh
+ EC1qdOY4yCcJpv2LjqVGG04rTbkntjSThe1e4gpUfwYYfgXfcEetgU0tD4NsqWFV1Ur4vrK80
+ DaUL2EXDN5eAncNe5vWCtYPBbzbiWOn25KJRQBbCxrMevMQrH
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_032733_889072_FF469FC2 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20250414_035732_822386_8C693177 
+X-CRM114-Status: UNSURE (   5.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,97 +104,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: frank-w@public-files.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 13/04/25 10:58, Frank Wunderlich ha scritto:
-> From: Frank Wunderlich <frank-w@public-files.de>
-> 
-> First usb and third pcie controller on mt7988 need a xs-phy to work
-> properly.
-> 
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> ---
->   arch/arm64/boot/dts/mediatek/mt7988a.dtsi | 39 +++++++++++++++++++++++
->   1 file changed, 39 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-> index 88b56a24efca..10525d977007 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
-> @@ -334,6 +334,8 @@ usb@11190000 {
->   				 <&infracfg CLK_INFRA_133M_USB_HCK>,
->   				 <&infracfg CLK_INFRA_USB_XHCI>;
->   			clock-names = "sys_ck", "ref_ck", "mcu_ck", "dma_ck", "xhci_ck";
-> +			phys = <&xphyu2port0 PHY_TYPE_USB2>,
-> +			       <&xphyu3port0 PHY_TYPE_USB3>;
->   			status = "disabled";
->   		};
->   
-> @@ -398,6 +400,9 @@ pcie2: pcie@11280000 {
->   			pinctrl-0 = <&pcie2_pins>;
->   			status = "disabled";
->   
-> +			phys = <&xphyu3port0 PHY_TYPE_PCIE>;
-> +			phy-names = "pcie-phy";
-> +
->   			#interrupt-cells = <1>;
->   			interrupt-map-mask = <0 0 0 0x7>;
->   			interrupt-map = <0 0 0 1 &pcie_intc2 0>,
-> @@ -548,6 +553,40 @@ tphyu3port0: usb-phy@11c50700 {
->   			};
->   		};
->   
-> +		topmisc: power-controller@11d10000 {
-> +			compatible = "mediatek,mt7988-topmisc", "syscon",
-> +				     "mediatek,mt7988-power-controller";
-> +			reg = <0 0x11d10000 0 0x10000>;
-> +			#clock-cells = <1>;
-> +			#power-domain-cells = <1>;
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +		};
-> +
-> +		xs-phy@11e10000 {
+Am 14. April 2025 12:27:30 MESZ schrieb AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>:
+>Il 13/04/25 10:58, Frank Wunderlich ha scritto:
+>> From: Frank Wunderlich <frank-w@public-files.de>
 
-That shall be just "phy@addr"
+>> +		xs-phy@11e10000 {
+>
+>That shall be just "phy@addr"
 
-> +			compatible = "mediatek,mt7988-xsphy",
-> +				     "mediatek,xsphy";
-> +			#address-cells = <2>;
-> +			#size-cells = <2>;
-> +			ranges;
-> +			status = "disabled";
-> +
-> +			xphyu2port0: usb-phy@11e10000 {
+Ok
 
-Perhaps just u2port0/u3port0 like done on the other MediaTek SoC DTs is better
-for consistency :-)
+>> +			compatible = "mediatek,mt7988-xsphy",
+>> +				     "mediatek,xsphy";
+>> +			#address-cells = <2>;
+>> +			#size-cells = <2>;
+>> +			ranges;
+>> +			status = "disabled";
+>> +
+>> +			xphyu2port0: usb-phy@11e10000 {
+>
+>Perhaps just u2port0/u3port0 like done on the other MediaTek SoC DTs is better
+>for consistency :-)
 
-Cheers!
+Mt7988 also have a tphy where we have it named tphyu3port. Leaving this imho would increase confusion.
 
-> +				reg = <0 0x11e10000 0 0x400>;
-> +				clocks = <&infracfg CLK_INFRA_USB_UTMI>;
-> +				clock-names = "ref";
-> +				#phy-cells = <1>;
-> +			};
-> +
-> +			xphyu3port0: usb-phy@11e13000 {
-> +				reg = <0 0x11e13400 0 0x500>;
-> +				clocks = <&infracfg CLK_INFRA_USB_PIPE>;
-> +				clock-names = "ref";
-> +				#phy-cells = <1>;
-> +				mediatek,syscon-type = <&topmisc 0x218 0>;
-> +			};
-> +		};
-> +
->   		clock-controller@11f40000 {
->   			compatible = "mediatek,mt7988-xfi-pll";
->   			reg = <0 0x11f40000 0 0x1000>;
+>Cheers!
+>
 
 
+regards Frank
 
 -- 
 linux-phy mailing list
