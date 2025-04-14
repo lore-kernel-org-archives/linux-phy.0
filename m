@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C24AC3601E
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 07:20:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87AC2C3601E
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 07:21:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=53d34JJtYz5SEqg3pH6XFf9D2Bfomi22iyvh9NY/N3E=; b=mT2DrwfkICT0cD
-	BXkToYqDuJxksObLEWFXIaHLS7ivemOWvMQElXl8TGAN6XmCLp1Ilhakd5zIAwO0dECfyOZke1bxf
-	NnSiJBe5iAAc3QdexpwRHPYcv4qxKMCWZErHi1qUVvu3YTIbnptznUlJwll2VrUwSkgmQbFoyYMAa
-	11BN1lsUPVX/xX4lxUJFrFrVEogiqvHkO8uC34sC68vAXDnCnxn1WEKhsNmQkw2ZUmmDskNoXxVgx
-	qIgWEtiHh8HrrEagW4P0a9+NR97BxDXDMeCe0I5CuIJTbis/lxgQXbCtZWSYdv0LtsHv/GrcZZVxQ
-	oK9EDmcc4A2IRjYwNtqQ==;
+	List-Owner; bh=h4jYKrKFs4pGzVlYOgx6cHpxGn7vFkeYi1G6pdmGrv4=; b=jEfjWaWBYO53p2
+	m5gEACWNoT80aWlojigHvusR+OsXwDrZ7ErgY2rH4yRrRJTRg/DAwZKEgkCzr9ebO0nj1oQE6TQzE
+	i6pbXE9C3Vh+Fdp8CpPKTw8iOzI0gcQTXyxo8150Nk9P1UxGdAVIEvGSSABPdUeHvNnRytpN29KsB
+	/D2zoEgQcBgpdP7KBMkqX5CA3k/ZpjqTRaVsKO7qI70BjL5fxFjbu5/0Wo2zNnqtKVJOlOvklZ6ML
+	FFg8JEw+DO3xunu8Sc3tmjULlkyUvkCVW092+JAf6Pjpej9eAdGSqal3CH3LDRORiJ/YOJ8HiYwhJ
+	f5f5qqLt4mkj6txcgWYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4E6r-00000000uYk-0oUh;
-	Mon, 14 Apr 2025 07:20:01 +0000
+	id 1u4E8g-00000000ujN-0mBC;
+	Mon, 14 Apr 2025 07:21:54 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4E4j-00000000uJF-3moY;
-	Mon, 14 Apr 2025 07:17:51 +0000
+	id 1u4E64-00000000uU1-0sre;
+	Mon, 14 Apr 2025 07:19:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 5C430A4847D;
-	Mon, 14 Apr 2025 07:12:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D953C4CEE2;
-	Mon, 14 Apr 2025 07:17:47 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 1F40CA4863D;
+	Mon, 14 Apr 2025 07:13:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC602C4CEE2;
+	Mon, 14 Apr 2025 07:19:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744615068;
-	bh=boozTliB7bYs9rUJdY0DioZxAqN1tNd+gw4KQY9xVJA=;
+	s=k20201202; t=1744615151;
+	bh=5XAwYqPF/VcumK0eqoVgJ7WMHjerh75+AgOEX07/FYs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ByBVFfBIBlXtzPv5hLien3pIvMPuF4iKRCHwVIRLjxecR5XfVrU940qgXIh8zLq+V
-	 TUtRXXgTkhU0tK0wIKISb+0JFOtBmjE5QR5nW7nc63S4kwj7/Ytj1EHtLkh+mZYf6D
-	 tydV73OxZmf3+x+b2LrF0QUIgWwmqhPLBS4e8bHzElGdM31A+g1VnCcUxaoxKXoIQB
-	 qStlv3nYNvhRp13U9sqZmDPjToTw2L8950wd3pBRz9KFc4361H5r+iGC8iWN/5E/z6
-	 PBXbWOq4pJBsEy0EE9cN0MQGzm0d3M5ldcB0AUusaURgxUv3PUwFtatejS8dIZjnvi
-	 Bkb26kpVKoxlg==
-Date: Mon, 14 Apr 2025 09:17:45 +0200
+	b=PCxRpoo5tBeIdkv6YPps3K58/RgIF8jkAbi3crSrltPrby0+rAINAv/jYbrLiu4J9
+	 eKKnKRj8rVIytyAEtadMBcsYrNzBw93UPb01ZYTd/w6vcLGzaPw7szlvAL5glU+R81
+	 Xk2a/9+wdFcpMvqpGEjWKzrTsCqfETOsIRhfcWW2FughmX9XcbiBVpBLEsdpWyWTOe
+	 uEQbD9AL7AuDl8RQtgiDdxQuj9eUPyPpSSA2ien2vZYrBnscjcnIFLOMiMN8NrF9qv
+	 jpC6p7PwHpPp6Xqxef7L2dz3jP7IXfoV5+POEPEv0J1lxx9A5Jr8uQJXVkC9FUavHz
+	 wMuyZXe9FMeGw==
+Date: Mon, 14 Apr 2025 09:19:08 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
@@ -49,17 +49,18 @@ Cc: Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
 	Rob Herring <robh@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
 	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH v4 01/10] dt-bindings: phy: add exynos2200 eusb2 phy
- support
-Message-ID: <20250414-glaring-swallow-of-serenity-78edcb@shite>
+Subject: Re: [PATCH v4 02/10] dt-bindings: phy: samsung,usb3-drd-phy: add
+ exynos2200 support
+Message-ID: <20250414-mottled-divergent-swift-666aaf@shite>
 References: <20250412202620.738150-1-ivo.ivanov.ivanov1@gmail.com>
- <20250412202620.738150-2-ivo.ivanov.ivanov1@gmail.com>
+ <20250412202620.738150-3-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250412202620.738150-2-ivo.ivanov.ivanov1@gmail.com>
+In-Reply-To: <20250412202620.738150-3-ivo.ivanov.ivanov1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_001750_073566_9EC1B47A 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20250414_001912_320245_84854530 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,75 +77,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Apr 12, 2025 at 11:26:11PM GMT, Ivaylo Ivanov wrote:
-> Document the exynos2200 eUSB2 compatible. Unlike the currently documented
-> Qualcomm SoCs, the driver doesn't make use of reset lines for reset
-> control and uses more clocks.
+On Sat, Apr 12, 2025 at 11:26:12PM GMT, Ivaylo Ivanov wrote:
+> Document support for Exynos2200. As the USBDRD 3.2 4nm controller
+> consists of Synopsys eUSB2.0 phy and USBDP/SS combophy, which will
+> be handled by external drivers, define only the bus clocked used
+> by the link controller.
 > 
 > Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 > ---
->  .../bindings/phy/samsung,snps-eusb2-phy.yaml  | 79 +++++++++++++++++++
->  1 file changed, 79 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
-
-Please name it after compatible, so
-samsung,exynos2200-eusb2-phy.yaml
-
-
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
-> new file mode 100644
-> index 000000000..09d3fdd4a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
-> @@ -0,0 +1,79 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/samsung,snps-eusb2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Samsung SNPS eUSB2 phy controller
-> +
-> +maintainers:
-> +  - Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-> +
-> +description:
-> +  eUSB2 controller supports LS/FS/HS usb connectivity on Exynos2200.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - samsung,exynos2200-snps-eusb2-phy
-
-I did not mention this earlier, but I think we should skip the snps in
-the compatible. Using vendor name in device name is just confusing, so:
-
-samsung,exynos2200-eusb2-phy
-
-However the description should include it, e.g.
-
-Samsung Exynos2200 eUSB2 phy, based on Synopsys eUSB2 IP block, ....
-
-
-...
-
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    usb_hsphy: phy@10ab0000 {
-> +        compatible = "samsung,exynos2200-snps-eusb2-phy";
-> +        reg = <0x10ab0000 0x10000>;
-> +        #phy-cells = <0>;
-> +
-> +        clocks = <&cmu_hsi0 7>,
-> +            <&cmu_hsi0 5>,
-> +            <&cmu_hsi0 8>;
-
-These should be aligned with opening <
-
-With above:
+>  .../bindings/phy/samsung,usb3-drd-phy.yaml    | 38 +++++++++++++++++--
+>  1 file changed, 34 insertions(+), 4 deletions(-)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
