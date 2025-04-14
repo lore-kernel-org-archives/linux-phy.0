@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9967C3601E
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 06:59:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C24AC3601E
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Apr 2025 07:20:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CoFesKmL5CUdvX/Xtw5JouZ2l6XxFc1XYHezgW4v7M4=; b=zlooTvOo3YGlpx
-	nmSpcyvAnJkMq5/RPQwKFidTHHObdGs4Rz7yU4sReurVdueQ7Byc0k/Y83cQ8Kfr5N3OyMQzx1cYX
-	meNkUMett2RgzfBgtFl4afOHcqCTKB/stQoJ/ac078mLvLHbl+If/86+7gLlOArDstkLVtHDH9uPC
-	FaX7/VVOL+da/p8XMLCJ9Rvq+afA0H5tom9r4/K8I1Un+3wcwzQNxdRhSDXMHi7oA7BbMaFYXbgTY
-	BtVTWE/Z9OFkqDMSAY1FUUVZ9IOWTQK/AjUsTVzdClRmE5mEGRSfGgQ8iFzC21kwc4NU6+XyBGpk2
-	HJ3SMlsBEmsni7vAYgHw==;
+	List-Owner; bh=53d34JJtYz5SEqg3pH6XFf9D2Bfomi22iyvh9NY/N3E=; b=mT2DrwfkICT0cD
+	BXkToYqDuJxksObLEWFXIaHLS7ivemOWvMQElXl8TGAN6XmCLp1Ilhakd5zIAwO0dECfyOZke1bxf
+	NnSiJBe5iAAc3QdexpwRHPYcv4qxKMCWZErHi1qUVvu3YTIbnptznUlJwll2VrUwSkgmQbFoyYMAa
+	11BN1lsUPVX/xX4lxUJFrFrVEogiqvHkO8uC34sC68vAXDnCnxn1WEKhsNmQkw2ZUmmDskNoXxVgx
+	qIgWEtiHh8HrrEagW4P0a9+NR97BxDXDMeCe0I5CuIJTbis/lxgQXbCtZWSYdv0LtsHv/GrcZZVxQ
+	oK9EDmcc4A2IRjYwNtqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Dn1-00000000rq2-1ICD;
-	Mon, 14 Apr 2025 06:59:31 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1u4E6r-00000000uYk-0oUh;
+	Mon, 14 Apr 2025 07:20:01 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Dkr-00000000rYf-2qaB
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Apr 2025 06:57:17 +0000
+	id 1u4E4j-00000000uJF-3moY;
+	Mon, 14 Apr 2025 07:17:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5840D60007;
-	Mon, 14 Apr 2025 06:57:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 53266C4CEE2;
-	Mon, 14 Apr 2025 06:57:15 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5C430A4847D;
+	Mon, 14 Apr 2025 07:12:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D953C4CEE2;
+	Mon, 14 Apr 2025 07:17:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744613835;
-	bh=mqy+aOHjVKggByK6p/2KyFRHnUz1N9o7I6IVLGCDoWg=;
+	s=k20201202; t=1744615068;
+	bh=boozTliB7bYs9rUJdY0DioZxAqN1tNd+gw4KQY9xVJA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=F1mwHNTd5ZYVAB7ZS8zFkWpRKfoBKT42FaZJgQlq2mkfY70IPlKdE5GqQxfRNcMu/
-	 9xsuLXjJKf8kzqzf6SGsqaFjrU9UwliEKl9wFTEoiKulve30/JW6EN9S0QV1QLCB8I
-	 vDjEXEKNM51fholDhVIi99y6EafYba7bhE7mxHQhWcXxlZYTAS+lUw2ql7Z0n5qcNi
-	 811gh/UUXgUR7PrJEuy0PxQpszQ0Amefim3MRPm4Zd+qegKEH0pnL/BZ84bAHyYB9H
-	 Fndg5BVfKqs311r70/4kEoQgsXrON7GIFFXGaAhWOxUFGYOTOMfRMljddNi6gOkoG+
-	 au8i/dKtTCmCw==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1u4Dkk-000000001A4-19TE;
-	Mon, 14 Apr 2025 08:57:11 +0200
-Date: Mon, 14 Apr 2025 08:57:10 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Chenyuan Yang <chenyuan0y@gmail.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, lumag@kernel.org,
-	quic_kriskura@quicinc.com, manivannan.sadhasivam@linaro.org,
-	konrad.dybcio@oss.qualcomm.com, quic_varada@quicinc.com,
-	quic_kbajaj@quicinc.com, johan+linaro@kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qmp-usb: Fix an NULL vs IS_ERR() bug
-Message-ID: <Z_yxxoa12N9rNn2z@hovoldconsulting.com>
-References: <20250413212518.2625540-1-chenyuan0y@gmail.com>
+	b=ByBVFfBIBlXtzPv5hLien3pIvMPuF4iKRCHwVIRLjxecR5XfVrU940qgXIh8zLq+V
+	 TUtRXXgTkhU0tK0wIKISb+0JFOtBmjE5QR5nW7nc63S4kwj7/Ytj1EHtLkh+mZYf6D
+	 tydV73OxZmf3+x+b2LrF0QUIgWwmqhPLBS4e8bHzElGdM31A+g1VnCcUxaoxKXoIQB
+	 qStlv3nYNvhRp13U9sqZmDPjToTw2L8950wd3pBRz9KFc4361H5r+iGC8iWN/5E/z6
+	 PBXbWOq4pJBsEy0EE9cN0MQGzm0d3M5ldcB0AUusaURgxUv3PUwFtatejS8dIZjnvi
+	 Bkb26kpVKoxlg==
+Date: Mon, 14 Apr 2025 09:17:45 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Alim Akhtar <alim.akhtar@samsung.com>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH v4 01/10] dt-bindings: phy: add exynos2200 eusb2 phy
+ support
+Message-ID: <20250414-glaring-swallow-of-serenity-78edcb@shite>
+References: <20250412202620.738150-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250412202620.738150-2-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250413212518.2625540-1-chenyuan0y@gmail.com>
+In-Reply-To: <20250412202620.738150-2-ivo.ivanov.ivanov1@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250414_001750_073566_9EC1B47A 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,30 +76,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Apr 13, 2025 at 04:25:18PM -0500, Chenyuan Yang wrote:
-> In qmp_usb_iomap(), one branch returns the result of devm_ioremap(), which
-> can be NULL. Since IS_ERR() does not catch a NULL pointer,
-> add an explicit NULL check in qmp_usb_parse_dt_legacy() to prevent
-> potential dereference issues.
+On Sat, Apr 12, 2025 at 11:26:11PM GMT, Ivaylo Ivanov wrote:
+> Document the exynos2200 eUSB2 compatible. Unlike the currently documented
+> Qualcomm SoCs, the driver doesn't make use of reset lines for reset
+> control and uses more clocks.
+> 
+> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+> ---
+>  .../bindings/phy/samsung,snps-eusb2-phy.yaml  | 79 +++++++++++++++++++
+>  1 file changed, 79 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
 
-Good catch, but please move the handling of this into the
-qmp_usb_iomap() helper so that it returns an error pointer also if
-devm_ioremap() fails.
+Please name it after compatible, so
+samsung,exynos2200-eusb2-phy.yaml
 
-> Signed-off-by: Chenyuan Yang <chenyuan0y@gmail.com>
-> Fixes: 2a55ec4f0a04 ("phy: qcom-qmp-usb: merge driver data")
 
-This is not the commit that introduced the issue; this should be:
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
+> new file mode 100644
+> index 000000000..09d3fdd4a
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/samsung,snps-eusb2-phy.yaml
+> @@ -0,0 +1,79 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/samsung,snps-eusb2-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Samsung SNPS eUSB2 phy controller
+> +
+> +maintainers:
+> +  - Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+> +
+> +description:
+> +  eUSB2 controller supports LS/FS/HS usb connectivity on Exynos2200.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - samsung,exynos2200-snps-eusb2-phy
 
-Fixes: a5d6b1ac56cb ("phy: qcom-qmp-usb: fix memleak on probe deferral")
-  
->  	qmp->pcs = qmp_usb_iomap(dev, np, 2, exclusive);
-> +	if (!qmp->pcs)
-> +		return -ENOMEM;
->  	if (IS_ERR(qmp->pcs))
->  		return PTR_ERR(qmp->pcs);
+I did not mention this earlier, but I think we should skip the snps in
+the compatible. Using vendor name in device name is just confusing, so:
 
-Johan
+samsung,exynos2200-eusb2-phy
+
+However the description should include it, e.g.
+
+Samsung Exynos2200 eUSB2 phy, based on Synopsys eUSB2 IP block, ....
+
+
+...
+
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    usb_hsphy: phy@10ab0000 {
+> +        compatible = "samsung,exynos2200-snps-eusb2-phy";
+> +        reg = <0x10ab0000 0x10000>;
+> +        #phy-cells = <0>;
+> +
+> +        clocks = <&cmu_hsi0 7>,
+> +            <&cmu_hsi0 5>,
+> +            <&cmu_hsi0 8>;
+
+These should be aligned with opening <
+
+With above:
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
