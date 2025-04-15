@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E683C369AB
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6B0EC369B9
 	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 22:12:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,59 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YXHpR5+FbrKTJzI0n6pHGwNXyCFFCkBdTYXavjJDXjQ=; b=shXs78RS8201Y4
-	Q6v7WInexxipJyWI9k+172NXjExne/XvyoYTdgqyPfBtmEekOBUI6cqMsSlAJIdD83Yk218cD9weD
-	iVHp51x/jw1rTWC5bZ+uNqUJ/Y5Sl7/eOHjqalU061ncdZkUMZvtLZnD2QCjWuP8HoHqWGKwPPq9U
-	QN2oGXCbSl8ushtAmwcsGtJgePUkBjMhJSl7DiVocjWZpZSRYe8kXQUmNv4ZM4muM/7lW7Cvojyty
-	NWnjdT4L1vnJQ6ecBn4a71S/lYUURL1kxWbzNLidBCrJCHq5U7csSOd06OyTOPK0AMNvsVO/qjMWz
-	M9EShtPT1jwgEePRyhFw==;
+	List-Owner; bh=wULdYPP5tEWj3OX8eWHKe+mH4BVBpvABH0HVXFPBh14=; b=DIdCCnijMngIdd
+	A1l0BJ2GFi4rnEdDGiJoMIA5ZSEeYJYMd1JbKjmyVeRt9Zd9+bsE2l+9K1bPs37aB2QO5d/bRDjEF
+	jd3SP2Q3o8nrDsEFVvQXp66AmeHWcf10lqyuIrLdaFxE1btkn1OPOK4+C2+ukvORFEJSZCe64n245
+	g3/IVVPiMrht69fKVOTrQUPrmDf49bRUoUugp3riVJ8p5DM7G6C/271sEPZ/m55Z/4MH16XAIAlXi
+	LbgEqhyRqIlVHxLJx9s3hduwX4SZWjCfLPpNItmY3Ze7GAT36mgcz6ZK0T+e7qhwdOlkKfxO2Dbj8
+	PYO4C71Zuq02+03MauJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4oVh-00000007IKX-3V7b;
-	Tue, 15 Apr 2025 22:12:05 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1u4oVi-00000007IKi-0N0I;
+	Tue, 15 Apr 2025 22:12:06 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4oT3-00000007Hop-1jpo
+	id 1u4oTS-00000007Hvo-1c00
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Apr 2025 22:09:21 +0000
+	Tue, 15 Apr 2025 22:09:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B89686115F;
-	Tue, 15 Apr 2025 22:09:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E7CDC4CEE7;
-	Tue, 15 Apr 2025 22:09:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DC87A44FA1;
+	Tue, 15 Apr 2025 22:09:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F269C4CEE7;
+	Tue, 15 Apr 2025 22:09:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744754960;
-	bh=fT9KURxC+hnVBNlWWLo90bn9GjX86Jg2rXvY5sft3M0=;
+	s=k20201202; t=1744754985;
+	bh=vepstU+VeqHh6+qowybjXxUtB+33ICGyCl2PjWvB54k=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Tv580yO+H2hOAOPlBB3efQAxuBRfoVkSJRz0fPP82iu2H+MDc9T4BGaCi39QUw/Px
-	 ElmDuFOHLsg+yWOZwPXvmONCyWqblstsRgCLYtTsfQluf9LoHTNm0lHBIle/sQ8Th4
-	 2bAZVzNpBt2AKZP4yOliVmXMGBpgbPDlUzEHuCKg8gev8050v7hQrhXbBB2HJ9lAtx
-	 29p2vPQWDJYE300DzbpjnxOsjeWUInfNoLOcDYoMoRUDrFZbEsBqUFUNHug1xLGBBO
-	 pxKOpEzQv1aB2+Sq88wrAcXBWnDWfKjivDitp9pWOc3pgs7aVc/lwbz5hoqKZWhfbK
-	 u30xF55sakPXQ==
-Date: Tue, 15 Apr 2025 17:09:18 -0500
+	b=nrNpJFHqxnf7NuMjQ7A2rLJfEiZp/qUE+pTwIFP9WvmsQymAs3iOysdoMzq07esey
+	 ECQ63f0Z6p2cXP3+v+h9RxOivgatgmqqctGsDIev9rNjbrJYBIRZt+7slWSQq/1BEW
+	 3q0klbefSoZdlKSrBMlY+wudQDsYkjSC3K73bRINAl0oq0jBpi/SB5edCi2zeRT3ch
+	 anK6KLLg9I2iKA295/swHvIGlgZ4qv3JWQOFYq8Vl52q1AOzLpfHP7VlYABQh2U0tW
+	 CdELjZnRqxCGU4EcsWMKe3l/dLq2Q0LeQacAYkmIDdoHll0b6WklFK65X1DJMwBGwL
+	 +Ksg5n09OYcxg==
+Date: Tue, 15 Apr 2025 17:09:43 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Magnus Damm <magnus.damm@gmail.com>, linux-phy@lists.infradead.org,
+Cc: Magnus Damm <magnus.damm@gmail.com>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-renesas-soc@vger.kernel.org,
-	Biju Das <biju.das.jz@bp.renesas.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	devicetree@vger.kernel.org, Biju Das <biju.das.jz@bp.renesas.com>,
+	linux-phy@lists.infradead.org,
 	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
 	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	devicetree@vger.kernel.org,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: renesas,usb2-phy: Add clock
- constraint for RZ/G2L family
-Message-ID: <174475495805.919973.18097238405448838308.robh@kernel.org>
+	Vinod Koul <vkoul@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/4] dt-bindings: phy: renesas,usb2-phy: Document
+ RZ/V2H(P) SoC
+Message-ID: <174475498350.920532.9822490271876719178.robh@kernel.org>
 References: <20250414145729.343133-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20250414145729.343133-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20250414145729.343133-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250414145729.343133-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20250414145729.343133-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250415_150946_438307_F5AC24C3 
+X-CRM114-Status: GOOD (  11.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,17 +85,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 14 Apr 2025 15:57:26 +0100, Prabhakar wrote:
+On Mon, 14 Apr 2025 15:57:27 +0100, Prabhakar wrote:
 > From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > 
-> The RZ/G2L family requires two clocks for USB2 PHY, which are already
-> defined in the DTSI files. Add a constraint in the DT binding document
-> to ensure validation with `dtbs_check`.
+> Document USB2.0 phy bindings for RZ/V2H(P) ("R9A09gG57") SoC.
+> 
+> RZ/V2H(P) USB2.0 phy is similar to one found on the RZ/G2L SoC, but it
+> needs additional configuration to be done as compared RZ/G2L USB2.0 phy.
+> To handle this difference a SoC specific compat string is added for
+> RZ/V2H(P) SoC.
+> 
+> Like the RZ/G2L SoC, the RZ/V2H(P) USB2.0 PHY requires the `resets`
+> property and has two clocks.
 > 
 > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > ---
->  Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 3 +++
->  1 file changed, 3 insertions(+)
+>  Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
