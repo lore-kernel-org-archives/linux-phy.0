@@ -4,117 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80F37C369B8
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 04:23:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0396FC369AB
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 05:26:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wag6tqM2H60phiSoBmlpObcvQvmXByZp+s3RM4pzNWw=; b=vXuqxaMkaZVS6D
-	UrXHSRfgl+WQF75xyWqcxGQjqud6jXy9TXXW4N+NspFdf1RzjqqHtrytSocbuQGmczwHjsr5ZFaBS
-	fRfMiVK1GAOwuLKIj59BEbmD20cCKD/C28ulria2Gr4hgiXayeUJiIlen06Lw0z/U1j6xlbXzCqMZ
-	B90dYY129UfSq9oTA4nHZVOdzygWiFvb1ngygxFw6zoGIT7Xj5nvR88Ty5m8YO/kO/t22IE+Ty8NL
-	FL2cRKS0/FMC/rKfav0KqMQWwYIsIMNpUFt+l6GcvvwoxuWnWLszlY8bMnE3t/z1HxMjhoC39/CSl
-	SMdHnIsH7UWBaY3ZKnBA==;
+	List-Owner; bh=3R7Ou2Md223sgCi4cRSRII7f5oY5pVANQX9vj5Q1MBQ=; b=FDNyR0PRUNJ7at
+	Vn1SVJSxGwcnfmZwxmZfy11CaU8WKahUsyAsUNi1p9MQnaHj6XRthuRkPiJRqWrVzGI005LvHjXaM
+	T+HqRIQu5/hL2n+TUeKyHAZ8CUH6/urf9U3KJP8cyNwyKCeAdQSsQNalDhFJAUorJZeDefEKKd6pT
+	FtmygV6NR1o8CE8QEB1QfkSWSdkERuJprlhdSkxrOv2SSMeVNowUHG1FzxIJnybBPeL5UYF4i90kR
+	9Mw3kHWi2gKN7HfuTLGedyQuPvXsKAYo8sFn6ZnG7HFemWQQkjyvw9tDih7fSRhG6NJ3ilVXsqspR
+	9YwKdPMlYnOJgMlGPRug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4XpB-00000004QmM-0yjt;
-	Tue, 15 Apr 2025 04:23:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u4Yop-00000004YIh-2Jza;
+	Tue, 15 Apr 2025 05:26:47 +0000
+Received: from mail-m49212.qiye.163.com ([45.254.49.212])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Xp8-00000004Qku-38Pf
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Apr 2025 04:23:03 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53F15hB9031652
-	for <linux-phy@lists.infradead.org>; Tue, 15 Apr 2025 04:23:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	8T7lOJ76Xmdt352Zaj8TCw/f2lloVkkzYTw7CuNrRlY=; b=VMFdCWK5656p02xa
-	t8by6aDEFplIvgljBTnO5nxLyuwAEMINNKTOaX8ThHCilmI84FcY8vWtc4TeP1LZ
-	oyFiEw37e8Ips8UyQNommW4u9ZjXPqPhPh8vMhiEvhI51NX6TV+zrtULOKm70sPc
-	aq34TUJGKrQ74/RTqeGXFudPMcFNppOAVFryyX+tZJBmRDslczGWBdB5C7eXQehv
-	gmEPHN+3gyN7gycncZpyntKwcEAJBN5ctQtZqlTxW1M7JsqMHUIN3BZw9CCmkXFg
-	5KFf9ilDnM5K7cpPMweVetJjzEse9vLx/kKTCjk5x8cSC0UBpXHmMdmw6laA1ly6
-	S8HHkg==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ydvj6tfm-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 15 Apr 2025 04:23:02 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-2ff798e8c90so4851366a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 14 Apr 2025 21:23:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744690981; x=1745295781;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=8T7lOJ76Xmdt352Zaj8TCw/f2lloVkkzYTw7CuNrRlY=;
-        b=JOOZQ2GC2khdVuT0OGnIOqbSWeWQCklm2bdJQQN9+iid7K8QMsrJGqrnykdEt+LPAi
-         7cG3Pb5P56nt6mHMRnRVp7gzGJN6UKbnU5BdfHKZ8kaZWUx2KaFLqm1Il/WkYiQn+prB
-         RwzWV/4DUjk+a2eqiwmSe21ugUK70Ey6DrGk1MDz2sW0Qy/XUTEhaA60Se9EZzG0IWUf
-         RZPwgkqJWBAXUC3KGZUXYdUfyVq6MVWsKpniO5WGVH8NRDXtVyenqv96nNYH1HBPAw82
-         a3w3jkBMvYuSaazlvO0BPkT3mw6NcpT6/wY4sdvD6tTCYrCoiH2jqLtWeS7qnUig78hA
-         pKcA==
-X-Forwarded-Encrypted: i=1; AJvYcCXWY1aotCByspPwusm8fU/ejjOt9BJBvM6OPmhPeyd7vKgYnpjG6WyIVtecI4A/b/Pw40BohR+uUpQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx7GWJIipv0AcGGwKq+a95Jt72Y8igaL3fRMo0MAsAHSulki7ow
-	anfHJmZAOHLg1a2aqiUD02u0bMIcBDPAzPMMv7xR4Sz58Bg8mbHjvtjwOfyLqAMl+eLfEuOR8pX
-	g25PfvD4V5t76iVmeveIeYp89JgXmbud5PZ0UPbhmHwKPyoCZaD0iEc697y2AgWq/
-X-Gm-Gg: ASbGncspfd2WO6Ee3uYiDJTB5L3lgsGGD2lrKIpfkW03vKRy4Jj8R4N+Vg7UnhwlBvu
-	1hPLuIkUKXUMYlzHGX0yk10Y1FKrZKOcNHilj87NHQZKPJK7UvQYyXyn8up1ihxDjwXRBsXIAVO
-	ASgnkIwVzmhZRT6vTjPbkS39c1+yROF7owgnraEZiS32L8NCxGuHLmpsI7KUR15clh5rEYSO5jI
-	TudtyAF2/KabPsMFp3wMzDuRA1IYC3zpy5SJseR/SWh+Pzd9Z5L19FAeF6V5J83fMZszF3J05MD
-	9DQrnN5RmBSWvOFCQZkxzus5Gj/0hT58VXrVsnzORpDdqKYMRbZsU1YGTM0geml3fxHDggqchwW
-	fALiuNDixEtI86xTQr5/M0rBML7QeUtBZUe1Vx9k+SwT2h/4=
-X-Received: by 2002:a17:90b:254c:b0:2fa:1e3e:9be5 with SMTP id 98e67ed59e1d1-308235c7f7bmr26548446a91.0.1744690981277;
-        Mon, 14 Apr 2025 21:23:01 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF3+lFYQm1Lb3iNLP+M6nJSx9YN29FsGYZdIHS1UCct9ZZj2wAMP0FIRD3AbVju5FMgqNuH1A==
-X-Received: by 2002:a17:90b:254c:b0:2fa:1e3e:9be5 with SMTP id 98e67ed59e1d1-308235c7f7bmr26548412a91.0.1744690980844;
-        Mon, 14 Apr 2025 21:23:00 -0700 (PDT)
-Received: from hu-kathirav-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22ac7cb5047sm107381865ad.170.2025.04.14.21.22.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Apr 2025 21:23:00 -0700 (PDT)
-From: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Date: Tue, 15 Apr 2025 09:52:51 +0530
-Subject: [PATCH v3 2/2] phy: qcom-qusb2: reuse the IPQ6018 settings for
- IPQ5424
+	id 1u4YP8-00000004VQq-2IjY;
+	Tue, 15 Apr 2025 05:00:17 +0000
+Received: from localhost.localdomain (unknown [103.29.142.67])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 11e63de97;
+	Tue, 15 Apr 2025 13:00:09 +0800 (GMT+08:00)
+From: Kever Yang <kever.yang@rock-chips.com>
+To: heiko@sntech.de
+Cc: linux-rockchip@lists.infradead.org,
+	Frank Wang <frank.wang@rock-chips.com>,
+	William Wu <william.wu@rock-chips.com>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 2/2] phy: rockchip: inno-usb2: Add usb2 phy support for rk3562
+Date: Tue, 15 Apr 2025 13:00:05 +0800
+Message-Id: <20250415050005.52773-2-kever.yang@rock-chips.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20250415050005.52773-1-kever.yang@rock-chips.com>
+References: <20250415050005.52773-1-kever.yang@rock-chips.com>
 MIME-Version: 1.0
-Message-Id: <20250415-revert_hs_phy_settings-v3-2-3a8f86211b59@oss.qualcomm.com>
-References: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
-In-Reply-To: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1744690972; l=1205;
- i=kathiravan.thirumoorthy@oss.qualcomm.com; s=20230906;
- h=from:subject:message-id; bh=1qgyXPTe8cPcaxUv+bBjP4DpTNp5myZOf+LMbrL+u38=;
- b=mMLhPWrhpGCi6Df6Y+VfgT63nzaugIMVz1NzPuE0G2fHWeA0F6tzZh+0KnkSvdclp7Wr3M8ag
- CYsmeVhWrm6CB5U5mWtfOe9gVhF79i+IxQpWswfcmlpYhWJcOFvo2lD
-X-Developer-Key: i=kathiravan.thirumoorthy@oss.qualcomm.com; a=ed25519;
- pk=xWsR7pL6ch+vdZ9MoFGEaP61JUaRf0XaZYWztbQsIiM=
-X-Authority-Analysis: v=2.4 cv=ZIrXmW7b c=1 sm=1 tr=0 ts=67fddf26 cx=c_pps a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=45MnPZ1KAyxS56gpr9IA:9 a=QEXdDO2ut3YA:10
- a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-GUID: cUxA5Lam1IbZ_YXvwovSQ9Qqvlva4JV_
-X-Proofpoint-ORIG-GUID: cUxA5Lam1IbZ_YXvwovSQ9Qqvlva4JV_
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-15_01,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 suspectscore=0
- clxscore=1015 priorityscore=1501 bulkscore=0 phishscore=0 mlxlogscore=999
- spamscore=0 impostorscore=0 malwarescore=0 mlxscore=0 lowpriorityscore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504150026
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZQxpCVh4YSENOT0hLHR1NGFYVFAkWGhdVEwETFh
+	oSFyQUDg9ZV1kYEgtZQVlKS0hVSUJVSk9JVU1MWVdZFhoPEhUdFFlBWU9LSFVKS0lPT09IVUpLS1
+	VKQktLWQY+
+X-HM-Tid: 0a9637d1ab3503afkunm11e63de97
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OUk6OTo4NDJKSxpOIREWAz5R
+	NTBPCglVSlVKTE9PTUJISUpKTUhCVTMWGhIXVRAeDR4JVQIaFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlKS0hVSUJVSk9JVU1MWVdZCAFZQU9PSk83Bg++
+DKIM-Signature: a=rsa-sha256;
+	b=aAyRDzXd98kHFyHdYIBreH4V9Y9zmQAZycJmhnGKZHZaBPTEofM9DaFS1ly95IOTZejBw/gxk93op45bHRJ5essmddxB3p0T7mbJHMNgqtU00xf4HZaaF5HquK9fAwVbmFF0EWdBbMVTaVWbgJY91y78iqC4mOXk5TP9/bKsGr8=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=dGrROaSrBXYRB1dmcPxF56XSth/r17WuVdpJ74iwQck=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_212302_799989_5147B69A 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20250414_220015_155756_DEFD3018 
+X-CRM114-Status: GOOD (  10.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,37 +79,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-With the settings used in the commit 9c56a1de296e ("phy: qcom-qusb2: add
-QUSB2 support for IPQ5424"), compliance test cases especially
-eye-diagram (Host High-speed Signal Quality) tests are failing.
+From: Frank Wang <frank.wang@rock-chips.com>
 
-Reuse the IPQ6018 settings for IPQ5424 as mentioned in the Hardware
-Design Document which helps to meet all the complaince requirement test
-cases.
+RK3652 has one USB2.0 PHY with two ports, the OTG port support OTG
+and BC1.2, the SoC provide USB GRF and APB to access the registers.
 
-Fixes: 9c56a1de296e ("phy: qcom-qusb2: add QUSB2 support for IPQ5424")
-Signed-off-by: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+This adds vbus detection function control and make the below tuning
+to enhance the usb2-phy SQ for RK3562 SoC.
+ - enable pre-emphasis during non-chirp phase
+ - set HS eye height to 425mv
+
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+Signed-off-by: William Wu <william.wu@rock-chips.com>
+Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 ---
- drivers/phy/qualcomm/phy-qcom-qusb2.c | 3 +++
- 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-index 81b9e9349c3ebb4d303cb040b5c913336bb6b6d6..49c37c53b38e70db2a1591081a1a12db7092555d 100644
---- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-@@ -929,6 +929,9 @@ static const struct phy_ops qusb2_phy_gen_ops = {
+Changes in v2:
+- Update the commit msg and collect review tag;
+
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 49 +++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index b5e6a864deeb..ada1f02601ef 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -1892,6 +1892,54 @@ static const struct rockchip_usb2phy_cfg rk3399_phy_cfgs[] = {
+ 	{ /* sentinel */ }
+ };
  
- static const struct of_device_id qusb2_phy_of_match_table[] = {
++static const struct rockchip_usb2phy_cfg rk3562_phy_cfgs[] = {
++	{
++		.reg = 0xff740000,
++		.num_ports	= 2,
++		.clkout_ctl	= { 0x0108, 4, 4, 1, 0 },
++		.port_cfgs	= {
++			[USB2PHY_PORT_OTG] = {
++				.phy_sus	= { 0x0100, 8, 0, 0, 0x1d1 },
++				.bvalid_det_en	= { 0x0110, 2, 2, 0, 1 },
++				.bvalid_det_st	= { 0x0114, 2, 2, 0, 1 },
++				.bvalid_det_clr = { 0x0118, 2, 2, 0, 1 },
++				.idfall_det_en	= { 0x0110, 5, 5, 0, 1 },
++				.idfall_det_st	= { 0x0114, 5, 5, 0, 1 },
++				.idfall_det_clr = { 0x0118, 5, 5, 0, 1 },
++				.idrise_det_en	= { 0x0110, 4, 4, 0, 1 },
++				.idrise_det_st	= { 0x0114, 4, 4, 0, 1 },
++				.idrise_det_clr = { 0x0118, 4, 4, 0, 1 },
++				.ls_det_en	= { 0x0110, 0, 0, 0, 1 },
++				.ls_det_st	= { 0x0114, 0, 0, 0, 1 },
++				.ls_det_clr	= { 0x0118, 0, 0, 0, 1 },
++				.utmi_avalid	= { 0x0120, 10, 10, 0, 1 },
++				.utmi_bvalid	= { 0x0120, 9, 9, 0, 1 },
++				.utmi_ls	= { 0x0120, 5, 4, 0, 1 },
++			},
++			[USB2PHY_PORT_HOST] = {
++				.phy_sus	= { 0x0104, 8, 0, 0x1d2, 0x1d1 },
++				.ls_det_en	= { 0x0110, 1, 1, 0, 1 },
++				.ls_det_st	= { 0x0114, 1, 1, 0, 1 },
++				.ls_det_clr	= { 0x0118, 1, 1, 0, 1 },
++				.utmi_ls	= { 0x0120, 17, 16, 0, 1 },
++				.utmi_hstdet	= { 0x0120, 19, 19, 0, 1 }
++			}
++		},
++		.chg_det = {
++			.cp_det		= { 0x0120, 24, 24, 0, 1 },
++			.dcp_det	= { 0x0120, 23, 23, 0, 1 },
++			.dp_det		= { 0x0120, 25, 25, 0, 1 },
++			.idm_sink_en	= { 0x0108, 8, 8, 0, 1 },
++			.idp_sink_en	= { 0x0108, 7, 7, 0, 1 },
++			.idp_src_en	= { 0x0108, 9, 9, 0, 1 },
++			.rdm_pdwn_en	= { 0x0108, 10, 10, 0, 1 },
++			.vdm_src_en	= { 0x0108, 12, 12, 0, 1 },
++			.vdp_src_en	= { 0x0108, 11, 11, 0, 1 },
++		},
++	},
++	{ /* sentinel */ }
++};
++
+ static const struct rockchip_usb2phy_cfg rk3568_phy_cfgs[] = {
  	{
-+		.compatible	= "qcom,ipq5424-qusb2-phy",
-+		.data		= &ipq6018_phy_cfg,
-+	}, {
- 		.compatible	= "qcom,ipq6018-qusb2-phy",
- 		.data		= &ipq6018_phy_cfg,
- 	}, {
-
+ 		.reg = 0xfe8a0000,
+@@ -2210,6 +2258,7 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
+ 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
++	{ .compatible = "rockchip,rk3562-usb2phy", .data = &rk3562_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3568-usb2phy", .data = &rk3568_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3576-usb2phy", .data = &rk3576_phy_cfgs },
+ 	{ .compatible = "rockchip,rk3588-usb2phy", .data = &rk3588_phy_cfgs },
 -- 
-2.34.1
+2.25.1
 
 
 -- 
