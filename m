@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 899F4C369AB
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3E4CC369B4
 	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 13:33:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SqF/RkGsDTTVwIH/FeIBCWaUNs9w+C2nl/jF/ACS8+Y=; b=3c/w7aD7rkPZH4
-	ID5KQ6JovHthGJQacw//nUEhmL5kI7tmLvINUyrK5Jge7ZVmZzyi89Em3zWdeXtgghU2E+qD8soo9
-	Ho+E/En9rMf2SkqqQyDV4touKxtvZ4Q78bQZ9ODyzV6aTRib5tOFEATJZrsnQdptMPifjv+yz1wBO
-	1iUJnQpEZA5X85drA5/tkPy/KRhWT+p4XvOLDeLs20J23NPi66n6wqgGBYTXUPHyHfRf8l4jYdttm
-	YRh6FtaNSBWcyH/PkETEXyOoboEIFghYIHugF49/iYBCuVDqjJ5PN3xcaXLsQ7xEeb6kem1RjjVLB
-	CVlje0oPeWssUxd697Aw==;
+	List-Owner; bh=6QWgb313k6AnycrOzeXNznGWcRqDBzRhc+HzllBnfaI=; b=x3aYH2IZ+p3NVy
+	8jnSjGVocSoNYVRAQu1RwOXLLTM5xcVz/JJBj2ReY/DAFtEU0oFFTVPwZ1HoT6rNotohqSXsYkTFO
+	f8b0AntjMb8WNeq+rpgttNiobAwjtubWQNe0nbnAp5jT3QlQ4bnkZAHaDAjKr+WUiECDJYr0v/Rd+
+	rxjnbri7pJTwDRmkkF0XDKnZt1MhfJlUFR578pIb7508cZU2GghTArFvI5pgRD+EFAIUhlty5wbjT
+	8iQDSyILxaV2D0yCrYDvS0HWW894rWQ55JmQuVvExqIJ0/6AnK8JyfHVz14rB7MNtRJFu4OuyQ++p
+	WI4biTO1A+6CDV82OaKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4gQG-00000005vd9-0e54;
+	id 1u4gQG-00000005vdK-1moK;
 	Tue, 15 Apr 2025 13:33:56 +0000
-Received: from out-184.mta0.migadu.com ([91.218.175.184])
+Received: from out-173.mta1.migadu.com ([2001:41d0:203:375::ad])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4gGJ-00000005tYz-15TE
+	id 1u4gGc-00000005tdj-2yzF
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Apr 2025 13:23:40 +0000
-Message-ID: <73b7af40-92e4-420f-81f1-3cd41c4a6920@linux.dev>
+	Tue, 15 Apr 2025 13:24:00 +0000
+Message-ID: <d2816b7c-f637-4603-b2cb-d33721325fbd@linux.dev>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1744723416;
+	t=1744723436;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=6+3VXbGj0V9Ezv8q+AT06eZN7LwpyfQrVtRO6evgNd4=;
-	b=wbTneSf0te0y+CPrdj7NcTSVnzzmgQfpHYz86lU4OJ3C2NrH9hGo8mlPrHerH93pEx7jeL
-	nLvf8bjiNPClJ9RWSfgcpTzAOC0sQ/zcMzglfSjz+9Dl+q75Khzqc3d7kktxS2SyPiR3Fk
-	ICkGA7xR3vpHAKJlFAB5iNNnr7yZKRM=
-Date: Tue, 15 Apr 2025 18:53:27 +0530
+	bh=xx83AGFMQurtRu9wIIKYXJ5FYa6n70ce8rgr2WFuiFs=;
+	b=oN8WMgVFdaECJCVq2LYkHQbHspt1tKdLftewZUx25CxeqVnMd8uos7WRz7bbKV/T9890RX
+	PLdAAuJMfImxJozTXcLSkk2Uos+Aq2tguK4jg23EBugKM0N/50hYfnxcZOS+Xzl3xOveX9
+	//KxacX6SbgztjnbLjkz28xjGJskkkw=
+Date: Tue, 15 Apr 2025 18:53:45 +0530
 MIME-Version: 1.0
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Subject: Re: [PATCH v3 10/17] drm/bridge: cdns-dsi: Update htotal in
- cdns_dsi_mode2cfg()
+Subject: Re: [PATCH v3 12/17] drm/bridge: cdns-dsi: Adjust mode to negative
+ syncs
 To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
  Jyri Sarha <jyri.sarha@iki.fi>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
@@ -59,13 +59,13 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
  Devarsh Thakkar <devarsht@ti.com>
 References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-10-4e52551d4f07@ideasonboard.com>
+ <20250414-cdns-dsi-impro-v3-12-4e52551d4f07@ideasonboard.com>
 Content-Language: en-US
-In-Reply-To: <20250414-cdns-dsi-impro-v3-10-4e52551d4f07@ideasonboard.com>
+In-Reply-To: <20250414-cdns-dsi-impro-v3-12-4e52551d4f07@ideasonboard.com>
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250415_062339_442319_82B15657 
-X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-CacheID: sfid-20250415_062358_897134_28598487 
+X-CRM114-Status: UNSURE (   8.48  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -86,18 +86,17 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 14/04/25 16:41, Tomi Valkeinen wrote:
-> cdns_dsi_mode2cfg() calculates the dsi timings, but for some reason
-> doesn't set the htotal based on those timings. It is set only later, in
-> cdns_dsi_adjust_phy_config().
+> The Cadence DSI requires negative syncs from the incoming video signal,
+> but at the moment that requirement is not expressed in any way. If the
+> crtc decides to use positive syncs, things break down.
 > 
-> As cdns_dsi_mode2cfg() is the logical place to calculate it, let's move
-> it there. Especially as the following patch will remove
-> cdns_dsi_adjust_phy_config().
+> Use the adjusted_mode in atomic_check to set the sync flags to negative
+> ones.
 > 
 > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 > ---
->  drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 14 ++++++++------
->  1 file changed, 8 insertions(+), 6 deletions(-)
+>  drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
 > 
 
 Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
