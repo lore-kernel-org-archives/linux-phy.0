@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC277C369B5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6792AC369AB
 	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 13:30:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,37 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zA0ZJMNJ0nvZvmtS14782rygmavh6g+OvUMEqzUg8pU=; b=McaaivSz8tAfeh
-	ebeHKNxXFETwP+9QKDVEIecZ9gz27TdIiA9325//wegptE7vyrrMDXsd8AiGXQ7dYWW4T1K88C3bj
-	cY2tF1Hkp68lrNRdmaUmcFWFrKBJFSxDDalXNhH5p6OeYonfHPKKQ+boy/tmpCirwvUJh/LWzOBqa
-	cnItUSX4Xt7fMThecUJo1iWL1G7jEtHd/Bu1kiScauRtt+H+ObV5wVLFE60sd+01HSc3K2BXaJWyI
-	kVSIQL++NsmToT6fnqTuQcEFU1k+6LsWlgk7HkgXRFJnV4Ktafv7vU1+m7Ei8EIHRMEfvDoG4U8K8
-	TpRkS4UNiQ9nkTRvY0Mw==;
+	List-Owner; bh=U5PH3MHQQvjdIbzeE7WlvY5QqTMlI1a1jVR2jN68nMg=; b=uBOyGO3T2hlhZs
+	elOHYaXvG9TdYdoSMzBnVIhzg+zmKat4YKkQI8HIqdTTgm+K7ujHqDNJ/HXXdJMgmoeIZUtEkkQie
+	IVFKyqK+hd2LyXL1J5W/ZBhmh3VbRv64bV7/EqdeU8ev+qrsvMuC9AL/Pmq7ngTojBpBJ6ZGfjemy
+	zuuYQgL59IlqlXe1zgQgsE3L4f8Y4/4c9uUI1+fS1LWwI86hICrKpqhfSS9wsLShwbeT3GGGcugRB
+	GbnYUpbte080yLK+zX7kIDioqVUtAi2AnxLTHr6rwqb+fvHzoKm/Htin/V/ZmOCwe7FwS/UrEDpsc
+	w65XoKQcEaeqF4QN+8Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4gMf-00000005uof-1sDG;
+	id 1u4gMf-00000005uoS-0h3f;
 	Tue, 15 Apr 2025 13:30:13 +0000
-Received: from out-182.mta0.migadu.com ([91.218.175.182])
+Received: from out-178.mta0.migadu.com ([2001:41d0:1004:224b::b2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4g8o-00000005sUx-45Sg
+	id 1u4g8o-00000005sUc-1kru
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Apr 2025 13:15:57 +0000
-Message-ID: <d765276e-5cd9-416e-8e0b-e2810734017a@linux.dev>
+	Tue, 15 Apr 2025 13:15:56 +0000
+Message-ID: <c536b801-dbfc-4bcd-92f2-6483c0435620@linux.dev>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1744722952;
+	t=1744722948;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=pOe3TSF5iLtdBYGt2ECIozQoznpT8UJ5ecLS38nYhCA=;
-	b=wxqSGbInbfg5KgjNIdcw7nzkmn5PJJYLiEJwQxId+8kjLaGyunJjUrRBsBLlUhbPYODVZE
-	nAi0IvwtZ3B6PCH7r2lSqAtBKwNtz6FL1qI94KSIUQFVdqb5V0ufIC70d8bWZJedmKYD0I
-	piyHSAu4SkogMc+HmLvGO3l1mjWWAt4=
-Date: Tue, 15 Apr 2025 18:45:21 +0530
+	bh=U3Rq97Ks2hDSPNG4otSnWau7sPLWkLpBWy07vjVfPwI=;
+	b=TQ8QG51PX4qMTQGQ4xRyCjWXZv1LlD7KkNWuH+d21q/Shzt46If14hdkNj1UzK2lo3rjO0
+	rGS4KjV+wC5nBbHwRbuNCmBjdoYb1VodxgfJchxMCF6KDLNVcmza2FS9NVwKsJ8VoL14Fw
+	lF1MDzB69rIifBS2yqWBBPjdfl4sQ/s=
+Date: Tue, 15 Apr 2025 18:44:57 +0530
 MIME-Version: 1.0
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Subject: Re: [PATCH v3 04/17] phy: cdns-dphy: Store hs_clk_rate and return it
+Subject: Re: [PATCH v3 02/17] drm/tidss: Use the crtc_* timings when
+ programming the HW
 To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
  Jyri Sarha <jyri.sarha@iki.fi>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
@@ -58,13 +59,13 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
  Devarsh Thakkar <devarsht@ti.com>
 References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-4-4e52551d4f07@ideasonboard.com>
+ <20250414-cdns-dsi-impro-v3-2-4e52551d4f07@ideasonboard.com>
 Content-Language: en-US
-In-Reply-To: <20250414-cdns-dsi-impro-v3-4-4e52551d4f07@ideasonboard.com>
+In-Reply-To: <20250414-cdns-dsi-impro-v3-2-4e52551d4f07@ideasonboard.com>
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250415_061555_209441_D4E50153 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20250415_061555_212443_DC7871F1 
+X-CRM114-Status: UNSURE (   7.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,18 +83,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Tomi,
+
+Thank you for the patches!
 
 On 14/04/25 16:41, Tomi Valkeinen wrote:
-> The DPHY driver does not return the actual hs_clk_rate, so the DSI
-> driver has no idea what clock was actually achieved. Set the realized
-> hs_clk_rate to the opts struct, so that the DSI driver gets it back.
+> Use the crtc_* fields from drm_display_mode, instead of the "logical"
+> fields. This shouldn't change anything in practice, but afaiu the crtc_*
+> fields are the correct ones to use here.
 > 
 > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 > ---
->  drivers/phy/cadence/cdns-dphy.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
+>  drivers/gpu/drm/tidss/tidss_crtc.c  |  2 +-
+>  drivers/gpu/drm/tidss/tidss_dispc.c | 16 ++++++++--------
+>  2 files changed, 9 insertions(+), 9 deletions(-)
 
 Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 
