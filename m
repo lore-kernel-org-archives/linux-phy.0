@@ -4,69 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3E4CC369B4
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 13:33:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC5DBC369AB
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Apr 2025 14:09:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6QWgb313k6AnycrOzeXNznGWcRqDBzRhc+HzllBnfaI=; b=x3aYH2IZ+p3NVy
-	8jnSjGVocSoNYVRAQu1RwOXLLTM5xcVz/JJBj2ReY/DAFtEU0oFFTVPwZ1HoT6rNotohqSXsYkTFO
-	f8b0AntjMb8WNeq+rpgttNiobAwjtubWQNe0nbnAp5jT3QlQ4bnkZAHaDAjKr+WUiECDJYr0v/Rd+
-	rxjnbri7pJTwDRmkkF0XDKnZt1MhfJlUFR578pIb7508cZU2GghTArFvI5pgRD+EFAIUhlty5wbjT
-	8iQDSyILxaV2D0yCrYDvS0HWW894rWQ55JmQuVvExqIJ0/6AnK8JyfHVz14rB7MNtRJFu4OuyQ++p
-	WI4biTO1A+6CDV82OaKA==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
+	References:In-Reply-To:Subject:CC:To:From:Date:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LuhMi1sEH2Mxp0huyXCDam50WUO34yKc/F/Bqbwv+Fg=; b=O2x0vaiNy5jS2A
+	Nzpyu6zl8EagQa7d4sx7Br2edoo/92vv4wky1abD6/veq+m5obWfNF2Zcp1+V1jiYFTxkycSPeFhh
+	YLeixJajwCC0qxAaviaP6i9QJ5GRmveB2CDEnahgUE42imJSOkOYPZX4KiNZe6JKwHJgGERZLA7hE
+	Ru7PnbF8BF12h4ExQD5ZstlmSbsciZq5RH3n5ArSKIhHrq0dTy62dG5ZMMKLvxARCWnc2IaiH9kZW
+	iX/Dw+GDfYgxANnbCfeljNvHx6Wu4qi2G1PnU9NMKLuUUa0CxMPl1QloSrof4J2hFTu/fTl28Mljq
+	dDEgllSiv6+3aEvb/N2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4gQG-00000005vdK-1moK;
-	Tue, 15 Apr 2025 13:33:56 +0000
-Received: from out-173.mta1.migadu.com ([2001:41d0:203:375::ad])
+	id 1u4gyW-000000062ne-1St7;
+	Tue, 15 Apr 2025 14:09:20 +0000
+Received: from mout.gmx.net ([212.227.15.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4gGc-00000005tdj-2yzF
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Apr 2025 13:24:00 +0000
-Message-ID: <d2816b7c-f637-4603-b2cb-d33721325fbd@linux.dev>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1744723436;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=xx83AGFMQurtRu9wIIKYXJ5FYa6n70ce8rgr2WFuiFs=;
-	b=oN8WMgVFdaECJCVq2LYkHQbHspt1tKdLftewZUx25CxeqVnMd8uos7WRz7bbKV/T9890RX
-	PLdAAuJMfImxJozTXcLSkk2Uos+Aq2tguK4jg23EBugKM0N/50hYfnxcZOS+Xzl3xOveX9
-	//KxacX6SbgztjnbLjkz28xjGJskkkw=
-Date: Tue, 15 Apr 2025 18:53:45 +0530
-MIME-Version: 1.0
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Subject: Re: [PATCH v3 12/17] drm/bridge: cdns-dsi: Adjust mode to negative
- syncs
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	id 1u4gsm-000000061c3-1aar;
+	Tue, 15 Apr 2025 14:03:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=public-files.de;
+	s=s31663417; t=1744725782; x=1745330582; i=frank-w@public-files.de;
+	bh=AJATmyjm2eijeuuPsjt7QjMYsSq4CG6lw+58QD8jKh0=;
+	h=X-UI-Sender-Class:Date:From:To:CC:Subject:Reply-to:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:cc:content-transfer-encoding:
+	 content-type:date:from:message-id:mime-version:reply-to:subject:
+	 to;
+	b=nYmUjMHXFsev/dNDJDi7pjjPr1EsqhdfzUnQAB7/a+X1gNhe9qs0AnAOEtsUYRz+
+	 MIitZ1TDPeS7nBA/kMXTFa+oIIIGoNZviTiHmTbETCpqNMf1OggPyzPllSR/aNJFs
+	 S8xyUEISv78LA16U1u2V4K3Ko2v8Q0qmxEgQV9MygL2WnXZT7IOTa8W7Z7cTpda9A
+	 LcML4t+cx0XGT7cL/6qqiNu8t7xcW8QqprEIiJdCi0MVW4aDjeeVgPTVRKOFz8rdM
+	 NrCkuX3n1nSstOx0VsqBgZhJQ0cyPDGVkbY8Oc42h9PNYrzpjRwTNbZ9+rJ6mfamw
+	 u9C/XLTWdiiWcHkJXg==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from [127.0.0.1] ([217.61.148.30]) by mail.gmx.net (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1M7sDg-1tzkvP3too-00Bho5; Tue, 15
+ Apr 2025 16:03:02 +0200
+Date: Tue, 15 Apr 2025 16:03:02 +0200
+From: Frank Wunderlich <frank-w@public-files.de>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Frank Wunderlich <linux@fw-web.de>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Jayesh Choudhary <j-choudhary@ti.com>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Devarsh Thakkar <devarsht@ti.com>
-References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-12-4e52551d4f07@ideasonboard.com>
-Content-Language: en-US
-In-Reply-To: <20250414-cdns-dsi-impro-v3-12-4e52551d4f07@ideasonboard.com>
-X-Migadu-Flow: FLOW_OUT
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+CC: Daniel Golle <daniel@makrotopia.org>, Sam Shih <sam.shih@mediatek.com>,
+ MandyJH Liu <mandyjh.liu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BRFC_3/5=5D_dt-bindings=3A_power=3A_Add_binding?=
+ =?US-ASCII?Q?_for_MediaTek_MT7988_topmisc_power_controller?=
+User-Agent: K-9 Mail for Android
+In-Reply-To: <bbb81e79-95da-4cf9-9eef-7cbaea191ebb@collabora.com>
+References: <20250413085806.8544-1-linux@fw-web.de> <20250413085806.8544-4-linux@fw-web.de> <700af1ab-f43e-4583-8f0e-27e5d4424338@collabora.com> <2EA2BDB0-E1C9-49BC-98FC-5048905AA036@public-files.de> <bbb81e79-95da-4cf9-9eef-7cbaea191ebb@collabora.com>
+Message-ID: <AC7CF61A-A8A0-40B7-B5B5-51C56A1D3E81@public-files.de>
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:pEE0QNLaCjGOh1Q3A+m2eGYrUmWJexG4y4QniLuUTqDVWg4CIOB
+ 84GmAnGh6QGkVbhwiumdWdvKVApuC2JIYMqVYiI2UJ8kXwUFnoleHNXl7yc7QrRK2yKcCIA
+ 3I5SoqqnMHQ4CVxWJe3F86siWLEd074Se1G0CnkRyrhWEsyWM91xeQei1J++PcvHaZSDvtG
+ xrOEUf4OgwvpgvHHD/pBA==
+UI-OutboundReport: notjunk:1;M01:P0:7lIXNkQsibE=;ecACNA+AaIzPbg8w5bjKrIo/tsr
+ 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
+ pKptU6VyxXIk2QK7Kx481TFV0HrsMyhgeJ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250415_062358_897134_28598487 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250415_070324_723280_89B3FC05 
+X-CRM114-Status: GOOD (  12.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,33 +126,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: frank-w@public-files.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Am 15. April 2025 11:59:06 MESZ schrieb AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>:
+>Il 15/04/25 11:52, Frank Wunderlich ha scritto:
+>> Hi Angelo,
+>> 
+>> Am 14. April 2025 12:25:23 MESZ schrieb AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>:
+>>> Il 13/04/25 10:58, Frank Wunderlich ha scritto:
+>>>> From: Frank Wunderlich <frank-w@public-files.de>
+>>>> 
+>>>> Topmisc is a systemcontroller used for xs-phy and ethernet on  mt7988.
+>>>> Add binding for it.
+>>> 
+>>> That's the wrong binding... check mfd/syscon.yaml :-)
+>>> 
+>>> P.S.: Is there any reset controller in topmisc? Any clock?
+>>>       If yes, syscon.yaml is also wrong, and you need a driver for that.
+>>>       Remember: If it turns out *later* that this has clk/resets and the
+>>>       bindings are already set for just a syscon, it's gonna be way harder!
+>>> 
+>>> Cheers,
+>>> Angelo
+>> 
+>> Ok based on the power-domain-cells property i guessed powercontroller is the right place.
+>
+>power-domain-cells, but without any power domain assignment, so that was wrong :)))
+>
+>> 
+>> But based on your suggestion i tried moving compatible to syscon binding and made dtbs_check here.
+>> 
+>> I can confirm dropping the unexpected properties reported by syscon binding (power-domain-cells,clock-cells,adress-cells and size-cells) are not needed for function (xsphy and ethernet).
+>> 
+>> For verifying that there are really no clocks/resets in topmisc (have not found it in public available register documents) i asked mtk (waiting for answer).
+>> 
+>> Also got it working without the syscon compatible by changing ethernet driver too (after this change xsphy was also working).
+>
+>Perfect, a bit of a cleanup and you're done, then!
+>
+>Cheers!
+>
+>> 
+>> Eth:
+>> https://github.com/frank-w/BPI-Router-Linux/commit/d866e648717800b6f6395ad36c38f9effcf0498d
+>> Xsphy:
+>> <https://github.com/frank-w/BPI-Router-Linux/commit/0121a94df99700487704ca056b210b13db07e90c>
+>> 
+>> regards Frank
+>
+>
+>
 
+Got response from MTK and basicly topmisc contains a powercontroller (for cpu and internal 2g5) but currently not needed because ATF already switch this on. The second part is the pcs/phy muxing and 3rd some unneeded switches (where i have no detailed information). But no clocks or resets as these are handled in the connected platform driver (xsphy/ethernet).
 
-On 14/04/25 16:41, Tomi Valkeinen wrote:
-> The Cadence DSI requires negative syncs from the incoming video signal,
-> but at the moment that requirement is not expressed in any way. If the
-> crtc decides to use positive syncs, things break down.
-> 
-> Use the adjusted_mode in atomic_check to set the sync flags to negative
-> ones.
-> 
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-> ---
->  drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
-> 
+So my original binding imho made more sense.
 
-Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
+The syscon binding seems to need syscon fallback and shows error about unexpected "compatible" property. The binding itself does not contain any properties but references syscon-common where iiuc compatible property must have at least 2 items and requires the "syscon" fallback.
 
--- 
-Regards
-Aradhya
+Mtk suggests splitting topmisc into the 2 blocks by only using the mux part as syscon with splitting the reg. If powerdomain really is needed then a second topmisc node could be added and bound to a new driver.
 
+But this would need a bit more of testing.
+regards Frank
 
 -- 
 linux-phy mailing list
