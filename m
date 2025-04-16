@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59917C369BD
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 10:33:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6585AC369C5
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 10:33:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m+SDawC7/PXuskF1bFpirIiULRKJ3BfQcLWFXauaQyA=; b=5EF8PXxk95N1Hj
-	yWJvVj59Q8L3Xz3Wu0mKYH7zSiivziWjENz2FuLTa6xPwGkHW/q3P4cDup/4lr1i++sCxyCVW/zzC
-	zesbfoY8ZGYUfcHFKxkQ5aGCukHAZRHFnnOvRxuds3tBOKCNu+X990TONDk95IrX5aBLr/ULkeTyz
-	rK3TJR53wC4RStQP+A7ktiRweIJu17+dys1bK+c7eUi4VflLjzo58GOin42W4EO/dbRcJ5UeYtIfD
-	dZxri7RiXk5rVszflPfWzlVqSBnSw9G+VmeSNhJuomVRccH/c5lwhwCxJI2gUSxzweDMa9EyQo0oy
-	JQZ7hLtUzFFHzmi8MIyA==;
+	List-Owner; bh=yxAFgUe4zhczd374Qjo1TQN3xINPt0NN3KzQDk3PezY=; b=sgq1D57cWM85i/
+	zOLl7hncoE3RHOUDB4XaqCYhFLEOSSkHwxLpIkpD2oKqif89b/U5shAYYLzWqcshW7oFiHXE/1A0f
+	29ejtPoSLrILongtO9wKxj56ifzCj6INPCn3rhIBRBWaKig2AbMBYMXG0usXRA1Oc2JUqAqm8sIpJ
+	a7Vlc7gMSKRSCJuaRe1v0Ztg8/lj0KuFKfBTgPpVnoSas9FPJYWTFzDte9qL2pCfl9OySPHN9oVf3
+	RP0Jb8RpwCEd/9q2FBg/XPjRyjtRI81/ViDlBN81PgruEFUEYOd7XkdmVG6D8MriWVHuH3ITayzDP
+	NigWgakWAqWeKM2QO75g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u504u-00000009CED-0APU;
-	Wed, 16 Apr 2025 10:33:12 +0000
-Received: from mxout2.routing.net ([2a03:2900:1:a::b])
+	id 1u504v-00000009CHo-42h7;
+	Wed, 16 Apr 2025 10:33:13 +0000
+Received: from mxout4.routing.net ([2a03:2900:1:a::9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4zTK-0000000935E-49KZ;
-	Wed, 16 Apr 2025 09:54:24 +0000
+	id 1u4zTN-0000000936e-0QuQ;
+	Wed, 16 Apr 2025 09:54:26 +0000
 Received: from mxbox3.masterlogin.de (unknown [192.168.10.78])
-	by mxout2.routing.net (Postfix) with ESMTP id 7AFE65FD8F;
-	Wed, 16 Apr 2025 09:54:21 +0000 (UTC)
+	by mxout4.routing.net (Postfix) with ESMTP id 29098101211;
+	Wed, 16 Apr 2025 09:54:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1744797261;
+	s=20200217; t=1744797263;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=T4cXuAtgUs1MzeQPNLofj0xLDBzZAy2dVcqVMZRNRe8=;
-	b=TPJyp0WfXF/jAxsru8seatfdEiB0yh7loihj2kwzcA+bXYxZ6CxtxtoDxRQE7IJBDYj+da
-	GwBbt67XO0Bk0PqE9vj0VesWebJDn8konX1dKupwD96WQTcdVeSBzjKmfphOH7oeu+b5gp
-	r9ZRUP4DwWdJX9xh1iZKISYq5pKa2JA=
+	bh=/1encuTVAcrrucgWTZkTd+WBasAHgfxaRmuM38brREg=;
+	b=oEMXnpNJiECwDtBUataqIbbBkdC8VpsV5TaLlhjUiBR29Zo0llf+CHRkYR+wzsHChOqYJo
+	vTOmJZtONjz6HNTxipujEWWorwBISef7Nro01YDdRnFCg5AMPwnjlIfuOiXBhGVWwg5MBQ
+	NdadIfHxPL7DO3x5eWPGojcCp8o0Gyk=
 Received: from frank-u24.. (fttx-pool-80.245.72.47.bambit.de [80.245.72.47])
-	by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 7EBB73602DE;
-	Wed, 16 Apr 2025 09:54:20 +0000 (UTC)
+	by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 4905D360084;
+	Wed, 16 Apr 2025 09:54:22 +0000 (UTC)
 From: Frank Wunderlich <linux@fw-web.de>
 To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -61,18 +61,17 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v3 5/8] dt-bindings: mfd: syscon: Add mt7988-topmisc
-Date: Wed, 16 Apr 2025 11:53:57 +0200
-Message-ID: <20250416095402.90543-6-linux@fw-web.de>
+Subject: [PATCH v3 7/8] arm64: dts: mediatek: mt7988: Add xsphy for ssusb0/pcie2
+Date: Wed, 16 Apr 2025 11:53:59 +0200
+Message-ID: <20250416095402.90543-8-linux@fw-web.de>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250416095402.90543-1-linux@fw-web.de>
 References: <20250416095402.90543-1-linux@fw-web.de>
 MIME-Version: 1.0
-X-Mail-ID: eea6f89b-b660-4cd0-b880-70c4cda35fb3
+X-Mail-ID: ddb25738-050a-4fc7-8795-db407a6b1ea9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_025423_170139_577A7171 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250416_025425_288318_CA5658CF 
+X-CRM114-Status: GOOD (  10.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,39 +90,81 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Frank Wunderlich <frank-w@public-files.de>
 
-Add compatible for Mediatek mt7988 topmisc syscon.
-This hardware block contains 2 functional blocks
-
-- a powercontroller which is not needed (switched by atf)
-- a multiplexer for high-speed Combo-Phy
-
-This compatible is only for the multiplexer part.
+First usb and third pcie controller on mt7988 need a xs-phy to work
+properly.
 
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
- Documentation/devicetree/bindings/mfd/syscon.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+v3:
+- drop unneeded properties and compatibles from topmisc
+- xsphy unit name not changed because binding requires this name (not only phy)
+- also not changed port names to be clear abour which phy is used (mt7988 also have tphy)
+- change offset to have clean syscon (without power controller)
+---
+ arch/arm64/boot/dts/mediatek/mt7988a.dtsi | 36 +++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mfd/syscon.yaml b/Documentation/devicetree/bindings/mfd/syscon.yaml
-index c6bbb19c3e3e..4f3d522bc3de 100644
---- a/Documentation/devicetree/bindings/mfd/syscon.yaml
-+++ b/Documentation/devicetree/bindings/mfd/syscon.yaml
-@@ -84,6 +84,7 @@ select:
-           - mediatek,mt2701-pctl-a-syscfg
-           - mediatek,mt2712-pctl-a-syscfg
-           - mediatek,mt6397-pctl-pmic-syscfg
-+          - mediatek,mt7988-topmisc
-           - mediatek,mt8135-pctl-a-syscfg
-           - mediatek,mt8135-pctl-b-syscfg
-           - mediatek,mt8173-pctl-a-syscfg
-@@ -187,6 +188,7 @@ properties:
-           - mediatek,mt2701-pctl-a-syscfg
-           - mediatek,mt2712-pctl-a-syscfg
-           - mediatek,mt6397-pctl-pmic-syscfg
-+          - mediatek,mt7988-topmisc
-           - mediatek,mt8135-pctl-a-syscfg
-           - mediatek,mt8135-pctl-b-syscfg
-           - mediatek,mt8173-pctl-a-syscfg
+diff --git a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
+index 88b56a24efca..72792f4ccde3 100644
+--- a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
+@@ -334,6 +334,8 @@ usb@11190000 {
+ 				 <&infracfg CLK_INFRA_133M_USB_HCK>,
+ 				 <&infracfg CLK_INFRA_USB_XHCI>;
+ 			clock-names = "sys_ck", "ref_ck", "mcu_ck", "dma_ck", "xhci_ck";
++			phys = <&xphyu2port0 PHY_TYPE_USB2>,
++			       <&xphyu3port0 PHY_TYPE_USB3>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -398,6 +400,9 @@ pcie2: pcie@11280000 {
+ 			pinctrl-0 = <&pcie2_pins>;
+ 			status = "disabled";
+ 
++			phys = <&xphyu3port0 PHY_TYPE_PCIE>;
++			phy-names = "pcie-phy";
++
+ 			#interrupt-cells = <1>;
+ 			interrupt-map-mask = <0 0 0 0x7>;
+ 			interrupt-map = <0 0 0 1 &pcie_intc2 0>,
+@@ -548,6 +553,37 @@ tphyu3port0: usb-phy@11c50700 {
+ 			};
+ 		};
+ 
++
++		topmisc: system-controller@11d10000 {
++			compatible = "mediatek,mt7988-topmisc",
++				     "syscon";
++			reg = <0 0x11d10084 0 0xff80>;
++		};
++
++		xs-phy@11e10000 {
++			compatible = "mediatek,mt7988-xsphy",
++				     "mediatek,xsphy";
++			#address-cells = <2>;
++			#size-cells = <2>;
++			ranges;
++			status = "disabled";
++
++			xphyu2port0: usb-phy@11e10000 {
++				reg = <0 0x11e10000 0 0x400>;
++				clocks = <&infracfg CLK_INFRA_USB_UTMI>;
++				clock-names = "ref";
++				#phy-cells = <1>;
++			};
++
++			xphyu3port0: usb-phy@11e13000 {
++				reg = <0 0x11e13400 0 0x500>;
++				clocks = <&infracfg CLK_INFRA_USB_PIPE>;
++				clock-names = "ref";
++				#phy-cells = <1>;
++				mediatek,syscon-type = <&topmisc 0x194 0>;
++			};
++		};
++
+ 		clock-controller@11f40000 {
+ 			compatible = "mediatek,mt7988-xfi-pll";
+ 			reg = <0 0x11f40000 0 0x1000>;
 -- 
 2.43.0
 
