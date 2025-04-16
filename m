@@ -4,74 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FACBC369C4
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 10:33:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C9B0C369C2
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KU4sPBOUOO5GywYXBkknAa2ufmFBu223Iw+9458S0Kk=; b=DU4k2SPQYBFu+q
-	qA8KsAxbfBXWX6c/V+znttkib9IMIU6qULW4UMJu6xnQhLpyjR63BHIryN8eXQkcVSzZ3w6jaM1MF
-	Sf7cLLxQSncmF53ljvVHjWyG7RLy76urvhPgtY3K5gqe1pOnED8M/fgA54D0teXWv9SRGX/uBV5k3
-	zKxMjCF+j85tfOhuV3pj1OzBKMC97gHNorhAJi51K65DSX0UAukB3AQoYf6QYNG+pLMjxigCx+9It
-	SgFh29CkA6KJ1dylYubq6D3Lr3Oqp/AlDBvapqh6j7RkLqcqyiKFCUCI0RZIsBRDLSzxFwTKpABfp
-	kGf3j6PHpO4xHJ9erkmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sHC5glm4+CaH08OhGmZRfGeL+6dMMMkTXEYcQeX9jx0=; b=r8fekqfeVo8txo
+	+avD9EJsvDpQTgQDjtXytJpihtrpBgzP4SPA5G4yKAEr1TXisImd/8Y4XKlf7OklaBLMtXmaVRBdK
+	gQYvYyZmGXeRbTseZXj39ekn6Iwmarol9nYsCTAzJggmStZ/nDjKXhm+y4wCY/8/lqxsmlN4c1s+S
+	+DA625r7TZAEHimRbMCQv7o5QnlcJx2AOoyZ4FgecA8c4AjUfwLKnIDicGptEqEF2GzxCZ0zNZmr2
+	dP7goBHOpvE60jFT05pI03guxIEyj/jlBn251Rv6txSzyq8alxDX/wCLT72g6JzVSoECdQ8dTWhvj
+	orNlVtBGccCkh9FDvOdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5053-00000009CTU-0J7h;
-	Wed, 16 Apr 2025 10:33:21 +0000
-Received: from mxout4.routing.net ([2a03:2900:1:a::9])
+	id 1u51V9-00000009Qsy-2Pd5;
+	Wed, 16 Apr 2025 12:04:23 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4zTN-0000000936u-3mDB;
-	Wed, 16 Apr 2025 09:54:27 +0000
-Received: from mxbox3.masterlogin.de (unknown [192.168.10.78])
-	by mxout4.routing.net (Postfix) with ESMTP id 52A8810120A;
-	Wed, 16 Apr 2025 09:54:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1744797262;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=WwQBx5fEB+uvLYfypIdunG+zLMu/9QNNGo72DjZopiw=;
-	b=LO3/i1GiLZ/5iIBRfVfr5RyXRrZ/Vg41LIGx+uVsOa72fDur3fwrbHHuZGC8fzKdTiLnkk
-	ZOas2dJNW5dZavmvotOWGPMtK5ZcLwgeYjs9nxLVRk839T1vi3teujDfwce8+aj7KZ/rL1
-	JbJbtUYEsn2/Y5re/PZOdVhrfPjQGek=
-Received: from frank-u24.. (fttx-pool-80.245.72.47.bambit.de [80.245.72.47])
-	by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 68167360C65;
-	Wed, 16 Apr 2025 09:54:21 +0000 (UTC)
-From: Frank Wunderlich <linux@fw-web.de>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Frank Wunderlich <frank-w@public-files.de>,
-	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
-	Daniel Golle <daniel@makrotopia.org>,
-	Sean Wang <sean.wang@mediatek.com>,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
+	id 1u51TF-00000009QMi-33Bx;
+	Wed, 16 Apr 2025 12:02:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1744804943;
+	bh=sHNaG5FwaoJr2EsT3BMvvyYUM4RyedYboD9i3EOOPtA=;
+	h=From:To:Cc:Subject:Date:From;
+	b=a+tQiH6QhgNo0Gjgwa5imwKxjwHYMVK9O6E3UtmlP/qQqarWsxbhvjPfedyOAh9Xv
+	 FkGo6679ER2B4fxxkxI1rSG0Cx+umoqrTAQ2IUjGgxpFvajDz4kJfpqewHzT4bFScR
+	 gv8irIVt3Ga6OtfSwgupYQYLxWxgjxZp9lmMq2hC/sAkFR0qjqwNd+vWNQJIiTIHbm
+	 nUSwb9BPor4HcN0dkqiPnxlzUm7pLdH49ZsQnJxDXwXaI/3sFsXMHn5VEAboz/2m1e
+	 twEeeaUga5/OIBKEYxcMpn8OEyEdF++hV9Uu2G4P2SNirpyEDTe2Zp9xqIMYJAX8Sg
+	 dIPoaqrWhCmRg==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6914C17E35EB;
+	Wed, 16 Apr 2025 14:02:22 +0200 (CEST)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: chunfeng.yun@mediatek.com
+Cc: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v3 6/8] phy: mediatek: xsphy: support type switch by pericfg
-Date: Wed, 16 Apr 2025 11:53:58 +0200
-Message-ID: <20250416095402.90543-7-linux@fw-web.de>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250416095402.90543-1-linux@fw-web.de>
-References: <20250416095402.90543-1-linux@fw-web.de>
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com
+Subject: [PATCH 1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for MT6893
+Date: Wed, 16 Apr 2025 14:02:19 +0200
+Message-ID: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.49.0
 MIME-Version: 1.0
-X-Mail-ID: d04aa45f-1d93-4d11-ada7-f6a9fc71389d
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_025426_217729_F9C86776 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20250416_050225_913954_8130A97C 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,175 +85,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Daniel Golle <daniel@makrotopia.org>
+Add support for the MediaTek Dimensity 1200 (MT6893) SoC: the DSI
+PHY found in this chip is fully compatible with the one found in
+the MT8183 SoC.
 
-Patch from Sam Shih <sam.shih@mediatek.com> found in MediaTek SDK
-released under GPL.
-
-Get syscon and use it to set the PHY type.
-Extend support to PCIe and SGMII mode in addition to USB2 and USB3.
-
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/phy/mediatek/phy-mtk-xsphy.c | 85 +++++++++++++++++++++++++++-
- 1 file changed, 84 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
-index 7c248f5cfca5..c0ddb9273cc3 100644
---- a/drivers/phy/mediatek/phy-mtk-xsphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
-@@ -11,10 +11,12 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/iopoll.h>
-+#include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/of_address.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/regmap.h>
- 
- #include "phy-mtk-io.h"
- 
-@@ -81,12 +83,22 @@
- #define XSP_SR_COEF_DIVISOR	1000
- #define XSP_FM_DET_CYCLE_CNT	1024
- 
-+/* PHY switch between pcie/usb3/sgmii */
-+#define USB_PHY_SWITCH_CTRL	0x0
-+#define RG_PHY_SW_TYPE		GENMASK(3, 0)
-+#define RG_PHY_SW_PCIE		0x0
-+#define RG_PHY_SW_USB3		0x1
-+#define RG_PHY_SW_SGMII		0x2
-+
- struct xsphy_instance {
- 	struct phy *phy;
- 	void __iomem *port_base;
- 	struct clk *ref_clk;	/* reference clock of anolog phy */
- 	u32 index;
- 	u32 type;
-+	struct regmap *type_sw;
-+	u32 type_sw_reg;
-+	u32 type_sw_index;
- 	/* only for HQA test */
- 	int efuse_intr;
- 	int efuse_tx_imp;
-@@ -259,6 +271,10 @@ static void phy_parse_property(struct mtk_xsphy *xsphy,
- 			inst->efuse_intr, inst->efuse_tx_imp,
- 			inst->efuse_rx_imp);
- 		break;
-+	case PHY_TYPE_PCIE:
-+	case PHY_TYPE_SGMII:
-+		/* nothing to do */
-+		break;
- 	default:
- 		dev_err(xsphy->dev, "incompatible phy type\n");
- 		return;
-@@ -305,6 +321,62 @@ static void u3_phy_props_set(struct mtk_xsphy *xsphy,
- 				     RG_XTP_LN0_RX_IMPSEL, inst->efuse_rx_imp);
- }
- 
-+/* type switch for usb3/pcie/sgmii */
-+static int phy_type_syscon_get(struct xsphy_instance *instance,
-+			       struct device_node *dn)
-+{
-+	struct of_phandle_args args;
-+	int ret;
-+
-+	/* type switch function is optional */
-+	if (!of_property_present(dn, "mediatek,syscon-type"))
-+		return 0;
-+
-+	ret = of_parse_phandle_with_fixed_args(dn, "mediatek,syscon-type",
-+					       2, 0, &args);
-+	if (ret)
-+		return ret;
-+
-+	instance->type_sw_reg = args.args[0];
-+	instance->type_sw_index = args.args[1] & 0x3; /* <=3 */
-+	instance->type_sw = syscon_node_to_regmap(args.np);
-+	of_node_put(args.np);
-+	dev_info(&instance->phy->dev, "type_sw - reg %#x, index %d\n",
-+		 instance->type_sw_reg, instance->type_sw_index);
-+
-+	return PTR_ERR_OR_ZERO(instance->type_sw);
-+}
-+
-+static int phy_type_set(struct xsphy_instance *instance)
-+{
-+	int type;
-+	u32 offset;
-+
-+	if (!instance->type_sw)
-+		return 0;
-+
-+	switch (instance->type) {
-+	case PHY_TYPE_USB3:
-+		type = RG_PHY_SW_USB3;
-+		break;
-+	case PHY_TYPE_PCIE:
-+		type = RG_PHY_SW_PCIE;
-+		break;
-+	case PHY_TYPE_SGMII:
-+		type = RG_PHY_SW_SGMII;
-+		break;
-+	case PHY_TYPE_USB2:
-+	default:
-+		return 0;
-+	}
-+
-+	offset = instance->type_sw_index * BITS_PER_BYTE;
-+	regmap_update_bits(instance->type_sw, instance->type_sw_reg,
-+			   RG_PHY_SW_TYPE << offset, type << offset);
-+
-+	return 0;
-+}
-+
- static int mtk_phy_init(struct phy *phy)
- {
- 	struct xsphy_instance *inst = phy_get_drvdata(phy);
-@@ -325,6 +397,10 @@ static int mtk_phy_init(struct phy *phy)
- 	case PHY_TYPE_USB3:
- 		u3_phy_props_set(xsphy, inst);
- 		break;
-+	case PHY_TYPE_PCIE:
-+	case PHY_TYPE_SGMII:
-+		/* nothing to do, only used to set type */
-+		break;
- 	default:
- 		dev_err(xsphy->dev, "incompatible phy type\n");
- 		clk_disable_unprepare(inst->ref_clk);
-@@ -403,12 +479,15 @@ static struct phy *mtk_phy_xlate(struct device *dev,
- 
- 	inst->type = args->args[0];
- 	if (!(inst->type == PHY_TYPE_USB2 ||
--	      inst->type == PHY_TYPE_USB3)) {
-+	      inst->type == PHY_TYPE_USB3 ||
-+	      inst->type == PHY_TYPE_PCIE ||
-+	      inst->type == PHY_TYPE_SGMII)) {
- 		dev_err(dev, "unsupported phy type: %d\n", inst->type);
- 		return ERR_PTR(-EINVAL);
- 	}
- 
- 	phy_parse_property(xsphy, inst);
-+	phy_type_set(inst);
- 
- 	return inst->phy;
- }
-@@ -510,6 +589,10 @@ static int mtk_xsphy_probe(struct platform_device *pdev)
- 			dev_err(dev, "failed to get ref_clk(id-%d)\n", port);
- 			return PTR_ERR(inst->ref_clk);
- 		}
-+
-+		retval = phy_type_syscon_get(inst, child_np);
-+		if (retval)
-+			return retval;
- 	}
- 
- 	provider = devm_of_phy_provider_register(dev, mtk_phy_xlate);
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
+index f6e494d0d89b..acdbce937b0a 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
+@@ -30,6 +30,7 @@ properties:
+           - const: mediatek,mt8173-mipi-tx
+       - items:
+           - enum:
++              - mediatek,mt6893-mipi-tx
+               - mediatek,mt8188-mipi-tx
+               - mediatek,mt8195-mipi-tx
+               - mediatek,mt8365-mipi-tx
 -- 
-2.43.0
+2.49.0
 
 
 -- 
