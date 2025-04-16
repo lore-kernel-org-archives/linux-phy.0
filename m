@@ -4,72 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4613DC369C2
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:06:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A18FC369C2
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:21:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rwhymOWVhnwv8gJ/5p+I2cDwllzBGDE1oVrL7oAXz98=; b=Oz6Y5Wze3jokbC
-	KocO/talrnTzDRPZ2lfKAj9Mfqvfi+bhfeusVTSE1M+AZ/lVyMVuJM9tchvWnoxQ07YmzVDtTLdKp
-	tXiGKW1MXtVFqM+3J4YX9Lp3vr97ujGyujERQYWTKqGcZoQ6w4eoN8TDjo2L1v24kNxTVzboOVXZh
-	d/+wwBxMDVmCL8k65jSv8LYG/ZH8M+1QTlK44TWT5VZkmFkROgegwLn4i5EhAK3RCbDzVsQx5zFJ3
-	jf0Wn7ApuKwIUa2HQUEMSVOEUaTHYzxQCyVwRc8Ukijkf/hhC+bIiq2rb8y+upN0dGF5npO6N5ryN
-	CVdNsiHn/nkzlk5fcZhA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wkcA9kYwStFM14dzqgNOLJKhcAP5D6tO8xm3ubqVYJQ=; b=Y87Rlgn7thkCxU
+	KD6QJal9/w6UZdsFScvw+6JEt8RHgTDHbZ+bfPnQru+c+YljQ2gH75UBI6fTSzulUPxz0c9lVr1ji
+	sia1Yh0BScCvIWG34raIl4/cK97imMfE9aLOOh1qLmIjXjTwlz+4IplV0gRDTeClu7+oSiVdJ5za9
+	ZS1OBqArjhojkQKtXMa6ROyKAj+xd3t5+dg02ZKrLZGbg8aOMG1lotgOQr1rD0Yv4IrXQpLduqBhJ
+	ZNrg8fkk95p9aPz51eOPZeFTREZjv2r5SyuEWmLx+Hh0g5rU3YtoSuomxS3Nv3A7ZEKH1PCu8P41K
+	Oqd2kdhs+EXN92Gi3Lpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51X2-00000009RPX-032M;
-	Wed, 16 Apr 2025 12:06:20 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1u51lo-00000009Ubo-39nF;
+	Wed, 16 Apr 2025 12:21:36 +0000
+Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51TG-00000009QMp-3DLo;
-	Wed, 16 Apr 2025 12:02:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1744804944;
-	bh=a6g2jhRqirUv8h05NZlOBx0HRIGjQJAVOh82JJL1Qg4=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=hgXHFWThh+GCcKfxosMPMmHs1KxZUdhd4w02g5UEGgrhfRzYu+yOHU/uBnsozMd+3
-	 xJM3GmOsV4vu0P+MA8B3tU6Bs5wbuyJZhE5TUkZfAt06wRCq3Q/NaPfWOGVmZzDsCn
-	 +hP/uh+Ln30e5UfU2j/nrOG2agQdfqPinMv91Kt85OWBCRJaU2O99UdtMv8ItBBUMj
-	 3DLtP8DtUyHHIMALF6oCn1XeD1BrqOISrEobZutGZTBAzbcdKsVtzWXbynbWF4W23Q
-	 dTvdsINDxp58GpBnpbTuxSHF7ujbr140BRr4n+y0khN632sJJMLbRB3HPmtbPhRvE3
-	 mptyseJOVpWPQ==
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 74C0717E3624;
-	Wed, 16 Apr 2025 14:02:23 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	chunkuang.hu@kernel.org,
-	p.zabel@pengutronix.de,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
+	id 1u51VF-00000009Qvy-0pJ0
+	for linux-phy@lists.infradead.org;
+	Wed, 16 Apr 2025 12:04:30 +0000
+Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-22c33677183so5698305ad.2
+        for <linux-phy@lists.infradead.org>; Wed, 16 Apr 2025 05:04:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744805068; x=1745409868; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=9tGlDQ1IGUwDLO9hraMXZmL07bXao+CXFFnK+kzwkl4=;
+        b=Ng1GE5vmBRGLGXW3v98Wjy6NkdehyWY6bobxPKR3i9UsiogtzWEzEQJehkSOBW8b3X
+         yDGEGJgU6nRmP5mDotabBTnyDYCmvbqmcNEmH0Z5ZcRDNQwqcSFIJDOWZByM1T7sBruU
+         0QAcvGJTyIu09+rXjMSpOetHLiT3ygB2b5l05rt0f9aIJZYDNfrx8Q8uWIIPWEGl89q6
+         o+qls5lHwRmLcTE2AzDDnSjEeIEtUazBZ3eKG81+UGlEPEzkZvPalhjcE4UNXfMJOYJV
+         znndAxFYYvpsbFHCv4ZhvYTvNlqDl9hIE8R9pWY4cA5GTvyFEBd1NXe2y42+UJJXV4nZ
+         BXIw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744805068; x=1745409868;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9tGlDQ1IGUwDLO9hraMXZmL07bXao+CXFFnK+kzwkl4=;
+        b=sWbI9HWBXktDUYPGf67S3L8tMKYkkkHG6/pc/sWCFt+KO6/fMdkMEF+fdlZW9mQSAj
+         HkZnd01RctCztfIJcFyHmy00RpTzavCeH9cR2/Ei3SGIoIZKVDIz1aiNPOgVpZ0PuCrp
+         YXx5SfSpz02JlJhFpQCRWg8Gft7xOH51LVjqBGUKYR7siuFqITSVdirV+VHk6aGyJnef
+         G09W/B6KP1mZKvHOqDD2+RDGLTtECziIEF5VlnOpl8c1semXG+r6G9JL2zpU9uOa1Ngb
+         VwU3oMb+8XkZMdCMb4w373NL0TNr0BjG8pyLwLdxzysCAiYgXK6ScjKFF/hukRUfkUmJ
+         4Wpg==
+X-Forwarded-Encrypted: i=1; AJvYcCV0Yyi3ovmivVpZ2phPt4o53uaDOOCPDq+i0vPIiA8eAI10GXhUQhfahfNK4e6jx+wLrUWKnqYuAjk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwhyCqXODFh0KzQqFceO4Msr6tp2EHTTCXB+L8cMLvfanGr6BWn
+	b+gw1HetsKoBbNn12FZ+4/8nb7cqFDYIXoikz8b1iLLVzgXXDwVc
+X-Gm-Gg: ASbGncsbO6lZjMsVgbXNtkPVIRZDGhTP+UFmQPWgRZ6vqHtTbWhVcHAnizSOui+qVLf
+	aYx3spyvY78lIbiOslsTCm+9V9YissAkL6Q9POIvAlBYusNCwvOEJvJy749ykZACl85acsJXYwx
+	w7jJ1pEZUcCARVET2ZJvzppeXSCWjUoOLNcLU/b5XwV1DMuQF7zC/tgTJk5EvKN4/CGVJi4YGqq
+	Mc29nV/pTB1eMmfojxwcF5rSHnThfvwjUe0jqZ5XbcUJcGVyw+hJRNYclm4RmLmjAqb0PTJ1uaY
+	nQ0f0ZURuCspcCfhrgkLBG1iYzqi7E2shliu/dfpTfmz1dS+AA==
+X-Google-Smtp-Source: AGHT+IGQweeqw93BBrEZ2xKPnpflNgKnyE2iuuUblGrDtL4/O2TrHxcy8ICju5cv/v4MTTf4qYa9rg==
+X-Received: by 2002:a17:902:cece:b0:223:619e:71e9 with SMTP id d9443c01a7336-22c358c4130mr19704575ad.11.1744805067880;
+        Wed, 16 Apr 2025 05:04:27 -0700 (PDT)
+Received: from nuvole.. ([144.202.86.13])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22c33febfb3sm12033385ad.259.2025.04.16.05.04.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 16 Apr 2025 05:04:27 -0700 (PDT)
+From: Pengyu Luo <mitltlatltl@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Pengyu Luo <mitltlatltl@gmail.com>,
+	Stephen Rothwell <sfr@canb.auug.org.au>,
+	Abel Vesa <abel.vesa@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	kernel@collabora.com
-Subject: [PATCH 2/2] dt-bindings: phy: mediatek,tphy: Add support for MT6893
-Date: Wed, 16 Apr 2025 14:02:20 +0200
-Message-ID: <20250416120220.147798-2-angelogioacchino.delregno@collabora.com>
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] phy: qualcomm: phy-qcom-eusb2-repeater: rework reg override handler
+Date: Wed, 16 Apr 2025 20:01:59 +0800
+Message-ID: <20250416120201.244133-1-mitltlatltl@gmail.com>
 X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
-References: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_050226_947970_074F8491 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20250416_050429_254928_E3D4680B 
+X-CRM114-Status: UNSURE (   6.18  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,26 +105,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible string for the MediaTek Dimensity 1200 (MT6893)
-SoC: this chip integrates a MediaTek generic T-PHY version 2.
+In downstream tree, many registers need to be overrided, it varies
+from devices and platforms, with these registers getting more, adding
+a handler for this is helpful.
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Pengyu Luo <mitltlatltl@gmail.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+Changes in v2:
+- Drop dts changes, backwards compatible now
+- Changes for dt-bindings (Krzysztof)
+- Drop sequence overrides to use single property (Dmitry)
+- Link to v1: https://lore.kernel.org/linux-arm-msm/20250405174319.405975-1-mitltlatltl@gmail.com
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-index 6be3aa4557e5..b2218c151939 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-@@ -78,6 +78,7 @@ properties:
-       - items:
-           - enum:
-               - mediatek,mt2712-tphy
-+              - mediatek,mt6893-tphy
-               - mediatek,mt7629-tphy
-               - mediatek,mt7986-tphy
-               - mediatek,mt8183-tphy
+---
+Pengyu Luo (2):
+  dt-bindings: phy: qcom,snps-eusb2-repeater: Add more tuning overrides
+  phy: qualcomm: phy-qcom-eusb2-repeater: rework reg override handler
+
+ .../phy/qcom,snps-eusb2-repeater.yaml         |  41 ++++++-
+ .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 105 +++++++++++++++---
+ 2 files changed, 130 insertions(+), 16 deletions(-)
+---
+base-commit: afd30f00ef898643491ce0c0c2571b3498f1a61e
+
 -- 
 2.49.0
 
