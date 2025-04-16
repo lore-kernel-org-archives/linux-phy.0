@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C9B0C369C2
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:04:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4613DC369C2
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:06:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sHC5glm4+CaH08OhGmZRfGeL+6dMMMkTXEYcQeX9jx0=; b=r8fekqfeVo8txo
-	+avD9EJsvDpQTgQDjtXytJpihtrpBgzP4SPA5G4yKAEr1TXisImd/8Y4XKlf7OklaBLMtXmaVRBdK
-	gQYvYyZmGXeRbTseZXj39ekn6Iwmarol9nYsCTAzJggmStZ/nDjKXhm+y4wCY/8/lqxsmlN4c1s+S
-	+DA625r7TZAEHimRbMCQv7o5QnlcJx2AOoyZ4FgecA8c4AjUfwLKnIDicGptEqEF2GzxCZ0zNZmr2
-	dP7goBHOpvE60jFT05pI03guxIEyj/jlBn251Rv6txSzyq8alxDX/wCLT72g6JzVSoECdQ8dTWhvj
-	orNlVtBGccCkh9FDvOdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rwhymOWVhnwv8gJ/5p+I2cDwllzBGDE1oVrL7oAXz98=; b=Oz6Y5Wze3jokbC
+	KocO/talrnTzDRPZ2lfKAj9Mfqvfi+bhfeusVTSE1M+AZ/lVyMVuJM9tchvWnoxQ07YmzVDtTLdKp
+	tXiGKW1MXtVFqM+3J4YX9Lp3vr97ujGyujERQYWTKqGcZoQ6w4eoN8TDjo2L1v24kNxTVzboOVXZh
+	d/+wwBxMDVmCL8k65jSv8LYG/ZH8M+1QTlK44TWT5VZkmFkROgegwLn4i5EhAK3RCbDzVsQx5zFJ3
+	jf0Wn7ApuKwIUa2HQUEMSVOEUaTHYzxQCyVwRc8Ukijkf/hhC+bIiq2rb8y+upN0dGF5npO6N5ryN
+	CVdNsiHn/nkzlk5fcZhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51V9-00000009Qsy-2Pd5;
-	Wed, 16 Apr 2025 12:04:23 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1u51X2-00000009RPX-032M;
+	Wed, 16 Apr 2025 12:06:20 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51TF-00000009QMi-33Bx;
-	Wed, 16 Apr 2025 12:02:27 +0000
+	id 1u51TG-00000009QMp-3DLo;
+	Wed, 16 Apr 2025 12:02:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1744804943;
-	bh=sHNaG5FwaoJr2EsT3BMvvyYUM4RyedYboD9i3EOOPtA=;
-	h=From:To:Cc:Subject:Date:From;
-	b=a+tQiH6QhgNo0Gjgwa5imwKxjwHYMVK9O6E3UtmlP/qQqarWsxbhvjPfedyOAh9Xv
-	 FkGo6679ER2B4fxxkxI1rSG0Cx+umoqrTAQ2IUjGgxpFvajDz4kJfpqewHzT4bFScR
-	 gv8irIVt3Ga6OtfSwgupYQYLxWxgjxZp9lmMq2hC/sAkFR0qjqwNd+vWNQJIiTIHbm
-	 nUSwb9BPor4HcN0dkqiPnxlzUm7pLdH49ZsQnJxDXwXaI/3sFsXMHn5VEAboz/2m1e
-	 twEeeaUga5/OIBKEYxcMpn8OEyEdF++hV9Uu2G4P2SNirpyEDTe2Zp9xqIMYJAX8Sg
-	 dIPoaqrWhCmRg==
+	s=mail; t=1744804944;
+	bh=a6g2jhRqirUv8h05NZlOBx0HRIGjQJAVOh82JJL1Qg4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=hgXHFWThh+GCcKfxosMPMmHs1KxZUdhd4w02g5UEGgrhfRzYu+yOHU/uBnsozMd+3
+	 xJM3GmOsV4vu0P+MA8B3tU6Bs5wbuyJZhE5TUkZfAt06wRCq3Q/NaPfWOGVmZzDsCn
+	 +hP/uh+Ln30e5UfU2j/nrOG2agQdfqPinMv91Kt85OWBCRJaU2O99UdtMv8ItBBUMj
+	 3DLtP8DtUyHHIMALF6oCn1XeD1BrqOISrEobZutGZTBAzbcdKsVtzWXbynbWF4W23Q
+	 dTvdsINDxp58GpBnpbTuxSHF7ujbr140BRr4n+y0khN632sJJMLbRB3HPmtbPhRvE3
+	 mptyseJOVpWPQ==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6914C17E35EB;
-	Wed, 16 Apr 2025 14:02:22 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 74C0717E3624;
+	Wed, 16 Apr 2025 14:02:23 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: chunfeng.yun@mediatek.com
 Cc: vkoul@kernel.org,
@@ -60,14 +60,16 @@ Cc: vkoul@kernel.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	kernel@collabora.com
-Subject: [PATCH 1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for MT6893
-Date: Wed, 16 Apr 2025 14:02:19 +0200
-Message-ID: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 2/2] dt-bindings: phy: mediatek,tphy: Add support for MT6893
+Date: Wed, 16 Apr 2025 14:02:20 +0200
+Message-ID: <20250416120220.147798-2-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.49.0
+In-Reply-To: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
+References: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_050225_913954_8130A97C 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20250416_050226_947970_074F8491 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,27 +87,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the MediaTek Dimensity 1200 (MT6893) SoC: the DSI
-PHY found in this chip is fully compatible with the one found in
-the MT8183 SoC.
+Add a compatible string for the MediaTek Dimensity 1200 (MT6893)
+SoC: this chip integrates a MediaTek generic T-PHY version 2.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-index f6e494d0d89b..acdbce937b0a 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
-@@ -30,6 +30,7 @@ properties:
-           - const: mediatek,mt8173-mipi-tx
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index 6be3aa4557e5..b2218c151939 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -78,6 +78,7 @@ properties:
        - items:
            - enum:
-+              - mediatek,mt6893-mipi-tx
-               - mediatek,mt8188-mipi-tx
-               - mediatek,mt8195-mipi-tx
-               - mediatek,mt8365-mipi-tx
+               - mediatek,mt2712-tphy
++              - mediatek,mt6893-tphy
+               - mediatek,mt7629-tphy
+               - mediatek,mt7986-tphy
+               - mediatek,mt8183-tphy
 -- 
 2.49.0
 
