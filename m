@@ -4,101 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80367C369BD
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 12:33:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F040EC369C7
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 20:26:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ArDJudgraO2pI6k9wcRUu8KNiaXQSHrR7jsrGu/oHkg=; b=MXDLJSVHeloN9h
-	UsutFjxioMbfwGBQT6Cg64z24Xu4s4Yr3ivtaYjxSn6hcZaEatf52m77XUA/ebCVLZYIH381uH8BI
-	fSrnhhT5k9Jv+DB3lj5+aWl6ziZ7xZi0L9BvTAXothNNyujEqVrAyt0AFdCUoHSbrNGcBrXvH0CGk
-	1tMvfiKf2eiojOee79jgjkRmZXNLW0OXb0mEmws5HINWarhBnpeQ5q5k8xO+HHLvg0gDFukpAO12d
-	JxQzpf+izpx+f+wa2l9+q3LR6q0HBo/RaXPcC4RLA9WrIGZG6/YCVl05UqnO3Sg/cqsfWvCyJJuHj
-	7tuzcM3fFK7j3m1NdYjw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T2nowJyWX10J48pQS2oCAC8BDOWpV8tPNrY5g1KexUY=; b=QSvNs8mM2ffLbh
+	uh7WjkWw+6X4b2BjHZL3tzwOznTdRNH6M4u7oYEwEwPm38N1BQOaRSZKwXO+PEo/xIHzmMEaCvkhv
+	tAyKWCc0a2ol71pNa9VJzjBWXaJzAZ4P0yygUncm8GqcVmGuWZFoW+w05yBnuw2hpSvaYo6V6YvFP
+	Ogph4v7uIj0lVkmeujzt6OcB5HtiPz8CYoBsKKTj9HxSFACbFl/mFWArFHI9cCxqkPuxZDC9dz4MN
+	IKJYhMy6X5c0/Xa7dTj0IgkHRb3f8/d3v2yOxtR8WhH7j07nZ/i6z30KSI0yq2KNei1vmSvTQPr+e
+	gaNgTONzZrF1tVwzkhuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51ws-00000009WhY-0Vc9;
-	Wed, 16 Apr 2025 12:33:02 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u59L0-0000000AoYT-1me7;
+	Wed, 16 Apr 2025 20:26:26 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u51rC-00000009VZ3-0VSG
-	for linux-phy@lists.infradead.org;
-	Wed, 16 Apr 2025 12:27:11 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53G9mDWb020542;
-	Wed, 16 Apr 2025 12:26:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IswbPGGAP13igDj4nUq3J/kuUfd/m5Ej3KjQNHq8od4=; b=b9cfPWqjX1XKpoPg
-	kPoUli2LAAhrjtwAo0V7+4+k9cd/ir+khsqSP4dTm6HK/iMDQv5hJsPjtpIa3fwy
-	vTcUEIU/oMF/uSP5vZR39NbYsZbD8OQPXIALW2bI4DVGC+nur8uzx9QFn4GYdPTI
-	Do25HCgfY/Io/mz9jslE7JDnLJ3gAFBqV+0TFE7Nn4lgCiQWHv4Zhm9wDJocK1ah
-	z8aO+7aQVQVWTkQpOA3Ppuf9tLJdvGRQgAWAlw2rYDTHDtk9JT0FPvPIPyCQ3H7/
-	7/r78H2wXMFDFa3MGQWvTvOUcuOxu5aGtxbltfFLH9dfaQlXowEPEpZukywexPjH
-	TRBxlg==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yg8wkfue-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Apr 2025 12:26:52 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53GCQpdw000371
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 16 Apr 2025 12:26:51 GMT
-Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 16 Apr
- 2025 05:26:47 -0700
-Message-ID: <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
-Date: Wed, 16 Apr 2025 17:56:44 +0530
+	id 1u59J6-0000000Ao40-1Iiz;
+	Wed, 16 Apr 2025 20:24:29 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 013D6A4896B;
+	Wed, 16 Apr 2025 20:18:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6DD6C4CEE2;
+	Wed, 16 Apr 2025 20:24:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1744835067;
+	bh=WfUFnz3XQTI9rQiMVaDEIMykc9/pCuEV+oouum9Aruw=;
+	h=From:To:Cc:Subject:Date:From;
+	b=fus07UYxBpb6RauZcuhpJUcoUAcoOkj1CKhhdPf9Tnx40vE9AaTWrOKp0/0iiRNDb
+	 6EnmLxkyS9qEZtI1sGOSie29mEmD/BeglKRiK4GQBxIplbam6U4hayLkXmc2r455hp
+	 nNAZytskGxUX+AqAZ6Z+3qr5W2vnx2b94HiP05BmdrS5d1Wuhtg5InI2GesflU7tcb
+	 0S/Ro4gkncRKTSVmAqeKV+I51JohxVqpI2NwBfVVAbOT5Q4214KKma0GeVcC8kald7
+	 IbntXwb2z5JkBjnuw++LRvy8YFosEVb7ApJOS8BTFXmMoQ7STaNkCIEKXMCpWIO0nI
+	 7daRXh8veDorw==
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org
+Subject: [PATCH v2] dt-bindings: phy: rockchip: Convert RK3399 Type-C PHY to schema
+Date: Wed, 16 Apr 2025 15:24:17 -0500
+Message-ID: <20250416202419.3836688-1-robh@kernel.org>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 4/9] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>,
-        <manivannan.sadhasivam@linaro.org>,
-        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
-        <bvanassche@acm.org>, <bjorande@quicinc.com>,
-        <neil.armstrong@linaro.org>, <konrad.dybcio@oss.qualcomm.com>,
-        <quic_rdwivedi@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>
-References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
- <20250410090102.20781-5-quic_nitirawa@quicinc.com>
- <pur4y63xhfmqlyymg4pehk37ry4gg22h24zceoqjbsxp3hj4yf@4kptase3c4qp>
- <317faeaa-3130-4e28-8c5d-441a76aa79b4@quicinc.com>
- <CAO9ioeXnnbNzriVOYPUeBiWdrPfYUcMk+pVWYv0vZpJbFeByoQ@mail.gmail.com>
- <2820908b-4548-4e0a-94b2-6065cb5ff1f3@quicinc.com>
- <c2ec6b7c-421d-43c3-8c0a-de4f7bdd867c@oss.qualcomm.com>
- <a24ff510-2afd-4aa7-a026-199fb6d87287@quicinc.com>
- <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=E9TNpbdl c=1 sm=1 tr=0 ts=67ffa20d cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=bthNQ_mdbZiY202X5xgA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: uf2_nzWwdmzDjmWmCrk70h3bkkY1PG-C
-X-Proofpoint-GUID: uf2_nzWwdmzDjmWmCrk70h3bkkY1PG-C
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-16_04,2025-04-15_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- mlxscore=0 bulkscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
- suspectscore=0 mlxlogscore=999 spamscore=0 priorityscore=1501
- impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504160102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_052710_349902_2122CAD1 
-X-CRM114-Status: GOOD (  22.41  )
+X-CRM114-CacheID: sfid-20250416_132428_474567_6CE8BE4E 
+X-CRM114-Status: GOOD (  18.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,98 +73,259 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Convert the Rockchip RK3399 Type-C PHY to DT schema format. Add the
+missing "power-domains" property and "port" and "orientation-switch"
+properties in the child nodes.
 
+Omit the previously deprecated properties as they aren't used anywhere.
 
-On 4/16/2025 5:43 PM, Dmitry Baryshkov wrote:
-> On Wed, 16 Apr 2025 at 12:08, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
->>
->>
->>
->> On 4/15/2025 2:59 PM, Dmitry Baryshkov wrote:
->>> On 14/04/2025 23:34, Nitin Rawat wrote:
->>>>
->>>>
->>>> On 4/11/2025 4:38 PM, Dmitry Baryshkov wrote:
->>>>> On Fri, 11 Apr 2025 at 13:50, Nitin Rawat <quic_nitirawa@quicinc.com>
->>>>> wrote:
->>>>>>
->>>>>>
->>>>>>
->>>>>> On 4/11/2025 1:38 AM, Dmitry Baryshkov wrote:
->>>>>>> On Thu, Apr 10, 2025 at 02:30:57PM +0530, Nitin Rawat wrote:
->>>>>>>> Refactor the UFS PHY reset handling to parse the reset logic only
->>>>>>>> once
->>>>>>>> during probe, instead of every resume.
->>>>>>>>
->>>>>>>> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
->>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume.
->>>>>>>
->>>>>>> How did you solve the circular dependency issue being noted below?
->>>>>>
->>>>>> Hi Dmitry,
->>>>>> As part of my patch, I moved the parsing logic from qmp_phy_power_on to
->>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume. I'm uncertain
->>>>>> about the circular dependency issue and whether if it still exists.
->>>>>
->>>>> It surely does. The reset controller is registered in the beginning of
->>>>> ufs_qcom_init() and the PHY is acquired only a few lines below. It
->>>>> creates a very small window for PHY driver to probe.
->>>>> Which means, NAK, this patch doesn't look acceptable.
->>>>
->>>> Hi Dmitry,
->>>>
->>>> Thanks for pointing this out. I agree that it leaves very little time
->>>> for the PHY to probe, which may cause issues with targets where
->>>> no_pcs_sw_reset is set to true.
->>>>
->>>> As an experiment, I kept no_pcs_sw_reset set to true for the SM8750,
->>>> and it caused bootup probe issues in some of the iterations I ran.
->>>>
->>>> To address this, I propose updating the patch to move the
->>>> qmp_ufs_get_phy_reset call to phy_calibrate, just before the
->>>> reset_control_assert call.
->>>
->>> Will it cause an issue if we move it to phy_init() instead of
->>> phy_calibrate()?
->>
->> Hi Dmitry,
->>
->> Thanks for suggestion.
->> Phy_init is invoked before phy_set_mode_ext and ufs_qcom_phy_power_on,
->> whereas calibrate is called after ufs_qcom_phy_power_on. Keeping the UFS
->> PHY reset in phy_calibrate introduces relatively more delay, providing
->> more buffer time for the PHY driver probe, ensuring the UFS PHY reset is
->> handled correctly the first time.
-> 
-> We are requesting the PHY anyway, so the PHY driver should have probed
-> well before phy_init() call. I don't get this comment.
-> 
->>
->> Moving the calibration to phy_init shouldn't cause any issues. However,
->> since we currently don't have an initialization operations registered
->> for init, we would need to add a new PHY initialization ops if we decide
->> to move it to phy_init.
-> 
-> Yes. I don't see it as a problem. Is there any kind of an issue there?
+Drop the 2nd example which was pretty much identical to the 1st example.
 
-No issues. In my next patchset, I would add a new init ops registered 
-for qcom phy and move get ufs phy reset handler to it.
+Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 
-Regards,
-Nitin
+---
+v2:
+ - Update reference in rockchip,dwc3.yaml
+---
+ .../bindings/phy/phy-rockchip-typec.txt       |  84 -------------
+ .../phy/rockchip,rk3399-typec-phy.yaml        | 116 ++++++++++++++++++
+ .../bindings/usb/rockchip,dwc3.yaml           |   2 +-
+ 3 files changed, 117 insertions(+), 85 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
 
-> 
->>
->> Please let me know if this looks fine to you, or if you have any
->> suggestions. I am open to your suggestions.
-> 
-> phy_init() callback
-> 
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt
+deleted file mode 100644
+index 960da7fcaa9e..000000000000
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt
++++ /dev/null
+@@ -1,84 +0,0 @@
+-* ROCKCHIP type-c PHY
+----------------------
+-
+-Required properties:
+- - compatible : must be "rockchip,rk3399-typec-phy"
+- - reg: Address and length of the usb phy control register set
+- - rockchip,grf : phandle to the syscon managing the "general
+-   register files"
+- - clocks : phandle + clock specifier for the phy clocks
+- - clock-names : string, clock name, must be "tcpdcore", "tcpdphy-ref";
+- - assigned-clocks: main clock, should be <&cru SCLK_UPHY0_TCPDCORE> or
+-		    <&cru SCLK_UPHY1_TCPDCORE>;
+- - assigned-clock-rates : the phy core clk frequency, shall be: 50000000
+- - resets : a list of phandle + reset specifier pairs
+- - reset-names : string reset name, must be:
+-		 "uphy", "uphy-pipe", "uphy-tcphy"
+-
+-Optional properties:
+- - extcon : extcon specifier for the Power Delivery
+-
+-Required nodes : a sub-node is required for each port the phy provides.
+-		 The sub-node name is used to identify dp or usb3 port,
+-		 and shall be the following entries:
+-	* "dp-port" : the name of DP port.
+-	* "usb3-port" : the name of USB3 port.
+-
+-Required properties (port (child) node):
+-- #phy-cells : must be 0, See ./phy-bindings.txt for details.
+-
+-Deprecated properties, do not use in new device tree sources, these
+-properties are determined by the compatible value:
+- - rockchip,typec-conn-dir
+- - rockchip,usb3tousb2-en
+- - rockchip,external-psm
+- - rockchip,pipe-status
+-
+-Example:
+-	tcphy0: phy@ff7c0000 {
+-		compatible = "rockchip,rk3399-typec-phy";
+-		reg = <0x0 0xff7c0000 0x0 0x40000>;
+-		rockchip,grf = <&grf>;
+-		extcon = <&fusb0>;
+-		clocks = <&cru SCLK_UPHY0_TCPDCORE>,
+-			 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+-		clock-names = "tcpdcore", "tcpdphy-ref";
+-		assigned-clocks = <&cru SCLK_UPHY0_TCPDCORE>;
+-		assigned-clock-rates = <50000000>;
+-		resets = <&cru SRST_UPHY0>,
+-			 <&cru SRST_UPHY0_PIPE_L00>,
+-			 <&cru SRST_P_UPHY0_TCPHY>;
+-		reset-names = "uphy", "uphy-pipe", "uphy-tcphy";
+-
+-		tcphy0_dp: dp-port {
+-			#phy-cells = <0>;
+-		};
+-
+-		tcphy0_usb3: usb3-port {
+-			#phy-cells = <0>;
+-		};
+-	};
+-
+-	tcphy1: phy@ff800000 {
+-		compatible = "rockchip,rk3399-typec-phy";
+-		reg = <0x0 0xff800000 0x0 0x40000>;
+-		rockchip,grf = <&grf>;
+-		extcon = <&fusb1>;
+-		clocks = <&cru SCLK_UPHY1_TCPDCORE>,
+-			 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+-		clock-names = "tcpdcore", "tcpdphy-ref";
+-		assigned-clocks = <&cru SCLK_UPHY1_TCPDCORE>;
+-		assigned-clock-rates = <50000000>;
+-		resets = <&cru SRST_UPHY1>,
+-			 <&cru SRST_UPHY1_PIPE_L00>,
+-			 <&cru SRST_P_UPHY1_TCPHY>;
+-		reset-names = "uphy", "uphy-pipe", "uphy-tcphy";
+-
+-		tcphy1_dp: dp-port {
+-			#phy-cells = <0>;
+-		};
+-
+-		tcphy1_usb3: usb3-port {
+-			#phy-cells = <0>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
+new file mode 100644
+index 000000000000..91c011f68cd0
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
+@@ -0,0 +1,116 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,rk3399-typec-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip Type-C PHY
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3399-typec-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 2
++
++  clock-names:
++    items:
++      - const: tcpdcore
++      - const: tcpdphy-ref
++
++  extcon: true
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 3
++
++  reset-names:
++    items:
++      - const: uphy
++      - const: uphy-pipe
++      - const: uphy-tcphy
++
++  rockchip,grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle to the syscon managing the "general register files" (GRF).
++
++  dp-port:
++    type: object
++    additionalProperties: false
++
++    properties:
++      '#phy-cells':
++        const: 0
++
++      port:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Connection to USB Type-C connector
++
++    required:
++      - '#phy-cells'
++
++  usb3-port:
++    type: object
++    additionalProperties: false
++
++    properties:
++      '#phy-cells':
++        const: 0
++
++      orientation-switch: true
++
++      port:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Connection to USB Type-C connector SS port
++
++    required:
++      - '#phy-cells'
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - dp-port
++  - usb3-port
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3399-cru.h>
++
++    phy@ff7c0000 {
++        compatible = "rockchip,rk3399-typec-phy";
++        reg = <0xff7c0000 0x40000>;
++        rockchip,grf = <&grf>;
++        extcon = <&fusb0>;
++        clocks = <&cru SCLK_UPHY0_TCPDCORE>,
++           <&cru SCLK_UPHY0_TCPDPHY_REF>;
++        clock-names = "tcpdcore", "tcpdphy-ref";
++        resets = <&cru SRST_UPHY0>,
++                 <&cru SRST_UPHY0_PIPE_L00>,
++                 <&cru SRST_P_UPHY0_TCPHY>;
++        reset-names = "uphy", "uphy-pipe", "uphy-tcphy";
++
++        dp-port {
++            #phy-cells = <0>;
++        };
++
++        usb3-port {
++            #phy-cells = <0>;
++        };
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/usb/rockchip,dwc3.yaml b/Documentation/devicetree/bindings/usb/rockchip,dwc3.yaml
+index fba2cb05ecba..fd1b13c0ed6b 100644
+--- a/Documentation/devicetree/bindings/usb/rockchip,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/rockchip,dwc3.yaml
+@@ -18,7 +18,7 @@ description:
+   Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+ 
+   Type-C PHY
+-  Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt
++  Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
+ 
+ select:
+   properties:
+-- 
+2.47.2
 
 
 -- 
