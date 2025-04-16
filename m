@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E860C369C4
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 10:33:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59917C369BD
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Apr 2025 10:33:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=muNlJYilVItn7rRYmY+K/49grFb/CSOamWHOkhpQqQQ=; b=HCkZLJhZFxYf9g
-	6TZrC7JClrkKPDlJRPkX1N6RkS3E69RHud/DFuEkXZYJZSe1+kiM7pQwfa5RHqwlsiHqO7UKqeDx7
-	Qf5N/feINDhXylAjRAYObkOP6SUBoqc225ThlNPlB+BamOpTt3jrBh7zaJGbGxRFPXgH5vXy7xjNB
-	IW06Pf9n+YhYGNyesX+oM9T70aYFEnFHwVLlCT60CvuShH+YRUDRzykp6mIaL7gKecQT1iMohXwLU
-	t0xRvZcwVb7IuuokEJgfMGqQbROQ/7NE9wOBkbqDsvefbsqMgF7GaMn4PnKQWPvApKgJcwhCeCXQZ
-	x6r4vz5BSvi38jow+b6w==;
+	List-Owner; bh=m+SDawC7/PXuskF1bFpirIiULRKJ3BfQcLWFXauaQyA=; b=5EF8PXxk95N1Hj
+	yWJvVj59Q8L3Xz3Wu0mKYH7zSiivziWjENz2FuLTa6xPwGkHW/q3P4cDup/4lr1i++sCxyCVW/zzC
+	zesbfoY8ZGYUfcHFKxkQ5aGCukHAZRHFnnOvRxuds3tBOKCNu+X990TONDk95IrX5aBLr/ULkeTyz
+	rK3TJR53wC4RStQP+A7ktiRweIJu17+dys1bK+c7eUi4VflLjzo58GOin42W4EO/dbRcJ5UeYtIfD
+	dZxri7RiXk5rVszflPfWzlVqSBnSw9G+VmeSNhJuomVRccH/c5lwhwCxJI2gUSxzweDMa9EyQo0oy
+	JQZ7hLtUzFFHzmi8MIyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u504m-00000009C5f-3SOO;
-	Wed, 16 Apr 2025 10:33:04 +0000
-Received: from mxout4.routing.net ([2a03:2900:1:a::9])
+	id 1u504u-00000009CED-0APU;
+	Wed, 16 Apr 2025 10:33:12 +0000
+Received: from mxout2.routing.net ([2a03:2900:1:a::b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4zTK-0000000934c-1cMQ;
-	Wed, 16 Apr 2025 09:54:23 +0000
+	id 1u4zTK-0000000935E-49KZ;
+	Wed, 16 Apr 2025 09:54:24 +0000
 Received: from mxbox3.masterlogin.de (unknown [192.168.10.78])
-	by mxout4.routing.net (Postfix) with ESMTP id 83C66100D7B;
-	Wed, 16 Apr 2025 09:54:20 +0000 (UTC)
+	by mxout2.routing.net (Postfix) with ESMTP id 7AFE65FD8F;
+	Wed, 16 Apr 2025 09:54:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailerdienst.de;
-	s=20200217; t=1744797260;
+	s=20200217; t=1744797261;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=Tk944o+t28fwTlX6o9Q4U3/0SH31rFieSB+B7TGU3R0=;
-	b=oxckEjGQ55ln5RAA8KeA5PKqqQZXNmwZ0fLAbi7+fhNmAl47tcsVq+TCjXx2bDWlnIkIur
-	uoZ5Tm4mlNx9OAn12bs7bxkgZo1veF3Uxw6O5fWS1jmCeqs8+O1HOfWHCdVhl/o+YH4qKx
-	TwY4ZkGW1bc/CWKPqJsV6KQV9Bq/FLw=
+	bh=T4cXuAtgUs1MzeQPNLofj0xLDBzZAy2dVcqVMZRNRe8=;
+	b=TPJyp0WfXF/jAxsru8seatfdEiB0yh7loihj2kwzcA+bXYxZ6CxtxtoDxRQE7IJBDYj+da
+	GwBbt67XO0Bk0PqE9vj0VesWebJDn8konX1dKupwD96WQTcdVeSBzjKmfphOH7oeu+b5gp
+	r9ZRUP4DwWdJX9xh1iZKISYq5pKa2JA=
 Received: from frank-u24.. (fttx-pool-80.245.72.47.bambit.de [80.245.72.47])
-	by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 4A675360528;
-	Wed, 16 Apr 2025 09:54:19 +0000 (UTC)
+	by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 7EBB73602DE;
+	Wed, 16 Apr 2025 09:54:20 +0000 (UTC)
 From: Frank Wunderlich <linux@fw-web.de>
 To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -61,17 +61,17 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v3 4/8] dt-bindings: phy: mtk-xs-phy: support type switch by pericfg
-Date: Wed, 16 Apr 2025 11:53:56 +0200
-Message-ID: <20250416095402.90543-5-linux@fw-web.de>
+Subject: [PATCH v3 5/8] dt-bindings: mfd: syscon: Add mt7988-topmisc
+Date: Wed, 16 Apr 2025 11:53:57 +0200
+Message-ID: <20250416095402.90543-6-linux@fw-web.de>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250416095402.90543-1-linux@fw-web.de>
 References: <20250416095402.90543-1-linux@fw-web.de>
 MIME-Version: 1.0
-X-Mail-ID: 5a7bdc89-6d2f-403a-9e25-48950e628308
+X-Mail-ID: eea6f89b-b660-4cd0-b880-70c4cda35fb3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250416_025422_598515_AED4C236 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20250416_025423_170139_577A7171 
+X-CRM114-Status: UNSURE (   8.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,40 +91,39 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Frank Wunderlich <frank-w@public-files.de>
 
-Add support for type switch by pericfg register between USB3/PCIe.
+Add compatible for Mediatek mt7988 topmisc syscon.
+This hardware block contains 2 functional blocks
+
+- a powercontroller which is not needed (switched by atf)
+- a multiplexer for high-speed Combo-Phy
+
+This compatible is only for the multiplexer part.
 
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
- .../devicetree/bindings/phy/mediatek,xsphy.yaml  | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ Documentation/devicetree/bindings/mfd/syscon.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-index 3b5253659e6f..5033d77c1239 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-@@ -151,6 +151,22 @@ patternProperties:
-         minimum: 1
-         maximum: 31
- 
-+      mediatek,syscon-type:
-+        $ref: /schemas/types.yaml#/definitions/phandle-array
-+        maxItems: 1
-+        description:
-+          A phandle to syscon used to access the register of type switch,
-+          the field should always be 3 cells long.
-+        items:
-+          items:
-+            - description:
-+                The first cell represents a phandle to syscon
-+            - description:
-+                The second cell represents the register offset
-+            - description:
-+                The third cell represents the index of config segment
-+              enum: [0, 1, 2, 3]
-+
-     required:
-       - reg
-       - clocks
+diff --git a/Documentation/devicetree/bindings/mfd/syscon.yaml b/Documentation/devicetree/bindings/mfd/syscon.yaml
+index c6bbb19c3e3e..4f3d522bc3de 100644
+--- a/Documentation/devicetree/bindings/mfd/syscon.yaml
++++ b/Documentation/devicetree/bindings/mfd/syscon.yaml
+@@ -84,6 +84,7 @@ select:
+           - mediatek,mt2701-pctl-a-syscfg
+           - mediatek,mt2712-pctl-a-syscfg
+           - mediatek,mt6397-pctl-pmic-syscfg
++          - mediatek,mt7988-topmisc
+           - mediatek,mt8135-pctl-a-syscfg
+           - mediatek,mt8135-pctl-b-syscfg
+           - mediatek,mt8173-pctl-a-syscfg
+@@ -187,6 +188,7 @@ properties:
+           - mediatek,mt2701-pctl-a-syscfg
+           - mediatek,mt2712-pctl-a-syscfg
+           - mediatek,mt6397-pctl-pmic-syscfg
++          - mediatek,mt7988-topmisc
+           - mediatek,mt8135-pctl-a-syscfg
+           - mediatek,mt8135-pctl-b-syscfg
+           - mediatek,mt8173-pctl-a-syscfg
 -- 
 2.43.0
 
