@@ -4,73 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1564AC369AB
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Apr 2025 11:33:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA23DC369AB
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Apr 2025 13:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=coqyASW01SuiH52X10PtzW9Uo5RxsU8qqH5WsgyODek=; b=AVqdzRr5msS/wE
-	oW3/39oVRHRjRD1exdSHPBBPmOwV/Jr7JdwTlCjEKHTWUZ3YugrgbFJCHI0WKeOQxxiFHFlojkrzo
-	HYOCmsfWZZfJnIb7ACKGkuD2gPeFjZb5/eY7c8AbqsJ8ZcLg28BL6ZdY2/qvp23xM+oN2l+v53/8v
-	2ss6Vw6SCQ7Lm1Sm/pCgN6az0P3uY0L71hYb0ZrMDj0EBTaPagVYcz/aXH9WDxBvJi+sWJHn96V6L
-	CXJGUAEBfD55pH1rT0wDHKvVDCv1yD+hZoN2Ye+04WVly93j7bjGOR97dyuSt/aBexHGzJHo/GPwN
-	dJrylq+DvcmM47u70aiw==;
+	List-Owner; bh=fvwLNwElVCDmLbMlqgx8LaGOXOtwQB5APxfpSLdbiCw=; b=e6VCFlhJaiCy9O
+	0OR5cPyU5dhhLtlgMkoCyd/KqzcsNaGpr3zDRz5kX1r6msMtePNuPoCnUtbnrDye0zMgr7DBEtgFU
+	F2UvXwUdtRqbbXBZR/tksucUeoUL17+ZqrhyfLupNikNQtJPJtvwcSPpavicp8BMvKXyvkIKzHPI5
+	aodo4okGEaivUc9kj5+rNAW+5NaWArPPb/M0Q4VpdMaaXFDF9lvXDI3CMTUIKdf64zWR1td0kG/gS
+	X85C9h1FS9sBKoS3p3w0m3zKgKDSH8+5sSVGu1iu/DvzToLQ2z6+Tj2pOKEX4YbCKrYYP1yjmSod3
+	dvrwq1a29xtqoljRHmYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5jy0-0000000Fz3c-2Xe0;
-	Fri, 18 Apr 2025 11:33:08 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1u5leQ-0000000GCWt-1EBR;
+	Fri, 18 Apr 2025 13:21:02 +0000
+Received: from mail-m49198.qiye.163.com ([45.254.49.198])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5jvE-0000000FygZ-1gkd;
-	Fri, 18 Apr 2025 11:30:17 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 39B5CA4B402;
-	Fri, 18 Apr 2025 11:24:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63B3DC4CEE2;
-	Fri, 18 Apr 2025 11:30:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744975815;
-	bh=yNO/Vv11a/JNX5B7+Pdq/at6wgGWnlT9+n3hN8pOBzo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BiByg55Xfnr4eelEkmxAH7NdKKRQ+cA8HY7+HclMeCvg7c7jkhguGTwVHzS+y++mN
-	 Ash4JUtwAqWDVUlc5IDef0bax1HCRFiHdeqsORE0LUnWFtNdD80VwqGBuoUm85o6G9
-	 MRsJ8QpXNlACPP1U0xaJ2bmCt9zzkxBJnLkArVgjcNdspWw3BPr4EKu2mwnBmQP+A0
-	 yVv4OcBb97VgmQptxtouEwwP24vjwNsP5MFAUd6IXzURc/YDTRJQtniSTuQemduv1A
-	 oGYJpzDJGH2BsXFF8m1h3Gd7ISbC/4UsF6BIbDzLyrTyQkjKqBpUwJ1epVKd1yc91T
-	 RPJx3aEzYhetQ==
-Date: Fri, 18 Apr 2025 17:00:10 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bincai Liu <bincai.liu@mediatek.com>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jitao shi <jitao.shi@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 5/5] drm/mediatek: Add eDP phy driver for mt8196
-Message-ID: <aAI3wkJmNH6ZcdfO@vaman>
-References: <20250418065313.8972-1-bincai.liu@mediatek.com>
- <20250418065313.8972-6-bincai.liu@mediatek.com>
+	id 1u5leM-0000000GCTC-1hQP;
+	Fri, 18 Apr 2025 13:21:00 +0000
+Received: from [127.0.0.1] (gy-adaptive-ssl-proxy-3-entmail-virt135.gy.ntes [27.18.99.221])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 125ec8785;
+	Fri, 18 Apr 2025 21:20:47 +0800 (GMT+08:00)
+From: Ze Huang <huangze@whut.edu.cn>
+Date: Fri, 18 Apr 2025 21:19:50 +0800
+Subject: [PATCH v2 1/4] dt-bindings: phy: spacemit: add K1 USB2 PHY
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250418065313.8972-6-bincai.liu@mediatek.com>
+Message-Id: <20250418-b4-k1-usb3-phy-v2-v2-1-b69e02da84eb@whut.edu.cn>
+References: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
+In-Reply-To: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1744982442; l=1414;
+ i=huangze@whut.edu.cn; s=20250325; h=from:subject:message-id;
+ bh=IubprGpIxJRWZXgDRtM5PVAMtWsmq3JvxjKW5m6l1Ww=;
+ b=lrnUTvREysecdC/Xzhp/r8rg7cIVnYV+e814PyNTOLe8xAlHcTZY+TmpYwm5YqXlL3Qf52MJB
+ kG5/AiH9WVFDMJrnASYcbHkTknp90HyILkBlB55Ua00YDRt60rPivzI
+X-Developer-Key: i=huangze@whut.edu.cn; a=ed25519;
+ pk=C3zfn/kH6oMJickaXBa8dxTZO68EBiD93F+tAenboRA=
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCGhlOVhlLSktKTEweQ09CTVYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlJTFVKQ1VCQlVJSUpZV1kWGg8SFR0UWUFZT0tIVUpLSUhCS0NVSktLVUpCWQ
+	Y+
+X-HM-Tid: 0a96490f178f03a1kunm125ec8785
+X-HM-MType: 10
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OT46ITo*MTJIQwkXEQsvEQEL
+	MBEaCUpVSlVKTE9PQkNJT05JTkJCVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VCQlVJSUpZV1kIAVlBSUxMTjcG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250418_043016_573172_889D2431 
-X-CRM114-Status: GOOD (  19.46  )
+X-CRM114-CacheID: sfid-20250418_062058_663260_4D967163 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,140 +81,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18-04-25, 14:52, Bincai Liu wrote:
-> Add code to support eDP phy for mt8196.
+Add support for USB2 PHY found on SpacemiT K1 SoC.
 
-Why is the patch title not "phy: add eDP phy...." why is this tagged
-drm? 
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+---
+ .../devicetree/bindings/phy/spacemit,usb2-phy.yaml | 40 ++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
-> 
-> Signed-off-by: Bincai Liu <bincai.liu@mediatek.com>
-> ---
->  drivers/phy/mediatek/Makefile      |   1 +
->  drivers/phy/mediatek/phy-mtk-edp.c | 262 +++++++++++++++++++++++++++++
->  2 files changed, 263 insertions(+)
->  create mode 100644 drivers/phy/mediatek/phy-mtk-edp.c
-> 
-> diff --git a/drivers/phy/mediatek/Makefile b/drivers/phy/mediatek/Makefile
-> index 1b8088df71e8..49d9ea42497a 100644
-> --- a/drivers/phy/mediatek/Makefile
-> +++ b/drivers/phy/mediatek/Makefile
-> @@ -4,6 +4,7 @@
->  #
->  
->  obj-$(CONFIG_PHY_MTK_DP)		+= phy-mtk-dp.o
-> +obj-$(CONFIG_PHY_MTK_DP)		+= phy-mtk-edp.o
->  obj-$(CONFIG_PHY_MTK_PCIE)		+= phy-mtk-pcie.o
->  obj-$(CONFIG_PHY_MTK_TPHY)		+= phy-mtk-tphy.o
->  obj-$(CONFIG_PHY_MTK_UFS)		+= phy-mtk-ufs.o
-> diff --git a/drivers/phy/mediatek/phy-mtk-edp.c b/drivers/phy/mediatek/phy-mtk-edp.c
-> new file mode 100644
-> index 000000000000..fadcbda55b70
-> --- /dev/null
-> +++ b/drivers/phy/mediatek/phy-mtk-edp.c
-> @@ -0,0 +1,262 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2019-2022 MediaTek Inc.
-> + * Copyright (c) 2022 BayLibre
-> + */
-> +
-> +#include <linux/delay.h>
-> +#include <linux/io.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/of.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +
-> +#define PHYD_OFFSET			0x0000
-> +#define PHYD_DIG_LAN0_OFFSET		0x1000
-> +#define PHYD_DIG_LAN1_OFFSET		0x1100
-> +#define PHYD_DIG_LAN2_OFFSET		0x1200
-> +#define PHYD_DIG_LAN3_OFFSET		0x1300
-> +#define PHYD_DIG_GLB_OFFSET		0x1400
-> +
-> +#define DP_PHY_DIG_PLL_CTL_0		(PHYD_DIG_GLB_OFFSET + 0x10)
-> +#define FORCE_PWORE_STATE_FLDMASK		GENMASK(2, 0)
-> +#define FORCE_PWORE_STATE_VALUE			0x7
-> +
-> +#define IPMUX_CONTROL			(PHYD_DIG_GLB_OFFSET + 0x98)
-> +#define EDPTX_DSI_PHYD_SEL_FLDMASK		0x1
-> +#define EDPTX_DSI_PHYD_SEL_FLDMASK_POS		0
-> +
-> +#define DP_PHY_DIG_TX_CTL_0		(PHYD_DIG_GLB_OFFSET + 0x74)
-> +#define TX_LN_EN_FLDMASK			0xf
-> +
-> +#define mtk_edp_PHY_DIG_PLL_CTL_1	(PHYD_DIG_GLB_OFFSET + 0x14)
-> +#define TPLL_SSC_EN				BIT(8)
-> +
-> +#define mtk_edp_PHY_DIG_BIT_RATE		(PHYD_DIG_GLB_OFFSET + 0x3C)
-> +#define BIT_RATE_RBR				0x1
-> +#define BIT_RATE_HBR				0x4
-> +#define BIT_RATE_HBR2				0x7
-> +#define BIT_RATE_HBR3				0x9
-> +
-> +#define mtk_edp_PHY_DIG_SW_RST		(PHYD_DIG_GLB_OFFSET + 0x38)
-> +#define DP_GLB_SW_RST_PHYD			BIT(0)
-> +#define DP_GLB_SW_RST_PHYD_MASK			BIT(0)
-> +
-> +#define DRIVING_FORCE			0x30
-> +#define EDP_TX_LN_VOLT_SWING_VAL_FLDMASK	0x6
-> +#define EDP_TX_LN_VOLT_SWING_VAL_FLDMASK_POS	1
-> +#define EDP_TX_LN_PRE_EMPH_VAL_FLDMASK		0x18
-> +#define EDP_TX_LN_PRE_EMPH_VAL_FLDMASK_POS	3
-> +
-> +struct mtk_edp_phy {
-> +	struct regmap *regs;
-> +};
-> +
-> +enum DPTX_LANE_NUM {
-> +	DPTX_LANE0 = 0x0,
-> +	DPTX_LANE1 = 0x1,
-> +	DPTX_LANE2 = 0x2,
-> +	DPTX_LANE3 = 0x3,
-> +	DPTX_LANE_MAX,
-> +};
-> +
-> +enum DPTX_LANE_COUNT {
-> +	DPTX_LANE_COUNT1 = 0x1,
-> +	DPTX_LANE_COUNT2 = 0x2,
-> +	DPTX_LANE_COUNT4 = 0x4,
-> +};
-> +
-> +static void mtk_edptx_phyd_reset_swing_pre(struct mtk_edp_phy *edp_phy)
-> +{
-> +	regmap_update_bits(edp_phy->regs, PHYD_DIG_LAN0_OFFSET + DRIVING_FORCE,
-> +			   EDP_TX_LN_VOLT_SWING_VAL_FLDMASK |
-> +			   EDP_TX_LN_PRE_EMPH_VAL_FLDMASK, 0x0);
-> +	regmap_update_bits(edp_phy->regs, PHYD_DIG_LAN1_OFFSET + DRIVING_FORCE,
-> +			   EDP_TX_LN_VOLT_SWING_VAL_FLDMASK |
-> +			   EDP_TX_LN_PRE_EMPH_VAL_FLDMASK, 0x0);
-> +	regmap_update_bits(edp_phy->regs, PHYD_DIG_LAN2_OFFSET + DRIVING_FORCE,
-> +			   EDP_TX_LN_VOLT_SWING_VAL_FLDMASK |
-> +			   EDP_TX_LN_PRE_EMPH_VAL_FLDMASK, 0x0);
-> +	regmap_update_bits(edp_phy->regs, PHYD_DIG_LAN3_OFFSET + DRIVING_FORCE,
-> +			   EDP_TX_LN_VOLT_SWING_VAL_FLDMASK |
-> +			   EDP_TX_LN_PRE_EMPH_VAL_FLDMASK, 0x0);
-> +}
-> +
-> +static int mtk_edp_phy_init(struct phy *phy)
-> +{
-> +	struct mtk_edp_phy *edp_phy = phy_get_drvdata(phy);
-> +
-> +	regmap_update_bits(edp_phy->regs, IPMUX_CONTROL, 0,
-> +			   EDPTX_DSI_PHYD_SEL_FLDMASK);
-> +
-> +	regmap_update_bits(edp_phy->regs, DP_PHY_DIG_PLL_CTL_0,
-> +			   FORCE_PWORE_STATE_VALUE,
-> +			   FORCE_PWORE_STATE_FLDMASK);
-> +
-> +	return 0;
-
-consider making this void return type
+diff --git a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
+new file mode 100644
+index 0000000000000000000000000000000000000000..ea999cff9c250b144dd049e5ac3c084b22bd56ea
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
+@@ -0,0 +1,40 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/spacemit,usb2-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: SpacemiT K1 SoC USB 2.0 PHY
++
++maintainers:
++  - Ze Huang <huangze@whut.edu.cn>
++
++properties:
++  compatible:
++    const: spacemit,k1-usb2-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    usb-phy@c09c0000 {
++        compatible = "spacemit,k1-usb2-phy";
++        reg = <0xc09c0000 0x200>;
++        clocks = <&syscon_apmu 15>;
++        #phy-cells = <0>;
++    };
 
 -- 
-~Vinod
+2.49.0
+
 
 -- 
 linux-phy mailing list
