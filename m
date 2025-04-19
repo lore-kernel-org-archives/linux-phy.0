@@ -4,90 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86F89C369BD
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Apr 2025 08:04:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEB5CC369BD
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Apr 2025 11:35:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3p8zfUK9JI5PvOs9avagl9eOilfiY91ElAF6tolxCM=; b=jDLU723OC1YLzr
-	6TlJ4uBgOdfrh5bEQhV1IbQU6swRbUCPxbNzAsAOQQ75r5o2Y0cN0t9NMDhT2q3p/NO5jnr0R/ArT
-	YNlVH6MJQpit0ezJ0ln1tvm79lve8LVWPLKsXupa4HlF811PIp7YqP4Tyi3l3zLe/rAqdTbFU45cr
-	ZV7pn+DNt/qN0fqK2XCVQ2+jF+zQxAxx7pHt5/fc75RcAoWpVqYn16WOXzMbYM000tayRCgESy51T
-	5/Mtpx9kznF0ZR21Alm1TyJr55mB9z4JaTuCMmJjW/LHGMedhA/LXrkF6w+dgYNRxnh8fx+Hwii09
-	4MXB+iNayz25n/MM/kSg==;
+	List-Owner; bh=QENeAc9kTeTAYE789Im5jNG8RZ/B2+ONhrpYccdqF5U=; b=iCsM1arP/nMIkM
+	LB5quHCc3W9uzL2J72M+205xcMgLFgjlTPQGWdljBZaPdibigOxuRElxnEJSUz123DBsVBSNbE3Og
+	nhg2AJTV0WaRJ6joPtMJKZlaZNa1+DY7Ezz4aT7yYtwsjXRph84J5gECDP+i+FngpZX0/Sf72ga3W
+	va1YXpHZy45D8YmEbyPn2Iu6MxYTc1WUd695lD9k02ul/QSdtMpBv/zJEXtmzy3SHUSZrC8QPSgS3
+	+czS8ZoW9a3S4JOuuMZMYkGacVgzLfCcMOaYTJpjIFreTFDNmmOr9+Q+MvrIX92y/r8JOLjibB0lu
+	2hdV00nociLuBYZP/2ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u63BU-000000010tC-16kP;
-	Sat, 19 Apr 2025 08:04:20 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1u66Tt-00000001FI3-1g9n;
+	Sat, 19 Apr 2025 11:35:33 +0000
+Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u639T-000000010fS-2SvI;
-	Sat, 19 Apr 2025 08:02:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1745049736; x=1776585736;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=gu3UJl0aItqWmYBuG3huHdt4smLIHOEuFU2Tib4TjfY=;
-  b=SFUs3n6Fp2nI9WuccSsTPdnXAcDf40Le2JeaDVLJvkmjnPq3HQXc+V4o
-   upDXiGPm4cqS54uVy0tkihxf3/u39BW/dVdph3kG67Xed4/hUTXqINmGv
-   bOKIYCGFgTrUYbmknJP30WHdzEdVm5L5nW1z5DwHJ7mwvSQLT8+E1J/U5
-   O0i8bg9X4NofB2DeW81BNc3FRl2CRzn4UXZRqt8JAKSIKP00y2C0jyHEJ
-   awAiZFxql7VLm9ZaPBnhdn/4poatqAlFbKIp0kVlW5ow7/ZXLYPa+0Qxn
-   mVKyopppKw64Xo7J7Abj+loGdAuMsvS/ANaS2XZwpHLoXR2kW5bOVm77J
-   w==;
-X-CSE-ConnectionGUID: LQW5JwzsQvS3TDGk8R6OYg==
-X-CSE-MsgGUID: 5/tkCvRsT9GjxSkgvZp4sw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11407"; a="64202025"
-X-IronPort-AV: E=Sophos;i="6.15,223,1739865600"; 
-   d="scan'208";a="64202025"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Apr 2025 01:02:12 -0700
-X-CSE-ConnectionGUID: qUyVFIkwRgmVu+ARhTMvmA==
-X-CSE-MsgGUID: pFudtNrlS5uHIXm/wHMgbQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,223,1739865600"; 
-   d="scan'208";a="131869810"
-Received: from lkp-server01.sh.intel.com (HELO 61e10e65ea0f) ([10.239.97.150])
-  by orviesa007.jf.intel.com with ESMTP; 19 Apr 2025 01:02:06 -0700
-Received: from kbuild by 61e10e65ea0f with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1u639H-0003hc-2K;
-	Sat, 19 Apr 2025 08:02:03 +0000
-Date: Sat, 19 Apr 2025 16:01:57 +0800
-From: kernel test robot <lkp@intel.com>
-To: Bincai Liu <bincai.liu@mediatek.com>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	id 1u66Tr-00000001FHc-2Q48
+	for linux-phy@lists.infradead.org;
+	Sat, 19 Apr 2025 11:35:32 +0000
+Received: by mail-pf1-x436.google.com with SMTP id d2e1a72fcca58-73712952e1cso2515438b3a.1
+        for <linux-phy@lists.infradead.org>; Sat, 19 Apr 2025 04:35:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1745062530; x=1745667330; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=EqEfCzVm0s9gbAWdrawTqBLk3GajDKRamX+SOKwoyMA=;
+        b=Bz/i/NTrzWzpltvo1/kMiSh9QAWpOOad42QtuhLye/4/LC1p204eVUUOoA3OZvFQRs
+         WE3/IXdCPdrBMQAxRGEX+K6maDr/V2+ltvdvYx4WQ1xBdVdDHTWW3h3Z07Fv08BQdFdY
+         IBSyFWR8a1SQSnX+hluI297YX1b4O+I/N1ay7ZPffZqqj8KMmra2+QZaQDevtMJBnTE5
+         2VoS+FkK8v1/BOC2sxTl33hGiTSrq7o7km1GKUa4G1PzcOvCM4lNbOA+VFbbGalA+PtZ
+         kS3OJPm2Y0ZDb0BCcIgel1B5Wkva2jkmbrmuyDx/cBu6yUwGG/ecH1/uWPditVezM4B0
+         ASYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745062530; x=1745667330;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=EqEfCzVm0s9gbAWdrawTqBLk3GajDKRamX+SOKwoyMA=;
+        b=s/e+ivgK2/Iecm8XJ17M9duw4V/oNWMbtDiFiM6JzuRJ8f+LjG+p/vF4rHt0kGPHYQ
+         WY8xxCUCplsg1YpUgeaBV/hI1g0mp59fO+XdkVt+O7L2PGJzG9UkhQUqfzKE9fuMptqU
+         krurkMZSl2c2TWw+4Av2iW1FBQ1AUfym+TBC/KPoyTpHznFQtapCs9oeLb/bE7MF/529
+         DzJSeKzEMlAGXSwKURWFFFRhOlwONj/p+szSBVC5brqmF/5dWZzQ4aioggkkF1ViPDqn
+         0atJq9m3SjD+c4UjYYRhfZEkwSdgSxLn8Wz01o32k90r3RR3d39h/HMXPMCZOWhb3tBF
+         evQA==
+X-Forwarded-Encrypted: i=1; AJvYcCUd6wMVDkZRdU5CWiUfmMplTeJLwcWrDVYDZObDEVf6JyPaTRKgnfko+JxKkdDxK0aAS+kKhAC3sTM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yykfcup3KVmytW5cSGswXAc8/6AEbCXgEaLbNthItJ1ZiLsaUOZ
+	njvNorl5LoQKH+UkClYT6rx8kkFG3WGmZeu2XXCEPaWU+Ifx5Hb/ZArSbVJYlg==
+X-Gm-Gg: ASbGncvrTM8GpCpgZ3SvVShGIHzDzXYuzWmwJEgKw4XIEYGOazJMFXbd9tMkmjCb35E
+	IVEffiZJLXpPrtoLIfTqyi8I+9UrrhvJajV5/ZwoXR5zXpQ299R3nj+gWnCBskvVPnomB8Hn26f
+	woqUPhOFUlbieCMp4T7IAu3nGZ3it+hDFS2jsnQQqWyLGGMkBPZR4oRenY8AmYrI32zfQSgRFod
+	tqICGmlJ3ljZeldcaX+FfptzYu9w+FVmyXeWUUe52Ip9wOx4VOUslrssGWJQPmr/7PNrZKNvnr7
+	t447rVTPbAr6XEM403DqRM2iEbpmYS5X+dXEF1336g8KXEf/oiUx5g==
+X-Google-Smtp-Source: AGHT+IFKbXf8oiV98tgt3cEpHu3Ind6E5MOTHI2okQE5l7xhF/QuhKO27dk6PSwPkrsC8Rn2xyTTFw==
+X-Received: by 2002:a05:6a20:d485:b0:1f0:e42e:fb1d with SMTP id adf61e73a8af0-203cbd4513fmr9527773637.36.1745062530611;
+        Sat, 19 Apr 2025 04:35:30 -0700 (PDT)
+Received: from thinkpad.. ([36.255.17.167])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b0db139eecdsm2705742a12.22.2025.04.19.04.35.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 19 Apr 2025 04:35:30 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jitao shi <jitao.shi@mediatek.com>, CK Hu <ck.hu@mediatek.com>
-Cc: oe-kbuild-all@lists.linux.dev, dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, Bincai Liu <bincai.liu@mediatek.com>
-Subject: Re: [PATCH 3/5] drm/mediatek: Add dvo driver for mt8196
-Message-ID: <202504191549.ufJBsMvZ-lkp@intel.com>
-References: <20250418065313.8972-4-bincai.liu@mediatek.com>
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Nitheesh Sekar <quic_nsekar@quicinc.com>,
+	Varadarajan Narayanan <quic_varada@quicinc.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Praveenkumar I <quic_ipkumar@quicinc.com>,
+	George Moussalem <george.moussalem@outlook.com>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	20250317100029.881286-1-quic_varada@quicinc.com,
+	20250317100029.881286-2-quic_varada@quicinc.com,
+	Sricharan Ramabadhran <quic_srichara@quicinc.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v7 3/6] dt-bindings: PCI: qcom: Add IPQ5018 SoC
+Date: Sat, 19 Apr 2025 17:05:18 +0530
+Message-ID: <174506248856.36993.6558804848056183191.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20250326-ipq5018-pcie-v7-3-e1828fef06c9@outlook.com>
+References: <20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com> <20250326-ipq5018-pcie-v7-3-e1828fef06c9@outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250418065313.8972-4-bincai.liu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250419_010215_670610_0C1B18E8 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20250419_043531_638495_21FFC649 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,97 +120,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bincai,
 
-kernel test robot noticed the following build errors:
+On Wed, 26 Mar 2025 12:10:57 +0400, George Moussalem wrote:
+> Add support for the PCIe controller on the Qualcomm
+> IPQ5108 SoC to the bindings.
+> 
+> 
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on pza/reset/next linus/master v6.15-rc2 next-20250417]
-[cannot apply to pza/imx-drm/next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Applied, thanks!
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Bincai-Liu/dt-bindings-eDP-mediatek-add-eDP-yaml-for-mt8196/20250418-145911
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20250418065313.8972-4-bincai.liu%40mediatek.com
-patch subject: [PATCH 3/5] drm/mediatek: Add dvo driver for mt8196
-config: i386-buildonly-randconfig-001-20250419 (https://download.01.org/0day-ci/archive/20250419/202504191549.ufJBsMvZ-lkp@intel.com/config)
-compiler: gcc-11 (Debian 11.3.0-12) 11.3.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250419/202504191549.ufJBsMvZ-lkp@intel.com/reproduce)
+[3/6] dt-bindings: PCI: qcom: Add IPQ5018 SoC
+      commit: 5ae42cdeb1d23fc604fb6c8a23cff35a4a47b10e
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202504191549.ufJBsMvZ-lkp@intel.com/
-
-All error/warnings (new ones prefixed by >>):
-
->> drivers/gpu/drm/mediatek/mtk_ddp_comp.c:476:10: error: 'DDP_COMPONENT_DVO0' undeclared here (not in a function); did you mean 'DDP_COMPONENT_OVL0'?
-     476 |         [DDP_COMPONENT_DVO0]            = { MTK_DVO,                    0, &ddp_dpi },
-         |          ^~~~~~~~~~~~~~~~~~
-         |          DDP_COMPONENT_OVL0
->> drivers/gpu/drm/mediatek/mtk_ddp_comp.c:476:10: error: array index in initializer not of integer type
-   drivers/gpu/drm/mediatek/mtk_ddp_comp.c:476:10: note: (near initialization for 'mtk_ddp_matches')
---
->> drivers/gpu/drm/mediatek/mtk_dpi.c:201: warning: Function parameter or struct member 'out_np_sel' not described in 'mtk_dpi_conf'
->> drivers/gpu/drm/mediatek/mtk_dpi.c:201: warning: Function parameter or struct member 'dpi_ver' not described in 'mtk_dpi_conf'
-
-
-vim +476 drivers/gpu/drm/mediatek/mtk_ddp_comp.c
-
-   456	
-   457	static const struct mtk_ddp_comp_match mtk_ddp_matches[DDP_COMPONENT_DRM_ID_MAX] = {
-   458		[DDP_COMPONENT_AAL0]		= { MTK_DISP_AAL,		0, &ddp_aal },
-   459		[DDP_COMPONENT_AAL1]		= { MTK_DISP_AAL,		1, &ddp_aal },
-   460		[DDP_COMPONENT_BLS]		= { MTK_DISP_BLS,		0, NULL },
-   461		[DDP_COMPONENT_CCORR]		= { MTK_DISP_CCORR,		0, &ddp_ccorr },
-   462		[DDP_COMPONENT_COLOR0]		= { MTK_DISP_COLOR,		0, &ddp_color },
-   463		[DDP_COMPONENT_COLOR1]		= { MTK_DISP_COLOR,		1, &ddp_color },
-   464		[DDP_COMPONENT_DITHER0]		= { MTK_DISP_DITHER,		0, &ddp_dither },
-   465		[DDP_COMPONENT_DP_INTF0]	= { MTK_DP_INTF,		0, &ddp_dpi },
-   466		[DDP_COMPONENT_DP_INTF1]	= { MTK_DP_INTF,		1, &ddp_dpi },
-   467		[DDP_COMPONENT_DPI0]		= { MTK_DPI,			0, &ddp_dpi },
-   468		[DDP_COMPONENT_DPI1]		= { MTK_DPI,			1, &ddp_dpi },
-   469		[DDP_COMPONENT_DRM_OVL_ADAPTOR]	= { MTK_DISP_OVL_ADAPTOR,	0, &ddp_ovl_adaptor },
-   470		[DDP_COMPONENT_DSC0]		= { MTK_DISP_DSC,		0, &ddp_dsc },
-   471		[DDP_COMPONENT_DSC1]		= { MTK_DISP_DSC,		1, &ddp_dsc },
-   472		[DDP_COMPONENT_DSI0]		= { MTK_DSI,			0, &ddp_dsi },
-   473		[DDP_COMPONENT_DSI1]		= { MTK_DSI,			1, &ddp_dsi },
-   474		[DDP_COMPONENT_DSI2]		= { MTK_DSI,			2, &ddp_dsi },
-   475		[DDP_COMPONENT_DSI3]		= { MTK_DSI,			3, &ddp_dsi },
- > 476		[DDP_COMPONENT_DVO0]            = { MTK_DVO,                    0, &ddp_dpi },
-   477		[DDP_COMPONENT_GAMMA]		= { MTK_DISP_GAMMA,		0, &ddp_gamma },
-   478		[DDP_COMPONENT_MERGE0]		= { MTK_DISP_MERGE,		0, &ddp_merge },
-   479		[DDP_COMPONENT_MERGE1]		= { MTK_DISP_MERGE,		1, &ddp_merge },
-   480		[DDP_COMPONENT_MERGE2]		= { MTK_DISP_MERGE,		2, &ddp_merge },
-   481		[DDP_COMPONENT_MERGE3]		= { MTK_DISP_MERGE,		3, &ddp_merge },
-   482		[DDP_COMPONENT_MERGE4]		= { MTK_DISP_MERGE,		4, &ddp_merge },
-   483		[DDP_COMPONENT_MERGE5]		= { MTK_DISP_MERGE,		5, &ddp_merge },
-   484		[DDP_COMPONENT_OD0]		= { MTK_DISP_OD,		0, &ddp_od },
-   485		[DDP_COMPONENT_OD1]		= { MTK_DISP_OD,		1, &ddp_od },
-   486		[DDP_COMPONENT_OVL0]		= { MTK_DISP_OVL,		0, &ddp_ovl },
-   487		[DDP_COMPONENT_OVL1]		= { MTK_DISP_OVL,		1, &ddp_ovl },
-   488		[DDP_COMPONENT_OVL_2L0]		= { MTK_DISP_OVL_2L,		0, &ddp_ovl },
-   489		[DDP_COMPONENT_OVL_2L1]		= { MTK_DISP_OVL_2L,		1, &ddp_ovl },
-   490		[DDP_COMPONENT_OVL_2L2]		= { MTK_DISP_OVL_2L,		2, &ddp_ovl },
-   491		[DDP_COMPONENT_POSTMASK0]	= { MTK_DISP_POSTMASK,		0, &ddp_postmask },
-   492		[DDP_COMPONENT_PWM0]		= { MTK_DISP_PWM,		0, NULL },
-   493		[DDP_COMPONENT_PWM1]		= { MTK_DISP_PWM,		1, NULL },
-   494		[DDP_COMPONENT_PWM2]		= { MTK_DISP_PWM,		2, NULL },
-   495		[DDP_COMPONENT_RDMA0]		= { MTK_DISP_RDMA,		0, &ddp_rdma },
-   496		[DDP_COMPONENT_RDMA1]		= { MTK_DISP_RDMA,		1, &ddp_rdma },
-   497		[DDP_COMPONENT_RDMA2]		= { MTK_DISP_RDMA,		2, &ddp_rdma },
-   498		[DDP_COMPONENT_RDMA4]		= { MTK_DISP_RDMA,		4, &ddp_rdma },
-   499		[DDP_COMPONENT_UFOE]		= { MTK_DISP_UFOE,		0, &ddp_ufoe },
-   500		[DDP_COMPONENT_WDMA0]		= { MTK_DISP_WDMA,		0, NULL },
-   501		[DDP_COMPONENT_WDMA1]		= { MTK_DISP_WDMA,		1, NULL },
-   502	};
-   503	
-
+Best regards,
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
 -- 
 linux-phy mailing list
