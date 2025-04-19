@@ -4,67 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C0C0C369AB
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Apr 2025 13:21:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4561C369BD
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Apr 2025 07:22:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LPMcXYiziAc+7K3bxX2Rv8TY9+jtN2w7V5Gn3Dsa01s=; b=l4drFDcm5dtAh+
-	xPQ28MFLN4RyDd1mBPg1FZCVM8dDqKfH/QinkGhq8q1nxGGtEC1ieJxF2zb3qAWmsTvRUMmmSRu3K
-	+xfvDlcql+6A3g6a8rCDJMbKSMuwB3iL9cvtJitmDPqqE1Xs4nSOgTaB5eKTi8wWCGER9pt6dmMOE
-	XzoQdppltOX/oidsm+1FSu3gOc4TE8gSdd/I7+sAcaDylT1omwI0jJ6uhQPvWy6TqONS7CtsDt1YU
-	kKO283qYq5eV2AK0ihlLIZAGYzk1p2axGslAihXkricjqguUgIcn9/mNMbW1CBZTEG+v3/GSjsMHc
-	nKv5TNymvOPCCxtpDKgQ==;
+	List-Owner; bh=BKplvfrW76BQhLDxbeUN097LZmMteYQS/julrmQrO50=; b=M7A4ZGpeVahynz
+	fpTthWz5V9DU9SpRLjqLBwmxFNSfXo3shRBxhcJNewa95raH7ONOhIc+4/ecyQxkA/jhtjYY1Stsk
+	ygNnM8Rot7agMqX/OkA7RAIQQA4S8AGz1hv3qTnpjU3AKdCsF1McgumvrK2f7sIBnKZ3vpJjqUach
+	sic3sS8JVMfNveDuVPc06eZ7buTC/Bd36u1PlCTHcw1T1G4AQWDIyfr+680l05L+UZ6xgbUi/XybA
+	Wp6mCYio/uE05J9vek7TP4Zo0Zro2VC8iQzomY91cC6BBdVrjblhK9qmN2YAJdmRZYA6qMufSz7kE
+	HGurpPVCT0uJZqg30UcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5lec-0000000GCf7-13wB;
-	Fri, 18 Apr 2025 13:21:14 +0000
-Received: from mail-m49198.qiye.163.com ([45.254.49.198])
+	id 1u62Wi-00000000ykK-0TQ8;
+	Sat, 19 Apr 2025 07:22:12 +0000
+Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5leZ-0000000GCbF-0lBX;
-	Fri, 18 Apr 2025 13:21:12 +0000
-Received: from [127.0.0.1] (gy-adaptive-ssl-proxy-3-entmail-virt135.gy.ntes [27.18.99.221])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 125ec878c;
-	Fri, 18 Apr 2025 21:21:03 +0800 (GMT+08:00)
-From: Ze Huang <huangze@whut.edu.cn>
-Date: Fri, 18 Apr 2025 21:19:53 +0800
-Subject: [PATCH v2 4/4] phy: spacemit: add USB3 support for K1 PCIe/USB3
- combo PHY
+	id 1u62Un-00000000ybF-0oqc;
+	Sat, 19 Apr 2025 07:20:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1745047213; x=1776583213;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=LCM9rcBiQnj8FfSNnDAtZd+MbtyPlq5KB3By1/gIDRI=;
+  b=aXhoiriY+flPnQ/iTA7HrWxs1ldFWUREZ4Gm1eRbN9+mMXqeSCbAfdN8
+   SdbBErZzMZzREYwXZ8TzpoGOXnAovf0bIfHh7emPYaQk5Q6msretb/G2A
+   kdDaJFcFtcQ9+TOgHnv6grDYbCgw5In91CZs2mK1eXo1ASQ+suGj+ThOt
+   ozLtdNiVWr+eB6A/eVhF4054/ezMhC4/nrp67FsmS3dDivt6dkUqKqeK2
+   rXlDKiEzM0mzrXAsI9jIrIUf0sIyHu3UDfWudh+in+il5Jau/LhgBuIpz
+   ysmdt9bFB+lg4RH4iM/wdgagsKtkbKnAdhAXUGwxO+jVByo+ddz5I0xw3
+   Q==;
+X-CSE-ConnectionGUID: wChmZqJ8SI2gX0lP2Ywdkw==
+X-CSE-MsgGUID: p6XhZ965THS6rxJk96TDyw==
+X-IronPort-AV: E=McAfee;i="6700,10204,11407"; a="34282311"
+X-IronPort-AV: E=Sophos;i="6.15,223,1739865600"; 
+   d="scan'208";a="34282311"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Apr 2025 00:20:08 -0700
+X-CSE-ConnectionGUID: eV3b6fYpTTWiRJQ+acA7Vg==
+X-CSE-MsgGUID: EKqWrkPHRKuPxYfGpv6kyw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.15,223,1739865600"; 
+   d="scan'208";a="132179622"
+Received: from lkp-server01.sh.intel.com (HELO 61e10e65ea0f) ([10.239.97.150])
+  by fmviesa009.fm.intel.com with ESMTP; 19 Apr 2025 00:20:02 -0700
+Received: from kbuild by 61e10e65ea0f with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1u62UZ-0003gD-2g;
+	Sat, 19 Apr 2025 07:19:59 +0000
+Date: Sat, 19 Apr 2025 15:19:05 +0800
+From: kernel test robot <lkp@intel.com>
+To: Bincai Liu <bincai.liu@mediatek.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Jitao shi <jitao.shi@mediatek.com>, CK Hu <ck.hu@mediatek.com>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	Bincai Liu <bincai.liu@mediatek.com>
+Subject: Re: [PATCH 3/5] drm/mediatek: Add dvo driver for mt8196
+Message-ID: <202504191551.u0FJoQ3O-lkp@intel.com>
+References: <20250418065313.8972-4-bincai.liu@mediatek.com>
 MIME-Version: 1.0
-Message-Id: <20250418-b4-k1-usb3-phy-v2-v2-4-b69e02da84eb@whut.edu.cn>
-References: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
-In-Reply-To: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
- linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1744982442; l=8732;
- i=huangze@whut.edu.cn; s=20250325; h=from:subject:message-id;
- bh=D3lMowTCmBQgmDedVETXxSZd+5kyo7+v+a+kj2y35rs=;
- b=N0Euq8c4iQgLpwAQsWdBVg5CWhy7oS2xb5D3pD8ckTe1BhDou2TIFpzsQh37qCyxkKBpAuypm
- ajiVb2h2MfSASYMiSmFB4dTW89/ShoxuEK0VZ8rt0t0gJQsFwdHuHL3
-X-Developer-Key: i=huangze@whut.edu.cn; a=ed25519;
- pk=C3zfn/kH6oMJickaXBa8dxTZO68EBiD93F+tAenboRA=
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkaS0oeVh5MTkgaTxhPGUwaHlYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJTFVKQ1VCQlVJSUpZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0tVSktLVUtZBg
-	++
-X-HM-Tid: 0a96490f56f903a1kunm125ec878c
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NDI6LQw5SzIDDgkCLwkQEUkT
-	Lz0aCjNVSlVKTE9PQkNJT01DQk9JVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VCQlVJSUpZV1kIAVlBSktKSks3Bg++
+Content-Disposition: inline
+In-Reply-To: <20250418065313.8972-4-bincai.liu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250418_062111_472292_0B014E69 
-X-CRM114-Status: GOOD (  21.08  )
+X-CRM114-CacheID: sfid-20250419_002013_280056_3EB5B52D 
+X-CRM114-Status: GOOD (  12.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,301 +105,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for USB 3.0 mode on the K1 PCIe/USB3 combo PHY. Currently,
-only USB mode is supported; PCIe support is not included in this change.
+Hi Bincai,
 
-Signed-off-by: Ze Huang <huangze@whut.edu.cn>
----
- drivers/phy/spacemit/Kconfig          |   8 ++
- drivers/phy/spacemit/Makefile         |   1 +
- drivers/phy/spacemit/phy-k1-combphy.c | 251 ++++++++++++++++++++++++++++++++++
- 3 files changed, 260 insertions(+)
+kernel test robot noticed the following build errors:
 
-diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
-index 0136aee2e8a2f5f484da136b26f80130794b992c..ccc6bf9ea49f4988a27f79a4dcd024b18cbd78b0 100644
---- a/drivers/phy/spacemit/Kconfig
-+++ b/drivers/phy/spacemit/Kconfig
-@@ -11,3 +11,11 @@ config PHY_SPACEMIT_K1_USB2
- 	help
- 	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
- 	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
-+
-+config PHY_SPACEMIT_K1_COMBPHY
-+	tristate "SpacemiT K1 PCIe/USB3 combo PHY support"
-+	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
-+	depends on COMMON_CLK
-+	select GENERIC_PHY
-+	help
-+	  USB3/PCIe Combo PHY Support for SpacemiT K1 SoC
-diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
-index fec0b425a948541b39b814caef0b05e1e002d92f..1fd0c65f2c5cd10ea2f70e43e62c70588d1ffae9 100644
---- a/drivers/phy/spacemit/Makefile
-+++ b/drivers/phy/spacemit/Makefile
-@@ -1,2 +1,3 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+obj-$(CONFIG_PHY_SPACEMIT_K1_COMBPHY)	+= phy-k1-combphy.o
- obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
-diff --git a/drivers/phy/spacemit/phy-k1-combphy.c b/drivers/phy/spacemit/phy-k1-combphy.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..a291b7a78fae2f4072b74c1d2cc65847ed821bec
---- /dev/null
-+++ b/drivers/phy/spacemit/phy-k1-combphy.c
-@@ -0,0 +1,251 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * SpacemiT K1 PCIE/USB3 PHY driver
-+ *
-+ * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
-+ * Copyright (C) 2025 Ze Huang <huangze@whut.edu.cn>
-+ */
-+
-+#include <dt-bindings/phy/phy.h>
-+#include <linux/clk.h>
-+#include <linux/iopoll.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+#include <linux/usb/of.h>
-+
-+#define COMBPHY_USB_REG1		0x68
-+#define  COMBPHY_USB_REG1_VAL		0x00
-+#define COMBPHY_USB_REG2		0x48
-+#define  COMBPHY_USB_REG2_VAL		0x603a2276
-+#define COMBPHY_USB_REG3		0x08
-+#define  COMBPHY_USB_REG3_VAL		0x97c
-+#define COMBPHY_USB_REG4		0x18
-+#define  COMBPHY_USB_REG4_VAL		0x00
-+#define  COMBPHY_USB_TERM_SHORT_MASK	0x3000
-+#define  COMBPHY_USB_TERM_SHORT_VAL	0x3000
-+#define COMBPHY_USB_PLL_REG		0x08
-+#define  COMBPHY_USB_PLL_MASK		0x01
-+#define  COMBPHY_USB_PLL_VAL		0x01
-+#define COMBPHY_USB_LFPS_REG		0x58
-+#define  COMBPHY_USB_LFPS_MASK		0x700
-+#define  COMBPHY_USB_LFPS_THRES_DEFAULT	0x03
-+
-+#define COMBPHY_MODE_SEL	BIT(3)
-+#define COMBPHY_WAIT_TIMEOUT	1000
-+
-+struct spacemit_combphy_priv {
-+	struct device *dev;
-+	struct phy *phy;
-+	struct reset_control *phy_rst;
-+	void __iomem *phy_ctrl;
-+	void __iomem *phy_sel;
-+	bool rx_always_on;
-+	u8 lfps_threshold;
-+	u8 type;
-+};
-+
-+static void spacemit_reg_update(void __iomem *reg, u32 offset, u32 mask, u32 val)
-+{
-+	u32 tmp;
-+
-+	tmp = readl(reg + offset);
-+	tmp = (tmp & ~(mask)) | val;
-+	writel(tmp, reg + offset);
-+}
-+
-+static int spacemit_combphy_wait_ready(struct spacemit_combphy_priv *priv,
-+				       u32 offset, u32 mask, u32 val)
-+{
-+	u32 reg_val;
-+	int ret = 0;
-+
-+	ret = read_poll_timeout(readl, reg_val, (reg_val & mask) == val,
-+				1000, COMBPHY_WAIT_TIMEOUT * 1000, false,
-+				priv->phy_ctrl + offset);
-+
-+	return ret;
-+}
-+
-+static int spacemit_combphy_set_mode(struct spacemit_combphy_priv *priv)
-+{
-+	int ret = 0;
-+
-+	switch (priv->type) {
-+	case PHY_TYPE_USB3:
-+		spacemit_reg_update(priv->phy_sel, 0, 0, COMBPHY_MODE_SEL);
-+		break;
-+	default:
-+		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
-+		ret = -EINVAL;
-+		break;
-+	}
-+
-+	return ret;
-+}
-+
-+static int spacemit_combphy_init_usb(struct spacemit_combphy_priv *priv)
-+{
-+	void __iomem *base = priv->phy_ctrl;
-+	int ret;
-+
-+	writel(COMBPHY_USB_REG1_VAL, base + COMBPHY_USB_REG1);
-+	writel(COMBPHY_USB_REG2_VAL, base + COMBPHY_USB_REG2);
-+	writel(COMBPHY_USB_REG3_VAL, base + COMBPHY_USB_REG3);
-+	writel(COMBPHY_USB_REG4_VAL, base + COMBPHY_USB_REG4);
-+
-+	ret = spacemit_combphy_wait_ready(priv, COMBPHY_USB_PLL_REG,
-+					  COMBPHY_USB_PLL_MASK,
-+					  COMBPHY_USB_PLL_VAL);
-+
-+	dev_dbg(priv->dev, "USB3 PHY init lfps threshold %d\n", priv->lfps_threshold);
-+	spacemit_reg_update(base, COMBPHY_USB_LFPS_REG,
-+			    COMBPHY_USB_LFPS_MASK,
-+			    (priv->lfps_threshold << 8));
-+
-+	if (priv->rx_always_on)
-+		spacemit_reg_update(base, COMBPHY_USB_REG4,
-+				    COMBPHY_USB_TERM_SHORT_MASK,
-+				    COMBPHY_USB_TERM_SHORT_VAL);
-+
-+	if (ret)
-+		dev_err(priv->dev, "USB3 PHY init timeout!\n");
-+
-+	return ret;
-+}
-+
-+static int spacemit_combphy_init(struct phy *phy)
-+{
-+	struct spacemit_combphy_priv *priv = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = spacemit_combphy_set_mode(priv);
-+	if (ret) {
-+		dev_err(priv->dev, "failed to set mode for PHY type %x\n",
-+			priv->type);
-+		goto out;
-+	}
-+
-+	ret = reset_control_deassert(priv->phy_rst);
-+	if (ret) {
-+		dev_err(priv->dev, "failed to deassert rst\n");
-+		goto err_rst;
-+	}
-+
-+	switch (priv->type) {
-+	case PHY_TYPE_USB3:
-+		ret = spacemit_combphy_init_usb(priv);
-+		break;
-+	default:
-+		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
-+		ret = -EINVAL;
-+		break;
-+	}
-+
-+	if (ret)
-+		goto err_rst;
-+
-+	return 0;
-+
-+err_rst:
-+	reset_control_assert(priv->phy_rst);
-+out:
-+	return ret;
-+}
-+
-+static int spacemit_combphy_exit(struct phy *phy)
-+{
-+	struct spacemit_combphy_priv *priv = phy_get_drvdata(phy);
-+
-+	reset_control_assert(priv->phy_rst);
-+
-+	return 0;
-+}
-+
-+static struct phy *spacemit_combphy_xlate(struct device *dev,
-+					  const struct of_phandle_args *args)
-+{
-+	struct spacemit_combphy_priv *priv = dev_get_drvdata(dev);
-+
-+	if (args->args_count != 1) {
-+		dev_err(dev, "invalid number of arguments\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	if (priv->type != PHY_NONE && priv->type != args->args[0])
-+		dev_warn(dev, "PHY type %d is selected to override %d\n",
-+			 args->args[0], priv->type);
-+
-+	priv->type = args->args[0];
-+
-+	if (args->args_count > 1)
-+		dev_dbg(dev, "combo phy idx: %d selected",  args->args[1]);
-+
-+	return priv->phy;
-+}
-+
-+static const struct phy_ops spacemit_combphy_ops = {
-+	.init = spacemit_combphy_init,
-+	.exit = spacemit_combphy_exit,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int spacemit_combphy_probe(struct platform_device *pdev)
-+{
-+	struct spacemit_combphy_priv *priv;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->phy_ctrl = devm_platform_ioremap_resource_byname(pdev, "ctrl");
-+	if (IS_ERR(priv->phy_ctrl))
-+		return PTR_ERR(priv->phy_ctrl);
-+
-+	priv->phy_sel = devm_platform_ioremap_resource_byname(pdev, "sel");
-+	if (IS_ERR(priv->phy_sel))
-+		return PTR_ERR(priv->phy_sel);
-+
-+	priv->lfps_threshold = COMBPHY_USB_LFPS_THRES_DEFAULT;
-+	device_property_read_u8(&pdev->dev, "spacemit,lfps-threshold", &priv->lfps_threshold);
-+
-+	priv->rx_always_on = device_property_read_bool(&pdev->dev, "spacemit,rx-always-on");
-+	priv->type = PHY_NONE;
-+	priv->dev = dev;
-+
-+	priv->phy_rst = devm_reset_control_get(dev, NULL);
-+	if (IS_ERR(priv->phy_rst))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy_rst),
-+				     "failed to get phy reset\n");
-+
-+	priv->phy = devm_phy_create(dev, NULL, &spacemit_combphy_ops);
-+	if (IS_ERR(priv->phy))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy),
-+				     "failed to create combphy\n");
-+
-+	dev_set_drvdata(dev, priv);
-+	phy_set_drvdata(priv->phy, priv);
-+	phy_provider = devm_of_phy_provider_register(dev, spacemit_combphy_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id spacemit_combphy_of_match[] = {
-+	{ .compatible = "spacemit,k1-combphy", },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, spacemit_combphy_of_match);
-+
-+static struct platform_driver spacemit_combphy_driver = {
-+	.probe	= spacemit_combphy_probe,
-+	.driver = {
-+		.name = "spacemit-k1-combphy",
-+		.of_match_table = spacemit_combphy_of_match,
-+	},
-+};
-+module_platform_driver(spacemit_combphy_driver);
-+
-+MODULE_DESCRIPTION("Spacemit PCIE/USB3.0 COMBO PHY driver");
-+MODULE_LICENSE("GPL");
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on pza/reset/next linus/master v6.15-rc2 next-20250417]
+[cannot apply to pza/imx-drm/next drm-misc/drm-misc-next]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Bincai-Liu/dt-bindings-eDP-mediatek-add-eDP-yaml-for-mt8196/20250418-145911
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250418065313.8972-4-bincai.liu%40mediatek.com
+patch subject: [PATCH 3/5] drm/mediatek: Add dvo driver for mt8196
+config: i386-buildonly-randconfig-006-20250419 (https://download.01.org/0day-ci/archive/20250419/202504191551.u0FJoQ3O-lkp@intel.com/config)
+compiler: clang version 20.1.2 (https://github.com/llvm/llvm-project 58df0ef89dd64126512e4ee27b4ac3fd8ddf6247)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250419/202504191551.u0FJoQ3O-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202504191551.u0FJoQ3O-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+>> drivers/gpu/drm/mediatek/mtk_ddp_comp.c:476:3: error: use of undeclared identifier 'DDP_COMPONENT_DVO0'
+     476 |         [DDP_COMPONENT_DVO0]            = { MTK_DVO,                    0, &ddp_dpi },
+         |          ^
+   1 error generated.
+
+
+vim +/DDP_COMPONENT_DVO0 +476 drivers/gpu/drm/mediatek/mtk_ddp_comp.c
+
+   456	
+   457	static const struct mtk_ddp_comp_match mtk_ddp_matches[DDP_COMPONENT_DRM_ID_MAX] = {
+   458		[DDP_COMPONENT_AAL0]		= { MTK_DISP_AAL,		0, &ddp_aal },
+   459		[DDP_COMPONENT_AAL1]		= { MTK_DISP_AAL,		1, &ddp_aal },
+   460		[DDP_COMPONENT_BLS]		= { MTK_DISP_BLS,		0, NULL },
+   461		[DDP_COMPONENT_CCORR]		= { MTK_DISP_CCORR,		0, &ddp_ccorr },
+   462		[DDP_COMPONENT_COLOR0]		= { MTK_DISP_COLOR,		0, &ddp_color },
+   463		[DDP_COMPONENT_COLOR1]		= { MTK_DISP_COLOR,		1, &ddp_color },
+   464		[DDP_COMPONENT_DITHER0]		= { MTK_DISP_DITHER,		0, &ddp_dither },
+   465		[DDP_COMPONENT_DP_INTF0]	= { MTK_DP_INTF,		0, &ddp_dpi },
+   466		[DDP_COMPONENT_DP_INTF1]	= { MTK_DP_INTF,		1, &ddp_dpi },
+   467		[DDP_COMPONENT_DPI0]		= { MTK_DPI,			0, &ddp_dpi },
+   468		[DDP_COMPONENT_DPI1]		= { MTK_DPI,			1, &ddp_dpi },
+   469		[DDP_COMPONENT_DRM_OVL_ADAPTOR]	= { MTK_DISP_OVL_ADAPTOR,	0, &ddp_ovl_adaptor },
+   470		[DDP_COMPONENT_DSC0]		= { MTK_DISP_DSC,		0, &ddp_dsc },
+   471		[DDP_COMPONENT_DSC1]		= { MTK_DISP_DSC,		1, &ddp_dsc },
+   472		[DDP_COMPONENT_DSI0]		= { MTK_DSI,			0, &ddp_dsi },
+   473		[DDP_COMPONENT_DSI1]		= { MTK_DSI,			1, &ddp_dsi },
+   474		[DDP_COMPONENT_DSI2]		= { MTK_DSI,			2, &ddp_dsi },
+   475		[DDP_COMPONENT_DSI3]		= { MTK_DSI,			3, &ddp_dsi },
+ > 476		[DDP_COMPONENT_DVO0]            = { MTK_DVO,                    0, &ddp_dpi },
+   477		[DDP_COMPONENT_GAMMA]		= { MTK_DISP_GAMMA,		0, &ddp_gamma },
+   478		[DDP_COMPONENT_MERGE0]		= { MTK_DISP_MERGE,		0, &ddp_merge },
+   479		[DDP_COMPONENT_MERGE1]		= { MTK_DISP_MERGE,		1, &ddp_merge },
+   480		[DDP_COMPONENT_MERGE2]		= { MTK_DISP_MERGE,		2, &ddp_merge },
+   481		[DDP_COMPONENT_MERGE3]		= { MTK_DISP_MERGE,		3, &ddp_merge },
+   482		[DDP_COMPONENT_MERGE4]		= { MTK_DISP_MERGE,		4, &ddp_merge },
+   483		[DDP_COMPONENT_MERGE5]		= { MTK_DISP_MERGE,		5, &ddp_merge },
+   484		[DDP_COMPONENT_OD0]		= { MTK_DISP_OD,		0, &ddp_od },
+   485		[DDP_COMPONENT_OD1]		= { MTK_DISP_OD,		1, &ddp_od },
+   486		[DDP_COMPONENT_OVL0]		= { MTK_DISP_OVL,		0, &ddp_ovl },
+   487		[DDP_COMPONENT_OVL1]		= { MTK_DISP_OVL,		1, &ddp_ovl },
+   488		[DDP_COMPONENT_OVL_2L0]		= { MTK_DISP_OVL_2L,		0, &ddp_ovl },
+   489		[DDP_COMPONENT_OVL_2L1]		= { MTK_DISP_OVL_2L,		1, &ddp_ovl },
+   490		[DDP_COMPONENT_OVL_2L2]		= { MTK_DISP_OVL_2L,		2, &ddp_ovl },
+   491		[DDP_COMPONENT_POSTMASK0]	= { MTK_DISP_POSTMASK,		0, &ddp_postmask },
+   492		[DDP_COMPONENT_PWM0]		= { MTK_DISP_PWM,		0, NULL },
+   493		[DDP_COMPONENT_PWM1]		= { MTK_DISP_PWM,		1, NULL },
+   494		[DDP_COMPONENT_PWM2]		= { MTK_DISP_PWM,		2, NULL },
+   495		[DDP_COMPONENT_RDMA0]		= { MTK_DISP_RDMA,		0, &ddp_rdma },
+   496		[DDP_COMPONENT_RDMA1]		= { MTK_DISP_RDMA,		1, &ddp_rdma },
+   497		[DDP_COMPONENT_RDMA2]		= { MTK_DISP_RDMA,		2, &ddp_rdma },
+   498		[DDP_COMPONENT_RDMA4]		= { MTK_DISP_RDMA,		4, &ddp_rdma },
+   499		[DDP_COMPONENT_UFOE]		= { MTK_DISP_UFOE,		0, &ddp_ufoe },
+   500		[DDP_COMPONENT_WDMA0]		= { MTK_DISP_WDMA,		0, NULL },
+   501		[DDP_COMPONENT_WDMA1]		= { MTK_DISP_WDMA,		1, NULL },
+   502	};
+   503	
 
 -- 
-2.49.0
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
