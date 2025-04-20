@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5711C369D2
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Apr 2025 18:11:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3836C369D1
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Apr 2025 19:53:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2x+NChSHi+mIEekRfFWxCpgOayUzPwtM1yuBtJx+bgo=; b=mw9bzFH8h4w5CD
-	coqsqgd6QKFcaeb5mEVu7BuhzzxoLUgASnAxoQfDDprKXUtYy0stKV5RTixUAsxoPc7TIh+DHA7tb
-	BFYfuh0IaSUtaVl8aAd9Hzx0Ux4NZKKAPffPPf+rYBsS/fJVIWEL5oYgXbsTYfmckNWHELDP+53Ju
-	1C6jbhVAa4SEaVQcWrBjl58xzErFz4TbKUxEzKg7MLgMrTd/yGejU3LrDRd6MiH4ccn5HL2Z5unCQ
-	F8a7ygqku/judprauamR/1SV0OzzhSRr3evrBiBptK1vtNFmvpsQEhLZOZmFct1OROl0Yv9Br6hKJ
-	X8gtZ3MBoS/e5YNir8Eg==;
+	List-Owner; bh=zGICY07Acbk2wjDttdtOXZtiDz2rEFgsQMMgZ5qC3mw=; b=Dp9yT3s9BIqxNM
+	3Ozr/MfkMSuyCO4IhZ7NG2IBYPPxMHknvL6nYviKMsZFE8yUUqEHRD/HSq39GF/pECUzJwpRAnuy/
+	pIlSF4LfPN4pmxqW8nMpqzDnmIxKmDFWEE3FPZGOOA54v2p3fe3XQb23AL75ourvc4JPwe8RxTpSq
+	l5QHAOdsyx1+BIlOS3OXg3M5BQcwBoUnVfourUUvb1C+X3qyLM68oyXKbyd9xhwqN+/2tGdju2eiV
+	IDQ6uj5M2U5MrbI4WVPXhFfA83XNjOmas46tYjfp9dNMZancPKUTCRu9KflJdiUNUB2c6kCqcHKWe
+	J44XSIguIyvv+qTAu0jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6Z8b-00000002sku-1qRs;
-	Sun, 20 Apr 2025 18:11:29 +0000
-Received: from out-173.mta1.migadu.com ([95.215.58.173])
+	id 1u6aiz-00000002zqr-0TCd;
+	Sun, 20 Apr 2025 19:53:09 +0000
+Received: from sendmail.purelymail.com ([34.202.193.197])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6Z8Y-00000002sk6-1cDT
+	id 1u6aLU-00000002wEO-1K9q
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Apr 2025 18:11:27 +0000
-Message-ID: <0072bb93-5456-40c4-96bc-a7afb3523238@linux.dev>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1745172683;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=R9aamBQ0ZU3bGoMpZmyKNMQL3sm5Iv1i0Ot2VzAuk9Q=;
-	b=aznFVrSR5pijCE0f9jOwqOZVQA5RUEE0ZKIjHKF4C/QGssZhK8K0TDOH6e8hGj00yM7QpE
-	iVTNelR+Q7sdYc4hpc4wcE24q3OXH2zw9UZq3wALJrBn/W8wYKJ3CgAAGeMxPdl5aHEOA6
-	m/L2aoRw1pqruk3OtAKnmLovQgWFkAQ=
-Date: Sun, 20 Apr 2025 23:40:22 +0530
+	Sun, 20 Apr 2025 19:28:53 +0000
+Authentication-Results: purelymail.com; auth=pass
+DKIM-Signature: a=rsa-sha256; b=qm2M5DXPtCKo1Glxkprzegx2dOakQczkJvbAJaxCH229JSjefyB1/6NIQWouVY/x1IMjuD50SfqHCyLIMMiT/7O2WvapNYAhaCQQNc1mtGQM8tuof5Xa6RCBz/ljUvaFGmfM7Ky9AzH9FafQB0sC4wEEwvo5U5QK5j7ELEPKJ0TRiIG0k5ZHNe6vlDcXaTKMdmwnJ53s6yRi3HZ08qOVqnB8C0ZXj0AGGq6anuBkBYukbyTk9W0NUwVhPZ8CyT0zVv6p+Tls4xCwJdGS/j0liwSPOAnFK9+Ojf6dRLs2qwwg8rq/bool3OlC6ctzn+xN/roTsnwFASufDdTzSlXc9A==; s=purelymail3; d=purelymail.com; v=1; bh=QOd6z6A83o0QZNnyI/ifSdk4jGhOOwca01N1b/7gQPA=; h=Feedback-ID:Received:From:Date:Subject:To;
+Feedback-ID: 68247:10037:null:purelymail
+X-Pm-Original-To: linux-phy@lists.infradead.org
+Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id 1149203934;
+          (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
+          Sun, 20 Apr 2025 19:28:44 +0000 (UTC)
+From: Igor Belwon <igor.belwon@mentallysanemainliners.org>
+Date: Sun, 20 Apr 2025 21:28:21 +0200
+Subject: [PATCH v2 1/2] dt-bindings: phy: samsung,usb3-drd-phy: Add
+ exynos990 compatible
 MIME-Version: 1.0
-Subject: Re: [PATCH v3 14/17] drm/bridge: cdns-dsi: Use video mode and clean
- up cdns_dsi_mode2cfg()
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
- Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Jayesh Choudhary <j-choudhary@ti.com>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Devarsh Thakkar <devarsht@ti.com>
-References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-14-4e52551d4f07@ideasonboard.com>
-Content-Language: en-US
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-In-Reply-To: <20250414-cdns-dsi-impro-v3-14-4e52551d4f07@ideasonboard.com>
-X-Migadu-Flow: FLOW_OUT
+Message-Id: <20250420-usb-resends-april-v2-1-25dc7d2e6dd4@mentallysanemainliners.org>
+References: <20250420-usb-resends-april-v2-0-25dc7d2e6dd4@mentallysanemainliners.org>
+In-Reply-To: <20250420-usb-resends-april-v2-0-25dc7d2e6dd4@mentallysanemainliners.org>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ Igor Belwon <igor.belwon@mentallysanemainliners.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1745177319; l=1286;
+ i=igor.belwon@mentallysanemainliners.org; s=20241206;
+ h=from:subject:message-id; bh=QOd6z6A83o0QZNnyI/ifSdk4jGhOOwca01N1b/7gQPA=;
+ b=2rOhwRtKIKC1Z2fHwV7rvy28V9+d3GYFQSW3KYruUkmRkeQ+jcbN3WSqq8YKLQGUsXsMHzLw5
+ v52B2SKFmxkDd/JMv1JLXoNgfGWcxS/mv/JbF3ZgmcJCaQJpY0Y7eIY
+X-Developer-Key: i=igor.belwon@mentallysanemainliners.org; a=ed25519;
+ pk=qKAuSTWKTaGQM0vwBxV0p6hPKMN4vh0CwZ+bozrG5lY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250420_111126_740633_90389FBF 
-X-CRM114-Status: GOOD (  19.29  )
+X-CRM114-CacheID: sfid-20250420_122852_444190_0CAA2A6C 
+X-CRM114-Status: UNSURE (   7.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,148 +82,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Add a compatible for the exynos990-usbdrd-phy. The PHY is compatible with
+the older exynos5420 design (two clocks) when running in highspeed mode.
 
-On 14/04/25 16:41, Tomi Valkeinen wrote:
-> The driver does all the calculations and programming with video timings
-> (hftp, hbp, etc.) instead of the modeline values (hsync_start, ...).
-> Thus it makes sense to use struct videomode instead of struct
-> drm_display_mode internally.
-> 
-> Switch to videomode and do some cleanups in cdns_dsi_mode2cfg() along
-> the way.
-> 
-> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-> ---
->  drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 45 ++++++++++++++------------
->  1 file changed, 24 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> index fb0623d3f854..a55f851711f0 100644
-> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-> @@ -9,6 +9,7 @@
->  #include <drm/drm_drv.h>
->  #include <drm/drm_probe_helper.h>
->  #include <video/mipi_display.h>
-> +#include <video/videomode.h>
->  
->  #include <linux/clk.h>
->  #include <linux/interrupt.h>
-> @@ -467,36 +468,35 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
->  }
->  
->  static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
-> -			     const struct drm_display_mode *mode,
-> +			     const struct videomode *vm,
->  			     struct cdns_dsi_cfg *dsi_cfg)
->  {
->  	struct cdns_dsi_output *output = &dsi->output;
-> -	unsigned int tmp;
-> -	bool sync_pulse = false;
-> +	u32 dpi_hsa, dpi_hbp, dpi_hfp, dpi_hact;
-> +	bool sync_pulse;
->  	int bpp;
->  
-> +	dpi_hsa = vm->hsync_len;
-> +	dpi_hbp = vm->hback_porch;
-> +	dpi_hfp = vm->hfront_porch;
-> +	dpi_hact = vm->hactive;
-> +
->  	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
->  
-> -	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
-> -		sync_pulse = true;
-> +	sync_pulse = output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
->  
->  	bpp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
->  
-> -	tmp = mode->htotal -
-> -		(sync_pulse ? mode->hsync_end : mode->hsync_start);
-> +	dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp + (sync_pulse ? 0 : dpi_hsa),
-> +					 bpp, DSI_HBP_FRAME_OVERHEAD);
->  
-> -	dsi_cfg->hbp = dpi_to_dsi_timing(tmp, bpp, DSI_HBP_FRAME_OVERHEAD);
-> +	if (sync_pulse)
-> +		dsi_cfg->hsa =
-> +			dpi_to_dsi_timing(dpi_hsa, bpp, DSI_HSA_FRAME_OVERHEAD);
->  
-> -	if (sync_pulse) {
-> -		tmp = mode->hsync_end - mode->hsync_start;
-> +	dsi_cfg->hact = dpi_to_dsi_timing(dpi_hact, bpp, 0);
->  
-> -		dsi_cfg->hsa = dpi_to_dsi_timing(tmp, bpp,
-> -						 DSI_HSA_FRAME_OVERHEAD);
-> -	}
-> -
-> -	dsi_cfg->hact = dpi_to_dsi_timing(mode->hdisplay, bpp, 0);
-> -	dsi_cfg->hfp = dpi_to_dsi_timing(mode->hsync_start - mode->hdisplay,
-> -					 bpp, DSI_HFP_FRAME_OVERHEAD);
-> +	dsi_cfg->hfp = dpi_to_dsi_timing(dpi_hfp, bpp, DSI_HFP_FRAME_OVERHEAD);
->  
->  	dsi_cfg->htotal = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
->  	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Igor Belwon <igor.belwon@mentallysanemainliners.org>
+---
+ Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-I think at this stage, the dsi_cfg->htotal will always come out to be
-
-((dpi_htotal * bitspp) / 8),
-
-no matter whether the sync_pulse or the event_mode is set or not.
-
-Whatever the overheads are there, they get cancelled out. So, it doesn't
-need to be individually tracked.
-
-
-> @@ -509,7 +509,7 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
->  }
->  
->  static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
-> -			       const struct drm_display_mode *mode,
-> +			       const struct videomode *vm,
->  			       struct cdns_dsi_cfg *dsi_cfg)
->  {
->  	struct cdns_dsi_output *output = &dsi->output;
-> @@ -517,11 +517,11 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
->  	unsigned int nlanes = output->dev->lanes;
->  	int ret;
->  
-> -	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg);
-> +	ret = cdns_dsi_mode2cfg(dsi, vm, dsi_cfg);
->  	if (ret)
->  		return ret;
->  
-> -	ret = phy_mipi_dphy_get_default_config(mode->clock * 1000,
-> +	ret = phy_mipi_dphy_get_default_config(vm->pixelclock,
->  					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
->  					       nlanes, phy_cfg);
->  	if (ret)
-> @@ -909,12 +909,15 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
->  	struct cdns_dsi_bridge_state *dsi_state = to_cdns_dsi_bridge_state(bridge_state);
->  	struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
->  	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
-> +	struct videomode vm;
->  
->  	/* cdns-dsi requires negative syncs */
->  	adjusted_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
->  	adjusted_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
->  
-> -	return cdns_dsi_check_conf(dsi, adjusted_mode, dsi_cfg);
-> +	drm_display_mode_to_videomode(adjusted_mode, &vm);
-> +
-> +	return cdns_dsi_check_conf(dsi, &vm, dsi_cfg);
->  }
->  
->  static struct drm_bridge_state *
-> 
-
-With the above taken care of,
-
-Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-
+diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+index fdddddc7d611364ce17870b5b8963b5a0c0c9668..5b240fc761c38b49fa4f673ea4fff0609470b414 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+@@ -32,6 +32,7 @@ properties:
+       - samsung,exynos7-usbdrd-phy
+       - samsung,exynos7870-usbdrd-phy
+       - samsung,exynos850-usbdrd-phy
++      - samsung,exynos990-usbdrd-phy
+ 
+   clocks:
+     minItems: 2
+@@ -187,6 +188,7 @@ allOf:
+               - samsung,exynos5420-usbdrd-phy
+               - samsung,exynos7870-usbdrd-phy
+               - samsung,exynos850-usbdrd-phy
++              - samsung,exynos990-usbdrd-phy
+     then:
+       properties:
+         clocks:
 
 -- 
-Regards
-Aradhya
+2.47.2
 
 
 -- 
