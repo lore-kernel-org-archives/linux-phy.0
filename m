@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA3D3C369AB
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Apr 2025 21:34:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 873AAC369AB
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Apr 2025 21:35:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwUmx8rryZhLri4UW3GEatE1qIdtYwgVSnp4ZUgOscg=; b=WTD/k9RGW+zk43
-	/xFbMhXyAzixN6YeHrlvtkgePfTPvXeGReh+OiRiWPzLXVotzUvcUorAXm8FPymEilcaupg5XX282
-	BZNfM8x4rlt9Zf7KADD6MZt76EeWChvsnyqdQqvPN3mPTU6o3ymq6C6CJkX+NI72wFn06rDl3ykp/
-	VIuMwDYGOzriMBWDAN6i0aZnIdBTAHTSxK/Kj1PcSop7QdY1DepNdvNnE01UBpd2o9bGjbV5vEozn
-	U7mcpGq+IrNxsP8ZEhxG/9jfmVsiUWYNhURCYxDltJboAKHmA/IOumaKSXit1WeZ2gDmRABMFVU4A
-	O5LhNZlbypfxdrcMdXcw==;
+	List-Owner; bh=tFqhgSM9QHYZFz5YpwcCTdBMYn5UtLm0LpOLyLgItLw=; b=XKEAI/F4wgYsjY
+	b6L2EZdcvKoBN9gmDKU0gqScH5NCAdAXNa+JF4tQdgrCGtkrVSYJcra3GzcFb12vV5aDxITG3XA3C
+	H1BdsgVoaExQTEI4vpVAkGtYODZWYW6DJSQA8c0/CRHsgz2aHHSwPo2saTdjaoZcqNMpiAiUQfOMq
+	CyoRkBcknlT/Pd99YOZRzmLZwpzdCrfP5BG6LQtJSi/+XGOVzaYH0UFUVkejYUP7BmV6M4gRKwUOJ
+	nKXM5KUYZhAbAy88nojpYuzYu/KQNSnqJ3btZeJK5Z5QyxSpeEsNTVt6TjOT8uFd9Os1Nc9T7OSgG
+	YcN7/pehqyy07dgWgGhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6ymA-00000005BiC-0ISR;
-	Mon, 21 Apr 2025 21:34:02 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1u6ynz-00000005Bsd-18Vc;
+	Mon, 21 Apr 2025 21:35:55 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6yky-00000005BWA-0slz
-	for linux-phy@lists.infradead.org;
-	Mon, 21 Apr 2025 21:32:48 +0000
+	id 1u6ylS-00000005Ba3-10Nd;
+	Mon, 21 Apr 2025 21:33:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 35F9B6115F;
-	Mon, 21 Apr 2025 21:32:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF39DC4CEE4;
-	Mon, 21 Apr 2025 21:32:46 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 1E688A439C5;
+	Mon, 21 Apr 2025 21:27:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A3C9FC4CEE4;
+	Mon, 21 Apr 2025 21:33:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745271167;
-	bh=QLIGv6BbptEPQr0f4i4xGAOTh8BsPkZbgBrT/SzcXm8=;
+	s=k20201202; t=1745271196;
+	bh=eqF+MyBX1r7/lOmnP6a/7aYsckU/IXClGdPLidP0oJs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=T8ULaN64PeXZQfBJisV9YtKLO1q59790zkrdA9tu9dIiLfgg8a5sgJL01BjAbTgZK
-	 EJZ0fgjVKs11DANCdMkauVLrzKoEZh/fE2+MS686/81nFOeTUpSOo2mojV/YRGHiXF
-	 7oIeOkTWu4ODnomiC6t0j1J4iHu8EEbGdd32b3coyVRUkkHPkZgfXM9+5aAoVptbvc
-	 ZAuYxJCf6Z/LHV1oGY3cbTBuiqH5IgEQph5bmbi3+glaNovUJf1mzWQ28RRMMZg8cG
-	 PiPNWNli+BQ234DC9YXPXt8WpPG2eZtEAs4ekMWpzZGxrSzisv2KAxg3wMJWp4/0MZ
-	 xY3Tm5tiaMxHg==
-Date: Mon, 21 Apr 2025 16:32:44 -0500
-From: Rob Herring <robh@kernel.org>
-To: Pengyu Luo <mitltlatltl@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Stephen Rothwell <sfr@canb.auug.org.au>,
-	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
- more tuning overrides
-Message-ID: <20250421213244.GA2725065-robh@kernel.org>
-References: <20250416120201.244133-1-mitltlatltl@gmail.com>
- <20250416120201.244133-2-mitltlatltl@gmail.com>
+	b=E1r+lhge0tzEevxHJYliMUA4pCBeIkPmf5Wkt4LNojU/JiCKA5pvCNqt1xSa8eW31
+	 mxTASZE5jvy3k/SWBCH7C5viz8cuvj/3PlxR4i8qFTMzcogXk/rKhXAoKnOPEOIEJ2
+	 m39OFF+OYi1Tknl/okIiWoTsK+JGPimADjyIyrukCfAMDZrG3opwwbyfmiUlt1hn1q
+	 4xGQXEIUvHfIDU3WiJt1OEzDvZjp7sk2Jd2DgGhCGm5Ouwv/Rtk4kaTAZwBtcUEVR/
+	 vCms9JX/fXMCcUOzz+tPHHdcFmFcxBawdGspQB13+pN3lqSugu54WTGg3gtg+ceEGi
+	 iI5aqMbpOQWcw==
+Date: Mon, 21 Apr 2025 16:33:14 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, kishon@kernel.org,
+	linux-arm-kernel@lists.infradead.org, chunfeng.yun@mediatek.com,
+	devicetree@vger.kernel.org, matthias.bgg@gmail.com,
+	vkoul@kernel.org, kernel@collabora.com,
+	linux-mediatek@lists.infradead.org, chunkuang.hu@kernel.org,
+	linux-phy@lists.infradead.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek,dsi-phy: Add support for
+ MT6893
+Message-ID: <174527119351.2964924.8279076574908790939.robh@kernel.org>
+References: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250416120201.244133-2-mitltlatltl@gmail.com>
+In-Reply-To: <20250416120220.147798-1-angelogioacchino.delregno@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250421_143318_345244_0CB37AE0 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,97 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 16, 2025 at 08:02:00PM +0800, Pengyu Luo wrote:
-> In downstream tree, many registers need to be overridden, it varies
-> from devices and platforms, not only HS trasmit amplitude(0x51),
 
-spelling
-
-> HS disconnect threshold(0x53), Tx pre-emphasis tuning(0x57). And
-> some devices require different overrides for different dr_mode. So
-> add property entries for host mode, original entries will be used
-> for device mode.
+On Wed, 16 Apr 2025 14:02:19 +0200, AngeloGioacchino Del Regno wrote:
+> Add support for the MediaTek Dimensity 1200 (MT6893) SoC: the DSI
+> PHY found in this chip is fully compatible with the one found in
+> the MT8183 SoC.
 > 
-> Signed-off-by: Pengyu Luo <mitltlatltl@gmail.com>
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > ---
->  .../phy/qcom,snps-eusb2-repeater.yaml         | 41 +++++++++++++++++--
->  1 file changed, 38 insertions(+), 3 deletions(-)
+>  Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> index d16a543a7..d0f5e770d 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> @@ -36,25 +36,60 @@ properties:
->  
->    qcom,tune-usb2-disc-thres:
->      $ref: /schemas/types.yaml#/definitions/uint8
-> -    description: High-Speed disconnect threshold
-> +    description: High-Speed disconnect threshold for device mode
->      minimum: 0
->      maximum: 7
->      default: 0
->  
->    qcom,tune-usb2-amplitude:
->      $ref: /schemas/types.yaml#/definitions/uint8
-> -    description: High-Speed transmit amplitude
-> +    description: High-Speed transmit amplitude for device mode
->      minimum: 0
->      maximum: 15
->      default: 8
->  
->    qcom,tune-usb2-preem:
->      $ref: /schemas/types.yaml#/definitions/uint8
-> -    description: High-Speed TX pre-emphasis tuning
-> +    description: High-Speed TX pre-emphasis tuning for device mode
->      minimum: 0
->      maximum: 7
->      default: 5
->  
-> +  qcom,tune-usb2-squelch:
-> +    $ref: /schemas/types.yaml#/definitions/uint8
-> +    description: Squelch detection threshold tuning for device mode
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 3
-> +
-> +  qcom,tune-usb2-disc-thres-host:
 
-Put this and the others after each existing property (for device mode). 
-Ideally, these would all be in alphabetical order.
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
-> +    $ref: /schemas/types.yaml#/definitions/uint8
-> +    description: High-Speed disconnect threshold for host mode
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 0
-> +
-> +  qcom,tune-usb2-amplitude-host:
-> +    $ref: /schemas/types.yaml#/definitions/uint8
-> +    description: High-Speed transmit amplitude for host mode
-> +    minimum: 0
-> +    maximum: 15
-> +    default: 8
-> +
-> +  qcom,tune-usb2-preem-host:
-> +    $ref: /schemas/types.yaml#/definitions/uint8
-> +    description: High-Speed TX pre-emphasis tuning for host mode
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 5
-> +
-> +  qcom,tune-usb2-squelch-host:
-> +    $ref: /schemas/types.yaml#/definitions/uint8
-> +    description: Squelch detection threshold tuning for host mode
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 3
-> +
->  required:
->    - compatible
->    - reg
-> -- 
-> 2.49.0
-> 
 
 -- 
 linux-phy mailing list
