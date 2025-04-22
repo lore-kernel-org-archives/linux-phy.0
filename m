@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28BF4C369C2
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 15:04:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE07FC369C2
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 15:06:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2V9dIvyh4dk205+V3kYtgJjjX8M0JyRIt9L/wKW3lno=; b=tMDCTm9sX6Iim6
-	dM2DkCjUiXBPm5025JkTPBdvB3YU1hWWRvuIc+xhugYv8ay0UNujdl9jIADMNFKaw6DVGD5GSc1wK
-	yXU62i7S4F89MrBj/YGg2+xpKtOXsDPcxl3Xi+HEWxmoeWs//9Jpli9d9OfLg/l1GhGV4upN4ZhIu
-	5fmk/azg80iTI931d+4F6m/yBLCRgtjK2pn9mio6hZ5eybu0MViys1CsnlLcUiqEj2EJHUg+d+1ph
-	QXPOMfisfUGznUYTee2njto9PTyT5V/K9fGaI+g38LOQHFOgCsrunE3h0dde7yhSX3eBDhLI6Lcn0
-	J14U+2etT1pk3fliwUsg==;
+	List-Owner; bh=07bkZflIriixTjUZpvNKUwnWnWTBW3yQYuOGnov8p4c=; b=hmcUkW2dA8du5F
+	aoUumuIP29SnDUi1tMYL5lsipy5hd5XiVIXz2PUOxvynNLEvpHl8spvNSP0Bny/tG+cXTEM3oTXxZ
+	Fp8WkYdlrQQBBZ9oSB1ABKDq3SbHiALRSQLtUXt/BejaJKN2Z+pQM6FVajx8YsFxBIOGv7b2ILI4Z
+	euFQ30sLobjC+U/crNiBh09fS3boW3eEQ+wST7oRn0qyC88xYT98VTF9TCzE/Ro78rzG0+GySGufj
+	la3XU3Gyip7fQUmWXbjVI9PHywHK6hNJUsAGYGl8NfaVnyNEwPYROj4er7nDHOSNNwKPKqRp6qJSK
+	TygvcbOPapiY1fxRS2og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7FAz-00000007cle-3DQf;
-	Tue, 22 Apr 2025 15:04:45 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1u7FCp-00000007d9g-28u6;
+	Tue, 22 Apr 2025 15:06:39 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7Dh9-00000007Iu9-1v0Y;
-	Tue, 22 Apr 2025 13:29:52 +0000
+	id 1u7Dii-00000007JHC-3bPV;
+	Tue, 22 Apr 2025 13:31:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1745328589;
-	bh=PS9A2so4Ht/r0sk6C7KPxy+lOlrbJ9bDV6SgknfZNy0=;
+	s=mail; t=1745328687;
+	bh=FJ+H6qNLc32NphI5YX+2HPS2FGnq/hpZqebOoXEmT0A=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=IvYnRjFWbSZamcdfKDfe1bpuO1ZOxCPLlQu1QNggSf2YBfYRvA4xgyl1IOTF104Pq
-	 w/9lGvG8Dr214i+diVRHUuAkif3NeDHkW8IEx+qn1fxAPW1xLpbwhf64P5GfrahQvC
-	 i+w484vblnIJYfIPSGcJ0VQGfVGyyWqVI3Z58EtVjkhgg2g6iU4m0vamPmSiw9Ptqd
-	 4PKOpySmYTH0S7FR9KuOWONk1pgL32WY5W+3ntdhfFnfOVQ7oRf7ioG6o91Lv51/ct
-	 E6QvUxNp+C5KXgHUJEaiVNYQeDID0IaixsrU1pn1bnW5zpnwSYfyzO0UCAr6DbsUiD
-	 /OYX/TgNmfrdA==
+	b=Zi4HcB7xvv2AnzdQmSBfHK/iExVod1qcoLkof1gFRJNrv+xk/ETPVfVCyIuIaMIkp
+	 6x9l0rjNlqQzEYkzw6mhujTOG7eOJEQ8kayVAQn2wru1AOxpkHet6r7z8Li7rUkqTe
+	 g12ebHEcXleSLdCqpLMImo/pKhoU8PiaVcOmIhAs/pg4MBc0WlVLevdL7S7mjL3rdc
+	 dr54cIAezKNrb1jdrgzQZqTk/+/OQradYxvW72Da/3pI/xT4IRWDCHy9vqJjxdM3zY
+	 PN5XaIIupGaq8HbGg3i5OlxBAKJtXC4MC1BD/Gfeh3YdrGpqFyQ2r8GrwSpZlrnYyi
+	 Bl8osISpj2YLw==
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id CBA9D17E0B9D;
-	Tue, 22 Apr 2025 15:29:48 +0200 (CEST)
-Message-ID: <e086c8aa-944d-42db-b163-023571dcc740@collabora.com>
-Date: Tue, 22 Apr 2025 15:29:48 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 39DC717E0CAB;
+	Tue, 22 Apr 2025 15:31:25 +0200 (CEST)
+Message-ID: <80b19eab-78f8-4403-a734-73db5244a07d@collabora.com>
+Date: Tue, 22 Apr 2025 15:31:25 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/8] arm64: dts: mediatek: mt7988a-bpi-r4: allow hw
- variants of bpi-r4
+Subject: Re: [PATCH v4 6/8] phy: mediatek: xsphy: support type switch by
+ pericfg
 To: Frank Wunderlich <linux@fw-web.de>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
@@ -60,16 +60,15 @@ Cc: Frank Wunderlich <frank-w@public-files.de>,
  Daniel Golle <daniel@makrotopia.org>, Sean Wang <sean.wang@mediatek.com>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ linux-phy@lists.infradead.org
 References: <20250422132438.15735-1-linux@fw-web.de>
- <20250422132438.15735-3-linux@fw-web.de>
+ <20250422132438.15735-7-linux@fw-web.de>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20250422132438.15735-3-linux@fw-web.de>
+In-Reply-To: <20250422132438.15735-7-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250422_062951_685115_552D6A71 
-X-CRM114-Status: UNSURE (   7.08  )
+X-CRM114-CacheID: sfid-20250422_063129_043100_306AE045 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -88,19 +87,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 22/04/25 15:24, Frank Wunderlich ha scritto:
-> From: Frank Wunderlich <frank-w@public-files.de>
+> From: Daniel Golle <daniel@makrotopia.org>
 > 
-> Sinovoip has released other variants of Bananapi-R4 board.
-> The known changes affecting only the LAN SFP+ slot which is replaced
-> by a 2.5G phy with optional PoE.
+> Patch from Sam Shih <sam.shih@mediatek.com> found in MediaTek SDK
+> released under GPL.
 > 
-> Just move the common parts to a new dtsi and keep differences (only
-> i2c for lan-sfp) in dts.
+> Get syscon and use it to set the PHY type.
+> Extend support to PCIe and SGMII mode in addition to USB2 and USB3.
 > 
+> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 > Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogiaocchino.delregno@collabora.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
 
 
 -- 
