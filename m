@@ -4,42 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55E3EC369D1
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 21:37:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F404C369DC
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 21:37:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F3+7BHP4vLbd9PMg4NsVS+Q+/hYW60LYGO9oKABPo7o=; b=pJCpeAgA5p2d8t
-	7nEEIjk+kEej3uzJKHYFCk2B7kv000VZEXTeqxfrN0ohnrh/nHGCjlnVeapjsK5t3LTvwgyQjgJoQ
-	hHIaKgwyGZ0ZXnk3w0/E8X2OIzyWg+Gr023V7RHOy2xY/VteBNxZBjmbZA8fYJr8aUCUIVtViLVlG
-	L+nlQqIlLbqLgv+X1NO8DLO1ErTG/HdAY1T6vG+2vuJtrbkI0GwNg9RMi2Z5CZ/1PfZ4+hp7qPXjK
-	JJyHxztOrGC5dLBgKxLj+yKrhqzdzv3os+D5og+T2HXW+8axJbYlmC/jpjLV//rvuKV7OAtXAUdSx
-	E+H2dT0qTum0DYvkJiJQ==;
+	List-Owner; bh=iBmrcBf96KJxuO7NTD4Z84wkg46EAJ9f50AAsNPDxdw=; b=mk5sh1nU5JZt4E
+	+2iLGozZV2X6SmgseJFyF05BS5FYLghsHOp1ZAReQG3CQTVKgqFYKOWUvwZgAdDpYEInUeDjIrawl
+	DclOo9t4Ldg0GZM/ed+IV393qRfxYfALJs5j8DIf3MIZubeLob/xvSTOdZ9LBWec/BR6iIAuNx1la
+	StGYjqVhxK60FaNtH+Rr8W8gHicHuavvq7BnggVeU7E0ajBuPAnuLz0Ute49Y4GG1YTRKEFM6NbKt
+	h8UmyCJKqEQEOw2Fi9UeGTRo46VboQPQ1MNpIVtLupm3sJve/h2PoHzevu1LKOfYm4vQFVLwoC82d
+	qCqzr9U6bEiAylFnIl4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7LIg-00000008blp-0OBp;
+	id 1u7LIg-00000008bnQ-3iw7;
 	Tue, 22 Apr 2025 21:37:06 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+Received: from send240.i.mail.ru ([95.163.59.79])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7K71-00000008R5B-1rkc;
-	Tue, 22 Apr 2025 20:20:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=cnTWJxGqTEGpJxvIQTZysU+hFRUTHDoIoxR2rqPhypY=; b=KBUHg4cVkf1IOpZLVYw1iOn0cS
-	kwFwkOY6TRlZyQXzS9oI2vDkV+vrMpHfpFxcf+Z7ZYnfvegKAENaVlnCTE08wHALfXlQ91U6AR9TC
-	G87Xql2VTwu71iGytYsESDy0x/1poZhFC5dPP/1RntG/nEe/Gx0gYloJE42/eVDLgFEMfUv9ZoUaM
-	9f3M6BeYyyl2FAo7WdkDjpLfgY6aTIHyv+nlaIrNwmLruhk/hq5N+RKwmeYeWgGLetWB2/WcSzLWm
-	fE6r137vozuXOlVmVowfKlTHgFv26iaptU0RJbDKF3KCeVDUdi+qPy09C7T39JgPtt1Nb7BwDKht0
-	ei0ogj6w==;
-Received: from send151.i.mail.ru ([89.221.237.246])
-	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u7K6t-0000000BJq2-03GL;
-	Tue, 22 Apr 2025 20:20:55 +0000
+	id 1u7K8O-00000008RLt-1pJt;
+	Tue, 22 Apr 2025 20:22:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
 	; s=mailru; h=Cc:To:In-Reply-To:References:Message-Id:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:From:
@@ -47,18 +33,18 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive:X-Cloud-Ids:Disposition-Notification-To;
-	bh=cnTWJxGqTEGpJxvIQTZysU+hFRUTHDoIoxR2rqPhypY=; t=1745353236; x=1745443236; 
-	b=nTfKs7xyAulVILSuI26mHN+fc+VLNEOEZkXW+fJT7xZwJ05doEbou1/2E5w9kOdylUB8ZDjBYJF
-	iskQVxqnwjiHeTXn4jesDPyCbhF80MRt0JoIlA26fvWTWlUX+nrgVvkG/mtRrRyYa2n9u7xyilP3L
-	JsQ8QvvPRzOVBrew4o4=;
+	bh=Zo115PiP9d6FJK1F6lMkwC+6B58zP/Ggz0uYW12zkjQ=; t=1745353343; x=1745443343; 
+	b=nVrjMpZcNghbqWWeg3D2Iw67CH1QnxeJ+wOSeqFUIe93KFtk5Cefx1f8AZelpttdg3sCszY3GOc
+	OvYMsAaAYzAeuvItyUvTBqyWv5JwEh4uXFTatdSFZY965OzOu5aCSsJ0U/whpxwUx0w6RjZ35Z8dE
+	Cqndv6BrC34XCoVCRAc=;
 Received: by exim-smtp-77d8cdf77b-httmk with esmtpa (envelope-from <danila@jiaxyga.com>)
-	id 1u7K6b-00000000Adc-1Rch; Tue, 22 Apr 2025 23:20:34 +0300
+	id 1u7K8A-00000000Adc-0ZCH; Tue, 22 Apr 2025 23:22:10 +0300
 From: Danila Tikhonov <danila@jiaxyga.com>
-Date: Tue, 22 Apr 2025 23:17:05 +0300
-Subject: [PATCH 04/33] dt-bindings: mailbox: qcom: Add the SM7150 APCS
+Date: Tue, 22 Apr 2025 23:17:08 +0300
+Subject: [PATCH 07/33] dt-bindings: thermal: tsens: Add the SM7150
  compatible
 MIME-Version: 1.0
-Message-Id: <20250422-sm7150-upstream-v1-4-bf9a9081631d@jiaxyga.com>
+Message-Id: <20250422-sm7150-upstream-v1-7-bf9a9081631d@jiaxyga.com>
 References: <20250422-sm7150-upstream-v1-0-bf9a9081631d@jiaxyga.com>
 In-Reply-To: <20250422-sm7150-upstream-v1-0-bf9a9081631d@jiaxyga.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -119,26 +105,26 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-hardening@vger.kernel.org, linux@mainlining.org, 
  ~postmarketos/upstreaming@lists.sr.ht, Danila Tikhonov <danila@jiaxyga.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1745353049; l=1028;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1745353049; l=866;
  i=danila@jiaxyga.com; s=20250422; h=from:subject:message-id;
- bh=FU6xazSJzLR7XlrqjrPJFBfAVNHXBk5j6Y0b3fDmsVE=;
- b=pJilMQMQfYaXC/LJGPuOKo4TNAmV+A9pYLwSTeFmkpKYXN/z+cQMOcw4v6abBLcPSBG2n8Pn/
- l8MdmTI19CxBR1VSszJjca412JEm+HAIeLlLSEOlhVg1lJDsmZ6zheO
+ bh=QANK6tWHXIdxZA8F26rDiGxktgdOH42ddHx62c95ArQ=;
+ b=I8BVcWkpBR1H66hT8vv7+m77Ny1owcV7wPiOC2o6NshVH3ZS/Ulwv7hzW2XtQTpjf2Qc1Kiaq
+ G8QgVMycUniCIAsGo/en6aR+LOjaz1QxrzdkI+qKvMNUgH3L8chjhbD
 X-Developer-Key: i=danila@jiaxyga.com; a=ed25519;
  pk=kkU4G47tvpSEUdBQEkXuWvTk/3WmGrVrdzZiKAKjBJo=
 Authentication-Results: exim-smtp-77d8cdf77b-httmk; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
 X-Mailru-Src: smtp
-X-7564579A: 646B95376F6C166E
-X-77F55803: 4F1203BC0FB41BD985535D2C87FE65BB5D73E3D950B0DD10C757DC83125CEFA200894C459B0CD1B95D46397279889D57C591814E25D11F9F83AC75C63EA5607EA32EEC6BB77F3E79224C9A2F61B97637
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7FBB2043146276655EA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F7900637F28F4AF03526AA8F8638F802B75D45FF914D58D5BE9E6BC1A93B80C6DEB9DEE97C6FB206A91F05B2EE60BA927579A7EA2E070BE324C7D3C4DF48F7C68FCB1443F6B57BC7E64490618DEB871D839B73339E8FC8737B5C2249A50BD5087FBFCDAACC7F00164DA146DAFE8445B8C89999729449624AB7ADAF37F6B57BC7E64490611E7FA7ABCAF51C92176DF2183F8FC7C015BBC38BE64FE4678941B15DA834481F9449624AB7ADAF37BA3038C0950A5D3613377AFFFEAFD269176DF2183F8FC7C02271980798FBD5E27B076A6E789B0E97A8DF7F3B2552694AD5FFEEA1DED7F25D49FD398EE364050F0AC5B80A05675ACD0A5971FBB7557E96B3661434B16C20ACC84D3B47A649675FE827F84554CEF5019E625A9149C048EE9ECD01F8117BC8BEE2021AF6380DFAD18AA50765F790063735872C767BF85DA227C277FBC8AE2E8BB07C9E286C61B7F975ECD9A6C639B01B4E70A05D1297E1BBCB5012B2E24CD356
-X-C1DE0DAB: 0D63561A33F958A5EF2F8D31387AC5785002B1117B3ED696A7D7E4DB8DB39AD38B25839F35DFE037823CB91A9FED034534781492E4B8EEAD85CCBA673D36D1A4C79554A2A72441328621D336A7BC284946AD531847A6065A535571D14F44ED41
-X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF77DD89D51EBB7742D3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF414D640B656F64468B08D0901815A2F2A4A7F3851EC60573416DA7A93861D4962DC0EA915DEF7D0C68A835CA8743990B343F9F9FDB0505F70E280A9F3BCC449B7BB8725C88F47357EFF8118B638B08AA02C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
-X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu53w8ahmwBjZKM/YPHZyZHvz5uv+WouB9+ObcCpyrx6l7KImUglyhkEat/+ysWwi0gdhEs0JGjl6ggRWTy1haxBpVdbIX1nthFXMZebaIdHP2ghjoIc/363UZI6Kf1ptIMVS+uSU+BUhgv/Fa6i0waMbc=
-X-Mailru-Sender: 9EB879F2C80682A0D0AE6A344B45275F2269F4137897263197B151A33FA7A9F8A35F51E26E469327E76D87DBBD3F212A2C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
+X-7564579A: B8F34718100C35BD
+X-77F55803: 4F1203BC0FB41BD985535D2C87FE65BBCCDA5DC2A972A8A1B27DFF87B8EC301900894C459B0CD1B9BD4B072ABEEB5E0EC591814E25D11F9FA1EEAFFF85891568EB70ABB35CB9DA26C7997A56A7FEE5D2
+X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE75AD53DF1D86BACA3EA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F79006371D5B197C6EC5B4BE8638F802B75D45FF914D58D5BE9E6BC1A93B80C6DEB9DEE97C6FB206A91F05B24F16DA1DE1C032E82E070BE324C7D3C43C48FE2AB118F8F1F6B57BC7E64490618DEB871D839B73339E8FC8737B5C2249D6FBC3EC642A93BBCC7F00164DA146DAFE8445B8C89999729449624AB7ADAF37F6B57BC7E64490611E7FA7ABCAF51C92176DF2183F8FC7C000E2D00546020E658941B15DA834481F9449624AB7ADAF37BA3038C0950A5D3613377AFFFEAFD269176DF2183F8FC7C0DC19892156F48AD57B076A6E789B0E97A8DF7F3B2552694AD5FFEEA1DED7F25D49FD398EE364050F0AC5B80A05675ACDA9539A8B24243104B3661434B16C20ACC84D3B47A649675FE827F84554CEF5019E625A9149C048EE9ECD01F8117BC8BEE2021AF6380DFAD18AA50765F790063735872C767BF85DA227C277FBC8AE2E8B9F5955FECEF5819E75ECD9A6C639B01B4E70A05D1297E1BBCB5012B2E24CD356
+X-C1DE0DAB: 0D63561A33F958A5E5886E5AFE96B3E75002B1117B3ED696D88D5189CCCE893DC638DF663A625AFA823CB91A9FED034534781492E4B8EEAD6A17C1D737525568C79554A2A72441328621D336A7BC284946AD531847A6065A535571D14F44ED41
+X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF77DD89D51EBB7742D3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF852853A9454229A6CACC80B0D1FC24139946669BB3446D36494D1999B6938B7A66DF14FFBF4EC71468A835CA8743990BD84DCC8E226230A00E280A9F3BCC449BCD7C19084423A263EFF8118B638B08AA02C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
+X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu53w8ahmwBjZKM/YPHZyZHvz5uv+WouB9+ObcCpyrx6l7KImUglyhkEat/+ysWwi0gdhEs0JGjl6ggRWTy1haxBpVdbIX1nthFXMZebaIdHP2ghjoIc/363UZI6Kf1ptIMVS+uSU+BUhgvF5Pdpo7wIjE=
+X-Mailru-Sender: 9EB879F2C80682A0D0AE6A344B45275FE5A8EBF7A2685AA972C88FB39F7EDAED71782DFC934E545B436904D20E5BA9D32C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
 X-Mras: Ok
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250422_212053_057200_8B54F219 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20250422_132224_645120_0E733C3F 
+X-CRM114-Status: UNSURE (   9.05  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -156,29 +142,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: David Wronek <david@mainlining.org>
+Add the TSENS v2.x controller found on SM7150.
 
-Add compatible for the Qualcomm SM7150 APCS block to the Qualcomm APCS
-binding.
-
-Signed-off-by: David Wronek <david@mainlining.org>
 Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 ---
- Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml | 1 +
+ Documentation/devicetree/bindings/thermal/qcom-tsens.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml b/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml
-index a58a018f3f7b9f8edd70d7c1bd137844ff2549df..da00858d3a463b43dab3d743de8e3a4b831292a3 100644
---- a/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml
-+++ b/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.yaml
-@@ -49,6 +49,7 @@ properties:
-               - qcom,qcs615-apss-shared
-               - qcom,sc7180-apss-shared
-               - qcom,sc8180x-apss-shared
-+              - qcom,sm7150-apss-shared
-               - qcom,sm8150-apss-shared
-           - const: qcom,sdm845-apss-shared
-       - items:
+diff --git a/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml b/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
+index f9d8012c8cf513db94787d44b885c622f62fcf56..8515c2014643380e15ccec6cc20a28c25e00b784 100644
+--- a/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
++++ b/Documentation/devicetree/bindings/thermal/qcom-tsens.yaml
+@@ -64,6 +64,7 @@ properties:
+               - qcom,sm6115-tsens
+               - qcom,sm6350-tsens
+               - qcom,sm6375-tsens
++              - qcom,sm7150-tsens
+               - qcom,sm8150-tsens
+               - qcom,sm8250-tsens
+               - qcom,sm8350-tsens
 
 -- 
 2.49.0
