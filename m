@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97482C369D1
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 21:38:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7715BC369C2
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 21:39:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I361xCk2oEh6neof1xVzLzmM5ioPM/iZtMaxjp+6waQ=; b=PUBdLx6z+sxFMT
-	wvE6BWHm0DzemtMqPBdWC89dLfxnoCLC/0+JuEyrED1uEOfjiK3yWW1O8D5d6FkkEDiKyPprl7Hz2
-	/FIVJRppjPOlbpQ0C0h6ohIU6tR26EI8R+gshJendN57xaypiIXgim0t2KTEp3KjCAaA4et5L7uaP
-	EGfli3947kcsmUnPENRBd+EIOlNrPG5T/Oj8TGwpf+OlY+cjdCVCiPlrCnm459rA/PpJXuSRr5BP0
-	WdIq/tH8SBc1H7vlqqbEi737aeXJv1DaWwYFSkPKjjmBb45KC6x1gHB27rdAdtwdqSRypKW9HKXD2
-	qqdZje2nSRqWB9QdBPUQ==;
+	List-Owner; bh=uStDRq0tuuRWjSSIUQQemX6UAGQIW4YVSUQd5e9bmoI=; b=pntugloEsfqmoo
+	TvF0WEATTq0xNiv1v5CTLQp69sOuScLo/G/NeC2Ci+YKDFML31jTVl4sRerRwwTGRvgri1I50699T
+	4B8vIG1rRV7umd1XcWHkBLmH8H9e6+h6UhS+/dumGU50xcUjpN/cMRMut84ljoOHucUjujsnSMFRs
+	j09N0UHxrYvyPEjsSd5Gv1jgbJbUvLbDmN1DKUhcBy95t1NT0tVnUshvXMa7DgXGZ6O1MtlV9hU/R
+	YOogk8eaxFgvOESnaogEmDFx3zoma8krCwM9QMZMHkeuhSTtOMX37+yBd4BUxioZow4MC+b7OVz4z
+	QasJG6D+f8SUr852PPbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7LKJ-00000008cID-1Lwb;
-	Tue, 22 Apr 2025 21:38:47 +0000
-Received: from send35.i.mail.ru ([89.221.237.130])
+	id 1u7LL0-00000008cPT-0yZF;
+	Tue, 22 Apr 2025 21:39:30 +0000
+Received: from send278.i.mail.ru ([95.163.59.117])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7LKG-00000008cHA-2q3v;
-	Tue, 22 Apr 2025 21:38:46 +0000
+	id 1u7LKx-00000008cOT-1Zj0;
+	Tue, 22 Apr 2025 21:39:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
 	; s=mailru; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:From:Sender:Reply-To:To:Cc:Content-Type:
@@ -33,12 +33,12 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
 	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive:
 	X-Cloud-Ids:Disposition-Notification-To;
-	bh=K/0Uf6iJO3AEumK+EOFioz6MU9y4ok3T+UtORsT36+g=; t=1745357924; x=1745447924; 
-	b=rxzRAWR8QIncDyM6J9RkK44WfOL8G2V0lv6VOAZs2SJw3hgBSIK574G1f2+kFfmg3+M1KlAGl0z
-	ZXLMe2r09xt7cY2yH/EmnpXLt4z2WtYOSRknFwnrjFKrD2QpLip0c+rAQ13VDaNPE2Nqo31Hd42DV
-	IksMS693hYyb3FU2VGM=;
+	bh=zFV3v+ttaardR+kmyuKIjMLz5MjYVLgnQYifnJjQn+A=; t=1745357966; x=1745447966; 
+	b=JhN6lSJSN2Qk+7LwPpt0gPSaa813Ye1gzaoekKYnGmdDrFFbxkKZGztFNLeAjXGtvjYFTqi6MOk
+	9Hjtm89CDgaXizNSvzfBiWlu9GLom4HfjsNOdeL2l41bsAblAc8/O53qIyl9Z3dB86QHNRvJkPCXF
+	wdMPm2OGCTIBe2E4aBE=;
 Received: by exim-smtp-77d8cdf77b-wlhm8 with esmtpa (envelope-from <danila@jiaxyga.com>)
-	id 1u7LK4-00000000BOp-3ASO; Wed, 23 Apr 2025 00:38:33 +0300
+	id 1u7LKb-00000000BOp-0o1I; Wed, 23 Apr 2025 00:39:05 +0300
 From: Danila Tikhonov <danila@jiaxyga.com>
 To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -127,9 +127,9 @@ Cc: devicetree@vger.kernel.org,
 	linux@mainlining.org,
 	~postmarketos/upstreaming@lists.sr.ht,
 	Danila Tikhonov <danila@jiaxyga.com>
-Subject: [PATCH 25/33] dt-bindings: remoteproc: qcom: sc7180-pas: Add the SM7150 compatible
-Date: Wed, 23 Apr 2025 00:31:29 +0300
-Message-ID: <20250422213137.80366-9-danila@jiaxyga.com>
+Subject: [PATCH 26/33] remoteproc: qcom: pas: Add SM7150 remoteproc support
+Date: Wed, 23 Apr 2025 00:31:30 +0300
+Message-ID: <20250422213137.80366-10-danila@jiaxyga.com>
 X-Mailer: git-send-email 2.49.0
 In-Reply-To: <20250422213137.80366-1-danila@jiaxyga.com>
 References: <20250422213137.80366-1-danila@jiaxyga.com>
@@ -137,17 +137,17 @@ MIME-Version: 1.0
 Authentication-Results: exim-smtp-77d8cdf77b-wlhm8; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
 X-Mailru-Src: smtp
 X-4EC0790: 10
-X-7564579A: B8F34718100C35BD
-X-77F55803: 4F1203BC0FB41BD985535D2C87FE65BBBB88238522A04F3259E3B8317EBE436000894C459B0CD1B93DCA55A11E95DF9733594132A326AF8BE2851FBA67ABECD4003125D169E88A0005401ED2CA4B53CD
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7A3DED2DACB82E709C2099A533E45F2D0395957E7521B51C2CFCAF695D4D8E9FCEA1F7E6F0F101C6759CC434672EE6371C2A783ECEC0211ADC4224003CC836476D5A39DEEDB180909611E41BBFE2FEB2BF055844E10E72790F2F716E29DD36721C8A50D7CE925F4A4F7B2FC45257496679FA2833FD35BB23D9E625A9149C048EE26055571C92BF10FC26CFBAC0749D213D2E47CDBA5A96583BD4B6F7A4D31EC0BC014FD901B82EE079FA2833FD35BB23D27C277FBC8AE2E8BF80095D1E77F4578A471835C12D1D977C4224003CC836476EB9C4185024447017B076A6E789B0E975F5C1EE8F4F765FC0446B76C3DF766473AA81AA40904B5D9CF19DD082D7633A0C84D3B47A649675F3AA81AA40904B5D98AA50765F7900637B0B8ED7B846DF791D81D268191BDAD3D3666184CF4C3C14F3FC91FA280E0CE3D1A620F70A64A45A98AA50765F79006372E808ACE2090B5E1725E5C173C3A84C3C5EA940A35A165FF2DBA43225CD8A89F83C798A30B85E16B6D8C47C27EEC5E9FB5C8C57E37DE458BEDA766A37F9254B7
-X-C1DE0DAB: 0D63561A33F958A5D2915B867B2036F35002B1117B3ED696ED71671FA5DDA560E20DC3F561CE4150823CB91A9FED034534781492E4B8EEADED8273DE7764599AC79554A2A72441328621D336A7BC284946AD531847A6065A535571D14F44ED41
-X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF3FED46C3ACD6F73ED3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF3D7DAE94B2501B941FE9FE066586354743B683CB511A9A97C4E623D099C80C83245B1B6CBED8166A68A835CA8743990BC0D4B02AECF1F9CED59B53E1D0EAB012B7C77D21729250FCEFF8118B638B08AA02C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
-X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu53w8ahmwBjZKM/YPHZyZHvz5uv+WouB9+ObcCpyrx6l7KImUglyhkEat/+ysWwi0gdhEs0JGjl6ggRWTy1haxBpVdbIX1nthFXMZebaIdHP2ghjoIc/363UZI6Kf1ptIMVS+uSU+BUhgvkDDBLwmhJNc=
-X-Mailru-Sender: 9EB879F2C80682A0D0AE6A344B45275F8C19DC884C49516A1356DD24693B53BCBB8F5E6F8CACF810D4AECC21E98409332C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
+X-7564579A: 78E4E2B564C1792B
+X-77F55803: 4F1203BC0FB41BD985535D2C87FE65BB05CD16499E6FE8AF56A73982410BD1FD00894C459B0CD1B9D8DE7979D8CC3A0433594132A326AF8B5109DB52FC89D1A7003125D169E88A001E0A116AA96AFE1E
+X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7FCFCB92DA8654BB0EA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F7900637AC83A81C8FD4AD23D82A6BABE6F325AC2E85FA5F3EDFCBAA7353EFBB5533756605D4038907BE0FDB7050F59198A06C4CEC33EE6F400E03592521097DB181AFDA389733CBF5DBD5E913377AFFFEAFD269176DF2183F8FC7C06030C3405640F6718941B15DA834481FCF19DD082D7633A0EF3E4896CB9E6436389733CBF5DBD5E9D5E8D9A59859A8B6B737A621A50BC793CC7F00164DA146DA6F5DAA56C3B73B237318B6A418E8EAB8D32BA5DBAC0009BE9E8FC8737B5C22495218A6880B2A9D023AA81AA40904B5D9CF19DD082D7633A0C84D3B47A649675F3AA81AA40904B5D98AA50765F79006372804D0488FD15017EC76A7562686271ED91E3A1F190DE8FD2E808ACE2090B5E14AD6D5ED66289B5259CC434672EE63711DD303D21008E298D5E8D9A59859A8B6B372FE9A2E580EFC725E5C173C3A84C315AF0D0D4FC4FA3D35872C767BF85DA2F004C90652538430E4A6367B16DE6309
+X-C1DE0DAB: 0D63561A33F958A57599C282C8434DF35002B1117B3ED6967C0D83A3B7E8E71BA13BD6A4B0E00B96823CB91A9FED034534781492E4B8EEAD21D4E6D365FE45D1C79554A2A72441328621D336A7BC284946AD531847A6065A535571D14F44ED41
+X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF3FED46C3ACD6F73ED3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF83CC41F14AEA5930A58F3A313F186CE3D5F5E11533BACAE5B4322A998D3E991C9B332213384B535368A835CA8743990BF38B66064069A970D59B53E1D0EAB012B73A93E28CBB7531EFF8118B638B08AA02C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
+X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu53w8ahmwBjZKM/YPHZyZHvz5uv+WouB9+ObcCpyrx6l7KImUglyhkEat/+ysWwi0gdhEs0JGjl6ggRWTy1haxBpVdbIX1nthFXMZebaIdHP2ghjoIc/363UZI6Kf1ptIMVS+uSU+BUhgv8FE6KydwuG8=
+X-Mailru-Sender: 9EB879F2C80682A0D0AE6A344B45275F8C19DC884C49516A97B151A33FA7A9F8F6CDD8151D3BB7AC145D9C74A8399FCA2C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
 X-Mras: Ok
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250422_143844_884997_52E4E648 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20250422_143927_580041_8E856DF6 
+X-CRM114-Status: GOOD (  10.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,79 +164,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the compatibles and constraints for the ADSP, CDSP and MPSS found on
-the SM7150 SoC.
+Add DSP Peripheral Authentication Service support for the SM7150
+platform.
 
 Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 ---
- .../bindings/remoteproc/qcom,sc7180-pas.yaml       | 14 +++++++++++---
- 1 file changed, 11 insertions(+), 3 deletions(-)
+ drivers/remoteproc/qcom_q6v5_pas.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/remoteproc/qcom,sc7180-pas.yaml b/Documentation/devicetree/bindings/remoteproc/qcom,sc7180-pas.yaml
-index 66b455d0a8e3..439350f88985 100644
---- a/Documentation/devicetree/bindings/remoteproc/qcom,sc7180-pas.yaml
-+++ b/Documentation/devicetree/bindings/remoteproc/qcom,sc7180-pas.yaml
-@@ -4,14 +4,14 @@
- $id: http://devicetree.org/schemas/remoteproc/qcom,sc7180-pas.yaml#
- $schema: http://devicetree.org/meta-schemas/core.yaml#
- 
--title: Qualcomm SC7180/SC7280 Peripheral Authentication Service
-+title: Qualcomm SC7180/SC7280/SM7150 Peripheral Authentication Service
- 
- maintainers:
-   - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
- 
- description:
--  Qualcomm SC7180/SC7280 SoC Peripheral Authentication Service loads and boots
--  firmware on the Qualcomm DSP Hexagon cores.
-+  Qualcomm SC7180/SC7280/SM7150 SoC Peripheral Authentication Service loads and
-+  boots firmware on the Qualcomm DSP Hexagon cores.
- 
- properties:
-   compatible:
-@@ -22,6 +22,9 @@ properties:
-       - qcom,sc7280-cdsp-pas
-       - qcom,sc7280-mpss-pas
-       - qcom,sc7280-wpss-pas
-+      - qcom,sm7150-adsp-pas
-+      - qcom,sm7150-cdsp-pas
-+      - qcom,sm7150-mpss-pas
- 
-   reg:
-     maxItems: 1
-@@ -60,6 +63,8 @@ allOf:
-         compatible:
-           enum:
-             - qcom,sc7180-adsp-pas
-+            - qcom,sm7150-adsp-pas
-+            - qcom,sm7150-cdsp-pas
-     then:
-       properties:
-         interrupts:
-@@ -79,6 +84,7 @@ allOf:
-           enum:
-             - qcom,sc7180-adsp-pas
-             - qcom,sc7280-adsp-pas
-+            - qcom,sm7150-adsp-pas
-     then:
-       properties:
-         power-domains:
-@@ -95,6 +101,7 @@ allOf:
-         compatible:
-           enum:
-             - qcom,sc7180-mpss-pas
-+            - qcom,sm7150-mpss-pas
-     then:
-       properties:
-         power-domains:
-@@ -130,6 +137,7 @@ allOf:
-           enum:
-             - qcom,sc7280-cdsp-pas
-             - qcom,sc7280-wpss-pas
-+            - qcom,sm7150-cdsp-pas
-     then:
-       properties:
-         power-domains:
+diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
+index b306f223127c..d2cc75880ce5 100644
+--- a/drivers/remoteproc/qcom_q6v5_pas.c
++++ b/drivers/remoteproc/qcom_q6v5_pas.c
+@@ -1478,6 +1478,9 @@ static const struct of_device_id adsp_of_match[] = {
+ 	{ .compatible = "qcom,sm6375-adsp-pas", .data = &sm6350_adsp_resource},
+ 	{ .compatible = "qcom,sm6375-cdsp-pas", .data = &sm8150_cdsp_resource},
+ 	{ .compatible = "qcom,sm6375-mpss-pas", .data = &sm6375_mpss_resource},
++	{ .compatible = "qcom,sm7150-adsp-pas", .data = &sm8350_adsp_resource},
++	{ .compatible = "qcom,sm7150-cdsp-pas", .data = &sm6350_cdsp_resource},
++	{ .compatible = "qcom,sm7150-mpss-pas", .data = &mpss_resource_init},
+ 	{ .compatible = "qcom,sm8150-adsp-pas", .data = &sm8150_adsp_resource},
+ 	{ .compatible = "qcom,sm8150-cdsp-pas", .data = &sm8150_cdsp_resource},
+ 	{ .compatible = "qcom,sm8150-mpss-pas", .data = &mpss_resource_init},
 -- 
 2.49.0
 
