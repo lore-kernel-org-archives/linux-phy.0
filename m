@@ -4,56 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0667C369C2
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 22:28:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2823BC369D1
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Apr 2025 22:37:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8+sqCOE2axTMV3ab0cvw6rWcW4Tpd07PPuNWOk+KKM8=; b=2niUtgmuglm2cE
-	YD7VxJmzz16pszVwVc1qwlFDjpB3N5Y/pIFVPI6LoiNX1fpBCx1czhdsOcwj4PODiDi5GBxJmU/jN
-	JmINnCvOgcx1C3LuAUvfS+ByWGL/P+m0eLihv5T6ErL7uo04L8FkLHj893XKe5vd9N7nCarJrpjF1
-	v1yKivAhL0AUu0tNRev816xPoFTthhWe5MR2QTlCE2fr2XvHamRSBhvnHZ7MKgG4CdKYAY1G7jjyA
-	uFtDnGG17ZiE+ITmKpAQaxBgiC6zJyiG+JRGYiGZpHQpJjRG9jC4AQNgZtSnt7T2GCUBEhOPK3p1Z
-	/5HVpfmJIxV3xsJvWpvQ==;
+	List-Owner; bh=McYLnTGb+S0PKTK+pOZsmpmy6//78z/pyF2jtKzZqCA=; b=ksbOCFTK4Hr3Aj
+	7Xv98Q0GXga4OKiBxJzNAZsKDpKXlvRpZmMZxxf+HXfuM9BNLczoPFy1tDVT2fNVHWmRC3Gq3f8o2
+	X4G0v7XSdLvUUpY71Nd5Bh6UMeyUmy07QpIlHbUi/MU5TONyt1HMjo0jrZsMLm7/U6N7fG7SLQUrv
+	h4kDi32xAS4Q4jx+fjQRa98YUJH6Xe2ymDobFvLZU95ZxSsftOVZabW8rfaO8v4uypq03hCswzTuo
+	YEva8U4tzOqx/LJzhVTyviWHhvqUKf5AC4i8nPVMItDJRTozw4cVf9ZoG9cS3yfeue9KJEWcjeClx
+	WQYVcMvpdaxd03JbwjKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7M6J-00000008iwi-2TOi;
-	Tue, 22 Apr 2025 22:28:23 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1u7MEi-00000008js1-3j78;
+	Tue, 22 Apr 2025 22:37:04 +0000
+Received: from send265.i.mail.ru ([95.163.59.104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7LwS-00000008h6i-1D8s;
-	Tue, 22 Apr 2025 22:18:13 +0000
-Received: from pendragon.ideasonboard.com (81-175-209-231.bb.dnainternet.fi [81.175.209.231])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4234B65F;
-	Wed, 23 Apr 2025 00:18:04 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1745360284;
-	bh=zVstEXSZYJvbRbtxwPnlxYQjZQy97aDweLvry+rZZlE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iJEOG930kDbwQ81ItaCFUBa7veVoZCoSen3bK6km2s2o/Cc1rYOC4zi6eD4jmupL1
-	 3/sSAHxGXDQ0dDSGlcUH44eXku39bCim4maANWvXYXG1612aQ246jp33TYU4Nt+OjB
-	 vHFlE6+pxCvIHiGiIVxhSmU6B/QPyqT0IChHlagc=
-Date: Wed, 23 Apr 2025 01:18:02 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Mike Looijmans <mike.looijmans@topic.nl>
-Cc: linux-phy@lists.infradead.org,
+	id 1u7LIb-00000008bip-3Dn4;
+	Tue, 22 Apr 2025 21:37:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jiaxyga.com
+	; s=mailru; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:From:Sender:Reply-To:To:Cc:Content-Type:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive:
+	X-Cloud-Ids:Disposition-Notification-To;
+	bh=V1fosFZDaIltgP12PKs2O3GRjq5xljMFAutsPMirhmE=; t=1745357821; x=1745447821; 
+	b=vheeeICN0arwMNajz8SK0q/+HZuliaAM2p9HUfXm0CjT1pqCp9i8XcrH8yaxAmBwNk9lccQjEWk
+	vIkoLjOpbxTIH6eYro0ABHKuUS3lcp+52d1MiOKTTwZ14e9Qh8fGbqo7PbAhXq0xgb5Cp2hQG0tF2
+	pACxei4Iual3oWaGbiQ=;
+Received: by exim-smtp-77d8cdf77b-wlhm8 with esmtpa (envelope-from <danila@jiaxyga.com>)
+	id 1u7LIR-00000000BOp-0puE; Wed, 23 Apr 2025 00:36:51 +0300
+From: Danila Tikhonov <danila@jiaxyga.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	"Rafael J . Wysocki" <rafael@kernel.org>,
+	Viresh Kumar <viresh.kumar@linaro.org>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Rajendra Nayak <quic_rjendra@quicinc.com>,
+	Jassi Brar <jassisinghbrar@gmail.com>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Amit Kucheria <amitk@kernel.org>,
+	Thara Gopinath <thara.gopinath@gmail.com>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Zhang Rui <rui.zhang@intel.com>,
+	Lukasz Luba <lukasz.luba@arm.com>,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <quic_wcheng@quicinc.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Michal Simek <michal.simek@amd.com>, Vinod Koul <vkoul@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy-zynqmp: Postpone getting clock rate until actually
- needed
-Message-ID: <20250422221802.GB32759@pendragon.ideasonboard.com>
-References: <1b153bce-a66a-45ee-a5c6-963ea6fb1c82.949ef384-8293-46b8-903f-40a477c056ae.7a5992b5-aa78-4b18-bf5c-70f893b58f48@emailsignatures365.codetwo.com>
- <20250314150431.28319-1-mike.looijmans@topic.nl>
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Souradeep Chowdhury <quic_schowdhu@quicinc.com>,
+	Lee Jones <lee@kernel.org>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S . Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Alex Elder <elder@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Andy Gross <agross@kernel.org>,
+	Srinivas Kandagatla <srini@kernel.org>,
+	Herbert Xu <herbert@gondor.apana.org.au>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Georgi Djakov <djakov@kernel.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>,
+	Robert Foss <rfoss@kernel.org>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Taniya Das <quic_tdas@quicinc.com>,
+	Sibi Sankar <quic_sibis@quicinc.com>,
+	Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	Joerg Roedel <joro@8bytes.org>,
+	Imran Shaik <quic_imrashai@quicinc.com>,
+	Mathieu Poirier <mathieu.poirier@linaro.org>,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Jessica Zhang <quic_jesszhan@quicinc.com>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Kees Cook <kees@kernel.org>,
+	Tony Luck <tony.luck@intel.com>,
+	"Guilherme G . Piccoli" <gpiccoli@igalia.com>,
+	David Wronek <david@mainlining.org>,
+	Jens Reidel <adrian@mainlining.org>
+Cc: devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-watchdog@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	dmaengine@vger.kernel.org,
+	linux-crypto@vger.kernel.org,
+	linux-i2c@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	iommu@lists.linux.dev,
+	linux-remoteproc@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-hardening@vger.kernel.org,
+	linux@mainlining.org,
+	~postmarketos/upstreaming@lists.sr.ht,
+	Danila Tikhonov <danila@jiaxyga.com>
+Subject: [PATCH 22/33] dt-bindings: interconnect: OSM L3: Add the SM7150 compatible
+Date: Wed, 23 Apr 2025 00:31:26 +0300
+Message-ID: <20250422213137.80366-6-danila@jiaxyga.com>
+X-Mailer: git-send-email 2.49.0
+In-Reply-To: <20250422213137.80366-1-danila@jiaxyga.com>
+References: <20250422213137.80366-1-danila@jiaxyga.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250314150431.28319-1-mike.looijmans@topic.nl>
+Authentication-Results: exim-smtp-77d8cdf77b-wlhm8; auth=pass smtp.auth=danila@jiaxyga.com smtp.mailfrom=danila@jiaxyga.com
+X-Mailru-Src: smtp
+X-4EC0790: 10
+X-7564579A: 646B95376F6C166E
+X-77F55803: 4F1203BC0FB41BD985535D2C87FE65BB5D73E3D950B0DD10C757DC83125CEFA200894C459B0CD1B9E45468F3D2148E1133594132A326AF8BE13F8EB43D44EC973781E644FA50EF3D5F9067195EC86057
+X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE737AE489DBC023F2AEA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F79006371005780D56A98C20EA1F7E6F0F101C67CDEEF6D7F21E0D1D9295C2E9FA3191EE1B59CA4C82EFA65801FF6380E37ADEF08D1BBA29F9A7A3F7785E4A5951648B74117882F4460429724CE54428C33FAD305F5C1EE8F4F765FCF80095D1E57F4578A471835C12D1D9774AD6D5ED66289B52BA9C0B312567BB23117882F44604297287769387670735201E561CDFBCA1751FF6B57BC7E6449061A352F6E88A58FB86F5D81C698A659EA73AA81AA40904B5D9A18204E546F3947CE3786DD2C77EBDAAAD7EC71F1DB884274AD6D5ED66289B523666184CF4C3C14F6136E347CC761E07725E5C173C3A84C3457234DA37CC1B30BA3038C0950A5D36B5C8C57E37DE458B330BD67F2E7D9AF16D1867E19FE14079C09775C1D3CA48CF3D321E7403792E342EB15956EA79C166A417C69337E82CC275ECD9A6C639B01B78DA827A17800CE75A9E79F66F1C28F3731C566533BA786AA5CC5B56E945C8DA
+X-C1DE0DAB: 0D63561A33F958A59A44524D18F8C7125002B1117B3ED696CCF52F37E3778654E772F934B9BCD185823CB91A9FED034534781492E4B8EEAD303003AC7AA20DD0C79554A2A72441328621D336A7BC284946AD531847A6065A17B107DEF921CE79BDAD6C7F3747799A
+X-C8649E89: 1C3962B70DF3F0ADE00A9FD3E00BEEDF3FED46C3ACD6F73ED3581295AF09D3DF87807E0823442EA2ED31085941D9CD0AF7F820E7B07EA4CF664FE48248724D6359852A40B167F5B839DE41CA986C137B0BC55662B05C7AF1506ED036F265C54268A835CA8743990B0E68F76089DC0941D59B53E1D0EAB01214D85D07BDC7F366EFF8118B638B08AA02C26D483E81D6BE72B480F99247062FEE42F474E8A1C6FD34D382445848F2F3
+X-D57D3AED: 3ZO7eAau8CL7WIMRKs4sN3D3tLDjz0dLbV79QFUyzQ2Ujvy7cMT6pYYqY16iZVKkSc3dCLJ7zSJH7+u4VD18S7Vl4ZUrpaVfd2+vE6kuoey4m4VkSEu53w8ahmwBjZKM/YPHZyZHvz5uv+WouB9+ObcCpyrx6l7KImUglyhkEat/+ysWwi0gdhEs0JGjl6ggRWTy1haxBpVdbIX1nthFXMZebaIdHP2ghjoIc/363UZI6Kf1ptIMVS+uSU+BUhgvHg8IPXFAgg4=
+X-Mailru-Sender: 9EB879F2C80682A0D0AE6A344B45275F1CE3799C8C751E69AAE6F637C7150CBC7E2900C1BE1F324E1C51C0036B6E24842C62728BC403A049225EC17F3711B6CF1A6F2E8989E84EC137BFB0221605B344978139F6FA5A77F05FEEDEB644C299C0ED14614B50AE0675
+X-Mras: Ok
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250422_151812_471124_9B98AE27 
-X-CRM114-Status: GOOD (  33.74  )
+X-CRM114-CacheID: sfid-20250422_143701_803292_E2639CE7 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,159 +165,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Mike,
+Document the OSM L3 found in the Qualcomm SM7150 platform.
 
-Thank you for the patch.
+Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
+---
+ Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-On Fri, Mar 14, 2025 at 04:04:18PM +0100, Mike Looijmans wrote:
-> At probe time the driver would display the following error and abort:
->   xilinx-psgtr fd400000.phy: Invalid rate 0 for reference clock 0
-> 
-> This issue was that at probe time, the system has not decided yet whether
-> the GTR is to be used for SATA (150MHz) or PCIe (100 MHz).
-
-At what point does the system decide that ? I've only used (and tested)
-this driver for DisplayPort.
-
-> The driver
-> doesn't need to know the clock frequency at that point yet, so wait until
-> the lane is actually being initialized before requesting the clock rate
-> setting.
-> 
-> Signed-off-by: Mike Looijmans <mike.looijmans@topic.nl>
-> ---
-> 
->  drivers/phy/xilinx/phy-zynqmp.c | 61 ++++++++++++++++-----------------
->  1 file changed, 30 insertions(+), 31 deletions(-)
-> 
-> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-> index 05a4a59f7c40..e29e3e51d380 100644
-> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> @@ -222,7 +222,6 @@ struct xpsgtr_phy {
->   * @siou: siou base address
->   * @gtr_mutex: mutex for locking
->   * @phys: PHY lanes
-> - * @refclk_sscs: spread spectrum settings for the reference clocks
->   * @clk: reference clocks
->   * @tx_term_fix: fix for GT issue
->   * @saved_icm_cfg0: stored value of ICM CFG0 register
-> @@ -235,7 +234,6 @@ struct xpsgtr_dev {
->  	void __iomem *siou;
->  	struct mutex gtr_mutex; /* mutex for locking */
->  	struct xpsgtr_phy phys[NUM_LANES];
-> -	const struct xpsgtr_ssc *refclk_sscs[NUM_LANES];
->  	struct clk *clk[NUM_LANES];
->  	bool tx_term_fix;
->  	unsigned int saved_icm_cfg0;
-> @@ -398,13 +396,40 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
->  	return ret;
->  }
->  
-> +/* Get the spread spectrum (SSC) settings for the reference clock rate */
-> +static const struct xpsgtr_ssc *xpsgtr_find_sscs(struct xpsgtr_phy *gtr_phy)
-> +{
-> +	unsigned long rate;
-> +	struct clk *clk;
-> +	unsigned int i;
-> +
-> +	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-> +	rate = clk_get_rate(clk);
-> +
-> +	for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
-> +		/* Allow an error of 100 ppm */
-> +		unsigned long error = ssc_lookup[i].refclk_rate / 10000;
-> +
-> +		if (abs(rate - ssc_lookup[i].refclk_rate) < error)
-> +			return &ssc_lookup[i];
-> +	}
-> +
-> +	dev_err(gtr_phy->dev->dev, "Invalid rate %lu for reference clock %u\n",
-> +		rate, gtr_phy->refclk);
-> +
-> +	return NULL;
-> +}
-> +
->  /* Configure PLL and spread-sprectrum clock. */
->  static void xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
->  {
->  	const struct xpsgtr_ssc *ssc;
->  	u32 step_size;
->  
-> -	ssc = gtr_phy->dev->refclk_sscs[gtr_phy->refclk];
-> +	ssc = xpsgtr_find_sscs(gtr_phy);
-> +	if (!ssc)
-> +		return;
-
-Isn't it an issue that we now fail here without propagating an error
-back to the caller ? The function is called by xpsgtr_phy_init(), which
-return an int, so I think returning an error code here would make sense.
-
-The rest of the patch looks good to me. I would however appreciate
-feedback from someone at AMD more knowledgeable than I am with the
-hardware. Michal, could you propose an appropriate second maintainer for
-this driver ?
-
-> +
->  	step_size = ssc->step_size;
->  
->  	xpsgtr_clr_set(gtr_phy->dev, PLL_REF_SEL(gtr_phy->lane),
-> @@ -823,8 +848,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
->  	}
->  
->  	refclk = args->args[3];
-> -	if (refclk >= ARRAY_SIZE(gtr_dev->refclk_sscs) ||
-> -	    !gtr_dev->refclk_sscs[refclk]) {
-> +	if (refclk >= ARRAY_SIZE(gtr_dev->clk)) {
->  		dev_err(dev, "Invalid reference clock number %u\n", refclk);
->  		return ERR_PTR(-EINVAL);
->  	}
-> @@ -928,9 +952,7 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
->  {
->  	unsigned int refclk;
->  
-> -	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->refclk_sscs); ++refclk) {
-> -		unsigned long rate;
-> -		unsigned int i;
-> +	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->clk); ++refclk) {
->  		struct clk *clk;
->  		char name[8];
->  
-> @@ -946,29 +968,6 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
->  			continue;
->  
->  		gtr_dev->clk[refclk] = clk;
-> -
-> -		/*
-> -		 * Get the spread spectrum (SSC) settings for the reference
-> -		 * clock rate.
-> -		 */
-> -		rate = clk_get_rate(clk);
-> -
-> -		for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
-> -			/* Allow an error of 100 ppm */
-> -			unsigned long error = ssc_lookup[i].refclk_rate / 10000;
-> -
-> -			if (abs(rate - ssc_lookup[i].refclk_rate) < error) {
-> -				gtr_dev->refclk_sscs[refclk] = &ssc_lookup[i];
-> -				break;
-> -			}
-> -		}
-> -
-> -		if (i == ARRAY_SIZE(ssc_lookup)) {
-> -			dev_err(gtr_dev->dev,
-> -				"Invalid rate %lu for reference clock %u\n",
-> -				rate, refclk);
-> -			return -EINVAL;
-> -		}
->  	}
->  
->  	return 0;
-
+diff --git a/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml b/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
+index cd4bb912e0dc..022574bb5996 100644
+--- a/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
++++ b/Documentation/devicetree/bindings/interconnect/qcom,osm-l3.yaml
+@@ -24,6 +24,7 @@ properties:
+               - qcom,sdm670-osm-l3
+               - qcom,sdm845-osm-l3
+               - qcom,sm6350-osm-l3
++              - qcom,sm7150-osm-l3
+               - qcom,sm8150-osm-l3
+           - const: qcom,osm-l3
+       - items:
 -- 
-Regards,
+2.49.0
 
-Laurent Pinchart
 
 -- 
 linux-phy mailing list
