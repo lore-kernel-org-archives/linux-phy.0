@@ -4,124 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B41AC369D7
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD950C369D1
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j7qqVfUij4UP6K8H7zlnZqBVkY7hM+b8T7PV6P9VxZo=; b=zH7InVd5fw5ZVi
-	TwfWzATI/yMVMHspTlzRBvhtbPNYvcBphTSqeRET4SExpCNv1YhmOuec1IX+vYsE45EkZau2E9L74
-	WqwroIx27ZKDyLqRo8CjqZO/2P0Jy0dQINWle/2wRX2G6xUXnZeOX//Arj54Zaco6NlmctBMMaLl8
-	xdKRyJjhBKX+gCxPC4vBHgOgHvDPz1klDE1teV09b/Z96TreaB3uEcUfNySmjzgcRrlOPO8+7rY+A
-	nmehuE1hdoTMCbhh6/Lj5shEigvCWdufRPVIPmJQFFBiL0CQ8YIzwkUYtRGwaNxZJGV0PvRrB6hXV
-	6Y8wEAaKmD63qguCFWOA==;
+	List-Owner; bh=1zQBDin3RNRT+OLQ0RuMk8vCglNUyRVMFhe7r2g8vCI=; b=EF6tX9Zo6iAbjg
+	HVgbQkDIkj3jlxb+QfZGvx5isNt6YQZgtwlagvK4P5WYlKehB+jIaFgisskyQBKAfjP8nzzuNnnqI
+	MzFOJr3V4ylxVR7E6+hhG8W3JZLvZ8Q9YWwCzK8rL2ap9qIMncdnDYBS3gw+VpRbItu21Dzh5Fm42
+	23xuDpq9W5t7/zmkFOLuWBrwfUKPETzFYWnTQfO0A8Vw1tLJmFbV2vQ6IH8ZdTQ8nVaqXbAAZ4eKH
+	hpqxOoW2BAOwfkPY3p9cSxvripbEQUrBQJ5dJTR/3oIrKJ/3PCbNZ6sgp6bHqxMoyj++G3hXPBt64
+	BY/R5uqd1txs0XVYq0uA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7ZnG-0000000AXLA-2JR4;
-	Wed, 23 Apr 2025 13:05:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u7ZnM-0000000AXVg-00Xr;
+	Wed, 23 Apr 2025 13:05:44 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7YB1-0000000AKiA-49yP
+	id 1u7YCm-0000000AKyC-2sOx
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 11:22:05 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAv066013853
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:22:03 GMT
+	Wed, 23 Apr 2025 11:23:53 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAYxEh007939
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:23:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MBmXqa3SqlfHGu6HskzaGqDayNYdwR8418JrZVuGd1Q=; b=VmR7sYdtNY9sPQrD
-	o5/hBpQ3whiCmYDAGqlFyXL1PZ37epsHRQd2ARf0znrzHPXJk7xmpsJ9BwYR3Lgp
-	PC+guBZ2pr+XfmVry6HiEcJ96Si35YlSCdwGFjAlsx0fLNJivjAD3D9sEncByEF0
-	JYYINkRFRbuUFTJTW4dGr/neApAfZOGURdzbHuQssG2hCDUVZ2n8kULLROX7Sdw+
-	ILPUEJqxf7byQyGHIJOvMPB2lmUuGTW1NCrL+C41KSlwkKlyLEguh19Uj9LgoYCA
-	Eq0xo0aLnfKdx0AUK+YXlkDI4vHQ9XkaPDu98C7sv0OMh8FO32ERhAL7KtxcXM3K
-	PNbw0Q==
+	yZ4ckw9phUjE/33TkefvnOiLJnkaspW3ubnn0WXfC08=; b=SBKh4NWSJXTdsQ/x
+	R169j8ZWbp3gYKHHMSmHOzPn2rmDMTwDQWkI4cJzvCAcqAhDii1ffZXbOHQYgnMm
+	Hn7wb+GpNmwkEQPqzlT/QsbH3Ef9IjmaxjLxD8llKoQY/bishKeZftBAQ/Kos7ug
+	qMfljaq1Q2kstPjCwrg+1RRvJmQRpdP+Vd+hTUzPgwRFH5TVusZM2Ei+6D5e5ObQ
+	F73kpc4AQfOReVoW4ZTmpK8H6izxkJOjh9eeuQDrjeflKC31xIxDMSnOlwGNoZxM
+	syjhvVCQy3r3rqCRRw5WMB4e7UuqW5ocWxoz/Ok68ejDIPOzyizEKRdva2Gk2+CM
+	/Vsgmg==
 Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh39wn0-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh59xwh-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:22:02 +0000 (GMT)
-Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7c54734292aso120372185a.2
-        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 04:22:02 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:23:51 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7c552802e9fso119903185a.0
+        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 04:23:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745407321; x=1746012121;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:from:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1745407431; x=1746012231;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MBmXqa3SqlfHGu6HskzaGqDayNYdwR8418JrZVuGd1Q=;
-        b=af+1ouqKCCbOapll9gXoyu/4+9ltHUvCt1boN1acXE3TNM04B6b70EMPytGc9ldBeG
-         9wHSYGNO4N/awazNbas/g4uDo0kUsDOmtUSLWHHvRkNvIZpAfET80hIjJFSiIPnkoSNy
-         3JAgw3v7t7eYp3YF/XEuVnj4VMHA8QFtT2n+7ofBrY7692mT/QFXsWmc47Un/lvIOfpK
-         Lo5N5avcb8A6VVXyGqxLrc1hDUUTxAjhiNiTzVv6DXLwDQ06t4GuOHraJsc4voFVOh7v
-         q1IcCe58xNt4K9WEkCBKHHjDq0BHuBRGuPNxt1NHS/gEjSMEHzkNWjPC6fBwyvI4dQwQ
-         As5A==
-X-Forwarded-Encrypted: i=1; AJvYcCUbAeLuSRREB28/rTfwPpS8yPlQDmD4piriEm69gKSXOdy3v8nFQjDUbXk9kzgZgqsSQM/h3WTKkig=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWcJvzKBsyMi/sjNprz6Sg8a8+AoLqrWSxz7dKe6aSQKE+CRqv
-	4fXl1686LklHzI6seLBbCtUWB/3H5XJyIRPnld/xtX7wXeRLAZET0iInBSGmbFYN4jgksu+EhcL
-	Ceg6azJbDSQF1803W6SKsSiz7PIqrjwd8XlA+DFT83uCqtg4AJF8xTo9ijLIDO0rk2APCuQJt
-X-Gm-Gg: ASbGnct29ZeRDgZkc5ETAUKyBq679CXBUDC4qNdKfSaTaSUfDvPtwkVuhEGCkpm0j3H
-	F+28LZpoL1FVl9FxCGTBqc0fWzr0WE+EfzdeIIMcWd5fPx336whNFsUanCtoOKYqmK3iNQ5i3F3
-	a8HAxwJiN/fa5q0ia/ibqvsUhUHd3DQxl2Ci9IV8NKaAwKLgjhgnOMrwDKxRyK+uWRdxYGFMcV2
-	xH6SR8R7NVsvgu539cPCo+fZK87gOBpgsw0pN6CJREifXALdMsOH7F1W3jx7ql8osLo9AOaFQcN
-	itkxM3wS6Z9AGVU06YwYkNELFkpJ3n6EEzH+NHSIe6Ho3F7t1+BPDNg9PIabf1ZMZtM=
-X-Received: by 2002:a05:620a:17a1:b0:7c5:8f37:5eb8 with SMTP id af79cd13be357-7c94d2cdeb6mr159763185a.12.1745407320905;
-        Wed, 23 Apr 2025 04:22:00 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHmyvrF5d9qIzFP/diTkGdauGMkGsqby79Vk6CQ3T9WYIeciMXk/85jv8urHP/tvgBFaRm55w==
-X-Received: by 2002:a05:620a:17a1:b0:7c5:8f37:5eb8 with SMTP id af79cd13be357-7c94d2cdeb6mr159761585a.12.1745407320483;
-        Wed, 23 Apr 2025 04:22:00 -0700 (PDT)
+        bh=yZ4ckw9phUjE/33TkefvnOiLJnkaspW3ubnn0WXfC08=;
+        b=qSSYjCyIcPZZ7vG4ET7sytwl7Q/ZO/Q8mMrG9JrH5lBLFuNER7o69Aficq/Ldyml5H
+         PWWUsUFD5l6P6FHG0yY/Aevga7/pkNoG6Gmv4ldycq57gG3J9AuixLDPns5P0eoVJVzD
+         CwHJ6zC5zuAgllTKP6dwEAGpa12X7L6cCa72tnE2UhMhcJ5VnCoIgvg+Stc/ezuqxOOV
+         YHD2ct0gICyKURGt7Cfyr5C3fIzAnNLGO+Mg9CXggNzr5709Xn8gqOhyZSJgmhrZSian
+         /sC/nA13n4vCn7Ax6zC3J5m5lNCbuiCBeNJ/ZoxFljsKsyrKO8LhTJLj3O4nMf3BRi+L
+         z1Dw==
+X-Forwarded-Encrypted: i=1; AJvYcCW6eKPeMadF21LcZwJP/VuzLj6vSciDqP5RjeALdQ/lRb54xa2p6rFYUFu/rAE+a6knNWFkleERsfM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzQS/WGbuYNRMEDXSQgwfgQOuZmaU5b5k/dDDTFynz8QaCOw30w
+	WaXk7fLEsn4ZuSbVaLjRD+ni4rGv4tQ9DQ9evsB4Knigrqxn/bBhrSy8g4/zYXWhdC7uNjpxegs
+	bcUOoTBWplfzDiAYQS3MukcaXevXbqEQpSZDbvo6AtRTO0fRkduo0bZS46WVef2xr
+X-Gm-Gg: ASbGncsaKb2sI/ayJGth64rGPcsP5wPiHepTLERGuSF+XVvgPxgzDhjRdwcjYsGilH+
+	uL1l2cRaLL+qAZOVTEDcs6JufHwN/UEFK2msd/S1VRMal1nuy4IRjLyA59y/mF5tnDMuMzgYsBX
+	Y0O+E+I93YPfoYMC9E5hRFRGobj/jzMu+LCN/SA4xrozbzJU1FzZwIfDo+7YxZdtqjrvQr7Zn/p
+	ZPajVAOq3+ip1RfNu4ZzkJDq1knr6vBOWIFwS00WbOdANi2FR3CyJeOcguQ7jHVmAg26LiUOrqV
+	SwKUCeWyP0/gZqTXODvatk2VYSRMycOT9B5J7/ci4j2CLQcuzqqIRz75T+JOV34Isxk=
+X-Received: by 2002:a05:620a:390b:b0:7c3:c814:591d with SMTP id af79cd13be357-7c94d243e9bmr190753085a.1.1745407430777;
+        Wed, 23 Apr 2025 04:23:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHdIHiXpPDkGGBJDXfBBBsFTvUdPXz6hDe/XrnRasquYh3mWBJjmxvRBRjElMM6IUIxVffCBw==
+X-Received: by 2002:a05:620a:390b:b0:7c3:c814:591d with SMTP id af79cd13be357-7c94d243e9bmr190750985a.1.1745407430388;
+        Wed, 23 Apr 2025 04:23:50 -0700 (PDT)
 Received: from [192.168.65.183] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5f6258342e5sm7324599a12.60.2025.04.23.04.21.58
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-acb6ec0b1d3sm785726966b.4.2025.04.23.04.23.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Apr 2025 04:22:00 -0700 (PDT)
-Message-ID: <7a0eb7bf-d6d9-4e8e-829b-2df726651725@oss.qualcomm.com>
-Date: Wed, 23 Apr 2025 13:21:57 +0200
+        Wed, 23 Apr 2025 04:23:49 -0700 (PDT)
+Message-ID: <fc6b1fe6-7847-4aa8-838a-dbd0ad675412@oss.qualcomm.com>
+Date: Wed, 23 Apr 2025 13:23:47 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 4/9] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-To: Nitin Rawat <quic_nitirawa@quicinc.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
-        James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com,
-        bvanassche@acm.org, bjorande@quicinc.com, neil.armstrong@linaro.org,
-        quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org
-References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
- <20250410090102.20781-5-quic_nitirawa@quicinc.com>
- <pur4y63xhfmqlyymg4pehk37ry4gg22h24zceoqjbsxp3hj4yf@4kptase3c4qp>
- <317faeaa-3130-4e28-8c5d-441a76aa79b4@quicinc.com>
- <CAO9ioeXnnbNzriVOYPUeBiWdrPfYUcMk+pVWYv0vZpJbFeByoQ@mail.gmail.com>
- <2820908b-4548-4e0a-94b2-6065cb5ff1f3@quicinc.com>
- <c2ec6b7c-421d-43c3-8c0a-de4f7bdd867c@oss.qualcomm.com>
- <a24ff510-2afd-4aa7-a026-199fb6d87287@quicinc.com>
- <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
- <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
- <b7027077-e9a3-462b-92a8-684a42d23604@oss.qualcomm.com>
+Subject: Re: [PATCH 2/2] arm64: dts: qcom: sa8775p: Set max link speed to Gen4
+ for PCIe EP
+To: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com,
+        quic_nayiluri@quicinc.com, quic_ramkri@quicinc.com,
+        quic_nitegupt@quicinc.com
+References: <20250423-update_phy-v1-0-30eb51703bb8@oss.qualcomm.com>
+ <20250423-update_phy-v1-2-30eb51703bb8@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <b7027077-e9a3-462b-92a8-684a42d23604@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3OCBTYWx0ZWRfXxWgyJGRXu99p +D+vcQGMk1MaZ/o63iFwDRBwl65R3O+eeJXok+DpUj8FaS9xFDNHUiI+UtMlo+d97TMWCzMKVhd 6y9mStIw1jbgahaLe+djv3Jal5CQ4BRhlDuSQsctbRfrpTRwKgLPWddUlXU/fjRnA49io0YNfC4
- A8YzrrK6Vhq815khdSTW954R4l6ScfHFqzAmIeVjP2NT8pPiSw4PfZvJt+bg+RRB9/TX71Rsm8e 2TARi0XiHwQYP8YgSZr3qlpHyTEbuNShkOQbBmNI0Ic+U+2T5LtOqmmYGoyt0nYIZIMIrcT/Nst CUuM/BvRDlMCmBwdgl3doRjePMuBNttNOIffGFCh9Q/C8WyrzvM0aMlMSweUmIgyjvOjUb3stKY
- Fmi89wmWhrDmnat0/W1Qdp0SPfWe4uj85wlws4AWcapWVzCfQkzSSwiyold6S5LrOLN520Af
-X-Authority-Analysis: v=2.4 cv=bs1MBFai c=1 sm=1 tr=0 ts=6808cd5a cx=c_pps a=HLyN3IcIa5EE8TELMZ618Q==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=S3RF1rwLzzbCZMsKAAoA:9 a=QEXdDO2ut3YA:10
- a=bTQJ7kPSJx9SKPbeHEYW:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: JJ_7aNRn9Z73XVlmPcx48i7IKnjTl5FS
-X-Proofpoint-GUID: JJ_7aNRn9Z73XVlmPcx48i7IKnjTl5FS
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250423-update_phy-v1-2-30eb51703bb8@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3OCBTYWx0ZWRfXwGRpuUDkndzb Z+iTxS6z80Ffqmq2HVZ3xDQy8dxaKzCGWCTqG8JHMgptPALshW36S/z3mgCZ7Xy+GtLLLDhMbdY +HknPm5Tos/gEISkUuo0BX6KbnnFQhr+wIMMa+eoa6sD8YT03Jcv7G/JG+fDhbCJV7hC20tyoVr
+ Q0PAqJXNB3kJpkuxJbzzkHJVds5rlawmQrF1+bEXqQu9qytX21JE5uVfaJSZgQ3fOOmyqUHcIY8 VjnUqxASUO0aGybNTjTIxB+TRKSp9r0GNycBG66KiNZUHEG4+ofx5SQt6UuOHEoxaJqCRL5Ag9e 3paM3Wa8eoDw6vzHrw7MCVCV+Heb3Tf4mnElTJV6B34aV3WCR/bw34c8uR032chjmKWz9PZsFPR
+ xIRzkg8SLiwBj+LiyOyH0wCA1Qz93OuQ4/XKpQQOk9NzBQHC0sVIwc+xWVWjiucOUOZW5D4c
+X-Proofpoint-GUID: 9KF503YQEIpkJfcLrFVxBbAPQKvrBTGq
+X-Authority-Analysis: v=2.4 cv=B/S50PtM c=1 sm=1 tr=0 ts=6808cdc7 cx=c_pps a=HLyN3IcIa5EE8TELMZ618Q==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=iRih2zsw3dMuVQupJ74A:9 a=QEXdDO2ut3YA:10
+ a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-ORIG-GUID: 9KF503YQEIpkJfcLrFVxBbAPQKvrBTGq
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.80.40
  definitions=2025-04-23_07,2025-04-22_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- priorityscore=1501 suspectscore=0 mlxlogscore=999 mlxscore=0 phishscore=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 impostorscore=0 malwarescore=0
- clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxlogscore=999
+ lowpriorityscore=0 bulkscore=0 impostorscore=0 suspectscore=0 mlxscore=0
+ priorityscore=1501 phishscore=0 malwarescore=0 spamscore=0 clxscore=1015
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2504070000
  definitions=main-2504230078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_042204_048254_FB983C1F 
-X-CRM114-Status: GOOD (  25.96  )
+X-CRM114-CacheID: sfid-20250423_042352_861145_77E3DEF4 
+X-CRM114-Status: GOOD (  18.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,101 +134,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/23/25 1:09 PM, Konrad Dybcio wrote:
-> On 4/16/25 2:26 PM, Nitin Rawat wrote:
->>
->>
->> On 4/16/2025 5:43 PM, Dmitry Baryshkov wrote:
->>> On Wed, 16 Apr 2025 at 12:08, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
->>>>
->>>>
->>>>
->>>> On 4/15/2025 2:59 PM, Dmitry Baryshkov wrote:
->>>>> On 14/04/2025 23:34, Nitin Rawat wrote:
->>>>>>
->>>>>>
->>>>>> On 4/11/2025 4:38 PM, Dmitry Baryshkov wrote:
->>>>>>> On Fri, 11 Apr 2025 at 13:50, Nitin Rawat <quic_nitirawa@quicinc.com>
->>>>>>> wrote:
->>>>>>>>
->>>>>>>>
->>>>>>>>
->>>>>>>> On 4/11/2025 1:38 AM, Dmitry Baryshkov wrote:
->>>>>>>>> On Thu, Apr 10, 2025 at 02:30:57PM +0530, Nitin Rawat wrote:
->>>>>>>>>> Refactor the UFS PHY reset handling to parse the reset logic only
->>>>>>>>>> once
->>>>>>>>>> during probe, instead of every resume.
->>>>>>>>>>
->>>>>>>>>> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
->>>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume.
->>>>>>>>>
->>>>>>>>> How did you solve the circular dependency issue being noted below?
->>>>>>>>
->>>>>>>> Hi Dmitry,
->>>>>>>> As part of my patch, I moved the parsing logic from qmp_phy_power_on to
->>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume. I'm uncertain
->>>>>>>> about the circular dependency issue and whether if it still exists.
->>>>>>>
->>>>>>> It surely does. The reset controller is registered in the beginning of
->>>>>>> ufs_qcom_init() and the PHY is acquired only a few lines below. It
->>>>>>> creates a very small window for PHY driver to probe.
->>>>>>> Which means, NAK, this patch doesn't look acceptable.
->>>>>>
->>>>>> Hi Dmitry,
->>>>>>
->>>>>> Thanks for pointing this out. I agree that it leaves very little time
->>>>>> for the PHY to probe, which may cause issues with targets where
->>>>>> no_pcs_sw_reset is set to true.
->>>>>>
->>>>>> As an experiment, I kept no_pcs_sw_reset set to true for the SM8750,
->>>>>> and it caused bootup probe issues in some of the iterations I ran.
->>>>>>
->>>>>> To address this, I propose updating the patch to move the
->>>>>> qmp_ufs_get_phy_reset call to phy_calibrate, just before the
->>>>>> reset_control_assert call.
->>>>>
->>>>> Will it cause an issue if we move it to phy_init() instead of
->>>>> phy_calibrate()?
->>>>
->>>> Hi Dmitry,
->>>>
->>>> Thanks for suggestion.
->>>> Phy_init is invoked before phy_set_mode_ext and ufs_qcom_phy_power_on,
->>>> whereas calibrate is called after ufs_qcom_phy_power_on. Keeping the UFS
->>>> PHY reset in phy_calibrate introduces relatively more delay, providing
->>>> more buffer time for the PHY driver probe, ensuring the UFS PHY reset is
->>>> handled correctly the first time.
->>>
->>> We are requesting the PHY anyway, so the PHY driver should have probed
->>> well before phy_init() call. I don't get this comment.
->>>
->>>>
->>>> Moving the calibration to phy_init shouldn't cause any issues. However,
->>>> since we currently don't have an initialization operations registered
->>>> for init, we would need to add a new PHY initialization ops if we decide
->>>> to move it to phy_init.
->>>
->>> Yes. I don't see it as a problem. Is there any kind of an issue there?
->>
->> No issues. In my next patchset, I would add a new init ops registered for qcom phy and move get ufs phy reset handler to it.
+On 4/23/25 1:15 PM, Mrinmay Sarkar wrote:
+> The maximum link speed was previously restricted to Gen3 due to
+> the absence of Gen4 equalization support in the driver.
 > 
-> I don't really like this circular dependency.
+> Add this change to set the maximum link speed to Gen4, as Gen4
+> equalization support has now been added into the driver.
 > 
-> So I took a peek at the docs and IIUC, they say that the reset coming
-> from the UFS controller effectively does the same thing as QPHY_SW_RESET.
+> Signed-off-by: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+> ---
+>  arch/arm64/boot/dts/qcom/sa8775p.dtsi | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> Moreover, the docs mention the controller-side reset should not be used
-> anymore (as of at least X1E & SM8550). Docs for MSM8996 (one of the
-> oldest platforms that this driver supports) also don't really mention a
-> hard dependency on it.
-> 
-> So we can get rid of this mess entirely, without affecting backwards
-> compatibility even, as this is all contained within the PHYs register
-> space and driver.
+> diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> index 5bd0c03476b143444543c68cd1c1d475c3302555..65d9433a298f80eb782439120ad9c3c74025b441 100644
+> --- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> @@ -6462,7 +6462,7 @@ pcie0_ep: pcie-ep@1c00000 {
+>  		power-domains = <&gcc PCIE_0_GDSC>;
+>  		phys = <&pcie0_phy>;
+>  		phy-names = "pciephy";
+> -		max-link-speed = <3>; /* FIXME: Limiting the Gen speed due to stability issues */
+> +		max-link-speed = <4>;
 
-Well hmm, certain platforms (with no_pcs_sw_reset) don't agree.. some
-have GCC-sourced resets, but I'm not 100% sure how they affect the CSR
-state
+The property may now be removed, as 4 is the value read out from
+the hardware
 
 Konrad
 
