@@ -4,114 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6B30C369CB
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 11:56:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C473BC369D5
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 12:02:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2qdxEe86SJcxoqFEAAEjaWsVG2AzLlFSoM6CgDoKokI=; b=TTJAkj6I0pFx8m
-	yAydJFUzZe3j6cZk4P5Xnbd/6jpKHtc6aSvQYW/LvfTdHQOBKWxG8PrSryteEGoNWlha4KxNn8MF3
-	edAYbRLIbktIHg3fkk9c95WutoiwPsox+Jj3IxjwtOsVDgKKTP2oCxotMxlha1pzn3rh/t9InXZOn
-	iMwrN/Gcct+iIUkt75hxPaoH12dAenx0B+A6ucdrSoqdt69YdUkS+SaN4Ne3Qti81eYNHRNjVulR5
-	FcE3JYLzGu1fT5SErniqTj0K1HyHm9BjzBVovakHmyL3YxZKT7qOwOB89YOWg73H7QxnZoNstgP/Q
-	IHf8bejwrxUuRX3ietUg==;
+	List-Owner; bh=DI+Nn5DNLJW/RJn5lIQtOgn+VLJRhFt90tsFRepykEE=; b=rPabjJTLtZIAm4
+	PGRCg1hPyTOibQkARPuWccMMW23WRuBBF6z5BsaRXqOrXQJFRQzwb2MWJxh0qiZGarevOBgAJszqt
+	2zzi7Xv+aHM9mR+EsxrnJpQhBSkZacOPgle+vsGPC2ZZkmlMt2FwTdmRt3A97Gj+Spqojz/URibAZ
+	GOc0xjNIOqrSsbo5GQDn0CAkaklr4M/SBGDrknYED1fNQSlHm+EAn1cTGFzdf8mmen1Asdw8WAt+M
+	g9rbh63FExgj+mL4sKtM2+c1cdtSOEXRXTYnj2QizEHdm8YwLs8n1HWi8d8JFCPSHeWRUHiMk04GE
+	xw11ckHnsVYss9eb8UlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7Yim-0000000AP4Y-1ohw;
-	Wed, 23 Apr 2025 11:56:56 +0000
+	id 1u7Yoc-0000000AQ3A-2JVQ;
+	Wed, 23 Apr 2025 12:02:58 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7XYc-0000000ADE6-1GvN
+	id 1u7XrU-0000000AFdl-3YK6
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 10:42:23 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAMd9j014535
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 10:42:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Wed, 23 Apr 2025 11:01:54 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAlafx016858;
+	Wed, 23 Apr 2025 11:01:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	B/sUVk9OKoRUIb1LnNSnSHgYKaMS9g0fDBib8P+9OBo=; b=IiU+rpCMYxFJiHvO
-	+HIoPm450HBMyp2/oWkQm2mY9CR70Z8whPzjZGhAk/IyZRSfWGH0p9EBggmsGTmx
-	5SM6b07V62/6+9pY/ewyDAo2NozPqfZ8ilG6Bfgz4BDVnYZeO8lp1gqR3IaHMQ2I
-	/SuIXkgnYcpw1aOYL0rK3vwBmoqZScauKBgvZCAnCwlqrQdeFK69SnunOZuoJVMU
-	FF3Tp1IE5haUORVjnilSPfPF6ZWClMianHp0rY9n1eIcVUQqqv2/jR6vV8q+k2jP
-	0k1PF3fgyMGPEosjFsbyMBqIeISr9nYC5mNHC3HywwPmqhwtqKAcq1pclbFYf9Zg
-	u9hFgw==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh0hu7u-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 10:42:19 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7c54be4b03aso104805285a.3
-        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 03:42:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745404939; x=1746009739;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=B/sUVk9OKoRUIb1LnNSnSHgYKaMS9g0fDBib8P+9OBo=;
-        b=FfTtTYQ0Fj/MSODMWP1kzPEYrBdTFd1pDNzCXQ5++NgO2DjGAyL/9C12zvfdhOnm1i
-         BxBI+ib95o8AyIXdv8VyTCC9D8NkKzS+RWVD1SRUL86ptcTSWGCxqi3WWJl/yYIqKlvP
-         QloSHUpW2YrMAS9/toPBg7MAdel3oPXCe+VlncLrFzPMY4zYNIomq6uSCQbzrD+RHf32
-         98wmQ3DucQc5gfNmBZlI9MBTKP1uL4lyEFNz7usJmH8F1SJwMKvGMGElkvn2LooUInk4
-         L6eLFAS/2SfWZeoQhxvzeTUMIXojJtLFwVAoKEq7FzWhbowUq/qk/VYXSSoj9U/FxPVz
-         7n/Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXIBmR2vTJCkTiJjAg4gCwnYvfax3D+PUv5tvQNSTfsgLRHs1oy0YU/KAObgLOGk1dFRo98gk31UvU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxhbr+SiKhBdTivJVNafL0qSqGSSG64UhGhlFEmF4lmEFfwcjax
-	yUL7yPy6rac82yZTXcu+2rUJOYBq31n82sG/iL3GluvUHmabzjovG3sJHTV5YeSHYJfkO+oacfx
-	XGVU1Jotcb9Mu2BgPpSZ1b4YfAKO1QgaJFSWyNMgEUJ5uD0DhBetHr6mDX1Jn3cjJ
-X-Gm-Gg: ASbGnctF92qqxRBtKFXtFyIpa99+mWt8MBHns1E98AvKrxdKYTv6oOb+FpWYvEbgQmC
-	oIKzobgBKf56+7ODkiEUAN74UPWfoHwguQaTC8XSN2XWbsz8SbwW5nXsPLgSAuGOZeMFzqyf0gi
-	dUAhL1CAl9HPdNA6OqRDvlw/WNo1Twez7roJVr5A42Tb7hSDtMsK91ouEXEVmdS14NYdGEP27N0
-	dX7KCFu4sDAFFGQzyoP7ogV9G/A9ZY+jPoi1igxK5yr8TEqse65LEAurN2p+WGaqJN56NPCiUTr
-	W7IgG0joDLIkbXmbOoJUMatplk09F+8hl4oBDXaXz8oUItVb718fP2lVkf+2KyMfX5c=
-X-Received: by 2002:a05:622a:2d1:b0:474:e213:7482 with SMTP id d75a77b69052e-47aec49d152mr115859681cf.11.1745404939184;
-        Wed, 23 Apr 2025 03:42:19 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGiwe0IYpezKkV2uUZMKDuNbDxC8roBj3sADr4v35lgHslXOIiXv/KaGkpVkodjQUBRrJJZSA==
-X-Received: by 2002:a05:622a:2d1:b0:474:e213:7482 with SMTP id d75a77b69052e-47aec49d152mr115859471cf.11.1745404938830;
-        Wed, 23 Apr 2025 03:42:18 -0700 (PDT)
-Received: from [192.168.65.183] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5f625577f3esm7330749a12.21.2025.04.23.03.42.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Apr 2025 03:42:17 -0700 (PDT)
-Message-ID: <3735f288-5ba2-4582-afbe-8b3f5d0f280c@oss.qualcomm.com>
-Date: Wed, 23 Apr 2025 12:42:14 +0200
+	zVJ+/vVepkGmQcMwQNA4ogt+cMKPxrjlVD7qz32ZD8M=; b=hw5xqQQ9sGk6XbAm
+	wjujz0ybA0MbZnNkgycifoKLoTvauLB52KXhpmRgXPtF+ZrFqWiBDWJIrUrLU4do
+	x2sEYAR/fWQ0u3W/j0ZJ1iWc6gs3BUdpHpvjP/GXBkEVCSvVjXk9aqm89HsnsE3x
+	Kp3GfSo8aFjLmjEEgMEybTa56RHKlMp9k91Z91d8prgAx8XyIDDrazTLzFfXX83S
+	sK3ifn5deeJxyJ8AJvtdS44uom5afeKGJ4SpLQape4FlbBsbaqBfkwRRAFBjj08b
+	y6Wvb5/Bmagx4gFsEGe+EevDgfjU4s3NOM3ULC8fYhu6EBEOZbCOa7AlSXG5v68r
+	Q2tUUw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh01vq4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Apr 2025 11:01:33 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53NB1FsA027322
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Apr 2025 11:01:15 GMT
+Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Apr
+ 2025 04:01:10 -0700
+Message-ID: <fb4394e2-991f-4aba-9ddc-ce6cfb7c695d@quicinc.com>
+Date: Wed, 23 Apr 2025 16:31:07 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH V3 1/9] scsi: ufs: qcom: add a new phy calibrate API call
-To: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
-        kishon@kernel.org, manivannan.sadhasivam@linaro.org,
-        James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com,
-        bvanassche@acm.org, bjorande@quicinc.com, neil.armstrong@linaro.org
-Cc: quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <manivannan.sadhasivam@linaro.org>,
+        <James.Bottomley@HansenPartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <bjorande@quicinc.com>,
+        <neil.armstrong@linaro.org>
+CC: <quic_rdwivedi@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-scsi@vger.kernel.org>
 References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
  <20250410090102.20781-2-quic_nitirawa@quicinc.com>
+ <3735f288-5ba2-4582-afbe-8b3f5d0f280c@oss.qualcomm.com>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250410090102.20781-2-quic_nitirawa@quicinc.com>
-X-Proofpoint-ORIG-GUID: KfhhhBkirYP4uVFSOIw-DwSJC4CB6E4-
-X-Authority-Analysis: v=2.4 cv=ftfcZE4f c=1 sm=1 tr=0 ts=6808c40c cx=c_pps a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=P7VlLZW0XDfqy93HOhEA:9 a=QEXdDO2ut3YA:10
- a=NFOGd7dJGGMPyQGDc5-O:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: KfhhhBkirYP4uVFSOIw-DwSJC4CB6E4-
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3MyBTYWx0ZWRfX0gIGXCwoWxQ8 AXhcTdtLj/ql07qS7pUU6E2Mm2uQ+Pg9n83wa3VzljuXHjGisgX3IF7iFfWuEmRcDCuvvJxLrqW a+4G5aV2GvvTr1jD6p7M52oTfPOm/7AbE5LFTzhcsAj4Pv6Spbpo+w4Cupy8FSWTcPrib8sQ9So
- 8ZAhPGkFIE6lapu0aspl948FbZZ5EqYUFGNyZ1VCG0GhNSOqOVvQGRYadwmSfyjbYKds9UofTYz FHNTFja5s5p+61YrK6NFRnyGpOWwjriP700PLaEjJhdXgy9xYIxhcZQbOkDHwIxzUNqiA+zoBzq hf2m8ZtioDCHcsjJCX4WHhdHmBrxpxBytyhQbLVi2SqE5R/I2C9olwsVUUg4CTJXzV4/YfaxPeM
- gYFojx4ikpf4IcO+Ev/VFn3qKdyhYGGdjbzcreK0hVjjOTlPt5XapyyekW8QyV/mOeBTijb6
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <3735f288-5ba2-4582-afbe-8b3f5d0f280c@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3NiBTYWx0ZWRfXxQdhnEa3a5Bh zKXvCem6WoDUvwXSPHTeOqJm1N1gwUz71oNKBg5UHO7PHlrRF19A3ocpVqV1d8LALGSrHkV8KGF ECq7tEajbAuOOwOf2t1DGN+iahr2Zp8t/eFlZc+p/G4g4GmMJYXS8jbX+YXXo3ArBRcLYKRQU8c
+ C4fUl+FBxjcysKm9xIW6mIbSMPkPBIyJUIrIcpZwXX4LhxKoQ3b5lR8W/kIF5SLMH2l48Yh9vjz xesmXdMCHspku1ecy7pGY74sEKmMi+Y6RtO/GmOdLQMelychyz6Kqa8R3NW1YLvL+mLgZboe4wa 4Nb/KNe4jGVJmUlq8ZgNtmIbC3gKI6VIaJcwotsFutC/tT2l5exoD5+evl/BlP3ASNOJeyeTuJu
+ +XqJLFEHsIbh/6YPIX+fWB4zR08Hn4L/D53/SQeCg9jPSCltv/sCcYEqye2jxcbpN4hdAO9d
+X-Proofpoint-GUID: OHlltBr3yQZ-e07YpU48PUXMyoym35pf
+X-Authority-Analysis: v=2.4 cv=ZuTtK87G c=1 sm=1 tr=0 ts=6808c88d cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=oORsJjWy4k12e7USA60A:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: OHlltBr3yQZ-e07YpU48PUXMyoym35pf
 X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-23_07,2025-04-22_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxscore=0
- suspectscore=0 mlxlogscore=999 lowpriorityscore=0 phishscore=0
- malwarescore=0 impostorscore=0 adultscore=0 spamscore=0 clxscore=1015
- priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2504230073
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.80.40
+ definitions=2025-04-23_07,2025-04-22_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
+ impostorscore=0 bulkscore=0 mlxscore=0 adultscore=0 lowpriorityscore=0
+ mlxlogscore=999 priorityscore=1501 malwarescore=0 suspectscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504230076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_034222_512526_5B94E01E 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20250423_040153_033956_0A01DE65 
+X-CRM114-Status: GOOD (  14.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,42 +106,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/10/25 11:00 AM, Nitin Rawat wrote:
-> Introduce a new phy calibrate API call in the UFS Qualcomm driver to
-> separate phy calibration from phy power-on. This change is a precursor
-> to the next patchset in this series, which requires these two operations
-> to be distinct.
+
+
+On 4/23/2025 4:12 PM, Konrad Dybcio wrote:
+> On 4/10/25 11:00 AM, Nitin Rawat wrote:
+>> Introduce a new phy calibrate API call in the UFS Qualcomm driver to
+>> separate phy calibration from phy power-on. This change is a precursor
+>> to the next patchset in this series, which requires these two operations
+>> to be distinct.
+>>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> ---
+>>   drivers/ufs/host/ufs-qcom.c | 6 ++++++
+>>   1 file changed, 6 insertions(+)
+>>
+>> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+>> index 1b37449fbffc..4998656e9267 100644
+>> --- a/drivers/ufs/host/ufs-qcom.c
+>> +++ b/drivers/ufs/host/ufs-qcom.c
+>> @@ -473,6 +473,12 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+>>   		goto out_disable_phy;
+>>   	}
+>>   
+>> +	ret = phy_calibrate(phy);
+>> +	if (ret) {
+>> +		dev_err(hba->dev, "%s: Failed to calibrate PHY %d\n",
 > 
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
->  drivers/ufs/host/ufs-qcom.c | 6 ++++++
->  1 file changed, 6 insertions(+)
+> Please add a colon, so that it becomes "..PHY: %d\n"
 > 
-> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-> index 1b37449fbffc..4998656e9267 100644
-> --- a/drivers/ufs/host/ufs-qcom.c
-> +++ b/drivers/ufs/host/ufs-qcom.c
-> @@ -473,6 +473,12 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->  		goto out_disable_phy;
->  	}
->  
-> +	ret = phy_calibrate(phy);
-> +	if (ret) {
-> +		dev_err(hba->dev, "%s: Failed to calibrate PHY %d\n",
+>> +			__func__, ret);
+> Avoid __func__, this print is fine without it
 
-Please add a colon, so that it becomes "..PHY: %d\n"
+Sure will update this in next patchset.
 
-> +			__func__, ret);
-Avoid __func__, this print is fine without it
+> 
+> Shouldn't we fail the power-on if this can't succeed?
 
-Shouldn't we fail the power-on if this can't succeed?
+Thanks for the catch. Yes we should return power-on failure if calibrate 
+fails.
+Even if there is calibrate phy ops registered, it will return 0. So for 
+so nonzero return value we should treat failure and fail poweron.
+Sure will this in next patchset.
 
-Konrad
+Thanks,
+Nitin
+
+> 
+> Konrad
+
 
 -- 
 linux-phy mailing list
