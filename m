@@ -4,114 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD4C6C369D8
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24B2CC369D1
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cgsE8uKi7kTJO675AqBuL8F4xJ8hYduWu8Ppq/cZDVU=; b=toNy6LpGyGtlzm
-	5RuGDtxkAPzLn8SLlYVRG7vL5sHJijVTjHWF/eDP/gOVhVHt6/HFQch96F/ov+Px0U8xTnNr48Oxw
-	d6Huz35Ci3PZQFNLGgCwbNSJ3lfYFz/muX4yS4Jmt0rNwL7QynPrK1jpZ1HAxR2AJE6MwvFhi7YRm
-	s4lIVtPNq7EJq6gbdQMhLng3c9CTPfZ03DaZlBDUvcqLbu7Y9VnCZrF4Wx9N9n+oeTLh8GBX8NoPK
-	xBhuyavihXlxjIf0mOhdMVYm7e3cg2jdW9G01jl6uoQ+lTcxGtP46HWG0u35L/ANTKMKQSpD7VHYv
-	N1PAM7ZsbpAojgcbjSCQ==;
+	List-Owner; bh=vz7cOGr4tTval9bpcAxyUvhOxE/KtrgznL3hjjxsuTY=; b=silEJB/ni+KQ9X
+	s5B+y9xuC6S77M7DUfL7myyHNFofF+HbYC2cx+N5qS/vQ0cGx1/3dF34VyLvCsRtmlPwg2Nm26jgC
+	86yjH8GeKZma8J3gNwpjcNgisiYx9MIHZKmQINrp3PfYmVGXVglb5rWtT2nSxZPMDyBIQQ9r8Vfe3
+	KuWdVCa9SLtwyXjwYbthdrF/RnoRsBWV4V2Nzr8BWlM6SX3wbbAOSgkaNqqZGmuiu8t5DAeWP4RX6
+	+0C9IqWqLxqRJN/p6s1IRwXqBwZ0BU1jQLSlsFPovHstkxGpHnqru2GzUW6jARHs4qdWKGbmVniBX
+	y5cvE44b/ymeY2XX8tnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7ZnM-0000000AXXr-47R2;
-	Wed, 23 Apr 2025 13:05:44 +0000
+	id 1u7ZnW-0000000AXkL-3WgF;
+	Wed, 23 Apr 2025 13:05:54 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7YIS-0000000AM34-2R9a
+	id 1u7YWC-0000000ANiA-2S1U
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 11:29:45 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAlWlG014042
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:29:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	Wed, 23 Apr 2025 11:43:57 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NApPoD023624;
+	Wed, 23 Apr 2025 11:43:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aiLYMeII1DzKYJXChQAXWDo4SsnOHw7fzuxji7XmLYs=; b=mwRh8Og5wI59bfsL
-	gzcq8bksEhmk+alL70SE5tmEiJhgWm7v3YoUgydWlPoy9QAdCYsgkNOyGJtbXtv/
-	Bg5QhlVnctg/enbmUjwnHTC4cksMLN/VapnjkbNxEJpxn/xLYAtT9oBDXOfa/c/M
-	rb4CBs96lm1bd6OhuVU3oV0E/HHaEcyQeLApr1o+z5kg9tbcw2PLUbhaOc1zCA3a
-	NWRlTw3JoQAuSYjJf+Pk3PD96mtt8NsP08IOsOUgp3GyOnvC7O1QBJslOhpB7Vq/
-	znAYxLHsTLMXGr1NzCuKPtesTkkG2HU4EWkUxHdBqTgucees4a/htP/It0+i3UN4
-	o7vDRA==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh39x76-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:29:43 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-47ae9ed8511so8044861cf.3
-        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 04:29:43 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745407782; x=1746012582;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=aiLYMeII1DzKYJXChQAXWDo4SsnOHw7fzuxji7XmLYs=;
-        b=viu11Vww5tot9zXl6iq1XUmZA323e9vMLydsV+oh39jdxXpj8DRW3Qaj8ZLIvfdO5t
-         xfQFkBRQAz4kf7m0+VN1aSqT8jJqbAcrj66mUcvHSrWsbtRu1/mYiR2F6A3QOPC/hJ1G
-         URa9+fAUNDcpxcUGiPqBJdLCmtNFDjedRTFHBYO+h6mQ8qvIIGvh4P95kVBFAzFpmCrr
-         Vf4v79w8Z7lVj1agI26Vn307XFUzSVlCc7h9XhMSS6rLrgUJyRh4i5TjBY/Sz5NvTKF9
-         NqdY9CIm1DnEWWWfSgD4VvIDclum3+np33vZ8njIaK++/pOCkxTBEiQ6u0QtDA9UaAzf
-         vsoA==
-X-Forwarded-Encrypted: i=1; AJvYcCUM5QC+cwWpp9Buv/feoFEWAPVp3tcLPlqbf92G+iU6rD96Gzen37/+0lTuTk3+JpVROXus6Lh8Mn4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyTSIWWexmVZoi7vLMZASStqLlXj53m+IxiEvNmWp4v8/KRr8zh
-	NlILANUvNvDGl69AOEptS7Ml3JX2zUyx8N9u8vn9OFl/ttp+3CfNCBrKA8ddyyGiRpsuzQXyGQP
-	rhLaeyuYxjssMJue/o5QLnOp0CmC6YPsqkpmwiHtmc31UfhERDdt0FfuAvddYV9/2
-X-Gm-Gg: ASbGnctDLm/Im1YXRiSJRDI3nkjwA77Fh/zLXy50dUrMt5s9KepyvxqujY36sqhLtB6
-	9Yj8cVfGATUJMFlhWzHWA8SLsobUEvnsR60frb7hlwmz1fXnxGvRkaUMX770FFvsV2bxAd3p5dI
-	1F8pF4/1PfSoddUPTUe1LzIAQVRqrOCvvzmAAAEtN2+ShmeEHk17ZgFaaJTcRXOKtI4YMHgzvS8
-	og4WGoMXGFmU2IRhrzyzRujArh8QQNCfQ79kOZQaVUBWtjMrgo8JgYApMYKE4c8YeSlt2vxzVkF
-	wSaKujxZrehkmrse5+LTZ5pzzmEQXUCqi9/emY8VxPKwxbzp0hsEpK1gQokQrVgVxAU=
-X-Received: by 2002:a05:620a:4543:b0:7c9:2465:8731 with SMTP id af79cd13be357-7c94d123bd5mr169985285a.0.1745407782431;
-        Wed, 23 Apr 2025 04:29:42 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEgFbGmUp8j9I7o53Gg0IqLCwRf3sb8p8Am2LmvgQJTpn9FJCrHSFbcU5fZ7b4kD9OfN5zyGA==
-X-Received: by 2002:a05:620a:4543:b0:7c9:2465:8731 with SMTP id af79cd13be357-7c94d123bd5mr169982485a.0.1745407782052;
-        Wed, 23 Apr 2025 04:29:42 -0700 (PDT)
-Received: from [192.168.65.183] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-acb6ef48e5csm802900666b.148.2025.04.23.04.29.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Apr 2025 04:29:41 -0700 (PDT)
-Message-ID: <052fe049-a17f-4fa7-80f3-a198de21b3c1@oss.qualcomm.com>
-Date: Wed, 23 Apr 2025 13:29:39 +0200
+	cTJDhj6eqMoV//Notj+3amni4JS+GXeRT+hpB9+jKIY=; b=X4SBt5lq1093olXm
+	HMkv+NV/FRHqvUPcB6EiWokGCRhQqe+NMncaIYa5LAci8PCclba+lLXTbDLPfiGg
+	MGNA3sL3oV1WfdUqmzdZTGERe/r6O3jC9c6wU1rJaii94R4ncsIwcvCFHSxOlIxq
+	9gbAKw5qTxKolJCQnosCjKZYAZp5LRHZGbJ39KOoC1zMSpWU9z2aY1TKujZ/nI3j
+	NpPRzAIA3e2DkXzsL+QZrilbQ/+E0O5xPDnHA5ORxs9E38wUxlfO41UDWzVA1+bO
+	np/f5WmqmZ6bg6K0TR+dIINbcg64p7181NjSJGviGlfbuKQazLUga9VKO+RIbVN3
+	yTs28Q==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh2a0a2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Apr 2025 11:43:39 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53NBhcnb012881
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 23 Apr 2025 11:43:38 GMT
+Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Apr
+ 2025 04:43:33 -0700
+Message-ID: <200007be-fe80-43b6-9ce2-4e4695265599@quicinc.com>
+Date: Wed, 23 Apr 2025 17:13:30 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 6/9] phy: qcom-qmp-ufs: Refactor qmp_ufs_exit callback.
-To: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
-        kishon@kernel.org, manivannan.sadhasivam@linaro.org,
-        James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com,
-        bvanassche@acm.org, bjorande@quicinc.com, neil.armstrong@linaro.org
-Cc: quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org
+Subject: Re: [PATCH V3 4/9] phy: qcom-qmp-ufs: Refactor UFS PHY reset
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Dmitry Baryshkov
+	<dmitry.baryshkov@oss.qualcomm.com>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>,
+        <manivannan.sadhasivam@linaro.org>,
+        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <bjorande@quicinc.com>,
+        <neil.armstrong@linaro.org>, <quic_rdwivedi@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
 References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
- <20250410090102.20781-7-quic_nitirawa@quicinc.com>
+ <20250410090102.20781-5-quic_nitirawa@quicinc.com>
+ <pur4y63xhfmqlyymg4pehk37ry4gg22h24zceoqjbsxp3hj4yf@4kptase3c4qp>
+ <317faeaa-3130-4e28-8c5d-441a76aa79b4@quicinc.com>
+ <CAO9ioeXnnbNzriVOYPUeBiWdrPfYUcMk+pVWYv0vZpJbFeByoQ@mail.gmail.com>
+ <2820908b-4548-4e0a-94b2-6065cb5ff1f3@quicinc.com>
+ <c2ec6b7c-421d-43c3-8c0a-de4f7bdd867c@oss.qualcomm.com>
+ <a24ff510-2afd-4aa7-a026-199fb6d87287@quicinc.com>
+ <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
+ <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
+ <b7027077-e9a3-462b-92a8-684a42d23604@oss.qualcomm.com>
+ <7a0eb7bf-d6d9-4e8e-829b-2df726651725@oss.qualcomm.com>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250410090102.20781-7-quic_nitirawa@quicinc.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3OSBTYWx0ZWRfXyaVpm3jQ+VUK LAOkknOJbvrBUL6NUyJA2PUv66yfpW4Ux3UVUcPt+pURTYJm8YtRzQdNLPzO3ITUsGipJ3jv1ZM So/Vd0VXIiTSs/Okmk0b7dhaPys4zzkqqnvopCdiAjsJqgmIJccq32wgolbUy5EuPxlknEFaqYy
- 9G4h0tgxEkXIGPxt5b+VX6x5fzeb99sbQ9sPe+ow7am5umF2WjFr2AiEGcrY3cN8tCMpi53lU2N j5ge72oWKsrD/9+WJfJzIMAexlxG2mFKJtUOv+GVVBfjLoz9I7wyPqM29zJ8mTW9z/HmMo9df5z IAkJZyVKvGA9GzAX2UHwVNW+m66ZDpJdH0HGY9CcjplHA5aQD9lLlKMxOhGSUG1Esjot2AjXxvx
- spmIGJx+sDnTFelIoQZJ1VJptpvTSuLPU0QVBHvMVdGoqNw3yxWhfeVJlDSYky1DskmZqgWQ
-X-Authority-Analysis: v=2.4 cv=bs1MBFai c=1 sm=1 tr=0 ts=6808cf27 cx=c_pps a=JbAStetqSzwMeJznSMzCyw==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=0G_SUc_-HujNE8ZPJPcA:9 a=QEXdDO2ut3YA:10
- a=uxP6HrT_eTzRwkO_Te1X:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: vKV34Z4WZ6iLfyml-JLuF_waGdSoQ7QA
-X-Proofpoint-GUID: vKV34Z4WZ6iLfyml-JLuF_waGdSoQ7QA
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <7a0eb7bf-d6d9-4e8e-829b-2df726651725@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: IuJ8B3mIAby0BkYVCTLiNaxImH6OLJWS
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA4MSBTYWx0ZWRfXzsU/pbRPi/w2 MdNdeXDa2N0tSfe8q9hS1CWANMq5KMtQ1GGaqNzTNcTTlinqhnIU8nDxWipjm02l82dFH4O601A 4EbNzkMQrWpYdqgWy/N4aEtA2E4vK0AQh4R/f590Q20teb8Fre6htN7du7MKu1Ck65A46uz6Azm
+ Sxh1odAZLTZbUysShiFcuWzgNt0ObVaBFrx5QguGOHTSe2zP2hpfIT/1+GQ7TIu8sPKtF2gfk/e hg2PBudFe8p5xgCm1TQx6pTcoyXUbqqG7bpG1MWO0HIXL+l81PemadnJ2jEFSa52+ikH+Z+c+bX 2zE4S9kFloeCB7OCHk+D3VZFB9uombihez8r1bdZHkxOgbMQv+agCSm7Jj3ZOaZOISroQjvtXd2
+ rHd26+URXVK+20beD6tfy6t3RUIyZWz5MKGCW8I3k50k78wrjFL4G7wpP7BHsuNus+G1I8g8
+X-Authority-Analysis: v=2.4 cv=Tu/mhCXh c=1 sm=1 tr=0 ts=6808d26b cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=I0qkcEgCn53fLrtcp2gA:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: IuJ8B3mIAby0BkYVCTLiNaxImH6OLJWS
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.80.40
  definitions=2025-04-23_07,2025-04-22_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- priorityscore=1501 suspectscore=0 mlxlogscore=999 mlxscore=0 phishscore=0
- lowpriorityscore=0 bulkscore=0 spamscore=0 impostorscore=0 malwarescore=0
- clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2504230079
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ malwarescore=0 suspectscore=0 spamscore=0 clxscore=1015 lowpriorityscore=0
+ impostorscore=0 adultscore=0 phishscore=0 mlxlogscore=999 bulkscore=0
+ mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504230081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_042944_632271_65811E56 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20250423_044356_653169_90A9427F 
+X-CRM114-Status: GOOD (  24.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,34 +117,125 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/10/25 11:00 AM, Nitin Rawat wrote:
-> Rename qmp_ufs_disable to qmp_ufs_power_off and refactor
-> the code to move all the power off sequence to qmp_ufs_power_off.
+
+
+On 4/23/2025 4:51 PM, Konrad Dybcio wrote:
+> On 4/23/25 1:09 PM, Konrad Dybcio wrote:
+>> On 4/16/25 2:26 PM, Nitin Rawat wrote:
+>>>
+>>>
+>>> On 4/16/2025 5:43 PM, Dmitry Baryshkov wrote:
+>>>> On Wed, 16 Apr 2025 at 12:08, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
+>>>>>
+>>>>>
+>>>>>
+>>>>> On 4/15/2025 2:59 PM, Dmitry Baryshkov wrote:
+>>>>>> On 14/04/2025 23:34, Nitin Rawat wrote:
+>>>>>>>
+>>>>>>>
+>>>>>>> On 4/11/2025 4:38 PM, Dmitry Baryshkov wrote:
+>>>>>>>> On Fri, 11 Apr 2025 at 13:50, Nitin Rawat <quic_nitirawa@quicinc.com>
+>>>>>>>> wrote:
+>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> On 4/11/2025 1:38 AM, Dmitry Baryshkov wrote:
+>>>>>>>>>> On Thu, Apr 10, 2025 at 02:30:57PM +0530, Nitin Rawat wrote:
+>>>>>>>>>>> Refactor the UFS PHY reset handling to parse the reset logic only
+>>>>>>>>>>> once
+>>>>>>>>>>> during probe, instead of every resume.
+>>>>>>>>>>>
+>>>>>>>>>>> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
+>>>>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume.
+>>>>>>>>>>
+>>>>>>>>>> How did you solve the circular dependency issue being noted below?
+>>>>>>>>>
+>>>>>>>>> Hi Dmitry,
+>>>>>>>>> As part of my patch, I moved the parsing logic from qmp_phy_power_on to
+>>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume. I'm uncertain
+>>>>>>>>> about the circular dependency issue and whether if it still exists.
+>>>>>>>>
+>>>>>>>> It surely does. The reset controller is registered in the beginning of
+>>>>>>>> ufs_qcom_init() and the PHY is acquired only a few lines below. It
+>>>>>>>> creates a very small window for PHY driver to probe.
+>>>>>>>> Which means, NAK, this patch doesn't look acceptable.
+>>>>>>>
+>>>>>>> Hi Dmitry,
+>>>>>>>
+>>>>>>> Thanks for pointing this out. I agree that it leaves very little time
+>>>>>>> for the PHY to probe, which may cause issues with targets where
+>>>>>>> no_pcs_sw_reset is set to true.
+>>>>>>>
+>>>>>>> As an experiment, I kept no_pcs_sw_reset set to true for the SM8750,
+>>>>>>> and it caused bootup probe issues in some of the iterations I ran.
+>>>>>>>
+>>>>>>> To address this, I propose updating the patch to move the
+>>>>>>> qmp_ufs_get_phy_reset call to phy_calibrate, just before the
+>>>>>>> reset_control_assert call.
+>>>>>>
+>>>>>> Will it cause an issue if we move it to phy_init() instead of
+>>>>>> phy_calibrate()?
+>>>>>
+>>>>> Hi Dmitry,
+>>>>>
+>>>>> Thanks for suggestion.
+>>>>> Phy_init is invoked before phy_set_mode_ext and ufs_qcom_phy_power_on,
+>>>>> whereas calibrate is called after ufs_qcom_phy_power_on. Keeping the UFS
+>>>>> PHY reset in phy_calibrate introduces relatively more delay, providing
+>>>>> more buffer time for the PHY driver probe, ensuring the UFS PHY reset is
+>>>>> handled correctly the first time.
+>>>>
+>>>> We are requesting the PHY anyway, so the PHY driver should have probed
+>>>> well before phy_init() call. I don't get this comment.
+>>>>
+>>>>>
+>>>>> Moving the calibration to phy_init shouldn't cause any issues. However,
+>>>>> since we currently don't have an initialization operations registered
+>>>>> for init, we would need to add a new PHY initialization ops if we decide
+>>>>> to move it to phy_init.
+>>>>
+>>>> Yes. I don't see it as a problem. Is there any kind of an issue there?
+>>>
+>>> No issues. In my next patchset, I would add a new init ops registered for qcom phy and move get ufs phy reset handler to it.
+>>
+>> I don't really like this circular dependency.
+>>
+>> So I took a peek at the docs and IIUC, they say that the reset coming
+>> from the UFS controller effectively does the same thing as QPHY_SW_RESET.
+>>
+>> Moreover, the docs mention the controller-side reset should not be used
+>> anymore (as of at least X1E & SM8550). Docs for MSM8996 (one of the
+>> oldest platforms that this driver supports) also don't really mention a
+>> hard dependency on it.
+>>
+>> So we can get rid of this mess entirely, without affecting backwards
+>> compatibility even, as this is all contained within the PHYs register
+>> space and driver.
 > 
-> Co-developed-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
-> Signed-off-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
+> Well hmm, certain platforms (with no_pcs_sw_reset) don't agree.. some
+> have GCC-sourced resets, but I'm not 100% sure how they affect the CSR
+> state
 
-So this patch does quite a lot without explaining the context
-that isn't visible in just the diff below
+Hi Konrad,
 
-- .power_on is altered to no longer reset the PHY (but it only did so
-   on docs with !no_pcs_sw_reset?)
-- partially inlines com_exit (dropping the reset assert)
-- removes .disable in favor of .power_off that we can't tell
-  what it does just by looking at this patch in the middle of the
-  series
+I agree with you, but there are still some targets (Sdm845, SM7150, 
+SM6125, and MSM8996) that have upstream support and require a 
+controller-side GCC reset. Therefore to align with HPG we can't remove
+gcc reset for these targets.
+Please let me know your opinions.
 
-Please improve the commit message and consider splitting this change
-in two
+Regards,
+nitin
 
-Konrad
+
+> 
+> Konrad
+
 
 -- 
 linux-phy mailing list
