@@ -4,123 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 706A0C369CB
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 12:05:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D268C369CB
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ro11MKnEXlaGRFzzQ5DFPJEgdvMHOPngr996HjToIG8=; b=uY6lH6rinx4mVW
-	SouEXwbV3KYvjzA0l/wYzNQW4ze8PnpJq4f3/F12E1+n315Bu1Gk47l+cysHmgtELWmMDjU8lQLSt
-	W3m0i9CixoThk8R1hcEIj+YL99uJg38hM/lABE2gyRryQ/QdMaq8ADRS6QMIFex5JbUmcP2NNOAGw
-	MXkVu2J/mCvqBhVbvfKVQV5UXUBDoA0hK9dOGxnIEASzyaQKguuSbfFj674o6CRCcJoU+NSZxmzI8
-	EweKHZl5bmScxnyvsgHuFO8Vts3Uo1b4mVFPjAD0tg2KIrAxEErRzt6o7lMcuhGnmFaS+QWOohrbS
-	4OQSTASHViAyIlDx4oPA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nfu/r9MuqGp9w6dML+8HtZ9I9JEKVNtAIfLJEpF6icE=; b=U4wS7w2Mg53Qbc
+	9fxOE8m1lFpSmD1BJXux8vdbgDFg6DdN/W5/1jRkFTxPFF/eX+Hp6YSfPRYkwJ0tUe3tQ/6cNFuxr
+	VZLRN3rc0aEp80rUD/dSFqtSa1M8CjnoLwzuye8IpRRAW0MhdeCco1TSZasCYNpigrihFR+kGXGtq
+	U+ENwhrBpGm/s/If6pb3ZVUenr5as+MwWQsf72jXWzI5N49rCEnN7N1yp3zOt0TvqRW6ovf+4wG3V
+	yYxb97d7zQAQfKRAIDrxFXRbG7KKSk/Kf8ObcVbLOCpUFMIJjT9IWbNXP2d+LnFNvhQaBfxDi7Dey
+	NlH3xb2uoN0H4Dlh7+qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7Yqc-0000000AQNx-0bwK;
-	Wed, 23 Apr 2025 12:05:02 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u7ZnC-0000000AXEv-46O2;
+	Wed, 23 Apr 2025 13:05:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7Xys-0000000AGLh-2oKc
+	id 1u7Y57-0000000AI5y-2Sbx
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 11:09:31 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NANjd4022005
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:09:29 GMT
+	Wed, 23 Apr 2025 11:15:58 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NANVNb015695
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:15:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rd3YHcBC3TYtyVK0LNqsKsNH4Ca1SUDlk/VqAbaBYrI=; b=Gbgs5PmbS8Rwe2pl
-	Dq6Am/mKNhrlPfQGhW8NJ20qN/u2MfsTbMt9JKfTsZsriPgCrD1ZJH6fyBdkpHSu
-	jdoV1xiMyokzvwCwhb84EVPK+qC/ms8DuOjyZ2u4k5Ie//6MviheNXJIR5BE6Hlx
-	XZznHFV/OYdCeG/heni3kCKt45iziHEyIsWRyKiFtmUxqlC6L7KT26gWzDXWwYyD
-	SKbu5nLgMhry0zDGxU24KWICXm+VTEokewsAax3Pp0KBl8UwFiC/c6fvmx1zyq0u
-	DAP9S1arRjzHfhq+Rhf64cyydOfzx1PvSvdLg514Bdlkkw8JkIxoax/0SwlUhYOP
-	pH6qqw==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh11vf1-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=NSUx02OYFI6C5J50Uj+1S8
+	PyJZEpqQkJpG/qCn++FQQ=; b=R+UBqWbKFK2BTYPHRosXyf5xBSDtzNndIBr43Q
+	LrbKZVeRdMwVEahvrmQyTPRM6nSQarJbN3+CBg7rolwe0KbtCHGOv5m3rwSIoG/Z
+	zCvBuW0i7Ql68CA6lv4+hj9C7fLoVaI7H/bMYHL7M4hKwJjYwoyg2FNZR9Ks5wo5
+	TehfOSL2hmskg5gZ1HILz9Kh+98Nq7Cg3DHM6DyDzwvyGdBnL5BgCqd/51qf4kpv
+	A1hmJ6huTN/fDR5mTp8OIOH/FYaaLyzibyGFK2BbfFnrjQ7yxtjYWAofWDaGCFzD
+	o2Fi8HtPOI+vTDTKCek+40LSQJ/YDG++u5iviOHZrgYyNcUA==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh09x1y-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:09:29 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7c76062c513so120942385a.3
-        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 04:09:29 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 11:15:56 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-af91ea9e884so520933a12.0
+        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 04:15:56 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745406568; x=1746011368;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=rd3YHcBC3TYtyVK0LNqsKsNH4Ca1SUDlk/VqAbaBYrI=;
-        b=ideTPQsancz6Xftkmv5ePip3DGhytMEkEYz4TBxal2J7di84Bwif9rJvvR7w4AZRV3
-         BphPxq359O/UKUcFrPNdOR4V1IejmbazW1DFztkKLbpZI7W7yzM7RQAAeCquMA4s5piQ
-         egoW0yGR7NJ9iUA8dlQdZbcosepFzJbrm1MwFKGaiAvGb0I+U+H5OcKxIXaaO88pdbh+
-         IlvkkxD2H7wvCd/4arXElR1dipX0j7XyZe3wU1UHd6JnN7O1JpAMhdBfeYjwxGi8EF2s
-         hKAWJ3deGmy9fOF2bRe93LkH1JdRN+aSPWRgXZTB8qVxeO/pvuGFta5tPotw3bvPSNl1
-         sxvA==
-X-Forwarded-Encrypted: i=1; AJvYcCW0p9t+R+DOfK9CeiuA/J5ACt/WnTmo/5LulaTDBNgRYarsIyySUiZZ5mRq9mH7YZQx+jw3DvWlnP0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyjm+TmQvG0oPEvcrKVrwq7smYXeQBUEHy2o7Lj1qs3G5uL3vkT
-	qnyPgGkpbRAMVmtYSvXlTT6pbLXvo27im5691fejrfUXQOWXD3fflOH0tduZYvvoUV6dwzkQFK9
-	sedy1smBhbzNHazTLPmFZfuXtDkc1HnfzKjkr+K5Bj2CLaw0TOZBb4iHXn6yE2qxX
-X-Gm-Gg: ASbGncsB63/VrKgEq29Anuu6Z4Q90AFDrjgF++YtG8x2sS+wMK6aSLzc69wUsjeMf5R
-	PeoHiilUWnSswGBvcFCHAqyo2U+5tlMBHOl9JtQrmd3auDrVfgUVf4iFnlrjExNHvw0S5H5Ge1z
-	Uhw2+gGwYcncnEjBuPTfbRkwO2EL2sy+EK12PDIZ0mJVl3btJmIHHUhxmXDqifKRsIH21D4Ydf4
-	Se+LEGU+qAVrFBw8/0V4n7vYBp3LZjHZcEEsIxOvhZJsnsBKysoT2ctltrV8WZEHSl09SrBiR/4
-	DbN1uNQPsh9BW8rCgXDSsUYY3PMuUc44+BPKGqqpGCyKudTwAdGW2JVuEmSWmxSv5pg=
-X-Received: by 2002:a05:620a:d8b:b0:7c5:79e8:412a with SMTP id af79cd13be357-7c94d243c53mr169135785a.2.1745406568543;
-        Wed, 23 Apr 2025 04:09:28 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEiZEnn54IflaB3i4pqXC7ZrnER6o9bw/syciNUcOHoqO5HVrimc4sTg7qhgrFutnZVRtO8kA==
-X-Received: by 2002:a05:620a:d8b:b0:7c5:79e8:412a with SMTP id af79cd13be357-7c94d243c53mr169134385a.2.1745406568049;
-        Wed, 23 Apr 2025 04:09:28 -0700 (PDT)
-Received: from [192.168.65.183] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-acb6efa5c5asm784078066b.166.2025.04.23.04.09.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Apr 2025 04:09:27 -0700 (PDT)
-Message-ID: <b7027077-e9a3-462b-92a8-684a42d23604@oss.qualcomm.com>
-Date: Wed, 23 Apr 2025 13:09:25 +0200
+        d=1e100.net; s=20230601; t=1745406955; x=1746011755;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=NSUx02OYFI6C5J50Uj+1S8PyJZEpqQkJpG/qCn++FQQ=;
+        b=fFB0mR28JJfVRuGhv0iN9FUSKADQdDfixR0q/pl5zCoeXnu/vGTiUu5zMQ0lk45mju
+         XoVxmHN6a0uujBAO/F7png0XyaVGONxhgiq1fAOUc5x+holsR8IeYz4r94reEQ6SQqkO
+         Doxc1uTKRspzJllC93dbuFrqJZPej+yoMWCcRb3w5Vo9IuSQSuiJ49mX3WOHzXpFETN0
+         XE1Lyho3CkKN7LOw4jTEI1hPBk5xdBAXFt52K+s3wLjh9IPTwUJzCagjbjv0MYOb6fXL
+         0qWWBSSXwEEB2JNWK87MxwOVhpGbdZUgorrBS4Qou9NdnlIEf7h76YwaTKt4k6yIv6LV
+         oXkw==
+X-Forwarded-Encrypted: i=1; AJvYcCWVh4X6sqQ/Nf4IpCnyJCje5bs9jN9DZRzmN2fpKLnGMqkA6C4Vt/Nojep01IjpWYzBhwlk4A64/TU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxhBzZY21gocSv92f95P6hnRzADg1RvrkHdITFyPUNzl0s7/rkX
+	mFHPkS6SRitRd/YACd/UrCiES4hGVByo8woBJnNXaRix/w3PHdJF/loY+qBbxdMy8t1v2cONnON
+	XLVJlLq6gSsu/7+p0M5CGAMIcDb9/62i+kZOfJBE7oNjdIGJKF/2ZpVVQwtQ1In6N
+X-Gm-Gg: ASbGncspSnAQID60jLJydMSDNzfuU7B4QnwHOvvw617msj2r7KNvkq+iv/0iiygU6x6
+	6mxbUtwj+1A8qkiH9RNErf81jfjK28huACNVJFymEzLNLNFb76HhYTClrxllwK5+HNq9axezzAo
+	fOKCXss3VJXJeIRJ6hbZ6tgGhMADYFqBQDgvB6fOdnlS4dps5e0JZTGv/tEuG4Ix5mtRCLDrWuo
+	Bog3jMsgYRaE4f1SLyRK1H846OR/qEvdZjbbB2t8G+UMSbu7JR9RNEA5wdXn9aTAqTY+bxxHFwh
+	WGROcU+0ye7QzaAFiV+HTMrWJ4CpK12In5+ig244/W0fLg==
+X-Received: by 2002:a05:6a20:c709:b0:1f3:3547:f21b with SMTP id adf61e73a8af0-2042e5a7f04mr4616929637.5.1745406955430;
+        Wed, 23 Apr 2025 04:15:55 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE1oF0s6obzV3U4IlKnfQWtWH5A8XquDAih6ItXry12b4Upr3sQSi2punkUoDTdQ1EXTQzwNA==
+X-Received: by 2002:a05:6a20:c709:b0:1f3:3547:f21b with SMTP id adf61e73a8af0-2042e5a7f04mr4616885637.5.1745406955045;
+        Wed, 23 Apr 2025 04:15:55 -0700 (PDT)
+Received: from hu-msarkar-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b0db13c5f8bsm8787322a12.35.2025.04.23.04.15.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 23 Apr 2025 04:15:54 -0700 (PDT)
+From: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+Subject: [PATCH 0/2] Update PCIe PHY settings for SA8775P
+Date: Wed, 23 Apr 2025 16:45:42 +0530
+Message-Id: <20250423-update_phy-v1-0-30eb51703bb8@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 4/9] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-To: Nitin Rawat <quic_nitirawa@quicinc.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
-        James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com,
-        bvanassche@acm.org, bjorande@quicinc.com, neil.armstrong@linaro.org,
-        quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org
-References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
- <20250410090102.20781-5-quic_nitirawa@quicinc.com>
- <pur4y63xhfmqlyymg4pehk37ry4gg22h24zceoqjbsxp3hj4yf@4kptase3c4qp>
- <317faeaa-3130-4e28-8c5d-441a76aa79b4@quicinc.com>
- <CAO9ioeXnnbNzriVOYPUeBiWdrPfYUcMk+pVWYv0vZpJbFeByoQ@mail.gmail.com>
- <2820908b-4548-4e0a-94b2-6065cb5ff1f3@quicinc.com>
- <c2ec6b7c-421d-43c3-8c0a-de4f7bdd867c@oss.qualcomm.com>
- <a24ff510-2afd-4aa7-a026-199fb6d87287@quicinc.com>
- <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
- <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
-X-Proofpoint-GUID: gkE6hXSyknZhji0iwUxPxfAGxRrEE7cg
-X-Authority-Analysis: v=2.4 cv=OY6YDgTY c=1 sm=1 tr=0 ts=6808ca69 cx=c_pps a=50t2pK5VMbmlHzFWWp8p/g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=iCsAco6G6QYzM88_SOEA:9 a=QEXdDO2ut3YA:10
- a=IoWCM6iH3mJn3m4BftBB:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: gkE6hXSyknZhji0iwUxPxfAGxRrEE7cg
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3NiBTYWx0ZWRfX1vJYYeDmXkB6 WC2q+t1/0bg7daGo+eYaB6uOr8mDBJgRcnSk/GgaPIQw2iPLtMyh4SfHt/7kJ6f+IOMmLqbMxSa gtO92Z3yV8DwjgBtE6y/WSfU4RHgSxCvyvA1mgQ4gqDvt92jXOqiiFzUmfkYVMXRy6l4gzc4te1
- 3X/IAy72qNy4zsyZr02ngcqjkVNBGfq6NDDX47Fla30dHPBafs8juV9KicpEP3rGGgGaJ7e4if4 nTmUS0KOtZ1i2MF3LSCT+pyWOiVLzPMHWtgzJdxYjWx3S1YkzC6DNbv8Ye+IVL9xJ+BmBKhKDGo RJhzIk+fSepXhEOR0aTY84FfTP6RsJy1z4CdXcUgwVzpiiezNLqHgop/LCOKmvyfw2knNPYK0/t
- 8KCkYoNUzNyHx/mL9Vik9THFH5jEFwccztM/WOER34QXkivTLvg8tSenWqweh1904mCZtZHc
+X-B4-Tracking: v=1; b=H4sIAN7LCGgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDEyNj3dKClMSS1PiCjEpdgzSjtNQ0o8REA3NTJaCGgqLUtMwKsGHRsbW
+ 1AJYLAmlcAAAA
+X-Change-ID: 20250423-update_phy-0f2fef2aa075
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com,
+        quic_nayiluri@quicinc.com, quic_ramkri@quicinc.com,
+        quic_nitegupt@quicinc.com,
+        Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1745406947; l=983;
+ i=mrinmay.sarkar@oss.qualcomm.com; s=20250423; h=from:subject:message-id;
+ bh=sbKZVCvGtdkZrIpTI8pX2iJJV/WIKTlKhFkyI8Uectk=;
+ b=tbbxUT2NStAw36vwNZbHcB/OftIz+gc7eZ+AG3e4twO62qUi0kC4fopP3Opuj4FQemtV9iCAz
+ pqsRHi3A4IzDKCq37LEwttq1MOI/cRwcggX0UYu1IiSaWOVwUi+YTqx
+X-Developer-Key: i=mrinmay.sarkar@oss.qualcomm.com; a=ed25519;
+ pk=5D8s0BEkJAotPyAnJ6/qmJBFhCjti/zUi2OMYoferv4=
+X-Proofpoint-GUID: NJk8qOQy3toA6cBivFrWBh8Fq4vHKF1g
+X-Proofpoint-ORIG-GUID: NJk8qOQy3toA6cBivFrWBh8Fq4vHKF1g
+X-Authority-Analysis: v=2.4 cv=Fv0F/3rq c=1 sm=1 tr=0 ts=6808cbec cx=c_pps a=rz3CxIlbcmazkYymdCej/Q==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=EUspDBNiAAAA:8 a=LgVGyxlFbL_aAx061p8A:9 a=QEXdDO2ut3YA:10
+ a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA3OCBTYWx0ZWRfX9RS1K74Ioepd +VjwhqkRSFbHlQEPvzlsHjuZwHtuSkqHNw3cRTg6vZo3i49haBFaHiREX1fgd/juBFz+fOmm5Lf weYqvIKYPoCuyQDNTAibHj3yI5ylKrlvfUGrfAPPj/cny5CZuj3oNyKphiWR28vwA38zWtIhKXm
+ dU6fKl6JZpAjzrcpQOBpp+ylVpNapw/eAItAUg6M757MDWObF+++KNRfqVzKARh4b92RU5X8/KX P+13hQ8Mwgh/5xC9R5tzcV7S5YTmc9i/gd0azT9c//yVeGlktjNvkwe+SR3oWA4MVSV0AiWdjR8 6b6slAuban9UL/Cjy4XsxXC7EMoSn+CFlo4Zxc/HRqWpm80I62UGn1A4blywT9B2g70dJy7oqsz
+ XTBBv06r2pr6XCF5kxAUqpdiP+Pek6Tt+ZilEmfLH5mRI1wihJrdWtGUxtOOrOQfatD8Yv4v
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.80.40
  definitions=2025-04-23_07,2025-04-22_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- lowpriorityscore=0 suspectscore=0 mlxscore=0 clxscore=1015 malwarescore=0
- mlxlogscore=999 phishscore=0 priorityscore=1501 spamscore=0 adultscore=0
- bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
+ malwarescore=0 mlxlogscore=690 priorityscore=1501 suspectscore=0
+ adultscore=0 bulkscore=0 clxscore=1011 spamscore=0 lowpriorityscore=0
+ phishscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
  adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2504230076
+ definitions=main-2504230078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_040930_846605_DA22C8B6 
-X-CRM114-Status: GOOD (  22.89  )
+X-CRM114-CacheID: sfid-20250423_041557_676369_4A06455C 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,98 +139,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/16/25 2:26 PM, Nitin Rawat wrote:
-> 
-> 
-> On 4/16/2025 5:43 PM, Dmitry Baryshkov wrote:
->> On Wed, 16 Apr 2025 at 12:08, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
->>>
->>>
->>>
->>> On 4/15/2025 2:59 PM, Dmitry Baryshkov wrote:
->>>> On 14/04/2025 23:34, Nitin Rawat wrote:
->>>>>
->>>>>
->>>>> On 4/11/2025 4:38 PM, Dmitry Baryshkov wrote:
->>>>>> On Fri, 11 Apr 2025 at 13:50, Nitin Rawat <quic_nitirawa@quicinc.com>
->>>>>> wrote:
->>>>>>>
->>>>>>>
->>>>>>>
->>>>>>> On 4/11/2025 1:38 AM, Dmitry Baryshkov wrote:
->>>>>>>> On Thu, Apr 10, 2025 at 02:30:57PM +0530, Nitin Rawat wrote:
->>>>>>>>> Refactor the UFS PHY reset handling to parse the reset logic only
->>>>>>>>> once
->>>>>>>>> during probe, instead of every resume.
->>>>>>>>>
->>>>>>>>> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
->>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume.
->>>>>>>>
->>>>>>>> How did you solve the circular dependency issue being noted below?
->>>>>>>
->>>>>>> Hi Dmitry,
->>>>>>> As part of my patch, I moved the parsing logic from qmp_phy_power_on to
->>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume. I'm uncertain
->>>>>>> about the circular dependency issue and whether if it still exists.
->>>>>>
->>>>>> It surely does. The reset controller is registered in the beginning of
->>>>>> ufs_qcom_init() and the PHY is acquired only a few lines below. It
->>>>>> creates a very small window for PHY driver to probe.
->>>>>> Which means, NAK, this patch doesn't look acceptable.
->>>>>
->>>>> Hi Dmitry,
->>>>>
->>>>> Thanks for pointing this out. I agree that it leaves very little time
->>>>> for the PHY to probe, which may cause issues with targets where
->>>>> no_pcs_sw_reset is set to true.
->>>>>
->>>>> As an experiment, I kept no_pcs_sw_reset set to true for the SM8750,
->>>>> and it caused bootup probe issues in some of the iterations I ran.
->>>>>
->>>>> To address this, I propose updating the patch to move the
->>>>> qmp_ufs_get_phy_reset call to phy_calibrate, just before the
->>>>> reset_control_assert call.
->>>>
->>>> Will it cause an issue if we move it to phy_init() instead of
->>>> phy_calibrate()?
->>>
->>> Hi Dmitry,
->>>
->>> Thanks for suggestion.
->>> Phy_init is invoked before phy_set_mode_ext and ufs_qcom_phy_power_on,
->>> whereas calibrate is called after ufs_qcom_phy_power_on. Keeping the UFS
->>> PHY reset in phy_calibrate introduces relatively more delay, providing
->>> more buffer time for the PHY driver probe, ensuring the UFS PHY reset is
->>> handled correctly the first time.
->>
->> We are requesting the PHY anyway, so the PHY driver should have probed
->> well before phy_init() call. I don't get this comment.
->>
->>>
->>> Moving the calibration to phy_init shouldn't cause any issues. However,
->>> since we currently don't have an initialization operations registered
->>> for init, we would need to add a new PHY initialization ops if we decide
->>> to move it to phy_init.
->>
->> Yes. I don't see it as a problem. Is there any kind of an issue there?
-> 
-> No issues. In my next patchset, I would add a new init ops registered for qcom phy and move get ufs phy reset handler to it.
+This Series is to update PCIe PHY settings as per latest
+hardware programming guide and update max link speed to
+gen4 for SA8775P PCIe EP
 
-I don't really like this circular dependency.
+Signed-off-by: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+---
+Mrinmay Sarkar (2):
+      phy: qcom: qmp-pcie: Update PHY settings for SA8775P
+      arm64: dts: qcom: sa8775p: Set max link speed to Gen4 for PCIe EP
 
-So I took a peek at the docs and IIUC, they say that the reset coming
-from the UFS controller effectively does the same thing as QPHY_SW_RESET.
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi              |  4 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 89 ++++++++++++----------
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h |  2 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h      |  4 +
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v5.h | 11 +++
+ drivers/phy/qualcomm/phy-qcom-qmp.h                |  1 +
+ 6 files changed, 68 insertions(+), 43 deletions(-)
+---
+base-commit: 2c9c612abeb38aab0e87d48496de6fd6daafb00b
+change-id: 20250423-update_phy-0f2fef2aa075
 
-Moreover, the docs mention the controller-side reset should not be used
-anymore (as of at least X1E & SM8550). Docs for MSM8996 (one of the
-oldest platforms that this driver supports) also don't really mention a
-hard dependency on it.
+Best regards,
+-- 
+Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
 
-So we can get rid of this mess entirely, without affecting backwards
-compatibility even, as this is all contained within the PHYs register
-space and driver.
-
-Konrad
 
 -- 
 linux-phy mailing list
