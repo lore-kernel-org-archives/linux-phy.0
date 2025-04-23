@@ -4,108 +4,178 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24B2CC369D1
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:05:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46BE9C369D8
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 13:51:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vz7cOGr4tTval9bpcAxyUvhOxE/KtrgznL3hjjxsuTY=; b=silEJB/ni+KQ9X
-	s5B+y9xuC6S77M7DUfL7myyHNFofF+HbYC2cx+N5qS/vQ0cGx1/3dF34VyLvCsRtmlPwg2Nm26jgC
-	86yjH8GeKZma8J3gNwpjcNgisiYx9MIHZKmQINrp3PfYmVGXVglb5rWtT2nSxZPMDyBIQQ9r8Vfe3
-	KuWdVCa9SLtwyXjwYbthdrF/RnoRsBWV4V2Nzr8BWlM6SX3wbbAOSgkaNqqZGmuiu8t5DAeWP4RX6
-	+0C9IqWqLxqRJN/p6s1IRwXqBwZ0BU1jQLSlsFPovHstkxGpHnqru2GzUW6jARHs4qdWKGbmVniBX
-	y5cvE44b/ymeY2XX8tnQ==;
+	List-Owner; bh=YsXp32c8uCTcpCIzIwhMvon7XAD/uoaYmh5n7Rf+Mzg=; b=3PtHJ/aHSiOVNC
+	5cvhVyyQajlfRi3VDBz7eLobkMoFVum9ANzvLxOMxNQEzSWabCN/RBUGyC9zOES04j5KgzofQ5PlQ
+	AdhJwONz2dJ+JO3uyZlmQ/LaFFvOXRqvfC8rYqfdxNg+14h0YOXmWm86BBhwNOwE/uv0fUJCktNZS
+	f1IXakoEj+HTzBhX+WG/EZJenuHRHTJG7bbx5LtXN6QN7GglzB2wWJtIkVrPUjIPI6ohwqa5gjq1k
+	uOS04/xqYspusL34RF1I+TFlMXz9E+cjsGLRXxxhbYtqqX4bU4iJI2DIIS5m5/TIH5u/obsXWlSzq
+	vcaplx8kPBYM2/I5Yq3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7ZnW-0000000AXkL-3WgF;
-	Wed, 23 Apr 2025 13:05:54 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u7aW4-0000000Afjy-0AG9;
+	Wed, 23 Apr 2025 13:51:56 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7YWC-0000000ANiA-2S1U
+	id 1u7Z3T-0000000ASP0-2vEA
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 11:43:57 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NApPoD023624;
-	Wed, 23 Apr 2025 11:43:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	Wed, 23 Apr 2025 12:18:21 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53NAt7mT017255
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 12:18:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	cTJDhj6eqMoV//Notj+3amni4JS+GXeRT+hpB9+jKIY=; b=X4SBt5lq1093olXm
-	HMkv+NV/FRHqvUPcB6EiWokGCRhQqe+NMncaIYa5LAci8PCclba+lLXTbDLPfiGg
-	MGNA3sL3oV1WfdUqmzdZTGERe/r6O3jC9c6wU1rJaii94R4ncsIwcvCFHSxOlIxq
-	9gbAKw5qTxKolJCQnosCjKZYAZp5LRHZGbJ39KOoC1zMSpWU9z2aY1TKujZ/nI3j
-	NpPRzAIA3e2DkXzsL+QZrilbQ/+E0O5xPDnHA5ORxs9E38wUxlfO41UDWzVA1+bO
-	np/f5WmqmZ6bg6K0TR+dIINbcg64p7181NjSJGviGlfbuKQazLUga9VKO+RIbVN3
-	yTs28Q==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh2a0a2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Apr 2025 11:43:39 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53NBhcnb012881
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 23 Apr 2025 11:43:38 GMT
-Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Apr
- 2025 04:43:33 -0700
-Message-ID: <200007be-fe80-43b6-9ce2-4e4695265599@quicinc.com>
-Date: Wed, 23 Apr 2025 17:13:30 +0530
+	ioGfs5MtgxexvBjcj4mXKq9ldJm50YBOXelQWnDDA+w=; b=Si+5gSsH5Sq4CR5G
+	Zobx6D0+awRftNyIeqLD7wIQskcuztJErV9gBIQp2+U6xijczIIGrGoV3uMuvabf
+	cR2Xq8lPy7e8jzNEHDBW+Og4hF5TZymj9fK/dEZzsIqvbifYODTJbgyUohcQ64+u
+	0X4uPBqGFeeHEAdZ5+1hXskww8AEFCL86Squ1tM1exBkLb5iGs0PXfZdkADjR3M6
+	xq1FhOyRQWGM1oeaQTo0L0a/yBRvylt0hKZKgfCANbK3gwS0ayoj1gl7bPDuhqPG
+	LxAOgDlMO66Wd5eF2yvBd/PwJx6SGqzIu3vcrZc2MrGFEWvmTNoGel42tBrLw6u7
+	lJVAvQ==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jh3j2a3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 12:18:18 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7c555d4ad75so31767685a.0
+        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 05:18:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745410697; x=1746015497;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ioGfs5MtgxexvBjcj4mXKq9ldJm50YBOXelQWnDDA+w=;
+        b=ueL+nUJGAJVmmz7pzyaqGa4OmOiEDCUmErWjwPz1xPD1ITlrNgDlvOKIJxXYdBZPE+
+         79jVH9nqjpzZDu5qeuZSbT6A8rjzIRq6pmHoHTeKBYhZ2nQ8th/S16Iwa9lBloLgsOAk
+         Xv5mFinXGtxsSrqfyZE6DarZCIPYYkYS1evkfCHikHzMWBVdDYEm3AujAZUyUlWoh3vI
+         LWIeZMoS8WRdYObFgiEsp7uQB3MvesZW8gMt+z8CctxSkQztEdTUcquv7YBRUO6Wr/35
+         b0fX9C7b/Yuvo9ZkJjFmdPpxvz8TWCp5xqoiCdnzNYqPK20Yc0ZQn4MX17ecLT2cqCDw
+         ppzw==
+X-Forwarded-Encrypted: i=1; AJvYcCX+fdr2ENYcKg7wTft3ADRxJLW71DfPTr9qxStcoAfbJvzvbVBi3PtugIyjXLYSd12G42H1V9O/36Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzjdvWv1J7YanKzCxebZAGWYZ87t5jWF13ODzTVLPavZLIXEEDj
+	SEwbHKKqDtkIwqQKkpjWq6manQ/Y3Iqd6WTh18zSci212hHwC88PR8r5qqCzCtC30B75u/b5SCa
+	Q1NHLN52dnjVF5VAnoX7mmP966UsAbDukMtZbJLawO9wTtep8q1Or3XDAC27fV5NG
+X-Gm-Gg: ASbGncv+n67q+rJTWgAKRGmpoISC4GNN6RlrDtKH/K50K63oUB2EJ2oiyos2YL99Fdu
+	YcjiLdP6yPgB6fWdK8Vvl9uQDnx237T4Xx1eWUQWfswkbwIyrrClLuMlJM4BRlUovJr2SNq0g2n
+	Fv4qy6UBBgUXCpvlDVC+ALt8VCkEgfbJdP+8coL5S03OvNQAIXECkicUKbPwfgDhtZmaDmPFf+B
+	duWjLj6K+QqerUHsBWtw22ilLMRi6OBOiVYsDhN+q9CsQn39drTijesqJVQbsGp8SL2vqAA1mWJ
+	Pxni3kWCHKu9a1F+WI3d06iPOiTKu52/Fo544a6bU4Heyu9gjMERR4i71W4bOA0Wvv4=
+X-Received: by 2002:a05:620a:2492:b0:7c0:be0e:cb09 with SMTP id af79cd13be357-7c94d266c35mr148949485a.7.1745410697574;
+        Wed, 23 Apr 2025 05:18:17 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEav1ZFFMWH2+h22EnPEjP1DswVCKNGIgBpCwJp2VazcB6M7t8R/W/1xgUW9/XgzClpBqzW6A==
+X-Received: by 2002:a05:620a:2492:b0:7c0:be0e:cb09 with SMTP id af79cd13be357-7c94d266c35mr148944985a.7.1745410697019;
+        Wed, 23 Apr 2025 05:18:17 -0700 (PDT)
+Received: from [192.168.65.183] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-acb6efadd51sm817256866b.179.2025.04.23.05.18.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 23 Apr 2025 05:18:16 -0700 (PDT)
+Message-ID: <e0a61158-6278-45bc-bc5c-fe35227bdbf1@oss.qualcomm.com>
+Date: Wed, 23 Apr 2025 14:18:05 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 4/9] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Dmitry Baryshkov
-	<dmitry.baryshkov@oss.qualcomm.com>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>,
-        <manivannan.sadhasivam@linaro.org>,
-        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
-        <bvanassche@acm.org>, <bjorande@quicinc.com>,
-        <neil.armstrong@linaro.org>, <quic_rdwivedi@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
-References: <20250410090102.20781-1-quic_nitirawa@quicinc.com>
- <20250410090102.20781-5-quic_nitirawa@quicinc.com>
- <pur4y63xhfmqlyymg4pehk37ry4gg22h24zceoqjbsxp3hj4yf@4kptase3c4qp>
- <317faeaa-3130-4e28-8c5d-441a76aa79b4@quicinc.com>
- <CAO9ioeXnnbNzriVOYPUeBiWdrPfYUcMk+pVWYv0vZpJbFeByoQ@mail.gmail.com>
- <2820908b-4548-4e0a-94b2-6065cb5ff1f3@quicinc.com>
- <c2ec6b7c-421d-43c3-8c0a-de4f7bdd867c@oss.qualcomm.com>
- <a24ff510-2afd-4aa7-a026-199fb6d87287@quicinc.com>
- <CAO9ioeUDzYLMvqmsOQ-VfgLQLavHqn=QVYxyHzetjSfmhjKFjw@mail.gmail.com>
- <1a623099-40bb-4884-8d93-132138a4150b@quicinc.com>
- <b7027077-e9a3-462b-92a8-684a42d23604@oss.qualcomm.com>
- <7a0eb7bf-d6d9-4e8e-829b-2df726651725@oss.qualcomm.com>
+Subject: Re: [PATCH 30/33] arm64: dts: qcom: Add dtsi for Snapdragon
+ 730/730g/732g (SM7150) SoCs
+To: Danila Tikhonov <danila@jiaxyga.com>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        "Rafael J . Wysocki" <rafael@kernel.org>,
+        Viresh Kumar <viresh.kumar@linaro.org>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Wim Van Sebroeck <wim@linux-watchdog.org>,
+        Guenter Roeck
+ <linux@roeck-us.net>,
+        Rajendra Nayak <quic_rjendra@quicinc.com>,
+        Jassi Brar <jassisinghbrar@gmail.com>,
+        Bjorn Andersson
+ <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Amit Kucheria <amitk@kernel.org>,
+        Thara Gopinath <thara.gopinath@gmail.com>,
+        Daniel Lezcano <daniel.lezcano@linaro.org>,
+        Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
+        Thomas Gleixner <tglx@linutronix.de>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Ulf Hansson <ulf.hansson@linaro.org>,
+        Souradeep Chowdhury <quic_schowdhu@quicinc.com>,
+        Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
+        "David S . Miller"
+ <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        Paolo Abeni <pabeni@redhat.com>, Alex Elder <elder@kernel.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>, Andy Gross <agross@kernel.org>,
+        Srinivas Kandagatla <srini@kernel.org>,
+        Herbert Xu <herbert@gondor.apana.org.au>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        Georgi Djakov <djakov@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Robert Foss
+ <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
+        Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd
+ <sboyd@kernel.org>, Taniya Das <quic_tdas@quicinc.com>,
+        Sibi Sankar <quic_sibis@quicinc.com>, Will Deacon <will@kernel.org>,
+        Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+        Imran Shaik <quic_imrashai@quicinc.com>,
+        Mathieu Poirier <mathieu.poirier@linaro.org>,
+        Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Jessica Zhang <quic_jesszhan@quicinc.com>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>, Kees Cook <kees@kernel.org>,
+        Tony Luck <tony.luck@intel.com>,
+        "Guilherme G . Piccoli" <gpiccoli@igalia.com>,
+        David Wronek <david@mainlining.org>,
+        Jens Reidel <adrian@mainlining.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-watchdog@vger.kernel.org, linux-usb@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
+        netdev@vger.kernel.org, linux-scsi@vger.kernel.org,
+        dmaengine@vger.kernel.org, linux-crypto@vger.kernel.org,
+        linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
+        linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev,
+        linux-remoteproc@vger.kernel.org, dri-devel@lists.freedesktop.org,
+        linux-hardening@vger.kernel.org, linux@mainlining.org,
+        ~postmarketos/upstreaming@lists.sr.ht
+References: <20250422213137.80366-1-danila@jiaxyga.com>
+ <20250422213137.80366-14-danila@jiaxyga.com>
 Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <7a0eb7bf-d6d9-4e8e-829b-2df726651725@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: IuJ8B3mIAby0BkYVCTLiNaxImH6OLJWS
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA4MSBTYWx0ZWRfXzsU/pbRPi/w2 MdNdeXDa2N0tSfe8q9hS1CWANMq5KMtQ1GGaqNzTNcTTlinqhnIU8nDxWipjm02l82dFH4O601A 4EbNzkMQrWpYdqgWy/N4aEtA2E4vK0AQh4R/f590Q20teb8Fre6htN7du7MKu1Ck65A46uz6Azm
- Sxh1odAZLTZbUysShiFcuWzgNt0ObVaBFrx5QguGOHTSe2zP2hpfIT/1+GQ7TIu8sPKtF2gfk/e hg2PBudFe8p5xgCm1TQx6pTcoyXUbqqG7bpG1MWO0HIXL+l81PemadnJ2jEFSa52+ikH+Z+c+bX 2zE4S9kFloeCB7OCHk+D3VZFB9uombihez8r1bdZHkxOgbMQv+agCSm7Jj3ZOaZOISroQjvtXd2
- rHd26+URXVK+20beD6tfy6t3RUIyZWz5MKGCW8I3k50k78wrjFL4G7wpP7BHsuNus+G1I8g8
-X-Authority-Analysis: v=2.4 cv=Tu/mhCXh c=1 sm=1 tr=0 ts=6808d26b cx=c_pps a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=I0qkcEgCn53fLrtcp2gA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: IuJ8B3mIAby0BkYVCTLiNaxImH6OLJWS
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250422213137.80366-14-danila@jiaxyga.com>
+X-Proofpoint-ORIG-GUID: pyZHlGuK9sKl_hSUrY56s3K7xRnckYqp
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDIzMDA4NSBTYWx0ZWRfXxfka2OaiCLxL 8d1HA8hCs1PtZhEKp3FZ0kRHfmCNr6mfyxD+ITV55J31RcLOnxKenXehWpIU2kHAstlxqdnyfOv SiLTAduJYIIM74KMe1WeGlWx1mi3cU42IZxqELceIYkrOx0b2j3qufo4b9A/KScpljJdanG/6WD
+ EynyeA4dqy5MWN4AdCTpL/T3WUESxyJfE09U5zEU43/fioTwN+V2MaKXHgjOeBi1BNyFyU3/b5k dRDct4gOkHFT7GvHkuPo3vKl9NQf9WVVQqJka6c8gMW1E/Z3dS3Ej/KJIDWDpmNIwNlbQpsPozt tCA45KXqlw/GsQAv6uHc57G+605d0QxHB75PTfjx2Bz7S1A03aNhC/RAgTebZOZQSYmJwUTkPKs
+ /LRyemDYAKqpGyvEmeHvzRoGHKH9jWq03m37QkFknoduC3QOw0yxSjY4DS4rjLbH9avjoUPz
+X-Authority-Analysis: v=2.4 cv=ELgG00ZC c=1 sm=1 tr=0 ts=6808da8a cx=c_pps a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=OuZLqq7tAAAA:8 a=7ibcVnAUAAAA:8
+ a=uu6HZSQSBnFQn7oXV_IA:9 a=QEXdDO2ut3YA:10 a=PEH46H7Ffwr30OY-TuGO:22 a=cvBusfyB2V15izCimMoJ:22 a=AKGiAy9iJ-JzxKVHQNES:22 a=HywIFdX19-EX8Ph82vJO:22
+X-Proofpoint-GUID: pyZHlGuK9sKl_hSUrY56s3K7xRnckYqp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.680,FMLib:17.12.80.40
  definitions=2025-04-23_07,2025-04-22_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 suspectscore=0 spamscore=0 clxscore=1015 lowpriorityscore=0
- impostorscore=0 adultscore=0 phishscore=0 mlxlogscore=999 bulkscore=0
- mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2504230081
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 adultscore=0
+ malwarescore=0 clxscore=1015 bulkscore=0 phishscore=0 spamscore=0
+ mlxscore=0 lowpriorityscore=0 priorityscore=1501 suspectscore=0
+ mlxlogscore=671 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504230085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_044356_653169_90A9427F 
-X-CRM114-Status: GOOD (  24.72  )
+X-CRM114-CacheID: sfid-20250423_051819_868587_90F09A1C 
+X-CRM114-Status: GOOD (  16.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,125 +187,155 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 4/23/2025 4:51 PM, Konrad Dybcio wrote:
-> On 4/23/25 1:09 PM, Konrad Dybcio wrote:
->> On 4/16/25 2:26 PM, Nitin Rawat wrote:
->>>
->>>
->>> On 4/16/2025 5:43 PM, Dmitry Baryshkov wrote:
->>>> On Wed, 16 Apr 2025 at 12:08, Nitin Rawat <quic_nitirawa@quicinc.com> wrote:
->>>>>
->>>>>
->>>>>
->>>>> On 4/15/2025 2:59 PM, Dmitry Baryshkov wrote:
->>>>>> On 14/04/2025 23:34, Nitin Rawat wrote:
->>>>>>>
->>>>>>>
->>>>>>> On 4/11/2025 4:38 PM, Dmitry Baryshkov wrote:
->>>>>>>> On Fri, 11 Apr 2025 at 13:50, Nitin Rawat <quic_nitirawa@quicinc.com>
->>>>>>>> wrote:
->>>>>>>>>
->>>>>>>>>
->>>>>>>>>
->>>>>>>>> On 4/11/2025 1:38 AM, Dmitry Baryshkov wrote:
->>>>>>>>>> On Thu, Apr 10, 2025 at 02:30:57PM +0530, Nitin Rawat wrote:
->>>>>>>>>>> Refactor the UFS PHY reset handling to parse the reset logic only
->>>>>>>>>>> once
->>>>>>>>>>> during probe, instead of every resume.
->>>>>>>>>>>
->>>>>>>>>>> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
->>>>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume.
->>>>>>>>>>
->>>>>>>>>> How did you solve the circular dependency issue being noted below?
->>>>>>>>>
->>>>>>>>> Hi Dmitry,
->>>>>>>>> As part of my patch, I moved the parsing logic from qmp_phy_power_on to
->>>>>>>>> qmp_ufs_probe to avoid unnecessary parsing during resume. I'm uncertain
->>>>>>>>> about the circular dependency issue and whether if it still exists.
->>>>>>>>
->>>>>>>> It surely does. The reset controller is registered in the beginning of
->>>>>>>> ufs_qcom_init() and the PHY is acquired only a few lines below. It
->>>>>>>> creates a very small window for PHY driver to probe.
->>>>>>>> Which means, NAK, this patch doesn't look acceptable.
->>>>>>>
->>>>>>> Hi Dmitry,
->>>>>>>
->>>>>>> Thanks for pointing this out. I agree that it leaves very little time
->>>>>>> for the PHY to probe, which may cause issues with targets where
->>>>>>> no_pcs_sw_reset is set to true.
->>>>>>>
->>>>>>> As an experiment, I kept no_pcs_sw_reset set to true for the SM8750,
->>>>>>> and it caused bootup probe issues in some of the iterations I ran.
->>>>>>>
->>>>>>> To address this, I propose updating the patch to move the
->>>>>>> qmp_ufs_get_phy_reset call to phy_calibrate, just before the
->>>>>>> reset_control_assert call.
->>>>>>
->>>>>> Will it cause an issue if we move it to phy_init() instead of
->>>>>> phy_calibrate()?
->>>>>
->>>>> Hi Dmitry,
->>>>>
->>>>> Thanks for suggestion.
->>>>> Phy_init is invoked before phy_set_mode_ext and ufs_qcom_phy_power_on,
->>>>> whereas calibrate is called after ufs_qcom_phy_power_on. Keeping the UFS
->>>>> PHY reset in phy_calibrate introduces relatively more delay, providing
->>>>> more buffer time for the PHY driver probe, ensuring the UFS PHY reset is
->>>>> handled correctly the first time.
->>>>
->>>> We are requesting the PHY anyway, so the PHY driver should have probed
->>>> well before phy_init() call. I don't get this comment.
->>>>
->>>>>
->>>>> Moving the calibration to phy_init shouldn't cause any issues. However,
->>>>> since we currently don't have an initialization operations registered
->>>>> for init, we would need to add a new PHY initialization ops if we decide
->>>>> to move it to phy_init.
->>>>
->>>> Yes. I don't see it as a problem. Is there any kind of an issue there?
->>>
->>> No issues. In my next patchset, I would add a new init ops registered for qcom phy and move get ufs phy reset handler to it.
->>
->> I don't really like this circular dependency.
->>
->> So I took a peek at the docs and IIUC, they say that the reset coming
->> from the UFS controller effectively does the same thing as QPHY_SW_RESET.
->>
->> Moreover, the docs mention the controller-side reset should not be used
->> anymore (as of at least X1E & SM8550). Docs for MSM8996 (one of the
->> oldest platforms that this driver supports) also don't really mention a
->> hard dependency on it.
->>
->> So we can get rid of this mess entirely, without affecting backwards
->> compatibility even, as this is all contained within the PHYs register
->> space and driver.
+On 4/22/25 11:31 PM, Danila Tikhonov wrote:
+> Add base dtsi for SM7150-AA/SM7150-AB/SM7150-AC SoCs
 > 
-> Well hmm, certain platforms (with no_pcs_sw_reset) don't agree.. some
-> have GCC-sourced resets, but I'm not 100% sure how they affect the CSR
-> state
+> Co-developed-by: David Wronek <david@mainlining.org>
+> Signed-off-by: David Wronek <david@mainlining.org>
+> Co-developed-by: Jens Reidel <adrian@mainlining.org>
+> Signed-off-by: Jens Reidel <adrian@mainlining.org>
+> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
+> ---
 
-Hi Konrad,
+[...]
 
-I agree with you, but there are still some targets (Sdm845, SM7150, 
-SM6125, and MSM8996) that have upstream support and require a 
-controller-side GCC reset. Therefore to align with HPG we can't remove
-gcc reset for these targets.
-Please let me know your opinions.
+> +		cpu0: cpu@0 {
+> +			device_type = "cpu";
+> +			compatible = "qcom,kryo470";
 
-Regards,
-nitin
+Please split this into Kryo 470 silver and gold, with the former being
+based on CA55 and the latter on CA76
 
+[...]
 
-> 
-> Konrad
+> +	pmu-a55 {
+> +		compatible = "arm,cortex-a55-pmu";
+> +		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_LOW>;
+> +	};
+> +
+> +	pmu-a76 {
+> +		compatible = "arm,cortex-a78-pmu";
+> +		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_LOW>;
+> +	};
 
+Please update this, mimicking 
+
+2c06e0797c32 ("arm64: dts: qcom: sm8650: add PPI interrupt partitions for the ARM PMUs")
+
+> +
+> +	psci {
+> +		compatible = "arm,psci-1.0";
+> +		method = "smc";
+> +
+> +		cpu_pd0: power-domain-cpu0 {
+> +			#power-domain-cells = <0>;
+> +			power-domains = <&cluster_pd>;
+> +			domain-idle-states = <&little_cpu_sleep_0
+> +					      &little_cpu_sleep_1>;
+
+<&foo>,
+<&foo2>;
+
+because they are phandles to separate things - DTC treats them equally
+though..
+
+[...]
+
+> +				interconnects = <&aggre1_noc MASTER_QUP_0 QCOM_ICC_TAG_ALWAYS
+> +						 &config_noc SLAVE_QUP_0 QCOM_ICC_TAG_ALWAYS>,
+> +						<&gem_noc MASTER_AMPSS_M0 QCOM_ICC_TAG_ALWAYS
+> +						 &config_noc SLAVE_QUP_0 QCOM_ICC_TAG_ALWAYS>,
+
+Paths involving AMPSS_M0 (the cpu endpoint) should be ACTIVE_ONLY,
+this applies to the entire file and all paths
+
+[...]
+
+> +		remoteproc_adsp: remoteproc@62400000 {
+> +			compatible = "qcom,sm7150-adsp-pas";
+> +			reg = <0x0 0x62400000 0x0 0x100>;
+
+This region is 0x10_000 long
+
+[...]
+
+> +		adreno_smmu: iommu@5040000 {
+> +			compatible = "qcom,sm7150-smmu-v2",
+> +				     "qcom,adreno-smmu",
+> +				     "qcom,smmu-v2";
+> +			reg = <0x0 0x05040000 0x0 0x10000>;
+> +
+> +			interrupts = <GIC_SPI 229 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 231 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 364 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 365 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 366 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 367 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 368 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 369 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 370 IRQ_TYPE_EDGE_RISING>,
+> +				     <GIC_SPI 371 IRQ_TYPE_EDGE_RISING>;
+> +
+> +			clocks = <&gpucc GPU_CC_AHB_CLK>,
+> +				 <&gcc GCC_GPU_MEMNOC_GFX_CLK>,
+> +				 <&gcc GCC_GPU_SNOC_DVM_GFX_CLK>;
+> +			clock-names = "ahb",
+> +				      "bus",
+> +				      "iface";
+> +
+> +			power-domains = <&gpucc CX_GDSC>;
+> +
+> +			#iommu-cells = <1>;
+> +			#global-interrupts = <2>;
+
+Add `dma-coherent` and check whether the GPU still works
+
+[...]
+
+> +		};
+> +
+> +		gmu: gmu@506a000 {
+> +			compatible = "qcom,adreno-gmu-618.0",
+> +				     "qcom,adreno-gmu";
+> +			reg = <0x0 0x0506a000 0x0 0x31000>,
+
+Make it 0x26_000 so that it doesn't leak into GPU_CC
+
+[...]
+
+> +		tsens0: thermal-sensor@c263000 {
+> +			compatible = "qcom,sm7150-tsens",
+> +				     "qcom,tsens-v2";
+> +			reg = <0x0 0x0c263000 0x0 0x1ff>, /* TM */
+> +			      <0x0 0x0c222000 0x0 0x1ff>; /* SROT */
+
+Please remove these comments
+
+[...]
+
+> +		intc: interrupt-controller@17a00000 {
+> +			compatible = "arm,gic-v3";
+> +			reg = <0x0 0x17a00000 0x0 0x10000>,  /* GICD */
+> +			      <0x0 0x17a60000 0x0 0x100000>; /* GICR * 8 */
+
+And these ones too
+
+[...]
+
+> +	thermal-zones {
+
+Please adjust this against 
+
+https://lore.kernel.org/linux-arm-msm/20250219-x1e80100-thermal-fixes-v1-0-d110e44ac3f9@linaro.org/
+
+(keep only critical trips with no sw cooling for the CPU, etc.)
+
+Konrad
 
 -- 
 linux-phy mailing list
