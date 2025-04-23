@@ -4,58 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 678AEC369CB
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 10:37:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29F78C369CB
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 10:41:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=svTx/HZKPVcbzp4eTbGJ/p171+DHArPnZ1qaeijF9sY=; b=DI4lBSqGiSCGCV
-	Uvj19fALdmi26RLGmsnQZ8nXL7XVRS/5Mf9BrHx0BGjc9BF8Q3xxZ3S0/fNSjvKJ0MCF4Dry8bfzf
-	3FjsIWa5oAU5nN0cNcENgDsC8r9V7PEaOac/nl0JknQo35vUcJec7z07EoNFJc8BN7N8ehX90PSDt
-	SA2VXl+e713pM579vwazJLjdw1+QWn1X35GlELcIEYeYuvDlC9TpjxUbPtoddAcqS09GgpneDjE5w
-	/66ozenJqnW1pwCKuVy9VZhoSU+61XHV4MpPJnt7KdcSH6G8qD/QeKELD8ZwcOhWG5sVmElHHx23q
-	7VTZQwqSXI4kX7+oHfqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yzmq3HSO3MRYJWASp3wo7x/y70VOkDYIyLy6/YNRKMM=; b=RVC+YD7UDngERu
+	TDU9SXnqcqjKv1OwRipz2KjKSKtNKFXYZxdyH/QuEHX+Xuid7s5z5pOw4NNAxKduLwHKq9OnEMvE0
+	B7ElkvAhUdfJn6Zwx3lX2sIBvdaZbwEeTlchLOmhT1FoO7m8ju4EazEuID3/8TgUVuqLc08MucUm7
+	NcFV4iKvqbCUniS9DUA6DgTiVXiKWw1FMigewDns+o22oj+GICwtO7MqvbeKhDaaIRl63kUjXUt1/
+	n7WPRxub267bpb9M6hVIgjWmKwc5TwJo8wG5brrPVDZJvBlbNc5v72FIADtx/kydUeRZgbbGkM7/C
+	6gQmqjY8Gx4a0ym8Hczg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7XTt-0000000ACHI-3oaY;
-	Wed, 23 Apr 2025 10:37:29 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1u7XXu-0000000AD5f-3QBA;
+	Wed, 23 Apr 2025 10:41:38 +0000
+Received: from mail-db8eur05on2062a.outbound.protection.outlook.com ([2a01:111:f403:2614::62a] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7WQo-00000009y3M-3Xgv;
-	Wed, 23 Apr 2025 09:30:16 +0000
-Received: from pendragon.ideasonboard.com (81-175-209-231.bb.dnainternet.fi [81.175.209.231])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4AC3C1461;
-	Wed, 23 Apr 2025 11:30:10 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1745400610;
-	bh=jHLD1n2gGYYVd5R6g6n10KSyD4gzCZwcAeLg23QXHSs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=B8aSvBY1/x2LIAKbBf8SeWyhbszS53PJJ2D9rpDEVhrVflfZaQ69KXvsDknb/kAf0
-	 s5rTmuvH6bNtoniEgH+GxWR3FE24MVTDz2jbt/iNyaeXd1P8/5Z9n3Z9268TPPuMck
-	 /NJY8yJK5oDnz/PHrW4NfLzSX3khyvl+LFcpEup0=
-Date: Wed, 23 Apr 2025 12:30:08 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Mike Looijmans <mike.looijmans@topic.nl>
-Cc: linux-phy@lists.infradead.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Michal Simek <michal.simek@amd.com>, Vinod Koul <vkoul@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy-zynqmp: Postpone getting clock rate until actually
- needed
-Message-ID: <20250423093008.GC17813@pendragon.ideasonboard.com>
-References: <1b153bce-a66a-45ee-a5c6-963ea6fb1c82.949ef384-8293-46b8-903f-40a477c056ae.7a5992b5-aa78-4b18-bf5c-70f893b58f48@emailsignatures365.codetwo.com>
- <20250314150431.28319-1-mike.looijmans@topic.nl>
- <20250422221802.GB32759@pendragon.ideasonboard.com>
- <f3051d1d-ecb2-4a93-ad6b-76ab7a5538af@topic.nl>
+	id 1u7Web-0000000A28f-1DjT;
+	Wed, 23 Apr 2025 09:44:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZB7ALFsDICNfK7czmLY7mi0CGRKtJ6yioRe+jfTS8x7k8TnZBdWU/Jp5SphzzPQ221lVZ/qn+Qix02NRCTjYN6l3PW+0lMhBHQf/qiLAmm07o1pkBD8iODMr2qBiSD6aFN+Gl+z+bd5sibBfznxg5IqvrAusvZUnvBnlP3dsadqI2IwTN4lbo87i1XpL3yAgbXlSYam1UMynt3pdHFYcvvQDgxoaN5R0TBk44Ib1rVFtPieFxN+uNrKRj1R65phety40dH0fn5O0vjEQmEYOe2da0kOydHmDJ64KAVHns1ekPT6vLSnI5bBUQ/71cauC3Am2i7xwLhtokf52I57bmQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=HUWrtpB40JJQ6xH8/nyvSKxQdeXIFtr+S+EHiKE/QiA=;
+ b=FdPC1Va4xrVTD2ich4y24+Izm89q3BsR8PrNRvi2ZOxQUhW2EjrsEfHrgWHjGQXmM5B6CcU5kTSAq8KD4Dxk0oWEkx1NKOWApoUcnXHmPVjRxyD/QFxUI1kjwoKtjH70gtF9qh3awGyur3+Pe2FXkmvHBvnsZdrXhcolaUlicaxoqTmVu19L18WjKoE1op7PbjfAVDCb7sAyAXNGoHAHKOAOra8FQonu1QzXtd9GHB5fakYl+2dbc9bFFsJcqFmlGytWXKBrK6mTQ2uAoEOFQPHuLO9hC7rd8804j7oA2dslyI6TuHc/JQjdqe5gUtusuKYvZaorcat1wFBkOw5OjA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HUWrtpB40JJQ6xH8/nyvSKxQdeXIFtr+S+EHiKE/QiA=;
+ b=eKxD+kL0h8BSegLug6SSg4N2g7KCjJ1WUR/Xbq0lZs+DwKQJnPTaJtxfwYsUSkUiJVnlsuQxNc92dyp2/kO+8wQlJPoEQBBoDszTsmk6kVttDTE54+kXEG/FJ4ne6gwGFyG5SxvPAdDWRJmyRtLKRfR4KFH6UxmQ5/8EQXa0B+DnSEgfmyjPlmn1Rg2waQnL+0RZnDBwUSfY8LX/x7i5yaTyZZGzhr0i77vYflFQvyvjgJ1jRPBUUWoZoQjmAC4igHEfHpzShCfGIDjkQV3Lzn4e/zz8vHCKYq4L2fVGwTaUYXXHdmToeRhWqIXpCOzkqinzc/plrAP147eu/6z3Pg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
+ by PR3PR04MB7338.eurprd04.prod.outlook.com (2603:10a6:102:80::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8655.34; Wed, 23 Apr
+ 2025 09:44:20 +0000
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7%5]) with mapi id 15.20.8655.031; Wed, 23 Apr 2025
+ 09:44:20 +0000
+From: Xu Yang <xu.yang_2@nxp.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com
+Cc: jun.li@nxp.com,
+	alexander.stein@ew.tq-group.com,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2] dt-bindings: phy: imx8mq-usb: improve some tuning properties
+Date: Wed, 23 Apr 2025 17:46:06 +0800
+Message-Id: <20250423094607.1029429-1-xu.yang_2@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SG2PR04CA0204.apcprd04.prod.outlook.com
+ (2603:1096:4:187::16) To DU2PR04MB8822.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e1::11)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f3051d1d-ecb2-4a93-ad6b-76ab7a5538af@topic.nl>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|PR3PR04MB7338:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6bc71249-dd2e-4e94-2652-08dd824b6bc2
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|52116014|366016|7416014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?0F4w+2yBX65kDM4LhGqkWTmAClv5HdeTPn6CfzBBwjOER4TxWR3kYgj0lBS6?=
+ =?us-ascii?Q?Z1YTkFcUiVxyvVgD0aVR8oPGnlbVeQB/c0OM82OLQ+e20BLAl1qeCZwCpeWe?=
+ =?us-ascii?Q?NWpU8FaJ/7Pj2R27VbLRoTYtOLI5TJcnCTVz6mY0ti4aRcF4scs2uN5T42co?=
+ =?us-ascii?Q?kfSgKDk3co2oMp4zd5x6/Pg0sBbyv76isdzlvQJHbjw1EuO/4/YjbRLI4uEs?=
+ =?us-ascii?Q?IkGkfLqUBBOAm0tb1SkNXBJV8SnpzYNUxfVJ/KkNK/LFHC8enLWrqi9Kon2h?=
+ =?us-ascii?Q?WIleqa1UG1DVBwmRPReWkABy+9txj4rim2T/ByZBvYtaQoiSuahVZUreHwp9?=
+ =?us-ascii?Q?TFmpYtC+O7yBVtLQfww4aQQ99mJ8w6dU3yvR2H498AhVRNnVsX5F4pOQEhk2?=
+ =?us-ascii?Q?Jbo7Hi1bTb3X2Mq1XujbMd8aFsv4PxNhuj5yYQZMHvnhN6ATe88Ugn7IayXJ?=
+ =?us-ascii?Q?4C/CB5azXrLqsRD8r/GqP5SlU974N02dI708Q5/jkCnczMVZE/owpaJkvmbZ?=
+ =?us-ascii?Q?zDUB78mzje/WY/+GsKzKfrpUS3iABQ0CVQbrTN6vPwmDLNynepVumvikoEFQ?=
+ =?us-ascii?Q?jLBJRMbuQfXdPhL1RiUTHPhJgmtcvbUMddoQ19ZFv/mqk9WI3I7cucikv81+?=
+ =?us-ascii?Q?N0XyLk0M+7by2VLoCYM7aBxu5IfX0QHYQXyZV5CtBVpRN64vN2Ywlnr/Ips/?=
+ =?us-ascii?Q?zSSwvXXpvk59I2ydphkoYZxBBrOYmUM3PcFbPJ7/vrpXr1RSM7exay6mHljw?=
+ =?us-ascii?Q?m14munvHESUpMMfoRzAWJfFcOPwKaJf3kk9APO/Zaber+unmapeahYKFpmqC?=
+ =?us-ascii?Q?BH4KMOFtFCn4wAi39ZKHCnw2pNL1fQoS/QspUiPxJ5NV7NNt9TzxEzJV0Wu3?=
+ =?us-ascii?Q?ZEPV6Bf6JqCXgzJrpqKZPL8sBS5umFMvSPsNnYyvf29rzqtreXpQA7Gi0LLS?=
+ =?us-ascii?Q?XcVg3AfMoY4CFNbIslrE8v8jPSEstRdRaTc+q0tXYRw7/D5/NgPblG6g4LRy?=
+ =?us-ascii?Q?XXnkZcx2lXp5yjwkyMgFxZeDSO2ihUGaJArR2nXCM8yQxaRsBQ4WgGMwowMk?=
+ =?us-ascii?Q?YQqsLMR4++78JpAE7qHQBzyIw2BHARwdbwx/ZO8XP27JfBpAIzXYnM/2FXa/?=
+ =?us-ascii?Q?pcYsnaPHiOThE1G4A2QwVMbPelgsQwYZeRQ+XI/6FeZo9wl8qBhMAMyoM+k+?=
+ =?us-ascii?Q?ZcMU9imTvAHqEVyWSeo4kiXlEVsmtGpfRfjJAKLWaF4niuL8lfTeSoznYcen?=
+ =?us-ascii?Q?hmw1MzUOCWThLEttf22zOoBmmbfhk3+qH4cU1EdVe951vFx7yVnJ65PFPRNb?=
+ =?us-ascii?Q?YJWffsTLOOFfqHm4MS8LAmz01bOziYuqc+vEkY7ZMFo7Nf+DInjyMD4ZjOHb?=
+ =?us-ascii?Q?aPnMmoQNxFGntsDSWWc+KwPPfMa1RaOY2TRY4HkLmIGQhI7zAw70JiFw0v7F?=
+ =?us-ascii?Q?6yEus9obqpbiiQ4cbFoGPXc+3sPSxhXb043/bgXiAiH6GnZvqVrvMQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(52116014)(366016)(7416014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6suKaTl27Mh5x0bWhBnhUZYkWyr/cv6fLCjaS5wTdrH5nhmeLAQpbhT4UXMG?=
+ =?us-ascii?Q?yjp85Er7yS3hbr1rK/SmLOz+C0XfRP6YUeAcgyXhhM96o26acxrLswK6j34P?=
+ =?us-ascii?Q?DjLDoirXxDARIWkOiefb9xnkdO5IaFwikvptod68QEvKvZBggebW5OCNcrOg?=
+ =?us-ascii?Q?Arr8pJ0YkqP3iercYSrPvZouBTjQDW+Hliko1ghqV9wkMxNLKN0YpuTdR+Ii?=
+ =?us-ascii?Q?wucMekSsH6TR5ukZMHp1JgbxCrtYDMN1Wpw1nMfx1x24F8ZhuEVv5eZ+euIk?=
+ =?us-ascii?Q?v4XOZunqlB71uG/r1J5M+8lF14ZeZn9Oot3wm3jK7ZByXijl+ibTuwx9lLhu?=
+ =?us-ascii?Q?Tn6WMQwn+GCF2Umd/Hq3E+302hL7EcnBmwwOosQiVxCWK5U65q4491cadhLa?=
+ =?us-ascii?Q?9KRXvpBmpLXQHo9pLgsxTh5pqQiClAPU2723dBXLTiUgzp1KePLmGRAqzhNf?=
+ =?us-ascii?Q?3TO7jH3VCmW0sBOxViUYUYpzRe0O0mCvuF7Sg8LbJvvVUdjzy8/BRfzetzI8?=
+ =?us-ascii?Q?ylK1CKwdIeBBKYC4hrh+Pd1NZU74BRGRpcx0sBDVtFRWQ+jlB28UFKZl+pn/?=
+ =?us-ascii?Q?70qmEM50S7HMefqIDYlyXNP1JyCTfFTYBw3juhWpizy9xyYuKw8LOO1vFBYN?=
+ =?us-ascii?Q?lVh0TlHkxTPgnoviQAiUf6UlIh3PHcFfKks/C5t93k8llnF6i0CdrOqN6czV?=
+ =?us-ascii?Q?49CGAXKjywalOt67g+eg3qycaZgofCfRspc2chBzpN4Ayz3xyOQuTJH9Q1DA?=
+ =?us-ascii?Q?I2WXcoUjB9qT+kXbbdkjEeM5anWGs9eF1Ncz3VUGY/RLMvE1Xn8F3vAu8J1W?=
+ =?us-ascii?Q?J+fl7iUYyjfTxBPPg5vV7Jhyc4kA2EnUwHnfqLB/mMrGSginuEBTgrwvOhxi?=
+ =?us-ascii?Q?5WoA/dR4FGkO3A/ydItGwpHT+xKYrInx8ppI1vp5/odEV1YsIvDPsnr23gAi?=
+ =?us-ascii?Q?efdy7DKzgmuWGgdPs/szVOnEKEs91eL7w/bGZrUxEp54KJucPJ8s1wMlb4kW?=
+ =?us-ascii?Q?FIufRelQP+wtoNlLtI+GNfbO1+/bv2dYAJt/oy7JtiW3do4KCap3cLKe5oOF?=
+ =?us-ascii?Q?wt1iwWHJ1xB15tr8m+j+RchA94LK2GEKO0dH0S1nAtOJraFr9exEmlHIESrc?=
+ =?us-ascii?Q?0tqaK2N9Hhrxx4GGZY4OD9lkDdxfWLgzMDZQ+rZPgboZowJJOMW0tbHdppe6?=
+ =?us-ascii?Q?6kPlF75plPwLO7BIxAs3F5AMd07I0m2/9ckBngypPEq4llaRDLzfKCELf1f1?=
+ =?us-ascii?Q?WKBeaUdv0adkw89UtGKij/CcD8Nor0HmHmqImO3J+sMx0jTC+PuJYPxC6bDU?=
+ =?us-ascii?Q?NxDEmZ4ME8jOEpvb5/+snPd5+TtgjyHwfM+jsgLMWLX4Hfgce29BKqALVWCZ?=
+ =?us-ascii?Q?egcVZ9i3wmJl2UOW/bjEVFiyL0jYAkBedapgbo7UOSE1PiIO2NL+U4CibqDf?=
+ =?us-ascii?Q?n6AjwKD09jHbgbJodbfbxtH6tkm/lI+bIFMVPgdZP3kTWZGD20ctYzGGhULz?=
+ =?us-ascii?Q?GzpTkgE7CB4soEK1DfHnzBz3QMHivwR9cRRzfCVf0CpOpu5LotvVQSGWOz+P?=
+ =?us-ascii?Q?BMfnQEJ8D6PKCu10uPYTc2Zj7sL/PMeLjgSamPLW?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6bc71249-dd2e-4e94-2652-08dd824b6bc2
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Apr 2025 09:44:20.2027
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: SA0x6iOTZ8GOg0JpBq5kR54bJjcfI/rgRCDvYCM+csNsPJpWAL+6kQKLQzjlN3/XlAgqERWqR4+QgkAaIbc3HQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3PR04MB7338
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_023015_211872_01313D22 
-X-CRM114-Status: GOOD (  42.77  )
+X-CRM114-CacheID: sfid-20250423_024429_334458_692A1225 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,176 +165,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Mike,
+Commit b2e75563dc39 ("dt-bindings: phy: imx8mq-usb: add phy tuning
+properties") add many tuning properties, but some parameter value doesn't
+match the register description. It made some changes based on the original
+value: add offset to a negative number so turn it to a non-negative number.
+However, this conversion bring many pain when some properties need to be
+improved.
 
-On Wed, Apr 23, 2025 at 08:59:43AM +0200, Mike Looijmans wrote:
-> On 23-04-2025 00:18, Laurent Pinchart wrote:
-> > Hi Mike,
-> >
-> > Thank you for the patch.
-> >
-> > On Fri, Mar 14, 2025 at 04:04:18PM +0100, Mike Looijmans wrote:
-> >> At probe time the driver would display the following error and abort:
-> >>    xilinx-psgtr fd400000.phy: Invalid rate 0 for reference clock 0
-> >>
-> >> This issue was that at probe time, the system has not decided yet whether
-> >> the GTR is to be used for SATA (150MHz) or PCIe (100 MHz).
-> > At what point does the system decide that ? I've only used (and tested)
-> > this driver for DisplayPort.
-> 
-> In retrospect, yeah, the commit text could be a bit more elaborate on that.
-> 
-> This PHY driver probes before the I2C bus which contains the programmable 
-> clock chip that provides the GT clocks for the PS. This isn't a problem, as 
-> the PHY lane won't be needed yet.
-> 
-> When the SATA (or PCIe or network or displayport or ...) driver probes, the 
-> clock gets programmed. The PHY lane won't be enabled until after that.
+Because device-tree supports negative parameter number, this will improve
+some propertie's parameter.
 
-Would it be possible to defer probing (as in returning -EPROBE_DEFER) of
-the PHY until the clock is available ?
+Mainly include below properties:
+ - fsl,phy-tx-vref-tune-percent
+ - fsl,phy-tx-rise-tune-percent
+ - fsl,phy-comp-dis-tune-percent
 
-> >> The driver
-> >> doesn't need to know the clock frequency at that point yet, so wait until
-> >> the lane is actually being initialized before requesting the clock rate
-> >> setting.
-> >>
-> >> Signed-off-by: Mike Looijmans <mike.looijmans@topic.nl>
-> >> ---
-> >>
-> >>   drivers/phy/xilinx/phy-zynqmp.c | 61 ++++++++++++++++-----------------
-> >>   1 file changed, 30 insertions(+), 31 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-> >> index 05a4a59f7c40..e29e3e51d380 100644
-> >> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> >> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> >> @@ -222,7 +222,6 @@ struct xpsgtr_phy {
-> >>    * @siou: siou base address
-> >>    * @gtr_mutex: mutex for locking
-> >>    * @phys: PHY lanes
-> >> - * @refclk_sscs: spread spectrum settings for the reference clocks
-> >>    * @clk: reference clocks
-> >>    * @tx_term_fix: fix for GT issue
-> >>    * @saved_icm_cfg0: stored value of ICM CFG0 register
-> >> @@ -235,7 +234,6 @@ struct xpsgtr_dev {
-> >>   	void __iomem *siou;
-> >>   	struct mutex gtr_mutex; /* mutex for locking */
-> >>   	struct xpsgtr_phy phys[NUM_LANES];
-> >> -	const struct xpsgtr_ssc *refclk_sscs[NUM_LANES];
-> >>   	struct clk *clk[NUM_LANES];
-> >>   	bool tx_term_fix;
-> >>   	unsigned int saved_icm_cfg0;
-> >> @@ -398,13 +396,40 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
-> >>   	return ret;
-> >>   }
-> >>   
-> >> +/* Get the spread spectrum (SSC) settings for the reference clock rate */
-> >> +static const struct xpsgtr_ssc *xpsgtr_find_sscs(struct xpsgtr_phy *gtr_phy)
-> >> +{
-> >> +	unsigned long rate;
-> >> +	struct clk *clk;
-> >> +	unsigned int i;
-> >> +
-> >> +	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-> >> +	rate = clk_get_rate(clk);
-> >> +
-> >> +	for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
-> >> +		/* Allow an error of 100 ppm */
-> >> +		unsigned long error = ssc_lookup[i].refclk_rate / 10000;
-> >> +
-> >> +		if (abs(rate - ssc_lookup[i].refclk_rate) < error)
-> >> +			return &ssc_lookup[i];
-> >> +	}
-> >> +
-> >> +	dev_err(gtr_phy->dev->dev, "Invalid rate %lu for reference clock %u\n",
-> >> +		rate, gtr_phy->refclk);
-> >> +
-> >> +	return NULL;
-> >> +}
-> >> +
-> >>   /* Configure PLL and spread-sprectrum clock. */
-> >>   static void xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
-> >>   {
-> >>   	const struct xpsgtr_ssc *ssc;
-> >>   	u32 step_size;
-> >>   
-> >> -	ssc = gtr_phy->dev->refclk_sscs[gtr_phy->refclk];
-> >> +	ssc = xpsgtr_find_sscs(gtr_phy);
-> >> +	if (!ssc)
-> >> +		return;
-> >
-> > Isn't it an issue that we now fail here without propagating an error
-> > back to the caller ? The function is called by xpsgtr_phy_init(), which
-> > return an int, so I think returning an error code here would make sense.
-> 
-> Agree, I'll make a v2
-> 
-> > The rest of the patch looks good to me. I would however appreciate
-> > feedback from someone at AMD more knowledgeable than I am with the
-> > hardware. Michal, could you propose an appropriate second maintainer for
-> > this driver ?
-> >
-> >> +
-> >>   	step_size = ssc->step_size;
-> >>   
-> >>   	xpsgtr_clr_set(gtr_phy->dev, PLL_REF_SEL(gtr_phy->lane),
-> >> @@ -823,8 +848,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
-> >>   	}
-> >>   
-> >>   	refclk = args->args[3];
-> >> -	if (refclk >= ARRAY_SIZE(gtr_dev->refclk_sscs) ||
-> >> -	    !gtr_dev->refclk_sscs[refclk]) {
-> >> +	if (refclk >= ARRAY_SIZE(gtr_dev->clk)) {
-> >>   		dev_err(dev, "Invalid reference clock number %u\n", refclk);
-> >>   		return ERR_PTR(-EINVAL);
-> >>   	}
-> >> @@ -928,9 +952,7 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
-> >>   {
-> >>   	unsigned int refclk;
-> >>   
-> >> -	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->refclk_sscs); ++refclk) {
-> >> -		unsigned long rate;
-> >> -		unsigned int i;
-> >> +	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->clk); ++refclk) {
-> >>   		struct clk *clk;
-> >>   		char name[8];
-> >>   
-> >> @@ -946,29 +968,6 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
-> >>   			continue;
-> >>   
-> >>   		gtr_dev->clk[refclk] = clk;
-> >> -
-> >> -		/*
-> >> -		 * Get the spread spectrum (SSC) settings for the reference
-> >> -		 * clock rate.
-> >> -		 */
-> >> -		rate = clk_get_rate(clk);
-> >> -
-> >> -		for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
-> >> -			/* Allow an error of 100 ppm */
-> >> -			unsigned long error = ssc_lookup[i].refclk_rate / 10000;
-> >> -
-> >> -			if (abs(rate - ssc_lookup[i].refclk_rate) < error) {
-> >> -				gtr_dev->refclk_sscs[refclk] = &ssc_lookup[i];
-> >> -				break;
-> >> -			}
-> >> -		}
-> >> -
-> >> -		if (i == ARRAY_SIZE(ssc_lookup)) {
-> >> -			dev_err(gtr_dev->dev,
-> >> -				"Invalid rate %lu for reference clock %u\n",
-> >> -				rate, refclk);
-> >> -			return -EINVAL;
-> >> -		}
-> >>   	}
-> >>   
-> >>   	return 0;
+The parameter value of above 3 properties are USB PHY specific. i.MX8MP
+and i.MX95 USB PHY has different meanings. So this add restrictions for
+them.
 
+ - fsl,phy-tx-vboost-level-microvolt
+
+For this property, the parameter value is wrong in register description.
+This will correct it according to true value.
+
+For detailed info, please refer to i.MX8MP and i.MX95 latest reference
+manual.
+
+Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+---
+ .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 43 +++++++++++++++----
+ 1 file changed, 35 insertions(+), 8 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+index daee0c0fc915..b09e3dab4c59 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+@@ -43,15 +43,11 @@ properties:
+   fsl,phy-tx-vref-tune-percent:
+     description:
+       Tunes the HS DC level relative to the nominal level
+-    minimum: 94
+-    maximum: 124
+ 
+   fsl,phy-tx-rise-tune-percent:
+     description:
+       Adjusts the rise/fall time duration of the HS waveform relative to
+       its nominal value
+-    minimum: 97
+-    maximum: 103
+ 
+   fsl,phy-tx-preemp-amp-tune-microamp:
+     description:
+@@ -63,15 +59,12 @@ properties:
+   fsl,phy-tx-vboost-level-microvolt:
+     description:
+       Adjust the boosted transmit launch pk-pk differential amplitude
+-    minimum: 880
+-    maximum: 1120
++    enum: [844, 1008, 1156]
+ 
+   fsl,phy-comp-dis-tune-percent:
+     description:
+       Adjust the voltage level used to detect a disconnect event at the host
+       relative to the nominal value
+-    minimum: 91
+-    maximum: 115
+ 
+   fsl,phy-pcs-tx-deemph-3p5db-attenuation-db:
+     description:
+@@ -112,6 +105,40 @@ allOf:
+         reg:
+           maxItems: 1
+ 
++  - if:
++      properties:
++        compatible:
++          enum:
++            - fsl,imx8mq-usb-phy
++            - fsl,imx8mp-usb-phy
++    then:
++      properties:
++        fsl,phy-tx-vref-tune-percent:
++          minimum: -6
++          maximum: 24
++        fsl,phy-tx-rise-tune-percent:
++          enum: [-3, -1, 0, 3]
++        fsl,phy-comp-dis-tune-percent:
++          enum: [-9, -6, -3, 0, 4, 7, 11, 15]
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - fsl,imx95-usb-phy
++    then:
++      properties:
++        fsl,phy-tx-vref-tune-percent:
++          description: 100x the original
++          minimum: -1000
++          maximum: 875
++        fsl,phy-tx-rise-tune-percent:
++          enum: [-10, 0, 15, 20]
++        fsl,phy-comp-dis-tune-percent:
++          description: 10x the original
++          enum: [-60, -45, -30, -15, 0, 15, 30, 45]
++
+   - if:
+       required:
+         - orientation-switch
 -- 
-Regards,
+2.34.1
 
-Laurent Pinchart
 
 -- 
 linux-phy mailing list
