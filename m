@@ -4,125 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF23DC369D3
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 07:56:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 678AEC369CB
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 10:37:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ChFW/j2d55tFQFIrr/y9fBNjivDQTC83F47Gtr/wCM0=; b=WnSsPGrGUQW6H/jfDEt45/Hic1
-	1TPOI76qXDq7sY8MCJOY0uLs6bNm9NJJ64+Gnsrte8Y2iF0wIyOTvOU9tiZcfpetKvhjcd/Zh8UVJ
-	QoMm+n7BHSW93NVofvpMaVqBGolpz7o10XQr8Uhz9+eylzcAAmDR3spNLQ7MFYyq8UB+e6HBR46eD
-	orvLdPDexzfXMVRwxZVTdoVN79ZaSD7zwpMRtEpoxu/F4lDx/awmN+HxX0pr/madJKgfRrDxgXUi8
-	5KWRWYzhSFvVs1SUfZzUojZafb3AOoLLa90/IKCzBvZvXl2HFuSSIVJG/E2NRLMVhoxTHXZL+i3kF
-	sVCZ/3+g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=svTx/HZKPVcbzp4eTbGJ/p171+DHArPnZ1qaeijF9sY=; b=DI4lBSqGiSCGCV
+	Uvj19fALdmi26RLGmsnQZ8nXL7XVRS/5Mf9BrHx0BGjc9BF8Q3xxZ3S0/fNSjvKJ0MCF4Dry8bfzf
+	3FjsIWa5oAU5nN0cNcENgDsC8r9V7PEaOac/nl0JknQo35vUcJec7z07EoNFJc8BN7N8ehX90PSDt
+	SA2VXl+e713pM579vwazJLjdw1+QWn1X35GlELcIEYeYuvDlC9TpjxUbPtoddAcqS09GgpneDjE5w
+	/66ozenJqnW1pwCKuVy9VZhoSU+61XHV4MpPJnt7KdcSH6G8qD/QeKELD8ZwcOhWG5sVmElHHx23q
+	7VTZQwqSXI4kX7+oHfqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7Uxe-00000009axa-2DcQ;
-	Wed, 23 Apr 2025 07:56:02 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1u7XTt-0000000ACHI-3oaY;
+	Wed, 23 Apr 2025 10:37:29 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7UVY-00000009VrY-0ehZ
-	for linux-phy@lists.infradead.org;
-	Wed, 23 Apr 2025 07:27:02 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-43ed8d32a95so52500875e9.3
-        for <linux-phy@lists.infradead.org>; Wed, 23 Apr 2025 00:26:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1745393218; x=1745998018; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=kn/kdeC0hIJ6fPjKrtocu5NnRgujubxfAbJ5Urbgh9w=;
-        b=n3o1EOpyKa/3mKzPAa7YHkVfuOUEjLlYkBO27HjPPr3lomCaQYNWNJrfkdw/nKUu9H
-         7ebCxWO5mSSJD5FVDND8ZVcK9p7k8j6QWedidzLaXTHu9nwBoRQL3/iOUl1rHuxCipAo
-         t6/sY5SMn4kT4Spk4diVnueVPmqNZz2vFyn/AavA82xU/7TEHo7OoVN4SXOLpKXE5MFi
-         lFHkEb5xZD1sEY4BpwPUq2b/9mjjMFMPzBfGk2YV8rcB5dJfqtoqcSzktFcTyHUmxYOP
-         93md+312D3CN/b49d+bwnyMMxG8Vh+lRMzewzvAmSJ7OQNfRZ1b10kdIlScU2TF6x4ba
-         672A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745393218; x=1745998018;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=kn/kdeC0hIJ6fPjKrtocu5NnRgujubxfAbJ5Urbgh9w=;
-        b=sFiW81hVIEa3WevMFrEy9EgLWtoL2EOKaGqZv/og42Q70Qr/CBGb4e06K4xYTEWwrh
-         IN3DRlg5yQY66d9fKAlTyGVgmYve6IFXlMaur+DT0Q1KxlL6+T6OffeaIi+6PgJDsm27
-         NRix6/ho3HxVNH5Px+C5Cw/DuIX6L3wdHXuTk48F+TPqSWA1MudNnWyVqgNVyHdLYQFg
-         gGZ3xwcHkvk4PBm0oCf26SI9fVNxzrcT8bpL42UIP4FsF1YnUneCGeChh5ugThaShX8M
-         hQB4+N/Z/UN7NnvrWZ35qYo4pg6WuJYrVtqGUztbz7e5CfRlxPFQaukC5gHZuRfmGpLU
-         s3hQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXQIG0LNo0/s+HRmrY82VuCpHpPD0sK3T4XasVEh+rLRr4mxnBnj2DW6Df1DxF1uykyx4AHYhfaLcA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzisqvgSqBsaeM97hB5KpKkfNQT7aybnXPhzcpcQwInNFyFAeGy
-	W8G0ibroxxjSyAaw+GoH3P81d66AMzwTf7/o1RJoKuc0ZyN19fg/upSwnWVTDDU=
-X-Gm-Gg: ASbGncvfyb/7TXQT+rnFj+0kqk6tkYi0W51c36zZh0xemPFFvffyU3+yTcjc9cRpN7W
-	gB3L8aUEikYBU/+0t/oLghl46gVcz198msB3aAC3/fFh4EkVqBGiCJ6PcD66frH0jJQ3rs/RJN7
-	q3u3t+9bQaVsc9C2iMJuVAMaI1h3zC/3Xv1TBvb5ml9/LiJ9t/5vgFzXVEzo1Xd02bkMfZSQ0VN
-	p7BPk6AmYweMWs5ScB6nmoTqm4Kz/TOYDRUhnOI2HIrFF01LYCGhQSNNj8FAcv1R+3fKaBm3POO
-	PchI+HtMbMTZdAiYVS1hK6EyTRgXpnFIKtxv6W9lKmcdS+HlL+tD6hayDpLHh9YZxSrrr2Hzoi/
-	KOlBhSxEAH9VyoBnItQ==
-X-Google-Smtp-Source: AGHT+IGQjZAyp9xHW8ASlQKrR9fCiGMeMbCakgAb3SkKNca/+Rt6CnnTlRW63K73V1hHmlOCRLIMvA==
-X-Received: by 2002:a05:600c:1c8f:b0:43c:fe5e:f040 with SMTP id 5b1f17b1804b1-4406abffc5emr134620725e9.23.1745393218300;
-        Wed, 23 Apr 2025 00:26:58 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:2835:c2f4:c226:77dd? ([2a01:e0a:3d9:2080:2835:c2f4:c226:77dd])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-44092db2bd5sm15015645e9.26.2025.04.23.00.26.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 23 Apr 2025 00:26:57 -0700 (PDT)
-Message-ID: <283096ad-ae1b-42b8-8312-b192f735fc80@linaro.org>
-Date: Wed, 23 Apr 2025 09:26:56 +0200
+	id 1u7WQo-00000009y3M-3Xgv;
+	Wed, 23 Apr 2025 09:30:16 +0000
+Received: from pendragon.ideasonboard.com (81-175-209-231.bb.dnainternet.fi [81.175.209.231])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4AC3C1461;
+	Wed, 23 Apr 2025 11:30:10 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1745400610;
+	bh=jHLD1n2gGYYVd5R6g6n10KSyD4gzCZwcAeLg23QXHSs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=B8aSvBY1/x2LIAKbBf8SeWyhbszS53PJJ2D9rpDEVhrVflfZaQ69KXvsDknb/kAf0
+	 s5rTmuvH6bNtoniEgH+GxWR3FE24MVTDz2jbt/iNyaeXd1P8/5Z9n3Z9268TPPuMck
+	 /NJY8yJK5oDnz/PHrW4NfLzSX3khyvl+LFcpEup0=
+Date: Wed, 23 Apr 2025 12:30:08 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Mike Looijmans <mike.looijmans@topic.nl>
+Cc: linux-phy@lists.infradead.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Michal Simek <michal.simek@amd.com>, Vinod Koul <vkoul@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy-zynqmp: Postpone getting clock rate until actually
+ needed
+Message-ID: <20250423093008.GC17813@pendragon.ideasonboard.com>
+References: <1b153bce-a66a-45ee-a5c6-963ea6fb1c82.949ef384-8293-46b8-903f-40a477c056ae.7a5992b5-aa78-4b18-bf5c-70f893b58f48@emailsignatures365.codetwo.com>
+ <20250314150431.28319-1-mike.looijmans@topic.nl>
+ <20250422221802.GB32759@pendragon.ideasonboard.com>
+ <f3051d1d-ecb2-4a93-ad6b-76ab7a5538af@topic.nl>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 00/33] Add support for Qualcomm Snapdragon SM7150 SoC and
- Google Pixel 4a
-To: Jens Reidel <adrian@mainlining.org>, Danila Tikhonov <danila@jiaxyga.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-scsi@vger.kernel.org,
- dmaengine@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev,
- linux-remoteproc@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-hardening@vger.kernel.org, linux@mainlining.org,
- ~postmarketos/upstreaming@lists.sr.ht, Connor Mitchell <c.dog29@hotmail.com>
-References: <20250422-sm7150-upstream-v1-0-bf9a9081631d@jiaxyga.com>
- <2ca2b774-fd7f-4612-b38d-f60e32ff6f9a@mainlining.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <2ca2b774-fd7f-4612-b38d-f60e32ff6f9a@mainlining.org>
+Content-Disposition: inline
+In-Reply-To: <f3051d1d-ecb2-4a93-ad6b-76ab7a5538af@topic.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_002700_223832_9013FFF5 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250423_023015_211872_01313D22 
+X-CRM114-Status: GOOD (  42.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,29 +67,181 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Mike,
 
-On 23/04/2025 00:07, Jens Reidel wrote:
-> Hi everyone,
+On Wed, Apr 23, 2025 at 08:59:43AM +0200, Mike Looijmans wrote:
+> On 23-04-2025 00:18, Laurent Pinchart wrote:
+> > Hi Mike,
+> >
+> > Thank you for the patch.
+> >
+> > On Fri, Mar 14, 2025 at 04:04:18PM +0100, Mike Looijmans wrote:
+> >> At probe time the driver would display the following error and abort:
+> >>    xilinx-psgtr fd400000.phy: Invalid rate 0 for reference clock 0
+> >>
+> >> This issue was that at probe time, the system has not decided yet whether
+> >> the GTR is to be used for SATA (150MHz) or PCIe (100 MHz).
+> > At what point does the system decide that ? I've only used (and tested)
+> > this driver for DisplayPort.
 > 
-> apologies for the mess this created. Danila's mail provider ratelimited him halfway through sending the series and the attempt to re-try sending the second half an hour later ended up with a new message ID (I think due to not using --in-reply-to).
-> He asked me to let you know that this will be resolved later and the whole series will be re-sent once the problems are resolved.
-
-The b4 web submission is a great alternative when the mail provider is rate limited:
-https://b4.docs.kernel.org/en/latest/contributor/send.html#web-endpoint
-
-Neil
-
+> In retrospect, yeah, the commit text could be a bit more elaborate on that.
 > 
-> Best regards,
-> Jens
+> This PHY driver probes before the I2C bus which contains the programmable 
+> clock chip that provides the GT clocks for the PS. This isn't a problem, as 
+> the PHY lane won't be needed yet.
+> 
+> When the SATA (or PCIe or network or displayport or ...) driver probes, the 
+> clock gets programmed. The PHY lane won't be enabled until after that.
 
+Would it be possible to defer probing (as in returning -EPROBE_DEFER) of
+the PHY until the clock is available ?
+
+> >> The driver
+> >> doesn't need to know the clock frequency at that point yet, so wait until
+> >> the lane is actually being initialized before requesting the clock rate
+> >> setting.
+> >>
+> >> Signed-off-by: Mike Looijmans <mike.looijmans@topic.nl>
+> >> ---
+> >>
+> >>   drivers/phy/xilinx/phy-zynqmp.c | 61 ++++++++++++++++-----------------
+> >>   1 file changed, 30 insertions(+), 31 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
+> >> index 05a4a59f7c40..e29e3e51d380 100644
+> >> --- a/drivers/phy/xilinx/phy-zynqmp.c
+> >> +++ b/drivers/phy/xilinx/phy-zynqmp.c
+> >> @@ -222,7 +222,6 @@ struct xpsgtr_phy {
+> >>    * @siou: siou base address
+> >>    * @gtr_mutex: mutex for locking
+> >>    * @phys: PHY lanes
+> >> - * @refclk_sscs: spread spectrum settings for the reference clocks
+> >>    * @clk: reference clocks
+> >>    * @tx_term_fix: fix for GT issue
+> >>    * @saved_icm_cfg0: stored value of ICM CFG0 register
+> >> @@ -235,7 +234,6 @@ struct xpsgtr_dev {
+> >>   	void __iomem *siou;
+> >>   	struct mutex gtr_mutex; /* mutex for locking */
+> >>   	struct xpsgtr_phy phys[NUM_LANES];
+> >> -	const struct xpsgtr_ssc *refclk_sscs[NUM_LANES];
+> >>   	struct clk *clk[NUM_LANES];
+> >>   	bool tx_term_fix;
+> >>   	unsigned int saved_icm_cfg0;
+> >> @@ -398,13 +396,40 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
+> >>   	return ret;
+> >>   }
+> >>   
+> >> +/* Get the spread spectrum (SSC) settings for the reference clock rate */
+> >> +static const struct xpsgtr_ssc *xpsgtr_find_sscs(struct xpsgtr_phy *gtr_phy)
+> >> +{
+> >> +	unsigned long rate;
+> >> +	struct clk *clk;
+> >> +	unsigned int i;
+> >> +
+> >> +	clk = gtr_phy->dev->clk[gtr_phy->refclk];
+> >> +	rate = clk_get_rate(clk);
+> >> +
+> >> +	for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
+> >> +		/* Allow an error of 100 ppm */
+> >> +		unsigned long error = ssc_lookup[i].refclk_rate / 10000;
+> >> +
+> >> +		if (abs(rate - ssc_lookup[i].refclk_rate) < error)
+> >> +			return &ssc_lookup[i];
+> >> +	}
+> >> +
+> >> +	dev_err(gtr_phy->dev->dev, "Invalid rate %lu for reference clock %u\n",
+> >> +		rate, gtr_phy->refclk);
+> >> +
+> >> +	return NULL;
+> >> +}
+> >> +
+> >>   /* Configure PLL and spread-sprectrum clock. */
+> >>   static void xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
+> >>   {
+> >>   	const struct xpsgtr_ssc *ssc;
+> >>   	u32 step_size;
+> >>   
+> >> -	ssc = gtr_phy->dev->refclk_sscs[gtr_phy->refclk];
+> >> +	ssc = xpsgtr_find_sscs(gtr_phy);
+> >> +	if (!ssc)
+> >> +		return;
+> >
+> > Isn't it an issue that we now fail here without propagating an error
+> > back to the caller ? The function is called by xpsgtr_phy_init(), which
+> > return an int, so I think returning an error code here would make sense.
+> 
+> Agree, I'll make a v2
+> 
+> > The rest of the patch looks good to me. I would however appreciate
+> > feedback from someone at AMD more knowledgeable than I am with the
+> > hardware. Michal, could you propose an appropriate second maintainer for
+> > this driver ?
+> >
+> >> +
+> >>   	step_size = ssc->step_size;
+> >>   
+> >>   	xpsgtr_clr_set(gtr_phy->dev, PLL_REF_SEL(gtr_phy->lane),
+> >> @@ -823,8 +848,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
+> >>   	}
+> >>   
+> >>   	refclk = args->args[3];
+> >> -	if (refclk >= ARRAY_SIZE(gtr_dev->refclk_sscs) ||
+> >> -	    !gtr_dev->refclk_sscs[refclk]) {
+> >> +	if (refclk >= ARRAY_SIZE(gtr_dev->clk)) {
+> >>   		dev_err(dev, "Invalid reference clock number %u\n", refclk);
+> >>   		return ERR_PTR(-EINVAL);
+> >>   	}
+> >> @@ -928,9 +952,7 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
+> >>   {
+> >>   	unsigned int refclk;
+> >>   
+> >> -	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->refclk_sscs); ++refclk) {
+> >> -		unsigned long rate;
+> >> -		unsigned int i;
+> >> +	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->clk); ++refclk) {
+> >>   		struct clk *clk;
+> >>   		char name[8];
+> >>   
+> >> @@ -946,29 +968,6 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
+> >>   			continue;
+> >>   
+> >>   		gtr_dev->clk[refclk] = clk;
+> >> -
+> >> -		/*
+> >> -		 * Get the spread spectrum (SSC) settings for the reference
+> >> -		 * clock rate.
+> >> -		 */
+> >> -		rate = clk_get_rate(clk);
+> >> -
+> >> -		for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
+> >> -			/* Allow an error of 100 ppm */
+> >> -			unsigned long error = ssc_lookup[i].refclk_rate / 10000;
+> >> -
+> >> -			if (abs(rate - ssc_lookup[i].refclk_rate) < error) {
+> >> -				gtr_dev->refclk_sscs[refclk] = &ssc_lookup[i];
+> >> -				break;
+> >> -			}
+> >> -		}
+> >> -
+> >> -		if (i == ARRAY_SIZE(ssc_lookup)) {
+> >> -			dev_err(gtr_dev->dev,
+> >> -				"Invalid rate %lu for reference clock %u\n",
+> >> -				rate, refclk);
+> >> -			return -EINVAL;
+> >> -		}
+> >>   	}
+> >>   
+> >>   	return 0;
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
