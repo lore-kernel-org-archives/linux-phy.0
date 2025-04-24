@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61F63C369AB
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2F9EC369C2
 	for <linux-phy@archiver.kernel.org>; Thu, 24 Apr 2025 17:12:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,37 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WaaC6+1hYiS5PggnLh+jBRxFr8qUllC/ctC43SNfDY=; b=jbnqT/3xAhrNjA
-	0HNiFI2sw6vOYegW0sl9VH8bPGUnENZn2CX24sAtNrcAlpLdjmQf+RsdDzFGsGPimgom0J8Dihsfs
-	kygOKO/daKYoyrHcTi8EauQ6x9UEaYy17VNUFT7ssFHZ/FNlekJQC+6P2baFakj1RCLfECKUvkp5d
-	i6J/ukNBqV2+4P6oy2ahM3OQtXkke1kxAbJxc6O1osOi0Zc3GPD1eX85uvRPKW3SwOyGkIGA7z1U1
-	UTi5ck/7OKhWcCYN5hIj6bGkcxHitiW1D/laorLve3JfkqNnnI2FnEz5LH70woQZhMiPVOtFEjOjq
-	YgwDfCEI8wgdMEftViOA==;
+	List-Owner; bh=+6xVZQtMuXiV/6cjVqXzd9Egw7dwGA5ADnpKQXa9/9A=; b=q8KEYiWPiopSEr
+	c9Sghh5p0KPQ5SZ90AI98XJFv4rdqakqKXdb3SssUqyWPA0T7H49G2FOjjF4h89cZwhKiMTdMOptS
+	SxuwbHI9QrEhjTwfaBCbBd17SJYkGzRZIS22WByjOgi61xqDT1OwLX2idVUVbi9PL7zZ/c4sSpBYg
+	lTTGLMenuzn8pS1H80nUjJ4cifTqvuRtOPgOXeIThmVo1T3GXFbKhbUA0pC6XIXxQPiVFi7rS9EiM
+	j4QSoW4coI0Bh3Y74mfuaxEVHvKWTxvTXvjsyEqfNWMFuQ8OV2tJ6CJnd55bm+gLITw1GWp+nayO8
+	vAalwu+ntMx5JepMXfQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u807Z-0000000Er3r-0GvX;
+	id 1u807Z-0000000Er40-1MAN;
 	Thu, 24 Apr 2025 17:12:21 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7wOI-0000000E9ld-1BwT;
-	Thu, 24 Apr 2025 13:13:23 +0000
+	id 1u7wQM-0000000EA8d-0xRG;
+	Thu, 24 Apr 2025 13:15:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6BDE343C4B;
-	Thu, 24 Apr 2025 13:13:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D435C4CEE3;
-	Thu, 24 Apr 2025 13:13:16 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 3AA6A4A553;
+	Thu, 24 Apr 2025 13:15:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E0E0C4CEE3;
+	Thu, 24 Apr 2025 13:15:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745500400;
-	bh=MG+YWrYEwntpF2IQjK0Cm+T1muoqGKxfEg/R/G79Dbs=;
+	s=k20201202; t=1745500529;
+	bh=6revvVVhRd4vMEsIX5cXh8CkmckdE8eSYHBQbAtAcdY=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Io6Ny1XJnWH4HQee3II5NVYtmuvbDQoXoXxnw/6MR+DOgxCAt7iPBb+3+VaT1rdBZ
-	 WWvxpczXuqaDmun+A6zG1qv8RP6+cTv0fE+b3+KVTQlLsCUCz7zwjYuz8QDYHKAxz5
-	 J0tvc7j7JyDKmc6mTJ6boJ8VPaVqKQpuGvDTPHJ90WtLDqpJI5Ts3YKwm1aCqrw+Xb
-	 EFwj8MtpIRhfFa7bUqp7qMzzj1dlMeMGf1CujxjDINSGH1nkKKqnR+BbNzCg+JysyR
-	 y9TSogkZFv8eBLWhnTenQ/BhESDS+7KsyQpY1LOZpizpfJRm1ehHnZAgJ0eIzvYXsa
-	 GvrsY/F/LBang==
-Message-ID: <6db3f4c2-3c72-4963-b6ae-9750ea0733f5@kernel.org>
-Date: Thu, 24 Apr 2025 15:13:14 +0200
+	b=agzdKqoQBB2FMs7cqK1RmXVZqD1grWy2E+ukkzybd9k0mTq1QiDMOt5Z6C+vg+fXw
+	 VHe8+pEzSjLVEWKEAPVHvinv9/JH5mfNsfNVGiDjNlIsLRyuA0Qq6izqVaCGhZ32CM
+	 piFlIC+U62ttvHviPz+iwTA1U/2IyNfzvwAed9n7IXzrK+83ynrT1Fm9EprOzgj4Ow
+	 lYC1Kv8xJsfs8ms8PHgu1ugZHCU5y2dNwQin51yX3MpNKa684p9hzfzIhd5N0FJFSW
+	 S8Bvlm/KyO0mZupC3yoIxxan+Sr9Ww1K17574t7YAPsFrzO+Pt2KV+dqOI8ad7rMyt
+	 H47Z/P3HZrTpA==
+Message-ID: <cf741154-5772-4328-bfd0-fe5d83c75f72@kernel.org>
+Date: Thu, 24 Apr 2025 15:15:23 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v5 07/10] arm64: dts: qcom: sm8750: Add USB support to
@@ -109,8 +109,8 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
 In-Reply-To: <20250421-sm8750_usb_master-v5-7-25c79ed01d02@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250424_061322_576108_FF241C0B 
-X-CRM114-Status: UNSURE (   8.37  )
+X-CRM114-CacheID: sfid-20250424_061530_341586_A20B57C7 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -143,6 +143,7 @@ On 22/04/2025 00:00, Melody Olvera wrote:
 > Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
 > Signed-off-by: Melody Olvera <melody.olvera@oss.qualcomm.com>
 > ---
+
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
