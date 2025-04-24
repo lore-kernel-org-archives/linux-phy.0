@@ -4,66 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A399CC369D1
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Apr 2025 07:34:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD09FC369D1
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Apr 2025 07:40:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2AhpMKawOkcWmx76P0lU1b8jncS4gqnvTpSkh00g/uY=; b=dLsFeEOaANf/mu
-	zRS9R0+SERJArKMF1GdzyqtpLtumGAHFomgkpjrlgS1NfOMkLdz1tlpSwpcB5k5oZDDtCDyB7b4UN
-	k/3C+cHMRnL59Ng4W8GcQ35V82+T1lQa+7sMhTHz/htKNo4+bUQa5ErThCv6hq2r5QoEADPmQBdhF
-	1uYJsNi8VBer3nsMv2Zo7xQoUFybyrJBNwX2LK7twJitsmyPznpq/O53l2IeWC3XIBUwobqQ6H81n
-	UiHRNkn8hJFcs39qz0JV1XD9jv9bGWRemPs8TQWgF0MidAEK22JLxgkGdcyyw7RvLBW/736uuGSUE
-	67a1O6KLOPWwm8UmuegQ==;
+	List-Owner; bh=15fVslz2g8RfeHKPZ6FBn+0KWffYt4RTOPmq5UU2GUw=; b=Y45LfRkr8ciiVm
+	D6d/xX0Y+wGCH+CPGFwFC0bmzbK3Ess0g1yJL4nOuOzGWEbMJcQfWv2+yOkBspWXP3nMvCgw5yb9y
+	csyjO69KUgqQMqqMVG3zTWUjc2o1b3k+C8XIYHiB9u3XjPtXn9BcDCYlQML6z5y6ZpYzuBbDEoiRg
+	gG4tsQLgjqnupt3JKAHCLDEazeBG5jA+ijN2lPAc16K/FdRp7AqXlBrH4rCFdVoyvsxUR4izBVa6y
+	4qKuzXeSm2jL2RgA5sDJKIdj7lxUPG9pKVh4dWmPepnfomeUR5ITpvVyyn64OvpVkmtxUXuez0Gos
+	gM7eFVWNfraOFY6TzpLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7r6a-0000000DCUC-1J3O;
-	Thu, 24 Apr 2025 07:34:44 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1u7rCW-0000000DDgd-0JJg;
+	Thu, 24 Apr 2025 07:40:52 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7r4Y-0000000DC9Z-2fGy;
-	Thu, 24 Apr 2025 07:32:39 +0000
+	id 1u7r7Q-0000000DClS-3vYz;
+	Thu, 24 Apr 2025 07:35:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B645CA4A852;
-	Thu, 24 Apr 2025 07:27:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C65A9C4CEE3;
-	Thu, 24 Apr 2025 07:32:36 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 95AB268455;
+	Thu, 24 Apr 2025 07:35:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68DD2C4CEE3;
+	Thu, 24 Apr 2025 07:35:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745479957;
-	bh=UXUhPaNtMk1R10Wyxi4MJA+gxXMW3VzEBTRBlFMNNlE=;
+	s=k20201202; t=1745480136;
+	bh=sV/Yr3t57Hh/fnbj2+R1XyIyQYmRB7215HEEUpCxgYs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=nUAu1y4ZS1rReflpqiqcIN7UnNIzLnab3hyFdHbWsnfk+sesWnE+cnjI71LJ2ul7z
-	 Txo6iwxJWGfe3H6ghAxwT7/PnMWRR1rTO50jVNZ/75faGyo9IFUA9XP2aIF1Ne7F3O
-	 5CRIxgl24EvfPD9kT3I1EJORhClYqukaQN2TE/T2FpFkh8Z7KPucdXIqA5f3znsAft
-	 c66S1jwjfoWNY0oIVs42CfUy77VvxmAUI/8lVQvBTYj5Rpulxfu9oNvtgHOrMLM//n
-	 n76pHNLmcC3Q/CsqtMM0Y1UBha6tpmg7TXSsfd62OOCmdHm4duiD4qy6VFW+891Ilv
-	 9mkV0EBI4odrw==
-Date: Thu, 24 Apr 2025 09:32:34 +0200
+	b=ELlU6AYusnI8ir3dVO55soTQNJSzVBOn/7GbD/RxuNat+/E45JAoE6sKxpq1PbBMU
+	 itGPjl+465sDgV94/T4xi1geU3PT+VT4FvrPiapx7lVmnv94NsDyMXuNUDnh6rZRV7
+	 QVv6cuYPx7O/HHrJie6gbNvZ8fhaAkTqMO9UXgwYqylF11+mCpIRbsXXi1y3OWM6RD
+	 icfkLOJ/+1f+w5TV7+qm1bAj7goVryAtGeY+e4EQQMP7It/makIhEHnodHMgdqeCKl
+	 n9w+OIKzh8VOE9OH7bxSg/jTCw259zNDWlOy0tr8Z0r//x0RV0RYGYoLKDIhQrlWkG
+	 zOgABwaEMMYSg==
+Date: Thu, 24 Apr 2025 09:35:33 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Melody Olvera <melody.olvera@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
-	Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v5 03/10] dt-bindings: usb: qcom,dwc3: Correct the SM8750
- compatible
-Message-ID: <20250424-masterful-original-python-8dafb0@kuoka>
-References: <20250421-sm8750_usb_master-v5-0-25c79ed01d02@oss.qualcomm.com>
- <20250421-sm8750_usb_master-v5-3-25c79ed01d02@oss.qualcomm.com>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Frank Wunderlich <frank-w@public-files.de>, 
+	=?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>, Daniel Golle <daniel@makrotopia.org>, 
+	Sean Wang <sean.wang@mediatek.com>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 5/8] dt-bindings: mfd: syscon: Add mt7988-topmisc
+Message-ID: <20250424-cornflower-waxbill-of-promotion-4e24a7@kuoka>
+References: <20250422132438.15735-1-linux@fw-web.de>
+ <20250422132438.15735-6-linux@fw-web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250421-sm8750_usb_master-v5-3-25c79ed01d02@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250424_003238_734884_CD3C5B5D 
-X-CRM114-Status: GOOD (  11.06  )
+In-Reply-To: <20250422132438.15735-6-linux@fw-web.de>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,15 +76,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 21, 2025 at 03:00:10PM GMT, Melody Olvera wrote:
-> SM8750 does not require an XO clock in the dt as it is the
-> parent of the TCSR refclk_src, so move the compatible to a section
-> where the XO clock is not required.
+On Tue, Apr 22, 2025 at 03:24:28PM GMT, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
 > 
-> Signed-off-by: Melody Olvera <melody.olvera@oss.qualcomm.com>
+> Add compatible for Mediatek mt7988 topmisc syscon.
+> This hardware block contains 2 functional blocks
+> 
+> - a powercontroller which is not needed (switched by atf)
+> - a multiplexer for high-speed Combo-Phy
+> 
+> This compatible is only for the multiplexer part.
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 > ---
->  Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/mfd/syscon.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
