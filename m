@@ -4,67 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91660C369CB
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Apr 2025 17:43:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3900C369AB
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Apr 2025 07:08:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9o2oiGIJsZ6XGeQUr+Vtq3MQKGmm7Eqbv4Nd+BRDvsI=; b=Tgoec/g1qvwBWe
-	Gjz6fKqX7WK2J5/lXdQrOwqujnC0fWKFQnsIbPgAS7EEIlbjAw8c1qzBEwBobHBRi/a1s62jBo3Av
-	ompscJa3Y3FfsiqUjNPnc9C1Fnh7nFnr1IPYKR8HoJcQP+U50WUjrd5uYyXg7mSgQJ0aihDAdEZdk
-	0CgiDNAA397S3oIp0yeK0itn0vkwdUJNqJpDfF3NYS/G+zFBVKOI8wJmDCXEYM2WLcSf+oiMdRlqU
-	Cee/H/lQaMXx7BNgqafqvECWUcZpguMYtlgMbWKc1uLJRNHjab3E4EfG4VTmf5jhQ+dCGqQZsrLgV
-	mlW83MDm4x1RO3KmYEaw==;
+	List-Owner; bh=jiXUkJ9sfmqmVqKFzOXi+VVd7Zbxsa5IVhIPxBrau6g=; b=IAyToGZjHJOd60
+	YdqPqniOerZPyh0s4AKlEB7xSxifWva4ie/SbppDppdpwp59pUdPMlO0po+qyVbknD4V8JfLLUkYQ
+	cHFm123opr7kQ5vxvtdSuaeDhSAc7DuqIeIN5i0klIzjGCDNorCUGjFJbFqXGqIYBFomSbC+FMXxf
+	daFF3GHgBC/1NEjx2yR0ptXuiW/QrwRicYdnPwQJd9V0rSL6TrCE/P3A1CYAtvwTyguhM1klnh8wX
+	Grz/SCMsQb6FpXrsDKVAXzFxcPVr13sYYvVxvrFnrqMnwZaTb4A4u+v4kmNv6oe79BkqxQpu8Ey8b
+	JU8uaRpm5l+XVo8+r/VA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7e7m-0000000BM9L-0MN2;
-	Wed, 23 Apr 2025 17:43:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1u7qhL-0000000D5lg-0UAv;
+	Thu, 24 Apr 2025 07:08:39 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u7bwd-0000000AxGf-25X5;
-	Wed, 23 Apr 2025 15:23:28 +0000
+	id 1u7qHW-0000000D2KW-41l9;
+	Thu, 24 Apr 2025 06:42:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C9F6A5C61FD;
-	Wed, 23 Apr 2025 15:21:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 64D98C4CEE2;
-	Wed, 23 Apr 2025 15:23:26 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id AD1C5449AB;
+	Thu, 24 Apr 2025 06:41:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E344C4CEE3;
+	Thu, 24 Apr 2025 06:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745421806;
-	bh=ttYFtyupJCMupeSXwyqSaNxnbRiKjhqkBV9hyVnYY30=;
+	s=k20201202; t=1745476918;
+	bh=M+nFHMzEVi+QVGMGUalVB1g9i8u6j31DvTqyfMj/nZk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fLQsHTSROUAK6ThwkWXhF5VTQtSjbjK5MKQgPWBeAYm3OnQl3xo9vUW3c5NIrFpzg
-	 z+lp7GpBGY+WxxQMdQI0S5e9vR73KD0m+fgVfer7oIVylZ0pDaQSMvatCNmhoAYjJz
-	 WjC+opRME537JuHl44GZKOV0qEjjp92qrZ18eFetM0akxL79A+P90DDu+CKlRgaKUc
-	 +2oRVCZHEj7iQ802qNTm67K8mbY+93IrU7H5otIH+P13xmfpnzMl3ELoTX0YE+MNMi
-	 zDHktPncfG76nUvxqFwQANV/QL0RWZHJPaNKtMlkPxd2+oKXeWR5eToaz5f6GmRs6a
-	 qhWfSTuHn/N6Q==
-Date: Wed, 23 Apr 2025 10:23:25 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Ze Huang <huangze@whut.edu.cn>
-Cc: linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org,
-	Junzhong Pan <junzhong.pan@spacemit.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-kernel@vger.kernel.org, Yixun Lan <dlan@gentoo.org>,
-	devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	spacemit@lists.linux.dev
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: spacemit: add K1 PCIe/USB3
- combo PHY
-Message-ID: <174542180456.549434.17717366396864684617.robh@kernel.org>
-References: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
- <20250418-b4-k1-usb3-phy-v2-v2-2-b69e02da84eb@whut.edu.cn>
+	b=glGhtIHxFk/2r+VTB0xJFT4DLQovRwqbnEKJJ92e3nGBYsoINW1bT6kHDV/tdy9Nj
+	 2DqM0oVa8gmje7rIHU80vw7Bd+SLjzDIZNziRR127GQoBxyaM8k6ijIJay8vINFh//
+	 IYPsRJBgLhLOL2u93AdfpSfLwfojpdGpGnjM1CaTXptDRCmvJLVsX9z3aE36Bk7d9a
+	 GMRIHoIQlndwOdf9TRW6KYvEz0IwoV/076tOtoNdWF9bjZjQXbGwJZy6HquV9ooEm9
+	 pFRdoB+ddQTRlTkrd0zcGElbP1YxgMBf11W5XqiWz2vFAHM62j0q/mmja99G0gfhWg
+	 /Gv70M5zcytzA==
+Date: Thu, 24 Apr 2025 08:41:55 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Frank Wunderlich <linux@fw-web.de>
+Cc: Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Frank Wunderlich <frank-w@public-files.de>, 
+	=?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>, Daniel Golle <daniel@makrotopia.org>, 
+	Sean Wang <sean.wang@mediatek.com>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 3/8] dt-bindings: phy: mtk-xs-phy: Add mt7988
+ compatible
+Message-ID: <20250424-muscular-ginger-hog-3047f6@kuoka>
+References: <20250422132438.15735-1-linux@fw-web.de>
+ <20250422132438.15735-4-linux@fw-web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250418-b4-k1-usb3-phy-v2-v2-2-b69e02da84eb@whut.edu.cn>
+In-Reply-To: <20250422132438.15735-4-linux@fw-web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250423_082327_591922_870C27E0 
-X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-CacheID: sfid-20250423_234159_032658_0E083461 
+X-CRM114-Status: UNSURE (   8.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,21 +81,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 18 Apr 2025 21:19:51 +0800, Ze Huang wrote:
-> Introduce support for SpacemiT K1 PCIe/USB3 combo PHY controller.
+On Tue, Apr 22, 2025 at 03:24:26PM GMT, Frank Wunderlich wrote:
+> From: Frank Wunderlich <frank-w@public-files.de>
 > 
-> PCIe portA and USB3 controller share this phy, only one of them can work
-> at any given application scenario.
+> Add compatible for xs-phy on mt7988.
 > 
-> Co-developed-by: Junzhong Pan <junzhong.pan@spacemit.com>
-> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 > ---
->  .../bindings/phy/spacemit,k1-combphy.yaml          | 72 ++++++++++++++++++++++
->  1 file changed, 72 insertions(+)
-> 
+>  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
 
 
 -- 
