@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A60A9C369D5
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 13:13:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86DB8C369C2
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 13:37:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8GLSCJY4hzFAGu0G0c9vw0wvBJtwohxe6RJtygFN9DM=; b=3Az0IZIkdSrpx8
-	ZuRTazudY3y9GLeZy4rsNDpOpRaypp3WawMM0yyj+7tIlgVf/RTqS3fiOs7sAJVeO3nyqtSGxDLOi
-	KHeiAmJDKQXaEayHKEYg+tcGg36tOurQmKS4wklk4visfxeVipyV1mQQ9lLWjxAT2jbMdThkxA3A4
-	ZlF4wOfbaBShBGnIppKZYo6EBSRnWXmH5iHemkGE7dgAOsw7NX19vRrxwEkchfcM/nj4wnOT9+Rmn
-	z4wi921IkgT437RKcEwGiJ3zItTrVd4JXXJvfe0HlPEB/GiblefHnxsn6w5Xqd8FtZd7jFSfUHlZ5
-	rIU9BG50wzkKmT4Wp7zg==;
+	List-Owner; bh=jYvLlLFUkut5U7omHoeCf/D90Zi3WLSt2eyskFKF2ec=; b=vSnsvjeqpJfQMn
+	2O4vyswtEljmO9x/3IkfFW4QEoOj0yc6Fp+opNarkAImElW5xmj5tLo5unlSZyDRo1t1dj5QcfgDE
+	sAu8t60NNwplxcQpl5xwEV1zOT8IKE7UOw763cYbr97Y9Wb7qgqFy+GD23UhjP3WZnHGbOgOGwEKh
+	ACShpoJZhUB37E0kP3CUWja3iyBjV/BdwAApEE3eBo789ROgW9MrwvFD/NMprwSBGGQkQzQwFZcnR
+	S5G77/1A/OROaYvFHd00umnC0TcswFJgA5j2DtPQSNjle4eSOVaXbi5nUKfm92L2gzcx/PfwycbFX
+	v9A80qQYzJT+ZeWeGJ7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8IsF-0000000HEcx-1nei;
-	Fri, 25 Apr 2025 13:13:47 +0000
+	id 1u8JEx-0000000HJIX-4Bax;
+	Fri, 25 Apr 2025 13:37:16 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8HoR-0000000H41W-2mXy
+	id 1u8IaO-0000000HBsF-2Il2
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Apr 2025 12:05:48 +0000
+	Fri, 25 Apr 2025 12:55:21 +0000
 Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9370FD77;
-	Fri, 25 Apr 2025 13:57:54 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0EA3E82E;
+	Fri, 25 Apr 2025 14:55:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1745582275;
-	bh=1PNw6p2B16PEo0GVueQIVoNx6GFKG2AUKgcYHI36HIw=;
+	s=mail; t=1745585716;
+	bh=V0vzS2SBMmSwtDfpTnUAKP1Fy9rXUK+2CtvLBI82r4Y=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=HL4OQz1qBlPSBDZiwbFF863X7K8HQrPYZ9FqsW52AvtAbzkkLHooCgdJ0YnJpK5Nk
-	 yl29q1IMja83OosIa2+lvlFQxn4LacQ4lnZ7IbDzaKsJqozVorhQ4iBKUinYAA7UJl
-	 bEmwwdSz5u+OCcpTorvSxJmSzhqKSdx29vMo9Vhc=
-Message-ID: <6d053590-7390-4d4c-98b7-32a02b5bf561@ideasonboard.com>
-Date: Fri, 25 Apr 2025 14:57:54 +0300
+	b=DVbPO376F5YxoK8yNsIZgZ0pvtugPze8+PlJBPY6F1/C60SvPFGge85a9lMg/1ztK
+	 B8fHRQQJ1wc3xOUk0mZuvhQ3I6b/40hvxZTifRSOv/gdTupPu84Zfm5QPFGjoSENCd
+	 mCK1bLdJqVBlEZj8qWd9BmOf1hf+n7sHDbNTGpSo=
+Message-ID: <9c8f2ab2-4492-47df-a27e-7c603436ce36@ideasonboard.com>
+Date: Fri, 25 Apr 2025 15:55:14 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 14/17] drm/bridge: cdns-dsi: Use video mode and clean
- up cdns_dsi_mode2cfg()
+Subject: Re: [PATCH v3 16/17] drm/bridge: cdns-dsi: Tune adjusted_mode->clock
+ according to dsi needs
 To: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
@@ -57,8 +57,8 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
  Jayesh Choudhary <j-choudhary@ti.com>
 References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-14-4e52551d4f07@ideasonboard.com>
- <0072bb93-5456-40c4-96bc-a7afb3523238@linux.dev>
+ <20250414-cdns-dsi-impro-v3-16-4e52551d4f07@ideasonboard.com>
+ <7de0229a-192f-4d0f-8add-1a50c58f367b@linux.dev>
 Content-Language: en-US
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
@@ -104,10 +104,10 @@ Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
  ueeIlwJl5CpT5l8RpoZXEOVtXYn8zzOJ7oGZYINRV9Pf8qKGLf3Dft7zKBP832I3PQjeok7F
  yjt+9S+KgSFSHP3Pa4E7lsSdWhSlHYNdG/czhoUkSCN09C0rEK93wxACx3vtxPLjXu6RptBw
  3dRq7n+mQChEB1am0BueV1JZaBboIL0AGlSJkm23kw==
-In-Reply-To: <0072bb93-5456-40c4-96bc-a7afb3523238@linux.dev>
+In-Reply-To: <7de0229a-192f-4d0f-8add-1a50c58f367b@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250425_050547_865862_9F49DE64 
-X-CRM114-Status: GOOD (  21.12  )
+X-CRM114-CacheID: sfid-20250425_055520_734034_F9F15960 
+X-CRM114-Status: GOOD (  40.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,114 +126,172 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi,
 
-On 20/04/2025 21:10, Aradhya Bhatia wrote:
-> Hi,
+On 20/04/2025 21:01, Aradhya Bhatia wrote:
+> Hi Tomi,
 > 
 > On 14/04/25 16:41, Tomi Valkeinen wrote:
->> The driver does all the calculations and programming with video timings
->> (hftp, hbp, etc.) instead of the modeline values (hsync_start, ...).
->> Thus it makes sense to use struct videomode instead of struct
->> drm_display_mode internally.
+>> The driver currently expects the pixel clock and the HS clock to be
+>> compatible, but the DPHY PLL doesn't give very finely grained rates.
+>> This often leads to the situation where the pipeline just fails, as the
+>> resulting HS clock is just too off.
 >>
->> Switch to videomode and do some cleanups in cdns_dsi_mode2cfg() along
->> the way.
+>> We could change the driver to do a better job on adjusting the DSI
+>> blanking values, hopefully getting a working pipeline even if the pclk
+>> and HS clocks are not exactly compatible. But that is a bigger work.
+>>
+>> What we can do easily is to see in .atomic_check() what HS clock rate we
+>> can get, based on the pixel clock rate, and then convert the HS clock
+>> rate back to pixel clock rate and ask that rate from the crtc. If the
+>> crtc has a good PLL (which is the case for TI K3 SoCs), this will fix
+>> any issues wrt. the clock rates.
+>>
+>> If the crtc cannot provide the requested clock, well, we're no worse off
+>> with this patch than what we have at the moment.
 >>
 >> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 >> ---
->>   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 45 ++++++++++++++------------
->>   1 file changed, 24 insertions(+), 21 deletions(-)
+>>   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 37 ++++++++++++++++++++++++++
+>>   1 file changed, 37 insertions(+)
 >>
 >> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
->> index fb0623d3f854..a55f851711f0 100644
+>> index 63031379459e..165df5d595b8 100644
 >> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 >> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
->> @@ -9,6 +9,7 @@
->>   #include <drm/drm_drv.h>
->>   #include <drm/drm_probe_helper.h>
->>   #include <video/mipi_display.h>
->> +#include <video/videomode.h>
->>   
->>   #include <linux/clk.h>
->>   #include <linux/interrupt.h>
->> @@ -467,36 +468,35 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
+>> @@ -908,6 +908,28 @@ static u32 *cdns_dsi_bridge_get_input_bus_fmts(struct drm_bridge *bridge,
+>>   	return input_fmts;
 >>   }
 >>   
->>   static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
->> -			     const struct drm_display_mode *mode,
->> +			     const struct videomode *vm,
->>   			     struct cdns_dsi_cfg *dsi_cfg)
->>   {
->>   	struct cdns_dsi_output *output = &dsi->output;
->> -	unsigned int tmp;
->> -	bool sync_pulse = false;
->> +	u32 dpi_hsa, dpi_hbp, dpi_hfp, dpi_hact;
->> +	bool sync_pulse;
->>   	int bpp;
->>   
->> +	dpi_hsa = vm->hsync_len;
->> +	dpi_hbp = vm->hback_porch;
->> +	dpi_hfp = vm->hfront_porch;
->> +	dpi_hact = vm->hactive;
+>> +static long cdns_dsi_round_pclk(struct cdns_dsi *dsi, unsigned long pclk)
+>> +{
+>> +	struct cdns_dsi_output *output = &dsi->output;
+>> +	unsigned int nlanes = output->dev->lanes;
+>> +	union phy_configure_opts phy_opts = { 0 };
+>> +	u32 bitspp;
+>> +	int ret;
 >> +
->>   	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
+>> +	bitspp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
+>> +
+>> +	ret = phy_mipi_dphy_get_default_config(pclk, bitspp, nlanes,
+>> +					       &phy_opts.mipi_dphy);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = phy_validate(dsi->dphy, PHY_MODE_MIPI_DPHY, 0, &phy_opts);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	return div_u64((u64)phy_opts.mipi_dphy.hs_clk_rate * nlanes, bitspp);
+>> +}
+>> +
+>>   static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
+>>   					struct drm_bridge_state *bridge_state,
+>>   					struct drm_crtc_state *crtc_state,
+>> @@ -919,11 +941,26 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
+>>   	struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
+>>   	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
+>>   	struct videomode vm;
+>> +	long pclk;
 >>   
->> -	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
->> -		sync_pulse = true;
->> +	sync_pulse = output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
+>>   	/* cdns-dsi requires negative syncs */
+>>   	adjusted_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
+>>   	adjusted_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
 >>   
->>   	bpp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
+>> +	/*
+>> +	 * The DPHY PLL has quite a coarsely grained clock rate options. See
+>> +	 * what hsclk rate we can achieve based on the pixel clock, convert it
+>> +	 * back to pixel clock, set that to the adjusted_mode->clock. This is
+>> +	 * all in hopes that the CRTC will be able to provide us the requested
+>> +	 * clock, as otherwise the DPI and DSI clocks will be out of sync.
+>> +	 */
+>> +
+>> +	pclk = cdns_dsi_round_pclk(dsi, adjusted_mode->clock * 1000);
+>> +	if (pclk < 0)
+>> +		return (int)pclk;
+>> +
+>> +	adjusted_mode->clock = pclk / 1000;
+>> +
+>>   	drm_display_mode_to_videomode(adjusted_mode, &vm);
 >>   
->> -	tmp = mode->htotal -
->> -		(sync_pulse ? mode->hsync_end : mode->hsync_start);
->> +	dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp + (sync_pulse ? 0 : dpi_hsa),
->> +					 bpp, DSI_HBP_FRAME_OVERHEAD);
->>   
->> -	dsi_cfg->hbp = dpi_to_dsi_timing(tmp, bpp, DSI_HBP_FRAME_OVERHEAD);
->> +	if (sync_pulse)
->> +		dsi_cfg->hsa =
->> +			dpi_to_dsi_timing(dpi_hsa, bpp, DSI_HSA_FRAME_OVERHEAD);
->>   
->> -	if (sync_pulse) {
->> -		tmp = mode->hsync_end - mode->hsync_start;
->> +	dsi_cfg->hact = dpi_to_dsi_timing(dpi_hact, bpp, 0);
->>   
->> -		dsi_cfg->hsa = dpi_to_dsi_timing(tmp, bpp,
->> -						 DSI_HSA_FRAME_OVERHEAD);
->> -	}
->> -
->> -	dsi_cfg->hact = dpi_to_dsi_timing(mode->hdisplay, bpp, 0);
->> -	dsi_cfg->hfp = dpi_to_dsi_timing(mode->hsync_start - mode->hdisplay,
->> -					 bpp, DSI_HFP_FRAME_OVERHEAD);
->> +	dsi_cfg->hfp = dpi_to_dsi_timing(dpi_hfp, bpp, DSI_HFP_FRAME_OVERHEAD);
->>   
->>   	dsi_cfg->htotal = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
->>   	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+>>   	return cdns_dsi_check_conf(dsi, &vm, dsi_cfg);
 > 
-> I think at this stage, the dsi_cfg->htotal will always come out to be
-> 
-> ((dpi_htotal * bitspp) / 8),
-> 
-> no matter whether the sync_pulse or the event_mode is set or not.
-> 
-> Whatever the overheads are there, they get cancelled out. So, it doesn't
-> need to be individually tracked.
+> I think at this point cdns_dsi_check_conf is really only creating a
+> dsi_cfg (from the video-mode) so that it can later be used, and then
+> running phy_mipi_dphy_get_default_config(), and phy_validate(), both of
+> which have nothing to do with the freshly made dsi_cfg.
 
-dpi_to_dsi_timing() doesn't return the DPI timing converted _exactly_ to 
-DSI. It uses DIV_ROUND_UP() and handles the case where the DPI timing is 
-too small for DSI with the overhead.
+True. And cdns_dsi_mode2cfg() can't fail anymore, so it could be just a 
+void function.
 
-And I'd rather separate DPI and DSI timings as much as possible, even if 
-it is a bit more verbose. Here we want to calculate DSI htotal (i.e. the 
-total of DSI horizontal ticks), so I'd rather construct it from the DSI 
-timings, instead of making shortcuts and trusting that the DPI timings 
-match exactly (even if they would). Calculating these is rather error 
-prone already.
+> If there is no benefit in running both the latter functions again after
+> cdns_dsi_round_pclk() runs them, then perhaps we can just drop the
+> cdns_dsi_check_conf() altogether in favor of cdns_dsi_mode2cfg() being
+> called from .atomic_check()?
 
-At some point we want to adjust the DSI timings (at least if/when 
-implementing burst mode). While even then we'll aim to match the exact 
-DPI time, I think it's better to calculate the DSI htotal from the 
-adjusted DSI timings. If the DSI timings are not right, then the htotal 
-will also match that "wrongness", instead of just showing the DPI htotal.
+cdns_dsi_round_pclk() doesn't store the phy_cfg anywhere, whereas 
+cdns_dsi_check_conf() does.
+
+I think I originally wanted to have this structure, because:
+
+cdns_dsi_round_pclk() is given adjusted_mode->clock * 1000, and it 
+returns an "optimal" pixel clock that matches the DSI clock what the DSI 
+PLL can provide us.
+
+This rate is then divided by 1000, and set to adjusted_mode->clock.
+
+We then call cdns_dsi_check_conf(), calling 
+phy_mipi_dphy_get_default_config() and phy_validate(), but this time 
+it's with the "optimal" pixel clock (although truncated to kHz). So the 
+calls are not identical to cdns_dsi_round_pclk().
+
+Then, I have a local patch that adds some code to cdns_dsi_check_conf(). 
+It will check if there is a difference between the requested hs-clk 
+(which we got from phy_mipi_dphy_get_default_config()) and the final one 
+(which we got from phy_validate()), and if so, adjusts the DSI HFP so 
+that the total DSI line time would be close to the one we would have 
+gotten with the requested hs-clk.
+
+While I think that code is valid, the adjustments were always so small 
+that they rounded to 0, so I did not post that patch. Nevertheless, it 
+kind of points out that calling the functions again is not totally 
+pointless =).
+
+To be honest, I'm a bit reluctant to start rehashing the series. It's 
+rather time consuming to test, and some errors are not immediately 
+visible, if they're only seen as occasional glitches on the screen.
+
+If the code has no issues as such, I would suggest to do further 
+cleanups on top so that we'd get the upstream fixed (as it's very badly 
+broken at the moment) asap.
+
+> Furthermore, I understand updating the adjusted_mode->clock might help
+> the CRTC to use a pixel clock that's more in-tune with the _actual_
+> hs_clk_rate that is going to be generated. But, I am worried that it'll
+> cause a delta from the intended fps from the CRTC's end because the
+> timings aren't adjusted in accordance with the pixel-clock.
+
+Yes, it does. Also, it's not "more in-tune", as in some cases the clocks 
+are not at all in-tune =). The DSI PLL here is quite coarse with the rates.
+
+> Perhaps, along with pixel-clock, we can update the dsi_htotal and
+> dpi_htotal both too, to
+> 
+> new_dsi_htotal = (hs_clk_rate * #lanes) / (dpi_votal * fps * 8)
+> new_dpi_htotal = (hs_clk_rate * #lanes) / (dpi_vtotal * fps * bitspp).
+> 
+> And then, the respective front-porches can too get updated accordingly.
+
+Perhaps. But if there's a bridge after the cdns-dsi, its atomic_check 
+has already been called, with the original timings. Did it already use 
+those timings for creating its config?
+
+And is it better to output with the timings that (at least try to) match 
+the requested ones, but with an adjusted pclk, resulting in fps that 
+slightly off, or with both adjusted timings and adjusted pclk, getting a 
+better fps match?
+
+In my experience devices usually allow variations in the pixel clock 
+quite easily, but some are very strict at getting exactly the timings 
+that it expects.
 
   Tomi
 
