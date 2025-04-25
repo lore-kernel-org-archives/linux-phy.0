@@ -4,114 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDDC1C369D3
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 05:46:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A8FAC369D1
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 06:14:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfXo5nRHsB3euuRo/A+j7ndg/VN23FiEV+FtWtRDK4I=; b=Zv6J8dj0JitIHh
-	XIvDa3Ybb00I27fA7+CvTwB9T50z27Vcu2bBt5xrZp0t3wR2tx9x6XBG1f6AatJgvQie1ins1uOfD
-	l+bsppIJYgfZ3D8XaT6LXv79WTJcrfq43SBeZdcZOwD8KyffBNNEBtcStXGWGRteecyDqPh7R+/km
-	ewOr9LOwX588rYv0eKL4Vv3KTJE4hDp/0aCzxgO8VmPtUfg3iIci02EfQInjMA1fsaZV0kxFnY2t9
-	6HIChL/k2h8nvjfQob40YIG2qp8XocSCjyPeDqFi5gb4fwGoq/0uQkMYUVrI4a4b9H412dKFh99ha
-	OO1GNDT5anb0yGQ2wl+w==;
+	List-Owner; bh=L5iHmd9Vp6rpMDJcmsF8DoSTDd4IUONOB922wTcAdrQ=; b=IeCyTyDzgNyrdL
+	7IEj9MBoVN69i6R1POy4SXV5upsIBNKVevbtQBL+Y50EmAbZFPJmTsSMuu3y05yfNy1aMpY9WOZ23
+	BWvqezcTv/6Hy2V6jaHZ7tdYgtajpps+rgZ3Q8YWPTybmkN0383nJVZZ/DKLopMXmw29ZQVYRxAas
+	MNSNuaaSEFjudUKgGoG79WJf1KSDWbj5YJ2JDe00JWMkczi9GHPJnLTpVoCVFaM7AQ+xexnYyDgMs
+	mI+exQiDr4xELJLWNpTNQtEmX9YCuCFBc3dbQBdtblKRoo0kIXA050+nAhddrmU0GHsvXtwt1QnVr
+	W5y0YuyIfvLV3gnZqoPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8Btq-0000000G0kt-1gwn;
-	Fri, 25 Apr 2025 05:46:58 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1u8CKK-0000000G3He-3B3v;
+	Fri, 25 Apr 2025 06:14:20 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8Brz-0000000G0Wq-1a9J;
-	Fri, 25 Apr 2025 05:45:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D34AEA4BC91;
-	Fri, 25 Apr 2025 05:39:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 38CF0C4CEE4;
-	Fri, 25 Apr 2025 05:44:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745559901;
-	bh=c/cQxcmPVIzq1Y/rQcWzaqLsIWaZOdbIdZzBhrqYqsQ=;
+	id 1u8CIU-0000000G3Co-2NQc;
+	Fri, 25 Apr 2025 06:12:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1745561543;
+	bh=/nG4vNyP1COCiNOBKO3nrVUdbDkroVg1evrUeQmwSwk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Y1KSezpsHMpfS5Upkb+rdJI9zwna8UtbnvxEj++cCUXq5i2mSd+Yp8h80sxpNotTB
-	 QhJkFaxBj/BY92QnAgVGhzUGwF+g35amCwkBy/o6XoKgL9w6Mnnz/dbo5xqxWz6mSh
-	 R/aPGucwsBb2fTScDcN5fHlfRj7j1IYHLJVo2gDKaU2OmlIpEI63EIworPFtDis4e/
-	 t53lWtH2DA0yQosT9IKonp/7NtrZbh9ZHjtGBKxLe4ya8G1t+Aqr4Ar0oSJUWACPmT
-	 s0usuu9cHXBWg1jqYrUlTQJH9uKwGHCPR3VP4zrg5nyp+PPEblXDsrEKn+MsJIBMYI
-	 kgtJZMEtRdM4A==
-Message-ID: <98bbcfe8-c4bf-4302-8f12-38551eace750@kernel.org>
-Date: Fri, 25 Apr 2025 07:44:55 +0200
+	b=pdY9ofalToAHJECOkQcTKUweBtDNNM6Az4/arBlM9Lofq+JgU/FTuva62TzDFmFwf
+	 u47nh4ZO33wnYoDvrLZAm7vNAIHvHSFrdyXTOdcu8dfDxTSoti1EIMa96U3YY8FZU8
+	 LADZ+vMUCgpgLu/SKZcn9qWOgtaNG3hIH1Ce7kn5MoJGHbI8d8oyW0JYlyWcPhk+gC
+	 gBstkCAdT+z1Mkt65fEyWIB6keZ1D+KWpsWR3FsfXqdkvte76qRH3JvkIEDKk+c1gA
+	 ZbVq4b1UrmMYvU0knUWYsN7MlKAxIrNiRLEGLwRCM9ijvnPNiedXZMqUST/yK7tXTW
+	 Ydo2fgrAPNMbg==
+Received: from [192.168.1.90] (unknown [82.76.59.226])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7935F17E0808;
+	Fri, 25 Apr 2025 08:12:23 +0200 (CEST)
+Message-ID: <eb1f0bf7-3827-488e-925f-18c8fee9b1a2@collabora.com>
+Date: Fri, 25 Apr 2025 09:12:22 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 10/10] arm64: defconfig: Add M31 eUSB2 PHY config
-To: Melody Olvera <melody.olvera@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20250421-sm8750_usb_master-v5-0-25c79ed01d02@oss.qualcomm.com>
- <20250421-sm8750_usb_master-v5-10-25c79ed01d02@oss.qualcomm.com>
- <2d01bcd6-80e1-4c15-ab23-b5ea5b90f2b1@kernel.org>
- <575d63e7-f390-46ef-8687-30112849b442@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] phy: phy-rockchip-samsung-hdptx: Fix PHY PLL output
+ 50.25MHz error
+To: Algea Cao <algea.cao@rock-chips.com>, vkoul@kernel.org,
+ kishon@kernel.org, heiko@sntech.de, andy.yan@rock-chips.com
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250425023720.3296069-1-algea.cao@rock-chips.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <575d63e7-f390-46ef-8687-30112849b442@oss.qualcomm.com>
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20250425023720.3296069-1-algea.cao@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250424_224503_653196_EEB0EF77 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250424_231226_808703_A5457A98 
+X-CRM114-Status: GOOD (  12.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,24 +76,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/04/2025 19:13, Melody Olvera wrote:
-> 
-> 
-> On 4/24/2025 6:16 AM, Krzysztof Kozlowski wrote:
->> On 22/04/2025 00:00, Melody Olvera wrote:
->>> The SM8750 SoCs use an eUSB2 PHY driver different from the
->> Qualcomm SM8750
->>
->> That's a defconfig for all vendors.
-> 
-> And...? Apologies, I understand what is actionable about this comment.
-> Please be clear what you want done about this.
+Hi Algea,
 
-s/SM8750/Qualcomm SM8750/ because otherwise how anyone non-qcom would
-know what this commit is about?
+On 4/25/25 5:37 AM, Algea Cao wrote:
+> When using HDMI PLL frequency division coefficient at 50.25MHz
+> that calculated by rk_hdptx_phy_clk_pll_calc(), it is failed to
 
-Best regards,
-Krzysztof
+s/that/that is/
+s/is failed/it fails/
+
+> get PHY LANE lock. Although the calculated values are within the
+> allowable range of PHY PLL configuration.
+> 
+> So we manually calculated PHY PLL frequency division coefficient
+> at 50.25Mhz and added it to ropll_tmds_cfg. Manually calculated
+> value  can make PHY LANE lock normally and output 50.25MHz normally.
+
+I'd reword this paragraph using imperative sentences, e.g.:
+
+In order to fix the PHY LANE lock error and provide the expected
+50.25MHz output, manually compute the required PHY PLL frequency
+division coefficient and add it to ropll_tmds_cfg configuration table.
+
+> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index fe7c05748356..77236f012a1f 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -476,6 +476,8 @@ static const struct ropll_config ropll_tmds_cfg[] = {
+>  	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+>  	{ 650000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
+>  	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> +	{ 502500, 84, 84, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 11, 1, 4, 5,
+> +	  4, 11, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+>  	{ 337500, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5,
+>  	  1, 1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+>  	{ 400000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+
+With the above fixed,
+
+Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+
+Thanks,
+Cristian
 
 -- 
 linux-phy mailing list
