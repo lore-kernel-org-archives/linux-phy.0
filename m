@@ -4,110 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86DB8C369C2
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 13:37:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BE59C369D3
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 19:52:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jYvLlLFUkut5U7omHoeCf/D90Zi3WLSt2eyskFKF2ec=; b=vSnsvjeqpJfQMn
-	2O4vyswtEljmO9x/3IkfFW4QEoOj0yc6Fp+opNarkAImElW5xmj5tLo5unlSZyDRo1t1dj5QcfgDE
-	sAu8t60NNwplxcQpl5xwEV1zOT8IKE7UOw763cYbr97Y9Wb7qgqFy+GD23UhjP3WZnHGbOgOGwEKh
-	ACShpoJZhUB37E0kP3CUWja3iyBjV/BdwAApEE3eBo789ROgW9MrwvFD/NMprwSBGGQkQzQwFZcnR
-	S5G77/1A/OROaYvFHd00umnC0TcswFJgA5j2DtPQSNjle4eSOVaXbi5nUKfm92L2gzcx/PfwycbFX
-	v9A80qQYzJT+ZeWeGJ7Q==;
+	List-Owner; bh=4NQP1Z3sz3Lze445JMLxw+M9Zig8mG+JPrP2tJsAt+U=; b=KqgSKma+qs9U2v
+	e2AzBxqjfuJ9Lpp1Mn427mTTAj9gc8kYXP6OVr5SUO6oiAuFOTQRvfHCeA5UkXYdx5pDgCXt0BEAU
+	YZ/b5izQgzCLLZN7R2IH//8giDgToVjv8UcD5W/zedhsO3PuI2tiIG+d7HWTN5qApMHF38BIoD6fb
+	phuSS4ZxNJzFuZBX9+pvoKR+7HWP0RJw2Eub5DJ7e6nMRDbCMF+WZ4gW1QXIqLATv8FBJqlUpGJrH
+	AVZDbsbcPQH2mHUqemCjsRqKwSaFKKoqNrAIs7NfRGblnRAOFJS3Cj3vlSkMoW1ubsd4FayVH8a7h
+	RqQ7Cp68Z5/Xs+KaFK0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8JEx-0000000HJIX-4Bax;
-	Fri, 25 Apr 2025 13:37:16 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1u8P69-00000000j3w-3ZZ5;
+	Fri, 25 Apr 2025 19:52:33 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8IaO-0000000HBsF-2Il2
+	id 1u8OvS-00000000h1d-0BSf
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Apr 2025 12:55:21 +0000
-Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0EA3E82E;
-	Fri, 25 Apr 2025 14:55:15 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1745585716;
-	bh=V0vzS2SBMmSwtDfpTnUAKP1Fy9rXUK+2CtvLBI82r4Y=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=DVbPO376F5YxoK8yNsIZgZ0pvtugPze8+PlJBPY6F1/C60SvPFGge85a9lMg/1ztK
-	 B8fHRQQJ1wc3xOUk0mZuvhQ3I6b/40hvxZTifRSOv/gdTupPu84Zfm5QPFGjoSENCd
-	 mCK1bLdJqVBlEZj8qWd9BmOf1hf+n7sHDbNTGpSo=
-Message-ID: <9c8f2ab2-4492-47df-a27e-7c603436ce36@ideasonboard.com>
-Date: Fri, 25 Apr 2025 15:55:14 +0300
+	Fri, 25 Apr 2025 19:41:31 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53PGJqhZ031964
+	for <linux-phy@lists.infradead.org>; Fri, 25 Apr 2025 19:41:29 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=GL3IxQbhqkxUKygiLbe+Fwsj
+	kd3BgGNhLCaIxaMVpwQ=; b=igVIqDtlqvStpH+Ee+it7NLTTTa0+IeKzLD1wLbx
+	MHwWda4yv4boL6lAWbdBSxyO414TigFiJ8XmHYSQv6ot55IcQr7t5biJ8ulue4ZR
+	WwudKym85y7tLLx653GOgodNqZq6308tcQRnjjgCF04jG/+rSKSQ+oTXelNocw7u
+	8Kmdmr7yHVvdCvAxvMrb0tKYzYTCUS4wXQ1azwTh/pg/5pTv0oCi3TweVEOE1XhD
+	ugeZRUaa1QvOrChMc4iN6YK3hAfnGtRM39pDZMyS0fwzclCYmIBzcDGG4QKs8qFB
+	O10b/WjPZ+VQuJ6AaRM6oevvsAsuToQ1WpMiAQXY9A6O0g==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 466jgya3yj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 25 Apr 2025 19:41:28 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7c5f3b8b1a1so432322885a.3
+        for <linux-phy@lists.infradead.org>; Fri, 25 Apr 2025 12:41:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745610088; x=1746214888;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GL3IxQbhqkxUKygiLbe+Fwsjkd3BgGNhLCaIxaMVpwQ=;
+        b=jRG6SxKXfzntUbuqAJza2zyt2F+n1u4lnYqIaNwf3AhnlONmS8UJ4Pi8N4gXsl2F3c
+         ba2TVkWcnna+LJ/diA0+Tptxw2HYjTj4zQLdjIWbRs1TuUOy/mNSuavU3mmV/jrfmIPn
+         W5ilnGeLjsyZgY1ExXy+okyDJFIXJrwtz7v2MikMHjY+bP5NK3KWC6oGWLGkjf/gbGgA
+         fpZZq/DrbqrseWiTfb1IC1XllyoHkxMy5GKncPePXePH4gUS4ea6wHN4qa8k7Yb28xdo
+         8jaO5Wjzx4ZeIEJA8Gd4thfuIL5VWNzwnfXyfXxowhx7DhqLi10bzznjnfhVwHZtarEo
+         pEhg==
+X-Forwarded-Encrypted: i=1; AJvYcCX06JO1QnrHsjpQcPZlqeywZEBXKfn6dYmqDlfRtjPMc/XzBcsQieSWUpoNwo1p7mGuIqqsj8EC8L8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywv1mnsQZBC0QGs4GS8pEtPgdP8HfRThhhoXuVob2C5oW5XL9FT
+	qIiVxoKZHB1FdmOe2OAubVaMmFNVvpJMjAri1K7+3P/ptsQvbmxXAYOdVBKU+9c637QlY4/xMPh
+	G3g5KGTDJdxfJM9xDDsx655IsLMqBHH7ZYV9zgzdHBFCZ5eGU1W1hUbG1OIFpfAsp
+X-Gm-Gg: ASbGncvPoM187h1eUEoDFY1zJpLfGsgrH7Z5Mggk6nVBVB8xnhQalDN8kBCBw7obVrg
+	N2jGbM1QSCRnAE7HwTBLsfqnRVDJC8RTH7/psQK6W4JOkc5cEJLl6RbsXLnxxUU8rwM+vhDXUt9
+	nTpyGTBv14s03UEpGvCH4NsAmW+EkhBa+2zKUqUPfUDdU5fa2NapTHZ2e9NqButjGxoOTQvmLHH
+	UFcGNPy+oWiNrMRw+rLJE52FNCKzY7j81jvRDsk80B2q+f9TiWblttrnxMzW2OL2gPyTGqoac4D
+	LcWVkEEQ00buo+FujHbOaSvmgeO/SGzG3/GBFYnd/Avi9jgM+z8WsnzPHYqhGD/r25uGtKsjld8
+	=
+X-Received: by 2002:a05:620a:24ca:b0:7c5:dfe6:222a with SMTP id af79cd13be357-7c960793e41mr547095385a.42.1745610088062;
+        Fri, 25 Apr 2025 12:41:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG9sXFC5qtgaAH+0BpznCYCLWqca8xyr5lGiw9XprZM90nD/EbobhyTqGKDtHjNqLHN2anmIQ==
+X-Received: by 2002:a05:620a:24ca:b0:7c5:dfe6:222a with SMTP id af79cd13be357-7c960793e41mr547092485a.42.1745610087717;
+        Fri, 25 Apr 2025 12:41:27 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54e7ccb8a03sm704272e87.259.2025.04.25.12.41.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 25 Apr 2025 12:41:27 -0700 (PDT)
+Date: Fri, 25 Apr 2025 22:41:25 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Pengyu Luo <mitltlatltl@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Stephen Rothwell <sfr@canb.auug.org.au>,
+        Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] phy: qualcomm: phy-qcom-eusb2-repeater: rework
+ reg override handler
+Message-ID: <q6zqfk3l2khp3tkodxd4pzhufiesyjcypl66zoqzslolwoveyo@ltrw2iulrkqs>
+References: <20250416120201.244133-1-mitltlatltl@gmail.com>
+ <20250416120201.244133-3-mitltlatltl@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 16/17] drm/bridge: cdns-dsi: Tune adjusted_mode->clock
- according to dsi needs
-To: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Devarsh Thakkar <devarsht@ti.com>, Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Jayesh Choudhary <j-choudhary@ti.com>
-References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
- <20250414-cdns-dsi-impro-v3-16-4e52551d4f07@ideasonboard.com>
- <7de0229a-192f-4d0f-8add-1a50c58f367b@linux.dev>
-Content-Language: en-US
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
- 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
-In-Reply-To: <7de0229a-192f-4d0f-8add-1a50c58f367b@linux.dev>
+Content-Disposition: inline
+In-Reply-To: <20250416120201.244133-3-mitltlatltl@gmail.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDI1MDE0MCBTYWx0ZWRfX9eLuP6T3tEks rCJqJklXHc+OPZEYfEwJRya0Hu+JEH+BytZ2Ed9D5PogLAXwuToT7caATf3hsNFdkVGmPvu0Vn3 Vp6MzH1D++MCdI0WuGJVpykEopZoh6jbYiinnHsKyE2HnLJy7/zJoRqjJ0SMskY70WvRwPvtPO9
+ 5pU0OF11v1CgfM7KQ46FcHg8vQnYXGz96G9P2ArLa2nrtLoerzaTDwVAvboiU+F7v1tn+c2I84v oJAE+biFamRoWDdJN8TQg61lbaBFoXlVS92VGYkri5NMtsTb5jwe1N92h4VuvQjIWZKhjlFnrGA c1ogKaciajVbrlih9u8IJ/AQcJVeZGnhaOefIIJy9+HulajdUyUAf5G8DrpJW4G36twLbJwxkJB
+ jo56reJn68YOZMxjiKKA8FjootpuUEZO3rsKn0nJYevtnnFAjOOLOJz8Edh0TgCA10qNYVOQ
+X-Proofpoint-GUID: 3NHdOFs1Y35Bkyhmj87wqJpq30RLb9xb
+X-Proofpoint-ORIG-GUID: 3NHdOFs1Y35Bkyhmj87wqJpq30RLb9xb
+X-Authority-Analysis: v=2.4 cv=M5VNKzws c=1 sm=1 tr=0 ts=680be568 cx=c_pps a=HLyN3IcIa5EE8TELMZ618Q==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10 a=XR8D0OoHHMoA:10 a=pGLkceISAAAA:8 a=dnmzA44czj2E3hsaG-QA:9 a=CjuIK1q_8ugA:10 a=zgiPjhLxNE0A:10
+ a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-04-25_06,2025-04-24_02,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0
+ lowpriorityscore=0 adultscore=0 spamscore=0 priorityscore=1501 mlxscore=0
+ mlxlogscore=877 malwarescore=0 impostorscore=0 clxscore=1015
+ suspectscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504250140
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250425_055520_734034_F9F15960 
-X-CRM114-Status: GOOD (  40.26  )
+X-CRM114-CacheID: sfid-20250425_124130_202134_21E5E721 
+X-CRM114-Status: GOOD (  14.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,182 +125,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Wed, Apr 16, 2025 at 08:02:01PM +0800, Pengyu Luo wrote:
+> In downstream tree, many registers need to be overridden, it varies
+> from devices and platforms, with these registers getting more, adding
+> a handler for this is helpful.
 
-On 20/04/2025 21:01, Aradhya Bhatia wrote:
-> Hi Tomi,
-> 
-> On 14/04/25 16:41, Tomi Valkeinen wrote:
->> The driver currently expects the pixel clock and the HS clock to be
->> compatible, but the DPHY PLL doesn't give very finely grained rates.
->> This often leads to the situation where the pipeline just fails, as the
->> resulting HS clock is just too off.
->>
->> We could change the driver to do a better job on adjusting the DSI
->> blanking values, hopefully getting a working pipeline even if the pclk
->> and HS clocks are not exactly compatible. But that is a bigger work.
->>
->> What we can do easily is to see in .atomic_check() what HS clock rate we
->> can get, based on the pixel clock rate, and then convert the HS clock
->> rate back to pixel clock rate and ask that rate from the crtc. If the
->> crtc has a good PLL (which is the case for TI K3 SoCs), this will fix
->> any issues wrt. the clock rates.
->>
->> If the crtc cannot provide the requested clock, well, we're no worse off
->> with this patch than what we have at the moment.
->>
->> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
->> ---
->>   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 37 ++++++++++++++++++++++++++
->>   1 file changed, 37 insertions(+)
->>
->> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
->> index 63031379459e..165df5d595b8 100644
->> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
->> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
->> @@ -908,6 +908,28 @@ static u32 *cdns_dsi_bridge_get_input_bus_fmts(struct drm_bridge *bridge,
->>   	return input_fmts;
->>   }
->>   
->> +static long cdns_dsi_round_pclk(struct cdns_dsi *dsi, unsigned long pclk)
->> +{
->> +	struct cdns_dsi_output *output = &dsi->output;
->> +	unsigned int nlanes = output->dev->lanes;
->> +	union phy_configure_opts phy_opts = { 0 };
->> +	u32 bitspp;
->> +	int ret;
->> +
->> +	bitspp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
->> +
->> +	ret = phy_mipi_dphy_get_default_config(pclk, bitspp, nlanes,
->> +					       &phy_opts.mipi_dphy);
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = phy_validate(dsi->dphy, PHY_MODE_MIPI_DPHY, 0, &phy_opts);
->> +	if (ret)
->> +		return ret;
->> +
->> +	return div_u64((u64)phy_opts.mipi_dphy.hs_clk_rate * nlanes, bitspp);
->> +}
->> +
->>   static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
->>   					struct drm_bridge_state *bridge_state,
->>   					struct drm_crtc_state *crtc_state,
->> @@ -919,11 +941,26 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
->>   	struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
->>   	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
->>   	struct videomode vm;
->> +	long pclk;
->>   
->>   	/* cdns-dsi requires negative syncs */
->>   	adjusted_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
->>   	adjusted_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
->>   
->> +	/*
->> +	 * The DPHY PLL has quite a coarsely grained clock rate options. See
->> +	 * what hsclk rate we can achieve based on the pixel clock, convert it
->> +	 * back to pixel clock, set that to the adjusted_mode->clock. This is
->> +	 * all in hopes that the CRTC will be able to provide us the requested
->> +	 * clock, as otherwise the DPI and DSI clocks will be out of sync.
->> +	 */
->> +
->> +	pclk = cdns_dsi_round_pclk(dsi, adjusted_mode->clock * 1000);
->> +	if (pclk < 0)
->> +		return (int)pclk;
->> +
->> +	adjusted_mode->clock = pclk / 1000;
->> +
->>   	drm_display_mode_to_videomode(adjusted_mode, &vm);
->>   
->>   	return cdns_dsi_check_conf(dsi, &vm, dsi_cfg);
-> 
-> I think at this point cdns_dsi_check_conf is really only creating a
-> dsi_cfg (from the video-mode) so that it can later be used, and then
-> running phy_mipi_dphy_get_default_config(), and phy_validate(), both of
-> which have nothing to do with the freshly made dsi_cfg.
+It should be noted that previously all values were applied during _init
+phase, before checking the status etc. Now the overrides are programmed
+from the set_mode. Should you still program sane defaults at the init
+stage too?
 
-True. And cdns_dsi_mode2cfg() can't fail anymore, so it could be just a 
-void function.
+BTW, is there a real need to override those for the platform you are
+working on? Could you please provide some details, maybe in the cover
+letter.
 
-> If there is no benefit in running both the latter functions again after
-> cdns_dsi_round_pclk() runs them, then perhaps we can just drop the
-> cdns_dsi_check_conf() altogether in favor of cdns_dsi_mode2cfg() being
-> called from .atomic_check()?
+> Signed-off-by: Pengyu Luo <mitltlatltl@gmail.com>
+> ---
+>  .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 105 +++++++++++++++---
+>  1 file changed, 92 insertions(+), 13 deletions(-)
 
-cdns_dsi_round_pclk() doesn't store the phy_cfg anywhere, whereas 
-cdns_dsi_check_conf() does.
-
-I think I originally wanted to have this structure, because:
-
-cdns_dsi_round_pclk() is given adjusted_mode->clock * 1000, and it 
-returns an "optimal" pixel clock that matches the DSI clock what the DSI 
-PLL can provide us.
-
-This rate is then divided by 1000, and set to adjusted_mode->clock.
-
-We then call cdns_dsi_check_conf(), calling 
-phy_mipi_dphy_get_default_config() and phy_validate(), but this time 
-it's with the "optimal" pixel clock (although truncated to kHz). So the 
-calls are not identical to cdns_dsi_round_pclk().
-
-Then, I have a local patch that adds some code to cdns_dsi_check_conf(). 
-It will check if there is a difference between the requested hs-clk 
-(which we got from phy_mipi_dphy_get_default_config()) and the final one 
-(which we got from phy_validate()), and if so, adjusts the DSI HFP so 
-that the total DSI line time would be close to the one we would have 
-gotten with the requested hs-clk.
-
-While I think that code is valid, the adjustments were always so small 
-that they rounded to 0, so I did not post that patch. Nevertheless, it 
-kind of points out that calling the functions again is not totally 
-pointless =).
-
-To be honest, I'm a bit reluctant to start rehashing the series. It's 
-rather time consuming to test, and some errors are not immediately 
-visible, if they're only seen as occasional glitches on the screen.
-
-If the code has no issues as such, I would suggest to do further 
-cleanups on top so that we'd get the upstream fixed (as it's very badly 
-broken at the moment) asap.
-
-> Furthermore, I understand updating the adjusted_mode->clock might help
-> the CRTC to use a pixel clock that's more in-tune with the _actual_
-> hs_clk_rate that is going to be generated. But, I am worried that it'll
-> cause a delta from the intended fps from the CRTC's end because the
-> timings aren't adjusted in accordance with the pixel-clock.
-
-Yes, it does. Also, it's not "more in-tune", as in some cases the clocks 
-are not at all in-tune =). The DSI PLL here is quite coarse with the rates.
-
-> Perhaps, along with pixel-clock, we can update the dsi_htotal and
-> dpi_htotal both too, to
-> 
-> new_dsi_htotal = (hs_clk_rate * #lanes) / (dpi_votal * fps * 8)
-> new_dpi_htotal = (hs_clk_rate * #lanes) / (dpi_vtotal * fps * bitspp).
-> 
-> And then, the respective front-porches can too get updated accordingly.
-
-Perhaps. But if there's a bridge after the cdns-dsi, its atomic_check 
-has already been called, with the original timings. Did it already use 
-those timings for creating its config?
-
-And is it better to output with the timings that (at least try to) match 
-the requested ones, but with an adjusted pclk, resulting in fps that 
-slightly off, or with both adjusted timings and adjusted pclk, getting a 
-better fps match?
-
-In my experience devices usually allow variations in the pixel clock 
-quite easily, but some are very strict at getting exactly the timings 
-that it expects.
-
-  Tomi
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
