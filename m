@@ -4,88 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82612C369D1
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 13:13:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A60A9C369D5
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Apr 2025 13:13:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9lp68IvYa2D/pOdnnv5ubb3jYjnYLX/wpblHWQV7F8Q=; b=DgQZFDsZaPWs9u
-	NL//J5ni3jNxZipXhZ320XYAqb31K+aU8YNx8JzKwMyaELFbG8d2VTZPfm4BR8n+8PhCbUU1QOr6t
-	y5t9Z3W6ax+0q+r0l1pNC1rQJtA8trb8PDM6rwMWVwcWyW0biMTANd/gBzWzJrx1EUftvcqC2OUEq
-	TQq5MC0bC52+m529vDy78HCM7ClTFtpISVs8o2cjNzgJkhy9ha0xqUK6dN5rgauEeq4F7JIyePTFf
-	jhOa3SwyXCpVOCjA0xxtCsx5tw7QiYQQfQQiQmUe/ZADS++YDV/q1IbDXpfIp1ZZHbIXS/LraxYrK
-	Sg68WLYBy1mA+bJEM0GA==;
+	List-Owner; bh=8GLSCJY4hzFAGu0G0c9vw0wvBJtwohxe6RJtygFN9DM=; b=3Az0IZIkdSrpx8
+	ZuRTazudY3y9GLeZy4rsNDpOpRaypp3WawMM0yyj+7tIlgVf/RTqS3fiOs7sAJVeO3nyqtSGxDLOi
+	KHeiAmJDKQXaEayHKEYg+tcGg36tOurQmKS4wklk4visfxeVipyV1mQQ9lLWjxAT2jbMdThkxA3A4
+	ZlF4wOfbaBShBGnIppKZYo6EBSRnWXmH5iHemkGE7dgAOsw7NX19vRrxwEkchfcM/nj4wnOT9+Rmn
+	z4wi921IkgT437RKcEwGiJ3zItTrVd4JXXJvfe0HlPEB/GiblefHnxsn6w5Xqd8FtZd7jFSfUHlZ5
+	rIU9BG50wzkKmT4Wp7zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8Is6-0000000HEZe-176T;
-	Fri, 25 Apr 2025 13:13:38 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1u8IsF-0000000HEcx-1nei;
+	Fri, 25 Apr 2025 13:13:47 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8Hiz-0000000H2zA-2BiH
+	id 1u8HoR-0000000H41W-2mXy
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Apr 2025 12:00:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9D8524A9D8;
-	Fri, 25 Apr 2025 12:00:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id F2120C4CEED;
-	Fri, 25 Apr 2025 12:00:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1745582408;
-	bh=y7mtw6+FUzq5sQIQsg0DALHPrQWOm0H73hleZx5lEtA=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=cit6gzLF460YQXJJIdBWql3i2/Us904co5tn7yMMQ2L13gOQ8t6WnqdvyIoReE4VB
-	 k9UtJPSLSpiznGgMxQtf9NNUR5Fr0+b6dsr/2/MzanCvkShv4FWIyoTuqJnfjsE9+n
-	 c5sREWhZ4aR2U6ix2vj1MkqraeWErRW8j76duMG2p3sEcnUINCYlr38QdB/Tl/U/VC
-	 hqI8NLKNOQsVnwBcQRMZmzPNJJJ7RBNUdl5kgmtVP3AM6EgOcFYY+P45N/OhdksGgn
-	 VH8n5TlyeQrSVx76tLQ+7BX4ldGpJvF9kGXSEy+POt2BF9aK/AbxuxyMLN1VEFt4Il
-	 /JHbDd2GFCH0w==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DDC3FC369C2;
-	Fri, 25 Apr 2025 12:00:07 +0000 (UTC)
-From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
-Date: Fri, 25 Apr 2025 16:00:02 +0400
-Subject: [PATCH v8 1/2] arm64: dts: qcom: ipq5018: Add PCIe related nodes
+	Fri, 25 Apr 2025 12:05:48 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9370FD77;
+	Fri, 25 Apr 2025 13:57:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1745582275;
+	bh=1PNw6p2B16PEo0GVueQIVoNx6GFKG2AUKgcYHI36HIw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=HL4OQz1qBlPSBDZiwbFF863X7K8HQrPYZ9FqsW52AvtAbzkkLHooCgdJ0YnJpK5Nk
+	 yl29q1IMja83OosIa2+lvlFQxn4LacQ4lnZ7IbDzaKsJqozVorhQ4iBKUinYAA7UJl
+	 bEmwwdSz5u+OCcpTorvSxJmSzhqKSdx29vMo9Vhc=
+Message-ID: <6d053590-7390-4d4c-98b7-32a02b5bf561@ideasonboard.com>
+Date: Fri, 25 Apr 2025 14:57:54 +0300
 MIME-Version: 1.0
-Message-Id: <20250425-ipq5018-pcie-v8-1-03ee75c776dc@outlook.com>
-References: <20250425-ipq5018-pcie-v8-0-03ee75c776dc@outlook.com>
-In-Reply-To: <20250425-ipq5018-pcie-v8-0-03ee75c776dc@outlook.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Nitheesh Sekar <quic_nsekar@quicinc.com>, 
- Varadarajan Narayanan <quic_varada@quicinc.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Praveenkumar I <quic_ipkumar@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-pci@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>, 
- 20250317100029.881286-1-quic_varada@quicinc.com, 
- 20250317100029.881286-2-quic_varada@quicinc.com, 
- Sricharan R <quic_srichara@quicinc.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1745582405; l=7947;
- i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
- bh=TBPQ5Gx5v7GQ746HC2P0zzVYqSzT/5a7T7FVqwq5EqI=;
- b=ZbRlpfRcm6jR7CIHjDV5WBwt5C8xgLy8FhfePdyhrgOX46KK5fovmPaLOjuII/QOgwP3K6Rlx
- Xwb28Lz4ybBCudZgTXeDI5/FEMwddyiGCKComNH93i7HEEJj1EtX0dd
-X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
- pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
-X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
- with auth_id=364
-X-Original-From: George Moussalem <george.moussalem@outlook.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 14/17] drm/bridge: cdns-dsi: Use video mode and clean
+ up cdns_dsi_mode2cfg()
+To: Aradhya Bhatia <aradhya.bhatia@linux.dev>
+Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
+ Devarsh Thakkar <devarsht@ti.com>, Jyri Sarha <jyri.sarha@iki.fi>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Jayesh Choudhary <j-choudhary@ti.com>
+References: <20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com>
+ <20250414-cdns-dsi-impro-v3-14-4e52551d4f07@ideasonboard.com>
+ <0072bb93-5456-40c4-96bc-a7afb3523238@linux.dev>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ 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
+In-Reply-To: <0072bb93-5456-40c4-96bc-a7afb3523238@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250425_050009_631501_BA35F59A 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20250425_050547_865862_9F49DE64 
+X-CRM114-Status: GOOD (  21.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,304 +119,123 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: george.moussalem@outlook.com
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Hi,
 
-Add phy and controller nodes for a 2-lane Gen2 and
-a 1-lane Gen2 PCIe bus. IPQ5018 has 8 MSI SPI interrupts and
-one global interrupt.
+On 20/04/2025 21:10, Aradhya Bhatia wrote:
+> Hi,
+> 
+> On 14/04/25 16:41, Tomi Valkeinen wrote:
+>> The driver does all the calculations and programming with video timings
+>> (hftp, hbp, etc.) instead of the modeline values (hsync_start, ...).
+>> Thus it makes sense to use struct videomode instead of struct
+>> drm_display_mode internally.
+>>
+>> Switch to videomode and do some cleanups in cdns_dsi_mode2cfg() along
+>> the way.
+>>
+>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+>> ---
+>>   drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 45 ++++++++++++++------------
+>>   1 file changed, 24 insertions(+), 21 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> index fb0623d3f854..a55f851711f0 100644
+>> --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+>> @@ -9,6 +9,7 @@
+>>   #include <drm/drm_drv.h>
+>>   #include <drm/drm_probe_helper.h>
+>>   #include <video/mipi_display.h>
+>> +#include <video/videomode.h>
+>>   
+>>   #include <linux/clk.h>
+>>   #include <linux/interrupt.h>
+>> @@ -467,36 +468,35 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
+>>   }
+>>   
+>>   static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
+>> -			     const struct drm_display_mode *mode,
+>> +			     const struct videomode *vm,
+>>   			     struct cdns_dsi_cfg *dsi_cfg)
+>>   {
+>>   	struct cdns_dsi_output *output = &dsi->output;
+>> -	unsigned int tmp;
+>> -	bool sync_pulse = false;
+>> +	u32 dpi_hsa, dpi_hbp, dpi_hfp, dpi_hact;
+>> +	bool sync_pulse;
+>>   	int bpp;
+>>   
+>> +	dpi_hsa = vm->hsync_len;
+>> +	dpi_hbp = vm->hback_porch;
+>> +	dpi_hfp = vm->hfront_porch;
+>> +	dpi_hact = vm->hactive;
+>> +
+>>   	memset(dsi_cfg, 0, sizeof(*dsi_cfg));
+>>   
+>> -	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+>> -		sync_pulse = true;
+>> +	sync_pulse = output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
+>>   
+>>   	bpp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
+>>   
+>> -	tmp = mode->htotal -
+>> -		(sync_pulse ? mode->hsync_end : mode->hsync_start);
+>> +	dsi_cfg->hbp = dpi_to_dsi_timing(dpi_hbp + (sync_pulse ? 0 : dpi_hsa),
+>> +					 bpp, DSI_HBP_FRAME_OVERHEAD);
+>>   
+>> -	dsi_cfg->hbp = dpi_to_dsi_timing(tmp, bpp, DSI_HBP_FRAME_OVERHEAD);
+>> +	if (sync_pulse)
+>> +		dsi_cfg->hsa =
+>> +			dpi_to_dsi_timing(dpi_hsa, bpp, DSI_HSA_FRAME_OVERHEAD);
+>>   
+>> -	if (sync_pulse) {
+>> -		tmp = mode->hsync_end - mode->hsync_start;
+>> +	dsi_cfg->hact = dpi_to_dsi_timing(dpi_hact, bpp, 0);
+>>   
+>> -		dsi_cfg->hsa = dpi_to_dsi_timing(tmp, bpp,
+>> -						 DSI_HSA_FRAME_OVERHEAD);
+>> -	}
+>> -
+>> -	dsi_cfg->hact = dpi_to_dsi_timing(mode->hdisplay, bpp, 0);
+>> -	dsi_cfg->hfp = dpi_to_dsi_timing(mode->hsync_start - mode->hdisplay,
+>> -					 bpp, DSI_HFP_FRAME_OVERHEAD);
+>> +	dsi_cfg->hfp = dpi_to_dsi_timing(dpi_hfp, bpp, DSI_HFP_FRAME_OVERHEAD);
+>>   
+>>   	dsi_cfg->htotal = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
+>>   	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+> 
+> I think at this stage, the dsi_cfg->htotal will always come out to be
+> 
+> ((dpi_htotal * bitspp) / 8),
+> 
+> no matter whether the sync_pulse or the event_mode is set or not.
+> 
+> Whatever the overheads are there, they get cancelled out. So, it doesn't
+> need to be individually tracked.
 
-NOTE: the PCIe controller supports gen3, yet the phy is limited to gen2.
+dpi_to_dsi_timing() doesn't return the DPI timing converted _exactly_ to 
+DSI. It uses DIV_ROUND_UP() and handles the case where the DPI timing is 
+too small for DSI with the overhead.
 
-Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-Signed-off-by: Sricharan R <quic_srichara@quicinc.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Signed-off-by: George Moussalem <george.moussalem@outlook.com>
----
- arch/arm64/boot/dts/qcom/ipq5018.dtsi | 246 +++++++++++++++++++++++++++++++++-
- 1 file changed, 244 insertions(+), 2 deletions(-)
+And I'd rather separate DPI and DSI timings as much as possible, even if 
+it is a bit more verbose. Here we want to calculate DSI htotal (i.e. the 
+total of DSI horizontal ticks), so I'd rather construct it from the DSI 
+timings, instead of making shortcuts and trusting that the DPI timings 
+match exactly (even if they would). Calculating these is rather error 
+prone already.
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5018.dtsi b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-index 8914f2ef0bc47fda243b19174f77ce73fc10757d..917c6eb7c227e405e9216125cff15551f57839a5 100644
---- a/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-+++ b/arch/arm64/boot/dts/qcom/ipq5018.dtsi
-@@ -147,6 +147,40 @@ usbphy0: phy@5b000 {
- 			status = "disabled";
- 		};
- 
-+		pcie1_phy: phy@7e000{
-+			compatible = "qcom,ipq5018-uniphy-pcie-phy";
-+			reg = <0x0007e000 0x800>;
-+
-+			clocks = <&gcc GCC_PCIE1_PIPE_CLK>;
-+
-+			resets = <&gcc GCC_PCIE1_PHY_BCR>,
-+				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
-+
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
-+
-+			num-lanes = <1>;
-+
-+			status = "disabled";
-+		};
-+
-+		pcie0_phy: phy@86000{
-+			compatible = "qcom,ipq5018-uniphy-pcie-phy";
-+			reg = <0x00086000 0x1000>;
-+
-+			clocks = <&gcc GCC_PCIE0_PIPE_CLK>;
-+
-+			resets = <&gcc GCC_PCIE0_PHY_BCR>,
-+				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
-+
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
-+
-+			num-lanes = <2>;
-+
-+			status = "disabled";
-+		};
-+
- 		tlmm: pinctrl@1000000 {
- 			compatible = "qcom,ipq5018-tlmm";
- 			reg = <0x01000000 0x300000>;
-@@ -170,8 +204,8 @@ gcc: clock-controller@1800000 {
- 			reg = <0x01800000 0x80000>;
- 			clocks = <&xo_board_clk>,
- 				 <&sleep_clk>,
--				 <0>,
--				 <0>,
-+				 <&pcie0_phy>,
-+				 <&pcie1_phy>,
- 				 <0>,
- 				 <0>,
- 				 <0>,
-@@ -387,6 +421,214 @@ frame@b128000 {
- 				status = "disabled";
- 			};
- 		};
-+
-+		pcie1: pcie@80000000 {
-+			compatible = "qcom,pcie-ipq5018";
-+			reg = <0x80000000 0xf1d>,
-+			      <0x80000f20 0xa8>,
-+			      <0x80001000 0x1000>,
-+			      <0x00078000 0x3000>,
-+			      <0x80100000 0x1000>,
-+			      <0x0007b000 0x1000>;
-+			reg-names = "dbi",
-+				    "elbi",
-+				    "atu",
-+				    "parf",
-+				    "config",
-+				    "mhi";
-+			device_type = "pci";
-+			linux,pci-domain = <1>;
-+			bus-range = <0x00 0xff>;
-+			num-lanes = <1>;
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+
-+			/*
-+			 * While the PCIe controller supports gen3,
-+			 * the phy is limited to gen2. Hence, limit
-+			 * the link speed to gen2.
-+			 */
-+			max-link-speed = <2>;
-+
-+			phys = <&pcie1_phy>;
-+			phy-names ="pciephy";
-+
-+			ranges = <0x01000000 0 0x00000000 0x80200000 0 0x00100000>,
-+				 <0x02000000 0 0x80300000 0x80300000 0 0x10000000>;
-+
-+			msi-map = <0x0 &v2m0 0x0 0xff8>;
-+
-+			interrupts = <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi0",
-+					  "msi1",
-+					  "msi2",
-+					  "msi3",
-+					  "msi4",
-+					  "msi5",
-+					  "msi6",
-+					  "msi7",
-+					  "global";
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 0 142 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 2 &intc 0 0 143 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 3 &intc 0 0 144 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 4 &intc 0 0 145 IRQ_TYPE_LEVEL_HIGH>;
-+
-+			clocks = <&gcc GCC_SYS_NOC_PCIE1_AXI_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_M_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_S_CLK>,
-+				 <&gcc GCC_PCIE1_AHB_CLK>,
-+				 <&gcc GCC_PCIE1_AUX_CLK>,
-+				 <&gcc GCC_PCIE1_AXI_S_BRIDGE_CLK>;
-+			clock-names = "iface",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "aux",
-+				      "axi_bridge";
-+
-+			resets = <&gcc GCC_PCIE1_PIPE_ARES>,
-+				 <&gcc GCC_PCIE1_SLEEP_ARES>,
-+				 <&gcc GCC_PCIE1_CORE_STICKY_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_MASTER_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_SLAVE_ARES>,
-+				 <&gcc GCC_PCIE1_AHB_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_MASTER_STICKY_ARES>,
-+				 <&gcc GCC_PCIE1_AXI_SLAVE_STICKY_ARES>;
-+			reset-names = "pipe",
-+				      "sleep",
-+				      "sticky",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "axi_m_sticky",
-+				      "axi_s_sticky";
-+
-+			status = "disabled";
-+
-+			pcie@0 {
-+				device_type = "pci";
-+				reg = <0x0 0x0 0x0 0x0 0x0>;
-+
-+				#address-cells = <3>;
-+				#size-cells = <2>;
-+				ranges;
-+			};
-+		};
-+
-+		pcie0: pcie@a0000000 {
-+			compatible = "qcom,pcie-ipq5018";
-+			reg = <0xa0000000 0xf1d>,
-+			      <0xa0000f20 0xa8>,
-+			      <0xa0001000 0x1000>,
-+			      <0x00080000 0x3000>,
-+			      <0xa0100000 0x1000>,
-+			      <0x00083000 0x1000>;
-+			reg-names = "dbi",
-+				    "elbi",
-+				    "atu",
-+				    "parf",
-+				    "config",
-+				    "mhi";
-+			device_type = "pci";
-+			linux,pci-domain = <0>;
-+			bus-range = <0x00 0xff>;
-+			num-lanes = <2>;
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+
-+			/*
-+			 * While the PCIe controller supports gen3,
-+			 * the phy is limited to gen2. Hence, limit
-+			 * the link speed to gen2.
-+			 */
-+			max-link-speed = <2>;
-+
-+			phys = <&pcie0_phy>;
-+			phy-names ="pciephy";
-+
-+			ranges = <0x01000000 0 0x00000000 0xa0200000 0 0x00100000>,
-+				 <0x02000000 0 0xa0300000 0xa0300000 0 0x10000000>;
-+
-+			msi-map = <0x0 &v2m0 0x0 0xff8>;
-+
-+			interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi0",
-+					  "msi1",
-+					  "msi2",
-+					  "msi3",
-+					  "msi4",
-+					  "msi5",
-+					  "msi6",
-+					  "msi7",
-+					  "global";
-+
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc 0 0 75 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 2 &intc 0 0 78 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 3 &intc 0 0 79 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 4 &intc 0 0 83 IRQ_TYPE_LEVEL_HIGH>;
-+
-+			clocks = <&gcc GCC_SYS_NOC_PCIE0_AXI_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_M_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_S_CLK>,
-+				 <&gcc GCC_PCIE0_AHB_CLK>,
-+				 <&gcc GCC_PCIE0_AUX_CLK>,
-+				 <&gcc GCC_PCIE0_AXI_S_BRIDGE_CLK>;
-+			clock-names = "iface",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "aux",
-+				      "axi_bridge";
-+
-+			resets = <&gcc GCC_PCIE0_PIPE_ARES>,
-+				 <&gcc GCC_PCIE0_SLEEP_ARES>,
-+				 <&gcc GCC_PCIE0_CORE_STICKY_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_MASTER_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_SLAVE_ARES>,
-+				 <&gcc GCC_PCIE0_AHB_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_MASTER_STICKY_ARES>,
-+				 <&gcc GCC_PCIE0_AXI_SLAVE_STICKY_ARES>;
-+			reset-names = "pipe",
-+				      "sleep",
-+				      "sticky",
-+				      "axi_m",
-+				      "axi_s",
-+				      "ahb",
-+				      "axi_m_sticky",
-+				      "axi_s_sticky";
-+
-+			status = "disabled";
-+
-+			pcie@0 {
-+				device_type = "pci";
-+				reg = <0x0 0x0 0x0 0x0 0x0>;
-+
-+				#address-cells = <3>;
-+				#size-cells = <2>;
-+				ranges;
-+			};
-+		};
- 	};
- 
- 	timer {
+At some point we want to adjust the DSI timings (at least if/when 
+implementing burst mode). While even then we'll aim to match the exact 
+DPI time, I think it's better to calculate the DSI htotal from the 
+adjusted DSI timings. If the DSI timings are not right, then the htotal 
+will also match that "wrongness", instead of just showing the DPI htotal.
 
--- 
-2.49.0
-
+  Tomi
 
 
 -- 
