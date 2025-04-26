@@ -4,94 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 724EBC369CB
-	for <linux-phy@archiver.kernel.org>; Sat, 26 Apr 2025 08:16:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D55FBC369CB
+	for <linux-phy@archiver.kernel.org>; Sat, 26 Apr 2025 08:47:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eeFSA5s3dAlHBQiKSVAB/c7vDnLHY7iwPxaakLtgVe0=; b=tl1yep3Y0OEmoG
-	XOYZkny82ORenO+TMiYCpZy69hrIUDnQXcD42FK8G+irSYYqESTzB7aNQzngmoxch6eYlNjKO4PPu
-	CHCe3JKN/hnH6tLut99xi/kDy8ehk2KhW9LsUg9V95W5gIqq+7m21JOki/I9hBQUnbKOBk2kTI6Sz
-	QRG0V/+P1bkwzRg7HCbhhGizUUb75H9u7wmD5bhnjHS7kGLeiZx/GpqQ7zNHJvBNfNZvKS5PFq6MC
-	QL7mHKtJICgVOismUwZ4rWABgrx1yADv4JPf3Rf7VlgdQtX0+r+2XEWaAyMehh8ZbLF7rlj2eXnv5
-	Scd7vYqQ1LAuvNxml8CA==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qIwdx+/gFy+fFoOzcomWIG+ms0cl+G2c2OFJzYKwlcY=; b=hipEMlLl6SqODX
+	ie1bGWuOJSOqQgq/JQ9CGDCLhN6QoHKCPu3mNSdti7UmH5v+xd9j+DvN88ApEeBTy7r7gBR+Dt854
+	8s5D6itLh+j26O6WlXexs6sWtCmq/NSV0tawewnebvPl2Xr3FVdicFL4Cn0sFLokSvi01nqUeCGQG
+	kG3HgYP72Zbwp/9nKUgjNo5YVQ6pSxiK2bR7+R08apRvNDqB8o1R9JUee/29yq/Tuups/HFAvMzNR
+	DhQIptMNZNmbM+kT/x/KWFFO0pGAuXP99IYD4ADgm2vNA/7a9uBVTEmg+QHa6N+GTjQ0ly7Ir9iCD
+	A9wswIs2uc7qzPsvs46A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8aiD-00000001iHz-3vB2;
-	Sat, 26 Apr 2025 08:16:37 +0000
-Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
+	id 1u8bCU-00000001ksv-1ngi;
+	Sat, 26 Apr 2025 08:47:54 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8aiB-00000001iHc-2Urw
+	id 1u8bCS-00000001ks4-2CEt
 	for linux-phy@lists.infradead.org;
-	Sat, 26 Apr 2025 08:16:36 +0000
-Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-2243803b776so53057665ad.0
-        for <linux-phy@lists.infradead.org>; Sat, 26 Apr 2025 01:16:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1745655394; x=1746260194; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=f5nFF9hrf8k+mrJsshn3YqKT1TsxR5hPPisEV2OefvY=;
-        b=OGqY5xowUjuMhm74S3vaKZptRzV7UwztidozOgUcsXY1V0KNm/xfcHwPif3JQly2yJ
-         +nM/EPQYDcPOy9dzgWfa7CeJrO4N1GKuTgj8Xlzm6qx2Z8tqvg6RamsSYJGYq46vO64c
-         To5TyGZq+hxfISiAn5yK9wSAJKTJWehsAPIdIH/RpiMMsvFdIAV5XENGcijoy7xkHOmU
-         863/HiK7szF4RclmFulh80B8Rb/kUMvytx+eYCUCo1yJUtY2YJMOPyd4z+Jeljz9F0Ez
-         ZUqvD7Umy0S9THBLGetd7xBubwqbjqEU7tMZIg6ybAZV+mu4VY7uQNWOdtpIRXota8bH
-         B2bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745655394; x=1746260194;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=f5nFF9hrf8k+mrJsshn3YqKT1TsxR5hPPisEV2OefvY=;
-        b=gOhLYhwjZctp8p+TPmWyK3xRUC6hZrRq9dcmooEsdAhyKgNuWNn68FjUUV9MCoKTdP
-         l87c7NXAgawUpBqEGBG3ljjWfMShoQWPiSuJqFYzgXf6FV6et5C6Ot03vlTa9ONKdJKQ
-         WcVDE/ioTJFoYWrYhkt5Pui9U7zrvahUUsrlKf7cFysnpOZFti6d05z/GtGP5uPjw+US
-         5GnkoHiLslZfk4fSDVpAdhtv7YABHq7ooXHN8d1tar9t0R19QIegm4GqpeGq6cYeQLxN
-         d0Hjo8VnSUTjt7Rsky5CgObiwwlgvP+gSANu5f2FZehCiE/ArICcOVEiL60nZLfAYfEP
-         rlkg==
-X-Forwarded-Encrypted: i=1; AJvYcCULTqh79fTTzk28DZijMsEfDgQh0DPMK3DBEJPN0MDTifqJ4DQ/+EXLUiI19XJylDLJdyEb/wpLyq8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyGaTq4MDo5PRyIpDrJQ4jGDVkKmNZsWiXpfDmwVHT4f5JB7kRn
-	S6UeWXg/feA6WWoHYyyMSQe56hCo3P+Czbi8bJp+xPKVV5u27el8
-X-Gm-Gg: ASbGncsn1/QmA3FFkdHzMcCQJYA0Eac6TyNgIrCJId2FsVN2Z3FepYjLJy+yRIIR12b
-	eLTGj/p2W1qofqWF2v0M4k1TgBQ7SeWir1lSbjsw6IDV1Hh2cPwBarKwlz1FGRtw1b3xoIycg1y
-	ICeSl2Rf+yHGgKux3KaIiEU6MiHq7rddRkpK5zpFDTs0oiNcHrZSPeOCflHuflluu0zprUBZc7T
-	jN3E+Puyn2Ex3v0cdnqQnAi7FFIZPw1u9TxdygeIi+s+6B1WFt6xraAAzJ6rrPDgTGcTCVOpHIc
-	gmNk//HOblQU7wlb02jKlCtK4iC+UKTPyPegeuE=
-X-Google-Smtp-Source: AGHT+IH2uRpVPaRuKcj/Dnooeg5tCZHg5INKprYzVhvYC8u33M/5h6/1Yrvk8VqXDWgVX0OSW7Ou1w==
-X-Received: by 2002:a17:903:41c8:b0:224:76f:9e44 with SMTP id d9443c01a7336-22dbf4c84e4mr63259185ad.8.1745655394358;
-        Sat, 26 Apr 2025 01:16:34 -0700 (PDT)
-Received: from nuvole.. ([144.202.86.13])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22db5219c47sm44906405ad.240.2025.04.26.01.16.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 26 Apr 2025 01:16:33 -0700 (PDT)
-From: Pengyu Luo <mitltlatltl@gmail.com>
-To: dmitry.baryshkov@oss.qualcomm.com
-Cc: abel.vesa@linaro.org,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	kishon@kernel.org,
-	krzk+dt@kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	mitltlatltl@gmail.com,
-	robh@kernel.org,
-	sfr@canb.auug.org.au,
-	vkoul@kernel.org
-Subject: Re: [PATCH v2 2/2] phy: qualcomm: phy-qcom-eusb2-repeater: rework reg override handler
-Date: Sat, 26 Apr 2025 16:14:23 +0800
-Message-ID: <20250426081424.422590-1-mitltlatltl@gmail.com>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <q6zqfk3l2khp3tkodxd4pzhufiesyjcypl66zoqzslolwoveyo@ltrw2iulrkqs>
-References: <q6zqfk3l2khp3tkodxd4pzhufiesyjcypl66zoqzslolwoveyo@ltrw2iulrkqs>
+	Sat, 26 Apr 2025 08:47:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id E45A761136;
+	Sat, 26 Apr 2025 08:47:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E0E26C4CEE2;
+	Sat, 26 Apr 2025 08:47:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1745657271;
+	bh=W3kdljkEATM/b+BdHb7MSH+5/TdP6vHCRrAkWB2n8bg=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=YcVTfC4miFbq/2YK/efe1BEQGuX8oK/ZnrHam6NxMrOUgOUi4NbAkjaLp0lGX1YOo
+	 HBR4KFvkRL6HHKYTrSg7NqFNoTgv/ZCDvDbbDVaEn8qLGBYO7PboFQtJTn7Cc7//bn
+	 WnIgQVG5HPHkuSFK/z/jubNDbQFNAPiEOWxiVjpbrVaOI0VfCvMDKGiKfD7edVaqBn
+	 2FMIh7yM6/hL4V/Lpv5ql/XQO+4wh9GnRVeIJ2ADYj3WI7yneGgFRftM7TtLqTlKkc
+	 W8YwIYIm7taI81QwJQVXPeaEcHtXgd56bsvJAdkQnYDuZCHshnC6hnGohAjbgjzhrb
+	 HPjdKWz2YE2mg==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CC8F3C369CB;
+	Sat, 26 Apr 2025 08:47:50 +0000 (UTC)
+From: George Moussalem via B4 Relay <devnull+george.moussalem.outlook.com@kernel.org>
+Subject: [PATCH v9 0/2] Enable IPQ5018 PCI support
+Date: Sat, 26 Apr 2025 12:47:19 +0400
+Message-Id: <20250426-ipq5018-pcie-v9-0-1f0dca6c205b@outlook.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250426_011635_635946_76C16D58 
-X-CRM114-Status: GOOD (  16.27  )
+X-B4-Tracking: v=1; b=H4sIAJedDGgC/33RW0vDMBQH8K9S8mxKLs1tiGyz+iaIPopImosL2
+ svSrijD727aPeg28S3/kN/J4Zw96F0MrgeLbA+iG0Mf2iYFdZEBs9HNq4PBpgwIIgxRgmHotgx
+ hCTsTHMS2KHTlkSOegUS66Hz4mMs9Pae8Cf3Qxs+5+oinW1A+ivsHrO7WUkp6SxiVq5UoUSFuM
+ L3GiKxVWRKyPHqWN7ruosUq72Jr83Y3vLftW27aGky/jGyu/HeLI4MIau2I0Rr7AsvlGef/cZ5
+ 4JSxnSgtOEDvn4jfnJ1wk7rAk0juPuFHnXP7wgrATLhNH1DnBjBDcmmP+dRh5dNtdWtxwmDuoX
+ d/reXGL7PLQFhYYIURULiUmkkMMkzAvo47a6uV0Do2Zal5NW6x072AKdRgWmbDCCc08ZdpQJHz
+ BKqMq5Wm6JGmiyHLluTGpm69vvChix04CAAA=
+X-Change-ID: 20250321-ipq5018-pcie-1d44abf0e2f5
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Nitheesh Sekar <quic_nsekar@quicinc.com>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Praveenkumar I <quic_ipkumar@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-pci@vger.kernel.org, George Moussalem <george.moussalem@outlook.com>, 
+ 20250317100029.881286-1-quic_varada@quicinc.com, 
+ 20250317100029.881286-2-quic_varada@quicinc.com, 
+ Sricharan R <quic_srichara@quicinc.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1745657268; l=5859;
+ i=george.moussalem@outlook.com; s=20250321; h=from:subject:message-id;
+ bh=W3kdljkEATM/b+BdHb7MSH+5/TdP6vHCRrAkWB2n8bg=;
+ b=YLj6RgPHWXLLdtMHlVgsjMe7uXb7X2lwA19bwDyZc4DUP0YkRy1K8IH5gTaIlObwohSttLVHf
+ yC0eN+7bibEBVtVYXoqrIsiKxB72ttqllUDZbj/ApXSHYShYmEi2+JB
+X-Developer-Key: i=george.moussalem@outlook.com; a=ed25519;
+ pk=/PuRTSI9iYiHwcc6Nrde8qF4ZDhJBlUgpHdhsIjnqIk=
+X-Endpoint-Received: by B4 Relay for george.moussalem@outlook.com/20250321
+ with auth_id=364
+X-Original-From: George Moussalem <george.moussalem@outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,41 +101,137 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: george.moussalem@outlook.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU2F0LCBBcHIgMjYsIDIwMjUgYXQgMzo0MeKAr0FNIERtaXRyeSBCYXJ5c2hrb3YgPGRtaXRy
-eS5iYXJ5c2hrb3ZAb3NzLnF1YWxjb21tLmNvbT4gd3JvdGU6Cj4gT24gV2VkLCBBcHIgMTYsIDIw
-MjUgYXQgMDg6MDI6MDFQTSArMDgwMCwgUGVuZ3l1IEx1byB3cm90ZToKPiA+IEluIGRvd25zdHJl
-YW0gdHJlZSwgbWFueSByZWdpc3RlcnMgbmVlZCB0byBiZSBvdmVycmlkZGVuLCBpdCB2YXJpZXMK
-PiA+IGZyb20gZGV2aWNlcyBhbmQgcGxhdGZvcm1zLCB3aXRoIHRoZXNlIHJlZ2lzdGVycyBnZXR0
-aW5nIG1vcmUsIGFkZGluZwo+ID4gYSBoYW5kbGVyIGZvciB0aGlzIGlzIGhlbHBmdWwuCj4KPiBJ
-dCBzaG91bGQgYmUgbm90ZWQgdGhhdCBwcmV2aW91c2x5IGFsbCB2YWx1ZXMgd2VyZSBhcHBsaWVk
-IGR1cmluZyBfaW5pdAo+IHBoYXNlLCBiZWZvcmUgY2hlY2tpbmcgdGhlIHN0YXR1cyBldGMuIE5v
-dyB0aGUgb3ZlcnJpZGVzIGFyZSBwcm9ncmFtbWVkCj4gZnJvbSB0aGUgc2V0X21vZGUuIFNob3Vs
-ZCB5b3Ugc3RpbGwgcHJvZ3JhbSBzYW5lIGRlZmF1bHRzIGF0IHRoZSBpbml0Cj4gc3RhZ2UgdG9v
-Pwo+CgpJIHRoaW5rIHByb2dyYW1taW5nIGluIHNldF9tb2RlIGlzIG9rLiBXaGVuIHdlIGluaXQo
-ZHdjM19jb3JlX2luaXQpLCB3ZQpzZXRfbW9kZShkd2MzX2NvcmVfaW5pdF9tb2RlKSBsYXRlciwg
-cGxlYXNlIGNoZWNrCmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y2LjE0LjMvc291
-cmNlL2RyaXZlcnMvdXNiL2R3YzMvY29yZS5jI0wyMjg3CgpBY3R1YWxseSwgaW4gdGhlIGRvd25z
-dHJlYW0sIGFsbCB0aGUgdGhpbmdzIGFyZSBkb25lIGluIGluaXQsIGl0Cm92ZXJyaWRlcyBmaXJz
-dCwgdGhlbiBtYXNrZWQgd3JpdGUgdGhlIGRlYXVsdHMsIGZpbmFsbHkgaXQgc2V0X21vZGUsCnlv
-dSBjYW4gY2hlY2sgaGVyZQpodHRwczovL2dpdGh1Yi5jb20vT25lUGx1c09TUy9hbmRyb2lkX2tl
-cm5lbF9vbmVwbHVzX3NtODY1MC9ibG9iL29uZXBsdXMvc204NjUwX3ZfMTUuMC4wX3BhZF9wcm8v
-ZHJpdmVycy91c2IvcmVwZWF0ZXIvcmVwZWF0ZXItcXRpLXBtaWMtZXVzYjIuYyNMMzU2Cgo+IEJU
-VywgaXMgdGhlcmUgYSByZWFsIG5lZWQgdG8gb3ZlcnJpZGUgdGhvc2UgZm9yIHRoZSBwbGF0Zm9y
-bSB5b3UgYXJlCj4gd29ya2luZyBvbj8gQ291bGQgeW91IHBsZWFzZSBwcm92aWRlIHNvbWUgZGV0
-YWlscywgbWF5YmUgaW4gdGhlIGNvdmVyCj4gbGV0dGVyLgoKSSBhbSBub3QgcXVpdGUgc3VyZSwg
-cmVjZW50bHksIEkgZXhwaXJlbmNlZCBtb2RlIHN3aXRjaGluZyBmYWlsdXJlLAp3aGVuIEkgYGVj
-aG8gZGV2aWNlID4gL3N5cy9rZXJuZWwvZGVidWcvdXNiL2E2MDAwMDAudXNiL21vZGVgLCBFdGhl
-cm5ldApHYWRnZXQgd291bGRuJ3Qgd29yayBhZ2FpbiwgbXkgZGVza3RvcCBjYW4ndCBjb25uZWN0
-IHRvIGl0LgoKQlRXLCBhcyB5b3UgY2FuIHNlZSBpbiBsaW5lIDM1NiwgaXQgaXMgbW9zdCBsaWtl
-bHkgdGhhdCBvdmVycmlkZXMKcmVsYXRlZCB0byBjaGFyZ2luZyBmZWF0dXJlLiBJIGhhdmUgbm90
-IHBvcnRlZCBjaGFyZ2luZyB5ZXQsIGJ1dCBhZGRpbmcKbW9yZSBvdmVycmlkZXMgc2VlbXMgaGFy
-bWxlc3MsIGFuZCBpZiBvdmVycmlkaW5nLCBkaXN0aW5ndWlzaGluZyB3aGljaAptb2RlIHNlZW1z
-IG5lY2Vzc2FyeSwgZXZlbiBpZiBzb21lIGRldmljZXMgdXNlIHRoZSBzYW1lIHNlcXVlbmNlLiBT
-byBJCnNlbnQgdGhlIHBhdGNoLgoKQmVzdCB3aXNoZXMsClBlbmd5dQoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+This patch series adds the relevant phy and controller
+DT configurations for enabling PCI gen2 support
+on IPQ5018. IPQ5018 has two phys and two controllers, 
+one dual-lane and one single-lane.
+
+Last patch series (v3) submitted by qcom dates back to August 30, 2024.
+As I've worked to add IPQ5018 platform support in OpenWrt, I'm
+continuing the efforts to add Linux kernel support.
+
+Signed-off-by: George Moussalem <george.moussalem@outlook.com>
+---
+Changes in v9:
+- Added whitespace between pcie phy nodes and curly brackets
+- Shortened comment in dtsi to fit on 1 line as per Konrad's suggestion
+- Link to v8: https://lore.kernel.org/r/20250425-ipq5018-pcie-v8-0-03ee75c776dc@outlook.com
+
+Changes in v8:
+- Updated comment in dtsi to remove superfluous reference to ipq5018 as
+  pointed out by Mani
+- Corrected the size of the 2-lane phy's memory-mapped region as it
+  should be 0x1000 (0x800 per lane).
+- Matched PCI domain to pcie controller instance (pcie0 -> PCI domain 0
+  and pcie1 to PCI domain 1)
+- Link to v7: https://lore.kernel.org/r/20250326-ipq5018-pcie-v7-0-e1828fef06c9@outlook.com
+
+Changes in v7:
+- Updated commit log and added comment in dtsi to explain why 
+  max-link-speed is set: IPQ5018 PCIe controllers supports gen3, yet the
+  PHYs support gen2 only.
+- Carried over Ack and RB-tags
+- Added dependency with b4 prep on below series which adds the MHI
+  register space (patch 1) which fixes issues reported by Rob's bot:
+  Depends-on: <20250317100029.881286-1-quic_varada@quicinc.com>
+- Link to v6: https://lore.kernel.org/r/20250321-ipq5018-pcie-v6-0-b7d659a76205@outlook.com
+
+Changes in v6:
+- Fixed issues reported by 'make dt_bindings_check' as per Rob's bot
+- Removed Krzysztof's Ack-tag on:
+  dt-bindings: phy: qcom: uniphy-pcie: Add ipq5018 compatible
+- Link to v5: https://lore.kernel.org/r/20250321-ipq5018-pcie-v5-0-aae2caa1f418@outlook.com
+
+Changes in v5:
+- Re-ordered reg and reg-names in dt-bindings and dts to align with
+  other IPQ SoCs
+- Corrected nr of interrupts in dt-bindings: phy: qcom: Add IPQ5018 SoC
+- Corrected ranges property of pcie controller nodes
+- Removed newlines between cells properties in pcie phy nodes
+- Modified dt bindings to add descriptions and separate conditions for
+  ipq5018 and ipq5332 as they have different nr of clocks and resets
+  As such, also removed Krzysztof's RB tag for validation
+- Ran dtbs_check and fixed:
+  interrupt-map property in pcie nodes:
+  /soc@0/pcie@80000000:interrupt-map: Cell 13 is not a phandle(0)
+  /soc@0/pcie@a0000000:interrupt-map: Cell 13 is not a phandle(0)
+- Added missing gpio header file to ipq5018-rdp432-c2.dts
+- Added MHI register requirement to bindings and to PCIe nodes as per:
+  Depends-on: <20250317100029.881286-2-quic_varada@quicinc.com>
+- Link to v4: https://lore.kernel.org/r/DS7PR19MB8883F2538AA7D047E13C102B9DD22@DS7PR19MB8883.namprd19.prod.outlook.com
+
+Changes in v4:
+- removed dependency as the following have been applied:
+	dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
+	phy: qcom: Introduce PCIe UNIPHY 28LP driver
+	dt-bindings: PCI: qcom: Document the IPQ5332 PCIe controller
+  Link: https://lore.kernel.org/all/20250313080600.1719505-1-quic_varada@quicinc.com/
+- added Mani's RB tag to: PCI: qcom: Add support for IPQ5018
+- Removed power-domains property requirement in dt-bindings for IPQ5018
+  and removed Krzysztof's RB tag from:
+  dt-bindings: PCI: qcom: Add IPQ5018 SoC
+- fixed author chain and retained Sricharan Ramabadhran in SoB tags and
+  kept Nitheesh Sekar as the original author
+- Removed comments as per Konrad's comment in:
+  arm64: dts: qcom: ipq5018: Add PCIe related nodes
+- Link to v3 submitted by Sricharan Ramabadhran:
+  Link: https://lore.kernel.org/all/20240830081132.4016860-1-quic_srichara@quicinc.com/
+- Link to v3, incorrectly versioned:
+  Link: https://lore.kernel.org/all/DS7PR19MB8883BC190797BECAA78EC50F9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com/
+
+Changes in v3 (incorrectly versioned):
+- Depends on
+  Link: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
+- Added 8 MSI SPI and 1 global interrupts (Thanks Mani for confirming)
+- Added hw revision (internal/synopsys) and nr of lanes in patch 4
+  commit msg
+- Sorted reg addresses and moved PCIe nodes accordingly
+- Moved to GIC based interrupts
+- Added rootport node in controller nodes
+- Tested on Linksys devices (MX5500/SPNMX56)
+- Link to v2: https://lore.kernel.org/all/20240827045757.1101194-1-quic_srichara com/
+
+Changes in v3:
+ - Added Reviewed-by tag for patch#1.
+ - Fixed dev_err_probe usage in patch#3.
+ - Added pinctrl/wak pins for pcie1 in patch#6.
+
+Changes in v2:
+ - Fixed all review comments from Krzysztof, Robert Marko,
+   Dmitry Baryshkov, Manivannan Sadhasivam, Konrad Dybcio.
+ - Updated the respective patches for their changes.
+ - Link to v1: https://lore.kernel.org/lkml/32389b66-48f3-8ee8-e2f1-1613feed3cc7@gmail.com/T/
+
+---
+Nitheesh Sekar (2):
+      arm64: dts: qcom: ipq5018: Add PCIe related nodes
+      arm64: dts: qcom: ipq5018: Enable PCIe
+
+ arch/arm64/boot/dts/qcom/ipq5018-rdp432-c2.dts |  40 +++++
+ arch/arm64/boot/dts/qcom/ipq5018.dtsi          | 238 ++++++++++++++++++++++++-
+ 2 files changed, 276 insertions(+), 2 deletions(-)
+---
+base-commit: 7d7e7a5f35ac307f45bc9b9f37a52a1f0d69f6cc
+change-id: 20250321-ipq5018-pcie-1d44abf0e2f5
+prerequisite-message-id: <20250317100029.881286-1-quic_varada@quicinc.com>
+prerequisite-patch-id: 210bd857b2a3ce208c6c66389d2845616dafae60
+prerequisite-patch-id: 27a1070861e75cf1dcb03f1e440618bd77b32043
+prerequisite-patch-id: 4dfad74bedd5e7b3b628ead0b23baed7de8b88f7
+prerequisite-patch-id: 79ded164c537cfe947447c920602570626eddb3d
+
+Best regards,
+-- 
+George Moussalem <george.moussalem@outlook.com>
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
