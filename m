@@ -4,171 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3750C369D9
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Apr 2025 06:37:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C7C5C36005
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Apr 2025 08:13:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=7vY/glDBXtToCwE4BXamRtBYaY1FIUJkegAHWga23Sg=; b=cfWRZG2KfZrAPt
-	FIwpvJfwRTtDVw0nlpgd6ck5HN1DkZxpZdOsOVGHIWzuabv3tsmLeujWUxd2MYRvl4I4Sy/kpLvcH
-	ySuWY7Ne2g5MpfdcG9TU2L5bAn8tcrmQTAi7JKWJtVJTGiDgwC8BG5yju+O/ROTa7yt2eT+oFxxfX
-	lZ39mU9tgGL5tQZVvJPtIeTwEReZPKKKQhSa0U8cbulCaI56Sdz+l+8lCgZKzGSa+kLrYM0b8rS2h
-	YBNHYNDk8+W+EpZCU7LvmoC7yKrN7g/G/xYywiHDlatoUtN2xoFd9mBJEqjXUhkzmludHlo1El9Bm
-	2cUbwugKzceHOZzNLkPA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4T7m3MzkE59NMpSCSav9MQPd9Y7TLpCQmGn6gQ7dNJY=; b=mFD+P9JddahUGT
+	ZIba60nalWJNonwm2/FIlH3hpc7KOekFOVdPmzsrCXziUssak6XNeAMMeHplfR9lsotBYb9nk7NWI
+	6SGhM5RjqolcC0z4J/z2EpIb33ofL8Jdscpv/rd8MvZ1iCfwz/44Nea4KGYv7qRNxhqe2MAOPySYy
+	vkVzf41ES2/Vs/Dh9IRa7w7RU0/edrRvaARjVHwhiUX4PExx6wsc36eEaocanaOLk7F5+5eiUsOrx
+	abb1VOlcRavx6WcPpQdWKX0VEGIkVL0WHS2Rse9g52aJlUtRLlTkwtEsYo+I9Imuoxxdlkgl91kfo
+	sgtovGOtChsl7KDBfWJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9I78-000000057EI-1Z5V;
-	Mon, 28 Apr 2025 06:37:14 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1u9Jcd-00000005N9t-3eys;
+	Mon, 28 Apr 2025 08:13:51 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u9I75-000000057Ac-0pX4;
-	Mon, 28 Apr 2025 06:37:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Eiigpx9GgJNYD/htqjBY7ZoYSYL6ao20gzEv2AFthahC/yzFsy4fNz9WCkP/M7BfdXXOjZQFq0cVYvFLd3Hs5O4ZpVXW51QfGl0yIpE0iCoOAeo1KqnE+7ub5dwTtrUUCCuc+TWoQ3rbtZiC4jTVI2yoC1SdSN30ENZbFiGnvUDOvccGiGnxd+CYKO02dnMHjOe0ZaZCZ3suu2NcN3gQ0WJqsES7MQOHPzYbjaYb6hOebJi2NHwYGoDDqp15NMPmtevl3wNaqONsoI3urlvYfC5XDdVzbtgN+bKd4DgO5WDVbFde9VCTvb28XoBNH8mb2Hhvh2wBmU7K7k8phDm5kQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=6uQ/zQO/mAn1k2sH6o/Xsqpp/6ywJj9BatpTxDqlYn0=;
- b=RTVJPst3uStQ9Sd4h9ojRFkxQYSqoF9y29+/YNqPV1tn7c9qW2HtDbMclcX/bpJHOzx+dfymqYJWqx0wQWfBiH7UImZy/TgBexpVuOTnmPaaB06bKsCYaaCpABIxxe4FPQs+efjNJag/WFmNfwD25PeeiWiP2gQ/wXGaO5XDLm8GfRGbJRfNbTcOqgQVJd/G96wQqwQxD84wDtOPC16g4JKNRTMJ5TfPkirnD7aQfljsyyOjHg+fGxHNK/CodVBskHTuw4hqr8SQpnlt5A1oFxfC+QuXrxPkXmEzdBolI1Qn6t8QiYSUUZNI1tbRBY9OAcQfosJZ39dEm4MHY4q7MQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 13.93.42.39) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=topic.nl;
- dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
- header.from=topic.nl; dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=topic.nl; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6uQ/zQO/mAn1k2sH6o/Xsqpp/6ywJj9BatpTxDqlYn0=;
- b=A/OyIBWOvOFJIUGWONkIhnrsUjZG0LVyjoLQfhPAmVtfVbFziAM8j+RDrzpSVypLzFEYnWDdjqXiFHEoHd0Jgcq35oIGGv0olqZ1PGleZLMBn46ValY5XXazmbpCHBGpEz56juvqgOWna1dD5AolHoHH70vFWPnQtDX2f4811dASGSgBErYK+7Na2FuWawAboEgawLgiv1ZNj415G8Sx4hFxh8GDxBPRMVc3/ymtcf6BkhdEmh284U3OO4oRRBBt7ohjRkE1laaBH0m0InklEWnffMPH9deSsA5f57rbyMWk7V+XvFl9JBXjVFHiDGfPrzj+jRaM4ez/UYyOQgSSDA==
-Received: from AM9P250CA0021.EURP250.PROD.OUTLOOK.COM (2603:10a6:20b:21c::26)
- by DU2PR04MB9050.eurprd04.prod.outlook.com (2603:10a6:10:2e5::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8678.31; Mon, 28 Apr
- 2025 06:36:57 +0000
-Received: from AMS0EPF000001A0.eurprd05.prod.outlook.com
- (2603:10a6:20b:21c:cafe::b8) by AM9P250CA0021.outlook.office365.com
- (2603:10a6:20b:21c::26) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.8655.35 via Frontend Transport; Mon,
- 28 Apr 2025 06:36:57 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 13.93.42.39)
- smtp.mailfrom=topic.nl; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=topic.nl;
-Received-SPF: Pass (protection.outlook.com: domain of topic.nl designates
- 13.93.42.39 as permitted sender) receiver=protection.outlook.com;
- client-ip=13.93.42.39; helo=westeu12-emailsignatures-cloud.codetwo.com; pr=C
-Received: from westeu12-emailsignatures-cloud.codetwo.com (13.93.42.39) by
- AMS0EPF000001A0.mail.protection.outlook.com (10.167.16.230) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.8678.33 via Frontend Transport; Mon, 28 Apr 2025 06:36:56 +0000
-Received: from EUR02-AM0-obe.outbound.protection.outlook.com (104.47.11.232) by westeu12-emailsignatures-cloud.codetwo.com with CodeTwo SMTP Server (TLS12) via SMTP; Mon, 28 Apr 2025 06:36:56 +0000
-Authentication-Results-Original: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=topic.nl;
-Received: from AS8PR04MB8644.eurprd04.prod.outlook.com (2603:10a6:20b:42b::12)
- by PAWPR04MB9863.eurprd04.prod.outlook.com (2603:10a6:102:37f::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8678.33; Mon, 28 Apr
- 2025 06:36:54 +0000
-Received: from AS8PR04MB8644.eurprd04.prod.outlook.com
- ([fe80::e86d:f110:534e:480a]) by AS8PR04MB8644.eurprd04.prod.outlook.com
- ([fe80::e86d:f110:534e:480a%5]) with mapi id 15.20.8678.028; Mon, 28 Apr 2025
- 06:36:54 +0000
-From: Mike Looijmans <mike.looijmans@topic.nl>
-To: linux-phy@lists.infradead.org
-CC: Mike Looijmans <mike.looijmans@topic.nl>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Michal Simek <michal.simek@amd.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2] phy-zynqmp: Postpone getting clock rate until actually needed
-Date: Mon, 28 Apr 2025 08:35:47 +0200
-Message-ID: <20250428063648.22034-1-mike.looijmans@topic.nl>
-X-Mailer: git-send-email 2.43.0
-X-ClientProxiedBy: AM9P195CA0022.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:20b:21f::27) To AS8PR04MB8644.eurprd04.prod.outlook.com
- (2603:10a6:20b:42b::12)
+	id 1u9JP0-00000005L5t-0LPn;
+	Mon, 28 Apr 2025 07:59:47 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6F18D5C2731;
+	Mon, 28 Apr 2025 07:57:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A24E9C4CEE4;
+	Mon, 28 Apr 2025 07:59:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1745827185;
+	bh=vurruFqLtF8yoeklNaL/NrKmDFnF7HGf/qbXQ8ET/Z4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PzJ+lsZAS1otJLR8mP6WCOo6R3WaMZo5HTBVvGuciQld5qH+wpHUDzrkUV0UvP6FU
+	 7vqu3JattTkocjlCF/HNPy2RItdz+UItRdmX3MdtmJlRx7fMURg5/QQa0ltd3O+/zV
+	 K8V1/KR5kHgh3M+rkl3h9ZQq08w27TWKAObu1uk/BTv2Za5qHhyM64PrzdKoCtFtqr
+	 g545sVd85CEHiInw1Db2ROtvtDNP5BQ/rzbwKGXCitDUKjIX/Krw/Viy49+mnZB636
+	 vg/GLbRn/rpqfKnV1O3YyAkZ4fAcBwDbRgJiCtVdBaJO/C9qdqMTK9IoNsWyY3JG0E
+	 LrUgxxBVR3bWQ==
+Date: Mon, 28 Apr 2025 09:59:42 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
+	kernel@pengutronix.de, festevam@gmail.com, jun.li@nxp.com, 
+	alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: imx8mq-usb: improve some tuning
+ properties
+Message-ID: <20250428-thankful-observant-trogon-a5a003@kuoka>
+References: <20250423094607.1029429-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: AS8PR04MB8644:EE_|PAWPR04MB9863:EE_|AMS0EPF000001A0:EE_|DU2PR04MB9050:EE_
-X-MS-Office365-Filtering-Correlation-Id: e4415a08-3d6f-4266-b3c8-08dd861f1277
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|1800799024|376014|52116014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info-Original: =?us-ascii?Q?RDxOGaIazsXIVDIgpiu+TSPbCOEmujbuqmnEtO/lbcq3k81YPEvU4kGtwgOm?=
- =?us-ascii?Q?L5ug74+3Lv16kulNzwDq4Uf4/CyfETF2GlU52tTB1ch6FA1QOTctye5p3F4O?=
- =?us-ascii?Q?7Z7IbO3bllz20u7lqtpYw/297gEKr1y4VHj0TnX3gSXhXnCzHE7qMHCBDGo/?=
- =?us-ascii?Q?jFG6R6ybjdhhXJu5SAgAV6srEoVM77gWEqdIN7fC646jUM9tpluGdcsonf8+?=
- =?us-ascii?Q?az/LsHyam8sk3ZmvXI25ITdLczE2DbXu4P/bZyvADJLmbQDmrFRn5Q09JGwv?=
- =?us-ascii?Q?Qd9F4/SEYEwBGFrNfcartBQthJxq5lZ8ftAbzNJWm7Infifw9orOJ2BcNL6a?=
- =?us-ascii?Q?mHL3ueLw8jamZUDh4+3+ZNgZv/k88/7dyvcjF9lTdx837CgkGxey0z+ek281?=
- =?us-ascii?Q?VG0pB5s8tkxm3E8+Ew5GuLPhgOv9q687V18cZmy9qEhrGiXZFhrfOxOXRmEG?=
- =?us-ascii?Q?bvi4+lathSY62ylW24byweWWWldHDvnbyDbCpgNqN9lF+VJkADsJZcnswh46?=
- =?us-ascii?Q?72qGKo9CymjGoqOW19L8dobLe10ILRJdruPyuc9JulmffBX5vjPKRJRGzNds?=
- =?us-ascii?Q?jcrn2au4Fc9B4K2qr/xa6wNKVfl5KCQ8jP/SePv9I08TniYLuyRwA9b9S40t?=
- =?us-ascii?Q?7IuK5wop6PmuPOu99z/uazIW3KDo/w+xWHN4QTFWf5WMlr89oVGjfAj8fYib?=
- =?us-ascii?Q?Sh9jkUQMqtnP3qeVdbtFcPS8/gSz2JceJ8s2WdY27IWPgD7SGdZ9xqYKcye8?=
- =?us-ascii?Q?Ul2DW1xGsKl4jB+Wy/MyfAr9op7Gj7j8ZfmGSL9Vfpj/lLsw1RqAUYgNWAIm?=
- =?us-ascii?Q?65UDjDHRlRlv/fO3bQkUBGu1iHhjO7fqOS02rkGOTgXdi039ODnYBHi3r2NE?=
- =?us-ascii?Q?NaaXjOmlVRYfoMpb0GJVYNDeOaq0Jh8Ns1hy7+p5t01vh2vZhTygw/8rsvrT?=
- =?us-ascii?Q?cRxl2RJKTIkqgFNnrfEE0eqRkcqp2ur/hd5RBNRRnfbmJ0pguLJ8wgK5FaKb?=
- =?us-ascii?Q?yT9hUwq9n/fnRiUID3gVAsEjAxOLG6KTRxVG3Svf98GLzeuTTnO3tu00xMpY?=
- =?us-ascii?Q?WvMzSwjrMPlrkd5syI8a50lOPUdplmO9lgqqJjy0fMv1u+oU8AzSL0V1iMdI?=
- =?us-ascii?Q?GNPHAQJcAQbAtHdGnYNv3wAwsI8isEhbU35ltuLL57vQ1vy5U3DhQRkTEgut?=
- =?us-ascii?Q?ixZKhgRj6PJxW55KPuSQVsZAjGr2wGJOumZJRa1Th0SaAkwAN3mHYBta3L7+?=
- =?us-ascii?Q?nKZUQqte9GJmx+IlpFOCPAJUaCPPbuW0CTpAxbSknesJxfvOkOP2TeRB2cYm?=
- =?us-ascii?Q?NW5SDykRJAY1iRTJdaJtQOpiD99zAptPta56vimOMm8HuajRAlEiBedV0uHN?=
- =?us-ascii?Q?1RS/+fF364BZRL6kJtSziagOLFYjT/Yk/xhBgNwMEjM4yflhBETNnqkTbfWm?=
- =?us-ascii?Q?MfWL06NCig9xHtqkObVP2k7EIWEieQXxarV+IT332vtPlWYsY/mOVg=3D=3D?=
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8644.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(52116014)(366016)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWPR04MB9863
-X-CodeTwo-MessageID: ec0ff9eb-3af8-450f-b11f-ba6313c7ed95.20250428063656@westeu12-emailsignatures-cloud.codetwo.com
-References: <1b153bce-a66a-45ee-a5c6-963ea6fb1c82.949ef384-8293-46b8-903f-40a477c056ae.298e943d-5a80-491d-b36f-77b3b9a86df9@emailsignatures365.codetwo.com>
-X-CodeTwoProcessed: true
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AMS0EPF000001A0.eurprd05.prod.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 598cdd72-ebc4-4e32-0de5-08dd861f10d2
-X-Microsoft-Antispam: BCL:0;ARA:13230040|14060799003|82310400026|36860700013|376014|35042699022|1800799024|13003099007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?f5bZY8RWza/9wh9+VzIJ1GkkGmeKMOiJ8+BXvQ5oPQpvUEamp4sqyINHIJzb?=
- =?us-ascii?Q?yP+RxdYipAuyWG8QEhxRqYXRcKJu0af7vp8KNp+Iy6psz1WG/sbyTfTL3OMA?=
- =?us-ascii?Q?fwOmf7e6+3rCOgdUDyj96z8DMeTh5ENoyF6h3DMQGmeuq99ObQ4nSL9j2CkT?=
- =?us-ascii?Q?7WeScXnRA27uiikVVnR3kMVkHWRNjuSphtft0Mt0VdwBtxG/nisSqTFTHrhi?=
- =?us-ascii?Q?IlO/bXn+61d6crOblTKce0L9JT0bKmA5+ocN55VhqKY2/7CN7O4aO/NFmn6s?=
- =?us-ascii?Q?p6DZkBoT3KSOZ5X2FYgR5bBpRtVow4NbvERYQtDPb2S4gzHsSTfosFJuoCrD?=
- =?us-ascii?Q?YAYGypt/n+SLiPWsOJlIg1Q1eSTkO6TxLPk2MUdcvKf5e+IBozYuegAY0Y04?=
- =?us-ascii?Q?K+g7o1r4lt4WEn2ljl9muWWL451oEuVDTKCU5hSH8qaBmKeivPZsi+sKCuIz?=
- =?us-ascii?Q?L5I/OzyuSKZshZ0PwZX2wjOl3coFh6uoiA3ZQZO5QTNa4dPr4ExS35kIV4Lz?=
- =?us-ascii?Q?yCWoZbBSalPE2tfP3ndgMozr81FB1g9+5idU7gjUYaMAct/+wXkuCYNo/qbB?=
- =?us-ascii?Q?PZl8Ava4WChcw+5K78FUUiPBLnA9Rp3y6pQ01nze8cJPG43FlidFS5egRJ/v?=
- =?us-ascii?Q?X8UCi/sA2k1ZY9+nDnlSaXfa2kcQ6aN/Z7a+BDyZ58Hl5vaUI3OXWnA3PkqX?=
- =?us-ascii?Q?6zmzTyuYIqFAIMfP4oZjAUUsdj381G6lcK4SgHWN+jlE0pVfK/d6W7NSNyRc?=
- =?us-ascii?Q?1o1fM7jG8fj9am4pZbA7JwpUFTxwAzsV1VSbAXLUMgW8PYpUbU/ePmjFvqti?=
- =?us-ascii?Q?qHp5VseOnhU6TCHbBB3Qjlo0WSbmWcsqAWEj03+ZvkygatN240ZW4XZ+KAy8?=
- =?us-ascii?Q?LvpnVZQOR+k9Xc+yGoxX28m9jP/6ePLzHaY1q0U7tSKzc96T2cTbJsomORSS?=
- =?us-ascii?Q?vS1tVmaCP1hgJ9g+5cSevBrWmIe2nwPsG6jxHFjHxE0xms6BtbwDl7OPEOzR?=
- =?us-ascii?Q?xbUFTEpdMz5mBAYQwbXJYBVqINMmNZwr4BxKQR0MmWzOU5ThiklDZtdoeCoB?=
- =?us-ascii?Q?auQJYTNQLXVYcdACoL+I+jNYVIoSWyVfUBgOuRjHU4cBfvGCWWdXLxkmrZTk?=
- =?us-ascii?Q?MixqdmvRzX8vX/LZY0qmInykdDsDillpHCpCIeDfbHSkYd3AqaLVTwEZvMHw?=
- =?us-ascii?Q?klvzdlORSnAXMivNxAiyVlbRVw0MOqcNxkBqPHYRBDUIMwFPTOBBijPoUwP/?=
- =?us-ascii?Q?hBEaupH/cxIoR/+O7+ywNfENN/sJSNJcmnuEN7aANHZZGaGjvWBDDqgGy/Wn?=
- =?us-ascii?Q?IL71MgZJMhPUZBC2WvRtKeg2wvGph8Ltwjq81T80cS2nhJMpShF24N7gSD4B?=
- =?us-ascii?Q?DD+rVy6Qefh/tcGqFQ8GBeA3rGq1l17kdc2Pocx+wFeBQX3XEorOrgVjYsUl?=
- =?us-ascii?Q?QVabEL89zAeAqIjs5CXkVUkl+JByPxBJtEZ46azNKNMfML4KXH4AUg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:13.93.42.39;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:westeu12-emailsignatures-cloud.codetwo.com;PTR:westeu12-emailsignatures-cloud.codetwo.com;CAT:NONE;SFS:(13230040)(14060799003)(82310400026)(36860700013)(376014)(35042699022)(1800799024)(13003099007);DIR:OUT;SFP:1102;
-X-OriginatorOrg: topic.nl
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Apr 2025 06:36:56.8138
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e4415a08-3d6f-4266-b3c8-08dd861f1277
-X-MS-Exchange-CrossTenant-Id: 449607a5-3517-482d-8d16-41dd868cbda3
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=449607a5-3517-482d-8d16-41dd868cbda3;Ip=[13.93.42.39];Helo=[westeu12-emailsignatures-cloud.codetwo.com]
-X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF000001A0.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9050
+Content-Disposition: inline
+In-Reply-To: <20250423094607.1029429-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250427_233711_401715_C1D50AC9 
-X-CRM114-Status: GOOD (  19.64  )
+X-CRM114-CacheID: sfid-20250428_005946_207225_EB6A19A8 
+X-CRM114-Status: GOOD (  20.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -185,187 +75,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-At probe time the driver would display the following error and abort:
-  xilinx-psgtr fd400000.phy: Invalid rate 0 for reference clock 0
+On Wed, Apr 23, 2025 at 05:46:06PM GMT, Xu Yang wrote:
+> Commit b2e75563dc39 ("dt-bindings: phy: imx8mq-usb: add phy tuning
+> properties") add many tuning properties, but some parameter value doesn't
+> match the register description. It made some changes based on the original
+> value: add offset to a negative number so turn it to a non-negative number.
+> However, this conversion bring many pain when some properties need to be
+> improved.
+> 
+> Because device-tree supports negative parameter number, this will improve
+> some propertie's parameter.
+> 
+> Mainly include below properties:
+>  - fsl,phy-tx-vref-tune-percent
+>  - fsl,phy-tx-rise-tune-percent
+>  - fsl,phy-comp-dis-tune-percent
+> 
+> The parameter value of above 3 properties are USB PHY specific. i.MX8MP
+> and i.MX95 USB PHY has different meanings. So this add restrictions for
+> them.
+> 
+>  - fsl,phy-tx-vboost-level-microvolt
+> 
+> For this property, the parameter value is wrong in register description.
+> This will correct it according to true value.
+> 
+> For detailed info, please refer to i.MX8MP and i.MX95 latest reference
+> manual.
+> 
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> ---
+>  .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 43 +++++++++++++++----
+>  1 file changed, 35 insertions(+), 8 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> index daee0c0fc915..b09e3dab4c59 100644
+> --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> @@ -43,15 +43,11 @@ properties:
+>    fsl,phy-tx-vref-tune-percent:
+>      description:
+>        Tunes the HS DC level relative to the nominal level
+> -    minimum: 94
+> -    maximum: 124
 
-At probe time, the associated GTR driver (e.g. SATA or PCIe) hasn't
-initialized the clock yet, so clk_get_rate() likely returns 0 if the clock
-is programmable. So this driver only works if the clock is fixed.
+Widest constraints should always stay here.
 
-The PHY driver doesn't need to know the clock frequency at probe yet, so
-wait until the associated driver initializes the lane before requesting the
-clock rate setting.
+>  
+>    fsl,phy-tx-rise-tune-percent:
+>      description:
+>        Adjusts the rise/fall time duration of the HS waveform relative to
+>        its nominal value
+> -    minimum: 97
+> -    maximum: 103
+>  
+>    fsl,phy-tx-preemp-amp-tune-microamp:
+>      description:
+> @@ -63,15 +59,12 @@ properties:
+>    fsl,phy-tx-vboost-level-microvolt:
+>      description:
+>        Adjust the boosted transmit launch pk-pk differential amplitude
+> -    minimum: 880
+> -    maximum: 1120
+> +    enum: [844, 1008, 1156]
+>  
+>    fsl,phy-comp-dis-tune-percent:
+>      description:
+>        Adjust the voltage level used to detect a disconnect event at the host
+>        relative to the nominal value
+> -    minimum: 91
+> -    maximum: 115
+>  
+>    fsl,phy-pcs-tx-deemph-3p5db-attenuation-db:
+>      description:
+> @@ -112,6 +105,40 @@ allOf:
+>          reg:
+>            maxItems: 1
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - fsl,imx8mq-usb-phy
+> +            - fsl,imx8mp-usb-phy
+> +    then:
+> +      properties:
+> +        fsl,phy-tx-vref-tune-percent:
+> +          minimum: -6
+> +          maximum: 24
 
-In addition to allowing the driver to be used with programmable clocks,
-this also reduces the driver's runtime memory footprint by removing an
-array of pointers from struct xpsgtr_phy.
+That's ABI break with vague reason "some pain".
 
-Signed-off-by: Mike Looijmans <mike.looijmans@topic.nl>
----
+Best regards,
+Krzysztof
 
-Changes in v2:
-Explain the issue and the fix better in the commit text
-Propagate errors (as reported by Laurent Pinchart)
-
- drivers/phy/xilinx/phy-zynqmp.c | 70 +++++++++++++++++----------------
- 1 file changed, 37 insertions(+), 33 deletions(-)
-
-diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index 05a4a59f7c40..fe6b4925d166 100644
---- a/drivers/phy/xilinx/phy-zynqmp.c
-+++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -222,7 +222,6 @@ struct xpsgtr_phy {
-  * @siou: siou base address
-  * @gtr_mutex: mutex for locking
-  * @phys: PHY lanes
-- * @refclk_sscs: spread spectrum settings for the reference clocks
-  * @clk: reference clocks
-  * @tx_term_fix: fix for GT issue
-  * @saved_icm_cfg0: stored value of ICM CFG0 register
-@@ -235,7 +234,6 @@ struct xpsgtr_dev {
- 	void __iomem *siou;
- 	struct mutex gtr_mutex; /* mutex for locking */
- 	struct xpsgtr_phy phys[NUM_LANES];
--	const struct xpsgtr_ssc *refclk_sscs[NUM_LANES];
- 	struct clk *clk[NUM_LANES];
- 	bool tx_term_fix;
- 	unsigned int saved_icm_cfg0;
-@@ -398,13 +396,40 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
- 	return ret;
- }
- 
-+/* Get the spread spectrum (SSC) settings for the reference clock rate */
-+static const struct xpsgtr_ssc *xpsgtr_find_sscs(struct xpsgtr_phy *gtr_phy)
-+{
-+	unsigned long rate;
-+	struct clk *clk;
-+	unsigned int i;
-+
-+	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-+	rate = clk_get_rate(clk);
-+
-+	for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
-+		/* Allow an error of 100 ppm */
-+		unsigned long error = ssc_lookup[i].refclk_rate / 10000;
-+
-+		if (abs(rate - ssc_lookup[i].refclk_rate) < error)
-+			return &ssc_lookup[i];
-+	}
-+
-+	dev_err(gtr_phy->dev->dev, "Invalid rate %lu for reference clock %u\n",
-+		rate, gtr_phy->refclk);
-+
-+	return NULL;
-+}
-+
- /* Configure PLL and spread-sprectrum clock. */
--static void xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
-+static int xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
- {
- 	const struct xpsgtr_ssc *ssc;
- 	u32 step_size;
- 
--	ssc = gtr_phy->dev->refclk_sscs[gtr_phy->refclk];
-+	ssc = xpsgtr_find_sscs(gtr_phy);
-+	if (!ssc)
-+		return -EINVAL;
-+
- 	step_size = ssc->step_size;
- 
- 	xpsgtr_clr_set(gtr_phy->dev, PLL_REF_SEL(gtr_phy->lane),
-@@ -446,6 +471,8 @@ static void xpsgtr_configure_pll(struct xpsgtr_phy *gtr_phy)
- 	xpsgtr_clr_set_phy(gtr_phy, L0_PLL_SS_STEP_SIZE_3_MSB,
- 			   STEP_SIZE_3_MASK, (step_size & STEP_SIZE_3_MASK) |
- 			   FORCE_STEP_SIZE | FORCE_STEPS);
-+
-+	return 0;
- }
- 
- /* Configure the lane protocol. */
-@@ -658,7 +685,10 @@ static int xpsgtr_phy_init(struct phy *phy)
- 	 * Configure the PLL, the lane protocol, and perform protocol-specific
- 	 * initialization.
- 	 */
--	xpsgtr_configure_pll(gtr_phy);
-+	ret = xpsgtr_configure_pll(gtr_phy);
-+	if (ret)
-+		goto out;
-+
- 	xpsgtr_lane_set_protocol(gtr_phy);
- 
- 	switch (gtr_phy->protocol) {
-@@ -823,8 +853,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
- 	}
- 
- 	refclk = args->args[3];
--	if (refclk >= ARRAY_SIZE(gtr_dev->refclk_sscs) ||
--	    !gtr_dev->refclk_sscs[refclk]) {
-+	if (refclk >= ARRAY_SIZE(gtr_dev->clk)) {
- 		dev_err(dev, "Invalid reference clock number %u\n", refclk);
- 		return ERR_PTR(-EINVAL);
- 	}
-@@ -928,9 +957,7 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
- {
- 	unsigned int refclk;
- 
--	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->refclk_sscs); ++refclk) {
--		unsigned long rate;
--		unsigned int i;
-+	for (refclk = 0; refclk < ARRAY_SIZE(gtr_dev->clk); ++refclk) {
- 		struct clk *clk;
- 		char name[8];
- 
-@@ -946,29 +973,6 @@ static int xpsgtr_get_ref_clocks(struct xpsgtr_dev *gtr_dev)
- 			continue;
- 
- 		gtr_dev->clk[refclk] = clk;
--
--		/*
--		 * Get the spread spectrum (SSC) settings for the reference
--		 * clock rate.
--		 */
--		rate = clk_get_rate(clk);
--
--		for (i = 0 ; i < ARRAY_SIZE(ssc_lookup); i++) {
--			/* Allow an error of 100 ppm */
--			unsigned long error = ssc_lookup[i].refclk_rate / 10000;
--
--			if (abs(rate - ssc_lookup[i].refclk_rate) < error) {
--				gtr_dev->refclk_sscs[refclk] = &ssc_lookup[i];
--				break;
--			}
--		}
--
--		if (i == ARRAY_SIZE(ssc_lookup)) {
--			dev_err(gtr_dev->dev,
--				"Invalid rate %lu for reference clock %u\n",
--				rate, refclk);
--			return -EINVAL;
--		}
- 	}
- 
- 	return 0;
--- 
-2.43.0
-
-base-commit: 8cc713032dae3b74742d90a35e2f93b6cb23684f
-branch: linux-master-xilinx-pcie-reset
-
-Met vriendelijke groet / kind regards,
-
-Mike Looijmans
-System Expert
-
-
-TOPIC Embedded Products B.V.
-Materiaalweg 4, 5681 RJ Best
-The Netherlands
-
-T: +31 (0) 499 33 69 69
-E: mike.looijmans@topic.nl
-W: www.topic.nl
-
-Please consider the environment before printing this e-mail
 
 -- 
 linux-phy mailing list
