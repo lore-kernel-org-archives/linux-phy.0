@@ -4,63 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B17D2C369D3
-	for <linux-phy@archiver.kernel.org>; Sun, 27 Apr 2025 09:51:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F852C369D1
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Apr 2025 00:00:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MheeKdk72i53JEPouEPmh4MdxojDEuUn+ThqBeYQGLs=; b=unvwIpfJtbIW8I
-	neqD1wlrWUCa5ZGGVDyNV6LPD+SMo5ye4KDQs5/+L89Uu+2y+ZykLuCgKmzXLnqSifi5R3XfF0aVH
-	6Ts51nUj4prvd0Ovra4DN/iaPAxCgbPIP4J6YncUPTTP7lCAFXJxs7oiB24Oo9Bv/1R5BX24Wfe+8
-	U7/dXakuDyxlGk9bdBq4qcu93RPyFVNJOFQHx6Ke3s6j1uWaMrkFj9RDBGaW26hMgkNh5004OGwbp
-	Vt9GiUsVevuX/kbiH4QdJMG+evUMuusMRy9KJyqGHl9puHu/Uw+dEPOYsQUebxE+0mKGu6u9SJFpg
-	m7o2KUvIiA51DUBsQVEQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=lqry1sW3WPE7UjZI9JPiLEVP3bW8g1WnlNAKI8XH6TY=; b=SHOGaqhzFp8VGNo52ddpSXPFMq
+	qPuLDLuSglXOPYgnsmT3JP8EFI7dfyaOvcQRpIiqB/VbMJTwZxV9Q/A6ccSBfdrz9xBMRr6OysZ4f
+	RCJ5S1gbe94xR03WvOzBVksOHLVBi6DL6fEu2dmeWPlclFtuSVDJ9CwCCzFs4xCVEzw6ZoX4+t5Ui
+	qJfYlp2IfSy8dpIN6LoUHTd+BJ7dJ9eNcOTwm0O2aH6Pu4riEUAjmGNFEorhrXr1ro44Zc2FRH1RL
+	aLBCpHOnwCc7/QRxNSsBYf5lghLacrXmd4Srh8fMZDKtRY1DJMcmSMYRZdeu+8SR0Qgq4Savt5xyV
+	n+SK5jnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8yfp-00000003JZY-21AU;
-	Sun, 27 Apr 2025 09:51:45 +0000
-Received: from mail-m93197.xmail.ntesmail.com ([103.126.93.197])
+	id 1u9Bvf-000000049bA-1V9b;
+	Mon, 28 Apr 2025 00:00:59 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8yfm-00000003JXk-3SxG;
-	Sun, 27 Apr 2025 09:51:44 +0000
-Received: from crj-HP.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 13467afd3;
-	Sun, 27 Apr 2025 17:51:26 +0800 (GMT+08:00)
-From: Algea Cao <algea.cao@rock-chips.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	heiko@sntech.de,
-	cristian.ciocaltea@collabora.com,
-	andy.yan@rock-chips.com
-Cc: linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Algea Cao <algea.cao@rock-chips.com>
-Subject: [PATCH v2] phy: phy-rockchip-samsung-hdptx: Fix PHY PLL output 50.25MHz error
-Date: Sun, 27 Apr 2025 17:51:24 +0800
-Message-ID: <20250427095124.3354439-1-algea.cao@rock-chips.com>
-X-Mailer: git-send-email 2.43.0
+	id 1u9Bvd-000000049ai-2Rrp
+	for linux-phy@lists.infradead.org;
+	Mon, 28 Apr 2025 00:00:58 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 88EF3436FF;
+	Mon, 28 Apr 2025 00:00:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27541C4CEE3;
+	Mon, 28 Apr 2025 00:00:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1745798455;
+	bh=W5vRtCF/3ch2I435tyzUXFE8e9gPD0WPo89DsXN3yFk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fNIe+crxuzWWQRBF09HOLl0icswmAE5ZEhB1btylcw3BdeE0++Wn6ufkvXhoPdvtC
+	 rsZuelEPoRGVas5xWrkiOY92X3+In1cuEQYEiSaA9Ijfc8QYN6gJJ2VT1saTaTSPJF
+	 XpJMeO0FqTTs7K9QBVygu/cSbE4EoXn3kWS3wLxeD5xAMqoBrDVJRP4SiXyJEEUbZP
+	 ER9CFd4/S9bPByfXXwsyTeySFfDN5gxF3fvAcvq1Wnijpq7kAjujMu/lEc1wPnSKDf
+	 n/mIT+CFvlO0z4WvORTyHw2bLE2iqIILGi4yiqzMmqKsB+3WPh37669kw4KvELhCvB
+	 xDtwN7hFdA0Nw==
+Date: Sun, 27 Apr 2025 20:00:53 -0400
+From: Sasha Levin <sashal@kernel.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Jens Glathe <jens.glathe@oldschoolsolutions.biz>,
+	Vinod Koul <vkoul@kernel.org>, kishon@kernel.org, lumag@kernel.org,
+	abel.vesa@linaro.org, neil.armstrong@linaro.org,
+	quic_qianyu@quicinc.com, quic_ziyuzhan@quicinc.com,
+	quic_devipriy@quicinc.com, quic_krichai@quicinc.com,
+	manivannan.sadhasivam@linaro.org, johan+linaro@kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH AUTOSEL 6.14 08/31] phy: qcom: qmp-pcie: Add X1P42100
+ Gen4x4 PHY
+Message-ID: <aA7FNcDNbb1H4Jis@lappy>
+References: <20250407181054.3177479-1-sashal@kernel.org>
+ <20250407181054.3177479-8-sashal@kernel.org>
+ <Z_dt0F-XzGIJWhnz@hovoldconsulting.com>
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQhoeHlZCQkoeQh1OGExOHRhWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a9676a8a62a09dakunm13467afd3
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Ohw6TAw5EDJKNzAjIiEXAg88
-	IR4wFE5VSlVKTE9OTE9MT0NMSUNMVTMWGhIXVRoXHB4aVRgaFDsJFBgQVhgTEgsIVRgUFkVZV1kS
-	C1lBWU5DVUlJVUxVSkpPWVdZCAFZQUlJSEg3Bg++
-DKIM-Signature: a=rsa-sha256;
-	b=KrV+/+4CPUARt4u7JXOYH09ZtCg74JjPajJcsbOdnLlHIU6yfpJARmdeDu3KozYLYmuQKiI1t1YmH9sjIf+oQ9Ahi9Jkw9SngZpIOvbLyE4kPq3/jojUMZA82LpTUlQ854nhYhE73BThCJqbG1Am1I2zSLCezAdhfbqs5dkvyq0=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=SoYz/XFXV7qWYJpDDDScC20wyuaAqrciDeZizEc1w4E=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <Z_dt0F-XzGIJWhnz@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250427_025143_383451_9643ACFA 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20250427_170057_642028_AFE8E1ED 
+X-CRM114-Status: UNSURE (   8.75  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,48 +79,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When using HDMI PLL frequency division coefficient at 50.25MHz
-that is calculated by rk_hdptx_phy_clk_pll_calc(), it fails to
-get PHY LANE lock. Although the calculated values are within the
-allowable range of PHY PLL configuration.
+On Thu, Apr 10, 2025 at 09:05:52AM +0200, Johan Hovold wrote:
+>On Mon, Apr 07, 2025 at 02:10:24PM -0400, Sasha Levin wrote:
+>> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+>>
+>> [ Upstream commit 0d8db251dd15d2e284f5a6a53bc2b869f3eca711 ]
+>>
+>> Add a new, common configuration for Gen4x4 V6 PHYs without an init
+>> sequence.
+>>
+>> The bootloader configures the hardware once and the OS retains that
+>> configuration by using the NOCSR reset line (which doesn't drop
+>> register state on assert) in place of the "full reset" one.
+>>
+>> Use this new configuration for X1P42100's Gen4x4 PHY.
+>>
+>> Acked-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>> Tested-by: Jens Glathe <jens.glathe@oldschoolsolutions.biz>
+>> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+>> Link: https://lore.kernel.org/r/20250203-topic-x1p4_dts-v2-3-72cd4cdc767b@oss.qualcomm.com
+>> Signed-off-by: Vinod Koul <vkoul@kernel.org>
+>> Signed-off-by: Sasha Levin <sashal@kernel.org>
+>
+>Support for this SoC is not even in mainline yet so there is really no
+>need to backport this one.
+>
+>Please drop from all stable queues.
 
-In order to fix the PHY LANE lock error and provide the expected
-50.25MHz output, manually compute the required PHY PLL frequency
-division coefficient and add it to ropll_tmds_cfg configuration
-table.
+Will do, thanks!
 
-Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-
----
-
-Changes in v2:
-- Modify some descriptions in commit message.
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index fe7c05748356..77236f012a1f 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -476,6 +476,8 @@ static const struct ropll_config ropll_tmds_cfg[] = {
- 	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
- 	{ 650000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
- 	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-+	{ 502500, 84, 84, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 11, 1, 4, 5,
-+	  4, 11, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
- 	{ 337500, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5,
- 	  1, 1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
- 	{ 400000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
 -- 
-2.43.0
-
+Thanks,
+Sasha
 
 -- 
 linux-phy mailing list
