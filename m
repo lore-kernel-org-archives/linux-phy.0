@@ -4,153 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B46BC369D9
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Apr 2025 10:24:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AA67C369D9
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Apr 2025 16:43:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CCoHBo/hEcoJriYtKLQ6DKeivwqbkC7UWPayW6O3IQs=; b=jZhW0v9UOBpk8U
-	L2MZlLwaXN3/DNGarJOHZtXFljtwZafVLn4rxeg73oeuZx6BBSF6BkaXSKO9OgAPwagJmlhrGri9m
-	Xk5FisEfvpFYnc1alNCt3qp2hR2LX8DspLwx6gINmpcBZWAliojDsyeMrtYz5rQLghZ8P2XtEvi3O
-	zV/laJQId0CqCcNUvqGwDzHKo1xewEaeKO5AkX6U93wI5McfzOpK0iyCXGEIsnUkINFwNSm3Y1cxL
-	0G7jdeYfIgKLrVfcE0kWQkfYjjKM42ku0ERkHjAsWb7sHhdFq6lTxiymDW6tO1AcdSO8qMgww+HU1
-	9E73dbmCN3OGuY0e1ZvQ==;
+	List-Owner; bh=GW2sxMoeyFZj37AGboGEdpeeT1LINFQT1WUuZld27tY=; b=sDbykud/p1mkkr
+	g82DoRpXHg+7wfNc0bLtc0Ffk4YCuOegx+boSZvVjGSD+Bn87RV5O8zyJ4sN+exdNxIsM2IxM41d2
+	EesiISaIOtvH2DrN2QAUnqgeLT8bcRJukSQwHmZL2zbhE/9m5EFxt6v+YR76cnC/fbR7qzquPwMIv
+	0QvVVqAVxpbUxksiKaj2dLC13fTCRdcgfFj1BdEvokQE2oJwrH+sknDB8mtW7HEBEF8XiZzl/CSN2
+	8nMT+5Z2kKLZx63aUJ5WVZ1Td2AwojRkaBh29vLknlSmdZCmi5iFO6qTm8kcZC8N+hYwojFLvEv9Y
+	0xx25jxS8hCOgOaCjsqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uA4c6-0000000CW8Z-35ej;
-	Wed, 30 Apr 2025 10:24:26 +0000
-Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1uAAXB-0000000DTAG-3fQZ;
+	Wed, 30 Apr 2025 16:43:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uA3yR-0000000CPo6-1x0Y;
-	Wed, 30 Apr 2025 09:43:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=HQOHxH6yPSaP3+Hz8ODE/BFOg0vWUCn57LXJYyJVL/UY+8MqXmeoeltmzJG5CHt0wBl/E7RCBNIeM9sb8V0gn5kG21u/oCsHWDgFW3xszvNctCeslQQTZcvKLW/KXXkXR/Q79rt35CqxWSTAobyIG40cvIsmaGN0wdQZKB/frcGJPHvu0/0x9ue/kSF99oqa0aNzADeOcRea9tSoEnEH5Xobzj3hCCCATSUxePtZpCha7X2oIdIFENCH/+yIkmckJUkw2LNrD4hGSaKbx6qz6i52cFhVHR/e7hoOSUEjnZf+3VVPg8/tQ0/HJ2mDhLHJFzIxQsJMATzX3s+EBzH0fQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=iEwOlbILnZOZpZ5ezt+IXg26cvioW6A+yIXxPJUbdag=;
- b=QLpZkMLFLQO2Jt6NRTMbI1ZLNpnyqmOLwE+q13ARU1gE6wG7J3E6rrmhX62hn25a4spnfqeasijOfDPnaSaUjWjyQ2/1joTc9vT3CL4getpcphMYso1zL1jzUsgBll8xCTAnaqYq0sfI3/YIcQ/AiD72cRcU2B+52ste/N0vcHB5WgKZfg5HjWXTktDktCzBs9fYx0/nAXHvnwYrd0L8ncd47k149jghe53XdV54WHnJhfeqRQxPEGMmMaoLJ/OQ1pxjg0QfUjcfQd3bfGNmgdnRPPZiLzTOZJIy10hvXFTwn18E7bChZlt9lznhhraIfwdYI1cGCPmvvOT4zjUL9w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iEwOlbILnZOZpZ5ezt+IXg26cvioW6A+yIXxPJUbdag=;
- b=EP3GpBsMlja3XKpL60R0OGYUemHU/ArEk/9L66xELutpzqzPxGGVE7ponyGnHxH1ajIdh3+YK6JsdAbUm6yY33J+IA9PlygyTobk9GKoQow7eLOONrkmag8zqhxaLRiirx8qWj+icpkcxEUVaOrePt8SAW08TZkKXLiwR11xroiO018LMbcd/0txPLkjkYlgJ4aoagKgz7Oup1FCm36EjQMsMigbgpye+I0a2b7TWw4Hxl2W77QHzC6ob7DtHI+eZNv7vnRKv7sLWy+13pYWhp6BOqQb7nPnRTg8WMvYYCEju5zLkZ6aaXDJI2gtBsIsvphU+vgEbTmRpro5PZA6yA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by VE1PR04MB7246.eurprd04.prod.outlook.com (2603:10a6:800:1ae::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8678.25; Wed, 30 Apr
- 2025 09:43:24 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%5]) with mapi id 15.20.8678.028; Wed, 30 Apr 2025
- 09:43:24 +0000
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	kernel@pengutronix.de,
-	festevam@gmail.com
-Cc: jun.li@nxp.com,
-	alexander.stein@ew.tq-group.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 4/4] phy: fsl-imx8mq-usb: add i.MX95 tuning support
-Date: Wed, 30 Apr 2025 17:45:02 +0800
-Message-Id: <20250430094502.2723983-4-xu.yang_2@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250430094502.2723983-1-xu.yang_2@nxp.com>
-References: <20250430094502.2723983-1-xu.yang_2@nxp.com>
-X-ClientProxiedBy: SG2PR02CA0039.apcprd02.prod.outlook.com
- (2603:1096:3:18::27) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	id 1uAAX9-0000000DT9Y-2a62
+	for linux-phy@lists.infradead.org;
+	Wed, 30 Apr 2025 16:43:45 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53U9658i018336
+	for <linux-phy@lists.infradead.org>; Wed, 30 Apr 2025 16:43:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	m8gechZt1FFMmvPClarUjgPBXpccO8/uIU+IaL+lEqg=; b=Jk/Q5dEqOZ38oUAi
+	Z2vIDqnZXUD9/g843JoICwAxjXU07O14bYND0HsT+FP6uBwthjrCm0eLUZdIA+DG
+	GZdKxpfwtr2bjCtsgE/NmwS/j3Ec0DTWELlQoGA9Ao01AWaHHAqftcgsGf47mnus
+	3tMhdafHp/4R6Kds/yoB/GbIrDgov8qp6wkMcajUDo3jQ0ojnU6kl9adquglgwrt
+	ArxPjtfOEVIws4k6IMw0nOF66WTrcoqjpRbi87p6Te/qYiXCk4c32AWhrqLzhL9N
+	RiaGO01BbuAgxW7Adwge+8smE7G/6zjioni57Q09RxJF3XUKnSl7GkFWLB42Rv/U
+	cYR0kg==
+Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46b6uaavf2-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 30 Apr 2025 16:43:41 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-7398d70abbfso112175b3a.2
+        for <linux-phy@lists.infradead.org>; Wed, 30 Apr 2025 09:43:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1746031420; x=1746636220;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=m8gechZt1FFMmvPClarUjgPBXpccO8/uIU+IaL+lEqg=;
+        b=kJlzVpkmouVpvRYqLT5tHLmFJzBKMphVZZJDJU1te+0qlokC+SNX3v+fV4hY5fnTvf
+         usA9KEGnFRaatrAhg2+j3hAxV9cwrbdzt2n6A3UIxKOAzlJ4i2THOnM2eYQ56NAzirN4
+         f4wVd9tBJ0ZlXmCoJXThCDfKSB8c3JzG4LdMJyeA8tZEBhQEBhwTgUcR0yY3oQQdioSJ
+         LRr2Hu3exhIQYkL/4h0osowPBm1S3K+n5Zj29yu2NDJIkHQcRmUD4wAScPPlAD7kFJgF
+         SANl+hC0kMr6taBgnODCA0edV0eOuBZPF3ryx+6AKM+PQwFDPgVRw+tl8ZvkDuvtf0rM
+         F/Hw==
+X-Forwarded-Encrypted: i=1; AJvYcCVn5BT9ybESLIp6GIZSPQCCwqg6lVHYF8X3cp4nZIr/jzX847q0g9+PvM2IsHlclVHBBEDVRvybKBk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzJdD0f/WtmNGs7BZGNN2CWOlbaHHGCZwA3h9YXWJljbbVx/l1Q
+	TjvIDTFsYuY+vrCXTFBYfS6V78Xc3xPscSdTuoIfIhvhogOwDG5TRkvBHgGCGKr0wMTzGT45xhM
+	T7ap876nlWCo9qnExiYxETniahqSsnTpFMmgW5q7g4zs1hXm6UL3GeAg3RbaBFqk0
+X-Gm-Gg: ASbGnctvvwOKb39TspBhLXTgrfRWYlmnDUJ0SzD8nAGAqoWfCt3ndlMiGkDKZ0dzrgn
+	bD2ojfk4MPBghq4NWGDZRGI8/Ngfh/n6PVljJYWU4kXleXIYSdDVbWh43H7IOvO+HXcqNOjpdeB
+	qyAx9wdZ6qi/qyrgjyigi//UlypMJmDEvuvHmvwOoaRF/wDObVUgXHzhz5QZlPLJ3Sf+ImFGNYB
+	0RDBUW2clSJtpfftILPb4OdYZ8RViaLLX5IDk5gwOSOXmN53a3bLI/U2BaPtXX6JKSt7kSES38j
+	gVjNeg861FucLCm3A23GBL2A/Lkn4hh4bgybOBmEnOieI5cyGlj2
+X-Received: by 2002:a05:6a00:1814:b0:72d:9cbc:730d with SMTP id d2e1a72fcca58-740389c6d3amr5637543b3a.11.1746031420667;
+        Wed, 30 Apr 2025 09:43:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFfvM2n/WCXOQfmCAt6vISRbV46zytVPmlHBi42n3e9/Mr/zp0qmV/V+dD0IhKtXBh3vpZs5w==
+X-Received: by 2002:a05:6a00:1814:b0:72d:9cbc:730d with SMTP id d2e1a72fcca58-740389c6d3amr5637514b3a.11.1746031420328;
+        Wed, 30 Apr 2025 09:43:40 -0700 (PDT)
+Received: from [192.168.1.4] ([122.164.87.156])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74039a5c25esm1943084b3a.136.2025.04.30.09.43.37
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 30 Apr 2025 09:43:39 -0700 (PDT)
+Message-ID: <52c249e3-3cf4-492b-a22c-f82caa3bcd73@oss.qualcomm.com>
+Date: Wed, 30 Apr 2025 22:13:34 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|VE1PR04MB7246:EE_
-X-MS-Office365-Filtering-Correlation-Id: 74e02840-33bc-463a-2ab2-08dd87cb73bd
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|376014|7416014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?PHRCwA/xTH6AXCwYuV1H2jlyNqqn8PDJ/aAsaB9OQGsw7TAxZpF3Eq0hr/Bt?=
- =?us-ascii?Q?2LUVkgLuvpw3DHK3J1hmlJ1MWC3a7XTe7FICEUZUt9AcA3PogMb/FO7XwofW?=
- =?us-ascii?Q?M2JjMlg+s8c3P3PG5v4nXuECSJfx9jDrJsKxv6Zo11GK1oWmy8x8NnnUGk80?=
- =?us-ascii?Q?XWSmFk3IsOMTYeNuHQ5x/FO+f7wydbk3/AdRO1kmZJOEoaAO3wle8fquz3ka?=
- =?us-ascii?Q?j5hB1WFbEcyPoug13mOKe970A3vu3QiKuiZ+7FzxyzUbvr8XQLxx+QJKycHM?=
- =?us-ascii?Q?5kv00kzHqBhS78msWaK13xfm/0n/mg8py1VGM7jbyZMS8fnOM5eQMjw45kVz?=
- =?us-ascii?Q?kgz6lnzWNnZ7t69O83YbKy/tKj9JQyA90dlz+Es3/aPxUykBDnwVpgwEOjxW?=
- =?us-ascii?Q?fMg/XE0CJC/afoQWL6IPC8yKUQDIqURg55/3vPLH5zODtIx3s8k1U9KKzGwF?=
- =?us-ascii?Q?YHDGuTLqW063Xg1wmrTpJ77g9/HHjeiHYUR8Z9nkdS6vxZl94dr7p85vqHx/?=
- =?us-ascii?Q?qzy/hWNKQbVoR44kB6tnUPdzM1VZIabsh1ExrSQi8FwmFTrLj7A8c0RFvIQN?=
- =?us-ascii?Q?BKnUqfek11DKpUWlfTIGNP6s58xuMNlIKWRiT3hhX+PL0tyYuCBqCd+PmGMW?=
- =?us-ascii?Q?f1kMuOd1/vcV8fOI5xlFR03aITAVnpevnWVN5xoPf1x07GFvlzahZas6BuER?=
- =?us-ascii?Q?/St8LFo+AHr6370sA5gPdTCPxCLdlXbKgZhpeN8nKX0LgXWonjUoFnDcTeuW?=
- =?us-ascii?Q?i8n+gfIjdC7qCmYIuWHPFN3ehmX4IomdnRqjO/5v0N5MwxoPDHhqO46uYJQd?=
- =?us-ascii?Q?lpHCC3FeR0YK51BF1JcQgpA6YgNnSz2LLIKyMuyXtRmoR8gq4qfRqstE1ka9?=
- =?us-ascii?Q?5N67HYjGkRDBWhECQdwCa4TYwHAxyiA6Dj6tp3Asssb+NusrUSrMXu1TX3ww?=
- =?us-ascii?Q?XxJoUCa0YeNki2niauTNLIJVtd0hOdcLFztBTuwmCIBfFhywO6z4ML96lIQA?=
- =?us-ascii?Q?lgM47HOpN0cB+/6+42M4hyexUYeyrz3HmtcozmzYAsMw1evjlknmKvMcDFmR?=
- =?us-ascii?Q?HIavO7VVJ2OEISh3j/xIzRCe4oNOR/mnbWhclWAMf1GKoWXHYhenoxhw3+RG?=
- =?us-ascii?Q?f2jdwt+wWBZmmccaPFgWVu9EhrCM2pTFXgCTTxd14Jog4YEg10cJ5yEcsu63?=
- =?us-ascii?Q?pY2fC6bgC3K+JvYyty5HftJ1V5cVk5n9mkNvQuK1XeD3bryEB0AEo8raCjQs?=
- =?us-ascii?Q?j7SZ5LEtunmD7ic5kJRqGrF5uiO8jd/ttm/m1ZyKDm5Xue2Zo5vlqn+r36hA?=
- =?us-ascii?Q?ByFxWppC3gUPN2Z091r4MBzP7a6V5S1c2jACrowtzBLpZts1qsXWEJ1JKwbk?=
- =?us-ascii?Q?GTs2Wp6dSp7XNAGfYWG7t87JRggAahFQMUxQy8X4oy9e+E7adxLA9UwMcnmw?=
- =?us-ascii?Q?zJx75NfTVk9zgjCz8be0qIRt/LMkCJt9lEL1pJEafkOE+leYqKx5tw=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(376014)(7416014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?qE3I5ZYsMgmfJq3bd1RjKVCHDhFH2gUXUNHHLKzdmOPt0mi53ZXqgSz5VaWg?=
- =?us-ascii?Q?60YX6VtzaNx3wk76PqiKy7Z48/JDe3cqjGUbfqW+Gr5Uim4RpTWLWP6D6FQU?=
- =?us-ascii?Q?skwUB59dOhx2X9AofMaFzuAN0H2mCxd/9+ciE1z9iyy4/md9HKAjc4Yijm65?=
- =?us-ascii?Q?DI1sCfXrqxLclHCi8aJ1OJBv9g+Jdwul2clv5nwsU4SYxeOugG4KvBEMMz0K?=
- =?us-ascii?Q?9SplhLTLHu5GFWSfGC1Yc5tbAf7Xg5y53rmuZFWMz2iRN5gX5w3mTzZYc0GV?=
- =?us-ascii?Q?vGSErfStVGF3zQyTZRqAWUhs/JfKh8F9gAKwtOGmTX+IuzuC9R09GaaZB7+y?=
- =?us-ascii?Q?0fIeNh3uoBMRIhpCxyGaW+CbzgFPU4l+2S6DQGYlWMfN9TPp6YmXmQIeyjbR?=
- =?us-ascii?Q?RuoJ+o4sZ0dqZBTRab+TLWVGc0zIg4bYa70+9Oaqf3FeHf1Fm0obS0xnwhIg?=
- =?us-ascii?Q?rteGSafOpfeSOu12/N0JhET9GoviRAoUW/cAFWGEDkFS0T+8yphihqJ5GVck?=
- =?us-ascii?Q?4qd9AeDrEQeyHsuRWGUR+VkGGSSgOob+650YZGfIfxHd5u20PeAOcGrBSiEc?=
- =?us-ascii?Q?f1/pr+7dHLJUB0d0LwnzrYQouZ8in9ny/o5FtoyDO231TjH5F8SqafDEPBa3?=
- =?us-ascii?Q?ICX9ySUucyfzMPcvfJR3HyBpi2plFv2XKfOBTYsjZISOIuYBaAb/s6sNQo/2?=
- =?us-ascii?Q?78FvLK80bwMcK+BOABdjpLm16zppCFPpvDyGtuW4fxuYVkgs61H07ctMC0wW?=
- =?us-ascii?Q?6sgLhqOkU+2+NgTVkxxDZgUH7vqJJ93BCrnJT766vH4cbL1LGGE/BsWku05L?=
- =?us-ascii?Q?dZbubc7dVP0KRUnYTwnYt4Va5+gwnQHxKR6icLEZePYt+r/iABKk02mZsm1E?=
- =?us-ascii?Q?NA2biHiY9//uIelMtRdG2QGRj9Cihxs11uMzPoToV9TA1i1x0pK5nuDzqzyR?=
- =?us-ascii?Q?sWM8NaFG/SBqr32a/siss75G6VqHm8yvqRhhvWy27ZtQdAjxQH4l6GOcBQ4X?=
- =?us-ascii?Q?QsVLF2Wo5Thv5fosMrG1YBMvl6sFPSviA3k36vxqMgZUl+0friHn2YwqqusU?=
- =?us-ascii?Q?E9VOo6Z1+WXbgBjFdRN9NJ6mE7yWozh94z5UOuPfFmaJOZRy/Djyn/j9irFH?=
- =?us-ascii?Q?3dr+EiQ5KOXrCNjHB57jUZrLy+jhOhspUM8SjrnoB2K+ZU1cpCVMZF8GhJiF?=
- =?us-ascii?Q?bKYyygaPKQq06JMTSRPAmSPSuA0vMrRDn9z83+R4/4Fj0kV2nLV6MCOny83u?=
- =?us-ascii?Q?Vm9QB7VQrRBPURKyBpdfZYWayQ0t6+u2+k1M5OkRwtvY5mQEEvCJeQKxYl2z?=
- =?us-ascii?Q?3+JSEps+I6O41pzGQIg3+C+zcJx+ov10JsOPDukxQs2Y7tASLrJvm5MJDR1r?=
- =?us-ascii?Q?SCR0fl0Q94yc102cMITxIkukliF+DBHeHOQbRr0LKm0QgMVx/Tszur/lKsyu?=
- =?us-ascii?Q?C5jT+AnmSQ0M7SfVUk+vFbBHKprZ11mBAYeHR/ZvExNTvbqAo2rhiaE65AUA?=
- =?us-ascii?Q?aKFVK85ClO9FFjLtDbD1K1ZqOgLCamz14xvyWIuFYmRfYXUy4hXohC5A2efa?=
- =?us-ascii?Q?WA/CyTngytwVrkJSqwaDA7r+tArpmA9O49/TIIh2?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 74e02840-33bc-463a-2ab2-08dd87cb73bd
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Apr 2025 09:43:24.8061
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: zkca9+7qu0fnmHrN+odeJpLGfeyJBzr23ZtDX5gKz3fiuey34KF12AIUEOOnrP6Uo7xDWko8nlVzC66mfpBMsA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7246
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/2] Reuse the IPQ6018 QUSB2 PHY settings for IPQ5424
+Content-Language: en-US
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
+From: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+In-Reply-To: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=BNizrEQG c=1 sm=1 tr=0 ts=6812533d cx=c_pps a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=wj/iefQKNY9P1RSDfSoyGA==:17 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=ZGpNPYoN0zUfxpdBiG0A:9 a=QEXdDO2ut3YA:10
+ a=zc0IvFSfCIW2DFIPzwfm:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNDMwMDEyMCBTYWx0ZWRfXxa7Q7jN0gV7F bA2DPJITdCmdQl30VL70INfdsl/8yY6YzpN2oqAHvI8G3yd96fyCb/wYEruXUnBFwPth6H0JrI8 nPJT8hYWdoLijxfDwOkvsXu2PuuHS9sXjzsvOGtD0c+BkuGVS55FwRCRTYidoyOanK7yDoo9hbh
+ gCraTurxP/6By0RDJEu2yi05ru7fMqZPBcbYUBE8v4EKPqyJlC272zBRfvcIGieGxv9CnaRpnUm XLoXCJ5HCkZ6n6MYF8znFLKmLW4Hd3HbIGUbdILk2z2V9mN/VRzs1oGUuMjrKEZeouLC2moSItQ 8p63Uja00EJ2VX2jpWb8Mjk87CG++Av+TF3BfGj4LpvpIhlS67v33C6AfEl6GqlVFkwoOIfO0ql
+ oTphXeZyDYOMViopIFRs0tuj3h4VkxQJaEu2hW4xSp51sOMnNvgxkHiM9ZqMtpr+a54bcns8
+X-Proofpoint-GUID: 5SJ7t0UcEiI_fWScP3zUUXg4tb8xOvnX
+X-Proofpoint-ORIG-GUID: 5SJ7t0UcEiI_fWScP3zUUXg4tb8xOvnX
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-04-30_05,2025-04-24_02,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 bulkscore=0 clxscore=1015 spamscore=0 adultscore=0
+ phishscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0 malwarescore=0
+ mlxlogscore=820 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2504300120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250430_024327_507070_F0E35041 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20250430_094343_665757_7C360A24 
+X-CRM114-Status: GOOD (  15.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,152 +121,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The i.MX8MP and i.MX95 USB3 PHY have different tuning parameter for same
-tuning field, this will add i.MX95 tuning support.
 
-Reviewed-by: Jun Li <jun.li@nxp.com>
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+On 4/15/2025 9:52 AM, Kathiravan Thirumoorthy wrote:
+> With the current settings, compliance tests are failing, especially eye
+> diagram (Host High-speed Signal Quality) tests. Reuse the IPQ6018
+> settings, as mentioned in the Hardware Design Document.
+>
+> Merge Strategy:
+> --------------
+> Both the patch in the series should be merged together to avoid breaking
+> the USB feature.
 
----
-Changes in v3:
- - not use negative number
- - follow the scope of dtbindings
----
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 74 ++++++++++++++++++++++
- 1 file changed, 74 insertions(+)
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index 9598a8073991..b94f242420fc 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -293,6 +293,28 @@ static u32 phy_tx_vref_tune_from_property(u32 percent)
- 	return DIV_ROUND_CLOSEST(percent - 94U, 2);
- }
- 
-+static u32 imx95_phy_tx_vref_tune_from_property(u32 percent)
-+{
-+	percent = clamp(percent, 90U, 108U);
-+
-+	switch (percent) {
-+	case 90 ... 91:
-+		percent = 0;
-+		break;
-+	case 92 ... 96:
-+		percent -= 91;
-+		break;
-+	case 97 ... 104:
-+		percent -= 92;
-+		break;
-+	case 105 ... 108:
-+		percent -= 93;
-+		break;
-+	}
-+
-+	return percent;
-+}
-+
- static u32 phy_tx_rise_tune_from_property(u32 percent)
- {
- 	switch (percent) {
-@@ -307,6 +329,22 @@ static u32 phy_tx_rise_tune_from_property(u32 percent)
- 	}
- }
- 
-+static u32 imx95_phy_tx_rise_tune_from_property(u32 percent)
-+{
-+	percent = clamp(percent, 90U, 120U);
-+
-+	switch (percent) {
-+	case 90 ... 99:
-+		return 3;
-+	case 101 ... 115:
-+		return 1;
-+	case 116 ... 120:
-+		return 0;
-+	default:
-+		return 2;
-+	}
-+}
-+
- static u32 phy_tx_preemp_amp_tune_from_property(u32 microamp)
- {
- 	microamp = min(microamp, 1800U);
-@@ -352,6 +390,29 @@ static u32 phy_comp_dis_tune_from_property(u32 percent)
- 		return 7;
- 	}
- }
-+
-+static u32 imx95_phy_comp_dis_tune_from_property(u32 percent)
-+{
-+	percent = clamp(percent, 94, 104);
-+
-+	switch (percent) {
-+	case 94 ... 95:
-+		percent = 0;
-+		break;
-+	case 96 ... 98:
-+		percent -= 95;
-+		break;
-+	case 99 ... 102:
-+		percent -= 96;
-+		break;
-+	case 103 ... 104:
-+		percent -= 97;
-+		break;
-+	}
-+
-+	return percent;
-+}
-+
- static u32 phy_pcs_tx_swing_full_from_property(u32 percent)
- {
- 	percent = min(percent, 100U);
-@@ -362,10 +423,17 @@ static u32 phy_pcs_tx_swing_full_from_property(u32 percent)
- static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
- {
- 	struct device *dev = imx_phy->phy->dev.parent;
-+	bool is_imx95 = false;
-+
-+	if (device_is_compatible(dev, "fsl,imx95-usb-phy"))
-+		is_imx95 = true;
- 
- 	if (device_property_read_u32(dev, "fsl,phy-tx-vref-tune-percent",
- 				     &imx_phy->tx_vref_tune))
- 		imx_phy->tx_vref_tune = PHY_TUNE_DEFAULT;
-+	else if (is_imx95)
-+		imx_phy->tx_vref_tune =
-+			imx95_phy_tx_vref_tune_from_property(imx_phy->tx_vref_tune);
- 	else
- 		imx_phy->tx_vref_tune =
- 			phy_tx_vref_tune_from_property(imx_phy->tx_vref_tune);
-@@ -373,6 +441,9 @@ static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
- 	if (device_property_read_u32(dev, "fsl,phy-tx-rise-tune-percent",
- 				     &imx_phy->tx_rise_tune))
- 		imx_phy->tx_rise_tune = PHY_TUNE_DEFAULT;
-+	else if (is_imx95)
-+		imx_phy->tx_rise_tune =
-+			imx95_phy_tx_rise_tune_from_property(imx_phy->tx_rise_tune);
- 	else
- 		imx_phy->tx_rise_tune =
- 			phy_tx_rise_tune_from_property(imx_phy->tx_rise_tune);
-@@ -394,6 +465,9 @@ static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
- 	if (device_property_read_u32(dev, "fsl,phy-comp-dis-tune-percent",
- 				     &imx_phy->comp_dis_tune))
- 		imx_phy->comp_dis_tune = PHY_TUNE_DEFAULT;
-+	else if (is_imx95)
-+		imx_phy->comp_dis_tune =
-+			imx95_phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
- 	else
- 		imx_phy->comp_dis_tune =
- 			phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
--- 
-2.34.1
+Gentle Reminder...
 
+
+>
+> --
+> Changes in v3:
+> 	- s/complaince/compliance (Mukesh)
+> 	- s/design team/Hardware Design Document (Mukesh)
+> 	- Link to v2: https://lore.kernel.org/r/20250414-revert_hs_phy_settings-v2-0-25086e20a3a3@oss.qualcomm.com
+>
+> Changes in V2
+> 	- Splitted the patch into 2 patches, first revert the commit and
+> 	  then reuse the IPQ6018 data (Vinod K)
+> 	- Dropped the R-b tag from Dmitry
+> 	- Link to v1 -
+> 	  https://lore.kernel.org/linux-arm-msm/20250407-revert_hs_phy_settings-v1-1-ec94e316ea19@oss.qualcomm.com/
+>
+> ---
+> Kathiravan Thirumoorthy (2):
+>        Revert "phy: qcom-qusb2: add QUSB2 support for IPQ5424"
+>        phy: qcom-qusb2: reuse the IPQ6018 settings for IPQ5424
+>
+>   drivers/phy/qualcomm/phy-qcom-qusb2.c | 27 +--------------------------
+>   1 file changed, 1 insertion(+), 26 deletions(-)
+> ---
+> base-commit: b425262c07a6a643ebeed91046e161e20b944164
+> change-id: 20250414-revert_hs_phy_settings-47643d2c75ba
+>
+> Best regards,
 
 -- 
 linux-phy mailing list
