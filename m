@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC241C369DC
-	for <linux-phy@archiver.kernel.org>; Sun,  4 May 2025 15:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FD63C369DC
+	for <linux-phy@archiver.kernel.org>; Sun,  4 May 2025 15:37:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5DSgDQFD0Q5Og9M+RVD9OwB/W3q0cfJ0OJ5bfaa93IE=; b=3Ins6rXfVvf0u9
-	6KNhMXHEpcMhhmDfGPyxGmi2EqZooniQWUW+5xHMOiFsoH+fKLaACLhiOajyoq7KgMnEg0bbN0Nro
-	Aa3qpogdHalWBci+jQs5VMnGItOrfF9YOPK48ayfRySMR3TeGcGp2TEofAShtfxfkcFdRtiFMU5M5
-	5fVaFoOF/xYM8QJxqdb6qbppzQZZdxaAGFvgAnIfzF4WIe8lt84+USaFoAeNBxOECY/WR8IkwNpV4
-	Ok8INS58eU4+rn8O9HkBsY8ZEXPwVCub8GOv7i8ErIwuO+uuW12KU9nDALgwjA1z5H086Wb0+WsvB
-	LtFy9Hot5m7f/wA93TAA==;
+	List-Owner; bh=oyHA9Kc/aEzBUGigzoS5NCtTRPJGjOtjzg4r7YEzrz4=; b=FML6/H+5rH26dR
+	uhi9GTtgHg41u+JqE9jGLAU4CTZKw5DYUgzy99dHll9XtkucG+qQyJrsdtzWcXVDrrvuvsFSW6YKK
+	RIp/J9Ep1H5sdofRYXdfbz2i4RLaR+LLruGw1lybVr2duggR9TAAnisX0CPryLjfQ/muMnDC6Fplk
+	bZ2IKJxaAYkMGCFaqJmOSmYfZ20SVyxBuVTGKs1T2Oh2tqcOhCTy+ZNWJOfokkn2vEJGx+O2gP4Ne
+	Rf7OjXESatV8dvld0aQl+rwJ/+iIKfQ/wlfzAxFA894454JEJ2QhpAZWC7aAQnSp+jKC/8YjUILEh
+	Ke1w1ovjJT8QFBHt8gzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uBbIa-00000005Wj8-28BO;
-	Sun, 04 May 2025 15:30:36 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uBbPb-00000005XaL-0G6O;
+	Sun, 04 May 2025 15:37:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uBbFr-00000005Vm2-1y9M
+	id 1uBbPY-00000005XZ8-1Jby
 	for linux-phy@lists.infradead.org;
-	Sun, 04 May 2025 15:27:48 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 544BqIUt002820
-	for <linux-phy@lists.infradead.org>; Sun, 4 May 2025 15:27:44 GMT
+	Sun, 04 May 2025 15:37:49 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 544Dabmn012240
+	for <linux-phy@lists.infradead.org>; Sun, 4 May 2025 15:37:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=uMiOZyNbZ5taHnkDse6HWXJ6
-	dUdIIbmPQ3Vxz/Yy7xI=; b=OEjiQ9svz1JEfaxj2JOruNUd826815zcljHZNM/i
-	MyxtwzNfmBwd3UMcPzkt2dqVE5sfBBjJPA+GYtHqP0XdbjeQL+WIxReGWvCG9JGT
-	q0IzTeWwrFRREV58xBnBKgtKHSCAsO6czaGLTZfoZTQmqFNaQfp/Cy30uE4s8iDx
-	5baCw6/DIviJNWSaiQRzoPxB5uIrVrJ1wbJsJTr+uI1BmkB4I/3KYcTgSVIDUFnA
-	Fh3bWVKzoAOpGGrr3bbayRPXMGvHul5FTP0r8dtFM3kSSQlwSdJs6IhKTBS7SLYM
-	oGAl5sXC5Ta8mrUBQSlUhVFtJhGPaS8StNthjlSnISCDtA==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46dbh7a3ej-1
+	:references:subject:to; s=qcppdkim1; bh=8J8bGYOZSSA8D5P45JYX64wP
+	eN7udZjhNxZL/UmjYmI=; b=aZN6DvX1jDnCqpajUand/dpLN4Nl9CO92sapqSN+
+	wj0OTPmz13n7k1RmnImj+ea64rVUJmBW4tX9KNxraW/C/zIlqYqNxz/YTPMmwhLS
+	HNzpeBDN/abDm0GUWQKVe4+5sF6p7KGFbMvkg0F5Fz8YJJuq7vXohAAKZZb1FmoY
+	cIDKBg8oiavceAUxaJfPtrN792CLpPq0ipNaNMBi+5kI9OENOcSFnIqZJGz3swYl
+	CXUpot1UOaCvIQswPl3Nip1WUnao5+10EpKk5y0YERjb13oed72sk+hsBuBv145V
+	L+RVxFV8Hvi+OGniFZ5F6QjE/zv9sAh7iDqmU4ugPqjgcQ==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46dbc5a52g-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sun, 04 May 2025 15:27:44 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7c9305d29abso715653985a.1
-        for <linux-phy@lists.infradead.org>; Sun, 04 May 2025 08:27:44 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sun, 04 May 2025 15:37:47 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7c92425a8b1so666431285a.1
+        for <linux-phy@lists.infradead.org>; Sun, 04 May 2025 08:37:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746372458; x=1746977258;
+        d=1e100.net; s=20230601; t=1746373066; x=1746977866;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=uMiOZyNbZ5taHnkDse6HWXJ6dUdIIbmPQ3Vxz/Yy7xI=;
-        b=o5+1dPPAk6AFRFGkb2qWSSiBnghaFHdVA/T6Ipq3FZPKsiNt6fSyzgLSZiLFZZc4l9
-         2Uwcy3GvdYeFxbtb3Wg/qTI4WFMfU90hrmPyBOJ3Vir+OUUz+aP43bRsvhZNLdqx9atQ
-         IazFpKuHhohm4yZrKn0KKqcvVSADOs9dDhglQ9ZLSiBg4CQdVjaukN2k2wmMpxhWIDfK
-         mOkU0KjGWJa6/xqfpUrfQBsd0pzTLVAC60iiOu+PsBUqJZ8Rhv5ifRgCPqIVYpB8otBX
-         K1IuIR+2gmMpGJeyDcZG4rtMw1/vv5hae+jiyHRnxQeUR0DmvZavyG7sFQ1NqlmNXxki
-         6REw==
-X-Forwarded-Encrypted: i=1; AJvYcCXaMBqRU4shmL/4r08fgG4iDu3a/bA++7a7sNvWr0A3oODYQrlVbWZC2fRCzcnGkpFP7BMe22Pe02s=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzFY2RI5CWxwbSMnDR9jZbYVKrb6sjl3GI0WVCfCTKAd4JWg5Uz
-	2g1sE3wpV5Y/KPPvaiDy0DWnweIl85++J+cP6WNJyfUF/f93LvruR029qKdL/a+PJgW2/dWFHDc
-	XPvbRc5d2rzVM7u+wpY7OMPnz6lC0oqGo494x+HjA2PRd3PMSTGs8IXhhkGVxcWvL
-X-Gm-Gg: ASbGnctvSyFlDGxMCv6qeV55Q1ERKfS78q/JTPhGJsMM0ax4fJFd4hv1w+h/3BOFuoK
-	Qpa/+e3bxeXxC2zjRpXnVqifiNwpaVLVp5n/q+ef67fr+vgKrNdAyKPB17YtUvTTEM6UhysBW6R
-	uj9/v9VZSX0sJ00SGzr5/rrGqeh50GUp51o4T1T3krKPjO1DqU29yNvzsXNil5IaGYd9ZK9hwgW
-	uzKMCB+i7UHYqesMe5jXBlGyne4pyg8vDz4MxrcoHjDEHUd3oitqoU9Z3MC+J29BmMySG9Og9kY
-	R4phj835KLKZ/il1kE91bOUCUUDU7cHx/EGQo6nrUJD6cQIuOCnUct1YX7WRicBY6FwpJ82uIw4
+        bh=8J8bGYOZSSA8D5P45JYX64wPeN7udZjhNxZL/UmjYmI=;
+        b=c2NNaqwyhAkFcg5oCs0Ja8Ur3vEOP4Kqg2QmyB9CF8Wr5g+AOP8kcuFYQ0VgwxmCA3
+         /T5ztn3GNk7LYEUU7keADxXEQQBfYR0+oJ3qdpExv6SZKEUAQoh3CZ7cikannjuo9goA
+         H96hOSP0uZYJW1bF1uZ8/bXB86eiWG+OFBmPouSTpafoF667HrFZnSYg4d0zl3DLg4vZ
+         siNxCyauKFveM4qseoIA4xnfaS/wvpBAm7wTKwsKS2aXpGG6N6fqxR5/wVAEZRhc5TN7
+         2vZ5z3lpPcgz3P/oIbW0TAbbSIhW8sdSoLgprTMvp0R8WF3lhJUvTs1fw8tDkm8dNHUl
+         Db8A==
+X-Forwarded-Encrypted: i=1; AJvYcCWqDzsZZ+H8fVqV9mEtb3qWvcccV+1XOn0z/jWYEKeVjZu5fS8m0G5neISTpbOIPHG+XLbdHND11Sw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw7gtlfBSMLuPoL8CatuNSWXpbwvRXorTnenWn52RFqnarYrnI/
+	URZsxxKTJPUwpp4asseaxOEsOWDmq4iimMJaJD9WLv2/++n2gpdMQhuSpNMzLTENgo7R7Flhhx1
+	OyJWkyYxLgsJPUXuo4xFo4B9ffxgQ77B7Pg5kfAHMk3BTbRlVG6z1pfuNT3utLPq8
+X-Gm-Gg: ASbGncukpBRoxv12+tRuPW7+Ni3HmTvooMgph2HOO3goMIWA0mEWNYeAk8XTataucd5
+	gBYE/tlsF9HiRM7QDfQ3x4+qr77QfTkigZMPoVchuGK3NUyrXS0dX5vza9x8T4Xl6nhZ+/L0xaa
+	5QabJzOQOxVi3lKm/nbg7s1NlT6usfgX84fFI9rtNQHHgM/3yvUGlKERzg08JC1YVN1OUUYYGxE
+	ghde4nKVDv4Xujx8mn5xFj2rpF4wyKRMsd2pvrOAaDwXOiSsGn9aUHDiaxxGj4dxPabZjqzNhpb
+	2HI2pvso0Qq6qxQvtmeQOQX2cGWgD7eeEDK6wBbYKuOqvULzHUYv0+QtYpYoOoYNnij4vzQMU84
 	=
-X-Received: by 2002:a05:620a:454d:b0:7c9:2537:be51 with SMTP id af79cd13be357-7cadfdd5c66mr743898285a.24.1746372458208;
-        Sun, 04 May 2025 08:27:38 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHVX+z7TEc6vt6ylfXVwNT1h9JQA48LH+Jzgzss3FvyThLUZMiNGTS8I+avTmoIzuwv2wL0/w==
-X-Received: by 2002:a05:620a:454d:b0:7c9:2537:be51 with SMTP id af79cd13be357-7cadfdd5c66mr743895685a.24.1746372457874;
-        Sun, 04 May 2025 08:27:37 -0700 (PDT)
+X-Received: by 2002:a05:620a:414c:b0:7c2:3f1f:1a15 with SMTP id af79cd13be357-7cace99ed1emr1939684885a.8.1746373065981;
+        Sun, 04 May 2025 08:37:45 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEKu/YOLUixhsllPZMz10hB6tnLnnl75sQCaZlpL0pB9iFUtQTIQ1rLugPO1WNiOnmuvG6ZBQ==
+X-Received: by 2002:a05:620a:414c:b0:7c2:3f1f:1a15 with SMTP id af79cd13be357-7cace99ed1emr1939682985a.8.1746373065636;
+        Sun, 04 May 2025 08:37:45 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ea94b179bsm1291505e87.27.2025.05.04.08.27.36
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54ea94ee087sm1285876e87.147.2025.05.04.08.37.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 May 2025 08:27:37 -0700 (PDT)
-Date: Sun, 4 May 2025 18:27:35 +0300
+        Sun, 04 May 2025 08:37:44 -0700 (PDT)
+Date: Sun, 4 May 2025 18:37:41 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 To: Nitin Rawat <quic_nitirawa@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
@@ -86,38 +86,38 @@ Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
         quic_cang@quicinc.com, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
         linux-scsi@vger.kernel.org
-Subject: Re: [PATCH V4 04/11] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-Message-ID: <4nfhtdavca4aqiqfct2wvqdwq5kskfzh5kffnz7utnyreiichw@giixjxypwdcq>
+Subject: Re: [PATCH V4 06/11] phy: qcom-qmp-ufs: Rename qmp_ufs_power_off
+Message-ID: <prbe2guxzsea6aqonf32m44zp6oa3vzdf5ieazcontv4fmx3d3@2r4tu5nr2k4x>
 References: <20250503162440.2954-1-quic_nitirawa@quicinc.com>
- <20250503162440.2954-5-quic_nitirawa@quicinc.com>
+ <20250503162440.2954-7-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250503162440.2954-5-quic_nitirawa@quicinc.com>
-X-Authority-Analysis: v=2.4 cv=fMY53Yae c=1 sm=1 tr=0 ts=68178770 cx=c_pps
- a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=eTLblWtPMpn9__zQJdEA:9
- a=CjuIK1q_8ugA:10 a=PEH46H7Ffwr30OY-TuGO:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: 0nfdFjebRt10tZ-okFiP2h7OZnYLiHJJ
-X-Proofpoint-ORIG-GUID: 0nfdFjebRt10tZ-okFiP2h7OZnYLiHJJ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA0MDE0NSBTYWx0ZWRfX9EBdmnbpXvKB
- BUmTueOxDJZXgk9HUl9M+u5hq6XivoAHpQKytkahDBJd21vxYKJi0DgRHkQEwNrEi4zXYN+p3L0
- KF2OhUCoU1iT4HNSGDzXbT573FNP1+t/UOvt7pvyTJIlQ7siJAew3SD/tGyw858nsRv71hke/lx
- K8hLEgEvxxkyZvwRdpdLo81//9aPabeTuSY29oVwnjthDsE19p9rC9NvN1l5MHuA/dWMl6K1x+Y
- L1ZhBRZ2u5ke4Rro+4dNJFHPN4FgICiWtY0GZjywzOCb6/WcUEcDcI6nkFo6IIxBi+vlg7+iWE1
- cek/NK2oMunLoLJ6rtwFW8Fhu6qfAp4jST+OBBEoj3guFaFJJ4VD/9TLAj5X0jGo85wOJCxFy9y
- kDAGd4rLfJ9gNO0h9BuSLm3rXNa0JPg2dftfVtimqZ7DmXwNRI1jqWD7yW7FRan58gmWMIhN
+In-Reply-To: <20250503162440.2954-7-quic_nitirawa@quicinc.com>
+X-Proofpoint-GUID: 7FjY2lOvv6foKprRoPVkx2etLJH3TGnE
+X-Authority-Analysis: v=2.4 cv=O7Y5vA9W c=1 sm=1 tr=0 ts=681789cb cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=xXtjh3xWv7Xu3w3lKiEA:9 a=CjuIK1q_8ugA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: 7FjY2lOvv6foKprRoPVkx2etLJH3TGnE
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA0MDE0NyBTYWx0ZWRfX+Zu/HUZVtazt
+ JbKC3aosTIlcPnS3nmMmh7CxNHwH4S5RCFtGM4SaJEMEfkyaFPdl/ZJq2sbEwEZu2r2KJleoYuI
+ 7Vqo2iffLo8/17PSGwh18k2BNe999qm6pL+vH5Yf1PJawexDM0eFIrysWHoAu5p0XtfmNsdXAA9
+ ZGP3Bcnb35XJ9yz/m0TaUWCDduKoWKiUaVg3pf5cqdUik9aqi/0mjXR8Pio5IHyKaees+ZOeujH
+ CmTR/5qaxBCTfj/TiOVoGHLUgDjzJ+NrF+DjcfPC3wRPpRTWg4uKmTH9xkTfCi9QzFT+1hw25qD
+ TIt0nt9AQEMePkXUKVjqJPGELREGoyDQBk8H+pw7v5MptjVy2/kjwRts1GX1jmrKVdC8Bqt/XgN
+ hfL/DAiIQsx1yymZFk6xgcVJs7am6UPTtRwULpadoCMMbdpoLvYl0byNf2yTEpIo8N3qy8/X
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-04_06,2025-04-30_01,2025-02-21_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 impostorscore=0 lowpriorityscore=0 phishscore=0
- suspectscore=0 mlxlogscore=999 malwarescore=0 spamscore=0 mlxscore=0
- adultscore=0 bulkscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2504070000 definitions=main-2505040145
+ lowpriorityscore=0 suspectscore=0 malwarescore=0 mlxlogscore=999 mlxscore=0
+ clxscore=1015 priorityscore=1501 adultscore=0 phishscore=0 bulkscore=0
+ impostorscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505040147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250504_082747_632464_F7D8432F 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20250504_083748_363436_FB7A1553 
+X-CRM114-Status: GOOD (  21.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,22 +134,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, May 03, 2025 at 09:54:33PM +0530, Nitin Rawat wrote:
-> Refactor the UFS PHY reset handling to parse the reset logic only once
-> during initialization, instead of every resume.
+On Sat, May 03, 2025 at 09:54:35PM +0530, Nitin Rawat wrote:
+> Rename qmp_ufs_disable to qmp_ufs_power_off to better represent its
+> functionality. Additionally, move the qmp_ufs_exit() call inside
+> qmp_ufs_power_off to preserve the functionality of .power_off.
 > 
-> As part of this change, move the UFS PHY reset parsing logic from
-> qmp_phy_power_on to the new qmp_ufs_phy_init function.
+> There is no functional change.
 > 
-> Co-developed-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
-> Signed-off-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
 > Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 59 +++++++++++++------------
->  1 file changed, 31 insertions(+), 28 deletions(-)
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 30 +++++++++----------------
+>  1 file changed, 11 insertions(+), 19 deletions(-)
 > 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 94095393148c..c501223fc5f9 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -1835,6 +1835,15 @@ static int qmp_ufs_phy_calibrate(struct phy *phy)
+>  	return 0;
+>  }
+> 
+> +static int qmp_ufs_exit(struct phy *phy)
+> +{
+> +	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> +
+> +	qmp_ufs_com_exit(qmp);
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Just inline it, unless you have any other plans.
+
+> +
+> +	return 0;
+> +}
+> +
+>  static int qmp_ufs_power_off(struct phy *phy)
+>  {
+>  	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> @@ -1851,28 +1860,11 @@ static int qmp_ufs_power_off(struct phy *phy)
+>  	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+>  			SW_PWRDN);
+> 
+> -	return 0;
+> -}
+> -
+> -static int qmp_ufs_exit(struct phy *phy)
+> -{
+> -	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> -
+> -	qmp_ufs_com_exit(qmp);
+> +	qmp_ufs_exit(phy);
+> 
+>  	return 0;
+>  }
+> 
+> -static int qmp_ufs_disable(struct phy *phy)
+> -{
+> -	int ret;
+> -
+> -	ret = qmp_ufs_power_off(phy);
+> -	if (ret)
+> -		return ret;
+> -	return qmp_ufs_exit(phy);
+> -}
+> -
+>  static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+>  {
+>  	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> @@ -1921,7 +1913,7 @@ static int qmp_ufs_phy_init(struct phy *phy)
+>  static const struct phy_ops qcom_qmp_ufs_phy_ops = {
+>  	.init		= qmp_ufs_phy_init,
+>  	.power_on	= qmp_ufs_power_on,
+> -	.power_off	= qmp_ufs_disable,
+> +	.power_off	= qmp_ufs_power_off,
+>  	.calibrate	= qmp_ufs_phy_calibrate,
+>  	.set_mode	= qmp_ufs_set_mode,
+>  	.owner		= THIS_MODULE,
+> --
+> 2.48.1
+> 
 
 -- 
 With best wishes
