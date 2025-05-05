@@ -4,87 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 890B3C3ABB6
-	for <linux-phy@archiver.kernel.org>; Mon,  5 May 2025 10:31:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9ECFC3ABBC
+	for <linux-phy@archiver.kernel.org>; Mon,  5 May 2025 17:35:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQdcjCKVJi0qM4DcE+6MdVNZXxf0LAkpOeVG90BkNsY=; b=V1BgDIB09vadx2
-	PTylgZJyGe9YV9hHrQQze9BEqrbQY1hHqaMIxONvwciHURHygSwqd0Li8euCLipFviYK0DiaW+/3I
-	Ge+aW8tFFm2a+vbWbxdZGVTFnwASDnyIS+je3sY1vwJFVLZe3ScgkKiMxL1Jg9eP7p81EOjies8or
-	1pOE5+kL3PH3dQxl+X4APysX//TmVSa5xyVq1ApFWf6Uv3nIpO31cucNxzHm3oesT30aN2A9MpciF
-	2FIIwb8Cq7DiU/LWIuLzpYYwMa2NIDVItivSlNTfZGmqJl4GU8HRMBV9O0ZQcoUSu5YTUlgoVm7R2
-	EGjV/jbKbQ6nrtKCIM0Q==;
+	List-Owner; bh=zHw0A6EjI8KGJ/qAqv6t8UyGou6ECSrfIIr7biiRR10=; b=HeeJsOLU/kk8mC
+	pqol2YU3hcxdwWLHh2Vp7LaD7BIiT+NmDOvbtAlpGQQE3Kdu2puhxyHHDldWt6iTnvLyxh7Q2+x8h
+	8XrYIgYJd4pAo4Nsa2j/m0k9YelpEEZyexGGMf9YyF2GaMXCn/a0ZfGz60mbpBo+boKrG1pTvAsUP
+	elcGblJCKckNOKH9pUETEhfirQ8o/+kbTKqCcDMz6iZ04ZAJGKhvBmIGSLcr4Vc0GsZhss0lQLMv6
+	zVoeVndWXbSrGU3hsoDjU5gv+gixk2z8SSqPcvKG6lhvEJ7tAVxILsdDrVZGkazC+IHGNr5/aMDh0
+	N86T2oFvmbwdUToVGKHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uBt6p-000000073lD-3v45;
-	Mon, 05 May 2025 10:31:39 +0000
-Received: from mail-pj1-x1029.google.com ([2607:f8b0:4864:20::1029])
+	id 1uBzj3-00000008B6h-2rqV;
+	Mon, 05 May 2025 17:35:33 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uBt6n-000000073kO-2h1d
-	for linux-phy@lists.infradead.org;
-	Mon, 05 May 2025 10:31:38 +0000
-Received: by mail-pj1-x1029.google.com with SMTP id 98e67ed59e1d1-301918a4e1bso3110182a91.1
-        for <linux-phy@lists.infradead.org>; Mon, 05 May 2025 03:31:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1746441096; x=1747045896; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5XUpQWufJgs2kKIw18HiC9UXi+ywi6blxUGeIGBekrE=;
-        b=envmnT/CpNGX2UL9vMA1A0XSX/1pKWkJWFiRIFDw73rmmlazSUM2YLeQT/PyWi2kcP
-         l51P01GxxdcV4dNQsKLA49sqgCb7kZU/4Fqo0rCuupttybtmEHtc+plrpnKs+HWo4FeX
-         fD0MYGkTC2tb/O6vdIVVUMSzY7kYjP6VDL95s9b+TcPaoGTrFrNM1CpOI2xu6rH7qvOX
-         h1436Q4vXtTvO/wjyTNfjEhzyXy3fQIQKW7qAkKeo/5otv/w1uqYB+n5Ad3++NAkFEF1
-         PsNZ/60yerzHqn1bd3zGQnz99OI+Eex3wrw36CHwx5nZ+hgfQSygI3syeVSPnqsLX3Li
-         Umlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746441096; x=1747045896;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=5XUpQWufJgs2kKIw18HiC9UXi+ywi6blxUGeIGBekrE=;
-        b=E2ge4A8lsHt3Y5d5bpP/nSMuBDCstHHu7shIKgfnwwJu2OkKzRyUepYBNtW9coPhTC
-         4TsNFOEKBr11n8A1mMbZ4CtuUIL3qwoH97fUNE1r2AFnKg7B8uOiZYeDp551hxX0xDyX
-         KiNZMUFJymru21a41gspsU8ZzYEmc8Sp+/FFPAvrdJcBKNGGc+SWafcPAEQoru+NiDpF
-         LBqMlcBCzn30nYvTDMy57DXuQpGF8cCXRoScwCXJsmaU8mKQOb5OxrGOAqsA+hxdUScj
-         7gkz9VCN2WzVYcQXaJzzAoEwrYCmMdN3/5WBYIcab2yucLcs6d1XoJ2xxGLbTCGC4KRy
-         z2Qg==
-X-Forwarded-Encrypted: i=1; AJvYcCWh+ydS1EeDCzc4uKOuyqSzFzZ5Qd5A2z7va68wAnDh6mQNQAH7lCW/IPWKHm7POXZAx3eRpGnUmZA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzK+gmD3BfQNJeaNRKaPJauruYArPARBp6fMHVaXlh+AzhmRHib
-	pYC9kp7mV3NfzZkk2PjlRCc7ZWSCUOlzHf1ylLuLLpjJmjC1wXsn+TdU2lJ1sz/c/4jiJdmT2C3
-	nU8ts2Wl7iTIOaRd9nkhH2fGxSeI=
-X-Gm-Gg: ASbGncuSe84pV4B3JXZB0fZjMwstesSBJewPDXDptfaJ66tYTXQIqVxvAlV/PsnFzqr
-	Fnfy9tOh1WkWfeSAnLCcphFa7qaSBb+yQVVrEe+CEQ4+oO4sAbh/n9qtEa0xUX1dgH5cz+lmWHU
-	3tcbgmi40PNPM+GnitMdxamg==
-X-Google-Smtp-Source: AGHT+IEYlPo2xwoK9jTR3CithZ5yBxrXrdxirztT2/i6xi/HWoODXSwNegDQZi0mDmE9cngDoeuiIrPsTJdQSDWsPK0=
-X-Received: by 2002:a17:90b:548c:b0:2ee:ee5e:42fb with SMTP id
- 98e67ed59e1d1-30a6198d16cmr10340838a91.13.1746441096338; Mon, 05 May 2025
- 03:31:36 -0700 (PDT)
+	id 1uBzb2-000000088u1-0CD6;
+	Mon, 05 May 2025 17:27:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1746466020; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ctbdMvRigOOohtiooqQ6ZJ3beXX0opnVdvw+za+SKdk6Ln+QPErm8WoFowNaoN0ck1s0OwVlbavgO6RdF2ps7z4I4bC3QSeETJ4ZnejXii6na5Kxaxbsik6+HBrnAEXK58YNbLtek4U3cu7Hp2JZsDXmYzA51IafS3kJjFvaS/M=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1746466020; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=MaDkGjhQDSPYsuzM9uRxkmARdK9P5jYEAGbm91UNP7U=; 
+	b=FPpsSBVnoyVacN2Q/j8+tNbgODhJkV0Es9X5N90dBeh4uCNhkiaYk0sE8YJ5TPNO6IzWjQKeDXmmrzoukOb0v3KwUZVSJWAAvuhHr4waoIyZNPYChnXT0Ot7Y0FlkBzhUKmBCywPw0aoFXEFZmbkGO7h49S7W6XNV5giWtQ0TCQ=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746466020;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=MaDkGjhQDSPYsuzM9uRxkmARdK9P5jYEAGbm91UNP7U=;
+	b=Nc3e+E27YJsgWN81HBtqPNG1jzVBDMwxFL02NhDzhIO2MlE936BmwzwiuQgHKfdn
+	k1tlvzlCeH4sejWIXbmvHhNhqjEcKseHHZk0smHL9vn38wt67XBg+Vf3OirRGJJmfXS
+	XNaVZktLDAWZHDra1lklT6cpMTHSSbwN1Quhi6GE=
+Received: by mx.zohomail.com with SMTPS id 1746466018698847.2650646063497;
+	Mon, 5 May 2025 10:26:58 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Mon, 05 May 2025 19:26:36 +0200
+Subject: [PATCH v2 1/5] phy: rockchip: inno-usb2: add soft vbusvalid
+ control
 MIME-Version: 1.0
-References: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
- <v57uy3gddzcoeg3refyv7h6j3ypx23mobctybt27xzdyqy6bgb@atzdlqlytz3c>
- <Z861gsaGY6bGSisf@atmark-techno.com> <b2qwqacogz5vzfekhk5276owld6isgewu5a2iw3roag3lbtsgm@67vqf54c5tdh>
- <CAHCN7x+q-K067u6o=+E9ybREi_jopwhMTyMN=JKfCS4r6K=HWA@mail.gmail.com> <7wmuggeoslylq266u2bhunz5vcbbwaux4jv7glytxn6yer2nyr@7s3cfixtlau4>
-In-Reply-To: <7wmuggeoslylq266u2bhunz5vcbbwaux4jv7glytxn6yer2nyr@7s3cfixtlau4>
-From: Adam Ford <aford173@gmail.com>
-Date: Mon, 5 May 2025 05:31:24 -0500
-X-Gm-Features: ATxdqUHfUWoPkX7ywp5TdexqQkSq6Rqa-aZ0I--IAftxx0IXeyn79h1aP8dyKxk
-Message-ID: <CAHCN7xLcQPvZp_fJu-1gj4H47vb64k9dw1efqe_yQQ73LQwF6w@mail.gmail.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
- instead LUT
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-Cc: Dominique Martinet <dominique.martinet@atmark-techno.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Frieder Schrempf <frieder.schrempf@kontron.de>, 
-	Marco Felsch <m.felsch@pengutronix.de>, Lucas Stach <l.stach@pengutronix.de>, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Makoto Sato <makoto.sato@atmark-techno.com>
+Message-Id: <20250505-rk3576-sige5-usb-v2-1-d5ba4305f3be@collabora.com>
+References: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
+In-Reply-To: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Frank Wang <frank.wang@rock-chips.com>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ kernel@collabora.com, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250505_033137_699008_D4937692 
-X-CRM114-Status: GOOD (  20.90  )
+X-CRM114-CacheID: sfid-20250505_102716_156873_054B603C 
+X-CRM114-Status: GOOD (  22.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,35 +80,244 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBNYXkgNSwgMjAyNSBhdCAyOjU14oCvQU0gVXdlIEtsZWluZS1Lw7ZuaWcKPHUua2xl
-aW5lLWtvZW5pZ0BiYXlsaWJyZS5jb20+IHdyb3RlOgo+Cj4gSGVsbG8gQWRhbSwKPgo+IE9uIFN1
-biwgTWF5IDA0LCAyMDI1IGF0IDAzOjQ0OjI2UE0gLTA1MDAsIEFkYW0gRm9yZCB3cm90ZToKPiA+
-IE9uIE1vbiwgTWFyIDEwLCAyMDI1IGF0IDExOjEy4oCvQU0gVXdlIEtsZWluZS1Lw7ZuaWcKPiA+
-IDx1LmtsZWluZS1rb2VuaWdAYmF5bGlicmUuY29tPiB3cm90ZToKPiA+ID4KPiA+ID4gSGVsbG8g
-RG9taW5pcXVlLAo+ID4gPgo+ID4gPiBPbiBNb24sIE1hciAxMCwgMjAyNSBhdCAwNjo0ODo1MFBN
-ICswOTAwLCBEb21pbmlxdWUgTWFydGluZXQgd3JvdGU6Cj4gPiA+ID4gWy4uLl0gYW5kIEknbSBz
-dXJlIHRoZXJlIGFyZSBvdGhlciBpbXByb3ZlbWVudHMgdGhhdCBjb3VsZCBiZSBtYWRlIGF0Cj4g
-PiA+ID4gdGhlIGVkZ2VzLgo+ID4gPgo+ID4gPiBPbmUgdGhpbmcgdGhhdCBpcnJpdGF0ZWQgbWUg
-aXMgdGhlIGZ1bmN0aW9uIG5hbWVzLiBgcGh5X2Nsa19yb3VuZF9yYXRlYAo+ID4gPiBzb3VuZHMg
-dG9vIGdlbmVyaWMuIGBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jbGtfcm91bmRfcmF0ZWAgaXMgbG9u
-ZywgYnV0Cj4gPiA+IEknZCBzYXkgd291bGQgYmUgYSBiZXR0ZXIgbWF0Y2guCj4gPiBVd2UsCj4g
-Pgo+ID4gSSBqdXN0IHNlbnQgYSBwYXRjaCB0byByZW5hbWUgcm91bmRfcmF0ZSBhbmQgc2V0IHJh
-dGUgZnVuY3Rpb25zIHRvIGJlCj4gPiBtb3JlIGV4cGxpY2l0LiAgSSBhbHNvIHRyaWVkIHRvIHJl
-ZmFjdG9yIHRoZSBkcml2ZXIgYXMgeW91IHJlcXVlc3RlZAo+ID4gYnkgc2ltcGxpZnlpbmcgdGhl
-IGNvZGUsIGJ1dCBJIGRpZG4ndCBoYXZlIHRpbWUgdG8gaW50ZWdyYXRlIG15Cj4gPiBmcmFjdGlv
-bmFsLWRpdmRlciBjb2RlIHlldC4KPiA+Cj4gPiBJIHdpbGwgYmUgdHJhdmVsaW5nIGZvciBtb3N0
-IG9mIE1heSwgc28gSSB3b24ndCBiZSBhYmxlIHRvIHJldmlzaXQKPiA+IHRoaXMgYWdhaW4gdW50
-aWwgYWZ0ZXIgTWF5IDI0LiAgSG9wZWZ1bGx5IHRoZSBwYXRjaGVzIEkgc3VibWl0dGVkIG1lZXQK
-PiA+IHlvdXIgc2F0aXNmYWN0aW9uLAo+Cj4gSSBkb24ndCBmZWVsIGF1dGhvcml0YXRpdmUgZm9y
-IHRoYXQgZHJpdmVyLCBzbyBwbGVhc2UgZG8gc3R1ZmYgdG8gcGxlYXNlCj4gdGhlIHBoeSBtYWlu
-dGFpbmVycyBhbmQgY29uc2lkZXIgbXkgY29tbWVudHMgYXMgc3VnZ2VzdGlvbiBmcm9tIHRoZSBz
-aWRlCj4gbGluZS4KCkkgdGhvdWdodCB5b3UgaGFkIGEgZ29vZCBpZGVhLCBhbmQgeW91ciBzdWdn
-ZXN0aW9uIG1hZGUgc2Vuc2UuCkdldHRpbmcgdGhhdCBraW5kIG9mIGZlZWRiYWNrIG1ha2VzIG1l
-IGEgYmV0dGVyIHByb2dyYW1tZXIuCgphZGFtCgo+Cj4gQmVzdCByZWdhcmRzCj4gVXdlCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+With USB type C connectors, the vbus detect pin of the OTG controller
+attached to it is pulled high by a USB Type C controller chip such as
+the fusb302. This means USB enumeration on Type-C ports never works, as
+the vbus is always seen as high.
+
+Rockchip added some GRF register flags to deal with this situation. The
+RK3576 TRM calls these "soft_vbusvalid_bvalid" (con0 bit index 15) and
+"soft_vbusvalid_bvalid_sel" (con0 bit index 14).
+
+Downstream introduces a new vendor property which tells the USB 2 PHY
+that it's connected to a type C port, but we can do better. Since in
+such an arrangement, we'll have an OF graph connection from the USB
+controller to the USB connector anyway, we can walk said OF graph and
+check the connector's compatible to determine this without adding any
+further vendor properties.
+
+Do keep in mind that the usbdp PHY driver seemingly fiddles with these
+register fields as well, but what it does doesn't appear to be enough
+for us to get working USB enumeration, presumably because the whole
+vbus_attach logic needs to be adjusted as well either way.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 113 +++++++++++++++++++++++++-
+ 1 file changed, 109 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index b5e6a864deebbcb33375001fc6ed67b2dfee6954..07be9c033c772d4157c7bf438fca9b9219a68c9d 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -17,6 +17,7 @@
+ #include <linux/module.h>
+ #include <linux/mutex.h>
+ #include <linux/of.h>
++#include <linux/of_graph.h>
+ #include <linux/of_irq.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
+@@ -114,6 +115,8 @@ struct rockchip_chg_det_reg {
+ /**
+  * struct rockchip_usb2phy_port_cfg - usb-phy port configuration.
+  * @phy_sus: phy suspend register.
++ * @svbus_en: soft vbus bvalid enable register.
++ * @svbus_sel: soft vbus bvalid selection register.
+  * @bvalid_det_en: vbus valid rise detection enable register.
+  * @bvalid_det_st: vbus valid rise detection status register.
+  * @bvalid_det_clr: vbus valid rise detection clear register.
+@@ -140,6 +143,8 @@ struct rockchip_chg_det_reg {
+  */
+ struct rockchip_usb2phy_port_cfg {
+ 	struct usb2phy_reg	phy_sus;
++	struct usb2phy_reg	svbus_en;
++	struct usb2phy_reg	svbus_sel;
+ 	struct usb2phy_reg	bvalid_det_en;
+ 	struct usb2phy_reg	bvalid_det_st;
+ 	struct usb2phy_reg	bvalid_det_clr;
+@@ -203,6 +208,7 @@ struct rockchip_usb2phy_cfg {
+  * @event_nb: hold event notification callback.
+  * @state: define OTG enumeration states before device reset.
+  * @mode: the dr_mode of the controller.
++ * @typec_vbus_det: whether to apply Type C logic to OTG vbus detection.
+  */
+ struct rockchip_usb2phy_port {
+ 	struct phy	*phy;
+@@ -222,6 +228,7 @@ struct rockchip_usb2phy_port {
+ 	struct notifier_block	event_nb;
+ 	enum usb_otg_state	state;
+ 	enum usb_dr_mode	mode;
++	bool typec_vbus_det;
+ };
+ 
+ /**
+@@ -495,6 +502,13 @@ static int rockchip_usb2phy_init(struct phy *phy)
+ 	mutex_lock(&rport->mutex);
+ 
+ 	if (rport->port_id == USB2PHY_PORT_OTG) {
++		if (rport->typec_vbus_det) {
++			if (rport->port_cfg->svbus_en.enable &&
++					rport->port_cfg->svbus_sel.enable) {
++				property_enable(rphy->grf, &rport->port_cfg->svbus_en, true);
++				property_enable(rphy->grf, &rport->port_cfg->svbus_sel, true);
++			}
++		}
+ 		if (rport->mode != USB_DR_MODE_HOST &&
+ 		    rport->mode != USB_DR_MODE_UNKNOWN) {
+ 			/* clear bvalid status and enable bvalid detect irq */
+@@ -535,8 +549,7 @@ static int rockchip_usb2phy_init(struct phy *phy)
+ 			if (ret)
+ 				goto out;
+ 
+-			schedule_delayed_work(&rport->otg_sm_work,
+-					      OTG_SCHEDULE_DELAY * 3);
++			schedule_delayed_work(&rport->otg_sm_work, 0);
+ 		} else {
+ 			/* If OTG works in host only mode, do nothing. */
+ 			dev_dbg(&rport->phy->dev, "mode %d\n", rport->mode);
+@@ -666,8 +679,17 @@ static void rockchip_usb2phy_otg_sm_work(struct work_struct *work)
+ 	unsigned long delay;
+ 	bool vbus_attach, sch_work, notify_charger;
+ 
+-	vbus_attach = property_enabled(rphy->grf,
+-				       &rport->port_cfg->utmi_bvalid);
++	if (rport->port_cfg->svbus_en.enable && rport->typec_vbus_det) {
++		if (property_enabled(rphy->grf, &rport->port_cfg->svbus_en) &&
++		    property_enabled(rphy->grf, &rport->port_cfg->svbus_sel)) {
++			vbus_attach = true;
++		} else {
++			vbus_attach = false;
++		}
++	} else {
++		vbus_attach = property_enabled(rphy->grf,
++					       &rport->port_cfg->utmi_bvalid);
++	}
+ 
+ 	sch_work = false;
+ 	notify_charger = false;
+@@ -1276,6 +1298,83 @@ static int rockchip_otg_event(struct notifier_block *nb,
+ 	return NOTIFY_DONE;
+ }
+ 
++static const char *const rockchip_usb2phy_typec_cons[] = {
++	"usb-c-connector",
++	NULL,
++};
++
++static struct device_node *rockchip_usb2phy_to_controller(struct rockchip_usb2phy *rphy)
++{
++	struct device_node *np;
++	struct device_node *parent;
++
++	for_each_node_with_property(np, "phys") {
++		struct of_phandle_iterator it;
++		int ret;
++
++		of_for_each_phandle(&it, ret, np, "phys", NULL, 0) {
++			parent = of_get_parent(it.node);
++			if (it.node != rphy->dev->of_node && rphy->dev->of_node != parent) {
++				if (parent)
++					of_node_put(parent);
++				continue;
++			}
++
++			/*
++			 * Either the PHY phandle we're iterating or its parent
++			 * matched, we don't care about which out of the two in
++			 * particular as we just need to know it's the right
++			 * USB controller for this PHY.
++			 */
++			of_node_put(it.node);
++			of_node_put(parent);
++			return np;
++		}
++	}
++
++	return NULL;
++}
++
++static bool rockchip_usb2phy_otg_is_type_c(struct rockchip_usb2phy *rphy)
++{
++	struct device_node *controller = rockchip_usb2phy_to_controller(rphy);
++	struct device_node *ports;
++	struct device_node *ep = NULL;
++	struct device_node *parent;
++
++	if (!controller)
++		return false;
++
++	ports = of_get_child_by_name(controller, "ports");
++	if (ports) {
++		of_node_put(controller);
++		controller = ports;
++	}
++
++	for_each_of_graph_port(controller, port) {
++		ep = of_get_child_by_name(port, "endpoint");
++		if (!ep)
++			continue;
++
++		parent = of_graph_get_remote_port_parent(ep);
++		of_node_put(ep);
++		if (!parent)
++			continue;
++
++		if (of_device_compatible_match(parent, rockchip_usb2phy_typec_cons)) {
++			of_node_put(parent);
++			of_node_put(controller);
++			return true;
++		}
++
++		of_node_put(parent);
++	}
++
++	of_node_put(controller);
++
++	return false;
++}
++
+ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 					  struct rockchip_usb2phy_port *rport,
+ 					  struct device_node *child_np)
+@@ -1297,6 +1396,8 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 
+ 	mutex_init(&rport->mutex);
+ 
++	rport->typec_vbus_det = rockchip_usb2phy_otg_is_type_c(rphy);
++
+ 	rport->mode = of_usb_get_dr_mode_by_phy(child_np, -1);
+ 	if (rport->mode == USB_DR_MODE_HOST ||
+ 	    rport->mode == USB_DR_MODE_UNKNOWN) {
+@@ -1971,6 +2072,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
+ 		.port_cfgs	= {
+ 			[USB2PHY_PORT_OTG] = {
+ 				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
++				.svbus_en	= { 0x0000, 15, 15, 0, 1 },
++				.svbus_sel	= { 0x0000, 14, 14, 0, 1 },
+ 				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
+ 				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
+ 				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
+@@ -2008,6 +2111,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
+ 		.port_cfgs	= {
+ 			[USB2PHY_PORT_OTG] = {
+ 				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
++				.svbus_en	= { 0x2000, 15, 15, 0, 1 },
++				.svbus_sel	= { 0x2000, 14, 14, 0, 1 },
+ 				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
+ 				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
+ 				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
+
+-- 
+2.49.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
