@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F84EC3ABBC
-	for <linux-phy@archiver.kernel.org>; Tue,  6 May 2025 03:19:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7D52C3ABAC
+	for <linux-phy@archiver.kernel.org>; Tue,  6 May 2025 04:05:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QcTSEN9nndMxYxr6XJmORb6I9p4Q/S4mBElTv7fmS8M=; b=fWjSDeg9z+4sVx
-	Bdn1cIlCNnj0kJKaTmEP46sNEG831z4oux3rLnY8EQiq5Ds0y3Uh3lvBzXV7thjtU4c9NcWzGAUUd
-	VEbdr1tOj9Sxeqf/G4TF5+B5BPeXkAubvVx17eaeOvT8PgqCn2feFlQrxcSGYgPpGIWwtrrbDFylY
-	4eCo5H4AS4AvRD+fiXy91Stu27R7EHpfiSO+vDIc8BGOT6r0144bAeSCqF14RMfVWM505swnzT1ij
-	jufD1SEYhI3dqWCWAwcWItNkTj7nm8ZyiypZNtMel/bO3R0c2bAMzTsKMVD6oFDxFfKZ4JAiRHG8C
-	17bvneae7rE6sBq9Echg==;
+	List-Owner; bh=0Smus9WFpSwPEZUdY8BAbBEWMpasWYNj37sPyyMQRww=; b=MGWRDjE3abahg0
+	t4gbvTV+Y6F4wAtIbUCfNkLxCly79GosHfDeXy2msTsSl7bCwpWsw0bPHNtThWu671Bt45Y95iCCp
+	8fRYYbvxRx89kbszun4n6Pqobjo2j9D+Jp660MtApeShru4q1b1qJBVBviZxk2ICzBWRIn8EP3wfS
+	JWzantE4AHlrg7J8b0Ol+Ew7pzP0dZ4Djt69liT8wrJZOJjnRa/XLUraCdb3Y8Qd9mKQuV9NLZRRM
+	EZOjsMyNQ5PY9JLqu+8gyZljz5GnoFYGVKjRQ22d1YL1zpUDKfWFMSeAVTRWsPwNfK6UwidUmnjMC
+	vXjzY+CFs37bARlDaTgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC8qE-00000009xHc-4Aem;
-	Tue, 06 May 2025 03:19:34 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uC9Ya-0000000A84n-1nkD;
+	Tue, 06 May 2025 04:05:24 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC4qn-00000008wY5-2hKe
+	id 1uC4yb-00000008ypl-07nw
 	for linux-phy@lists.infradead.org;
-	Mon, 05 May 2025 23:03:53 +0000
+	Mon, 05 May 2025 23:11:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 326C0629C3;
-	Mon,  5 May 2025 23:03:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0ADBC4CEED;
-	Mon,  5 May 2025 23:03:51 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 955E9629CB;
+	Mon,  5 May 2025 23:11:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37074C4CEEF;
+	Mon,  5 May 2025 23:11:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746486232;
-	bh=Nm5dAaQuP1tFUt1Z3tmizws4xDWNqGjg64KYQwYXWXA=;
+	s=k20201202; t=1746486716;
+	bh=GfrMrwI1HzyaSwl8t6c37iWXgnxb6KyIge4Y6qbMHOg=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=qnGnSEOMt6zeIq0jri54y0sWJGZ6FeyYHGr7+0A1km8rtiN3IVAfCK4dakcvEqVHf
-	 80fFqHStVOmCpBt+aGpRUK2CiAylc0YJcssWq/s98HIhySggeQ6TWhNasZClcFXWOk
-	 ekbtiW1yKMWFBwGoQq5p5hUgy930X/rGiNk15ubjX4a9GUeuqjNhs2rXEJ7imZgv9Y
-	 K64+VIagIpjZMqusJIyTRcsunlTb0ltIdKDm2qEjgkVB1wKp84J/inawNt/R7ytgym
-	 fBLKkEuzDrtmxR7ZwC+SpSMptLY+iznFUY6i3q5LeshO68JdQ+LxlqjtN2ZwqdIMcX
-	 w0i6qCvlF4u8A==
+	b=NPZk9VNxaA9kB6ttW+oTa0x4HdiKBIIfQEx8A9Bw8RnqHKDXinHN4Ij/jVTQ58Dm3
+	 p0TWpOxMsGZ9tfp+jJD564t1HvvjVpLJrtPMhI8I9mkc3qVpYYuv23bdqQthIMuoib
+	 Ekus105iJeDNPsjBnyf9Mr9VXYeYyIrJc1virIsB8sJi6Z6y1/GEIy/pm1hdJZPS3D
+	 y6ZjmYyHylvzhqfRBHynRsM2aUDieNhgVnavG8nqjOdwX5JTtmRbze0lI2JgXKNmVA
+	 OxZr3s1AET6C8G1rtwdqsheUcxQKJCwA64ckH/Tmd/vyfuI9lUWOp7cXqJyKlDO8Kc
+	 h2ahssSOr/eHw==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -51,16 +51,16 @@ Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	Sasha Levin <sashal@kernel.org>,
 	kishon@kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 220/294] phy: core: don't require set_mode() callback for phy_get_mode() to work
-Date: Mon,  5 May 2025 18:55:20 -0400
-Message-Id: <20250505225634.2688578-220-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.1 169/212] phy: core: don't require set_mode() callback for phy_get_mode() to work
+Date: Mon,  5 May 2025 19:05:41 -0400
+Message-Id: <20250505230624.2692522-169-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250505225634.2688578-1-sashal@kernel.org>
-References: <20250505225634.2688578-1-sashal@kernel.org>
+In-Reply-To: <20250505230624.2692522-1-sashal@kernel.org>
+References: <20250505230624.2692522-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.89
+X-stable-base: Linux 6.1.136
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,10 +101,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index a892e1d7e2d02..9417372a01554 100644
+index 0730fe80dc3c1..069bcf49ee8f7 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -400,13 +400,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
+@@ -398,13 +398,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
  
  int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode)
  {
