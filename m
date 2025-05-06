@@ -4,77 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EE97C3ABBC
-	for <linux-phy@archiver.kernel.org>; Tue,  6 May 2025 23:35:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0947C3ABBC
+	for <linux-phy@archiver.kernel.org>; Tue,  6 May 2025 23:36:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BS/FP74wqOtos7gfdI9P4Kg+wB7MWj7aYszj8/l/sJE=; b=MFjtDUzDOSOahu
-	pCReR8i/BHx0fbMFlhsJ+bJWpvm6YNWGWhaeG4tiIXD3PcfKTe1kjXhxNgKn/ME/Wmsm/zo58sG0i
-	66HlybB0Hr74uHRY/Ob3qVFgFH+Hybk3q/uhgtewCgL5BBzfsA46RcLlUeddhw7llSXhZuwbXF8zp
-	rBCk2UJy7yuyjFFVIXUOjY7Dg+QUqnLxKlsN+pt2mv0xznNxqrV9aZtLHyhrqnVZYNF7osQpBB6ur
-	Z9pbNUEUWRpXj1krTjy9my/XelJ4brvmpTDLqHqF+RFmk6JvEJzQDwea4+qxYZFAyWCiK5SxLDyyD
-	6Hl1cSZwZaLuwuiJrB+Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=G8l+QfP8yvI+fxSxZ6fUlWzDtGNa3Oh+giahAp18Lug=; b=mNHgJTOVLC/8FZf+2yzJJ3AMU3
+	awoAJpaaNwMRzhIfavR3yjS/h7jjCGtLOsjOGZ2/F8nVoouCCUK3RYxb2op50uJDqQ7jFn35pUoFF
+	568lJOsXPgiixGdmQiYAmUzEav20qNlI0ZSc7n0/mebyTWQG8scWX0rlxKhA+InjbbTWgk179vhL5
+	lL6BnWv+N5WiRvaZFVaNn+WXtrGv4VeGFTD8TzRYIHETFAJzT6TRBkpBQI8JepNXJ3VDIetx85ghl
+	7bYdQzjsbrD9CMKyhswFpPsEH6WFA3qlQxxRUU0s0ElQhpL52UA+9owk7aSXDOMuKq4lmQy5jxPrE
+	ktYTe1Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCRpL-0000000DfsU-085R;
-	Tue, 06 May 2025 23:35:55 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uCRpX-0000000DgCr-2Zr9;
+	Tue, 06 May 2025 23:36:07 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCLnT-0000000CnwO-3NWm
-	for linux-phy@lists.infradead.org;
-	Tue, 06 May 2025 17:09:37 +0000
+	id 1uCMxM-0000000D5pN-3SSi;
+	Tue, 06 May 2025 18:23:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7F1075C58A3;
-	Tue,  6 May 2025 17:07:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 58F7CC4CEF3;
-	Tue,  6 May 2025 17:09:34 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 2A64E61165;
+	Tue,  6 May 2025 18:23:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 952E3C4CEE4;
+	Tue,  6 May 2025 18:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746551374;
-	bh=k+gZ1pxmpGXcLHj2TLw4nLia4cr2GC0EuPxS3YjpOCg=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=VcDx68d5Wc2yLUlRvccpd/myN1moA5pKE7H4f4f0ib88r7j1fENwvw70NQSonwxgT
-	 CoE7MGXOHwDCwuIbSm/A2O46wmnjfivqwDUitiIa0y+7kxPeWTaIManccTNRWz2/0f
-	 VtYWfG1NK1BQEZZ+omAqXCAyT2yy7lnwcYvf7T/lCurvR/bf5djhiHe9SZ4Po6ZlFR
-	 jOObMVTZ0NSuKZH0M4+qy09FQyLibIE2v6Jz0uZG0NkmJdg0JODLYztSIpljgwOKaf
-	 0yCl9OjzkYWmiNwj/2OyGxUfVsU5jkw1l/muai+Mju8ETfY06KbzZlijB4bu+YcNKy
-	 1RbOH1vM0675g==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4942DC3ABC5;
-	Tue,  6 May 2025 17:09:34 +0000 (UTC)
-From: Aaron Kling via B4 Relay <devnull+webgeek1234.gmail.com@kernel.org>
-Date: Tue, 06 May 2025 12:09:18 -0500
-Subject: [PATCH v2 2/2] phy: tegra: xusb: Default otg mode to peripheral
+	s=k20201202; t=1746555831;
+	bh=k+mZaSBaKRCfObPQ+dsbeXUoUesj23G8rm5vuy4hQkg=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=WnILdT6026fJnLUCFRq2f39GIiWLmWFFlFKbCS1RkTbkN1Ro5NPLL00xt3IuzgWa6
+	 mVc4xqnnYIFJDIAcOP3UxzS0YhjdDeYW68pmBElrVVDgaTteoCRTxc1s0XmCbRX5J9
+	 kxX7arPEwlkC34yRC7p6xlfAPoRCbAYb9i/8T57lXtEg3BBYaPY1jmRUgJQtu/y7ei
+	 RjSUgSfNbg/ml2CZ8970EimefJA7q0+ja3kweOaNzMZUnTYV+5KoekMzB8cw8RAuAT
+	 EYX7tq1TuxxLTQNJGOjq0hwvd9ooa6auTWge7Qxfi/EjEJKbN244Oh/Rs7mPm8m8XW
+	 FbCPOJN0Jf+6g==
+Date: Tue, 06 May 2025 13:23:49 -0500
 MIME-Version: 1.0
-Message-Id: <20250506-xusb-peripheral-v2-2-bfbe00671389@gmail.com>
-References: <20250506-xusb-peripheral-v2-0-bfbe00671389@gmail.com>
-In-Reply-To: <20250506-xusb-peripheral-v2-0-bfbe00671389@gmail.com>
-To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: devicetree@vger.kernel.org, kernel@collabora.com, 
+ linux-kernel@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Frank Wang <frank.wang@rock-chips.com>, Vinod Koul <vkoul@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, linux-arm-kernel@lists.infradead.org, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
- Thierry Reding <thierry.reding@gmail.com>, 
- Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- Aaron Kling <webgeek1234@gmail.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1746551373; l=1618;
- i=webgeek1234@gmail.com; s=20250217; h=from:subject:message-id;
- bh=WY090858pJtzoKww7YaC7Z9JTjET1bec4L1964gg6J4=;
- b=NaDOg+nVQv05p86Ta/79J6j2EU3M3vcxowUBXmQydstuVgGIULGpaJycP9oGlAbZopQhyWfpF
- OWzO8bM+nO6Cp/bxIk33uX0ce/QeUjBV6iUHqoiGfgtc3beuBTn+vi1
-X-Developer-Key: i=webgeek1234@gmail.com; a=ed25519;
- pk=TQwd6q26txw7bkK7B8qtI/kcAohZc7bHHGSD7domdrU=
-X-Endpoint-Received: by B4 Relay for webgeek1234@gmail.com/20250217 with
- auth_id=342
-X-Original-From: Aaron Kling <webgeek1234@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250506_100935_937778_D9507BBE 
-X-CRM114-Status: GOOD (  10.29  )
+ linux-rockchip@lists.infradead.org
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+In-Reply-To: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
+References: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
+Message-Id: <174655575105.2171003.12510940387691309807.robh@kernel.org>
+Subject: Re: [PATCH v2 0/5] RK3576 USB Enablement
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,55 +70,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: webgeek1234@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Aaron Kling <webgeek1234@gmail.com>
 
-Currently, if usb-role-switch is set and role-switch-default-mode is
-not, a xusb port will be inoperable until that port is hotplugged,
-because the driver defaults to role none. Instead of requiring all
-devices to set the default mode, assume that the port is primarily
-intended for use in device mode.
+On Mon, 05 May 2025 19:26:35 +0200, Nicolas Frattaroli wrote:
+> This series is the result of what I thought would be a quick 10 minute
+> job, but turned out to be more like 3 days of pain, suffering, and
+> confusion. This should be expected with USB Type C though.
+> 
+> The first patch in the series extends the inno usb2 PHY driver to fiddle
+> with some GRF flags in that driver when the PHY is connected to a USB
+> Type C port. Without this change, devices on USB-C simply don't
+> enumerate at all, as the state machine gets stuck waiting for vbus to go
+> low or something along those lines.
+> 
+> An alternate way to implement this would've been a vendor property in
+> the PHY binding which is then checked for in the driver and needs to be
+> present in all rockchip inno u2phy instances that happen to be connected
+> to a USB Type C connector. This is what downstream does, for example.
+> 
+> Patch 2 and 3 allow Super Speed in reverse orientation on USB Type-C
+> connectors to work, but I am not entirely confident in the solution I
+> arrived at.
+> 
+> Patch 4 is what I think may have been the culprit of what originally
+> made me add the USB2 PHY suspension quirk, but I'm somehow unable to
+> reproduce that particular SError fest anymore.
+> 
+> Patch 5 adds the USB related nodes, including associated regulators and
+> Type C controllers, to the Sige5 tree.
+> 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> ---
+> Changes in v2:
+> - Rebased onto next-20250505
+> - Drop the u2susphy quirk, as I can no longer reproduce the original
+>   problem with various amounts of ripping up the DT and changing the
+>   config. Yeah I'm not super hyped about this now being a heisenbug
+>   either.
+> - Drop the bindings patch, as Rob showed me there's a way to do this
+>   without extending the bindings
+> - Rewrite the usb 2 phy driver patch to no longer walk an OF graph from
+>   PHY to connector, but instead first find the USB controller that uses
+>   this PHY, and then use the USB controller's existing graph connection
+>   to the usb connector.
+> - Adjust the Sige5 DTS patch to now have two port connections from the
+>   USB connector to the drd0 USB controller, one for high-speed aka
+>   USB2, one for super-speed aka USB3, ordered as per its binding.
+> - Add a patch for rk3576.dtsi to reference u2phy1 as a clock in the drd1
+>   controller.
+> - Add two patches to fix USB Type-C super speed in reverse orientation.
+> - Link to v1: https://lore.kernel.org/r/20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com
+> 
+> ---
+> Nicolas Frattaroli (5):
+>       phy: rockchip: inno-usb2: add soft vbusvalid control
+>       phy: rockchip: usbdp: move orientation handling further down
+>       phy: rockchip: usbdp: reset USB3 and reinit on orientation switch
+>       arm64: dts: rockchip: reference u2phy1 as clock on RK3576
+>       arm64: dts: rockchip: enable USB on Sige5
+> 
+>  .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
+>  arch/arm64/boot/dts/rockchip/rk3576.dtsi           |   5 +-
+>  drivers/phy/rockchip/phy-rockchip-inno-usb2.c      | 113 ++++++++++++++-
+>  drivers/phy/rockchip/phy-rockchip-usbdp.c          | 154 +++++++++++++-------
+>  4 files changed, 376 insertions(+), 56 deletions(-)
+> ---
+> base-commit: 214464d4c3491d4eb2c0e9d1310d7f60c408b94b
+> change-id: 20250328-rk3576-sige5-usb-230102aeeaca
+> 
+> Best regards,
+> --
+> Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> 
+> 
+> 
 
-Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
----
- drivers/phy/tegra/xusb.c | 11 ++++-------
- 1 file changed, 4 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 79d4814d758d5e1f0e8200d61e131606adbb0e2d..22338f3f24a0794c22544a0e16e0fc706c4fb6d7 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -726,18 +726,15 @@ static int tegra_xusb_setup_usb_role_switch(struct tegra_xusb_port *port)
- 
- static void tegra_xusb_parse_usb_role_default_mode(struct tegra_xusb_port *port)
- {
--	enum usb_role role = USB_ROLE_NONE;
-+	/* Most switchable usb ports are normally used in device mode */
-+	enum usb_role role = USB_ROLE_DEVICE;
- 	enum usb_dr_mode mode = usb_get_role_switch_default_mode(&port->dev);
- 
- 	if (mode == USB_DR_MODE_HOST)
- 		role = USB_ROLE_HOST;
--	else if (mode == USB_DR_MODE_PERIPHERAL)
--		role = USB_ROLE_DEVICE;
- 
--	if (role != USB_ROLE_NONE) {
--		usb_role_switch_set_role(port->usb_role_sw, role);
--		dev_dbg(&port->dev, "usb role default mode is %s", modes[mode]);
--	}
-+	usb_role_switch_set_role(port->usb_role_sw, role);
-+	dev_dbg(&port->dev, "usb role default mode is %s", modes[mode]);
- }
- 
- static int tegra_xusb_usb2_port_parse_dt(struct tegra_xusb_usb2_port *usb2)
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
 
--- 
-2.48.1
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+This patch series was applied (using b4) to base:
+ Base: using specified base-commit 214464d4c3491d4eb2c0e9d1310d7f60c408b94b
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/rockchip/' for 20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com:
+
+arch/arm64/boot/dts/rockchip/rk3576-roc-pc.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-roc-pc.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[17, 262], [17, 263], [17, 261], [23]] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-evb1-v10.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-evb1-v10.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-rock-4d.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+arch/arm64/boot/dts/rockchip/rk3576-rock-4d.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
+	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
+
+
+
 
 
 
