@@ -4,96 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ACACC3ABCC
-	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 12:52:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B3BDC3ABBF
+	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 13:11:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ad4PtZ8XRAOFYsn3lTdVWSiv4h9UWNreB1yCNJXL5iA=; b=4BkHaAcfffweD8
-	dfJV4Ny1LrKzIoW5CecOVA22Wq703XFfBhZLBLd1q2lPjCbprJwRgOCX2lsBjBAyssIKnHjOfxsZw
-	tWnF/KnO2tnnyAiqF/l5U7UBHBfNQJ2Ibn3Br2+7Fs2HQCKAhFURgpvV4Ei/XujQnz+cAq9rrq6JP
-	r/ZshpjQSXHOt1vrccB+niSlD9XNeNP2PQs1yNmdXuQZ1ABkMkd7CxWsuyUJa10dPamI8tBtOd5LG
-	7mJOZzyAKtzoIbWTa5Xm/80MuqlQnKxc21KM8u6SwWYxUS+b+sw5FtecqS9m9B4KGSoCiI34jFbjE
-	WcowKwGRuuz9BRQ3BLLA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wlKFfwbjzUlK7LFFE0PzfOOdDwfvkU/LrAxFabJEbvo=; b=oBDUhjyA1dKAAy
+	CGvQONl78I7gZoBJ/LiUQv3/Xj8lxRSoZi0AHKIxMTvliaEsGJYpW44f6OyQq6S2OE5mDoQo/SCxd
+	aPz3Xm6Bm194Mr27BB5nSQnLWgrHk+OMvCLQP45WR/pnz8R90GjbaxReE5d2tFVQ0poz1AbfhQKhT
+	NLiPaj2Pr0GhkuUqHVCbfr8I6ucFhTT+Rs4MvveA/2jTJo3uhXMxixs6DXp/lB9kuHCas6g3AmDLa
+	PpSprCl5hpyb+CRXBVuXre2lDJMtlPg8ByeNPG1s8mN7UGUr0sM9CoyUYlhrz2/XH2J94H+I1vF2X
+	1d/ljT45yPceqFeFY8xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCeFr-0000000FTeX-0SFo;
-	Wed, 07 May 2025 12:52:07 +0000
-Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
+	id 1uCeYg-0000000FWZq-1RBa;
+	Wed, 07 May 2025 13:11:34 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCeEX-0000000FTME-2DEZ
-	for linux-phy@lists.infradead.org;
-	Wed, 07 May 2025 12:50:46 +0000
-Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-acb615228a4so185648866b.0
-        for <linux-phy@lists.infradead.org>; Wed, 07 May 2025 05:50:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1746622243; x=1747227043; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=TPcRXEDFKMfOBueOV1ZZggEMaCzz9uMyyXHjT+cR4Zg=;
-        b=IlUBQkK7r3OkeilmR6Kn7vYz4M1paQepa9Q2EMhgo5QZwVJPisuACHhaTeYi0/Ehea
-         R1qlYH6rc6bpO1Fd4rZs+dL+tdZHVh2B7Jz3055gDAB+UTZf3qYkl3qtmZJURjwVRxgJ
-         7gr180szCOrYUJ/z08LIqO5RvJuAidVsk2msira+JqQ1cAYJ3u1aQdgrJZJnWiE09She
-         7S+FJ/H4qk4xc+bIs12QShopm3VmgAbj9QPrC0kzr2b3lcuif6YtG2HWUlykpvUAgWhN
-         44YCukYKo+BDO/n0nghi+eeKrFvIF00EdbChoBZQFHu/l5wR/aN4VAqYRO+4Yu+pyEj8
-         74Mg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746622243; x=1747227043;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=TPcRXEDFKMfOBueOV1ZZggEMaCzz9uMyyXHjT+cR4Zg=;
-        b=j5B5nTfOAbg7YK/Yl/tJp97uVdXbEL0VlD2qddXf4aip+yGFNAJvgWwaQmynDpMXWt
-         jBsDjhP1k80m9dOin5/pxmoOt3SiWwXWktf1sAlUaWBSnrW9JINjIunT5KfRmd1qh4As
-         boBTNt/2q21wG/bDizDSCZzSNrrwB8BGDdzrW6JKcFlwRE2G9PUVL8p0cFn2XaM6kmtQ
-         kRzCUs+qEcPtqtTLEPU1esNr115mF3IPl0Sluo17GT3ccpbd/LK0UZAx1PhWGc/1iNsy
-         Gme39Okdhsfuqvs4J1V1ZsoZID+GiWL7fbrW0HLelKOox8ySYCYH9xOZOl+8nrypBa3H
-         yA6A==
-X-Forwarded-Encrypted: i=1; AJvYcCV9cuZwS8tMRdE4NAPUa44al++qns4ikgqDHWzUk6PO6mT+pM4Fb5ZwPfJko+VcrJefCVlzDM0b0+M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwFSTDeuZgIosvFSU8K4ujwSedq5RuFtNo1I2AvcppWGNnqIyo8
-	i0A/CowAiMRjVTnkhbkBV1/mlI4/RMHAlgS38u4S44NZCnwavU3EXGBgNKqizbI=
-X-Gm-Gg: ASbGncse1oeRu+uN/QpEFEnnbjVEHPPj/CCkptAC5iHtyuv/DAsG74CkrjBXq8Lc2R3
-	paTf+tltP/vOZTFRl1alnpudsR2sYylX2Z0hFrFrOTgBuiHYQrCFCNBEX0rKWLtLdLkTjn00HKE
-	JN8/bpt+nVBp6rvW3KmDcbfnIksyrDfNLLZXUE8ifqdPDnfbBBknlm61e9Egc7dZdQgLx9PHmi7
-	2iZFSo5NOgjbqiMHvWvfx+b3peAbYrY7SDSK2nBspRWB+vikCRai2KZARsDsRZF6OTJHvkuJiF2
-	xjdxp6HyoAzSlthg4osBUXT/Bvf+3lx2RLx/7t+9uE+m0onz1ClADXsT15IRjlbdCRndaXU=
-X-Google-Smtp-Source: AGHT+IFgr60R6EGG/hfv1qbucadH38+M65/DG+xuJSaXMntsG1skx5u3NWADh8GI7FcyDwNsoxp1ZQ==
-X-Received: by 2002:a17:907:1c9c:b0:acf:877c:ccc7 with SMTP id a640c23a62f3a-ad1eafbe4f6mr342734766b.13.1746622242991;
-        Wed, 07 May 2025 05:50:42 -0700 (PDT)
-Received: from claudiu-X670E-Pro-RS.. ([82.78.167.147])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad189146fb4sm913182766b.10.2025.05.07.05.50.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 May 2025 05:50:42 -0700 (PDT)
-From: Claudiu <claudiu.beznea@tuxon.dev>
-X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
-To: yoshihiro.shimoda.uh@renesas.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	geert+renesas@glider.be,
-	magnus.damm@gmail.com,
-	horms+renesas@verge.net.au,
-	fabrizio.castro@bp.renesas.com
-Cc: claudiu.beznea@tuxon.dev,
-	linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
-	stable@vger.kernel.org,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: [PATCH RESEND v3 5/5] phy: renesas: rcar-gen3-usb2: Set timing registers only once
-Date: Wed,  7 May 2025 15:50:32 +0300
-Message-ID: <20250507125032.565017-6-claudiu.beznea.uj@bp.renesas.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250507125032.565017-1-claudiu.beznea.uj@bp.renesas.com>
-References: <20250507125032.565017-1-claudiu.beznea.uj@bp.renesas.com>
+	id 1uCeV2-0000000FVj8-27JT;
+	Wed, 07 May 2025 13:07:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1746623256; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=IwY3ykgOwrUBvSTJwZdmILe5IqO4URVw9dkB2xU4v+4rhcPRqmT84NtSPjrmXEtztJHAJHIK46UGPui1ogE/3kuN0MnU7aBL7UoDqsmA3h+FLSw+ayFbGJ8H+K6A0FIGr8rxGs/XRe21JrhIOL+vhoC2RfGxdCZJfHo6ugPyFds=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1746623256; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Ois1Fd82wI7ofzgzDY4Ae0abXH2Pnyq9b6BQ8TCglMI=; 
+	b=KrstOi4qwmaZZ+K5Te0WYXuHPNWUQGLl4/C+7ss3YK1RC2eCBQ95SZOMy/uTSRenZIF2q+MuxExNhPsqjrwsTsFYyfLss0Gd+A5TnKZr2XPtxwbt/nDCYhT7dCXQwnEttPK6Hc5FRel4YOZLrXRa9uLrBNXtefLh61hy1cCxW5o=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746623256;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding:To:To:Cc:Cc:Reply-To;
+	bh=Ois1Fd82wI7ofzgzDY4Ae0abXH2Pnyq9b6BQ8TCglMI=;
+	b=VdbAlsUqLQqJPN55PYHT1PEtZLlOQHPl8IsmrUTn1mfbqfqtMTpX2pkD807EPQDn
+	gLawO6JVWXjV9Bxo+BaWuKAFhDh7sb2rwIU+3LsnqswpkcyPIpIwCB2UNhTfMANZAgy
+	4peyfXdApkdX7wpO4UVHKQGqQH3VtuO+DRQljd0Y=
+Received: by mx.zohomail.com with SMTPS id 1746623254340277.28883250107697;
+	Wed, 7 May 2025 06:07:34 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: [PATCH v3 0/4] RK3576 USB Enablement
+Date: Wed, 07 May 2025 15:07:20 +0200
+Message-Id: <20250507-rk3576-sige5-usb-v3-0-89bf5a614ccf@collabora.com>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAAhbG2gC/23OQQ6CMBAF0KuQrh1TWgrElfcwLtoyQCNQbYFgC
+ He3loWJmln9Nv/NrMSjM+jJKVmJw9l4Y4cQ+CEhupVDg2CqkAmjTFDOSnA3LoocvGlQwOQVME5
+ TyiSi1JKE2t1hbZZIXq57dviYgjzuj0RJj6Bt35vxlAy4jBD1MORdaI0frXvGk+Y0NuJ/Rovf7
+ XMKFPICUad5XpesPmvbdVJZJ49hRQRn9kHC/EFYQCqhZMapqLnCb2TbtheP66iFKgEAAA==
+X-Change-ID: 20250328-rk3576-sige5-usb-230102aeeaca
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Frank Wang <frank.wang@rock-chips.com>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ kernel@collabora.com, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250507_055045_564621_E9079490 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20250507_060748_587942_4AAB6183 
+X-CRM114-Status: GOOD (  18.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,49 +87,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+This series is the result of what I thought would be a quick 10 minute
+job, but turned out to be more like 3 days of pain, suffering, and
+confusion. This should be expected with USB Type C though.
 
-phy-rcar-gen3-usb2 driver exports 4 PHYs. The timing registers are common
-to all PHYs. There is no need to set them every time a PHY is initialized.
-Set timing register only when the 1st PHY is initialized.
+The first patch in the series extends the inno usb2 PHY driver to fiddle
+with some GRF flags in that driver when the PHY is connected to a USB
+Type C port. Without this change, devices on USB-C simply don't
+enumerate at all, as the state machine gets stuck waiting for vbus to go
+low or something along those lines.
 
-Fixes: f3b5a8d9b50d ("phy: rcar-gen3-usb2: Add R-Car Gen3 USB2 PHY driver")
-Cc: stable@vger.kernel.org
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Reviewed-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+An alternate way to implement this would've been a vendor property in
+the PHY binding which is then checked for in the driver and needs to be
+present in all rockchip inno u2phy instances that happen to be connected
+to a USB Type C connector. This is what downstream does, for example.
+
+Patch 2 and 3 allow Super Speed in reverse orientation on USB Type-C
+connectors to work, but I am not entirely confident in the solution I
+arrived at.
+
+Patch 4 adds the USB related nodes, including associated regulators and
+Type C controllers, to the Sige5 tree.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
-
 Changes in v3:
-- collected tags
+- Drop the utmi clock patch. This was always a speculative fix for a
+  problem I could no longer reproduce, and it doesn't conform to the
+  binding, as Robo-rob correctly caught.
+- Link to v2: https://lore.kernel.org/r/20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com
 
 Changes in v2:
-- collected tags
+- Rebased onto next-20250505
+- Drop the u2susphy quirk, as I can no longer reproduce the original
+  problem with various amounts of ripping up the DT and changing the
+  config. Yeah I'm not super hyped about this now being a heisenbug
+  either.
+- Drop the bindings patch, as Rob showed me there's a way to do this
+  without extending the bindings
+- Rewrite the usb 2 phy driver patch to no longer walk an OF graph from
+  PHY to connector, but instead first find the USB controller that uses
+  this PHY, and then use the USB controller's existing graph connection
+  to the usb connector.
+- Adjust the Sige5 DTS patch to now have two port connections from the
+  USB connector to the drd0 USB controller, one for high-speed aka
+  USB2, one for super-speed aka USB3, ordered as per its binding.
+- Add a patch for rk3576.dtsi to reference u2phy1 as a clock in the drd1
+  controller.
+- Add two patches to fix USB Type-C super speed in reverse orientation.
+- Link to v1: https://lore.kernel.org/r/20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com
 
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+---
+Nicolas Frattaroli (4):
+      phy: rockchip: inno-usb2: add soft vbusvalid control
+      phy: rockchip: usbdp: move orientation handling further down
+      phy: rockchip: usbdp: reset USB3 and reinit on orientation switch
+      arm64: dts: rockchip: enable USB on Sige5
 
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index 118899efda70..9fdf17e0848a 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -467,8 +467,11 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
- 	val = readl(usb2_base + USB2_INT_ENABLE);
- 	val |= USB2_INT_ENABLE_UCOM_INTEN | rphy->int_enable_bits;
- 	writel(val, usb2_base + USB2_INT_ENABLE);
--	writel(USB2_SPD_RSM_TIMSET_INIT, usb2_base + USB2_SPD_RSM_TIMSET);
--	writel(USB2_OC_TIMSET_INIT, usb2_base + USB2_OC_TIMSET);
-+
-+	if (!rcar_gen3_is_any_rphy_initialized(channel)) {
-+		writel(USB2_SPD_RSM_TIMSET_INIT, usb2_base + USB2_SPD_RSM_TIMSET);
-+		writel(USB2_OC_TIMSET_INIT, usb2_base + USB2_OC_TIMSET);
-+	}
- 
- 	/* Initialize otg part (only if we initialize a PHY with IRQs). */
- 	if (rphy->int_enable_bits)
+ .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c      | 113 ++++++++++++++-
+ drivers/phy/rockchip/phy-rockchip-usbdp.c          | 154 +++++++++++++-------
+ 3 files changed, 373 insertions(+), 54 deletions(-)
+---
+base-commit: 214464d4c3491d4eb2c0e9d1310d7f60c408b94b
+change-id: 20250328-rk3576-sige5-usb-230102aeeaca
+
+Best regards,
 -- 
-2.43.0
+Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
 
 -- 
