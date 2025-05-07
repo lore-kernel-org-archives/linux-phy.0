@@ -4,70 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0988C3ABC0
-	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 13:19:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE8C2C3ABBF
+	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 15:40:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EEJYqO9JS/kDr93DFGG/W/KXVVKPWY2OddS2eUpBnFc=; b=dtUKm3GWomShMW
-	AeaeNHUbNzWSz/8P0byiXXZHVL7TmxIe7pMdOWHU4Uxkj4zm1D5PIsKPr7/LF+t5YwuqocC2wjNP1
-	uK6zqiR4K5g1oqYmq5R0E6JmGPhEPxo8INW2SZutlSQo7gkSnbKdeEw6zx6dFjWttDQk9cL15tmhE
-	GODMqKOB59j0UBmzGcYUfVeJac/L//WeOw52B1ccnt/pIWZorFqY0cIEoIPWkZHiVGe6tuv++XcG9
-	1vVSR0sRqZSDsPyvkXiyW6oNTdyi/7Tp1bhd4bxBDkW8JTKXU+H1oNqxIt5AmDnPB/Ogfn12BorZQ
-	VHOdfKykHud2NAbGLlvg==;
+	List-Owner; bh=BIVmhu+0KIjcZKwlhNE90xe8VkHXNvuMJjMNqgjXkhI=; b=b48ewhKGdqfqFU
+	/pmNbK9qfrCeX8ZbB18S1EX2Hh0n+RDpGiomhzn+CKn2Me/mjE/fDcBtmTCPmtksTafsxRDo3R9GN
+	WCey212Bvz1iKbZOFb1kX15lA0Ek7y9kLfTNrjUxNmifbZkGawr2uT3NhczcqeIQfFuHkQ5yIxPwb
+	Xr7JBwxQhXN/yohSiU8ewIHdVaHMId8TTVSCB2dObm0+0+1ylRFgBcZtsZVJIR0wNZJVuGGeKW7MS
+	plddpqy/sPv1mx2GD4XhA2XIHNEsinvq2Abjp+x4Sw+f8EJGprh+joqUA8pnxPQgZMvDtJeJXYnLO
+	iPWixscXgLbTQoPC8h4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCegO-0000000FYFn-2Ao1;
-	Wed, 07 May 2025 13:19:32 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uCgso-0000000G0U1-2jNX;
+	Wed, 07 May 2025 15:40:30 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCeVG-0000000FVoN-1pAk;
-	Wed, 07 May 2025 13:08:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1746623270; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=lrg3mL/fl3g21qBIr7JHsU9AgJdDTBwJgUwEmF2MWRPDxs82b0mMndWXxpGn5SqhqXbwC9LY0E+pbtRtVb3pnvAEar/lJY9kcV7SBE3Ou3dZ+Rl1c5Y0egHUQwRdM4prxRn0WGBISC8YnISxgvaEkYaQZIGIhOa8N7wpb0shnE0=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1746623270; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=n/b63KH5NJPUOPZ1g1cKRKHd1zEwEqpry3HADn6QvTM=; 
-	b=X4XIXLTqBJUKStQo2Q6NXfd5PrDMik2UqVgXPsUU0AYBPG0CUpxx7Ch6IDPgZaJeQSuUICweSqeJ2tttyZ7WXSEvX7/pfulNyzov8MW/41ufDiKlDvaWtbhUGVLJPhJVhN5hrwg7OvrcfPOaiszN82oT59y8Zda/j79jLYpE9Ig=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746623270;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=n/b63KH5NJPUOPZ1g1cKRKHd1zEwEqpry3HADn6QvTM=;
-	b=UgSIQJXpt40JoQWQx9NJh3nI/TmbfDvztlOBqxNfBs9vkcxjaESiACyVYMYtZFRo
-	BhXMI1s3LDC+ZZX7qsKyOYMy2T62FK+kGmqIrv5LD2a+jG2sImjma9kDVzfqZA7q40I
-	gCvHjWbEbkFHYtzGCfd9YzkZBldYeJbvEXwqSnJ8=
-Received: by mx.zohomail.com with SMTPS id 1746623268314716.9665012016193;
-	Wed, 7 May 2025 06:07:48 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Wed, 07 May 2025 15:07:24 +0200
-Subject: [PATCH v3 4/4] arm64: dts: rockchip: enable USB on Sige5
+	id 1uCgM9-0000000FtjD-3NEu
+	for linux-phy@bombadil.infradead.org;
+	Wed, 07 May 2025 15:06:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=u8No8/KPTSLU3O+50ue4WHZSN0FQGaSfa9yafjJ6UAs=; b=T74Bjwu56XKS6ICcYwGLr6cylJ
+	wFSy5qhqYi68ODHV+16X/j0UPtb8LN7UI9zwwgHU8G+ua5venoQsIHF0xUNG21EpO5YHi+R1fnFb9
+	l3Myg7T5452hXbNXkFF8hZKw9Z6TbqKHZAh0aAMFjiIV7qnDj+jq3PNQRim9HvNIm8FqXb/l17KS4
+	sm8L7HUkG4/dsfS2EDG9cYWOP+734pm/JAgwjRiF/PzuFaChBBI7rR9p+rafFMYZoFTwgasWUBpiN
+	9QEdiOwDzMHvt4Fx7Xcoyy0ESmJMqPTIqh0kBGsvlbyMBfA8TdrhsYAemb1FIaf02NsDEAQaMm4CM
+	YsEIJCFg==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
+	id 1uCgM6-0000000FrtJ-0HRW
+	for linux-phy@lists.infradead.org;
+	Wed, 07 May 2025 15:06:44 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 547Da8xt011186;
+	Wed, 7 May 2025 15:06:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	u8No8/KPTSLU3O+50ue4WHZSN0FQGaSfa9yafjJ6UAs=; b=Kk0fa7Tibq9z5ln0
+	DbzpkNOGMLuGeYA/Q1kzjo1UvdmlnYg0eR+/+JMEM7EsU74Etp+C/SPxISB0kctx
+	wFgJmMmsiBeYIvCxRISL/IqmFb1/GSdscdxnmBUHuoN01IU/STJd3O19DbQxobXg
+	edpPW/Ktlf4uAhLr9dZ9QwjzbW9GBs4W2EyR3/Ix14EMTP3rM9pSiwTEE3Y40Tw9
+	k9bKpL5pENbRz+JbyACqfD2JVP09FiW9RVlThDyztbdP4AbUkh+0RrdgZAhq6MP5
+	ode0g8hpRFHBtXGgnWPN1zdfAA70y0xrjUJJ7fBFB73+UxzatALQJ+gXP4Jz+EQC
+	8WJPjA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46g13vsrcs-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 07 May 2025 15:06:05 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 547F6334006734
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 7 May 2025 15:06:03 GMT
+Received: from [10.216.23.216] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 7 May 2025
+ 08:05:58 -0700
+Message-ID: <626f208c-7060-4fce-9aac-4c48606fc56d@quicinc.com>
+Date: Wed, 7 May 2025 20:35:54 +0530
 MIME-Version: 1.0
-Message-Id: <20250507-rk3576-sige5-usb-v3-4-89bf5a614ccf@collabora.com>
-References: <20250507-rk3576-sige5-usb-v3-0-89bf5a614ccf@collabora.com>
-In-Reply-To: <20250507-rk3576-sige5-usb-v3-0-89bf5a614ccf@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Kever Yang <kever.yang@rock-chips.com>, 
- Frank Wang <frank.wang@rock-chips.com>
-Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, 
- kernel@collabora.com, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V4 06/11] phy: qcom-qmp-ufs: Rename qmp_ufs_power_off
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>,
+        <manivannan.sadhasivam@linaro.org>,
+        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <andersson@kernel.org>,
+        <neil.armstrong@linaro.org>, <konrad.dybcio@oss.qualcomm.com>,
+        <quic_rdwivedi@quicinc.com>, <quic_cang@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
+References: <20250503162440.2954-1-quic_nitirawa@quicinc.com>
+ <20250503162440.2954-7-quic_nitirawa@quicinc.com>
+ <prbe2guxzsea6aqonf32m44zp6oa3vzdf5ieazcontv4fmx3d3@2r4tu5nr2k4x>
+ <2191c270-f4fc-47e4-8bb7-ba6329332ef3@quicinc.com>
+ <qhblitwmuhnb7axrflsqh7pmshmhrehh2hina23k6zqq7mhafv@xtsl376cyooy>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <qhblitwmuhnb7axrflsqh7pmshmhrehh2hina23k6zqq7mhafv@xtsl376cyooy>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 8lyCi0D8an1jr1kZOvVJkHON42edOAn2
+X-Proofpoint-ORIG-GUID: 8lyCi0D8an1jr1kZOvVJkHON42edOAn2
+X-Authority-Analysis: v=2.4 cv=JNc7s9Kb c=1 sm=1 tr=0 ts=681b76dd cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=JfrnYn6hAAAA:8
+ a=COk6AnOGAAAA:8 a=zV9PPM8jW_R1-xSbYZ8A:9 a=QEXdDO2ut3YA:10
+ a=1CNFftbPRP8L7MoqJWF3:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA3MDE0MSBTYWx0ZWRfX3IyhT/6pcPLz
+ IjYIlt5taCWiRLorU3mTzOIsmVoLgiTi0SJPA8CpnA92PCdbzcGl4msb20iVjXu09TSbQp2fO5u
+ JdYdKeo00nE2tdNMVsq4WSkf/Grj39xroJiSwNiQ4ooJTs2DQJKA8MSjBeft9maPekLVn1EF/Pi
+ 8kb77g/LOysrc+wPsqD5XgAUGAFOGgVH6JtUSX6J0Mz8NE4TbzS/r6Xt2Ncz7l6ekQgxJEi0PZr
+ Wt1mNBjqdwuRWSekXkXHV4r1MA+WhbXYCCvSlAU5Abm1vIOmMojkpkuzrHOFkypd9wQza9sIV+/
+ i04hzhk3HcSKV8eBVBbmgdyHdUJRuod9esL8+6WQH9iCuMgegb5RYXwDxaV+j04BE5hoDPbONYA
+ u7t301y0QVMJrlAP0ndjp4NOGBMLl6wL6asS+euzgXg34I1vrTSDoitZMSaJeW1gWVgD5azy
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-07_04,2025-05-06_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 bulkscore=0 mlxlogscore=999 phishscore=0 spamscore=0
+ clxscore=1015 adultscore=0 suspectscore=0 lowpriorityscore=0 malwarescore=0
+ impostorscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505070141
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250507_060802_537748_67B6DA23 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20250507_160642_537833_2F7EBFD8 
+X-CRM114-Status: GOOD (  16.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,226 +131,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The ArmSoM Sige5 has several USB ports: a Type-A USB 3 port (USB2 lines
-going through a hub), a Type-A USB 2.0 port (also going through a hub),
-a Type-C DC input port that has absolutely no USB data connection and a
-Type-C port with USB3.2 Gen1x1 that's also the maskrom programming port.
 
-Enable these ports, and set the device role to be host for the host
-ports.
 
-The data capable Type-C USB port uses a fusb302 for data role switching.
+On 5/6/2025 5:23 PM, Dmitry Baryshkov wrote:
+> On Sun, May 04, 2025 at 09:22:06PM +0530, Nitin Rawat wrote:
+>>
+>>
+>> On 5/4/2025 9:07 PM, Dmitry Baryshkov wrote:
+>>> On Sat, May 03, 2025 at 09:54:35PM +0530, Nitin Rawat wrote:
+>>>> Rename qmp_ufs_disable to qmp_ufs_power_off to better represent its
+>>>> functionality. Additionally, move the qmp_ufs_exit() call inside
+>>>> qmp_ufs_power_off to preserve the functionality of .power_off.
+>>>>
+>>>> There is no functional change.
+>>>>
+>>>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>>>> ---
+>>>>    drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 30 +++++++++----------------
+>>>>    1 file changed, 11 insertions(+), 19 deletions(-)
+>>>>
+>>>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>>>> index 94095393148c..c501223fc5f9 100644
+>>>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>>>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>>>> @@ -1835,6 +1835,15 @@ static int qmp_ufs_phy_calibrate(struct phy *phy)
+>>>>    	return 0;
+>>>>    }
+>>>>
+>>>> +static int qmp_ufs_exit(struct phy *phy)
+>>>> +{
+>>>> +	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+>>>> +
+>>>> +	qmp_ufs_com_exit(qmp);
+>>>
+>>> Just inline it, unless you have any other plans.
+>>
+>> Hi Dmitry,
+>>
+>> I have inlined qcom_ufs_com_exit in patch #7 of the same series. I separated
+>> it into a different patch to keep each patch simpler.
+> 
+> You have inlined qmp_ufs_com_exit() contents. Here I've asked you to
+> inline qmp_ufs_exit(), keeping qmp_ufs_com_exit() as is.
 
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
----
- .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
- 1 file changed, 160 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts b/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-index 570252c4c0bfe56a3c269e47d81fca7676e61787..74de0fc77fefeffb8a90dd6dd9327ddb0083a146 100644
---- a/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-@@ -177,6 +177,33 @@ vcc_3v3_ufs_s0: regulator-vcc-ufs-s0 {
- 		regulator-max-microvolt = <3300000>;
- 		vin-supply = <&vcc_5v0_sys>;
- 	};
-+
-+	vcc_5v0_typec0: regulator-vcc-5v0-typec0 {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpios = <&gpio4 RK_PA6 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usb_otg0_pwren>;
-+		regulator-name = "vcc_5v0_typec0";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v0_device>;
-+	};
-+	vcc_5v0_usbhost: regulator-vcc-5v0-usbhost {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpios = <&gpio4 RK_PA4 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usb_host_pwren>;
-+		regulator-name = "vcc_5v0_usbhost";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v0_device>;
-+	};
-+};
-+
-+&combphy1_psu {
-+	status = "okay";
- };
- 
- &combphy0_ps {
-@@ -611,6 +638,58 @@ regulator-state-mem {
- &i2c2 {
- 	status = "okay";
- 
-+	usbc0: typec-portc@22 {
-+		compatible = "fcs,fusb302";
-+		reg = <0x22>;
-+		interrupt-parent = <&gpio0>;
-+		interrupts = <RK_PA5 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usbc0_interrupt>;
-+		vbus-supply = <&vcc_5v0_typec0>;
-+
-+		connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			data-role = "dual";
-+			/* fusb302 supports PD Rev 2.0 Ver 1.2 */
-+			pd-revision = /bits/ 8 <0x2 0x0 0x1 0x2>;
-+			power-role = "source";
-+			source-pdos = <PDO_FIXED(5000, 2000,
-+						 PDO_FIXED_USB_COMM | PDO_FIXED_DATA_SWAP)>;
-+
-+			altmodes {
-+				displayport {
-+					svid = /bits/ 16 <0xff01>;
-+					vdo = <0xffffffff>;
-+				};
-+			};
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+					usbc0_hs_ep: endpoint {
-+						remote-endpoint = <&usb_drd0_hs_ep>;
-+					};
-+				};
-+				port@1 {
-+					reg = <1>;
-+					usbc0_ss_ep: endpoint {
-+						remote-endpoint = <&usb_drd0_ss_ep>;
-+					};
-+				};
-+				port@2 {
-+					reg = <2>;
-+					usbc0_dp_ep: endpoint {
-+						remote-endpoint = <&usbdp_phy_ep>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+
- 	hym8563: rtc@51 {
- 		compatible = "haoyu,hym8563";
- 		reg = <0x51>;
-@@ -678,6 +757,24 @@ pcie_reset: pcie-reset {
- 			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>;
- 		};
- 	};
-+
-+	usb {
-+		usb_host_pwren: usb-host-pwren {
-+			rockchip,pins = <4 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+		usb_otg0_pwren: usb-otg0-pwren {
-+			rockchip,pins = <4 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+		usbc0_interrupt: usbc0-interrupt {
-+			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+		usbc0_sbu1: usbc0-sbu1 {
-+			rockchip,pins = <2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+		usbc0_sbu2: usbc0-sbu2 {
-+			rockchip,pins = <2 RK_PA7 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+	};
- };
- 
- &sdhci {
-@@ -706,11 +803,74 @@ &sdmmc {
- 	status = "okay";
- };
- 
-+&u2phy0 {
-+	status = "okay";
-+};
-+
-+&u2phy0_otg {
-+	status = "okay";
-+};
-+
-+&u2phy1 {
-+	status = "okay";
-+};
-+
-+&u2phy1_otg {
-+	phy-supply = <&vcc_5v0_usbhost>;
-+	status = "okay";
-+};
-+
- &uart0 {
- 	pinctrl-0 = <&uart0m0_xfer>;
- 	status = "okay";
- };
- 
-+&usb_drd0_dwc3 {
-+	usb-role-switch;
-+	dr_mode = "otg";
-+	status = "okay";
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		port@0 {
-+			reg = <0>;
-+			usb_drd0_hs_ep: endpoint {
-+				remote-endpoint = <&usbc0_hs_ep>;
-+			};
-+		};
-+
-+		port@1 {
-+			reg = <1>;
-+			usb_drd0_ss_ep: endpoint {
-+				remote-endpoint = <&usbc0_ss_ep>;
-+			};
-+		};
-+	};
-+};
-+
-+&usb_drd1_dwc3 {
-+	dr_mode = "host";
-+	status = "okay";
-+};
-+
-+&usbdp_phy {
-+	mode-switch;
-+	orientation-switch;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usbc0_sbu1 &usbc0_sbu2>;
-+	sbu1-dc-gpios = <&gpio2 RK_PA6 GPIO_ACTIVE_HIGH>;
-+	sbu2-dc-gpios = <&gpio2 RK_PA7 GPIO_ACTIVE_HIGH>;
-+	status = "okay";
-+
-+	port {
-+		usbdp_phy_ep: endpoint {
-+			remote-endpoint = <&usbc0_dp_ep>;
-+		};
-+	};
-+};
-+
- &vop {
- 	status = "okay";
- };
-
--- 
-2.49.0
+Sure Dmitry. I'll update this in next patchset. Thanks
+> 
+>>
+>> Could you please review patch #7 and share your thoughts.
+>>
+>> [PATCH V4 07/11] phy: qcom-qmp-ufs: Remove qmp_ufs_exit() and Inline
+>> qmp_ufs_com_exit().
+>>
+>>
+>> Regards,
+>> Nitin
+>>
+>>
+>>>
+>>>> +
+>>>> +	return 0;
+>>>> +}
+>>>> +
+>>>>    static int qmp_ufs_power_off(struct phy *phy)
+>>>>    {
+>>>>    	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+>>>> @@ -1851,28 +1860,11 @@ static int qmp_ufs_power_off(struct phy *phy)
+>>>>    	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+>>>>    			SW_PWRDN);
+>>>>
+>>>> -	return 0;
+>>>> -}
+>>>> -
+>>>> -static int qmp_ufs_exit(struct phy *phy)
+>>>> -{
+>>>> -	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+>>>> -
+>>>> -	qmp_ufs_com_exit(qmp);
+>>>> +	qmp_ufs_exit(phy);
+>>>>
+>>>>    	return 0;
+>>>>    }
+>>>>
+>>>> -static int qmp_ufs_disable(struct phy *phy)
+>>>> -{
+>>>> -	int ret;
+>>>> -
+>>>> -	ret = qmp_ufs_power_off(phy);
+>>>> -	if (ret)
+>>>> -		return ret;
+>>>> -	return qmp_ufs_exit(phy);
+>>>> -}
+>>>> -
+>>>>    static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+>>>>    {
+>>>>    	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+>>>> @@ -1921,7 +1913,7 @@ static int qmp_ufs_phy_init(struct phy *phy)
+>>>>    static const struct phy_ops qcom_qmp_ufs_phy_ops = {
+>>>>    	.init		= qmp_ufs_phy_init,
+>>>>    	.power_on	= qmp_ufs_power_on,
+>>>> -	.power_off	= qmp_ufs_disable,
+>>>> +	.power_off	= qmp_ufs_power_off,
+>>>>    	.calibrate	= qmp_ufs_phy_calibrate,
+>>>>    	.set_mode	= qmp_ufs_set_mode,
+>>>>    	.owner		= THIS_MODULE,
+>>>> --
+>>>> 2.48.1
+>>>>
+>>>
+>>
+>>
+>> -- 
+>> linux-phy mailing list
+>> linux-phy@lists.infradead.org
+>> https://lists.infradead.org/mailman/listinfo/linux-phy
+> 
 
 
 -- 
