@@ -4,61 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0947C3ABBC
-	for <linux-phy@archiver.kernel.org>; Tue,  6 May 2025 23:36:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73E8EC3ABBE
+	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 02:48:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=G8l+QfP8yvI+fxSxZ6fUlWzDtGNa3Oh+giahAp18Lug=; b=mNHgJTOVLC/8FZf+2yzJJ3AMU3
-	awoAJpaaNwMRzhIfavR3yjS/h7jjCGtLOsjOGZ2/F8nVoouCCUK3RYxb2op50uJDqQ7jFn35pUoFF
-	568lJOsXPgiixGdmQiYAmUzEav20qNlI0ZSc7n0/mebyTWQG8scWX0rlxKhA+InjbbTWgk179vhL5
-	lL6BnWv+N5WiRvaZFVaNn+WXtrGv4VeGFTD8TzRYIHETFAJzT6TRBkpBQI8JepNXJ3VDIetx85ghl
-	7bYdQzjsbrD9CMKyhswFpPsEH6WFA3qlQxxRUU0s0ElQhpL52UA+9owk7aSXDOMuKq4lmQy5jxPrE
-	ktYTe1Ew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Pp3FTP+L9F1XFjPKgJra2Fom5Zi5iZIaoosZQjkybWo=; b=Pp187l1J0h9Qo5
+	RzVPYx7r5tQzG6ZduT8Nm3g4Q4OE5IQBSObVIt07Aki8jOagS4r/R0shZ9gU76GNzIPX1ZVNNTRXv
+	C+Qr8fJ33pRR+HeNtPui5CC0megXyFyCsKK9wmsNFw+PoLYcuWRNeXcG5lfRPpeX6alitUtsajRXj
+	/RIvQ92eRS1m3EKEj954KFpkBbXRlwmUG7AAiFSaa6PZKoWS9qTUCAHWRGN9kjGgcqRFwF9XVZNjS
+	PbHHfdMt84I0C7Gr1tGg7WcOIWYjv8f0IjWaeQBOGJi1D1DSe+sWVsyaoxwORfpg2ptqAE6hrRxjx
+	NY0pN52XN4sFzT3WcXcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCRpX-0000000DgCr-2Zr9;
-	Tue, 06 May 2025 23:36:07 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uCUq2-0000000E1RI-0LTX;
+	Wed, 07 May 2025 02:48:50 +0000
+Received: from mail-bn8nam04on20618.outbound.protection.outlook.com ([2a01:111:f403:2408::618] helo=NAM04-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCMxM-0000000D5pN-3SSi;
-	Tue, 06 May 2025 18:23:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2A64E61165;
-	Tue,  6 May 2025 18:23:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 952E3C4CEE4;
-	Tue,  6 May 2025 18:23:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746555831;
-	bh=k+mZaSBaKRCfObPQ+dsbeXUoUesj23G8rm5vuy4hQkg=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=WnILdT6026fJnLUCFRq2f39GIiWLmWFFlFKbCS1RkTbkN1Ro5NPLL00xt3IuzgWa6
-	 mVc4xqnnYIFJDIAcOP3UxzS0YhjdDeYW68pmBElrVVDgaTteoCRTxc1s0XmCbRX5J9
-	 kxX7arPEwlkC34yRC7p6xlfAPoRCbAYb9i/8T57lXtEg3BBYaPY1jmRUgJQtu/y7ei
-	 RjSUgSfNbg/ml2CZ8970EimefJA7q0+ja3kweOaNzMZUnTYV+5KoekMzB8cw8RAuAT
-	 EYX7tq1TuxxLTQNJGOjq0hwvd9ooa6auTWge7Qxfi/EjEJKbN244Oh/Rs7mPm8m8XW
-	 FbCPOJN0Jf+6g==
-Date: Tue, 06 May 2025 13:23:49 -0500
+	id 1uCUq0-0000000E1Ql-13A4
+	for linux-phy@lists.infradead.org;
+	Wed, 07 May 2025 02:48:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=H7Dr4aRuNbuLqgC63Bhj/Ne93fIg2ih2cEOMW1sybzGgkllPSiWOUUbvA51ndzIEfnUsFsj/39cfJ70OWZsBXqcsvlt3U/TpEurkL1jtYxTIi9RqCJJMsUANiHV/gJUHHJQMAbOoeiZZwRws9u67uKQQoi3q7i/zDBRe6ywuaAaLUH3cNfdzYF5dyvzLpEW5iuB2ugxG14sWDsCT05VxjzYNMEwvV4Wxem0JME46Fem3aAF6O3DyWN9H0nYXDPaiDD3AusVbPbfWmignd/oE46XHFKpsGIfnCviwy4NKUN7M6jZAHGl96fsD8o61Ub8xrNMnQjj/t7veX7Rs0Z2ugg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Sy8gNXFAZcR3YBq07i1jmeIn7KhYOFFCjK0asDbRk7Y=;
+ b=SKCkTJNa/vCAEl1D7Mtg6oHjSCxGC7LldWaH9yQl7Ws9E6G3CwDgmSO8Z+v6puiP4l8nnHRVtmuJdUSOMFw8PSFMAqTIRtvxt7D98ikBzJ+1osBTXLg8etDEdXt5OIRbZojOGCeCkbSvNy0rSFuSOwI8tCCBmMYUf69bfXMVSiSW+JeBC/1XIuPRabSygF26oZMsRKRf5Wr8X0ZTm8BmDY1nH1eS6Zg3//CyIDeYR7jU357NyomEoUwHll6XfAYhCUFBEphmRAeMnbZ8Iu2SeWtuxYynQy+04Qz9imTtg7AG0QsGMXG34EQ+d2ACsdM5polyx1ILuGp2aCwMeDz4Eg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.118.232) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Sy8gNXFAZcR3YBq07i1jmeIn7KhYOFFCjK0asDbRk7Y=;
+ b=MwC4FtDupkxinSl2DrN9X4X8UxJf6GAErMJW859QBsEsaEO4XUkywTyUhLaKAE37nirc4Zw5I9oy4U3gAZ3sKtQVvG0aBsjWH4rOZ64oymLwCy2blLS1qjlSL6ANHKuKWad/YDGJ59Ar7oIfXE+fgiUI4lv74lf2p7Zi7ytAAtpwzOoFYigf0q5DiABZMCwE/jU/yhrX1MlJEdkffcqIlb7nLAd7BFjw8Z8Oz/7lxHjfhNElWnt9Ez6Zx9Q4kYjzXwdRdhoE5PuH3io1oLCejiGlkMrkK4Dan3ZJ+bP3oWh4FCYCXCthQfgrTM6syz7xOdh8RUgGklxzLUoli00uQg==
+Received: from MN2PR12CA0021.namprd12.prod.outlook.com (2603:10b6:208:a8::34)
+ by LV2PR12MB5918.namprd12.prod.outlook.com (2603:10b6:408:174::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8699.22; Wed, 7 May
+ 2025 02:48:42 +0000
+Received: from BL02EPF00021F6B.namprd02.prod.outlook.com
+ (2603:10b6:208:a8:cafe::32) by MN2PR12CA0021.outlook.office365.com
+ (2603:10b6:208:a8::34) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8699.29 via Frontend Transport; Wed,
+ 7 May 2025 02:48:42 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.232) by
+ BL02EPF00021F6B.mail.protection.outlook.com (10.167.249.7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8722.18 via Frontend Transport; Wed, 7 May 2025 02:48:42 +0000
+Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
+ (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Tue, 6 May 2025
+ 19:48:26 -0700
+Received: from drhqmail203.nvidia.com (10.126.190.182) by
+ drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.14; Tue, 6 May 2025 19:48:28 -0700
+Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
+ mail.nvidia.com (10.126.190.182) with Microsoft SMTP Server id 15.2.1544.14
+ via Frontend Transport; Tue, 6 May 2025 19:48:26 -0700
+From: Wayne Chang <waynec@nvidia.com>
+To: <waynec@nvidia.com>, <jckuo@nvidia.com>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+Subject: [PATCH 1/2] phy: tegra: xusb: Decouple CYA_TRK_CODE_UPDATE_ON_IDLE from trk_hw_mode
+Date: Wed, 7 May 2025 10:48:19 +0800
+Message-ID: <20250507024820.1648733-2-waynec@nvidia.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20250507024820.1648733-1-waynec@nvidia.com>
+References: <20250507024820.1648733-1-waynec@nvidia.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, kernel@collabora.com, 
- linux-kernel@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>, 
- Kever Yang <kever.yang@rock-chips.com>, 
- Frank Wang <frank.wang@rock-chips.com>, Vinod Koul <vkoul@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, linux-arm-kernel@lists.infradead.org, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- linux-rockchip@lists.infradead.org
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-In-Reply-To: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
-References: <20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com>
-Message-Id: <174655575105.2171003.12510940387691309807.robh@kernel.org>
-Subject: Re: [PATCH v2 0/5] RK3576 USB Enablement
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: AnonymousSubmission
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL02EPF00021F6B:EE_|LV2PR12MB5918:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2c215162-fbde-4e3a-3e37-08dd8d11add1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700013|376014|1800799024;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?RTZg/5tWWwKAb3BAQ4ULZ5O37H5HKtHwrCpODcmRpa2C9SRaU0R1eclVyj2E?=
+ =?us-ascii?Q?TQq7uprX+BH1WHLIaL0S8leLUKszyu05/PgaWECU9vTCxJj1ewdXF3l6By1p?=
+ =?us-ascii?Q?ESz06JBFdd/u0CdXSSQHOuDfsxVyEN0ApsHee/SMekcgsg1+RIVdhQg5l93x?=
+ =?us-ascii?Q?sXmU4rrI9UX70yFqGK8JNxd+4szPZSsPKJM9H9+0k6djFKHUslqmSfT6Na8j?=
+ =?us-ascii?Q?yZgRJETHOPnuZCL9WJbXFrPLiWCrp7ROyodRpiU69fzWXA5PVPFvN2kHKg6x?=
+ =?us-ascii?Q?D8ViYsw8yOVmfKEXCPyRRFJvQFZ8VK0Rqb8F/IC4yT453l2uJhfAF2c6cVy/?=
+ =?us-ascii?Q?ZPMZLYqhORdD2wwibQ2tA01LRHZPNllTPvFnU3mLaDyVyb6YJ1SDruUN7XDj?=
+ =?us-ascii?Q?Xj2wFwSDX2e6ukrOhXeDeaxetAhg2TUCiCSqFwJs+oOu9aX7Pg4H5RjWHnD+?=
+ =?us-ascii?Q?7r8JBbuHl0fIdQOWgGj2RdV7olAMFpJo8uq4vKwZ9wRDP/jrJoDPgdwDbUOm?=
+ =?us-ascii?Q?SdRPg+DRY/qh1H95tdYAz6u1Qfd5hKvIdK7rrnCw/6eqm/vvmc0RibP9yCxz?=
+ =?us-ascii?Q?kgj66Gdp58KYGUCAZy4Oa8lh015BTU0NYm6b4i2PE+fCrpuXSqDtUvAfWsGP?=
+ =?us-ascii?Q?RuDNrYloZNdkeiRQqMbPMAnon6tYOkMsPyGvZbbOUMKoSRFF52xGkGXn4KKC?=
+ =?us-ascii?Q?7yT7z28Xe2JTwNJ9hHOJP/B0dh2a5WnsS3KnOcdOHqH8PKcGIjh7gSPeoraj?=
+ =?us-ascii?Q?VRLutlX4MR8CyQWMRV/zk9EkP3Epqky3l/z2diqvnUHxLyYqEiU9zNCIde1b?=
+ =?us-ascii?Q?wb0KDBOO9nPqNCLkbszdbNxt8itXp7TFuw7y6h9Y3QIwlZ1WcH00WS/ydipq?=
+ =?us-ascii?Q?TAoDlwxSGJ6p9n0qdQtukP4wNlLaAy9f6wf54FnzwBDCOO12NuVxDtMqP2/A?=
+ =?us-ascii?Q?oLPkHgKVBsEUR3y6SuTh0sGX1FX3mCW3hktgGpGavbQ4WrR6sq9ImIKpCnHP?=
+ =?us-ascii?Q?6inw5IOxM6L26rLjuvq71/NUlv4Kd+sxs/DBDq0F/8yVPXo7RfmZVDtnLqEj?=
+ =?us-ascii?Q?HYhbbaXACrv9iOeSCaHXGRqXK+pFiqeMmgu1lLh55LGabLk9BOENLzy7RgUp?=
+ =?us-ascii?Q?0RArokQ7EWe8H+sjsHMQsI1c5jzZpDB/XSCU6l0Y8/+hDxb1Yznt0ZXrXDj0?=
+ =?us-ascii?Q?Rf883LjsYqldjMIWU+MDDOkHkvo+nXKAcElbZOrOdpOzJ/+Htg44aDfBS7ZF?=
+ =?us-ascii?Q?2wRHiXKODOFCm1IsnKGp9immQfe5Df6beql3PDOnuttW6Ml9YS8nlx0ozYGt?=
+ =?us-ascii?Q?CeDpuep8IFZ1YoN7ssr9Lb63Jlc9cyxDr7B804gEhjq02xAIGwrFQ+kqCruM?=
+ =?us-ascii?Q?AMTaVaWFWIPyUrKliheahjIkpI/hX7HscLTFngeMM+O6ZNiUfBSPXRnYcgZT?=
+ =?us-ascii?Q?xPEdA2oOIRLBI74XJNLr6KPDPlBIXuFu+UT3LXBbts6PK1OSmbkB/jf82etV?=
+ =?us-ascii?Q?tvf4n3yU3pl+o6828vRgpAb2oYlh7EDsscPm?=
+X-Forefront-Antispam-Report: CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(36860700013)(376014)(1800799024);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2025 02:48:42.5148
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c215162-fbde-4e3a-3e37-08dd8d11add1
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF00021F6B.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV2PR12MB5918
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250506_194848_295437_C90C145E 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,123 +151,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The logic that drives the pad calibration values resides in the
+controller reset domain and so the calibration values are only being
+captured when the controller is out of reset. However, by clearing the
+CYA_TRK_CODE_UPDATE_ON_IDLE bit, the calibration values can be set
+while the controller is in reset.
 
-On Mon, 05 May 2025 19:26:35 +0200, Nicolas Frattaroli wrote:
-> This series is the result of what I thought would be a quick 10 minute
-> job, but turned out to be more like 3 days of pain, suffering, and
-> confusion. This should be expected with USB Type C though.
-> 
-> The first patch in the series extends the inno usb2 PHY driver to fiddle
-> with some GRF flags in that driver when the PHY is connected to a USB
-> Type C port. Without this change, devices on USB-C simply don't
-> enumerate at all, as the state machine gets stuck waiting for vbus to go
-> low or something along those lines.
-> 
-> An alternate way to implement this would've been a vendor property in
-> the PHY binding which is then checked for in the driver and needs to be
-> present in all rockchip inno u2phy instances that happen to be connected
-> to a USB Type C connector. This is what downstream does, for example.
-> 
-> Patch 2 and 3 allow Super Speed in reverse orientation on USB Type-C
-> connectors to work, but I am not entirely confident in the solution I
-> arrived at.
-> 
-> Patch 4 is what I think may have been the culprit of what originally
-> made me add the USB2 PHY suspension quirk, but I'm somehow unable to
-> reproduce that particular SError fest anymore.
-> 
-> Patch 5 adds the USB related nodes, including associated regulators and
-> Type C controllers, to the Sige5 tree.
-> 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
-> Changes in v2:
-> - Rebased onto next-20250505
-> - Drop the u2susphy quirk, as I can no longer reproduce the original
->   problem with various amounts of ripping up the DT and changing the
->   config. Yeah I'm not super hyped about this now being a heisenbug
->   either.
-> - Drop the bindings patch, as Rob showed me there's a way to do this
->   without extending the bindings
-> - Rewrite the usb 2 phy driver patch to no longer walk an OF graph from
->   PHY to connector, but instead first find the USB controller that uses
->   this PHY, and then use the USB controller's existing graph connection
->   to the usb connector.
-> - Adjust the Sige5 DTS patch to now have two port connections from the
->   USB connector to the drd0 USB controller, one for high-speed aka
->   USB2, one for super-speed aka USB3, ordered as per its binding.
-> - Add a patch for rk3576.dtsi to reference u2phy1 as a clock in the drd1
->   controller.
-> - Add two patches to fix USB Type-C super speed in reverse orientation.
-> - Link to v1: https://lore.kernel.org/r/20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com
-> 
-> ---
-> Nicolas Frattaroli (5):
->       phy: rockchip: inno-usb2: add soft vbusvalid control
->       phy: rockchip: usbdp: move orientation handling further down
->       phy: rockchip: usbdp: reset USB3 and reinit on orientation switch
->       arm64: dts: rockchip: reference u2phy1 as clock on RK3576
->       arm64: dts: rockchip: enable USB on Sige5
-> 
->  .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
->  arch/arm64/boot/dts/rockchip/rk3576.dtsi           |   5 +-
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c      | 113 ++++++++++++++-
->  drivers/phy/rockchip/phy-rockchip-usbdp.c          | 154 +++++++++++++-------
->  4 files changed, 376 insertions(+), 56 deletions(-)
-> ---
-> base-commit: 214464d4c3491d4eb2c0e9d1310d7f60c408b94b
-> change-id: 20250328-rk3576-sige5-usb-230102aeeaca
-> 
-> Best regards,
-> --
-> Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> 
-> 
-> 
+The CYA_TRK_CODE_UPDATE_ON_IDLE bit was previously cleared based on the
+trk_hw_mode flag, but this dependency is not necessary. Instead,
+introduce a new flag, trk_update_on_idle, to independently control this
+bit.
 
+Fixes: d8163a32ca95 ("phy: tegra: xusb: Add Tegra234 support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+---
+ drivers/phy/tegra/xusb-tegra186.c | 14 ++++++++------
+ drivers/phy/tegra/xusb.h          |  1 +
+ 2 files changed, 9 insertions(+), 6 deletions(-)
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: using specified base-commit 214464d4c3491d4eb2c0e9d1310d7f60c408b94b
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/rockchip/' for 20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com:
-
-arch/arm64/boot/dts/rockchip/rk3576-roc-pc.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-roc-pc.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[17, 262], [17, 263], [17, 261], [23]] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-evb1-v10.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-evb1-v10.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-rock-4d.dtb: usb@23400000 (rockchip,rk3576-dwc3): clock-names: ['ref_clk', 'suspend_clk', 'bus_clk', 'utmi'] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-arch/arm64/boot/dts/rockchip/rk3576-rock-4d.dtb: usb@23400000 (rockchip,rk3576-dwc3): clocks: [[18, 262], [18, 263], [18, 261], [22]] is too long
-	from schema $id: http://devicetree.org/schemas/usb/rockchip,dwc3.yaml#
-
-
-
-
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index fae6242aa730..dd0aaf305e90 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -650,14 +650,15 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
+ 		udelay(100);
+ 	}
+ 
+-	if (padctl->soc->trk_hw_mode) {
+-		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+-		value |= USB2_TRK_HW_MODE;
++	value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
++	if (padctl->soc->trk_update_on_idle)
+ 		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
+-		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
+-	} else {
++	if (padctl->soc->trk_hw_mode)
++		value |= USB2_TRK_HW_MODE;
++	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
++
++	if (!padctl->soc->trk_hw_mode)
+ 		clk_disable_unprepare(priv->usb2_trk_clk);
+-	}
+ 
+ 	mutex_unlock(&padctl->lock);
+ }
+@@ -1703,6 +1704,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
+ 	.supports_gen2 = true,
+ 	.poll_trk_completed = true,
+ 	.trk_hw_mode = true,
++	.trk_update_on_idle = true,
+ 	.supports_lp_cfg_en = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index 6e45d194c689..d2b5f9565132 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -434,6 +434,7 @@ struct tegra_xusb_padctl_soc {
+ 	bool need_fake_usb3_port;
+ 	bool poll_trk_completed;
+ 	bool trk_hw_mode;
++	bool trk_update_on_idle;
+ 	bool supports_lp_cfg_en;
+ };
+ 
+-- 
+2.25.1
 
 
 -- 
