@@ -4,164 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDF95C3ABC0
-	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 09:56:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15C0BC3ABC0
+	for <linux-phy@archiver.kernel.org>; Wed,  7 May 2025 10:02:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ABAHw8PXSizo1wf5w9SJHVyJV58qQxd+kphKUi0VDtk=; b=DtHl9QV0HyQqYI6Dfs0diX21oI
-	gnBYZMxxNRkNx68RNydGjuTMRTMCJk0Hsb4VoeRQMykcR5Zqx87BDRJu2kTp8+DmpoxGmfkN+lTsO
-	TUVeevknisH11pPCBjGYraNiQpRJr93J16hWtLApMHespv293HLFT5Va/hzaSVnZ2S5cG/GyMip6y
-	62NZZZcM7TrHO0BCoMTYXNqnDo5NEnkPqSzwn1cY7E+t90PNXzpEhQcNtkIffox/kY8n9+G4w3BWj
-	VXWTpbTjHw33Rzsvm9HtZx8iw4HckkVMJaoAQwV7e+amuUbWrfCZuU+Kjxs5qAfio3Xzb/7Enck+H
-	+avXZlIg==;
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=64k4M9H1TRIDXp+nXnl4jwVxaEP18kCDG305ChZq8H4=; b=gkWCUB0T/9qQ7J
+	khHuMskr6B03dnzBL5xmSRUGXsfAGBaLxXcK699yXI8b8hOMzJfYz2bVmJKrnBfhvCyKy6iiMcLGU
+	JGCvv4Al2q6leRtyuXtTLdHcX4erop2ooDJCRFeTpaIiiBXzk4jL0DRNiTG4O93EWGyXmib+riHhy
+	Isvfvx+2NK71GQckEbkv/57j5mxtW4ZBy/vFs6D5wj6vWsTNg+hCP/yI7r9/fsZoHvYPgMK1kL0DN
+	4RDACx+waEt0paJm4fXJDrBaeMZ7w5CIT+m9S+gCzncC3jRXtJCnz9PHu8jBP4BAViLdihV6GP82Z
+	9dPN9tlb6M1HX6HJU6XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCbWA-0000000F29O-2mCc;
-	Wed, 07 May 2025 09:56:46 +0000
-Received: from mail-dm6nam10on2060d.outbound.protection.outlook.com ([2a01:111:f403:2413::60d] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1uCbbw-0000000F3b6-3Rza;
+	Wed, 07 May 2025 10:02:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCbFh-0000000EzhD-0BVA
+	id 1uCbW8-0000000F28j-2wdC
 	for linux-phy@lists.infradead.org;
-	Wed, 07 May 2025 09:39:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CKHhdCudHbsQmic1Zf2C2kXnEjkrkqNf10MQVvAoWPMkCYgLq93Fmr5YjhejWT51+avSGQMtEO+FpLPGN14ZQUgRG9Ll2yQ6XaKYj2nHAMCSluzmVCRvmwRLpEgVjbjpMoAYlP/h448Hztk8OtyoOOpnRYbPcgnrAaDcUwW2jDVTMtWJXDcqqBmi6TwCUjxOOgNvIPdP30ZONGarH94/Iu+wTnbcLQ4fi7sn44u1WrsRTgFdHptcfxF/KdgrJDClas6IsvRrqpSXZTf6D/W5o+MoezTr2YqPuxxE7z64l2Eg2YH38LqI5kRRsBKyNoH0ozXxpuCTeSDzGq31H266pw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zrSpDQA3FWuwXAKOfo+qOtzvE0ptLlTeu0M2+BcyA88=;
- b=n5yrMPdL/0Qcj6iAeVLI3Ubsv0PQOQiysfDcNY4zcJAzxlOhGso4bGo/6Wa2afxcx3IJCXBTRmk6m5J1fVHf4tnauHftjYO/w7Wkfyh4flzSLUDSMWGkNJsUFt8sH3pHroPLchvQV5cMJgVoM/wdvn6Ac5C2MMQ+y6Is3xhQofTW7MSqJCbQNtoR1HcIIGtISfbq0ggaQ/2NWyynegeNaTk+kK4wX2bnxQpD4aiBeKBJY4ZJQyDba642CwYA4qvq4JIPkcTfynXcRCKYdopoa62YaAyEg1bgifNG7qNebVSeV+QH8rpYNegXYPR8Qnc5ChIW/4k7XLbkFTA0wAd+zQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zrSpDQA3FWuwXAKOfo+qOtzvE0ptLlTeu0M2+BcyA88=;
- b=nVSOpvfjO0Ff+VyIgY2jOntLjK3LIA5rMGuTKHrIGW8wwNPZlNzTaOmvLPiHEUTtt773J52Kt6ByikQINlXCrtcIS2J6xT0F700/A1fGgDHwcLXZiUQ5bwKSpcI8adOvVnXst5PmlKj8sXTi5y1ssFDJU++oRIjXfbG09XjBuqVNlOVe/3R0jlwYHRBKQ/OSdaY20mctZQ5QoFq5jcQfWrt66Cn6P+VJ/dngpSQVB4MKWOziDX2JgFEz3H9KtiCFOYPBTbDD9py4wSJG3Q7aEN7NR8Aah6wjjT4ab6WCakpAUpAB+sNttyfEFOOyUO3iBy4xvQxy4PG+MfiVGQI+KQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from SJ2PR12MB8784.namprd12.prod.outlook.com (2603:10b6:a03:4d0::11)
- by SA0PR12MB4352.namprd12.prod.outlook.com (2603:10b6:806:9c::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8699.26; Wed, 7 May
- 2025 09:39:41 +0000
-Received: from SJ2PR12MB8784.namprd12.prod.outlook.com
- ([fe80::1660:3173:eef6:6cd9]) by SJ2PR12MB8784.namprd12.prod.outlook.com
- ([fe80::1660:3173:eef6:6cd9%3]) with mapi id 15.20.8699.022; Wed, 7 May 2025
- 09:39:41 +0000
-Message-ID: <7666d6e3-9fd5-45aa-9a29-144514ab3533@nvidia.com>
-Date: Wed, 7 May 2025 10:39:36 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] phy: tegra: xusb: Decouple
- CYA_TRK_CODE_UPDATE_ON_IDLE from trk_hw_mode
-To: Wayne Chang <waynec@nvidia.com>, jckuo@nvidia.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com
-Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
-References: <20250507024820.1648733-1-waynec@nvidia.com>
- <20250507024820.1648733-2-waynec@nvidia.com>
-Content-Language: en-US
-From: Jon Hunter <jonathanh@nvidia.com>
-In-Reply-To: <20250507024820.1648733-2-waynec@nvidia.com>
-X-ClientProxiedBy: LO4P123CA0004.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:150::9) To SJ2PR12MB8784.namprd12.prod.outlook.com
- (2603:10b6:a03:4d0::11)
+	Wed, 07 May 2025 09:56:45 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5471H8o6021660;
+	Wed, 7 May 2025 09:56:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	i3WjVEP76mf0rqTTBuk0vFXV+/2ZlGwZiVlYgOnFqxA=; b=JMe13eXEg2+Y46NC
+	KoMLRzOMY8Ja4LHmwpF2M/9yWvze3sx1kTIaGboAoKB+QUS93YOL1fvXIBZrWVI/
+	hDr5ywtIBXI5TomzdiUzpMhZaaezHt23mDWqB0DqvPBSylGfN6xYZBU/tl1N7QWb
+	bwectKQ2O0Ddkqq2KWp57vS4Obtf1svihx5MZ8ASd7ituMK3y2UXI8E3cSMnc4fK
+	tFBEIC8j9fuuLd2xj7w323+jZv2fmwBl0EgNvrN/mQ+c3v1zAGypQ52reGUOEbbM
+	nhMXeYsM6vgsUI6T0eFQ3LZ+jC7xWND845oYcP7sQH/TlNiOoQLy089UfJCRompF
+	uB3PKg==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46fdwtv2k4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 07 May 2025 09:56:36 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5479uaAP018854
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 7 May 2025 09:56:36 GMT
+Received: from [10.239.29.178] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 7 May 2025
+ 02:56:28 -0700
+Message-ID: <c91c5357-464b-4ecc-96a5-c617048f73e5@quicinc.com>
+Date: Wed, 7 May 2025 17:56:12 +0800
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ2PR12MB8784:EE_|SA0PR12MB4352:EE_
-X-MS-Office365-Filtering-Correlation-Id: 33c6d64c-739a-4d04-e3e7-08dd8d4b1769
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|366016|10070799003;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?L0ZFN1VQbFlUTHY3OStwdm5MUWJKZTdvd3daRDdhWWNSc1ZJMHQ4VGwrVDd3?=
- =?utf-8?B?KzAvVjR0VW5jbmFvZVhIbVJ2bHpFaXd3b0JwRDNhOWxXZ1FjZWlPb0hrNEFB?=
- =?utf-8?B?cU1WQ0xRV0lFWEdKcFk4NkhZSmFVRmVsN3BrRCtKUEhGQ2FSVzRlM3ZUcGdp?=
- =?utf-8?B?T0dXR3NBdXlkektqZHg5K2l5QjFGT1hPYW9wT1YyY1kya2VUcUc4YzZLcDVp?=
- =?utf-8?B?bnBUVFBWQkpFeFFEK1RkVFlLUy83RmxvTTNiOXlpcWdUNWF4Nno0U292b203?=
- =?utf-8?B?SWRzbEdxbmFJeDh2emJENWpOMmZsNmJnQ212Q2ZGbWFWRkY4YXNvcUJqNFND?=
- =?utf-8?B?eEtKRE5sSnpiTnR2ZFA5WG14Q2tNSTE2dFI5L2NVTzFNeXlGRWpOQnFsempN?=
- =?utf-8?B?czZHRklnWURvSHJkUVhnYnF5ajJRaDkrTVRIRGlQK0pwUy9COW9neXBzSU80?=
- =?utf-8?B?enhvWWV5eGVYS1ZtYng4NHE0bE5GM2xESndvNTN2V2w1MTl5Z3g0bVFnOE5q?=
- =?utf-8?B?RWNYRFI1M0tuT2ZCZzIxZmpoWEkvc2E1OFdlNnphMDRFZ2VaT01WQWxSOWl2?=
- =?utf-8?B?Zmk4T3IydFF1b1FhY3R1ZHFDTEExeitEK2pwaXYzcFF6VE1jN0c1YkVoVnEv?=
- =?utf-8?B?ME9EQ1hyNHg2aytVZFFQZS9JbG81ODhxOS93aUlmVSt2NFRlWlMyUkR1b3oz?=
- =?utf-8?B?SHBJRUlQTUlzZEN6VmNURmE5Y1dyRWRyZmNnSVBpSmdqOXdQdFo1NUtzZGhm?=
- =?utf-8?B?VVcxZk5XRTlGTmVQMkJLMXo2STFDd0hkNld5SEw5Y3o0VGJPOXpHdzdDYmRp?=
- =?utf-8?B?MjBSSGxmaWpmYWN6c08yTXYvRFMvUko1OFcxUFNpeXVIREdVZCtoN3hiMUo4?=
- =?utf-8?B?VXhoaHpIVXJ5MFptV0diaWhsZ3UvSng0dHhSc3FwRlVWQlNHWUt6UjBzOUVj?=
- =?utf-8?B?UWg1QUs1cVlGNURFZDhmZE9YUExsVHNudmRYS2IvUzc1V2JVaFFvZEJaRE1J?=
- =?utf-8?B?c0ozdmR6aHZRNVc3ckJMK09SQ3pIeEMzMlBzaysvVGVJTkRQekdYbTFENlRm?=
- =?utf-8?B?MmRqbVZ2TGRFdGk0dm13MG5vWWRjOTQzVDRoNzgrUHVwd0JlMnRicnRqbFd5?=
- =?utf-8?B?NmtFZUR5SlpEVUNyWWNDTU1kYk8vZnlrVTBFM1pUR0tDK1NVMzFxZHR5L0pr?=
- =?utf-8?B?UFhTT3k5a3JvMVRmMVZhdlBscjhDTlV4QzZUdlhJZlFRRE1ockpQUEVOVXdv?=
- =?utf-8?B?MFFYMkdmR2hJNml3MGlYT2VWMSszbzRFOXVqZ3pwZXdVZHFsTlAvZDR4V3po?=
- =?utf-8?B?MHBiVlE2NDdZSG5raEYwZHFMMkp6bXhOMUhya0dzdThUUnpqOWhBbVFndlNr?=
- =?utf-8?B?UmlNc1RGRnpiOUNEY3lsMkdQZXEwczNwRGVyZy9KbTZjOCtrRHpHS3JyUG4y?=
- =?utf-8?B?U0taK0NRVVowOEdUd1Y2NUY3VnFIU2hzTTZYNUdNTTNTMmdTeWRsQW5NMXFu?=
- =?utf-8?B?WTB0d1k5dThnQWxxdDFOcklhUHdGT0lKQkRIeFF3RDZreEx2Y2VCZ1p3ZE1h?=
- =?utf-8?B?TkpnNWZKMUFxOENBUWt5eC9aRW4vZTdQMEgwbDIwbVhZNEx2Ynk1MVVvS3oy?=
- =?utf-8?B?WUFuRTlzR2ZWRnQwcVBPWDhmaFplWjVqaGJnSUduTEJlYW9HS0ViYmUrYWkz?=
- =?utf-8?B?N3IyTUovRStRZVlsZjBJUkdGSUxVaXZ4Y2VjRmI4cmR4MEtNS09lSEthOXZk?=
- =?utf-8?B?VVNxak1XMUh3eklncDFWSXd5dVVaR0VWRmlia083RzBnWm5nV2ZQNnFmU3Ju?=
- =?utf-8?B?c2Y2T3dHYVVudVFiZjJpT2tXNno1K3ljT1V2QnVLVlNVOFhyd1VDaEpFMlA5?=
- =?utf-8?B?TGdjOTkzeFlHRHRNU2hMWlhtWDhpK3FXcFBaWThSYTlGVHc9PQ==?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8784.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(10070799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?MHNFNEtxd3NSTjFzWTFKdi84Y2l4Z2tmSGFwTXZlZWQrbkwzWDNKQmdTSGFJ?=
- =?utf-8?B?OVhZSCtzWW5rS3hGTG1qVEQxTG9UUkpTRDRIM0dONEJWUlYwdmhweVRTeUJZ?=
- =?utf-8?B?Tk9aQVhPbFZDVjhUaHVzSVZSVHpsR0l5RjRzM1ltdno0RDNjWVUzRHM3Q1c5?=
- =?utf-8?B?THRGMGp1S3hwWHVvYnM0Q1B6Q0toMVVTMFZ1ZWVxUEtGZ0NjU3JWc2JISVgw?=
- =?utf-8?B?ckRWOE5OdUxZRzFpUnY1NmFZV01jZ2tZMG1xMTZ2Qk9TTnpFWkswS3BwemUz?=
- =?utf-8?B?K3M0OHdleHJ6bjBwSVJ2dWtTdzZ1TGZoVEc0c3FpQS9HVFd3bFIrakYyc0ZG?=
- =?utf-8?B?VTJkOXd2d2NzUitpcDFtU2NwUzc5bDJzcFJsMGRRbEhOQ3lBTDZLQUl4eWZo?=
- =?utf-8?B?YWxHSkg3MFRjazlXcVYyUHpmaXNiMG9TNmY3TTFGcWdXcVhzQVo3OEJPR3dw?=
- =?utf-8?B?Wk94SjBCZHFwVFhkZkJjWjE5ZFJTZnpuaFdOMGZNQTRxdHVJT2ZaTEFmdERK?=
- =?utf-8?B?SFZBMk1NNG1VSXJJeWsxU1pZdkZSYWlQRmxTd0RkcmZxdnByeTgxR085c3Zn?=
- =?utf-8?B?RlNqMFpqZS9JNWh4aEhVZTkvU2J2eWxPWThJa0dMLzJiNDdXTCtHNlAvWkFt?=
- =?utf-8?B?SkRvT1I0a1FnZFJ6L1NYRHpyWjVwTlByY0RYLzIzbzZmWDloeDBSZEZTUWVC?=
- =?utf-8?B?N2NMYjh6WjNJMW5vSWJmNDFOeDBGUnlmOTdMTE50RmhCWGE1dzNCb3JCZ1hu?=
- =?utf-8?B?MjdiSkg1TCsxS1FCanhaSld3SUxvNzRQZlJqSnIvSzhPS2pJTExVZk94bHk2?=
- =?utf-8?B?U09OTEt4aGpQMnZPdVQycHRodk0xcTZrVHdtRG1HN0hXU0VFbXkxOHhtQ2Y3?=
- =?utf-8?B?TlkvN0JGMWJEVUJqa05BNWJxZXd4MlRoT2M3Q3hJZU1rVW1HVEZGVC91OVhF?=
- =?utf-8?B?bnVZNk56REZrVVhQdnE2M0NXOU9zZkZ6TU83NGpFeWhPM0JYL0tISzhqTm9L?=
- =?utf-8?B?d0FlLzZFaXcrc3pwbS8xSVRtaVBKWlFEOFFVamJnYzg0bmtHYlZLNmVTTXND?=
- =?utf-8?B?Ulc0TGJtVlJKc0JCOUZRbFJDTThndHBNL2M4dXpuR2U5eGp2aEhiL2kyR25U?=
- =?utf-8?B?WE9uNzhQRFFXcCtKamR1eXA5YlVsbGVWcFNLQmZIbndBYmJtOG5WVnBMYU1y?=
- =?utf-8?B?bmpGRlpVQVlIdHg3MUlmV2xYREZ5MkZ2SGw5dWtTTnVFU2ZMbkZ5aDdEMjlv?=
- =?utf-8?B?Si9EVktIR1Z5ekRyVFdHWnNyUy9MaVhSRzhoSmxIQWFiRlVCU3pzVSsyR2Fx?=
- =?utf-8?B?YVBpT291OUx5MXd3ejZ6MktpQnZrYkVwcTVWQks4Z01pb1ZwWkw3L2d2SStT?=
- =?utf-8?B?bldDNWJKaGRBbDVCYVZXM3AvdzBQU09Db3lPb0JnZ0xyTzRRRlhJVmtoM0pB?=
- =?utf-8?B?MExFdjJKcFdFWUtZQjBJOTg5NWtFY2pXWDdMQjVJaDViSW9aRjFXdTUraGc1?=
- =?utf-8?B?cGtjUUw2aWRxZWZhdGRoOVpXbnRGbEtjcnlXU1pFdGxsczJqRWpyNnhrT2Z4?=
- =?utf-8?B?N1dWbjdSNXRibEVuOEk2MmZ3UFFZS09jWHd3N0RwM2E4YXVYOUwwYXBjTEcw?=
- =?utf-8?B?UlJ4cVFqY091K08wRDFCMXRDMUZjV0RWRmNPWk5qTkxEVFVOV1oveCtpWGJm?=
- =?utf-8?B?akV0Z0xHVCs2SkM5NGNnVUdyQldRenBiWVJlMHlnOXVhSDRhRHpIdStpSG5F?=
- =?utf-8?B?U2p3azhlZzBrbExSQS9TWGZ2SVdqVUExU3E5Q2pnOEtnb0dEN0xydGlUZlV3?=
- =?utf-8?B?QVBrOEVoeC9PZW4vTFRiSzBmNFBxQzNDdUU1VDVTWlFVSmp5d2FyWG4zMVVT?=
- =?utf-8?B?R3lCQkRlTno5OWs2ZDl3SzVVSjBqQ1VyOWhXeFdMMEwySklpU2lYZS81cUNB?=
- =?utf-8?B?cHh0Z2Z3cDlWNFNtZmtENHJIcFBxblNMNnNKNm1PL2Z0RXRLQVlaM0xwK1dm?=
- =?utf-8?B?aHhGU2UwWG5sZW9rYW1aT3FSWEdVcWkxVDU3M2J2TzE3aGJpYWpqTFJ3LzNl?=
- =?utf-8?B?ZldtMVUzMHdsTlFzbTROb202bVd5dmhrUzZnalo1Y2FJb0hhVEZybGoxZkJI?=
- =?utf-8?B?d3pUS1dCNEZyd3dFN2RHYW5mNVkrU1BLeDVkN1paem1JeWp0eSs5d1N3ZzRF?=
- =?utf-8?Q?VJN/dVzDeQ8JBM7wU+8fqxRZyEIMbpWj2mSxmvdqG2hQ?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 33c6d64c-739a-4d04-e3e7-08dd8d4b1769
-X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8784.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2025 09:39:41.4254
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: z3MJW4FqtRzgJO+nXyojKS3xP0AWeAMCeBOTjdC3Dy4PBrze2lEkDgKJZPh7oPSY2VaUwHUu0Bb/L7xsO1iqeA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA0PR12MB4352
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 2/6] dt-bindings: PCI: qcom,pcie-sa8775p: document
+ qcs8300
+To: Krzysztof Kozlowski <krzk@kernel.org>,
+        Ziyue Zhang
+	<quic_ziyuzhan@quicinc.com>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <dmitry.baryshkov@linaro.org>, <neil.armstrong@linaro.org>,
+        <abel.vesa@linaro.org>, <manivannan.sadhasivam@linaro.org>,
+        <lpieralisi@kernel.org>, <kw@linux.com>, <bhelgaas@google.com>,
+        <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <quic_krichai@quicinc.com>,
+        <quic_vbadigan@quicinc.com>
+References: <20250507031019.4080541-1-quic_ziyuzhan@quicinc.com>
+ <20250507031019.4080541-3-quic_ziyuzhan@quicinc.com>
+ <20250507-quixotic-handsome-wallaby-4560e3@kuoka>
+ <8fef4573-0527-44d8-a481-f3271d9ffa33@quicinc.com>
+ <01b06e36-823c-4f28-8db5-dc0ee0b4c063@kernel.org>
+Content-Language: en-US
+From: Qiang Yu <quic_qianyu@quicinc.com>
+In-Reply-To: <01b06e36-823c-4f28-8db5-dc0ee0b4c063@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=VPPdn8PX c=1 sm=1 tr=0 ts=681b2e54 cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=dLDUmFIFFNY9evZcgTYA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: SVOMAAcLwkbfVUfj6PlgHnCuWn07ExSi
+X-Proofpoint-ORIG-GUID: SVOMAAcLwkbfVUfj6PlgHnCuWn07ExSi
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA3MDA5MiBTYWx0ZWRfX6c1iUg6TOczc
+ fkYFtN9r5Ec7tWrDVYsgmT4sPG/QUC3BaDEK0u3D3KRy7QjzXZQHFSwaJ4Ht6ozHiEGCUOkGhNG
+ uwNyO9kgdzZNivNepBNY14MZn8qV4zq0RS7+4USXV2HIYREtAgfrLAbZbQUgbjVUNVR3bJFi1t4
+ 3IF449tvQURByGxxeVGrU+Be8umFC+jIUHf6QMAFgaSeKl9avP2PmQLrAI3rhemvSb3YWPPxbDh
+ GwyOxL2pzTLy036OsDOykgJPzLXKdhJSQUuyslSuHmDntuWb2WwLgvka8/PfKzBCusP9FCssKa0
+ noY9EUuiKprTdpB2Cy1n0wPWnl0zK8nE5ZeVOe3jmp+8Fi/TjT2NtH7wUFJCQtKTSTbjIlAqzIs
+ pm9fhNMAXpmT2eWbSkmgDxKTNKo0qlCcdqF7MtwJkB0zVjkH8XySFQCYkkPwUufrUjNCFLIN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-07_03,2025-05-06_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 spamscore=0 suspectscore=0 adultscore=0 mlxscore=0
+ bulkscore=0 clxscore=1015 lowpriorityscore=0 impostorscore=0 malwarescore=0
+ mlxlogscore=995 phishscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505070092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250507_023945_109075_4E8B5BC5 
-X-CRM114-Status: GOOD (  19.35  )
+X-CRM114-CacheID: sfid-20250507_025644_750964_5C440D04 
+X-CRM114-Status: GOOD (  17.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -178,62 +125,75 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Wayne,
 
-On 07/05/2025 03:48, Wayne Chang wrote:
-> The logic that drives the pad calibration values resides in the
-> controller reset domain and so the calibration values are only being
-> captured when the controller is out of reset. However, by clearing the
-> CYA_TRK_CODE_UPDATE_ON_IDLE bit, the calibration values can be set
-> while the controller is in reset.
-> 
-> The CYA_TRK_CODE_UPDATE_ON_IDLE bit was previously cleared based on the
-> trk_hw_mode flag, but this dependency is not necessary. Instead,
-> introduce a new flag, trk_update_on_idle, to independently control this
-> bit.
-> 
-> Fixes: d8163a32ca95 ("phy: tegra: xusb: Add Tegra234 support")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Wayne Chang <waynec@nvidia.com>
-> ---
->   drivers/phy/tegra/xusb-tegra186.c | 14 ++++++++------
->   drivers/phy/tegra/xusb.h          |  1 +
->   2 files changed, 9 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-> index fae6242aa730..dd0aaf305e90 100644
-> --- a/drivers/phy/tegra/xusb-tegra186.c
-> +++ b/drivers/phy/tegra/xusb-tegra186.c
-> @@ -650,14 +650,15 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
->   		udelay(100);
->   	}
->   
-> -	if (padctl->soc->trk_hw_mode) {
-> -		value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> -		value |= USB2_TRK_HW_MODE;
-> +	value = padctl_readl(padctl, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +	if (padctl->soc->trk_update_on_idle)
->   		value &= ~CYA_TRK_CODE_UPDATE_ON_IDLE;
-> -		padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> -	} else {
-> +	if (padctl->soc->trk_hw_mode)
-> +		value |= USB2_TRK_HW_MODE;
-> +	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL2);
-> +
-> +	if (!padctl->soc->trk_hw_mode)
->   		clk_disable_unprepare(priv->usb2_trk_clk);
-> -	}
->   
->   	mutex_unlock(&padctl->lock);
+On 5/7/2025 4:25 PM, Krzysztof Kozlowski wrote:
+> On 07/05/2025 10:19, Ziyue Zhang wrote:
+>> On 5/7/2025 1:10 PM, Krzysztof Kozlowski wrote:
+>>> On Wed, May 07, 2025 at 11:10:15AM GMT, Ziyue Zhang wrote:
+>>>> Add compatible for qcs8300 platform, with sa8775p as the fallback.
+>>>>
+>>>> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+>>>> ---
+>>>>    .../bindings/pci/qcom,pcie-sa8775p.yaml       | 26 ++++++++++++++-----
+>>>>    1 file changed, 19 insertions(+), 7 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
+>>>> index efde49d1bef8..154bb60be402 100644
+>>>> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
+>>>> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
+>>>> @@ -16,7 +16,12 @@ description:
+>>>>    
+>>>>    properties:
+>>>>      compatible:
+>>>> -    const: qcom,pcie-sa8775p
+>>>> +    oneOf:
+>>>> +      - const: qcom,pcie-sa8775p
+>>>> +      - items:
+>>>> +          - enum:
+>>>> +              - qcom,pcie-qcs8300
+>>>> +          - const: qcom,pcie-sa8775p
+>>>>    
+>>>>      reg:
+>>>>        minItems: 6
+>>>> @@ -45,7 +50,7 @@ properties:
+>>>>    
+>>>>      interrupts:
+>>>>        minItems: 8
+>>>> -    maxItems: 8
+>>>> +    maxItems: 9
+>>> I don't understand why this is flexible for sa8775p. I assume this
+>>> wasn't tested or finished, just like your previous patch suggested.
+>>>
+>>> Please send complete bindings once you finish them or explain what
+>>> exactly changed in the meantime.
+>>>
+>>> Best regards,
+>>> Krzysztof
+>> Hi Krzysztof
+>> Global interrupt is optional in the PCIe driver. It is not present in
+>> the SA8775p PCIe device tree node, but it is required for the QCS8300
+> And hardware?
 
+The PCIe controller on the SA8775p is also capable of generating a global
+interrupt.
+>> I did the DTBs and yaml checks before pushing this patch. This is how
+>> I became aware that `maxItem` needed to be changed to 9.
+> If it is required for QCS8300, then you are supposed to make it required
+> in the binding for this device. Look at other bindings.
 
-Can we rebase this on top of the fix 'phy: tegra: xusb: remove a stray 
-unlock'? This does not apply on top of that patch.
+The global interrupt is not mandatory. The PCIe driver can still function
+without this interrupt, but it will offer a better user experience when
+the device is plugged in or removed. On other platforms, the global
+interrupt is also optional, and `minItems` and `maxItems` are set to 8 and
+9 respectively. Please refer to `qcom,pcie - sm8550.yaml`,
+`qcom,pcie - sm8450.yaml`, and `qcom,pcie - x1e80100.yaml`.
+>
+> Best regards,
+> Krzysztof
 
-Thanks
-Jon
 -- 
-nvpublic
+With best wishes
+Qiang Yu
 
 
 -- 
