@@ -4,108 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8106C3ABC0
-	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 09:11:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E59CC3ABC6
+	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 09:58:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4t0T6HAwylEJHJEVMBAWdR2czb1LH0TMLmPihsctGyI=; b=mSyusJiEdTHkBe
-	kdyXA2/lNiTag7GSL8Z3Ti0ULiW6uVSIcOSN0hNHl5ukxo7hsTie4WDdQj2+65khoQKWywYqY9BgK
-	phZXm6GICsgHHT9z/rcb3z9dtZy0pBt02RXxZkpGaQugU8KjQzBeUzdOPx0r1PGxQzjsgUG0Ld4FY
-	gzMnJnkJku0gfVAI1ZBouUQsu810A7xv8eqz1aA7FAhwq+6hG1HWkF0QCwkRpQzruQrSw+/pDaeF+
-	qxausNkr6iQf/UCMQ/IF5u6Lon8apYXWoT9oIcXf4wNZ7vAgDvhhTQue4XP7DN/8vs8z2iBZHeuEW
-	b3okncS6OtKIsfS3Gz7Q==;
+	List-Owner; bh=5S9NXY2+MunU6anytNnz4QqOmpQkSia778WmDZEwn6E=; b=MjA76w8OdXmFH4
+	x4tprq9hQqj5HyMnb8we2cbYWy3jWqDGrV6HueImgyVB8Sa63jzZgyRgOXain/6VTuXABsbXa5I7H
+	KMKp7aGfKFRTwWpWeZRsebu8I2Q3f9T5/WWGHJdQ0RYSnqZ66uifJ+e63UKVJ1hR2Um3ohXS82Set
+	PFDGeb+h6eY423+RBRAChRv6sTNEMGUkR50YvXlqCO6vpkyxVphG2xSA2ZErkKXhsCPpziJspNZ6f
+	PFllObq8O9H0LS9yuzvNJU9b8y8sE4/+fKE2cxGP4Vsh0HG5qpaZcYibOdE6evXIklEvmtuFVdumH
+	VtXuPt9CK3J/bufZ5lTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCxIA-00000000DUr-1q7s;
-	Thu, 08 May 2025 09:11:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uCy1C-00000000K2S-3Myw;
+	Thu, 08 May 2025 09:58:18 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCwy0-00000000AbB-17jq;
-	Thu, 08 May 2025 08:50:57 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5488lTNL019197;
-	Thu, 8 May 2025 08:50:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FeuXQKJYzXKrQyimVC6enB/MDQqFsM6oNHE6NFSYQag=; b=ifruc59pxaTBrTqs
-	7PorMX71cIKDMN0zY/+25hp7Tqy0hjTAGjvOwFFrxru95VP16WpS4rcAp4A16I6g
-	MIVdu7bl6dqJ08RKDWe4yDV8YeIxsU+MNIAmub828/dfcSuyxa2t4GGxdVXvhVGM
-	y8M2xAJrUQ3FIqldzHrrYkyqpew/iBhcV9WTIJiN9aX/YWR7xrZ60d2RrIsuRgMD
-	JQtN5ElPsojJfJwBCRT6YCZgKaeOtMwtsukSZ50s/ZcPm0lN2SAZe61sb0fTjlQP
-	Y5vrPaeeb35An7M5pRjGqS9iEO5+xLbNQN2uJhpiuc7tovDDzJ3iL3v9kZSlZO7D
-	5DJoLw==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46gsdj006j-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 08 May 2025 08:50:39 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5488od4T018031
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 8 May 2025 08:50:39 GMT
-Received: from [10.239.29.178] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 8 May 2025
- 01:50:33 -0700
-Message-ID: <5fd4abe7-3621-4119-9482-de823b247b0d@quicinc.com>
-Date: Thu, 8 May 2025 16:50:30 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+	id 1uCxod-00000000I9G-2UGH;
+	Thu, 08 May 2025 09:45:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 04AF94AC3A;
+	Thu,  8 May 2025 09:45:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0453C4CEE7;
+	Thu,  8 May 2025 09:45:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1746697518;
+	bh=Cc1Skj2gto0ryJBoXR8ewyIYTGM/x6xJbXVwlCnskmU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=LSX8cTI8/vBABDZQ+rSYj4l9l4Wc8jSRifZt9YcFuePwFbmbajYbhXgA4oE3NGKhe
+	 uWi/ifztGcQTxDHqk0qc/NJsZXS2VYyMEf+uX3YwRJmSGjP6UEMti1pKk1FYVMQ6Xs
+	 bWeL65kOJcfpxSz0R7fnOhA8bOwr5aWMT6D99QL4RlAkW1QQKu0fx/LegWUsgHtdNL
+	 wgVYKKA3ziMeBm+wuNGFc14nlVJuKlEojt89fj9iJDt/tiVzNy5hnNYBNmWTDs5Zsg
+	 zai35rtmGOx0mZBACU/TO/IBhN3qMMUYSK1A7mchf7A0YsKb/juvK7s0/6cB6UmpmH
+	 rAjeMbbwH0+JQ==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1uCxoa-000000000zp-0t46;
+	Thu, 08 May 2025 11:45:16 +0200
+Date: Thu, 8 May 2025 11:45:16 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Qiang Yu <quic_qianyu@quicinc.com>
+Cc: Wenbin Yao <quic_wenbyao@quicinc.com>, catalin.marinas@arm.com,
+	will@kernel.org, linux-arm-kernel@lists.infradead.org,
+	andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	sfr@canb.auug.org.au, linux-phy@lists.infradead.org,
+	krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com,
+	quic_mrana@quicinc.com, quic_cang@quicinc.com,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Abel Vesa <abel.vesa@linaro.org>
 Subject: Re: [PATCH v3 5/5] phy: qcom: qmp-pcie: add x1e80100 qref supplies
-To: Johan Hovold <johan@kernel.org>, Wenbin Yao <quic_wenbyao@quicinc.com>
-CC: <catalin.marinas@arm.com>, <will@kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <andersson@kernel.org>,
-        <konradybcio@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-        <conor+dt@kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <sfr@canb.auug.org.au>,
-        <linux-phy@lists.infradead.org>, <krishna.chundru@oss.qualcomm.com>,
-        <quic_vbadigan@quicinc.com>, <quic_mrana@quicinc.com>,
-        <quic_cang@quicinc.com>, Johan Hovold <johan+linaro@kernel.org>,
-        Abel Vesa
-	<abel.vesa@linaro.org>
+Message-ID: <aBx9LB_qQIvA0bj8@hovoldconsulting.com>
 References: <20250508081514.3227956-1-quic_wenbyao@quicinc.com>
  <20250508081514.3227956-6-quic_wenbyao@quicinc.com>
  <aBxpMuFGKgWrw1TV@hovoldconsulting.com>
-Content-Language: en-US
-From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <aBxpMuFGKgWrw1TV@hovoldconsulting.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=PMAP+eqC c=1 sm=1 tr=0 ts=681c705f cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
- a=zitRP-D0AAAA:8 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=FqpPY7LzFvk08Lq7rO8A:9
- a=QEXdDO2ut3YA:10 a=xwnAI6pc5liRhupp6brZ:22 a=TjNXssC_j7lpFel5tvFf:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA4MDA3OCBTYWx0ZWRfX5VIC6QSm1+Yl
- gpHethyLRA9t6AEHjeBfkmh6QyeAucGikMzitV4dr4ywbluCe0pFJLF1lpu83wB4hR9roHXqBND
- b2BY1S0jZVusiIEGAaZ+qdw3My+//W7LF8IHgZ0dZT2XApNbMTwCWuQIhvG03kqxPh3a+Smx7g3
- pkWlb9hYIuOiqsjNPis8A/vP2W2qyOO1ShXfAdbrm4hYqIb8AqXGBhyIlkgR6lxunSocB2/Mrzs
- +8gUQovs+b0IdewuoMpH8Z4trr53+1s8i3sjz2ya/TyAHlU/jr3J9zCL+0ohjN8Aa8lffPl2kOt
- 1aijFRth75CUkneb3laB0hhKHHxhczU7zf9wOc11dft+kuqyz9E3lWn3enwjNKr2fptxOYxYyXt
- oK6pnubqiZThDAGQAmU50qLlVF/WdPibCZjTbBWHp+zMKgeqOfSvFp15LH7nHgrUD5S4cBsO
-X-Proofpoint-GUID: krx3KZtZkv5IdASRwzeLwYfjIsRBR-T3
-X-Proofpoint-ORIG-GUID: krx3KZtZkv5IdASRwzeLwYfjIsRBR-T3
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-08_03,2025-05-07_02,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 impostorscore=0 mlxscore=0 suspectscore=0 spamscore=0
- bulkscore=0 priorityscore=1501 clxscore=1011 lowpriorityscore=0
- mlxlogscore=999 adultscore=0 malwarescore=0 classifier=spam authscore=0
- authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2504070000 definitions=main-2505080078
+ <5fd4abe7-3621-4119-9482-de823b247b0d@quicinc.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5fd4abe7-3621-4119-9482-de823b247b0d@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250508_015056_317706_FA155515 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20250508_024519_648502_F72AC3F5 
+X-CRM114-Status: GOOD (  16.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,47 +82,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, May 08, 2025 at 04:50:30PM +0800, Qiang Yu wrote:
+> 
+> On 5/8/2025 4:20 PM, Johan Hovold wrote:
+> > On Thu, May 08, 2025 at 04:15:14PM +0800, Wenbin Yao wrote:
+> >> From: Qiang Yu <quic_qianyu@quicinc.com>
+> >>
+> >> All PCIe PHYs on the X1E80100 SOC require the vdda-qref, which feeds QREF
+> >> clocks provided by the TCSR device.
+> > This still looks wrong and you never replied to why these supplies
+> > shouldn't be handled by the tcsr clock driver that supplies these
+> > clocks:
+> >
+> > 	https://lore.kernel.org/lkml/aBHUmXx6N72_sCH9@hovoldconsulting.com/
 
-On 5/8/2025 4:20 PM, Johan Hovold wrote:
-> On Thu, May 08, 2025 at 04:15:14PM +0800, Wenbin Yao wrote:
->> From: Qiang Yu <quic_qianyu@quicinc.com>
->>
->> All PCIe PHYs on the X1E80100 SOC require the vdda-qref, which feeds QREF
->> clocks provided by the TCSR device.
-> This still looks wrong and you never replied to why these supplies
-> shouldn't be handled by the tcsr clock driver that supplies these
-> clocks:
->
-> 	https://lore.kernel.org/lkml/aBHUmXx6N72_sCH9@hovoldconsulting.com/
-Sorry, I thought Konrad had convinced you.
+> Sorry, I thought Konrad had convinced you.
 
-If the TCSR driver manages these supplies, would it be possible for tscr
-driver to recognize when it needs to turn vdda-qref on or off for a
-specific PCIe port?
->
->> Hence, restore the vdda-qref request for the 6th PCIe instance by reverting
->> commit 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref
->> supplies"). For the 4th PCIe instance (Gen3 x2), add a new driver data
->> entry, namely x1e80100_qmp_gen3x2_pciephy_cfg, which is a copy of
->> sm8550_qmp_gen3x2_pciephy_cfg but uses sm8550_qmp_phy_vreg_l instead.
->>
->> Fixes: 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref supplies")
->> Fixes: 606060ce8fd0 ("phy: qcom-qmp-pcie: Add support for X1E80100 g3x2 and g4x2 PCIE")
->> Cc: Johan Hovold <johan+linaro@kernel.org>
->> Cc: Abel Vesa <abel.vesa@linaro.org>
->> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
->> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
-> Johan
+IIRC, he just said you guys were told to add the QREF supply to the PHY.
+That's not an argument.
 
--- 
-With best wishes
-Qiang Yu
+> If the TCSR driver manages these supplies, would it be possible for tscr
+> driver to recognize when it needs to turn vdda-qref on or off for a
+> specific PCIe port?
 
+Sure, just add a lookup table to the driver and enable the required
+supplies when a ref clock is enabled.
+
+As I mentioned in the other thread, the T14s has the following QREF
+supplies:
+
+	
+	VDD_A_QREFS_1P2_A
+	VDD_A_QREFS_1P2_B
+
+	VDD_A_QREFS_0P875_A
+	VDD_A_QREFS_0P875_B
+	VDD_A_QREFS_0P875_0
+	VDD_A_QREFS_0P875_2
+	VDD_A_QREFS_0P875_3
+
+and it's not clear how these maps to the various consumer ref clocks,
+including the PCIe ones:
+
+	#define TCSR_PCIE_2L_4_CLKREF_EN
+	#define TCSR_PCIE_2L_5_CLKREF_EN
+	#define TCSR_PCIE_8L_CLKREF_EN
+	#define TCSR_PCIE_4L_CLKREF_EN
+
+That mapping can be done by the TCSR clock driver (which would also take
+care of the 1.2 V supplies).
+
+Johan
 
 -- 
 linux-phy mailing list
