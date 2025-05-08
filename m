@@ -4,72 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60F21C3ABC0
-	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 08:37:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8106C3ABC0
+	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 09:11:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sGoCe9n8NhF4tOiBMiC9gaw//XAcYkqfflVgYeunfuE=; b=WB8NU1j+tONoen
-	obR7DjqdcVnG+JvOg55wnwUtv9fOTJWOoAKfij/ghnICxHDj765nDesvOVJ5oVE+0DSLu5Rwy1c08
-	YW4MYMeJvicVK5DIpKsrGOPPKbomNyLL3PyxQ7Ztug7yX8McBGwuwN5boTFBCHJPC3o2Ch5niw0PD
-	cmoex2E2seQwtm6O8CotB7kLry8ZY+/0K/IT4FnI3WUZwRTUmwOczs55L6+ytnpvxpLzpa4zq1Sau
-	iDCHu0CahB8ibrTWB2dxl6u2jbhFPy1M503Q0VVeRtPNzsPvPUC5sgDRscltP4RFmwLrkhDQhRKkw
-	b1LiyXvY2hD1Uu3XYrvw==;
+	List-Owner; bh=4t0T6HAwylEJHJEVMBAWdR2czb1LH0TMLmPihsctGyI=; b=mSyusJiEdTHkBe
+	kdyXA2/lNiTag7GSL8Z3Ti0ULiW6uVSIcOSN0hNHl5ukxo7hsTie4WDdQj2+65khoQKWywYqY9BgK
+	phZXm6GICsgHHT9z/rcb3z9dtZy0pBt02RXxZkpGaQugU8KjQzBeUzdOPx0r1PGxQzjsgUG0Ld4FY
+	gzMnJnkJku0gfVAI1ZBouUQsu810A7xv8eqz1aA7FAhwq+6hG1HWkF0QCwkRpQzruQrSw+/pDaeF+
+	qxausNkr6iQf/UCMQ/IF5u6Lon8apYXWoT9oIcXf4wNZ7vAgDvhhTQue4XP7DN/8vs8z2iBZHeuEW
+	b3okncS6OtKIsfS3Gz7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCwlK-000000008XH-455Y;
-	Thu, 08 May 2025 08:37:50 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uCxIA-00000000DUr-1q7s;
+	Thu, 08 May 2025 09:11:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uCwUB-000000005cY-2K1b;
-	Thu, 08 May 2025 08:20:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 7CA37A4DA68;
-	Thu,  8 May 2025 08:20:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CBD6C4AF0C;
-	Thu,  8 May 2025 08:20:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746692406;
-	bh=CYQ/e7inFWvv5fdVT73hsrbTbLuCIkw9CeE/xLnCgH8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=b9W/iAf0YxhXtRJba0lkljhjgfCn3uxiLoEsUg7+SpTathmVLV7JOwQ1FBrYmIQAa
-	 +0yJ/9CtgY18d6beHZRRPPy5dHxjezAijm+E4KmC2l6ciqGD4F5FJ3TInZc0j9xNdR
-	 qi/bSRB7jstbUVGBe1wa0uLQLMEASPZzWNqVjbeddtq1Iid3j1GTYNgQ3uBYNXbMXK
-	 lM1e1/PrT/7q2gTbDsgAyz+d6HOD3nlHCHjkkdEL8gKyeBoSiIWKxF45eWolSj8EFY
-	 bIxfqrGZz1xfhyarrp7ViFrnS3e9+/AILpMhkrg1MhiiYAUrIULoBUrUEPJ5DsFn8p
-	 y2YWWvDz4Z9iA==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1uCwU6-000000007T8-248Z;
-	Thu, 08 May 2025 10:20:03 +0200
-Date: Thu, 8 May 2025 10:20:02 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Wenbin Yao <quic_wenbyao@quicinc.com>
-Cc: catalin.marinas@arm.com, will@kernel.org,
-	linux-arm-kernel@lists.infradead.org, andersson@kernel.org,
-	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, sfr@canb.auug.org.au,
-	linux-phy@lists.infradead.org, krishna.chundru@oss.qualcomm.com,
-	quic_vbadigan@quicinc.com, quic_mrana@quicinc.com,
-	quic_cang@quicinc.com, quic_qianyu@quicinc.com,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Abel Vesa <abel.vesa@linaro.org>
+	id 1uCwy0-00000000AbB-17jq;
+	Thu, 08 May 2025 08:50:57 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5488lTNL019197;
+	Thu, 8 May 2025 08:50:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	FeuXQKJYzXKrQyimVC6enB/MDQqFsM6oNHE6NFSYQag=; b=ifruc59pxaTBrTqs
+	7PorMX71cIKDMN0zY/+25hp7Tqy0hjTAGjvOwFFrxru95VP16WpS4rcAp4A16I6g
+	MIVdu7bl6dqJ08RKDWe4yDV8YeIxsU+MNIAmub828/dfcSuyxa2t4GGxdVXvhVGM
+	y8M2xAJrUQ3FIqldzHrrYkyqpew/iBhcV9WTIJiN9aX/YWR7xrZ60d2RrIsuRgMD
+	JQtN5ElPsojJfJwBCRT6YCZgKaeOtMwtsukSZ50s/ZcPm0lN2SAZe61sb0fTjlQP
+	Y5vrPaeeb35An7M5pRjGqS9iEO5+xLbNQN2uJhpiuc7tovDDzJ3iL3v9kZSlZO7D
+	5DJoLw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46gsdj006j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 08 May 2025 08:50:39 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5488od4T018031
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 8 May 2025 08:50:39 GMT
+Received: from [10.239.29.178] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 8 May 2025
+ 01:50:33 -0700
+Message-ID: <5fd4abe7-3621-4119-9482-de823b247b0d@quicinc.com>
+Date: Thu, 8 May 2025 16:50:30 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 5/5] phy: qcom: qmp-pcie: add x1e80100 qref supplies
-Message-ID: <aBxpMuFGKgWrw1TV@hovoldconsulting.com>
+To: Johan Hovold <johan@kernel.org>, Wenbin Yao <quic_wenbyao@quicinc.com>
+CC: <catalin.marinas@arm.com>, <will@kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+        <conor+dt@kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <sfr@canb.auug.org.au>,
+        <linux-phy@lists.infradead.org>, <krishna.chundru@oss.qualcomm.com>,
+        <quic_vbadigan@quicinc.com>, <quic_mrana@quicinc.com>,
+        <quic_cang@quicinc.com>, Johan Hovold <johan+linaro@kernel.org>,
+        Abel Vesa
+	<abel.vesa@linaro.org>
 References: <20250508081514.3227956-1-quic_wenbyao@quicinc.com>
  <20250508081514.3227956-6-quic_wenbyao@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250508081514.3227956-6-quic_wenbyao@quicinc.com>
+ <aBxpMuFGKgWrw1TV@hovoldconsulting.com>
+Content-Language: en-US
+From: Qiang Yu <quic_qianyu@quicinc.com>
+In-Reply-To: <aBxpMuFGKgWrw1TV@hovoldconsulting.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=PMAP+eqC c=1 sm=1 tr=0 ts=681c705f cx=c_pps
+ a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
+ a=zitRP-D0AAAA:8 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=FqpPY7LzFvk08Lq7rO8A:9
+ a=QEXdDO2ut3YA:10 a=xwnAI6pc5liRhupp6brZ:22 a=TjNXssC_j7lpFel5tvFf:22
+ a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTA4MDA3OCBTYWx0ZWRfX5VIC6QSm1+Yl
+ gpHethyLRA9t6AEHjeBfkmh6QyeAucGikMzitV4dr4ywbluCe0pFJLF1lpu83wB4hR9roHXqBND
+ b2BY1S0jZVusiIEGAaZ+qdw3My+//W7LF8IHgZ0dZT2XApNbMTwCWuQIhvG03kqxPh3a+Smx7g3
+ pkWlb9hYIuOiqsjNPis8A/vP2W2qyOO1ShXfAdbrm4hYqIb8AqXGBhyIlkgR6lxunSocB2/Mrzs
+ +8gUQovs+b0IdewuoMpH8Z4trr53+1s8i3sjz2ya/TyAHlU/jr3J9zCL+0ohjN8Aa8lffPl2kOt
+ 1aijFRth75CUkneb3laB0hhKHHxhczU7zf9wOc11dft+kuqyz9E3lWn3enwjNKr2fptxOYxYyXt
+ oK6pnubqiZThDAGQAmU50qLlVF/WdPibCZjTbBWHp+zMKgeqOfSvFp15LH7nHgrUD5S4cBsO
+X-Proofpoint-GUID: krx3KZtZkv5IdASRwzeLwYfjIsRBR-T3
+X-Proofpoint-ORIG-GUID: krx3KZtZkv5IdASRwzeLwYfjIsRBR-T3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-08_03,2025-05-07_02,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 impostorscore=0 mlxscore=0 suspectscore=0 spamscore=0
+ bulkscore=0 priorityscore=1501 clxscore=1011 lowpriorityscore=0
+ mlxlogscore=999 adultscore=0 malwarescore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2504070000 definitions=main-2505080078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250508_012007_664464_782F9809 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250508_015056_317706_FA155515 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,37 +117,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 08, 2025 at 04:15:14PM +0800, Wenbin Yao wrote:
-> From: Qiang Yu <quic_qianyu@quicinc.com>
-> 
-> All PCIe PHYs on the X1E80100 SOC require the vdda-qref, which feeds QREF
-> clocks provided by the TCSR device.
 
-This still looks wrong and you never replied to why these supplies
-shouldn't be handled by the tcsr clock driver that supplies these
-clocks:
+On 5/8/2025 4:20 PM, Johan Hovold wrote:
+> On Thu, May 08, 2025 at 04:15:14PM +0800, Wenbin Yao wrote:
+>> From: Qiang Yu <quic_qianyu@quicinc.com>
+>>
+>> All PCIe PHYs on the X1E80100 SOC require the vdda-qref, which feeds QREF
+>> clocks provided by the TCSR device.
+> This still looks wrong and you never replied to why these supplies
+> shouldn't be handled by the tcsr clock driver that supplies these
+> clocks:
+>
+> 	https://lore.kernel.org/lkml/aBHUmXx6N72_sCH9@hovoldconsulting.com/
+Sorry, I thought Konrad had convinced you.
 
-	https://lore.kernel.org/lkml/aBHUmXx6N72_sCH9@hovoldconsulting.com/
+If the TCSR driver manages these supplies, would it be possible for tscr
+driver to recognize when it needs to turn vdda-qref on or off for a
+specific PCIe port?
+>
+>> Hence, restore the vdda-qref request for the 6th PCIe instance by reverting
+>> commit 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref
+>> supplies"). For the 4th PCIe instance (Gen3 x2), add a new driver data
+>> entry, namely x1e80100_qmp_gen3x2_pciephy_cfg, which is a copy of
+>> sm8550_qmp_gen3x2_pciephy_cfg but uses sm8550_qmp_phy_vreg_l instead.
+>>
+>> Fixes: 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref supplies")
+>> Fixes: 606060ce8fd0 ("phy: qcom-qmp-pcie: Add support for X1E80100 g3x2 and g4x2 PCIE")
+>> Cc: Johan Hovold <johan+linaro@kernel.org>
+>> Cc: Abel Vesa <abel.vesa@linaro.org>
+>> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+>> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
+> Johan
 
-> Hence, restore the vdda-qref request for the 6th PCIe instance by reverting
-> commit 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref
-> supplies"). For the 4th PCIe instance (Gen3 x2), add a new driver data
-> entry, namely x1e80100_qmp_gen3x2_pciephy_cfg, which is a copy of
-> sm8550_qmp_gen3x2_pciephy_cfg but uses sm8550_qmp_phy_vreg_l instead.
-> 
-> Fixes: 031b46b4729b ("phy: qcom: qmp-pcie: drop bogus x1e80100 qref supplies")
-> Fixes: 606060ce8fd0 ("phy: qcom-qmp-pcie: Add support for X1E80100 g3x2 and g4x2 PCIE")
-> Cc: Johan Hovold <johan+linaro@kernel.org>
-> Cc: Abel Vesa <abel.vesa@linaro.org>
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
+-- 
+With best wishes
+Qiang Yu
 
-Johan
 
 -- 
 linux-phy mailing list
