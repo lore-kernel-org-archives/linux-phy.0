@@ -4,66 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5A42C3ABC0
-	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 17:26:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B54FC3ABC5
+	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 22:17:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lIkeHGArtY7aYdQHjWA8xAqlcwZeGQRlSWYpiB7uul4=; b=rbbxamzK94sr19
-	lNO/30p8/wuLeKVrvxoWwX3jB3JgeNcF9x9bKSMTR0WatomFjMVGEaGpG/UNYuQGA5oJfyMenpqLm
-	A84YHzf7aj4M3yhqvmRhI2tUOzerKAmauaa2Bha9qLldvmT8cvCKJLmWMUAhJWCge+RY68Il2hytr
-	r6zNPduKTzUXazyQKl+i5MGiwGudtm/Xqls94Ac2l6HzuE/oYjHMICftdAV3UpEqC66OBiPx9Fdbq
-	NNnOFCvItKCj+9w+uff4OSWEDGdOukLgIUq0KnEUsVUVvzX0OXn24cRYfy/AZ27AwvAi8jj09CRHD
-	4t4jaIvgcnD3O7yqONmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Hi9cztdkc31kayFJHuxFU0XWY2hs9wy0KHGTnzPkDgk=; b=Xq51nFO6G3JYYxQF9Y5YOCkY2A
+	SgzDqtU4kC0vyKlT6nW7wgxTw4ncNtPdpM2WpUG39ajIL91sHzKzVZDoDCrVp21flVNfz9UhUsPkZ
+	4uam+saQ+q9AnyFSYkdAt4iy7z1V3y9lYT2dkQAWZbMwXug1lo6O+mS6bEuHmDd44EyLHWDiclpm+
+	gk+FsAILrQQnk9Vg37Y1o471K3NeOtvEGjeBTzW+Bp9IeAWgrYGozmMmeuCaQxhHeFncdM/UwSwb4
+	awRUztc9MDyB3xcvPR62Xch1P7mU+WP7tl3jIbqrMoWVI8yPOSJ4igyZEy4r/iUeANSarbscF4N7N
+	Q78+efxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uD50r-00000001Puy-2ukB;
-	Thu, 08 May 2025 17:26:25 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1uD9YY-00000001tVs-3AI4;
+	Thu, 08 May 2025 22:17:30 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uD50p-00000001Pu0-0Vw3;
-	Thu, 08 May 2025 17:26:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=zVpWPkQC/BSrKmTaROIAJ2ktAZPNsmJUsbJbTHTQuig=; b=WVupt5vKzq+NYFhvA9EtHnjRUJ
-	LD/oMvqGztz+HzkcvcY7CfKwH15pJTHlYCxA64rFsiaKm7VsWZIOl2HuKGbtrGd3MVKsknG4iEluO
-	+WdSdlg4tfXeKr6j5zOXJ+saBgShePZHNs2fhsnCGto+3vjJI2LRdcpbw3PwEVOhlu+wvwODc9lhe
-	V+ETisC8tJWY8eCSIreGGDyAD8HPhkKl84cdB1vm0//SUKPq6zRRoMJ1VPqK4T459u7HW5DiurHsB
-	fmCP54Af1nCPFql81lIIY6XU3VdftiJKlhiQGiNJkww9kX+l/1BvkEHLaj6BIjgCFUm8GnAmDa4Qb
-	I1dDMv9g==;
-Received: from [61.8.144.177] (helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1uD50h-00086Y-9V; Thu, 08 May 2025 19:26:15 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Yao Zi <ziyao@disroot.org>,
- Frank Wang <frank.wang@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
- Detlev Casanova <detlev.casanova@collabora.com>,
- Shresth Prasad <shresthprasad7@gmail.com>, Chukun Pan <amadeus@jmu.edu.cn>,
- Jonas Karlman <jonas@kwiboo.se>, Yao Zi <ziyao@disroot.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 4/5] phy: rockchip: naneng-combphy: Add RK3528 support
-Date: Thu, 08 May 2025 19:26:13 +0200
-Message-ID: <5349721.GXAFRqVoOG@phil>
-In-Reply-To: <20250508135307.14726-1-ziyao@disroot.org>
-References: <20250508134332.14668-2-ziyao@disroot.org>
- <20250508135307.14726-1-ziyao@disroot.org>
+	id 1uD9YV-00000001tVT-3Umm
+	for linux-phy@lists.infradead.org;
+	Thu, 08 May 2025 22:17:28 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-43edb40f357so9717265e9.0
+        for <linux-phy@lists.infradead.org>; Thu, 08 May 2025 15:17:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1746742646; x=1747347446; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=lJ1iMb0NXCpxItNtCO1N1ZOA2I/6OFEbD4mrQhwulzQ=;
+        b=Jw3kSTpMbpwNo3zC+mBAcYZcvaneHXeo/gJfhAHPC7IMx/kH7YGoC+7g3JXNZcw+j0
+         blRRelbkHL83HyJvAbuQMjXPOBS5GnzdMM0hGuMz9zL4N0yU3GWaVJVKRhJUHdSQs7qp
+         6pjac+htY6s9JJo71F/5mR5PaGaq0z5LkXRXcLymLxjDTShG621wiI6DZuXWGijc8Vu5
+         7c/yyrIXsDsl1m1rZrCi54vVTUKsjWzr5oeNfCWaZLDpw1PZfjpFZCuBq78fk/WkSvHb
+         Y4jhDUYvWKBfinifvIEQIoA2SIb+Xs/QY02jWJZ81j+AsQUqoWCHwqM8ZHd8TMGDhCJn
+         hvBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1746742646; x=1747347446;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lJ1iMb0NXCpxItNtCO1N1ZOA2I/6OFEbD4mrQhwulzQ=;
+        b=ZMB+REf5xIC3BQRPn/5mbzLb+a08n2gOwzii6fNtg0/DQE7sMvtGhniG+IPrhEtEkd
+         APzuWkDw9eq8MruW4X8ctYEBsUG+dsRiqdui/ySR0Bb7X0rYHar5m5NogtBjZ9KeExtE
+         RusOC7/Bcofkw/FhBYZX3g1R1QHmVb4/JBuQ+TttjfTEDOqC6xAXY9aazDLTzUtGPE6C
+         UMIAgy/IJJOXk3tCb3xKVGhKQqJEh4DPtI1wVv1z+iNDqnjbZm5fVc8yjUIPTvIqbn4h
+         If2lFThxRS+wnK/CcuVVuECtEcD3OLmTwmem1pCJg/kU5pLvdDa9Qhxp/S0M7UBA6keR
+         ldUA==
+X-Forwarded-Encrypted: i=1; AJvYcCWo8Zz7vE2A780T3ivnvL9wBq7iZ2vuVWJSgT4FKsQ/o2ulwX/84O169ordpn6yP48cV2oyCGYcEjA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxj8/7lzzLRFYRJk6Iaj3S7oejL7AKXFJxJwiWPFGH9NpbXZiZT
+	D+bP2/MVMqPOLGfw7R/nsk7HEXwxCVwpAkcMmKa095+GkxyfCmCP
+X-Gm-Gg: ASbGncvr1APtqM98nulu0IEjTrYwrhBqoQyN8bhypXAH3Y3DUe3Swn9Qx1rIh0GoE7M
+	XpG5xG7H8eAkUsCcuHIcrymA8hy2EADaLZ1lkkyYAs6HIkmufsmJMmUkhvgoBtS7umwcZM4J1zy
+	xPH3jiUKAobexRW1eQxDTFqA8vB1EHKsN1dIt3RG9DVFw98LZzpMBzR0B64zBdQZvMuuyLuMZYx
+	gnEvP4nAv0ZEUdbaHzoC2/2v4cAZ1gWkpRZgGuK41G0j7MFMyE703ij5K+xTR5b70A3V33EdK0q
+	ygJZNxX0AaEgg0IwFgUMKDufKVoyFIkSIK1rRI+7PCbdGyMJ0oIUBxE60TU/plqz9xaZOX+tChl
+	P+6kI6QiFzv43agYTz08PuZvxrgQ=
+X-Google-Smtp-Source: AGHT+IESyJIya633Xs6OgbWXHxjXtmkZXYXzAK5Hqf5K3B0F04vkkc778CuVVzkBefKUzMwh3Ce8Lw==
+X-Received: by 2002:a05:600c:4e46:b0:442:c993:6f94 with SMTP id 5b1f17b1804b1-442d6d3dafbmr8132225e9.12.1746742645750;
+        Thu, 08 May 2025 15:17:25 -0700 (PDT)
+Received: from orome (p200300e41f281b00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f28:1b00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-442cd3b7b83sm49241225e9.33.2025.05.08.15.17.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 08 May 2025 15:17:23 -0700 (PDT)
+Date: Fri, 9 May 2025 00:17:21 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Ma Ke <make24@iscas.ac.cn>
+Cc: jckuo@nvidia.com, vkoul@kernel.org, kishon@kernel.org, 
+	jonathanh@nvidia.com, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, akpm@linux-foundation.org, stable@vger.kernel.org
+Subject: Re: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
+Message-ID: <hhtm6kn4vtdn4yimi7yvaxczzt5itig2mv4zfubfubrp37hpwy@rrhueuyrhbw2>
+References: <20250303072739.3874987-1-make24@iscas.ac.cn>
 MIME-Version: 1.0
+In-Reply-To: <20250303072739.3874987-1-make24@iscas.ac.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250508_102623_158283_EB203C1D 
-X-CRM114-Status: GOOD (  14.72  )
+X-CRM114-CacheID: sfid-20250508_151727_875996_170DA42A 
+X-CRM114-Status: GOOD (  16.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,65 +93,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7978060974527014724=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QW0gRG9ubmVyc3RhZywgOC4gTWFpIDIwMjUsIDE1OjUzOjA2IE1pdHRlbGV1cm9ww6Rpc2NoZSBT
-b21tZXJ6ZWl0IHNjaHJpZWIgWWFvIFppOgo+IFJvY2tjaGlwIFJLMzUyOCBpbnRlZ3JhdGVzIG9u
-ZSBuYW5lbmctY29tYnBoeSB0aGF0IGlzIGFibGUgdG8gb3BlcmF0ZSBpbgo+IFBDSWUgYW5kIFVT
-QjMgbW9kZS4gVGhlIGNvbnRyb2wgbG9naWMgaXMgc2ltaWxhciB0byBwcmV2aW91cyB2YXJpYW50
-cyBvZgo+IG5hbmVuZy1jb21icGh5IGJ1dCB0aGUgcmVnaXN0ZXIgbGF5b3V0IGlzIGFwcGVyYW50
-bHkgZGlmZmVyZW50IGZyb20gdGhlCj4gUkszNTY4IG9uZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBZ
-YW8gWmkgPHppeWFvQGRpc3Jvb3Qub3JnPgo+IC0tLQo+ICAuLi4vcm9ja2NoaXAvcGh5LXJvY2tj
-aGlwLW5hbmVuZy1jb21icGh5LmMgICAgfCAxODAgKysrKysrKysrKysrKysrKystCj4gIDEgZmls
-ZSBjaGFuZ2VkLCAxNzkgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1n
-aXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYyBi
-L2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1uYW5lbmctY29tYnBoeS5jCj4gaW5k
-ZXggMWQxYzc3MjM1ODRiLi43YzkyZjdhYzNjN2YgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkv
-cm9ja2NoaXAvcGh5LXJvY2tjaGlwLW5hbmVuZy1jb21icGh5LmMKPiArKysgYi9kcml2ZXJzL3Bo
-eS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYwo+IEBAIC0yMCw3ICsyMCw0
-MCBAQAo+ICAjZGVmaW5lIFJFRl9DTE9DS18yNU1IegkJCSgyNSAqIEhaX1BFUl9NSFopCj4gICNk
-ZWZpbmUgUkVGX0NMT0NLXzEwME1IegkJKDEwMCAqIEhaX1BFUl9NSFopCj4gIAo+IC0vKiBDT01C
-TyBQSFkgUkVHICovCj4gKy8qIFJLMzUyOCBDT01CTyBQSFkgUkVHICovCj4gKyNkZWZpbmUgUksz
-NTI4X1BIWVJFRzYJCQkJMHgxOAo+ICsjZGVmaW5lICBSSzM1MjhfUEhZUkVHNl9QTExfS1ZDTwkJ
-R0VOTUFTSygxMiwgMTApCj4gKyNkZWZpbmUgICBSSzM1MjhfUEhZUkVHNl9QTExfS1ZDT19WQUxV
-RQkJMHgyCj4gKyNkZWZpbmUgIFJLMzUyOF9QSFlSRUc2X1NTQ19ESVIJCQlHRU5NQVNLKDUsIDQp
-Cj4gKyNkZWZpbmUgICBSSzM1MjhfUEhZUkVHNl9TU0NfVVBXQVJECQkwCj4gKyNkZWZpbmUgICBS
-SzM1MjhfUEhZUkVHNl9TU0NfRE9XTldBUkQJCTEKPiArI2RlZmluZSBSSzM1MjhfUEhZUkVHNDAJ
-CQkJMHgxMDAKPiArI2RlZmluZSAgUkszNTI4X1BIWVJFRzQwX1NTQ19FTgkJCUJJVCgyMCkKPiAr
-I2RlZmluZSAgUkszNTI4X1BIWVJFRzQwX1NTQ19DTlQJCUdFTk1BU0soMTAsIDApCj4gKyNkZWZp
-bmUgICBSSzM1MjhfUEhZUkVHNDBfU1NDX0NOVF9WQUxVRQkJMHgxN2QKPiArI2RlZmluZSBSSzM1
-MjhfUEhZUkVHNDIJCQkJMHgxMDgKPiArI2RlZmluZSAgUkszNTI4X1BIWVJFRzQyX0NLRFJWX0NM
-S19TRUwJCUJJVCgyOSkKPiArI2RlZmluZSAgIFJLMzUyOF9QSFlSRUc0Ml9DS0RSVl9DTEtfUExM
-CQkwCj4gKyNkZWZpbmUgICBSSzM1MjhfUEhZUkVHNDJfQ0tEUlZfQ0xLX0NLUkNWCTEKPiArI2Rl
-ZmluZSAgUkszNTI4X1BIWVJFRzQyX1BMTF9MUEZfUjFfQURKCQlHRU5NQVNLKDEwLCA3KQo+ICsj
-ZGVmaW5lICAgUkszNTI4X1BIWVJFRzQyX1BMTF9MUEZfUjFfQURKX1ZBTFVFCTB4OQo+ICsjZGVm
-aW5lICBSSzM1MjhfUEhZUkVHNDJfUExMX0NIR1BVTVBfQ1VSX0FESglHRU5NQVNLKDYsIDQpCj4g
-KyNkZWZpbmUgICBSSzM1MjhfUEhZUkVHNDJfUExMX0NIR1BVTVBfQ1VSX0FESl9WQUxVRSAweDcK
-PiArI2RlZmluZSAgUkszNTI4X1BIWVJFRzQyX1BMTF9LVkNPX0FESgkJR0VOTUFTSygyLCAwKQo+
-ICsjZGVmaW5lICAgUkszNTI4X1BIWVJFRzQyX1BMTF9LVkNPX0FESl9WQUxVRQkweDAKPiArI2Rl
-ZmluZSBSSzM1MjhfUEhZUkVHODAJCQkJMHgyMDAKPiArI2RlZmluZSAgUkszNTI4X1BIWVJFRzgw
-X0NUTEVfRU4JCUJJVCgxNykKPiArI2RlZmluZSBSSzM1MjhfUEhZUkVHODEJCQkJMHgyMDQKPiAr
-I2RlZmluZSAgUkszNTI4X1BIWVJFRzgxX0NEUl9QSEFTRV9QQVRIX0dBSU5fMlgJQklUKDUpCj4g
-KyNkZWZpbmUgIFJLMzUyOF9QSFlSRUc4MV9TTEVXX1JBVEVfQ1RSTAkJR0VOTUFTSygyLCAwKQo+
-ICsjZGVmaW5lICAgUkszNTI4X1BIWVJFRzgxX1NMRVdfUkFURV9DVFJMX1NMT1cJMHg3Cj4gKyNk
-ZWZpbmUgUkszNTI4X1BIWVJFRzgzCQkJCTB4MjBjCj4gKyNkZWZpbmUgIFJLMzUyOF9QSFlSRUc4
-M19SWF9TUVVFTENICQlHRU5NQVNLKDIsIDApCj4gKyNkZWZpbmUgICBSSzM1MjhfUEhZUkVHODNf
-UlhfU1FVRUxDSF9WQUxVRQkweDYKPiArI2RlZmluZSBSSzM1MjhfUEhZUkVHODYJCQkJMHgyMTgK
-PiArI2RlZmluZSAgUkszNTI4X1BIWVJFRzg2X1JURVJNX0RFVF9DTEtfRU4JQklUKDE0KQoKSSdk
-IHRoaW5rIHN0YXlpbmcgd2l0aCBvbmUgbGF5b3V0IHdvdWxkIGJlIGJlc3QsIHNvIG5vdCBkb2lu
-ZyB0aGlzCmluZGVudGF0aW9uIGhlcmUuIEluc3RlYWQgbWF5YmUgZm9sbG93IHRoZSBvdGhlciBv
-bmVzIGxpa2UKCiNkZWZpbmUgUkszNTI4X1BIWVJFRzYJCQkJMHgxOAojZGVmaW5lIFJLMzUyOF9Q
-SFlSRUc2X1BMTF9LVkNPCQlHRU5NQVNLKDEyLCAxMCkKI2RlZmluZSBSSzM1MjhfUEhZUkVHNl9Q
-TExfS1ZDT19WQUxVRQkJMHgyCiNkZWZpbmUgUkszNTI4X1BIWVJFRzZfU1NDX0RJUgkJCUdFTk1B
-U0soNSwgNCkKI2RlZmluZSBSSzM1MjhfUEhZUkVHNl9TU0NfVVBXQVJECQkwCiNkZWZpbmUgUksz
-NTI4X1BIWVJFRzZfU1NDX0RPV05XQVJECQkxCgojZGVmaW5lIFJLMzUyOF9QSFlSRUc0MAkJCQkw
-eDEwMAojZGVmaW5lIFJLMzUyOF9QSFlSRUc0MF9TU0NfRU4JCQlCSVQoMjApCiNkZWZpbmUgUksz
-NTI4X1BIWVJFRzQwX1NTQ19DTlQJCUdFTk1BU0soMTAsIDApCiNkZWZpbmUgUkszNTI4X1BIWVJF
-RzQwX1NTQ19DTlRfVkFMVUUJCTB4MTdkCgouLi4KCmkuZS4gcmVnaXN0ZXIgKyBiaXRzICsgYmxh
-bmsgbGluZQoKb3RoZXIgdGhhbiB0aGF0CgpSZXZpZXdlZC1ieTogSGVpa28gU3R1ZWJuZXIgPGhl
-aWtvQHNudGVjaC5kZT4KCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtcGh5Cg==
+
+--===============7978060974527014724==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="wx67l5oe5lmxpk5q"
+Content-Disposition: inline
+
+
+--wx67l5oe5lmxpk5q
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
+MIME-Version: 1.0
+
+On Mon, Mar 03, 2025 at 03:27:39PM +0800, Ma Ke wrote:
+> If device_add() fails, do not use device_unregister() for error
+> handling. device_unregister() consists two functions: device_del() and
+> put_device(). device_unregister() should only be called after
+> device_add() succeeded because device_del() undoes what device_add()
+> does if successful. Change device_unregister() to put_device() call
+> before returning from the function.
+>=20
+> As comment of device_add() says, 'if device_add() succeeds, you should
+> call device_del() when you want to get rid of it. If device_add() has
+> not succeeded, use only put_device() to drop the reference count'.
+>=20
+> Found by code review.
+>=20
+> Cc: stable@vger.kernel.org
+> Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
+> Signed-off-by: Ma Ke <make24@iscas.ac.cn>
+> ---
+> Changes in v2:
+> - modified the bug description as suggestions.
+> ---
+>  drivers/phy/tegra/xusb.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+
+Vinod, Kishon,
+
+looks like this was never picked up. Can you apply this?
+
+Thanks,
+Thierry
+
+--wx67l5oe5lmxpk5q
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmgdLW4ACgkQ3SOs138+
+s6EG5w//fN/ghy8cT1CG6l/5SDKWSzugOJO2PyEvdPwHz6RFgkmhaNflD7MT/GxN
+X3AzAY8IKxzf+KiY+uBGfljYJA5HWbhXMTI5xk2BrfGzgdmGSjM/6Vtg6VQWJXfK
+7ooj0JcQpz5yoaWWgpGbtAOBNxltngEypA/xSurMjsF+8O3J84VenKYKoNPUOr4N
+xYNbHsKqdL2oFNZV3f3s4X9iP4VhWPP/wwtN8kvhHy2cE3nhzxh4Eb9g05VMHqzz
+NN8gDYbcDRHEEMJ5auYHKflYNKjq9sDUandoliYmeFhwz9vcX9S1mfVedguBOCDo
+GwvbTmeJwdt7vdGp9uaYPycXki6ydcJPZAzmu/KPumYyohmwAtqKRi6MAoNdvBtH
++ZLjh6MJCTxf0kj9V02e5o9jgOCy4jo9OvphLq4GGMlX3AhL8OBkOzBdZNuWvMJ1
+JstXIoj76oMRxBcvBcuScVHWUN4VJuDN0LOml6z5AQeEcaVZSsl8uYo3QLyI+9bE
+qt89zzilKokKZ9nYkYPe7lxCKnlFMWHkD/CcDPQqzUuo/L27CypvXu5AyaAuxjfC
+4I/Qeo0GnUM1POs5++MQgT33ViSXlCEAH+KDtSXIi3FWXoWdqGafYpo0jzdbiyAA
+O235paAjx387+XnhTe/QSwipOPEzaztSs3xk//uQBhZp6glIejo=
+=c4c0
+-----END PGP SIGNATURE-----
+
+--wx67l5oe5lmxpk5q--
+
+
+--===============7978060974527014724==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7978060974527014724==--
+
