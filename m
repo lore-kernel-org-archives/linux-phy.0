@@ -4,84 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B54FC3ABC5
-	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 22:17:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82824C3ABC5
+	for <linux-phy@archiver.kernel.org>; Thu,  8 May 2025 23:15:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Hi9cztdkc31kayFJHuxFU0XWY2hs9wy0KHGTnzPkDgk=; b=Xq51nFO6G3JYYxQF9Y5YOCkY2A
-	SgzDqtU4kC0vyKlT6nW7wgxTw4ncNtPdpM2WpUG39ajIL91sHzKzVZDoDCrVp21flVNfz9UhUsPkZ
-	4uam+saQ+q9AnyFSYkdAt4iy7z1V3y9lYT2dkQAWZbMwXug1lo6O+mS6bEuHmDd44EyLHWDiclpm+
-	gk+FsAILrQQnk9Vg37Y1o471K3NeOtvEGjeBTzW+Bp9IeAWgrYGozmMmeuCaQxhHeFncdM/UwSwb4
-	awRUztc9MDyB3xcvPR62Xch1P7mU+WP7tl3jIbqrMoWVI8yPOSJ4igyZEy4r/iUeANSarbscF4N7N
-	Q78+efxQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f1H3TzuxgBlWU4r8yZdJuvg+dc5y4Kb2elWMFM5M8/Q=; b=xEqFIqy+u7/8el
+	hBwc+05wo0TeRlHLJFq9dZZjJtpQMv4fTnB9hKWByOidsCeOvUhmjLpk3bICcoHe1iTBL94hu6VBK
+	HtGpUgbJsBPC6Z928J94yudzxPfW76kETNhRVJgSX6fHjV3AhcDDtyp2VF/TFlGW11XtjvtIGrCj5
+	FcIfPgOo9kU1gaKOFArCCxpSnWzV3CF41stzOkbv4jWRy5jN196NNJcVgHKzx+0OgRWFUvtTl///h
+	udlUODDZWAlOzdWxzNpvCnMaRuDw8mkDEVppyGY17EFqL/e97KqtARaQSR2p7d4nidN4T8L4rXA15
+	/zGm+m5RQdmSJKVxZTbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uD9YY-00000001tVs-3AI4;
-	Thu, 08 May 2025 22:17:30 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1uDAT1-00000001xz4-0Usu;
+	Thu, 08 May 2025 23:15:51 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uD9YV-00000001tVT-3Umm
-	for linux-phy@lists.infradead.org;
-	Thu, 08 May 2025 22:17:28 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-43edb40f357so9717265e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 08 May 2025 15:17:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1746742646; x=1747347446; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=lJ1iMb0NXCpxItNtCO1N1ZOA2I/6OFEbD4mrQhwulzQ=;
-        b=Jw3kSTpMbpwNo3zC+mBAcYZcvaneHXeo/gJfhAHPC7IMx/kH7YGoC+7g3JXNZcw+j0
-         blRRelbkHL83HyJvAbuQMjXPOBS5GnzdMM0hGuMz9zL4N0yU3GWaVJVKRhJUHdSQs7qp
-         6pjac+htY6s9JJo71F/5mR5PaGaq0z5LkXRXcLymLxjDTShG621wiI6DZuXWGijc8Vu5
-         7c/yyrIXsDsl1m1rZrCi54vVTUKsjWzr5oeNfCWaZLDpw1PZfjpFZCuBq78fk/WkSvHb
-         Y4jhDUYvWKBfinifvIEQIoA2SIb+Xs/QY02jWJZ81j+AsQUqoWCHwqM8ZHd8TMGDhCJn
-         hvBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1746742646; x=1747347446;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=lJ1iMb0NXCpxItNtCO1N1ZOA2I/6OFEbD4mrQhwulzQ=;
-        b=ZMB+REf5xIC3BQRPn/5mbzLb+a08n2gOwzii6fNtg0/DQE7sMvtGhniG+IPrhEtEkd
-         APzuWkDw9eq8MruW4X8ctYEBsUG+dsRiqdui/ySR0Bb7X0rYHar5m5NogtBjZ9KeExtE
-         RusOC7/Bcofkw/FhBYZX3g1R1QHmVb4/JBuQ+TttjfTEDOqC6xAXY9aazDLTzUtGPE6C
-         UMIAgy/IJJOXk3tCb3xKVGhKQqJEh4DPtI1wVv1z+iNDqnjbZm5fVc8yjUIPTvIqbn4h
-         If2lFThxRS+wnK/CcuVVuECtEcD3OLmTwmem1pCJg/kU5pLvdDa9Qhxp/S0M7UBA6keR
-         ldUA==
-X-Forwarded-Encrypted: i=1; AJvYcCWo8Zz7vE2A780T3ivnvL9wBq7iZ2vuVWJSgT4FKsQ/o2ulwX/84O169ordpn6yP48cV2oyCGYcEjA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxj8/7lzzLRFYRJk6Iaj3S7oejL7AKXFJxJwiWPFGH9NpbXZiZT
-	D+bP2/MVMqPOLGfw7R/nsk7HEXwxCVwpAkcMmKa095+GkxyfCmCP
-X-Gm-Gg: ASbGncvr1APtqM98nulu0IEjTrYwrhBqoQyN8bhypXAH3Y3DUe3Swn9Qx1rIh0GoE7M
-	XpG5xG7H8eAkUsCcuHIcrymA8hy2EADaLZ1lkkyYAs6HIkmufsmJMmUkhvgoBtS7umwcZM4J1zy
-	xPH3jiUKAobexRW1eQxDTFqA8vB1EHKsN1dIt3RG9DVFw98LZzpMBzR0B64zBdQZvMuuyLuMZYx
-	gnEvP4nAv0ZEUdbaHzoC2/2v4cAZ1gWkpRZgGuK41G0j7MFMyE703ij5K+xTR5b70A3V33EdK0q
-	ygJZNxX0AaEgg0IwFgUMKDufKVoyFIkSIK1rRI+7PCbdGyMJ0oIUBxE60TU/plqz9xaZOX+tChl
-	P+6kI6QiFzv43agYTz08PuZvxrgQ=
-X-Google-Smtp-Source: AGHT+IESyJIya633Xs6OgbWXHxjXtmkZXYXzAK5Hqf5K3B0F04vkkc778CuVVzkBefKUzMwh3Ce8Lw==
-X-Received: by 2002:a05:600c:4e46:b0:442:c993:6f94 with SMTP id 5b1f17b1804b1-442d6d3dafbmr8132225e9.12.1746742645750;
-        Thu, 08 May 2025 15:17:25 -0700 (PDT)
-Received: from orome (p200300e41f281b00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f28:1b00:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-442cd3b7b83sm49241225e9.33.2025.05.08.15.17.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 08 May 2025 15:17:23 -0700 (PDT)
-Date: Fri, 9 May 2025 00:17:21 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Ma Ke <make24@iscas.ac.cn>
-Cc: jckuo@nvidia.com, vkoul@kernel.org, kishon@kernel.org, 
-	jonathanh@nvidia.com, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, akpm@linux-foundation.org, stable@vger.kernel.org
-Subject: Re: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
-Message-ID: <hhtm6kn4vtdn4yimi7yvaxczzt5itig2mv4zfubfubrp37hpwy@rrhueuyrhbw2>
-References: <20250303072739.3874987-1-make24@iscas.ac.cn>
+	id 1uDAR1-00000001xjQ-20HA;
+	Thu, 08 May 2025 23:13:49 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 5FCE826161;
+	Fri,  9 May 2025 01:13:42 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id HQQXvO6tkiyE; Fri,  9 May 2025 01:13:41 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1746746021; bh=bB3j8fb6z811VpRpryPJkvawI3jg6GwtmMHB9Bn3MXQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=ZWSyrQuDh5IumxGz2OmiGWHrjY9wXY9i2F/vkQhU93LaOxvGebq9SifRwzhWk1e+a
+	 /BCMa9uycuIDQiRlie6FoiyqeYGEwyz9K5Qb/etHmQJ8F0BBbTEd9B1eu/0GPen1Je
+	 40bE/cwhkhAWP3IM91TNH0Py/q1Bqxcda/4stYi3S9RoI3C5WgLXHOfzMmdfTetG1N
+	 Wthk5CuMo78/PHYXtNtaO9hu/BLtEphcec5uWxKm06pAJbgSqKT3jCSnFom9XsFgTK
+	 nyMKN+AGLKfcErTnNtuBj61JeG8QwuQcjvayOpIn+mhVaj9U9RHCj48njfqS8jCbwq
+	 BXHAC7VmzKmuA==
+Date: Thu, 8 May 2025 23:13:25 +0000
+From: Yao Zi <ziyao@disroot.org>
+To: Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Detlev Casanova <detlev.casanova@collabora.com>,
+	Shresth Prasad <shresthprasad7@gmail.com>,
+	Chukun Pan <amadeus@jmu.edu.cn>, Jonas Karlman <jonas@kwiboo.se>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 4/5] phy: rockchip: naneng-combphy: Add RK3528 support
+Message-ID: <aB06lQs9d0q8pMU_@pie.lan>
+References: <20250508134332.14668-2-ziyao@disroot.org>
+ <20250508135307.14726-1-ziyao@disroot.org>
+ <5349721.GXAFRqVoOG@phil>
 MIME-Version: 1.0
-In-Reply-To: <20250303072739.3874987-1-make24@iscas.ac.cn>
+Content-Disposition: inline
+In-Reply-To: <5349721.GXAFRqVoOG@phil>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250508_151727_875996_170DA42A 
-X-CRM114-Status: GOOD (  16.57  )
+X-CRM114-CacheID: sfid-20250508_161347_928401_E198EAC7 
+X-CRM114-Status: GOOD (  17.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,88 +80,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7978060974527014724=="
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, May 08, 2025 at 07:26:13PM +0200, Heiko Stuebner wrote:
+> Am Donnerstag, 8. Mai 2025, 15:53:06 Mitteleurop=E4ische Sommerzeit schri=
+eb Yao Zi:
+> > Rockchip RK3528 integrates one naneng-combphy that is able to operate in
+> > PCIe and USB3 mode. The control logic is similar to previous variants of
+> > naneng-combphy but the register layout is apperantly different from the
+> > RK3568 one.
+> > =
 
---===============7978060974527014724==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="wx67l5oe5lmxpk5q"
-Content-Disposition: inline
+> > Signed-off-by: Yao Zi <ziyao@disroot.org>
+> > ---
+> >  .../rockchip/phy-rockchip-naneng-combphy.c    | 180 +++++++++++++++++-
+> >  1 file changed, 179 insertions(+), 1 deletion(-)
+> > =
+
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drive=
+rs/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > index 1d1c7723584b..7c92f7ac3c7f 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > @@ -20,7 +20,40 @@
+> >  #define REF_CLOCK_25MHz			(25 * HZ_PER_MHZ)
+> >  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+> >  =
+
+> > -/* COMBO PHY REG */
+> > +/* RK3528 COMBO PHY REG */
+> > +#define RK3528_PHYREG6				0x18
+> > +#define  RK3528_PHYREG6_PLL_KVCO		GENMASK(12, 10)
+> > +#define   RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
+> > +#define  RK3528_PHYREG6_SSC_DIR			GENMASK(5, 4)
+> > +#define   RK3528_PHYREG6_SSC_UPWARD		0
+> > +#define   RK3528_PHYREG6_SSC_DOWNWARD		1
+> > +#define RK3528_PHYREG40				0x100
+> > +#define  RK3528_PHYREG40_SSC_EN			BIT(20)
+> > +#define  RK3528_PHYREG40_SSC_CNT		GENMASK(10, 0)
+> > +#define   RK3528_PHYREG40_SSC_CNT_VALUE		0x17d
+> > +#define RK3528_PHYREG42				0x108
+> > +#define  RK3528_PHYREG42_CKDRV_CLK_SEL		BIT(29)
+> > +#define   RK3528_PHYREG42_CKDRV_CLK_PLL		0
+> > +#define   RK3528_PHYREG42_CKDRV_CLK_CKRCV	1
+> > +#define  RK3528_PHYREG42_PLL_LPF_R1_ADJ		GENMASK(10, 7)
+> > +#define   RK3528_PHYREG42_PLL_LPF_R1_ADJ_VALUE	0x9
+> > +#define  RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ	GENMASK(6, 4)
+> > +#define   RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ_VALUE 0x7
+> > +#define  RK3528_PHYREG42_PLL_KVCO_ADJ		GENMASK(2, 0)
+> > +#define   RK3528_PHYREG42_PLL_KVCO_ADJ_VALUE	0x0
+> > +#define RK3528_PHYREG80				0x200
+> > +#define  RK3528_PHYREG80_CTLE_EN		BIT(17)
+> > +#define RK3528_PHYREG81				0x204
+> > +#define  RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X	BIT(5)
+> > +#define  RK3528_PHYREG81_SLEW_RATE_CTRL		GENMASK(2, 0)
+> > +#define   RK3528_PHYREG81_SLEW_RATE_CTRL_SLOW	0x7
+> > +#define RK3528_PHYREG83				0x20c
+> > +#define  RK3528_PHYREG83_RX_SQUELCH		GENMASK(2, 0)
+> > +#define   RK3528_PHYREG83_RX_SQUELCH_VALUE	0x6
+> > +#define RK3528_PHYREG86				0x218
+> > +#define  RK3528_PHYREG86_RTERM_DET_CLK_EN	BIT(14)
+> =
+
+> I'd think staying with one layout would be best, so not doing this
+> indentation here. Instead maybe follow the other ones like
+
+Though seems more clear, it's reasonable to keep the style consistent.
+
+Will change it in v2, thanks.
+
+> #define RK3528_PHYREG6				0x18
+> #define RK3528_PHYREG6_PLL_KVCO		GENMASK(12, 10)
+> #define RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
+> #define RK3528_PHYREG6_SSC_DIR			GENMASK(5, 4)
+> #define RK3528_PHYREG6_SSC_UPWARD		0
+> #define RK3528_PHYREG6_SSC_DOWNWARD		1
+> =
+
+> #define RK3528_PHYREG40				0x100
+> #define RK3528_PHYREG40_SSC_EN			BIT(20)
+> #define RK3528_PHYREG40_SSC_CNT		GENMASK(10, 0)
+> #define RK3528_PHYREG40_SSC_CNT_VALUE		0x17d
+> =
+
+> ...
+> =
+
+> i.e. register + bits + blank line
+> =
+
+> other than that
+> =
+
+> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+> =
+
+> =
 
 
---wx67l5oe5lmxpk5q
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
-MIME-Version: 1.0
+Best regards,
+Yao Zi
 
-On Mon, Mar 03, 2025 at 03:27:39PM +0800, Ma Ke wrote:
-> If device_add() fails, do not use device_unregister() for error
-> handling. device_unregister() consists two functions: device_del() and
-> put_device(). device_unregister() should only be called after
-> device_add() succeeded because device_del() undoes what device_add()
-> does if successful. Change device_unregister() to put_device() call
-> before returning from the function.
->=20
-> As comment of device_add() says, 'if device_add() succeeds, you should
-> call device_del() when you want to get rid of it. If device_add() has
-> not succeeded, use only put_device() to drop the reference count'.
->=20
-> Found by code review.
->=20
-> Cc: stable@vger.kernel.org
-> Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
-> Signed-off-by: Ma Ke <make24@iscas.ac.cn>
-> ---
-> Changes in v2:
-> - modified the bug description as suggestions.
-> ---
->  drivers/phy/tegra/xusb.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
+-- =
 
-Vinod, Kishon,
-
-looks like this was never picked up. Can you apply this?
-
-Thanks,
-Thierry
-
---wx67l5oe5lmxpk5q
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmgdLW4ACgkQ3SOs138+
-s6EG5w//fN/ghy8cT1CG6l/5SDKWSzugOJO2PyEvdPwHz6RFgkmhaNflD7MT/GxN
-X3AzAY8IKxzf+KiY+uBGfljYJA5HWbhXMTI5xk2BrfGzgdmGSjM/6Vtg6VQWJXfK
-7ooj0JcQpz5yoaWWgpGbtAOBNxltngEypA/xSurMjsF+8O3J84VenKYKoNPUOr4N
-xYNbHsKqdL2oFNZV3f3s4X9iP4VhWPP/wwtN8kvhHy2cE3nhzxh4Eb9g05VMHqzz
-NN8gDYbcDRHEEMJ5auYHKflYNKjq9sDUandoliYmeFhwz9vcX9S1mfVedguBOCDo
-GwvbTmeJwdt7vdGp9uaYPycXki6ydcJPZAzmu/KPumYyohmwAtqKRi6MAoNdvBtH
-+ZLjh6MJCTxf0kj9V02e5o9jgOCy4jo9OvphLq4GGMlX3AhL8OBkOzBdZNuWvMJ1
-JstXIoj76oMRxBcvBcuScVHWUN4VJuDN0LOml6z5AQeEcaVZSsl8uYo3QLyI+9bE
-qt89zzilKokKZ9nYkYPe7lxCKnlFMWHkD/CcDPQqzUuo/L27CypvXu5AyaAuxjfC
-4I/Qeo0GnUM1POs5++MQgT33ViSXlCEAH+KDtSXIi3FWXoWdqGafYpo0jzdbiyAA
-O235paAjx387+XnhTe/QSwipOPEzaztSs3xk//uQBhZp6glIejo=
-=c4c0
------END PGP SIGNATURE-----
-
---wx67l5oe5lmxpk5q--
-
-
---===============7978060974527014724==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7978060974527014724==--
-
