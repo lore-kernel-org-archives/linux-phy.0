@@ -4,74 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1491C3ABC5
-	for <linux-phy@archiver.kernel.org>; Fri,  9 May 2025 00:54:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26765C3ABC6
+	for <linux-phy@archiver.kernel.org>; Fri,  9 May 2025 06:05:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=arw3daCHFlwm4ut8ZuvOMZIRmS8nKMGsUcGKKwhZJjQ=; b=M8fqA+fVdtvA28
-	bi5kCFfijnaT3ztkH8+pQ+18WnvOTWPteX+V++ce74ZrR8rckwgWxfj9WnMnE77V1Ne/SyzrLxqug
-	hnLdIgqjYrn0treIlUEkAcqAjLEH1/YMUxasWcQ8ibb8mn9fmLaNYD4PtUjOALzyV8bpaXRkGp3C5
-	HMEJ/jcz4hoDjVf/wt10mOSSAfNxmQcjefnZtLvyjkrm1kcHMKGOsfHFRa51ESHWDLXDATUKA+6Fc
-	tzPv9jofbluZc/Drbqv7X/hDtn1FN4BdEr9yWVU21WQq0GElZF0GM8l2OEB0oDvU1OcedvAGyRLqF
-	u8rsw+LQbYHYJHlCikRg==;
+	List-Owner; bh=k2PL6TUESb8lLqvZm/PFxFF3ayG/PU2zT7u+55PJR7o=; b=JWx4jMUF8a2YS+
+	Xq6P52rHvjvO3IlAY0BznwBFGpEEmQ10Lpoh7tg0Bpe9lwCoIEMS9Q1WW6b2/P1vDoK/MqUONEZ0H
+	uAEgUIJZ6YOwlSWUCIG52yfOR72N4Ks31ah19MzfZjzqWEDxKfc7bQbfzbS28eQhfpTD2f+iouTnC
+	Qbl5ObAJcPJGRl2pfjcVYiKj2LWtQCG/r/AAX853z0u4dQaXyozK21ROENCZwNK9lYA/RlnLNKEPF
+	n81bHfBPTUM2+zfXseygiaHBI3ukqvBYm29mmEuSSWfewQvcXW+vf4Zfp40MvIqvyCgUmISne1b6f
+	oiuiWIzV2ZByh354c6tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDC0V-000000028ii-0fFB;
-	Fri, 09 May 2025 00:54:31 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1uDGrJ-00000002Zlv-37iu;
+	Fri, 09 May 2025 06:05:21 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDBps-000000026wy-3Vkt;
-	Fri, 09 May 2025 00:43:34 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 9609B261B5;
-	Fri,  9 May 2025 02:43:31 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id 9ISWAi9Dedp8; Fri,  9 May 2025 02:43:31 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1746751410; bh=ZdvTKQqzNuK1cYYcOlkZ38hXG7R64U6pk2NbaOyRi1Q=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=W4gUqrBmfI0lli6DheZm/slrz2Zbd4Fsso6G4p7zP1evhN1TLPivdRowCRNW/C3bi
-	 26aES85vqUpqho/s/bTUtdgXcWLptBulyG2dGqLS3rJmMcYc4LVmM+W8Fw/irzxE+a
-	 8QN48Cv5HfdgYRFXWAWHzw5yWRdI3J1Bcx2fo2PbK045FL83RHDQ7b3MF0HfCJV1zW
-	 VvQDjXDdV40s3habn13S78I/F4ss35NaL1VWfR6E/M0yUc+oIEz8Z3fwWunQPFlB5o
-	 6lH9yec4A0xQhVMUVmBaYBVsZ8Tk9WXPMTqWQtFCrMfDCP9hom85SNjL6BJYc7zzge
-	 SsQh3u1KncYdA==
-From: Yao Zi <ziyao@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Yao Zi <ziyao@disroot.org>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
-	Detlev Casanova <detlev.casanova@collabora.com>,
-	Shresth Prasad <shresthprasad7@gmail.com>,
-	Chukun Pan <amadeus@jmu.edu.cn>,
-	Jonas Karlman <jonas@kwiboo.se>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 5/5] arm64: dts: rockchip: Add naneng-combphy for RK3528
-Date: Fri,  9 May 2025 00:41:22 +0000
-Message-ID: <20250509004121.36058-7-ziyao@disroot.org>
-In-Reply-To: <20250509004121.36058-2-ziyao@disroot.org>
+	id 1uDGpH-00000002ZYC-2b7G;
+	Fri, 09 May 2025 06:03:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 4E211A4C5EA;
+	Fri,  9 May 2025 06:03:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51685C4CEE4;
+	Fri,  9 May 2025 06:03:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1746770593;
+	bh=miqYtWyTKqalmWH/MGZunXZc53zAHSRNBQvWm45NGQ0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=cDvfscBnFjzX5lYFVRWG6HqIvO2BmUHXP4zFLn5QBcuK2I4fgvV0Gqf+PjThAc0cx
+	 dtRc+LWiQv87umLgJ78pVfk0qpIROY64IG+qnWyNx4HlqTEQnUO+EyibIMB4bo/jOW
+	 RuM27JQIdkhpEXtKDmJot+11r9jRUXeM2f1Odv1r6JQTWkW/Xh/sdFnzlo68WpO92H
+	 Ro4xSyi7MCUWh2ikYungCMBqbZJaM0v6HxtY7MGie6Fz4Uv3r3VkcFOECk19h4lGKG
+	 eUeq4ceJoisr4sYDZ/6e3W8WD8FG20XVrGBoIUFSSG1rWws+U2kT4gc0cN7Xn01ztv
+	 ZrhXtKYGV+a5A==
+Date: Fri, 9 May 2025 08:03:11 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Yao Zi <ziyao@disroot.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
+	Andy Yan <andy.yan@rock-chips.com>, Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, 
+	Detlev Casanova <detlev.casanova@collabora.com>, Shresth Prasad <shresthprasad7@gmail.com>, 
+	Chukun Pan <amadeus@jmu.edu.cn>, Jonas Karlman <jonas@kwiboo.se>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: Re: [PATCH v2 2/5] dt-bindings: phy: rockchip: naneng-combphy: Add
+ RK3528 variant
+Message-ID: <20250509-secret-smart-kangaroo-fd3b58@kuoka>
 References: <20250509004121.36058-2-ziyao@disroot.org>
+ <20250509004121.36058-4-ziyao@disroot.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250509004121.36058-4-ziyao@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250508_174333_005006_0EBA6DC1 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250508_230315_733239_2958CB9D 
+X-CRM114-Status: GOOD (  13.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,56 +81,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Rockchip RK3528 ships a naneng-combphy that is shared by PCIe and USB
-3.0 controllers. Describe it and the pipe-phy grf which it depends on.
+On Fri, May 09, 2025 at 12:41:19AM GMT, Yao Zi wrote:
+> Rockchip RK3528 ships one naneng-combphy which operates in either PCIe
+> or USB 3 mode. Document its compatible string.
+> 
+> Signed-off-by: Yao Zi <ziyao@disroot.org>
+> Acked-by: Conor Dooley <conor.dooley@microchip.com>
+> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+> ---
 
-Signed-off-by: Yao Zi <ziyao@disroot.org>
----
- arch/arm64/boot/dts/rockchip/rk3528.dtsi | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+Eh, no...
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3528.dtsi b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
-index 193b84b5e912..672350400774 100644
---- a/arch/arm64/boot/dts/rockchip/rk3528.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
-@@ -334,6 +334,11 @@ vpu_grf: syscon@ff340000 {
- 			reg = <0x0 0xff340000 0x0 0x8000>;
- 		};
- 
-+		pipe_phy_grf: syscon@ff348000 {
-+			compatible = "rockchip,rk3528-pipe-phy-grf", "syscon";
-+			reg = <0x0 0xff348000 0x0 0x8000>;
-+		};
-+
- 		vo_grf: syscon@ff360000 {
- 			compatible = "rockchip,rk3528-vo-grf", "syscon";
- 			reg = <0x0 0xff360000 0x0 0x10000>;
-@@ -778,6 +783,23 @@ dmac: dma-controller@ffd60000 {
- 			arm,pl330-periph-burst;
- 		};
- 
-+		combphy: phy@ffdc0000 {
-+			compatible = "rockchip,rk3528-naneng-combphy";
-+			reg = <0x0 0xffdc0000 0x0 0x10000>;
-+			#phy-cells = <1>;
-+			clocks = <&cru CLK_REF_PCIE_INNER_PHY>, <&cru PCLK_PCIE_PHY>,
-+				 <&cru PCLK_PIPE_GRF>;
-+			clock-names = "ref", "apb",
-+				      "pipe";
-+			assigned-clocks = <&cru CLK_REF_PCIE_INNER_PHY>;
-+			assigned-clock-rates = <100000000>;
-+			resets = <&cru SRST_PCIE_PIPE_PHY>, <&cru SRST_P_PCIE_PHY>;
-+			reset-names = "phy", "apb";
-+			rockchip,pipe-grf = <&vpu_grf>;
-+			rockchip,pipe-phy-grf = <&pipe_phy_grf>;
-+			status = "disabled";
-+		};
-+
- 		pinctrl: pinctrl {
- 			compatible = "rockchip,rk3528-pinctrl";
- 			rockchip,grf = <&ioc_grf>;
--- 
-2.49.0
+>  .../devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+> index 888e6b2aac5a..bd064754e537 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+> @@ -12,6 +12,7 @@ maintainers:
+>  properties:
+>    compatible:
+>      enum:
+> +      - rockchip,rk3528-naneng-combphy
+>        - rockchip,rk3562-naneng-combphy
+>        - rockchip,rk3568-naneng-combphy
+>        - rockchip,rk3576-naneng-combphy
+> @@ -102,7 +103,9 @@ allOf:
+>        properties:
+>          compatible:
+>            contains:
+> -            const: rockchip,rk3588-naneng-combphy
+> +            enum:
+> +             - rockchip,rk3528-naneng-combphy
+
+Still not tested. Neither v1 nor v2 was ever tested.
+
+Best regards,
+Krzysztof
 
 
 -- 
