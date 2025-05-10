@@ -4,111 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B876C3ABCB
-	for <linux-phy@archiver.kernel.org>; Sat, 10 May 2025 11:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56B61C3ABC9
+	for <linux-phy@archiver.kernel.org>; Sat, 10 May 2025 13:56:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:Cc:
-	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WvvapVDnETeBpVi1/8Lg7+fJZ286EjFh05vkufJENaI=; b=agB3ZdJ3XgKpVK
-	Pz2S0pBZFQJCz6C1s/oOAcdeT1x0eHCF1lbXA1JJSgMJSG4N9D3Wc1Zjm2ysQN2+zh5k19x0LO4/T
-	uB+jomJoepCGj0M9k6jOreYQvwbUHmzQVusZGJJQ5x4GS0e73a17r3FilNaL8mfEL9JMAD8Q9piFC
-	a4JQbzJFSJhTu9dFWo+qpdbEdTa2Qy32lMrpQluKSduWnl8AE8RL26lY3Bv52IefAXNa/z2O781B5
-	/hzoSl/9JaczoqFUj2XkyTaictKow1Dbem3xL7/meUjKkDylxER+iC+2XyftqNzji+Es5Z1pl2wzr
-	i840EtBy0FbGGPH6h6oA==;
+	List-Owner; bh=fMyWWDsyoP+gFlEv/WqvQAKB3TUq76xNGZEf1cEtnvg=; b=zDlb/lcKABa3i2
+	zeFemYeU5ceiZwXXXt5TJ37LMvsBrgTRHzRNoVBUKIgNn95K158MSWXUXN3Inx/0jt3t1gC0PnJId
+	oRU1BxxtBzZXl7ZD2tHpeDrD3FG0UhSeSMhJxt7trPtrxw8s+x2SWwNODK7JZ3Yy7uWRB91o0tc4t
+	1C4fH1zS6ITS8lV/fbFKFapcAYMBpgh/9/2dNxbFk2KQfgCsy0HUmLkkjF7p5KDQgp2VEbSqUp3Qj
+	rQ6emI0+CSSBz0zJvdgfQr8YCrMntyM4MnDS21ledebJwrcoaA7P6o7Zsi/foNkDIGWb2nWzCeAnb
+	kv4P+sVWcDcXUU2on6Uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDiX5-00000005sz4-3o7w;
-	Sat, 10 May 2025 11:38:19 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1uDkhD-000000060Wc-3lkS;
+	Sat, 10 May 2025 13:56:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDiUz-00000005ssf-0yXJ;
-	Sat, 10 May 2025 11:36:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=public-files.de;
-	s=s31663417; t=1746876956; x=1747481756; i=frank-w@public-files.de;
-	bh=CSbtJfYpYv6dmlPOIorqeT7hfT+eDvX+w78jdbBKPZE=;
-	h=X-UI-Sender-Class:MIME-Version:Message-ID:From:To:Cc:Subject:
-	 Content-Type:Date:In-Reply-To:References:cc:
-	 content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=Pnd2hPr8NhqTEOL0Z894K9VvrtLD5MuuqAinM2SfezN7eEDHyzrMnIfWmv/kWzmG
-	 xjJRi+BAhkgP1yzT+g5veLa7RgEFSKupdLOqgRQgSPIW9+9p3z/2+8bb3SgbCQqkS
-	 Kn2G6ePJMwEgySMCXdcInTrczpW7C1kx7YmdGG6/dPH09Mt5cuIEhsHTP6wdeYsck
-	 80/AGE4RQixvrwwaMyw0FajjARgIsZe4aha5quzhc+p18t/xe55tlPiDhXWu49oPJ
-	 m0BoHvE8PRdt66o7Y36dyB48P1s4BqdIuZvU84nmwGTdQp/1vG0sTCItSIhp6AhAS
-	 m8sDppr++ybIg8nkDA==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [157.180.226.129] ([157.180.226.129]) by
- trinity-msg-rest-gmx-gmx-live-74d694d854-5prkz (via HTTP); Sat, 10 May 2025
- 11:35:56 +0000
+	id 1uDkaV-00000005zu9-30ff
+	for linux-phy@lists.infradead.org;
+	Sat, 10 May 2025 13:50:01 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54ABmdU5023152;
+	Sat, 10 May 2025 13:49:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6QI5MdJNvPxptwrSHZ/+tFrMWva0CsITk7LKryGpub4=; b=T14Tbftt9mYS0Nj1
+	c+jShrN8JlRqrYhLG5stHSVwwgsmJQ5bkd9ucAJZw0j5FwCewursgQMdrlziviBs
+	Avz08gyP0bttXYH7vCEOrH8g06eKoQx8tDOnUtzzMvFMHhWu7izcMyOV08SwKZc+
+	MzSUDx1I+q9v1Gd6Z+vtYgVRDs70tbAZHskHJCDygikHUrI5n1OvJoMheCbajPa/
+	VqKIr13v11VrUL2mo4GvXUvQSpbYGESxjIM+VcMBFwgaPY3dkWeRaEChfaksM2CE
+	Xa27B93ZwIQ5wk8Fe5H5x4N4VfXHK26iByCcoRJACKwL8fUPHqkGqRlPZipib7ix
+	vzETOw==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46hy68gnm9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 10 May 2025 13:49:41 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54ADne58028513
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 10 May 2025 13:49:40 GMT
+Received: from [10.216.13.129] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 10 May
+ 2025 06:49:35 -0700
+Message-ID: <812a9905-a8f6-40b2-a603-6c0be18239da@quicinc.com>
+Date: Sat, 10 May 2025 19:19:31 +0530
 MIME-Version: 1.0
-Message-ID: <trinity-02bca72f-3997-456e-8182-d5ef1358ac9f-1746876955936@trinity-msg-rest-gmx-gmx-live-74d694d854-5prkz>
-From: Frank Wunderlich <frank-w@public-files.de>
-To: linux@fw-web.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, lee@kernel.org, chunfeng.yun@mediatek.com,
- vkoul@kernel.org, kishon@kernel.org, matthias.bgg@gmail.com,
- angelogioacchino.delregno@collabora.com
-Cc: rafal@milecki.pl, daniel@makrotopia.org, sean.wang@mediatek.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org
-Subject: Aw: [PATCH v4 0/8] Add Bananapi R4 variants and add xsphy
-Date: Sat, 10 May 2025 11:35:56 +0000
-In-Reply-To: <20250422132438.15735-1-linux@fw-web.de>
-References: <20250422132438.15735-1-linux@fw-web.de>
-X-UI-CLIENT-META-MAIL-DROP: W10=
-X-Provags-ID: V03:K1:/4ZNXZpfFmBkVPBZv3pK2+f9+sAC8ipN/KCUrOlFJ+XI0q2pfnjGjudw95LSMJy3sYr+r
- p40VQEXpm3ViXsio5PTNuBijsGczQ6tP9BAwub1Pm9SljuJoKuDJLDotP1VcRVWGHVfsMzO4cGIf
- b+ABPFKpfaoqcbvk8bW8w4jlwQra6/motLhEWqxquYLikgV+ZDP/bCxBpsEL2fXfBz7LNeE9ZdTP
- LAoZDCRCcadw+/LGXoOjUTdsgZXA0Mwo5yEo+MrPoR9uwPo9ulqAjionYURV0jM7FspBjvmZ9uev
- SnRgsU70+803FMCzjV/eHZ56Eaj6mf1Xh7mnRKTHNgHfFuKo7iEr8iSt5OhVGYHP2s=
-UI-OutboundReport: notjunk:1;M01:P0:ixHZ7+EpIYA=;iIZSgtviXbFJOi5roYS8ZQLGurG
- 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
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V4 09/11] scsi: ufs: qcom : Refactor phy_power_on/off
+ calls
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <manivannan.sadhasivam@linaro.org>,
+        <James.Bottomley@HansenPartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <andersson@kernel.org>,
+        <neil.armstrong@linaro.org>
+CC: <quic_rdwivedi@quicinc.com>, <quic_cang@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
+References: <20250503162440.2954-1-quic_nitirawa@quicinc.com>
+ <20250503162440.2954-10-quic_nitirawa@quicinc.com>
+ <780d84ca-4004-41ef-a9ae-17532053f8a5@oss.qualcomm.com>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <780d84ca-4004-41ef-a9ae-17532053f8a5@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEwMDE0MCBTYWx0ZWRfX1h+K6Uf6o6PN
+ K/c4kgXFHJGJ1vLM9MnFnoPNsGfxw0QjAxTejOP3cLttcog6P6pJnZPmTixd9J233KYITEm/1Hg
+ NDrhW284Ke5rcF4uE2gYALWUDPaElTqWEqiVwMYQqpjDs2WBZWpK4oAKEay4fDEXTsSv7DVyI2Y
+ JINvCqGZmXxL9ROKo7Uw8vgZ7aHTzzjOcLekgIfZtbxHVAxmmvPOk6N6cjmNHflTgNyKYW68G8Y
+ wvvzUgpJczTlbcB1EIuJO5MOwVZ+eqLVZzu9etjipICSq9w0pqXFa8I68+7dC2l4F3n291Bmcez
+ Rzyo6FAxNpHkeQmHKrgAZvx9NVkJ4usxij3mOnKIMJvf7PVFeMDRK58rIx7tRKWIVnVgwz5lGiC
+ c2vMZRIj83/j7qRAbClLQi2V4YSYLNbqvhVNtu98TPy5QBYjxS++vi+7jDphzPQ8TD61CQfh
+X-Proofpoint-GUID: WbuIQtUqq6SOkPhJTB31z1TbFyt35Vh5
+X-Proofpoint-ORIG-GUID: WbuIQtUqq6SOkPhJTB31z1TbFyt35Vh5
+X-Authority-Analysis: v=2.4 cv=c5irQQ9l c=1 sm=1 tr=0 ts=681f5975 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=iv0NEw3qHnIl1jiBOd0A:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-10_03,2025-05-09_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 phishscore=0 adultscore=0 malwarescore=0
+ impostorscore=0 mlxlogscore=999 mlxscore=0 spamscore=0 bulkscore=0
+ lowpriorityscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2504070000 definitions=main-2505100140
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250510_043609_586819_1EE8053E 
-X-CRM114-Status: UNSURE (   2.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250510_064959_891966_71CF5A72 
+X-CRM114-Status: GOOD (  24.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,16 +113,150 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi
 
-just a gentle ping. is something missing or can this series be applied?
 
-regards Frank
+On 5/9/2025 5:05 PM, Konrad Dybcio wrote:
+> On 5/3/25 6:24 PM, Nitin Rawat wrote:
+>> Commit 3f6d1767b1a0 ("phy: ufs-qcom: Refactor all init steps into
+>> phy_poweron") removes the phy_power_on/off from ufs_qcom_setup_clocks
+>> to suspend/resume func.
+>>
+>> To have a better power saving, remove the phy_power_on/off calls from
+>> resume/suspend path and put them back to ufs_qcom_setup_clocks, so that
+>> PHY regulators & clks can be turned on/off along with UFS's clocks.
+>>
+>> Since phy phy_power_on is separated out from phy calibrate, make
+>> separate calls to phy_power_on and phy_calibrate calls from ufs qcom
+>> driver.
+>>
+>> Co-developed-by: Can Guo <quic_cang@quicinc.com>
+>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> ---
+>>   drivers/ufs/host/ufs-qcom.c | 55 ++++++++++++++++---------------------
+>>   1 file changed, 23 insertions(+), 32 deletions(-)
+>>
+>> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+>> index 2cd44ee522b8..ff35cd15c72f 100644
+>> --- a/drivers/ufs/host/ufs-qcom.c
+>> +++ b/drivers/ufs/host/ufs-qcom.c
+>> @@ -639,26 +639,17 @@ static int ufs_qcom_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op,
+>>   	enum ufs_notify_change_status status)
+>>   {
+>>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+>> -	struct phy *phy = host->generic_phy;
+>>   
+>>   	if (status == PRE_CHANGE)
+>>   		return 0;
+>>   
+>> -	if (ufs_qcom_is_link_off(hba)) {
+>> -		/*
+>> -		 * Disable the tx/rx lane symbol clocks before PHY is
+>> -		 * powered down as the PLL source should be disabled
+>> -		 * after downstream clocks are disabled.
+>> -		 */
+>> +	if (!ufs_qcom_is_link_active(hba))
+> 
+> so is_link_off and !is_link_active are not the same thing - this also allows
+> for disabling the resources when in hibern8/broken states - is that intended?
+
+Yes is_link_off and !is_link_Active is not same thing. !is_link_active 
+also include link in hibern8 state where lane clock is intended to be
+disabled because PHY is powered down in hibern8.
+
+
+
+> 
+>>   		ufs_qcom_disable_lane_clks(host);
+>> -		phy_power_off(phy);
+>>   
+>> -		/* reset the connected UFS device during power down */
+>> -		ufs_qcom_device_reset_ctrl(hba, true);
+>>   
+>> -	} else if (!ufs_qcom_is_link_active(hba)) {
+>> -		ufs_qcom_disable_lane_clks(host);
+>> -	}
+>> +	/* reset the connected UFS device during power down */
+>> +	if (ufs_qcom_is_link_off(hba) && host->device_reset)
+>> +		ufs_qcom_device_reset_ctrl(hba, true);
+> 
+> similarly this will not be allowed in hibern8/broken states now
+> 
+>>   
+>>   	return ufs_qcom_ice_suspend(host);
+>>   }
+>> @@ -666,26 +657,11 @@ static int ufs_qcom_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op,
+>>   static int ufs_qcom_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>>   {
+>>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+>> -	struct phy *phy = host->generic_phy;
+>>   	int err;
+>>   
+>> -	if (ufs_qcom_is_link_off(hba)) {
+>> -		err = phy_power_on(phy);
+>> -		if (err) {
+>> -			dev_err(hba->dev, "%s: failed PHY power on: %d\n",
+>> -				__func__, err);
+>> -			return err;
+>> -		}
+>> -
+>> -		err = ufs_qcom_enable_lane_clks(host);
+>> -		if (err)
+>> -			return err;
+>> -
+>> -	} else if (!ufs_qcom_is_link_active(hba)) {
+>> -		err = ufs_qcom_enable_lane_clks(host);
+>> -		if (err)
+>> -			return err;
+>> -	}
+>> +	err = ufs_qcom_enable_lane_clks(host);
+>> +	if (err)
+>> +		return err;
+>>   
+>>   	return ufs_qcom_ice_resume(host);
+>>   }
+>> @@ -1042,6 +1018,8 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>>   				 enum ufs_notify_change_status status)
+>>   {
+>>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+>> +	struct phy *phy = host->generic_phy;
+>> +	int err;
+>>   
+>>   	/*
+>>   	 * In case ufs_qcom_init() is not yet done, simply ignore.
+>> @@ -1060,10 +1038,22 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>>   				/* disable device ref_clk */
+>>   				ufs_qcom_dev_ref_clk_ctrl(host, false);
+>>   			}
+>> +			err = phy_power_off(phy);
+> 
+> a newline to separate the blocks would improve readability> +			if (err) {
+>> +				dev_err(hba->dev, "%s: phy power off failed, ret=%d\n",
+>> +					__func__, err);
+>> +					return err;
+
+Sure will add in next patchset.
+
+> 
+> please indent the return statement a tab earlier so it doesn't look
+> like it's an argument to dev_err()
+
+Sure will add in next patchset.
+
+> 
+> putting PHY calls in the function that promises to toggle clocks could
+> also use a comment, maybe extending the kerneldoc to say that certain
+> clocks come from the PHY so it needs to be managed together
+> 
+Sure will add a comment or update in kernel doc in next patchset.
+
+> Konrad
+
 
 -- 
 linux-phy mailing list
