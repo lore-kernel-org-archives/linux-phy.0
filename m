@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 424AFC3ABC3
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C78C8C3ABD8
 	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 17:24:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,26 +12,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cVBZ5Bb3grKYIQNGNTjLbr+BAmUDdTOfoH4jq/mFsh8=; b=xepVwp7jJy9bk2
-	Cbl70YCRaH19MCnI5nU3ZpcBgk3gNk/694DCHR2kcGEOpPh3cA6jTXfd660DmIhMqC30rsXIzt1+9
-	zckGU/gW8geHu0G4decNr0VWqTiLS4Bu+M1+5opDCmwVlx5ZDPXAbyDTmPWv/jIjz5rxb6hwzOhq+
-	Mvy6mkneoasno79JJ64/bd/QftLY7CxiYBnBswjof6ilCEQobZCoMoYDXlhSEm+fPojM6JolLEDly
-	wrxvD3BfQMcwZ/OTBACgq+nzzXU32anngoKHNl3BJwzsZiuePw2FzeLGrRh3dTLqQq7P5ZAdzCudX
-	CiS/Po/KKW77YKscesXQ==;
+	List-Owner; bh=CLqj2rXxiVDSlvTw3LfKERTLO0SxiuG7qPcjLPWGGv0=; b=FTImnXZNSM5+QF
+	zJAyAaR7B+OHinDgZt6/zADHpRnAfR7t84ce/vHAiRjAVwZr8qpoij0752cMlTWSP/froTXCWwYTI
+	OezFJ5nUgCXD5gXvmNq14SfrQYl9HvVPCn37dAmTPudfoCKQ2T8JY4DbmGvFeIm9BCdFAMydo6ctg
+	yJyX3bQZnJOFhu6j6xkuobFoJYSEVfCEMdCdqRT+qRL1gNe7ID/xziBLEmtXLvC3ulJSdGQAiM/Tu
+	vQCZkFdI/q/aOtqpY2985eDVyrTd506S62XKZekc8ziULFshdJv6LSf7QykZZcd2t6TWqjuy853c7
+	BDMFwRauMO8fIGa5eCUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEWte-0000000ACYz-00Bo;
+	id 1uEWte-0000000ACZR-2K6c;
 	Mon, 12 May 2025 17:24:58 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEWQV-0000000A7zX-2DYS;
-	Mon, 12 May 2025 16:54:52 +0000
+	id 1uEWQe-0000000A83T-417b;
+	Mon, 12 May 2025 16:55:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 57D7D5C0648;
-	Mon, 12 May 2025 16:52:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD11EC4CEEE;
-	Mon, 12 May 2025 16:54:49 +0000 (UTC)
-Date: Mon, 12 May 2025 18:54:48 +0200
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0E5355C59D7;
+	Mon, 12 May 2025 16:52:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C894C4CEE7;
+	Mon, 12 May 2025 16:54:59 +0000 (UTC)
+Date: Mon, 12 May 2025 18:54:57 +0200
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Danila Tikhonov <danila@jiaxyga.com>
 Cc: Rob Herring <robh@kernel.org>, 
@@ -73,17 +73,17 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-remoteproc@vger.kernel.org, 
 	dri-devel@lists.freedesktop.org, linux-hardening@vger.kernel.org, linux@mainlining.org, 
 	~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: [PATCH 21/33] dt-bindings: clock: qcom-rpmhcc: Add the SM7150
+Subject: Re: [PATCH 24/33] dt-bindings: clock: qcom,gpucc: Add the SM7150
  compatible
-Message-ID: <20250512-victorious-neon-crane-4c7edc@kuoka>
+Message-ID: <20250512-flashy-snobbish-hoatzin-ea9a47@kuoka>
 References: <20250422213137.80366-1-danila@jiaxyga.com>
- <20250422213137.80366-5-danila@jiaxyga.com>
+ <20250422213137.80366-8-danila@jiaxyga.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250422213137.80366-5-danila@jiaxyga.com>
+In-Reply-To: <20250422213137.80366-8-danila@jiaxyga.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250512_095451_654902_5EC50E60 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20250512_095501_087939_C1F950B2 
+X-CRM114-Status: GOOD (  10.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,51 +100,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 23, 2025 at 12:31:25AM GMT, Danila Tikhonov wrote:
-> Update the documentation for clock rpmh driver on SM7150 SoCs.
+On Wed, Apr 23, 2025 at 12:31:28AM GMT, Danila Tikhonov wrote:
+> SM7150 is fully compatible with the existing SC7180 GPU Clock
+> Controller driver. Define corresponding compatible string, having the
+> qcom,sc7180-gpucc as a fallback.
 > 
 > Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 > ---
->  .../bindings/clock/qcom,rpmhcc.yaml           | 53 ++++++++++---------
->  1 file changed, 29 insertions(+), 24 deletions(-)
+>  .../devicetree/bindings/clock/qcom,gpucc.yaml | 29 +++++++++++--------
+>  1 file changed, 17 insertions(+), 12 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/clock/qcom,rpmhcc.yaml b/Documentation/devicetree/bindings/clock/qcom,rpmhcc.yaml
-> index dcb872b9cf3e..311aae5c9828 100644
-> --- a/Documentation/devicetree/bindings/clock/qcom,rpmhcc.yaml
-> +++ b/Documentation/devicetree/bindings/clock/qcom,rpmhcc.yaml
-> @@ -16,30 +16,35 @@ description: |
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - qcom,qcs615-rpmh-clk
-> -      - qcom,qdu1000-rpmh-clk
-> -      - qcom,sa8775p-rpmh-clk
-> -      - qcom,sar2130p-rpmh-clk
-> -      - qcom,sc7180-rpmh-clk
-> -      - qcom,sc7280-rpmh-clk
-> -      - qcom,sc8180x-rpmh-clk
-> -      - qcom,sc8280xp-rpmh-clk
-> -      - qcom,sdm670-rpmh-clk
-> -      - qcom,sdm845-rpmh-clk
-> -      - qcom,sdx55-rpmh-clk
-> -      - qcom,sdx65-rpmh-clk
-> -      - qcom,sdx75-rpmh-clk
-> -      - qcom,sm4450-rpmh-clk
-> -      - qcom,sm6350-rpmh-clk
-> -      - qcom,sm8150-rpmh-clk
-> -      - qcom,sm8250-rpmh-clk
-> -      - qcom,sm8350-rpmh-clk
-> -      - qcom,sm8450-rpmh-clk
-> -      - qcom,sm8550-rpmh-clk
-> -      - qcom,sm8650-rpmh-clk
-> -      - qcom,sm8750-rpmh-clk
-> -      - qcom,x1e80100-rpmh-clk
-> +    oneOf:
-> +      - enum:
-> +        - qcom,qcs615-rpmh-clk
 
-Wrong indentation, needs testing.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
