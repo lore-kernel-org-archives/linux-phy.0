@@ -4,35 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17F47C3ABDA
-	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 17:25:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1564FC3ABCB
+	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 23:35:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N+hW6U2gOEnCkjZSph8hVJuAReoVVWGBeAr8DxTb9Hw=; b=pZZdjQ0tyqPENz
-	S00n23eW5bs3+GH5SuHAeDtax+iwz4pPvI4luV2ICxo1gblr4ukpOlwzoGw4iEmzegE7DbhA9LbKB
-	Czqfy/tcSs4DnitI4aILRRrTmEkA5UIIqb0Lty13Gfs4kOOhdr7Bo7TEYUhVSmzC0Qh+F49K8f12L
-	m1EeFKJIRCvoqyzUVWBnnvEeq7BS6Mf4gwlXselL0N5QzxJHfwx+Mu+c2gO3o/rlECdqsE7rAbuei
-	CvJ53HiSeFzqN6Ioel62Nht91Vmf36Vj5EQhv7d7DWjfNK+GMPtG8yjS0NcHCtmkzbCa7mUY8QXmt
-	FZjUWZWnSMFRUMA4U3fQ==;
+	List-Owner; bh=erKtkMoJAUYBYiN4GV+9DC+6jkfF4L7vuGo8lEYsbiE=; b=KOcMSI3JwXKHP4
+	rs0jx3o0nDjCW9HxX176HCoIXKeKvR/LNd8E9qARB9YGgXsdDy+xEXjwRvtqxF0gJLXzpOKnwg5Gn
+	PssPecAZs9nmiNHbaZWJuF5Y7V+JmW9Cwl+viVC/KXKXMqMRWXBgtQUgMbtZhwdyt9FaOu7JWtbzt
+	EQfLCd+CQn2ZFVJO0NJP3IgUZxWV6Pah+JPYkPJywbZUGVZDhl5H/jmHK+zJ/BbnH+AW9vqHOB/w5
+	/hlAIyTENBNpN50B44nWJG2rYxn5whNmcJmlgcHbFMJxITiAzomc3xyPjiD/IgmyCfUDopDxlKgYC
+	YtcChdMcjJoXLp1prx5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEWtf-0000000ACbX-3J1E;
-	Mon, 12 May 2025 17:24:59 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uEcfv-0000000Avb8-28HI;
+	Mon, 12 May 2025 23:35:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEWRQ-0000000A8Ho-0cT1;
-	Mon, 12 May 2025 16:55:49 +0000
+	id 1uEcfu-0000000AvaW-2Szt;
+	Mon, 12 May 2025 23:35:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3A3C95C59FB;
-	Mon, 12 May 2025 16:53:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD135C4CEE7;
-	Mon, 12 May 2025 16:55:46 +0000 (UTC)
-Date: Mon, 12 May 2025 18:55:44 +0200
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+	by tor.source.kernel.org (Postfix) with ESMTP id D947C629FA;
+	Mon, 12 May 2025 23:35:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8802C4CEE7;
+	Mon, 12 May 2025 23:35:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747092909;
+	bh=5d7ulaWu8eLuk9+FYkxlpsohVPqS7lsPmXK7MdtDv/s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=kYziXmCWJ/OtT/sjFSI8Qr9gwTNkyWj4GklD96Ui5yO8DqP8A6gZ70UIrRrhgtfOo
+	 7asY8czIfUUM1QV8BL12++wFoKahmsEVE0zdi4/IBtRl9V4bwGAR5VOmcl0Zm6+2kP
+	 MLdKBy0LBtwA0tA+XrXH32a1QRleYOslACSlemqRDDd6OsB1E80IURoZsKFHU8UUjH
+	 X88e7KI24/bgDqAKo3UqPeZzSQzFt4E0qwEYABe/sHIlGYvoxmj6fI0LwxKASDg39R
+	 9fRl7Tq2b1YnlyzCWpJM6shKn18JvMoSKVE/Ft3yzmkxZOY71kxb8t5YKVAxHbL9As
+	 dxyvA4g6X3T4w==
+Date: Tue, 13 May 2025 01:35:05 +0200
+From: Andi Shyti <andi.shyti@kernel.org>
 To: Danila Tikhonov <danila@jiaxyga.com>
 Cc: Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
@@ -53,8 +63,8 @@ Cc: Rob Herring <robh@kernel.org>,
 	Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
 	Bart Van Assche <bvanassche@acm.org>, Andy Gross <agross@kernel.org>, 
 	Srinivas Kandagatla <srini@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Georgi Djakov <djakov@kernel.org>, Loic Poulain <loic.poulain@oss.qualcomm.com>, 
-	Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Georgi Djakov <djakov@kernel.org>, 
+	Loic Poulain <loic.poulain@oss.qualcomm.com>, Robert Foss <rfoss@kernel.org>, 
 	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
 	Taniya Das <quic_tdas@quicinc.com>, Sibi Sankar <quic_sibis@quicinc.com>, 
 	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
@@ -73,18 +83,14 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-remoteproc@vger.kernel.org, 
 	dri-devel@lists.freedesktop.org, linux-hardening@vger.kernel.org, linux@mainlining.org, 
 	~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: [PATCH 25/33] dt-bindings: remoteproc: qcom: sc7180-pas: Add the
- SM7150 compatible
-Message-ID: <20250512-furry-provocative-wasp-da0d8a@kuoka>
+Subject: Re: [PATCH 20/33] dt-bindings: i2c: qcom-cci: Add the SM7150
+ compatible
+Message-ID: <5smj66yzv2xnfdsiedrkivxxebhm2pbbwjjsbiwxhmxr5n4fns@vugxqsm32abk>
 References: <20250422213137.80366-1-danila@jiaxyga.com>
- <20250422213137.80366-9-danila@jiaxyga.com>
+ <20250422213137.80366-4-danila@jiaxyga.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250422213137.80366-9-danila@jiaxyga.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250512_095548_272720_9B3FC16C 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250422213137.80366-4-danila@jiaxyga.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,29 +107,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 23, 2025 at 12:31:29AM GMT, Danila Tikhonov wrote:
->  description:
-> -  Qualcomm SC7180/SC7280 SoC Peripheral Authentication Service loads and boots
-> -  firmware on the Qualcomm DSP Hexagon cores.
-> +  Qualcomm SC7180/SC7280/SM7150 SoC Peripheral Authentication Service loads and
-> +  boots firmware on the Qualcomm DSP Hexagon cores.
->  
->  properties:
->    compatible:
-> @@ -22,6 +22,9 @@ properties:
->        - qcom,sc7280-cdsp-pas
->        - qcom,sc7280-mpss-pas
->        - qcom,sc7280-wpss-pas
-> +      - qcom,sm7150-adsp-pas
-> +      - qcom,sm7150-cdsp-pas
-> +      - qcom,sm7150-mpss-pas
+Hi Danila,
 
-Shouldn't you just use fallbacks with sc7180? The if:then: clauses below
-look like matching, driver change almost matches if not minidump region.
+On Wed, Apr 23, 2025 at 12:31:24AM +0300, Danila Tikhonov wrote:
+> Add the SM7150 CCI device string compatible.
+> 
+> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
 
-Best regards,
-Krzysztof
+Acked-by: Andi Shyti <andi.shyti@kernel.org>
 
+Thanks,
+Andi
 
 -- 
 linux-phy mailing list
