@@ -4,105 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3E54C3ABC3
-	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 09:03:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2350CC3ABC3
+	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 10:12:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UeIbU6ErJEU/tLcUVW/YX0IHCquHxTK18//LXCCkezc=; b=TeqXcql73UsRrr
-	gHzN4HgO4+KV+G+Iu4KXxyWKC11nmCdM+WFLovmzoCvNcDvYIrRsHlGPWLweYV6UauccRzi6JNT4J
-	y3B5rijGanzY4lVEzuckDpNviG2kpJtm75ncfBTWX4OIyq5R2rbJsXMxUqYimr2z+zEXMsL5YMOQv
-	XP2zXnZMRjuzBjAJV+mY0MTkfFMD6Up2+J3fIl+1+L/xwgwYo5P/68Bv7Sm9Oq2XeSmcPe85LxCpf
-	wK+dluCAnMhQUhIjRFbYJdZ+6/TVVnV9/xzkRcDVVS7q325MW0NbkU4JnOaXC1e9j6jWlDQvha9VS
-	WnzNdIzs6JRicZcppeYw==;
+	List-Owner; bh=e9PB0OAwZzbPBNU/kAwHo+lZ0KsWaX8o9OjY/f5fJ34=; b=wjuKKHuykHggo6
+	lFnRxdOMTfli7LpuMY3jhNjBIlEPtdsvbzt7GYUy9+J4RI8iAov7fgohw0ous2YWEmbgxF12wG8lP
+	HbnDSM3zSk5nwXeOMsKSXqJK9wDjsY31Prq+Tz6MfHq9gN5+NgtCv8PY0ZTIjnHm5cEp4A+WZuDSI
+	5CRDrq0aI+ELpU8ep0bJQeFOQJuL1QRX0tTPrg08JB9PEmAfPAdoVRKphmkjJzCNvMKt0kiTFgTwl
+	8dx5f+0CHODk+WsVTbc8Kilid24k0DSDBc/EA8vFUWH2n+C4CiMB671p5yu7sleFMr1J0+49iCHVv
+	eF2ZgfExtM2U06pvLqAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEP4O-00000008s3V-1AZ4;
-	Mon, 12 May 2025 09:03:32 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uEQ9M-000000094Hm-2xtX;
+	Mon, 12 May 2025 10:12:44 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEP4K-00000008s2C-0T0Z
+	id 1uEPQQ-00000008vNf-1vr5
 	for linux-phy@lists.infradead.org;
-	Mon, 12 May 2025 09:03:30 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54BM1to9010230;
-	Mon, 12 May 2025 09:03:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	V/SjLHQBRX2ja8oprIqQBFz8Ft8CAPXfkAoMHk7fFCI=; b=SZN6k0q9EzYwlqGW
-	nY11ZtMAtGfoWR5c/fK7lNqenesB45uOL/kK+hrG/+g2/akgustWRrLU+6LJ0/DZ
-	GiEXuocpNDT1y7/axs5vegt10V6l8N3lZxHUo8U8fnYPcgvZwbJwTzN41cXu/20A
-	PwAay/60aeB15JCuIuVPTkUrg4LX7NONow1NXq4fFhgAHnFAAfSl6t//+fcx82CI
-	9fPqOO3wBUIOjMVJITjcdcvILmTCFYCWJjfH/mBa8K8GZpDrhylrFzSRR2i3V+fV
-	iFQ5WPN68n+5WgzAfUkGn1zUR+OPqqVomXkVoqPlE1K2wCeVKDT29b5MWkAFTVoZ
-	jwvC3Q==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46hv5qc1d3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 12 May 2025 09:03:20 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54C93JDu026417
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 12 May 2025 09:03:19 GMT
-Received: from [10.253.34.155] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 12 May
- 2025 02:03:13 -0700
-Message-ID: <37b5681b-ebf5-4956-8111-b53383dce755@quicinc.com>
-Date: Mon, 12 May 2025 17:03:10 +0800
+	Mon, 12 May 2025 09:26:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7BCA744BB2;
+	Mon, 12 May 2025 09:26:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E809C4CEE7;
+	Mon, 12 May 2025 09:26:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747041977;
+	bh=xOkKbE+DsW+L89h0Pi4g1kYeYPXXrHFk6//bhcapeQM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=BMDBxr90LR2I6dKBmSa6KaR17pidWwo/XO4zlB5ScPUZzqUSSYnj6UswuaMUXcAet
+	 fmz5mEYPkBqcifq2Zo9Pm3nLC2K+bBgmXxYAnTb1peaKtxdlgSG1DU8+ifKN2fNYz2
+	 AV42N9yrPXKq4zuTAmODHLaycZvCMhuf9x+p4WDhlYezEFfepS7rYCL9e+pabFU+aT
+	 Yy/tGZ67tqGm7D9Kjqcj2iBdpOJ6as3lSNjMY+J5J+LzKa5euVgM8htwwCFwpcrp+B
+	 sf1jwRSQhPUdB/skFAG+2iJiMVFPjbD5FJBTSScJvMbF+8CPD3xIBMLpOSkyFegKPU
+	 jnA72axq2/QXA==
+Message-ID: <02819d6c-a030-4987-bfcf-1d1a60ec3f00@kernel.org>
+Date: Mon, 12 May 2025 11:26:10 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 5/5] PCI: qcom: Add support for QCS615 SoC
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <dmitry.baryshkov@linaro.org>, <neil.armstrong@linaro.org>,
-        <abel.vesa@linaro.org>, <manivannan.sadhasivam@linaro.org>,
-        <lpieralisi@kernel.org>, <kw@linux.com>, <bhelgaas@google.com>,
-        <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <quic_qianyu@quicinc.com>,
-        <quic_krichai@quicinc.com>, <quic_vbadigan@quicinc.com>
+Subject: Re: [PATCH v4 2/5] dt-bindings: PCI: qcom: Document the QCS615 PCIe
+ Controller
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, dmitry.baryshkov@linaro.org, neil.armstrong@linaro.org,
+ abel.vesa@linaro.org, manivannan.sadhasivam@linaro.org,
+ lpieralisi@kernel.org, kw@linux.com, bhelgaas@google.com,
+ andersson@kernel.org, konradybcio@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ quic_qianyu@quicinc.com, quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
 References: <20250507031559.4085159-1-quic_ziyuzhan@quicinc.com>
- <20250507031559.4085159-6-quic_ziyuzhan@quicinc.com>
- <20250507-competent-meek-prawn-72badf@kuoka>
-From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-In-Reply-To: <20250507-competent-meek-prawn-72badf@kuoka>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=DqtW+H/+ c=1 sm=1 tr=0 ts=6821b958 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
- a=xwpoersD-4fSveQz36wA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: UlH3xmLVWF4q9bbSi8q9-QGJjGEG42fe
-X-Proofpoint-GUID: UlH3xmLVWF4q9bbSi8q9-QGJjGEG42fe
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEyMDA5NSBTYWx0ZWRfX2DTo/7znvrll
- w6MDuiEIrnfHXP4By3vbxklMKXgEB5MmWkMlUBilg+iPSo9JM9hMFvIa+8zRsShbwxMfjC0vPHv
- Y555rcRIZcTTMzWKTjNkxUm0NAbo0uwROM57U8OeFjdKCyPLZlBvNxHVNumWysknYA86JPhqfPW
- 9VbWrD7d1x/a839tYyYbVL0E16YYSgKY3aQqGum9Fhhqw58SqorlJpCX71bDBsD419bLLoBU1WM
- WHnsLL45JZ4CINoxwTBohDPZG9EeYBobX8ovEBsmAeou2rLGrG49Fn6C88KA4KTdseAK9on7Wj8
- Ilj3qTrSqoDAepOQ8OK2sCinGPWHs2Fn/vmxdFGvVMJV0fCspBi56hjQ80o56XWraziV7pI0GFR
- v4TKYMibAMClTes8N9TpLjIWaKwwnPfMYDqah8moN5/CnpvRWI880oAflHXWP3rKXDBmZzve
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-12_03,2025-05-09_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 bulkscore=0 phishscore=0 clxscore=1015 adultscore=0
- lowpriorityscore=0 impostorscore=0 spamscore=0 mlxlogscore=999 malwarescore=0
- suspectscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2504070000 definitions=main-2505120095
+ <20250507031559.4085159-3-quic_ziyuzhan@quicinc.com>
+ <20250507-astute-realistic-ferret-bcdfce@kuoka>
+ <e434124b-6975-4027-bb0d-3840fbd25a15@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <e434124b-6975-4027-bb0d-3840fbd25a15@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250512_020328_271560_78F9F5DD 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20250512_022618_543699_A5615F6A 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,52 +121,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 5/7/2025 1:18 PM, Krzysztof Kozlowski wrote:
-> On Wed, May 07, 2025 at 11:15:59AM GMT, Ziyue Zhang wrote:
->> Add the compatible and the driver data for QCS615 PCIe controller.
->> There is only one controller instance found on this platform, which
->> is capable of up to 8.0GT/s.
->> The version of the controller is 1.38.0 which is compatible with 1.9.0
->> config.
+On 12/05/2025 10:16, Ziyue Zhang wrote:
+> 
+> On 5/7/2025 1:17 PM, Krzysztof Kozlowski wrote:
+>> On Wed, May 07, 2025 at 11:15:56AM GMT, Ziyue Zhang wrote:
+>>> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+>>>
+>>> Add dedicated schema for the PCIe controllers found on QCS615.
+>>> Due to qcs615's clock-names do not match any of the existing
+>>> dt-bindings, a new compatible for qcs615 is needed.
+>> Other bindings for QCS615 were not finished, so I have doubts this is
+>> done as well. Send your bindings once you finish them.
 >>
->> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
->> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
->> ---
->>   drivers/pci/controller/dwc/pcie-qcom.c | 1 +
->>   1 file changed, 1 insertion(+)
+>> ...
 >>
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index dc98ae63362d..0ed934b0d1be 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -1862,6 +1862,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->>   	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
->>   	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
->>   	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
->> +	{ .compatible = "qcom,qcs615-pcie", .data = &cfg_1_9_0 },
-> Why? It's compatible with other entries, so why adding redundant entry
-> here?
->
-> Best regards,
-> Krzysztof
+>>> +properties:
+>>> +  compatible:
+>>> +    const: qcom,qcs615-pcie
+>>> +
+>>> +  reg:
+>>> +    minItems: 6
+>>> +    maxItems: 6
+>>> +
+>>> +  reg-names:
+>>> +    items:
+>>> +      - const: parf # Qualcomm specific registers
+>>> +      - const: dbi # DesignWare PCIe registers
+>>> +      - const: elbi # External local bus interface registers
+>>> +      - const: atu # ATU address space
+>>> +      - const: config # PCIe configuration space
+>>> +      - const: mhi # MHI registers
+>>> +
+>>> +  clocks:
+>>> +    minItems: 5
+>> Drop or use correct value - 6. I don't understand why this changed and
+>> nothing in changelog explains this.
+>>
+>> Best regards,
+>> Krzysztof
+> 
+> Hi Krzysztof
+> 
+> As discussed in qcs8300, gcc_aux_clk is recommended to be removed from PCIe PHY
+> device tree node, so I need to update the bindings.
 
-Hi Krzysztof
+I don't see how this is relevant to the code you posted and to my
+comment, so comment stays valid.
 
-If I use the compatible entry for qcs615 in the driver, do I need to
-add qcom,qcs615-pcie to qcom,pcie-sm8550.yaml, or should I create a new
-YAML file specifically for qcs615-pcie? Given that the PCIe cores on
-qcs615 and sm8550 require different clocks, is it acceptable to combine
-them in qcom,pcie-sm8550.yaml?
-
-BRs
-Ziyue
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
