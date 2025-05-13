@@ -4,106 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 712C8C3ABCC
-	for <linux-phy@archiver.kernel.org>; Tue, 13 May 2025 13:12:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED2D8C3ABC3
+	for <linux-phy@archiver.kernel.org>; Tue, 13 May 2025 14:41:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ivrtgR98Rz58Xg120m7+ejByPm4TNWREaF5GM95zMxQ=; b=cuz1lnIAwcIVLs
-	K2QOqoanTwdzIBiv5qyBvUCaCx7wO4Gq6EsXILBcCbdJtlEZwngJ2jEbdiqMtE7BnHco47yaP2SV+
-	bITN9zD4c+FzUbyV5PD8Ijxd3bzjhneSuiBrYHwEPs/RA4nHEoHHuHYMQnEkuYru0wxwhYJWQYQO9
-	UO5DVKpGi+DaI/qoMPUB1OgctQahCOTjC1PjnJpsrg7SRcpKSzRuaMvnOm0KTZjSdVs6BA5q3zags
-	b2un/5JvoUZp12U0CwOPaAfTsfF1HQ9XNE6eudVGCzy88HNPqQMNUhkkCI51wy7arXwK8J/trjKWT
-	4+uYxRUNISmZ/WhA7nHg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NL9AIzG4cYriphlR41UYSm3IQyuo09alCLg8IiuKUrw=; b=EX421QG0yLHKKQ
+	2fV4vQPHxBiszzQvdRWVaC79bazUPkgpKL74pCcdLcsN16wSeAeW8Si+AzypyyGcpmcPwPY/4NbUw
+	+zN5ZEB/ys4ICeGIOI42TUDibOQt8xjMLEF6LMMkyzbSQ5E5nW7NV771LYdXkajiQQNBwpO6X27wC
+	aAGt6/cCEPWem7fPFj4orlKoI8iqGixO6b72kS2j9UFnT0rzBDZfl/+9eeYtuE8QLQvqu+L85V3sU
+	i2xWhzMg2mGZyquuGQwrtyIgLhA1pQn5NdxA716+jEI2BzCvP3NPF613ZwAvCb7+dC8rCUtFjOePN
+	UfJIE868subcrhBgoQgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEpQx-0000000CSGj-3wNQ;
-	Tue, 13 May 2025 13:12:35 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uEqoo-0000000Cdhm-23bs;
+	Tue, 13 May 2025 14:41:18 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEpQw-0000000CSGE-0GXp
+	id 1uEqn7-0000000CdV9-3bkJ
 	for linux-phy@lists.infradead.org;
-	Tue, 13 May 2025 13:12:35 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54DBdfdD027707;
-	Tue, 13 May 2025 13:12:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	kCTGJVVj8RmqAo9suFmP593apdKnqfz+TSHKtS17EL8=; b=IGB1r/v/am20F2qI
-	GbK31AjgQF62/53DwIWLHe0YjaJJe3Dmaitjh2ZRZXstvOoXGsxw8UQq+L+NUhBr
-	96t9MHHDrdei0xA0D9N5sRmK/g8dFT7jqvKQSVDi6FEorJzp8WyuIgt1s2W0fE1s
-	/JdBad9iYNIk8qnrqmnBR+377eVd3OTQ4O1SDKx5I1EKiksP6yG6PVNhOskASLQy
-	/HoJJrQYOJgmJrSxw8b3C4OYAGgQdBLtf6uutf3QcnSpakH9Se6gq1fvz8ao3IOR
-	zPYdhQ04aPbXmBZYmAB5YPPtZ91T6g4qo11mc1Rihil4is/PY2qai5Y7gTUUSplk
-	srta5w==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46hvghg3v9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 13 May 2025 13:12:13 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54DDCDRx030092
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 13 May 2025 13:12:13 GMT
-Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 13 May
- 2025 06:12:08 -0700
-Message-ID: <939d4d07-c055-4e99-9d56-19cb7fdfa1c9@quicinc.com>
-Date: Tue, 13 May 2025 18:42:05 +0530
+	Tue, 13 May 2025 14:39:35 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-54fc36137caso541307e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 13 May 2025 07:39:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1747147172; x=1747751972; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=4Ril6uuY7sDYo/3Zc1JrBgdRnjj+OY9LceWmMwrfigA=;
+        b=Ji/CEb1LnakPUKT52SBJcuomIUIWvRTntWNA5MdS3R6gQTR/TPkMb34TWK+Qe4+bFd
+         keGe9qsPtG7zhJLvF5+EmgADmqau+VqoMCMYenABBxiV+1C7Y2VCLyrcxHY2Lh6S8tIt
+         GTDoNXcIF7F5xj91Hjr+mBCwcTGEmCUYswY83bV6L+sZl2nCXKIN/ls0I9JzlZwNS6lQ
+         1H4nKuI2Fx6TOPEToRDFHyyFX1a532ZAjVH1PzSYVG4tf8kFT1MUHXH7aJRMjvxf6bAX
+         xS04p9EZK54uX7OxP2NrSdzPhjLbnpEBh6mPXpNKxNZdxzNGqdd52ugpCI1Oy7kfwPnn
+         /Wrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747147172; x=1747751972;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=4Ril6uuY7sDYo/3Zc1JrBgdRnjj+OY9LceWmMwrfigA=;
+        b=UPSYPmttDaEbZxE+VeKWNRjqEq/hAIEIp9lHzDvysTu/G62GAfGcx8m/Lp9cyIl7wW
+         gSe9Jh37TJCSS/QHMkPBvlMiLqMWUROEBLpS4b8jdKtinJ+ZsE0NCgLue5fdmfltBOw5
+         XfQCeQHN27Vg4yg42NCiri8FcG5BTEeRMwyjEpFiUlNtGMrD1S/1smB0jdpYFi7VCwHM
+         0FV0m1OOneuxEmLL7id2hdfKN9GoxNtJONX/bjoWfs9s1NL7deG331fzc4DJ0WCZXFTK
+         3+PRjB74N5kR1GyDz7VDtfFxmNcK0CmkRZ36TrMx12mHN2pVuuyfrk+f0OvaoLASd42Y
+         SEtw==
+X-Forwarded-Encrypted: i=1; AJvYcCXSTpd3WxKqKEnPgLADpc447RNIWV1+EFr/rl6bYbVKqdMGgXLOz6OqLyhKp7vVhvj9ygHE4LrkICg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyeQFtE3Brrn21pMZ4d2ky0ovw5NBDCO9QPi7jbXCLHU8L+2+xY
+	oZlhn3ZCsHhutLNuTvUd+UJnDnwKArE6kw2aLTe1zXsFHz77Yu2SHh7x0dG8FVM=
+X-Gm-Gg: ASbGnctMQlykhund6uXSC8wFZ4Hkerf4r/+n8eCuqHzBUg02GlCvdFWCX0nDe4d6num
+	Yoe9w+qFAVpby4Wjmk5MkfoTOmGUWN81SCWgrGqwx/OL2u2l75HwWVP8DlvsgB7A75hHOVaSHPN
+	N7qsrUu/cMwa4eb0hKuQ0D+03S7roSnfyrAJfA9oqwwDAAYeNl8UeJ1BFKLP/CBHEzWwuoToUwo
+	LBlk4da6nRl1MjD8wej8+44eKngnpvyp4I6+WOkuVl12NBc8YTNjakt0VbwDwQwY91s36854QBP
+	0n9rJuV0cWdsX4RWrPFcrzhJJh4W6goQwv/oIE+JEja8fnuBOyDvnnIe808he0WOACVoPRz3dvv
+	vo29lU4ZxY//QjwxgK2ctrZhUSdka7We0I4s33G/z
+X-Google-Smtp-Source: AGHT+IHPIdVM+BZod/QjbcgdZNCqQf4/wvlVtT+Y4YCECyzxCdGP18TVKh1eHt35UgrNr84GxDnE8w==
+X-Received: by 2002:a05:6512:39d5:b0:54f:c4c0:ada8 with SMTP id 2adb3069b0e04-54fc67d65a3mr2061782e87.14.1747147171591;
+        Tue, 13 May 2025 07:39:31 -0700 (PDT)
+Received: from localhost.localdomain (88-112-131-206.elisa-laajakaista.fi. [88.112.131.206])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54fc64cd015sm1893445e87.248.2025.05.13.07.39.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 13 May 2025 07:39:31 -0700 (PDT)
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Todor Tomov <todor.too@gmail.com>,
+	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Hans Verkuil <hans.verkuil@cisco.com>
+Cc: linux-media@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: [RFC PATCH] dt-bindings: phy: Add Qualcomm MIPI C-/D-PHY schema for CSIPHY IPs
+Date: Tue, 13 May 2025 17:39:18 +0300
+Message-ID: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V4 10/11] scsi: ufs: qcom : Introduce phy_power_on/off
- wrapper function
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <manivannan.sadhasivam@linaro.org>,
-        <James.Bottomley@HansenPartnership.com>, <martin.petersen@oracle.com>,
-        <bvanassche@acm.org>, <andersson@kernel.org>,
-        <neil.armstrong@linaro.org>
-CC: <quic_rdwivedi@quicinc.com>, <quic_cang@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
-References: <20250503162440.2954-1-quic_nitirawa@quicinc.com>
- <20250503162440.2954-11-quic_nitirawa@quicinc.com>
- <58d913b8-0715-41b0-883a-423f29cb5a8c@oss.qualcomm.com>
- <be69cd1e-c04c-4976-9be1-390631316d3f@quicinc.com>
- <4a72ea06-22a8-4f8c-92ad-b5b3afa25b70@oss.qualcomm.com>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <4a72ea06-22a8-4f8c-92ad-b5b3afa25b70@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 0lOilMgDkls3J-Oot3wGBUyIbpmjDo8z
-X-Proofpoint-ORIG-GUID: 0lOilMgDkls3J-Oot3wGBUyIbpmjDo8z
-X-Authority-Analysis: v=2.4 cv=AMDybF65 c=1 sm=1 tr=0 ts=6823452d cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
- a=sYTkcTt2xfybeOqe0B8A:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEzMDEyNiBTYWx0ZWRfX1VY38sj2SPpZ
- +AcNE40bOCJ8fUVkzZnmmOnQfwyrn2t9rPNKVyIL0OnI4QhBcpWI3CJr45Ky7gXJilN5DCmm+g7
- 5vFWp0q2MQt79zE6zwfLP0fo0MtBtMGEo/ScNy9OhsCjXKzp/fOqoR9rYv7AanAxPvEKTR3QKSp
- GDAS61H0kiqS+/Qm9kNffmOD6Jz6CYMW/2CDleXJJRsEooKHLZHwwKFi1r/3xusmir2CwacX5A2
- nNMosc3zq5RAl4T9o9nP/qtl+JAHHzGPRz2s+j9JCaC37Orvv/RHs0iaomigckuror5qEs3a1wO
- myadJkgibOuE+rBvHzFj9bIOC8cV2Ss8CKPk+9ZWVGPrrsBGvVv1WaHgP9Eo4YiJJ6uLwk2weu4
- 8LxK+mYpTzh8Zb4SdOCZSVbTvK1GWAdVTPS8uLPLZr4oIqbV0lYts3aLNHwEsJeaSTyjKNsV
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-13_01,2025-05-09_01,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 priorityscore=1501 adultscore=0 impostorscore=0
- phishscore=0 malwarescore=0 bulkscore=0 lowpriorityscore=0 mlxscore=0
- mlxlogscore=945 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
- definitions=main-2505130126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250513_061234_114696_D71BB95F 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20250513_073933_897475_65D37014 
+X-CRM114-Status: GOOD (  11.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,71 +102,138 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add dt-binding schema for the CAMSS CSIPHY IPs, which provides
+MIPI C-/D-PHY interfaces on Qualcomm SoCs.
 
+Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+---
+ .../devicetree/bindings/phy/qcom,csiphy.yaml  | 110 ++++++++++++++++++
+ 1 file changed, 110 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
 
-On 5/9/2025 5:30 PM, Konrad Dybcio wrote:
-> On 5/9/25 1:49 PM, Nitin Rawat wrote:
->>
->>
->> On 5/9/2025 5:07 PM, Konrad Dybcio wrote:
->>> On 5/3/25 6:24 PM, Nitin Rawat wrote:
->>>> Introduce ufs_qcom_phy_power_on and ufs_qcom_phy_power_off wrapper
->>>> functions with mutex protection to ensure safe usage of is_phy_pwr_on
->>>> and prevent possible race conditions.
->>>>
->>>> Co-developed-by: Can Guo <quic_cang@quicinc.com>
->>>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
->>>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
->>>> ---
->>>
->>> The PHY framework does the same thing internally already, this seems
->>> unnecessary
->>
->> Hi Konrad,
->>
->> Thanks for the review. There are scenarios where ufshcd_link_startup() can call ufshcd_vops_link_startup_notify() multiple times during retries. This leads to the PHY reference count increasing continuously, preventing proper re-initialization of the PHY.
-> 
-> I'm assuming you're talking about the scenario where it jumps into
-> ufs_qcom_power_up_sequence() - you have a label in there called
-> `out_disable_phy` - add a phy_power_off() after phy_calibrate if
-> things fail and you should be good to go if I'm reading things right.
-
-Hi Konrad,
-
-I meant, ufs_qcom_power_up_sequence can be called multiple times from 
-ufshcd_link_startup as part of ufshcd_hba_enable calls for each 
-retries(max retries =3) and each attempt of ufs_qcom_power_up_sequence 
-is success increasing the power_count ref to value more than 1.
-But this is handled using the patch 7bac65687510.
-
-Similiar scenarios can be possible in ufs driver , where there can be 2
-phy_power_on calls which may caused caused phy ref count to be more than 
-1 and this inconsistent behaviour may cause issue.
-
-Hence having is_phy_pwr_on flag can help here.
-
-Thanks,
-Nitin
-
-> 
-> Please include something resembling a call stack in the commit message,
-> as currently everyone reviewing this has to make guesses about why this
-> needs to be done
-> 
-> 
->> Recently, this issue was addressed with patch 7bac65687510 ("scsi: ufs:
->> qcom: Power off the PHY if it was already powered on in ufs_qcom_power_up_sequence()"). However, I still want to maintain a reference count (ref_cnt) to safeguard against similar conditions in the code. Additionally, this approach helps avoid unnecessary phy_power_on and phy_power_off calls. Please let me know your thoughts.
-> 
-> These unnecessary calls only amount to a couple of jumps and compares,
-> just like your wrappers, as the framework keeps track of the enable
-> count as well
-> 
-> Konrad
+diff --git a/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
+new file mode 100644
+index 000000000000..ef712c5442ec
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
+@@ -0,0 +1,110 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,csiphy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm CSI PHY
++
++maintainers:
++  - Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
++
++description: |
++  Qualcomm SoCs equipped with a number of MIPI CSI PHY IPs, which
++  supports D-PHY or C-PHY interfaces to camera sensors.
++
++properties:
++  compatible:
++    enum:
++      - qcom,sm8250-csiphy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 2
++
++  interrupts:
++    maxItems: 1
++
++  vdda-csi-0p9-supply:
++    description: Voltage supply, 0.9V
++
++  vdda-csi-1p2-supply:
++    description: Voltage supply, 1.2V
++
++  '#phy-cells':
++    const: 0
++
++  port:
++    $ref: /schemas/graph.yaml#/$defs/port-base
++    description: CAMSS CSIPHY input port
++
++    patternProperties:
++      "^endpoint@[0-1]$":
++        $ref: /schemas/media/video-interfaces.yaml#
++        unevaluatedProperties: false
++
++        properties:
++          data-lanes:
++            minItems: 1
++            maxItems: 4
++
++          bus-type:
++            enum:
++              - 1 # MEDIA_BUS_TYPE_CSI2_CPHY
++              - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
++
++        required:
++          - data-lanes
++
++    oneOf:
++      - required:
++          - endpoint
++      - required:
++          - endpoint@0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - interrupts
++  - '#phy-cells'
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,sm8250-csiphy
++    then:
++      required:
++        - vdda-csi-0p9-supply
++        - vdda-csi-1p2-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,camcc-sm8250.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++
++    phy@ac6e000 {
++      compatible = "qcom,sm8250-csiphy";
++      reg = <0x0ac6e000 0x1000>;
++      clocks = <&camcc CAM_CC_CSIPHY2_CLK>,
++               <&camcc CAM_CC_CSI2PHYTIMER_CLK>;
++      interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
++      vdda-csi-0p9-supply = <&vreg_l5a_0p88>;
++      vdda-csi-1p2-supply = <&vreg_l9a_1p2>;
++      #phy-cells = <0>;
++
++      port {
++        csiphy_in: endpoint {
++          data-lanes = <1 2 3 4>;
++          remote-endpoint = <&sensor_out>;
++        };
++      };
++    };
+-- 
+2.45.2
 
 
 -- 
