@@ -4,93 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1564FC3ABCB
-	for <linux-phy@archiver.kernel.org>; Mon, 12 May 2025 23:35:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 712C8C3ABCC
+	for <linux-phy@archiver.kernel.org>; Tue, 13 May 2025 13:12:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=erKtkMoJAUYBYiN4GV+9DC+6jkfF4L7vuGo8lEYsbiE=; b=KOcMSI3JwXKHP4
-	rs0jx3o0nDjCW9HxX176HCoIXKeKvR/LNd8E9qARB9YGgXsdDy+xEXjwRvtqxF0gJLXzpOKnwg5Gn
-	PssPecAZs9nmiNHbaZWJuF5Y7V+JmW9Cwl+viVC/KXKXMqMRWXBgtQUgMbtZhwdyt9FaOu7JWtbzt
-	EQfLCd+CQn2ZFVJO0NJP3IgUZxWV6Pah+JPYkPJywbZUGVZDhl5H/jmHK+zJ/BbnH+AW9vqHOB/w5
-	/hlAIyTENBNpN50B44nWJG2rYxn5whNmcJmlgcHbFMJxITiAzomc3xyPjiD/IgmyCfUDopDxlKgYC
-	YtcChdMcjJoXLp1prx5Q==;
+	List-Owner; bh=ivrtgR98Rz58Xg120m7+ejByPm4TNWREaF5GM95zMxQ=; b=cuz1lnIAwcIVLs
+	K2QOqoanTwdzIBiv5qyBvUCaCx7wO4Gq6EsXILBcCbdJtlEZwngJ2jEbdiqMtE7BnHco47yaP2SV+
+	bITN9zD4c+FzUbyV5PD8Ijxd3bzjhneSuiBrYHwEPs/RA4nHEoHHuHYMQnEkuYru0wxwhYJWQYQO9
+	UO5DVKpGi+DaI/qoMPUB1OgctQahCOTjC1PjnJpsrg7SRcpKSzRuaMvnOm0KTZjSdVs6BA5q3zags
+	b2un/5JvoUZp12U0CwOPaAfTsfF1HQ9XNE6eudVGCzy88HNPqQMNUhkkCI51wy7arXwK8J/trjKWT
+	4+uYxRUNISmZ/WhA7nHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEcfv-0000000Avb8-28HI;
-	Mon, 12 May 2025 23:35:11 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uEpQx-0000000CSGj-3wNQ;
+	Tue, 13 May 2025 13:12:35 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uEcfu-0000000AvaW-2Szt;
-	Mon, 12 May 2025 23:35:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D947C629FA;
-	Mon, 12 May 2025 23:35:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8802C4CEE7;
-	Mon, 12 May 2025 23:35:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747092909;
-	bh=5d7ulaWu8eLuk9+FYkxlpsohVPqS7lsPmXK7MdtDv/s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kYziXmCWJ/OtT/sjFSI8Qr9gwTNkyWj4GklD96Ui5yO8DqP8A6gZ70UIrRrhgtfOo
-	 7asY8czIfUUM1QV8BL12++wFoKahmsEVE0zdi4/IBtRl9V4bwGAR5VOmcl0Zm6+2kP
-	 MLdKBy0LBtwA0tA+XrXH32a1QRleYOslACSlemqRDDd6OsB1E80IURoZsKFHU8UUjH
-	 X88e7KI24/bgDqAKo3UqPeZzSQzFt4E0qwEYABe/sHIlGYvoxmj6fI0LwxKASDg39R
-	 9fRl7Tq2b1YnlyzCWpJM6shKn18JvMoSKVE/Ft3yzmkxZOY71kxb8t5YKVAxHbL9As
-	 dxyvA4g6X3T4w==
-Date: Tue, 13 May 2025 01:35:05 +0200
-From: Andi Shyti <andi.shyti@kernel.org>
-To: Danila Tikhonov <danila@jiaxyga.com>
-Cc: Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Lorenzo Pieralisi <lpieralisi@kernel.org>, "Rafael J . Wysocki" <rafael@kernel.org>, 
-	Viresh Kumar <viresh.kumar@linaro.org>, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
-	Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>, 
-	Rajendra Nayak <quic_rjendra@quicinc.com>, Jassi Brar <jassisinghbrar@gmail.com>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
-	Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, 
-	Lukasz Luba <lukasz.luba@arm.com>, Thomas Gleixner <tglx@linutronix.de>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Souradeep Chowdhury <quic_schowdhu@quicinc.com>, 
-	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"David S . Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Alex Elder <elder@kernel.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
-	Bart Van Assche <bvanassche@acm.org>, Andy Gross <agross@kernel.org>, 
-	Srinivas Kandagatla <srini@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Georgi Djakov <djakov@kernel.org>, 
-	Loic Poulain <loic.poulain@oss.qualcomm.com>, Robert Foss <rfoss@kernel.org>, 
-	Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
-	Taniya Das <quic_tdas@quicinc.com>, Sibi Sankar <quic_sibis@quicinc.com>, 
-	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
-	Joerg Roedel <joro@8bytes.org>, Imran Shaik <quic_imrashai@quicinc.com>, 
-	Mathieu Poirier <mathieu.poirier@linaro.org>, Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Jessica Zhang <quic_jesszhan@quicinc.com>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Kees Cook <kees@kernel.org>, Tony Luck <tony.luck@intel.com>, 
-	"Guilherme G . Piccoli" <gpiccoli@igalia.com>, David Wronek <david@mainlining.org>, 
-	Jens Reidel <adrian@mainlining.org>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-watchdog@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org, 
-	netdev@vger.kernel.org, linux-scsi@vger.kernel.org, dmaengine@vger.kernel.org, 
-	linux-crypto@vger.kernel.org, linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-remoteproc@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-hardening@vger.kernel.org, linux@mainlining.org, 
-	~postmarketos/upstreaming@lists.sr.ht
-Subject: Re: [PATCH 20/33] dt-bindings: i2c: qcom-cci: Add the SM7150
- compatible
-Message-ID: <5smj66yzv2xnfdsiedrkivxxebhm2pbbwjjsbiwxhmxr5n4fns@vugxqsm32abk>
-References: <20250422213137.80366-1-danila@jiaxyga.com>
- <20250422213137.80366-4-danila@jiaxyga.com>
+	id 1uEpQw-0000000CSGE-0GXp
+	for linux-phy@lists.infradead.org;
+	Tue, 13 May 2025 13:12:35 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54DBdfdD027707;
+	Tue, 13 May 2025 13:12:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	kCTGJVVj8RmqAo9suFmP593apdKnqfz+TSHKtS17EL8=; b=IGB1r/v/am20F2qI
+	GbK31AjgQF62/53DwIWLHe0YjaJJe3Dmaitjh2ZRZXstvOoXGsxw8UQq+L+NUhBr
+	96t9MHHDrdei0xA0D9N5sRmK/g8dFT7jqvKQSVDi6FEorJzp8WyuIgt1s2W0fE1s
+	/JdBad9iYNIk8qnrqmnBR+377eVd3OTQ4O1SDKx5I1EKiksP6yG6PVNhOskASLQy
+	/HoJJrQYOJgmJrSxw8b3C4OYAGgQdBLtf6uutf3QcnSpakH9Se6gq1fvz8ao3IOR
+	zPYdhQ04aPbXmBZYmAB5YPPtZ91T6g4qo11mc1Rihil4is/PY2qai5Y7gTUUSplk
+	srta5w==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46hvghg3v9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 13 May 2025 13:12:13 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54DDCDRx030092
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 13 May 2025 13:12:13 GMT
+Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 13 May
+ 2025 06:12:08 -0700
+Message-ID: <939d4d07-c055-4e99-9d56-19cb7fdfa1c9@quicinc.com>
+Date: Tue, 13 May 2025 18:42:05 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250422213137.80366-4-danila@jiaxyga.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V4 10/11] scsi: ufs: qcom : Introduce phy_power_on/off
+ wrapper function
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <manivannan.sadhasivam@linaro.org>,
+        <James.Bottomley@HansenPartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <andersson@kernel.org>,
+        <neil.armstrong@linaro.org>
+CC: <quic_rdwivedi@quicinc.com>, <quic_cang@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>
+References: <20250503162440.2954-1-quic_nitirawa@quicinc.com>
+ <20250503162440.2954-11-quic_nitirawa@quicinc.com>
+ <58d913b8-0715-41b0-883a-423f29cb5a8c@oss.qualcomm.com>
+ <be69cd1e-c04c-4976-9be1-390631316d3f@quicinc.com>
+ <4a72ea06-22a8-4f8c-92ad-b5b3afa25b70@oss.qualcomm.com>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <4a72ea06-22a8-4f8c-92ad-b5b3afa25b70@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 0lOilMgDkls3J-Oot3wGBUyIbpmjDo8z
+X-Proofpoint-ORIG-GUID: 0lOilMgDkls3J-Oot3wGBUyIbpmjDo8z
+X-Authority-Analysis: v=2.4 cv=AMDybF65 c=1 sm=1 tr=0 ts=6823452d cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=sYTkcTt2xfybeOqe0B8A:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTEzMDEyNiBTYWx0ZWRfX1VY38sj2SPpZ
+ +AcNE40bOCJ8fUVkzZnmmOnQfwyrn2t9rPNKVyIL0OnI4QhBcpWI3CJr45Ky7gXJilN5DCmm+g7
+ 5vFWp0q2MQt79zE6zwfLP0fo0MtBtMGEo/ScNy9OhsCjXKzp/fOqoR9rYv7AanAxPvEKTR3QKSp
+ GDAS61H0kiqS+/Qm9kNffmOD6Jz6CYMW/2CDleXJJRsEooKHLZHwwKFi1r/3xusmir2CwacX5A2
+ nNMosc3zq5RAl4T9o9nP/qtl+JAHHzGPRz2s+j9JCaC37Orvv/RHs0iaomigckuror5qEs3a1wO
+ myadJkgibOuE+rBvHzFj9bIOC8cV2Ss8CKPk+9ZWVGPrrsBGvVv1WaHgP9Eo4YiJJ6uLwk2weu4
+ 8LxK+mYpTzh8Zb4SdOCZSVbTvK1GWAdVTPS8uLPLZr4oIqbV0lYts3aLNHwEsJeaSTyjKNsV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-13_01,2025-05-09_01,2025-02-21_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 spamscore=0 priorityscore=1501 adultscore=0 impostorscore=0
+ phishscore=0 malwarescore=0 bulkscore=0 lowpriorityscore=0 mlxscore=0
+ mlxlogscore=945 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2504070000
+ definitions=main-2505130126
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250513_061234_114696_D71BB95F 
+X-CRM114-Status: GOOD (  18.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,22 +115,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Danila,
 
-On Wed, Apr 23, 2025 at 12:31:24AM +0300, Danila Tikhonov wrote:
-> Add the SM7150 CCI device string compatible.
+
+On 5/9/2025 5:30 PM, Konrad Dybcio wrote:
+> On 5/9/25 1:49 PM, Nitin Rawat wrote:
+>>
+>>
+>> On 5/9/2025 5:07 PM, Konrad Dybcio wrote:
+>>> On 5/3/25 6:24 PM, Nitin Rawat wrote:
+>>>> Introduce ufs_qcom_phy_power_on and ufs_qcom_phy_power_off wrapper
+>>>> functions with mutex protection to ensure safe usage of is_phy_pwr_on
+>>>> and prevent possible race conditions.
+>>>>
+>>>> Co-developed-by: Can Guo <quic_cang@quicinc.com>
+>>>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+>>>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>>>> ---
+>>>
+>>> The PHY framework does the same thing internally already, this seems
+>>> unnecessary
+>>
+>> Hi Konrad,
+>>
+>> Thanks for the review. There are scenarios where ufshcd_link_startup() can call ufshcd_vops_link_startup_notify() multiple times during retries. This leads to the PHY reference count increasing continuously, preventing proper re-initialization of the PHY.
 > 
-> Signed-off-by: Danila Tikhonov <danila@jiaxyga.com>
+> I'm assuming you're talking about the scenario where it jumps into
+> ufs_qcom_power_up_sequence() - you have a label in there called
+> `out_disable_phy` - add a phy_power_off() after phy_calibrate if
+> things fail and you should be good to go if I'm reading things right.
 
-Acked-by: Andi Shyti <andi.shyti@kernel.org>
+Hi Konrad,
+
+I meant, ufs_qcom_power_up_sequence can be called multiple times from 
+ufshcd_link_startup as part of ufshcd_hba_enable calls for each 
+retries(max retries =3) and each attempt of ufs_qcom_power_up_sequence 
+is success increasing the power_count ref to value more than 1.
+But this is handled using the patch 7bac65687510.
+
+Similiar scenarios can be possible in ufs driver , where there can be 2
+phy_power_on calls which may caused caused phy ref count to be more than 
+1 and this inconsistent behaviour may cause issue.
+
+Hence having is_phy_pwr_on flag can help here.
 
 Thanks,
-Andi
+Nitin
+
+> 
+> Please include something resembling a call stack in the commit message,
+> as currently everyone reviewing this has to make guesses about why this
+> needs to be done
+> 
+> 
+>> Recently, this issue was addressed with patch 7bac65687510 ("scsi: ufs:
+>> qcom: Power off the PHY if it was already powered on in ufs_qcom_power_up_sequence()"). However, I still want to maintain a reference count (ref_cnt) to safeguard against similar conditions in the code. Additionally, this approach helps avoid unnecessary phy_power_on and phy_power_off calls. Please let me know your thoughts.
+> 
+> These unnecessary calls only amount to a couple of jumps and compares,
+> just like your wrappers, as the framework keeps track of the enable
+> count as well
+> 
+> Konrad
+
 
 -- 
 linux-phy mailing list
