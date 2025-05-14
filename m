@@ -4,71 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9DC5C3ABD8
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 22:54:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98EC1C2D0CD
+	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 07:05:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aK2QdMD8hBk+fs05I6f/4sFicQGv1yl4+POec3jka0w=; b=jVKdx/VjKhXawi
-	ey4OWIHApmqyYKBUYsULjYlu7yliBD/sZHkBzP7eWT5Bsv4x8fiNhu4kIPpTnC9dK+MXiyI6O8wOj
-	xmj46CrLYgRHwBG1uWTU7OIsJVIEuITIzf32qKpHSn6B3eSUCFIhZqk8KkZW0kMfwvuAIEnhugHts
-	JQUOUcH/o0jB7Z5O2YFaPPiIifLOhgEbtClJX/g3vhVXMi0UO1ZvAtVIpVeUlRDfnxT/pHy27UNHg
-	ma1x08Ki72dLTC4JXHGbQ60CGwpDxwQTTN8JFshGgVlJxoGVJZyf6vSWHY6GG69uLd6P0uGDLSXMC
-	05puyGF+WZrXdTNb97OA==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=dYkl9GE01Mu6TMuN3fh4Gq5BRMxGNNZ2F9BsWZGuaBg=; b=VhqoPl+2HwULIE
+	RWILJLQPnC128FuCnBocAhwoiMRW50nB37e87f9hL/Ylu8NfqCJcSZWDpDytGB1Amo8EYtRWewsGy
+	Mma2ehfhT80HHfUrP3nDYbdX3AR/TWFZEhWDisbORQaSv/tHhOR6lOuUuENjEX1OANiutIu+cjUj4
+	Hh1FDdxISDD0tm2gW+8pmIrDX17CRu4NW8AoAHS0gIP/NO+mHB0onwwDGwGsPhtuCZshejf0nAG/4
+	tCczSJRn/V5lQYc8NVGyw8FdaeaCSdeL3tZ8Qm0NrLq2ReTGLI1v6qHmPVL9cspEA6XdB+q16igds
+	9TK+ftLUqvRucrKsT04w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFKzA-0000000GXlp-1ufJ;
-	Wed, 14 May 2025 22:54:00 +0000
-Received: from p-west1-cluster2-host12-snip4-1.eps.apple.com ([57.103.64.162] helo=outbound.pv.icloud.com)
+	id 1uFSfC-0000000HDtz-0lk6;
+	Thu, 15 May 2025 07:05:54 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFKz8-0000000GXkf-24I9
+	id 1uFSYN-0000000HD9j-0chx
 	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 22:54:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; bh=sJFhDbHe3RQeCqJjlXBiwTVMs1GtvaYq9fWQt6CNbPM=;
-	h=Message-ID:Date:MIME-Version:Subject:To:From:Content-Type:x-icloud-hme;
-	b=ODmiFydf6raRpLE1epFjZFVOuPSJ58tK3HF/KCJHy4HTEPG5SW3kpskNfIF8u6fv4
-	 dvFeXg9TOkMDBZoaXlnHlnE9AwSBFVZ/xaUpsoyFWTBzvP0i8xXl6/dEseKqDi82Rm
-	 u1w3AdfUZAbpVAONYde1GqCX3ENK8mKSmS2DcdQEx2LG7uNoMb9P7Ue+osxUDUoL7s
-	 jJJ7ZUTITsTsptUhR8psKv9Z/L241nAKcDScl4BDIg2h4t0Jeqm51ESgzwXCfudRkc
-	 8q9+R/g0bUFYOkk/OS8Y9xm09sS1a/B2CKSwarizYJwWcZqlatxUe4wkfDaXiefOZR
-	 BMB4WiDYCpmeQ==
-Received: from outbound.pv.icloud.com (localhost [127.0.0.1])
-	by outbound.pv.icloud.com (Postfix) with ESMTPS id 956F418009A1;
-	Wed, 14 May 2025 22:53:47 +0000 (UTC)
-Received: from [192.168.1.26] (pv-asmtp-me-k8s.p00.prod.me.com [17.56.9.36])
-	by outbound.pv.icloud.com (Postfix) with ESMTPSA id 51A60180026F;
-	Wed, 14 May 2025 22:53:44 +0000 (UTC)
-Message-ID: <ed2be0f8-afb4-437a-9c72-209da9e30b8a@icloud.com>
-Date: Thu, 15 May 2025 06:53:40 +0800
+	Thu, 15 May 2025 06:58:53 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250515065843epoutp02a4fc077e41329ee90df872472612a49c~-oRxaQfYd1530215302epoutp02D
+	for <linux-phy@lists.infradead.org>; Thu, 15 May 2025 06:58:43 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250515065843epoutp02a4fc077e41329ee90df872472612a49c~-oRxaQfYd1530215302epoutp02D
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1747292323;
+	bh=T+tQKDNqFz0vrJcNWHZ7SWfrYWc8+05T1uWtrqP/8gg=;
+	h=From:To:Cc:Subject:Date:References:From;
+	b=gkjnkQNl/C6dvk+3lctfvTFGIxD5XWUnfpc6pxh3C0Ow/CxHtp9r5NDKQfMv6JVwr
+	 7ce5MTucoeqX/qrZxjaJY8WYwMtmZ5kfmwizEN1DFCuGziMdgB/bGykgp2KtAe8p/u
+	 9RZR0axNtI8cntL5J4ZwjsBqLKjPbGrYx7QG6QBM=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
+	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
+	20250515065842epcas5p39299e3e0ccd1f6d0c9085f006a5b8bbe~-oRwyKJUF0043300433epcas5p3C;
+	Thu, 15 May 2025 06:58:42 +0000 (GMT)
+Received: from epcas5p4.samsung.com (unknown [182.195.38.182]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4ZygzP3YH2z6B9m6; Thu, 15 May
+	2025 06:58:41 +0000 (GMT)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250514133841epcas5p1993cdc39779e2e67790c84bdcb95a161~-aFskRMwc1651716517epcas5p1x;
+	Wed, 14 May 2025 13:38:41 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+	epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+	20250514133841epsmtrp182ecc0d6f6db8ee036d95ebc3a602f8e~-aFsjOVMD2249722497epsmtrp1v;
+	Wed, 14 May 2025 13:38:41 +0000 (GMT)
+X-AuditID: b6c32a29-566fe7000000223e-d6-68249ce06e42
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+	epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	77.3C.08766.0EC94286; Wed, 14 May 2025 22:38:40 +0900 (KST)
+Received: from bose.samsungds.net (unknown [107.108.83.9]) by
+	epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20250514133837epsmtip211d9cfffb87f564e51c11db6b8184519~-aFppGDet2568925689epsmtip2B;
+	Wed, 14 May 2025 13:38:37 +0000 (GMT)
+From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
+	andre.draszik@linaro.org, peter.griffin@linaro.org, kauschluss@disroot.org,
+	m.szyprowski@samsung.com, s.nawrocki@samsung.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+	dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+	selvarasu.g@samsung.com, Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Subject: [PATCH 0/2] initial usbdrd phy support for Exynosautov920 soc
+Date: Wed, 14 May 2025 19:18:11 +0530
+Message-Id: <20250514134813.380807-1-pritam.sutar@samsung.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RESEND 0/2] phy: core: Remove 2 APIs
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Zijun Hu <quic_zijuhu@quicinc.com>,
- Jonathan Corbet <corbet@lwn.net>, Alex Shi <alexs@kernel.org>,
- Yanteng Si <si.yanteng@linux.dev>, Kishon Vijay Abraham I <kishon@kernel.org>
-References: <20250414-remove-apis-v1-0-6fddc9a5a16d@quicinc.com>
-Content-Language: en-US
-From: Zijun Hu <zijun_hu@icloud.com>
-In-Reply-To: <20250414-remove-apis-v1-0-6fddc9a5a16d@quicinc.com>
-X-Proofpoint-ORIG-GUID: GUr_ctL5GyTiGhdvRmBU_Vnug1th4iYi
-X-Proofpoint-GUID: GUr_ctL5GyTiGhdvRmBU_Vnug1th4iYi
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-14_04,2025-05-14_03,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=851
- spamscore=0 malwarescore=0 mlxscore=0 clxscore=1015 phishscore=0 adultscore=0
- suspectscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.22.0-2503310001 definitions=main-2505140212
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrHLMWRmVeSWpSXmKPExsWy7bCSvO6DOSoZBu/Omls8mLeNzWLLq80s
+	Fmv2nmOyuLdjGbvF/CPnWC2u3VjIbvHn33k2i6Ot/5ktXs66x2ax6fE1VovLu+awWUxY9Y3F
+	Ysb5fUwWa4/cZbc4/6KL1WLDjH8sFs/urWCz+L9nB7vFl58PmC0Ov2lntTiy/COTxc47J5gd
+	xDxOrtvM5LFpVSebx51re9g8Ni+p9+jbsorR4/MmuQC2KC6blNSczLLUIn27BK6MOXsnsBSc
+	Y63oXdLC1MB4gKWLkZNDQsBE4vKKScxdjFwcQgK7GSXeHm9kg0jISDyatpEVwhaWWPnvOTuI
+	LSTwllFi+TfLLkYODjYBU4mJexJAekUEepgknl79wQbiMAs8YpI4sOULWLOwgJvEybbZzCA2
+	i4CqxKvvTWCDeAXsJDZ+OQy1QF5i/8GzzBBxQYmTM5+AXccMFG/eOpt5AiPfLCSpWUhSCxiZ
+	VjFKphYU56bnFhsWGOallusVJ+YWl+al6yXn525iBEeRluYOxu2rPugdYmTiYDzEKMHBrCTC
+	ez1LOUOINyWxsiq1KD++qDQntfgQozQHi5I4r/iL3hQhgfTEktTs1NSC1CKYLBMHp1QD0/ke
+	SYefVdIWPxzPbfec9p+lQMA17vPV/ff0J/td7I+MXMv3oVb4SEF/1K6wBzmRLIlX+Lk+mHxO
+	fBstcMOiTO3Xntti5wO3ctlfcKjbfS61P9YwSdzqpeSu2ckPXcrSzH+pFqldMOfR/rarQdrs
+	aMpJm++zMjwYfsl/UPNdoTLX9FdG689Lj6+XVy4Omlgx/0T3+XCGGV3G6b7nTY9GporsuLRA
+	n1VcSsZ4ps3fiVuPvBJsnLXg/N3YwDdKr5/KTVC5pqrEtuKMYH9Gn6D6+psTzETeK8t1Jcy/
+	+Fum1kj570rJws5302SSXe+59sZeC+OyEjdKlfmqdUXgSMAz5gWH1p+L7jz0LGrCsXmtSizF
+	GYmGWsxFxYkAvrs9qhEDAAA=
+X-CMS-MailID: 20250514133841epcas5p1993cdc39779e2e67790c84bdcb95a161
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250514133841epcas5p1993cdc39779e2e67790c84bdcb95a161
+References: <CGME20250514133841epcas5p1993cdc39779e2e67790c84bdcb95a161@epcas5p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_155358_538229_A813EEAF 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250514_235851_818161_74BDB893 
+X-CRM114-Status: GOOD (  10.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,32 +118,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025/4/14 19:49, Zijun Hu wrote:
-> This patch series is to remove the following 2 APIs:
-> 
-> devm_of_phy_provider_unregister()
-> devm_phy_destroy()
-> 
-> Both APIs have not had callers for more than 10 years.
-> 
-> Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
-> ---
-> Zijun Hu (2):
->       phy: core: Remove API devm_of_phy_provider_unregister()
->       phy: core: Remove API devm_phy_destroy()
-> 
->  Documentation/driver-api/phy/phy.rst               | 11 ++-----
->  .../translations/zh_CN/driver-api/phy/phy.rst      | 12 ++------
->  drivers/phy/phy-core.c                             | 36 ----------------------
->  include/linux/phy/phy.h                            | 11 -------
->  4 files changed, 6 insertions(+), 64 deletions(-)
+This SoC has a single USB 3.1 DRD combo phy and three USB2.0
+DRD phy controllers that only support the UTMI+ interface. 
+This SoC is very similar to the existing Exynos850 support
+in this driver. We have supported only UTMI+ in this patchset.
 
-Hi Vinod,
+The difference is that combo phy supports both UTMI+(HS) and 
+PIPE3(SS) and is out of scope in this patchset.
 
-Gentle ping you for your awareness since this patch series have pended
-for more than 3 months without no response.
+Pritam Manohar Sutar (2):
+  dt-bindings: phy: samsung,usb3-drd-phy: add dt-schema for
+    ExynosAutov920
+  phy: exyons5-usbdrd: support HS phy for ExynosAutov920
 
+ .../bindings/phy/samsung,usb3-drd-phy.yaml    | 27 ++++++
+ drivers/phy/samsung/phy-exynos5-usbdrd.c      | 85 +++++++++++++++++++
+ 2 files changed, 112 insertions(+)
 
+-- 
+2.34.1
 
 
 -- 
