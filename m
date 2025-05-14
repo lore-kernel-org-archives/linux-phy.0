@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A536C3ABD8
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 17:48:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98EF3C3ABDD
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 17:48:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iH6Cbs/EQAt4TdRT9K3ak+z9V7rUqMJG4W7PdhBUNXw=; b=LnC37kRM7JeeHhGSN2QT+m/xPb
-	yNG9QJA6eHIzt83BdPcv3T1SzKeNm/Z8tK0C7tF61sDoW+7WlBYyjTE5MRAE3joiy2UDUAOJOWkOC
-	Z1/miVSwNfLAV5ng+KlxRfQ69JAWmq09BfumnCVWfkmtX1Jp3reJ+DVkTL+9i99pxZRQW/DQn7kN1
-	6lyVqWHS/rcPVrX15CkWPlOk3vM4pXrJLqDV0ZgL0IKlQlCty8L6VRJ20OptqD6xvcEcYsQ6z92RT
-	tmFVqZqIexZR48CiBBZUj5hXik4xQ4zRjLOKIV5PpnAXTjA0RX7E5Yvkk0lFApz3vFIWkXTByJxyi
-	Uj8U9rpQ==;
+	bh=/a3S7YDJUw5/ZAj7BVmqXS/Y8nFWKf/WUaESBcsP8t0=; b=TTK8Ck9IqwWIjymuOY/HpeDWl3
+	tSkxCRor4VEcTDFrPSpFnW36dj+pzjBeCdHSDkg0vgdFTB0ob3RPJ4bnSXqLfuU2KmV9DS4aJUp/P
+	cABTRPSkTVpy5sgDxT7P1rmVH+W5KmpTtnYHbvGLVmbqkBrUrXOz4usEnDwcXElQnAEEV8OEkezu/
+	4u/xe+B+WjCKcZMgJmB3Hy+k/jrbkXSoDFXMVc+1vEp6gEIzG0Xdq5Mkp2Z59tg94FP4+UU/t4twO
+	he5OhBqqe0GkGNqIq+/EYLPyHe+CptkG/v66zCLXgWRu7haUDuw4diOZkp8O8a0dxKWevlYcukKjz
+	C+L1RvLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFGD2-0000000FwF1-49GD;
-	Wed, 14 May 2025 17:48:01 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1uFGD6-0000000FwJh-38fP;
+	Wed, 14 May 2025 17:48:04 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFF86-0000000FmNM-21Xz
+	id 1uFF9L-0000000Fmah-2cr4
 	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 16:38:51 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-442ccf0e1b3so163125e9.3
-        for <linux-phy@lists.infradead.org>; Wed, 14 May 2025 09:38:49 -0700 (PDT)
+	Wed, 14 May 2025 16:40:08 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-3a1fb18420aso5155122f8f.1
+        for <linux-phy@lists.infradead.org>; Wed, 14 May 2025 09:40:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1747240728; x=1747845528; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1747240806; x=1747845606; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=+dP5YcbeqpFYvCKe+8FnH1GIVDVz3AECYHXjeJJujU4=;
-        b=ZFgMS+/klIZsYkDEXimSWQ+3bHIjuq9OV/yiwAYCz/19YLLnnc+baDYm4SvYp7M8V+
-         TWKry0QoRM8hQVIudnDyzbSV7BpCi1TKraPovlm4uuWuty7NB/0QdMs8x0Fef+pYqDca
-         AJFRA8v0G73c56wDeTAa9BcmcVMrBY8scIrlKXhbjXWSdBVyfFPm2rur3M+Hx28VxiB6
-         dc7AGSo+W/aed0R+zvUVggMd6CCI6eW56jSmGIIXH1AgFuReolO4vgCsKHepgV/CDr/p
-         pEV7OCDmVPosdbKZwbfnpfrCejYoOFT/Ed/pKOtIEQWMyi/zAujU3qV7KdnDKd4sbhLY
-         XA/A==
+        bh=Z8WZ1b2439ywq9jfEuQpDBO1suID2dCRujieJMdn7yE=;
+        b=FKhEtxmjJQmmZYVXdmBexICQ7Obcv3JsQ/NdhFK/G1w20+QlhTAxOjEpQk0NxmMFGV
+         ol0l1Iutx56VBH9xByu0V7aEmrW0g3PUscvBAWNxli1gcc5ZVKTIXPJCpKhNv46Xeqtd
+         7/vSUFAyzWvx4rTbyR9GdZHbOmYA9fe5yB24EIUYj429C9ZYFZDe1YkWdMe4Y+jDp5tO
+         WNYKsey2oJi1mQyZBuJP7jYF26KimXVLQtO+xuJgz5F2BfdR60TXFUTt40CYd6JK81zk
+         P2VSuRKj3BRlUSeMaIarSwJIa2lOzARkYqk67KCnB6eETQzyXFqlW+Gba7htalVp8Krp
+         XdTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747240728; x=1747845528;
+        d=1e100.net; s=20230601; t=1747240806; x=1747845606;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=+dP5YcbeqpFYvCKe+8FnH1GIVDVz3AECYHXjeJJujU4=;
-        b=Xdll5Ke2WQs0QjM8O2sXybq2EiyiqvfEmu1W1W/i7vdl7kx3SK/2o2OQbDrT/HuXCD
-         gVoiO8y+gAxu1LGwqNDE7WWcCsXf90J9sFLJpgmCRrbZkGI7i/W/6QZFuDMspyIpxkNM
-         yl5Y8yzRQt+PZ2NKQMNiiMNWbb73HlF+LJngMTieoM1926X/O5jRNHVuCkgDQz+h6GJM
-         j8/4MatMTZS2HbwoltOJz3/NPJyZLvFvzKYToRpTxhXiwmU80vLYmUCMDxeVLYV5DvN7
-         VCY7SuHWZ4fNPJuVsEtD+nd/AJLBkPLIOi/+cySybgQigfci7Qaox3EYqslxJFDl7dKw
-         WbgQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV+pA46/mp5HbzfFDpGgJk3mWo6lpwhiBKfvB63BoXjv8G5cqSEv6WRVZ9iviWq+WkRmddRm/a4SH4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzvM4E+jQOftQM2krvg9WBLsbCzzEy75+G7+WYh+UmtqJvQm/36
-	TDfXriUyCzHx2xpyH/sibn5NprtH1gzYmnnrTLGJ8u8X4UEa0+8x3/slG/PgGmk=
-X-Gm-Gg: ASbGnctWbZdOuM+h/b1A1gYzeuUAVtmPzSza1ImAasDjtsZJQKUsdvCAgK5r3qenvyR
-	LofypuP3w2hR5C+y06bebLR+zl3U6UhoLHtdXCJ8R+po7hdeHbqewPb5yAc9NKgZKjh5Fvqyp5i
-	xGxtgD9rUFa+w2+NcfCkvDBlg8+rTAy5iER6S1F7FJHtN/o8XHm6Y2sJ77LRZ4OJS1+FDGA3iMt
-	SCO3qqbmpCLO0znOcbF//YAZCv4qfWwxo17v/uzJCCptbgLLF8p+krMhKp/L0+P9zufK2Z0r9SB
-	3peoDfUBRO2Fa4lo37GEw4WS8QRkUBg/NjA1ifGU7GLaUa9KIDEfMEI50A8CAMjmhUiThnYUnMT
-	1z9GDxPJcy3k/
-X-Google-Smtp-Source: AGHT+IEAkwKKEEQ70f0VyhVcMUc6RQxJdEmZDC90di0ICcfqr62LT/lvi+L8lcGRQvc66pK/aI2j2Q==
-X-Received: by 2002:a05:600c:1385:b0:43d:b32:40aa with SMTP id 5b1f17b1804b1-442f20baa06mr44937335e9.3.1747240728450;
-        Wed, 14 May 2025 09:38:48 -0700 (PDT)
+        bh=Z8WZ1b2439ywq9jfEuQpDBO1suID2dCRujieJMdn7yE=;
+        b=ECnkxsvV9Zr6bmB3XwZBFFSle06AxIUEjEbNowXq7m43O5VtlqykaUxOMemj5c/AN4
+         AyXfcgbyNWgs6OB0P+p9G2AqKYzJ7kq5On4ms94isVzNOaeY/rWYHOhG0LVUKenI/TEn
+         ylRq/US4rlIW8nusr+d9LXn6CMP2uUzv+TwbtGc/dWlG/ZuRs9aZGv+caRCI2K1eZikM
+         ndBFz9wTBRq0/bdf4+7EedlwOnrsHlec2T82jIZkD87LCrtho+8jOLePVU+noWTpp4sM
+         CHB2jKInNSC6Y+ZX9reyY4tMqdCkqT1cQNoPiBL+gCK45knCAsvjUCReotiORbMfUfHs
+         c7OQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWv1gMy9n/qT7y3touWPukY3k6iXdoYZPFitDov+QjNFAEoVWxKKGa41yLnM0NICwfCTa2UEFbR68Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw/3oljkn2gqOeZK7NN1qLAoSLEl+0Vh1J/3Ry3QLOGIXd/W6J3
+	EcVRDsxXCOLl/MU2VrnhmIbgurNNCe9pWNS1XEW7fz2YSHBbgsMrosmEcwECfos=
+X-Gm-Gg: ASbGncvDLolbmTE/go5IWKuRMQ1CVGOSO9g3XBbanE+vOSQ+lUNRvGmTvdykXFoIE8q
+	6LlaP0cnyS/I6O41qz31dYQe8pwXGc4JJTpRGW+OofG73y2/EgpLbiTIqjeBc2ar3A60MQrQ+Ou
+	irXbuzpJghQhUa1hbL9zmpHhkuMiuwK+CCQ2tv2bxJ0uTPafZpdthFj5DYUIQp5WLd6uJNRga+3
+	I0po5OuLEsrd8epe8Kaj04aeSorUPUz9X/vTLkiIZipdMYo09efnhqRwpywRsXDRZv/xxSjWew6
+	eEiaIw86baJgx1JzKf2DcaQz4XaLfPyZ8EOkr7TpEHIBeZhb6IwrjhEskKeBguyj25H4xWgXJ3U
+	qEvZ9AbzfTw42Xf6UoHACdaQ=
+X-Google-Smtp-Source: AGHT+IEPbAF4Q3bMuaTmqRM9qQbhF4Gz5x0v56o5JMbzAafCu6BVNra2bXvw9299wzIEP0EieOV7oA==
+X-Received: by 2002:a05:6000:2088:b0:3a1:f5c6:2bd with SMTP id ffacd0b85a97d-3a3496c36d5mr3666848f8f.31.1747240805928;
+        Wed, 14 May 2025 09:40:05 -0700 (PDT)
 Received: from [10.61.1.139] (110.8.30.213.rev.vodafone.pt. [213.30.8.110])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a1f5a4c76dsm20425558f8f.92.2025.05.14.09.38.46
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a1f5a2ce36sm20542941f8f.71.2025.05.14.09.40.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 14 May 2025 09:38:48 -0700 (PDT)
-Message-ID: <8ba99df8-012b-4883-af6a-970dd9f877f6@linaro.org>
-Date: Wed, 14 May 2025 18:38:45 +0200
+        Wed, 14 May 2025 09:40:05 -0700 (PDT)
+Message-ID: <43aac8b0-1fec-4b2a-8046-c26f96ca532e@linaro.org>
+Date: Wed, 14 May 2025 18:40:03 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v2 2/2] arm64: dts: qcom: sa8775p: Remove max link speed
- property for PCIe EP
+Subject: Re: [PATCH v2 1/2] phy: qcom: qmp-pcie: Update PHY settings for
+ SA8775P
 To: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Bjorn Andersson <andersson@kernel.org>,
@@ -89,7 +89,7 @@ Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
  quic_nayiluri@quicinc.com, quic_ramkri@quicinc.com,
  quic_nitegupt@quicinc.com, Mrinmay Sarkar <quic_msarkar@quicinc.com>
 References: <20250514-update_phy-v2-0-d4f319221474@quicinc.com>
- <20250514-update_phy-v2-2-d4f319221474@quicinc.com>
+ <20250514-update_phy-v2-1-d4f319221474@quicinc.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +116,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250514-update_phy-v2-2-d4f319221474@quicinc.com>
+In-Reply-To: <20250514-update_phy-v2-1-d4f319221474@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_093850_528268_DF256749 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20250514_094007_669755_FCE14AEF 
+X-CRM114-Status: GOOD (  11.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,45 +137,37 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi,
+
 On 14/05/2025 13:37, Mrinmay Sarkar wrote:
 > From: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
 > 
-> The maximum link speed was previously restricted to Gen3 due to the
-> absence of Gen4 equalization support in the driver.
+> Make changes to update the PHY settings to align with the latest
+> PCIe PHY Hardware Programming Guide for both PCIe controllers
+> on the SA8775P platform.
 > 
-> Add change to remove max link speed property, Since Gen4 equalization
-> support has already been added into the driver.
-
-Which driver, PHY or Controller ? does this change depends on the patch 1 PHY settings update ?
-
+> Add the ln_shrd region for SA8775P, incorporating new register
+> writes as specified in the updated Hardware Programming Guide.
+> 
+> Update pcs table for QCS8300, since both QCS8300 and SA8775P are
+> closely related and share same pcs settings.
 > 
 > Signed-off-by: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
 > ---
->   arch/arm64/boot/dts/qcom/sa8775p.dtsi | 2 --
->   1 file changed, 2 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-> index 5bd0c03476b143444543c68cd1c1d475c3302555..b001e9a30e863d8964219c8bd61bc328be71b256 100644
-> --- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-> @@ -6462,7 +6462,6 @@ pcie0_ep: pcie-ep@1c00000 {
->   		power-domains = <&gcc PCIE_0_GDSC>;
->   		phys = <&pcie0_phy>;
->   		phy-names = "pciephy";
-> -		max-link-speed = <3>; /* FIXME: Limiting the Gen speed due to stability issues */
->   		num-lanes = <2>;
->   		linux,pci-domain = <0>;
->   
-> @@ -6620,7 +6619,6 @@ pcie1_ep: pcie-ep@1c10000 {
->   		power-domains = <&gcc PCIE_1_GDSC>;
->   		phys = <&pcie1_phy>;
->   		phy-names = "pciephy";
-> -		max-link-speed = <3>; /* FIXME: Limiting the Gen speed due to stability issues */
->   		num-lanes = <4>;
->   		linux,pci-domain = <1>;
->   
-> 
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 89 ++++++++++++----------
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h |  2 +
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-v5_20.h      |  4 +
+>   .../phy/qualcomm/phy-qcom-qmp-qserdes-ln-shrd-v5.h | 11 +++
+>   drivers/phy/qualcomm/phy-qcom-qmp.h                |  1 +
+>   5 files changed, 66 insertions(+), 41 deletions(-
 
+I think the subject should be "Update PHY settings for QCS8300 & SA8775P".
+
+As my comment on patch 2, what's the relationship ? does those PHY settings fix
+the "Gen4 stability issues" or are needed for the Gen4 equalization ?
+
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
