@@ -4,66 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25E46C3ABDE
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:54:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18C31C3ABCC
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:54:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dQYJCPoUDxV66+LcjC/OFPiYukS0CYEy+GCSQDOuTAg=; b=WiaX4Km62jb0fV
-	k9lSbQ/QIqBlqKblG85nHTnBe8zKD3+/IHPNGFzB9Wtrm/o2yPZrEcVrg2VPvYE0gRHsyilsuwU3X
-	uk2FCcZS+aCVVA/lAvQCZSw04rUHPCTjgzuglx4YUknmcdwAIjH04z9PmdO2xcajc9Jy0Py1d2UsF
-	ouofUuZVum5Chc5dLZk/x/aauODDc9EgPhI6ClaJfOk4upE6oHf1HOWZGZLrsWkzDQ8dTHzbi698k
-	L/9rG6+HwDroXU78JrRkMTaXtLaj3voaG6FL3oab4rRNu5VDEwq0n4N0C+shpPfqSEXSMQ4VQezLc
-	DWFSYuF0wbV+hiiVp/jA==;
+	List-Owner; bh=zfR1q2xyqCKxxCoTqRAmclP8WUhtKS+1e9iuKfifn4A=; b=jGUgjX4mLFqDOX
+	I6wjXXPrchBVlUzLtHI/3GW7Xl44iPn8t5t8z7L4AZEyxkAPMJc/1Pi9NWCYT+VYlspS0WpzyV8Nc
+	hW7yfivCx/sqo1/3fV7/CLKwNYnHMUQM7oVqfHruIIcwDoji1zmslkjPD51ntGIWNOy67jLZa/fwV
+	3GR6SjI46mRjMCu1lpE7t+0672I+DNfWOIyFc4RRmUW0CbQ5U04QU6hkajC/Jubd6hn9lN8EZXS7q
+	877pNntB/Ov7KTcgEBtgBlxQAmUhmv2vR50Q66Nd4PUnopaYRE3Uiw4O4qDBNV8jUJXLqb4yCRmAU
+	Omh2CdAdVqm24UOKU1WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCYi-0000000FIeW-2Gpc;
-	Wed, 14 May 2025 13:54:08 +0000
+	id 1uFCYn-0000000FInU-2hYN;
+	Wed, 14 May 2025 13:54:13 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAQs-0000000EuZs-0ypf
-	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 11:37:55 +0000
+	id 1uFAQw-0000000Euao-3gf3;
+	Wed, 14 May 2025 11:37:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id EB4CE4A2AC;
-	Wed, 14 May 2025 11:37:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D4A39C4CEEB;
-	Wed, 14 May 2025 11:37:50 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9DAB744678;
+	Wed, 14 May 2025 11:37:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 767A9C4CEF0;
+	Wed, 14 May 2025 11:37:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747222673;
-	bh=R/MbuxF9Q/H1tecmqJbiAyPjtoLODQkOyXszcxLXrMI=;
+	s=k20201202; t=1747222678;
+	bh=5OwOl0Bj2Q2twGH0ZMeTDbcw2QPkZjXjJHWmhXAwipc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=uuclqcQIK1zA30nOKIaH/32sXQpqaGqEy/3n3KbGds0vfhZSwAyr7BXjqLd4A2KS9
-	 g3UVFK/jiWspQWpPxB62OJYHGseA03C2VLPrQ4KM9zfQfIRHhiQvx5a15Dtz+8KNdA
-	 tDUdMwMGjIxOfkMBu1pIVI7ygZh4EYSIcSppHgBL2FA4x1yIfwDDE7MxRkhSwund00
-	 Uko5gtKVlvq5Q5Z1JwbYnhgQK3GOUAQjLXDblDQNdwICHR0GU3B4NsuVjQh1p38W+1
-	 vFjOhyND5mNWf/R7rgr/GVCogdnMCzxMMpwgZjtVz3PD+25TdVCmhrK4r7ZlPhaKns
-	 l6ADPQA3F7FgQ==
+	b=r0bNqbqlC5JKePKXJVnTj53Jae5ZjZmPeBrZacpIxwF0CYDc8vf0SpIBavb9mdh/u
+	 35gySRlT0LCrghInfjVP+VQeD0dk54kkYaa37CWtAU9KZETXpNelWjbS4eiHwC7/Lv
+	 GfR7TePORiH8Npk+FpmKuwWP+kXvwvWH3CZresGMquBfYdI71XImcigraaIfQROS8g
+	 nzbT6g+zDosTSwr4LfXYBMARRt69PmRRyUlVgN0k62diJ92aNpvaJfReXYsfB1KRmr
+	 ny8LDEp8TOogjo+hLa9UjgCHtb84Ix7e3wkXsVNkpMiUuBVJs0Ztpv+l2OxDM8Hq5A
+	 f0RB++qjCNDug==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Magnus Damm <magnus.damm@gmail.com>, Prabhakar <prabhakar.csengg@gmail.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
- Biju Das <biju.das.jz@bp.renesas.com>, 
- Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20250414145729.343133-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-References: <20250414145729.343133-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH 0/4] Add USB2.0 PHY support for RZ/V2H(P) SoC
-Message-Id: <174722267052.85510.5832087290882468385.b4-ty@kernel.org>
-Date: Wed, 14 May 2025 12:37:50 +0100
+To: kishon@kernel.org, Heiko Stuebner <heiko@sntech.de>
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20250503201512.991277-1-heiko@sntech.de>
+References: <20250503201512.991277-1-heiko@sntech.de>
+Subject: Re: (subset) [PATCH 0/3] usb-phy support for the old rk3036 soc
+Message-Id: <174722267614.85510.13471013929246898806.b4-ty@kernel.org>
+Date: Wed, 14 May 2025 12:37:56 +0100
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_043754_294623_C77CBE04 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20250514_043758_938869_C9E5CE9C 
+X-CRM114-Status: UNSURE (   6.54  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,26 +75,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 14 Apr 2025 15:57:25 +0100, Prabhakar wrote:
-> This patch series introduces support for the USB2.0 PHY on the
-> Renesas RZ/V2H(P) SoC. It includes updates to the device tree
-> bindings and driver implementation.
+On Sat, 03 May 2025 22:15:09 +0200, Heiko Stuebner wrote:
+> While trying to resurrect the rk3036 board in my boardfarm, I also
+> implemented the up to now missing usb2phy support.
 > 
-> Best regards,
-> Prabhakar
+> The implementation is quite similar to the rk3128, except the not-
+> supported charger-detection, so its addition was quite simple.
+> 
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: renesas,usb2-phy: Add clock constraint for RZ/G2L family
-      commit: 31eebeef8cdd4c9bddc9d34053cab6553616d0b7
-[2/4] dt-bindings: phy: renesas,usb2-phy: Document RZ/V2H(P) SoC
-      commit: 9c4fbefc962dd13694b4a5051f432ed435c92220
-[3/4] phy: renesas: phy-rcar-gen3-usb2: Sort compatible entries by SoC part number
-      commit: 9414ceb38a74470249dee69784d6079daa452c3a
-[4/4] phy: renesas: phy-rcar-gen3-usb2: Add USB2.0 PHY support for RZ/V2H(P)
-      commit: 3767474d7497a4d03f58118d02b742b903626d03
+[1/3] dt-bindings: phy: rockchip,inno-usb2phy: add rk3036 compatible
+      commit: d78b565371314e48242cb9383d0f9d331119ab2e
+[2/3] phy: rockchip: inno-usb2: add phy definition for rk3036
+      commit: 3ca48b955bb34a3b07dd915318d73a23740de282
 
 Best regards,
 -- 
