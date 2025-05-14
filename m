@@ -4,107 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3536C3ABCC
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 12:20:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21710C3ABD8
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 12:20:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9N9eLMV/t8kpyCvDRGAm6dp2Wqh2Fxvs2KkmIp4mjZ0=; b=MnAStwBq0BOkEe
-	uKiEweIRjQO1JYN2ldh1d5bWAnsXZSXpaD3TbYTJpLCsBzATUXD4EqWJv+QU4iktBflY9iUL5GUDf
-	oz8v6SHzVJYw8uURJf9+P02vbtgdYNJJ3PNNH4yJjK+6187fqTidJaP6DxuZ2LpRCK7/Em7OO/cvU
-	DuWdgpC2f3eYY2CfNM0z9OB5NhGR1R5VHkfNwLqTCvmVM4FWnAwe9SBT0pB2camTUR4NPeCKOoypW
-	/KGZTVeaI3Al3qwBc+w5OA7a1Lj+ag8JmFc6gbv1tQv1jD9iPad/2lwhWXlLu7IaBkgf5lDPWZTqK
-	QIkxUJszcrHRhiNuXTzw==;
+	List-Owner; bh=zSz4L0n0yinDCB1PsgqVrmuuPaqdySpYAZx07UWz0t0=; b=HsqbChzEMZhdbs
+	yLuRl+2hwdWNje43h1Tbf0YU2LRs388QDqb5m8YhX4jo9YnyCiQXGuSaNd0IXtk0jY6s8uvKN6fdd
+	0Phw99B7wHBAr3DjjEqtZ2ezeOVZtdyJE7hmnXxr4u7jcN/C9bI0sjIx3QYtXvzqAhXbid2ulUL8h
+	gmcJC6HtPomF6TjmEdDRDYoQCy3y/Us25H/g11zlJY/d3jAI9LrkQrl/fhTgGk6SBvp1u8uX0JBtN
+	Jm3gR9icyopZKmqvQoEDi5jgKJ+NHaItC7UAWj4zHcU9mOFIUtajrFjA8OCGw2oiGvH1MpKnLAqA6
+	Yw0DSHAQf1Dza872Cj7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFB5p-0000000F3gY-3tCh;
-	Wed, 14 May 2025 12:20:16 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uFB5w-0000000F3p1-2Jew;
+	Wed, 14 May 2025 12:20:20 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF9JH-0000000EmTe-1GQL
+	id 1uF9N0-0000000EnCb-3CUL
 	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 10:25:59 +0000
+	Wed, 14 May 2025 10:29:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5EEF761126;
-	Wed, 14 May 2025 10:25:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC044C4CEE9;
-	Wed, 14 May 2025 10:25:54 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 12710A4CA6D;
+	Wed, 14 May 2025 10:29:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B2A7C4CEE9;
+	Wed, 14 May 2025 10:29:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747218358;
-	bh=e26ACJaJd+Lb8VHz4EGlqdJKjr9bE0sx5UJsIIUHXrE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=mupcZquTAfWOxZ7NZTtaL/C93N60F+0IdLb9ZOd8V1D4sdelIiVdAIs1dlrbkndbR
-	 NHv/ejTbEVzON3MvAnMXLTdX6Jqgi4UNKA2QKXJlg2DCYKE+6n3prRuhM4kCe9VlQ+
-	 FdqynHRCN747EBR79S38TdVGmrn/q/qgQtfI6Xfy8KwcjOoZuqD+pyT25r50jxvS47
-	 VbMpEujzMrOKa+ew3R/7phuAZZR+kjpmE/xf9DOcpLp+QPuU78t7yD2NJKqio2ofh2
-	 oA0xCBr0ZktbeNlfwHJD0E7zJaTawA7YTuH4Zd5KkHoav0tiIKS4jqRf63W/9zqbNO
-	 1GymqPNI5oT6A==
-Message-ID: <959b9c65-50d7-426d-9c2a-64e143e28ded@kernel.org>
-Date: Wed, 14 May 2025 12:25:52 +0200
+	s=k20201202; t=1747218589;
+	bh=9DmPZ971efXGQoSbgZaCDjUZu9WAx6tuK+LFw/mfEnI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=LtIZTZUBQha6F5BBW5m9aXBtnV/FLZ260n1CUglEcbA1Kj97lgu1tF0+oLC5p1pNv
+	 aW+f1q9DhGbk0h6GxP9kYAIS+YERL+2qANWx2REQ2OdX/U9AcCSPul0C7mHjbQRtG2
+	 LvtLKvyR0QSNAfo/equ76t31y2KSzZPGaQFgKty7SndE++o6EEnih3Q4Wo4GWdaUR2
+	 guCpaOeMWzMCs9q7CjUilyZuiNEqTcq0Cw4MKiHmLhiZElNAca8zihFdfNENzLzlX0
+	 CpkMAiS1oWEq80eVuYRoKoRVHm4+82x9lMDBdqBABOWMnju4hFGQA7h7oOIemgwozc
+	 m/XSOF0/YFP0A==
+Date: Wed, 14 May 2025 11:29:46 +0100
+From: Vinod Koul <vkoul@kernel.org>
+To: Devarsh Thakkar <devarsht@ti.com>
+Cc: kishon@kernel.org, mripard@kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, sakari.ailus@linux.intel.com,
+	u.kleine-koenig@baylibre.com, vigneshr@ti.com,
+	aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com,
+	tomi.valkeinen@ideasonboard.com
+Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
+ O_CMN_READY polling
+Message-ID: <aCRwmohPq5E2RsGC@vaman>
+References: <20250502033451.2291330-1-devarsht@ti.com>
+ <20250502033451.2291330-2-devarsht@ti.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH] dt-bindings: phy: Add Qualcomm MIPI C-/D-PHY schema
- for CSIPHY IPs
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
- Todor Tomov <todor.too@gmail.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>
-Cc: linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20250502033451.2291330-2-devarsht@ti.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250514_032950_940333_0A226122 
+X-CRM114-Status: GOOD (  34.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,135 +77,268 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/05/2025 16:39, Vladimir Zapolskiy wrote:
-> Add dt-binding schema for the CAMSS CSIPHY IPs, which provides
-> MIPI C-/D-PHY interfaces on Qualcomm SoCs.
+On 02-05-25, 09:04, Devarsh Thakkar wrote:
+> PLL lockup and O_CMN_READY assertion can only happen after common state
+> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
+> polling them before the common state machine was enabled. To fix this :
 > 
-> Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+> - Add new function callbacks for polling on PLL lock and O_CMN_READY
+>   assertion.
+> - As state machine and clocks get enabled in power_on callback only, move
+>   the clock related programming part from configure callback to power_on
+>   callback and poll for the PLL lockup and O_CMN_READY assertion after
+>   state machine gets enabled.
+> - The configure callback only saves the PLL configuration received from the
+>   client driver which will be applied later on in power_on callback.
+> - Add checks to ensure configure is called before power_on and state
+>   machine is in disabled state before power_on callback is called.
+> - Disable state machine in power_off so that client driver can
+>   re-configure the PLL by following up a power_off, configure, power_on
+>   sequence.
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
+> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
 > ---
->  .../devicetree/bindings/phy/qcom,csiphy.yaml  | 110 ++++++++++++++++++
->  1 file changed, 110 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
-
-
-Looks like not tested, so limited review follows.
-
-Filename matching compatible.
-
+> V3:
+> - Move out clock programming logic to power_on as PLL polling and enable
+>   can happen only after SSM enable
+> - Disable state machine on power off
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
-> new file mode 100644
-> index 000000000000..ef712c5442ec
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
+> V2: 
+> - Return error code on polling timeout
+> - Moved out calibration logic to separate patch
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 109 +++++++++++++++++++++++++-------
+>  1 file changed, 85 insertions(+), 24 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index ed87a3970f83..a94109a63788 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
+>  	u8 pll_ipdiv;
+>  	u8 pll_opdiv;
+>  	u16 pll_fbdiv;
+> +	u64 hs_clk_rate;
+>  	unsigned int nlanes;
+>  };
+>  
+> @@ -99,6 +100,8 @@ struct cdns_dphy_ops {
+>  	void (*set_pll_cfg)(struct cdns_dphy *dphy,
+>  			    const struct cdns_dphy_cfg *cfg);
+>  	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
+> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
+> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
+>  };
+>  
+>  struct cdns_dphy {
+> @@ -108,6 +111,8 @@ struct cdns_dphy {
+>  	struct clk *pll_ref_clk;
+>  	const struct cdns_dphy_ops *ops;
+>  	struct phy *phy;
+> +	bool is_configured;
+> +	bool is_powered;
+>  };
+>  
+>  /* Order of bands is important since the index is the band number. */
+> @@ -191,6 +196,26 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  	return dphy->ops->get_wakeup_time_ns(dphy);
+>  }
+>  
+> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_pll_lock)
+> +		ret = dphy->ops->wait_for_pll_lock(dphy);
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_cmn_ready)
+> +		ret = dphy->ops->wait_for_cmn_ready(dphy);
+> +
+> +	return ret;
 
-Please post the driver or any other user. Or explain why this is RFC or
-what you expect here from us.
+We can drop ret from both, also it is called only once, so maybe open
+code this one line?
 
+> +}
+> +
+>  static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  {
+>  	/* Default wakeup time is 800 ns (in a simulated environment). */
+> @@ -232,7 +257,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>  					const struct cdns_dphy_cfg *cfg)
+>  {
+> -	u32 status;
+>  
+>  	/*
+>  	 * set the PWM and PLL Byteclk divider settings to recommended values
+> @@ -249,13 +273,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>  
+>  	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
+>  	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
+> -			   POLL_TIMEOUT_US);
+>  }
+>  
+>  static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+> @@ -263,6 +280,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+>  	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
+>  }
+>  
+> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
+> +}
+> +
+> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
+> +			       POLL_TIMEOUT_US);
+> +}
+> +
+>  /*
+>   * This is the reference implementation of DPHY hooks. Specific integration of
+>   * this IP may have to re-implement some of them depending on how they decided
+> @@ -278,6 +312,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
+>  	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
+>  	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
+>  	.set_psm_div = cdns_dphy_j721e_set_psm_div,
+> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
+> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
+>  };
+>  
+>  static int cdns_dphy_config_from_opts(struct phy *phy,
+> @@ -298,6 +334,7 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+>  		return ret;
+>  
+>  	opts->wakeup = cdns_dphy_get_wakeup_time_ns(dphy) / 1000;
+> +	cfg->hs_clk_rate = opts->hs_clk_rate;
+>  
+>  	return 0;
+>  }
+> @@ -334,13 +371,23 @@ static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>  static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -	struct cdns_dphy_cfg cfg = { 0 };
+> -	int ret, band_ctrl;
+> -	unsigned int reg;
+> +	int ret = 0;
 
-> @@ -0,0 +1,110 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,csiphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm CSI PHY
+Superfluous init
 
-SM8250 ?
+>  
+> -	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
+> -	if (ret)
+> -		return ret;
+> +	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &dphy->cfg);
+> +	if (!ret)
+> +		dphy->is_configured = true;
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_power_on(struct phy *phy)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret = 0, band_ctrl;
+> +	u32 reg;
+> +
+> +	if (!dphy->is_configured || dphy->is_powered)
+> +		return -EINVAL;
+>  
+>  	/*
+>  	 * Configure the internal PSM clk divider so that the DPHY has a
+> @@ -363,9 +410,9 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  	 * Configure the DPHY PLL that will be used to generate the TX byte
+>  	 * clk.
+>  	 */
+> -	cdns_dphy_set_pll_cfg(dphy, &cfg);
+> +	cdns_dphy_set_pll_cfg(dphy, &dphy->cfg);
+>  
+> -	band_ctrl = cdns_dphy_tx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
+> +	band_ctrl = cdns_dphy_tx_get_band_ctrl(dphy->cfg.hs_clk_rate);
+>  	if (band_ctrl < 0)
+>  		return band_ctrl;
+>  
+> @@ -373,19 +420,26 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
+>  	writel(reg, dphy->regs + DPHY_BAND_CFG);
+>  
+> -	return 0;
+> -}
+> +	/* Start TX state machine. */
+> +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+> +	       dphy->regs + DPHY_CMN_SSM);
+>  
+> -static int cdns_dphy_power_on(struct phy *phy)
+> -{
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	ret = cdns_dphy_wait_for_pll_lock(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "Failed to lock PLL with err %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = cdns_dphy_wait_for_cmn_ready(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "O_CMN_READY signal failed to assert with err %d\n", ret);
+> +		return ret;
+> +	}
+>  
+>  	clk_prepare_enable(dphy->psm_clk);
+>  	clk_prepare_enable(dphy->pll_ref_clk);
+>  
+> -	/* Start TX state machine. */
+> -	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+> -	       dphy->regs + DPHY_CMN_SSM);
+> +	dphy->is_powered = true;
+>  
+>  	return 0;
+>  }
+> @@ -393,10 +447,17 @@ static int cdns_dphy_power_on(struct phy *phy)
+>  static int cdns_dphy_power_off(struct phy *phy)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	u32 reg;
+>  
+>  	clk_disable_unprepare(dphy->pll_ref_clk);
+>  	clk_disable_unprepare(dphy->psm_clk);
+>  
+> +	/* Stop TX state machine. */
+> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
+> +	writel(reg & ~DPHY_CMN_SSM_EN, dphy->regs + DPHY_CMN_SSM);
+> +
+> +	dphy->is_powered = false;
+> +
+>  	return 0;
+>  }
+>  
+> -- 
+> 2.39.1
 
-> +
-> +maintainers:
-> +  - Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-> +
-> +description: |
-
-Do not need '|' unless you need to preserve formatting.
-
-> +  Qualcomm SoCs equipped with a number of MIPI CSI PHY IPs, which
-> +  supports D-PHY or C-PHY interfaces to camera sensors.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - qcom,sm8250-csiphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 2
-
-Need to list the items instead
-
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  vdda-csi-0p9-supply:
-> +    description: Voltage supply, 0.9V
-> +
-> +  vdda-csi-1p2-supply:
-> +    description: Voltage supply, 1.2V
-> +
-> +  '#phy-cells':
-> +    const: 0
-> +
-> +  port:
-> +    $ref: /schemas/graph.yaml#/$defs/port-base
-> +    description: CAMSS CSIPHY input port
-> +
-> +    patternProperties:
-> +      "^endpoint@[0-1]$":
-
-Keep consistent quotes, either " or '
-
-> +        $ref: /schemas/media/video-interfaces.yaml#
-> +        unevaluatedProperties: false
-> +
-> +        properties:
-> +          data-lanes:
-> +            minItems: 1
-> +            maxItems: 4
-> +
-> +          bus-type:
-> +            enum:
-> +              - 1 # MEDIA_BUS_TYPE_CSI2_CPHY
-> +              - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
-> +
-> +        required:
-> +          - data-lanes
-> +
-> +    oneOf:
-> +      - required:
-> +          - endpoint
-> +      - required:
-> +          - endpoint@0
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - interrupts
-> +  - '#phy-cells'
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,sm8250-csiphy
-> +    then:
-> +      required:
-> +        - vdda-csi-0p9-supply
-> +        - vdda-csi-1p2-supply
-
-This makes no sense - it is only sm8250 - so this if is always true.
-
-
-Best regards,
-Krzysztof
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
