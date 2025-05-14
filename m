@@ -4,62 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58472C3ABCC
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 14:04:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D04EDC3ABCC
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 15:04:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FN1BqBYRvXNmBvnDZmAmqYH/ncs1JV5gP9zWFEY2IhQ=; b=emiAwXTMPId5Bo
-	IqVspgxQJ9zlOJ1BduDJTL+u4+lycUjYYdq6d+IPKP/lNn/BdIcHwOleOA6+3RNpYaMCqhb2Vq7zX
-	RMQ+eXe7O4NxfqqlGyem6OW0BXPivxJVYF8RgEBxtxuEoQKOAIicPEpqtbGTIwN99Zn8Y2998+H75
-	4LeBXmEKRSQEp/fa47/Ggb7H+c3Mk5K8RAml3lsRJBTCW291UQrwj4D09UAFLVjg3tNIayfihd8Va
-	7uZUrow/zxV/aeA5jBWA12VFCOZlO6ebgpy95ItnRG+z0atWu2pa2mmUGibdY8VzW9UOKXQpVW2Ha
-	PjOmYHvBGnvort0vsIgQ==;
+	List-Owner; bh=Q1ULwufXgE5pkXBsJTMGmdVyGX3HP9qXNneFIO6kNPY=; b=wKq5fMBOeEIplJ
+	2owCsSGVclOXrKFP2rd+Or0N+31qTSNKipgGWxxKQgOMHpfNdUuY7PhyaUxzqK0nMwmvnUi+WYfg5
+	9f+gBU3Ckg19U9X+OqA6fusJIimSRzgv9nP3jvK+BAvbPcbEmLyI+jFpT8QoDmBUtBS5uMQyj0ZY8
+	mEG/b9cL4NfwYectgaXSBemuN/5QvdJykKs6Y05/X5OEyjiFrz9ceCoiehZD1VL+iiEAe8xhBLUrx
+	7IzTJLT53LT8Y6KyLUX0fRL5J3ytIjiVicDmG8MAptMcv3RaJpjan23In7dfWqLYAowVVnavnMLcV
+	/5OLaECZUnL3ZbnfF37w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCiV-0000000FMGa-0U4v;
-	Wed, 14 May 2025 14:04:15 +0000
-Received: from mail-m49197.qiye.163.com ([45.254.49.197])
+	id 1uFDeZ-0000000FVJ2-1uir;
+	Wed, 14 May 2025 15:04:15 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAmp-0000000ExrK-49HT;
-	Wed, 14 May 2025 12:00:37 +0000
-Received: from [198.18.0.1] (gy-adaptive-ssl-proxy-1-entmail-virt204.gy.ntes [27.18.99.44])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 150636c0b;
-	Wed, 14 May 2025 20:00:28 +0800 (GMT+08:00)
-Message-ID: <95e8f8fd-d7ea-4d78-a794-72f73a3e19f3@whut.edu.cn>
-Date: Wed, 14 May 2025 20:00:28 +0800
+	id 1uFAQo-0000000EuYo-3Bzx;
+	Wed, 14 May 2025 11:37:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7967244731;
+	Wed, 14 May 2025 11:37:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 659AAC4CEF7;
+	Wed, 14 May 2025 11:37:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747222670;
+	bh=0F01DWP26YYgS1PPdTSuMQtQtJxshmUQ6mSt4A+utgY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=BRQnb8WftKdlkP5oGSf5HoMasCRIMWeAvcu3TQDmCOC3I9ljErJZ6RTN1Tqu4i+Vs
+	 i4F2roBZZ+D9qHJGbxdxmzsmC6KD7WYptbl8TWIeHpqeoc2EH4X4yhvuyHbGOY0pj5
+	 +ILAZpFMrQ1kulgAj/8Dd+0RSQhCSyMG2OFC+fZkuKpqOh8LJQ+zc677t773QaoniU
+	 WQEO0JRWkvSUBF1O+IMYIGYw8py4zu3KxAVkyos+kgAljVYff/qYTcfUIZWwRkuJWs
+	 V4bR6U3I2USosOjHLPK/CMWSPfIcna51PUKDvLFc4SjA/bKbUbwHN+8B3mEq87Fn7L
+	 iZJmK7OEQWd2A==
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20250504144527.1723980-1-ivo.ivanov.ivanov1@gmail.com>
+References: <20250504144527.1723980-1-ivo.ivanov.ivanov1@gmail.com>
+Subject: Re: [PATCH v5 00/10] phy: samsung: add Exynos2200 SNPS eUSB2
+ driver
+Message-Id: <174722266707.85510.6309026442043319817.b4-ty@kernel.org>
+Date: Wed, 14 May 2025 12:37:47 +0100
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 4/4] phy: spacemit: add USB3 support for K1 PCIe/USB3
- combo PHY
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring
- <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-riscv@lists.infradead.org,
- spacemit@lists.linux.dev, linux-kernel@vger.kernel.org
-References: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
- <20250418-b4-k1-usb3-phy-v2-v2-4-b69e02da84eb@whut.edu.cn>
- <aCRaAEJSphC7uWY0@vaman>
-Content-Language: en-US
-From: Ze Huang <huangze@whut.edu.cn>
-In-Reply-To: <aCRaAEJSphC7uWY0@vaman>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCH0tJVkhDGUIaSEIaSh0ZGVYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJTFVKQ1VCQlVPT1lXWRYaDxIVHRRZQVlPS0hVSktISUxCS1VKS0tVSkJLS1
-	kG
-X-HM-Tid: 0a96ceaae7d903a1kunm150636c0b
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NCo6Thw5CTEzPj4YTikiSTAq
-	LywKCS1VSlVKTE9MSUlPS0hITUNDVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VCQlVPT1lXWQgBWUFIQ01JNwY+
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_050036_197929_ED45805B 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20250514_043750_824604_E4D7FF13 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,112 +75,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/14/25 4:53 PM, Vinod Koul wrote:
-> On 18-04-25, 21:19, Ze Huang wrote:
->> Add support for USB 3.0 mode on the K1 PCIe/USB3 combo PHY. Currently,
->> only USB mode is supported; PCIe support is not included in this change.
->>
->> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
->> ---
-...
->> +#define COMBPHY_USB_LFPS_REG		0x58
->> +#define  COMBPHY_USB_LFPS_MASK		0x700
->> +#define  COMBPHY_USB_LFPS_THRES_DEFAULT	0x03
-> Same comment as other patch
 
->> +
->> +#define COMBPHY_MODE_SEL	BIT(3)
->> +#define COMBPHY_WAIT_TIMEOUT	1000
->> +
->> +struct spacemit_combphy_priv {
->> +	struct device *dev;
->> +	struct phy *phy;
->> +	struct reset_control *phy_rst;
->> +	void __iomem *phy_ctrl;
->> +	void __iomem *phy_sel;
->> +	bool rx_always_on;
->> +	u8 lfps_threshold;
->> +	u8 type;
->> +};
->> +
->> +static void spacemit_reg_update(void __iomem *reg, u32 offset, u32 mask, u32 val)
->> +{
->> +	u32 tmp;
->> +
->> +	tmp = readl(reg + offset);
->> +	tmp = (tmp & ~(mask)) | val;
->> +	writel(tmp, reg + offset);
->> +}
->> +
->> +static int spacemit_combphy_wait_ready(struct spacemit_combphy_priv *priv,
->> +				       u32 offset, u32 mask, u32 val)
->> +{
->> +	u32 reg_val;
->> +	int ret = 0;
-> Superfluous init, drop it pls
+On Sun, 04 May 2025 17:45:17 +0300, Ivaylo Ivanov wrote:
+> Hey folks,
+> 
+> This patchset adds Exynos2200 support to the existing eUSB2 phy driver,
+> as well as USBDRD support for that SoC.
+> 
+> The SoC features the same (as far as I can tell from comparing code)
+> USBDRD 3.2 4nm block that Exynos2400 has, hence the common denominator.
+> It consists of a SEC USB link controller, Synopsys eUSB2 and Synopsys
+> USBDP combophy, which are independent underlying hardware blocks of
+> the USBDRD controller.
+> 
+> [...]
 
-OK
+Applied, thanks!
 
->
->> +
->> +	ret = read_poll_timeout(readl, reg_val, (reg_val & mask) == val,
->> +				1000, COMBPHY_WAIT_TIMEOUT * 1000, false,
->> +				priv->phy_ctrl + offset);
->> +
->> +	return ret;
-> why use local variable?
+[01/10] dt-bindings: phy: add exynos2200 eusb2 phy support
+        commit: 59cf7546079e3d08d105369c48f8834970290082
+[02/10] dt-bindings: phy: samsung,usb3-drd-phy: add exynos2200 support
+        commit: e4c9a7b475e5d0d9b2440ee48f91d1364eabd6cb
+[03/10] phy: move phy-qcom-snps-eusb2 out of its vendor sub-directory
+        commit: 8d3b5f6375466ffcd2cd98a0c84d31295470fe9d
+[04/10] phy: phy-snps-eusb2: refactor constructs names
+        commit: 93dbe9b5b3a265c7e5466c7b6ada439b01577de5
+[05/10] phy: phy-snps-eusb2: split phy init code
+        commit: 3983b4e9746da1b6091f1d9083f44ed3f12717cb
+[06/10] phy: phy-snps-eusb2: make repeater optional
+        commit: d460be705ae599c0cbfc1ee4ba6a41b225525609
+[07/10] phy: phy-snps-eusb2: make reset control optional
+        commit: aba7a966b50d11deeb3e2f1a66182d150eeb7843
+[08/10] phy: phy-snps-eusb2: refactor reference clock init
+        commit: e36a5d1ecc5f2bda92e4f954f41d65d1ddd5728e
+[09/10] phy: phy-snps-eusb2: add support for exynos2200
+        commit: c4098f3e6134e79e070ec44c58976e1f00d9bfad
+[10/10] phy: exynos5-usbdrd: support Exynos USBDRD 3.2 4nm controller
+        commit: cc52a697f87e8b2d88298827aca3f81398385572
 
-Will drop it.
+Best regards,
+-- 
+~Vinod
 
->
->> +}
->> +
->> +static int spacemit_combphy_set_mode(struct spacemit_combphy_priv *priv)
->> +{
->> +	int ret = 0;
->> +
->> +	switch (priv->type) {
->> +	case PHY_TYPE_USB3:
->> +		spacemit_reg_update(priv->phy_sel, 0, 0, COMBPHY_MODE_SEL);
->> +		break;
->> +	default:
->> +		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
->> +		ret = -EINVAL;
->> +		break;
->> +	}
->> +
->> +	return ret;
->> +}
-...
->> +static const struct of_device_id spacemit_combphy_of_match[] = {
->> +	{ .compatible = "spacemit,k1-combphy", },
->> +	{ /* sentinel */ }
->> +};
->> +MODULE_DEVICE_TABLE(of, spacemit_combphy_of_match);
->> +
->> +static struct platform_driver spacemit_combphy_driver = {
->> +	.probe	= spacemit_combphy_probe,
->> +	.driver = {
->> +		.name = "spacemit-k1-combphy",
->> +		.of_match_table = spacemit_combphy_of_match,
->> +	},
->> +};
->> +module_platform_driver(spacemit_combphy_driver);
->> +
->> +MODULE_DESCRIPTION("Spacemit PCIE/USB3.0 COMBO PHY driver");
->> +MODULE_LICENSE("GPL");
-> Could this be single driver with different init register sequences?
-
-Yes, on K1 SoC, the USB3 and PCIe Port A share the same COMBO PHY hardware.
-
-PHY can be initialized for PCIe as well via a different init sequence.
-In the future, we can extend the driver to support both modes based on 
-the DT property.
 
 
 -- 
