@@ -4,60 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18C31C3ABCC
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:54:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAB9FC3ABDE
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:54:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zfR1q2xyqCKxxCoTqRAmclP8WUhtKS+1e9iuKfifn4A=; b=jGUgjX4mLFqDOX
-	I6wjXXPrchBVlUzLtHI/3GW7Xl44iPn8t5t8z7L4AZEyxkAPMJc/1Pi9NWCYT+VYlspS0WpzyV8Nc
-	hW7yfivCx/sqo1/3fV7/CLKwNYnHMUQM7oVqfHruIIcwDoji1zmslkjPD51ntGIWNOy67jLZa/fwV
-	3GR6SjI46mRjMCu1lpE7t+0672I+DNfWOIyFc4RRmUW0CbQ5U04QU6hkajC/Jubd6hn9lN8EZXS7q
-	877pNntB/Ov7KTcgEBtgBlxQAmUhmv2vR50Q66Nd4PUnopaYRE3Uiw4O4qDBNV8jUJXLqb4yCRmAU
-	Omh2CdAdVqm24UOKU1WQ==;
+	List-Owner; bh=gs/gJYLhI/wz68ZFPJIgSbxDKFEKY/N99GRQJYILCek=; b=hU/JrxcpUz8Yru
+	UZ8NOUpZFTbaqWMw/33hiXzcZRit1cmQZ/zyI2IIzjMy1NbH6yNqqsheFa7/9IjS2tBFxt9zIgmES
+	TGM0Om6TuAtzC9YxVo2dtvlqUMwRuClTAKfe8XgYB+uj05TeACk1DHMwN+rsslVjmzRVDk4yxXsWI
+	jpXi9S2T+clUR+kcarUI+gYhtLwBccf5iVMoz7PkSpvcTRQWI2UyhyaRYgQQs5l0TZdq2FZCdOJI3
+	9fd6NBjwUtmU0wxpvBAaI0yrpsHpgGaGpcYQ6h8LM93wJqgtiWtpXOHoWgHmRB1YzdRe3KryHDmwS
+	JYM4DoDy5bc+WYJe01JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCYn-0000000FInU-2hYN;
-	Wed, 14 May 2025 13:54:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uFCZN-0000000FJp6-1dYL;
+	Wed, 14 May 2025 13:54:49 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAQw-0000000Euao-3gf3;
-	Wed, 14 May 2025 11:37:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9DAB744678;
-	Wed, 14 May 2025 11:37:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 767A9C4CEF0;
-	Wed, 14 May 2025 11:37:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747222678;
-	bh=5OwOl0Bj2Q2twGH0ZMeTDbcw2QPkZjXjJHWmhXAwipc=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=r0bNqbqlC5JKePKXJVnTj53Jae5ZjZmPeBrZacpIxwF0CYDc8vf0SpIBavb9mdh/u
-	 35gySRlT0LCrghInfjVP+VQeD0dk54kkYaa37CWtAU9KZETXpNelWjbS4eiHwC7/Lv
-	 GfR7TePORiH8Npk+FpmKuwWP+kXvwvWH3CZresGMquBfYdI71XImcigraaIfQROS8g
-	 nzbT6g+zDosTSwr4LfXYBMARRt69PmRRyUlVgN0k62diJ92aNpvaJfReXYsfB1KRmr
-	 ny8LDEp8TOogjo+hLa9UjgCHtb84Ix7e3wkXsVNkpMiUuBVJs0Ztpv+l2OxDM8Hq5A
-	 f0RB++qjCNDug==
-From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, Heiko Stuebner <heiko@sntech.de>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20250503201512.991277-1-heiko@sntech.de>
-References: <20250503201512.991277-1-heiko@sntech.de>
-Subject: Re: (subset) [PATCH 0/3] usb-phy support for the old rk3036 soc
-Message-Id: <174722267614.85510.13471013929246898806.b4-ty@kernel.org>
-Date: Wed, 14 May 2025 12:37:56 +0100
+	id 1uFBp9-0000000F9z9-2s0S
+	for linux-phy@lists.infradead.org;
+	Wed, 14 May 2025 13:07:05 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uFBos-0005kf-Gu; Wed, 14 May 2025 15:06:46 +0200
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uFBop-002iQl-34;
+	Wed, 14 May 2025 15:06:44 +0200
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uFBoq-000Bls-10;
+	Wed, 14 May 2025 15:06:44 +0200
+Message-ID: <0197d176fa7a6498bdc138dca6ba881648a7e30d.camel@pengutronix.de>
+Subject: Re: [PATCH v2 4/4] phy: spacemit: add USB3 support for K1 PCIe/USB3
+ combo PHY
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor Dooley
+ <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
+	linux-kernel@vger.kernel.org
+Date: Wed, 14 May 2025 15:06:44 +0200
+In-Reply-To: <20250418-b4-k1-usb3-phy-v2-v2-4-b69e02da84eb@whut.edu.cn>
+References: <20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn>
+	 <20250418-b4-k1-usb3-phy-v2-v2-4-b69e02da84eb@whut.edu.cn>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_043758_938869_C9E5CE9C 
-X-CRM114-Status: UNSURE (   6.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250514_060703_718966_CBC574DB 
+X-CRM114-Status: GOOD (  14.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,29 +82,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Sat, 03 May 2025 22:15:09 +0200, Heiko Stuebner wrote:
-> While trying to resurrect the rk3036 board in my boardfarm, I also
-> implemented the up to now missing usb2phy support.
+On Fr, 2025-04-18 at 21:19 +0800, Ze Huang wrote:
+> Add support for USB 3.0 mode on the K1 PCIe/USB3 combo PHY. Currently,
+> only USB mode is supported; PCIe support is not included in this change.
 > 
-> The implementation is quite similar to the rk3128, except the not-
-> supported charger-detection, so its addition was quite simple.
+> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+> ---
+>  drivers/phy/spacemit/Kconfig          |   8 ++
+>  drivers/phy/spacemit/Makefile         |   1 +
+>  drivers/phy/spacemit/phy-k1-combphy.c | 251 ++++++++++++++++++++++++++++++++++
+>  3 files changed, 260 insertions(+)
 > 
-> 
-> [...]
+[...]
+> diff --git a/drivers/phy/spacemit/phy-k1-combphy.c b/drivers/phy/spacemit/phy-k1-combphy.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..a291b7a78fae2f4072b74c1d2cc65847ed821bec
+> --- /dev/null
+> +++ b/drivers/phy/spacemit/phy-k1-combphy.c
+> @@ -0,0 +1,251 @@
+[...]
+> +static int spacemit_combphy_probe(struct platform_device *pdev)
+> +{
+> +	struct spacemit_combphy_priv *priv;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->phy_ctrl = devm_platform_ioremap_resource_byname(pdev, "ctrl");
+> +	if (IS_ERR(priv->phy_ctrl))
+> +		return PTR_ERR(priv->phy_ctrl);
+> +
+> +	priv->phy_sel = devm_platform_ioremap_resource_byname(pdev, "sel");
+> +	if (IS_ERR(priv->phy_sel))
+> +		return PTR_ERR(priv->phy_sel);
+> +
+> +	priv->lfps_threshold = COMBPHY_USB_LFPS_THRES_DEFAULT;
+> +	device_property_read_u8(&pdev->dev, "spacemit,lfps-threshold", &priv->lfps_threshold);
+> +
+> +	priv->rx_always_on = device_property_read_bool(&pdev->dev, "spacemit,rx-always-on");
+> +	priv->type = PHY_NONE;
+> +	priv->dev = dev;
+> +
+> +	priv->phy_rst = devm_reset_control_get(dev, NULL);
 
-Applied, thanks!
+Please use devm_reset_control_get_exclusive() directly.
 
-[1/3] dt-bindings: phy: rockchip,inno-usb2phy: add rk3036 compatible
-      commit: d78b565371314e48242cb9383d0f9d331119ab2e
-[2/3] phy: rockchip: inno-usb2: add phy definition for rk3036
-      commit: 3ca48b955bb34a3b07dd915318d73a23740de282
-
-Best regards,
--- 
-~Vinod
-
-
+regards
+Philipp
 
 -- 
 linux-phy mailing list
