@@ -4,68 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99F03C3ABDA
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 08:50:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8C26C3ABDA
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 09:28:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UQa2+a6lNmEMSIbecTO3PUFe9WqMgGMDRQo0knO+bFA=; b=VTZ8mE+BgHkx3V
-	nTCnfHIaoi8Mzgzd8yV+EOqfE3VM/wcND0vWDQP1blagm49EQFLiYMJKZmvwvRmK0JzsicYvDMM4F
-	BYEckdQ+j0MIMOnqsUT855c9oPalI0y7kplE2lxbKe5OSk0Hx4k79uYcD3/4Vdc/ifPqtDDv5YnF4
-	O6nmwY4W/cPmGKkyJqiWgfn2jlHQKR+s3488hfaU+37HR6YF2Ls9MkCECmox+Cf3Z3xUgRLNq63tn
-	o9q8W0OIg/8g1hxUbLGU1I+mbial0JU0lRjR1M81qTiZbLSPUOMvJpmUOZ3JE8gOwByXJOlVb+/qq
-	SNSuJzbmXtRaSqo1pkLw==;
+	List-Owner; bh=+vkDXAY2vx8OeMK5RqejM0wUn3qR9f7vbDy0hbWfJVc=; b=3oItINu+NRpCKV
+	qRBv7tlkmvwwipfb6G2YBTHsYFizLJwNxW2Ex9kq6S43VyS5XGSL7EJ+wih3gVXPVriTErauyj7LU
+	dbfj8sEAsCA1pAO20GoUYOESg9plBEvlHohwxXFspQDzNev3fwgDRIEY5KhejkxnOLAgpmVwZGmsS
+	Vc6omWHtGBNgeRT0ig61SG/K10/rs5I3aEX9w3g/QoMMT+SjPsT7GJg+CIKKVqtHXzREPgYiWEFpd
+	iVyNt5y8TM4zgVsj5MX2f0yfJNzUUXmy/erEuy4F+qZDZKW1kwkBrtJhJkfYSJBwjKueOciSoZNcW
+	HXRToN26HU4yXcrCsuBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF7ov-0000000EZ5H-1WmV;
-	Wed, 14 May 2025 08:50:33 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uF8PH-0000000EfSe-1PCK;
+	Wed, 14 May 2025 09:28:07 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF7Ih-0000000ET21-0V4X
-	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 08:17:16 +0000
+	id 1uF7Yh-0000000EVxG-3UZY;
+	Wed, 14 May 2025 08:33:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C79FE5C582D;
-	Wed, 14 May 2025 08:14:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 47568C4CEE9;
-	Wed, 14 May 2025 08:17:13 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0A8C5A4AAFA;
+	Wed, 14 May 2025 08:33:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 175A2C4CEE9;
+	Wed, 14 May 2025 08:33:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747210633;
-	bh=JE7c7dHTC0wr4G3gxjd9IM4XsXNvb/SXQbeYFeLqSs8=;
+	s=k20201202; t=1747211626;
+	bh=AQgavCoFrn3p4kZpEsuTDbl2iBlKZHyz8RjR4wpvqDk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=amf7OeNo0hIwVItoRs3D9pZfvv9/aE2gKUXY+sSCakfmnnMKSE7QkJzfGSZgK89vD
-	 9HTOpwes1qZbonfw+mN4XCi7B9j/CveB4Gz/M+wmhbPfB6Kf5YXSJQkvngeqzpPDlf
-	 UYL4RBhVA2XKajMojcEMOTNYPPagj5UNxTB9em1FJJ0RkqqB21wno070xuJnccboM7
-	 aOS0fq2sFCoiDvh5uWEWNNU6QoMmdcR+A2YyfV0GQYR8buSUxHyR54rWTsKXd+GrH1
-	 ckb0yNNDyY82Ig0zHX1PJJ8pPN25IIUjK/z8NdVfAJ/a4VZOgBytgynVCTEhkXk07b
-	 WrVAXfXpG3BVw==
-Date: Wed, 14 May 2025 09:17:11 +0100
+	b=H6ojRjkBJnyhqb+fdGrlVbRl1CkZXo09J3lhjAkNtgbF2/3sDyisvQtaep8xxk1pW
+	 ql5we5PXROfoE98FkW1DiiOwAIzJo1305qx3HV1/ni1jCVKotrsYUv7l/0/2WC3lBW
+	 mvxVJ/sJGB05lrGoZ+Q+Iuq8NtBiIkOUoE0wdLdRx8KAXNuiA4IfkUgykcaPqKSiuE
+	 q6kj2RiFfrc6c+i/EbqPqCopFiQ4d9/z5Dpnd/3XErvvNwCs8mgtsDX0vQyuxA/Uii
+	 MapWBnhHlxRj22z4I5qLxoax3VfHiEc7ewatwW0LljFq6vymzZbP8Gjnz5aBmuBn7A
+	 0raE+KVU2WzDg==
+Date: Wed, 14 May 2025 09:33:44 +0100
 From: Vinod Koul <vkoul@kernel.org>
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Wesley Cheng <quic_wcheng@quicinc.com>
+Cc: Melody Olvera <melody.olvera@oss.qualcomm.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
-	Todor Tomov <todor.too@gmail.com>,
-	Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Hans Verkuil <hans.verkuil@cisco.com>, linux-media@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: Re: [RFC PATCH] dt-bindings: phy: Add Qualcomm MIPI C-/D-PHY schema
- for CSIPHY IPs
-Message-ID: <aCRRh2ipYD8vYtBJ@vaman>
-References: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
+	Conor Dooley <conor+dt@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v4 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
+Message-ID: <aCRVaNDQP/PdAXPR@vaman>
+References: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
+ <20250409-sm8750_usb_master-v4-6-6ec621c98be6@oss.qualcomm.com>
+ <Z/exOF4T+0vNLQwg@vaman>
+ <0517c37d-b1ba-466e-bffd-9f47b0d458d5@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
+In-Reply-To: <0517c37d-b1ba-466e-bffd-9f47b0d458d5@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_011715_199895_44E8A720 
-X-CRM114-Status: UNSURE (   5.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250514_013347_939882_CE511F14 
+X-CRM114-Status: GOOD (  12.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,12 +86,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-05-25, 17:39, Vladimir Zapolskiy wrote:
-> Add dt-binding schema for the CAMSS CSIPHY IPs, which provides
-> MIPI C-/D-PHY interfaces on Qualcomm SoCs.
+On 16-04-25, 15:45, Wesley Cheng wrote:
+> Hi Vinod,
+> 
+> On 4/10/2025 4:53 AM, Vinod Koul wrote:
+> > On 09-04-25, 10:48, Melody Olvera wrote:
+> > 
+> >> +static int m31eusb2_phy_write_readback(void __iomem *base, u32 offset,
+> >> +					const u32 mask, u32 val)
+> >> +{
+> >> +	u32 write_val;
+> >> +	u32 tmp;
+> >> +
+> >> +	tmp = readl_relaxed(base + offset);
+> >> +	tmp &= ~mask;
+> >> +	write_val = tmp | val;
+> >> +
+> >> +	writel_relaxed(write_val, base + offset);
+> >> +
+> >> +	tmp = readl_relaxed(base + offset);
+> > 
+> > Why are you using _relaxed version here?
+> > 
+> 
+> No particular reason.  I think someone pointed this out previously, and I
+> was open to use the non-relaxed variants, but I assume using the relaxed vs
+> non-relaxed apis comes down to preference in this case.
 
-This should come with driver support as well. pls post driver as well
-with it
+Nope you cant! There _needs_ to be a specific reasons!
+When you are doing read, modify, write, it is very important to know the
+right version to use...
 
 -- 
 ~Vinod
