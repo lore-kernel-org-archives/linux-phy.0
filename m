@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 933A2C3ABCC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7149C3ABD9
 	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 12:22:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,54 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JCd25BrC04FzwgO1h6WxjhydQzVJKwOIgjDaUAaCD90=; b=EELS1VUr8s839F
-	LesRXI+iOqtXrZb+alg35dJQiRsrsoa+UN/8YBXoAmB1KbfwBqjkJK3IHn55yAqWlN+GhlcCHrQUV
-	CBeU7pakX6ewGJivrfBE0lSi+rTSZQXBRi7Ieg4Tzkfes7DxmrT2bTSMW8hS8TA6Emk0Br/q5qGve
-	7wYhUJB4AeaVCyeTwfOydyXZIW4b4I9u9YOtTj+6dfAfCJsDb6mBe13crn4grA764ug7YMDuJsUCk
-	186gTbmuQW3fxUHJj1kPogJcdiZ7gPXkthE3X068hPZiE9DwNTQwXYJWaNsqJuupYN2mY62ieTt4o
-	4qp1ODBGMp+yG0MJ6Djg==;
+	List-Owner; bh=GCWiLEf5botRmR5H9mFsQj2EdKdGEx2S4blevgpydEk=; b=bP4+9XpyfuUfHv
+	4SZxQizFaPOrgSEgMB2JJBaQEO+nP2DMi0tML1aGrzzN9HIJ5sQNcxtKrbZaIWCh+cGBGmWPCcuVU
+	HkllBjps3QNdufEWIhv7Er4/t8WakwZCOcjdVkPl8UaQdDK4nX2NFZzkVyyM/U1iPNb4GV1d590gz
+	uXsva47Vm57rWjmE3iImWw1j4IjrX53xbUB5dM2RtmL+n0xFGP6c340yjbStWgMRpBLN9xdvrOTFU
+	ukIi50Bh2sG2I4UvDBfzBrIA98B7VQSS6OjfLEw401+op3fzMnSbhzPJbTpv1sBub4YwHtb7uaWGs
+	XXzgD5eO/iVhHyRc+5Ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFB7s-0000000F5VJ-1ToK;
+	id 1uFB7s-0000000F5VV-2Z3j;
 	Wed, 14 May 2025 12:22:20 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAQd-0000000EuVu-3yYN;
-	Wed, 14 May 2025 11:37:41 +0000
+	id 1uFAQg-0000000EuWy-01Di
+	for linux-phy@lists.infradead.org;
+	Wed, 14 May 2025 11:37:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 43D8DA4D387;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 13AC75C303E;
+	Wed, 14 May 2025 11:35:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60529C4CEF4;
 	Wed, 14 May 2025 11:37:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC204C4CEEB;
-	Wed, 14 May 2025 11:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747222658;
-	bh=PIe7R02ZRUfkyIGks0BCtEM0QJgK8//iDeGDTITbzGg=;
+	s=k20201202; t=1747222660;
+	bh=nHQOZYmbI/4ct4CBLqfNfvzIFv0fI2toaT4deYFmMOo=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=S2sECodpkb/8puFcDPG/SZLY/CP4xmgyZtTWxLMnuE3AMYmCVp93ZEDSaZ4DzWzh3
-	 bGnfA0luZMHA5DM0R+I3nWIeOQqPP1hExCq1mfPzsYp3B+tiSNngDskPSUzDqX/pzd
-	 E4jg23q/Mx4ZTAZm8mDmiaIK9GGQajbMVVOcNglj66mTkgDUvoLKMV2opCfjBJ0yaS
-	 J7fYZRTSwF2xSpOKcEReH+uRKpFHpFK5BOiOeRBAK+xene91IDcjBKugENhcMQ54fi
-	 O6INyyNye5cg9mxYCdf37XnDdjSOriqX3Nvf1+6dt1KdM6SUc/CERDzMshTe71Oz8H
-	 FwCKTPUY706nQ==
+	b=r82oBJfpP9WiBmJ3vF6vqtpXCdXxLBgwvnil/LbS08zqtFLMePpT7SelCKQwIpQwn
+	 Fqj75fpMrgtXmtDM82/QxW/IgdFXNHRtvuFfmmQD8bQp0fMKOiD4S0OHfemel3N20b
+	 AwGgOh3s9f3D87Ls0Ts2XKhplZdk8JOum9Vr+14GxdXhkUMyjLSw3G0xkk6v/YzK+L
+	 Q3Dt50kSqN5oxU5DVjecq42bbaFpfxDALfyxf1DnoTnKVF4fJTyXtGGjcNSzbeuEbP
+	 M1fztMjtfiWNt5mH2ADbB4y0Atixja/lLfnVKOsaC4nng3xE5XKqfq6IGQEDctJp//
+	 eRLaEaSSt2GAw==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, 
- Alexander Stein <alexander.stein@ew.tq-group.com>
-Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20250429090152.1094243-1-alexander.stein@ew.tq-group.com>
-References: <20250429090152.1094243-1-alexander.stein@ew.tq-group.com>
-Subject: Re: [PATCH 1/1] phy: freescale: imx8m-pcie: Simplify with
- dev_err_probe()
-Message-Id: <174722265646.85510.13417598033555165566.b4-ty@kernel.org>
-Date: Wed, 14 May 2025 12:37:36 +0100
+ Dmitry Baryshkov <lumag@kernel.org>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>, 
+ Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
+References: <20250415-revert_hs_phy_settings-v3-0-3a8f86211b59@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/2] Reuse the IPQ6018 QUSB2 PHY settings for
+ IPQ5424
+Message-Id: <174722265904.85510.2115353055770936721.b4-ty@kernel.org>
+Date: Wed, 14 May 2025 12:37:39 +0100
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_043740_055825_816C1976 
-X-CRM114-Status: UNSURE (   4.45  )
+X-CRM114-CacheID: sfid-20250514_043742_101549_DA69A454 
+X-CRM114-Status: UNSURE (   6.44  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,15 +78,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 29 Apr 2025 11:01:52 +0200, Alexander Stein wrote:
-> Error handling in probe() can be a bit simpler with dev_err_probe().
+On Tue, 15 Apr 2025 09:52:49 +0530, Kathiravan Thirumoorthy wrote:
+> With the current settings, compliance tests are failing, especially eye
+> diagram (Host High-speed Signal Quality) tests. Reuse the IPQ6018
+> settings, as mentioned in the Hardware Design Document.
 > 
+> Merge Strategy:
+> --------------
+> Both the patch in the series should be merged together to avoid breaking
+> the USB feature.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: freescale: imx8m-pcie: Simplify with dev_err_probe()
-      commit: 74c2524a51ab7a0539eb5ec64ee594c981f3d8a0
+[1/2] Revert "phy: qcom-qusb2: add QUSB2 support for IPQ5424"
+      commit: 8a040e13afd94a1f91acaf8e0505769d4f7f5af4
+[2/2] phy: qcom-qusb2: reuse the IPQ6018 settings for IPQ5424
+      commit: 25c36b54eafc98b3ef004e2037cea1328d9b8bc5
 
 Best regards,
 -- 
