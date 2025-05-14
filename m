@@ -4,115 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CE63C3ABDA
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 18:52:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DA94C3ABDA
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 19:45:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JK0jEb0QGRsZFrLq+wcMJXKuL2vnMTP5/FwlxLvPCCY=; b=q+fc8uT4yYwMIO
-	sR8S9GI1DhlX4U8dTPD9U2Ho3mF87a1ny4gtuJkvOqpc9iM8RmR7Khc5h35i676jOSkTfHfxtS/9K
-	sJqsGv2GYhe5hytG5MhfKA/khBwulSL6zOg3KnpyHz3sXbzDbxjbzEEmfMp8/n87HX2UKI+rRau2p
-	6BxZnao8PqdOlEPKnNfVTRLLFgLhGBONsOfd3HZBR+nzUDrX5apyHhUzQX+S7Z0gWt/hP0z9dWj6l
-	odm4ZuW5j9SlAa1m0ioaXbrVq30Mk6HYaSvrpXXBwUmX34cvHNFIDin653cBI5SKhrhEfcn7lX2OY
-	/LqwCz1fP6l2HFXsVIpQ==;
+	List-Owner; bh=hxnSF4y+GNOpHjV4dZIapRmaqCeW9A8wwHZC20Vn5/E=; b=uL2Jvivg8tgz0C
+	ykLFWxma8p5X4qFs5SC1Fi7wXnPEOhnYttuB0JYnlQ+h6hMObRF0Y6MFr7j/1aZ5Hd6zxqvH16RHI
+	mNin3mMVWytS+dHnvymQ84rlYG1ViUWDwkrUQLN14Jbkp8T9745KQuJepTEOKz/0tb0/B9hLWejbF
+	uA6fTHWY1ZDi+SA5L9HrsKbg9g3AJS/GgthSqrRouYbQyHKt2kS4zUoN8Vy8WKa6rQZ87nODR+Vj0
+	xOUr0kCqfa1Cl1O85KM+ORRZYbHZzfKQtmfS8NRkOvBfhx8IR0QwlsFjh8FME5k24gdwXZoFhlEu1
+	lqn6epC0dRA5xTT1Rzpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFHDd-0000000G5cM-3vAF;
-	Wed, 14 May 2025 18:52:42 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uFI2v-0000000GCbI-0B5y;
+	Wed, 14 May 2025 19:45:41 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFGmu-0000000G1Iz-3gHm;
-	Wed, 14 May 2025 18:25:06 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54EAug9i020138;
-	Wed, 14 May 2025 18:24:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	J49uDkCb9HKOce56BSBOkcrkK/RKgG1QwXA27OlhT64=; b=fXq7yA6qg3X9LptV
-	4MUsBu3fv6pYXkzdpX886aCRYl7rz40evf8YpVgY4Lv3HPZynN8rrcwM1K19KOtu
-	A3+a8r/+k2Bg9jex7GogUNc0U0bF0N1SPBXnlPSMJk4h46dKfCXFPneTgszGmv3U
-	mGqmV22doQk8dXtRet/Zf6IbgzIb/LMQZEKNFRWrxAOO5P9t/ylV03lnVu+FUuF4
-	0eChBUsGUQ/fFMFgA21WM60PePO4zI+rwkNsq05zH7nc5Gj1R4nzhIjOVGVTa51T
-	PwMhfUQdXBsnqmgwZc823/yhz1VD4TdbTG771ysuEGL4ePE2ijf0HhclvskY9duw
-	+dItcw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcnknqy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 May 2025 18:24:55 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54EIOsvs026769
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 14 May 2025 18:24:54 GMT
-Received: from [10.71.113.47] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 14 May
- 2025 11:24:53 -0700
-Message-ID: <5183b76b-8043-4309-b25d-e1ae505f929e@quicinc.com>
-Date: Wed, 14 May 2025 11:24:48 -0700
+	id 1uFHoV-0000000GBE8-3zSl
+	for linux-phy@lists.infradead.org;
+	Wed, 14 May 2025 19:30:49 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-441c0d8eb3bso263455e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 14 May 2025 12:30:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1747251046; x=1747855846; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wu8CYbxrZGvQTelT4Z4uIdtuj7A0yMOmk3v2JdGPTT0=;
+        b=hocVDzVfGAQn4XfwQy06n3MBTPV2s0jag4XEVidw41jq9RL/ne1V2bpDKFW/bV+Xjo
+         9qEkJ+T6353vcgZZlFmyvcDTaiAw/BnYaFBv9+uFVvecClyl2biRFU6vZVvWiqt/U2dK
+         gA5Q0l+xpYyiMgK7wLjisqJl23wK/jZbqpB+sDbj2V57VVVh/i2BdRiJd3OxGxcrPiY6
+         XecXlIpiCbjbp3HjFSCfY1uguQAgRGrlCNsaZGpeIXE9IpCTnosXzki6c658v516o3iz
+         +67GyfxwyEqxCSWMMEGzisQoin81x6w1+M9/GpxwtMghRMmhPzNkAu/ix7jn2+0jVp3/
+         iUIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747251046; x=1747855846;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wu8CYbxrZGvQTelT4Z4uIdtuj7A0yMOmk3v2JdGPTT0=;
+        b=dXpQwMF3gZcDKnv1TnngLeUHl9QW2pgomAvEf7SfFmzmec7vDO4gZqDQeRnjdhcY+O
+         26MLJ+oX2jbYozm+99AlsLFjTgXJwIuApvsBXlJAdeHauCWO0fDI1lY4kjuqspc7bGr/
+         px+KOrOU5vhl/CPrHnsv+l8K14TB2UTBMXECuGd1vHV/zfD+IShRUYapdQ5Jr1GIssmU
+         Fd6ze9prOuD8lGWoaYVn36DsvLMv97pbZYnaAoiKeq06GWZdfAtI1J26AZ+MMJtxEW6p
+         Dp9vdGW60+apHsNEtIAiC34xNzB9SSoixfEuLjLLXlgxGMysra7s4SJzHsjdpIlAAUQQ
+         qlyQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXyn1jZjLD5SiCm2rucfZJCTEaY5LpjMXd7MJprIh5d4nH40Rm3wGTO0H/wTzpKP/sOarnBBMMpUjY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxUUwIqODQZsEgpo9gM2EOHLJLvQZmgNwYNgstAuVivLltnaN14
+	Z1YdwaaiGmu7zaTXXjQJjNps1+FQGm5XsmWcMpUZj8s22momkNWITg0SXcNv6iw=
+X-Gm-Gg: ASbGncskXAgt9OqYVDL/GzydEBs6bITAC2eEjJNKUQ1Nw0Ht7YtGNzxmnT3yyrQdNQK
+	8mlUVSzNuPHvstbmI4fBQznoviiP5mXgrklOjOMRj45R+ibc3D4vMN7CanUOu7Y1Fnxc/GfJtts
+	keYgQzSJmonWYGFuhOpu1w/fGuyZ+L335n9mNo8nQJmal0xtJ2669vWDly1ajAsEwmQ4IKeBvtt
+	ut0eLcOIKu87SCcL5xp1lUIfRZvLoqewJKt/lPI569qg1Qz5uqPcl1TzbvLfJDcoFUlF7m65TJh
+	3IlZP38qMdYe5s8U7INUMkf9kcOxKeAA2cRNuSoH+8EFuILFWZQr1hMRUfYdKd/PkFdG0UHS4vJ
+	MGILBdKwQ/MGE5TgS
+X-Google-Smtp-Source: AGHT+IFvXW9lDEbATxNOLcqkk2qKYmb2LjJaI24O9bk39OdZTYE2y1+5m007eE4YtTFHo4ArFYYXmA==
+X-Received: by 2002:a05:600c:1c8e:b0:43e:94fa:4aef with SMTP id 5b1f17b1804b1-442f21905eemr15565055e9.8.1747251045917;
+        Wed, 14 May 2025 12:30:45 -0700 (PDT)
+Received: from [10.61.0.68] (110.8.30.213.rev.vodafone.pt. [213.30.8.110])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-442f33691bbsm44060495e9.7.2025.05.14.12.30.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 14 May 2025 12:30:45 -0700 (PDT)
+Message-ID: <634e9d0d-fbab-4101-b968-d335b656e099@linaro.org>
+Date: Wed, 14 May 2025 22:30:26 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
-To: Vinod Koul <vkoul@kernel.org>
-CC: Melody Olvera <melody.olvera@oss.qualcomm.com>,
-        Kishon Vijay Abraham I
-	<kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski
-	<krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        "Bjorn
- Andersson" <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Catalin Marinas <catalin.marinas@arm.com>,
-        Will Deacon <will@kernel.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
-References: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
- <20250409-sm8750_usb_master-v4-6-6ec621c98be6@oss.qualcomm.com>
- <Z/exOF4T+0vNLQwg@vaman> <0517c37d-b1ba-466e-bffd-9f47b0d458d5@quicinc.com>
- <aCRVaNDQP/PdAXPR@vaman>
-Content-Language: en-US
-From: Wesley Cheng <quic_wcheng@quicinc.com>
-In-Reply-To: <aCRVaNDQP/PdAXPR@vaman>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: F8I7biqEH_-DftRpl4rk57BfXlJJqFGt
-X-Authority-Analysis: v=2.4 cv=aIbwqa9m c=1 sm=1 tr=0 ts=6824dff8 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=VwQbUJbxAAAA:8
- a=_9SOoMVj05wlhOc5M30A:9 a=QEXdDO2ut3YA:10 a=aM5GUTHLM7wA:10
- a=AkvdQnL7tdoA:10
-X-Proofpoint-GUID: F8I7biqEH_-DftRpl4rk57BfXlJJqFGt
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE0MDE2NyBTYWx0ZWRfX4isQh/phoKL7
- gNDYG3ctyr8fuuqzZFPj6IggNXhjWBDL5ogCgcNsGwC5wuF+88+7gNzdLw6ayLccV+mT3DjgQls
- q5FJwXv5IjmwnnKB+bjItELeLBl3E0HuA8FM5mv4PzZH8goauI610a46plxlu2bVGmgmBmC1xY3
- BBLUhgfJOrB0pmILepR+8HMOwaJ5eVBHslVs0Lq9ouIg+blN+QljpxL4Q3WslkpHD4/TM4JQmgp
- mNlbsbLaYxiLV+PRn9OxC1hPkXfHJn8v1QOCSNM1FeCBd6SkrA9fZJ8eZLb7y6uud8boMHxBt3I
- NgbWnscTxcheU1x99B9dCiesQF/QaCRpgU+jVh5hwd7sldVgBkKUlYAnh9u/UWJ9oVFsE+80asp
- 3Ko7aMXimriZxwIetQjAUS2CM4ZpVb31IK0YKwgNdGFb9SCDTnD7asGXB9wjpl2oemknpOhC
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-14_04,2025-05-14_03,2025-02-21_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 mlxlogscore=999 malwarescore=0 bulkscore=0 impostorscore=0
- clxscore=1011 phishscore=0 suspectscore=0 mlxscore=0 spamscore=0
- lowpriorityscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505070000 definitions=main-2505140167
+Subject: Re: [RFC PATCH] dt-bindings: phy: Add Qualcomm MIPI C-/D-PHY schema
+ for CSIPHY IPs
+To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
+ Todor Tomov <todor.too@gmail.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>
+Cc: linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
+ <959b9c65-50d7-426d-9c2a-64e143e28ded@kernel.org>
+Content-Language: ru-RU
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+In-Reply-To: <959b9c65-50d7-426d-9c2a-64e143e28ded@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_112505_047368_E0F0A97F 
-X-CRM114-Status: GOOD (  14.58  )
+X-CRM114-CacheID: sfid-20250514_123048_017580_CE78E0ED 
+X-CRM114-Status: GOOD (  24.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,59 +104,172 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hello Krzysztof.
 
-On 5/14/2025 1:33 AM, Vinod Koul wrote:
-> On 16-04-25, 15:45, Wesley Cheng wrote:
->> Hi Vinod,
+On 5/14/25 13:25, Krzysztof Kozlowski wrote:
+> On 13/05/2025 16:39, Vladimir Zapolskiy wrote:
+>> Add dt-binding schema for the CAMSS CSIPHY IPs, which provides
+>> MIPI C-/D-PHY interfaces on Qualcomm SoCs.
 >>
->> On 4/10/2025 4:53 AM, Vinod Koul wrote:
->>> On 09-04-25, 10:48, Melody Olvera wrote:
->>>
->>>> +static int m31eusb2_phy_write_readback(void __iomem *base, u32 offset,
->>>> +					const u32 mask, u32 val)
->>>> +{
->>>> +	u32 write_val;
->>>> +	u32 tmp;
->>>> +
->>>> +	tmp = readl_relaxed(base + offset);
->>>> +	tmp &= ~mask;
->>>> +	write_val = tmp | val;
->>>> +
->>>> +	writel_relaxed(write_val, base + offset);
->>>> +
->>>> +	tmp = readl_relaxed(base + offset);
->>>
->>> Why are you using _relaxed version here?
->>>
->>
->> No particular reason.  I think someone pointed this out previously, and I
->> was open to use the non-relaxed variants, but I assume using the relaxed vs
->> non-relaxed apis comes down to preference in this case.
+>> Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+>> ---
+>>   .../devicetree/bindings/phy/qcom,csiphy.yaml  | 110 ++++++++++++++++++
+>>   1 file changed, 110 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
 > 
-> Nope you cant! There _needs_ to be a specific reasons!
-> When you are doing read, modify, write, it is very important to know the
-> right version to use...
+> 
+> Looks like not tested, so limited review follows.
+> 
+> Filename matching compatible.
 > 
 
-I mean, its a write readback, which ensures the bus transaction is complete
-based on [1], hence why **in this situation** it is up to preference.
+Thank you for the review, the change is deliberately tagged as RFC.
 
-Otherwise, w/o the readback then we'd need to ensure writes are made
-depending on the required sequencing (in spots where the sequence is
-strictly defined), and that can be enforced using barriers.  If you feel
-like using the non-relaxed variant is preferred let me know.  I can replace
-it and remove the readback.
+I read this review comment as the displayed generic compatible 'qcom,csiphy'
+shall be added to the list of compatibles.
 
-Thanks
-Wesley Cheng
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
+>> new file mode 100644
+>> index 000000000000..ef712c5442ec
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
+> 
+> Please post the driver or any other user. Or explain why this is RFC or
+> what you expect here from us.
+> 
 
-[1] - https://www.kernel.org/doc/html/latest/driver-api/io_ordering.html
+The CSIPHY driver agnostic CAMSS changes are on the linux-media list [1], the CSIPHY
+driver specific changes will be added on top of these changes, however I believe
+it makes sense to review these two different CAMSS changesets independently.
+
+Here the RFC tag is given explicitly to get change reviews for the dt binding
+documentation part, and the first user is the example embedded into the change.
+
+>> @@ -0,0 +1,110 @@
+>> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/qcom,csiphy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Qualcomm CSI PHY
+> 
+> SM8250 ?
+> 
+
+It's supposed to be a generic device tree binding, and it covers SM8250
+CAMSS CSIPHY IP as well, which could be quite handly for testing/review.
+
+>> +
+>> +maintainers:
+>> +  - Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+>> +
+>> +description: |
+> 
+> Do not need '|' unless you need to preserve formatting.
+> 
+
+Ack.
+
+>> +  Qualcomm SoCs equipped with a number of MIPI CSI PHY IPs, which
+>> +  supports D-PHY or C-PHY interfaces to camera sensors.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - qcom,sm8250-csiphy
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 2
+> 
+> Need to list the items instead
+> 
+
+Ack.
+
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  vdda-csi-0p9-supply:
+>> +    description: Voltage supply, 0.9V
+>> +
+>> +  vdda-csi-1p2-supply:
+>> +    description: Voltage supply, 1.2V
+>> +
+>> +  '#phy-cells':
+>> +    const: 0
+>> +
+>> +  port:
+>> +    $ref: /schemas/graph.yaml#/$defs/port-base
+>> +    description: CAMSS CSIPHY input port
+>> +
+>> +    patternProperties:
+>> +      "^endpoint@[0-1]$":
+> 
+> Keep consistent quotes, either " or '
+> 
+
+Ack.
+
+>> +        $ref: /schemas/media/video-interfaces.yaml#
+>> +        unevaluatedProperties: false
+>> +
+>> +        properties:
+>> +          data-lanes:
+>> +            minItems: 1
+>> +            maxItems: 4
+>> +
+>> +          bus-type:
+>> +            enum:
+>> +              - 1 # MEDIA_BUS_TYPE_CSI2_CPHY
+>> +              - 4 # MEDIA_BUS_TYPE_CSI2_DPHY
+>> +
+>> +        required:
+>> +          - data-lanes
+>> +
+>> +    oneOf:
+>> +      - required:
+>> +          - endpoint
+>> +      - required:
+>> +          - endpoint@0
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - clocks
+>> +  - interrupts
+>> +  - '#phy-cells'
+>> +
+>> +allOf:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,sm8250-csiphy
+>> +    then:
+>> +      required:
+>> +        - vdda-csi-0p9-supply
+>> +        - vdda-csi-1p2-supply
+> 
+> This makes no sense - it is only sm8250 - so this if is always true.
+> 
+
+Ack, thank you for the review comments.
+
+--
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
