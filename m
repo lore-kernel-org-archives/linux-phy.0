@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FE1CC3ABDE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2937C54754
 	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:53:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C1yXMW6GebIg0Lzoo2YRridaapZHgUBqHlIorfrfypE=; b=Jj0wgy4QSjkdyE
-	HyCPGglzmTXuLUSpul7ybIi88S0HpzHi4Fy3SpRJLsJptzMWO+o/XLQ9qZ+7uikCoC7TTCPo/K+qK
-	Ea8aFVIE37Ab8O213LBYv7H/sfkAGmYcGx2qLXjFsXJjha3GBfDevwT1RZbyJ/qN1K04KEHt9DEJK
-	PMqyvvrdXbfqJHEVANGgNFA8sXaZPQPsV4h86p6jvU2z+QvFYELtL6ZEwC5y9BAxbsFf9VfNH6phQ
-	JTb/Q4QMLN0PaOPBygeBc2UXXP0RirKvvVPI5fGfKm2uDLWowosMaQOtyZcg/2HzM+f1op95SbM7S
-	hyblNmPmD8YGIZ2KP3tw==;
+	List-Owner; bh=Mk9fNt4MB4HmU3hf5m55J/sONjP0FaK0+p5kg7ZaJtE=; b=mmKkXR3y0ai1My
+	rlJt6QPtsrwxdWbZj8onSG/KeHdQBEQC4mAHANlhiBJxmTDwqbHPGY3KFtqVS2WNj/84OX/DUx8Fw
+	NFWsvUNPSk98lJRl9e+BExF2y1tJV/cKohW2vhUyrWgUpOXMuilNgQdnw0QHuRQy5/z2GLyuQnHUT
+	vc5rY3jqalA+l4tKHgAZCIOaYZpYC2ifqvAd6y5NYfA9DV2vUoAQ+Lgb+cmhZzDO2pDnb7Iuq5TgG
+	yOX2R32qy7iETWyeslkkShzLaNKqaVv79Q5iMswrar4nxDwdcGlz++vTt4O2rGRmbI0OizlDOeJCV
+	+XV3/Ky4lRjeQKEr0sew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCYU-0000000FICj-2gt0;
-	Wed, 14 May 2025 13:53:54 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uFCYV-0000000FIE9-0X1D;
+	Wed, 14 May 2025 13:53:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAQE-0000000EuOY-2QHf;
-	Wed, 14 May 2025 11:37:14 +0000
+	id 1uFAQH-0000000EuOk-1YN6;
+	Wed, 14 May 2025 11:37:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C605560008;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6BA005C33C4;
+	Wed, 14 May 2025 11:34:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0020CC4CEF2;
 	Wed, 14 May 2025 11:37:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1907C4CEE9;
-	Wed, 14 May 2025 11:37:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747222633;
-	bh=t1bXaEu9EXQ94m0cdh4MSItJJeYMDzLla+FRFBaaVOA=;
+	s=k20201202; t=1747222636;
+	bh=IT/rqqrN2B02eom0BK/jGdQZGK6p0WHtvFi4frRfS/8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=NwpkfIl6MZt3iRQolb75+B6HpoTZyfFuUyBOU3iCCdWyF2d3ukbkHyrA8zIFib9nc
-	 EOHXQ7yVKndC1xfuBDcWhVcVzOVrhwiAPM3NNJ7jzA//MeUd8ZZIcpVIDb/GFpCwED
-	 pbNpd+NMu5yoxzB18tUGerttcXQ2a1yO5VC4uJGUYaiAtMf/iNa53FZ+fmxhi1HcH4
-	 HBydiR7YPq5TnLsV4f26kN1qn2853JpHGEcof10JzSLaUY/ke7xyTcZKX793Z70uM6
-	 SKT6RyfToz9+K5wt2nSCKVyNtoz/OwuA/7bc29ll3fokyUQg+QlfOc0fknmmeQCV6m
-	 CXvTdBKQ4rgqg==
+	b=G9dyxvtHbzkDZp37KAkz/bk9eZrJuA4owLh1i0aK7CCyKTwVbSIa/hmSbYRCuI8mK
+	 H4awQBdyBtq8MsSxrJw3EO0X3dzioCUT0kc0oCUZomfrT70yFrF3aTraEyUgg8zfMr
+	 O8AeU9F11KMojNH+jHg7N4V6HH5uUHZ7jZcNQg7e558Vhc9XC/ljwLQswKCAaPCb48
+	 gpRoZdVgCcJ6CrMjFTJFodr6Mjll3O6w1ulintDW8sje5eG/LntgU406ON6LlnerJb
+	 I7ccDsDCcWDvUYtt5yd7Uj16dsJaGwMbst0k0u3XuDDaW/PJqeQxd2LBBzDNaJ661f
+	 I1jLaMQJkD3Zg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Frank Wunderlich <linux@fw-web.de>
-Cc: Frank Wunderlich <frank-w@public-files.de>, 
- =?utf-8?q?Rafa=C5=82_Mi=C5=82ecki?= <rafal@milecki.pl>, 
- Daniel Golle <daniel@makrotopia.org>, Sean Wang <sean.wang@mediatek.com>, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org
-In-Reply-To: <20250422132438.15735-1-linux@fw-web.de>
-References: <20250422132438.15735-1-linux@fw-web.de>
-Subject: Re: (subset) [PATCH v4 0/8] Add Bananapi R4 variants and add xsphy
-Message-Id: <174722262951.85510.8563581978956288115.b4-ty@kernel.org>
-Date: Wed, 14 May 2025 12:37:09 +0100
+To: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, sjakhade@cadence.com, yamonkar@cadence.com, 
+ Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ srk@ti.com
+In-Reply-To: <20250411055743.623135-1-s-vadapalli@ti.com>
+References: <20250411055743.623135-1-s-vadapalli@ti.com>
+Subject: Re: [PATCH] dt-bindings: phy: cadence-torrent: enable
+ PHY_TYPE_USXGMII
+Message-Id: <174722263362.85510.16134406396198337787.b4-ty@kernel.org>
+Date: Wed, 14 May 2025 12:37:13 +0100
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250514_043717_454275_028EDEE7 
+X-CRM114-Status: UNSURE (   5.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,26 +77,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 22 Apr 2025 15:24:23 +0200, Frank Wunderlich wrote:
-> With this series i continue the mt7988/bananapi-r4 dts upstream work
+On Fri, 11 Apr 2025 11:27:43 +0530, Siddharth Vadapalli wrote:
+> The Cadence Torrent SERDES supports USXGMII protocol. Hence, update the
+> bindings to allow PHY_TYPE_USXGMII. Since PHY_TYPE_USXGMII has the value
+> of "12" while the existing maximum allowed PHY TYPE is "9", switch back to
+> using "enum" property in the bindings to account for this discontinuity.
 > 
-> changes in v4:
-> - changes based on review comments in v3 (mostly bindings)
-> - changed topmisc unit address to match reg
 > 
-> Daniel Golle (1):
->   phy: mediatek: xsphy: support type switch by pericfg
-> 
-> [...]
 
 Applied, thanks!
 
-[3/8] dt-bindings: phy: mtk-xs-phy: Add mt7988 compatible
-      commit: 117d09e2830d6ff6c1bb2dc5629f972504fde51e
-[4/8] dt-bindings: phy: mtk-xs-phy: support type switch by pericfg
-      commit: b484b25a486962b568ada1f55c1b96dfd96b912d
-[6/8] phy: mediatek: xsphy: support type switch by pericfg
-      commit: f85eb659a48cc2f0c98a122e760552b69e56c06f
+[1/1] dt-bindings: phy: cadence-torrent: enable PHY_TYPE_USXGMII
+      commit: e00c9aea31035f46b04a13effaa801f8b3419d2a
 
 Best regards,
 -- 
