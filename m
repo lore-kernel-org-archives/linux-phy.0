@@ -4,62 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32BAFC54755
-	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:53:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35EF5C3ABCC
+	for <linux-phy@archiver.kernel.org>; Wed, 14 May 2025 13:53:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jHeMHTcFhQuniElOQVi+eGS0DefWLLQux9AcSpV/rZY=; b=KM19kbKFMmW0ip
-	JqJj2B5UXcRiS2Uz3QUzZyUCno8EpIQnQcW605DkHE6qxhCcDmqckW2m1tpY808qvgGqDI5cmhQuh
-	2kQRNlBSMxBvDgxyUk4xFG0hFQBAJUpm5J7aPuuMD1Y9XUAhLXzoaqnxYmmE5NAVk0JXHW2cf38+i
-	f6gOJgi0ycpjvOPpef8rrqe5W6PWpqUX2sJkabtWebTz3nQlzaZWw/nBYVq2KJdU959zpZxbsan1L
-	T5ONgeO8xaNOcGXy2bgLinpeUkKNlStJzOJwD1EgZB2pwPuiDbvXFPNhPGKSqt4xvcfh9I1AoMYTx
-	EhxoVS0clbc5wOJ6koMA==;
+	List-Owner; bh=+cwJ6GHmomDywfg8NFt15dD+bd0yXsXdOElwi6k8xjI=; b=VhTjy6/WGCuf7b
+	5JyMLpsQCwzLk1PSVMnOUZ9jL19+dOvFpv/7aYNukDdQ6Brup4s1qZQLQai+0cXBAUAFSwRPWwDwO
+	HkEj3ch4yhY2c7JbaXX7V34gor1/moduR5Wds/6CFamCvgbDDQ+6LDo1onmQpRkjTvpFzGADw8UrJ
+	XvnBmy9ySCGloLYiTxnC9r61CdJL/+ak2dPc79BM7YPjeScNPy4Q1P+4ti02fFNhrc51+Y/9Db4Ww
+	SwmkDMFl3hZKqHjQT+nTMNXfkfZtf3FzxFXAR5IPMikqO1/FpXwOZmEp0pLHgy/uDxMn9E29ltW5X
+	AD07BI4b5Oq97U/ffHWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFCYV-0000000FIFM-3doV;
-	Wed, 14 May 2025 13:53:55 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uFCYY-0000000FIKa-3bSc;
+	Wed, 14 May 2025 13:53:58 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFAQK-0000000EuP9-0qt6
-	for linux-phy@lists.infradead.org;
-	Wed, 14 May 2025 11:37:21 +0000
+	id 1uFAQM-0000000EuPv-2Lpp;
+	Wed, 14 May 2025 11:37:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id D98514A63F;
-	Wed, 14 May 2025 11:37:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1FC9C4CEE9;
-	Wed, 14 May 2025 11:37:16 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1F91344DA2;
+	Wed, 14 May 2025 11:37:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3511AC4CEEB;
+	Wed, 14 May 2025 11:37:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747222639;
-	bh=He4lmb9HVm1YV4uevPwCKHBfctkNUFoVlye5myyYtkM=;
+	s=k20201202; t=1747222641;
+	bh=i533NMeV5GO7/xUYiXrfMLveCBR6FPalyI6+47rPinA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=JVM0VeAWzv9ssis9vK5QubwKwxvsBARYIFJGv/iN5pscusgaP6zYl8rLqlVtrvu+J
-	 svFrw/z0Qvdz8K47pzcl0e2Tf9CQrIET3JaJuUsrThvaJ6Sl83CZKc71U1e8R+TU5c
-	 682neGjxqp+TCvzGJ5+Syo3HQVoHvR5dl/CvQnm78FyQbF6j556L6NFiqT6JAwmmw8
-	 eSHHlVzK33oo2gasfnh95zDf3V8vPwM1qHV7Wng3aIGM53H2bMETfNPbTj78sWwwNP
-	 L4NhKz/JEWgNaTtYfBAQX3MqJ8YkVZ5favIBIeJaQMTCWK1pmoUK9LggCmaqS3Nuqg
-	 Pzt64ilg9pQCw==
+	b=B5DCbJdDVntyYKsinJJZkSasBRsJRoIJbKDNq0evLfR5lBVlzCo3GjKAMoL5xXgI8
+	 6RrU/kNHwaLRNUh/Kc1Va43x0qX8rJCbT5pgsVAHKLNukv8kPSUNWc9Cpjv3Kjm4Hf
+	 CFXTEkOaiVAMsS+DmJaMCILJBIa97FDqWmA2xaQ+J+ucod3JSEI6wP9Hs95WL+ITbp
+	 6FJRJZdJs72MtXP0gIrsnLKkCKUj+KHQBilQdjtXp4Ok/XMTAqPUNNhA+xVKysVTb7
+	 CvO+e1DQYEC3SUoKaAV3ykq3pdevrjaOnrH4qmxuQkvSCEUyGoL+zDg9K03UmNAKri
+	 rDsC51GYixY1A==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, lumag@kernel.org, quic_kriskura@quicinc.com, 
- manivannan.sadhasivam@linaro.org, konrad.dybcio@oss.qualcomm.com, 
- quic_varada@quicinc.com, quic_kbajaj@quicinc.com, johan+linaro@kernel.org, 
- Chenyuan Yang <chenyuan0y@gmail.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Johan Hovold <johan@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20250414125050.2118619-1-chenyuan0y@gmail.com>
-References: <20250414125050.2118619-1-chenyuan0y@gmail.com>
-Subject: Re: [PATCH v2] phy: qcom-qmp-usb: Fix an NULL vs IS_ERR() bug
-Message-Id: <174722263664.85510.7245285831911062529.b4-ty@kernel.org>
-Date: Wed, 14 May 2025 12:37:16 +0100
+To: kishon@kernel.org, heiko@sntech.de, Chen Ni <nichen@iscas.ac.cn>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20250415081200.349939-1-nichen@iscas.ac.cn>
+References: <20250415081200.349939-1-nichen@iscas.ac.cn>
+Subject: Re: [PATCH] phy: rockchip: samsung-hdptx: Remove unneeded
+ semicolon
+Message-Id: <174722263987.85510.17860995825685488845.b4-ty@kernel.org>
+Date: Wed, 14 May 2025 12:37:19 +0100
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250514_043720_267178_40C4C2B8 
-X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-CacheID: sfid-20250514_043722_621218_5A9890BC 
+X-CRM114-Status: UNSURE (   4.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,22 +74,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 14 Apr 2025 07:50:50 -0500, Chenyuan Yang wrote:
-> The qmp_usb_iomap() helper function currently returns the raw result of
-> devm_ioremap() for non-exclusive mappings. Since devm_ioremap() may return
-> a NULL pointer and the caller only checks error pointers with IS_ERR(),
-> NULL could bypass the check and lead to an invalid dereference.
+On Tue, 15 Apr 2025 16:12:00 +0800, Chen Ni wrote:
+> Remove unnecessary semicolons reported by Coccinelle/coccicheck and the
+> semantic patch at scripts/coccinelle/misc/semicolon.cocci.
 > 
-> Fix the issue by checking if devm_ioremap() returns NULL. When it does,
-> qmp_usb_iomap() now returns an error pointer via IOMEM_ERR_PTR(-ENOMEM),
-> ensuring safe and consistent error handling.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom-qmp-usb: Fix an NULL vs IS_ERR() bug
-      commit: d14402a38c2d868cacb1facaf9be908ca6558e59
+[1/1] phy: rockchip: samsung-hdptx: Remove unneeded semicolon
+      commit: 3b2b414927dcbd866c99ec92e3a214a69fc51c90
 
 Best regards,
 -- 
