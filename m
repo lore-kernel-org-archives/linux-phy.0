@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59C4EC2D0CD
-	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 16:27:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E37DCC3ABC9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 16:27:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8tvzslo+Z4vzLFMeeS5dUa0QLJLJ5vCAghCaX1Zq1Mk=; b=jneTE0vh1XdamD
-	ocb0p6tIg7MAQrGtd0vjyJx8dWkR6OO5L8F9sRCs579FeYFxhYK9hKk+31ogm96I84/P7jQhQp7OQ
-	EyJzdETuEKFwhllmXIe3i5Tckd9/bzwsc/MRwp3WNN2M37yOUj0HNo5NgkGCLFlEM2CaeCHcMEFgB
-	8dgGG2I4FuE5+dyHffAs7HXryqNMg1c+RtAX8JWh09PZVfm3vqiDESI49xqpBoCKUgLoOVssHYxw3
-	CciX50QCoD2iYPVbcmTovCbMVethO+ZeA/iDyljEWrAndbOuNacq2d0A3yjhGwc7MjtbXx3VHRgbL
-	cVcaX1dup1C1vXd3GShg==;
+	List-Owner; bh=l4NuO2I66OhXwP0zCDJgKgDK6txa2ptR3PoyXKDeeP8=; b=oFKZ2WuvsY0v0j
+	3u2B6zN/ANDMFLDKrFwKny3I4NJ+EJJf1egWrCcveQiLh8rLWxkb1C6intMifCTcXUzQIeqB/91Q3
+	Jn0AT2KaxSwQjYgm1wuAs3EJQYjQjjD5njAykxV01KJpAjr+tU392L2l5pkkj7ViREI6lWFYyyFmE
+	On4tjF9z7Dqm4fRZ9CZe24sJO6yU1gIfcwHNiA2BhSjYItjW5o2TNOt/M5lBtFnpSBL6m6qb+DEeI
+	4+FF51PSq502hC7PFBqcmB2rbX4XZTeaDobNoHNwK46zTk/dfM/fa71rgiVukw84BJXMBPEF1uZlT
+	CUiqIh2f1+cM8aFqpyLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFbR7-00000001G4w-0ORI;
-	Thu, 15 May 2025 16:27:57 +0000
+	id 1uFbR9-00000001G6Q-2pzB;
+	Thu, 15 May 2025 16:27:59 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFbR4-00000001G2T-3WAy
+	id 1uFbR6-00000001G4j-451N
 	for linux-phy@lists.infradead.org;
-	Thu, 15 May 2025 16:27:55 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54FEFnoi025311;
-	Thu, 15 May 2025 16:27:39 GMT
+	Thu, 15 May 2025 16:27:58 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54FEFCeq026156;
+	Thu, 15 May 2025 16:27:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=t+RnysSDyDL
-	Peif5c620gF9enFfldxyw8tQrkGefOP8=; b=d0pGOsY215vjO8BO7ognvMYLyuv
-	3yGZGyPd5oDX009xg6AdSzBWnMAlxvx2ZzfplJdpdNnhHL4TT8QLdgPEgl3cGdiE
-	3glmZiMkbk6xmrE8WIkjlMH5KeiGNh4BSSEnpxrGdG9RY7cPjGI8+w4DF8XDUCE0
-	GGf7y5kVxQhftJWn+bLMx1fST2enZUPpqeW1o82W9+V2tycsJopjrq7cFf0QCfjt
-	kUtAjeeKd1zOqAdg3lrbw8dWWXKRlKKVDwerTzyPcuq1nsoMSMJ3HKDAadF6iWnZ
-	kNR0u7q/gPvPT0MHWrIeJXH+7VbiqoGgicHSpLFYO9en+Wjlyh+57uynx6w==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=V7ySCYnUYSX
+	wwDN6/ExxYJpAp/ii2NAf3QEXQz/O89g=; b=POfM5/fqpxmNU0sg4u5hFQB+teg
+	/Mn+591gLFKlyw7iBMAONPTKO+2wQNMaLIdw2PUuVoTiHA6ZErq+2isz2pGvIoXY
+	fPZr3Xy/2DKhDjKwJ6u0U9EWkW1cXTz2CYs3tej9fyr+8AYbLRE2aeAU0x/NaOs9
+	S1MwFGnLswFqy94CeiOEqrPOdIZcgwhm3H1w43Op72QJqQr8lICflIAZr+e6uhRG
+	kQ+AxUXllmhm3lpAory1w7FijMbsfpHmgAP/XdOVNw0Qc5OikoiWt7NJ4E8eedMJ
+	OgMdQhob5GCQcP22fBpvN9fRVgYEkgRXdO0AGBWjwHv9WqaPYtr098xkL2g==
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcmy1x7-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46mbcyq0y1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 15 May 2025 16:27:38 +0000 (GMT)
+	Thu, 15 May 2025 16:27:40 +0000 (GMT)
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 54FGRZdp023676;
-	Thu, 15 May 2025 16:27:35 GMT
+	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 54FGRSJ4023582;
+	Thu, 15 May 2025 16:27:36 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 46hyvmvnq3-1
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 46hyvmvnq9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Thu, 15 May 2025 16:27:35 +0000
+	Thu, 15 May 2025 16:27:36 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 54FGRYOa023670;
-	Thu, 15 May 2025 16:27:34 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 54FGRPSj023527;
+	Thu, 15 May 2025 16:27:36 GMT
 Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 54FGRYIq023668;
-	Thu, 15 May 2025 16:27:34 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 54FGRaNc023683;
+	Thu, 15 May 2025 16:27:36 +0000
 Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
-	id 019A35015B0; Thu, 15 May 2025 21:57:34 +0530 (+0530)
+	id 863125015B0; Thu, 15 May 2025 21:57:35 +0530 (+0530)
 From: Nitin Rawat <quic_nitirawa@quicinc.com>
 To: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
         James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com,
@@ -67,9 +67,9 @@ Cc: quic_rdwivedi@quicinc.com, quic_cang@quicinc.com,
         linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
         Nitin Rawat <quic_nitirawa@quicinc.com>
-Subject: [PATCH V5 10/11] scsi: ufs: qcom : Introduce phy_power_on/off wrapper function
-Date: Thu, 15 May 2025 21:57:21 +0530
-Message-ID: <20250515162722.6933-11-quic_nitirawa@quicinc.com>
+Subject: [PATCH V5 11/11] scsi: ufs: qcom: Prevent calling phy_exit before phy_init
+Date: Thu, 15 May 2025 21:57:22 +0530
+Message-ID: <20250515162722.6933-12-quic_nitirawa@quicinc.com>
 X-Mailer: git-send-email 2.48.1
 In-Reply-To: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
 References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
@@ -78,31 +78,32 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: HhdMT_DvDki77prnEpb3QdPcQu9fC4cR
-X-Authority-Analysis: v=2.4 cv=HZ4UTjE8 c=1 sm=1 tr=0 ts=682615fa cx=c_pps
+X-Proofpoint-GUID: uy0HNrdnQmsFY0AAlFqsFVPCcMMgPmYw
+X-Proofpoint-ORIG-GUID: uy0HNrdnQmsFY0AAlFqsFVPCcMMgPmYw
+X-Authority-Analysis: v=2.4 cv=JszxrN4C c=1 sm=1 tr=0 ts=682615fc cx=c_pps
  a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=muU9dcZNfZ7YEnUq2GoA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: HhdMT_DvDki77prnEpb3QdPcQu9fC4cR
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE1MDE2MyBTYWx0ZWRfX1VG1uPTc5i10
- KnAl7f2UHKkvWe13xgdmc1SEiIhSEiCJFrWTj4ZqqCwF5nYGyG7/FNd4UFp3khpiMpAYwIigjj1
- 88ZAYgYtJ4i4FdIfJ+lC19qbu+rIyfJFM6Xr/GiVvr5fApneqwGn5Ad0+c71Sv1b3F+WMUyVlY/
- x1UjuCZr7ZvEsPVsJRI/B0WqgXShknuR/keOTFhqkuZJrHtzWnY3UTnXh12wX+7QYh4GNmtl6BL
- WWXALxfQY+NyeIHfMdkHZY4/WN9Npri21cJTHjCbap6EZralntAh5BdbAU8gCgucmX6bhZ2MoWd
- yoBVKdKwflV46znEsTYt8IHZQXiM1KNsriSt3bgEaudasSAOnjYqzTc9prKhtR778UMma3Ekw0c
- BMRSuDk3qdMcyXsQgfZB12g90hHqxu6UYGaK1U7jlNgtE2vAzktDxneqFh5cePKaboa4orpG
+ a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=6qkdr0EpClcQ5iOZAa0A:9
+ a=zZCYzV9kfG8A:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE1MDE2MyBTYWx0ZWRfX1qNr6HISpzIP
+ YHtTMW8MdSxbrWhtjRRSwt15J3/Rp/Qn7TXJrK00klwfAkoYLoPddi8PrusoH2Y5qwHHB221U19
+ rd5adwrimd0U0wsMSqLvFl5rDkhiwqWmb/RyJ5SSBCV5mAmYD/nFFrc+iMPk6Vo5ShCYWmU7UGJ
+ DLZ9uAdQoQbGdTrO7a7mPrhN4lKqV1JS8rA/xeYVtjA6lNBO2WzxMLYQozkoIGyFrklSI+odKsB
+ JelJI0KGuKfxSWXCcOamqcn60vMfRtATguHwuGYWrYZYvJ6VhAGkG8MC5fmHcTgcwR8Hz7UzCj4
+ yRxi+EKDNZPBUCdGEb6PYED7gBrkyHenv9htvt0GmCQ6Zwe1RnPthPM2sXt/vyeTiRcGRfTZRmL
+ +54tLpnE1w9/fWSgfY5Rgd6Wwj9o57Q2+nmP0MGxa8rh377T2FmKgDxtfjaxTK9HuNLSQxVV
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-15_07,2025-05-15_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0 spamscore=0 clxscore=1015 priorityscore=1501
- suspectscore=0 mlxscore=0 mlxlogscore=999 lowpriorityscore=0 malwarescore=0
- bulkscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
- definitions=main-2505150163
+ impostorscore=0 priorityscore=1501 suspectscore=0 mlxlogscore=999 bulkscore=0
+ malwarescore=0 mlxscore=0 adultscore=0 phishscore=0 spamscore=0
+ lowpriorityscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505070000 definitions=main-2505150163
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_092754_884044_B2738992 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20250515_092757_017689_5F6F6F87 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,145 +120,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There can be scenarios where phy_power_on is called when PHY is
-already on (phy_count=1). For instance, ufs_qcom_power_up_sequence
-can be called multiple times from ufshcd_link_startup as part of
-ufshcd_hba_enable call for each link startup retries(max retries =3),
-causing the PHY reference count to increase and leading to inconsistent
-phy behavior.
+Prevent calling phy_exit before phy_init to avoid abnormal power
+count and the following warning during boot up.
 
-Similarly, there can be scenarios where phy_power_on or phy_power_off
-might be called directly from the UFS controller driver when the PHY
-is already powered on or off respectiely, causing similar issues.
+[5.146763] phy phy-1d80000.phy.0: phy_power_on was called before phy_init
 
-To fix this, introduce ufs_qcom_phy_power_on and ufs_qcom_phy_power_off
-wrappers for phy_power_on and phy_power_off. These wrappers will use an
-is_phy_pwr_on flag to check if the PHY is already powered on or off,
-avoiding redundant calls. Protect the is_phy_pwr_on flag with a mutex
-to ensure safe usage and prevent race conditions.
-
-Co-developed-by: Can Guo <quic_cang@quicinc.com>
-Signed-off-by: Can Guo <quic_cang@quicinc.com>
+Fixes: 7bac65687510 ("scsi: ufs: qcom: Power off the PHY if it was already powered on in ufs_qcom_power_up_sequence()")
 Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- drivers/ufs/host/ufs-qcom.c | 44 +++++++++++++++++++++++++++++++------
- drivers/ufs/host/ufs-qcom.h |  4 ++++
- 2 files changed, 41 insertions(+), 7 deletions(-)
+ drivers/ufs/host/ufs-qcom.c | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 3ee4ab90dfba..583db910efd4 100644
+index 583db910efd4..bd7f65500db7 100644
 --- a/drivers/ufs/host/ufs-qcom.c
 +++ b/drivers/ufs/host/ufs-qcom.c
-@@ -479,6 +479,38 @@ static u32 ufs_qcom_get_hs_gear(struct ufs_hba *hba)
- 	return UFS_HS_G3;
- }
- 
-+static int ufs_qcom_phy_power_on(struct ufs_hba *hba)
-+{
-+	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-+	struct phy *phy = host->generic_phy;
-+	int ret = 0;
-+
-+	guard(mutex)(&host->phy_mutex);
-+	if (!host->is_phy_pwr_on) {
-+		ret = phy_power_on(phy);
-+		if (!ret)
-+			host->is_phy_pwr_on = true;
-+	}
-+
-+	return ret;
-+}
-+
-+static int ufs_qcom_phy_power_off(struct ufs_hba *hba)
-+{
-+	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-+	struct phy *phy = host->generic_phy;
-+	int ret = 0;
-+
-+	guard(mutex)(&host->phy_mutex);
-+	if (host->is_phy_pwr_on) {
-+		ret = phy_power_off(phy);
-+		if (!ret)
-+			host->is_phy_pwr_on = false;
-+	}
-+
-+	return ret;
-+}
-+
- static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- {
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-@@ -507,7 +539,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 		return ret;
+@@ -540,7 +540,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
  
  	if (phy->power_count) {
--		phy_power_off(phy);
-+		ufs_qcom_phy_power_off(hba);
- 		phy_exit(phy);
+ 		ufs_qcom_phy_power_off(hba);
+-		phy_exit(phy);
  	}
  
-@@ -524,7 +556,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 		goto out_disable_phy;
- 
- 	/* power on phy - start serdes and phy's power and clocks */
--	ret = phy_power_on(phy);
-+	ret = ufs_qcom_phy_power_on(hba);
- 	if (ret) {
- 		dev_err(hba->dev, "%s: phy power on failed, ret = %d\n",
- 			__func__, ret);
-@@ -1121,7 +1153,6 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
- 				 enum ufs_notify_change_status status)
- {
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
--	struct phy *phy = host->generic_phy;
- 	int err;
- 
- 	/*
-@@ -1142,7 +1173,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
- 				ufs_qcom_dev_ref_clk_ctrl(host, false);
- 			}
- 
--			err = phy_power_off(phy);
-+			err = ufs_qcom_phy_power_off(hba);
- 			if (err) {
- 				dev_err(hba->dev, "phy power off failed, ret=%d\n", err);
- 				return err;
-@@ -1151,7 +1182,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
- 		break;
- 	case POST_CHANGE:
- 		if (on) {
--			err = phy_power_on(phy);
-+			err = ufs_qcom_phy_power_on(hba);
- 			if (err) {
- 				dev_err(hba->dev, "phy power on failed, ret = %d\n", err);
- 				return err;
-@@ -1339,10 +1370,9 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- static void ufs_qcom_exit(struct ufs_hba *hba)
- {
- 	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
--	struct phy *phy = host->generic_phy;
- 
- 	ufs_qcom_disable_lane_clks(host);
--	phy_power_off(phy);
-+	ufs_qcom_phy_power_off(hba);
- 	phy_exit(host->generic_phy);
- }
- 
-diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-index 0a5cfc2dd4f7..f51b774e17be 100644
---- a/drivers/ufs/host/ufs-qcom.h
-+++ b/drivers/ufs/host/ufs-qcom.h
-@@ -281,6 +281,10 @@ struct ufs_qcom_host {
- 	u32 phy_gear;
- 
- 	bool esi_enabled;
-+	/* flag to check if phy is powered on */
-+	bool is_phy_pwr_on;
-+	/* Protect the usage of is_phy_pwr_on against racing */
-+	struct mutex phy_mutex;
- };
- 
- struct ufs_qcom_drvdata {
+ 	/* phy initialization - calibrate the phy */
 -- 
 2.48.1
 
