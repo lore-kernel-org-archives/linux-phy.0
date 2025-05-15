@@ -4,112 +4,164 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B439EC54756
-	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 10:34:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D912C3ABC9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 11:04:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d8GLRb3ZITQoaTCczpsr/nI1TlLhYuIbS+QmwNIYlDU=; b=AOYT7FPCTiMqnl
-	4ZlFxbpW1idFLLXzh8W602PfK9fSeaMX4OYfgJP7uBuR6cuod/Iozr/aod7E4k8LNKRJuAE8qJ1pl
-	KtonZXEIt9QkaqN02z8wDEZCZwFmRs4Laulsz6tyJP2+NuTwTZ0hvBoLLjnYggkiMl8LUGCnTzacq
-	K0kjJYojPZ6fcxjaNH20/GH0h4gxSISQ4TjWk8FA199bouUQRirZFinT5L/pAdyZ/6vANwLOmzh22
-	CTVpYIxNAWkguirWiP9b8G+VHqKPlySrlZkVuIPbgX7DHhqhWyZzk8nqdGRS82YVo1KtNZlrBT0bL
-	65+NUkRJGFaekjqetR/A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=O0HqzckvfdYpKmG1rMYPfn60IN7aHhPvXNnrZpKiWqU=; b=BAsf9a99La1ngOdEX6E0zxUr7h
+	LCugHTXAKAxmKdjqkMKsVrLSI1HL/L3KFYIzoFPVJjSNJLkM2gGUwF12FQkefQwFB/hvflzsk6Nk/
+	dzUH71dGuB8H7ZP1tIGyCoZOWVy+BRUv5jgRjEyMpcPFPBFC1aY3zUa21P+8HPEgDiH1YsBN8DRX9
+	I/qwPv1TVFhdraTDj/B2tEwAiLTQ7L7/hvPJ3sZlgd1yZjIW8Q4IxOTnEUqPsfrSat6yGjjbkCG/5
+	xmb6wmmXgJUny5micLcLr1cvGlPOD8P/h+HR6JN2WY0mUHs/RDKk91qLaroxNb2uL/aHGljoCDoSE
+	WkKq4VBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFVux-00000000J4X-15gC;
-	Thu, 15 May 2025 10:34:23 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uFWNf-00000000MWn-0dSC;
+	Thu, 15 May 2025 11:04:03 +0000
+Received: from mail-dm6nam11on20618.outbound.protection.outlook.com ([2a01:111:f403:2415::618] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUhK-000000007Jn-19E6
+	id 1uFWNc-00000000MWR-3ZMV
 	for linux-phy@lists.infradead.org;
-	Thu, 15 May 2025 09:16:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 79D91A4DB67;
-	Thu, 15 May 2025 09:16:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C5246C4CEE7;
-	Thu, 15 May 2025 09:16:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747300573;
-	bh=2cxVKcrNNEM+bbBxTTu9WCaQD4Cu+LZbQ3Po3bJ/PPI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=nChMabBiZWB/vzcBdtKROHFOzcrINKhn0Rh4O0WaSf7pFhR0W/UjbSgZJPG1UaAz9
-	 6riJhySIBZPadz8nwNuFvi48zw0IZ+VoNujWYGaT13is8VCw5MS5Gpe+5rgNJUzGZE
-	 yIhgoJRXPBzvRi/Ff9IRZdaC0zuIauVAy+EpFgU6HlXLFfRDB1pDNIktFYfk617T+F
-	 WAtRrS86mdb4n5z/5f18jrCpURPoimnA4umTzL6n5bKe7RYiz5ZZY4p2GQF+0RQ3+q
-	 SsY/YVAedlBPgaKAr9Jfxznlgw1xdo/usITdSAealumPcf3OVgeNhLYsTUoguyfFv3
-	 1cib2jl62vGbA==
-Message-ID: <078d86d1-1a67-49c8-b604-5d0231007cf9@kernel.org>
-Date: Thu, 15 May 2025 11:16:08 +0200
-MIME-Version: 1.0
+	Thu, 15 May 2025 11:04:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=RFYpWKvE+IibmESuax/w5hxUlK1+UnEQxLrr7ncuhJXXay1M/7uXbMu+sFjEaK1tjBNkKrtWEz13cuOvafdNwBrprUsoTR5thrOkeH5kQCCD3NBoITtxSZamncQXgPyBXNQg7yNLScrMK+EVSl18TMJJe+h6p93FK5VykAQQfOGZeb/X2/EihTQxtSCh/AMQEiNG14mM/5J37e/UHf4bxrn+509RRkgb8f5CtBxz01i2ybHRJA+k1HnW1dhhF4n9qNr7AIWHrIP90iHnuNCaHoWgFVrPf6+fhaTWHFr4oRn8fnq6SufFgjT099vKSaFpULmEQrjxuAw0B3tYpFfq9g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=g7L0l+9RJki79J+Y69Z5Ri/pKuIxnWFk13+3E2FVz+w=;
+ b=VYCMyNGB3sA2PVuuxWxhpnIDV40KkPHpQr6qQbKcanTRljeYEX4yHRiwUNVPh+fchGbOZHkSoPE7BN8RON4EfMtQUKY0AzpePdcHr3oh4POYwb7UFleqWQ75kH8Kk9UgBYS32ucVd9YQy4zeBS4B7FrM+gNRCOVxKcvKLt9gLaOhviqgjSw+957R2SGYArUR26MVBLff/ep45M6MIOJmsK++3zpDr51/Ql2Yeqdne0Hjs3TtRrxpb6EFTqNZxW6oWKybg0edsEA3cKB2mk4o50MlylFo5958TzWhRKRvfjVuIzKEA+YbbEubLS3bJpumNBhrAvlXDk1LfBu14K/VLA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=g7L0l+9RJki79J+Y69Z5Ri/pKuIxnWFk13+3E2FVz+w=;
+ b=j6gUa+t4YD1E51Dc5qIkPcAPvQ9sUcD5+tn6x0gQf9dmkYU/ts/PEECWFw9/FXv5M+Gtti5Bn16HkgG6kqiaBkuhnXfPzGJt+G69WKL8J+4mGCvrjWGAhEtPUf4DPJLxMPkQyfGVBXM0siuBvEDp/6tSyOrBs5/+BCTfxkK8XJ9omLGINpmVLUz91ZMXT3jFGecCzCVcrPKgZh5HqkTZib0uXQ7qoqVVNWK21WT8WKXEUDDJpPf5Pzc2/Z0SnPf5G5anektvdF1r3RHmvdX0QqZwcSueRNwEBuGWskz2E+p2mun/vTDYuUObSB6xNd8zk53CltKeeLIkvbCOPTz3pw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from SJ2PR12MB8784.namprd12.prod.outlook.com (2603:10b6:a03:4d0::11)
+ by IA1PR12MB6089.namprd12.prod.outlook.com (2603:10b6:208:3ef::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8722.30; Thu, 15 May
+ 2025 11:03:52 +0000
+Received: from SJ2PR12MB8784.namprd12.prod.outlook.com
+ ([fe80::1660:3173:eef6:6cd9]) by SJ2PR12MB8784.namprd12.prod.outlook.com
+ ([fe80::1660:3173:eef6:6cd9%3]) with mapi id 15.20.8722.027; Thu, 15 May 2025
+ 11:03:52 +0000
+Message-ID: <b761ca95-906f-40f6-a51e-b9a1da379a3d@nvidia.com>
+Date: Thu, 15 May 2025 12:03:47 +0100
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH] dt-bindings: phy: Add Qualcomm MIPI C-/D-PHY schema
- for CSIPHY IPs
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Robert Foss <rfoss@kernel.org>,
- Todor Tomov <todor.too@gmail.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>
-Cc: linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-References: <20250513143918.2572689-1-vladimir.zapolskiy@linaro.org>
- <959b9c65-50d7-426d-9c2a-64e143e28ded@kernel.org>
- <634e9d0d-fbab-4101-b968-d335b656e099@linaro.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 1/1] phy: tegra: xusb: Fix unbalanced regulator disable in
+ UTMI PHY mode
+To: Wayne Chang <waynec@nvidia.com>, jckuo@nvidia.com, vkoul@kernel.org,
+ kishon@kernel.org, thierry.reding@gmail.com
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+References: <20250502092606.2275682-1-waynec@nvidia.com>
+From: Jon Hunter <jonathanh@nvidia.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <634e9d0d-fbab-4101-b968-d335b656e099@linaro.org>
+In-Reply-To: <20250502092606.2275682-1-waynec@nvidia.com>
+X-ClientProxiedBy: LO4P123CA0471.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:1a8::8) To SJ2PR12MB8784.namprd12.prod.outlook.com
+ (2603:10b6:a03:4d0::11)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SJ2PR12MB8784:EE_|IA1PR12MB6089:EE_
+X-MS-Office365-Filtering-Correlation-Id: cf11f601-1f1d-4944-c035-08dd93a02d54
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?WE80T0luQU9hNnU0NTlwbWV1VkpuUDE3eG9iV2pYbEZKbXArUE9UTTFIYlRY?=
+ =?utf-8?B?VThsbHlublhGOCtjOW5xUGZpMGFlL0tCMmFRTys0REp1V0NMZHF4U1o4ZlRN?=
+ =?utf-8?B?cGRiMVlyR1ZoSWl3Zm5YcU94WExxZUJvZE52aWVGTG9RQjAxUFNXUld3U2tj?=
+ =?utf-8?B?YjJTVG5qYjFFVzJLcjYwdmxLejAxRTdKZlgxazJaU3dmQUNqY1BvUUw1Y2Ja?=
+ =?utf-8?B?ZkdtMzJkVW1TQWI5SU1BcjU5UGhNR0xFOHNpZ1NsdzExdVFadE1kS3RvWDc2?=
+ =?utf-8?B?U1RVQUNSVzd2UmN5U2tWOUFOMklHbW1ld0lwaFZUNEhWcS9sZkxTdFFGVzVP?=
+ =?utf-8?B?Z2Q3cjJIay9ZVXN1TmhPOGxJUWNiaEhUaGJ1QVBXZVRHSHdqMnlidXpxSU9T?=
+ =?utf-8?B?czZWWjFLM0o4SFVHdFRYVGRhd0V3d0tiS0FTQnhaeDViZ0NQa29pa3JCV3Y0?=
+ =?utf-8?B?eUM5OElTVlpiSk1QR0JJdXZhWkRjZFF2aWNiNjU1dHRSWjRxNDRhOU9oc0Zl?=
+ =?utf-8?B?dktCUnlCNHhkdXNURXVMc2RzNFlkZDdDT096YmVNc25yWU1MazZYUkovaVl6?=
+ =?utf-8?B?Q0VPVmZMYU83Wm5ETVQzV0thRmE2WExXb3R4K2Fhbnl0RHFHWlFQWFFkVHBR?=
+ =?utf-8?B?RHNUZ3hHdWNxajF4NVlsdTV6VU1qNXRIQUFINlhQVnJNTzcvait0QUxYN2xC?=
+ =?utf-8?B?VHJkS3JOZ05XeHBQN2l3N1NFY2hiRUhvUnBUc0tQdW5GR2JMaFFaNmx4MUZB?=
+ =?utf-8?B?Mm9HSGZEdWlpWFNMT1NVdGVvUmFvWDh0YXdYM29OUkc5VDZrM1RaMHRkaUlo?=
+ =?utf-8?B?OU0yVnc0ZlBmTWxkUG9YRmhzNDZyaDFuVktOZzNhZ3lJYnREbWNpSmtqaFkw?=
+ =?utf-8?B?RWNocTdkV1p1OG93SmVZZU93eUFlTjIvK3FYaUZqa2NCc0tyeDB6S0JnNEZV?=
+ =?utf-8?B?M2pVZWxMY2JxRU1pUFJtRmRBR2JBNzBpZkF5UmxOVVhYQmtML3lxbCtPb2t1?=
+ =?utf-8?B?VTM3TUZrR2srQ2RycXJHUkVSU3d0cGJlaXF6RlU0SXlxaE5Ta0xSRHlzZmpk?=
+ =?utf-8?B?NVlrODhlRi8rNk00VUw0MzJmSHAyS29nL0FYclpNMW5KTkpnelc3U0NLKzdZ?=
+ =?utf-8?B?RkFDMnlQenZ5aDl3QThzM0NpbGxiOHVad2gwaUpQZFhBYUtpRk5QaFdkTE9q?=
+ =?utf-8?B?c3l5R2NOVThmb1BZdFNtSlVwSWJDRWpPejk1Tjd5OEdtYjU4TnFrVG53MVo0?=
+ =?utf-8?B?OE5VQVRKOU1XNXlwaXYzV1RkaWh0cVlNdFdrbzhnZEZmZWZvYlYrYmVDdHBX?=
+ =?utf-8?B?M01yUEhhckw4eURKTkE4SUhnNVFDNnJpMWtWTlJEbFU3U0ZjVjhKajk5T1Y1?=
+ =?utf-8?B?YjNjR2dwS1NCVXhKQllCT1FLaVZQQXRPdjdpQk0wNmxUVlFZeFN3R1ppVWJv?=
+ =?utf-8?B?NnhIOFI1NzJrc0xhR1Y3anNBdHFRcEM0SjhOWmY0czV1b0lablpLQlduTDhB?=
+ =?utf-8?B?TUhNbmpSalFmUHFZS2ZqdVBwNGpsRmhuMTBXaVFUeFlJRUQrY3JSYzJ6TUpG?=
+ =?utf-8?B?bi84WW9TY0ltMTdDd1NxeFhjK1ZJS2IxdkRidGJ3Nk12R3ArK0txeEJ2Z1ZW?=
+ =?utf-8?B?aEdMc210ZjlOTW9oK0srNStPbmx5RTAwYktxM3JHRkJwLzdzKzc2ZjYvSXNV?=
+ =?utf-8?B?NUg0dE1VVUIrT3ZYQzVGdWlFQUU1SlVVaXBoMkxSZVA5dXdzSEVPWEc4OG1r?=
+ =?utf-8?B?b2Q5NzRQWWFRVkdQeURTQ0JXNFpHcUdLc0VTZ0lWbjE2aGpKVzVkMzhuWHF2?=
+ =?utf-8?B?N1BOdzJsQmhtSmxDMGhGTFpyWVRaNTBiSWpRUFFpZjE1MFY0VDF3SHN4bzhE?=
+ =?utf-8?B?Q0JrbVBwdE95TndNblIwd0lFd01ETnFMVFdKYzBuVE5GcHBlM085Tzg2SWNH?=
+ =?utf-8?Q?hFibE6QVYYM=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8784.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VEhaU0psdndHdVg2VjNBS0dUQzRIY0REK3ZZWkgvR25MbUVtODhNRGxtYWRL?=
+ =?utf-8?B?ZzRuS0sxbjFCcjBGNFM4UXFaYTJ0WVZma1I4ZXVQWU02L3dhdUI2OVNVMDd3?=
+ =?utf-8?B?a044REcrdWR1OFRQWitON2pZNjg1NGhRRGcwOFZGNWFia0IxSEZLNHZJYWpi?=
+ =?utf-8?B?Z0IzM213MHZPbllPbEJmWERxOUc4T1ByMUtNSWtwWmNrVklDdGNXdnROSkNu?=
+ =?utf-8?B?a1B4cnVwcVh1eHM5Z29EWThqOFc1VnBMbnA0M2tESFVOeXhNOXlxN28zTWdD?=
+ =?utf-8?B?WEJ0TEs2ZzU3STVVL0dDZi9CbkxtUjlteHlSRXNHL1h3Ry9zeGNtdGdIWk1Z?=
+ =?utf-8?B?UVQvc2ZEdUdqdzUreXhiL3N5K0pVeTVJYjh0OE1TdXo1OXk5UytVMFB3TExQ?=
+ =?utf-8?B?USs1MHB4MlZqSGlTSjc4ZUNWZjVPQW1zV0hnRHoydmVpTEZDUXFra3ZJL25s?=
+ =?utf-8?B?aGhNZG1hWHR4Wkh4V0JNblRLL0UyWC9yVEZHSXZ0cGM1WFMwNHAwd0Z2Uk16?=
+ =?utf-8?B?c3loUzcxczNIb2ZlZjdkT0NyaS9QdEVVRkFpcElqb3JlUWpsQWhkSnl0QlNt?=
+ =?utf-8?B?aXRtWkNEbzZpbSsyNXNRNWRVT1NFcWE3ajkwZWV5WUhWOThaMUtYSDhFdnAy?=
+ =?utf-8?B?OW5sWHQyTG5vREVjejU4YWtaNnJjWTFubE9ldmJCR2lkdTIrb05tamgrakR4?=
+ =?utf-8?B?bjhFNkRDWkhGSnl3aE9SZ1dCMXJlYWRxcFRzSHZlYjgvSVNsMXNPZHl5MTVh?=
+ =?utf-8?B?dnk0bDVseVE0M2NOZEJmMGlnZXJRQlkzL3p0V0ZqT2lQTVJVWTArM0hxaGtm?=
+ =?utf-8?B?LzZBYWQ5L0pNdUJxN2MxS2REMkQrc20vWDZROTM1VDdGanI3NDNCRHg3TzU5?=
+ =?utf-8?B?WTRId2h6aHhHVnYxVHFERkFrblU3M2UrUmpTN1VOczFLcWN4b0doNEl3cTRH?=
+ =?utf-8?B?NWhxUHNvQUdCUVN3SldvaUxCdEdOVTZ1WTkvY0M1U1pqV1RiTWFjOGdScGRS?=
+ =?utf-8?B?NzZhTzBpWUxuZmFyZGc5aDVDNE9zVE82NHVuSjQrWUNnRFA4bU1HQ003QWFh?=
+ =?utf-8?B?MGFTVWNWK3hSeEFFcEMvYUJxbkJLYnpWOERqV2xIaHRvMk43ajlUY0NqeG8z?=
+ =?utf-8?B?Y3kzWWRpeWxLQ21HcmFXZEN4V0Q0V20zbVhtTzhhTG1DRHpUcXdxTktyWDNh?=
+ =?utf-8?B?WEJneDBtcG5JWmd5OTdzeURjd3pyMEpxaFQ1c0FmUWdYNnlIWk5Ia2hjVlFv?=
+ =?utf-8?B?UWtkbmFPQytmOVJpMVIycGd6dXFoZGJyQURxeEJVRys2dGJaNFBoejArVU9n?=
+ =?utf-8?B?TFlITXNsL2dPUHZta2Z3aUlBSm1TemJ0YVNVYnd3QXAyYUl3OWZ3OEFvaWlF?=
+ =?utf-8?B?cWdCbmhXaC9jQTBUYTcxN0VGVkM1SHpNTDNqSkVPVHVBS1Brak1SVTZoVEE3?=
+ =?utf-8?B?Z3doTXpTaUpVTkdnYUpSR2VrVi9XSVlaQ2NrSnI0Vm1IdWhGRkpPSU9CaFVP?=
+ =?utf-8?B?Zk5VRmNleldvME5mM05rM1ZDK2JGRFFrRGkzYjh1UG1WcFZSbFg0ZCsrQW9U?=
+ =?utf-8?B?NnB3ZjFNUUN5S2JCditlSG5SVkVkSk1RWEZGTW52VGpha0JwcFhmQS93ZnRi?=
+ =?utf-8?B?ek55NzVlRTgvVVFuLys2eWkwYnRvMXRpbVVERVY4WGI0WUVDK0pyVjBkL0ZE?=
+ =?utf-8?B?Myt2Q2ZOOUlRWVZpRFpVZWR2Q2tLbGkrS05lTStDMFJGTlBZVlZ5SGQ1UzZq?=
+ =?utf-8?B?TDdnSmxqN0daYTE3N1RhbFMvaTdPNE11UTY5RFBCUE1yZGxaVmQwbG50bVFU?=
+ =?utf-8?B?UDQ5RWlkeXcxeXN4bHBnNWZQejhyL3R3NXJlS1BjR29CL2c0N1prSW9lYitJ?=
+ =?utf-8?B?MCsvemxYeDZ1SjVCZm1TcVdDWUhVcFM4b1ZwdFJUZkdHSjVHRmFBcmk0aEZI?=
+ =?utf-8?B?bm9ZUFFZZzEwenZWSnVPKzBDS1grcVF5d2xZSnNydnMvZFkyOWIvNkNlVDBO?=
+ =?utf-8?B?dm8vVWJRZkM1ZEJIV0EySFBvYlFJN0RnMlEwczJSa0dMaEl2aVpBRWttREkw?=
+ =?utf-8?B?RVUvbnptaTgyWXNaeWJ1T2Vzb0xjN3pIcTUyWFd6TmV6dWpuSjNNdXVLTi8z?=
+ =?utf-8?B?am9ERDZTOUJIdlZUYU00bVN0NkVwQm16ZkVxUk15VUZQUFJhUWxXVk5NY1R4?=
+ =?utf-8?B?dXc9PQ==?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cf11f601-1f1d-4944-c035-08dd93a02d54
+X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8784.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 May 2025 11:03:52.3879
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: f2aLP5hgnlExoQJYxp/lLe0ISxmvCqz1gHTaYhuV94HlhBhQxuhiZREpCFhnv3hNsKU3BIwLi3Qc6No7QDaujA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB6089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_021614_469768_A5BA1A30 
-X-CRM114-Status: GOOD (  21.45  )
+X-CRM114-CacheID: sfid-20250515_040400_897943_C443EEFF 
+X-CRM114-Status: GOOD (  26.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,83 +173,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/05/2025 21:30, Vladimir Zapolskiy wrote:
-> Hello Krzysztof.
-> 
-> On 5/14/25 13:25, Krzysztof Kozlowski wrote:
->> On 13/05/2025 16:39, Vladimir Zapolskiy wrote:
->>> Add dt-binding schema for the CAMSS CSIPHY IPs, which provides
->>> MIPI C-/D-PHY interfaces on Qualcomm SoCs.
->>>
->>> Signed-off-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
->>> ---
->>>   .../devicetree/bindings/phy/qcom,csiphy.yaml  | 110 ++++++++++++++++++
->>>   1 file changed, 110 insertions(+)
->>>   create mode 100644 Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
->>
->>
->> Looks like not tested, so limited review follows.
->>
->> Filename matching compatible.
->>
-> 
-> Thank you for the review, the change is deliberately tagged as RFC.
-> 
-> I read this review comment as the displayed generic compatible 'qcom,csiphy'
-> shall be added to the list of compatibles.
 
-No. The comment is about filename. You must rename the filename to match
-the compatible. How this could mean anything else?
-
+On 02/05/2025 10:26, Wayne Chang wrote:
+> When transitioning from USB_ROLE_DEVICE to USB_ROLE_NONE, the code
+> assumed that the regulator should be disabled. However, if the regulator
+> is marked as always-on, regulator_is_enabled() continues to return true,
+> leading to an incorrect attempt to disable a regulator which is not
+> enabled.
 > 
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
->>> new file mode 100644
->>> index 000000000000..ef712c5442ec
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,csiphy.yaml
->>
->> Please post the driver or any other user. Or explain why this is RFC or
->> what you expect here from us.
->>
+> This can result in warnings such as:
 > 
-> The CSIPHY driver agnostic CAMSS changes are on the linux-media list [1], the CSIPHY
-> driver specific changes will be added on top of these changes, however I believe
-> it makes sense to review these two different CAMSS changesets independently.
-
-Do not introduce your own rules. It is ALWAYS expected to post binding
-and its driver user together.
-
+> [  250.155624] WARNING: CPU: 1 PID: 7326 at drivers/regulator/core.c:3004
+> _regulator_disable+0xe4/0x1a0
+> [  250.155652] unbalanced disables for VIN_SYS_5V0
 > 
-> Here the RFC tag is given explicitly to get change reviews for the dt binding
-> documentation part, and the first user is the example embedded into the change.
+> To fix this, we move the regulator control logic into
+> tegra186_xusb_padctl_id_override() function since it's directly related
+> to the ID override state. The regulator is now only disabled when the role
+> transitions from USB_ROLE_HOST to USB_ROLE_NONE, by checking the VBUS_ID
+> register. This ensures that regulator enable/disable operations are
+> properly balanced and only occur when actually transitioning to/from host
+> mode.
 > 
->>> @@ -0,0 +1,110 @@
->>> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
->>> +%YAML 1.2
->>> +---
->>> +$id: http://devicetree.org/schemas/phy/qcom,csiphy.yaml#
->>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>> +
->>> +title: Qualcomm CSI PHY
->>
->> SM8250 ?
->>
+> Fixes: 49d46e3c7e59 ("phy: tegra: xusb: Add set_mode support for UTMI phy on Tegra186")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> ---
+>   drivers/phy/tegra/xusb-tegra186.c | 59 +++++++++++++++++++------------
+>   1 file changed, 37 insertions(+), 22 deletions(-)
 > 
-> It's supposed to be a generic device tree binding, and it covers SM8250
-> CAMSS CSIPHY IP as well, which could be quite handly for testing/review.
+> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+> index fae6242aa730..1b35d50821f7 100644
+> --- a/drivers/phy/tegra/xusb-tegra186.c
+> +++ b/drivers/phy/tegra/xusb-tegra186.c
+> @@ -774,13 +774,15 @@ static int tegra186_xusb_padctl_vbus_override(struct tegra_xusb_padctl *padctl,
+>   }
+>   
+>   static int tegra186_xusb_padctl_id_override(struct tegra_xusb_padctl *padctl,
+> -					    bool status)
+> +					    struct tegra_xusb_usb2_port *port, bool status)
+>   {
+> -	u32 value;
+> +	u32 value, id_override;
+> +	int err = 0;
+>   
+>   	dev_dbg(padctl->dev, "%s id override\n", status ? "set" : "clear");
+>   
+>   	value = padctl_readl(padctl, USB2_VBUS_ID);
+> +	id_override = value & ID_OVERRIDE(~0);
+>   
+>   	if (status) {
+>   		if (value & VBUS_OVERRIDE) {
+> @@ -791,15 +793,35 @@ static int tegra186_xusb_padctl_id_override(struct tegra_xusb_padctl *padctl,
+>   			value = padctl_readl(padctl, USB2_VBUS_ID);
+>   		}
+>   
+> -		value &= ~ID_OVERRIDE(~0);
+> -		value |= ID_OVERRIDE_GROUNDED;
+> +		if (id_override != ID_OVERRIDE_GROUNDED) {
+> +			value &= ~ID_OVERRIDE(~0);
+> +			value |= ID_OVERRIDE_GROUNDED;
+> +			padctl_writel(padctl, value, USB2_VBUS_ID);
+> +
+> +			err = regulator_enable(port->supply);
+> +			if (err) {
+> +				dev_err(padctl->dev, "Failed to enable regulator: %d\n", err);
+> +				return err;
+> +			}
+> +		}
+>   	} else {
+> -		value &= ~ID_OVERRIDE(~0);
+> -		value |= ID_OVERRIDE_FLOATING;
+> +		if (id_override == ID_OVERRIDE_GROUNDED) {
+> +			/*
+> +			 * The regulator is disabled only when the role transitions
+> +			 * from USB_ROLE_HOST to USB_ROLE_NONE.
+> +			 */
+> +			err = regulator_disable(port->supply);
+> +			if (err) {
+> +				dev_err(padctl->dev, "Failed to disable regulator: %d\n", err);
+> +				return err;
+> +			}
+> +
+> +			value &= ~ID_OVERRIDE(~0);
+> +			value |= ID_OVERRIDE_FLOATING;
+> +			padctl_writel(padctl, value, USB2_VBUS_ID);
+> +		}
+>   	}
+>   
+> -	padctl_writel(padctl, value, USB2_VBUS_ID);
+> -
+>   	return 0;
+>   }
+>   
+> @@ -818,27 +840,20 @@ static int tegra186_utmi_phy_set_mode(struct phy *phy, enum phy_mode mode,
+>   
+>   	if (mode == PHY_MODE_USB_OTG) {
+>   		if (submode == USB_ROLE_HOST) {
+> -			tegra186_xusb_padctl_id_override(padctl, true);
+> -
+> -			err = regulator_enable(port->supply);
+> +			err = tegra186_xusb_padctl_id_override(padctl, port, true);
+> +			if (err)
+> +				goto out;
+>   		} else if (submode == USB_ROLE_DEVICE) {
+>   			tegra186_xusb_padctl_vbus_override(padctl, true);
+>   		} else if (submode == USB_ROLE_NONE) {
+> -			/*
+> -			 * When port is peripheral only or role transitions to
+> -			 * USB_ROLE_NONE from USB_ROLE_DEVICE, regulator is not
+> -			 * enabled.
+> -			 */
+> -			if (regulator_is_enabled(port->supply))
+> -				regulator_disable(port->supply);
+> -
+> -			tegra186_xusb_padctl_id_override(padctl, false);
+> +			err = tegra186_xusb_padctl_id_override(padctl, port, false);
+> +			if (err)
+> +				goto out;
+>   			tegra186_xusb_padctl_vbus_override(padctl, false);
+>   		}
+>   	}
+> -
+> +out:
+>   	mutex_unlock(&padctl->lock);
+> -
+>   	return err;
+>   }
+>   
 
-It's not generic. It's specific to SM8250.
 
+Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
+Tested-by: Jon Hunter <jonathanh@nvidia.com>
 
+Thanks for fixing this!
 
-Best regards,
-Krzysztof
+Jon
+
+-- 
+nvpublic
+
 
 -- 
 linux-phy mailing list
