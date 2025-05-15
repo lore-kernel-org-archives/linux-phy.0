@@ -4,67 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C793C2D0CD
-	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 12:51:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D95CBC3ABC9
+	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 14:39:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
+	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iN9QOGohmDs3SxWFeF+1Ju73jsvFLQ2FToxr+TwGDvA=; b=BkMk6VwNn1wP5f
-	R+hPJAgsSwLNuEH75E7IxDecfVNbIk//MQDAoGD9fyDKWOVdyFSERRsZu3WI3aMbeD7X+CK/yTZeR
-	ZyNF9oyt6cA2sml8hAAm9P5h73Qrv/2NEmS/98+Q+l1Z2cgoHzRd2w4BYysBD3mB8yNeDN23NGB/9
-	UeIuxcC2Q+9SHFAk3wquXwBADbm5n4n8GSKj4+NjbpZqitqvNmf9cpyiu5OHeVNc36xGMAdhVzKyZ
-	LHvRb5vad1Z4jfFLgITZ97UkNQY9+ccsRrgbsXGcezXczJ0HcIsyuvbIW9pFqyWKH+fKrkYQVjl4r
-	XLS5mmbfeJbkxuWisfVA==;
+	List-Owner; bh=LNhQYL3CY2Dk9dwEpuz+2TZ1ZvRwTof70MdZyM4qHlY=; b=oHd2mKSGj/IFOp
+	QF4SvX9m9LPMqhWFGshwYeuQuPtMKlcMJmZlGVrUfl0qTw8jr1C/uGbcewAe2mtnn5E0ht7mCN1ng
+	KXEP9LTPx5GUOJxiFIahtsxbzOIohLMwiT3ypzLkk+tiWtdmq/zVLNQrBgtohhJoWSJaqCeeaYNyX
+	dHlDV1UrDcGtIayLcsWFudo3MwMziLvk2+kqVbu/Z6eVlr4G9SGBhdk1YbVqS06nAOV+dW5tqZp5d
+	6Zskw7xeDW3Z3+6aLNhR0QHSNkpq91rrKM+WH9G9mb+GeXXnOa6wKcWoJl0t8XWP7Fad59vXu8OdU
+	k0daMnhKgZwSVhndo2sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFY3Y-00000000d37-0W51;
-	Thu, 15 May 2025 12:51:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1uFZjy-00000000uXy-2Dud;
+	Thu, 15 May 2025 14:39:18 +0000
+Received: from sendmail.purelymail.com ([34.202.193.197])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFY39-00000000cvr-0dJT;
-	Thu, 15 May 2025 12:51:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Transfer-Encoding:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=Lo8tkKW23+9WMFJ5yoTSmuGd48aBjFyaRNNWMBrBWOQ=; b=BmvkpP6eIxfLKtQ9w3Uake6ka9
-	/9CqizimXLWD3ytdX1PUn4ITl/TGBlhGsWxTcUSzRGijga8WzU+mLIpOc3Z95TFsWEleyRh+fqqm2
-	VyNDWFGDoJ4DROR58cEpf1SEgCOP57kAbGhxX71ycOzcJaoweOmHEkJ/XfcEEgEvXluS3sGGIl/f8
-	5H3ijB5QiJZEa70fSDY2qI+ixApiYZCNQRi7vWmMiuw40RO3hQwdfBFF5Kmxsy9DhdzbZNRAeyCMI
-	2pY+duacKFQbAaQ1Zdyh+9WTu0U0gX2rm5gacCFnQ7EOIK18b1AKNMTUzCyFuW2ndhjhjJ03dOI/r
-	2ALerG/Q==;
-Received: from i53875a50.versanet.de ([83.135.90.80] helo=localhost.localdomain)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1uFY37-0004ph-Ic; Thu, 15 May 2025 14:50:57 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	Heiko Stuebner <heiko@sntech.de>
-Cc: robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH 0/3] usb-phy support for the old rk3036 soc
-Date: Thu, 15 May 2025 14:50:41 +0200
-Message-ID: <174731343058.2524804.7975318323595517347.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20250503201512.991277-1-heiko@sntech.de>
-References: <20250503201512.991277-1-heiko@sntech.de>
-MIME-Version: 1.0
+	id 1uFZYV-00000000sus-2m10
+	for linux-phy@lists.infradead.org;
+	Thu, 15 May 2025 14:27:29 +0000
+DKIM-Signature: a=rsa-sha256; b=ZFZILwmD7YC334uJWUSSaoozvnAwB/bun/UY/j4LOLszgSK7nHJHQv5OWtnsgllixenYRk9hnWg8nMlTXhGqtTh0cLgvDYwBceYvZdCPcMMBsZkQWGM4aLSfp+KHoPkcyJC/WP9LPp0Gu9b+lTP/qCKs81AWEMZUAzCwdDBlDo3zqO1teVBRUTU2hCagpLUl/jCUk5pBPZxZQNXSdjTJzuZlGtK0JBwFgkNEd/YR5CpElj31YM00Mw1sGjJ4I56jp+tNZQ7yf33ugvNPxxsJREEY9bvrR7zRqm12VM/BLoTtKRw/Xb0/C8aVOZhzx+t2ZS7+Ecrww4fd3pdzmEJt9g==; s=purelymail1; d=purelymail.com; v=1; bh=4pgWXPFF4dO5j5XyrOv14vAHpJ4O49nfm35Y0Nv32ko=; h=Feedback-ID:Received:Date:Subject:From:To;
+Feedback-ID: 68247:10037:null:purelymail
+X-Pm-Original-To: linux-phy@lists.infradead.org
+Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id -1592338441;
+          (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
+          Thu, 15 May 2025 14:26:53 +0000 (UTC)
+Mime-Version: 1.0
+Date: Thu, 15 May 2025 16:26:48 +0200
+Message-Id: <D9WSYR0CJUC1.3RCB16LZ3S6P7@mentallysanemainliners.org>
+Cc: "Kishon Vijay Abraham I" <kishon@kernel.org>, "Rob Herring"
+ <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor
+ Dooley" <conor+dt@kernel.org>, "Marek Szyprowski"
+ <m.szyprowski@samsung.com>, "Sylwester Nawrocki" <s.nawrocki@samsung.com>,
+ "Alim Akhtar" <alim.akhtar@samsung.com>, <linux-phy@lists.infradead.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-samsung-soc@vger.kernel.org>, "Krzysztof Kozlowski"
+ <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v2 0/2] USB PHY support for Exynos990 SoCs
+From: "Igor Belwon" <igor.belwon@mentallysanemainliners.org>
+To: "Krzysztof Kozlowski" <krzk@kernel.org>, "Vinod Koul" <vkoul@kernel.org>
+X-Mailer: aerc 0.20.0
+References: <20250420-usb-resends-april-v2-0-25dc7d2e6dd4@mentallysanemainliners.org> <aCRXgpD0Ld2W4lHE@vaman> <D9VYC98LJTR0.LJXYC1H0BAKA@mentallysanemainliners.org> <aCWj4cn4y+RyfGiZ@vaman> <ea1a7a37-031f-4f81-ba09-eaa523f70761@kernel.org>
+In-Reply-To: <ea1a7a37-031f-4f81-ba09-eaa523f70761@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_055059_186648_1FB1DDB8 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250515_072727_805136_29AC3F2D 
+X-CRM114-Status: GOOD (  14.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,25 +70,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu May 15, 2025 at 11:14 AM CEST, Krzysztof Kozlowski wrote:
+> On 15/05/2025 10:20, Vinod Koul wrote:
+>> On 14-05-25, 16:26, Igor Belwon wrote:
+>>> On Wed May 14, 2025 at 10:42 AM CEST, Vinod Koul wrote:
+>>>> On 20-04-25, 21:28, Igor Belwon wrote:
+>>>>> Hi all!
+>>>>>
+>>>>> This patchset adds support for the USB 2.0 PHY of the Exynos990 SoC.
+>>>>> This SoC has a combo PHY that supports highspeed, superspeed USB and
+>>>>> DisplayPort, however due to my inability to test the superspeed part of
+>>>>> the combo phy (device always enumerated as high-speed, even on the
+>>>>> vendor kernels/bootloaders) only the highspeed part is brought up.
+>>>>>
+>>>>> These changes have been tested and confirmed working (with the USB_ETH
+>>>>> gadget and telnet/ssh in a ramdisk) on a device from the hubble family
+>>>>> (x1s) and also a device from the canvas family (c1s).
+>>>>
+>>>> I am missing the dt patch, can you pls report the whole series if you
+>>>> would like me to review and apply this
+>>>
+>>> Hi Vinod,
+>>>
+>>> I've sent the DT series a while back (before resending). Usually I
+>>> propose DT changes through Krzysztof's tree. The patches are 
+>>> unchanged (they will be resent unchanged when all usb and wdt 
+>>> changes are merged).
+>> 
+>> It makes sense to post bindings and driver togther and mostly these go
+>> thru subsystem trees!
+>> 
+> I don't think you both speak about the same thing. DT is ambiguous here,
+> so always use DTS or DT bindings... that said bindings were here in this
+> patchset so if Vinod misses them, this has to be resent.
+>
+> Best regards,
+> Krzysztof
 
-On Sat, 03 May 2025 22:15:09 +0200, Heiko Stuebner wrote:
-> While trying to resurrect the rk3036 board in my boardfarm, I also
-> implemented the up to now missing usb2phy support.
-> 
-> The implementation is quite similar to the rk3128, except the not-
-> supported charger-detection, so its addition was quite simple.
-> 
-> 
-> [...]
+Hi Krzysztof, Vinod.
 
-Applied, thanks!
+Krzysztof: Thank you for the clarification. I assumed somehow the
+devicetree changes were necessary for the revies. Bad judgment on my part.
+Sorry.
 
-[3/3] ARM: dts: rockchip: add rk3036 usb2phy nodes and enable them on kylin
-      commit: 9e010737dd434e3eee1fa75938abea0dc2fab8e2
+Vinod: Sorry for the misunderstanding. I'll resend the patchset shortly.
 
-Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Regards,
+Igor
 
 -- 
 linux-phy mailing list
