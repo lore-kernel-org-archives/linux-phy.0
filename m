@@ -4,56 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D95CBC3ABC9
-	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 14:39:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14061C3DA6D
+	for <linux-phy@archiver.kernel.org>; Thu, 15 May 2025 14:45:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LNhQYL3CY2Dk9dwEpuz+2TZ1ZvRwTof70MdZyM4qHlY=; b=oHd2mKSGj/IFOp
-	QF4SvX9m9LPMqhWFGshwYeuQuPtMKlcMJmZlGVrUfl0qTw8jr1C/uGbcewAe2mtnn5E0ht7mCN1ng
-	KXEP9LTPx5GUOJxiFIahtsxbzOIohLMwiT3ypzLkk+tiWtdmq/zVLNQrBgtohhJoWSJaqCeeaYNyX
-	dHlDV1UrDcGtIayLcsWFudo3MwMziLvk2+kqVbu/Z6eVlr4G9SGBhdk1YbVqS06nAOV+dW5tqZp5d
-	6Zskw7xeDW3Z3+6aLNhR0QHSNkpq91rrKM+WH9G9mb+GeXXnOa6wKcWoJl0t8XWP7Fad59vXu8OdU
-	k0daMnhKgZwSVhndo2sw==;
+	List-Owner; bh=nZfXlzs4uPTceK47vgD88CNlFL49ZzKNG1JAWm0/Jx4=; b=zX373+9L/J9UXU
+	uX3AIRUkpteFCLeqFasGeVHcJ33Pww1KqzAJ/L/tcm41H1JnL93FNol3d4c7SabDQu6K0LGPmLRJa
+	0xCdDsUqsruiLT5RXTvrr9tgxI/2mYS4gMbZGqdbel+wv2hKfuOB8TSoTtHSenRZTAEH8ltRgHpeY
+	OI4XQYdm04sqmpC8QHRDjtCN55ogTzUsleot03GAXFP54sGsNYiiM8cAa3XVEA+Ebq/EP1H4NkOMx
+	7kuKm/JLMPn/wJSn1LLPWT6C3Lj4dnty+4Wqg+d+JAhXRrZjJyDHjDq3eeRo9WR/ELqcsDA6zf/Wp
+	wpj8koCzcmzpiY/9LNPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFZjy-00000000uXy-2Dud;
-	Thu, 15 May 2025 14:39:18 +0000
+	id 1uFZpx-00000000vdx-3R8x;
+	Thu, 15 May 2025 14:45:29 +0000
 Received: from sendmail.purelymail.com ([34.202.193.197])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFZYV-00000000sus-2m10
+	id 1uFZo7-00000000v6z-1ZG4
 	for linux-phy@lists.infradead.org;
-	Thu, 15 May 2025 14:27:29 +0000
-DKIM-Signature: a=rsa-sha256; b=ZFZILwmD7YC334uJWUSSaoozvnAwB/bun/UY/j4LOLszgSK7nHJHQv5OWtnsgllixenYRk9hnWg8nMlTXhGqtTh0cLgvDYwBceYvZdCPcMMBsZkQWGM4aLSfp+KHoPkcyJC/WP9LPp0Gu9b+lTP/qCKs81AWEMZUAzCwdDBlDo3zqO1teVBRUTU2hCagpLUl/jCUk5pBPZxZQNXSdjTJzuZlGtK0JBwFgkNEd/YR5CpElj31YM00Mw1sGjJ4I56jp+tNZQ7yf33ugvNPxxsJREEY9bvrR7zRqm12VM/BLoTtKRw/Xb0/C8aVOZhzx+t2ZS7+Ecrww4fd3pdzmEJt9g==; s=purelymail1; d=purelymail.com; v=1; bh=4pgWXPFF4dO5j5XyrOv14vAHpJ4O49nfm35Y0Nv32ko=; h=Feedback-ID:Received:Date:Subject:From:To;
+	Thu, 15 May 2025 14:43:37 +0000
+Authentication-Results: purelymail.com; auth=pass
+DKIM-Signature: a=rsa-sha256; b=0OduLDqlvmEYjRfnrz9Jj1+yFnUaeyDE/SDc3GvkGtQofEuYUMXEFTmSIVI0rCxxDDMfq1+JDKPf5Qla9HHR12vBYJKmhvq5dEDSDWOw+4TGccW+WsFGdum1ki8rbMFxcZ9hnoHPAERaYpDoe8DriojXLRn3e5k8cmtW8Crz74ufF3TP8a2IiinkcPkpTJXEYwwu/pIfuIJUXRIe4mIQm6s0GM8aSBDBnC/jf4bE0VtauoIGFzxqlqh2TKQqQ2iWqSYIBfdIWgyHhaW56ZTnSP6TcpOTH0HE13R7Hp0oL067si/jBkC0rLew9Jux6LS/uWB+o1s47X3JA0bViaSXKQ==; s=purelymail1; d=purelymail.com; v=1; bh=2/cGZtwwaQu+YHcCE3TqjM1V5QCsE+O2q7sflQ8Skes=; h=Feedback-ID:Received:From:Date:Subject:To;
 Feedback-ID: 68247:10037:null:purelymail
 X-Pm-Original-To: linux-phy@lists.infradead.org
-Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id -1592338441;
+Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id -1985443548;
           (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
-          Thu, 15 May 2025 14:26:53 +0000 (UTC)
-Mime-Version: 1.0
-Date: Thu, 15 May 2025 16:26:48 +0200
-Message-Id: <D9WSYR0CJUC1.3RCB16LZ3S6P7@mentallysanemainliners.org>
-Cc: "Kishon Vijay Abraham I" <kishon@kernel.org>, "Rob Herring"
- <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor
- Dooley" <conor+dt@kernel.org>, "Marek Szyprowski"
- <m.szyprowski@samsung.com>, "Sylwester Nawrocki" <s.nawrocki@samsung.com>,
- "Alim Akhtar" <alim.akhtar@samsung.com>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-samsung-soc@vger.kernel.org>, "Krzysztof Kozlowski"
- <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v2 0/2] USB PHY support for Exynos990 SoCs
-From: "Igor Belwon" <igor.belwon@mentallysanemainliners.org>
-To: "Krzysztof Kozlowski" <krzk@kernel.org>, "Vinod Koul" <vkoul@kernel.org>
-X-Mailer: aerc 0.20.0
-References: <20250420-usb-resends-april-v2-0-25dc7d2e6dd4@mentallysanemainliners.org> <aCRXgpD0Ld2W4lHE@vaman> <D9VYC98LJTR0.LJXYC1H0BAKA@mentallysanemainliners.org> <aCWj4cn4y+RyfGiZ@vaman> <ea1a7a37-031f-4f81-ba09-eaa523f70761@kernel.org>
-In-Reply-To: <ea1a7a37-031f-4f81-ba09-eaa523f70761@kernel.org>
+          Thu, 15 May 2025 14:43:09 +0000 (UTC)
+From: Igor Belwon <igor.belwon@mentallysanemainliners.org>
+Date: Thu, 15 May 2025 16:43:01 +0200
+Subject: [PATCH v3 1/2] dt-bindings: phy: samsung,usb3-drd-phy: Add
+ exynos990 compatible
+MIME-Version: 1.0
+Message-Id: <20250515-usb-resends-may-15-v3-1-ad33a85b6cee@mentallysanemainliners.org>
+References: <20250515-usb-resends-may-15-v3-0-ad33a85b6cee@mentallysanemainliners.org>
+In-Reply-To: <20250515-usb-resends-may-15-v3-0-ad33a85b6cee@mentallysanemainliners.org>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ Igor Belwon <igor.belwon@mentallysanemainliners.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1747320182; l=1286;
+ i=igor.belwon@mentallysanemainliners.org; s=20241206;
+ h=from:subject:message-id; bh=2/cGZtwwaQu+YHcCE3TqjM1V5QCsE+O2q7sflQ8Skes=;
+ b=IFpvQcMNLGhVIGVMxkwkcOJEhsgCa6xS4YXYhcKbT7+BkFZWHG/d/F9tdP0Pt2GiW0xSLHMJ+
+ 3hkft3rI6B/AT/pLwaCvIKBaE7NtuYb7q9v7pvSEhHBe7mM3Ts2K0oq
+X-Developer-Key: i=igor.belwon@mentallysanemainliners.org; a=ed25519;
+ pk=qKAuSTWKTaGQM0vwBxV0p6hPKMN4vh0CwZ+bozrG5lY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_072727_805136_29AC3F2D 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20250515_074335_475223_B4A6391C 
+X-CRM114-Status: UNSURE (   7.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,53 +82,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu May 15, 2025 at 11:14 AM CEST, Krzysztof Kozlowski wrote:
-> On 15/05/2025 10:20, Vinod Koul wrote:
->> On 14-05-25, 16:26, Igor Belwon wrote:
->>> On Wed May 14, 2025 at 10:42 AM CEST, Vinod Koul wrote:
->>>> On 20-04-25, 21:28, Igor Belwon wrote:
->>>>> Hi all!
->>>>>
->>>>> This patchset adds support for the USB 2.0 PHY of the Exynos990 SoC.
->>>>> This SoC has a combo PHY that supports highspeed, superspeed USB and
->>>>> DisplayPort, however due to my inability to test the superspeed part of
->>>>> the combo phy (device always enumerated as high-speed, even on the
->>>>> vendor kernels/bootloaders) only the highspeed part is brought up.
->>>>>
->>>>> These changes have been tested and confirmed working (with the USB_ETH
->>>>> gadget and telnet/ssh in a ramdisk) on a device from the hubble family
->>>>> (x1s) and also a device from the canvas family (c1s).
->>>>
->>>> I am missing the dt patch, can you pls report the whole series if you
->>>> would like me to review and apply this
->>>
->>> Hi Vinod,
->>>
->>> I've sent the DT series a while back (before resending). Usually I
->>> propose DT changes through Krzysztof's tree. The patches are 
->>> unchanged (they will be resent unchanged when all usb and wdt 
->>> changes are merged).
->> 
->> It makes sense to post bindings and driver togther and mostly these go
->> thru subsystem trees!
->> 
-> I don't think you both speak about the same thing. DT is ambiguous here,
-> so always use DTS or DT bindings... that said bindings were here in this
-> patchset so if Vinod misses them, this has to be resent.
->
-> Best regards,
-> Krzysztof
+Add a compatible for the exynos990-usbdrd-phy. The PHY is compatible with
+the older exynos5420 design (two clocks) when running in highspeed mode.
 
-Hi Krzysztof, Vinod.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Igor Belwon <igor.belwon@mentallysanemainliners.org>
+---
+ Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Krzysztof: Thank you for the clarification. I assumed somehow the
-devicetree changes were necessary for the revies. Bad judgment on my part.
-Sorry.
+diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+index cc60d2f6f70e32ea745d523c8a74022e4fb747d2..e906403208c02951ff2bf5ed8420d53ad70eb29c 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+@@ -33,6 +33,7 @@ properties:
+       - samsung,exynos7-usbdrd-phy
+       - samsung,exynos7870-usbdrd-phy
+       - samsung,exynos850-usbdrd-phy
++      - samsung,exynos990-usbdrd-phy
+ 
+   clocks:
+     minItems: 1
+@@ -217,6 +218,7 @@ allOf:
+               - samsung,exynos5420-usbdrd-phy
+               - samsung,exynos7870-usbdrd-phy
+               - samsung,exynos850-usbdrd-phy
++              - samsung,exynos990-usbdrd-phy
+     then:
+       properties:
+         clocks:
 
-Vinod: Sorry for the misunderstanding. I'll resend the patchset shortly.
+-- 
+2.47.2
 
-Regards,
-Igor
 
 -- 
 linux-phy mailing list
