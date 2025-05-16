@@ -4,60 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E71C3ABC9
-	for <linux-phy@archiver.kernel.org>; Fri, 16 May 2025 16:50:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12712C3ABC9
+	for <linux-phy@archiver.kernel.org>; Fri, 16 May 2025 17:37:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=j7+wBs9c+1WUYHCGb0Aw/ciB7rf1BuMpwk09h2rTXGU=; b=YuDZ8WHpS6fhXC4TMQjTgjmi0U
-	zJMmkdBPD88y/s3CJqcmFcWXSXynuCSuqRO8BPCROYGWiQfVsB8ihN540rRF26T77Bzdo9OGIZ3xc
-	LifKn1UzAWQfjVdyHeJfKhI9Ke3lPn/VQOUky67HkKGNpQbMKJJUR7TCUZQZOebgDKhmxWK2fT6qe
-	ojQJTRO3aIEVQOxYL4jVDOAEJxTjW9opvwZ9N/SQJloiZwg6tbDIOfrnE18ftr4L8OGceQ41WxI8L
-	BRTLKqjXmL9CyLd388NV5XCnhqVsEwgwNYh8w636rk5GybQE+E1yBfT7fJd1wQuddd+jcx75eXsFb
-	wFzndIwQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7UMH/sd/ixKn9uAWh+ilaAo0pvFyOYQpJQNTAmyOsz4=; b=p9XBtfwcDGu95U
+	fkuxGeJKUYrKYbdtDsjQJ5UkFA6k4nQalABUe/ZNSwqqXNLlcyiQnJETuNKtEY1Ss+bIVWv3MW6nx
+	WUaZq00PIb1Kbr6teTOxXquBwKduzP6hr3T4HLkBkyl7Vo5Gty5vFicEDStRq3SJcD+GSsSX6Dsm2
+	AgqtaaYT5e0kdtjraGAViKpO+i+JzpVaLKJGPKdE4g2aZ3pebW1oqefKxhhNsHICs67M77BPw0RIl
+	k/7imOnEcfiKOsFxBqrkFbVeZcvjH+1TWggh6xgjt/1TQrs4ohhYEofKdsc3Iu6mAf8cXroCpVWKR
+	IXmZdewPPFek3rGuUTRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFyGI-000000043r0-1BGH;
-	Fri, 16 May 2025 16:50:18 +0000
-Received: from out-188.mta0.migadu.com ([91.218.175.188])
+	id 1uFyzg-00000004BW1-2oDi;
+	Fri, 16 May 2025 17:37:12 +0000
+Received: from mout.gmx.net ([212.227.17.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFxva-0000000419m-1Kug
+	id 1uFyyP-00000004BJm-0uqM
 	for linux-phy@lists.infradead.org;
-	Fri, 16 May 2025 16:28:55 +0000
-Mime-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
-	t=1747412921;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=si+6so3E4lQIUUBkcJ18BhMSwUXfb7BiWBnbg3/5fd0=;
-	b=yHS+a95qmmToOInVPx43MXnz71HkBxazS2EVN3QCqAB0iN4/QnfGlNV+yPE5CUQ3Z5KfM3
-	0vacidYJGsvGiH8WMJWpiXP7RIrU7sknI8OMomAHDWeh7ZBHAzxOxI32gD7Uq6cizqImFq
-	J9qwOCJK3UOXvCZtLQqLTcWCxd2u/hpa0G9sRYsUWlSbvEikc7zIAq0d4QTURwb8HPQWTv
-	kk8q6/BfvPjgk+PjIza3pDNGwyY+58i8zzypQRgxo25qkmkVWYJqW9pUh6KZwsBJ6QyrF5
-	bqdlnuRnGvobNk8N9weVsZWTsvfTuJI8ydpAMCRhw71j0v7ydoorCwC85VWY8w==
-Date: Fri, 16 May 2025 18:28:27 +0200
-Message-Id: <D9XQ6FEVLTFF.6FEVFO840FYQ@cknow.org>
-Cc: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2] phy: phy-rockchip-samsung-hdptx: Fix PHY PLL output
- 50.25MHz error
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: "Diederik de Haas" <didi.debian@cknow.org>
-To: "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>, "Algea Cao"
- <algea.cao@rock-chips.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
- <heiko@sntech.de>, <andy.yan@rock-chips.com>
-References: <20250427095124.3354439-1-algea.cao@rock-chips.com>
- <D9XP2BH2CU02.1R9E1GSXQD9JB@cknow.org>
- <9e29ef0e-c373-4f48-8f37-7111987d2dd0@collabora.com>
-In-Reply-To: <9e29ef0e-c373-4f48-8f37-7111987d2dd0@collabora.com>
-X-Migadu-Flow: FLOW_OUT
+	Fri, 16 May 2025 17:35:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
+	s=s31663417; t=1747416936; x=1748021736;
+	i=markus.stockhausen@gmx.de;
+	bh=+B/b88RxHjiUqLu3BOQlv0ZiKCFsaP4dJyaBRKqiRcI=;
+	h=X-UI-Sender-Class:From:To:Cc:References:In-Reply-To:Subject:Date:
+	 Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=uK6MdAV/TlSaWM98hndEx9eSQl6yfZGHCE13v8vTh+DXUvYd7o8cClX0rTUqvup9
+	 lnbsLxkdbcmrkl7l7LCeq4+RU9RcUZt0BD4eqbqsIkZlxLHAvTInUz5dmvPSnqbjb
+	 Lj6urIGeVhhioh+FDH9jiDrAzN868gOXevCLQQ0uC8X/JD7EDWTJzLpNebvqAGUUj
+	 jrWU6//PKjCdlfvlD9HPgP2JJ+Lx7jbK0E6SJTEI4p7W/NMiC8KpwaVpGxGBKeWy5
+	 GSwhjTgrlJNb4CM75+W7SCOUc9tyoXY7sE98g4NNuKuSanBamB3AM4qtts184hMj+
+	 5RUtQ5q7AKIezl+WeA==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from colnote55 ([94.31.70.55]) by mail.gmx.net (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1Mlw7f-1ufejc3TcJ-00pIbY; Fri, 16
+ May 2025 19:35:35 +0200
+From: <markus.stockhausen@gmx.de>
+To: <vkoul@kernel.org>,
+	<chris.packham@alliedtelesis.co.nz>
+Cc: <kishon@kernel.org>,
+	<robh@kernel.org>,
+	<krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>,
+	<linux-phy@lists.infradead.org>,
+	<daniel@makrotopia.org>
+References: <20250417124741.2405981-1-markus.stockhausen@gmx.de>
+In-Reply-To: <20250417124741.2405981-1-markus.stockhausen@gmx.de>
+Subject: AW: [PATCH v6 0/2] phy: Realtek Otto SerDes: add new driver
+Date: Fri, 16 May 2025 19:35:32 +0200
+Message-ID: <06ad01dbc688$ee2a40c0$ca7ec240$@gmx.de>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: de
+Thread-Index: AQHBQkHCtLzM7kSYhx7haRg7W8ZOSrQKjE4Q
+X-Provags-ID: V03:K1:D1NCFB+ty+ZMFxfRwKSAG04gbrM3lOY6BlUBmMouyKWaaE0GhzA
+ 61dyEAxWMFbCvKslIpMg6QapGNKzE+8ACZZ65uw14gLUh2UBubbYpkZiKQU8XXL5HYN6tDw
+ 7ZQM8O15vTEgzson13Hqc/u8YjgWRyTGJRqzbt3GB+qJsAAkgvxCRAnHyzeFARHriv1DpcX
+ wZRN6SNhj26MCR+xipGsA==
+UI-OutboundReport: notjunk:1;M01:P0:+dNfF8UvNYo=;ta54VbzRNfd60YeaaSuYNPjvPOE
+ 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
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250516_092854_492403_B125AD15 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20250516_103553_567456_A0AE5913 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,110 +126,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5596367087714620244=="
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============5596367087714620244==
-Content-Type: multipart/signed;
- boundary=2a1f0776b31dfb19db50a4c0755eae34fad21a6c0baa4ca8dc5831fba976;
- micalg=pgp-sha512; protocol="application/pgp-signature"
+Hi,
 
---2a1f0776b31dfb19db50a4c0755eae34fad21a6c0baa4ca8dc5831fba976
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+-----Urspr=FCngliche Nachricht-----
+> Von: Markus Stockhausen <markus.stockhausen@gmx.de> =
 
-Hi Cristian,=20
+> Gesendet: Donnerstag, 17. April 2025 14:48
+> An: markus.stockhausen@gmx.de; vkoul@kernel.org; kishon@kernel.org; =
 
-On Fri May 16, 2025 at 6:02 PM CEST, Cristian Ciocaltea wrote:
-> On 5/16/25 6:36 PM, Diederik de Haas wrote:
->> On Sun Apr 27, 2025 at 11:51 AM CEST, Algea Cao wrote:
->>> When using HDMI PLL frequency division coefficient at 50.25MHz
->>> that is calculated by rk_hdptx_phy_clk_pll_calc(), it fails to
->>> get PHY LANE lock. Although the calculated values are within the
->>> allowable range of PHY PLL configuration.
->>>
->>> In order to fix the PHY LANE lock error and provide the expected
->>> 50.25MHz output, manually compute the required PHY PLL frequency
->>> division coefficient and add it to ropll_tmds_cfg configuration
->>> table.
->>>
->>> Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
->>> Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
->>>
->>> ---
->>>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 ++
->>>  1 file changed, 2 insertions(+)
->>>
->>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/driver=
-s/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>> index fe7c05748356..77236f012a1f 100644
->>> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>> @@ -476,6 +476,8 @@ static const struct ropll_config ropll_tmds_cfg[] =
-=3D {
->>>  	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
->>>  	{ 650000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
->>>  	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
->>> +	{ 502500, 84, 84, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 11, 1, 4, 5,
->>> +	  4, 11, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
->>>  	{ 337500, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5=
-,
->>>  	  1, 1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
->>>  	{ 400000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
->>=20
->> I found this patch in the 'fixes' branch in linux-phy:
->> https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/commit=
-/?h=3Dfixes&id=3Df9475055b11c0c70979bd1667a76b2ebae638eb7
->>=20
->> In the 'next' branch in linux-phy, I found this commit:
->> 0edf9d2bb9b4 ("phy: rockchip: samsung-hdptx: Avoid Hz<->hHz unit convers=
-ion overhead")
->> https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/commit=
-/?h=3Dnext&id=3D0edf9d2bb9b4ba7566dfdc7605883e04575129d9
->>=20
->> Where the values in ropll_tmds_cfg are converted from hHz to Hz and the
->> data type changes from u32 to unsigned long long.
->> But AFAICT it does NOT convert this '502500' value, which IIUC means
->> most values are in Hz, while this one is in hHz.
->>=20
->> Am I missing something or should this new value also be converted?
->
-> Yeah, the conversion is necessary. FWIW, this has been already fixed by
-> Stephen Rothwell in linux-next, while Vinod will handle it before
-> sending the PR:
->
-> https://lore.kernel.org/all/aCXEOGUDcnaoGKWW@vaman/
+> robh@kernel.org; krzk+dt@kernel.org; conor+dt@kernel.org; =
 
-Excellent. Thanks for the explanation :-)
+> linux-phy@lists.infradead.org; devicetree@vger.kernel.org; =
 
-Cheers,
-  Diederik
+> chris.packham@alliedtelesis.co.nz; daniel@makrotopia.org
+> Betreff: [PATCH v6 0/2] phy: Realtek Otto SerDes: add new driver
+> =
 
---2a1f0776b31dfb19db50a4c0755eae34fad21a6c0baa4ca8dc5831fba976
-Content-Type: application/pgp-signature; name="signature.asc"
+> This patch series adds support for the SerDes in the Realtek Otto
+platform.
+> These are 8-52 port switch SoCs of the RTL83xx and RTL93xx series with =
 
------BEGIN PGP SIGNATURE-----
+> MIPS cores. The ports are based on 1-8 port PHYs (e.g. RTL8218D) that =
 
-iHUEABYKAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCaCdnsgAKCRDXblvOeH7b
-bvW7AQDSfcraP5FPLqmJrWKe64CLK6ifVw5O8f7Yi2FT8tSXhgEAw6hnZJ9JTDyD
-/GjaqlgnqB5uiJH+H0E1H+TWSuLztQU=
-=hAWm
------END PGP SIGNATURE-----
+> are connected via multiple SerDes.
 
---2a1f0776b31dfb19db50a4c0755eae34fad21a6c0baa4ca8dc5831fba976--
+Just a short reminder to get feedback on this series.
+
+Thanks in advance.
+
+Markus
 
 
---===============5596367087714620244==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- =
 
--- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5596367087714620244==--
-
