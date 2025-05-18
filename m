@@ -4,132 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ABFDC2D0CD
-	for <linux-phy@archiver.kernel.org>; Sat, 17 May 2025 18:28:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E3A6C3ABC9
+	for <linux-phy@archiver.kernel.org>; Sun, 18 May 2025 07:31:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rrPOir3uq9xzoN0mgJz75RUgVt4gPu/MdjzQfD6J8rg=; b=Mer79j4m8Akqvb
-	OSK0ESkzLJXy9Ifz8QWWYLp+OqdEAteab+6nqMDeNZt3ondDroVIxi2akAWftGV4cozpRpNUZHpOp
-	w3gMAzgtOKwfHj8QIxcMjfP9x9YytQi2mqEeIxhRapLQkJ+fN3WHkckTVuQqD6e0Erw6cqN8dhpgE
-	zs7zwxGxkpItzcEekIEaMT8+5cAuVItWG8WZDh8C/VBWs5IeiOXhldkuE6GWNJvlVdsDgjIM8uNJT
-	5MJkBJH0OuKDV85ZF8JJkJQnijdLoP8VjkoVtILgidcYG4yRs2K9rmpFMwt457tvWA9z19d1Q2BKI
-	XBEGHxFEvVxZY7nEfk0Q==;
+	List-Owner; bh=xYsO3fJ1g4RBqWhOpzfJyUmVE25VF1Bf5MYl8FuIbS4=; b=sYntV0/vMupkQH
+	XZLNqt8EY+YGYWyw8EpjAW9PjvxbGySJ04KalZAJiHPynv9UAmocD4NLQwxjN5k79U6JXXo4G3pdZ
+	kCw1X+NDGYtWlmCIbOjz4rdwrNKBI2xD+hRKEUuzrR6wcgdhfcDOaFltbyP99+bAKn6xKKKLYbkFg
+	dMtJDOqdhGkPOiPli3G5ZglOxF9Si2xlloMa7OHUL80IoR2TE4fwDfUVEiKCzBrmfmIi5hpkhlOlT
+	ooqATkwP8YaPXTfwRKvdW+RZZzDESYUR7hvsrHolq5bQmN4YpQdwvy+84vC+DrpQYqI9UB7/pHI6Y
+	gm5z05cx2VspYNzzPIbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGMHL-000000067Rx-1S7T;
-	Sat, 17 May 2025 18:28:59 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uGYUt-00000006qiR-3cIL;
+	Sun, 18 May 2025 07:31:47 +0000
+Received: from mout.gmx.net ([212.227.15.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGMHI-000000067R4-2wQp
+	id 1uGYUr-00000006qhk-0Spr
 	for linux-phy@lists.infradead.org;
-	Sat, 17 May 2025 18:28:58 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54HCGQFh013612
-	for <linux-phy@lists.infradead.org>; Sat, 17 May 2025 18:28:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	WM0LxhWS7WoqwNfrt1DjXdDre6/96mPxCXdCCzvVj2c=; b=kUJ+dPzmPOUT1H2e
-	4f3vdsTGtRsnkKqfAHQaVG6C4ia/O5UBXNhiKnvDXpWPJLOE8wn8fa8CHIPZQQxb
-	fSI67sTTSEaWrXxCWefbK1Cx3sgo2vf5h4aT+tK3DdS2hSl459bt6NoowRStl2+b
-	/h2tFib9F1xUpRbecSDNtJpNpCUDXjMtC6LvdcMwddbid/XMZE3ryN1bXKF8HJAU
-	C5bG4XIDWLKhxV/J4eLeKfo2EgtcPupxMzNHPFEHE+10FNbRR26YKUPbLUwRsLcE
-	Q0X3KOx3wUnNrDx9uYI7E4pzVzYbDZH2+iCSlw8sZdOTnae8wA8gvgD4dXGDq10U
-	yg4NaQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46pjp3101v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 17 May 2025 18:28:55 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7c53d5f85c9so75769885a.1
-        for <linux-phy@lists.infradead.org>; Sat, 17 May 2025 11:28:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747506533; x=1748111333;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=WM0LxhWS7WoqwNfrt1DjXdDre6/96mPxCXdCCzvVj2c=;
-        b=Yt0t8c9iG05GeWpOzOlsTy9PRWo1/CGLm33E0+tdgWbRUXAZ159ZXpLQgQp8xfiUIn
-         PuKDu96ZQTIGSd7J1WWsfZTBSSv2SHiqVHZbiB0v+KIN7H1eyYnpKssVb6Jw7tZcNqGU
-         vwyR/aT1aWgs6V8B7aPVL4DyFkQvKesY1CI56UDdBsDAVP2N+YDwj+oDC3T9e0Hcar1L
-         OxGacQarSZ101pbe25nJe7JsD4H511FmfRTYGQjJpZeHQ90ZPpG1F96YRBROypQqHNOO
-         xesorqCkqyAvZwPUd9rQMV88Tct9XoMa6M8W6S8ODlMhNKRkeJK80A0eTAC3kitaYZa/
-         TuPA==
-X-Forwarded-Encrypted: i=1; AJvYcCWHuzoyJNVTaqlrssPm469gBfCeNtMqaKO166bzRuwvYFRkBuRmdJM7BfX5fMoMX/5jRypu9T7sBf4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzM+y1bmWN4912OmhW04RZKP+e1mJxFfdeVqVt7vIQCB9MKj2PB
-	b/+Wd9tkCvN+W6JCnC4FtG3s0CeNgPDDIgNirbScv23qZVjdYQINlve8KFz1ahHUtx7VEgQ4+Gp
-	p9lGJ5n4BDf2DZJkaQfo1Btg1osTxO2dKjQ8zzsr2AIT/f8iQ933ir8dvmqPkD2e4oB5c
-X-Gm-Gg: ASbGncsTOC7lH2pP0fX5Ftqs2Wy5od6zyK74xXpjIV1RCp+2PBzqWckcmw74dWAzWuW
-	4HVfbt6SILz3730Y76C9nGTIGHn7YZaLHxTRCLOmqyMrQvWzBiYTx70LmW2rsDAOrriHVi0a44r
-	VbbNks7zqZE2WS3s7uaRDIY9P+GmzXYRruh1eM/f4jjdWenkqddbke8t6vCvGIzq/RWPCLWmOvp
-	W/J8S8v2wT6cuGr0Dg/ao6XnUauEjPayGWWsxOCNGrFgLTGEApPWPRnLKZOQ5L+sjaOLy4l+S+b
-	1IdducMx1IZTsNDbdOxT4tipEIrfUeXeC5CTMeQgWdFA9wwlVX+jCiQ2yf4DZobURg==
-X-Received: by 2002:ac8:5acd:0:b0:494:acf4:9572 with SMTP id d75a77b69052e-494ae232bd8mr46453551cf.0.1747506533371;
-        Sat, 17 May 2025 11:28:53 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGqlFqFfxfLYXFiiljRHIXrnkNmpSimkZBjJ/iFwPezDkWXAt4BzxdvbnuBYSABObtqzWL8Xw==
-X-Received: by 2002:ac8:5acd:0:b0:494:acf4:9572 with SMTP id d75a77b69052e-494ae232bd8mr46453431cf.0.1747506532951;
-        Sat, 17 May 2025 11:28:52 -0700 (PDT)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad52d4c516dsm325677666b.154.2025.05.17.11.28.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 17 May 2025 11:28:52 -0700 (PDT)
-Message-ID: <6fa4959c-d733-4d50-904f-caf933e02da9@oss.qualcomm.com>
-Date: Sat, 17 May 2025 20:28:49 +0200
+	Sun, 18 May 2025 07:31:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
+	s=s31663417; t=1747553501; x=1748158301;
+	i=markus.stockhausen@gmx.de;
+	bh=aV6NP2gSdDuiPAIZK/rjgySaehsWdCc8DrznNMKgPQ4=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
+	 References:MIME-Version:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=UtlT4AUoGwcIg0FFUykNkqEvM+lb1m9gTuC7fjSBKMTlhvbaUykVa4sYrNqB6qAt
+	 v63dBJNTpj9pmtRugpLnSlepCMv2yVgzBFOpAYeEmjjtBmlyDZYUQRdz1lXDh9QHH
+	 CA1nGq4ybgemZarqObpQu0bJAMm5FvyXLxlEYu22Ncr9MfyjSnzLdaAqcelmUsobP
+	 ChZB5QmNQVjn/aLBKLSc3OjsQlM5GyDQfaOgmcTzKZecSQllQkE7ChHoP2mw8/NkK
+	 sd39jCY56+n4Olf7NEFbTHeHRUsid/fSUwYKEbskFj59jtD3apnEzBKYR7wWfBkGR
+	 2eHUaKOYzKqabzbPLw==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from openwrt ([94.31.70.55]) by mail.gmx.net (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1Mnps0-1ujbvC3io6-00mspa; Sun, 18
+ May 2025 09:31:40 +0200
+From: Markus Stockhausen <markus.stockhausen@gmx.de>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	chris.packham@alliedtelesis.co.nz,
+	daniel@makrotopia.org
+Cc: Markus Stockhausen <markus.stockhausen@gmx.de>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v7 1/2] dt-bindings: phy: add realtek,rtl8380m-serdes
+Date: Sun, 18 May 2025 03:31:33 -0400
+Message-ID: <20250518073134.3357015-2-markus.stockhausen@gmx.de>
+X-Mailer: git-send-email 2.47.0
+In-Reply-To: <20250518073134.3357015-1-markus.stockhausen@gmx.de>
+References: <20250518073134.3357015-1-markus.stockhausen@gmx.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
-To: Wesley Cheng <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Melody Olvera <melody.olvera@oss.qualcomm.com>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Catalin Marinas <catalin.marinas@arm.com>,
-        Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-        linux-arm-kernel@lists.infradead.org
-References: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
- <20250409-sm8750_usb_master-v4-6-6ec621c98be6@oss.qualcomm.com>
- <Z/exOF4T+0vNLQwg@vaman> <0517c37d-b1ba-466e-bffd-9f47b0d458d5@quicinc.com>
- <aCRVaNDQP/PdAXPR@vaman> <5183b76b-8043-4309-b25d-e1ae505f929e@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <5183b76b-8043-4309-b25d-e1ae505f929e@quicinc.com>
-X-Authority-Analysis: v=2.4 cv=B8u50PtM c=1 sm=1 tr=0 ts=6828d567 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=jJrOw3FHAAAA:8 a=VwQbUJbxAAAA:8
- a=7CQSdrXTAAAA:8 a=VM-KvOk4zruIL__GPFMA:9 a=QEXdDO2ut3YA:10 a=-FEs8UIgK8oA:10
- a=IoWCM6iH3mJn3m4BftBB:22 a=a-qgeE7W1pNrGK8U0ZQC:22
-X-Proofpoint-ORIG-GUID: tbk-ViFUiCysW0HT42MUBn2T4CRqiGxH
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE3MDE4MyBTYWx0ZWRfX2+uNV63oe1oE
- pXh8/mBAUS8WHTEdlYlBYwgEu3NNRHiPM5qH3nKlPHPmIgz1MmxbWdFzcvKrwHE7yttJ3zJg2je
- hClKod1xLFV3d/FVI51fLibbzgjhUmLgeq0M2+Y0qZWdf/pJZy3W59NbXQfIugrJ0xSEzpSHtZT
- DyMC7ezlAa0ycmrTAwBIS89qEbdF8WshXNhxJa0SUDdFQBX4Q7yRiK9TinSQerwOxC1+S2ei4Ws
- Xg2/sK92zwdWlI2Uxf3/ON9HxJUTMkGPl9O+JIu9Eajg5oOT+SCBxEzM606Ai8dWLMyoIrEzZti
- KjiFJcLaFfo2fB55yCorqbhwAx4hkwxVPirR+RxpGoLY6dGBN7hjYhSUOtZ6C/1MDf+sxVubgIL
- VaJN9uNrpNvBkwh3vhcyE/CZ/NOodSpFn9nUcME3CQy0E8SX1lxay6p+TdP9rRYCTUfLQWjl
-X-Proofpoint-GUID: tbk-ViFUiCysW0HT42MUBn2T4CRqiGxH
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-17_08,2025-05-16_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1015 malwarescore=0 mlxlogscore=999 lowpriorityscore=0
- mlxscore=0 suspectscore=0 phishscore=0 impostorscore=0 priorityscore=1501
- spamscore=0 adultscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505070000
- definitions=main-2505170183
+X-Provags-ID: V03:K1:iniZKDFhDDnQ8l05MrlGUs9uHEXc+p9YqovdOZSxExiCKGMim5I
+ qnugEUEa2gxfMMxSuXz3MyCL+rSgJ2UrT5R8YGp73V9c3rvX14zTeLXAXgtpsVos0AC+jOw
+ pjlop4dqaC7xJ0mkKrLQ1jYaadJP+dPGvWXupSvraao8d1o/jJVFehP+8VkUtnw3/MFKgl2
+ qku/9wvYsdaws2dPVJ93w==
+UI-OutboundReport: notjunk:1;M01:P0:HgrpHvJkeEE=;D2/LtrfvijBK7Ot8V2oTN5t37Tp
+ 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
+ amrgEEjJ4gp6LR7QaPGEG8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250517_112856_754375_E6DF403D 
-X-CRM114-Status: GOOD (  18.47  )
+X-CRM114-CacheID: sfid-20250518_003145_492454_0D86B528 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,65 +131,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/14/25 8:24 PM, Wesley Cheng wrote:
-> Hi Vinod,
-> 
-> On 5/14/2025 1:33 AM, Vinod Koul wrote:
->> On 16-04-25, 15:45, Wesley Cheng wrote:
->>> Hi Vinod,
->>>
->>> On 4/10/2025 4:53 AM, Vinod Koul wrote:
->>>> On 09-04-25, 10:48, Melody Olvera wrote:
->>>>
->>>>> +static int m31eusb2_phy_write_readback(void __iomem *base, u32 offset,
->>>>> +					const u32 mask, u32 val)
->>>>> +{
->>>>> +	u32 write_val;
->>>>> +	u32 tmp;
->>>>> +
->>>>> +	tmp = readl_relaxed(base + offset);
->>>>> +	tmp &= ~mask;
->>>>> +	write_val = tmp | val;
->>>>> +
->>>>> +	writel_relaxed(write_val, base + offset);
->>>>> +
->>>>> +	tmp = readl_relaxed(base + offset);
->>>>
->>>> Why are you using _relaxed version here?
->>>>
->>>
->>> No particular reason.  I think someone pointed this out previously, and I
->>> was open to use the non-relaxed variants, but I assume using the relaxed vs
->>> non-relaxed apis comes down to preference in this case.
->>
->> Nope you cant! There _needs_ to be a specific reasons!
->> When you are doing read, modify, write, it is very important to know the
->> right version to use...
->>
-> 
-> I mean, its a write readback, which ensures the bus transaction is complete
-> based on [1], hence why **in this situation** it is up to preference.
-> 
-> Otherwise, w/o the readback then we'd need to ensure writes are made
-> depending on the required sequencing (in spots where the sequence is
-> strictly defined), and that can be enforced using barriers.  If you feel
-> like using the non-relaxed variant is preferred let me know.  I can replace
-> it and remove the readback.
+Add bindings for the SerDes of the Realtek Otto platform. These are
+MIPS based network Switch SoCs with up to 52 ports divided into four
+different model lines.
 
-Readback is stronger on arm64, as otherwise the writes may be buffered and
-not observable at the other endpoint even though the instruction has been
-issued, even if a barrier has been issued
+Signed-off-by: Markus Stockhausen <markus.stockhausen@gmx.de>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
 
-Some resources:
+Changes in v7:
+ - none, resend because v6 got lost
 
-https://youtu.be/i6DayghhA8Q
-https://lore.kernel.org/linux-arm-msm/20240618153419.GC2354@willie-the-truck/
-https://developer.arm.com/documentation/ddi0487/latest sec B2.6.9
+Changes in v6:
+ - add Reviewed-by
 
-There's been a real bug observed (pun not intended):
-Commit 2f8cf2c3f3e3 ("clk: qcom: reset: Ensure write completion on reset de/assertion")
+Changes in v5:
 
-Konrad
+ - drop nodename
+ - drop items from compatible
+
+Changes in v4:
+
+ - fixed addresses in example
+ - missing firmware-name denotes "skip firmware" instead empty string
+ - fixed reg porperty
+
+Changes in v3:
+
+ - renamed to realtek,rtl8380m-serdes.yaml
+ - removed parameter controlled-ports
+ - verified with make dt_binding_check
+ - recipient list according to get_maintainers
+
+Changes in v2:
+
+ - new subject
+ - removed patch command sequences
+ - renamed parameter controlled-ports to realtek,controlled-ports
+---
+ .../bindings/phy/realtek,rtl8380m-serdes.yaml | 59 +++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
+new file mode 100644
+index 000000000000..13b11c011153
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
+@@ -0,0 +1,59 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/realtek,rtl8380m-serdes.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Realtek Otto SerDes controller
++
++maintainers:
++  - Markus Stockhausen <markus.stockhausen@gmx.de>
++
++description:
++  The MIPS based Realtek Switch SoCs of the Realtek RTL838x, RTL839x, RTL930x
++  and RTL931x series have multiple SerDes built in. They are linked to single,
++  quad or octa PHYs like the RTL8218B, RTL8218D or RTL8214FC and are one of
++  the integral part of the up-to-52-port switch architecture. Although these
++  SerDes controllers have common basics they are designed differently in the
++  SoC families.
++
++properties:
++  compatible:
++    enum:
++      - realtek,rtl8380m-serdes
++      - realtek,rtl8392m-serdes
++      - realtek,rtl9302b-serdes
++      - realtek,rtl9311-serdes
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 4
++    description:
++      The first number defines the SerDes to use. The second number a linked
++      SerDes. E.g. if a octa 1G PHY is attached to two QSGMII SerDes. The third
++      number is the first switch port this SerDes is working for, the fourth
++      number is the last switch port the SerDes is working for.
++
++  firmware-name:
++    maxItems: 1
++    description:
++      If present, name (or relative path) of the file within the firmware
++      search path containing the firmware image to patch the SerDes.
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    serdes: phy@1b0003b0 {
++      compatible = "realtek,rtl9302b-serdes";
++      reg = <0x1b0003b0 0x8>;
++      firmware-name = "zyxel-xgs1210-12-serdes.fw";
++      #phy-cells = <4>;
++    };
+-- 
+2.47.0
+
 
 -- 
 linux-phy mailing list
