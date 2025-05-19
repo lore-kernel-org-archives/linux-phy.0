@@ -4,121 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B0ABC3ABC9
-	for <linux-phy@archiver.kernel.org>; Sun, 18 May 2025 22:50:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16CB4C3ABD8
+	for <linux-phy@archiver.kernel.org>; Mon, 19 May 2025 02:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bfRVU45+RxlfMIIK+x9kPeF34lwMI+ct8/W3FAbCuho=; b=msx4NpJlUVhFvH
-	NH9qF5qufnn5W7QdcSE34MPeJ5kWJJoWX1NN/Zlhq9wWJshuPV2tboZqBLjobumSM8hbreNkoX2v7
-	sqyDKfsVHcPo25UQq0NWLNHhiAf1A0RTZvLoaAIEq5yjtVbN/FKgCPDK5hUGHrdHsokA+LrmqFd09
-	Yz7uznh8Pn15SGT/6aiZwEhnoiNjRPxg2PIfyRVQE+ti9W8Re7pBBgHWanJ6b78X8iU6p5eFjbX6h
-	wXdJrITEH+Mp6KcOKbqLp1q1RB2Fwzey1mPPU/Fkrn0ewJ2eyuz9hEI0oGj/L1lGR8em2qstYRK/h
-	/psEmJWERjJ4KcUT1iyw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0XX094mDBZV1SfSKXdnbS8Pb4Ywpbv/mbR7Imb4xeBw=; b=JCdj1l2BbLeXzD
+	pHIhfRl3yMt3+iRGCFKgKvfA5Z4DiNphuHxf0v2wbBmGrUyWQOSlc5kCarOcmNx5j1rIPR9MF7DwQ
+	sI54PWPj8xEl0L1EqCAFLmGTWVv6gVOBq0rLQBxOy2NHBywSCkvoG/J3eb1+xwf5yPrB9fHvUV6jr
+	AYBIM6w0+A0QK9tkNzfq4/eRoIuj4dMBZI2MYa5x/um2nHCuhHLWhQPcXoNZZ01vTzLRm0zWnwKMw
+	+kty7U6AtObhbyTFHE4EMX5iJ8zOVlVGJhelIjW0jQ5vd3PH1j38oF9sHDV8i+WXRTI0AcdIABGGX
+	0AREHMaIJXqnGwDeycSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGmpd-00000007fEB-136o;
-	Sun, 18 May 2025 22:50:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uGqdG-00000007sTl-39xq;
+	Mon, 19 May 2025 02:53:38 +0000
+Received: from smtpbg154.qq.com ([15.184.224.54])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGmpa-00000007fDo-3hlI
-	for linux-phy@lists.infradead.org;
-	Sun, 18 May 2025 22:50:08 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54IMZksC020609
-	for <linux-phy@lists.infradead.org>; Sun, 18 May 2025 22:50:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=InqaD2zz8IXPbJ4Cc2UGd8YB
-	VpLuDNI5sRhUYI1lQ5o=; b=MJn6Ry9eXF4v1O8S5WC/ZKbfJf/AFj3eZKRLF1ka
-	nKsg/wkVc7SBYhuU+fi/z6NjhDtXtmy/NpfzUDno378HW0FtDq1b3Z37/jX3goQL
-	y+UUedCia3w4J64l7azu96t6ZDE3ONxkoipDIR3VrqlOppjUCedtlT+DWFxjBHXq
-	d1bSRNfxQB56a1PhjChq9NbGS/+p0A0cpTXIG1gS21/f9gllhmh15t86lYP2hT2D
-	akcem1A+98IPaQPuMa3IuXOdnX4QI6EKTsA6F9WrTHfW+l5ITmZhrbcM1P8qNKg8
-	WiLR3SYQFqb/fWb0BuIOJT+FEoljb+GR1IQXPyARj2EN5A==
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46pjkcthq4-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sun, 18 May 2025 22:50:05 +0000 (GMT)
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6f8c6ce05e0so22188406d6.3
-        for <linux-phy@lists.infradead.org>; Sun, 18 May 2025 15:50:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747608605; x=1748213405;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=InqaD2zz8IXPbJ4Cc2UGd8YBVpLuDNI5sRhUYI1lQ5o=;
-        b=hTA2BXJTiXyCW0DA8ZlP+YOerx/PuRhRMOj1PvGhevCm/R4UyiVTW6M43lvAif7HjG
-         s8WBP5H0pyE+UHS3a5dUAOxR1AepmH+rUkQJ0+715P98oWak2c1OcMcwLX+2X6gFoVwQ
-         w8hurVBqDnCuGRcfzBsBtU64BRF/lz8u7NpwbHUbt4g/S6oLPU5oBmKpnm9SXDI34C0b
-         0jlKn4uYZsialskEYbukYIOf5J58d+LOcrjnVdNzmYLUG6ipf8ZHolmbmsTVugSKNlQ4
-         rO1ohCaQOn+48To1kAsdA/HAoNK1f7SNcC8r9ugZkZh+B0SMJAQhexFOb2L2VQ0YdvbY
-         /X7A==
-X-Forwarded-Encrypted: i=1; AJvYcCXJWssO8UrMCjqF/IWfJHUv3cICw7rPT2K47PPyEzRoLnp8DTPKlMNYiP0u6bLjcw9vM+g949M/VP8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwV8hf6sVMVCtJc650S9+SASByTMjxNF7Bd4Rpa3S6lujvSYcpE
-	cfPnlKZ2xD4GQXUJH8wm6Tz9tDc+tacJ2kxlH7sEIRcAllaMdX71uYDantf71DT/qJeMIuS4T58
-	6r9/mpywhE2SuGJnZoKDUWLlq3vImAx1WrP2VV4MpD52bvMXR/NFQvqBOzBlN9rX3e/D6
-X-Gm-Gg: ASbGnctHVhehfXW7ZNLip7RsTpqxvcojMBRqykp3KFeyNOkuxKeMocgrd45/2HHQgvW
-	/1tJ4Zy7qUW9tN60/XApfAAywCjtfcAZMk0o1UWOsrjqcruV/1CY2mEQx/hw8d3+xmOWj1KcGhb
-	FThquYZhg0GHHoYVj/B38osLpRTSL0pDcDdikLhMm9lJmJyyqI8FLZ+mqBR4JMIXV8ZsG7Yb2gE
-	5RfGtvm+vhbddu5GdZtV4fkNgKo1ouhUaeq9wePhq0c407xK26BpAQW5DVWrgqrtayyuI44khJk
-	51in/NhseRfZxHyf9n1Q5irfqiK1n/zCEc4UXqA3mRqB259Dzm9xEMFj6ljfco0DmfgIlrraQ7k
-	=
-X-Received: by 2002:a05:6214:27ef:b0:6f2:bcbf:1030 with SMTP id 6a1803df08f44-6f8b09542abmr153442836d6.43.1747608605134;
-        Sun, 18 May 2025 15:50:05 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFtI/P9Ic6fG3W/Sv6Mi+6qg2rT4HzkrU7ujx4sNi9OVmydEHID9pyDdwB/cwiUhNpxwl1dJg==
-X-Received: by 2002:a05:6214:27ef:b0:6f2:bcbf:1030 with SMTP id 6a1803df08f44-6f8b09542abmr153442576d6.43.1747608604790;
-        Sun, 18 May 2025 15:50:04 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-328085b8795sm16856181fa.79.2025.05.18.15.50.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 18 May 2025 15:50:03 -0700 (PDT)
-Date: Mon, 19 May 2025 01:50:02 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
-        James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com,
-        bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org,
-        konrad.dybcio@oss.qualcomm.com, quic_rdwivedi@quicinc.com,
-        quic_cang@quicinc.com, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org
-Subject: Re: [PATCH V5 01/11] scsi: ufs: qcom: add a new phy calibrate API
- call
-Message-ID: <d7d2u5g3ikhx4plag7fkeeqint2766hjjplr4yoyehvqyfogkm@pcegku6arhfj>
-References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
- <20250515162722.6933-2-quic_nitirawa@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250515162722.6933-2-quic_nitirawa@quicinc.com>
-X-Proofpoint-GUID: xQjxkzFXObtuiLkXpu-7xZedUAEMveO4
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE4MDIyNyBTYWx0ZWRfX+36USyYyGRJW
- wWch9E3KANfZEFPj2STBI4l+p9BkH/U8ocMZM4hfx1LPy3M9knM828nhRTdl4GhZz314HWSYniL
- kbYgnYIN3UNf6PK8T+v1kPFdDrKfqVzOdXqJw6+bcURx9Zl4f5Pdw7/GL5rA8Ds4PY/dqt//Yug
- aXvjZAxsy8aJw5lhD+OinxoIDF0IYRSeYX8L7d4YcgldtpCx3kf1qlFAtRrXZKn5aS03ZICURJW
- HuyplTn0LQcqCMD/B+M5pC4iXwrPCk/BvjZ2XBgCi/6daP6c5xqot0GC17Xce6tl+8T6S6STlfQ
- z7dSOPEU++SnwJTp6wX7vfU15gNwZghwLtwRU51pFhlA5ikvHpuMYuFLvWzPW6zLTXndqsoeBDt
- aVOddV4P6N0Q4kiWqjyE68VLXtirL3ItGfi4QnkvMsIGe6EU062jbqDfNyw9aPEiyCRdQhah
-X-Authority-Analysis: v=2.4 cv=aJXwqa9m c=1 sm=1 tr=0 ts=682a641d cx=c_pps
- a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=fB9s-OebfdFJWpWk0o4A:9
- a=CjuIK1q_8ugA:10 a=1HOtulTD9v-eNWfpl4qZ:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: xQjxkzFXObtuiLkXpu-7xZedUAEMveO4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-18_11,2025-05-16_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 mlxscore=0 lowpriorityscore=0
- malwarescore=0 suspectscore=0 phishscore=0 adultscore=0 clxscore=1015
- mlxlogscore=975 spamscore=0 bulkscore=0 classifier=spam authscore=0
- authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505070000 definitions=main-2505180227
+	id 1uGqZX-00000007s8S-20Co;
+	Mon, 19 May 2025 02:49:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1747622931;
+	bh=q/sSSvsejltScJuXpP48TQCHlwrbZHa7HU/nV26CHgY=;
+	h=From:To:Subject:Date:Message-Id;
+	b=JbbEDoZYG38yQtTjaIio2935ELa6425ycT104A47Dk90ZHJuLnOd3UzCTdvJqKfuG
+	 nfxoj3UvKrVvWikhcx4pWzJydSPnnnQDvEEnQx867cDWJDo14lUJrwnFE8aHdNGryH
+	 7dMYO4Wmw13yco1+Y9CcWUNfsTu2uSzkgDrdWL/s=
+X-QQ-mid: zesmtpgz6t1747622928t1cc315c3
+X-QQ-Originating-IP: T3MnAOsWUPLbC2flLp01PBfX5yrywZTMate7vWnKhJw=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Mon, 19 May 2025 10:48:46 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 3107093563551695927
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Zhang Yubing <yubing.zhang@rock-chips.com>
+Cc: Dragan Simic <dsimic@manjaro.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Johan Jonker <jbx6244@gmail.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: [PATCH 0/2] Convert RK3399 dp-typec phy binding to yaml
+Date: Mon, 19 May 2025 10:48:18 +0800
+Message-Id: <20250519024820.194-1-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+X-QQ-SENDSIZE: 520
+Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
+X-QQ-XMAILINFO: N8Jy6PtD39R8GBSOHfaJoNKIdpkVvsf9l1xtvjZKJTDZmBv3K49XdsLg
+	E/Hxnn4nKmf1qjmYEX5pCPrGJXHlDPPhy39HkqEAySSZdLwLLEHz+eiXOCeYhr7jzOLWxxn
+	OqawgipqJGmX5XXzT8ZzSzIhvr+d67Y2z1F0KQWLvRm1oGlODjJ9MnSFdzZiNv3ubX02e2Q
+	YpsFE54givGExR0kD128SsBPBk/j4OCo1JLZKflwMC8jTGdQ5by12ShoV1mCMB2YtJsDaZ0
+	4GuveP454er6vVXN5Jt0d4yW7PztfkcoCHIo3Ehs5DnPYC5EOigljHUAZkBNV7/Z0SXHeAr
+	VNxxk1l+mwPWxmb/9uFiLCX5ccMWttTtszRPaxA5svZeRbxaH9EouAGbKKUd/tQdXA8fEEq
+	uuPBVk9RSAlf58fyo1saCF3j3CNRdnm4EHuMu4N44lrMkdZ+8gvm2fno8UlpZ/d1Ha605rb
+	od6GztpMqSc6+csHC1nJcReKTmyJQasjq9lMr1VbmJg4kOKVVo+K6aK7u9CXvZY5V72/Xfu
+	mQKpPouWivYF//Ju0TONuAMzagYCZBhust2sT90ec/oO2xsRimEBIPMekiet9KHReswXo9D
+	84+6dqF8/Svjiw5hpi+QnNThHgVi7/JcgSFblgOLACg85fvuvBNKCsdpRhnp1ur2EO7KBs7
+	iz76JCDp6TlLiGWHpktRbdq9KUz7QwQ+Oxh8YoDX2TscoQ1/gEnSJNZokefuuPAqp+k4AAR
+	91x/mhxcWNV0O5Gq8jjPrMSEj81xJTXPvWShvvDyh+MR4PFKiA8mkZXobkLDuPntEAW28Ep
+	xkkfZuD5B+SSpdN1kmYyNJl270O3w96XfkpOcZNiYZtISnhO+GDt+SgSxklKz2pFxSttpeN
+	UqYuTwB7nsgz38Z4HtaVL9VHcMV6tvp+jEasg38KjNoblMuaN1VXjs6z1PhpUDAMrICIT4D
+	/mc1lnRLPdmuU/Vj8ai3MSS9q9riissxY6M0wBe4cAiof4WsaZt+JbYB0
+X-QQ-XMRINFO: Mp0Kj//9VHAxr69bL5MkOOs=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250518_155007_044293_169A7E10 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20250518_194948_209061_3CB659B4 
+X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,28 +98,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 15, 2025 at 09:57:12PM +0530, Nitin Rawat wrote:
-> Introduce a new phy calibrate API call in the UFS Qualcomm driver to
-> separate phy calibration from phy power-on. This change is a precursor
-> to the next patchset in this series, which requires these two operations
-> to be distinct.
-> 
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
->  drivers/ufs/host/ufs-qcom.c | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+This series convert phy-rockchip-typec.txt to yaml.
 
--- 
-With best wishes
-Dmitry
+PATCH1 try to remove unused "orientation-switch" property for
+rk3399-eaidk-610 board.
+PATCH2 try to convert phy-rockchip-typec.txt to yaml.
+
+Chaoyi Chen (2):
+  arm64: dts: rockchip: Remove unused usb phy prop for rk3399-eaidk-610
+  dt-bindings: phy: Convert phy-rockchip-typec.txt to yaml
+
+ .../bindings/phy/phy-rockchip-typec.txt       |  84 -------------
+ .../phy/rockchip,rk3399-typec-phy.yaml        | 111 ++++++++++++++++++
+ .../boot/dts/rockchip/rk3399-eaidk-610.dts    |   1 -
+ 3 files changed, 111 insertions(+), 85 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-typec.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
+
+--
+2.49.0
+
 
 -- 
 linux-phy mailing list
