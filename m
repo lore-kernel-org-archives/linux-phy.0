@@ -4,124 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4397AC2D0CD
-	for <linux-phy@archiver.kernel.org>; Mon, 19 May 2025 12:33:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EDADC2D0CD
+	for <linux-phy@archiver.kernel.org>; Mon, 19 May 2025 13:16:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RnzqI1+hMJQ3xwu+5iYQzkkW/9Gsjqf1XUDq47pQN3U=; b=XV1fWYkAPXNr0t
-	wyYW5xvyV5fDQmKL7l7+QYfqDmyE+YEJmIf1dPRMSeO5BYD45ZXIg2v0va2Y9ohfow4NuyZHYa2aI
-	h1dv18pKs4FDz4Utj5+TLO42Mhx1NzvwmfWpihn3AO2yRKMvdllKogpPiwyLBeXLqTP9QS8legCe9
-	thfdrhK4iqSDON5hx7TnbSYWX+PdWRBhPugOucE/ydCUXxkYrnhQmAZ6qYuMRIB+VlFw1jn6Mljoc
-	vVPb/Tqeop7tZIcp6ZV8iDYnz8Dtufw8wD+wWDji7FlEvTEhbMt8QJFVFlq9yzdtJ+xy8jyM4P1KM
-	3Hvx81K8xoSdwNG3Ks0w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6yXjiNg1sYTYE9FUVYSuVXfxCrPJOmkQizWpBnOnk1s=; b=Vp4woj2ggcMQTRn6+GfBFxnL+i
+	38vrApfdO6vLKucqbiqAzclm8/VvYPp/YodWWGa0Vup2uyKcKj7hMi7pXO3QiT/vOLkSAEVMgDnOG
+	NVX2YmEeXXqyqS2WQXRcs1JdxU8IJwlqoXR2WYycsQT4Q8NVlVKC1Diu3bFq6yaTLz6nD+0xu7JIo
+	+LRelPo7E0WyU8x0Dqh7PTKLFdwtp1uFnTEz67YjHloSGirNTe8hvTxzLG/uN+iLLirOYXXoT3CTA
+	WE7uUDvXpGf/MzuX8AgWI6xVuYGSrdd8uClVqCH3iIbtHrYOGjkBraCbd/OEOeSX+kluhKaumi0Nm
+	MixA5jBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGzgS-00000009AHS-3rWc;
-	Mon, 19 May 2025 12:33:32 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uH0M6-00000009GTI-3cgr;
+	Mon, 19 May 2025 13:16:34 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uGzPn-000000097Ee-1JKE
+	id 1uH0GC-00000009FZM-2LXi
 	for linux-phy@lists.infradead.org;
-	Mon, 19 May 2025 12:16:21 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54J7GcrQ023182
-	for <linux-phy@lists.infradead.org>; Mon, 19 May 2025 12:16:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u4G4v/3QWDx7UFXsSJeLbnLzxethnDdnhnF/yuDl88A=; b=I0vycz/65xIbhlSZ
-	HzJdZQqIWkMD+AWh9lNYeHIMQpSisW3Q51HE6Lm9ZvXoo6XmZD3R4DmHVqPWBlhV
-	V9E2kysF9y2xZm4yBj7nZbyAHwghU4cq/9Zd3cN5Vva2r2crxry/NWsZse6PV+rL
-	JTNM5R//ur4WxUPn3AIK7iAZF254iPPzzqPWen2N9e79Yf4htVsZbDoyWzYGqK4+
-	2T4lyb0EGkIpLiaRcCrWPqC6vGehKRbtw8oVQg52a7bdR3mHsowDjO1dtBAbBGPf
-	26RA+2sIxpYKiPb3+SCJTXfUres6F7mVVzA0qM+c288fvq2+/nzwovk+/wEbeA52
-	qJkv+w==
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46r041rugj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 19 May 2025 12:16:17 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-23222fdb4f2so23574735ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 19 May 2025 05:16:17 -0700 (PDT)
+	Mon, 19 May 2025 13:10:30 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-445b11306abso8327475e9.3
+        for <linux-phy@lists.infradead.org>; Mon, 19 May 2025 06:10:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1747660227; x=1748265027; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=lrx76GIvZE8ri6C0tOAMEiZDaDqYf1SxHKrPIjBXbeQ=;
+        b=F2bNW3sgMdrIBEcuXaVC+wvbPmw0W9HXC4ozBtGkT5P6g6i45yskx6QDERhMolO6J+
+         qBsxXRTEO2UZFWNTSqn4yA2lOOg4OTXaoj2rqa7NAhMtDpuAaxAzCyFnWlhcidDeA4NU
+         N1Nz6iQlSILFJOBrWZ7Y6wClHMyrY9lHEnV95KM354ax9c5oWk3x+/yHxvT5riMlwqYS
+         1pURA5nHMKxmpdYsI4nLz7+2Lz2f1s4qIpshew2WnY1x7rQQoqyiYXqZyF5Dbnv5ZyAU
+         NaUnlawXjKNbIKhetjcG5vS5PBX3zxqFX9pL2dBxjLDrBoP7+3VPxszFOpJ8bL/Lnep4
+         ow+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747656976; x=1748261776;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=u4G4v/3QWDx7UFXsSJeLbnLzxethnDdnhnF/yuDl88A=;
-        b=NJoufCx4ydpslfbdPodU9TaU+1RLwGUzs4iBfq2gQrF/DeckYC0ZdD8+8NBwNi8u55
-         Eu2flFhtvApemShwkV4Er2juZJKVYQxpFHY24UEe6S+meXWkb2a0GtO/Ge99xoavcmAO
-         c5FMwFXngAfwF57/CZiR5XMtLJuiezud7LjqA5Bi1hH6K+d1tM/va/fpiz6WUQzLSo3o
-         CzjG44o4aJ9n5zuh/QFahIkM/iLY/1iARb+5vZG1zpsm0NWgOGSFsw6Xsxp8l6x20684
-         0YPwp8fgcv5k8KiTNQvPzxLsRaoDPyiaP6lzgRYa/7kSTwtZnYIdO8IEviN6KBn8puuD
-         t+6w==
-X-Forwarded-Encrypted: i=1; AJvYcCV0VHQ/D7OEXB0JGWC3at6F2SXHpqK6jq0eA+JhMupfzpJg5a7dUTgW1na4JLg4HcQSAj9xFeNq9gA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxpsoKODlA3XSdH8jGAuAjKYKdIyTTotKEUuuETa47cokbW6/lw
-	DPFoVozn2KolPNnqDxjRMjqQUfC2WpWYpz9+BLOnsn0JDJ6IK/NAka15zQ+I1kG/GknI48hFzE8
-	bdY8n/M45stXt1y/0nS/hIiYX4GqUQ3b4YcOgNPnLHFBB1Ldnhp3UQOOanYG2NRvBGMcuCi2zWN
-	gyiYcSDT+jTGPOgf2vl5ATmyeoxHiLupOR6IjVR8P59Qg=
-X-Gm-Gg: ASbGnct6Ln6D9eRjj5gXcu9n2bWCuV3I/C0F5syBdptgr1DJMwdWdA5GF0wUdT4Y65p
-	XNK80UrPgAXhZV/l8yIQl50c69CCCzXXUmOLpArTdEboOZDX2PyL9FnUIvCfkkWyVEallKQ==
-X-Received: by 2002:a17:902:e801:b0:231:7f29:bda0 with SMTP id d9443c01a7336-231de5b0ba7mr160018115ad.52.1747656976189;
-        Mon, 19 May 2025 05:16:16 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEHd8pbYGLE6SycYb8UZ6wrWsr0sYw3IPLE+tXeV+ix6q6M438C0T4/cbceiUfp/qjiHUeu+4uzOdIUmRTLGKQ=
-X-Received: by 2002:a17:902:e801:b0:231:7f29:bda0 with SMTP id
- d9443c01a7336-231de5b0ba7mr160017815ad.52.1747656975770; Mon, 19 May 2025
- 05:16:15 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1747660227; x=1748265027;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=lrx76GIvZE8ri6C0tOAMEiZDaDqYf1SxHKrPIjBXbeQ=;
+        b=wgTSAnr4T4JixYrXYTBEdYWCnAngt4Wl1nZBcJNUA0UR0Ni5/iOUGHPasCjtITK2FG
+         Jis8IMTtS98tJaD+UmmpcwIoqmhCP8lHV5lJmLUh4e5MJQq028+f2L1cobIo6WDh2vY0
+         G59pXqr2GW7tGLggPcd7nVjtu5IYXD5BqGbCTfRHo1MVrMkFi8qlVv5zqNaAArKh36Aj
+         bI6gt+BeIvvkq3by1BPA/ZBY4xbgQ9agjHZx/ZkwoOmTfGaWEdf5MW+sTcvQMdyzOQWT
+         u4K1rVCnO0LgenhuWPLNOzmv2+udbiQl+5QEwVXg+cIKJHGK9/jiM7MwT+LidT4yDk5E
+         Iibw==
+X-Gm-Message-State: AOJu0YxddAV10agGn4nbAz/FGoTTqa0jvrKm2RFQXBC9b18rQhJZLvuS
+	MDtOw0WK8rcTCZCv2DXDfmX7F/Li3fG6sJRTY5D+sfnJLt1pbleXdSAOErgPKjpdzfFsdcApBD6
+	aVUVO
+X-Gm-Gg: ASbGncvDEpfg/mhqcI/avFkOuXNten6Stj44qcjTs23TPyU5k1U3yuR2Zf19l4MTkJT
+	zYjj+k2UaKNfNEP/mWShm7Mao8f9AllwqE7EPcMVu4eU9x7w7YIxEF4gucMciEzkYmPiJA021oN
+	GCurcvmCUXoJ5F3bgqSnTT0JvzEM2dKx7SSu8mRt9U+0qu64TOtVYrJZGkacPuVlycO6GP5En0f
+	pQRlYdF3ibeNLSIRk+05OepB4Hzpk6Js3MsgtQUCm5Xd1UOmkO3DK/IE5J2Gi00N/bonSFvYxs9
+	XeVjhOdkxy8PJR8aEtpF6Lhu8rmc4zqSU/+2gBaPOzceyukdcf0XLOrotIxMeAp37uUVNtNCBQx
+	7NiYciQ9NysYvYSKccxAYC2Jk41AY
+X-Google-Smtp-Source: AGHT+IFbsWrhIbaZ+6OKxu+7ZbIkukpPt7vDSIyA38U3pF6buTdhKdPNA1FbP+nZKSJE6v24rUJEOw==
+X-Received: by 2002:a05:600c:b94:b0:43b:ca39:6c7d with SMTP id 5b1f17b1804b1-442fefdab80mr123242555e9.3.1747660226852;
+        Mon, 19 May 2025 06:10:26 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:ce80:58bb:54b7:ad18? ([2a01:e0a:3d9:2080:ce80:58bb:54b7:ad18])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-442f39ef87asm207185945e9.36.2025.05.19.06.10.26
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 19 May 2025 06:10:26 -0700 (PDT)
+Message-ID: <4110276c-8c64-4fd2-b166-c016509bc8a3@linaro.org>
+Date: Mon, 19 May 2025 15:10:24 +0200
 MIME-Version: 1.0
-References: <20250514-update_phy-v2-0-d4f319221474@quicinc.com>
- <20250514-update_phy-v2-2-d4f319221474@quicinc.com> <8ba99df8-012b-4883-af6a-970dd9f877f6@linaro.org>
- <f5e1510f-3496-4f5e-b093-623d3b4be428@oss.qualcomm.com> <CAMyL0qPH2r8oXOrNp3jF-nBJCRCZzJr8rYrHn+Yp0MHR0Wy-vw@mail.gmail.com>
- <bpc4tsp4kghqohoxm42qls7gzd5me7xrpodmazyhpvjjlkkay2@paoq5zygczdd>
-In-Reply-To: <bpc4tsp4kghqohoxm42qls7gzd5me7xrpodmazyhpvjjlkkay2@paoq5zygczdd>
-From: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
-Date: Mon, 19 May 2025 17:46:04 +0530
-X-Gm-Features: AX0GCFvgmiM69A2CqrAIbnHrTDa4cVJKrTijAb5UUN_qj4VtV9AOkvTBIyXtUYc
-Message-ID: <CAMyL0qNQWN1ORReZu3wrw_Ex+nAmAJxhTMCt4Jw6PyEN4tEtGQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] arm64: dts: qcom: sa8775p: Remove max link speed
- property for PCIe EP
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, krishna.chundru@oss.qualcomm.com,
-        quic_vbadigan@quicinc.com, quic_nayiluri@quicinc.com,
-        quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
-        Mrinmay Sarkar <quic_msarkar@quicinc.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE5MDExNSBTYWx0ZWRfX8uqPQGjtEBRd
- 75QmCxrhs8WCsLyxnYA3Y7Nj5pTJeNDwFpeYx5x1GnbBybLbF9+jimNEdnx0Lg19VNDPNBZ8pwv
- dQHhWx0N66YWDR2Gk5ShtJMaI07tB+hBayDyLCZoz1DFRyVhS5APYd2Ry2MdeT4V/8K8SBJn4Wf
- e/R+MwPOylpjS2xdpBmZZ+gYslMG5VfgHjjEsVR9jic6Ct/A6Y0QYnHmGgZ1iElVDEyeXz0cRkh
- hSaj4LPMxhWjXQH6Fh2xY+RA3VX9KcHfqgTn+6JIaUn+91u9a69OByu5E+lQ1tuIY0lpPve0QI2
- 5lUG3tos5eCSA4/0IAJih2mcy5Pb8EzUv0+Zq2hhPo/8E4ipmR7JI2JBCGuGSWkYiMgDvFJ0Zpc
- j8+h08xBo29nXW9vr9QRt6d4np5OMkrxlj6vc7cQdY6pXJ/oXV/Gws6TI3WA5VrodanDR7cR
-X-Proofpoint-ORIG-GUID: T4M_EmmoWUi9esMvuhy2EXYB-kj6tUvc
-X-Proofpoint-GUID: T4M_EmmoWUi9esMvuhy2EXYB-kj6tUvc
-X-Authority-Analysis: v=2.4 cv=HIjDFptv c=1 sm=1 tr=0 ts=682b2111 cx=c_pps
- a=JL+w9abYAAE89/QcEU+0QA==:117 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10
- a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=12gvMKcd2kyX8A_DGUMA:9
- a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-19_05,2025-05-16_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 lowpriorityscore=0 adultscore=0 mlxscore=0 clxscore=1015
- bulkscore=0 suspectscore=0 spamscore=0 priorityscore=1501 malwarescore=0
- impostorscore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505070000 definitions=main-2505190115
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v3 4/4] phy: spacemit: add USB3 support for K1 PCIe/USB3
+ combo PHY
+To: Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-kernel@vger.kernel.org
+References: <20250517-b4-k1-usb3-phy-v2-v3-0-e0655613a163@whut.edu.cn>
+ <20250517-b4-k1-usb3-phy-v2-v3-4-e0655613a163@whut.edu.cn>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20250517-b4-k1-usb3-phy-v2-v3-4-e0655613a163@whut.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250519_051619_363998_041EBD19 
-X-CRM114-Status: GOOD (  24.51  )
+X-CRM114-CacheID: sfid-20250519_061028_612072_DC37E70D 
+X-CRM114-Status: GOOD (  33.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,38 +129,319 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU2F0LCBNYXkgMTcsIDIwMjUgYXQgMzozM+KAr0FNIERtaXRyeSBCYXJ5c2hrb3YKPGRtaXRy
-eS5iYXJ5c2hrb3ZAb3NzLnF1YWxjb21tLmNvbT4gd3JvdGU6Cj4KPiBPbiBGcmksIE1heSAxNiwg
-MjAyNSBhdCAwMzo1OTowMlBNICswNTMwLCBNcmlubWF5IFNhcmthciB3cm90ZToKPiA+IE9uIEZy
-aSwgTWF5IDE2LCAyMDI1IGF0IDI6MzDigK9QTSBLb25yYWQgRHliY2lvCj4gPiA8a29ucmFkLmR5
-YmNpb0Bvc3MucXVhbGNvbW0uY29tPiB3cm90ZToKPiA+ID4KPiA+ID4gT24gNS8xNC8yNSA2OjM4
-IFBNLCBuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnIHdyb3RlOgo+ID4gPiA+IE9uIDE0LzA1LzIw
-MjUgMTM6MzcsIE1yaW5tYXkgU2Fya2FyIHdyb3RlOgo+ID4gPiA+PiBGcm9tOiBNcmlubWF5IFNh
-cmthciA8bXJpbm1heS5zYXJrYXJAb3NzLnF1YWxjb21tLmNvbT4KPiA+ID4gPj4KPiA+ID4gPj4g
-VGhlIG1heGltdW0gbGluayBzcGVlZCB3YXMgcHJldmlvdXNseSByZXN0cmljdGVkIHRvIEdlbjMg
-ZHVlIHRvIHRoZQo+ID4gPiA+PiBhYnNlbmNlIG9mIEdlbjQgZXF1YWxpemF0aW9uIHN1cHBvcnQg
-aW4gdGhlIGRyaXZlci4KPiA+ID4gPj4KPiA+ID4gPj4gQWRkIGNoYW5nZSB0byByZW1vdmUgbWF4
-IGxpbmsgc3BlZWQgcHJvcGVydHksIFNpbmNlIEdlbjQgZXF1YWxpemF0aW9uCj4gPiA+ID4+IHN1
-cHBvcnQgaGFzIGFscmVhZHkgYmVlbiBhZGRlZCBpbnRvIHRoZSBkcml2ZXIuCj4gPiA+ID4KPiA+
-ID4gPiBXaGljaCBkcml2ZXIsIFBIWSBvciBDb250cm9sbGVyID8KPiA+ID4KPiA+ID4gQ29udHJv
-bGxlciwgc2VlCj4gPiA+Cj4gPiA+IDA5NDgzOTU5ZTM0ZCAoIlBDSTogZHdjOiBBZGQgc3VwcG9y
-dCBmb3IgY29uZmlndXJpbmcgbGFuZSBlcXVhbGl6YXRpb24gcHJlc2V0cyIpCj4gPgo+ID4gWWVz
-LCB0aGlzIHBhdGNoIGlzIGhlbHBpbmcgdG8gc29sdmUgZ2VuNCBzdGFiaWxpdHkgaXNzdWUuCj4g
-PiA+Cj4gPiA+IGFuZCBjb21taXRzIGFyb3VuZCBpdAo+ID4gPgo+ID4gPiBkb2VzIHRoaXMgY2hh
-bmdlIGRlcGVuZHMgb24gdGhlIHBhdGNoIDEgUEhZIHNldHRpbmdzIHVwZGF0ZSA/Cj4gPiA+Cj4g
-PiA+IFRoYXQgSSdtIGN1cmlvdXMgYWJvdXQgdG9vLCBidXQgSSB3b3VsZCBndWVzc3RpbWF0ZSBu
-bwo+ID4gPgo+ID4gdGhpcyBjaGFuZ2UgZG9lc24ndCBkZXBlbmRzIG9uIHRoZSBwYXRjaCAxIFBI
-WSBzZXR0aW5ncyB1cGRhdGUKPgo+IFRoZW4gd2hhdCBoYXMgY2hhbmdlZCwgYXMgcHJldmlvdXNs
-eSBpdCB3YXMgZG9jdW1lbnRlZCB0byBoYXZlIHN0YWJpbGl0eQo+IGlzc3Vlcy4KPgpBY3R1YWxs
-eSB0aGlzIGNvbnRyb2xsZXIgY2hhbmdlIGlzIHNvbHZpbmcgdGhlIHN0YWJpbGl0eSBpc3N1ZSB3
-aXRoCmdlbjQ6ICJQQ0k6IHFjb206IEFkZCBlcXVhbGl6YXRpb24gc2V0dGluZ3MgZm9yIDE2LjAg
-R1QvcyIKaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtcGNpLzIwMjQwOTExLXBjaS1xY29t
-LWdlbjQtc3RhYmlsaXR5LXY3LTMtNzQzZjVjMWZkMDI3QGxpbmFyby5vcmcvCgpUaGFua3MsCk1y
-aW5tYXkKPiAtLQo+IFdpdGggYmVzdCB3aXNoZXMKPiBEbWl0cnkKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 17/05/2025 16:25, Ze Huang wrote:
+> Add support for USB 3.0 mode on the K1 PCIe/USB3 combo PHY which
+> implements PIPE3(125MHz) interface for USB3.0. Currently, only USB mode
+> is supported; PCIe support is not included in this change.
+
+Please add proper comments in the code expliciting PCIe PHY is not yet
+implemented.
+
+> 
+> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+> ---
+>   drivers/phy/spacemit/Kconfig          |   8 ++
+>   drivers/phy/spacemit/Makefile         |   1 +
+>   drivers/phy/spacemit/phy-k1-combphy.c | 248 ++++++++++++++++++++++++++++++++++
+>   3 files changed, 257 insertions(+)
+> 
+> diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
+> index 0136aee2e8a2f5f484da136b26f80130794b992c..ccc6bf9ea49f4988a27f79a4dcd024b18cbd78b0 100644
+> --- a/drivers/phy/spacemit/Kconfig
+> +++ b/drivers/phy/spacemit/Kconfig
+> @@ -11,3 +11,11 @@ config PHY_SPACEMIT_K1_USB2
+>   	help
+>   	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
+>   	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
+> +
+> +config PHY_SPACEMIT_K1_COMBPHY
+> +	tristate "SpacemiT K1 PCIe/USB3 combo PHY support"
+> +	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
+> +	depends on COMMON_CLK
+> +	select GENERIC_PHY
+> +	help
+> +	  USB3/PCIe Combo PHY Support for SpacemiT K1 SoC
+> diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
+> index fec0b425a948541b39b814caef0b05e1e002d92f..1fd0c65f2c5cd10ea2f70e43e62c70588d1ffae9 100644
+> --- a/drivers/phy/spacemit/Makefile
+> +++ b/drivers/phy/spacemit/Makefile
+> @@ -1,2 +1,3 @@
+>   # SPDX-License-Identifier: GPL-2.0-only
+> +obj-$(CONFIG_PHY_SPACEMIT_K1_COMBPHY)	+= phy-k1-combphy.o
+>   obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
+> diff --git a/drivers/phy/spacemit/phy-k1-combphy.c b/drivers/phy/spacemit/phy-k1-combphy.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..1f2ee3351e2bb5adf04e4e2fcfdb03cd75f70847
+> --- /dev/null
+> +++ b/drivers/phy/spacemit/phy-k1-combphy.c
+> @@ -0,0 +1,248 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * SpacemiT K1 PCIE/USB3 PHY driver
+> + *
+> + * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
+> + * Copyright (C) 2025 Ze Huang <huangze@whut.edu.cn>
+> + */
+> +
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/clk.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +#include <linux/usb/of.h>
+> +
+> +#define COMBPHY_USB_REG1		0x68
+> +#define  COMBPHY_USB_REG1_VAL		0x00
+> +#define COMBPHY_USB_REG2		0x48
+> +#define  COMBPHY_USB_REG2_VAL		0x603a2276
+> +#define COMBPHY_USB_REG3		0x08
+> +#define  COMBPHY_USB_REG3_VAL		0x97c
+> +#define COMBPHY_USB_REG4		0x18
+> +#define  COMBPHY_USB_REG4_VAL		0x00
+> +#define  COMBPHY_USB_TERM_SHORT_MASK	0x3000
+> +#define  COMBPHY_USB_TERM_SHORT_VAL	0x3000
+> +#define COMBPHY_USB_PLL_REG		0x08
+> +#define  COMBPHY_USB_PLL_MASK		0x01
+> +#define  COMBPHY_USB_PLL_VAL		0x01
+> +#define COMBPHY_USB_LFPS_REG		0x58
+> +#define  COMBPHY_USB_LFPS_MASK		0x700
+> +#define  COMBPHY_USB_LFPS_THRES_DEFAULT	0x03
+> +
+> +#define COMBPHY_MODE_SEL	BIT(3)
+> +#define COMBPHY_WAIT_TIMEOUT	1000
+> +
+> +struct spacemit_combphy_priv {
+> +	struct device *dev;
+> +	struct phy *phy;
+> +	struct reset_control *phy_rst;
+> +	void __iomem *phy_ctrl;
+> +	void __iomem *phy_sel;
+> +	bool rx_always_on;
+> +	u8 lfps_threshold;
+> +	u8 type;
+> +};
+> +
+> +static void spacemit_reg_update(void __iomem *reg, u32 offset, u32 mask, u32 val)
+> +{
+> +	u32 tmp;
+> +
+> +	tmp = readl(reg + offset);
+> +	tmp = (tmp & ~(mask)) | val;
+> +	writel(tmp, reg + offset);
+> +}
+
+With regmap you could avoid this and directly use regmap_update_bits(), same for patch 3
+
+> +
+> +static int spacemit_combphy_wait_ready(struct spacemit_combphy_priv *priv,
+> +				       u32 offset, u32 mask, u32 val)
+> +{
+> +	u32 reg_val;
+> +
+> +	return read_poll_timeout(readl, reg_val, (reg_val & mask) == val,
+> +				 1000, COMBPHY_WAIT_TIMEOUT * 1000, false,
+> +				 priv->phy_ctrl + offset);
+> +}
+
+It's used once, no need to add a separate function, and with regmap you could use regmap_read_poll_timeout()
+
+> +
+> +static int spacemit_combphy_set_mode(struct spacemit_combphy_priv *priv)
+> +{
+> +	int ret = 0;
+> +
+> +	switch (priv->type) {
+> +	case PHY_TYPE_USB3:
+> +		spacemit_reg_update(priv->phy_sel, 0, 0, COMBPHY_MODE_SEL);
+> +		break;
+> +	default:
+> +		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
+> +		ret = -EINVAL;
+> +		break;
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +static int spacemit_combphy_init_usb(struct spacemit_combphy_priv *priv)
+> +{
+> +	void __iomem *base = priv->phy_ctrl;
+> +	int ret;
+> +
+> +	writel(COMBPHY_USB_REG1_VAL, base + COMBPHY_USB_REG1);
+> +	writel(COMBPHY_USB_REG2_VAL, base + COMBPHY_USB_REG2);
+> +	writel(COMBPHY_USB_REG3_VAL, base + COMBPHY_USB_REG3);
+> +	writel(COMBPHY_USB_REG4_VAL, base + COMBPHY_USB_REG4);
+> +
+> +	ret = spacemit_combphy_wait_ready(priv, COMBPHY_USB_PLL_REG,
+> +					  COMBPHY_USB_PLL_MASK,
+> +					  COMBPHY_USB_PLL_VAL);
+> +
+> +	dev_dbg(priv->dev, "USB3 PHY init lfps threshold %d\n", priv->lfps_threshold);
+> +	spacemit_reg_update(base, COMBPHY_USB_LFPS_REG,
+> +			    COMBPHY_USB_LFPS_MASK,
+> +			    (priv->lfps_threshold << 8));
+> +
+> +	if (priv->rx_always_on)
+> +		spacemit_reg_update(base, COMBPHY_USB_REG4,
+> +				    COMBPHY_USB_TERM_SHORT_MASK,
+> +				    COMBPHY_USB_TERM_SHORT_VAL);
+> +
+> +	if (ret)
+> +		dev_err(priv->dev, "USB3 PHY init timeout!\n");
+
+You're leaving the PHY initialized, even on a timeout, is it expected ?
+
+> +
+> +	return ret;
+> +}
+> +
+> +static int spacemit_combphy_init(struct phy *phy)
+> +{
+> +	struct spacemit_combphy_priv *priv = phy_get_drvdata(phy);
+> +	int ret;
+> +
+> +	ret = spacemit_combphy_set_mode(priv);
+> +	if (ret) {
+> +		dev_err(priv->dev, "failed to set mode for PHY type %x\n",
+> +			priv->type);
+> +		goto out;
+> +	}
+> +
+> +	ret = reset_control_deassert(priv->phy_rst);
+> +	if (ret) {
+> +		dev_err(priv->dev, "failed to deassert rst\n");
+> +		goto err_rst;
+> +	}
+> +
+> +	switch (priv->type) {
+> +	case PHY_TYPE_USB3:
+> +		ret = spacemit_combphy_init_usb(priv);
+> +		break;
+> +	default:
+> +		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
+> +		ret = -EINVAL;
+> +		break;
+> +	}
+> +
+> +	if (ret)
+> +		goto err_rst;
+> +
+> +	return 0;
+> +
+> +err_rst:
+> +	reset_control_assert(priv->phy_rst);
+> +out:
+> +	return ret;
+> +}
+> +
+> +static int spacemit_combphy_exit(struct phy *phy)
+> +{
+> +	struct spacemit_combphy_priv *priv = phy_get_drvdata(phy);
+> +
+> +	reset_control_assert(priv->phy_rst);
+> +
+> +	return 0;
+> +}
+> +
+> +static struct phy *spacemit_combphy_xlate(struct device *dev,
+> +					  const struct of_phandle_args *args)
+> +{
+> +	struct spacemit_combphy_priv *priv = dev_get_drvdata(dev);
+> +
+> +	if (args->args_count != 1) {
+> +		dev_err(dev, "invalid number of arguments\n");
+> +		return ERR_PTR(-EINVAL);
+> +	}
+> +
+> +	if (priv->type != PHY_NONE && priv->type != args->args[0])
+> +		dev_warn(dev, "PHY type %d is selected to override %d\n",
+> +			 args->args[0], priv->type);
+> +
+> +	priv->type = args->args[0];
+> +
+> +	if (args->args_count > 1)
+> +		dev_dbg(dev, "combo phy idx: %d selected",  args->args[1]);
+> +
+> +	return priv->phy;
+> +}
+> +
+> +static const struct phy_ops spacemit_combphy_ops = {
+> +	.init = spacemit_combphy_init,
+> +	.exit = spacemit_combphy_exit,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static int spacemit_combphy_probe(struct platform_device *pdev)
+> +{
+> +	struct spacemit_combphy_priv *priv;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->phy_ctrl = devm_platform_ioremap_resource_byname(pdev, "ctrl");
+> +	if (IS_ERR(priv->phy_ctrl))
+> +		return PTR_ERR(priv->phy_ctrl);
+> +
+> +	priv->phy_sel = devm_platform_ioremap_resource_byname(pdev, "sel");
+> +	if (IS_ERR(priv->phy_sel))
+> +		return PTR_ERR(priv->phy_sel);
+> +
+> +	priv->lfps_threshold = COMBPHY_USB_LFPS_THRES_DEFAULT;
+> +	device_property_read_u8(&pdev->dev, "spacemit,lfps-threshold", &priv->lfps_threshold);
+> +
+> +	priv->rx_always_on = device_property_read_bool(&pdev->dev, "spacemit,rx-always-on");
+> +	priv->type = PHY_NONE;
+> +	priv->dev = dev;
+> +
+> +	priv->phy_rst = devm_reset_control_get_exclusive(dev, NULL);
+> +	if (IS_ERR(priv->phy_rst))
+> +		return dev_err_probe(dev, PTR_ERR(priv->phy_rst),
+> +				     "failed to get phy reset\n");
+> +
+> +	priv->phy = devm_phy_create(dev, NULL, &spacemit_combphy_ops);
+> +	if (IS_ERR(priv->phy))
+> +		return dev_err_probe(dev, PTR_ERR(priv->phy),
+> +				     "failed to create combphy\n");
+> +
+> +	dev_set_drvdata(dev, priv);
+> +	phy_set_drvdata(priv->phy, priv);
+> +	phy_provider = devm_of_phy_provider_register(dev, spacemit_combphy_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct of_device_id spacemit_combphy_of_match[] = {
+> +	{ .compatible = "spacemit,k1-combphy", },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, spacemit_combphy_of_match);
+> +
+> +static struct platform_driver spacemit_combphy_driver = {
+> +	.probe	= spacemit_combphy_probe,
+> +	.driver = {
+> +		.name = "spacemit-k1-combphy",
+> +		.of_match_table = spacemit_combphy_of_match,
+> +	},
+> +};
+> +module_platform_driver(spacemit_combphy_driver);
+> +
+> +MODULE_DESCRIPTION("Spacemit PCIE/USB3.0 COMBO PHY driver");
+> +MODULE_LICENSE("GPL");
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
