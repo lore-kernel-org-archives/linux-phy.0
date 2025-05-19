@@ -4,66 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E2ACC2D0CD
-	for <linux-phy@archiver.kernel.org>; Mon, 19 May 2025 21:07:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A44D1C3DA6D
+	for <linux-phy@archiver.kernel.org>; Mon, 19 May 2025 22:04:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:From:Subject:Cc:To:Message-Id:Date:Mime-Version:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=EVIZLX3Dtv+G2ni7evyxcGBkB3LkVz7nx7JSCYLcxIA=; b=QVwDTpEhP9yHlUS9OAPdl/13Sl
-	6dFGRTgUaM+xVmGvc0clj0Vyzp9xf0Ul32GSIWLfIwjpjwVhFNomwSy/1o8A1UpJtDJ9inxA1eh87
-	fdPN/VPU9WxiPuPB1+DFFdFNLKsEgmGQZEiRML8q3l2yDIOOOi0QH7rUgJLkLSQq0eo7Oa7uEhmzO
-	B+XeY94abydXSEnaYT1ZNyGoQ+shJN2u0rE76lG8oqnNDNAy7BIybvPB10n/DGpbcKLbBNl+W1D+R
-	UyYG6l5jBKNIDs8MWlvr5NufnC9YxBAyyEJNl8dhQyOdx5FPqrihNKUm2tE7M5Wx6+626zZzFIXMp
-	1tPI5wrA==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x5A4V1qc1tuIwYBFsjNjBNRiusGzkKuzEu0MFl24qIs=; b=JmCXimG1Yxe6Ny
+	+Y0m29XJF0get604uZTMMl4r4yEXRWYC/CvLNVZmtOqNYMeL8bIjlN8nv/0eprE4XYC6/XN/bXEsB
+	es5tL78NkSL5cu3KH3oU13w/yp5mqF/Lp9LB3ZP2atH7XymeeTLx53e/OHamyq2NVDmiumKIkD92b
+	OUqESQxJ5Wf4/uEkczzzPNLWVrtUry40OCEoMnJ3blBJdQBi0j0COfMvaSbUcTUHCxK2aESEpRIqc
+	cNwY1XzPW3NBasJtgUlHUeaQt8j+ItPkYwpMeRhHq6NFXu5MJaOr4CxIJGmg6YdLlbbTIJla2Gf+q
+	DbJEJEXvQQ4ZOwF88pOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uH7i9-0000000AUQf-1Acv;
-	Mon, 19 May 2025 21:07:49 +0000
-Received: from out-176.mta1.migadu.com ([2001:41d0:203:375::b0])
+	id 1uH8bM-0000000AhUv-0sXq;
+	Mon, 19 May 2025 22:04:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uH684-0000000AEMs-3CoH
-	for linux-phy@lists.infradead.org;
-	Mon, 19 May 2025 19:26:30 +0000
-Mime-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
-	t=1747682776;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=vuUlAmDRBSytvhFm2XclkPaQ94NRtAHmwr3/FFfPJoQ=;
-	b=XrELmC+UJ8mUJBgVn0/L59hyEE6WUEIdLlJxAukaMJa36AQvXRVSfJQ7tyTFe++Iht1kL2
-	KOuGzDSmObVEt+rA+0upu16kzyZRNyJN1O4KDKHCmtuv87o3Bngik7yxnLg92wzFTqMLoC
-	pZEOnQwapEzKE9JxWoDbgWcjnZsgsajxo0dJzQ3yacnHrmtyJuY0o2dTRNZMZw8tD7edZ5
-	KWM160jF+B1MClkc/2Ez3hxEOSAJ8EqJVwfJamyId1B+69gYH+NiVKPLredqA3WZepO/Z6
-	D5upKgSejAa6cnobzl2VE08ZgKpF6IMmjemySaZ409OTNiXJ/psP8ppZUbWkQw==
-Date: Mon, 19 May 2025 21:26:05 +0200
-Message-Id: <DA0DU2P8UWSV.3U07EFFLKBPXQ@cknow.org>
-To: "Yao Zi" <ziyao@disroot.org>, "Vinod Koul" <vkoul@kernel.org>, "Kishon
- Vijay Abraham I" <kishon@kernel.org>, "Rob Herring" <robh@kernel.org>,
- "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley"
- <conor+dt@kernel.org>, "Heiko Stuebner" <heiko@sntech.de>, "Frank Wang"
- <frank.wang@rock-chips.com>, "Andy Yan" <andy.yan@rock-chips.com>,
- "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>, "Detlev Casanova"
- <detlev.casanova@collabora.com>, "Shresth Prasad"
- <shresthprasad7@gmail.com>, "Chukun Pan" <amadeus@jmu.edu.cn>, "Jonas
- Karlman" <jonas@kwiboo.se>
-Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v3 3/5] phy: rockchip: naneng-combphy: Add SoC prefix to
- register definitions
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: "Diederik de Haas" <didi.debian@cknow.org>
-References: <20250519161612.14261-1-ziyao@disroot.org>
- <20250519161612.14261-4-ziyao@disroot.org>
-In-Reply-To: <20250519161612.14261-4-ziyao@disroot.org>
-X-Migadu-Flow: FLOW_OUT
+	id 1uH8bJ-0000000AhTp-2XBl;
+	Mon, 19 May 2025 22:04:51 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54JHmmtt027166;
+	Mon, 19 May 2025 22:04:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	T8g9hmVvqjn8rXNSXykqDJITIJDGdI8Suwi98GQc/zA=; b=Zx91c72BFkw4dnbv
+	pjjVQNEwoUp4uvmhh0pAqmcR/IvsJZ2Mi6AfKsTmTW+pYrLSW8S4STQ8I6YO1qMN
+	m0wVTJorpC6PJ5OYV5m4hqj19onpE4j2xr+ZOk2VLVqKAFDr/Yu9YzujgiZXYTz8
+	bmnydtbKQMK/y1YCC6R2E1qDbbbEyLYEFpeAeq2AC4Xm5uHHZTD22nD+aHoPXVaK
+	HrnlF371qSbAabnD2+Re6+rI/tjFbs3adXLdlHRmMsgpUcN0HBFcBTOPuUF2QB4a
+	nwXxDDP05qzSsGNflUehxd2wAC42T/0kNwTSS1m7DANlXrkhckexYSxkjQ/GS1FX
+	6BwMHw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46pkr9wqnm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 19 May 2025 22:04:35 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54JM4YkV014811
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 19 May 2025 22:04:34 GMT
+Received: from [10.110.43.57] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 19 May
+ 2025 15:04:33 -0700
+Message-ID: <f3727b53-8da3-d4f6-575b-108a8d6898e5@quicinc.com>
+Date: Mon, 19 May 2025 15:04:27 -0700
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v4 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Vinod Koul
+	<vkoul@kernel.org>
+CC: Melody Olvera <melody.olvera@oss.qualcomm.com>,
+        Kishon Vijay Abraham I
+	<kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Greg Kroah-Hartman
+	<gregkh@linuxfoundation.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        "Bjorn
+ Andersson" <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Catalin Marinas <catalin.marinas@arm.com>,
+        Will Deacon <will@kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>
+References: <20250409-sm8750_usb_master-v4-0-6ec621c98be6@oss.qualcomm.com>
+ <20250409-sm8750_usb_master-v4-6-6ec621c98be6@oss.qualcomm.com>
+ <Z/exOF4T+0vNLQwg@vaman> <0517c37d-b1ba-466e-bffd-9f47b0d458d5@quicinc.com>
+ <aCRVaNDQP/PdAXPR@vaman> <5183b76b-8043-4309-b25d-e1ae505f929e@quicinc.com>
+ <6fa4959c-d733-4d50-904f-caf933e02da9@oss.qualcomm.com>
+Content-Language: en-US
+From: Wesley Cheng <quic_wcheng@quicinc.com>
+In-Reply-To: <6fa4959c-d733-4d50-904f-caf933e02da9@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 7tkQXt10AubyxISGwOFWZdq0ny_YbYf5
+X-Proofpoint-ORIG-GUID: 7tkQXt10AubyxISGwOFWZdq0ny_YbYf5
+X-Authority-Analysis: v=2.4 cv=DdAXqutW c=1 sm=1 tr=0 ts=682baaf3 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=jJrOw3FHAAAA:8
+ a=VwQbUJbxAAAA:8 a=7CQSdrXTAAAA:8 a=WksZTEnvWCXEbMr8NocA:9 a=QEXdDO2ut3YA:10
+ a=-FEs8UIgK8oA:10 a=a-qgeE7W1pNrGK8U0ZQC:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTE5MDIwNSBTYWx0ZWRfX4Vcchgh/WruK
+ V7ZkJSFPodRTjs/iAtlDkF49Z8ENM9Zur72GPcH4aOTTlSSaRnzyDOiHS5u2ZXWWH8JRmXIGkWM
+ ZEgCmEEKBHkqm8vHsn9ce/iNhHwwxRho/3tVIz29aSph9km0aEVfVQ3L4C6V9eBAXXLeaSiP3aE
+ qnX2/7ZN4n9frNYVvm8aP5J6jVZixiPXsGjgN9HT2Tfj9bAGHHy+NG0mju7X81XgZ5J70ZTAMiR
+ Z3RY8ONHh9RnFFgPzukmH2ZXwxKT/mQZQeVfciu8HENPNxD94UEnz2Y+q4l5rf99kgG0ujiy38D
+ 7eU5UxSLU7UXkgM44okzqJID/bHMPJXZAKvW0R5ZNR8FHfsfPnTyE3b0hq6PRbajL6YKtgn62mr
+ oyUZboS50pTuJRFG9RwdImoQvNmT9L9GfZEGE8zOBbHjPsEVJBU/wVs6ldIuw7LR1sxn9MAi
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-19_09,2025-05-16_03,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=999 clxscore=1015 phishscore=0 adultscore=0 mlxscore=0
+ spamscore=0 malwarescore=0 suspectscore=0 priorityscore=1501 bulkscore=0
+ impostorscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505070000 definitions=main-2505190205
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250519_122629_090111_C792E5A4 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20250519_150449_670889_7A524CEE 
+X-CRM114-Status: GOOD (  18.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,154 +128,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5882946733582306391=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============5882946733582306391==
-Content-Type: multipart/signed;
- boundary=8dd83334b58b8d38d65870f3433f5a85df4823174746e18d7e6cf5265eed;
- micalg=pgp-sha512; protocol="application/pgp-signature"
+Hi Konrad,
 
---8dd83334b58b8d38d65870f3433f5a85df4823174746e18d7e6cf5265eed
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+On 5/17/2025 11:28 AM, Konrad Dybcio wrote:
+> On 5/14/25 8:24 PM, Wesley Cheng wrote:
+>> Hi Vinod,
+>>
+>> On 5/14/2025 1:33 AM, Vinod Koul wrote:
+>>> On 16-04-25, 15:45, Wesley Cheng wrote:
+>>>> Hi Vinod,
+>>>>
+>>>> On 4/10/2025 4:53 AM, Vinod Koul wrote:
+>>>>> On 09-04-25, 10:48, Melody Olvera wrote:
+>>>>>
+>>>>>> +static int m31eusb2_phy_write_readback(void __iomem *base, u32 offset,
+>>>>>> +					const u32 mask, u32 val)
+>>>>>> +{
+>>>>>> +	u32 write_val;
+>>>>>> +	u32 tmp;
+>>>>>> +
+>>>>>> +	tmp = readl_relaxed(base + offset);
+>>>>>> +	tmp &= ~mask;
+>>>>>> +	write_val = tmp | val;
+>>>>>> +
+>>>>>> +	writel_relaxed(write_val, base + offset);
+>>>>>> +
+>>>>>> +	tmp = readl_relaxed(base + offset);
+>>>>>
+>>>>> Why are you using _relaxed version here?
+>>>>>
+>>>>
+>>>> No particular reason.  I think someone pointed this out previously, and I
+>>>> was open to use the non-relaxed variants, but I assume using the relaxed vs
+>>>> non-relaxed apis comes down to preference in this case.
+>>>
+>>> Nope you cant! There _needs_ to be a specific reasons!
+>>> When you are doing read, modify, write, it is very important to know the
+>>> right version to use...
+>>>
+>>
+>> I mean, its a write readback, which ensures the bus transaction is complete
+>> based on [1], hence why **in this situation** it is up to preference.
+>>
+>> Otherwise, w/o the readback then we'd need to ensure writes are made
+>> depending on the required sequencing (in spots where the sequence is
+>> strictly defined), and that can be enforced using barriers.  If you feel
+>> like using the non-relaxed variant is preferred let me know.  I can replace
+>> it and remove the readback.
+> 
+> Readback is stronger on arm64, as otherwise the writes may be buffered and
+> not observable at the other endpoint even though the instruction has been
+> issued, even if a barrier has been issued
+> 
+> Some resources:
+> 
+> https://youtu.be/i6DayghhA8Q
+> https://lore.kernel.org/linux-arm-msm/20240618153419.GC2354@willie-the-truck/
+> https://developer.arm.com/documentation/ddi0487/latest sec B2.6.9
+> 
+> There's been a real bug observed (pun not intended):
+> Commit 2f8cf2c3f3e3 ("clk: qcom: reset: Ensure write completion on reset de/assertion")
+> 
 
-On Mon May 19, 2025 at 6:16 PM CEST, Yao Zi wrote:
-> All supported variants of naneng-combphy follow a register layout
-> similar to the RK3568 variant with some exceptions of SoC-specific
-> registers.
->
-> Add RK3568 prefix for the common set of registers and the corresponding
-> SoC prefix for SoC-specific registers, making usage of definitions clear
-> and preparing for future COMBPHY variants with a different register
-> layout.
->
-> Signed-off-by: Yao Zi <ziyao@disroot.org>
-> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> ---
->  .../rockchip/phy-rockchip-naneng-combphy.c    | 560 +++++++++---------
->  1 file changed, 288 insertions(+), 272 deletions(-)
->
-> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers=
-/phy/rockchip/phy-rockchip-naneng-combphy.c
-> index ce91fb1d5167..1d1c7723584b 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> @@ -21,78 +21,80 @@
->  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
-> =20
->  /* COMBO PHY REG */
-> <snip>
-> -#define PHYREG33_PLL_KVCO_VALUE_RK3576	4
-> +#define RK3568_PHYREG6				0x14
-> +#define RK3568_PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
-> +#define RK3568_PHYREG6_PLL_DIV_SHIFT		6
-> +#define RK3568_PHYREG6_PLL_DIV_2		1
-> +
-> +#define RK3568_PHYREG7				0x18
-> +#define RK3568_PHYREG7_TX_RTERM_MASK		GENMASK(7, 4)
-> +#define RK3568_PHYREG7_TX_RTERM_SHIFT		4
-> +#define RK3568_PHYREG7_TX_RTERM_50OHM		8
-> +#define RK3568_PHYREG7_RX_RTERM_MASK		GENMASK(3, 0)
-> +#define RK3568_PHYREG7_RX_RTERM_SHIFT		0
-> +#define RK3568_PHYREG7_RX_RTERM_44OHM		15
-> +
-> +#define RK3568_PHYREG8				0x1C
-> +#define RK3568_PHYREG8_SSC_EN			BIT(4)
-> +
-> +#define RK3568_PHYREG11				0x28
-> +#define RK3568_PHYREG11_SU_TRIM_0_7		0xF0
-> +
-> +#define RK3568_PHYREG12				0x2C
-> +#define RK3568_PHYREG12_PLL_LPF_ADJ_VALUE	4
-> +
-> +#define RK3568_PHYREG13				0x30
-> +#define RK3568_PHYREG13_RESISTER_MASK		GENMASK(5, 4)
-> +#define RK3568_PHYREG13_RESISTER_SHIFT		0x4
-> +#define RK3568_PHYREG13_RESISTER_HIGH_Z		3
-> +#define RK3568_PHYREG13_CKRCV_AMP0		BIT(7)
-> +
-> +#define RK3568_PHYREG14				0x34
-> +#define RK3568_PHYREG14_CKRCV_AMP1		BIT(0)
-> +
-> +#define RK3568_PHYREG15				0x38
-> +#define RK3568_PHYREG15_CTLE_EN			BIT(0)
-> +#define RK3568_PHYREG15_SSC_CNT_MASK		GENMASK(7, 6)
-> +#define RK3568_PHYREG15_SSC_CNT_SHIFT		6
-> +#define RK3568_PHYREG15_SSC_CNT_VALUE		1
-> +
-> +#define RK3568_PHYREG16				0x3C
-> +#define RK3568_PHYREG16_SSC_CNT_VALUE		0x5f
-> +
-> +#define RK3568_PHYREG18				0x44
-> +#define RK3568_PHYREG18_PLL_LOOP		0x32
-> +
-> +#define RK3568_PHYREG32				0x7C
-> +#define RK3568_PHYREG32_SSC_MASK		GENMASK(7, 4)
-> +#define RK3568_PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
-> +#define RK3568_PHYREG32_SSC_DIR_SHIFT		4
-> +#define RK3568_PHYREG32_SSC_UPWARD		0
-> +#define RK3568_PHYREG32_SSC_DOWNWARD		1
-> +#define RK3568_PHYREG32_SSC_OFFSET_MASK	GENMASK(7, 6)
-> +#define RK3568_PHYREG32_SSC_OFFSET_SHIFT	6
-> +#define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
-> +
-> +#define RK3568_PHYREG33				0x80
-> +#define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
-> +#define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
-> +#define RK3568_PHYREG33_PLL_KVCO_VALUE		2
-> +#define RK3576_PHYREG33_PLL_KVCO_VALUE		4
-> +
-> +/* RK3588 COMBO PHY registers */
-> +#define RK3588_PHYREG27				0x6C
-> +#define RK3588_PHYREG27_RX_TRIM			0x4C
+Thanks for sharing.  Useful info...The way I interpret it, even between 
+relaxed and non-relaxed variants, a readback is always desired.
 
-Would it be better if RK3588_PHYREG* comes after RK3576_PHYREG*?
-
-Cheers,
-  Diederik
-
-> +
-> +/* RK3576 COMBO PHY registers */
-> +#define RK3576_PHYREG10				0x24
-> +#define RK3576_PHYREG10_SSC_PCM_MASK		GENMASK(3, 0)
-> +#define RK3576_PHYREG10_SSC_PCM_3500PPM		7
-> +
-> +#define RK3576_PHYREG17				0x40
-> +
-> +#define RK3576_PHYREG21				0x50
-> +#define RK3576_PHYREG21_RX_SQUELCH_VAL		0x0D
-> +
-> +#define RK3576_PHYREG30				0x74
-> =20
->  struct rockchip_combphy_priv;
-> <snip>
-
---8dd83334b58b8d38d65870f3433f5a85df4823174746e18d7e6cf5265eed
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCaCuF0QAKCRDXblvOeH7b
-bj5XAP4jFaF15+nLInr2xXsIkAJvJHReF7T6Z5VecsqAGvvQnAEAj3LoVwch8QJx
-Nav7s88qF+lAQivzYzh8QtxQeo+kKA0=
-=HcuL
------END PGP SIGNATURE-----
-
---8dd83334b58b8d38d65870f3433f5a85df4823174746e18d7e6cf5265eed--
-
-
---===============5882946733582306391==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
+Wesley Cheng
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5882946733582306391==--
-
