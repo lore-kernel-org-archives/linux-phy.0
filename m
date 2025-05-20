@@ -4,64 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89BA4C2D0CD
-	for <linux-phy@archiver.kernel.org>; Tue, 20 May 2025 02:29:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76DE2C54754
+	for <linux-phy@archiver.kernel.org>; Tue, 20 May 2025 03:56:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=79znsa7J2WnWmWXxyqgXtiKZBUdi0HWXKHIcMIlP788=; b=bCVzGNySg/JE6P
-	cZPnATIguXa4I/EGeXSQKvsll9XfCLUpgmsm4PZ9epw9R/Dea3EviSpegHuLft9S6x7iBk5BGIdTg
-	mbzK5uPlsJMBJMDHTFTfVD7o2gIXcVW1tU+4gtOpXB9VyQxLRlG4DI9xhZPXeUqjUgZdKgq3ZDjdp
-	hvnvldYg8f6/WQx2CGPnRhh+dqJ2DNGqY+z3tHEAmWCftIxzOcLKf5Ra++NykAg6xUm9sFJa3ocD4
-	ehKhftx7QF/qJgqfj4VwSHDCPoVl7K8ES7/EcYKChHsFfKiQ8wV47JAVk057LrioyeZilmgkg5+0q
-	ADFszLAwgpFrBd83IcFA==;
+	List-Owner; bh=TghtWrJkJlXY/hLfW7au9Tqo0xrdW+5GS6djjwtK/DM=; b=IwSX4PbYQwdW77
+	w43MOi+TUcGpowgi+lEgxdGc3hsaRAHmZhidw30eQJmy/vU1cVjI5sYKxjSsyRz+kosOQP/JGAXdK
+	V80fPaAhbrFptg44FFqavs+TnouXR6Ei0CvMIbsOTG+flbuxTal9eDv2OnTj4jjPnnDoVNcY/QO5H
+	X76jDK5NSZSUmoH4Kua6BwAKt7yuIWyM9zHGMyZoukOgtveo30zooiCrKlKu+sALPLdrNwnf0WSJH
+	vBc/NdQ3umFleCbSZBbYhwLnJHCsjzLSYU0/u858Yg+5t0jIeX5fMNzHBTMOaXDnaY7xZ6cfvNq5u
+	PUDavGSM3nEXgcqDY60g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHCjH-0000000BKpu-0spI;
-	Tue, 20 May 2025 02:29:19 +0000
-Received: from mail-m155101.qiye.163.com ([101.71.155.101])
+	id 1uHE5O-0000000BSW7-4BtJ;
+	Tue, 20 May 2025 03:56:15 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHCjD-0000000BKmU-1WIG;
-	Tue, 20 May 2025 02:29:17 +0000
-Received: from localhost (gy-adaptive-ssl-proxy-3-entmail-virt135.gy.ntes [27.18.99.37])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 15a4db0bb;
-	Tue, 20 May 2025 10:28:59 +0800 (GMT+08:00)
-Date: Tue, 20 May 2025 10:28:58 +0800
-From: Ze Huang <huangze@whut.edu.cn>
-To: Neil Armstrong <neil.armstrong@linaro.org>,
-	Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 4/4] phy: spacemit: add USB3 support for K1 PCIe/USB3
- combo PHY
-Message-ID: <aCvo6h1wF7yrrzTV@jean.localdomain>
-References: <20250517-b4-k1-usb3-phy-v2-v3-0-e0655613a163@whut.edu.cn>
- <20250517-b4-k1-usb3-phy-v2-v3-4-e0655613a163@whut.edu.cn>
- <4110276c-8c64-4fd2-b166-c016509bc8a3@linaro.org>
+	id 1uHE3G-0000000BSDM-3qpd;
+	Tue, 20 May 2025 03:54:04 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id CEB20260B9;
+	Tue, 20 May 2025 05:53:59 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id dKH9mDnhu9xu; Tue, 20 May 2025 05:53:59 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1747713239; bh=q5wVY9c5ZPA69PfiOdhIK17xTDSEDcrWg6odtPauNPE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=bRglVG/azLZ19gIcL7BUT6PSdMpeIK2cyN1B5rrDEjCfZdCI28h2AUrsUisFHdCSS
+	 hky1ueQKFAfq0zNVhJr34EAr7koJmAQDW4NTglUujmRVgElNFw3aZHafDrr+QimJ0d
+	 6AIwAblYSddp8ho8ZvO1RI/8A54pPzFOtuEWd0aXwi3UvJwKIfHgeEmJzWZgwPkNtP
+	 lJVVC/K5uKI/N5tfaRFI/S9O1GfHDGTkpdlhihlSIPJMsjLdhZp2bRBo0yHiHUOS9b
+	 JINGMlkIldMVYEbjAtXcJbS2aIy2JPZggM9wnqJd+lkGBGhbC9ah0LoR6h1EYUIUSK
+	 8v7O25M68YUdQ==
+Date: Tue, 20 May 2025 03:53:33 +0000
+From: Yao Zi <ziyao@disroot.org>
+To: "Diederik de Haas" <didi.debian@cknow.org>,
+	"Vinod Koul" <vkoul@kernel.org>,
+	"Kishon Vijay Abraham I" <kishon@kernel.org>,
+	"Rob Herring" <robh@kernel.org>,
+	"Krzysztof Kozlowski" <krzk+dt@kernel.org>,
+	"Conor Dooley" <conor+dt@kernel.org>,
+	"Heiko Stuebner" <heiko@sntech.de>,
+	"Frank Wang" <frank.wang@rock-chips.com>,
+	"Andy Yan" <andy.yan@rock-chips.com>,
+	"Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>,
+	"Detlev Casanova" <detlev.casanova@collabora.com>,
+	"Shresth Prasad" <shresthprasad7@gmail.com>,
+	"Chukun Pan" <amadeus@jmu.edu.cn>,
+	"Jonas Karlman" <jonas@kwiboo.se>
+Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>,
+	<linux-rockchip@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3 3/5] phy: rockchip: naneng-combphy: Add SoC prefix to
+ register definitions
+Message-ID: <aCv8vRu8gjrvK8wr@pie.lan>
+References: <20250519161612.14261-1-ziyao@disroot.org>
+ <20250519161612.14261-4-ziyao@disroot.org>
+ <DA0DU2P8UWSV.3U07EFFLKBPXQ@cknow.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4110276c-8c64-4fd2-b166-c016509bc8a3@linaro.org>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZSU0fVktDQ0seSkseTklKTFYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJTFVKQ1VCQlVITFlXWRYaDxIVHRRZQVlPS0hVSktISk5MT1VKS0tVSkJLS1
-	kG
-X-HM-Tid: 0a96eb85d66203a1kunmc62b929663898
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NVE6Aio4ITE1MiMOTQMyCzA0
-	LhUaCktVSlVKTE9MTEtDSk9LSk5PVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
-	TFVKQ1VCQlVITFlXWQgBWUFMT0pNNwY+
+In-Reply-To: <DA0DU2P8UWSV.3U07EFFLKBPXQ@cknow.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250519_192915_621682_9B8CC606 
-X-CRM114-Status: GOOD (  32.82  )
+X-CRM114-CacheID: sfid-20250519_205403_491908_23A3C840 
+X-CRM114-Status: GOOD (  20.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,186 +90,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 19, 2025 at 03:10:24PM +0200, neil.armstrong@linaro.org wrote:
-> On 17/05/2025 16:25, Ze Huang wrote:
-> > Add support for USB 3.0 mode on the K1 PCIe/USB3 combo PHY which
-> > implements PIPE3(125MHz) interface for USB3.0. Currently, only USB mode
-> > is supported; PCIe support is not included in this change.
-> 
-> Please add proper comments in the code expliciting PCIe PHY is not yet
-> implemented.
-> 
-
-OK, will do
-
-> > 
-> > Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+On Mon, May 19, 2025 at 09:26:05PM +0200, Diederik de Haas wrote:
+> On Mon May 19, 2025 at 6:16 PM CEST, Yao Zi wrote:
+> > All supported variants of naneng-combphy follow a register layout
+> > similar to the RK3568 variant with some exceptions of SoC-specific
+> > registers.
+> >
+> > Add RK3568 prefix for the common set of registers and the corresponding
+> > SoC prefix for SoC-specific registers, making usage of definitions clear
+> > and preparing for future COMBPHY variants with a different register
+> > layout.
+> >
+> > Signed-off-by: Yao Zi <ziyao@disroot.org>
+> > Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 > > ---
-> >   drivers/phy/spacemit/Kconfig          |   8 ++
-> >   drivers/phy/spacemit/Makefile         |   1 +
-> >   drivers/phy/spacemit/phy-k1-combphy.c | 248 ++++++++++++++++++++++++++++++++++
-> >   3 files changed, 257 insertions(+)
-> > 
-> > diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
-> > index 0136aee2e8a2f5f484da136b26f80130794b992c..ccc6bf9ea49f4988a27f79a4dcd024b18cbd78b0 100644
-> > --- a/drivers/phy/spacemit/Kconfig
-> > +++ b/drivers/phy/spacemit/Kconfig
-> > @@ -11,3 +11,11 @@ config PHY_SPACEMIT_K1_USB2
-> >   	help
-> >   	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
-> >   	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
+> >  .../rockchip/phy-rockchip-naneng-combphy.c    | 560 +++++++++---------
+> >  1 file changed, 288 insertions(+), 272 deletions(-)
+> >
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > index ce91fb1d5167..1d1c7723584b 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > @@ -21,78 +21,80 @@
+> >  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+> >  
+> >  /* COMBO PHY REG */
+> > <snip>
+> > -#define PHYREG33_PLL_KVCO_VALUE_RK3576	4
+> > +#define RK3568_PHYREG6				0x14
+> > +#define RK3568_PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
+> > +#define RK3568_PHYREG6_PLL_DIV_SHIFT		6
+> > +#define RK3568_PHYREG6_PLL_DIV_2		1
 > > +
-> > +config PHY_SPACEMIT_K1_COMBPHY
-> > +	tristate "SpacemiT K1 PCIe/USB3 combo PHY support"
-> > +	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
-> > +	depends on COMMON_CLK
-> > +	select GENERIC_PHY
-> > +	help
-> > +	  USB3/PCIe Combo PHY Support for SpacemiT K1 SoC
-> > diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
-> > index fec0b425a948541b39b814caef0b05e1e002d92f..1fd0c65f2c5cd10ea2f70e43e62c70588d1ffae9 100644
-> > --- a/drivers/phy/spacemit/Makefile
-> > +++ b/drivers/phy/spacemit/Makefile
-> > @@ -1,2 +1,3 @@
-> >   # SPDX-License-Identifier: GPL-2.0-only
-> > +obj-$(CONFIG_PHY_SPACEMIT_K1_COMBPHY)	+= phy-k1-combphy.o
-> >   obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
-> > diff --git a/drivers/phy/spacemit/phy-k1-combphy.c b/drivers/phy/spacemit/phy-k1-combphy.c
-> > new file mode 100644
-> > index 0000000000000000000000000000000000000000..1f2ee3351e2bb5adf04e4e2fcfdb03cd75f70847
-> > --- /dev/null
-> > +++ b/drivers/phy/spacemit/phy-k1-combphy.c
-> > @@ -0,0 +1,248 @@
-> > +// SPDX-License-Identifier: GPL-2.0-only
-> > +/*
-> > + * SpacemiT K1 PCIE/USB3 PHY driver
-> > + *
-> > + * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
-> > + * Copyright (C) 2025 Ze Huang <huangze@whut.edu.cn>
-> > + */
+> > +#define RK3568_PHYREG7				0x18
+> > +#define RK3568_PHYREG7_TX_RTERM_MASK		GENMASK(7, 4)
+> > +#define RK3568_PHYREG7_TX_RTERM_SHIFT		4
+> > +#define RK3568_PHYREG7_TX_RTERM_50OHM		8
+> > +#define RK3568_PHYREG7_RX_RTERM_MASK		GENMASK(3, 0)
+> > +#define RK3568_PHYREG7_RX_RTERM_SHIFT		0
+> > +#define RK3568_PHYREG7_RX_RTERM_44OHM		15
 > > +
-> > +#include <dt-bindings/phy/phy.h>
-> > +#include <linux/clk.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/reset.h>
-> > +#include <linux/usb/of.h>
+> > +#define RK3568_PHYREG8				0x1C
+> > +#define RK3568_PHYREG8_SSC_EN			BIT(4)
 > > +
-> > +#define COMBPHY_USB_REG1		0x68
-> > +#define  COMBPHY_USB_REG1_VAL		0x00
-> > +#define COMBPHY_USB_REG2		0x48
-> > +#define  COMBPHY_USB_REG2_VAL		0x603a2276
-> > +#define COMBPHY_USB_REG3		0x08
-> > +#define  COMBPHY_USB_REG3_VAL		0x97c
-> > +#define COMBPHY_USB_REG4		0x18
-> > +#define  COMBPHY_USB_REG4_VAL		0x00
-> > +#define  COMBPHY_USB_TERM_SHORT_MASK	0x3000
-> > +#define  COMBPHY_USB_TERM_SHORT_VAL	0x3000
-> > +#define COMBPHY_USB_PLL_REG		0x08
-> > +#define  COMBPHY_USB_PLL_MASK		0x01
-> > +#define  COMBPHY_USB_PLL_VAL		0x01
-> > +#define COMBPHY_USB_LFPS_REG		0x58
-> > +#define  COMBPHY_USB_LFPS_MASK		0x700
-> > +#define  COMBPHY_USB_LFPS_THRES_DEFAULT	0x03
+> > +#define RK3568_PHYREG11				0x28
+> > +#define RK3568_PHYREG11_SU_TRIM_0_7		0xF0
 > > +
-> > +#define COMBPHY_MODE_SEL	BIT(3)
-> > +#define COMBPHY_WAIT_TIMEOUT	1000
+> > +#define RK3568_PHYREG12				0x2C
+> > +#define RK3568_PHYREG12_PLL_LPF_ADJ_VALUE	4
 > > +
-> > +struct spacemit_combphy_priv {
-> > +	struct device *dev;
-> > +	struct phy *phy;
-> > +	struct reset_control *phy_rst;
-> > +	void __iomem *phy_ctrl;
-> > +	void __iomem *phy_sel;
-> > +	bool rx_always_on;
-> > +	u8 lfps_threshold;
-> > +	u8 type;
-> > +};
+> > +#define RK3568_PHYREG13				0x30
+> > +#define RK3568_PHYREG13_RESISTER_MASK		GENMASK(5, 4)
+> > +#define RK3568_PHYREG13_RESISTER_SHIFT		0x4
+> > +#define RK3568_PHYREG13_RESISTER_HIGH_Z		3
+> > +#define RK3568_PHYREG13_CKRCV_AMP0		BIT(7)
 > > +
-> > +static void spacemit_reg_update(void __iomem *reg, u32 offset, u32 mask, u32 val)
-> > +{
-> > +	u32 tmp;
+> > +#define RK3568_PHYREG14				0x34
+> > +#define RK3568_PHYREG14_CKRCV_AMP1		BIT(0)
 > > +
-> > +	tmp = readl(reg + offset);
-> > +	tmp = (tmp & ~(mask)) | val;
-> > +	writel(tmp, reg + offset);
-> > +}
+> > +#define RK3568_PHYREG15				0x38
+> > +#define RK3568_PHYREG15_CTLE_EN			BIT(0)
+> > +#define RK3568_PHYREG15_SSC_CNT_MASK		GENMASK(7, 6)
+> > +#define RK3568_PHYREG15_SSC_CNT_SHIFT		6
+> > +#define RK3568_PHYREG15_SSC_CNT_VALUE		1
+> > +
+> > +#define RK3568_PHYREG16				0x3C
+> > +#define RK3568_PHYREG16_SSC_CNT_VALUE		0x5f
+> > +
+> > +#define RK3568_PHYREG18				0x44
+> > +#define RK3568_PHYREG18_PLL_LOOP		0x32
+> > +
+> > +#define RK3568_PHYREG32				0x7C
+> > +#define RK3568_PHYREG32_SSC_MASK		GENMASK(7, 4)
+> > +#define RK3568_PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
+> > +#define RK3568_PHYREG32_SSC_DIR_SHIFT		4
+> > +#define RK3568_PHYREG32_SSC_UPWARD		0
+> > +#define RK3568_PHYREG32_SSC_DOWNWARD		1
+> > +#define RK3568_PHYREG32_SSC_OFFSET_MASK	GENMASK(7, 6)
+> > +#define RK3568_PHYREG32_SSC_OFFSET_SHIFT	6
+> > +#define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
+> > +
+> > +#define RK3568_PHYREG33				0x80
+> > +#define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
+> > +#define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
+> > +#define RK3568_PHYREG33_PLL_KVCO_VALUE		2
+> > +#define RK3576_PHYREG33_PLL_KVCO_VALUE		4
+> > +
+> > +/* RK3588 COMBO PHY registers */
+> > +#define RK3588_PHYREG27				0x6C
+> > +#define RK3588_PHYREG27_RX_TRIM			0x4C
 > 
-> With regmap you could avoid this and directly use regmap_update_bits(), same for patch 3
+> Would it be better if RK3588_PHYREG* comes after RK3576_PHYREG*?
 > 
+> Cheers,
+>   Diederik
 
-Will follow
-
-> > +
-> > +static int spacemit_combphy_wait_ready(struct spacemit_combphy_priv *priv,
-> > +				       u32 offset, u32 mask, u32 val)
-> > +{
-> > +	u32 reg_val;
-> > +
-> > +	return read_poll_timeout(readl, reg_val, (reg_val & mask) == val,
-> > +				 1000, COMBPHY_WAIT_TIMEOUT * 1000, false,
-> > +				 priv->phy_ctrl + offset);
-> > +}
-> 
-> It's used once, no need to add a separate function, and with regmap you could use regmap_read_poll_timeout()
-> 
-
-Will follow
+It's intended to keep RK3576 definitions below RK3588 ones. The RK3576
+driver makes use of a register introduced for RK3588 variant
+(RK3588_PHYREG27). Since similar reusing doesn't happen reversely, I
+consider the design of RK3576 a superset of the RK3588 one, and put
+RK3576 definitions later in the file.
 
 > > +
-> > +static int spacemit_combphy_set_mode(struct spacemit_combphy_priv *priv)
-> > +{
-> > +	int ret = 0;
+> > +/* RK3576 COMBO PHY registers */
+> > +#define RK3576_PHYREG10				0x24
+> > +#define RK3576_PHYREG10_SSC_PCM_MASK		GENMASK(3, 0)
+> > +#define RK3576_PHYREG10_SSC_PCM_3500PPM		7
 > > +
-> > +	switch (priv->type) {
-> > +	case PHY_TYPE_USB3:
-> > +		spacemit_reg_update(priv->phy_sel, 0, 0, COMBPHY_MODE_SEL);
-> > +		break;
-> > +	default:
-> > +		dev_err(priv->dev, "PHY type %x not supported\n", priv->type);
-> > +		ret = -EINVAL;
-> > +		break;
-> > +	}
+> > +#define RK3576_PHYREG17				0x40
 > > +
-> > +	return ret;
-> > +}
+> > +#define RK3576_PHYREG21				0x50
+> > +#define RK3576_PHYREG21_RX_SQUELCH_VAL		0x0D
 > > +
-> > +static int spacemit_combphy_init_usb(struct spacemit_combphy_priv *priv)
-> > +{
-> > +	void __iomem *base = priv->phy_ctrl;
-> > +	int ret;
-> > +
-> > +	writel(COMBPHY_USB_REG1_VAL, base + COMBPHY_USB_REG1);
-> > +	writel(COMBPHY_USB_REG2_VAL, base + COMBPHY_USB_REG2);
-> > +	writel(COMBPHY_USB_REG3_VAL, base + COMBPHY_USB_REG3);
-> > +	writel(COMBPHY_USB_REG4_VAL, base + COMBPHY_USB_REG4);
-> > +
-> > +	ret = spacemit_combphy_wait_ready(priv, COMBPHY_USB_PLL_REG,
-> > +					  COMBPHY_USB_PLL_MASK,
-> > +					  COMBPHY_USB_PLL_VAL);
-> > +
-> > +	dev_dbg(priv->dev, "USB3 PHY init lfps threshold %d\n", priv->lfps_threshold);
-> > +	spacemit_reg_update(base, COMBPHY_USB_LFPS_REG,
-> > +			    COMBPHY_USB_LFPS_MASK,
-> > +			    (priv->lfps_threshold << 8));
-> > +
-> > +	if (priv->rx_always_on)
-> > +		spacemit_reg_update(base, COMBPHY_USB_REG4,
-> > +				    COMBPHY_USB_TERM_SHORT_MASK,
-> > +				    COMBPHY_USB_TERM_SHORT_VAL);
-> > +
-> > +	if (ret)
-> > +		dev_err(priv->dev, "USB3 PHY init timeout!\n");
-> 
-> You're leaving the PHY initialized, even on a timeout, is it expected ?
-> 
+> > +#define RK3576_PHYREG30				0x74
+> >  
+> >  struct rockchip_combphy_priv;
+> > <snip>
 
-You're right. I overlooked that case.
 
-Will move dev_err and return logic next to phy init.
-
-Thanks!
+Thanks,
+Yao Zi
 
 -- 
 linux-phy mailing list
