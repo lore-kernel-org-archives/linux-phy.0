@@ -4,110 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96CC2C3ABDD
-	for <linux-phy@archiver.kernel.org>; Tue, 20 May 2025 07:47:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A6DAC3ABDD
+	for <linux-phy@archiver.kernel.org>; Tue, 20 May 2025 08:40:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CwBtjFFg1ie9WmoSXVHYiiUc1glrJRySx0+bW25qRAM=; b=CzllfwhAneDV1P
-	M1fZ/NpqJmTX+0Nr3n63pGyLycb65gtD20/T3xXlNOjbQ4pq6bC13kHgxPtiXfi0nvXvVw0Anqj10
-	a8BIEEohAOerBUUnJWWyGFFDMUHLAPv5AWmVaqaGbcgiARzAoIszVnXvPNsoNjgi1UaeWx/XsYWCU
-	5AuT3h3DWSpuXAT29AJZF4LSOKKkthloc5jesfuQzFiiSsw947HGmlsKIcs8Gb6gtPimRtym8kYsy
-	hn/7X0j9lxCa/4ZEskfrz4HwrcGyhpuFDKR2odJhlfavY4KSRW3E24fV88WhNJwFP2Rej9wFRowgF
-	aPO62g4ebf+mde0hvMwQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gvtIADWh0zNwauzxbvRwfkow97rKHdqi6JcEUAwozxA=; b=TqSaseUU+tmvJNiFYx8yhulsZG
+	/icFU3fEqfWK3xSIrBOM753TeikHOuTPoqZs5GMvtV4Kl+OMO+jR4bLJdUYAPfEbtKktTsl9LsxVm
+	2D2yvGQbjIA+rDNFhDA6w0UKIPETjUoEL9iIRTLteUuTigOURLaPnsY3IvXD6YQD2Y/8wScHIAfAe
+	gei6IpnIX+f5LL4oYlYnwV6QoQKsqM222WHGamxtQ5E73vgDiMq4hYcpy91wEWHIDBNCFAPf5bCWy
+	M7q0bR/zdKHizKEtetEa5b3+5B8ZUr3Bw0HpRiFI9va5Nffy1nIFKsw1TGlZwl4EOb2JiHMc3nCnS
+	28z/sdKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHHhF-0000000BuSG-0dTh;
-	Tue, 20 May 2025 07:47:33 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uHIWJ-0000000C3BX-0Kpj;
+	Tue, 20 May 2025 08:40:19 +0000
+Received: from out-181.mta1.migadu.com ([95.215.58.181])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHHf6-0000000BtmG-0UWm;
-	Tue, 20 May 2025 07:45:21 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 62787A4DFBE;
-	Tue, 20 May 2025 07:45:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C03EC4CEE9;
-	Tue, 20 May 2025 07:45:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747727119;
-	bh=xk8IMs+O+5nMbwmtVbXL7vN3XIeGEwoPkHYOFjHo2n0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=SuGhHI1Tl71rAsEAPIy0ux3u3l9tfB6V8grWjBmFHuqh4640p564ghd51PIiR2r34
-	 eUua9YeW8JqBK/o+3SnfZASghy5XwzrYWcTdpa76kSrxNh59EJO5EY/5NAleMkEYMh
-	 xwmf1aH7kD/oIXxyoHFdWR+WS/lhuTbI0jstZAQAA322mHNX+IbR8nLwRO2BA3sEeR
-	 sL6Xuo5d/w7g5ijBzm+sQagI1vrN3lPQNjjNcxbnvUFJvgC8Cr8hEiVs1P877n10bt
-	 Pa6gFI+agN5UcDXBnManU2UsBzAVN5HZpJ6Jn5368P4I+tCCwNalenUP4CvfjoNzT5
-	 cnFPozd0B8NIA==
-Message-ID: <0615877e-247a-419b-b4d6-de377cb40914@kernel.org>
-Date: Tue, 20 May 2025 09:45:12 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: samsung,usb3-drd-phy: add
- dt-schema for ExynosAutov920
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- alim.akhtar@samsung.com, andre.draszik@linaro.org, peter.griffin@linaro.org,
- kauschluss@disroot.org, m.szyprowski@samsung.com, s.nawrocki@samsung.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
- dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
- selvarasu.g@samsung.com
-References: <20250516102650.2144487-1-pritam.sutar@samsung.com>
- <CGME20250516101800epcas5p49fdae57cdf1fbec0427720ee38b0f925@epcas5p4.samsung.com>
- <20250516102650.2144487-2-pritam.sutar@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250516102650.2144487-2-pritam.sutar@samsung.com>
+	id 1uHIUJ-0000000C2uY-37E8
+	for linux-phy@lists.infradead.org;
+	Tue, 20 May 2025 08:38:17 +0000
+Mime-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
+	t=1747730283;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Xc5l2VvmMIPW9ABFDgM9NqgcmqQKSbvHQtPi+59terM=;
+	b=JmuUJ8y9vURKx87iMyEdKsjJXePbVbMMOAfU+oMzchxCPpTbTITlMDnWyH8FRjNaHmW//B
+	CRMwMWqbix8UCvufAaKEWRei7bODiHr7k9PW/FXoDVp04tkbf0COSXyC9zytB4p5sXYlZR
+	TJ9T8RxOpKaPUoPKNO4goIav5Z5xZnTi9y+AU1gCC1XnflktTpsW5f/U5ypNzakbqVqfVT
+	kpVsIxSg7lz3s/FGACch7PDm5t/WxHU1N0OVQiVpxNoNVCW6QYELLb+PXQDM/Xn19Y4uKn
+	B+NXxxQi3ReFnYllv2+8qwUQRYlwCPrHwa/vQAHoMrl4FKHajgKQQcKAppS3+g==
+Date: Tue, 20 May 2025 10:37:38 +0200
+Message-Id: <DA0UO4TYFWAU.DOE3O1UBNN6U@cknow.org>
+Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3 3/5] phy: rockchip: naneng-combphy: Add SoC prefix to
+ register definitions
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: "Diederik de Haas" <didi.debian@cknow.org>
+To: "Yao Zi" <ziyao@disroot.org>, "Vinod Koul" <vkoul@kernel.org>, "Kishon
+ Vijay Abraham I" <kishon@kernel.org>, "Rob Herring" <robh@kernel.org>,
+ "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley"
+ <conor+dt@kernel.org>, "Heiko Stuebner" <heiko@sntech.de>, "Frank Wang"
+ <frank.wang@rock-chips.com>, "Andy Yan" <andy.yan@rock-chips.com>,
+ "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>, "Detlev Casanova"
+ <detlev.casanova@collabora.com>, "Shresth Prasad"
+ <shresthprasad7@gmail.com>, "Chukun Pan" <amadeus@jmu.edu.cn>, "Jonas
+ Karlman" <jonas@kwiboo.se>
+References: <20250519161612.14261-1-ziyao@disroot.org>
+ <20250519161612.14261-4-ziyao@disroot.org>
+ <DA0DU2P8UWSV.3U07EFFLKBPXQ@cknow.org> <aCv8vRu8gjrvK8wr@pie.lan>
+In-Reply-To: <aCv8vRu8gjrvK8wr@pie.lan>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250520_004520_285434_A2AE83C4 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20250520_013815_930931_62B8120C 
+X-CRM114-Status: GOOD (  21.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,89 +76,175 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6916700924750334310=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/05/2025 12:26, Pritam Manohar Sutar wrote:
-> Add a dedicated compatible for USB phy found in this SoC
-> 
-> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> ---
->  .../bindings/phy/samsung,usb3-drd-phy.yaml    | 27 +++++++++++++++++++
->  1 file changed, 27 insertions(+)
+--===============6916700924750334310==
+Content-Type: multipart/signed;
+ boundary=2f6aa86954b8eb8c99f3919d1846860d91999fb6d12d29116c5daae2c76b;
+ micalg=pgp-sha512; protocol="application/pgp-signature"
 
-A nit, subject: drop second/last, redundant "dt-schema for". The
-"dt-bindings" prefix is already stating that these are bindings in
-dtschema format.
-See also:
-https://elixir.bootlin.com/linux/v6.7-rc8/source/Documentation/devicetree/bindings/submitting-patches.rst#L18
+--2f6aa86954b8eb8c99f3919d1846860d91999fb6d12d29116c5daae2c76b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
 
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> index fdddddc7d611..c50f4218ded9 100644
-> --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> @@ -32,6 +32,7 @@ properties:
->        - samsung,exynos7-usbdrd-phy
->        - samsung,exynos7870-usbdrd-phy
->        - samsung,exynos850-usbdrd-phy
-> +      - samsung,exynosautov920-usb31drd-phy
->  
->    clocks:
->      minItems: 2
-> @@ -204,6 +205,32 @@ allOf:
->          reg-names:
->            maxItems: 1
->  
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: samsung,exynosautov920-usb31drd-phy
-> +    then:
-> +      $ref: /schemas/usb/usb-switch.yaml#
-> +
-> +      properties:
-> +        clocks:
-> +          items:
+On Tue May 20, 2025 at 5:53 AM CEST, Yao Zi wrote:
+> On Mon, May 19, 2025 at 09:26:05PM +0200, Diederik de Haas wrote:
+>> On Mon May 19, 2025 at 6:16 PM CEST, Yao Zi wrote:
+>> > All supported variants of naneng-combphy follow a register layout
+>> > similar to the RK3568 variant with some exceptions of SoC-specific
+>> > registers.
+>> >
+>> > Add RK3568 prefix for the common set of registers and the correspondin=
+g
+>> > SoC prefix for SoC-specific registers, making usage of definitions cle=
+ar
+>> > and preparing for future COMBPHY variants with a different register
+>> > layout.
+>> >
+>> > Signed-off-by: Yao Zi <ziyao@disroot.org>
+>> > Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+>> > ---
+>> >  .../rockchip/phy-rockchip-naneng-combphy.c    | 560 +++++++++--------=
+-
+>> >  1 file changed, 288 insertions(+), 272 deletions(-)
+>> >
+>> > diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/driv=
+ers/phy/rockchip/phy-rockchip-naneng-combphy.c
+>> > index ce91fb1d5167..1d1c7723584b 100644
+>> > --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+>> > +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+>> > @@ -21,78 +21,80 @@
+>> >  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+>> > =20
+>> >  /* COMBO PHY REG */
+>> > <snip>
+>> > -#define PHYREG33_PLL_KVCO_VALUE_RK3576	4
+>> > +#define RK3568_PHYREG6				0x14
+>> > +#define RK3568_PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
+>> > +#define RK3568_PHYREG6_PLL_DIV_SHIFT		6
+>> > +#define RK3568_PHYREG6_PLL_DIV_2		1
+>> > +
+>> > +#define RK3568_PHYREG7				0x18
+>> > +#define RK3568_PHYREG7_TX_RTERM_MASK		GENMASK(7, 4)
+>> > +#define RK3568_PHYREG7_TX_RTERM_SHIFT		4
+>> > +#define RK3568_PHYREG7_TX_RTERM_50OHM		8
+>> > +#define RK3568_PHYREG7_RX_RTERM_MASK		GENMASK(3, 0)
+>> > +#define RK3568_PHYREG7_RX_RTERM_SHIFT		0
+>> > +#define RK3568_PHYREG7_RX_RTERM_44OHM		15
+>> > +
+>> > +#define RK3568_PHYREG8				0x1C
+>> > +#define RK3568_PHYREG8_SSC_EN			BIT(4)
+>> > +
+>> > +#define RK3568_PHYREG11				0x28
+>> > +#define RK3568_PHYREG11_SU_TRIM_0_7		0xF0
+>> > +
+>> > +#define RK3568_PHYREG12				0x2C
+>> > +#define RK3568_PHYREG12_PLL_LPF_ADJ_VALUE	4
+>> > +
+>> > +#define RK3568_PHYREG13				0x30
+>> > +#define RK3568_PHYREG13_RESISTER_MASK		GENMASK(5, 4)
+>> > +#define RK3568_PHYREG13_RESISTER_SHIFT		0x4
+>> > +#define RK3568_PHYREG13_RESISTER_HIGH_Z		3
+>> > +#define RK3568_PHYREG13_CKRCV_AMP0		BIT(7)
+>> > +
+>> > +#define RK3568_PHYREG14				0x34
+>> > +#define RK3568_PHYREG14_CKRCV_AMP1		BIT(0)
+>> > +
+>> > +#define RK3568_PHYREG15				0x38
+>> > +#define RK3568_PHYREG15_CTLE_EN			BIT(0)
+>> > +#define RK3568_PHYREG15_SSC_CNT_MASK		GENMASK(7, 6)
+>> > +#define RK3568_PHYREG15_SSC_CNT_SHIFT		6
+>> > +#define RK3568_PHYREG15_SSC_CNT_VALUE		1
+>> > +
+>> > +#define RK3568_PHYREG16				0x3C
+>> > +#define RK3568_PHYREG16_SSC_CNT_VALUE		0x5f
+>> > +
+>> > +#define RK3568_PHYREG18				0x44
+>> > +#define RK3568_PHYREG18_PLL_LOOP		0x32
+>> > +
+>> > +#define RK3568_PHYREG32				0x7C
+>> > +#define RK3568_PHYREG32_SSC_MASK		GENMASK(7, 4)
+>> > +#define RK3568_PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
+>> > +#define RK3568_PHYREG32_SSC_DIR_SHIFT		4
+>> > +#define RK3568_PHYREG32_SSC_UPWARD		0
+>> > +#define RK3568_PHYREG32_SSC_DOWNWARD		1
+>> > +#define RK3568_PHYREG32_SSC_OFFSET_MASK	GENMASK(7, 6)
+>> > +#define RK3568_PHYREG32_SSC_OFFSET_SHIFT	6
+>> > +#define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
+>> > +
+>> > +#define RK3568_PHYREG33				0x80
+>> > +#define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
+>> > +#define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
+>> > +#define RK3568_PHYREG33_PLL_KVCO_VALUE		2
+>> > +#define RK3576_PHYREG33_PLL_KVCO_VALUE		4
+>> > +
+>> > +/* RK3588 COMBO PHY registers */
+>> > +#define RK3588_PHYREG27				0x6C
+>> > +#define RK3588_PHYREG27_RX_TRIM			0x4C
+>>=20
+>> Would it be better if RK3588_PHYREG* comes after RK3576_PHYREG*?
+>>=20
+>
+> It's intended to keep RK3576 definitions below RK3588 ones. The RK3576
+> driver makes use of a register introduced for RK3588 variant
+> (RK3588_PHYREG27). Since similar reusing doesn't happen reversely, I
+> consider the design of RK3576 a superset of the RK3588 one, and put
+> RK3576 definitions later in the file.
 
-Why there is no main PHY clock?
+I understand that logic, but OTOH in patch 4 you put the defines for
+RK3528 before RK3568. And RK3568 is not a superset of RK3528 AFAIK.
+It's just different? That's why I think/thought sorting them (all)
+alphabetically would make more sense.
 
-> +            - description: ext_xtal clock
-> +            - description: reference clock
+My 0.02
 
-Both external oscillator and reference clocks? What are these clocks?
-
-> +
-> +        clock-names:
-> +          items:
-> +            - const: ext_xtal
-> +            - const: ref
-> +
-> +        reg:
-> +          minItems: 1
-
-No, there is no such syntax. Drop.
-
-> +          maxItems: 1
-> +
-> +        reg-names:
-> +          minItems: 1
-
-No, look at existing code and do the same.
-
-> +
->  unevaluatedProperties: false
->  
->  examples:
+>> > +
+>> > +/* RK3576 COMBO PHY registers */
+>> > +#define RK3576_PHYREG10				0x24
+>> > +#define RK3576_PHYREG10_SSC_PCM_MASK		GENMASK(3, 0)
+>> > +#define RK3576_PHYREG10_SSC_PCM_3500PPM		7
+>> > +
+>> > +#define RK3576_PHYREG17				0x40
+>> > +
+>> > +#define RK3576_PHYREG21				0x50
+>> > +#define RK3576_PHYREG21_RX_SQUELCH_VAL		0x0D
+>> > +
+>> > +#define RK3576_PHYREG30				0x74
+>> > =20
+>> >  struct rockchip_combphy_priv;
+>> > <snip>
+>
+>
+> Thanks,
+> Yao Zi
 
 
-Best regards,
-Krzysztof
+--2f6aa86954b8eb8c99f3919d1846860d91999fb6d12d29116c5daae2c76b
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCaCw/YgAKCRDXblvOeH7b
+btjKAP9j4L97yDM5TuPnM79GFXom5tqq+k4QLX4sjJJaNaHyGgD/W1GQwoE0qrXy
+fn0SRC1sVChHn22biqVDwNqUinN+rw0=
+=yOD8
+-----END PGP SIGNATURE-----
+
+--2f6aa86954b8eb8c99f3919d1846860d91999fb6d12d29116c5daae2c76b--
+
+
+--===============6916700924750334310==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6916700924750334310==--
+
