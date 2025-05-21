@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32917C54E71
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76992C2D0CD
 	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 14:25:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eFX9mQK8wVSlf7FRBpYK3QRsU4H+Cv6US1oYveX7T6k=; b=ivlJvy5v/tsBMN
-	7ggR/bPERRFh3lGwUM2oJuYVtR8gEhdpCuV8/HEIvs57sg9px1Tg5snkbg4NZycKd4inw4azmQUL2
-	gXcWG0l4FPXrbc3j/zXz3OiByZ04mUj4eShu63K6gEYkS6UxkpqCBR0IBItrv9GBEDX67j1w8KIp+
-	mActPHIfpsJaZNbLiylrpszCeVcL5oQaYvwZHMxCs+PjBomRwFkwMFXwXdKJXBXFpo4bhwP3E65/v
-	T0mbp2dta6PvjpBknx7sgh8+xW35oaU1UmB4VCkoRhe5XxM4T8Yr3r22t3AuHHdlsgr+F6KrRZPak
-	+LO69PGBvbLfR/jqoiRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q0mQomKuzhjjO/Z8UF0JPvUTNABC6lT3/mFeLdJ6EZY=; b=jYb1bw2PYKuwB9
+	9KCr50N4/F49n1ByfWpCE+5J9WpXmLgZwAMli1PqSv64pNQmdoWYljnOv2xSl7InPfslWnUtYGPpU
+	VtUjHyOW2WsepYnmr2YaHwkyiL5e3ZSv//lhBhbHL5fjv1toEI1q2c6I1swbcPrzVZzkQQVTb92Vb
+	CQUlU3j7ZY4IV0FEt/PHLeNgFqbf1OQ7g7P1FQdVcjV6BgYGz95ySY2ESVQfxlNGO/If2K2JmOyXW
+	Do2093IZFfm/nGDv1SHWW7mogTpkqRQnZMBQ6P4guwqlJeGCVC+rTlJGy+mFbXPlHzE50RoE5g9A8
+	zPThMcwdjbf3mSD3U8Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHkNY-0000000G6QF-40P2;
-	Wed, 21 May 2025 14:25:08 +0000
-Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
+	id 1uHkNZ-0000000G6QQ-0zBx;
+	Wed, 21 May 2025 14:25:09 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHk8q-0000000G3UA-2L9h
+	id 1uHk8r-0000000G3UH-2utG
 	for linux-phy@lists.infradead.org;
-	Wed, 21 May 2025 14:09:58 +0000
-Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-601aa44af77so7603141a12.3
-        for <linux-phy@lists.infradead.org>; Wed, 21 May 2025 07:09:55 -0700 (PDT)
+	Wed, 21 May 2025 14:09:59 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-601aa44af77so7603212a12.3
+        for <linux-phy@lists.infradead.org>; Wed, 21 May 2025 07:09:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1747836594; x=1748441394; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=TDOATfF1NXwi+01fMzNVCZKqUTUxtgjBwrVzcLpCswY=;
-        b=cGwp2MDZ/FaQFuC3e8SNnUdoBPTfBrQGNQUumApqvhHmwON0KsBTUkNs6NZM/mQPfk
-         W7aJDBFi8oeviEL+twNJGQ9yNJYMLYiDYiYqcnCgESE2ZcyFc1DQ32NjTd85k0xSt9og
-         bAKKHA+sj+Uedz/XOMm6kbGnJlfFC//kBTB11KwYgDUDivroMHn78+bqZkKc66hRI6Se
-         hPhWy3C+LXOBmrftPc2kVhL/RjeR9xNYQMTops+++Ae9stmFu/UO5R8PMuUJzMUpzsKR
-         COxmBeOda+Cq6KhhVirRDqzsQ5HaPlUvwD/JzaY69irUxHZydGqjLAAEeJaV1Pa+d/J7
-         npiw==
+        d=tuxon.dev; s=google; t=1747836596; x=1748441396; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ZmrP+sot8rKutRjUGVZ8MSsGqAFIco0iPKh+ZSc/XZE=;
+        b=Jqumslm117X6E8b6U2y9yzkSsBSa8U5IQLWEcCbjE/qgyhAsrj3Wy54FL1tH88l86v
+         Hn80grZEdvYaUlWMnTAXI5wL2BJkMy0aoWOxMfu1HkgZIq8FOcPw/kDrzZ3RTZn7DwcL
+         WckG5EYEsmH1apyXGSXXlU4pb5cSyqlkVJyomELwodrfjPISCtkuOFloKk1lM5QdGks7
+         dO2THvJbiBsQ6ptp29bhrZiB9kDpLqsSRozM4zff8fGmWehpK6EToBlZ7KNvps5C2zna
+         SMNXYbpjHt3ed+bHJ7Iq8T4KB9TUF6THEb9KY/vJgvyzPaN9cyFbK4Btq6og65+SjICC
+         UA1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747836594; x=1748441394;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=TDOATfF1NXwi+01fMzNVCZKqUTUxtgjBwrVzcLpCswY=;
-        b=dt1N3wqfUvxdKCs94L6fZGnFEhyIWbF2SjA77Hb8DcQmeRiuuY48hz4V3nuRSeZZz9
-         E4UOJg//DFYlvfCh7XUk4uTSLf7Vh1rLjqKvXPUJ0B4ixzgheIMfnj3xzfas5nIOPWdh
-         q/q97/wt6kZ2xF/vLqmmhF4bxEiZCoHoOVRMAW2ZCldcCDJ8wpJFDNiSeoGmzPEkc08n
-         5NdWIVJZgJvUAQ3utHBqMjyTNSgADR2WDbZ4K7v8jOgy9kkp3hpLpCNJ1Hnf3fy2RQh0
-         z2ApRoi3owqInRxN27LIlGUwKSxLK1ysZOCjtlCUKig9ltuP7Fq79FVTMwrMxLQA6XAD
-         4l7Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVrkdsRrxnbQemtTKcUD6f+J67yKVRz6M7kRiH66ZD43Ci7hZIqY03HyQ3VKo7RJjGDKbNM0/LOhqs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzPLZpCDs8TDR3ofplhDa/BRAUq2oiUzQ8qoXOHj6BJDpd0HTQf
-	DD8sTOSFYzvVM7VA6237i4k5+yKkZGrf9WZwF5j6D1UaoVLjtWeUjABw6Ux+QLI2qVw=
-X-Gm-Gg: ASbGnctli000i5LfSqHwBSRmd+gzWJmg7F8beYC+jOOk7adVk7deG9bJ0ovSQLrnrhE
-	AlzIaKxHA0hDwKnh+iS6tV4PJLmQtoY6ENpz8Tt1EDu/ZMA2U+liDerHtkTCiR8H0Tjz+ipeNPv
-	CEc/iXxUhi/u155ZszecXY7kr/6/RCtKZbTgWvsRoyylFLmzZj38qaXcjESQzrdH+sg93iXulUd
-	u4xqyVSQLCtPjsnSgU5bG9LEiWlX3mxOpfxm6qVGfPUoEKPPXqMj4wpwRpFSKRQDyrlJVlXZiXP
-	GNZj/ZD6u8HEEpqNlLbWLxe0FDgMi5ogrt0AnyogdPM8EuSOn8rKm2zO78O4so5P4x4HKf+7Y65
-	7NNxO
-X-Google-Smtp-Source: AGHT+IEFpiVvcjUo1Wbs2Qw6AkINKGvCZvZ0iKNJK+c/rD/wNHysBFgTBCzq7iiqNR0Oj9YbgG19CA==
-X-Received: by 2002:a17:907:d0a:b0:acb:4e0c:23ed with SMTP id a640c23a62f3a-ad52d49d4admr1927368166b.14.1747836594100;
-        Wed, 21 May 2025 07:09:54 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1747836596; x=1748441396;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=ZmrP+sot8rKutRjUGVZ8MSsGqAFIco0iPKh+ZSc/XZE=;
+        b=aoO92gVp++0HxfhePpZaNuvtPvjBwSr0wk52iC5kmrre7JmlcQXsd7lgsuxlrf6mL5
+         IypA1lbgJtnUIvi2Ivtejv66OW7J5INM8B0kkQ7vNwe45SCUOD5LJfKfNEde5QOcJG4p
+         T59GDYtwf1gF+fbb3dkY3iwbBU/FZm4oAokDLN76/JvVu7YJnP2kTJ04t+qEcuZ5MEka
+         YRw9+21D6dLSrAN53qOJYFliDumxMw3Aac0cOMsDigbBELYA41FfLvI1+lygoJ39p+Tq
+         hcegG+aw+e3c9b6UYhbbCRQnfUPN1jugO2aS7DJhE+3DWR6/IBfAUW+kYI0F/C10i7H0
+         9YIA==
+X-Forwarded-Encrypted: i=1; AJvYcCXf4VV2ExvbGNrSLPSRvUKI3jqBk3eTPGxZPFlCoEkr69AugDIytHv+yhO6Pjz9MWbkj4vjsmBcfwQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz0XfyJnGTw/KPirz5qq+avkyFGoIo1aejlSvPITZfTftL19hHe
+	ibvQncLp1pYMA7O6+B10a+OP0C7Fo3wxcIs5iOok9oH4/CpX166eX9Pe7loLPY5Xn8U=
+X-Gm-Gg: ASbGncuV3BInzjXq2n5rryenPdrVAWfWY9fshpLBlUaQvuyi/YHdoO1us93otAOOiTx
+	1f2hc+gEmjmXS9qsqlLrIpKkoa3nlPPCalO6L75IVUaTm5aHHvdENZ1lr/aI6EOi2ovQl8KKQm0
+	XSk5Xmj5klV8WiZT79VEhdFjguEU6tBCk9QuZwD9ga7zKo8XpJbOXz2gZjQw8lxzkjHuDY/Wbu5
+	Kdetcp5nNJu7tYmjqfkCD7r3PSGQk7s7YJ68YnfQFwEeGBWbE4qcbw+HUZiAVq7uWzDmzXFor0W
+	dK5xg/4vV9rHq1fgiVQGkpc/BWqQ6XuN0sUj+ykaz3B73EjP3ZDe+4osh7jO4sv56YGvlYTxZeG
+	uZJpM
+X-Google-Smtp-Source: AGHT+IH2Q+dXGJ1p+fzjH3SJID8Si948P9OQNtR6M7pu6BCu4wpblWU0sr2HucFryDErcvkRzd82tA==
+X-Received: by 2002:a17:907:94ce:b0:ad1:8e6a:5945 with SMTP id a640c23a62f3a-ad52d583cbbmr2059152666b.36.1747836595765;
+        Wed, 21 May 2025 07:09:55 -0700 (PDT)
 Received: from claudiu-X670E-Pro-RS.. ([82.78.167.58])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad52d271916sm914552866b.69.2025.05.21.07.09.52
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad52d271916sm914552866b.69.2025.05.21.07.09.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 May 2025 07:09:53 -0700 (PDT)
+        Wed, 21 May 2025 07:09:55 -0700 (PDT)
 From: Claudiu <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
 To: vkoul@kernel.org,
@@ -90,14 +91,16 @@ Cc: claudiu.beznea@tuxon.dev,
 	linux-hardening@vger.kernel.org,
 	john.madieu.xa@bp.renesas.com,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v3 00/12] Add initial USB support for the Renesas RZ/G3S SoC
-Date: Wed, 21 May 2025 17:09:31 +0300
-Message-ID: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v3 01/12] soc: renesas: rz-sysc: Add syscon/regmap support
+Date: Wed, 21 May 2025 17:09:32 +0300
+Message-ID: <20250521140943.3830195-2-claudiu.beznea.uj@bp.renesas.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
+References: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_070956_765254_84D5F207 
-X-CRM114-Status: GOOD (  21.27  )
+X-CRM114-CacheID: sfid-20250521_070957_743458_6CE91AFF 
+X-CRM114-Status: GOOD (  21.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,145 +112,203 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogQ2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJwLnJlbmVzYXMuY29tPgoK
-SGksCgpTZXJpZXMgYWRkcyBpbml0aWFsIFVTQiBzdXBwb3J0IGZvciB0aGUgUmVuZXNhcyBSWi9H
-M1MgU29DLgoKU2VyaWVzIGlzIHNwbGl0IGFzIGZvbGxvd3M6Ci0gcGF0Y2hlcyAwMS0wMy8xMgkt
-IGFkZCBzaWduYWwgc3VwcG9ydCBvbiBTWVNDIGRyaXZlciBzdXBwb3J0OyB0aGlzIGlzCgkJCSAg
-bmVjZXNzYXJ5IGZvciBVU0IgUEhZIGFzIHRoZSBVU0IgUEhZIGRyaXZlciBuZWVkcyB0bwoJCQkg
-IHRvdWNoIGEgcmVnaXN0ZXIgaW4gdGhlIFNZU0MgYWRkcmVzcyBzcGFjZSwgaW4gdGhlCgkJCSAg
-aW5pdGlhbGl6YXRpb24gcGhhc2UKLSBwYXRjaGVzIDA0LTA1LzEyCS0gdXBkYXRlcyB0aGUgVVNC
-IFBIWSBkb2N1bWVudGF0aW9uCi0gcGF0Y2hlcyAwNi0wNy8xMgktIHVwZGF0ZXMgdGhlIFVTQiBQ
-SFkgZHJpdmVyIHdpdGggYSBmaXggYW5kIHRoZQoJCQkgIHN1cHBvcnQgZm9yIFBXUlJEWSBTWVND
-IHNpZ25hbAotIHBhdGNoZXMgMDgtMTAvMTIJLSB1cGRhdGVzIHRoZSByemcybC11c2JwaHktY3Ry
-bCBkcml2ZXIgYW5kIGRvY3VtZW50YXRpb24KCQkJICB3aXRoIHN1cHBvcnQgZm9yIHRoZSBVU0Ig
-UFdSUkRZIHNpZ25hbAotIHBhdGNoZXMgMTEtMTIvMTIJLSBhZGQgZGV2aWNlIHRyZWUgc3VwcG9y
-dAoKTWVyZ2Ugc3RyYXRlZ3ksIGlmIGFueToKLSBwYXRjaGVzIDAxLTAzLzEyLDExLTEyLzEyIGNh
-biBnbyB0aHJvdWdoIFJlbmVzYXMgdHJlZQotIHBhdGNoZXMgMDQtMDcvMTIgY2FuIGdvIHRocm91
-Z2ggdGhlIFBIWSB0cmVlCi0gcGF0Y2hlcyAwOC0xMC8xMiBjYW4gZ28gdGhyb3VnaCB0aGUgcmVz
-ZXQgdHJlZQoKVGhhbmsgeW91LApDbGF1ZGl1IEJlem5lYQoKQ2hhbmdlcyBpbiB2MzoKLSBhcyB0
-aGUgYmFzaWNzIG9mIHRoZSBTWVNDIGRyaXZlciB3YXMgaW50ZWdyYXRlZCwgb25seSB0aGUgc2ln
-bmFsIHN1cHBvcnQKICB3YXMgcHJlc2VydmVkIGluIHRoaXMgc2VyaWVzLCBpbiBhIHNlcGFyYXRl
-IHBhdGNoOyBwYXRjaCAwMS8xMiB3YXMKICBhZGp1c3RlZCAoYnkgYWRkcmVzc2luZyB0aGUgcmV2
-aWV3IGNvbW1lbnRzIHJlY2VpdmVkIGF0IFsxXSkgYXMgaXQgaXMKICBuZWNlc3NhcnkgdG8gYnVp
-bGQgdGhlIHNpZ25hbCBzdXBwb3J0IG9uIHRvcCBvZiBpdAotIGFmdGVyIGxvbmcgZGlzY3Vzc2lv
-bnMgd2l0aCB0aGUgaW50ZXJuYWwgSFcgdGVhbSBpdCBoYXMgYmVlbiBjb25maXJtZWQKICB0aGF0
-IHRoZSByZWxhdGlvbiBiL3cgaW5kaXZpZHVhbCBVU0Igc3BlY2lmaWMgSFcgYmxvY2tzIGFuZCBz
-aWduYWxzCiAgaXMgbGlrZToKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSM
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSC4peE4pSA
-4pSAIENQR19DTEtPTl9VU0IuQ0xLMF9PTgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIOKUgiAgICAgVVNCIENIMCAgICAgICAgICAgICAgICAgIOKUggogICAg4pSM4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSQICAg4pSC4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQIOKUguKX
-hOKUgOKUgCBDUEdfQ0xLT05fVVNCLkNMSzJfT04KICAgIOKUgiAgICAgICAgICAgICAgICAg4pSM
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAg4pSC4pSCaG9zdCBjb250cm9sbGVyIHJlZ2lz
-dGVycyAg4pSCIOKUggogICAg4pSCICAgICAgICAgICAgICAgICDilIIgICAgICAgIOKUgiAgIOKU
-guKUgmZ1bmN0aW9uIGNvbnRyb2xsZXIgcmVnaXN0ZXJz4pSCCiAgICDilIIgICAgICAgICAgICAg
-ICAgIOKUgiBQSFkwICAg4pSC4peE4pSA4pSA4pSk4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
-4pSYIOKUggogICAg4pSCICAgICBVU0IgUEhZICAgICDilIIgICAgICAgIOKUgiAgIOKUlOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWsuKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmAogICAg4pSCICAgICAgICAgICAgICAgICDi
-lJTilIDilIDilIDilIDilIDilIDilIDilIDilJggICAgICAgICAgICAgICAg4pSCCiAgICDilIIg
-ICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICBDUEdfQlVTX1BFUklfQ09NX01TVE9QLk1T
-VE9QezYsIDV9X09OCiAgICDilILilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilJAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICDilILilIJVU0JQ
-SFkgY29udHJvbOKUgiDilIIgICAgICAgIOKUggogICAg4pSC4pSCICByZWdpc3RlcnMgICDilIIg
-4pSCIFBIWTEgICDilIIgICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK
-ICAgIOKUguKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDi
-lIIgICAgICAgIOKUguKXhOKUgOKUgOKUpCAgICAgVVNCIENIMSAgICAgICAgICAgICAgICAgIOKU
-ggogICAg4pSCICAgICAgICAgICAgICAgICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilJgg
-ICDilILilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAg4pSC4peE4pSA4pSAIENQR19DTEtP
-Tl9VU0IuQ0xLMV9PTgogICAg4pSU4pSA4pay4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pay4pSA4pSA
-4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pay4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAg4pSC4pSCIGhv
-c3QgY29udHJvbGxlciByZWdpc3RlcnMg4pSCIOKUggogICAgICDilIIgICAgICAg4pSCICAgICAg
-ICAg4pSCICAgICAgICAgIOKUguKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
-gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDilIIKICAg
-ICAg4pSCICAgICAgIOKUgiAgICAgICAgIOKUgiAgICAgICAgICDilJTilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilIDilrLilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
-lIDilIDilIDilIDilIDilIDilJgKICAgICAg4pSCICAgICAgIOKUgiAgICAgICAgIOKUgiAgICAg
-ICAgICAgICAgICAgICAgICAg4pSCCiAgICAgIOKUgiAgICAgICDilIIgICAgICAgICDilIIgICAg
-ICAgICAgIENQR19CVVNfUEVSSV9DT01fTVNUT1AuTVNUT1A3X09OCiAgICAgIOKUglBXUlJEWSDi
-lIIgICAgICAgICDilIIKICAgICAg4pSCICAgICAgIOKUgiAgIENQR19DTEtfT05fVVNCLkNMSzNf
-T04KICAgICAg4pSCICAgICAgIOKUggogICAgICDilIIgIENQR19CVVNfUEVSSV9DT01fTVNUT1Au
-TVNUT1A0X09OCiAgICAgIOKUggogICAg4pSM4pSA4pSA4pSA4pSA4pSQCiAgICDilIJTWVND4pSC
-CiAgICDilJTilIDilIDilIDilIDilJgKCiAgd2hlcmU6CiAgLSBDUEdfQ0xLT05fVVNCLkNMSy5D
-TEtYX09OIGlzIHRoZSByZWdpc3RlciBiaXQgY29udHJvbGxpbmcgdGhlIGNsb2NrIFgKICAgICAg
-b2YgZGlmZmVyZW50IFVTQiBibG9ja3MsIFggaW4gezAsIDEsIDIsIDN9CiAgLSBDUEdfQlVTX1BF
-UklfQ09NX01TVE9QLk1TVE9QWF9PTiBpcyB0aGUgcmVnaXN0ZXIgYml0IGNvbnRyb2xsaW5nIHRo
-ZQogICAgTVNUT1Agb2YgZGlmZmVyZW50IFVTQiBibG9ja3MsIFggaW4gezQsIDUsIDYsIDd9CiAg
-LSBVU0IgUEhZIGlzIHRoZSBVU0IgUEhZIGJsb2NrIGV4cG9zaW5nIDIgcG9ydHMsIHBvcnQwIGFu
-ZCBwb3J0MSwgdXNlZAogICAgYnkgdGhlIFVTQiBDSDAsIFVTQiBDSDEKICAtIFNZU0MgaXMgdGhl
-IHN5c3RlbSBjb250cm9sbGVyIGJsb2NrIGNvbnRyb2xsaW5nIHRoZSBQV1JSRFkgc2lnbmFsCiAg
-LSBVU0IgQ0h4IGFyZSBpbmRpdmlkdWFsIFVTQiBibG9jayB3aXRoIGhvc3QgYW5kIGZ1bmN0aW9u
-IGNhcGFiaWxpdGllcwogICAgKFVTQiBDSDAgaGF2ZSBib3RoIGhvc3QgYW5kIGZ1bmN0aW9uIGNh
-cGFiaWxpdGllcywgVVNCIENIMSBoYXMgb25seQogICAgaG9zdCBjYXBhYmlsaXRpZXMpCgogIER1
-ZSB0byB0aGlzLCB0aGUgUFdSUkRZIHNpZ25hbCB3YXMgYWxzbyBwYXNzZWQgdG8gdGhlIHJlc2V0
-LXJ6ZzJsLXVzYnBoeS1jdHJsCiAgcmVzZXQgZHJpdmVyIChhcyBpdCBjb250cm9scyB0aGUgVVNC
-UEhZIGNvbnRyb2wgcmVnaXN0ZXJzKSBhbmQgdGhlc2UKICBhcmUgaW4gdGhlIFVTQiBQSFkgYmxv
-Y2sgY29udHJvbGxlZCBieSBQV1JSRFkgc2lnbmFsLgoKICBUaGUgUFdSUkRZIHNpZ25hbCBuZWVk
-IHRvIGJlIGRlLWFzc2VydGVkIG9uIHByb2JlIGJlZm9yZSBlbmFibGluZyB0aGUgbW9kdWxlCiAg
-Y2xvY2tzIGFuZCB0aGUgbW9kdWxlIE1TVE9QLiBUbyBhdm9pZCBhbnkgdmlvbGF0aW9uIG9mIHRo
-aXMgY29uZmlndXJhdGlvbgogIHNlcXVlbmNlLCB0aGUgUFdSUkRZIHNpZ25hbCBpcyBub3cgY29u
-dHJvbGxlZCBieSBVU0IgUEhZIGRyaXZlciBhbmQgdGhlCiAgcmVzZXQtcnpnMmwtdXNicGh5LWN0
-cmwgZHJpdmVyLgoKICBBcyB0aGUgUEhZcyBnZXRzIHJlc2V0IHNpZ25hbHMgZnJvbSB0aGUgVVNC
-IHJlc2V0IGNvbnRyb2xsZXIgZHJpdmVyLCB0aGUKICByZXNldC1yemcybC11c2JwaHktY3RybCBp
-cyBwcm9iZWQgYmVmb3JlIHRoZSBVU0IgUEhZIGRyaXZlciBhbmQgdGh1cywKICBpbiB0aGVvcnks
-IHdlIGNhbiBkcm9wIHRoZSBzaWduYWwgc3VwcG9ydCAocmVmZXJlbmNlIGNvdW50aW5nIG9mIHRo
-ZQogIFVTQiBQV1JSRFkpIGFuZCBjb25maWd1cmUgdGhlIFVTQiBQV1JSRFkganVzdCBpbiB0aGUg
-cmVzZXQtcnpnMmwtdXNicGh5LWN0cmwuCgogIEhvd2V2ZXIsIHRvIGhhdmUgYSBwcm9wZXIgZGVz
-Y3JpcHRpb24gb2YgdGhlIGRpYWdyYW0gZGVzY3JpYmVkIGFib3ZlIGluIAogIGRldmljZSB0cmVl
-IGFuZCBlbnN1cmUgdGhlIGNvbmZpZ3VyYXRpb24gc2VxdWVuY2UgYi93IFBSV1JEWSwgQ0xLIGFu
-ZCBNU1RPUAogIGlzIHByZXNlcnZlZCwgdGhlIFBXUlJEWSBzaWduYWwgaXMgY29udHJvbGxlZCBp
-biB0aGlzIHNlcmllcyBpbiBhbGwgdGhlCiAgZHJpdmVycyB0aGF0IHdvcmsgd2l0aCByZWdpc3Rl
-cnMgZnJvbSB0aGUgVVNCIFBIWSBibG9jay4KCiAgUGxlYXNlIHByb3ZpZGUgeW91ciBmZWVkYmFj
-ayBvbiB0aGlzIHNvbHV0aW9uLgoKVGhhbmsgeW91LApDbGF1ZGl1CgpbMV0gaHR0cHM6Ly9sb3Jl
-Lmtlcm5lbC5vcmcvYWxsLzIwMjUwMzMwMjE0OTQ1LjE4NTcyNS0yLWpvaG4ubWFkaWV1LnhhQGJw
-LnJlbmVzYXMuY29tLwoKQ2hhbmdlcyBpbiB2MjoKLSBkcm9wcGVkIHYxIHBhdGNoZXMgYWxyZWFk
-eSBhcHBsaWVkCi0gYWRkZWQgZml4ZXMgcGF0Y2hlcyAoMDcvMTQgYW5kIDA5LzE0KQotIGRyb3Bw
-ZWQgdGhlIGFwcHJvYWNoIG9mIGhhbmRsaW5nIHRoZSBVU0IgUFdSUkRZIHRob3VnaCBhIHJlc2V0
-IGNvbnRyb2xsZXIKICBkcml2ZXIgYW5kIGludHJvZHVjZWQgdGhlIHNpZ25hbCBjb25jZXB0IGZv
-ciB0aGUgU1lTQyBkcml2ZXI7IGJlY2F1c2UKICBvZiB0aGlzLCBtb3N0IG9mIHRoZSB3b3JrIGRv
-bmUgaW4gdjEgd2FzIGRyb3BwZWQKLSBwZXIgcGF0Y2ggY2hhbmdlcyBhcmUgbGlzdGVkIGluIGlu
-ZGl2aWR1YWwgcGF0Y2hlcywgaWYgYW55CgpDaHJpc3RvcGhlIEpBSUxMRVQgKDEpOgogIHBoeTog
-cmVuZXNhczogcmNhci1nZW4zLXVzYjI6IEZpeCBhbiBlcnJvciBoYW5kbGluZyBwYXRoIGluCiAg
-ICByY2FyX2dlbjNfcGh5X3VzYjJfcHJvYmUoKQoKQ2xhdWRpdSBCZXpuZWEgKDEwKToKICBzb2M6
-IHJlbmVzYXM6IHJ6LXN5c2M6IEFkZCBzaWduYWwgc3VwcG9ydAogIHNvYzogcmVuZXNhczogcjlh
-MDhnMDQ1LXN5c2M6IEFkZCBVU0IgUFdSUkRZIHNpZ25hbAogIGR0LWJpbmRpbmdzOiBwaHk6IHJl
-bmVzYXMsdXNiMi1waHk6IE1hcmsgcmVzZXRzIGFzIHJlcXVpcmVkIGZvciBSWi9HM1MKICBkdC1i
-aW5kaW5nczogcGh5OiByZW5lc2FzLHVzYjItcGh5OiBBZGQgcmVuZXNhcyxzeXNjLXNpZ25hbHMK
-ICBwaHk6IHJlbmVzYXM6IHJjYXItZ2VuMy11c2IyOiBBZGQgc3VwcG9ydCBmb3IgVVNCIFBXUlJE
-WSBzaWduYWwKICByZXNldDogcnpnMmwtdXNicGh5LWN0cmw6IEFkZCBzdXBwb3J0IGZvciBVU0Ig
-UFdSUkRZIHNpZ25hbAogIGR0LWJpbmRpbmdzOiByZXNldDogcmVuZXNhcyxyemcybC11c2JwaHkt
-Y3RybDogRG9jdW1lbnQgUlovRzNTIHN1cHBvcnQKICByZXNldDogcnpnMmwtdXNicGh5LWN0cmw6
-IEFkZCBzdXBwb3J0IGZvciBSWi9HM1MgU29DCiAgYXJtNjQ6IGR0czogcmVuZXNhczogcjlhMDhn
-MDQ1OiBBZGQgVVNCIHN1cHBvcnQKICBhcm02NDogZHRzOiByZW5lc2FzOiByemczcy1zbWFyYzog
-RW5hYmxlIFVTQiBzdXBwb3J0CgpKb2huIE1hZGlldSAoMSk6CiAgc29jOiByZW5lc2FzOiByei1z
-eXNjOiBBZGQgc3lzY29uL3JlZ21hcCBzdXBwb3J0CgogLi4uL2JpbmRpbmdzL3BoeS9yZW5lc2Fz
-LHVzYjItcGh5LnlhbWwgICAgICAgIHwgIDIzICsrCiAuLi4vcmVzZXQvcmVuZXNhcyxyemcybC11
-c2JwaHktY3RybC55YW1sICAgICAgfCAgMzggKysrLQogYXJjaC9hcm02NC9ib290L2R0cy9yZW5l
-c2FzL3I5YTA4ZzA0NS5kdHNpICAgIHwgMTIwICsrKysrKysrKysrCiBhcmNoL2FybTY0L2Jvb3Qv
-ZHRzL3JlbmVzYXMvcnpnM3Mtc21hcmMuZHRzaSAgfCAgNTcgKysrKysKIGRyaXZlcnMvcGh5L3Jl
-bmVzYXMvcGh5LXJjYXItZ2VuMy11c2IyLmMgICAgICB8ICA1MSArKysrLQogZHJpdmVycy9yZXNl
-dC9yZXNldC1yemcybC11c2JwaHktY3RybC5jICAgICAgIHwgIDQ2ICsrKysKIGRyaXZlcnMvc29j
-L3JlbmVzYXMvS2NvbmZpZyAgICAgICAgICAgICAgICAgICB8ICAgMSArCiBkcml2ZXJzL3NvYy9y
-ZW5lc2FzL3I5YTA4ZzA0NS1zeXNjLmMgICAgICAgICAgfCAgMjUgKysrCiBkcml2ZXJzL3NvYy9y
-ZW5lc2FzL3I5YTA5ZzA0Ny1zeXMuYyAgICAgICAgICAgfCAgMTMgKysKIGRyaXZlcnMvc29jL3Jl
-bmVzYXMvcjlhMDlnMDU3LXN5cy5jICAgICAgICAgICB8ICAxMyArKwogZHJpdmVycy9zb2MvcmVu
-ZXNhcy9yei1zeXNjLmMgICAgICAgICAgICAgICAgIHwgMjAwICsrKysrKysrKysrKysrKysrLQog
-ZHJpdmVycy9zb2MvcmVuZXNhcy9yei1zeXNjLmggICAgICAgICAgICAgICAgIHwgIDM4ICsrKysK
-IGluY2x1ZGUvbGludXgvc29jL3JlbmVzYXMvcnotc3lzYy5oICAgICAgICAgICB8ICAzMCArKysK
-IDEzIGZpbGVzIGNoYW5nZWQsIDY0NiBpbnNlcnRpb25zKCspLCA5IGRlbGV0aW9ucygtKQogY3Jl
-YXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvc29jL3JlbmVzYXMvcnotc3lzYy5oCgotLSAK
-Mi40My4wCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcGh5Cg==
+From: John Madieu <john.madieu.xa@bp.renesas.com>
+
+The RZ/G3E system controller has various registers that control or report
+some properties specific to individual IPs. The regmap is registered as a
+syscon device to allow these IP drivers to access the registers through the
+regmap API.
+
+As other RZ SoCs might have custom read/write callbacks or max-offsets,
+add register a custom regmap configuration.
+
+Signed-off-by: John Madieu <john.madieu.xa@bp.renesas.com>
+[claudiu.beznea:
+ - s/rzg3e_sysc_regmap/rzv2h_sysc_regmap in RZ/V2H sysc
+   file
+ - do not check the match->data validity in rz_sysc_probe() as it is
+   always valid
+ - register the regmap if data->regmap_cfg is valid]
+Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+---
+
+Changes in v3:
+- none, this patch is new, it was picked from John after he addressed
+  the review comments received at [1];
+- I adjusted as specified in the SoB area, and included it here as it
+  is the base for the signal support presented in the next commits
+
+[1] https://lore.kernel.org/all/20250330214945.185725-2-john.madieu.xa@bp.renesas.com/
+
+ drivers/soc/renesas/Kconfig          |  1 +
+ drivers/soc/renesas/r9a08g045-sysc.c | 10 ++++++++++
+ drivers/soc/renesas/r9a09g047-sys.c  | 10 ++++++++++
+ drivers/soc/renesas/r9a09g057-sys.c  | 10 ++++++++++
+ drivers/soc/renesas/rz-sysc.c        | 17 ++++++++++++++++-
+ drivers/soc/renesas/rz-sysc.h        |  3 +++
+ 6 files changed, 50 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
+index fbc3b69d21a7..f3b7546092d6 100644
+--- a/drivers/soc/renesas/Kconfig
++++ b/drivers/soc/renesas/Kconfig
+@@ -437,6 +437,7 @@ config RST_RCAR
+ 
+ config SYSC_RZ
+ 	bool "System controller for RZ SoCs" if COMPILE_TEST
++	select MFD_SYSCON
+ 
+ config SYSC_R9A08G045
+ 	bool "Renesas RZ/G3S System controller support" if COMPILE_TEST
+diff --git a/drivers/soc/renesas/r9a08g045-sysc.c b/drivers/soc/renesas/r9a08g045-sysc.c
+index f4db1431e036..0ef6df77e25f 100644
+--- a/drivers/soc/renesas/r9a08g045-sysc.c
++++ b/drivers/soc/renesas/r9a08g045-sysc.c
+@@ -18,6 +18,16 @@ static const struct rz_sysc_soc_id_init_data rzg3s_sysc_soc_id_init_data __initc
+ 	.specific_id_mask = GENMASK(27, 0),
+ };
+ 
++static const struct regmap_config rzg3s_sysc_regmap __initconst = {
++	.name = "rzg3s_sysc_regs",
++	.reg_bits = 32,
++	.reg_stride = 4,
++	.val_bits = 32,
++	.fast_io = true,
++	.max_register = 0xe20,
++};
++
+ const struct rz_sysc_init_data rzg3s_sysc_init_data __initconst = {
+ 	.soc_id_init_data = &rzg3s_sysc_soc_id_init_data,
++	.regmap_cfg = &rzg3s_sysc_regmap,
+ };
+diff --git a/drivers/soc/renesas/r9a09g047-sys.c b/drivers/soc/renesas/r9a09g047-sys.c
+index cd2eb7782cfe..a3acf6dd2867 100644
+--- a/drivers/soc/renesas/r9a09g047-sys.c
++++ b/drivers/soc/renesas/r9a09g047-sys.c
+@@ -62,6 +62,16 @@ static const struct rz_sysc_soc_id_init_data rzg3e_sys_soc_id_init_data __initco
+ 	.print_id = rzg3e_sys_print_id,
+ };
+ 
++static const struct regmap_config rzg3e_sysc_regmap __initconst = {
++	.name = "rzg3e_sysc_regs",
++	.reg_bits = 32,
++	.reg_stride = 4,
++	.val_bits = 32,
++	.fast_io = true,
++	.max_register = 0x170c,
++};
++
+ const struct rz_sysc_init_data rzg3e_sys_init_data = {
+ 	.soc_id_init_data = &rzg3e_sys_soc_id_init_data,
++	.regmap_cfg = &rzg3e_sysc_regmap,
+ };
+diff --git a/drivers/soc/renesas/r9a09g057-sys.c b/drivers/soc/renesas/r9a09g057-sys.c
+index 4c21cc29edbc..c26821636dce 100644
+--- a/drivers/soc/renesas/r9a09g057-sys.c
++++ b/drivers/soc/renesas/r9a09g057-sys.c
+@@ -62,6 +62,16 @@ static const struct rz_sysc_soc_id_init_data rzv2h_sys_soc_id_init_data __initco
+ 	.print_id = rzv2h_sys_print_id,
+ };
+ 
++static const struct regmap_config rzv2h_sysc_regmap __initconst = {
++	.name = "rzv2h_sysc_regs",
++	.reg_bits = 32,
++	.reg_stride = 4,
++	.val_bits = 32,
++	.fast_io = true,
++	.max_register = 0x170c,
++};
++
+ const struct rz_sysc_init_data rzv2h_sys_init_data = {
+ 	.soc_id_init_data = &rzv2h_sys_soc_id_init_data,
++	.regmap_cfg = &rzv2h_sysc_regmap,
+ };
+diff --git a/drivers/soc/renesas/rz-sysc.c b/drivers/soc/renesas/rz-sysc.c
+index ffa65fb4dade..70556a2f55e6 100644
+--- a/drivers/soc/renesas/rz-sysc.c
++++ b/drivers/soc/renesas/rz-sysc.c
+@@ -6,8 +6,10 @@
+  */
+ 
+ #include <linux/io.h>
++#include <linux/mfd/syscon.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
++#include <linux/regmap.h>
+ #include <linux/sys_soc.h>
+ 
+ #include "rz-sysc.h"
+@@ -100,14 +102,19 @@ MODULE_DEVICE_TABLE(of, rz_sysc_match);
+ 
+ static int rz_sysc_probe(struct platform_device *pdev)
+ {
++	const struct rz_sysc_init_data *data;
+ 	const struct of_device_id *match;
+ 	struct device *dev = &pdev->dev;
++	struct regmap *regmap;
+ 	struct rz_sysc *sysc;
++	int ret;
+ 
+ 	match = of_match_node(rz_sysc_match, dev->of_node);
+ 	if (!match)
+ 		return -ENODEV;
+ 
++	data = match->data;
++
+ 	sysc = devm_kzalloc(dev, sizeof(*sysc), GFP_KERNEL);
+ 	if (!sysc)
+ 		return -ENOMEM;
+@@ -117,7 +124,15 @@ static int rz_sysc_probe(struct platform_device *pdev)
+ 		return PTR_ERR(sysc->base);
+ 
+ 	sysc->dev = dev;
+-	return rz_sysc_soc_init(sysc, match);
++	ret = rz_sysc_soc_init(sysc, match);
++	if (ret || !data->regmap_cfg)
++		return ret;
++
++	regmap = devm_regmap_init_mmio(dev, sysc->base, data->regmap_cfg);
++	if (IS_ERR(regmap))
++		return PTR_ERR(regmap);
++
++	return of_syscon_register_regmap(dev->of_node, regmap);
+ }
+ 
+ static struct platform_driver rz_sysc_driver = {
+diff --git a/drivers/soc/renesas/rz-sysc.h b/drivers/soc/renesas/rz-sysc.h
+index 56bc047a1bff..447008140634 100644
+--- a/drivers/soc/renesas/rz-sysc.h
++++ b/drivers/soc/renesas/rz-sysc.h
+@@ -9,6 +9,7 @@
+ #define __SOC_RENESAS_RZ_SYSC_H__
+ 
+ #include <linux/device.h>
++#include <linux/regmap.h>
+ #include <linux/sys_soc.h>
+ #include <linux/types.h>
+ 
+@@ -34,9 +35,11 @@ struct rz_sysc_soc_id_init_data {
+ /**
+  * struct rz_sysc_init_data - RZ SYSC initialization data
+  * @soc_id_init_data: RZ SYSC SoC ID initialization data
++ * @regmap_cfg: SoC-specific regmap config
+  */
+ struct rz_sysc_init_data {
+ 	const struct rz_sysc_soc_id_init_data *soc_id_init_data;
++	const struct regmap_config *regmap_cfg;
+ };
+ 
+ extern const struct rz_sysc_init_data rzg3e_sys_init_data;
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
