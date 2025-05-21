@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42952C2D0CD
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 919FDC54E65
+	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hoD5Hzpzb3Va/Pqp+MZpN4R8NxI3O4ASfxAtfc9V5ag=; b=0fI7WnpPgaxyAg
-	9BNUs5nT3hIOJ5RCsvfQtF9CYNm3cmnvu7g404HdsteCwjvzB3x9ScS40E7vo7W8KgeuqehrhnFbm
-	Thi/Ru08tXan4mRgVm1G4JsTiJwTzdyb4ye4ez+cauxPiZcuenc8H3Gk2RJEuORfTpqT9H4K/Hxxf
-	0ibwvtARVmkIb7TlZRVP8lfJuQwn49UYnpjM1JOhQ7PaG5A22fshX4XkWNBkj67Rzg4J9VKV51J8Z
-	unKBb419wUyyDiyv2fK4Uf9x7gRIkZxEuRfg75ebLeKJrbcnhStbCkMNoVdEi9LJ5eEMDv5yij+xX
-	c5AI9nKgZFEkfqFqyv2A==;
+	List-Owner; bh=TH30tZQVGMJb9l9rb0weDKBoHN9SVTS3aK8mqdIPhRM=; b=Ctp/yW3uXG2iey
+	tPTwAwyJQFYvdCC3dEPcE49+pRoCfCrQ7rWlb5vnTdFtJTs+n6I0ksCmrviDRX6uYjavaX5v6Vv7h
+	JbgQOUKerbaCHQVILflCz6S+B1ZMd3LAuIHUk92C4M55ZzjMUCF0TPqcTOzUt9DiRmLbxhLuAyyxG
+	ivTW/IhDU1DYmlxY9+NWrRO4KfGJutdzACJfrXnqrY6H1g9ht3RFVCaWtuIH32b5eZH7v39zVg4Y1
+	IF7kbheWikGTD8HKAejUuZxdL2x0She3Z1aPa+eQIcMxQfp76KNF3CAxdhlehEiWQz6J6smmueo00
+	BrRVe7c2wnjr/szZOmbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHghl-0000000FSnY-4B8L;
-	Wed, 21 May 2025 10:29:46 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uHghn-0000000FSoc-14xG;
+	Wed, 21 May 2025 10:29:47 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHfyD-0000000FM6n-133K;
-	Wed, 21 May 2025 09:42:42 +0000
+	id 1uHg0V-0000000FMRn-3Fak;
+	Wed, 21 May 2025 09:45:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 71B1D5C4AE2;
-	Wed, 21 May 2025 09:40:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA1D4C4CEEA;
-	Wed, 21 May 2025 09:42:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D2DD16000A;
+	Wed, 21 May 2025 09:45:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF46DC4CEEA;
+	Wed, 21 May 2025 09:45:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747820560;
-	bh=68q/IbPYPxygxx5c/OXPCNRFH7INdTpZGlMiYkPeW1I=;
+	s=k20201202; t=1747820702;
+	bh=FZEEaVi5Z5wlFR4wqNKg2BEAk2iE1vh3bIqVALVnJN4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=WntjIGuQPDsKX/mYWYu0FkXFL+RSS/akUgmMVsho09NJNA8oqm6QVXC50ERtC+1cR
-	 xxnTBvuXtaEQp7Q9aG1hMX4uE1CE0izhyGwlvuDDggKIG2XtmIW6xcA1JjVW66OTlM
-	 ztiGD1J7QLNhQ0Sg5CTY4TM0GxqGRKXy23nUutf9x5bpCpu65I5WJVaELulRNyZ2ob
-	 uXTy9Y6hWGRA3P8n37w1yH2TDtxUz5z0IqFLCGvn04Rf432erZzGL8h7KfQl+IlLYN
-	 6UqscpWvGfqqr0VRcoLjCArY1LM0NIh/MzMJTOJ5nxL6uYecYR/pDiOxPJgoVd+9iU
-	 Qi6qc2T+w9qLg==
-Date: Wed, 21 May 2025 11:42:37 +0200
+	b=FjhjgSnAQckzuwu9psZRqGye7MuCDKWsuflqm5RH3Ls3rFxZwJWEhyEGDklBCIq0W
+	 2ok6ePTvqpDkdaG+5pULv/53UNXzidBzKJGEKQ04pahsvE4RfM8YF3y84Xkzb3AsFe
+	 MNtNhQ5bXF84GoYcadh+MiZs7wuB3yE3c7WcwoDyAL5s/ebbd9O3+z44d2BtRCJmBz
+	 f2LiYJ7Yqo+Uh/HxgDC2YEmn0NbzJesB6E9BBO6qqOmFSZTtCmoUi1/KH3l5wU5W9w
+	 dnw7GmkVfp2UhbXPZA0VFrPIOT0aaHKj4Z3VyeDHzz8NBnW8/XW/J7EXZxdaF9hdDe
+	 cf+bfYlebTF4w==
+Date: Wed, 21 May 2025 11:44:59 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Shradha Todi <shradha.t@samsung.com>
 Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
@@ -51,18 +51,14 @@ Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
 	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org, 
 	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com, 
 	Pankaj Dubey <pankaj.dubey@samsung.com>
-Subject: Re: [PATCH 05/10] PCI: exynos: Add structure to hold resource
- operations
-Message-ID: <20250521-nostalgic-fox-of-valor-f6d725@kuoka>
+Subject: Re: [PATCH 04/10] PCI: exynos: Add platform device private data
+Message-ID: <20250521-cheerful-spiked-mackerel-ef7ade@kuoka>
 References: <20250518193152.63476-1-shradha.t@samsung.com>
- <CGME20250518193244epcas5p3cacfbdc3b0e5c32f7a4dd97062a931a4@epcas5p3.samsung.com>
- <20250518193152.63476-6-shradha.t@samsung.com>
+ <CGME20250518193239epcas5p4cb4112382560f38ad9708e000eb2335f@epcas5p4.samsung.com>
+ <20250518193152.63476-5-shradha.t@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250518193152.63476-6-shradha.t@samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_024241_325529_9535C587 
-X-CRM114-Status: GOOD (  11.20  )
+In-Reply-To: <20250518193152.63476-5-shradha.t@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,30 +75,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 19, 2025 at 01:01:47AM GMT, Shradha Todi wrote:
-> +struct samsung_res_ops {
-> +	int (*init_regulator)(struct exynos_pcie *ep);
-> +	irqreturn_t (*pcie_irq_handler)(int irq, void *arg);
->  };
+On Mon, May 19, 2025 at 01:01:46AM GMT, Shradha Todi wrote:
+> -static const struct dw_pcie_ops dw_pcie_ops = {
+> +static const struct dw_pcie_ops exynos_dw_pcie_ops = {
+>  	.read_dbi = exynos_pcie_read_dbi,
+>  	.write_dbi = exynos_pcie_write_dbi,
+>  	.link_up = exynos_pcie_link_up,
+> @@ -279,6 +286,7 @@ static int exynos_pcie_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+>  	struct exynos_pcie *ep;
+> +	const struct samsung_pcie_pdata *pdata;
+>  	struct device_node *np = dev->of_node;
+>  	int ret;
 >  
->  static void exynos_pcie_writel(void __iomem *base, u32 val, u32 reg)
-> @@ -74,6 +81,36 @@ static u32 exynos_pcie_readl(void __iomem *base, u32 reg)
->  	return readl(base + reg);
->  }
+> @@ -286,8 +294,11 @@ static int exynos_pcie_probe(struct platform_device *pdev)
+>  	if (!ep)
+>  		return -ENOMEM;
 >  
-> +static int samsung_regulator_enable(struct exynos_pcie *ep)
-> +{
-> +	struct device *dev = ep->pci.dev;
-> +	int ret;
+> +	pdata = of_device_get_match_data(dev);
 > +
-> +	if (ep->supplies_cnt == 0)
-> +		return 0;
-> +
-> +	ret = devm_regulator_bulk_get(dev, ep->supplies_cnt, ep->supplies);
+> +	ep->pdata = pdata;
+>  	ep->pci.dev = dev;
+> -	ep->pci.ops = &dw_pcie_ops;
+> +	ep->pci.ops = pdata->dwc_ops;
+>  
+>  	ep->phy = devm_of_phy_get(dev, np, NULL);
+>  	if (IS_ERR(ep->phy))
+> @@ -363,9 +374,9 @@ static int exynos_pcie_resume_noirq(struct device *dev)
+>  		return ret;
+>  
+>  	/* exynos_pcie_host_init controls ep->phy */
+> -	exynos_pcie_host_init(pp);
+> +	ep->pdata->host_ops->init(pp);
+>  	dw_pcie_setup_rc(pp);
+> -	exynos_pcie_start_link(pci);
+> +	ep->pdata->dwc_ops->start_link(pci);
 
-No. Getting resources on every enable is making this much less readable.
+One more layer of indirection.
 
-NAK
+Read:
+https://lore.kernel.org/all/CAL_JsqJgaeOcnUzw+rUF2yO4hQYCdZYssjxHzrDvvHGJimrASA@mail.gmail.com/
 
 Best regards,
 Krzysztof
