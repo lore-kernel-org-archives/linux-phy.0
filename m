@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BB8DC54ED0
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CBEEC2D0CD
+	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s+sTS4HLUuk3veW5wQTdMoWmnRsp2Eu2Iwi8ZUnU178=; b=4dJkQKt2WtSDOz
-	rM+oF4K5lUx8MiAihZwpDlGW9bPtofbEODtAJZ69jGQzl73bKtbaxt04paqUZbmFq2T14ykteTSY8
-	w10Nx1iT009BcNOjuRTJd1SBb+GbL9MTYGmv1Ggp1y1HamqV6LeulINNrkQgtV/m4C0rb09HkkXJG
-	+09BR3MkkuShNmsTJF1h8PEs89jVF5f1n5HBNX08l5QiISaoxub/kdIO+3/UC1XGMXPeea41FUZih
-	8c0vmsSTXv8WZuEjorzdeBfqygkiFhxx0gHbeuku47BIPCQDZ5XMND8SPao3nP/60vSPEwrYGlWWI
-	VEYNVntUFmszDnoGkEGg==;
+	List-Owner; bh=cT+JBFREZXkGFoQBhxXAaOSXTFAdOHStrJD95Urjp+4=; b=0ZG8FrfkFbeD7O
+	D3WYFsl84/R05a+xOtP8DXet/lYrF4JpY3ZrV2C5WYOaYPJgzY9UkHn3jc4SSglOm3bYHhFnej5sT
+	nZjX/yWBpRS/ASYImmJt8DCVGn25XS/XpB8eqHZaAmNIRjN19WA8mRxlV6qCAHBlITeECUrIv04K0
+	k/IH8v9+rmqoHrPe9dC7I+pdhX2mzslj2X0CxgAaarMyxfayQA46tCXOjArSLNE6cuLQXprKHMmLL
+	lJCfgWbuImY8jYnOeJs5IlOjMa/J+IsBxXvIWIPJpoPT0adWpbrC8VmaSzedzy5V6ApiCWYZ0sw1Z
+	SDiEKFhgDRUPhNvfvhJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHghp-0000000FSqb-0ORR;
-	Wed, 21 May 2025 10:29:49 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uHgho-0000000FSpe-0jtu;
+	Wed, 21 May 2025 10:29:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHg3k-0000000FMph-2j1A;
-	Wed, 21 May 2025 09:48:25 +0000
+	id 1uHg1Q-0000000FMaz-38TV;
+	Wed, 21 May 2025 09:46:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DE54E5C51B8;
-	Wed, 21 May 2025 09:46:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24CFCC4CEE4;
-	Wed, 21 May 2025 09:48:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 22AEE4A52C;
+	Wed, 21 May 2025 09:46:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65C52C4CEEA;
+	Wed, 21 May 2025 09:45:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747820903;
-	bh=eSB4+kYQk9B5Ny4FaYdOJjyIyatCOgRUu77XD/ivzsE=;
+	s=k20201202; t=1747820760;
+	bh=7RivNfJQ1tM6ITxUNsv+CWRaSsbDI8HVCn9mI4Hvzik=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=gblETKwjKAg/6vPGvMLFwRLy+nIftJcjXdnCHOvYyXv9G7Lkwb6k7dY8yvunqG1IA
-	 crYzV1ujSs0vfCEeKG8/q2CUW67AHnNJhteYhFiE9yveWc7hH1zsp+3sot6hu/rE03
-	 Zhc3bNANh32VIP4E/I1GHUpfy5cxDjyeWNsdISUwtWvkeHe8rHZ8lS+9bc54UxPoVD
-	 3hj24fwedWXb1TLOc/DBKeFXhe/jU7liX553FZsoG4l4tYG10xS0lxoKgb8x9Aucek
-	 l1+AOWG1lnDqihrcepARsaJ5huNo9vUKDERCMj4MwVw+Forxl1171xq7j1Y0kEv5Zg
-	 Ppn1TgTmIN76w==
-Date: Wed, 21 May 2025 11:48:21 +0200
+	b=D8hLmQXVmY/w2GWyB6vXjojnqvRerNfVmKYr2A4cFZqWB9JqefvaWU3Qxk4tpTn/g
+	 yOgTv6KuDHFD87htzZ0Eb9dlJINuZW2s4UQ8vHUo/7U9ZsTZfOCV4Z2yRP2n5vp0Pm
+	 db2tNS7X4EY1xkQ4XcP0Tt5jHdzgoHcHU8dnasUDOjgGZZeUWFr/Pji6llF8dJpAQu
+	 ol0NawpfzfWVEYeaDLeYkdC/SFZT3UMbfI0BwGCASOIpDdvJSww2OmcfpyN6VHSdNO
+	 EnkeiRtbzv4gYFsKZAcCApI19l6pmk88phgqAWkrouLCHRkXerBB/vGf5E5IIhfa8G
+	 Pw1CXtHMHF2og==
+Date: Wed, 21 May 2025 11:45:57 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Shradha Todi <shradha.t@samsung.com>
 Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
@@ -49,18 +49,19 @@ Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org, manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, 
 	kw@linux.com, robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com, 
 	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org, 
-	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com
-Subject: Re: [PATCH 09/10] PCI: exynos: Add support for Tesla FSD SoC
-Message-ID: <20250521-competent-honeybee-of-will-3f3ae1@kuoka>
+	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com, 
+	Hrishikesh Dileep <hrishikesh.d@samsung.com>
+Subject: Re: [PATCH 03/10] PCI: exynos: Reorder MACROs to maintain consistency
+Message-ID: <20250521-mysterious-mole-of-priority-8a5f4d@kuoka>
 References: <20250518193152.63476-1-shradha.t@samsung.com>
- <CGME20250518193300epcas5p17e954bb18de9169d65e00501b1dcd046@epcas5p1.samsung.com>
- <20250518193152.63476-10-shradha.t@samsung.com>
+ <CGME20250518193235epcas5p4f0bcf581b583a3acf493a20191ad2b00@epcas5p4.samsung.com>
+ <20250518193152.63476-4-shradha.t@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250518193152.63476-10-shradha.t@samsung.com>
+In-Reply-To: <20250518193152.63476-4-shradha.t@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_024824_727363_4189AE6A 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20250521_024600_805273_51BEC940 
+X-CRM114-Status: GOOD (  13.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,36 +78,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 19, 2025 at 01:01:51AM GMT, Shradha Todi wrote:
->  static int exynos_pcie_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -355,6 +578,26 @@ static int exynos_pcie_probe(struct platform_device *pdev)
->  	if (IS_ERR(ep->phy))
->  		return PTR_ERR(ep->phy);
+On Mon, May 19, 2025 at 01:01:45AM GMT, Shradha Todi wrote:
+> Exynos PCI file follows MACRO definition order where
+> register offset is defined in ascending order and each
+> bit field within the offset is defined right after offset
+> definition. Some MACROs are out of order and so reorder
+> those MACROs to maintain consistency.
+> 
+> Suggested-by: Hrishikesh Dileep <hrishikesh.d@samsung.com>
+> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
+> ---
+>  drivers/pci/controller/dwc/pci-exynos.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
+> index 990aaa16b132..286f4987d56f 100644
+> --- a/drivers/pci/controller/dwc/pci-exynos.c
+> +++ b/drivers/pci/controller/dwc/pci-exynos.c
+> @@ -27,11 +27,11 @@
 >  
-> +	if (ep->pdata->soc_variant == FSD) {
-> +		ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(36));
-> +		if (ret)
-> +			return ret;
-> +
-> +		ep->sysreg = syscon_regmap_lookup_by_phandle(dev->of_node,
-> +				"samsung,syscon-pcie");
-> +		if (IS_ERR(ep->sysreg)) {
-> +			dev_err(dev, "sysreg regmap lookup failed.\n");
-> +			return PTR_ERR(ep->sysreg);
-> +		}
-> +
-> +		ret = of_property_read_u32_index(dev->of_node, "samsung,syscon-pcie", 1,
-> +						 &ep->sysreg_offset);
-> +		if (ret) {
-> +			dev_err(dev, "couldn't get the register offset for syscon!\n");
+>  /* PCIe ELBI registers */
+>  #define EXYNOS_PCIE_IRQ_PULSE			0x000
+> +#define EXYNOS_PCIE_IRQ_EN_PULSE		0x00c
+>  #define EXYNOS_IRQ_INTA_ASSERT			BIT(0)
+>  #define EXYNOS_IRQ_INTB_ASSERT			BIT(2)
+>  #define EXYNOS_IRQ_INTC_ASSERT			BIT(4)
+>  #define EXYNOS_IRQ_INTD_ASSERT			BIT(6)
+> -#define EXYNOS_PCIE_IRQ_EN_PULSE		0x00c
+>  #define EXYNOS_PCIE_IRQ_EN_LEVEL		0x010
+>  #define EXYNOS_PCIE_IRQ_EN_SPECIAL		0x014
+>  #define EXYNOS_PCIE_SW_WAKE			0x018
+> @@ -42,12 +42,12 @@
+>  #define EXYNOS_PCIE_NONSTICKY_RESET		0x024
+>  #define EXYNOS_PCIE_APP_INIT_RESET		0x028
+>  #define EXYNOS_PCIE_APP_LTSSM_ENABLE		0x02c
+> +#define EXYNOS_PCIE_ELBI_LTSSM_ENABLE		0x1
+>  #define EXYNOS_PCIE_ELBI_RDLH_LINKUP		0x074
+>  #define EXYNOS_PCIE_ELBI_XMLH_LINKUP		BIT(4)
+> -#define EXYNOS_PCIE_ELBI_LTSSM_ENABLE		0x1
+>  #define EXYNOS_PCIE_ELBI_SLV_AWMISC		0x11c
+>  #define EXYNOS_PCIE_ELBI_SLV_ARMISC		0x120
+> -#define EXYNOS_PCIE_ELBI_SLV_DBI_ENABLE	BIT(21)
+> +#define EXYNOS_PCIE_ELBI_SLV_DBI_ENABLE		BIT(21)
 
-So all MMIO will go via syscon? I am pretty close to NAKing all this,
-but let's be sure that I got it right - please post your complete DTS
-for upstream. That's a requirement from me for any samsung drivers - I
-don't want to support fake, broken downstream solutions (based on
-multiple past submissions).
+What changed here? Why you cannot fix indentation while renaming?
 
 Best regards,
 Krzysztof
