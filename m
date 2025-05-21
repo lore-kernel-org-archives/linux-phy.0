@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5594EC54E65
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42952C2D0CD
+	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 10:29:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oMijh8SuRc6RTvGSqGL/q4t5XlCqTqsI8XAaJL9BDNI=; b=XyvqhdCkGR7wF/
-	+cwsF2DR3uO4BitcGclC+217w+tQ0keQP17ZYGoItgAdv8O6sJe3rRh+C/YFf2F++LrMlPjIuqMnv
-	7Zl7jQyzpFayOLlns8ZRAIMp3CplaBoW2k8n7D7RmdIr6157K4Vc/ej8X/WGDDod50iRbkikfdIng
-	FnyeFF339X9ehwbMehKK/wK9lff3HBjmJtOjb5TkKwh4FzxtAUtBNMMcCIprIotbd8lnvgLdcBcRI
-	PcHiBST7v6dQdSxiAUu0m6i+omWLfGpT7R3ihjVRUuHUclBDbxfO9R3ceQ1ZyUxS9pVW6B/9F5zUH
-	/Yr+7Yn9zXQu3dppYBiw==;
+	List-Owner; bh=hoD5Hzpzb3Va/Pqp+MZpN4R8NxI3O4ASfxAtfc9V5ag=; b=0fI7WnpPgaxyAg
+	9BNUs5nT3hIOJ5RCsvfQtF9CYNm3cmnvu7g404HdsteCwjvzB3x9ScS40E7vo7W8KgeuqehrhnFbm
+	Thi/Ru08tXan4mRgVm1G4JsTiJwTzdyb4ye4ez+cauxPiZcuenc8H3Gk2RJEuORfTpqT9H4K/Hxxf
+	0ibwvtARVmkIb7TlZRVP8lfJuQwn49UYnpjM1JOhQ7PaG5A22fshX4XkWNBkj67Rzg4J9VKV51J8Z
+	unKBb419wUyyDiyv2fK4Uf9x7gRIkZxEuRfg75ebLeKJrbcnhStbCkMNoVdEi9LJ5eEMDv5yij+xX
+	c5AI9nKgZFEkfqFqyv2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHghl-0000000FSmQ-0P33;
-	Wed, 21 May 2025 10:29:45 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uHghl-0000000FSnY-4B8L;
+	Wed, 21 May 2025 10:29:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHfx3-0000000FLxW-1VjA;
-	Wed, 21 May 2025 09:41:29 +0000
+	id 1uHfyD-0000000FM6n-133K;
+	Wed, 21 May 2025 09:42:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 411B86000A;
-	Wed, 21 May 2025 09:41:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C36BC4CEEA;
-	Wed, 21 May 2025 09:41:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 71B1D5C4AE2;
+	Wed, 21 May 2025 09:40:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA1D4C4CEEA;
+	Wed, 21 May 2025 09:42:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747820487;
-	bh=+2ACf2EVUznzds3MDpxXdhMN6A2gN/hs5eEw4sfUYDc=;
+	s=k20201202; t=1747820560;
+	bh=68q/IbPYPxygxx5c/OXPCNRFH7INdTpZGlMiYkPeW1I=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lcfS6tBaeh1ph8fLFgw+Mz//8rf1DUFHHXN3rXWNj51CElqQ6DP+LG/MepdP7wJUO
-	 /7jVlQ1uejYjHZBfKkXwNcnohWb+bVw+rcmaDQiQWaLltKAyORjspTh2oLV3j8MQjk
-	 Mi68gOYvOXxPZamX6GKA0DcKY5nC0ye/v1eadSFN7+y+O64FrrOTfy96J7gytVB8Oo
-	 ZzCF+vARlOq9p6isPWAcn9r4dxIe3I/qTp9/eYYrIabXF2pfmKg+e2yO/LcWL2WQIt
-	 Gfox0cdL72JffPforo3G681RVmJcjMzlhKUBMEwFbe/lv1BfZrZhKnNAfB9tPTawxR
-	 9ipeqIDz4iRGQ==
-Date: Wed, 21 May 2025 11:41:24 +0200
+	b=WntjIGuQPDsKX/mYWYu0FkXFL+RSS/akUgmMVsho09NJNA8oqm6QVXC50ERtC+1cR
+	 xxnTBvuXtaEQp7Q9aG1hMX4uE1CE0izhyGwlvuDDggKIG2XtmIW6xcA1JjVW66OTlM
+	 ztiGD1J7QLNhQ0Sg5CTY4TM0GxqGRKXy23nUutf9x5bpCpu65I5WJVaELulRNyZ2ob
+	 uXTy9Y6hWGRA3P8n37w1yH2TDtxUz5z0IqFLCGvn04Rf432erZzGL8h7KfQl+IlLYN
+	 6UqscpWvGfqqr0VRcoLjCArY1LM0NIh/MzMJTOJ5nxL6uYecYR/pDiOxPJgoVd+9iU
+	 Qi6qc2T+w9qLg==
+Date: Wed, 21 May 2025 11:42:37 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Shradha Todi <shradha.t@samsung.com>
 Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
@@ -50,16 +50,19 @@ Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
 	kw@linux.com, robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com, 
 	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org, 
 	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com, 
-	Hrishikesh Dileep <hrishikesh.d@samsung.com>
-Subject: Re: [PATCH 02/10] PCI: exynos: Remove unused MACROs in exynos PCI
- file
-Message-ID: <20250521-succinct-roadrunner-from-avalon-f1fa4c@kuoka>
+	Pankaj Dubey <pankaj.dubey@samsung.com>
+Subject: Re: [PATCH 05/10] PCI: exynos: Add structure to hold resource
+ operations
+Message-ID: <20250521-nostalgic-fox-of-valor-f6d725@kuoka>
 References: <20250518193152.63476-1-shradha.t@samsung.com>
- <CGME20250518193230epcas5p3dfb178a6528556c55e9b694ca8f8ad6c@epcas5p3.samsung.com>
- <20250518193152.63476-3-shradha.t@samsung.com>
+ <CGME20250518193244epcas5p3cacfbdc3b0e5c32f7a4dd97062a931a4@epcas5p3.samsung.com>
+ <20250518193152.63476-6-shradha.t@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250518193152.63476-3-shradha.t@samsung.com>
+In-Reply-To: <20250518193152.63476-6-shradha.t@samsung.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250521_024241_325529_9535C587 
+X-CRM114-Status: GOOD (  11.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,29 +79,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 19, 2025 at 01:01:44AM GMT, Shradha Todi wrote:
-> Some MACROs are defined in the exynos PCI file but are
-> not used anywhere within the file. Remove such unused
-> MACROs.
-> 
-> Suggested-by: Hrishikesh Dileep <hrishikesh.d@samsung.com>
-> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
-> ---
->  drivers/pci/controller/dwc/pci-exynos.c | 2 --
->  1 file changed, 2 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
-> index 1c70b036376d..990aaa16b132 100644
-> --- a/drivers/pci/controller/dwc/pci-exynos.c
-> +++ b/drivers/pci/controller/dwc/pci-exynos.c
-> @@ -31,8 +31,6 @@
->  #define EXYNOS_IRQ_INTB_ASSERT			BIT(2)
->  #define EXYNOS_IRQ_INTC_ASSERT			BIT(4)
->  #define EXYNOS_IRQ_INTD_ASSERT			BIT(6)
-> -#define EXYNOS_PCIE_IRQ_LEVEL			0x004
+On Mon, May 19, 2025 at 01:01:47AM GMT, Shradha Todi wrote:
+> +struct samsung_res_ops {
+> +	int (*init_regulator)(struct exynos_pcie *ep);
+> +	irqreturn_t (*pcie_irq_handler)(int irq, void *arg);
+>  };
+>  
+>  static void exynos_pcie_writel(void __iomem *base, u32 val, u32 reg)
+> @@ -74,6 +81,36 @@ static u32 exynos_pcie_readl(void __iomem *base, u32 reg)
+>  	return readl(base + reg);
+>  }
+>  
+> +static int samsung_regulator_enable(struct exynos_pcie *ep)
+> +{
+> +	struct device *dev = ep->pci.dev;
+> +	int ret;
+> +
+> +	if (ep->supplies_cnt == 0)
+> +		return 0;
+> +
+> +	ret = devm_regulator_bulk_get(dev, ep->supplies_cnt, ep->supplies);
 
-Fix order of patches. Why renaming something just to remove it? No
-point.
+No. Getting resources on every enable is making this much less readable.
+
+NAK
 
 Best regards,
 Krzysztof
