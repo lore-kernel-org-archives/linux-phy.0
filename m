@@ -4,103 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5235CC54F32
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 14:25:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AC28C54E65
+	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 21:41:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=41j0pBCEFHvxAt4TGG67CwmlEH9+J8bIcQ2u/2t56S0=; b=LgQoteI/FbQBUX
-	pXBvVW7QN1Ezhnad1aGjvQ9XBlhNqXxH2fLMGngFZbfuwvlMAISl2Ffk7TTcZH6aMXW0ZR6HnkCCo
-	3wRo2uafZCfjori54IvcbYsRrb71yswrKhbmdaSlLbnZZ2MBWHHSKYFI05RGDYZQtRrvye9YCxY2D
-	QRtiV3rUnN0o0UEguy8aTZw2soJHX7zPH+NNDJm0cv94TKOLAIyBiYCd8/8/1tq4et94uEyg3VvC2
-	4t7tY3BYK8EbpJjhaHHMpsu9f2WQ8uJ+7DUkiB7FbBrEybyToS2qukpLH1tWAo0i0NLUyyg9H3iay
-	JbqfxEZG9hfeLb6PyEVg==;
+	List-Owner; bh=+dtpFJo4AHAzUqphytCV7yxb/RVqv9AYTyHYaeBaU5M=; b=IU+VgmzsvMQhyM
+	VSAY8JEMamra2w5uNbbjRTNnbbR2DLZlPXM0MkTr5i7w/MDmIb31lIxdI5kextwN5RSefEufSaH9s
+	6b1/WbJufvm7qPtAyOg3fJIlhaZXacCBiS6k3zknTLpYdHDXsaudrNLl+F/3g05o+PQrKR1lKcIFX
+	34LEC1sGjyieB5j/1N1q5Cim5NIKwA8CcNBnjTlYCyMFiF1k/x+ssxdQIOP5X2xGJixwiogaxP7Fj
+	c++AuWG3h54URaK/SjLTWB5DDfK3Xe7cJogahRZAl7JMogE9el89PiKhtz60k/rY64l9Dy93rgnhY
+	4XhC04l7nwORbgrLQJ0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHkNc-0000000G6UM-0DpZ;
-	Wed, 21 May 2025 14:25:12 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1uHrBh-0000000GsSs-0AMS;
+	Wed, 21 May 2025 21:41:21 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHk9M-0000000G3dq-2HxM
+	id 1uHrBe-0000000GsSV-0aA9
 	for linux-phy@lists.infradead.org;
-	Wed, 21 May 2025 14:10:29 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-ad5566ac13cso593585866b.1
-        for <linux-phy@lists.infradead.org>; Wed, 21 May 2025 07:10:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1747836627; x=1748441427; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5R0SBkCSnZ1ZgHRkf3W4h5B5fht7vGGoztaC7tLlMq0=;
-        b=Cme/1drv0EzOGEOpBtaClr9g08N8SktBbV7q6ni11yEIa9WAIce+AJiCuI3X1gsAcs
-         l681RgtPNaYcVxhemCTbLz2BaRkty7GsHLsqmbKaOGR7qTpbV+KBd5IQQBmK0TdujBgs
-         19qfMRzxAE8GE7L6R1XtJ7DU7uhjAIq4+8EEegYFX3shGWo/wYNHWhAl40eJeowSgbSj
-         IvIM8xzAdEOROH14ThQzKoMnAZDkcDoYgYFCWwSclp4f14AlzmHl1VAgLqSl3WMCC2S6
-         7x/YL7dlTuvNNUC2SRhdAWwm/P9h96qugMEDwk4xMTp5nVcBVhtoqyHWSgcc14Yk+H+8
-         FdPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747836627; x=1748441427;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=5R0SBkCSnZ1ZgHRkf3W4h5B5fht7vGGoztaC7tLlMq0=;
-        b=aLkzv9BgI3TXtJIhEwFHEPJkDSD3PyOptwMQtntV0ph+x6rsz7TO4JPieFkNXBjKlz
-         AVbfNYmvA6fi9FNBK/Vn98wDPr80yiNjJ3i3y7NdAGDhZxK8b19A7/nlz6hkCdmhx3tW
-         oR7DZsIXRR7Q9mbcXQezt6iodTool7cOI7SMExvVJu3RuOXJHtIWLg1YIjFxAYzoe2lX
-         Cdd1mNJlzzy006c1//2jiOJ667cbnEousXLkniKTo6nPbSzsgajzuIFPjqdoEEMHD+s4
-         Efld9yOkH+gR+jLtTA1bNBMKs3xeDgK1zDGPjqcqyNu1r3JrUHA2rGmtXuf/SB1OlVUA
-         +Y8w==
-X-Forwarded-Encrypted: i=1; AJvYcCWiEUy791ofhWOhb1K+FGkwFL7Ee1DKLGIxgODq0VGUn427lCx0GDFCZxbY8WLNQe+p2Q0qL1Mfx6g=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwCoIpdXJkWQUEAKkl6yS6s9rbpSPLNPa6FVlH/OajF0ZenUufZ
-	6JTUo0gOdw+YN/BaovCPaEzt1pfkoP9Gr7p/NoC4jF9OR6slSzCrXOg0FE3wpAMtxBE=
-X-Gm-Gg: ASbGncsMjqTkfxwFZSewNMrGjYmBUjOPY1sTg4BJyd2b9Rz+4H9JBnvzmzPsHQk60fE
-	EALtVRKFoGbamNXEKrPLN1yOFHTDOhTqYUlddRLRJFDg9VfPM5HnS8VqtjGWaeKO8BrEJ+hfGjM
-	czrd0tR1npO12OIY/q0S0OFaAuUVjohIuuaSbm9qM/E3rWbY5o+sqNoNTw1H2QSxrwPvpOGJOhk
-	/gR0MWryDOgp1PYOVNntm5Yh3Da1BzQ2FX51KBp3E+7w9T5G/DQiOjP83+ge8V45OV4a9By/ta5
-	3R4QnE6Ovh04F2G5i99ARfay1vjQ9vtlpMvl54c81zx/Y+WqyVUcOj8T/fZxEwOVdWWVyj/XVg3
-	IBD3J
-X-Google-Smtp-Source: AGHT+IHIkR9ssJIhuCx1mmiAIGd6OoO/KN3o16DijCKheyN/jOueJQVldCbsG3V2xpWCs2Emi9rUQg==
-X-Received: by 2002:a17:907:96a1:b0:ad2:1cba:cf85 with SMTP id a640c23a62f3a-ad536dce1b0mr1741373266b.39.1747836626692;
-        Wed, 21 May 2025 07:10:26 -0700 (PDT)
-Received: from claudiu-X670E-Pro-RS.. ([82.78.167.58])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad52d271916sm914552866b.69.2025.05.21.07.10.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 May 2025 07:10:25 -0700 (PDT)
-From: Claudiu <claudiu.beznea@tuxon.dev>
-X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	p.zabel@pengutronix.de,
-	geert+renesas@glider.be,
-	magnus.damm@gmail.com,
-	yoshihiro.shimoda.uh@renesas.com,
-	kees@kernel.org,
-	gustavoars@kernel.org,
-	biju.das.jz@bp.renesas.com
-Cc: claudiu.beznea@tuxon.dev,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	linux-hardening@vger.kernel.org,
-	john.madieu.xa@bp.renesas.com,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v3 11/12] arm64: dts: renesas: r9a08g045: Add USB support
-Date: Wed, 21 May 2025 17:09:42 +0300
-Message-ID: <20250521140943.3830195-12-claudiu.beznea.uj@bp.renesas.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
-References: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
+	Wed, 21 May 2025 21:41:19 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LIPRnl001233;
+	Wed, 21 May 2025 21:41:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	TdW8b9KcuqNQA7rPRzFrtgEw/40FcL5EXfuGBTXg0so=; b=RIT0jz+4xCOeUAA0
+	qix9pajW+Wa4l/N0nS6JjwS2Y5muVNjaOYh5+16RNAWGSEWKS6U4napYXUoHF1NQ
+	P5VARtlT+514tzsKRLV8qMeJi1QQUdcVbbA61lj0ZUj0zsl9GLlf6uMogrC8H8hp
+	96V3J1t1PdzXQBjdKivBEUn09s0n0lddo4FnlBuoHY+V3St6H8CQ+jO1qjDm4kvO
+	2mN3MDPQgpAy8bXjkk26nTvoLoRKzPSHhDhLYV1cwj40pZyivPinL805ZKbSdvF7
+	+0ifwfI8tkuo4cFA6idzbYjR/2Dy5krnqg0hqO7SFbckg2iXTp2p81JvXCGq0j1W
+	CtjLow==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf6v879-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 May 2025 21:41:00 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54LLexa5024405
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 21 May 2025 21:40:59 GMT
+Received: from [10.216.45.12] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 21 May
+ 2025 14:40:53 -0700
+Message-ID: <5584c019-d435-4d1b-b38c-80fb9b9f00f6@quicinc.com>
+Date: Thu, 22 May 2025 03:10:48 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V5 09/11] scsi: ufs: qcom : Refactor phy_power_on/off
+ calls
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>,
+        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
+        <bvanassche@acm.org>, <andersson@kernel.org>,
+        <neil.armstrong@linaro.org>, <dmitry.baryshkov@oss.qualcomm.com>,
+        <konrad.dybcio@oss.qualcomm.com>, <quic_rdwivedi@quicinc.com>,
+        <quic_cang@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-scsi@vger.kernel.org>
+References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
+ <20250515162722.6933-10-quic_nitirawa@quicinc.com>
+ <knlhbl3mwo3b7xc4rjp4y7yka2nwythumjacmvn236v72ykddo@r3cp2w4uomol>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <knlhbl3mwo3b7xc4rjp4y7yka2nwythumjacmvn236v72ykddo@r3cp2w4uomol>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: vps-OOowh3yznaNn_750c9vFtF-5w0f2
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIxNSBTYWx0ZWRfX26+UD3SP4Ydg
+ q4qpi+OgcG6HdDHPrRQglHuJEbfb+ucJxnjt1c/hu3WQjoyXWpFVrNDe+4NDnOI993YwbsHYOWE
+ io+KfWEpg82wU9w0Y1XRgX3IRkwJO9Gf9LQRDuzqUHlNh/h/90W2hkt3TGfkkEM0MOAYOU+dmik
+ sAQOhinvdur8dgRlWBtAT7Mp8dmCJ511txZHdJZVCLjK8c3YEZ1jzVuegLyzmvgPBT4DPlaZ8eN
+ zEJg9M7coXNnkm3EqUOrPcXKrrw0bnZ1DTdh2572vP75FfhzXX0Aa/RdWmIGnGuty2WOCHDogjL
+ D5IiyxjVKmSNkN+qwURSGHuD6OTdIZYsF0sFEDcrejBsFE1h/Jm095UEDLE4Nn71ELEA53HN1hI
+ 5d4g3aS2DacpJ9huwxV7D2Aqvqe5Ajlq755gaW0bq8Sf0m0hP8tIYH0Wi5l+voT0YzURgF0Z
+X-Authority-Analysis: v=2.4 cv=fZOty1QF c=1 sm=1 tr=0 ts=682e486c cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
+ a=NAncGNguUiBsChi5r5oA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: vps-OOowh3yznaNn_750c9vFtF-5w0f2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-21_07,2025-05-20_03,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 mlxscore=0 adultscore=0 spamscore=0 bulkscore=0 suspectscore=0
+ malwarescore=0 priorityscore=1501 impostorscore=0 mlxlogscore=999
+ lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505160000 definitions=main-2505210215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_071028_589065_C99DB261 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20250521_144118_307076_61E7CA8D 
+X-CRM114-Status: GOOD (  20.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,164 +114,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Add USB nodes for the Renesas RZ/G3S SoC. This consists of PHY reset,
-host and device support.
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
----
+On 5/21/2025 7:27 PM, Manivannan Sadhasivam wrote:
+> On Thu, May 15, 2025 at 09:57:20PM +0530, Nitin Rawat wrote:
+>> Commit 3f6d1767b1a0 ("phy: ufs-qcom: Refactor all init steps into
+>> phy_poweron") removes the phy_power_on/off from ufs_qcom_setup_clocks
+> 
+> s/removes/moved
 
-Changes in v3:
-- changed the nodes order to keep similar nodes toghether
+Sure, will address in next patchset.
 
-Changes in v2:
-- this was patch 14/16 in v1
-- added renesas,sysc-signal properties to USB PHYs
-- collected tags
-- Geert: I kept your tag; please let me know if you consider otherwise 
+> 
+>> to suspend/resume func.
+>>
+>> To have a better power saving, remove the phy_power_on/off calls from
+>> resume/suspend path and put them back to ufs_qcom_setup_clocks, so that
+>> PHY regulators & clks can be turned on/off along with UFS's clocks.
+>>
+>> Since phy phy_power_on is separated out from phy calibrate, make
+>> separate calls to phy_power_on and phy_calibrate calls from ufs qcom
+>> driver.
+>>
+> 
+> This patch is not calling phy_calibrate().
 
- arch/arm64/boot/dts/renesas/r9a08g045.dtsi | 120 +++++++++++++++++++++
- 1 file changed, 120 insertions(+)
+updated commit text to remove phy_Calibrate from commit text
 
-diff --git a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-index 0364f89776e6..e329c55c3fad 100644
---- a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-@@ -681,6 +681,126 @@ eth1: ethernet@11c40000 {
- 			status = "disabled";
- 		};
- 
-+		phyrst: usbphy-ctrl@11e00000 {
-+			compatible = "renesas,r9a08g045-usbphy-ctrl";
-+			reg = <0 0x11e00000 0 0x10000>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>;
-+			resets = <&cpg R9A08G045_USB_PRESETN>;
-+			power-domains = <&cpg>;
-+			#reset-cells = <1>;
-+			renesas,sysc-signals = <&sysc 0xd70 0x1>;
-+			status = "disabled";
-+
-+			usb0_vbus_otg: regulator-vbus {
-+				regulator-name = "vbus";
-+			};
-+		};
-+
-+		ohci0: usb@11e10000 {
-+			compatible = "generic-ohci";
-+			reg = <0 0x11e10000 0 0x100>;
-+			interrupts = <GIC_SPI 75 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			phys = <&usb2_phy0 1>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		ohci1: usb@11e30000 {
-+			compatible = "generic-ohci";
-+			reg = <0 0x11e30000 0 0x100>;
-+			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			phys = <&usb2_phy1 1>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		ehci0: usb@11e10100 {
-+			compatible = "generic-ehci";
-+			reg = <0 0x11e10100 0 0x100>;
-+			interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			phys = <&usb2_phy0 2>;
-+			phy-names = "usb";
-+			companion = <&ohci0>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		ehci1: usb@11e30100 {
-+			compatible = "generic-ehci";
-+			reg = <0 0x11e30100 0 0x100>;
-+			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			phys = <&usb2_phy1 2>;
-+			phy-names = "usb";
-+			companion = <&ohci1>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		usb2_phy0: usb-phy@11e10200 {
-+			compatible = "renesas,usb2-phy-r9a08g045";
-+			reg = <0 0x11e10200 0 0x700>;
-+			interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			#phy-cells = <1>;
-+			power-domains = <&cpg>;
-+			renesas,sysc-signals = <&sysc 0xd70 0x1>;
-+			status = "disabled";
-+		};
-+
-+		usb2_phy1: usb-phy@11e30200 {
-+			compatible = "renesas,usb2-phy-r9a08g045";
-+			reg = <0 0x11e30200 0 0x700>;
-+			interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			#phy-cells = <1>;
-+			power-domains = <&cpg>;
-+			renesas,sysc-signals = <&sysc 0xd70 0x1>;
-+			status = "disabled";
-+		};
-+
-+		hsusb: usb@11e20000 {
-+			compatible = "renesas,usbhs-r9a08g045",
-+				     "renesas,rzg2l-usbhs";
-+			reg = <0 0x11e20000 0 0x10000>;
-+			interrupts = <GIC_SPI 85 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2P_EXR_CPUCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2P_EXL_SYSRST>;
-+			renesas,buswait = <7>;
-+			phys = <&usb2_phy0 3>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@12400000 {
- 			compatible = "arm,gic-v3";
- 			#interrupt-cells = <3>;
--- 
-2.43.0
+> 
+>> Co-developed-by: Can Guo <quic_cang@quicinc.com>
+>> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> ---
+>>   drivers/ufs/host/ufs-qcom.c | 61 ++++++++++++++++++-------------------
+>>   1 file changed, 29 insertions(+), 32 deletions(-)
+>>
+> 
+> [...]
+> 
+>>   static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>>   				 enum ufs_notify_change_status status)
+>>   {
+>>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+>> +	struct phy *phy = host->generic_phy;
+>> +	int err;
+>>   
+>>   	/*
+>>   	 * In case ufs_qcom_init() is not yet done, simply ignore.
+>> @@ -1157,10 +1141,22 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>>   				/* disable device ref_clk */
+>>   				ufs_qcom_dev_ref_clk_ctrl(host, false);
+>>   			}
+>> +
+>> +			err = phy_power_off(phy);
+>> +			if (err) {
+>> +				dev_err(hba->dev, "phy power off failed, ret=%d\n", err);
+>> +				return err;
+>> +			}
+>>   		}
+>>   		break;
+>>   	case POST_CHANGE:
+>>   		if (on) {
+>> +			err = phy_power_on(phy);
+>> +			if (err) {
+>> +				dev_err(hba->dev, "phy power on failed, ret = %d\n", err);
+>> +				return err;
+>> +			}
+>> +
+>>   			/* enable the device ref clock for HS mode*/
+>>   			if (ufshcd_is_hs_mode(&hba->pwr_info))
+>>   				ufs_qcom_dev_ref_clk_ctrl(host, true);
+>> @@ -1343,9 +1339,10 @@ static int ufs_qcom_init(struct ufs_hba *hba)
+>>   static void ufs_qcom_exit(struct ufs_hba *hba)
+>>   {
+>>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+>> +	struct phy *phy = host->generic_phy;
+>>   
+>>   	ufs_qcom_disable_lane_clks(host);
+>> -	phy_power_off(host->generic_phy);
+>> +	phy_power_off(phy);
+> 
+> This change is not at all needed.
+
+In the current code, PHY resources (clocks and rails) remain active even 
+when the link is in a hibernate state and all controller clocks are off. 
+This results in a significant power penalty and can prevent CX power 
+collapse.
+
+These rails and clocks are only turned off when a system suspend is 
+triggered, and even then, only at SPM level 5 where the link is turned 
+off. This approach is not power-efficient.
+
+As part of this series, the code that enables/disables the PHY's 
+regulators and clocks is now confined to the phy_power_on and 
+phy_power_off calls, with the rest moved to the calibration phase.
+
+Therefore, we are invoking the phy_power_off and phy_power_on calls from 
+ufs_qcom_setup_clocks, ensuring that the PHY's regulators and clocks can 
+be turned on/off along with the UFS clocks, thereby achieving power savings.
+
+Therefore, this patch is the cornerstone of this series.
+
+Regards,
+Nitin
+
+
+> 
+> - Mani
+> 
 
 
 -- 
