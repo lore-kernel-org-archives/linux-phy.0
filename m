@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AC28C54E65
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 21:41:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23E06C54E65
+	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 21:45:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+dtpFJo4AHAzUqphytCV7yxb/RVqv9AYTyHYaeBaU5M=; b=IU+VgmzsvMQhyM
-	VSAY8JEMamra2w5uNbbjRTNnbbR2DLZlPXM0MkTr5i7w/MDmIb31lIxdI5kextwN5RSefEufSaH9s
-	6b1/WbJufvm7qPtAyOg3fJIlhaZXacCBiS6k3zknTLpYdHDXsaudrNLl+F/3g05o+PQrKR1lKcIFX
-	34LEC1sGjyieB5j/1N1q5Cim5NIKwA8CcNBnjTlYCyMFiF1k/x+ssxdQIOP5X2xGJixwiogaxP7Fj
-	c++AuWG3h54URaK/SjLTWB5DDfK3Xe7cJogahRZAl7JMogE9el89PiKhtz60k/rY64l9Dy93rgnhY
-	4XhC04l7nwORbgrLQJ0g==;
+	List-Owner; bh=dmir/pQajqyTZDnRlxn+cl9Lp7TJDLavvVcjbdFYZwI=; b=T8Xqak2r0+1YLL
+	clIDIT6PEaI1kq2RKWWkydF3P5axMgBkhhj9x1eRiuwO1zC9NoGrIstl+Bbvw8tAsrwzQq4+S4jFy
+	4R+Rm52Wqc5ClMX0Gx0Cns45/ms52SgaL5bSL43nbHxQ1f5+FzgodU3FZEDR293BKwzpI5ae03Onu
+	jia6eIh4Gsle1E+5jbsqTZGdWbZxhEFUuc68JszDKaM7q/a4sEUvXI6seB5XjxJBo3ID/BoKW4d0B
+	x5irhOIUPsnOsDXymhdrbnGodly1Sjk/zYXN+b94H7qCOnmZa72NHEL2p3SMW2N8bPg/QHU5/q9/c
+	MSM0iYXu3ikQrS0aweug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHrBh-0000000GsSs-0AMS;
-	Wed, 21 May 2025 21:41:21 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uHrFL-0000000GspZ-3kro;
+	Wed, 21 May 2025 21:45:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHrBe-0000000GsSV-0aA9
+	id 1uHrFK-0000000GspF-16zF
 	for linux-phy@lists.infradead.org;
-	Wed, 21 May 2025 21:41:19 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LIPRnl001233;
-	Wed, 21 May 2025 21:41:00 GMT
+	Wed, 21 May 2025 21:45:07 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LHowQQ013436;
+	Wed, 21 May 2025 21:44:49 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	TdW8b9KcuqNQA7rPRzFrtgEw/40FcL5EXfuGBTXg0so=; b=RIT0jz+4xCOeUAA0
-	qix9pajW+Wa4l/N0nS6JjwS2Y5muVNjaOYh5+16RNAWGSEWKS6U4napYXUoHF1NQ
-	P5VARtlT+514tzsKRLV8qMeJi1QQUdcVbbA61lj0ZUj0zsl9GLlf6uMogrC8H8hp
-	96V3J1t1PdzXQBjdKivBEUn09s0n0lddo4FnlBuoHY+V3St6H8CQ+jO1qjDm4kvO
-	2mN3MDPQgpAy8bXjkk26nTvoLoRKzPSHhDhLYV1cwj40pZyivPinL805ZKbSdvF7
-	+0ifwfI8tkuo4cFA6idzbYjR/2Dy5krnqg0hqO7SFbckg2iXTp2p81JvXCGq0j1W
-	CtjLow==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwf6v879-1
+	hbYNi7fzlTGKCVUTa6TmmbhtpKJ4cc+vpIiXEXf5LU0=; b=TZ58m1AoFuk8j2Et
+	ih70mRwnV14LkdG0OlhcQzMGEe4oupwQt2+sCQ7hPOujNzemZxRvDcFbLPhFb7jj
+	n7DVP4BxcAyDsXjXaIqad9qR2TCwXeqZUZKzArjjDhXVE/CtKNZk9XH95zteLO1R
+	KppSn+MGoa7nNPc0Bhxopvh9uv6UWdBq1Rs+FK9waSSCOEBOmeBPpx0ojvuaHx91
+	WLnphvJOt6z1RajtHwcZQwpSdq8YFgdjqakwu1Oj6Q1dEGhpzF+mqQxzqnI5OnEs
+	ZmzXwJWUNABiPxqbuigb1Z1ypcq+ohAM7HObUeCpAI0xcDwrOeaEni5bMndTCUDB
+	W8yZNw==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46rwh5ccf5-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 May 2025 21:41:00 +0000 (GMT)
+	Wed, 21 May 2025 21:44:49 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54LLexa5024405
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54LLimpW015166
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 May 2025 21:40:59 GMT
+	Wed, 21 May 2025 21:44:48 GMT
 Received: from [10.216.45.12] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 21 May
- 2025 14:40:53 -0700
-Message-ID: <5584c019-d435-4d1b-b38c-80fb9b9f00f6@quicinc.com>
-Date: Thu, 22 May 2025 03:10:48 +0530
+ 2025 14:44:42 -0700
+Message-ID: <5d63551f-5401-4c4a-981f-1fa71d73387f@quicinc.com>
+Date: Thu, 22 May 2025 03:14:39 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V5 09/11] scsi: ufs: qcom : Refactor phy_power_on/off
- calls
+Subject: Re: [PATCH V5 01/11] scsi: ufs: qcom: add a new phy calibrate API
+ call
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 CC: <vkoul@kernel.org>, <kishon@kernel.org>,
         <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
@@ -68,41 +68,42 @@ CC: <vkoul@kernel.org>, <kishon@kernel.org>,
         <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
         <linux-scsi@vger.kernel.org>
 References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
- <20250515162722.6933-10-quic_nitirawa@quicinc.com>
- <knlhbl3mwo3b7xc4rjp4y7yka2nwythumjacmvn236v72ykddo@r3cp2w4uomol>
+ <20250515162722.6933-2-quic_nitirawa@quicinc.com>
+ <jnftkie5c5hi6nqhliktxqbj7gykj53lvm5gibt3fjdcq7dber@bh4fxrp3fezu>
 Content-Language: en-US
 From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <knlhbl3mwo3b7xc4rjp4y7yka2nwythumjacmvn236v72ykddo@r3cp2w4uomol>
+In-Reply-To: <jnftkie5c5hi6nqhliktxqbj7gykj53lvm5gibt3fjdcq7dber@bh4fxrp3fezu>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: vps-OOowh3yznaNn_750c9vFtF-5w0f2
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIxNSBTYWx0ZWRfX26+UD3SP4Ydg
- q4qpi+OgcG6HdDHPrRQglHuJEbfb+ucJxnjt1c/hu3WQjoyXWpFVrNDe+4NDnOI993YwbsHYOWE
- io+KfWEpg82wU9w0Y1XRgX3IRkwJO9Gf9LQRDuzqUHlNh/h/90W2hkt3TGfkkEM0MOAYOU+dmik
- sAQOhinvdur8dgRlWBtAT7Mp8dmCJ511txZHdJZVCLjK8c3YEZ1jzVuegLyzmvgPBT4DPlaZ8eN
- zEJg9M7coXNnkm3EqUOrPcXKrrw0bnZ1DTdh2572vP75FfhzXX0Aa/RdWmIGnGuty2WOCHDogjL
- D5IiyxjVKmSNkN+qwURSGHuD6OTdIZYsF0sFEDcrejBsFE1h/Jm095UEDLE4Nn71ELEA53HN1hI
- 5d4g3aS2DacpJ9huwxV7D2Aqvqe5Ajlq755gaW0bq8Sf0m0hP8tIYH0Wi5l+voT0YzURgF0Z
-X-Authority-Analysis: v=2.4 cv=fZOty1QF c=1 sm=1 tr=0 ts=682e486c cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIxNiBTYWx0ZWRfX4hx3VjyCr3+s
+ vQyr/F+UhUzQraJTqeLOAQrKSZnHBoCGw3SG+Ag3HUwW83wyDMyXReC+sZ4ST7egU/OHVWuSizC
+ 7SdTZy4IdjXecv2tLGttI5mYhaWSFpdSSVx4V5qt+2AubDVIslHAjGxRpWVCNM1FvUIA2tJKrOy
+ LwjRAVZplBAG2AX+osKXdqphirMVYWDj42B8goMmewBc32ORGa0Pv/esAn25Hk0dBxFilCflONw
+ IT4Dims7z6GKFRNCaxkSAGeRyey+XvIysBOMieX9VwTW8T7lWs0+R6WhyilApDm8ctZkUZlF5J7
+ PJAJnvfibXw+N8T9JDIUbHoF5J10eaqbwlIR8cd/rP6Q69njCW2kGg1RD9h6pcIBcE1mGi2hwSb
+ ZXQ3tEQIooGn/V2bTe8GHfl2AZ9Kt3oRQUq5WxsmfGNe6AreFfVZWE3t8IbYyEuriZXWVX63
+X-Authority-Analysis: v=2.4 cv=XeWJzJ55 c=1 sm=1 tr=0 ts=682e4951 cx=c_pps
  a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
- a=NAncGNguUiBsChi5r5oA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: vps-OOowh3yznaNn_750c9vFtF-5w0f2
+ a=KKAkSRfTAAAA:8 a=TbsVHaqHX9x0TOAX2_kA:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: SyHNXZD8ln8Oyw6kUtUz_a_vKhIO_Y_a
+X-Proofpoint-ORIG-GUID: SyHNXZD8ln8Oyw6kUtUz_a_vKhIO_Y_a
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-21_07,2025-05-20_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 mlxscore=0 adultscore=0 spamscore=0 bulkscore=0 suspectscore=0
- malwarescore=0 priorityscore=1501 impostorscore=0 mlxlogscore=999
- lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505210215
+ phishscore=0 clxscore=1015 mlxlogscore=999 mlxscore=0 bulkscore=0 spamscore=0
+ suspectscore=0 impostorscore=0 adultscore=0 malwarescore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505210216
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_144118_307076_61E7CA8D 
-X-CRM114-Status: GOOD (  20.79  )
+X-CRM114-CacheID: sfid-20250521_144506_316819_8AEEC17E 
+X-CRM114-Status: GOOD (  16.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,111 +122,50 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 5/21/2025 7:27 PM, Manivannan Sadhasivam wrote:
-> On Thu, May 15, 2025 at 09:57:20PM +0530, Nitin Rawat wrote:
->> Commit 3f6d1767b1a0 ("phy: ufs-qcom: Refactor all init steps into
->> phy_poweron") removes the phy_power_on/off from ufs_qcom_setup_clocks
+On 5/21/2025 6:38 PM, Manivannan Sadhasivam wrote:
+> On Thu, May 15, 2025 at 09:57:12PM +0530, Nitin Rawat wrote:
+>> Introduce a new phy calibrate API call in the UFS Qualcomm driver to
+>> separate phy calibration from phy power-on. This change is a precursor
+>> to the next patchset in this series, which requires these two operations
 > 
-> s/removes/moved
+> 'next patchset in the series' wouldn't make sense once this patch gets merged.
+> They all become commits. So you should mention 'successive commits'.
 
 Sure, will address in next patchset.
 
 > 
->> to suspend/resume func.
+>> to be distinct.
 >>
->> To have a better power saving, remove the phy_power_on/off calls from
->> resume/suspend path and put them back to ufs_qcom_setup_clocks, so that
->> PHY regulators & clks can be turned on/off along with UFS's clocks.
->>
->> Since phy phy_power_on is separated out from phy calibrate, make
->> separate calls to phy_power_on and phy_calibrate calls from ufs qcom
->> driver.
->>
-> 
-> This patch is not calling phy_calibrate().
-
-updated commit text to remove phy_Calibrate from commit text
-
-> 
->> Co-developed-by: Can Guo <quic_cang@quicinc.com>
->> Signed-off-by: Can Guo <quic_cang@quicinc.com>
 >> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
->> ---
->>   drivers/ufs/host/ufs-qcom.c | 61 ++++++++++++++++++-------------------
->>   1 file changed, 29 insertions(+), 32 deletions(-)
->>
 > 
-> [...]
-> 
->>   static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
->>   				 enum ufs_notify_change_status status)
->>   {
->>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
->> +	struct phy *phy = host->generic_phy;
->> +	int err;
->>   
->>   	/*
->>   	 * In case ufs_qcom_init() is not yet done, simply ignore.
->> @@ -1157,10 +1141,22 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
->>   				/* disable device ref_clk */
->>   				ufs_qcom_dev_ref_clk_ctrl(host, false);
->>   			}
->> +
->> +			err = phy_power_off(phy);
->> +			if (err) {
->> +				dev_err(hba->dev, "phy power off failed, ret=%d\n", err);
->> +				return err;
->> +			}
->>   		}
->>   		break;
->>   	case POST_CHANGE:
->>   		if (on) {
->> +			err = phy_power_on(phy);
->> +			if (err) {
->> +				dev_err(hba->dev, "phy power on failed, ret = %d\n", err);
->> +				return err;
->> +			}
->> +
->>   			/* enable the device ref clock for HS mode*/
->>   			if (ufshcd_is_hs_mode(&hba->pwr_info))
->>   				ufs_qcom_dev_ref_clk_ctrl(host, true);
->> @@ -1343,9 +1339,10 @@ static int ufs_qcom_init(struct ufs_hba *hba)
->>   static void ufs_qcom_exit(struct ufs_hba *hba)
->>   {
->>   	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
->> +	struct phy *phy = host->generic_phy;
->>   
->>   	ufs_qcom_disable_lane_clks(host);
->> -	phy_power_off(host->generic_phy);
->> +	phy_power_off(phy);
-> 
-> This change is not at all needed.
-
-In the current code, PHY resources (clocks and rails) remain active even 
-when the link is in a hibernate state and all controller clocks are off. 
-This results in a significant power penalty and can prevent CX power 
-collapse.
-
-These rails and clocks are only turned off when a system suspend is 
-triggered, and even then, only at SPM level 5 where the link is turned 
-off. This approach is not power-efficient.
-
-As part of this series, the code that enables/disables the PHY's 
-regulators and clocks is now confined to the phy_power_on and 
-phy_power_off calls, with the rest moved to the calibration phase.
-
-Therefore, we are invoking the phy_power_off and phy_power_on calls from 
-ufs_qcom_setup_clocks, ensuring that the PHY's regulators and clocks can 
-be turned on/off along with the UFS clocks, thereby achieving power savings.
-
-Therefore, this patch is the cornerstone of this series.
-
-Regards,
-Nitin
-
-
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > 
 > - Mani
+> 
+>> ---
+>>   drivers/ufs/host/ufs-qcom.c | 6 ++++++
+>>   1 file changed, 6 insertions(+)
+>>
+>> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+>> index 37887ec68412..23b4fc84dc8c 100644
+>> --- a/drivers/ufs/host/ufs-qcom.c
+>> +++ b/drivers/ufs/host/ufs-qcom.c
+>> @@ -531,6 +531,12 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+>>   		goto out_disable_phy;
+>>   	}
+>>   
+>> +	ret = phy_calibrate(phy);
+>> +	if (ret) {
+>> +		dev_err(hba->dev, "Failed to calibrate PHY: %d\n", ret);
+>> +		goto out_disable_phy;
+>> +	}
+>> +
+>>   	ufs_qcom_select_unipro_mode(host);
+>>   
+>>   	return 0;
+>> -- 
+>> 2.48.1
+>>
 > 
 
 
