@@ -4,115 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F73AC54E65
-	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 11:07:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74B7BC54E65
+	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 11:29:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RVf6m+KJD0gA6L9Wn4kQr6oSlA3NuCN7VtoyjXV0OYY=; b=4m57m1L+hJY8KC
-	p1L0Y/jwrTSEgafHz5+2qAYguGFamFjeCzER3Q2yi0JbXxpw+2BP5kcHMAw8XdA02hh5qa31JWC+N
-	rP3sDMc02LVZaFK5yNgY0Z+phr0xVvMiHZ7RboVxX5XDW0C09bjTh/mrfhpgMOExjnAi+XTfCu/8g
-	sY74tKgYC/XayPXbykzhOT1hbMoh5xetb4iOHgJq0kmx3TKkHS9f57oRGwx/lOGibwBX7dLSG7/+0
-	H4j0upjtCnTYZQtTEVJrQ4HfwTQLBlVC35j2w5v1Oiya4cqyyEqJ7G3DI+Vy2bt/LSbhLXGvlpqg3
-	nfNgC36wn2fVg+On6R0w==;
+	List-Owner; bh=QnUt0Y11T4m7Yyy73aWOeL6fmN6myP08HIF7TAf3k70=; b=WA4aAObgI5SR6t
+	LBbLY1G0fHZyOH5fV+YZbhgviYPOKN7EZG8xYuTxfeUd3e+kLRgLy8q/N9DOPOEfBwNDQ7kz3nyFF
+	04soskUWzNQeuXXl4G/Qs5vUljSGBDyZ6s1iBix+2EykJRoUiLUbL1TXKFBMdwoeDH1wigbSe2Z0O
+	n3h9Hladhqo24qyigIlox5C8B0NyJlGBaUk/7V9YUkz4IbX9MF2a/ZN1rFEliSonTkRMsgXBU50gu
+	aYEr//RDCKINsAwmQAUj5czpRMtHWMZ5dQWZi7RdLyJdOFeJj0IbCmK1P8/tAjeenbnSegNrhOtbq
+	vXDa6o9wL5YHnEMeWemQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI3mA-00000000nhJ-0cOQ;
-	Thu, 22 May 2025 11:07:50 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uI47O-00000000ryQ-0aHZ;
+	Thu, 22 May 2025 11:29:46 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI3k4-00000000nQq-20oY;
-	Thu, 22 May 2025 11:05:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 87541A4ECCE;
-	Thu, 22 May 2025 11:05:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7978AC4CEE4;
-	Thu, 22 May 2025 11:05:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747911939;
-	bh=5px03ExXDydJ/MrO567tg0hKrlshFFteCf5a8XXEe0U=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=PyMy9CwknfsJ5D8XJl/QKA114yTvjNyLGPMe45akHqicCZ9+q0lObrXzbMGEBcJwZ
-	 iRudyZAG/XhozbD4yzroYcP0oL0n/gBblUVS6qmNpvkGVWBdWfYSnEwtQDt+uPkX6g
-	 +pRgXdb9ICd8w+ZbZMpM6uxAbUH7BpqG4YvqZN3s6kiPKXyvV/vVthNuIY8CLbhRkO
-	 e+4yduGAG9BRsHFNIlZKZ6vsQacEvY0KJ/CV5fUmsuhPXxmyEeoDuVg3P6gadm0Sef
-	 YObttLC6NKWZYaI1zx5oeBXm5lStjUggbvU/qIfNVfA+VIyMvN16o948VHdVApTjt/
-	 J3EL5PMR10ENQ==
-Message-ID: <f7de2bbc-4925-430c-b263-226a633e4bfb@kernel.org>
-Date: Thu, 22 May 2025 13:05:32 +0200
+	id 1uI47L-00000000rxx-2peD
+	for linux-phy@lists.infradead.org;
+	Thu, 22 May 2025 11:29:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1747913384; x=1779449384;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=kA/1F2Zfzqa6vgUg26NcIoNzYwbZOoIGvMHQ8DxxvUc=;
+  b=FyemD12NUSzddYW6tTb+naE+TY25hTkrRTr6cRjBRoihYCmENYAX3zMp
+   KZ3gOjCefPD1htf1sS3NTw28CAOL2+Xv+C+H9B6HcZRZdrWFhfAlObgD0
+   sDTUU1gIzD64zUrwhP+4d9sC1404RHH2+ZIwDe1QubV0n2HPB3hz2IJvi
+   Xfv2jLPkEJ3xYlfKrZmDTgXWn9IeUFcFwhPHgG7FXLzTCN1FsbHJoOZ9+
+   l9bzv3Z+woNzJF2/60oedEhXt0PMzzobgM2SUov+CfvwIeuT39jud/iBi
+   sDULRCl39IlIklcS5P4lfBN55TBBNz6XNWwj2yEFOYz7kkf+uXE1VI2F7
+   Q==;
+X-CSE-ConnectionGUID: 9b0gHZxdRYOgNJOkOWxo8A==
+X-CSE-MsgGUID: qVJSX9k+TmqD7K4jwNaPuA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11440"; a="49051506"
+X-IronPort-AV: E=Sophos;i="6.15,305,1739865600"; 
+   d="scan'208";a="49051506"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 May 2025 04:29:43 -0700
+X-CSE-ConnectionGUID: alwEKqmtQ/S93/wdYInrtQ==
+X-CSE-MsgGUID: GuAsb9XpR8mMwN2bOSSLzg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.15,305,1739865600"; 
+   d="scan'208";a="141090681"
+Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
+  by orviesa007.jf.intel.com with ESMTP; 22 May 2025 04:29:38 -0700
+Received: from kbuild by 1992f890471c with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uI47D-000PHI-2i;
+	Thu, 22 May 2025 11:29:35 +0000
+Date: Thu, 22 May 2025 19:29:03 +0800
+From: kernel test robot <lkp@intel.com>
+To: Claudiu <claudiu.beznea@tuxon.dev>, vkoul@kernel.org, kishon@kernel.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	p.zabel@pengutronix.de, geert+renesas@glider.be,
+	magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com,
+	kees@kernel.org, gustavoars@kernel.org, biju.das.jz@bp.renesas.com
+Cc: oe-kbuild-all@lists.linux.dev, claudiu.beznea@tuxon.dev,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	linux-hardening@vger.kernel.org, john.madieu.xa@bp.renesas.com,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: Re: [PATCH v3 08/12] reset: rzg2l-usbphy-ctrl: Add support for USB
+ PWRRDY signal
+Message-ID: <202505221929.nUHscY04-lkp@intel.com>
+References: <20250521140943.3830195-9-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
-To: Abel Vesa <abel.vesa@linaro.org>,
- Melody Olvera <melody.olvera@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-References: <20250421-sm8750_usb_master-v5-0-25c79ed01d02@oss.qualcomm.com>
- <20250421-sm8750_usb_master-v5-6-25c79ed01d02@oss.qualcomm.com>
- <aAswZg9s41s/m/se@linaro.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <aAswZg9s41s/m/se@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20250521140943.3830195-9-claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250522_040540_659478_5DE53C45 
-X-CRM114-Status: UNSURE (   5.54  )
+X-CRM114-CacheID: sfid-20250522_042943_738457_828798C8 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -130,18 +97,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/04/2025 08:49, Abel Vesa wrote:
-> On 25-04-21 15:00:13, Melody Olvera wrote:
->> From: Wesley Cheng <quic_wcheng@quicinc.com>
->>
->> SM8750 utilizes an eUSB2 PHY from M31.  Add the initialization
-> 
-> Nitpick: Drop the double space from the beginning of each phrase.
+Hi Claudiu,
 
-Sorry, but why? That's a correct grammar.
+kernel test robot noticed the following build errors:
 
-Best regards,
-Krzysztof
+[auto build test ERROR on next-20250521]
+[cannot apply to geert-renesas-devel/next pza/reset/next robh/for-next linus/master pza/imx-drm/next v6.15-rc7 v6.15-rc6 v6.15-rc5 v6.15-rc7]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Claudiu/soc-renesas-rz-sysc-Add-syscon-regmap-support/20250521-221703
+base:   next-20250521
+patch link:    https://lore.kernel.org/r/20250521140943.3830195-9-claudiu.beznea.uj%40bp.renesas.com
+patch subject: [PATCH v3 08/12] reset: rzg2l-usbphy-ctrl: Add support for USB PWRRDY signal
+config: sparc-randconfig-r111-20250522 (https://download.01.org/0day-ci/archive/20250522/202505221929.nUHscY04-lkp@intel.com/config)
+compiler: sparc64-linux-gcc (GCC) 12.4.0
+reproduce: (https://download.01.org/0day-ci/archive/20250522/202505221929.nUHscY04-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202505221929.nUHscY04-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "rz_sysc_get_signal_map" [drivers/reset/reset-rzg2l-usbphy-ctrl.ko] undefined!
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
