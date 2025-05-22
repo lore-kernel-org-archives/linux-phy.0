@@ -4,110 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64A7DC54E65
-	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 12:48:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CD3BC54E90
+	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 13:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PfEvDlblaWl2YdrSwuEwiARhtseczDBoodPKsWo0yxQ=; b=z4aq0tlZXUGoCc
-	oU4u5rLb00ySLPELKhHtkYtgRw4ozsWkL3ireAYJ0BL48dPGmt1OQy7B4Cecc0H22AwAmxbX7Zpul
-	RwIQL37Rc5uMEMK0wOP9Q5o7FwBwpE5wDRPtXmc+W2fQuHVyLTKxer9Qelng1v44AwrVLtvyLEIOd
-	rfbQYimC1WK9R65H9Ch4zHOlZTWPIUhnR0RjP/ziw9lZGOBZ+Y6gXV8+cVw1CMSSkZOnJzmqr5NH9
-	6megNpcvlhzCGuzDmJy9u5Vf3+ZfEL84W/WMzxL5qsJwc9iRAQSlToYs/cIe86dc9rydAMZyySMM+
-	okWmyZAdDFKzDL6QLYTw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=w3XogQTMHReYED2eF36FcGykNl39fGa80k5vxQyXAeg=; b=B3LWJbRYW4Wt0zyVhPQ/Oy4TUJ
+	K8yPTiwDOOaRdMRw2GmdtctPIKt0YhrnK1Xm/hKsECl4H4y0xu95WQpzJhNpBJfL+vVpitt0W10sG
+	V3dN5Scix42nVzwEZdMXe6855qJLZGK1p3S898JbcQgFJxipofguQN9rdeFl5lW4nHS+ri3I76Dus
+	riRvv2aIg1z10Z36Pdzq/fwYDGMeYnXhBW91qAkK56QOtsTztm3nodPCo+iXWb97Co31ALMLM7YqT
+	s+7V0QBlCkv8KSpdC2qpuNFSlNiMm7GBdselFomPwbn0q+gTuwJE+dQg+tiXwvsXQMQDVo/GvyuTw
+	uo5raRAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI5La-0000000123w-04bw;
-	Thu, 22 May 2025 12:48:30 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uI5YZ-000000013Xn-1Jbb;
+	Thu, 22 May 2025 13:01:55 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI5LY-0000000123o-3Yvk
+	id 1uI5YV-000000013Wp-3PaE
 	for linux-phy@lists.infradead.org;
-	Thu, 22 May 2025 12:48:28 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id ECA8B60EDF;
-	Thu, 22 May 2025 12:48:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3762BC4CEEB;
-	Thu, 22 May 2025 12:48:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747918107;
-	bh=4PIVLiUX6c71M/3O4E763dPbAWA+r9An+3OzWuc0Inw=;
-	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
-	b=hwGy/TTvhCEiFNrjef+/E1DRiMPajXi6Jaw2J15Zxj4g0FDAiPYIv32/5j64u1hwF
-	 4D0BCmRzhXX6/NliLQn23UpV39lITYTqpXvHQJk+c9Mu4D6UOQnFr74XjEGtU4WNTC
-	 GgY4wozecx+WS8i6XvQ+6+PL4ccvf1psnLRf02OnjqWg47E7fwatUfIOuvDKu/4UuM
-	 aoZur98p7l8vh6cW5orVs7TvGcELw46nds2pGjgs4x7q5IGOtlIl0QlGMd1ElWnYT8
-	 wOkTEJ5qAnMz59EvalTIPUlkJxq3LnAkUD06XFuot/rvfIOJIleOo8qjnlOsUdzk12
-	 39yybLELpFe+w==
-Message-ID: <68d83aaf-280a-4c19-becf-c6e1d9c2432b@kernel.org>
-Date: Thu, 22 May 2025 14:48:21 +0200
+	Thu, 22 May 2025 13:01:53 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-3a374f727dbso3259419f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 22 May 2025 06:01:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1747918909; x=1748523709; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=85ibc1rkewyOEAiRREZNyXGvEN9PNRSpUSRlKODUCCI=;
+        b=Z6m6uXxgLxmDuW9baasJHOA9qJdh605X7EffGXoNX3bV+JWnEoLaWYrmzX7HoxnRq3
+         oyY8X6A1qMZPkxKhmYQkAiZH/dda64G75j+Y64A0zAymMgqYbxx8IDE4DaUjsw+zSllU
+         J9dI+EaQsky73LHhflLwoqAfbbETQ9XRZ3QqxVZ66NGXLvBKpBYFQUVEEK555NNbTYKK
+         vhph9+bqnS0DXnweHu7vJ81Tofx6tx7pg1SRdfYdSzMgc/A1xUs4V2T93ztxnkP4qC7Y
+         lL1eMDixP2qFN5zHr1NS6UytmQq/ScTfmo5q51IUbbpmBLIiWKLHqun8s/NvwjUxQFX8
+         t7uA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747918909; x=1748523709;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=85ibc1rkewyOEAiRREZNyXGvEN9PNRSpUSRlKODUCCI=;
+        b=wJ/UP8an2bJOiVt56VWiH2Gu9NRxXjvincbwJ9KAnW4iOJ7tnfUG2vQlLojS7C9qNo
+         yKcuBnRUoClcktq9yIR0y3sZKmycof7yQAfztBXLtXnWPLU11jUdRf+hQlGYzJ9wmuAN
+         4p/QiscEmEdntFAGO3nN/dI75r5TAmGXTXvoItKGM4kNEHMUOT4U46y1OgOhgj2usd6B
+         mrjVUYtZZhpYaMXTGLm2P2eeRNqJAiWcxk9YnvYaZoS8WnP833jTIb6FXl3oUO4XI27c
+         YFhd3E4rzrneXtZwWDCD3gP4hUmQ50g6HmoE+jp9yKEMJPyAf2VtZNhiEYbUyUSYFhQk
+         pxXw==
+X-Forwarded-Encrypted: i=1; AJvYcCXZUb77cVMpX9SMFvp7gHF/WuPZuBRFHDNuGoFF88Wqm9sFPRh3nsUbb1UAXoHPyA1UFPRLqmGgjRE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzwfQF9CTgWBChiADmuwYLxw8C8v7VMi7LDZgdRsBcJWkGzjjtd
+	UNN5X2kMWKE6VNdzBA/DRATnux/t2N2yKNsD1P02F+0iby/QWYiUguAVIDPJIxRrViY=
+X-Gm-Gg: ASbGncvcl4gKaNM9UpMt2qeETNvf2iG+hDqJyin72SRI2htYO938qQWoi7B4EwOjCNO
+	3Cho3SnDPq0+b8HDtVucrCwuw4H/+7Ab5HVlpYTi17RHYxTrV0YAOkJfsj35VJhjDBBI5mBN0Jf
+	1qRHFWtqZfaBO29319a5x9MeBGipf4Aukkshaic3F7l5davApelyfjW4/jypoGLZIaeEMVeTVu9
+	Z8ufwg6fJfERORZLv5hJVOJ+EffoXVuWiq+tGsxNUrmllPEw9xXGH3CiuXJqL1tZ62mWUEew1cF
+	k+lQCRYVKPFWtIJhNbkcgUsVMPUEVE7X0Iz8D3c9SNkY1tXrKpf1NKmgwW3U5cc0oONPmDPyE2G
+	i0skTeTjx+aNFBSr3TEQg8Pw++xlh
+X-Google-Smtp-Source: AGHT+IHDLzp25O1ERi2RnsBspAgj744QxUzZ/p26j4iE+yXlctI30IYPkhdc03KeFWm8NECKoIveHg==
+X-Received: by 2002:a05:6000:2407:b0:3a3:4baa:3ea3 with SMTP id ffacd0b85a97d-3a35ffd2ae4mr21161771f8f.41.1747918908611;
+        Thu, 22 May 2025 06:01:48 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:ca6a:4d93:cd32:83a5? ([2a01:e0a:3d9:2080:ca6a:4d93:cd32:83a5])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a35ca88a34sm22855531f8f.70.2025.05.22.06.01.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 22 May 2025 06:01:48 -0700 (PDT)
+Message-ID: <94245ae6-a28c-4a37-a3dd-9828bd95c094@linaro.org>
+Date: Thu, 22 May 2025 15:01:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 05/12] dt-bindings: phy: renesas,usb2-phy: Add
- renesas,sysc-signals
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
- magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com, kees@kernel.org,
- gustavoars@kernel.org, biju.das.jz@bp.renesas.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-hardening@vger.kernel.org, john.madieu.xa@bp.renesas.com,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
- <20250521140943.3830195-6-claudiu.beznea.uj@bp.renesas.com>
- <20250522-evasive-unyielding-quoll-dbc9b2@kuoka>
- <b22e7a46-7e35-4840-aae3-a855c97fbde4@tuxon.dev>
- <4a07048a-c55a-4fd3-b4e5-7f9d218de76f@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <4a07048a-c55a-4fd3-b4e5-7f9d218de76f@kernel.org>
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v5 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Abel Vesa <abel.vesa@linaro.org>,
+ Melody Olvera <melody.olvera@oss.qualcomm.com>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <20250421-sm8750_usb_master-v5-0-25c79ed01d02@oss.qualcomm.com>
+ <20250421-sm8750_usb_master-v5-6-25c79ed01d02@oss.qualcomm.com>
+ <aAswZg9s41s/m/se@linaro.org>
+ <f7de2bbc-4925-430c-b263-226a633e4bfb@kernel.org>
+ <CAO9ioeXzzSBy+wYFATeckKZ2641GaTA1dB_1HOb238DdB7ACoQ@mail.gmail.com>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <CAO9ioeXzzSBy+wYFATeckKZ2641GaTA1dB_1HOb238DdB7ACoQ@mail.gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250522_060151_884882_FE9577C8 
+X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,37 +139,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/05/2025 14:46, Krzysztof Kozlowski wrote:
->>>>  
->>>> +  - if:
->>>> +      properties:
->>>> +        compatible:
->>>> +          contains:
->>>> +            const: renesas,usb2-phy-r9a08g045
->>>> +    then:
->>>> +      required:
->>>> +        - renesas,sysc-signals
->>>
->>> That's ABI break.
+On 22/05/2025 14:18, Dmitry Baryshkov wrote:
+> On Thu, 22 May 2025 at 14:05, Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >>
->> There is no in kernel device tree users of "renesas,usb2-phy-r9a08g045"
->> compatible. It is introduced in patch 11/12 from this series. With this do
->> you still consider it ABI break?
+>> On 25/04/2025 08:49, Abel Vesa wrote:
+>>> On 25-04-21 15:00:13, Melody Olvera wrote:
+>>>> From: Wesley Cheng <quic_wcheng@quicinc.com>
+>>>>
+>>>> SM8750 utilizes an eUSB2 PHY from M31.  Add the initialization
+>>>
+>>> Nitpick: Drop the double space from the beginning of each phrase.
+>>
+>> Sorry, but why? That's a correct grammar.
 > 
-> Then this patch cannot be split from binding introducing the user. Don't
-> add unused/undocumented compatibles.
 > 
-Or you meant DTS? I asked about ABI which is not about in-kernel users.
-You can always change in-kernel users, so what would be any point of a
-binding and its ABI?
+> Being absolutely nitpicky, this depends on the country. In some cases
+> (US) typography settled on using double space after full-stop. In
+> other cases it's a normal space.
 
-Best regards,
-Krzysztof
+Ok just discovered it's a thing:
+https://en.wikipedia.org/wiki/Sentence_spacing
+
+```
+Magazines, newspapers, and books began to adopt the single-space convention in the United States in the 1940s and in the United Kingdom in the 1950s.
+```
+
+Neil
 
 -- 
 linux-phy mailing list
