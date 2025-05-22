@@ -4,74 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34290C54E65
-	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 13:29:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46530C54ED0
+	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 14:59:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1qhDNghsHYvWGrEDCO0zdeLLprrwa6/mdeR0hBjVZaU=; b=wsJDrA/uaDZua3
-	K1huhFYMVHfinsgtVtMZeQfMWdMQVkkLnDMOOboR/v8w2vqu2e25K43dkc+GvhY83gu06d57mAfG9
-	xCrmCMLXey/zbZSgf95N/q8jOKMe1ei2P898gi9ozhbktGoG2q/MhPq3Jz86byWY3lH1BSy408wKz
-	002gz8Rx1MHHv3ZZuVUb88tEqFThAeuLi3DOJU76kWM5JhWhC76QKW80OsK2W8XEKSLU/b2T4SYgA
-	+wtiRzlciAs//U6v5pBaQLGgPWl3lKBGl9PzpqrXwfzL/m2H4Y8JdN27abssPtvfTDGfmaHzrIup1
-	cA1DOINGiHfSGyfTZB9g==;
+	List-Owner; bh=JVA43HODwPz1k2gLLAbGapuGAzafYmFPR7bIDCW0MYM=; b=2AlIqvnqTAcVHO
+	t2aTJ4S9K1KwKmQy6WBON5eH38Tt7CQojCAuW6W6dDF3Gl0JOYkG155oER+y1IVUT+NRgDlWZi2Df
+	iB9G56Q8ShLz0Hln81lc/x1EpKVYvbhwz4/RKaEGjE2+pvsIMibFzKDoEE89xsAE64Y07T08PGeXP
+	99/LzjwVhg02QWYdCLhBfDMIieZR/Vd9Jg70tGTJxURl/tI3QDRPF5doc3tR7ks+Ww91nkb/8vsHP
+	K9eR1dgLNYxWAzvR7w1nLan0vguFYabo3f49yWLNdLH71ADOrXTOKFrrynTmAAoisBEhmoCRca0ul
+	MFL753W5Wsv0jL/EC94w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI5zA-000000017Fp-33Bv;
-	Thu, 22 May 2025 13:29:24 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uI7Ns-00000001LxV-0APN;
+	Thu, 22 May 2025 14:59:00 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI5x8-000000016v6-2EFC;
-	Thu, 22 May 2025 13:27:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9CDB562A41;
-	Thu, 22 May 2025 13:27:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41359C4CEE4;
-	Thu, 22 May 2025 13:27:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747920437;
-	bh=HCEjzAxEoNpGh9RhZKRmEp/YfkDRMjOx87EArtdY46E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HX8/fEVnJvd/yp+XvMm6fuoT2Be58dmLXfJr8hgrabR73FFcNigPFKdn+c3GtPvVq
-	 6okjJznCebd8m4O8UJyXi0mht1LUzLR72gd8OH1y0nAmyd/xiRdMcA9XmFzf32q6tV
-	 jIO8+Kp5rGT0S4VgtqsRPW7Hv8I0SljmLnNh5oLnpbHkNsvBQ38Jbe0HXa9NAa1Qhl
-	 eHtLZtobi80OWuumLi4g3zf2jPDyKEVkacw+YhuM5AZEHlSGxToAC+qIdECIxH6+bY
-	 3uHtIFk8lKy3sIDLZmA5C4nOnaYjcrbWWWny0shY57JnjSnmb3za+qk148NsSsDTuH
-	 HY+tZN2kfneWQ==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1uI5x4-000000003QS-1Ibp;
-	Thu, 22 May 2025 15:27:14 +0200
-Date: Thu, 22 May 2025 15:27:14 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Melody Olvera <melody.olvera@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Abel Vesa <abel.vesa@linaro.org>, Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v5 06/10] phy: qcom: Add M31 based eUSB2 PHY driver
-Message-ID: <aC8mMiw2o3MRmBtm@hovoldconsulting.com>
-References: <20250421-sm8750_usb_master-v5-0-25c79ed01d02@oss.qualcomm.com>
- <20250421-sm8750_usb_master-v5-6-25c79ed01d02@oss.qualcomm.com>
+	id 1uI75M-00000001Hsf-146s
+	for linux-phy@lists.infradead.org;
+	Thu, 22 May 2025 14:39:53 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-601956fa3beso9278651a12.0
+        for <linux-phy@lists.infradead.org>; Thu, 22 May 2025 07:39:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1747924791; x=1748529591; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=5dUW3XcT56QSO6IzrjYqsZTqvCBor25DIllhfgnMqf8=;
+        b=pKQxsa8wutM/7HT9Ow7lClDdd1GkscKHZuUloE6qluYRVezHWr+8xSShHzr8ytnWdy
+         KbWV1r9zTBgtq76HOikzT8kcyUUOl3gI/BHIoki2KBhkkPRzdi0GlGj3rw8Cpvn++ZGV
+         NWClrX7aqNXZdsM+9Xd2LapzS2fD9jFgMaUjXcyKYtxXg2ws/HqeQVPLb84MPP5uAZCC
+         R8os/fcQGZvJa2H+qLrqATKHJf/cB6i9kYlwgCLI8sv/ZtzZoAsIu11LZpUXyWzjzbcY
+         mG8kO4OveZhDyxd/Ar4ZQxJv/gpkTZRIhZ4o0KikS9JtTYgLsvzBp/7M9FCgjpCtaqdk
+         t/2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747924791; x=1748529591;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=5dUW3XcT56QSO6IzrjYqsZTqvCBor25DIllhfgnMqf8=;
+        b=hfIiTl5094fR2w5iXjZ/M9Q6i+S2NhoNBnpaS6+O+Rhnds0+I9tDeFYUQ00pyYu8Sj
+         IFAtchz3fpU93vLwQ+rar4w42BrGuy4HXLfAcBuCeVaDKuz4CDUrp2q7veAHde1BJCzS
+         nCvxvfQf5YugXwRQkT5p4xtDyWUt/mIAUQn2ySZT+m40W2wM0KDMlD28NbbDYRwcf5Qn
+         MzQXhcfGPtRy6TtDqkhp+poNqQL/TnwPJSkOjstjNvM+L0J+NhwwnLG896Bw4jKGUH67
+         850v+ay2/rVxiMN73e9QsLwpFJIjMOK/S+eAfXXbV6CwFHt4kBqwD1yqRvO/ANmiOZRW
+         o3Ng==
+X-Forwarded-Encrypted: i=1; AJvYcCXU/mxxNPCpxrwwW6tQ1oAR7Nz1i3gQNqBuFhpVoi9gJhPSYtUVVILXfnBt1eJsjYEU1pS98Bff4Aw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzjM9yxPuoN/hRk11iqiIOmeqW8y89lGcQONyFbPN/9xZG0ENWz
+	xC/WJOS++j/znawEDXckNjk7tciFKrFsLIeBrhXi7zWfpkLuRSL6Omk0JCQHKe7F1S8=
+X-Gm-Gg: ASbGnct5anbpxdDGs1bODtybWGXAvXmVzFzBgBVWa745lVugGttOfynYnn7otfDebGh
+	8gIKXwA/n+LSFN7qwnjjY0lSL3SzF6noR8PziAvOihmxO2CVdad4D7x5QnbSh5kg0lY/k2Bx910
+	z4COmC+9NvOJijJuGemRJYzNed9/3usVNonZot0Jrg3aiUHul7LrgBhDOsz1QN55LwnZWegyh7U
+	XNu58iuO04n/na0onLYiH3pP/14ANYFD1ANgb3k1gpj6bbhosQ3muTJHXewzKqKzYdZQYLe0d8w
+	5PnrIHLQoPupa6id2LlBQJ6fuZxQFfFixTvOnlmOh9mc97ZVZ831fe3Tdnw=
+X-Google-Smtp-Source: AGHT+IE/RdKTMZdYx9F6yx1Kzprvz+cSKkMQRkLYiOsz7mEXFrIWg/Hdk4IKesUgJcilzgg+XPJrLQ==
+X-Received: by 2002:a05:6402:34c8:b0:602:4405:777b with SMTP id 4fb4d7f45d1cf-602440578f8mr5149377a12.24.1747924790721;
+        Thu, 22 May 2025 07:39:50 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.58])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6004d4f1c7esm10543212a12.14.2025.05.22.07.39.48
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 22 May 2025 07:39:50 -0700 (PDT)
+Message-ID: <797611e1-3786-45c4-9103-3ee8f96cec6d@tuxon.dev>
+Date: Thu, 22 May 2025 17:39:47 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250421-sm8750_usb_master-v5-6-25c79ed01d02@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 05/12] dt-bindings: phy: renesas,usb2-phy: Add
+ renesas,sysc-signals
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
+ magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com, kees@kernel.org,
+ gustavoars@kernel.org, biju.das.jz@bp.renesas.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-hardening@vger.kernel.org, john.madieu.xa@bp.renesas.com,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
+ <20250521140943.3830195-6-claudiu.beznea.uj@bp.renesas.com>
+ <20250522-evasive-unyielding-quoll-dbc9b2@kuoka>
+ <b22e7a46-7e35-4840-aae3-a855c97fbde4@tuxon.dev>
+ <4a07048a-c55a-4fd3-b4e5-7f9d218de76f@kernel.org>
+ <68d83aaf-280a-4c19-becf-c6e1d9c2432b@kernel.org>
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+Content-Language: en-US
+In-Reply-To: <68d83aaf-280a-4c19-becf-c6e1d9c2432b@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250522_073952_291228_3D43FC58 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,74 +112,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 21, 2025 at 03:00:13PM -0700, Melody Olvera wrote:
-> From: Wesley Cheng <quic_wcheng@quicinc.com>
+
+
+On 22.05.2025 15:48, Krzysztof Kozlowski wrote:
+> On 22/05/2025 14:46, Krzysztof Kozlowski wrote:
+>>>>>  
+>>>>> +  - if:
+>>>>> +      properties:
+>>>>> +        compatible:
+>>>>> +          contains:
+>>>>> +            const: renesas,usb2-phy-r9a08g045
+>>>>> +    then:
+>>>>> +      required:
+>>>>> +        - renesas,sysc-signals
+>>>>
+>>>> That's ABI break.
+>>>
+>>> There is no in kernel device tree users of "renesas,usb2-phy-r9a08g045"
+>>> compatible. It is introduced in patch 11/12 from this series. With this do
+>>> you still consider it ABI break?
+>>
+>> Then this patch cannot be split from binding introducing the user. Don't
+>> add unused/undocumented compatibles.
+>>
+> Or you meant DTS?
+
+Yes, I meant in tree DTS.
+
+> I asked about ABI which is not about in-kernel users.
+> You can always change in-kernel users, so what would be any point of a
+> binding and its ABI?
 > 
-> SM8750 utilizes an eUSB2 PHY from M31.  Add the initialization
-> sequences to bring it out of reset and into an operational state.  This
-> differs to the M31 USB driver, in that the M31 eUSB2 driver will
-> require a connection to an eUSB2 repeater.  This PHY driver will handle
-> the initialization of the associated eUSB2 repeater when required.
+> Best regards,
+> Krzysztof
 
-> +static int m31eusb2_phy_init(struct phy *uphy)
-> +{
-> +	struct m31eusb2_phy *phy = phy_get_drvdata(uphy);
-> +	const struct m31_eusb2_priv_data *data = phy->data;
-> +	int ret;
-> +
-> +	ret = regulator_bulk_enable(M31_EUSB_NUM_VREGS, phy->vregs);
-> +	if (ret) {
-> +		dev_err(&uphy->dev, "failed to enable regulator, %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	ret = phy_init(phy->repeater);
-> +	if (ret) {
-> +		dev_err(&uphy->dev, "repeater init failed. %d\n", ret);
-> +		goto disable_vreg;
-> +	}
-
-> +static int m31eusb2_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	const struct m31_eusb2_priv_data *data;
-> +	struct device *dev = &pdev->dev;
-> +	struct m31eusb2_phy *phy;
-> +	int ret;
-> +
-> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-> +	if (!phy)
-> +		return -ENOMEM;
-
-> +	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
-> +	if (IS_ERR(phy->phy))
-> +		return dev_err_probe(dev, PTR_ERR(phy->phy),
-> +				     "failed to create phy\n");
-> +
-> +	ret = devm_regulator_bulk_get_const(dev, M31_EUSB_NUM_VREGS,
-> +					    m31_eusb_phy_vregs, &phy->vregs);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret,
-> +				"failed to get regulator supplies\n");
-> +
-> +	phy_set_drvdata(phy->phy, phy);
-> +
-> +	phy->repeater = devm_of_phy_get_by_index(dev, dev->of_node, 0);
-> +	if (IS_ERR(phy->repeater))
-> +		return dev_err_probe(dev, PTR_ERR(phy->repeater),
-> +				     "failed to get repeater\n");
-
-Requesting the repeater PHY like this and managing it from the PHY ops
-currently breaks lockdep as I've previously reported here:
-
-	https://lore.kernel.org/lkml/ZnpoAVGJMG4Zu-Jw@hovoldconsulting.com/
-
-I don't think we should merge this until that issue has been resolved as
-it leaves us with an increasing number of (Qualcomm) SoCs where lockdep
-cannot be used, which risks introducing further locking bugs without
-anyone noticing.
-
-Johan
 
 -- 
 linux-phy mailing list
