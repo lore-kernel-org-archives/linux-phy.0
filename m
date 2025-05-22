@@ -4,120 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AA65C54E65
-	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 07:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF82DC54E90
+	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 08:59:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XxNoguPKnFvcA1O5bP+106eU4mxMvBBEfzsn1MuD3v4=; b=mT/K7xLy7PE4b/a60fLG9+k/oI
-	j6HNLVe46Z63LWvDDjWin7ZVjtVQ+vLUKQAbtDSI8iDQ8vlzNS0C/CxrDGvUjOKT9aKwXTZi2/vSN
-	9/bqAKBsaD3VlXjfvZTE7+zdIPItXouQIvu3S06QxE0uRLn+2MP22/gvKe9vVy8j5qwj6e4HYWL32
-	Uu+f3gV/I2wZtQxSUhWMd6GKgF9gkPSja37slf6q3rtNxS368walyArkO6JKxQK/GX4+IWt/XBOXn
-	aDocNA9FU6DE+Nc5EkPH8AIq8eo+8f9/YfJXoxKAzeMZRcGk7cLzbmLZIplKIe0CaPTL/g/0ilhxq
-	h8kVqLHA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QryT7sLHVwndUQogPdHKVleCW633MuIekTQTWksCWZk=; b=C5/cP8mBxS0CvA
+	A+frNuBRTqEacHvAoYqDxAoRxHVdjt8xoZXE3GVAKYbkKr3Qkfh8YqSicSfVZbNHNZmXNl3w913NO
+	raTNg2f/aVklXmrT4vWhXJ07Z7FhSWkKV0x+dQ97ERrmt9dx5au52FvErm5KgoFssGanIX6lxjd1U
+	SN1jm1wisVAp0PcxSnYha2opNaiuhUYZlYIcb+htQpG/7Ww5NvKb87FkY4MC3jG0DGLeG1uILn0+K
+	1LfTCZXUDIsRTpz8GY23TPd2SGf4MEr6HWgDY8ouMg5uW+weQ9ihRWSI7qAthQm8+E7LnaH6igU3e
+	RrKSqDp1eF6I+ZeYIapA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI0a7-00000000AMX-3wUt;
-	Thu, 22 May 2025 07:43:11 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1uI1m5-00000000OeG-1cCk;
+	Thu, 22 May 2025 08:59:37 +0000
+Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uI0Vh-000000009fX-2Y1m
+	id 1uI1g3-00000000N4x-47Tu
 	for linux-phy@lists.infradead.org;
-	Thu, 22 May 2025 07:38:38 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-441c99459e9so50403625e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 22 May 2025 00:38:37 -0700 (PDT)
+	Thu, 22 May 2025 08:53:25 +0000
+Received: by mail-pf1-x42d.google.com with SMTP id d2e1a72fcca58-73712952e1cso7172551b3a.1
+        for <linux-phy@lists.infradead.org>; Thu, 22 May 2025 01:53:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1747899516; x=1748504316; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=LD8ntK8xfh1M3SZdEUxa9DUXDRo4uk6n0BDBJQLK434=;
-        b=MlrwUJ0ls3Ou6N7s0IwKVM0FRhF1A3jaFI1eMG97v+jfvjsd57r7lI3c0Gl9T1WDFN
-         qYFR7WRCCzZiNG0507KknzmTgY8agGKAPuEBJvS30+WXhK5yIppd927Ps8QImhW/AzkI
-         g/I3QXRixtSM9ywwNx3RRvJ1PXbzMprMiZ9w1X6z4eCH21hJhFaFC/SX4mBsMKdK52rk
-         OhVxPxd7BEowA4Vbd/y7M7jXlf6NUBohmDr94+Z9E1NR8KgNWd0A8GjRlMpvGZZ1oNHA
-         FLSFIemRFroFQnwSJSyOWfiFJXf2kD+yjiwpUx37LpKpS1F70Ztx0lSCNyH1EMhzaqyp
-         aBYg==
+        d=linaro.org; s=google; t=1747904003; x=1748508803; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=wE/Nk3n7Qj543anMoi03EY1HELsp/mGZ1M/Gx4pgSIs=;
+        b=uZrlFswxgS20neMyIEK8nGrqB2KpPmQUoJQBbVZlMa8fZ3eCs+TerF/WP0veKBLiyH
+         8iOow7PENlSeJO/pdoXvjyz35V9masYNpNPBRwfnypUzHL++s03WFXuKpuR5wyl7OmlP
+         KJrMRjbKLEBXtCO4NVOFA4/gC0/L3hLclzPTHVHRkEYCIHtGC76sOkmb+XrOq24wyKFe
+         B31U4S1kleozlWLQGM7bLY8J9tSLQwq0Mirv72axb39M77RJc4memBrLixS9mdz8FFRY
+         fTGo7xMqZaudcb/Zum6yV4BNOPxIkMQAxkYwMOXN+fPGrVlmyd7pdu0orXTudPw5ETYX
+         jgXg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1747899516; x=1748504316;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=LD8ntK8xfh1M3SZdEUxa9DUXDRo4uk6n0BDBJQLK434=;
-        b=XDkLPi10yTs3mQcUWmYvKg8IdJLdka0/lmMtCM5DvzgLUMmFZe2OV8E4haJn2EQifl
-         Q6/sEBFLsteLepq4r8O3xVT9nsZrja7H+IusUbKrJSf/hQ5zJsFdH7BhS8pQ1vBLY5Rm
-         LrQ1d7QKnGS9AXNVNwXpobtSMa25RstnibHrYzXlWl5Xd2VjNKy7ZFqm6wusFAZu+xDb
-         q8qgkcgJ/dkXm2XsVkysg9KupqJEZPeDHK2T+3FmjfgFzDvN865SmRWbh4cvyoeavCwm
-         eEBYwVyrh5EoqymIfl/+oEdeUhXgwkFwrtV2p1tgOfJrcZk1M5+UXKbZVTIEtTBzmBZS
-         WlCw==
-X-Forwarded-Encrypted: i=1; AJvYcCXxuQib3XxALWff+lGBM5WkxPkmFGTQ/DGVBS8z/soiEBSfs8/xKlP+MlMQtpbRLD3y6QmE0nZVepg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz9cBYOKe539XrtEW/Gyei2EkCinVlnfv54t18cZQ2/54lsTnjB
-	HSlxgnjw52zxP9tM9xphXLDDG65/H6pbN+T/w7jP1xEqH8900CIzLX9L6IvEXVE4Gtw=
-X-Gm-Gg: ASbGncsHWJYCLVqiraoDLqkY8mWBB6g00GydvqJlhS9H9/z11uoR/splJ0qHuXZ0jfU
-	q1NRs4YtWt9SkkXaL8ZXWG76v0ZJwpEY7ovKr9TsrKim1MfydFc3AiezCHM8X2lBEOchvB/QKx6
-	5f7rxv/lUW76ASvX6hXPWwKr/jRytoPzw1GEIDlgiEU+b1yTAYti1Oj4GjIUA89K8/E0u9JdAt4
-	b2uzg/he6mGqJq80uOr7xSN4wO4Vp0/rwSxZaCZwYgdurm7WlFlL+qQVzdBjIV8A7/HoaSB6bKL
-	Zr+POWhR5bJgb6wmIS+lq8+IeS41TOB8wE57716Qti0e5S/ol86JZwc8QMKhjm+kDv99EP0jIcX
-	tM+izMGoGirInzfgT47ub0A4BpgjC
-X-Google-Smtp-Source: AGHT+IFkx1lvqitqZfDeiJsWs3JMGtQyZreZK7E9FGT4beePl8PD+rep4VjjgQc2mmbXeTT1TE60Zw==
-X-Received: by 2002:a05:6000:18a5:b0:3a3:76ff:a617 with SMTP id ffacd0b85a97d-3a376ffafa7mr10754675f8f.32.1747899515856;
-        Thu, 22 May 2025 00:38:35 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:ca6a:4d93:cd32:83a5? ([2a01:e0a:3d9:2080:ca6a:4d93:cd32:83a5])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a35ca8899bsm22008549f8f.62.2025.05.22.00.38.35
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 22 May 2025 00:38:35 -0700 (PDT)
-Message-ID: <a42b9cbb-2f85-40c4-8b40-6f84970aba86@linaro.org>
-Date: Thu, 22 May 2025 09:38:34 +0200
+        d=1e100.net; s=20230601; t=1747904003; x=1748508803;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wE/Nk3n7Qj543anMoi03EY1HELsp/mGZ1M/Gx4pgSIs=;
+        b=NVjtdP94yeQTVGbGu6de4waM0Q8vCNfSaHD8WWo7iU2Pnr2+Aw3Cv/p/wUdXjb7rn8
+         LrF24LBwTflowXCaBbmoNE7IEIPAcsSbTaUtR42QraAzBGaFVfZYEz+dX6syeLyxNXOQ
+         f7H/Kvfr9Wx8U279C5MfkMQn3gz7OKwzuag7NBO5c3XJiNLHxuIYSxoH3mojPiSsjRYY
+         QhGrgvPmMzK2RKJK0m6IUTcF2SM3gn7JWkBYKbzkV7UXoDizYkxXS+uZngs1sQ3/+9Pa
+         EsO4b14F0BpMhl+rYdqAlcQ33Ks+wvtAGzlLfBJRKRSoOux8r9Hpa5iCAGLOBeBRm8qE
+         pt8Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVuu4ktnl7reoDooG6jkbAN/knxrYFXdQl70k7Mx8sZpzijr4DXdsJJ/K2Qwsu5fIakMgTJbIzbMbU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyQhhMTjVcW9goyQ1yMcqhzDz4TI7xBe3FM7T+w93jglrdzWnpN
+	sAGACDPizwsDcVpU12eWLjbrIm5JeQQD+Da2sEvY8GVyYw1oEUuGpUAOLEIB+vqnTYEeMkxamQp
+	knF0=
+X-Gm-Gg: ASbGncsFQH+1nobCXZeyBEgVAFWZyEqofYaZaSdjOzSf0Sh3YqDanQmU3EvVXcAaoRh
+	itFIYPK9LnxUpbnrDie4h/4ht2y6yEltgMjKDdtc+WqoW/181WkiW75AqN5XbK5745C16dNHTzV
+	53BlIarlM7sBsuCoJ15RAB4wGksnbfXm0yKZxrLI82z2Atia5z6/INj6IF6ZcZBCeEf75UY9Jk0
+	PPATPMKGrP19hnXHjWYghMsqlnm5ZfmquFJX3tTeNvFfrA+onxcI7nqgctcyvwsq2cNfAaTPbFR
+	ojQ220dUlq9Y45jkxRZZ/idtWaNuIruhdCUqRyyypZyvQxVUxN5MUgZasfVhZg==
+X-Google-Smtp-Source: AGHT+IF5uWmk4PnvIThnJSvV0zNx6s2lAIFa7Qq/vftR90Qhtr6lQ7tpJ/xet55CCmVXUt9jRfsojQ==
+X-Received: by 2002:a05:6a21:3385:b0:20d:df67:4921 with SMTP id adf61e73a8af0-2170cafa33dmr33994739637.4.1747904003020;
+        Thu, 22 May 2025 01:53:23 -0700 (PDT)
+Received: from thinkpad ([120.60.130.60])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-742a96e589esm10810267b3a.9.2025.05.22.01.53.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 22 May 2025 01:53:22 -0700 (PDT)
+Date: Thu, 22 May 2025 14:23:16 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Nitin Rawat <quic_nitirawa@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, 
+	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, bvanassche@acm.org, 
+	andersson@kernel.org, neil.armstrong@linaro.org, dmitry.baryshkov@oss.qualcomm.com, 
+	konrad.dybcio@oss.qualcomm.com, quic_rdwivedi@quicinc.com, quic_cang@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-scsi@vger.kernel.org
+Subject: Re: [PATCH V5 07/11] phy: qcom-qmp-ufs: Remove qmp_ufs_exit() and
+ Inline qmp_ufs_com_exit()
+Message-ID: <qrope222shpeqvhe2dnh4p4jmznuu7tr3jh2zujwbbd3khg4yo@wm2epj5ydefc>
+References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
+ <20250515162722.6933-8-quic_nitirawa@quicinc.com>
+ <untqxy76skl53c55bdjz5usk4seuypjqbxkfub2qeqz42mewqr@r4cutmkvy235>
+ <79d2f373-ee53-4cd2-b228-171daf3adcb7@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v4 1/5] drm/msm/hdmi: switch to generic PHY subsystem
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Dmitry Baryshkov <lumag@kernel.org>, Sean Paul <sean@poorly.run>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- linux-phy@lists.infradead.org, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-References: <20250520-fd-hdmi-phy-v4-0-fcbaa652ad75@oss.qualcomm.com>
- <20250520-fd-hdmi-phy-v4-1-fcbaa652ad75@oss.qualcomm.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250520-fd-hdmi-phy-v4-1-fcbaa652ad75@oss.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <79d2f373-ee53-4cd2-b228-171daf3adcb7@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250522_003837_657685_B27AE30C 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20250522_015324_070054_8A7EBE53 
+X-CRM114-Status: GOOD (  22.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,149 +102,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/05/2025 22:44, Dmitry Baryshkov wrote:
-> From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> 
-> Change the MSM HDMI driver to use generic PHY subsystem. Moving PHY
-> drivers allows better code sharing with the rest of the PHY system.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> ---
->   drivers/gpu/drm/msm/Makefile                     |   7 -
->   drivers/gpu/drm/msm/hdmi/hdmi.c                  |  58 +-
->   drivers/gpu/drm/msm/hdmi/hdmi.h                  |  80 +--
->   drivers/gpu/drm/msm/hdmi/hdmi_bridge.c           |  32 +-
->   drivers/gpu/drm/msm/hdmi/hdmi_phy.c              | 225 -------
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8960.c         |  51 --
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c         | 765 ----------------------
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c         | 769 -----------------------
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8x60.c         | 141 -----
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8x74.c         |  44 --
->   drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.c         | 458 --------------
->   drivers/phy/qualcomm/Kconfig                     |  21 +
->   drivers/phy/qualcomm/Makefile                    |  14 +
->   drivers/phy/qualcomm/phy-qcom-hdmi-28hpm.c       |  71 +++
->   drivers/phy/qualcomm/phy-qcom-hdmi-28lpm.c       | 441 +++++++++++++
->   drivers/phy/qualcomm/phy-qcom-hdmi-45nm.c        | 186 ++++++
->   drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.c      | 212 +++++++
->   drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.h      |  81 +++
->   drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c    | 185 ++++++
->   drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c | 442 +++++++++++++
->   drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8998.c | 495 +++++++++++++++
->   drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h         |  77 +++
->   22 files changed, 2259 insertions(+), 2596 deletions(-)
-> 
-
-<snip>
-
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c b/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
-> index 53a7ce8cc7bc7b6278eae2cbc42c3fda8d697f6d..1a00c26c1b40fc81623c9fb22ba25f448c27bffb 100644
-> --- a/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi_bridge.c
-> @@ -5,6 +5,7 @@
->    */
->   
->   #include <linux/delay.h>
-> +#include <linux/phy/phy.h>
->   #include <drm/drm_bridge_connector.h>
->   #include <drm/drm_edid.h>
->   #include <drm/display/drm_hdmi_helper.h>
-> @@ -286,11 +287,12 @@ static void msm_hdmi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
->   {
->   	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
->   	struct hdmi *hdmi = hdmi_bridge->hdmi;
-> -	struct hdmi_phy *phy = hdmi->phy;
->   	struct drm_encoder *encoder = bridge->encoder;
->   	struct drm_connector *connector;
->   	struct drm_connector_state *conn_state;
->   	struct drm_crtc_state *crtc_state;
-> +	union phy_configure_opts phy_opts;
-> +	int ret;
->   
->   	DBG("power up");
->   
-> @@ -304,7 +306,7 @@ static void msm_hdmi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
->   
->   	mutex_lock(&hdmi->state_mutex);
->   	if (!hdmi->power_on) {
-> -		msm_hdmi_phy_resource_enable(phy);
-> +		phy_init(hdmi->phy);
->   		msm_hdmi_power_on(bridge);
->   		hdmi->power_on = true;
->   	}
-> @@ -315,7 +317,23 @@ static void msm_hdmi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
->   
->   	drm_atomic_helper_connector_hdmi_update_infoframes(connector, state);
->   
-> -	msm_hdmi_phy_powerup(phy, hdmi->pixclock);
-> +	phy_opts.hdmi.tmds_char_rate = conn_state->hdmi.tmds_char_rate;
-> +	phy_opts.hdmi.bpc = 8;
-> +	phy_configure(hdmi->phy, &phy_opts);
-> +
-> +	ret = phy_power_on(hdmi->phy);
-> +	if (WARN_ON(ret))
-> +		return;
-> +
-> +	if (hdmi->extp_clk) {
-> +		ret = clk_set_rate(hdmi->extp_clk, hdmi->pixclock);
-> +		if (ret)
-> +			DRM_DEV_ERROR(bridge->dev->dev, "failed to set extp clk rate: %d\n", ret);
-> +
-> +		ret = clk_prepare_enable(hdmi->extp_clk);
-> +		if (ret)
-> +			DRM_DEV_ERROR(bridge->dev->dev, "failed to enable extp clk: %d\n", ret);
-> +	}
-
-Why do you again set the extp_clk since it's already set & enabled in msm_hdmi_power_on() ?
-
-Perhaps I missed a change but it's like that on next-20250521
-
->   
->   	msm_hdmi_set_mode(hdmi, true);
->   
-> @@ -328,7 +346,6 @@ static void msm_hdmi_bridge_atomic_post_disable(struct drm_bridge *bridge,
->   {
->   	struct hdmi_bridge *hdmi_bridge = to_hdmi_bridge(bridge);
->   	struct hdmi *hdmi = hdmi_bridge->hdmi;
-> -	struct hdmi_phy *phy = hdmi->phy;
->   
->   	if (hdmi->hdcp_ctrl)
->   		msm_hdmi_hdcp_off(hdmi->hdcp_ctrl);
-> @@ -339,14 +356,17 @@ static void msm_hdmi_bridge_atomic_post_disable(struct drm_bridge *bridge,
->   	mutex_lock(&hdmi->state_mutex);
->   	msm_hdmi_set_mode(hdmi, hdmi->hpd_enabled);
->   
-> -	msm_hdmi_phy_powerdown(phy);
-> +	if (hdmi->extp_clk)
-> +		clk_disable_unprepare(hdmi->extp_clk);
-> +
-> +	phy_power_off(hdmi->phy);
->   
->   	if (hdmi->power_on) {
->   		power_off(bridge);
->   		hdmi->power_on = false;
->   		if (hdmi->connector->display_info.is_hdmi)
->   			msm_hdmi_audio_update(hdmi);
-> -		msm_hdmi_phy_resource_disable(phy);
-> +		phy_exit(hdmi->phy);
->   	}
->   	mutex_unlock(&hdmi->state_mutex);
->   }
-<snip>
-
-Otherwise it looks fine even there's a lot to digest and hard to figure out
-the exact changes done to the PHY drivers.
-
-Neil
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBNYXkgMjIsIDIwMjUgYXQgMDM6NDk6MTJBTSArMDUzMCwgTml0aW4gUmF3YXQgd3Jv
+dGU6Cj4gCj4gCj4gT24gNS8yMS8yMDI1IDc6MTkgUE0sIE1hbml2YW5uYW4gU2FkaGFzaXZhbSB3
+cm90ZToKPiA+IE9uIFRodSwgTWF5IDE1LCAyMDI1IGF0IDA5OjU3OjE4UE0gKzA1MzAsIE5pdGlu
+IFJhd2F0IHdyb3RlOgo+ID4gPiBxbXBfdWZzX2V4aXQoKSBpcyBhIHdyYXBwZXIgZnVuY3Rpb24u
+IEl0IG9ubHkgY2FsbHMgcW1wX3Vmc19jb21fZXhpdCgpLgo+ID4gPiBSZW1vdmUgaXQgdG8gc2lt
+cGxpZnkgdGhlIHVmcyBwaHkgZHJpdmVyLgo+ID4gPiAKPiA+IAo+ID4gT2theSwgc28geW91IGFy
+ZSBkb2luZyBpdCBub3cuLi4KPiAKPiBZZXMKPiAKPiA+IAo+ID4gPiBBZGRpdG9uYWxseSBwYXJ0
+aWFsIElubGluZShkcm9wcGluZyB0aGUgcmVzZXQgYXNzZXJ0KSBxbXBfdWZzX2NvbV9leGl0Cj4g
+PiA+IGludG8gcW1wX3Vmc19wb3dlcl9vZmYgZnVuY3Rpb24gdG8gYXZvaWQgdW5uZWNlc3Nhcnkg
+ZnVuY3Rpb24gY2FsbC4KPiA+ID4gCj4gPiAKPiA+IFdoeSBhcmUgeW91IGRyb3BwaW5nIHRoZSBy
+ZXNldF9hc3NlcnQoKT8KPiAKPiBUaGlzIHdhcyBub3QgYWxpZ25pbmcgdG8gUGh5IHByb2dyYW1t
+aW5nIGd1aWRlIC4KPiAKCllvdSBzaG91bGQgbWVudGlvbiBpdCBpbiB0aGUgZGVzY3JpcHRpb24u
+Cgo+IAo+ID4gCj4gPiA+IFNpZ25lZC1vZmYtYnk6IE5pdGluIFJhd2F0IDxxdWljX25pdGlyYXdh
+QHF1aWNpbmMuY29tPgo+ID4gPiBSZXZpZXdlZC1ieTogRG1pdHJ5IEJhcnlzaGtvdiA8ZG1pdHJ5
+LmJhcnlzaGtvdkBvc3MucXVhbGNvbW0uY29tPgo+ID4gPiAtLS0KPiA+ID4gICBkcml2ZXJzL3Bo
+eS9xdWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMgfCAxOSArKysrKy0tLS0tLS0tLS0tLS0tCj4g
+PiA+ICAgMSBmaWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKSwgMTQgZGVsZXRpb25zKC0pCj4g
+PiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1w
+LXVmcy5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4gPiA+IGlu
+ZGV4IGE1OTc0YTFmYjViYi4uZmNhNDdlNWU4YmYwIDEwMDY0NAo+ID4gPiAtLS0gYS9kcml2ZXJz
+L3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdWZzLmMKPiA+ID4gKysrIGIvZHJpdmVycy9waHkv
+cXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4gPiA+IEBAIC0xNzU4LDE5ICsxNzU4LDYgQEAg
+c3RhdGljIHZvaWQgcW1wX3Vmc19pbml0X3JlZ2lzdGVycyhzdHJ1Y3QgcW1wX3VmcyAqcW1wLCBj
+b25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcKPiA+ID4gICAJCXFtcF91ZnNfaW5pdF9hbGwocW1wLCAm
+Y2ZnLT50YmxzX2hzX2IpOwo+ID4gPiAgIH0KPiA+ID4gLXN0YXRpYyBpbnQgcW1wX3Vmc19jb21f
+ZXhpdChzdHJ1Y3QgcW1wX3VmcyAqcW1wKQo+ID4gPiAtewo+ID4gPiAtCWNvbnN0IHN0cnVjdCBx
+bXBfcGh5X2NmZyAqY2ZnID0gcW1wLT5jZmc7Cj4gPiA+IC0KPiA+ID4gLQlyZXNldF9jb250cm9s
+X2Fzc2VydChxbXAtPnVmc19yZXNldCk7Cj4gPiA+IC0KPiA+ID4gLQljbGtfYnVsa19kaXNhYmxl
+X3VucHJlcGFyZShxbXAtPm51bV9jbGtzLCBxbXAtPmNsa3MpOwo+ID4gPiAtCj4gPiA+IC0JcmVn
+dWxhdG9yX2J1bGtfZGlzYWJsZShjZmctPm51bV92cmVncywgcW1wLT52cmVncyk7Cj4gPiA+IC0K
+PiA+ID4gLQlyZXR1cm4gMDsKPiA+ID4gLX0KPiA+ID4gLQo+ID4gPiAgIHN0YXRpYyBpbnQgcW1w
+X3Vmc19wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCj4gPiA+ICAgewo+ID4gPiAgIAlzdHJ1Y3Qg
+cW1wX3VmcyAqcW1wID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4gPiA+IEBAIC0xODUxLDcgKzE4
+MzgsMTEgQEAgc3RhdGljIGludCBxbXBfdWZzX3Bvd2VyX29mZihzdHJ1Y3QgcGh5ICpwaHkpCj4g
+PiA+ICAgCXFwaHlfY2xyYml0cyhxbXAtPnBjcywgY2ZnLT5yZWdzW1FQSFlfUENTX1BPV0VSX0RP
+V05fQ09OVFJPTF0sCj4gPiA+ICAgCQkJU1dfUFdSRE4pOwo+ID4gPiAtCXFtcF91ZnNfY29tX2V4
+aXQocW1wKTsKPiA+ID4gKwkvKiBUdXJuIG9mZiBhbGwgdGhlIHBoeSBjbG9ja3MgKi8KPiA+IAo+
+ID4gWW91IHNob3VsZCBkcm9wIHRoaXMgYW5kIGJlbG93IGNvbW1lbnQuIFRoZXkgYWRkIG5vIHZh
+bHVlLgo+IAo+IENvbW1lbnRzIGFyZSBhY3R1YWxseSBwcm92aWRlZCBmb3IgZWFjaCBvcGVyYXRp
+b24gd2l0aGluIHFtcF91ZnNfcG93ZXJfb2ZmCj4gd2hpY2ggYWN0dWFsbHkgZmFjaWxpdGF0ZSB1
+bmRlcnN0YW5kaW5nIG9mIGFsbCBhY3Rpb25zIHBlcmZvcm1lZCBieSB0aGUKPiBmdW5jdGlvbiB3
+aGljaCBtYXkgbm90IGJlIGZ1bGx5IGNsZWFyIGJ5IGNvZGUuIEhlbmNlCj4gSSB0aG91Z2h0IHRv
+IGtlZXAgdGhlIGNvbW1lbnRzLiBCdXQgSWYgeW91IGluc2lzdCBpJ2xsIHJlbW92ZS4KPiAKCkZv
+ciBjb21wbGV4IGNvZGUsIGNvbW1lbnQgc2hvdWxkIGJlIGFkZGVkIGluZGVlZC4gQnV0IGZvcgpj
+bGtfYnVsa19kaXNhYmxlX3VucHJlcGFyZSgpIGFuZCByZWd1bGF0b3JfYnVsa19kaXNhYmxlKCks
+IE5PLiBJdCBpcyBvYnZpb3VzCnRoYXQgdGhleSB0dXJuIG9mZiBjbG9jayBhbmQgcmVndWxhdG9y
+cy4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprg
+rr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LXBoeQo=
