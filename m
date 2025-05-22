@@ -4,106 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ACF0C54E90
-	for <linux-phy@archiver.kernel.org>; Wed, 21 May 2025 22:22:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAC45C54756
+	for <linux-phy@archiver.kernel.org>; Thu, 22 May 2025 07:05:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iglShXPnxsIJs0BDED59g73BXwjKOPFjGToIkYWF1NM=; b=Jm0870slKRXYIa
-	PTN8m9xggP2aP+Zmsq5B9uZ3XYBfYCxexWm5AKvOdjKFqLxgsWtXBMq96SJRBPh+ZUuutIlOEX+Lg
-	9RUX8OhlHZJOr/bU3U2AhCWciBXWN69ttaR12NaYNHXLLmDKT/mqydzYRSYXPKX08HskZ1zQjOY1F
-	GSOO0vg45nVuhry2BPRg5wMuKtLGBkSHUs9zS0M0luQMrzpFALBIuXPPbi9tc5VNBm+1H5v6B8ziD
-	+oIAd5WTr4J5FMkNTCg3ajp049A+orVJ4A8nfx/g3P5YA5ZoEMW+GGbGs9ZTa0Rhy1O4JPtR5/NXT
-	2lM7xu6y16OPa/IxkiBg==;
+	List-Owner; bh=xFAuR7LqqTQPb9O/r5QHBPB0MLJUtChz1TEY1UMWeYw=; b=mq7cDK7YvCLDmG
+	HK6x83rWyaJLOND9z4C/EZh8hm1iGTEYz6rQcAU10OoR50pjRqKhehGcjQoA3t4D1LwXWWzocWqq+
+	assyLfBy1UzkmtGBwZb0T/WpyhEBGCNZf8LnMdgsEm0bgJ93LZhsF0/yEoxQFtwlQDL+acycA+Ccj
+	hQNT4wOxJpzngbovFZTxIh6q5Kl9gG/oc8QTzD5PXdfY3odamiqDYfHoLTEenWvqSsm4MqEfGAvsV
+	AOwRvlnfoLh4hvEEVIV/2U4yCPzXpwddSHrOZ54oZTK5seXZQSeCJrrLnYNZXJbLYiEz5cOY8a1PU
+	q7gcdLkRZuwC92WmF4Rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHrp7-0000000GunW-3aBW;
-	Wed, 21 May 2025 22:22:05 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uHzzM-000000004f1-2Bfh;
+	Thu, 22 May 2025 07:05:12 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uHrp5-0000000Gun7-1Vtp
+	id 1uHzxx-000000004Vv-09zz
 	for linux-phy@lists.infradead.org;
-	Wed, 21 May 2025 22:22:04 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54LI2OtK031724;
-	Wed, 21 May 2025 22:21:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	POcXLIudDGVcz6rdm3O49J2/G55IJi0wf+rYtTutV1E=; b=RwmDeznQ4sPduLK/
-	SVwv1AJDFndXkGloLCmpMJ//VS1Mi95FqlFbRgPqKGCzB65QOu2XJ262fyCVlqZS
-	pseIZwpvFG24VIhEISQHaUecQqyEGwm0YPfcn32cujxgSna2RWZ38fIjaOiqZ4Fu
-	K7nbn8Lyk+YIYBwv1u1cbbtCMfB107QNiTW2CLNPbu99blYzcbQXTh4ZOpXVw/fZ
-	Rz190knd9B5sGVuy5V6/bUn/Mb6xBUeiOaNwOwMS+6Qx5NRqIV0ybRNHHsCThdOI
-	vPH1+oiwAhwjrwhPJy59H3I+UTIyaHe75GcV2eHP06gNyZkEsKv29Bvcj5DWS383
-	4zazCg==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46s8c22wb7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 May 2025 22:21:40 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54LMLdgh009813
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 21 May 2025 22:21:39 GMT
-Received: from [10.216.45.12] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 21 May
- 2025 15:21:33 -0700
-Message-ID: <e04f35f7-f4b3-4269-8524-b6aaeb1ace0c@quicinc.com>
-Date: Thu, 22 May 2025 03:51:29 +0530
+	Thu, 22 May 2025 07:03:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 67F9A44185;
+	Thu, 22 May 2025 07:03:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B36F8C4CEE4;
+	Thu, 22 May 2025 07:03:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747897424;
+	bh=O6hy5R2mjeBm5Vf7qI0qCm2aawLVKSqcX2UGvROau3E=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fZL/UWwA/7tkx6NstZdnvbhwIWCrU73q8YG0aG1/UrAqmcMMGFdf894Mlc35zIA5N
+	 9A3H8i5D17sWmSuQGEsbxcOToAu4VnQ+4UElCFbRAIiKZf/oWgyDfRiNF5kqWAA1Bp
+	 oOdPwsto9MwtR5h4u9fDcQheSwnZ3NoRahzeEOfba4ngyC8pJgZ6Br803HkimFxu0W
+	 ZSDM59lny5ynGEH99GghKoELpLnV34SmygdhxzcCT1P0TGzgZCohB+PRqFOrUnUWz0
+	 yctyVaW/Sqjovf0ryejXlkDcvlZ6Ph62sFnOMONasMB4zzaOs2Qne+5xNG8GEtTmae
+	 8Qt/RbKxCvJsw==
+Date: Thu, 22 May 2025 09:03:41 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, p.zabel@pengutronix.de, 
+	geert+renesas@glider.be, magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com, 
+	kees@kernel.org, gustavoars@kernel.org, biju.das.jz@bp.renesas.com, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-hardening@vger.kernel.org, john.madieu.xa@bp.renesas.com, 
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: Re: [PATCH v3 05/12] dt-bindings: phy: renesas,usb2-phy: Add
+ renesas,sysc-signals
+Message-ID: <20250522-evasive-unyielding-quoll-dbc9b2@kuoka>
+References: <20250521140943.3830195-1-claudiu.beznea.uj@bp.renesas.com>
+ <20250521140943.3830195-6-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V5 11/11] scsi: ufs: qcom: Prevent calling phy_exit before
- phy_init
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>,
-        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
-        <bvanassche@acm.org>, <andersson@kernel.org>,
-        <neil.armstrong@linaro.org>, <dmitry.baryshkov@oss.qualcomm.com>,
-        <konrad.dybcio@oss.qualcomm.com>, <quic_rdwivedi@quicinc.com>,
-        <quic_cang@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>
-References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
- <20250515162722.6933-12-quic_nitirawa@quicinc.com>
- <xxkv25y4m2lr6746fddzlxmgmgqazdqh2pjfzymuatkmrthsnw@6i52rpntjl34>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <xxkv25y4m2lr6746fddzlxmgmgqazdqh2pjfzymuatkmrthsnw@6i52rpntjl34>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTIxMDIyMiBTYWx0ZWRfX3QPt0jfG8roO
- 9QAgJ1YvYP0ggtHPeilULKSwzM1pZHmLkq2bZXhkfeL2elsv9MZB0d7jHpdNLXYCIb2D6JUNj6C
- w+NpWuAvRXO+sHviEC99kVydIqFvBVhbyIs0PuhKxEG90DWJEHFVisV10s297fRmkGXVaEINS34
- JyTonX4pAzBK18JjfzfZjxCfIzSJh1b91BsBlBNMUzth1Kk5qJQi0FwX0OqrfuLpymsarli+kYT
- N20yuFr0dlF+VEKnhPB+j+UrQ/sx7N8VBrpO6wxx7R4BDr+Mhy3WA6WY1C9051OB/K4jEyTEBFq
- GK79dYTkt11crIxUFwXAzcWADJSQQ0KwwpucooKTTyQCL28h9MaXtLTztITgr4M2M51KeKTEB4p
- 3d67NLsBrsNwkLYmsGfXyyYJfW6B0rbgnc1FLhPBYITFKKyjX4PigYn5RS8oiYWnQPhUWV6U
-X-Authority-Analysis: v=2.4 cv=RIuzH5i+ c=1 sm=1 tr=0 ts=682e51f4 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8
- a=EUspDBNiAAAA:8 a=mrhtVqWoyDjAaArD0-sA:9 a=QEXdDO2ut3YA:10
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: vn7evCruDhawtzabzytE2MzsdJMgj9DQ
-X-Proofpoint-GUID: vn7evCruDhawtzabzytE2MzsdJMgj9DQ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-21_07,2025-05-20_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 suspectscore=0 malwarescore=0 bulkscore=0
- mlxlogscore=999 spamscore=0 lowpriorityscore=0 mlxscore=0 priorityscore=1501
- adultscore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505210222
+Content-Disposition: inline
+In-Reply-To: <20250521140943.3830195-6-claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250521_152203_408676_B6B9E699 
-X-CRM114-Status: GOOD (  15.37  )
+X-CRM114-CacheID: sfid-20250522_000345_092915_9F901C3C 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,50 +74,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, May 21, 2025 at 05:09:36PM GMT, Claudiu wrote:
+>  .../bindings/phy/renesas,usb2-phy.yaml        | 22 +++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> index 12f8d5d8af55..e1e773cba847 100644
+> --- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> @@ -86,6 +86,16 @@ properties:
+>  
+>    dr_mode: true
+>  
+> +  renesas,sysc-signals:
+> +    description: System controller phandle, specifying the register
+> +      offset and bitmask associated with a specific system controller signal
+
+This is 100% redundant information. system controller specifying system
+controller signal.
+
+Drop.
 
 
-On 5/21/2025 7:35 PM, Manivannan Sadhasivam wrote:
-> On Thu, May 15, 2025 at 09:57:22PM +0530, Nitin Rawat wrote:
->> Prevent calling phy_exit before phy_init to avoid abnormal power
->> count and the following warning during boot up.
->>
->> [5.146763] phy phy-1d80000.phy.0: phy_power_on was called before phy_init
->>
->> Fixes: 7bac65687510 ("scsi: ufs: qcom: Power off the PHY if it was already powered on in ufs_qcom_power_up_sequence()")
->> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> 
-> You should move this fix to the start of the series so that it can be applied
-> separately if needed and also to be backported cleanly.
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    items:
+> +      - items:
+> +          - description: system controller phandle
 
-sure , will move
+What for? Explain the usage. How is ut used by this hardware.
 
-> 
->> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
->> ---
->>   drivers/ufs/host/ufs-qcom.c | 1 -
->>   1 file changed, 1 deletion(-)
->>
->> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
->> index 583db910efd4..bd7f65500db7 100644
->> --- a/drivers/ufs/host/ufs-qcom.c
->> +++ b/drivers/ufs/host/ufs-qcom.c
->> @@ -540,7 +540,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->>   
->>   	if (phy->power_count) {
->>   		ufs_qcom_phy_power_off(hba);
->> -		phy_exit(phy);
->>   	}
-> 
-> You don't need braces now.
-will remove.
-> 
-> - Mani
-> 
+> +          - description: register offset associated with a signal
+
+What signal? That's a phy.
+
+> +          - description: register bitmask associated with a signal
+> +
+>  if:
+>    properties:
+>      compatible:
+> @@ -117,6 +127,18 @@ allOf:
+>        required:
+>          - resets
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: renesas,usb2-phy-r9a08g045
+> +    then:
+> +      required:
+> +        - renesas,sysc-signals
+
+That's ABI break.
+
+Best regards,
+Krzysztof
 
 
 -- 
