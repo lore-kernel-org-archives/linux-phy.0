@@ -4,89 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6551C54FB3
-	for <linux-phy@archiver.kernel.org>; Sun, 25 May 2025 13:17:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE7A2C54E90
+	for <linux-phy@archiver.kernel.org>; Sun, 25 May 2025 13:31:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7iMJS/b39RZzSrI9PnH9RoAFkS8OY9rrzIM+/I/RBII=; b=rSBMJdGoxAatxE
-	frcKy2j6XteXpfcPJZcpo08JD/r8O1xcAHV6MCh+y8XlKu2zbGQTPw3um4tP+eoSgrCNGoZRR8/lZ
-	9soVLnShlyN37qOSKc/otT3E1MSvWh8MLp6xrRENLjutgoMbkg7TgfvhwWoA0yb43JzQqE1CjgsMD
-	OaYq68dYNO7rutWWUjPiVZV2HBBC9CtnPQ2yrGkNe30foTAc0AzfEeHQfygH6uVafymm2h2ODF3L2
-	dWJattBzyD7KA2N1PSYv8bpNkfyvfazCSPNU6fXUQfaxnMJjNMvW/cqSGQonA3aHnffN3omBdq7eI
-	LxKaloIW5Ihdbgv7LG7w==;
+	List-Owner; bh=XBXTLLjYvimZEFlHxmKDbP30CMStyrMmJtWIVLPiTNA=; b=kazrNq67PGZrpB
+	Nxxwwm6oBvpXqh0vPxqjrWCGY2hUZtsfB2ITOTxM6488pjsIzYkRodv5xW6LTozM7Mgm9LfqHV12J
+	/UmRtDLh2A4O225KWIVP7F98kuHgOISmAbVCJb6Upp0t8hOZ1VD+hacUlUqLvrFp7X5B1yES44/9A
+	0JAm6mugsnb+U/jQd4OAbWndIZjfvNBPxBgzp9SkAd2svDJSmGC3vVBczbaO5aX3xX1zmv3sH27cF
+	IIkkAivgUxBYUMiWwvHzwyEiFiHq37bv5FlLli7XuX6NeB3oKpEtDVzn24uJAsFhoQqLEk8+4L2fr
+	yZpcw3bengldWIYCLs2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJBEJ-000000076k5-2LaT;
-	Sun, 25 May 2025 13:17:31 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1uJBRT-000000077X8-1Q4Q;
+	Sun, 25 May 2025 13:31:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJBEH-000000076jF-1n7R
+	id 1uJBQ7-000000077Q6-0BAb
 	for linux-phy@lists.infradead.org;
-	Sun, 25 May 2025 13:17:30 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-ad1f6aa2f84so283631166b.0
-        for <linux-phy@lists.infradead.org>; Sun, 25 May 2025 06:17:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1748179047; x=1748783847; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=JncznSaz+/oGV5IjmubnRQRwE7XgtuBlaUti3hLAlQM=;
-        b=L5ct1nkssXwxv2ZVvYzRKKjhQyjMVs635yHu+57qhBvn/n8r5qL6QNLaNdcLqKsi98
-         kpMFjT6gRS7AWoh4ZRUc8NX31sEXvJCKkVcbSjNMWpdtTiPzIW+01UDVl64bHUskAmJn
-         gAZeFXQMj6DDRZ/A4JjEqxGACwVfp1uzpFXdrPpD5TLL7TLZ5HTC6aC+Po4uKfwxAutj
-         X9aWkm84KloDKEWeWu1GFC2Qe/Ho9Y16gvll6HdfYBXL8NGpQ51aL3wYzQfZ4P62V3gB
-         zxhX/Pk1NuLmHKQCvPdB7NMprE86skAM2lBrgC5j4huWiwYmkw324xjo0QIu9nVXUz6V
-         bg4Q==
+	Sun, 25 May 2025 13:29:44 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54PATT5D024347
+	for <linux-phy@lists.infradead.org>; Sun, 25 May 2025 13:29:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=U1yZVFeRJvNQcYSjRSwy1kqD
+	yL4Ip5Zqm7ZTvTLywdA=; b=Rw3myj1z2bpGxApIKajHhF0wjemUDquesZZY8Z7W
+	b3Ekq3g38UHOGy4fXVbGt5ddPeiyi4ssUFXil1PTsfpifM9YJZ3Lj7jxXmM+QZZ9
+	BViadp18fN+m0xsQ8BRzJ55W8XdbARHKOIBmzlwJ74J8nZsU4A0cPUwCb5na4KAI
+	SY1i8Tq5u2Uq3aHDRQAEbhA7HQ/S297Rh/O2mhIQkdIl6thh1ooDoSifZkK3S0XY
+	4gb1f726LKF3XHsRQIZDZlGfxrPhBmUmuYPie1OQOv5n0V9LjNf2XSVbR8wHMwrd
+	D4NBVzOl70LJzi8qFmFmFiiYV3ISfjOhgnFtwM4YNyNdDQ==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u5q1t0fx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sun, 25 May 2025 13:29:40 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6faa53cbc74so10627166d6.0
+        for <linux-phy@lists.infradead.org>; Sun, 25 May 2025 06:29:40 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748179047; x=1748783847;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=JncznSaz+/oGV5IjmubnRQRwE7XgtuBlaUti3hLAlQM=;
-        b=K2L2YCflX3cB44a3b/SYBMrm3SRtshW6eHP8bNQ4QIV2ePF/TUiTMCO6dqPmDaIcIZ
-         8eJBRVNR/Fv3zQKey2SWmHYa0gsccMCY9Tck9gt5wcb2Eznk1+tWvtaZL7hkCfLRlYiM
-         Jnus2OQOSJZdwmZ0OTozk0oJraeMkeGrTL3AHfeK7hUBUtoIp1+nVRltXVa9RwtgPSqh
-         sJCQEjNe8ZsMrnnMHHyfEP5JHct6fuwcnc/bJgFyThGWrzozcPzZ9bO2IhmZnFQgFkza
-         bT0TtHytq8w2w32AX4YzoMyaBJYlIjEfFBQ44Inx8We7/Qomk4huUqPBa5LmSO30jL8J
-         YhoA==
-X-Forwarded-Encrypted: i=1; AJvYcCXjt5d7SihbiSDOMAuW9jG1iPQYlT8akaaPgIS7i0aUGD92DMR3tb+jsF01DoWKmYRRlSwf1iUncxs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWUS2LHPwTjy2grRATKzHBLSb6l9b9Klg9asfZznqJfpofg9tn
-	jMBcQFkfZP37JrrrN5bEPahbBDBZeP4oGBa4B6OVuN5ELckTo7tTWspn
-X-Gm-Gg: ASbGncs9PvFsbrveFXaRZEXnMSAT6olOWBvxthaIalTBd65gUBMT+FX5mCJUlM7LwQW
-	dRf2UHnY1Po+fyoomF8uOLPPdY4549QR6LpIUkPmDYypYTjARkc2Acywz7QMifFTsVhF8Q/lbn3
-	PjboBF6iWObQNhriV50nZhj5r2msgwo04Zc3m/T8EuQmHCC3Qj+sro+KySBi1FOn84IYVsJi+a5
-	YnpVOOBJelAIbYU/1Cn7dV/qGcsKOrSKYGola3u03ooCa5gojHFUM9Sl494UtWOl82mAjdzqPHV
-	Fu/qr9FWw8sUwC9XGiypTb8pQjsZ8nbp/hB0aKSp/42oZjJKggQrZuHq0zvr5xX9qIvTo92xx6G
-	rXpoOemz1u8We+LlUHmULYipVic4xA0LsS3KX8Ja/
-X-Google-Smtp-Source: AGHT+IEPO3BUquyLdtb7MQDL7gYW1Bx9fzEBnimFTAkrCO8oSIr40b9FXRWi8LcR5YBrvb8fT6eF0g==
-X-Received: by 2002:a17:907:f509:b0:ad5:2e15:2a7b with SMTP id a640c23a62f3a-ad63f97fec8mr1095362966b.2.1748179046923;
-        Sun, 25 May 2025 06:17:26 -0700 (PDT)
-Received: from [192.168.1.105] (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad52d4381edsm1537643566b.105.2025.05.25.06.17.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 25 May 2025 06:17:26 -0700 (PDT)
-Message-ID: <73836711-95e3-49ec-b502-0638af8d6c3f@gmail.com>
-Date: Sun, 25 May 2025 16:17:25 +0300
+        d=1e100.net; s=20230601; t=1748179779; x=1748784579;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=U1yZVFeRJvNQcYSjRSwy1kqDyL4Ip5Zqm7ZTvTLywdA=;
+        b=FjXseJZs8P+Gjenaptqk+fd7fBGn/plWfKvoTt+N1QUyJjMjuF97GI4MxfPDqKmhK4
+         DVD6Yc2bdlWlH/P4FHs1OxLbuRsDru9K/fM6QVQs7HONGnvZTDP7+7/u2DlKwJIin6jZ
+         621umntYWaeZPMXsB3GN1QvMdjVkqbokStn3/YrDrO3ZyJpgy7Vw6RHnktreE7OJJRZU
+         vrOyzCRVrDXqSMtEwNnuml4j0VSf1gOMCGYSHf3kSTtfPNsYjO9jcgNNbVl+d1wrp9yc
+         BNQNxS4s7CNGKxuUZA4DPrRjF9+MOqATgPRjF/IJNtrHjmrm5EG7Bu+m3Q/E+KIwqsa4
+         yC6g==
+X-Forwarded-Encrypted: i=1; AJvYcCXPObx3QOiZjzntm0yI3370p7BeFdJUdZQ1Xpvtatg+8EVwOIk2nNO9NRdnEV9RFSZHhpBwscgU4jQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxqL+Sw9sIglHZ0W5BgVXVPmd3wEpqVknl1TE8DQalw762dXI5j
+	Dox0dFvNCVdQqJiCS94J5c5iz8l5MCujk5GGCiLCiDaWLT55dTC2fMqlTV2VCBTGBcpWX17m4ES
+	xMHkiuBMVvgXHIr0x294I8kSaBCvhAg3SvYi9t89nkAcQ+253xckzvttHQNHaziRFL8+M
+X-Gm-Gg: ASbGnctWVOvr81Il5okb013I/Z+nXUF21N9v1CBFSCoEzKWsqTQ2b8Z/UvP4ZPuCs/W
+	NZohQqWX2q4h8uRP/HEw/xifDpv+HuzjUomH5VCmLr2EU/GtEyUZ+3WH6VXjtG/4ByyFZKmcqqk
+	W34o+aqyDFomtuFJMkdvHbiBWHribhGS+tfTB9sjBuLZo78Vpp3iiE/FRXX3R2oFA5L4X2SLoLS
+	5xmQ0FkS+YgMLgOdnucQQ4cDXyMrj3FyPRVS/CIlNhyLNNf7EE+MOVK1didmMYMe0T5lLteyNTR
+	MSr9uMHVxMb9jf+urH+rcmdX6ImGKx0bHg2NkoXOT/bCR4ZMvjnEtOATwIV4Wg+ol/PlshGWCHo
+	=
+X-Received: by 2002:ad4:5b81:0:b0:6fa:9baa:facb with SMTP id 6a1803df08f44-6fa9d29d31dmr119711926d6.37.1748179779626;
+        Sun, 25 May 2025 06:29:39 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHkbpwaZtvgsmTH78n4o/WnBGy4bo/N4nIGiQ1UuOGCF+k5vRb0u19iuckAgsGqWbcLc4V0gw==
+X-Received: by 2002:ad4:5b81:0:b0:6fa:9baa:facb with SMTP id 6a1803df08f44-6fa9d29d31dmr119711316d6.37.1748179779115;
+        Sun, 25 May 2025 06:29:39 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-328084dd21esm43457671fa.63.2025.05.25.06.29.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 25 May 2025 06:29:38 -0700 (PDT)
+Date: Sun, 25 May 2025 16:29:36 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, krishna.chundru@oss.qualcomm.com,
+        quic_vbadigan@quicinc.com, quic_nayiluri@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
+        Mrinmay Sarkar <quic_msarkar@quicinc.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: qcom: sa8775p: Remove max link speed
+ property for PCIe EP
+Message-ID: <mcmpmaapzv3vbiynlrp6sijdjvj6a5j3dxzoixz6b4cxqsvbsl@ecljexn3zg2e>
+References: <20250525-update_phy-v3-0-5b315cd39993@quicinc.com>
+ <20250525-update_phy-v3-2-5b315cd39993@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/7] phy: phy-snps-eusb2: fix clock imbalance on
- phy_exit()
-Content-Language: en-US
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
- Abel Vesa <abel.vesa@linaro.org>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250523084839.11015-1-johan+linaro@kernel.org>
- <20250523084839.11015-2-johan+linaro@kernel.org>
-From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-In-Reply-To: <20250523084839.11015-2-johan+linaro@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20250525-update_phy-v3-2-5b315cd39993@quicinc.com>
+X-Proofpoint-GUID: kYK_8ndoqpb-QlIVQNk_3KdX3iV3rFW-
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI1MDEyNSBTYWx0ZWRfX34zrq0d8QMU/
+ tAucaASheNBQs/yzrI9y2CKJf3afgQhZyu+dAuoZ3jB+xtfxEifyweyrmiKD01FEdl3SZIBCqQr
+ yOFFN+MVXG1d/5fDIpPAYdVbbyiDOIqLqqI6jcbLjWuVufr1ePRSOMe4dlKtlLLx6rZ7Q9lHOC/
+ hi05E0uuBKVxXqIAKj+m+Lz0E5u2AUarqiQcH4tF+N0JDjrnmKsPvkoo6oMeu048KrbAhigUdDs
+ bm8W70OW4WO5UvlGQGGDkgeEvmTJgxa+IgqC3oFF8PkXx/gdMW3IVvBU0aMkTs3EyQK62OI8GQ7
+ c4twrWKPDbCpnXaqHNqy3MUvw9P/POnTmLJM666cek3LYQx0uHZLkmH3oELXrkHsjGjj9Xj4Fs2
+ WiWf8yHTuClAEPxP3GZCeqplnSyKyNDLUIr/H9P5H7Q8cshpOzthLCTDUexjUyOhoOQZsPur
+X-Proofpoint-ORIG-GUID: kYK_8ndoqpb-QlIVQNk_3KdX3iV3rFW-
+X-Authority-Analysis: v=2.4 cv=FLcbx/os c=1 sm=1 tr=0 ts=68331b44 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=wNxpgWlUGOnmd1Q9ojQA:9 a=CjuIK1q_8ugA:10
+ a=1HOtulTD9v-eNWfpl4qZ:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-25_05,2025-05-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 clxscore=1015 adultscore=0 lowpriorityscore=0 spamscore=0
+ impostorscore=0 phishscore=0 suspectscore=0 priorityscore=1501 malwarescore=0
+ mlxlogscore=999 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505250125
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250525_061729_472162_D0BA3CF7 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20250525_062943_198549_546D5B48 
+X-CRM114-Status: GOOD (  20.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,42 +138,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/23/25 11:48, Johan Hovold wrote:
-> Make sure to disable all clocks enabled at phy_init() also on
-> phy_exit().
->
-> Fixes: c4098f3e6134 ("phy: phy-snps-eusb2: add support for exynos2200")
-> Cc: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+On Sun, May 25, 2025 at 11:27:18AM +0530, Mrinmay Sarkar wrote:
+> From: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+> 
+> The maximum link speed was previously restricted to Gen3 due to the
+> absence of Gen4 equalization support in the driver.
+> 
+> Add change to remove max link speed property, Since Gen4 equalization
+> support has already been added into the driver.
+
+As Gen4 equalization is already supported by the XYZ driver remove the
+max-link-speed property.
+
+"Add change to remove" is a bit clumsy.
+
+> 
+> Signed-off-by: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
 > ---
->  drivers/phy/phy-snps-eusb2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-> index b73a1d7e57b3..19af3f99692c 100644
-> --- a/drivers/phy/phy-snps-eusb2.c
-> +++ b/drivers/phy/phy-snps-eusb2.c
-> @@ -504,7 +504,7 @@ static int snps_eusb2_hsphy_exit(struct phy *p)
->  {
->  	struct snps_eusb2_hsphy *phy = phy_get_drvdata(p);
+>  arch/arm64/boot/dts/qcom/sa8775p.dtsi | 2 --
+>  1 file changed, 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> index 5bd0c03476b143444543c68cd1c1d475c3302555..b001e9a30e863d8964219c8bd61bc328be71b256 100644
+> --- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+> @@ -6462,7 +6462,6 @@ pcie0_ep: pcie-ep@1c00000 {
+>  		power-domains = <&gcc PCIE_0_GDSC>;
+>  		phys = <&pcie0_phy>;
+>  		phy-names = "pciephy";
+> -		max-link-speed = <3>; /* FIXME: Limiting the Gen speed due to stability issues */
+>  		num-lanes = <2>;
+>  		linux,pci-domain = <0>;
 >  
-> -	clk_disable_unprepare(phy->ref_clk);
-> +	clk_bulk_disable_unprepare(phy->data->num_clks, phy->clks);
-
-This shouldn't affect functionality for Exynos 2200, as gates are not
-handled manually in the clocks driver.
-
-Anyways, this is good to have for other/future supported SoCs.
-
-Acked-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-
-Best regards,
-Ivaylo
-
+> @@ -6620,7 +6619,6 @@ pcie1_ep: pcie-ep@1c10000 {
+>  		power-domains = <&gcc PCIE_1_GDSC>;
+>  		phys = <&pcie1_phy>;
+>  		phy-names = "pciephy";
+> -		max-link-speed = <3>; /* FIXME: Limiting the Gen speed due to stability issues */
+>  		num-lanes = <4>;
+>  		linux,pci-domain = <1>;
 >  
->  	regulator_bulk_disable(ARRAY_SIZE(phy->vregs), phy->vregs);
->  
+> 
+> -- 
+> 2.25.1
+> 
 
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
