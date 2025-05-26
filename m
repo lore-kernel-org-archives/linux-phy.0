@@ -4,117 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0207C54FB3
-	for <linux-phy@archiver.kernel.org>; Mon, 26 May 2025 08:28:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FD45C5AD49
+	for <linux-phy@archiver.kernel.org>; Mon, 26 May 2025 11:01:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y2dbptkcewMPNEHBbvFNa24L4AX+SIyliDvVdEQfQZ4=; b=c/p9gIciHZIlxvFj99mCpH9d1Y
-	hevGQVhkmePaLdZI60dNOCul5rcnX2NY2YQYNrcFgDezUd2yD0JrnymrBRbbeYE0FEoGUH91gqBK4
-	W+glwGT5axfAyVdVD6B29sK2pfmByYkKOstEBfNIKQqA19qwnmo5o+zlCa20CtwII525rHpx4IIfO
-	1subKv06/NhGllWBPPI5aEK2dPKhtgznv8t8dBO38n7WYmdBWkAMV/S+hwqg8E8fE0tJQopgiY7cO
-	VYBDNcpn7eeUyrXJ6Gk7njSkmdD0cfVHoSMjCxJoQvZbuZL5wlB/IUVyJqNzu5cs6Mv0aAk6IfrpL
-	VVCXCbXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L9vTFrSJyHodtmBaQEdASIOHmRe265M8ajQrD2KCPJU=; b=0tVksPpMr6Fd2+
+	5MToo+ltdze2LyrHwoVjbZQcAm9j9JdKP1Yqvz/8dQmW02GL1lPYm3OOCfAUvKc3+n3E+FO06XSbz
+	q2dyk0aPL8fSxibekTymjfY0W416J6sLaTuYhVxnLQUshf6oeUq3h5wZY1hTHNvm5ACPes2rfjalR
+	Rq0yg5zLAD1bRC/qjpTDS4pxdcS3EGWyl+RMbdf9Qk6i/EobWkY7c8mIOEZLi8kyJKwI0/MEt0FoL
+	tiEbZUnpziqeTkSaFFNsP9rDbQzBPR6zUo+keoZ/MbXhkcbVXbbYysOT6pfXhjKBIracbD2X7OJh6
+	H9CyEevjZXA4lKz5gEzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJTBg-00000008OIj-1iwQ;
-	Mon, 26 May 2025 08:28:00 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1uJVaM-00000008fR4-2sZf;
+	Mon, 26 May 2025 11:01:38 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJTBd-00000008OHc-2f5a
+	id 1uJVYa-00000008fEY-2Pqd
 	for linux-phy@lists.infradead.org;
-	Mon, 26 May 2025 08:27:58 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-3a36748920cso2035534f8f.2
-        for <linux-phy@lists.infradead.org>; Mon, 26 May 2025 01:27:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1748248076; x=1748852876; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=5G6tpDiyouJsVacd8rEiVDib8LJf2JZCq2348YM5t4Y=;
-        b=ONr+0GRT/m7+D3m/Ob2dBs0AUddVNbUrI9y4XFj06PtuItIgIUyWN71Zk1W+6KAVqn
-         Ug1vVQ/CWflwPtsuPVT7YTqajJ45EjQ2K16R2cOtW55c9aPyynSDxzJVFKpscq9Ax+jZ
-         P1zrNTlj0m67GSO7jX4c1SLWxa2jk8jQ/HrWA5DJ1a/8vYIWxRsoyRKidku6BSHvF8yF
-         oUgzDOYLs/VGqMOSPMyeGO76dIwa0nyiURbNf1xBiuyC6jpx9cpdIImqEgelG38Q315V
-         StjeZiK/Evq/L8G7IjPUUvJjmgRPnciNWh+uxZoKScQ0/ZRLfMJuT/aqM/pZff0oxz7M
-         Ex8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748248076; x=1748852876;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=5G6tpDiyouJsVacd8rEiVDib8LJf2JZCq2348YM5t4Y=;
-        b=eVkrhdWlEY4q5RHe3gqLX1VffEuP0zpqvOvd6T/edxjKDUF/sYGU1paTDuubiW7J1X
-         D2weKFDwHoeGu6957xsErrXVZoFFDhsC+s/UgnO+vQQHJ7PjO3TKmWYanDP/U1J0e2wN
-         COkd8JUsuWscFhXuSGLU6IF4sl7N36EsTUPisvt8EG2P1mvpvKOxvOzN3a6VU1rvIv98
-         tbCo8FE3sal96dLtha9rHOX8XTmURLooLeqIxhZ6d7QzpEmSpilayzVAT+AB5Lrj3DuX
-         3d5z+BBmehw2A5XLnClB41dVnA1voy2bogI8Q4uwicwn9cCyMXFIHenLVMSlxydAgxPg
-         YsLQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXGh+wOKrdPcZuNlDsOJnHdkWVtsZHhF1MYpCcTRk1BoDFvCUk6A4KwHrtDzf6gR/giPv0fQpO7hAs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzzOuXWlSs9mii+djPd/id3DdsN51huc0qV2Ut5YzpVHJC1wJgn
-	pezeu/WR/1U/uotUWXsPY6u57K4s9KRGXo6NbrDfP8OJFg6oRuWDxlVgsyEA+onduTs=
-X-Gm-Gg: ASbGncv73WF9vDs/zOtLccsiuVUa7QoRcjZh1OsO9QNYtlOpZJ4Fw6AkCj/uUPz3V5g
-	gnlBJrMrbklw4pDB9o4gBr1rPGNGKihh/CMHGgZIvwfaXOxXM0ZTjfYIJAyi5jvxueRKLn7k+vg
-	8d29CgwTjP8O8kXVdVBNUoafSJzbTJwD1Msgh5yzHK4R7RvGrwXMb7/SM/KCl7doXfDxAvgNTDR
-	Myc200fhvVfHzMZjk4s2dmVxp7oZPpUn3MgyyNYlNhFZgUXj/N7cMS8zLST5qs47wK6OxzUsw1Q
-	lM4bU3EXNhM3oAlNECkMp9159UhKeX1APGQgFqYJNYqxpIfmuQ8AAhEcjBaNLFHhwyc+fH1RgvM
-	aWOWPV/s36Y+mt7QYw2ioiz5HCAiL
-X-Google-Smtp-Source: AGHT+IFywaZ7WQt9f4W28PM6YKq+YZunMKGH51H/mKJNCRL7k6NgtNSZnnr6EgePKY0RqirHPggd6w==
-X-Received: by 2002:a05:6000:18ad:b0:3a4:d994:be4b with SMTP id ffacd0b85a97d-3a4d994bfa2mr1808284f8f.1.1748248075922;
-        Mon, 26 May 2025 01:27:55 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:485c:38a6:3d01:f4a4? ([2a01:e0a:3d9:2080:485c:38a6:3d01:f4a4])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4c5360a13sm9086499f8f.96.2025.05.26.01.27.55
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 26 May 2025 01:27:55 -0700 (PDT)
-Message-ID: <178d1344-6c0e-4500-b26f-151e57ae9a34@linaro.org>
-Date: Mon, 26 May 2025 10:27:55 +0200
+	Mon, 26 May 2025 10:59:50 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B62C37E6;
+	Mon, 26 May 2025 12:59:19 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1748257160;
+	bh=q6yxCtpU2w4l/R1IAq7GPag2LRpxvPgx7OCuUMUxKOg=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=tTA+LL+dcMuDpSMYpExhHyXubdDU2SwjmunnBF5UMv4YLJot+0UFOOHjgnB3BxiMk
+	 2L0IYvmFU/PJP0PyD3FzJFq1MG0OvGBVJN14Lyawz05y3Fet2gxIQBWVjZvOCx+bIu
+	 2f9ms5HGZ721kcTlbf+VlQ4iGkhDJydUkKPfSnVM=
+Message-ID: <b94facde-7591-41de-bc6f-b26cb46e100a@ideasonboard.com>
+Date: Mon, 26 May 2025 13:59:42 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 6/7] phy: phy-snps-eusb2: drop unnecessary loop index
- declarations
-To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
- Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>,
- Abel Vesa <abel.vesa@linaro.org>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250523084839.11015-1-johan+linaro@kernel.org>
- <20250523084839.11015-7-johan+linaro@kernel.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250523084839.11015-7-johan+linaro@kernel.org>
+Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
+ O_CMN_READY polling
+To: Devarsh Thakkar <devarsht@ti.com>
+Cc: sakari.ailus@linux.intel.com, u.kleine-koenig@baylibre.com,
+ vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com,
+ r-donadkar@ti.com, vkoul@kernel.org, kishon@kernel.org, mripard@kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250502033451.2291330-1-devarsht@ti.com>
+ <20250502033451.2291330-2-devarsht@ti.com>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ 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
+In-Reply-To: <20250502033451.2291330-2-devarsht@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250526_012757_689249_1481BA28 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20250526_035948_802995_D50A0A9C 
+X-CRM114-Status: GOOD (  33.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,45 +110,272 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/05/2025 10:48, Johan Hovold wrote:
-> There is already a loop index variable declared at function scope so
-> drop the unnecessary overloaded loop declarations.
-> 
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-> ---
->   drivers/phy/phy-snps-eusb2.c | 4 ++--
->   1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-> index 328e67ebfe03..c67712bd8bba 100644
-> --- a/drivers/phy/phy-snps-eusb2.c
-> +++ b/drivers/phy/phy-snps-eusb2.c
-> @@ -552,7 +552,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
->   	if (!phy->clks)
->   		return -ENOMEM;
->   
-> -	for (int i = 0; i < phy->data->num_clks; ++i)
-> +	for (i = 0; i < phy->data->num_clks; ++i)
->   		phy->clks[i].id = phy->data->clk_names[i];
->   
->   	ret = devm_clk_bulk_get(dev, phy->data->num_clks, phy->clks);
-> @@ -561,7 +561,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
->   				     "failed to get phy clock(s)\n");
->   
->   	phy->ref_clk = NULL;
-> -	for (int i = 0; i < phy->data->num_clks; ++i) {
-> +	for (i = 0; i < phy->data->num_clks; ++i) {
->   		if (!strcmp(phy->clks[i].id, "ref")) {
->   			phy->ref_clk = phy->clks[i].clk;
->   			break;
+Hi,
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+On 02/05/2025 06:34, Devarsh Thakkar wrote:
+> PLL lockup and O_CMN_READY assertion can only happen after common state
+> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
+> polling them before the common state machine was enabled. To fix this :
+> 
+> - Add new function callbacks for polling on PLL lock and O_CMN_READY
+>   assertion.
+> - As state machine and clocks get enabled in power_on callback only, move
+>   the clock related programming part from configure callback to power_on
+>   callback and poll for the PLL lockup and O_CMN_READY assertion after
+>   state machine gets enabled.
+> - The configure callback only saves the PLL configuration received from the
+>   client driver which will be applied later on in power_on callback.
+> - Add checks to ensure configure is called before power_on and state
+>   machine is in disabled state before power_on callback is called.
+> - Disable state machine in power_off so that client driver can
+>   re-configure the PLL by following up a power_off, configure, power_on
+>   sequence.
+
+Is the DPHY & PLL documented in the TRM somewhere?
+
+I just find the sequence a bit odd. For example, you wait for the PLL to
+lock, and after that, you enable the PLL ref clock. Maybe I'm missing
+something here, but... that should not work.
+
+ Tomi
+
+> Cc: stable@vger.kernel.org
+> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
+> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
+> ---
+> V3:
+> - Move out clock programming logic to power_on as PLL polling and enable
+>   can happen only after SSM enable
+> - Disable state machine on power off
+> 
+> V2: 
+> - Return error code on polling timeout
+> - Moved out calibration logic to separate patch
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 109 +++++++++++++++++++++++++-------
+>  1 file changed, 85 insertions(+), 24 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index ed87a3970f83..a94109a63788 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
+>  	u8 pll_ipdiv;
+>  	u8 pll_opdiv;
+>  	u16 pll_fbdiv;
+> +	u64 hs_clk_rate;
+>  	unsigned int nlanes;
+>  };
+>  
+> @@ -99,6 +100,8 @@ struct cdns_dphy_ops {
+>  	void (*set_pll_cfg)(struct cdns_dphy *dphy,
+>  			    const struct cdns_dphy_cfg *cfg);
+>  	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
+> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
+> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
+>  };
+>  
+>  struct cdns_dphy {
+> @@ -108,6 +111,8 @@ struct cdns_dphy {
+>  	struct clk *pll_ref_clk;
+>  	const struct cdns_dphy_ops *ops;
+>  	struct phy *phy;
+> +	bool is_configured;
+> +	bool is_powered;
+>  };
+>  
+>  /* Order of bands is important since the index is the band number. */
+> @@ -191,6 +196,26 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  	return dphy->ops->get_wakeup_time_ns(dphy);
+>  }
+>  
+> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_pll_lock)
+> +		ret = dphy->ops->wait_for_pll_lock(dphy);
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	int ret = 0;
+> +
+> +	if (dphy->ops->wait_for_cmn_ready)
+> +		ret = dphy->ops->wait_for_cmn_ready(dphy);
+> +
+> +	return ret;
+> +}
+> +
+>  static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  {
+>  	/* Default wakeup time is 800 ns (in a simulated environment). */
+> @@ -232,7 +257,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>  static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>  					const struct cdns_dphy_cfg *cfg)
+>  {
+> -	u32 status;
+>  
+>  	/*
+>  	 * set the PWM and PLL Byteclk divider settings to recommended values
+> @@ -249,13 +273,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>  
+>  	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
+>  	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
+> -			   POLL_TIMEOUT_US);
+>  }
+>  
+>  static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+> @@ -263,6 +280,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+>  	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
+>  }
+>  
+> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
+> +}
+> +
+> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
+> +			       POLL_TIMEOUT_US);
+> +}
+> +
+>  /*
+>   * This is the reference implementation of DPHY hooks. Specific integration of
+>   * this IP may have to re-implement some of them depending on how they decided
+> @@ -278,6 +312,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
+>  	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
+>  	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
+>  	.set_psm_div = cdns_dphy_j721e_set_psm_div,
+> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
+> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
+>  };
+>  
+>  static int cdns_dphy_config_from_opts(struct phy *phy,
+> @@ -298,6 +334,7 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
+>  		return ret;
+>  
+>  	opts->wakeup = cdns_dphy_get_wakeup_time_ns(dphy) / 1000;
+> +	cfg->hs_clk_rate = opts->hs_clk_rate;
+>  
+>  	return 0;
+>  }
+> @@ -334,13 +371,23 @@ static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>  static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -	struct cdns_dphy_cfg cfg = { 0 };
+> -	int ret, band_ctrl;
+> -	unsigned int reg;
+> +	int ret = 0;
+>  
+> -	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
+> -	if (ret)
+> -		return ret;
+> +	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &dphy->cfg);
+> +	if (!ret)
+> +		dphy->is_configured = true;
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_power_on(struct phy *phy)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret = 0, band_ctrl;
+> +	u32 reg;
+> +
+> +	if (!dphy->is_configured || dphy->is_powered)
+> +		return -EINVAL;
+>  
+>  	/*
+>  	 * Configure the internal PSM clk divider so that the DPHY has a
+> @@ -363,9 +410,9 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  	 * Configure the DPHY PLL that will be used to generate the TX byte
+>  	 * clk.
+>  	 */
+> -	cdns_dphy_set_pll_cfg(dphy, &cfg);
+> +	cdns_dphy_set_pll_cfg(dphy, &dphy->cfg);
+>  
+> -	band_ctrl = cdns_dphy_tx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
+> +	band_ctrl = cdns_dphy_tx_get_band_ctrl(dphy->cfg.hs_clk_rate);
+>  	if (band_ctrl < 0)
+>  		return band_ctrl;
+>  
+> @@ -373,19 +420,26 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>  	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
+>  	writel(reg, dphy->regs + DPHY_BAND_CFG);
+>  
+> -	return 0;
+> -}
+> +	/* Start TX state machine. */
+> +	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+> +	       dphy->regs + DPHY_CMN_SSM);
+>  
+> -static int cdns_dphy_power_on(struct phy *phy)
+> -{
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	ret = cdns_dphy_wait_for_pll_lock(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "Failed to lock PLL with err %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = cdns_dphy_wait_for_cmn_ready(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "O_CMN_READY signal failed to assert with err %d\n", ret);
+> +		return ret;
+> +	}
+>  
+>  	clk_prepare_enable(dphy->psm_clk);
+>  	clk_prepare_enable(dphy->pll_ref_clk);
+>  
+> -	/* Start TX state machine. */
+> -	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+> -	       dphy->regs + DPHY_CMN_SSM);
+> +	dphy->is_powered = true;
+>  
+>  	return 0;
+>  }
+> @@ -393,10 +447,17 @@ static int cdns_dphy_power_on(struct phy *phy)
+>  static int cdns_dphy_power_off(struct phy *phy)
+>  {
+>  	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	u32 reg;
+>  
+>  	clk_disable_unprepare(dphy->pll_ref_clk);
+>  	clk_disable_unprepare(dphy->psm_clk);
+>  
+> +	/* Stop TX state machine. */
+> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
+> +	writel(reg & ~DPHY_CMN_SSM_EN, dphy->regs + DPHY_CMN_SSM);
+> +
+> +	dphy->is_powered = false;
+> +
+>  	return 0;
+>  }
+>  
+
 
 -- 
 linux-phy mailing list
