@@ -4,86 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24FD9C5AD49
-	for <linux-phy@archiver.kernel.org>; Mon, 26 May 2025 07:50:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6911BC54FB3
+	for <linux-phy@archiver.kernel.org>; Mon, 26 May 2025 08:27:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4PMmwU8Mi/79qY1cSCCRUWjBlJzpuM5mfYHsy+Yfu+Y=; b=jsE79O2DFhFebTJj42Tr+K6KSY
-	opR2naxz98Jt9bozkCSH5/T+fnKXJ4r8cZo56BD993zHDoMjOWoYm1pBV7dkHD1EYGaf27GS5BedW
-	Iq0OOfMZ+UX5afg4iMOgcAH6UOtqsBWyZZstU01BOHCyRdlc6/BT2pxKv7+tF+7+CJt+aKwzc3wvf
-	qmuNIkRyXTbGHgP3WfCrEVKm/XYcMIQba9lDfyiAjtbHRDg7DYUo16gWrlWDJGob/58HQbmRtjz2m
-	oGrzuDfRh5pnIxTT/G5uxNjz1vnk1MQafB76HdOaRvfW7azJfkGxGSeZPai9LXdWhn2G1rYMIDn99
-	bJ32WBpQ==;
+	bh=m+RZfW8dpsgCqOxXglhlT1Jo8SA6MRb7UGjWfoNH7E8=; b=WYcguzUhxzbeSvtsfxeuiKzJ/W
+	okInB1r4CA63g6fvJP6RPHyXFfgIKG4KRWHs5++QjSDQ3rDJW1Zs51B6cOFlJbrW5INmeDDcoTv1E
+	OcSSZ3CQvOssy4KF15rrXkDBetyeVdLhDUyccTj8C5TQW43JitBNOr37pfU6mdu1/c79nayxj1G9+
+	s9LmL7zo+9cK8Tcfq8smyTzYa6NdzgNuzrKjsn6r9sDkTSDr+Gy/ZhG2v6N16J8f/tXtlEbU4JQIL
+	aH+OWreDDxBOgtfATm/1sZU68uv0uRXlOHOsBVcnCYZ+AJjMxN2Ky1bEYqcKAoyZ47WvbJys7XWw5
+	MFk0EKtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJSb7-00000008Jp7-3nRQ;
-	Mon, 26 May 2025 07:50:13 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1uJTBZ-00000008OG3-0alt;
+	Mon, 26 May 2025 08:27:53 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJSb5-00000008Jod-2sbF
+	id 1uJTBW-00000008OFX-2Ggo
 	for linux-phy@lists.infradead.org;
-	Mon, 26 May 2025 07:50:12 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-3a3758b122cso1155114f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 26 May 2025 00:50:11 -0700 (PDT)
+	Mon, 26 May 2025 08:27:51 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-43edecbfb46so17981695e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 26 May 2025 01:27:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1748245810; x=1748850610; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1748248069; x=1748852869; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7s2TD6bDYSb15QeqSffpz33dcHGJGRttLHbdrFUHcio=;
-        b=er6iGo4PcaaanXRfwQH5m0uqC3iRC9GJ0lxL2MHwEj3R9zGmpJC6BXBDPTT8MFweWN
-         I7uZjFRE0SQzVjGPeC3O03iuWNX4z3wNM8JMIjDKCEKT+tCECONyv+p/C28FFQGy/1v7
-         93W1fzelq68SibwBI7e633d2a6m1n5QkoKUHrB33n0NcIHbGvzpQgw+jzVXrE/yBgDwr
-         IkWHxQAGInzJ/xqMh63kqAMMmOFil/CV/dJgSWoeBgwJ6RSYXnLFWYJN8N9UxlX10DDp
-         LoMyfjqk2JlxGNLwxOx0Y5dMCFLitoccoVNdkpfl99ytsbG+4kmjb/Div+nmnnwfz7XR
-         WfiQ==
+        bh=8TKtprFYJLtShjxUW1pvpLiLjpHD33B9E9u+DgjrELQ=;
+        b=Wnufq2B3RX+WiJbh7pFoiAfcy4k+p1rJu/XokkOt+BeipVwvWYnyaGo1hqL22zHP7H
+         YyqIME1bsV8Mevi+oBCy2Lz+SmcBkB9JLJvyhaujukItIdx1kAX4oQKyqYtkgS3qq3Jg
+         M/+Hz4KiIeGxwjGIAte5wWczOMV7nBejEUuPuHGVufYwgOcY5jRt9Ifukf1g4QUffVre
+         nsF1iwsAbcOn3Tq12qZ7GKPvb9SndjJZvbVhdxAmIsF7AJOhDuGha2XgFfR7R+dnp5yg
+         ZPGtDqgvGPWCG14ioh5KOco9RkTRfZ8BTY/6mpsWuvDyrrMln/byr3j8V8GRd1mjpOpq
+         OekQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748245810; x=1748850610;
+        d=1e100.net; s=20230601; t=1748248069; x=1748852869;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=7s2TD6bDYSb15QeqSffpz33dcHGJGRttLHbdrFUHcio=;
-        b=QrpakB+4A2DvJjzP4lSac7pUk0Idh3MvSMDc2yUZu0U/wa9m0fdK/A3hrwrg7aSydH
-         DQa0IF1eUCajHvJ5cP7OZaoB3KpN+PlFrHI5OhmdqsRwTMmf8ao9U/q9AIL6Dfm0R/oU
-         vMlndrLdHmyyFu0KA+wePw/ocCC88s7D++M5FTkcJmfhulHr/8Nb9ooIWbeYCu54E90O
-         i0SBZOWgPjPGZ8iClpOu/l3twXyspMzsItWBhmaKRXlNMNU4ABBX3KyevMjwRnRcD2oJ
-         pCFwyhwarGXB6I3+pARoDfLrEeGxSzlGC02iTi0YCuytef0W6+0l+QlTdrfWY5hS7Tw/
-         8VTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUTgQVSkr+clwgNe9Mjo5cHrJ8bRDfALnZc0EsWxQADcAuLE9fOj+2xCVz4bCX5n82BU9P9s27mu6E=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzZfuvlLJ2DgEndcURRJ4yRNb2uC0w0r31QizXvmcIy5rm+LTiB
-	uuwF1GxZ01/5iFJqQR19cG4u4DWOQwiT1lVohE5QTisFk7oKkeUwAzqHYr9m7Sf+VhI=
-X-Gm-Gg: ASbGncvU/o5lIC8Yfj5cFY6DHpUEZvGf1DySdKJSj6dV/by7GC09rxC1+2g50Zu/cVQ
-	pbiIDlPEttCsDt3ZxqFHsw7rSY4TRHYYeEnqjZrd3b8h4vrpZnbHP4wxT1qdHkBjrsmWXJowPTZ
-	kCSTBsB8oFjELyfyH5DZT6A656hw1KAWdEqC5t9ZPEHLKstBegwVxKVEnJmgrCY2GdB5YrAU7lo
-	Zkn+8Jdlcd79Tr983shD1rf5SIYR3lhnpcyOLR9iXECyZpX8GRQCJQ0JuDdBzDa2X1Ia9ocD/8q
-	w6Nc3Wwzw8Qn+HUe2oM2hBDfVpc6JhvGfvt7LGKGb89XiSJaJim7uiWg7q61o2ms2m3p81ebiyR
-	kDo7X61+WwkTOKfn5Hgkm7kee7CzYl21rwgFh/IE=
-X-Google-Smtp-Source: AGHT+IHVWT68ZiYLEJCf/N+WMc0R3baXtGAcc1HRtOWNhQ5KgUM9rath+/pJxLrpBJVB1YAClPqo2w==
-X-Received: by 2002:a05:6000:3111:b0:391:2f2f:818 with SMTP id ffacd0b85a97d-3a4cb445323mr6181832f8f.9.1748245810012;
-        Mon, 26 May 2025 00:50:10 -0700 (PDT)
+        bh=8TKtprFYJLtShjxUW1pvpLiLjpHD33B9E9u+DgjrELQ=;
+        b=Y4mqaVlgVuHmbmtl45aw+2Di6QhyDzFHrz/wQg3/HUFDmak87EzUub9Q/RzbKuXyOn
+         BMe0AhsNwbGoysKpfeu26gSbz4MH35GIJOoaTNlzMro0ne0vLm0RPAquSi4RbxmZ7ZEI
+         NizzWIL4n2a592F9us5WirxddrSdp+BnDULAyvsOwb+sl7aTnzxDua4dSUAeAxriMonm
+         WP2uro/MuYrUp7Hd7nyxOdRix/qOyOBB0AJltSSpKHgdq47LGmDyf5UV0IikLfva2CKP
+         aTpHFrxVFZiSSlBLdZ2cWhBpgOq+dnI6ruTfRrnkDzLutPYxViMew6McHXU79225Q1Xf
+         /9jw==
+X-Forwarded-Encrypted: i=1; AJvYcCVL5KdjDVnZrVm/X1uQHQoXsCw6X/fpafeRC48RilFbvJQ67qZynvKEZ0DthUGGxQ0j+7gWWi3pNj4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwSeekYK6eiuhAdxwA9LdpaIGH7y8OEsg0zbH77Fwwild81ZZIy
+	otT2XRnAJTw1x2KNYmvzH4Ezk2FsrxA4TAafm522IsM/4jzh9xUDniUpkAreAOSER28=
+X-Gm-Gg: ASbGncvvJilDV1ZaQbCeHlzQOSd1vjU0NsxKkuGGmbI7tZ+rEm944MKVD6hblCR7zWs
+	pI5xF7vAfu/mu4b9dSEyS/RMPyPHQq8McS2Tq/nQAlmwaSOQvitM0Acidj/1V/KsT3vYbDih8vg
+	0UGw5r7BeBy9dpfTBu533YgvoevY/9WycdvvheTepoOPOYRCBEMhHcLcL9k8A8vAXSJIW7XzRWW
+	Ob5gPpcxAKrIaGAwjRJrAeQmqg+3yTAiLTuMaZMv8m9KchiP0eoEPDp5DbHPIS6PjBIwrSF9NDO
+	ETCY+5Sx8pxZ0O3ilcKuSYaGQpCBFTv0D8H8DTSfj8S0mT9bU9JtGdbLbegB3icdO0N2Rryu4Pj
+	gq0fwEZF1XtpwxdhkO3K6vr9T3UnpkXjuKPd0OcE=
+X-Google-Smtp-Source: AGHT+IEkmo3uWY34WkdQOOYglx90247HrshVamLntEVSTknqg2H23bK4BdCNPIcYmijHtsv1CC3prw==
+X-Received: by 2002:a05:6000:2892:b0:3a4:cf76:b3b6 with SMTP id ffacd0b85a97d-3a4cf76b68dmr4961011f8f.13.1748248069083;
+        Mon, 26 May 2025 01:27:49 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:485c:38a6:3d01:f4a4? ([2a01:e0a:3d9:2080:485c:38a6:3d01:f4a4])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4ce458830sm6439665f8f.14.2025.05.26.00.50.09
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4cdde6415sm6620114f8f.60.2025.05.26.01.27.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 26 May 2025 00:50:09 -0700 (PDT)
-Message-ID: <00f6b550-d5e0-498e-82a1-68b0925efb02@linaro.org>
-Date: Mon, 26 May 2025 09:50:09 +0200
+        Mon, 26 May 2025 01:27:48 -0700 (PDT)
+Message-ID: <6de7286f-802a-4de2-9030-6937e85a5aee@linaro.org>
+Date: Mon, 26 May 2025 10:27:48 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 4/7] phy: phy-snps-eusb2: clean up error messages
+Subject: Re: [PATCH 5/7] phy: phy-snps-eusb2: fix optional phy lookup
+ parameter
 To: Johan Hovold <johan+linaro@kernel.org>, Vinod Koul <vkoul@kernel.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
  Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>,
  Abel Vesa <abel.vesa@linaro.org>, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org
 References: <20250523084839.11015-1-johan+linaro@kernel.org>
- <20250523084839.11015-5-johan+linaro@kernel.org>
+ <20250523084839.11015-6-johan+linaro@kernel.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -110,10 +111,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250523084839.11015-5-johan+linaro@kernel.org>
+In-Reply-To: <20250523084839.11015-6-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250526_005011_733357_D83B9FA3 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20250526_012750_583934_06F217A1 
+X-CRM114-Status: GOOD (  13.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,77 +133,30 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 23/05/2025 10:48, Johan Hovold wrote:
-> Clean up the error messages by using a consistent format with a colon
-> followed by a space and an errno (or unsupported frequency).
+> The devm_of_phy_optional_get() takes an optional name argument as its
+> third parameter and not an index like the recently replaced
+> devm_of_phy_get_by_index().
+> 
+> Replace 0 with an explicit NULL for consistency and readability.
 > 
 > Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 > ---
->   drivers/phy/phy-snps-eusb2.c | 14 +++++++-------
->   1 file changed, 7 insertions(+), 7 deletions(-)
+>   drivers/phy/phy-snps-eusb2.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-> index c8f14f8fb9ac..232c5e8a554f 100644
+> index 232c5e8a554f..328e67ebfe03 100644
 > --- a/drivers/phy/phy-snps-eusb2.c
 > +++ b/drivers/phy/phy-snps-eusb2.c
-> @@ -256,7 +256,7 @@ static int exynos_eusb2_ref_clk_init(struct snps_eusb2_hsphy *phy)
->   	}
+> @@ -581,7 +581,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
+>   		return dev_err_probe(dev, ret,
+>   				     "failed to get regulator supplies\n");
 >   
->   	if (!config) {
-> -		dev_err(&phy->phy->dev, "unsupported ref_clk_freq:%lu\n", ref_clk_freq);
-> +		dev_err(&phy->phy->dev, "unsupported ref_clk_freq: %lu\n", ref_clk_freq);
->   		return -EINVAL;
->   	}
->   
-> @@ -293,7 +293,7 @@ static int qcom_eusb2_ref_clk_init(struct snps_eusb2_hsphy *phy)
->   	}
->   
->   	if (!config) {
-> -		dev_err(&phy->phy->dev, "unsupported ref_clk_freq:%lu\n", ref_clk_freq);
-> +		dev_err(&phy->phy->dev, "unsupported ref_clk_freq: %lu\n", ref_clk_freq);
->   		return -EINVAL;
->   	}
->   
-> @@ -461,19 +461,19 @@ static int snps_eusb2_hsphy_init(struct phy *p)
->   
->   	ret = phy_init(phy->repeater);
->   	if (ret) {
-> -		dev_err(&p->dev, "repeater init failed. %d\n", ret);
-> +		dev_err(&p->dev, "repeater init failed: %d\n", ret);
->   		goto disable_vreg;
->   	}
->   
->   	ret = clk_bulk_prepare_enable(phy->data->num_clks, phy->clks);
->   	if (ret) {
-> -		dev_err(&p->dev, "failed to enable ref clock, %d\n", ret);
-> +		dev_err(&p->dev, "failed to enable ref clock: %d\n", ret);
->   		goto exit_repeater;
->   	}
->   
->   	ret = reset_control_assert(phy->phy_reset);
->   	if (ret) {
-> -		dev_err(&p->dev, "failed to assert phy_reset, %d\n", ret);
-> +		dev_err(&p->dev, "failed to assert phy_reset: %d\n", ret);
->   		goto disable_clks;
->   	}
->   
-> @@ -481,7 +481,7 @@ static int snps_eusb2_hsphy_init(struct phy *p)
->   
->   	ret = reset_control_deassert(phy->phy_reset);
->   	if (ret) {
-> -		dev_err(&p->dev, "failed to de-assert phy_reset, %d\n", ret);
-> +		dev_err(&p->dev, "failed to de-assert phy_reset: %d\n", ret);
->   		goto disable_clks;
->   	}
->   
-> @@ -588,7 +588,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
->   
->   	generic_phy = devm_phy_create(dev, NULL, &snps_eusb2_hsphy_ops);
->   	if (IS_ERR(generic_phy)) {
-> -		dev_err(dev, "failed to create phy %d\n", ret);
-> +		dev_err(dev, "failed to create phy: %d\n", ret);
->   		return PTR_ERR(generic_phy);
->   	}
->   
+> -	phy->repeater = devm_of_phy_optional_get(dev, np, 0);
+> +	phy->repeater = devm_of_phy_optional_get(dev, np, NULL);
+>   	if (IS_ERR(phy->repeater))
+>   		return dev_err_probe(dev, PTR_ERR(phy->repeater),
+>   				     "failed to get repeater\n");
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
