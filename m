@@ -4,71 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C9E8C5B542
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 20:40:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9A99C5B543
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 20:49:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B4XwqtMwjEKfylTBUpQ7Uum7aoXql0mt5nrA3KAx3AQ=; b=j0sHBWOZz738uM
-	IFYKUORXilX/bzQuox16ixFnZurgPpyMMeu5xKx6qq9U8l0r2cHwB+XDDeUUrTlNhigGrLDgZDAju
-	bfg7N15NPPSATM7oFqEPHUu4Dg+uMG1i2XrvOpLwlerKmAopCdsQ00hOza07YrH+t++vD+JrmxqGt
-	+LABqZOs38KjvxEqFHqZ7lVw8WQbSjUQqeMAO6FYH/ciPoWNi7f/2vmoJdTeVGbUQJAONFb403xsb
-	RvIFQpHU7L4pZCDu5cshi0t16ddGq0LIn1KlRY65zkynn7Po9FPKAfPlBQ2pil1BCZRmgTJdAaVty
-	dt7fC4ytPxLtLyDo8JnA==;
+	List-Owner; bh=CW85xAwHSsnzx1w92Is+HH6UlN2afM+ji7Z11h3oMLk=; b=JtiMyi0q/87m8u
+	tJn5lzycR2ZlID2JOwAyj7ltZuyGGjcMb2VbL0K43Jk6LSQgN0PqujZMm9f0YJ5M5OXjvuZWFtpSP
+	46Je4Hk9FDJGD63JGypBEBSmCYVhPyUw6nVUGi1AH15WkYPLfE9XT+wNku/I9SHjyB7QCx3eTVcwP
+	7lGYF5N0rSFRDk+xuz4KZTCB5EY89zedE9PxpDHshQGWTgn1UVHhmCpSOgrJNcbXSi18gBtuGL8S+
+	LClZ/aurx0jz8A2mxEsLxMP3N7mjJIVfKKayMkFQAYy5tiHWOLPpzELk1gf4AlgbVZN8z7ri/aYU2
+	qL6EAjBIMB9q9sh2qDuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK16Q-0000000BWeu-0QZh;
-	Tue, 27 May 2025 20:40:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uK1F5-0000000BXWM-0tuX;
+	Tue, 27 May 2025 20:49:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK16P-0000000BWej-0GW7
+	id 1uK1F3-0000000BXVi-1x98
 	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 20:40:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 80C7F614B3;
-	Tue, 27 May 2025 20:40:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86AB0C4CEEB;
-	Tue, 27 May 2025 20:40:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748378448;
-	bh=RVazM5ZtiGWCT+v8DRQoiisLlKYFeeVIeRZlRvqZqDg=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=fRO4fevTyyA62iyayKIH0sMFandXs774MO8JFXftoyD1qAkx3qkiAQ5CkCF7UVodP
-	 HXnMGvVWX6s+wp6cxUC2WN5dv8OeS9/cM/uJUGYa8CHRlLXq/rMo1poimtyXE8E/9n
-	 seA3vdvizNji73PlhEMwpXhOMlcmCVFm4i8vCd7TaQf3PzMNe3eRyQCeLU8R35YE6P
-	 rSmFcQvAkMrldRaqyJV1IoKiqY7qRxmjkWJW2ZiZ7kAMOxeAaid/Ju2J5BIeCB7afq
-	 Sb5ycg9Xnh1duZVd953E9aorKmFTMeyQmeGNknmDlVUbviqA1O1w3frCfrO0IkqT6j
-	 gBqIFzXhZMy1w==
-From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Tue, 27 May 2025 22:40:08 +0200
-Subject: [PATCH v3 6/6] arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set
- up 4-lane DP
+	Tue, 27 May 2025 20:49:46 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54RCPC94024736
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 20:49:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	l/O2p+x2xSIF9G83bk2qKzG3F5MRhPuwnk3uawbQiMA=; b=UsuwHtTT+19r7X8+
+	9xmaaZgI+E0BIU70xalEcDbNCLUWA3zODGfnv3/ro6F7QXVxsRWDTWwby1mIIJfB
+	W8z2bntkGEeR9PFuJqqDMH8dlrAKdVUw3qxjFFb7O3+F98T+bWjAh4Lo/WqA8gj5
+	Ymffg0F32lHihXoT7GeEg3BRyPZu3RX70+mdjrzLjgji3SKwywfI7V6RDMuUWHpP
+	mWhc8g6vUvxkgPjIMvMfEXVvLpnVcuQI2qNMFUHlKJAEHQgo+yn6w/111Xgrpv8S
+	ARkHdfBTbl8Y2ByIpLAcep8iN4/qLAK91a8pqvU4NgKeovig8qb5MvcwvKY7fvSV
+	N//IMg==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u6vjr7tr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 20:49:44 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7c54734292aso102843285a.2
+        for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 13:49:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748378983; x=1748983783;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=l/O2p+x2xSIF9G83bk2qKzG3F5MRhPuwnk3uawbQiMA=;
+        b=cWZJTPoH35kxt7XqVAK9+SNT+8Niqf1mVp9KyRPQn7bisuOPCYHdwfY7Te7JsvwjKS
+         eG0Y8qocMVG84tBBpGf/u09VjTU8AhZow+vGW5gJMj90QEMxocmjr8/aCgvo+Zkr8XHE
+         zUKHt0vuqxpEUhZ6UqC7DZdadMQ68jhpqvqp6HC0qeERqOFvX5FCdcjbRH5Qq4W/XcgK
+         f/c034yWjpM6Q2d77lOA5L9LLGos1PIsKfsCb9p954yJMLaSinM6uB34GYcTaJDmK826
+         3z8GuZIJyCrZ17k2YsT5nMlOkuFS2hfmkCYgZ/O4FXhWm4R26yzAe6f2uMIz/PeBm184
+         KLRQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWH8OJnhds2NNDiE2OFeIVyhr03AgvvDPJUZgWXkcW0vFWTqV9v6trclypbv0MNMa7qwVHr2JQqHvA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyCEnG8EAF3jIKgjF91xZeuIHa4FSd7x7E36e3S9UKriy0/BUth
+	ZrFGjFOMhR7xKkeubp0d6zxfFJdX8585lbEz1nx+zQ99hcz7gLPbauzb06WE2sLNKV1/5m3W0VC
+	UPIWbgal4p/nZ7PUXzsCpQ8Ba+iEWNfk4XYZKqhDo7ectn2b6Mp0cU83Z1zPncMHeJsse
+X-Gm-Gg: ASbGncuxvhRHomvCBH4H2SATR2S3hfu9mi21MXqqTraHm+nSLwDJKYqmbGeVgXJD+KC
+	h/Zn8jnwjrni9vX1ci+3iW/pKsHogykutwrFGRNFBtd8e+84yHerw+uHmBr20JBLnEIXpjiWYVP
+	YILwoV9wBmlX3gSh5izVMU01zuDmi7Un4Qp5mnkSFWvU0AxUq/vcW+4R/xTqVU+styINQEEOpXN
+	ix2+TcPDnnNAN1UVvKO9Eghal+xig/9b1g8zU3WAl3w8vzo6xTsuTrXFiiJoxWDZ63wMWKELvIv
+	WFDHlvnTvzIczN9U2TLqM+U78KVlGTB4dt1oGjoBMGU9hLnx97bGJTAevlid8DmH7A==
+X-Received: by 2002:a05:620a:28c9:b0:7c5:ba85:357e with SMTP id af79cd13be357-7ceecb95729mr796620185a.3.1748378983313;
+        Tue, 27 May 2025 13:49:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH+Ja5XuujBwuUP9ccKnyssxrFJe/lbLz9Lqf/caKcpdJ8XAsoYbJmo6SDfbvW/t6c1zMYunQ==
+X-Received: by 2002:a05:620a:28c9:b0:7c5:ba85:357e with SMTP id af79cd13be357-7ceecb95729mr796615885a.3.1748378982465;
+        Tue, 27 May 2025 13:49:42 -0700 (PDT)
+Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad89f2508b7sm8518366b.132.2025.05.27.13.49.39
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 May 2025 13:49:41 -0700 (PDT)
+Message-ID: <b4e1ea54-ff3c-408e-8716-f48001ec9113@oss.qualcomm.com>
+Date: Tue, 27 May 2025 22:49:38 +0200
 MIME-Version: 1.0
-Message-Id: <20250527-topic-4ln_dp_respin-v3-6-f9a0763ec289@oss.qualcomm.com>
-References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
-In-Reply-To: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Dmitry Baryshkov <lumag@kernel.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1748378414; l=1518;
- i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=dS87KXTh0HxELr2bjO6fgUYK0yoQHdoxs9VWcCRgRHM=;
- b=ijTqtJXk3zoLfEpe5EaAa8pNz/m3Ca2XRRwiXvfAsXRJeq978apZRm5fRDWdC2mcZ9mYuuUjl
- Rxo3GZA8wfgD8xmlSS5YGylOxzZcRLC78JdmkLgIB1uGNz1pLQyJG3p
-X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
- pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Xiangxu Yin <quic_xiangxuy@quicinc.com>
+Cc: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+ <quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Linus Walleij <linus.walleij@linaro.org>,
+        Bartosz Golaszewski
+ <brgl@bgdev.pl>, quic_lliu6@quicinc.com,
+        quic_fangez@quicinc.com, linux-arm-msm@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
+ <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
+ <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
+ <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
+X-Authority-Analysis: v=2.4 cv=UOXdHDfy c=1 sm=1 tr=0 ts=68362568 cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=OAqA0DyV7igbTOjjZJsA:9
+ a=QEXdDO2ut3YA:10 a=NFOGd7dJGGMPyQGDc5-O:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: QbOsvRYom8LQDPKT0azk136lq4x1nTAG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDE3NiBTYWx0ZWRfX1oCOPQiOPiQQ
+ nO4hkM0jOAHlaQK/QK/YBFJ27h83TTw1iPk5bu0qftEJaTORUdtRBH2PJmOEY9p30TzmGk8wQJS
+ tnSOFMq5IQKvnwbIPV4eqGMPaLfPh5gnCFMnsttZT3JcqQOP3rugQGEOwoa4Hq2+KuQXzJ9o5AA
+ xbcD3DLSi9kXKbAp5TTQDCQHzFlCm7dWDEe9loX3K8gScfm0hQ0fpFgSb7H6NhemjygGSSXVpgE
+ X9Ve6Nor3UjcRFZ325AoRWekDvKxk/trXbCB3p2QOebnOhwI9uJQ+FiN++eTNYtlomD/ZVjEfjU
+ c6jvHDatFTBLc9sJ8Y6gWCG3rMJjteaw55741rWsBnQembozvMF1UjUypTkXL2sRQU9QHDfclN+
+ O0xt9U8mQtXej4O80n5ARAFd5l/Q8mNSBp66nDf+qz17PvSCHyVaVf/N2X/RqtajTURV3C/7
+X-Proofpoint-GUID: QbOsvRYom8LQDPKT0azk136lq4x1nTAG
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-27_10,2025-05-27_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 phishscore=0 mlxscore=0 adultscore=0 priorityscore=1501
+ mlxlogscore=999 bulkscore=0 malwarescore=0 impostorscore=0 spamscore=0
+ suspectscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505160000 definitions=main-2505270176
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250527_134945_534238_502C675D 
+X-CRM114-Status: GOOD (  14.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,61 +153,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Neil Armstrong <neil.armstrong@linaro.org>
+On 12/3/24 3:07 PM, Dmitry Baryshkov wrote:
+> On Tue, Dec 03, 2024 at 04:13:22PM +0800, Xiangxu Yin wrote:
+>>
+>>
+>> On 11/29/2024 9:53 PM, Dmitry Baryshkov wrote:
+>>> On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
+>>>>
+>>>> Add a mechanism to retry Link Training 2 by lowering the pattern level
+>>>> when the link training #2 first attempt fails. This approach enhances
+>>>> compatibility, particularly addressing issues caused by certain hub
+>>>> configurations.
+>>>
+>>> Please reference corresponding part of the standard, describing this lowering.
+>>>
+>> Per DisplayPort 1.4a specification Section 3.5.1.2 and Table 3-10, while the standard doesn't explicitly define a TPS downgrade mechanism, it does specify:
+> 
+> Anything in DP 2.1?
+> 
+>> - All devices shall support TPS1 and TPS2
+>> - HDR2-capable devices shall support TPS3
+>> - HDR3-capable devices shall support TPS4
+>> While these capabilities are explicitly defined DPCD for sink devices, source device capabilities are less strictly defined, with the minimum requirement being support for TPS1 and TPS2.
+>> In QCS615 DP phy is only supporting to HBR2, we observed a critical interoperability scenario with a DP->HDMI bridge. When link training at TPS4 consistently failed, downgrading to the next lower training pattern successfully established the link and display output successfully.
+> 
+> Any other driver doing such TPS lowering? Or maybe we should be
+> selecting TPS3 for HBR2-only devices?
 
-Allow up to 4 lanes for the DisplayPort link from the PHYs to the
-controllers and allow mode-switch events to reach the QMP Combo PHYs.
+Bump, this patch looks interesting and I'd like to see it revisited if
+it's correct
 
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-[konrad: reword]
-Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
----
- arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
-index ae7a275fd2236a2c71808b003fbcb66687e6e45e..336704e2a806e74c98a8dd483d8da0311df95389 100644
---- a/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
-+++ b/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
-@@ -726,7 +726,7 @@ &mdss0_dp0 {
- };
- 
- &mdss0_dp0_out {
--	data-lanes = <0 1>;
-+	data-lanes = <0 1 2 3>;
- 	remote-endpoint = <&usb_0_qmpphy_dp_in>;
- };
- 
-@@ -735,7 +735,7 @@ &mdss0_dp1 {
- };
- 
- &mdss0_dp1_out {
--	data-lanes = <0 1>;
-+	data-lanes = <0 1 2 3>;
- 	remote-endpoint = <&usb_1_qmpphy_dp_in>;
- };
- 
-@@ -1358,6 +1358,7 @@ &usb_0_qmpphy {
- 	vdda-phy-supply = <&vreg_l9d>;
- 	vdda-pll-supply = <&vreg_l4d>;
- 
-+	mode-switch;
- 	orientation-switch;
- 
- 	status = "okay";
-@@ -1395,6 +1396,7 @@ &usb_1_qmpphy {
- 	vdda-phy-supply = <&vreg_l4b>;
- 	vdda-pll-supply = <&vreg_l3b>;
- 
-+	mode-switch;
- 	orientation-switch;
- 
- 	status = "okay";
-
--- 
-2.49.0
-
+Konrad
 
 -- 
 linux-phy mailing list
