@@ -4,109 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C9A2C5AD49
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 07:29:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27616C54ED1
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 09:13:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyQ6F2S+i/Mrx9KszjhEdM8Tds9Cg3kKgXQJN8QZzvo=; b=a3NXn6k4P70LlF
-	v24Nom61dysxURT1IxExNGNyyI3bwATdxGFjWpb9YfHjsPb14di+RLrwliPYiRftSujm6PxK46alv
-	fgdXXD6MuzIgzX43ZO13hTixMxTO9AEfZG+WoHQ/Bh9xqwqfvFRpn6UTNCJ6rmyORFUGVfO5OwkKy
-	7HNSGstt7wc60FCQ5ZMOKNDZIcEtTnNsmPWOJ0OYNVc8y7gU9JO5lEipUjws2SX+B+ou/q08+MyvG
-	pEOSJH1O8w+rgRDTE7H0ADEmlKc8cpp/1qhPdW6xX1DITqvgp+llqJVPEqRyqPui67DUeFEJiXdaF
-	v026nqJOZGMaZDgkOILQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	MIME-Version:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe
+	:List-Id:In-Reply-To:References:To:From:Cc:Subject:Message-Id:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=OFvmSIxGh5+bBnRxWFxsdK2psxKLDF1Y/904kAYYQs0=; b=KuMYQt1/qGGyKEmt1rtUUiD3na
+	yItzBsoKsFB0OPjNKW/Bd5uHxcmL6a3pee21FKpWZPw33OUApwFywp6yfnJkY3KqCtTAJrJFRmdG2
+	pCD6IO3Q8UWAp3wWqVs+E3IxcTuvL8urk+t9ZDUfr+nYQe05B5bq1USAFUsegvQGHdUlX0zfCzzoT
+	92/RtC9aT1tceHDfjyzMV+wNeVoy9vZ5LJNa/jugFHc1kZZBF1MtssikuT70DUNv/cYJcDTJ6ydpd
+	cYWkiCjuYDT252zXbnE9JNOgdoQXMhqmkE+qjFC2VxlMKwsAraowabkOMbJIVVsTy+TCPmISzU5OY
+	drNiQBnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJokL-0000000A9kO-0j9P;
-	Tue, 27 May 2025 07:29:13 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uJqNB-0000000ALtd-3IJH;
+	Tue, 27 May 2025 09:13:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJocH-0000000A91e-1mdl
+	id 1uJqN3-0000000ALrV-0exw
 	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 07:20:54 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54QJLlDL024094;
-	Tue, 27 May 2025 07:20:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=Ko96WMYCjhf
-	nkHlSLv3qudWFvcVqQt11yvW1BUhMEyg=; b=N2y3YyBOR7pA3z8cJ7kpgwh9k+6
-	T13z6PGvYkGCkjwr+bLgrzH0jcCldtnqRPw6p0CRm8pf9/oI52SryIRCKxBwLm8J
-	lnBi9ZnWDQeSZXvNshmDKGQS2oVyg9TA7rtflqwd3JLIDtpeLIZMmAULPzZ15R7c
-	fqTGxy7LzdGqEh9vrD3oXI5URPvAD9hdJd5NC9FOrWf0Kdu8Bmb0bPed+Nq/F2wz
-	aOeOJMhZSmfkcB96jyngWGjyH07q2pfJO9GeKsz+LTjbl1FIdtq5mHnxF1+iGwuI
-	xZyC0l3J7ByD3ePMxSbQJBoEcU7WSsmnBqWojhyrj6cbAqdXtTjJLr1LEQQ==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u5ejx066-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 May 2025 07:20:44 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 54R7HYCi006548;
-	Tue, 27 May 2025 07:20:41 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 46u76kypeg-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 May 2025 07:20:41 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 54R7KfA9009571;
-	Tue, 27 May 2025 07:20:41 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 54R7KeZD009562
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 May 2025 07:20:41 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 6C97E34FE; Tue, 27 May 2025 15:20:39 +0800 (CST)
-From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-To: lpieralisi@kernel.org, kwilczynski@kernel.org,
-        manivannan.sadhasivam@linaro.org, robh@kernel.org, bhelgaas@google.com,
-        krzk+dt@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com, conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-        andersson@kernel.org, konradybcio@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, quic_qianyu@quicinc.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: [PATCH v5 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Update pcie phy bindings for QCS615
-Date: Tue, 27 May 2025 15:20:33 +0800
-Message-Id: <20250527072036.3599076-2-quic_ziyuzhan@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250527072036.3599076-1-quic_ziyuzhan@quicinc.com>
-References: <20250527072036.3599076-1-quic_ziyuzhan@quicinc.com>
-MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=GIgIEvNK c=1 sm=1 tr=0 ts=683567cd cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=oxzBFytuHnZbSq-PjLoA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: DAmQUjb8nCjNDyv7E_d6MHmk3jdmS8Ow
-X-Proofpoint-GUID: DAmQUjb8nCjNDyv7E_d6MHmk3jdmS8Ow
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDA1OCBTYWx0ZWRfX2Vw67/31L07S
- O/jisUkQK7HjrS27fKcF4Xkq0M/ygjVbCGCmym6uFxD045OQtC0c7cI4rLylhp2rMwtbKF4B5Vp
- SgCCMK7WSMcK6AHIET3hohYFvmyWukm36/5lT6cm3Z2ld/ZLN53IQWUp4IF51VcpHQDysYCPxja
- zMBGMq3giKKikyhi1H0MI9HCHOSaKv8zwsR0OfupbSLencp8gImH6372gNr21RbWLkH2kTgJDQR
- uUV9rgVaAJi+1PNE1E3fcAB/b5kRmPg+J0ZmJBrmoR1CGdNkUq00WPFCDOMk1WUyPB+nGdBFW7f
- 1eWtovFn5fJabFQRUfcDNwPdpWWlKaU+nxIqVStxHMoKR/krZ+eJRu8CfxsvJYbM9CGN2ku+Ghk
- Jd/qOnm/2DczePZVd+mnCg0tzzLOJaquMk/kyLW293rYfXCpwefNYQutLgtbvIO/pw5wknUb
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-27_03,2025-05-26_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 bulkscore=0 clxscore=1011 lowpriorityscore=0
- adultscore=0 priorityscore=1501 mlxscore=0 phishscore=0 spamscore=0
- suspectscore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505270058
+	Tue, 27 May 2025 09:13:18 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8251E44933;
+	Tue, 27 May 2025 09:13:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D57D0C4CEE9;
+	Tue, 27 May 2025 09:13:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1748337194;
+	bh=abqTtzvfpLe4Uvpk0Uo+xvVDO1TjWy7S8bPep2221yI=;
+	h=Date:Subject:Cc:From:To:References:In-Reply-To:From;
+	b=An211V9p+frR/eitZ0CS/a3bhryu27yCVxgoxqFZOMVdI+puDpHTgtF+tgbMdym2k
+	 wDCTba8AVi3lMO6VAjQSR2IAxRNkA1D91n70xH0jN0HmMF1zb/jhPX+9NSWGvb257U
+	 WzCQGf5LnVh8S/7mRil2hNWUvvn23FfvsziEVRaKQmUTu2KECrMtbhRTYTsZRrNPuf
+	 ZELfY/taBN0VymPO3naAloITWSmVsfra3n2tMFRkXnyb04Xyh0dfmG6PdNYvRiq0rr
+	 zVIu19znIxggPgLXvw2iO/wOa6efANsThym1CMhQ+r0IFU6BeTvlpA1oruOBJmx9iI
+	 CkcWC9vNi/aYA==
+Date: Tue, 27 May 2025 11:13:10 +0200
+Message-Id: <DA6TT575Z82D.3MPK8HG5GRL8U@kernel.org>
+Subject: Re: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
+ capabilities
+Cc: <dri-devel@lists.freedesktop.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, "Francesco Dolcini"
+ <francesco@dolcini.it>, "Aradhya Bhatia" <aradhya.bhatia@linux.dev>,
+ "Devarsh Thakkar" <devarsht@ti.com>
+From: "Michael Walle" <mwalle@kernel.org>
+To: "Tomi Valkeinen" <tomi.valkeinen@ideasonboard.com>, "Jyri Sarha"
+ <jyri.sarha@iki.fi>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
+ <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Vinod Koul"
+ <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Andrzej
+ Hajda" <andrzej.hajda@intel.com>, "Neil Armstrong"
+ <neil.armstrong@linaro.org>, "Robert Foss" <rfoss@kernel.org>, "Laurent
+ Pinchart" <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman"
+ <jonas@kwiboo.se>, "Jernej Skrabec" <jernej.skrabec@gmail.com>
+X-Mailer: aerc 0.16.0
+References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
+ <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
+In-Reply-To: <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_002053_581425_0FD6E443 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250527_021317_240069_42906D86 
+X-CRM114-Status: GOOD (  21.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,45 +79,170 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3482308045028287488=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QCS615 pcie phy only use 5 clocks, which are aux, cfg_ahb, ref,
-ref_gen, pipe. So move "qcom,qcs615-qmp-gen3x1-pcie-phy" compatible
-from 6 clocks' list to 5 clocks' list.
+--===============3482308045028287488==
+Content-Type: multipart/signed;
+ boundary=9fcfc53e0fcd83cc188fa2e200cd3fe58dd86edaab762b63b2b775e59452;
+ micalg=pgp-sha384; protocol="application/pgp-signature"
 
-Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
----
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+--9fcfc53e0fcd83cc188fa2e200cd3fe58dd86edaab762b63b2b775e59452
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 2c6c9296e4c0..a1ae8c7988c8 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -145,6 +145,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,qcs615-qmp-gen3x1-pcie-phy
-               - qcom,sar2130p-qmp-gen3x2-pcie-phy
-               - qcom,sc8180x-qmp-pcie-phy
-               - qcom,sdm845-qhp-pcie-phy
-@@ -175,7 +176,6 @@ allOf:
-         compatible:
-           contains:
-             enum:
--              - qcom,qcs615-qmp-gen3x1-pcie-phy
-               - qcom,sc8280xp-qmp-gen3x1-pcie-phy
-               - qcom,sc8280xp-qmp-gen3x2-pcie-phy
-               - qcom,sc8280xp-qmp-gen3x4-pcie-phy
--- 
-2.34.1
+Hi Tomi,
 
+While testing Aardhya's OLDI support patches [1], I've noticed that
+the resulting LVDS clock is wrong if this patch is applied.
+
+> In practice, with the current K3 SoCs, the display PLL is capable of
+> producing very exact clocks, so most likely the rounded rate is the same
+> as the original one.
+
+This is now what I'm seeing. Most SoCs have that fixed clock thingy
+for (some?) VPs, e.g. [2]. And clk_round_rate() will return the
+fixed clock rate for this clock, which will then result in an LVDS
+clock which is way off.
+
+I'm testing on an AM67A (J722S) and I've backported some of the
+patches as well as dtsi fragmets from downstream. Thus, it might be
+as well the case that the fixed-factor-clock node is wrong here.
+OTOH other K3 SoCs do this in mainline as well.
+
+>
+> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+> ---
+>  drivers/gpu/drm/tidss/tidss_crtc.c  | 23 +++++++++++++++++++----
+>  drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
+>  drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
+>  3 files changed, 27 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/t=
+idss_crtc.c
+> index 1604eca265ef..6c3967f70510 100644
+> --- a/drivers/gpu/drm/tidss/tidss_crtc.c
+> +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
+> @@ -91,7 +91,7 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crt=
+c,
+>  	struct dispc_device *dispc =3D tidss->dispc;
+>  	struct tidss_crtc *tcrtc =3D to_tidss_crtc(crtc);
+>  	u32 hw_videoport =3D tcrtc->hw_videoport;
+> -	const struct drm_display_mode *mode;
+> +	struct drm_display_mode *adjusted_mode;
+>  	enum drm_mode_status ok;
+> =20
+>  	dev_dbg(ddev->dev, "%s\n", __func__);
+> @@ -99,12 +99,27 @@ static int tidss_crtc_atomic_check(struct drm_crtc *c=
+rtc,
+>  	if (!crtc_state->enable)
+>  		return 0;
+> =20
+> -	mode =3D &crtc_state->adjusted_mode;
+> +	adjusted_mode =3D &crtc_state->adjusted_mode;
+
+Here, adjusted_mode->clock is still the correct pixel clock.
+
+> -	ok =3D dispc_vp_mode_valid(dispc, hw_videoport, mode);
+> +	if (drm_atomic_crtc_needs_modeset(crtc_state)) {
+> +		long rate;
+> +
+> +		rate =3D dispc_vp_round_clk_rate(tidss->dispc,
+> +					       tcrtc->hw_videoport,
+> +					       adjusted_mode->clock * 1000);
+> +		if (rate < 0)
+> +			return -EINVAL;
+> +
+> +		adjusted_mode->clock =3D rate / 1000;
+
+While after this statement, adjusted_mode->clock is 300MHz in my
+case (the VP1 clock seems to be 2.1GHz, divided by 7).
+
+-michael
+
+[1] https://lore.kernel.org/all/20250525151721.567042-1-aradhya.bhatia@linu=
+x.dev/
+[2] https://elixir.bootlin.com/linux/v6.15/source/arch/arm64/boot/dts/ti/k3=
+-am62.dtsi#L110
+
+> +
+> +		drm_mode_set_crtcinfo(adjusted_mode, 0);
+> +	}
+> +
+> +	ok =3D dispc_vp_mode_valid(dispc, hw_videoport, adjusted_mode);
+>  	if (ok !=3D MODE_OK) {
+>  		dev_dbg(ddev->dev, "%s: bad mode: %ux%u pclk %u kHz\n",
+> -			__func__, mode->hdisplay, mode->vdisplay, mode->clock);
+> +			__func__, adjusted_mode->hdisplay,
+> +			adjusted_mode->vdisplay, adjusted_mode->clock); >  		return -EINVAL;
+>  	}
+> =20
+> diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/=
+tidss_dispc.c
+> index a5107f2732b1..3930fb7f03c2 100644
+> --- a/drivers/gpu/drm/tidss/tidss_dispc.c
+> +++ b/drivers/gpu/drm/tidss/tidss_dispc.c
+> @@ -1318,6 +1318,12 @@ unsigned int dispc_pclk_diff(unsigned long rate, u=
+nsigned long real_rate)
+>  	return (unsigned int)(abs(((rr - r) * 100) / r));
+>  }
+> =20
+> +long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videopor=
+t,
+> +			     unsigned long rate)
+> +{
+> +	return clk_round_rate(dispc->vp_clk[hw_videoport], rate);
+> +}
+> +
+>  int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
+>  			  unsigned long rate)
+>  {
+> diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/=
+tidss_dispc.h
+> index c31b477a18b0..d4c335e918fb 100644
+> --- a/drivers/gpu/drm/tidss/tidss_dispc.h
+> +++ b/drivers/gpu/drm/tidss/tidss_dispc.h
+> @@ -120,6 +120,8 @@ enum drm_mode_status dispc_vp_mode_valid(struct dispc=
+_device *dispc,
+>  					 const struct drm_display_mode *mode);
+>  int dispc_vp_enable_clk(struct dispc_device *dispc, u32 hw_videoport);
+>  void dispc_vp_disable_clk(struct dispc_device *dispc, u32 hw_videoport);
+> +long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videopor=
+t,
+> +			     unsigned long rate);
+>  int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
+>  			  unsigned long rate);
+>  void dispc_vp_setup(struct dispc_device *dispc, u32 hw_videoport,
+
+
+--9fcfc53e0fcd83cc188fa2e200cd3fe58dd86edaab762b63b2b775e59452
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iKgEABMJADAWIQTIVZIcOo5wfU/AngkSJzzuPgIf+AUCaDWCJhIcbXdhbGxlQGtl
+cm5lbC5vcmcACgkQEic87j4CH/gUWAF/XnIRUuokTBhnPlsAEUUt79SPR3vV/Tvp
+5gWuHNuznd1PdThlB+vlGbAEGJp2uXDzAX0dbUeWPMM4k153g6b5Nw5QugAsnNj/
+ZqMhzPu9jIcshLO+1PnQRNDMcluYdGOnDxg=
+=qew6
+-----END PGP SIGNATURE-----
+
+--9fcfc53e0fcd83cc188fa2e200cd3fe58dd86edaab762b63b2b775e59452--
+
+
+--===============3482308045028287488==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3482308045028287488==--
+
