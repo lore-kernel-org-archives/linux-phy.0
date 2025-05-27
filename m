@@ -4,139 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9A99C5B543
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 20:49:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9752EC5B542
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 21:03:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CW85xAwHSsnzx1w92Is+HH6UlN2afM+ji7Z11h3oMLk=; b=JtiMyi0q/87m8u
-	tJn5lzycR2ZlID2JOwAyj7ltZuyGGjcMb2VbL0K43Jk6LSQgN0PqujZMm9f0YJ5M5OXjvuZWFtpSP
-	46Je4Hk9FDJGD63JGypBEBSmCYVhPyUw6nVUGi1AH15WkYPLfE9XT+wNku/I9SHjyB7QCx3eTVcwP
-	7lGYF5N0rSFRDk+xuz4KZTCB5EY89zedE9PxpDHshQGWTgn1UVHhmCpSOgrJNcbXSi18gBtuGL8S+
-	LClZ/aurx0jz8A2mxEsLxMP3N7mjJIVfKKayMkFQAYy5tiHWOLPpzELk1gf4AlgbVZN8z7ri/aYU2
-	qL6EAjBIMB9q9sh2qDuA==;
+	List-Owner; bh=tN2A1VbLGjSGf23fl6OdeKDHSnwzX8BpkybPaCjDGTo=; b=qK/R8PxEQhbTDu
+	6QzkBz8kDAdVZfbRUBTAKhHqwVNw2SN+2KNoCWYAqilv8sjtPBUQUjXFiFrHQUcr0shpLa0ud2BUX
+	YpdrytAuBj13hCueRYTGnVNE3gKnsKMy4Dh0QsfK65FAiPs2A5S27iB7+AfaUTCls/c1zMe3WZeCp
+	5giKOL7zpP5YUMNp9ocj1RP5584gbylFCSlmU1GJVulMtwpfNrnIJOGnaRvNBECnDtqV0i3vmPM7Q
+	aSeUFTwY1RF5hU20Vie0zFxh/wEdnER6UojvgP64MZTD1fc7U6L1bPldIm3zKLxoSj/tFeZd95z8+
+	utCW0188XCrGTm8AOrog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK1F5-0000000BXWM-0tuX;
-	Tue, 27 May 2025 20:49:47 +0000
+	id 1uK1SN-0000000BYcD-1Cyf;
+	Tue, 27 May 2025 21:03:31 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK1F3-0000000BXVi-1x98
+	id 1uK1SH-0000000BYau-3PqE
 	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 20:49:46 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54RCPC94024736
-	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 20:49:44 GMT
+	Tue, 27 May 2025 21:03:29 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54RHGGUw002206
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 21:03:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	l/O2p+x2xSIF9G83bk2qKzG3F5MRhPuwnk3uawbQiMA=; b=UsuwHtTT+19r7X8+
-	9xmaaZgI+E0BIU70xalEcDbNCLUWA3zODGfnv3/ro6F7QXVxsRWDTWwby1mIIJfB
-	W8z2bntkGEeR9PFuJqqDMH8dlrAKdVUw3qxjFFb7O3+F98T+bWjAh4Lo/WqA8gj5
-	Ymffg0F32lHihXoT7GeEg3BRyPZu3RX70+mdjrzLjgji3SKwywfI7V6RDMuUWHpP
-	mWhc8g6vUvxkgPjIMvMfEXVvLpnVcuQI2qNMFUHlKJAEHQgo+yn6w/111Xgrpv8S
-	ARkHdfBTbl8Y2ByIpLAcep8iN4/qLAK91a8pqvU4NgKeovig8qb5MvcwvKY7fvSV
-	N//IMg==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u6vjr7tr-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=VsOv4br7fd1T6CcMRlB4v7ct
+	hk2voXgCn0Av/3vO9Do=; b=PjMu0JTkWX93JZ3HTHCBYQzd1vRiwiscYkhKM6OA
+	vbA2zi8u+QIa9/JxmrbghIdXjk0X5tHm/K01LCekhYvfFKgBPseU7ikZxCmwr/uo
+	vTZX+IpPgzJ1/RvuDxkgfcDhgzDeL4J0vCzx9R0FQND8N06wlemN2Gz45A2g8SgQ
+	Yosbj58Yqfbp2tRuYzwPxFukE9dl95FCkN6jjCDnN13XnLMYgBEtTKuiXu1nS4I9
+	GzXsnzNpL0x+DEHs0k3jROXjl30nydYi8z0X/YK1QUwQAj9oPjBjMuG3e8ELFeS0
+	APPgu/EBZlgqQ3BNLAS/+2GE5fvG9lsM30neuc1DaqsTpw==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46wavksya9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 20:49:44 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7c54734292aso102843285a.2
-        for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 13:49:44 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 21:03:25 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7c5d608e6f5so940981185a.0
+        for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 14:03:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748378983; x=1748983783;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=l/O2p+x2xSIF9G83bk2qKzG3F5MRhPuwnk3uawbQiMA=;
-        b=cWZJTPoH35kxt7XqVAK9+SNT+8Niqf1mVp9KyRPQn7bisuOPCYHdwfY7Te7JsvwjKS
-         eG0Y8qocMVG84tBBpGf/u09VjTU8AhZow+vGW5gJMj90QEMxocmjr8/aCgvo+Zkr8XHE
-         zUKHt0vuqxpEUhZ6UqC7DZdadMQ68jhpqvqp6HC0qeERqOFvX5FCdcjbRH5Qq4W/XcgK
-         f/c034yWjpM6Q2d77lOA5L9LLGos1PIsKfsCb9p954yJMLaSinM6uB34GYcTaJDmK826
-         3z8GuZIJyCrZ17k2YsT5nMlOkuFS2hfmkCYgZ/O4FXhWm4R26yzAe6f2uMIz/PeBm184
-         KLRQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWH8OJnhds2NNDiE2OFeIVyhr03AgvvDPJUZgWXkcW0vFWTqV9v6trclypbv0MNMa7qwVHr2JQqHvA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyCEnG8EAF3jIKgjF91xZeuIHa4FSd7x7E36e3S9UKriy0/BUth
-	ZrFGjFOMhR7xKkeubp0d6zxfFJdX8585lbEz1nx+zQ99hcz7gLPbauzb06WE2sLNKV1/5m3W0VC
-	UPIWbgal4p/nZ7PUXzsCpQ8Ba+iEWNfk4XYZKqhDo7ectn2b6Mp0cU83Z1zPncMHeJsse
-X-Gm-Gg: ASbGncuxvhRHomvCBH4H2SATR2S3hfu9mi21MXqqTraHm+nSLwDJKYqmbGeVgXJD+KC
-	h/Zn8jnwjrni9vX1ci+3iW/pKsHogykutwrFGRNFBtd8e+84yHerw+uHmBr20JBLnEIXpjiWYVP
-	YILwoV9wBmlX3gSh5izVMU01zuDmi7Un4Qp5mnkSFWvU0AxUq/vcW+4R/xTqVU+styINQEEOpXN
-	ix2+TcPDnnNAN1UVvKO9Eghal+xig/9b1g8zU3WAl3w8vzo6xTsuTrXFiiJoxWDZ63wMWKELvIv
-	WFDHlvnTvzIczN9U2TLqM+U78KVlGTB4dt1oGjoBMGU9hLnx97bGJTAevlid8DmH7A==
-X-Received: by 2002:a05:620a:28c9:b0:7c5:ba85:357e with SMTP id af79cd13be357-7ceecb95729mr796620185a.3.1748378983313;
-        Tue, 27 May 2025 13:49:43 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH+Ja5XuujBwuUP9ccKnyssxrFJe/lbLz9Lqf/caKcpdJ8XAsoYbJmo6SDfbvW/t6c1zMYunQ==
-X-Received: by 2002:a05:620a:28c9:b0:7c5:ba85:357e with SMTP id af79cd13be357-7ceecb95729mr796615885a.3.1748378982465;
-        Tue, 27 May 2025 13:49:42 -0700 (PDT)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad89f2508b7sm8518366b.132.2025.05.27.13.49.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 27 May 2025 13:49:41 -0700 (PDT)
-Message-ID: <b4e1ea54-ff3c-408e-8716-f48001ec9113@oss.qualcomm.com>
-Date: Tue, 27 May 2025 22:49:38 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Xiangxu Yin <quic_xiangxuy@quicinc.com>
-Cc: Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar
- <quic_abhinavk@quicinc.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        d=1e100.net; s=20230601; t=1748379804; x=1748984604;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=VsOv4br7fd1T6CcMRlB4v7cthk2voXgCn0Av/3vO9Do=;
+        b=GMhqItcB5L7UV1fplgKeSDlJRMZjf2GI1GbG6G6dPRoEipCPecF8dHqWNxZ27W3Anz
+         GLIQdbMJkkDTr1OcXUk7tXLwRUyBj4V4DXQLsV2gmb0BZhaIYSbf8JiQqyojM6dKE+wR
+         bk7rl7yF2zm1rJzl3MH2UBdUWh71evHrYVHyjsS0rcqUYw1ydtVcarxO72MGSZPGD9TT
+         S80GYhPSNLxmjNWyl7QcrGIZUToK4zGbCIkeiVuheaMCdJSxLk13UkhEhZ+YS0juuaaZ
+         rabpHlZsdOfXKLg6pXcxbL8W14ZZoMyy3FeUSGZAAy2/9vW3RJC9sYGEYWOVNW7W2lDr
+         VsWw==
+X-Forwarded-Encrypted: i=1; AJvYcCXZ0bB8hvL0YnGORIu9kue4cHwzfhduL02EW2F4Zr4c/CzrZywj6R1zB52PV3aKpfZsyebA4E0WAyE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwYEISPKPoN9QsPBFcIruCd4nE8klJ4PtSJgPYxWLuD9itUJO28
+	5tf3opWqI1IS4GVbjpGkq5dVjitnR89wOOqEDB+bG8Yjxz2u1CjEXrINsiYlEpGxZyvdNKOMSCe
+	dywPZFlzn4ekDBewMOhqSCOwp37kXrHP/EmlextAc8wQMIMOVj59AF2WchGaUReoj/jIk
+X-Gm-Gg: ASbGncvQwGvrUWxA8focETajEWvnV1DQpu83qJulRP8ACZqPVvWuBTlnrx7fBaJrbH8
+	imAVc1HRNzyU8nKLcRCJtNDbIxIba0omdMWvHOUGWxwRRWc2OEN4JyjVWadUzzSf7SlXfjUh9js
+	vFy3l7whx4YjUIxoW9SW0/6sfWfPUstKNLwzefQx4DAzfT8dY4dEWvdGu+zwRYcg4U5noJwboL2
+	QQYvmibSOYeXe2e1OTnAhC2WBtOMC3Ts1dY+8AMKzssBX9Hra8+31g3dIGumdAi+dLmd9CiF8aI
+	6AS77GauBolDUNz1wS5fthUo6ciTHUKyfiUMGRfuA/Gy0fVnsvwkTiw7L9mCqj51a/glmrCsxCA
+	=
+X-Received: by 2002:a05:620a:1794:b0:7c7:bac6:8b7f with SMTP id af79cd13be357-7ceecc2d5cemr1965854185a.45.1748379803802;
+        Tue, 27 May 2025 14:03:23 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHey2F+1GmRJLbhJPjMP4o/YRYtrCtiGE60Hp1Q7gbuk7nE2RxX+76V8r4hyZF/SGD9E8GdQw==
+X-Received: by 2002:a05:620a:1794:b0:7c7:bac6:8b7f with SMTP id af79cd13be357-7ceecc2d5cemr1965849185a.45.1748379803410;
+        Tue, 27 May 2025 14:03:23 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5532ee738f9sm25865e87.237.2025.05.27.14.03.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 27 May 2025 14:03:21 -0700 (PDT)
+Date: Wed, 28 May 2025 00:03:18 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
         Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
-        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Linus Walleij <linus.walleij@linaro.org>,
-        Bartosz Golaszewski
- <brgl@bgdev.pl>, quic_lliu6@quicinc.com,
-        quic_fangez@quicinc.com, linux-arm-msm@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        Bjorn Andersson <andersson@kernel.org>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
- <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
- <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
- <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
-X-Authority-Analysis: v=2.4 cv=UOXdHDfy c=1 sm=1 tr=0 ts=68362568 cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=OAqA0DyV7igbTOjjZJsA:9
- a=QEXdDO2ut3YA:10 a=NFOGd7dJGGMPyQGDc5-O:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: QbOsvRYom8LQDPKT0azk136lq4x1nTAG
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDE3NiBTYWx0ZWRfX1oCOPQiOPiQQ
- nO4hkM0jOAHlaQK/QK/YBFJ27h83TTw1iPk5bu0qftEJaTORUdtRBH2PJmOEY9p30TzmGk8wQJS
- tnSOFMq5IQKvnwbIPV4eqGMPaLfPh5gnCFMnsttZT3JcqQOP3rugQGEOwoa4Hq2+KuQXzJ9o5AA
- xbcD3DLSi9kXKbAp5TTQDCQHzFlCm7dWDEe9loX3K8gScfm0hQ0fpFgSb7H6NhemjygGSSXVpgE
- X9Ve6Nor3UjcRFZ325AoRWekDvKxk/trXbCB3p2QOebnOhwI9uJQ+FiN++eTNYtlomD/ZVjEfjU
- c6jvHDatFTBLc9sJ8Y6gWCG3rMJjteaw55741rWsBnQembozvMF1UjUypTkXL2sRQU9QHDfclN+
- O0xt9U8mQtXej4O80n5ARAFd5l/Q8mNSBp66nDf+qz17PvSCHyVaVf/N2X/RqtajTURV3C/7
-X-Proofpoint-GUID: QbOsvRYom8LQDPKT0azk136lq4x1nTAG
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v3 2/6] phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
+Message-ID: <syuv7z7llocqzqsg7k4chd2lejnjsv3fzgif5eumxkp3bdtrrw@vheqjejlyxgi>
+References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
+ <20250527-topic-4ln_dp_respin-v3-2-f9a0763ec289@oss.qualcomm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250527-topic-4ln_dp_respin-v3-2-f9a0763ec289@oss.qualcomm.com>
+X-Proofpoint-GUID: 2hz28IsP7ukpLzUBnmwOVi3aQl67Q8fF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDE3NyBTYWx0ZWRfXzJirRAQJ2rfm
+ YIFmr6fTyfPtsN65QQOsbJ27bX5OLqljAzyrX1VtrpVdoaXxaXZ5a/YRNlYvYpos5y6L19Bss/c
+ YeymEBGQBs+YoptCczdYaorx9P8p5CXmeczzbbLoc1FUTOhm6RgYGsRzqa1KLPwA1V68b/jEay5
+ MLd5mUKaghQNbxRKoFgavrSp3zCny6ajdB/jlQSIMURZa1PF3vI0DFuCU2dt835JWLSHB0rnUZe
+ uCG8BBkqAtP0eqhP+Apk7zLZVP9WIdtp9Daz8KQRmBMcJ1wk3SBAbUb/KM2Zj42wtE8y+4Fsn6p
+ wiCgmjQ6jyBxC6VG5aGiuFmNDZ4sRLbK+6BNUZjjA1xrcbirXgArkH9UL+Ts0kJMxCHFldLQvjR
+ D6C4NJ1/MXIQ1HMJ0HE7BlZ37/jferbOzHrny6UnicD4rCNN/wGbwlhSmdpwEkWnS+EJeSLf
+X-Authority-Analysis: v=2.4 cv=fMk53Yae c=1 sm=1 tr=0 ts=6836289d cx=c_pps
+ a=HLyN3IcIa5EE8TELMZ618Q==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=i4r9q8SyThEWzBBqjdIA:9 a=CjuIK1q_8ugA:10
+ a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-ORIG-GUID: 2hz28IsP7ukpLzUBnmwOVi3aQl67Q8fF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-27_10,2025-05-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 mlxscore=0 adultscore=0 priorityscore=1501
- mlxlogscore=999 bulkscore=0 malwarescore=0 impostorscore=0 spamscore=0
- suspectscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505270176
+ malwarescore=0 adultscore=0 impostorscore=0 phishscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 clxscore=1015 mlxscore=0
+ mlxlogscore=999 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505270177
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_134945_534238_502C675D 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20250527_140325_865898_A99A5D38 
+X-CRM114-Status: GOOD (  15.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,37 +136,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/3/24 3:07 PM, Dmitry Baryshkov wrote:
-> On Tue, Dec 03, 2024 at 04:13:22PM +0800, Xiangxu Yin wrote:
->>
->>
->> On 11/29/2024 9:53 PM, Dmitry Baryshkov wrote:
->>> On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
->>>>
->>>> Add a mechanism to retry Link Training 2 by lowering the pattern level
->>>> when the link training #2 first attempt fails. This approach enhances
->>>> compatibility, particularly addressing issues caused by certain hub
->>>> configurations.
->>>
->>> Please reference corresponding part of the standard, describing this lowering.
->>>
->> Per DisplayPort 1.4a specification Section 3.5.1.2 and Table 3-10, while the standard doesn't explicitly define a TPS downgrade mechanism, it does specify:
+On Tue, May 27, 2025 at 10:40:04PM +0200, Konrad Dybcio wrote:
+> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > 
-> Anything in DP 2.1?
+> There are a numbers of ""modes"" involved: USB mode, Type-C mode (with
+> its altmodes), phy_mode and QMP_PHY mode (DP/combo/USB/off).
 > 
->> - All devices shall support TPS1 and TPS2
->> - HDR2-capable devices shall support TPS3
->> - HDR3-capable devices shall support TPS4
->> While these capabilities are explicitly defined DPCD for sink devices, source device capabilities are less strictly defined, with the minimum requirement being support for TPS1 and TPS2.
->> In QCS615 DP phy is only supporting to HBR2, we observed a critical interoperability scenario with a DP->HDMI bridge. When link training at TPS4 consistently failed, downgrading to the next lower training pattern successfully established the link and display output successfully.
+> Rename the generic sounding 'mode' to 'phy_mode' to hopefully make
+> the code easier to follow.
 > 
-> Any other driver doing such TPS lowering? Or maybe we should be
-> selecting TPS3 for HBR2-only devices?
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 12 ++++++------
+>  1 file changed, 6 insertions(+), 6 deletions(-)
+> 
 
-Bump, this patch looks interesting and I'd like to see it revisited if
-it's correct
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-Konrad
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
