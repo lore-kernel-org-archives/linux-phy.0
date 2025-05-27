@@ -4,110 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7626FC5B549
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 12:34:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3EE4C54ED1
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 13:44:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ug1EX8xJlvF3SkY+PtolkCSmbOmHNz8AqA39Wi0VMmw=; b=GcKLOzxm/PY4p/
-	myPkbsNXeFzLh9ah05ifOp4VW2HzcN1lt94QMvKKQqlEux+Q2MpsGTArWjrEDuV9Ie/xERwxEH0sg
-	81MyyL97XFiCRN7oV1SL0p8OXUO+BHGOfIN3+PFEcHkBN87HMGiCidLMSrSg5Ryn9tYhacN0lXuYO
-	Dll1+cScp+zYPNZ6aYMSG61ry49tTdN7lFQi1soVeaX/ifIPR1mOHnafa4pA/Q4VlFmgvDZd646It
-	BuwJkViVgZW84fflfpFqRTowNNYOicPCvlwbRb9c9PW7Bxx8zwCwXK59Gl1a0eLU+P6TqIw8ZvLyE
-	towBnJvrd2MPOA4NGc0A==;
+	List-Owner; bh=HDTi8B9CeurFJM8ahiQM01x6QjjCIN8Q7+00jQ0dXbI=; b=hYH4Pqn4biEL+X
+	PqVEoNjv79EpQRLxVQMQX7pfT0vCdxrPKRrdY8LIGL8eP2e11axK/xbBUGOJnIAnEnUoiWhRCcnoS
+	N5QcSLs5gciJTZ4ktLRytHBVPHhDvqWWOWmxsN4CZycnlgQvTYluTF9LpBZl+xBbyG7F6afVNM03U
+	KHirTtDYFo/7cVsEFSx7Th3OVe7tlrIqutrqBhxwGFrKb2v3DxLOImP9s6hcl376ojegmO/h1JseR
+	eaiN1DMmuNEQ/wyZtkLzPLDgNAncMCejBIqZrE/U3tSqfTAZGJF2tjTcDaZqNL8irhB5QjSLLd3DT
+	SyF2SozCOpGbB8IblRbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJtVS-0000000AiG7-0LdR;
-	Tue, 27 May 2025 12:34:10 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1uJubX-0000000ArNu-2Hnp;
+	Tue, 27 May 2025 13:44:31 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJtVO-0000000AiEu-27LN
+	id 1uJuUo-0000000AqKu-3eHs
 	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 12:34:08 +0000
-Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B51C12B3;
-	Tue, 27 May 2025 14:33:33 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1748349214;
-	bh=n/7tgbnh1HYj1q4YPqzXdhqksDqU4MF2zBC9n53t8vE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=JSEP8Qb/el8lj2iXAckQZs2X51X9/XhmOUt9ADvIRfZXqlu9QdpZbZZPE5K/VilK6
-	 Np8eZjDei/IfUayQ/aL/ESVFrUl5ACU3ZsXPjBsgKoShfwX7zMp3qYohp/yMbfhYBt
-	 F3Lx47cyq2QA9Hy4tB9V33wxNuzBqECiq/R6+i90=
-Message-ID: <8fc0c880-0809-43d6-b03a-1a5728f5d0d4@ideasonboard.com>
-Date: Tue, 27 May 2025 15:33:55 +0300
+	Tue, 27 May 2025 13:37:36 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54RBarfi029656
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 13:37:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	xLEufRgtL9qKIG4lX4CSfuKvPSGQ804jDCPgn0wAin4=; b=Hzab7NX/6BOzvYdV
+	yhL7RHU3rpqw3lHO/14gTSrivQQeBRJ/vWOBd6sKeuAGCJ6p4j9fn0XNJDYz7F4j
+	9SUbprGcye8/6Re9rpChZ0FdwPctvFAnbtGVcqekBAe85YyIVo0lUi3mzOqCXB4X
+	pWf7SevqlglQoHZtYiH4reDWnqFg0gP67c5w6VZjRoaCWLlv1r05sSNVF93980vF
+	tS8K25WlJQ6mL1Bmvic6BgJY9SatdEmPr4RY2k+RULKlpQN3dldq2Zz6l8fbQkq/
+	0q5+gGUaSUgoGa/Zow+uDKH3LnRCL96MPgITd5PnsGHeWNLMFQpu3qlNcF/VatIp
+	TDD0FA==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46w6919ff0-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 13:37:33 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7ceec331273so111491885a.3
+        for <linux-phy@lists.infradead.org>; Tue, 27 May 2025 06:37:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748353052; x=1748957852;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=xLEufRgtL9qKIG4lX4CSfuKvPSGQ804jDCPgn0wAin4=;
+        b=AadqGtai5Y25YDxeoMAfrpVPhtAjQT+5gtfmTgUucxJ22d3AyMRK6q/2S/xZa3ve29
+         NkUdjLj2zFbmbjgnfX51rLVT/y0v858qfuNQqWYEL0efLTsOBRUYFuPnzEd+QTU8awtw
+         QP9iPvJD0paK4USRGR1F46hfenqqY5LZ4ZZJJ4KwZCcP4R+FVdlIUB9o7PYyF5ekpGXX
+         /C+5V/CY07uauraXziQWfGFbIKBoh7dqdWcyrGi8io+KumPfo5A5qBJAvFC0reDXgQtS
+         vKszZVKmrbbquIa+YU/fF2hGtA96fIyEIWd8Na+khQp9fWli0lRfEqzoACzt27c9Iuvj
+         jk7w==
+X-Forwarded-Encrypted: i=1; AJvYcCXlPB4d8Jfwyf/1mbjYTOGSwG+VJUZONFEXyr1FcZIXqmMt8cgCVkwVZyLujvXCQGGRFy6W5nlTL2g=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwY1rh4ZaRw8dD38RlipLG5l28DH5FXV5Qy5+VMBYFqHB6qeESb
+	GQt7tYVk1gAMmi/c9V6Jhz5VqqCT5rxVhhzJbdXXOFs8ok+QMLZjiyPU5gYhHGlLj50tj0+TQVv
+	Aw+LuFbzx6A8C/HXe8u/WIA6qVlw6eWSp0B8WTpQ9sDM7flAdRA2h65bIngXT8UvvySBs
+X-Gm-Gg: ASbGncuS//6dUPfKzjghyzO5vi7B2dV2nQe5GvROHIehIfWnbqInUeeg7BbTvGnLzdh
+	GWA2zN80jj5nT8vyCl7rizysnjh9WN0OunvHf9snf3W0ZJSIFs0H2g9h5kp10pZdbtSdZxuC9XF
+	8KuuaOSAgpprksJ173RQgE7CL7jwUW8K24iiK3CVI7G01qtcQm3255Cmfigxq9ELrXyg9H/Yibd
+	asAGtUeIHLLI2rBFt8RS/MUu30gFmlJro/ONG2FBOYzl2HiVNAjtsdJnAJHXQ2/i02stezet5Ig
+	XgY2KHHHniEEe+J+VUZltsUoA3X77QVDHUia0PzTMQivvBBJ8kLBg8beGPk2nIEr+w==
+X-Received: by 2002:a05:620a:1a85:b0:7c5:ac06:af8 with SMTP id af79cd13be357-7ceecb968afmr708581185a.9.1748353052447;
+        Tue, 27 May 2025 06:37:32 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH6syR9I/XBh/MSLFb7D6Zw6VTBNOOLOjBK/d+fsxGEpEZQnhC1Aw9iZuvqUpC6mxmNYxr87w==
+X-Received: by 2002:a05:620a:1a85:b0:7c5:ac06:af8 with SMTP id af79cd13be357-7ceecb968afmr708578585a.9.1748353051873;
+        Tue, 27 May 2025 06:37:31 -0700 (PDT)
+Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad88bcd476csm126238066b.162.2025.05.27.06.37.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 May 2025 06:37:31 -0700 (PDT)
+Message-ID: <e1222269-6660-47f4-85e1-3782adb685ef@oss.qualcomm.com>
+Date: Tue, 27 May 2025 15:37:28 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
- capabilities
-To: Michael Walle <mwalle@kernel.org>, Devarsh Thakkar <devarsht@ti.com>,
- Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>
-References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
- <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
- <DA6TT575Z82D.3MPK8HG5GRL8U@kernel.org>
+Subject: Re: [PATCH v5 3/4] arm64: dts: qcom: qcs615: enable pcie
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, lpieralisi@kernel.org,
+        kwilczynski@kernel.org, manivannan.sadhasivam@linaro.org,
+        robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
+        neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com,
+        conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+        andersson@kernel.org, konradybcio@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, quic_qianyu@quicinc.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+References: <20250527072036.3599076-1-quic_ziyuzhan@quicinc.com>
+ <20250527072036.3599076-4-quic_ziyuzhan@quicinc.com>
 Content-Language: en-US
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
- 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
-In-Reply-To: <DA6TT575Z82D.3MPK8HG5GRL8U@kernel.org>
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250527072036.3599076-4-quic_ziyuzhan@quicinc.com>
+X-Authority-Analysis: v=2.4 cv=WfoMa1hX c=1 sm=1 tr=0 ts=6835c01d cx=c_pps
+ a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
+ a=u-Wjf5nI4b4gXCDVDnUA:9 a=QEXdDO2ut3YA:10 a=PEH46H7Ffwr30OY-TuGO:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: x2sZIK9nUV3i5JD2rqI-nvEqJI4z3omW
+X-Proofpoint-ORIG-GUID: x2sZIK9nUV3i5JD2rqI-nvEqJI4z3omW
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDExMCBTYWx0ZWRfX0zFx/XhtrFTZ
+ M7qu2fNxcuKAQR/Hlu6wpmX0reGOZcKsv4+g989QvnDwBXEITqIq/L6osBVQyV9/y5y6SC41Qxt
+ TIdymeiYytcgnU/Bly7vD5cR9a7NVNdiTQCm7Ht7FpB9UzyEtuR01JAxxpYgeHJRnQuWlzBkEvQ
+ 2vsNPBsomvYWQYyUEjLbLwf8Us8k/GrlCdY9asO7BOb4XSD4pSR3L1PqQx9pmrHXsv9T0n+4Xfk
+ 9VNzb7cfeY7ux6KtoRv7WsHJe0Xyw7Az79clk0i1xWnbNeVeRN8n/8oeQ0Xu0W7BgJfbs7TKyrW
+ owW5IfGZqJYXBcdCxSN1biKcvGW/4R1BwyJFGjGd0Sassb7uPBs5wZaoWtNwruBt5IqLrA/j4ye
+ Tg1WxuS/ACmq8YaEsr8wz6nWSAHrnVRsmOSseMlIyusi+PEQhAvWWESv618ivJtcbf4MzRPw
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-27_06,2025-05-27_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 phishscore=0 mlxlogscore=646 priorityscore=1501 mlxscore=0
+ bulkscore=0 adultscore=0 spamscore=0 suspectscore=0 malwarescore=0
+ clxscore=1015 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505270110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_053406_695435_AE13C504 
-X-CRM114-Status: GOOD (  28.08  )
+X-CRM114-CacheID: sfid-20250527_063734_918935_920035D4 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,145 +139,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Michael (and Aradhya, Devarsh),
+On 5/27/25 9:20 AM, Ziyue Zhang wrote:
+> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> 
+> Add configurations in devicetree for PCIe0, including registers, clocks,
+> interrupts and phy setting sequence.
+> 
+> Add PCIe lane equalization preset properties for 8 GT/s.
+> 
+> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> ---
 
-On 27/05/2025 12:13, Michael Walle wrote:
-> Hi Tomi,
-> 
-> While testing Aardhya's OLDI support patches [1], I've noticed that
-> the resulting LVDS clock is wrong if this patch is applied.
-> 
->> In practice, with the current K3 SoCs, the display PLL is capable of
->> producing very exact clocks, so most likely the rounded rate is the same
->> as the original one.
-> 
-> This is now what I'm seeing. Most SoCs have that fixed clock thingy
-> for (some?) VPs, e.g. [2]. And clk_round_rate() will return the
-> fixed clock rate for this clock, which will then result in an LVDS
-> clock which is way off.
-> 
-> I'm testing on an AM67A (J722S) and I've backported some of the
-> patches as well as dtsi fragmets from downstream. Thus, it might be
-> as well the case that the fixed-factor-clock node is wrong here.
-> OTOH other K3 SoCs do this in mainline as well.
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-Thanks for findings this (It's not a fixed clock, but a (fixed)
-divider). I can reproduce on my AM62 SK's OLDI output.
-
-I didn't see AM625 TRM explaining the DSS + OLDI clocking. I remember it
-was a bit "interesting". Afaics from testing, the VP clock is derived
-from the OLDI serial clock divided by 7. To change the VP clock, we need
-to set the OLDI clock's rate. But the code we have at the moment is
-using clk_round_rate/set_rate to the VP clock.
-
-And we get the crtc atomic_check called before setting the OLDI clock
-rate, so it doesn't even work by luck (i.e. if the OLDI clock was set
-earlier, the VP clock would already have the right rate, and it would
-seem that everything is ok). In the atomic_check we see the OLDI bypass
-clock (25 MHz), which results in 3571428 Hz VP clock.
-
-And with this patch, the code then decides that 3571428 Hz is what the
-HW can do, and uses it as the pixel clock.
-
-Aradhya, Devarsh, do you remember how the clocking goes here? Or if it's
-in the TRM, please point me to it...
-
- Tomi
-
->>
->> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
->> ---
->>  drivers/gpu/drm/tidss/tidss_crtc.c  | 23 +++++++++++++++++++----
->>  drivers/gpu/drm/tidss/tidss_dispc.c |  6 ++++++
->>  drivers/gpu/drm/tidss/tidss_dispc.h |  2 ++
->>  3 files changed, 27 insertions(+), 4 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/tidss/tidss_crtc.c b/drivers/gpu/drm/tidss/tidss_crtc.c
->> index 1604eca265ef..6c3967f70510 100644
->> --- a/drivers/gpu/drm/tidss/tidss_crtc.c
->> +++ b/drivers/gpu/drm/tidss/tidss_crtc.c
->> @@ -91,7 +91,7 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
->>  	struct dispc_device *dispc = tidss->dispc;
->>  	struct tidss_crtc *tcrtc = to_tidss_crtc(crtc);
->>  	u32 hw_videoport = tcrtc->hw_videoport;
->> -	const struct drm_display_mode *mode;
->> +	struct drm_display_mode *adjusted_mode;
->>  	enum drm_mode_status ok;
->>  
->>  	dev_dbg(ddev->dev, "%s\n", __func__);
->> @@ -99,12 +99,27 @@ static int tidss_crtc_atomic_check(struct drm_crtc *crtc,
->>  	if (!crtc_state->enable)
->>  		return 0;
->>  
->> -	mode = &crtc_state->adjusted_mode;
->> +	adjusted_mode = &crtc_state->adjusted_mode;
-> 
-> Here, adjusted_mode->clock is still the correct pixel clock.
-> 
->> -	ok = dispc_vp_mode_valid(dispc, hw_videoport, mode);
->> +	if (drm_atomic_crtc_needs_modeset(crtc_state)) {
->> +		long rate;
->> +
->> +		rate = dispc_vp_round_clk_rate(tidss->dispc,
->> +					       tcrtc->hw_videoport,
->> +					       adjusted_mode->clock * 1000);
->> +		if (rate < 0)
->> +			return -EINVAL;
->> +
->> +		adjusted_mode->clock = rate / 1000;
-> 
-> While after this statement, adjusted_mode->clock is 300MHz in my
-> case (the VP1 clock seems to be 2.1GHz, divided by 7).
-> 
-> -michael
-> 
-> [1] https://lore.kernel.org/all/20250525151721.567042-1-aradhya.bhatia@linux.dev/
-> [2] https://elixir.bootlin.com/linux/v6.15/source/arch/arm64/boot/dts/ti/k3-am62.dtsi#L110
-> 
->> +
->> +		drm_mode_set_crtcinfo(adjusted_mode, 0);
->> +	}
->> +
->> +	ok = dispc_vp_mode_valid(dispc, hw_videoport, adjusted_mode);
->>  	if (ok != MODE_OK) {
->>  		dev_dbg(ddev->dev, "%s: bad mode: %ux%u pclk %u kHz\n",
->> -			__func__, mode->hdisplay, mode->vdisplay, mode->clock);
->> +			__func__, adjusted_mode->hdisplay,
->> +			adjusted_mode->vdisplay, adjusted_mode->clock); >  		return -EINVAL;
->>  	}
->>  
->> diff --git a/drivers/gpu/drm/tidss/tidss_dispc.c b/drivers/gpu/drm/tidss/tidss_dispc.c
->> index a5107f2732b1..3930fb7f03c2 100644
->> --- a/drivers/gpu/drm/tidss/tidss_dispc.c
->> +++ b/drivers/gpu/drm/tidss/tidss_dispc.c
->> @@ -1318,6 +1318,12 @@ unsigned int dispc_pclk_diff(unsigned long rate, unsigned long real_rate)
->>  	return (unsigned int)(abs(((rr - r) * 100) / r));
->>  }
->>  
->> +long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
->> +			     unsigned long rate)
->> +{
->> +	return clk_round_rate(dispc->vp_clk[hw_videoport], rate);
->> +}
->> +
->>  int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
->>  			  unsigned long rate)
->>  {
->> diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/tidss_dispc.h
->> index c31b477a18b0..d4c335e918fb 100644
->> --- a/drivers/gpu/drm/tidss/tidss_dispc.h
->> +++ b/drivers/gpu/drm/tidss/tidss_dispc.h
->> @@ -120,6 +120,8 @@ enum drm_mode_status dispc_vp_mode_valid(struct dispc_device *dispc,
->>  					 const struct drm_display_mode *mode);
->>  int dispc_vp_enable_clk(struct dispc_device *dispc, u32 hw_videoport);
->>  void dispc_vp_disable_clk(struct dispc_device *dispc, u32 hw_videoport);
->> +long dispc_vp_round_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
->> +			     unsigned long rate);
->>  int dispc_vp_set_clk_rate(struct dispc_device *dispc, u32 hw_videoport,
->>  			  unsigned long rate);
->>  void dispc_vp_setup(struct dispc_device *dispc, u32 hw_videoport,
-> 
-
+Konrad
 
 -- 
 linux-phy mailing list
