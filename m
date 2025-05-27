@@ -4,154 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37C0BC54ED1
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 11:32:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9E9EC54ED1
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 12:01:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n3+/w6cKIW/2ohAx9Tb2GaepKCnmwjhzavQV+Ndzl7Q=; b=ExVvt3Zjz30pFV
-	fUeyv9sG4qOilh2RvAWoWDJEJX1ALU6A046Fuc8OTz7as3woHTIr/2H3yYC3zpRbRc+bdiKkwIDja
-	ieRiwq2LJrqHNHmvoOh14zXTlCABkBy50hEISVceSRgehyyQjdHc95U+fkl9aWcD3ijM6Ew286EIo
-	zBgyf2op8Gjyxt2M3d+CNtnpmaOr8KrDPV5phWicn88bvxeIBgVESoRLdnHXBi1uJYZip37kl5pUX
-	lfA+Lgnv2pEP0nBFvfvEtvNdMleD1ionx3xHtKgQFEIdtkj2epxjrP6hLXd+CqW3sP7LE7ea/ZyPi
-	feEcOsKZVYdPMc/5PPMQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=epmJwwV2CioZ4w4IKtdqvi4T3mtkD3RI/IKdyZVMArk=; b=1wjwptR4XsicDC
+	SF5DK9Ml24x4lgKIJODWVxi7kZEjl0rkFwzqno1XVRKs5gF2Tg0XEI1NEBRO8iAkTEJJzVvr1nir4
+	8HD/bhCwazzfYDqATtBj5m1q4HWUw4QMTEusKzurCj3sOOfcsPtb0GYoDOmcvmYAqrL+H3dG3FA/p
+	gymtNbdQAMQgSx89IC3rIZzzI/ca9WlF+eml0oyLcoSBghUCBRCqKMme4QKsNX8d+z8BVstmawRMC
+	N1tzJPna/iNnNoOvL1zSRl3fW/YVAFeeeptIp2QBLEBevWYAP2Je8jEmB9Ph06LBb3ri+/KCgkKrd
+	b/BSs8SBjVzu3TTiID7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJsYB-0000000Aa1k-3Q2N;
-	Tue, 27 May 2025 11:32:55 +0000
-Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1uJt00-0000000AeG8-2WOb;
+	Tue, 27 May 2025 12:01:40 +0000
+Received: from mail-m49198.qiye.163.com ([45.254.49.198])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJsY7-0000000Aa14-0k5R
-	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 11:32:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=XDOonV0iDjXkc6x/P/xHAbvey49SCuwcWJPV84Iccl5KLv+tvaGSCbOWeuVK9bWa4JjrjIlrqcHF/73aU0uHSYJf9SBitCzcBecYy8USw/Gtqy/JVjdQ7NbErZNlnSwU6yf3nPswl7IP2yGSsKvGQvgkFxMsAczSlqHptxUevFA+/cqfmXxjK5lxBkcbGoSFuMheLykdEacQFvvdvxFuHx68L98LxyNtmI2EFZFi0KXzVYzj8YaLJnq7UqvHn5EtAEpn2bLCGMzDt0h3ARdseqEMUfkRoxTrkknfbZFNNxveT3BA1s52Biw7DB8j2Z1fy4VpNn7GkrD5dphRkJPv1g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=H3KvZy0iET5BRUqkvfZ1q4Uh4/ell8Ouxclks8jj3T4=;
- b=jzBH3Gns+fobI9Lfl+6DEPuUvHHxfTb+s2A4J+lpiBsKC+dpDOt9ZYHUXCsgeBmCRMYnBHtk2CAyBTGqBE370LDMHBgRDQePX4mYRzEFMdnFkidpTjP7rjP+vkRdACyP6d6E5wZenfsNldVzoYSEPX3AcMk3OImxGxfbEFyn9jAlAkWwBW+T8GSCIv7NWg+pAqc+OTIlrnoJukhPJnLQQzlbcf/esnl2I+DClo4cTN4W1iLRry+wG3ac2sbMMkWPLglR34k5rojDY/R0vcYVmB90N2F95lPDQc2NrP78VtrEstHa0fekuo9abu0jqBD5/Szouh4VSfj2La+3Bs0Jwg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=H3KvZy0iET5BRUqkvfZ1q4Uh4/ell8Ouxclks8jj3T4=;
- b=ZhXljFZ+cjKo/ZQL0+OvnoEO1WAi5MI44zX1HU7Vt620mJGn7LfEOuV4yp7xO4FGrGm6hAML3C2X7UhORBDFkotgPSPCZewrjPkbc8zdQRikBSzZCpFWO89Kiyso1jC2f/6XxsYaMZjqq1L+MdZ0XtPQE53PB56O9qgwwTf9teY=
-Received: from TY4PR01MB14282.jpnprd01.prod.outlook.com (2603:1096:405:20d::9)
- by TY4PR01MB15022.jpnprd01.prod.outlook.com (2603:1096:405:260::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.24; Tue, 27 May
- 2025 11:32:43 +0000
-Received: from TY4PR01MB14282.jpnprd01.prod.outlook.com
- ([fe80::37ea:efd9:8ca0:706a]) by TY4PR01MB14282.jpnprd01.prod.outlook.com
- ([fe80::37ea:efd9:8ca0:706a%6]) with mapi id 15.20.8769.025; Tue, 27 May 2025
- 11:32:36 +0000
-From: Michael Dege <michael.dege@renesas.com>
-To: kernel test robot <lkp@intel.com>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Yoshihiro Shimoda
-	<yoshihiro.shimoda.uh@renesas.com>
-CC: "oe-kbuild-all@lists.linux.dev" <oe-kbuild-all@lists.linux.dev>,
-	=?iso-8859-1?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH v2 2/2] phy: renesas: r8a779f0-ether-serdes: add new step
- added to latest datasheet
-Thread-Topic: [PATCH v2 2/2] phy: renesas: r8a779f0-ether-serdes: add new step
- added to latest datasheet
-Thread-Index: AQHbztQVk5q7dbckrUqXtFJwrg/R57PmOT0AgAAewKA=
-Date: Tue, 27 May 2025 11:32:36 +0000
-Message-ID: <TY4PR01MB14282C38CF2E371F52DB8EF088264A@TY4PR01MB14282.jpnprd01.prod.outlook.com>
-References: <20250527-renesas-serdes-update-v2-2-ef17c71cd94c@renesas.com>
- <202505271711.WM48TTTI-lkp@intel.com>
-In-Reply-To: <202505271711.WM48TTTI-lkp@intel.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY4PR01MB14282:EE_|TY4PR01MB15022:EE_
-x-ms-office365-filtering-correlation-id: 3f638709-c16c-4180-30ee-08dd9d122e0e
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|376014|38070700018|13003099007;
-x-microsoft-antispam-message-info: =?iso-8859-1?Q?HmB7zbGZjFZP3VvBRVe8QCHZVJL6r3uezE49Em61M6HYS7Fq0vQKlhSg67?=
- =?iso-8859-1?Q?J1xVmPYvyWrPWiuAuh8cqLRxYtSaGikgh61wnTTkwYyI7CRqoE7lI4iK4M?=
- =?iso-8859-1?Q?GP8Yzlf2bhhMmkZPIdG65z9oFGhX8wgTjPEflqi3oNFf/s0kcEzJTYkFkm?=
- =?iso-8859-1?Q?xltWkA17wLzW2Eehg6isHX/oCD3yEME4o9RAef1X7wq6/Pa76PdqT7XocU?=
- =?iso-8859-1?Q?Qh6i9CNhemWHKsh7YTuD/BDP6+s5FF9n7QQkMNiUmMOreyveNtV5SIQqnU?=
- =?iso-8859-1?Q?h7KlrVJaOVxVzBTRYlBXawB5M40f4kdg2zfpSfXhZ2tY9SkWk7zjn2XthW?=
- =?iso-8859-1?Q?+USH4EILnnU3351McPtNqRV718WN+JuqEkevDai3IX54ntCZCQnbmT2gfz?=
- =?iso-8859-1?Q?0+9OsSZthZ7mmb8Z8NcMm7yETaZ0SzRiYOyG/RJwM9VbT/Wv3fuTFbEy5D?=
- =?iso-8859-1?Q?E5ou6jDyn94hFJudrR7kmsQQeBuZ/SGE2ZA4YXbjrWmQYV5yO7/7x8WGD/?=
- =?iso-8859-1?Q?z4+Y4LB6VaGQZMd1fq6WGSOODjZiTL68E599WHkB3hFS5NNt6kayPIP7w6?=
- =?iso-8859-1?Q?ggu/ufBZyUMtaOlXzPnbaQ8kIFWwy1Kit5gHOexRgHylYaIKOF6VaCmaXe?=
- =?iso-8859-1?Q?SUxHJX6wRD9diWsXBr4aKgUwvnfIKhUKWCi9Mtc/IQfff+sGn78UQIaK6w?=
- =?iso-8859-1?Q?3X97759JvW/wtrZVe8J8MoFUsqOACHGa6/mqhLo1CReTzKqVfDZyBshRKb?=
- =?iso-8859-1?Q?4g+thxMxkGtJg2otVqUJFEvbgK5Qg4EG4hItNIgMycbOA/tJa3GSD3k/ID?=
- =?iso-8859-1?Q?jUZcrsaUKaOcgkk9TUeLPQ7vmCAa4jTEDBvZvwWd4PuBqdSmgUkUeTb8Yi?=
- =?iso-8859-1?Q?BNZ6FiOXH7B9qHhRZcs0//1jDr0piOxnSk2bHv7yKtWYJVISotpsQsebnU?=
- =?iso-8859-1?Q?Y4S6SX7MgB+naATgf2lAjfPbzAiGL7Pwh0/ZnjnEjMvukdAzLVItI0wVpc?=
- =?iso-8859-1?Q?iZJjWm2hejXyep38Kcyd1Xz6J7sRo/DUZ2elO9z6oVZ5Vdh+ZYes1q9n/w?=
- =?iso-8859-1?Q?xh3k/M6Qmee+X9C4IP25VyjMPaztXwju6yRytcnk8tWqzvKpMJIgaLtnpo?=
- =?iso-8859-1?Q?PuUYdsB9aqlLQskgTEKy6T9xkeprdDOaCsxJKEF5wiuD3BBJcBVN/5BvU6?=
- =?iso-8859-1?Q?1alTJbTxuSnDG8OwUpc1xCLIoLqarVnTry4XJDF88bzinirWNQpdgvGefJ?=
- =?iso-8859-1?Q?PvtmWJRw9xdbZ0U0nFDE1ZuzyJXFBeJimksKUbcMOKkbdS3zr9IOfWMjEa?=
- =?iso-8859-1?Q?WVnmZNYcba3tPoc19rjDk44EcrN28MwzZRZWVNqMbbN5UKL16sOY9Kx1Oo?=
- =?iso-8859-1?Q?p/MECbJmXLtryXd8kflucG0tFEY3raGEXxRMRjdTOxc+vrkGlbN1NRvePI?=
- =?iso-8859-1?Q?tQqeIhkDWR7qfBmtXEgp5nmb0nUVFLvDg/vhO3xXOCylnpoK7eJbQgJ0Fu?=
- =?iso-8859-1?Q?DQLmvaiLl8nvFuQSvmWZz8?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY4PR01MB14282.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(38070700018)(13003099007);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?LkRRx9tT+/vYptiOP0jzqZdpKWHaajnzd8k+vDoUZoy7FwV89Ed9IPet4i?=
- =?iso-8859-1?Q?ABzDX8/NIIdqgXP0Y/LlgcYJgqWB2WgD/h/KKCrCRrIri/mfK4z2tYPdOD?=
- =?iso-8859-1?Q?+Tfe0XFKUT7tLW5rYHZrq0OiettVjBGlaj870aiIohN7MhGfFZAlWzwz7N?=
- =?iso-8859-1?Q?kTPlvG2DcVibcbcKhlVzE945nxcbkGj5XRuL3TF4TXSa/in/PRbZTyjMd9?=
- =?iso-8859-1?Q?wk4NmLbpgvTTo66iTFsLiMpp9PEJVSho0+6HEEIKFsEkra0dKaqNjDNjaq?=
- =?iso-8859-1?Q?LtTOxf4lTW5KW1kUA7/uBywycf4QfFLIuRJ3RBfWmmopmKpvIZGnUnalHB?=
- =?iso-8859-1?Q?YyZ54+Mkb9hhlNEbnk8NYQo6rA89iL/pms+2jMhhSZocDw+jPo9NJ8HHXr?=
- =?iso-8859-1?Q?yqh0eKgnu7HPqMk5Siv0xvN8EqbEV/rd/zprmvQOkGeXWNyl0Vwc30uIDr?=
- =?iso-8859-1?Q?cfxv5aTFU7GZ4UTr0UImgJG9qRT21fnsRC6bGF9OuCdm701VcDM2mzcXoP?=
- =?iso-8859-1?Q?H68NrCoVqLKmwgi5vnu4+x6yUCYQFnQpOAayh8vsEhT+E9xvvwy8fMhqMK?=
- =?iso-8859-1?Q?3eBaXV9DjQzJ/gQV9GJjW3uB/DDeax3IYCsmCeqirZvVpcwfY7fKn7SM8I?=
- =?iso-8859-1?Q?kMCAkyw2DZLIuSWkcXdbKqBL1YCnYc8GFnHAL+yIhmS3ltwns7WKgwOYs1?=
- =?iso-8859-1?Q?h1BD3hs+nmQFX4Uy2Q+jbdho6vZTiWHTsZjup+JPlRoS4pSzt8gThyDIMH?=
- =?iso-8859-1?Q?JefBUWm4jgwEqU1Na6O1WmRQVEmzKsZ9eIDaFPJ0QLUXgHXgywh3+WhZgv?=
- =?iso-8859-1?Q?cvq6R2IiWvD/eWP0NRCPd6wa1mi95k8s+HVe5b/8VEn/dHufq3kI4mJ1nf?=
- =?iso-8859-1?Q?NcHaBBBtR56wqKCBZFiG7qDm/hQYBcs+2Cc1GwOFFyR00oc2IfETNzZmGt?=
- =?iso-8859-1?Q?ZV8KDgGg7HbJe8wKHfa1XHAqRiRLmRILTbMHUrxUnioa8J0WBR9ByxrqSG?=
- =?iso-8859-1?Q?IrLbi7NYdQo0OXXGvAGEBH0B+AU2YXwV7XFvolk3Rxs90WswldAZSKkqqy?=
- =?iso-8859-1?Q?bLX8/WBGUt89sEvaEIsMU53XxBVr8iO6Kz6Vkqv330Pyn11ZhmGKaERDq1?=
- =?iso-8859-1?Q?FEtp5vI4z6F7uCzpKUFEkfHX62CJikEygqK7718L0LMYE8I7JHxK8V6jlL?=
- =?iso-8859-1?Q?sf0LT6CFdiRN7qkr6gOprl8fJ0OCNEdMlE4TG0I9aEqtU7w+hrWUlGiZmd?=
- =?iso-8859-1?Q?X/c5CLbfJo08VNjRCY2f+ahNYljhfKhlMnQPIGJoHG5c/NhZTlnlwEtUWX?=
- =?iso-8859-1?Q?a0UPlNrlgBCXQZmZiEzGtTxSgOgKBQ1e36oQYWow/793xhXr19qbh4elB8?=
- =?iso-8859-1?Q?8v4fo+jWi4ex3Qn0wjudBidpdR3RyJ69M6/tgp8t2yiXsGi6oELv4B1FTI?=
- =?iso-8859-1?Q?zX8RxMOAZt9cNLVnpdqWmExENHm3JVlhXU+1dvHnm8/+xraNd+fasfm2P1?=
- =?iso-8859-1?Q?NYWfocol2Jr009XY9krzrKMwbrjZmOt+fiK9fyhz7FyjHVz+fboXBpz2/Y?=
- =?iso-8859-1?Q?+nIKChrjGQZM7xPlDrsyBZVD91k5Yg2JdvVDvtnvwUA0ZkEfbA+ukCUQJY?=
- =?iso-8859-1?Q?MT5wSMzb9x7+9PPc/fOmhC4YSqMM0Y207E?=
+	id 1uJszu-0000000AeDf-0uME;
+	Tue, 27 May 2025 12:01:35 +0000
+Received: from [127.0.0.1] (gy-adaptive-ssl-proxy-1-entmail-virt204.gy.ntes [27.18.99.37])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 169309524;
+	Tue, 27 May 2025 20:01:25 +0800 (GMT+08:00)
+From: Ze Huang <huangze@whut.edu.cn>
+Subject: [PATCH v5 0/4] Add USB2.0 PHY and USB3.0 PHY support for SpacemiT
+ K1
+Date: Tue, 27 May 2025 20:01:14 +0800
+Message-Id: <20250527-b4-k1-usb3-phy-v2-v5-0-2d366b0af999@whut.edu.cn>
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY4PR01MB14282.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3f638709-c16c-4180-30ee-08dd9d122e0e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2025 11:32:36.3714
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QtqnIwAg0jUBeMhotsGlBhV3y8QLBAAAAV+B1ROERDHeOSHZU266+n6Qm0JKM6xxU8UAFiyeKhlmSVC8mv75DVdAObuPEzKv3E+K/OvItKQ=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY4PR01MB15022
+X-B4-Tracking: v=1; b=H4sIAIqpNWgC/23OzU7DMAwH8FepcsZVPk27E+8x7ZCkLo3Q2pG0g
+ Wnqu5N1SICo5Mvfsn/2jSWKgRI7VDcWKYcUprEE81QxP9jxlSB0JTPJpeFaPIPT8CZgSU7BZbh
+ CltA7QVo0uuW6ZWXvEqkPn5t5PD1ypPel0POjyZxNBH46n8N8qDLWwkD0gt2Hh5DmKV63f7Lcp
+ r9PNzunS3Fw2BKXnW00uZePYZlr6pbaj5uX1Y9hdt/PqhjE0RgUygpU/w39y5C4Z+i74S1i03u
+ BVv411nX9AsNrsIppAQAA
+X-Change-ID: 20250417-b4-k1-usb3-phy-v2-fb1e41849049
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
+ linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>, 
+ Junzhong Pan <junzhong.pan@spacemit.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1748347285; l=2936;
+ i=huangze@whut.edu.cn; s=20250325; h=from:subject:message-id;
+ bh=SLIbpdBPLAqb/54sjGm0rka8fMCLwCtOyD5tlCd6OnY=;
+ b=erMhzmXgAgrdDShcZphQGvZ0V3vXC8JPL39vXOUUO/u7Es5nkVCQfiD50M6pSSMHSHqMlccLu
+ 0UHKtwXozOcC0inSKJvH6IaLVLSxh0VvABY8zEHmZS5T7M4FhCayyPg
+X-Developer-Key: i=huangze@whut.edu.cn; a=ed25519;
+ pk=C3zfn/kH6oMJickaXBa8dxTZO68EBiD93F+tAenboRA=
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZGE0eVk1OSRkfGh5IHhgfTFYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlJTFVKQ1VCQlVITFlXWRYaDxIVHRRZQVlPS0hVSktJQk1KSlVKS0tVS1kG
+X-HM-Tid: 0a97119e6f2b03a1kunm8e523759adeeb
+X-HM-MType: 10
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Ogw6PTo6KjExHFYvUT0NPzYz
+	E1ZPCVZVSlVKTE9DSE9MSUJKQ0JIVTMWGhIXVRMOGhUcAR47DBMOD1UeHw5VGBVFWVdZEgtZQVlJ
+	TFVKQ1VCQlVITFlXWQgBWUFPTUhDNwY+
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_043251_559603_FB01DFF2 
-X-CRM114-Status: GOOD (  17.03  )
+X-CRM114-CacheID: sfid-20250527_050134_487949_71693713 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,158 +82,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
+This patch series introduces support for the USB2.0 PHY and PCIe/USB3.0
+Combo PHY on the SpacemiT K1 SoC. The implementation has been tested on the
+Milk-V Jupiter and BananaPi-f3.
 
-> -----Original Message-----
-> From: kernel test robot <lkp@intel.com>
-> Sent: Tuesday, May 27, 2025 11:41 AM
-> To: Michael Dege <michael.dege@renesas.com>; Vinod Koul <vkoul@kernel.org=
->; Kishon Vijay Abraham I
-> <kishon@kernel.org>; Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> Cc: oe-kbuild-all@lists.linux.dev; Michael Dege <michael.dege@renesas.com=
->; Uwe Kleine-K=F6nig
-> <u.kleine-koenig@baylibre.com>; linux-phy@lists.infradead.org; linux-kern=
-el@vger.kernel.org
-> Subject: Re: [PATCH v2 2/2] phy: renesas: r8a779f0-ether-serdes: add new =
-step added to latest
-> datasheet
->
-> Hi Michael,
->
-> kernel test robot noticed the following build errors:
->
-> [auto build test ERROR on a5806cd506af5a7c19bcd596e4708b5c464bfd21]
->
-> url:    https://github.com/intel-lab-
-> lkp%2Flinux%2Fcommits%2FMichael-Dege%2Fphy-renesas-r8a779f0-ether-serdes-=
-add-USXGMII-mode%2F20250527-
-> 150048&data=3D05%7C02%7Cmichael.dege%40renesas.com%7C8302e9fad5af4162a89e=
-08dd9d02baac%7C53d82571da1947e4
-> 9cb4625a166a4a2a%7C0%7C0%7C638839357252567523%7CUnknown%7CTWFpbGZsb3d8eyJ=
-FbXB0eU1hcGkiOnRydWUsIlYiOiIw
-> LjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C=
-&sdata=3D%2FImajCm4YD6H2309lF5m
-> zmCObCS6%2FpCZMotTI57bteo%3D&reserved=3D0
-> base:   a5806cd506af5a7c19bcd596e4708b5c464bfd21
-> patch link:
-> https://lore.kernel.org/r/20250527-
-> renesas-serdes-update-v2-2-
-> ef17c71cd94c%2540renesas.com&data=3D05%7C02%7Cmichael.dege%40renesas.com%=
-7C8302e9fad5af4162a89e08dd9d02b
-> aac%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C638839357252584964%7CUnk=
-nown%7CTWFpbGZsb3d8eyJFbXB0eU
-> 1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjo=
-yfQ%3D%3D%7C0%7C%7C%7C&sdata=3D
-> JzM8KY23Z1AzRSwou%2BkMTRWBkvC6hOaDEDENTTH6GEQ%3D&reserved=3D0
-> patch subject: [PATCH v2 2/2] phy: renesas: r8a779f0-ether-serdes: add ne=
-w step added to latest
-> datasheet
-> config: arc-randconfig-001-20250527
-> (https://download.01.org/0day-
-> ci%2Farchive%2F20250527%2F202505271711.WM48TTTI-
-> lkp%40intel.com%2Fconfig&data=3D05%7C02%7Cmichael.dege%40renesas.com%7C83=
-02e9fad5af4162a89e08dd9d02baac%
-> 7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C638839357252595528%7CUnknown=
-%7CTWFpbGZsb3d8eyJFbXB0eU1hcG
-> kiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%=
-3D%3D%7C0%7C%7C%7C&sdata=3D8JtB
-> v%2BFmcJng5BiSSjnOhSodkQ2dtBH8kQnVQdXBhmo%3D&reserved=3D0)
-> compiler: arc-linux-gcc (GCC) 10.5.0
-> reproduce (this is a W=3D1 build):
-> (https://download.01.org/0day-
-> ci%2Farchive%2F20250527%2F202505271711.WM48TTTI-
-> lkp%40intel.com%2Freproduce&data=3D05%7C02%7Cmichael.dege%40renesas.com%7=
-C8302e9fad5af4162a89e08dd9d02ba
-> ac%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C638839357252606183%7CUnkn=
-own%7CTWFpbGZsb3d8eyJFbXB0eU1
-> hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoy=
-fQ%3D%3D%7C0%7C%7C%7C&sdata=3Db
-> tqrLQmBkVgPbAQ64H1ls6R9%2BQn0WTfNWUVrTApuDjY%3D&reserved=3D0)
->
-> If you fix the issue in a separate patch/commit (i.e. not just a new vers=
-ion of the same
-> patch/commit), kindly add following tags
-> | Reported-by: kernel test robot <lkp@intel.com>
-> | Closes:
-> | https://lore/
-> | .kernel.org%2Foe-kbuild-all%2F202505271711.WM48TTTI-lkp%40intel.com%2F
-> | &data=3D05%7C02%7Cmichael.dege%40renesas.com%7C8302e9fad5af4162a89e08dd9
-> | d02baac%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C63883935725261673
-> | 0%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIs
-> | IlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=3Dja
-> | r%2FB6U8ENcw71CzP2jduv2gEQrSkOUj%2Fnhf6jcPv5A%3D&reserved=3D0
->
-> All errors (new ones prefixed by >>):
+K1 includes three USB ports as follows[1]:
+- A USB2.0 OTG Port
+- A USB2.0 Host Only Port
+- A USB3.0 Port with a USB2.0 DRD interface
 
-I will fix the issue and send around a new version of the patch set.
+USB3.0 PHY for USB3.0 Port is shared with PCIe port A, meaning that only one of
+these interfaces (PCIe or USB3.0) can be active at a given time.
 
->
->    drivers/phy/renesas/r8a779f0-ether-serdes.c: In function 'r8a779f0_eth=
-_serdes_read32':
-> >> drivers/phy/renesas/r8a779f0-ether-serdes.c:54:25: error: 'RENESAS_ETH=
-_SERDES_BANK_SELECT'
-> undeclared (first use in this function); did you mean 'R8A779F0_ETH_SERDE=
-S_BANK_SELECT'?
->       54 |  iowrite32(bank, addr + RENESAS_ETH_SERDES_BANK_SELECT);
->          |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
->          |                         R8A779F0_ETH_SERDES_BANK_SELECT
->    drivers/phy/renesas/r8a779f0-ether-serdes.c:54:25: note: each undeclar=
-ed identifier is reported
-> only once for each function it appears in
->
->
-> vim +54 drivers/phy/renesas/r8a779f0-ether-serdes.c
->
->     51
->     52        static u32 r8a779f0_eth_serdes_read32(void __iomem *addr, u=
-32 offs,  u32 bank)
->     53        {
->   > 54                iowrite32(bank, addr + RENESAS_ETH_SERDES_BANK_SELE=
-CT);
->     55
->     56                return ioread32(addr + offs);
->     57        }
->     58
->
+Link: https://developer.spacemit.com/documentation?token=AjHDwrW78igAAEkiHracBI9HnTb#part5 [1]
 
-Thank you and best regards,
+Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+---
+Changes in v5:
+- phy driver for usb2:
+  - convert readl/writel to regmap
+  - fix typo: sentinal -> sentinel
+- Link to v4: https://lore.kernel.org/r/20250526-b4-k1-usb3-phy-v2-v4-0-eca668fc16a2@whut.edu.cn
 
-Michael
-> --
-> 0-DAY CI Kernel Test Service
-> https://github.com/intel/lkp-
-> tests%2Fwiki&data=3D05%7C02%7Cmichael.dege%40renesas.com%7C8302e9fad5af41=
-62a89e08dd9d02baac%7C53d82571da
-> 1947e49cb4625a166a4a2a%7C0%7C0%7C638839357252626902%7CUnknown%7CTWFpbGZsb=
-3d8eyJFbXB0eU1hcGkiOnRydWUsIl
-> YiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C=
-%7C%7C&sdata=3Ds8LGQlWaPw4C3ihZ
-> 9X6WiQaZWuxKLPlqd0sGv7T8uw8%3D&reserved=3D0
-________________________________
+Changes in v4:
+- combphy driver:
+  - add in-code comments to indicate that PCIe mode is not yet supported.
+  - replace custom spacemit_reg_update() with standard regmap API.
+  - drop spacemit_combphy_wait_ready helper function as only used once.
+  - Fix PHY init timeout handling: ensure proper error reporting when PLL
+    lock fails during USB3 PHY initialization
+- Link to v3: https://lore.kernel.org/r/20250517-b4-k1-usb3-phy-v2-v3-0-e0655613a163@whut.edu.cn
 
-Renesas Electronics Europe GmbH
-Registered Office: Arcadiastrasse 10
-DE-40472 Duesseldorf
-Commercial Registry: Duesseldorf, HRB 3708
-Managing Director: Carsten Jauch
-VAT-No.: DE 14978647
-Tax-ID-No: 105/5839/1793
+Changes in v3:
+- improve commit message, provide more info about phy hardware
+- drop superfluous local variable in `spacemit_combphy_wait_ready`
+- replace devm_reset_control_get with devm_reset_control_get_exclusive
+- Link to v2: https://lore.kernel.org/r/20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn
 
-Legal Disclaimer: This e-mail communication (and any attachment/s) is confi=
-dential and contains proprietary information, some or all of which may be l=
-egally privileged. It is intended solely for the use of the individual or e=
-ntity to which it is addressed. Access to this email by anyone else is unau=
-thorized. If you are not the intended recipient, any disclosure, copying, d=
-istribution or any action taken or omitted to be taken in reliance on it, i=
-s prohibited and may be unlawful.
+Changes in v2:
+- combphy dt-bindings:
+  - fix reg-names
+  - describe reg
+  - describe #phy-cells argument
+- drop stale ".owner" in driver struct
+- add support for usb lfps_thres in combphy
+- fix Kconfig depends on
+- Link to v1: https://lore.kernel.org/all/20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn
 
--- =
+---
+Ze Huang (4):
+      dt-bindings: phy: spacemit: add K1 USB2 PHY
+      dt-bindings: phy: spacemit: add K1 PCIe/USB3 combo PHY
+      phy: spacemit: support K1 USB2.0 PHY controller
+      phy: spacemit: add USB3 support for K1 PCIe/USB3 combo PHY
 
+ .../bindings/phy/spacemit,k1-combphy.yaml          |  72 ++++++
+ .../devicetree/bindings/phy/spacemit,usb2-phy.yaml |  40 ++++
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/spacemit/Kconfig                       |  21 ++
+ drivers/phy/spacemit/Makefile                      |   3 +
+ drivers/phy/spacemit/phy-k1-combphy.c              | 266 +++++++++++++++++++++
+ drivers/phy/spacemit/phy-k1-usb2.c                 | 144 +++++++++++
+ 8 files changed, 548 insertions(+)
+---
+base-commit: 64e9fdfc89a76fed38d8ddeed72d42ec71957ed9
+change-id: 20250417-b4-k1-usb3-phy-v2-fb1e41849049
+
+Best regards,
+-- 
+Ze Huang <huangze@whut.edu.cn>
+
+
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
