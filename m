@@ -4,106 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16FB4C54ED1
-	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 15:24:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC6C6C54ED1
+	for <linux-phy@archiver.kernel.org>; Tue, 27 May 2025 20:40:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e82AicmqPJY6ZlyceYS82LGo73a1UfWIVBvCTus9EMw=; b=H6AGKlSSNES0TJ
-	K2a2WvA/21QxKgN4s6W/mCXL+U0oXwFr/cArwWNqvdvV8eiJNiRKHe256q8Iz+cZIt1GbpSX6YSQ6
-	R4UE60E+vuvoD/6fmy773gksJpJmBC+mOSJTEc2Nb8WWabwr0O+EFZ61itYPjuRbJu2XCBIx1aG7K
-	6IebJLK6iZebUMZK+BsjqP21u/HPqVMQzAVK8yxWa3lf0rWAUBZfoWAVPkuc42Fysyynt2ZwIeBXf
-	zMTahEAw7yvaCGZdhIOOtTnZhbFBC/DbaDqcl91AyyzsFMKDQk61rIXW+h7cK13u5cVPctlkMhLgZ
-	D/YF4D8IFG1vJ+jy4FpA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ekAVTzvoq8Wn6dSIKtNFa8itzjKRNVRuKOHFagycbkY=; b=KolusSyW8QItBL
+	IFr1u2G73zNicsl6OEg1mCJXir7QFKvnTdRZoCimchY6bcNXGGZPhR8hhwOSljWThYWjSSRpibFZk
+	halD53sPqrtSZKFORAq07QyBEm4/M7rGKYklHQ0odGdRGZ9qw5XYhUp87ziSre+eIymTcDOw8iFdZ
+	Y9BjCpJYeeSAp5HdhGVrkshmaP2aTLg7wSg57v3lkq2cmiyRP9x2o7t6/3kPgcMbGnTvPUgAjhWrR
+	CsXx3dbcFTlxtqqWwrSJ2YdalGCdfrsXFTW+z4XTUaYkx0LxssmPpr0m2jsP/kjWsjwiSlnCn/41K
+	vMiYFulg5SkWfmNngVSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJwAF-0000000B2zw-2icv;
-	Tue, 27 May 2025 15:24:27 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uK160-0000000BWV7-106t;
+	Tue, 27 May 2025 20:40:24 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uJw96-0000000B2nx-3Vzv
+	id 1uK15x-0000000BWUL-2mZ3
 	for linux-phy@lists.infradead.org;
-	Tue, 27 May 2025 15:23:18 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54R7itaT028239;
-	Tue, 27 May 2025 15:22:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	WH41sOw46uGb0O/mCSIo69Vm7oio0sgM/j+ncmuu7NA=; b=BvBC8bfPOQEZR/j7
-	+XXj7hmFjS2txjVbALo40AmFpZ81tzVhBpnPiVFH1xPSVhfSwwUS9aDVJZhsp2/0
-	vXiMIqSsUXB88DDiulFauIY6PAhhmhDCGBJtalJ8dtl8cUkg88s/sm2/q6NFcElf
-	G4SQL9sb4H2DZH7ihlmZIM9phup2jLObnJNMLt9eBl7PhIme3Ku042VBXBvusYWw
-	AsidcLMrg2QAK49B6OiX5eiAZKPXXKECx/ubqf3FgkcElj+BFATjhGe1oiSKufOQ
-	PsBKTUXG5J9AtWcbWb2FlSD5cMxqqHfufgB50A74uJ26dAuSXupJDxT9QO1Ddb4j
-	JfQwfg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46w992hb1d-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 May 2025 15:22:55 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 54RFMsxm028681
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 May 2025 15:22:54 GMT
-Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 27 May
- 2025 08:22:49 -0700
-Message-ID: <93869cf3-de84-4f3b-b120-7126928a5ea6@quicinc.com>
-Date: Tue, 27 May 2025 20:52:47 +0530
+	Tue, 27 May 2025 20:40:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8C7AA5C1363;
+	Tue, 27 May 2025 20:38:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3919BC4CEE9;
+	Tue, 27 May 2025 20:40:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1748378420;
+	bh=o6RTu/fe8SVeQMQKwuTVVvMbJ9Q/EvXIvy75U5TFuUE=;
+	h=From:Subject:Date:To:Cc:From;
+	b=HXMPLCjw8C1sN3tCCQJuezNOcsNvNvemhyUI3VRk0aEZ2zMEphroYIA8xwR/TKWvJ
+	 CyROHQz8jvb3ByIljJPbiClM3VhfOlhHNZ2WLb2SKiO/9riVzu015TpQ1XvVyi2IQB
+	 /FFw9E+mOJGh5pucz156BqAPFet8Js4jTQJEZzSOKjUTO3RHSOQn3TK3BESaEtJykF
+	 kez+yi850ACR072K2Dx284FrpUtoI6ITnFfzGhb+CDJFom8OZm3PBIA9dH+Fobhbia
+	 gJwC+UWOwVJVfikhwcgy4nir/XJq0ctI+Ggq+LLX+YjEATxLtT/9LRBxCkS7dfo9rG
+	 OkG7OgLGMBK+A==
+From: Konrad Dybcio <konradybcio@kernel.org>
+Subject: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+Date: Tue, 27 May 2025 22:40:02 +0200
+Message-Id: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V5 00/11] Refactor ufs phy powerup sequence
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        "Martin K. Petersen"
-	<martin.petersen@oracle.com>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>,
-        <manivannan.sadhasivam@linaro.org>,
-        <James.Bottomley@hansenpartnership.com>, <bvanassche@acm.org>,
-        <andersson@kernel.org>, <neil.armstrong@linaro.org>,
-        <konrad.dybcio@oss.qualcomm.com>, <quic_rdwivedi@quicinc.com>,
-        <quic_cang@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>
-References: <20250515162722.6933-1-quic_nitirawa@quicinc.com>
- <yq1msb6lowo.fsf@ca-mkp.ca.oracle.com>
- <ni7kedpcz7vchztb5qrs5msdt37mfdoabtt4gdqsaiwmbxlb2a@im4wurr77z43>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <ni7kedpcz7vchztb5qrs5msdt37mfdoabtt4gdqsaiwmbxlb2a@im4wurr77z43>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI3MDEyNyBTYWx0ZWRfX5pCPrc1zpff0
- ddINaK0caD+7H9oLrJq+xo1G13Cj9+QuLUJHQmSgyTHc/n4kwVEFi1/h+qVBCxNouy6ktD2sx2x
- 6IbVaYZPgTE1HG7mH+SoHavsgMVNtFMnG4SZZCODBrENmr/TYs0XnjcRlyWjpC0dXoyfDPNUIPN
- ZTGR2fAh69hDDhb51jn7p5K5q8MwDVNGyS0RFSnCV+CCv0jcrwzOUYhRaW2gBV6cfGq1K72o3l5
- LI6O2vG+oGOPPzKIpc5qZk+TGprNOCGLzlavI0+5APsVw5uwG91cl/iek8/Zu0x654zE+z+gwXc
- u/582/GAL5YzEr99/S9MaSTStcJ1q7eEKm6kqJGO+ij8Mk08oMsWs3ikSAI2Qote4FHJu4t7xf4
- ffniZCHTl71+ZTxqckv6AWLUqz2+k/NRZvw2BnJxTjHuX/zCqiTyJMufiqbyFYTfUbz5Xbtq
-X-Authority-Analysis: v=2.4 cv=Fes3xI+6 c=1 sm=1 tr=0 ts=6835d8cf cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10
- a=HGgBVA14KErkiVD9HLEA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-GUID: yiuvSsOzWlmG4o9TUWcDiMtnHK8qHTcw
-X-Proofpoint-ORIG-GUID: yiuvSsOzWlmG4o9TUWcDiMtnHK8qHTcw
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-27_07,2025-05-27_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 malwarescore=0 impostorscore=0 phishscore=0 clxscore=1015
- lowpriorityscore=0 bulkscore=0 priorityscore=1501 mlxlogscore=904 spamscore=0
- adultscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
- definitions=main-2505270127
+X-B4-Tracking: v=1; b=H4sIACMjNmgC/x3MTQqAIBBA4avErBNi0v6uEiFiUw2EiUYE4t2Tl
+ t/ivQSRAlOEqUoQ6OHIlyto6wrsYdxOgtdiwAZVo7AX9+XZCnk6vXodKHp2wnYjSjMMqCxBKX2
+ gjd//Oi85f56ffJRlAAAA
+X-Change-ID: 20250527-topic-4ln_dp_respin-c6924a8825ce
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1748378414; l=2944;
+ i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
+ bh=o6RTu/fe8SVeQMQKwuTVVvMbJ9Q/EvXIvy75U5TFuUE=;
+ b=3o/7D6VeHfd7PE53Qk34RBYI/8t5seA6Wr6yKb3I6ZxMwU117qb440IPDvwf0Mdkb4DLoIcsa
+ V0Xn/6kLhwGDJJ70ug3t2U9P8EjRjNrA3Y2YUDNGIgktoLvnDCFP/SC
+X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
+ pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_082316_911318_3ACA4861 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20250527_134021_793579_BDB2C349 
+X-CRM114-Status: GOOD (  12.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,56 +85,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Register a typec mux in order to change the PHY mode on the Type-C
+mux events depending on the mode and the svid when in Altmode setup.
 
+The DisplayPort phy should be left enabled if is still powered on
+by the DRM DisplayPort controller, so bail out until the DisplayPort
+PHY is not powered off.
 
-On 5/21/2025 6:40 PM, Dmitry Baryshkov wrote:
-> On Tue, May 20, 2025 at 09:45:40PM -0400, Martin K. Petersen wrote:
->>
->> Hi Nitin!
->>
->>> Nitin Rawat (11):
->>>    scsi: ufs: qcom: add a new phy calibrate API call
->>>    phy: qcom-qmp-ufs: Rename qmp_ufs_enable and qmp_ufs_power_on
->>>    phy: qcom-qmp-ufs: Refactor phy_power_on and phy_calibrate callbacks
->>>    phy: qcom-qmp-ufs: Refactor UFS PHY reset
->>>    phy: qcom-qmp-ufs: Remove qmp_ufs_com_init()
->>>    phy: qcom-qmp-ufs: Rename qmp_ufs_power_off
->>>    phy: qcom-qmp-ufs: Remove qmp_ufs_exit() and Inline qmp_ufs_com_exit()
->>>    phy: qcom-qmp-ufs: refactor qmp_ufs_power_off
->>>    scsi: ufs: qcom : Refactor phy_power_on/off calls
->>>    scsi: ufs: qcom : Introduce phy_power_on/off wrapper function
->>>    scsi: ufs: qcom: Prevent calling phy_exit before phy_init
->>
->> What is your intent wrt. getting this series merged? Can the phy: and
->> scsi: patches be merged independently?
-> 
-> Unfortunately PHY patches depend on the first scsi patch.
+The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+will be set in between of USB-Only, Combo and DisplayPort Only so
+this will leave enough time to the DRM DisplayPort controller to
+turn of the DisplayPort PHY.
 
-Thanks, Dmitry, for mentioning the dependency
+The patchset also includes bindings changes and DT changes.
 
-Hi Martin,
+This has been successfully tested on an SM8550 board, but the
+Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+PD USB Hubs and PD Altmode Dongles to make sure the switch works
+as expected.
 
-After addressing the review comments for v5, there has been a change in 
-the patch order.
+The DisplayPort 4 lanes setup can be check with:
+$ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+	name = msm_dp
+	drm_dp_link
+		rate = 540000
+		num_lanes = 4
+...
 
-In the latest patchset (v6), Patch 2 (SCSI patch) is now required for 
-the functional dependency of the subsequent PHY patches (Patch 3 to 
-Patch 9).
+This patchset depends on [1] to allow broadcasting the type-c mode
+to the PHY, otherwise the PHY will keep the combo state while the
+retimer would setup the 4 lanes in DP mode.
 
-Patch 1 (SCSI patch) addresses an existing issue and does not depend on 
-any other changes.
+[1] https://lore.kernel.org/all/20240527-topic-sm8x50-upstream-retimer-broadcast-mode-v1-0-79ec91381aba@linaro.org/
+Changes in v3:
+- Take the series from Neil
+- Rebase
+- Rename many variables
+- Test on X1E & X13s
+- Apply a number of small cosmetic/codestyle changes
+- Remove some unused variables
+- Some smaller bugfixes
+- Link to v2: https://lore.kernel.org/lkml/20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org/
+Changes in v2:
+- Reference usb-switch.yaml in bindings patch
+- Fix switch/case indenting
+- Check svid for USB_TYPEC_DP_SID
+- Fix X13s patch subject
+- Update SM8650 patch to enable 4 lanes on HDK aswell
+- Link to v1: https://lore.kernel.org/r/20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org
 
-Regards,
-Nitin
+Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+---
+Konrad Dybcio (1):
+      phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
 
+Neil Armstrong (5):
+      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch
+      phy: qcom: qmp-combo: store DP phy power state
+      phy: qcom: qmp-combo: introduce QMPPHY_MODE
+      phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE
+      arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set up 4-lane DP
 
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   7 +-
+ .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 182 +++++++++++++++++++--
+ 3 files changed, 173 insertions(+), 22 deletions(-)
+---
+base-commit: 460178e842c7a1e48a06df684c66eb5fd630bcf7
+change-id: 20250527-topic-4ln_dp_respin-c6924a8825ce
 
-> 
+Best regards,
+-- 
+Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
 
 -- 
