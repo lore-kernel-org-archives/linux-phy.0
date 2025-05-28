@@ -4,131 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E708C3ABB2
-	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 17:07:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A3A3C3ABB2
+	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 21:31:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r2MycZCVPBwl3fY4peJp1SG02ud66G9qy9fhaWJFX/E=; b=MfyJ66rTX0Qu1/
-	oDukLkTYNCO7IGA18+7SqqYp+ulu+ccd0Kd2klqBBI7p0oWgIihclT8vGLxkoL46Aa4ltB5vYuAs8
-	AjapUg1senNarQGMYv2aIXmkrTz0gGiRX45YFeyKyLxM5V62uCnMAqpWGAL4kR7rcTMkohBMptwY9
-	jMN/8Kzpid3q25PpH243B5KYMdWSDXoThqw7xiRRbNFzoE4ykQR6XhKH7Q/G88Belm/xD9boslE9g
-	4/rqUMULlQl1P4oegn+bpxiQuAvWvd0UHYmpA3VYbGcfnKYtFhOTt4uK1RjgtOjMElFzP8vunSg9P
-	8AN8CT7u4ZYs0lKjiWKw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=57DI7P1M0uFsAckkK+Y4IXF6L0azPD3vx6RrH8D71n0=; b=lNM8pFyKgQLdKd
+	nuF3A0EREcw/WHBG6ydyCzQ/JbQLyTK1OgOEQtwt0q41H2CPUSQ3Erq4PnL+dueEfAG0dU6WgmDdh
+	DPyYISzpuvnEVMTZrkudv+6Wyt6nPk+pYBpzNapB0MTtSahYbuEfyvhNGZ4E6pgoM+8BZ0VtKDCfm
+	eqDan4GmZtRXeKc1xULYlsA4GxOTL66XqMR7CU+Cd42UQK9pAIWlZj2VJw6bkFJMfhcA7AbdfXzNE
+	CbAOlVF8E5jcUojrKxXuwMw6hqcF6HC33KOdRQI0h2XF9EAfPx+NRPJquazLhCHwyBMxoG2deqYT6
+	yBMjPLVZZ9gGSh4Nd+JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKKFB-0000000DmiB-3uxM;
-	Wed, 28 May 2025 17:07:09 +0000
+	id 1uKONP-0000000E9EL-2JSB;
+	Wed, 28 May 2025 21:31:55 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKK4U-0000000DlJV-1MxJ
+	id 1uKOLV-0000000E92N-19Et
 	for linux-phy@lists.infradead.org;
-	Wed, 28 May 2025 16:56:10 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54S9TgTN020607
-	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 16:56:05 GMT
+	Wed, 28 May 2025 21:29:58 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54SGjGqA002142
+	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 21:29:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0EkcYL9G1rpVd7TL/MkBWT3qRyPOPRTrOWOR/0GFkgo=; b=HtwDE4an2n2FkjoC
-	Op9bUKa1ga1AfztP2XKHJ6EdihsuchjLRTRe26dHSJS2gS2Z0ETwiuJRWDmpxTV0
-	wPvFl1rx9MQcFwCakeBy/dMaa/mT2mqiM5HKBFz3Eya3Izfg1afAUm4h9Tse5Hlp
-	la4pL6oqGVjNPQU3QmrB7VUqQEBlv4c2DQqR66K/xh+Yy0hYjSyEBwTM0uU7Xpmk
-	JHOFdA3t1k5FpHBxLdDNcgQRy+WffM1dGmLBioNkATxnElkbcL5PGzwI3tIpyPUW
-	K5+KUJiJPgCScWmuaukwWz8T+4TwFhWeieKBievTWu9Ax4o3wfgk2GyMv5RX9yLn
-	5lhS+g==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u6vju038-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=vXZ9SEQrVJeMggNhRwI6U0
+	eU9ZVFCs4lqNq+BNKJ4Oo=; b=CInAP+0xzRtTU1ckDbpxX1Zu+YSXvKXUHI7ino
+	ngcykDRTglkHKnvraN2yJRJ36IHHg0LfaZrsQ6M01J6zL8Xjy1nAqGiG6DrdlGmW
+	ZAdIU7dQt+uLgWUlAjZreMMx8yaJHnHCuHQkN+J1RF0bJD4VtYW2PZ+yjSFjR5Zg
+	6PR9cclJYpqi0sR6oBJOGO/+imJ6jG8Sn90bejAbqKhT3JW6bChNQxoaCARL2bq7
+	DAQYF4NLB8d0jrjPOI2mz4ANnxhiEUE3BhuduE1kXGA4LHeUTahsFrTp9cEPh7F/
+	L4hYU4MurvAMgJ0ENnaoa30UNdKwmyyy/yVJak5tG917zGaQ==
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46wavkwe0e-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 16:56:05 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7d0979c176eso5569485a.1
-        for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 09:56:05 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 21:29:55 +0000 (GMT)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-6faabeb105fso4698256d6.2
+        for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 14:29:54 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748451364; x=1749056164;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=0EkcYL9G1rpVd7TL/MkBWT3qRyPOPRTrOWOR/0GFkgo=;
-        b=Jfpgsz/LFRDLrQYA09Kvtj1oOu/VX+qQrXuCZgqoT4Ix4F4/F43Vi95N0IKbIL67ee
-         ZinMb+7AYFIU8onV9HAWBk63fKSp+8RvxHIZFwm9veJ8uMONDejBcmqpKKZ1qCUCeI8f
-         0FCrdSv6csvOQO71h0yQlWunvmiIy9JlcguAcQ0YJZgvu7BiDY/Ju9WfImdJ5k2sA84f
-         sj5iQyTUASjOMX/L3e5hG3KJL+BqYUy1mPfN79AiF2cnIAwfRm6lNb+DJtAnG8IdPn2O
-         Jwvu/rpF8wgrttjkVc+i8WoStTdl+EL1SkD4PFzNQY+zRkKpkq/UbUQm6THoAUKb+wTC
-         pmzA==
-X-Forwarded-Encrypted: i=1; AJvYcCW9vCdyD2EzWNuTGkmBA+R7lHFlDKN5tcQEQNmzdh0uRZhG0qpkRwplOOXzrOhffK/EayDvRIciIVw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzmxUwnkvTTOpUronGJBNaPgAXOe9UQOWkt1B+q+741wN5WR7nV
-	iXqbgcFQZQ/MZ8adX5YiElm9pATqI6kI0NMNmP79Wfvv+o1Z3IDACNw9N8vm/Fb6/kqFxnApRt5
-	Tt7/ayJNopRISlcdJuuCNMm01MzVkoH8ycTrJRnjcsjCmpYqKzEKsyMZj08FA/SMygoOo
-X-Gm-Gg: ASbGnctRsw8Ekp/ZF1h6WKpM9Bb0U8oe4Yd3hn6E8hJkAMN4B8w5KFVtAbR8ij4vKf0
-	xWOk81YxVCcGxjjMSzE7FPom9IMPsQ+HzGHcSK2gdf5W6zeUQVAFTjqWGZtDF9Q7PO96/3R3A3y
-	eCHRZAtfAhkI7ZiMD0299QzR8DecGZl59ctzJIg0Ih3XYf7GwKtpYkHapOXK7tZj1cWM14al40Q
-	FzSb7CrU/+NoBNMmDPI8ctOt1vH0K8qiwiyVONSGZ4HxIio9HVch1VLKU/OEyb5acyqOnd5MGw3
-	uXsLn+rWz5W+IW3Oik/fgWTUlvZ4O40XAnP5/D0XbvCdFBChyw4bM0xBJdLccsMsYw==
-X-Received: by 2002:a05:620a:bce:b0:7c3:e399:328f with SMTP id af79cd13be357-7ceecc09be4mr921069585a.11.1748451363849;
-        Wed, 28 May 2025 09:56:03 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IECAr+S1817A/Gvel1AgAah4imkP7ECioo5NX/E9v0PLICsaguf8YD826ewc1MMFQ+GXcT3jA==
-X-Received: by 2002:a05:620a:bce:b0:7c3:e399:328f with SMTP id af79cd13be357-7ceecc09be4mr921067585a.11.1748451363392;
-        Wed, 28 May 2025 09:56:03 -0700 (PDT)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ad8a1b29778sm134027366b.113.2025.05.28.09.56.01
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 28 May 2025 09:56:02 -0700 (PDT)
-Message-ID: <aa17d7d4-b77d-4a0a-88c3-86255dfbc29d@oss.qualcomm.com>
-Date: Wed, 28 May 2025 18:56:00 +0200
+        d=1e100.net; s=20230601; t=1748467794; x=1749072594;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=vXZ9SEQrVJeMggNhRwI6U0eU9ZVFCs4lqNq+BNKJ4Oo=;
+        b=WjPKvlJnzNmvDohaQrlpYKQtmXBXcfwYOhjIMHJBb0RKWMmXpPzij2YYCrCWr8ckkx
+         yp5xC91aBBIr3mi00n6W/udV88xfgV3GPmGUtidlSwZ3cRj/3/v1/d163qcT8LjOEzLW
+         lLyf8UfBIwgz6buGtoezqn5Qrv2xIHQVVp/5DxET+pPJoZ7jGju2Vn4/z3FlrMJk/bEb
+         ijYWSGP8RczPn99lpVP3jXcmSwRPhbRPL9E8rFeg0ajyz3N+pLB74oJJ3sh3HCHodpDi
+         1PMvKMXPWaqKSEVhrofS+fl85dgfOF8aR748eugAn8fLqKCG8Hge/eY7LrAFwSjG+3e3
+         ervw==
+X-Forwarded-Encrypted: i=1; AJvYcCUzMp+3r5uqO7PlgKNhJu3FnPLMVN81QSi1tvWBGh1qGR+uvlknKs2Re3yQyLqOewUMLYnKiiP9NYI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwZrdaQ7Pn3f4adGSLpfJNy6m86/ub73rtQvcqdrrcf37iml/3b
+	wfQIVwrqyxGWySdbMktBiPQQvCjQs77872+yeI/kKs3vNV2uMZU4VjGN8Uf4ITDLrSt0cpZBMu7
+	kgYo+FqJucn07IXRgfMrBThVtvuSi2nky9DUZE2W5uyW/nOZIajqfGxSKwER8/wS096vE
+X-Gm-Gg: ASbGnctHOfthsgH3QIxOwRfpvsMCj4Nd9nvRiZmGnNkGKoed5WvXxsneDwyMApBy1s1
+	wYdSso6bU/BiZB7O95MTx7CU/3kKSAlQzqwRi3PnBn/UXmOjcKiKdrjaPlrgPRHuFEJQ1FV8E7R
+	TWvI5zYrN+p/OsCXjS22eMLaSQ9qq3Pft8S0yxC97agcRmGqjsmat2uftcGmycn8LFbzn66VUlu
+	xudwrzuPOyCCf5aj8rttXYV5IF9OU5gtQ13Bns4aMIhreKTpYouMgzpHA+HOOtWTH4/ZeRjdz/b
+	otl89VVE3mIz4tol2oomQjzXzwMMnnd9R7X+tWig0mcCMlaEGxVWwzaFP3WKRmOVFbBFp8UTXeC
+	e/I2F3TgWVonTsZ3ZQ0a8oxU2
+X-Received: by 2002:ad4:5fcb:0:b0:6fa:c0c8:4666 with SMTP id 6a1803df08f44-6fac0c84808mr44267076d6.11.1748467793667;
+        Wed, 28 May 2025 14:29:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG74eRX4V7wOqF46HjPJ7kQ9zRJHLqSzFoaXPxT/pacZMHoPveGI47Omklq+TzxGkSyAsptiw==
+X-Received: by 2002:ad4:5fcb:0:b0:6fa:c0c8:4666 with SMTP id 6a1803df08f44-6fac0c84808mr44266756d6.11.1748467793230;
+        Wed, 28 May 2025 14:29:53 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5533791ce4asm18096e87.188.2025.05.28.14.29.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 28 May 2025 14:29:51 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Date: Thu, 29 May 2025 00:29:50 +0300
+Subject: [PATCH] phy: use per-PHY lockdep keys
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Krzysztof Kozlowski <krzk@kernel.org>
-References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
- <styd5gjksbsqt7efylpfn6bgwgyvt6zexxiooihjsnmp25yigp@unq7dor6gso2>
- <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
- <inpfuxskvmrebxitqtqwzvpnpicibo6zakgk4ujpcrqrpef2vw@nhclj5rg7axr>
- <9037fefe-aa40-4884-97ee-b81ff8346944@oss.qualcomm.com>
- <htufwjvfgdtav2gtgrytc356py6xqhrffbwjg42sgo7k4zzxof@z4xaf35qz7kq>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <htufwjvfgdtav2gtgrytc356py6xqhrffbwjg42sgo7k4zzxof@z4xaf35qz7kq>
-X-Authority-Analysis: v=2.4 cv=UOXdHDfy c=1 sm=1 tr=0 ts=68374025 cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=dt9VzEwgFbYA:10 a=g7IH87eAirqrRPCYX14A:9
- a=QEXdDO2ut3YA:10 a=NFOGd7dJGGMPyQGDc5-O:22
-X-Proofpoint-ORIG-GUID: OG9lCM6dZlns-NpcHrh9oHKxyf7UlVAB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDE0NiBTYWx0ZWRfX/vLRkHQ3N0Kl
- b9UP17HcghjYvbLbNA62Kd1QnCrlHCB33676ko5NRYHOoP2HGrvYkfJkjQT3YbEXRHxwc0j4MuG
- SEYZwXdOgsir2U6Mfr4lqsItdCPUGT8Gh4ZwTGYBlw/ZUAcTYUHgF73KL5iyTsFRimBDiVrPALh
- jC8s8Z6xMYYCIhXYVo9Z18rjHxE7pNJAwhTMF5nc/C3rXp5pTy5Ixm3YJIEjiy+lLRJbOQQGXvU
- BsgiJUKLZVVGwYOXB6w5Fv6qibDt4nQ+SG2qYmFoaymU3LOMZdtk8jFgGUb8GFt+iB1b5BIoxvy
- euZQpwICzbCT8pL0uOLEnu2jJ6AjneUYXB6Uh8vl5yQjBzbgNq2AB9KH45bDmqlgbj8tXvQXmCM
- Wnm1prX7xoOx164f6yzEK4ahw3qZUdpPCxjqIq2VguSOP/Hf+OZZ68a/orekmn4+Eu8585ki
-X-Proofpoint-GUID: OG9lCM6dZlns-NpcHrh9oHKxyf7UlVAB
+Message-Id: <20250529-phy-subinit-v1-1-b74cadf366b8@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAE2AN2gC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDUyML3YKMSt3i0qTMvMwSXROjZEsLi0RDoySzZCWgjoKi1LTMCrBp0bG
+ 1tQCujayIXQAAAA==
+X-Change-ID: 20250528-phy-subinit-42c988a12b6c
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Abel Vesa <abel.vesa@linaro.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.or, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5416;
+ i=dmitry.baryshkov@oss.qualcomm.com; h=from:subject:message-id;
+ bh=6xq/atNqNxSnjs/EFwkGKXlHoqkNTlt4lPuT3xIcHcQ=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBoN4BOuoxEflou1iT20hMXUG98t0nm+xS+0aOLe
+ vL1DCqR8xmJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCaDeATgAKCRCLPIo+Aiko
+ 1WAmB/4w05AbK/CjkUEGEXu/uqwO1UR0X6GWBrhbq4OvUAeghHCnMerhKf5R7Dcwj6vHE/Q7eky
+ 7IeYPMU74K6rCufSNAtOGw+QUrKIBJ0gVH3Xj9vFOgARVB5SuQ5SEaSBkOST069K83tfouRXlTP
+ 03hDw6xcEwayOs18+W+W2nPPEcIM1eovb9CWygjvBKOW9pWwKbPNwy1g6YRyg7gvggjkI73NVdQ
+ B/NBgf1zNSfWZCiseY/s6oF35ilq7R5jHvUeRZ+ONOmWbYq1Zm5SZPeqA3xl10yb+aaon1auFBw
+ AsDzsKc6qJPoW7MuOW4psVuogiFDQIGIhMmgPS9toxNvctDS
+X-Developer-Key: i=dmitry.baryshkov@oss.qualcomm.com; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
+X-Proofpoint-GUID: s0gUaZN6VnVutckzbnyHTGXw1e8szChM
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDE4OCBTYWx0ZWRfX/geR06P7zUfF
+ dP6v1Q6GBUShDvT//SrV6YQvK/tFNUWVE3YRwYcgBmXW9fo498B9Td4S6hZclOlDy6IVz+7f169
+ roRsfmTNdZlQlRXd08ilGonz0yRRpBrN5a8Upi1DpJUUk8FlBSvvSM5LUeVR9af9XpytwVn8tvZ
+ JcbbwwZ2rUey8bStWAndRUNJ0SYSv8gcGfIewV5vHUaGUbcWvYfR1w+XxOZRMumMKVtnhIamCmi
+ VsCty28qrjlOvhP+xM8VHMj9nnDmT5ekDwvJF0lXTHhqE8hcVXrqaQ7O0WD4AvDT25ND0tPRqlz
+ GcPvXW2LCjV4C3wxGTItmtWpp7oO2C0oTqlRFUPHZPUaJLA7DTe+tj6wMXG5mxPf4vK3kpmZrjj
+ joNiz42zrdgwGvEkbX4C/kzm5TJqSrQZ1G6Q8Pg0wSg5nKlrx7up/A3JEcHcinQejOeboIOb
+X-Authority-Analysis: v=2.4 cv=fMk53Yae c=1 sm=1 tr=0 ts=68378053 cx=c_pps
+ a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+ a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=83vSGatpBiZI-y3EDzYA:9 a=QEXdDO2ut3YA:10
+ a=iYH6xdkBrDN1Jqds4HTS:22
+X-Proofpoint-ORIG-GUID: s0gUaZN6VnVutckzbnyHTGXw1e8szChM
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-05-28_08,2025-05-27_01,2025-03-28_01
+ definitions=2025-05-28_11,2025-05-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 mlxscore=0 adultscore=0 priorityscore=1501
- mlxlogscore=999 bulkscore=0 malwarescore=0 impostorscore=0 spamscore=0
- suspectscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505280146
+ malwarescore=0 adultscore=0 impostorscore=0 phishscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 clxscore=1015 mlxscore=0
+ mlxlogscore=999 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505280188
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_095606_377676_87E4068F 
-X-CRM114-Status: GOOD (  23.51  )
+X-CRM114-CacheID: sfid-20250528_142957_347572_87CE826F 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,64 +144,148 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/28/25 1:22 PM, Dmitry Baryshkov wrote:
-> On Wed, May 28, 2025 at 01:13:26PM +0200, Konrad Dybcio wrote:
->> On 5/28/25 11:00 AM, Dmitry Baryshkov wrote:
->>> On Wed, May 28, 2025 at 12:24:02AM +0200, Konrad Dybcio wrote:
->>>> On 5/27/25 11:10 PM, Dmitry Baryshkov wrote:
->>>>> On Tue, May 27, 2025 at 10:40:02PM +0200, Konrad Dybcio wrote:
->>>>>> Register a typec mux in order to change the PHY mode on the Type-C
->>>>>> mux events depending on the mode and the svid when in Altmode setup.
->>>>>>
->>>>>> The DisplayPort phy should be left enabled if is still powered on
->>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
->>>>>> PHY is not powered off.
->>>>>
->>>>> This series doesn't seem to solve the USB side of a problem. When the
->>>>> PHY is being switch to the 4-lane mode, USB controller looses PIPE
->>>>> clock, so it needs to be switched to the USB-2 mode.
->>>>
->>>> I didn't find issues with that on X13s.. Not sure if it's related, but
->>>> on the SL7, after plugging in a 4ln DP connection, I need to plug in
->>>> the USB thumb drive twice for the first time (only in that sequence)
->>>
->>> Might be.
->>>
->>>> But there's nothing interesting in dmesg and the phy seems to be
->>>> programmed with the same values on both the initial and the subsequent
->>>> working plug-in
->>>
->>> Please try using a DP dongle with USB 2 passthrough (there are some).
->>> Or just emulate this by enabling DP PHY / DP chain for plugged in USB3
->>> devices. Would you be able to see the USB device on a bus?
->>
->> I only have a dongle with both display and usb that does 2ln dp
->> (I tested 4ln dp on a type-c display that I don't think has a hub)
->>
->> USB3 - yes, USB2 - no (but it works after a replug)
->>
->> Are you talking about essentially doing qcom,select-utmi-as-pipe-clk
->> at runtime?
-> 
-> I think so.
+If the PHY driver uses another PHY internally (e.g. in case of eUSB2,
+repeaters are represented as PHYs), then it would trigger the following
+lockdep splat because all PHYs use a single static lockdep key and thus
+lockdep can not identify whether there is a dependency or not and
+reports a false positive.
 
-So after quite some time playing with that, I noticed that the USB2
-device was never actually kicked off the bus.. and works totally fine
-after connecting the display output (2ln DP)
+Make PHY subsystem use dynamic lockdep keys, assigning each driver a
+separate key. This way lockdep can correctly identify dependency graph
+between mutexes.
 
-I was looking at dmesg, checking for discovery/disconnect messages,
-but the device was simply never disconnected (which makes sense given
-repurposing USB3 TX/RX lanes doesn't affect the D+/D- of USB2)
+ ============================================
+ WARNING: possible recursive locking detected
+ 6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 Not tainted
+ --------------------------------------------
+ kworker/u51:0/78 is trying to acquire lock:
+ ffff0008116554f0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
 
-I also read some docs and learnt that what we call
-qcom,select-utmi-as-pipe-clk is suppossed to be a debug feature
-and is unnecessary to set on USB2.0-only controllers
+ but task is already holding lock:
+ ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
 
-The USB controller programming guide though doesn't talk about DP,
-but I'd expect that we may need to set that override for 4lnDP+USB2
-use cases (which I don't have a dongle for)
+ other info that might help us debug this:
+  Possible unsafe locking scenario:
 
-Konrad
+        CPU0
+        ----
+   lock(&phy->mutex);
+   lock(&phy->mutex);
+
+  *** DEADLOCK ***
+
+  May be due to missing lock nesting notation
+
+ 4 locks held by kworker/u51:0/78:
+  #0: ffff000800010948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work+0x18c/0x5ec
+  #1: ffff80008036bdb0 (deferred_probe_work){+.+.}-{0:0}, at: process_one_work+0x1b4/0x5ec
+  #2: ffff0008094ac8f8 (&dev->mutex){....}-{4:4}, at: __device_attach+0x38/0x188
+  #3: ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
+
+ stack backtrace:
+ CPU: 0 UID: 0 PID: 78 Comm: kworker/u51:0 Not tainted 6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 PREEMPT
+ Hardware name: Qualcomm CRD, BIOS 6.0.240904.BOOT.MXF.2.4-00528.1-HAMOA-1 09/ 4/2024
+ Workqueue: events_unbound deferred_probe_work_func
+ Call trace:
+  show_stack+0x18/0x24 (C)
+  dump_stack_lvl+0x90/0xd0
+  dump_stack+0x18/0x24
+  print_deadlock_bug+0x258/0x348
+  __lock_acquire+0x10fc/0x1f84
+  lock_acquire+0x1c8/0x338
+  __mutex_lock+0xb8/0x59c
+  mutex_lock_nested+0x24/0x30
+  phy_init+0x4c/0x12c
+  snps_eusb2_hsphy_init+0x54/0x1a0
+  phy_init+0xe0/0x12c
+  dwc3_core_init+0x450/0x10b4
+  dwc3_core_probe+0xce4/0x15fc
+  dwc3_probe+0x64/0xb0
+  platform_probe+0x68/0xc4
+  really_probe+0xbc/0x298
+  __driver_probe_device+0x78/0x12c
+  driver_probe_device+0x3c/0x160
+  __device_attach_driver+0xb8/0x138
+  bus_for_each_drv+0x84/0xe0
+  __device_attach+0x9c/0x188
+  device_initial_probe+0x14/0x20
+  bus_probe_device+0xac/0xb0
+  deferred_probe_work_func+0x8c/0xc8
+  process_one_work+0x208/0x5ec
+  worker_thread+0x1c0/0x368
+  kthread+0x14c/0x20c
+  ret_from_fork+0x10/0x20
+
+Fixes: 3584f6392f09 ("phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater")
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+---
+Note: I've used a Fixes tag pointing to the commit which actually
+started using nested PHYs. If you think that it's incorrect, I'm fine
+with dropping it.
+
+Note2: I've tried using mutex_lock_nested, however that didn't play
+well. We can not store nest level in the struct phy (as it can be used
+by different drivers), so using mutex_lock_nested() would require us to
+change and wrap all PHY APIs which take a lock internally. Using dynamic
+lockdep keys looks like a more ellegant solution, especially granted
+that there is no extra impact if lockdep is disabled.
+---
+ drivers/phy/phy-core.c  | 5 ++++-
+ include/linux/phy/phy.h | 2 ++
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 8e2daea81666bf8a76d9c936c1a16d6318105c91..04a5a34e7a950ae94fae915673c25d476fc071c1 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -994,7 +994,8 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
+ 	}
+ 
+ 	device_initialize(&phy->dev);
+-	mutex_init(&phy->mutex);
++	lockdep_register_key(&phy->lockdep_key);
++	mutex_init_with_key(&phy->mutex, &phy->lockdep_key);
+ 
+ 	phy->dev.class = &phy_class;
+ 	phy->dev.parent = dev;
+@@ -1259,6 +1260,8 @@ static void phy_release(struct device *dev)
+ 	dev_vdbg(dev, "releasing '%s'\n", dev_name(dev));
+ 	debugfs_remove_recursive(phy->debugfs);
+ 	regulator_put(phy->pwr);
++	mutex_destroy(&phy->mutex);
++	lockdep_unregister_key(&phy->lockdep_key);
+ 	ida_free(&phy_ida, phy->id);
+ 	kfree(phy);
+ }
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index 437769e061b7030105c9ea4e9b0da9d32b6fa158..13add0c2c40721fe9ca3f0350d13c035cd25af45 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -154,6 +154,7 @@ struct phy_attrs {
+  * @id: id of the phy device
+  * @ops: function pointers for performing phy operations
+  * @mutex: mutex to protect phy_ops
++ * @lockdep_key: lockdep information for this mutex
+  * @init_count: used to protect when the PHY is used by multiple consumers
+  * @power_count: used to protect when the PHY is used by multiple consumers
+  * @attrs: used to specify PHY specific attributes
+@@ -165,6 +166,7 @@ struct phy {
+ 	int			id;
+ 	const struct phy_ops	*ops;
+ 	struct mutex		mutex;
++	struct lock_class_key	lockdep_key;
+ 	int			init_count;
+ 	int			power_count;
+ 	struct phy_attrs	attrs;
+
+---
+base-commit: 460178e842c7a1e48a06df684c66eb5fd630bcf7
+change-id: 20250528-phy-subinit-42c988a12b6c
+
+Best regards,
+-- 
+Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
