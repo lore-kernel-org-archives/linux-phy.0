@@ -4,73 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6E0C5AD49
-	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 13:23:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DEECC3ABB2
+	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 13:59:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
-	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ji7AVV+5CsPwmqsSq6jj3Ypm8VYYWe+Bf4NiBDPXbxM=; b=v68ccG5PFrK8CQJ8hKDoPbAVSU
-	4Op+LuO7HNR2CIjqLQclegw+4fZU5VBP+zMlx1Ey27gv4eWmV89fgkiE8pG6LUpVYgobhh1q7cj44
-	/PHYdq9VloJBnNVPAAhoPLsGcxoWa4xdi0kG8QKtGST54zqqiOvGwq8gbXlSextVLAUK/XZ0xlNoD
-	4zLBzVQfQoa6q5OQMTJYh2x1YnJ2iwnd1b1f0XtHG32Pq7EREZ5etTAU8TEyHXqPlkePKinLcghja
-	MKq7w8IuKmHjaJPcJ8AIg+Xqmcbo9P9nayPgFbQUdrgjum6GFUGiwzCeP70ZEwB1IccsRZ6rEszCf
-	UMG8RT9Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0OxUX04fWtZlC+4q5CASA4cw41qkVjGgl0MwvvQcbY0=; b=u5d7sjeskbUlLi
+	S+iRdyy/SPYynRaS/yIGHAjWpyctuvRbDPR0rapYfgEwOSyZnwOKttmN178/CBFJh5URRg5HVCN8q
+	U0aVvURkHeJ+9UelPDjbxikVemKxEN2Na7JzfLW33xk3kGhuKDiteITZjcFwQu8V0az/8S6qjeRs7
+	S+Rv17EUJvMm1Ys1vtvXJMZaU+pQJa8LirarImGNgKGnKAgcSAq2t17QW+5UE6P5ylCaC36bxEj0z
+	PK3nWZhq7f57mbWVa6YMpeGz2ECpm0Y193ENuayaRW9aHPdNLmfRL98mcFBCRzJWw5jUO6QmW01OX
+	elg+NCYCRNslGry6rkdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKGlC-0000000DEXa-1eKU;
-	Wed, 28 May 2025 13:23:58 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uKHJi-0000000DIxI-3ZQU;
+	Wed, 28 May 2025 13:59:38 +0000
+Received: from desiato.infradead.org ([90.155.92.199])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKGl9-0000000DEXB-3vYL
+	id 1uKGzx-0000000DGS9-1QpV
+	for linux-phy@bombadil.infradead.org;
+	Wed, 28 May 2025 13:39:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=Gcx+WlhvWOc4VQ1Qrqwnlw9XmLmnMgNUTYRDj8TgLrA=; b=LZQTnzHkhElR8UOvNnp1i85riE
+	lDorFNPut/0KwcJwN/wKecgetWA008otT111QbliJRgXR1T6XoF8TJv4c4YcKylt7O5pE6BVWVirL
+	++ZK/KrsukghYjAuumaZ+rwACMzvzJfaNn0njMDlPLoqw9H3zmk5io+tIe5hKVWi3QTADaER0jp4Z
+	IMEMhVbmxDuUhMntGdWpFSxvGKAS2Fcf//Z4HOxtoQv0uqD9wmECNjQ5oHrsNKJiakdPmNyLiXRxx
+	h6qu/7Boh9pa3ZeogRrb8OfV7GaXGhAsapfqHTXIEj2dXokyK9eBgBsOhoxxYSAyUMy+BL5KLi7jI
+	DlBS8qfg==;
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uKGzu-000000000p3-1EmW
 	for linux-phy@lists.infradead.org;
-	Wed, 28 May 2025 13:23:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D0E295C2BCA;
-	Wed, 28 May 2025 13:21:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEA28C4CEE7;
-	Wed, 28 May 2025 13:23:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748438634;
-	bh=5vKSGaBChbSlR5lX+l//vJBLLeI/kpeZbgb9bJhXdmI=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=SvGahb1Do9eqe3wYzPHut9tiGeekau9E3fkbyq23F3FrZk/QHelsJAtjySHEJh/S2
-	 BP/9WfUEWcRRx5e+n07v424qqusqgcwVW0B1iKztcH9mvKersXINz2nOVHJ033iSbM
-	 t5aeZXGDeNd0MYvnQo5kOg1eZ5YEsJu4zHSkJQHWl9jQQyuONp4yNjCvyTsL3CV/tP
-	 y4G3wCbrF7x3FU0EHTfQ0jnZhCxXpwQc2wMCGhb4+JCD4QKVz2RfnSux88ZJGtnKTT
-	 3ZWXiI9Euov3Ym4g6mVEjSxIgRGRRyI7qJOAxlrUKosARIRmzlfONW3KZG90X+TrM3
-	 9JG2TsMFQCGFg==
+	Wed, 28 May 2025 13:39:12 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-3a3673e12c4so2895486f8f.2
+        for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 06:39:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1748439544; x=1749044344; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Gcx+WlhvWOc4VQ1Qrqwnlw9XmLmnMgNUTYRDj8TgLrA=;
+        b=f367DQFQ68Iu9j8I8jtXT66uRiqB03y3Do3nFBG2g7MCrEQqL7ZMl9sybBTsSLrwAn
+         xvyb0aAhH98zc2jmKIKSGobY3N0l7xk/Edt2Hy+HJWnJSuQr4slui+I1V4s0IjUR0Vqa
+         EXCIiQt8hoIX4VBFOGhkDsWTsQbbQgUMkBkLD8zRvpPsSWkqy1ZbLodPMfbXbuc66U+s
+         AaCBrSTB6BWfDMC6Idqh4qIomJYAbw8MCsuCfl+CvY78pW+2qZzf528GtbBqVSdCj6on
+         HLML+10qrMYMgN+k3XQBZuHDaNYRneYsXuyo2V7CqUeE+5JQ52xlI2F708GSyVzB+67u
+         tF9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748439544; x=1749044344;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Gcx+WlhvWOc4VQ1Qrqwnlw9XmLmnMgNUTYRDj8TgLrA=;
+        b=UCYJDSe8ErlxDYwkcoJiiVZsyftBUEdJvCj19DQeX/wKQ/G+oq4cq85/4vYI87sMEM
+         0IAFln45B9dzpW5sj3QxrgGbbWyFiHJhLEb9hZkWwCxYJxaG+ISkJSAPEYKiMHdegIsj
+         g4UIzshIJGJrOS+thQS/VprB9H8zrGaDBH0gJ6hco4y8tzQScFskCqns1XsOW79whSVr
+         rTe+0c1qlFn40JkWYusZET4Mg9cegWfsTOOk1J3MPstqSV5VszDniaueiINNtzLy7t+A
+         8j5bcjP0koPHm70OyHKBjpPmABGkfA6dnIR5rhmPTX5NkXpfsMk7qO1Y7k7Tw9MWbtR6
+         mnFw==
+X-Gm-Message-State: AOJu0YwyejFmEjxregBFgV5FO3WjeI+918dssNwmC6520hF1yvUHqJal
+	+AtYSjg5Ush7R3pc/hEY0LCAOLjTSyyGa5oXUPkGALJwENr5Yfg2cD/x
+X-Gm-Gg: ASbGncuci2tPIpufBQvIZ+Kt51yKCJp+KyNH2jR50iwiHWPVKGzyrL5/raRmZHMpo+/
+	zC1aVjUX/iyafTW370RSnc8o+KDFzUvJSZRmWllHM662SIbwXmClDvwanTilYPnZSAcjaPO2XH5
+	yC8vs40udK13Uu0tjDNEmFIuN8dTJ6+tl9P9/8kOJ/RiiiEI3cAC1QoP0OZsPO2bNbPuSWaRjJ/
+	QpyMpcpb9c/SiU8x88nCp01JTGkyIf6vTenuTRD3hLWjUvSShyHIf+/haxFy700+r0HnOIU86bD
+	BeK4gr9vLVABVfBHhpao8YJ8xkXclchXzrgezE4YufEJqEkIunAhZ3sRW5xd7bEUL7/guQKhttz
+	k
+X-Google-Smtp-Source: AGHT+IGMEQa3lxp2ZRj8eP4aLq9vdjyWpPZAPQ7Y+N8XaT3vap/p8VkDkHt1ioZAELbgXk1At/1pmQ==
+X-Received: by 2002:a5d:4448:0:b0:3a4:e673:26cb with SMTP id ffacd0b85a97d-3a4e6732770mr2920173f8f.40.1748439543816;
+        Wed, 28 May 2025 06:39:03 -0700 (PDT)
+Received: from iku.Home ([2a06:5906:61b:2d00:7078:193c:ccdc:e2f5])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-450064a133csm22631925e9.11.2025.05.28.06.39.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 28 May 2025 06:39:03 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Prabhakar <prabhakar.csengg@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH] dt-bindings: phy: renesas,usb2-phy: Document RZ/V2N SoC support
+Date: Wed, 28 May 2025 14:38:58 +0100
+Message-ID: <20250528133858.168582-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.49.0
 MIME-Version: 1.0
-Date: Wed, 28 May 2025 15:23:47 +0200
-From: Michael Walle <mwalle@kernel.org>
-To: Devarsh Thakkar <devarsht@ti.com>
-Cc: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>, Aradhya Bhatia
- <aradhya.bhatia@linux.dev>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Francesco
- Dolcini <francesco@dolcini.it>, Jyri Sarha <jyri.sarha@iki.fi>, Maarten
- Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
- <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, David Airlie
- <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Andrzej
- Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>,
- Robert Foss <rfoss@kernel.org>, Laurent Pinchart
- <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, Jernej
- Skrabec <jernej.skrabec@gmail.com>
-Subject: Re: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
- capabilities
-In-Reply-To: <ab5f27ac-6bbe-4746-a2bd-e5f1a667ae91@ti.com>
-References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
- <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
- <DA6TT575Z82D.3MPK8HG5GRL8U@kernel.org>
- <8fc0c880-0809-43d6-b03a-1a5728f5d0d4@ideasonboard.com>
- <ab5f27ac-6bbe-4746-a2bd-e5f1a667ae91@ti.com>
-Message-ID: <27fa4ad56a57f0c408d3b119a620c1cb@kernel.org>
-X-Sender: mwalle@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_062356_061533_2A2C94D0 
-X-CRM114-Status: GOOD (  28.72  )
+X-CRM114-CacheID: sfid-20250528_143910_474756_7ADE33A3 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,115 +120,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Devarsh, Hi Tomi,
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
->>> While testing Aardhya's OLDI support patches [1], I've noticed that
->>> the resulting LVDS clock is wrong if this patch is applied.
->>> 
->>>> In practice, with the current K3 SoCs, the display PLL is capable of
->>>> producing very exact clocks, so most likely the rounded rate is the 
->>>> same
->>>> as the original one.
->>> 
-> 
-> Yes, display PLL is flexible and device manager should set exact 
-> frequency.
-> Please note that there was a bug in device manager in earlier releases 
-> which
-> would prevent setting it to exact clocks. You should try with latest 
-> SDK
-> release firmware binaries (11.0...(10.1 should also work though)) if 
-> seeing
-> any misbehaviour in that regard.
+Document support for the USB2.0 phy found on the Renesas RZ/V2N
+(R9A09G056) SoC. The USB2.0 phy is functionally identical to that on the
+RZ/V2H(P) SoC, so no driver changes are needed. The existing
+`renesas,usb2-phy-r9a09g057` compatible will be used as a fallback
+for the RZ/V2N SoC.
 
-Yes, I don't doubt that. But it's the way the driver is handling the
-clock w.r.t. to the fixed-clock-divider in the LVDS case which is 
-causing
-problems.
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+ Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 4 ++++
+ 1 file changed, 4 insertions(+)
 
->>> This is now what I'm seeing. Most SoCs have that fixed clock thingy
->>> for (some?) VPs, e.g. [2]. And clk_round_rate() will return the
->>> fixed clock rate for this clock, which will then result in an LVDS
->>> clock which is way off.
->>> 
->>> I'm testing on an AM67A (J722S) and I've backported some of the
->>> patches as well as dtsi fragmets from downstream. Thus, it might be
->>> as well the case that the fixed-factor-clock node is wrong here.
->>> OTOH other K3 SoCs do this in mainline as well.
->> 
->> Thanks for findings this (It's not a fixed clock, but a (fixed)
->> divider). I can reproduce on my AM62 SK's OLDI output.
->> 
->> I didn't see AM625 TRM explaining the DSS + OLDI clocking. I remember 
->> it
->> was a bit "interesting". Afaics from testing, the VP clock is derived
->> from the OLDI serial clock divided by 7. To change the VP clock, we 
->> need
->> to set the OLDI clock's rate. But the code we have at the moment is
->> using clk_round_rate/set_rate to the VP clock.
->> 
-> 
-> This is correct. The pixel clock is derived as OLDI clock/7 when OLDI 
-> is
-> enabled.
+diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+index 2822dce8d9f4..f45c5f039ae8 100644
+--- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+@@ -40,6 +40,10 @@ properties:
+               - renesas,usb2-phy-r9a07g054 # RZ/V2L
+           - const: renesas,rzg2l-usb2-phy
+ 
++      - items:
++          - const: renesas,usb2-phy-r9a09g056 # RZ/V2N
++          - const: renesas,usb2-phy-r9a09g057
++
+   reg:
+     maxItems: 1
+ 
+-- 
+2.49.0
 
-What means "if OLDI is enabled"? Is there any other clock otherwise or
-none at all? Reading the clock ID desciption in the TISCI documentation,
-I presume there is no configurable clock for the first VP at all. I.e.
-if one compares it with DSS1 which has two muxed clocks, DSS0 only has
-one muxed clock (DEV_DSS0_DPI_1_IN_CLK) and DEV_DSS0_DPI_0_IN_CLK is 
-fixed,
-presumely thats the fixed /7 clock.
-
-Also how is this handled for the DSS1 (on an AM67A)? The TI downstream
-kernel also has a fixed-clock-divider for the VP1 on DSS1, but I think
-that is wrong, because it's actually configurable (if OLDI is 
-disabled?).
-
->> And we get the crtc atomic_check called before setting the OLDI clock
->> rate, so it doesn't even work by luck (i.e. if the OLDI clock was set
->> earlier, the VP clock would already have the right rate, and it would
->> seem that everything is ok). In the atomic_check we see the OLDI 
->> bypass
->> clock (25 MHz), which results in 3571428 Hz VP clock.
->> 
->> And with this patch, the code then decides that 3571428 Hz is what the
->> HW can do, and uses it as the pixel clock.
-
-FWIW, I'm seeing exactly 300MHz on the AM67A (the FCLK is 2.1GHz 
-according
-to k3conf).
-
--michael
-
->> 
->> Aradhya, Devarsh, do you remember how the clocking goes here? Or if 
->> it's
->> in the TRM, please point me to it...
->> 
-> 
-> I think what you described is correct, if any specific questions I can 
-> help
-> check. But any misbehaviour you are seeing w.r.t clock setting (i.e. 
-> what
-> driver is trying to set versus what actually is getting set)
-> then please dump the dss clock tree along with relevant details of test 
-> done:
-> 
-> k3conf dump clock <display_device_id>
-> 
-> You can get the device ID via TISCI Doc [1]
-> 
-> [1]: 
-> https://downloads.ti.com/tisci/esd/latest/5_soc_doc/am62x/clocks.html#clock-for-am62x-device
-> 
-> Regards
-> Devarsh
 
 -- 
 linux-phy mailing list
