@@ -4,47 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A066AC3ABB2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB935C5AE59
 	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 05:27:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zzb/6b/goVUldJoqJq5m1WnnISC6jRHx2Fmc+ltyjSc=; b=fRHTPvfHcR0GhS
-	eV085C9a5LiFzAXbR0krt/d9wymCILL7sGOPvBIIUh9S540lENkNJfCTVCcItaoGCfHyO27mXN+PJ
-	aUaHoMyhOfvFxYzu9OwnyL9W70NJscJsaUgmm7N1PB/yBr0oL6+7MXU2PgRhnPWJCZ4DV10WnlmQU
-	YzVsz034kEeXjtR/piQ0eKghyya8CntJvt/Lac76uIWg7n0Gnabtt/srFxRphkwrqh5rI79nuK+9f
-	VRzgKtqa1uPjXXlSbRjhGUE3aCqYtHs3Tuxsdj5pplzzNFDkaRTM1RRwNXD0E/W9myVjsgOk8M0Hv
-	SIoNwxPJfmuhLtTgaNSQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hknHO/z7KTyC1gYs9QiBs35qBOWR6wagTjCshtOsvbU=; b=eSleZl2KP9pRXh
+	1ohUX/jTozvD2Kw0bL2V4FNETSyFOskY/cDb/8YgJt7/KBOajRDBe1dCQhGLE7CjkTNK8BaSeRy8a
+	FkvdJdsz3t/prmInAz0kk7jkKZSmg50h/M+kaXg022LDihFksNhO1WdTFJPvibXe30oKCK9O7jKWB
+	j/BQNPufBlEyqiDFLQ7BsQ9+xSCvP3BydfGzDT9I3FAZe8u64kDlhU7uu5WREx4Fks2W387PugPM/
+	K5B+ClDm6EzM72kGgN96+s7NvzhBVd28ArXy2bBX30FJhzmqYkZyz4nMBq+xZ6tAoWKmUhkmqitgE
+	uF6ooFvpt0DNdBo2V/XA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK9Jm-0000000CDIf-1GkT;
+	id 1uK9Jm-0000000CDIz-2Qcy;
 	Wed, 28 May 2025 05:27:10 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK9IN-0000000CD6x-14jk
+	id 1uK9IO-0000000CD79-40X8
 	for linux-phy@lists.infradead.org;
-	Wed, 28 May 2025 05:25:45 +0000
-X-CSE-ConnectionGUID: VsJxNp3ZQ/uLDYy/SExasA==
-X-CSE-MsgGUID: YQwMdWRNT5ieinerWDHpDg==
+	Wed, 28 May 2025 05:25:46 +0000
+X-CSE-ConnectionGUID: vwHT20hcS92e+6NCRNsqyw==
+X-CSE-MsgGUID: wrKAZZudT4+bhAv8lq7C5w==
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
-  by relmlie5.idc.renesas.com with ESMTP; 28 May 2025 14:25:40 +0900
+  by relmlie6.idc.renesas.com with ESMTP; 28 May 2025 14:25:43 +0900
 Received: from [127.0.1.1] (unknown [10.226.78.19])
-	by relmlir6.idc.renesas.com (Postfix) with ESMTP id EBBCF41728C9;
-	Wed, 28 May 2025 14:25:38 +0900 (JST)
+	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 5838E4172C21;
+	Wed, 28 May 2025 14:25:41 +0900 (JST)
 From: Michael Dege <michael.dege@renesas.com>
-Subject: [PATCH v3 0/2] phy: renesas: r8a779f0-ether-serdes: driver
- enhancement
-Date: Wed, 28 May 2025 07:25:23 +0200
-Message-Id: <20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com>
+Date: Wed, 28 May 2025 07:25:24 +0200
+Subject: [PATCH v3 1/2] phy: renesas: r8a779f0-ether-serdes: add USXGMII
+ mode
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAEOeNmgC/3WNwQ6CMBBEf4Xs2TWwLRA9+R+GQ9NupQeBdLHRk
- P67lejR45vMvNlAOAYWOFcbRE5BwjwVUIcK7GimG2NwhYFqauuWFEaeWIxg2TkWfCzOrIyKre7
- IN533Gsp2iezDc/deh8JjkHWOr/0m0Sf9Gfs/xkRYI/umt31j3Unby7d3tPMdhpzzG4Y1Adu8A
- AAA
-X-Change-ID: 20250523-renesas-serdes-update-3ec462f16ff4
+Message-Id: <20250528-renesas-serdes-update-v3-1-8413fcd70dba@renesas.com>
+References: <20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com>
+In-Reply-To: <20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
@@ -52,16 +49,16 @@ Cc: Michael Dege <michael.dege@renesas.com>,
  =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1748409938; l=1321;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1748409938; l=5036;
  i=michael.dege@renesas.com; s=20250523; h=from:subject:message-id;
- bh=0kyZ4m3Y4UQwKjvbj8YXdXEVhRm5J7o8ugG9z52fs/4=;
- b=Ci3aNmr359XvUjFWg5wdbcrdjlSbDyS4bbxWExa5Er6A7Hg4G6bP7O3zxdthxmNxqu7M9G9wf
- eAjlegETIVmDj0jKwI17aalyEcRKs7lU1/QbRIaDM59C5KmRDzF4P9N
+ bh=vdlPPURZFqLW0CfYUqmDIFGE6MunILIj03Dugkm8ypU=;
+ b=9fAYNYfvfrd1npQnc068D8Oe6kGTnEjjLnBMknGm7npWzXfv0IquiTg9INlz9T11Ki0NaB+fQ
+ /t9sm5CP3GiAjAo9x2vj+XsZp2a8YRN544B64zvSv2sbklyAIS1CVcM
 X-Developer-Key: i=michael.dege@renesas.com; a=ed25519;
  pk=+gYTlVQ3/MlOju88OuKnXA7MlapP4lYqJn1F81HZGSo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_222543_406876_C11325E6 
-X-CRM114-Status: UNSURE (   6.90  )
+X-CRM114-CacheID: sfid-20250527_222545_106009_00299522 
+X-CRM114-Status: UNSURE (   8.48  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,51 +76,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-This patch set adds the following to the r8a779f0-ether-serdes driver:
-
- * USXGMII mode support for 2.5GBit/s ethernet Phys
- * A new configuration step suggested by the latest R-Car S4-8 users
-   manual V. 1.20.
-
-Changes in v3: 
-- Fixed wrong macro (reported by kernel test bot).
-- Link to v2: https://lore.kernel.org/r/20250527-renesas-serdes-update-v2-0-ef17c71cd94c@renesas.com
-
-Changes from v1:
- - Modify this driver for the R-Car S4-8 only
- - So, this patch set drops the followings:
- -- any dt doc modification
- -- X5H support.
- -- 5GBASER support
- -- Registers' macros
-
-Thanks,
-
-Michael
+The initial driver implementation was limited to SGMII and 1GBit/s. The
+new mode allows speeds up to 2.5GBit/s on R-Car S4-8 SOCs.
 
 Signed-off-by: Michael Dege <michael.dege@renesas.com>
 ---
-To: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
+ drivers/phy/renesas/r8a779f0-ether-serdes.c | 69 ++++++++++++++++++++++++-----
+ 1 file changed, 57 insertions(+), 12 deletions(-)
 
----
-Michael Dege (2):
-      phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
-      phy: renesas: r8a779f0-ether-serdes: add new step added to latest datasheet
+diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
+index 3b2d8cef75e52c939fcc8806961e172dbafb8008..ed83c46f6d00c255852cc5af867c89ab0d0db02a 100644
+--- a/drivers/phy/renesas/r8a779f0-ether-serdes.c
++++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
+@@ -1,7 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /* Renesas Ethernet SERDES device driver
+  *
+- * Copyright (C) 2022 Renesas Electronics Corporation
++ * Copyright (C) 2022-2025 Renesas Electronics Corporation
+  */
+ 
+ #include <linux/delay.h>
+@@ -92,17 +92,18 @@ r8a779f0_eth_serdes_common_setting(struct r8a779f0_eth_serdes_channel *channel)
+ {
+ 	struct r8a779f0_eth_serdes_drv_data *dd = channel->dd;
+ 
+-	switch (channel->phy_interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-		r8a779f0_eth_serdes_write32(dd->addr, 0x0244, 0x180, 0x0097);
+-		r8a779f0_eth_serdes_write32(dd->addr, 0x01d0, 0x180, 0x0060);
+-		r8a779f0_eth_serdes_write32(dd->addr, 0x01d8, 0x180, 0x2200);
+-		r8a779f0_eth_serdes_write32(dd->addr, 0x01d4, 0x180, 0x0000);
+-		r8a779f0_eth_serdes_write32(dd->addr, 0x01e0, 0x180, 0x003d);
+-		return 0;
+-	default:
+-		return -EOPNOTSUPP;
+-	}
++	/* Set combination mode */
++	r8a779f0_eth_serdes_write32(dd->addr, 0x0244, 0x180, 0x00d7);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01cc, 0x180, 0xc200);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01c4, 0x180, 0x0042);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01c8, 0x180, 0x0000);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01dc, 0x180, 0x002f);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01d0, 0x180, 0x0060);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01d8, 0x180, 0x2200);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01d4, 0x180, 0x0000);
++	r8a779f0_eth_serdes_write32(dd->addr, 0x01e0, 0x180, 0x003d);
++
++	return 0;
+ }
+ 
+ static int
+@@ -155,6 +156,42 @@ r8a779f0_eth_serdes_chan_setting(struct r8a779f0_eth_serdes_channel *channel)
+ 		r8a779f0_eth_serdes_write32(channel->addr, 0x0028, 0x1f80, 0x07a1);
+ 		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f80, 0x0208);
+ 		break;
++
++	case PHY_INTERFACE_MODE_USXGMII:
++		r8a779f0_eth_serdes_write32(channel->addr, 0x001c, 0x300, 0x0000);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0014, 0x380, 0x0050);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2200);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x001c, 0x380, 0x0400);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x01c0, 0x180, 0x0001);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0248, 0x180, 0x056a);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0258, 0x180, 0x0015);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, 0x1100);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x01a0, 0x180, 0x0001);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00d0, 0x180, 0x0001);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0150, 0x180, 0x0001);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x180, 0x0300);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0300);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0174, 0x180, 0x0000);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0160, 0x180, 0x0004);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x01ac, 0x180, 0x0000);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x0310);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00c8, 0x180, 0x0301);
++		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x00c8, 0x180, BIT(0), 0);
++		if (ret)
++			return ret;
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0148, 0x180, 0x0301);
++		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0148, 0x180, BIT(0), 0);
++		if (ret)
++			return ret;
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00c4, 0x180, 0x1310);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00d8, 0x180, 0x1800);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x00dc, 0x180, 0x0000);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2300);
++		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0000, 0x380, BIT(8), 0);
++		if (ret)
++			return ret;
++		break;
++
+ 	default:
+ 		return -EOPNOTSUPP;
+ 	}
+@@ -179,6 +216,14 @@ r8a779f0_eth_serdes_chan_speed(struct r8a779f0_eth_serdes_channel *channel)
+ 			return ret;
+ 		r8a779f0_eth_serdes_write32(channel->addr, 0x0008, 0x1f80, 0x0000);
+ 		break;
++	case PHY_INTERFACE_MODE_USXGMII:
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x1f00, 0x0120);
++		usleep_range(10, 20);
++		r8a779f0_eth_serdes_write32(channel->addr, 0x0000, 0x380, 0x2600);
++		ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0000, 0x380, BIT(10), 0);
++		if (ret)
++			return ret;
++		break;
+ 	default:
+ 		return -EOPNOTSUPP;
+ 	}
 
- drivers/phy/renesas/r8a779f0-ether-serdes.c | 97 +++++++++++++++++++++++++----
- 1 file changed, 85 insertions(+), 12 deletions(-)
----
-base-commit: a5806cd506af5a7c19bcd596e4708b5c464bfd21
-change-id: 20250523-renesas-serdes-update-3ec462f16ff4
-
-Best regards,
 -- 
-Michael Dege <michael.dege@renesas.com>
+2.25.1
 
 
 -- 
