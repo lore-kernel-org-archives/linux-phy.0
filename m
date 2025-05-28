@@ -4,62 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19FFBC5B543
-	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 05:27:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53C46C5AE59
+	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 07:25:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AZrNFuN73YGSkiw81k/i41IYVTHDXSrTVIzTV34xycw=; b=bm1OWVNyUyWrdE
-	oCJf7yeFDEGGKWxUkrqDb2SjuvxXWG3bnKkpuyQ3aauYtSPqBcVz0PsQi9sVZudnuGoeLfLYJ/CPD
-	Q3m6G1XkdhV/EFag4Ejtyjp0aZrKntL6FRAjs5ZH1518gMQrXlbZkrfYxHvrEbP0GrNgbWtKysLgy
-	nTc3haXZgaaQKgEtHpc4fZ1OaMZKVS+xQWxMVMRiEI03mTIF2Icg0djfdm9r0nFZyF2BwcpXMoviz
-	5ETFLlg6TzbzEW81OlZz246AciSV9WM1pq9sRkmk6qNSvnElyxrkdDIPa//5O+naaIeSmAURn4Axo
-	D7bvuWXzW+6ux1GKVlnA==;
+	List-Owner; bh=iHwSEJkBe3FLGoBggzGIv8iWWxgTeW4OzsYmcj7uuE0=; b=VzznPvPoC9lrzl
+	jSyfjCQRStDPzqGVJesUSDIV9TRo2T2YNNl3UyBoNYEMqHtc/pzlBrqhPfkug2+0nosQsLXkR6i9v
+	pyEfKoxbTBfvM+MU2MtnumxVF2UP3Dm0xwHBJzis0WI2L9OBYrIX+9e/msoePw9RPb2uKgPLaFGgt
+	3a2TRShfDmf8RWLsgHIAn9HSkEhprESZUAwEMEptOz6xb/v/DOzCalBA8Pb+85zguFgeLylz1YGwT
+	8vXzgrYnABVrkctxAg8otJKCI/ZrL1QbiEdpV/aDkooFSCWJKeLwr+lN/GfX2BwKeM+c8R7HAmkFf
+	irHD20Htk95VaaYlx84A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK9Jm-0000000CDJC-3XuC;
-	Wed, 28 May 2025 05:27:10 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uK9IP-0000000CD6x-4AmA
-	for linux-phy@lists.infradead.org;
-	Wed, 28 May 2025 05:25:47 +0000
-X-CSE-ConnectionGUID: rt5OKpiCTnquPEUvqN4/dQ==
-X-CSE-MsgGUID: SdvyL35LRFiTF1FxPEt/Gw==
-Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
-  by relmlie5.idc.renesas.com with ESMTP; 28 May 2025 14:25:45 +0900
-Received: from [127.0.1.1] (unknown [10.226.78.19])
-	by relmlir6.idc.renesas.com (Postfix) with ESMTP id B95A34172C21;
-	Wed, 28 May 2025 14:25:43 +0900 (JST)
-From: Michael Dege <michael.dege@renesas.com>
-Date: Wed, 28 May 2025 07:25:25 +0200
-Subject: [PATCH v3 2/2] phy: renesas: r8a779f0-ether-serdes: add new step
- added to latest datasheet
+	id 1uKBAb-0000000CQTL-0MQy;
+	Wed, 28 May 2025 07:25:49 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uKB6V-0000000CQ6U-1QxD;
+	Wed, 28 May 2025 07:21:36 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 112C0A4F413;
+	Wed, 28 May 2025 07:21:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2716FC4CEE7;
+	Wed, 28 May 2025 07:21:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1748416893;
+	bh=SkRP/MS8cvO2FVA3kFfTyM8+otz9fEhJJqVQBSgvjeY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=eEaHx6s/f96D84HDtDZITR8TwrnXkMxwpSnlxiLsDEo8zSv1CR2wePfzDROHKmm7V
+	 Ep6fohXmQIa79YjWIDuSqy+5rLhjKE2SScaDusjuMJZGE2iLoKt/k/KvW9nO6r9oGX
+	 Gbh8mwEDFQm7EQqXjgJYOlzj9lyNtRkmBjXc9e3Dzftyz6xl4rnJbY9NlVvM/I+ine
+	 yXnu3PlLu69naPHBhHw+veayI/cVDoFMHtUts6bsWTMnJIR0MUGY1OWxcJd7B8DZSb
+	 /0XjJyv33d6rnMWoFwJ8P7R6JTrDpGS4oaVOONUFsOvWpRDvNelLvmD2IxM+rgiyJk
+	 Fgrb2DSraMv2g==
+Message-ID: <a42f7c93-4c26-489e-a680-ad20a8b8a0a6@kernel.org>
+Date: Wed, 28 May 2025 09:21:27 +0200
 MIME-Version: 1.0
-Message-Id: <20250528-renesas-serdes-update-v3-2-8413fcd70dba@renesas.com>
-References: <20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com>
-In-Reply-To: <20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Cc: Michael Dege <michael.dege@renesas.com>, 
- =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1748409938; l=2379;
- i=michael.dege@renesas.com; s=20250523; h=from:subject:message-id;
- bh=8bUXCSo65pFuL9K7IKGHK785dYGPeGX435gMmbBZl8I=;
- b=8XI1GZGrhlZZC6BBERC915AI0BkHI3Nm+wepvcwgfeCXZZQOIzPGqEXn20w2oyPGj9/8BD+N7
- szvz4bKgdZbDi2H05ASovfJyHiD8tGx7omW0i8qsK0pSwdB79Z7qH1y
-X-Developer-Key: i=michael.dege@renesas.com; a=ed25519;
- pk=+gYTlVQ3/MlOju88OuKnXA7MlapP4lYqJn1F81HZGSo=
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 08/10] phy: exynos: Add PCIe PHY support for FSD SoC
+To: Shradha Todi <shradha.t@samsung.com>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.or,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, kw@linux.com,
+ robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com,
+ krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
+ vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de,
+ m.szyprowski@samsung.com, jh80.chung@samsung.com
+References: <20250518193152.63476-1-shradha.t@samsung.com>
+ <CGME20250518193256epcas5p442e9549fd8fd810522f960df74c22e34@epcas5p4.samsung.com>
+ <20250518193152.63476-9-shradha.t@samsung.com>
+ <20250521-certain-quoll-from-vega-11885b@kuoka>
+ <0e2701dbcef4$6f5f24d0$4e1d6e70$@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
+ QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
+ +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
+ ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
+ 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
+ hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
+ tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
+ 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
+ naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
+ hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
+ whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
+ qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
+ RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
+ Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
+ H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
+ dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
+ AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
+ jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
+ zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
+ XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
+In-Reply-To: <0e2701dbcef4$6f5f24d0$4e1d6e70$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250527_222546_145749_F69B3C60 
-X-CRM114-Status: UNSURE (   8.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250528_002135_517890_30784809 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,71 +125,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-R-Car S4-8 datasheet Rev.1.20 describes some additional register
-settings at the end of the initialization.
+On 27/05/2025 12:45, Shradha Todi wrote:
+>>>
+>>> -	generic_phy = devm_phy_create(dev, dev->of_node, &exynos5433_phy_ops);
+>>> +	generic_phy = devm_phy_create(dev, dev->of_node, drv_data->phy_ops);
+>>>  	if (IS_ERR(generic_phy)) {
+>>>  		dev_err(dev, "failed to create PHY\n");
+>>>  		return PTR_ERR(generic_phy);
+>>>  	}
+>>>
+>>> +	exynos_phy->pcs_base = devm_platform_ioremap_resource(pdev, 1);
+>>> +	exynos_phy->phy_id = of_alias_get_id(dev->of_node, "pciephy");
+>>
+>> Where did you document aliases?
+>>
+> 
+> Will add it to dt bindings.
+> 
+>> Anyway, all this looks because you have completely buggy way of handling MMIO via syscon. That's a no-go. Use proper address
+>> ranges assigned to ddevices. If you ever need to use syscon, you should pass the offset as argument - just like other devices are
+>> doing.
+>>
+> 
+> Alias is used for 2 reasons.
 
-Signed-off-by: Michael Dege <michael.dege@renesas.com>
----
- drivers/phy/renesas/r8a779f0-ether-serdes.c | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+So if on my board the PCI slots are named differently and I use
+different alias, everything will stop working, right? Usually aliases
+for exposable buses are matching what is physically labeled on the
+exposed interface.
 
-diff --git a/drivers/phy/renesas/r8a779f0-ether-serdes.c b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-index ed83c46f6d00c255852cc5af867c89ab0d0db02a..8a6b6f366fe376d21f5fee7795893f5aac0feae4 100644
---- a/drivers/phy/renesas/r8a779f0-ether-serdes.c
-+++ b/drivers/phy/renesas/r8a779f0-ether-serdes.c
-@@ -49,6 +49,13 @@ static void r8a779f0_eth_serdes_write32(void __iomem *addr, u32 offs, u32 bank,
- 	iowrite32(data, addr + offs);
- }
- 
-+static u32 r8a779f0_eth_serdes_read32(void __iomem *addr, u32 offs,  u32 bank)
-+{
-+	iowrite32(bank, addr + R8A779F0_ETH_SERDES_BANK_SELECT);
-+
-+	return ioread32(addr + offs);
-+}
-+
- static int
- r8a779f0_eth_serdes_reg_wait(struct r8a779f0_eth_serdes_channel *channel,
- 			     u32 offs, u32 bank, u32 mask, u32 expected)
-@@ -319,6 +326,7 @@ static int r8a779f0_eth_serdes_hw_init_late(struct r8a779f0_eth_serdes_channel
- *channel)
- {
- 	int ret;
-+	u32 val;
- 
- 	ret = r8a779f0_eth_serdes_chan_setting(channel);
- 	if (ret)
-@@ -332,6 +340,26 @@ static int r8a779f0_eth_serdes_hw_init_late(struct r8a779f0_eth_serdes_channel
- 
- 	r8a779f0_eth_serdes_write32(channel->addr, 0x03d0, 0x380, 0x0000);
- 
-+	val = r8a779f0_eth_serdes_read32(channel->addr, 0x00c0, 0x180);
-+	r8a779f0_eth_serdes_write32(channel->addr, 0x00c0, 0x180, val | BIT(8));
-+	ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0100, 0x180, BIT(0), 1);
-+	if (ret)
-+		return ret;
-+	r8a779f0_eth_serdes_write32(channel->addr, 0x00c0, 0x180, val & ~BIT(8));
-+	ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0100, 0x180, BIT(0), 0);
-+	if (ret)
-+		return ret;
-+
-+	val = r8a779f0_eth_serdes_read32(channel->addr, 0x0144, 0x180);
-+	r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, val | BIT(4));
-+	ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0180, 0x180, BIT(0), 1);
-+	if (ret)
-+		return ret;
-+	r8a779f0_eth_serdes_write32(channel->addr, 0x0144, 0x180, val & ~BIT(4));
-+	ret = r8a779f0_eth_serdes_reg_wait(channel, 0x0180, 0x180, BIT(0), 0);
-+	if (ret)
-+		return ret;
-+
- 	return r8a779f0_eth_serdes_monitor_linkup(channel);
- }
- 
+> 1. Each of the 2 PHYs in FSD have different initializing sequence due to channel length, etc. We need the alias to select the init sequence accordingly
 
--- 
-2.25.1
+So devices are different? What is channel length? Number of lanes?
 
+
+> 2. The syscon offset can be passed via DT but the bit field also varies according to instance. (common reset is bit 8 in PHY0 and bit 1 in PHY1).
+
+You did not address the main problem here: you use MMIO but do not
+define any MMIO. Syscon is not a replacement for MMIO.
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
