@@ -4,95 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC84DC3ABB2
-	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 07:33:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 011B2C3ABB2
+	for <linux-phy@archiver.kernel.org>; Wed, 28 May 2025 09:34:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=grMBQIXaVzX6Z+jM2Rwr7nntOj/bcOnvPYAZCSf1QqM=; b=NPxuQUBA+MCyf7
-	jczN1swc9WTbfcVYEpaaV8sBZxL/pggalG8F3AZt2YmdlCVtlSDu2sUw6sK0l0SvP2/8I5+TddDFD
-	fbvDBRVZv02O/DnYVmvokXtavQKOiuLriT+ggthbo1IkasD/VsBWAV/W2zRVbd6w/Dt5KpHMptAoH
-	lqPIN6KyU1sxK8lGRUXdvejTNmevbCFq4LdWjmYNPSfZn3KSQB3g9JrA5Bm/0sVU2Xrb7opO19KUW
-	cLzNOBESPn7wNdAQ9jLdgZ83eIhxEtnyJLiXO1A3ZZ/ntrqLhS/ac8iowBBQIfpJG8VMnSTao+bwe
-	y/TwTSSh06RRTz7EN+cw==;
+	List-Owner; bh=B0VlA7XtVUDnz/502HaqGIFnJQHLHlx40EOn7pIRVY0=; b=nVFAQDj9+sSmkc
+	rPmGlCyIThZUFrlLrAtXn6laCZG8fKZTTpLwPOXBIIcQHuNp6eLAZ8pwW/6+WzOmiQK6qwvvYHMc1
+	Dqo6HAUuyhq8J8TdMtcFqi3HWVqzdeGXUgyF5utli1LE4Ytipn9cWLFRgVZKSuB3mJKxNACi/vcz4
+	OeL9YNCxhrgH0SRhfkTbWHnE3sM6bGLb7ktKraz9eK3V6vlPx24i67UI5AKDesNktJ5QbUNkW8Jlv
+	GI/8SP75hMe6RuyplEhgkcjUuuICE964+xHx1ZZC1FHSizHtrscsPhqbH815EkePszn3DOu07bIAd
+	ihzihrOGJQvIdmpf18jA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKBHw-0000000CRSS-19O5;
-	Wed, 28 May 2025 07:33:24 +0000
-Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
+	id 1uKDB6-0000000CjtS-35y9;
+	Wed, 28 May 2025 09:34:28 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKBHt-0000000CRRn-3mVG
+	id 1uKCeU-0000000Cet3-1vZB
 	for linux-phy@lists.infradead.org;
-	Wed, 28 May 2025 07:33:23 +0000
-Received: from lelvem-sh01.itg.ti.com ([10.180.77.71])
-	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 54S7WXXu3194667;
-	Wed, 28 May 2025 02:32:33 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1748417553;
-	bh=4xV4o/RHd3QDyMg98SNoIXBaQ+hUKdFjfdMlNfIY4SI=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=IqU4Q/ogEjZyHrET17F68VdMeaZfxak/zn2UdOX3Jjb0W3LcoYbNncdovxAkr8qhZ
-	 gvICj3A1mNldnarFMdbcOh9WZLJhiU73WBlNrpIKBZa+FCnlQnUhfE6CmNgPL/03gj
-	 99+iUVpZT8fSkAKJXVjwBiJR3umpOjPrUsvIlNGU=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
-	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 54S7WXx53262049
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Wed, 28 May 2025 02:32:33 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Wed, 28
- May 2025 02:32:32 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Wed, 28 May 2025 02:32:32 -0500
-Received: from [172.24.227.193] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.227.193])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 54S7WQC44110467;
-	Wed, 28 May 2025 02:32:27 -0500
-Message-ID: <ab5f27ac-6bbe-4746-a2bd-e5f1a667ae91@ti.com>
-Date: Wed, 28 May 2025 13:02:25 +0530
+	Wed, 28 May 2025 09:00:47 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54S7eUgm015869
+	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 09:00:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=2mjSi52VDuOIqzhu/+qC9OKP
+	NQzrY0pozp35vNraDBg=; b=IzFiLyH+shV+iJP/3J1hkJzMfO30UPgQ0+qk+fL9
+	YfPKixuF861DjqDdVb3hlk0/QbhWHenkacR79mqktciUjQ4ADO6rli/VM8YjyJ6W
+	f/SOYwlCkF2DYSWDmCcpYiFHIZCchwjeUPZVnaLUVmYl8P77hwaw8OJqrLG/6FkA
+	jGVMl/DznoQz8El065KU356ImUzNukp2Uhv+n4Gr+XcHAx9fT0MHyLHnGaVYrAbG
+	CO3irxsgJcVAbHydZcYlLq8oEzI3TfBBWBbWjR+s8v7/JWubBM4unnKDO4+U3KG8
+	k5GSuL0ubWyVoFr0JL6awKRfN1TqOKitIayCpztbECwoZg==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46u79p9pxh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 09:00:45 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7c793d573b2so768344085a.1
+        for <linux-phy@lists.infradead.org>; Wed, 28 May 2025 02:00:45 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748422844; x=1749027644;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=2mjSi52VDuOIqzhu/+qC9OKPNQzrY0pozp35vNraDBg=;
+        b=N1g6YMg2IRAjKXpYUvm4CjFjGNoDkOgDBStCQZXG3LmuhOKPUw9RKEuQGIXurY1kOW
+         kiJ6rIGWv2hF3CSH0l7kXXMpbi/0SeIeMPg9vvKnE+yWkKhpJDoG1lSVzfV90MRE3klf
+         +ngGKLJDhwPLfuPbR25kMP7pIm2UEeUWJk3dFe7Tgvvb51Z4lQ1YVgyDixUNK1gufmh0
+         prSDebzHdqZd/HVt+KvHwMbZHDiTL7o6uirLirIgM0u6f+VqWun9xv6ZM+ZyHYJfrgVJ
+         V3hKqZqNOgPDxMSqCr0jr3Uc45Bp/CZ3MW+eFiwgDOYb8XMQ2fpuP0NXh8rTzRrmcXfx
+         slaA==
+X-Forwarded-Encrypted: i=1; AJvYcCUEK+qZQlfrMBiMJNXUfYr0I4SLUpjVTy5zTQV5dFxCAP8BwB/ftS7KBjQFMpViVGd9FeKMa2RdnSU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyRqKcbqmBY2PNK4vijPy4IzrgK4Q20mXeNZ39DSEND7/RADqQj
+	PrJUQPMIrun0rfk9B28OhWeMEmQV99FQ/rZy7OHSNWiYpBhyPf5hx+HAjy46yrBxAjt0Cmj6wih
+	WMSZ7PcCjL9RhH86ZxAWasm19NFIVuvD1Sn88AkayU5trLNmng09TihzkLjjpakOl88rg
+X-Gm-Gg: ASbGncvhRy7OC7rRYGzQDDuIw+YQRr2dCBdvpHgPZqs5wyCXVmdzZZRj6oRnAkToPcO
+	wDFyqVumkfKVMOS4nkX14Rugq5YyNEAve0kfK0qUntPff/6zsxoup8Jxk+/qoKhmjF6vSqE0Ggm
+	1e4OrCmbsgP70O3iZNmW001adDi8yetejYjLU7xCkbBSNwcdqTGP3buFyuqCPOJxPGsenvCQ6Ry
+	Xop+2iBOn9cMySIt74jvGqCR4AdUMxt8yXx9h1A4FXAAlODoH3U5ZNiA7f7djVpK+O3YbiIv9kK
+	bHGCm2LBuS1xpkiXZV+vT1Itmiirjp9DSZhJ04l5Dm0B/o5V41F1+vUaQoeoNMcMs6JqqOirS7w
+	=
+X-Received: by 2002:a05:620a:240c:b0:7c5:e92a:cba3 with SMTP id af79cd13be357-7ceecbf9a21mr2666638685a.49.1748422843842;
+        Wed, 28 May 2025 02:00:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHhps16AlZrh7lPu8W80Ph0izdq5w8yJZHVSR7lQDLdhfKN1GF6pR+JV7jBPU8jReMa0jILtw==
+X-Received: by 2002:a05:620a:240c:b0:7c5:e92a:cba3 with SMTP id af79cd13be357-7ceecbf9a21mr2666633485a.49.1748422843263;
+        Wed, 28 May 2025 02:00:43 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5532f69a6absm190913e87.109.2025.05.28.02.00.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 28 May 2025 02:00:42 -0700 (PDT)
+Date: Wed, 28 May 2025 12:00:40 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+Message-ID: <inpfuxskvmrebxitqtqwzvpnpicibo6zakgk4ujpcrqrpef2vw@nhclj5rg7axr>
+References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
+ <styd5gjksbsqt7efylpfn6bgwgyvt6zexxiooihjsnmp25yigp@unq7dor6gso2>
+ <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/18] drm/tidss: Adjust the pclk based on the HW
- capabilities
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>,
-        Michael Walle
-	<mwalle@kernel.org>,
-        Aradhya Bhatia <aradhya.bhatia@linux.dev>
-CC: <dri-devel@lists.freedesktop.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>,
-        Francesco Dolcini <francesco@dolcini.it>,
-        Jyri Sarha <jyri.sarha@iki.fi>,
-        Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay
- Abraham I <kishon@kernel.org>,
-        Andrzej Hajda <andrzej.hajda@intel.com>,
-        Neil
- Armstrong <neil.armstrong@linaro.org>,
-        Robert Foss <rfoss@kernel.org>,
-        Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-        Jonas Karlman
-	<jonas@kwiboo.se>,
-        Jernej Skrabec <jernej.skrabec@gmail.com>
-References: <20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com>
- <20250402-cdns-dsi-impro-v2-3-4a093eaa5e27@ideasonboard.com>
- <DA6TT575Z82D.3MPK8HG5GRL8U@kernel.org>
- <8fc0c880-0809-43d6-b03a-1a5728f5d0d4@ideasonboard.com>
-Content-Language: en-US
-From: Devarsh Thakkar <devarsht@ti.com>
-In-Reply-To: <8fc0c880-0809-43d6-b03a-1a5728f5d0d4@ideasonboard.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Content-Disposition: inline
+In-Reply-To: <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
+X-Proofpoint-GUID: 57M30cIl88_C7rv0NcrpKWZC8m63gBun
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI4MDA3NyBTYWx0ZWRfX4Ywy0YrPIwQ5
+ seBEUZ3ELOb/+tKPDpHsWdBzckAn9xmBSya9TluhffaRmxLb8UwlrPKYTjMs8H46TClS9wO6Z6U
+ j/o1szjCLLWjqS16FrAhFjXxm69tg4Wn1A7CC0ofmWGrgyQAvDxyp2GYlKLag9HJBw5Nm9pbGHC
+ 53vcDg4F3tn/hJ55vn00N20A9upYZjHPjkgW6e7IC3egQi8bMvoND6+CNyCLo5G/etHplTSXwsA
+ yurvLQymQam6vGuPL44QQHr1ik880z+lIoGyGYuksyrJnB0kx3JTKIFOnRJx5Js0cxndtRqRE6l
+ DAEouDh/0KVJBt69AoXzaBcTHUp/gjqj/gTJeLTkoXrYfbQDAgsmFZjF1nUNzBotPvCnhHpnLfv
+ 70ZS6YJrc5SJXT8f3TwdtyFqILWZO7XAEcfdy2Ln2ngWfK9HRpV5rrBXBHcaf6oEOUtE7USl
+X-Authority-Analysis: v=2.4 cv=HNnDFptv c=1 sm=1 tr=0 ts=6836d0bd cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=dt9VzEwgFbYA:10 a=6X5T8yoRJbxqCL-bSjQA:9 a=CjuIK1q_8ugA:10
+ a=IoWCM6iH3mJn3m4BftBB:22
+X-Proofpoint-ORIG-GUID: 57M30cIl88_C7rv0NcrpKWZC8m63gBun
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-05-28_04,2025-05-27_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 suspectscore=0 malwarescore=0 lowpriorityscore=0 adultscore=0
+ priorityscore=1501 mlxlogscore=497 phishscore=0 mlxscore=0 spamscore=0
+ bulkscore=0 impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505280077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_003322_112837_0C57732B 
-X-CRM114-Status: GOOD (  25.57  )
+X-CRM114-CacheID: sfid-20250528_020046_505083_E3162F23 
+X-CRM114-Status: GOOD (  26.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,84 +135,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Michael, Tomi,
-
-On 27/05/25 18:03, Tomi Valkeinen wrote:
-> Hi Michael (and Aradhya, Devarsh),
+On Wed, May 28, 2025 at 12:24:02AM +0200, Konrad Dybcio wrote:
+> On 5/27/25 11:10 PM, Dmitry Baryshkov wrote:
+> > On Tue, May 27, 2025 at 10:40:02PM +0200, Konrad Dybcio wrote:
+> >> Register a typec mux in order to change the PHY mode on the Type-C
+> >> mux events depending on the mode and the svid when in Altmode setup.
+> >>
+> >> The DisplayPort phy should be left enabled if is still powered on
+> >> by the DRM DisplayPort controller, so bail out until the DisplayPort
+> >> PHY is not powered off.
+> > 
+> > This series doesn't seem to solve the USB side of a problem. When the
+> > PHY is being switch to the 4-lane mode, USB controller looses PIPE
+> > clock, so it needs to be switched to the USB-2 mode.
 > 
-> On 27/05/2025 12:13, Michael Walle wrote:
->> Hi Tomi,
->>
->> While testing Aardhya's OLDI support patches [1], I've noticed that
->> the resulting LVDS clock is wrong if this patch is applied.
->>
->>> In practice, with the current K3 SoCs, the display PLL is capable of
->>> producing very exact clocks, so most likely the rounded rate is the same
->>> as the original one.
->>
+> I didn't find issues with that on X13s.. Not sure if it's related, but
+> on the SL7, after plugging in a 4ln DP connection, I need to plug in
+> the USB thumb drive twice for the first time (only in that sequence)
 
-Yes, display PLL is flexible and device manager should set exact 
-frequency. Please note that there was a bug in device manager in earlier 
-releases which would prevent setting it to exact clocks. You should try 
-with latest SDK release firmware binaries (11.0...(10.1 should also work 
-though)) if seeing any misbehaviour in that regard.
+Might be.
 
->> This is now what I'm seeing. Most SoCs have that fixed clock thingy
->> for (some?) VPs, e.g. [2]. And clk_round_rate() will return the
->> fixed clock rate for this clock, which will then result in an LVDS
->> clock which is way off.
->>
->> I'm testing on an AM67A (J722S) and I've backported some of the
->> patches as well as dtsi fragmets from downstream. Thus, it might be
->> as well the case that the fixed-factor-clock node is wrong here.
->> OTOH other K3 SoCs do this in mainline as well.
-> 
-> Thanks for findings this (It's not a fixed clock, but a (fixed)
-> divider). I can reproduce on my AM62 SK's OLDI output.
-> 
-> I didn't see AM625 TRM explaining the DSS + OLDI clocking. I remember it
-> was a bit "interesting". Afaics from testing, the VP clock is derived
-> from the OLDI serial clock divided by 7. To change the VP clock, we need
-> to set the OLDI clock's rate. But the code we have at the moment is
-> using clk_round_rate/set_rate to the VP clock.
-> 
+> But there's nothing interesting in dmesg and the phy seems to be
+> programmed with the same values on both the initial and the subsequent
+> working plug-in
 
-This is correct. The pixel clock is derived as OLDI clock/7 when OLDI is 
-enabled.
+Please try using a DP dongle with USB 2 passthrough (there are some).
+Or just emulate this by enabling DP PHY / DP chain for plugged in USB3
+devices. Would you be able to see the USB device on a bus?
 
-> And we get the crtc atomic_check called before setting the OLDI clock
-> rate, so it doesn't even work by luck (i.e. if the OLDI clock was set
-> earlier, the VP clock would already have the right rate, and it would
-> seem that everything is ok). In the atomic_check we see the OLDI bypass
-> clock (25 MHz), which results in 3571428 Hz VP clock.
-> 
-> And with this patch, the code then decides that 3571428 Hz is what the
-> HW can do, and uses it as the pixel clock.
-> 
-> Aradhya, Devarsh, do you remember how the clocking goes here? Or if it's
-> in the TRM, please point me to it...
-> 
-
-I think what you described is correct, if any specific questions I can 
-help check. But any misbehaviour you are seeing w.r.t clock setting 
-(i.e. what driver is trying to set versus what actually is getting set)
-then please dump the dss clock tree along with relevant details of test 
-done:
-
-k3conf dump clock <display_device_id>
-
-You can get the device ID via TISCI Doc [1]
-
-[1]: 
-https://downloads.ti.com/tisci/esd/latest/5_soc_doc/am62x/clocks.html#clock-for-am62x-device
-
-Regards
-Devarsh
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
