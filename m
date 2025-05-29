@@ -4,93 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5F83C54FB3
-	for <linux-phy@archiver.kernel.org>; Thu, 29 May 2025 11:24:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74785C5AD49
+	for <linux-phy@archiver.kernel.org>; Thu, 29 May 2025 15:33:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iHfxilXxktSj4zTHfqMVwFw1ZSgo5tMmDYunrbd7TX0=; b=a9/ZDUBL/F5F6R
-	pG/Cqs7wxme4n3rc0idR00KIeSFJjPtOcsyK+ooGQ5ZQMjsgiGAkTGK/xPBmQmhOKfC8eyIg9bw5j
-	TWebc31o3sJUznAhPBt47aiRB3Pz3C03YMNnN5HrGON3EvloGLwQPJccI3Dx/oNXgDmm15bQH1y7U
-	ll2eDVZBOia9BrhFB9QE2b4JGmxF/exL5qFjv2ulEf1DiMQrjkUZ0AKmjcA4mUg1IJSV2aYJRq6WK
-	tRc48Z9fnEOX0f/57P6kfnibfwxncpsaKSviAT362l3eoOBsLpkOUZ3++PT7N+KQBUgJAGJaHwRsz
-	8tvHhYybUceUEOWMh/UQ==;
+	List-Owner; bh=Bp4tyVqS1b/ZzaGLJavQGLDYCOirW1rw+0mf1HMkxJo=; b=lHjCMvVeN5YDSU
+	lcKTEpl4pSUcJbo7B9vDc0aMuJ9O8/2tU65uD33daLe4flHp0IWhgdM5gIvsu+CJ80w7u2UU9tJJx
+	5q1go7n/AL+i6dPg+dOmwOB+OB6i7Z+cIYwOWqk0GrhWroz3wbBRIJIkVrPyo9E6gvUeZu+HX6vQt
+	Ye5WY8DLdW2KYo7P4eXujo0PrVNSADH/5Iwd9jO+FWYkYUOLWiDUtqg4Ln3GoEE8q286BG/9ja1th
+	ceBLFreT3/3KPScU33ELxPIp0+qzDCkGrDli5uclqFvo2UcnZmBd/z35+jxuQkLKuiBE0XR9FeR1M
+	7GCB3gu4v38a/3/WXuxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKbNX-0000000Fbr9-1tWC;
-	Thu, 29 May 2025 11:24:55 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1uKfGK-0000000G50v-007V;
+	Thu, 29 May 2025 15:33:44 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKbCl-0000000FaD1-1kyn
+	id 1uKea3-0000000G0iX-42ob
 	for linux-phy@lists.infradead.org;
-	Thu, 29 May 2025 11:13:48 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-3a4dc0f164fso747395f8f.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 May 2025 04:13:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1748517225; x=1749122025; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=yK9qxpphezwGnQuF+KskqWcGIK9SoXYFqqQnXtln7Y0=;
-        b=SHViETryPL9rIH/j2QUd9haA3WHhBfEZjLS01Jv+u9Blf6FCIhvA0eomL3QcGK+EDS
-         pMggU0ZMQHU+sGZNN17jqqaWhe5EcfomYO/uYbemlzTUe2SFprQtbZ/kSZf9NIUUlp+f
-         XCXf9ECkH/JS118/D33UexDR0ix4TmvGPE4TekpwAJ08WYZijV4U4AGpQbeFBi6IYdoo
-         bBMUxS/VnfovgL/RVRQlumXiNlFljP/2ZqekC8vPzrBnXse8lfDYTw/aBdHCnAp0t9f2
-         Ag6QaimMMAMTEiiiAkTrLSl3ka80aMtWZVwG8jWDU7OdTU583pe094K1ztBFmUnvf1v6
-         2QBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748517225; x=1749122025;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=yK9qxpphezwGnQuF+KskqWcGIK9SoXYFqqQnXtln7Y0=;
-        b=r6zJJUwa/xlJBVAR/uH/VMl/r694rPAuRLmQDgoIzi5CMqebAh0+MojFdliOnWkR0g
-         lH+SOWW+h8HQgQUK4S2/4txRMn+rqVFn9RM58y7RE0V33o/xLUQ5nCU0dqOPQiyQ+fX1
-         mTAMy4WajWZzxjyw56xWiAkiwN9Mo0skKfAmAncj+Za+UqaOPsKvtiuX0V63NaTQ5tYY
-         cpRGXXzT86TGTYGtSnFSR83atpqcCM+pDznQEXO093qIjaeqXfaPaxJ+oPR0JV2uFwvV
-         OTTZqniiE7XJzfcAd3+deDubfSFwl1YjCa5zKjytcmVMuUfs68I+LjKX+rXP9kZ9gA5a
-         wwDg==
-X-Forwarded-Encrypted: i=1; AJvYcCUGV2ukk3dboZ+375vkwt4Or40IlzPDh2/+ypnqYImG+gF4Wc+Suln/ih08dylKJd1kzgDW63cc8RM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzzMqTT9kWHuPzEI4evydO6LgYBw1o+JGqt54EiLwiNQxrLq2QF
-	wOdXPoR9YzyUiQAHe2af9a45mYM8SzBP4oh/65rCnrJXl5HNjy1V0rg=
-X-Gm-Gg: ASbGncviAFf2w/Qfzg2UC84+TdIP7dLjJtLPjuxRi2wWpit1TgoqJgmLE9cZZRtFHGb
-	JJbC514wnYBWdIzgvaRqz3FoB3Y9HEJBMI240Jq4x8A7G3QSNWAvo4ie58HkqbywM+VjuBVtyh7
-	dqZTUdoQMd32SLS2GH/ezytveirbwhzzpiV6s9xiWnEkakVPB5XzFXN3swPpmbM4nq8jCJ9frSM
-	rgq8au0gAsih1GWHXXYBr+JoiH2VGIH5TptbJoOedky7PK2X0J0bVDijgiY/4pvZ4AI7APY0Uqv
-	UWse7rDNSWwfmfyxrbxmqHvJ7GczMwL01oNL/JfwDHKQ86MWChCkyMPvnGYDuQ==
-X-Google-Smtp-Source: AGHT+IFtVOAYLaqimD0CxC6hc1kQSyzh4mu6P4w2Hy3B/G1NI/FXQGzDsNSqYq4Rk9kil0/t65js7A==
-X-Received: by 2002:a05:6000:4027:b0:39c:1f02:5409 with SMTP id ffacd0b85a97d-3a4cb4619camr15584768f8f.9.1748517225032;
-        Thu, 29 May 2025 04:13:45 -0700 (PDT)
-Received: from [192.168.2.104] ([66.205.92.118])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-450cfc02cf0sm17219285e9.11.2025.05.29.04.13.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 May 2025 04:13:44 -0700 (PDT)
-Message-ID: <2df66542-90b7-487e-88bb-5433b500c518@gmail.com>
-Date: Thu, 29 May 2025 13:13:42 +0200
+	Thu, 29 May 2025 14:50:06 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250529144958epoutp0368745f63dbf2b7e59b88a944e4052e4f~EBvOGkBc10793407934epoutp03V
+	for <linux-phy@lists.infradead.org>; Thu, 29 May 2025 14:49:58 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250529144958epoutp0368745f63dbf2b7e59b88a944e4052e4f~EBvOGkBc10793407934epoutp03V
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1748530198;
+	bh=JoVIT/YoibxB9MFqaRb9BAFdhMoHeYYoqYbA3YWaDwU=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=lsIxr1nT8d5gNFvvbFGbztnByv7dD3G0rMX/e5CCROqdCLNOYj97ql/jSZ/zMuM8N
+	 vYzJ9/UHxwl4qOQN1q9djKaM9KMZPId/oy3NkURzKFHumIu/jUFYUaVd+0jEpYJq1A
+	 oqW62/XHL8f14ceLQhrV+wvGGIdkQCMll60WGd3A=
+Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
+	20250529144957epcas5p121ac1b2643ce23abb26c0448e1a0d2f6~EBvNmI7t03174131741epcas5p1v;
+	Thu, 29 May 2025 14:49:57 +0000 (GMT)
+Received: from epcas5p4.samsung.com (unknown [182.195.38.182]) by
+	epsnrtp02.localdomain (Postfix) with ESMTP id 4b7Tmh2V00z2SSKX; Thu, 29 May
+	2025 14:49:56 +0000 (GMT)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250529102448epcas5p1a8209b6700e2206c3bbb6669f473b28b~D_Hs54RNZ1678116781epcas5p1m;
+	Thu, 29 May 2025 10:24:48 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+	epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+	20250529102448epsmtrp2ae0261061f58b804d19887addb119fa9~D_Hs4qBBk2330423304epsmtrp2h;
+	Thu, 29 May 2025 10:24:48 +0000 (GMT)
+X-AuditID: b6c32a29-55afd7000000223e-c2-683835f012c1
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+	epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+	9D.C8.08766.0F538386; Thu, 29 May 2025 19:24:48 +0900 (KST)
+Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip1.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250529102445epsmtip1d9de3beca2d4560f1d5e428ba1253ead~D_Hp7hmwq1925019250epsmtip1K;
+	Thu, 29 May 2025 10:24:45 +0000 (GMT)
+From: "Shradha Todi" <shradha.t@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
+Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <manivannan.sadhasivam@linaro.org>,
+	<lpieralisi@kernel.org>, <kw@linux.com>, <robh@kernel.org>,
+	<bhelgaas@google.com>, <jingoohan1@gmail.com>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <arnd@arndb.de>, <m.szyprowski@samsung.com>,
+	<jh80.chung@samsung.com>, "'Pankaj Dubey'" <pankaj.dubey@samsung.com>,
+	<linux-samsung-soc@vger.kernel.org>
+In-Reply-To: <441dd5c3-fd51-4471-86ad-337c646b1571@kernel.org>
+Subject: RE: [PATCH 09/10] PCI: exynos: Add support for Tesla FSD SoC
+Date: Thu, 29 May 2025 15:54:43 +0530
+Message-ID: <0eec01dbd083$e78c8200$b6a58600$@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-To: Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>
-Cc: Marijn Suijten <marijn.suijten@somainline.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>
-References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
-Content-Language: en-US
-From: Alex <alex.vinarskis@gmail.com>
-In-Reply-To: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQKa2HaEso6x90WQFKmaYw3pYxuT6gLGtKN5Ag2CUBUBvBCtGwIQCop6Ao3fESGyEeNtsA==
+Content-Language: en-in
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRzGec85O+dstDrOcO9KLBZJWlpCyRsM7aJw0ko/REUSOd3BlU7H
+	zjSNJDWtlOxihjlETeziulBTl9YaOdMuVnZZSzA1aaUh1VJLNM3YVuC3HzzP7+H/4U/jkgFi
+	Eb0/Xc/p0pVpclJEmNvlASGudUi95va4H/pQbSbRTFknheoL1Oj6/RcYqnn4QoB6po4J0NXx
+	Sgp1FM3i6Iuhn0Td3bcolHfytwCZPjoE6M3dKhI9r35EojPGXwS60G3FUOF0IYFuPOyjUF9h
+	sQDVNY9TaNbSQqHW94/xDX7s76kywLYa+ii21pTJmozFJPveYSFZp70CYxvrj7CnmoyAHTMF
+	xAv3iBQqLm1/FqdbHZEoUjtOx2knArJLnSNkHrgrKwFCGjJr4bu6m1gJENES5h6Az4oGSG8g
+	g2Ov3IGbfWHDnyHKW/oMYFd7v6dEMqug0z6Nu3khEwIbe654SjgzREDrmAt4jW4MdhbbBSWA
+	poVMBHzyYJlb8GWiYUvXd49MMMuhreaiZ1TMrIdteRW4l33gk0on4WacWQlLB4vAf758cQT3
+	XrcUTn66LPAesRPmN1b860thx+RJ/AzwNcyZMsyZMsyZMsxRagFhBDJOy2tSNHyYNiydOxjK
+	KzV8ZnpKaHKGxgQ8PxAc1ALuGF2hNoDRwAYgjcsXigsiw9USsUqZc4jTZezTZaZxvA0spgm5
+	VCwdLlVJmBSlnkvlOC2n+59itHBRHlZYbtG3S3+Ex1wZ6Ih++e2lYtYa/NwvNilAseNeSw4n
+	O26tTOKzirD7GzcnB36Nm/dz9KMttcpfYg1ZGjhfZWZiLRPnQ8RxSV8cq/tikl25raiVmSi2
+	97ADdr+uyAZqWwE++cbYuQsGrdk5tLXu4Hjidr1w+NKFTYNNk8j/m2M368JywIKnETGfm5xV
+	CTWVfG/sgw5aH2pcIYoa9RnZ/srnz0RYUJklunzLXtyyuFfaXp+x/rEqkkvonVl3wphimcqt
+	YdncEplqZNe5a6m2w5Hx2QVtoqizanPQYNSnLp867YFmujY83/xayYwqkKytvFxxNLt3eMlb
+	TqDZLCd4tTIsGNfxyr95fT+4cgMAAA==
+X-CMS-MailID: 20250529102448epcas5p1a8209b6700e2206c3bbb6669f473b28b
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-541,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250518193300epcas5p17e954bb18de9169d65e00501b1dcd046
+References: <20250518193152.63476-1-shradha.t@samsung.com>
+	<CGME20250518193300epcas5p17e954bb18de9169d65e00501b1dcd046@epcas5p1.samsung.com>
+	<20250518193152.63476-10-shradha.t@samsung.com>
+	<20250521-competent-honeybee-of-will-3f3ae1@kuoka>
+	<0e2801dbcef4$78fe5ec0$6afb1c40$@samsung.com>
+	<441dd5c3-fd51-4471-86ad-337c646b1571@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250529_041347_465301_FEB86DFB 
-X-CRM114-Status: GOOD (  23.82  )
+X-CRM114-CacheID: sfid-20250529_075004_700986_DC757657 
+X-CRM114-Status: GOOD (  29.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,114 +123,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 5/27/25 22:40, Konrad Dybcio wrote:
-> Register a typec mux in order to change the PHY mode on the Type-C
-> mux events depending on the mode and the svid when in Altmode setup.
->
-> The DisplayPort phy should be left enabled if is still powered on
-> by the DRM DisplayPort controller, so bail out until the DisplayPort
-> PHY is not powered off.
->
-> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
-> will be set in between of USB-Only, Combo and DisplayPort Only so
-> this will leave enough time to the DRM DisplayPort controller to
-> turn of the DisplayPort PHY.
->
-> The patchset also includes bindings changes and DT changes.
->
-> This has been successfully tested on an SM8550 board, but the
-> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
-> PD USB Hubs and PD Altmode Dongles to make sure the switch works
-> as expected.
->
-> The DisplayPort 4 lanes setup can be check with:
-> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
-> 	name = msm_dp
-> 	drm_dp_link
-> 		rate = 540000
-> 		num_lanes = 4
-> ...
 
+> -----Original Message-----
+> From: Krzysztof Kozlowski <krzk@kernel.org>
+> Sent: 28 May 2025 12:56
+> To: Shradha Todi <shradha.t@samsung.com>
+> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> linux-samsung-soc@vger.kernel.or; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org;
+> manivannan.sadhasivam@linaro.org; lpieralisi@kernel.org; kw@linux.com; robh@kernel.org;
+> bhelgaas@google.com; jingoohan1@gmail.com; krzk+dt@kernel.org; conor+dt@kernel.org;
+> alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org; arnd@arndb.de;
+> m.szyprowski@samsung.com; jh80.chung@samsung.com
+> Subject: Re: [PATCH 09/10] PCI: exynos: Add support for Tesla FSD SoC
+> 
+> On 27/05/2025 12:45, Shradha Todi wrote:
+> >
+> >
+> >> -----Original Message-----
+> >> From: Krzysztof Kozlowski <krzk@kernel.org>
+> >> Sent: 21 May 2025 15:18
+> >> To: Shradha Todi <shradha.t@samsung.com>
+> >> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> linux-samsung-soc@vger.kernel.or;
+> >> linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; manivannan.sadhasivam@linaro.org;
+> lpieralisi@kernel.org;
+> >> kw@linux.com; robh@kernel.org; bhelgaas@google.com; jingoohan1@gmail.com;
+> krzk+dt@kernel.org; conor+dt@kernel.org;
+> >> alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org; arnd@arndb.de;
+> m.szyprowski@samsung.com;
+> >> jh80.chung@samsung.com
+> >> Subject: Re: [PATCH 09/10] PCI: exynos: Add support for Tesla FSD SoC
+> >>
+> >> On Mon, May 19, 2025 at 01:01:51AM GMT, Shradha Todi wrote:
+> >>>  static int exynos_pcie_probe(struct platform_device *pdev)  {
+> >>>  	struct device *dev = &pdev->dev;
+> >>> @@ -355,6 +578,26 @@ static int exynos_pcie_probe(struct platform_device *pdev)
+> >>>  	if (IS_ERR(ep->phy))
+> >>>  		return PTR_ERR(ep->phy);
+> >>>
+> >>> +	if (ep->pdata->soc_variant == FSD) {
+> >>> +		ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(36));
+> >>> +		if (ret)
+> >>> +			return ret;
+> >>> +
+> >>> +		ep->sysreg = syscon_regmap_lookup_by_phandle(dev->of_node,
+> >>> +				"samsung,syscon-pcie");
+> >>> +		if (IS_ERR(ep->sysreg)) {
+> >>> +			dev_err(dev, "sysreg regmap lookup failed.\n");
+> >>> +			return PTR_ERR(ep->sysreg);
+> >>> +		}
+> >>> +
+> >>> +		ret = of_property_read_u32_index(dev->of_node, "samsung,syscon-pcie", 1,
+> >>> +						 &ep->sysreg_offset);
+> >>> +		if (ret) {
+> >>> +			dev_err(dev, "couldn't get the register offset for syscon!\n");
+> >>
+> >> So all MMIO will go via syscon? I am pretty close to NAKing all this, but let's be sure that I got it right
+> - please post your complete DTS
+> >> for upstream. That's a requirement from me for any samsung drivers - I don't want to support fake,
+> broken downstream solutions
+> >> (based on multiple past submissions).
+> >>
+> >
+> > By all MMIO do you mean DBI read/write? The FSD hardware architecture is such that the
+> > DBI/ATU/DMA address is at the same offset.
+> > The syscon register holds the upper bits of the actual address differentiating between these 3
+> > spaces. This kind of implementation was done
+> > to reduce address space for PCI DWC controller. So yes, each DBI/ATU register read/write will have
+> > syscon write before it to switch address space.
+> 
+> Wrap your replies correctly to fit mailing list.
+> 
+> No, I meant your binding does not define any MMIO at all. I see you use
+> for example elbi_base which is mapped from "elbi" reg entry, but you do
+> not have it in your binding.
+> 
+> Maybe just binding is heavily incomplete and that confused me.
+> 
 
-Hi,
+Got it. I think the confusion is due to the incomplete dt-bindings.
+I will fix these issues in the next version. Will post again once I get
+clarity about how to avoid redirection in patch 4/10
 
-
-Thanks for the respin. Together with `mode-switch;` for x1e80100.dtsi 
-and 4 lane DP change in respective .dts, successfully tested on Asus 
-Zenbook A14 (Parade PS8833 on both Type-C ports).
-
-Tested with:
-
-- Type-C USB3.0 pendrive
-
-- Type-C to DP cable (x4 DP lanes)
-
-- Type-C to HDMI/USB/... dongle (x2 USB3, x2 DP)
-
-All three variants work, in both orientations, on both ports. When 
-switching from x4 DP lanes cable to USB3 pendrive no re-plug was needed, 
-it works right away. Suspend and resume (to my surprise) also works.
-
-
-Tested-by: Aleksandrs Vinarskis <alex.vinarskis@gmail.com> # x1e80100, 
-ps8833
-
-
-Regards,
-
-Alex
-
-
->
-> This patchset depends on [1] to allow broadcasting the type-c mode
-> to the PHY, otherwise the PHY will keep the combo state while the
-> retimer would setup the 4 lanes in DP mode.
->
-> [1] https://lore.kernel.org/all/20240527-topic-sm8x50-upstream-retimer-broadcast-mode-v1-0-79ec91381aba@linaro.org/
-> Changes in v3:
-> - Take the series from Neil
-> - Rebase
-> - Rename many variables
-> - Test on X1E & X13s
-> - Apply a number of small cosmetic/codestyle changes
-> - Remove some unused variables
-> - Some smaller bugfixes
-> - Link to v2: https://lore.kernel.org/lkml/20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org/
-> Changes in v2:
-> - Reference usb-switch.yaml in bindings patch
-> - Fix switch/case indenting
-> - Check svid for USB_TYPEC_DP_SID
-> - Fix X13s patch subject
-> - Update SM8650 patch to enable 4 lanes on HDK aswell
-> - Link to v1: https://lore.kernel.org/r/20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org
->
-> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> ---
-> Konrad Dybcio (1):
->        phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
->
-> Neil Armstrong (5):
->        dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch
->        phy: qcom: qmp-combo: store DP phy power state
->        phy: qcom: qmp-combo: introduce QMPPHY_MODE
->        phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE
->        arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set up 4-lane DP
->
->   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   7 +-
->   .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 182 +++++++++++++++++++--
->   3 files changed, 173 insertions(+), 22 deletions(-)
-> ---
-> base-commit: 460178e842c7a1e48a06df684c66eb5fd630bcf7
-> change-id: 20250527-topic-4ln_dp_respin-c6924a8825ce
->
 > Best regards,
+> Krzysztof
+
 
 -- 
 linux-phy mailing list
