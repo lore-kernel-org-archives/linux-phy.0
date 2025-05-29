@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62AEEC5AE59
-	for <linux-phy@archiver.kernel.org>; Thu, 29 May 2025 03:57:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B0DBC5B554
+	for <linux-phy@archiver.kernel.org>; Thu, 29 May 2025 03:57:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4wsnB6R8ERhnhRdLaK/El/bns+cZ0TY42Ftvq26xyZ0=; b=GsIR0dWIcwcUUf
-	QeuyEcJbcQ03jCX2amN19m3UTCSJDSBE7N6Y5TT1kGE0PwDCdji12H655xjdNJ3cUXXFKxYbWy0jf
-	UVBo55SFmH2IrcQ4eA175uEWPGCLVbRD+9NpG3iryANU+vdgA7/XYmReoMCnvh/A3xMqmtfe3FM/B
-	/cC3meAHnYkNlcuFkbEHavoegBkBbkFYNkIBBUQi5b0nNrzDCNMz/523M7LADnQQINRqG0hEys9eU
-	ImtGR/+wfHGWz9nryOfiXq+8l3Dotp0P16GpmQEJ3SByEntJJIbf4sY1PK6Doky41OPtwPwjqOkvt
-	HCdQNmPFi/0oJfffSfKw==;
+	List-Owner; bh=YepCZs9tGWSy8tF2wWulqRdz0eA5sw7pFU2QfGWcqIE=; b=CsORX/Nx2gQQyk
+	wd/mRmZ/m79YyWwTObi2C9JURMpCue1CF2PycB8+qXZQFudp8H10dM00rU5iZpULv2S7ychU68yFz
+	MdrOKqw9ginh+zUmV4rcmjOrstM3032XWuNwETqH+mj1VMkhrCbKqKureFnB+wP1Ka2a+FHUPNqOJ
+	0yCZKvNpvX6FpJ6clsPmL/1nzN2Anxss8/WICLaO+UNYUUfDbS/wbrel2eViRDi4gvazl3g5cxdst
+	2YWHA7FZ5482vkgqVsIpl8OgpBOe8ayvXrorSLS8zTuj29ek4XDPsGjwBmV0g0huLeXpgM/Nqgqod
+	CvNAC7t3B4iHs2XAKb0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKUOE-0000000Ernk-0BqL;
+	id 1uKUOE-0000000Eroi-3aar;
 	Thu, 29 May 2025 03:57:10 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKUNt-0000000EriX-0SyY
+	id 1uKUNu-0000000ErjP-2bEE
 	for linux-phy@lists.infradead.org;
-	Thu, 29 May 2025 03:56:50 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54SHTlQx022443;
-	Thu, 29 May 2025 03:56:43 GMT
+	Thu, 29 May 2025 03:56:51 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 54SMbGeM019422;
+	Thu, 29 May 2025 03:56:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=LcY8pGrgBKf
-	sLBju0tnXXMmuk5QkXWDO1B4u20NcOeg=; b=cGPaUWmHUm/dZRJhRIvpC+uMYN9
-	G8mSWcasx0kJNPtFCQvw7sCI+NAQkE8Ee7GCDW7mIdeE42gtCBiMQT5Wnq7Uz2/Y
-	TOgc/UqQp7Ef7Kl+QkWSJRIaLmi4H8Yi3deWrC43d/DsC5zmROsTEg/qvgiC+lvR
-	td5QkmQSO5GL1+1dMFXDOWP/FP5e2OMoMt+8xrEm9lx3B/44tIkuthU5JTI3zoX+
-	pLf8AORiHQfjGhPP1UG7h6MifBePtBOUcVkH+kezxZUiGvSz3puez/Ky2a+U2LAh
-	n2msItyq1ULWo2p+wmLVl6cvgniN076mSJnMpt2J/dnWKvwveSCECmOWk4Q==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46x6xc9ahg-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=xvoCyDbGw34
+	B660gAA0SqF82bVjpavSVxQxThIP+JHE=; b=p10y3Y2emgc0buL0azjUECyRN3D
+	VOWTejxta0Oa9X+DLcQN8wR/eAQ+z5rhMFmiY1+CekFEBTm5sGtI8KsPPx7Ksdeq
+	ccIft1ypv7KalzmvDQC7Weq5NDLnQaLOgHGUVpBXwNr+h19ge83UCYervQDjOqb7
+	p4UacJVHN5rDnzxUPAPuovLvK9nSVUnXqOrl/AT/4g2bJ0a9zQ99MvYzHn8dT9yZ
+	EXsD0n1RPp+65AYW/C3SOQCPoPVTgFGh267mmdj+/kRHbEZKs0oL3ok7lJeyOjNN
+	7EwfPx7Crurj26I6pJE2y0cUC30ohlwcs8dcg7tx9sk8X7+b1YtfH6w+bxw==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46w992pfbw-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 29 May 2025 03:56:43 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 54T3ufWs032187;
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 54T3ufv9013295;
 	Thu, 29 May 2025 03:56:41 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 46u76mdp14-1
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 46u76mdpec-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 29 May 2025 03:56:41 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 54T3sK3N030075;
-	Thu, 29 May 2025 03:56:41 GMT
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 54T3uelK013290;
+	Thu, 29 May 2025 03:56:40 GMT
 Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 54T3uemk032178
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 54T3uepm013284
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Thu, 29 May 2025 03:56:40 +0000
 Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 8DEFD3160; Thu, 29 May 2025 11:56:37 +0800 (CST)
+	id 930A43163; Thu, 29 May 2025 11:56:37 +0800 (CST)
 From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 To: lpieralisi@kernel.org, kwilczynski@kernel.org,
         manivannan.sadhasivam@linaro.org, robh@kernel.org, bhelgaas@google.com,
@@ -71,9 +71,9 @@ Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
         quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
         Ziyue Zhang <quic_ziyuzhan@quicinc.com>,
         Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: [PATCH v6 5/6] arm64: dts: qcom: qcs8300: enable pcie1
-Date: Thu, 29 May 2025 11:56:34 +0800
-Message-Id: <20250529035635.4162149-6-quic_ziyuzhan@quicinc.com>
+Subject: [PATCH v6 6/6] arm64: dts: qcom: qcs8300-ride: enable pcie1 interface
+Date: Thu, 29 May 2025 11:56:35 +0800
+Message-Id: <20250529035635.4162149-7-quic_ziyuzhan@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
 References: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
@@ -82,31 +82,31 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI5MDAzMyBTYWx0ZWRfX1JRrTYAX0Xy9
- 1pPlkc53r6oF6reavaRpwNmGNTBc6H7zD/6xl2t1R7zRXm8yFU2M62XT9R4YYsVKRqZTo5N+m0t
- td17QC0T1ZBfUjgfOakAYEGkcqZSTZjnBUAofgtEGXG/6oGkCB6sCQi4CTyZRb4R9qj6GodDjX0
- rJFXRsqBeRmtbvWg8/DSM7OyKotNvv2wI//uz2B1gWo4AyS+P0jj76Sm4i8RGc5SsH+HWnA7OaK
- dmEz4yFUHfuu7/kTpu0ZdyQvNYfN6YX+Dz4mMaWJ90eeyy6CQGZVxivkdh916tMTsNa7TQwOdfM
- R6pBubFCwMRtTTixNYkWEZpWXuW140HzbwdfvJJxUblmWeGApaFIYaKiG5JGyk8IcoBBhjPsjCd
- Z5f5kDkiS2yXo4/6bEe2vJnfoM589UIJETG80WDJSbiuHRnsXiBBgGmlK53e0rJlYW3nebwD
-X-Proofpoint-GUID: zKeE4u-Brc_MqmZ3Mo3PKzGCnIdK904b
-X-Proofpoint-ORIG-GUID: zKeE4u-Brc_MqmZ3Mo3PKzGCnIdK904b
-X-Authority-Analysis: v=2.4 cv=bupMBFai c=1 sm=1 tr=0 ts=6837dafb cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNTI5MDAzNCBTYWx0ZWRfX52pXkFFxo5eT
+ MVYgBa4k/CJeS+QCCvNnGl4sJlwpbenxXth6muZJHdLQWUiMcHPWddB21gluTBSPx/ZWWjQmKRm
+ b3PNrYuSYSltP3T64AQbarI/IwGDICfFEhO+AK4lXXHQFHba36EsIFDkurXgF8OD4TJN6ytdd1f
+ GuZJfaD5/uYUoZL4rU7xt9TPalMXtlHV7TREx7z2flAXoPxp2Tto4QICMECZ9+VGFLXO6vNLcdF
+ duTwh7xG7vGoMAzJPK7GWxKHw4dl7nRL7EIq2rruL7O2IJx2ygzEHAyf+BYJkG1c5LMs1UcWqF3
+ lu0SZzesBLx1ByZtBRg/1gohw+7tMIwfkwaxVwH0pQqpDwJjm9j9jzFAReE15FoLbsLhL35aay7
+ hqV9eXEQ57UYNXkUFUdxOF/3WbLN3Q7sOs9PmI7ppJoFQjMVFhnawbaIRH8WJqV2CdPlK1Jb
+X-Authority-Analysis: v=2.4 cv=Fes3xI+6 c=1 sm=1 tr=0 ts=6837dafb cx=c_pps
  a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=COk6AnOGAAAA:8
- a=K7kricVwaqq8vgrxYV0A:9 a=cvBusfyB2V15izCimMoJ:22 a=TjNXssC_j7lpFel5tvFf:22
+ a=dt9VzEwgFbYA:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=7eNM2EdRHZFxniqUpJIA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: oyjdhu9PqR5VDXIRWMb4knIA9CUhGiFr
+X-Proofpoint-ORIG-GUID: oyjdhu9PqR5VDXIRWMb4knIA9CUhGiFr
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
  definitions=2025-05-29_01,2025-05-27_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 bulkscore=0 lowpriorityscore=0 clxscore=1015 spamscore=0
- suspectscore=0 mlxlogscore=999 phishscore=0 mlxscore=0 adultscore=0
- malwarescore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505160000 definitions=main-2505290033
+ mlxscore=0 malwarescore=0 impostorscore=0 phishscore=0 clxscore=1015
+ lowpriorityscore=0 bulkscore=0 priorityscore=1501 mlxlogscore=999 spamscore=0
+ adultscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505160000
+ definitions=main-2505290034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250528_205649_166009_9E784D2B 
-X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-CacheID: sfid-20250528_205650_675028_5F076ED7 
+X-CRM114-Status: UNSURE (   8.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -124,160 +124,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add configurations in devicetree for PCIe1, including registers, clocks,
-interrupts and phy setting sequence.
+Add configurations in devicetree for PCIe1, board related gpios,
+PMIC regulators, etc for qcs8300-ride platform.
 
-Add PCIe lane equalization preset properties for 8 GT/s and 16GT/s.
-
-Acked-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 ---
- arch/arm64/boot/dts/qcom/qcs8300.dtsi | 124 +++++++++++++++++++++++++-
- 1 file changed, 123 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts | 40 +++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/qcs8300.dtsi b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-index 5ed550c1a352..9a86b9586203 100644
---- a/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-+++ b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-@@ -620,7 +620,7 @@ gcc: clock-controller@100000 {
- 			clocks = <&rpmhcc RPMH_CXO_CLK>,
- 				 <&sleep_clk>,
- 				 <&pcie0_phy>,
--				 <0>,
-+				 <&pcie1_phy>,
- 				 <0>,
- 				 <0>,
- 				 <0>,
-@@ -2136,6 +2136,128 @@ pcie0_phy: phy@1c04000 {
- 			status = "disabled";
- 		};
+diff --git a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+index 6384d1873415..a1279ecfce85 100644
+--- a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
++++ b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+@@ -321,6 +321,23 @@ &pcie0_phy {
+ 	status = "okay";
+ };
  
-+		pcie1: pci@1c10000 {
-+			device_type = "pci";
-+			compatible = "qcom,pcie-qcs8300", "qcom,pcie-sa8775p";
-+			reg = <0x0 0x01c10000 0x0 0x3000>,
-+			      <0x0 0x60000000 0x0 0xf20>,
-+			      <0x0 0x60000f20 0x0 0xa8>,
-+			      <0x0 0x60001000 0x0 0x4000>,
-+			      <0x0 0x60100000 0x0 0x100000>,
-+			      <0x0 0x01c13000 0x0 0x1000>;
-+			reg-names = "parf",
-+				    "dbi",
-+				    "elbi",
-+				    "atu",
-+				    "config",
-+				    "mhi";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges = <0x01000000 0x0 0x00000000 0x0 0x60200000 0x0 0x100000>,
-+				 <0x02000000 0x0 0x60300000 0x0 0x60300000 0x0 0x1fd00000>;
-+			bus-range = <0x00 0xff>;
++&pcie1 {
++	perst-gpios = <&tlmm 23 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
 +
-+			dma-coherent;
++	pinctrl-0 = <&pcie1_default_state>;
++	pinctrl-names = "default";
 +
-+			linux,pci-domain = <1>;
-+			num-lanes = <4>;
++	status = "okay";
++};
 +
-+			interrupts = <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 518 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi0",
-+					  "msi1",
-+					  "msi2",
-+					  "msi3",
-+					  "msi4",
-+					  "msi5",
-+					  "msi6",
-+					  "msi7",
-+					  "global";
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 2 &intc GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 3 &intc GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 4 &intc GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
++&pcie1_phy {
++	vdda-phy-supply = <&vreg_l6a>;
++	vdda-pll-supply = <&vreg_l5a>;
 +
-+			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_Q2A_AXI_CLK>;
-+			clock-names = "aux",
-+				      "cfg",
-+				      "bus_master",
-+				      "bus_slave",
-+				      "slave_q2a";
++	status = "okay";
++};
 +
-+			assigned-clocks = <&gcc GCC_PCIE_1_AUX_CLK>;
-+			assigned-clock-rates = <19200000>;
-+
-+			interconnects = <&pcie_anoc MASTER_PCIE_1 QCOM_ICC_TAG_ALWAYS
-+					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-+					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
-+					 &config_noc SLAVE_PCIE_1 QCOM_ICC_TAG_ACTIVE_ONLY>;
-+			interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+			iommu-map = <0x0 &pcie_smmu 0x0080 0x1>,
-+				    <0x100 &pcie_smmu 0x0081 0x1>;
-+
-+			resets = <&gcc GCC_PCIE_1_BCR>,
-+				 <&gcc GCC_PCIE_1_LINK_DOWN_BCR>;
-+			reset-names = "pci",
-+				      "link_down";
-+
-+			power-domains = <&gcc GCC_PCIE_1_GDSC>;
-+
-+			phys = <&pcie1_phy>;
-+			phy-names = "pciephy";
-+
-+			eq-presets-8gts = /bits/ 16 <0x5555 0x5555 0x5555 0x5555
-+						     0x5555 0x5555 0x5555 0x5555>;
-+			eq-presets-16gts = /bits/ 8 <0x55 0x55 0x55 0x55 0x55 0x55 0x55 0x55>;
-+
-+			status = "disabled";
+ &qupv3_id_0 {
+ 	status = "okay";
+ };
+@@ -369,6 +386,29 @@ perst-pins {
+ 		};
+ 	};
+ 
++   pcie1_default_state: pcie1-default-state {
++		wake-pins {
++			pins = "gpio21";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
 +		};
 +
-+		pcie1_phy: phy@1c14000 {
-+			compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy";
-+			reg = <0x0 0x01c14000 0x0 0x4000>;
-+
-+			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_CLKREF_EN>,
-+				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPE_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>;
-+			clock-names = "aux",
-+				      "cfg_ahb",
-+				      "ref",
-+				      "rchng",
-+				      "pipe",
-+				      "pipediv2";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-+			assigned-clock-rates = <100000000>;
-+
-+			resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-+			reset-names = "phy";
-+
-+			#clock-cells = <0>;
-+			clock-output-names = "pcie_1_pipe_clk";
-+
-+			#phy-cells = <0>;
-+
-+			status = "disabled";
++		clkreq-pins {
++			pins = "gpio22";
++			function = "pcie1_clkreq";
++			drive-strength = <2>;
++			bias-pull-up;
 +		};
 +
- 		ufs_mem_hc: ufs@1d84000 {
- 			compatible = "qcom,qcs8300-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
- 			reg = <0x0 0x01d84000 0x0 0x3000>;
++		perst-pins {
++			pins = "gpio23";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-down;
++		};
++	};
++
+ 	ethernet0_default: ethernet0-default-state {
+ 		ethernet0_mdc: ethernet0-mdc-pins {
+ 			pins = "gpio5";
 -- 
 2.34.1
 
