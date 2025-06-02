@@ -4,116 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73A56C54FB3
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Jun 2025 09:10:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 301DBC54FB3
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Jun 2025 14:36:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=K88WmS46DvPxDiCt811R9M8gnapxRwOgXwoHOAx8Eck=; b=M/f1zeZXhRh1rHuIVHrY7d93kb
-	KXdRnBXvdqVlaA0bFsnzb9EqaB0RoNkHfNQNE6FvRKBGZ7fLee4fNnuICRwNN/kYGDNjaqOxCWLiS
-	HdTbEUZ7BLCiys1cT5Z5/aiDgU8ibLHOTJnMaZS2MVXUIf2R6CkZT/WEC+i9xl92fiFxBJzbB9dhm
-	qqQlKF8JNrQEfLxZJZ3If44VoW6G1oZKStFmYSkzWaGdQJI+ox6GyEOMT8ldj16QzUwyJjGblbwrd
-	FP6I0eJez21huN4HcIm3TfUlBhC87il2ufSB+x7l9GMvBBiLovc2A8dOnb5Jxk1aFk42KiY6101HF
-	7S4xfoeQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UV6kNjxP77Rk4ygffv1eu1tCRInRPIY6EHf9sUsKrSk=; b=DnU/mc0y5Rxa6v
+	TIm9MwwibSAJ41BfpSLa5Mi97ARQMNsNxOOZPX8X0/I68cWMVzTzBWCqvwoAFLMzSakpvOXHoce2v
+	CdQdD578WzVamIpCbOf1fGsR8LhcG/8EXAsGC9vVYekKpHeVD93YKL7t6GXq2Z6mBibxHTVV2BCIr
+	KdrO0uBzcCdVH/3eiMSFAmGISYYyr4+i0HAnT1LbAhhmrCZEEoRj1UDQ6r58P323TFr8ab6kLVIBN
+	BcejUaD/JscWwOapwajjRM51XFbfixQn96nYLynTrH+LJvVRA+e2Wd0awgku2XXDKIgMtwjwAW443
+	7RdUlIBz1S5EePfaaRxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM1Bt-000000073DT-0QJF;
-	Mon, 02 Jun 2025 09:10:45 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1uM6H7-00000007e8C-2Lco;
+	Mon, 02 Jun 2025 14:36:29 +0000
+Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM1Bq-000000073D4-1uG8
-	for linux-phy@lists.infradead.org;
-	Mon, 02 Jun 2025 09:10:43 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43cfe63c592so47929795e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 02 Jun 2025 02:10:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1748855441; x=1749460241; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=3fz5WoLh7+2BqWFgE4Sn4NQbSlq+fXNwl5Sh5y2BFmQ=;
-        b=eJvwdJhD2hIixXnLIzpHov9YEg/cqvwFgvGyv8Vyvf9VT5PNRq+LOCkUZCQ02GFHBK
-         SrUnksOCjPZsceVbsED2vfd9iSl2MJbzgnJ2QT6dMS1YozIufRRkrK0ecWqoy9svUrO1
-         FWe4p0C+dkDXK8PXEI7hC6XztezAiHoBD/wUa7MTgjfbt30sJAqzCE0afdyUupX+dKNx
-         6hUUv91djQ5P8JKKAbPIN+eHTv4eRtspd8sIPXwTl3agUqVOx7kLZeksyFhEOWn/EmbF
-         w1cid6DDej/xVdOiDi9b3T8PMQkIXeY+fNkxmcbGfY1vlSkSMLMh7GYFnm7BOedK2RF0
-         jaKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748855441; x=1749460241;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=3fz5WoLh7+2BqWFgE4Sn4NQbSlq+fXNwl5Sh5y2BFmQ=;
-        b=fR/ZMOmlr/NsXuLU/RQy+TDRWMutl9emnXjiw/2W0Anu9LllhQ/yxZOWoZ5askG7kt
-         4foclCeDTapysQvUwEkm6J0rLJ4d7+Bgw46YvD6G0jyaPY+zcuFukTskgF5Tax6TXThz
-         iKTN0shyIwilVnuwl/QRwhsSxgdhtSEKOwvlcLux/HHEIZKZXABLGzsejR2MMmceqh3L
-         tYlsk5l6TPei5lT6vuAFJJwWP9Btl+WwxO8GdmYWGvDe4ddmSk1g2bc4rKyuuYch6dDg
-         bBp8NnPj+pm1zg8LnOmwfIM8ynr2ebnTowUSoZFGMsuyEiN2/U4jDX3SlE6Yq7NGIgem
-         aQnA==
-X-Forwarded-Encrypted: i=1; AJvYcCUctySHXHw4/IL/LFYMFWW/c5JkaTVJWS8JRU08arZ32hcEPZ2Fy11B5/DwZGRxMV0gtgnnhEeHulw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx70yPO+rkcHJHX2yjq6BVOUTuv38LfOg+urjlGEbXmzMuWyrzP
-	P9SSriCDqnGe6I6oyhRiAGJx7EPl20aYQn2tV7NS15eTBH9rOMtjNTVGiR+9WBJgtjJyhgicQMK
-	n5H9B
-X-Gm-Gg: ASbGncsw2nNcZztXRLigFVjPqEVa97AdSr9SsR18GhjAsXwhRilTMu73BlHnbTOP7Bz
-	LiDoRhmt6n0B0Nn3WeHjPHlW2ps/xA73spyZsuMTuBgtKRzB4B7JzfexK8T1AjwAdRsswONwL6Z
-	GmdnLYm0cCz5QLB/vQss0d+8pRdM0cIXsF/QVzbgx1UBjY8DKMWiOyCAd5ltqIh9MBSRDgJdL0u
-	i7Ge/kXld3NXGSlqP9YasEVYREwxrwsSYnGrw2ZFVDtP/UXVqnvqng2QYedsFQTzcDvzmYC5Y5t
-	tqj1axayybUP+zGTcaCM4ynuP8+o9G3qS3engk+GggO1lRPsndcifav9CG4Xa3MUcANr8ldSwz6
-	34AmxW6MyWkHN6w2BYmd4GEMEzw==
-X-Google-Smtp-Source: AGHT+IFgXm1kiT1/u4BnrJPjc8ieuDz8ucVyVOvChbk/+t0uNwDZBVqk29ONf2+4k4cHgunUmSrG/Q==
-X-Received: by 2002:a05:600c:1c8f:b0:450:cf00:20f5 with SMTP id 5b1f17b1804b1-4511ecc2a46mr72379895e9.9.1748855440595;
-        Mon, 02 Jun 2025 02:10:40 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:cb6:30c6:d7ab:d145? ([2a01:e0a:3d9:2080:cb6:30c6:d7ab:d145])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4efe73fbcsm14074099f8f.48.2025.06.02.02.10.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Jun 2025 02:10:40 -0700 (PDT)
-Message-ID: <b5ac79e5-22d9-4929-9131-28f4396658d6@linaro.org>
-Date: Mon, 2 Jun 2025 11:10:39 +0200
+	id 1uM6H4-00000007e7X-46Xi;
+	Mon, 02 Jun 2025 14:36:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=iRkl8omGlMjOAC9+DjPYwCfxhnYF4QspxXG96YralP0X17fIY8I/uzaSVgCcL3x/GnUvzVUIX5MQmiXaOieHJ23sim6NaY4FCmpjTkMjfzrM0LLq9M1HC6lECB17wJjRp2XkHaI9eCxAp9XzYQKm0agQuUVnOko4uVf+Qae3Y27Gx7U3JVKoTbd/RUd3SYUsrlm41w1C6S47n29O6VH1H25u5pYIRsHnsMDla/UZVJTBhE6bLKjI8CfOfQdjz0JC4FT5Z5lCwPrjNnIczCQhw0dND6cRgh1Jvv7XeKdquIgj39Y8UrEKr5FSTUCG1fWeLR8eHZ1jBuwzY6pRvLTouw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2EnYe0uZ+uklSirATKZHGaxMRFHPX2TsOYFTDm8SPsU=;
+ b=Sh6Wpj+qyYEKm87DHC7pr8sNxwBM+2lszIjZD10Q6PT7j+jdP/P0lfXO2intjJrRYJeRCBntUl/JQ4yqvpeMWb9fpdNFt3vOecwh5Q3Wpmcm339Gtuvs5m2oEQBWvgm+1q9YGUUBbibqZtU8G7w+fH2W4E5dxQdkf/QGLU3t4me7zYp056w12x/i0ZcRzjV0baxcDlkopeKby3quFtV7Us7hAIFLL9p2DmU3k+FScVXObjmk0VpxRcRl5GgQNMTCJ49waNpQl3ATdeDN1E1brGRu7HsNM6G8fVSxwLk9YKP7g6ygjWhVC27JK3M2E6HMdH7TUtK4b1bzdE9vV0A1oA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2EnYe0uZ+uklSirATKZHGaxMRFHPX2TsOYFTDm8SPsU=;
+ b=HLEj72wGqb35zIXajEAm0kCc/zr4qNhpVtQD+fTyyoEqQYKbFVMHxUZjQyb2n38egwLVr5kd5SkNRoCq5/1d9vQ2XBWt5wbH3fiopQoIIiyDKiPuCH3QKIS2/06KmHq+n7lm7lFC+bHwQIj9ehDgovWNaJorJp7ucx3bQXHMdnlamcDbF7E04jeycXXnfCReQXs2m34SwAhTskzpqzWJFF3TsyhsatsTX7D5nfo7trr11xkxm2gGXQ3s0qaO3tJbJOu9V5q7yozwoS+UXycpW3PBxsN49h+I4UX9tlLREwlxJXHTZim5AO+/qsIVYb5a9gaosSRgAogfGpt8I0EnvA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by DU4PR04MB10386.eurprd04.prod.outlook.com (2603:10a6:10:56d::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.32; Mon, 2 Jun
+ 2025 14:36:23 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%6]) with mapi id 15.20.8769.025; Mon, 2 Jun 2025
+ 14:36:23 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vladimir Zapolskiy <vz@mleia.com>,
+	linux-clk@vger.kernel.org (open list:COMMON CLK FRAMEWORK),
+	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
+	linux-kernel@vger.kernel.org (open list),
+	dmaengine@vger.kernel.org (open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM),
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	linux-arm-kernel@lists.infradead.org (moderated list:ARM/LPC18XX ARCHITECTURE)
+Cc: imx@lists.linux.dev
+Subject: [PATCH 1/1] dt-bindings: mfd: convert lpc1850-creg-clk.txt pc1850-dmamux.txt phy-lpc18xx-usb-otg.txt to yaml format
+Date: Mon,  2 Jun 2025 10:36:10 -0400
+Message-Id: <20250602143612.943516-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AM8P190CA0030.EURP190.PROD.OUTLOOK.COM
+ (2603:10a6:20b:219::35) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH] phy: use per-PHY lockdep keys
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-arm-msm@vger.kernel.or, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250529-phy-subinit-v1-1-b74cadf366b8@oss.qualcomm.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250529-phy-subinit-v1-1-b74cadf366b8@oss.qualcomm.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DU4PR04MB10386:EE_
+X-MS-Office365-Filtering-Correlation-Id: afc09956-e40c-4e93-2af7-08dda1e2d8b1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|7416014|376014|1800799024|38350700014|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?kzcIM19j+6aYjpD/zqwkDcc5BY6F9PLDzla+w65RM5VTZLmqMzQcnX/LVSr7?=
+ =?us-ascii?Q?8JNQocUf0uxjNaUhvzta/0S7v574JBg8EvLz/oWJ6BXTpiPONQPs06E13xXZ?=
+ =?us-ascii?Q?XhIAyhTLkqtsDmiC8uLPVnFwg0hQFU7JJEYlPFP0F9MINBRIlH0cgF4YukhQ?=
+ =?us-ascii?Q?auCgei5wCUb/HzLNfx2MwwywcgQeZpzM6jZ23ZpnJ14TDpZBJvWQozDfSOjo?=
+ =?us-ascii?Q?wMJlPmn4O+E9+mMKHxCUphgQA2bv0EizMNhRsm66AVkYZX4YBDgWkDjM4B46?=
+ =?us-ascii?Q?Fj565cJWa64Js2Ts3WSuIaiu2Rqg2iWBa48vb4qKCdSNz7n0pj+RHiW4r20c?=
+ =?us-ascii?Q?mtlXHHzito9lhD3Q0DJryhcgK2BXDOplumWx+vCV++cXx4WvX7EWOLTBzpxy?=
+ =?us-ascii?Q?XcOB228+vE/TU5ZhyEHPpzLyZ3lCE+ie/lcphhlOFTBIJCbTsF/ZuRB/5qLf?=
+ =?us-ascii?Q?939SbT5JVqIdRRhj/D/7+ZGyEZP0+3lUEPLhrqbjDqcOqS4pmjnwARJLocOZ?=
+ =?us-ascii?Q?U9O/gwvW8nZWdNxzHG3tdrlYh3zILfc0jDFOk3+N8XtzbaH/NtbyLwRIJO6N?=
+ =?us-ascii?Q?mA/6CCsiagKbxw+6P1iQsoc1/V3+lnG2ykzeuRua8gzOr9QrjOBDeAV3l5ib?=
+ =?us-ascii?Q?z+LPambM6wtGIv6EpQWZAAXdJSz2uicgIjpgTxzV/IbH7hYhDPOaMTZsUwLS?=
+ =?us-ascii?Q?IqCC971g9gDxOVoQTk+zF8JqNltWkV+Zk/07mT+cF8RC7hYDvrsLU3NxfrmZ?=
+ =?us-ascii?Q?c0/gyzxcxZouUwGYheEkFCwUB5Z7qQkjpo5n8eoWcQ0X06cE2l5jwDgOOGon?=
+ =?us-ascii?Q?L2ps6ne4aZpdQo4sJjNiGBpdgyOgXdHhJKxQrt6F30WkNVC3rSB/GB3HiaSO?=
+ =?us-ascii?Q?c54a9r779ugQ1lhDHlQZkFRJNs9SDbhVld5Hj7yvbREikyKvDZkrABk9gWvh?=
+ =?us-ascii?Q?GJjnfCjFNS25El+w1md4AYjbZdS58NiZTyQgNyEjaiIf2r9C/3gcpefUl51k?=
+ =?us-ascii?Q?mbZraPREcK3pRWO6GK6VAGDAfp0D7+wM2pXQLf0VQ6uXAzsxTFKNmwmMzjGm?=
+ =?us-ascii?Q?2Bzz/rfX37MBHrVx3jQ/zBrisJw+WzlY5kDF7tu7mKT3w8YU9zfyMjqlTotW?=
+ =?us-ascii?Q?Y/QWRS8S7P3m1hV0oNTFNiBgio6iy4OGBSTKuq4Kd5QGWB1ewNeFtB4gpnly?=
+ =?us-ascii?Q?SKs8GSKDQp54vMhPH+MQxsUl1Ql6nSVl0tWDxmtA2+LWuN6OM6ccmo3GSqxO?=
+ =?us-ascii?Q?/Fwtpr8XC7tFoXNiQ49FY3rwxRDJGbsbOw6yjdxLm2AVA//UGZA6N3p2+ZM/?=
+ =?us-ascii?Q?8Y43hmivbwR4ElWXekTAK3KXiNYrlWujNxhYW2v9lu4if6rRCAmVHmREgFTM?=
+ =?us-ascii?Q?KDjgAgI9/dgFR6Uvosr7Q3gP6ioLaHrg0GKD4LJg/SpNHcVEm2CcGZXeImoX?=
+ =?us-ascii?Q?LvQQyNvKYE80TuhVR0YSXCWwyvlVT3k3dwWWyo8xWDYYkGQy/j0x9A=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(7416014)(376014)(1800799024)(38350700014)(921020);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?CWY8+YBaEq0gGalV6OXStbj6HtifqT+HU4aDct6qccneM9em4M3dq7BfKuO7?=
+ =?us-ascii?Q?57eXm+jmdeXgVDO6FmCT7dqnhAzvVOovPjWvqNhfi0iuBeiSGdV/X4Az89Z8?=
+ =?us-ascii?Q?6ZDOA07bt7G6PINHwR5MsOg2fehgpvOe13Z7uR3SbdH4CENTs1YqirO36ukd?=
+ =?us-ascii?Q?qkJcoixix+mOwCuE+ELgXBO+sUkQGsQlfyrXjHAhsJ2qBPHbG3o44iEKK1A6?=
+ =?us-ascii?Q?mwZivzk7+3NXdeUeYwK87cw39edYTfxt+GHE7PqEXKOhBXMoR7nDTqBNXG8p?=
+ =?us-ascii?Q?PNvTq5saIauPxllz+xT0JMD87ZFfmjkGS2jrYqp5yEwGjYgU55sJiiLewMr3?=
+ =?us-ascii?Q?yvo60jNwMmcddI4VMkAA4t42O3isv4psOph+fIzpyvfqkdFrEMvcxSJOkasA?=
+ =?us-ascii?Q?QWSdI5aD2PhXqah/71BhDaGKdpymERssLu8odNcZhlljDctBD0UxsQ01p7SS?=
+ =?us-ascii?Q?UejOAAEXvuWeY1EI/LtN1mZYu9KL8llauA2LRjgTX7rtllojgaXs9Yl93RNC?=
+ =?us-ascii?Q?yvpsIuQEl/dwbD15Jbd5NbV+eQZrfQ/2a+K/IvA06V6y2glEcYxRBMA6kgMD?=
+ =?us-ascii?Q?ik7qTX3DY39XHYzfj58SgHRnsYzPuPd7D1Yp/pgnfeqgUVMhO2HjYwPxscxr?=
+ =?us-ascii?Q?eyNKB1vKA2H/njuJbP08NKVtuxJkFlyYihsveulOlizGzjv3h12q+hd6g2Sa?=
+ =?us-ascii?Q?745SoKlF8enKV5YyZSPPI/qfO+/bkYzrndo7jCEbUZ3jdhMC06UW0nOMEM8E?=
+ =?us-ascii?Q?D55h9ECAhZs44JBbn6meZJMqD7jyDdSCGoREPEoxSh9isMAJOBZ0ShkCVQWq?=
+ =?us-ascii?Q?wwGE9JiWtwhmeui/S/C8jJe2HJgNzagdFDmGslJjVoPTnIgEUBrcoDHawpv7?=
+ =?us-ascii?Q?nCisgGhNI34ZjuqkFlCDo9eXKmD5imvVYodM43qBz13SOD2qrbvPurzKqMcZ?=
+ =?us-ascii?Q?EAiMRdUdJb1RoXtONpMUcDBSHN/bWZZHH3PGU0uUaYDE4zENIG0lTBDeuPat?=
+ =?us-ascii?Q?N7GT7D9mVQgfb/r/ZrAOxcpymcibs7Lx2WpoKLj1IlNj2RXm4OAzJg8raEu3?=
+ =?us-ascii?Q?3J0rxSFKjMNiYk2+xoWj+8vqFJxCVXVQTzyrgKPLUPm3O10c+Dty7Df2700y?=
+ =?us-ascii?Q?YAT6VpRKcdbfF9wh+zaLcLd0z0+J562STHX0VGtdM7pca1e7HqOmLht6PeyB?=
+ =?us-ascii?Q?h2xvs3qxFe2+nN13snHDKTe3Mly2zd2g88YvgepUkaBpTnieZQO40n6Rwy0m?=
+ =?us-ascii?Q?+XAlj5dLBZ50sGZkKbbrz+LMxgylNyibJd0HVZOCa1Vl9IMk0fc+rrY1phfs?=
+ =?us-ascii?Q?d3yBlSMXIgge68xhLjrStfrCvB3dqOD8UzH6tHGuVXL1v9kO5gIxJhvhUsTb?=
+ =?us-ascii?Q?uiXvdGUByP4fZh31XEBIy8qZvcHW3HGSQp27W3bHQ2edwUxo2ZdktHQDFT1X?=
+ =?us-ascii?Q?+eC/ryC1kshEPl+in5A9N1mUB+ajU76/i/IquOAJm2S5PLlK9bKfLZH782KG?=
+ =?us-ascii?Q?5m5of96L1VUCdZ1j0UGUpUms6LRbXHhiCEnfD83F3yMdHJYpcQEygl8dErN+?=
+ =?us-ascii?Q?E1sPA0RN7N1YSip7kU5wriJKrZBKwgPRYT9NWzJN?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: afc09956-e40c-4e93-2af7-08dda1e2d8b1
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2025 14:36:22.9704
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: w5m5f4OAxDaoLb5LFR+6iE2gFA54amb+1KU/sZhDsrAZcIc9Om18eG5TVZFawq7KuuthDsGPqgUgPAN6NeKqDQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB10386
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250602_021042_509495_A1CC571C 
-X-CRM114-Status: GOOD (  27.02  )
+X-CRM114-CacheID: sfid-20250602_073627_172406_083A495B 
+X-CRM114-Status: GOOD (  20.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,169 +161,338 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28/05/2025 23:29, Dmitry Baryshkov wrote:
-> If the PHY driver uses another PHY internally (e.g. in case of eUSB2,
-> repeaters are represented as PHYs), then it would trigger the following
-> lockdep splat because all PHYs use a single static lockdep key and thus
-> lockdep can not identify whether there is a dependency or not and
-> reports a false positive.
-> 
-> Make PHY subsystem use dynamic lockdep keys, assigning each driver a
-> separate key. This way lockdep can correctly identify dependency graph
-> between mutexes.
+Combine lpc1850-creg-clk.txt pc1850-dmamux.txt and phy-lpc18xx-usb-otg.txt
+to one mfd yaml file.
 
-Nice solution !
+Additional changes:
+- remove label in example.
+- remove dmamux consumer in example.
+- remove clock consumer in example.
 
-> 
->   ============================================
->   WARNING: possible recursive locking detected
->   6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 Not tainted
->   --------------------------------------------
->   kworker/u51:0/78 is trying to acquire lock:
->   ffff0008116554f0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
-> 
->   but task is already holding lock:
->   ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
-> 
->   other info that might help us debug this:
->    Possible unsafe locking scenario:
-> 
->          CPU0
->          ----
->     lock(&phy->mutex);
->     lock(&phy->mutex);
-> 
->    *** DEADLOCK ***
-> 
->    May be due to missing lock nesting notation
-> 
->   4 locks held by kworker/u51:0/78:
->    #0: ffff000800010948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work+0x18c/0x5ec
->    #1: ffff80008036bdb0 (deferred_probe_work){+.+.}-{0:0}, at: process_one_work+0x1b4/0x5ec
->    #2: ffff0008094ac8f8 (&dev->mutex){....}-{4:4}, at: __device_attach+0x38/0x188
->    #3: ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
-> 
->   stack backtrace:
->   CPU: 0 UID: 0 PID: 78 Comm: kworker/u51:0 Not tainted 6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 PREEMPT
->   Hardware name: Qualcomm CRD, BIOS 6.0.240904.BOOT.MXF.2.4-00528.1-HAMOA-1 09/ 4/2024
->   Workqueue: events_unbound deferred_probe_work_func
->   Call trace:
->    show_stack+0x18/0x24 (C)
->    dump_stack_lvl+0x90/0xd0
->    dump_stack+0x18/0x24
->    print_deadlock_bug+0x258/0x348
->    __lock_acquire+0x10fc/0x1f84
->    lock_acquire+0x1c8/0x338
->    __mutex_lock+0xb8/0x59c
->    mutex_lock_nested+0x24/0x30
->    phy_init+0x4c/0x12c
->    snps_eusb2_hsphy_init+0x54/0x1a0
->    phy_init+0xe0/0x12c
->    dwc3_core_init+0x450/0x10b4
->    dwc3_core_probe+0xce4/0x15fc
->    dwc3_probe+0x64/0xb0
->    platform_probe+0x68/0xc4
->    really_probe+0xbc/0x298
->    __driver_probe_device+0x78/0x12c
->    driver_probe_device+0x3c/0x160
->    __device_attach_driver+0xb8/0x138
->    bus_for_each_drv+0x84/0xe0
->    __device_attach+0x9c/0x188
->    device_initial_probe+0x14/0x20
->    bus_probe_device+0xac/0xb0
->    deferred_probe_work_func+0x8c/0xc8
->    process_one_work+0x208/0x5ec
->    worker_thread+0x1c0/0x368
->    kthread+0x14c/0x20c
->    ret_from_fork+0x10/0x20
-> 
-> Fixes: 3584f6392f09 ("phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater")
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> ---
-> Note: I've used a Fixes tag pointing to the commit which actually
-> started using nested PHYs. If you think that it's incorrect, I'm fine
-> with dropping it.
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+ .../bindings/clock/lpc1850-creg-clk.txt       |  52 ------
+ .../bindings/dma/lpc1850-dmamux.txt           |  54 -------
+ .../bindings/mfd/nxp,lpc1850-creg.yaml        | 148 ++++++++++++++++++
+ .../bindings/phy/phy-lpc18xx-usb-otg.txt      |  26 ---
+ 4 files changed, 148 insertions(+), 132 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
+ delete mode 100644 Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
+ create mode 100644 Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
 
-In fact, other drivers were using sub-phys before:
-./amlogic/phy-meson-axg-pcie.c
-./amlogic/phy-meson-axg-mipi-dphy.c
+diff --git a/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt b/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
+deleted file mode 100644
+index b6b2547a3d17a..0000000000000
+--- a/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
++++ /dev/null
+@@ -1,52 +0,0 @@
+-* NXP LPC1850 CREG clocks
+-
+-The NXP LPC18xx/43xx CREG (Configuration Registers) block contains
+-control registers for two low speed clocks. One of the clocks is a
+-32 kHz oscillator driver with power up/down and clock gating. Next
+-is a fixed divider that creates a 1 kHz clock from the 32 kHz osc.
+-
+-These clocks are used by the RTC and the Event Router peripherals.
+-The 32 kHz can also be routed to other peripherals to enable low
+-power modes.
+-
+-This binding uses the common clock binding:
+-    Documentation/devicetree/bindings/clock/clock-bindings.txt
+-
+-Required properties:
+-- compatible:
+-	Should be "nxp,lpc1850-creg-clk"
+-- #clock-cells:
+-	Shall have value <1>.
+-- clocks:
+-	Shall contain a phandle to the fixed 32 kHz crystal.
+-
+-The creg-clk node must be a child of the creg syscon node.
+-
+-The following clocks are available from the clock node.
+-
+-Clock ID	Name
+-   0		 1 kHz clock
+-   1		32 kHz Oscillator
+-
+-Example:
+-soc {
+-	creg: syscon@40043000 {
+-		compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
+-		reg = <0x40043000 0x1000>;
+-
+-		creg_clk: clock-controller {
+-			compatible = "nxp,lpc1850-creg-clk";
+-			clocks = <&xtal32>;
+-			#clock-cells = <1>;
+-		};
+-
+-		...
+-	};
+-
+-	rtc: rtc@40046000 {
+-		...
+-		clocks = <&creg_clk 0>, <&ccu1 CLK_CPU_BUS>;
+-		clock-names = "rtc", "reg";
+-		...
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt b/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
+deleted file mode 100644
+index 87740adb29956..0000000000000
+--- a/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
++++ /dev/null
+@@ -1,54 +0,0 @@
+-NXP LPC18xx/43xx DMA MUX (DMA request router)
+-
+-Required properties:
+-- compatible:	"nxp,lpc1850-dmamux"
+-- reg:		Memory map for accessing module
+-- #dma-cells:	Should be set to <3>.
+-		* 1st cell contain the master dma request signal
+-		* 2nd cell contain the mux value (0-3) for the peripheral
+-		* 3rd cell contain either 1 or 2 depending on the AHB
+-		  master used.
+-- dma-requests:	Number of DMA requests for the mux
+-- dma-masters:	phandle pointing to the DMA controller
+-
+-The DMA controller node need to have the following poroperties:
+-- dma-requests:	Number of DMA requests the controller can handle
+-
+-Example:
+-
+-dmac: dma@40002000 {
+-	compatible = "nxp,lpc1850-gpdma", "arm,pl080", "arm,primecell";
+-	arm,primecell-periphid = <0x00041080>;
+-	reg = <0x40002000 0x1000>;
+-	interrupts = <2>;
+-	clocks = <&ccu1 CLK_CPU_DMA>;
+-	clock-names = "apb_pclk";
+-	#dma-cells = <2>;
+-	dma-channels = <8>;
+-	dma-requests = <16>;
+-	lli-bus-interface-ahb1;
+-	lli-bus-interface-ahb2;
+-	mem-bus-interface-ahb1;
+-	mem-bus-interface-ahb2;
+-	memcpy-burst-size = <256>;
+-	memcpy-bus-width = <32>;
+-};
+-
+-dmamux: dma-mux {
+-	compatible = "nxp,lpc1850-dmamux";
+-	#dma-cells = <3>;
+-	dma-requests = <64>;
+-	dma-masters = <&dmac>;
+-};
+-
+-uart0: serial@40081000 {
+-	compatible = "nxp,lpc1850-uart", "ns16550a";
+-	reg = <0x40081000 0x1000>;
+-	reg-shift = <2>;
+-	interrupts = <24>;
+-	clocks = <&ccu2 CLK_APB0_UART0>, <&ccu1 CLK_CPU_UART0>;
+-	clock-names = "uartclk", "reg";
+-	dmas = <&dmamux 1 1 2
+-		&dmamux 2 1 2>;
+-	dma-names = "tx", "rx";
+-};
+diff --git a/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml b/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
+new file mode 100644
+index 0000000000000..89b4892e9ca71
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
+@@ -0,0 +1,148 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mfd/nxp,lpc1850-creg.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: The NXP LPC18xx/43xx CREG (Configuration Registers) block
++
++maintainers:
++  - Frank Li <Frank.Li@nxp.com>
++
++properties:
++  compatible:
++    items:
++      - enum:
++          - nxp,lpc1850-creg
++      - const: syscon
++      - const: simple-mfd
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  clock-controller:
++    type: object
++    description:
++      The NXP LPC18xx/43xx CREG (Configuration Registers) block contains
++      control registers for two low speed clocks. One of the clocks is a
++      32 kHz oscillator driver with power up/down and clock gating. Next
++      is a fixed divider that creates a 1 kHz clock from the 32 kHz osc.
++
++      These clocks are used by the RTC and the Event Router peripherals.
++      The 32 kHz can also be routed to other peripherals to enable low
++      power modes.
++
++    properties:
++      compatible:
++        const: nxp,lpc1850-creg-clk
++
++      clocks:
++        maxItems: 1
++
++      '#clock-cells':
++        const: 1
++        description: |
++          0            1 kHz clock
++          1           32 kHz Oscillator
++
++    required:
++      - compatible
++      - clocks
++      - '#clock-cells'
++
++    additionalProperties: false
++
++  phy:
++    type: object
++    description: the internal USB OTG PHY in NXP LPC18xx and LPC43xx SoCs
++    properties:
++      compatible:
++        const: nxp,lpc1850-usb-otg-phy
++
++      clocks:
++        maxItems: 1
++
++      '#phy-cells':
++        const: 0
++
++    required:
++      - compatible
++      - clocks
++      - '#phy-cells'
++
++    additionalProperties: false
++
++  dma-mux:
++    type: object
++    description: NXP LPC18xx/43xx DMA MUX (DMA request router)
++    properties:
++      compatible:
++        const: nxp,lpc1850-dmamux
++
++      '#dma-cells':
++        const: 3
++        description: |
++          Should be set to <3>.
++          * 1st cell contain the master dma request signal
++          * 2nd cell contain the mux value (0-3) for the peripheral
++          * 3rd cell contain either 1 or 2 depending on the AHB  master used.
++
++      dma-requests:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        maximum: 64
++        description: Number of DMA requests the controller can handle
++
++      dma-masters:
++        $ref: /schemas/types.yaml#/definitions/phandle
++        description: phandle pointing to the DMA controller
++
++    required:
++      - compatible
++      - '#dma-cells'
++      - dma-masters
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/lpc18xx-ccu.h>
++
++    syscon@40043000 {
++        compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
++        reg = <0x40043000 0x1000>;
++        clocks = <&ccu1 CLK_CPU_CREG>;
++        resets = <&rgu 5>;
++
++        clock-controller {
++            compatible = "nxp,lpc1850-creg-clk";
++            clocks = <&xtal32>;
++            #clock-cells = <1>;
++        };
++
++        phy {
++            compatible = "nxp,lpc1850-usb-otg-phy";
++            clocks = <&ccu1 CLK_USB0>;
++            #phy-cells = <0>;
++        };
++
++        dma-mux {
++            compatible = "nxp,lpc1850-dmamux";
++            #dma-cells = <3>;
++            dma-requests = <64>;
++            dma-masters = <&dmac>;
++        };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt b/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
+deleted file mode 100644
+index 3bb821cd6a7f3..0000000000000
+--- a/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
++++ /dev/null
+@@ -1,26 +0,0 @@
+-NXP LPC18xx/43xx internal USB OTG PHY binding
+----------------------------------------------
+-
+-This file contains documentation for the internal USB OTG PHY found
+-in NXP LPC18xx and LPC43xx SoCs.
+-
+-Required properties:
+-- compatible	: must be "nxp,lpc1850-usb-otg-phy"
+-- clocks	: must be exactly one entry
+-See: Documentation/devicetree/bindings/clock/clock-bindings.txt
+-- #phy-cells	: must be 0 for this phy
+-See: Documentation/devicetree/bindings/phy/phy-bindings.txt
+-
+-The phy node must be a child of the creg syscon node.
+-
+-Example:
+-creg: syscon@40043000 {
+-	compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
+-	reg = <0x40043000 0x1000>;
+-
+-	usb0_otg_phy: phy {
+-		compatible = "nxp,lpc1850-usb-otg-phy";
+-		clocks = <&ccu1 CLK_USB0>;
+-		#phy-cells = <0>;
+-	};
+-};
+-- 
+2.34.1
 
-(yeah I know, my bad !)
-
-so it should be:
-Fixes: e2463559ff1d ("phy: amlogic: Add Amlogic AXG PCIE PHY Driver")
-
-> 
-> Note2: I've tried using mutex_lock_nested, however that didn't play
-> well. We can not store nest level in the struct phy (as it can be used
-> by different drivers), so using mutex_lock_nested() would require us to
-> change and wrap all PHY APIs which take a lock internally. Using dynamic
-> lockdep keys looks like a more ellegant solution, especially granted
-> that there is no extra impact if lockdep is disabled.
-> ---
->   drivers/phy/phy-core.c  | 5 ++++-
->   include/linux/phy/phy.h | 2 ++
->   2 files changed, 6 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 8e2daea81666bf8a76d9c936c1a16d6318105c91..04a5a34e7a950ae94fae915673c25d476fc071c1 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -994,7 +994,8 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
->   	}
->   
->   	device_initialize(&phy->dev);
-> -	mutex_init(&phy->mutex);
-> +	lockdep_register_key(&phy->lockdep_key);
-> +	mutex_init_with_key(&phy->mutex, &phy->lockdep_key);
->   
->   	phy->dev.class = &phy_class;
->   	phy->dev.parent = dev;
-> @@ -1259,6 +1260,8 @@ static void phy_release(struct device *dev)
->   	dev_vdbg(dev, "releasing '%s'\n", dev_name(dev));
->   	debugfs_remove_recursive(phy->debugfs);
->   	regulator_put(phy->pwr);
-> +	mutex_destroy(&phy->mutex);
-> +	lockdep_unregister_key(&phy->lockdep_key);
->   	ida_free(&phy_ida, phy->id);
->   	kfree(phy);
->   }
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index 437769e061b7030105c9ea4e9b0da9d32b6fa158..13add0c2c40721fe9ca3f0350d13c035cd25af45 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -154,6 +154,7 @@ struct phy_attrs {
->    * @id: id of the phy device
->    * @ops: function pointers for performing phy operations
->    * @mutex: mutex to protect phy_ops
-> + * @lockdep_key: lockdep information for this mutex
->    * @init_count: used to protect when the PHY is used by multiple consumers
->    * @power_count: used to protect when the PHY is used by multiple consumers
->    * @attrs: used to specify PHY specific attributes
-> @@ -165,6 +166,7 @@ struct phy {
->   	int			id;
->   	const struct phy_ops	*ops;
->   	struct mutex		mutex;
-> +	struct lock_class_key	lockdep_key;
->   	int			init_count;
->   	int			power_count;
->   	struct phy_attrs	attrs;
-> 
-> ---
-> base-commit: 460178e842c7a1e48a06df684c66eb5fd630bcf7
-> change-id: 20250528-phy-subinit-42c988a12b6c
-> 
-> Best regards,
-
-With the Fixes changed:
-
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
