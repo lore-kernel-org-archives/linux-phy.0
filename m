@@ -4,97 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D2C3C54FB3
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Jun 2025 08:56:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73A56C54FB3
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Jun 2025 09:10:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CXZjY2f3/mEwDNcqmf10kLIECYqB/zwC2DZzzz6QBDY=; b=MRnoTQlFb9WRBi923UNm+A8IU9
-	baWmTT5ebKTq6Oqlf3Zjqehy00kfdV/WLSf73BsvyKJi/05f+96G5NVYIZfaf0uGNr5hmYwRzy5DT
-	bVJBGDnTDY32iqZtfBoJPpqGlStLhJ28vU/HyeWZwCBiX+i2uVBpXqnR4xgjvFp1vJbMcPfcT2U7b
-	QLRpgwUTV/Y28/XE+3GvEuKiK4TovvTrTousikx2G/04PCoz0ynsaiLS+44ijAhJHqQ1Ocixjqb9D
-	NdmlDqxbm4BEos9fRtZIXMOm4AjWpKbJg0Li0kCIdFaVnyudqbHdSxyP4YS7CgPdwYvVthCrEiMji
-	3DW8WpfA==;
+	bh=K88WmS46DvPxDiCt811R9M8gnapxRwOgXwoHOAx8Eck=; b=M/f1zeZXhRh1rHuIVHrY7d93kb
+	KXdRnBXvdqVlaA0bFsnzb9EqaB0RoNkHfNQNE6FvRKBGZ7fLee4fNnuICRwNN/kYGDNjaqOxCWLiS
+	HdTbEUZ7BLCiys1cT5Z5/aiDgU8ibLHOTJnMaZS2MVXUIf2R6CkZT/WEC+i9xl92fiFxBJzbB9dhm
+	qqQlKF8JNrQEfLxZJZ3If44VoW6G1oZKStFmYSkzWaGdQJI+ox6GyEOMT8ldj16QzUwyJjGblbwrd
+	FP6I0eJez21huN4HcIm3TfUlBhC87il2ufSB+x7l9GMvBBiLovc2A8dOnb5Jxk1aFk42KiY6101HF
+	7S4xfoeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM0xf-000000071dv-0bhP;
-	Mon, 02 Jun 2025 08:56:03 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1uM1Bt-000000073DT-0QJF;
+	Mon, 02 Jun 2025 09:10:45 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM0xc-000000071dY-38Wo
+	id 1uM1Bq-000000073D4-1uG8
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Jun 2025 08:56:01 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-450d668c2a1so18445675e9.0
-        for <linux-phy@lists.infradead.org>; Mon, 02 Jun 2025 01:56:00 -0700 (PDT)
+	Mon, 02 Jun 2025 09:10:43 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43cfe63c592so47929795e9.2
+        for <linux-phy@lists.infradead.org>; Mon, 02 Jun 2025 02:10:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1748854559; x=1749459359; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1748855441; x=1749460241; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7QYD6lw/8riHbGeOafpIw3lxHQ0yDfZV96sQp+2PqGY=;
-        b=kDcnXbSnpPm/oM8DR3SVR4awzlgGFbjJuXd6M/NntIt/bgygowvEr6F71mVEq+6y+L
-         wD/yy1tt0n2/ynqVSYgCP7qs8rwbvcMhhA82EUN62pyo1KkYcfMX2VLjg+2yOaeSfpMz
-         dj38Jjox/lslhh6qZf4xlizKMiG18O7P8N5GlwciddWKDEmCLcIpuCLnqVcWNqF5FZgv
-         oUKSgF0LhZdXeceRhsmMP2D+OOWBzNv5qGnHq6IN3vFVjRv9DNgDouJsCQkqcJWCWGFT
-         z3/7ndkyO9PHBiUW7Bn7nzLXA61tV58PGKVuPIv8vh4aijKc1co5nC4tA4rb+ouCpmNm
-         W8Yw==
+        bh=3fz5WoLh7+2BqWFgE4Sn4NQbSlq+fXNwl5Sh5y2BFmQ=;
+        b=eJvwdJhD2hIixXnLIzpHov9YEg/cqvwFgvGyv8Vyvf9VT5PNRq+LOCkUZCQ02GFHBK
+         SrUnksOCjPZsceVbsED2vfd9iSl2MJbzgnJ2QT6dMS1YozIufRRkrK0ecWqoy9svUrO1
+         FWe4p0C+dkDXK8PXEI7hC6XztezAiHoBD/wUa7MTgjfbt30sJAqzCE0afdyUupX+dKNx
+         6hUUv91djQ5P8JKKAbPIN+eHTv4eRtspd8sIPXwTl3agUqVOx7kLZeksyFhEOWn/EmbF
+         w1cid6DDej/xVdOiDi9b3T8PMQkIXeY+fNkxmcbGfY1vlSkSMLMh7GYFnm7BOedK2RF0
+         jaKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748854559; x=1749459359;
+        d=1e100.net; s=20230601; t=1748855441; x=1749460241;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=7QYD6lw/8riHbGeOafpIw3lxHQ0yDfZV96sQp+2PqGY=;
-        b=Xl5L6TMYS2CTwvJN+r5WUy7bm2T45R7giNPIE93BhXJaYd1Ar8E3mhMnweN/xiL0eD
-         E4LZxbXD0DM4bbV1s4fRnY5HM15X9/1ikXazRLxcKbTYl3Hi2PpD9QFJjKq2DWvqhiEs
-         EeIgzqjpfoBjfyN32Qm0laIAT1gpNTlXT6NLuHvz3LVvzjcCAXd2nQ7uj7L48rkv2U4e
-         lOElax+mUpo18vF8x2OeJlho+kJ/EsJuCnpGfvU+Q6bxVUa3cC57ELfX15O1Vyeb4r6+
-         sC8a2TH2nNr3Y9zvsQJ60h8T3uoZ7HCUE79SrcZvR5kPJ2UNV4Y1pEPUjuPP8Q19I8Ai
-         XAug==
-X-Forwarded-Encrypted: i=1; AJvYcCVeUsWfU6/VYBF3UIIxpfYBA8TDaJCndHyZo068Esol5ajDYcv4quZt7TtX/HSsuePfJxaqcPHbr3Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwmNSicCt76zbjFGpO7vhEoWmiQGmLxvEFAoRDNeq8CXITi7lmA
-	MjfV67aOIV0MYgk9Ij43mGM4oJp0FG8t+Tqw+SlzxFp8ZUyNwLQj51YeQUsdos+JfAo=
-X-Gm-Gg: ASbGncurbt4xTovqiV9MaItrMMyXizWOuXQTUb8Ah9sxXo7ul3MSYL67VTk9PLXhBdG
-	er2rUuALJVTxcQZdPSJFSbOpJ3fo2GgmmlgRxnAeqOo/eJdNSbH/ooVkt9zoYmFCjuyNiirY/J3
-	OIk4r1sempqUiVAw2TMF8s5IsdWT48EJxJZ0LeSdUU8divqVRC19goRFAlxSmuTOQerv3duZuYk
-	3vOolutbyDPwT2zCs5mhyxw3T3RYkx1yzS7UjgdhndUvJoXS2KLPCOhEj7rz1YklYvxltPxuM+4
-	QibzCl75I7+yBZETa/OmXan/ipVrVjlFKyUgY56Hjr/9AdzZOSanNmqdP1KIltL4AamehWjJ7Tt
-	sjqFequ1lbuBFFrSOkurdQTfstA==
-X-Google-Smtp-Source: AGHT+IERLKrJn1bEwrp3LKtii6LGu0HD8bbK3tSawKryKIi92EyAnI21DVniaXqIS0xT91UU9mDP+Q==
-X-Received: by 2002:adf:f604:0:b0:3a4:f7ae:77c9 with SMTP id ffacd0b85a97d-3a4f7ae783bmr8182583f8f.5.1748854559244;
-        Mon, 02 Jun 2025 01:55:59 -0700 (PDT)
+        bh=3fz5WoLh7+2BqWFgE4Sn4NQbSlq+fXNwl5Sh5y2BFmQ=;
+        b=fR/ZMOmlr/NsXuLU/RQy+TDRWMutl9emnXjiw/2W0Anu9LllhQ/yxZOWoZ5askG7kt
+         4foclCeDTapysQvUwEkm6J0rLJ4d7+Bgw46YvD6G0jyaPY+zcuFukTskgF5Tax6TXThz
+         iKTN0shyIwilVnuwl/QRwhsSxgdhtSEKOwvlcLux/HHEIZKZXABLGzsejR2MMmceqh3L
+         tYlsk5l6TPei5lT6vuAFJJwWP9Btl+WwxO8GdmYWGvDe4ddmSk1g2bc4rKyuuYch6dDg
+         bBp8NnPj+pm1zg8LnOmwfIM8ynr2ebnTowUSoZFGMsuyEiN2/U4jDX3SlE6Yq7NGIgem
+         aQnA==
+X-Forwarded-Encrypted: i=1; AJvYcCUctySHXHw4/IL/LFYMFWW/c5JkaTVJWS8JRU08arZ32hcEPZ2Fy11B5/DwZGRxMV0gtgnnhEeHulw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx70yPO+rkcHJHX2yjq6BVOUTuv38LfOg+urjlGEbXmzMuWyrzP
+	P9SSriCDqnGe6I6oyhRiAGJx7EPl20aYQn2tV7NS15eTBH9rOMtjNTVGiR+9WBJgtjJyhgicQMK
+	n5H9B
+X-Gm-Gg: ASbGncsw2nNcZztXRLigFVjPqEVa97AdSr9SsR18GhjAsXwhRilTMu73BlHnbTOP7Bz
+	LiDoRhmt6n0B0Nn3WeHjPHlW2ps/xA73spyZsuMTuBgtKRzB4B7JzfexK8T1AjwAdRsswONwL6Z
+	GmdnLYm0cCz5QLB/vQss0d+8pRdM0cIXsF/QVzbgx1UBjY8DKMWiOyCAd5ltqIh9MBSRDgJdL0u
+	i7Ge/kXld3NXGSlqP9YasEVYREwxrwsSYnGrw2ZFVDtP/UXVqnvqng2QYedsFQTzcDvzmYC5Y5t
+	tqj1axayybUP+zGTcaCM4ynuP8+o9G3qS3engk+GggO1lRPsndcifav9CG4Xa3MUcANr8ldSwz6
+	34AmxW6MyWkHN6w2BYmd4GEMEzw==
+X-Google-Smtp-Source: AGHT+IFgXm1kiT1/u4BnrJPjc8ieuDz8ucVyVOvChbk/+t0uNwDZBVqk29ONf2+4k4cHgunUmSrG/Q==
+X-Received: by 2002:a05:600c:1c8f:b0:450:cf00:20f5 with SMTP id 5b1f17b1804b1-4511ecc2a46mr72379895e9.9.1748855440595;
+        Mon, 02 Jun 2025 02:10:40 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:cb6:30c6:d7ab:d145? ([2a01:e0a:3d9:2080:cb6:30c6:d7ab:d145])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4f00972c1sm14297282f8f.68.2025.06.02.01.55.58
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4efe73fbcsm14074099f8f.48.2025.06.02.02.10.39
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Jun 2025 01:55:58 -0700 (PDT)
-Message-ID: <75dde9a2-3c0d-481b-bc73-089ba89a77e0@linaro.org>
-Date: Mon, 2 Jun 2025 10:55:58 +0200
+        Mon, 02 Jun 2025 02:10:40 -0700 (PDT)
+Message-ID: <b5ac79e5-22d9-4929-9131-28f4396658d6@linaro.org>
+Date: Mon, 2 Jun 2025 11:10:39 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>
-References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
- <styd5gjksbsqt7efylpfn6bgwgyvt6zexxiooihjsnmp25yigp@unq7dor6gso2>
- <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
- <inpfuxskvmrebxitqtqwzvpnpicibo6zakgk4ujpcrqrpef2vw@nhclj5rg7axr>
- <9037fefe-aa40-4884-97ee-b81ff8346944@oss.qualcomm.com>
- <htufwjvfgdtav2gtgrytc356py6xqhrffbwjg42sgo7k4zzxof@z4xaf35qz7kq>
- <aa17d7d4-b77d-4a0a-88c3-86255dfbc29d@oss.qualcomm.com>
+Subject: Re: [PATCH] phy: use per-PHY lockdep keys
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Abel Vesa <abel.vesa@linaro.org>
+Cc: linux-arm-msm@vger.kernel.or, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20250529-phy-subinit-v1-1-b74cadf366b8@oss.qualcomm.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -121,10 +110,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <aa17d7d4-b77d-4a0a-88c3-86255dfbc29d@oss.qualcomm.com>
+In-Reply-To: <20250529-phy-subinit-v1-1-b74cadf366b8@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250602_015600_796384_CC07431B 
-X-CRM114-Status: GOOD (  24.45  )
+X-CRM114-CacheID: sfid-20250602_021042_509495_A1CC571C 
+X-CRM114-Status: GOOD (  27.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,81 +131,163 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28/05/2025 18:56, Konrad Dybcio wrote:
-> On 5/28/25 1:22 PM, Dmitry Baryshkov wrote:
->> On Wed, May 28, 2025 at 01:13:26PM +0200, Konrad Dybcio wrote:
->>> On 5/28/25 11:00 AM, Dmitry Baryshkov wrote:
->>>> On Wed, May 28, 2025 at 12:24:02AM +0200, Konrad Dybcio wrote:
->>>>> On 5/27/25 11:10 PM, Dmitry Baryshkov wrote:
->>>>>> On Tue, May 27, 2025 at 10:40:02PM +0200, Konrad Dybcio wrote:
->>>>>>> Register a typec mux in order to change the PHY mode on the Type-C
->>>>>>> mux events depending on the mode and the svid when in Altmode setup.
->>>>>>>
->>>>>>> The DisplayPort phy should be left enabled if is still powered on
->>>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
->>>>>>> PHY is not powered off.
->>>>>>
->>>>>> This series doesn't seem to solve the USB side of a problem. When the
->>>>>> PHY is being switch to the 4-lane mode, USB controller looses PIPE
->>>>>> clock, so it needs to be switched to the USB-2 mode.
->>>>>
->>>>> I didn't find issues with that on X13s.. Not sure if it's related, but
->>>>> on the SL7, after plugging in a 4ln DP connection, I need to plug in
->>>>> the USB thumb drive twice for the first time (only in that sequence)
->>>>
->>>> Might be.
->>>>
->>>>> But there's nothing interesting in dmesg and the phy seems to be
->>>>> programmed with the same values on both the initial and the subsequent
->>>>> working plug-in
->>>>
->>>> Please try using a DP dongle with USB 2 passthrough (there are some).
->>>> Or just emulate this by enabling DP PHY / DP chain for plugged in USB3
->>>> devices. Would you be able to see the USB device on a bus?
->>>
->>> I only have a dongle with both display and usb that does 2ln dp
->>> (I tested 4ln dp on a type-c display that I don't think has a hub)
->>>
->>> USB3 - yes, USB2 - no (but it works after a replug)
->>>
->>> Are you talking about essentially doing qcom,select-utmi-as-pipe-clk
->>> at runtime?
->>
->> I think so.
+On 28/05/2025 23:29, Dmitry Baryshkov wrote:
+> If the PHY driver uses another PHY internally (e.g. in case of eUSB2,
+> repeaters are represented as PHYs), then it would trigger the following
+> lockdep splat because all PHYs use a single static lockdep key and thus
+> lockdep can not identify whether there is a dependency or not and
+> reports a false positive.
 > 
-> So after quite some time playing with that, I noticed that the USB2
-> device was never actually kicked off the bus.. and works totally fine
-> after connecting the display output (2ln DP)
-> 
-> I was looking at dmesg, checking for discovery/disconnect messages,
-> but the device was simply never disconnected (which makes sense given
-> repurposing USB3 TX/RX lanes doesn't affect the D+/D- of USB2)
-> 
-> I also read some docs and learnt that what we call
-> qcom,select-utmi-as-pipe-clk is suppossed to be a debug feature
-> and is unnecessary to set on USB2.0-only controllers
-> 
-> The USB controller programming guide though doesn't talk about DP,
-> but I'd expect that we may need to set that override for 4lnDP+USB2
-> use cases (which I don't have a dongle for)
+> Make PHY subsystem use dynamic lockdep keys, assigning each driver a
+> separate key. This way lockdep can correctly identify dependency graph
+> between mutexes.
 
-Yeah basically we need to:
-1) power-off the USB3 PHY
-2) switch to UTMI clock
-
-In the following states:
-- USB safe mode (USB2 lanes may still be connected)
-- 4lanes DP mode
-- DP-only mode
-
-But for this, the dwc3 should also get USB-C events with an addition mode-switch property.
-The flatten DWC3 node now allows that !
-
-Neil
+Nice solution !
 
 > 
-> Konrad
+>   ============================================
+>   WARNING: possible recursive locking detected
+>   6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 Not tainted
+>   --------------------------------------------
+>   kworker/u51:0/78 is trying to acquire lock:
+>   ffff0008116554f0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
+> 
+>   but task is already holding lock:
+>   ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
+> 
+>   other info that might help us debug this:
+>    Possible unsafe locking scenario:
+> 
+>          CPU0
+>          ----
+>     lock(&phy->mutex);
+>     lock(&phy->mutex);
+> 
+>    *** DEADLOCK ***
+> 
+>    May be due to missing lock nesting notation
+> 
+>   4 locks held by kworker/u51:0/78:
+>    #0: ffff000800010948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work+0x18c/0x5ec
+>    #1: ffff80008036bdb0 (deferred_probe_work){+.+.}-{0:0}, at: process_one_work+0x1b4/0x5ec
+>    #2: ffff0008094ac8f8 (&dev->mutex){....}-{4:4}, at: __device_attach+0x38/0x188
+>    #3: ffff000813c10cf0 (&phy->mutex){+.+.}-{4:4}, at: phy_init+0x4c/0x12c
+> 
+>   stack backtrace:
+>   CPU: 0 UID: 0 PID: 78 Comm: kworker/u51:0 Not tainted 6.15.0-rc7-next-20250522-12896-g3932f283970c #3455 PREEMPT
+>   Hardware name: Qualcomm CRD, BIOS 6.0.240904.BOOT.MXF.2.4-00528.1-HAMOA-1 09/ 4/2024
+>   Workqueue: events_unbound deferred_probe_work_func
+>   Call trace:
+>    show_stack+0x18/0x24 (C)
+>    dump_stack_lvl+0x90/0xd0
+>    dump_stack+0x18/0x24
+>    print_deadlock_bug+0x258/0x348
+>    __lock_acquire+0x10fc/0x1f84
+>    lock_acquire+0x1c8/0x338
+>    __mutex_lock+0xb8/0x59c
+>    mutex_lock_nested+0x24/0x30
+>    phy_init+0x4c/0x12c
+>    snps_eusb2_hsphy_init+0x54/0x1a0
+>    phy_init+0xe0/0x12c
+>    dwc3_core_init+0x450/0x10b4
+>    dwc3_core_probe+0xce4/0x15fc
+>    dwc3_probe+0x64/0xb0
+>    platform_probe+0x68/0xc4
+>    really_probe+0xbc/0x298
+>    __driver_probe_device+0x78/0x12c
+>    driver_probe_device+0x3c/0x160
+>    __device_attach_driver+0xb8/0x138
+>    bus_for_each_drv+0x84/0xe0
+>    __device_attach+0x9c/0x188
+>    device_initial_probe+0x14/0x20
+>    bus_probe_device+0xac/0xb0
+>    deferred_probe_work_func+0x8c/0xc8
+>    process_one_work+0x208/0x5ec
+>    worker_thread+0x1c0/0x368
+>    kthread+0x14c/0x20c
+>    ret_from_fork+0x10/0x20
+> 
+> Fixes: 3584f6392f09 ("phy: qcom: phy-qcom-snps-eusb2: Add support for eUSB2 repeater")
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> ---
+> Note: I've used a Fixes tag pointing to the commit which actually
+> started using nested PHYs. If you think that it's incorrect, I'm fine
+> with dropping it.
 
+In fact, other drivers were using sub-phys before:
+./amlogic/phy-meson-axg-pcie.c
+./amlogic/phy-meson-axg-mipi-dphy.c
+
+(yeah I know, my bad !)
+
+so it should be:
+Fixes: e2463559ff1d ("phy: amlogic: Add Amlogic AXG PCIE PHY Driver")
+
+> 
+> Note2: I've tried using mutex_lock_nested, however that didn't play
+> well. We can not store nest level in the struct phy (as it can be used
+> by different drivers), so using mutex_lock_nested() would require us to
+> change and wrap all PHY APIs which take a lock internally. Using dynamic
+> lockdep keys looks like a more ellegant solution, especially granted
+> that there is no extra impact if lockdep is disabled.
+> ---
+>   drivers/phy/phy-core.c  | 5 ++++-
+>   include/linux/phy/phy.h | 2 ++
+>   2 files changed, 6 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 8e2daea81666bf8a76d9c936c1a16d6318105c91..04a5a34e7a950ae94fae915673c25d476fc071c1 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -994,7 +994,8 @@ struct phy *phy_create(struct device *dev, struct device_node *node,
+>   	}
+>   
+>   	device_initialize(&phy->dev);
+> -	mutex_init(&phy->mutex);
+> +	lockdep_register_key(&phy->lockdep_key);
+> +	mutex_init_with_key(&phy->mutex, &phy->lockdep_key);
+>   
+>   	phy->dev.class = &phy_class;
+>   	phy->dev.parent = dev;
+> @@ -1259,6 +1260,8 @@ static void phy_release(struct device *dev)
+>   	dev_vdbg(dev, "releasing '%s'\n", dev_name(dev));
+>   	debugfs_remove_recursive(phy->debugfs);
+>   	regulator_put(phy->pwr);
+> +	mutex_destroy(&phy->mutex);
+> +	lockdep_unregister_key(&phy->lockdep_key);
+>   	ida_free(&phy_ida, phy->id);
+>   	kfree(phy);
+>   }
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index 437769e061b7030105c9ea4e9b0da9d32b6fa158..13add0c2c40721fe9ca3f0350d13c035cd25af45 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -154,6 +154,7 @@ struct phy_attrs {
+>    * @id: id of the phy device
+>    * @ops: function pointers for performing phy operations
+>    * @mutex: mutex to protect phy_ops
+> + * @lockdep_key: lockdep information for this mutex
+>    * @init_count: used to protect when the PHY is used by multiple consumers
+>    * @power_count: used to protect when the PHY is used by multiple consumers
+>    * @attrs: used to specify PHY specific attributes
+> @@ -165,6 +166,7 @@ struct phy {
+>   	int			id;
+>   	const struct phy_ops	*ops;
+>   	struct mutex		mutex;
+> +	struct lock_class_key	lockdep_key;
+>   	int			init_count;
+>   	int			power_count;
+>   	struct phy_attrs	attrs;
+> 
+> ---
+> base-commit: 460178e842c7a1e48a06df684c66eb5fd630bcf7
+> change-id: 20250528-phy-subinit-42c988a12b6c
+> 
+> Best regards,
+
+With the Fixes changed:
+
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
