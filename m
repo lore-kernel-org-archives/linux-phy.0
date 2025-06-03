@@ -4,152 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 301DBC54FB3
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Jun 2025 14:36:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3DA3C5AE59
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Jun 2025 07:38:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UV6kNjxP77Rk4ygffv1eu1tCRInRPIY6EHf9sUsKrSk=; b=DnU/mc0y5Rxa6v
-	TIm9MwwibSAJ41BfpSLa5Mi97ARQMNsNxOOZPX8X0/I68cWMVzTzBWCqvwoAFLMzSakpvOXHoce2v
-	CdQdD578WzVamIpCbOf1fGsR8LhcG/8EXAsGC9vVYekKpHeVD93YKL7t6GXq2Z6mBibxHTVV2BCIr
-	KdrO0uBzcCdVH/3eiMSFAmGISYYyr4+i0HAnT1LbAhhmrCZEEoRj1UDQ6r58P323TFr8ab6kLVIBN
-	BcejUaD/JscWwOapwajjRM51XFbfixQn96nYLynTrH+LJvVRA+e2Wd0awgku2XXDKIgMtwjwAW443
-	7RdUlIBz1S5EePfaaRxA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=X9C/GnCBewVX28C2W6nm7/JzAsS8fh1qS1JoGVmgoSo=; b=a5WCb6/VqWKB74KVQPfOsxaHG6
+	AWFatcz5lzD96d7E4aBZeeW9LFO77awJkVwfttfQZxZZP0CsjIXgpHNNjl5/d1uhZCyaJZ/J94BEW
+	/4W0hFAGafYJaoW1uuXY8q5OKxIvDiEKPqbOIkyTDlIN62jvMH/YJToZc4TQ1jK3o9+WrsqAF2pFD
+	5PTfdBoXsJw2jB0tKYMTztf+ArpMVLSwtcCtPOLGDuN/7fCbZpvELwaKAEgR2whlB5qRLFTZNjtlr
+	YJFFSeMHMeQ+TxpxkX71ae2DNfF9tevmzeJgWRqnJ2/0Mf/dZHwlRi8w1sa/TmM24a3cof3+Sz62D
+	n4iiX+Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM6H7-00000007e8C-2Lco;
-	Mon, 02 Jun 2025 14:36:29 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1uMMDj-0000000AAC8-1Vk2;
+	Tue, 03 Jun 2025 07:38:03 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uM6H4-00000007e7X-46Xi;
-	Mon, 02 Jun 2025 14:36:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=iRkl8omGlMjOAC9+DjPYwCfxhnYF4QspxXG96YralP0X17fIY8I/uzaSVgCcL3x/GnUvzVUIX5MQmiXaOieHJ23sim6NaY4FCmpjTkMjfzrM0LLq9M1HC6lECB17wJjRp2XkHaI9eCxAp9XzYQKm0agQuUVnOko4uVf+Qae3Y27Gx7U3JVKoTbd/RUd3SYUsrlm41w1C6S47n29O6VH1H25u5pYIRsHnsMDla/UZVJTBhE6bLKjI8CfOfQdjz0JC4FT5Z5lCwPrjNnIczCQhw0dND6cRgh1Jvv7XeKdquIgj39Y8UrEKr5FSTUCG1fWeLR8eHZ1jBuwzY6pRvLTouw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2EnYe0uZ+uklSirATKZHGaxMRFHPX2TsOYFTDm8SPsU=;
- b=Sh6Wpj+qyYEKm87DHC7pr8sNxwBM+2lszIjZD10Q6PT7j+jdP/P0lfXO2intjJrRYJeRCBntUl/JQ4yqvpeMWb9fpdNFt3vOecwh5Q3Wpmcm339Gtuvs5m2oEQBWvgm+1q9YGUUBbibqZtU8G7w+fH2W4E5dxQdkf/QGLU3t4me7zYp056w12x/i0ZcRzjV0baxcDlkopeKby3quFtV7Us7hAIFLL9p2DmU3k+FScVXObjmk0VpxRcRl5GgQNMTCJ49waNpQl3ATdeDN1E1brGRu7HsNM6G8fVSxwLk9YKP7g6ygjWhVC27JK3M2E6HMdH7TUtK4b1bzdE9vV0A1oA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2EnYe0uZ+uklSirATKZHGaxMRFHPX2TsOYFTDm8SPsU=;
- b=HLEj72wGqb35zIXajEAm0kCc/zr4qNhpVtQD+fTyyoEqQYKbFVMHxUZjQyb2n38egwLVr5kd5SkNRoCq5/1d9vQ2XBWt5wbH3fiopQoIIiyDKiPuCH3QKIS2/06KmHq+n7lm7lFC+bHwQIj9ehDgovWNaJorJp7ucx3bQXHMdnlamcDbF7E04jeycXXnfCReQXs2m34SwAhTskzpqzWJFF3TsyhsatsTX7D5nfo7trr11xkxm2gGXQ3s0qaO3tJbJOu9V5q7yozwoS+UXycpW3PBxsN49h+I4UX9tlLREwlxJXHTZim5AO+/qsIVYb5a9gaosSRgAogfGpt8I0EnvA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by DU4PR04MB10386.eurprd04.prod.outlook.com (2603:10a6:10:56d::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.32; Mon, 2 Jun
- 2025 14:36:23 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%6]) with mapi id 15.20.8769.025; Mon, 2 Jun 2025
- 14:36:23 +0000
-From: Frank Li <Frank.Li@nxp.com>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vladimir Zapolskiy <vz@mleia.com>,
-	linux-clk@vger.kernel.org (open list:COMMON CLK FRAMEWORK),
-	devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS),
-	linux-kernel@vger.kernel.org (open list),
-	dmaengine@vger.kernel.org (open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM),
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/LPC18XX ARCHITECTURE)
-Cc: imx@lists.linux.dev
-Subject: [PATCH 1/1] dt-bindings: mfd: convert lpc1850-creg-clk.txt pc1850-dmamux.txt phy-lpc18xx-usb-otg.txt to yaml format
-Date: Mon,  2 Jun 2025 10:36:10 -0400
-Message-Id: <20250602143612.943516-1-Frank.Li@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: AM8P190CA0030.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:20b:219::35) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	id 1uMMDh-0000000AA9W-1DHc
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Jun 2025 07:38:02 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3a361b8a664so5057722f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 00:38:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1748936279; x=1749541079; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=seUOhsZbDhvoYHw0d4ANGqPOk9QNGhZ8LAEm2oPsOKc=;
+        b=MGG206vexSlXMSJMyL/lo4bWVSN1WB643WwlfX7Dq47Ws7NWZz5tJTy/l7YYakc6ae
+         77an9I1n3gPDXkL4/pY3yHyQ2W1QDkaEuvDcaKIBdkfDxYHG0kREM6HB0FJJrBIM6Dq5
+         dlIZYihNX0NlhFBQRSao8XpmD/86RdDHqOHS88fBx8PxZdDU1y1FIZNkJOXVpDKUxPaV
+         YrsJW4w8o87trkCZ+gY7HMoYJHGu2wGy1aaHUJIaX51hmAhpNjXoZfWk8i81Fmaqik0b
+         xvXPM0vHoLk2G04Ne+WrO8lQs4OUiYwTZIYcaD3hvN4C9dLx5ZPr23ZVFcn+KmINIMYu
+         BVpw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748936279; x=1749541079;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=seUOhsZbDhvoYHw0d4ANGqPOk9QNGhZ8LAEm2oPsOKc=;
+        b=owRdVhB/gGQGJ/XNv+LMY2BRsinB2G5Bygk1GIdK2Xr4Dst0NnFb6VCdbm6F6MobgW
+         /sjo4quG+pFhqg87aI8/WseyDUZAgq2CTyARsiCoG2EmLmfowh8KQCn3H2qabBf99F8+
+         txK8mQkN2zIOM0A9tgQWQorRtY9pbnxqbHU/0pRkSgCodzBZ/CF6mQNWf8XKsUcjvv3F
+         ucLl0ldc25GkZNk9MMmQk2Mkeo/YJQ+/0E2j9wyqlkCd40RbsOu75Hen+2yJ34kjwb8d
+         EOQZXU+64Sk7jzGCE+LK0hkJrPbnjwFNHFw3e20sgVtN7RKegc0WUSvOsN9zHwRasTSj
+         WVxQ==
+X-Gm-Message-State: AOJu0YxVbURXTgsxdreqZ7/d+iHjheQNvlHNJDIfYsdVyS1bdk2i41RS
+	c5NvmE79zzRbF/uPQEOXNksWTMBF3En4M9hbDBuOhFii7dzmn8/fZIC8TNCW+9BJiNM=
+X-Gm-Gg: ASbGncugVAhb1TOvpN1xIJGfU2bCo2MZzQveRgmDfy2Xpw0w8rcVuTrfaNVElMuhrG+
+	fLYhl6w4Exv1Z2x8QCkmOIOvbMwdTF1Uxn2wuHEGBZIKkDy/jxpHM2DYnY1IUBM0YLF09tc8aAz
+	kB1D8uI4ySqfRJhJDIyKyIy92n01LF5ghdVQLZufTAZqHWqdvofmUcZq6y87xnTWEV0oZF2ffvb
+	GSDtRIUzC2saxsS5UBOLEQ1BhZ15Egf5I9jaOjyffMesmebIHHfjfoaXYX6MtAFF9QlfCNGqHEg
+	ffGKuonGr266eH4p4RruMSEWgln1m1ZElE6D3xXTBEa/4lIEb/V3AZDZZkviPsCQb2EF2ZiXV/M
+	N5VI2CdiGep3QXtTtFSK6eQ7vYQ==
+X-Google-Smtp-Source: AGHT+IFi3znTnYqUQeguNV73hNktDEyFtGLlBraRs30TSORf/tbD4lhEKTMlcOzfM/MZjLWwmBXuNA==
+X-Received: by 2002:a05:6000:18aa:b0:3a4:d953:74a1 with SMTP id ffacd0b85a97d-3a4f7a653damr12282665f8f.23.1748936279301;
+        Tue, 03 Jun 2025 00:37:59 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:563:3654:17de:c930? ([2a01:e0a:3d9:2080:563:3654:17de:c930])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4f009ff11sm17075482f8f.86.2025.06.03.00.37.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 03 Jun 2025 00:37:58 -0700 (PDT)
+Message-ID: <d9be98db-9196-4a15-896f-d802f8251f3d@linaro.org>
+Date: Tue, 3 Jun 2025 09:37:58 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DU4PR04MB10386:EE_
-X-MS-Office365-Filtering-Correlation-Id: afc09956-e40c-4e93-2af7-08dda1e2d8b1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|7416014|376014|1800799024|38350700014|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?kzcIM19j+6aYjpD/zqwkDcc5BY6F9PLDzla+w65RM5VTZLmqMzQcnX/LVSr7?=
- =?us-ascii?Q?8JNQocUf0uxjNaUhvzta/0S7v574JBg8EvLz/oWJ6BXTpiPONQPs06E13xXZ?=
- =?us-ascii?Q?XhIAyhTLkqtsDmiC8uLPVnFwg0hQFU7JJEYlPFP0F9MINBRIlH0cgF4YukhQ?=
- =?us-ascii?Q?auCgei5wCUb/HzLNfx2MwwywcgQeZpzM6jZ23ZpnJ14TDpZBJvWQozDfSOjo?=
- =?us-ascii?Q?wMJlPmn4O+E9+mMKHxCUphgQA2bv0EizMNhRsm66AVkYZX4YBDgWkDjM4B46?=
- =?us-ascii?Q?Fj565cJWa64Js2Ts3WSuIaiu2Rqg2iWBa48vb4qKCdSNz7n0pj+RHiW4r20c?=
- =?us-ascii?Q?mtlXHHzito9lhD3Q0DJryhcgK2BXDOplumWx+vCV++cXx4WvX7EWOLTBzpxy?=
- =?us-ascii?Q?XcOB228+vE/TU5ZhyEHPpzLyZ3lCE+ie/lcphhlOFTBIJCbTsF/ZuRB/5qLf?=
- =?us-ascii?Q?939SbT5JVqIdRRhj/D/7+ZGyEZP0+3lUEPLhrqbjDqcOqS4pmjnwARJLocOZ?=
- =?us-ascii?Q?U9O/gwvW8nZWdNxzHG3tdrlYh3zILfc0jDFOk3+N8XtzbaH/NtbyLwRIJO6N?=
- =?us-ascii?Q?mA/6CCsiagKbxw+6P1iQsoc1/V3+lnG2ykzeuRua8gzOr9QrjOBDeAV3l5ib?=
- =?us-ascii?Q?z+LPambM6wtGIv6EpQWZAAXdJSz2uicgIjpgTxzV/IbH7hYhDPOaMTZsUwLS?=
- =?us-ascii?Q?IqCC971g9gDxOVoQTk+zF8JqNltWkV+Zk/07mT+cF8RC7hYDvrsLU3NxfrmZ?=
- =?us-ascii?Q?c0/gyzxcxZouUwGYheEkFCwUB5Z7qQkjpo5n8eoWcQ0X06cE2l5jwDgOOGon?=
- =?us-ascii?Q?L2ps6ne4aZpdQo4sJjNiGBpdgyOgXdHhJKxQrt6F30WkNVC3rSB/GB3HiaSO?=
- =?us-ascii?Q?c54a9r779ugQ1lhDHlQZkFRJNs9SDbhVld5Hj7yvbREikyKvDZkrABk9gWvh?=
- =?us-ascii?Q?GJjnfCjFNS25El+w1md4AYjbZdS58NiZTyQgNyEjaiIf2r9C/3gcpefUl51k?=
- =?us-ascii?Q?mbZraPREcK3pRWO6GK6VAGDAfp0D7+wM2pXQLf0VQ6uXAzsxTFKNmwmMzjGm?=
- =?us-ascii?Q?2Bzz/rfX37MBHrVx3jQ/zBrisJw+WzlY5kDF7tu7mKT3w8YU9zfyMjqlTotW?=
- =?us-ascii?Q?Y/QWRS8S7P3m1hV0oNTFNiBgio6iy4OGBSTKuq4Kd5QGWB1ewNeFtB4gpnly?=
- =?us-ascii?Q?SKs8GSKDQp54vMhPH+MQxsUl1Ql6nSVl0tWDxmtA2+LWuN6OM6ccmo3GSqxO?=
- =?us-ascii?Q?/Fwtpr8XC7tFoXNiQ49FY3rwxRDJGbsbOw6yjdxLm2AVA//UGZA6N3p2+ZM/?=
- =?us-ascii?Q?8Y43hmivbwR4ElWXekTAK3KXiNYrlWujNxhYW2v9lu4if6rRCAmVHmREgFTM?=
- =?us-ascii?Q?KDjgAgI9/dgFR6Uvosr7Q3gP6ioLaHrg0GKD4LJg/SpNHcVEm2CcGZXeImoX?=
- =?us-ascii?Q?LvQQyNvKYE80TuhVR0YSXCWwyvlVT3k3dwWWyo8xWDYYkGQy/j0x9A=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(7416014)(376014)(1800799024)(38350700014)(921020);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?CWY8+YBaEq0gGalV6OXStbj6HtifqT+HU4aDct6qccneM9em4M3dq7BfKuO7?=
- =?us-ascii?Q?57eXm+jmdeXgVDO6FmCT7dqnhAzvVOovPjWvqNhfi0iuBeiSGdV/X4Az89Z8?=
- =?us-ascii?Q?6ZDOA07bt7G6PINHwR5MsOg2fehgpvOe13Z7uR3SbdH4CENTs1YqirO36ukd?=
- =?us-ascii?Q?qkJcoixix+mOwCuE+ELgXBO+sUkQGsQlfyrXjHAhsJ2qBPHbG3o44iEKK1A6?=
- =?us-ascii?Q?mwZivzk7+3NXdeUeYwK87cw39edYTfxt+GHE7PqEXKOhBXMoR7nDTqBNXG8p?=
- =?us-ascii?Q?PNvTq5saIauPxllz+xT0JMD87ZFfmjkGS2jrYqp5yEwGjYgU55sJiiLewMr3?=
- =?us-ascii?Q?yvo60jNwMmcddI4VMkAA4t42O3isv4psOph+fIzpyvfqkdFrEMvcxSJOkasA?=
- =?us-ascii?Q?QWSdI5aD2PhXqah/71BhDaGKdpymERssLu8odNcZhlljDctBD0UxsQ01p7SS?=
- =?us-ascii?Q?UejOAAEXvuWeY1EI/LtN1mZYu9KL8llauA2LRjgTX7rtllojgaXs9Yl93RNC?=
- =?us-ascii?Q?yvpsIuQEl/dwbD15Jbd5NbV+eQZrfQ/2a+K/IvA06V6y2glEcYxRBMA6kgMD?=
- =?us-ascii?Q?ik7qTX3DY39XHYzfj58SgHRnsYzPuPd7D1Yp/pgnfeqgUVMhO2HjYwPxscxr?=
- =?us-ascii?Q?eyNKB1vKA2H/njuJbP08NKVtuxJkFlyYihsveulOlizGzjv3h12q+hd6g2Sa?=
- =?us-ascii?Q?745SoKlF8enKV5YyZSPPI/qfO+/bkYzrndo7jCEbUZ3jdhMC06UW0nOMEM8E?=
- =?us-ascii?Q?D55h9ECAhZs44JBbn6meZJMqD7jyDdSCGoREPEoxSh9isMAJOBZ0ShkCVQWq?=
- =?us-ascii?Q?wwGE9JiWtwhmeui/S/C8jJe2HJgNzagdFDmGslJjVoPTnIgEUBrcoDHawpv7?=
- =?us-ascii?Q?nCisgGhNI34ZjuqkFlCDo9eXKmD5imvVYodM43qBz13SOD2qrbvPurzKqMcZ?=
- =?us-ascii?Q?EAiMRdUdJb1RoXtONpMUcDBSHN/bWZZHH3PGU0uUaYDE4zENIG0lTBDeuPat?=
- =?us-ascii?Q?N7GT7D9mVQgfb/r/ZrAOxcpymcibs7Lx2WpoKLj1IlNj2RXm4OAzJg8raEu3?=
- =?us-ascii?Q?3J0rxSFKjMNiYk2+xoWj+8vqFJxCVXVQTzyrgKPLUPm3O10c+Dty7Df2700y?=
- =?us-ascii?Q?YAT6VpRKcdbfF9wh+zaLcLd0z0+J562STHX0VGtdM7pca1e7HqOmLht6PeyB?=
- =?us-ascii?Q?h2xvs3qxFe2+nN13snHDKTe3Mly2zd2g88YvgepUkaBpTnieZQO40n6Rwy0m?=
- =?us-ascii?Q?+XAlj5dLBZ50sGZkKbbrz+LMxgylNyibJd0HVZOCa1Vl9IMk0fc+rrY1phfs?=
- =?us-ascii?Q?d3yBlSMXIgge68xhLjrStfrCvB3dqOD8UzH6tHGuVXL1v9kO5gIxJhvhUsTb?=
- =?us-ascii?Q?uiXvdGUByP4fZh31XEBIy8qZvcHW3HGSQp27W3bHQ2edwUxo2ZdktHQDFT1X?=
- =?us-ascii?Q?+eC/ryC1kshEPl+in5A9N1mUB+ajU76/i/IquOAJm2S5PLlK9bKfLZH782KG?=
- =?us-ascii?Q?5m5of96L1VUCdZ1j0UGUpUms6LRbXHhiCEnfD83F3yMdHJYpcQEygl8dErN+?=
- =?us-ascii?Q?E1sPA0RN7N1YSip7kU5wriJKrZBKwgPRYT9NWzJN?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: afc09956-e40c-4e93-2af7-08dda1e2d8b1
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2025 14:36:22.9704
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: w5m5f4OAxDaoLb5LFR+6iE2gFA54amb+1KU/sZhDsrAZcIc9Om18eG5TVZFawq7KuuthDsGPqgUgPAN6NeKqDQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB10386
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v5 3/4] phy: spacemit: support K1 USB2.0 PHY controller
+To: Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-kernel@vger.kernel.org
+References: <20250527-b4-k1-usb3-phy-v2-v5-0-2d366b0af999@whut.edu.cn>
+ <20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250602_073627_172406_083A495B 
-X-CRM114-Status: GOOD (  20.12  )
+X-CRM114-CacheID: sfid-20250603_003801_354954_C5469C92 
+X-CRM114-Status: GOOD (  30.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,338 +127,250 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Combine lpc1850-creg-clk.txt pc1850-dmamux.txt and phy-lpc18xx-usb-otg.txt
-to one mfd yaml file.
+On 27/05/2025 14:01, Ze Huang wrote:
+> The SpacemiT K1 SoC includes three USB ports:
+> 
+> - One USB2.0 OTG port
+> - One USB2.0 host-only port
+> - One USB3.0 port with an integrated USB2.0 DRD interface
+> 
+> Each of these ports is connected to a USB2.0 PHY responsible for USB2
+> transmission.
+> 
+> This commit adds support for the SpacemiT K1 USB2.0 PHY, which is
+> compliant with the USB 2.0 specification and supports both 8-bit 60MHz
+> and 16-bit 30MHz parallel interfaces.
+> 
+> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
+> ---
+>   drivers/phy/Kconfig                |   1 +
+>   drivers/phy/Makefile               |   1 +
+>   drivers/phy/spacemit/Kconfig       |  13 ++++
+>   drivers/phy/spacemit/Makefile      |   2 +
+>   drivers/phy/spacemit/phy-k1-usb2.c | 144 +++++++++++++++++++++++++++++++++++++
+>   5 files changed, 161 insertions(+)
+> 
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 8d58efe998ec5fd50054eed2c90d6ecce6bd5dd8..fca589aa7926eb5bce14e99785cf32cf0395202e 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -114,6 +114,7 @@ source "drivers/phy/renesas/Kconfig"
+>   source "drivers/phy/rockchip/Kconfig"
+>   source "drivers/phy/samsung/Kconfig"
+>   source "drivers/phy/socionext/Kconfig"
+> +source "drivers/phy/spacemit/Kconfig"
+>   source "drivers/phy/st/Kconfig"
+>   source "drivers/phy/starfive/Kconfig"
+>   source "drivers/phy/sunplus/Kconfig"
+> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+> index e281442acc752820fe0bd638dfe38986a37c2a78..05993ff8a15daf7e2583b5f9b9b37ac584a30609 100644
+> --- a/drivers/phy/Makefile
+> +++ b/drivers/phy/Makefile
+> @@ -34,6 +34,7 @@ obj-y					+= allwinner/	\
+>   					   rockchip/	\
+>   					   samsung/	\
+>   					   socionext/	\
+> +					   spacemit/	\
+>   					   st/		\
+>   					   starfive/	\
+>   					   sunplus/	\
+> diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..0136aee2e8a2f5f484da136b26f80130794b992c
+> --- /dev/null
+> +++ b/drivers/phy/spacemit/Kconfig
+> @@ -0,0 +1,13 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +#
+> +# Phy drivers for SpacemiT platforms
+> +#
+> +config PHY_SPACEMIT_K1_USB2
+> +	tristate "SpacemiT K1 USB 2.0 PHY support"
+> +	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
+> +	depends on COMMON_CLK
+> +	depends on USB_COMMON
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
+> +	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
+> diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..fec0b425a948541b39b814caef0b05e1e002d92f
+> --- /dev/null
+> +++ b/drivers/phy/spacemit/Makefile
+> @@ -0,0 +1,2 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
+> diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..ee64af07478ea02b421473e6f73fd37a3a135e7d
+> --- /dev/null
+> +++ b/drivers/phy/spacemit/phy-k1-usb2.c
+> @@ -0,0 +1,144 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * SpacemiT K1 USB 2.0 PHY driver
+> + *
+> + * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
+> + * Copyright (C) 2025 Ze Huang <huangze9015@gmail.com>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/usb/of.h>
+> +
+> +#define USB2_PHY_REG01			0x04
+> +#define  USB2_PHY_REG01_VAL		0x60ef
+> +#define  USB2_PHY_REG01_PLL_IS_READY	BIT(0)
+> +#define USB2_PHY_REG04			0x10
+> +#define  USB2_PHY_REG04_AUTO_CLEAR_DIS	BIT(2)
+> +#define USB2_PHY_REG0D			0x34
+> +#define  USB2_PHY_REG0D_VAL		0x1c
+> +#define USB2_PHY_REG26			0x98
+> +#define  USB2_PHY_REG26_VAL		0xbec4
+> +
+> +#define USB2D_CTRL_RESET_TIME_MS	50
+> +
+> +struct spacemit_usb2phy {
+> +	struct phy	*phy;
+> +	struct clk	*clk;
+> +	struct regmap	*regmap_base;
+> +};
+> +
+> +static const struct regmap_config phy_regmap_config = {
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +	.max_register = 0x200,
+> +};
+> +
+> +static int spacemit_usb2phy_init(struct phy *phy)
+> +{
+> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
+> +	struct regmap *map = sphy->regmap_base;
+> +	u32 val;
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(sphy->clk);
 
-Additional changes:
-- remove label in example.
-- remove dmamux consumer in example.
-- remove clock consumer in example.
+clock is already prepared, should be clk_enable
 
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
- .../bindings/clock/lpc1850-creg-clk.txt       |  52 ------
- .../bindings/dma/lpc1850-dmamux.txt           |  54 -------
- .../bindings/mfd/nxp,lpc1850-creg.yaml        | 148 ++++++++++++++++++
- .../bindings/phy/phy-lpc18xx-usb-otg.txt      |  26 ---
- 4 files changed, 148 insertions(+), 132 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
- delete mode 100644 Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
- create mode 100644 Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
+> +	if (ret) {
+> +		dev_err(&phy->dev, "failed to enable clock\n");
+> +		return ret;
+> +	}
+> +
+> +	/*
+> +	 * make sure the usb controller is not under reset process before
+> +	 * any configuration
+> +	 */
+> +	usleep_range(150, 200);
+> +	regmap_write(map, USB2_PHY_REG26, USB2_PHY_REG26_VAL); /* 24M ref clk */
+> +
+> +	ret = regmap_read_poll_timeout(map, USB2_PHY_REG01, val,
+> +				       (val & USB2_PHY_REG01_PLL_IS_READY),
+> +				       500, USB2D_CTRL_RESET_TIME_MS * 1000);
+> +	if (ret) {
+> +		dev_err(&phy->dev, "wait PHY_REG01[PLLREADY] timeout\n");
+> +		return ret;
 
-diff --git a/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt b/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
-deleted file mode 100644
-index b6b2547a3d17a..0000000000000
---- a/Documentation/devicetree/bindings/clock/lpc1850-creg-clk.txt
-+++ /dev/null
-@@ -1,52 +0,0 @@
--* NXP LPC1850 CREG clocks
--
--The NXP LPC18xx/43xx CREG (Configuration Registers) block contains
--control registers for two low speed clocks. One of the clocks is a
--32 kHz oscillator driver with power up/down and clock gating. Next
--is a fixed divider that creates a 1 kHz clock from the 32 kHz osc.
--
--These clocks are used by the RTC and the Event Router peripherals.
--The 32 kHz can also be routed to other peripherals to enable low
--power modes.
--
--This binding uses the common clock binding:
--    Documentation/devicetree/bindings/clock/clock-bindings.txt
--
--Required properties:
--- compatible:
--	Should be "nxp,lpc1850-creg-clk"
--- #clock-cells:
--	Shall have value <1>.
--- clocks:
--	Shall contain a phandle to the fixed 32 kHz crystal.
--
--The creg-clk node must be a child of the creg syscon node.
--
--The following clocks are available from the clock node.
--
--Clock ID	Name
--   0		 1 kHz clock
--   1		32 kHz Oscillator
--
--Example:
--soc {
--	creg: syscon@40043000 {
--		compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
--		reg = <0x40043000 0x1000>;
--
--		creg_clk: clock-controller {
--			compatible = "nxp,lpc1850-creg-clk";
--			clocks = <&xtal32>;
--			#clock-cells = <1>;
--		};
--
--		...
--	};
--
--	rtc: rtc@40046000 {
--		...
--		clocks = <&creg_clk 0>, <&ccu1 CLK_CPU_BUS>;
--		clock-names = "rtc", "reg";
--		...
--	};
--};
-diff --git a/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt b/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
-deleted file mode 100644
-index 87740adb29956..0000000000000
---- a/Documentation/devicetree/bindings/dma/lpc1850-dmamux.txt
-+++ /dev/null
-@@ -1,54 +0,0 @@
--NXP LPC18xx/43xx DMA MUX (DMA request router)
--
--Required properties:
--- compatible:	"nxp,lpc1850-dmamux"
--- reg:		Memory map for accessing module
--- #dma-cells:	Should be set to <3>.
--		* 1st cell contain the master dma request signal
--		* 2nd cell contain the mux value (0-3) for the peripheral
--		* 3rd cell contain either 1 or 2 depending on the AHB
--		  master used.
--- dma-requests:	Number of DMA requests for the mux
--- dma-masters:	phandle pointing to the DMA controller
--
--The DMA controller node need to have the following poroperties:
--- dma-requests:	Number of DMA requests the controller can handle
--
--Example:
--
--dmac: dma@40002000 {
--	compatible = "nxp,lpc1850-gpdma", "arm,pl080", "arm,primecell";
--	arm,primecell-periphid = <0x00041080>;
--	reg = <0x40002000 0x1000>;
--	interrupts = <2>;
--	clocks = <&ccu1 CLK_CPU_DMA>;
--	clock-names = "apb_pclk";
--	#dma-cells = <2>;
--	dma-channels = <8>;
--	dma-requests = <16>;
--	lli-bus-interface-ahb1;
--	lli-bus-interface-ahb2;
--	mem-bus-interface-ahb1;
--	mem-bus-interface-ahb2;
--	memcpy-burst-size = <256>;
--	memcpy-bus-width = <32>;
--};
--
--dmamux: dma-mux {
--	compatible = "nxp,lpc1850-dmamux";
--	#dma-cells = <3>;
--	dma-requests = <64>;
--	dma-masters = <&dmac>;
--};
--
--uart0: serial@40081000 {
--	compatible = "nxp,lpc1850-uart", "ns16550a";
--	reg = <0x40081000 0x1000>;
--	reg-shift = <2>;
--	interrupts = <24>;
--	clocks = <&ccu2 CLK_APB0_UART0>, <&ccu1 CLK_CPU_UART0>;
--	clock-names = "uartclk", "reg";
--	dmas = <&dmamux 1 1 2
--		&dmamux 2 1 2>;
--	dma-names = "tx", "rx";
--};
-diff --git a/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml b/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
-new file mode 100644
-index 0000000000000..89b4892e9ca71
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mfd/nxp,lpc1850-creg.yaml
-@@ -0,0 +1,148 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mfd/nxp,lpc1850-creg.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: The NXP LPC18xx/43xx CREG (Configuration Registers) block
-+
-+maintainers:
-+  - Frank Li <Frank.Li@nxp.com>
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          - nxp,lpc1850-creg
-+      - const: syscon
-+      - const: simple-mfd
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  clock-controller:
-+    type: object
-+    description:
-+      The NXP LPC18xx/43xx CREG (Configuration Registers) block contains
-+      control registers for two low speed clocks. One of the clocks is a
-+      32 kHz oscillator driver with power up/down and clock gating. Next
-+      is a fixed divider that creates a 1 kHz clock from the 32 kHz osc.
-+
-+      These clocks are used by the RTC and the Event Router peripherals.
-+      The 32 kHz can also be routed to other peripherals to enable low
-+      power modes.
-+
-+    properties:
-+      compatible:
-+        const: nxp,lpc1850-creg-clk
-+
-+      clocks:
-+        maxItems: 1
-+
-+      '#clock-cells':
-+        const: 1
-+        description: |
-+          0            1 kHz clock
-+          1           32 kHz Oscillator
-+
-+    required:
-+      - compatible
-+      - clocks
-+      - '#clock-cells'
-+
-+    additionalProperties: false
-+
-+  phy:
-+    type: object
-+    description: the internal USB OTG PHY in NXP LPC18xx and LPC43xx SoCs
-+    properties:
-+      compatible:
-+        const: nxp,lpc1850-usb-otg-phy
-+
-+      clocks:
-+        maxItems: 1
-+
-+      '#phy-cells':
-+        const: 0
-+
-+    required:
-+      - compatible
-+      - clocks
-+      - '#phy-cells'
-+
-+    additionalProperties: false
-+
-+  dma-mux:
-+    type: object
-+    description: NXP LPC18xx/43xx DMA MUX (DMA request router)
-+    properties:
-+      compatible:
-+        const: nxp,lpc1850-dmamux
-+
-+      '#dma-cells':
-+        const: 3
-+        description: |
-+          Should be set to <3>.
-+          * 1st cell contain the master dma request signal
-+          * 2nd cell contain the mux value (0-3) for the peripheral
-+          * 3rd cell contain either 1 or 2 depending on the AHB  master used.
-+
-+      dma-requests:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        maximum: 64
-+        description: Number of DMA requests the controller can handle
-+
-+      dma-masters:
-+        $ref: /schemas/types.yaml#/definitions/phandle
-+        description: phandle pointing to the DMA controller
-+
-+    required:
-+      - compatible
-+      - '#dma-cells'
-+      - dma-masters
-+
-+    additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - resets
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/lpc18xx-ccu.h>
-+
-+    syscon@40043000 {
-+        compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
-+        reg = <0x40043000 0x1000>;
-+        clocks = <&ccu1 CLK_CPU_CREG>;
-+        resets = <&rgu 5>;
-+
-+        clock-controller {
-+            compatible = "nxp,lpc1850-creg-clk";
-+            clocks = <&xtal32>;
-+            #clock-cells = <1>;
-+        };
-+
-+        phy {
-+            compatible = "nxp,lpc1850-usb-otg-phy";
-+            clocks = <&ccu1 CLK_USB0>;
-+            #phy-cells = <0>;
-+        };
-+
-+        dma-mux {
-+            compatible = "nxp,lpc1850-dmamux";
-+            #dma-cells = <3>;
-+            dma-requests = <64>;
-+            dma-masters = <&dmac>;
-+        };
-+    };
-diff --git a/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt b/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
-deleted file mode 100644
-index 3bb821cd6a7f3..0000000000000
---- a/Documentation/devicetree/bindings/phy/phy-lpc18xx-usb-otg.txt
-+++ /dev/null
-@@ -1,26 +0,0 @@
--NXP LPC18xx/43xx internal USB OTG PHY binding
-----------------------------------------------
--
--This file contains documentation for the internal USB OTG PHY found
--in NXP LPC18xx and LPC43xx SoCs.
--
--Required properties:
--- compatible	: must be "nxp,lpc1850-usb-otg-phy"
--- clocks	: must be exactly one entry
--See: Documentation/devicetree/bindings/clock/clock-bindings.txt
--- #phy-cells	: must be 0 for this phy
--See: Documentation/devicetree/bindings/phy/phy-bindings.txt
--
--The phy node must be a child of the creg syscon node.
--
--Example:
--creg: syscon@40043000 {
--	compatible = "nxp,lpc1850-creg", "syscon", "simple-mfd";
--	reg = <0x40043000 0x1000>;
--
--	usb0_otg_phy: phy {
--		compatible = "nxp,lpc1850-usb-otg-phy";
--		clocks = <&ccu1 CLK_USB0>;
--		#phy-cells = <0>;
--	};
--};
--- 
-2.34.1
+clk_disable on error ?
 
+
+> +	}
+> +
+> +	/* release usb2 phy internal reset and enable clock gating */
+> +	regmap_write(map, USB2_PHY_REG01, USB2_PHY_REG01_VAL);
+> +	regmap_write(map, USB2_PHY_REG0D, USB2_PHY_REG0D_VAL);
+> +
+> +	/* auto clear host disc */
+> +	regmap_update_bits(map, USB2_PHY_REG04, USB2_PHY_REG04_AUTO_CLEAR_DIS,
+> +			   USB2_PHY_REG04_AUTO_CLEAR_DIS);
+> +
+> +	return 0;
+> +}
+> +
+> +static int spacemit_usb2phy_exit(struct phy *phy)
+> +{
+> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
+> +
+> +	clk_disable_unprepare(sphy->clk);
+
+clk_disable
+
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops spacemit_usb2phy_ops = {
+> +	.init = spacemit_usb2phy_init,
+> +	.exit = spacemit_usb2phy_exit,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static int spacemit_usb2phy_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	struct spacemit_usb2phy *sphy;
+> +	void __iomem *base;
+> +
+> +	sphy = devm_kzalloc(dev, sizeof(*sphy), GFP_KERNEL);
+> +	if (!sphy)
+> +		return -ENOMEM;
+> +
+> +	sphy->clk = devm_clk_get_prepared(&pdev->dev, NULL);
+> +	if (IS_ERR(sphy->clk))
+> +		return dev_err_probe(dev, PTR_ERR(sphy->clk), "Failed to get clock\n");
+> +
+> +	base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(base))
+> +		return PTR_ERR(base);
+> +
+> +	sphy->regmap_base = devm_regmap_init_mmio(dev, base, &phy_regmap_config);
+> +	if (IS_ERR(sphy->regmap_base))
+> +		return dev_err_probe(dev, PTR_ERR(sphy->regmap_base),
+> +				     "Failed to init regmap\n");
+> +
+> +	sphy->phy = devm_phy_create(dev, NULL, &spacemit_usb2phy_ops);
+> +	if (IS_ERR(sphy->phy))
+> +		return dev_err_probe(dev, PTR_ERR(sphy->phy), "Failed to create phy\n");
+> +
+> +	phy_set_drvdata(sphy->phy, sphy);
+> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct of_device_id spacemit_usb2phy_dt_match[] = {
+> +	{ .compatible = "spacemit,k1-usb2-phy", },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
+> +
+> +static struct platform_driver spacemit_usb2_phy_driver = {
+> +	.probe	= spacemit_usb2phy_probe,
+> +	.driver = {
+> +		.name   = "spacemit-usb2-phy",
+> +		.of_match_table = spacemit_usb2phy_dt_match,
+> +	},
+> +};
+> +module_platform_driver(spacemit_usb2_phy_driver);
+> +
+> +MODULE_DESCRIPTION("Spacemit USB 2.0 PHY driver");
+> +MODULE_LICENSE("GPL");
+> 
+
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
