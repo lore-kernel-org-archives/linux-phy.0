@@ -4,118 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3DA3C5AE59
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Jun 2025 07:38:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EC58C61CE5
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Jun 2025 10:47:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X9C/GnCBewVX28C2W6nm7/JzAsS8fh1qS1JoGVmgoSo=; b=a5WCb6/VqWKB74KVQPfOsxaHG6
-	AWFatcz5lzD96d7E4aBZeeW9LFO77awJkVwfttfQZxZZP0CsjIXgpHNNjl5/d1uhZCyaJZ/J94BEW
-	/4W0hFAGafYJaoW1uuXY8q5OKxIvDiEKPqbOIkyTDlIN62jvMH/YJToZc4TQ1jK3o9+WrsqAF2pFD
-	5PTfdBoXsJw2jB0tKYMTztf+ArpMVLSwtcCtPOLGDuN/7fCbZpvELwaKAEgR2whlB5qRLFTZNjtlr
-	YJFFSeMHMeQ+TxpxkX71ae2DNfF9tevmzeJgWRqnJ2/0Mf/dZHwlRi8w1sa/TmM24a3cof3+Sz62D
-	n4iiX+Ew==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ogaahr8J4R+dBLIBgcMENQ6xCHhSioSLEgkBFB11EXo=; b=mfGP94lh+jS/eX
+	ux/4cZwRGlZcJO247G59NeE1USchzBFCg9Zm1GUZARZ5n9Bx1IN2BdesgXNjP50ybT0s9zkKHvds/
+	YBNu0Vu0BMI7oqAPCeJYrz3Mt2S0H5RZ53PZarUudBywH7k3H8R1SL01T+MoTxBBChD9zFSjOzw9+
+	U4qjBVVkqei4oS8+lOAbwP2Qh0y/4pcJeilDOo98DdQKh3OfH5761pK4aKjaneexmGyWkjVIyQw0A
+	85VILx5AlGuwzcCuBFMIm5VXACwmKxjA5aVDBdO+xsRO9Yai6FmBc4OrAfuMr9RkVl0hxQ0m13rEy
+	8+dUZnBCTy8iev2oHPEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMMDj-0000000AAC8-1Vk2;
-	Tue, 03 Jun 2025 07:38:03 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1uMPBU-0000000AhYg-3Usl;
+	Tue, 03 Jun 2025 10:47:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMMDh-0000000AA9W-1DHc
+	id 1uMOww-0000000AgGW-1U51
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Jun 2025 07:38:02 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3a361b8a664so5057722f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 00:38:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1748936279; x=1749541079; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=seUOhsZbDhvoYHw0d4ANGqPOk9QNGhZ8LAEm2oPsOKc=;
-        b=MGG206vexSlXMSJMyL/lo4bWVSN1WB643WwlfX7Dq47Ws7NWZz5tJTy/l7YYakc6ae
-         77an9I1n3gPDXkL4/pY3yHyQ2W1QDkaEuvDcaKIBdkfDxYHG0kREM6HB0FJJrBIM6Dq5
-         dlIZYihNX0NlhFBQRSao8XpmD/86RdDHqOHS88fBx8PxZdDU1y1FIZNkJOXVpDKUxPaV
-         YrsJW4w8o87trkCZ+gY7HMoYJHGu2wGy1aaHUJIaX51hmAhpNjXoZfWk8i81Fmaqik0b
-         xvXPM0vHoLk2G04Ne+WrO8lQs4OUiYwTZIYcaD3hvN4C9dLx5ZPr23ZVFcn+KmINIMYu
-         BVpw==
+	Tue, 03 Jun 2025 10:32:55 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5539JFbQ027453
+	for <linux-phy@lists.infradead.org>; Tue, 3 Jun 2025 10:32:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=hdcvv2i1wfbhcJ2qFHR5aWoW
+	+NavP0DH/EC45K6EfKE=; b=NjWVld3OWzjAthsbqqfWU/ADqpHlNH1G1+RV48Rx
+	tNvlnZ7pWRwWDtD+1ob2DUeLxg9svE4hYLEEwmV3HDkMyvMw/peQZgmZvNfsRwLu
+	rH8HRu8847FWpMy1wE1I+f/cyeAL6TFkPJeLUIK9fa0uTV3Tm5C1kJDtntxXcmf6
+	6LegaYdu4quu1cbIKc5G6Yi69+p6JIZGVIiBlcVs/0SyNpSsvSjd1ol1vZuf+npv
+	tLjGQrXQDe6iUxmh6+LOca4oXyegB3iZ3A4QBv8QKxrZPINj5qA/qHRy4/uVqMVW
+	hM/yWTnu7Tu7OekvM2PkQX2sEkqVwnLgS8YLIkm8YL9Xqg==
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471g8t28mp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 10:32:52 +0000 (GMT)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-6f2b0a75decso43724986d6.2
+        for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 03:32:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748936279; x=1749541079;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=seUOhsZbDhvoYHw0d4ANGqPOk9QNGhZ8LAEm2oPsOKc=;
-        b=owRdVhB/gGQGJ/XNv+LMY2BRsinB2G5Bygk1GIdK2Xr4Dst0NnFb6VCdbm6F6MobgW
-         /sjo4quG+pFhqg87aI8/WseyDUZAgq2CTyARsiCoG2EmLmfowh8KQCn3H2qabBf99F8+
-         txK8mQkN2zIOM0A9tgQWQorRtY9pbnxqbHU/0pRkSgCodzBZ/CF6mQNWf8XKsUcjvv3F
-         ucLl0ldc25GkZNk9MMmQk2Mkeo/YJQ+/0E2j9wyqlkCd40RbsOu75Hen+2yJ34kjwb8d
-         EOQZXU+64Sk7jzGCE+LK0hkJrPbnjwFNHFw3e20sgVtN7RKegc0WUSvOsN9zHwRasTSj
-         WVxQ==
-X-Gm-Message-State: AOJu0YxVbURXTgsxdreqZ7/d+iHjheQNvlHNJDIfYsdVyS1bdk2i41RS
-	c5NvmE79zzRbF/uPQEOXNksWTMBF3En4M9hbDBuOhFii7dzmn8/fZIC8TNCW+9BJiNM=
-X-Gm-Gg: ASbGncugVAhb1TOvpN1xIJGfU2bCo2MZzQveRgmDfy2Xpw0w8rcVuTrfaNVElMuhrG+
-	fLYhl6w4Exv1Z2x8QCkmOIOvbMwdTF1Uxn2wuHEGBZIKkDy/jxpHM2DYnY1IUBM0YLF09tc8aAz
-	kB1D8uI4ySqfRJhJDIyKyIy92n01LF5ghdVQLZufTAZqHWqdvofmUcZq6y87xnTWEV0oZF2ffvb
-	GSDtRIUzC2saxsS5UBOLEQ1BhZ15Egf5I9jaOjyffMesmebIHHfjfoaXYX6MtAFF9QlfCNGqHEg
-	ffGKuonGr266eH4p4RruMSEWgln1m1ZElE6D3xXTBEa/4lIEb/V3AZDZZkviPsCQb2EF2ZiXV/M
-	N5VI2CdiGep3QXtTtFSK6eQ7vYQ==
-X-Google-Smtp-Source: AGHT+IFi3znTnYqUQeguNV73hNktDEyFtGLlBraRs30TSORf/tbD4lhEKTMlcOzfM/MZjLWwmBXuNA==
-X-Received: by 2002:a05:6000:18aa:b0:3a4:d953:74a1 with SMTP id ffacd0b85a97d-3a4f7a653damr12282665f8f.23.1748936279301;
-        Tue, 03 Jun 2025 00:37:59 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:563:3654:17de:c930? ([2a01:e0a:3d9:2080:563:3654:17de:c930])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a4f009ff11sm17075482f8f.86.2025.06.03.00.37.58
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 03 Jun 2025 00:37:58 -0700 (PDT)
-Message-ID: <d9be98db-9196-4a15-896f-d802f8251f3d@linaro.org>
-Date: Tue, 3 Jun 2025 09:37:58 +0200
+        d=1e100.net; s=20230601; t=1748946771; x=1749551571;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=hdcvv2i1wfbhcJ2qFHR5aWoW+NavP0DH/EC45K6EfKE=;
+        b=JC0u+2GWxoFY+ULisrOKjTCCH6hADquyvWNOBh63oqIiJj+B7NwsKyQCevxBAXyExs
+         Hyq3Vy9jLu9eE3Gsc7uAU42K9rUQd0CQP68BooqRQEhHkF9KoX9BnqtpvWJnc9Q6f6u4
+         ZnzyICoqoiAwKhaPio4S7YZ1ek7B4+lw/NDiEFX9EReqeNDX57HUz3ozQrgmhsq7zyMC
+         beowdcarFC0ehuFcc+wYDzy487cuCA7ykHjeA+UvH5lr/HUX+foft/D17JuM6y6HnEEk
+         r8SNtLsI3CJJAGHoe6W2LH7nirdiC2AYKr/34VXhvjl4uah4aBjm3sUkCyd9ZTZa06HX
+         MVmA==
+X-Forwarded-Encrypted: i=1; AJvYcCVTuP3R1cfsq53+TXRRZrwkz3qSXzJ49jEuSTp6UWs9zNrTL7NzqMuctAKBRrpgUyyxw6aUBJNijKk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwRQBWL/COjWjv4Yu16dIFD4Mzs00IdBOgg4/BGzJdHgv5shwUW
+	QrUWvGNqMMl/2SBU5bcq9CZ0z3OsrHiuF0EKHQxZ97KmQSZsyH6rDNNgk65ZTi553MD+LXmIoW4
+	ywG/q9D1GrfwUaDcnI69OrPzUPqRhYrr4IDZlWvNrpCi6wpvfmYc4EB9TuqUwSJrt5Y98
+X-Gm-Gg: ASbGnctSB+8OCNbD28Jh0SDm1fWh+dIUVJAbswkqp51nZ/t2Dhrxqe091SlfKVlBlXp
+	0iMSxfE/Tpb7BDMXsjpPJ2ohm/F7RtAyfutrr+jksT7sCQ8hWgFbaJKucIt2Ohp5/wPJwe8EpP8
+	/osJ6lHgQbZffSlTZuyhsD7JBto/lVNv8s488jOO2yuwiEIk0Vfpz3NAtQqLivXlpgq6hDrYLkc
+	XiwGc3VxeUfJhTaYO48eKh5q1Oqz3qwE25NfZ4SnLc6LIpn7ZpO1u3IAZCxdmuh0sr9gD6Ehit5
+	kG197vGn6N7jX7U5E3i7RqjBi+EoF8EcLmaHSAE6JZaxuri6f6LQf555Gwhm2nOUtmg+SdMLk5E
+	=
+X-Received: by 2002:a05:6214:29ef:b0:6e8:f470:2b11 with SMTP id 6a1803df08f44-6fad196e2d8mr276596386d6.23.1748946770868;
+        Tue, 03 Jun 2025 03:32:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGAOYthyogdcBLfUS88Ob3qijwtTZm+x+4i/WF3m8OdP7uim81UAXkXpIRzWw+nLEsjnjmARA==
+X-Received: by 2002:a05:6214:29ef:b0:6e8:f470:2b11 with SMTP id 6a1803df08f44-6fad196e2d8mr276595736d6.23.1748946770306;
+        Tue, 03 Jun 2025 03:32:50 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-553378a02bbsm1871023e87.84.2025.06.03.03.32.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 03 Jun 2025 03:32:49 -0700 (PDT)
+Date: Tue, 3 Jun 2025 13:32:47 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 5/6] phy: qcom: qmp-combo: register a typec mux to
+ change the QMPPHY_MODE
+Message-ID: <2zk4ef3ezdfwpyhepnzpf37xxbci32l4sovsyfiymcucga22yz@zs7darysskd2>
+References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
+ <20250527-topic-4ln_dp_respin-v3-5-f9a0763ec289@oss.qualcomm.com>
+ <itmvwhcf37bmnpadcyc7kdt7wx3eljyjwyv64s24zwhbr2e45g@76uzcpjqzx22>
+ <7f464eb7-469c-4350-a43a-3b99394ad689@oss.qualcomm.com>
+ <7icpna4l7z63gs52oa5lqf35puib66wxxmqqul6ezdkhuziaqi@mvkf73zz2iyj>
+ <ac476285-9ba0-48ba-87d5-416bed395948@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v5 3/4] phy: spacemit: support K1 USB2.0 PHY controller
-To: Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
- linux-kernel@vger.kernel.org
-References: <20250527-b4-k1-usb3-phy-v2-v5-0-2d366b0af999@whut.edu.cn>
- <20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn>
+Content-Disposition: inline
+In-Reply-To: <ac476285-9ba0-48ba-87d5-416bed395948@linaro.org>
+X-Authority-Analysis: v=2.4 cv=eJQTjGp1 c=1 sm=1 tr=0 ts=683ecf54 cx=c_pps
+ a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=6IFa9wvqVegA:10 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=eY5ZQVo8cdIDur6ws_sA:9
+ a=CjuIK1q_8ugA:10 a=iYH6xdkBrDN1Jqds4HTS:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-ORIG-GUID: iPEPQp4Gf0wDRt7W9XEy2MSQj5NbzZgB
+X-Proofpoint-GUID: iPEPQp4Gf0wDRt7W9XEy2MSQj5NbzZgB
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjAzMDA5MiBTYWx0ZWRfX6lKT7mfpFwSA
+ mPLJLdOKeGJHssj2el6dH1ovxbQoDLFyV8lMLJFSytUogRf6mfuiOAoJV0WSC+Zp6i+Tsq7C41b
+ c91l3/qoHAclIYh2Y/qgNhlGdl6Pv1oe+3WY4BOodOXEJzH5hevYs/fT7w7M3zKVQZ2Xx9eLKT0
+ uha2ah5Mw12QM30Qgny6VFwVR8YZfSWMhex1oiOU4xrrzIFYJI2Qo/4c7duOpo/lPTFug8WSJIY
+ S95RZpcqBH8q4u86rbwtmNVH0Wc9R++Qj+Ahlgg3jsP/rcuGGIdBBHz4StFA+Ge7AaSnMO2Ytgt
+ sivLDCqC2KaZtQBnRjP8ZENmuW0YZaynNnPDKTpPtNN8zRTw35Vt3PaEk6lVAuT7NMjt8rwpZhE
+ zSRccFDdBxKg98L7RWw9cwwgNmZSyaCBT50Ev8atG5fxgiJSw5hd1XeFUBIlaSZNWU17u4tY
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-03_01,2025-06-02_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 lowpriorityscore=0 clxscore=1015
+ priorityscore=1501 bulkscore=0 mlxlogscore=999 impostorscore=0 spamscore=0
+ phishscore=0 mlxscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506030092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_003801_354954_C5469C92 
-X-CRM114-Status: GOOD (  30.68  )
+X-CRM114-CacheID: sfid-20250603_033254_398780_FEF2A7C1 
+X-CRM114-Status: GOOD (  43.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,250 +137,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/05/2025 14:01, Ze Huang wrote:
-> The SpacemiT K1 SoC includes three USB ports:
+On Mon, Jun 02, 2025 at 10:51:42AM +0200, Neil Armstrong wrote:
+> On 28/05/2025 10:58, Dmitry Baryshkov wrote:
+> > On Wed, May 28, 2025 at 12:22:01AM +0200, Konrad Dybcio wrote:
+> > > On 5/27/25 11:55 PM, Dmitry Baryshkov wrote:
+> > > > On Tue, May 27, 2025 at 10:40:07PM +0200, Konrad Dybcio wrote:
+> > > > > From: Neil Armstrong <neil.armstrong@linaro.org>
+> > > > > 
+> > > > > Register a typec mux in order to change the PHY mode on the Type-C
+> > > > > mux events depending on the mode and the svid when in Altmode setup.
+> > > > > 
+> > > > > The DisplayPort phy should be left enabled if is still powered on
+> > > > > by the DRM DisplayPort controller, so bail out until the DisplayPort
+> > > > > PHY is not powered off.
+> > > > > 
+> > > > > The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+> > > > > will be set in between of USB-Only, Combo and DisplayPort Only so
+> > > > > this will leave enough time to the DRM DisplayPort controller to
+> > > > > turn of the DisplayPort PHY.
+> > > > > 
+> > > > > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> > > > > [konrad: renaming, rewording, bug fixes]
+> > > > > Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> > > > > ---
+> > > 
+> > > [...]
+> > > 
+> > > > > +	} else {
+> > > > > +		/* Fall back to USB3+DP mode if we're not sure it's strictly USB3-only */
+> > > > 
+> > > > Why? if the SID is not DP, then there can't be a DP stream.
+> > > > 
+> > > > > +		if (state->mode == TYPEC_MODE_USB3 || state->mode == TYPEC_STATE_USB)
+> > > > > +			new_mode = QMPPHY_MODE_USB3_ONLY;
+> > > > > +		else
+> > > > > +			new_mode = QMPPHY_MODE_USB3DP;
+> > > 
+> > > To be honest I don't really know.. Neil chose to do that, but I don't
+> > > think there's a strict requirement.. Should we default to 4ln-USB3?
+> > 
+> > Yes, QMPPHY_MODE_USB3_ONLY. Nit: there is no 4ln-USB3 (it is a special
+> > mode). We handle 2ln-USB3 only.
+> > 
+> > > 
+> > > [...]
+> > > 
+> > > > Consider the following scenario: connect DP dongle, use modetest to
+> > > > setup DP stream, disconnect dongle, connect USB3 device. What would be
+> > > > the actual state of the PHY? Modetest is still running, so DP stream is
+> > > > not going to be shut down from the driver.
+> > > > 
+> > > > I think we might need a generic notifier from the PHY to the user,
+> > > > telling that the PHY is going away (or just that the PHY is changing the
+> > > > state). Then it would be usable by both the DP and USB drivers to let
+> > > > them know that they should toggle the state.
+> > > 
+> > > 
+> > > If modetest won't stop running even though there was a DP unplug
+> > > (and therefore presumably a destruction of the display), I don't
+> > > think things are designed very well
+> > 
+> > They are, but differently. Display settings are always controlled by
+> > DRM clients (typically, a userspace compositor). They can decide to
+> > send data to unconnected display, they can decide to ignore HPD events,
+> > etc. Even if userspace responds to the event, there always will be some
+> > delay. I choose modetest, because it's a particularly good example of a
+> > delay going to the infinity.
+> > 
 > 
-> - One USB2.0 OTG port
-> - One USB2.0 host-only port
-> - One USB3.0 port with an integrated USB2.0 DRD interface
+> DP link state is handled separately from the DRM state, if you look at the
+> MSM/DP, you get the following calls on an hdp event:
+> dp_bridge_hpd_notify
+> hpd_event_thread
+
+And this part will hopefully go away soon... Which means that DP link
+will stay on until atomic_disable().
+
+> dp_hpd_unplug_handle
+> dp_ctrl_off_link
+> phy_power_off
+> dp_display_host_phy_exit
+> phy_exit
 > 
-> Each of these ports is connected to a USB2.0 PHY responsible for USB2
-> transmission.
+> independently of any DRM state change, DRM will be notified at the end of
+> a disconnect with dp_display_notify_disconnect().
 > 
-> This commit adds support for the SpacemiT K1 USB2.0 PHY, which is
-> compliant with the USB 2.0 specification and supports both 8-bit 60MHz
-> and 16-bit 30MHz parallel interfaces.
+> So even with a modeset running, phy will disabled following an UCSI disconnect
+> event.
 > 
-> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
-> ---
->   drivers/phy/Kconfig                |   1 +
->   drivers/phy/Makefile               |   1 +
->   drivers/phy/spacemit/Kconfig       |  13 ++++
->   drivers/phy/spacemit/Makefile      |   2 +
->   drivers/phy/spacemit/phy-k1-usb2.c | 144 +++++++++++++++++++++++++++++++++++++
->   5 files changed, 161 insertions(+)
-> 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 8d58efe998ec5fd50054eed2c90d6ecce6bd5dd8..fca589aa7926eb5bce14e99785cf32cf0395202e 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -114,6 +114,7 @@ source "drivers/phy/renesas/Kconfig"
->   source "drivers/phy/rockchip/Kconfig"
->   source "drivers/phy/samsung/Kconfig"
->   source "drivers/phy/socionext/Kconfig"
-> +source "drivers/phy/spacemit/Kconfig"
->   source "drivers/phy/st/Kconfig"
->   source "drivers/phy/starfive/Kconfig"
->   source "drivers/phy/sunplus/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index e281442acc752820fe0bd638dfe38986a37c2a78..05993ff8a15daf7e2583b5f9b9b37ac584a30609 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -34,6 +34,7 @@ obj-y					+= allwinner/	\
->   					   rockchip/	\
->   					   samsung/	\
->   					   socionext/	\
-> +					   spacemit/	\
->   					   st/		\
->   					   starfive/	\
->   					   sunplus/	\
-> diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..0136aee2e8a2f5f484da136b26f80130794b992c
-> --- /dev/null
-> +++ b/drivers/phy/spacemit/Kconfig
-> @@ -0,0 +1,13 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for SpacemiT platforms
-> +#
-> +config PHY_SPACEMIT_K1_USB2
-> +	tristate "SpacemiT K1 USB 2.0 PHY support"
-> +	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
-> +	depends on COMMON_CLK
-> +	depends on USB_COMMON
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support K1 USB 2.0 PHY driver. This driver takes care of
-> +	  enabling and clock setup and will be used by K1 udc/ehci/otg/xhci driver.
-> diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..fec0b425a948541b39b814caef0b05e1e002d92f
-> --- /dev/null
-> +++ b/drivers/phy/spacemit/Makefile
-> @@ -0,0 +1,2 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
-> diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..ee64af07478ea02b421473e6f73fd37a3a135e7d
-> --- /dev/null
-> +++ b/drivers/phy/spacemit/phy-k1-usb2.c
-> @@ -0,0 +1,144 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * SpacemiT K1 USB 2.0 PHY driver
-> + *
-> + * Copyright (C) 2025 SpacemiT (Hangzhou) Technology Co. Ltd
-> + * Copyright (C) 2025 Ze Huang <huangze9015@gmail.com>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/usb/of.h>
-> +
-> +#define USB2_PHY_REG01			0x04
-> +#define  USB2_PHY_REG01_VAL		0x60ef
-> +#define  USB2_PHY_REG01_PLL_IS_READY	BIT(0)
-> +#define USB2_PHY_REG04			0x10
-> +#define  USB2_PHY_REG04_AUTO_CLEAR_DIS	BIT(2)
-> +#define USB2_PHY_REG0D			0x34
-> +#define  USB2_PHY_REG0D_VAL		0x1c
-> +#define USB2_PHY_REG26			0x98
-> +#define  USB2_PHY_REG26_VAL		0xbec4
-> +
-> +#define USB2D_CTRL_RESET_TIME_MS	50
-> +
-> +struct spacemit_usb2phy {
-> +	struct phy	*phy;
-> +	struct clk	*clk;
-> +	struct regmap	*regmap_base;
-> +};
-> +
-> +static const struct regmap_config phy_regmap_config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.max_register = 0x200,
-> +};
-> +
-> +static int spacemit_usb2phy_init(struct phy *phy)
-> +{
-> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
-> +	struct regmap *map = sphy->regmap_base;
-> +	u32 val;
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(sphy->clk);
+> Neil
 
-clock is already prepared, should be clk_enable
-
-> +	if (ret) {
-> +		dev_err(&phy->dev, "failed to enable clock\n");
-> +		return ret;
-> +	}
-> +
-> +	/*
-> +	 * make sure the usb controller is not under reset process before
-> +	 * any configuration
-> +	 */
-> +	usleep_range(150, 200);
-> +	regmap_write(map, USB2_PHY_REG26, USB2_PHY_REG26_VAL); /* 24M ref clk */
-> +
-> +	ret = regmap_read_poll_timeout(map, USB2_PHY_REG01, val,
-> +				       (val & USB2_PHY_REG01_PLL_IS_READY),
-> +				       500, USB2D_CTRL_RESET_TIME_MS * 1000);
-> +	if (ret) {
-> +		dev_err(&phy->dev, "wait PHY_REG01[PLLREADY] timeout\n");
-> +		return ret;
-
-clk_disable on error ?
-
-
-> +	}
-> +
-> +	/* release usb2 phy internal reset and enable clock gating */
-> +	regmap_write(map, USB2_PHY_REG01, USB2_PHY_REG01_VAL);
-> +	regmap_write(map, USB2_PHY_REG0D, USB2_PHY_REG0D_VAL);
-> +
-> +	/* auto clear host disc */
-> +	regmap_update_bits(map, USB2_PHY_REG04, USB2_PHY_REG04_AUTO_CLEAR_DIS,
-> +			   USB2_PHY_REG04_AUTO_CLEAR_DIS);
-> +
-> +	return 0;
-> +}
-> +
-> +static int spacemit_usb2phy_exit(struct phy *phy)
-> +{
-> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
-> +
-> +	clk_disable_unprepare(sphy->clk);
-
-clk_disable
-
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops spacemit_usb2phy_ops = {
-> +	.init = spacemit_usb2phy_init,
-> +	.exit = spacemit_usb2phy_exit,
-> +	.owner = THIS_MODULE,
-> +};
-> +
-> +static int spacemit_usb2phy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct spacemit_usb2phy *sphy;
-> +	void __iomem *base;
-> +
-> +	sphy = devm_kzalloc(dev, sizeof(*sphy), GFP_KERNEL);
-> +	if (!sphy)
-> +		return -ENOMEM;
-> +
-> +	sphy->clk = devm_clk_get_prepared(&pdev->dev, NULL);
-> +	if (IS_ERR(sphy->clk))
-> +		return dev_err_probe(dev, PTR_ERR(sphy->clk), "Failed to get clock\n");
-> +
-> +	base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(base))
-> +		return PTR_ERR(base);
-> +
-> +	sphy->regmap_base = devm_regmap_init_mmio(dev, base, &phy_regmap_config);
-> +	if (IS_ERR(sphy->regmap_base))
-> +		return dev_err_probe(dev, PTR_ERR(sphy->regmap_base),
-> +				     "Failed to init regmap\n");
-> +
-> +	sphy->phy = devm_phy_create(dev, NULL, &spacemit_usb2phy_ops);
-> +	if (IS_ERR(sphy->phy))
-> +		return dev_err_probe(dev, PTR_ERR(sphy->phy), "Failed to create phy\n");
-> +
-> +	phy_set_drvdata(sphy->phy, sphy);
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +static const struct of_device_id spacemit_usb2phy_dt_match[] = {
-> +	{ .compatible = "spacemit,k1-usb2-phy", },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
-> +
-> +static struct platform_driver spacemit_usb2_phy_driver = {
-> +	.probe	= spacemit_usb2phy_probe,
-> +	.driver = {
-> +		.name   = "spacemit-usb2-phy",
-> +		.of_match_table = spacemit_usb2phy_dt_match,
-> +	},
-> +};
-> +module_platform_driver(spacemit_usb2_phy_driver);
-> +
-> +MODULE_DESCRIPTION("Spacemit USB 2.0 PHY driver");
-> +MODULE_LICENSE("GPL");
-> 
-
-Thanks,
-Neil
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
