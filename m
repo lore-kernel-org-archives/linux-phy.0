@@ -4,132 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E1F0C5AD49
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Jun 2025 13:17:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90D11C5B543
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Jun 2025 06:34:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mcgJ6jobRParRClJ497W24oWZWLaqemaj4H81rKp2S4=; b=nW37l4n7fLHwKh
-	GO5jrQwzCyHkBv+X9EYoZZXBCBghc5S0K7KDYEvisntBm82r7mRSkTZ0lp534J+ljVt+5xQa3zcCE
-	d0ZMUS/twcnvG8jwPMFfhA5qOrwt/gz9Wf5hBWi/oxaG/hiEY8B2UtKpwj06CR5//CfkcWuJwXZs9
-	Dkod9MqJBnmeo2rWGBmltMzcOjw8UbDfymnMfov+2JiTX9KxO8/Fc58gVBF3AlQK/C3WdkQSoX311
-	gPHL6j7r3F/XSSNkCfTfhX550OBBwD/XAuFcFCFVsYvLMOtHjLlWgdm/fwEtGNNdn/R7Vovumc9BU
-	ZrOlwybhvcJKLHy+k+mg==;
+	List-Owner; bh=6SNy5fqCjtok9PDRNcv92lmcJkgX9P0IKckLw2sOnNg=; b=H7vZnTiBVT7PCR
+	YxueD5DS5kk0o4uzEq8RxYPLRun6pearxXjgD4ay6BylEy0FhbYIlLarKH62c9mTVfCthN1pzBRLW
+	ZAVXua0/Q0yndEjbridl8tDzF0eKfcWtGkPQ08H8Rv9nE0ybbExuK8UGylhDwkhleBA8hNIQTG8GA
+	qjkCKTofSQs3f4SeNwICd9JlE5p2m2EHwr5Mrlh7b5/kyRGNEiCdT5zDRDcYfeuL+PXXKniIrlr+S
+	iMwvsyjj8Y/G+9Q6lL5ggcL5Io0kytm9tx70JQa3TXO66AIKPVCyFMOiTVTdV6PonsUZC5ycj6fGL
+	MrTjR9PlFYT/L7zmM+Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMRWh-0000000B0jE-1N0g;
-	Tue, 03 Jun 2025 13:17:59 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uMhi8-0000000CgPJ-0EvP;
+	Wed, 04 Jun 2025 06:34:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uMRWd-0000000B0ig-3fDK
+	id 1uMhi5-0000000CgOt-1oxd
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Jun 2025 13:17:57 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 553BJa6n011546
-	for <linux-phy@lists.infradead.org>; Tue, 3 Jun 2025 13:17:54 GMT
+	Wed, 04 Jun 2025 06:34:50 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 553KKnMs006331
+	for <linux-phy@lists.infradead.org>; Wed, 4 Jun 2025 06:34:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=JXGMMgDR2GMRgvSQcH/bx3rG
-	d4l8acpfk7Qd16JoTBg=; b=BQMBemuQF4dBmNLN6f4xYX27LftVRJZ4ntFZVPvT
-	FbR2s6NAnc8ID8m0sOJ5xURsYPiBILlb9WHsjdzq3coeOQp/SLA5Lprd3bVXteeD
-	1fYThUZZzomTy2IgV9mCX41/02ggPVuj87Bqn0QapEhA3SDoX/Pl+UDVjgWCIvI/
-	D9nAyj03JwQLf6olY1tNuu7RtGbLZgL0LUbM87RNsWDo3U9IVrdyqiLp7hREtFnh
-	0fh+zL4Z2F5NOkWSH5+XPm9ECZq3vEte8cYtKXEUOCXMF1usrkX3VT2R5vqfCJJ/
-	hHuvmNB+sYBaLDdcSyfcU0b4RkT74D1xF7OaeM/b2G1JiQ==
-Received: from mail-ot1-f69.google.com (mail-ot1-f69.google.com [209.85.210.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47202w899d-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	T9079cpPJMqy1lXX9Kc7OWLUoMW9Z59kC59hAowCd8E=; b=OYwo9iGNbz8rlG/f
+	Zn8yg9Zbi+SZtqFfEkFy7SOpk0YH5F6VTtbtzD9NdA6Em3959IMxHbF/YxI8mr4s
+	6bcSRPOdjpC8k9+Y4qRgqemf66HPvktkC3uhIjxzCk6ApfQiyrXpy8MqfZ9jGHhd
+	YXz4gqfAW5YWQT4VT2mIJCqEt/7aaCu5hQm/6gef25+SZTaXUp5MmWVXzSLsWjUT
+	YG4gjqYAfv+Ze5U7c+IFp3rNL4PR6Ou6WSKe4FQ12XcWStxIb9r1lqyBRfGDnXQj
+	nn0Anetm0k5cgLqrxClXbMFCL+e2eY49AOyIp//MY7IHs7fYwiQSrr72bKOTg5R7
+	hSK0Jg==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 471g8sw2xs-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 13:17:54 +0000 (GMT)
-Received: by mail-ot1-f69.google.com with SMTP id 46e09a7af769-72ecb622e02so1542514a34.0
-        for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 06:17:54 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 04 Jun 2025 06:34:47 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-311d670ad35so5949732a91.3
+        for <linux-phy@lists.infradead.org>; Tue, 03 Jun 2025 23:34:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1748956673; x=1749561473;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=JXGMMgDR2GMRgvSQcH/bx3rGd4l8acpfk7Qd16JoTBg=;
-        b=F5NedzjHVRhKNDetgctl0JEqbWhFiAURd082sPJjVgacn6DbUpfAvi7RrM1rqdQBdx
-         I5AaMSc7UT4T3HoXdEYowGhtWQHlwGKVJRVb5gBS/GIAe0akzIYAi1ZC90Z0RDeazdJ4
-         O81QVpyluDWUm8+0iPoYKKCHTKfGIP5IJbKLhChkzMzeveJNGgqh+mYnLGAo243DuBiW
-         8ZQHQIK5pi52/jxME0DT0CA0IeNV7XwVhvQ9KJphae79KqMgiAbOmSBTh0/PwD1fH91n
-         FCIlYw2dbdCNk3JQrvhFi0sbhxGj+lCWNDUUSLca4Z0W6A1rFquDRpW8MFDRDVADqZEQ
-         79fQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXBNuOV98whyDsN51bJHzWTtDuIRrncnyGhHwd6DHog9P5bG0xQS0vMar6qXWvCfMi4BxgQelkSaXM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxliGLu9Rj9qtYW2WpQoJzWfBQh89Erg2w/gWcJIftY4OIZYSo9
-	mq/QGJ/BL1JYKwQ8qzIe3F9ubZziuDBQcGahgKLG/loGVHahNGfoE37LMElcXrEW9ib1hfXKjUE
-	DPLtmQzeEzO3zN9ylzBAi/ZxshGCvZSOCXTmJyioTk+Ca4CHkJDGCDw+Cif9MpByiGEd3
-X-Gm-Gg: ASbGncvURCmL6iR0w+FkVTKRLVyfyfgu31/lmLql85KQ5/wv084AsOhCqA/h2zmxoeA
-	rfvg5sfJ9zdrPq/2QC1GTLM0WT9x06FBZCX3eO6igFal6EGMd1Z64PiOxW/9wrxkGga9xlOAwOS
-	wvRdn4iZiRqx0Ulfd3OzP9bjVGgkgY0X4HPrepUatRXLG8+g7I2ARvD6kGXur/CRUlGtsdule/K
-	tYh4JFit6IZI7prxKF8MVrYwSQJh8FXcHqL3uSOjbzDoa9Bp8x/Qu1V7ApNlgDw6DWbwDgMoJax
-	QP83vWOv6mCWN6hZHuunYPUfFV5HKsAALdsrom8HF1YyWgkbhHMZZho2RGEvyTpl8b5NSkP3OmY
-	=
-X-Received: by 2002:a05:6830:6484:b0:72a:449e:2b69 with SMTP id 46e09a7af769-736ecef9188mr9330718a34.28.1748956673520;
-        Tue, 03 Jun 2025 06:17:53 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHJzNn7xzYSZpmDzRz5bR4WkPRFG/MM1S0QGnUE/tMoDRu36FwucQVvMhTGP/O7jMEzHNHQUQ==
-X-Received: by 2002:a05:6830:6484:b0:72a:449e:2b69 with SMTP id 46e09a7af769-736ecef9188mr9330676a34.28.1748956673048;
-        Tue, 03 Jun 2025 06:17:53 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5533791d105sm1905969e87.209.2025.06.03.06.17.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Jun 2025 06:17:52 -0700 (PDT)
-Date: Tue, 3 Jun 2025 16:17:50 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-Message-ID: <fhzdhzxdwcoiuhx2eogpshwt5cxagjkrygrefqikmfbx3cfcov@awmhgrvurnfi>
-References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
- <styd5gjksbsqt7efylpfn6bgwgyvt6zexxiooihjsnmp25yigp@unq7dor6gso2>
- <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
- <inpfuxskvmrebxitqtqwzvpnpicibo6zakgk4ujpcrqrpef2vw@nhclj5rg7axr>
- <9037fefe-aa40-4884-97ee-b81ff8346944@oss.qualcomm.com>
- <htufwjvfgdtav2gtgrytc356py6xqhrffbwjg42sgo7k4zzxof@z4xaf35qz7kq>
- <aa17d7d4-b77d-4a0a-88c3-86255dfbc29d@oss.qualcomm.com>
- <75dde9a2-3c0d-481b-bc73-089ba89a77e0@linaro.org>
- <71196aad-6d80-4356-bbe5-3070f6b74bfe@oss.qualcomm.com>
+        d=1e100.net; s=20230601; t=1749018887; x=1749623687;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=T9079cpPJMqy1lXX9Kc7OWLUoMW9Z59kC59hAowCd8E=;
+        b=V8B4t6alu2mkghoDa/SoKwe+Fsgn8XJBh+ImBPAjBkuPeLuBsYmaKygb9bwh1HA9A+
+         4VKUqYyKGLvlNyWTNuxNtMul963W2MVSUUAjMUtkkUFaQW0ohFyPe8WbSngl25tC70W+
+         O2aI7sDN2Nm3I/lNGlf9TDIAP4Y9/cJF6dRPivxIRT2RGGIFBsEjeuN5l4t65GvQfSYf
+         rVN7wcopWhe/IsgjN0/lhvXWnQ5lRsoVzujJ4UM6o0jadx6AdEOfVI/LmWx985JKOInR
+         82LzU3kCSw3TkIW5zMcirI6jBwob1QhL8Cl8KZ+qnE//zxm8HPojndbaoKE7aTeCRiJn
+         Rhsg==
+X-Forwarded-Encrypted: i=1; AJvYcCW/Ti7mHSTfGQ3RE8EDtX5Y/k+y+7YKjoTTSpcuzk1BV7e0+vlb1LwkXjwu2DTy9DNu60aYYLaBjUM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzvNAYGx42XjmdqE+ASsPIEKAkfsG23YalLLlzaAUU35gusAmlL
+	s2dZzNCWvOyULEBsoAybo0EetYhBg/3ArIwbEn1uZ9CdML6q91NwoB/2qimRA2lteiJFT/nZ2Ou
+	l2gzl/IU5GdY74/8rsqs6FoVqssDF6UwvC0SeqE/9f5ImObEMOZbwoM2BaYbGIlOlXbW8aap35g
+	fOGbiusaGDemJoQ7TnnsoBd+sgeJvHQDwh+h56bZ8iO0o=
+X-Gm-Gg: ASbGncvh3gK/cCIhjQrEyA0axu+cbd8G/pqk6DnT+59tS4U+kr9ZFf2q0t8YrwPyKm1
+	xNy7TYuM2LOYIpcgTmU8wJfjZK9dDRtx/M6Z4SYJ227A+ZcRXUOSxrrgCJm5irA4wFqK+2A==
+X-Received: by 2002:a17:90b:2c8f:b0:312:29e:9ec9 with SMTP id 98e67ed59e1d1-3130cdad261mr2945204a91.24.1749018886649;
+        Tue, 03 Jun 2025 23:34:46 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEIuPluBDu4u5KGnxzBhJcv5mMUkl7EBUh/65kh9bW75WRsQbbaFMAdq4P0YI8KhX6NYIyU5JJbH9xVw242LSM=
+X-Received: by 2002:a17:90b:2c8f:b0:312:29e:9ec9 with SMTP id
+ 98e67ed59e1d1-3130cdad261mr2945163a91.24.1749018886254; Tue, 03 Jun 2025
+ 23:34:46 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <71196aad-6d80-4356-bbe5-3070f6b74bfe@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: 7Sxlv6rcLNew9I6wm0Ty9-Oa1BHlsKGD
-X-Proofpoint-GUID: 7Sxlv6rcLNew9I6wm0Ty9-Oa1BHlsKGD
-X-Authority-Analysis: v=2.4 cv=Y/D4sgeN c=1 sm=1 tr=0 ts=683ef602 cx=c_pps
- a=z9lCQkyTxNhZyzAvolXo/A==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=6IFa9wvqVegA:10 a=G_5p7y9kmCDjZpQMCqIA:9 a=CjuIK1q_8ugA:10
- a=EyFUmsFV_t8cxB2kMr4A:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjAzMDExNSBTYWx0ZWRfX9C/nxrKGU4SZ
- 3mLWgD/HbkppksvXtU1zwAmWm3nQZXA6Hp/Vtn3KciAjkyBF/1WUXq2wKXe2I02/hvHYXPnl2SL
- wj/4YevYHW/CqzMje7mG5wyLOVQUanl6iSh9SMACDbuAcllSLaLiHoYqE7JLAR4QYYcTWyg97VO
- nkgVSPrpP2Cgwv6XlHT8t6DZ9O+lAA3pBC/6V50hvonWPN0Bag9icBINsGJkNtMrhPAnop3BpYm
- eOVC7q/v8w0+dP0BTT5TiFeOg7kvK3vkEQPPhNWZ4Ld5/w78uDVLhhuX5GICYk+7EtXHxnz/42K
- /lSkG2ehJrpQ3rD3nyWtmHqXwMZhCqJjuaTAqpbGr4jGc7BAg260Hc2G2XyV0H0leh5uMlQJmuu
- ujdKyCjWTSEOYIqx7UfTGZJj/1dHUMaicmu8qVy3QtnM8W8iG4YHGl7GTt9mngwMh+93mnDA
+References: <20250525-update_phy-v3-0-5b315cd39993@quicinc.com>
+ <20250525-update_phy-v3-2-5b315cd39993@quicinc.com> <mcmpmaapzv3vbiynlrp6sijdjvj6a5j3dxzoixz6b4cxqsvbsl@ecljexn3zg2e>
+ <0aef1687-0158-4d7e-8e3d-b6eafc38d049@oss.qualcomm.com> <CAMyL0qPd2HRv4nr2C9=5SgzSkuKO_1cfZbOUO2aUj3vPWnmJbA@mail.gmail.com>
+ <41ac26a6-7a5a-4c11-b05c-9ce688ad1856@oss.qualcomm.com> <8972adb4-b6ae-4ea9-986a-32e59fe84c50@oss.qualcomm.com>
+In-Reply-To: <8972adb4-b6ae-4ea9-986a-32e59fe84c50@oss.qualcomm.com>
+From: Mrinmay Sarkar <mrinmay.sarkar@oss.qualcomm.com>
+Date: Wed, 4 Jun 2025 12:04:35 +0530
+X-Gm-Features: AX0GCFtUSo3xmhLJTp6kkLzM4r7UUUEdKvCLKhwD4KBE-wPI3JUeW_pADGCllGE
+Message-ID: <CAMyL0qOhxKq8j1UXDX4xrWa8aVZoeqrhpWSVN2dC2hDLaqJoHw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: qcom: sa8775p: Remove max link speed
+ property for PCIe EP
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, krishna.chundru@oss.qualcomm.com,
+        quic_vbadigan@quicinc.com, quic_nayiluri@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nitegupt@quicinc.com,
+        Mrinmay Sarkar <quic_msarkar@quicinc.com>
+X-Proofpoint-ORIG-GUID: 5Xas7HM7pvX0XEVg3495WYgK_Gx7mYCk
+X-Authority-Analysis: v=2.4 cv=EPcG00ZC c=1 sm=1 tr=0 ts=683fe907 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10
+ a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=o19W8QfZZ25Kakzi4KgA:9
+ a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: 5Xas7HM7pvX0XEVg3495WYgK_Gx7mYCk
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjA0MDA1NSBTYWx0ZWRfX/3a8GXVgoOks
+ Q4IuL/Wf4qIRUmevHfynESFCU+lDuVJwj8MFbUwvWjt2RTM6h+SYWPNVJ1UbnFBeniHXFbEdSZ2
+ oZTfaBU75UGtXR1q+NUDUxI9lqbDEco+HPWTbw6bP40i6b+wLp1khQGmqKw0YSWrHLhRvFhjaHF
+ 1JMTaW2AKn/mhlVQZ7XX/yBJnzQPgnvCoNMJ7qiRSFkbFzyu8x6OVKCBmUyd3Ct5vBN5VdZPzU+
+ kFaxc55mzIUwp8tbPJFQfSoFAMx7HuBRYlmLDF5jo9p+c5Et9tlapgBl0FcPGf7OtMS98j7S4Ko
+ df3kQnS4cRl2pTVQYZ3gpU9pqKkcDdsfOHZaBcIvwV96Uxop/9umALYfYB3hTmI4igjGp6BPzo+
+ F+Zz6VCLhYR3dMpogz39OOUGDyw6dWagCemhxi+WLSA/m+nO3suUOGdfChzUCJJWw2pmQs4U
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-03_01,2025-06-02_01,2025-03-28_01
+ definitions=2025-06-04_01,2025-06-03_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 priorityscore=1501 spamscore=0 adultscore=0 impostorscore=0
- lowpriorityscore=0 phishscore=0 mlxscore=0 mlxlogscore=999 malwarescore=0
- bulkscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501 phishscore=0
+ impostorscore=0 lowpriorityscore=0 adultscore=0 malwarescore=0 mlxscore=0
+ clxscore=1015 mlxlogscore=805 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506030115
+ definitions=main-2506040055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250603_061756_036268_37A9BEE4 
-X-CRM114-Status: GOOD (  47.39  )
+X-CRM114-CacheID: sfid-20250603_233449_478389_77854826 
+X-CRM114-Status: GOOD (  24.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,133 +132,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 03, 2025 at 01:03:11PM +0200, Konrad Dybcio wrote:
-> On 6/2/25 10:55 AM, Neil Armstrong wrote:
-> > On 28/05/2025 18:56, Konrad Dybcio wrote:
-> >> On 5/28/25 1:22 PM, Dmitry Baryshkov wrote:
-> >>> On Wed, May 28, 2025 at 01:13:26PM +0200, Konrad Dybcio wrote:
-> >>>> On 5/28/25 11:00 AM, Dmitry Baryshkov wrote:
-> >>>>> On Wed, May 28, 2025 at 12:24:02AM +0200, Konrad Dybcio wrote:
-> >>>>>> On 5/27/25 11:10 PM, Dmitry Baryshkov wrote:
-> >>>>>>> On Tue, May 27, 2025 at 10:40:02PM +0200, Konrad Dybcio wrote:
-> >>>>>>>> Register a typec mux in order to change the PHY mode on the Type-C
-> >>>>>>>> mux events depending on the mode and the svid when in Altmode setup.
-> >>>>>>>>
-> >>>>>>>> The DisplayPort phy should be left enabled if is still powered on
-> >>>>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
-> >>>>>>>> PHY is not powered off.
-> >>>>>>>
-> >>>>>>> This series doesn't seem to solve the USB side of a problem. When the
-> >>>>>>> PHY is being switch to the 4-lane mode, USB controller looses PIPE
-> >>>>>>> clock, so it needs to be switched to the USB-2 mode.
-> >>>>>>
-> >>>>>> I didn't find issues with that on X13s.. Not sure if it's related, but
-> >>>>>> on the SL7, after plugging in a 4ln DP connection, I need to plug in
-> >>>>>> the USB thumb drive twice for the first time (only in that sequence)
-> >>>>>
-> >>>>> Might be.
-> >>>>>
-> >>>>>> But there's nothing interesting in dmesg and the phy seems to be
-> >>>>>> programmed with the same values on both the initial and the subsequent
-> >>>>>> working plug-in
-> >>>>>
-> >>>>> Please try using a DP dongle with USB 2 passthrough (there are some).
-> >>>>> Or just emulate this by enabling DP PHY / DP chain for plugged in USB3
-> >>>>> devices. Would you be able to see the USB device on a bus?
-> >>>>
-> >>>> I only have a dongle with both display and usb that does 2ln dp
-> >>>> (I tested 4ln dp on a type-c display that I don't think has a hub)
-> >>>>
-> >>>> USB3 - yes, USB2 - no (but it works after a replug)
-> >>>>
-> >>>> Are you talking about essentially doing qcom,select-utmi-as-pipe-clk
-> >>>> at runtime?
-> >>>
-> >>> I think so.
-> >>
-> >> So after quite some time playing with that, I noticed that the USB2
-> >> device was never actually kicked off the bus.. and works totally fine
-> >> after connecting the display output (2ln DP)
-> >>
-> >> I was looking at dmesg, checking for discovery/disconnect messages,
-> >> but the device was simply never disconnected (which makes sense given
-> >> repurposing USB3 TX/RX lanes doesn't affect the D+/D- of USB2)
-> >>
-> >> I also read some docs and learnt that what we call
-> >> qcom,select-utmi-as-pipe-clk is suppossed to be a debug feature
-> >> and is unnecessary to set on USB2.0-only controllers
-> >>
-> >> The USB controller programming guide though doesn't talk about DP,
-> >> but I'd expect that we may need to set that override for 4lnDP+USB2
-> >> use cases (which I don't have a dongle for)
-> > 
-> > Yeah basically we need to:
-> > 1) power-off the USB3 PHY
-> > 2) switch to UTMI clock
-> > 
-> > In the following states:
-> > - USB safe mode (USB2 lanes may still be connected)
-> > - 4lanes DP mode
-> > - DP-only mode
-> > 
-> > But for this, the dwc3 should also get USB-C events with an addition mode-switch property.
-> > The flatten DWC3 node now allows that !
-> 
-> Yeah, I got even more confirmation this is intended..
-> 
-> I hacked up something that boils down to:
-> 
-> diff --git a/drivers/usb/dwc3/drd.c b/drivers/usb/dwc3/drd.c
-> index 7977860932b1..e5a0a8ec624d 100644
-> --- a/drivers/usb/dwc3/drd.c
-> +++ b/drivers/usb/dwc3/drd.c
-> @@ -464,6 +464,11 @@ static int dwc3_usb_role_switch_set(struct usb_role_switch *sw,
->  		break;
->  	}
->  
-> +	if (dwc->mode_fn)
-> +		dwc->mode_fn(dwc, mode);
-> 
-> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-> index 7334de85ad10..ea56f5087ecb 100644
-> --- a/drivers/usb/dwc3/dwc3-qcom.c
-> +++ b/drivers/usb/dwc3/dwc3-qcom.c
-> +static void mode_fn(struct dwc3 *dwc, enum usb_role role)
-> +{
-> +	struct dwc3_qcom *qcom = to_dwc3_qcom(dwc);
-> +
-> +	if (dwc->usb3_generic_phy[0])
-> +		dwc3_qcom_select_utmi_clk(qcom, role == USB_ROLE_NONE);
-
-This part is a hack for devices with no USB-2 passthrough, isn't it?
-
->  }
-> 
-> 
-> It was easy to tap into because there's already mode switch handling..
-> But obviously it's a hack - should I register a typec_mux in there?
-
-I think so, we should listen to mode changes, instead of host/device
-changes.
-
-> Should it go to dwc3-common or dwc3-qcom?
-
-I'd say, dwc3-qcom. Not all dwc3 controllers are USB 3 capable, not
-talking about the USB-C.
-
-> 
-> Konrad
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBNYXkgMzAsIDIwMjUgYXQgNDoyNuKAr1BNIEtvbnJhZCBEeWJjaW8KPGtvbnJhZC5k
+eWJjaW9Ab3NzLnF1YWxjb21tLmNvbT4gd3JvdGU6Cj4KPiBPbiA1LzMwLzI1IDEyOjUwIFBNLCBL
+b25yYWQgRHliY2lvIHdyb3RlOgo+ID4gT24gNS8zMC8yNSA3OjM4IEFNLCBNcmlubWF5IFNhcmth
+ciB3cm90ZToKPiA+PiBPbiBUdWUsIE1heSAyNywgMjAyNSBhdCA0OjA24oCvUE0gS29ucmFkIER5
+YmNpbwo+ID4+IDxrb25yYWQuZHliY2lvQG9zcy5xdWFsY29tbS5jb20+IHdyb3RlOgo+ID4+Pgo+
+ID4+PiBPbiA1LzI1LzI1IDM6MjkgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gPj4+PiBP
+biBTdW4sIE1heSAyNSwgMjAyNSBhdCAxMToyNzoxOEFNICswNTMwLCBNcmlubWF5IFNhcmthciB3
+cm90ZToKPiA+Pj4+PiBGcm9tOiBNcmlubWF5IFNhcmthciA8bXJpbm1heS5zYXJrYXJAb3NzLnF1
+YWxjb21tLmNvbT4KPiA+Pj4+Pgo+ID4+Pj4+IFRoZSBtYXhpbXVtIGxpbmsgc3BlZWQgd2FzIHBy
+ZXZpb3VzbHkgcmVzdHJpY3RlZCB0byBHZW4zIGR1ZSB0byB0aGUKPiA+Pj4+PiBhYnNlbmNlIG9m
+IEdlbjQgZXF1YWxpemF0aW9uIHN1cHBvcnQgaW4gdGhlIGRyaXZlci4KPiA+Pj4+Pgo+ID4+Pj4+
+IEFkZCBjaGFuZ2UgdG8gcmVtb3ZlIG1heCBsaW5rIHNwZWVkIHByb3BlcnR5LCBTaW5jZSBHZW40
+IGVxdWFsaXphdGlvbgo+ID4+Pj4+IHN1cHBvcnQgaGFzIGFscmVhZHkgYmVlbiBhZGRlZCBpbnRv
+IHRoZSBkcml2ZXIuCj4gPj4+Pgo+ID4+Pj4gQXMgR2VuNCBlcXVhbGl6YXRpb24gaXMgYWxyZWFk
+eSBzdXBwb3J0ZWQgYnkgdGhlIFhZWiBkcml2ZXIgcmVtb3ZlIHRoZQo+ID4+Pj4gbWF4LWxpbmst
+c3BlZWQgcHJvcGVydHkuCj4gPj4+Pgo+ID4+Pj4gIkFkZCBjaGFuZ2UgdG8gcmVtb3ZlIiBpcyBh
+IGJpdCBjbHVtc3kuCj4gPj4+Cj4gPj4+IEknbSBtb3JlIHdvcnJpZWQgYWJvdXQgdGhpcyBub2Rl
+IG5vdCBoYXZpbmcgdGhlc2UgZ2VuNCBlcSBzZXR0aW5ncwo+ID4+PiAoaS5lLiB0aGUgcGFydCB0
+YWxraW5nIGFib3V0IGRyaXZlciBzdXBwb3J0IGxhbmRpbmcgaXMgdHJ1ZSwgYnV0IGl0J3MKPiA+
+Pj4gdW51c2VkIHdpdGhvdXQgdGhlIHByZXNldHMgYmVpbmcgZXhwbGljaXRseSBkZWZpbmVkIGlu
+IGVxLXByZXNldHMtMTZndHMpCj4gPj4+Cj4gPj4+IEtvbnJhZAo+ID4+Cj4gPj4gSGkgS29ucmFk
+LAo+ID4+Cj4gPj4gQWN0dWFsbHkgc3RhYmlsaXR5IGlzc3VlIHdhcyByZXNvbHZlZCBieSB0aGlz
+IHBhdGNoIHNlcmllczoKPiA+PiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1wY2kvMjAy
+NDA5MTEtcGNpLXFjb20tZ2VuNC1zdGFiaWxpdHktdjctMy03NDNmNWMxZmQwMjdAbGluYXJvLm9y
+Zy8KPiA+PiBhbmQgSSBkb24ndCB0aGluayB3ZSBuZWVkIHRvIGRlZmluZSBlcS1wcmVzZXRzLTE2
+Z3RzIGZvciB0aGlzLgo+ID4KPiA+IE9rYXksIHNvIHRoZXJlJ3MgbXVsdGlwbGUgcGFydHMgdG8g
+aXQuLgo+ID4KPiA+IEkgd2FzIHJlZmVycmluZyB0byB0aGlzIHNlcmllcwo+ID4KPiA+IGh0dHBz
+Oi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI1MDMyOC1wcmVzZXRfdjYtdjktMC0yMmNmYTA0OTA1
+MThAb3NzLnF1YWxjb21tLmNvbS8KPiA+Cj4gPiBQbGVhc2UgY2hlY2sgaWYgeW91IG5lZWQgdGhp
+cyBhcyB3ZWxsCj4KPiBJZiBub3QsIHdlIGNhbiBnZXQgdGhpcyBtZXJnZWQgYXMtaXMKPgo+IEtv
+bnJhZAoKQWN0dWFsbHkgdGhlIHNlcmllcyB5b3UgYXJlIHJlZmVycmluZyB0byBpcyBub3QgcmVx
+dWlyZWQuCgpUaGFua3MsCk1yaW5tYXkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
