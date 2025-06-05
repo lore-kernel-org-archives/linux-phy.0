@@ -4,68 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB52CC5B543
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Jun 2025 16:07:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 745D2C5B543
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Jun 2025 16:19:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fY/s7N4Q5In6xWMJWub8VL3V+EC/RXj6d+WIakmE1DU=; b=0hScyixXO7xSBl
-	HiTClAwcgfAZt4YvnU8rSESuWhrGrgYlsKL8aiQaZLM5G2k1WNL2Ge7krWpti/Wv0JtktgyPdjkR0
-	9dK9MZ7ww3+lxJW0SCbdqgmui3j83csrj29L6XAU3sUfZsP7/g+jopYDrwTlBSIkwkOCYpDn9f5g2
-	Ctrl6wLMkXJpESHj/Au6BIZJQzalSTtmgRCIrKH4/Dh0OJpZuK868s/thSOWrFP2/HU/4ePqix3jt
-	DpbdSVUiwkRpLcMfh+5/A83ipM5filG0GiEMBKS1mNtJjjs9RRtzUgrTFO9K2qt4MvfiNSFjteIvs
-	NtvDDhXkdsHxh/Wi4TxQ==;
+	List-Owner; bh=gsp5P6RJeJKph4A+/LuYQBu+YJNlHsdfK1HcYWvwIi4=; b=ZvnGgtkkfQZ97H
+	1KD8SlTig2UWOE9NuX2JSvWq+XlGuG0r1BYKPT+mULK1FHbpYq4ltbCfjvJlX0KQPqR37ekqOvCTl
+	73P8avZ3I+nfReEsuIhRQe9GWqpVBZr6yz+ermDzhD1LH3E7BQ2bRv+eDOxAaXovb42z9JGoxw4GQ
+	2jUV4aSb1wkb/ltuE3K0XZye6m2fs1hw/dNJCztM049Nq7YwyNPrPTyTp4p9qaud/XjlSlyuDevft
+	5c9DMBxIy4YpcH3cocE0/yAj5w0iHCcGHIcsqxKrFB/RKCRt6GJH5oHGidIufChNEomWMDYUBfJV4
+	CEw7voE4MP/kzPhhIi3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uND87-0000000FyYq-1uEU;
-	Thu, 05 Jun 2025 16:07:47 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uNDJa-0000000G0Cb-0Roq;
+	Thu, 05 Jun 2025 16:19:38 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uND85-0000000FyYT-1kgE
+	id 1uNDJZ-0000000G0CV-1PU8
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Jun 2025 16:07:46 +0000
+	Thu, 05 Jun 2025 16:19:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 238A743818;
-	Thu,  5 Jun 2025 16:07:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0241C4CEE7;
-	Thu,  5 Jun 2025 16:07:44 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C1489614B8;
+	Thu,  5 Jun 2025 16:19:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39781C4CEE7;
+	Thu,  5 Jun 2025 16:19:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749139665;
-	bh=OPJKuWVQNZ87kw/DDHJ1LZybURzSip0724Cgv5OPuU0=;
+	s=k20201202; t=1749140376;
+	bh=MI0R8HITcFNmNRtLwaJ0PFb0ELfhM/iVB8q75aYrQgI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=QopZvHALoKpRAkdmCGxSWJmi2eNK3nKXYAe4E87SpEgewC2J8g+kEUgdboWzvtQ26
-	 J87PLNpC9Pn+3sSrT2uJHG1rS3PvKIpru4Usygb0iwR4JfG7xHWizQjfEC8hhFwj6m
-	 kQTJORdLv3OapsVePhso+Gl1ZzJEyYUYxd2OXYwUoPci+1PGfnC2p/FeKBiNnLb9nf
-	 Pu2yAEi8WIfTPv0x34jnLITdAnJtqHeoOFkPCk7JanNBMbiXTmU4dMGoE06YTB+MNe
-	 UmW4K0hpsRkVjhO7/wiJowAPSoZ+8KuHhizSKu2t1IJv3AgNi2aWRKiOhZx1Jw30zi
-	 YV+DYiOsZB1CQ==
-Date: Thu, 5 Jun 2025 11:07:43 -0500
+	b=k8svjUn+D82cm2fDjyL39hf6xuk8KOEe9fjwlDFtLNpudguls4VUaVNY2N8ifEp3n
+	 ciuGTkJBbxbqs9zpPW8EnJ5q+KAh1N9V2xpfi9ikAuAsrJJJt0WI2YUzPZY4Acn5q7
+	 6Q70sD9QO8FvJEW9sFoEQR8jng1ZtP+lk4qgN0HSxDNZdbFHk6FlUSf7NRf/GkNmyf
+	 mxPg3+eDRX/qpwcvmuJEMZk1GplieqaB6bzDaPuYcFqlXtX/4bD6sLiIUfNkHmRrAk
+	 8sGZxGGC1Wt/7mKxwLUMHleHn+znIhtg7lsJhwrIrCTQU+ij0t0BiKj+oTt0F54bd4
+	 wcO7QlXQ26IXQ==
+Date: Thu, 5 Jun 2025 11:19:34 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: vkoul@kernel.org, abel.vesa@linaro.org, quic_vbadigan@quicinc.com,
-	linux-kernel@vger.kernel.org, manivannan.sadhasivam@linaro.org,
-	kw@linux.com, quic_krichai@quicinc.com, krzk+dt@kernel.org,
-	kishon@kernel.org, andersson@kernel.org, conor+dt@kernel.org,
-	konradybcio@kernel.org, devicetree@vger.kernel.org,
-	neil.armstrong@linaro.org, kwilczynski@kernel.org,
-	bhelgaas@google.com, linux-phy@lists.infradead.org,
-	lpieralisi@kernel.org, linux-pci@vger.kernel.org,
-	quic_qianyu@quicinc.com, linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH v6 2/6] dt-bindings: PCI: qcom,pcie-sa8775p: document
- qcs8300
-Message-ID: <174913966072.2690296.797135460368939393.robh@kernel.org>
-References: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
- <20250529035635.4162149-3-quic_ziyuzhan@quicinc.com>
+Cc: manivannan.sadhasivam@linaro.org, quic_vbadigan@quicinc.com,
+	kwilczynski@kernel.org, kw@linux.com, vkoul@kernel.org,
+	linux-phy@lists.infradead.org, krzk+dt@kernel.org,
+	andersson@kernel.org, linux-pci@vger.kernel.org,
+	konradybcio@kernel.org, lpieralisi@kernel.org, abel.vesa@linaro.org,
+	neil.armstrong@linaro.org, quic_qianyu@quicinc.com,
+	devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+	conor+dt@kernel.org, bhelgaas@google.com, quic_krichai@quicinc.com,
+	kishon@kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 2/4] dt-bindings: PCI: qcom,pcie-sm8150: document
+ qcs615
+Message-ID: <174914037222.2791589.7402731623467975644.robh@kernel.org>
+References: <20250527072036.3599076-1-quic_ziyuzhan@quicinc.com>
+ <20250527072036.3599076-3-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250529035635.4162149-3-quic_ziyuzhan@quicinc.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250605_090745_476205_473E3F7D 
-X-CRM114-Status: UNSURE (   7.52  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250527072036.3599076-3-quic_ziyuzhan@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,12 +79,12 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 29 May 2025 11:56:31 +0800, Ziyue Zhang wrote:
-> Add compatible for qcs8300 platform, with sa8775p as the fallback.
+On Tue, 27 May 2025 15:20:34 +0800, Ziyue Zhang wrote:
+> Add compatible for qcs615 platform, with sm8150 as the fallback.
 > 
 > Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 > ---
->  .../devicetree/bindings/pci/qcom,pcie-sa8775p.yaml         | 7 ++++++-
+>  .../devicetree/bindings/pci/qcom,pcie-sm8150.yaml          | 7 ++++++-
 >  1 file changed, 6 insertions(+), 1 deletion(-)
 > 
 
