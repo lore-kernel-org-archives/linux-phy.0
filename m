@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87365C61CE8
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Jun 2025 11:59:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48635C61CE7
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Jun 2025 19:24:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+cwAZkN2ZoBaup5mVE4tmrnVmuzHuB1q74UePbV3ARM=; b=UcUP3/S4QDilt5
-	E4+We24kqJWnKut9n0rDQNmjUx75nh9K4E4C6npZu2ixn8lXpnMO3vwgBlTHERS7G9BQcMB5H6kJ3
-	h0yfH0lu0VPJOO1bhUroX+S/qX31DNbIzqTmmNTJVt40rNI/c3tpESUckq5eGQyYGqGjiibfTHHQM
-	CvQNvYTGb1bXmmW27OuceNPLRFVzk4H28Joq8iBKiO2adO6SYvGjZmBitzMeU4m0esuXfpXC8m34d
-	meHFbWdjfaju1pODFgwrYId3nO5pYJoQGys+hloG0EvuVkjB0Iu5dIF/NgX/a+iuSf28vqb8cGB+M
-	PVExHb2aRw5EeYlaM4Nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cDlscFf1vy01X3H39AH4mGzfdFZPpmmnJV3pl8qvHbc=; b=jHHOLIDnVG/5Ek
+	uniKw1tuP4f+j09zdgyVMQ3rgS1PkbSoHxJfrb2FOKaRgDdlTEMIewnVWX+uJfo3HCXQY/QZoTixc
+	sxLtDmpJSSE/epjZhH+c1URQio3pnUi+8xrM+XBFQS9XgbEqF4fSLe9LBEPrqnuUmscJlaH9mR3m5
+	LqiwqplxAJjFVTkMViRTEwPSXVIqOm1X6Qp/LMw7VdJG3gAjVO31yjGj1N7Vr03egMkDVfigMY7+w
+	t8MyOz6C7e1e2y+ex+1cR2ZoRhAoCtVeLRecw/dhe5O+/dFklrOGmNvGcITNwK8uMPGJbFBamYoNQ
+	TgU2BFEdBRfqZxJYFwxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uNViz-00000000B7n-3cQM;
-	Fri, 06 Jun 2025 11:59:05 +0000
-Received: from mail-vk1-f181.google.com ([209.85.221.181])
+	id 1uNcgN-00000000sL5-3TyM;
+	Fri, 06 Jun 2025 19:24:51 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uNVix-00000000B6T-23le
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Jun 2025 11:59:05 +0000
-Received: by mail-vk1-f181.google.com with SMTP id 71dfb90a1353d-53082f1ac34so696272e0c.3
-        for <linux-phy@lists.infradead.org>; Fri, 06 Jun 2025 04:59:02 -0700 (PDT)
+	id 1uNceE-00000000s4w-3UYi;
+	Fri, 06 Jun 2025 19:22:39 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-3a0ac853894so2167845f8f.3;
+        Fri, 06 Jun 2025 12:22:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749237757; x=1749842557; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=tlazCEab9PCIfCSPMgFb4BeOPrc+WPM3MHVdbOBtAeE=;
+        b=AVB9FEPzP8q8TMYFrJ1WT1FEeqNiJAUfcywAcbjJQEXZ/FOu8ATOkvaBgOIlB5w8qm
+         mfVrbcjW3ezdtHVtQYfMIT9ceEgFrYYtdXxn8TLkR8eig0IruNVh+ZAQV73DOQbZxfUo
+         N2laqyJ3AZVAVAlpK9eNH8+qarTm82KXt1urSOHN9xBJyoQHx2dOCy8nCjRpfsbnskmn
+         RDNZc2W/bAprCZRR7XhvfuuVPAMFOzZbIyZ/xELq6tZkPGSMikqhgZHa16pAnlKMMIcg
+         fvLrOr5r9Is7XOByHIjoPiL6Xg6WRs53HLHoOa5nnOG6CjaAin9U9TlzVyXIv3J5+DTY
+         247w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749211141; x=1749815941;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=GkkIyvqOfr9ngi6miRPVbPTmpqHilBK6eOIDZuISEqs=;
-        b=pNeUksGZlEB0K3Zl1JkWtqxNakTtdQdDwO9NQJ1qBp3UL+7teLzHprmct0TnpOQrUc
-         vPkNEzZVNr3vD+l75zk8vr4FNp58iYOQaiOTcn6f60BZAFA8KFRN61VfxoWXgpgcMR7i
-         /9QCFXRkhMGaEy5BZxC7JSt+HKHutYXw6PGxcjYzwqfMZIotidlSQahIZtfhBNO7OF4V
-         158sfKY3Xan8Hl24yK6p6xlecu/qkbvJDew5EH9L5pyEevH1rUB4B2s1kvXfg7/jOETT
-         MF2rd4oJ/CMk5Pky6ulW1QPfCkyM/xMlg/yLfmPDLUDy5izKgLDruEWQg+OYMI5K8rOp
-         xBrA==
-X-Forwarded-Encrypted: i=1; AJvYcCVQcgut8FZFFU91GPP78tI41DlWtDuwy3jmk27nW5FbD5d2O/eCtJgcutEl0PSH0597XfZfJ9kZxao=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxvRRj4K6y02xPV7AtdGhEuIKxqXWhTjQyJXR1jVp4Hljn2gc9J
-	qOE8hGyxaGv0g3Q8fwTrfqt+on2Gais5UCfWAx3GRv0sprz/5lnQej73VE0n4rFW
-X-Gm-Gg: ASbGncuo2zwjI6FQ7du+6/aIWGpTbW8AgMdXUitsJrz7CQ1AZel8tR/pG5+b06qtZ3X
-	WIGVkTUrFyc3zlsoDDeyMsjCpTxq8Q5ItFC5rtPJoTzXGCbRhHFbjX7m36oq2DymehPkxm2ACjY
-	JVfro2nmZ9PSeTSZZXQADqGKhEys3UMMR9IMtsZtM6faLRdetxZIpUH+YfLM/J4YuYvWj5Sfw1n
-	tiUp/WIXER4v9ts6Fhx2C7XsKeffDCb6SiOH6kVTVxIRSN+VPouVfLayQQqwDBiyLRM9CFAZcQg
-	qIFA9edBVtbGH8qZqoK9QAXlFTeZpJe591eX+h2f1zjQA9N50TM8zo5bY1HXnIeC5SFpv1094c1
-	50j9h5Y0xNLb/Vr5cwttJVjM2
-X-Google-Smtp-Source: AGHT+IGhG6S6UW/r5I8u6CIb/71iDTpvJFNDAQjdrghXy+W4zCaszbLgfNzjyNAqI7rWci1MqeHXPA==
-X-Received: by 2002:a05:6122:1e14:b0:520:61ee:c815 with SMTP id 71dfb90a1353d-530e48c0441mr2353362e0c.10.1749211141194;
-        Fri, 06 Jun 2025 04:59:01 -0700 (PDT)
-Received: from mail-vs1-f45.google.com (mail-vs1-f45.google.com. [209.85.217.45])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-530e62e6207sm977064e0c.11.2025.06.06.04.59.00
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Jun 2025 04:59:00 -0700 (PDT)
-Received: by mail-vs1-f45.google.com with SMTP id ada2fe7eead31-4e751947dd8so663541137.2
-        for <linux-phy@lists.infradead.org>; Fri, 06 Jun 2025 04:59:00 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVOCuFPyPuOYpDo6mjbhkC0AgDd7NFORa8IT9mJOHPrQ6uBBlRg22cFffWW70yTM7ZKAS+tHIv1oms=@lists.infradead.org
-X-Received: by 2002:a05:6102:440e:b0:4df:84d5:543e with SMTP id
- ada2fe7eead31-4e772928b20mr2281122137.7.1749211140760; Fri, 06 Jun 2025
- 04:59:00 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1749237757; x=1749842557;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=tlazCEab9PCIfCSPMgFb4BeOPrc+WPM3MHVdbOBtAeE=;
+        b=sWyEGOtaFyOOwq5RwZdK7hvjIGgm5EhGop9oVTbouq/41RtDsvrf9dg5dsqeN0ruUa
+         HInGi8rYFiiwrodSqh2KgGAk4VYQR5OBg3bRvuXGf9G1CKTJOpnMgMxPaDgVnXNamADH
+         MHwwiIh5l0P7IaF6l7e86U7huRdWFRh8U90xinjvNPWmzVG43WplrMHGk//D0u28fnY9
+         OIe7GJMF9UpS+mb9VqixZFTzlz8DpzBdn2e99xTVdbxUvVF/7uegTs4X4tS3++9JuVL2
+         PPNrQANTX663CZYoS368flNFkMjy5Yb9+305KSLWb5WUxfwjoQRJ9zvdvuLFs26tCZ/k
+         ucMA==
+X-Forwarded-Encrypted: i=1; AJvYcCURJp7mdqyvpLqApLJKxkDbhXkHomllWniJ9r0tMkj/vWw7qUWgXRFn4lFUAqCasDOwM7M9glLGyXpul7W5DweE@lists.infradead.org, AJvYcCWMSWFrl5hdAIPAnzfHthSLNeB19X6Ny6EH82whHA0CG9BNGM62biOLQlVBdgSiqiUiVlTJEvketcGl@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy4VQtvX2vWCS81OI/pGBnccIIpQBd9J5R8WkvPSzw7TkUn0Cyg
+	PRpe6Gvndu8X+OrHP/pfcnXIpIlNaCKBrQRKJGRNoAy1QninX0MtrAQ5wAVpwg==
+X-Gm-Gg: ASbGnct3DG1pbusryM3GOBXv6iTHManMZnaAhyRhMkzl/6bWtL/Nl6HFTAs8+a32Ygo
+	TFwY8x8l9evYu4rA+jRah7YG+4TGwyzHGimg0rCSlzFDgbkLv8BP9Wka3JYScewxcPO6X3oZcoL
+	LwRxWF01aYzLza+Y4tCl8f8yASX4YoNSNnirnBaBLJxu6if4BDJxfvZHXR8EpkBkHfK5J3uXT0u
+	iywJCm3HWMe3t1jJbhjGywFR56nmOarB2ZTdcrvmdixqlU3q8Zbz04ntnfoSJ6ivPZ90/fsywNh
+	aS6NQBAqZ+eg5lcbeA/mDVR3K3cizgpKZi+Ra2ClnKjD7mX4wpNIW3KPBF/0CgzFlS34CDuHybO
+	/BMkYrkYMGOdh40nv+F/n
+X-Google-Smtp-Source: AGHT+IEw/6dmOwp3prbi2DO3yB49zmc9WP0nbK2kCidb002uvYU077DaQ9rddciHPvHuj++HjpiSYQ==
+X-Received: by 2002:a05:6000:2082:b0:3a3:4baa:3f3d with SMTP id ffacd0b85a97d-3a5319b69d2mr4142128f8f.6.1749237756611;
+        Fri, 06 Jun 2025 12:22:36 -0700 (PDT)
+Received: from localhost.localdomain (93-34-88-225.ip49.fastwebnet.it. [93.34.88.225])
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-452730b9b27sm30951595e9.23.2025.06.06.12.22.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 06 Jun 2025 12:22:35 -0700 (PDT)
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Christian Marangi <ansuelsmth@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 0/4] phy: airoha: add support for AN7583 PCIe PHY driver
+Date: Fri,  6 Jun 2025 21:22:01 +0200
+Message-ID: <20250606192208.26465-1-ansuelsmth@gmail.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-References: <20250528133858.168582-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20250528133858.168582-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 6 Jun 2025 13:58:48 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdXMEzPYfDvefSzSx9hZGY=4eyRY2MHHnr5JBHV3ujFdrg@mail.gmail.com>
-X-Gm-Features: AX0GCFsl-TsxaSk2EijYe-2lJ04s7VyuySx5VPceo-nG7KhS3hWpW4y_WadxEEM
-Message-ID: <CAMuHMdXMEzPYfDvefSzSx9hZGY=4eyRY2MHHnr5JBHV3ujFdrg@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: phy: renesas,usb2-phy: Document RZ/V2N SoC support
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, Biju Das <biju.das.jz@bp.renesas.com>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250606_045903_524738_ABFE5141 
-X-CRM114-Status: GOOD (  19.81  )
+X-CRM114-CacheID: sfid-20250606_122238_870050_303FEAA6 
+X-CRM114-Status: GOOD (  11.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,37 +103,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Prabhakar,
+This small series move the current Airoha EN7581 PCIe PHY driver
+to a dedicated directory and introduce support for Airoha AN7583 PCIe PHY.
 
-On Wed, 28 May 2025 at 15:39, Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
-> Document support for the USB2.0 phy found on the Renesas RZ/V2N
-> (R9A09G056) SoC. The USB2.0 phy is functionally identical to that on the
-> RZ/V2H(P) SoC, so no driver changes are needed. The existing
-> `renesas,usb2-phy-r9a09g057` compatible will be used as a fallback
-> for the RZ/V2N SoC.
->
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+It's not possible to reuse the EN7581 code as the register changed between
+the 2 SoC and also the setup method changed (different calibration logic)
 
-Thanks for your patch!
+Moving the PHY in a dedicated directory is also needed for other series
+current pending that will add USB PHY support.
 
-There seems to be some minor differences related to VBSTA interrupt
-handling, but the documentation is far from clear in making clear what
-that actually means, or is used for...
+Also a dedicated schema is added as the register names is entirely
+different compared to EN7581.
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Christian Marangi (4):
+  phy: move Airoha PCIe PHY driver to dedicated directory
+  phy: airoha: add EN7581 tag to PCIe PHY driver
+  dt-bindings: phy: airoha: Document support for AN7583 PCIe PHY
+  phy: airoha: add support for AN7583 PCIe PHY driver
 
-Gr{oetje,eeting}s,
-
-                        Geert
+ .../bindings/phy/airoha,an7583-pcie-phy.yaml  |   72 ++
+ MAINTAINERS                                   |   14 +-
+ drivers/phy/Kconfig                           |   11 +-
+ drivers/phy/Makefile                          |    4 +-
+ drivers/phy/airoha/Kconfig                    |   23 +
+ drivers/phy/airoha/Makefile                   |    3 +
+ .../phy/airoha/phy-airoha-an7583-pcie-regs.h  |  550 +++++++++
+ drivers/phy/airoha/phy-airoha-an7583-pcie.c   | 1069 +++++++++++++++++
+ .../phy-airoha-en7581-pcie-regs.h}            |    0
+ .../phy-airoha-en7581-pcie.c}                 |    6 +-
+ 10 files changed, 1734 insertions(+), 18 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ create mode 100644 drivers/phy/airoha/phy-airoha-an7583-pcie-regs.h
+ create mode 100644 drivers/phy/airoha/phy-airoha-an7583-pcie.c
+ rename drivers/phy/{phy-airoha-pcie-regs.h => airoha/phy-airoha-en7581-pcie-regs.h} (100%)
+ rename drivers/phy/{phy-airoha-pcie.c => airoha/phy-airoha-en7581-pcie.c} (99%)
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.48.1
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
