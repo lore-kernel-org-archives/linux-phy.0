@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68221C678DF
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8663EC677C4
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yI/G9C3VPyZGKOnxTtbdR0ktw0GQBVfJs2Scl6lDyR8=; b=Q39if7sZP27VBL
-	HmiGgSjEX0ROgPLj49IP33MObUGyA2UxkVDzTUbff5zn/by621JnSJAUOf7m4lYvYhm4BWgkem+uf
-	FGK/g738xrCtwdOhIMRIFnMmCEUB8Wg3aP7EAJNLps56biZGqYmR2as+1DWxs5dn1c0w95ysiTxkz
-	/UW1USwVgH91HT241JJQP/QPTfZeNhxDiwVQU5rc2EcO/oSLojExa6oE75g1YK1G36tmCtIhUj50B
-	nDPnL95NIsJAubvyACr6ZDV6wJI3hNyU/Y4cE30fq7iXf7R38S+4/RwM7bT7tLFdcUIXpjnJ9aMR0
-	2BM6BAsxbuek482yxjbg==;
+	List-Owner; bh=dTicdW4XHeBiO33dvQ6kSdymebyd+a4i555GE33bucs=; b=v6MMTZ2tJ/lDK2
+	oqosjsN32jUUTgvdgucdurh5OpHV+y0Fcf95zXO9e96QWGj8YzLvkSM28KOLMYGBI0PSV9V4V9HYu
+	HSRzK6coGeYJlK3h/WgssPmp/hDmCBNKM+/wnLWbpCENSOTh3MXWtddQZKaA7S15iCWCRSJoCdkFR
+	iMrGJA8bBxxr6EnGWGBvf9IHZe94Hkhfu6FHn9EKtYe20V4DSClxzpNZsOhBrYOUeDh4QhJWyG4vp
+	rd6EtDwlHSJhlYW4TllOoBwvW+RWzFp+APhDc/GSgdUUICSt5YR1NM/1EZZ1ZMc5iEkeD5w4oPl5f
+	OD0ht1EZ1ZkAGSA7hGZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO14l-000000027mp-0ao2;
-	Sat, 07 Jun 2025 21:27:39 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uO14k-000000027lP-16lw;
+	Sat, 07 Jun 2025 21:27:38 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO12u-000000027Hg-3m2m
+	id 1uO12g-000000027EG-2sh7
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Jun 2025 21:25:46 +0000
+	Sat, 07 Jun 2025 21:25:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 19FC2A41759;
-	Sat,  7 Jun 2025 21:25:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F96FC4CEE4;
-	Sat,  7 Jun 2025 21:25:43 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6CD2349C67;
+	Sat,  7 Jun 2025 21:25:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 282CCC4CEE4;
+	Sat,  7 Jun 2025 21:25:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749331543;
-	bh=j1/lkJgtqy4+16mK/gyMR0VMNIfeyeJnF3QBrtQixPs=;
+	s=k20201202; t=1749331530;
+	bh=hQVYCNQ5OrWUucTQkw09cPQ8jCF3PdFQNCpwjyOGrNs=;
 	h=From:To:Cc:Subject:Date:From;
-	b=opIVyA5/vgjtAQC0y8vRkUfTuiwiCbucZJ86OmP1L+apjv67v9wLw95EP/VfBLJnb
-	 AAia9zkhxq7RVdLrdy1RM/ZNDuWkT+4ejWyhg0OXhNSjc+Nw4YCBWFe0ngxObN6U7K
-	 hnE+q/qV5eAznRCKpFp0TaCS2Mg+v2NECUvyhmTJv8JsPFB9hDxDJdZkDCngebWcbF
-	 6p8p7FpGyHxKPOudNm0oJ89uDh5OQRjkmzU5itfU+W/e2ElzBoWy6fmua1UsnJtZN/
-	 ZaJ0UylnbnaeHyvqS5hUqkoB9ET/a5KfyFZX2we/T4URF3wSNa7SXnnWtafG7lERe4
-	 eBwR3pO6fdOIg==
+	b=iE+1idd8X5+sCs+qGdLsfhZYXYNxXzWOOz/H2p+VUSBbQfPfOTXFTrjgOEgDqA5xe
+	 qy8cI+wbsrvM9lkl8WCjuriEi5cE3FQEb+weUyYO3hhG+uXIshwVeQiLqaY2rqlfK9
+	 +M6w78KE/PgVWq3R4B6/94MyuK6kqDTAeTPrJrIQvxrcerVvbhKh99X4EIOAk8Ithq
+	 FD5Z1xUq8zWOfMFSJwLUTJCloU6+tO1RFxIZDzeTFyj5w7DP0UXgpnzE736MhQFUx3
+	 omoDFQ5cNgwOynL7tmggGW1YwS0m9o//Gm9KpjFhIyzSMkSKI07q532gdJ+O6SAQ19
+	 UhxPWtOIfyx2Q==
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Gregory Clement <gregory.clement@bootlin.com>
+	Pengcheng Li <lpc.li@hisilicon.com>
 Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: phy: Convert marvell,armada-380-comphy to DT schema
-Date: Sat,  7 Jun 2025 16:25:40 -0500
-Message-ID: <20250607212541.742427-1-robh@kernel.org>
+Subject: [PATCH] dt-bindings: phy: Convert hisilicon,inno-usb2-phy to DT schema
+Date: Sat,  7 Jun 2025 16:25:26 -0500
+Message-ID: <20250607212527.741915-1-robh@kernel.org>
 X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250607_142545_066903_1CEE4D8E 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20250607_142530_785936_14860252 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,64 +75,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Marvell Armada 38x combo PHY binding to DT schema format.
-It's a straight forward conversion.
+Convert the HiSilicon INNO USB2 PHY binding to DT schema format. It's a
+straight forward conversion.
+
+Add the undocumented "hisilicon,hi3798mv100-usb2-phy" compatible.
 
 Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 ---
- .../phy/marvell,armada-380-comphy.yaml        | 83 +++++++++++++++++++
- .../bindings/phy/phy-armada38x-comphy.txt     | 48 -----------
- 2 files changed, 83 insertions(+), 48 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/marvell,armada-380-comphy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-armada38x-comphy.txt
+ .../bindings/phy/hisilicon,inno-usb2-phy.yaml | 93 +++++++++++++++++++
+ .../bindings/phy/phy-hisi-inno-usb2.txt       | 71 --------------
+ 2 files changed, 93 insertions(+), 71 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-hisi-inno-usb2.txt
 
-diff --git a/Documentation/devicetree/bindings/phy/marvell,armada-380-comphy.yaml b/Documentation/devicetree/bindings/phy/marvell,armada-380-comphy.yaml
+diff --git a/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
 new file mode 100644
-index 000000000000..dcb4c0007832
+index 000000000000..51ea0e54ce35
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/marvell,armada-380-comphy.yaml
-@@ -0,0 +1,83 @@
++++ b/Documentation/devicetree/bindings/phy/hisilicon,inno-usb2-phy.yaml
+@@ -0,0 +1,93 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/marvell,armada-380-comphy.yaml#
++$id: http://devicetree.org/schemas/phy/hisilicon,inno-usb2-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Marvell Armada 38x COMPHY controller
++title: HiSilicon INNO USB2 PHY
 +
 +maintainers:
-+  - Andrew Lunn <andrew@lunn.ch>
-+  - Gregory Clement <gregory.clement@bootlin.com>
++  - Pengcheng Li <lpc.li@hisilicon.com>
 +
 +description:
-+  This comphy controller can be found on Marvell Armada 38x. It provides a
-+  number of shared PHYs used by various interfaces (network, sata, usb,
-+  PCIe...).
++  The INNO USB2 PHY device should be a child node of peripheral controller that
++  contains the PHY configuration register, and each device supports up to 2 PHY
++  ports which are represented as child nodes of INNO USB2 PHY device.
 +
 +properties:
 +  compatible:
-+    items:
-+      - const: marvell,armada-380-comphy
++    enum:
++      - hisilicon,hi3798cv200-usb2-phy
++      - hisilicon,hi3798mv100-usb2-phy
++      - hisilicon,inno-usb2-phy
 +
 +  reg:
-+    items:
-+      - description: COMPHY register location and length
-+      - description: Configuration register location and length
++    maxItems: 1
 +
-+  reg-names:
-+    items:
-+      - const: comphy
-+      - const: conf
++  clocks:
++    maxItems: 1
 +
-+  '#address-cells':
++  resets:
++    maxItems: 1
++
++  "#address-cells":
 +    const: 1
 +
-+  '#size-cells':
++  "#size-cells":
 +    const: 0
 +
 +patternProperties:
-+  '^phy@[0-5]$':
-+    description: A COMPHY lane
++  "^phy@[0-1]$":
++    description: PHY port subnode
 +    type: object
 +    additionalProperties: false
 +
@@ -141,95 +142,128 @@ index 000000000000..dcb4c0007832
 +      reg:
 +        maximum: 1
 +
-+      '#phy-cells':
-+        description: Input port index for the PHY lane
-+        const: 1
++      "#phy-cells":
++        const: 0
++
++      resets:
++        maxItems: 1
 +
 +    required:
 +      - reg
-+      - '#phy-cells'
++      - "#phy-cells"
++      - resets
 +
 +required:
 +  - compatible
 +  - reg
-+  - '#address-cells'
-+  - '#size-cells'
++  - clocks
++  - resets
++  - "#address-cells"
++  - "#size-cells"
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    comphy: phy@18300 {
-+        compatible = "marvell,armada-380-comphy";
-+        reg = <0x18300 0x100>, <0x18460 4>;
-+        reg-names = "comphy", "conf";
++    #include <dt-bindings/clock/histb-clock.h>
++
++    usb2-phy@120 {
++        compatible = "hisilicon,hi3798cv200-usb2-phy";
++        reg = <0x120 0x4>;
++        clocks = <&crg HISTB_USB2_PHY1_REF_CLK>;
++        resets = <&crg 0xbc 4>;
 +        #address-cells = <1>;
 +        #size-cells = <0>;
 +
-+        cpm_comphy0: phy@0 {
++        phy@0 {
 +            reg = <0>;
-+            #phy-cells = <1>;
++            #phy-cells = <0>;
++            resets = <&crg 0xbc 8>;
 +        };
 +
-+        cpm_comphy1: phy@1 {
++        phy@1 {
 +            reg = <1>;
-+            #phy-cells = <1>;
++            #phy-cells = <0>;
++            resets = <&crg 0xbc 9>;
 +        };
 +    };
-diff --git a/Documentation/devicetree/bindings/phy/phy-armada38x-comphy.txt b/Documentation/devicetree/bindings/phy/phy-armada38x-comphy.txt
+diff --git a/Documentation/devicetree/bindings/phy/phy-hisi-inno-usb2.txt b/Documentation/devicetree/bindings/phy/phy-hisi-inno-usb2.txt
 deleted file mode 100644
-index 8b5a7a28a35b..000000000000
---- a/Documentation/devicetree/bindings/phy/phy-armada38x-comphy.txt
+index 104953e849e7..000000000000
+--- a/Documentation/devicetree/bindings/phy/phy-hisi-inno-usb2.txt
 +++ /dev/null
-@@ -1,48 +0,0 @@
--mvebu armada 38x comphy driver
--------------------------------
--
--This comphy controller can be found on Marvell Armada 38x. It provides a
--number of shared PHYs used by various interfaces (network, sata, usb,
--PCIe...).
+@@ -1,71 +0,0 @@
+-Device tree bindings for HiSilicon INNO USB2 PHY
 -
 -Required properties:
+-- compatible: Should be one of the following strings:
+-	"hisilicon,inno-usb2-phy",
+-	"hisilicon,hi3798cv200-usb2-phy".
+-- reg: Should be the address space for PHY configuration register in peripheral
+-  controller, e.g. PERI_USB0 for USB 2.0 PHY01 on Hi3798CV200 SoC.
+-- clocks: The phandle and clock specifier pair for INNO USB2 PHY device
+-  reference clock.
+-- resets: The phandle and reset specifier pair for INNO USB2 PHY device reset
+-  signal.
+-- #address-cells: Must be 1.
+-- #size-cells: Must be 0.
 -
--- compatible: should be "marvell,armada-380-comphy"
--- reg: should contain the comphy register location and length.
--- #address-cells: should be 1.
--- #size-cells: should be 0.
+-The INNO USB2 PHY device should be a child node of peripheral controller that
+-contains the PHY configuration register, and each device supports up to 2 PHY
+-ports which are represented as child nodes of INNO USB2 PHY device.
 -
--Optional properties:
+-Required properties for PHY port node:
+-- reg: The PHY port instance number.
+-- #phy-cells: Defined by generic PHY bindings.  Must be 0.
+-- resets: The phandle and reset specifier pair for PHY port reset signal.
 -
--- reg-names: must be "comphy" as the first name, and "conf".
--- reg: must contain the comphy register location and length as the first
--    pair, followed by an optional configuration register address and
--    length pair.
--
--A sub-node is required for each comphy lane provided by the comphy.
--
--Required properties (child nodes):
--
--- reg: comphy lane number.
--- #phy-cells : from the generic phy bindings, must be 1. Defines the
--               input port to use for a given comphy lane.
+-Refer to phy/phy-bindings.txt for the generic PHY binding properties
 -
 -Example:
 -
--	comphy: phy@18300 {
--		compatible = "marvell,armada-380-comphy";
--		reg-names = "comphy", "conf";
--		reg = <0x18300 0x100>, <0x18460 4>;
+-perictrl: peripheral-controller@8a20000 {
+-	compatible = "hisilicon,hi3798cv200-perictrl", "simple-mfd";
+-	reg = <0x8a20000 0x1000>;
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-	ranges = <0x0 0x8a20000 0x1000>;
+-
+-	usb2_phy1: usb2-phy@120 {
+-		compatible = "hisilicon,hi3798cv200-usb2-phy";
+-		reg = <0x120 0x4>;
+-		clocks = <&crg HISTB_USB2_PHY1_REF_CLK>;
+-		resets = <&crg 0xbc 4>;
 -		#address-cells = <1>;
 -		#size-cells = <0>;
 -
--		cpm_comphy0: phy@0 {
+-		usb2_phy1_port0: phy@0 {
 -			reg = <0>;
--			#phy-cells = <1>;
+-			#phy-cells = <0>;
+-			resets = <&crg 0xbc 8>;
 -		};
 -
--		cpm_comphy1: phy@1 {
+-		usb2_phy1_port1: phy@1 {
 -			reg = <1>;
--			#phy-cells = <1>;
+-			#phy-cells = <0>;
+-			resets = <&crg 0xbc 9>;
 -		};
 -	};
+-
+-	usb2_phy2: usb2-phy@124 {
+-		compatible = "hisilicon,hi3798cv200-usb2-phy";
+-		reg = <0x124 0x4>;
+-		clocks = <&crg HISTB_USB2_PHY2_REF_CLK>;
+-		resets = <&crg 0xbc 6>;
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		usb2_phy2_port0: phy@0 {
+-			reg = <0>;
+-			#phy-cells = <0>;
+-			resets = <&crg 0xbc 10>;
+-		};
+-	};
+-};
 -- 
 2.47.2
 
