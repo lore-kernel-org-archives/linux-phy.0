@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 313DFC67861
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41A38C678DF
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Whw28xYW9j9Gyrui3j7/v5IReNt/5UYSdpJmZ8OEFrk=; b=lRtNA6mgVABJW/
-	B/XKCi3xjPgBsje+vBaDEjKbqZI2HIAQKYGwgDIvXKX/r/E9DvfnaQqCKknbP6lHHobyvFst02/CF
-	J2G5AECVOTd7xSH0U+pTkJMUpr/sMTnVaM5dnRm3GKQLy+gwwQVWdryOtXOu8S/psyDGUkWZRK2AT
-	3Ajyb7wndxaYqSuBNvnDr7J0FRFM+YWN7vSXQgmxtQYNWBaPM9wKhPj5n+SRDPxtsYUFElcHfU4B3
-	iyYVnDFEQshDEjbCgpSwqQQNaK8EhN5AU7p+27U/AxqzUJ23JAp2OOsy6SPck9uUbJ1dBQxCGRi03
-	2hbXKKeLaBdRuCx8GLyg==;
+	List-Owner; bh=8A1/DhWcuFjfRFmuiNMwUL0cKz3NWR8onHb+KtUh6nk=; b=bMPH4ipeU6LptT
+	iX+tlGAYzzJJDYXYMw43xtELM2qJjdSXnLqg6waJRTbFEoAINz1y6Hw6u0casDPgVlAZgMVN8VZox
+	3MwPBkcRKUqBBs7zR7u8K8W1H+8KDrjsmyqwrQ4U45/i8p1QCGUGDKxc4zNjRuiFqgwV1/rH/e0Qw
+	E18rJcEt6QT49KyZM5vsr2Ri5poGZ8ZeF7azc4MJmenUe+ex95qWAsBOHS9Li3DozLhmEmjllmF4G
+	rUqiA7IZnQrQwGM8N5UGd73GRt4DSLULrG/j6wIbMVad7CEsnQwxzQ5yY5Tc7ise2qCyZFvwUx7eE
+	TLZRJAVgvNvMBrqJsgrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO14n-000000027q2-3uvj;
-	Sat, 07 Jun 2025 21:27:41 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uO14p-000000027ra-03yM;
+	Sat, 07 Jun 2025 21:27:43 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO13c-000000027SY-3LyH
+	id 1uO13w-000000027Yq-05MT
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Jun 2025 21:26:30 +0000
+	Sat, 07 Jun 2025 21:26:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 211FDA4B914;
-	Sat,  7 Jun 2025 21:26:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A530CC4CEE4;
-	Sat,  7 Jun 2025 21:26:27 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6FC146115D;
+	Sat,  7 Jun 2025 21:26:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03FC1C4CEE4;
+	Sat,  7 Jun 2025 21:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749331587;
-	bh=+ZPrWtmPPFCsURJUnqt37WxfXbcYTz4vDsTXFOIJitI=;
+	s=k20201202; t=1749331607;
+	bh=b7Ks2MMNciFeMLa8eUiYSRjsz/aoPmB73xGRIMh11d8=;
 	h=From:To:Cc:Subject:Date:From;
-	b=LITufkiNBH4UVApXJPFG5pUAh5WYnAs5CTASMeKvkh4Kf8W3VwRzalToQ9rJPeQs3
-	 7AXWdv/mmaZBP5arKy39A/XjyQNhUAq8ccP50bZ9BuXh0NfA7NYcbMmGZ6nIT2eBj2
-	 nyQoykDdqCoGfWxVQWGxsFHI4QftoohvXwnfahobeE4rAogOAR93Y+9QCacZtxtLpj
-	 F0G8+e0SS22AiFZHFMVQmSYO2+DtPQHQEgoIbT24XcESYHD7rJZbbrtGBOQ0eadhHO
-	 AbWOdASwebRFNJsIRH3i+Q24eb6aWu4BD/S+QOY3BgfRJE58r4gswB8OZaF8BoCVeC
-	 MMfG9ONKvGXOw==
+	b=NRGS1DpwNcFMHcGTM8nGqQ2Y1DNAtodeiH2blXhu411xMZydUqqhsrzTrxF+NOQsS
+	 LJNmTcikSiuWSwzaiduSNsVpsMxTRSnJ9nP/8haEyl7B0xEaR9vskBamFsI1PzHjT9
+	 y+XKCdNPimjxX+My0GNiVGh0N7To+rL1WXprRLb+5zx96Ru7NPLh5kuNmm8iEOVbqL
+	 DjD0mABzV7Kv1ebKlZ7m+BkF4ZPoTEDyVzfPFDoGKRLLJFfuVnNiejRYeveAxA+am2
+	 iVzv7NM9EcFdQfWecGEMnjz5o7aZtHFU5+zwa7bv7wdgEzQnf+zNhkpCuYFDXNRWdD
+	 4k3tBqBqyw1NQ==
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Alban Bedel <albeu@free.fr>
+	Nishanth Menon <nm@ti.com>,
+	Santosh Shilimkar <ssantosh@kernel.org>
 Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: phy: Convert qca,ar7100-usb-phy to DT schema
-Date: Sat,  7 Jun 2025 16:26:23 -0500
-Message-ID: <20250607212625.744008-1-robh@kernel.org>
+Subject: [PATCH] dt-bindings: phy: Convert ti,keystone-usbphy to DT schema
+Date: Sat,  7 Jun 2025 16:26:40 -0500
+Message-ID: <20250607212641.744683-1-robh@kernel.org>
 X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250607_142628_969701_83F60795 
-X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,110 +73,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Qualcomm-Atheros AR7100 USB PHY binding to DT schema format.
-It's a straight forward conversion.
+Convert the TI Keystone USB PHY binding to DT schema format. Drop the
+"#address-cells" and "#size-cells" properties which don't make sense
+without any child nodes.
 
 Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 ---
- .../devicetree/bindings/phy/phy-ath79-usb.txt | 18 -------
- .../bindings/phy/qca,ar7100-usb-phy.yaml      | 49 +++++++++++++++++++
- MAINTAINERS                                   |  2 +-
- 3 files changed, 50 insertions(+), 19 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
- create mode 100644 Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
+ .../bindings/phy/keystone-usb-phy.txt         | 19 ----------
+ .../bindings/phy/ti,keystone-usbphy.yaml      | 37 +++++++++++++++++++
+ 2 files changed, 37 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/keystone-usb-phy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/ti,keystone-usbphy.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt b/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
+diff --git a/Documentation/devicetree/bindings/phy/keystone-usb-phy.txt b/Documentation/devicetree/bindings/phy/keystone-usb-phy.txt
 deleted file mode 100644
-index c3a29c5feea3..000000000000
---- a/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
+index 300830dda0bf..000000000000
+--- a/Documentation/devicetree/bindings/phy/keystone-usb-phy.txt
 +++ /dev/null
-@@ -1,18 +0,0 @@
--* Atheros AR71XX/9XXX USB PHY
+@@ -1,19 +0,0 @@
+-TI Keystone USB PHY
 -
 -Required properties:
--- compatible: "qca,ar7100-usb-phy"
--- #phys-cells: should be 0
--- reset-names: "phy"[, "suspend-override"]
--- resets: references to the reset controllers
+- - compatible: should be "ti,keystone-usbphy".
+- - #address-cells, #size-cells : should be '1' if the device has sub-nodes
+-   with 'reg' property.
+- - reg : Address and length of the usb phy control register set.
 -
--Example:
+-The main purpose of this PHY driver is to enable the USB PHY reference clock
+-gate on the Keystone SOC for both the USB2 and USB3 PHY. Otherwise it is just
+-an NOP PHY driver.  Hence this node is referenced as both the usb2 and usb3
+-phy node in the USB Glue layer driver node.
 -
--	usb-phy {
--		compatible = "qca,ar7100-usb-phy";
--
--		reset-names = "phy", "suspend-override";
--		resets = <&rst 4>, <&rst 3>;
--
--		#phy-cells = <0>;
--	};
-diff --git a/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
+-usb_phy: usb_phy@2620738 {
+-	compatible = "ti,keystone-usbphy";
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-	reg = <0x2620738 32>;
+-};
+diff --git a/Documentation/devicetree/bindings/phy/ti,keystone-usbphy.yaml b/Documentation/devicetree/bindings/phy/ti,keystone-usbphy.yaml
 new file mode 100644
-index 000000000000..029665530829
+index 000000000000..08dc18e7feea
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
-@@ -0,0 +1,49 @@
++++ b/Documentation/devicetree/bindings/phy/ti,keystone-usbphy.yaml
+@@ -0,0 +1,37 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/qca,ar7100-usb-phy.yaml#
++$id: http://devicetree.org/schemas/phy/ti,keystone-usbphy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Atheros AR71XX/9XXX USB PHY
++title: TI Keystone USB PHY
 +
 +maintainers:
-+  - Alban Bedel <albeu@free.fr>
++  - Nishanth Menon <nm@ti.com>
++  - Santosh Shilimkar <ssantosh@kernel.org>
++
++description:
++  The main purpose of this PHY driver is to enable the USB PHY reference clock
++  gate on the Keystone SOC for both the USB2 and USB3 PHY. Otherwise it is just
++  an NOP PHY driver. Hence this node is referenced as both the usb2 and usb3
++  phy node in the USB Glue layer driver node.
 +
 +properties:
 +  compatible:
-+    items:
-+      - const: qca,ar7100-usb-phy
++    const: ti,keystone-usbphy
 +
-+  reset-names:
-+    description: Names of reset lines in order.
-+    minItems: 1
-+    items:
-+      - const: phy
-+      - const: suspend-override
-+
-+  resets:
-+    description: References to the reset controllers.
-+    minItems: 1
-+    items:
-+      - description: Reset controller for phy
-+      - description: Reset controller for suspend-override
-+
-+  '#phy-cells':
-+    const: 0
++  reg:
++    maxItems: 1
 +
 +required:
 +  - compatible
-+  - reset-names
-+  - resets
-+  - '#phy-cells'
++  - reg
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    usb-phy {
-+        compatible = "qca,ar7100-usb-phy";
-+        reset-names = "phy", "suspend-override";
-+        resets = <&rst 4>, <&rst 3>;
-+        #phy-cells = <0>;
++    usb-phy@2620738 {
++        compatible = "ti,keystone-usbphy";
++        reg = <0x2620738 32>;
 +    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 8fc2f21de224..c9457982b406 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3823,7 +3823,7 @@ M:	Alban Bedel <albeu@free.fr>
- S:	Maintained
- W:	https://github.com/AlbanBedel/linux
- T:	git git://github.com/AlbanBedel/linux
--F:	Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
-+F:	Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
- F:	drivers/phy/qualcomm/phy-ath79-usb.c
- 
- ATHEROS ATH GENERIC UTILITIES
 -- 
 2.47.2
 
