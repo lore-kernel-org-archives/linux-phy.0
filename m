@@ -4,58 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E54B0C71135
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 313DFC67861
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Jun 2025 21:27:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+OGU4YEv5BKfHnwW0yL5TVi/O+kZMZS8lpASvGoItUc=; b=IFTjlnqgM1+N5+
-	8ZKpk83MsswZzg/qgKAmaBFu1N41dJgnqGQUzKi6gPW6RCkE4d+K/rmupD+k4FpzKhHxisHC6dJNn
-	7yAEGXNOnyLQIYDmSFika1X/5V7taGsr/oKankTexeDaeePAeXY8YSe+8qf1vY6QJ8K5BSfX8FSJ8
-	h3vQP8JU2ADljEqkcO/o6uMGHdZpGCNfjO04b9jJWQBj3hTU5GF2koOaq8PR3p8hPEHyPOvjomRnv
-	UN0J+4V0r7iSZfqIu400BjXx0j2/DRyhP1ynC+X3uDzZLY5GN66ozUGxg31wbvbOju1IIRDOjMxvO
-	ayqWCvJnfbJandOrwzjw==;
+	List-Owner; bh=Whw28xYW9j9Gyrui3j7/v5IReNt/5UYSdpJmZ8OEFrk=; b=lRtNA6mgVABJW/
+	B/XKCi3xjPgBsje+vBaDEjKbqZI2HIAQKYGwgDIvXKX/r/E9DvfnaQqCKknbP6lHHobyvFst02/CF
+	J2G5AECVOTd7xSH0U+pTkJMUpr/sMTnVaM5dnRm3GKQLy+gwwQVWdryOtXOu8S/psyDGUkWZRK2AT
+	3Ajyb7wndxaYqSuBNvnDr7J0FRFM+YWN7vSXQgmxtQYNWBaPM9wKhPj5n+SRDPxtsYUFElcHfU4B3
+	iyYVnDFEQshDEjbCgpSwqQQNaK8EhN5AU7p+27U/AxqzUJ23JAp2OOsy6SPck9uUbJ1dBQxCGRi03
+	2hbXKKeLaBdRuCx8GLyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO14n-000000027pj-2pyR;
+	id 1uO14n-000000027q2-3uvj;
 	Sat, 07 Jun 2025 21:27:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uO13Y-000000027S1-0gom
+	id 1uO13c-000000027SY-3LyH
 	for linux-phy@lists.infradead.org;
-	Sat, 07 Jun 2025 21:26:24 +0000
+	Sat, 07 Jun 2025 21:26:30 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 990236115D;
-	Sat,  7 Jun 2025 21:26:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2FD5BC4CEE4;
-	Sat,  7 Jun 2025 21:26:23 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 211FDA4B914;
+	Sat,  7 Jun 2025 21:26:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A530CC4CEE4;
+	Sat,  7 Jun 2025 21:26:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749331583;
-	bh=qPWaXK9VAayAy2Zn/upVRookXCud3+76+B7m5D2a/V4=;
+	s=k20201202; t=1749331587;
+	bh=+ZPrWtmPPFCsURJUnqt37WxfXbcYTz4vDsTXFOIJitI=;
 	h=From:To:Cc:Subject:Date:From;
-	b=N6xeJSl0Pt2c7+uplpIxh4Ygc8KkdWP2twNJ726W2rnRCpnPos0XGVRp+6mhJxmuF
-	 OEPxu9br0i/VojMF436Xi0gtGS9TlaLqIgY4XzpwEvXTd6E9f3+js+3zBXq4MmZ+4S
-	 8iTY8npvv12boqBW4A62PEdu8MnKWwGldov7FPnedVptPdPv1Sq/rvhPngtPAetaOt
-	 XIfzn1BIksLxpwrn67NkrPDsLzflVDfgCCYCdsOUgOoXAj6BNq+z2S7J4httv1Y+7Z
-	 ysUQq8M0gL3CNvPW+1/oG/TonSsObRtFxdd6VGK3xUVFqqBFql+5Si1ofQNl7/doYZ
-	 lLJWVUnpGmZgA==
+	b=LITufkiNBH4UVApXJPFG5pUAh5WYnAs5CTASMeKvkh4Kf8W3VwRzalToQ9rJPeQs3
+	 7AXWdv/mmaZBP5arKy39A/XjyQNhUAq8ccP50bZ9BuXh0NfA7NYcbMmGZ6nIT2eBj2
+	 nyQoykDdqCoGfWxVQWGxsFHI4QftoohvXwnfahobeE4rAogOAR93Y+9QCacZtxtLpj
+	 F0G8+e0SS22AiFZHFMVQmSYO2+DtPQHQEgoIbT24XcESYHD7rJZbbrtGBOQ0eadhHO
+	 AbWOdASwebRFNJsIRH3i+Q24eb6aWu4BD/S+QOY3BgfRJE58r4gswB8OZaF8BoCVeC
+	 MMfG9ONKvGXOw==
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Tony Lindgren <tony@atomide.com>
+	Alban Bedel <albeu@free.fr>
 Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: phy: Convert motorola,mapphone-mdm6600 to DT schema
-Date: Sat,  7 Jun 2025 16:26:20 -0500
-Message-ID: <20250607212621.743859-1-robh@kernel.org>
+Subject: [PATCH] dt-bindings: phy: Convert qca,ar7100-usb-phy to DT schema
+Date: Sat,  7 Jun 2025 16:26:23 -0500
+Message-ID: <20250607212625.744008-1-robh@kernel.org>
 X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250607_142628_969701_83F60795 
+X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,139 +75,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert the Motorola Mapphone MDM6600 USB PHY binding to DT schema
-format. It's a straight forward conversion.
+Convert the Qualcomm-Atheros AR7100 USB PHY binding to DT schema format.
+It's a straight forward conversion.
 
 Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 ---
- .../phy/motorola,mapphone-mdm6600.yaml        | 81 +++++++++++++++++++
- .../bindings/phy/phy-mapphone-mdm6600.txt     | 29 -------
- 2 files changed, 81 insertions(+), 29 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/motorola,mapphone-mdm6600.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/phy-mapphone-mdm6600.txt
+ .../devicetree/bindings/phy/phy-ath79-usb.txt | 18 -------
+ .../bindings/phy/qca,ar7100-usb-phy.yaml      | 49 +++++++++++++++++++
+ MAINTAINERS                                   |  2 +-
+ 3 files changed, 50 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/motorola,mapphone-mdm6600.yaml b/Documentation/devicetree/bindings/phy/motorola,mapphone-mdm6600.yaml
+diff --git a/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt b/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
+deleted file mode 100644
+index c3a29c5feea3..000000000000
+--- a/Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
++++ /dev/null
+@@ -1,18 +0,0 @@
+-* Atheros AR71XX/9XXX USB PHY
+-
+-Required properties:
+-- compatible: "qca,ar7100-usb-phy"
+-- #phys-cells: should be 0
+-- reset-names: "phy"[, "suspend-override"]
+-- resets: references to the reset controllers
+-
+-Example:
+-
+-	usb-phy {
+-		compatible = "qca,ar7100-usb-phy";
+-
+-		reset-names = "phy", "suspend-override";
+-		resets = <&rst 4>, <&rst 3>;
+-
+-		#phy-cells = <0>;
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml b/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
 new file mode 100644
-index 000000000000..cb6544b3478d
+index 000000000000..029665530829
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/motorola,mapphone-mdm6600.yaml
-@@ -0,0 +1,81 @@
++++ b/Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
+@@ -0,0 +1,49 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/motorola,mapphone-mdm6600.yaml#
++$id: http://devicetree.org/schemas/phy/qca,ar7100-usb-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Motorola Mapphone MDM6600 USB PHY
++title: Atheros AR71XX/9XXX USB PHY
 +
 +maintainers:
-+  - Tony Lindgren <tony@atomide.com>
++  - Alban Bedel <albeu@free.fr>
 +
 +properties:
 +  compatible:
 +    items:
-+      - const: motorola,mapphone-mdm6600
++      - const: qca,ar7100-usb-phy
 +
-+  enable-gpios:
-+    description: GPIO to enable the USB PHY
-+    maxItems: 1
-+
-+  power-gpios:
-+    description: GPIO to power on the device
-+    maxItems: 1
-+
-+  reset-gpios:
-+    description: GPIO to reset the device
-+    maxItems: 1
-+
-+  motorola,mode-gpios:
-+    description: Two GPIOs to configure MDM6600 USB start-up mode for normal mode versus USB flashing mode
++  reset-names:
++    description: Names of reset lines in order.
++    minItems: 1
 +    items:
-+      - description: normal mode select GPIO
-+      - description: USB flashing mode select GPIO
++      - const: phy
++      - const: suspend-override
 +
-+  motorola,cmd-gpios:
-+    description: Three GPIOs to control the power state of the MDM6600
++  resets:
++    description: References to the reset controllers.
++    minItems: 1
 +    items:
-+      - description: power state control GPIO 0
-+      - description: power state control GPIO 1
-+      - description: power state control GPIO 2
-+
-+  motorola,status-gpios:
-+    description: Three GPIOs to read the power state of the MDM6600
-+    items:
-+      - description: power state read GPIO 0
-+      - description: power state read GPIO 1
-+      - description: power state read GPIO 2
++      - description: Reset controller for phy
++      - description: Reset controller for suspend-override
 +
 +  '#phy-cells':
 +    const: 0
 +
 +required:
 +  - compatible
-+  - enable-gpios
-+  - power-gpios
-+  - reset-gpios
-+  - motorola,mode-gpios
-+  - motorola,cmd-gpios
-+  - motorola,status-gpios
++  - reset-names
++  - resets
++  - '#phy-cells'
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    #include <dt-bindings/gpio/gpio.h>
-+
 +    usb-phy {
-+        compatible = "motorola,mapphone-mdm6600";
-+        enable-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
-+        power-gpios = <&gpio2 22 GPIO_ACTIVE_HIGH>;
-+        reset-gpios = <&gpio2 17 GPIO_ACTIVE_HIGH>;
-+        motorola,mode-gpios = <&gpio5 20 GPIO_ACTIVE_HIGH>,
-+                              <&gpio5 21 GPIO_ACTIVE_HIGH>;
-+        motorola,cmd-gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>,
-+                              <&gpio4 8 GPIO_ACTIVE_HIGH>,
-+                              <&gpio5 14 GPIO_ACTIVE_HIGH>;
-+        motorola,status-gpios = <&gpio2 20 GPIO_ACTIVE_HIGH>,
-+                                <&gpio2 21 GPIO_ACTIVE_HIGH>,
-+                                <&gpio2 23 GPIO_ACTIVE_HIGH>;
++        compatible = "qca,ar7100-usb-phy";
++        reset-names = "phy", "suspend-override";
++        resets = <&rst 4>, <&rst 3>;
 +        #phy-cells = <0>;
 +    };
-diff --git a/Documentation/devicetree/bindings/phy/phy-mapphone-mdm6600.txt b/Documentation/devicetree/bindings/phy/phy-mapphone-mdm6600.txt
-deleted file mode 100644
-index 29427d4f047a..000000000000
---- a/Documentation/devicetree/bindings/phy/phy-mapphone-mdm6600.txt
-+++ /dev/null
-@@ -1,29 +0,0 @@
--Device tree binding documentation for Motorola Mapphone MDM6600 USB PHY
--
--Required properties:
--- compatible		Must be "motorola,mapphone-mdm6600"
--- enable-gpios		GPIO to enable the USB PHY
--- power-gpios		GPIO to power on the device
--- reset-gpios		GPIO to reset the device
--- motorola,mode-gpios	Two GPIOs to configure MDM6600 USB start-up mode for
--			normal mode versus USB flashing mode
--- motorola,cmd-gpios	Three GPIOs to control the power state of the MDM6600
--- motorola,status-gpios	Three GPIOs to read the power state of the MDM6600
--
--Example:
--
--usb-phy {
--	compatible = "motorola,mapphone-mdm6600";
--	enable-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
--	power-gpios = <&gpio2 22 GPIO_ACTIVE_HIGH>;
--	reset-gpios = <&gpio2 17 GPIO_ACTIVE_HIGH>;
--	motorola,mode-gpios = <&gpio5 20 GPIO_ACTIVE_HIGH>,
--			      <&gpio5 21 GPIO_ACTIVE_HIGH>;
--	motorola,cmd-gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>,
--			     <&gpio4 8 GPIO_ACTIVE_HIGH>,
--			     <&gpio5 14 GPIO_ACTIVE_HIGH>;
--	motorola,status-gpios = <&gpio2 20 GPIO_ACTIVE_HIGH>,
--				<&gpio2 21 GPIO_ACTIVE_HIGH>,
--				<&gpio2 23 GPIO_ACTIVE_HIGH>;
--	#phy-cells = <0>;
--};
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 8fc2f21de224..c9457982b406 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3823,7 +3823,7 @@ M:	Alban Bedel <albeu@free.fr>
+ S:	Maintained
+ W:	https://github.com/AlbanBedel/linux
+ T:	git git://github.com/AlbanBedel/linux
+-F:	Documentation/devicetree/bindings/phy/phy-ath79-usb.txt
++F:	Documentation/devicetree/bindings/phy/qca,ar7100-usb-phy.yaml
+ F:	drivers/phy/qualcomm/phy-ath79-usb.c
+ 
+ ATHEROS ATH GENERIC UTILITIES
 -- 
 2.47.2
 
