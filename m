@@ -4,118 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1A0AC5B552
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Jun 2025 14:47:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5AE6C5B552
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Jun 2025 17:58:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c2ZaoQs/LDpCV0hOoMCltmZSfs/ZHJjF+vFxHG+HcOE=; b=KNofjyvfSyZt+G
-	I+/MGRjTQKyvoaH4B6vR9uycFw5/odk1hxAivJOHIMB2bt8QGtfEr8Slcqi7Vj6udBppyRdiR6q3F
-	/JP6LEMNoiyib/3Z/FjL1ZSQmR1YdMuQpPEQpCam8Rpng2bm2KJaHL/9c+bplX17K9+WCAktJSlZc
-	zzF+LC8bMsfjdJmV6hZJLDLar6g93aRPgRm+wni4lPXoTIYGLUcAksiK8LJAmVwEhN8n+KhPowBPA
-	N9qh9WXKM0ikVCm08xzcTPwS5kAFivRTKLIEeoijKNYg9l8UeGsa3HBQ5BaEWNzY5WrTs7xs1WZPR
-	wxyPiNubiCRIo95ZFvug==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=FifRGWWnCXn7pDn07FFmboyiDqxvMlJ4w+EPXmTLl/Q=; b=RScV9UCmMBNR3m54MSnWgX6mr4
+	Rs4BRlHsvilWQmXrbuHp7zi6IDcyZU5KSe2vIjl5XLfe4IAMi8dZjZvuE141bYlYj13whbiQ5JE4R
+	vKyZ3ua4jJPhDaieMkwEOiSKiuz6MD2QsY3/5T8I0PmwZXevHonYFWayELqMpVb+GGNtWPQ3zViCZ
+	TMjoZ9A2/QTvoVqp96aiqip9XA84cTJX5iwjnEfaxdEI33MEB1SnrPR/5+9tHW5YSpftDpQK3FAN/
+	92Bblb9rq6tCtESY7/oQt1up0uztX34tfQjY8AsuUJ/bc7Ql95xknSuFi5ARm4qxIBxcIYs/4RCkv
+	udleKTgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uOdmR-00000004Q2w-15YS;
-	Mon, 09 Jun 2025 14:47:19 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1uOglm-00000004rHb-25sp;
+	Mon, 09 Jun 2025 17:58:50 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uOdmO-00000004Q2A-3UIc
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Jun 2025 14:47:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
-	In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
-	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=L0O5QwSYDvJOcXXECKxmll7ON/5dbbzzpg68D5pSlyQ=; b=AKhmu5NErKA6uUNTk2lTOSLuFZ
-	FMU/z9Q9zg/jPPk1EVm0jt8n7KEhSmvmaJbKToOC9Zfpha2inqRk/pB5a3XlZj/v0su3XF7Nh/35d
-	jPscLFatIiYBqz63Ia0hrZS0LuUPSOih+guKwycQS+pgLfn0npbwrv3x95q3vaB0Jvonmh1TCg2I8
-	L+L+AMHWqOw41QkN8AHYmcpWswLPC0oz8tBFiGv58IS+i6Q4tp1BUDOCp0HobDZhdF96aNP7u7j0X
-	a7pioKuMAyN8Hl0oB44DniDcMf6N8Z31R0CHHtyA2wtDzwxUdKfGb2VmGhO6Bw30trw1/pf6Rg0K6
-	TE4njDVA==;
-Received: from [2600:8803:e7e4:1d00:c2e7:1c16:22c5:b461] (port=44748)
-	by vern.gendns.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.98.1)
-	(envelope-from <david@lechnology.com>)
-	id 1uOdmW-0000000031a-2mW4;
-	Mon, 09 Jun 2025 10:46:32 -0400
-Message-ID: <04b5b857-4996-4278-8fab-7eb816b1febe@lechnology.com>
-Date: Mon, 9 Jun 2025 09:46:31 -0500
+	id 1uOfiO-00000004j7K-07py;
+	Mon, 09 Jun 2025 16:51:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 527CA61137;
+	Mon,  9 Jun 2025 16:51:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8CEBC4CEEB;
+	Mon,  9 Jun 2025 16:51:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749487875;
+	bh=J/wylyJBSAScDQUJw/zDYET2lTL47mjtpTQjkyteLQA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=u5r97JiwYDZa4ls6z2jIQEW2MxkhwJfHKemvYoo983wJVF+y14yLbvOG8Cr2vw0Gi
+	 BC4Q+y8s73xWh+oXW2zeLAVckjuSxM8urn9R3V2DNYrgw3C0xVsJL5IAeEH0fQF+62
+	 DV0mOzVfj6epWGh65sBsutvM7MZYKGnwDuH6+jy3GixFFP0/2Bz5HycTQ12d0Kz24C
+	 IY/V+q4vBoM7kn1yaawj3nQeluIEpgsBVQSAMfCTGDBoJTKSuS0ZsoWfS6qXE6VTy0
+	 CVLZpjPIh4PaClGDJcuvuOX00nvCGgSo8DaaGjIFBTM4tvs9odK/NNFRAemtNh+w6o
+	 MF7oZoG0Fo2cA==
+Date: Mon, 9 Jun 2025 17:51:10 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/4] dt-bindings: phy: airoha: Document support for
+ AN7583 PCIe PHY
+Message-ID: <20250609-shifty-dingbat-31aa70d7d7b1@spud>
+References: <20250606192208.26465-1-ansuelsmth@gmail.com>
+ <20250606192208.26465-4-ansuelsmth@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] dt-bindings: phy: Convert ti,da830-usb-phy to DT schema
-To: "Rob Herring (Arm)" <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250607212638.744524-1-robh@kernel.org>
-Content-Language: en-US
-From: David Lechner <david@lechnology.com>
-Autocrypt: addr=david@lechnology.com; keydata=
- xsFNBFFxkZ8BEADXzbnj9t8XSZYxKJGHdHqYgEBVzRElb3+f11qhDZKzVCMsn1+AN+PlHqC7
- VrCWLsWTSY7WsHB2fW3aXaoidtac5FYoX2IXAun1Sbv15NcBdapImkMv6zxhAyWz6LqPfdCp
- QV+3x6qwUPFeLHdmew8mkSq56qTFgDQr9oQhsrXKHkXFD7aIAf5bM6janQCHgGTVDraRDfEO
- rV9rj7Wu/SfjUCVSCvW/SuWBa3IXTLNgbrNwBfo7Pl/tHuto0jxkVCIJ6J3xa85BKMw1WjA+
- jKzh12S6KWrLUfhEUt64G9WJHiZOnVAjxgCR7TUahVM2OQHcp49ouG/JZsGNniulXH4ErA2O
- Wt6seUEx8XQIm48H96RWgKrwKJ+1WoLEmUcYOJDZUcguMZVc3Astx8aSaRjf6IRBO8XlJSJV
- OorkguvrTQBZJfjoicuFx7VlpdMggMZayv0cqEvzZMSHUt8DCUG74rLhtab9LCg/9wdCwqyE
- JEi/8jaV7JWxwiCmzVpw0mHn1DiUlp5kapZT+Hart0Gc1WW915psA4G6KneisFM5DJe+S5mn
- dUJb5IttTOx37jQQi2igwlSBdSC/M+Zy3sb+DXYJUVjVxK56RGAnlSvjHUx/TkID6Vb6HXvm
- Fgm9vQamTEf+C3XzlY2v1YaMMX8yQjfrzQSoGfB0+9zaD9J/cwARAQABzSREYXZpZCBMZWNo
- bmVyIDxkYXZpZEBsZWNobm9sb2d5LmNvbT7CwdIEEwEIAIYFgmeVPmMECwkIBwkQH4r4jIL3
- fANHFAAAAAAAHgAgc2FsdEBub3RhdGlvbnMuc2VxdW9pYS1wZ3Aub3JnDM6jI9LThow7adCF
- tC3vi3zrklAc6o/kt42Hifhjwk8DFQgKBBYCAwECF4ACGwMCHgEWIQSKc9gqah9QmQfzc4gf
- iviMgvd8AwAAEm4P/04Ou1k+zfSz2Di+wzFiIzz7c3zyU+R04sj0rFx4KRKIBYQQxgQOTkM/
- zbKLMlggKMsbgICjDlWLp6ANCH0A22gGZQx5PJBDfjIl05G+GnK6XilpLyd3U18Xj/7PbB/t
- GHER2Llpf/ePe1YgZPqUuI7fTtFz5QLdIjr/ygb+HWJI/H/IydaJfFDWxQWU6quGi852oKv8
- KMhmhGjgahPF+am6p0iPjkm+PfhHchxgKIneBixpwxFaOlikODcNuo0E+wp3gGLkaDIoGv15
- H3BMZklu96EOKeKQYctpCj8RvTKzjEbn6JxGyXhVGoPMnic2Mwc0TNrXccqDqlQh48FEK6+L
- zAbQrPE3wWl1PFxSUvUc6b3jZ1JAjcVU2GfqhzHC0U1cjJX/XKA3jn60jl9vBgU+DkvT6Gq6
- +pzj2nQszEx+N0+71I2v/vgoB8+kRKlibh2ydDRXfpipn2r4qR5imONrbW7OkLCEJ8nHmpmK
- N8iZKJjjTFmktLesE1s2L0hb9eoWz7i4YGCcIMOZISRTv/w860ebOrH787Bg3JNRz+edvKU8
- TM3twZrCedbi+wBZcgGUBpPkWLH9dUTgpycjRcCOPqOzuHQIOqCMXWFq2cQ9Oy5szMdwsEzh
- Zf1Ys7e2++tAuALI/HXJNk4/BuddZYoorLyw7MV2mVEV91ERPIx4zsFNBFFxkZ8BEADSVjyc
- eG8Up24FFXwv5YmV7yX520kM97N11e1RJVMI1RSU+Na3Xo9J1BW6EFMAdibD6hH8PiMmToKx
- BrfYSLStLh2MbHA2T/3zqicU1nuk376LMyrAuoV/fl8/7Jldwh1c9AADaYXNQfZ84R6nyaTR
- jy4fqcc/dG2kw5ZMln909SMKZc3HdVynmo9pLT2HBOnXu2d3bIGmzuDnDXzh1X8+ods4gViu
- vB31xU1WiANr4TbhaNU+/LmEVfvhS+34Cmz3U5Xs5x7nWdpM6fFfDOSz2sIYXOGAcaV3oJ12
- 1Uul2U2bMTsXxiwdbjmZP9jrzEfvhD5KIOutX+0OzdtM9QVB70QQOEh3maW/FwGdL5stYcad
- sBiEEI6Y2ymVpBgzrPS6HzC+UZLUShOE+aLx+SYBYAuypikMPvG9W3MqWHCsXXEfyp2mCeor
- Kb7PafyaBO/E5REjPmYUpkGMNZH1lGV3jegE9WdOBfXW9xvCwf0UefoFaVhjsjtzvl8lMQnd
- rDBdKPpJ7zIIG6FGSsUYmCtvE+JAk83tfpUpSZKDSzsqtLTI8GE2fQzEuZcBqm6Yk2V1+u6r
- jUjmqEBIzunyeUupaUc+p00JiwNE8v/wcx7UbD5m+PGOkNoLMLe0ti0O7nFlY8avZzy3eLBQ
- enu4WsJjPVYeQGeGB3oLvCGIhT9/WwARAQABwsFfBBgBAgAJBQJRcZGfAhsMAAoJEB+K+IyC
- 93wDC44P/0bAjHgFUPHl7jG5CrWGwgdTNN8NrjpmIxSk37kIuKMzcwP9BWhFF0mx6mCUEaxv
- GdAQ9Va/uXB2TOyhLCGXhlf8uCwxcIyrOlhi2bK6ZIwwovyjjh7GCRnm8cP8ohDCJlDUpHkO
- pmU4tcapbZiBrFaFAahxPMjwK9GJ3JY0lx63McgCEIwm6txNcMnVX5Y3HeW5Wo8DtmeM3Xaj
- JLFaBXIhEfoNHMfDON6UGiXFeR8S9W8dpaX8XEwzPUjZyOG2LvOMAEPXx+kB9mZPTogong8L
- ekL1HZHSY4OYffzQy5fVE+woHAMADkrmuosGkTRCP4IQHXOagoax/Dox01lKTLnlUL1iWWQj
- fRaFXVKxEc2PF1RZUpoO/IQYFB1twcaF2ibT3TlGolbmb3qUYBo/Apl5GJUj/xOWwrbikD+C
- i+vx8yuFUlulbS9Ht+3z1dFjBUDbtZ4Bdy/1heNpA9xORiRs+M4GyTil33pnBXEZp29nh7ev
- 4VJ96sVvnQFzls3motvG+pq/c37Ms1gYayeCzA2iCDuKx6ZkybHg7IzNEduqZQ4bkaBpnEt+
- vwE3Gg5l4dAUFWAs9qY13nyBANQ282FNctziEHCUJZ/Map6TdzHWO6hU1HuvmlwcJSFCOey8
- yhkt386E6KfVYzrIhwTtabg+DLyMZK40Rop1VcU7Nx0M
-In-Reply-To: <20250607212638.744524-1-robh@kernel.org>
-X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id: davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250609_074717_126699_BD6895DC 
-X-CRM114-Status: GOOD (  12.92  )
+In-Reply-To: <20250606192208.26465-4-ansuelsmth@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,85 +71,148 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7991929932676481795=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/7/25 4:26 PM, Rob Herring (Arm) wrote:
-> Convert the TI DA830 USB PHY binding to DT schema format. Add "clocks"
-> and "clock-names" which are already in use.
-> 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+
+--===============7991929932676481795==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="SBK47IYpTz9XKfGh"
+Content-Disposition: inline
+
+
+--SBK47IYpTz9XKfGh
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Jun 06, 2025 at 09:22:04PM +0200, Christian Marangi wrote:
+> Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
+> work. Add the rwquired register to configure the PCIe PHY and provide an
+> example for it.
+>=20
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 > ---
-
-...
-
-> diff --git a/Documentation/devicetree/bindings/phy/ti,da830-usb-phy.yaml b/Documentation/devicetree/bindings/phy/ti,da830-usb-phy.yaml
+>  .../bindings/phy/airoha,an7583-pcie-phy.yaml  | 72 +++++++++++++++++++
+>  1 file changed, 72 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-p=
+cie-phy.yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy=
+=2Eyaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
 > new file mode 100644
-> index 000000000000..e18746f80982
+> index 000000000000..93252092c2e3
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/ti,da830-usb-phy.yaml
-> @@ -0,0 +1,49 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
+> @@ -0,0 +1,72 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/phy/ti,da830-usb-phy.yaml#
+> +$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-phy.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: TI DA8xx/OMAP-L1xx/AM18xx USB PHY
+> +title: Airoha AN7583 PCI-Express PHY
 > +
 > +maintainers:
-> +  - David Lechner <david@lechnology.com>
+> +  - Christian Marangi <ansuelsmth@gmail.com>
 > +
-> +description: >
-> +  This device controls the PHY for both the USB 1.1 OHCI and USB 2.0 OTG
-> +  controllers on DA8xx SoCs. Consumers of this device should use index 0 for
-> +  the USB 2.0 phy device and index 1 for the USB 1.1 phy device.
-
-Probably doesn't matter much, but we could move the description
-of the #phy-cells to that property.
-
-> +
-> +  It also requires a "syscon" node with compatible = "ti,da830-cfgchip", "syscon"
-> +  to access the CFGCHIP2 register.
+> +description:
+> +  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 =
+port.
 > +
 > +properties:
 > +  compatible:
+> +    const: airoha,an7583-pcie-phy
+> +
+> +  reg:
 > +    items:
-> +      - const: ti,da830-usb-phy
+> +      - description: PCIE G3 analog base address
+> +      - description: PCIE G3 PMA base address
+> +      - description: PCIE QPhy analog base address
+> +      - description: PCIE QPhy PMA base address
+> +      - description: PCIE QPhy diagnostic base address
+> +      - description: PCIE detection time base address
+> +      - description: PCIE Rx AEQ base address
 > +
-> +  '#phy-cells':
-> +    const: 1
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
+> +  reg-names:
 > +    items:
-> +      - const: usb0_clk48
-> +      - const: usb1_clk48
+> +      - const: g3-ana
+> +      - const: g3-pma
+> +      - const: qp-ana
+> +      - const: qp-pma
+> +      - const: qp-dig
+> +      - const: xr-dtime
+> +      - const: rx-aeq
+> +
+> +  "#phy-cells":
+> +    const: 0
 > +
 > +required:
 > +  - compatible
-> +  - '#phy-cells'
-
-Probably should make clocks and clock-names required.
-
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
 > +
 > +additionalProperties: false
 > +
 > +examples:
 > +  - |
-> +    usb-phy {
-> +        compatible = "ti,da830-usb-phy";
-> +        #phy-cells = <1>;
-> +        clocks = <&usb_phy_clk 0>, <&usb_phy_clk 1>;
-> +        clock-names = "usb0_clk48", "usb1_clk48";
-> +    };
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    soc {
+> +        #address-cells =3D <2>;
+> +        #size-cells =3D <2>;
+> +
+> +        phy@11e80000 {
+> +            compatible =3D "airoha,an7583-pcie-phy";
+> +            #phy-cells =3D <0>;
+> +            reg =3D <0x0 0x1fc7f000 0x0 0xfff>,
+> +                  <0x0 0x1fc7e000 0x0 0xfff>,
+> +                  <0x0 0x1fa5f000 0x0 0xff>,
+> +                  <0x0 0x1fa5e000 0x0 0x8ff>,
+> +                  <0x0 0x1fa5a000 0x0 0x3ff>,
+> +                  <0x0 0x1fc30044 0x0 0x4>,
+> +                  <0x0 0x1fc35030 0x0 0x4>;
 
+Can you explain please why you have so many reg regions, some of which
+are directly beside one another? Why is one (or more) larger region(s)
+not viable here? Are some of these coming from a syscon that is not
+modelled or are there other devices sharing in between?
+
+> +            reg-names =3D "g3-ana", "g3-pma",
+> +                        "qp-ana", "qp-pma", "qp-dig",
+> +                        "xr-dtime", "rx-aeq";
+> +        };
+> +    };
+> --=20
+> 2.48.1
+>=20
+
+--SBK47IYpTz9XKfGh
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEcQ/gAKCRB4tDGHoIJi
+0ghNAQDZVXyszTnaj2++b9YWhPi1v53MjfsCLhjAXHcqmT9OjQEAqFEmC+q6raBs
+Ba9H2LAeRmFNXpoclo2Ls0FOBRskgg4=
+=0D7n
+-----END PGP SIGNATURE-----
+
+--SBK47IYpTz9XKfGh--
+
+
+--===============7991929932676481795==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7991929932676481795==--
+
