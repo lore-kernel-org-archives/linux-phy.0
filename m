@@ -4,69 +4,165 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E996C5B543
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 16:38:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52DFDC5B543
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 16:50:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aMoUfW1E6E0ZtaIOD9UhnYcZz4WdlocZtOpDhjnv1kc=; b=2otzAXS1j/xwEj
-	Os8siWKWNnoUt5mdv0QTDLbhj0vdlSXE7dP6TxSw6FooZzw8mjYNq4uqf3b4Wzk3gO/nRaCxw8aoV
-	Z6uuZ6kmFo2NcNxEKCReK7duGciS5jZtefzNSEzpNxw5WBsz6xzdDAMVt9t3/N/eKOb95t2vKETyj
-	uZ+S2gQM/J73WVNfAYQmr8tygjKWyVQtD6xkiSwDRSb6Bx8on9mjoX6xEW4vI3JVTTi0VdFrYxcR1
-	p+LpRRJtmplf93JbG8eAWjHY59RbC7foGYW3+WxEGQ44gZ6gqgyP3fJQu66hUsWsMpoIgfO0HDTQY
-	wiwOaSDl0QsIyR3CZIlQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Cc:To:From:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1vISqToAEtubxBLMkG9eGbzg2rV6SDcjvMH/2SCAdos=; b=Sl6hSVAqo8cuanAcc3QjHGbD5q
+	m1d2N0/vQ+/PigJ8B+zFsDh7CULvwcVvdE2ybJ1lQ8JN10JElcojAChygNtoIPlYcvp3n7CxFuENU
+	XcmGpk/xw5aRvYB44S/HRV+nbl7WA9K3LUYohiIOJK8h/2DyxZUhcpDMIWccincCU3MjTiWe48tyZ
+	kvRoh1UzuisIp7Eo6EqeHjEn/a6r2Plv9XkvVcjrYt8n1xMES0mGRPzBTS2shil3IuWa7/e9R87Yk
+	QRsZYejtYeil9G4j3vOjSrPNvgPLFuix8vNysGeZL2ahPL7x479tB0E5A+nWrdYJ5DgZLimVIWgZY
+	bNGzdmYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uP202-00000007V1c-1fHM;
-	Tue, 10 Jun 2025 16:38:58 +0000
-Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
+	id 1uP2An-00000007Wo9-03aP;
+	Tue, 10 Jun 2025 16:50:05 +0000
+Received: from mail-dm6nam12on2062e.outbound.protection.outlook.com ([2a01:111:f403:2417::62e] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uOybx-00000006sYV-2E6n;
-	Tue, 10 Jun 2025 13:01:55 +0000
-Received: from lelvem-sh02.itg.ti.com ([10.180.78.226])
-	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55AD1csU2294498;
-	Tue, 10 Jun 2025 08:01:38 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1749560498;
-	bh=qR+2qB+I+pBxrxBrQKLMvxcIS5poCYVL2NCuq3ScqwM=;
-	h=From:To:CC:Subject:Date;
-	b=d91Mj03YtZ9h4hdQMhBdrWass1lsKI9owxf6c6wHCuYIR+qDIpp8RagaAqMtpM6dX
-	 UmDK0Eon5KeLC+Lz1g7wcDEqrc2rH/jjzhiu16WiGp1FpIFtddBzEXMGsqBlPO0fdf
-	 iYzvs84mGcWi4MKd6VbnM3rX5YwCXRL7Nr8v6BYI=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
-	by lelvem-sh02.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55AD1ch42128236
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Tue, 10 Jun 2025 08:01:38 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Tue, 10
- Jun 2025 08:01:38 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Tue, 10 Jun 2025 08:01:38 -0500
-Received: from uda0492258.dhcp.ti.com (dhcp-172-24-227-169.dhcp.ti.com [172.24.227.169])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55AD1Yq13086009;
-	Tue, 10 Jun 2025 08:01:35 -0500
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <christophe.jaillet@wanadoo.fr>,
-        <sjakhade@cadence.com>, <bwawrzyn@cisco.com>,
-        <u.kleine-koenig@baylibre.com>, <krzysztof.kozlowski@linaro.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
-        <s-vadapalli@ti.com>
-Subject: [PATCH] phy: cadence: Sierra: Add PCIe + USB PHY multilink configuration
-Date: Tue, 10 Jun 2025 18:31:33 +0530
-Message-ID: <20250610130133.2102196-1-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.34.1
+	id 1uOzJP-000000071rb-1zcL
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Jun 2025 13:46:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=o7wBfwFl0D79JDal9BY9Ry3LHVUMgt2bKGUcrxG285I1b5nvEJjlnWukS6pjmIpdzPS4lwvynHUOiUb0h9/r32P2SSFbAYVK7CRuYG+zngjJ/1qRa2pUNaVadSINFzV9yq8Vu1FM9mBg2pJe+Hdsjme0CA5jZ1wi5CCG9ebxGuJAdvC7YJSS8G7v7pXzHxfy0qCoU8QlbvKLt5Xk1gPW1+Y+t4bROo6ee9lQpjCp2b+soiL7ohMu1bwn/rhOw4ncaKdx7G56qOpO4xpAf4IXp+ElEVp9fgGqQYf6IoLknqvcC0trmID9YQ1DQbwaa8QoCwiieuGKDdEspPO6yZ4oMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RG//rHfVD1VuwMOKVsJ10Sc8fwijFnLtCoY6JwQxv60=;
+ b=vtcylQ9XT2RhobUOdfOqRShjG/iAWb9vSZB05OhgiWnyUD6PxQq84aVxyJkoxcf6WcDiTSdiNkZaFvEry7Do2diq17BP1oZys5Ift0NmVNxgrwS02o6C/CRdF01enVOdIRuVQimkLwUgZF74ji0tmm1CU3jG6ffgxdACWLoevbD94UXRvjtO2JFaTvGeDRMglzTosYWmOsUN7Jeaj3DacDMwrnOQZmHeZXGsGfJ4h6YLzGcfmGtSAtFDGhTsn92HIFgymnRdBjgzPDhj/p69DYj//kCjy9gARvWhmGgUMq+TdKcaW3HrYGvFQjIDIgLbmDPDzlN+BQY3PNCBu5em3A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RG//rHfVD1VuwMOKVsJ10Sc8fwijFnLtCoY6JwQxv60=;
+ b=VMuVWleUgM5CERXP1Huxo1W6fbnsdaphLU7OfSSFYTsXCw3Xn1hRcw+oMtzUcKKJIyBONMUPIauDcEkdtGwgHA+fwqeDciqgSET6btscsviAzyNE5ODb4QlLy1YsMkoHm5uLZO9sl/pShRUQ4GPZzvJ3XOfMSr2erNzOdgkBfT53xIpepu2wc/yM6uieG19G4wqCB40NI+iEGuXS8dli/R8DVVkq/CVrLxO0NQ2oQF1eg55f0KZsYq76MgA0JoUzuUhwaoYECesOJ2OwAJSMd+5GQsqnidtR4ODUl3OYrCjkBp2x/lwy4GrynzSrqrpuLKFO20RCJHa0/kWUA57D/g==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from SJ2PR12MB8784.namprd12.prod.outlook.com (2603:10b6:a03:4d0::11)
+ by IA1PR12MB8312.namprd12.prod.outlook.com (2603:10b6:208:3fc::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.36; Tue, 10 Jun
+ 2025 13:46:44 +0000
+Received: from SJ2PR12MB8784.namprd12.prod.outlook.com
+ ([fe80::1660:3173:eef6:6cd9]) by SJ2PR12MB8784.namprd12.prod.outlook.com
+ ([fe80::1660:3173:eef6:6cd9%3]) with mapi id 15.20.8792.036; Tue, 10 Jun 2025
+ 13:46:44 +0000
+Message-ID: <bc15a890-e2ad-466f-8880-2b3a16a1bd5c@nvidia.com>
+Date: Tue, 10 Jun 2025 14:46:39 +0100
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V2 0/2] Disable periodic tracking on Tegra234
+From: Jon Hunter <jonathanh@nvidia.com>
+To: Wayne Chang <waynec@nvidia.com>, jckuo@nvidia.com, vkoul@kernel.org,
+ kishon@kernel.org, thierry.reding@gmail.com
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250519090929.3132456-1-waynec@nvidia.com>
+ <9d00d20f-f766-4b44-a162-35a70ebc6041@nvidia.com>
+Content-Language: en-US
+In-Reply-To: <9d00d20f-f766-4b44-a162-35a70ebc6041@nvidia.com>
+X-ClientProxiedBy: LO6P123CA0060.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:310::20) To SJ2PR12MB8784.namprd12.prod.outlook.com
+ (2603:10b6:a03:4d0::11)
 MIME-Version: 1.0
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SJ2PR12MB8784:EE_|IA1PR12MB8312:EE_
+X-MS-Office365-Filtering-Correlation-Id: 34330b91-86bd-4ed7-16ad-08dda8253cdb
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|10070799003|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?NGVBdWtXNll6a1YzMkZhUXMyOCtvZVJKT29zbzhhUXRYc3pYaFlQQW1SbEty?=
+ =?utf-8?B?NGVSM2t1K0J1T09zL2hGZjJkZ3djZVJLclpIUEF0aGlvRmFDbEVla0x3NHpN?=
+ =?utf-8?B?WGVDZ1ZqSkZXUzNHNDRFZXNHaGZIbEF1Zmc3bC9KQ2xEZk5MWW5oSVdLWk1v?=
+ =?utf-8?B?ZE9KUXZHUTJxaC9sZlNqWE5VdXBvVGlGUC9nTzVjbUoza3JMaHlvdWh6Rm1l?=
+ =?utf-8?B?VERNSXJ6dXRWOEM2aVVlOWhLTEZldmh1emZ0L1NKVzhWVzA5NzBDMnVLZ2lR?=
+ =?utf-8?B?ZUZ5b0FOdjdtdHJpblBqeTdMM1ZxOVdtOUFMUDRLUys2N0Q5WStHZjYxTlp6?=
+ =?utf-8?B?a2NocFJtZVZvK1ZSM3dkV3o5dTRvL1FWZENDN3FibmthMEpWY3hvTml1Q3Bu?=
+ =?utf-8?B?SHlnNThIVy9ZeEJvTk9HK2JndlRVNUp0VkJCZnhnN0NLdkhudU9zditkUUdx?=
+ =?utf-8?B?WWpFNk5CbTEwZW1vYjJOUzdQRWFnOEFOTnl6bEJCWC8zZHFPQlllOFVWMlJm?=
+ =?utf-8?B?YUJGMWRvNnVqbG5xSkhHK1RrWUMyUDNGRGV5K2w4RVRJZWVoZTV2VXNuZnc1?=
+ =?utf-8?B?SlRzVWg1N25UWEZwTHFDcmVidjVaczBVcy84UUx0Nmp6bndqUjcxaVZaSUFS?=
+ =?utf-8?B?OFVVVTNEaTRoaHp2N3pGRGlRYldFdzF4bTMvc09yY0dZWkdwOFl5bndXeEcx?=
+ =?utf-8?B?VktVcHFzZDVXTG0zTmVhclhMeVc0MmMzazh3M0Z3UHhIamJGZG54UGt0OFBu?=
+ =?utf-8?B?bDNyMitvMCs0YmxhcDYwY08vdXEvdHVhMDgzVzNUVm1RUVVSelhGMkdQSVV0?=
+ =?utf-8?B?NmlQelpxeUx4MnVPclk1NDlBSTh4RkorNkpxRXVMTWkzZ0R5OEQyb1l4NGgv?=
+ =?utf-8?B?MUt3bUl4algvSlNWZzR1Y1JVOUhvay9JdFVwVXBoZEZXMlF1RlhpM1oxbGtC?=
+ =?utf-8?B?UUFBa2JFdE1POE9Pd0g1TEVnUExDRTc5ek8raGhQazZ3bXM1Uk5ucEJKZjI3?=
+ =?utf-8?B?VGhrd3JSR3lPdHQ2NGx2SmdaRldrbWtHS2JYbUhleXI2YndicXlFOUxNT3ZB?=
+ =?utf-8?B?WFJLaVIxdjFBWkFtNlltQTRER2dDa2p4cS9uakJVRGdhRGRtR1kzY1hIdVdy?=
+ =?utf-8?B?bXJJdzBVQzdiSEJjQjFTSlh0VCtXem5iSXV1S2Rpd1QxdnNyd3RDd3VlQTdK?=
+ =?utf-8?B?SDF6aHhVMW9HdEs2YUZmeXJLVHZLWmF3dmE5bGNQZlpEaHRpZmdKelhrZVFD?=
+ =?utf-8?B?dFZSN1g4THh5YkJDRmlhaEtRdjJKa3V5K1ZYRHZISXZEYjVpZXJ2RFlaMUx5?=
+ =?utf-8?B?b0JZaHNOZjdxUTBYTzhjL2loSTB5REFZdzBGemIwYXM0T2JBOERCMktoK0dF?=
+ =?utf-8?B?eGVKRjdWdXVpNU1BU281MEVmKzVGSm9DYjYzUC9OUnpmYzJFK29ia3Y3Q01V?=
+ =?utf-8?B?SFRFbm1iQThRbzBvSkxGYjZ2VG1BRkJKQmlOZFA1YS9SUlNySTZ4MFlNZVNu?=
+ =?utf-8?B?aFZFb3dkVEZ1Tml3LzVVQi9KUmNYcVFxTUhCdDd1T1ozZS9taGwrR2FqU1RT?=
+ =?utf-8?B?bnB2bUNhb3pXU0hkaVlBcmVpTVk3QzI4ZHJJVWlFaVBmaXBEbG9OazE4WlM1?=
+ =?utf-8?B?cG1jL1FEeVdCQmlNM2l4Yi80REJCaWEvWTFzc3FaY3A2L0JPN0x1SWhQdytI?=
+ =?utf-8?B?TFJRcjdicjN2RmhLR0lUYWdEN3FUSmNWNXZCbTE4VnhqM2RRT1M0Ly9WYnRR?=
+ =?utf-8?B?WTMveEZhSDZmR0g2NzYyYU5FSWR2Rms2djVlMnV0QnFZVVA2WEtlOWRzNngr?=
+ =?utf-8?B?ZmJLVVBBOGd3N1hJN3BvbGRFTmdURFNZUGp6QytxNWxZa25ra3dXa2JoODFy?=
+ =?utf-8?B?aFBOQVRHOE9WZXFPd3p1L1BhS1JhY2V1SndxL2VWNmxHNGEwZWJRNU5ZZlVo?=
+ =?utf-8?Q?a/8tRP10Nqw=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8784.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(10070799003)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?NmZINEtKcmRGWVB0MHhKemwwbk03NktzemJyOXhjYmUxMEtXTzhNU3VWS0lQ?=
+ =?utf-8?B?cGRraXkzT1IzdHlCK3BQZTFQdXJWOVJwZkdiWUpIRkNydjIwV3VTcVJsb1lE?=
+ =?utf-8?B?dllIUjA5d29wTDl2d0RIa2loZnB5U0R2TUl6K3VUQm8wVkJSUERDQlVBNVR3?=
+ =?utf-8?B?QlI2TGw0dHFUcGZGSVY5V0RveVZHQmpwSmhTQWhOeHcvQk9vQXhPWnY4ai8r?=
+ =?utf-8?B?aW9GNEZyYUVzR1JlMllnT0dESitGT1FsU2JXMXp3M1YxNFo3V2VmdTNGK01p?=
+ =?utf-8?B?NEl3eUF0RHdSMXRSazlBWnB6SGtCc3FLOVZ1aWlQNDMvenA2QnpTYWhHSUhM?=
+ =?utf-8?B?UHplLzg5NWNUZUtnOVVGTkFZenYvL2hmUlJHV2U5QjdmVzBNbVY3aGRuUTRE?=
+ =?utf-8?B?NlBQL2xleW5scjVGZlJCVjJodW5DYXhkVHVVRWZ1RFhJUThoQkxpbCticFUx?=
+ =?utf-8?B?WnRlak1PNWFjTjRUaUlqN1pZa0lVNjJlQW13ZTJLdkpLaUVaMHNjdExIN3lT?=
+ =?utf-8?B?WlhvaDhic1l1d3ZwQmIwYTBtRktUQm1OejZOOUdEQU1MdWJOSmNOVkxiL3ZD?=
+ =?utf-8?B?ejFSdXhpQ0pqWk10VEVMUkVBTDJpdkJMNFN0UnNTeVJFYTcwQTl5YnYxZUpR?=
+ =?utf-8?B?bUkrcXp2S2ZOT0ZabUxFdGpVbkhCTjhRTGE0UHRBenNiRWJ3eWg4YjFVcTdX?=
+ =?utf-8?B?SFhPRXozQldYa05Lc3JWcUg0c3BUUFRLTUh6WFRDV0FtNlM4OWNCaVFFK1ky?=
+ =?utf-8?B?NWY3Vk9mZ0FHOEhTdzJqNEJSQ2l4aDNxQWY2UU1RelUwNm00b3JCOVh4d3V1?=
+ =?utf-8?B?UGFjYlJ2Yi9hSENEVDlFbU1xTkJJemJYUHJLRXZxTjkyUWttYTJOaU9CeU9n?=
+ =?utf-8?B?MUtzTm9Pemo3L1BsVTcrVE1lb3Jwd0psdTlsSFJubFFYck9pZGRzVldxQ1RL?=
+ =?utf-8?B?Y1JLMklkU29TQWUxUXI5RTJ1S0VSaUNFMk9lUnVSVHg4ZnpPbllSa2swMW9r?=
+ =?utf-8?B?Q3V3aGtSOXZldURnSEFkbjVjV21zeDVYa01HTFY0Zlg3ZFdnWmJqNVhCT05q?=
+ =?utf-8?B?ZkVzakp3bWovcU9QTkRnc1p6bXZHbS9mbWUyNVlvQ2Y5VkFHWnBTK1JuTXVQ?=
+ =?utf-8?B?Zkx6WHo4ckFsdHhYajVTM01qbzlrUUhNemZwVzQrY1F4eFpOVmR0SFdHTjNI?=
+ =?utf-8?B?RzFKY0orNUJIVVk2Qnh3dU9KSkNLNS9QTFZ0RStBTHF3MVVaQ2Y1azBDbU1Z?=
+ =?utf-8?B?R0w4NGVoYjFyQ2l0K1RVeHdZM3RqNFN2M2s3K1hJa0F1eHp5MXVDSFcyZXov?=
+ =?utf-8?B?TTlxVEVvK1pXNUJ1M2ZmZ1p0VnZzVzZZTmhmZFNEUllheXBMQ2pBREFIWXZo?=
+ =?utf-8?B?TjRkN3F3Umtlazh4cmFjWlhKbzBlVENDenJVclVkTktrSWFYSmh1VGhrVkVB?=
+ =?utf-8?B?RHMxR2FEQVlja1VpRjgyWWIxRzUrSXd3QXRxd1hSZlBQWjZJbnIya0pUMEJY?=
+ =?utf-8?B?ei81emRxc2dlY2lmMnFGa0twWHVLcVpJd1VCM2lINFhjK0NHTmxFTkRJWEl5?=
+ =?utf-8?B?Qm9ISTRkK0hWMjA4YklJVzk0dzFSalUxeGFCelp1TDNUdXdSZUpKUjJKcHhN?=
+ =?utf-8?B?K2J5MGRrU2g5QmpEWnJHSDJXa2VNZXZDVGIvV213MmVvY1Y4dzVObkVQRE50?=
+ =?utf-8?B?b2ZyN1ZWQzRqRVBhY1FFSkFjSjRNSThISi9CY3hrLy8xK1k1cHhZSTFOR1hE?=
+ =?utf-8?B?TTRMVlhMOUY4OUE3cnp5bVJlRWtBRzIvNVNyKzlmd29WajQ2bWNTU05sbHRS?=
+ =?utf-8?B?VjRxWEFDQjJ6ayttZUIrZm9EQlNGR3pNVDRLWnBXMXdFSFRKckFzbStrY1Vt?=
+ =?utf-8?B?WTEwT1Q5dFd4TXVFYU5USkttSjVtT1hpeXcvVGVhODcxcWhTN041eTIreVRT?=
+ =?utf-8?B?MmI4ZC90Z3VEVzhYQjFjanU0cWN5R294OWJQRFIwcmV2cDdMQ29ReGFjeWQr?=
+ =?utf-8?B?dldvUEpxZ0lHT0NaMWlxNUllMVJRLzErQ1paakRLYkRiVXRCUmt6cmJYeGhJ?=
+ =?utf-8?B?cGZxcEpVZThBZmRhM0hvN0E3ZEYrZ2dRc3ZFdXoybi9XUWV6L1lZRXBpSDNC?=
+ =?utf-8?B?c2ZTMGxvdHJFMkd6MFNHNmQ1bFJETDBzUFlPNGJGLy9yUlppVTNnRVZHcDF2?=
+ =?utf-8?B?b3BGUWVTdnBQdExNRERGdSs1aVplRUt1M29HN0JsS2hHT1BpNE9KNnFqTlFj?=
+ =?utf-8?B?MzVzclRORGFmMDJGRDFnT2RBVUZRPT0=?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 34330b91-86bd-4ed7-16ad-08dda8253cdb
+X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8784.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2025 13:46:44.7432
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: b/BkyqKio4DJwt9xom93x7VxiilmABr5qe3+dfB8fWJ3IFBVfZBClTF0JNwm/ROZk2iDjT2Ar19lITZTvLyPnw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB8312
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250610_060153_666126_3028A28F 
-X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-CacheID: sfid-20250610_064647_513453_8860E919 
+X-CRM114-Status: UNSURE (   8.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,297 +175,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Swapnil Jakhade <sjakhade@cadence.com>
-
-Add register sequences for PCIe + USB multilink configuration for
-Sierra PHY.
-
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
----
-
-Hello,
-
-This patch is based on linux-next tagged next-20250610.
-
-Regards,
-Siddharth.
-
- drivers/phy/cadence/phy-cadence-sierra.c | 180 +++++++++++++++++++++++
- 1 file changed, 180 insertions(+)
-
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 45a5c00843bf..74613382ccb0 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -58,8 +58,11 @@
- #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
- #define SIERRA_CMN_PLLLC1_FBDIV_INT_PREG		0xC3
- #define SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG		0xC5
-+#define SIERRA_CMN_PLLLC1_MODE_PREG			0xC8
-+#define SIERRA_CMN_PLLLC1_LF_COEFF_MODE1_PREG		0xC9
- #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
- #define SIERRA_CMN_PLLLC1_CLK0_PREG			0xCE
-+#define SIERRA_CMN_PLLLC1_BWCAL_MODE1_PREG		0xCF
- #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
- #define SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG	0xE2
- 
-@@ -1541,6 +1544,137 @@ static void cdns_sierra_phy_remove(struct platform_device *pdev)
- 	cdns_sierra_clk_unregister(phy);
- }
- 
-+/* USB refclk 100MHz, 20b, SuperSpeed opt2, ext ssc, PLL LC1, multilink */
-+static const struct cdns_reg_pairs usb_100_ext_ssc_plllc1_cmn_regs[] = {
-+	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
-+	{0x2086, SIERRA_CMN_PLLLC1_LF_COEFF_MODE1_PREG},
-+	{0x2086, SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG},
-+	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE1_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG},
-+	{0x0000, SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG}
-+};
-+
-+/* USB refclk 100MHz, 20b, SuperSpeed opt2, int ssc, PLL LC1, multilink */
-+static const struct cdns_reg_pairs usb_100_int_ssc_plllc1_cmn_regs[] = {
-+	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
-+	{0x000E, SIERRA_CMN_PLLLC1_MODE_PREG},
-+	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG}
-+};
-+
-+static const struct cdns_reg_pairs usb_100_ml_ln_regs[] = {
-+	{0xFE0A, SIERRA_DET_STANDEC_A_PREG},
-+	{0x000F, SIERRA_DET_STANDEC_B_PREG},
-+	{0x55A5, SIERRA_DET_STANDEC_C_PREG},
-+	{0x69AD, SIERRA_DET_STANDEC_D_PREG},
-+	{0x0241, SIERRA_DET_STANDEC_E_PREG},
-+	{0x0010, SIERRA_PSM_LANECAL_DLY_A1_RESETS_PREG},
-+	{0x0014, SIERRA_PSM_A0IN_TMR_PREG},
-+	{0x001D, SIERRA_PSM_A3IN_TMR_PREG},
-+	{0x0004, SIERRA_PSC_LN_A3_PREG},
-+	{0x0004, SIERRA_PSC_LN_IDLE_PREG},
-+	{0x001F, SIERRA_PSC_TX_A0_PREG},
-+	{0x0007, SIERRA_PSC_TX_A1_PREG},
-+	{0x0003, SIERRA_PSC_TX_A2_PREG},
-+	{0x0003, SIERRA_PSC_TX_A3_PREG},
-+	{0x0FFF, SIERRA_PSC_RX_A0_PREG},
-+	{0x0619, SIERRA_PSC_RX_A1_PREG},
-+	{0x0003, SIERRA_PSC_RX_A2_PREG},
-+	{0x0001, SIERRA_PSC_RX_A3_PREG},
-+	{0x0606, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
-+	{0x0001, SIERRA_PLLCTRL_SUBRATE_PREG},
-+	{0x0003, SIERRA_PLLCTRL_GEN_A_PREG},
-+	{0x0406, SIERRA_PLLCTRL_GEN_D_PREG},
-+	{0x5211, SIERRA_PLLCTRL_CPGAIN_MODE_PREG},
-+	{0x00CA, SIERRA_CLKPATH_BIASTRIM_PREG},
-+	{0x2512, SIERRA_DFE_BIASTRIM_PREG},
-+	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
-+	{0x823E, SIERRA_CLKPATHCTRL_TMR_PREG},
-+	{0x078F, SIERRA_RX_CREQ_FLTR_A_MODE1_PREG},
-+	{0x078F, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
-+	{0x7B3C, SIERRA_CREQ_CCLKDET_MODE01_PREG},
-+	{0x023F, SIERRA_RX_CTLE_MAINTENANCE_PREG},
-+	{0x3232, SIERRA_CREQ_FSMCLK_SEL_PREG},
-+	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
-+	{0xCC44, SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG},
-+	{0x8452, SIERRA_CTLELUT_CTRL_PREG},
-+	{0x4121, SIERRA_DFE_ECMP_RATESEL_PREG},
-+	{0x4121, SIERRA_DFE_SMP_RATESEL_PREG},
-+	{0x0002, SIERRA_DEQ_PHALIGN_CTRL},
-+	{0x3200, SIERRA_DEQ_CONCUR_CTRL1_PREG},
-+	{0x5064, SIERRA_DEQ_CONCUR_CTRL2_PREG},
-+	{0x0030, SIERRA_DEQ_EPIPWR_CTRL2_PREG},
-+	{0x5A5A, SIERRA_DEQ_ERRCMP_CTRL_PREG},
-+	{0x02F5, SIERRA_DEQ_OFFSET_CTRL_PREG},
-+	{0x02F5, SIERRA_DEQ_GAIN_CTRL_PREG},
-+	{0xA9A9, SIERRA_DEQ_VGATUNE_CTRL_PREG},
-+	{0x0014, SIERRA_DEQ_GLUT0},
-+	{0x0014, SIERRA_DEQ_GLUT1},
-+	{0x0014, SIERRA_DEQ_GLUT2},
-+	{0x0014, SIERRA_DEQ_GLUT3},
-+	{0x0014, SIERRA_DEQ_GLUT4},
-+	{0x0014, SIERRA_DEQ_GLUT5},
-+	{0x0014, SIERRA_DEQ_GLUT6},
-+	{0x0014, SIERRA_DEQ_GLUT7},
-+	{0x0014, SIERRA_DEQ_GLUT8},
-+	{0x0014, SIERRA_DEQ_GLUT9},
-+	{0x0014, SIERRA_DEQ_GLUT10},
-+	{0x0014, SIERRA_DEQ_GLUT11},
-+	{0x0014, SIERRA_DEQ_GLUT12},
-+	{0x0014, SIERRA_DEQ_GLUT13},
-+	{0x0014, SIERRA_DEQ_GLUT14},
-+	{0x0014, SIERRA_DEQ_GLUT15},
-+	{0x0014, SIERRA_DEQ_GLUT16},
-+	{0x0BAE, SIERRA_DEQ_ALUT0},
-+	{0x0AEB, SIERRA_DEQ_ALUT1},
-+	{0x0A28, SIERRA_DEQ_ALUT2},
-+	{0x0965, SIERRA_DEQ_ALUT3},
-+	{0x08A2, SIERRA_DEQ_ALUT4},
-+	{0x07DF, SIERRA_DEQ_ALUT5},
-+	{0x071C, SIERRA_DEQ_ALUT6},
-+	{0x0659, SIERRA_DEQ_ALUT7},
-+	{0x0596, SIERRA_DEQ_ALUT8},
-+	{0x0514, SIERRA_DEQ_ALUT9},
-+	{0x0492, SIERRA_DEQ_ALUT10},
-+	{0x0410, SIERRA_DEQ_ALUT11},
-+	{0x038E, SIERRA_DEQ_ALUT12},
-+	{0x030C, SIERRA_DEQ_ALUT13},
-+	{0x03F4, SIERRA_DEQ_DFETAP_CTRL_PREG},
-+	{0x0001, SIERRA_DFE_EN_1010_IGNORE_PREG},
-+	{0x3C01, SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG},
-+	{0x3C40, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
-+	{0x1C08, SIERRA_DEQ_TAU_CTRL2_PREG},
-+	{0x0033, SIERRA_DEQ_PICTRL_PREG},
-+	{0x0330, SIERRA_CPICAL_TMRVAL_MODE0_PREG},
-+	{0x01FF, SIERRA_CPICAL_PICNT_MODE1_PREG},
-+	{0x0009, SIERRA_CPI_OUTBUF_RATESEL_PREG},
-+	{0x3232, SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG},
-+	{0x0005, SIERRA_LFPSDET_SUPPORT_PREG},
-+	{0x000F, SIERRA_LFPSFILT_NS_PREG},
-+	{0x0009, SIERRA_LFPSFILT_RD_PREG},
-+	{0x0001, SIERRA_LFPSFILT_MP_PREG},
-+	{0x8013, SIERRA_SDFILT_H2L_A_PREG},
-+	{0x8009, SIERRA_SDFILT_L2H_PREG},
-+	{0x0024, SIERRA_RXBUFFER_CTLECTRL_PREG},
-+	{0x0020, SIERRA_RXBUFFER_RCDFECTRL_PREG},
-+	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}
-+};
-+
-+static const struct cdns_sierra_vals usb_100_ext_ssc_plllc1_cmn_vals = {
-+	.reg_pairs = usb_100_ext_ssc_plllc1_cmn_regs,
-+	.num_regs = ARRAY_SIZE(usb_100_ext_ssc_plllc1_cmn_regs),
-+};
-+
-+static const struct cdns_sierra_vals usb_100_int_ssc_plllc1_cmn_vals = {
-+	.reg_pairs = usb_100_int_ssc_plllc1_cmn_regs,
-+	.num_regs = ARRAY_SIZE(usb_100_int_ssc_plllc1_cmn_regs),
-+};
-+
-+static const struct cdns_sierra_vals usb_100_ml_ln_vals = {
-+	.reg_pairs = usb_100_ml_ln_regs,
-+	.num_regs = ARRAY_SIZE(usb_100_ml_ln_regs),
-+};
-+
- /* SGMII PHY PMA lane configuration */
- static const struct cdns_reg_pairs sgmii_phy_pma_ln_regs[] = {
- 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
-@@ -2513,6 +2647,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
- 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
-+				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
-+				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
-+			},
- 		},
- 	},
- 	.pma_cmn_vals = {
-@@ -2532,11 +2671,20 @@ static const struct cdns_sierra_data cdns_map_sierra = {
- 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
-+				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
-+			},
- 		},
- 		[TYPE_USB] = {
- 			[TYPE_NONE] = {
- 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_plllc1_cmn_vals,
-+				[INTERNAL_SSC] = &usb_100_int_ssc_plllc1_cmn_vals,
-+			},
- 		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -2573,11 +2721,20 @@ static const struct cdns_sierra_data cdns_map_sierra = {
- 				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
- 				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
-+				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
-+				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
-+			},
- 		},
- 		[TYPE_USB] = {
- 			[TYPE_NONE] = {
- 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[EXTERNAL_SSC] = &usb_100_ml_ln_vals,
-+				[INTERNAL_SSC] = &usb_100_ml_ln_vals,
-+			},
- 		},
- 		[TYPE_SGMII] = {
- 			[TYPE_NONE] = {
-@@ -2620,6 +2777,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
- 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
-+				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
-+				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
-+			},
- 		},
- 	},
- 	.phy_pma_ln_vals = {
-@@ -2655,11 +2817,20 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
- 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
- 				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
-+				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
-+				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
-+			},
- 		},
- 		[TYPE_USB] = {
- 			[TYPE_NONE] = {
- 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[EXTERNAL_SSC] = &usb_100_ext_ssc_plllc1_cmn_vals,
-+				[INTERNAL_SSC] = &usb_100_int_ssc_plllc1_cmn_vals,
-+			},
- 		},
- 		[TYPE_SGMII] = {
- 			[TYPE_PCIE] = {
-@@ -2693,11 +2864,20 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
- 				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
- 				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
- 			},
-+			[TYPE_USB] = {
-+				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
-+				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
-+				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
-+			},
- 		},
- 		[TYPE_USB] = {
- 			[TYPE_NONE] = {
- 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
- 			},
-+			[TYPE_PCIE] = {
-+				[EXTERNAL_SSC] = &usb_100_ml_ln_vals,
-+				[INTERNAL_SSC] = &usb_100_ml_ln_vals,
-+			},
- 		},
- 		[TYPE_SGMII] = {
- 			[TYPE_PCIE] = {
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVmlub2QsCgpPbiAyMC8wNS8yMDI1IDEzOjA2LCBKb24gSHVudGVyIHdyb3RlOgo+IAo+IE9u
+IDE5LzA1LzIwMjUgMTA6MDksIFdheW5lIENoYW5nIHdyb3RlOgo+PiBEZWNvdXBsZSBDWUFfVFJL
+X0NPREVfVVBEQVRFX09OX0lETEUgZnJvbSB0cmtfaHdfbW9kZSBhbmQgZGlzYWJsZQo+PiBwZXJp
+b2RpYyB0cmFja2luZyBvbiBUZWdyYTIzNAo+Pgo+PiBIYW90aWVuIEhzdSAoMSk6Cj4+IMKgwqAg
+cGh5OiB0ZWdyYTogeHVzYjogRGlzYWJsZSBwZXJpb2RpYyB0cmFja2luZyBvbiBUZWdyYTIzNAo+
+Pgo+PiBXYXluZSBDaGFuZyAoMSk6Cj4+IMKgwqAgcGh5OiB0ZWdyYTogeHVzYjogRGVjb3VwbGUg
+Q1lBX1RSS19DT0RFX1VQREFURV9PTl9JRExFIGZyb20KPj4gwqDCoMKgwqAgdHJrX2h3X21vZGUK
+Pj4KPj4gwqAgZHJpdmVycy9waHkvdGVncmEveHVzYi10ZWdyYTE4Ni5jIHwgMTYgKysrKysrKysr
+LS0tLS0tLQo+PiDCoCBkcml2ZXJzL3BoeS90ZWdyYS94dXNiLmjCoMKgwqDCoMKgwqDCoMKgwqAg
+fMKgIDEgKwo+PiDCoCAyIGZpbGVzIGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKyksIDcgZGVsZXRp
+b25zKC0pCj4gCj4gCj4gRm9yIHRoZSBzZXJpZXMgLi4uCj4gCj4gUmV2aWV3ZWQtYnk6IEpvbiBI
+dW50ZXIgPGpvbmF0aGFuaEBudmlkaWEuY29tPgo+IFRlc3RlZC1ieTogSm9uIEh1bnRlciA8am9u
+YXRoYW5oQG52aWRpYS5jb20+CgpDYW4gd2UgZ2V0IHRoaXMgaW50byAtbmV4dCBub3c/CgpUaGFu
+a3MhCkpvbgoKLS0gCm52cHVibGljCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
