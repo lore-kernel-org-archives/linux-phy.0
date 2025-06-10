@@ -4,71 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32325C5B552
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 17:18:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BBFDC61DB2
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 22:49:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SObrmZiK+OR9BgzPg2cNR0XuaNIdWkVnddQdgenZ22Y=; b=T/uaeAU/HivHW+
-	jd8mhQ5N6lQjuPpBwOYXOthqCe6ql0mLFrDlWHiql8DlFQTYIJuPiEo3pLc3g1vvF/EI8zhFQL5jE
-	fsdUoWZrt0WgnyuII+n72/qGqssR0DhZpQ9uP7wyPaYv8A7RjDs+76bqibrrMpEFIcndTwVFxF8UQ
-	oNROJtCTtVuTALyGOqAzSzVIic/Bf5G8C4n0KuCnhX4kp7L48xGBeQ+hPVQv0SyxDm3JMGK+q4xbx
-	bZfH2tMvZhAPFcSu3aTxFWT7kG4tJl9NI42ET9A5i+Djr1GoMlDbVhhN4qVB4NesLfubeKJoo4oj+
-	bv7EiEFia1NubG9dCg1A==;
+	List-Owner; bh=YK8f34KaI4w9nSNMWnjPIWHInWm2UXej6MRR5+QxxJY=; b=y1W5xmBrnAns+m
+	WhGfAOytKdHhQ/UFtLLdC2hEa1mCyrFcU9cYLF9f7C910H27J8KWdyKyvWvzRKcEjnMA1vlvdih4n
+	OSfo9JEpONVmkdGzCrKDTAV8nxTDBpU94QETu6mv1OJsQgEWghz5P5itUOE1Xr75+FWS37zckFz17
+	VlLGA0uPIwgoPLlKBKagHZ1i41pm40lHti55sJIDgGDawJSbcJE2Zf5IwpA+5omlZ2avrzCUvMSRz
+	8ZSBt9yLTeBVtvFjlyKKpC5eV5ySvYez4Ca+f6tdezyt/9qarPrAyEP6SBRZtVON7fwo8Y+0FqCuE
+	e89d6LvUm7GsOzzmMU9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uP2c5-00000007bRs-42Uw;
-	Tue, 10 Jun 2025 17:18:17 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uP7mc-00000008HBm-282A;
+	Tue, 10 Jun 2025 22:49:30 +0000
+Received: from mail-il1-x133.google.com ([2607:f8b0:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uOze5-000000075Sh-1Sqh;
-	Tue, 10 Jun 2025 14:08:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749564473; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=JX3mWogYehTYtVJdVmY+UzzvF446RpE/P+y4RIe/MhfEwXWKyknYvJsugJZTds547PQB/hPlS9ho3ejufts25aFKqztcqjN3VI9tq+/9D4wKYR4eZ2KI7+OzEyaLhN1+AbxfbWLcfWlhs5tI35kqDxqUkks3y+wQWWaGoxnhVAA=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749564473; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=8VQasU47Fo9+menKFJwxiTlb3u0Ug7mzOiL+ShPS+BE=; 
-	b=Qx9AHUJ41xRYeOm4zNqJAqc/diELcfIlLKRY5AyrrXI5GbEZ/f6hiAXmy7qmab0++inHvfYR07EqEC9raBb6VK/UuFYaicF6iYQ0qmcIVinf3NN4T00alSJBa2QUIdiJoSWbUWWCjKkFGNnve9qMZ4lQlBxpZVlaP++WrNQ/YsQ=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749564473;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=8VQasU47Fo9+menKFJwxiTlb3u0Ug7mzOiL+ShPS+BE=;
-	b=DUWCLDCONptNaHpFe+ARreVDDr5GUnk+ewKYZbQqZjzqEfSBZw1folva4DCJqK0t
-	Nb/yZ1iiOu3wkHuVDxcUS9iZALpz3+tFcZr8YMNqQGawwjHi27aQVODzSj0k8V0fJuH
-	lT/Wdl/VaN1z308+X16EKJK2lJ2lldC1GFeyEuz0=
-Received: by mx.zohomail.com with SMTPS id 1749564471829701.9243237338251;
-	Tue, 10 Jun 2025 07:07:51 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Tue, 10 Jun 2025 16:07:12 +0200
-Subject: [PATCH v4 4/4] arm64: dts: rockchip: enable USB on Sige5
+	id 1uP56Y-00000007yrs-0qpC
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Jun 2025 19:57:56 +0000
+Received: by mail-il1-x133.google.com with SMTP id e9e14a558f8ab-3db7b3de375so49284835ab.1
+        for <linux-phy@lists.infradead.org>; Tue, 10 Jun 2025 12:57:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ieee.org; s=google; t=1749585472; x=1750190272; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=8arP5MQ8o2r6kwstCGi8yYOLU/0CwgGbynmW/R6CU1w=;
+        b=OqUuJxipXBNGiSpkXXsSU28r/oOXpO8OSmgNa96xRghhOjJgOsmyLTL7iCzPFFsA3f
+         WsEgBFMjen+fLZPnR/ETaq2ckseIldZKou325ZxSFYSWVBOzBwNeeVq00hHYLPbcfA7t
+         iKrvMyHs079Xpm/SbwQ+m8q8MmYO96ZIvpjA8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749585472; x=1750190272;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=8arP5MQ8o2r6kwstCGi8yYOLU/0CwgGbynmW/R6CU1w=;
+        b=J9gBXm7Lzc8vIBiD64gSAzR215DPONa1CfhVTG6Sll7YyJqktI4k02fxLpSvyPEZlK
+         aw1eFzVpAsp5l90uksqn6ERxXWFxpZxsK71IUcyivvYD9n3y2X17ejUsxEnjA2PnEiUp
+         vkbd5p8HZ3ML8VpJTKoxCD3uCg+Z4opiSCAP51oTsczvkfVUL427ML/JcaNCVKj7CXo5
+         l2arVzoz1kGppmf8FLxsT6buoSjjBvOLjZ0py7mro0Y6/cdx2MkPTXykYY2hCp9bVFvd
+         FchMvuTZsYr79P5dWUalCdkw2IszgtmCNYV6fybGxxyFFVdbRDM4lGZg4kGYEjQEcbFN
+         UlBg==
+X-Gm-Message-State: AOJu0YyMYAOwtRijYXWIrcAvuvRWt3871dTVm69HFghgZI6WD3QW1PfB
+	D77qRV+G4nXATf2siezBA+Kqtyq5Jzo0VUHkWuSTRpa+ElQ6N3968vWE3SWragdfPQ==
+X-Gm-Gg: ASbGncvILzrQnwtDccQ6QJF0kFtu7Sy08HkJ/U+mPo0ybRgBOb83OHYYqdmErjJnH32
+	I2nfVmyJ/aSVsZ1Cto2TcqU4NjMlWeXIBVdlXHHeYNjHMpUtdgUuNMgvoMNyFfUOVuxHhNCU5Dy
+	ZJYxd+ewV3Ez6razr5W8fL+DCj014BwXwR89twc3lbsnBHojHlM+o2RKj/jfWVAkDWyVBIOskLM
+	z0XNytxIVXxm3GX6QrjppPrZ39Mf/9BYX8hr0TyopSmG8m6N4pqnMKYet62LSVq+3kzU464Dmes
+	r8Tm2VtgtJUDXrfy0NrOsTCZKmggqrAVQj91q9q5zX8AslCBcq0ZTk1lxUQDDn7fNFVE9xN6epy
+	9MCkzgPxfoBYf7NaxalUi
+X-Google-Smtp-Source: AGHT+IHA9PT4YsWq3Yi8UtnOBccsoGJ8i5Yqo7UNIrwpHrqWTEgWuM/Hzq+BjXEkalsT57ohB6FBsg==
+X-Received: by 2002:a05:6e02:1528:b0:3dc:8109:d64b with SMTP id e9e14a558f8ab-3ddf4d54d2amr367215ab.5.1749585471672;
+        Tue, 10 Jun 2025 12:57:51 -0700 (PDT)
+Received: from [172.22.22.28] (c-73-228-159-35.hsd1.mn.comcast.net. [73.228.159.35])
+        by smtp.googlemail.com with ESMTPSA id 8926c6da1cb9f-5012aaa2869sm52955173.69.2025.06.10.12.57.48
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Jun 2025 12:57:50 -0700 (PDT)
+Message-ID: <5084a99a-9140-4c4f-9873-f5478f48a49d@ieee.org>
+Date: Tue, 10 Jun 2025 14:57:48 -0500
 MIME-Version: 1.0
-Message-Id: <20250610-rk3576-sige5-usb-v4-4-7e7f779619c1@collabora.com>
-References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
-In-Reply-To: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Kever Yang <kever.yang@rock-chips.com>, 
- Frank Wang <frank.wang@rock-chips.com>
-Cc: Alexey Charkov <alchark@gmail.com>, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 2/4] dt-bindings: phy: spacemit: add K1 PCIe/USB3 combo
+ PHY
+To: Ze Huang <huangze@whut.edu.cn>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-kernel@vger.kernel.org, Junzhong Pan <junzhong.pan@spacemit.com>
+References: <20250527-b4-k1-usb3-phy-v2-v5-0-2d366b0af999@whut.edu.cn>
+ <20250527-b4-k1-usb3-phy-v2-v5-2-2d366b0af999@whut.edu.cn>
+Content-Language: en-US
+From: Alex Elder <elder@ieee.org>
+In-Reply-To: <20250527-b4-k1-usb3-phy-v2-v5-2-2d366b0af999@whut.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250610_070809_453072_A9ACA914 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20250610_125754_290093_668753CF 
+X-CRM114-Status: GOOD (  17.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,226 +98,123 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The ArmSoM Sige5 has several USB ports: a Type-A USB 3 port (USB2 lines
-going through a hub), a Type-A USB 2.0 port (also going through a hub),
-a Type-C DC input port that has absolutely no USB data connection and a
-Type-C port with USB3.2 Gen1x1 that's also the maskrom programming port.
+On 5/27/25 7:01 AM, Ze Huang wrote:
+> Introduce support for SpacemiT K1 PCIe/USB3 combo PHY controller.
+> 
+> PCIe portA and USB3 controller share this phy, only one of them can work
+> at any given application scenario.
+> 
+> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> Co-developed-by: Junzhong Pan <junzhong.pan@spacemit.com>
+> Signed-off-by: Junzhong Pan <junzhong.pan@spacemit.com>
+> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
 
-Enable these ports, and set the device role to be host for the host
-ports.
+This PHY has an interaction with PCIe port A.
 
-The data capable Type-C USB port uses a fusb302 for data role switching.
+In practice this PHY is only used for USB 3.0 (not PCIe).
 
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
----
- .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
- 1 file changed, 160 insertions(+)
+However I am told that only the PHY used for port A is capable
+of performing a resistor termination/tuning process (not ports
+B and C).  As a result, the PCIe driver needs this process to
+complete on the PHY for port A; it can then read the port A TX
+and RX calibration values (4 bits each).  It uses these values
+to configure the PHYs for ports B and C.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts b/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-index b09e789c75c47fec7cf7e9810ab0dcca32d9404a..a2b6cdf0e0b949a9df946606efedfbc747f99975 100644
---- a/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dts
-@@ -205,6 +205,33 @@ vcc_3v3_ufs_s0: regulator-vcc-ufs-s0 {
- 		regulator-max-microvolt = <3300000>;
- 		vin-supply = <&vcc_5v0_sys>;
- 	};
-+
-+	vcc_5v0_typec0: regulator-vcc-5v0-typec0 {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpios = <&gpio4 RK_PA6 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usb_otg0_pwren>;
-+		regulator-name = "vcc_5v0_typec0";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v0_device>;
-+	};
-+	vcc_5v0_usbhost: regulator-vcc-5v0-usbhost {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpios = <&gpio4 RK_PA4 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usb_host_pwren>;
-+		regulator-name = "vcc_5v0_usbhost";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v0_device>;
-+	};
-+};
-+
-+&combphy1_psu {
-+	status = "okay";
- };
- 
- &combphy0_ps {
-@@ -643,6 +670,58 @@ regulator-state-mem {
- &i2c2 {
- 	status = "okay";
- 
-+	usbc0: typec-portc@22 {
-+		compatible = "fcs,fusb302";
-+		reg = <0x22>;
-+		interrupt-parent = <&gpio0>;
-+		interrupts = <RK_PA5 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usbc0_interrupt>;
-+		vbus-supply = <&vcc_5v0_typec0>;
-+
-+		connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			data-role = "dual";
-+			/* fusb302 supports PD Rev 2.0 Ver 1.2 */
-+			pd-revision = /bits/ 8 <0x2 0x0 0x1 0x2>;
-+			power-role = "source";
-+			source-pdos = <PDO_FIXED(5000, 2000,
-+						 PDO_FIXED_USB_COMM | PDO_FIXED_DATA_SWAP)>;
-+
-+			altmodes {
-+				displayport {
-+					svid = /bits/ 16 <0xff01>;
-+					vdo = <0xffffffff>;
-+				};
-+			};
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+					usbc0_hs_ep: endpoint {
-+						remote-endpoint = <&usb_drd0_hs_ep>;
-+					};
-+				};
-+				port@1 {
-+					reg = <1>;
-+					usbc0_ss_ep: endpoint {
-+						remote-endpoint = <&usb_drd0_ss_ep>;
-+					};
-+				};
-+				port@2 {
-+					reg = <2>;
-+					usbc0_dp_ep: endpoint {
-+						remote-endpoint = <&usbdp_phy_ep>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+
- 	hym8563: rtc@51 {
- 		compatible = "haoyu,hym8563";
- 		reg = <0x51>;
-@@ -729,6 +808,24 @@ pcie_reset: pcie-reset {
- 			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>;
- 		};
- 	};
-+
-+	usb {
-+		usb_host_pwren: usb-host-pwren {
-+			rockchip,pins = <4 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+		usb_otg0_pwren: usb-otg0-pwren {
-+			rockchip,pins = <4 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+		usbc0_interrupt: usbc0-interrupt {
-+			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+		usbc0_sbu1: usbc0-sbu1 {
-+			rockchip,pins = <2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+		usbc0_sbu2: usbc0-sbu2 {
-+			rockchip,pins = <2 RK_PA7 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+	};
- };
- 
- &sai1 {
-@@ -770,11 +867,74 @@ &sdmmc {
- 	status = "okay";
- };
- 
-+&u2phy0 {
-+	status = "okay";
-+};
-+
-+&u2phy0_otg {
-+	status = "okay";
-+};
-+
-+&u2phy1 {
-+	status = "okay";
-+};
-+
-+&u2phy1_otg {
-+	phy-supply = <&vcc_5v0_usbhost>;
-+	status = "okay";
-+};
-+
- &uart0 {
- 	pinctrl-0 = <&uart0m0_xfer>;
- 	status = "okay";
- };
- 
-+&usb_drd0_dwc3 {
-+	usb-role-switch;
-+	dr_mode = "otg";
-+	status = "okay";
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		port@0 {
-+			reg = <0>;
-+			usb_drd0_hs_ep: endpoint {
-+				remote-endpoint = <&usbc0_hs_ep>;
-+			};
-+		};
-+
-+		port@1 {
-+			reg = <1>;
-+			usb_drd0_ss_ep: endpoint {
-+				remote-endpoint = <&usbc0_ss_ep>;
-+			};
-+		};
-+	};
-+};
-+
-+&usb_drd1_dwc3 {
-+	dr_mode = "host";
-+	status = "okay";
-+};
-+
-+&usbdp_phy {
-+	mode-switch;
-+	orientation-switch;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&usbc0_sbu1 &usbc0_sbu2>;
-+	sbu1-dc-gpios = <&gpio2 RK_PA6 GPIO_ACTIVE_HIGH>;
-+	sbu2-dc-gpios = <&gpio2 RK_PA7 GPIO_ACTIVE_HIGH>;
-+	status = "okay";
-+
-+	port {
-+		usbdp_phy_ep: endpoint {
-+			remote-endpoint = <&usbc0_dp_ep>;
-+		};
-+	};
-+};
-+
- &vop {
- 	status = "okay";
- };
+For this reason, this PHY code (and binding) should not be
+merged until we are sure that the solution will also satisfy
+these PCIe requirements.
 
--- 
-2.49.0
+					-Alex
+
+
+> ---
+>   .../bindings/phy/spacemit,k1-combphy.yaml          | 72 ++++++++++++++++++++++
+>   1 file changed, 72 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..93f7a3bb06bba380def77f87f6db0184af26e9e6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combphy.yaml
+> @@ -0,0 +1,72 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: SpacemiT K1 PCIe/USB3 Combo PHY
+> +
+> +maintainers:
+> +  - Ze Huang <huangze9015@gmail.com>
+> +
+> +description:
+> +  Combo PHY on SpacemiT K1 SoC. PCIe port A and USB3 controller share this
+> +  phy, only one of PCIe port A and USB3 port can work at any given application
+> +  scenario.
+> +
+> +properties:
+> +  compatible:
+> +    const: spacemit,k1-combphy
+> +
+> +  reg:
+> +    items:
+> +      - description: PHY control registers
+> +      - description: PCIe/USB3 mode selection register
+> +
+> +  reg-names:
+> +    items:
+> +      - const: ctrl
+> +      - const: sel
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +    description:
+> +      Indicates the PHY mode to select. The value determines whether the PHY
+> +      operates in PCIe or USB3 mode.
+> +
+> +  spacemit,lfps-threshold:
+> +    description:
+> +      Controls the LFPS signal detection threshold, affects polling.LFPS
+> +      handshake. Lower the threshold when core voltage rises.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    minimum: 0
+> +    maximum: 0xff
+> +
+> +  spacemit,rx-always-on:
+> +    description:
+> +      Affects RX.detect, enhance compatibility of some DFPs in device mode but
+> +      increase power consumption.
+> +    type: boolean
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - resets
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@c0b10000 {
+> +        compatible = "spacemit,k1-combphy";
+> +        reg = <0xc0b10000 0x800>,
+> +              <0xd4282910 0x400>;
+> +        reg-names = "ctrl", "sel";
+> +        resets = <&syscon_apmu 19>;
+> +        #phy-cells = <1>;
+> +    };
+> 
 
 
 -- 
