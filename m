@@ -4,165 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A46F4C5B543
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 16:36:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E996C5B543
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Jun 2025 16:38:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Cc:To:From:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=tZmvEwhZxo0ujrFlZzV8Wv8HX7utcPWqzJduPgsM4eY=; b=11NKvYwPqPF6A7yrYlnyNAqCrL
-	u5ZCnc2iE2RFYmAnKrlnjY7ZsVWEhxJ40UUoT0UUgvIvBjNd8Hs3yVMoqXBmMd1cWQLnGd6RjpVbh
-	cDD7nEakp8ww+w6Tq2N4PdaOZthPMOp8+Z9bpdgMcpYhDju5nvCCJvOhPKmU/VdFRn4D9hJyv+HVW
-	NUlL8AQEuDryu6HYeLsK2hiByOjMc3StSoQRVnm5cbdNjtnlVD5tJDpCAJb/tr9Ux7JTGxAgHKpkz
-	yOqPDmvG0I6CORBIXUGDdEvPGlki95Hww4EvCFTNH1XygCWO5zD3+TaLCSx5nIVmqNgzi3BThIBHP
-	D9nijGRw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aMoUfW1E6E0ZtaIOD9UhnYcZz4WdlocZtOpDhjnv1kc=; b=2otzAXS1j/xwEj
+	Os8siWKWNnoUt5mdv0QTDLbhj0vdlSXE7dP6TxSw6FooZzw8mjYNq4uqf3b4Wzk3gO/nRaCxw8aoV
+	Z6uuZ6kmFo2NcNxEKCReK7duGciS5jZtefzNSEzpNxw5WBsz6xzdDAMVt9t3/N/eKOb95t2vKETyj
+	uZ+S2gQM/J73WVNfAYQmr8tygjKWyVQtD6xkiSwDRSb6Bx8on9mjoX6xEW4vI3JVTTi0VdFrYxcR1
+	p+LpRRJtmplf93JbG8eAWjHY59RbC7foGYW3+WxEGQ44gZ6gqgyP3fJQu66hUsWsMpoIgfO0HDTQY
+	wiwOaSDl0QsIyR3CZIlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uP1y1-00000007UZN-1EH5;
-	Tue, 10 Jun 2025 16:36:53 +0000
-Received: from mail-dm6nam12on2062b.outbound.protection.outlook.com ([2a01:111:f403:2417::62b] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1uP202-00000007V1c-1fHM;
+	Tue, 10 Jun 2025 16:38:58 +0000
+Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uOzIm-000000071f2-0H94
-	for linux-phy@lists.infradead.org;
-	Tue, 10 Jun 2025 13:46:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gnw54mnXPECjANV/TQJ2G40CHlsJRSrIk4bSLYT4LnBM+vUUURIcQZqsl3bNo6tFDbLINdBzHytOu2ApaIHmi9rieJWHQnQEgz2MI/gUm9seIeZ4EYBlS6h2Hx9UEVlVtvuS+1wR/0v6VB0A/ta0ZT8Eac5ElAnlQT9jiHnpEHeYiOw0kUNka/x0rQFk25i/cOc36o4qZ4KL8rdtR05Gk1w6tRp8TxIGVBCCiK+NGSCwbY1sYf9cBptvNNHgYRtsj4mZ/Rcf2ocUmqXUbSyvuSdTphZjy0EEPcd7go3V3SDephffZlm+zdLJFBb8ndeiBTe++UdH/Hy5WlEvbnOxFA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=fxnCifcUdzV9Cdq5sQKlBhTfhON72k4s7QYuc0BxNxw=;
- b=CsUCFsghIS/oTLVj++7alqWPdDzeASvj+GqZ8dyWAv/PQboNj5zMMnBspeA+OEHfDjgHA4JfhiRW2uUdxM9OEMZ0cwJ3ycoi03cPEfYSHA34ZTMkEifO+Gx/JY6Zgb96egaE4Fpv3fV3a3Jo21KAR4w1poE2xM8vdf7KKcuyD5xtt+L08xvc62UR1BCoRbprC3Bh7w2Ca0LwCTjOytCLm5n0zASEYdsrEqttXfnTv5ZBdnUcefc6YRKx68OOCz1qCddej7SFkqOvQiXU0tshFuvJHHu8yvKFnz2fUOETrjZWtySU8Gjsc2RRS1tbIKN5T+GzrBUwFPPwaWFVbaa6Og==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fxnCifcUdzV9Cdq5sQKlBhTfhON72k4s7QYuc0BxNxw=;
- b=iAhqPT6zmsyDVdgSiavNTfPGqI341CT1KKv8OIus8g1rOTFk6VUPlCuNq0BtbHKxjBSE0n8s1jdpmBzxHLRAVbsCvqEx3MoVN3xdSDeMIhUoTTzHZCBIJGQmZsVaCTRYZQSxApo4KyEfoM6cITeOXe7V4cADbdbzt8dJOvafWc1nl+mkjhcVSRVEQRmFb9bL3Xm2lbK94qVH0k99tERE4arEHApVjdzoggRjDXs4jDSg0nqXXYidx/67HIkuvSj/DmjlIaarUgsACtmMHUu5ovUTUYORfP+wezEtiPsoMPO2mCB6de7jUJjGGCsVL2XS/meXBdOHf1TZ5eXAeqR6Ng==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from SJ2PR12MB8784.namprd12.prod.outlook.com (2603:10b6:a03:4d0::11)
- by IA1PR12MB8312.namprd12.prod.outlook.com (2603:10b6:208:3fc::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.36; Tue, 10 Jun
- 2025 13:46:02 +0000
-Received: from SJ2PR12MB8784.namprd12.prod.outlook.com
- ([fe80::1660:3173:eef6:6cd9]) by SJ2PR12MB8784.namprd12.prod.outlook.com
- ([fe80::1660:3173:eef6:6cd9%3]) with mapi id 15.20.8792.036; Tue, 10 Jun 2025
- 13:46:01 +0000
-Message-ID: <31989da4-0242-470c-b77f-2b0506cdb8cd@nvidia.com>
-Date: Tue, 10 Jun 2025 14:45:56 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/1] phy: tegra: xusb: Fix unbalanced regulator disable in
- UTMI PHY mode
-From: Jon Hunter <jonathanh@nvidia.com>
-To: Wayne Chang <waynec@nvidia.com>, jckuo@nvidia.com, vkoul@kernel.org,
- kishon@kernel.org, thierry.reding@gmail.com
-Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
-References: <20250502092606.2275682-1-waynec@nvidia.com>
- <b761ca95-906f-40f6-a51e-b9a1da379a3d@nvidia.com>
-Content-Language: en-US
-In-Reply-To: <b761ca95-906f-40f6-a51e-b9a1da379a3d@nvidia.com>
-X-ClientProxiedBy: LO6P123CA0059.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:310::17) To SJ2PR12MB8784.namprd12.prod.outlook.com
- (2603:10b6:a03:4d0::11)
+	id 1uOybx-00000006sYV-2E6n;
+	Tue, 10 Jun 2025 13:01:55 +0000
+Received: from lelvem-sh02.itg.ti.com ([10.180.78.226])
+	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55AD1csU2294498;
+	Tue, 10 Jun 2025 08:01:38 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1749560498;
+	bh=qR+2qB+I+pBxrxBrQKLMvxcIS5poCYVL2NCuq3ScqwM=;
+	h=From:To:CC:Subject:Date;
+	b=d91Mj03YtZ9h4hdQMhBdrWass1lsKI9owxf6c6wHCuYIR+qDIpp8RagaAqMtpM6dX
+	 UmDK0Eon5KeLC+Lz1g7wcDEqrc2rH/jjzhiu16WiGp1FpIFtddBzEXMGsqBlPO0fdf
+	 iYzvs84mGcWi4MKd6VbnM3rX5YwCXRL7Nr8v6BYI=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+	by lelvem-sh02.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55AD1ch42128236
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
+	Tue, 10 Jun 2025 08:01:38 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Tue, 10
+ Jun 2025 08:01:38 -0500
+Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Tue, 10 Jun 2025 08:01:38 -0500
+Received: from uda0492258.dhcp.ti.com (dhcp-172-24-227-169.dhcp.ti.com [172.24.227.169])
+	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55AD1Yq13086009;
+	Tue, 10 Jun 2025 08:01:35 -0500
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <christophe.jaillet@wanadoo.fr>,
+        <sjakhade@cadence.com>, <bwawrzyn@cisco.com>,
+        <u.kleine-koenig@baylibre.com>, <krzysztof.kozlowski@linaro.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: [PATCH] phy: cadence: Sierra: Add PCIe + USB PHY multilink configuration
+Date: Tue, 10 Jun 2025 18:31:33 +0530
+Message-ID: <20250610130133.2102196-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ2PR12MB8784:EE_|IA1PR12MB8312:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7c824d5e-98b1-4c2b-9f23-08dda825234a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|10070799003|366016;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?U3kremptZ3dmVEhtQXllMHJYR0JmSDg0LzN6K1lHbkRJUnVTOHIrRWZIUW0z?=
- =?utf-8?B?MHFFa1pmZS9lV1RJLytWcDRBQW90ZDE1TVNFZ3hMQTBVeDdZOG5HZnUyVGEw?=
- =?utf-8?B?SHArcmhURjJWVzVUVTFRTXM0dTZ2d1hUdFpGRVVnUkFRZW1XZWtYVGJyRlph?=
- =?utf-8?B?Z2ZVTmIrQWlvUEtMcVB3Ymg4S3RSOWlKMHJyYkZ0TDZrc2dZdTR1S1IxQXdU?=
- =?utf-8?B?ejUrc2doNnFUUUtGcDdjYnZVeW5DeHFvbjVRWUlaMys3V3RlRUluSkFRU21J?=
- =?utf-8?B?a2tBKytDQXFmcDVMOEVIYXpLMDVmTitQcEcvUEFMeHZTaVk1bHk4Z0JuOS9j?=
- =?utf-8?B?bldvZFBFUzNMU3hWMnlBRURVeHZKcnhQMFVUcHJkT1YzbTMySjI5Uk02ZXB6?=
- =?utf-8?B?bks0TDFOL09kZm51WDQxVG9MN1Z6R1U3ZUZxbnJIWVZVV0JkSGNNL3o5cEEx?=
- =?utf-8?B?NnpwSjc5eEp6TzdIczlLTnZPTUFaSnRKdnNxTW5HY1ZFN3FFMnJ1Z0NTMzJs?=
- =?utf-8?B?dUczVFcxaFBzc1QzVjI4Sm5XWGZLV2podzhuZVdJNXAvd0xFbWRTNDBienhp?=
- =?utf-8?B?R2M4eG1vTFc0OXY2bUZmV3U5aXZCSDR4eGFYRnFLSjNUVXpMN1BLWmxmU2Ix?=
- =?utf-8?B?VlgwMk1wZjNEZkFjZjlNSUhpSHg3MDUwNnF1bkkzOXcrMlRibnBqVUQ3NzlV?=
- =?utf-8?B?aHdPMTZIM2ZFMEkzT01nMmV6eGVkT0thUVJwdTNxb2ZaOHZCUG45VC9FYjhv?=
- =?utf-8?B?OUlKcEFCeGRxYU9rR0U0b0NyVHluaUFSY0VkanlSemgweW9tMDduWllIZjhB?=
- =?utf-8?B?VTRVWW03YXlzZzdicDYvMDdXaTdOVjdWMWsvV3NhZHIvTjBUSHc1UEJvRWdE?=
- =?utf-8?B?WTdHWGd4Z243ODNUbDFoUWJING9FYm5ST1U0b21XZTNNblYzRmlseS9Sc016?=
- =?utf-8?B?U2kyOFZ0WFp4R29NMlBxZ0xvem82ZU45ZHQ5L25ORGg2ZGJKb1FMdUsxYkJy?=
- =?utf-8?B?RDJmeDZSbXNFOTNIWTBieEhaNU1WaHdoSG1MZTNVbVNjUEpmRHhxMU1QZ0xx?=
- =?utf-8?B?R2hocjRCYnBCd0hiZ1FVMnloT1F1cmFCeVEwSHBBMWs4SUw2Tis2bTRjR0pu?=
- =?utf-8?B?aVRTYlVOZFc2bjlwZnAzNmlkUWJLbHFXUmI2cEV4V2l5WVJhZXlNUmJJSHBD?=
- =?utf-8?B?Vnc4b0RrWTF2eWJGaFpUVE5vYnF3enBXd0tVbThwak03akxHVUZWQ2cxSEps?=
- =?utf-8?B?NHpoVnpzWnVuazhobVBVQ0lSVWUrT1VCQ3IyUS9ISXJUY3JnSUlyQURYNExn?=
- =?utf-8?B?OHlMS09tNndHTmV1bVgyNC9TY1B1T2VTNXFKMGJDOUdGd3RDL2JxK256VXdW?=
- =?utf-8?B?Vm5OVnEzSXQ0QW9PaGwwTEtQa2hIWExaUit3aERIL2d5eW4rbkMxaW5UNDlZ?=
- =?utf-8?B?SDg5UGVCQlN4VGRENVZmZ3lOM3dmR01DUHk3ajZEbXJ0b0lleUo2cjY0Q1Y4?=
- =?utf-8?B?b2RzUWNuYlpQMzFEVXdwVWFYT1VqQlhjb2FxdHhzQzdQUjYzWnY2QlVHZlJT?=
- =?utf-8?B?aFIvaGNDdG1ybWowc3lkcHVaaERzNHhhbnBnWmJVT0dEckJJeGVKY3FmVnp0?=
- =?utf-8?B?b1U0ZEtpeDlRamJkdWRQZUJzdjR1WmM1VDJvVUx0RFFSWEVVeno1Z0VxTDhZ?=
- =?utf-8?B?OHhkRlJlMGM2YWozSG5TdWNPN0x1QXJibGxzU1lXVCsyT1J3OUUvQW1tQ2Vx?=
- =?utf-8?B?M2pVWWlHRlFaY2ZRV3NqWnhEa29CSkJxN0VmNFlVSTBvbC9kNG15VytBSmhR?=
- =?utf-8?B?S2xLUDJiSGVjK0tSZEhqZ01oUWk4V0lnZS9scHVJZnFiaUx2aFdRcm9rakw4?=
- =?utf-8?B?NGNqb0l4MURqcUdobzZsNVI5U0R0ODVDOXEwZzBMVVZvWEtURTRwTnRyNU1q?=
- =?utf-8?Q?EqcOw53tLz0=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8784.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(10070799003)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?QzB6S0NvV29ER0ExREVYTFZTbUJKUmpvVzZiNnZ1eitYSmhINnZEMkJ0cGty?=
- =?utf-8?B?Y3ZEbFJLU2lBbjlwWmpkNXVWNDkwcGdzZVBUTmt5T3orODRXVGJqdEdHejJP?=
- =?utf-8?B?TjYwUTAxQ0FrZi9nREYwYWluRWhrVndidEx1S3hvUzBOclRCZDJqK1dFQjln?=
- =?utf-8?B?SlZxNGpMaTlETGlBUFFWdVMyVmdVTEEremxOYW9LRjN3ZDB1dHA2UzZXQVdH?=
- =?utf-8?B?VnpxSEFaeElYLzhYeW9mKzBQb2hydzh5Z0lDVUhhSkNKVG5HNWxIQUVKSTRo?=
- =?utf-8?B?UE1jQ1llSkVudVR2QzdHbGs2T3JYYkI0cUZLQnR5OVM1WXU0czZQNk0rZ3RF?=
- =?utf-8?B?b1ZzNHZXM29zVzlaNWpOTkN0ano1dStPM2FMQUdUL0hrSVI3aUlTOFdwSndW?=
- =?utf-8?B?Q1ppL1R4ZTVrdG55ZVZ4WndkcjU1NlczcU5DUFRtdkxBTlo2MTdXa1JLUGsx?=
- =?utf-8?B?SVhjNnFKN1lXd1lTc3BObTNWQVFaZ0VwdjZNZzJudGxZbHYrenUvNWVPc2Ez?=
- =?utf-8?B?R1A0ODQweUdRSUVqUWdMTFNLSitYc1BEazZwYnFRVkM0WU95ZlU5aGprWXN3?=
- =?utf-8?B?VTd3c1JEWWdjbUJ6U1ZzMm9qQmZ0TzgzR1ZnLzA1ZXl2dWIzUTg3MW8zMDZi?=
- =?utf-8?B?bGJaVGRQRzZOZVJjQjVCM0tTZ1F2V0FGaC9wVmRiN1lzejJhVjQ4M3BzY3By?=
- =?utf-8?B?bVlGcTNyd213RHlMU0NlYi9CYWlQZkxsb3E4RG4xMkZqYWY5K2t0UHlrc0s3?=
- =?utf-8?B?dG9INHR3cUY2elhUaXhCckJzdERQeS8rSjFwRzNSdzVHbjVNeklTOGFHVFEx?=
- =?utf-8?B?TXdRQmVwWEJxN3VlQUpCUFZrdHhVcXlCL2xPNW9MTDJ1Sjd0dU9pcXA0RE9N?=
- =?utf-8?B?UUV0d1RPOWZmanZOcmUxbGlvL0VscjFNQnVvRGpuM3JCNnVjYzR1Y0hzNTJE?=
- =?utf-8?B?cUtmS2RBMFBKQ212cTVVUzd1UkErbnMvL0NNOU5LV2U5dWhHYnVvL3dQd3ZP?=
- =?utf-8?B?bmtzaGtBb2NWeHpiQ1U1Z1RpZDhrQ3lmWlllQlFhdjlEWllqRDB1ajdaakVT?=
- =?utf-8?B?U0hsK1RwbXo5WHo1RnViZGIzckNZV0xuZnk0bWQ4ZWRKRzRILzFBM3lDblhL?=
- =?utf-8?B?dDkxd3pCNDF5WTZsR3VtUlZGTWJkM2R5Wlova2RhM3ZFRUxLeVV1dUQrMDAx?=
- =?utf-8?B?TlYvcXQvT29Id0JNbGo4aG9JMUVFYklPNEFwRkE1MzJWVlRhSVdlRXBwUG5I?=
- =?utf-8?B?ZVFBWFhYcllIMnZ0OXVmc3BnVnA0QUJFRFZBcVdDUHQ3L1k5bStqN3lGU2RK?=
- =?utf-8?B?QkJXUkNnVnNOT21yVWhOaExReGUxRWcyZ2xUS1lwVUtEWnpRUzFOMDlmTm9W?=
- =?utf-8?B?aXpTNm9GTW9YVUF6S3BQNEdNbXhNZmw3WmozWDJpTkk0aURuTW9iZ2MzNWRj?=
- =?utf-8?B?NzVUVWZXMHQzOElGRFYzMEJtWGw5Vml1Y0lwQk5RcUJJSVQxcCtSeHNlZVJN?=
- =?utf-8?B?emZySnUrNHZJWjZYVU1JNm5URE16UTg1TW1adUx0by82bi9XdnRXTGNaZWU0?=
- =?utf-8?B?N3lNY0dQNWVlUFZNdGh0L0dPdTI2V1U2TW9ZcStyLzc1ODQ1Ti9keUl6Tzhk?=
- =?utf-8?B?aFV4VEV2Y2t0dnMwclF2NVN2QTgwSkJoNVQ5bWFkNlFBTTN6MUNzQ0pvdGxV?=
- =?utf-8?B?U2Uxd1JQMFR5VStlQ0ZSSXhWdDBkWDI0alVQNG5nempaUE1CdVFrSFh3YXhD?=
- =?utf-8?B?UC85aWtQV3FiQVBSU1ZISXlwQTBqdFJxRTVLNHdwUHpuMGhCY1I2ajlqamY4?=
- =?utf-8?B?d2x6SFFlSHFCRHZoTC95MzdJaS9McW4yb3RMVmxGY1RuMTFHOE5WaEdIMjUv?=
- =?utf-8?B?RCtyV20yNVdxODR4eHFIUHhYcWFoY3c1TzBPRDdQTUsrMGJrWisyUlE1d2Z5?=
- =?utf-8?B?RE80VU5yWjM5N3l0V1VObTVDRmVMUW01TWlQZ01TdDJmVHBpWWlldEZ0TUtj?=
- =?utf-8?B?N3NqTVhINmh6eVc0a1c1UHJ3Mk90cENLa1lQdnBJWkExUE5mcW5GTzM2Nlow?=
- =?utf-8?B?L2cyWmVrMkxzMTVDdGFhMUhxT2IrUjlWQlJQc01NQlZ4RTkwclVaWmZpWWg3?=
- =?utf-8?B?WElyRkNrQTVrZGpXdkJQakFYejlWUWN1ZEVYVHpIMGtzVGp3Y1d0SW96b2tt?=
- =?utf-8?Q?mJ2rnYO1gQ6Bs56P8cpPSPdontn+A/p4uMXcApRJtb3Z?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7c824d5e-98b1-4c2b-9f23-08dda825234a
-X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8784.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2025 13:46:01.8452
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: jhf++c99Y5mQXLYzL4X5xUtpqCNzODQSfEwso979KpEGu3h2xGhz5qzNRTwJU19tSztKME/XQN+yXKuRhB2IEA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB8312
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250610_064608_159336_ACEA3C62 
-X-CRM114-Status: GOOD (  19.21  )
+X-CRM114-CacheID: sfid-20250610_060153_666126_3028A28F 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -174,115 +79,297 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVmlub2QsCgpPbiAxNS8wNS8yMDI1IDEyOjAzLCBKb24gSHVudGVyIHdyb3RlOgo+IAo+IE9u
-IDAyLzA1LzIwMjUgMTA6MjYsIFdheW5lIENoYW5nIHdyb3RlOgo+PiBXaGVuIHRyYW5zaXRpb25p
-bmcgZnJvbSBVU0JfUk9MRV9ERVZJQ0UgdG8gVVNCX1JPTEVfTk9ORSwgdGhlIGNvZGUKPj4gYXNz
-dW1lZCB0aGF0IHRoZSByZWd1bGF0b3Igc2hvdWxkIGJlIGRpc2FibGVkLiBIb3dldmVyLCBpZiB0
-aGUgcmVndWxhdG9yCj4+IGlzIG1hcmtlZCBhcyBhbHdheXMtb24sIHJlZ3VsYXRvcl9pc19lbmFi
-bGVkKCkgY29udGludWVzIHRvIHJldHVybiB0cnVlLAo+PiBsZWFkaW5nIHRvIGFuIGluY29ycmVj
-dCBhdHRlbXB0IHRvIGRpc2FibGUgYSByZWd1bGF0b3Igd2hpY2ggaXMgbm90Cj4+IGVuYWJsZWQu
-Cj4+Cj4+IFRoaXMgY2FuIHJlc3VsdCBpbiB3YXJuaW5ncyBzdWNoIGFzOgo+Pgo+PiBbwqAgMjUw
-LjE1NTYyNF0gV0FSTklORzogQ1BVOiAxIFBJRDogNzMyNiBhdCBkcml2ZXJzL3JlZ3VsYXRvci9j
-b3JlLmM6MzAwNAo+PiBfcmVndWxhdG9yX2Rpc2FibGUrMHhlNC8weDFhMAo+PiBbwqAgMjUwLjE1
-NTY1Ml0gdW5iYWxhbmNlZCBkaXNhYmxlcyBmb3IgVklOX1NZU181VjAKPj4KPj4gVG8gZml4IHRo
-aXMsIHdlIG1vdmUgdGhlIHJlZ3VsYXRvciBjb250cm9sIGxvZ2ljIGludG8KPj4gdGVncmExODZf
-eHVzYl9wYWRjdGxfaWRfb3ZlcnJpZGUoKSBmdW5jdGlvbiBzaW5jZSBpdCdzIGRpcmVjdGx5IHJl
-bGF0ZWQKPj4gdG8gdGhlIElEIG92ZXJyaWRlIHN0YXRlLiBUaGUgcmVndWxhdG9yIGlzIG5vdyBv
-bmx5IGRpc2FibGVkIHdoZW4gdGhlIAo+PiByb2xlCj4+IHRyYW5zaXRpb25zIGZyb20gVVNCX1JP
-TEVfSE9TVCB0byBVU0JfUk9MRV9OT05FLCBieSBjaGVja2luZyB0aGUgVkJVU19JRAo+PiByZWdp
-c3Rlci4gVGhpcyBlbnN1cmVzIHRoYXQgcmVndWxhdG9yIGVuYWJsZS9kaXNhYmxlIG9wZXJhdGlv
-bnMgYXJlCj4+IHByb3Blcmx5IGJhbGFuY2VkIGFuZCBvbmx5IG9jY3VyIHdoZW4gYWN0dWFsbHkg
-dHJhbnNpdGlvbmluZyB0by9mcm9tIGhvc3QKPj4gbW9kZS4KPj4KPj4gRml4ZXM6IDQ5ZDQ2ZTNj
-N2U1OSAoInBoeTogdGVncmE6IHh1c2I6IEFkZCBzZXRfbW9kZSBzdXBwb3J0IGZvciBVVE1JIAo+
-PiBwaHkgb24gVGVncmExODYiKQo+PiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+PiBTaWdu
-ZWQtb2ZmLWJ5OiBXYXluZSBDaGFuZyA8d2F5bmVjQG52aWRpYS5jb20+Cj4+IC0tLQo+PiDCoCBk
-cml2ZXJzL3BoeS90ZWdyYS94dXNiLXRlZ3JhMTg2LmMgfCA1OSArKysrKysrKysrKysrKysrKysr
-LS0tLS0tLS0tLS0tCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzNyBpbnNlcnRpb25zKCspLCAyMiBk
-ZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2ItdGVn
-cmExODYuYyBiL2RyaXZlcnMvcGh5L3RlZ3JhLyAKPj4geHVzYi10ZWdyYTE4Ni5jCj4+IGluZGV4
-IGZhZTYyNDJhYTczMC4uMWIzNWQ1MDgyMWY3IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL3BoeS90
-ZWdyYS94dXNiLXRlZ3JhMTg2LmMKPj4gKysrIGIvZHJpdmVycy9waHkvdGVncmEveHVzYi10ZWdy
-YTE4Ni5jCj4+IEBAIC03NzQsMTMgKzc3NCwxNSBAQCBzdGF0aWMgaW50IAo+PiB0ZWdyYTE4Nl94
-dXNiX3BhZGN0bF92YnVzX292ZXJyaWRlKHN0cnVjdCB0ZWdyYV94dXNiX3BhZGN0bCAqcGFkY3Rs
-LAo+PiDCoCB9Cj4+IMKgIHN0YXRpYyBpbnQgdGVncmExODZfeHVzYl9wYWRjdGxfaWRfb3ZlcnJp
-ZGUoc3RydWN0IHRlZ3JhX3h1c2JfcGFkY3RsIAo+PiAqcGFkY3RsLAo+PiAtwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBib29sIHN0YXR1cykKPj4gK8KgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3RydWN0IHRlZ3JhX3h1
-c2JfdXNiMl9wb3J0ICpwb3J0LCBib29sIHN0YXR1cykKPj4gwqAgewo+PiAtwqDCoMKgIHUzMiB2
-YWx1ZTsKPj4gK8KgwqDCoCB1MzIgdmFsdWUsIGlkX292ZXJyaWRlOwo+PiArwqDCoMKgIGludCBl
-cnIgPSAwOwo+PiDCoMKgwqDCoMKgIGRldl9kYmcocGFkY3RsLT5kZXYsICIlcyBpZCBvdmVycmlk
-ZVxuIiwgc3RhdHVzID8gInNldCIgOiAiY2xlYXIiKTsKPj4gwqDCoMKgwqDCoCB2YWx1ZSA9IHBh
-ZGN0bF9yZWFkbChwYWRjdGwsIFVTQjJfVkJVU19JRCk7Cj4+ICvCoMKgwqAgaWRfb3ZlcnJpZGUg
-PSB2YWx1ZSAmIElEX09WRVJSSURFKH4wKTsKPj4gwqDCoMKgwqDCoCBpZiAoc3RhdHVzKSB7Cj4+
-IMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAodmFsdWUgJiBWQlVTX09WRVJSSURFKSB7Cj4+IEBAIC03
-OTEsMTUgKzc5MywzNSBAQCBzdGF0aWMgaW50IAo+PiB0ZWdyYTE4Nl94dXNiX3BhZGN0bF9pZF9v
-dmVycmlkZShzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGwgKnBhZGN0bCwKPj4gwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgdmFsdWUgPSBwYWRjdGxfcmVhZGwocGFkY3RsLCBVU0IyX1ZCVVNfSUQp
-Owo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgfQo+PiAtwqDCoMKgwqDCoMKgwqAgdmFsdWUgJj0gfklE
-X09WRVJSSURFKH4wKTsKPj4gLcKgwqDCoMKgwqDCoMKgIHZhbHVlIHw9IElEX09WRVJSSURFX0dS
-T1VOREVEOwo+PiArwqDCoMKgwqDCoMKgwqAgaWYgKGlkX292ZXJyaWRlICE9IElEX09WRVJSSURF
-X0dST1VOREVEKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHZhbHVlICY9IH5JRF9PVkVS
-UklERSh+MCk7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHZhbHVlIHw9IElEX09WRVJSSURF
-X0dST1VOREVEOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwYWRjdGxfd3JpdGVsKHBhZGN0
-bCwgdmFsdWUsIFVTQjJfVkJVU19JRCk7Cj4+ICsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-ZXJyID0gcmVndWxhdG9yX2VuYWJsZShwb3J0LT5zdXBwbHkpOwo+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCBpZiAoZXJyKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZGV2
-X2VycihwYWRjdGwtPmRldiwgIkZhaWxlZCB0byBlbmFibGUgcmVndWxhdG9yOiAKPj4gJWRcbiIs
-IGVycik7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIGVycjsKPj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfQo+PiArwqDCoMKgwqDCoMKgwqAgfQo+PiDCoMKgwqDC
-oMKgIH0gZWxzZSB7Cj4+IC3CoMKgwqDCoMKgwqDCoCB2YWx1ZSAmPSB+SURfT1ZFUlJJREUofjAp
-Owo+PiAtwqDCoMKgwqDCoMKgwqAgdmFsdWUgfD0gSURfT1ZFUlJJREVfRkxPQVRJTkc7Cj4+ICvC
-oMKgwqDCoMKgwqDCoCBpZiAoaWRfb3ZlcnJpZGUgPT0gSURfT1ZFUlJJREVfR1JPVU5ERUQpIHsK
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyoKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCAqIFRoZSByZWd1bGF0b3IgaXMgZGlzYWJsZWQgb25seSB3aGVuIHRoZSByb2xlIHRyYW5zaXRp
-b25zCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKiBmcm9tIFVTQl9ST0xFX0hPU1QgdG8g
-VVNCX1JPTEVfTk9ORS4KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqLwo+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBlcnIgPSByZWd1bGF0b3JfZGlzYWJsZShwb3J0LT5zdXBwbHkpOwo+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAoZXJyKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgZGV2X2VycihwYWRjdGwtPmRldiwgIkZhaWxlZCB0byBkaXNhYmxlIHJl
-Z3VsYXRvcjogCj4+ICVkXG4iLCBlcnIpOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHJldHVybiBlcnI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH0KPj4gKwo+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCB2YWx1ZSAmPSB+SURfT1ZFUlJJREUofjApOwo+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCB2YWx1ZSB8PSBJRF9PVkVSUklERV9GTE9BVElORzsKPj4gK8KgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgcGFkY3RsX3dyaXRlbChwYWRjdGwsIHZhbHVlLCBVU0IyX1ZCVVNf
-SUQpOwo+PiArwqDCoMKgwqDCoMKgwqAgfQo+PiDCoMKgwqDCoMKgIH0KPj4gLcKgwqDCoCBwYWRj
-dGxfd3JpdGVsKHBhZGN0bCwgdmFsdWUsIFVTQjJfVkJVU19JRCk7Cj4+IC0KPj4gwqDCoMKgwqDC
-oCByZXR1cm4gMDsKPj4gwqAgfQo+PiBAQCAtODE4LDI3ICs4NDAsMjAgQEAgc3RhdGljIGludCB0
-ZWdyYTE4Nl91dG1pX3BoeV9zZXRfbW9kZShzdHJ1Y3QgcGh5IAo+PiAqcGh5LCBlbnVtIHBoeV9t
-b2RlIG1vZGUsCj4+IMKgwqDCoMKgwqAgaWYgKG1vZGUgPT0gUEhZX01PREVfVVNCX09URykgewo+
-PiDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHN1Ym1vZGUgPT0gVVNCX1JPTEVfSE9TVCkgewo+PiAt
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0ZWdyYTE4Nl94dXNiX3BhZGN0bF9pZF9vdmVycmlkZShw
-YWRjdGwsIHRydWUpOwo+PiAtCj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGVyciA9IHJlZ3Vs
-YXRvcl9lbmFibGUocG9ydC0+c3VwcGx5KTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZXJy
-ID0gdGVncmExODZfeHVzYl9wYWRjdGxfaWRfb3ZlcnJpZGUocGFkY3RsLCBwb3J0LCB0cnVlKTsK
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGVycikKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIH0gZWxzZSBpZiAo
-c3VibW9kZSA9PSBVU0JfUk9MRV9ERVZJQ0UpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgdGVncmExODZfeHVzYl9wYWRjdGxfdmJ1c19vdmVycmlkZShwYWRjdGwsIHRydWUpOwo+PiDC
-oMKgwqDCoMKgwqDCoMKgwqAgfSBlbHNlIGlmIChzdWJtb2RlID09IFVTQl9ST0xFX05PTkUpIHsK
-Pj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyoKPj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCAqIFdoZW4gcG9ydCBpcyBwZXJpcGhlcmFsIG9ubHkgb3Igcm9sZSB0cmFuc2l0aW9ucyB0bwo+
-PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogVVNCX1JPTEVfTk9ORSBmcm9tIFVTQl9ST0xF
-X0RFVklDRSwgcmVndWxhdG9yIGlzIG5vdAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICog
-ZW5hYmxlZC4KPj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqLwo+PiAtwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBpZiAocmVndWxhdG9yX2lzX2VuYWJsZWQocG9ydC0+c3VwcGx5KSkKPj4gLcKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWd1bGF0b3JfZGlzYWJsZShwb3J0LT5zdXBw
-bHkpOwo+PiAtCj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHRlZ3JhMTg2X3h1c2JfcGFkY3Rs
-X2lkX292ZXJyaWRlKHBhZGN0bCwgZmFsc2UpOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBl
-cnIgPSB0ZWdyYTE4Nl94dXNiX3BhZGN0bF9pZF9vdmVycmlkZShwYWRjdGwsIHBvcnQsIGZhbHNl
-KTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGVycikKPj4gK8KgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-dGVncmExODZfeHVzYl9wYWRjdGxfdmJ1c19vdmVycmlkZShwYWRjdGwsIGZhbHNlKTsKPj4gwqDC
-oMKgwqDCoMKgwqDCoMKgIH0KPj4gwqDCoMKgwqDCoCB9Cj4+IC0KPj4gK291dDoKPj4gwqDCoMKg
-wqDCoCBtdXRleF91bmxvY2soJnBhZGN0bC0+bG9jayk7Cj4+IC0KPj4gwqDCoMKgwqDCoCByZXR1
-cm4gZXJyOwo+PiDCoCB9Cj4gCj4gCj4gUmV2aWV3ZWQtYnk6IEpvbiBIdW50ZXIgPGpvbmF0aGFu
-aEBudmlkaWEuY29tPgo+IFRlc3RlZC1ieTogSm9uIEh1bnRlciA8am9uYXRoYW5oQG52aWRpYS5j
-b20+Cj4gCj4gVGhhbmtzIGZvciBmaXhpbmcgdGhpcyEKCkNhbiB3ZSBnZXQgdGhpcyBpbnRvIC1u
-ZXh0IG5vdz8KClRoYW5rcyEKCkpvbgoKLS0gCm52cHVibGljCgoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+From: Swapnil Jakhade <sjakhade@cadence.com>
+
+Add register sequences for PCIe + USB multilink configuration for
+Sierra PHY.
+
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+---
+
+Hello,
+
+This patch is based on linux-next tagged next-20250610.
+
+Regards,
+Siddharth.
+
+ drivers/phy/cadence/phy-cadence-sierra.c | 180 +++++++++++++++++++++++
+ 1 file changed, 180 insertions(+)
+
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 45a5c00843bf..74613382ccb0 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -58,8 +58,11 @@
+ #define SIERRA_CMN_PLLLC1_GEN_PREG			0xC2
+ #define SIERRA_CMN_PLLLC1_FBDIV_INT_PREG		0xC3
+ #define SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG		0xC5
++#define SIERRA_CMN_PLLLC1_MODE_PREG			0xC8
++#define SIERRA_CMN_PLLLC1_LF_COEFF_MODE1_PREG		0xC9
+ #define SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG		0xCA
+ #define SIERRA_CMN_PLLLC1_CLK0_PREG			0xCE
++#define SIERRA_CMN_PLLLC1_BWCAL_MODE1_PREG		0xCF
+ #define SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG		0xD0
+ #define SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG	0xE2
+ 
+@@ -1541,6 +1544,137 @@ static void cdns_sierra_phy_remove(struct platform_device *pdev)
+ 	cdns_sierra_clk_unregister(phy);
+ }
+ 
++/* USB refclk 100MHz, 20b, SuperSpeed opt2, ext ssc, PLL LC1, multilink */
++static const struct cdns_reg_pairs usb_100_ext_ssc_plllc1_cmn_regs[] = {
++	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
++	{0x2086, SIERRA_CMN_PLLLC1_LF_COEFF_MODE1_PREG},
++	{0x2086, SIERRA_CMN_PLLLC1_LF_COEFF_MODE0_PREG},
++	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE1_PREG},
++	{0x0000, SIERRA_CMN_PLLLC1_BWCAL_MODE0_PREG},
++	{0x0000, SIERRA_CMN_PLLLC1_SS_TIME_STEPSIZE_MODE_PREG}
++};
++
++/* USB refclk 100MHz, 20b, SuperSpeed opt2, int ssc, PLL LC1, multilink */
++static const struct cdns_reg_pairs usb_100_int_ssc_plllc1_cmn_regs[] = {
++	{0x002D, SIERRA_CMN_PLLLC1_FBDIV_INT_PREG},
++	{0x000E, SIERRA_CMN_PLLLC1_MODE_PREG},
++	{0x1005, SIERRA_CMN_PLLLC1_CLK0_PREG}
++};
++
++static const struct cdns_reg_pairs usb_100_ml_ln_regs[] = {
++	{0xFE0A, SIERRA_DET_STANDEC_A_PREG},
++	{0x000F, SIERRA_DET_STANDEC_B_PREG},
++	{0x55A5, SIERRA_DET_STANDEC_C_PREG},
++	{0x69AD, SIERRA_DET_STANDEC_D_PREG},
++	{0x0241, SIERRA_DET_STANDEC_E_PREG},
++	{0x0010, SIERRA_PSM_LANECAL_DLY_A1_RESETS_PREG},
++	{0x0014, SIERRA_PSM_A0IN_TMR_PREG},
++	{0x001D, SIERRA_PSM_A3IN_TMR_PREG},
++	{0x0004, SIERRA_PSC_LN_A3_PREG},
++	{0x0004, SIERRA_PSC_LN_IDLE_PREG},
++	{0x001F, SIERRA_PSC_TX_A0_PREG},
++	{0x0007, SIERRA_PSC_TX_A1_PREG},
++	{0x0003, SIERRA_PSC_TX_A2_PREG},
++	{0x0003, SIERRA_PSC_TX_A3_PREG},
++	{0x0FFF, SIERRA_PSC_RX_A0_PREG},
++	{0x0619, SIERRA_PSC_RX_A1_PREG},
++	{0x0003, SIERRA_PSC_RX_A2_PREG},
++	{0x0001, SIERRA_PSC_RX_A3_PREG},
++	{0x0606, SIERRA_PLLCTRL_FBDIV_MODE01_PREG},
++	{0x0001, SIERRA_PLLCTRL_SUBRATE_PREG},
++	{0x0003, SIERRA_PLLCTRL_GEN_A_PREG},
++	{0x0406, SIERRA_PLLCTRL_GEN_D_PREG},
++	{0x5211, SIERRA_PLLCTRL_CPGAIN_MODE_PREG},
++	{0x00CA, SIERRA_CLKPATH_BIASTRIM_PREG},
++	{0x2512, SIERRA_DFE_BIASTRIM_PREG},
++	{0x0000, SIERRA_DRVCTRL_ATTEN_PREG},
++	{0x823E, SIERRA_CLKPATHCTRL_TMR_PREG},
++	{0x078F, SIERRA_RX_CREQ_FLTR_A_MODE1_PREG},
++	{0x078F, SIERRA_RX_CREQ_FLTR_A_MODE0_PREG},
++	{0x7B3C, SIERRA_CREQ_CCLKDET_MODE01_PREG},
++	{0x023F, SIERRA_RX_CTLE_MAINTENANCE_PREG},
++	{0x3232, SIERRA_CREQ_FSMCLK_SEL_PREG},
++	{0x0000, SIERRA_CREQ_EQ_CTRL_PREG},
++	{0xCC44, SIERRA_CREQ_EQ_OPEN_EYE_THRESH_PREG},
++	{0x8452, SIERRA_CTLELUT_CTRL_PREG},
++	{0x4121, SIERRA_DFE_ECMP_RATESEL_PREG},
++	{0x4121, SIERRA_DFE_SMP_RATESEL_PREG},
++	{0x0002, SIERRA_DEQ_PHALIGN_CTRL},
++	{0x3200, SIERRA_DEQ_CONCUR_CTRL1_PREG},
++	{0x5064, SIERRA_DEQ_CONCUR_CTRL2_PREG},
++	{0x0030, SIERRA_DEQ_EPIPWR_CTRL2_PREG},
++	{0x5A5A, SIERRA_DEQ_ERRCMP_CTRL_PREG},
++	{0x02F5, SIERRA_DEQ_OFFSET_CTRL_PREG},
++	{0x02F5, SIERRA_DEQ_GAIN_CTRL_PREG},
++	{0xA9A9, SIERRA_DEQ_VGATUNE_CTRL_PREG},
++	{0x0014, SIERRA_DEQ_GLUT0},
++	{0x0014, SIERRA_DEQ_GLUT1},
++	{0x0014, SIERRA_DEQ_GLUT2},
++	{0x0014, SIERRA_DEQ_GLUT3},
++	{0x0014, SIERRA_DEQ_GLUT4},
++	{0x0014, SIERRA_DEQ_GLUT5},
++	{0x0014, SIERRA_DEQ_GLUT6},
++	{0x0014, SIERRA_DEQ_GLUT7},
++	{0x0014, SIERRA_DEQ_GLUT8},
++	{0x0014, SIERRA_DEQ_GLUT9},
++	{0x0014, SIERRA_DEQ_GLUT10},
++	{0x0014, SIERRA_DEQ_GLUT11},
++	{0x0014, SIERRA_DEQ_GLUT12},
++	{0x0014, SIERRA_DEQ_GLUT13},
++	{0x0014, SIERRA_DEQ_GLUT14},
++	{0x0014, SIERRA_DEQ_GLUT15},
++	{0x0014, SIERRA_DEQ_GLUT16},
++	{0x0BAE, SIERRA_DEQ_ALUT0},
++	{0x0AEB, SIERRA_DEQ_ALUT1},
++	{0x0A28, SIERRA_DEQ_ALUT2},
++	{0x0965, SIERRA_DEQ_ALUT3},
++	{0x08A2, SIERRA_DEQ_ALUT4},
++	{0x07DF, SIERRA_DEQ_ALUT5},
++	{0x071C, SIERRA_DEQ_ALUT6},
++	{0x0659, SIERRA_DEQ_ALUT7},
++	{0x0596, SIERRA_DEQ_ALUT8},
++	{0x0514, SIERRA_DEQ_ALUT9},
++	{0x0492, SIERRA_DEQ_ALUT10},
++	{0x0410, SIERRA_DEQ_ALUT11},
++	{0x038E, SIERRA_DEQ_ALUT12},
++	{0x030C, SIERRA_DEQ_ALUT13},
++	{0x03F4, SIERRA_DEQ_DFETAP_CTRL_PREG},
++	{0x0001, SIERRA_DFE_EN_1010_IGNORE_PREG},
++	{0x3C01, SIERRA_DEQ_TAU_CTRL1_FAST_MAINT_PREG},
++	{0x3C40, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
++	{0x1C08, SIERRA_DEQ_TAU_CTRL2_PREG},
++	{0x0033, SIERRA_DEQ_PICTRL_PREG},
++	{0x0330, SIERRA_CPICAL_TMRVAL_MODE0_PREG},
++	{0x01FF, SIERRA_CPICAL_PICNT_MODE1_PREG},
++	{0x0009, SIERRA_CPI_OUTBUF_RATESEL_PREG},
++	{0x3232, SIERRA_CPICAL_RES_STARTCODE_MODE23_PREG},
++	{0x0005, SIERRA_LFPSDET_SUPPORT_PREG},
++	{0x000F, SIERRA_LFPSFILT_NS_PREG},
++	{0x0009, SIERRA_LFPSFILT_RD_PREG},
++	{0x0001, SIERRA_LFPSFILT_MP_PREG},
++	{0x8013, SIERRA_SDFILT_H2L_A_PREG},
++	{0x8009, SIERRA_SDFILT_L2H_PREG},
++	{0x0024, SIERRA_RXBUFFER_CTLECTRL_PREG},
++	{0x0020, SIERRA_RXBUFFER_RCDFECTRL_PREG},
++	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}
++};
++
++static const struct cdns_sierra_vals usb_100_ext_ssc_plllc1_cmn_vals = {
++	.reg_pairs = usb_100_ext_ssc_plllc1_cmn_regs,
++	.num_regs = ARRAY_SIZE(usb_100_ext_ssc_plllc1_cmn_regs),
++};
++
++static const struct cdns_sierra_vals usb_100_int_ssc_plllc1_cmn_vals = {
++	.reg_pairs = usb_100_int_ssc_plllc1_cmn_regs,
++	.num_regs = ARRAY_SIZE(usb_100_int_ssc_plllc1_cmn_regs),
++};
++
++static const struct cdns_sierra_vals usb_100_ml_ln_vals = {
++	.reg_pairs = usb_100_ml_ln_regs,
++	.num_regs = ARRAY_SIZE(usb_100_ml_ln_regs),
++};
++
+ /* SGMII PHY PMA lane configuration */
+ static const struct cdns_reg_pairs sgmii_phy_pma_ln_regs[] = {
+ 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
+@@ -2513,6 +2647,11 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.pma_cmn_vals = {
+@@ -2532,11 +2671,20 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
++			[TYPE_PCIE] = {
++				[EXTERNAL_SSC] = &usb_100_ext_ssc_plllc1_cmn_vals,
++				[INTERNAL_SSC] = &usb_100_int_ssc_plllc1_cmn_vals,
++			},
+ 		},
+ 		[TYPE_SGMII] = {
+ 			[TYPE_NONE] = {
+@@ -2573,11 +2721,20 @@ static const struct cdns_sierra_data cdns_map_sierra = {
+ 				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ml_pcie_100_int_ssc_ln_vals,
++			},
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
++			[TYPE_PCIE] = {
++				[EXTERNAL_SSC] = &usb_100_ml_ln_vals,
++				[INTERNAL_SSC] = &usb_100_ml_ln_vals,
++			},
+ 		},
+ 		[TYPE_SGMII] = {
+ 			[TYPE_NONE] = {
+@@ -2620,6 +2777,11 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &pcie_phy_pcs_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++				[INTERNAL_SSC] = &pcie_phy_pcs_cmn_vals,
++			},
+ 		},
+ 	},
+ 	.phy_pma_ln_vals = {
+@@ -2655,11 +2817,20 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
+ 				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &pcie_100_no_ssc_plllc_cmn_vals,
++				[EXTERNAL_SSC] = &pcie_100_ext_ssc_plllc_cmn_vals,
++				[INTERNAL_SSC] = &pcie_100_int_ssc_plllc_cmn_vals,
++			},
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_cmn_vals,
+ 			},
++			[TYPE_PCIE] = {
++				[EXTERNAL_SSC] = &usb_100_ext_ssc_plllc1_cmn_vals,
++				[INTERNAL_SSC] = &usb_100_int_ssc_plllc1_cmn_vals,
++			},
+ 		},
+ 		[TYPE_SGMII] = {
+ 			[TYPE_PCIE] = {
+@@ -2693,11 +2864,20 @@ static const struct cdns_sierra_data cdns_ti_map_sierra = {
+ 				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
+ 				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
+ 			},
++			[TYPE_USB] = {
++				[NO_SSC] = &ti_ml_pcie_100_no_ssc_ln_vals,
++				[EXTERNAL_SSC] = &ti_ml_pcie_100_ext_ssc_ln_vals,
++				[INTERNAL_SSC] = &ti_ml_pcie_100_int_ssc_ln_vals,
++			},
+ 		},
+ 		[TYPE_USB] = {
+ 			[TYPE_NONE] = {
+ 				[EXTERNAL_SSC] = &usb_100_ext_ssc_ln_vals,
+ 			},
++			[TYPE_PCIE] = {
++				[EXTERNAL_SSC] = &usb_100_ml_ln_vals,
++				[INTERNAL_SSC] = &usb_100_ml_ln_vals,
++			},
+ 		},
+ 		[TYPE_SGMII] = {
+ 			[TYPE_PCIE] = {
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
