@@ -4,44 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 438AFC71136
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 20:55:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 539EFC61CE8
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 21:09:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQRDISx27TZensuQztsJ8zEsGoWK7q40SsAkB5Mdmxg=; b=YYJJIRqvb82ymr
-	kFF1lUP2W+cnV4QMkInicRFI+SXXnVMDC5QIpGvzfqXzmrKZyDnSZy/00VqxeqgjPDF6/nUDYq2BL
-	3OuMsSZwWNCspIt5Uro7gl6y27MbMD/s3eW8r4dszkX/f7NkZl9LhJuORSs2U6MhF/VAvvKMmX6FV
-	y+RuNLKt8CHSm2vQRCPGGa2EKP5bd1ZJjWjN19lOlAx7OYM7kbHz4nLiI+SJtXc1fuUrpD5oHNldA
-	UmdsfAPG5VIbKiIV/yndZzmZDS80peiViD49M9b0DYRqyvPeq6BB73ZIC/+CxJYJgoxi79lzovYfp
-	YEEI92gfQkxAWZjiqYMQ==;
+	List-Owner; bh=LNf9PK9uQB6IOszLMgFLuj5PGC0to4AdYu1jm9I5/to=; b=LHXVp2H6rUO1/W
+	eRyWLi4B/B0Bq617xw+aDIaIDSPp5fqcvs0UYe1COaREq8rvtsuZexXgqSe7SlhYkofD76r5LoxtO
+	M1BDC6iJSLDyorkDLvF3tKXKDLmUZ9Tx69+/UiOUS8H2qlX6YMxLdGhtq9E9AZDrxDjfF+RBkf5X9
+	FneQ4AnVhmCwqSUS05wvULsDRG86XTGszTpRylvBdrt+q/gttBSWfokNMoxdLmSLNKP8hPnVRh6Sx
+	jkAjuwrag2QpfbBEHj2ku1StMurGmgEQAwD0OLSUTM2bU10axa7L0EGvbS2EA7YFtd1jNHNgWhxdQ
+	cACGpiYgr7DQjCWef1Dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPoxV-0000000EZpH-01iE;
-	Thu, 12 Jun 2025 20:55:37 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1uPpAt-0000000EceE-03ke;
+	Thu, 12 Jun 2025 21:09:27 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnIJ-0000000ECBr-1FBC;
-	Thu, 12 Jun 2025 19:09:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=U0UHRZVFR/9o1BtZeDpkFOYGrW0/3kxtp0aIw6uYvBY=; b=2DdGMCY/Cmy+VC5+/1czoZCXwX
-	OlxZReGzj+bxOuaZXkgBDZrb3ccbqYemF5q+lgf/TFl+gC5MGNjNPxSKZWBSsh1u6tXQFprca/pM2
-	qq32uiR7T4l57K4w7SEePztfoxdtwPDhIAasxSLOe0zhxNJHyCzvSg9HCEmjYin5vlIE=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1uPnHg-00FaEs-Pw; Thu, 12 Jun 2025 21:08:20 +0200
-Date: Thu, 12 Jun 2025 21:08:20 +0200
-From: Andrew Lunn <andrew@lunn.ch>
+	id 1uPnrK-0000000EKDD-43d5;
+	Thu, 12 Jun 2025 19:45:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=E3L1BRXMYQOPZXwWB+HufjRJxBYhvQ+eeWRIbfY6WI0=; b=YWYiprHhlzTOOgbKhH/REgkIoU
+	PPyURVfKa3lHkofbe/lVf7NoFQ5HPXmvPY2mzwF3NO4AvcK0Lg/rg1f8ItY0lTckOTSccS/0Nhdzp
+	q8/z81V2pX8zNsW55EhXznoLz9iA7hpKEccI/EkAp+rEU1a7PIizeZXu5f7fY9ohw+wd1n+u6PU7j
+	1EPwdO0BXVMCwupQkIBzGkQBF6kBdH/SZhOQH79WBa8U5RkQfQ2HcmIT2x63qyWzNMcnbvg44o51r
+	V0YQ0aUrFkkl90jh6H5SlGQATH4cnHhH6NNxf/JQa+iIk5hsL7ZvdWBS7GyDMJ0OroDYCHYUIx5bJ
+	/sf+oAjw==;
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uPnrI-00000002eGv-09um;
+	Thu, 12 Jun 2025 19:45:10 +0000
+Received: by mail-pf1-x432.google.com with SMTP id d2e1a72fcca58-747fc7506d4so1376150b3a.0;
+        Thu, 12 Jun 2025 12:45:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749757504; x=1750362304; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=E3L1BRXMYQOPZXwWB+HufjRJxBYhvQ+eeWRIbfY6WI0=;
+        b=OWt4zmKYb1D7QNTwkxOn7aln78Z+lSgAFCfzVkt20uGwSIgjSx56ked4zTrd2c6OPP
+         l0wCjySJUv9ELVOaZ66CaEMplYH1BvEY5YXMDBUcVjDoksgeG/VsR50G0ggqUTPvNPyf
+         SCziDIZRrp26hsyVE7uC1lKdL3u0VyHHE7qD5kmq6aY60fUDkmlWL2p3IYoqC0s41UIF
+         QYlqi8Hpr6YXKPwbxh5HPkr/IUgtXiNTAZjRovfVa0oG3uCRnVWbSyZQEpExzAHVjztT
+         J4r8VZwAJXxC/OTtqfJ11JPLchirYzJJgX/tKxJqvUXlXHKyz9YhNV2yOmAFggKH8Qi1
+         IMtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749757504; x=1750362304;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=E3L1BRXMYQOPZXwWB+HufjRJxBYhvQ+eeWRIbfY6WI0=;
+        b=kidh0FucJQ9J98uauLxDUUYTYgdGYoRebePi2UJXzjyX2d7PZTJuPKvGLWys7bZeyn
+         aGz89jjl1NU6ZFIQM5q/ljdFdmmHJgY9OZeByNTMv3qXvaLTqWDjQkE5tbOD57iaxM/3
+         pqA3Ulz1UpjDFtLDQzCdCNFTuFTudf7y27rFdhRZcCuJqW4MElxpa98zwzMwnm79VHMB
+         Z8AhTcER6b0weOfCJJTCGcbF+kXYbfjPy6lMMmVFtWnXxBXIoQhSxPJIK31v3MrYwZmr
+         YREcinLzSSm38AfLLkvJIdqAJ8IQ7SH36ssiEIXX9nzyiIT7Lez2FtlusCF1NNkeq7cd
+         Uj8Q==
+X-Forwarded-Encrypted: i=1; AJvYcCU0UyMaOFZx1CX/708nowRFCl8EkVC01CNmK//+7aothEQGW73WtJEOLLMFKEZRBvebMIqzP6+pDAo4eolb7G8=@lists.infradead.org, AJvYcCU9vuc3YNX1gFioKqgsVgKOxI3NeGgjW7o7EdWYXrB1cB/e//qUIHJOt71cAq+bpJn9Ys0vtauO5Qcm8N92PB8F@lists.infradead.org, AJvYcCVz+qEibgGUYi5W8ZKI5QDMRXF/sMNfqItMCz9JEDxCNaa0WPXlAPjeG8QSgypIO5g+AJsRUI+az1X0@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz+wjoHHL8RnRYTtI+XthizekdjNe0++bjuRGops5RIXx8z50RO
+	OVQ9cM4rZULq1FGk5o9oEmdZoYmqcexJr9YCtGbP7QVnLV/k7rAJMCT9
+X-Gm-Gg: ASbGncu6vYa6qzO71MHPdiZ07rgGgLwvqhUKTWrOTv2g+py25pV6K5+6SaYQcZeFNde
+	wRSivb1/TqsCk3/8FRJLFKIJYV7Cvbbgs02eJoevdmvEvAQtj0G5XGrT6QU53Soxa5AielD63dJ
+	Kkk8J58SMBAnOiGEqf94tu+P8TS6TcqCdqg2xKtoMBWk0TVtRRkgaNHSi+0Su2tN0hRTIkQJScd
+	tE+BZltawgywiTw5UrA/GuwTu+tcVe1PULzF+G4NG+qFzzbxXmJDAPCRLTvwdgj3SLigM8TEaBX
+	92LFBQ4pkYV+e5lSWcMMnh5/D0WZIwXM6SXeax3DLIU8aD3w+hCpc9PsA60+XA==
+X-Google-Smtp-Source: AGHT+IH5SI3hUshSKHU0j6QBfj5JqczafiiFC8/0KUaseCcKbsSGpfUoReyErqftJzmx0fPZHAtJ2w==
+X-Received: by 2002:aa7:88c2:0:b0:740:6f69:f52a with SMTP id d2e1a72fcca58-7488f485015mr691851b3a.0.1749757503807;
+        Thu, 12 Jun 2025 12:45:03 -0700 (PDT)
+Received: from localhost ([216.228.127.129])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-74890082859sm109585b3a.104.2025.06.12.12.45.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Jun 2025 12:45:03 -0700 (PDT)
+Date: Thu, 12 Jun 2025 15:45:00 -0400
+From: Yury Norov <yury.norov@gmail.com>
 To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Yury Norov <yury.norov@gmail.com>,
-	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
 	Jaehoon Chung <jh80.chung@samsung.com>,
 	Ulf Hansson <ulf.hansson@linaro.org>,
 	Heiko Stuebner <heiko@sntech.de>,
@@ -87,16 +129,16 @@ Cc: Yury Norov <yury.norov@gmail.com>,
 	linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
 	linux-pm@vger.kernel.org, linux-clk@vger.kernel.org,
 	llvm@lists.linux.dev
-Subject: Re: [PATCH 15/20] net: stmmac: dwmac-rk: switch to HWORD_UPDATE macro
-Message-ID: <5947475f-ef38-44cb-857e-0c7378023ccd@lunn.ch>
+Subject: Re: [PATCH 00/20] BYEWORD_UPDATE: unifying (most) HIWORD_UPDATE
+ macros
+Message-ID: <aEsuPN-kuQ8cjR7H@yury>
 References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
- <20250612-byeword-update-v1-15-f4afb8f6313f@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250612-byeword-update-v1-15-f4afb8f6313f@collabora.com>
+In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_120859_330527_6A9A7C1E 
-X-CRM114-Status: GOOD (  16.38  )
+X-CRM114-CacheID: sfid-20250612_204508_283597_A4CDF402 
+X-CRM114-Status: GOOD (  38.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,30 +155,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 12, 2025 at 08:56:17PM +0200, Nicolas Frattaroli wrote:
-> The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
-> drivers that use constant masks.
+On Thu, Jun 12, 2025 at 08:56:02PM +0200, Nicolas Frattaroli wrote:
+> This series was spawned by [1], where I was asked to move every instance
+> of HIWORD_UPDATE et al that I could find to a common macro in the same
+> series that I am introducing said common macro.
+
+And it means, at least for patch #1:
+
+Suggested-by: Yury Norov [NVIDIA] <yury.norov@gmail.com>
+ 
+> The first patch of the series introduces the two new macros in
+> bitfield.h, called HWORD_UPDATE and HWORD_UPDATE_CONST. The latter can
+> be used in initializers.
 > 
-> Like many other Rockchip drivers, dwmac-rk has its own HIWORD_UPDATE
-> macro. Its semantics allow us to redefine it as a wrapper to the shared
-> bitfield.h HWORD_UPDATE macros though.
+> This macro definition checks that the mask fits, and that the value fits
+> in the mask. Like FIELD_PREP, it also shifts the value up to the mask,
+> so turning off a bit does not require using the mask as a value. Masks
+> are also required to be contiguous, like with FIELD_PREP.
 > 
-> Replace the implementation of this driver's very own HIWORD_UPDATE macro
-> with an instance of HWORD_UPDATE from bitfield.h. This keeps the diff
-> easily reviewable, while giving us more compile-time error checking.
+> For each definition of such a macro, the driver(s) that used it were
+> evaluated for three different treatments:
+>  - full conversion to the new macro, for cases where replacing the
+>    implementation of the old macro wouldn't have worked, or where the
+>    conversion was trivial. These are the most complex patches in this
+>    series, as they sometimes have to pull apart definitions of masks
+>    and values due to the new semantics, which require a contiguous
+>    mask and shift the value for us.
+>  - replacing the implementation of the old macro with an instance of the
+>    new macro, done where I felt it made the patch much easier to review
+>    because I didn't want to drop a big diff on people.
+>  - skipping conversion entirely, usually because the mask is
+>    non-constant and it's not trivial to make it constant. Sometimes an
+>    added complication is that said non-constant mask is either used in a
+>    path where runtime overhead may not be desirable, or in an
+>    initializer.
 > 
-> The related GRF_BIT macro is left alone for now; any attempt to rework
-> the code to not use its own solution here would likely end up harder to
-> review and less pretty for the time being.
+> Left out of conversion:
+>  - drivers/mmc/host/sdhci-of-arasan.c: mask is non-constant.
+>  - drivers/phy/rockchip/phy-rockchip-inno-csidphy.c: mask is
+>    non-constant likely by way of runtime pointer dereferencing, even if
+>    struct and members are made const.
+>  - drivers/clk/rockchip/clk.h: way too many clock drivers use non-const
+>    masks in the context of an initializer.
+> 
+> I will not be addressing these 3 remaining users in this series, as
+> implementing a runtime checked version on top of this and verifying that
+> it doesn't cause undue overhead just for 3 stragglers is a bit outside
+> the scope of wanting to get my RK3576 PWM series unblocked. Please have
+> mercy.
+> 
+> In total, I count 19 different occurrences of such a macro fixed out of
+> 22 I found. The vast majority of these patches have either undergone
+> static testing to ensure the values end up the same during development,
+> or have been verified to not break the device the driver is for at
+> runtime. Only a handful are just compile-tested, and the individual
+> patches remark which ones those are.
+> 
+> This took a lot of manual work as this wasn't really something that
+> could be automated: code had to be refactored to ensure masks were
+> contiguous, made sense to how the hardware actually works and to human
+> readers, were constant, and that the code uses unshifted values.
+> 
+> https://lore.kernel.org/all/aD8hB-qJ4Qm6IFuS@yury/ [1]
 > 
 > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-
-Please split this out into a patch for net-next. Also, Russell King
-has just posted a number of patches for this driver, so you will
-probably want to wait for them to be merged, so you post something
-which will merged without any fuzz.
-
-	Andrew
+> ---
+> Nicolas Frattaroli (20):
+>       bitfield: introduce HWORD_UPDATE bitfield macros
+>       mmc: dw_mmc-rockchip: switch to HWORD_UPDATE macro
+>       soc: rockchip: grf: switch to HWORD_UPDATE_CONST macro
+>       media: synopsys: hdmirx: replace macros with bitfield variants
+>       drm/rockchip: lvds: switch to HWORD_UPDATE macro
+>       phy: rockchip-emmc: switch to HWORD_UPDATE macro
+>       drm/rockchip: dsi: switch to HWORD_UPDATE* macros
+>       drm/rockchip: vop2: switch to HWORD_UPDATE macro
+>       phy: rockchip-samsung-dcphy: switch to HWORD_UPDATE macro
+>       drm/rockchip: dw_hdmi_qp: switch to HWORD_UPDATE macro
+>       drm/rockchip: inno-hdmi: switch to HWORD_UPDATE macro
+>       phy: rockchip-usb: switch to HWORD_UPDATE macro
+>       drm/rockchip: dw_hdmi: switch to HWORD_UPDATE* macros
+>       ASoC: rockchip: i2s-tdm: switch to HWORD_UPDATE_CONST macro
+>       net: stmmac: dwmac-rk: switch to HWORD_UPDATE macro
+>       PCI: rockchip: switch to HWORD_UPDATE* macros
+>       PCI: dw-rockchip: switch to HWORD_UPDATE macro
+>       PM / devfreq: rockchip-dfi: switch to HWORD_UPDATE macro
+>       clk: sp7021: switch to HWORD_UPDATE macro
+>       phy: rockchip-pcie: switch to HWORD_UPDATE macro
+> 
+>  drivers/clk/clk-sp7021.c                           |  21 +--
+>  drivers/devfreq/event/rockchip-dfi.c               |  26 ++--
+>  drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    | 142 ++++++++++-----------
+>  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        |  80 ++++++------
+>  drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c     |  68 +++++-----
+>  drivers/gpu/drm/rockchip/inno_hdmi.c               |  11 +-
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop2.h       |   1 -
+>  drivers/gpu/drm/rockchip/rockchip_lvds.h           |  21 +--
+>  drivers/gpu/drm/rockchip/rockchip_vop2_reg.c       |  14 +-
+>  .../media/platform/synopsys/hdmirx/snps_hdmirx.h   |   5 +-
+>  drivers/mmc/host/dw_mmc-rockchip.c                 |   7 +-
+>  drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c     |   3 +-
+>  drivers/pci/controller/dwc/pcie-dw-rockchip.c      |  39 +++---
+>  drivers/pci/controller/pcie-rockchip.h             |  35 ++---
+>  drivers/phy/rockchip/phy-rockchip-emmc.c           |   3 +-
+>  drivers/phy/rockchip/phy-rockchip-pcie.c           |  72 +++--------
+>  drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c  |  10 +-
+>  drivers/phy/rockchip/phy-rockchip-usb.c            |  51 +++-----
+>  drivers/soc/rockchip/grf.c                         |  35 +++--
+>  include/linux/bitfield.h                           |  47 +++++++
+>  sound/soc/rockchip/rockchip_i2s_tdm.h              |   4 +-
+>  21 files changed, 342 insertions(+), 353 deletions(-)
+> ---
+> base-commit: d9946fe286439c2aeaa7953b8c316efe5b83d515
+> change-id: 20250610-byeword-update-445c0eea771d
+> 
+> Best regards,
+> -- 
+> Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
 -- 
 linux-phy mailing list
