@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87ADBC71149
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:48:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3989AC71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:48:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KamzrHUyMFU0tLK87PTloh8LDYgUFzSXf8NbcO557Jc=; b=2cXGU23+ele+Dq
-	Zs00X1wveQ1YUuNAPWuhAch+XkxNQyb5YStgyW/jav9k1oQD9NPoRD+AIeJQULimbyNEnE8Dkghvv
-	oNsSLf6aajwoOHSRS2Wijz9FKCkEliiaWi5tClGuz9LNDkmRC5/NakpQjIw9bq+8UGkDLhWtbywHo
-	ai4MNXsdSWlXNW/MHwQRiznPNln16lJxa1x3ZhAoCWWQTRxvbxqo7jNfGBgUQnk3IPh9DcNpY8hGK
-	6kxVUpEGqJoiOk3MsE20oGBfOx+FVQpA76CgGVDBEB42rBKMscS34BvgGInH2//yE585HVr9KPDZS
-	ubuliAVK07QF5184p07g==;
+	List-Owner; bh=uqBXGMgo+hrWJ+XeqafA2yhkHzv9zqpZYEKylnmYZqM=; b=QiTgdBuLm9tBHi
+	y5UUX7tCFK8x+SJddgG149OIBVx5bJaDV4opkHeqsfYZZLByIHxhShqxsUtCo3Hc2yQrjmt2ZWnWP
+	0Bi4eSI+QUGGi26Bk7DRH1unOXf4f/C1gLrmcMGKVg6yRPm/RFtXTksmA7kBkYJB17HyjL3mOvZzo
+	iGxj64wKjBLvOzqR8EqPgVtuhze47WHekhNcpXzvfQVS02T+w0cOASm2BXeUOcnjuV8yjUMwWSBdl
+	BlUErTJyBitEPGIo50niB9ARQiA1jiYdVm7vUD6UDxtu/Jp59h0aLwJ78jeR3XvNqXIhAz1NbVrL8
+	pNsKS2hsE4m9NdQ0dpyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnuL-0000000EOuE-0pgg;
-	Thu, 12 Jun 2025 19:48:17 +0000
+	id 1uPnuN-0000000EOze-3Es6;
+	Thu, 12 Jun 2025 19:48:19 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPn9K-0000000EARZ-1Y3k;
-	Thu, 12 Jun 2025 18:59:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749754744; cv=none; 
+	id 1uPnA1-0000000EAcO-0EuB;
+	Thu, 12 Jun 2025 19:00:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754782; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=W2Xd/MRETaSRWhXoaqi9hIgxR58OJXZ9/fr8OWlueEKqoMF3L2dNJyaabTILOnOSpx43bLsWBM/M57E/UbOIy5LzUit8rz0ekYYaqtn2tvlcGoIz/6KXXef9HkAfrn3qZnuVf8YmK2k6Qipt67j4Cp7qZ9V7l82W82PtruE6OMY=
+	b=LY2gOReHJeUsgEIhNZvz6CydVgFoOGSGwaO3l0ZuE3mp/sZrxu2OlhGrcKw37Wy6BjH/Vz0Xx2Cx4LqVx3qH95vQVxpj44T8IwywaRqUT5D2e2jY4zTaz45iv96yr0RqawLUCWvBE192yfZ/SADPo5KJ/wGK1tPQMz3sje6Zbhw=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749754744; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=M6zK0OgGM/CnVtmZRXHUCPu/tj9ZRgyPTrSU5UVMDC0=; 
-	b=kPvBLF1wV3wXD7+rQZd35kgxj+jmx9io2Qgo50ADZjzTBUqPXdWjFmG3BQijqclbVJvHpLo/lHF0uNukphKYu+PLnWBeeU+0vhe//9/6kumJhqj8bvMLIm8TAraxAReNvpKavGCK3wtjw5Dzzb3ezQcjAAkxzG6MuvelMUC9Zfg=
+	t=1749754782; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=LZnMh9VL4aVe9Urf5rkcaSHCLrN/faLOWNkCrDUkPYY=; 
+	b=SLgwS9XUP4ok8yl+FESpXJh/OgRlMDd0MpMUdvCG9/xARXYUCNypI158XB/w2K6sb/tvs3Cif53eFlMlRzvVsYksqu/4bStT3g2U6aEdfXbQO0gw3C5xH9czfEZBZtqT02XVLk+IRhSWA2Dp4R+ftZRbPM+41gfvW8yqeNZO7FQ=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754744;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754782;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=M6zK0OgGM/CnVtmZRXHUCPu/tj9ZRgyPTrSU5UVMDC0=;
-	b=djpoFY4h7aflc431qIQDc6dxzn6q2Eot0jbtSeTYciE31RABj7ifal6I9wZ8i9E2
-	/g5TL4RdzIx5JJWZC6oTZA7hn23Nljjr5yVEr3fApDck/s1QRbqVykfL+YhC/JkCjiA
-	51EqjVpFKsb1S/ed3nnxtRYlPFh1xoVZKjTpTj6o=
-Received: by mx.zohomail.com with SMTPS id 1749754741989226.8065694691487;
-	Thu, 12 Jun 2025 11:59:01 -0700 (PDT)
+	bh=LZnMh9VL4aVe9Urf5rkcaSHCLrN/faLOWNkCrDUkPYY=;
+	b=iVhHk5MwRVtbtvjqdW6+zcRb66lb63uysOR33hf8Sm+i4XHzOKH0BTORJ99toSze
+	5xqvj4XIAUguOAT/+O8bHz3qKxPohh5eGjWxLpFOHYE/TjpEwWOJ/0Q2EZM/HxqhCid
+	FptUsuYAnrnu9fBNyreU1j4d+LtsQGPUqWaee9X4=
+Received: by mx.zohomail.com with SMTPS id 1749754780873810.5793291533364;
+	Thu, 12 Jun 2025 11:59:40 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Thu, 12 Jun 2025 20:56:14 +0200
-Subject: [PATCH 12/20] phy: rockchip-usb: switch to HWORD_UPDATE macro
+Date: Thu, 12 Jun 2025 20:56:17 +0200
+Subject: [PATCH 15/20] net: stmmac: dwmac-rk: switch to HWORD_UPDATE macro
 MIME-Version: 1.0
-Message-Id: <20250612-byeword-update-v1-12-f4afb8f6313f@collabora.com>
+Message-Id: <20250612-byeword-update-v1-15-f4afb8f6313f@collabora.com>
 References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -93,8 +93,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_115942_430688_FA6E0252 
-X-CRM114-Status: GOOD (  18.60  )
+X-CRM114-CacheID: sfid-20250612_120025_119880_688201FC 
+X-CRM114-Status: GOOD (  14.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,136 +114,44 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
 drivers that use constant masks.
 
-Remove this driver's HIWORD_UPDATE macro, and replace all instances of
-it with (hopefully) equivalent HWORD_UPDATE instances. To do this, a few
-of the defines are being adjusted, as HWORD_UPDATE shifts up the value
-for us. This gets rid of the icky update(mask, mask) shenanigans.
+Like many other Rockchip drivers, dwmac-rk has its own HIWORD_UPDATE
+macro. Its semantics allow us to redefine it as a wrapper to the shared
+bitfield.h HWORD_UPDATE macros though.
 
-The benefit of using HWORD_UPDATE is that it does more checking of the
-input, hopefully catching errors. In practice, a shared definition makes
-code more readable than several different flavours of the same macro,
-and the shifted value helps as well.
+Replace the implementation of this driver's very own HIWORD_UPDATE macro
+with an instance of HWORD_UPDATE from bitfield.h. This keeps the diff
+easily reviewable, while giving us more compile-time error checking.
 
-I do not have the hardware that uses this particular driver, so it's
-compile-tested only as far as my own testing goes.
+The related GRF_BIT macro is left alone for now; any attempt to rework
+the code to not use its own solution here would likely end up harder to
+review and less pretty for the time being.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usb.c | 51 +++++++++++++--------------------
- 1 file changed, 20 insertions(+), 31 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
-index 666a896c8f0a08443228914a039b95974e15ba58..23c9885ec717ffeb6e4589dd0851b0307366738c 100644
---- a/drivers/phy/rockchip/phy-rockchip-usb.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usb.c
-@@ -6,6 +6,7 @@
-  * Copyright (C) 2014 ROCKCHIP, Inc.
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+index 700858ff6f7c33fdca08100dd7406aedeff0fc41..38a15aaf7846dc16e5e3f2ff91be0b5e81d29dba 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+@@ -8,6 +8,7 @@
   */
  
+ #include <linux/stmmac.h>
 +#include <linux/bitfield.h>
+ #include <linux/bitops.h>
  #include <linux/clk.h>
- #include <linux/clk-provider.h>
- #include <linux/io.h>
-@@ -24,9 +25,6 @@
+ #include <linux/phy.h>
+@@ -84,7 +85,7 @@ struct rk_priv_data {
+ };
  
- static int enable_usb_uart;
+ #define HIWORD_UPDATE(val, mask, shift) \
+-		((val) << (shift) | (mask) << ((shift) + 16))
++		(HWORD_UPDATE((mask) << (shift), (val)))
  
--#define HIWORD_UPDATE(val, mask) \
--		((val) | (mask) << 16)
--
- #define UOC_CON0					0x00
- #define UOC_CON0_SIDDQ					BIT(13)
- #define UOC_CON0_DISABLE				BIT(4)
-@@ -38,10 +36,10 @@ static int enable_usb_uart;
- #define UOC_CON3					0x0c
- /* bits present on rk3188 and rk3288 phys */
- #define UOC_CON3_UTMI_TERMSEL_FULLSPEED			BIT(5)
--#define UOC_CON3_UTMI_XCVRSEELCT_FSTRANSC		(1 << 3)
--#define UOC_CON3_UTMI_XCVRSEELCT_MASK			(3 << 3)
--#define UOC_CON3_UTMI_OPMODE_NODRIVING			(1 << 1)
--#define UOC_CON3_UTMI_OPMODE_MASK			(3 << 1)
-+#define UOC_CON3_UTMI_XCVRSEELCT_FSTRANSC		1U
-+#define UOC_CON3_UTMI_XCVRSEELCT_MASK			GENMASK(4, 3)
-+#define UOC_CON3_UTMI_OPMODE_NODRIVING			1U
-+#define UOC_CON3_UTMI_OPMODE_MASK			GENMASK(2, 1)
- #define UOC_CON3_UTMI_SUSPENDN				BIT(0)
- 
- struct rockchip_usb_phys {
-@@ -79,7 +77,7 @@ struct rockchip_usb_phy {
- static int rockchip_usb_phy_power(struct rockchip_usb_phy *phy,
- 					   bool siddq)
- {
--	u32 val = HIWORD_UPDATE(siddq ? UOC_CON0_SIDDQ : 0, UOC_CON0_SIDDQ);
-+	u32 val = HWORD_UPDATE(UOC_CON0_SIDDQ, siddq);
- 
- 	return regmap_write(phy->base->reg_base, phy->reg_offset, val);
- }
-@@ -332,29 +330,24 @@ static int __init rockchip_init_usb_uart_common(struct regmap *grf,
- 	 * but were not present in the original code.
- 	 * Also disable the analog phy components to save power.
- 	 */
--	val = HIWORD_UPDATE(UOC_CON0_COMMON_ON_N
--				| UOC_CON0_DISABLE
--				| UOC_CON0_SIDDQ,
--			    UOC_CON0_COMMON_ON_N
--				| UOC_CON0_DISABLE
--				| UOC_CON0_SIDDQ);
-+	val = HWORD_UPDATE(UOC_CON0_COMMON_ON_N, 1) |
-+	      HWORD_UPDATE(UOC_CON0_DISABLE, 1) |
-+	      HWORD_UPDATE(UOC_CON0_SIDDQ, 1);
- 	ret = regmap_write(grf, regoffs + UOC_CON0, val);
- 	if (ret)
- 		return ret;
- 
--	val = HIWORD_UPDATE(UOC_CON2_SOFT_CON_SEL,
--			    UOC_CON2_SOFT_CON_SEL);
-+	val = HWORD_UPDATE(UOC_CON2_SOFT_CON_SEL, 1);
- 	ret = regmap_write(grf, regoffs + UOC_CON2, val);
- 	if (ret)
- 		return ret;
- 
--	val = HIWORD_UPDATE(UOC_CON3_UTMI_OPMODE_NODRIVING
--				| UOC_CON3_UTMI_XCVRSEELCT_FSTRANSC
--				| UOC_CON3_UTMI_TERMSEL_FULLSPEED,
--			    UOC_CON3_UTMI_SUSPENDN
--				| UOC_CON3_UTMI_OPMODE_MASK
--				| UOC_CON3_UTMI_XCVRSEELCT_MASK
--				| UOC_CON3_UTMI_TERMSEL_FULLSPEED);
-+	val = HWORD_UPDATE(UOC_CON3_UTMI_SUSPENDN, 0) |
-+	      HWORD_UPDATE(UOC_CON3_UTMI_OPMODE_MASK,
-+			   UOC_CON3_UTMI_OPMODE_NODRIVING) |
-+	      HWORD_UPDATE(UOC_CON3_UTMI_XCVRSEELCT_MASK,
-+			   UOC_CON3_UTMI_XCVRSEELCT_FSTRANSC) |
-+	      HWORD_UPDATE(UOC_CON3_UTMI_TERMSEL_FULLSPEED, 1);
- 	ret = regmap_write(grf, UOC_CON3, val);
- 	if (ret)
- 		return ret;
-@@ -380,10 +373,8 @@ static int __init rk3188_init_usb_uart(struct regmap *grf,
- 	if (ret)
- 		return ret;
- 
--	val = HIWORD_UPDATE(RK3188_UOC0_CON0_BYPASSSEL
--				| RK3188_UOC0_CON0_BYPASSDMEN,
--			    RK3188_UOC0_CON0_BYPASSSEL
--				| RK3188_UOC0_CON0_BYPASSDMEN);
-+	val = HWORD_UPDATE(RK3188_UOC0_CON0_BYPASSSEL, 1) |
-+	      HWORD_UPDATE(RK3188_UOC0_CON0_BYPASSDMEN, 1);
- 	ret = regmap_write(grf, RK3188_UOC0_CON0, val);
- 	if (ret)
- 		return ret;
-@@ -430,10 +421,8 @@ static int __init rk3288_init_usb_uart(struct regmap *grf,
- 	if (ret)
- 		return ret;
- 
--	val = HIWORD_UPDATE(RK3288_UOC0_CON3_BYPASSSEL
--				| RK3288_UOC0_CON3_BYPASSDMEN,
--			    RK3288_UOC0_CON3_BYPASSSEL
--				| RK3288_UOC0_CON3_BYPASSDMEN);
-+	val = HWORD_UPDATE(RK3288_UOC0_CON3_BYPASSSEL, 1) |
-+	      HWORD_UPDATE(RK3288_UOC0_CON3_BYPASSDMEN, 1);
- 	ret = regmap_write(grf, RK3288_UOC0_CON3, val);
- 	if (ret)
- 		return ret;
+ #define GRF_BIT(nr)	(BIT(nr) | BIT(nr+16))
+ #define GRF_CLR_BIT(nr)	(BIT(nr+16))
 
 -- 
 2.49.0
