@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D784DC71151
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:10:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FA42C71153
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:10:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bYNBZ/umHkYyrUFgj3DXozQyeJNg+KhE7fEcTzrL+lA=; b=sPn1ixRadjHCt/
-	Nf7InDXWT6KVZFZENkJIq/EyiCgtyoK5mTUqqQakXVsx9vLPL/iyFC6Yq+0TeLIciPjghIf1E9YBT
-	oDrIOdT9KmIfxU8fF9WmOt0qi5+9mqhXPXFAfCW9kzZwineBB3JYJz+HzWm4+Svm3izopyW1RmG1A
-	V/jN18VwCqbhb78/t//H/jW1AOqed2TtG+ufqwF1nW/lM0IeQXkD/UmL1FCeZsLjV7/qRVocrHEKj
-	qgAC5zC13pFbuZAn/vek+L9/H9ZpkYCbtxzqeOFTrAyNOZ5VjvD7FWKMhN+nIOarTe7zVxBGgXe03
-	hYyJbQUvtHenvd7gmAbQ==;
+	List-Owner; bh=It89wpq4IUOBfG331oyD4gfeR+c8kBXRriArRvjKP+U=; b=ylfHT5CDUYXYJn
+	ooRIFOasryixB0rcy3TZhFf4oKjpkTDUy7X1SfabzMPCnSUPEARXBD5pEID4xx768oUmPSZVLsbH0
+	oX+ZoNiKKUXGJS7gFMH8fQyqBMqitT4JsZH/pudwSLnhh0LL16TSaofxjTnmH3sHf86mh/K/+yDT/
+	zxGDT1el/MiIYMkzUk/PtL66aUROqz8kSlyVQ5tewhIPINcVMcdc82Fk0JSIMCxWzOf3DxZ52nvxO
+	BsEazK0GE12hFF2P0xqlrVSTFXTkZ88QB1ezjcTSa85xZMY+2yKLCSJau1h40zBHly2VpsFTWi2JB
+	eVMxl2vipJxVvGATaKSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPq7W-0000000Ek8E-2cV0;
+	id 1uPq7W-0000000Ek8z-3rXI;
 	Thu, 12 Jun 2025 22:10:02 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPn8U-0000000EADx-3dGp;
-	Thu, 12 Jun 2025 18:58:51 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749754691; cv=none; 
+	id 1uPn8x-0000000EALl-16yD;
+	Thu, 12 Jun 2025 18:59:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754718; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=Xub9id8A5fahT1qtx3/w1Cektgfx3rmVwV3jnH8ohYrJQ4GsNx/UbMcopM7KTAReDpy2KaNYNQ76jeHozNZ2gHyRMusc3eTpEKdxt7Cl8yv2fU8B0R3ND4lpYUNP9KYJLnXo0Y5Ayd51YETPiNL3WHXwkBFIxulyHk0UD0L874c=
+	b=RJd7X5goRKjGOBIxXW7c4uXAGgYWji2MQpJlwYEhjsbX4SPwuShIklRKeuXrLP27ZphxmHFjn7VXad1T+WwaDvw5Dm5EpcNRR83F01Xb5azFBf8lkf8tk5Mpe4FtSLcZURPnHi0kaBrS22LhRObDrBg3NpoSvvMuxTioZC3GXBk=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749754691; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=8sFO4peQX3UyFjqccrErI+0FBkCQqIYlQwxLluQFKf4=; 
-	b=dG7ZIB5pNfgUS55BlIzzAeo3wYYhCBjGndbPswUh0T+ycPp4MUtit5zRmdagHupHvmYLLAVHauyL0/xqjvHJDwqe5No2jR47cBI0V+pCI427jIgNU8eIjP73bgOHdUDLTqHjt6aCA1QYKyNjipgG+U+XjiZn3C3raIY5S6v3FJ0=
+	t=1749754718; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=qsCK1y2xYwi6CMHQWDQJlReeyR6tuopiwgdQe+eq94s=; 
+	b=cNxwzGHkmBFaWUJ2ZrtRoskNp0Y4sMRqUaQVsh8fyFTvG+8+KhZScIXjqHgzBjtSchH6lWBHfwl2rjhsYO3B/9VrqCtaO2rVkf/HJSszhZCrJ0UK1eRXLzDB4jzZT86377XUHRlzWJLB0ctlC0trkgFYaH6bnW73R5DF/Y6dhFQ=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754691;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754718;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=8sFO4peQX3UyFjqccrErI+0FBkCQqIYlQwxLluQFKf4=;
-	b=RBoRJFRnHB1HTtsjxAfcdfD5gTSEvGLYesnzDe5omP9mUbTxwE+yfzEgvyEo7eti
-	bG89yPq6znBUEmOuf5ZbbpiMtFtDVeXgAbJKZuyubml1BGdStG/bUzgrdAiaf6wHk3K
-	8CUiYhPXoj5/pupWJwRSohBXcMQLqCI+2V4ZvH8M=
-Received: by mx.zohomail.com with SMTPS id 1749754689426649.8206090754111;
-	Thu, 12 Jun 2025 11:58:09 -0700 (PDT)
+	bh=qsCK1y2xYwi6CMHQWDQJlReeyR6tuopiwgdQe+eq94s=;
+	b=DDgXrUPKFJUPsoV1F7Qz1OH+cpY2/l4a4otcfQb/4j/3sO38/5RISWjl9SBGITRa
+	mX/7hJDoXpqhRnCw6CLZIvn5u5ziADVYK410WgDKp6X1Y7esf7ONqeV1oHfoQrVbjf1
+	xoVipAl8JpW2CUejNnW3lqMp7zB5SgCwygVdHALY=
+Received: by mx.zohomail.com with SMTPS id 1749754715941996.4656178955362;
+	Thu, 12 Jun 2025 11:58:35 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Thu, 12 Jun 2025 20:56:10 +0200
-Subject: [PATCH 08/20] drm/rockchip: vop2: switch to HWORD_UPDATE macro
+Date: Thu, 12 Jun 2025 20:56:12 +0200
+Subject: [PATCH 10/20] drm/rockchip: dw_hdmi_qp: switch to HWORD_UPDATE
+ macro
 MIME-Version: 1.0
-Message-Id: <20250612-byeword-update-v1-8-f4afb8f6313f@collabora.com>
+Message-Id: <20250612-byeword-update-v1-10-f4afb8f6313f@collabora.com>
 References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -93,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_115850_957118_0B395F5D 
-X-CRM114-Status: GOOD (  13.63  )
+X-CRM114-CacheID: sfid-20250612_115919_336551_EB4B3C08 
+X-CRM114-Status: GOOD (  16.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,75 +115,200 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
 drivers that use constant masks.
 
-Remove VOP2's HIWORD_UPDATE macro from the vop2 header file, and replace
-all instances in rockchip_vop2_reg.c (the only user of this particular
-HIWORD_UPDATE definition) with equivalent HWORD_UPDATE instances. This
-gives us better error checking.
+Replace this driver's HIWORD_UPDATE with the HWORD_UPDATE from
+bitfield.h. While at it, disambiguate the write GRF write to SOC_CON7 by
+splitting the definition into the individual bitflags. This is done
+because HWORD_UPDATE shifts the value for us according to the mask, so
+writing the mask to itself to enable two bits is no longer something
+that can be done. It should also not be done, because it hides the true
+meaning of those two individual bit flags.
+
+HDMI output with this patch has been tested on both RK3588 and RK3576.
+On the former, with both present HDMI connectors.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_vop2.h |  1 -
- drivers/gpu/drm/rockchip/rockchip_vop2_reg.c | 14 ++++++++------
- 2 files changed, 8 insertions(+), 7 deletions(-)
+ drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c | 68 +++++++++++++-------------
+ 1 file changed, 33 insertions(+), 35 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop2.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop2.h
-index fc3ecb9fcd9576d20c0fdfa8df469dfbff6605da..757232de41f609917aca679c17623c80879f3593 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop2.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop2.h
-@@ -33,7 +33,6 @@
- #define WIN_FEATURE_AFBDC		BIT(0)
- #define WIN_FEATURE_CLUSTER		BIT(1)
- 
--#define HIWORD_UPDATE(v, h, l)  ((GENMASK(h, l) << 16) | ((v) << (l)))
- /*
-  *  the delay number of a window in different mode.
+diff --git a/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
+index 7d531b6f4c098c6c548788dad487ce4613a2f32b..0431913c2f71893638d1824d52836cc095e04551 100644
+--- a/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
++++ b/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
+@@ -7,6 +7,7 @@
+  * Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
   */
-diff --git a/drivers/gpu/drm/rockchip/rockchip_vop2_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop2_reg.c
-index 32c4ed6857395a953bef8cd800b510fbdf7d9cec..ff1f3eabd1bc2cdb0b7b2aac2ca55ac9b7989d71 100644
---- a/drivers/gpu/drm/rockchip/rockchip_vop2_reg.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_vop2_reg.c
-@@ -1695,8 +1695,9 @@ static unsigned long rk3588_set_intf_mux(struct vop2_video_port *vp, int id, u32
- 		die |= RK3588_SYS_DSP_INFACE_EN_HDMI0 |
- 			    FIELD_PREP(RK3588_SYS_DSP_INFACE_EN_EDP_HDMI0_MUX, vp->id);
- 		val = rk3588_get_hdmi_pol(polflags);
--		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HIWORD_UPDATE(1, 1, 1));
--		regmap_write(vop2->vo1_grf, RK3588_GRF_VO1_CON0, HIWORD_UPDATE(val, 6, 5));
-+		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HWORD_UPDATE(BIT(1), 1));
-+		regmap_write(vop2->vo1_grf, RK3588_GRF_VO1_CON0,
-+			     HWORD_UPDATE(GENMASK(6, 5), val));
- 		break;
- 	case ROCKCHIP_VOP2_EP_HDMI1:
- 		div &= ~RK3588_DSP_IF_EDP_HDMI1_DCLK_DIV;
-@@ -1707,8 +1708,9 @@ static unsigned long rk3588_set_intf_mux(struct vop2_video_port *vp, int id, u32
- 		die |= RK3588_SYS_DSP_INFACE_EN_HDMI1 |
- 			    FIELD_PREP(RK3588_SYS_DSP_INFACE_EN_EDP_HDMI1_MUX, vp->id);
- 		val = rk3588_get_hdmi_pol(polflags);
--		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HIWORD_UPDATE(1, 4, 4));
--		regmap_write(vop2->vo1_grf, RK3588_GRF_VO1_CON0, HIWORD_UPDATE(val, 8, 7));
-+		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HWORD_UPDATE(BIT(4), 1));
-+		regmap_write(vop2->vo1_grf, RK3588_GRF_VO1_CON0,
-+			     HWORD_UPDATE(GENMASK(8, 7), val));
- 		break;
- 	case ROCKCHIP_VOP2_EP_EDP0:
- 		div &= ~RK3588_DSP_IF_EDP_HDMI0_DCLK_DIV;
-@@ -1718,7 +1720,7 @@ static unsigned long rk3588_set_intf_mux(struct vop2_video_port *vp, int id, u32
- 		die &= ~RK3588_SYS_DSP_INFACE_EN_EDP_HDMI0_MUX;
- 		die |= RK3588_SYS_DSP_INFACE_EN_EDP0 |
- 			   FIELD_PREP(RK3588_SYS_DSP_INFACE_EN_EDP_HDMI0_MUX, vp->id);
--		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HIWORD_UPDATE(1, 0, 0));
-+		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HWORD_UPDATE(BIT(0), 1));
- 		break;
- 	case ROCKCHIP_VOP2_EP_EDP1:
- 		div &= ~RK3588_DSP_IF_EDP_HDMI1_DCLK_DIV;
-@@ -1728,7 +1730,7 @@ static unsigned long rk3588_set_intf_mux(struct vop2_video_port *vp, int id, u32
- 		die &= ~RK3588_SYS_DSP_INFACE_EN_EDP_HDMI1_MUX;
- 		die |= RK3588_SYS_DSP_INFACE_EN_EDP1 |
- 			   FIELD_PREP(RK3588_SYS_DSP_INFACE_EN_EDP_HDMI1_MUX, vp->id);
--		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HIWORD_UPDATE(1, 3, 3));
-+		regmap_write(vop2->vop_grf, RK3588_GRF_VOP_CON2, HWORD_UPDATE(BIT(3), 1));
- 		break;
- 	case ROCKCHIP_VOP2_EP_MIPI0:
- 		div &= ~RK3588_DSP_IF_MIPI0_PCLK_DIV;
+ 
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/gpio/consumer.h>
+ #include <linux/mfd/syscon.h>
+@@ -66,7 +67,8 @@
+ #define RK3588_HDMI1_HPD_INT_MSK	BIT(15)
+ #define RK3588_HDMI1_HPD_INT_CLR	BIT(14)
+ #define RK3588_GRF_SOC_CON7		0x031c
+-#define RK3588_SET_HPD_PATH_MASK	GENMASK(13, 12)
++#define RK3588_HPD_HDMI0_IO_EN_MASK	BIT(12)
++#define RK3588_HPD_HDMI1_IO_EN_MASK	BIT(13)
+ #define RK3588_GRF_SOC_STATUS1		0x0384
+ #define RK3588_HDMI0_LEVEL_INT		BIT(16)
+ #define RK3588_HDMI1_LEVEL_INT		BIT(24)
+@@ -80,7 +82,6 @@
+ #define RK3588_HDMI0_GRANT_SEL		BIT(10)
+ #define RK3588_HDMI1_GRANT_SEL		BIT(12)
+ 
+-#define HIWORD_UPDATE(val, mask)	((val) | (mask) << 16)
+ #define HOTPLUG_DEBOUNCE_MS		150
+ #define MAX_HDMI_PORT_NUM		2
+ 
+@@ -185,11 +186,11 @@ static void dw_hdmi_qp_rk3588_setup_hpd(struct dw_hdmi_qp *dw_hdmi, void *data)
+ 	u32 val;
+ 
+ 	if (hdmi->port_id)
+-		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR,
+-				    RK3588_HDMI1_HPD_INT_CLR | RK3588_HDMI1_HPD_INT_MSK);
++		val = (HWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR, 1) |
++		       HWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, 0));
+ 	else
+-		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR,
+-				    RK3588_HDMI0_HPD_INT_CLR | RK3588_HDMI0_HPD_INT_MSK);
++		val = (HWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR, 1) |
++		       HWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, 0));
+ 
+ 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
+ }
+@@ -218,8 +219,8 @@ static void dw_hdmi_qp_rk3576_setup_hpd(struct dw_hdmi_qp *dw_hdmi, void *data)
+ 	struct rockchip_hdmi_qp *hdmi = (struct rockchip_hdmi_qp *)data;
+ 	u32 val;
+ 
+-	val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR,
+-			    RK3576_HDMI_HPD_INT_CLR | RK3576_HDMI_HPD_INT_MSK);
++	val = (HWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR, 1) |
++	       HWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, 0));
+ 
+ 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
+ 	regmap_write(hdmi->regmap, 0xa404, 0xffff0102);
+@@ -254,7 +255,7 @@ static irqreturn_t dw_hdmi_qp_rk3576_hardirq(int irq, void *dev_id)
+ 
+ 	regmap_read(hdmi->regmap, RK3576_IOC_HDMI_HPD_STATUS, &intr_stat);
+ 	if (intr_stat) {
+-		val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, RK3576_HDMI_HPD_INT_MSK);
++		val = HWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, 1);
+ 
+ 		regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
+ 		return IRQ_WAKE_THREAD;
+@@ -273,12 +274,12 @@ static irqreturn_t dw_hdmi_qp_rk3576_irq(int irq, void *dev_id)
+ 	if (!intr_stat)
+ 		return IRQ_NONE;
+ 
+-	val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR, RK3576_HDMI_HPD_INT_CLR);
++	val = HWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR, 1);
+ 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
+ 	mod_delayed_work(system_wq, &hdmi->hpd_work,
+ 			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
+ 
+-	val = HIWORD_UPDATE(0, RK3576_HDMI_HPD_INT_MSK);
++	val = HWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, 0);
+ 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
+ 
+ 	return IRQ_HANDLED;
+@@ -293,11 +294,9 @@ static irqreturn_t dw_hdmi_qp_rk3588_hardirq(int irq, void *dev_id)
+ 
+ 	if (intr_stat) {
+ 		if (hdmi->port_id)
+-			val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK,
+-					    RK3588_HDMI1_HPD_INT_MSK);
++			val = HWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, 1);
+ 		else
+-			val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK,
+-					    RK3588_HDMI0_HPD_INT_MSK);
++			val = HWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, 1);
+ 		regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
+ 		return IRQ_WAKE_THREAD;
+ 	}
+@@ -315,20 +314,18 @@ static irqreturn_t dw_hdmi_qp_rk3588_irq(int irq, void *dev_id)
+ 		return IRQ_NONE;
+ 
+ 	if (hdmi->port_id)
+-		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR,
+-				    RK3588_HDMI1_HPD_INT_CLR);
++		val = HWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR, 1);
+ 	else
+-		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR,
+-				    RK3588_HDMI0_HPD_INT_CLR);
++		val = HWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR, 1);
+ 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
+ 
+ 	mod_delayed_work(system_wq, &hdmi->hpd_work,
+ 			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
+ 
+ 	if (hdmi->port_id)
+-		val |= HIWORD_UPDATE(0, RK3588_HDMI1_HPD_INT_MSK);
++		val |= HWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, 0);
+ 	else
+-		val |= HIWORD_UPDATE(0, RK3588_HDMI0_HPD_INT_MSK);
++		val |= HWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, 0);
+ 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
+ 
+ 	return IRQ_HANDLED;
+@@ -338,14 +335,14 @@ static void dw_hdmi_qp_rk3576_io_init(struct rockchip_hdmi_qp *hdmi)
+ {
+ 	u32 val;
+ 
+-	val = HIWORD_UPDATE(RK3576_SCLIN_MASK, RK3576_SCLIN_MASK) |
+-	      HIWORD_UPDATE(RK3576_SDAIN_MASK, RK3576_SDAIN_MASK) |
+-	      HIWORD_UPDATE(RK3576_HDMI_GRANT_SEL, RK3576_HDMI_GRANT_SEL) |
+-	      HIWORD_UPDATE(RK3576_I2S_SEL_MASK, RK3576_I2S_SEL_MASK);
++	val = HWORD_UPDATE(RK3576_SCLIN_MASK, 1) |
++	      HWORD_UPDATE(RK3576_SDAIN_MASK, 1) |
++	      HWORD_UPDATE(RK3576_HDMI_GRANT_SEL, 1) |
++	      HWORD_UPDATE(RK3576_I2S_SEL_MASK, 1);
+ 
+ 	regmap_write(hdmi->vo_regmap, RK3576_VO0_GRF_SOC_CON14, val);
+ 
+-	val = HIWORD_UPDATE(0, RK3576_HDMI_HPD_INT_MSK);
++	val = HWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, 0);
+ 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
+ }
+ 
+@@ -353,27 +350,28 @@ static void dw_hdmi_qp_rk3588_io_init(struct rockchip_hdmi_qp *hdmi)
+ {
+ 	u32 val;
+ 
+-	val = HIWORD_UPDATE(RK3588_SCLIN_MASK, RK3588_SCLIN_MASK) |
+-	      HIWORD_UPDATE(RK3588_SDAIN_MASK, RK3588_SDAIN_MASK) |
+-	      HIWORD_UPDATE(RK3588_MODE_MASK, RK3588_MODE_MASK) |
+-	      HIWORD_UPDATE(RK3588_I2S_SEL_MASK, RK3588_I2S_SEL_MASK);
++	val = HWORD_UPDATE(RK3588_SCLIN_MASK, 1) |
++	      HWORD_UPDATE(RK3588_SDAIN_MASK, 1) |
++	      HWORD_UPDATE(RK3588_MODE_MASK, 1) |
++	      HWORD_UPDATE(RK3588_I2S_SEL_MASK, 1);
+ 	regmap_write(hdmi->vo_regmap,
+ 		     hdmi->port_id ? RK3588_GRF_VO1_CON6 : RK3588_GRF_VO1_CON3,
+ 		     val);
+ 
+-	val = HIWORD_UPDATE(RK3588_SET_HPD_PATH_MASK, RK3588_SET_HPD_PATH_MASK);
++	val = HWORD_UPDATE(RK3588_HPD_HDMI0_IO_EN_MASK, 1) |
++	      HWORD_UPDATE(RK3588_HPD_HDMI1_IO_EN_MASK, 1);
+ 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON7, val);
+ 
+ 	if (hdmi->port_id)
+-		val = HIWORD_UPDATE(RK3588_HDMI1_GRANT_SEL, RK3588_HDMI1_GRANT_SEL);
++		val = HWORD_UPDATE(RK3588_HDMI1_GRANT_SEL, 1);
+ 	else
+-		val = HIWORD_UPDATE(RK3588_HDMI0_GRANT_SEL, RK3588_HDMI0_GRANT_SEL);
++		val = HWORD_UPDATE(RK3588_HDMI0_GRANT_SEL, 1);
+ 	regmap_write(hdmi->vo_regmap, RK3588_GRF_VO1_CON9, val);
+ 
+ 	if (hdmi->port_id)
+-		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, RK3588_HDMI1_HPD_INT_MSK);
++		val = HWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, 1);
+ 	else
+-		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, RK3588_HDMI0_HPD_INT_MSK);
++		val = HWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, 1);
+ 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
+ }
+ 
 
 -- 
 2.49.0
