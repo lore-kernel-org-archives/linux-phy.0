@@ -4,90 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF9B4C61CE8
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:03:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2F1FC71150
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:09:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MhSq15YECAEXvzwco3sUJJSDaN/56GnrSV7Wa/n7DT0=; b=wD22CP3Ho6IAej
-	vuHkhIN66DrE27xiqRt1TmI5wVG33GNDr++L9nA16bUXCj105n+bgu6XfJw1XBpFBEUFrFaO3lEiR
-	G4iQdvK2OQIhSYpUB0OB/buWMZl22gSu7iQMKNqJ2bwRZpYoYHP5HCTm+5T0SmOaLBIWO48JDhq1F
-	7jT4S8Ksstmd0xMyjctr2MEsD7i9EMbM9P21ml+zvdxufm70L9568Rc4vgQHT2D4r2HyemKmHzdYT
-	meTlDGNmtj9hfqhqroGCClBDgue58GPH1JjZrm5eayqNkM0ljBUmLOV00I7vALmIWT5sb+eXj5B5q
-	a8DN6dGxn8K9UlXmzxTQ==;
+	List-Owner; bh=f23xfHgUagj9wwRyC64uo3u2WWrrjwjLvXSIqJw3FPw=; b=tv4E+rWu5BGiVa
+	qdyQgVdMW2Hicy4OR8sj6grlPN0ukgVwJZkNPVT22LrkMBRj861RvXrobJrh82/ukLZtTpWkgtRfe
+	hZhM/gYuNBHabQfE0QyNgBNQiUtnEk7tewdscYwwvW8Trc84dZ7MScB//Uk6f/wuLW9LVv3ADoIdO
+	ztuAjI6QHJ2vnV6rEv3FvFyrXYy5lXqt0OjDRYEmCu0moqaw2kHElg2yLwkAV6dwfmIMUEpCf6IRx
+	h8p/p7AqJrDqHvWi7zViTM/9y9rk9DAUplHDGX+2Fur8eFC9RpONHNVH54xsfN6MoB7KKpE2VZoVF
+	tu39hM+QmEL0JXXqmEFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPq1c-0000000Eiqo-1KPd;
-	Thu, 12 Jun 2025 22:03:56 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1uPq7Q-0000000Ejs4-2gaK;
+	Thu, 12 Jun 2025 22:09:56 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPq1Z-0000000EiqQ-3DqU;
-	Thu, 12 Jun 2025 22:03:55 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id 98e67ed59e1d1-3122368d7cfso1267615a91.1;
-        Thu, 12 Jun 2025 15:03:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1749765833; x=1750370633; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=KT2Tg8D7Dq4Dema6zaCK0SsodJZdyDqLXbIGVQRhliM=;
-        b=P6UFZ66xqRKo5Qb1JeyWeBUfuJaI1ERalbP9aw/n3zrX93+qsgJwE1k9PGBOqCfjO1
-         KWkk7stS4IJCls6QGIic54Ghf0m7DyFtFoPO2GrdOwL1rMdAz27jENuvUs8hShE5a8VB
-         Rprx6hByRH+p7Nj+OKXjooDLr2ktaZlY+wgwZpOCijRowbAhF27t/iy/Jg53GwR5RR0i
-         lFX0afCacc3ACbgqab4+IxpKZdb4mTOz1OUYLf6rtU3veCn0TPYoEBD/CDIsJYtraWrI
-         tFYlKYpBTwmmg+xuOMffvHg5x2hkr2k61FylIFhP2aagSTN9lLnJQGABIaKJzF6INw0H
-         gWJw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749765833; x=1750370633;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=KT2Tg8D7Dq4Dema6zaCK0SsodJZdyDqLXbIGVQRhliM=;
-        b=ZhisAElPPCxOzH5VEpfD6arZGMnw/UJpeaQ2wzzlEqN7lWauciVwaIeuspweDrvSgv
-         5O4WnMmscmYuEp/QNgmhFqS9rZz+cdEQv6AS/r/iVbe60kK8SsMAgzChXacW6vln1dsS
-         pq0FohgU4JvFLTk6SpAaF5JCgLgcxcSUG4EKe/YvDEwNy2VCa4dq2ywoOdUZ9RrflQzb
-         GbBfjqZRH/vBy4SxnlQKU6UKSexUN26wkiwjECL09jxH5ROmfUGVfvmpHjW+4+zFNNnG
-         uymm5iHfF4VwNCRKmC2oj9eU8j/ieRuccllQnnU3NdgmEIGAvB+IWszh8RO8l9mpk7Gh
-         29HQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUkurp1aALM6OhgCSXZDNA3jDte2uwALe9C5KyQLidPEZeb5g1oCLskM6sSf/aO5DRtIK+DOfgDkC3oRjo=@lists.infradead.org, AJvYcCWxaL/8fD3Jx4mGRBZY0jx2ld35rJZ9PnXywd5UXVx2ukv8GKU5m8Xl6FS9fdKZnT39NA4BxoFsLsQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxFXpEeNLLAlU4WpkenRT6ZiDiJDJpcexU7twQSLrxV3kUE3StA
-	OBn7WJUswwZ65np3zYTAHb33XO16XIUDGO6WDqapo2rglkdfOJZNgFuD
-X-Gm-Gg: ASbGncuKlcUHiW239HQT3Qz/RLjMEhk2QQpM/9VyFBAJIct/m3XaHb7hTe3icyV1y7J
-	mh6DzMZTWINk4JRtNWV2Bbz+h4wE9qx2hOe+r/QeYmSIGXyYetZxU6t3rlOxAUeRU0Lm8gQ19R0
-	QZfdjuzbinG+/FbdNm61Kj8IvnEVAcITeYIJ7O+/eimlCgfg+2CVJuuiMrLQccRVW5jB99l1CBE
-	+l2Z4TgnpKtBB/IJ77lY5bg/wqEA2hWXmi4Bplmy5gGuek8sl5P2fnDSl8xHpqi4iAg5WgQ+hoU
-	bTihSS4OLJ+vvM+DWVFqendPbxtwl1EX9yuee0CYCMzrK9bnOVzvmucTi2D3
-X-Google-Smtp-Source: AGHT+IFEKNLfpOAGCxAJGsac/EYqmS3wSquQaG49ddE1q1GX7taDoBx1GaZvDLzKHooYzWdOVmZGkQ==
-X-Received: by 2002:a17:90b:264e:b0:313:28e7:af14 with SMTP id 98e67ed59e1d1-313d9e93c27mr1088783a91.19.1749765832654;
-        Thu, 12 Jun 2025 15:03:52 -0700 (PDT)
-Received: from localhost ([121.250.214.124])
-        by smtp.gmail.com with UTF8SMTPSA id d9443c01a7336-2365deb04a6sm2077235ad.178.2025.06.12.15.03.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Jun 2025 15:03:52 -0700 (PDT)
-Date: Fri, 13 Jun 2025 06:02:27 +0800
-From: Inochi Amaoto <inochiama@gmail.com>
-To: Conor Dooley <conor@kernel.org>, Inochi Amaoto <inochiama@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Chen Wang <unicorn_wang@outlook.com>, Paul Walmsley <paul.walmsley@sifive.com>, 
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
-	Alexandre Ghiti <alex@ghiti.fr>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	sophgo@lists.linux.dev, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org, 
-	Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
-Message-ID: <jf76ak6b5edgqhx4rkhcsfpmcpkrxci7rq373ld2apue67q7hh@3fb346tgaxcq>
-References: <20250611081804.1196397-1-inochiama@gmail.com>
- <20250611081804.1196397-2-inochiama@gmail.com>
- <20250612-siesta-verbalize-6a7768ebc648@spud>
+	id 1uPn76-0000000E9uK-3qdq;
+	Thu, 12 Jun 2025 18:57:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754599; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=VjTrVaWfz9jfeFDYITSFocj41PBevLpWCKD+yFugt6G1+9d/Hw9jBQso8N/gjAPvpi60iwOZlPdJti4Lm1c8Stdx7ZAV2s32I+igmfs7sfjSiZzNcOGemQ8U3YJi+genYO6P68iKZU887RanvFG2jmIT4EG6ifQWvG3TTwOzVmc=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1749754599; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=IjOHGVHF7xIfJfArpDhRS/Px27x14OeLJOrr4ltwi/o=; 
+	b=Hv21Y4ICiKV6kkRup/0kBvaRTAUVqzMvXMTU7oOyjqRyNnKpWlnVTSU85nEPPqG4UtY6ATHj7UGqD9ilByEshaOxWumLRru0Myi5xN/KMure37YfQFtqQmaal02l69q9GpbUglMNHzB8ITpQ0V3kVy+XbtmczpJfHsjaGkX3vq4=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754599;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=IjOHGVHF7xIfJfArpDhRS/Px27x14OeLJOrr4ltwi/o=;
+	b=DDS22aPhBDFhm0N/TbbfWtmcvGpPgih6ABqWtgdiQi1WLz5vBE40IBeFLnhixWy+
+	XeH5bQ1OypUI3HKN9tCAk6z/OJYWnm4DYfBAd0Uz/qp47NLT/xrxRESq5KVRWH0tPYk
+	0l1ydpt0eehm25ZaFWLKUMNlC9fEHBBWV4iUkEww=
+Received: by mx.zohomail.com with SMTPS id 1749754596390629.9899321699246;
+	Thu, 12 Jun 2025 11:56:36 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Thu, 12 Jun 2025 20:56:03 +0200
+Subject: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250612-siesta-verbalize-6a7768ebc648@spud>
+Message-Id: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+To: Yury Norov <yury.norov@gmail.com>, 
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Shreeya Patel <shreeya.patel@collabora.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_150353_807059_3A5BBB9C 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20250612_115725_009976_043BECC4 
+X-CRM114-Status: GOOD (  17.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,29 +111,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 12, 2025 at 05:07:37PM +0100, Conor Dooley wrote:
-> On Wed, Jun 11, 2025 at 04:18:02PM +0800, Inochi Amaoto wrote:
-> > The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
-> > "VBUS_DET" to get the right operation mode. If this pin is not
-> > connected, it only supports setting the mode manually.
-> > 
-> > Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
-> > 
-> > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
-> 
-> I'm having a bit of trouble finding the v3 etc, could you provide a
-> link?
-> I think what is here is sane, but I want to make sure that review
-> comments on previous versions have been addressed. "dfn:" searches for
-> both driver and binding filenames turned up nothing.
-> 
+Hardware of various vendors, but very notably Rockchip, often uses
+32-bit registers where the upper 16-bit half of the register is a
+write-enable mask for the lower half.
 
-The v3 is
-https://lore.kernel.org/all/IA1PR20MB4953C1876484E149AA390DD5BB1D2@IA1PR20MB4953.namprd20.prod.outlook.com/
-It is a long time ago when sending these patch.
+This type of hardware setup allows for more granular concurrent register
+write access.
 
-Regards,
-Inochi
+Over the years, many drivers have hand-rolled their own version of this
+macro, usually without any checks, often called something like
+HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
+semantics between them.
+
+Clearly there is a demand for such a macro, and thus the demand should
+be satisfied in a common header file.
+
+Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
+version that can be used in initializers, like FIELD_PREP_CONST. The
+macro names are chosen to not clash with any potential other macros that
+drivers may already have implemented themselves, while retaining a
+familiar name.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ include/linux/bitfield.h | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 47 insertions(+)
+
+diff --git a/include/linux/bitfield.h b/include/linux/bitfield.h
+index 6d9a53db54b66c0833973c880444bd289d9667b1..b90d88db7405f95b78cdd6f3426263086bab5aa6 100644
+--- a/include/linux/bitfield.h
++++ b/include/linux/bitfield.h
+@@ -8,6 +8,7 @@
+ #define _LINUX_BITFIELD_H
+ 
+ #include <linux/build_bug.h>
++#include <linux/limits.h>
+ #include <linux/typecheck.h>
+ #include <asm/byteorder.h>
+ 
+@@ -142,6 +143,52 @@
+ 		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
+ 	)
+ 
++/**
++ * HWORD_UPDATE() - prepare a bitfield element with a mask in the upper half
++ * @_mask: shifted mask defining the field's length and position
++ * @_val:  value to put in the field
++ *
++ * HWORD_UPDATE() masks and shifts up the value, as well as bitwise ORs the
++ * result with the mask shifted up by 16.
++ *
++ * This is useful for a common design of hardware registers where the upper
++ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
++ * register, a bit in the lower half is only updated if the corresponding bit
++ * in the upper half is high.
++ */
++#define HWORD_UPDATE(_mask, _val)					 \
++	({								 \
++		__BF_FIELD_CHECK(_mask, ((u16) 0U), _val,		 \
++				 "HWORD_UPDATE: ");			 \
++		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)) | \
++		((_mask) << 16);					 \
++	})
++
++/**
++ * HWORD_UPDATE_CONST() - prepare a constant bitfield element with a mask in
++ *                        the upper half
++ * @_mask: shifted mask defining the field's length and position
++ * @_val:  value to put in the field
++ *
++ * HWORD_UPDATE_CONST() masks and shifts up the value, as well as bitwise ORs
++ * the result with the mask shifted up by 16.
++ *
++ * This is useful for a common design of hardware registers where the upper
++ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
++ * register, a bit in the lower half is only updated if the corresponding bit
++ * in the upper half is high.
++ *
++ * Unlike HWORD_UPDATE(), this is a constant expression and can therefore
++ * be used in initializers. Error checking is less comfortable for this
++ * version.
++ */
++#define HWORD_UPDATE_CONST(_mask, _val)					  \
++	(								  \
++		FIELD_PREP_CONST(_mask, _val) |				  \
++		(BUILD_BUG_ON_ZERO(const_true((u64) (_mask) > U16_MAX)) + \
++		 ((_mask) << 16))					  \
++	)
++
+ /**
+  * FIELD_GET() - extract a bitfield element
+  * @_mask: shifted mask defining the field's length and position
+
+-- 
+2.49.0
+
 
 -- 
 linux-phy mailing list
