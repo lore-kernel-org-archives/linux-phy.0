@@ -4,96 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADE1DC61CE8
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 10:07:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AC82C71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 11:32:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QESwN11GlI74Pul6sifIOGgUVAiXl80x263jMgGyxaY=; b=sk6mwFNQ6Tjbyn
-	jFA7HWTj9Eh0dNaS5ReANxhufKS94YLSIUIbKVrMvs3IbdbavH0WyOo/6YntzOBUOy4ccNSrjPrWF
-	dwdLJreysspfXA4qDOLYmrwTVSEJZApE3I629pPsKg3ofoQHfzVMzZqDPCi1Bk3HWMfj1Ev3vFUNQ
-	xwSUnbB95v+AIPCpyFIgHucIwqN1HsmoVXUTAeONv8W17GMmeXEf1UhGkVk9Ew9H0kMqIxl4tjY7M
-	6o1WIVdXALsIst+SUGtt2U0tuEKfzAaD5GsUiku/wr8OsDD+BnF6Y4CfCtuMM/eMGzVnnZNIRrQsK
-	/mY7b6eG74NLbQ2jfvZQ==;
+	List-Owner; bh=ANHBLDIObfhLLnaaFjy7uXEAd2xdI5AH/K1gBys5I4A=; b=rMBKCCULSb5CTZ
+	Bo0olMz6m+4A58x33xZCygsdDpFiDLUgUgeiJgyzsk2YdP3DffRXoVtLM1qd8GBkyWOGWb40hduDB
+	ndvpj6x12b4yTHI8b2+wlI42rCuaWee2FKHGCFAN35x9cKAgW9x//n7qsixRJbBfz5dl2jbZQAus4
+	jdHpK4DSnDAax0J2QpqfLLBOteyHavdkjHk13UzzM8PuJqA13hmH+zbuEQ1WKkRZ9ioATj3m9vmfO
+	R6B0he/gsDrnVSQot1RpnP3Vwo6lgDx3DwkjYzs1M9AczMEuNux3R7zhRjtnpuJfrXV9uocND3Slv
+	rbq6pdNOJdSAF4ZedCXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPepp-0000000CuqG-1far;
-	Thu, 12 Jun 2025 10:07:01 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1uPgAk-0000000D9Mh-1Hwe;
+	Thu, 12 Jun 2025 11:32:42 +0000
+Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPdeI-0000000CiSr-32bA
-	for linux-phy@lists.infradead.org;
-	Thu, 12 Jun 2025 08:51:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1749718260;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=E6IteP7BP9moGyYHUNtJgLr0pJFVsqjJ7MguYFjZTR8=;
-	b=FRTrvHG+MjgkEDet6S0VW13F1D2uWiPHr6bg8BafbTfSELsxoVz1RYcoc1Tl9XYKlKQVD1
-	v3k3kbD+pnTLxMOBc9ImE4QZBAubBUuYNxrsakJA/QPNktdPCqPwgZ05Fo+PWCH6fak21M
-	w4jb3IaaXLoWfqJEh4bVuFIr8Ky2ea4=
-Received: from mail-ot1-f69.google.com (mail-ot1-f69.google.com
- [209.85.210.69]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-594-6dw1gAboNbapjFRASyUaFQ-1; Thu, 12 Jun 2025 04:49:18 -0400
-X-MC-Unique: 6dw1gAboNbapjFRASyUaFQ-1
-X-Mimecast-MFC-AGG-ID: 6dw1gAboNbapjFRASyUaFQ_1749718157
-Received: by mail-ot1-f69.google.com with SMTP id 46e09a7af769-735b8bd859eso207100a34.1
-        for <linux-phy@lists.infradead.org>; Thu, 12 Jun 2025 01:49:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749718157; x=1750322957;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=E6IteP7BP9moGyYHUNtJgLr0pJFVsqjJ7MguYFjZTR8=;
-        b=jVRrwXIFzoUCSj0RporGMSOEhDrwtoGku4uyEPkUr87qSWKk2cZcc8ONzYs9eG0zr0
-         EP0WtT8eD0LrHjKQElwYG5yG5izzvc37qxWDQs877iaVClNSfgjWYA25Fc0HIubITg9h
-         /3f3aZD0R5ASufWg0JkUYeOl0/ExClX10Sy/NpMPLTxkMv0f5xagSNF0lCzg184tFVgv
-         Orbuy4yZk0l0tM+w6OKYE+BbEwdaM2GhK6dCdZteYaDmjf3OwLZ3PvFM7McwOjRyDTEq
-         uCtqdIo8x8Wk33wHj7x7dzLrx2JDMdCphpJi/HUvmaPgX68RuKlw+MbJLYErLVtz+NUL
-         K6iA==
-X-Forwarded-Encrypted: i=1; AJvYcCWikNqG0FqXSMe9Q9PwpOVyIc6s72h6Fjs3gOYpkJxRshrt105hMbXA5nlf5BrnCRCV/WKUTvMTahc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwqpZA41X5ufMg6qVc6yvt7EIqXj0YFudFY6ThzIhAeynR8Bdik
-	wHDce8jy0cgn9Gv+aSL8Di/EO3uKCEsU9rFFhLoIF50lf1LiTMo2lAwseh+/8gLDQs7taOpARFR
-	pGEkHtzBVZ5lbVloW90RJsh5tj/q+ypVsDXcynjq+EX7UOwCsrju3Zzp+xDf/Le+horRWOEXGuG
-	JKSaIDiq9T2i8EZuYoCRsqSKqMSoFjyara0AqEHGBCpg==
-X-Gm-Gg: ASbGncsScnDwHk8zWr9UYuwt3MmrftKmXkkd3qmhY0krLm41RiD2fZGZBjk/uCWeTka
-	LHJ1M31iXebzCl5eAQHmovJvPYjrLhfcYpnn53gHwvkYMe+j6/nP5zSpTNiceaVvNBdLg66hDvD
-	wcJvk=
-X-Received: by 2002:a05:6820:481a:b0:60f:880:6082 with SMTP id 006d021491bc7-610ef6f0f1fmr647781eaf.1.1749718157226;
-        Thu, 12 Jun 2025 01:49:17 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGwPFH5xCDRpuf1s5d5mJAfNQIldXb2TcD3mthjSOwkVxy4npvtOqbY5CzUVlMoXgCj/fxjsyNscrEZA/vemEI=
-X-Received: by 2002:a05:6820:481a:b0:60f:880:6082 with SMTP id
- 006d021491bc7-610ef6f0f1fmr647769eaf.1.1749718156873; Thu, 12 Jun 2025
- 01:49:16 -0700 (PDT)
-MIME-Version: 1.0
-References: <20250109121614.754466-1-s-vadapalli@ti.com> <20250109121614.754466-2-s-vadapalli@ti.com>
- <fccedc26-0bb9-4078-8a94-4199f6b383c1@kernel.org>
-In-Reply-To: <fccedc26-0bb9-4078-8a94-4199f6b383c1@kernel.org>
-From: Enric Balletbo i Serra <eballetb@redhat.com>
-Date: Thu, 12 Jun 2025 10:48:20 +0200
-X-Gm-Features: AX0GCFucWcc-KrL-D5Adt3auExiV1GTxSbUzP5wSIA--M9Ad_QrNh0O58OSRSGM
-Message-ID: <CALE0LRsdsTU-NLN4fgh2c8qnS-pPP1BDJvjnvsSOnud8amk3=A@mail.gmail.com>
+	id 1uPenV-0000000CuVa-2vWJ;
+	Thu, 12 Jun 2025 10:04:39 +0000
+Received: from lelvem-sh01.itg.ti.com ([10.180.77.71])
+	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55CA4NFf2882638;
+	Thu, 12 Jun 2025 05:04:23 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1749722663;
+	bh=M0kvq/12rDbuJoW2tEUY3xZ2q0mV8QHq6VdoGLJBCVM=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=BoxAwgD2buHHc5xQReJkJk/XWxKlkhor4zR5KLFTmrpzvrwJ0RSC0RknNnYtdQy9s
+	 VK584tKRpAyyAZo8czRUE19ivyZVGcX+bgWCKGZyFPH6cSseR/o3dBDFUrPSJ3dHuk
+	 SGZhe2ni5JBz61w74do3uGu1TNiLfPoJUCGxHn3I=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55CA4N3m2496745
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
+	Thu, 12 Jun 2025 05:04:23 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Thu, 12
+ Jun 2025 05:04:22 -0500
+Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
+ Frontend Transport; Thu, 12 Jun 2025 05:04:22 -0500
+Received: from localhost (dhcp-172-24-227-169.dhcp.ti.com [172.24.227.169])
+	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55CA4LvJ1998196;
+	Thu, 12 Jun 2025 05:04:21 -0500
+Date: Thu, 12 Jun 2025 15:34:20 +0530
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: Enric Balletbo i Serra <eballetb@redhat.com>
+CC: Roger Quadros <rogerq@kernel.org>,
+        Siddharth Vadapalli
+	<s-vadapalli@ti.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <sjakhade@cadence.com>,
+        <thomas.richard@bootlin.com>, <christophe.jaillet@wanadoo.fr>,
+        <u.kleine-koenig@baylibre.com>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <srk@ti.com>
 Subject: Re: [PATCH v3 1/2] phy: cadence-torrent: Add PCIe multilink
  configuration for 100 MHz refclk
-To: Roger Quadros <rogerq@kernel.org>
-Cc: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org, kishon@kernel.org, 
-	sjakhade@cadence.com, thomas.richard@bootlin.com, 
-	christophe.jaillet@wanadoo.fr, u.kleine-koenig@baylibre.com, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, srk@ti.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: uQ30lV2VUBW2XxBdXzam5sVUBk9iGo_vOWpSrWNVRbo_1749718157
-X-Mimecast-Originator: redhat.com
+Message-ID: <6b747de0-9d10-43e9-a2b1-23a129301538@ti.com>
+References: <20250109121614.754466-1-s-vadapalli@ti.com>
+ <20250109121614.754466-2-s-vadapalli@ti.com>
+ <fccedc26-0bb9-4078-8a94-4199f6b383c1@kernel.org>
+ <CALE0LRsdsTU-NLN4fgh2c8qnS-pPP1BDJvjnvsSOnud8amk3=A@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CALE0LRsdsTU-NLN4fgh2c8qnS-pPP1BDJvjnvsSOnud8amk3=A@mail.gmail.com>
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_015102_832319_FD4F5483 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250612_030437_943589_3A534733 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,17 +92,20 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgYWxsLAoKT24gVGh1LCBKYW4gOSwgMjAyNSBhdCA1OjM14oCvUE0gUm9nZXIgUXVhZHJvcyA8
-cm9nZXJxQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4KPgo+IE9uIDA5LzAxLzIwMjUgMTQ6MTYsIFNp
-ZGRoYXJ0aCBWYWRhcGFsbGkgd3JvdGU6Cj4gPiBGcm9tOiBTd2FwbmlsIEpha2hhZGUgPHNqYWto
-YWRlQGNhZGVuY2UuY29tPgo+ID4KPiA+IEFkZCByZWdpc3RlciBzZXF1ZW5jZXMgdG8gc3VwcG9y
-dCBQQ0llIG11bHRpbGluayBjb25maWd1cmF0aW9uIGZvciAxMDBNSHoKPiA+IHJlZmVyZW5jZSBj
-bG9jay4gTWF4aW11bSB0d28gUENJZSBsaW5rcyBhcmUgc3VwcG9ydGVkLgo+ID4KPiA+IFNpZ25l
-ZC1vZmYtYnk6IFN3YXBuaWwgSmFraGFkZSA8c2pha2hhZGVAY2FkZW5jZS5jb20+Cj4gPiBTaWdu
-ZWQtb2ZmLWJ5OiBTaWRkaGFydGggVmFkYXBhbGxpIDxzLXZhZGFwYWxsaUB0aS5jb20+Cj4KPiBS
-ZXZpZXdlZC1ieTogUm9nZXIgUXVhZHJvcyA8cm9nZXJxQGtlcm5lbC5vcmc+Cj4KClRoZXNlIHBh
-dGNoZXMgc2VlbSBnb29kIGFuZCBoYXZlIGJlZW4gcmV2aWV3ZWQgYnV0IGxvb2sgc3RhbGxlZCBo
-ZXJlLgpUaGVyZSBpcyBhbnkgY2hhbmNlIHRvIHJlYmFzZSBpdCBvbiB0b3Agb2YgdGhlIG1haW5s
-aW5lPwoKVGhhbmtzLAogICBFbnJpYwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+T24gVGh1LCBKdW4gMTIsIDIwMjUgYXQgMTA6NDg6MjBBTSArMDIwMCwgRW5yaWMgQmFsbGV0Ym8g
+aSBTZXJyYSB3cm90ZToKCkhlbGxvIEVucmljLAoKPiBIaSBhbGwsCj4gCj4gT24gVGh1LCBKYW4g
+OSwgMjAyNSBhdCA1OjM14oCvUE0gUm9nZXIgUXVhZHJvcyA8cm9nZXJxQGtlcm5lbC5vcmc+IHdy
+b3RlOgo+ID4KPiA+Cj4gPgo+ID4gT24gMDkvMDEvMjAyNSAxNDoxNiwgU2lkZGhhcnRoIFZhZGFw
+YWxsaSB3cm90ZToKPiA+ID4gRnJvbTogU3dhcG5pbCBKYWtoYWRlIDxzamFraGFkZUBjYWRlbmNl
+LmNvbT4KPiA+ID4KPiA+ID4gQWRkIHJlZ2lzdGVyIHNlcXVlbmNlcyB0byBzdXBwb3J0IFBDSWUg
+bXVsdGlsaW5rIGNvbmZpZ3VyYXRpb24gZm9yIDEwME1Iego+ID4gPiByZWZlcmVuY2UgY2xvY2su
+IE1heGltdW0gdHdvIFBDSWUgbGlua3MgYXJlIHN1cHBvcnRlZC4KPiA+ID4KPiA+ID4gU2lnbmVk
+LW9mZi1ieTogU3dhcG5pbCBKYWtoYWRlIDxzamFraGFkZUBjYWRlbmNlLmNvbT4KPiA+ID4gU2ln
+bmVkLW9mZi1ieTogU2lkZGhhcnRoIFZhZGFwYWxsaSA8cy12YWRhcGFsbGlAdGkuY29tPgo+ID4K
+PiA+IFJldmlld2VkLWJ5OiBSb2dlciBRdWFkcm9zIDxyb2dlcnFAa2VybmVsLm9yZz4KPiA+Cj4g
+Cj4gVGhlc2UgcGF0Y2hlcyBzZWVtIGdvb2QgYW5kIGhhdmUgYmVlbiByZXZpZXdlZCBidXQgbG9v
+ayBzdGFsbGVkIGhlcmUuCj4gVGhlcmUgaXMgYW55IGNoYW5jZSB0byByZWJhc2UgaXQgb24gdG9w
+IG9mIHRoZSBtYWlubGluZT8KClRoZSBwYXRjaGVzIGFwcGx5IGNsZWFubHkgb24gdGhlIGxhdGVz
+dCBsaW51eC1uZXh0IHRhZ2dlZCBuZXh0LTIwMjUwNjEyLgoKUmVnYXJkcywKU2lkZGhhcnRoLgoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
