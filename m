@@ -4,73 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32D42C71149
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:44:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAFACC71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:44:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KiQGW9e7S+7Gub2C87uNbInhNeLGGoLRAX21Ru8sKJU=; b=zYyR6gAh8ZR7AS
-	mOLzJ5kEECT0vEabP1gWmn+e4BhK56kzbeV+1H5DaI4g7Sl+Qbfv9PDEXtM7bvTM13KqN2MHIc7JS
-	bRqDFDyO/KlOiRHbCUj/UhJN8YVG2LfF911H6MgdMOhYLSy1FpdXh9GjAr3a1i9n/QTgXLPsycq5b
-	9KbFhCDBu6ojLEU8uV0d30xrlTGeeGvwlwkoQoBaL84uiuYRFpRz/SnFyUycxJAsgfTuB2t/J8REa
-	FYeITw/kyzxOhsy0uTD8MprORABDaaNuIoCK84DXXQaFZ9gweomC0n9mu2DqDw3diGtf2OGAydG/I
-	Y3kJU+aigYLr2N4203oA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2+QaiWaZRi8mSAuXFpAM4wZPEPgzg18dqxf5m3Pt5JA=; b=qj1yO2duwTBdDgieNCDRUb/aVJ
+	oCDgw+H63dEtETUmWwE72m3KtdmaC7O3CJIpkhigf7rfNT46RbMltHZSvcSBoBs0jVfaUPVd+NQ4i
+	UbMxNlkNBzuO1dXSOi6vdRw6oeuHnKU3ebXZovYlglCsxyirM2zAOaLEPIPI/DXAs/rCblnPPaxqT
+	lE0AaIIMuIEL8pQOSQnm2uB00g+NkIp88+WlKcDlbiDb2RemD9fjGPwQE6P4pVmn5V9iaNoAZpalU
+	8+o6QziwZnkJ7ZtNuk1Z1a4d2nV989Oir6AGPgUuyWBt0tHb9KiTAfU42t5zQBo3ziZWYd/tbW4ag
+	SVMPRA7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnqf-0000000EJ7o-34fY;
-	Thu, 12 Jun 2025 19:44:29 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1uPnqz-0000000EJjE-2SDU;
+	Thu, 12 Jun 2025 19:44:49 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPjZF-0000000Djsm-3Qlk;
-	Thu, 12 Jun 2025 15:10:15 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 8F02C25FB2;
-	Thu, 12 Jun 2025 17:10:12 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id vJ1Bprx92anx; Thu, 12 Jun 2025 17:10:11 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1749741011; bh=ZBf5elUyhBLG4hiQ5P/eKSJ7k0IszZpiLUbpxTJh6Sg=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=VJ//WEXoj5tcbY6u8jcO4SiNyrxXIh70qSxzK5lO9WwYES8a/PyEkhjOOsX1tvIWd
-	 gy5kIx3qo5V1ZaMWwItCReEuGLmaNfXMqODhec28RaThJwgxvjZxYPnKIxskNa3buk
-	 jC0BxMxb/oHy/xK7YUcc/7iO5wOG0FwGkRmlY44qX5PIjo8VTfxo6y4z+syicSVyVU
-	 PVzh0capKDSXB2l47OTLiL7rQGXQXAJ7xrioQzEunJ/fJ46rOUoLrqt6hVAagg9cpR
-	 mFwif402Y9t5+RS127rMIVQav27r8Bban5zk3L0M1j71Au9jIfjzN11j++TumXI44L
-	 mSD3no75ED78Q==
-From: Kaustabh Chakraborty <kauschluss@disroot.org>
-Date: Thu, 12 Jun 2025 20:39:30 +0530
-Subject: [PATCH 2/2] phy: exynos-mipi-video: introduce support for
- exynos7870
-MIME-Version: 1.0
-Message-Id: <20250612-exynos7870-mipi-phy-v1-2-3fff0b62d9d3@disroot.org>
+	id 1uPjrG-0000000Dn1A-0OuI;
+	Thu, 12 Jun 2025 15:28:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id D104F5C6667;
+	Thu, 12 Jun 2025 15:26:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58504C4CEEA;
+	Thu, 12 Jun 2025 15:28:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749742129;
+	bh=t7kFj3CUvv/CS73sWzGwnm3tHKJMaqfmiaX3ddssg0U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=NBJ1AJLi2/VBvcn8K3zZFaIdebMiKc4pC4pqU1oD174Nyic3I5Vc0tYsWBUagR3AR
+	 dhN5uG49SFhLwzEphylzAUlEdaqgzBH9qYOpNbvbXJ84CycsJnzwvt1OMWLIBi+/sk
+	 AelZxxiwy4IWq8CJ9KwdfplFJa1ffrGvIdnEov3hsqdrPZgOEbnQT3F0xN79BxCSxM
+	 64O1AJCB+RBxUMbwUd5fdM9v2Bvbxt6vn90YdmeRBiat3KXXlYDWlG3U/INFGhf5hI
+	 oJKLvjpF5D5LPgwG3pmKaH2CQcRlHkhj98dnUFeDAtcKm2u/VAOjF72WtKJvSvYIdT
+	 PwREXpzfhGKKw==
+Date: Thu, 12 Jun 2025 16:28:43 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Kaustabh Chakraborty <kauschluss@disroot.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: samsung,mipi-video-phy: document
+ exynos7870 MIPI phy
+Message-ID: <20250612-unpaid-slacker-edaf80ce160b@spud>
 References: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
-In-Reply-To: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Marek Szyprowski <m.szyprowski@samsung.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Alim Akhtar <alim.akhtar@samsung.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- Kaustabh Chakraborty <kauschluss@disroot.org>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1749740994; l=3417;
- i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
- bh=ZBf5elUyhBLG4hiQ5P/eKSJ7k0IszZpiLUbpxTJh6Sg=;
- b=Z6Xp4WEDseNWyIADRgljEU9FgbZ0ED9ByLA7aPhS8sodMygivmbuAE+5yMrlFX5hdZe6jkNoZ
- HTap08GpmE9BJKrbSBCuWgN+iOx4RHJ7GSvrK7//L2zRCdHtmD8o+YX
-X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
- pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
+ <20250612-exynos7870-mipi-phy-v1-1-3fff0b62d9d3@disroot.org>
+MIME-Version: 1.0
+In-Reply-To: <20250612-exynos7870-mipi-phy-v1-1-3fff0b62d9d3@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_081014_125836_0091C447 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20250612_082850_172557_4E4BC381 
+X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,112 +78,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6902665970098355670=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for Exynos7870 in the existing MIPI CSIS/DSIM driver. The
-SoC has one DSIM phy and three CSIS phys.
 
-Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
----
- drivers/phy/samsung/phy-exynos-mipi-video.c | 52 +++++++++++++++++++++++++++++
- include/linux/soc/samsung/exynos-regs-pmu.h |  5 +++
- 2 files changed, 57 insertions(+)
+--===============6902665970098355670==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="f30wP9juoNGzy1L/"
+Content-Disposition: inline
 
-diff --git a/drivers/phy/samsung/phy-exynos-mipi-video.c b/drivers/phy/samsung/phy-exynos-mipi-video.c
-index f6756a609a9a0774ecb6e27cf96726891683636c..b184923b9b400f0d536a913bdf32f3156c0a1854 100644
---- a/drivers/phy/samsung/phy-exynos-mipi-video.c
-+++ b/drivers/phy/samsung/phy-exynos-mipi-video.c
-@@ -213,6 +213,55 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 	},
- };
- 
-+static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
-+	.num_regmaps = 3,
-+	.regmap_names = {
-+		"samsung,pmu-syscon",
-+		"samsung,disp-sysreg",
-+		"samsung,cam-sysreg"
-+	},
-+	.num_phys = 4,
-+	.phys = {
-+		{
-+			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-+			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
-+			.enable_val = EXYNOS4_PHY_ENABLE,
-+			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
-+			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
-+			.resetn_val = BIT(0),
-+			.resetn_reg = 0,
-+			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
-+		}, {
-+			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
-+			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
-+			.enable_val = EXYNOS4_PHY_ENABLE,
-+			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
-+			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
-+			.resetn_val = BIT(0),
-+			.resetn_reg = 0,
-+			.resetn_map = EXYNOS_MIPI_REGMAP_DISP,
-+		}, {
-+			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
-+			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
-+			.enable_val = EXYNOS4_PHY_ENABLE,
-+			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL1,
-+			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
-+			.resetn_val = BIT(1),
-+			.resetn_reg = 0,
-+			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
-+		}, {
-+			/* EXYNOS_MIPI_PHY_ID_CSIS2 */
-+			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
-+			.enable_val = EXYNOS4_PHY_ENABLE,
-+			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL2,
-+			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
-+			.resetn_val = BIT(2),
-+			.resetn_reg = 0,
-+			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
-+		},
-+	},
-+};
-+
- struct exynos_mipi_video_phy {
- 	struct regmap *regmaps[EXYNOS_MIPI_REGMAPS_NUM];
- 	int num_phys;
-@@ -351,6 +400,9 @@ static const struct of_device_id exynos_mipi_video_phy_of_match[] = {
- 	}, {
- 		.compatible = "samsung,exynos5433-mipi-video-phy",
- 		.data = &exynos5433_mipi_phy,
-+	}, {
-+		.compatible = "samsung,exynos7870-mipi-video-phy",
-+		.data = &exynos7870_mipi_phy,
- 	},
- 	{ /* sentinel */ },
- };
-diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
-index 1a2c0e0838f99821151661878f022f2129a0c19b..8fd59994bca76a6bf21306337f0b47ccb5a22adc 100644
---- a/include/linux/soc/samsung/exynos-regs-pmu.h
-+++ b/include/linux/soc/samsung/exynos-regs-pmu.h
-@@ -662,6 +662,11 @@
- #define EXYNOS5433_PAD_RETENTION_UFS_OPTION			(0x3268)
- #define EXYNOS5433_PAD_RETENTION_FSYSGENIO_OPTION		(0x32A8)
- 
-+/* For Exynos7870 */
-+#define EXYNOS7870_MIPI_PHY_CONTROL0				(0x070c)
-+#define EXYNOS7870_MIPI_PHY_CONTROL1				(0x0714)
-+#define EXYNOS7870_MIPI_PHY_CONTROL2				(0x0734)
-+
- /* For Tensor GS101 */
- /* PMU ALIVE */
- #define GS101_SYSIP_DAT0					(0x810)
 
--- 
-2.49.0
+--f30wP9juoNGzy1L/
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Thu, Jun 12, 2025 at 08:39:29PM +0530, Kaustabh Chakraborty wrote:
+> The Exynos7870 MIPI PHY device contains one DSIM PHY block and three
+> CSIS PHY blocks. It also requires two sysregs, one for display, and the
+> other for cameras. Document this device.
+>=20
+> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--f30wP9juoNGzy1L/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEryKwAKCRB4tDGHoIJi
+0mqJAP9DJbUlkADvUrHdf81purqcXzTVeDAzhbMUmKO+F21UFAD/QjLSgELcwtip
+njn3vQB/7wZoDC6VzVfnBVgIdy1XAwg=
+=Bir7
+-----END PGP SIGNATURE-----
+
+--f30wP9juoNGzy1L/--
+
+
+--===============6902665970098355670==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6902665970098355670==--
+
