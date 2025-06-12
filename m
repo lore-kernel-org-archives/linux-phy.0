@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 344B9C71149
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:44:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EBB8C71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:44:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wXveiNc3igQt8iwA/LjtGeXhAH2eN/nsvjYkS3/FnTM=; b=ExBh0kQ0jF7GdF
-	PL2OY3CQ4TJl4C3FEBcmE5KyOOrKL6ERUbzZYcjJBqaFUGDDkVgO5dtvmJM15nc5hS8r6J8mXadWK
-	8bPakgiE75AU5xj8uYe/53wLhNU1x6zxXRC5cR7QtcbUuFB1tOg4088hemLa4CrZLxdcIq0gDH4BE
-	o8NxrNT1B5m0/AG43pEHL3zb2388vc4W43AUOX0SJ2NMsHyHenCexxJg5FS1sHD8Cz0n9A22i6qlN
-	EgOgNxpcQakjbxOgezbH/tjujQqriu4ciyBbEo7HaGBaD+5bY6dUbXih6ZGlr5jpRTumOLH1LQsLa
-	8d3OvHCHEEDDi3V6Qjcg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N0IQa0gjBQLgoLAlUfgM8X/k96sszk0AXKkXyvTb6Sk=; b=kmeFJWa+/Pb23I
+	cl2ovHTnq/XDjM/uKDbsbtzPlElyzpdByAYDIXf+UJQ53ZUS4z55ftOqtnUaTFO+aFxU6LsV9ienV
+	lpHZQrxDIzrRAnZaM9pWXC9nAOrPg3gf76jpEwvlXHSPiDuwfVtJGezGw3UsXKCcbXgNE6MRWcEX4
+	j+VWVShoLgGQw7niCCr3P7apEtL8wWv541nT2j3U2asakb5R5DGn2SbonyfYTmQ7zMeXH6BSlDDOM
+	hiSyt30Vc9sF7y41A8YDw2VYgiMh2Zk79PWRGv9X2BZQoXpONyEhg+/tDPLVd+zSUHrYKjeYmm25x
+	VyqBeVkzwJof5EjJq+Ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnqc-0000000EIzj-3VbG;
-	Thu, 12 Jun 2025 19:44:26 +0000
+	id 1uPnqe-0000000EJ3c-0tw7;
+	Thu, 12 Jun 2025 19:44:28 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPjZ3-0000000Djot-3PDY;
-	Thu, 12 Jun 2025 15:10:03 +0000
+	id 1uPjZA-0000000DjrE-3JC8;
+	Thu, 12 Jun 2025 15:10:09 +0000
 Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 7075025C7B;
-	Thu, 12 Jun 2025 17:10:00 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id 9A73725F83;
+	Thu, 12 Jun 2025 17:10:07 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id guWSlxOGple0; Thu, 12 Jun 2025 17:09:59 +0200 (CEST)
+ id fCDNXuUrQhRX; Thu, 12 Jun 2025 17:10:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1749740999; bh=dSXo45mIJJx9bDeTqNn31sUJ/q0OnjYwLXEix43Xrw0=;
-	h=From:Subject:Date:To:Cc;
-	b=glwmPQ2CSMUg8fREOyygECG6WwXxlVb+wX16fBWBwWSdhrZZs3DDXfSGRf1pL2KUv
-	 XBiaj0mtIneJeaSpdZBwbrM27QMAN5ZPKHsV6E94LVOqygMVnlh5SbVyRkjXFLO4Kh
-	 ytQFo315OmRo8ozmC6/lB7Q0RrpIFYHfa2se+eG2hA5HyScrGNlNJvvSRDeIFcvn1W
-	 SRIFgp8gVdxMjO6SzYVMTTg/2XS95cuhMeOTEwdKhMQAsVdFC7vCD4C9jI6ilIy39i
-	 WktJloerb2WhF6VsYwM/vsSLNVk712C2IvKdBN+1o4EAHlSK2VtT7yr+3wYeDgOHXZ
-	 H+wnu1ViQdNqg==
+	t=1749741005; bh=RMxlZZIAVYR4kFgqtNMLrm8uGrSLXC1YGwxamWZ4Tu0=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc;
+	b=XJJvut2Nqxgv5QH6VeFlqM99M21FIhHh9IxSlNC9w8j8Z04KIoio6U1AAs3mqU+KG
+	 Y0d6Lljvv7DZ7YUhNQ2e5HzI6xTM4nIBheXyIeM5Umdw4/sGJNvQC5a9AMJCQWnDvi
+	 dX/5NT24myz0uqGUSjal7pA9A2ESPqb8YXe+nHaNfoIp3WUJhvZvCndUb78HPkkUog
+	 mDRqkElnYcK1wdRgQM0gtgzu287qwX3oLH5phaXsCvPyThxNwH4uQQbmox+PnbF5EG
+	 22KAtHj705UOvGXB6Gz8zvMOPnlmWB9u+sBI9YiE5bRh6+TRm9iP7VGfLSvjDpaxev
+	 KXqSpKUj9oc7w==
 From: Kaustabh Chakraborty <kauschluss@disroot.org>
-Subject: [PATCH 0/2] Support for Exynos7870's MIPI PHY blocks
-Date: Thu, 12 Jun 2025 20:39:28 +0530
-Message-Id: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
+Date: Thu, 12 Jun 2025 20:39:29 +0530
+Subject: [PATCH 1/2] dt-bindings: phy: samsung,mipi-video-phy: document
+ exynos7870 MIPI phy
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAKjtSmgC/x3MTQqAIBBA4avErBswy4yuEi36GWsWmSiEIt09a
- fkt3ssQyDMFGKsMnh4OfNuCpq5gOxd7EPJeDFJIJZRskWKyd9CDFnixY3Rnwk41ZtDK9OsioZT
- Ok+H4X6f5fT+Xq/nrZQAAAA==
-X-Change-ID: 20250523-exynos7870-mipi-phy-451f875f6ba2
+Message-Id: <20250612-exynos7870-mipi-phy-v1-1-3fff0b62d9d3@disroot.org>
+References: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
+In-Reply-To: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -62,16 +61,16 @@ Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
  Kaustabh Chakraborty <kauschluss@disroot.org>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1749740994; l=845;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1749740994; l=2809;
  i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
- bh=dSXo45mIJJx9bDeTqNn31sUJ/q0OnjYwLXEix43Xrw0=;
- b=8D4uqf1bHJF54i/+4jjJQo9pGHE9cAYBK0Au1T4+ogxwrDYvP9PPCEjq13Ru+GQKkhUc+0qcS
- IlkF/AAqxdhCI54z50n1Z7RsvpIJIcihHrGP2kSNOtGQtBp+xNwGE3C
+ bh=RMxlZZIAVYR4kFgqtNMLrm8uGrSLXC1YGwxamWZ4Tu0=;
+ b=+ZD2EOrD3CDxuxegEi1OGwEkGg/XPUjn7pPHdiUH0RUqH6lcZCchYpML9KIwI0/d/zmacidOy
+ UI6jdjNReHOCee17/3SG4SqsNnDWkq781DtwX2/OOseiDCri/zAewfy
 X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
  pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_081001_987061_56F363BE 
-X-CRM114-Status: UNSURE (   6.49  )
+X-CRM114-CacheID: sfid-20250612_081008_968998_F60314AF 
+X-CRM114-Status: UNSURE (   6.93  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,27 +88,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for Exynos7870's MIPI DSIM (for display)
-and CSIS (for camera) PHY blocks. It contains a single DSIM and three
-CSIS PHYs.
+The Exynos7870 MIPI PHY device contains one DSIM PHY block and three
+CSIS PHY blocks. It also requires two sysregs, one for display, and the
+other for cameras. Document this device.
 
 Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
 ---
-Kaustabh Chakraborty (2):
-      dt-bindings: phy: samsung,mipi-video-phy: document exynos7870 MIPI phy
-      phy: exynos-mipi-video: introduce support for exynos7870
+ .../bindings/phy/samsung,mipi-video-phy.yaml       | 29 +++++++++++++++++++---
+ 1 file changed, 25 insertions(+), 4 deletions(-)
 
- .../bindings/phy/samsung,mipi-video-phy.yaml       | 29 ++++++++++--
- drivers/phy/samsung/phy-exynos-mipi-video.c        | 52 ++++++++++++++++++++++
- include/linux/soc/samsung/exynos-regs-pmu.h        |  5 +++
- 3 files changed, 82 insertions(+), 4 deletions(-)
----
-base-commit: 0bb71d301869446810a0b13d3da290bd455d7c78
-change-id: 20250523-exynos7870-mipi-phy-451f875f6ba2
+diff --git a/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
+index b2250e4a6b1b1ae072bc8e10e53528a4ca0e4a5e..16967ef8e9ecc09e24a995fc041ae3735334d98d 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,mipi-video-phy.yaml
+@@ -29,6 +29,7 @@ properties:
+       - samsung,s5pv210-mipi-video-phy
+       - samsung,exynos5420-mipi-video-phy
+       - samsung,exynos5433-mipi-video-phy
++      - samsung,exynos7870-mipi-video-phy
+ 
+   "#phy-cells":
+     const: 1
+@@ -46,19 +47,20 @@ properties:
+     deprecated: true
+     description:
+       Phandle to PMU system controller interface, valid for
+-      samsung,exynos5433-mipi-video-phy (if not a child of PMU).
++      samsung,exynos5433-mipi-video-phy and samsung,exynos7870-mipi-video-phy
++      (if not a child of PMU).
+ 
+   samsung,disp-sysreg:
+     $ref: /schemas/types.yaml#/definitions/phandle
+     description:
+       Phandle to DISP system controller interface, valid for
+-      samsung,exynos5433-mipi-video-phy.
++      samsung,exynos5433-mipi-video-phy and samsung,exynos7870-mipi-video-phy.
+ 
+   samsung,cam0-sysreg:
+     $ref: /schemas/types.yaml#/definitions/phandle
+     description:
+       Phandle to CAM0 system controller interface, valid for
+-      samsung,exynos5433-mipi-video-phy.
++      samsung,exynos5433-mipi-video-phy and samsung,exynos7870-mipi-video-phy.
+ 
+   samsung,cam1-sysreg:
+     $ref: /schemas/types.yaml#/definitions/phandle
+@@ -84,7 +86,13 @@ allOf:
+         samsung,disp-sysreg: false
+         samsung,cam0-sysreg: false
+         samsung,cam1-sysreg: false
+-    else:
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: samsung,exynos5433-mipi-video-phy
++    then:
+       properties:
+         syscon: false
+       required:
+@@ -92,6 +100,19 @@ allOf:
+         - samsung,cam0-sysreg
+         - samsung,cam1-sysreg
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: samsung,exynos7870-mipi-video-phy
++    then:
++      properties:
++        syscon: false
++        samsung,cam1-sysreg: false
++      required:
++        - samsung,disp-sysreg
++        - samsung,cam0-sysreg
++
+ additionalProperties: false
+ 
+ examples:
 
-Best regards,
 -- 
-Kaustabh Chakraborty <kauschluss@disroot.org>
+2.49.0
 
 
 -- 
