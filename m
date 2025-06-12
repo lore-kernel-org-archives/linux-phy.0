@@ -4,47 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B010C71136
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:10:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B59E0C71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 23:09:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zeTguPn5IcJjBz02aGg7ApZ/So/3ayikSB6YDh5X3sc=; b=EUUCMZneBbsA6C
-	R3qo3fkcZkDRkO5UGUO2ykm0CMtA3S8JztlzRuWrRoiAPnFcV/xRRjFxrAV8zsj8ts+mFgii5QD3h
-	JlmhgGExjYrh36KVRKqJT2GLYOlvIFG33U4/aQfX+JkdCB9ZxsEixd7g3MGPZUQ0NJ5q9uxCIFERu
-	t9LeYzbmmA3hrHfDPzyqHsz8ptfaeE9nxTsc3F5p5GrTbzQotCS1BFdDvoPFE01Nd3UOGkaWOVb9e
-	mXXez/HTptLvSbacWVzrcdnjX0wzs5fwsl0rQGUqelgLULOBbgq86Ov2/dMFoMor+g1NkJcu32aD9
-	KDuIR6B4Omw1FpQnb9Fg==;
+	List-Owner; bh=O5iqs6BE8ZcX8k4hwk/F/lNoEk7pv8j1SJ9+rEgqTc0=; b=e5W3wSySzjh9q0
+	wOEMuxIQdftB5Hi6FXhZU/BOgwxLmadiZugRQNjSYOBwuBvdvF6gWKNhOV6jqWhnxtKYijUOmUweB
+	Oj46qcqOox5RD/1Etrs/VupDJurCSzVhSGdvERqn3+RR5mGufV936oEfr8nX0psYtiGjIyaHS8HVM
+	X4QRJEungMVrAt8PYC66HGuSuTkVTMnNgJM9UdhxNkkcl+jqItrwJ2EC41GlPjgfgUvLesKznmwk1
+	wAyvnlDpiWhWpFehGViKlXIusBldmjlm+ZHhwxvz7uaHwYSNTwHc08M6Qdu+z2e/cfTD1/na4hkzZ
+	a96HMhejQac8xovkaZcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPq7e-0000000EkQc-057J;
-	Thu, 12 Jun 2025 22:10:10 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uPr31-0000000EpxA-0ddB;
+	Thu, 12 Jun 2025 23:09:27 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnqX-0000000EIlW-3nEZ;
-	Thu, 12 Jun 2025 19:44:21 +0000
+	id 1uPpzS-0000000EigK-2TJ7;
+	Thu, 12 Jun 2025 22:01:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=4c23EVlBRbC0Sh2HVGAeTrWF8ckuRzyb3wIApq3EJ0Y=; b=h6wLkimhFec7hdQM4CTw2rMDJX
+	kdl+DSJKc1iueVzrXKO1M0S85F0SyOo8W9g0GYez0cTdbWzpmzuf1Pq6gseF21O0N0csAWpkkF9F/
+	a4lQepPrT0jiamp2nNkzVIZfT9NdznUZGKqPvkehNBTBc4CQ0BgEWTOb9nwlwfzOzSpsSCGB4flCj
+	aHlfIfIKAQMAfRqiOgxI0kc1vCTCUmg1KTPEvybfOAZM5U4edQKjuWPwpe0Wab+yfu//aM2o+3KXu
+	esxjIS2qc2zHKVZrF/KhbBz5hFVDy4DVh4PhR4ix+AEMvzNJ5YSz/g0DP6QZUiatVtop9v4kWkRQk
+	IuzrzLqQ==;
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uPpzP-00000002k2x-3zwf;
+	Thu, 12 Jun 2025 22:01:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CDC5A629D2;
-	Thu, 12 Jun 2025 19:44:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC383C4CEEA;
-	Thu, 12 Jun 2025 19:44:16 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2D614A52192;
+	Thu, 12 Jun 2025 22:01:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E14DC4CEEA;
+	Thu, 12 Jun 2025 22:01:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749757459;
-	bh=WRHnEZE/VavbEbIByL9Ab4jgxIptcm5CTwjQkexAzn8=;
+	s=k20201202; t=1749765693;
+	bh=4c23EVlBRbC0Sh2HVGAeTrWF8ckuRzyb3wIApq3EJ0Y=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=TV//cMaWvCwRdwpfczgwfekYTq4KpVrIcg5pbXUbx2lym+SxZm9g8pySw6t1uZg+7
-	 NpdGkBhZz71C/WAv56FOexy3K+ZXwre3cLw88imhzrGxamgghkbXdxsBhA9nk0aeT0
-	 MTHlEEt/eKxkiFp29H+KB99+NQXh2ZFc+cVORjPQy+2joq1MRPguBQY9Q7ekUNsTsS
-	 aM8WJhaly2F8i1GFUgUf1yz/CaEAzEOeVTjsH1X75uThWjvNm1ioH3Jt0ZAP/Tcyni
-	 ulToNy5Bgy0sxqczU9uV4K0qC2uDT4BDggr2pFZ4uTwcIF5ZUdJ52VPmIbZYW2//FG
-	 NK7HkgKxhZSwQ==
-Date: Thu, 12 Jun 2025 12:44:15 -0700
+	b=pyPMHD+jhG+UTqABmIsWKlZaWpYwYT8yRbeTaj6af6mv0CScs81OZC14hEgpOQpqo
+	 RxUjx7u0c04zWdOWA3HP8r3YCxfTUGgt7/6IXy+olWrZBlDDPCnHfJ2v85tlNdrCRD
+	 UXqXIBSfdaqN7b2Zw9ekGq/d+2TWFahI8NypgSV/iEUgbik9cuIv4+7KQ4X2/YGiui
+	 ToRHQcO0nLaHP41ty5z3+YlPdDtFsHUjqfXoXCbBt0r8dFq6GTqY/uU3iMpROb1OVO
+	 RPp4P9+AYRiUOFuciFsilpSUhTCO/Q80c3PWR/d5rsYLxFbYNnCdfYj4zHkbScfKyp
+	 +9szYBH1OtjOA==
+Date: Thu, 12 Jun 2025 15:01:30 -0700
 From: Jakub Kicinski <kuba@kernel.org>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Yury Norov <yury.norov@gmail.com>, Rasmus Villemoes
+To: Yury Norov <yury.norov@gmail.com>
+Cc: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Rasmus Villemoes
  <linux@rasmusvillemoes.dk>, Jaehoon Chung <jh80.chung@samsung.com>, Ulf
  Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, Shreeya
  Patel <shreeya.patel@collabora.com>, Mauro Carvalho Chehab
@@ -77,11 +91,17 @@ Cc: Yury Norov <yury.norov@gmail.com>, Rasmus Villemoes
  linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev
 Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
-Message-ID: <20250612124415.3399e26b@kernel.org>
-In-Reply-To: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+Message-ID: <20250612150130.36b01844@kernel.org>
+In-Reply-To: <aEs0PVkwFN9uRgU0@yury>
 References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 	<20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+	<20250612124415.3399e26b@kernel.org>
+	<22744779.EfDdHjke4D@workhorse>
+	<aEs0PVkwFN9uRgU0@yury>
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250612_230140_373695_8A0A5C0B 
+X-CRM114-Status: GOOD (  11.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,14 +118,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 12 Jun 2025 20:56:03 +0200 Nicolas Frattaroli wrote:
-> Hardware of various vendors, but very notably Rockchip, often uses
-> 32-bit registers where the upper 16-bit half of the register is a
-> write-enable mask for the lower half.
+On Thu, 12 Jun 2025 16:10:37 -0400 Yury Norov wrote:
+> I don't think that that having HWORD_UPDATE() in bitfield.h is a wrong
+> thing. Jakub, if you do, we can just create a new header for it.
 
-Please limit the spread of this weirdness to a rockchip or "hiword"
-specific header. To a normal reader of bitfield.h these macros will
-be equally confusing and useless.
+Yes, I'd prefer to contain it. This looks very much like a CSR tooling
+convention of Rockchip's ASIC developers. IOW this is really about how
+CSRs are access for a specific vendor, not a generic bitfield operator.
 
 -- 
 linux-phy mailing list
