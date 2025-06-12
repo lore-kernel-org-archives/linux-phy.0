@@ -4,106 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4099C71136
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 20:51:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A329C71136
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 20:55:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NEjctYpkenIvTAMW/GaLI+FRaRLPNAwyDP6hUGOERCM=; b=FTrnqbTUuFrtpQ
-	W2BscmE6YKE9yL5/ygADgfleNInOXcyXjUr3XOIawEeP6M6Nx+x9OHugK0nBvDRVA3qz93kXL7FHc
-	bElDdAZSPaFyp7dJsvZv7SIYdt9oJipDVScxlE9bCvLO1diOy+ytqOiNxUAAP8UUspqmaUEUKGbJA
-	1cgML87i/z0ARGguBo2dd75DKNMqwQWqKJTlqovuKCf4tj9LPFutq62cAwV8b39LhMefAFld3JHJg
-	sY/CY7nh1vGaG1+Uc9g5os7M9EWvhOVLs0v8YJSYROgRdM6K1ZY9Vim2fLvuBEs0WGqXXb7yzMlt1
-	nZznq/YunMTIooahSzyQ==;
+	List-Owner; bh=GvfrQesbKv+UnnQ82rDITUSlJslEwk5bBvmQeIoWdN8=; b=QnujhUa2Odu7hW
+	aOHtUmc+ihbCeBucHNgp6FX3BQ4os1EqLzXuQi7gpV/19o5lVOtFR2wfJUOAbCA1j1RFq6kjwsrvz
+	bG5A15+Ni6LP6EpcHrPN+DEE0RzSlPYmGrU5fyZ1vVqtRqSxHKL8sOeQbzjh51KSGe4e94fQphGYm
+	45dTlRL8ZPQl4Oo5qc49Y3cyaRkQ6tmuqVEJcD2GIZEwud7bvVZ/mGOYpdpsnJRyGTXqo2Tsmfvnt
+	+jeORy0KmGE7UtN0+tvHcqO3n16/bPVcB5jSsoip7w2ZGtDFkH5s57at6Mo9NhuuHukbLsHjOAgkB
+	eSROoKNxVC8djTparIEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPotj-0000000EWxR-1rjz;
-	Thu, 12 Jun 2025 20:51:43 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uPoxM-0000000EZTB-0TNM;
+	Thu, 12 Jun 2025 20:55:28 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPosE-0000000EWrM-3KPH;
-	Thu, 12 Jun 2025 20:50:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=2UoLqPJz+BVnnu2pZ/H+yolFKvZxInzCZIkRhDZ6aJs=; b=MnOn7UpCUHLmkLoGKQkM1LYp/J
-	8uTWiXXY0apSQkrUQKiKu6X0L1hRdKp9aeQ39K/ylHiXfhekRXUKwgKW0aBkkAjzotQ1EYfxizsAl
-	QPi6TUtPPI7okS5LGDiYiE4hmgk2MIEa2vW3jZF5fgS6pooaR/W2cLGb2gfXxw8xqZsd2XFcdSpYk
-	Jyd+nkmMyiN71hIU44gjV77gKAX78sdP4olTFg5v8KXsA0YFuWLFZxt0wT24xqq8h2H/gn6wOAmOX
-	e0stihEWPAVrH93QGtAv8mVMnKD3WcU2fREQCDJDzojwoZuSpD0A+k6iWxtW2mTFq/c9RqLsA3Xvt
-	NbqcgFeg==;
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPosC-00000002hAj-2W2b;
-	Thu, 12 Jun 2025 20:50:10 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-23508d30142so17628915ad.0;
-        Thu, 12 Jun 2025 13:50:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1749761404; x=1750366204; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=2UoLqPJz+BVnnu2pZ/H+yolFKvZxInzCZIkRhDZ6aJs=;
-        b=TjSR1LQRKUw6j4EJaQifizsA7vi7pG3rznmTCzVIRSI7XCr80dJA4z+1Qwkh9r/3/S
-         oK74Z3rd8WuC5QZA+9aIbz5auUZq0r65mPAd4UjD2yzUnJQtvzF0qFrJni910XL4xnWI
-         0FNBLZF0xqGfcNLJVWa4b8qgbcrGMsPk/1VKBxVdVJxYzcwlmQ208SWVL1eJ6VTd+u29
-         oxzi3e4uY6GHBW2lGvFRnPpH0hMKGt5/mQvKfuXSUjO/ZHU6/z92ZaFqvglymBvzHl7U
-         LQZAM4DOLJhGn58Ng4Bt48D4jjQr/vaHIDYlt+mdXusU9X5FJ6hilxKDiO9KQ2Z2bx1H
-         ae5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749761404; x=1750366204;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=2UoLqPJz+BVnnu2pZ/H+yolFKvZxInzCZIkRhDZ6aJs=;
-        b=PTLH/cyR9hbprZnma4AhRbTFZv2L75LddXeGt5K4/MxvKtneXUhmcTrb2rm8795jfw
-         KuDifNqUyjTADjSR4EMQX8y6Wy1Q+jLbk+t/f3d6uMP168xBuPjWFIkoLC7bie48F2sW
-         j2Kzol/N0w7uia6zkLZgTKLuK6bStdQOCuDOsuoLME25t6x/1qmLM1gNW4/UBhP99wJJ
-         1A9QegzoMHGimpJnvmv+fbruk9lVivpMQsLw9vxUbRrYYG73gELUVMypXLwlAFUFJobe
-         iofqA6IlSrEEQSw3pU0HvYgRaILpw1h7u/OGrgbvFO+NmLA6clKx0Y4aO0/MhV5wYRCm
-         ij2g==
-X-Forwarded-Encrypted: i=1; AJvYcCU37k1RTrefbYKRLuKxySehCpzr8HpurtU18zlLhEQPnekVjo9hVFuiX1j38HuUSikNFIrLjZVENM8q+tAtIPq7@lists.infradead.org, AJvYcCUWxzxlw/uhGoC+x1nnDv0lWF52WEXVcHAYiJpeNH6aA/+jHntAXIOoowAEAQQA7Pb5RIfgEIOfULDa@lists.infradead.org
-X-Gm-Message-State: AOJu0YwmTT3gHqq+pfbrZrONfvAAdR3ttmwYoDbaKU1ZSrnoixXU+FSB
-	Pfdv1RZcRI3LBQnCAeUm4SvxMY09NVxZQh/1qkG3QN+tlFWxdLIZoF6y
-X-Gm-Gg: ASbGncv5inc6zO5K8Fbb0yQuMlt2klhme6QJi2ZykFNQPmA/hvQvLBXoyo5zCkObiOS
-	QxOY6wvmlGCWEN8UF9xCKsbGFMCwhurxUByB6nM2ZHDqPIRL1OAHHmEqmEXLzMsA6oNLR9GeHLS
-	s7yrClYkWp1MKzMa0/WHQ0wUXlRltQeEA/7iXmOkHDX3a59+XtfS3v7+KnUHH7nn3ulpHZrLBQC
-	YT22WFJon9b7+cezsauRsg8LFcw6GtgYBgVV1JY8Xnq8hqsT2I/ijLZgJmtXtgrvIc2E/Wrl4RP
-	xIkz5UlIHwf8N/ufSmWee7I3fKjx/b2m9agjKfQ2DewV8/rkAQ==
-X-Google-Smtp-Source: AGHT+IG+khSNpIZ1lLheFLw/LHPdBlZ34dCXBeuy237kfv8em5EfwIdvXLjGbIw5JRwoxwzkTzKMoQ==
-X-Received: by 2002:a17:903:41cf:b0:234:9092:9dda with SMTP id d9443c01a7336-2365da07967mr7032275ad.24.1749761403815;
-        Thu, 12 Jun 2025 13:50:03 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:725c::dead:c001])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2365d88bfe4sm1670705ad.18.2025.06.12.13.49.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Jun 2025 13:50:03 -0700 (PDT)
-Date: Thu, 12 Jun 2025 17:49:57 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v2 1/4] PCI: pcie-rockchip: add Link Control and
- Status Register 2
-Message-ID: <aEs9daeceXkePg7y@geday>
-References: <28ae3286f3217881ae6ea3aecad47ae4567d6ec7.1749588810.git.geraldogabriel@gmail.com>
- <20250611194259.GA825364@bhelgaas>
+	id 1uPn7Q-0000000E9yW-4AxM;
+	Thu, 12 Jun 2025 18:57:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754625; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=Eq6D11DxLAntAQr02UMEuLrYmx7BlmU2oz5dYJFRNAvpvOEqP2Mtx3iUw5inY+zZ4arI0Yi4BJNpZBH4nVa7KFf6BGusYW5vfMJ66sfsjwhhWfcs+xlSekpVPQDh1yTiNnij4SgayQ7F8nt72I/sbLx7VlizGK6llQocaRWaVNE=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1749754625; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=lXbvL+h2IoWMpyp646+wlvm85iJG007PO2FAhrIMERY=; 
+	b=UdSNqGZRjJL5oH9gqN+PzlBlj/EZq6nuUjSsyahRiLZZdPVN2EyHL90Bn6C6jURO7SyF27DXFZXpA1OY/TRYx18TwDkEA7lv5GeIUZNlUrBPdp56UwlsCm8fm0CFNP8VTOzoyIOKPC63AFLAXw7Sw1c2fe1PjEqrNPxhPNZ+Zbw=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754625;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=lXbvL+h2IoWMpyp646+wlvm85iJG007PO2FAhrIMERY=;
+	b=de58JhJo8iXiXeTlRf88LEU+7V1qn/WSgk5UGGyx/9Vldjwp/17WxYFBvIN6urHy
+	cbEELR1lvjcI0O3jHdtlafxBuq60PaInKI2RxsC+EsMT+3tQhoq8Xw64ulxtJ8AVwRO
+	Yo+jKxkL9SHpUmUZF97LHA51Tr8T/60y2Z1kKCj4=
+Received: by mx.zohomail.com with SMTPS id 1749754622914325.8461884591545;
+	Thu, 12 Jun 2025 11:57:02 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Thu, 12 Jun 2025 20:56:05 +0200
+Subject: [PATCH 03/20] soc: rockchip: grf: switch to HWORD_UPDATE_CONST
+ macro
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250611194259.GA825364@bhelgaas>
+Message-Id: <20250612-byeword-update-v1-3-f4afb8f6313f@collabora.com>
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+To: Yury Norov <yury.norov@gmail.com>, 
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Shreeya Patel <shreeya.patel@collabora.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_215008_875208_88CCDF98 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20250612_115745_091925_9526EF8D 
+X-CRM114-Status: GOOD (  15.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,28 +112,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 11, 2025 at 02:42:59PM -0500, Bjorn Helgaas wrote:
-> I would do a pure conversion patch of the existing #defines.  Then I
-> suspect you wouldn't need a patch to add the Link 2 registers at all
-> because you could just use the #defines from pci_regs.h.
+The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
+drivers that use constant masks.
 
-Hi Bjorn,
+Switch the rockchip grf driver to the HWORD_UPDATE_CONST macro, which
+brings with it more error checking while still being able to be used in
+initializers.
 
-I've hit roadblock, maybe you can help?
+All HIWORD_UPDATE instances and its definition are removed from the
+driver, as the conversion here is obvious, and static_asserts were used
+during development to make sure the ones greater than one bit in width
+were really equivalent.
 
-PCIE_RC_CONFIG_DCR_CSPL_LIMIT is defined as 0xff...
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ drivers/soc/rockchip/grf.c | 35 +++++++++++++++++------------------
+ 1 file changed, 17 insertions(+), 18 deletions(-)
 
-I'd like to kill that define too, since it will be
-orphaned.
+diff --git a/drivers/soc/rockchip/grf.c b/drivers/soc/rockchip/grf.c
+index 1eab4bb0eacffe19a8f0af0b71bdaa5c0b506629..a4a075ec98309cfcf7fc0bbbd310678ffcbe45da 100644
+--- a/drivers/soc/rockchip/grf.c
++++ b/drivers/soc/rockchip/grf.c
+@@ -5,14 +5,13 @@
+  * Copyright (c) 2016 Heiko Stuebner <heiko@sntech.de>
+  */
+ 
++#include <linux/bitfield.h>
+ #include <linux/err.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ 
+-#define HIWORD_UPDATE(val, mask, shift) \
+-		((val) << (shift) | (mask) << ((shift) + 16))
+ 
+ struct rockchip_grf_value {
+ 	const char *desc;
+@@ -32,7 +31,7 @@ static const struct rockchip_grf_value rk3036_defaults[] __initconst = {
+ 	 * Disable auto jtag/sdmmc switching that causes issues with the
+ 	 * clock-framework and the mmc controllers making them unreliable.
+ 	 */
+-	{ "jtag switching", RK3036_GRF_SOC_CON0, HIWORD_UPDATE(0, 1, 11) },
++	{ "jtag switching", RK3036_GRF_SOC_CON0, HWORD_UPDATE_CONST(BIT(11), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3036_grf __initconst = {
+@@ -44,8 +43,8 @@ static const struct rockchip_grf_info rk3036_grf __initconst = {
+ #define RK3128_GRF_SOC_CON1		0x144
+ 
+ static const struct rockchip_grf_value rk3128_defaults[] __initconst = {
+-	{ "jtag switching", RK3128_GRF_SOC_CON0, HIWORD_UPDATE(0, 1, 8) },
+-	{ "vpu main clock", RK3128_GRF_SOC_CON1, HIWORD_UPDATE(0, 1, 10) },
++	{ "jtag switching", RK3128_GRF_SOC_CON0, HWORD_UPDATE_CONST(BIT(8), 0) },
++	{ "vpu main clock", RK3128_GRF_SOC_CON1, HWORD_UPDATE_CONST(BIT(10), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3128_grf __initconst = {
+@@ -56,7 +55,7 @@ static const struct rockchip_grf_info rk3128_grf __initconst = {
+ #define RK3228_GRF_SOC_CON6		0x418
+ 
+ static const struct rockchip_grf_value rk3228_defaults[] __initconst = {
+-	{ "jtag switching", RK3228_GRF_SOC_CON6, HIWORD_UPDATE(0, 1, 8) },
++	{ "jtag switching", RK3228_GRF_SOC_CON6, HWORD_UPDATE_CONST(BIT(8), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3228_grf __initconst = {
+@@ -68,8 +67,8 @@ static const struct rockchip_grf_info rk3228_grf __initconst = {
+ #define RK3288_GRF_SOC_CON2		0x24c
+ 
+ static const struct rockchip_grf_value rk3288_defaults[] __initconst = {
+-	{ "jtag switching", RK3288_GRF_SOC_CON0, HIWORD_UPDATE(0, 1, 12) },
+-	{ "pwm select", RK3288_GRF_SOC_CON2, HIWORD_UPDATE(1, 1, 0) },
++	{ "jtag switching", RK3288_GRF_SOC_CON0, HWORD_UPDATE_CONST(BIT(12), 0) },
++	{ "pwm select", RK3288_GRF_SOC_CON2, HWORD_UPDATE_CONST(BIT(0), 1) },
+ };
+ 
+ static const struct rockchip_grf_info rk3288_grf __initconst = {
+@@ -80,7 +79,7 @@ static const struct rockchip_grf_info rk3288_grf __initconst = {
+ #define RK3328_GRF_SOC_CON4		0x410
+ 
+ static const struct rockchip_grf_value rk3328_defaults[] __initconst = {
+-	{ "jtag switching", RK3328_GRF_SOC_CON4, HIWORD_UPDATE(0, 1, 12) },
++	{ "jtag switching", RK3328_GRF_SOC_CON4, HWORD_UPDATE_CONST(BIT(12), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3328_grf __initconst = {
+@@ -91,7 +90,7 @@ static const struct rockchip_grf_info rk3328_grf __initconst = {
+ #define RK3368_GRF_SOC_CON15		0x43c
+ 
+ static const struct rockchip_grf_value rk3368_defaults[] __initconst = {
+-	{ "jtag switching", RK3368_GRF_SOC_CON15, HIWORD_UPDATE(0, 1, 13) },
++	{ "jtag switching", RK3368_GRF_SOC_CON15, HWORD_UPDATE_CONST(BIT(13), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3368_grf __initconst = {
+@@ -102,7 +101,7 @@ static const struct rockchip_grf_info rk3368_grf __initconst = {
+ #define RK3399_GRF_SOC_CON7		0xe21c
+ 
+ static const struct rockchip_grf_value rk3399_defaults[] __initconst = {
+-	{ "jtag switching", RK3399_GRF_SOC_CON7, HIWORD_UPDATE(0, 1, 12) },
++	{ "jtag switching", RK3399_GRF_SOC_CON7, HWORD_UPDATE_CONST(BIT(12), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3399_grf __initconst = {
+@@ -113,9 +112,9 @@ static const struct rockchip_grf_info rk3399_grf __initconst = {
+ #define RK3566_GRF_USB3OTG0_CON1	0x0104
+ 
+ static const struct rockchip_grf_value rk3566_defaults[] __initconst = {
+-	{ "usb3otg port switch", RK3566_GRF_USB3OTG0_CON1, HIWORD_UPDATE(0, 1, 12) },
+-	{ "usb3otg clock switch", RK3566_GRF_USB3OTG0_CON1, HIWORD_UPDATE(1, 1, 7) },
+-	{ "usb3otg disable usb3", RK3566_GRF_USB3OTG0_CON1, HIWORD_UPDATE(1, 1, 0) },
++	{ "usb3otg port switch", RK3566_GRF_USB3OTG0_CON1, HWORD_UPDATE_CONST(BIT(12), 0) },
++	{ "usb3otg clock switch", RK3566_GRF_USB3OTG0_CON1, HWORD_UPDATE_CONST(BIT(7), 1) },
++	{ "usb3otg disable usb3", RK3566_GRF_USB3OTG0_CON1, HWORD_UPDATE_CONST(BIT(0), 1) },
+ };
+ 
+ static const struct rockchip_grf_info rk3566_pipegrf __initconst = {
+@@ -126,8 +125,8 @@ static const struct rockchip_grf_info rk3566_pipegrf __initconst = {
+ #define RK3576_SYSGRF_SOC_CON1		0x0004
+ 
+ static const struct rockchip_grf_value rk3576_defaults_sys_grf[] __initconst = {
+-	{ "i3c0 weakpull", RK3576_SYSGRF_SOC_CON1, HIWORD_UPDATE(3, 3, 6) },
+-	{ "i3c1 weakpull", RK3576_SYSGRF_SOC_CON1, HIWORD_UPDATE(3, 3, 8) },
++	{ "i3c0 weakpull", RK3576_SYSGRF_SOC_CON1, HWORD_UPDATE_CONST(GENMASK(7, 6), 3) },
++	{ "i3c1 weakpull", RK3576_SYSGRF_SOC_CON1, HWORD_UPDATE_CONST(GENMASK(9, 8), 3) },
+ };
+ 
+ static const struct rockchip_grf_info rk3576_sysgrf __initconst = {
+@@ -138,7 +137,7 @@ static const struct rockchip_grf_info rk3576_sysgrf __initconst = {
+ #define RK3576_IOCGRF_MISC_CON		0x04F0
+ 
+ static const struct rockchip_grf_value rk3576_defaults_ioc_grf[] __initconst = {
+-	{ "jtag switching", RK3576_IOCGRF_MISC_CON, HIWORD_UPDATE(0, 1, 1) },
++	{ "jtag switching", RK3576_IOCGRF_MISC_CON, HWORD_UPDATE_CONST(BIT(1), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3576_iocgrf __initconst = {
+@@ -149,7 +148,7 @@ static const struct rockchip_grf_info rk3576_iocgrf __initconst = {
+ #define RK3588_GRF_SOC_CON6		0x0318
+ 
+ static const struct rockchip_grf_value rk3588_defaults[] __initconst = {
+-	{ "jtag switching", RK3588_GRF_SOC_CON6, HIWORD_UPDATE(0, 1, 14) },
++	{ "jtag switching", RK3588_GRF_SOC_CON6, HWORD_UPDATE_CONST(BIT(14), 0) },
+ };
+ 
+ static const struct rockchip_grf_info rk3588_sysgrf __initconst = {
 
-But hardcoding 0xff seems like illegible solution.
+-- 
+2.49.0
 
-Perhaps there is another standard define that
-maps to 0xff that I can use? Anyone comes
-to your mind?
-
-Thanks!
-Geraldo Nascimento
 
 -- 
 linux-phy mailing list
