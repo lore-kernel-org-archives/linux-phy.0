@@ -4,68 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 628A4C71149
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:46:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D99EAC7114B
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:47:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RMvaDxUsqhYGUpRgGzwXam8gRAys3a9ncVhyb94FWTw=; b=2XRsce8Jbs1epGD22Q+IPts0Xs
-	IRLKPk4dW08tvqIUATrJ/RJu1GNLfGMC7JMS/i5IsXMJsTsuvBmDaoZSQQtvqFhV+PleBrvJvXJkQ
-	aa/cF3tX6xgYOaXIKfAqSzlIY1ftTPo50pia+KB9kb6ZAfoaiNFSOI2iQHXAggEBWZXNCI9kz8JC8
-	Ym9Is86A5RMLLvAt6QZAYlYyisCLVIIAEnsVGLDaY1NGWhFgVVGkZa/OtFlfYi8hyG+0JZ3u3oXve
-	WbEzz5Z1QG3cPEdffWkWD95flJgRAZYzlakRWieIehQnPmCWwdf2lgK7PTVVIF5SNSPG0gvnS3AJD
-	FlZsh1RQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GEQ9yi1IxyTM0G92m3xr8Cp8YWvPqJqNFJdBPBO383Y=; b=GOiYdjD5lP7FVN
+	Nzn0na9FXgYPuG/WiCtdoI+8V58Ppzmkm8EoWtnAr/OWWr9fWu4Liqq7/f9x1JGxRhd9mNI5Fht7F
+	9e0oBr6sBGJkU+acOdkeewI+BXNDXYvuV6y6OGwmka9bShkzI5BYxp/90GvwCtzULONUSac+Wrcy/
+	5OyXuqTzp/Z/7mwjEAF4cJ7JOhxcwuGF2cMFJ+BA9/z+LNHNn6KxVjX6CyO+mRGlX7+Pq/dGZQ6em
+	JbmmpAtYPcKNDZkuq8YwqTbd3o+mTlGhfPqi5pGtxbvwxq6Fv2YcaeJVNNTXAwT17xHEgrgg+0DZ3
+	E1p1nm9J6SO8XOXNzXNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnsE-0000000EM07-00IZ;
-	Thu, 12 Jun 2025 19:46:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uPnu1-0000000EOPo-24an;
+	Thu, 12 Jun 2025 19:47:57 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPkSt-0000000Du4z-1ZS3;
-	Thu, 12 Jun 2025 16:07:44 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 315E25C671D;
-	Thu, 12 Jun 2025 16:05:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3CC20C4CEEA;
-	Thu, 12 Jun 2025 16:07:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749744462;
-	bh=U2fEccG9fwLvIRudQJWjcfVnqPecNc7cIYAnmbd9khA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mEh3gMA+uqltfgyJQaJ90yWpKwGTygJsPr0O9fMOzml4JNjs87T06CgqshJcmeK2a
-	 cR4rjIe2FUgOnMr7zcc4JULd1LTSgJdCmkTLzK0X8MhEy54PZZcTcO/W77Snrv9TAF
-	 9jjbS3IrliMLjb1gBPawNk57SFosgtvTcfV/pUX81mHnson4FtH3k/D3anOyqOQTdI
-	 tPOt1qpl894jqeGcBNZWQzyR0Zf/3LOnh26KTMCIGHm1+ymHK31BrfWy97HNfprnb1
-	 PvYzNT8C0/5IDjb8GOKphXcGP+c4OHWz65CuE33bnZpsPCqmXSH6JZX0H2PEqk92Pk
-	 NT4uu25RTCEwg==
-Date: Thu, 12 Jun 2025 17:07:37 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Inochi Amaoto <inochiama@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen Wang <unicorn_wang@outlook.com>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	sophgo@lists.linux.dev, linux-kernel@vger.kernel.org,
-	linux-riscv@lists.infradead.org, Yixun Lan <dlan@gentoo.org>,
-	Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
-Message-ID: <20250612-siesta-verbalize-6a7768ebc648@spud>
-References: <20250611081804.1196397-1-inochiama@gmail.com>
- <20250611081804.1196397-2-inochiama@gmail.com>
+	id 1uPn79-0000000E9ul-2nV1;
+	Thu, 12 Jun 2025 18:57:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754611; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=V0WkL+xDBUTkj8l5JoD3LEPCljeiKVGyhZ8GcRJ49yRjZGGSBFLv2RAQRdL9T7Zi8kKm74IMX+5B3iX8ljK0yDF7YYTaz86odGJy18gqK33EGnzje0YAmFQ7BdVL8iA4T4eI0rFQTp/evtDANpI+MtHJ7NNo7GvUcI/4J2ID6Bw=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1749754611; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=DarWK7YPJq6pqkvjh7CGHmvB+wvXuAPmewqRywjtBX4=; 
+	b=V0zKlVltUdg8N3ut9gm43dWDIYF80MiZAQQTuK8B/s2QiIkbPwtVFBdmUVN/MMJvFB+KeO/jYr/57EHdj+sIAxI6cbt5b+wZqM7pJA/UG7ACxpIKtVQ6lUMcu5+uMn5IikhLPO997VUmFxH3M/BbJ4fonrFCj5wsEhpyS1iuyJ4=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754611;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=DarWK7YPJq6pqkvjh7CGHmvB+wvXuAPmewqRywjtBX4=;
+	b=UZUo86zWHUxCQfBKaHZwcSseZIzCrqJCqp01Yr78vggCBGxruo4LrRzstrsi9R85
+	YIjfv7lOgtS9Qf2MBixc+6sxpX1tgOw9nnYE0/EKsvCIKtGrcVz56NpMPlcVCGNKFb2
+	BaxN8FaQ4Nm7/ujuDnpUOM00DhxwmsqNBm3seWKU=
+Received: by mx.zohomail.com with SMTPS id 1749754609724123.44033815930106;
+	Thu, 12 Jun 2025 11:56:49 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Thu, 12 Jun 2025 20:56:04 +0200
+Subject: [PATCH 02/20] mmc: dw_mmc-rockchip: switch to HWORD_UPDATE macro
 MIME-Version: 1.0
-In-Reply-To: <20250611081804.1196397-2-inochiama@gmail.com>
+Message-Id: <20250612-byeword-update-v1-2-f4afb8f6313f@collabora.com>
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+To: Yury Norov <yury.norov@gmail.com>, 
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Shreeya Patel <shreeya.patel@collabora.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_090743_488749_CF36B3E4 
-X-CRM114-Status: GOOD (  18.78  )
+X-CRM114-CacheID: sfid-20250612_115727_728572_419182B2 
+X-CRM114-Status: GOOD (  14.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,132 +106,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0658826810165252490=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
+drivers that use constant masks.
 
---===============0658826810165252490==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="TJu6QFbeFePgDQPv"
-Content-Disposition: inline
+Switch to the new HWORD_UPDATE macro in bitfield.h, which has error
+checking. Instead of redefining the driver's HIWORD_UPDATE macro in this
+case, replace the two only instances of it with the new macro, as I
+could test that they result in an equivalent value.
 
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ drivers/mmc/host/dw_mmc-rockchip.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
---TJu6QFbeFePgDQPv
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/drivers/mmc/host/dw_mmc-rockchip.c b/drivers/mmc/host/dw_mmc-rockchip.c
+index baa23b51773127b4137f472581259b61649273a5..9e3d17becf65ffb60fe3d32d2cdec341fbd30b1e 100644
+--- a/drivers/mmc/host/dw_mmc-rockchip.c
++++ b/drivers/mmc/host/dw_mmc-rockchip.c
+@@ -5,6 +5,7 @@
+ 
+ #include <linux/module.h>
+ #include <linux/platform_device.h>
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/mmc/host.h>
+ #include <linux/of_address.h>
+@@ -24,8 +25,6 @@
+ #define ROCKCHIP_MMC_DELAYNUM_OFFSET	2
+ #define ROCKCHIP_MMC_DELAYNUM_MASK	(0xff << ROCKCHIP_MMC_DELAYNUM_OFFSET)
+ #define ROCKCHIP_MMC_DELAY_ELEMENT_PSEC	60
+-#define HIWORD_UPDATE(val, mask, shift) \
+-		((val) << (shift) | (mask) << ((shift) + 16))
+ 
+ static const unsigned int freqs[] = { 100000, 200000, 300000, 400000 };
+ 
+@@ -148,9 +147,9 @@ static int rockchip_mmc_set_internal_phase(struct dw_mci *host, bool sample, int
+ 	raw_value |= nineties;
+ 
+ 	if (sample)
+-		mci_writel(host, TIMING_CON1, HIWORD_UPDATE(raw_value, 0x07ff, 1));
++		mci_writel(host, TIMING_CON1, HWORD_UPDATE(GENMASK(11, 1), raw_value));
+ 	else
+-		mci_writel(host, TIMING_CON0, HIWORD_UPDATE(raw_value, 0x07ff, 1));
++		mci_writel(host, TIMING_CON0, HWORD_UPDATE(GENMASK(11, 1), raw_value));
+ 
+ 	dev_dbg(host->dev, "set %s_phase(%d) delay_nums=%u actual_degrees=%d\n",
+ 		sample ? "sample" : "drv", degrees, delay_num,
 
-On Wed, Jun 11, 2025 at 04:18:02PM +0800, Inochi Amaoto wrote:
-> The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
-> "VBUS_DET" to get the right operation mode. If this pin is not
-> connected, it only supports setting the mode manually.
->=20
-> Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
->=20
-> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+-- 
+2.49.0
 
-I'm having a bit of trouble finding the v3 etc, could you provide a
-link?
-I think what is here is sane, but I want to make sure that review
-comments on previous versions have been addressed. "dfn:" searches for
-both driver and binding filenames turned up nothing.
-
-> ---
->  .../bindings/phy/sophgo,cv1800b-usb2-phy.yaml | 54 +++++++++++++++++++
->  1 file changed, 54 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800b-=
-usb2-phy.yaml
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-ph=
-y.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-> new file mode 100644
-> index 000000000000..2ff8f85d0282
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-> @@ -0,0 +1,54 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/sophgo,cv1800b-usb2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Sophgo CV18XX/SG200X USB 2.0 PHY
-> +
-> +maintainers:
-> +  - Inochi Amaoto <inochiama@gmail.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: sophgo,cv1800b-usb2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    items:
-> +      - description: PHY app clock
-> +      - description: PHY stb clock
-> +      - description: PHY lpm clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: app
-> +      - const: stb
-> +      - const: lpm
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    phy@48 {
-> +      compatible =3D "sophgo,cv1800b-usb2-phy";
-> +      reg =3D <0x48 0x4>;
-> +      #phy-cells =3D <0>;
-> +      clocks =3D <&clk 93>, <&clk 94>, <&clk 95>;
-> +      clock-names =3D "app", "stb", "lpm";
-> +      resets =3D <&rst 58>;
-> +    };
-> --=20
-> 2.49.0
->=20
-
---TJu6QFbeFePgDQPv
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEr7SQAKCRB4tDGHoIJi
-0pktAP9VMMOkhXJg21RuCXXueBhHqnv5XmapThudPFOJGbmUdAEAvW5JBZ8R4b+W
-fK8JZ5b3IEgK+NyZ4wGFRnCQlzB1Pg0=
-=wnik
------END PGP SIGNATURE-----
-
---TJu6QFbeFePgDQPv--
-
-
---===============0658826810165252490==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0658826810165252490==--
-
