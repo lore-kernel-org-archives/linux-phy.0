@@ -4,97 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D037C61CE8
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 21:09:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D29E7C7114C
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 21:43:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2iB6XoKVf8JBOJjKbY+VPt3FuslUJ0n0wJ4haIkDre8=; b=PWFzXNjAldGxBo
-	2DBUe0Rucb6PbNzq03M/NHzXhOAkgEXCZMW1XyciM+bBm9wGORiIbHcaglRZEdaExj36zHbBpnyXK
-	hCyD0xV06B6+DMDWYt8vCFFea5ZB7QeKm+j5B05tjJ8y+T51LHfYIEYGgyv1x0R9nIo1mJVGHbCAD
-	MrqvzohN1iAY7MOzY1ee1OFWEsuQ1EJF7+BGYUhzJ6fri4EZFoQIlZUSkKlpk4PPoiRNIShTXwWOq
-	zOjZRr8BYVTd5fqzhjLh5nV0VkfBueWAaPicoUCtc6jIcMXrtbiK255vJhJUN3Yd5EP48Tjr97KDG
-	WU59ek4gRjWMhZ5ilZ8Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=C/XMHIKSqj9VqEA9D5Yvl5mx8ODJFvQyBpgPao3CucA=; b=Zygzb8q9txEKke
+	1QEHmg1LuIfHO53ezTPgiT+IyykXb4rv6noE/8L9erm/g5k8KAKgcce+clk8pulUq2047Uz0PFlZ7
+	7IGoW5brc+wV6sdVbvqDGO7NBSA3UUYhgDdycQi1UDS+Cr/m6lQ9ytRojHfdAXPXPQIYlWgA+PTFj
+	M64gpFvo1Toaw0WRF4J7k9Fn9zMF9kx/hMzgEg8jm1wlbUGhqPLv0qxAA9cqjYUDhvHRsdHDBTBiu
+	DST2tAPqKSEu4CxOxZzTl0FpijV2mkFv9KpWY3agXMm6wm86TOcCVk/BVxkyANOvkHMsLo597A2YL
+	90xV2Seowt/SkhMnZJMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPpB3-0000000Ecnw-11Ff;
-	Thu, 12 Jun 2025 21:09:37 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1uPphY-0000000EfYs-27ew;
+	Thu, 12 Jun 2025 21:43:12 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnxG-0000000EQIo-3itv;
-	Thu, 12 Jun 2025 19:51:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749757825; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=niCZ7gfbCTphUt9F4A6BqJhyAWLYx6ZFwS619hLJe6PBl39fzz0Cx8vMltl3JFnMTsylPx4rmHxzSjlI6+i7JxXqUGT3s6Es/ezleTw1LiVQjojUFV2MChvno5MY8Cvp/2xtoIVUvXIUkrk6ZQaLkHxbgid9Eb84F9rtiiep3/w=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749757825; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=mU+CcqNywPoimgVbJRvOWx8a/xllDqeUM7RTijoC4cY=; 
-	b=QslLP2IFvCv129jJG9S1czdWGSll5oQcKPTGbu69twy2y6tft074Tj9gl4VSLqgkHbZePSQXCS47CfPxgVRXhkhNwNcM8sjdLMyylkaGbgAbNTkJteWsZT0or3z04oq3pKdilJf94Uubjr2Ok5GHz0dv8po0Wsr3HlZiPRC3pWc=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749757824;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=mU+CcqNywPoimgVbJRvOWx8a/xllDqeUM7RTijoC4cY=;
-	b=dgrFviZisw0pqrB+YqDeMyESyiRkmHgCVyEhMK+qA9s5JJEM1kHaX6FSiVjc6CAL
-	ESUjzFUcC4kIRX5GaLHv+75hTR9fo3lR/+rESxFHOrnAIQiuvgMjh0P0wu1u/jZe70V
-	f2+QqcSa+85I9n/Kg//f8lLHO3nJsdYBvCrZC82w=
-Received: by mx.zohomail.com with SMTPS id 1749757823600263.75629300643163;
-	Thu, 12 Jun 2025 12:50:23 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-To: Jakub Kicinski <kuba@kernel.org>
-Cc: Yury Norov <yury.norov@gmail.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>,
- Shreeya Patel <shreeya.patel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- Krzysztof =?UTF-8?B?V2lsY3p5xYRza2k=?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Nathan Chancellor <nathan@kernel.org>,
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>,
- kernel@collabora.com, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev
-Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
-Date: Thu, 12 Jun 2025 21:50:12 +0200
-Message-ID: <22744779.EfDdHjke4D@workhorse>
-In-Reply-To: <20250612124415.3399e26b@kernel.org>
-References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
- <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
- <20250612124415.3399e26b@kernel.org>
+	id 1uPpRM-0000000EePi-0mwg;
+	Thu, 12 Jun 2025 21:26:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:References;
+	bh=UWLA222vkvQRYzLbZtIgtM7Crrq4jS1IEZSm6StIyCc=; b=pFLlP9REW/N/KfP6kuBKjcw0Lz
+	87Mvb+ENZkTMYdRLw+/+QkIAyDSc1KyxYicxINlnoTkQ5t8gnQaidIJyi19Ha1Ll0ylySHEzhefer
+	7U78mIVmeYL5Eoasezp8xqBsrrqS4t9QNzcRVT2gnX874vC+B4epUtRwjxB4DBgv2SE1YDC4MZQnp
+	+wPSMZ2nLAFb+Wy8fB+BMr76mH17uZiBZ4E2ZgXlB4eJKmHYzjRTaKZxiso8FrFE5Vy1mm+LuVw+8
+	G4mwH5GFKnuTeHLnLAXrbZjT6CniomRVO2RLVyX+G82KQ3jT66v1IQK7sPAGF5IDWBdPUlRl/tv5/
+	EgdDfLdw==;
+Received: from sea.source.kernel.org ([172.234.252.31])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uPpRE-00000002icg-1HFf;
+	Thu, 12 Jun 2025 21:26:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2D8034A50A;
+	Thu, 12 Jun 2025 21:26:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC57BC4CEEA;
+	Thu, 12 Jun 2025 21:26:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749763574;
+	bh=6LN6fAd/m/I9fNEg7TgOenHz2E9XCA7dKBTgHZOBjA8=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=RBaMKN7q88dt2SCpxiQd0GEzWLoqZ3LCGCt9XYhCziHo3YTanavefSp3NTXwZoNYZ
+	 m5de7yzQyI5k/vHv0PIBgllwvEpY/fsvmLgb0AI2ad+czensyPXFO8i1hT9JU3/cbT
+	 X0zRj+iLUNTXEdGCgdRoW8aOo9FEx4b6KOZ9C1/WB92PFTWmrHWM04U3uBbibYYaUF
+	 OY2LHGIBxnedMxi7F6cIK5ENto+BNsECzamLjIMVFZ/NSxxkHVkxUvQ2hKa4bvIWOC
+	 lMQQ/y+Wu7gJgliZ7GfR2Z/cn7/rKnKvapr87pGvvL2zEw9078jcOjvCWL2meKHGrG
+	 4T3R31JTy0F8A==
+Date: Thu, 12 Jun 2025 16:26:12 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Geraldo Nascimento <geraldogabriel@gmail.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [RFC PATCH v2 1/4] PCI: pcie-rockchip: add Link Control and
+ Status Register 2
+Message-ID: <20250612212612.GA930681@bhelgaas>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <aEs9daeceXkePg7y@geday>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_125119_020666_A0B3945E 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20250612_222620_819836_63C7CD68 
+X-CRM114-Status: GOOD (  16.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,29 +93,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thursday, 12 June 2025 21:44:15 Central European Summer Time Jakub Kicinski wrote:
-> On Thu, 12 Jun 2025 20:56:03 +0200 Nicolas Frattaroli wrote:
-> > Hardware of various vendors, but very notably Rockchip, often uses
-> > 32-bit registers where the upper 16-bit half of the register is a
-> > write-enable mask for the lower half.
+On Thu, Jun 12, 2025 at 05:49:57PM -0300, Geraldo Nascimento wrote:
+> On Wed, Jun 11, 2025 at 02:42:59PM -0500, Bjorn Helgaas wrote:
+> > I would do a pure conversion patch of the existing #defines.  Then I
+> > suspect you wouldn't need a patch to add the Link 2 registers at all
+> > because you could just use the #defines from pci_regs.h.
 > 
-> Please limit the spread of this weirdness to a rockchip or "hiword"
-> specific header. To a normal reader of bitfield.h these macros will
-> be equally confusing and useless.
+> Hi Bjorn,
 > 
+> I've hit roadblock, maybe you can help?
+> 
+> PCIE_RC_CONFIG_DCR_CSPL_LIMIT is defined as 0xff...
+> 
+> I'd like to kill that define too, since it will be
+> orphaned.
+> 
+> But hardcoding 0xff seems like illegible solution.
+> 
+> Perhaps there is another standard define that
+> maps to 0xff that I can use? Anyone comes
+> to your mind?
 
-That is how this change started out, and then a different maintainer told
-me that this is a commonly used thing (see: the sunplus patch), and
-Rockchip just happens to have a lot of these with consistent naming.
-
-I believe normal readers of bitfield.h will be much more confused by the
-undocumented concatenating macro soup at the end, but maybe that's just
-me.
-
-Best regards,
-Nicolas Frattaroli
-
-
+Maybe FIELD_MAX(PCI_EXP_DEVCAP_PWR_VAL)?
 
 -- 
 linux-phy mailing list
