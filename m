@@ -4,57 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13B8DC71149
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:47:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EFD3C61CE8
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:48:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4FP4HF+WgwIh9Qz72T+Gla0P3h0RX4iQLWKhBPM7nGc=; b=azv6qM71DOPJit
-	wOuPAM4aypIPAX/QX1z8JzVGyfI3T8ydFvFxZIBtSfvZ17WzKWiMai+6oe2B0c7sSIxHHz+R0ySsY
-	U7JGP743Tm/Emd1bdSPYyFFsRgEQ+R20I0hKzcXCaUwfDwOXhmhibT4bhT1s83h/jrIyuluWvTCfq
-	boY9UEuXpyuByay3UV0TnLRZe++kJqqoAWiDqUvftXg/uFRCdkBSiyDs7/X6pXXcKZGzHaTXjiHmw
-	EK7UPSA25lK+LB5Qo27cET1IwkvjuxFQ4ATPuYizP2lPbv1S0Gm5k0FucAc6JQgHG36dOgD55sLjq
-	zLT776B/wkj1F8BFKonA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mV4XAVfSwT2miY8X5vg7op0w6K0RNhGTv7h5Qud6GOw=; b=H8kHtDkI+S8OFI
+	3fPAlkAGds9h1iaF5Mm+ToFl9nOjMGIO1QqMIK+CncJSl/LUT+LqRS8AlIhOSSigBxtga3Zhvv3yQ
+	zwRxLc2Cw7WNKFw/+qu6tmHex90/WxFyBBTeTvOHjs81mBSUB/h72GhJy/6Oz8w0E5LkdQFrDcoHP
+	GlkDI2/CuycWEkDpFiOeeZMO0zQSm3uT/wWnOeX/Q7lyhqrRja7bJwJ0F2J12PXL39/e8u4kQ2Tsy
+	aQps/MtVA+Gb+DxZAbONzoq7Fbux37M14ZlEBdWM7Ka2UN4KQWSWTiLNG58LlZ4WXbABkYeLzitlC
+	8QTz5G54uNtghiFN1HNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPntz-0000000EOLx-3BD3;
-	Thu, 12 Jun 2025 19:47:55 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uPnuK-0000000EOrh-04Ki;
+	Thu, 12 Jun 2025 19:48:16 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPn74-0000000E9tt-1UlR;
-	Thu, 12 Jun 2025 18:57:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749754584; cv=none; 
+	id 1uPn95-0000000EANC-3lX4;
+	Thu, 12 Jun 2025 18:59:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754730; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=EdJZfDxsprpXvjM+Msqvvl1RDspq+yjB9A4hg93KgWxptseH4FFSNtHttZfa1cgcz5kNlnLzyywmUD+Sgl2hH44HzK9gHBFlBm3asaHSydn4R+Ch3wwpnnc5tLDvWAbqFHjpoG6BnF/OF7/tky45/4LIwJ1NPCssaAeZnc/+bso=
+	b=TRM8mOFWyaBYak++nZU8l9Lh9sNaOvaqbi+IF5KwOXAxpxEdhGnj1xHPo0BC8t9jwMsc9bX/n8u29ShdL0HXM2/KZSM6AifRSMqgUwexN+YhM7aeCbVbJShzARE4YkEzpYLZ5Kl1m5XncFNxaNW2TlIfz8bMHFHmUWtWiC97aWA=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749754584; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=iOnbYnaE1YbBtaVTatR6PeV03EiI8qVZV78p6KFGMJk=; 
-	b=dD1ImpFvj4DitiIHZ6VirMaIkNElMH+Liqr6H3WikImv1JXhL5B3J/Lf2jb+3E+5ZtpDXMRQg79yx/njiAOLmn+Kqi9x3tNjTdD7M5LFSIp7SeTNfE+TwFYH6pXsMcF9LUmzDgrZP2QO4yG+zvllSyeXFPLnG5FrnaHuFvt7iac=
+	t=1749754730; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=40rYDysgIuUPOjEXjeVmWjUJjq2cy29Zm9mzxshoj3Q=; 
+	b=eyNXOpLzG/KfGfQO4VVrBHoSStZG4ttQiQp3pf5y0tTiFbPx09TIH7qU1JY1Ukt6Z4f8vFGHQlc+pcugmiZctcmzwHuqHz5RNz4p72Jew++h8+/OXDSH+Xyy6r4Rtuycnl4JmsZQ67YaLGSpYcOaPW1FyrRNMi/XI1wpARBKEXo=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754584;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754730;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding:To:To:Cc:Cc:Reply-To;
-	bh=iOnbYnaE1YbBtaVTatR6PeV03EiI8qVZV78p6KFGMJk=;
-	b=XzC/xsR7Xr/DpJiXhQHzQo5ryxr5+gW5+MLUrocYGyhR0dLCFAp/BzFD1hLwpIkl
-	hvQMX1pm8vJpdtfxstY7gf9C0XQ5PLueP//xoPjWNN7aSX8Xfl2rdWZoa7VO7MmoC05
-	MSWjuK5+KIi3CAPTZlg7KtbtVH3YNmUUq3yBXeCM=
-Received: by mx.zohomail.com with SMTPS id 17497545829051009.0539110789078;
-	Thu, 12 Jun 2025 11:56:22 -0700 (PDT)
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=40rYDysgIuUPOjEXjeVmWjUJjq2cy29Zm9mzxshoj3Q=;
+	b=XM21WvZ37+5lexo4sUsG3vQNVq/vd9yOHR5204FfyyT1AsygHfQnx7rmP30dSsCV
+	gxz9M1jdmgWMM+DOtWyARQp9vl6GI3NO4/zPJEBCngqxsifVQJFImONiO6r9aufCazz
+	n/10voaGC+YtJZJdXTRGZXwgCnTmvVrUrDtegWwQ=
+Received: by mx.zohomail.com with SMTPS id 1749754729031715.0037807596458;
+	Thu, 12 Jun 2025 11:58:49 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Subject: [PATCH 00/20] BYEWORD_UPDATE: unifying (most) HIWORD_UPDATE macros
-Date: Thu, 12 Jun 2025 20:56:02 +0200
-Message-Id: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+Date: Thu, 12 Jun 2025 20:56:13 +0200
+Subject: [PATCH 11/20] drm/rockchip: inno-hdmi: switch to HWORD_UPDATE
+ macro
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAMIiS2gC/yXMQQ6DIBCF4auQWXcaMIqJV2lcIEzbWSh2QFtjv
- LukLr+XvH+HRMKUoFM7CK2cOE4F5qbAv930IuRQDJWuGm2NxmGjb5SAyxxcJqzrxmsi17YmQDn
- NQk/+/YOP/rLQZyndfI0wuETo4zhy7tRq78aieAP9cZw6r1InjQAAAA==
-X-Change-ID: 20250610-byeword-update-445c0eea771d
+Message-Id: <20250612-byeword-update-v1-11-f4afb8f6313f@collabora.com>
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
  Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
  Jaehoon Chung <jh80.chung@samsung.com>, 
@@ -95,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_115722_447522_07747341 
-X-CRM114-Status: GOOD (  23.65  )
+X-CRM114-CacheID: sfid-20250612_115927_987912_781943A1 
+X-CRM114-Status: GOOD (  14.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,117 +112,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series was spawned by [1], where I was asked to move every instance
-of HIWORD_UPDATE et al that I could find to a common macro in the same
-series that I am introducing said common macro.
+The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
+drivers that use constant masks.
 
-The first patch of the series introduces the two new macros in
-bitfield.h, called HWORD_UPDATE and HWORD_UPDATE_CONST. The latter can
-be used in initializers.
+The inno-hdmi driver's own HIWORD_UPDATE macro is instantiated only
+twice. Remove it, and replace its uses with HWORD_UPDATE. Since
+HWORD_UPDATE shifts the value for us, we replace using the mask as the
+value by simply using 1 instead.
 
-This macro definition checks that the mask fits, and that the value fits
-in the mask. Like FIELD_PREP, it also shifts the value up to the mask,
-so turning off a bit does not require using the mask as a value. Masks
-are also required to be contiguous, like with FIELD_PREP.
+With the new HWORD_UPDATE macro, we gain better error checking and a
+central shared definition.
 
-For each definition of such a macro, the driver(s) that used it were
-evaluated for three different treatments:
- - full conversion to the new macro, for cases where replacing the
-   implementation of the old macro wouldn't have worked, or where the
-   conversion was trivial. These are the most complex patches in this
-   series, as they sometimes have to pull apart definitions of masks
-   and values due to the new semantics, which require a contiguous
-   mask and shift the value for us.
- - replacing the implementation of the old macro with an instance of the
-   new macro, done where I felt it made the patch much easier to review
-   because I didn't want to drop a big diff on people.
- - skipping conversion entirely, usually because the mask is
-   non-constant and it's not trivial to make it constant. Sometimes an
-   added complication is that said non-constant mask is either used in a
-   path where runtime overhead may not be desirable, or in an
-   initializer.
-
-Left out of conversion:
- - drivers/mmc/host/sdhci-of-arasan.c: mask is non-constant.
- - drivers/phy/rockchip/phy-rockchip-inno-csidphy.c: mask is
-   non-constant likely by way of runtime pointer dereferencing, even if
-   struct and members are made const.
- - drivers/clk/rockchip/clk.h: way too many clock drivers use non-const
-   masks in the context of an initializer.
-
-I will not be addressing these 3 remaining users in this series, as
-implementing a runtime checked version on top of this and verifying that
-it doesn't cause undue overhead just for 3 stragglers is a bit outside
-the scope of wanting to get my RK3576 PWM series unblocked. Please have
-mercy.
-
-In total, I count 19 different occurrences of such a macro fixed out of
-22 I found. The vast majority of these patches have either undergone
-static testing to ensure the values end up the same during development,
-or have been verified to not break the device the driver is for at
-runtime. Only a handful are just compile-tested, and the individual
-patches remark which ones those are.
-
-This took a lot of manual work as this wasn't really something that
-could be automated: code had to be refactored to ensure masks were
-contiguous, made sense to how the hardware actually works and to human
-readers, were constant, and that the code uses unshifted values.
-
-https://lore.kernel.org/all/aD8hB-qJ4Qm6IFuS@yury/ [1]
+This has been compile-tested only as I lack hardware this old, but the
+change is trivial enough that I am fairly certain it's equivalent.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
-Nicolas Frattaroli (20):
-      bitfield: introduce HWORD_UPDATE bitfield macros
-      mmc: dw_mmc-rockchip: switch to HWORD_UPDATE macro
-      soc: rockchip: grf: switch to HWORD_UPDATE_CONST macro
-      media: synopsys: hdmirx: replace macros with bitfield variants
-      drm/rockchip: lvds: switch to HWORD_UPDATE macro
-      phy: rockchip-emmc: switch to HWORD_UPDATE macro
-      drm/rockchip: dsi: switch to HWORD_UPDATE* macros
-      drm/rockchip: vop2: switch to HWORD_UPDATE macro
-      phy: rockchip-samsung-dcphy: switch to HWORD_UPDATE macro
-      drm/rockchip: dw_hdmi_qp: switch to HWORD_UPDATE macro
-      drm/rockchip: inno-hdmi: switch to HWORD_UPDATE macro
-      phy: rockchip-usb: switch to HWORD_UPDATE macro
-      drm/rockchip: dw_hdmi: switch to HWORD_UPDATE* macros
-      ASoC: rockchip: i2s-tdm: switch to HWORD_UPDATE_CONST macro
-      net: stmmac: dwmac-rk: switch to HWORD_UPDATE macro
-      PCI: rockchip: switch to HWORD_UPDATE* macros
-      PCI: dw-rockchip: switch to HWORD_UPDATE macro
-      PM / devfreq: rockchip-dfi: switch to HWORD_UPDATE macro
-      clk: sp7021: switch to HWORD_UPDATE macro
-      phy: rockchip-pcie: switch to HWORD_UPDATE macro
+ drivers/gpu/drm/rockchip/inno_hdmi.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
 
- drivers/clk/clk-sp7021.c                           |  21 +--
- drivers/devfreq/event/rockchip-dfi.c               |  26 ++--
- drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    | 142 ++++++++++-----------
- drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        |  80 ++++++------
- drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c     |  68 +++++-----
- drivers/gpu/drm/rockchip/inno_hdmi.c               |  11 +-
- drivers/gpu/drm/rockchip/rockchip_drm_vop2.h       |   1 -
- drivers/gpu/drm/rockchip/rockchip_lvds.h           |  21 +--
- drivers/gpu/drm/rockchip/rockchip_vop2_reg.c       |  14 +-
- .../media/platform/synopsys/hdmirx/snps_hdmirx.h   |   5 +-
- drivers/mmc/host/dw_mmc-rockchip.c                 |   7 +-
- drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c     |   3 +-
- drivers/pci/controller/dwc/pcie-dw-rockchip.c      |  39 +++---
- drivers/pci/controller/pcie-rockchip.h             |  35 ++---
- drivers/phy/rockchip/phy-rockchip-emmc.c           |   3 +-
- drivers/phy/rockchip/phy-rockchip-pcie.c           |  72 +++--------
- drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c  |  10 +-
- drivers/phy/rockchip/phy-rockchip-usb.c            |  51 +++-----
- drivers/soc/rockchip/grf.c                         |  35 +++--
- include/linux/bitfield.h                           |  47 +++++++
- sound/soc/rockchip/rockchip_i2s_tdm.h              |   4 +-
- 21 files changed, 342 insertions(+), 353 deletions(-)
----
-base-commit: d9946fe286439c2aeaa7953b8c316efe5b83d515
-change-id: 20250610-byeword-update-445c0eea771d
+diff --git a/drivers/gpu/drm/rockchip/inno_hdmi.c b/drivers/gpu/drm/rockchip/inno_hdmi.c
+index db4b4038e51d5a963f9ddad568282485ed355040..ab6b1d91127885afe0f5e0feb265d6b7b02d88a7 100644
+--- a/drivers/gpu/drm/rockchip/inno_hdmi.c
++++ b/drivers/gpu/drm/rockchip/inno_hdmi.c
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <linux/irq.h>
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/delay.h>
+ #include <linux/err.h>
+@@ -31,8 +32,6 @@
+ 
+ #include "inno_hdmi.h"
+ 
+-#define HIWORD_UPDATE(val, mask)	((val) | (mask) << 16)
+-
+ #define INNO_HDMI_MIN_TMDS_CLOCK  25000000U
+ 
+ #define RK3036_GRF_SOC_CON2	0x148
+@@ -392,10 +391,10 @@ static int inno_hdmi_config_video_timing(struct inno_hdmi *hdmi,
+ 	int value, psync;
+ 
+ 	if (hdmi->variant->dev_type == RK3036_HDMI) {
+-		psync = mode->flags & DRM_MODE_FLAG_PHSYNC ? RK3036_HDMI_PHSYNC : 0;
+-		value = HIWORD_UPDATE(psync, RK3036_HDMI_PHSYNC);
+-		psync = mode->flags & DRM_MODE_FLAG_PVSYNC ? RK3036_HDMI_PVSYNC : 0;
+-		value |= HIWORD_UPDATE(psync, RK3036_HDMI_PVSYNC);
++		psync = mode->flags & DRM_MODE_FLAG_PHSYNC ? 1 : 0;
++		value = HWORD_UPDATE(RK3036_HDMI_PHSYNC, psync);
++		psync = mode->flags & DRM_MODE_FLAG_PVSYNC ? 1 : 0;
++		value |= HWORD_UPDATE(RK3036_HDMI_PVSYNC, psync);
+ 		regmap_write(hdmi->grf, RK3036_GRF_SOC_CON2, value);
+ 	}
+ 
 
-Best regards,
 -- 
-Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+2.49.0
 
 
 -- 
