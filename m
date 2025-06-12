@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2F1FC71150
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:09:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50F6CC71151
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 22:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f23xfHgUagj9wwRyC64uo3u2WWrrjwjLvXSIqJw3FPw=; b=tv4E+rWu5BGiVa
-	qdyQgVdMW2Hicy4OR8sj6grlPN0ukgVwJZkNPVT22LrkMBRj861RvXrobJrh82/ukLZtTpWkgtRfe
-	hZhM/gYuNBHabQfE0QyNgBNQiUtnEk7tewdscYwwvW8Trc84dZ7MScB//Uk6f/wuLW9LVv3ADoIdO
-	ztuAjI6QHJ2vnV6rEv3FvFyrXYy5lXqt0OjDRYEmCu0moqaw2kHElg2yLwkAV6dwfmIMUEpCf6IRx
-	h8p/p7AqJrDqHvWi7zViTM/9y9rk9DAUplHDGX+2Fur8eFC9RpONHNVH54xsfN6MoB7KKpE2VZoVF
-	tu39hM+QmEL0JXXqmEFA==;
+	List-Owner; bh=dpXqFBWgr7w7Rnt7tmM0z2wt/a/tsn3c5zXfDZFe/BI=; b=qYZt3VkdabTk19
+	0MVZsY3iMaYGR7jSiym8gvuG0fXCE5mHkK7buk6DYJfldUccZNt3HS+A35VENrHapj53imNEuXBN8
+	v9yV9VdQI+y2ntl+2oQQPJ95TxaTxnhEWFD+dQY2O6vy/9on1T6q6MlU94zLA13L9VCLsoRG9FHnz
+	uQDCKtNvliPeUyybzWfOnyk/qYhXDX9OTtymvZJl3VcDGTxeuWay0s3kPdA+PBpbh/Kf8NTLau2us
+	3pguypzjoPDqr4Dv/OeboqQQQWWUym78Pl33f4qHgJOufgAaT0AYiDjow7P2oIXXN95Lt4iycPKfE
+	s7C1I1YEiPCE4dy2pOzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPq7Q-0000000Ejs4-2gaK;
-	Thu, 12 Jun 2025 22:09:56 +0000
+	id 1uPq7S-0000000EjyY-41CD;
+	Thu, 12 Jun 2025 22:09:58 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPn76-0000000E9uK-3qdq;
-	Thu, 12 Jun 2025 18:57:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749754599; cv=none; 
+	id 1uPn7e-0000000EA1e-3Zhy;
+	Thu, 12 Jun 2025 18:57:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749754637; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=VjTrVaWfz9jfeFDYITSFocj41PBevLpWCKD+yFugt6G1+9d/Hw9jBQso8N/gjAPvpi60iwOZlPdJti4Lm1c8Stdx7ZAV2s32I+igmfs7sfjSiZzNcOGemQ8U3YJi+genYO6P68iKZU887RanvFG2jmIT4EG6ifQWvG3TTwOzVmc=
+	b=cQ/34ghqKuGjcrWPS7b1Wq9MVwd24fiYy33dfNtZnwjp0TIlEGsMMZkTkkw84nbbhyDSgqmMOg6aYVQUnswX2KLbY0zwxv0fjczYXuNmDI9AjiDoJ53+BOvo0HtFYsCaa1N4+iXE/Gt8d2kk9TDm8pR2k9zH/lnXEDwCkrRV/oc=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749754599; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=IjOHGVHF7xIfJfArpDhRS/Px27x14OeLJOrr4ltwi/o=; 
-	b=Hv21Y4ICiKV6kkRup/0kBvaRTAUVqzMvXMTU7oOyjqRyNnKpWlnVTSU85nEPPqG4UtY6ATHj7UGqD9ilByEshaOxWumLRru0Myi5xN/KMure37YfQFtqQmaal02l69q9GpbUglMNHzB8ITpQ0V3kVy+XbtmczpJfHsjaGkX3vq4=
+	t=1749754637; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=9FbAT/kFTYAJV4B26t5chvy2NGDoQ0MYqsffVQGJEKY=; 
+	b=XyyXjlQtxQmWzzagFz4yGtANAwqMiepjym1NS8jMP7V5pzr6sadWHFUOWHGQQA1lmJOUo+2QVCccrPjUdAHykFtt2qVQfI5NJMoC0aurpHLczUmmCxA+FIBFmqkGSy+zMtgNP71TMcvQCucOhyMW1/vo/Z+nd2aexOPze1q130I=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754599;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749754637;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=IjOHGVHF7xIfJfArpDhRS/Px27x14OeLJOrr4ltwi/o=;
-	b=DDS22aPhBDFhm0N/TbbfWtmcvGpPgih6ABqWtgdiQi1WLz5vBE40IBeFLnhixWy+
-	XeH5bQ1OypUI3HKN9tCAk6z/OJYWnm4DYfBAd0Uz/qp47NLT/xrxRESq5KVRWH0tPYk
-	0l1ydpt0eehm25ZaFWLKUMNlC9fEHBBWV4iUkEww=
-Received: by mx.zohomail.com with SMTPS id 1749754596390629.9899321699246;
-	Thu, 12 Jun 2025 11:56:36 -0700 (PDT)
+	bh=9FbAT/kFTYAJV4B26t5chvy2NGDoQ0MYqsffVQGJEKY=;
+	b=MKyukhD9mQguSmr/ZgdeSbDoZqzeO5gjhx6xYALY/foknYyAnNv2HJdJdbqSA2Gk
+	dxkFofcpizGOU+UgoFrzslUvu4X+WEoVS+h5BQsh12DO2+BCeOD6RwVJoRJvirAWqIk
+	4vQvnFeC037T1+7jdCaeWd4mGVHpghNxJIBdYm7U=
+Received: by mx.zohomail.com with SMTPS id 1749754636246148.0365477005737;
+	Thu, 12 Jun 2025 11:57:16 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Thu, 12 Jun 2025 20:56:03 +0200
-Subject: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
+Date: Thu, 12 Jun 2025 20:56:06 +0200
+Subject: [PATCH 04/20] media: synopsys: hdmirx: replace macros with
+ bitfield variants
 MIME-Version: 1.0
-Message-Id: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+Message-Id: <20250612-byeword-update-v1-4-f4afb8f6313f@collabora.com>
 References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 In-Reply-To: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -93,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_115725_009976_043BECC4 
-X-CRM114-Status: GOOD (  17.04  )
+X-CRM114-CacheID: sfid-20250612_115758_914345_5A54EA78 
+X-CRM114-Status: GOOD (  13.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,97 +112,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hardware of various vendors, but very notably Rockchip, often uses
-32-bit registers where the upper 16-bit half of the register is a
-write-enable mask for the lower half.
+The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
+drivers that use constant masks.
 
-This type of hardware setup allows for more granular concurrent register
-write access.
+Replace the UPDATE macro with bitfield.h's FIELD_PREP, to give us
+additional error checking.
 
-Over the years, many drivers have hand-rolled their own version of this
-macro, usually without any checks, often called something like
-HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
-semantics between them.
+Also, replace the HIWORD_UPDATE macro at the same time with bitfield.h's
+new HWORD_UPDATE macro, which also gives us additional error checking.
 
-Clearly there is a demand for such a macro, and thus the demand should
-be satisfied in a common header file.
-
-Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
-version that can be used in initializers, like FIELD_PREP_CONST. The
-macro names are chosen to not clash with any potential other macros that
-drivers may already have implemented themselves, while retaining a
-familiar name.
+The UPDATE/HIWORD_UPDATE macros are left as wrappers around the
+bitfield.h macros, in order to not rock the boat too much, and keep the
+changes easy to review.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- include/linux/bitfield.h | 47 +++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 47 insertions(+)
+ drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/include/linux/bitfield.h b/include/linux/bitfield.h
-index 6d9a53db54b66c0833973c880444bd289d9667b1..b90d88db7405f95b78cdd6f3426263086bab5aa6 100644
---- a/include/linux/bitfield.h
-+++ b/include/linux/bitfield.h
-@@ -8,6 +8,7 @@
- #define _LINUX_BITFIELD_H
+diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
+index 220ab99ca61152b36b0a08b398ddefdb985709a5..cd5250e282a5c9de9a75ea73f26496ed53766dff 100644
+--- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
++++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
+@@ -8,10 +8,11 @@
+ #ifndef DW_HDMIRX_H
+ #define DW_HDMIRX_H
  
- #include <linux/build_bug.h>
-+#include <linux/limits.h>
- #include <linux/typecheck.h>
- #include <asm/byteorder.h>
++#include <linux/bitfield.h>
+ #include <linux/bitops.h>
  
-@@ -142,6 +143,52 @@
- 		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
- 	)
+-#define UPDATE(x, h, l)		(((x) << (l)) & GENMASK((h), (l)))
+-#define HIWORD_UPDATE(v, h, l)	(((v) << (l)) | (GENMASK((h), (l)) << 16))
++#define UPDATE(x, h, l)		(FIELD_PREP(GENMASK((h), (l)), (x)))
++#define HIWORD_UPDATE(v, h, l)	(HWORD_UPDATE(GENMASK((h), (l)), (v)))
  
-+/**
-+ * HWORD_UPDATE() - prepare a bitfield element with a mask in the upper half
-+ * @_mask: shifted mask defining the field's length and position
-+ * @_val:  value to put in the field
-+ *
-+ * HWORD_UPDATE() masks and shifts up the value, as well as bitwise ORs the
-+ * result with the mask shifted up by 16.
-+ *
-+ * This is useful for a common design of hardware registers where the upper
-+ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
-+ * register, a bit in the lower half is only updated if the corresponding bit
-+ * in the upper half is high.
-+ */
-+#define HWORD_UPDATE(_mask, _val)					 \
-+	({								 \
-+		__BF_FIELD_CHECK(_mask, ((u16) 0U), _val,		 \
-+				 "HWORD_UPDATE: ");			 \
-+		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)) | \
-+		((_mask) << 16);					 \
-+	})
-+
-+/**
-+ * HWORD_UPDATE_CONST() - prepare a constant bitfield element with a mask in
-+ *                        the upper half
-+ * @_mask: shifted mask defining the field's length and position
-+ * @_val:  value to put in the field
-+ *
-+ * HWORD_UPDATE_CONST() masks and shifts up the value, as well as bitwise ORs
-+ * the result with the mask shifted up by 16.
-+ *
-+ * This is useful for a common design of hardware registers where the upper
-+ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
-+ * register, a bit in the lower half is only updated if the corresponding bit
-+ * in the upper half is high.
-+ *
-+ * Unlike HWORD_UPDATE(), this is a constant expression and can therefore
-+ * be used in initializers. Error checking is less comfortable for this
-+ * version.
-+ */
-+#define HWORD_UPDATE_CONST(_mask, _val)					  \
-+	(								  \
-+		FIELD_PREP_CONST(_mask, _val) |				  \
-+		(BUILD_BUG_ON_ZERO(const_true((u64) (_mask) > U16_MAX)) + \
-+		 ((_mask) << 16))					  \
-+	)
-+
- /**
-  * FIELD_GET() - extract a bitfield element
-  * @_mask: shifted mask defining the field's length and position
+ /* SYS_GRF */
+ #define SYS_GRF_SOC_CON1			0x0304
 
 -- 
 2.49.0
