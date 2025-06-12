@@ -4,69 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAFACC71136
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:44:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 628A4C71149
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 19:46:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2+QaiWaZRi8mSAuXFpAM4wZPEPgzg18dqxf5m3Pt5JA=; b=qj1yO2duwTBdDgieNCDRUb/aVJ
-	oCDgw+H63dEtETUmWwE72m3KtdmaC7O3CJIpkhigf7rfNT46RbMltHZSvcSBoBs0jVfaUPVd+NQ4i
-	UbMxNlkNBzuO1dXSOi6vdRw6oeuHnKU3ebXZovYlglCsxyirM2zAOaLEPIPI/DXAs/rCblnPPaxqT
-	lE0AaIIMuIEL8pQOSQnm2uB00g+NkIp88+WlKcDlbiDb2RemD9fjGPwQE6P4pVmn5V9iaNoAZpalU
-	8+o6QziwZnkJ7ZtNuk1Z1a4d2nV989Oir6AGPgUuyWBt0tHb9KiTAfU42t5zQBo3ziZWYd/tbW4ag
-	SVMPRA7Q==;
+	bh=RMvaDxUsqhYGUpRgGzwXam8gRAys3a9ncVhyb94FWTw=; b=2XRsce8Jbs1epGD22Q+IPts0Xs
+	IRLKPk4dW08tvqIUATrJ/RJu1GNLfGMC7JMS/i5IsXMJsTsuvBmDaoZSQQtvqFhV+PleBrvJvXJkQ
+	aa/cF3tX6xgYOaXIKfAqSzlIY1ftTPo50pia+KB9kb6ZAfoaiNFSOI2iQHXAggEBWZXNCI9kz8JC8
+	Ym9Is86A5RMLLvAt6QZAYlYyisCLVIIAEnsVGLDaY1NGWhFgVVGkZa/OtFlfYi8hyG+0JZ3u3oXve
+	WbEzz5Z1QG3cPEdffWkWD95flJgRAZYzlakRWieIehQnPmCWwdf2lgK7PTVVIF5SNSPG0gvnS3AJD
+	FlZsh1RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPnqz-0000000EJjE-2SDU;
-	Thu, 12 Jun 2025 19:44:49 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uPnsE-0000000EM07-00IZ;
+	Thu, 12 Jun 2025 19:46:06 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPjrG-0000000Dn1A-0OuI;
-	Thu, 12 Jun 2025 15:28:51 +0000
+	id 1uPkSt-0000000Du4z-1ZS3;
+	Thu, 12 Jun 2025 16:07:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D104F5C6667;
-	Thu, 12 Jun 2025 15:26:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58504C4CEEA;
-	Thu, 12 Jun 2025 15:28:46 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 315E25C671D;
+	Thu, 12 Jun 2025 16:05:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3CC20C4CEEA;
+	Thu, 12 Jun 2025 16:07:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749742129;
-	bh=t7kFj3CUvv/CS73sWzGwnm3tHKJMaqfmiaX3ddssg0U=;
+	s=k20201202; t=1749744462;
+	bh=U2fEccG9fwLvIRudQJWjcfVnqPecNc7cIYAnmbd9khA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NBJ1AJLi2/VBvcn8K3zZFaIdebMiKc4pC4pqU1oD174Nyic3I5Vc0tYsWBUagR3AR
-	 dhN5uG49SFhLwzEphylzAUlEdaqgzBH9qYOpNbvbXJ84CycsJnzwvt1OMWLIBi+/sk
-	 AelZxxiwy4IWq8CJ9KwdfplFJa1ffrGvIdnEov3hsqdrPZgOEbnQT3F0xN79BxCSxM
-	 64O1AJCB+RBxUMbwUd5fdM9v2Bvbxt6vn90YdmeRBiat3KXXlYDWlG3U/INFGhf5hI
-	 oJKLvjpF5D5LPgwG3pmKaH2CQcRlHkhj98dnUFeDAtcKm2u/VAOjF72WtKJvSvYIdT
-	 PwREXpzfhGKKw==
-Date: Thu, 12 Jun 2025 16:28:43 +0100
+	b=mEh3gMA+uqltfgyJQaJ90yWpKwGTygJsPr0O9fMOzml4JNjs87T06CgqshJcmeK2a
+	 cR4rjIe2FUgOnMr7zcc4JULd1LTSgJdCmkTLzK0X8MhEy54PZZcTcO/W77Snrv9TAF
+	 9jjbS3IrliMLjb1gBPawNk57SFosgtvTcfV/pUX81mHnson4FtH3k/D3anOyqOQTdI
+	 tPOt1qpl894jqeGcBNZWQzyR0Zf/3LOnh26KTMCIGHm1+ymHK31BrfWy97HNfprnb1
+	 PvYzNT8C0/5IDjb8GOKphXcGP+c4OHWz65CuE33bnZpsPCqmXSH6JZX0H2PEqk92Pk
+	 NT4uu25RTCEwg==
+Date: Thu, 12 Jun 2025 17:07:37 +0100
 From: Conor Dooley <conor@kernel.org>
-To: Kaustabh Chakraborty <kauschluss@disroot.org>
+To: Inochi Amaoto <inochiama@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
+	Chen Wang <unicorn_wang@outlook.com>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: samsung,mipi-video-phy: document
- exynos7870 MIPI phy
-Message-ID: <20250612-unpaid-slacker-edaf80ce160b@spud>
-References: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
- <20250612-exynos7870-mipi-phy-v1-1-3fff0b62d9d3@disroot.org>
+	sophgo@lists.linux.dev, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, Yixun Lan <dlan@gentoo.org>,
+	Longbin Li <looong.bin@gmail.com>
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <20250612-siesta-verbalize-6a7768ebc648@spud>
+References: <20250611081804.1196397-1-inochiama@gmail.com>
+ <20250611081804.1196397-2-inochiama@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20250612-exynos7870-mipi-phy-v1-1-3fff0b62d9d3@disroot.org>
+In-Reply-To: <20250611081804.1196397-2-inochiama@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_082850_172557_4E4BC381 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250612_090743_488749_CF36B3E4 
+X-CRM114-Status: GOOD (  18.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,46 +77,123 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6902665970098355670=="
+Content-Type: multipart/mixed; boundary="===============0658826810165252490=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============6902665970098355670==
+--===============0658826810165252490==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="f30wP9juoNGzy1L/"
+	protocol="application/pgp-signature"; boundary="TJu6QFbeFePgDQPv"
 Content-Disposition: inline
 
 
---f30wP9juoNGzy1L/
+--TJu6QFbeFePgDQPv
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Jun 12, 2025 at 08:39:29PM +0530, Kaustabh Chakraborty wrote:
-> The Exynos7870 MIPI PHY device contains one DSIM PHY block and three
-> CSIS PHY blocks. It also requires two sysregs, one for display, and the
-> other for cameras. Document this device.
+On Wed, Jun 11, 2025 at 04:18:02PM +0800, Inochi Amaoto wrote:
+> The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
+> "VBUS_DET" to get the right operation mode. If this pin is not
+> connected, it only supports setting the mode manually.
 >=20
-> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+> Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+>=20
+> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+I'm having a bit of trouble finding the v3 etc, could you provide a
+link?
+I think what is here is sane, but I want to make sure that review
+comments on previous versions have been addressed. "dfn:" searches for
+both driver and binding filenames turned up nothing.
 
---f30wP9juoNGzy1L/
+> ---
+>  .../bindings/phy/sophgo,cv1800b-usb2-phy.yaml | 54 +++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800b-=
+usb2-phy.yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-ph=
+y.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
+> new file mode 100644
+> index 000000000000..2ff8f85d0282
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
+> @@ -0,0 +1,54 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/sophgo,cv1800b-usb2-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Sophgo CV18XX/SG200X USB 2.0 PHY
+> +
+> +maintainers:
+> +  - Inochi Amaoto <inochiama@gmail.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: sophgo,cv1800b-usb2-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  clocks:
+> +    items:
+> +      - description: PHY app clock
+> +      - description: PHY stb clock
+> +      - description: PHY lpm clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: app
+> +      - const: stb
+> +      - const: lpm
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@48 {
+> +      compatible =3D "sophgo,cv1800b-usb2-phy";
+> +      reg =3D <0x48 0x4>;
+> +      #phy-cells =3D <0>;
+> +      clocks =3D <&clk 93>, <&clk 94>, <&clk 95>;
+> +      clock-names =3D "app", "stb", "lpm";
+> +      resets =3D <&rst 58>;
+> +    };
+> --=20
+> 2.49.0
+>=20
+
+--TJu6QFbeFePgDQPv
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEryKwAKCRB4tDGHoIJi
-0mqJAP9DJbUlkADvUrHdf81purqcXzTVeDAzhbMUmKO+F21UFAD/QjLSgELcwtip
-njn3vQB/7wZoDC6VzVfnBVgIdy1XAwg=
-=Bir7
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEr7SQAKCRB4tDGHoIJi
+0pktAP9VMMOkhXJg21RuCXXueBhHqnv5XmapThudPFOJGbmUdAEAvW5JBZ8R4b+W
+fK8JZ5b3IEgK+NyZ4wGFRnCQlzB1Pg0=
+=wnik
 -----END PGP SIGNATURE-----
 
---f30wP9juoNGzy1L/--
+--TJu6QFbeFePgDQPv--
 
 
---===============6902665970098355670==
+--===============0658826810165252490==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +204,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============6902665970098355670==--
+--===============0658826810165252490==--
 
