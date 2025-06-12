@@ -4,92 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B11D4C71135
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 02:44:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADE1DC61CE8
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 10:07:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=orviKWLhGCC13iSvKVXCJtT3giUTteNmMOIl1J1c/wg=; b=vcKW3KkMxm6Yjj
-	oMLnKfSgjUnHShxoMs0j97NRl1L7CySUR7725FML3ICQr32Mi3JeiHeiv1zvTQCcglBIVnPqKrVMa
-	FRuKSX2Nh1IkhOwTkeXM2VFlqP+s49hg4dYscpAgDHb+Rfwj3FRHyVKDnjmeYnT/TVY7r2aieI2Nv
-	ViacIQIC/4R9svJ3Zc3aRwnBBj2CC4V2BwWZoDxSUQ8+ODWuCla9GxDcS7/yTrRPzLTkG9HXXhDQf
-	2oQcQdZEKhxM+MMo2z+wOS9Pj/UYFHEpWMcwHK76cTABSYYZXBTIpQuxCU2M9xWNCxntodJKBJvKR
-	N/Nqjm6GIYzAJqu7Fjxg==;
+	List-Owner; bh=QESwN11GlI74Pul6sifIOGgUVAiXl80x263jMgGyxaY=; b=sk6mwFNQ6Tjbyn
+	jFA7HWTj9Eh0dNaS5ReANxhufKS94YLSIUIbKVrMvs3IbdbavH0WyOo/6YntzOBUOy4ccNSrjPrWF
+	dwdLJreysspfXA4qDOLYmrwTVSEJZApE3I629pPsKg3ofoQHfzVMzZqDPCi1Bk3HWMfj1Ev3vFUNQ
+	xwSUnbB95v+AIPCpyFIgHucIwqN1HsmoVXUTAeONv8W17GMmeXEf1UhGkVk9Ew9H0kMqIxl4tjY7M
+	6o1WIVdXALsIst+SUGtt2U0tuEKfzAaD5GsUiku/wr8OsDD+BnF6Y4CfCtuMM/eMGzVnnZNIRrQsK
+	/mY7b6eG74NLbQ2jfvZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPXw1-0000000C0Hk-1zUy;
-	Thu, 12 Jun 2025 02:44:57 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1uPepp-0000000CuqG-1far;
+	Thu, 12 Jun 2025 10:07:01 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPW7X-0000000BpUZ-0K0F;
-	Thu, 12 Jun 2025 00:48:44 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-73c17c770a7so589291b3a.2;
-        Wed, 11 Jun 2025 17:48:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1749689322; x=1750294122; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=hqINRbhBXUv8DDvAKfwGN3D5A5fdVAfIH4y8gA4/FgQ=;
-        b=e1e8egzpG3QRm3UyEwrKe6nc4py2GsQsOWjkvzsA2huhyZAMwLd7MMnxbOHwvOS7aY
-         cXxF9dG45jULXPX8Eb9/TJlAOzX0gyf2YR6Ktbx+2+yG4hVa+CqmciSUdcnmGBsiGk9N
-         bUWnUPiRvwuIGSpwjAGpBnAXas2t05raXlz9mpeiH7mp00R939UjGMM81YBUhKCU075F
-         wQMdvqwxaAINo7spIOFz4DrAfvdrJ44+rd6X461a62zBUE650hC8/1txMxaCIE57qev1
-         EHtvChWMj8ylK5q35cxsFZ6kWsX0DQYqycTwiaI3hzRwEoUCjCNlIlsgcpVSYWZV+YhM
-         5OjQ==
+	id 1uPdeI-0000000CiSr-32bA
+	for linux-phy@lists.infradead.org;
+	Thu, 12 Jun 2025 08:51:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1749718260;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=E6IteP7BP9moGyYHUNtJgLr0pJFVsqjJ7MguYFjZTR8=;
+	b=FRTrvHG+MjgkEDet6S0VW13F1D2uWiPHr6bg8BafbTfSELsxoVz1RYcoc1Tl9XYKlKQVD1
+	v3k3kbD+pnTLxMOBc9ImE4QZBAubBUuYNxrsakJA/QPNktdPCqPwgZ05Fo+PWCH6fak21M
+	w4jb3IaaXLoWfqJEh4bVuFIr8Ky2ea4=
+Received: from mail-ot1-f69.google.com (mail-ot1-f69.google.com
+ [209.85.210.69]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-594-6dw1gAboNbapjFRASyUaFQ-1; Thu, 12 Jun 2025 04:49:18 -0400
+X-MC-Unique: 6dw1gAboNbapjFRASyUaFQ-1
+X-Mimecast-MFC-AGG-ID: 6dw1gAboNbapjFRASyUaFQ_1749718157
+Received: by mail-ot1-f69.google.com with SMTP id 46e09a7af769-735b8bd859eso207100a34.1
+        for <linux-phy@lists.infradead.org>; Thu, 12 Jun 2025 01:49:17 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749689322; x=1750294122;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=hqINRbhBXUv8DDvAKfwGN3D5A5fdVAfIH4y8gA4/FgQ=;
-        b=RDTCKzayY/nD/lXkYJSKP658Im5j9qH4ZHoa8sc9k7R+scWuccISWKBnNKqJRMc5av
-         kQXp1Ay4YffIWOegMURQMtIWuGXW1ZiuAl2M2ijoFibgUjK5ABMuosn4nZi0CF2g0cxh
-         1+arr83+xSsJn8f+lPjnNpSJrFS1APjwi11fg+IJliqf18VIgkQDQU3o2excbnS5FEag
-         j0hQulWc0vZR/CCg40PU4O1g1bXR1nvt1GRfdkNVo4VzyAIbFAx1SzJ1gNhVGQFiGziB
-         /jJ6ylAOIsO/u78u4fI7x7xkpmZwfhjdvwj47xqSd1LWqgFohna0yuL+wNYWE/x8AnYH
-         Qk3A==
-X-Forwarded-Encrypted: i=1; AJvYcCXDBTffVkAlngLEpZmXwCvjz7wndjlG9IvHqZzr5lKBW9KcbzBZvSD1CXc4x91jA+/4ffckoikBfC9JuSYsSc8L@lists.infradead.org, AJvYcCXx27EhSC3dTIo+oPKetbS5xfI/ES6UiT9HUV6yZ5APSYTNqPkSc2pzf1m39nYb0e7SxQvmlMjiB6cl@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywonjz8XkpO5n/Tdrs5Hjy7mGflOGmswOSWg6i4CQa4NGZ5fBRe
-	Y1S09H22/NvZPdtnhD197yAefQbElQIheBb2vGZDsI5j4c1kn62ieS0d
-X-Gm-Gg: ASbGncvXttfiBpxaZ6CM6dVcymI8JI8ncp5GFj8ClIlcqAWny8/lmnrwUkad3aFP60Y
-	iefmf9rqA3PONEkHcIW4PWfvs66HYgq43RoVcOlgCcx70YuL40Z7KT+udoFhVAJ3Ug4RBuLL1Ka
-	/4nriXhJHGeFovK0Xjr9mSHvRngXznvWXj2f0qroa8ccOfAPGUN/R81cn2/K2woOARln1g1LOzV
-	cGoRGPNOWbYDisiQzpdFHF5gLJgvPBzDdJuQDBnL7fmrXyl3xnx6QMQX/Bi5hvo71SMi/4B4mde
-	Wk01Y5QxZntZzUzq4pbhNFMQDYuqafve98JDKeVuRVry3Ik1Ww==
-X-Google-Smtp-Source: AGHT+IH/jwJJdwYkzPE0y591nja7/GMlqARzj1ko2DlwznP5A+rVIrdUR5MsMWEBoz/8q6p4qz3Sng==
-X-Received: by 2002:a05:6a21:6d88:b0:215:dee4:4808 with SMTP id adf61e73a8af0-21f9b720273mr1173711637.18.1749689321805;
-        Wed, 11 Jun 2025 17:48:41 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:5f6a::dead:c001])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b2fd611e32dsm221034a12.9.2025.06.11.17.48.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Jun 2025 17:48:41 -0700 (PDT)
-Date: Wed, 11 Jun 2025 21:48:31 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v2 1/4] PCI: pcie-rockchip: add Link Control and
- Status Register 2
-Message-ID: <aEoj385BMtLvNuKL@geday>
-References: <28ae3286f3217881ae6ea3aecad47ae4567d6ec7.1749588810.git.geraldogabriel@gmail.com>
- <20250611194259.GA825364@bhelgaas>
+        d=1e100.net; s=20230601; t=1749718157; x=1750322957;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=E6IteP7BP9moGyYHUNtJgLr0pJFVsqjJ7MguYFjZTR8=;
+        b=jVRrwXIFzoUCSj0RporGMSOEhDrwtoGku4uyEPkUr87qSWKk2cZcc8ONzYs9eG0zr0
+         EP0WtT8eD0LrHjKQElwYG5yG5izzvc37qxWDQs877iaVClNSfgjWYA25Fc0HIubITg9h
+         /3f3aZD0R5ASufWg0JkUYeOl0/ExClX10Sy/NpMPLTxkMv0f5xagSNF0lCzg184tFVgv
+         Orbuy4yZk0l0tM+w6OKYE+BbEwdaM2GhK6dCdZteYaDmjf3OwLZ3PvFM7McwOjRyDTEq
+         uCtqdIo8x8Wk33wHj7x7dzLrx2JDMdCphpJi/HUvmaPgX68RuKlw+MbJLYErLVtz+NUL
+         K6iA==
+X-Forwarded-Encrypted: i=1; AJvYcCWikNqG0FqXSMe9Q9PwpOVyIc6s72h6Fjs3gOYpkJxRshrt105hMbXA5nlf5BrnCRCV/WKUTvMTahc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwqpZA41X5ufMg6qVc6yvt7EIqXj0YFudFY6ThzIhAeynR8Bdik
+	wHDce8jy0cgn9Gv+aSL8Di/EO3uKCEsU9rFFhLoIF50lf1LiTMo2lAwseh+/8gLDQs7taOpARFR
+	pGEkHtzBVZ5lbVloW90RJsh5tj/q+ypVsDXcynjq+EX7UOwCsrju3Zzp+xDf/Le+horRWOEXGuG
+	JKSaIDiq9T2i8EZuYoCRsqSKqMSoFjyara0AqEHGBCpg==
+X-Gm-Gg: ASbGncsScnDwHk8zWr9UYuwt3MmrftKmXkkd3qmhY0krLm41RiD2fZGZBjk/uCWeTka
+	LHJ1M31iXebzCl5eAQHmovJvPYjrLhfcYpnn53gHwvkYMe+j6/nP5zSpTNiceaVvNBdLg66hDvD
+	wcJvk=
+X-Received: by 2002:a05:6820:481a:b0:60f:880:6082 with SMTP id 006d021491bc7-610ef6f0f1fmr647781eaf.1.1749718157226;
+        Thu, 12 Jun 2025 01:49:17 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGwPFH5xCDRpuf1s5d5mJAfNQIldXb2TcD3mthjSOwkVxy4npvtOqbY5CzUVlMoXgCj/fxjsyNscrEZA/vemEI=
+X-Received: by 2002:a05:6820:481a:b0:60f:880:6082 with SMTP id
+ 006d021491bc7-610ef6f0f1fmr647769eaf.1.1749718156873; Thu, 12 Jun 2025
+ 01:49:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250611194259.GA825364@bhelgaas>
+References: <20250109121614.754466-1-s-vadapalli@ti.com> <20250109121614.754466-2-s-vadapalli@ti.com>
+ <fccedc26-0bb9-4078-8a94-4199f6b383c1@kernel.org>
+In-Reply-To: <fccedc26-0bb9-4078-8a94-4199f6b383c1@kernel.org>
+From: Enric Balletbo i Serra <eballetb@redhat.com>
+Date: Thu, 12 Jun 2025 10:48:20 +0200
+X-Gm-Features: AX0GCFucWcc-KrL-D5Adt3auExiV1GTxSbUzP5wSIA--M9Ad_QrNh0O58OSRSGM
+Message-ID: <CALE0LRsdsTU-NLN4fgh2c8qnS-pPP1BDJvjnvsSOnud8amk3=A@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] phy: cadence-torrent: Add PCIe multilink
+ configuration for 100 MHz refclk
+To: Roger Quadros <rogerq@kernel.org>
+Cc: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org, kishon@kernel.org, 
+	sjakhade@cadence.com, thomas.richard@bootlin.com, 
+	christophe.jaillet@wanadoo.fr, u.kleine-koenig@baylibre.com, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, srk@ti.com
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: uQ30lV2VUBW2XxBdXzam5sVUBk9iGo_vOWpSrWNVRbo_1749718157
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250611_174843_111465_1D4BE9BD 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20250612_015102_832319_FD4F5483 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,47 +105,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 11, 2025 at 02:42:59PM -0500, Bjorn Helgaas wrote:
-> On Tue, Jun 10, 2025 at 06:19:49PM -0300, Geraldo Nascimento wrote:
-> > +#define PCIE_RC_CONFIG_DCR		(PCIE_RC_CONFIG_CR + PCI_EXP_DEVCAP)
-> 
-> I would really like to see PCI_EXP_DEVCAP referenced in the source
-> where we currently use PCIE_RC_CONFIG_DCR.  That way, cscope/tags/grep
-> will find the actual uses of PCI_EXP_DEVCAP, not just this #define of
-> PCIE_RC_CONFIG_DCR.
-> 
-> Something like this:
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pci-mvebu.c?id=v6.15#n265
->
-
-Hi Bjorn,
-
-Yes, thank you for the code snippet, it makes things more clear.
-
-> >  #define   PCIE_RC_CONFIG_DCR_CSPL_SHIFT		18
-> >  #define   PCIE_RC_CONFIG_DCR_CSPL_LIMIT		0xff
-> >  #define   PCIE_RC_CONFIG_DCR_CPLS_SHIFT		26
-> 
-> Also use PCI_EXP_DEVCAP_PWR_VAL and PCI_EXP_DEVCAP_PWR_SCL here if
-> possible.  And FIELD_GET()/FIELD_PREP(), which avoid the need to
-> define _SHIFT values.
-> 
-> I would do a pure conversion patch of the existing #defines.  Then I
-> suspect you wouldn't need a patch to add the Link 2 registers at all
-> because you could just use the #defines from pci_regs.h.
->
-
-Got it!
-
-Thanks!
-Geraldo Nascimento
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgYWxsLAoKT24gVGh1LCBKYW4gOSwgMjAyNSBhdCA1OjM14oCvUE0gUm9nZXIgUXVhZHJvcyA8
+cm9nZXJxQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4KPgo+IE9uIDA5LzAxLzIwMjUgMTQ6MTYsIFNp
+ZGRoYXJ0aCBWYWRhcGFsbGkgd3JvdGU6Cj4gPiBGcm9tOiBTd2FwbmlsIEpha2hhZGUgPHNqYWto
+YWRlQGNhZGVuY2UuY29tPgo+ID4KPiA+IEFkZCByZWdpc3RlciBzZXF1ZW5jZXMgdG8gc3VwcG9y
+dCBQQ0llIG11bHRpbGluayBjb25maWd1cmF0aW9uIGZvciAxMDBNSHoKPiA+IHJlZmVyZW5jZSBj
+bG9jay4gTWF4aW11bSB0d28gUENJZSBsaW5rcyBhcmUgc3VwcG9ydGVkLgo+ID4KPiA+IFNpZ25l
+ZC1vZmYtYnk6IFN3YXBuaWwgSmFraGFkZSA8c2pha2hhZGVAY2FkZW5jZS5jb20+Cj4gPiBTaWdu
+ZWQtb2ZmLWJ5OiBTaWRkaGFydGggVmFkYXBhbGxpIDxzLXZhZGFwYWxsaUB0aS5jb20+Cj4KPiBS
+ZXZpZXdlZC1ieTogUm9nZXIgUXVhZHJvcyA8cm9nZXJxQGtlcm5lbC5vcmc+Cj4KClRoZXNlIHBh
+dGNoZXMgc2VlbSBnb29kIGFuZCBoYXZlIGJlZW4gcmV2aWV3ZWQgYnV0IGxvb2sgc3RhbGxlZCBo
+ZXJlLgpUaGVyZSBpcyBhbnkgY2hhbmNlIHRvIHJlYmFzZSBpdCBvbiB0b3Agb2YgdGhlIG1haW5s
+aW5lPwoKVGhhbmtzLAogICBFbnJpYwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
