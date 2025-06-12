@@ -4,46 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9153BC71135
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Jun 2025 21:51:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B11D4C71135
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Jun 2025 02:44:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=fJqGN2b/Yq1PZzk9adjZJRdj1wv3A32TMNMLPpCaLrI=; b=tRjff4EcnlZtIO
-	bS6C9w/EoNoqQ5AmIY1pSI9MWhBZo+HtSeea+nQIjI6UdCyCOHjJBvux6HBnuA3Sqma1n8bCCdEdx
-	0+wXe9JYn/W3zwXgy5JNFDmSXX7aYq4uAlACKeQGCZ+zE/2VoPLeqlTxrW9sYNeWXugL63umvbGKV
-	QD8ay6Y2rIemj8gzQIPxJQMD6vKx5baH1zJuXdhLd2htNNHNNmSIkajDbDckBxuqzQ18BbbWoqvC5
-	4Equwzn3EkjFJ7TXyhNjr3rryLdO+PJOmfvQnd5WjK7ubutDqwf8/RrodLeL2B2loIJ3bQfe4wb4T
-	coClho9QKpb0p4i2mzsg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=orviKWLhGCC13iSvKVXCJtT3giUTteNmMOIl1J1c/wg=; b=vcKW3KkMxm6Yjj
+	oMLnKfSgjUnHShxoMs0j97NRl1L7CySUR7725FML3ICQr32Mi3JeiHeiv1zvTQCcglBIVnPqKrVMa
+	FRuKSX2Nh1IkhOwTkeXM2VFlqP+s49hg4dYscpAgDHb+Rfwj3FRHyVKDnjmeYnT/TVY7r2aieI2Nv
+	ViacIQIC/4R9svJ3Zc3aRwnBBj2CC4V2BwWZoDxSUQ8+ODWuCla9GxDcS7/yTrRPzLTkG9HXXhDQf
+	2oQcQdZEKhxM+MMo2z+wOS9Pj/UYFHEpWMcwHK76cTABSYYZXBTIpQuxCU2M9xWNCxntodJKBJvKR
+	N/Nqjm6GIYzAJqu7Fjxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPTLq-0000000BOyN-1Bf0;
-	Wed, 11 Jun 2025 21:51:18 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uPXw1-0000000C0Hk-1zUy;
+	Thu, 12 Jun 2025 02:44:57 +0000
+Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPRLi-0000000AyXk-1r3s;
-	Wed, 11 Jun 2025 19:43:02 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D887C61135;
-	Wed, 11 Jun 2025 19:43:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6ADCFC4CEE3;
-	Wed, 11 Jun 2025 19:43:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749670981;
-	bh=7+2javrPWqSAk9Zpl9AulQcOQIGGbbbbRurwg6AeHZw=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=HGkXm5jzFWs8lo2Rxe8xrG+ZpRTKtZMg2tULoy/ewNWO8y6xjTiELmi991KtFgw5d
-	 0nvDZJkeQ9A7qRRbbUGOweTehA+Y6k1CAWNsVG90DiKNgwX49/9auuWJfCOKpOy/f4
-	 s7BeJKzk1z0BrLGu5yXMNt8lGkuTWPJwKJjjpkSvaPAru11qBYugvEU9fnH2eauqmR
-	 26P+STx7gehj/DYz8AGFoPjhJUIGuY/oqkJuxs7wSOdG+fyahFaDe8EWLTtVYUmmVJ
-	 tJuPwveYHN1W1PzhNpIP6obWHuujk8J+eZFX947mcvr2Go5YPzcyRJ49Ulbt49iQrN
-	 wEk3iYgr8vqig==
-Date: Wed, 11 Jun 2025 14:42:59 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Geraldo Nascimento <geraldogabriel@gmail.com>
+	id 1uPW7X-0000000BpUZ-0K0F;
+	Thu, 12 Jun 2025 00:48:44 +0000
+Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-73c17c770a7so589291b3a.2;
+        Wed, 11 Jun 2025 17:48:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749689322; x=1750294122; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=hqINRbhBXUv8DDvAKfwGN3D5A5fdVAfIH4y8gA4/FgQ=;
+        b=e1e8egzpG3QRm3UyEwrKe6nc4py2GsQsOWjkvzsA2huhyZAMwLd7MMnxbOHwvOS7aY
+         cXxF9dG45jULXPX8Eb9/TJlAOzX0gyf2YR6Ktbx+2+yG4hVa+CqmciSUdcnmGBsiGk9N
+         bUWnUPiRvwuIGSpwjAGpBnAXas2t05raXlz9mpeiH7mp00R939UjGMM81YBUhKCU075F
+         wQMdvqwxaAINo7spIOFz4DrAfvdrJ44+rd6X461a62zBUE650hC8/1txMxaCIE57qev1
+         EHtvChWMj8ylK5q35cxsFZ6kWsX0DQYqycTwiaI3hzRwEoUCjCNlIlsgcpVSYWZV+YhM
+         5OjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749689322; x=1750294122;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=hqINRbhBXUv8DDvAKfwGN3D5A5fdVAfIH4y8gA4/FgQ=;
+        b=RDTCKzayY/nD/lXkYJSKP658Im5j9qH4ZHoa8sc9k7R+scWuccISWKBnNKqJRMc5av
+         kQXp1Ay4YffIWOegMURQMtIWuGXW1ZiuAl2M2ijoFibgUjK5ABMuosn4nZi0CF2g0cxh
+         1+arr83+xSsJn8f+lPjnNpSJrFS1APjwi11fg+IJliqf18VIgkQDQU3o2excbnS5FEag
+         j0hQulWc0vZR/CCg40PU4O1g1bXR1nvt1GRfdkNVo4VzyAIbFAx1SzJ1gNhVGQFiGziB
+         /jJ6ylAOIsO/u78u4fI7x7xkpmZwfhjdvwj47xqSd1LWqgFohna0yuL+wNYWE/x8AnYH
+         Qk3A==
+X-Forwarded-Encrypted: i=1; AJvYcCXDBTffVkAlngLEpZmXwCvjz7wndjlG9IvHqZzr5lKBW9KcbzBZvSD1CXc4x91jA+/4ffckoikBfC9JuSYsSc8L@lists.infradead.org, AJvYcCXx27EhSC3dTIo+oPKetbS5xfI/ES6UiT9HUV6yZ5APSYTNqPkSc2pzf1m39nYb0e7SxQvmlMjiB6cl@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywonjz8XkpO5n/Tdrs5Hjy7mGflOGmswOSWg6i4CQa4NGZ5fBRe
+	Y1S09H22/NvZPdtnhD197yAefQbElQIheBb2vGZDsI5j4c1kn62ieS0d
+X-Gm-Gg: ASbGncvXttfiBpxaZ6CM6dVcymI8JI8ncp5GFj8ClIlcqAWny8/lmnrwUkad3aFP60Y
+	iefmf9rqA3PONEkHcIW4PWfvs66HYgq43RoVcOlgCcx70YuL40Z7KT+udoFhVAJ3Ug4RBuLL1Ka
+	/4nriXhJHGeFovK0Xjr9mSHvRngXznvWXj2f0qroa8ccOfAPGUN/R81cn2/K2woOARln1g1LOzV
+	cGoRGPNOWbYDisiQzpdFHF5gLJgvPBzDdJuQDBnL7fmrXyl3xnx6QMQX/Bi5hvo71SMi/4B4mde
+	Wk01Y5QxZntZzUzq4pbhNFMQDYuqafve98JDKeVuRVry3Ik1Ww==
+X-Google-Smtp-Source: AGHT+IH/jwJJdwYkzPE0y591nja7/GMlqARzj1ko2DlwznP5A+rVIrdUR5MsMWEBoz/8q6p4qz3Sng==
+X-Received: by 2002:a05:6a21:6d88:b0:215:dee4:4808 with SMTP id adf61e73a8af0-21f9b720273mr1173711637.18.1749689321805;
+        Wed, 11 Jun 2025 17:48:41 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:5f6a::dead:c001])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b2fd611e32dsm221034a12.9.2025.06.11.17.48.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Jun 2025 17:48:41 -0700 (PDT)
+Date: Wed, 11 Jun 2025 21:48:31 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
 Cc: linux-rockchip@lists.infradead.org,
 	Shawn Lin <shawn.lin@rock-chips.com>,
 	Lorenzo Pieralisi <lpieralisi@kernel.org>,
@@ -56,10 +81,15 @@ Cc: linux-rockchip@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Subject: Re: [RFC PATCH v2 1/4] PCI: pcie-rockchip: add Link Control and
  Status Register 2
-Message-ID: <20250611194259.GA825364@bhelgaas>
+Message-ID: <aEoj385BMtLvNuKL@geday>
+References: <28ae3286f3217881ae6ea3aecad47ae4567d6ec7.1749588810.git.geraldogabriel@gmail.com>
+ <20250611194259.GA825364@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <28ae3286f3217881ae6ea3aecad47ae4567d6ec7.1749588810.git.geraldogabriel@gmail.com>
+In-Reply-To: <20250611194259.GA825364@bhelgaas>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250611_174843_111465_1D4BE9BD 
+X-CRM114-Status: GOOD (  16.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,70 +106,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 10, 2025 at 06:19:49PM -0300, Geraldo Nascimento wrote:
-> Link Control and Status Register 2 is not present in current
-> pcie-rockchip.h definitions. Add it in preparation for
-> setting it before Gen2 retraining.
+On Wed, Jun 11, 2025 at 02:42:59PM -0500, Bjorn Helgaas wrote:
+> On Tue, Jun 10, 2025 at 06:19:49PM -0300, Geraldo Nascimento wrote:
+> > +#define PCIE_RC_CONFIG_DCR		(PCIE_RC_CONFIG_CR + PCI_EXP_DEVCAP)
 > 
-> While at it, also reference other registers from offset at
-> Capabilities Register through standard PCI definitions. Only
-> RC registers have been touched, although in principle there's
-> no functional change.
+> I would really like to see PCI_EXP_DEVCAP referenced in the source
+> where we currently use PCIE_RC_CONFIG_DCR.  That way, cscope/tags/grep
+> will find the actual uses of PCI_EXP_DEVCAP, not just this #define of
+> PCIE_RC_CONFIG_DCR.
 > 
-> Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
-> ---
->  drivers/pci/controller/pcie-rockchip.h | 10 ++++++----
->  1 file changed, 6 insertions(+), 4 deletions(-)
+> Something like this:
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pci-mvebu.c?id=v6.15#n265
+>
+
+Hi Bjorn,
+
+Yes, thank you for the code snippet, it makes things more clear.
+
+> >  #define   PCIE_RC_CONFIG_DCR_CSPL_SHIFT		18
+> >  #define   PCIE_RC_CONFIG_DCR_CSPL_LIMIT		0xff
+> >  #define   PCIE_RC_CONFIG_DCR_CPLS_SHIFT		26
 > 
-> diff --git a/drivers/pci/controller/pcie-rockchip.h b/drivers/pci/controller/pcie-rockchip.h
-> index 5864a20323f2..90d98aa8830e 100644
-> --- a/drivers/pci/controller/pcie-rockchip.h
-> +++ b/drivers/pci/controller/pcie-rockchip.h
-> @@ -155,17 +155,19 @@
->  #define PCIE_EP_CONFIG_DID_VID		(PCIE_EP_CONFIG_BASE + 0x00)
->  #define PCIE_EP_CONFIG_LCS		(PCIE_EP_CONFIG_BASE + 0xd0)
->  #define PCIE_RC_CONFIG_RID_CCR		(PCIE_RC_CONFIG_BASE + 0x08)
-> -#define PCIE_RC_CONFIG_DCR		(PCIE_RC_CONFIG_BASE + 0xc4)
-> +#define PCIE_RC_CONFIG_CR		(PCIE_RC_CONFIG_BASE + 0xc0)
-> +#define PCIE_RC_CONFIG_DCR		(PCIE_RC_CONFIG_CR + PCI_EXP_DEVCAP)
-
-I would really like to see PCI_EXP_DEVCAP referenced in the source
-where we currently use PCIE_RC_CONFIG_DCR.  That way, cscope/tags/grep
-will find the actual uses of PCI_EXP_DEVCAP, not just this #define of
-PCIE_RC_CONFIG_DCR.
-
-Something like this:
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pci-mvebu.c?id=v6.15#n265
-
->  #define   PCIE_RC_CONFIG_DCR_CSPL_SHIFT		18
->  #define   PCIE_RC_CONFIG_DCR_CSPL_LIMIT		0xff
->  #define   PCIE_RC_CONFIG_DCR_CPLS_SHIFT		26
-
-Also use PCI_EXP_DEVCAP_PWR_VAL and PCI_EXP_DEVCAP_PWR_SCL here if
-possible.  And FIELD_GET()/FIELD_PREP(), which avoid the need to
-define _SHIFT values.
-
-I would do a pure conversion patch of the existing #defines.  Then I
-suspect you wouldn't need a patch to add the Link 2 registers at all
-because you could just use the #defines from pci_regs.h.
-
-> -#define PCIE_RC_CONFIG_DCSR		(PCIE_RC_CONFIG_BASE + 0xc8)
-> +#define PCIE_RC_CONFIG_DCSR		(PCIE_RC_CONFIG_CR + PCI_EXP_DEVCTL)
->  #define   PCIE_RC_CONFIG_DCSR_MPS_MASK		GENMASK(7, 5)
->  #define   PCIE_RC_CONFIG_DCSR_MPS_256		(0x1 << 5)
-> -#define PCIE_RC_CONFIG_LINK_CAP		(PCIE_RC_CONFIG_BASE + 0xcc)
-> +#define PCIE_RC_CONFIG_LINK_CAP		(PCIE_RC_CONFIG_CR + PCI_EXP_LNKCAP)
->  #define   PCIE_RC_CONFIG_LINK_CAP_L0S		BIT(10)
-> -#define PCIE_RC_CONFIG_LCS		(PCIE_RC_CONFIG_BASE + 0xd0)
-> +#define PCIE_RC_CONFIG_LCS		(PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL)
->  #define PCIE_EP_CONFIG_LCS		(PCIE_EP_CONFIG_BASE + 0xd0)
-> +#define PCIE_RC_CONFIG_LCS_2		(PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL2)
->  #define PCIE_RC_CONFIG_L1_SUBSTATE_CTRL2 (PCIE_RC_CONFIG_BASE + 0x90c)
->  #define PCIE_RC_CONFIG_THP_CAP		(PCIE_RC_CONFIG_BASE + 0x274)
->  #define   PCIE_RC_CONFIG_THP_CAP_NEXT_MASK	GENMASK(31, 20)
-> -- 
-> 2.49.0
+> Also use PCI_EXP_DEVCAP_PWR_VAL and PCI_EXP_DEVCAP_PWR_SCL here if
+> possible.  And FIELD_GET()/FIELD_PREP(), which avoid the need to
+> define _SHIFT values.
 > 
+> I would do a pure conversion patch of the existing #defines.  Then I
+> suspect you wouldn't need a patch to add the Link 2 registers at all
+> because you could just use the #defines from pci_regs.h.
+>
+
+Got it!
+
+Thanks!
+Geraldo Nascimento
 
 -- 
 linux-phy mailing list
