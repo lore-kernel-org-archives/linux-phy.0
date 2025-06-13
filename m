@@ -4,93 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F265C61DB2
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 10:09:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDB3CC71151
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 11:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bV+AK4aiprvlWSvuqofQwZoSRNLAt0TLqUIdDP2oiS0=; b=tOHOqgL8qdsYucnHnia9n4aWlL
-	N0pHd5D7rIv5HcwgyUZMvOiuJ6V3ciT22MVVTZ1HbivkzukdkJm8q/3w5y2mL4zX3Yq991LSyhrXn
-	QQw/gcfJ8ukDuYBZUiCgVahIrRxnszADlmgOWg8dh4HbGskQWBO+TsvAnPg8J8nAVwbsMlrI6Ru0V
-	gULXTcSrf6a4DyivEV8/clzXivSmMhenPOpEslut9LOpLuQaF42vVsj2gTEq3tg2DzUqfQdvlRibI
-	WNi5zafAarlYD1wutR+b9EdqZJmz++eQU291G8eZ5JOqdFmNeHcrjeFWgg5jtpRzMKriUgSnDXV78
-	yRqK4S4A==;
+	bh=GEcUQLlqexsoMQJbeA+JujZ6EAWO2p5bMzRYt7YF/8I=; b=eEbR6oU/Ud4UAgI6Nq0kjBxo50
+	FpwsaG/VWC1vE4PSKzR4/B5QIbbzmYWg/wD5Hmt1F9oKrZlUrvTUzgI3LPqkcdDHz+xv3Sv5C4Vw3
+	E5/3r4186MYX30Iu3WfnL1ODp8JOnluT6slHwmqv2zdFABTrD+034PXvNYVc5XTSd7rVTmIf6jReX
+	M40TLySSx9q0OvFXT7ahMUgkeUoKGWxM0etMgRJ1kkTonyivW3YxVJmXRu1nHrW1Hva/w7zrSiVA6
+	q4sxrFhhRfC9N1+RjxhUl1+PFn/Vne1VKjw89y2gUvZOlWaVQLtXR53CXsOCZtSUtE8cL8/Zjbuc3
+	IXmEAFvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ1Ls-0000000G1ye-3BqO;
-	Fri, 13 Jun 2025 10:09:36 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1uQ2cI-0000000GAXQ-2XFK;
+	Fri, 13 Jun 2025 11:30:38 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ0J9-0000000FpvV-2sT8
+	id 1uQ0RR-0000000Fslm-35Bx
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Jun 2025 09:02:45 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43cfe63c592so21924265e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:02:43 -0700 (PDT)
+	Fri, 13 Jun 2025 09:11:20 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-450dd065828so15026985e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:11:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1749805362; x=1750410162; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1749805876; x=1750410676; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=6QoYHACCv/8zjy2YDzLm8y9RpQw16pLEN6YirZ9m0vY=;
-        b=MTMw8jTRpl0d7Ny9lZQVHBGLtzG847b6eBo3YCDOcknJS51jUcUnEJk8k9SAtY6MIA
-         VyFQq0Y2z/g0Ubyne/xKBy+3HfS20RPS18UxbY+8/Cm8MfTm/+xOKuUWl0S4h6/TDdBI
-         en+SPRKqoYjanDlwghRPDY/bhACD4uuywwYqm3ISQUy++M5Ib0cYcCzOQV/sTTIj7hld
-         V7RvVj4axVzygVFwKvav1NuaRlSpwxE7QIT+dHHS6qQstY+dWnzWEGYJ9J4X7aSjSrnm
-         noZOQeIi8AcQ4Ix86axCTIJibRTGAab9ukD+NlyWUeIqSWIKLfRYSkBzw1kJ0NZFCFnZ
-         Dpsw==
+        bh=629JP4RloYd0AtRr7iHTTkC9nVi9eInO64mnKOCzxxc=;
+        b=F1jqtMjqWoudtEuazKytPeCC9JUU2LBPKyxFAZj7lczZlfECyY1JnzE1/sdwnRQpYi
+         SLOeX8fsAYOl1DvmhsF0t2hZltGe14qyoRxf75fw1gCq1+j4sOvn1uPnexqnk9SQqq2y
+         dQKhpAILfbUH/EOICmNwhUyfCvEd0IIpJh5/ZCL+a2Q8RIx7lbaqQ3CY6PH5HrNGlTxf
+         Sif2dDZ+NxWV02A7+7xYMBy/28/3gprI00dCz7e3kQy+CuU5TGRTG9jRYTxED/GezhhC
+         LZfVok8IvRTtZp/OwZ6AJCqrMPgQvLi/pBTDWIkKq3lUfuVASkGk3hjQSOwSQdujttyX
+         l46A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749805362; x=1750410162;
+        d=1e100.net; s=20230601; t=1749805876; x=1750410676;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=6QoYHACCv/8zjy2YDzLm8y9RpQw16pLEN6YirZ9m0vY=;
-        b=H8PMQZ9DkLs6WrkEGDsu3Msy4cYkzozsUqFWlCp8n4OIcVnKHXp1PT65UHEcf5Nr3f
-         L3orE0Vl9jbjQ+Em2fptgPWhrsaWrAJ1hyQfQSM6OksU5BY8HBWLr2jwmMo764DnkA9J
-         QWbvyE8OS0D2FlQuKLrMJI8UOZN/6Y6UUaajzoeMEM2hwDt0bULbZsYD56SPksn+Jm6o
-         ZZNZekJQZe6fKwHlnHJDSUM7iLIauC/dWWiLC/kHlzL7mGc578UsPit0gAe4KWLctRtj
-         8phWaCVATBlcxeDlz5X9JskpaP04l9+awKfOTTbIacASXvTTYT3U+/f6qmdrUJF/n70D
-         PJLQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVXM5Lr7XTfZt9YN3GCRl+3ZMQVT9KnU3EoiF5JhF9DlL9M9S7IArgoQE86Wx9H/lUNiixzRa5x/Dk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxQPDXCegblaysxpee0SAQsIADdwVLBob48AjIkRsgq/kgcX1U7
-	4GhbejkXR9gfZeU+A/LNO7pS6Hhgf6Jrb70muwgIhTGh4CQhVtqgC7rY2GRjEFcB7Bw=
-X-Gm-Gg: ASbGncsBa7QSlfRxu8pxDpreIpQ8CFhtadNJFQzUjEQ71L3c228cEE/sSb5N0+KsTXa
-	0gAcqBbxjucqRe7uT0Wp/WFHYbaG7NTkcbn2FlmqsYDuyseF5RPeyQUg8F1MOcwMPCKCmlMyUwn
-	ikaRtx/xSHvuWZFbK9ZPkvc6BjNP6WloVLLLyMt4KCf7f41pr9ZpWnhVfVX1Pt0lLp+h/xP4ynq
-	1nJSf1GUN2kiP9ChbkrTbHd9TNUCnSzMxgl0SwJChTI7rNVWH85+N9MfqsDtVCQkEeTPdETvDsv
-	f098x23ApSKHogSjvaT3gVdcWpv/kbrOqs2f6fkz8HdkZi+p6EF8KD8BGBmPYpYBcjiqLTPUr2q
-	Ja0Sdwslv3rBGuwZWXDr+EtHTwhBZRRhP9fRkxjM=
-X-Google-Smtp-Source: AGHT+IFuqvNh8uSOWZu2UXCmd0wVJaqPH+h4LYm2IztLltELqL96IHlDFA1jJK0I4kUnynIETYIuDw==
-X-Received: by 2002:a5d:5f48:0:b0:3a5:57b7:cd7b with SMTP id ffacd0b85a97d-3a5686d7013mr1993978f8f.22.1749805361999;
-        Fri, 13 Jun 2025 02:02:41 -0700 (PDT)
+        bh=629JP4RloYd0AtRr7iHTTkC9nVi9eInO64mnKOCzxxc=;
+        b=Qvklcvh7EeX82GJXDeWoeJ8omaxCE3b7LLQHQ4dxslGzaBNn8xIcqH4XOh4yVhMEi3
+         0wlS6xKErZz/mZLUNnf0ObGWl4RZFlbRFz9YZugzjU2YDP0g3wjBSieDmk0fFCAdaM45
+         mO3gN0U5JKOMduTZ82IRgUQYxbe90oL0WLAvCOxq3qwXf5q3HQN/unPfGPcUan7yChKd
+         h5LXIUXX45IeJbQUDC4xPWMsV9R9j3PPpljl7/vzChOz8/lthFnS3OQP9sccuAoGsT+I
+         61iJeyagoFOBPer2uY8/yvOPIeqgJ6qUXbF8nn2VaEf+E87/zOpwDrWVFYG3NSYJDsMX
+         xrFQ==
+X-Gm-Message-State: AOJu0YyrIehoKRt+QfeRDNIwokAH6ju4QPX/QAYOa/XW0qS6xGGXgLEr
+	hI/xjF2YSQ1Mc/5jHrDg45gpz1NUCS5BPnQjtHP/tgepORvj9XMI2pPqKwzd960hN8w=
+X-Gm-Gg: ASbGncucVkb7Qq2V6YqEIkbcF5DBwKPnDH0Wj2vI1lc/XRmql+bqA9gJFk6izJl26Zi
+	MDRyJByqj/YaXjVdxGp5V+Yqbl645+8ghGx6AT01yEv+/aaIYmgeeXxbDMtBwdW4MGp5ODKIO60
+	aq+WaYYiICr7tZc/kwacN6b1SZaqn6OT5pJ4FXYDEfcHauyD2Bj3pgdv9ZkXuEJgoiZ5bb2N18L
+	ufuPeEgjjNoaIqecw0XcKQeWTqQKfU7Vaq0EmrbdK9MeN2Y6S8ULJDvDCA2KhBY6pyxP00oupUz
+	tzas3nnBVOucffdVmIky4eGxIsvCfHjj1YIlxSxIdKZQMayY1Nbmz1XN7kJInbFE/Pw3Pmv7AZz
+	w/cSF8z8Dj8tlPKybEWG/i3WcLRbLIk4J2NQ8dHQ=
+X-Google-Smtp-Source: AGHT+IEVkOGummRuxHpBo62hdZ3+dBUw2XniYXFN1l2NS66hsifQhIkXqnGbhatOYQWkJjKohoEfGw==
+X-Received: by 2002:a05:6000:2585:b0:3a5:2dae:970c with SMTP id ffacd0b85a97d-3a56876b13dmr1880731f8f.37.1749805875958;
+        Fri, 13 Jun 2025 02:11:15 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae? ([2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568b087b4sm1738872f8f.51.2025.06.13.02.02.40
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568a54d74sm1791133f8f.10.2025.06.13.02.11.14
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Jun 2025 02:02:41 -0700 (PDT)
-Message-ID: <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
-Date: Fri, 13 Jun 2025 11:02:40 +0200
+        Fri, 13 Jun 2025 02:11:15 -0700 (PDT)
+Message-ID: <d6031204-9bb5-4b0f-adf9-109b305e89e2@linaro.org>
+Date: Fri, 13 Jun 2025 11:11:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v4 1/4] phy: rockchip: inno-usb2: add soft vbusvalid
- control
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kever Yang <kever.yang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>
-Cc: Alexey Charkov <alchark@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
- <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
+Subject: Re: [PATCH v3 5/9] phy: exyons5-usbdrd: support HS combo phy for
+ ExynosAutov920
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ alim.akhtar@samsung.com, andre.draszik@linaro.org, peter.griffin@linaro.org,
+ kauschluss@disroot.org, ivo.ivanov.ivanov1@gmail.com,
+ m.szyprowski@samsung.com, s.nawrocki@samsung.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+ dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+ selvarasu.g@samsung.com
+References: <20250613055613.866909-1-pritam.sutar@samsung.com>
+ <CGME20250613055053epcas5p377269bcc2c8567c00a2298d86c0d26a4@epcas5p3.samsung.com>
+ <20250613055613.866909-6-pritam.sutar@samsung.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -117,10 +116,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
+In-Reply-To: <20250613055613.866909-6-pritam.sutar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_020243_743988_F7DC55E1 
-X-CRM114-Status: GOOD (  34.34  )
+X-CRM114-CacheID: sfid-20250613_021117_792697_D3A99F0B 
+X-CRM114-Status: GOOD (  25.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,252 +137,259 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/06/2025 16:07, Nicolas Frattaroli wrote:
-> With USB type C connectors, the vbus detect pin of the OTG controller
-> attached to it is pulled high by a USB Type C controller chip such as
-> the fusb302. This means USB enumeration on Type-C ports never works, as
-> the vbus is always seen as high.
+On 13/06/2025 07:56, Pritam Manohar Sutar wrote:
+> This SoC has a single USB 3.1 DRD combo phy that supports both
+> UTMI+ (HS) and PIPE3 (SS) and three USB2.0 DRD HS phy controllers
+> those only support the UTMI+ (HS) interface.
 > 
-> Rockchip added some GRF register flags to deal with this situation. The
-> RK3576 TRM calls these "soft_vbusvalid_bvalid" (con0 bit index 15) and
-> "soft_vbusvalid_bvalid_sel" (con0 bit index 14).
+> Support UTMI+ combo phy for this SoC which is somewhat simmilar to
+> what the existing Exynos850 support does. The difference is that
+> some register offsets and bit fields are defferent from Exynos850.
 > 
-> Downstream introduces a new vendor property which tells the USB 2 PHY
-> that it's connected to a type C port, but we can do better. Since in
-> such an arrangement, we'll have an OF graph connection from the USB
-> controller to the USB connector anyway, we can walk said OF graph and
-> check the connector's compatible to determine this without adding any
-> further vendor properties.
+> Add required change in phy driver to support combo HS phy for this SoC.
 > 
-> Do keep in mind that the usbdp PHY driver seemingly fiddles with these
-> register fields as well, but what it does doesn't appear to be enough
-> for us to get working USB enumeration, presumably because the whole
-> vbus_attach logic needs to be adjusted as well either way.
-> 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 113 +++++++++++++++++++++++++-
->   1 file changed, 109 insertions(+), 4 deletions(-)
+>   drivers/phy/samsung/phy-exynos5-usbdrd.c | 202 +++++++++++++++++++++++
+>   1 file changed, 202 insertions(+)
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> index b0f23690ec3002202c0f33a6988f5509622fa10e..4f89bd6568cd3a7a1d2c10e9cddda9f3bd997ed0 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -17,6 +17,7 @@
->   #include <linux/module.h>
->   #include <linux/mutex.h>
->   #include <linux/of.h>
-> +#include <linux/of_graph.h>
->   #include <linux/of_irq.h>
->   #include <linux/phy/phy.h>
->   #include <linux/platform_device.h>
-> @@ -114,6 +115,8 @@ struct rockchip_chg_det_reg {
->   /**
->    * struct rockchip_usb2phy_port_cfg - usb-phy port configuration.
->    * @phy_sus: phy suspend register.
-> + * @svbus_en: soft vbus bvalid enable register.
-> + * @svbus_sel: soft vbus bvalid selection register.
->    * @bvalid_det_en: vbus valid rise detection enable register.
->    * @bvalid_det_st: vbus valid rise detection status register.
->    * @bvalid_det_clr: vbus valid rise detection clear register.
-> @@ -140,6 +143,8 @@ struct rockchip_chg_det_reg {
->    */
->   struct rockchip_usb2phy_port_cfg {
->   	struct usb2phy_reg	phy_sus;
-> +	struct usb2phy_reg	svbus_en;
-> +	struct usb2phy_reg	svbus_sel;
->   	struct usb2phy_reg	bvalid_det_en;
->   	struct usb2phy_reg	bvalid_det_st;
->   	struct usb2phy_reg	bvalid_det_clr;
-> @@ -203,6 +208,7 @@ struct rockchip_usb2phy_cfg {
->    * @event_nb: hold event notification callback.
->    * @state: define OTG enumeration states before device reset.
->    * @mode: the dr_mode of the controller.
-> + * @typec_vbus_det: whether to apply Type C logic to OTG vbus detection.
->    */
->   struct rockchip_usb2phy_port {
->   	struct phy	*phy;
-> @@ -222,6 +228,7 @@ struct rockchip_usb2phy_port {
->   	struct notifier_block	event_nb;
->   	enum usb_otg_state	state;
->   	enum usb_dr_mode	mode;
-> +	bool typec_vbus_det;
+> diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> index 15965b4c6f78..ac7bc1d1afd2 100644
+> --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> @@ -41,6 +41,13 @@
+>   #define EXYNOS2200_CLKRST_LINK_PCLK_SEL		BIT(1)
+>   
+>   #define EXYNOS2200_DRD_UTMI			0x10
+> +
+> +/* ExynosAutov920 bits */
+> +#define UTMICTL_FORCE_UTMI_SUSPEND		BIT(13)
+> +#define UTMICTL_FORCE_UTMI_SLEEP		BIT(12)
+> +#define UTMICTL_FORCE_DPPULLDOWN		BIT(9)
+> +#define UTMICTL_FORCE_DMPULLDOWN		BIT(8)
+> +
+>   #define EXYNOS2200_UTMI_FORCE_VBUSVALID		BIT(1)
+>   #define EXYNOS2200_UTMI_FORCE_BVALID		BIT(0)
+>   
+> @@ -250,6 +257,22 @@
+>   #define EXYNOS850_DRD_HSP_TEST			0x5c
+>   #define HSP_TEST_SIDDQ				BIT(24)
+>   
+> +#define EXYNOSAUTOV920_DRD_HSP_CLKRST		0x100
+> +#define HSPCLKRST_PHY20_SW_PORTRESET		BIT(3)
+> +#define HSPCLKRST_PHY20_SW_POR			BIT(1)
+> +#define HSPCLKRST_PHY20_SW_POR_SEL		BIT(0)
+> +
+> +#define EXYNOSAUTOV920_DRD_HSPCTL		0x104
+> +#define HSPCTRL_VBUSVLDEXTSEL			BIT(13)
+> +#define HSPCTRL_VBUSVLDEXT			BIT(12)
+> +#define HSPCTRL_EN_UTMISUSPEND			BIT(9)
+> +#define HSPCTRL_COMMONONN			BIT(8)
+> +
+> +#define EXYNOSAUTOV920_DRD_HSP_TEST		0x10c
+> +
+> +#define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
+> +#define HSPPLLTUNE_FSEL				GENMASK(18, 16)
+> +
+>   /* Exynos9 - GS101 */
+>   #define EXYNOS850_DRD_SECPMACTL			0x48
+>   #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL		GENMASK(13, 12)
+> @@ -2025,6 +2048,182 @@ static const struct exynos5_usbdrd_phy_drvdata exynos850_usbdrd_phy = {
+>   	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
 >   };
 >   
->   /**
-> @@ -495,6 +502,13 @@ static int rockchip_usb2phy_init(struct phy *phy)
->   	mutex_lock(&rport->mutex);
->   
->   	if (rport->port_id == USB2PHY_PORT_OTG) {
-> +		if (rport->typec_vbus_det) {
-> +			if (rport->port_cfg->svbus_en.enable &&
-> +					rport->port_cfg->svbus_sel.enable) {
-> +				property_enable(rphy->grf, &rport->port_cfg->svbus_en, true);
-> +				property_enable(rphy->grf, &rport->port_cfg->svbus_sel, true);
-> +			}
-> +		}
->   		if (rport->mode != USB_DR_MODE_HOST &&
->   		    rport->mode != USB_DR_MODE_UNKNOWN) {
->   			/* clear bvalid status and enable bvalid detect irq */
-> @@ -535,8 +549,7 @@ static int rockchip_usb2phy_init(struct phy *phy)
->   			if (ret)
->   				goto out;
->   
-> -			schedule_delayed_work(&rport->otg_sm_work,
-> -					      OTG_SCHEDULE_DELAY * 3);
-> +			schedule_delayed_work(&rport->otg_sm_work, 0);
->   		} else {
->   			/* If OTG works in host only mode, do nothing. */
->   			dev_dbg(&rport->phy->dev, "mode %d\n", rport->mode);
-> @@ -666,8 +679,17 @@ static void rockchip_usb2phy_otg_sm_work(struct work_struct *work)
->   	unsigned long delay;
->   	bool vbus_attach, sch_work, notify_charger;
->   
-> -	vbus_attach = property_enabled(rphy->grf,
-> -				       &rport->port_cfg->utmi_bvalid);
-> +	if (rport->port_cfg->svbus_en.enable && rport->typec_vbus_det) {
-> +		if (property_enabled(rphy->grf, &rport->port_cfg->svbus_en) &&
-> +		    property_enabled(rphy->grf, &rport->port_cfg->svbus_sel)) {
-
-Why do you check the registers since you always enable those bits on those conditions:
-	rport->port_id == USB2PHY_PORT_OTG
-	rport->typec_vbus_det
-	rport->port_cfg->svbus_en.enable
-	rport->typec_vbus_det
-Can't you us them instead ?
-
-Neil
-
-> +			vbus_attach = true;
-> +		} else {
-> +			vbus_attach = false;
-> +		}
-> +	} else {
-> +		vbus_attach = property_enabled(rphy->grf,
-> +					       &rport->port_cfg->utmi_bvalid);
+> +static void
+> +exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
+> +{
+> +	void __iomem *reg_phy = phy_drd->reg_phy;
+> +	u32 reg;
+> +
+> +	/*
+> +	 * Disable HWACG (hardware auto clock gating control). This
+> +	 * forces QACTIVE signal in Q-Channel interface to HIGH level,
+> +	 * to make sure the PHY clock is not gated by the hardware.
+> +	 */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= LINKCTRL_FORCE_QACT;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	/* De-assert link reset */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
+> +	reg &= ~CLKRST_LINK_SW_RST;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
+> +
+> +	/* Set PHY POR High */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +	reg |= HSPCLKRST_PHY20_SW_POR | HSPCLKRST_PHY20_SW_POR_SEL;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +
+> +	/* Enable UTMI+ */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg &= ~(UTMICTL_FORCE_UTMI_SUSPEND | UTMICTL_FORCE_UTMI_SLEEP |
+> +		UTMICTL_FORCE_DPPULLDOWN | UTMICTL_FORCE_DMPULLDOWN);
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	/* set phy clock & control HS phy */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +	reg |= HSPCTRL_EN_UTMISUSPEND | HSPCTRL_COMMONONN;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +
+> +	usleep_range(100, 105);
+> +
+> +	/* Set VBUS Valid and DP-Pull up control by VBUS pad usage */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= FIELD_PREP_CONST(LINKCTRL_BUS_FILTER_BYPASS, 0xf);
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg |= EXYNOS2200_UTMI_FORCE_VBUSVALID | EXYNOS2200_UTMI_FORCE_BVALID;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +	reg |= HSPCTRL_VBUSVLDEXTSEL | HSPCTRL_VBUSVLDEXT;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +
+> +	/* Setting FSEL for refference clock */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPPLLTUNE);
+> +	reg &= ~HSPPLLTUNE_FSEL;
+> +	switch (phy_drd->extrefclk) {
+> +	case EXYNOS5_FSEL_50MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 7);
+> +		break;
+> +	case EXYNOS5_FSEL_26MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 6);
+> +		break;
+> +	case EXYNOS5_FSEL_24MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 2);
+> +		break;
+> +	case EXYNOS5_FSEL_20MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 1);
+> +		break;
+> +	case EXYNOS5_FSEL_19MHZ2:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 0);
+> +		break;
+> +	default:
+> +		dev_warn(phy_drd->dev, "unsupported ref clk: %#.2x\n",
+> +			 phy_drd->extrefclk);
+> +		break;
 > +	}
->   
->   	sch_work = false;
->   	notify_charger = false;
-> @@ -1276,6 +1298,83 @@ static int rockchip_otg_event(struct notifier_block *nb,
->   	return NOTIFY_DONE;
->   }
->   
-> +static const char *const rockchip_usb2phy_typec_cons[] = {
-> +	"usb-c-connector",
-> +	NULL,
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPPLLTUNE);
+> +
+> +	/* Enable PHY Power Mode */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +	reg &= ~HSP_TEST_SIDDQ;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +
+> +	/* before POR low, 10us delay is needed to Finish PHY reset */
+> +	usleep_range(10, 15);
+> +
+> +	/* Set PHY POR Low */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +	reg |= HSPCLKRST_PHY20_SW_POR_SEL;
+> +	reg &= ~(HSPCLKRST_PHY20_SW_POR | HSPCLKRST_PHY20_SW_PORTRESET);
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +
+> +	/* after POR low and delay 75us, PHYCLOCK is guaranteed. */
+> +	usleep_range(75, 80);
+> +
+> +	/* force pipe3 signal for link */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= LINKCTRL_FORCE_PIPE_EN;
+> +	reg &= ~LINKCTRL_FORCE_PHYSTATUS;
+> +	reg |= LINKCTRL_FORCE_RXELECIDLE;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +}
+> +
+> +static void
+> +exynosautov920_usbdrd_hsphy_disable(struct exynos5_usbdrd_phy *phy_drd)
+> +{
+> +	u32 reg;
+> +	void __iomem *reg_phy = phy_drd->reg_phy;
+> +
+> +	/* set phy clock & control HS phy */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg |= UTMICTL_FORCE_UTMI_SUSPEND | UTMICTL_FORCE_UTMI_SLEEP;
+> +	reg &= ~(UTMICTL_FORCE_DPPULLDOWN | UTMICTL_FORCE_DMPULLDOWN);
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	/* Disable PHY Power Mode */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +	reg |= HSP_TEST_SIDDQ;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +
+> +	/* clear force q-channel */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg &= ~LINKCTRL_FORCE_QACT;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	/* link sw reset is need for USB_DP/DM high-z in host mode */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
+> +	reg |= CLKRST_LINK_SW_RST;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
+> +}
+> +
+> +static int exynosautov920_usbdrd_phy_init(struct phy *phy)
+> +{
+> +	return exynos850_usbdrd_phy_init(phy);
+> +}
+> +
+> +static int exynosautov920_usbdrd_phy_exit(struct phy *phy)
+> +{
+> +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
+> +	int ret = 0;
+> +
+> +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (inst->phy_cfg->id == EXYNOS5_DRDPHY_UTMI)
+> +		exynosautov920_usbdrd_hsphy_disable(phy_drd);
+> +
+> +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops exynosautov920_usb31drd_phy_ops = {
+> +	.init		= exynosautov920_usbdrd_phy_init,
+> +	.exit		= exynosautov920_usbdrd_phy_exit,
+> +	.owner		= THIS_MODULE,
 > +};
 > +
-> +static struct device_node *rockchip_usb2phy_to_controller(struct rockchip_usb2phy *rphy)
-> +{
-> +	struct device_node *np;
-> +	struct device_node *parent;
+> +static const struct
+> +exynos5_usbdrd_phy_config usbdrd_hsphy_cfg_exynosautov920[] = {
+> +	{
+> +		.id		= EXYNOS5_DRDPHY_UTMI,
+> +		.phy_init	= exynosautov920_usbdrd_utmi_init,
+> +	},
+> +};
 > +
-> +	for_each_node_with_property(np, "phys") {
-> +		struct of_phandle_iterator it;
-> +		int ret;
+> +static const struct exynos5_usbdrd_phy_drvdata exynosautov920_usbdrd_hsphy = {
+> +	.phy_cfg		= usbdrd_hsphy_cfg_exynosautov920,
+> +	.phy_ops		= &exynosautov920_usb31drd_phy_ops,
+> +	.clk_names		= exynos5_clk_names,
+> +	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
+> +	.core_clk_names		= exynos5_core_clk_names,
+> +	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
+> +};
 > +
-> +		of_for_each_phandle(&it, ret, np, "phys", NULL, 0) {
-> +			parent = of_get_parent(it.node);
-> +			if (it.node != rphy->dev->of_node && rphy->dev->of_node != parent) {
-> +				if (parent)
-> +					of_node_put(parent);
-> +				continue;
-> +			}
-> +
-> +			/*
-> +			 * Either the PHY phandle we're iterating or its parent
-> +			 * matched, we don't care about which out of the two in
-> +			 * particular as we just need to know it's the right
-> +			 * USB controller for this PHY.
-> +			 */
-> +			of_node_put(it.node);
-> +			of_node_put(parent);
-> +			return np;
-> +		}
-> +	}
-> +
-> +	return NULL;
-> +}
-> +
-> +static bool rockchip_usb2phy_otg_is_type_c(struct rockchip_usb2phy *rphy)
-> +{
-> +	struct device_node *controller = rockchip_usb2phy_to_controller(rphy);
-> +	struct device_node *ports;
-> +	struct device_node *ep = NULL;
-> +	struct device_node *parent;
-> +
-> +	if (!controller)
-> +		return false;
-> +
-> +	ports = of_get_child_by_name(controller, "ports");
-> +	if (ports) {
-> +		of_node_put(controller);
-> +		controller = ports;
-> +	}
-> +
-> +	for_each_of_graph_port(controller, port) {
-> +		ep = of_get_child_by_name(port, "endpoint");
-> +		if (!ep)
-> +			continue;
-> +
-> +		parent = of_graph_get_remote_port_parent(ep);
-> +		of_node_put(ep);
-> +		if (!parent)
-> +			continue;
-> +
-> +		if (of_device_compatible_match(parent, rockchip_usb2phy_typec_cons)) {
-> +			of_node_put(parent);
-> +			of_node_put(controller);
-> +			return true;
-> +		}
-> +
-> +		of_node_put(parent);
-> +	}
-> +
-> +	of_node_put(controller);
-> +
-> +	return false;
-> +}
+>   static const struct phy_ops exynosautov920_usbdrd_phy_ops = {
+>   	.init		= exynos850_usbdrd_phy_init,
+>   	.exit		= exynos850_usbdrd_phy_exit,
+> @@ -2250,6 +2449,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
+>   	}, {
+>   		.compatible = "samsung,exynos850-usbdrd-phy",
+>   		.data = &exynos850_usbdrd_phy
+> +	}, {
+> +		.compatible = "samsung,exynosautov920-usbdrd-hsphy",
+> +		.data = &exynosautov920_usbdrd_hsphy
+>   	}, {
+>   		.compatible = "samsung,exynosautov920-usbdrd-phy",
+>   		.data = &exynosautov920_usbdrd_phy
 
-This DT parsing is quite complex, but seems it's the only way to detect such features
-without bindings change, not sure it's really beneficial.
-
-> +
->   static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->   					  struct rockchip_usb2phy_port *rport,
->   					  struct device_node *child_np)
-> @@ -1297,6 +1396,8 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->   
->   	mutex_init(&rport->mutex);
->   
-> +	rport->typec_vbus_det = rockchip_usb2phy_otg_is_type_c(rphy);
-> +
->   	rport->mode = of_usb_get_dr_mode_by_phy(child_np, -1);
->   	if (rport->mode == USB_DR_MODE_HOST ||
->   	    rport->mode == USB_DR_MODE_UNKNOWN) {
-> @@ -2050,6 +2151,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
->   		.port_cfgs	= {
->   			[USB2PHY_PORT_OTG] = {
->   				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
-> +				.svbus_en	= { 0x0000, 15, 15, 0, 1 },
-> +				.svbus_sel	= { 0x0000, 14, 14, 0, 1 },
->   				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
->   				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
->   				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
-> @@ -2087,6 +2190,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
->   		.port_cfgs	= {
->   			[USB2PHY_PORT_OTG] = {
->   				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
-> +				.svbus_en	= { 0x2000, 15, 15, 0, 1 },
-> +				.svbus_sel	= { 0x2000, 14, 14, 0, 1 },
->   				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
->   				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
->   				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
-> 
-
-Thanks,
-Neil
+With the subject fixed:
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
