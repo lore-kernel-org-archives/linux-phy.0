@@ -4,65 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B781C71148
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 18:17:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8775CC71136
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 18:18:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=+PvVDrZid74r9kCKMykmmdnXxAx6gDPYF8i44KhzHAQ=; b=lytw1MBMCBTO0Y
-	/aSJVPN8p45zVnklviLx8rb4AoQbMShuj3v8S91CU1Bcid61BZ/f4CLSihQ+jYJ6B9zSZMOGNHRis
-	N8+ykOsn6gdH9SPF8jBZsvsBebnuHNhU936IiVf9PYy7+tPyF1ojC1raB5kTW1z50nNUMnVaNIDsx
-	8i83NCknFwFpjP2dbgD2E23mLkzdaq2XKhvLu+2KnuXE1oEtN4MDHg+ub8qexpLkvC1TX7RfRFvbt
-	sgghdySQ1dpIze76EPWYFldjwR+9rytU5xQb1qpOap+kqOv5oAaE1MWDiPGU3Q1SmQEpFNMZqjprA
-	D5+cbxPHCtDMyZmK4Xuw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YW6L9mbgvgnn4KvsdvCQuw4XwLz/0skdxg0ZxWvMV54=; b=hl3uUmVMgFnAJk
+	WQ5FLbrN0f5BPwuIlO5jVs8l5AjW1uLxmuqPZO/mlDMpshPdZxldqlsUwhWAB1aqmuPYlj0b0fl+k
+	rUuzrRv/YGiwVT+sgy2MQ9ES9Sc9YL1SAQhYPGe06vYR8noZ/Bntlnm66DuH2XWDMTHmzDOsGklnK
+	TPJBJqjSDXi2vBrv13ilHPfyr655BgyvzIEaOMnrLNhzudAyEQa7zQdhdngTcLwy5OND/3Zhfp94G
+	9e65jS5vqbNJlpGnOfz/l5nF5cR+QGhVQImMDb2SaFp5R5AZsIO6yu7ZZHWYaawO1vDfbLEzHrUrX
+	HvbsKiM83zpE8sIB6g4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ8yR-0000000HHfE-29uh;
-	Fri, 13 Jun 2025 18:17:55 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uQ8ye-0000000HHyu-2nfr;
+	Fri, 13 Jun 2025 18:18:08 +0000
+Received: from mail-pg1-x534.google.com ([2607:f8b0:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ7Gh-0000000H3KS-4ANO;
-	Fri, 13 Jun 2025 16:28:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5B16849C7D;
-	Fri, 13 Jun 2025 16:28:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09430C4CEE3;
-	Fri, 13 Jun 2025 16:28:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749832119;
-	bh=LfgLcCh/Rd/dyzbnkE69yjafGpQ8BEikgpj0nsy/XCM=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=MDCNr2Cktn5UWbBuKG/DM68N1yt5sia4wH4cn7qMVp9Yc7/l+XfUUa+XzvUnh77x/
-	 XBfmyi8zXzRdL1N9FHzRRKwv2rxfzileVZilD3BMkWF0wUWfNbigYIG10/C12C82j9
-	 Vx0I21/NAmbOvLKbPxYxmHBiZfXLtu60E9HxeB8DmMMPsplrmC6u6LKhWSOMGdx8Io
-	 ILd76j2aVcAdSEQ+zE6n/tmzVIIH4YaKVZpyNPBzpRgjaqVx+xXQs1cWSDsayIhCSI
-	 4hyE1GHdvqaDjbltQRQEcNJC4qscGrioIMvXyUq0txuZSiSILBlg0c0BwavuXcmCkM
-	 c6rhhz+T/uzkA==
-Date: Fri, 13 Jun 2025 11:28:37 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	mani@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
-	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
-	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org, elbadrym@google.com, romlem@google.com,
-	anhphan@google.com, wak@google.com, yuxiaozhang@google.com,
-	BMC-SW@aspeedtech.com
-Subject: Re: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
-Message-ID: <20250613162837.GA962545@bhelgaas>
+	id 1uQ7oD-0000000H8E3-44eb;
+	Fri, 13 Jun 2025 17:03:19 +0000
+Received: by mail-pg1-x534.google.com with SMTP id 41be03b00d2f7-b1396171fb1so1636902a12.2;
+        Fri, 13 Jun 2025 10:03:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749834197; x=1750438997; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Kn1ckhgHo64BPoEpHx9buqHUv1Oyd0BS8vEud6lPxjA=;
+        b=EdmMDOver9YJQGhuprcD57X/povU4kW6fjZcGXl36zN+OZY39pWx9YJWrKQDBwf3xP
+         VHSXEucdnvUw3+TpadMy2qQiW2+ImyD34PV5Ww+E+IO5stzN2VvN8d8NlAoR4eNDOzYC
+         NjFPsctW9lN4Kdimx1UtOBv1T+9TyfEp86I1oGH0KEeIVxNgI+4ecizBDR9q4zWdgDWj
+         3ykobu1OOsfQ3S8k/GMGWZbsdjKX2lyYOhVkwXcTnECCpp1P3fFir5oUNeFOg/JuU474
+         5KktXUcwD6EB+hIZdAlKS4JGJMJSD6cIsdnU3D0GnqxORRWBUwbtjEi4bHU8yPHGsZUV
+         70WA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749834197; x=1750438997;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Kn1ckhgHo64BPoEpHx9buqHUv1Oyd0BS8vEud6lPxjA=;
+        b=mqHYkhp5Eh179YwiCyMV3XTN30mkGD6MgoIEyLoKu0+E7eikzNhIPIOXHLnaMIKTcF
+         lA9juc0bahHAds4qMuwY7aW2Yy4o9bl22oS8DMRlqbTorT7Wp+bsI8GVy3Fw6pQFn1iC
+         PBJveAFLf50BZeGM8F8MjBEWs5i7xg9MEvzMbSrdQxSAMixaQpMQ4zZoVWPrJg5JxtHO
+         A3y9i13V7SbTlkU1tapSNfm857vXMzlxMzEiOgjsVBowIQRM1vVD0FnDfQVyPehZLYMK
+         9e3bsz3sRhIQ9PlBCKdwFPzCzI6Wx3LKS7WfCBNYKNY20Ex9UR1IMiGjWoRwnUjfSdAK
+         j62g==
+X-Forwarded-Encrypted: i=1; AJvYcCUuQ0IIfogiKuAW/HDayiNTiMegrhEHz+2foOnTkRaYPOQ9uEyBN8vcJLKn5NlWrryTk9P7U8xYwZJi@lists.infradead.org, AJvYcCW+C9CHAP2bV6/vQv4C/cZJB/J1LAsS8Lm6sJrVOrj/wJGrpWXbQ8Qm6/i90t96miAIeyFXTg5WNXaItuJPhEua@lists.infradead.org
+X-Gm-Message-State: AOJu0YwEukOheQq6fA0ycPZNhvrQore4lnaCw58YAjwnCO6Zy8EzuUHe
+	QSoMp7i5rl1JEH2Hu5f6pYSFxAlA3o+bBni+YEaWtKrlh6IclyPDj6x7Sm8DXibd
+X-Gm-Gg: ASbGncsNbHUAo17GMeg6LknSyPYfGN6sq4jzzZFD14rm5m3eblymd8V2Dp5PngaCeP+
+	/3IiZTGpDHAg8Lp65dvAOliWa2RpvV85Nfzhn60iv9lSBwUbO10Y/VihJSjix5FkX7v55ywAjDo
+	ROZwZPXTEuWK4rfu+n8sQ/Q/5NMikjh4NLhXGCYDBCr5E6H+kc9KkqfdJjImiSG51NJlnIKzjDC
+	+E8KOe3UOQbrXJUia7VP5vwOQinzAwyEOejDWhMdbhUq2BqpQYgfaFH4/jkYnWSdq2rGFgXxNTb
+	LpW5fSdfxjGf+6w2G4v+jsB4XMXVU2CY3QfzkJqmE+u81eaO+A==
+X-Google-Smtp-Source: AGHT+IE0ysRgafNmvzcIEeHIwfE133KfLqRER/QsYHGgAAkVNDFrgTlsHHQwGU1Al9+VxkGy+d6OGA==
+X-Received: by 2002:a17:90a:d2c8:b0:312:959:dc3e with SMTP id 98e67ed59e1d1-313f1ca0fe1mr613630a91.10.1749834196976;
+        Fri, 13 Jun 2025 10:03:16 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:8497::dead:c001])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2365dea8ccbsm16758555ad.167.2025.06.13.10.03.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 13 Jun 2025 10:03:16 -0700 (PDT)
+Date: Fri, 13 Jun 2025 14:03:06 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: linux-rockchip@lists.infradead.org
+Cc: Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [RFC PATCH v5 0/4] PCI: rockchip: Improve driver quality
+Message-ID: <cover.1749833986.git.geraldogabriel@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_092840_085619_E91BFBAB 
-X-CRM114-Status: GOOD (  29.12  )
+X-CRM114-CacheID: sfid-20250613_100318_009715_A4DA0FF3 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,333 +102,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 13, 2025 at 11:30:01AM +0800, Jacky Chou wrote:
-> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
-> initialization, reset, clock, IRQ domain, and MSI domain setup.
-> Implement platform-specific setup and register configuration for
-> ASPEED. And provide PCI config space read/write and INTx/MSI
-> interrupt handling.
+During a 30-day debugging-run fighting quirky PCIe devices on RK3399
+some quality improvements began to take form and this is my attempt
+at upstreaming it. It will ensure maximum chance of retraining to Gen2
+5.0GT/s, on all four lanes and plus if anybody is debugging the PHY
+they'll now get real values from TEST_I[3:0] for every TEST_ADDR[4:0]
+without risk of locking up kernel like with present broken async
+strobe TEST_WRITE.
 
-Make the subject match drivers/pci/controller/ style.
+---
+V4 -> V5: fix build failure, reflow commit messages and also convert
+registers for EP operation, all suggested by Ilpo
+V3 -> V4: fix setting-up of TLS in Link Control and Status Register 2,
+also adjust commit titles
+V2 -> V3: correctly clean-up with standard PCIe defines as per Bjorn's
+suggestion
+V1 -> V2: use standard PCIe defines as suggested by Bjorn
 
-> +config PCIE_ASPEED
-> +	bool "ASPEED PCIe controller"
-> +	depends on PCI
-> +	depends on OF || COMPILE_TEST
-> +	select PCI_MSI_ARCH_FALLBACKS
-> +	help
-> +	  Enable this option to add support for the PCIe controller
-> +	  found on ASPEED SoCs.
-> +	  This driver provides initialization and management for PCIe
-> +	  Root Complex functionality, including interrupt and MSI support.
-> +	  Select Y if your platform uses an ASPEED SoC and requires PCIe
-> +	  connectivity.
 
-Alphabetize this entry by vendor to match the file.
+Geraldo Nascimento (4):
+  PCI: rockchip: Use standard PCIe defines
+  PCI: rockchip: Set Target Link Speed before retraining
+  phy: rockchip-pcie: Enable all four lanes
+  phy: rockchip-pcie: Adjust read mask and write
 
-Add blank line between paragraphs.
+ drivers/pci/controller/pcie-rockchip-ep.c   |  4 +-
+ drivers/pci/controller/pcie-rockchip-host.c | 49 ++++++++++++---------
+ drivers/pci/controller/pcie-rockchip.h      | 12 +----
+ drivers/phy/rockchip/phy-rockchip-pcie.c    | 16 ++++---
+ 4 files changed, 39 insertions(+), 42 deletions(-)
 
-> + * Copyright 2025 Aspeed Technology Inc.
+-- 
+2.49.0
 
-Settle on "ASPEED" or "Aspeed" in text/comment/etc to match corporate
-style.  "aspeed" is good for the driver name, e.g., "PCI: aspeed: ..."
-for the subject.
-
-> +#include <linux/irqchip/chained_irq.h>
-> +#include <linux/irqdomain.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/kernel.h>
-> +#include <linux/msi.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/of_address.h>
-> +#include <linux/of_irq.h>
-> +#include <linux/of_pci.h>
-> +#include <linux/pci.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/irq.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/workqueue.h>
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-
-The trend is to alphabetize these #includes.
-
-> +/* AST2600 PCIe Host Controller Registers */
-> +#define PEHR_MISC_10		0x10
-> +#define DATALINK_REPORT_CAPABLE		BIT(4)
-
-Name register bits like these in a way that connects them with the
-register.
-
-> +static struct irq_chip aspeed_intx_irq_chip = {
-> +	.name = "ASPEED:IntX",
-
-Usual styling is "INTx".
-
-> +	.irq_ack = aspeed_pcie_intx_ack_irq,
-> +	.irq_mask = aspeed_pcie_intx_mask_irq,
-> +	.irq_unmask = aspeed_pcie_intx_unmask_irq,
-
-Name these functions to match the name of the function pointer, e.g.,
-aspeed_pcie_intx_irq_ack() instead of aspeed_pcie_intx_ack_irq()
-This makes grep/cscope more useful.
-
-> +static irqreturn_t aspeed_pcie_intr_handler(int irq, void *dev_id)
-> +{
-> +	struct aspeed_pcie *pcie = dev_id;
-> +	const struct aspeed_pcie_rc_platform *platform = pcie->platform;
-> +	unsigned long status;
-> +	unsigned long intx;
-> +	u32 bit;
-> +	int i;
-> +
-> +	intx = readl(pcie->reg + platform->reg_intx_sts) & 0xf;
-> +	if (intx) {
-
-Don't need "if (intx)" here; the loop is sufficient.
-
-> +		for_each_set_bit(bit, &intx, PCI_NUM_INTX)
-> +			generic_handle_domain_irq(pcie->irq_domain, bit);
-> +	}
-
-> +static int aspeed_ast2600_rd_conf(struct pci_bus *bus, unsigned int devfn,
-> +				  int where, int size, u32 *val)
-> +{
-> +	struct aspeed_pcie *pcie = bus->sysdata;
-> +	u32 bdf_offset;
-> +	int rx_done_fail = 0, slot = PCI_SLOT(devfn);
-> +	u32 cfg_val, isr, type = 0;
-> +	u32 link_sts = 0;
-> +	int ret;
-> +
-> +	/* Driver may set unlock RX buffere before triggering next TX config */
-
-s/buffere/buffer/
-
-> +	writel(PCIE_UNLOCK_RX_BUFF | readl(pcie->reg + H2X_DEV_CTRL),
-> +	       pcie->reg + H2X_DEV_CTRL);
-> +
-> +	if (bus->number == 128 && slot != 0 && slot != 8)
-> +		return PCIBIOS_DEVICE_NOT_FOUND;
-> +	type = (bus->number > 128);
-
-Weird.  What's all this?  Some kind of device you want to hide?
-Deserves a hint about what's special.
-
-> +	if (ret) {
-> +		dev_err(pcie->dev,
-> +			"[%X:%02X:%02X.%02X]CR tx timeout sts: 0x%08x\n",
-
-Conventional format is "%04x:%02x:%02x.%d" (4-digit domain, lower-case
-hex).
-
-> +			pcie->domain, bus->number, PCI_SLOT(devfn),
-> +			PCI_FUNC(devfn), cfg_val);
-> +		ret = PCIBIOS_SET_FAILED;
-> +		*val = ~0;
-
-PCI_SET_ERROR_RESPONSE(val)
-
-> +static int aspeed_ast2600_wr_conf(struct pci_bus *bus, unsigned int devfn,
-> +				  int where, int size, u32 val)
-> +{
-> +	u32 type = 0;
-> +	u32 shift = 8 * (where & 3);
-> +	u32 bdf_offset;
-> +	u8 byte_en = 0;
-> +	struct aspeed_pcie *pcie = bus->sysdata;
-> +	u32 isr, cfg_val;
-> +	int ret;
-> +
-> +	/* Driver may set unlock RX buffere before triggering next TX config */
-
-s/buffere/buffer/
-
-I don't understand this; I suppose it requires hardware knowledge.
-
-> +	writel(PCIE_UNLOCK_RX_BUFF | readl(pcie->reg + H2X_DEV_CTRL),
-> +	       pcie->reg + H2X_DEV_CTRL);
-> +
-> +	switch (size) {
-> +	case 1:
-> +		byte_en = 1 << (where % 4);
-> +		val = (val & 0xff) << shift;
-> +		break;
-> +	case 2:
-> +		byte_en = 0x3 << (2 * ((where >> 1) % 2));
-> +		val = (val & 0xffff) << shift;
-> +		break;
-> +	case 4:
-> +	default:
-> +		byte_en = 0xf;
-> +		break;
-> +	}
-> +
-> +	type = (bus->number > 128);
-
-You're not allowed to *read* bus 128, dev 1, but you can write it?
-
-> +static void aspeed_pcie_port_init(struct aspeed_pcie *pcie)
-> +{
-> +	u32 link_sts = 0;
-> +
-> +	regmap_write(pcie->pciephy, PEHR_LOCK, PCIE_UNLOCK);
-> +	regmap_write(pcie->pciephy, PEHR_GLOBAL, ROOT_COMPLEX_ID(0x3));
-> +
-> +	reset_control_deassert(pcie->perst);
-> +	mdelay(500);
-
-Where did this come from?  Should be a #define with reference to a
-spec.
-
-> +static int aspeed_ast2700_setup(struct platform_device *pdev)
-> +{
-> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
-> +	u32 cfg_val;
-> +
-> +	reset_control_assert(pcie->perst);
-> +
-> +	regmap_write(pcie->pciephy, PEHR_MISC_70,
-> +		     POSTED_DATA_CREDITS(0xc0) | POSTED_HEADER_CREDITS(0xa));
-> +	regmap_write(pcie->pciephy, PEHR_MISC_78,
-> +		     COMPLETION_DATA_CREDITS(0x30) | COMPLETION_HEADER_CREDITS(0x8));
-> +	regmap_write(pcie->pciephy, PEHR_MISC_58, LOCAL_SCALE_SUP);
-> +
-> +	regmap_update_bits(pcie->cfg, SCU_60,
-> +			   RC_E2M_PATH_EN | RC_H2XS_PATH_EN | RC_H2XD_PATH_EN | RC_H2XX_PATH_EN |
-> +			   RC_UPSTREAM_MEM_EN,
-> +			   RC_E2M_PATH_EN | RC_H2XS_PATH_EN | RC_H2XD_PATH_EN | RC_H2XX_PATH_EN |
-> +			   RC_UPSTREAM_MEM_EN);
-> +	regmap_write(pcie->cfg, SCU_64,
-> +		     RC0_DECODE_DMA_BASE(0) | RC0_DECODE_DMA_LIMIT(0xFF) | RC1_DECODE_DMA_BASE(0) |
-> +		     RC1_DECODE_DMA_LIMIT(0xFF));
-> +	regmap_write(pcie->cfg, SCU_70, DISABLE_EP_FUNC);
-> +
-> +	reset_control_assert(pcie->h2xrst);
-> +	mdelay(10);
-
-Source?
-
-> +	reset_control_deassert(pcie->h2xrst);
-> +
-> +	regmap_write(pcie->pciephy, PEHR_MISC_5C, CONFIG_RC_DEVICE);
-> +	regmap_read(pcie->pciephy, PEHR_MISC_60, &cfg_val);
-> +	regmap_write(pcie->pciephy, PEHR_MISC_60,
-> +		     (cfg_val & ~PORT_TPYE) | FIELD_PREP(PORT_TPYE, PORT_TYPE_ROOT));
-> +
-> +	writel(0, pcie->reg + H2X_CTRL);
-> +	writel(H2X_BRIDGE_EN | H2X_BRIDGE_DIRECT_EN, pcie->reg + H2X_CTRL);
-> +
-> +	/* The BAR mapping:
-> +	 * CPU Node0(domain 0): 0x60000000
-> +	 * CPU Node1(domain 1): 0x80000000
-> +	 * IO       (domain 2): 0xa0000000
-
-Are these addresses or sizes?  Should they come from DT?  Maybe it's
-something wired into the hardware?
-
-> +	writel(REMAP_BAR_BASE(0x60000000 + (0x20000000 * pcie->domain)),
-> +	       pcie->reg + H2X_REMAP_DIRECT_ADDR);
-> +
-> +	/* Prepare for 64-bit BAR pref */
-> +	writel(REMAP_PREF_ADDR_63_32(0x3), pcie->reg + H2X_REMAP_PREF_ADDR);
-> +
-> +	reset_control_deassert(pcie->perst);
-> +	mdelay(1000);
-
-Source?
-
-> +static int aspeed_pcie_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct pci_host_bridge *host;
-> +	struct aspeed_pcie *pcie;
-> +	struct device_node *node = dev->of_node;
-> +	const void *md = of_device_get_match_data(dev);
-> +	int irq, ret;
-> +
-> +	if (!md)
-> +		return -ENODEV;
-> +
-> +	host = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
-> +	if (!host)
-> +		return -ENOMEM;
-> +
-> +	pcie = pci_host_bridge_priv(host);
-> +	pcie->dev = dev;
-> +	pcie->tx_tag = 0;
-> +	platform_set_drvdata(pdev, pcie);
-> +
-> +	pcie->platform = md;
-> +	pcie->host = host;
-> +
-> +	pcie->reg = devm_platform_ioremap_resource(pdev, 0);
-> +
-> +	of_property_read_u32(node, "msi_address", &pcie->msi_address);
-> +	of_property_read_u32(node, "linux,pci-domain", &pcie->domain);
-> +
-> +	pcie->cfg = syscon_regmap_lookup_by_phandle(dev->of_node, "aspeed,pciecfg");
-> +	if (IS_ERR(pcie->cfg))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->cfg), "Failed to map pciecfg base\n");
-> +
-> +	pcie->pciephy = syscon_regmap_lookup_by_phandle(node, "aspeed,pciephy");
-> +	if (IS_ERR(pcie->pciephy))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->pciephy), "Failed to map pciephy base\n");
-> +
-> +	pcie->h2xrst = devm_reset_control_get_exclusive(dev, "h2x");
-> +	if (IS_ERR(pcie->h2xrst))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->h2xrst), "Failed to get h2x reset\n");
-> +
-> +	pcie->perst = devm_reset_control_get_exclusive(dev, "perst");
-> +	if (IS_ERR(pcie->perst))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->perst), "Failed to get perst reset\n");
-> +
-> +	ret = pcie->platform->setup(pdev);
-> +	if (ret)
-> +		goto err_setup;
-> +
-> +	host->sysdata = pcie;
-> +
-> +	ret = aspeed_pcie_init_irq_domain(pcie);
-> +	if (ret)
-> +		goto err_irq_init;
-> +
-> +	irq = platform_get_irq(pdev, 0);
-> +	if (irq < 0)
-> +		goto err_irq;
-> +
-> +	ret = devm_request_irq(dev, irq, aspeed_pcie_intr_handler, IRQF_SHARED, dev_name(dev),
-> +			       pcie);
-> +	if (ret)
-> +		goto err_irq;
-> +
-> +	pcie->clock = clk_get(dev, NULL);
-> +	if (IS_ERR(pcie->clock))
-> +		goto err_clk;
-> +	ret = clk_prepare_enable(pcie->clock);
-> +	if (ret)
-> +		goto err_clk_enable;
-
-We need to observe PCIE_T_RRS_READY_MS (or
-PCIE_RESET_CONFIG_DEVICE_WAIT_MS or whatever name we eventually settle
-on) before pci_host_probe() starts issuing config reads.  Maybe this
-is accounted for by one of the sleeps above, but we need a generic
-#define that we can look for.
-
-> +	ret = pci_host_probe(host);
-> +	if (ret)
-> +		goto err_clk_enable;
-> +
-> +	return 0;
-
-Sorry, I see there's a lot of duplication with comments from other
-reviewers :)
-
-Bjorn
 
 -- 
 linux-phy mailing list
