@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F02EC61DB2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 384E5C71135
 	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 10:03:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,88 +12,102 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1JUEw1BIR0B1InC0QQtshaSkOO85afPjjavzX6qk9OQ=; b=tsnwCpYnVqhueK
-	GvMbwT2FT+niPSaVJik3co4XExvJn+guZd8vIjPyaxqML65eQXEv3SFrE1ZYsV7pRbC0/FK5zbAIa
-	lEK26vzf4vn/AGdhQT7khRP/PNadJeGJBdl+SqxgARrD8B0zhHA5AG/T+wksHpven2zlrGzaI0Hrq
-	SrImVxETRKLaSBG88HJayFxykUIdB27g4hxjL7fiy/p46wOLMO6O76YCq7Nzgr5+8eogzDQo2HskA
-	YiyLJdOn1Q6TYIXrH/KGNLhZubhxpb/J/erEwn1RmNaf9nRMbh+nlOhsbT2CEgWsslp+QoiCJsxjI
-	PdGcRFyrNwZk/RVJO/fg==;
+	List-Owner; bh=hai4jgOq5cwVVQlXUAlTGeAeCUO8jY4583rxF11kzeA=; b=f81Fq+Y51YEfNx
+	6ES7UUk+oAkXX08CGw1rp9Qo/OPsdfHGFACMDXijuQjHvY4e3LD+Aph8/EXDEWJsHvN1WcJqGClml
+	JhmTq/HbzujWgNqTd4fab56nLYdD18tWAtqAc13cVahzimYI+4k+DpHdPl7qe5NBZ5jf9LgtdsJfz
+	1AQD9A13PmPMaoJa8Cz++EDJ2n6nG2lzy18S68U+iaEEmjIKNYLXmKiBnFQicdBI8OpxwD2Q+1KqX
+	raCzitNNo4tAeYz8wIcB+aKER4dJNElPrqClafuhm6J4n7EnTbEXQSvO1nq29nPIgZYOYZBdlHitM
+	WRJo342PpDqniW+oxRWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ1FY-0000000G0tJ-10s9;
-	Fri, 13 Jun 2025 10:03:04 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uQ1FX-0000000G0t8-44yQ;
+	Fri, 13 Jun 2025 10:03:03 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ18r-0000000Fzo3-1NQA;
-	Fri, 13 Jun 2025 09:56:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1749808566;
-	bh=pI16jTrezXMC5DsfOlc64Ygns89mip62edXF7MVZQ64=;
+	id 1uQ17U-0000000FzSZ-2tuk;
+	Fri, 13 Jun 2025 09:54:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 790415C47E8;
+	Fri, 13 Jun 2025 09:52:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14343C4CEE3;
+	Fri, 13 Jun 2025 09:54:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749808482;
+	bh=7S40Zuc2TNAecTyadpX90VMiKscvd9zWpUm96dO61pk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Nczp9fFBALuW2yjQHoHHjf8rHOR18K9YS7zGeKXkc8HCMbmYMct7gIzMlS3bSBMIP
-	 VEenlQsjCaMLc60IuyRw8dIqewqii4OeKClmg8cPsLWQj+ZfT/ZkHcgcdTL19VBRhy
-	 X4XzUd8L8pp9M19Gtz84Iu+VGM6VtLL4DbF+46aplsLX2p0dqXI1JpQpbMypTkwH65
-	 jS3Alw/7WB4vpLUpDuqzgst99SmN0WtDK331u10vg8q7XdTV6J+t5/76pilokUxjK4
-	 TIN5YC78yJy5CCFVtMESd/4i2KWdaLXFEm7dx3TajvBHpjtniSN9Cf7WkREabKVavL
-	 BD8w5uoOCaqHw==
-Received: from [192.168.1.90] (unknown [212.93.144.165])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B12E317E0EC0;
-	Fri, 13 Jun 2025 11:56:04 +0200 (CEST)
-Message-ID: <740bde7c-c2e5-462f-91f5-5dc2a298aa85@collabora.com>
-Date: Fri, 13 Jun 2025 12:55:58 +0300
+	b=IgwWZzCduhTWWVz0Ik0YoXpB8DwGFZHsTowAQDDHQVYhQv9QRP34IURI4Hl9yCc29
+	 4FlZxQ2xGoW39/quqB0hicrkzjFGe/Iim73kY7UdEr5popAOvhGPe+hej2bdOUGzzz
+	 NCFidSOWEI6m1Yy8pRAA5+KJ5oPRZ26qrLNWEhxBte0vywQJIcqitbBfmPICZeWUtf
+	 DBbBwNtxjtxEmoJ3kTn+WjaFCpezmZplSZdZK//Zrcetp8lu6MfuITyXXmwUJ/zkIe
+	 O1VLGw+kvQJANu1osi+nLeWlr0UQZ9okqtAaCaipvC9FcpoC8G9iFHKlozVAC5vzQK
+	 AZv9VAeaeADpg==
+Message-ID: <576ca6bb-291c-458e-9703-46e7d2f43bbe@kernel.org>
+Date: Fri, 13 Jun 2025 11:54:35 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 08/20] drm/rockchip: vop2: switch to HWORD_UPDATE macro
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Yury Norov <yury.norov@gmail.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
- Shreeya Patel <shreeya.patel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang
- <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>,
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
-Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev
-References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
- <20250612-byeword-update-v1-8-f4afb8f6313f@collabora.com>
+Subject: Re: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
+To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
+ lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, joel@jms.id.au,
+ andrew@codeconstruct.com.au, vkoul@kernel.org, kishon@kernel.org,
+ linus.walleij@linaro.org, p.zabel@pengutronix.de,
+ linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
+Cc: elbadrym@google.com, romlem@google.com, anhphan@google.com,
+ wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
+References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+ <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20250612-byeword-update-v1-8-f4afb8f6313f@collabora.com>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_025609_538167_423CD2BC 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20250613_025444_830877_F601892C 
+X-CRM114-Status: GOOD (  28.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,23 +124,274 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Nicolas,
-
-On 6/12/25 9:56 PM, Nicolas Frattaroli wrote:
-> The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
-> drivers that use constant masks.
+On 13/06/2025 05:30, Jacky Chou wrote:
+> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
+> initialization, reset, clock, IRQ domain, and MSI domain setup.
+> Implement platform-specific setup and register configuration for
+> ASPEED. And provide PCI config space read/write and INTx/MSI
+> interrupt handling.
 > 
-> Remove VOP2's HIWORD_UPDATE macro from the vop2 header file, and replace
-> all instances in rockchip_vop2_reg.c (the only user of this particular
-> HIWORD_UPDATE definition) with equivalent HWORD_UPDATE instances. This
-> gives us better error checking.
+> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+> ---
+>  drivers/pci/controller/Kconfig       |   13 +
+>  drivers/pci/controller/Makefile      |    1 +
+>  drivers/pci/controller/pcie-aspeed.c | 1039 ++++++++++++++++++++++++++
+>  3 files changed, 1053 insertions(+)
+>  create mode 100644 drivers/pci/controller/pcie-aspeed.c
 > 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-This LGTM and I also confirm it works as expected on my Radxa boards:
-ROCK 3A (RK3568) and ROCK 5B (RK3588).  Hence,
+> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> index 886f6f43a895..f6b5eea3b570 100644
+> --- a/drivers/pci/controller/Kconfig
+> +++ b/drivers/pci/controller/Kconfig
+> @@ -216,6 +216,19 @@ config PCIE_MT7621
+>  	help
+>  	  This selects a driver for the MediaTek MT7621 PCIe Controller.
+>  
+> +config PCIE_ASPEED
+> +	bool "ASPEED PCIe controller"
+> +	depends on PCI
 
-Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Tested-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+depends ARCH_ASPEED || COMPILE_TEST
+
+> +	depends on OF || COMPILE_TEST
+> +	select PCI_MSI_ARCH_FALLBACKS
+> +	help
+> +	  Enable this option to add support for the PCIe controller
+> +	  found on ASPEED SoCs.
+> +	  This driver provides initialization and management for PCIe
+> +	  Root Complex functionality, including interrupt and MSI support.
+> +	  Select Y if your platform uses an ASPEED SoC and requires PCIe
+> +	  connectivity.
+> +
+>  config PCI_HYPERV_INTERFACE
+>  	tristate "Microsoft Hyper-V PCI Interface"
+>  	depends on ((X86 && X86_64) || ARM64) && HYPERV && PCI_MSI
+> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> index 038ccbd9e3ba..1339f88e153d 100644
+> --- a/drivers/pci/controller/Makefile
+> +++ b/drivers/pci/controller/Makefile
+> @@ -39,6 +39,7 @@ obj-$(CONFIG_PCI_LOONGSON) += pci-loongson.o
+>  obj-$(CONFIG_PCIE_HISI_ERR) += pcie-hisi-error.o
+>  obj-$(CONFIG_PCIE_APPLE) += pcie-apple.o
+>  obj-$(CONFIG_PCIE_MT7621) += pcie-mt7621.o
+> +obj-$(CONFIG_PCIE_ASPEED) += pcie-aspeed.o
+>  
+>  # pcie-hisi.o quirks are needed even without CONFIG_PCIE_DW
+>  obj-y				+= dwc/
+> diff --git a/drivers/pci/controller/pcie-aspeed.c b/drivers/pci/controller/pcie-aspeed.c
+> new file mode 100644
+> index 000000000000..c745684a7f9b
+> --- /dev/null
+> +++ b/drivers/pci/controller/pcie-aspeed.c
+> @@ -0,0 +1,1039 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2025 Aspeed Technology Inc.
+> + */
+> +#include <linux/irqchip/chained_irq.h>
+> +#include <linux/irqdomain.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/kernel.h>
+> +#include <linux/msi.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/of_platform.h>
+
+Where do you use it?
+
+> +#include <linux/of_address.h>
+
+Where do you use it?
+
+
+> +#include <linux/of_irq.h>
+
+Where do you use it?
+
+
+> +#include <linux/of_pci.h>
+
+Where do you use it?
+
+> +#include <linux/pci.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/irq.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/workqueue.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +
+
+
+
+...
+
+> +
+> +static int aspeed_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct pci_host_bridge *host;
+> +	struct aspeed_pcie *pcie;
+> +	struct device_node *node = dev->of_node;
+> +	const void *md = of_device_get_match_data(dev);
+
+Not void, but specific type. This is not Javascript, we have here types.
+
+> +	int irq, ret;
+> +
+> +	if (!md)
+> +		return -ENODEV;
+> +
+> +	host = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
+> +	if (!host)
+> +		return -ENOMEM;
+> +
+> +	pcie = pci_host_bridge_priv(host);
+> +	pcie->dev = dev;
+> +	pcie->tx_tag = 0;
+> +	platform_set_drvdata(pdev, pcie);
+> +
+> +	pcie->platform = md;
+> +	pcie->host = host;
+> +
+> +	pcie->reg = devm_platform_ioremap_resource(pdev, 0);
+> +
+> +	of_property_read_u32(node, "msi_address", &pcie->msi_address);
+> +	of_property_read_u32(node, "linux,pci-domain", &pcie->domain);
+> +
+> +	pcie->cfg = syscon_regmap_lookup_by_phandle(dev->of_node, "aspeed,pciecfg");
+> +	if (IS_ERR(pcie->cfg))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->cfg), "Failed to map pciecfg base\n");
+> +
+> +	pcie->pciephy = syscon_regmap_lookup_by_phandle(node, "aspeed,pciephy");
+> +	if (IS_ERR(pcie->pciephy))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->pciephy), "Failed to map pciephy base\n");
+> +
+> +	pcie->h2xrst = devm_reset_control_get_exclusive(dev, "h2x");
+> +	if (IS_ERR(pcie->h2xrst))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->h2xrst), "Failed to get h2x reset\n");
+> +
+> +	pcie->perst = devm_reset_control_get_exclusive(dev, "perst");
+> +	if (IS_ERR(pcie->perst))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->perst), "Failed to get perst reset\n");
+> +
+> +	ret = pcie->platform->setup(pdev);
+> +	if (ret)
+> +		goto err_setup;
+> +
+> +	host->sysdata = pcie;
+> +
+> +	ret = aspeed_pcie_init_irq_domain(pcie);
+> +	if (ret)
+> +		goto err_irq_init;
+> +
+> +	irq = platform_get_irq(pdev, 0);
+> +	if (irq < 0)
+> +		goto err_irq;
+> +
+> +	ret = devm_request_irq(dev, irq, aspeed_pcie_intr_handler, IRQF_SHARED, dev_name(dev),
+> +			       pcie);
+> +	if (ret)
+> +		goto err_irq;
+> +
+> +	pcie->clock = clk_get(dev, NULL);
+
+Huh...
+
+> +	if (IS_ERR(pcie->clock))
+> +		goto err_clk;
+> +	ret = clk_prepare_enable(pcie->clock);
+
+devm_clk_get_enabled.
+
+> +	if (ret)
+> +		goto err_clk_enable;
+> +
+> +	ret = pci_host_probe(host);
+> +	if (ret)
+> +		goto err_clk_enable;
+> +
+> +	return 0;
+> +
+> +err_clk_enable:
+> +	clk_put(pcie->clock);
+> +err_clk:
+> +err_irq:
+> +	aspeed_pcie_irq_domain_free(pcie);
+> +err_irq_init:
+> +err_setup:
+> +	return dev_err_probe(dev, ret, "Failed to setup PCIe RC\n");
+> +}
+> +
+> +static void aspeed_pcie_remove(struct platform_device *pdev)
+> +{
+> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
+> +
+> +	if (pcie->clock) {
+> +		clk_disable_unprepare(pcie->clock);
+> +		clk_put(pcie->clock);
+> +	}
+> +
+> +	pci_stop_root_bus(pcie->host->bus);
+> +	pci_remove_root_bus(pcie->host->bus);
+> +	aspeed_pcie_irq_domain_free(pcie);
+> +}
+> +
+> +static struct aspeed_pcie_rc_platform pcie_rc_ast2600 = {
+
+This should be const. Why it cannot?
+
+> +	.setup = aspeed_ast2600_setup,
+> +	.reg_intx_en = 0x04,
+> +	.reg_intx_sts = 0x08,
+> +	.reg_msi_en = 0x20,
+> +	.reg_msi_sts = 0x28,
+> +};
+> +
+> +static struct aspeed_pcie_rc_platform pcie_rc_ast2700 = {
+
+This should be const. Why it cannot?
+
+> +	.setup = aspeed_ast2700_setup,
+> +	.reg_intx_en = 0x40,
+> +	.reg_intx_sts = 0x48,
+> +	.reg_msi_en = 0x50,
+> +	.reg_msi_sts = 0x58,
+> +};
+> +
+> +static const struct of_device_id aspeed_pcie_of_match[] = {
+> +	{ .compatible = "aspeed,ast2600-pcie", .data = &pcie_rc_ast2600 },
+> +	{ .compatible = "aspeed,ast2700-pcie", .data = &pcie_rc_ast2700 },
+> +	{}
+> +};
+> +
+> +static struct platform_driver aspeed_pcie_driver = {
+> +	.driver = {
+> +		.name = "aspeed-pcie",
+> +		.suppress_bind_attrs = true,
+
+Why?
+
+> +		.of_match_table = aspeed_pcie_of_match,
+> +	},
+> +	.probe = aspeed_pcie_probe,
+> +	.remove = aspeed_pcie_remove,
+
+So how exactly remove can be triggered?
+
+> +};
+> +
+> +module_platform_driver(aspeed_pcie_driver);
+> +
+> +MODULE_AUTHOR("Jacky Chou <jacky_chou@aspeedtech.com>");
+> +MODULE_DESCRIPTION("ASPEED PCIe Root Complex");
+> +MODULE_LICENSE("GPL");
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
