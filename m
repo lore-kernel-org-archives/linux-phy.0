@@ -4,85 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59579C71148
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 15:16:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D1B3C71148
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 15:30:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TdvVPkIQQskWQdF0WrQEyC/UVpdlng56riBK5SNCIhI=; b=aGdJvG8Elktnbf
-	YCOV8q6e23y6JlQx6IEMf3mlln6V1aAonhTXWB13CYMntS6NERM0XQfZlTQC0iG+n7HPFKcJau17h
-	SzgJ25ghzzRdnh1ENxBjCLNbwQYyx48w5DJ1XQ6Z+9dL42Hi5a9czORK2q4cxaj5hqBR8aDTGd1iG
-	JbV4Has9at0fGXkK+I/86ohEp7x2fb4+SIPSuTxww9OS2WEdCWLh/rkRRT4F7op7i0380YGpwIEuj
-	WKbwicwbjMBX5UdOuhiQpOtmbuP6Sr0pxE0TB7nCn843yi9GAg9FmRVVXL/YzpggfjN8B3eJgsm+4
-	72iylgOTAcbDLUIo15cw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=cCtg3MIPpIKbCNnlM7NYcKzljdFJo7v4x/EQ4Y846Kg=; b=VtceofeDXONmN/2k2cIaU1bmOR
+	32LD5kLr2NZqUyLgOHY7TSWvCVzjM9RNGYURhaS9CV1TWEkrwZmWBIWZ0cbWRLLQUnYOnAcUujyx6
+	bRwjhXMmts9ODnlR/L9ij4YvqVMv/z8TbCtCGAm5hWkhbQOaQxrm4R8NQACXGHFIwY3vze+4C9+3z
+	9pxilVJSPDFTmj4Q/PXskxDgasIryB0lrJ/C39XLc2SpY3+0931usWFTUHkkPrQnR9QB6RqqWXLi3
+	yKb3t/8SoZlexiD6Bg26cDJLJPfpPYUrS2HIkH4uRAtEgOuEKgYbDUz1QSfSMXvjr9prDOP5c/LL3
+	V85DEZUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ68p-0000000Gq8L-3JrW;
-	Fri, 13 Jun 2025 15:16:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ4s5-0000000Ga5a-2OQn;
-	Fri, 13 Jun 2025 13:55:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 771B8FEC;
-	Fri, 13 Jun 2025 06:54:42 -0700 (PDT)
-Received: from [10.57.28.131] (unknown [10.57.28.131])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3A0C03F59E;
-	Fri, 13 Jun 2025 06:54:52 -0700 (PDT)
-Message-ID: <1437fe89-341b-4b57-b1fa-a0395081e941@arm.com>
-Date: Fri, 13 Jun 2025 14:54:50 +0100
+	id 1uQ6MR-0000000Gsz6-1bY7;
+	Fri, 13 Jun 2025 15:30:31 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uQ5Pi-0000000GhND-46SJ;
+	Fri, 13 Jun 2025 14:29:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 4F62AA511BE;
+	Fri, 13 Jun 2025 14:29:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9B00C4CEE3;
+	Fri, 13 Jun 2025 14:29:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749824990;
+	bh=XjIGrMXI9Lwf15i7w/n2nAnmVq8n5EfiQ7/Rpe0jmao=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=HKZxsEGA0hFa/XuJii3LvwPMfo7ZKkj6l3tLAyNYYpDWhVJhPvaAoMc7+KrQen0Nr
+	 OLR0b5WXa7Zz96+Q5E/JUFeRjlf7NJ5i5zwkeXozWiapm8WocyHWDt4uefY8aR6wQa
+	 Sw5IWlV2SrwpVwAYJ4T0VGsknXPfTjUUfKISFX0rS8k3GrexPd4czmkU1+2w4dVFHB
+	 dAefyMlvUIWXYvOURB8l/KsR/xCTxOkGmq/xwlBVg3HYfgjUJmFyiyD0lPLv56K9HR
+	 E9zHBNMKkCO+unEpbFAYSoCB4acHnncuws4PspxrjiY47Gz9CXXHFEsCwuEMyVEYig
+	 7CwyCRrGjv9LQ==
+Date: Fri, 13 Jun 2025 15:29:44 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Inochi Amaoto <inochiama@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen Wang <unicorn_wang@outlook.com>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	sophgo@lists.linux.dev, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, Yixun Lan <dlan@gentoo.org>,
+	Longbin Li <looong.bin@gmail.com>
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <20250613-deflation-aerosol-fed1d566fd0b@spud>
+References: <20250611081804.1196397-1-inochiama@gmail.com>
+ <20250611081804.1196397-2-inochiama@gmail.com>
+ <20250612-siesta-verbalize-6a7768ebc648@spud>
+ <jf76ak6b5edgqhx4rkhcsfpmcpkrxci7rq373ld2apue67q7hh@3fb346tgaxcq>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Yury Norov <yury.norov@gmail.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
- Shreeya Patel <shreeya.patel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang
- <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>,
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
-Cc: linux-pm@vger.kernel.org, netdev@vger.kernel.org, llvm@lists.linux.dev,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-sound@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
- kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
- <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Content-Language: en-GB
-In-Reply-To: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+In-Reply-To: <jf76ak6b5edgqhx4rkhcsfpmcpkrxci7rq373ld2apue67q7hh@3fb346tgaxcq>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_065505_716770_DDD59E13 
-X-CRM114-Status: GOOD (  26.98  )
+X-CRM114-CacheID: sfid-20250613_072951_079787_A7503ABA 
+X-CRM114-Status: GOOD (  20.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,125 +79,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============0545920417802875294=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025-06-12 7:56 pm, Nicolas Frattaroli wrote:
-> Hardware of various vendors, but very notably Rockchip, often uses
-> 32-bit registers where the upper 16-bit half of the register is a
-> write-enable mask for the lower half.
-> 
-> This type of hardware setup allows for more granular concurrent register
-> write access.
-> 
-> Over the years, many drivers have hand-rolled their own version of this
-> macro, usually without any checks, often called something like
-> HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
-> semantics between them.
-> 
-> Clearly there is a demand for such a macro, and thus the demand should
-> be satisfied in a common header file.
-> 
-> Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
-> version that can be used in initializers, like FIELD_PREP_CONST. The
-> macro names are chosen to not clash with any potential other macros that
-> drivers may already have implemented themselves, while retaining a
-> familiar name.
 
-Nit: while from one angle it indeed looks similar, from another it's 
-even more opaque and less meaningful than what we have already. 
-Personally I cannot help but see "hword" as "halfword", so logically if 
-we want 32+32-bit or 8+8-bit variants in future those would be 
-WORD_UPDATE() and BYTE_UPDATE(), right? ;)
+--===============0545920417802875294==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="3c8vFvw0nmfKFBPv"
+Content-Disposition: inline
 
-It's also confounded by "update" not actually having any obvious meaning 
-at this level without all the implicit usage context. FWIW my suggestion 
-would be FIELD_PREP_WM_U16, such that the reader instantly sees 
-"FIELD_PREP with some additional semantics", even if they then need to 
-glance at the kerneldoc for clarification that WM stands for writemask 
-(or maybe WE for write-enable if people prefer). Plus it then leaves 
-room to easily support different sizes (and potentially even bonkers 
-upside-down Ux_WM variants?!) without any bother if we need to.
 
-Thanks,
-Robin.
+--3c8vFvw0nmfKFBPv
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
->   include/linux/bitfield.h | 47 +++++++++++++++++++++++++++++++++++++++++++++++
->   1 file changed, 47 insertions(+)
-> 
-> diff --git a/include/linux/bitfield.h b/include/linux/bitfield.h
-> index 6d9a53db54b66c0833973c880444bd289d9667b1..b90d88db7405f95b78cdd6f3426263086bab5aa6 100644
-> --- a/include/linux/bitfield.h
-> +++ b/include/linux/bitfield.h
-> @@ -8,6 +8,7 @@
->   #define _LINUX_BITFIELD_H
->   
->   #include <linux/build_bug.h>
-> +#include <linux/limits.h>
->   #include <linux/typecheck.h>
->   #include <asm/byteorder.h>
->   
-> @@ -142,6 +143,52 @@
->   		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
->   	)
->   
-> +/**
-> + * HWORD_UPDATE() - prepare a bitfield element with a mask in the upper half
-> + * @_mask: shifted mask defining the field's length and position
-> + * @_val:  value to put in the field
-> + *
-> + * HWORD_UPDATE() masks and shifts up the value, as well as bitwise ORs the
-> + * result with the mask shifted up by 16.
-> + *
-> + * This is useful for a common design of hardware registers where the upper
-> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
-> + * register, a bit in the lower half is only updated if the corresponding bit
-> + * in the upper half is high.
-> + */
-> +#define HWORD_UPDATE(_mask, _val)					 \
-> +	({								 \
-> +		__BF_FIELD_CHECK(_mask, ((u16) 0U), _val,		 \
-> +				 "HWORD_UPDATE: ");			 \
-> +		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)) | \
-> +		((_mask) << 16);					 \
-> +	})
-> +
-> +/**
-> + * HWORD_UPDATE_CONST() - prepare a constant bitfield element with a mask in
-> + *                        the upper half
-> + * @_mask: shifted mask defining the field's length and position
-> + * @_val:  value to put in the field
-> + *
-> + * HWORD_UPDATE_CONST() masks and shifts up the value, as well as bitwise ORs
-> + * the result with the mask shifted up by 16.
-> + *
-> + * This is useful for a common design of hardware registers where the upper
-> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
-> + * register, a bit in the lower half is only updated if the corresponding bit
-> + * in the upper half is high.
-> + *
-> + * Unlike HWORD_UPDATE(), this is a constant expression and can therefore
-> + * be used in initializers. Error checking is less comfortable for this
-> + * version.
-> + */
-> +#define HWORD_UPDATE_CONST(_mask, _val)					  \
-> +	(								  \
-> +		FIELD_PREP_CONST(_mask, _val) |				  \
-> +		(BUILD_BUG_ON_ZERO(const_true((u64) (_mask) > U16_MAX)) + \
-> +		 ((_mask) << 16))					  \
-> +	)
-> +
->   /**
->    * FIELD_GET() - extract a bitfield element
->    * @_mask: shifted mask defining the field's length and position
-> 
+On Fri, Jun 13, 2025 at 06:02:27AM +0800, Inochi Amaoto wrote:
+> On Thu, Jun 12, 2025 at 05:07:37PM +0100, Conor Dooley wrote:
+> > On Wed, Jun 11, 2025 at 04:18:02PM +0800, Inochi Amaoto wrote:
+> > > The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
+> > > "VBUS_DET" to get the right operation mode. If this pin is not
+> > > connected, it only supports setting the mode manually.
+> > >=20
+> > > Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+> > >=20
+> > > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+> >=20
+> > I'm having a bit of trouble finding the v3 etc, could you provide a
+> > link?
+> > I think what is here is sane, but I want to make sure that review
+> > comments on previous versions have been addressed. "dfn:" searches for
+> > both driver and binding filenames turned up nothing.
+> >=20
+>=20
+> The v3 is
+> https://lore.kernel.org/all/IA1PR20MB4953C1876484E149AA390DD5BB1D2@IA1PR2=
+0MB4953.namprd20.prod.outlook.com/
+> It is a long time ago when sending these patch.
 
+Thanks. I think this patch looks okay, but probably worth Rob or
+Krzysztof taking a look, even if you seem to have removed the props that
+were objected to.
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--3c8vFvw0nmfKFBPv
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaEw12AAKCRB4tDGHoIJi
+0rFvAP9S13o/LIdwmUHfvdi3xmI2QY28l91ctWFzgrUilzPCYAD/SjWjbDN8whBn
+xzbmH9XlaGdqGPG+RXchp8YvmnNg5ws=
+=1aby
+-----END PGP SIGNATURE-----
+
+--3c8vFvw0nmfKFBPv--
+
+
+--===============0545920417802875294==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0545920417802875294==--
+
