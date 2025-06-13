@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4DB5C71148
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 19:21:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E11EC71136
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 20:16:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=a42tslpm4k43PN7NXfI3RB2EENKzy66Dg3PeMpyejF4=; b=cKcgvdk21s0RAf
-	cIJpre9+kN0CtLMJaLLA0jtHOmRmZ1/wiAqTWYXDCqI8XecoIzlbzdJ/sLLP3EoE3NJ5hJHYPxc+x
-	ZzbqZyXAs21yDGx+iySp+XkLRzl7TPLqFRdwn6mUVxSNLXDOcAJWt99biYPE+fa7H16YyE7yVlK/4
-	p08IMlm7mtJrlqHNOB9zr2G4/qqCt0z1ReNuHByGn1MnyTjJ1sASoWRa7mw/PzJ6Fx9dIcdm1zN0F
-	q2wle5dCun8JMwEE1LZ9VeJK+uNZJ/DfLqFMeIjwmYqbzFsTjwFDIu3NarEOiYDMrOODeb4YR5B8P
-	kpOmTD16XJVptOgUXnqA==;
+	List-Owner; bh=3zoPX7FPYTB1wTtUYZi1/mAoKOjZtJEDF/dif7PAy7s=; b=wzcQubIOzyxpG4
+	M/qbhbgskTg9B4ANE4sPjcow4N2vn3kFtCQF+LDgfHhOpwodYcJSqIM1bx1moFqDqDBHVOkwB1aLf
+	uWQ92sLupwx/xXOnLaMLPEaqbb5zG+Ieg3iFrEomdOFP2wgOMhx8xnty9YraJkdSQs2aMATyPgE+o
+	NbXI5a/As5+8+a/YJGqgrWxajTVEmRmLw+gdw717QNt+Hxs9Np704odSOKpozs4+mQXthv//Ug788
+	FWCsQf86RXQBO+Na2x/b9Vi51M7qMCfPG7uilwOf3SBOEhGOEv31cyfnJtCTkrbjDdK3QKU+GgDvS
+	Ph6oLaNN1RguwXFFrTnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ9yP-0000000HRb8-1qzU;
-	Fri, 13 Jun 2025 19:21:57 +0000
+	id 1uQAp7-0000000HXvn-49yt;
+	Fri, 13 Jun 2025 20:16:25 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ9xu-0000000HRPR-1cXs
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Jun 2025 19:21:26 +0000
+	id 1uQAmx-0000000HXX9-3dFA;
+	Fri, 13 Jun 2025 20:14:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C5FB46116E;
-	Fri, 13 Jun 2025 19:21:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4399DC4CEE3;
-	Fri, 13 Jun 2025 19:21:25 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3D8A662A10;
+	Fri, 13 Jun 2025 20:14:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C517AC4CEE3;
+	Fri, 13 Jun 2025 20:14:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749842485;
-	bh=Gpe+Xbaqg839eoHxEGGg3ncn8LwqWk899z282q/Ecfo=;
+	s=k20201202; t=1749845650;
+	bh=Zio/9ed1ISRgWicUqk/j1UAIrxh6W2Aq1NctnSkSqjg=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=N8odkKdlYSl4cN22e5vZqUj6R+UMjpqE4NdHCBDHaho4VaSwQS3lsfEEa0T4SVBU0
-	 Tce66UH+sQiDvZl+zfL+yBF2suQIHwWyLdbMJNcC41VgUCX87JLDfdQtKUHiAdOIk9
-	 RMHHkCyyC1umn/UwNNz7Yl7IpKjKC4rwSpNZd1tQtPp6ToCfFOJYxG4/zKSUSUTYqq
-	 FRWyEE/NjOn50qCbIasBn4C54bpT51DEm8mESUQxvJk7LIQJbdmb6GSowMaIMlAgxc
-	 OmtTku36FPRwM/67sNu1tH/K+Y9zA0JzY644gDJmF7pZq58vjUonybnlCGVRMTaLdd
-	 dtF/6Csw2b8rg==
-Date: Fri, 13 Jun 2025 14:21:24 -0500
+	b=IAJP7Raic0SQjqE3t8ej2YiZWcFDLxcJmuLnstD+ww4P3KgdECE5SlqmEi5uEyddi
+	 YDto2pIAg7qcILAQnVArh8oefuPEdsdPYiixPquLyBIkr/ecbhxxM/Ryqsj1wQkYdF
+	 7IStXXPPxsQTSt4dgXOxj/IGLRXwBb3sI4ATE9EgyHlKr2gMKp1GSaJbIbG7+cx5p0
+	 ujnOhVrJN0B60glcRgz01Ju042eHHU+Yn4ueM1WQ2Lkbl5aiVnwjm2onOwvA8YvZnd
+	 OT1IdOTIiJ5QEuP2Mx533U8q53XlJY5TtZ2CxpYL4QOXbtVSTEROAeAqEpPKADmbge
+	 PPBLYTUp8U3jg==
+Date: Fri, 13 Jun 2025 15:14:09 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, dmitry.baryshkov@linaro.org,
-	manivannan.sadhasivam@linaro.org, neil.armstrong@linaro.org,
-	abel.vesa@linaro.org, kw@linux.com, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v2 1/2] PCI: qcom: Add equalization settings for 8.0 GT/s
-Message-ID: <20250613192124.GA970861@bhelgaas>
+To: Geraldo Nascimento <geraldogabriel@gmail.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [RESEND RFC PATCH v4 1/5] PCI: rockchip: Use standard PCIe
+ defines
+Message-ID: <20250613201409.GA973486@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250611100319.464803-2-quic_ziyuzhan@quicinc.com>
+In-Reply-To: <992ab6278af59b8f2f82521bf4611f69a916bbe1.1749827015.git.geraldogabriel@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,85 +76,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 11, 2025 at 06:03:18PM +0800, Ziyue Zhang wrote:
-> Adding lane equalization setting for 8.0 GT/s to enhance link stability
-> and fix AER correctable errors reported on some platforms (eg. SA8775P).
+On Fri, Jun 13, 2025 at 12:05:31PM -0300, Geraldo Nascimento wrote:
+> Current code uses custom-defined register offsets
+> and bitfields for standard PCIe registers. Change
+> to using standard PCIe defines.
 
-s/Adding/Add/
+Wrap to fill 75 columns so there's space for "git log" to add
+indentation.
 
-s/fix AER correctable errors/avoid AER Correctable Errors/
-so we know that (a) this avoids the errors (it's not some kind of
-recovery), and (b) readers know that "Correctable Error" is something
-that can be looked up in a spec.
-
-> 8.0 GT/s and 16.0GT/s require the same equalization setting. This setting
-> is programmed into a group of shadow registers, which can be switched to
-> configure equalization for different GEN speeds by writing 00b, 01b
-> to `RATE_SHADOW_SEL`.
-
-s|16.0GT/s|16.0 GT/s| to match "8.0 GT/s"
-
-s/different GEN speeds/different speeds/ (PCIe spec rev ("GEN") is not
-a one-to-one mapping to speeds)
-
-> @@ -18,33 +20,43 @@ void qcom_pcie_common_set_16gt_equalization(struct dw_pcie *pci)
->  	 * GEN3_EQ_*. The RATE_SHADOW_SEL bit field of GEN3_RELATED_OFF
->  	 * determines the data rate for which these equalization settings are
->  	 * applied.
-> +	 *
-> +	 * TODO:
-> +	 * EQ settings need to be added for 32.0 T/s in future
-
-Drop this comment since it's not an indication of a problem in this
-patch.  The list of possible future work is infinite, and you can keep
-track of a TODO list internally.
-
->  	 */
-> -	reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
-> -	reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
-> -	reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
-> -	reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
-> -			  GEN3_RELATED_OFF_RATE_SHADOW_SEL_16_0GT);
-> -	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
-> +	if (pcie_link_speed[pci->max_link_speed] < PCIE_SPEED_32_0GT)
-> +		max_speed = pcie_link_speed[pci->max_link_speed];
-> +	else
-> +		dev_warn(dev, "The target supports 32.0 GT/s, but the EQ setting for 32.0 GT/s is not configured.\n");
-
-Drop period at end of message.
-
-> -	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
-> -	reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
-> -		GEN3_EQ_FMDC_N_EVALS |
-> -		GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
-> -		GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
-> -	reg |= FIELD_PREP(GEN3_EQ_FMDC_T_MIN_PHASE23, 0x1) |
-> -		FIELD_PREP(GEN3_EQ_FMDC_N_EVALS, 0xd) |
-> -		FIELD_PREP(GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA, 0x5) |
-> -		FIELD_PREP(GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA, 0x5);
-> -	dw_pcie_writel_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF, reg);
-> +	for (speed = PCIE_SPEED_8_0GT; speed <= max_speed; ++speed) {
-> +		reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
-> +		reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
-> +		reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
-> +		reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
-> +			  speed - PCIE_SPEED_8_0GT);
-> +		dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
+> @@ -40,18 +40,18 @@ static void rockchip_pcie_enable_bw_int(struct rockchip_pcie *rockchip)
+>  {
+>  	u32 status;
 >  
-> -	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
-> -	reg &= ~(GEN3_EQ_CONTROL_OFF_FB_MODE |
-> -		GEN3_EQ_CONTROL_OFF_PHASE23_EXIT_MODE |
-> -		GEN3_EQ_CONTROL_OFF_FOM_INC_INITIAL_EVAL |
-> -		GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC);
-> -	dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, reg);
-> +		reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
-> +		reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
-> +			GEN3_EQ_FMDC_N_EVALS |
-> +			GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
-> +			GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LCS);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  	status |= (PCI_EXP_LNKCTL_LBMIE | PCI_EXP_LNKCTL_LABIE);
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LCS);
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  }
+>  
+>  static void rockchip_pcie_clr_bw_int(struct rockchip_pcie *rockchip)
+>  {
+>  	u32 status;
+>  
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LCS);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  	status |= (PCI_EXP_LNKSTA_LBMS | PCI_EXP_LNKSTA_LABS) << 16;
 
-Is "CUSROR" a typo for "CURSOR", or is "CUSROR" a real thing?  (Either
-way, it's not something you added, so not a problem with this patch.)
+It looks funny to write PCI_EXP_LNKCTL with bits from PCI_EXP_LNKSTA.
+I guess this is because rockchip_pcie_write() does 32-bit writes, but
+PCI_EXP_LNKCTL and PCI_EXP_LNKSTA are adjacent 16-bit registers.
+
+If the hardware supports it, adding rockchip_pcie_readw() and
+rockchip_pcie_writew() for 16-bit accesses would make this read
+better.
+
+Hopefully the hardware *does* support this (it's required per spec at
+least for config accesses, which would be a different path in the
+hardware).  Doing the 32-bit write of PCI_EXP_LNKCTL above is
+problematic because writes PCI_EXP_LNKSTA as well, and PCI_EXP_LNKSTA
+includes some RW1C bits that may be unintentionally cleared.
+
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LCS);
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  }
+>  
+>  static void rockchip_pcie_update_txcredit_mui(struct rockchip_pcie *rockchip)
+> @@ -269,7 +269,7 @@ static void rockchip_pcie_set_power_limit(struct rockchip_pcie *rockchip)
+>  	scale = 3; /* 0.001x */
+>  	curr = curr / 1000; /* convert to mA */
+>  	power = (curr * 3300) / 1000; /* milliwatt */
+> -	while (power > PCIE_RC_CONFIG_DCR_CSPL_LIMIT) {
+> +	while (power > FIELD_MAX(PCI_EXP_DEVCAP_PWR_VAL)) {
+>  		if (!scale) {
+>  			dev_warn(rockchip->dev, "invalid power supply\n");
+>  			return;
+> @@ -278,10 +278,10 @@ static void rockchip_pcie_set_power_limit(struct rockchip_pcie *rockchip)
+>  		power = power / 10;
+>  	}
+>  
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_DCR);
+> -	status |= (power << PCIE_RC_CONFIG_DCR_CSPL_SHIFT) |
+> -		  (scale << PCIE_RC_CONFIG_DCR_CPLS_SHIFT);
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_DCR);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_DEVCAP);
+> +	status |= FIELD_PREP(PCI_EXP_DEVCAP_PWR_VAL, power);
+> +	status |= FIELD_PREP(PCI_EXP_DEVCAP_PWR_SCL, scale);
+
+This assumes the value you read from PCI_EXP_DEVCAP had zeroes in
+these bits.  It might, but it would look safer to do:
+
+  status &= ~(PCI_EXP_DEVCAP_PWR_VAL | PCI_EXP_DEVCAP_PWR_SCL);
+  status |= FIELD_PREP(PCI_EXP_DEVCAP_PWR_VAL, power);
+  status |= FIELD_PREP(PCI_EXP_DEVCAP_PWR_SCL, scale);
+
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_DEVCAP);
+>  }
+
+>  /**
+> @@ -309,14 +309,14 @@ static int rockchip_pcie_host_init_port(struct rockchip_pcie *rockchip)
+>  	rockchip_pcie_set_power_limit(rockchip);
+>  
+>  	/* Set RC's clock architecture as common clock */
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LCS);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  	status |= PCI_EXP_LNKSTA_SLC << 16;
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LCS);
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  
+>  	/* Set RC's RCB to 128 */
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LCS);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  	status |= PCI_EXP_LNKCTL_RCB;
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LCS);
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  
+>  	/* Enable Gen1 training */
+>  	rockchip_pcie_write(rockchip, PCIE_CLIENT_LINK_TRAIN_ENABLE,
+> @@ -341,9 +341,9 @@ static int rockchip_pcie_host_init_port(struct rockchip_pcie *rockchip)
+>  		 * Enable retrain for gen2. This should be configured only after
+>  		 * gen1 finished.
+>  		 */
+> -		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LCS);
+> +		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  		status |= PCI_EXP_LNKCTL_RL;
+> -		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LCS);
+> +		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
+>  
+>  		err = readl_poll_timeout(rockchip->apb_base + PCIE_CORE_CTRL,
+>  					 status, PCIE_LINK_IS_GEN2(status), 20,
+> @@ -380,15 +380,15 @@ static int rockchip_pcie_host_init_port(struct rockchip_pcie *rockchip)
+>  
+>  	/* Clear L0s from RC's link cap */
+>  	if (of_property_read_bool(dev->of_node, "aspm-no-l0s")) {
+> -		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_LINK_CAP);
+> -		status &= ~PCIE_RC_CONFIG_LINK_CAP_L0S;
+> -		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_LINK_CAP);
+> +		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCAP);
+> +		status &= ~PCI_EXP_LNKCAP_ASPM_L0S;
+> +		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCAP);
+>  	}
+>  
+> -	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_DCSR);
+> -	status &= ~PCIE_RC_CONFIG_DCSR_MPS_MASK;
+> -	status |= PCIE_RC_CONFIG_DCSR_MPS_256;
+> -	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_DCSR);
+> +	status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_DEVCTL);
+> +	status &= ~PCI_EXP_DEVCTL_PAYLOAD;
+> +	status |= PCI_EXP_DEVCTL_PAYLOAD_256B;
+> +	rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_DEVCTL);
+
+Similar problem here; PCI_EXP_DEVCTL is only 16 bits, and writing the
+adjacent PCI_EXP_DEVSTA may clear RW1C bits you didn't want to clear.
 
 Bjorn
 
