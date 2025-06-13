@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21A77C71135
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 13:18:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 419ABC71136
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 13:22:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8hToKBbt9p4UWS8RvL9PrZy+Tvol7AtKR3rldXfUUDY=; b=jr8+FGIdayGiwi
-	bHzc1Yyku6pzZvXvVTKPhGjkfFq/ilxHEGjbnpnhVdCLGzj7PYwqLWQSASeiies3IV7ue9Js6BRiH
-	Ego/IGyuDyvt3o28SL42enUEsDUMeDcETPR/XM6GATFpZc1I+nDCny2uuUnFokb34pMvc77DJp3FW
-	x0OSPG1dDHCp/Q58mDOsrS7oGzzK7y2VSFTWrfkPDkQsXmzCOuCDKFdBuB4nZfeW/X6nwlmpTW15F
-	JavZg3ehyGkyBaWHpvOlMyfO22v1kwkTbs7fHCWbQg0FH/30P7YPwxM6tVh3QpimI0b21BeRfNOxB
-	DotUOa79kuSzkb64ptag==;
+	List-Owner; bh=X8tqpk7/Y58ydNKfL9HVHVxLqQCkL4m6OkuqBIq65xM=; b=GarFP6vMfSFniD
+	RNfLLOrnZ5anGEq3k5qjO/nBfzqNAwRc6YPi+JXzJE1qIVQVCnXz+IY9aIGVrdiT8vc6kn0JQhsD0
+	8aO2GOZZB/bSQ3hE9rUAiGT8TgoaYvVNK2/a5J1KgPoNOeIlYF26i1/saCWVKZiFJPj2tgDD41gTb
+	5THtTHmEPLMQ1KayUr0idu49C5jTNhkteohm3whCVc+XIjL17PiAbm2VfWE/IwfUrFbgGlk8HhOnm
+	32gohFPGDmzhum7FW7z3zcpWSnAY060Twj+hDKGfUXcDsC4EE3O5ZX4GitbhnRtZY0PxKEr3zpP4w
+	Fql+i3N55+ZfmUFYmu5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ4IJ-0000000GTQk-2sOA;
-	Fri, 13 Jun 2025 13:18:07 +0000
+	id 1uQ4M7-0000000GTxN-46kB;
+	Fri, 13 Jun 2025 13:22:04 +0000
 Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ49d-0000000GSVl-11tl;
-	Fri, 13 Jun 2025 13:09:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749820130; cv=none; 
+	id 1uQ4M4-0000000GTwr-3HnL;
+	Fri, 13 Jun 2025 13:22:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1749820908; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=l9dzbF3zQflwc7yb+7biovokPvXD3AOtCCBg+iBkNSjS8gaSXgLiDdw5aTKKELaTBtikDAvAteFfaU0J33nI3UuwR3v4zPE3cvsBFG3tvDXDRW0sxSUedBhAPIBnwCK5b8inskFpcp3OqYQ+WThMdHz1mKN2Mw8fBAGsDxSAt04=
+	b=HiGP/zFuoD/K72kz39vVKk1DqfaB+k6xKcjlzs0tTQt0FNVA7MvQ4CQazrpNA10Us/jtePzBEos95U2pqs4KIas6Usb27r/x8TXohCTITJL/GzRLLVrTrYE6idzS+h2MdZkxn7WLlEMCtFPdIwQZP20edCf49nitIHlba3qcvpU=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749820130; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=K9bhrRW+s12WtdaVP6Yi4iBFDQwpPFW/VNIJ084o8RM=; 
-	b=GIwKskccuJOMSPJp2xnn4AGCPMy0TtPoMh1U+LiqS0Y4YLdTR5QOaqHM23gPKWj47lmLoYOMOfa3NZ9FA7hMsrrSRanfDnWzFZQhaYkF0Klvwi/pzdvHLn0hognmYq+vZ6pPJFcGvOvlRWUtJ3xlCdxkSxHK7C0CxTGVOHF+BPc=
+	t=1749820908; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Nq6vLrgRxcRv0ur30aqw4u0LYcZO69N6Td/qIVTptOM=; 
+	b=XqO6xYlCbyAm/i0O6PNPzeWAQBYLFyGg2dt3zGezuL3kLI7dWsRXivTx8m53D7fhlo1MRXIScgbzzNTnvD/bb0zaSZGdl1cjf67oghQeHqeDKv5fDesbiY0lXJHT2mKQVlLsrGqfebZBzH2x60ZmnciwRgvFpAiG1fknxEuJZFo=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749820130;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749820908;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=K9bhrRW+s12WtdaVP6Yi4iBFDQwpPFW/VNIJ084o8RM=;
-	b=iZXbgTQ2EqQYhrsx8UX0Fx4Hrd0EnH8jyDWxuF8nV2kQdKs/GLSYQfDMqRAusWN3
-	zX5C2pP0Ivu0dqnJAwy4lACa2W/IStoAv/iOrxs8sbZAz3SK0rWAYIoInmJ1aqZ7nQU
-	9Zpvf21oRAM7FQwp6kARfJarCm0yZXd3zhDtc7Bs=
-Received: by mx.zohomail.com with SMTPS id 1749820128052943.1985221609309;
-	Fri, 13 Jun 2025 06:08:48 -0700 (PDT)
+	bh=Nq6vLrgRxcRv0ur30aqw4u0LYcZO69N6Td/qIVTptOM=;
+	b=UdRJJkA/SCNLBUiZRzD59FVf5gvbzgk3ULumBZ+hke93c66e5XI/T5h0hlfJUOP3
+	YscTk7ST2C715rRAh8R1vlBJFOXnOu4H1u40wUCMicwuGr0e/tXza2WAoRJM1/2L0CE
+	XK/28UPiip/z0l0ThnN8vdAm4i8Elb62fsUMvYZY=
+Received: by mx.zohomail.com with SMTPS id 1749820906115539.1019397469723;
+	Fri, 13 Jun 2025 06:21:46 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -58,17 +58,18 @@ Cc: Alexey Charkov <alchark@gmail.com>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 1/4] phy: rockchip: inno-usb2: add soft vbusvalid control
-Date: Fri, 13 Jun 2025 15:08:42 +0200
-Message-ID: <3284807.VLH7GnMWUR@workhorse>
-In-Reply-To: <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
+Subject: Re: [PATCH v4 3/4] phy: rockchip: usbdp: reset USB3 and reinit on orientation
+ switch
+Date: Fri, 13 Jun 2025 15:21:41 +0200
+Message-ID: <4115444.Lt9SDvczpP@workhorse>
+In-Reply-To: <49eb73df-9a15-436e-a05c-72dd3aa36bf8@linaro.org>
 References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
- <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
- <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
+ <20250610-rk3576-sige5-usb-v4-3-7e7f779619c1@collabora.com>
+ <49eb73df-9a15-436e-a05c-72dd3aa36bf8@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_060909_380960_2B8E5B41 
-X-CRM114-Status: GOOD (  43.88  )
+X-CRM114-CacheID: sfid-20250613_062200_862666_C8DE8943 
+X-CRM114-Status: GOOD (  45.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,180 +86,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Neil,
-
-thank you for the review! Responses are inline.
-
-On Friday, 13 June 2025 11:02:40 Central European Summer Time neil.armstrong@linaro.org wrote:
-> On 10/06/2025 16:07, Nicolas Frattaroli wrote:
-> > With USB type C connectors, the vbus detect pin of the OTG controller
-> > attached to it is pulled high by a USB Type C controller chip such as
-> > the fusb302. This means USB enumeration on Type-C ports never works, as
-> > the vbus is always seen as high.
-> > 
-> > Rockchip added some GRF register flags to deal with this situation. The
-> > RK3576 TRM calls these "soft_vbusvalid_bvalid" (con0 bit index 15) and
-> > "soft_vbusvalid_bvalid_sel" (con0 bit index 14).
-> > 
-> > Downstream introduces a new vendor property which tells the USB 2 PHY
-> > that it's connected to a type C port, but we can do better. Since in
-> > such an arrangement, we'll have an OF graph connection from the USB
-> > controller to the USB connector anyway, we can walk said OF graph and
-> > check the connector's compatible to determine this without adding any
-> > further vendor properties.
-> > 
-> > Do keep in mind that the usbdp PHY driver seemingly fiddles with these
-> > register fields as well, but what it does doesn't appear to be enough
-> > for us to get working USB enumeration, presumably because the whole
-> > vbus_attach logic needs to be adjusted as well either way.
-> > 
-> > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> > ---
-> >   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 113 +++++++++++++++++++++++++-
-> >   1 file changed, 109 insertions(+), 4 deletions(-)
-> > 
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > index b0f23690ec3002202c0f33a6988f5509622fa10e..4f89bd6568cd3a7a1d2c10e9cddda9f3bd997ed0 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > @@ -17,6 +17,7 @@
-> >   #include <linux/module.h>
-> >   #include <linux/mutex.h>
-> >   #include <linux/of.h>
-> > +#include <linux/of_graph.h>
-> >   #include <linux/of_irq.h>
-> >   #include <linux/phy/phy.h>
-> >   #include <linux/platform_device.h>
-> > @@ -114,6 +115,8 @@ struct rockchip_chg_det_reg {
-> >   /**
-> >    * struct rockchip_usb2phy_port_cfg - usb-phy port configuration.
-> >    * @phy_sus: phy suspend register.
-> > + * @svbus_en: soft vbus bvalid enable register.
-> > + * @svbus_sel: soft vbus bvalid selection register.
-> >    * @bvalid_det_en: vbus valid rise detection enable register.
-> >    * @bvalid_det_st: vbus valid rise detection status register.
-> >    * @bvalid_det_clr: vbus valid rise detection clear register.
-> > @@ -140,6 +143,8 @@ struct rockchip_chg_det_reg {
-> >    */
-> >   struct rockchip_usb2phy_port_cfg {
-> >   	struct usb2phy_reg	phy_sus;
-> > +	struct usb2phy_reg	svbus_en;
-> > +	struct usb2phy_reg	svbus_sel;
-> >   	struct usb2phy_reg	bvalid_det_en;
-> >   	struct usb2phy_reg	bvalid_det_st;
-> >   	struct usb2phy_reg	bvalid_det_clr;
-> > @@ -203,6 +208,7 @@ struct rockchip_usb2phy_cfg {
-> >    * @event_nb: hold event notification callback.
-> >    * @state: define OTG enumeration states before device reset.
-> >    * @mode: the dr_mode of the controller.
-> > + * @typec_vbus_det: whether to apply Type C logic to OTG vbus detection.
-> >    */
-> >   struct rockchip_usb2phy_port {
-> >   	struct phy	*phy;
-> > @@ -222,6 +228,7 @@ struct rockchip_usb2phy_port {
-> >   	struct notifier_block	event_nb;
-> >   	enum usb_otg_state	state;
-> >   	enum usb_dr_mode	mode;
-> > +	bool typec_vbus_det;
-> >   };
-> >   
-> >   /**
-> > @@ -495,6 +502,13 @@ static int rockchip_usb2phy_init(struct phy *phy)
-> >   	mutex_lock(&rport->mutex);
-> >   
-> >   	if (rport->port_id == USB2PHY_PORT_OTG) {
-> > +		if (rport->typec_vbus_det) {
-> > +			if (rport->port_cfg->svbus_en.enable &&
-> > +					rport->port_cfg->svbus_sel.enable) {
-> > +				property_enable(rphy->grf, &rport->port_cfg->svbus_en, true);
-> > +				property_enable(rphy->grf, &rport->port_cfg->svbus_sel, true);
-> > +			}
-> > +		}
-> >   		if (rport->mode != USB_DR_MODE_HOST &&
-> >   		    rport->mode != USB_DR_MODE_UNKNOWN) {
-> >   			/* clear bvalid status and enable bvalid detect irq */
-> > @@ -535,8 +549,7 @@ static int rockchip_usb2phy_init(struct phy *phy)
-> >   			if (ret)
-> >   				goto out;
-> >   
-> > -			schedule_delayed_work(&rport->otg_sm_work,
-> > -					      OTG_SCHEDULE_DELAY * 3);
-> > +			schedule_delayed_work(&rport->otg_sm_work, 0);
-> >   		} else {
-> >   			/* If OTG works in host only mode, do nothing. */
-> >   			dev_dbg(&rport->phy->dev, "mode %d\n", rport->mode);
-> > @@ -666,8 +679,17 @@ static void rockchip_usb2phy_otg_sm_work(struct work_struct *work)
-> >   	unsigned long delay;
-> >   	bool vbus_attach, sch_work, notify_charger;
-> >   
-> > -	vbus_attach = property_enabled(rphy->grf,
-> > -				       &rport->port_cfg->utmi_bvalid);
-> > +	if (rport->port_cfg->svbus_en.enable && rport->typec_vbus_det) {
-> > +		if (property_enabled(rphy->grf, &rport->port_cfg->svbus_en) &&
-> > +		    property_enabled(rphy->grf, &rport->port_cfg->svbus_sel)) {
+On Friday, 13 June 2025 10:55:43 Central European Summer Time neil.armstrong@linaro.org wrote:
+> Hi,
 > 
-> Why do you check the registers since you always enable those bits on those conditions:
-> 	rport->port_id == USB2PHY_PORT_OTG
-> 	rport->typec_vbus_det
-> 	rport->port_cfg->svbus_en.enable
-> 	rport->typec_vbus_det
-> Can't you us them instead ?
+> On 10/06/2025 16:07, Nicolas Frattaroli wrote:
+> > Until now, super speed on Type-C only worked in one orientation. This is
+> > because on an orientation switch, the UDPHY was never reinitialised.
+> > 
+> > Heiko presented a patch to do this[1], but there were concerns over the
+> > correctness of it[2]. Experimentally using Heiko's patch on RK3576 did
+> > make me run into issues, though they seemed to be related to the
+> > orientation switch actually happening while a clock driving a GRF
+> > register was disabled.
+> > 
+> > The key issue is that the hardware wants the USB 3 controller to be held
+> > in reset while the PHY is being reconfigured, otherwise we may run into
+> > hard-to-catch race conditions.
+> > 
+> > Either way, this patch implements the required ordering in a somewhat
+> > unpleasant way: we get the USB 3 controller from the DT, and use runtime
+> > power management to forcibly suspend it while the UDPHY is being
+> > reconfigured, and then forcibly resume it later. As an added pain in the
+> > rear, the suspend/resume of the USB 3 controller also tries fiddling
+> > with the USB 3 PHY part of the UDPHY, which means we introduce an atomic
+> > flag to skip suspending/resuming the UDPHY if we're resetting the USB 3
+> > controller. We may just need to skip trying to acquire the mutex again,
+> > but both ways work for me in practice.
+> > 
+> > This solution may in fact be complete rubbish, but it works to get USB 3
+> > Super Speed working in both cable orientations on my board.
+> 
+> Yeah this is kind of a hack, and we have a similar situation on Qualcomm platforms
+> when dealing with USB2-only and DP-only altmodes, where we need the DWC3 to
+> disable the usb3 path. Hopefully on Qcom combo PHYs we can switch lanes without
+> disable the USB3 PHY.
+> 
+> So the proper solution would have the dwc3 driver to also react to mux and
+> orientation events and disable the usb3 path to allow the phy to reconfigure
+> itself.
+> 
+> We don't have any concrete proposal yet, but we will get something soonish.
 
-That is an excellent question. I think I was imitating downstream code
-here without thinking too much. This whole construct seems a little fishy,
-as these GRF registers are then never cleared again if it's not in OTG
-mode anymore. I'll look into it further, including cross-checking what
-those bits actually do based on the TRMs of various SoCs that use this
-hardware.
+Thanks you for the additional insight, I do agree that having the
+controller be in charge of this is the better solution. That way, the PHY
+doesn't need to know its controller, and the controller driver is in charge
+of ordering the resets and reconfigure right, which means the ugly reset
+loop breaking in this patch isn't needed.
+
+If you do end up sending a patch series with a proposal, please +Cc me,
+so that I can see if it also works for Rockchip.
+
+If the hack isn't acceptable to be merged until then, then I'll drop
+this patch from future revisions of the series to get the other parts
+in.
 
 > 
 > Neil
+
+Best regards,
+Nicolas Frattaroli
+
 > 
-> > +			vbus_attach = true;
-> > +		} else {
-> > +			vbus_attach = false;
-> > +		}
-> > +	} else {
-> > +		vbus_attach = property_enabled(rphy->grf,
-> > +					       &rport->port_cfg->utmi_bvalid);
-> > +	}
+> > 
+> > Link: https://lore.kernel.org/all/20250226103810.3746018-3-heiko@sntech.de/ [1]
+> > Link: https://lore.kernel.org/linux-rockchip/h57ok2hw6os7bcafqkrqknfvm7hnu25m2oe54qmrsuzdwqlos3@m4och2fcdm7s/ [2]
+> > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> > ---
+> >   drivers/phy/rockchip/phy-rockchip-usbdp.c | 54 +++++++++++++++++++++++++++++++
+> >   1 file changed, 54 insertions(+)
+> > 
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> > index fff54900feea601c8fe6bf4c7123dfebc5661a15..5cd6bbc367f69bca15c2a94a07e72f850b381ae3 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+> > @@ -200,6 +200,10 @@ struct rk_udphy {
+> >   	/* PHY devices */
+> >   	struct phy *phy_dp;
+> >   	struct phy *phy_u3;
+> > +
+> > +	/* USB 3 controller device */
+> > +	struct device *ctrl_u3;
+> > +	atomic_t ctrl_resetting;
+> >   };
 > >   
-> >   	sch_work = false;
-> >   	notify_charger = false;
-> > @@ -1276,6 +1298,83 @@ static int rockchip_otg_event(struct notifier_block *nb,
-> >   	return NOTIFY_DONE;
+> >   static const struct rk_udphy_dp_tx_drv_ctrl rk3588_dp_tx_drv_ctrl_rbr_hbr[4][4] = {
+> > @@ -1255,6 +1259,9 @@ static int rk_udphy_usb3_phy_init(struct phy *phy)
+> >   	struct rk_udphy *udphy = phy_get_drvdata(phy);
+> >   	int ret = 0;
+> >   
+> > +	if (atomic_read(&udphy->ctrl_resetting))
+> > +		return 0;
+> > +
+> >   	mutex_lock(&udphy->mutex);
+> >   	/* DP only or high-speed, disable U3 port */
+> >   	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
+> > @@ -1273,6 +1280,9 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
+> >   {
+> >   	struct rk_udphy *udphy = phy_get_drvdata(phy);
+> >   
+> > +	if (atomic_read(&udphy->ctrl_resetting))
+> > +		return 0;
+> > +
+> >   	mutex_lock(&udphy->mutex);
+> >   	/* DP only or high-speed */
+> >   	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
+> > @@ -1401,10 +1411,31 @@ static struct phy *rk_udphy_phy_xlate(struct device *dev, const struct of_phandl
+> >   	return ERR_PTR(-EINVAL);
 > >   }
 > >   
-> > +static const char *const rockchip_usb2phy_typec_cons[] = {
-> > +	"usb-c-connector",
-> > +	NULL,
-> > +};
-> > +
-> > +static struct device_node *rockchip_usb2phy_to_controller(struct rockchip_usb2phy *rphy)
+> > +static struct device_node *rk_udphy_to_controller(struct rk_udphy *udphy)
 > > +{
 > > +	struct device_node *np;
-> > +	struct device_node *parent;
 > > +
 > > +	for_each_node_with_property(np, "phys") {
 > > +		struct of_phandle_iterator it;
 > > +		int ret;
 > > +
 > > +		of_for_each_phandle(&it, ret, np, "phys", NULL, 0) {
-> > +			parent = of_get_parent(it.node);
-> > +			if (it.node != rphy->dev->of_node && rphy->dev->of_node != parent) {
-> > +				if (parent)
-> > +					of_node_put(parent);
+> > +			if (it.node != udphy->dev->of_node)
 > > +				continue;
-> > +			}
 > > +
-> > +			/*
-> > +			 * Either the PHY phandle we're iterating or its parent
-> > +			 * matched, we don't care about which out of the two in
-> > +			 * particular as we just need to know it's the right
-> > +			 * USB controller for this PHY.
-> > +			 */
 > > +			of_node_put(it.node);
-> > +			of_node_put(parent);
 > > +			return np;
 > > +		}
 > > +	}
@@ -266,108 +214,68 @@ hardware.
 > > +	return NULL;
 > > +}
 > > +
-> > +static bool rockchip_usb2phy_otg_is_type_c(struct rockchip_usb2phy *rphy)
-> > +{
-> > +	struct device_node *controller = rockchip_usb2phy_to_controller(rphy);
-> > +	struct device_node *ports;
-> > +	struct device_node *ep = NULL;
-> > +	struct device_node *parent;
+> >   static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+> >   				 enum typec_orientation orien)
+> >   {
+> >   	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
+> > +	int ret;
+> >   
+> >   	mutex_lock(&udphy->mutex);
+> >   
+> > @@ -1420,6 +1451,18 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+> >   	rk_udphy_set_typec_default_mapping(udphy);
+> >   	rk_udphy_usb_bvalid_enable(udphy, true);
+> >   
+> > +	if (udphy->status != UDPHY_MODE_NONE && udphy->ctrl_u3) {
+> > +		atomic_set(&udphy->ctrl_resetting, 1);
+> > +		pm_runtime_force_suspend(udphy->ctrl_u3);
 > > +
-> > +	if (!controller)
-> > +		return false;
+> > +		ret = rk_udphy_setup(udphy);
+> > +		if (!ret)
+> > +			clk_bulk_disable_unprepare(udphy->num_clks, udphy->clks);
 > > +
-> > +	ports = of_get_child_by_name(controller, "ports");
-> > +	if (ports) {
-> > +		of_node_put(controller);
-> > +		controller = ports;
+> > +		pm_runtime_force_resume(udphy->ctrl_u3);
+> > +		atomic_set(&udphy->ctrl_resetting, 0);
 > > +	}
 > > +
-> > +	for_each_of_graph_port(controller, port) {
-> > +		ep = of_get_child_by_name(port, "endpoint");
-> > +		if (!ep)
-> > +			continue;
-> > +
-> > +		parent = of_graph_get_remote_port_parent(ep);
-> > +		of_node_put(ep);
-> > +		if (!parent)
-> > +			continue;
-> > +
-> > +		if (of_device_compatible_match(parent, rockchip_usb2phy_typec_cons)) {
-> > +			of_node_put(parent);
-> > +			of_node_put(controller);
-> > +			return true;
-> > +		}
-> > +
-> > +		of_node_put(parent);
+> >   unlock_ret:
+> >   	mutex_unlock(&udphy->mutex);
+> >   	return 0;
+> > @@ -1430,12 +1473,22 @@ static void rk_udphy_orien_switch_unregister(void *data)
+> >   	struct rk_udphy *udphy = data;
+> >   
+> >   	typec_switch_unregister(udphy->sw);
+> > +	put_device(udphy->ctrl_u3);
+> >   }
+> >   
+> >   static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
+> >   {
+> > +	struct device_node *ctrl = rk_udphy_to_controller(udphy);
+> >   	struct typec_switch_desc sw_desc = { };
+> >   
+> > +	if (ctrl) {
+> > +		udphy->ctrl_u3 = bus_find_device_by_of_node(udphy->dev->bus, ctrl);
+> > +		of_node_put(ctrl);
 > > +	}
 > > +
-> > +	of_node_put(controller);
+> > +	if (!udphy->ctrl_u3)
+> > +		dev_info(udphy->dev, "couldn't find this PHY's USB3 controller\n");
 > > +
-> > +	return false;
-> > +}
-> 
-> This DT parsing is quite complex, but seems it's the only way to detect such features
-> without bindings change, not sure it's really beneficial.
-
-Yeah, v1 abused the existing connector binding by having the HS graph
-port point to the PHY instead, and Rob wasn't happy with that. He
-suggested this can actually be done just by walking the graph.
-
-FWIW, even if the PHY knew its controller, that would still only get rid
-of rockchip_usb2phy_to_controller, and leave the graph walking to get to
-the connector in place.
-
-So a bindings change would only be of measurable benefit if it added a
-phandle property in USB PHYs to the connector or something, and I'm not
-sure if that's the right solution either. It'd once again shift the
-burden of remembering to let PHYs know about their connectors onto board
-DTs, which forget such things all the time.
-
-The benefit of this solution is that board DTs don't need to think about
-this at all, and the search is unambiguous, as we really don't lack any
-information, we just lack a direct view of that information in the node
-our driver receives.
-
-> 
-> > +
-> >   static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
-> >   					  struct rockchip_usb2phy_port *rport,
-> >   					  struct device_node *child_np)
-> > @@ -1297,6 +1396,8 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+> >   	sw_desc.drvdata = udphy;
+> >   	sw_desc.fwnode = dev_fwnode(udphy->dev);
+> >   	sw_desc.set = rk_udphy_orien_sw_set;
+> > @@ -1499,6 +1552,7 @@ static int rk_udphy_probe(struct platform_device *pdev)
+> >   		return ret;
 > >   
-> >   	mutex_init(&rport->mutex);
+> >   	mutex_init(&udphy->mutex);
+> > +	atomic_set(&udphy->ctrl_resetting, 0);
+> >   	platform_set_drvdata(pdev, udphy);
 > >   
-> > +	rport->typec_vbus_det = rockchip_usb2phy_otg_is_type_c(rphy);
-> > +
-> >   	rport->mode = of_usb_get_dr_mode_by_phy(child_np, -1);
-> >   	if (rport->mode == USB_DR_MODE_HOST ||
-> >   	    rport->mode == USB_DR_MODE_UNKNOWN) {
-> > @@ -2050,6 +2151,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
-> >   		.port_cfgs	= {
-> >   			[USB2PHY_PORT_OTG] = {
-> >   				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
-> > +				.svbus_en	= { 0x0000, 15, 15, 0, 1 },
-> > +				.svbus_sel	= { 0x0000, 14, 14, 0, 1 },
-> >   				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
-> >   				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
-> >   				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
-> > @@ -2087,6 +2190,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
-> >   		.port_cfgs	= {
-> >   			[USB2PHY_PORT_OTG] = {
-> >   				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
-> > +				.svbus_en	= { 0x2000, 15, 15, 0, 1 },
-> > +				.svbus_sel	= { 0x2000, 14, 14, 0, 1 },
-> >   				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
-> >   				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
-> >   				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
+> >   	if (device_property_present(dev, "orientation-switch")) {
 > > 
 > 
-> Thanks,
-> Neil
 > 
 
-Kind regards,
-Nicolas Frattaroli
 
 
 
