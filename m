@@ -4,92 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94546C61DB2
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 11:30:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04BB9C71135
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 11:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1CxuJYWYHRn5KPXkqkquT75tuPL2m9L+FNpjIVVNCMk=; b=NuFcXjSisLL9d8saFkT77N0WoC
-	iXxwRI8DilgNXB1yLt4NRfI5w53QiqnKAXucuXjlGVoIgzw5aLl8MeGZX0iOxi3acZ/SfIZ7fhM2d
-	UAEp8YFEcdqxGTRWANeRUzcdGKFGx4eRyeKtOzwQdhUd1xPdCY+sj36Oq7aETh7E+gwj8dK321vF7
-	1rHfJsnE+OJ8xnhxDtk08dcB/BW9JH0n/2dF7utNDwpJlt1XYCux6Cpy/kokgDTiO7XxZnyAf6H11
-	ZG0id/GwcEjGN5tJA2INOZrZjrIvKaXCvdpSEETYaxG4KG3MNL6cv4usgJdFu7AMzMNqzRd8FBrxy
-	v4T1HEEg==;
+	bh=oJyw2GFQ2RikH6F2HBg6F/NICx1eCQwelPN/g1OBHmk=; b=2pTt8fyosgpFjF9LxR9FcWxGg8
+	GFJ47hMYkI73tebhX5MRQ1aZMUZaHJ6VdB8rO/0GntJihTJc4MbZ1ngItDALM3R9z5NSTd0s9GfSN
+	pf5ebPWueYn6jmeZiFy0+KtW8kS+IlQnPz4Ef7poeSriiouw0rpmlp2eUc9C16Nyc/FwpGmeKfBiK
+	wuDFlv54w3CuNFxcNbFLcdxhN34B0VwUrLCROCRvwZ2hMfrPd705wnSXQLIHv/yJU/Ehrme2O/ze9
+	4t/Fa9vyseSBtqayQey0ra/e7V5wtp45qbIGua0iL8fylh18Y3hhsNzrp7TNB2IL+m48TgFDmJ73K
+	0ZI4XXpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ2cK-0000000GAYv-1Jp7;
-	Fri, 13 Jun 2025 11:30:40 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1uQ2cL-0000000GAa7-37dT;
+	Fri, 13 Jun 2025 11:30:41 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ0Sb-0000000FsvO-3UWN
+	id 1uQ0UX-0000000FtFq-34Ws
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Jun 2025 09:12:30 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-451d3f72391so24899095e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:12:29 -0700 (PDT)
+	Fri, 13 Jun 2025 09:14:31 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-3a365a6804eso1161465f8f.3
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:14:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1749805948; x=1750410748; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1749806068; x=1750410868; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=yaEX4dDgKDNxKZX0+vcnih4XjDWoAZY8oCSw4SAHFH8=;
-        b=kHT8BeyWwrOdmHbMHetHQetzfnZgsUMvu8cNq4e9xrPivjfaaJZTnwerkgPZ8yxteG
-         UDCSw9XBSF3oB2EEUXQQAbpCKSxQi5hmPMrFsFajI1p95feZGiNE+zpcY0h7Hdzo1vju
-         ZR7yy+K1RmnDqZRZxwgJ8r7QlCfGNonUAwL3ZGB9Pm1fw9/iZigo6ftVXMbj9Rjmtdtl
-         7ZpFWozfOpE0kSmceF1wLKA/z+FfQgPFo+wJVqXsV7D+kra2GPmKpUaebQjgWBNQr1QA
-         yRioqwASDnsdiKtKZQJHbXm5RQLncYvyq6W+78S78VgZKxhCnst0w8trpWU4o0DuCbdo
-         d5rQ==
+        bh=QxfIULPvH1TVJo+Bp0irHce0KEkyksYpcZ/Cbp7r00Y=;
+        b=pRqlkw0iG2AHyR6qkvBNM8mjS7igZWVj09n/dtIgMqPYhQ0FpirmjOIHWaFdQ/m/7l
+         ihYmiBL5i8ulzSNKERG19bpIFCApAiI7wFltLB7BrXwKjwpS/d7PBq/CGep7qKSuS6N+
+         kdncGGdADlKQAsC9mpWVH3B9sfgUSMSnFU61Gadhh1Pac12PZar+xnip5FLhE5egVYoC
+         2JL1cvWvpHC2AKDOUvFyxhDUzWVwkH8bgpFNbidaVvmxuDcazAt90YhJw/FxNCAcI9t7
+         ROyKyoFkK6GULv3NO4bFBpH6HW+/Cud8MmbHz5K7uPXfS23B/oUXs2x69dlxqZObho7e
+         9i+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749805948; x=1750410748;
+        d=1e100.net; s=20230601; t=1749806068; x=1750410868;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=yaEX4dDgKDNxKZX0+vcnih4XjDWoAZY8oCSw4SAHFH8=;
-        b=MxDtgoKn9mDllN1U3lRHanNPsgKVqtHGwtrlfauGfYtNNITcNkFPUUEXcrNdQjDfBq
-         hPyQHMF/4U9WGhItFnFJR8dhCEx4eo+fucdkqThw5Mc8A9MtQTB1qyPxK6+CSo6ieTi/
-         rjeBMb60cAq6Isn2OU5vllbE3Mi/RL6YaFaE/dcW2fFI4txlGZnu9yEm8gLfmTqIN+nM
-         aBv1/yssqgbMn3sajrv1lViPAX40JJ/Mvj5lPmuFeGmyGAXpGG8k37Pkxqt+Xz0v91BQ
-         JBonX40jcV6EtlHVeytOox76fl+cuShIv8W8j9bqWtMK5Eu8LSRnoN9GWYQyIKqJO7jC
-         CgPA==
-X-Gm-Message-State: AOJu0YxR4pN/GVBYZk5BnrgZdyuQuvD+8r0GdFN89LsGAp8GATFa2MOD
-	GgfsWiZ/FjDSUfKjy8hDIo32iVW8QFKnu8uyeB7/k4rmuDWEUVFFL8TVHbu+YKxhZf4=
-X-Gm-Gg: ASbGncvHZNmgOaYN75MbJ7eQph8THuhZ6aEMflQ7kXDSE8dUkgwOM2+5Y5YShQ6H1zm
-	d1ltD7kc0Qoxx9nlUG/M4HRdJlm91Fy65nzqq5gwpNy5Kmp/MF9oQGJrYK+WCIcjAolKs8sodRH
-	dC9hkLx3M1AUdJgwx4nSjdMSHVzJmSOW7/pw+GiAxtn+MX/RGVXrkBZmtbp1rPTOmH6FPS/SIQK
-	xgib8V+onDMmnE+KvpMk+2dMxwCP+VTfqL0IfBr8k6+2plZ2QPdIUcn5WoBLlrIg2XGCIQEqqBC
-	7AttQj2K7qDby3T7vkEyG0nmgq4n3OBE7QGH+moeFEdYx0tJiIq4yhw2C/0dDlGM0q1e3iH6Sx6
-	XyjFei3RSFtyuOEqQRO5YRS0Fx5hpegv6wF+h1/BgIFFqHStv3Q==
-X-Google-Smtp-Source: AGHT+IGfNqq5N/dXfqPTy6lk5lwkJCrvfc3vLmcZOn5YDfPCKU4e2XDDXROymQQp9fqDHIQhZiR3NQ==
-X-Received: by 2002:a05:600c:34c7:b0:442:f8e7:25ef with SMTP id 5b1f17b1804b1-45334ad3f41mr21047235e9.11.1749805948257;
-        Fri, 13 Jun 2025 02:12:28 -0700 (PDT)
+        bh=QxfIULPvH1TVJo+Bp0irHce0KEkyksYpcZ/Cbp7r00Y=;
+        b=F3nLeKeJ1JapOuaYyLGeaMiY+K5wS8jdVuQ4j/IjDxr2XbDiP8CyHtOiOg6W7Btv1r
+         DEt2TfTrTMsw3OVmD93+JRRcpoez6b2a9gh3ku7NKWNv2Fcc1lCxy3N/aBoBPq49SKPt
+         mIE/oH72YPl2JKOULmPisuWPgOlRZEB2A8l9NwNbkHMjeWA3pqW+QY4/2WzCE/WqI6er
+         A6zxc/ZXenbS+sezlrfh4OYq0liYhyl19iwyfR6wzB7oqEnQMaT7f4DCZMsfoNqqzoGg
+         iyLnOKneVd6/3PAdrAyMO7eFULca5DrhCJ1tudqoNue2yc0wP9p5nhvcokTEuHGz/nYM
+         glwQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVZEHZlELDeKqt0Niiozk73hWoCkFJwYUXSXOZKqq0OQFLFtCUwsEMbYPCprY6sXu1Wf5Gk/+XxgWc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwkHt8Qcv2rHdUQ7v6L7NZTZ86i8iogiMsRhqm6VbCbn9x4WBID
+	v9y8WtEqvbYKW9JV5EITURGPpp60M8aD716PjjawHCWzzEKf7OVEVTpY2/E5cBkOItA=
+X-Gm-Gg: ASbGncsMDdTcC+euPNtxsZ5qmf1qv5W/aUaFW2AufApco8NW6+crXDK0CnJLgadlB5Z
+	KJh+PJa3ZhjNTbWIUUZH+0vSGI8NaUKmSDp3chX4n5orc5urXcbzZI2cYTLKwStHS2uAdNv+27Q
+	QKdq52RZWbULWa6laySbXg+RblgUXmuHQUmlvE3kaXLLHVXnJ775qPx1QYcv6wFOB5vV3uP3YZr
+	+9V4KnO2z7+4BGZNaZqK3DyrchiQHSH94oUpNk3x3DBKDGxTvxOXyERMye51YUFVHW8V62rKUzg
+	n+RVJmRcsIOhH3sCvyw5WK3y6MSYzgwlWlObfk+MraoEvz5qcPtoqqUvTFUoul696W4JOeDypRR
+	zJ7Xy6UGHQ+yNxbpER7rhUa5q9nIg6e98fWXVa90=
+X-Google-Smtp-Source: AGHT+IGQOFD/EY7S2QDUIKx6X5WFj8qb8/qrnjFsfEXjcL1hzrA6uPRMdM2o+qwKrI1AezZg1EjOrA==
+X-Received: by 2002:a05:6000:1445:b0:3a5:52cc:346e with SMTP id ffacd0b85a97d-3a568655fe0mr1850481f8f.6.1749806068043;
+        Fri, 13 Jun 2025 02:14:28 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae? ([2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4532e2446b0sm45162715e9.21.2025.06.13.02.12.26
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568a54a36sm1781165f8f.15.2025.06.13.02.14.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Jun 2025 02:12:27 -0700 (PDT)
-Message-ID: <9455a4e1-6352-4832-ac9f-2816f889c3a4@linaro.org>
-Date: Fri, 13 Jun 2025 11:12:26 +0200
+        Fri, 13 Jun 2025 02:14:27 -0700 (PDT)
+Message-ID: <5d624bce-a46f-4b75-b785-56def0c7f108@linaro.org>
+Date: Fri, 13 Jun 2025 11:14:26 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v3 9/9] arm64: dts: exynos: ExynosAutov920: add USB and
- USB SS combo phy nodes
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- alim.akhtar@samsung.com, andre.draszik@linaro.org, peter.griffin@linaro.org,
- kauschluss@disroot.org, ivo.ivanov.ivanov1@gmail.com,
- m.szyprowski@samsung.com, s.nawrocki@samsung.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
- dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
- selvarasu.g@samsung.com
-References: <20250613055613.866909-1-pritam.sutar@samsung.com>
- <CGME20250613055106epcas5p46a2e5e2d6f0e8811644643f6282fd9ca@epcas5p4.samsung.com>
- <20250613055613.866909-10-pritam.sutar@samsung.com>
+Subject: Re: [PATCH 1/7] dt-bindings: phy: Add document for ASPEED PCIe PHY
+To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
+ lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, joel@jms.id.au,
+ andrew@codeconstruct.com.au, vkoul@kernel.org, kishon@kernel.org,
+ linus.walleij@linaro.org, p.zabel@pengutronix.de,
+ linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
+Cc: elbadrym@google.com, romlem@google.com, anhphan@google.com,
+ wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
+References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+ <20250613033001.3153637-2-jacky_chou@aspeedtech.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +116,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250613055613.866909-10-pritam.sutar@samsung.com>
+In-Reply-To: <20250613033001.3153637-2-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_021229_887049_DF3D9FC7 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20250613_021429_795744_366F1225 
+X-CRM114-Status: GOOD (  11.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,87 +137,47 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/06/2025 07:56, Pritam Manohar Sutar wrote:
-> Update the USB 3.1 DRD controller and USB31DRD phy nodes to support
-> SS combo phy for this soc.
+On 13/06/2025 05:29, Jacky Chou wrote:
+> Add device tree binding YAML documentation for the ASPEED PCIe PHY.
+> This schema describes the required properties for the PCIe PHY node,
+> including compatible strings and register space, and provides an
+> example for reference.
 > 
-> The USB 3.1 DRD controller has the following features:
-> * DWC3 compatible
-> * compliant with both USB device 3.1 and USB device 2.0 standards
-> * compliant with USB host 3.1 and USB host 2.0 standards
-> * supports USB device 3.1 and USB device 2.0 interfaces
-> * supports USB host 3.1 and USB host 2.0 interfaces
-> * full-speed (12 Mbps) and high-speed (480 Mbps) modes with USB device
->    2.0 interface
-> * super-speed (5 Gbps) mode with USB device 3.1 Gen1 interface
-> * super-speed plus (10 Gbps) mode with USB device 3.1 Gen2 interface
-> * single USB port which can be used for USB 3.1 or USB 2.0
-> * on-chip USB PHY transceiver
-> * supports up to 16 bi-directional endpoints
-> * compliant with xHCI 1.1 specification
-> 
-> USB3.1 SSP+(10Gbps) is supported in this commit and SS phy in combo
-> phy only supports PIPE3 interface and it is added in index 0 of SS phy.
-> UTMI+ and PIPE3 PHY interfaces are specified in "phys" property,
-> UTMI+ (index 0 HS phy) and PIPE3 (index 0 SS phy).
-> 
-> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 > ---
->   .../arm64/boot/dts/exynos/exynosautov920-sadk.dts |  4 ++++
->   arch/arm64/boot/dts/exynos/exynosautov920.dtsi    | 15 +++++++++++++--
->   2 files changed, 17 insertions(+), 2 deletions(-)
+>   .../bindings/phy/aspeed-pcie-phy.yaml         | 38 +++++++++++++++++++
+>   MAINTAINERS                                   | 10 +++++
+>   2 files changed, 48 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
 > 
-> diff --git a/arch/arm64/boot/dts/exynos/exynosautov920-sadk.dts b/arch/arm64/boot/dts/exynos/exynosautov920-sadk.dts
-> index a21386bd9af3..40588f7c9998 100644
-> --- a/arch/arm64/boot/dts/exynos/exynosautov920-sadk.dts
-> +++ b/arch/arm64/boot/dts/exynos/exynosautov920-sadk.dts
-> @@ -88,6 +88,10 @@ &xtcxo {
->   };
->   
->   /* usb */
-> +&usbdrd31_ssphy {
-> +	status = "okay";
-> +};
-> +
->   &usbdrd31_hsphy {
->   	status = "okay";
->   };
-> diff --git a/arch/arm64/boot/dts/exynos/exynosautov920.dtsi b/arch/arm64/boot/dts/exynos/exynosautov920.dtsi
-> index 4efc005cae80..5ee7fad346b9 100644
-> --- a/arch/arm64/boot/dts/exynos/exynosautov920.dtsi
-> +++ b/arch/arm64/boot/dts/exynos/exynosautov920.dtsi
-> @@ -1048,6 +1048,17 @@ pinctrl_hsi1: pinctrl@16450000 {
->   			interrupts = <GIC_SPI 456 IRQ_TYPE_LEVEL_HIGH>;
->   		};
->   
-> +		usbdrd31_ssphy: phy@16480000 {
-> +			compatible = "samsung,exynosautov920-usb31drd-ssphy";
-> +			reg = <0x16480000 0x0200>;
-> +			clocks = <&cmu_hsi1 CLK_MOUT_HSI1_NOC_USER>,
-> +				 <&cmu_hsi1 CLK_MOUT_HSI1_USBDRD>;
-> +			clock-names = "phy", "ref";
-> +			#phy-cells = <1>;
-> +			samsung,pmu-syscon = <&pmu_system_controller>;
-> +			status = "disabled";
-> +		};
-> +
->   		usbdrd31_hsphy: phy@16490000 {
->   			compatible = "samsung,exynosautov920-usbdrd-hsphy";
->   			reg = <0x16490000 0x0200>;
-> @@ -1109,8 +1120,8 @@ usbdrd31_dwc3: usb@0 {
->   					 <&cmu_hsi1 CLK_MOUT_HSI1_USBDRD>;
->   				clock-names = "ref", "susp_clk";
->   				interrupts = <GIC_SPI 491 IRQ_TYPE_LEVEL_HIGH>;
-> -				phys = <&usbdrd31_hsphy 0>;
-> -				phy-names = "usb2-phy";
-> +				phys = <&usbdrd31_hsphy 0>, <&usbdrd31_ssphy 0>;
-> +				phy-names = "usb2-phy", "usb3-phy";
->   				snps,has-lpm-erratum;
->   				snps,dis_u2_susphy_quirk;
->   				snps,dis_u3_susphy_quirk;
 
-I think at least patch 6 & 9 should be squashed.
+<snip>
 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index a5a650812c16..68115443607d 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -3696,6 +3696,16 @@ S:	Maintained
+>   F:	Documentation/devicetree/bindings/media/aspeed,video-engine.yaml
+>   F:	drivers/media/platform/aspeed/
+>   
+> +ASPEED PCIE CONTROLLER DRIVER
+> +M:	Jacky Chou <jacky_chou@aspeedtech.com>
+> +L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
+> +L:	linux-pci@vger.kernel.org
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/pci/aspeed-pcie-cfg.yaml
+> +F:	Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
+> +F:	Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
+> +F:	drivers/pci/controller/pcie-aspeed.c
+> +
+>   ASUS EC HARDWARE MONITOR DRIVER
+>   M:	Eugene Shalygin <eugene.shalygin@gmail.com>
+>   L:	linux-hwmon@vger.kernel.org
+
+Please move the MAINTAINERS change in a separate patch.
+
+Thanks,
 Neil
 
 -- 
