@@ -4,91 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58BB9C71135
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 09:42:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36BB1C61DB2
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 09:42:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X7OgyG8JGaU4CHfWff90KsCtuSeBnrh6zM/sj+3q5/w=; b=hadfj++st1icS/cMS7hn5e7srG
-	P+dhKge+EtCOo+VFehH5iSq8qjtGVmYn4YZHYtML+i8fNTb7num4iX5+6++m2Td0KsFgGDFNFa1xz
-	GKzoxVkPW7wBkK0jbhm/kW5W93IiTndHhqCtzfI13jwlpABhvL2UDzC+Rih9PnDFHzFh6butokMcu
-	iS47cAfijhbgzBvLUm6cQDOY7IgiK1VAsd5+FkiE0oGgLU45psoKUyjMFkr1pxHdSER/CoMZgj/Yv
-	Xvd+oIYSDNUDDphvUZ0fZli8swhYoFlqy0BFUmqMWK4KebCm/JFtlNjFnTyjMvkE3Ckc3yNxfEv+c
-	cc8RgnDA==;
+	bh=HIztpa4x2VkRXHMYP3692kydtv/WppEXAZpxQ+CqxH0=; b=2lv6A3/1mMXztHtVqpYWT2IVVU
+	ZOVU6EfyIALQLow/aLTbO3pYB4U8TSobhHuKEN87fPKTEyAdzC6spMzVVKN8VlsI3rQ7qKu6ttaNv
+	mvwHgyDuSLXgMZ9u8zBY+IpWoUTqKelI21juHx9HMeOCcSLPAJUReY0jvm3Ls9ZVIonKEFkyfr1Ep
+	rhWo0T5Bo9/B1w8/QaRHuB+6zTHpRwbQEY2TgKcykOr+rKxTmN+jBkHFEGVPn00PWiqUnIsmjc+RP
+	iqwCTtLkfJb97rhAze28lxp91PrHaB0fvAPxGNfo7kWakj3NDMCEVuZ+tBZ2F04HSxq/pZIqqrJAc
+	cqzb5R5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ0vK-0000000FwA1-02k1;
-	Fri, 13 Jun 2025 09:42:10 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1uQ0vL-0000000FwC1-37p6;
+	Fri, 13 Jun 2025 09:42:11 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ0YG-0000000Ftcq-1qeV
+	id 1uQ0Ye-0000000Fth3-1GUr
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Jun 2025 09:18:22 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-45300c82c1cso6553015e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:18:20 -0700 (PDT)
+	Fri, 13 Jun 2025 09:18:45 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-451d54214adso15696615e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:18:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1749806299; x=1750411099; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1749806323; x=1750411123; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=EZezB8dUdKZQC1klqpxG0ZCPkOkCrr9wOd6SwONA76E=;
-        b=I6Y+ACk3WeebKfqcDR0waODGE1SjsXw1uFnx0fXH18gfD79zHXuGGsxAKX/R4I1z00
-         m9ICWYYq5Huh/ySs1FpNjxvfKKfBtJJ0ASOGL9JYVCK0Pmgm7k6CRT/CXi8lDfEcg8fA
-         cogvLVpYrk8Lg/myvFstdh6uVhhcJ7VYpxugEbtLD+vR059oYeV4Pn3lBpZWQxI5pPY+
-         xEM8TQSymJSNxFgsOyHI4k77qUCPobYe0+qL1hxyGnOKQPteEUhTms1qOJOFcj4WMro/
-         udCmf4z7vRnS9PtzvAVe7PZ+r3rrRX39I+/3Uc9SBGrrwXRV5YpqhP9g4QpOIRyh9Ydt
-         iL4A==
+        bh=rvOAxba2/00VE8ZUtElUxztZVVpqTN92ajrYDHddxwI=;
+        b=xlNTI12MUlGu7mEqTVL/oLnXVeo4efqqI5f07wLWqOtwWXtt2/zZezL6eXbWeFtUKH
+         FJUfnVX/I6zxGAfDCEryo4PjV5bgDnOOfcWrQSZn3kHPqvWUTcHtrFLFx/BFb4tPv+Z0
+         9yIrvwyHUnkqWZAJCpna54kvXApSZ+QkmhYGUpRJmiyoVUC4ZBH8Evs2ZeIkQw8+8R+L
+         ulXm1QXY5VD3qy+1fKbMpSslD//b2xYUOlyZyI2Gfv/elIYCO2bcdQjup3AYnQkZNtYm
+         nGH6v6BhAqbOc5+7ckIXPI5rL2JzvQb0GY2ztNuDJqixaQShCMCKevnGZBMhEQLCOsOi
+         lDHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749806299; x=1750411099;
+        d=1e100.net; s=20230601; t=1749806323; x=1750411123;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=EZezB8dUdKZQC1klqpxG0ZCPkOkCrr9wOd6SwONA76E=;
-        b=hLQbMF6SnMulKWP/rVPnPdGGgNkRXiAXYACrzVdlxQzsHPSc1gMXaLWa0a3FoLYNR6
-         gJ/F1AOPF0aZF1ak6Q204urM+zx1gSORKR88O6mhCEuPck3Nn0lUUVIVWLm9ijTGEyXz
-         vv1wEb9gfUI/z/2qDK7kBLmsphkuwtC27dxtdJauHSgBMMK4+mnPqOBKSEdtal/wG+O7
-         IuN+rBz3F4VYVIQ1PN2TdBTCczw3GY3MbRBLY14R9WWeEyWBJF6vLC3OOUtiyGLwK8gf
-         UhindwjuzNLJVjaU0VXFQ1sI7ah2JJroOss9aPbeM4AIrTr3BMz/M2Yzunxl69USmkZM
-         OAIA==
-X-Forwarded-Encrypted: i=1; AJvYcCUnQJDKL8H7U1EJp4/FKQXpNRgiQ336NbiuYrCgLJ0+2Skz9T6phAwVeSwRCkbxVfDkmLcJqfAi1z8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx756KCkzaOS9NFSYub0NHbkYCr6S2MgaOy0Ky7jYVMa35dIwT4
-	JVMyPhMsMV1MoWxJC3Q4NyVPobx3mvCf8+unOJWoOwzF07/+at81tkZxKutaaH0vLSo=
-X-Gm-Gg: ASbGnct1dg07fgnzr28foU1rRR8GwjgTjN0PP3uopulDoH/50FISaFcIRwbXxmqpUeT
-	2K8GR0ww8DV4BVBuMxhnn5vaFeGjLxJ1Yjto2KmYDKK9YyotTlh620db9XOIHmkwSNWFELT256y
-	WRznKCdMVI3QTkJN10QXUe3t+fB89ygPG9ftIDt2qDgWX90IkH+621y7PCuZ28Y7dl1byRwvVCX
-	FQL3Yc81gOH/F6dZaLzxAsERsqYQ5NziBA7wtcef+zHGJ6j4+kFeAQwUus4a4sRy2eNcW5K8S9A
-	b3ccIFS9TryyHxYx3rE8VUfT21rQPohJQt/CgZ4qEOo0sHsV/RXPXwanSps872kCM8a9GHHwITf
-	IiYkvU2DPBE5VfiD+8XVguzC7BhTdRFurnL25lgtGevZdjfI88Q==
-X-Google-Smtp-Source: AGHT+IEUrossJxJVwWBU+vfj+xukJOxxn0Gc50ke7zrjhbK13v9zCYmZziSm3yGa9wtgXShwZmF+uA==
-X-Received: by 2002:a05:600c:468f:b0:450:d3b9:4b96 with SMTP id 5b1f17b1804b1-45334b07460mr22803915e9.13.1749806298856;
-        Fri, 13 Jun 2025 02:18:18 -0700 (PDT)
+        bh=rvOAxba2/00VE8ZUtElUxztZVVpqTN92ajrYDHddxwI=;
+        b=alZKTa9+xX2+UqvWLEK/C+09Fs0PevQUKeGNskfPBT/yz1ZDtimiDu1c1l5sjTgJn3
+         VEBA1vt4tca80LwX2JVs6iKmwKPPgFM0FJ37sAT47gbrxqoiTfzuIHiymAg2b3cWvK+D
+         aynDTxMNx/03+qQAtnDFWrRv5t9lsJ/ZJtQ2DAEG2wqiJeMf+q1PfP67PF8JneIRl+OT
+         RbS2vQlTT/BoHW8UEZ8ME24MFiwrDh9IuOj20lEguc86wZskZRDtXmxoXQNgmU8xheMO
+         z3QG4BPrxOgbuzYU6+sCL9XM/N89roQwG+V4SLuFrcKOauRsNAxRF58qWG82pqXfBcZE
+         n5qg==
+X-Forwarded-Encrypted: i=1; AJvYcCW7M4og0DEdRND3MjxulgvupFgKlRUp6287z8nSJrYQQu5cyPLrMrl6Wf4uksW3CGCoDUsl9ZRW9jI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw8B3Y/S48eMpiLMgkVwBxoNrkm8V+VQINL1z5kGgg5vJK/bAdk
+	kzTPb3Eq+V8hWpFJSK2e6OOTyFwjWq8NyMUI2JnjwEIR4puW2cxD1mgnFLey99AF89c=
+X-Gm-Gg: ASbGnctHS+G2HjLUqlbPA1Dav/HioNxZ5YmXjvEVu523nDQVQkes6BekJ6/BbDCXbRj
+	YrMpEM7zZV1kDweYQX9hWhCzqG6wBZilJX9QlsZf9yJ/6dVFp0Mn39JrhsDycAPfWtG4e35/Y1Q
+	ZiCx4X7BaSb98UrK3NWGukV/N84lKT+321pl91JSvttJpLWGmCblPeCaYf5XwKDD4Xs/cBKj5Ut
+	qozT4pOrHX5sySHa65pLoeMxNq5jEtOcmWDVrvqRxVpN2dRs21xukhklkQ4r/uH5xc3EJDfpJSe
+	iNrCiJ0VgXVtULdQfY1TeOfDTIJHGBOlrPKMxr8Dj/I6ZY/seomnWpX/eugybonBHQX+A/uadK5
+	sTRVOPOgsfHw46AR5omU7/LUrgT0FhR+tOhQjdIA=
+X-Google-Smtp-Source: AGHT+IF88GdW/9+83jn7KWBiIwltmYkzKMHV54Iv3aLyXMYm3AtrpaFf6Fm3vYfY7PC7NerjrZzM+A==
+X-Received: by 2002:a05:600c:348a:b0:43d:172:50b1 with SMTP id 5b1f17b1804b1-45334b7a9fdmr21567635e9.29.1749806322733;
+        Fri, 13 Jun 2025 02:18:42 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae? ([2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4532063ebf6sm56506385e9.3.2025.06.13.02.18.17
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568b6debasm1768202f8f.93.2025.06.13.02.18.41
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Jun 2025 02:18:18 -0700 (PDT)
-Message-ID: <7178e816-4cb4-49b3-9a1e-1ecd4caa43ed@linaro.org>
-Date: Fri, 13 Jun 2025 11:18:17 +0200
+        Fri, 13 Jun 2025 02:18:42 -0700 (PDT)
+Message-ID: <4f30104b-aea6-4820-9b08-047297da149a@linaro.org>
+Date: Fri, 13 Jun 2025 11:18:41 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 0/7] Add ASPEED PCIe Root Complex support
-To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, joel@jms.id.au,
- andrew@codeconstruct.com.au, vkoul@kernel.org, kishon@kernel.org,
- linus.walleij@linaro.org, p.zabel@pengutronix.de,
- linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
-Cc: elbadrym@google.com, romlem@google.com, anhphan@google.com,
- wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+Subject: Re: [PATCH 2/2] phy: exynos-mipi-video: introduce support for
+ exynos7870
+To: Kaustabh Chakraborty <kauschluss@disroot.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+References: <20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org>
+ <20250612-exynos7870-mipi-phy-v1-2-3fff0b62d9d3@disroot.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -115,10 +116,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+In-Reply-To: <20250612-exynos7870-mipi-phy-v1-2-3fff0b62d9d3@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_021820_495390_3829BDD2 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20250613_021844_341600_4F06FA6E 
+X-CRM114-Status: GOOD (  15.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,58 +137,106 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/06/2025 05:29, Jacky Chou wrote:
-> This patch series adds support for the ASPEED PCIe Root Complex,
-> including device tree bindings, pinctrl support, and the PCIe host controller
-> driver. The patches introduce the necessary device tree nodes, pinmux groups,
-> and driver implementation to enable PCIe functionality on ASPEED platforms.
+On 12/06/2025 17:09, Kaustabh Chakraborty wrote:
+> Add support for Exynos7870 in the existing MIPI CSIS/DSIM driver. The
+> SoC has one DSIM phy and three CSIS phys.
 > 
-> Summary of changes:
-> - Add device tree binding documents for ASPEED PCIe PHY, PCIe Config, and PCIe RC
-> - Update MAINTAINERS for new bindings and driver
-> - Add PCIe RC node and PERST control pin to aspeed-g6 device tree
-> - Add PCIe RC PERST pin group to aspeed-g6 pinctrl
-> - Implement ASPEED PCIe Root Complex host controller driver
+> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+> ---
+>   drivers/phy/samsung/phy-exynos-mipi-video.c | 52 +++++++++++++++++++++++++++++
+>   include/linux/soc/samsung/exynos-regs-pmu.h |  5 +++
+>   2 files changed, 57 insertions(+)
 > 
-> This series has been tested on AST2600/AST2700 platforms and enables PCIe device
-> enumeration and operation.
+> diff --git a/drivers/phy/samsung/phy-exynos-mipi-video.c b/drivers/phy/samsung/phy-exynos-mipi-video.c
+> index f6756a609a9a0774ecb6e27cf96726891683636c..b184923b9b400f0d536a913bdf32f3156c0a1854 100644
+> --- a/drivers/phy/samsung/phy-exynos-mipi-video.c
+> +++ b/drivers/phy/samsung/phy-exynos-mipi-video.c
+> @@ -213,6 +213,55 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
+>   	},
+>   };
+>   
+> +static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
+> +	.num_regmaps = 3,
+> +	.regmap_names = {
+> +		"samsung,pmu-syscon",
+> +		"samsung,disp-sysreg",
+> +		"samsung,cam-sysreg"
+> +	},
+> +	.num_phys = 4,
+> +	.phys = {
+> +		{
+> +			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
+> +			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
+> +			.enable_val = EXYNOS4_PHY_ENABLE,
+> +			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
+> +			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
+> +			.resetn_val = BIT(0),
+> +			.resetn_reg = 0,
+> +			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
+> +		}, {
+> +			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
+> +			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
+> +			.enable_val = EXYNOS4_PHY_ENABLE,
+> +			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
+> +			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
+> +			.resetn_val = BIT(0),
+> +			.resetn_reg = 0,
+> +			.resetn_map = EXYNOS_MIPI_REGMAP_DISP,
+> +		}, {
+> +			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
+> +			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
+> +			.enable_val = EXYNOS4_PHY_ENABLE,
+> +			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL1,
+> +			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
+> +			.resetn_val = BIT(1),
+> +			.resetn_reg = 0,
+> +			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
+> +		}, {
+> +			/* EXYNOS_MIPI_PHY_ID_CSIS2 */
+> +			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
+> +			.enable_val = EXYNOS4_PHY_ENABLE,
+> +			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL2,
+> +			.enable_map = EXYNOS_MIPI_REGMAP_PMU,
+> +			.resetn_val = BIT(2),
+> +			.resetn_reg = 0,
+> +			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
+> +		},
+> +	},
+> +};
+> +
+>   struct exynos_mipi_video_phy {
+>   	struct regmap *regmaps[EXYNOS_MIPI_REGMAPS_NUM];
+>   	int num_phys;
+> @@ -351,6 +400,9 @@ static const struct of_device_id exynos_mipi_video_phy_of_match[] = {
+>   	}, {
+>   		.compatible = "samsung,exynos5433-mipi-video-phy",
+>   		.data = &exynos5433_mipi_phy,
+> +	}, {
+> +		.compatible = "samsung,exynos7870-mipi-video-phy",
+> +		.data = &exynos7870_mipi_phy,
+>   	},
+>   	{ /* sentinel */ },
+>   };
+> diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
+> index 1a2c0e0838f99821151661878f022f2129a0c19b..8fd59994bca76a6bf21306337f0b47ccb5a22adc 100644
+> --- a/include/linux/soc/samsung/exynos-regs-pmu.h
+> +++ b/include/linux/soc/samsung/exynos-regs-pmu.h
+> @@ -662,6 +662,11 @@
+>   #define EXYNOS5433_PAD_RETENTION_UFS_OPTION			(0x3268)
+>   #define EXYNOS5433_PAD_RETENTION_FSYSGENIO_OPTION		(0x32A8)
+>   
+> +/* For Exynos7870 */
+> +#define EXYNOS7870_MIPI_PHY_CONTROL0				(0x070c)
+> +#define EXYNOS7870_MIPI_PHY_CONTROL1				(0x0714)
+> +#define EXYNOS7870_MIPI_PHY_CONTROL2				(0x0734)
+> +
+>   /* For Tensor GS101 */
+>   /* PMU ALIVE */
+>   #define GS101_SYSIP_DAT0					(0x810)
 > 
-> Feedback and review are welcome.
 
-So it seems all PCIe RC code is bundled in a single driver and there's no
-PCIe PHY driver code, is there a reason for that ? If yes I think it should
-be described in the cover letter.
-
-Thanks,
-Neil
-
-> 
-> Jacky Chou (7):
->    dt-bindings: phy: Add document for ASPEED PCIe PHY
->    dt-bindings: pci: Add document for ASPEED PCIe Config
->    dt-bindings: pci: Add document for ASPEED PCIe RC
->    ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST ctrl pin
->    ARM: dts: aspeed-g6: Add PCIe RC node
->    pinctrl: aspeed-g6: Add PCIe RC PERST pin group
->    pci: aspeed: Add ASPEED PCIe host controller driver
-> 
->   .../bindings/pci/aspeed-pcie-cfg.yaml         |   41 +
->   .../devicetree/bindings/pci/aspeed-pcie.yaml  |  159 +++
->   .../bindings/phy/aspeed-pcie-phy.yaml         |   38 +
->   MAINTAINERS                                   |   10 +
->   .../boot/dts/aspeed/aspeed-g6-pinctrl.dtsi    |    5 +
->   arch/arm/boot/dts/aspeed/aspeed-g6.dtsi       |   53 +
->   drivers/pci/controller/Kconfig                |   13 +
->   drivers/pci/controller/Makefile               |    1 +
->   drivers/pci/controller/pcie-aspeed.c          | 1039 +++++++++++++++++
->   drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c    |   12 +-
->   10 files changed, 1370 insertions(+), 1 deletion(-)
->   create mode 100644 Documentation/devicetree/bindings/pci/aspeed-pcie-cfg.yaml
->   create mode 100644 Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
->   create mode 100644 Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
->   create mode 100644 drivers/pci/controller/pcie-aspeed.c
-> 
-
+Looks good:
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
