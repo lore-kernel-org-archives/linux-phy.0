@@ -4,110 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 384E5C71135
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 10:03:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F265C61DB2
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 10:09:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hai4jgOq5cwVVQlXUAlTGeAeCUO8jY4583rxF11kzeA=; b=f81Fq+Y51YEfNx
-	6ES7UUk+oAkXX08CGw1rp9Qo/OPsdfHGFACMDXijuQjHvY4e3LD+Aph8/EXDEWJsHvN1WcJqGClml
-	JhmTq/HbzujWgNqTd4fab56nLYdD18tWAtqAc13cVahzimYI+4k+DpHdPl7qe5NBZ5jf9LgtdsJfz
-	1AQD9A13PmPMaoJa8Cz++EDJ2n6nG2lzy18S68U+iaEEmjIKNYLXmKiBnFQicdBI8OpxwD2Q+1KqX
-	raCzitNNo4tAeYz8wIcB+aKER4dJNElPrqClafuhm6J4n7EnTbEXQSvO1nq29nPIgZYOYZBdlHitM
-	WRJo342PpDqniW+oxRWw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=bV+AK4aiprvlWSvuqofQwZoSRNLAt0TLqUIdDP2oiS0=; b=tOHOqgL8qdsYucnHnia9n4aWlL
+	N0pHd5D7rIv5HcwgyUZMvOiuJ6V3ciT22MVVTZ1HbivkzukdkJm8q/3w5y2mL4zX3Yq991LSyhrXn
+	QQw/gcfJ8ukDuYBZUiCgVahIrRxnszADlmgOWg8dh4HbGskQWBO+TsvAnPg8J8nAVwbsMlrI6Ru0V
+	gULXTcSrf6a4DyivEV8/clzXivSmMhenPOpEslut9LOpLuQaF42vVsj2gTEq3tg2DzUqfQdvlRibI
+	WNi5zafAarlYD1wutR+b9EdqZJmz++eQU291G8eZ5JOqdFmNeHcrjeFWgg5jtpRzMKriUgSnDXV78
+	yRqK4S4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ1FX-0000000G0t8-44yQ;
-	Fri, 13 Jun 2025 10:03:03 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uQ1Ls-0000000G1ye-3BqO;
+	Fri, 13 Jun 2025 10:09:36 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ17U-0000000FzSZ-2tuk;
-	Fri, 13 Jun 2025 09:54:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 790415C47E8;
-	Fri, 13 Jun 2025 09:52:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14343C4CEE3;
-	Fri, 13 Jun 2025 09:54:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749808482;
-	bh=7S40Zuc2TNAecTyadpX90VMiKscvd9zWpUm96dO61pk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=IgwWZzCduhTWWVz0Ik0YoXpB8DwGFZHsTowAQDDHQVYhQv9QRP34IURI4Hl9yCc29
-	 4FlZxQ2xGoW39/quqB0hicrkzjFGe/Iim73kY7UdEr5popAOvhGPe+hej2bdOUGzzz
-	 NCFidSOWEI6m1Yy8pRAA5+KJ5oPRZ26qrLNWEhxBte0vywQJIcqitbBfmPICZeWUtf
-	 DBbBwNtxjtxEmoJ3kTn+WjaFCpezmZplSZdZK//Zrcetp8lu6MfuITyXXmwUJ/zkIe
-	 O1VLGw+kvQJANu1osi+nLeWlr0UQZ9okqtAaCaipvC9FcpoC8G9iFHKlozVAC5vzQK
-	 AZv9VAeaeADpg==
-Message-ID: <576ca6bb-291c-458e-9703-46e7d2f43bbe@kernel.org>
-Date: Fri, 13 Jun 2025 11:54:35 +0200
+	id 1uQ0J9-0000000FpvV-2sT8
+	for linux-phy@lists.infradead.org;
+	Fri, 13 Jun 2025 09:02:45 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43cfe63c592so21924265e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 02:02:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1749805362; x=1750410162; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=6QoYHACCv/8zjy2YDzLm8y9RpQw16pLEN6YirZ9m0vY=;
+        b=MTMw8jTRpl0d7Ny9lZQVHBGLtzG847b6eBo3YCDOcknJS51jUcUnEJk8k9SAtY6MIA
+         VyFQq0Y2z/g0Ubyne/xKBy+3HfS20RPS18UxbY+8/Cm8MfTm/+xOKuUWl0S4h6/TDdBI
+         en+SPRKqoYjanDlwghRPDY/bhACD4uuywwYqm3ISQUy++M5Ib0cYcCzOQV/sTTIj7hld
+         V7RvVj4axVzygVFwKvav1NuaRlSpwxE7QIT+dHHS6qQstY+dWnzWEGYJ9J4X7aSjSrnm
+         noZOQeIi8AcQ4Ix86axCTIJibRTGAab9ukD+NlyWUeIqSWIKLfRYSkBzw1kJ0NZFCFnZ
+         Dpsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749805362; x=1750410162;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=6QoYHACCv/8zjy2YDzLm8y9RpQw16pLEN6YirZ9m0vY=;
+        b=H8PMQZ9DkLs6WrkEGDsu3Msy4cYkzozsUqFWlCp8n4OIcVnKHXp1PT65UHEcf5Nr3f
+         L3orE0Vl9jbjQ+Em2fptgPWhrsaWrAJ1hyQfQSM6OksU5BY8HBWLr2jwmMo764DnkA9J
+         QWbvyE8OS0D2FlQuKLrMJI8UOZN/6Y6UUaajzoeMEM2hwDt0bULbZsYD56SPksn+Jm6o
+         ZZNZekJQZe6fKwHlnHJDSUM7iLIauC/dWWiLC/kHlzL7mGc578UsPit0gAe4KWLctRtj
+         8phWaCVATBlcxeDlz5X9JskpaP04l9+awKfOTTbIacASXvTTYT3U+/f6qmdrUJF/n70D
+         PJLQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVXM5Lr7XTfZt9YN3GCRl+3ZMQVT9KnU3EoiF5JhF9DlL9M9S7IArgoQE86Wx9H/lUNiixzRa5x/Dk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxQPDXCegblaysxpee0SAQsIADdwVLBob48AjIkRsgq/kgcX1U7
+	4GhbejkXR9gfZeU+A/LNO7pS6Hhgf6Jrb70muwgIhTGh4CQhVtqgC7rY2GRjEFcB7Bw=
+X-Gm-Gg: ASbGncsBa7QSlfRxu8pxDpreIpQ8CFhtadNJFQzUjEQ71L3c228cEE/sSb5N0+KsTXa
+	0gAcqBbxjucqRe7uT0Wp/WFHYbaG7NTkcbn2FlmqsYDuyseF5RPeyQUg8F1MOcwMPCKCmlMyUwn
+	ikaRtx/xSHvuWZFbK9ZPkvc6BjNP6WloVLLLyMt4KCf7f41pr9ZpWnhVfVX1Pt0lLp+h/xP4ynq
+	1nJSf1GUN2kiP9ChbkrTbHd9TNUCnSzMxgl0SwJChTI7rNVWH85+N9MfqsDtVCQkEeTPdETvDsv
+	f098x23ApSKHogSjvaT3gVdcWpv/kbrOqs2f6fkz8HdkZi+p6EF8KD8BGBmPYpYBcjiqLTPUr2q
+	Ja0Sdwslv3rBGuwZWXDr+EtHTwhBZRRhP9fRkxjM=
+X-Google-Smtp-Source: AGHT+IFuqvNh8uSOWZu2UXCmd0wVJaqPH+h4LYm2IztLltELqL96IHlDFA1jJK0I4kUnynIETYIuDw==
+X-Received: by 2002:a5d:5f48:0:b0:3a5:57b7:cd7b with SMTP id ffacd0b85a97d-3a5686d7013mr1993978f8f.22.1749805361999;
+        Fri, 13 Jun 2025 02:02:41 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae? ([2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568b087b4sm1738872f8f.51.2025.06.13.02.02.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 13 Jun 2025 02:02:41 -0700 (PDT)
+Message-ID: <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
+Date: Fri, 13 Jun 2025 11:02:40 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
-To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, joel@jms.id.au,
- andrew@codeconstruct.com.au, vkoul@kernel.org, kishon@kernel.org,
- linus.walleij@linaro.org, p.zabel@pengutronix.de,
- linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
-Cc: elbadrym@google.com, romlem@google.com, anhphan@google.com,
- wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
- <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v4 1/4] phy: rockchip: inno-usb2: add soft vbusvalid
+ control
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Kever Yang <kever.yang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>
+Cc: Alexey Charkov <alchark@gmail.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
+ <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_025444_830877_F601892C 
-X-CRM114-Status: GOOD (  28.86  )
+X-CRM114-CacheID: sfid-20250613_020243_743988_F7DC55E1 
+X-CRM114-Status: GOOD (  34.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,279 +132,258 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/06/2025 05:30, Jacky Chou wrote:
-> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
-> initialization, reset, clock, IRQ domain, and MSI domain setup.
-> Implement platform-specific setup and register configuration for
-> ASPEED. And provide PCI config space read/write and INTx/MSI
-> interrupt handling.
+On 10/06/2025 16:07, Nicolas Frattaroli wrote:
+> With USB type C connectors, the vbus detect pin of the OTG controller
+> attached to it is pulled high by a USB Type C controller chip such as
+> the fusb302. This means USB enumeration on Type-C ports never works, as
+> the vbus is always seen as high.
 > 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+> Rockchip added some GRF register flags to deal with this situation. The
+> RK3576 TRM calls these "soft_vbusvalid_bvalid" (con0 bit index 15) and
+> "soft_vbusvalid_bvalid_sel" (con0 bit index 14).
+> 
+> Downstream introduces a new vendor property which tells the USB 2 PHY
+> that it's connected to a type C port, but we can do better. Since in
+> such an arrangement, we'll have an OF graph connection from the USB
+> controller to the USB connector anyway, we can walk said OF graph and
+> check the connector's compatible to determine this without adding any
+> further vendor properties.
+> 
+> Do keep in mind that the usbdp PHY driver seemingly fiddles with these
+> register fields as well, but what it does doesn't appear to be enough
+> for us to get working USB enumeration, presumably because the whole
+> vbus_attach logic needs to be adjusted as well either way.
+> 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 > ---
->  drivers/pci/controller/Kconfig       |   13 +
->  drivers/pci/controller/Makefile      |    1 +
->  drivers/pci/controller/pcie-aspeed.c | 1039 ++++++++++++++++++++++++++
->  3 files changed, 1053 insertions(+)
->  create mode 100644 drivers/pci/controller/pcie-aspeed.c
+>   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 113 +++++++++++++++++++++++++-
+>   1 file changed, 109 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
-> index 886f6f43a895..f6b5eea3b570 100644
-> --- a/drivers/pci/controller/Kconfig
-> +++ b/drivers/pci/controller/Kconfig
-> @@ -216,6 +216,19 @@ config PCIE_MT7621
->  	help
->  	  This selects a driver for the MediaTek MT7621 PCIe Controller.
->  
-> +config PCIE_ASPEED
-> +	bool "ASPEED PCIe controller"
-> +	depends on PCI
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> index b0f23690ec3002202c0f33a6988f5509622fa10e..4f89bd6568cd3a7a1d2c10e9cddda9f3bd997ed0 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> @@ -17,6 +17,7 @@
+>   #include <linux/module.h>
+>   #include <linux/mutex.h>
+>   #include <linux/of.h>
+> +#include <linux/of_graph.h>
+>   #include <linux/of_irq.h>
+>   #include <linux/phy/phy.h>
+>   #include <linux/platform_device.h>
+> @@ -114,6 +115,8 @@ struct rockchip_chg_det_reg {
+>   /**
+>    * struct rockchip_usb2phy_port_cfg - usb-phy port configuration.
+>    * @phy_sus: phy suspend register.
+> + * @svbus_en: soft vbus bvalid enable register.
+> + * @svbus_sel: soft vbus bvalid selection register.
+>    * @bvalid_det_en: vbus valid rise detection enable register.
+>    * @bvalid_det_st: vbus valid rise detection status register.
+>    * @bvalid_det_clr: vbus valid rise detection clear register.
+> @@ -140,6 +143,8 @@ struct rockchip_chg_det_reg {
+>    */
+>   struct rockchip_usb2phy_port_cfg {
+>   	struct usb2phy_reg	phy_sus;
+> +	struct usb2phy_reg	svbus_en;
+> +	struct usb2phy_reg	svbus_sel;
+>   	struct usb2phy_reg	bvalid_det_en;
+>   	struct usb2phy_reg	bvalid_det_st;
+>   	struct usb2phy_reg	bvalid_det_clr;
+> @@ -203,6 +208,7 @@ struct rockchip_usb2phy_cfg {
+>    * @event_nb: hold event notification callback.
+>    * @state: define OTG enumeration states before device reset.
+>    * @mode: the dr_mode of the controller.
+> + * @typec_vbus_det: whether to apply Type C logic to OTG vbus detection.
+>    */
+>   struct rockchip_usb2phy_port {
+>   	struct phy	*phy;
+> @@ -222,6 +228,7 @@ struct rockchip_usb2phy_port {
+>   	struct notifier_block	event_nb;
+>   	enum usb_otg_state	state;
+>   	enum usb_dr_mode	mode;
+> +	bool typec_vbus_det;
+>   };
+>   
+>   /**
+> @@ -495,6 +502,13 @@ static int rockchip_usb2phy_init(struct phy *phy)
+>   	mutex_lock(&rport->mutex);
+>   
+>   	if (rport->port_id == USB2PHY_PORT_OTG) {
+> +		if (rport->typec_vbus_det) {
+> +			if (rport->port_cfg->svbus_en.enable &&
+> +					rport->port_cfg->svbus_sel.enable) {
+> +				property_enable(rphy->grf, &rport->port_cfg->svbus_en, true);
+> +				property_enable(rphy->grf, &rport->port_cfg->svbus_sel, true);
+> +			}
+> +		}
+>   		if (rport->mode != USB_DR_MODE_HOST &&
+>   		    rport->mode != USB_DR_MODE_UNKNOWN) {
+>   			/* clear bvalid status and enable bvalid detect irq */
+> @@ -535,8 +549,7 @@ static int rockchip_usb2phy_init(struct phy *phy)
+>   			if (ret)
+>   				goto out;
+>   
+> -			schedule_delayed_work(&rport->otg_sm_work,
+> -					      OTG_SCHEDULE_DELAY * 3);
+> +			schedule_delayed_work(&rport->otg_sm_work, 0);
+>   		} else {
+>   			/* If OTG works in host only mode, do nothing. */
+>   			dev_dbg(&rport->phy->dev, "mode %d\n", rport->mode);
+> @@ -666,8 +679,17 @@ static void rockchip_usb2phy_otg_sm_work(struct work_struct *work)
+>   	unsigned long delay;
+>   	bool vbus_attach, sch_work, notify_charger;
+>   
+> -	vbus_attach = property_enabled(rphy->grf,
+> -				       &rport->port_cfg->utmi_bvalid);
+> +	if (rport->port_cfg->svbus_en.enable && rport->typec_vbus_det) {
+> +		if (property_enabled(rphy->grf, &rport->port_cfg->svbus_en) &&
+> +		    property_enabled(rphy->grf, &rport->port_cfg->svbus_sel)) {
 
-depends ARCH_ASPEED || COMPILE_TEST
+Why do you check the registers since you always enable those bits on those conditions:
+	rport->port_id == USB2PHY_PORT_OTG
+	rport->typec_vbus_det
+	rport->port_cfg->svbus_en.enable
+	rport->typec_vbus_det
+Can't you us them instead ?
 
-> +	depends on OF || COMPILE_TEST
-> +	select PCI_MSI_ARCH_FALLBACKS
-> +	help
-> +	  Enable this option to add support for the PCIe controller
-> +	  found on ASPEED SoCs.
-> +	  This driver provides initialization and management for PCIe
-> +	  Root Complex functionality, including interrupt and MSI support.
-> +	  Select Y if your platform uses an ASPEED SoC and requires PCIe
-> +	  connectivity.
+Neil
+
+> +			vbus_attach = true;
+> +		} else {
+> +			vbus_attach = false;
+> +		}
+> +	} else {
+> +		vbus_attach = property_enabled(rphy->grf,
+> +					       &rport->port_cfg->utmi_bvalid);
+> +	}
+>   
+>   	sch_work = false;
+>   	notify_charger = false;
+> @@ -1276,6 +1298,83 @@ static int rockchip_otg_event(struct notifier_block *nb,
+>   	return NOTIFY_DONE;
+>   }
+>   
+> +static const char *const rockchip_usb2phy_typec_cons[] = {
+> +	"usb-c-connector",
+> +	NULL,
+> +};
 > +
->  config PCI_HYPERV_INTERFACE
->  	tristate "Microsoft Hyper-V PCI Interface"
->  	depends on ((X86 && X86_64) || ARM64) && HYPERV && PCI_MSI
-> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
-> index 038ccbd9e3ba..1339f88e153d 100644
-> --- a/drivers/pci/controller/Makefile
-> +++ b/drivers/pci/controller/Makefile
-> @@ -39,6 +39,7 @@ obj-$(CONFIG_PCI_LOONGSON) += pci-loongson.o
->  obj-$(CONFIG_PCIE_HISI_ERR) += pcie-hisi-error.o
->  obj-$(CONFIG_PCIE_APPLE) += pcie-apple.o
->  obj-$(CONFIG_PCIE_MT7621) += pcie-mt7621.o
-> +obj-$(CONFIG_PCIE_ASPEED) += pcie-aspeed.o
->  
->  # pcie-hisi.o quirks are needed even without CONFIG_PCIE_DW
->  obj-y				+= dwc/
-> diff --git a/drivers/pci/controller/pcie-aspeed.c b/drivers/pci/controller/pcie-aspeed.c
-> new file mode 100644
-> index 000000000000..c745684a7f9b
-> --- /dev/null
-> +++ b/drivers/pci/controller/pcie-aspeed.c
-> @@ -0,0 +1,1039 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2025 Aspeed Technology Inc.
-> + */
-> +#include <linux/irqchip/chained_irq.h>
-> +#include <linux/irqdomain.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/kernel.h>
-> +#include <linux/msi.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of_platform.h>
-
-Where do you use it?
-
-> +#include <linux/of_address.h>
-
-Where do you use it?
-
-
-> +#include <linux/of_irq.h>
-
-Where do you use it?
-
-
-> +#include <linux/of_pci.h>
-
-Where do you use it?
-
-> +#include <linux/pci.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/irq.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/workqueue.h>
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +
-
-
-
-...
-
-> +
-> +static int aspeed_pcie_probe(struct platform_device *pdev)
+> +static struct device_node *rockchip_usb2phy_to_controller(struct rockchip_usb2phy *rphy)
 > +{
-> +	struct device *dev = &pdev->dev;
-> +	struct pci_host_bridge *host;
-> +	struct aspeed_pcie *pcie;
-> +	struct device_node *node = dev->of_node;
-> +	const void *md = of_device_get_match_data(dev);
-
-Not void, but specific type. This is not Javascript, we have here types.
-
-> +	int irq, ret;
+> +	struct device_node *np;
+> +	struct device_node *parent;
 > +
-> +	if (!md)
-> +		return -ENODEV;
+> +	for_each_node_with_property(np, "phys") {
+> +		struct of_phandle_iterator it;
+> +		int ret;
 > +
-> +	host = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
-> +	if (!host)
-> +		return -ENOMEM;
+> +		of_for_each_phandle(&it, ret, np, "phys", NULL, 0) {
+> +			parent = of_get_parent(it.node);
+> +			if (it.node != rphy->dev->of_node && rphy->dev->of_node != parent) {
+> +				if (parent)
+> +					of_node_put(parent);
+> +				continue;
+> +			}
 > +
-> +	pcie = pci_host_bridge_priv(host);
-> +	pcie->dev = dev;
-> +	pcie->tx_tag = 0;
-> +	platform_set_drvdata(pdev, pcie);
-> +
-> +	pcie->platform = md;
-> +	pcie->host = host;
-> +
-> +	pcie->reg = devm_platform_ioremap_resource(pdev, 0);
-> +
-> +	of_property_read_u32(node, "msi_address", &pcie->msi_address);
-> +	of_property_read_u32(node, "linux,pci-domain", &pcie->domain);
-> +
-> +	pcie->cfg = syscon_regmap_lookup_by_phandle(dev->of_node, "aspeed,pciecfg");
-> +	if (IS_ERR(pcie->cfg))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->cfg), "Failed to map pciecfg base\n");
-> +
-> +	pcie->pciephy = syscon_regmap_lookup_by_phandle(node, "aspeed,pciephy");
-> +	if (IS_ERR(pcie->pciephy))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->pciephy), "Failed to map pciephy base\n");
-> +
-> +	pcie->h2xrst = devm_reset_control_get_exclusive(dev, "h2x");
-> +	if (IS_ERR(pcie->h2xrst))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->h2xrst), "Failed to get h2x reset\n");
-> +
-> +	pcie->perst = devm_reset_control_get_exclusive(dev, "perst");
-> +	if (IS_ERR(pcie->perst))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->perst), "Failed to get perst reset\n");
-> +
-> +	ret = pcie->platform->setup(pdev);
-> +	if (ret)
-> +		goto err_setup;
-> +
-> +	host->sysdata = pcie;
-> +
-> +	ret = aspeed_pcie_init_irq_domain(pcie);
-> +	if (ret)
-> +		goto err_irq_init;
-> +
-> +	irq = platform_get_irq(pdev, 0);
-> +	if (irq < 0)
-> +		goto err_irq;
-> +
-> +	ret = devm_request_irq(dev, irq, aspeed_pcie_intr_handler, IRQF_SHARED, dev_name(dev),
-> +			       pcie);
-> +	if (ret)
-> +		goto err_irq;
-> +
-> +	pcie->clock = clk_get(dev, NULL);
-
-Huh...
-
-> +	if (IS_ERR(pcie->clock))
-> +		goto err_clk;
-> +	ret = clk_prepare_enable(pcie->clock);
-
-devm_clk_get_enabled.
-
-> +	if (ret)
-> +		goto err_clk_enable;
-> +
-> +	ret = pci_host_probe(host);
-> +	if (ret)
-> +		goto err_clk_enable;
-> +
-> +	return 0;
-> +
-> +err_clk_enable:
-> +	clk_put(pcie->clock);
-> +err_clk:
-> +err_irq:
-> +	aspeed_pcie_irq_domain_free(pcie);
-> +err_irq_init:
-> +err_setup:
-> +	return dev_err_probe(dev, ret, "Failed to setup PCIe RC\n");
-> +}
-> +
-> +static void aspeed_pcie_remove(struct platform_device *pdev)
-> +{
-> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
-> +
-> +	if (pcie->clock) {
-> +		clk_disable_unprepare(pcie->clock);
-> +		clk_put(pcie->clock);
+> +			/*
+> +			 * Either the PHY phandle we're iterating or its parent
+> +			 * matched, we don't care about which out of the two in
+> +			 * particular as we just need to know it's the right
+> +			 * USB controller for this PHY.
+> +			 */
+> +			of_node_put(it.node);
+> +			of_node_put(parent);
+> +			return np;
+> +		}
 > +	}
 > +
-> +	pci_stop_root_bus(pcie->host->bus);
-> +	pci_remove_root_bus(pcie->host->bus);
-> +	aspeed_pcie_irq_domain_free(pcie);
+> +	return NULL;
 > +}
 > +
-> +static struct aspeed_pcie_rc_platform pcie_rc_ast2600 = {
-
-This should be const. Why it cannot?
-
-> +	.setup = aspeed_ast2600_setup,
-> +	.reg_intx_en = 0x04,
-> +	.reg_intx_sts = 0x08,
-> +	.reg_msi_en = 0x20,
-> +	.reg_msi_sts = 0x28,
-> +};
+> +static bool rockchip_usb2phy_otg_is_type_c(struct rockchip_usb2phy *rphy)
+> +{
+> +	struct device_node *controller = rockchip_usb2phy_to_controller(rphy);
+> +	struct device_node *ports;
+> +	struct device_node *ep = NULL;
+> +	struct device_node *parent;
 > +
-> +static struct aspeed_pcie_rc_platform pcie_rc_ast2700 = {
-
-This should be const. Why it cannot?
-
-> +	.setup = aspeed_ast2700_setup,
-> +	.reg_intx_en = 0x40,
-> +	.reg_intx_sts = 0x48,
-> +	.reg_msi_en = 0x50,
-> +	.reg_msi_sts = 0x58,
-> +};
+> +	if (!controller)
+> +		return false;
 > +
-> +static const struct of_device_id aspeed_pcie_of_match[] = {
-> +	{ .compatible = "aspeed,ast2600-pcie", .data = &pcie_rc_ast2600 },
-> +	{ .compatible = "aspeed,ast2700-pcie", .data = &pcie_rc_ast2700 },
-> +	{}
-> +};
+> +	ports = of_get_child_by_name(controller, "ports");
+> +	if (ports) {
+> +		of_node_put(controller);
+> +		controller = ports;
+> +	}
 > +
-> +static struct platform_driver aspeed_pcie_driver = {
-> +	.driver = {
-> +		.name = "aspeed-pcie",
-> +		.suppress_bind_attrs = true,
-
-Why?
-
-> +		.of_match_table = aspeed_pcie_of_match,
-> +	},
-> +	.probe = aspeed_pcie_probe,
-> +	.remove = aspeed_pcie_remove,
-
-So how exactly remove can be triggered?
-
-> +};
+> +	for_each_of_graph_port(controller, port) {
+> +		ep = of_get_child_by_name(port, "endpoint");
+> +		if (!ep)
+> +			continue;
 > +
-> +module_platform_driver(aspeed_pcie_driver);
+> +		parent = of_graph_get_remote_port_parent(ep);
+> +		of_node_put(ep);
+> +		if (!parent)
+> +			continue;
 > +
-> +MODULE_AUTHOR("Jacky Chou <jacky_chou@aspeedtech.com>");
-> +MODULE_DESCRIPTION("ASPEED PCIe Root Complex");
-> +MODULE_LICENSE("GPL");
+> +		if (of_device_compatible_match(parent, rockchip_usb2phy_typec_cons)) {
+> +			of_node_put(parent);
+> +			of_node_put(controller);
+> +			return true;
+> +		}
+> +
+> +		of_node_put(parent);
+> +	}
+> +
+> +	of_node_put(controller);
+> +
+> +	return false;
+> +}
 
+This DT parsing is quite complex, but seems it's the only way to detect such features
+without bindings change, not sure it's really beneficial.
 
-Best regards,
-Krzysztof
+> +
+>   static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>   					  struct rockchip_usb2phy_port *rport,
+>   					  struct device_node *child_np)
+> @@ -1297,6 +1396,8 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+>   
+>   	mutex_init(&rport->mutex);
+>   
+> +	rport->typec_vbus_det = rockchip_usb2phy_otg_is_type_c(rphy);
+> +
+>   	rport->mode = of_usb_get_dr_mode_by_phy(child_np, -1);
+>   	if (rport->mode == USB_DR_MODE_HOST ||
+>   	    rport->mode == USB_DR_MODE_UNKNOWN) {
+> @@ -2050,6 +2151,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
+>   		.port_cfgs	= {
+>   			[USB2PHY_PORT_OTG] = {
+>   				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
+> +				.svbus_en	= { 0x0000, 15, 15, 0, 1 },
+> +				.svbus_sel	= { 0x0000, 14, 14, 0, 1 },
+>   				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
+>   				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
+>   				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
+> @@ -2087,6 +2190,8 @@ static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
+>   		.port_cfgs	= {
+>   			[USB2PHY_PORT_OTG] = {
+>   				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
+> +				.svbus_en	= { 0x2000, 15, 15, 0, 1 },
+> +				.svbus_sel	= { 0x2000, 14, 14, 0, 1 },
+>   				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
+>   				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
+>   				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
+> 
+
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
