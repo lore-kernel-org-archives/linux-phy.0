@@ -4,92 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 476FBC71136
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 19:04:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4DB5C71148
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 19:21:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8brIv6XGql0t0aLSIic8wuMohVE5ZwPw9Dn4UAbHXkY=; b=mQrcTD21Otgqu+
-	IiRk/moEAecafeDj/IFL6iuAdIl3Kl3koeFgD9EQkwvQwGwPXbs++PZkIha+ZKLMJodPVoC15ay0G
-	NAgMCDHS0A6ShwamNHZRmAKFjYkYqUdRk4zW6gjeA1DCm+M6s/eFkcojSVxNQVgYC/XMNS01AfZdd
-	8KGCuNTtLnW6k/60aFVRDn+RmJ8SSlbqtQnfIw2JOyU1CZHJ5mHM9G2MNKrqoXJaF8J6B3lHSLQuC
-	VrmUMkhO+YCbqd4YHIPxA3S+6A+otWFMQQE25Q90s0wzzh33F/zxR/3cLxqeZ5l2kBDSDAV8aOIHA
-	5BY5QEnIqLUIQnkkb81Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=a42tslpm4k43PN7NXfI3RB2EENKzy66Dg3PeMpyejF4=; b=cKcgvdk21s0RAf
+	cIJpre9+kN0CtLMJaLLA0jtHOmRmZ1/wiAqTWYXDCqI8XecoIzlbzdJ/sLLP3EoE3NJ5hJHYPxc+x
+	ZzbqZyXAs21yDGx+iySp+XkLRzl7TPLqFRdwn6mUVxSNLXDOcAJWt99biYPE+fa7H16YyE7yVlK/4
+	p08IMlm7mtJrlqHNOB9zr2G4/qqCt0z1ReNuHByGn1MnyTjJ1sASoWRa7mw/PzJ6Fx9dIcdm1zN0F
+	q2wle5dCun8JMwEE1LZ9VeJK+uNZJ/DfLqFMeIjwmYqbzFsTjwFDIu3NarEOiYDMrOODeb4YR5B8P
+	kpOmTD16XJVptOgUXnqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ9hE-0000000HNez-3ydo;
-	Fri, 13 Jun 2025 19:04:12 +0000
-Received: from mail-pg1-x534.google.com ([2607:f8b0:4864:20::534])
+	id 1uQ9yP-0000000HRb8-1qzU;
+	Fri, 13 Jun 2025 19:21:57 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ8n6-0000000HEIq-3grb;
-	Fri, 13 Jun 2025 18:06:13 +0000
-Received: by mail-pg1-x534.google.com with SMTP id 41be03b00d2f7-b2fca9dc5f8so1880313a12.1;
-        Fri, 13 Jun 2025 11:06:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1749837972; x=1750442772; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=xXUd6lfewKPENm5Aa8Bd/d/D/7UIBoRsbAQtScnCe8M=;
-        b=TL8SLiD6mrhtNO9f2Evs/vTwZKTGwrCL4m7eupY7h3DmNHa3g4a162xVVn7iTt1ETI
-         w4yItZMROtuDy2+6QNh3lhyZ22CE+iSwca6XwOefYPHNikjEZU2KoenQFo2QIyD8bftS
-         XBP19tDtuyWEFm8suKEWJllcg7SuT+PLy1t1OdtzkrkfZrmCdGenqNqZtYC6F6gamIAc
-         uXIQxBcE9FcbpFeTQkpRvqbSRvEKfIyCFaDDOK1jMq+4evGEn88YyLcCn5yTSpi0GRtE
-         KRHgZNMgnSRbVWcdv5xC5Iov5jEzit7zItln6Dvx3UxEflgpsj5UztW+swbDXXJ2GyGC
-         rGsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749837972; x=1750442772;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=xXUd6lfewKPENm5Aa8Bd/d/D/7UIBoRsbAQtScnCe8M=;
-        b=CkLj3hjw7qTER3JYx7AWNXwDmbOyAepPtoQ52MhHUqo+G7hMdpUahp60+Fe5LweGb5
-         B5zn3/rlNJyRYjGnnteY4ZnLUDqkp9F25mITsF7tN0QOPnG0OLWFqcio+Z1A4BSOu66m
-         ktln4DcWnmFWZlQdW4l0x8FwR3NVnMSNQ1eE+ecp1O7XPESk9blLpmBpWISlURdb3SGm
-         5leLae0R1/QCEPyIOzb6xiJfIJWhHucBnSmMHf1B5S2iV4LEegkiEs6ecTbgKrkSVp+O
-         x8zEDajLiM8wnQOhsKVA7KOPfZLCDgwsdyxG7kALwgzPbykVq/uReaoWBk7nEs0kyGpN
-         k9PA==
-X-Forwarded-Encrypted: i=1; AJvYcCWVbg5BN5yL+MwmbPii0Nv55MZQ8gDPW0tRvu3516hpK1S4c/HM1hzzd5hif0xO0d0roR0FcOdVT1WV@lists.infradead.org, AJvYcCXdHYqabom41W6n/gTC81oFovteIGnE9ye9bWdvgySDbjZQCHleOERxbDk2n3LPyw3LzhjOHECJVcdJWjJQVdtI@lists.infradead.org
-X-Gm-Message-State: AOJu0YwF23Ded0kQd0pOY7fsPVARc2UOa8AFh/RLkzSenFwy5UKGxnzT
-	9aIXrlLQy++5tIuFm9LcPtIjocV1fgCWyScrHhs7X3xjIHZ+JR2aJpJGHAoYZdGn
-X-Gm-Gg: ASbGncvNJ1UQY+m6JXxNOXQA4oUW1r+Rl1YaTtFalQOpp+vpOXmAM+YEG4bK9HliR+0
-	Fz5+fohHI7G8lJq8qlsCXtY3vOjWoHT6EB1DP7SAjjjDW3fuTvpKTKuTW0nL9WG6cI7HP1+i552
-	e8ouVCEjIgtNNEugEBiGXb1P1qhRlBfThUDecRi7bQXQ/+vxvyPfo3XrgG4nZrY/JyYVD/qvwEW
-	AtEBRVgWpQM3Suz+e/ICXb947rEDT6g2lU4L/8xt37h+2LMlkYOxcFuVTMvW5nYKtC72GTkVPnk
-	Vks6tMS2A7EQYDiAmS/t/BEQLV5Fa+cYYOfRXYjHeeXL4UyjdtrzGH7IoPx0
-X-Google-Smtp-Source: AGHT+IH2DqbuxD4MEb4wwFaAB966G/5kXTTb/l9FTKLx6klqy6VsZe3elDybbPK71Ba9qjzXcLhjZw==
-X-Received: by 2002:a05:6a21:99a8:b0:1f5:535c:82dc with SMTP id adf61e73a8af0-21fbd668c44mr392814637.42.1749837971960;
-        Fri, 13 Jun 2025 11:06:11 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:84a2::dead:c001])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b2fe1639f97sm1755775a12.6.2025.06.13.11.06.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Jun 2025 11:06:11 -0700 (PDT)
-Date: Fri, 13 Jun 2025 15:06:01 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: linux-rockchip@lists.infradead.org
-Cc: Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v5 2/4] PCI: rockchip: Set Target Link Speed before
- retraining
-Message-ID: <aExoiaPhqXPmv_Oy@geday>
-References: <cover.1749833986.git.geraldogabriel@gmail.com>
- <1966f8ddc4a81426b4f1f48c22bea9b4a6e6297c.1749833987.git.geraldogabriel@gmail.com>
+	id 1uQ9xu-0000000HRPR-1cXs
+	for linux-phy@lists.infradead.org;
+	Fri, 13 Jun 2025 19:21:26 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id C5FB46116E;
+	Fri, 13 Jun 2025 19:21:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4399DC4CEE3;
+	Fri, 13 Jun 2025 19:21:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1749842485;
+	bh=Gpe+Xbaqg839eoHxEGGg3ncn8LwqWk899z282q/Ecfo=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=N8odkKdlYSl4cN22e5vZqUj6R+UMjpqE4NdHCBDHaho4VaSwQS3lsfEEa0T4SVBU0
+	 Tce66UH+sQiDvZl+zfL+yBF2suQIHwWyLdbMJNcC41VgUCX87JLDfdQtKUHiAdOIk9
+	 RMHHkCyyC1umn/UwNNz7Yl7IpKjKC4rwSpNZd1tQtPp6ToCfFOJYxG4/zKSUSUTYqq
+	 FRWyEE/NjOn50qCbIasBn4C54bpT51DEm8mESUQxvJk7LIQJbdmb6GSowMaIMlAgxc
+	 OmtTku36FPRwM/67sNu1tH/K+Y9zA0JzY644gDJmF7pZq58vjUonybnlCGVRMTaLdd
+	 dtF/6Csw2b8rg==
+Date: Fri, 13 Jun 2025 14:21:24 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, dmitry.baryshkov@linaro.org,
+	manivannan.sadhasivam@linaro.org, neil.armstrong@linaro.org,
+	abel.vesa@linaro.org, kw@linux.com, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v2 1/2] PCI: qcom: Add equalization settings for 8.0 GT/s
+Message-ID: <20250613192124.GA970861@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1966f8ddc4a81426b4f1f48c22bea9b4a6e6297c.1749833987.git.geraldogabriel@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_110612_916959_73876F90 
-X-CRM114-Status: GOOD (  15.98  )
+In-Reply-To: <20250611100319.464803-2-quic_ziyuzhan@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,45 +77,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 13, 2025 at 02:03:50PM -0300, Geraldo Nascimento wrote:
-> Current code may fail Gen2 retraining if Target Link Speed
-> is set to 2.5 GT/s in Link Control and Status Register 2.
-> Set it to 5.0 GT/s accordingly.
-> 
-> Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
-> ---
->  drivers/pci/controller/pcie-rockchip-host.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> index 8489d51e01ca..467e3fc377f7 100644
-> --- a/drivers/pci/controller/pcie-rockchip-host.c
-> +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> @@ -341,6 +341,10 @@ static int rockchip_pcie_host_init_port(struct rockchip_pcie *rockchip)
->  		 * Enable retrain for gen2. This should be configured only after
->  		 * gen1 finished.
->  		 */
-> +		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL2);
-> +		status &= ~PCI_EXP_LNKCTL2_TLS;
-> +		status |= PCI_EXP_LNKCTL2_TLS_5_0GT;
-> +		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL2);
->  		rockchip_pcie_write(rockchip, status, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL2);
+On Wed, Jun 11, 2025 at 06:03:18PM +0800, Ziyue Zhang wrote:
+> Adding lane equalization setting for 8.0 GT/s to enhance link stability
+> and fix AER correctable errors reported on some platforms (eg. SA8775P).
 
-Hi,
+s/Adding/Add/
 
-I see rockchip_pcie_write() was added twice, in this patch and also in
-1/4.
+s/fix AER correctable errors/avoid AER Correctable Errors/
+so we know that (a) this avoids the errors (it's not some kind of
+recovery), and (b) readers know that "Correctable Error" is something
+that can be looked up in a spec.
 
-I'll send v6 with correction after I get some reviews.
+> 8.0 GT/s and 16.0GT/s require the same equalization setting. This setting
+> is programmed into a group of shadow registers, which can be switched to
+> configure equalization for different GEN speeds by writing 00b, 01b
+> to `RATE_SHADOW_SEL`.
 
-Thank you,
-Geraldo Nascimento
+s|16.0GT/s|16.0 GT/s| to match "8.0 GT/s"
 
->  		status = rockchip_pcie_read(rockchip, PCIE_RC_CONFIG_CR + PCI_EXP_LNKCTL);
->  		status |= PCI_EXP_LNKCTL_RL;
-> -- 
-> 2.49.0
-> 
+s/different GEN speeds/different speeds/ (PCIe spec rev ("GEN") is not
+a one-to-one mapping to speeds)
+
+> @@ -18,33 +20,43 @@ void qcom_pcie_common_set_16gt_equalization(struct dw_pcie *pci)
+>  	 * GEN3_EQ_*. The RATE_SHADOW_SEL bit field of GEN3_RELATED_OFF
+>  	 * determines the data rate for which these equalization settings are
+>  	 * applied.
+> +	 *
+> +	 * TODO:
+> +	 * EQ settings need to be added for 32.0 T/s in future
+
+Drop this comment since it's not an indication of a problem in this
+patch.  The list of possible future work is infinite, and you can keep
+track of a TODO list internally.
+
+>  	 */
+> -	reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
+> -	reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
+> -	reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
+> -	reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
+> -			  GEN3_RELATED_OFF_RATE_SHADOW_SEL_16_0GT);
+> -	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
+> +	if (pcie_link_speed[pci->max_link_speed] < PCIE_SPEED_32_0GT)
+> +		max_speed = pcie_link_speed[pci->max_link_speed];
+> +	else
+> +		dev_warn(dev, "The target supports 32.0 GT/s, but the EQ setting for 32.0 GT/s is not configured.\n");
+
+Drop period at end of message.
+
+> -	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
+> -	reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
+> -		GEN3_EQ_FMDC_N_EVALS |
+> -		GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
+> -		GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
+> -	reg |= FIELD_PREP(GEN3_EQ_FMDC_T_MIN_PHASE23, 0x1) |
+> -		FIELD_PREP(GEN3_EQ_FMDC_N_EVALS, 0xd) |
+> -		FIELD_PREP(GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA, 0x5) |
+> -		FIELD_PREP(GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA, 0x5);
+> -	dw_pcie_writel_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF, reg);
+> +	for (speed = PCIE_SPEED_8_0GT; speed <= max_speed; ++speed) {
+> +		reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
+> +		reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
+> +		reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
+> +		reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
+> +			  speed - PCIE_SPEED_8_0GT);
+> +		dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
+>  
+> -	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
+> -	reg &= ~(GEN3_EQ_CONTROL_OFF_FB_MODE |
+> -		GEN3_EQ_CONTROL_OFF_PHASE23_EXIT_MODE |
+> -		GEN3_EQ_CONTROL_OFF_FOM_INC_INITIAL_EVAL |
+> -		GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC);
+> -	dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, reg);
+> +		reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
+> +		reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
+> +			GEN3_EQ_FMDC_N_EVALS |
+> +			GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
+> +			GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
+
+Is "CUSROR" a typo for "CURSOR", or is "CUSROR" a real thing?  (Either
+way, it's not something you added, so not a problem with this patch.)
+
+Bjorn
 
 -- 
 linux-phy mailing list
