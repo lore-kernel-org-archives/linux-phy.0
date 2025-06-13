@@ -4,57 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10A23C61DB2
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 04:39:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14C03C61DB2
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 05:20:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uavJ3g5Ez6lcwmShCkOMpOzR7orz1r8tGCrwdwiQToY=; b=zyg5csnM5r9R0W
-	7gLSBLG9fZnJaFIMcdtUoVb7gQWic8uW5vyw/HaNonxluZ2/K4msJea/5dueLP2rCeCZ4Nm+jsKhm
-	LqQ/+gyUbH1Ao2e7rGOxO8uq4exMqjdwq3BejonbVAvGAk7uYEyHtUC2Kbt2Z3QiupV094nuLaXjH
-	cUQXjlEl79kacRABdWtu61KovxWN9oOPzM+3/DoFqn8pP58agk6UsTu7itXbrf1YorkuqahU3hnVE
-	riZGSEyBADQtGEMWOU5c75eRu06HrFHN02XgPhFtDafogJJljG74eq2h2dAHuDTUsMD3LZ/5tj+tk
-	zajqxydI7tz2t8gTDRUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u5cRjB95BbObumze8Ccnsz6eHfEKAqOIx3QkYhzQcPo=; b=3J0AHJ23aQf95i
+	ZYkWqxByu+zXpMR0s5FpP1jnWv0Ef/krGn/dO3KFnBzULOiRhESJXWcHlO/iRwFEYWsEhNYVZXUe3
+	BFOyqN2SoSG877IGKjH8OOKGSsXeqlcaQP7PYMF0bmtZhfC0kjpu+e3YWzS8nVtVrNlyD6lEx3SCH
+	YsG22ITLi+xc8nDSJzX/kOVAfjNnFb37d1zI4wIBf839ZtQUUneDrKbZZu2IAFwCrHS8u5152k3JZ
+	k49LeUjwSLSKpGzND31gSjPaPJNWact8iccT0+SZspqxvqfAv4HKadjrqpHN3QLW/NCALTlRDt/1X
+	kvDEQEU6IcobATpNwjJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPwCR-0000000FJXv-2Tj3;
-	Fri, 13 Jun 2025 04:39:31 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
+	id 1uPwpj-0000000FMV7-2eqx;
+	Fri, 13 Jun 2025 05:20:07 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPv7S-0000000FEOC-3bjC;
-	Fri, 13 Jun 2025 03:30:20 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Fri, 13 Jun
- 2025 11:30:02 +0800
-Received: from mail.aspeedtech.com (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Fri, 13 Jun 2025 11:30:02 +0800
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kwilczynski@kernel.org>,
-	<mani@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <joel@jms.id.au>, <andrew@codeconstruct.com.au>,
-	<vkoul@kernel.org>, <kishon@kernel.org>, <linus.walleij@linaro.org>,
-	<p.zabel@pengutronix.de>, <linux-aspeed@lists.ozlabs.org>,
-	<linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <openbmc@lists.ozlabs.org>,
-	<linux-gpio@vger.kernel.org>
-CC: <elbadrym@google.com>, <romlem@google.com>, <anhphan@google.com>,
-	<wak@google.com>, <yuxiaozhang@google.com>, <BMC-SW@aspeedtech.com>
-Subject: [PATCH 1/7] dt-bindings: phy: Add document for ASPEED PCIe PHY
-Date: Fri, 13 Jun 2025 11:29:55 +0800
-Message-ID: <20250613033001.3153637-2-jacky_chou@aspeedtech.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+	id 1uPwpg-0000000FMU3-1YmU;
+	Fri, 13 Jun 2025 05:20:05 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id d2e1a72fcca58-748582445cfso1131450b3a.2;
+        Thu, 12 Jun 2025 22:20:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749792003; x=1750396803; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=k8J3QiOw9YA5BRvHLHJu/HycsZALO2W/PjHSUFrfbe4=;
+        b=YduwfcsjEmAj0MAtXyMoc7IBLZvTfqGbZBqo7xmKQPVpRctC5Zvs6d68Xq0nsjKdNv
+         6lfAzTtwJvHL0Jwxo6pOt2f2vFeDJdFRplqJ16Oj06xiO2v8YFA30NEmfoFT2X0QPhAi
+         Py8uUn+TsJFEys2tFOBw5r8YKbtK/oxTRCVp54H26xI5bVE5RvrFXBIquICcLWAI0Ot7
+         qaGw3WixVqR3sEupkQAyOhL1hDMjsaUMcDA+i9v0u9c8noyt4IcGnN5+nCw3tAIN0pSl
+         J1OpSnoPxe0w2W6sMfHBI8SL0ERbWQxClxgwo0V7h57eWYoxpN48z5utHhmK5HgZ1Rnk
+         Ok0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749792003; x=1750396803;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=k8J3QiOw9YA5BRvHLHJu/HycsZALO2W/PjHSUFrfbe4=;
+        b=kai+0ipiXTNJPoIkvmCdCXyll+/dMIOpssyUUA5TVhGhXPWYCIZ70tD/yPajawsZm3
+         jPJmaf3Xfni+V69R+B5oWjwNUVZiKwfXZmt7kalw7e0+HG5Jb004S0O205TK1Ti67Gp4
+         n0p65YP77uXrwdpzMeGSRrFD3u/zdQiBX2NjIidxlIVMeZ7lyKOCwws06gAlpjB0laI2
+         eYl0sviHsICokekBis+lLiRILNvj2VgGmQ7iGZSWmirXl+h9XvN15pcc9jpoufVrWTjD
+         O65/p6l1XQHOlpOdKEAQYhe1nH3hZYMlSeSznzbylAV2LfSpU0gIO5F8j9Q+du2vCg2I
+         c8NA==
+X-Forwarded-Encrypted: i=1; AJvYcCUycfv72n+7A7FHoIubDambNOS3jJ7Gv4+rG6284zb4ziF7TIIu3pmcqhH2IRI8s5HVxEo7dlP07gAc@lists.infradead.org, AJvYcCWXZVqg7ek3dj3hVPWxqFFR+VulHN3fIJiEv5k/MA+SgPZn359W2+/e8zzb9Iy3VlmXfTmAbX/6QeH0Xupczhvs@lists.infradead.org
+X-Gm-Message-State: AOJu0YzvRDargJcZWJRjIAAkkb9cEyy0tQRdEOXnVq7TJBY+eadEJ5sl
+	uqsgjfWRCDdfIliK1keCgtKdTCDXDGQqyVqCH1rT+bwU4+HK9VTakksuO+WV+1WP
+X-Gm-Gg: ASbGncvUoR2bXszp1iF8/b/YBw8Iqs+iLhM/yVFXKku7ygAaa26Jw6JoEomtHfRK2LW
+	E/aLd0NFEEjcCysNq3dPv4EtlxcGouw0nJ/1BnZpcRnvlu6qdg00581eQtaiob2/QA85XRIPnxS
+	UcQaM3R13M4OTuI2JzTBoBnJ3eKDugYyq1xKZlrpwsx4t9rbT72nPZvOrrnmQ1wQ71TM3cIjeck
+	c44jwKP964smMC4/cCAxUqo4p8/KMdo78mBEUs6WtUEfqW/pXnmC5uBi3Mqc9stWwIkeElXlyAy
+	7Hvzl2oyI52+3TT2SQOHSyqPfz47sWrNKR7OlHnxGEiDkdin8XNHVFAa0FrG
+X-Google-Smtp-Source: AGHT+IHcBqV07orbqmglXVR0EDk2W9hXsnO11JVIlP10U4fClURVXyuO/Hy1R8naKjKmYWjFRCjmfQ==
+X-Received: by 2002:a05:6a00:2342:b0:742:4545:2d2b with SMTP id d2e1a72fcca58-7488f6ec975mr2504576b3a.3.1749792003042;
+        Thu, 12 Jun 2025 22:20:03 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:7667::dead:c001])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7488ffec9e8sm735318b3a.11.2025.06.12.22.19.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Jun 2025 22:20:02 -0700 (PDT)
+Date: Fri, 13 Jun 2025 02:19:52 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: linux-rockchip@lists.infradead.org
+Cc: Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [RFC PATCH v3 0/5] Quality Improvements for Rockchip-IP PCIe
+Message-ID: <cover.1749791474.git.geraldogabriel@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250612_203018_900437_C8629340 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20250612_222004_415272_E2000FDD 
+X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,85 +101,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add device tree binding YAML documentation for the ASPEED PCIe PHY.
-This schema describes the required properties for the PCIe PHY node,
-including compatible strings and register space, and provides an
-example for reference.
+During a 30-day debugging-run fighting quirky PCIe devices on RK3399
+some quality improvements began to take form and this is my attempt
+at upstreaming it. It will ensure maximum chance of retraining to Gen2
+5.0GT/s, on all four lanes and plus if anybody is debugging the PHY
+they'll now get real values from TEST_I[3:0] for every TEST_ADDR[4:0]
+without risk of locking up kernel like with present broken async
+strobe TEST_WRITE.
 
-Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 ---
- .../bindings/phy/aspeed-pcie-phy.yaml         | 38 +++++++++++++++++++
- MAINTAINERS                                   | 10 +++++
- 2 files changed, 48 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
+V2 -> V3: correctly clean-up with standard PCIe defines as per Bjorn's
+suggestion
+V1 -> V2: use standard PCIe defines as suggested by Bjorn
 
-diff --git a/Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
-new file mode 100644
-index 000000000000..762bf7b0aedc
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
-@@ -0,0 +1,38 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/aspeed-pcie-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: ASPEED PCIe PHY
-+
-+maintainers:
-+  - Jacky Chou <jacky_chou@aspeedtech.com>
-+
-+description: |
-+  The ASPEED PCIe PHY provides the physical layer interface for PCIe
-+  controllers in the SoC. This node represents the register block for the PCIe
-+  PHY, which is typically accessed by PCIe Root Complex or Endpoint drivers
-+  via syscon.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - aspeed,ast2600-pcie-phy
-+      - aspeed,ast2700-pcie-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    pcie-phy@1e6ed200 {
-+      compatible = "aspeed,ast2600-pcie-phy";
-+      reg = <0x1e6ed200 0x100>;
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index a5a650812c16..68115443607d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3696,6 +3696,16 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/media/aspeed,video-engine.yaml
- F:	drivers/media/platform/aspeed/
- 
-+ASPEED PCIE CONTROLLER DRIVER
-+M:	Jacky Chou <jacky_chou@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-pci@vger.kernel.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/pci/aspeed-pcie-cfg.yaml
-+F:	Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
-+F:	Documentation/devicetree/bindings/phy/aspeed-pcie-phy.yaml
-+F:	drivers/pci/controller/pcie-aspeed.c
-+
- ASUS EC HARDWARE MONITOR DRIVER
- M:	Eugene Shalygin <eugene.shalygin@gmail.com>
- L:	linux-hwmon@vger.kernel.org
+Geraldo Nascimento (5):
+  PCI: rockchip-host: Use standard PCIe defines
+  PCI: rockchip: Drop unused custom registers and bitfields
+  PCI: rockchip-host: Set Target Link Speed before retraining
+  phy: rockchip-pcie: Enable all four lanes
+  phy: rockchip-pcie: Adjust read mask and write
+
+ drivers/pci/controller/pcie-rockchip-host.c | 48 +++++++++++----------
+ drivers/pci/controller/pcie-rockchip.h      | 11 +----
+ drivers/phy/rockchip/phy-rockchip-pcie.c    | 16 ++++---
+ 3 files changed, 36 insertions(+), 39 deletions(-)
+
 -- 
-2.43.0
+2.49.0
 
 
 -- 
