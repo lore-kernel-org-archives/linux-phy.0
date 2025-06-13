@@ -4,123 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FFF9C61DB2
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 08:54:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6AD1C71135
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 08:54:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FW0J1F7EgaaR6k/qEGyU9gGlGoDzQcejEX/XC7LCnsU=; b=0/ZbSKhaBAVeY2RiwnJJFznHHV
-	/fOuBxWiQbWtpnLx2PlHUmv7dGf+XgYNH+mBHv1bPgRrQnIFtUBKFCMCmDTRkcRS5xx59iILihFRL
-	6pCQUj2fxCDjt9DUnHnYjOFVyCqQqy6BGsgCqpVbmOWS0OkdFG8RzCJRp7AiDrU+Tz6YorCvCFYfJ
-	DiBN5L0qLT3ywEDwno85M/nbxMKD0Dax4L7paXszF4SBYTy03MnCHu9B2lBkwsaUCxsL6sYjgMYLK
-	79Cltu9iPSGJUvm9Mph0CbRIhCDbmXOdhvcNOq5V1NVoIKw7m25F/TRwfIoBzfbNHuSr8/9Rql2Vy
-	09HS4XYA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AGEXXKRhpbj0ysmcvpv26mJXwDhZq8adyIYqZy+eP8Q=; b=BBio94TPZ0Le8F
+	PZui+dHmBbQCS/xWrL+sVvETY9jSYroV93Meyq5QyjzXU4eYAWluLQdqZLtmQdwfaBnjJ11feak2q
+	yirNMmB+ocl+qG32Q6Df07Wgs1pjgbWXXotszjZUVjYTF/Dju3hDYmFroVDQII1DXC3CVfyIbd1pu
+	tdWCo6Sr2XaoWPm0Bl4rmWXqoGqY08jkLoFqJ+kDK2Yys4maSb2WaZhTT+IAWKcSeqQZLuYfP2AgE
+	drxAbTCMEDNkqHvSW7qm5rOxMRhDtBdVaN9HUkcTaXGFuhu8H/zH9LqB3icblvD9GQZDJmvbPREJP
+	AvLsONQ0yyQ0MBjqhN3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ0Ah-0000000Foyi-3OIO;
-	Fri, 13 Jun 2025 08:53:59 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1uQ0Aj-0000000Fozw-1w35;
+	Fri, 13 Jun 2025 08:54:01 +0000
+Received: from mgamail.intel.com ([198.175.65.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ08P-0000000FoWc-1dzB
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Jun 2025 08:51:39 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-450dd065828so14839375e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 13 Jun 2025 01:51:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1749804695; x=1750409495; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=4i/uycGc9IMJTkT+aPn3NiUgZauSdlLEx0uEl81rWwk=;
-        b=Ic3Ud6i1jJL0fK0Tvbn/Su7hJCJ0AbVYYFWHk2lCshAkntiGq8mVJeiKxXgOwQbDEp
-         ACt6ExCyYU2Me2AL1YyjNMABHwdt3IqZwel/VjvNk/v7VUH6Di9NsD1qWlM274WjsKde
-         lBf6jro+bxSoEWXisLsHuKEaCq8gTBPkFBav9vkbiComqG/CuV7UX2KUh8VIbAr9KSLK
-         X2Ykh8Mlevvi+sFxGqKndLKvPynya+jNFPAK0CaeAENSR/AyGL+sXl/FBQYmfMJI/xFJ
-         SnPT+lDeGfcHn79SPWxfxOA4N88Op95kOoGZD/VCaKU4tP8TxI+s37ii2KkGBBUurk9t
-         2CAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1749804695; x=1750409495;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=4i/uycGc9IMJTkT+aPn3NiUgZauSdlLEx0uEl81rWwk=;
-        b=awcWfq4paYKcOTZ6xWtnbyXWK/Fk9WH32u/tRkt5qn+7QKpAfgb35Sczy4GXg4oZT2
-         MVjEB5FfDDozwTaGVDXMON4Hst+T3QwYsqz258x/keHC8iqt3Vq2AB/twnkynDjfdPtz
-         EHGN+JWYUWx9MnWEQtU52iEvFgvRUzbqtx6XoxmHH7J672QSSoK1hRUSK4d2eGP1uCzd
-         34FNk+j2rTl2clCDA/f+ogUdJTN7tayse4N8NwzuFbACaTw1Ao0UkTiZb9+1KVJc1LvB
-         fr4WS+3JwsD2rd1IPeaeJpjN1FQQQmYgyBB4+nvOfnnoex3IL6LbWN2XFt9STPINiV2p
-         6MBQ==
-X-Forwarded-Encrypted: i=1; AJvYcCViv2euBrOXFGk06n58JMbYZc2VsOyP5tvsl8Cu+q9DdGdd7F04ty7w+K5yvuCnGCxgh10W1Vi35IQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywp+jCJBoP9Z9MT1nrpeWSfV83H07Tq3loWRJzU3y+2Vxf8L8ZQ
-	Bnp/tfYMbZeD7z4XgvHc/tl9Pz33vRLEQhYG3MqRjTk3kb2/9TOX1spTHVQniaviKLs=
-X-Gm-Gg: ASbGncvElDwVKLzEF4YHWTqk9PGAU+DpyZSBRbof6Da3a4fi+kfHMIvothrLif/rokm
-	Zng4RcMNmEsGT3ZRqmwsWUopM4a74jQJuWU35prSdewMPv5mCQQ7lw9CMpdhaRc6bDF6xdX6dK+
-	1eQrNZTPLXJFA5sUgDI+Aa4D5zl+Mw0lahJghyiGL9WBQMFAygp94IJI9RYOipmaYL1w8iCNTAG
-	9h5jkIp1paQtl1+vqZ675mUlztsQU3YeIayRl2XLfXxWERG4jvYOGI43YAn27HMT1GHTvbxcuHh
-	dHrXzlThmEqzjvDDyQQ+aP1SFrHDId8ZxI7DPWeL7pwjth+PLDPsEkGBf2Qnh5SFWTn4RdV6KHP
-	dd4YwYkqTjaAxuWsHN0h0ncpFkk1Id2tWUitA2zY=
-X-Google-Smtp-Source: AGHT+IEUAqqXCa6QukFfprZqmstdAPX/2X+IrxwAqf6HoHLLDv2NyKBWx+d7mBvUd0+CFYb9GJHC/Q==
-X-Received: by 2002:a05:6000:4313:b0:3a4:dc2a:924e with SMTP id ffacd0b85a97d-3a5686e4794mr1735144f8f.6.1749804694922;
-        Fri, 13 Jun 2025 01:51:34 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae? ([2a01:e0a:3d9:2080:4144:6a84:fe1d:3aae])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568a54a63sm1721189f8f.11.2025.06.13.01.51.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Jun 2025 01:51:34 -0700 (PDT)
-Message-ID: <e0ce89fd-456d-4ef2-bf8a-0ea0f1e646ef@linaro.org>
-Date: Fri, 13 Jun 2025 10:51:33 +0200
+	id 1uQ08S-0000000FoYF-21Ea;
+	Fri, 13 Jun 2025 08:51:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1749804700; x=1781340700;
+  h=from:to:cc:subject:in-reply-to:references:date:
+   message-id:mime-version;
+  bh=4dvU2gjTBAobluxvnHDFcItktqR+5ChasN0aGjgKaKI=;
+  b=JDwmCjL7h765qAo1Y/8XgZFufTHuz6y4SJwNaIjvxyMelImqJY9a2vVR
+   IkjM3rz/YOI2ygi6Kbk9q3wzbbTU9ilGFFdu6IeTrSQX0Wmkuah7WamNO
+   QmtZ/LRlzuLbpywXYtphkUCsV3eUXospWGmR6qhhNXLmPjwVG9Aq8j2fC
+   3rvmPIJuUu+IbeL6BGS8sEYuZdkBI/t4BmRY59z6KDqzeRDDtumNKat1z
+   pYWpGeDxEJXOQlxwmV7zX0OtCdKACIjA2DFV4m1v/2YREkCwIbss2NWw/
+   vrJSyCPke5F9Cqd7f2P+uTTUsMMJoD+eEKBeEvxa2j0Hdt+EP0fIoQ66f
+   A==;
+X-CSE-ConnectionGUID: nhZVW/deQVWz1FI/QF+yeg==
+X-CSE-MsgGUID: dP8Ze4uDSROlBiCezNA2HQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11462"; a="74547608"
+X-IronPort-AV: E=Sophos;i="6.16,233,1744095600"; 
+   d="scan'208";a="74547608"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Jun 2025 01:51:37 -0700
+X-CSE-ConnectionGUID: agVmFPqcQfiQWHXPtV8Rmw==
+X-CSE-MsgGUID: gWFTP0HTRC2RODcDIuxKFQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,233,1744095600"; 
+   d="scan'208";a="147619241"
+Received: from fdefranc-mobl3.ger.corp.intel.com (HELO localhost) ([10.245.246.26])
+  by orviesa006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Jun 2025 01:51:19 -0700
+From: Jani Nikula <jani.nikula@linux.intel.com>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Yury Norov
+ <yury.norov@gmail.com>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, Shreeya Patel
+ <shreeya.patel@collabora.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
+ <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, David
+ Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Nicolas
+ Frattaroli <frattaroli.nicolas@gmail.com>, Liam Girdwood
+ <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Jaroslav Kysela
+ <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Andrew Lunn
+ <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo
+ Abeni <pabeni@redhat.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, Shawn Lin
+ <shawn.lin@rock-chips.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Manivannan
+ Sadhasivam
+ <mani@kernel.org>, Rob Herring <robh@kernel.org>, Bjorn Helgaas
+ <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham
+ <myungjoo.ham@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>, Qin
+ Jian <qinjian@cqplus1.com>, Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>,
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, Bill Wendling
+ <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev,
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Tvrtko Ursulin
+ <tursulin@igalia.com>
+Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
+In-Reply-To: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+ <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+Date: Fri, 13 Jun 2025 11:51:15 +0300
+Message-ID: <5493fd6017de3f393f632125fad95945d1c4294c@intel.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH v4 2/4] phy: rockchip: usbdp: move orientation handling
- further down
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kever Yang <kever.yang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>
-Cc: Alexey Charkov <alchark@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
- <20250610-rk3576-sige5-usb-v4-2-7e7f779619c1@collabora.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250610-rk3576-sige5-usb-v4-2-7e7f779619c1@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_015137_424836_E57CC980 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20250613_015140_575748_612011E0 
+X-CRM114-Status: GOOD (  27.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,145 +112,130 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/06/2025 16:07, Nicolas Frattaroli wrote:
-> The orientation handling code isn't referenced until very far down the
-> driver code.
-> 
-> Move it down some ways so it can later reference other driver functions
-> without needing forward declarations.
-> 
+On Thu, 12 Jun 2025, Nicolas Frattaroli <nicolas.frattaroli@collabora.com> wrote:
+> Hardware of various vendors, but very notably Rockchip, often uses
+> 32-bit registers where the upper 16-bit half of the register is a
+> write-enable mask for the lower half.
+>
+> This type of hardware setup allows for more granular concurrent register
+> write access.
+>
+> Over the years, many drivers have hand-rolled their own version of this
+> macro, usually without any checks, often called something like
+> HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
+> semantics between them.
+>
+> Clearly there is a demand for such a macro, and thus the demand should
+> be satisfied in a common header file.
+>
+> Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
+> version that can be used in initializers, like FIELD_PREP_CONST. The
+> macro names are chosen to not clash with any potential other macros that
+> drivers may already have implemented themselves, while retaining a
+> familiar name.
+>
 > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-usbdp.c | 100 +++++++++++++++---------------
->   1 file changed, 50 insertions(+), 50 deletions(-)
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> index c066cc0a7b4f10fc3cd8779323c369360893520d..fff54900feea601c8fe6bf4c7123dfebc5661a15 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -651,56 +651,6 @@ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
->   	udphy->mode = UDPHY_MODE_DP_USB;
->   }
->   
-> -static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
-> -				 enum typec_orientation orien)
-> -{
-> -	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
-> -
-> -	mutex_lock(&udphy->mutex);
-> -
-> -	if (orien == TYPEC_ORIENTATION_NONE) {
-> -		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
-> -		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
-> -		/* unattached */
-> -		rk_udphy_usb_bvalid_enable(udphy, false);
-> -		goto unlock_ret;
-> -	}
-> -
-> -	udphy->flip = (orien == TYPEC_ORIENTATION_REVERSE) ? true : false;
-> -	rk_udphy_set_typec_default_mapping(udphy);
-> -	rk_udphy_usb_bvalid_enable(udphy, true);
-> -
-> -unlock_ret:
-> -	mutex_unlock(&udphy->mutex);
-> -	return 0;
-> -}
-> -
-> -static void rk_udphy_orien_switch_unregister(void *data)
-> -{
-> -	struct rk_udphy *udphy = data;
-> -
-> -	typec_switch_unregister(udphy->sw);
-> -}
-> -
-> -static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
-> -{
-> -	struct typec_switch_desc sw_desc = { };
-> -
-> -	sw_desc.drvdata = udphy;
-> -	sw_desc.fwnode = dev_fwnode(udphy->dev);
-> -	sw_desc.set = rk_udphy_orien_sw_set;
-> -
-> -	udphy->sw = typec_switch_register(udphy->dev, &sw_desc);
-> -	if (IS_ERR(udphy->sw)) {
-> -		dev_err(udphy->dev, "Error register typec orientation switch: %ld\n",
-> -			PTR_ERR(udphy->sw));
-> -		return PTR_ERR(udphy->sw);
-> -	}
-> -
-> -	return devm_add_action_or_reset(udphy->dev,
-> -					rk_udphy_orien_switch_unregister, udphy);
-> -}
-> -
->   static int rk_udphy_refclk_set(struct rk_udphy *udphy)
->   {
->   	unsigned long rate;
-> @@ -1451,6 +1401,56 @@ static struct phy *rk_udphy_phy_xlate(struct device *dev, const struct of_phandl
->   	return ERR_PTR(-EINVAL);
->   }
->   
-> +static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
-> +				 enum typec_orientation orien)
-> +{
-> +	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
-> +
-> +	mutex_lock(&udphy->mutex);
-> +
-> +	if (orien == TYPEC_ORIENTATION_NONE) {
-> +		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
-> +		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
-> +		/* unattached */
-> +		rk_udphy_usb_bvalid_enable(udphy, false);
-> +		goto unlock_ret;
-> +	}
-> +
-> +	udphy->flip = (orien == TYPEC_ORIENTATION_REVERSE) ? true : false;
-> +	rk_udphy_set_typec_default_mapping(udphy);
-> +	rk_udphy_usb_bvalid_enable(udphy, true);
-> +
-> +unlock_ret:
-> +	mutex_unlock(&udphy->mutex);
-> +	return 0;
-> +}
-> +
-> +static void rk_udphy_orien_switch_unregister(void *data)
-> +{
-> +	struct rk_udphy *udphy = data;
-> +
-> +	typec_switch_unregister(udphy->sw);
-> +}
-> +
-> +static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
-> +{
-> +	struct typec_switch_desc sw_desc = { };
-> +
-> +	sw_desc.drvdata = udphy;
-> +	sw_desc.fwnode = dev_fwnode(udphy->dev);
-> +	sw_desc.set = rk_udphy_orien_sw_set;
-> +
-> +	udphy->sw = typec_switch_register(udphy->dev, &sw_desc);
-> +	if (IS_ERR(udphy->sw)) {
-> +		dev_err(udphy->dev, "Error register typec orientation switch: %ld\n",
-> +			PTR_ERR(udphy->sw));
-> +		return PTR_ERR(udphy->sw);
-> +	}
-> +
-> +	return devm_add_action_or_reset(udphy->dev,
-> +					rk_udphy_orien_switch_unregister, udphy);
-> +}
-> +
->   static int rk_udphy_probe(struct platform_device *pdev)
->   {
->   	struct device *dev = &pdev->dev;
-> 
+>  include/linux/bitfield.h | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 47 insertions(+)
+>
+> diff --git a/include/linux/bitfield.h b/include/linux/bitfield.h
+> index 6d9a53db54b66c0833973c880444bd289d9667b1..b90d88db7405f95b78cdd6f3426263086bab5aa6 100644
+> --- a/include/linux/bitfield.h
+> +++ b/include/linux/bitfield.h
+> @@ -8,6 +8,7 @@
+>  #define _LINUX_BITFIELD_H
+>  
+>  #include <linux/build_bug.h>
+> +#include <linux/limits.h>
+>  #include <linux/typecheck.h>
+>  #include <asm/byteorder.h>
+>  
+> @@ -142,6 +143,52 @@
+>  		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
+>  	)
+>  
+> +/**
+> + * HWORD_UPDATE() - prepare a bitfield element with a mask in the upper half
+> + * @_mask: shifted mask defining the field's length and position
+> + * @_val:  value to put in the field
+> + *
+> + * HWORD_UPDATE() masks and shifts up the value, as well as bitwise ORs the
+> + * result with the mask shifted up by 16.
+> + *
+> + * This is useful for a common design of hardware registers where the upper
+> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
+> + * register, a bit in the lower half is only updated if the corresponding bit
+> + * in the upper half is high.
+> + */
+> +#define HWORD_UPDATE(_mask, _val)					 \
+> +	({								 \
+> +		__BF_FIELD_CHECK(_mask, ((u16) 0U), _val,		 \
+> +				 "HWORD_UPDATE: ");			 \
+> +		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)) | \
+> +		((_mask) << 16);					 \
+> +	})
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+i915 uses something like this for a few registers too, with the name
+_MASKED_FIELD(). I think we could use it.
+
+I do think this is clearly an extension of FIELD_PREP(), though, and
+should be be named similarly, instead of the completely deviating
+HWORD_UPDATE().
+
+Also, we recently got GENMASK() versions with sizes, GENMASK_U16()
+etc. so I find it inconsistent to denote size here with HWORD.
+
+FIELD_PREP_MASKED_U16? MASKED_FIELD_PREP_U16? Something along those
+lines?
+
+And perhaps that (and more potential users) could persuade Jakub that
+this is not that weird after all?
+
+
+BR,
+Jani.
+
+
+
+
+> +
+> +/**
+> + * HWORD_UPDATE_CONST() - prepare a constant bitfield element with a mask in
+> + *                        the upper half
+> + * @_mask: shifted mask defining the field's length and position
+> + * @_val:  value to put in the field
+> + *
+> + * HWORD_UPDATE_CONST() masks and shifts up the value, as well as bitwise ORs
+> + * the result with the mask shifted up by 16.
+> + *
+> + * This is useful for a common design of hardware registers where the upper
+> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
+> + * register, a bit in the lower half is only updated if the corresponding bit
+> + * in the upper half is high.
+> + *
+> + * Unlike HWORD_UPDATE(), this is a constant expression and can therefore
+> + * be used in initializers. Error checking is less comfortable for this
+> + * version.
+> + */
+> +#define HWORD_UPDATE_CONST(_mask, _val)					  \
+> +	(								  \
+> +		FIELD_PREP_CONST(_mask, _val) |				  \
+> +		(BUILD_BUG_ON_ZERO(const_true((u64) (_mask) > U16_MAX)) + \
+> +		 ((_mask) << 16))					  \
+> +	)
+> +
+>  /**
+>   * FIELD_GET() - extract a bitfield element
+>   * @_mask: shifted mask defining the field's length and position
+
+-- 
+Jani Nikula, Intel
 
 -- 
 linux-phy mailing list
