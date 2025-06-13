@@ -4,72 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 419ABC71136
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 13:22:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59579C71148
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Jun 2025 15:16:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8tqpk7/Y58ydNKfL9HVHVxLqQCkL4m6OkuqBIq65xM=; b=GarFP6vMfSFniD
-	RNfLLOrnZ5anGEq3k5qjO/nBfzqNAwRc6YPi+JXzJE1qIVQVCnXz+IY9aIGVrdiT8vc6kn0JQhsD0
-	8aO2GOZZB/bSQ3hE9rUAiGT8TgoaYvVNK2/a5J1KgPoNOeIlYF26i1/saCWVKZiFJPj2tgDD41gTb
-	5THtTHmEPLMQ1KayUr0idu49C5jTNhkteohm3whCVc+XIjL17PiAbm2VfWE/IwfUrFbgGlk8HhOnm
-	32gohFPGDmzhum7FW7z3zcpWSnAY060Twj+hDKGfUXcDsC4EE3O5ZX4GitbhnRtZY0PxKEr3zpP4w
-	Fql+i3N55+ZfmUFYmu5A==;
+	List-Owner; bh=TdvVPkIQQskWQdF0WrQEyC/UVpdlng56riBK5SNCIhI=; b=aGdJvG8Elktnbf
+	YCOV8q6e23y6JlQx6IEMf3mlln6V1aAonhTXWB13CYMntS6NERM0XQfZlTQC0iG+n7HPFKcJau17h
+	SzgJ25ghzzRdnh1ENxBjCLNbwQYyx48w5DJ1XQ6Z+9dL42Hi5a9czORK2q4cxaj5hqBR8aDTGd1iG
+	JbV4Has9at0fGXkK+I/86ohEp7x2fb4+SIPSuTxww9OS2WEdCWLh/rkRRT4F7op7i0380YGpwIEuj
+	WKbwicwbjMBX5UdOuhiQpOtmbuP6Sr0pxE0TB7nCn843yi9GAg9FmRVVXL/YzpggfjN8B3eJgsm+4
+	72iylgOTAcbDLUIo15cw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ4M7-0000000GTxN-46kB;
-	Fri, 13 Jun 2025 13:22:04 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ4M4-0000000GTwr-3HnL;
-	Fri, 13 Jun 2025 13:22:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1749820908; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=HiGP/zFuoD/K72kz39vVKk1DqfaB+k6xKcjlzs0tTQt0FNVA7MvQ4CQazrpNA10Us/jtePzBEos95U2pqs4KIas6Usb27r/x8TXohCTITJL/GzRLLVrTrYE6idzS+h2MdZkxn7WLlEMCtFPdIwQZP20edCf49nitIHlba3qcvpU=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1749820908; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Nq6vLrgRxcRv0ur30aqw4u0LYcZO69N6Td/qIVTptOM=; 
-	b=XqO6xYlCbyAm/i0O6PNPzeWAQBYLFyGg2dt3zGezuL3kLI7dWsRXivTx8m53D7fhlo1MRXIScgbzzNTnvD/bb0zaSZGdl1cjf67oghQeHqeDKv5fDesbiY0lXJHT2mKQVlLsrGqfebZBzH2x60ZmnciwRgvFpAiG1fknxEuJZFo=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749820908;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=Nq6vLrgRxcRv0ur30aqw4u0LYcZO69N6Td/qIVTptOM=;
-	b=UdRJJkA/SCNLBUiZRzD59FVf5gvbzgk3ULumBZ+hke93c66e5XI/T5h0hlfJUOP3
-	YscTk7ST2C715rRAh8R1vlBJFOXnOu4H1u40wUCMicwuGr0e/tXza2WAoRJM1/2L0CE
-	XK/28UPiip/z0l0ThnN8vdAm4i8Elb62fsUMvYZY=
-Received: by mx.zohomail.com with SMTPS id 1749820906115539.1019397469723;
-	Fri, 13 Jun 2025 06:21:46 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kever Yang <kever.yang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Alexey Charkov <alchark@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 3/4] phy: rockchip: usbdp: reset USB3 and reinit on orientation
- switch
-Date: Fri, 13 Jun 2025 15:21:41 +0200
-Message-ID: <4115444.Lt9SDvczpP@workhorse>
-In-Reply-To: <49eb73df-9a15-436e-a05c-72dd3aa36bf8@linaro.org>
-References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
- <20250610-rk3576-sige5-usb-v4-3-7e7f779619c1@collabora.com>
- <49eb73df-9a15-436e-a05c-72dd3aa36bf8@linaro.org>
+	id 1uQ68p-0000000Gq8L-3JrW;
+	Fri, 13 Jun 2025 15:16:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uQ4s5-0000000Ga5a-2OQn;
+	Fri, 13 Jun 2025 13:55:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 771B8FEC;
+	Fri, 13 Jun 2025 06:54:42 -0700 (PDT)
+Received: from [10.57.28.131] (unknown [10.57.28.131])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3A0C03F59E;
+	Fri, 13 Jun 2025 06:54:52 -0700 (PDT)
+Message-ID: <1437fe89-341b-4b57-b1fa-a0395081e941@arm.com>
+Date: Fri, 13 Jun 2025 14:54:50 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Yury Norov <yury.norov@gmail.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
+ Shreeya Patel <shreeya.patel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang
+ <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>,
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: linux-pm@vger.kernel.org, netdev@vger.kernel.org, llvm@lists.linux.dev,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-sound@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+ <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Content-Language: en-GB
+In-Reply-To: <20250612-byeword-update-v1-1-f4afb8f6313f@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_062200_862666_C8DE8943 
-X-CRM114-Status: GOOD (  45.40  )
+X-CRM114-CacheID: sfid-20250613_065505_716770_DDD59E13 
+X-CRM114-Status: GOOD (  26.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,203 +94,122 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Friday, 13 June 2025 10:55:43 Central European Summer Time neil.armstrong@linaro.org wrote:
-> Hi,
+On 2025-06-12 7:56 pm, Nicolas Frattaroli wrote:
+> Hardware of various vendors, but very notably Rockchip, often uses
+> 32-bit registers where the upper 16-bit half of the register is a
+> write-enable mask for the lower half.
 > 
-> On 10/06/2025 16:07, Nicolas Frattaroli wrote:
-> > Until now, super speed on Type-C only worked in one orientation. This is
-> > because on an orientation switch, the UDPHY was never reinitialised.
-> > 
-> > Heiko presented a patch to do this[1], but there were concerns over the
-> > correctness of it[2]. Experimentally using Heiko's patch on RK3576 did
-> > make me run into issues, though they seemed to be related to the
-> > orientation switch actually happening while a clock driving a GRF
-> > register was disabled.
-> > 
-> > The key issue is that the hardware wants the USB 3 controller to be held
-> > in reset while the PHY is being reconfigured, otherwise we may run into
-> > hard-to-catch race conditions.
-> > 
-> > Either way, this patch implements the required ordering in a somewhat
-> > unpleasant way: we get the USB 3 controller from the DT, and use runtime
-> > power management to forcibly suspend it while the UDPHY is being
-> > reconfigured, and then forcibly resume it later. As an added pain in the
-> > rear, the suspend/resume of the USB 3 controller also tries fiddling
-> > with the USB 3 PHY part of the UDPHY, which means we introduce an atomic
-> > flag to skip suspending/resuming the UDPHY if we're resetting the USB 3
-> > controller. We may just need to skip trying to acquire the mutex again,
-> > but both ways work for me in practice.
-> > 
-> > This solution may in fact be complete rubbish, but it works to get USB 3
-> > Super Speed working in both cable orientations on my board.
+> This type of hardware setup allows for more granular concurrent register
+> write access.
 > 
-> Yeah this is kind of a hack, and we have a similar situation on Qualcomm platforms
-> when dealing with USB2-only and DP-only altmodes, where we need the DWC3 to
-> disable the usb3 path. Hopefully on Qcom combo PHYs we can switch lanes without
-> disable the USB3 PHY.
+> Over the years, many drivers have hand-rolled their own version of this
+> macro, usually without any checks, often called something like
+> HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
+> semantics between them.
 > 
-> So the proper solution would have the dwc3 driver to also react to mux and
-> orientation events and disable the usb3 path to allow the phy to reconfigure
-> itself.
+> Clearly there is a demand for such a macro, and thus the demand should
+> be satisfied in a common header file.
 > 
-> We don't have any concrete proposal yet, but we will get something soonish.
+> Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
+> version that can be used in initializers, like FIELD_PREP_CONST. The
+> macro names are chosen to not clash with any potential other macros that
+> drivers may already have implemented themselves, while retaining a
+> familiar name.
 
-Thanks you for the additional insight, I do agree that having the
-controller be in charge of this is the better solution. That way, the PHY
-doesn't need to know its controller, and the controller driver is in charge
-of ordering the resets and reconfigure right, which means the ugly reset
-loop breaking in this patch isn't needed.
+Nit: while from one angle it indeed looks similar, from another it's 
+even more opaque and less meaningful than what we have already. 
+Personally I cannot help but see "hword" as "halfword", so logically if 
+we want 32+32-bit or 8+8-bit variants in future those would be 
+WORD_UPDATE() and BYTE_UPDATE(), right? ;)
 
-If you do end up sending a patch series with a proposal, please +Cc me,
-so that I can see if it also works for Rockchip.
+It's also confounded by "update" not actually having any obvious meaning 
+at this level without all the implicit usage context. FWIW my suggestion 
+would be FIELD_PREP_WM_U16, such that the reader instantly sees 
+"FIELD_PREP with some additional semantics", even if they then need to 
+glance at the kerneldoc for clarification that WM stands for writemask 
+(or maybe WE for write-enable if people prefer). Plus it then leaves 
+room to easily support different sizes (and potentially even bonkers 
+upside-down Ux_WM variants?!) without any bother if we need to.
 
-If the hack isn't acceptable to be merged until then, then I'll drop
-this patch from future revisions of the series to get the other parts
-in.
+Thanks,
+Robin.
 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> ---
+>   include/linux/bitfield.h | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+>   1 file changed, 47 insertions(+)
 > 
-> Neil
-
-Best regards,
-Nicolas Frattaroli
-
+> diff --git a/include/linux/bitfield.h b/include/linux/bitfield.h
+> index 6d9a53db54b66c0833973c880444bd289d9667b1..b90d88db7405f95b78cdd6f3426263086bab5aa6 100644
+> --- a/include/linux/bitfield.h
+> +++ b/include/linux/bitfield.h
+> @@ -8,6 +8,7 @@
+>   #define _LINUX_BITFIELD_H
+>   
+>   #include <linux/build_bug.h>
+> +#include <linux/limits.h>
+>   #include <linux/typecheck.h>
+>   #include <asm/byteorder.h>
+>   
+> @@ -142,6 +143,52 @@
+>   		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
+>   	)
+>   
+> +/**
+> + * HWORD_UPDATE() - prepare a bitfield element with a mask in the upper half
+> + * @_mask: shifted mask defining the field's length and position
+> + * @_val:  value to put in the field
+> + *
+> + * HWORD_UPDATE() masks and shifts up the value, as well as bitwise ORs the
+> + * result with the mask shifted up by 16.
+> + *
+> + * This is useful for a common design of hardware registers where the upper
+> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
+> + * register, a bit in the lower half is only updated if the corresponding bit
+> + * in the upper half is high.
+> + */
+> +#define HWORD_UPDATE(_mask, _val)					 \
+> +	({								 \
+> +		__BF_FIELD_CHECK(_mask, ((u16) 0U), _val,		 \
+> +				 "HWORD_UPDATE: ");			 \
+> +		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)) | \
+> +		((_mask) << 16);					 \
+> +	})
+> +
+> +/**
+> + * HWORD_UPDATE_CONST() - prepare a constant bitfield element with a mask in
+> + *                        the upper half
+> + * @_mask: shifted mask defining the field's length and position
+> + * @_val:  value to put in the field
+> + *
+> + * HWORD_UPDATE_CONST() masks and shifts up the value, as well as bitwise ORs
+> + * the result with the mask shifted up by 16.
+> + *
+> + * This is useful for a common design of hardware registers where the upper
+> + * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
+> + * register, a bit in the lower half is only updated if the corresponding bit
+> + * in the upper half is high.
+> + *
+> + * Unlike HWORD_UPDATE(), this is a constant expression and can therefore
+> + * be used in initializers. Error checking is less comfortable for this
+> + * version.
+> + */
+> +#define HWORD_UPDATE_CONST(_mask, _val)					  \
+> +	(								  \
+> +		FIELD_PREP_CONST(_mask, _val) |				  \
+> +		(BUILD_BUG_ON_ZERO(const_true((u64) (_mask) > U16_MAX)) + \
+> +		 ((_mask) << 16))					  \
+> +	)
+> +
+>   /**
+>    * FIELD_GET() - extract a bitfield element
+>    * @_mask: shifted mask defining the field's length and position
 > 
-> > 
-> > Link: https://lore.kernel.org/all/20250226103810.3746018-3-heiko@sntech.de/ [1]
-> > Link: https://lore.kernel.org/linux-rockchip/h57ok2hw6os7bcafqkrqknfvm7hnu25m2oe54qmrsuzdwqlos3@m4och2fcdm7s/ [2]
-> > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> > ---
-> >   drivers/phy/rockchip/phy-rockchip-usbdp.c | 54 +++++++++++++++++++++++++++++++
-> >   1 file changed, 54 insertions(+)
-> > 
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> > index fff54900feea601c8fe6bf4c7123dfebc5661a15..5cd6bbc367f69bca15c2a94a07e72f850b381ae3 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> > @@ -200,6 +200,10 @@ struct rk_udphy {
-> >   	/* PHY devices */
-> >   	struct phy *phy_dp;
-> >   	struct phy *phy_u3;
-> > +
-> > +	/* USB 3 controller device */
-> > +	struct device *ctrl_u3;
-> > +	atomic_t ctrl_resetting;
-> >   };
-> >   
-> >   static const struct rk_udphy_dp_tx_drv_ctrl rk3588_dp_tx_drv_ctrl_rbr_hbr[4][4] = {
-> > @@ -1255,6 +1259,9 @@ static int rk_udphy_usb3_phy_init(struct phy *phy)
-> >   	struct rk_udphy *udphy = phy_get_drvdata(phy);
-> >   	int ret = 0;
-> >   
-> > +	if (atomic_read(&udphy->ctrl_resetting))
-> > +		return 0;
-> > +
-> >   	mutex_lock(&udphy->mutex);
-> >   	/* DP only or high-speed, disable U3 port */
-> >   	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs) {
-> > @@ -1273,6 +1280,9 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
-> >   {
-> >   	struct rk_udphy *udphy = phy_get_drvdata(phy);
-> >   
-> > +	if (atomic_read(&udphy->ctrl_resetting))
-> > +		return 0;
-> > +
-> >   	mutex_lock(&udphy->mutex);
-> >   	/* DP only or high-speed */
-> >   	if (!(udphy->mode & UDPHY_MODE_USB) || udphy->hs)
-> > @@ -1401,10 +1411,31 @@ static struct phy *rk_udphy_phy_xlate(struct device *dev, const struct of_phandl
-> >   	return ERR_PTR(-EINVAL);
-> >   }
-> >   
-> > +static struct device_node *rk_udphy_to_controller(struct rk_udphy *udphy)
-> > +{
-> > +	struct device_node *np;
-> > +
-> > +	for_each_node_with_property(np, "phys") {
-> > +		struct of_phandle_iterator it;
-> > +		int ret;
-> > +
-> > +		of_for_each_phandle(&it, ret, np, "phys", NULL, 0) {
-> > +			if (it.node != udphy->dev->of_node)
-> > +				continue;
-> > +
-> > +			of_node_put(it.node);
-> > +			return np;
-> > +		}
-> > +	}
-> > +
-> > +	return NULL;
-> > +}
-> > +
-> >   static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
-> >   				 enum typec_orientation orien)
-> >   {
-> >   	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
-> > +	int ret;
-> >   
-> >   	mutex_lock(&udphy->mutex);
-> >   
-> > @@ -1420,6 +1451,18 @@ static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
-> >   	rk_udphy_set_typec_default_mapping(udphy);
-> >   	rk_udphy_usb_bvalid_enable(udphy, true);
-> >   
-> > +	if (udphy->status != UDPHY_MODE_NONE && udphy->ctrl_u3) {
-> > +		atomic_set(&udphy->ctrl_resetting, 1);
-> > +		pm_runtime_force_suspend(udphy->ctrl_u3);
-> > +
-> > +		ret = rk_udphy_setup(udphy);
-> > +		if (!ret)
-> > +			clk_bulk_disable_unprepare(udphy->num_clks, udphy->clks);
-> > +
-> > +		pm_runtime_force_resume(udphy->ctrl_u3);
-> > +		atomic_set(&udphy->ctrl_resetting, 0);
-> > +	}
-> > +
-> >   unlock_ret:
-> >   	mutex_unlock(&udphy->mutex);
-> >   	return 0;
-> > @@ -1430,12 +1473,22 @@ static void rk_udphy_orien_switch_unregister(void *data)
-> >   	struct rk_udphy *udphy = data;
-> >   
-> >   	typec_switch_unregister(udphy->sw);
-> > +	put_device(udphy->ctrl_u3);
-> >   }
-> >   
-> >   static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
-> >   {
-> > +	struct device_node *ctrl = rk_udphy_to_controller(udphy);
-> >   	struct typec_switch_desc sw_desc = { };
-> >   
-> > +	if (ctrl) {
-> > +		udphy->ctrl_u3 = bus_find_device_by_of_node(udphy->dev->bus, ctrl);
-> > +		of_node_put(ctrl);
-> > +	}
-> > +
-> > +	if (!udphy->ctrl_u3)
-> > +		dev_info(udphy->dev, "couldn't find this PHY's USB3 controller\n");
-> > +
-> >   	sw_desc.drvdata = udphy;
-> >   	sw_desc.fwnode = dev_fwnode(udphy->dev);
-> >   	sw_desc.set = rk_udphy_orien_sw_set;
-> > @@ -1499,6 +1552,7 @@ static int rk_udphy_probe(struct platform_device *pdev)
-> >   		return ret;
-> >   
-> >   	mutex_init(&udphy->mutex);
-> > +	atomic_set(&udphy->ctrl_resetting, 0);
-> >   	platform_set_drvdata(pdev, udphy);
-> >   
-> >   	if (device_property_present(dev, "orientation-switch")) {
-> > 
-> 
-> 
-
-
-
 
 
 -- 
