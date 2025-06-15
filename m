@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4531FC61CE8
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5D1BC71135
 	for <linux-phy@archiver.kernel.org>; Sun, 15 Jun 2025 16:52:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,53 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/Ic7vDudu0BIJBli8+Kfua4fIuEwv9YTK0ree/vs7Q=; b=UDoVdtC50phi09
-	AW5EMu8hIQ5a9a2MylYEnrZr5C0M5EZF9NGXNcxrfS5Zcp3SfjKRLTEkmhqEmC+8n22f4BfTAah1C
-	B1cqPmewsygojDnGxRWItYs6zWSE7KYjSpjfNtOlP60J5M+SM1LSwM06AIlPyjwW/PPU5NoExIuEn
-	Uy6HH/ZZ9eqjX7kg4kpykMvuatLl9O7vIK53fJgFe6D+xecxXsk0NyL6Sea+YD0bei3T6EDAEfyTb
-	os1Fw/omepU1IY5gaHNalGQMSb/f2gZcQSzB6sGmHhVc2Q2Ryzn35IcmkIFWKx4V8RU9GRwV+y7Sf
-	Atod541LklvLG1XvnkmQ==;
+	List-Owner; bh=TYQSJ1wS8HlXlZzp34TQCupPomZweFV1HMrP74L28FE=; b=fRo/+D4c6HKQ39
+	Hqje7gLnEubAC049HqD9f3z1dA5eFqTZ2r3w7aluz/jLGjFJltkZhQH4Y9LFJyajMH29KlB19W4lV
+	hExict21bRw9pDsVMtFFFWu1cKwaOoC7FaCauLHHmW/dwyr8l3pScp3tUFtxSskZISJ9qcPJOq1KC
+	hpcbdxjDVWo+Z/xKmB+y64U3KURuBuc5+MzaeAOAVUubVxOFhoUuJ0KbkNyoj7ioIQNoierFFl9JB
+	Zg1wfoCYGdSymUl6jauP2j7ydxVeY5+oWz/v8+NMXt23414PG3N9LaNEkDB9iqUF/bwqkmZYSsasz
+	8mYl0TzmLtpurZjb9/sA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQqac-00000002fn1-063g;
+	id 1uQqac-00000002fnH-1BGT;
 	Sun, 15 Jun 2025 16:52:14 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQqaZ-00000002fm9-2zOr
+	id 1uQqab-00000002fmg-0DUs
 	for linux-phy@lists.infradead.org;
-	Sun, 15 Jun 2025 16:52:12 +0000
+	Sun, 15 Jun 2025 16:52:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 913EA5C42C0;
-	Sun, 15 Jun 2025 16:49:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FD49C4CEEF;
-	Sun, 15 Jun 2025 16:52:06 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 2BB7961120;
+	Sun, 15 Jun 2025 16:52:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93266C4CEE3;
+	Sun, 15 Jun 2025 16:52:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750006329;
-	bh=l/fGt3Zz/3ZUxPCveJXSuMJcWc2tzptxBmmNZmFRBqk=;
+	s=k20201202; t=1750006331;
+	bh=mijlUDV/jgZDSVDW216PIW1ZCR6wyRfjOlPnIPkNLlg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=YP5jYylcUkG7aEJrMeOvZkqIxxQElInVpAhhRQbwPmlIjZK40iv6coxEFYMM4lJoM
-	 zX4iH1OzbgLpKp3LdR0vp1ppFKmd23IGLbvNYRDKUMJImYviyE04t6lvETQoxnk4fS
-	 5Fd+kARy2kvbrEkehDI8Zc6HKu8cO82fNLHlsVbVYCPsI9x+/z7qrigBEJohE907NY
-	 FqPKRlde3tr3Swxr0vU/H6WNiVf+9whfA5ZhUs9CthKxlIYXEzzDUjbnEM9MzImI23
-	 B369fdHtqwOpPWmEcf3mFk72XDHisdgVsmHsVko9FPR/SbvLPu+n+DOAEB/lbxV1gm
-	 5HDR3m2I9DrmA==
+	b=httPnnPAwmZoCek9wtrkG0ODf/wyRtOgr9hMWHFBhpVuR5rD/p8KJWHtp1su3YYZZ
+	 HJSaXm20t/ywqqfHB8QtgYTiJsW6XI5wlwNaVIlblRZxmIX+3jHOhO7d0C8n3q6tb0
+	 LDfJnknInLON+K89WRN/8kFFyn+7VeJGOQJ7SYk2WOFDWRW6O2MNkhsM/Dbko5BLCx
+	 kE+Ru+Tylv3z/ZFS4TQNyNNKQxMIhmT97xz0FJ69hWQhvnGofdcvxCR4HAxnxwBHWg
+	 zFcLifzeUTr5qBjp5f9o5y8XlAxX9dSYIE/I7QFiqcD4V5X5UhpmSsLOfPAdLpF5W4
+	 CBkuxoc/kPa+g==
 From: Vinod Koul <vkoul@kernel.org>
-To: jckuo@nvidia.com, kishon@kernel.org, thierry.reding@gmail.com, 
- jonathanh@nvidia.com, Wayne Chang <waynec@nvidia.com>
-Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
-In-Reply-To: <20250502092606.2275682-1-waynec@nvidia.com>
-References: <20250502092606.2275682-1-waynec@nvidia.com>
-Subject: Re: [PATCH 1/1] phy: tegra: xusb: Fix unbalanced regulator disable
- in UTMI PHY mode
-Message-Id: <175000632608.1180789.15034099318224353632.b4-ty@kernel.org>
-Date: Sun, 15 Jun 2025 22:22:06 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Abel Vesa <abel.vesa@linaro.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Johan Hovold <johan+linaro@kernel.org>
+In-Reply-To: <20250605-phy-subinit-v3-1-1e1e849e10cd@oss.qualcomm.com>
+References: <20250605-phy-subinit-v3-1-1e1e849e10cd@oss.qualcomm.com>
+Subject: Re: [PATCH v3] phy: use per-PHY lockdep keys
+Message-Id: <175000632923.1180789.17293154013004418524.b4-ty@kernel.org>
+Date: Sun, 15 Jun 2025 22:22:09 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250615_095211_800834_B001C61D 
-X-CRM114-Status: UNSURE (   7.61  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,21 +73,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 02 May 2025 17:26:06 +0800, Wayne Chang wrote:
-> When transitioning from USB_ROLE_DEVICE to USB_ROLE_NONE, the code
-> assumed that the regulator should be disabled. However, if the regulator
-> is marked as always-on, regulator_is_enabled() continues to return true,
-> leading to an incorrect attempt to disable a regulator which is not
-> enabled.
+On Thu, 05 Jun 2025 14:25:49 +0300, Dmitry Baryshkov wrote:
+> If the PHY driver uses another PHY internally (e.g. in case of eUSB2,
+> repeaters are represented as PHYs), then it would trigger the following
+> lockdep splat because all PHYs use a single static lockdep key and thus
+> lockdep can not identify whether there is a dependency or not and
+> reports a false positive.
 > 
-> This can result in warnings such as:
+> Make PHY subsystem use dynamic lockdep keys, assigning each driver a
+> separate key. This way lockdep can correctly identify dependency graph
+> between mutexes.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: tegra: xusb: Fix unbalanced regulator disable in UTMI PHY mode
-      commit: cefc1caee9dd06c69e2d807edc5949b329f52b22
+[1/1] phy: use per-PHY lockdep keys
+      commit: cf0233491b3a15933234a26efd9ecbc1c0764674
 
 Best regards,
 -- 
