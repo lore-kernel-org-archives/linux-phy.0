@@ -4,71 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC642C71136
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 14:02:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 275A0C71136
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 15:27:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6VsrOIYHhJRLiy9Yel1oKGTCCl0A0Qgxk32alRNRHVA=; b=iNNIiQ1PZs5J4Z
-	pFQMnTK09p7QgPSpZiH4bXuIGem4QqXa9tqcQh3y+VHzx/Pxp3T55eHzUliY4S1MxqQJBFjUWF9GU
-	yawT9a4EnKPBEg/+3nmaM54tg+irg2/OHF7b5MYgBSkmy841UKC5B3iqV+T4plHGQkt28B6cqtr1d
-	4BXV5ydeBYo/23mIE5sdeM420/Sfw32pI+1u83F+q2PVG7R9H7kfClG9lOq2SCFXklaPgZunZGDoi
-	faoRS2ycSVNXjSOq2riZwywOe9foEVBoFr0nQqBXNfBrDG0GYt2lrxbGGBfL9N+hyxWvlR+96HmBb
-	qUB8xIyihJ/QMS5G2ZAQ==;
+	List-Owner; bh=yLTfOLP8+VeI+dMHzbIndjrzTt7sWsiYCVTQQDIlOlM=; b=wibT/AY//VHQrN
+	vkl1qCw+EqtGrugoJBkmAJX0punl5o0RsjGBs5iwwA2xkKFkRSrgL6Qo1b0DbunOBR4Vkn98w/+MG
+	DfLdAFYSu5MXaoSi1YABI/uyNAuESfjTxNt7q1dQ7Pi9B+u+EC/5gIUoFykA7ToFSSeZ31J8beUBz
+	7lSREhQAV9ABlduTKPkbomAEUr0engf/MWfF6P4OuABj1iRMOtZmFfxXIwhgZVr8/J//vMdZc3/lL
+	ONuaqka7dgg9jRCAOMTFnT7/KM/i/I87MjqZ4M6RW1KwALdX/f8QPUK/wzTPaTlSwU7mjjIsqFMKg
+	uMJRb6SEWl47UDK9WnZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRAPa-00000004dNI-2N0M;
-	Mon, 16 Jun 2025 14:02:10 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uRBjm-00000004qZF-1jae;
+	Mon, 16 Jun 2025 15:27:06 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uR9GI-00000004QEg-1PBA;
-	Mon, 16 Jun 2025 12:48:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1750078090; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=Noj837lL1QUwu7QwkZOvSNZyMANKK4hvJRpnt3BeaQkZfvjrMDtbEVB7pyeP9H3rGsZIwZjbnZto6Dw6xvLqZDOgRi0WdWOHnSFq+w8ocLkp4KRC8FISqOMAtulZN/hErS2wNCwChKeF5ct2yxovVMu8osk6129ALt5XeIbbGE8=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1750078090; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=HKjeTdmJPh/8z/0sRDDRVkWKLbnDMCBBoa4t9bucIe4=; 
-	b=J0sXDy+hxuy+880JvsArY9kGS8zGenjEO6mtuM1TOAokRZZalldQcJTXzjB87BSnUK6KeIH4nSGPZ8PD4AwN1QWTloUKOwgzynnz9mo1FBuo1lLVlGdnCxYa97ZUR4qSILEKXjbZHmJHh3gYNZ0i+7ZfRwpGvwZpIJ6uyludl2U=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750078090;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=HKjeTdmJPh/8z/0sRDDRVkWKLbnDMCBBoa4t9bucIe4=;
-	b=P1mehgoW9dxsq8haTmNMgTw+EKa3hxVmX6x429UQxc+r06naOkrbhD2WzXCJrfa1
-	4ZB4MIsrQMxJYC4u6ku4JNUBduBRPV1NutWRlCdXt7NExjrrvwAE07Gd4tjJBz6dP3Y
-	VH7KKk2bIoArvK9W559I77SqtxhjQxUezTlYzC4k=
-Received: by mx.zohomail.com with SMTPS id 1750078087706132.33901078776455;
-	Mon, 16 Jun 2025 05:48:07 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Kever Yang <kever.yang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Alexey Charkov <alchark@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 1/4] phy: rockchip: inno-usb2: add soft vbusvalid control
-Date: Mon, 16 Jun 2025 14:48:01 +0200
-Message-ID: <7815489.EvYhyI6sBW@workhorse>
-In-Reply-To: <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
-References: <20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com>
- <20250610-rk3576-sige5-usb-v4-1-7e7f779619c1@collabora.com>
- <5c531d53-3573-4c25-a32b-79dfd5abd4cd@linaro.org>
+	id 1uR9rD-00000004XSb-1BqY;
+	Mon, 16 Jun 2025 13:26:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
+	Date:References:In-Reply-To:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=NkQEvwmgjTHGj3/M2aKLGR2hgsNYITiFQ1oG2L/HREo=; b=SRV+LZkKzuw2/otqpmclrpcjHz
+	v5ijfuHudVp7GfI5wEN/hxs36HJ3Hr/LU4g+mwhRq+6HwpiXRwGXWG2KBVu4UP5UWGKm0GVmpLae/
+	c/AxdsI3AV/Z33q7XpNYbNiYFjso/vHtIVS4WPcvinLlWBiGWGRmO5ki4FmACMKpipyGFzcfcsXq3
+	aDqzCA7Pu9b0HhxC02UNf5Cnt4VkhOJtGmS3+XXBFuZ+xfSxmq5UwzfVY0xKMDgriElPyKNOg70MP
+	r9AWqj57oyIgrjfYJdj94udLqUqUMAw0vXsC/OtSjAB7amBr/L7ruIam1Y7RvrkFFFn9ZcECO9WYX
+	nhPP0boA==;
+Received: from mgamail.intel.com ([198.175.65.13])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uR9rA-00000003aql-1R0R;
+	Mon, 16 Jun 2025 13:26:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1750080396; x=1781616396;
+  h=from:to:cc:subject:in-reply-to:references:date:
+   message-id:mime-version;
+  bh=W1ULqCjf8lfOUmBr3Wu+Ci3avbmtCxJZhQsdCwBauN4=;
+  b=LWUeA/51RUjMm8tPlNwRoxQrN/IpdRCm9O3i/JFZRWyfsZDtruRbd2GM
+   d0EfMPF5rDh7E0CMU877mskkC0Wj95QUtswJZf/T8urZ1mG4MxGlvaQj7
+   6Uqw073xyrX4Wvs6jZ8TUyU1p4tl1BT0pnqc/IaFgfp8OoriqwqHpYqCI
+   iueatYEJMVtuZ907B08Qj0Juktg33hky3wCrmcMF6GaY28k6CXA1QiUyl
+   xwGQoVnAehpIhn8CBulUususB4t7DNzgIzTN4GIExAxPZajFagfiqF3Bp
+   p6qT6CcX9mGQ07o/jq4JwwSB0juQ7WzCWnJSIZ4aFPF3TI20Vr9fFTy5k
+   w==;
+X-CSE-ConnectionGUID: lwRrUTUrRR207SDd93aDjQ==
+X-CSE-MsgGUID: aIjBngfFT+S9+8Q2y6jxvA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11465"; a="63255606"
+X-IronPort-AV: E=Sophos;i="6.16,241,1744095600"; 
+   d="scan'208";a="63255606"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Jun 2025 06:26:29 -0700
+X-CSE-ConnectionGUID: sUy1hWcBTaOgchksDDuQnw==
+X-CSE-MsgGUID: y/Hym029QOuoVBlZiI68jA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,241,1744095600"; 
+   d="scan'208";a="153426298"
+Received: from mjarzebo-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.246.92])
+  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Jun 2025 06:26:10 -0700
+From: Jani Nikula <jani.nikula@linux.intel.com>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Robin Murphy
+ <robin.murphy@arm.com>, Yury Norov <yury.norov@gmail.com>, Jakub Kicinski
+ <kuba@kernel.org>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>, Jaehoon Chung
+ <jh80.chung@samsung.com>, Ulf Hansson <ulf.hansson@linaro.org>, Heiko
+ Stuebner <heiko@sntech.de>, Shreeya Patel <shreeya.patel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang
+ <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, Maarten
+ Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard
+ <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, David
+ Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Nicolas
+ Frattaroli <frattaroli.nicolas@gmail.com>, Liam Girdwood
+ <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Jaroslav Kysela
+ <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Andrew Lunn
+ <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>, Maxime
+ Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy?=
+ =?utf-8?Q?=C5=84ski?=
+ <kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, Rob
+ Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Chanwoo
+ Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, Nick
+ Desaulniers <nick.desaulniers+lkml@gmail.com>, Bill Wendling
+ <morbo@google.com>, Justin Stitt <justinstitt@google.com>,
+ linux-pm@vger.kernel.org, netdev@vger.kernel.org, llvm@lists.linux.dev,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-sound@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ kernel@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Subject: Re: [PATCH 01/20] bitfield: introduce HWORD_UPDATE bitfield macros
+In-Reply-To: <3361713.44csPzL39Z@workhorse>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com>
+ <1437fe89-341b-4b57-b1fa-a0395081e941@arm.com> <aEw7LBpmkfOqZgf1@yury>
+ <3361713.44csPzL39Z@workhorse>
+Date: Mon, 16 Jun 2025 16:26:07 +0300
+Message-ID: <35d8c6372fb38f6d7e452c2e3b5a80327f20dae6@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250616_054830_443947_D69BB618 
-X-CRM114-Status: GOOD (  27.03  )
+X-CRM114-CacheID: sfid-20250616_142636_898299_E14E7FE2 
+X-CRM114-Status: GOOD (  38.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,74 +132,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Friday, 13 June 2025 11:02:40 Central European Summer Time neil.armstrong@linaro.org wrote:
-> On 10/06/2025 16:07, Nicolas Frattaroli wrote:
-> > With USB type C connectors, the vbus detect pin of the OTG controller
-> > attached to it is pulled high by a USB Type C controller chip such as
-> > the fusb302. This means USB enumeration on Type-C ports never works, as
-> > the vbus is always seen as high.
-> > 
-> > Rockchip added some GRF register flags to deal with this situation. The
-> > RK3576 TRM calls these "soft_vbusvalid_bvalid" (con0 bit index 15) and
-> > "soft_vbusvalid_bvalid_sel" (con0 bit index 14).
-> > 
-> > Downstream introduces a new vendor property which tells the USB 2 PHY
-> > that it's connected to a type C port, but we can do better. Since in
-> > such an arrangement, we'll have an OF graph connection from the USB
-> > controller to the USB connector anyway, we can walk said OF graph and
-> > check the connector's compatible to determine this without adding any
-> > further vendor properties.
-> > 
-> > Do keep in mind that the usbdp PHY driver seemingly fiddles with these
-> > register fields as well, but what it does doesn't appear to be enough
-> > for us to get working USB enumeration, presumably because the whole
-> > vbus_attach logic needs to be adjusted as well either way.
-> > 
-> > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> > ---
-> >   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 113 +++++++++++++++++++++++++-
-> >   1 file changed, 109 insertions(+), 4 deletions(-)
-> > 
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > index b0f23690ec3002202c0f33a6988f5509622fa10e..4f89bd6568cd3a7a1d2c10e9cddda9f3bd997ed0 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> > [...]
-> > @@ -666,8 +679,17 @@ static void rockchip_usb2phy_otg_sm_work(struct work_struct *work)
-> >   	unsigned long delay;
-> >   	bool vbus_attach, sch_work, notify_charger;
-> >   
-> > -	vbus_attach = property_enabled(rphy->grf,
-> > -				       &rport->port_cfg->utmi_bvalid);
-> > +	if (rport->port_cfg->svbus_en.enable && rport->typec_vbus_det) {
-> > +		if (property_enabled(rphy->grf, &rport->port_cfg->svbus_en) &&
-> > +		    property_enabled(rphy->grf, &rport->port_cfg->svbus_sel)) {
-> 
-> Why do you check the registers since you always enable those bits on those conditions:
-> 	rport->port_id == USB2PHY_PORT_OTG
-> 	rport->typec_vbus_det
-> 	rport->port_cfg->svbus_en.enable
-> 	rport->typec_vbus_det
-> Can't you us them instead ?
+On Mon, 16 Jun 2025, Nicolas Frattaroli <nicolas.frattaroli@collabora.com> wrote:
+> Hello,
+>
+> On Friday, 13 June 2025 16:52:28 Central European Summer Time Yury Norov wrote:
+>> On Fri, Jun 13, 2025 at 02:54:50PM +0100, Robin Murphy wrote:
+>> > On 2025-06-12 7:56 pm, Nicolas Frattaroli wrote:
+>> > > Hardware of various vendors, but very notably Rockchip, often uses
+>> > > 32-bit registers where the upper 16-bit half of the register is a
+>> > > write-enable mask for the lower half.
+>> > > 
+>> > > This type of hardware setup allows for more granular concurrent register
+>> > > write access.
+>> > > 
+>> > > Over the years, many drivers have hand-rolled their own version of this
+>> > > macro, usually without any checks, often called something like
+>> > > HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
+>> > > semantics between them.
+>> > > 
+>> > > Clearly there is a demand for such a macro, and thus the demand should
+>> > > be satisfied in a common header file.
+>> > > 
+>> > > Add two macros: HWORD_UPDATE, and HWORD_UPDATE_CONST. The latter is a
+>> > > version that can be used in initializers, like FIELD_PREP_CONST. The
+>> > > macro names are chosen to not clash with any potential other macros that
+>> > > drivers may already have implemented themselves, while retaining a
+>> > > familiar name.
+>> > 
+>> > Nit: while from one angle it indeed looks similar, from another it's even
+>> > more opaque and less meaningful than what we have already. Personally I
+>> > cannot help but see "hword" as "halfword", so logically if we want 32+32-bit
+>> > or 8+8-bit variants in future those would be WORD_UPDATE() and
+>> > BYTE_UPDATE(), right? ;)
+>> > 
+>> > It's also confounded by "update" not actually having any obvious meaning at
+>> > this level without all the implicit usage context. FWIW my suggestion would
+>> > be FIELD_PREP_WM_U16, such that the reader instantly sees "FIELD_PREP with
+>> > some additional semantics", even if they then need to glance at the
+>> > kerneldoc for clarification that WM stands for writemask (or maybe WE for
+>> > write-enable if people prefer). Plus it then leaves room to easily support
+>> > different sizes (and potentially even bonkers upside-down Ux_WM variants?!)
+>> > without any bother if we need to.
+>> 
+>> I like the idea. Maybe even shorter: FIELD_PREP_WM16()?
+>> 
+>
+> I do think FIELD_PREP_WM16() is a good name. If everyone is okay with this
+> as a name, I will use it in v2 of the series. And by "everyone" I really
+> mean everyone should get their hot takes in before the end of the week,
+> as I intend to send out a v2 on either Friday or the start of next week
+> to keep the ball rolling, but I don't want to reroll a 20 patch series
+> with a trillion recipients more than is absolutely necessary.
 
-I did some more looking into this, and agree that I can drop the
-property_enabled lines here. The other concern I had immediately (that
-the bits never get turned off, which seemed fishy) isn't a concern after
-all, because after sleeping on it some more, I realised that it's probably
-not very likely that a USB-C connector is ever going to morph into anything
-else spontaneously.
+I'd never guess what WM stands for in this context without looking it
+up, but I'll be happy if we have FIELD_PREP_ and 16 in there. So works
+for me.
 
-Thank you for spotting this!
+> To that end, I'd also like to get some other naming choices clarified.
+>
+> As I gathered, these two macros should best be placed in its own header.
+> Is include/linux/hw_bitfield.h a cromulent choice, or should we go with
+> include/linux/hw_bits.h?
 
-> 
-> Neil
-> 
-> [...]
+I'll let y'all fight it out.
 
-Kind regards,
-Nicolas Frattaroli
+> Furthermore, should it be FIELD_PREP_WM16_CONST or FIELD_PREP_CONST_WM16?
+> I'm personally partial to the former.
+
+Ditto.
+
+> And finally, is it okay if I leave out refactoring Intel's
+> _MASKED_FIELD() or should I see if I can at least replace its
+> implementation while I'm at it?
+
+I think you can just let us deal with that afterwards. You have enough
+users already.
 
 
+BR,
+Jani.
+
+
+>
+> For less opinionated changes, I'll also change all the `U` literal
+> suffixes to `UL` wherever I've added them. As I understand it, it doesn't
+> really make a difference in these instances, but `UL` is more prevalent
+> in the kernel.
+>
+> Kind regards,
+> Nicolas Frattaroli
+>
+>
+
+-- 
+Jani Nikula, Intel
 
 -- 
 linux-phy mailing list
