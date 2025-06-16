@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A4FBC71159
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C4CCC71136
 	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 18:29:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,53 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=926T3iQLKoiAP33eAJf6qyn5bGSSCtMG5/hurJZ+5WY=; b=i485pyvouf72VB
-	EHi5ti5xfHQR6EmtiJvsvbgaNRDJwVjVMM8Q3cdJTgEPLV+V60PArNDYfO5oyoOD48nqRYT+5snX2
-	93urBmpnrBiMCC7AzAfXbuXc2O1H5AqihwLFnP3yEqakRaebGZmMa/GkgFLPsQz9/dZDt1nW/+boW
-	Gxwp9CrXehuLn+LkUN2dlTnd88hZ8HOpShoSkRSSuSrkZHYFZYOqzJmwQqTytEJbvv77j5lKiZfIc
-	zxNHw27YZEI7Ck9bOnTPGXKwYZpXeutuLnjDpO0MByWt/3dtX/mQ/Q1cARrz9oKb+EyWiLZADSowj
-	vBZwx9pcN3Tk7MURddCQ==;
+	List-Owner; bh=VNrTBOQfpNGCXp+FTsrj2gfNdcja4xdKleFVCI7I5+8=; b=OYI9CfedT2P7z2
+	A3Oqr/xRqYCYFMKLDcZouQM2WEUUT8yFujdUqPTzR+yzEWUEa7aiqwypbnY/vMhxMRd98zApYgxRO
+	ztd1AUXUxhGrcc2tgvxI4Z96Ll6b1x+oJ8U4ons2wSGSiRkbQX3tHQts8Ysu2WPHRwWreW9vd3SQr
+	jbdqV2eCazIaukoGeVdQYQ5BcvZoUstQxHGYKnyFl+ED/qBdGs3QGtsD6T5FnGx7poeNCSDSUGbeu
+	t1rvfqG4p84d7QkfMwfiW+5Pv4o5/OTTkl6RF9l0hm8bn5bKlBtlyF6zWta8JsjSgnC51wdUE05Bq
+	j4k97Rcm3IBYxA67+D1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uREai-00000005Ewz-1XCS;
+	id 1uREai-00000005Eyn-4AwK;
 	Mon, 16 Jun 2025 18:29:56 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRDgn-0000000584P-0OaE;
-	Mon, 16 Jun 2025 17:32:10 +0000
+	id 1uRDgq-0000000585D-1aUe
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Jun 2025 17:32:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 74A8D4A692;
+	by dfw.source.kernel.org (Postfix) with ESMTP id AC3085C56F6;
+	Mon, 16 Jun 2025 17:29:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5C44C4CEEA;
 	Mon, 16 Jun 2025 17:32:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 368DFC4CEF0;
-	Mon, 16 Jun 2025 17:32:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750095128;
-	bh=H41Dos4nuiBHHj2x24i5YJjmevLAfJf6MRT1WONU3aA=;
+	s=k20201202; t=1750095131;
+	bh=HvJYCQ26zFqcISTyhNEbYWLh3eDft7d6STVfq6ldmS0=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=eKztQNF46WfPuiW035B/qC/7nvwIbGDsISPHoB+LkJ1AUqHAXaluUuzLu9K0x+TdI
-	 zqg39Ssuy44lknWcwPe+uJd+/XeiJ5VLW2bQTzhZyukICbKBALUlwTvq7QGOakWlFI
-	 mGxO0DcO+dHY0ifk3x1XuC1oAj8rFv4RxJqoc7jv0kRp83EfHxul8OkXXJR0nLWfwR
-	 VAbt0bkZGRPS9euMoAK2d3GpOleLxX1mDqAkmbAm/H/LqorWLFupDiwBBzAsU3lr9s
-	 W1hYmR3ZHgd85PSMhqPcsOUffgB3OwTPEeHO7ssapp9mg6iPl/b2F5mLlBLNm4B8US
-	 4TnoxFWH2lSQg==
+	b=WDAPY2UY8cljpCnXUH0IrXdvKDI2Dd8HaCI3JsP3zKnWyXoZz9Fi9RFaj6njrd5W/
+	 TniMdBf0fu1dzY9Jh2Cmcpe6CAz2/TvKpOFYwO+SDYUIvKddhTfJ+uofQl2SxG85pG
+	 AoBMWbLCDLGXyAiA5H2/ImkxoRi8hwlwYk5i5XjMlCow27DqvBGhjvb4iUYema5o5h
+	 wXPKTaBUr2a4ItzNw5he/B1JzkFXR1HDV9+JyW3v0qxruZHDcf6v3aXw7LoCSK91UV
+	 vDLxLlsm4CFCP+nfu0plNao93qF/wsKdyGoIwZndj8Ud8JOQ07axK4FLGpoIHOA+zO
+	 xmjkfWmxt0nRg==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, sjakhade@cadence.com, rogerq@kernel.org, 
- christophe.jaillet@wanadoo.fr, u.kleine-koenig@baylibre.com, 
- eballetb@redhat.com, make24@iscas.ac.cn, 
- Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, srk@ti.com
-In-Reply-To: <20250616064705.3225758-1-s-vadapalli@ti.com>
-References: <20250616064705.3225758-1-s-vadapalli@ti.com>
-Subject: Re: [PATCH v4 0/2] Enable PCIe Multilink and USB support in
- Cadence Torrent SERDES driver
-Message-Id: <175009512484.77433.7332008040409961551.b4-ty@kernel.org>
-Date: Mon, 16 Jun 2025 23:02:04 +0530
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Lubomir Rintel <lkundrak@v3.sk>, 
+ Patrice Chotard <patrice.chotard@foss.st.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20250523085112.11287-1-johan+linaro@kernel.org>
+References: <20250523085112.11287-1-johan+linaro@kernel.org>
+Subject: Re: [PATCH] phy: drop probe registration printks
+Message-Id: <175009512856.77433.17489306165089300644.b4-ty@kernel.org>
+Date: Mon, 16 Jun 2025 23:02:08 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250616_103209_156923_ABCCA190 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20250616_103212_458120_E5A46393 
+X-CRM114-Status: UNSURE (   4.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,28 +78,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 16 Jun 2025 12:17:03 +0530, Siddharth Vadapalli wrote:
-> This series adds support for standalone PCIe Multilink configuration
-> along with the support for PCIe Multilink + USB configuration in the
-> Torrent SERDES driver.
+On Fri, 23 May 2025 10:51:12 +0200, Johan Hovold wrote:
+> Drivers should generally be quiet on successful probe, but this is not
+> followed by some PHY drivers, for example:
 > 
-> Series is based on linux-next tagged next-20250616.
-> 
-> v3:
-> https://lore.kernel.org/r/20250109121614.754466-1-s-vadapalli@ti.com/
-> Changes since v3:
-> - Rebased series on next-20250616.
-> - Collected Reviewed-by tags from:
->   Roger Quadros <rogerq@kernel.org>
+> 	snps-eusb2-hsphy 88e1000.phy: Registered Snps-eUSB2 phy
+> 	qcom-eusb2-repeater c432000.spmi:pmic@7:phy@fd00: Registered Qcom-eUSB2 repeater
+> 	qcom-eusb2-repeater c432000.spmi:pmic@a:phy@fd00: Registered Qcom-eUSB2 repeater
+> 	qcom-eusb2-repeater c432000.spmi:pmic@b:phy@fd00: Registered Qcom-eUSB2 repeater
+> 	snps-eusb2-hsphy fd3000.phy: Registered Snps-eUSB2 phy
+> 	snps-eusb2-hsphy fd9000.phy: Registered Snps-eUSB2 phy
+> 	snps-eusb2-hsphy fde000.phy: Registered Snps-eUSB2 phy
+> 	snps-eusb2-hsphy 88e0000.phy: Registered Snps-eUSB2 phy
+> 	snps-eusb2-hsphy 88e2000.phy: Registered Snps-eUSB2 phy
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] phy: cadence-torrent: Add PCIe multilink configuration for 100 MHz refclk
-      commit: 240ef19ad78b12e40ec8808694a0b81e6a3a2c2d
-[2/2] phy: cadence-torrent: Add PCIe multilink + USB with same SSC register config for 100 MHz refclk
-      commit: 351e07e6b2ecc16ef8669713b14b6f67518c945d
+[1/1] phy: drop probe registration printks
+      commit: 95463cbb4fe6489921fb8c72890113dca54ce83f
 
 Best regards,
 -- 
