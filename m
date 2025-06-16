@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79CA5C7115B
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 18:29:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E80EAC71136
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 18:29:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qL49a7BX/z1kFD6S1OeMNN1XMDHzWOLtpBTRv7LxmkQ=; b=kxtNRILe82Yvvl
-	Adne0URaz/+BwZkPv0bHa5/5YQbh8d4eWXRyiNLJUBZIOYgt2DuKXqd0yhntffA4t74vf1taOSqMe
-	4hitRMDmJoVZKVR+uprLSobAchyrB5jGZYdjtcuINK9+Ised3dC3T0iUu6Kp1/I2cWTavEFHA1W1X
-	XwmACknHaah8uhtHJtlxBr19Xxh58n80gVEmsMKQfiDvPgnBxhNlAsc5qVvLzTnhjNSZAX/oRP9Fe
-	e/PTPB68cRvIExkheILK/Mf+DQDnFtQa+DGAHMCCsiit4dBGCZsaJdHM7iRf1RkAslJyyIuOL+1Qk
-	0mGiO3QvAYapOPLo/w8A==;
+	List-Owner; bh=4hOee50me+JH6b3+Dg+YFaxaL9qGgrkNYvQoj7PC7AY=; b=yjgt5DaI8xH6eb
+	E/cdLrbaBWV12t//9+OKyOql/2aF/RPHDxnCZ1Qxj+z8DhqUFpg8S1Ak66hsGyY9ouGc9v1yG86N1
+	XFZXSVNGDf87NREpNTogqebPgNOZtyQU1WPgEc6c4EotB0bKLhokpjyyvKixo/CIivkba1MU6ns4p
+	ZTzFV7xzITDdbb/oUpAoU36MS+BvHLxUvZLXTFdjo4l0hZhRyYY68Pi37Yl2tsuoRYHWwJTgaV/pB
+	A+hu3lkLp+fCkHjgYo5moog19gjXR8bklPJy8Bfvu+L5ERh8Ha9xupaAuTrSMOL1GCQJwbTX0p0D9
+	u52+zWCMwY/GiNI/VPrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uREad-00000005Eks-0Ezf;
-	Mon, 16 Jun 2025 18:29:51 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uREag-00000005Esk-1uIX;
+	Mon, 16 Jun 2025 18:29:54 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRDCc-000000054D8-3Whg
-	for linux-phy@lists.infradead.org;
-	Mon, 16 Jun 2025 17:00:59 +0000
+	id 1uRDgl-00000005843-01SY;
+	Mon, 16 Jun 2025 17:32:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2106B4A01D;
-	Mon, 16 Jun 2025 17:00:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 81C23C4CEED;
-	Mon, 16 Jun 2025 17:00:57 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id F3E69A519ED;
+	Mon, 16 Jun 2025 17:32:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EB8C4C4CEEA;
+	Mon, 16 Jun 2025 17:32:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750093258;
-	bh=LIHLqXxyRllxlm8oEjNBIkiTqf6Esvz9pt+PybPh+8U=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Sqps2wqkYACDdWCldgDyoINfGS/q9F47Al4KIwSAMuvb6MUI785rHmI4DfBCiGUGb
-	 GWP+hm3eHJe6/TjGVsAK/r73eAA2/eDetRCVeKrKzHtRzZSH2SmTk5gx1c2WIobJ6r
-	 f2+NjZdE/hIaVR4zipV0NBucIJbaoN11C+Rk/uxryeVrl8nczuHXf1vi8/Lz1yk4ho
-	 B9OtOHBSRFJSVIyJsHoD1gQVbCaenD8FXEuo5kygidn8yWpKFgB8S0vTj0pNuCIebU
-	 PBnx8zNs4sQvg70enXwvDljxViSGhB+3iD9VFXu5/Qrx5K0RSTEvUY58vQdquHa6oO
-	 M7F7oWuEaBGiA==
-Date: Mon, 16 Jun 2025 22:30:54 +0530
+	s=k20201202; t=1750095124;
+	bh=JhhJGBA0/EyCx0gmSsYbnWwP9wMBDp+1SBs2G2GCX+U=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=NQeYAeim1RStu+++zDlxFdavXDpAzRYyIHZA3H2A8SwtUkb4btg9tx4jMeY5Xvxtu
+	 gF2+49nlI76HJThhBlPtfVEhv0rBOR/1Yq1BwcQBvH2NoqCXQNF90FrgM2wtdXcq+b
+	 aZm9tV4+T2pIuuwPHtWDHuQEmWbPusm0dVd6Us5EkDTS4b7h+XSCGxG10rD6jQjaN9
+	 coIZ5Lku6YoLQcbYLgOECKtzzjN3AQtfzLPrMr0ECe5T/2wBd4Wv7HkE2Xn8FgBUfa
+	 ZEobo8pBe3PgdZ1bfh3EfHIDVTmvRxNttZTgUGGy4sZI8BleNfYSTt2bQXj4sULJeP
+	 L+9OKspNU4YCA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Melody Olvera <melody.olvera@oss.qualcomm.com>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Add missing PLL (VCO)
- configuration on SM8750
-Message-ID: <aFBNxvggJXYKQ4d1@vaman>
-References: <20250616062541.7167-2-krzysztof.kozlowski@linaro.org>
+To: kishon@kernel.org, sjakhade@cadence.com, rogerq@kernel.org, 
+ thomas.richard@bootlin.com, robh@kernel.org, 
+ Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, srk@ti.com
+In-Reply-To: <20240615093433.3659829-1-s-vadapalli@ti.com>
+References: <20240615093433.3659829-1-s-vadapalli@ti.com>
+Subject: Re: [PATCH 0/2] Enable PCIe Multilink and USB support in Cadence
+ Torrent SERDES driver
+Message-Id: <175009512158.77433.13273380062207072518.b4-ty@kernel.org>
+Date: Mon, 16 Jun 2025 23:02:01 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250616062541.7167-2-krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250616_100058_896553_120D6950 
-X-CRM114-Status: UNSURE (   6.11  )
+X-CRM114-CacheID: sfid-20250616_103207_119834_3C424FF3 
+X-CRM114-Status: UNSURE (   6.73  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,23 +75,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-06-25, 08:25, Krzysztof Kozlowski wrote:
-> Add missing DP PHY status and VCO clock configuration registers to fix
-> configuring the VCO rate on SM8750.  Without proper VCO rate setting, it
-> works on after-reset half of rate which is not enough for DP over USB to
-> work as seen on logs:
+
+On Sat, 15 Jun 2024 15:04:31 +0530, Siddharth Vadapalli wrote:
+> This series adds support for standalone PCIe Multilink configuration
+> along with the support for PCIe Multilink + USB configuration in the
+> Torrent SERDES driver.
 > 
->   [drm:msm_dp_ctrl_link_train_1_2] *ERROR* max v_level reached
->   [drm:msm_dp_ctrl_link_train_1_2] *ERROR* link training #1 on phy 0 failed. ret=-11
+> Series is based on linux-next tagged next-20240613.
+> 
+> Regards,
+> Siddharth.
+> 
+> [...]
 
-Hey,
+Applied, thanks!
 
-This does not apply for on phy/fixes
+[1/2] phy: cadence-torrent: Add PCIe multilink configuration for 100MHz refclk
+      (no commit info)
+[2/2] phy: cadence-torrent: Add PCIe multilink + USB with same SSC register config for 100 MHz refclk
+      commit: 351e07e6b2ecc16ef8669713b14b6f67518c945d
 
-Can you please rebase
-
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
