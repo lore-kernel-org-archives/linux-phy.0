@@ -4,124 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38A94C71136
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 13:22:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E000EC71136
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 14:37:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PDbuhRJidYP/vP6LfQNzS4gyYb6E1UkD+l14jzUoYIU=; b=dsvCoOF0/uQu7Y
-	wa+Uw5kCBHSWPHTrhxpeejDrEcVNKtCuUKACMqnDlWXrahQz6DposH/6AgsnJu0LbBMWKqNNffzVB
-	HRvSoqfUHspjTpcImcop4VijlpCR+MwcwDsfsrwx9FDQlOJeeAc4W+DSdtObn83EIZif4apNFve6w
-	a8ctZf8CYrtHzUw9ZnYqWUNSgkY0Nftffw2XZzZrmRovcc2Z2jJjmi2swwX021uKw0EP/V+pycoFm
-	f0zh0Qe9mXQh1rcO8wH6esoWX5Zt+Lb3pFOfYRx9f7TViMdPcKz9TnNZd3rUBe2aQ2OgK4z+TwTid
-	RHg/JD/cgtTjXSPkTByw==;
+	List-Owner; bh=HEFK23JXwh4in1/Ebu88Mv8jREnX9YeCvjjYCl0vcq0=; b=aEJMoMZHgDyXKT
+	kNn3Xm7IMMYnKxz2fyzXdazK3pEWoWOOgxEvByliDTYFhwcZ3363s4xyT8aTgKW7/ywTjOZFr/c4v
+	9SMjjD8pEz1RqyKHMjGyq6qYXQfAz+w6gLpjKySjkm+I/CQ8ehekkdmFcsq9LHbMYzxQp058nADj8
+	JXZDLxd/dINnr6xUP9KO9X/MXgT9uco9x17PGTI7enq/tJIRHRpQecCVq2804fxzhPaRP5PUTy5If
+	KtMSeR9Ke+GFuPdGbDWag9HxkjCjcWIr5yfYoXkz5XunFc50USmzAOb8dojv7/1O00Tp2k31LDIA+
+	tRIkwLvadgGlq27/SDjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRWGG-00000007Kf9-40Di;
-	Tue, 17 Jun 2025 13:22:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uRXR3-00000007aMv-24H4;
+	Tue, 17 Jun 2025 14:37:13 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRVri-00000007FqS-3Go5
-	for linux-phy@lists.infradead.org;
-	Tue, 17 Jun 2025 12:56:40 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55H7RXIG022295
-	for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 12:56:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=reLhBblkFjKNgFgw0iZCw73Q
-	eAmoIcUiJNhR7l2+5Wo=; b=gFj3/XTHwtHhusu1XkABetp6zBh6LBV2MqeT5ozg
-	lVp6xUMtaqNtiiXctXE34Mlu+L1I0orf7wUl7fHGlxaIo11wTuW6MTxeGX2UDRRa
-	k9YPcoTINGCD850rfQDzCYkM4Ystr7YtkDYEhhIDoI7Ec7h6MF36bWKx60IIHYui
-	R6Hxdj7Q1sM/mA4peducECHxUEdTWlA/t68V1iXYEDnvcamUruNCAxZlVeOudLUM
-	ySz+Njh2uN6tMhxbA7Cqzk3fRGYxQ2VuejrtgpMVQR9Em1A1V6Q0stLrpl1DxKy8
-	ZG75DBs14WiwqWKXOliEGeAGaF5jhqpLbnLojYBp8R7OkQ==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4791eng9jv-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 12:56:36 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-6fb50d92061so30508306d6.3
-        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 05:56:36 -0700 (PDT)
+	id 1uRWoL-00000007Rij-1js4;
+	Tue, 17 Jun 2025 13:57:14 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-451d3f72391so65234165e9.3;
+        Tue, 17 Jun 2025 06:57:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750168631; x=1750773431; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=MLVT+cYxO1TN85rByTE2a8qXeCzOerjL8RN/K2Xqi5o=;
+        b=SQG/KviJli2tSvhZFbgXEUtZmE3g0ub0qpLVNq2dj5RMnhLE38Al8jIQ9fLDuws7vi
+         4Z28MB4IXH+7XJUWm4WWzHpAIYUBmRs4/aYNogWqOmvnETSbwxlKnb7mSGDlU64UIfLi
+         PZb5Wy9RGFI5ucsTHhmbrn/wveXwxw9VgBmmvuzXdFVy2nchn030JlwlOMTs6YP3YHYk
+         RPUogNP3MQEoCC7H/32HxtVx+DWxcJwNpbsyA98kHgpKEGIbfOtAow711V98FjHK2jVn
+         ULaF1VNwL2m+17Ylomvzx+8eiNowVfmvyreiivpYMZpxKIUAyR+c9IuqFsh1+S7E17mB
+         H4GQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750164996; x=1750769796;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20230601; t=1750168631; x=1750773431;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=reLhBblkFjKNgFgw0iZCw73QeAmoIcUiJNhR7l2+5Wo=;
-        b=Jok62+XWzcBvRPMC3xYjuSfIOj4wJWN6EsUzbiMa4K8LD2Hn8vDg3pxf+MTgSDF8yz
-         JYhO8n4YE+iLBA4bc6QNiMeI8lcI69JqmQlv+FXT0RvKdw4eHzYKVEfyyooae7B9EWbK
-         6yMEVc2Ohsd+8kJS2qk6x2A1AiFlf7ot+csKeMKOLkzXrJtAuQokjK6UbPx9vpQfZHQ8
-         vsb7prmCXneE5pHJBElyfQovoszRj9iS2ihqeBT6roWF+tuRGTaHSzHzDRNVYvF7h1np
-         YOsY1i9hPKcn42B9/ouE4Afer8FuA/yTMbdUY9YZmWd+aJbN9NZwlPR0HRcOvpbcbUgD
-         e7Vg==
-X-Forwarded-Encrypted: i=1; AJvYcCVbfvUQwVVK8P//8c2Khp5eoL3z8xYX68LXaX9wKIWhXo7D7jUa/54ekorrghftFWPyOw6lYuGhitc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxGkiuebvbUFJWhJXhdGH6DsmuUgKNT9btWgDM409L4Q32UGD72
-	aRy6O2FJsE6t+DrGnS+ZjHSw8A1JpZbOCaxcKaaQDc5UZ3NvLAzhqlA2tnyHLsfigZ9WtpeeFHV
-	Kjpjmu7kDBvCsUWPA/AV7yNyoNqPPqJRQbnbURKNNqTdnZ5smTKvYtjYrzDSFURuAdsr3
-X-Gm-Gg: ASbGncsLYmpWbYZgkTqB9VXdsHWLMJKnPlqQbgUI6YHMupPFZOtVUniGS3LAfxVGefd
-	lya9Mg3uWBPFn8GB1q2+warJp2xwijhTyyJl5Rg8pBgCHQIrt9XF/Dk4489RCXNpt0DPXZXZSGP
-	FrTe3f2FvFvV41Q/kNanvfkU/p4J2mhZq3TuHQMNGAygVhLeJD03VHR7EexjV9Jm8ZICNwNGRs6
-	bQYtJRNQm1BcocE8HCOidmTDjQmc4jGR6iCuwI1YLFs6g7TqE70i7jQY/3m+7bFOKYOvRfXRrsF
-	96Go30Uhe849wOXPmC1nlaYPtYLoTwrfCcnOJevRSOYHV2MNc2wNKiBuEXeoil9IafGPmT4CSO9
-	nQ8ZkAfYJxx0FqAdfWdQ83fBbYIjyfxxUSwk=
-X-Received: by 2002:a05:6214:810e:b0:6fb:4fdc:dd83 with SMTP id 6a1803df08f44-6fb4fdcde32mr136702686d6.40.1750164995777;
-        Tue, 17 Jun 2025 05:56:35 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFvCoVuhabEm27A62sEPcn/Fb55CORSI3jmx2fmiprrI/xC488IzmD9JyAr83daF6LLrrsC2Q==
-X-Received: by 2002:a05:6214:810e:b0:6fb:4fdc:dd83 with SMTP id 6a1803df08f44-6fb4fdcde32mr136702296d6.40.1750164995406;
-        Tue, 17 Jun 2025 05:56:35 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-553ac135c22sm1912726e87.65.2025.06.17.05.56.34
+        bh=MLVT+cYxO1TN85rByTE2a8qXeCzOerjL8RN/K2Xqi5o=;
+        b=AF5flfhjnIgOD3Qubw6FTTx50SHjy4KfOffthWodW5vC5RK/Nq9zNWpjT4N6XMgAKu
+         4kdREwj2WZSaaw/yxNKmTcGwexK7jO+5XfPOQV3XIes1HFtLqNYESbqbwdQWnjXz4VZV
+         jFPH0kLpTBQ9Qw+orQRNcNhxffmUt7+qw11nNr9vH4Xh1Xt+syCceGC5fs1uNoH1qh+y
+         lH7XRQpjWvP7/pfOKUDFShor88MKVoPBqBbM3zbUxkSCPiAy/Z7PfldrH0wu6aYJUyIS
+         +s6h+jnfxOVVskBlv/KImcQqF/j+EYctgcrbvHIoiGzSXscr3FWqzul7bFIPRgapdy1X
+         JIMQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVZvY0TP7VE0FH77HLSonWmFVfI27XUxZVFNa0l9NKFjd9Qbl3VcCJhYT0xLuPw/Ak7zsg/NBib8sUMtoa7lwQM@lists.infradead.org, AJvYcCWxiMX/8FaHPsicSLf7niPYOLlep+UaF/hOghyJDegbHO+sPOPTju/BK5b2vuG5pcYGzSntlD9Ge6XW@lists.infradead.org
+X-Gm-Message-State: AOJu0YwOz2n/nlwvbQ5jpTKPfWsaaGPPBh49A/BUG8CIb8ugmiyWcHQS
+	J/uMRJxJPDGt7W+yngICfOdZHpWMpsg9XMCrleihPhzoYou1D4GyH+JTbzJG4w==
+X-Gm-Gg: ASbGncvhRIUCCHp4fD9HAHFo6kD3GcVWcbvjahin6Wt/H5rZTz5dO6Ts51gn+6JKyjw
+	fV8pime2elxE+pHJ9t+XBARNs3fFJqPjq6/Pa0mogFI5pI9mslbaFhTYOrrwDKhpejpu/sZMHT6
+	igDRc27meP5PT+vSuT5tX5WfuMmNfdpqBq6gVAU25wQokI6Dw+y6JiE6K5XBeqrgHlnEU/Ebzry
+	96hWffRiagREbuPeg3rfpHv6Tqmwbg8HXTBdifn/vqUBjOduEmWc2IBn/z/Lue6uz/yk+qhCUY/
+	WxRejgRspFEiRuyaDp+5TQK7Lckoa+xCg3kqxRWNZGX+w3IjxnL0pVkcCoOgHN04TIrORpmuS3M
+	lmCxpGjNx1wiqF34diw==
+X-Google-Smtp-Source: AGHT+IFupVL+5wJXaUwaE5jmuyF6KpQ+tb0Z1hbP1TUoIU6loKaMX3a5/2xSpFf4oTiPjYqFm2EuOw==
+X-Received: by 2002:a05:600c:1e1d:b0:453:b44:eb69 with SMTP id 5b1f17b1804b1-4533ca7518dmr144413055e9.13.1750168631359;
+        Tue, 17 Jun 2025 06:57:11 -0700 (PDT)
+Received: from Ansuel-XPS. (93-34-88-225.ip49.fastwebnet.it. [93.34.88.225])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4532e09c21esm175766615e9.17.2025.06.17.06.57.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Jun 2025 05:56:34 -0700 (PDT)
-Date: Tue, 17 Jun 2025 15:56:32 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2 2/2] phy: qualcomm: phy-qcom-eusb2-repeater: Don't
- zero-out registers
-Message-ID: <hgtbmst73ijkfptznqh5r6usdnn2tdx4fxow53g5pyl3yagbh3@4thxrkp5zcnv>
-References: <20250617-eusb2-repeater-tuning-v2-0-ed6c484f18ee@fairphone.com>
- <20250617-eusb2-repeater-tuning-v2-2-ed6c484f18ee@fairphone.com>
+        Tue, 17 Jun 2025 06:57:10 -0700 (PDT)
+Message-ID: <68517436.050a0220.b9e1c.ed09@mx.google.com>
+X-Google-Original-Message-ID: <aFF0NWK5v5oTQKLj@Ansuel-XPS.>
+Date: Tue, 17 Jun 2025 15:57:09 +0200
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/4] dt-bindings: phy: airoha: Document support for
+ AN7583 PCIe PHY
+References: <20250606192208.26465-1-ansuelsmth@gmail.com>
+ <20250606192208.26465-4-ansuelsmth@gmail.com>
+ <20250609-shifty-dingbat-31aa70d7d7b1@spud>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250617-eusb2-repeater-tuning-v2-2-ed6c484f18ee@fairphone.com>
-X-Proofpoint-ORIG-GUID: C0y_H-scI0xY7NPDqxM95wq5fWGvGGii
-X-Authority-Analysis: v=2.4 cv=D6RHKuRj c=1 sm=1 tr=0 ts=68516604 cx=c_pps
- a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=6H0WHjuAAAAA:8
- a=cispc58g6-s63dKQH_wA:9 a=CjuIK1q_8ugA:10 a=pJ04lnu7RYOZP9TFuWaZ:22
- a=cvBusfyB2V15izCimMoJ:22 a=Soq9LBFxuPC4vsCAQt-j:22
-X-Proofpoint-GUID: C0y_H-scI0xY7NPDqxM95wq5fWGvGGii
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDEwMyBTYWx0ZWRfX3e15j7RUclHC
- H8k5tuxKjNRHjeN4JbZd+V5kN5W7LMzZHDDRZigwTyIzhDWndRzIeR4GBcXda4eHYaOYRRx9KJP
- 0UzhLWbeLGJSzn9pWLBtEKv8F+fAH81xGV2l3VOh0nYlTWhAhpYsxZR8myodoDFqM681UQMlGH/
- alJV7Y6JpzrNlqQxasEHA6SfodHk5AbPPxkYZ88pQZ2icqdFdw9Co/ztL7Dr+29Sfovo34cvF9X
- cHon467iLgXeagRA8wPkEk33VyyYGCTs7y0cCp8JyD3JDOzrAMIaHTS7++/fJCs9y7bFW5bHAp4
- 0m6a1+dO42pcz0vQWt2Yez6ncnNOk14fCRhKRVgwqSKLiowntR33X/eZp7UinlBIPtoRg+R/mld
- AckpwGup/aLCO2m9C3gDj+FvZWQ5aD4xqF+uKdMyAair/PY1qTDphn7tWv32m4D3ArfF4RxB
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
- definitions=2025-06-17_05,2025-06-13_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 malwarescore=0 impostorscore=0 phishscore=0 adultscore=0
- suspectscore=0 mlxlogscore=992 clxscore=1015 mlxscore=0 lowpriorityscore=0
- spamscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506170103
+In-Reply-To: <20250609-shifty-dingbat-31aa70d7d7b1@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_055638_936932_90DAE616 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20250617_065713_454236_344793CF 
+X-CRM114-Status: GOOD (  24.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,31 +108,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 17, 2025 at 10:26:36AM +0200, Luca Weiss wrote:
-> Zeroing out registers does not happen in the downstream kernel, and will
-> "tune" the repeater in surely unexpected ways since most registers don't
-> have a reset value of 0x0.
+On Mon, Jun 09, 2025 at 05:51:10PM +0100, Conor Dooley wrote:
+> On Fri, Jun 06, 2025 at 09:22:04PM +0200, Christian Marangi wrote:
+> > Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
+> > work. Add the rwquired register to configure the PCIe PHY and provide an
+> > example for it.
+> > 
+> > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> > ---
+> >  .../bindings/phy/airoha,an7583-pcie-phy.yaml  | 72 +++++++++++++++++++
+> >  1 file changed, 72 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
+> > new file mode 100644
+> > index 000000000000..93252092c2e3
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.yaml
+> > @@ -0,0 +1,72 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-phy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Airoha AN7583 PCI-Express PHY
+> > +
+> > +maintainers:
+> > +  - Christian Marangi <ansuelsmth@gmail.com>
+> > +
+> > +description:
+> > +  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: airoha,an7583-pcie-phy
+> > +
+> > +  reg:
+> > +    items:
+> > +      - description: PCIE G3 analog base address
+> > +      - description: PCIE G3 PMA base address
+> > +      - description: PCIE QPhy analog base address
+> > +      - description: PCIE QPhy PMA base address
+> > +      - description: PCIE QPhy diagnostic base address
+> > +      - description: PCIE detection time base address
+> > +      - description: PCIE Rx AEQ base address
+> > +
+> > +  reg-names:
+> > +    items:
+> > +      - const: g3-ana
+> > +      - const: g3-pma
+> > +      - const: qp-ana
+> > +      - const: qp-pma
+> > +      - const: qp-dig
+> > +      - const: xr-dtime
+> > +      - const: rx-aeq
+> > +
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - reg-names
+> > +  - "#phy-cells"
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/phy/phy.h>
+> > +
+> > +    soc {
+> > +        #address-cells = <2>;
+> > +        #size-cells = <2>;
+> > +
+> > +        phy@11e80000 {
+> > +            compatible = "airoha,an7583-pcie-phy";
+> > +            #phy-cells = <0>;
+> > +            reg = <0x0 0x1fc7f000 0x0 0xfff>,
+> > +                  <0x0 0x1fc7e000 0x0 0xfff>,
+> > +                  <0x0 0x1fa5f000 0x0 0xff>,
+> > +                  <0x0 0x1fa5e000 0x0 0x8ff>,
+> > +                  <0x0 0x1fa5a000 0x0 0x3ff>,
+> > +                  <0x0 0x1fc30044 0x0 0x4>,
+> > +                  <0x0 0x1fc35030 0x0 0x4>;
 > 
-> Stop doing that and instead just set the registers that are in the init
-> sequence (though long term I don't think there's actually PMIC-specific
-> init sequences, there's board specific tuning, but that's a story for
-> another day).
-> 
-> Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 83 ++++++++++----------------
->  1 file changed, 30 insertions(+), 53 deletions(-)
-> 
+> Can you explain please why you have so many reg regions, some of which
+> are directly beside one another? Why is one (or more) larger region(s)
+> not viable here? Are some of these coming from a syscon that is not
+> modelled or are there other devices sharing in between?
+>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+It's to keep consistency with the documentation and how stuff is
+modelled in the SDK driver. The single region defined reflect real
+register space. In the middle they are invalid register that might cause
+system stall if read/written.
+
+Also this is to keep consistency with the en7581 pcie phy driver.
+
+Is it really that bad ? :(
+
+> > +            reg-names = "g3-ana", "g3-pma",
+> > +                        "qp-ana", "qp-pma", "qp-dig",
+> > +                        "xr-dtime", "rx-aeq";
+> > +        };
+> > +    };
+> > -- 
+> > 2.48.1
+> > 
+
 
 
 -- 
-With best wishes
-Dmitry
+	Ansuel
 
 -- 
 linux-phy mailing list
