@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25803C7115A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75111C7115B
 	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 08:41:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XEe9sBmrA84dYIbTzKEPMOVEn1STQkRiq0gm3RpobUA=; b=JE9Fm7ymjaBlLr
-	eJACPnObBNiSxuChJVHkzt4CLIVhzTMk8ai3E2Ub05l5hTU3GRNwHgzTuT2EhpDoSQkpHrpTTkazn
-	ieHTjuXzLvdzyfyOPUDJpUFMtkS4P4vMxlzwMiMKRVoZtVdl0Fa7o+dqouJOV5i+KL7Xens7V17yR
-	LA5buQHm23uTX25jeiEvr4zkE6Ne0d+xfm9HenXFf7O+hO8+LNdHbX7+5TzbNkBZ4ZVx7YU2r1YD+
-	CHBw1UDFxUPoZOPC4D6FT2kh/5MyfHxKwByCQV7BwUBf2Z/jd+DibUlb6q0RUJYJuRBBEvf3jBNPm
-	IPKmFWjzOfpkqNDlUMkQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IwdkLXebCWMKXVIcTSa+01Gv9eckTzADpAxhe7Z2f+o=; b=cNgFm4RPfQhl2K
+	tW4hrXl3IaQ2yJXxlKhZ6UHVaZ3od2P4TO1HCc+/ShQJMecaZ45IfxfslvZfKsxyd6jg9QY2NHcdJ
+	CLFbJUX/k8zbTtmZ5I1BGoSsE0rpHA0AhAXU4KywL8vGPWeXSsk0JBz7bc9n/CY/ZMN7xzxR6Spyn
+	iLReqPnGN3uOjIP/yzyGbnbdJZTyNqHjbi4C/ydffaOo2/sOrSSuhLDkbTcshEAzzHhHj8FmFsyAu
+	4JB0xFjTHuACtp8aYtbMXGgDnj5vlsGW14iqhRA0ZANjU/d9urNSTqWEgVc6vDuEGrJgaQ8jaC3Dd
+	DTCLSbTB80VslO5kEM0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRRsp-00000006ctY-3k7I;
-	Tue, 17 Jun 2025 08:41:31 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
+	id 1uRRsq-00000006ctu-0p0Q;
+	Tue, 17 Jun 2025 08:41:32 +0000
+Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRRec-00000006b6U-2P45
+	id 1uRRed-00000006b6V-1Tgc
 	for linux-phy@lists.infradead.org;
 	Tue, 17 Jun 2025 08:26:52 +0000
-Received: by mail-ej1-x644.google.com with SMTP id a640c23a62f3a-ade33027bcfso883440766b.1
-        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 01:26:50 -0700 (PDT)
+Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-605b9488c28so10490132a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 01:26:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1750148809; x=1750753609; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=ha51G6QljI8TE+htVqSGE/G45ppcBa69RDzMvs8Q1Bg=;
-        b=EvyMGj7BE3mBFyebiNSqNe8rA8tuI2t1MCcRnXx6s/b2clevW9lWAhn3M2DLyAJyUk
-         fSBp5syMZ5vu0ILgMQ/tXpG0REWja1JvWgO4bO1tEPuYiykZGP5mBJBX4iv/GCC+ZVAz
-         Oo48RSai82jneA42bPg6w0ZrM6IGoson444Lh816d1RdpJcOMfLgkc14kaABvm6VImB4
-         j1Z8HB7bjElMZFuBgcfao5OphOn4bvywTaPte0Y6OgUQvtCxpq1liHqrQlfFnYynOX/K
-         boFlltliIUFsC82GJyqhy9SnLxc6ro3k5pSlBuchI8hyQ6o0mjsukZBk1DnuhO1EHFPs
-         DYww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750148809; x=1750753609;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=fairphone.com; s=fair; t=1750148810; x=1750753610; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ha51G6QljI8TE+htVqSGE/G45ppcBa69RDzMvs8Q1Bg=;
-        b=alUjvz5KZ/qZXsCROVMb8mfNvYegwv18goqdYB5x0dpbfLFLPx+c5GbEk4aPOXh5Uh
-         NLLm7RIkfrnNKcxGaumG9cb+YUN95ZPU5VBcPfdYokjG2I37fEK83DuryG3x0NmKT7v3
-         ISvNRsf2OdKly0/JnEdq7a/7q/l3z69Q2Mmbbe6KLkp6A1zl9lQRPl5GMzIxeIGCjceA
-         3hfLriTfTbXV92gqTUhfjJdLlq9iTcUjmmY4QnHk5f39wy3HmNq41WyRFUfvgd8/3dZb
-         soX8B+vVqEmGntDA06p9iNn10edUzPiSgRPjG/tmvs7z3l6/bs2Wb+vTcM7RIqCvDktY
-         Gudw==
-X-Forwarded-Encrypted: i=1; AJvYcCUleoKFpweJfythfz7vGsPj0TKtt/z2wjPc3qSO6S00haZvF5NTczV0a+BJKleVoGeVllg0SSFB+1o=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyMwZ2yAq8B/ndhPB06v5ixvoy416EU2IT+q93WyZtvENtpjcFp
-	7iBZ7sBfl+4gX0N74zEzZSu0Udsfnkh76LAJc+y7y1bDVYR5uR9V7z7nVS0WeLL5iY4=
-X-Gm-Gg: ASbGncubQ1u7T5SwaohW9URbGAFuRtL/dyZ1F+LIQuklUFmvV8UWL/eGx0SyiWVcxHC
-	3/p6MUmh1nhypyzKKlQmvR55YdjowX/TwWgob13q0dTGnJlixbb4ANLdL4Q1iV3MBhL9icfAWZw
-	CEuk1oyDap/n0QgbpsbUy2sbx64uDMjc2/W0mPL69Y7iRHBDF2mBjUmwUs+7trgBCmio4TqMWnv
-	yFplo27aoScUd4LUnBnNtAWe3yDtJ3t/s8wybRjTf9yjCOdxp7qVqRgx0+JKr3nljz3oN1Ycpr3
-	v5zNcc9nmD5iwig5X+usXD+yTiZjN2bA5rC0Z2NZrUU1Ud946wmkGw3SWS+9QnFhBvMPZjnIj2n
-	r71MAKY1paw6a4sncR2EooLJKTnUoU0L/rTbaG9TuTz4=
-X-Google-Smtp-Source: AGHT+IHaLMRID3hoXAOduWJ6WVSzCTc3PiOOYPbCMGHsJkWbLuGR1uhowGvy7+2zgZveMdkL4Rhl7Q==
-X-Received: by 2002:a17:907:d78a:b0:adb:3509:b459 with SMTP id a640c23a62f3a-adfad329678mr1353406366b.19.1750148808949;
-        Tue, 17 Jun 2025 01:26:48 -0700 (PDT)
+        bh=YviJvB3mEmC6/KWy4TJGLCulrpnF3rGNjKlkw3ObS4E=;
+        b=3LT1U7K5uLigKN87Q7JOIATe7f5THZGlb5N+xHVtnyVXH+r95499E+7H27fVW6qRAQ
+         +a1NaGsTnIMMSVdZ1GuZdu7IEdTjfJU5W2ayNQr+Eqdtvdbz5z53FWKPyH1Ac3cfaPFk
+         c3yzXz8E1IL6Bcd3+2SzwI50Wlxx3/HsAeW97aIHOJMuR08giuEWS/FV1lCayZlmc518
+         lr/hw4JbJwJGAuRDOK3SwAKr/jASeDK9VYCI+CP9KvOaK4aeeW5Ka9QxCBs7khBbLPJL
+         qnG1eWbIVug2NywnmZUAfd6NV+aLNz9l41wq8o5+CdmjY6zqGwdclYsr5P+0DDmvAKnc
+         1ueg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750148810; x=1750753610;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=YviJvB3mEmC6/KWy4TJGLCulrpnF3rGNjKlkw3ObS4E=;
+        b=COjz44SQqJFiLKbkPSqzBtZKvJ+T5jfNTosr9U+GUweF9/hhqTNdrZdIBm9W7UeZtu
+         Q3R938aodQQcbzbSxBi3mwJJjDVqdTbLhQeEnIwVIPmbJbi4rNPZ8VhX0sjuI6MESBlL
+         GM1Jnv+6g+16UF2ERv0ap5eyf1xf8MnHuAJiSIIWOwFavrN7/062Vn/UDVjIIK8fWliw
+         1xN4+vT1YEoFvyPYSFDfJqtHgJ0SNolVshZVw5XE7UAmeE6/bhGtLV2tr2DUlnYVhQzD
+         fpacpUfx5RELTupDOo1Klg+Rui9oDn4APrXxh8n0r/MG2Y36d9y1DtySKDzqbDNwXPks
+         RZfw==
+X-Forwarded-Encrypted: i=1; AJvYcCVfkow/psNyTQeugTH5E5m6ygpnt947K+IGgqi7M7/DHwGdFDmu/vsEly0AZXYXL+nzBhO39JOAQc4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwBD5qV4Ra9/en2WPdYEkrnHYxXSs8vIaMRhPaFWjATJT7WqN9d
+	GlrriVNJPnl4JJqUlfBTIVMiezZxqiavKfqJ3WS9OEqt/e4CoyOtCpyZ8lJOPcmWvLNM9Y6Hses
+	DruusDu8=
+X-Gm-Gg: ASbGnctU/pe9V/DWbTZ6U5nPNE0k31ahsCEX7jO76EV0bnuoZ16C2B2sluNWugC2bP1
+	JwtaM64YbkrBIXhRQL5KyPh8+1TTfqmCcE5ylAacQbpusG2tfwFJvfkf/rz5WLhG02QiGYNPJDu
+	7MUHcLhBfZNCzkqgsuBwsWAha8D6/qn5fR3hzllJScZJzQAEpAYSMc8DU3S0F7dqed0yMbmFlWz
+	AEO7IDFPutB+luRjMpHHOaH0cxioZ4bi482hxERLxRTbAjYhk8vsceogwnE0N3mzbH9bduaqDJC
+	LuRHKHP9c6ciZNuywPgFG4JotFMpz1dGrBCm2qjOW9vtNoaOg5icgwe0Kg6CSUxVlCMc0tBhqCC
+	1Yp9Z94hp9T8KCVmJWDghNqk8CKRepi1y
+X-Google-Smtp-Source: AGHT+IGBvTpgEQKuySRgZVEiRHZ2+eHm/TawSN1WIXCTKv0QJZ0mFrD/xYMqMzEBC005W5SZjLK1TA==
+X-Received: by 2002:a17:907:db15:b0:ad2:28be:9a16 with SMTP id a640c23a62f3a-adfad4829eamr1145395366b.51.1750148809831;
+        Tue, 17 Jun 2025 01:26:49 -0700 (PDT)
 Received: from otso.local (144-178-202-138.static.ef-service.nl. [144.178.202.138])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-adec88fd993sm840343166b.94.2025.06.17.01.26.47
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-adec88fd993sm840343166b.94.2025.06.17.01.26.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Jun 2025 01:26:48 -0700 (PDT)
+        Tue, 17 Jun 2025 01:26:49 -0700 (PDT)
 From: Luca Weiss <luca.weiss@fairphone.com>
-Subject: [PATCH v2 0/2] Fix tuning on eUSB2 repeater
-Date: Tue, 17 Jun 2025 10:26:34 +0200
-Message-Id: <20250617-eusb2-repeater-tuning-v2-0-ed6c484f18ee@fairphone.com>
+Date: Tue, 17 Jun 2025 10:26:35 +0200
+Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,snps-eusb2-repeater: Remove
+ default tuning values
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIALomUWgC/4WNQQ6CMBBFr0K6dkxbbImuvIdhUXAGZmFLpkA0h
- LtbuYDL95L//qYyCmNWt2pTgitnTrGAPVWqH0McEPhZWFltnfbGAy65syA4YZhRYF4ixwHI+bo
- 2ve8MBVW2kyDx++g+2sIj5znJ57hZzc/+K64GNFwvriHS1FHj7hRYpjFFPPfppdp937+dt31Bv
- gAAAA==
-X-Change-ID: 20250616-eusb2-repeater-tuning-f56331c6b1fa
+Message-Id: <20250617-eusb2-repeater-tuning-v2-1-ed6c484f18ee@fairphone.com>
+References: <20250617-eusb2-repeater-tuning-v2-0-ed6c484f18ee@fairphone.com>
+In-Reply-To: <20250617-eusb2-repeater-tuning-v2-0-ed6c484f18ee@fairphone.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -85,20 +85,18 @@ To: Vinod Koul <vkoul@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Luca Weiss <luca.weiss@fairphone.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>
+ Luca Weiss <luca.weiss@fairphone.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1750148807; l=1310;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1750148807; l=1248;
  i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
- bh=NLs+qWJn+ZP5DPsry/eRPCLoqWTcxBnwPUA0+ZFuPm0=;
- b=rx151nZm2NY70r0BR/IhQqna3HWEfZP2hVL3TqGjnULcMcPD/2K3GYVB43b9pA0Sw6Jws23B+
- aS7VXHp62ufAlpFof88Zsu88DJPzjdCyla1e58LwlwNqIsdZJJa8XSi
+ bh=OuFHBPiSDnHElYnOnjmGAqSP02DaggUPcI3IBLQcgxo=;
+ b=UCQ80CGhJn/9FqQFeZwlp30F3hVlXhrqM3yVHy6N6PzQRXNd5o3I3x9xZBw7MwlAHFwnNd4d6
+ GwTHiLUsOF9Bq/0tBC90+tbE7BOOReriWMhCM7iRdLHn+l8kQzBkcpo
 X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
  pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_012650_627430_66F78620 
-X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-CacheID: sfid-20250617_012651_384096_24300529 
+X-CRM114-Status: UNSURE (   6.88  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -116,38 +114,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update the dt-bindings to remove the 'default' tuning values, since they
-depend on the PMIC and are not guaranteed to be the same.
-
-And add a fix into the driver to not zero-out all tuning registers if
-they are not specified in the "init sequence", since zero is not the
-reset value for most parameter and will lead to very unexpected tuning.
+The reset default tuning value depends on the PMIC, so remove them from
+the doc since they're not accurate for all PMICs.
 
 Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 ---
-Changes in v2:
-- Fix wrong parameter used for refactored init tables
-- Also drop "enum eusb2_reg_layout" completely since it's not used for
-  anything now
-- Use unsigned int instead of u8 in struct eusb2_repeater_init_tbl_reg
-- Pick up tags
-- Link to v1: https://lore.kernel.org/r/20250616-eusb2-repeater-tuning-v1-0-9457ff0fbf75@fairphone.com
+ Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 3 ---
+ 1 file changed, 3 deletions(-)
 
----
-Luca Weiss (2):
-      dt-bindings: phy: qcom,snps-eusb2-repeater: Remove default tuning values
-      phy: qualcomm: phy-qcom-eusb2-repeater: Don't zero-out registers
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+index d16a543a784887eabc69faae2233057c4554be31..27f064a71c9fb8cb60e8333fb285f0510a4af94f 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+@@ -39,21 +39,18 @@ properties:
+     description: High-Speed disconnect threshold
+     minimum: 0
+     maximum: 7
+-    default: 0
+ 
+   qcom,tune-usb2-amplitude:
+     $ref: /schemas/types.yaml#/definitions/uint8
+     description: High-Speed transmit amplitude
+     minimum: 0
+     maximum: 15
+-    default: 8
+ 
+   qcom,tune-usb2-preem:
+     $ref: /schemas/types.yaml#/definitions/uint8
+     description: High-Speed TX pre-emphasis tuning
+     minimum: 0
+     maximum: 7
+-    default: 5
+ 
+ required:
+   - compatible
 
- .../bindings/phy/qcom,snps-eusb2-repeater.yaml     |  3 -
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c     | 83 ++++++++--------------
- 2 files changed, 30 insertions(+), 56 deletions(-)
----
-base-commit: 19272b37aa4f83ca52bdf9c16d5d81bdd1354494
-change-id: 20250616-eusb2-repeater-tuning-f56331c6b1fa
-
-Best regards,
 -- 
-Luca Weiss <luca.weiss@fairphone.com>
+2.49.0
 
 
 -- 
