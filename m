@@ -4,67 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB171C71157
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 17:12:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEB23C71136
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 17:12:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g+If9BFoonPD4tM2QWS9Qjl0rcclewNAnHKGlgjMIRA=; b=LXSbH2dvDyYloxrKXlWqHjbNQ+
-	TtwujdiZERhFNfstBt8U/66SSqEnv9O3zcyaXyPB7kHSZZ3fvW3afIdFzxGSfhv46pacHrSRB73Tu
-	sGD/wfgIWuG7fdyOULdtH7wHRfZMbjr9XQdUTTuWN33N8YG4oKxOuqxJWuFqe42mb6JG8q0UVywVR
-	Zg+dLmdLDtXvRLu3T9txuMTBaWpw51Qq8/iEM90VNOnWeaOrHYOeOr2Cb1BsS1VsSin2E3q947Z5Z
-	VYp6AaTOjfdpnhyFckATy+McERIVHuyOv/r7ScHWvtgSYnu2FCxIKobY9z+P/rviFbIV8FnQ0cXxw
-	v9hFKAHQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lpStzl0ZtrJ+0ysZKph88E58O38bvyoBZA/c5IgAfJc=; b=AeNu6JDM0MWR0D
+	+/H7XqA+++A+f8UsDjrk4aELKY8aKRWG6LSl5nt3u3JHDmlLt++mVwsHhMzNrbDQtSejeJ6bOS0t0
+	N0E10DB70/fLKOPKlwWIIKcbMzyvqqfTUGCwddN8MjG9jeAHYCsJvK1ntzGOjOO4yQdaIzOOuE+cC
+	vy+yk/GeuovZyAwYiN/7ip3XQ0e2Zg6vq3xZ1aMf5AuYfePEQuZ50IK6d25ZvBtJPn9vE1SFhQdPY
+	00JIHrcsEalI4cEmSANQMe/8ypZhBGbsPSTofVa3xn9S2CGYOGHQhuwl185GzDW/DDtlz6GSpip7K
+	fFFEAB0v3hDXKTiyM8Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRZrj-000000080WX-2MKv;
-	Tue, 17 Jun 2025 17:12:55 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uRZrj-000000080XF-44hm;
+	Tue, 17 Jun 2025 17:12:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRZBr-00000007sfy-2J4H;
-	Tue, 17 Jun 2025 16:29:40 +0000
+	id 1uRZC7-00000007shl-3rgq
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Jun 2025 16:29:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id EBC5D4458B;
-	Tue, 17 Jun 2025 16:29:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7ABF6C4CEF0;
-	Tue, 17 Jun 2025 16:29:36 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 89228629C4;
+	Tue, 17 Jun 2025 16:29:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DEB7EC4CEE3;
+	Tue, 17 Jun 2025 16:29:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750177778;
-	bh=rShkEFiN3B4/lnFN+KTqYUr+N+x16Xl6MwINsbfyY/c=;
+	s=k20201202; t=1750177793;
+	bh=Sim24rciNtz/Wry2ODSA5yojtk7s24lHZdR/z+Qzrog=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pr1FiKOSDtyZcoi1+CE6fklUnJXY2L6KqCsIJWxehcEJI7gk2wK/JOZvpSNq/DBu3
-	 kF33Azyo3G7f///u4lOdj8T5M22Qtd2JzSTdJiP5voW0pYAsUiwxeOI/n7yZigcNON
-	 f4B8vuv16p4Inr4SPdOFcUMYS7tRe6Ic6AGWYRKf0mdY9sxWIsKfeR4tpG1k/jXAxW
-	 41uPG/KhIU9o1OTN947LwA1ehEERmOxUlCQD6vp2yBIbEs9HsKIfWbgQfTqNICyg4P
-	 6ycyFzBZyJQUyZ7sOudYg6c7BTnv1gaHKmbPIjtivXJIUaeIr4CqOJGfdsJDQtb5II
-	 8UuDjclv1csLw==
-Date: Tue, 17 Jun 2025 17:29:34 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 3/4] dt-bindings: phy: airoha: Document support for
- AN7583 PCIe PHY
-Message-ID: <20250617-thrower-syrup-05f1bdbee613@spud>
-References: <20250606192208.26465-1-ansuelsmth@gmail.com>
- <20250606192208.26465-4-ansuelsmth@gmail.com>
- <20250609-shifty-dingbat-31aa70d7d7b1@spud>
- <68517436.050a0220.b9e1c.ed09@mx.google.com>
+	b=EUJoeQzaXry11MAz7rGgpvqUAddhmgYi6Xaq2R5YAI69Wf0gmqyv337PH95c/BQ9P
+	 jQrrFM4yIbU1CNz+ed+cE9w3Gm0T27GE8/N5l3PdPd6PFwP+1aKL0y+sySb3kTxPkh
+	 gB3XKjl0tXAChqWuELQtEwh7vBWKdhUM5cDsSYRZ7yqK85lDoC+naiF8hEJHE8rDiR
+	 hFxTqNwP8aeI3vxZWoztB5c7VXeZ8+9raKA/Pt+NjhP1PnbzkMSF8ba61m+lf9o0Vk
+	 ELwtOjFnepf3gYxeRcPc6q04b3plB5NXdwRt2EBjqc9ZSibzP4pNPmtcvQgdYj3YZR
+	 YsEeJCYsOuL+Q==
+Date: Tue, 17 Jun 2025 21:59:41 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: lpieralisi@kernel.org, kwilczynski@kernel.org, 
+	manivannan.sadhasivam@linaro.org, robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org, 
+	neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com, conor+dt@kernel.org, 
+	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, quic_qianyu@quicinc.com, 
+	quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v5 3/4] arm64: dts: qcom: qcs615: enable pcie
+Message-ID: <lvquxxmdoom7pax6pf57cpdigwlwfbnxwqs5bverwdfopafqvc@qufo2bzyjilg>
+References: <20250527072036.3599076-1-quic_ziyuzhan@quicinc.com>
+ <20250527072036.3599076-4-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <68517436.050a0220.b9e1c.ed09@mx.google.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_092939_631089_5D86DBE4 
-X-CRM114-Status: GOOD (  31.27  )
+Content-Disposition: inline
+In-Reply-To: <20250527072036.3599076-4-quic_ziyuzhan@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,201 +70,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3737661475494534590=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3737661475494534590==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5cZ2bQ10tXXgpc4h"
-Content-Disposition: inline
-
-
---5cZ2bQ10tXXgpc4h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Jun 17, 2025 at 03:57:09PM +0200, Christian Marangi wrote:
-> On Mon, Jun 09, 2025 at 05:51:10PM +0100, Conor Dooley wrote:
-> > On Fri, Jun 06, 2025 at 09:22:04PM +0200, Christian Marangi wrote:
-> > > Document support for AN7583 PCIe PHY used to make the Gen3 PCIe port
-> > > work. Add the rwquired register to configure the PCIe PHY and provide=
- an
-> > > example for it.
-> > >=20
-> > > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> > > ---
-> > >  .../bindings/phy/airoha,an7583-pcie-phy.yaml  | 72 +++++++++++++++++=
-++
-> > >  1 file changed, 72 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an75=
-83-pcie-phy.yaml
-> > >=20
-> > > diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie=
--phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.ya=
-ml
-> > > new file mode 100644
-> > > index 000000000000..93252092c2e3
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-phy.ya=
-ml
-> > > @@ -0,0 +1,72 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-phy.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Airoha AN7583 PCI-Express PHY
-> > > +
-> > > +maintainers:
-> > > +  - Christian Marangi <ansuelsmth@gmail.com>
-> > > +
-> > > +description:
-> > > +  The PCIe PHY supports physical layer functionality for PCIe Gen2/G=
-en3 port.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: airoha,an7583-pcie-phy
-> > > +
-> > > +  reg:
-> > > +    items:
-> > > +      - description: PCIE G3 analog base address
-> > > +      - description: PCIE G3 PMA base address
-> > > +      - description: PCIE QPhy analog base address
-> > > +      - description: PCIE QPhy PMA base address
-> > > +      - description: PCIE QPhy diagnostic base address
-> > > +      - description: PCIE detection time base address
-> > > +      - description: PCIE Rx AEQ base address
-> > > +
-> > > +  reg-names:
-> > > +    items:
-> > > +      - const: g3-ana
-> > > +      - const: g3-pma
-> > > +      - const: qp-ana
-> > > +      - const: qp-pma
-> > > +      - const: qp-dig
-> > > +      - const: xr-dtime
-> > > +      - const: rx-aeq
-> > > +
-> > > +  "#phy-cells":
-> > > +    const: 0
-> > > +
-> > > +required:
-> > > +  - compatible
-> > > +  - reg
-> > > +  - reg-names
-> > > +  - "#phy-cells"
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    #include <dt-bindings/phy/phy.h>
-> > > +
-> > > +    soc {
-> > > +        #address-cells =3D <2>;
-> > > +        #size-cells =3D <2>;
-> > > +
-> > > +        phy@11e80000 {
-
-Oh also, this address doesn't match the reg property below.
-
-> > > +            compatible =3D "airoha,an7583-pcie-phy";
-> > > +            #phy-cells =3D <0>;
-> > > +            reg =3D <0x0 0x1fc7f000 0x0 0xfff>,
-> > > +                  <0x0 0x1fc7e000 0x0 0xfff>,
-> > > +                  <0x0 0x1fa5f000 0x0 0xff>,
-> > > +                  <0x0 0x1fa5e000 0x0 0x8ff>,
-> > > +                  <0x0 0x1fa5a000 0x0 0x3ff>,
-> > > +                  <0x0 0x1fc30044 0x0 0x4>,
-> > > +                  <0x0 0x1fc35030 0x0 0x4>;
-> >=20
-> > Can you explain please why you have so many reg regions, some of which
-> > are directly beside one another? Why is one (or more) larger region(s)
-> > not viable here? Are some of these coming from a syscon that is not
-> > modelled or are there other devices sharing in between?
-> >
->=20
-> It's to keep consistency with the documentation and how stuff is
-> modelled in the SDK driver. The single region defined reflect real
-> register space. In the middle they are invalid register that might cause
-> system stall if read/written.
-
-Some of the regions are directly bordering one another, with gaps of
-only one byte? e.g. The second region runs from 0x1fc7e000 to 0x1fc7effe
-and the next region starts at 0x1fc7ef000. One invalid byte in the
-range is not worth splitting it out for. Although, are you sure that
-there is exactly invalid byte and you're not propagating a mistake from
-the en7581 where 0xfff was used instead of 0x1000 as a misunderstanding
-of how to the size field worked?
-
-I would expect, at the very least, that the 0x1fc7xxxx and 0x1fc5xxxx bits
-should be grouped. The two 4-byte regions seem pretty suspect and really
-do look like some sort of syscon that you're trying to expose only one word
-=66rom. Are you sure that there is nothing at addresses 0x1fc30040 and
-0x1fc30048, for example? It seems odd to me to put single words at these
-addresses (and likewise on the en7581) with nothing at all around them.
-Do you have a regmap for this device, or are you mostly working
-backwards from some sdk?
-
-> Also this is to keep consistency with the en7581 pcie phy driver.
-
-But your reg regions aren't even the same as with that phy?
-It has:
-      - description: PCIE analog base address
-      - description: PCIE lane0 base address
-      - description: PCIE lane1 base address
-      - description: PCIE lane0 detection time base address
-      - description: PCIE lane1 detection time base address
-      - description: PCIE Rx AEQ base address
-
-of which only 3 map 1:1 with yours?
-
->=20
-> Is it really that bad ? :(
->=20
-> > > +            reg-names =3D "g3-ana", "g3-pma",
-> > > +                        "qp-ana", "qp-pma", "qp-dig",
-> > > +                        "xr-dtime", "rx-aeq";
-> > > +        };
-> > > +    };
-> > > --=20
-> > > 2.48.1
-> > >=20
->=20
->=20
->=20
-> --=20
-> 	Ansuel
-
---5cZ2bQ10tXXgpc4h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaFGX7gAKCRB4tDGHoIJi
-0i/1AP4l7cuShLhNKB3HPj7a/bggHv2B1//wt8nzpEJMDvOjLgD8DMBnBbyIkiGu
-mKY9KLVXFaIoaqSEszOXztcOZYKLPQY=
-=4xkD
------END PGP SIGNATURE-----
-
---5cZ2bQ10tXXgpc4h--
-
-
---===============3737661475494534590==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3737661475494534590==--
-
+T24gVHVlLCBNYXkgMjcsIDIwMjUgYXQgMDM6MjA6MzVQTSArMDgwMCwgWml5dWUgWmhhbmcgd3Jv
+dGU6Cj4gRnJvbTogS3Jpc2huYSBjaGFpdGFueWEgY2h1bmRydSA8cXVpY19rcmljaGFpQHF1aWNp
+bmMuY29tPgo+IAo+IEFkZCBjb25maWd1cmF0aW9ucyBpbiBkZXZpY2V0cmVlIGZvciBQQ0llMCwg
+aW5jbHVkaW5nIHJlZ2lzdGVycywgY2xvY2tzLAo+IGludGVycnVwdHMgYW5kIHBoeSBzZXR0aW5n
+IHNlcXVlbmNlLgo+IAo+IEFkZCBQQ0llIGxhbmUgZXF1YWxpemF0aW9uIHByZXNldCBwcm9wZXJ0
+aWVzIGZvciA4IEdUL3MuCj4gCj4gU2lnbmVkLW9mZi1ieTogS3Jpc2huYSBjaGFpdGFueWEgY2h1
+bmRydSA8cXVpY19rcmljaGFpQHF1aWNpbmMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFppeXVlIFpo
+YW5nIDxxdWljX3ppeXV6aGFuQHF1aWNpbmMuY29tPgoKUmV2aWV3ZWQtYnk6IE1hbml2YW5uYW4g
+U2FkaGFzaXZhbSA8bWFuaUBrZXJuZWwub3JnPgoKT25lIGNvbW1lbnQgYmVsb3cuCgo+IC0tLQo+
+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzNjE1LmR0c2kgfCAxNDYgKysrKysrKysrKysr
+KysrKysrKysrKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAxNDYgaW5zZXJ0aW9ucygrKQo+IAo+
+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzNjE1LmR0c2kgYi9hcmNo
+L2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzNjE1LmR0c2kKPiBpbmRleCBiYjhiNmMzZWJkMDMuLjBh
+Zjc1N2M0NWViMiAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzNjE1
+LmR0c2kKPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzNjE1LmR0c2kKPiBAQCAt
+MTAxMiw2ICsxMDEyLDE1MiBAQCBtbXNzX25vYzogaW50ZXJjb25uZWN0QDE3NDAwMDAgewo+ICAJ
+CQlxY29tLGJjbS12b3RlcnMgPSA8JmFwcHNfYmNtX3ZvdGVyPjsKPiAgCQl9Owo+ICAKPiArCQlw
+Y2llOiBwY2llQDFjMDgwMDAgewo+ICsJCQlkZXZpY2VfdHlwZSA9ICJwY2kiOwo+ICsJCQljb21w
+YXRpYmxlID0gInFjb20scGNpZS1xY3M2MTUiLCAicWNvbSxwY2llLXNtODE1MCI7Cj4gKwkJCXJl
+ZyA9IDwweDAgMHgwMWMwODAwMCAweDAgMHgzMDAwPiwKPiArCQkJICAgICAgPDB4MCAweDQwMDAw
+MDAwIDB4MCAweGYxZD4sCj4gKwkJCSAgICAgIDwweDAgMHg0MDAwMGYyMCAweDAgMHhhOD4sCj4g
+KwkJCSAgICAgIDwweDAgMHg0MDAwMTAwMCAweDAgMHgxMDAwPiwKPiArCQkJICAgICAgPDB4MCAw
+eDQwMTAwMDAwIDB4MCAweDEwMDAwMD4sCj4gKwkJCSAgICAgIDwweDAgMHgwMWMwYjAwMCAweDAg
+MHgxMDAwPjsKPiArCQkJcmVnLW5hbWVzID0gInBhcmYiLAo+ICsJCQkJICAgICJkYmkiLAo+ICsJ
+CQkJICAgICJlbGJpIiwKPiArCQkJCSAgICAiYXR1IiwKPiArCQkJCSAgICAiY29uZmlnIiwKPiAr
+CQkJCSAgICAibWhpIjsKPiArCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mz47Cj4gKwkJCSNzaXplLWNl
+bGxzID0gPDI+Owo+ICsJCQlyYW5nZXMgPSA8MHgwMTAwMDAwMCAweDAgMHgwMDAwMDAwMCAweDAg
+MHg0MDIwMDAwMCAweDAgMHgxMDAwMDA+LAo+ICsJCQkJIDwweDAyMDAwMDAwIDB4MCAweDQwMzAw
+MDAwIDB4MCAweDQwMzAwMDAwIDB4MCAweDFmZDAwMDAwPjsKPiArCQkJYnVzLXJhbmdlID0gPDB4
+MDAgMHhmZj47Cj4gKwo+ICsJCQlkbWEtY29oZXJlbnQ7Cj4gKwo+ICsJCQlsaW51eCxwY2ktZG9t
+YWluID0gPDA+Owo+ICsJCQludW0tbGFuZXMgPSA8MT47Cj4gKwo+ICsJCQlpbnRlcnJ1cHRzID0g
+PEdJQ19TUEkgMTQxIElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJICAgICA8R0lDX1NQSSAx
+NDIgSVJRX1RZUEVfTEVWRUxfSElHSD4sCj4gKwkJCQkgICAgIDxHSUNfU1BJIDE0MyBJUlFfVFlQ
+RV9MRVZFTF9ISUdIPiwKPiArCQkJCSAgICAgPEdJQ19TUEkgMTQ0IElSUV9UWVBFX0xFVkVMX0hJ
+R0g+LAo+ICsJCQkJICAgICA8R0lDX1NQSSAxNDUgSVJRX1RZUEVfTEVWRUxfSElHSD4sCj4gKwkJ
+CQkgICAgIDxHSUNfU1BJIDE0NiBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiArCQkJCSAgICAgPEdJ
+Q19TUEkgMTQ3IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJICAgICA8R0lDX1NQSSAxNDgg
+SVJRX1RZUEVfTEVWRUxfSElHSD4sCj4gKwkJCQkgICAgIDxHSUNfU1BJIDE0MCBJUlFfVFlQRV9M
+RVZFTF9ISUdIPjsKPiArCQkJaW50ZXJydXB0LW5hbWVzID0gIm1zaTAiLAo+ICsJCQkJCSAgIm1z
+aTEiLAo+ICsJCQkJCSAgIm1zaTIiLAo+ICsJCQkJCSAgIm1zaTMiLAo+ICsJCQkJCSAgIm1zaTQi
+LAo+ICsJCQkJCSAgIm1zaTUiLAo+ICsJCQkJCSAgIm1zaTYiLAo+ICsJCQkJCSAgIm1zaTciLAo+
+ICsJCQkJCSAgImdsb2JhbCI7Cj4gKwo+ICsJCQkjaW50ZXJydXB0LWNlbGxzID0gPDE+Owo+ICsJ
+CQlpbnRlcnJ1cHQtbWFwLW1hc2sgPSA8MCAwIDAgMHg3PjsKPiArCQkJaW50ZXJydXB0LW1hcCA9
+IDwwIDAgMCAxICZpbnRjIEdJQ19TUEkgMTQ5IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJ
+CTwwIDAgMCAyICZpbnRjIEdJQ19TUEkgMTUwIElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJ
+CTwwIDAgMCAzICZpbnRjIEdJQ19TUEkgMTUxIElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJ
+CTwwIDAgMCA0ICZpbnRjIEdJQ19TUEkgMTUyIElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+ICsKPiAr
+CQkJY2xvY2tzID0gPCZnY2MgR0NDX1BDSUVfMF9QSVBFX0NMSz4sCj4gKwkJCQkgPCZnY2MgR0ND
+X1BDSUVfMF9BVVhfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRV8wX0NGR19BSEJfQ0xLPiwK
+PiArCQkJCSA8JmdjYyBHQ0NfUENJRV8wX01TVFJfQVhJX0NMSz4sCj4gKwkJCQkgPCZnY2MgR0ND
+X1BDSUVfMF9TTFZfQVhJX0NMSz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUVfMF9TTFZfUTJBX0FY
+SV9DTEs+Owo+ICsJCQljbG9jay1uYW1lcyA9ICJwaXBlIiwKPiArCQkJCSAgICAgICJhdXgiLAo+
+ICsJCQkJICAgICAgImNmZyIsCj4gKwkJCQkgICAgICAiYnVzX21hc3RlciIsCj4gKwkJCQkgICAg
+ICAiYnVzX3NsYXZlIiwKPiArCQkJCSAgICAgICJzbGF2ZV9xMmEiOwo+ICsJCQlhc3NpZ25lZC1j
+bG9ja3MgPSA8JmdjYyBHQ0NfUENJRV8wX0FVWF9DTEs+Owo+ICsJCQlhc3NpZ25lZC1jbG9jay1y
+YXRlcyA9IDwxOTIwMDAwMD47Cj4gKwo+ICsJCQlpbnRlcmNvbm5lY3RzID0gPCZhZ2dyZTFfbm9j
+IE1BU1RFUl9QQ0lFIFFDT01fSUNDX1RBR19BTFdBWVMKPiArCQkJCQkgJm1jX3ZpcnQgU0xBVkVf
+RUJJMSBRQ09NX0lDQ19UQUdfQUxXQVlTPiwKPiArCQkJCQk8JmdlbV9ub2MgTUFTVEVSX0FQUFNT
+X1BST0MgUUNPTV9JQ0NfVEFHX0FDVElWRV9PTkxZCj4gKwkJCQkJICZjb25maWdfbm9jIFNMQVZF
+X1BDSUVfMCBRQ09NX0lDQ19UQUdfQUNUSVZFX09OTFk+Owo+ICsJCQlpbnRlcmNvbm5lY3QtbmFt
+ZXMgPSAicGNpZS1tZW0iLCAiY3B1LXBjaWUiOwo+ICsKPiArCQkJaW9tbXUtbWFwID0gPDB4MCAm
+YXBwc19zbW11IDB4NDAwIDB4MT4sCj4gKwkJCQkgICAgPDB4MTAwICZhcHBzX3NtbXUgMHg0MDEg
+MHgxPjsKPiArCj4gKwkJCXJlc2V0cyA9IDwmZ2NjIEdDQ19QQ0lFXzBfQkNSPjsKPiArCQkJcmVz
+ZXQtbmFtZXMgPSAicGNpIjsKPiArCj4gKwkJCXBvd2VyLWRvbWFpbnMgPSA8JmdjYyBQQ0lFXzBf
+R0RTQz47Cj4gKwo+ICsJCQlwaHlzID0gPCZwY2llX3BoeT47Cj4gKwkJCXBoeS1uYW1lcyA9ICJw
+Y2llcGh5IjsKPiArCj4gKwkJCWVxLXByZXNldHMtOGd0cyA9IC9iaXRzLyAxNiA8MHg1NTU1IDB4
+NTU1NSAweDU1NTUgMHg1NTU1Cj4gKwkJCQkJCSAgICAgMHg1NTU1IDB4NTU1NSAweDU1NTUgMHg1
+NTU1PjsKCkRvIHlvdSByZWFsbHkgbmVlZCB0byBzZXQgdGhlIHByZXNldHMgZm9yIHRoaXMgU29D
+PyBKdXN0IG1ha2luZyBzdXJlIHRoYXQgaXQgaXMKbm90IHJhbmRvbWx5IGNvcGllZCBmcm9tIG90
+aGVyIERUUyB3aXRob3V0IHB1cnBvc2UuCgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43g
+rqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
