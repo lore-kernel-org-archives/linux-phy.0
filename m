@@ -4,42 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 431CBC71155
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 03:42:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8732EC71155
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 05:35:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qzXrkV9MfBncXilMOBG/pboko6UN4AcqQvShVXiYfzg=; b=aphclEzBSC0Rxt
-	YGM5JaFtjFopLkYo8mRRWbgtGOwWtCho5AkXpI0nz8NN9P58XgEtyE7+SOWUu5gsWV5Zy9YnnGdQF
-	s6WTS1iBcvm8dyfxl1uvxgePW/ajxZzLs64Z3Fy9HYlaxCSDQJnMy85uZKlBdkB7atfIrgbPmr+Gj
-	koDskjZdgPaQqGwMdTz6QoRhIXJg3xW8Qq7v/mqsD82v4iOBX/xHqX3RJ/iem02a/lq2Z9I47ECHh
-	ZaoIqT8CpVXZYtfroCxwpAbCIl0UjNPtrAgejrFkYuKnjRp0dzCE3x4cU4uqBLpK43Yx8+E9S9/Da
-	PlOhuExRQcqmvWvRzfmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XnNT2WrOF2dal143vCnuE9M2zd37CHJGHN5vV2am9XY=; b=vEI+itRR4iGXA8
+	2kiluU23MI/j/JKsmfjtifHxr3fpvLQ+xCwEt+zqGNtIvdwiLRKDOsrfkA5TQgAJGpLalev/ivjyD
+	EMPhzRxByT3r/PYbk8RIzVqg8FhN8sonaICd4xyN+w9QYzbQOZ5HrNeiwkNW2CHyIJaPe44ABE7lc
+	gxz7G0tR0NW5valdFcjMNlCPDW9Tet9pnpZfOwPc/9C1+noww3iFxd+VEIQq/XdOcQfuXsk4mRM8J
+	E/qwVAtbcg/XdsjWbMgZhkgtN1iRDwzmblghkmdIcyRyhBs9tUUJKGFgmbNj7eN3IYyEb+QL/Ulg3
+	OBf2u4Luwkx9CdnOPzPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRNDn-000000067Fc-2k1s;
-	Tue, 17 Jun 2025 03:42:51 +0000
-Received: from [50.53.25.54] (helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtpsa (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRNDm-000000067FP-24iY;
-	Tue, 17 Jun 2025 03:42:50 +0000
-From: Randy Dunlap <rdunlap@infradead.org>
-To: linux-kernel@vger.kernel.org
-Cc: Randy Dunlap <rdunlap@infradead.org>,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
-	Melody Olvera <melody.olvera@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org
-Subject: [PATCH] phy: qcom: add linux/bitfield.h header to fix a build error
-Date: Mon, 16 Jun 2025 20:42:49 -0700
-Message-ID: <20250617034249.2067135-1-rdunlap@infradead.org>
-X-Mailer: git-send-email 2.49.0
+	id 1uROz4-00000006Gxm-49Zk;
+	Tue, 17 Jun 2025 05:35:47 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uROtr-00000006GMk-2nAS
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Jun 2025 05:30:25 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id E5AFC4A171;
+	Tue, 17 Jun 2025 05:30:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF5BCC4CEE3;
+	Tue, 17 Jun 2025 05:30:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1750138222;
+	bh=l1Zwn6tKLlJL2jM6y69JEiT1LBIYqM+m+LRPXdZTy9s=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=pm6U2tZWY/kN+3S7a/0rEW6ke2LPrUrPvw/igHZhA0dnQQG8Dx3yqv5D+Aig2z0kd
+	 j6kTGol3Qs7Q0eDnymsw7ucwEYG/w5F/hLzgR8UnfaylZmlXwDQA3SmW1o7g7s/tnp
+	 beGplg3qwqEmojrdauilv9LH7EXM4xoRus4+2OJMOVICO4PWniBb3yPTiazVbNMROx
+	 l1CzbbyEM3Y6JKiN0W5Bu4Bok8k+11Lh6cZqqdTitZIxaIFVjTIDbNeauroZIq+7Dq
+	 gtczAqHCuZRmC2M+/Q+m84ruz7yqAg3ue0Oy1wxBQwxH3IH4wMmc3lXiudkABGSaPK
+	 w61HAQjRytLow==
+From: Vinod Koul <vkoul@kernel.org>
+To: linux-kernel@vger.kernel.org, Randy Dunlap <rdunlap@infradead.org>
+Cc: Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Melody Olvera <melody.olvera@oss.qualcomm.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org
+In-Reply-To: <20250617034249.2067135-1-rdunlap@infradead.org>
+References: <20250617034249.2067135-1-rdunlap@infradead.org>
+Subject: Re: [PATCH] phy: qcom: add linux/bitfield.h header to fix a build
+ error
+Message-Id: <175013822022.98716.16014349305503113127.b4-ty@kernel.org>
+Date: Tue, 17 Jun 2025 11:00:20 +0530
 MIME-Version: 1.0
+X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250616_223023_902072_F566EC54 
+X-CRM114-Status: UNSURE (   4.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -56,34 +76,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the <linux/bitfield.h> header to prevent a build error:
 
-drivers/phy/qualcomm/phy-qcom-m31-eusb2.c: In function 'm31eusb2_phy_init':
-drivers/phy/qualcomm/phy-qcom-m31-eusb2.c:210:37: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
-  210 |                                     FIELD_PREP(FSEL, data->fsel));
+On Mon, 16 Jun 2025 20:42:49 -0700, Randy Dunlap wrote:
+> Add the <linux/bitfield.h> header to prevent a build error:
+> 
+> drivers/phy/qualcomm/phy-qcom-m31-eusb2.c: In function 'm31eusb2_phy_init':
+> drivers/phy/qualcomm/phy-qcom-m31-eusb2.c:210:37: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+>   210 |                                     FIELD_PREP(FSEL, data->fsel));
+> 
+> 
+> [...]
 
-Fixes: 9c8504861cc4 ("phy: qcom: Add M31 based eUSB2 PHY driver")
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Cc: Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: Melody Olvera <melody.olvera@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org
-Cc: linux-arm-msm@vger.kernel.org
----
- drivers/phy/qualcomm/phy-qcom-m31-eusb2.c |    1 +
- 1 file changed, 1 insertion(+)
+Applied, thanks!
 
---- linux-next-20250616.orig/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-+++ linux-next-20250616/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-@@ -3,6 +3,7 @@
-  * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-  */
- 
-+#include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/err.h>
+[1/1] phy: qcom: add linux/bitfield.h header to fix a build error
+      commit: f0185cd5942569ea9872bf85dce621d0a7fa401e
+
+Best regards,
+-- 
+~Vinod
+
+
 
 -- 
 linux-phy mailing list
