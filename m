@@ -4,94 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1180C71157
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 09:33:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 509A1C71157
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 09:40:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Z3kTbCAuMl25jr94WTpVINeT2tIq1DNZiV3rsN7DV0=; b=ODTqXpPaRdlces
-	VKN+VPjfqQjtyNEgA0+bgP/gcIsRMx6DT59u6LuJYcuIUiZLXkXiVvxM0CXvcVkF4mG5r3FbKHDhz
-	AiCbZZ+MS/bksNxOhT3t8OBsQr0MXMF8CQ8n1bhBojs30LM0ii9B+FwRicH+1v4T06SMV25Khyc4Q
-	jbx6nw0SBqtvUQQB/1n5xibKbKZhipgKNHpzP8SSVhfEq5hlrWDaAJiO1yan+6ZC6zK4gernlBw0M
-	yuJeERpGC3b5vK2pgmjXMB4778mcsF/dYTrhqZF4MeIerIG5i7LZlnGlPyOhnQ+HoRgHMIF2ksS3+
-	XaQ43jtKpQqjHM6QnmKA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=c9tLyQ5Y+WxlSP7qQOVtwtuzJDpoR4FK+Vz1SHbG0WQ=; b=LNXl+Mwdqk+X0M44fzlJvwj7I7
+	yFr+idPtxAuAgprG3XtlYgF7QyLvVd+5b1JFYdeUaGL22Vsx8BbruV+1H06x2x/j8qRl0vpHrQQk4
+	0wJ3laq7vO3IPzCkzwmMY2wpyi4AmcUQsb3v3f/bmNy30XLEc7FWfQvlmhuBZCoS/rcadP3DpHn38
+	Tis10LZq9FvYpfLA8fDfWAN6ieCtNs2zYGvtvBL4HO4DkNuSE7XmOAGSGS+PjlsF9F9/An2Gx3gfm
+	DnRb2J2cfB+ruu/RJMjaOlhNX+qq+6hy24OLCjcw7S1LwHqAP6/TEP36Qy5RsCpeGkdrspKCmpk6a
+	RrLGoEag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRSgy-00000006le5-1ylJ;
-	Tue, 17 Jun 2025 09:33:20 +0000
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
+	id 1uRSnn-00000006nEE-0JCH;
+	Tue, 17 Jun 2025 09:40:23 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRSY6-00000006jbk-2aLW
+	id 1uRSe3-00000006kwH-0JkM
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Jun 2025 09:24:26 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-6097d144923so1386565a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 02:24:10 -0700 (PDT)
+	Tue, 17 Jun 2025 09:30:21 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-450cf214200so46574335e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 02:30:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750152249; x=1750757049; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=5qmCi5AjNmyApPkeggD1UBIutb08W79XxmIwYywNdyI=;
-        b=KPp4EaU0TFdWtgLCq7G12gjLBJYwvUjRdmaNT4rmGLm3qqIk1Qpz5jAYeZQk1P/apM
-         ZhTbO6mwAwsrCz9MyxjKvDXK8P4QGCEkdmSxDTz4zZ5X4r2KAs9GVjzTP/EZ7GOd6AdY
-         UWTdRMY1yHi6CCiBnJe7ZnnfYoa9Dt5acDbmH9I0bCTiJOvjq4aQxaam9LevToPxHUCY
-         vOTAr1NQc7ulaScmthwkXStIbnGMa7Qa7N9sCV3HQPyhb+aaHJ2Ldk6cUZqRc3+IfIlW
-         e7PNdZjb5Se2FKFKrsbV7+oQek61swsmYApZQmHEVI7NQOPuzfsZOH4NDzlyz1m7TOP6
-         D4sw==
+        d=linaro.org; s=google; t=1750152617; x=1750757417; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xl41cDxLf5qSZURNGABwnShoulmiUtSz5ST04bw9Wkg=;
+        b=II8Yx93cShhcTdGGTheGBB9QxOy7ykBDKrB+1ZjdDENSi6rdyRe0as6dWMnaPIXoJ8
+         3rsKm7Vk1ixb0zAn3WlbRGpWkRiq1L2WtL4N7ljTMAydtP7+iht/wDhklU60Vz37vwyL
+         oLyJaZTbGFOlhr3WCasD4/E5aRaqChNqICJ8oLNVa/osvS6A02X6im+rNlNyZH2Ryi/w
+         dWUrNZ8Lix6ZkMkH4SXgbPkm0DaBs79LP+YIG5wM/VcXSfdLSuHE94Wu8ykf1/OzoFkI
+         h1fQYHH49GyMfdkkxhASLBTIddDD3SJ4rQiYbrazeQVHWFhWpRSIsQIA+xZkmCclnxPJ
+         dk/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750152249; x=1750757049;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5qmCi5AjNmyApPkeggD1UBIutb08W79XxmIwYywNdyI=;
-        b=Ip4IKuQvo/iAjZGazIncnzD5SxmBSKOPzT1D0FCzkctsM2N8SmeN23KR0lARNB0MP9
-         TO4JLAe+ITYbcb8JzlV57ot+SzmTUvOUafdNTMnPelYSI3AX/Z23JmRrob9qAVOMYLic
-         oqdXo/uIn8sR39H87jVoHsKFzttm1cMzw0etSnpr+UqHu3oNGXa7e93nctrtyRiHNnEF
-         ZjH60uPcwzPqyvpaJUjOGNpx0/IDWlXft1TSSgzI/CVo04UTFlqKz/POMwF4P4oijClD
-         85vhQmcK9v9T/lvlmf16f1EPFaCK2dFaY384u6afglE4P0NqXL1GAh3OSq+rJcgE9oGF
-         804w==
-X-Forwarded-Encrypted: i=1; AJvYcCV79cGqxUCD1gq3b1FAdR1JiPuJBLy30Ub30WEY9fwEDoabKsolxxbsaMjmYTlYeF90M0dDt8L546A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyNNSwmewvO7aECRl1EU726J5tXcPb9zmWhAeObsZeOVABGtRWS
-	GyKACYvSs7xDUy/jqqd/QCzlvGsDpRtDvxdYiK6n/u+6e3942ZdLElC2uMB/LUrDOCU=
-X-Gm-Gg: ASbGncvCIsovNc1GZeyN2LquBlZGHJqSz6cyppqa4U+G1TPvjrAixKwo5ihts5aVWgA
-	+ZlWfCHsqX0TLiRAJGCFyBCjeL42X6CKK0A1M7HKPwiw5usDaPAot9NdPE/KfGeo6HCdP7dO5GR
-	RwrNCduA7OzUfVbESy8BLD0CH7C7bGL10p8r0L/d5rmiBiCx3EmnGVNoLf3EpLRceEnPSfH0VfJ
-	6QlGb6c2B5xyyq6cJemJiPzbTGlhb47nYXCBeohDPAQRu5B+laoKS/Z6ucxtQtnp6RAX5FHdE02
-	x1yMDDOL2mfXnU/jCS7it7rXloo8S8U858QhPuofb8ppKEbNOGPNZVI7Plo=
-X-Google-Smtp-Source: AGHT+IEnQHxM84ovHQi50egnS9UEgVOz9GmXYcPlKnLN4jCfbnYv7EbdDH2huGe6x+oNGIph9jx7kw==
-X-Received: by 2002:a05:6402:34ce:b0:600:129:444e with SMTP id 4fb4d7f45d1cf-608ce49deb8mr11863903a12.4.1750152248723;
-        Tue, 17 Jun 2025 02:24:08 -0700 (PDT)
-Received: from linaro.org ([82.79.186.23])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-608b4a5b6a5sm7931639a12.40.2025.06.17.02.24.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Jun 2025 02:24:08 -0700 (PDT)
-Date: Tue, 17 Jun 2025 12:24:06 +0300
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2 2/2] phy: qualcomm: phy-qcom-eusb2-repeater: Don't
- zero-out registers
-Message-ID: <aFE0Nu8CKFBlCCrd@linaro.org>
-References: <20250617-eusb2-repeater-tuning-v2-0-ed6c484f18ee@fairphone.com>
- <20250617-eusb2-repeater-tuning-v2-2-ed6c484f18ee@fairphone.com>
+        d=1e100.net; s=20230601; t=1750152617; x=1750757417;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=xl41cDxLf5qSZURNGABwnShoulmiUtSz5ST04bw9Wkg=;
+        b=m4oJoUSJt+DXrXF/VwiojTanaLnuHMR8gv0ZQV29007ZF2TjzfDHhAIkoTHGc0K0HL
+         1M9svqkKpROd3oqMwviKyRs0gM3d9I3B7fwu8YlKnYpafMfK/uTihvZSZpLRSArKod5R
+         Xjm75XzfhnR6Xzjf37zGDhmy3+KyyMMVuXuVk+xAU0n3pqvWWGvg+cEyRw8s27tdZMaX
+         EmeDPNyT66unkTGpLXk1bcTrQm162XhA2Kf6ooxVL0/oiPld+1juiU882Ur8ycQIPOJA
+         sQRaczXzzL32CULSZMGyO/+UOGqCCHPX3ZD30SvrpjfgnU52dU8AlzYV5NEPCc13K6sk
+         kCkA==
+X-Forwarded-Encrypted: i=1; AJvYcCWCvtd5PT/UjCWT8r+7MPUzsUgwCdNZxDNTz9zs15qth05OfETNA1Ob2HuRa2YpSN+03fukTBVXJDg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwsBcGRCOc7WC0dQqDmTPKcOvFPw4DU3NmIvzvTRvuAFN/HGwsJ
+	YUYyEuebOaUkSKScsl06EzQEaUfoM6Bps9LCbpjYgPgMwIETzzZlD4ROexhql4di4KM=
+X-Gm-Gg: ASbGncsZEMaAgBIgK//kiSbWLze4JSeFyezbL8XeYKDK2IlqEe45d7SCxpmRHWkHWsd
+	0q2nzorRFaOyWgNGavz1MJFafA2eef8jP/4lmqIDpFkMF7LehD91s/WLB6740QqbMZoKHmQAZQO
+	mEXeJhIl7I7hnsiDQQPLe+KMLwHWu68NsJ9xVQovwJ3AmMP2L7zIUtOYzPjSu4X3Lr5XImQECgs
+	u1PefJoTo45tlVjliWHwlIqsIGXxAatuOg/MCTP5pxpXc5qGSZKwGWk733sFQW5f9wDLGi2/i49
+	Vz6uwI2ktq8u6Gcm7UB9YLhC/5rAv6wndAkAIOAHr6W6pDGAsMShgLEmlOX+fvMbK+88yXgnaRi
+	Umf6BVmEwlWmdw7JXfN8Z1NxddXre0RQkOFF3P5Y=
+X-Google-Smtp-Source: AGHT+IH90fM/Hl2qQnPaSI6dqHDTANiZZutrp7G9byHerpIanfYAuG3VuGrXV1ZLniUQsldJImLpAQ==
+X-Received: by 2002:a05:600c:8b01:b0:441:d437:e3b8 with SMTP id 5b1f17b1804b1-4533cac9179mr105111595e9.23.1750152616870;
+        Tue, 17 Jun 2025 02:30:16 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:3819:3250:4f73:db31? ([2a01:e0a:3d9:2080:3819:3250:4f73:db31])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568a54aeasm13662038f8f.14.2025.06.17.02.30.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Jun 2025 02:30:11 -0700 (PDT)
+Message-ID: <9c512a8d-a39e-4b3a-b617-80b2dc7d14b3@linaro.org>
+Date: Tue, 17 Jun 2025 11:30:10 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250617-eusb2-repeater-tuning-v2-2-ed6c484f18ee@fairphone.com>
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH 3/5] phy: rockchip: phy-rockchip-inno-csidphy: allow
+ writes to grf register 0
+To: michael.riesch@collabora.com, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Collabora Kernel Team <kernel@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20250616-rk3588-csi-dphy-v1-0-84eb3b2a736c@collabora.com>
+ <20250616-rk3588-csi-dphy-v1-3-84eb3b2a736c@collabora.com>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20250616-rk3588-csi-dphy-v1-3-84eb3b2a736c@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_022410_682848_854C0ABE 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250617_023019_135492_9E42A2C8 
+X-CRM114-Status: GOOD (  17.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,27 +132,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-06-17 10:26:36, Luca Weiss wrote:
-> Zeroing out registers does not happen in the downstream kernel, and will
-> "tune" the repeater in surely unexpected ways since most registers don't
-> have a reset value of 0x0.
+On 17/06/2025 10:54, Michael Riesch via B4 Relay wrote:
+> From: Michael Riesch <michael.riesch@collabora.com>
 > 
-> Stop doing that and instead just set the registers that are in the init
-> sequence (though long term I don't think there's actually PMIC-specific
-> init sequences, there's board specific tuning, but that's a story for
-> another day).
+> The driver for the Rockchip MIPI CSI-2 DPHY uses GRF register offset
+> value 0 to sort out undefined registers. However, the RK3588 CSIDPHY GRF
+> this offset is perfectly fine (in fact, register 0 is the only one in
+> this register y
+> file).
+> Introduce a boolean variable to indicate valid registers and allow writes
+> to register 0.
 > 
-> Fixes: 99a517a582fc ("phy: qualcomm: phy-qcom-eusb2-repeater: Zero out untouched tuning regs")
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+> ---
+>   drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 5 +++--
+>   1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> index 2ab99e1d47eb..75533d071025 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
+> @@ -87,10 +87,11 @@ struct dphy_reg {
+>   	u32 offset;
+>   	u32 mask;
+>   	u32 shift;
+> +	u8 valid;
+>   };
+>   
+>   #define PHY_REG(_offset, _width, _shift) \
+> -	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, }
+> +	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, .valid = 1, }
+>   
+>   static const struct dphy_reg rk1808_grf_dphy_regs[] = {
+>   	[GRF_DPHY_CSIPHY_FORCERXMODE] = PHY_REG(RK1808_GRF_PD_VI_CON_OFFSET, 4, 0),
+> @@ -145,7 +146,7 @@ static inline void write_grf_reg(struct rockchip_inno_csidphy *priv,
+>   	const struct dphy_drv_data *drv_data = priv->drv_data;
+>   	const struct dphy_reg *reg = &drv_data->grf_regs[index];
+>   
+> -	if (reg->offset)
+> +	if (reg->valid)
+>   		regmap_write(priv->grf, reg->offset,
+>   			     HIWORD_UPDATE(value, reg->mask, reg->shift));
+>   }
+> 
 
-Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
