@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 509A1C71157
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 09:40:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E456C71136
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 09:42:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=c9tLyQ5Y+WxlSP7qQOVtwtuzJDpoR4FK+Vz1SHbG0WQ=; b=LNXl+Mwdqk+X0M44fzlJvwj7I7
-	yFr+idPtxAuAgprG3XtlYgF7QyLvVd+5b1JFYdeUaGL22Vsx8BbruV+1H06x2x/j8qRl0vpHrQQk4
-	0wJ3laq7vO3IPzCkzwmMY2wpyi4AmcUQsb3v3f/bmNy30XLEc7FWfQvlmhuBZCoS/rcadP3DpHn38
-	Tis10LZq9FvYpfLA8fDfWAN6ieCtNs2zYGvtvBL4HO4DkNuSE7XmOAGSGS+PjlsF9F9/An2Gx3gfm
-	DnRb2J2cfB+ruu/RJMjaOlhNX+qq+6hy24OLCjcw7S1LwHqAP6/TEP36Qy5RsCpeGkdrspKCmpk6a
-	RrLGoEag==;
+	bh=3n1quxmsVvQOwrq4I0c2kR3MMgdgWGHFJvFM4iwFcxI=; b=rHiwKTJw0AYjIfxdqdLabZnzuP
+	7SYRIuzq3inDu6pd/S83hKyLn49W9AtpnsogoqlR+VZaADlFdXiDR8uq2xVT+kdKwZ8sCQFoH8zuL
+	kFquVKMt8cbX8wP40o2VXgGeiuwkX/I3s7oEPju4OIIZRtldFdK6H4ujU5h4og2trvlkJCYW3mslL
+	KRNVF8OIpF5XTV7wOmOJxMluljLPLfeWRIwhD+IRsMysVqH7lwflmjDGwL/HD0ku8NXTLwBRvHrfJ
+	P7sMH8PCvfeAi/uP1ty2sb7LCX4a5jCllvcumrBWkm0Af+BpcBJL3DYKt6A/TTH67Ty8XmQ6SXHKo
+	k9Ni9uxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRSnn-00000006nEE-0JCH;
-	Tue, 17 Jun 2025 09:40:23 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1uRSq3-00000006nUk-3NTk;
+	Tue, 17 Jun 2025 09:42:43 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRSe3-00000006kwH-0JkM
+	id 1uRSfJ-00000006lGD-0qsy
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Jun 2025 09:30:21 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-450cf214200so46574335e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 02:30:18 -0700 (PDT)
+	Tue, 17 Jun 2025 09:31:38 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4533a53a6efso2404105e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 17 Jun 2025 02:31:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750152617; x=1750757417; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1750152696; x=1750757496; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=xl41cDxLf5qSZURNGABwnShoulmiUtSz5ST04bw9Wkg=;
-        b=II8Yx93cShhcTdGGTheGBB9QxOy7ykBDKrB+1ZjdDENSi6rdyRe0as6dWMnaPIXoJ8
-         3rsKm7Vk1ixb0zAn3WlbRGpWkRiq1L2WtL4N7ljTMAydtP7+iht/wDhklU60Vz37vwyL
-         oLyJaZTbGFOlhr3WCasD4/E5aRaqChNqICJ8oLNVa/osvS6A02X6im+rNlNyZH2Ryi/w
-         dWUrNZ8Lix6ZkMkH4SXgbPkm0DaBs79LP+YIG5wM/VcXSfdLSuHE94Wu8ykf1/OzoFkI
-         h1fQYHH49GyMfdkkxhASLBTIddDD3SJ4rQiYbrazeQVHWFhWpRSIsQIA+xZkmCclnxPJ
-         dk/A==
+        bh=Vazgg8MBBoKJAnc66Ha3O1o73O9xFvjsj3CSjHEZTB0=;
+        b=WsyD2+XJSH8XgQSBb4cY6TJgK023R79rhWkvYlOfYVWqKO2PjJUORL429LJtQ13c7w
+         NwqGFJOdlpc2emtyzBKuXIi/tiKqXP8S1XCPDjNKRTygTJt2CSqCCn3EyNWWroQag6Xh
+         OiTB2j8K5skZt7YYajUWfMeXZK65k1DiKKqlStMAfk6D2cGj7rQFfUk+bCl8gi60qObf
+         K1HCwm1snDp91NgGIs6/RClhAvguYovdYAEPlaVrmdJqn918pCzoESMYGmZ0KstGJQR/
+         BUVXzeKLo3vC757VEkDErkldlSMTy7kaxvQVXvjVSB3LNJbZZPnxMwak2z/ygAwy8ueW
+         2yYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750152617; x=1750757417;
+        d=1e100.net; s=20230601; t=1750152696; x=1750757496;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=xl41cDxLf5qSZURNGABwnShoulmiUtSz5ST04bw9Wkg=;
-        b=m4oJoUSJt+DXrXF/VwiojTanaLnuHMR8gv0ZQV29007ZF2TjzfDHhAIkoTHGc0K0HL
-         1M9svqkKpROd3oqMwviKyRs0gM3d9I3B7fwu8YlKnYpafMfK/uTihvZSZpLRSArKod5R
-         Xjm75XzfhnR6Xzjf37zGDhmy3+KyyMMVuXuVk+xAU0n3pqvWWGvg+cEyRw8s27tdZMaX
-         EmeDPNyT66unkTGpLXk1bcTrQm162XhA2Kf6ooxVL0/oiPld+1juiU882Ur8ycQIPOJA
-         sQRaczXzzL32CULSZMGyO/+UOGqCCHPX3ZD30SvrpjfgnU52dU8AlzYV5NEPCc13K6sk
-         kCkA==
-X-Forwarded-Encrypted: i=1; AJvYcCWCvtd5PT/UjCWT8r+7MPUzsUgwCdNZxDNTz9zs15qth05OfETNA1Ob2HuRa2YpSN+03fukTBVXJDg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwsBcGRCOc7WC0dQqDmTPKcOvFPw4DU3NmIvzvTRvuAFN/HGwsJ
-	YUYyEuebOaUkSKScsl06EzQEaUfoM6Bps9LCbpjYgPgMwIETzzZlD4ROexhql4di4KM=
-X-Gm-Gg: ASbGncsZEMaAgBIgK//kiSbWLze4JSeFyezbL8XeYKDK2IlqEe45d7SCxpmRHWkHWsd
-	0q2nzorRFaOyWgNGavz1MJFafA2eef8jP/4lmqIDpFkMF7LehD91s/WLB6740QqbMZoKHmQAZQO
-	mEXeJhIl7I7hnsiDQQPLe+KMLwHWu68NsJ9xVQovwJ3AmMP2L7zIUtOYzPjSu4X3Lr5XImQECgs
-	u1PefJoTo45tlVjliWHwlIqsIGXxAatuOg/MCTP5pxpXc5qGSZKwGWk733sFQW5f9wDLGi2/i49
-	Vz6uwI2ktq8u6Gcm7UB9YLhC/5rAv6wndAkAIOAHr6W6pDGAsMShgLEmlOX+fvMbK+88yXgnaRi
-	Umf6BVmEwlWmdw7JXfN8Z1NxddXre0RQkOFF3P5Y=
-X-Google-Smtp-Source: AGHT+IH90fM/Hl2qQnPaSI6dqHDTANiZZutrp7G9byHerpIanfYAuG3VuGrXV1ZLniUQsldJImLpAQ==
-X-Received: by 2002:a05:600c:8b01:b0:441:d437:e3b8 with SMTP id 5b1f17b1804b1-4533cac9179mr105111595e9.23.1750152616870;
-        Tue, 17 Jun 2025 02:30:16 -0700 (PDT)
+        bh=Vazgg8MBBoKJAnc66Ha3O1o73O9xFvjsj3CSjHEZTB0=;
+        b=eCpMw5TzKYP0arE6jLKAvPYiV8C9r6yTrmfnsL75Npy9CnZ5cAXpntIOWXGuwtN0B2
+         vH8gwvylrxZMcnk+lZSF9stwom7RRuH90GniIsDC8V3aLxggbEg3hsZhdG2+meKJiJ7c
+         d9q2bmNy9x8zmWJXcUu4c/+GK1VwBapX3kafG45Apx3BC0esomR4cJtL5KPYaD3uIL4m
+         M8LYd0Fe4cCeMutyVj/CNcDYu5SSucNcGFIGgDDv1LNFUZV34pVo8wIxWpgvfxjIy8rk
+         dDiFzWbSgdzGfA5PioPo919uEGJFRHws1WivGZT6G9mRFJWXu4y9OFYd9XyNpv8/2If5
+         ZCSw==
+X-Forwarded-Encrypted: i=1; AJvYcCWoZNPR6yJ9owzRjewSIN9AztckLMMge8fcJLW+bVPf3Kfe3SktsyUNKGR1qOneW0bDdFUyIQEg0R4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzTH3/AOuXsJwAJNCF4j+9tA/QSv19bhJ2oOrhozgUHjCcdI1FF
+	+bBucvDjSKCjY9r5c5qcXdeH/28uNGVdN8cBSpf9gLUjJNdOD8hvFXt/wWLh4OWjBt4=
+X-Gm-Gg: ASbGncvSdB7AmDWGoV7AhvecgTm3FzZ8P9d+RBDLPa2zSuv2PV5j2zAqTi7xX/WGWx3
+	5uyAXUln3hlcreodnz4irIzUsMUir6qV3T0HC0rvnfusRrYiMNvEhwaolLHrhTGEzMRKQqUv31S
+	PQ5UJH60YeW4FgaZklDsEf8Z4cCLsyTnIgUiRQgT/jw5oAOtAVhfV2274G1oKHfCY1M0nHLKWxG
+	GWkdRwTjRUfb24RYnHxc4zv8Y2gELCHTITpSUuqZgJnqp/CTk78/s8wiv/i9MHl+5nKQ0zDEDlJ
+	0tK8PqiCtVs9iuaOAS+2GaZKFwC2vgYDtbQSawMvRsrfp7xjvn1rOmpD0M/Y+Or5BYUDVFnTu8A
+	3yxEgz0H+5anKjU6xQFnxneLYPoQdklwpQZSrz6rJ0fYndHu8Ww==
+X-Google-Smtp-Source: AGHT+IHnkTMalr/l7z/gjX0Vxp3eTn0RvdP8sEl4pN/4V5YFWj81Jh87iSjRIoA3+uUkg9tC20g/fA==
+X-Received: by 2002:a05:600c:4eca:b0:453:ec2:c7b2 with SMTP id 5b1f17b1804b1-4533c8ef254mr122607865e9.7.1750152695562;
+        Tue, 17 Jun 2025 02:31:35 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:3819:3250:4f73:db31? ([2a01:e0a:3d9:2080:3819:3250:4f73:db31])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568a54aeasm13662038f8f.14.2025.06.17.02.30.11
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4532e2618f0sm167835855e9.37.2025.06.17.02.31.34
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 17 Jun 2025 02:30:11 -0700 (PDT)
-Message-ID: <9c512a8d-a39e-4b3a-b617-80b2dc7d14b3@linaro.org>
-Date: Tue, 17 Jun 2025 11:30:10 +0200
+        Tue, 17 Jun 2025 02:31:35 -0700 (PDT)
+Message-ID: <0f2b8934-9b3d-4913-b734-b4fe7f0c7d0a@linaro.org>
+Date: Tue, 17 Jun 2025 11:31:34 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 3/5] phy: rockchip: phy-rockchip-inno-csidphy: allow
- writes to grf register 0
+Subject: Re: [PATCH 2/5] dt-bindings: phy: rockchip-inno-csi-dphy: add rk3588
+ variant
 To: michael.riesch@collabora.com, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
@@ -90,7 +90,7 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <20250616-rk3588-csi-dphy-v1-0-84eb3b2a736c@collabora.com>
- <20250616-rk3588-csi-dphy-v1-3-84eb3b2a736c@collabora.com>
+ <20250616-rk3588-csi-dphy-v1-2-84eb3b2a736c@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -117,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250616-rk3588-csi-dphy-v1-3-84eb3b2a736c@collabora.com>
+In-Reply-To: <20250616-rk3588-csi-dphy-v1-2-84eb3b2a736c@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_023019_135492_9E42A2C8 
-X-CRM114-Status: GOOD (  17.31  )
+X-CRM114-CacheID: sfid-20250617_023137_286865_67A929F2 
+X-CRM114-Status: GOOD (  14.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,48 +141,118 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 17/06/2025 10:54, Michael Riesch via B4 Relay wrote:
 > From: Michael Riesch <michael.riesch@collabora.com>
 > 
-> The driver for the Rockchip MIPI CSI-2 DPHY uses GRF register offset
-> value 0 to sort out undefined registers. However, the RK3588 CSIDPHY GRF
-> this offset is perfectly fine (in fact, register 0 is the only one in
-> this register y
-> file).
-> Introduce a boolean variable to indicate valid registers and allow writes
-> to register 0.
+> The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
+> Add the variant and allow for the additional reset.
+
+No names for the new resets on the RK3588 ?
+
+Neil
+
 > 
 > Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 5 +++--
->   1 file changed, 3 insertions(+), 2 deletions(-)
+>   .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 60 ++++++++++++++++++++--
+>   1 file changed, 55 insertions(+), 5 deletions(-)
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-> index 2ab99e1d47eb..75533d071025 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-> @@ -87,10 +87,11 @@ struct dphy_reg {
->   	u32 offset;
->   	u32 mask;
->   	u32 shift;
-> +	u8 valid;
->   };
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> index 5ac994b3c0aa..6755738b13ee 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> @@ -21,6 +21,7 @@ properties:
+>         - rockchip,rk3326-csi-dphy
+>         - rockchip,rk3368-csi-dphy
+>         - rockchip,rk3568-csi-dphy
+> +      - rockchip,rk3588-csi-dphy
 >   
->   #define PHY_REG(_offset, _width, _shift) \
-> -	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, }
-> +	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, .valid = 1, }
+>     reg:
+>       maxItems: 1
+> @@ -39,18 +40,49 @@ properties:
+>       maxItems: 1
 >   
->   static const struct dphy_reg rk1808_grf_dphy_regs[] = {
->   	[GRF_DPHY_CSIPHY_FORCERXMODE] = PHY_REG(RK1808_GRF_PD_VI_CON_OFFSET, 4, 0),
-> @@ -145,7 +146,7 @@ static inline void write_grf_reg(struct rockchip_inno_csidphy *priv,
->   	const struct dphy_drv_data *drv_data = priv->drv_data;
->   	const struct dphy_reg *reg = &drv_data->grf_regs[index];
+>     resets:
+> -    items:
+> -      - description: exclusive PHY reset line
+> +    minItems: 1
+> +    maxItems: 2
 >   
-> -	if (reg->offset)
-> +	if (reg->valid)
->   		regmap_write(priv->grf, reg->offset,
->   			     HIWORD_UPDATE(value, reg->mask, reg->shift));
->   }
+>     reset-names:
+> -    items:
+> -      - const: apb
+> +    minItems: 1
+> +    maxItems: 2
+>   
+>     rockchip,grf:
+>       $ref: /schemas/types.yaml#/definitions/phandle
+>       description:
+>         Some additional phy settings are access through GRF regs.
+>   
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - rockchip,px30-csi-dphy
+> +              - rockchip,rk1808-csi-dphy
+> +              - rockchip,rk3326-csi-dphy
+> +              - rockchip,rk3368-csi-dphy
+> +              - rockchip,rk3568-csi-dphy
+> +    then:
+> +      properties:
+> +        resets:
+> +          items:
+> +            - description: exclusive PHY reset line
+> +
+> +        reset-names:
+> +          items:
+> +            - const: apb
+> +
+> +      required:
+> +        - reset-names
+> +    else:
+> +      properties:
+> +        resets:
+> +          minItems: 2
+> +
+> +        reset-names:
+> +          minItems: 2
+> +
+>   required:
+>     - compatible
+>     - reg
+> @@ -59,7 +91,6 @@ required:
+>     - '#phy-cells'
+>     - power-domains
+>     - resets
+> -  - reset-names
+>     - rockchip,grf
+>   
+>   additionalProperties: false
+> @@ -78,3 +109,22 @@ examples:
+>           reset-names = "apb";
+>           rockchip,grf = <&grf>;
+>       };
+> +  - |
+> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
+> +
+> +    soc {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        csi_dphy0: phy@fedc0000 {
+> +            compatible = "rockchip,rk3588-csi-dphy";
+> +            reg = <0x0 0xfedc0000 0x0 0x8000>;
+> +            clocks = <&cru PCLK_CSIPHY0>;
+> +            clock-names = "pclk";
+> +            #phy-cells = <0>;
+> +            resets = <&cru SRST_CSIPHY0>, <&cru SRST_P_CSIPHY0>;
+> +            rockchip,grf = <&csidphy0_grf>;
+> +            status = "disabled";
+> +        };
+> +    };
 > 
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
