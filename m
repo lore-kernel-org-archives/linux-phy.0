@@ -4,66 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08F8CC71136
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Jun 2025 23:01:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F074C71159
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Jun 2025 02:18:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BxLCw2mdo1GK6lB88qGQBwuJjI3Z20TIrYlaDyopgoo=; b=QN4h43j1HebSR0ufdjrnJ3pj6t
-	EZT1mBnolXUoaloqF4CF3MqTk2GfTVnQX25xJW+BwDVICNE6bHzoV8VFTz3F+cVU0BZqSxTie/Mai
-	qO/YFQOejOhyhYMmnPjw9wVRe0Wfijp5qhGCr1Zvxi6OzPig8C4o/22/fLH+eNoOV/pjnuM2WrQOH
-	zU1853+Wa8C8fhghx2ir1v6D5SIDo3VeMYhWMZTh7fow5SfhxFT85JrdeZI75+Y0VlptiyHfEcjKu
-	eXCwEzbcE3eLOlHHgdNK9UvzHOab9Y68mo9GGxdJE+XNTu+V2U+xHYhQtwDraAIXtIwbpGQRWPx4M
-	0b/tgZZg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eNdsGuaCVu7aUiOfyiTJaQ/3Aeqk6ptGm+jXYg6Z7ag=; b=MNwJ4iAX8bVkWN
+	rD+uLNzCxamOZZ8AImG/GtRlDwl/560G5BiQxryi6QC7jXalvZ4MRrRS92hinkacbSXYsI7bLIh4e
+	FN4J0soYBz0ptbMjWjSwLHUkN/9sNnimgSORF3k4cDwzqT1Ww1Grtfh3XPj4q5imfcLUbKLMrpmLR
+	YOuJAdD8/ZkpP/ytk/d+tCwFYL8UxqJ2ylOyi4Pj7ydgkIli1dT8Fdk4I0LsCHRLEsnaR4Vt6VRVD
+	L3wcX9DBBhz+yKx6ZtA66e6y4xkmCBI+aAnFxktjruYQVRMoAq/ltfSwHQV/1tWprz+QqwZ4jDmUV
+	IZIjQkeeujUIOPUKiIzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRIpW-00000005mCU-23UJ;
-	Mon, 16 Jun 2025 23:01:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uRLuV-000000060nZ-3bS4;
+	Tue, 17 Jun 2025 02:18:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRHfK-00000005bgb-42Yi;
-	Mon, 16 Jun 2025 21:46:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E5ABA4AE56;
-	Mon, 16 Jun 2025 21:46:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A0563C4CEEA;
-	Mon, 16 Jun 2025 21:46:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750110412;
-	bh=P+l1gSKaL1N/vyV+DOT1UrSQ4fffm5IIUx8ooXOed1E=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=Szj//WWWSX7Egy9IV2n6oWiSAnYoeR2NqgHnX6qjBNb51Cg9RQjsjbFnJ3zztDe8I
-	 mSliIgqysC/frhCJncjVf5IjJfwL3+RFTyNYEoeTZc9iZytlm25WR5L3oiIcwRLE+L
-	 14FRqZkbLm985wPGnXuwRIHuqcqLEwognK039s6OIv+JrYUbBhHvCSNXBgy4fxshrG
-	 v2VW/RkUuYvSAMdeiUXbcGOsntoaKQb+er/qIT3+19KN0J1w518JKZ1TbLzHQR/svV
-	 PjoC8pLV80/inUonAbTvUn4eebPmKkQqh0MMu6Bz8+PE0wAREEtES8s7Y5EeJF8Jvf
-	 7ov4q6jsw2+jw==
-Date: Mon, 16 Jun 2025 16:46:51 -0500
+	id 1uRLsN-000000060SA-1rGR
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Jun 2025 02:16:40 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55GGsfKM003266;
+	Tue, 17 Jun 2025 02:16:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=/1vS8/JqNxG
+	VLp00mgEn6g+HuGaGexP6qrS1Tms27X0=; b=Lpqr3VgG9WHkrC+jYNcMaeES6aY
+	qcevs4PiKL6sgwa3Vjf4YyDPXneJTMiqXwh0OwAUka+1PFCGrxwjWJU2uiyKkSD2
+	L8iy8qZzX+6oOtBZOMV44q7cxNtdSDqG5O//N1J0oiCEDg0gt8Zff11F6mDL+vT5
+	QzJ3F68p6VPp2BK41qO8fUCBq2nTjf0NHhBFFPun6JHhBoy9oA2gOYINeAfigC7S
+	lu1qb1dBH4jh59ylk8K84uBUm6DRTaVkavb/zlnJc5uT+YZHo4L1PJ2RNuWGWDes
+	9T30kVSqfPqnF5S2W7wF0XQzyWQbT6I574u9ujr8oL47ja/mk4lfG/iNwcw==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 479qp5n2y1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Jun 2025 02:16:31 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 55H2GT9Q014431;
+	Tue, 17 Jun 2025 02:16:29 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 479jt4gb0p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Jun 2025 02:16:29 +0000
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 55H2GSh2014405;
+	Tue, 17 Jun 2025 02:16:29 GMT
+Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 55H2GS0k014400
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Jun 2025 02:16:29 +0000
+Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id D2D913659; Tue, 17 Jun 2025 10:16:26 +0800 (CST)
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Subject: [PATCH v2 3/4] arm64: dts: qcom: sa8775p: remove aux clock from pcie phy
+Date: Tue, 17 Jun 2025 10:16:16 +0800
+Message-Id: <20250617021617.2793902-4-quic_ziyuzhan@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250617021617.2793902-1-quic_ziyuzhan@quicinc.com>
+References: <20250617021617.2793902-1-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: rosa.pila@samsung.com, s.nawrocki@samsung.com, 
- linux-samsung-soc@vger.kernel.org, conor+dt@kernel.org, 
- linux-kernel@vger.kernel.org, andre.draszik@linaro.org, 
- linux-phy@lists.infradead.org, vkoul@kernel.org, krzk+dt@kernel.org, 
- faraz.ata@samsung.com, selvarasu.g@samsung.com, kauschluss@disroot.org, 
- ivo.ivanov.ivanov1@gmail.com, dev.tailor@samsung.com, 
- devicetree@vger.kernel.org, kishon@kernel.org, peter.griffin@linaro.org, 
- muhammed.ali@samsung.com, linux-arm-kernel@lists.infradead.org, 
- alim.akhtar@samsung.com, m.szyprowski@samsung.com
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-In-Reply-To: <20250613055613.866909-1-pritam.sutar@samsung.com>
-References: <CGME20250613055037epcas5p1ce00fda1b535dbeb9a98458d1f0a28ee@epcas5p1.samsung.com>
- <20250613055613.866909-1-pritam.sutar@samsung.com>
-Message-Id: <175011004935.2433563.8726528182523156685.robh@kernel.org>
-Subject: Re: [PATCH v3 0/9] initial usbdrd phy support for Exynosautov920
- soc
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: epbQ4azd4ekgf-_c-Dn9gB5zmU_rkyHg
+X-Proofpoint-ORIG-GUID: epbQ4azd4ekgf-_c-Dn9gB5zmU_rkyHg
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE3MDAxOSBTYWx0ZWRfX8By/HVTnSWgf
+ oJDgKLbBltRFfiqTclsirebKo5x8OmDOHxLzrNPHtkcIU4P7XiZRoyVlbI/z0uLbyxASmASucT6
+ o5DWZGajdOKwxxuSAinOgJngv0RRgfnUxG7Gadrgj89JdboUPl3IWrYQQ/5J4X7gZe8Wo6lmGjj
+ HeUM4PTxl4soP68wtcYjvmCUz4MOmltL0H0TjApu6ISf8HYrWqXmpOitROsBLviYo7q3NhJxDNY
+ eIITWD1o1qtJZQEsH47XVJLp1zwBfLxu9B1LLlfYOY1dYsz6t/ilBxVsabTX/v8CvwGL5vzFxM9
+ cx+490L1v+MU/eWkz7JX6E4eJnz1hpfjkrF6gGs8hTudgyZbyFViYaCrzHyRyy6im8ljxrWOAxA
+ 1mXpm6iI1QRg5j1B8cb4G8AiIfnEt+MDwrB95+lJWVWSRstnharm/r22sASuxxMG7e4+Djv0
+X-Authority-Analysis: v=2.4 cv=fMc53Yae c=1 sm=1 tr=0 ts=6850cfff cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=6IFa9wvqVegA:10 a=COk6AnOGAAAA:8 a=9zbhvFfKP0O2o0OFYOYA:9
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-17_01,2025-06-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 adultscore=0 bulkscore=0 clxscore=1015 malwarescore=0
+ mlxlogscore=999 spamscore=0 lowpriorityscore=0 impostorscore=0 mlxscore=0
+ priorityscore=1501 suspectscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506170019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250616_144655_050361_0813423D 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20250616_191639_489206_BC443675 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,139 +124,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+gcc_aux_clk is used in PCIe RC and it is not required in pcie phy, in
+pcie phy it should be gcc_phy_aux_clk, so remove gcc_aux_clk and
+replace it with gcc_phy_aux_clk.
 
-On Fri, 13 Jun 2025 11:26:04 +0530, Pritam Manohar Sutar wrote:
-> This SoC has a single USB 3.1 DRD combo phy and three USB2.0 only
-> DRD phy controllers
-> 
->   - Combo phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
->     compatible to the USB3.0 SS(5Gbps). 'Add-on USB2.0' phy is added
->     to support USB2.0 HS(480Mbps), FS(12Mbps) and LS(1.5Mbps) data
->     rates. These two phys are combined to form a combo phy as mentioned
->     below.
-> 
->    USB30DRD_0 port
-> 
->      +-----------------------------------------------------+
->      |                                                     |
->      |           (combo) USB PHY controller                |
->      |     +-----------------------------------------+     |
->      |     |               USB HSPHY                 |     |
->      |     |  (samsung,exynosautov920-usbdrd-hsphy)  |     |
->      |     +-----------------------------------------+     |
->      |                                                     |
->      |   +---------------------------------------------+   |
->      |   |               USB SSPHY                     |   |
->      |   |   (samsung,exynosautov920-usb31drd-ssphy)   |   |
->      |   +---------------------------------------------+   |
->      |                                                     |
->      +-----------------------------------------------------+
->      |                                                     |
->      |                USBDRD30 Link                        |
->      |                  Controller                         |
->      |                                                     |
->      +-----------------------------------------------------+
-> 
->   - USB2.0 phy supports only UTMI+ interface. USB2.0DRD phy
->     is very similar to the existing Exynos850 support in this driver.
-> 
->     USB20DRD_0/1/2 ports
-> 
-> 
->       +---------------------------------------------------+
->       |                                                   |
->       |                USB PHY controller                 |
->       |    +-----------------------------------------+    |
->       |    |              USB HSPHY                  |    |
->       |    |  (samsung,exynosautov920-usbdrd-phy)    |    |
->       |    +-----------------------------------------+    |
->       |                                                   |
->       +---------------------------------------------------+
->       |                                                   |
->       |             USBDRD20_* Link                       |
->       |                Controller                         |
->       |                                                   |
->       +---------------------------------------------------+
-> 
-> This patchset only supports device mode and same is verified with
-> as NCM device with below configfs commands
-> 
-> changelog
-> ----------
-> Changes in v2:
-> - Used standard GENMASK() and FIELD_GET() to get the major version
->   from controller version register.
->   link for v1: https://lore.kernel.org/linux-phy/20250514134813.380807-1-pritam.sutar@samsung.com/
-> 
-> Changes in v3:
-> - Updated dt-bindings for USB2.0 only.
-> - Added dt-bindings for combo phy.
-> - Added implementation for combo phy (SS and HS phy).
-> - Added added DTS nodes for all the phys.
->   link for v2: https://lore.kernel.org/linux-phy/20250516102650.2144487-1-pritam.sutar@samsung.com/
-> 
-> Pritam Manohar Sutar (9):
->   dt-bindings: phy: samsung,usb3-drd-phy: add ExynosAutov920 HS phy
->     compatible
->   phy: exyons5-usbdrd: support HS phy for ExynosAutov920
->   arm64: dts: exynos: ExynosAutov920: add USB and USB-phy nodes
->   dt-bindings: phy: samsung,usb3-drd-phy: add ExynosAutov920 combo HS
->     phy
->   phy: exyons5-usbdrd: support HS combo phy for ExynosAutov920
->   arm64: dts: exynos: ExynosAutov920: add USB and USB HS combo phy nodes
->   dt-bindings: phy: samsung,usb3-drd-phy: add ExynosAutov920 combo SS
->     phy
->   phy: exyons5-usbdrd: support SS combo phy for ExynosAutov920
->   arm64: dts: exynos: ExynosAutov920: add USB and USB SS combo phy nodes
-> 
->  .../bindings/phy/samsung,usb3-drd-phy.yaml    |   6 +
->  .../boot/dts/exynos/exynosautov920-sadk.dts   |  53 ++
->  .../arm64/boot/dts/exynos/exynosautov920.dtsi | 155 +++++
->  drivers/phy/samsung/phy-exynos5-usbdrd.c      | 529 ++++++++++++++++++
->  4 files changed, 743 insertions(+)
-> 
-> --
-> 2.34.1
-> 
-> 
-> 
+Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+---
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi | 28 +++++++++++++++------------
+ 1 file changed, 16 insertions(+), 12 deletions(-)
 
-
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: attempting to guess base-commit...
- Base: tags/v6.16-rc1-6-g8a22d9e79cf0 (exact match)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/exynos/' for 20250613055613.866909-1-pritam.sutar@samsung.com:
-
-arch/arm64/boot/dts/exynos/exynosautov920-sadk.dtb: usb@16600000 (samsung,exynosautov920-dwusb3): 'vdd33-supply' is a required property
-	from schema $id: http://devicetree.org/schemas/usb/samsung,exynos-dwc3.yaml#
-arch/arm64/boot/dts/exynos/exynosautov920-sadk.dtb: usb@16700000 (samsung,exynosautov920-dwusb3): 'vdd33-supply' is a required property
-	from schema $id: http://devicetree.org/schemas/usb/samsung,exynos-dwc3.yaml#
-arch/arm64/boot/dts/exynos/exynosautov920-sadk.dtb: usb@16800000 (samsung,exynosautov920-dwusb3): 'vdd33-supply' is a required property
-	from schema $id: http://devicetree.org/schemas/usb/samsung,exynos-dwc3.yaml#
-arch/arm64/boot/dts/exynos/exynosautov920-sadk.dtb: usb@16900000 (samsung,exynosautov920-dwusb3): 'vdd33-supply' is a required property
-	from schema $id: http://devicetree.org/schemas/usb/samsung,exynos-dwc3.yaml#
-
-
-
-
+diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+index 45f536633f64..d7248014368b 100644
+--- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
++++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
+@@ -7224,16 +7224,18 @@ pcie0_phy: phy@1c04000 {
+ 		compatible = "qcom,sa8775p-qmp-gen4x2-pcie-phy";
+ 		reg = <0x0 0x1c04000 0x0 0x2000>;
+ 
+-		clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
++		clocks = <&gcc GCC_PCIE_0_PHY_AUX_CLK>,
+ 			 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+ 			 <&gcc GCC_PCIE_CLKREF_EN>,
+ 			 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
+ 			 <&gcc GCC_PCIE_0_PIPE_CLK>,
+-			 <&gcc GCC_PCIE_0_PIPEDIV2_CLK>,
+-			 <&gcc GCC_PCIE_0_PHY_AUX_CLK>;
+-
+-		clock-names = "aux", "cfg_ahb", "ref", "rchng", "pipe",
+-			      "pipediv2", "phy_aux";
++			 <&gcc GCC_PCIE_0_PIPEDIV2_CLK>;
++		clock-names = "aux",
++			      "cfg_ahb",
++			      "ref",
++			      "rchng",
++			      "pipe",
++			      "pipediv2";
+ 
+ 		assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
+ 		assigned-clock-rates = <100000000>;
+@@ -7382,16 +7384,18 @@ pcie1_phy: phy@1c14000 {
+ 		compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy";
+ 		reg = <0x0 0x1c14000 0x0 0x4000>;
+ 
+-		clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
++		clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
+ 			 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
+ 			 <&gcc GCC_PCIE_CLKREF_EN>,
+ 			 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
+ 			 <&gcc GCC_PCIE_1_PIPE_CLK>,
+-			 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>,
+-			 <&gcc GCC_PCIE_1_PHY_AUX_CLK>;
+-
+-		clock-names = "aux", "cfg_ahb", "ref", "rchng", "pipe",
+-			      "pipediv2", "phy_aux";
++			 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>;
++		clock-names = "aux",
++			      "cfg_ahb",
++			      "ref",
++			      "rchng",
++			      "pipe",
++			      "pipediv2";
+ 
+ 		assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
+ 		assigned-clock-rates = <100000000>;
+-- 
+2.34.1
 
 
 -- 
