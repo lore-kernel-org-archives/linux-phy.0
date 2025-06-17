@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2ABC3C71136
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 01:25:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DF46C71157
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 01:30:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
 	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=75ajFS3gluEWFQ+J80IOeWv8OmF8a8Z2vKu0NvomtTQ=; b=M/ETG088lUmxge
-	GtisnugPqQzuP2Dr7VztfydPRrNKCp57NrUqYntIg+OY2g/nbSEuyMFdRlKHT++uUqHUmt6wYiiT1
-	Em5DusJUrhXCPNQQ0pycaypYQcIye2csyszBgszZoQNdJlQyJ2js4sd0710WVD1mb4XZTBiolo1Sm
-	GW9g9lJNSPoTwfetVgb7kbWu+rSzvdxYfStHbm+l34Ox9hEt+8A1V1ZVVjMk5kQqSeItiipI5v+4z
-	4QcgQ2xKj7UHMKsBgasNg40VlAFvSfsjO/RVNR7iR47rFtF/B0PjYLbbHXKe0Ta/2ECP6ThJjOpsy
-	61DFprxrKo1quYFYsgog==;
+	List-Owner; bh=uNuU/c4lrjZdzbiHxQZnyTH/7+a9X5jkPI76YZ8+2tA=; b=KNFMnXT3/Mi6zJ
+	q/0pbg0q1cQtyxhbTuxcasv52/5W8z9nDSlXKVaPHpUqIZn1z3/i6P9IvNLSOjEWyc1gCSU8Q+2Zi
+	KVXGSHBqpiZTStvAGav6gEauJ2BQnR5qwTmoB0bOOo48HFG3P7KnGu2+/azdlfFIdDFYqkrEeo+1m
+	vhGDs/YLrQ5nbnVESYdVor5Vfgt6jFkjY75tZFpANAgX4MQGyuw3RMzI84J4BxRWOU1fz6fh1Kn/0
+	VoxGprZ++eTVWbNk8Awc78pYakOMccLP/jE0zDPAoCBxCDmtlc/A02UHXiWg7q7DLNE7Elbabjjt/
+	A0Or5CEdm3QKqyHMR/6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRhYh-00000008kXL-3qGQ;
-	Wed, 18 Jun 2025 01:25:47 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1uRhd4-00000008kln-02MZ;
+	Wed, 18 Jun 2025 01:30:18 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRhRG-00000008jlE-1cN6
+	id 1uRhRW-00000008jpO-3meF
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Jun 2025 01:18:08 +0000
-Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250618011803epoutp0323d12e8da842a0f79714bd3cd97b93f8~J-kChuQ931515115151epoutp03c
-	for <linux-phy@lists.infradead.org>; Wed, 18 Jun 2025 01:18:03 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250618011803epoutp0323d12e8da842a0f79714bd3cd97b93f8~J-kChuQ931515115151epoutp03c
+	Wed, 18 Jun 2025 01:18:25 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20250618011821epoutp012a8683a4f751c67061d6dd487e28d48c~J-kSpPjRw0182101821epoutp014
+	for <linux-phy@lists.infradead.org>; Wed, 18 Jun 2025 01:18:21 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20250618011821epoutp012a8683a4f751c67061d6dd487e28d48c~J-kSpPjRw0182101821epoutp014
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1750209483;
-	bh=MpZ1RB5ujoYUFLrWZd+Soph740N6pKm7nhRUWlK+mb8=;
+	s=mail20170921; t=1750209501;
+	bh=f4ePGu/HbODHfgnW4Rd+HUYbGf55CDlg7sZxq2mBe4w=;
 	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=OEgcXu8iKlUgh+2/ccQahqZq8huHXyVrj+jZ0O/0Ad7KgkJcAegvkgfrfr2k9giI8
-	 rjh+KlIk52IPFzo81pDE2ZeB25af8tRRfSgq4DPwxSqiEz8FjjhJ+wBEMOTKpDF20M
-	 hrl7OfBdEBlzg3/npYFk3L/JF/CU5bfFt7xqz5sg=
+	b=sXphC0aTlOO6aRyI0peueCrJ7ZfvPU5xb4Fd92j9l57bTbx1Ue+6w0vdFV1vIO3Cl
+	 c/qM+DGikHZNSsJCMbGvbSS2mCyNhaV2FMXnQYBnLhxbId9AfF5zRdCgiMFduiicfa
+	 odMFXKEHUYB67ThaaCxPhQIsfK34HqIK00gNnuuw=
 Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250618011803epcas5p307f50f49075ed92a804b49867a2dd288~J-kB2HGZw3159931599epcas5p3O;
-	Wed, 18 Jun 2025 01:18:03 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.179]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4bMQpc5ctcz3hhTS; Wed, 18 Jun
-	2025 01:18:00 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
-	20250617175241epcas5p23c7284be872b6e74e3888b70ce19b01b~J5fLGRFG11003410034epcas5p24;
-	Tue, 17 Jun 2025 17:52:41 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
+	20250618011820epcas5p19a33a255e86e59b0ec429aa61c56cc63~J-kSAM_0S0181101811epcas5p1t;
+	Wed, 18 Jun 2025 01:18:20 +0000 (GMT)
+Received: from epcas5p3.samsung.com (unknown [182.195.38.182]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4bMQpy3dVRz3hhTM; Wed, 18 Jun
+	2025 01:18:18 +0000 (GMT)
+Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250617180446epcas5p1fc8bbc3efe3ef7dc2c97e3f0598f7332~J5pvH0OJo0228502285epcas5p1Q;
+	Tue, 17 Jun 2025 18:04:46 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip1.samsung.com
 	(KnoxPortal) with ESMTPA id
-	20250617175237epsmtip23b9b569665566d9ebe26adcffe3fbcde~J5fIOTcPr1594015940epsmtip2i;
-	Tue, 17 Jun 2025 17:52:37 +0000 (GMT)
+	20250617180443epsmtip130a4506dfb7f000acfa72e5107f09a8b~J5psRzdK51544215442epsmtip1a;
+	Tue, 17 Jun 2025 18:04:43 +0000 (GMT)
 From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
 To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
 Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
@@ -65,29 +65,29 @@ Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
 	<linux-samsung-soc@vger.kernel.org>, <rosa.pila@samsung.com>,
 	<dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
 	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <20250616-resolute-ocelot-of-shopping-1c9c4a@kuoka>
-Subject: RE: [PATCH v3 1/9] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-Date: Tue, 17 Jun 2025 23:22:36 +0530
-Message-ID: <000401dbdfb0$9ec4b010$dc4e1030$@samsung.com>
+In-Reply-To: <20250616-snobbish-chimpanzee-from-arcadia-bd9fcb@kuoka>
+Subject: RE: [PATCH v3 4/9] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo HS phy
+Date: Tue, 17 Jun 2025 23:34:42 +0530
+Message-ID: <000501dbdfb2$4f6f0450$ee4d0cf0$@samsung.com>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQNTkACKxnsdZBPuyPiYuNftoBZF1gLpYoryAm9xWLwB5QJ1g7DeUbpQ
+Thread-Index: AQNTkACKxnsdZBPuyPiYuNftoBZF1gI3IvSUAW5i7SwC0YsPGrDkisWw
 Content-Language: en-in
-X-CMS-MailID: 20250617175241epcas5p23c7284be872b6e74e3888b70ce19b01b
+X-CMS-MailID: 20250617180446epcas5p1fc8bbc3efe3ef7dc2c97e3f0598f7332
 X-Msg-Generator: CA
 X-Sendblock-Type: REQ_APPROVE
 CMS-TYPE: 105P
 cpgsPolicy: CPGSC10-542,Y
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250613055040epcas5p35219ddeddd9fe5f4632ca837db91847a
+X-CMS-RootMailID: 20250613055050epcas5p3f995a6696ccf4f7eeb0b5d76382f71f7
 References: <20250613055613.866909-1-pritam.sutar@samsung.com>
-	<CGME20250613055040epcas5p35219ddeddd9fe5f4632ca837db91847a@epcas5p3.samsung.com>
-	<20250613055613.866909-2-pritam.sutar@samsung.com>
-	<20250616-resolute-ocelot-of-shopping-1c9c4a@kuoka>
+	<CGME20250613055050epcas5p3f995a6696ccf4f7eeb0b5d76382f71f7@epcas5p3.samsung.com>
+	<20250613055613.866909-5-pritam.sutar@samsung.com>
+	<20250616-snobbish-chimpanzee-from-arcadia-bd9fcb@kuoka>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_181806_741367_F265CC1D 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20250617_181823_247929_6FC04A6D 
+X-CRM114-Status: GOOD (  12.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,10 +104,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof, 
+Hi Krzysztof,
+
 > -----Original Message-----
 > From: Krzysztof Kozlowski <krzk@kernel.org>
-> Sent: 16 June 2025 01:45 PM
+> Sent: 16 June 2025 01:46 PM
 > To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 > Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
 > krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
@@ -119,25 +120,25 @@ Hi Krzysztof,
 > rosa.pila@samsung.com; dev.tailor@samsung.com;
 > faraz.ata@samsung.com; muhammed.ali@samsung.com;
 > selvarasu.g@samsung.com
-> Subject: Re: [PATCH v3 1/9] dt-bindings: phy: samsung,usb3-drd-phy: add
-> ExynosAutov920 HS phy compatible
+> Subject: Re: [PATCH v3 4/9] dt-bindings: phy: samsung,usb3-drd-phy: add
+> ExynosAutov920 combo HS phy
 > 
-> On Fri, Jun 13, 2025 at 11:26:05AM GMT, Pritam Manohar Sutar wrote:
-> > Add a dedicated compatible string for USB HS phy found in this SoC.
+> On Fri, Jun 13, 2025 at 11:26:08AM GMT, Pritam Manohar Sutar wrote:
+> > Add a dedicated compatible string for USB combo HS phy found in this
 > 
-> You add HS phy in other commit/patch. This is just confusing.
-> 
-> > The devicetree node requires two clocks, named "phy" and "ref"
-> 
-> No. Explain the hardware, not the DTS. How many clocks, supplies etc
-> hardware has.
+> I reviewed patch #1, then went here and see that this is HS PHY. So patch #1
+> is not HS PHY?
 > 
 
-ok will change commit message accordingly in next version of the patch-set. 
+https://lore.kernel.org/linux-phy/20250613055613.866909-1-pritam.sutar@samsung.com/
+This Soc has 2 types HS phys. one in combo phy and another stand-alone. please refer the block diagrams in cover-letter. 
+	
+	1. samsung,exynosautov920-usbdrd-phy => represents hs phy (synopsys phy version-303) and it is same as "samsung,exynos850-usbdrd-phy". used same naming conventions
+	2. samsung,exynosautov920-usbdrd-hsphy => represents 'Add-on' HS phy(synopsys phy version-400) with SS phy in combo phy. this is different from "samsung,exynosautov920-usbdrd-phy" (reg offsets and bits are different). 
+	samsung,exynosautov920-usb31drd-ssphy =>  represents SS phy in combo phy
 
 > Best regards,
 > Krzysztof
-
 
 Thank you.
 
