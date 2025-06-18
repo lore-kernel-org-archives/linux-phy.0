@@ -4,49 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4A16C7115A
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 10:17:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA013C7115A
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 10:19:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dVRUgEp49KGAkw79JPZrLZxG1AIDtcGzJiXLqXAm4KY=; b=AlgdRjrPodFI00
-	q74/6HZFNH1tTVyoXXAEZyM/Ht1Mm2oFhwjxhSWcNhkoE0VMDiGeQ5ERVopDmb6nJi2J3bRsLMQxr
-	W2jda0GXe0LQ+wpb0uyvFHtWW+lYKy3YJk4lboF7fT3HlsU3JaehUV14l4LzUh8PZrQ3cAuaouwGR
-	xhF42b0JvgTUhFNymRG4qkI+JoUpexN84JtJCtm3q0odQqMBNaZiBOSPOMrRQAjXf6A33DASpoCQt
-	gQK0klkSdQgIr+KD9H5mp9SbnVuj6EsHvqWL7vQnDNMg3t0diyiNiy/tv+QhueGMIUYQS7WEHxdMn
-	CIuWPxSwzBZp+oWK6C1A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H0ilRWLD8G+C9sYB0KzEbW3G8H+FhHietmT827c/ziE=; b=XfGbCXZV6codVl
+	OgX6TZoG9mw47lleVbErZZa3avUiTQDqCQOKLV1mihhYQfSAWMsh4lkOLdCioPI3opXPtOnO/rf5J
+	AkIqGg+QmrDG7IB62D+9A+HmrhU2a3qlc0311uDSk06zc36XC5j6xKHFZFSvaOZWRyrE88Uobg4sZ
+	SlFKN30TDIEQrX7FjBNOc8yof71nCEZRYd4nur5VAsDIaI8VchAqahD7eU6W0WTs3YH2ap8n95Q/s
+	v5+CmZk0XE16ry/1H10eyOCPd0/qsgYlPNXlnArj9cW+8PQGRwGQVWZMSyxalVx+F8sN4lk21ggsf
+	OvGcs8j0rQXevzcAHqPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRprU-00000009k9M-2T03;
-	Wed, 18 Jun 2025 10:17:44 +0000
+	id 1uRptf-00000009ki4-2x9r;
+	Wed, 18 Jun 2025 10:19:59 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRpZy-00000009gJ7-2l5A
+	id 1uRpZy-00000009gJD-2YbL
 	for linux-phy@lists.infradead.org;
 	Wed, 18 Jun 2025 09:59:40 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 39549F06;
-	Wed, 18 Jun 2025 11:59:18 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9FCC8111D;
+	Wed, 18 Jun 2025 11:59:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1750240759;
-	bh=O+64+98CK/mpPNF+GEnXjzDTEUr4OHAhCpB8oN0WYvc=;
-	h=From:Subject:Date:To:Cc:From;
-	b=fhnDaZYkfMPhGNyk5HaohAfjVthtageKg1grn6N5LL4BDIBPgS72tPtHVlDIXqReU
-	 orAfxs7QA5N6g896FviKYE4KABll35IEVjCpR3Yxb9wtBsNk/Jqtwf6lbVEKxlW9j6
-	 D7hutKgurj0k+ScroDMYFtJYNLdirmqL5yO17KzY=
+	s=mail; t=1750240760;
+	bh=2epr8ao5TAgZA57K71+fCAJlw3g10O4XWpdyeMJVQgI=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=NMZY4BLOr6GDkKjrrVYFz1V4+/4HLXQy+SSfJ4E1Dggty75JUPmC9Zp8DxRDQGjpC
+	 n2nLzWRA/iQzn1c0BElwzK8O3RaN2xt631nGRoSiHydf/bR9RGKDqPL0l5KYo8eDlq
+	 sApgXdwuB+jsPrUpprahNIsYpAbq2leB52VW5FXM=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Subject: [PATCH v4 00/17] drm/bridge: cdns-dsi: Make it work a bit better
-Date: Wed, 18 Jun 2025 12:59:03 +0300
-Message-Id: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
+Date: Wed, 18 Jun 2025 12:59:04 +0300
+Subject: [PATCH v4 01/17] drm/bridge: cdns-dsi: Fix the _atomic_check()
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAOmNUmgC/3XNQQ7CIBCF4asY1mJggFBdeQ/jgnamOguLgjYa0
- 7tL66Im6vJ/yXzzFJkSUxabxVMk6jlz7ErY5UI0x9AdSDKWFqDAKQNKNthliZkln84pSoNVW6O
- vbIValKNzopbvE7jbvzvR5Vbc6zweOV9jekxPez2uf/1eSyU9OPC+ca019ZaRQo5dHUPCVRNPY
- hR7mBWr4EuBotig1oZCcAT+j2I+FG2/FDMq5MA5jbZVv5RhGF7V7lwnVAEAAA==
-X-Change-ID: 20250320-cdns-dsi-impro-3d8fbd7848d1
+Message-Id: <20250618-cdns-dsi-impro-v4-1-862c841dbe02@ideasonboard.com>
+References: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
+In-Reply-To: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
  Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
@@ -64,26 +61,27 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Parth Pancholi <parth.pancholi@toradex.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4536;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1662;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=O+64+98CK/mpPNF+GEnXjzDTEUr4OHAhCpB8oN0WYvc=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBoUo35wgz/CzFjE5sBtKmbQk+LBL4L4cUG3wUxf
- B7ly88ipcGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaFKN+QAKCRD6PaqMvJYe
- 9aYSEACpygFmsKoDvt78cPmpvqSLXgIc1tSvCy0fc+6lIFUoH5Od89Kpa0v82qa/IRM8O9u7x7P
- KuGZNOFN27f6yX5TZalWbllDXaUezpMnU+9J/cDxRbDAbcHvcOGjGa7epFv9vpHolMWMRvHnsga
- cW5oxObVEkUJxih8QZvwd5AdDDF6YaWkqq68IhGPWB5nGMe6K7IPRkdScTng0bshtf7EDhoTM64
- lEl3/yMVxIhqGmK5YVQKhZD/KYavaARn2yWFPIq7LXwS5qJpziD26V67s48KSkdqxJE8WxiQ18o
- UDmLwXOm/+Qix9KcFrVCbnT3M2JR3oNRcKBcoKH8NixRHD0PKzUerdCt2IzIQ58FDcvptxdSfXc
- QpALzPcV+iWA8tipMvZtpl0ADK2StpnwFrglBse2GWsQLhp/GlSnYndyVy69ZySsICjoZu9SMBA
- nTiAEVWSXKUhkH2+dtse2Q52F0hAooO3WVUraci2FBAOKsggOLAU/FsciJ+24q2KY31d7sKyP+1
- nrdyRLewY2CjRsU7+i/qioq1qDkEC8g4JduV4aYOglneq8kJ7fSAj/mckue1jvpmisw/FXuQxPn
- pVDqSDyELwWOQaFXqQhVx9U0VEerRPNtmhceoETpg9TtTmTr+U4xsAtdCFrBPptJdDmY3B44jp4
- Y4upc99KisQwTzw==
+ bh=SXe0VxRuPHAxO1Ko/oDsuelobFJsNH8ZVsNaLWN6Eow=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBoUo38amO3S0OMdIxHt3vE1hoJ0QkvgnTqfHdwk
+ mbxJ98ktTaJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaFKN/AAKCRD6PaqMvJYe
+ 9YSxD/95pwOCPNQnxndxfh7yb0dGnav6xqwiy1eFN9I8tGO9J6IgitbhzE/obVA8Byr+3ZSlW91
+ Rfs159+V0ToKFAkd4fU9dPDbfxoRg0ILCeV/VM0SERw3K8uTdyiyALhUnmhAlcJFlmPRGVsGZ3+
+ Bz7DFfBk9R4sG8nxfphqd0qklsxjkbAMDzOUNwfscD+5kwUYzxYAWZr8mzd1gaj8BQvyxtFv4pb
+ x03MYldbisGIKuK+EvGNqSILppqGwz7BCBELPAdKgwB+t3+ClqVzOAkiauvZPQ2Y1Wx/xqE7Y54
+ OUM/wELqb1/g/DQA1DZltEHdu6EeExXJgMyiYLi3qL3XHPG8ITbVwNmLOw9RIsQS+e54988mG3q
+ uOX408tXUa4NbbN0SyRzoKX7wmFaGCYUfIlf48D7zID5LGy4+TuqDjHeRAZqpZVO3UgCa0ommfo
+ CQUfjYn1nKcg0VjF6PmOpEBI8QCUfsikU/jtTPq0IHFjcZ70S+MIUG2vw7061zz7A+D5Y5Lh7Ze
+ GGSZ7tv/qpsSpK6uttDSRiByV6sgbE5TT5y5d4NQIyhPOTaH2VvbJV2d/vURUNGCg1rPq/ULKTE
+ SlmqrccIQiLX5UVm3XZar+xn13TbAGjwRf+PBseJgihbwHmL3cbF2NkBdBVpx+06yuMqdLJleIp
+ knbwmeevZzWbrEA==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_025938_835775_FBAA2910 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20250618_025938_792524_0C61C888 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,101 +98,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While trying to get the cdns-dsi to work on Toradex's AM69 Aquila
-platform, I hit multiple issues in the driver. Basicaly nothing worked
-for with the board.
+From: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 
-This series fixes those issues. While I itch to make much larger changes
-to the cdns-dsi driver, I opted to keep this series relatively simple to
-make the fixes more clear and possibly help with backporting.
+Use the "adjusted_mode" for the dsi configuration check, as that is the
+more appropriate display_mode for validation, and later bridge enable.
 
-The series also touches tidss, but those changes are not strictly
-needed, and can be merged separately. And the series also touches
-cdns-dphy, and those changes are needed.
+Also, fix the mode_valid_check parameter from false to true, as the dsi
+configuration check is taking place during the check-phase, and the
+crtc_* mode values are not expected to be populated yet.
 
-This has been tested on Toradex AM69 Aquila (upstream) and AM62P Verdin
-(Toradex's BSP), with:
-- HDMI output using lontium lt8912b
-- LVDS panel (sn65dsi84 + panel-lvds)
-
- Tomi
-
+Fixes: a53d987756ea ("drm/bridge: cdns-dsi: Move DSI mode check to _atomic_check()")
+Signed-off-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
+Reviewed-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
-Changes in v4:
-- Rebased on top of drm-misc-next, which has most of the dependencies
-  merged
-- Moved one dependency, "drm/bridge: cdns-dsi: Fix the _atomic_check()"
-  into this series
-- Dropped "drm/tidss: Adjust the pclk based on the HW capabilities".
-  This causes a regression with OLDI outputs, and is not strictly
-  required. Fixing this needs restructuring tidss clock handling.
-- Link to v3: https://lore.kernel.org/r/20250414-cdns-dsi-impro-v3-0-4e52551d4f07@ideasonboard.com
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Changes in v3:
-- Add Aradhya's "drm/bridge: cdns-dsi: Fix the _atomic_check()" to the
-  dependencies
-- The above patch from Aradhya allowed adding "drm/bridge: cdns-dsi:
-  Drop crtc_* code", which resulted in quite large changes in the
-  commits, even if the end result doesn't really differ.
-- Reordered commits to decrease back-and-forth (e.g. fixing something in
-  a a code that will be removed in the next commits)
-- The reordering caused quite big changes in the commits (even if the
-  final end result is more or less the same), so I chose not to add
-  tested-by tags.
-- Rename 'cdns_get_dphy_pll_cfg' to 'cdns_dphy_get_pll_cfg'
-- Use div_u64() instead of div64_u64()
-- Drop "Fail if HS rate changed when validating PHY config". This was
-  too strict, as clock rounding (especially with DRM's 1kHz
-  resolution...) leads to clock rates that do not match exactly.
-  However, the rate mismatch should be fine as the commits adjust the
-  pixel clock, and the resulting differences should be so small that we
-  can't even improve the timings match by adjusting the DSI HFP, as the
-  adjustment rounds to 0.
-- Link to v2: https://lore.kernel.org/r/20250402-cdns-dsi-impro-v2-0-4a093eaa5e27@ideasonboard.com
+diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+index a57ca8c3bdae..695b6246b280 100644
+--- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
++++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
+@@ -997,10 +997,10 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
+ 	struct cdns_dsi_input *input = bridge_to_cdns_dsi_input(bridge);
+ 	struct cdns_dsi *dsi = input_to_dsi(input);
+ 	struct cdns_dsi_bridge_state *dsi_state = to_cdns_dsi_bridge_state(bridge_state);
+-	const struct drm_display_mode *mode = &crtc_state->mode;
++	const struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
+ 	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
+ 
+-	return cdns_dsi_check_conf(dsi, mode, dsi_cfg, false);
++	return cdns_dsi_check_conf(dsi, adjusted_mode, dsi_cfg, true);
+ }
+ 
+ static struct drm_bridge_state *
 
-Changes in v2:
-- Change the tidss clock adjustment from mode_fixup() to atomic_check()
-- Link to v1: https://lore.kernel.org/r/20250320-cdns-dsi-impro-v1-0-725277c5f43b@ideasonboard.com
-
----
-Aradhya Bhatia (1):
-      drm/bridge: cdns-dsi: Fix the _atomic_check()
-
-Tomi Valkeinen (16):
-      drm/tidss: Fix missing includes and struct decls
-      drm/tidss: Use the crtc_* timings when programming the HW
-      phy: cdns-dphy: Store hs_clk_rate and return it
-      phy: cdns-dphy: Remove leftover code
-      drm/bridge: cdns-dsi: Remove extra line at the end of the file
-      drm/bridge: cdns-dsi: Drop crtc_* code
-      drm/bridge: cdns-dsi: Remove broken fifo emptying check
-      drm/bridge: cdns-dsi: Drop checks that shouldn't be in .mode_valid()
-      drm/bridge: cdns-dsi: Update htotal in cdns_dsi_mode2cfg()
-      drm/bridge: cdns-dsi: Drop cdns_dsi_adjust_phy_config()
-      drm/bridge: cdns-dsi: Adjust mode to negative syncs
-      drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
-      drm/bridge: cdns-dsi: Use video mode and clean up cdns_dsi_mode2cfg()
-      drm/bridge: cdns-dsi: Fix event mode
-      drm/bridge: cdns-dsi: Tune adjusted_mode->clock according to dsi needs
-      drm/bridge: cdns-dsi: Don't fail on MIPI_DSI_MODE_VIDEO_BURST
-
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 211 +++++++++++--------------
- drivers/gpu/drm/tidss/tidss_crtc.c             |   2 +-
- drivers/gpu/drm/tidss/tidss_dispc.c            |  16 +-
- drivers/gpu/drm/tidss/tidss_dispc.h            |   3 +
- drivers/gpu/drm/tidss/tidss_drv.h              |   2 +
- drivers/gpu/drm/tidss/tidss_plane.h            |   2 +
- drivers/gpu/drm/tidss/tidss_scale_coefs.h      |   2 +
- drivers/phy/cadence/cdns-dphy.c                |  24 ++-
- 8 files changed, 115 insertions(+), 147 deletions(-)
----
-base-commit: 261a603062a87bad0b54904c76dacb15fa126c74
-change-id: 20250320-cdns-dsi-impro-3d8fbd7848d1
-
-Best regards,
 -- 
-Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+2.43.0
 
 
 -- 
