@@ -4,101 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 177C9C7115A
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 10:51:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C495CC77B73
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 13:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=csmteFouc6TW65m4a5Ll173uLS4YQs9Pss8Dhi0EAz4=; b=LVez+SjDb/rhgD
-	H8PgdpytYCrgtung2ZS8+uZNXNVWW8fALgxXJehH8TYX5r4zqNgGI5JFkyjw2sjF0XdTMDiu/1YJG
-	NAJcVTIMizga2KB0TsJui6+bEPB5q2EsAn+/uq0HHE2FF35pY6DPtxh4cBxOkb2OLbdUcXHr0deH6
-	4H+qo/UNX8mJToONlzqfVgertdQyxJNSmZ5cIyWaHcWhLYyxGuKSY0og7JFgIKvCC5PONX39z3msc
-	mkH55UvcgYR0ros8Bi8/Mt2uyDiH1IWaYOlyz+D1iRLmdQPUTRLdzvMNAT0LzrGg6FcW3/bzIobv8
-	pvraqyEAHvpO7SLXEy7A==;
+	List-Owner; bh=TeruBzr8hhFQdJa3AAX3wpewAJ6GcIF1dV0HD8qDSAI=; b=zpmjoQ9W/kw2eJ
+	cVbE//Ee2pzvSd5qJgGR/0N8jC+n5w7xE5TY/Ij49SV6O3R7o0ltOtlIMiSZEIqY0pGJne4y3wyFH
+	HuAr6Um3VekvOXbAgJIzC9CCW9Ejn4On4AefC/qVb6iaiNaOq27Mm7WsyVREhdATL4S1TKrAzYNAQ
+	CYHgBIOACJ3Uyl1CJeL2cjMNRFBGJAlwA6FUayd9zbAqFh+Szdha4JTfF+5jsWTgp+KA5VaxYsJoi
+	UGSHtSv5eh78u8a1jTDActh683nHOEVhUuETPGTYgY/D4cwTYDdUTVxHo/3zfL8MBIy1/tZsUdY6U
+	KfDJ+tA/BFBmaUdwCAJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRqOH-00000009qM1-3OzM;
-	Wed, 18 Jun 2025 10:51:37 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1uRsoQ-0000000AHea-23cu;
+	Wed, 18 Jun 2025 13:26:46 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRpc9-00000009hCs-2bff
+	id 1uRrhY-0000000A5QK-2TRh
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Jun 2025 10:01:55 +0000
-Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 19B8C593;
-	Wed, 18 Jun 2025 12:01:39 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1750240899;
-	bh=DM2altsLWbKvDgY6gQJv5KmHG6kW30hLCFnQZ/8hKKQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=vpL/eqGdNhcN72ssAY0N8VAJLHGaCqrj/DYBnCftDbjBH4pyxg8sBaqYW92D4YvXO
-	 +Yr/C4yve4ahnV7hy/7kVHYR1RHYFMNSx7AiguP1mXm7meSrflUO1u6+2sdjKnWLLK
-	 RKGlurr+KX0QWr9CY9KQ8p/esiGSJH4oDOwxRA24=
-Message-ID: <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
-Date: Wed, 18 Jun 2025 13:01:48 +0300
+	Wed, 18 Jun 2025 12:15:38 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-553b5165cf5so5795693e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 18 Jun 2025 05:15:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1750248935; x=1750853735; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=p7jZQ+YS+lWYeVwEC8VFaNnmqDYcJYXkLsLKJpyV1y0=;
+        b=DOadpy4PZ0urT3TeE29lqxwaeNeI03JCFIXHNA4e82BYXjHwFKYNREKlBd9eKlVnwF
+         zveAh4EQrd9jWHMEntobQg8SHV63FloutVG3Zp2uHOg0eUrrArV59yCQQo9TCFRf47px
+         60Bj2n2fcb2OC0hFTHa/5SbBJQWrqnC3IBnB35vWNmobfUtreqPwPp7eWKXSWCloT2P6
+         h/nat+SMJMbEYh0oGJTtydmwVVddOLqiYsjOBDBYau7KBIlRAM/LHazn0Xm17BB+rOxl
+         Uj1dTUy1Y/nUvaLoJgpwtEJ7pmqGPIsqnmlL/zOJC2+f5WcnkD+BJaL/F1hPPglLjXX1
+         NLig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750248935; x=1750853735;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=p7jZQ+YS+lWYeVwEC8VFaNnmqDYcJYXkLsLKJpyV1y0=;
+        b=LGJkrUTEyawR3DrH93rSqzQKaDqQz4VCLNbbxou4bHIL9r+YFfSB7LQgDrxHHiTMLK
+         c2kGIM/GMgl/JY6W6IJ6hV7bLA99nF2pzw8Riudoc/elLBCAE9LWFmR1JWOt5VRQg6ab
+         35iUWGBjL+Ta9asG15MZ17ceGn0JAtnC/ZrO9vXKBGf3VvtIbjLhTTbye1ZYOeeMEjOZ
+         hnjA9AKOvxILfrdNFpwY43ajtAbI2LkDk0qm/Tt1HVfhsg35lYJ1vJDgrTSyDDuKqvAy
+         xBeZlY4pCsmg5ILl0G4oS7WnLKxJglDhv+aEmeLb53tV1zINAFjuQAEWRXF7oRevx6ss
+         8g3g==
+X-Forwarded-Encrypted: i=1; AJvYcCVmY2RRFGlqVGhNWhIiCUO56/Pe2wh/ewzSyS/DO8Wr7F5r4S4t97aG0RcaHG2h7n8j4VBBl5CWo+A=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz0pTOzlWe7k5lQGO8CHOct3ApHuJ8bovyBqLD8EqIsrXnb0PPK
+	r6phhPEyZ6XMKbGA703IKaGQktniue9uL7cBUfdgx62Tk1XXFKhgW9u4JcaBfOZxL5yUgHxMdAZ
+	NhibHEspR79GrLDRNuZRZTXkktK6lATNSHq2/2bNcVQ==
+X-Gm-Gg: ASbGncvTgmArETtNciH8Y6lFQA068ZuHgYeWecEWn6MUA0+7RsY4bAZbt7u4b3Co2nO
+	eDd1YUEdcBTGK9Mb+rTyIqIzunwVzte/PaDUO3/n1pFP/obKnIDO30/8TeCwL3BD9GPDNYizo1m
+	EsVm48nCP9un0tWmzMhWfl+ZbhcAfubNmr88irUgJoNEg=
+X-Google-Smtp-Source: AGHT+IGBMbnQS8CZK59QUADw6V+D/mLT8w6YMYDnxWivA5Amu6Cgv0XDSbL6jWX7zdVZfzp8QG5Ih8L/ToZVwFJNik0=
+X-Received: by 2002:a05:6512:1285:b0:545:6fa:bf5f with SMTP id
+ 2adb3069b0e04-553b6e732b1mr4223465e87.2.1750248934811; Wed, 18 Jun 2025
+ 05:15:34 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
- O_CMN_READY polling
-To: Devarsh Thakkar <devarsht@ti.com>
-Cc: sakari.ailus@linux.intel.com, u.kleine-koenig@baylibre.com,
- vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com,
- r-donadkar@ti.com, vkoul@kernel.org, kishon@kernel.org, mripard@kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250502033451.2291330-1-devarsht@ti.com>
- <20250502033451.2291330-2-devarsht@ti.com>
-Content-Language: en-US
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
- 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
-In-Reply-To: <20250502033451.2291330-2-devarsht@ti.com>
+References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com> <20250613033001.3153637-7-jacky_chou@aspeedtech.com>
+In-Reply-To: <20250613033001.3153637-7-jacky_chou@aspeedtech.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 18 Jun 2025 14:15:23 +0200
+X-Gm-Features: AX0GCFscY4ky5ebft20JokFvuO1y3hVcQ04FGalsWAeschf7cTa_SUmnKoC4ETU
+Message-ID: <CACRpkdaX24z5YsfcrB2oqbZpdexZJNREGkWiYgq1ar0c8O0QBA@mail.gmail.com>
+Subject: Re: [PATCH 6/7] pinctrl: aspeed-g6: Add PCIe RC PERST pin group
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org, 
+	mani@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org, 
+	kishon@kernel.org, p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org, 
+	linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org, 
+	linux-gpio@vger.kernel.org, elbadrym@google.com, romlem@google.com, 
+	anhphan@google.com, wak@google.com, yuxiaozhang@google.com, 
+	BMC-SW@aspeedtech.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_030153_805265_37E49D7F 
-X-CRM114-Status: GOOD (  17.46  )
+X-CRM114-CacheID: sfid-20250618_051536_639951_11D3E288 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,67 +98,17 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 02/05/2025 06:34, Devarsh Thakkar wrote:
-> PLL lockup and O_CMN_READY assertion can only happen after common state
-> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
-> polling them before the common state machine was enabled. To fix this :
-> 
-> - Add new function callbacks for polling on PLL lock and O_CMN_READY
->   assertion.
-> - As state machine and clocks get enabled in power_on callback only, move
->   the clock related programming part from configure callback to power_on
->   callback and poll for the PLL lockup and O_CMN_READY assertion after
->   state machine gets enabled.
-> - The configure callback only saves the PLL configuration received from the
->   client driver which will be applied later on in power_on callback.
-> - Add checks to ensure configure is called before power_on and state
->   machine is in disabled state before power_on callback is called.
-> - Disable state machine in power_off so that client driver can
->   re-configure the PLL by following up a power_off, configure, power_on
->   sequence.
-> 
-> Cc: stable@vger.kernel.org
-> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
-> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
-> ---
-> V3:
-> - Move out clock programming logic to power_on as PLL polling and enable
->   can happen only after SSM enable
-> - Disable state machine on power off
-> 
-> V2: 
-> - Return error code on polling timeout
-> - Moved out calibration logic to separate patch
-> 
->  drivers/phy/cadence/cdns-dphy.c | 109 +++++++++++++++++++++++++-------
->  1 file changed, 85 insertions(+), 24 deletions(-)
-> 
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index ed87a3970f83..a94109a63788 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
->  	u8 pll_ipdiv;
->  	u8 pll_opdiv;
->  	u16 pll_fbdiv;
-> +	u64 hs_clk_rate;
-
-This has a minor conflict with my cdns-dsi series, as I also add
-hs_clk_rate but as u32. Also, applying both serieses,
-cdns_dphy_config_from_opts() becomes odd as the hs_clk_rate will be
-assigned back and forth between opts and cfg. Can you check this?
-
- Tomi
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBKdW4gMTMsIDIwMjUgYXQgNTozMOKAr0FNIEphY2t5IENob3UgPGphY2t5X2Nob3VA
+YXNwZWVkdGVjaC5jb20+IHdyb3RlOgoKPiBUaGUgUENJZSBSQyBQRVJTVCB1c2VzIFNTUFJTVCMg
+YXMgUEVSU1QjICBhbmQgZW5hYmxlIHRoaXMgcGluCj4gdG8gb3V0cHV0Lgo+Cj4gU2lnbmVkLW9m
+Zi1ieTogSmFja3kgQ2hvdSA8amFja3lfY2hvdUBhc3BlZWR0ZWNoLmNvbT4KCkFja2VkLWJ5OiBM
+aW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+CgpDYW4gSSBqdXN0IGFwcGx5
+IHRoaXMgcGF0Y2ggNi83IGluIGlzb2xhdGlvbiBmcm9tIHRoZSBvdGhlcnMsIHRvCnRoZSBwaW4g
+Y29udHJvbCB0cmVlPwoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCi0tIApsaW51eC1waHkgbWFpbGlu
+ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
