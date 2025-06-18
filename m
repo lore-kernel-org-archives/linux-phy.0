@@ -4,85 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51C41C7115B
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 10:38:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 177C9C7115A
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 10:51:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jHD/6o3pyFvmL3UmXN8Ll4JemuX8cB+0VvX/zSkpDh0=; b=g/aiRGNj8i+Xwg
-	atdLh2/V0Z2YGl4c8YRSxHCEYQDwql35ARGCq9V1ChJdHRZ3Mc1ouIWxuc1xM+I50WJYQSoOeE6pW
-	vNQwWWKF2TTpbahXNN3toQpJISlrGTullTHYhXgtpWHwDXzElai6K+I/5AW81S/D+nvS5/tckAdUC
-	q0rxLGDHbSBeBOz7FhZCAqv5ZbcDL1kMkhWAlPUZai13FNklLa4aJoFxidSsvmxf2JvHxeKnnIIuJ
-	1C+J73na5Hx4+zp2hi6MWofSWj3AYVZyVY1JQct42bpCkEcKqsvaYY0HGXyXct7nYxg9KV97EnHr6
-	h5DYNDLsxWYt4FKwx7aQ==;
+	List-Owner; bh=csmteFouc6TW65m4a5Ll173uLS4YQs9Pss8Dhi0EAz4=; b=LVez+SjDb/rhgD
+	H8PgdpytYCrgtung2ZS8+uZNXNVWW8fALgxXJehH8TYX5r4zqNgGI5JFkyjw2sjF0XdTMDiu/1YJG
+	NAJcVTIMizga2KB0TsJui6+bEPB5q2EsAn+/uq0HHE2FF35pY6DPtxh4cBxOkb2OLbdUcXHr0deH6
+	4H+qo/UNX8mJToONlzqfVgertdQyxJNSmZ5cIyWaHcWhLYyxGuKSY0og7JFgIKvCC5PONX39z3msc
+	mkH55UvcgYR0ros8Bi8/Mt2uyDiH1IWaYOlyz+D1iRLmdQPUTRLdzvMNAT0LzrGg6FcW3/bzIobv8
+	pvraqyEAHvpO7SLXEy7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRqBC-00000009oTu-0O3G;
-	Wed, 18 Jun 2025 10:38:06 +0000
+	id 1uRqOH-00000009qM1-3OzM;
+	Wed, 18 Jun 2025 10:51:37 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRpaF-00000009gh5-1Ako
+	id 1uRpc9-00000009hCs-2bff
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Jun 2025 09:59:57 +0000
-Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4AF955288;
-	Wed, 18 Jun 2025 11:59:40 +0200 (CEST)
+	Wed, 18 Jun 2025 10:01:55 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 19B8C593;
+	Wed, 18 Jun 2025 12:01:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1750240781;
-	bh=B3dq0sEpe5AT9qctfQAR4vjZEu+9Or2HA//TK9hQ9OY=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=mSWalhnhoqpNSAlK1Vq7C9//mECRuAb86zLq4yBYFkLdZXvhpxf2qhqSY7sbF535e
-	 rbkDDyp3KgCAhUQdyc410v62EUpsy6gX2bIJO48w4361yvdIdQ9U1FgDiRLru7UFSX
-	 xdSv/qsNfXypLd2d1RCUJ/BJtZWDXgickQuaeZ9g=
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 18 Jun 2025 12:59:20 +0300
-Subject: [PATCH v4 17/17] drm/bridge: cdns-dsi: Don't fail on
- MIPI_DSI_MODE_VIDEO_BURST
+	s=mail; t=1750240899;
+	bh=DM2altsLWbKvDgY6gQJv5KmHG6kW30hLCFnQZ/8hKKQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=vpL/eqGdNhcN72ssAY0N8VAJLHGaCqrj/DYBnCftDbjBH4pyxg8sBaqYW92D4YvXO
+	 +Yr/C4yve4ahnV7hy/7kVHYR1RHYFMNSx7AiguP1mXm7meSrflUO1u6+2sdjKnWLLK
+	 RKGlurr+KX0QWr9CY9KQ8p/esiGSJH4oDOwxRA24=
+Message-ID: <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
+Date: Wed, 18 Jun 2025 13:01:48 +0300
 MIME-Version: 1.0
-Message-Id: <20250618-cdns-dsi-impro-v4-17-862c841dbe02@ideasonboard.com>
-References: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
-In-Reply-To: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
-To: Jyri Sarha <jyri.sarha@iki.fi>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Andrzej Hajda <andrzej.hajda@intel.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Jayesh Choudhary <j-choudhary@ti.com>, Dmitry Baryshkov <lumag@kernel.org>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>, 
- Aradhya Bhatia <aradhya.bhatia@linux.dev>, 
- Devarsh Thakkar <devarsht@ti.com>, 
- Parth Pancholi <parth.pancholi@toradex.com>, 
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1247;
- i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=B3dq0sEpe5AT9qctfQAR4vjZEu+9Or2HA//TK9hQ9OY=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBoUo4Cm9WSHu5ul0FLGjPBlHGU7cspWgy2eAURb
- KxUES9AIJGJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaFKOAgAKCRD6PaqMvJYe
- 9ewUD/9FAokWtzhtDn9Z+8u+/+5MlZcIEC2OOKxjX5GL2PbefUPOjrk+HNISEOopeVSR73XaN1W
- Fme0uL0cQEuJHwK6nmfXOkYMwuwgaYHUNHB9ar4382ofLFHGdA/o9kSQb3dSYbuVrTYIQKUIPGV
- DN//ujwi0V+Ef5eD/sBoXZySIiGSr5kOrVDr6/72SLfTcJ2hS+7eYTY0QsmS+QVQqaWUbNrghju
- XBLNM5OD8Dw/qpAVJ4tdjHQezx02TXw3shJfujRhJ1cz2oOHCg5A1u7rKCSvX6r4Lq25MMXifCp
- d+iC3/mXxHByOcmCxgxCvkOeZlUnHsvN3mQTICXdZHJuuAOPHZwL/7jFC9RalZ7PJOocA+9A7ty
- Err+ffK5hUcX2qMoMtl7XXJCMkIYHpPSE9OYwJ0ay5b7yoQ8fvX6Tfm5mMpYCeexJuF390o18QM
- Vx+U6odM5pEND4s9n03L6Qppsf6gc+sqU8HJk4PX31jHgfbpFku+rKMlEyyYDxiqSAO1DNi/ecH
- p2iZVT0lyB17P3JKwV3upODe7k2Gp6b42bPSduX1hoL+5N9CPjTiLBKImJkjzGax9atv8T0AAh3
- RLJZIdEaPr5yTDDTu5G4pEG/5ORbeCe+NLK0M39YfmUznAuPwSgt5ensRmI8UkacIPh+FTOy41u
- LqWSuGztD8G3+Zw==
-X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
- fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
+ O_CMN_READY polling
+To: Devarsh Thakkar <devarsht@ti.com>
+Cc: sakari.ailus@linux.intel.com, u.kleine-koenig@baylibre.com,
+ vigneshr@ti.com, aradhya.bhatia@linux.dev, s-jain1@ti.com,
+ r-donadkar@ti.com, vkoul@kernel.org, kishon@kernel.org, mripard@kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250502033451.2291330-1-devarsht@ti.com>
+ <20250502033451.2291330-2-devarsht@ti.com>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ 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
+In-Reply-To: <20250502033451.2291330-2-devarsht@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_025955_506590_BB619C30 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250618_030153_805265_37E49D7F 
+X-CRM114-Status: GOOD (  17.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,38 +115,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While the cdns-dsi does not support DSI burst mode, the burst mode is
-essentially DSI event mode with more versatile clocking and timings.
-Thus cdns-dsi doesn't need to fail if the DSI peripheral driver requests
-MIPI_DSI_MODE_VIDEO_BURST.
+Hi,
 
-In my particular use case, this allows the use of ti-sn65dsi83 driver.
+On 02/05/2025 06:34, Devarsh Thakkar wrote:
+> PLL lockup and O_CMN_READY assertion can only happen after common state
+> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
+> polling them before the common state machine was enabled. To fix this :
+> 
+> - Add new function callbacks for polling on PLL lock and O_CMN_READY
+>   assertion.
+> - As state machine and clocks get enabled in power_on callback only, move
+>   the clock related programming part from configure callback to power_on
+>   callback and poll for the PLL lockup and O_CMN_READY assertion after
+>   state machine gets enabled.
+> - The configure callback only saves the PLL configuration received from the
+>   client driver which will be applied later on in power_on callback.
+> - Add checks to ensure configure is called before power_on and state
+>   machine is in disabled state before power_on callback is called.
+> - Disable state machine in power_off so that client driver can
+>   re-configure the PLL by following up a power_off, configure, power_on
+>   sequence.
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
+> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
+> ---
+> V3:
+> - Move out clock programming logic to power_on as PLL polling and enable
+>   can happen only after SSM enable
+> - Disable state machine on power off
+> 
+> V2: 
+> - Return error code on polling timeout
+> - Moved out calibration logic to separate patch
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 109 +++++++++++++++++++++++++-------
+>  1 file changed, 85 insertions(+), 24 deletions(-)
+> 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index ed87a3970f83..a94109a63788 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
+>  	u8 pll_ipdiv;
+>  	u8 pll_opdiv;
+>  	u16 pll_fbdiv;
+> +	u64 hs_clk_rate;
 
-Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
-Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
-Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
----
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 4 ----
- 1 file changed, 4 deletions(-)
+This has a minor conflict with my cdns-dsi series, as I also add
+hs_clk_rate but as u32. Also, applying both serieses,
+cdns_dphy_config_from_opts() becomes odd as the hs_clk_rate will be
+assigned back and forth between opts and cfg. Can you check this?
 
-diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 114d883c65dc..09b289f0fcbf 100644
---- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-+++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -1052,10 +1052,6 @@ static int cdns_dsi_attach(struct mipi_dsi_host *host,
- 	if (output->dev)
- 		return -EBUSY;
- 
--	/* We do not support burst mode yet. */
--	if (dev->mode_flags & MIPI_DSI_MODE_VIDEO_BURST)
--		return -ENOTSUPP;
--
- 	/*
- 	 * The host <-> device link might be described using an OF-graph
- 	 * representation, in this case we extract the device of_node from
-
--- 
-2.43.0
+ Tomi
 
 
 -- 
