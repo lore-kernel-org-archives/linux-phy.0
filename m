@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF7D4C7115C
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 07:46:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28013C7115B
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 07:48:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHVkb/CZlx99Kf7NJw6MlqnQFZYwkmTp9Gt1XYtkzAg=; b=n9Le6LP+jpPP2N
-	1fIy7t4aMUsGGsYmvUD6jxZbU+RHjnZ5HLLIDwE3qHsBla08Y+2hecbCkRgroRIZ4grpbe5unbCn3
-	SJ/YQv+FcnBrroHN9LIfT4Y78xUxxqIlyGIXke8juIcknhFa1hU1A7oLDUNdGEW3ZiJNoirygQKiT
-	CnmhrtTTLidv+aykQ05l0TwN0wN0fcJQIHfyTVLVz81q+1j4DzsgibqE4ukNCaP5DIpf6fXEGqeSo
-	wAVvL4RIVd8R82CeO1bBB+AbDW984WzL4g/S31j5X4G0zETZ8F+e3DR/b1yYczKe/4ZnsYZcsY2CF
-	oAlmjF3G0ku8pimR/jDg==;
+	List-Owner; bh=QdNnqc/Rv+/TZmc6uXKBWNYXpGc7bk5eOIPetPydWeE=; b=PNWf/9A4vNTlfW
+	OjY6k8iiex/6GaTtkiW1CaPvSjwcSfQbGkB8eKpI+xkp/gnXSSjo84DKP5cvrWLIfhgW6UOrx8gn1
+	Yf+P/kHwH9yetiFhxiIFEZGNjylFX3Wztot1ERd+0A4bCmAs4Xp7tC0XEa8GEHqdaqPt+JsJMC8gD
+	j2eY9p5qLoLMKWW+vT6CSW0QAFGu+l6RsYVGkeiISeTDJfAeTm3bI8/rFCT2BIdSUVYbb9pJZ66rW
+	ft0Si7RE6jMV9I9jSqQTqen+hb3qGnBKddHxmQ1sn1qYZIrjLhjtoWOLnmiz9Wu3JeHiVzYCAaaYT
+	nzwA7JZ9fLJikwtH9ovg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRnVL-00000009K5O-1GjZ;
-	Wed, 18 Jun 2025 07:46:43 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uRnWz-00000009KLQ-3kJT;
+	Wed, 18 Jun 2025 07:48:25 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRmVy-00000009Cuo-4AIb
-	for linux-phy@lists.infradead.org;
-	Wed, 18 Jun 2025 06:43:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BB3D65C5D34;
-	Wed, 18 Jun 2025 06:41:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC384C4CEE7;
-	Wed, 18 Jun 2025 06:43:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750228998;
-	bh=fd+2ts9YZSqCMtTtB+KJGnMfppJyTCgdswl9cDa/m24=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=gDL7wT/0CxbYwfzBUEP+pw7diIEWwhOuEIhAUeQfknVUdSTLNLx01GTqe8zmew6ds
-	 AqpS0DmT395GVjVuE2qVIbcKLupHH+KFruP8FnIMVErWIaoZwUOChOwwjhhvkgf1AH
-	 PSq7l93fucwtm63T6jTwOEg0wnVCE7FCfX1taLcRnLozhev0fDWQBrHHr+HDBOLdmj
-	 Y/bG4xsKFQbYNFwp6bRwIPSciv+HehhabjCfertganPAQmrz/nSZiX+xQFcOc/EYaR
-	 Nl/5E1g0Ev90jBl0+Wl6qq1+rNa+woV0tESFZdud1phcMpjYGwfPN8iwf6DCkxt9h9
-	 w38qqNl8hakew==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1uRmVv-0000000022u-2Juh;
-	Wed, 18 Jun 2025 08:43:16 +0200
-Date: Wed, 18 Jun 2025 08:43:15 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: lpieralisi@kernel.org, kwilczynski@kernel.org,
-	manivannan.sadhasivam@linaro.org, robh@kernel.org,
-	bhelgaas@google.com, krzk+dt@kernel.org, neil.armstrong@linaro.org,
-	abel.vesa@linaro.org, kw@linux.com, conor+dt@kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org,
-	konradybcio@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	quic_qianyu@quicinc.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v6 1/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Update pcie phy bindings for qcs8300
-Message-ID: <aFJgA2NmHzBI4hF_@hovoldconsulting.com>
-References: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
- <20250529035635.4162149-2-quic_ziyuzhan@quicinc.com>
+	id 1uRnUF-00000009JpU-3ZuS;
+	Wed, 18 Jun 2025 07:45:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1750232733;
+	bh=1JdQ904uDrVw5CrNkcjW/fEGquyhcUzIxxmQVdihypM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=TU7G28jrXco5LKBo88MJI++Q+39OFW5Pvy4t6nHJ5tPRAk0w6CKZmVmBE3WTXlXlI
+	 PLEo4d3UQc/w9X3mft+gsnDzSFFAIPnsQqnrJ+oikqcfzyKzkXZwoICJ9McYwo1QXk
+	 hL0rKRkyOjZlHT0TkrdI6pjN4TvztXLDSM5fNujhhxRkbFglMvIwjINvFtIWmYPwEO
+	 +ISZiLO3Rcw88JONnttSfqNs1vZhf9JdUDzBAG0hltjLPquofmSwhsgdX8Laq/kXEs
+	 tJihM2MU5HArPpBR4E+H2T+Rg3F6rNasL8DX8i96/IT9QUX8qvv90sJL2fSDz8eVC4
+	 3cvpFD+KoynVg==
+Received: from [10.40.0.100] (185-251-200-162.lampert.tv [185.251.200.162])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: mriesch)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id A548117E0F99;
+	Wed, 18 Jun 2025 09:45:32 +0200 (CEST)
+Message-ID: <e9db11c2-b02d-4fd5-8927-7b5857089533@collabora.com>
+Date: Wed, 18 Jun 2025 09:45:32 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250529035635.4162149-2-quic_ziyuzhan@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/5] dt-bindings: phy: rockchip-inno-csi-dphy: add rk3588
+ variant
+To: Diederik de Haas <didi.debian@cknow.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Collabora Kernel Team <kernel@collabora.com>,
+ Kever Yang <kever.yang@rock-chips.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20250616-rk3588-csi-dphy-v1-0-84eb3b2a736c@collabora.com>
+ <20250616-rk3588-csi-dphy-v1-2-84eb3b2a736c@collabora.com>
+ <DAOVBOKLXLS2.S9MXDD29X68J@cknow.org>
+Content-Language: en-US
+From: Michael Riesch <michael.riesch@collabora.com>
+In-Reply-To: <DAOVBOKLXLS2.S9MXDD29X68J@cknow.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_234319_070581_C26B7564 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250618_004536_097836_828FE9D0 
+X-CRM114-Status: GOOD (  23.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,24 +86,173 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 29, 2025 at 11:56:30AM +0800, Ziyue Zhang wrote:
-> The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
-> specified in the device tree node. Hence, move the qcs8300 phy
-> compatibility entry into the list of PHYs that require six clocks.
+Hi Diederik,
 
-Ok, so here you fix also qcs8300, good.
- 
-> As no compatible need the entry which require seven clocks, delete it.
+Thanks for your comments!
 
-You still leave the bogus "phy_aux" clock under clock-names, that one
-should also be dropped. And you should update clocks maxItems as well.
+On 6/17/25 16:12, Diederik de Haas wrote:
+> Hi,
+> 
+> I'm (unfortunately) not seeing any @rock-chips.com recipients ...
 
-And please include a Fixes tag pointing out the commits that added this:
+Oops, I meant to include at least Kever, but forgot to do it. Will do in v2.
 
-Fixes: e46e59b77a9e ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2")
-Fixes: Fixes: fd2d4e4c1986 ("dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY")
+Cc: Kever
 
-Johan
+> 
+> On Tue Jun 17, 2025 at 10:54 AM CEST, Michael Riesch via B4 Relay wrote:
+>> From: Michael Riesch <michael.riesch@collabora.com>
+>>
+>> The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
+>> Add the variant and allow for the additional reset.
+>>
+>> Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+>> ---
+>>  .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 60 ++++++++++++++++++++--
+>>  1 file changed, 55 insertions(+), 5 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+>> index 5ac994b3c0aa..6755738b13ee 100644
+>> --- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+>> @@ -21,6 +21,7 @@ properties:
+>>        - rockchip,rk3326-csi-dphy
+>>        - rockchip,rk3368-csi-dphy
+>>        - rockchip,rk3568-csi-dphy
+>> +      - rockchip,rk3588-csi-dphy
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -39,18 +40,49 @@ properties:
+>>      maxItems: 1
+>>  
+>>    resets:
+>> -    items:
+>> -      - description: exclusive PHY reset line
+>> +    minItems: 1
+>> +    maxItems: 2
+>>  
+>>    reset-names:
+>> -    items:
+>> -      - const: apb
+>> +    minItems: 1
+>> +    maxItems: 2
+>>  
+>>    rockchip,grf:
+>>      $ref: /schemas/types.yaml#/definitions/phandle
+>>      description:
+>>        Some additional phy settings are access through GRF regs.
+>>  
+>> +allOf:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - rockchip,px30-csi-dphy
+>> +              - rockchip,rk1808-csi-dphy
+>> +              - rockchip,rk3326-csi-dphy
+>> +              - rockchip,rk3368-csi-dphy
+>> +              - rockchip,rk3568-csi-dphy
+>> +    then:
+>> +      properties:
+>> +        resets:
+>> +          items:
+>> +            - description: exclusive PHY reset line
+>> +
+>> +        reset-names:
+>> +          items:
+>> +            - const: apb
+>> +
+>> +      required:
+>> +        - reset-names
+>> +    else:
+>> +      properties:
+>> +        resets:
+>> +          minItems: 2
+>> +
+>> +        reset-names:
+>> +          minItems: 2
+>> +
+>>  required:
+>>    - compatible
+>>    - reg
+>> @@ -59,7 +91,6 @@ required:
+>>    - '#phy-cells'
+>>    - power-domains
+>>    - resets
+>> -  - reset-names
+>>    - rockchip,grf
+>>  
+>>  additionalProperties: false
+>> @@ -78,3 +109,22 @@ examples:
+>>          reset-names = "apb";
+>>          rockchip,grf = <&grf>;
+>>      };
+>> +  - |
+>> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+>> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
+>> +
+>> +    soc {
+>> +        #address-cells = <2>;
+>> +        #size-cells = <2>;
+>> +
+>> +        csi_dphy0: phy@fedc0000 {
+>> +            compatible = "rockchip,rk3588-csi-dphy";
+>> +            reg = <0x0 0xfedc0000 0x0 0x8000>;
+>> +            clocks = <&cru PCLK_CSIPHY0>;
+>> +            clock-names = "pclk";
+>> +            #phy-cells = <0>;
+>> +            resets = <&cru SRST_CSIPHY0>, <&cru SRST_P_CSIPHY0>;
+>> +            rockchip,grf = <&csidphy0_grf>;
+>> +            status = "disabled";
+>> +        };
+>> +    };
+> 
+> ... which could hopefully tell us what the value is/should be for the
+> *required* 'power-domains' property, which is missing in this example.
+> IOW: the binding example is invalid according to its own binding.
+
+Huh, indeed. Hm. Why didn't make dt_binding_check warn me about that?!
+
+TRM Part 1, p. 1097 states that HDMI_CSI_DPHY is in the ALIVE(PD_BUS)
+power domain. With some creativity one can interpret that the CSI DPHY
+is always on anyways. @Kever: Could you please elaborate on that?
+
+> (btw: you can drop the 'csi_dphy0' label)
+
+Will do.
+
+> 
+> And hopefully also for rk3568 so we can add it to rk356x-base.dtsi and
+> you can add it in patch 5 where it's also missing.
+
+I recall a similar discussion [0]. In the RK3568 the CSIPHY is in the
+ALIVE power domain.
+
+Note that the PHY must not be confused with the HOST blocks, which are
+the MIPI CSI-2 receivers.
+
+I guess the correct solution is to make power-domains optional. Further
+input welcome, though.
+
+Best regards,
+Michael
+
+> 
+> Grepping for "csi-dphy" in arch/arm*/boot/dts/rockchip returns:
+> - px30.dtsi
+> - rk356x-base.dtsi
+> 
+> With this patch set applied, we'd have a 3rd result: rk3588-base.dtsi
+> 
+> For all the listed compatibles, it's only actually defined in px30.dtsi.
+> 
+> Cheers (and sorry),
+>   Diederik
+
+[0] https://lore.kernel.org/all/D4QNJ85V43NU.YD01E8AB4116@cknow.org/
+
 
 -- 
 linux-phy mailing list
