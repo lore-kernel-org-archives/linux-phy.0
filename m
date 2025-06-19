@@ -4,64 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15BB9C7115D
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Jun 2025 17:02:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74A12C7115D
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Jun 2025 18:43:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BZfH8Cah6sF7nIT3M1MG++0OUHSvX8oPXltMd3nq5Ik=; b=Eo33V8aaNrLVcf
-	r5lkEvaLrj/5/q/wMeX+wySKUq/UCPFvJ24kyqh0kOpfzDmu63KZIwFYixpMwoqx5j5uoJi5CYmvZ
-	YZMuaJgbUjpiKJqUAwjBVicpg6OTylp8z4mwyR8UJSa0gHvlCwevX8Vsb/HGWUHbe919XvIBeGhX2
-	t00zYWpNOkGm+SDX3pe8naVVWxTdchOp3v6h1hr16ae+vNWP7iOdjd+cvq3xmAb8TRGu/lyviapBm
-	NU4CoAF7MGrMa1reMp6nhQMQKg3/tFiMqWC+JBJVWD2ziqAyGFYWKXehZ54/u4GncgZKBn2tVFsLu
-	ljjxrAlUPmBRVRcIaHFw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tPTrS1uYEpUfWxqk5HJgVSgZo5Q9NtwHqvQvKJFnTvg=; b=HvjeZo27qTYUjr
+	RkPjGPv3dG9BBfmXmugn60CRc86lk4f34TGJ8O2d7kAv7Xz9gx6iUs8/loe4lHq0UFCDzduiF+xRu
+	rOHwzyO5DG50YHADAWoJtOHG5UDnnlq1S4Cy1IiPjY85RQtbS1ta1vw1g5sdqoYUMt84S6kHhM/VA
+	N3cT3t8yDbkHESPN8w5NNyT3flAgigF4pEMq7W6zXXjQfkdhbpUFdzadJk/rDWUHUCA6UGOVYssmz
+	RWbtE5fYYbfKkQVNeoIb2RBhKLaEPxYWTfyYi6Bw5jSW20eF6BwnVvywwlOtl/AJ8V2JXfQ5asbsl
+	lSGqjRB8dzIGBOc0oEyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSIen-0000000Dexp-3Nje;
-	Thu, 19 Jun 2025 17:02:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSFhS-0000000DE5N-2xYl
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Jun 2025 13:53:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 57F7C113E;
-	Thu, 19 Jun 2025 06:52:45 -0700 (PDT)
-Received: from usa.arm.com (GTV29432L0-2.cambridge.arm.com [10.1.31.86])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 37AB63F66E;
-	Thu, 19 Jun 2025 06:53:03 -0700 (PDT)
-From: Aishwarya <aishwarya.tcv@arm.com>
-To: quic_nitirawa@quicinc.com
-Cc: James.Bottomley@HansenPartnership.com,
-	andersson@kernel.org,
-	bvanassche@acm.org,
-	dmitry.baryshkov@oss.qualcomm.com,
-	kishon@kernel.org,
-	konrad.dybcio@oss.qualcomm.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	manivannan.sadhasivam@linaro.org,
-	martin.petersen@oracle.com,
-	neil.armstrong@linaro.org,
-	quic_cang@quicinc.com,
-	quic_rdwivedi@quicinc.com,
-	vkoul@kernel.org
-Subject: Re: [PATCH V6 10/10] scsi: ufs: qcom : Refactor phy_power_on/off calls
-Date: Thu, 19 Jun 2025 14:53:02 +0100
-Message-Id: <20250619135302.9192-1-aishwarya.tcv@arm.com>
-X-Mailer: git-send-email 2.39.5 (Apple Git-154)
-In-Reply-To: <20250526153821.7918-11-quic_nitirawa@quicinc.com>
-References: <20250526153821.7918-11-quic_nitirawa@quicinc.com>
+	id 1uSKE2-0000000E16X-0ORe;
+	Thu, 19 Jun 2025 18:43:02 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uSK8N-0000000Dues-2v1E;
+	Thu, 19 Jun 2025 18:37:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-Id:Date:Subject:From:Sender:Reply-To:
+	Content-ID:Content-Description:In-Reply-To:References;
+	bh=zMABvQfM1H6QX+dC9DoPW5FbqUymEExjF608nnNcYUM=; b=VaXJNS1UCn30r8cseo3mTsAF0H
+	Teb85ukrS770RzSsXSUW4hpvOXxh+SRBaMlE0li5F5oSEiHxCLxHYflP3yBDAITbZXq/obgquQWsU
+	a79FNZVScczENH/gYO//D9KDHhiQP3xWQ3dbOqfOkSeDCuu9pkS/Uiufj4wYHHWmbcRt9ly+nlkuF
+	+feyC7FxjwjfgTpOGrlGU3r4ZBBYCPanhhpJ1Fq2iqBWALWXALj2ESOA6yLLnpH5z7fchdVDVpMow
+	qHEK9aLgzyHxQ3Hb71+Yyij8XY4LzSLZXgepjaPuS4d5TL+/UEq78NBPdUc8DodRp60hL8+OtDj+y
+	uzKG5BHw==;
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uSK8G-00000004WXI-2zOG;
+	Thu, 19 Jun 2025 18:37:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1750358210; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=JwIQrCkcAhboJiUhmHNXqk1Abj0FB9b72iTycYEzv6iMwQikYK3OFSXfbg2YredFGKXhMeGf8FbKhXoGCTnRgkBdg2WD4YJKTOvL54bn40SRfyIKVFSXWx2jOIOItyyR40bczKH6y147DJT+KYuGsISiyAkU9bMYCQuLmvAffQQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1750358210; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=zMABvQfM1H6QX+dC9DoPW5FbqUymEExjF608nnNcYUM=; 
+	b=AutKEsMeTbgpA4OBNfe3izr7pTkKxKUvVUD9WjGIqg0QxIHjIon8X5ASe8Kvxbf1UN8/CW/0zNaLg1Pnqj7OovMvvb2ZABVgXdMPOEf51wJ7vzETAjJO5wW/wt+JnWndHtRp1fnPVnEMH5WLq3KNw6OeXnluRhJc0jSG+b4unvU=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750358210;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding:To:To:Cc:Cc:Reply-To;
+	bh=zMABvQfM1H6QX+dC9DoPW5FbqUymEExjF608nnNcYUM=;
+	b=WYxBeqPmXY/kpAneKHGolqwG3qYcEe6Qzc8BRRidh+hMqn3FweDshYP4B6sZvcHl
+	v5hGhumGLwn89DAkZNkuBL6Rn1EFmyAk2jerlVtcS8Xu310/oRUEmLYHCory/UG6K1c
+	lVa1xqUK8J2ociffXmdWx+eQjJ0czxLdEBzLYKB8=
+Received: by mx.zohomail.com with SMTPS id 1750358207480287.08214886347105;
+	Thu, 19 Jun 2025 11:36:47 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: [PATCH v5 0/2] RK3576 USB Enablement
+Date: Thu, 19 Jun 2025 20:36:35 +0200
+Message-Id: <20250619-rk3576-sige5-usb-v5-0-9069a7e750e1@collabora.com>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIALNYVGgC/23QTW7DIBAF4KtYrEvFP3ZWvUfVBZAhQU1MC46VK
+ vLdOyWLVC1iNaD3zRM3UqEkqGQ33EiBNdWUZxz000DC0c0HoGmPMxFMaCbFSMu71NbQmg6g6aV
+ 6KiTjTDgAFxzB2EeBmK6NfH27zwU+Lygv90viXQUa8vmclt0ww3WhTTd8Ij+BY6pLLl+t0spbo
+ r0rZv9vXzll1FiAwI2Jo4gvIZ9OzufinnFFA1fxQPB0EIHIXnunJNNReugh8jfSayIRGScftTN
+ chdBtoh6I4ayDKEQs2GjthP8R+F9k27ZvLAT/wbQBAAA=
+X-Change-ID: 20250328-rk3576-sige5-usb-230102aeeaca
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Frank Wang <frank.wang@rock-chips.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Alexey Charkov <alchark@gmail.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250619_065306_833229_0E27DBD2 
-X-CRM114-Status: UNSURE (   5.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250619_193705_234602_44AE61EB 
+X-CRM114-Status: GOOD (  18.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,84 +99,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgTml0aW4sCgpXaGVuIGJvb3RpbmcgdGhlIGtlcm5lbCBmcm9tIG5leHQtMjAyNTA2MTkgb24g
-QXJtNjQgUXVhbGNvbW0gYm9hcmRzCihSQjUgYW5kIERCODQ1QyksIHdlIG9ic2VydmUgdGhhdCB0
-aGUgYmFzZWxpbmUgYm9vdHIgdGVzdCBmYWlscyBkdWUgdG8KZG1lc2cuZW1lcmcgZXJyb3JzIGlu
-IG91ciBDSSBlbnZpcm9ubWVudC4KCkEgZnVsbCBnaXQgYmlzZWN0IChsb2cgaW5jbHVkZWQgYmVs
-b3cpIHBvaW50cyB0byB0aGlzIHBhdGNoIGFzIHRoZQpjdWxwcml0LiBUaGUgaXNzdWUgd2FzIGlu
-dHJvZHVjZWQgc29tZXRpbWUgZnJvbSB0YWcgbmV4dC0yMDI1MDYxNiBpbgpodHRwczovL2dpdC5r
-ZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9uZXh0L2xpbnV4LW5leHQuZ2l0LgoK
-VGhpcyBpc3N1ZSBpcyBub3QgcHJlc2VudCBpbiB2Ni4xNi1yYzIKCkhlcmXigJlzIGEgc2FtcGxl
-IG9mIHRoZSBmYWlsdXJlIG9ic2VydmVkIG9uIHRoZSBSQjUgYm9hcmQ6CmxlcnQgOiAgIElTViA9
-IDAsIElTUyA9IDB4MDAwMDAwMDQsIElTUzIgPSAweDAwMDAwMDAwCmtlcm4gIDphbGVydCA6ICAg
-Q00gPSAwLCBXblIgPSAwLCBUbkQgPSAwLCBUYWdBY2Nlc3MgPSAwCmtlcm4gIDphbGVydCA6ICAg
-R0NTID0gMCwgT3ZlcmxheSA9IDAsIERpcnR5Qml0ID0gMCwgWHMgPSAwCmtlcm4gIDphbGVydCA6
-IHVzZXIgcGd0YWJsZTogNGsgcGFnZXMsIDQ4LWJpdCBWQXMsIHBnZHA9MDAwMDAwMDEwMmM0YzAw
-MAprZXJuICA6YWxlcnQgOiBbMDAwMDAwMDAwMDAwMDAwMF0gcGdkPTAwMDAwMDAwMDAwMDAwMDAK
-a2VybiAgOmVtZXJnIDogSW50ZXJuYWwgZXJyb3I6IE9vcHM6IDAwMDAwMDAwOTYwMDAwMDQgWyMx
-XSAgU01QCmtlcm4gIDplbWVyZyA6IENvZGU6IGE5MDE1N2YzIGFhMDAwM2YzIGY5MDAxM2Y2IGY5
-NDA1YzE1IChmOTQwMDJiNikgCjw4PlsgICAzMC45MzMyODldIDxMQVZBX1NJR05BTF9URVNUQ0FT
-RSBURVNUX0NBU0VfSUQ9ZW1lcmcgUkVTVUxUPWZhaWwgVU5JVFM9bGluZXMgTUVBU1VSRU1FTlQ9
-Mj4KKyA8OD5bICAgMzAuOTQzNzk4XSA8TEFWQV9TSUdOQUxfRU5EUlVOIDBfZG1lc2cgMTAwMDMy
-NV8yLjQuNC4xPgpzZXQgK3gKCkdpdCBiaXNlY3Rpb24gbG9nOgpnaXQgYmlzZWN0IHN0YXJ0CiMg
-c3RhdHVzOiB3YWl0aW5nIGZvciBib3RoIGdvb2QgYW5kIGJhZCBjb21taXRzCiMgZ29vZDogWzlh
-ZmU2NTI5NThjM2VlODhmMjRkZjFlNGE5N2YyOThhZmNlODk0MDddIE1lcmdlIHRhZyAneDg2X3Vy
-Z2VudF9mb3JfNi4xNi1yYzMnIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgv
-a2VybmVsL2dpdC90aXAvdGlwCmdpdCBiaXNlY3QgZ29vZCA5YWZlNjUyOTU4YzNlZTg4ZjI0ZGYx
-ZTRhOTdmMjk4YWZjZTg5NDA3CiMgc3RhdHVzOiB3YWl0aW5nIGZvciBiYWQgY29tbWl0LCAxIGdv
-b2QgY29tbWl0IGtub3duCiMgYmFkOiBbNDMyNTc0M2M3ZTIwOWFlNzg0NTI5MzY3OWE0ZGU5NGI5
-NjlmMmJlZl0gQWRkIGxpbnV4LW5leHQgc3BlY2lmaWMgZmlsZXMgZm9yIDIwMjUwNjE3CmdpdCBi
-aXNlY3QgYmFkIDQzMjU3NDNjN2UyMDlhZTc4NDUyOTM2NzlhNGRlOTRiOTY5ZjJiZWYKIyBnb29k
-OiBbNDM2YzhjYmJjYjE4ZGViOTYxMDBjZDlmMzNmMWVmZWRkZGMzMWQ5Y10gTWVyZ2UgYnJhbmNo
-ICdtYXN0ZXInIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
-dC9ibHVldG9vdGgvYmx1ZXRvb3RoLW5leHQuZ2l0CmdpdCBiaXNlY3QgZ29vZCA0MzZjOGNiYmNi
-MThkZWI5NjEwMGNkOWYzM2YxZWZlZGRkYzMxZDljCiMgZ29vZDogWzE4M2QyMjQwODM3NzNjYTRh
-ODRhNDU4ZmI2MDhlZmVjZmYxOWUxOWVdIE1lcmdlIGJyYW5jaCAnZm9yLW5leHQnIG9mIGdpdDov
-L2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9icm9vbmllL3JlZ21hcC5n
-aXQKZ2l0IGJpc2VjdCBnb29kIDE4M2QyMjQwODM3NzNjYTRhODRhNDU4ZmI2MDhlZmVjZmYxOWUx
-OWUKIyBnb29kOiBbMTM0N2ZmMGMwZTUxMGYxYTZhZGI3ODI1OWEyYTBkZGZhYzQxZDI1OF0gTWVy
-Z2UgYnJhbmNoICdmb3ItbmV4dCcgb2YgZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51
-eC9rZXJuZWwvZ2l0L3RqL3dxLmdpdApnaXQgYmlzZWN0IGdvb2QgMTM0N2ZmMGMwZTUxMGYxYTZh
-ZGI3ODI1OWEyYTBkZGZhYzQxZDI1OAojIGJhZDogW2IwOWJkMDRlYWJiMTk5NDI1N2Y0YzExZDBl
-ZDI1ZmYwMzUxN2QzZWNdIE1lcmdlIGJyYW5jaCAnZ3Bpby9mb3ItbmV4dCcgb2YgZ2l0Oi8vZ2l0
-Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2JyZ2wvbGludXguZ2l0CmdpdCBi
-aXNlY3QgYmFkIGIwOWJkMDRlYWJiMTk5NDI1N2Y0YzExZDBlZDI1ZmYwMzUxN2QzZWMKIyBnb29k
-OiBbNzBiYzllMTg2NTNjMjBmYmNiNDcxODRkOTQ5OGFkN2JkN2I3ZDZiZV0gTWVyZ2UgYnJhbmNo
-ICd0b2dyZWcnIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
-dC9qaWMyMy9paW8uZ2l0CmdpdCBiaXNlY3QgZ29vZCA3MGJjOWUxODY1M2MyMGZiY2I0NzE4NGQ5
-NDk4YWQ3YmQ3YjdkNmJlCiMgYmFkOiBbM2E4NDdmYjg1YzlkNDdlNjFhZDVkOWQ1NGI3NjJhM2U5
-OWEwODA4NF0gTWVyZ2UgYnJhbmNoICduZXh0JyBvZiBnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIv
-c2NtL2xpbnV4L2tlcm5lbC9naXQvcGh5L2xpbnV4LXBoeS5naXQKZ2l0IGJpc2VjdCBiYWQgM2E4
-NDdmYjg1YzlkNDdlNjFhZDVkOWQ1NGI3NjJhM2U5OWEwODA4NAojIHNraXA6IFs1MDM1NWFjNzBk
-NGYxMDRlMmY4MmJmYmQwNjU4YzEyOTAyN2ViYjM3XSBkdC1iaW5kaW5nczogcGh5OiBDb252ZXJ0
-IG1hcnZlbGwsY29tcGh5LWNwMTEwIHRvIERUIHNjaGVtYQpnaXQgYmlzZWN0IHNraXAgNTAzNTVh
-YzcwZDRmMTA0ZTJmODJiZmJkMDY1OGMxMjkwMjdlYmIzNwojIGdvb2Q6IFthY2M2YjBkNzNkOTAy
-ZDMyOTZkOGM3Nzg3OGE5YjUwOGMyYzZhNWJmXSBwaHk6IHFjb20tcW1wLXVmczogUmVuYW1lIHFt
-cF91ZnNfcG93ZXJfb2ZmCmdpdCBiaXNlY3QgZ29vZCBhY2M2YjBkNzNkOTAyZDMyOTZkOGM3Nzg3
-OGE5YjUwOGMyYzZhNWJmCiMgYmFkOiBbMzViNjI5YjI4YWZkNzJhMTRlZDU3M2YxYjE4MGRjNGFi
-MWJmN2UxOV0gZHQtYmluZGluZ3M6IHBoeTogQ29udmVydCB0aSxkbTgxNngtdXNiLXBoeSB0byBE
-VCBzY2hlbWEKZ2l0IGJpc2VjdCBiYWQgMzViNjI5YjI4YWZkNzJhMTRlZDU3M2YxYjE4MGRjNGFi
-MWJmN2UxOQojIGJhZDogWzY2YWNhZjhmNmIwYmNjMjczZjgzNTZiMmE3N2JhYTkwYjE3NzAxNGNd
-IGR0LWJpbmRpbmdzOiBwaHk6IENvbnZlcnQgaW1nLHBpc3RhY2hpby11c2ItcGh5IHRvIERUIHNj
-aGVtYQpnaXQgYmlzZWN0IGJhZCA2NmFjYWY4ZjZiMGJjYzI3M2Y4MzU2YjJhNzdiYWE5MGIxNzcw
-MTRjCiMgYmFkOiBbZjE1MWYzYTZlYmUxODRiNWY4YzlhYmU1OGZlMmQ2M2Y5OTUwMTM5Yl0gZHQt
-YmluZGluZ3M6IHBoeTogQ29udmVydCBicmNtLG5zMi1kcmQtcGh5IHRvIERUIHNjaGVtYQpnaXQg
-YmlzZWN0IGJhZCBmMTUxZjNhNmViZTE4NGI1ZjhjOWFiZTU4ZmUyZDYzZjk5NTAxMzliCiMgYmFk
-OiBbNzdkMmZhNTRhOTQ1NzRmNzY3ZDVmYjI5NmI2YjhlMDExZWJhMGM4ZV0gc2NzaTogdWZzOiBx
-Y29tIDogUmVmYWN0b3IgcGh5X3Bvd2VyX29uL29mZiBjYWxscwpnaXQgYmlzZWN0IGJhZCA3N2Qy
-ZmE1NGE5NDU3NGY3NjdkNWZiMjk2YjZiOGUwMTFlYmEwYzhlCiMgZ29vZDogWzdmNjAwZjBlMTkz
-YTY2MzgxMzUwMjZjMzcxOGFjMjk2ZWQzZjUwNDRdIHBoeTogcWNvbS1xbXAtdWZzOiBSZW1vdmUg
-cW1wX3Vmc19leGl0KCkgYW5kIElubGluZSBxbXBfdWZzX2NvbV9leGl0KCkKZ2l0IGJpc2VjdCBn
-b29kIDdmNjAwZjBlMTkzYTY2MzgxMzUwMjZjMzcxOGFjMjk2ZWQzZjUwNDQKIyBnb29kOiBbYTA3
-OWIyZDcxNTM0MDQ4MmU0MjVmZjEzNmI1NTgxMGFiODI3OTgwMF0gcGh5OiBxY29tLXFtcC11ZnM6
-IHJlZmFjdG9yIHFtcF91ZnNfcG93ZXJfb2ZmCmdpdCBiaXNlY3QgZ29vZCBhMDc5YjJkNzE1MzQw
-NDgyZTQyNWZmMTM2YjU1ODEwYWI4Mjc5ODAwCiMgZmlyc3QgYmFkIGNvbW1pdDogWzc3ZDJmYTU0
-YTk0NTc0Zjc2N2Q1ZmIyOTZiNmI4ZTAxMWViYTBjOGVdIHNjc2k6IHVmczogcWNvbSA6IFJlZmFj
-dG9yIHBoeV9wb3dlcl9vbi9vZmYgY2FsbHMKClRoYW5rcywKQWlzaHdhcnlhCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+This series is the result of what I thought would be a quick 10 minute
+job, but turned out to be more like 3 days of pain, suffering, and
+confusion. This should be expected with USB Type C though.
+
+The first patch in the series extends the inno usb2 PHY driver to fiddle
+with some GRF flags in that driver when the PHY is connected to a USB
+Type C port. Without this change, devices on USB-C simply don't
+enumerate at all, as the state machine gets stuck waiting for vbus to go
+low or something along those lines.
+
+An alternate way to implement this would've been a vendor property in
+the PHY binding which is then checked for in the driver and needs to be
+present in all rockchip inno u2phy instances that happen to be connected
+to a USB Type C connector. This is what downstream does, for example.
+
+Patch 2 adds the USB related nodes, including associated regulators and
+Type C controllers, to the Sige5 tree.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+Changes in v5:
+- drop orientation handling patches, as this needs a proper solution in
+  dwc3
+- remove redundant property_enabled checks on svbus flags in otg_sm_work
+- Link to v4: https://lore.kernel.org/r/20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com
+
+Changes in v4:
+- Rebase onto v6.16-rc1, no other changes
+- Link to v3: https://lore.kernel.org/r/20250507-rk3576-sige5-usb-v3-0-89bf5a614ccf@collabora.com
+
+Changes in v3:
+- Drop the utmi clock patch. This was always a speculative fix for a
+  problem I could no longer reproduce, and it doesn't conform to the
+  binding, as Robo-rob correctly caught.
+- Link to v2: https://lore.kernel.org/r/20250505-rk3576-sige5-usb-v2-0-d5ba4305f3be@collabora.com
+
+Changes in v2:
+- Rebased onto next-20250505
+- Drop the u2susphy quirk, as I can no longer reproduce the original
+  problem with various amounts of ripping up the DT and changing the
+  config. Yeah I'm not super hyped about this now being a heisenbug
+  either.
+- Drop the bindings patch, as Rob showed me there's a way to do this
+  without extending the bindings
+- Rewrite the usb 2 phy driver patch to no longer walk an OF graph from
+  PHY to connector, but instead first find the USB controller that uses
+  this PHY, and then use the USB controller's existing graph connection
+  to the usb connector.
+- Adjust the Sige5 DTS patch to now have two port connections from the
+  USB connector to the drd0 USB controller, one for high-speed aka
+  USB2, one for super-speed aka USB3, ordered as per its binding.
+- Add a patch for rk3576.dtsi to reference u2phy1 as a clock in the drd1
+  controller.
+- Add two patches to fix USB Type-C super speed in reverse orientation.
+- Link to v1: https://lore.kernel.org/r/20250407-rk3576-sige5-usb-v1-0-67eec166f82f@collabora.com
+
+---
+Nicolas Frattaroli (2):
+      phy: rockchip: inno-usb2: add soft vbusvalid control
+      arm64: dts: rockchip: enable USB on Sige5
+
+ .../boot/dts/rockchip/rk3576-armsom-sige5.dts      | 160 +++++++++++++++++++++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c      | 108 +++++++++++++-
+ 2 files changed, 264 insertions(+), 4 deletions(-)
+---
+base-commit: 1d07605c859ee3f483f07acd461452d9e505c58c
+change-id: 20250328-rk3576-sige5-usb-230102aeeaca
+
+Best regards,
+-- 
+Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
