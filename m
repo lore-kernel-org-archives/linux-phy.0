@@ -4,82 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 774FFC7115B
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Jun 2025 08:44:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15BB9C7115D
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Jun 2025 17:02:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jhgh/klvKgYRuEq5MZwrq1Oiscg567qhj3ltOCfa6ns=; b=4Qb0U+Tn2p7HBY
-	ZHqfX4QySKKFTd51wu43BYZHN0AhGr3Hkau/jSzDDTbfzBrXLWoy54rQD2m3vJ9sU0RXriDlfxwDx
-	Ci15I3Dhsb6VMvvgkwyzJ7/z7b57lGbL2yTGiathCCMU+0D0FHTeTcf0mW6Yr+ecpq4v6eZ2AcQb/
-	cTjqgii08EbLizlQts0jPQz3AAXkmTSDDuyICGABMguS8irvKQKgG0y86HHZruvLBR9GGl550NE6w
-	QI1n5RaPLs4WMrfsodHxDAYtVYOEwycq2gsjtJkKXyzXLQADTMb2EQyRtKNAno3t0MeVZF+YeA45p
-	FJjAi0oCIMExKPZfBlHg==;
+	List-Owner; bh=BZfH8Cah6sF7nIT3M1MG++0OUHSvX8oPXltMd3nq5Ik=; b=Eo33V8aaNrLVcf
+	r5lkEvaLrj/5/q/wMeX+wySKUq/UCPFvJ24kyqh0kOpfzDmu63KZIwFYixpMwoqx5j5uoJi5CYmvZ
+	YZMuaJgbUjpiKJqUAwjBVicpg6OTylp8z4mwyR8UJSa0gHvlCwevX8Vsb/HGWUHbe919XvIBeGhX2
+	t00zYWpNOkGm+SDX3pe8naVVWxTdchOp3v6h1hr16ae+vNWP7iOdjd+cvq3xmAb8TRGu/lyviapBm
+	NU4CoAF7MGrMa1reMp6nhQMQKg3/tFiMqWC+JBJVWD2ziqAyGFYWKXehZ54/u4GncgZKBn2tVFsLu
+	ljjxrAlUPmBRVRcIaHFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSAsK-0000000CTCj-0i6m;
-	Thu, 19 Jun 2025 08:44:00 +0000
-Received: from mgamail.intel.com ([192.198.163.13])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSAPu-0000000CPAP-1qig;
-	Thu, 19 Jun 2025 08:14:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1750320878; x=1781856878;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=4HJuJePFef9p2ELqf3SzVRO850tg1GWyQ2TzfThmE6U=;
-  b=KMJWau6skBih7I2Fv0ijisDwcL6KeCs0M3aWBij9D7kik4HmqQmU/2WB
-   XJa8DCiJCRpAGTRYABQX/emyMeCZjEwVe9EnQv6bW0Og60UfDnyJWQGcI
-   zlfnnqN1R7g3mNhmsXcbnzqqjODoNmJAQRLEQ5BSfvlyMjm5RnaXj010n
-   0INdx1JCO9tfpiFD69jzDAMid67ILVkAn9oRCfmz7BDUPpb9vcfxruVm3
-   5oWToMSoMV3dcFBhpTg17GNSpe8G4N5TxkZy6v7PplvLj3cc8KT95slOz
-   GFumOfB5lcezc7zOKr/qKbuUFWd/JW2ftki23SYiEFvsCu9XwkV6r4/aa
-   g==;
-X-CSE-ConnectionGUID: vRHABXkCQkOOhqfp5zcGQw==
-X-CSE-MsgGUID: /GrUjF7ET9OktHkBb5jstg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11468"; a="55197742"
-X-IronPort-AV: E=Sophos;i="6.16,248,1744095600"; 
-   d="scan'208";a="55197742"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Jun 2025 01:14:38 -0700
-X-CSE-ConnectionGUID: wS0++O/HRfKzXmL0I2HRjg==
-X-CSE-MsgGUID: 1GwMLCrPRHesJQpM8C7HWg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,248,1744095600"; 
-   d="scan'208";a="156336448"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by orviesa005.jf.intel.com with ESMTP; 19 Jun 2025 01:14:31 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uSAPk-000KYk-1C;
-	Thu, 19 Jun 2025 08:14:28 +0000
-Date: Thu, 19 Jun 2025 16:14:06 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
-	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
-	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, elbadrym@google.com, romlem@google.com,
-	anhphan@google.com, wak@google.com, yuxiaozhang@google.com,
-	BMC-SW@aspeedtech.com
-Subject: Re: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
-Message-ID: <202506191639.jNEto4NW-lkp@intel.com>
-References: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
+	id 1uSIen-0000000Dexp-3Nje;
+	Thu, 19 Jun 2025 17:02:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uSFhS-0000000DE5N-2xYl
+	for linux-phy@lists.infradead.org;
+	Thu, 19 Jun 2025 13:53:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 57F7C113E;
+	Thu, 19 Jun 2025 06:52:45 -0700 (PDT)
+Received: from usa.arm.com (GTV29432L0-2.cambridge.arm.com [10.1.31.86])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 37AB63F66E;
+	Thu, 19 Jun 2025 06:53:03 -0700 (PDT)
+From: Aishwarya <aishwarya.tcv@arm.com>
+To: quic_nitirawa@quicinc.com
+Cc: James.Bottomley@HansenPartnership.com,
+	andersson@kernel.org,
+	bvanassche@acm.org,
+	dmitry.baryshkov@oss.qualcomm.com,
+	kishon@kernel.org,
+	konrad.dybcio@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org,
+	manivannan.sadhasivam@linaro.org,
+	martin.petersen@oracle.com,
+	neil.armstrong@linaro.org,
+	quic_cang@quicinc.com,
+	quic_rdwivedi@quicinc.com,
+	vkoul@kernel.org
+Subject: Re: [PATCH V6 10/10] scsi: ufs: qcom : Refactor phy_power_on/off calls
+Date: Thu, 19 Jun 2025 14:53:02 +0100
+Message-Id: <20250619135302.9192-1-aishwarya.tcv@arm.com>
+X-Mailer: git-send-email 2.39.5 (Apple Git-154)
+In-Reply-To: <20250526153821.7918-11-quic_nitirawa@quicinc.com>
+References: <20250526153821.7918-11-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250619_011438_493637_4E3B1CFE 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20250619_065306_833229_0E27DBD2 
+X-CRM114-Status: UNSURE (   5.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,120 +73,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Jacky,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on pci/next]
-[also build test ERROR on pci/for-linus robh/for-next linusw-pinctrl/devel linusw-pinctrl/for-next linus/master v6.16-rc2 next-20250618]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Jacky-Chou/dt-bindings-phy-Add-document-for-ASPEED-PCIe-PHY/20250613-113331
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git next
-patch link:    https://lore.kernel.org/r/20250613033001.3153637-8-jacky_chou%40aspeedtech.com
-patch subject: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
-config: x86_64-randconfig-007-20250619 (https://download.01.org/0day-ci/archive/20250619/202506191639.jNEto4NW-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250619/202506191639.jNEto4NW-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202506191639.jNEto4NW-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   ld: vmlinux.o: in function `arch_setup_msi_irqs':
->> drivers/pci/msi/legacy.c:31: undefined reference to `msi_domain_first_desc'
->> ld: drivers/pci/msi/legacy.c:31: undefined reference to `msi_next_desc'
-   ld: vmlinux.o: in function `arch_teardown_msi_irqs':
-   drivers/pci/msi/legacy.c:45: undefined reference to `msi_domain_first_desc'
-   ld: drivers/pci/msi/legacy.c:45: undefined reference to `msi_next_desc'
-   ld: vmlinux.o: in function `pci_msi_setup_check_result':
-   drivers/pci/msi/legacy.c:60: undefined reference to `msi_domain_first_desc'
-   ld: drivers/pci/msi/legacy.c:60: undefined reference to `msi_next_desc'
-   ld: vmlinux.o: in function `pci_msi_legacy_setup_msi_irqs':
->> drivers/pci/msi/legacy.c:72: undefined reference to `msi_device_populate_sysfs'
-   ld: vmlinux.o: in function `pci_msi_legacy_teardown_msi_irqs':
->> drivers/pci/msi/legacy.c:78: undefined reference to `msi_device_destroy_sysfs'
-
-
-vim +31 drivers/pci/msi/legacy.c
-
-a01e09ef123789 Thomas Gleixner 2021-12-06  18  
-a01e09ef123789 Thomas Gleixner 2021-12-06  19  int __weak arch_setup_msi_irqs(struct pci_dev *dev, int nvec, int type)
-a01e09ef123789 Thomas Gleixner 2021-12-06  20  {
-a01e09ef123789 Thomas Gleixner 2021-12-06  21  	struct msi_desc *desc;
-a01e09ef123789 Thomas Gleixner 2021-12-06  22  	int ret;
-a01e09ef123789 Thomas Gleixner 2021-12-06  23  
-a01e09ef123789 Thomas Gleixner 2021-12-06  24  	/*
-a01e09ef123789 Thomas Gleixner 2021-12-06  25  	 * If an architecture wants to support multiple MSI, it needs to
-a01e09ef123789 Thomas Gleixner 2021-12-06  26  	 * override arch_setup_msi_irqs()
-a01e09ef123789 Thomas Gleixner 2021-12-06  27  	 */
-a01e09ef123789 Thomas Gleixner 2021-12-06  28  	if (type == PCI_CAP_ID_MSI && nvec > 1)
-a01e09ef123789 Thomas Gleixner 2021-12-06  29  		return 1;
-a01e09ef123789 Thomas Gleixner 2021-12-06  30  
-ae24e28fef1468 Thomas Gleixner 2021-12-06 @31  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_NOTASSOCIATED) {
-a01e09ef123789 Thomas Gleixner 2021-12-06  32  		ret = arch_setup_msi_irq(dev, desc);
-a01e09ef123789 Thomas Gleixner 2021-12-06  33  		if (ret)
-a01e09ef123789 Thomas Gleixner 2021-12-06  34  			return ret < 0 ? ret : -ENOSPC;
-a01e09ef123789 Thomas Gleixner 2021-12-06  35  	}
-a01e09ef123789 Thomas Gleixner 2021-12-06  36  
-a01e09ef123789 Thomas Gleixner 2021-12-06  37  	return 0;
-a01e09ef123789 Thomas Gleixner 2021-12-06  38  }
-a01e09ef123789 Thomas Gleixner 2021-12-06  39  
-a01e09ef123789 Thomas Gleixner 2021-12-06  40  void __weak arch_teardown_msi_irqs(struct pci_dev *dev)
-a01e09ef123789 Thomas Gleixner 2021-12-06  41  {
-a01e09ef123789 Thomas Gleixner 2021-12-06  42  	struct msi_desc *desc;
-a01e09ef123789 Thomas Gleixner 2021-12-06  43  	int i;
-a01e09ef123789 Thomas Gleixner 2021-12-06  44  
-ae24e28fef1468 Thomas Gleixner 2021-12-06  45  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_ASSOCIATED) {
-a01e09ef123789 Thomas Gleixner 2021-12-06  46  		for (i = 0; i < desc->nvec_used; i++)
-a01e09ef123789 Thomas Gleixner 2021-12-06  47  			arch_teardown_msi_irq(desc->irq + i);
-a01e09ef123789 Thomas Gleixner 2021-12-06  48  	}
-a01e09ef123789 Thomas Gleixner 2021-12-06  49  }
-aa423ac4221abd Thomas Gleixner 2021-12-06  50  
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  51  static int pci_msi_setup_check_result(struct pci_dev *dev, int type, int ret)
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  52  {
-ae24e28fef1468 Thomas Gleixner 2021-12-06  53  	struct msi_desc *desc;
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  54  	int avail = 0;
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  55  
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  56  	if (type != PCI_CAP_ID_MSIX || ret >= 0)
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  57  		return ret;
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  58  
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  59  	/* Scan the MSI descriptors for successfully allocated ones. */
-ae24e28fef1468 Thomas Gleixner 2021-12-06  60  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_ASSOCIATED)
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  61  		avail++;
-ae24e28fef1468 Thomas Gleixner 2021-12-06  62  
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  63  	return avail ? avail : ret;
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  64  }
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  65  
-aa423ac4221abd Thomas Gleixner 2021-12-06  66  int pci_msi_legacy_setup_msi_irqs(struct pci_dev *dev, int nvec, int type)
-aa423ac4221abd Thomas Gleixner 2021-12-06  67  {
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  68  	int ret = arch_setup_msi_irqs(dev, nvec, type);
-60bf9b33c82c0e Thomas Gleixner 2021-12-06  69  
-ffd84485e6beb9 Thomas Gleixner 2021-12-10  70  	ret = pci_msi_setup_check_result(dev, type, ret);
-ffd84485e6beb9 Thomas Gleixner 2021-12-10  71  	if (!ret)
-ffd84485e6beb9 Thomas Gleixner 2021-12-10 @72  		ret = msi_device_populate_sysfs(&dev->dev);
-ffd84485e6beb9 Thomas Gleixner 2021-12-10  73  	return ret;
-aa423ac4221abd Thomas Gleixner 2021-12-06  74  }
-aa423ac4221abd Thomas Gleixner 2021-12-06  75  
-aa423ac4221abd Thomas Gleixner 2021-12-06  76  void pci_msi_legacy_teardown_msi_irqs(struct pci_dev *dev)
-aa423ac4221abd Thomas Gleixner 2021-12-06  77  {
-ffd84485e6beb9 Thomas Gleixner 2021-12-10 @78  	msi_device_destroy_sysfs(&dev->dev);
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgTml0aW4sCgpXaGVuIGJvb3RpbmcgdGhlIGtlcm5lbCBmcm9tIG5leHQtMjAyNTA2MTkgb24g
+QXJtNjQgUXVhbGNvbW0gYm9hcmRzCihSQjUgYW5kIERCODQ1QyksIHdlIG9ic2VydmUgdGhhdCB0
+aGUgYmFzZWxpbmUgYm9vdHIgdGVzdCBmYWlscyBkdWUgdG8KZG1lc2cuZW1lcmcgZXJyb3JzIGlu
+IG91ciBDSSBlbnZpcm9ubWVudC4KCkEgZnVsbCBnaXQgYmlzZWN0IChsb2cgaW5jbHVkZWQgYmVs
+b3cpIHBvaW50cyB0byB0aGlzIHBhdGNoIGFzIHRoZQpjdWxwcml0LiBUaGUgaXNzdWUgd2FzIGlu
+dHJvZHVjZWQgc29tZXRpbWUgZnJvbSB0YWcgbmV4dC0yMDI1MDYxNiBpbgpodHRwczovL2dpdC5r
+ZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9uZXh0L2xpbnV4LW5leHQuZ2l0LgoK
+VGhpcyBpc3N1ZSBpcyBub3QgcHJlc2VudCBpbiB2Ni4xNi1yYzIKCkhlcmXigJlzIGEgc2FtcGxl
+IG9mIHRoZSBmYWlsdXJlIG9ic2VydmVkIG9uIHRoZSBSQjUgYm9hcmQ6CmxlcnQgOiAgIElTViA9
+IDAsIElTUyA9IDB4MDAwMDAwMDQsIElTUzIgPSAweDAwMDAwMDAwCmtlcm4gIDphbGVydCA6ICAg
+Q00gPSAwLCBXblIgPSAwLCBUbkQgPSAwLCBUYWdBY2Nlc3MgPSAwCmtlcm4gIDphbGVydCA6ICAg
+R0NTID0gMCwgT3ZlcmxheSA9IDAsIERpcnR5Qml0ID0gMCwgWHMgPSAwCmtlcm4gIDphbGVydCA6
+IHVzZXIgcGd0YWJsZTogNGsgcGFnZXMsIDQ4LWJpdCBWQXMsIHBnZHA9MDAwMDAwMDEwMmM0YzAw
+MAprZXJuICA6YWxlcnQgOiBbMDAwMDAwMDAwMDAwMDAwMF0gcGdkPTAwMDAwMDAwMDAwMDAwMDAK
+a2VybiAgOmVtZXJnIDogSW50ZXJuYWwgZXJyb3I6IE9vcHM6IDAwMDAwMDAwOTYwMDAwMDQgWyMx
+XSAgU01QCmtlcm4gIDplbWVyZyA6IENvZGU6IGE5MDE1N2YzIGFhMDAwM2YzIGY5MDAxM2Y2IGY5
+NDA1YzE1IChmOTQwMDJiNikgCjw4PlsgICAzMC45MzMyODldIDxMQVZBX1NJR05BTF9URVNUQ0FT
+RSBURVNUX0NBU0VfSUQ9ZW1lcmcgUkVTVUxUPWZhaWwgVU5JVFM9bGluZXMgTUVBU1VSRU1FTlQ9
+Mj4KKyA8OD5bICAgMzAuOTQzNzk4XSA8TEFWQV9TSUdOQUxfRU5EUlVOIDBfZG1lc2cgMTAwMDMy
+NV8yLjQuNC4xPgpzZXQgK3gKCkdpdCBiaXNlY3Rpb24gbG9nOgpnaXQgYmlzZWN0IHN0YXJ0CiMg
+c3RhdHVzOiB3YWl0aW5nIGZvciBib3RoIGdvb2QgYW5kIGJhZCBjb21taXRzCiMgZ29vZDogWzlh
+ZmU2NTI5NThjM2VlODhmMjRkZjFlNGE5N2YyOThhZmNlODk0MDddIE1lcmdlIHRhZyAneDg2X3Vy
+Z2VudF9mb3JfNi4xNi1yYzMnIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgv
+a2VybmVsL2dpdC90aXAvdGlwCmdpdCBiaXNlY3QgZ29vZCA5YWZlNjUyOTU4YzNlZTg4ZjI0ZGYx
+ZTRhOTdmMjk4YWZjZTg5NDA3CiMgc3RhdHVzOiB3YWl0aW5nIGZvciBiYWQgY29tbWl0LCAxIGdv
+b2QgY29tbWl0IGtub3duCiMgYmFkOiBbNDMyNTc0M2M3ZTIwOWFlNzg0NTI5MzY3OWE0ZGU5NGI5
+NjlmMmJlZl0gQWRkIGxpbnV4LW5leHQgc3BlY2lmaWMgZmlsZXMgZm9yIDIwMjUwNjE3CmdpdCBi
+aXNlY3QgYmFkIDQzMjU3NDNjN2UyMDlhZTc4NDUyOTM2NzlhNGRlOTRiOTY5ZjJiZWYKIyBnb29k
+OiBbNDM2YzhjYmJjYjE4ZGViOTYxMDBjZDlmMzNmMWVmZWRkZGMzMWQ5Y10gTWVyZ2UgYnJhbmNo
+ICdtYXN0ZXInIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
+dC9ibHVldG9vdGgvYmx1ZXRvb3RoLW5leHQuZ2l0CmdpdCBiaXNlY3QgZ29vZCA0MzZjOGNiYmNi
+MThkZWI5NjEwMGNkOWYzM2YxZWZlZGRkYzMxZDljCiMgZ29vZDogWzE4M2QyMjQwODM3NzNjYTRh
+ODRhNDU4ZmI2MDhlZmVjZmYxOWUxOWVdIE1lcmdlIGJyYW5jaCAnZm9yLW5leHQnIG9mIGdpdDov
+L2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9icm9vbmllL3JlZ21hcC5n
+aXQKZ2l0IGJpc2VjdCBnb29kIDE4M2QyMjQwODM3NzNjYTRhODRhNDU4ZmI2MDhlZmVjZmYxOWUx
+OWUKIyBnb29kOiBbMTM0N2ZmMGMwZTUxMGYxYTZhZGI3ODI1OWEyYTBkZGZhYzQxZDI1OF0gTWVy
+Z2UgYnJhbmNoICdmb3ItbmV4dCcgb2YgZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51
+eC9rZXJuZWwvZ2l0L3RqL3dxLmdpdApnaXQgYmlzZWN0IGdvb2QgMTM0N2ZmMGMwZTUxMGYxYTZh
+ZGI3ODI1OWEyYTBkZGZhYzQxZDI1OAojIGJhZDogW2IwOWJkMDRlYWJiMTk5NDI1N2Y0YzExZDBl
+ZDI1ZmYwMzUxN2QzZWNdIE1lcmdlIGJyYW5jaCAnZ3Bpby9mb3ItbmV4dCcgb2YgZ2l0Oi8vZ2l0
+Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2JyZ2wvbGludXguZ2l0CmdpdCBi
+aXNlY3QgYmFkIGIwOWJkMDRlYWJiMTk5NDI1N2Y0YzExZDBlZDI1ZmYwMzUxN2QzZWMKIyBnb29k
+OiBbNzBiYzllMTg2NTNjMjBmYmNiNDcxODRkOTQ5OGFkN2JkN2I3ZDZiZV0gTWVyZ2UgYnJhbmNo
+ICd0b2dyZWcnIG9mIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dp
+dC9qaWMyMy9paW8uZ2l0CmdpdCBiaXNlY3QgZ29vZCA3MGJjOWUxODY1M2MyMGZiY2I0NzE4NGQ5
+NDk4YWQ3YmQ3YjdkNmJlCiMgYmFkOiBbM2E4NDdmYjg1YzlkNDdlNjFhZDVkOWQ1NGI3NjJhM2U5
+OWEwODA4NF0gTWVyZ2UgYnJhbmNoICduZXh0JyBvZiBnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIv
+c2NtL2xpbnV4L2tlcm5lbC9naXQvcGh5L2xpbnV4LXBoeS5naXQKZ2l0IGJpc2VjdCBiYWQgM2E4
+NDdmYjg1YzlkNDdlNjFhZDVkOWQ1NGI3NjJhM2U5OWEwODA4NAojIHNraXA6IFs1MDM1NWFjNzBk
+NGYxMDRlMmY4MmJmYmQwNjU4YzEyOTAyN2ViYjM3XSBkdC1iaW5kaW5nczogcGh5OiBDb252ZXJ0
+IG1hcnZlbGwsY29tcGh5LWNwMTEwIHRvIERUIHNjaGVtYQpnaXQgYmlzZWN0IHNraXAgNTAzNTVh
+YzcwZDRmMTA0ZTJmODJiZmJkMDY1OGMxMjkwMjdlYmIzNwojIGdvb2Q6IFthY2M2YjBkNzNkOTAy
+ZDMyOTZkOGM3Nzg3OGE5YjUwOGMyYzZhNWJmXSBwaHk6IHFjb20tcW1wLXVmczogUmVuYW1lIHFt
+cF91ZnNfcG93ZXJfb2ZmCmdpdCBiaXNlY3QgZ29vZCBhY2M2YjBkNzNkOTAyZDMyOTZkOGM3Nzg3
+OGE5YjUwOGMyYzZhNWJmCiMgYmFkOiBbMzViNjI5YjI4YWZkNzJhMTRlZDU3M2YxYjE4MGRjNGFi
+MWJmN2UxOV0gZHQtYmluZGluZ3M6IHBoeTogQ29udmVydCB0aSxkbTgxNngtdXNiLXBoeSB0byBE
+VCBzY2hlbWEKZ2l0IGJpc2VjdCBiYWQgMzViNjI5YjI4YWZkNzJhMTRlZDU3M2YxYjE4MGRjNGFi
+MWJmN2UxOQojIGJhZDogWzY2YWNhZjhmNmIwYmNjMjczZjgzNTZiMmE3N2JhYTkwYjE3NzAxNGNd
+IGR0LWJpbmRpbmdzOiBwaHk6IENvbnZlcnQgaW1nLHBpc3RhY2hpby11c2ItcGh5IHRvIERUIHNj
+aGVtYQpnaXQgYmlzZWN0IGJhZCA2NmFjYWY4ZjZiMGJjYzI3M2Y4MzU2YjJhNzdiYWE5MGIxNzcw
+MTRjCiMgYmFkOiBbZjE1MWYzYTZlYmUxODRiNWY4YzlhYmU1OGZlMmQ2M2Y5OTUwMTM5Yl0gZHQt
+YmluZGluZ3M6IHBoeTogQ29udmVydCBicmNtLG5zMi1kcmQtcGh5IHRvIERUIHNjaGVtYQpnaXQg
+YmlzZWN0IGJhZCBmMTUxZjNhNmViZTE4NGI1ZjhjOWFiZTU4ZmUyZDYzZjk5NTAxMzliCiMgYmFk
+OiBbNzdkMmZhNTRhOTQ1NzRmNzY3ZDVmYjI5NmI2YjhlMDExZWJhMGM4ZV0gc2NzaTogdWZzOiBx
+Y29tIDogUmVmYWN0b3IgcGh5X3Bvd2VyX29uL29mZiBjYWxscwpnaXQgYmlzZWN0IGJhZCA3N2Qy
+ZmE1NGE5NDU3NGY3NjdkNWZiMjk2YjZiOGUwMTFlYmEwYzhlCiMgZ29vZDogWzdmNjAwZjBlMTkz
+YTY2MzgxMzUwMjZjMzcxOGFjMjk2ZWQzZjUwNDRdIHBoeTogcWNvbS1xbXAtdWZzOiBSZW1vdmUg
+cW1wX3Vmc19leGl0KCkgYW5kIElubGluZSBxbXBfdWZzX2NvbV9leGl0KCkKZ2l0IGJpc2VjdCBn
+b29kIDdmNjAwZjBlMTkzYTY2MzgxMzUwMjZjMzcxOGFjMjk2ZWQzZjUwNDQKIyBnb29kOiBbYTA3
+OWIyZDcxNTM0MDQ4MmU0MjVmZjEzNmI1NTgxMGFiODI3OTgwMF0gcGh5OiBxY29tLXFtcC11ZnM6
+IHJlZmFjdG9yIHFtcF91ZnNfcG93ZXJfb2ZmCmdpdCBiaXNlY3QgZ29vZCBhMDc5YjJkNzE1MzQw
+NDgyZTQyNWZmMTM2YjU1ODEwYWI4Mjc5ODAwCiMgZmlyc3QgYmFkIGNvbW1pdDogWzc3ZDJmYTU0
+YTk0NTc0Zjc2N2Q1ZmIyOTZiNmI4ZTAxMWViYTBjOGVdIHNjc2k6IHVmczogcWNvbSA6IFJlZmFj
+dG9yIHBoeV9wb3dlcl9vbi9vZmYgY2FsbHMKClRoYW5rcywKQWlzaHdhcnlhCgotLSAKbGludXgt
+cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
