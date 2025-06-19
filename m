@@ -4,89 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C495CC77B73
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Jun 2025 13:26:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 774FFC7115B
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Jun 2025 08:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TeruBzr8hhFQdJa3AAX3wpewAJ6GcIF1dV0HD8qDSAI=; b=zpmjoQ9W/kw2eJ
-	cVbE//Ee2pzvSd5qJgGR/0N8jC+n5w7xE5TY/Ij49SV6O3R7o0ltOtlIMiSZEIqY0pGJne4y3wyFH
-	HuAr6Um3VekvOXbAgJIzC9CCW9Ejn4On4AefC/qVb6iaiNaOq27Mm7WsyVREhdATL4S1TKrAzYNAQ
-	CYHgBIOACJ3Uyl1CJeL2cjMNRFBGJAlwA6FUayd9zbAqFh+Szdha4JTfF+5jsWTgp+KA5VaxYsJoi
-	UGSHtSv5eh78u8a1jTDActh683nHOEVhUuETPGTYgY/D4cwTYDdUTVxHo/3zfL8MBIy1/tZsUdY6U
-	KfDJ+tA/BFBmaUdwCAJQ==;
+	List-Owner; bh=Jhgh/klvKgYRuEq5MZwrq1Oiscg567qhj3ltOCfa6ns=; b=4Qb0U+Tn2p7HBY
+	ZHqfX4QySKKFTd51wu43BYZHN0AhGr3Hkau/jSzDDTbfzBrXLWoy54rQD2m3vJ9sU0RXriDlfxwDx
+	Ci15I3Dhsb6VMvvgkwyzJ7/z7b57lGbL2yTGiathCCMU+0D0FHTeTcf0mW6Yr+ecpq4v6eZ2AcQb/
+	cTjqgii08EbLizlQts0jPQz3AAXkmTSDDuyICGABMguS8irvKQKgG0y86HHZruvLBR9GGl550NE6w
+	QI1n5RaPLs4WMrfsodHxDAYtVYOEwycq2gsjtJkKXyzXLQADTMb2EQyRtKNAno3t0MeVZF+YeA45p
+	FJjAi0oCIMExKPZfBlHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRsoQ-0000000AHea-23cu;
-	Wed, 18 Jun 2025 13:26:46 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1uSAsK-0000000CTCj-0i6m;
+	Thu, 19 Jun 2025 08:44:00 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRrhY-0000000A5QK-2TRh
-	for linux-phy@lists.infradead.org;
-	Wed, 18 Jun 2025 12:15:38 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-553b5165cf5so5795693e87.0
-        for <linux-phy@lists.infradead.org>; Wed, 18 Jun 2025 05:15:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750248935; x=1750853735; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=p7jZQ+YS+lWYeVwEC8VFaNnmqDYcJYXkLsLKJpyV1y0=;
-        b=DOadpy4PZ0urT3TeE29lqxwaeNeI03JCFIXHNA4e82BYXjHwFKYNREKlBd9eKlVnwF
-         zveAh4EQrd9jWHMEntobQg8SHV63FloutVG3Zp2uHOg0eUrrArV59yCQQo9TCFRf47px
-         60Bj2n2fcb2OC0hFTHa/5SbBJQWrqnC3IBnB35vWNmobfUtreqPwPp7eWKXSWCloT2P6
-         h/nat+SMJMbEYh0oGJTtydmwVVddOLqiYsjOBDBYau7KBIlRAM/LHazn0Xm17BB+rOxl
-         Uj1dTUy1Y/nUvaLoJgpwtEJ7pmqGPIsqnmlL/zOJC2+f5WcnkD+BJaL/F1hPPglLjXX1
-         NLig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750248935; x=1750853735;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=p7jZQ+YS+lWYeVwEC8VFaNnmqDYcJYXkLsLKJpyV1y0=;
-        b=LGJkrUTEyawR3DrH93rSqzQKaDqQz4VCLNbbxou4bHIL9r+YFfSB7LQgDrxHHiTMLK
-         c2kGIM/GMgl/JY6W6IJ6hV7bLA99nF2pzw8Riudoc/elLBCAE9LWFmR1JWOt5VRQg6ab
-         35iUWGBjL+Ta9asG15MZ17ceGn0JAtnC/ZrO9vXKBGf3VvtIbjLhTTbye1ZYOeeMEjOZ
-         hnjA9AKOvxILfrdNFpwY43ajtAbI2LkDk0qm/Tt1HVfhsg35lYJ1vJDgrTSyDDuKqvAy
-         xBeZlY4pCsmg5ILl0G4oS7WnLKxJglDhv+aEmeLb53tV1zINAFjuQAEWRXF7oRevx6ss
-         8g3g==
-X-Forwarded-Encrypted: i=1; AJvYcCVmY2RRFGlqVGhNWhIiCUO56/Pe2wh/ewzSyS/DO8Wr7F5r4S4t97aG0RcaHG2h7n8j4VBBl5CWo+A=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz0pTOzlWe7k5lQGO8CHOct3ApHuJ8bovyBqLD8EqIsrXnb0PPK
-	r6phhPEyZ6XMKbGA703IKaGQktniue9uL7cBUfdgx62Tk1XXFKhgW9u4JcaBfOZxL5yUgHxMdAZ
-	NhibHEspR79GrLDRNuZRZTXkktK6lATNSHq2/2bNcVQ==
-X-Gm-Gg: ASbGncvTgmArETtNciH8Y6lFQA068ZuHgYeWecEWn6MUA0+7RsY4bAZbt7u4b3Co2nO
-	eDd1YUEdcBTGK9Mb+rTyIqIzunwVzte/PaDUO3/n1pFP/obKnIDO30/8TeCwL3BD9GPDNYizo1m
-	EsVm48nCP9un0tWmzMhWfl+ZbhcAfubNmr88irUgJoNEg=
-X-Google-Smtp-Source: AGHT+IGBMbnQS8CZK59QUADw6V+D/mLT8w6YMYDnxWivA5Amu6Cgv0XDSbL6jWX7zdVZfzp8QG5Ih8L/ToZVwFJNik0=
-X-Received: by 2002:a05:6512:1285:b0:545:6fa:bf5f with SMTP id
- 2adb3069b0e04-553b6e732b1mr4223465e87.2.1750248934811; Wed, 18 Jun 2025
- 05:15:34 -0700 (PDT)
-MIME-Version: 1.0
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com> <20250613033001.3153637-7-jacky_chou@aspeedtech.com>
-In-Reply-To: <20250613033001.3153637-7-jacky_chou@aspeedtech.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 18 Jun 2025 14:15:23 +0200
-X-Gm-Features: AX0GCFscY4ky5ebft20JokFvuO1y3hVcQ04FGalsWAeschf7cTa_SUmnKoC4ETU
-Message-ID: <CACRpkdaX24z5YsfcrB2oqbZpdexZJNREGkWiYgq1ar0c8O0QBA@mail.gmail.com>
-Subject: Re: [PATCH 6/7] pinctrl: aspeed-g6: Add PCIe RC PERST pin group
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org, 
-	mani@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org, 
-	kishon@kernel.org, p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org, 
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org, 
-	linux-gpio@vger.kernel.org, elbadrym@google.com, romlem@google.com, 
-	anhphan@google.com, wak@google.com, yuxiaozhang@google.com, 
+	id 1uSAPu-0000000CPAP-1qig;
+	Thu, 19 Jun 2025 08:14:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1750320878; x=1781856878;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=4HJuJePFef9p2ELqf3SzVRO850tg1GWyQ2TzfThmE6U=;
+  b=KMJWau6skBih7I2Fv0ijisDwcL6KeCs0M3aWBij9D7kik4HmqQmU/2WB
+   XJa8DCiJCRpAGTRYABQX/emyMeCZjEwVe9EnQv6bW0Og60UfDnyJWQGcI
+   zlfnnqN1R7g3mNhmsXcbnzqqjODoNmJAQRLEQ5BSfvlyMjm5RnaXj010n
+   0INdx1JCO9tfpiFD69jzDAMid67ILVkAn9oRCfmz7BDUPpb9vcfxruVm3
+   5oWToMSoMV3dcFBhpTg17GNSpe8G4N5TxkZy6v7PplvLj3cc8KT95slOz
+   GFumOfB5lcezc7zOKr/qKbuUFWd/JW2ftki23SYiEFvsCu9XwkV6r4/aa
+   g==;
+X-CSE-ConnectionGUID: vRHABXkCQkOOhqfp5zcGQw==
+X-CSE-MsgGUID: /GrUjF7ET9OktHkBb5jstg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11468"; a="55197742"
+X-IronPort-AV: E=Sophos;i="6.16,248,1744095600"; 
+   d="scan'208";a="55197742"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Jun 2025 01:14:38 -0700
+X-CSE-ConnectionGUID: wS0++O/HRfKzXmL0I2HRjg==
+X-CSE-MsgGUID: 1GwMLCrPRHesJQpM8C7HWg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,248,1744095600"; 
+   d="scan'208";a="156336448"
+Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
+  by orviesa005.jf.intel.com with ESMTP; 19 Jun 2025 01:14:31 -0700
+Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uSAPk-000KYk-1C;
+	Thu, 19 Jun 2025 08:14:28 +0000
+Date: Thu, 19 Jun 2025 16:14:06 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jacky Chou <jacky_chou@aspeedtech.com>, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
+	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
+	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, elbadrym@google.com, romlem@google.com,
+	anhphan@google.com, wak@google.com, yuxiaozhang@google.com,
 	BMC-SW@aspeedtech.com
+Subject: Re: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
+Message-ID: <202506191639.jNEto4NW-lkp@intel.com>
+References: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250613033001.3153637-8-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_051536_639951_11D3E288 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250619_011438_493637_4E3B1CFE 
+X-CRM114-Status: GOOD (  13.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,17 +91,120 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBKdW4gMTMsIDIwMjUgYXQgNTozMOKAr0FNIEphY2t5IENob3UgPGphY2t5X2Nob3VA
-YXNwZWVkdGVjaC5jb20+IHdyb3RlOgoKPiBUaGUgUENJZSBSQyBQRVJTVCB1c2VzIFNTUFJTVCMg
-YXMgUEVSU1QjICBhbmQgZW5hYmxlIHRoaXMgcGluCj4gdG8gb3V0cHV0Lgo+Cj4gU2lnbmVkLW9m
-Zi1ieTogSmFja3kgQ2hvdSA8amFja3lfY2hvdUBhc3BlZWR0ZWNoLmNvbT4KCkFja2VkLWJ5OiBM
-aW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+CgpDYW4gSSBqdXN0IGFwcGx5
-IHRoaXMgcGF0Y2ggNi83IGluIGlzb2xhdGlvbiBmcm9tIHRoZSBvdGhlcnMsIHRvCnRoZSBwaW4g
-Y29udHJvbCB0cmVlPwoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCi0tIApsaW51eC1waHkgbWFpbGlu
-ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Jacky,
+
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on pci/next]
+[also build test ERROR on pci/for-linus robh/for-next linusw-pinctrl/devel linusw-pinctrl/for-next linus/master v6.16-rc2 next-20250618]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Jacky-Chou/dt-bindings-phy-Add-document-for-ASPEED-PCIe-PHY/20250613-113331
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git next
+patch link:    https://lore.kernel.org/r/20250613033001.3153637-8-jacky_chou%40aspeedtech.com
+patch subject: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
+config: x86_64-randconfig-007-20250619 (https://download.01.org/0day-ci/archive/20250619/202506191639.jNEto4NW-lkp@intel.com/config)
+compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250619/202506191639.jNEto4NW-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202506191639.jNEto4NW-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   ld: vmlinux.o: in function `arch_setup_msi_irqs':
+>> drivers/pci/msi/legacy.c:31: undefined reference to `msi_domain_first_desc'
+>> ld: drivers/pci/msi/legacy.c:31: undefined reference to `msi_next_desc'
+   ld: vmlinux.o: in function `arch_teardown_msi_irqs':
+   drivers/pci/msi/legacy.c:45: undefined reference to `msi_domain_first_desc'
+   ld: drivers/pci/msi/legacy.c:45: undefined reference to `msi_next_desc'
+   ld: vmlinux.o: in function `pci_msi_setup_check_result':
+   drivers/pci/msi/legacy.c:60: undefined reference to `msi_domain_first_desc'
+   ld: drivers/pci/msi/legacy.c:60: undefined reference to `msi_next_desc'
+   ld: vmlinux.o: in function `pci_msi_legacy_setup_msi_irqs':
+>> drivers/pci/msi/legacy.c:72: undefined reference to `msi_device_populate_sysfs'
+   ld: vmlinux.o: in function `pci_msi_legacy_teardown_msi_irqs':
+>> drivers/pci/msi/legacy.c:78: undefined reference to `msi_device_destroy_sysfs'
+
+
+vim +31 drivers/pci/msi/legacy.c
+
+a01e09ef123789 Thomas Gleixner 2021-12-06  18  
+a01e09ef123789 Thomas Gleixner 2021-12-06  19  int __weak arch_setup_msi_irqs(struct pci_dev *dev, int nvec, int type)
+a01e09ef123789 Thomas Gleixner 2021-12-06  20  {
+a01e09ef123789 Thomas Gleixner 2021-12-06  21  	struct msi_desc *desc;
+a01e09ef123789 Thomas Gleixner 2021-12-06  22  	int ret;
+a01e09ef123789 Thomas Gleixner 2021-12-06  23  
+a01e09ef123789 Thomas Gleixner 2021-12-06  24  	/*
+a01e09ef123789 Thomas Gleixner 2021-12-06  25  	 * If an architecture wants to support multiple MSI, it needs to
+a01e09ef123789 Thomas Gleixner 2021-12-06  26  	 * override arch_setup_msi_irqs()
+a01e09ef123789 Thomas Gleixner 2021-12-06  27  	 */
+a01e09ef123789 Thomas Gleixner 2021-12-06  28  	if (type == PCI_CAP_ID_MSI && nvec > 1)
+a01e09ef123789 Thomas Gleixner 2021-12-06  29  		return 1;
+a01e09ef123789 Thomas Gleixner 2021-12-06  30  
+ae24e28fef1468 Thomas Gleixner 2021-12-06 @31  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_NOTASSOCIATED) {
+a01e09ef123789 Thomas Gleixner 2021-12-06  32  		ret = arch_setup_msi_irq(dev, desc);
+a01e09ef123789 Thomas Gleixner 2021-12-06  33  		if (ret)
+a01e09ef123789 Thomas Gleixner 2021-12-06  34  			return ret < 0 ? ret : -ENOSPC;
+a01e09ef123789 Thomas Gleixner 2021-12-06  35  	}
+a01e09ef123789 Thomas Gleixner 2021-12-06  36  
+a01e09ef123789 Thomas Gleixner 2021-12-06  37  	return 0;
+a01e09ef123789 Thomas Gleixner 2021-12-06  38  }
+a01e09ef123789 Thomas Gleixner 2021-12-06  39  
+a01e09ef123789 Thomas Gleixner 2021-12-06  40  void __weak arch_teardown_msi_irqs(struct pci_dev *dev)
+a01e09ef123789 Thomas Gleixner 2021-12-06  41  {
+a01e09ef123789 Thomas Gleixner 2021-12-06  42  	struct msi_desc *desc;
+a01e09ef123789 Thomas Gleixner 2021-12-06  43  	int i;
+a01e09ef123789 Thomas Gleixner 2021-12-06  44  
+ae24e28fef1468 Thomas Gleixner 2021-12-06  45  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_ASSOCIATED) {
+a01e09ef123789 Thomas Gleixner 2021-12-06  46  		for (i = 0; i < desc->nvec_used; i++)
+a01e09ef123789 Thomas Gleixner 2021-12-06  47  			arch_teardown_msi_irq(desc->irq + i);
+a01e09ef123789 Thomas Gleixner 2021-12-06  48  	}
+a01e09ef123789 Thomas Gleixner 2021-12-06  49  }
+aa423ac4221abd Thomas Gleixner 2021-12-06  50  
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  51  static int pci_msi_setup_check_result(struct pci_dev *dev, int type, int ret)
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  52  {
+ae24e28fef1468 Thomas Gleixner 2021-12-06  53  	struct msi_desc *desc;
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  54  	int avail = 0;
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  55  
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  56  	if (type != PCI_CAP_ID_MSIX || ret >= 0)
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  57  		return ret;
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  58  
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  59  	/* Scan the MSI descriptors for successfully allocated ones. */
+ae24e28fef1468 Thomas Gleixner 2021-12-06  60  	msi_for_each_desc(desc, &dev->dev, MSI_DESC_ASSOCIATED)
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  61  		avail++;
+ae24e28fef1468 Thomas Gleixner 2021-12-06  62  
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  63  	return avail ? avail : ret;
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  64  }
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  65  
+aa423ac4221abd Thomas Gleixner 2021-12-06  66  int pci_msi_legacy_setup_msi_irqs(struct pci_dev *dev, int nvec, int type)
+aa423ac4221abd Thomas Gleixner 2021-12-06  67  {
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  68  	int ret = arch_setup_msi_irqs(dev, nvec, type);
+60bf9b33c82c0e Thomas Gleixner 2021-12-06  69  
+ffd84485e6beb9 Thomas Gleixner 2021-12-10  70  	ret = pci_msi_setup_check_result(dev, type, ret);
+ffd84485e6beb9 Thomas Gleixner 2021-12-10  71  	if (!ret)
+ffd84485e6beb9 Thomas Gleixner 2021-12-10 @72  		ret = msi_device_populate_sysfs(&dev->dev);
+ffd84485e6beb9 Thomas Gleixner 2021-12-10  73  	return ret;
+aa423ac4221abd Thomas Gleixner 2021-12-06  74  }
+aa423ac4221abd Thomas Gleixner 2021-12-06  75  
+aa423ac4221abd Thomas Gleixner 2021-12-06  76  void pci_msi_legacy_teardown_msi_irqs(struct pci_dev *dev)
+aa423ac4221abd Thomas Gleixner 2021-12-06  77  {
+ffd84485e6beb9 Thomas Gleixner 2021-12-10 @78  	msi_device_destroy_sysfs(&dev->dev);
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
