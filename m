@@ -4,185 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F7BCC7115D
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 09:53:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8996AC7115D
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 12:57:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PBXahhrwykpLH2lLHU4F1AjTuiQkctWybIxXv0j8PdE=; b=2CJUJ/jG2kQtxI
-	0Ua0VS1lyL6gIUREdzReaM2+4Aratzu4M6IJdL12MCNvVHBZx2QmHGFVWDytKuEBUdXvBfWoudafr
-	ftNf+FSBv98tT9X3ctYzd/DxjczRz1WWDW6egGtROeBjwSL6v2kcY2zl3H8L4xyzFxDAvY/60CZ+d
-	B70NRcS4jbhphLTX0NjCZ9we1ADohd0XliEd9yIjoqQYYi22okwcv01Emb15ploqEPQTc5O8YTS3s
-	xvAkOremE8B+bE700Ubd71OCbWLUG4B8biTEwdpwb+2SxcfmBmYYgMggFbIWKp5ESnfovWFzMsy0j
-	7OfN2p2HT5w4+61KqjMw==;
+	List-Owner; bh=Yl2QGpp9R09HVGGMj0+3ZrKjnFRWtK7eT9OVgpYL8pI=; b=qp2SyqXkmmC07J
+	BvL9OvlY0UF01Z2FV8Z1r96Oqc0XUHnP3MYocBU/VHLJFDbZrpWtHS1vkkVR9cGg9l68lDTLgeEZ1
+	yQ/DwL59YTR9xVR4YdrhFT+1K7G7lvzu69hqj7bdBMNVermBRXbhwtZvJ10VW3pUD1Se4ATYVlhc0
+	eT5NjU6bhFwOl7AwwPLB2O9Y0RT2QxdSO6QU1vzIYhv5+puD05SeBF66Hqw0Ogo5P38r+voCSqXtt
+	o7nodEXCtubv3rcs7lfhNiOQDG+uzuh1HhZ064cs/M6L6LTCpNmL2+a1ZPYELNDVpU5QY5Xir0npM
+	QvVuBWK0KiPS75i/XQTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSYQe-0000000FGpa-01FK;
-	Fri, 20 Jun 2025 09:53:00 +0000
-Received: from mail-japaneastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c405::7] helo=TYDPR03CU002.outbound.protection.outlook.com)
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSXEk-0000000F57G-2qAc;
-	Fri, 20 Jun 2025 08:36:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=iK8xCgbIq0H+VsYLPJbVWAIzHjan8MSGBHfKUFykrCuAZansTXvRICq3nNuoXanGSDQjqAVozafYv+FIYhRnGN8lnEqcnalMcnUuIKKBfV5xDCKhX6GIBzmT6UW69eAD0IrSK2U5ZB4hjg5pVSGCnnCqGSZ1AKKa1Wxp1qN0D9gO4zEMQWeAE+XIQCVHRpchvMpyBeAFT8MZOxOkN2uCoEI1rGa28ABjgLIoLygC8+BPUG0mCuBTwFCAlKZho4m9hi7yd2MsRlXL0Z6kUREXHkcWNz9rOV5vlfpiwY1ZR1NJlxxaeAm202VmMsXayywvFXjzqvL+Z3B6xm/vTpd8WA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=mP0HaM+lg3cCGfSvgLntK8LUXVPfamZ3M529eVwqKlk=;
- b=ovE3D2dYdj5tFhOpid62ZmpocdjHiueroLMJTTzLQjLYwp5U2q8ZhdftFn/BxUS8ARV5c8qFIFrW1Flq+NlS03WTmC3qynIAt2XY7iia1auD+qjmK7UXvAoPbR50v/kJLrFISLRQDn9dLe73URRmYbPKj+taHXMTxHiE8zpDPCC2q4OT9PEMEtj+jDaYw83NiBDAD9PkiGRojnfdYG5u3BJYd6/VdZIOhUqpAuEqukksp5EVYgZ36w9Jc2lAmEhaFQFEBw0SF6HQnhcIS0dFq9uk3mZfSbHOINwSlph9A+fXl+RGwqA/0PTNqDkXdQoKW9KMy3uLWal2xWXA5vHHaA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mP0HaM+lg3cCGfSvgLntK8LUXVPfamZ3M529eVwqKlk=;
- b=FtnlciiChgx/f36scg/EDO7lzyYst1ZQhiDYPiWGUuUEnMGkMfPrWUuXKKQLszRfPxVZnZivYmZGHxDHZzEgfxPX1TW8iGFyrzshf2WTfCUAExYryxs+bDHr8qrb2pwvMGIqz4lt70qnAwXp2vHO0evyzad2CS3FUMU6ws9vt0RklebNmhJSWZM0WOR8wPaEy4zZQvEAykTD+8lLuvuzp85sFCeQFlYeWOnNLhZ00OlSU6/Icfli5tq7JrW7PZcqXz5kyPowvI+utWbX60cKr03TfNwzWes6nDgcJ+ZI5WO5pJYpeinhSBkTbjI4V7SJfaz9fG15dkpEzBL2/MDHKw==
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
- by JH0PR06MB7083.apcprd06.prod.outlook.com (2603:1096:990:6e::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.25; Fri, 20 Jun
- 2025 08:36:32 +0000
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::6b58:6014:be6e:2f28%5]) with mapi id 15.20.8835.027; Fri, 20 Jun 2025
- 08:36:32 +0000
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>, "bhelgaas@google.com"
-	<bhelgaas@google.com>, "lpieralisi@kernel.org" <lpieralisi@kernel.org>,
-	"kwilczynski@kernel.org" <kwilczynski@kernel.org>, "mani@kernel.org"
-	<mani@kernel.org>, "robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"joel@jms.id.au" <joel@jms.id.au>, "andrew@codeconstruct.com.au"
-	<andrew@codeconstruct.com.au>, "vkoul@kernel.org" <vkoul@kernel.org>,
-	"kishon@kernel.org" <kishon@kernel.org>, "linus.walleij@linaro.org"
-	<linus.walleij@linaro.org>, "p.zabel@pengutronix.de"
-	<p.zabel@pengutronix.de>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-pci@vger.kernel.org"
-	<linux-pci@vger.kernel.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "openbmc@lists.ozlabs.org"
-	<openbmc@lists.ozlabs.org>, "linux-gpio@vger.kernel.org"
-	<linux-gpio@vger.kernel.org>
-CC: "elbadrym@google.com" <elbadrym@google.com>, "romlem@google.com"
-	<romlem@google.com>, "anhphan@google.com" <anhphan@google.com>,
-	"wak@google.com" <wak@google.com>, "yuxiaozhang@google.com"
-	<yuxiaozhang@google.com>, BMC-SW <BMC-SW@aspeedtech.com>
-Subject: [PATCH 4/7] ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST ctrl pin
-Thread-Topic: [PATCH 4/7] ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST ctrl
- pin
-Thread-Index: AQHb3BN4PATbP2tR2USdEpp9iFmCKrQA2TSAgArrYvA=
-Date: Fri, 20 Jun 2025 08:36:32 +0000
-Message-ID: <SEYPR06MB5134ACA6FB6BE2C0B3D9A4B89D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
- <20250613033001.3153637-5-jacky_chou@aspeedtech.com>
- <9be50674-357d-45d8-9117-b66922b46d25@kernel.org>
-In-Reply-To: <9be50674-357d-45d8-9117-b66922b46d25@kernel.org>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|JH0PR06MB7083:EE_
-x-ms-office365-filtering-correlation-id: 47f0c46e-fad3-4a22-b682-08ddafd58f62
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|7416014|366016|921020|38070700018;
-x-microsoft-antispam-message-info: =?utf-8?B?N294a3lJelZabW9wVnkrdjduVmx5RDFsQUhqeWJGNTRMek92VWhvL1lZNWNm?=
- =?utf-8?B?NXl4Vis4Z2VJeUQ0d2VSOHVZOWlWOE9xWE9RK1doc3kyWDBMR3FxMnhjU3F3?=
- =?utf-8?B?Z2tpM1ptMGFyVW1ZSmFBTGpGTXkwM0llcTVXSjBZbTc5OG5EOEphM2FVV0M3?=
- =?utf-8?B?ZnBYUUxmQUFCdVFUc0x4cUZ3V1FENEZiMDdoRWs0VGdrby83Wld0Z3VSSG5R?=
- =?utf-8?B?cmlBKzVTN3hqcElGbWRNSkhYZ1ZLVEo3cTVicTg4L0NFeUZaUEV2T1dFczk1?=
- =?utf-8?B?REJRZERwbHpQV2JZRmN2KzZYQVlOMGRGclZQeXlicUs3V1NnQm94emQzYTZE?=
- =?utf-8?B?dXhiRU55SGxFK3g4N0lKVmhqdGk2OGgvcXE0My9Cb3BGOW9GM1U0VzBpVnpq?=
- =?utf-8?B?UDZEOEZxc25qdXNLa2ZaL24zUGduVXlBd3Rod245b2dJZy9wSTh5ZkxSUmJT?=
- =?utf-8?B?YjJkVUsveHZOMXNvS2FlZXM2MVI5cTJGSkp6bFdGUUFHSUE5aEhGVHYyb0VG?=
- =?utf-8?B?VUEvSEhQSXZZNko2cWVLK0VnM1REdVJlSmdLMEI1S3l1ZzFTa1lsZTNzZHli?=
- =?utf-8?B?RjBlVGxsRitBT29UN0hNbkhFS3BmRFBQZnpRS29aM0hVcGtnN01zUldYVHVF?=
- =?utf-8?B?Zmk0Z0RaN3ZPYkRFZ1hDU2JBbGpVYzBsWk9tUXBlM2ZNZW8rTGJUWWk5Y2R4?=
- =?utf-8?B?RHVVRGxmcVdpNTNZQTEwRHJXSjV4L3FuOUJYZm9yYWNBbTQxa1hZbkh5WXB2?=
- =?utf-8?B?NVJtZitudUNodmF6cWRYQTQ3NGhXSkpDRVhmbmgxTkJ6bTlWTzBFYVI1U2Jq?=
- =?utf-8?B?ZnRTYmROR0ZHWkVGQkJUcU8xVExFZStna280NzNGYmFHSEdoRy94STcwZS9o?=
- =?utf-8?B?Q1NpZlRVdkF3RzlVVWxwdUlQNldFQmxpU1NXcnNGM2JYQlEyeXU4L2pEZ1py?=
- =?utf-8?B?c1ZUbUg2a1JCam8vdDh0YlBXWkNjQk1ndFlydVdteFExa3A5ZERqb3ltSms3?=
- =?utf-8?B?Qm1JUzE5cy8yRDY4aFl1UnZoZHZZcGtOZ2lteVNUY0p5b0o4WFRSN1h1L2N6?=
- =?utf-8?B?d1JxL1RTaE9DV1ZjU2pJMkJRYmo3eW9kNGpSUTFSblNMQzRPMHlxb2QzYzc0?=
- =?utf-8?B?TG9hbW5ESDdHQnFKRXRubU5FN0NCaVozOVRLclFSZUd3bkxOU1pDekRVbjBk?=
- =?utf-8?B?T1ZuQXBHTTRXVFc0QWgxOXJ0eHUraHdnL0M3MS91eFRQdktYT1ArM01ndUFm?=
- =?utf-8?B?L1dxK1JzRDg2UDZNdG1LZFFGZzBwL210K25rVlRuUklNNGRrdFhrSDE4MXVp?=
- =?utf-8?B?ZGZRdTF1ZTdSeW4zbDZtbUNMWG93MzJpVWRqSXBMOXgrbXdOVm1sUTJJK05E?=
- =?utf-8?B?OU1LcnJhOU00WjAvQmpEVUd1cVYvZDg4N2JGSnErcG05UjhqYmVDWVFsZ3Y1?=
- =?utf-8?B?MXloNVNWSUpRdlBsZzBiMEp0eGVPekZIa2FlZkMwSjlCQ3o0RnJmM1FiVVk5?=
- =?utf-8?B?Q2d4cUdlMFdZbUZ3OVRhYVZPRnh6VzZhZElZNXJwYUEwS1krcmQrbFFvcDIr?=
- =?utf-8?B?R0lubFdPY3Rvb3hzMklENVBYbXRodmRaVGhXdmlUbWlmNkRVQitVR1JDcVJM?=
- =?utf-8?B?Y05ZTmpJRGpOSm05STVJZENxZHFrWElsMkRVNXh6U0FwL3lDYzhDckJXRGdt?=
- =?utf-8?B?cENRUjRHSUtZdDVtVjFWZ0wxOW9WbGFzQVFIaFdVREt6MDNHeWZKRllBdEFy?=
- =?utf-8?B?bjlQaHNBbTYvMUh6dzlvMW13Mlh5TmxGcy9VVEtlbHJTNHJWQXZoUHhvY2Fk?=
- =?utf-8?B?N0NDMjBiaGhja1NoREZ1SERvREt2QWlGUWZ4QzM2cDRBSW5hVkFzTi9OeVd1?=
- =?utf-8?B?dFBnMUZZTlNPWU9kcTZreWdLNGRHY1A0TTFnS3JWRm1yNHR1WWtYTC9CZzRI?=
- =?utf-8?B?OGNHZ09NdHZtYVpuMVRKdmtrZk1ucWY2V0JQcnZ1TkhJSEdWSE9EQlJtbjQ2?=
- =?utf-8?Q?pYVsWn/Vu9JGot1KxNii301FPlEgcw=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(7416014)(366016)(921020)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?S3hBQVBoaUh2ek9EeWFSNUpESG15VWc2NUtqWE9ocU9WelEveldPRFQzSnNY?=
- =?utf-8?B?Zkw0RUlMcUl4dzBKSFZSaEJVVkVnNytYT0lTeTJpNVdoU1grdm9qY2t3YjUr?=
- =?utf-8?B?SjNRSmpqLy8zUzFBUjdKdmN5Tno4bW9GN3FaVGU3Z09yYU4wV0VBdWtsaUpC?=
- =?utf-8?B?akFVcHAydVVnbWIzQm9GM0lyeDI0MVNXOFFIRGkrRmFnL2xEbzA2dUs5ZHV3?=
- =?utf-8?B?V3ROcEdqM1lVQjBpcUFXRTBYSDF6eHR0WEdLclNTcVl0aXBLQ1R4WlVpcitp?=
- =?utf-8?B?K2Z1aGRjbFpMZ3MxaWFYa29QaERCWU9MTmlIcnByaHlHV0hJUG5yYUxvUG1m?=
- =?utf-8?B?eDN2QTdPbzMwSksvU1F2OU90WHp1T211WHlUQU1WQXRna0ttWWwrYnZhcncw?=
- =?utf-8?B?L1QxYjc4TXB4Qmd4dDJVaGd2cDVPVUlYdkdGVlZoRGc1S0RRbmpEU01tN0FH?=
- =?utf-8?B?ZlFzclhycHBEZFdVTkJsd3pnMjYzVGV2ZE9jYUhjVHF4MXVEOHVEVG42TUtU?=
- =?utf-8?B?anRDOUNGVlc0ZThWcW5XanJoUVB5TjkwODVIOC9nWlJ6Z2E4TzVGVFZuVzMx?=
- =?utf-8?B?eXFPc3RoUmNveW1QR0x4dXNzQ2VjOENpaDJRMFZZakovNm9Yb2E0SDJQR3o4?=
- =?utf-8?B?VUtWL1NNVnh5NEdkMXB4ZnIyMGNqK1RIZlU0UlNSTWZyNzBCOXB6TkdRTmFw?=
- =?utf-8?B?WWtzRGkrWC9tUnlxbG5DMW5aRzA3b0lUOGIvRmwwQUhpZHJONjlkdXM0bHJ4?=
- =?utf-8?B?Tk13aDh6QmV1UCttNFU2K2pHY29jRjRDVjk1Q1Y1RTVyZEh1Sk9rbGxRdnV5?=
- =?utf-8?B?cHFTemNqcXUzVWJ3Y3JaemJEbkZSZVhaR1I4ODNhcE1kQm1uOGRWdFdjdXM0?=
- =?utf-8?B?QmpCeXZCV2FHbnFOcml0TStLaVBUcFUwaEJvMjBFcXk5Y3QyWGpoYVUwc1Jh?=
- =?utf-8?B?bTZtem1yT1k3dW4yRVpnckFIUG9ONDAzZmxKRmtwUEFDSmNBZ0lGMnBjVDhi?=
- =?utf-8?B?YnY4NEE3RUk0SkgxOHlaNWROdWZsY2UydlVWM2MzcmFBT2JkVGQ3MWF6ZlhK?=
- =?utf-8?B?R2VyYW9XTndWUDZqQ1Rvdm9kaEVIWnJpNHgzWkMza3hVMG9icTdCUnNYQWFh?=
- =?utf-8?B?MWZLMUlYdjM2eVMyMTNoS2hBZERpcnRFcDU1bTNaRVFyNG5LSUp5Rmt3clhQ?=
- =?utf-8?B?RTFHOUxrOVRjdlBPdS9PaFk2TExZTzBadEVrOWV4SXE2RVNDdkVsZERYWHBX?=
- =?utf-8?B?WEFLLy9qTitlTW16dWVvZnRncDFyK2llL2FRMUs4M3BJRkUxNWdpeU5XOXVM?=
- =?utf-8?B?MFh5YVdRSmhjMVQwMWtMcEg4b2x2YjE2MWJSSDYyUU5sTG9QZDM4V2JiYlQz?=
- =?utf-8?B?Q3E3UXVYRXFtREExY09MeVdPQ0NIRmliWjcxZVJnMXl3M2lZUlVFTkZXNEZM?=
- =?utf-8?B?YUhPV3RSRHFjRUlRZnNiT29VbnRPVWR2V3haUVkvQUFQdzJMYlFUdUwrcFNV?=
- =?utf-8?B?aGgvck40eXNIT3BOcXUvOWJvblZpK0RJR0diYjFJMUFaaDVYdlpGanpUT3lS?=
- =?utf-8?B?Z2dLVHlld05URkIySWo3VFJqTldadEZCcnBlTUtpYXZMSjZ3VFBDdHI1Z04w?=
- =?utf-8?B?VldqcWFTbFZhRjJGVkNXM0doMVA4K1haTVlhOThDYWZpOEVvVjB0dVVoSzFv?=
- =?utf-8?B?QXhuMnROR0hoMHBkbXFvbmhDVGNMUTgyZmV2eWZ6TGFQZU93N3lIQUo0eHpO?=
- =?utf-8?B?djNTNWJKWmlnOTY1elRMSkxtYWt4VUNEekZLaTNSbDZPNG0xM3BoRURrODE3?=
- =?utf-8?B?MTd1RXRKNVJMbXFzcUN5Mmd4WURTcFFEK0FIVTV2aFkxTVI3QUcvRHEyTGpa?=
- =?utf-8?B?OUdPSHo2SE9Mam51OXhVTFFGNmM4aUxQT0pPMmdEZkR1Vm5XbW5ZVlJEeWtO?=
- =?utf-8?B?UnZlVXQ0TC8zT2ZYVVNwU3F1d0Q3em4rd1VjNG1hWGVhM3VFVURXSVBHSmNx?=
- =?utf-8?B?a21XRWpUSWYxT3B0S3VsNGFIMmdzMjAza0VLVEMzREl2RmoxUDR0Unk0MUly?=
- =?utf-8?B?KzdCb2VXOVExQmpFL3BHWUNaNUZ1bEZwZUw4Z3RxNnV3U1N5YnV5dExHd05m?=
- =?utf-8?Q?sow4qcXEJX4dCZxmH9MCo0u/b?=
+	id 1uSbJZ-0000000Fc7N-0Tzn;
+	Fri, 20 Jun 2025 12:57:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uSaUE-0000000FX2B-2HtL;
+	Fri, 20 Jun 2025 12:04:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E59D106F;
+	Fri, 20 Jun 2025 05:04:30 -0700 (PDT)
+Received: from [192.168.1.102] (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD2173F58B;
+	Fri, 20 Jun 2025 05:04:47 -0700 (PDT)
+Message-ID: <4c2c9a15-50bc-4a89-b5fe-d9014657fca7@arm.com>
+Date: Fri, 20 Jun 2025 13:04:46 +0100
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 47f0c46e-fad3-4a22-b682-08ddafd58f62
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2025 08:36:32.4561
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cl1tnAUMeXPfyzFTc0EXH49IfCAMTrz0GTKBOji1koYfGzPZyfY/F0CNJxK6mwvnf48J+2R7tphO1+PJb8QrRKMAA86TJPAk2BEtsYSE348=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB7083
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH v5 3/4] phy: rockchip-pcie: Enable all four lanes
+To: Geraldo Nascimento <geraldogabriel@gmail.com>,
+ linux-rockchip@lists.infradead.org
+Cc: Shawn Lin <shawn.lin@rock-chips.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rick wertenbroek <rick.wertenbroek@gmail.com>,
+ linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <cover.1749833986.git.geraldogabriel@gmail.com>
+ <ce661babb3e2f08c8b28554ccb5508da503db7ba.1749833987.git.geraldogabriel@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Content-Language: en-GB
+In-Reply-To: <ce661babb3e2f08c8b28554ccb5508da503db7ba.1749833987.git.geraldogabriel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_013638_714103_10194EA0 
-X-CRM114-Status: UNSURE (   6.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250620_050450_632035_BAD5A28A 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -194,24 +67,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> >
-> >  &pinctrl {
-> > +	pinctrl_pcierc1_default: pcierc1_default {
-> 
-> 
-> No underscores in node names. Follow finally DTS coding style. You have been
-> told that in previous patchsets already.
->
+On 2025-06-13 6:03 pm, Geraldo Nascimento wrote:
+> Current code enables only Lane 0 because pwr_cnt will be incremented
+> on first call to the function. Use for-loop to enable all 4 lanes
+> through GRF.
 
-Agreed.
+If this was really necessary, then surely it would also need the 
+equivalent changes in rockchip_pcie_phy_power_off() too?
+
+However, I'm not sure it *is* necessary - the NVMe on my RK3399 board 
+happily claims to be using an x4 link, so I stuck a print of inst->index 
+in this function, and sure enough I do see it being called for each 
+instance already:
+
+[    1.737479] phy phy-ff770000.syscon:pcie-phy.1: power_on 0
+[    1.738810] phy phy-ff770000.syscon:pcie-phy.2: power_on 1
+[    1.745193] phy phy-ff770000.syscon:pcie-phy.3: power_on 2
+[    1.745196] phy phy-ff770000.syscon:pcie-phy.4: power_on 3
 
 Thanks,
-Jacky
+Robin.
+
+> Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
+> ---
+>   drivers/phy/rockchip/phy-rockchip-pcie.c | 12 +++++++-----
+>   1 file changed, 7 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
+> index bd44af36c67a..48bcc7d2b33b 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-pcie.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
+> @@ -176,11 +176,13 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
+>   				   PHY_CFG_ADDR_MASK,
+>   				   PHY_CFG_ADDR_SHIFT));
+>   
+> -	regmap_write(rk_phy->reg_base,
+> -		     rk_phy->phy_data->pcie_laneoff,
+> -		     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
+> -				   PHY_LANE_IDLE_MASK,
+> -				   PHY_LANE_IDLE_A_SHIFT + inst->index));
+> +	for (int i=0; i < PHY_MAX_LANE_NUM; i++) {
+> +		regmap_write(rk_phy->reg_base,
+> +			     rk_phy->phy_data->pcie_laneoff,
+> +			     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
+> +					   PHY_LANE_IDLE_MASK,
+> +					   PHY_LANE_IDLE_A_SHIFT + i));
+> +	}
+>   
+>   	/*
+>   	 * No documented timeout value for phy operation below,
+
 
 -- 
 linux-phy mailing list
