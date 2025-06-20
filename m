@@ -4,95 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28B13C71155
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 13:00:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C954CC71155
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 14:24:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EO5WElHhsy/Sj46L2xl1dM33j2xyHscfnLmvK1DsD+Y=; b=IeiBM/re9dwziD
-	kLvO0dP4+nOzowbWm+4mm+/5qx9k3k7Pqb7QvI7+9/uteiVs9n2vr095J+WegRrnDRqqoaCLHpuj+
-	fL8QP5UFRHnLhzr3NaADoc5LhaCvHJcTmTFzpYbO4Bj7XtmqtmrP4d4VWH498FEHTJnDeWmB3oszO
-	hTKUDTRaw0JxQJTXgYpWh5jJTOgwlKIsjSvP8P57OQTY67Mk44bR2iNZjcEZu0xOq2rGDHI33tiwT
-	4AE1fzh+fdqM495Z6jOoIowdzhO3+tqet0eb6P9tkAaBJoaosKOrxiajSrKHrgzPvnDOTapculxaQ
-	h/uo1BUaqhp1kjxVtbgw==;
+	List-Owner; bh=hMGQ898lYIdiNaL4p6tYkhrFnFCIujc1ItDk0IrngP4=; b=eIVstIwNH/+GcH
+	idJbq7tHZ+3JYIHuXikYF7QQ6p91EUC+Em8s2kUc9VBP50YZg115ASTESRW9HJ4WAk3V/Qoswd9LC
+	UD7sKaVjsTN4+VbQhKcrfyr3KG1wQrXWjZycanwiM/Ts6Kf/0sS4JD7LzPGV6HSVzxQzSd5syVEmY
+	cCp7ERBxpFFGHrxwdDvYTWgGJIaxEfuS3XZH6e/zkVVKLEh8kBvMDYOXo+FQrV0rhXmkc7Tp3Mh8M
+	MTdYAIxeui+EoR04/y9A8hKr1kqp2QT8qewLLZBGvj/9T46et7A6LqSwH7mI/+KJdIZf0jtL/kglA
+	xZkbHLcr2v2lQBvTPldg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSbMH-0000000FegA-3YkX;
-	Fri, 20 Jun 2025 13:00:41 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSbMG-0000000FefZ-0Ce3;
-	Fri, 20 Jun 2025 13:00:41 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-742caef5896so1363615b3a.3;
-        Fri, 20 Jun 2025 06:00:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750424439; x=1751029239; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=oSvBaEOwHs3K5QkOUjfhZZACAj/9HP8HSOlO7m0z0Zg=;
-        b=CvE7M3YjpYx55d+zdhn2exGiKXx7q8AMkQnDlF7dMACJCTBO0b3pmqknFycgD3WFKn
-         NBu4CZdsQw3e1/kIAvRtKUBW7AZTiCDQ3fEzNpV9LskYqdgkDmhJNRPh2IMDuO3kiMGV
-         eH+i6urJS0iNgptageJX6kVleZXGkBQszjmPUoY1D1kJG/cgLNenvza8c6XIUS83qmwh
-         T6PPpGClmHsfl4lZTovspG3jdow1n+AR3/C+tGNA6EQUxRRo8TL6o9By+XNrmCfJje+8
-         F0sh5MgBbBpwCLe/lU9sF8lxb/cRQ2FK45tptuv/bchvsNFBd8Nqrp8uvY5Y6Bzqe+Nl
-         cA/A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750424439; x=1751029239;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=oSvBaEOwHs3K5QkOUjfhZZACAj/9HP8HSOlO7m0z0Zg=;
-        b=TFQdhJv2xSRYUrETU5a7H304SQ/KH8IRzdSDvsC+bkK4rLAkhYL2SOGNs19Y0FxLE5
-         O+z8Kf5HvEO3cm49kzS3V6rk3DTCKITh/oqS0NlMhsjz4Bq+reQ09JPt5QVirQeDI3jn
-         JFQ7ybKrb9A1Z4Y0cPLtE52RJldok5SuLcmkPBjplR/TA1i3lDvfQ8KsSSat9VT3UUEK
-         2ske+I8BUPQ6KigibXj6wJ0AyBTnmD1KVHq+PztfzURXVUJqeyyt2uUYIfZT7/Xo7RX5
-         y4l12UmZYTQTavUiMRXJLbjAbJoVnxdhWgZZAQWYn2DOFKyCHhJc4FqJQVWehFJqLhFC
-         u0sw==
-X-Forwarded-Encrypted: i=1; AJvYcCWaXNrtok8xO3avM800+jbm6G5NL4A9c9x3+g+hb3bHzEtrXDcqCBpftB83AiuJiUpqGnJVNIursqxH@lists.infradead.org, AJvYcCXS4t3ZHW4dthh7W5sNCL5n3vIMh1LJXHsvv3lqFhx1f20l4dYhKmpmGbBTkWoT0wtbdEy2mU+LkhGSvRePt9Y/@lists.infradead.org
-X-Gm-Message-State: AOJu0YwO9QU9uVboQEu/MtwfpZRpHEJHZGqsukcJ7Kk6u1l0TPTRrCbE
-	tn64enZtqU7/XeTWyDp7P3SqOCV89WzvC1/soNaPXTNGqht6EEC/vyUg
-X-Gm-Gg: ASbGncvQpF/h16PVBbdK9p6Yon7NQW0f7KlxDa5aEm6crFVCpUnHTG/VnqVaQBku/cG
-	qtu99B8cK+1y2vvrPtDfMeRKWpLHnz4IAcYnjE2qoNbzGJRcXLQuIf+25UPTdOSGtcMs6aRisRa
-	KbxGaZvoE28lDJq3XyuTvKWBU6JGprZbhQkLBhelQuuytv/DY9/XaWFYkrXoEcuBjocJXq6MobF
-	QbcMHvFYJD7GVU64y4gAl8TxcEXI0HSuE3mBYssS4Hj1Am5P32XjYSMAoYn6KPkHbtMOvQu+RKj
-	SZDKM/JuGx9YBL3g6WTd+8t+uLnQcjruBW+ZRkDoSTvq0g5RJA==
-X-Google-Smtp-Source: AGHT+IH769Yhqpe3IGCT87lyXbykB6q9+9qjkxaYFu3oBfVpD+WnzrOHIxyf03fBlIyFkkLBax0GxA==
-X-Received: by 2002:a05:6a20:748c:b0:218:5954:1293 with SMTP id adf61e73a8af0-22026de98cfmr5302329637.34.1750424437536;
-        Fri, 20 Jun 2025 06:00:37 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:cab9::dead:c001])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7490a69b973sm1994049b3a.157.2025.06.20.06.00.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Jun 2025 06:00:36 -0700 (PDT)
-Date: Fri, 20 Jun 2025 10:00:30 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Cc: linux-rockchip@lists.infradead.org,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v5 3/4] phy: rockchip-pcie: Enable all four lanes
-Message-ID: <aFVbbnl9UscGQoqC@geday>
-References: <cover.1749833986.git.geraldogabriel@gmail.com>
- <ce661babb3e2f08c8b28554ccb5508da503db7ba.1749833987.git.geraldogabriel@gmail.com>
- <4c2c9a15-50bc-4a89-b5fe-d9014657fca7@arm.com>
- <aFVTdYWxuq9YzVQR@geday>
- <413e7ed5-fc4d-4e4e-9cb4-234c41db267b@arm.com>
+	id 1uScf2-0000000FqHx-1Ja1;
+	Fri, 20 Jun 2025 14:24:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uScaF-0000000FpuT-3rj5;
+	Fri, 20 Jun 2025 14:19:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 483E816F2;
+	Fri, 20 Jun 2025 07:18:51 -0700 (PDT)
+Received: from [10.57.27.59] (unknown [10.57.27.59])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 795A33F58B;
+	Fri, 20 Jun 2025 07:19:08 -0700 (PDT)
+Message-ID: <d52fce68-d01e-4b92-825f-f7408df2ca18@arm.com>
+Date: Fri, 20 Jun 2025 15:19:06 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <413e7ed5-fc4d-4e4e-9cb4-234c41db267b@arm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH v5 4/4] phy: rockchip-pcie: Adjust read mask and write
+To: Geraldo Nascimento <geraldogabriel@gmail.com>,
+ linux-rockchip@lists.infradead.org
+Cc: Shawn Lin <shawn.lin@rock-chips.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Heiko Stuebner <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rick wertenbroek <rick.wertenbroek@gmail.com>,
+ linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <cover.1749833986.git.geraldogabriel@gmail.com>
+ <7068a941037eca8ef37cc65e8e08a136c7aac924.1749833987.git.geraldogabriel@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Content-Language: en-GB
+In-Reply-To: <7068a941037eca8ef37cc65e8e08a136c7aac924.1749833987.git.geraldogabriel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_060040_086257_B940E9A6 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20250620_071912_009070_72E341D4 
+X-CRM114-Status: GOOD (  15.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,64 +67,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 20, 2025 at 01:47:35PM +0100, Robin Murphy wrote:
-> Ah, I put that print at the top of the function - on second look now I
-> see that there's an awkward mix of per-lane and global data, and pwr_cnt
-> is actually the latter. Sure enough, moving the print past that check I
-> only see it once.
+On 2025-06-13 6:04 pm, Geraldo Nascimento wrote:
+> Section 17.6.10 of the RK3399 TRM "PCIe PIPE PHY registers Description"
+> defines asynchronous strobe TEST_WRITE which should be enabled then
+> disabled and seems to have been copy-pasted as of current. Adjust it.
 
-Hi Robin, thanks for re-testing and no worries.
+FWIW that's a bit hard to make sense of, given that it bears no relation 
+whatsoever to the naming used in the code :/
 
+(Not least because the mapping of register fields to phy signals here is 
+really a property of GRF_SOC_CON8 rather than the phy itself)
+
+> While at it, adjust read mask which should be the same as write mask.
+
+Which write mask? Certainly not PHY_CFG_WR_MASK... However as this 
+definition is unused since 64cdc0360811 ("phy: rockchip-pcie: remove 
+unused phy_rd_cfg function"), I don't see much point in touching it 
+other than to remove it entirely. If it is the case that only the 
+address field is significant for whatever a "read" operation actually 
+means, well then that's just another job for ADDR_MASK (which I guess is 
+what the open-coded business with PHY_CFG_PLL_LOCK is actually doing...)
+
+Thanks,
+Robin.
+
+> Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
+> ---
+>   drivers/phy/rockchip/phy-rockchip-pcie.c | 4 ++--
+>   1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> However, I still don't think blindly enabling all the lanes is the right
-> thing to do either; I'd imagine something like the (untested) diff below
-> would be more appropriate. That would then seem to balance with what
-> power_off is doing.
-
-Thanks for the suggestion, I'll make sure to test it appropriately
-before sending v6.
-
-Thanks!
-Geraldo Nascimento
-
-> 
-> Thanks,
-> Robin.
-> 
-> ----->8-----
 > diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-> index bd44af36c67a..a34a983db16c 100644
+> index 48bcc7d2b33b..35d2523ee776 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-pcie.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-> @@ -160,11 +160,8 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
->   
->   	guard(mutex)(&rk_phy->pcie_mutex);
->   
-> -	if (rk_phy->pwr_cnt++) {
-> -		return 0;
-> -	}
-> -
-> -	err = reset_control_deassert(rk_phy->phy_rst);
-> +	if (rk_phy->pwr_cnt++)
-> +		err = reset_control_deassert(rk_phy->phy_rst);
->   	if (err) {
->   		dev_err(&phy->dev, "deassert phy_rst err %d\n", err);
->   		rk_phy->pwr_cnt--;
-> @@ -181,6 +178,8 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
->   		     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
->   				   PHY_LANE_IDLE_MASK,
->   				   PHY_LANE_IDLE_A_SHIFT + inst->index));
-> +	if (rk_phy->pwr_cnt)
-> +		return 0;
->   
->   	/*
->   	 * No documented timeout value for phy operation below,
-> 
+> @@ -30,9 +30,9 @@
+>   #define PHY_CFG_ADDR_SHIFT    1
+>   #define PHY_CFG_DATA_MASK     0xf
+>   #define PHY_CFG_ADDR_MASK     0x3f
+> -#define PHY_CFG_RD_MASK       0x3ff
+> +#define PHY_CFG_RD_MASK       0x3f
+>   #define PHY_CFG_WR_ENABLE     1
+> -#define PHY_CFG_WR_DISABLE    1
+> +#define PHY_CFG_WR_DISABLE    0
+>   #define PHY_CFG_WR_SHIFT      0
+>   #define PHY_CFG_WR_MASK       1
+>   #define PHY_CFG_PLL_LOCK      0x10
+
 
 -- 
 linux-phy mailing list
