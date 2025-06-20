@@ -4,75 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 264B1C71155
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 14:43:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C05F1C71155
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 15:09:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JXIB1FT0sdFFo5NFhNkeukeOwTtQl2fjGHnFkn/RE4w=; b=SzWNzRCZewI+bv
-	2BIrV9WH60Z2DqXNICRHCAFD3J6nccS5PWbh81m3tsieuh/VzDbxKn3qtnGSIo/9raHK0JCyGtb0s
-	IUZxN4GNz6u9RBagIz/j/QVOyHC4t554iqtafMzyWIQO0KAR+nhpSck3dY5NbvZJsmai2eM1XqLFr
-	wwLiSUap++UgmeNyWyQ2cM6FvZLpjoHsXBQwqU6yW4mAosuN4jmi9GmWj0b0nGnKs0aYkz+4qg6hN
-	JGB20q4KubdX52OKlmcbS7tCfRzgYnB5zegU4hvs42sVaL0F6uMeacoh0s/u1ZXVfybIY9kjhJxWQ
-	BK71CTjopQWG9y9opHuw==;
+	List-Owner; bh=Ay5U1JnTRRxKS3cJ7vvaSpfmYvUW+V4f3rtHew1N4mI=; b=0tHMVFL8D36soN
+	hdycQ2U7nm9+0JutJQnyKXIEWH8J+nYs/bs7JvrdUL5hdX+stYy8vWTVjChz+I47eskDewarfGWdI
+	aBVPDbnUhVJ+PWwhFSgJVLwpTGOoZAmm5mZ1lqz0DsWeNaNwiEka+frChRBcYDbM/FBnrdKNkGp9J
+	co3xmzpgW/LlIF4pAoSxAm7v8TpYerG+F+QbmGJIVkzWLzxQY6X7en5OylZn4+f9mBWdTDVufdPGo
+	tAvoCIiYMuQxi0SMWh+StDr+fZ7CkqvXoRkWoAGNjZtnctSoBf7b0EY6I4CrNeFEIIr/GORN0BVVX
+	Eojtja+AsUZp/aqBh82A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uScyB-0000000Fsym-3mqv;
-	Fri, 20 Jun 2025 14:43:55 +0000
-Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
+	id 1uSdMb-0000000Fw1O-1fGr;
+	Fri, 20 Jun 2025 15:09:09 +0000
+Received: from fllvem-ot03.ext.ti.com ([198.47.19.245])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uScwc-0000000Fsji-1wHF
+	id 1uSdKr-0000000Fvx6-329q
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Jun 2025 14:42:19 +0000
+	Fri, 20 Jun 2025 15:07:23 +0000
 Received: from lelvem-sh01.itg.ti.com ([10.180.77.71])
-	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55KEg42J323400;
-	Fri, 20 Jun 2025 09:42:04 -0500
+	by fllvem-ot03.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55KF75Ib692041;
+	Fri, 20 Jun 2025 10:07:05 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1750430524;
-	bh=jDJmtsqpNaS2MUMDPjXt8puYBGShfidvE6+OEKBxG1I=;
+	s=ti-com-17Q1; t=1750432025;
+	bh=Sr+ph/pByqHoPvRkp+egq+sXgmbRpPQXF5FzTyrqF0U=;
 	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=hcUFAaTbrxlBZz5MS9yf4pU5Yv2mYMKvbqhFvl331FL7peA/AJ+zyV3pc1uDLxcl+
-	 Bc6zL4H13EAisLT2pn9zwERDvpA+QNeqWySFmAH6qgkNcotN8QwCVpIbQiTlkpl+5+
-	 Tv5XhyLS4bCC8djgbw9Lmebyx43nt3u3Ms8MlYMk=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
-	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55KEg3be1861484
+	b=yCfDjnxBEoR0o3YuAHucdWr3dd3utGjNT0ewvKkPJ2TC+X/3P9c0PWomepFyfmMR4
+	 IgdM0saz9TcRuQGGsWsTZ4YmAWKdRFxP0QvM+FcAu89fc0c60CdrPjuDX7j8df1pUz
+	 oUYJJmuSe2C5lJgtJBMUd5AdzLhPgrFzCMl4Vrn8=
+Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
+	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55KF75pZ1878626
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Fri, 20 Jun 2025 09:42:03 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+	Fri, 20 Jun 2025 10:07:05 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Fri, 20
- Jun 2025 09:42:03 -0500
-Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ Jun 2025 10:07:05 -0500
+Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Fri, 20 Jun 2025 09:42:03 -0500
+ Frontend Transport; Fri, 20 Jun 2025 10:07:05 -0500
 Received: from [172.24.227.193] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.227.193])
-	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55KEfxkL3111049;
-	Fri, 20 Jun 2025 09:42:00 -0500
-Message-ID: <21e81030-189f-4f21-8800-f62cb351a3d6@ti.com>
-Date: Fri, 20 Jun 2025 20:11:59 +0530
+	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55KF71PA3387048;
+	Fri, 20 Jun 2025 10:07:01 -0500
+Message-ID: <e19bb1d6-307c-4ed4-b353-5d2e0668f6fb@ti.com>
+Date: Fri, 20 Jun 2025 20:37:00 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
  O_CMN_READY polling
-To: Vinod Koul <vkoul@kernel.org>
-CC: <kishon@kernel.org>, <mripard@kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <sakari.ailus@linux.intel.com>,
-        <u.kleine-koenig@baylibre.com>, <vigneshr@ti.com>,
-        <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>, <r-donadkar@ti.com>,
-        <tomi.valkeinen@ideasonboard.com>
+To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+CC: <sakari.ailus@linux.intel.com>, <u.kleine-koenig@baylibre.com>,
+        <vigneshr@ti.com>, <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>,
+        <r-donadkar@ti.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+        <mripard@kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
 References: <20250502033451.2291330-1-devarsht@ti.com>
- <20250502033451.2291330-2-devarsht@ti.com> <aCRwmohPq5E2RsGC@vaman>
+ <20250502033451.2291330-2-devarsht@ti.com>
+ <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
 Content-Language: en-US
 From: Devarsh Thakkar <devarsht@ti.com>
-In-Reply-To: <aCRwmohPq5E2RsGC@vaman>
+In-Reply-To: <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
 X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_074218_595723_D95F0B41 
-X-CRM114-Status: GOOD (  23.96  )
+X-CRM114-CacheID: sfid-20250620_080721_862840_95234987 
+X-CRM114-Status: GOOD (  16.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,12 +90,12 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hi,
 
-Thanks for the review.
-
-On 14/05/25 15:59, Vinod Koul wrote:
-> On 02-05-25, 09:04, Devarsh Thakkar wrote:
+On 18/06/25 15:31, Tomi Valkeinen wrote:
+> Hi,
+> 
+> On 02/05/2025 06:34, Devarsh Thakkar wrote:
 >> PLL lockup and O_CMN_READY assertion can only happen after common state
 >> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
 >> polling them before the common state machine was enabled. To fix this :
@@ -138,139 +139,19 @@ On 14/05/25 15:59, Vinod Koul wrote:
 >>   	u8 pll_opdiv;
 >>   	u16 pll_fbdiv;
 >> +	u64 hs_clk_rate;
->>   	unsigned int nlanes;
->>   };
->>   
->> @@ -99,6 +100,8 @@ struct cdns_dphy_ops {
->>   	void (*set_pll_cfg)(struct cdns_dphy *dphy,
->>   			    const struct cdns_dphy_cfg *cfg);
->>   	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
->> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
->> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
->>   };
->>   
->>   struct cdns_dphy {
->> @@ -108,6 +111,8 @@ struct cdns_dphy {
->>   	struct clk *pll_ref_clk;
->>   	const struct cdns_dphy_ops *ops;
->>   	struct phy *phy;
->> +	bool is_configured;
->> +	bool is_powered;
->>   };
->>   
->>   /* Order of bands is important since the index is the band number. */
->> @@ -191,6 +196,26 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
->>   	return dphy->ops->get_wakeup_time_ns(dphy);
->>   }
->>   
->> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
->> +{
->> +	int ret = 0;
->> +
->> +	if (dphy->ops->wait_for_pll_lock)
->> +		ret = dphy->ops->wait_for_pll_lock(dphy);
->> +
->> +	return ret;
->> +}
->> +
->> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
->> +{
->> +	int ret = 0;
->> +
->> +	if (dphy->ops->wait_for_cmn_ready)
->> +		ret = dphy->ops->wait_for_cmn_ready(dphy);
->> +
->> +	return ret;
 > 
-> We can drop ret from both, also it is called only once, so maybe open
-> code this one line?
-> 
+> This has a minor conflict with my cdns-dsi series, as I also add
+> hs_clk_rate but as u32. Also, applying both serieses,
+> cdns_dphy_config_from_opts() becomes odd as the hs_clk_rate will be
+> assigned back and forth between opts and cfg. Can you check this?
 
-Agreed.
+Understood. I think after re-basing on top of your patch, I don't need 
+to assign cfg->hs_clk_rate in cdns_dphy_config_from_opts since you 
+already assigned it to realized clock value in 
+cdns_dsi_get_dphy_pll_cfg. I can rebase on top of your series.
 
->> +}
->> +
->>   static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
->>   {
->>   	/* Default wakeup time is 800 ns (in a simulated environment). */
->> @@ -232,7 +257,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
->>   static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
->>   					const struct cdns_dphy_cfg *cfg)
->>   {
->> -	u32 status;
->>   
->>   	/*
->>   	 * set the PWM and PLL Byteclk divider settings to recommended values
->> @@ -249,13 +273,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
->>   
->>   	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
->>   	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
->> -
->> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
->> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
->> -
->> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
->> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
->> -			   POLL_TIMEOUT_US);
->>   }
->>   
->>   static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
->> @@ -263,6 +280,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
->>   	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
->>   }
->>   
->> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
->> +{
->> +	u32 status;
->> +
->> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
->> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
->> +}
->> +
->> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
->> +{
->> +	u32 status;
->> +
->> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
->> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
->> +			       POLL_TIMEOUT_US);
->> +}
->> +
->>   /*
->>    * This is the reference implementation of DPHY hooks. Specific integration of
->>    * this IP may have to re-implement some of them depending on how they decided
->> @@ -278,6 +312,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
->>   	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
->>   	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
->>   	.set_psm_div = cdns_dphy_j721e_set_psm_div,
->> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
->> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
->>   };
->>   
->>   static int cdns_dphy_config_from_opts(struct phy *phy,
->> @@ -298,6 +334,7 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
->>   		return ret;
->>   
->>   	opts->wakeup = cdns_dphy_get_wakeup_time_ns(dphy) / 1000;
->> +	cfg->hs_clk_rate = opts->hs_clk_rate;
->>   
->>   	return 0;
->>   }
->> @@ -334,13 +371,23 @@ static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
->>   static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
->>   {
->>   	struct cdns_dphy *dphy = phy_get_drvdata(phy);
->> -	struct cdns_dphy_cfg cfg = { 0 };
->> -	int ret, band_ctrl;
->> -	unsigned int reg;
->> +	int ret = 0;
-> 
-> Superfluous init
-> 
 
-Agreed. I will do the fixups in next revision.
-
-Thanks,
+Regards
 Devarsh
 
 -- 
