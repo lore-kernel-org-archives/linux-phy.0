@@ -4,77 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CC57C7115C
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 15:09:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56964C7115C
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 15:35:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kc91EGdhMosSxAmhAOP+DvK+SArJhRrapjMTMyJAFYg=; b=RRo5YuYhQE58Wu
-	J0z+JIrICRiJe+k/bN9aZ9PAfg3W4kDKNpBSBiWcMnPKLuaUaAfJQSR6xI9YJepuDwsqJHzt19uiU
-	TLYVEpGJGmQgDLUERV81HoBy6jb136QexbfuKK/HKOYa79SRBCbL14Jx/6YwOAzWFGylg/yGxR3/L
-	V4n498P71uBu2o/jaZq+wSdiO86FrN6tDq2+7plWDODHkSnuAtRIAuOhnfVrVRrQmVk+O0S7ZqQ07
-	hgZ15RcakPB4jJg09nd08WjrukubXx3dRSoafJMy5JAAfu4Su/5FXKmAbLKQKULEPHMa3UQfiz9BN
-	1s3A3i35IxiE5nfAZGTw==;
+	List-Owner; bh=syqN6Cf5TWeUfJmpMQdQLGc9ISoXHhrulZoLcBjgKU0=; b=nzBt1gqdfF9KnO
+	O/lKSaP9Iv6+BUNgk+NvtcVT36XJY46xAogrPUQitvw5n0UFmpKnvfER0Z1IZ7/EyaVB/KgpiT+SD
+	J4FkHkhrQb+t1x5gydOD/UB4OZYC0sQDKojw2fZ/BXDGcuUOuN+CaYfb+TjTgGQ4sl6lkBdsXqLaY
+	3Qcchh+DE2W88Yv9jWVWa9XUyMlpLqo/FgD9hHZLim7oRx8/bS5cPypY1LKyG8Sx2+JXCtuEG7i5E
+	NAVYGEDfuIXLk4WTFNLrIZ1H4m/RSx+WBISuUvIwJKZZ95GDSEGfeFMel0G3uoiQLb/a6mWZiPqqH
+	zzvq7rC7Ep+a8w5H0Atw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdMb-0000000Fw1Y-2kya;
-	Fri, 20 Jun 2025 15:09:09 +0000
-Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
+	id 1uSdm9-0000000Fzos-07CN;
+	Fri, 20 Jun 2025 15:35:33 +0000
+Received: from mail-pg1-x529.google.com ([2607:f8b0:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdMQ-0000000Fw0P-2UvQ
-	for linux-phy@lists.infradead.org;
-	Fri, 20 Jun 2025 15:09:00 +0000
-Received: from fllvem-sh04.itg.ti.com ([10.64.41.54])
-	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55KF8gh8958970;
-	Fri, 20 Jun 2025 10:08:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1750432122;
-	bh=L5yI6SdnJQ9HkMn9dVOfOYCgRSMMg1ztVuir82mh09M=;
-	h=Date:Subject:From:To:CC:References:In-Reply-To;
-	b=PV08E54/RDU3WvY7bWAHEQp/udbpEESBWxe9OmjvhmZY12e4D+BoZA/+UFdBedDSE
-	 JzJCFzoTgtjE4miWEVXQMh63KrjfzreujoFDZ81TDmTm1fjU5n2ODd0215jALQnOB4
-	 nHPEqmKFjOFoFuTXJl4prl8euuhyiaIH3YBGAp/w=
-Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
-	by fllvem-sh04.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55KF8gQn783061
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Fri, 20 Jun 2025 10:08:42 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Fri, 20
- Jun 2025 10:08:41 -0500
-Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Fri, 20 Jun 2025 10:08:41 -0500
-Received: from [172.24.227.193] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.227.193])
-	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55KF8bQX3142100;
-	Fri, 20 Jun 2025 10:08:38 -0500
-Message-ID: <e9096b46-3661-40c5-a67f-7f09f838093b@ti.com>
-Date: Fri, 20 Jun 2025 20:38:37 +0530
+	id 1uSdap-0000000FxWi-2TI6;
+	Fri, 20 Jun 2025 15:23:52 +0000
+Received: by mail-pg1-x529.google.com with SMTP id 41be03b00d2f7-b2fd091f826so1565240a12.1;
+        Fri, 20 Jun 2025 08:23:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750433031; x=1751037831; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=HJwPe4Na7egNR42KB/ME0LulyT8UQ11yNNRgw9O2r5I=;
+        b=B48lLWXLqUlvE5bktEbbVdQqxkdFoayqlewxyIDtvqUo0yaBW6I0h4jRVI8i1tMQdJ
+         nNO8XKj9somZnJCjfOthqELqyNNJ7DJSf9OfkpLBext/LVuvq0AZLwcAwzQ3yVc2vAf+
+         NtjcKCl80LWimQT/4YuRoC6vxCuLnuNuS11agEeeF1LZgGY0Id30K6ddw2m4y9rVEwnm
+         NyxlTHw3jd8kUP3yX3PRjRGdwTorqKKrbNfAsraLxQ2H6WY0JV7ZdOSYP/mxTsvo4L0+
+         AQOg/JFXCLY/cwwb0aiMf8jF6SxjnlXQiBJxGOewpVojwbA2I7uvN+YVrgoFWRyh+REb
+         dgQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750433031; x=1751037831;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=HJwPe4Na7egNR42KB/ME0LulyT8UQ11yNNRgw9O2r5I=;
+        b=FnnT2j/tYXPIVlY6nqpZuD4AyM379HNWtwtymn+DUfjf6cPLJIQdUDL8M5h+KBBuXb
+         icVMGfEPBbzW55AflAkp/ChnLFIhcDGML1xqBH+cA/YnYwfzFEX5J4KiZ29ugXhTDZsA
+         80DCLib9Qim0qjD+eZhaa5jZ2+Gtjlx/bM5IAOK1mRjhLZxxD3XI2AsdJB//gfdT/IWt
+         gWk2LAourzLXgqB33tTIEScKKpNS6kin2oov8B+ZWFcbAq+R70Pg8WyPkJUtPaPmQ7ld
+         0lVG40u1aYJgt0x/BkANWE2OnfZZ+wxGD2cLMKrBs8pWVu0RcZgbYXcvBBvy49DdsWZR
+         c81w==
+X-Forwarded-Encrypted: i=1; AJvYcCUmFAaDkRC5Er1cwexfxO74RypFRlxSLitaoSn87Ipy1RN4xlXpBWF6ZUCblnWETyjA265LGtful4/cWj5WugHH@lists.infradead.org, AJvYcCXdALPFYSI3TkerinRv2LZovAcDDmQ3r7BJsYlWVY16js37f6HMghs60FJOVvEwu7Y1ivI1HnykGgwt@lists.infradead.org
+X-Gm-Message-State: AOJu0YxgDvWwbWPSRXFUpKIqntGfIYpuOCoRK5V7pV75Yfi8f9JIbo5y
+	izDUJLSwxBOpkFycoWw2GlpP/XTQ22V/99qkDuvTYLsrtaHWbsrdy3xX
+X-Gm-Gg: ASbGnct5zOPpH5ZOoP10WG8I5LPqDtKx9Y4hh0eg/rKF/WptRDaKP9LKjQ2ATMV2Vkm
+	6YX1+JhqrRNwvkdv4sfqfPTtS5sFRVUexntrKFzuNkRqkl8hEZ87eREvyZ5wg8rHOHcDQR3wwFb
+	9dH3PpjSotY9ZZvHqhAcbEk3jQZkQHgzQNdEcvtcGhLVSqUgh5Papwdeg3+hJhjKumoDoZJssV+
+	yroTvwpLbdh3WoraolYbYWzZd8xf9930BIqb32Gb/+vSfB6G8yTmpMzVb/0UyOsS4grz9q4lr/q
+	58tuPu4kvcsuzMKpABNdDz+NXnvZ9lWX5pRPPtXrTJOu+85/Sg==
+X-Google-Smtp-Source: AGHT+IHFRRH/nR58cuUa9CJCW89Y1XthgS4quVstWRXVLKvN5X1n1m1ZpPRMW8SNJyW5hNR+qXcUTg==
+X-Received: by 2002:a17:90b:54c6:b0:312:dbcd:b94f with SMTP id 98e67ed59e1d1-3159f503790mr4589404a91.11.1750433030516;
+        Fri, 20 Jun 2025 08:23:50 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:cd3b::dead:c001])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3159e07d027sm1904055a91.43.2025.06.20.08.23.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 20 Jun 2025 08:23:49 -0700 (PDT)
+Date: Fri, 20 Jun 2025 12:23:42 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [RFC PATCH v5 4/4] phy: rockchip-pcie: Adjust read mask and write
+Message-ID: <aFV8_k4vne-m3Rzh@geday>
+References: <cover.1749833986.git.geraldogabriel@gmail.com>
+ <7068a941037eca8ef37cc65e8e08a136c7aac924.1749833987.git.geraldogabriel@gmail.com>
+ <d52fce68-d01e-4b92-825f-f7408df2ca18@arm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
- O_CMN_READY polling
-From: Devarsh Thakkar <devarsht@ti.com>
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-CC: <sakari.ailus@linux.intel.com>, <u.kleine-koenig@baylibre.com>,
-        <vigneshr@ti.com>, <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>,
-        <r-donadkar@ti.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <mripard@kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20250502033451.2291330-1-devarsht@ti.com>
- <20250502033451.2291330-2-devarsht@ti.com>
- <b94facde-7591-41de-bc6f-b26cb46e100a@ideasonboard.com>
- <2237e887-eb0c-406d-a528-a135d62fbb0d@ti.com>
-Content-Language: en-US
-In-Reply-To: <2237e887-eb0c-406d-a528-a135d62fbb0d@ti.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Content-Disposition: inline
+In-Reply-To: <d52fce68-d01e-4b92-825f-f7408df2ca18@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_080858_724245_77892359 
-X-CRM114-Status: GOOD (  22.55  )
+X-CRM114-CacheID: sfid-20250620_082351_632023_3EF9EC01 
+X-CRM114-Status: GOOD (  24.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,55 +102,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGVsbG8sCgpPbiAyMC8wNi8yNSAyMDowNSwgRGV2YXJzaCBUaGFra2FyIHdyb3RlOgo+IEhpIFRv
-bWksCj4gCj4gVGhhbmtzIGZvciB0aGUgcmV2aWV3Lgo+IAo+IE9uIDI2LzA1LzI1IDE2OjI5LCBU
-b21pIFZhbGtlaW5lbiB3cm90ZToKPj4gSGksCj4+Cj4+IE9uIDAyLzA1LzIwMjUgMDY6MzQsIERl
-dmFyc2ggVGhha2thciB3cm90ZToKPj4+IFBMTCBsb2NrdXAgYW5kIE9fQ01OX1JFQURZIGFzc2Vy
-dGlvbiBjYW4gb25seSBoYXBwZW4gYWZ0ZXIgY29tbW9uIHN0YXRlCj4+PiBtYWNoaW5lIGdldHMg
-ZW5hYmxlZCAoYnkgcHJvZ3JhbW1pbmcgRFBIWV9DTU5fU1NNIHJlZ2lzdGVyKSwgYnV0IAo+Pj4g
-ZHJpdmVyIHdhcwo+Pj4gcG9sbGluZyB0aGVtIGJlZm9yZSB0aGUgY29tbW9uIHN0YXRlIG1hY2hp
-bmUgd2FzIGVuYWJsZWQuIFRvIGZpeCB0aGlzIDoKPj4+Cj4+PiAtIEFkZCBuZXcgZnVuY3Rpb24g
-Y2FsbGJhY2tzIGZvciBwb2xsaW5nIG9uIFBMTCBsb2NrIGFuZCBPX0NNTl9SRUFEWQo+Pj4gwqDC
-oCBhc3NlcnRpb24uCj4+PiAtIEFzIHN0YXRlIG1hY2hpbmUgYW5kIGNsb2NrcyBnZXQgZW5hYmxl
-ZCBpbiBwb3dlcl9vbiBjYWxsYmFjayBvbmx5LCAKPj4+IG1vdmUKPj4+IMKgwqAgdGhlIGNsb2Nr
-IHJlbGF0ZWQgcHJvZ3JhbW1pbmcgcGFydCBmcm9tIGNvbmZpZ3VyZSBjYWxsYmFjayB0byAKPj4+
-IHBvd2VyX29uCj4+PiDCoMKgIGNhbGxiYWNrIGFuZCBwb2xsIGZvciB0aGUgUExMIGxvY2t1cCBh
-bmQgT19DTU5fUkVBRFkgYXNzZXJ0aW9uIGFmdGVyCj4+PiDCoMKgIHN0YXRlIG1hY2hpbmUgZ2V0
-cyBlbmFibGVkLgo+Pj4gLSBUaGUgY29uZmlndXJlIGNhbGxiYWNrIG9ubHkgc2F2ZXMgdGhlIFBM
-TCBjb25maWd1cmF0aW9uIHJlY2VpdmVkIAo+Pj4gZnJvbSB0aGUKPj4+IMKgwqAgY2xpZW50IGRy
-aXZlciB3aGljaCB3aWxsIGJlIGFwcGxpZWQgbGF0ZXIgb24gaW4gcG93ZXJfb24gY2FsbGJhY2su
-Cj4+PiAtIEFkZCBjaGVja3MgdG8gZW5zdXJlIGNvbmZpZ3VyZSBpcyBjYWxsZWQgYmVmb3JlIHBv
-d2VyX29uIGFuZCBzdGF0ZQo+Pj4gwqDCoCBtYWNoaW5lIGlzIGluIGRpc2FibGVkIHN0YXRlIGJl
-Zm9yZSBwb3dlcl9vbiBjYWxsYmFjayBpcyBjYWxsZWQuCj4+PiAtIERpc2FibGUgc3RhdGUgbWFj
-aGluZSBpbiBwb3dlcl9vZmYgc28gdGhhdCBjbGllbnQgZHJpdmVyIGNhbgo+Pj4gwqDCoCByZS1j
-b25maWd1cmUgdGhlIFBMTCBieSBmb2xsb3dpbmcgdXAgYSBwb3dlcl9vZmYsIGNvbmZpZ3VyZSwg
-cG93ZXJfb24KPj4+IMKgwqAgc2VxdWVuY2UuCj4+Cj4+IElzIHRoZSBEUEhZICYgUExMIGRvY3Vt
-ZW50ZWQgaW4gdGhlIFRSTSBzb21ld2hlcmU/Cj4+Cj4gCj4gSSBoYWQgZ290IHRoaXMgaW5mb3Jt
-YXRpb24gZnJvbSBjYWRlbmNlIHN1cHBvcnQuIEJ1dCBJIHRoaW5rIGl0IGlzIGFsc28gCj4gZG9j
-dW1lbnRlZCBpbiBKNzIxRSBUUk0gWzFdLiBEUEhZIFR4IHN0YXJ0dXAgc2VxdWVuY2UgaXMgc2Ft
-ZSBhcyBEUEhZIFR4IAo+IGFuZCB0aGVyZSBpcyBhIGluaXRpYWxpemF0aW9uIGRpYWdyYW0gZm9y
-IHRoZSBzYW1lIGluIEo3MjFFIFRSTSBbMV0gCj4gcmVmZXJlbmNlZCBhdCAxMi43LjIuNC4xLjIu
-MSBTdGFydC11cCBTZXF1ZW5jZSBUaW1pbmcgRGlhZ3JhbS4gSXQgc2hvd3MgCj4gT19DTU5fUkVB
-RFkgcG9sbGluZyBhdCB0aGUgZW5kIGFmdGVyIGNvbW1vbiBjb25maWd1cmF0aW9uIHBpbiBzZXR1
-cCBhbmQgCj4gVGFibGUgMTItMTUzMy4gQ29tbW9uIENvbmZpZ3VyYXRpb24tUmVsYXRlZCBTZXR1
-cCBtZW50aW9ucyBzdGF0ZSBtYWNoaW5lIAo+IGVuYWJsZSBwYXJ0IHVuZGVyIHRoZSBjb21tb24g
-Y29uZmlndXJhdGlvbiBzZXR1cCB3aGljaCBoYXBwZW5zIGJlZm9yZSAKPiB0aGUgcG9sbGluZy4g
-QW5kIHRoZSBvYnNlcnZhdGlvbnMgd2l0aCB0aGlzIHBhdGNoIGRvIHN5bmMgd2l0aCAKPiB1bmRl
-cnN0YW5kaW5nIGFzIHdlIHNlZSBQTEwgbG9ja2luZyB1cCBmYXN0ZXIgd2l0aG91dCBhbnkgdGlt
-ZW91dCB3aGljaCAKPiB3YXMgdGhlIGNhc2UgYmVmb3JlIHRoaXMgcGF0Y2guCj4gCj4+IEkganVz
-dCBmaW5kIHRoZSBzZXF1ZW5jZSBhIGJpdCBvZGQuIEZvciBleGFtcGxlLCB5b3Ugd2FpdCBmb3Ig
-dGhlIFBMTCB0bwo+PiBsb2NrLCBhbmQgYWZ0ZXIgdGhhdCwgeW91IGVuYWJsZSB0aGUgUExMIHJl
-ZiBjbG9jay4gTWF5YmUgSSdtIG1pc3NpbmcKPj4gc29tZXRoaW5nIGhlcmUsIGJ1dC4uLiB0aGF0
-IHNob3VsZCBub3Qgd29yay4KPiAKPiBJIHRoaW5rIGl0J3MgbXkgYmFkLCBidXQgaXQgd29ya3Mg
-c29tZWhvdy4gQnV0IGl0IG1ha2VzIHNlbnNlIHRvIGVuYWJsZSAKPiB0aGUgY2xvY2sgYmVmb3Jl
-IHdlIHN0YXJ0IHBvbGxpbmcgZm9yIFBMTCBsb2NrLCBzbyB3aWxsIHVwZGF0ZSBpdCBpbiAKPiBu
-ZXh0IHJldmlzaW9uLgo+IAoKU29ycnksIGhhZCBtaXNzZWQgdG8gYWRkIHRoZSByZWZlcmVuY2Ug
-OgoKWzFdOiBodHRwczovL3d3dy50aS5jb20vbGl0L3ppcC9zcHJ1aWwxCgpSZWdhcmRzCkRldmFy
-c2gKCj4+Cj4+IMKgIFRvbWkKPj4KPiBSZWdhcmRzCj4gRGV2YXJzaAoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Fri, Jun 20, 2025 at 03:19:06PM +0100, Robin Murphy wrote:
+> On 2025-06-13 6:04 pm, Geraldo Nascimento wrote:
+> > Section 17.6.10 of the RK3399 TRM "PCIe PIPE PHY registers Description"
+> > defines asynchronous strobe TEST_WRITE which should be enabled then
+> > disabled and seems to have been copy-pasted as of current. Adjust it.
+> 
+> FWIW that's a bit hard to make sense of, given that it bears no relation 
+> whatsoever to the naming used in the code :/
+> 
+> (Not least because the mapping of register fields to phy signals here is 
+> really a property of GRF_SOC_CON8 rather than the phy itself)
+
+Hi Robin,
+
+will adjust for a better commit message, thank you.
+
+> 
+> > While at it, adjust read mask which should be the same as write mask.
+> 
+> Which write mask? Certainly not PHY_CFG_WR_MASK... However as this 
+> definition is unused since 64cdc0360811 ("phy: rockchip-pcie: remove 
+> unused phy_rd_cfg function"), I don't see much point in touching it 
+> other than to remove it entirely. If it is the case that only the 
+> address field is significant for whatever a "read" operation actually 
+> means, well then that's just another job for ADDR_MASK (which I guess is 
+> what the open-coded business with PHY_CFG_PLL_LOCK is actually doing...)
+
+Oh, I already had agreed on Bjorn's suggestion to drop PHY_CFG_RD_MASK
+for good from code, but I appreciate your input too.
+
+Thanks,
+Geraldo Nascimento
+
+> 
+> Thanks,
+> Robin.
+> 
+> > Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
+> > ---
+> >   drivers/phy/rockchip/phy-rockchip-pcie.c | 4 ++--
+> >   1 file changed, 2 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
+> > index 48bcc7d2b33b..35d2523ee776 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-pcie.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
+> > @@ -30,9 +30,9 @@
+> >   #define PHY_CFG_ADDR_SHIFT    1
+> >   #define PHY_CFG_DATA_MASK     0xf
+> >   #define PHY_CFG_ADDR_MASK     0x3f
+> > -#define PHY_CFG_RD_MASK       0x3ff
+> > +#define PHY_CFG_RD_MASK       0x3f
+> >   #define PHY_CFG_WR_ENABLE     1
+> > -#define PHY_CFG_WR_DISABLE    1
+> > +#define PHY_CFG_WR_DISABLE    0
+> >   #define PHY_CFG_WR_SHIFT      0
+> >   #define PHY_CFG_WR_MASK       1
+> >   #define PHY_CFG_PLL_LOCK      0x10
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
