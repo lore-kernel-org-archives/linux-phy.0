@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56964C7115C
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 15:35:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17CC8C7115B
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 18:38:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=syqN6Cf5TWeUfJmpMQdQLGc9ISoXHhrulZoLcBjgKU0=; b=nzBt1gqdfF9KnO
-	O/lKSaP9Iv6+BUNgk+NvtcVT36XJY46xAogrPUQitvw5n0UFmpKnvfER0Z1IZ7/EyaVB/KgpiT+SD
-	J4FkHkhrQb+t1x5gydOD/UB4OZYC0sQDKojw2fZ/BXDGcuUOuN+CaYfb+TjTgGQ4sl6lkBdsXqLaY
-	3Qcchh+DE2W88Yv9jWVWa9XUyMlpLqo/FgD9hHZLim7oRx8/bS5cPypY1LKyG8Sx2+JXCtuEG7i5E
-	NAVYGEDfuIXLk4WTFNLrIZ1H4m/RSx+WBISuUvIwJKZZ95GDSEGfeFMel0G3uoiQLb/a6mWZiPqqH
-	zzvq7rC7Ep+a8w5H0Atw==;
+	List-Owner; bh=L2cBAcT9BX+yf0BOTn94D/e9l1fUsRQN+c5YiGL7Xzk=; b=mY9C29/Ns6n6QX
+	V0LcQAPu6LwlXgZ7WfUam8dludCSlXRUUfApEK5ChTup6xDVo/IujkLSLm2y+fAmqhaz5VU7DdSTf
+	bUVy2GxYknPXk92q15Pnq0bCaP9sjMFJrJ1uMUUCIb7mWhZ053eJk6gNT0yghe7a/FH3ByXsFAJPQ
+	IPdslAlwpBXx0Ft0VgZYeNv7zjkH3UAzJbzf0a1BxtH+9Yzo6P3oN+wDyVkvFbfApmnT36boRMVQw
+	0CtjCSCTOleAeH7/IjEpitd0Q7/5BIX05zvB64Re8AYFZVoT65E8SjDOhUAdEvo+knAXyxF5fX1xF
+	2fRurXR0K9vNxfXSeTuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdm9-0000000Fzos-07CN;
-	Fri, 20 Jun 2025 15:35:33 +0000
-Received: from mail-pg1-x529.google.com ([2607:f8b0:4864:20::529])
+	id 1uSgdU-0000000GNmd-2grl;
+	Fri, 20 Jun 2025 18:38:48 +0000
+Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdap-0000000FxWi-2TI6;
-	Fri, 20 Jun 2025 15:23:52 +0000
-Received: by mail-pg1-x529.google.com with SMTP id 41be03b00d2f7-b2fd091f826so1565240a12.1;
-        Fri, 20 Jun 2025 08:23:51 -0700 (PDT)
+	id 1uSgau-0000000GNX1-1cm7;
+	Fri, 20 Jun 2025 18:36:09 +0000
+Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-236470b2dceso23814095ad.0;
+        Fri, 20 Jun 2025 11:36:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750433031; x=1751037831; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1750444568; x=1751049368; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=HJwPe4Na7egNR42KB/ME0LulyT8UQ11yNNRgw9O2r5I=;
-        b=B48lLWXLqUlvE5bktEbbVdQqxkdFoayqlewxyIDtvqUo0yaBW6I0h4jRVI8i1tMQdJ
-         nNO8XKj9somZnJCjfOthqELqyNNJ7DJSf9OfkpLBext/LVuvq0AZLwcAwzQ3yVc2vAf+
-         NtjcKCl80LWimQT/4YuRoC6vxCuLnuNuS11agEeeF1LZgGY0Id30K6ddw2m4y9rVEwnm
-         NyxlTHw3jd8kUP3yX3PRjRGdwTorqKKrbNfAsraLxQ2H6WY0JV7ZdOSYP/mxTsvo4L0+
-         AQOg/JFXCLY/cwwb0aiMf8jF6SxjnlXQiBJxGOewpVojwbA2I7uvN+YVrgoFWRyh+REb
-         dgQQ==
+        bh=iB8K7naU/3cWPMjhndPtrJKbfq4r5Bnu9UIH3k9QIY0=;
+        b=f022med+2JvVr1v1n0MXUzhQOXNyUkJkuuIEZlewmj++j9lwwoe0IB8i1IqnQLj/dO
+         OS0B7jFfO6iJ9CbiVJX6yJP/hczAJlo/Rtk7sERevwBEYfbhgBiWhy6kDILvdQk2m0Ax
+         cLZW9Jn28jjXlSPFW82xhzdvxoLFkc3rIKbZkqvyVo+nwEX6ozZNgimgziY8dv4rheDq
+         bQHh2Bi0tLiyEQA0S+XFor7R+sr5dIkuD4C0HQjnW18W8RP9FFYZmmrpng1CXDPktGwh
+         +LrOUO32v8h6C1p+u5D2DCEKtji7eiSyv7/C/9EON9OS2OedY3qs91FecYaHlcGh2+MX
+         Ocnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750433031; x=1751037831;
+        d=1e100.net; s=20230601; t=1750444568; x=1751049368;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=HJwPe4Na7egNR42KB/ME0LulyT8UQ11yNNRgw9O2r5I=;
-        b=FnnT2j/tYXPIVlY6nqpZuD4AyM379HNWtwtymn+DUfjf6cPLJIQdUDL8M5h+KBBuXb
-         icVMGfEPBbzW55AflAkp/ChnLFIhcDGML1xqBH+cA/YnYwfzFEX5J4KiZ29ugXhTDZsA
-         80DCLib9Qim0qjD+eZhaa5jZ2+Gtjlx/bM5IAOK1mRjhLZxxD3XI2AsdJB//gfdT/IWt
-         gWk2LAourzLXgqB33tTIEScKKpNS6kin2oov8B+ZWFcbAq+R70Pg8WyPkJUtPaPmQ7ld
-         0lVG40u1aYJgt0x/BkANWE2OnfZZ+wxGD2cLMKrBs8pWVu0RcZgbYXcvBBvy49DdsWZR
-         c81w==
-X-Forwarded-Encrypted: i=1; AJvYcCUmFAaDkRC5Er1cwexfxO74RypFRlxSLitaoSn87Ipy1RN4xlXpBWF6ZUCblnWETyjA265LGtful4/cWj5WugHH@lists.infradead.org, AJvYcCXdALPFYSI3TkerinRv2LZovAcDDmQ3r7BJsYlWVY16js37f6HMghs60FJOVvEwu7Y1ivI1HnykGgwt@lists.infradead.org
-X-Gm-Message-State: AOJu0YxgDvWwbWPSRXFUpKIqntGfIYpuOCoRK5V7pV75Yfi8f9JIbo5y
-	izDUJLSwxBOpkFycoWw2GlpP/XTQ22V/99qkDuvTYLsrtaHWbsrdy3xX
-X-Gm-Gg: ASbGnct5zOPpH5ZOoP10WG8I5LPqDtKx9Y4hh0eg/rKF/WptRDaKP9LKjQ2ATMV2Vkm
-	6YX1+JhqrRNwvkdv4sfqfPTtS5sFRVUexntrKFzuNkRqkl8hEZ87eREvyZ5wg8rHOHcDQR3wwFb
-	9dH3PpjSotY9ZZvHqhAcbEk3jQZkQHgzQNdEcvtcGhLVSqUgh5Papwdeg3+hJhjKumoDoZJssV+
-	yroTvwpLbdh3WoraolYbYWzZd8xf9930BIqb32Gb/+vSfB6G8yTmpMzVb/0UyOsS4grz9q4lr/q
-	58tuPu4kvcsuzMKpABNdDz+NXnvZ9lWX5pRPPtXrTJOu+85/Sg==
-X-Google-Smtp-Source: AGHT+IHFRRH/nR58cuUa9CJCW89Y1XthgS4quVstWRXVLKvN5X1n1m1ZpPRMW8SNJyW5hNR+qXcUTg==
-X-Received: by 2002:a17:90b:54c6:b0:312:dbcd:b94f with SMTP id 98e67ed59e1d1-3159f503790mr4589404a91.11.1750433030516;
-        Fri, 20 Jun 2025 08:23:50 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:cd3b::dead:c001])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3159e07d027sm1904055a91.43.2025.06.20.08.23.45
+        bh=iB8K7naU/3cWPMjhndPtrJKbfq4r5Bnu9UIH3k9QIY0=;
+        b=pxxU112SK+M7g0f5vzU2P1/Z4oUn1JaFDVzsle7HOKTHjxW6QhE/rdgu2cx8cAjfn5
+         e2jOvZssKrobX28/4Wl394dId82CpM8JkMt7W0xYbikyN2fdcZaixS8bf6oyz4mfdqZ4
+         MV4bCcJLHo9hqUxGfqvtzjJpjvw3vwkQlwFIbeIfIX15tQMoE2mB7SGVd3h7EtrFtRVM
+         KEqnobX1brUNO4AHvDbzaJiZVUGEJpDbidmcX6QkbV+z3ha909tWmq4RKHoOyBaszN4F
+         wkBCCXlSHLSOGy28AxfbcgGZbCQLjyme23jbLApfgRMzM3SRcI0wr3wp4i3KrrEaY7Nj
+         pKEg==
+X-Forwarded-Encrypted: i=1; AJvYcCVzz5WGxP8wzrsYI7ilSGiSotOmhtu7o7GRmPeIj11EBOi+Cz9cur6qXJnuWX5naEo06V5E5tb4iK7FlCX3xSCv@lists.infradead.org, AJvYcCXGt32Mt2vGEvWUOYJDztQeRaQqKQcFV3UlVn51py26DfmDDHMiMLEFP+u/fB9JLk+c2dRAzWPfS1Kq@lists.infradead.org
+X-Gm-Message-State: AOJu0YzDFi5fHkZCzCuoEMSq6NvPg3l4971spl3Cwc1lmJm9e0DvPPrB
+	JgQBn+OXnuHtrMozAZYmlp1Tx6Q/Ay4/0EIQW/KyEHG3TzpH9j5B/nj4
+X-Gm-Gg: ASbGncvC622k9BYfXF27QO7rUj3SGsTISO5xsLAzEDOIfBgXcQ2pzQTjOGEk+e4dlW0
+	Mk5BKqjGJr+lp8wczIbkT4CJ9ebpFg96gZQ/jmfzSGPU15QRASVudgw1MGjuBIr2uRTkpCrC+Oy
+	QbIMqq3G6jtNVQZPJWVsCcq9EeQBYkH4wzYropYghlOCAhxErEpBtJqoLCmnLZwitnUxddLDcM3
+	WD5xPSI1Pr8TDtl1yEKN2XcOkvkXWXUK6xs4r98DdT4g3kZtZK/Eq9KvpCnwzKTbj+JAyD5Arbb
+	/o14S7J3rX1sxKGKdB844s1gb85J771KE+tbRMJKxfeU9ljxgA==
+X-Google-Smtp-Source: AGHT+IEpd/aQfcdw5uYZ1ZK+nV3R3Zab/R2Ed0lgYGKgBLEMJrWyEefDcKKfz+3OCjw8DJ0q07uFQA==
+X-Received: by 2002:a17:903:1b66:b0:234:c5c1:9b5f with SMTP id d9443c01a7336-237d99064ccmr64870585ad.16.1750444567570;
+        Fri, 20 Jun 2025 11:36:07 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:cf24::dead:c001])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d872a3d4sm23398895ad.239.2025.06.20.11.36.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Jun 2025 08:23:49 -0700 (PDT)
-Date: Fri, 20 Jun 2025 12:23:42 -0300
+        Fri, 20 Jun 2025 11:36:07 -0700 (PDT)
+Date: Fri, 20 Jun 2025 15:35:51 -0300
 From: Geraldo Nascimento <geraldogabriel@gmail.com>
 To: Robin Murphy <robin.murphy@arm.com>
 Cc: linux-rockchip@lists.infradead.org,
@@ -81,7 +81,7 @@ Cc: linux-rockchip@lists.infradead.org,
 	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Subject: Re: [RFC PATCH v5 4/4] phy: rockchip-pcie: Adjust read mask and write
-Message-ID: <aFV8_k4vne-m3Rzh@geday>
+Message-ID: <aFWqB8YRtYlC0vGG@geday>
 References: <cover.1749833986.git.geraldogabriel@gmail.com>
  <7068a941037eca8ef37cc65e8e08a136c7aac924.1749833987.git.geraldogabriel@gmail.com>
  <d52fce68-d01e-4b92-825f-f7408df2ca18@arm.com>
@@ -89,8 +89,8 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <d52fce68-d01e-4b92-825f-f7408df2ca18@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_082351_632023_3EF9EC01 
-X-CRM114-Status: GOOD (  24.26  )
+X-CRM114-CacheID: sfid-20250620_113608_429265_763AB25B 
+X-CRM114-Status: GOOD (  13.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,24 +108,6 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Fri, Jun 20, 2025 at 03:19:06PM +0100, Robin Murphy wrote:
-> On 2025-06-13 6:04 pm, Geraldo Nascimento wrote:
-> > Section 17.6.10 of the RK3399 TRM "PCIe PIPE PHY registers Description"
-> > defines asynchronous strobe TEST_WRITE which should be enabled then
-> > disabled and seems to have been copy-pasted as of current. Adjust it.
-> 
-> FWIW that's a bit hard to make sense of, given that it bears no relation 
-> whatsoever to the naming used in the code :/
-> 
-> (Not least because the mapping of register fields to phy signals here is 
-> really a property of GRF_SOC_CON8 rather than the phy itself)
-
-Hi Robin,
-
-will adjust for a better commit message, thank you.
-
-> 
-> > While at it, adjust read mask which should be the same as write mask.
-> 
 > Which write mask? Certainly not PHY_CFG_WR_MASK... However as this 
 > definition is unused since 64cdc0360811 ("phy: rockchip-pcie: remove 
 > unused phy_rd_cfg function"), I don't see much point in touching it 
@@ -134,8 +116,15 @@ will adjust for a better commit message, thank you.
 > means, well then that's just another job for ADDR_MASK (which I guess is 
 > what the open-coded business with PHY_CFG_PLL_LOCK is actually doing...)
 
-Oh, I already had agreed on Bjorn's suggestion to drop PHY_CFG_RD_MASK
-for good from code, but I appreciate your input too.
+Just for the sake of posterity, Robin is right here, PHY_CFG_WR_MASK is
+just hardcoded to 1, and PHY_CFG_RD_MASK should have been the same
+as PHY_CFG_ADDR_MASK as Robin correctly pointed out.
+
+Moot point since I already agreed with Bjorn and Robin to drop the read
+define, and Robin was kind enough to track the exact commit where the
+corresponding read function was removed. I re-injected that function
+from BSP into mainline for my own debugging though, that's why I caught
+the typo.
 
 Thanks,
 Geraldo Nascimento
@@ -143,29 +132,6 @@ Geraldo Nascimento
 > 
 > Thanks,
 > Robin.
-> 
-> > Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
-> > ---
-> >   drivers/phy/rockchip/phy-rockchip-pcie.c | 4 ++--
-> >   1 file changed, 2 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-> > index 48bcc7d2b33b..35d2523ee776 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-pcie.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-> > @@ -30,9 +30,9 @@
-> >   #define PHY_CFG_ADDR_SHIFT    1
-> >   #define PHY_CFG_DATA_MASK     0xf
-> >   #define PHY_CFG_ADDR_MASK     0x3f
-> > -#define PHY_CFG_RD_MASK       0x3ff
-> > +#define PHY_CFG_RD_MASK       0x3f
-> >   #define PHY_CFG_WR_ENABLE     1
-> > -#define PHY_CFG_WR_DISABLE    1
-> > +#define PHY_CFG_WR_DISABLE    0
-> >   #define PHY_CFG_WR_SHIFT      0
-> >   #define PHY_CFG_WR_MASK       1
-> >   #define PHY_CFG_PLL_LOCK      0x10
-> 
 
 -- 
 linux-phy mailing list
