@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C05F1C71155
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CC57C7115C
 	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 15:09:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ay5U1JnTRRxKS3cJ7vvaSpfmYvUW+V4f3rtHew1N4mI=; b=0tHMVFL8D36soN
-	hdycQ2U7nm9+0JutJQnyKXIEWH8J+nYs/bs7JvrdUL5hdX+stYy8vWTVjChz+I47eskDewarfGWdI
-	aBVPDbnUhVJ+PWwhFSgJVLwpTGOoZAmm5mZ1lqz0DsWeNaNwiEka+frChRBcYDbM/FBnrdKNkGp9J
-	co3xmzpgW/LlIF4pAoSxAm7v8TpYerG+F+QbmGJIVkzWLzxQY6X7en5OylZn4+f9mBWdTDVufdPGo
-	tAvoCIiYMuQxi0SMWh+StDr+fZ7CkqvXoRkWoAGNjZtnctSoBf7b0EY6I4CrNeFEIIr/GORN0BVVX
-	Eojtja+AsUZp/aqBh82A==;
+	List-Owner; bh=kc91EGdhMosSxAmhAOP+DvK+SArJhRrapjMTMyJAFYg=; b=RRo5YuYhQE58Wu
+	J0z+JIrICRiJe+k/bN9aZ9PAfg3W4kDKNpBSBiWcMnPKLuaUaAfJQSR6xI9YJepuDwsqJHzt19uiU
+	TLYVEpGJGmQgDLUERV81HoBy6jb136QexbfuKK/HKOYa79SRBCbL14Jx/6YwOAzWFGylg/yGxR3/L
+	V4n498P71uBu2o/jaZq+wSdiO86FrN6tDq2+7plWDODHkSnuAtRIAuOhnfVrVRrQmVk+O0S7ZqQ07
+	hgZ15RcakPB4jJg09nd08WjrukubXx3dRSoafJMy5JAAfu4Su/5FXKmAbLKQKULEPHMa3UQfiz9BN
+	1s3A3i35IxiE5nfAZGTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdMb-0000000Fw1O-1fGr;
+	id 1uSdMb-0000000Fw1Y-2kya;
 	Fri, 20 Jun 2025 15:09:09 +0000
-Received: from fllvem-ot03.ext.ti.com ([198.47.19.245])
+Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSdKr-0000000Fvx6-329q
+	id 1uSdMQ-0000000Fw0P-2UvQ
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Jun 2025 15:07:23 +0000
-Received: from lelvem-sh01.itg.ti.com ([10.180.77.71])
-	by fllvem-ot03.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55KF75Ib692041;
-	Fri, 20 Jun 2025 10:07:05 -0500
+	Fri, 20 Jun 2025 15:09:00 +0000
+Received: from fllvem-sh04.itg.ti.com ([10.64.41.54])
+	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 55KF8gh8958970;
+	Fri, 20 Jun 2025 10:08:42 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1750432025;
-	bh=Sr+ph/pByqHoPvRkp+egq+sXgmbRpPQXF5FzTyrqF0U=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=yCfDjnxBEoR0o3YuAHucdWr3dd3utGjNT0ewvKkPJ2TC+X/3P9c0PWomepFyfmMR4
-	 IgdM0saz9TcRuQGGsWsTZ4YmAWKdRFxP0QvM+FcAu89fc0c60CdrPjuDX7j8df1pUz
-	 oUYJJmuSe2C5lJgtJBMUd5AdzLhPgrFzCMl4Vrn8=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
-	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55KF75pZ1878626
+	s=ti-com-17Q1; t=1750432122;
+	bh=L5yI6SdnJQ9HkMn9dVOfOYCgRSMMg1ztVuir82mh09M=;
+	h=Date:Subject:From:To:CC:References:In-Reply-To;
+	b=PV08E54/RDU3WvY7bWAHEQp/udbpEESBWxe9OmjvhmZY12e4D+BoZA/+UFdBedDSE
+	 JzJCFzoTgtjE4miWEVXQMh63KrjfzreujoFDZ81TDmTm1fjU5n2ODd0215jALQnOB4
+	 nHPEqmKFjOFoFuTXJl4prl8euuhyiaIH3YBGAp/w=
+Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
+	by fllvem-sh04.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 55KF8gQn783061
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Fri, 20 Jun 2025 10:07:05 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+	Fri, 20 Jun 2025 10:08:42 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Fri, 20
- Jun 2025 10:07:05 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ Jun 2025 10:08:41 -0500
+Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Fri, 20 Jun 2025 10:07:05 -0500
+ Frontend Transport; Fri, 20 Jun 2025 10:08:41 -0500
 Received: from [172.24.227.193] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.227.193])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55KF71PA3387048;
-	Fri, 20 Jun 2025 10:07:01 -0500
-Message-ID: <e19bb1d6-307c-4ed4-b353-5d2e0668f6fb@ti.com>
-Date: Fri, 20 Jun 2025 20:37:00 +0530
+	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 55KF8bQX3142100;
+	Fri, 20 Jun 2025 10:08:38 -0500
+Message-ID: <e9096b46-3661-40c5-a67f-7f09f838093b@ti.com>
+Date: Fri, 20 Jun 2025 20:38:37 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
  O_CMN_READY polling
+From: Devarsh Thakkar <devarsht@ti.com>
 To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 CC: <sakari.ailus@linux.intel.com>, <u.kleine-koenig@baylibre.com>,
         <vigneshr@ti.com>, <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>,
@@ -66,14 +67,14 @@ CC: <sakari.ailus@linux.intel.com>, <u.kleine-koenig@baylibre.com>,
         <linux-kernel@vger.kernel.org>
 References: <20250502033451.2291330-1-devarsht@ti.com>
  <20250502033451.2291330-2-devarsht@ti.com>
- <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
+ <b94facde-7591-41de-bc6f-b26cb46e100a@ideasonboard.com>
+ <2237e887-eb0c-406d-a528-a135d62fbb0d@ti.com>
 Content-Language: en-US
-From: Devarsh Thakkar <devarsht@ti.com>
-In-Reply-To: <218ba1a0-068d-4bb2-bba2-2739afa7f470@ideasonboard.com>
+In-Reply-To: <2237e887-eb0c-406d-a528-a135d62fbb0d@ti.com>
 X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_080721_862840_95234987 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20250620_080858_724245_77892359 
+X-CRM114-Status: GOOD (  22.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,76 +86,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 18/06/25 15:31, Tomi Valkeinen wrote:
-> Hi,
-> 
-> On 02/05/2025 06:34, Devarsh Thakkar wrote:
->> PLL lockup and O_CMN_READY assertion can only happen after common state
->> machine gets enabled (by programming DPHY_CMN_SSM register), but driver was
->> polling them before the common state machine was enabled. To fix this :
->>
->> - Add new function callbacks for polling on PLL lock and O_CMN_READY
->>    assertion.
->> - As state machine and clocks get enabled in power_on callback only, move
->>    the clock related programming part from configure callback to power_on
->>    callback and poll for the PLL lockup and O_CMN_READY assertion after
->>    state machine gets enabled.
->> - The configure callback only saves the PLL configuration received from the
->>    client driver which will be applied later on in power_on callback.
->> - Add checks to ensure configure is called before power_on and state
->>    machine is in disabled state before power_on callback is called.
->> - Disable state machine in power_off so that client driver can
->>    re-configure the PLL by following up a power_off, configure, power_on
->>    sequence.
->>
->> Cc: stable@vger.kernel.org
->> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
->> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
->> ---
->> V3:
->> - Move out clock programming logic to power_on as PLL polling and enable
->>    can happen only after SSM enable
->> - Disable state machine on power off
->>
->> V2:
->> - Return error code on polling timeout
->> - Moved out calibration logic to separate patch
->>
->>   drivers/phy/cadence/cdns-dphy.c | 109 +++++++++++++++++++++++++-------
->>   1 file changed, 85 insertions(+), 24 deletions(-)
->>
->> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
->> index ed87a3970f83..a94109a63788 100644
->> --- a/drivers/phy/cadence/cdns-dphy.c
->> +++ b/drivers/phy/cadence/cdns-dphy.c
->> @@ -79,6 +79,7 @@ struct cdns_dphy_cfg {
->>   	u8 pll_ipdiv;
->>   	u8 pll_opdiv;
->>   	u16 pll_fbdiv;
->> +	u64 hs_clk_rate;
-> 
-> This has a minor conflict with my cdns-dsi series, as I also add
-> hs_clk_rate but as u32. Also, applying both serieses,
-> cdns_dphy_config_from_opts() becomes odd as the hs_clk_rate will be
-> assigned back and forth between opts and cfg. Can you check this?
-
-Understood. I think after re-basing on top of your patch, I don't need 
-to assign cfg->hs_clk_rate in cdns_dphy_config_from_opts since you 
-already assigned it to realized clock value in 
-cdns_dsi_get_dphy_pll_cfg. I can rebase on top of your series.
-
-
-Regards
-Devarsh
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8sCgpPbiAyMC8wNi8yNSAyMDowNSwgRGV2YXJzaCBUaGFra2FyIHdyb3RlOgo+IEhpIFRv
+bWksCj4gCj4gVGhhbmtzIGZvciB0aGUgcmV2aWV3Lgo+IAo+IE9uIDI2LzA1LzI1IDE2OjI5LCBU
+b21pIFZhbGtlaW5lbiB3cm90ZToKPj4gSGksCj4+Cj4+IE9uIDAyLzA1LzIwMjUgMDY6MzQsIERl
+dmFyc2ggVGhha2thciB3cm90ZToKPj4+IFBMTCBsb2NrdXAgYW5kIE9fQ01OX1JFQURZIGFzc2Vy
+dGlvbiBjYW4gb25seSBoYXBwZW4gYWZ0ZXIgY29tbW9uIHN0YXRlCj4+PiBtYWNoaW5lIGdldHMg
+ZW5hYmxlZCAoYnkgcHJvZ3JhbW1pbmcgRFBIWV9DTU5fU1NNIHJlZ2lzdGVyKSwgYnV0IAo+Pj4g
+ZHJpdmVyIHdhcwo+Pj4gcG9sbGluZyB0aGVtIGJlZm9yZSB0aGUgY29tbW9uIHN0YXRlIG1hY2hp
+bmUgd2FzIGVuYWJsZWQuIFRvIGZpeCB0aGlzIDoKPj4+Cj4+PiAtIEFkZCBuZXcgZnVuY3Rpb24g
+Y2FsbGJhY2tzIGZvciBwb2xsaW5nIG9uIFBMTCBsb2NrIGFuZCBPX0NNTl9SRUFEWQo+Pj4gwqDC
+oCBhc3NlcnRpb24uCj4+PiAtIEFzIHN0YXRlIG1hY2hpbmUgYW5kIGNsb2NrcyBnZXQgZW5hYmxl
+ZCBpbiBwb3dlcl9vbiBjYWxsYmFjayBvbmx5LCAKPj4+IG1vdmUKPj4+IMKgwqAgdGhlIGNsb2Nr
+IHJlbGF0ZWQgcHJvZ3JhbW1pbmcgcGFydCBmcm9tIGNvbmZpZ3VyZSBjYWxsYmFjayB0byAKPj4+
+IHBvd2VyX29uCj4+PiDCoMKgIGNhbGxiYWNrIGFuZCBwb2xsIGZvciB0aGUgUExMIGxvY2t1cCBh
+bmQgT19DTU5fUkVBRFkgYXNzZXJ0aW9uIGFmdGVyCj4+PiDCoMKgIHN0YXRlIG1hY2hpbmUgZ2V0
+cyBlbmFibGVkLgo+Pj4gLSBUaGUgY29uZmlndXJlIGNhbGxiYWNrIG9ubHkgc2F2ZXMgdGhlIFBM
+TCBjb25maWd1cmF0aW9uIHJlY2VpdmVkIAo+Pj4gZnJvbSB0aGUKPj4+IMKgwqAgY2xpZW50IGRy
+aXZlciB3aGljaCB3aWxsIGJlIGFwcGxpZWQgbGF0ZXIgb24gaW4gcG93ZXJfb24gY2FsbGJhY2su
+Cj4+PiAtIEFkZCBjaGVja3MgdG8gZW5zdXJlIGNvbmZpZ3VyZSBpcyBjYWxsZWQgYmVmb3JlIHBv
+d2VyX29uIGFuZCBzdGF0ZQo+Pj4gwqDCoCBtYWNoaW5lIGlzIGluIGRpc2FibGVkIHN0YXRlIGJl
+Zm9yZSBwb3dlcl9vbiBjYWxsYmFjayBpcyBjYWxsZWQuCj4+PiAtIERpc2FibGUgc3RhdGUgbWFj
+aGluZSBpbiBwb3dlcl9vZmYgc28gdGhhdCBjbGllbnQgZHJpdmVyIGNhbgo+Pj4gwqDCoCByZS1j
+b25maWd1cmUgdGhlIFBMTCBieSBmb2xsb3dpbmcgdXAgYSBwb3dlcl9vZmYsIGNvbmZpZ3VyZSwg
+cG93ZXJfb24KPj4+IMKgwqAgc2VxdWVuY2UuCj4+Cj4+IElzIHRoZSBEUEhZICYgUExMIGRvY3Vt
+ZW50ZWQgaW4gdGhlIFRSTSBzb21ld2hlcmU/Cj4+Cj4gCj4gSSBoYWQgZ290IHRoaXMgaW5mb3Jt
+YXRpb24gZnJvbSBjYWRlbmNlIHN1cHBvcnQuIEJ1dCBJIHRoaW5rIGl0IGlzIGFsc28gCj4gZG9j
+dW1lbnRlZCBpbiBKNzIxRSBUUk0gWzFdLiBEUEhZIFR4IHN0YXJ0dXAgc2VxdWVuY2UgaXMgc2Ft
+ZSBhcyBEUEhZIFR4IAo+IGFuZCB0aGVyZSBpcyBhIGluaXRpYWxpemF0aW9uIGRpYWdyYW0gZm9y
+IHRoZSBzYW1lIGluIEo3MjFFIFRSTSBbMV0gCj4gcmVmZXJlbmNlZCBhdCAxMi43LjIuNC4xLjIu
+MSBTdGFydC11cCBTZXF1ZW5jZSBUaW1pbmcgRGlhZ3JhbS4gSXQgc2hvd3MgCj4gT19DTU5fUkVB
+RFkgcG9sbGluZyBhdCB0aGUgZW5kIGFmdGVyIGNvbW1vbiBjb25maWd1cmF0aW9uIHBpbiBzZXR1
+cCBhbmQgCj4gVGFibGUgMTItMTUzMy4gQ29tbW9uIENvbmZpZ3VyYXRpb24tUmVsYXRlZCBTZXR1
+cCBtZW50aW9ucyBzdGF0ZSBtYWNoaW5lIAo+IGVuYWJsZSBwYXJ0IHVuZGVyIHRoZSBjb21tb24g
+Y29uZmlndXJhdGlvbiBzZXR1cCB3aGljaCBoYXBwZW5zIGJlZm9yZSAKPiB0aGUgcG9sbGluZy4g
+QW5kIHRoZSBvYnNlcnZhdGlvbnMgd2l0aCB0aGlzIHBhdGNoIGRvIHN5bmMgd2l0aCAKPiB1bmRl
+cnN0YW5kaW5nIGFzIHdlIHNlZSBQTEwgbG9ja2luZyB1cCBmYXN0ZXIgd2l0aG91dCBhbnkgdGlt
+ZW91dCB3aGljaCAKPiB3YXMgdGhlIGNhc2UgYmVmb3JlIHRoaXMgcGF0Y2guCj4gCj4+IEkganVz
+dCBmaW5kIHRoZSBzZXF1ZW5jZSBhIGJpdCBvZGQuIEZvciBleGFtcGxlLCB5b3Ugd2FpdCBmb3Ig
+dGhlIFBMTCB0bwo+PiBsb2NrLCBhbmQgYWZ0ZXIgdGhhdCwgeW91IGVuYWJsZSB0aGUgUExMIHJl
+ZiBjbG9jay4gTWF5YmUgSSdtIG1pc3NpbmcKPj4gc29tZXRoaW5nIGhlcmUsIGJ1dC4uLiB0aGF0
+IHNob3VsZCBub3Qgd29yay4KPiAKPiBJIHRoaW5rIGl0J3MgbXkgYmFkLCBidXQgaXQgd29ya3Mg
+c29tZWhvdy4gQnV0IGl0IG1ha2VzIHNlbnNlIHRvIGVuYWJsZSAKPiB0aGUgY2xvY2sgYmVmb3Jl
+IHdlIHN0YXJ0IHBvbGxpbmcgZm9yIFBMTCBsb2NrLCBzbyB3aWxsIHVwZGF0ZSBpdCBpbiAKPiBu
+ZXh0IHJldmlzaW9uLgo+IAoKU29ycnksIGhhZCBtaXNzZWQgdG8gYWRkIHRoZSByZWZlcmVuY2Ug
+OgoKWzFdOiBodHRwczovL3d3dy50aS5jb20vbGl0L3ppcC9zcHJ1aWwxCgpSZWdhcmRzCkRldmFy
+c2gKCj4+Cj4+IMKgIFRvbWkKPj4KPiBSZWdhcmRzCj4gRGV2YXJzaAoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
