@@ -4,63 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2C40C7115C
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Jun 2025 07:39:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2804C71157
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Jun 2025 08:10:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IlwiZTZaoBMlYQNy5Xy0EQI50k4wHSb+SJQ//uby4XM=; b=rn/YfIEQ+ZYsvP
-	ke7lY6GwJylltffvSkDbMYK9fXlm0d42+I/K2u9r8e2ae9SMw5Xr6l6q0bkl55/YicooS28f0tPPr
-	x8eG5WNlK1XOUVU4+HTAJcH00PvK56fva9RwcbXl1QSn1nUX9LxvNdp2YCBvovxzdikYMMhhyDsZH
-	wRE336mMyhxpZCrt0m8++d7TkSST1rV05ZS3Pu5rSGoKr0qS7hbfZ+6aTPNGoW9WDt74MlryQVzu+
-	Yu6I6pmFnYn1D6KidqBu8s6DfhLEpKwe/Ngjq3zY8pIJLtnSlJhqf9Jlaue/TKvevIRbXfZWOrPWP
-	xJRAtfZAYPfub8939n0w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iDle78dF8Qnuxiz/blH5kn3BzJ4o0NB/WRfbzASGXO8=; b=dQJyO0HfZEGRfc
+	HpI4NH+wmjHtgbFw1QNoZ5HYAjKeISGBnC68lLShYAmcUVVyC9LGEFROZWuMTfSbojiyh8tVmN5Q8
+	YR3ZHppQBPmfZNrSNdcYlVhGyVim57UzlCpJ0G3uWfx4DgOcn3fV8cNp/1/2XolwF9YVOOjSwaj3r
+	MUjMAmnAZdBPVgH6NKiAljWNeZz6MzC6twYI9H1ZeTayGgCHub3v25jM5G1W3YshPpqVbfHvbJ4qX
+	w9O15jgNP2XYin/OG/VCUOLPsxnm0Sp3ykfdhGPyYO4UMTbfKCWXKQSolJpKc710Wt/n6JwU2fVZ3
+	Z+UGuTBPNRZSYgVThXYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSsoq-0000000HCur-2NDa;
-	Sat, 21 Jun 2025 07:39:20 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1uStJN-0000000HEfR-17TV;
+	Sat, 21 Jun 2025 08:10:53 +0000
+Received: from mail-ua1-x92a.google.com ([2607:f8b0:4864:20::92a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSsoo-0000000HCuI-203c;
-	Sat, 21 Jun 2025 07:39:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=ZitZ8bWumcyW1MR/MaKS/o+JAIlQ+zy7xef+odnx7uM=; b=C4NDFT8ANCUVmX3P5VsdZa6rIK
-	/P3uu4Zg9awdZuPmOmGaCBUFrChk/ie0XymVM4KlvFRBxN3MHvPl36nrvChRlXiaeQro08YdVsIpi
-	friKF9S3HzhCpJzy+007YBHJMZzP9K68EKsSCER1eQWAXmZDyunU5C0IUelZVjvWv3Ctf6UnjhNZF
-	YB6b6VtqSfe6W/tkaiVwIbiBQpwD6dz7rsT1Ix4gAl92HEolqEZ9kXwG1Dtal6XTJJYSCNqtKCnnF
-	JglR3KkfRhdGmVzl2iOGB4OGcNVidSBtzSc628JPCpGWvyJb3R65zV3wJvuILAsQQvhZOx7yaDaU0
-	vzEvGF6Q==;
-Received: from 85-207-219-154.static.bluetone.cz ([85.207.219.154] helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1uSsof-0004Xc-TU; Sat, 21 Jun 2025 09:39:09 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-rockchip@lists.infradead.org,
- Geraldo Nascimento <geraldogabriel@gmail.com>
-Cc: Shawn Lin <shawn.lin@rock-chips.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- Krzysztof =?UTF-8?B?V2lsY3p5xYRza2k=?= <kw@linux.com>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Rick wertenbroek <rick.wertenbroek@gmail.com>, linux-phy@lists.infradead.org,
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH v6 0/4] PCI: rockchip: Improve driver quality
-Date: Sat, 21 Jun 2025 09:39:08 +0200
-Message-ID: <4760493.mogB4TqSGs@phil>
-In-Reply-To: <cover.1750470187.git.geraldogabriel@gmail.com>
-References: <cover.1750470187.git.geraldogabriel@gmail.com>
+	id 1uStJK-0000000HEeo-2Q32
+	for linux-phy@lists.infradead.org;
+	Sat, 21 Jun 2025 08:10:52 +0000
+Received: by mail-ua1-x92a.google.com with SMTP id a1e0cc1a2514c-87edd8f4e9fso488132241.0
+        for <linux-phy@lists.infradead.org>; Sat, 21 Jun 2025 01:10:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1750493449; x=1751098249; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=uv6wxfrJppsxhE62iBQhcbElKSZgzipS3KVYWsXdRos=;
+        b=Gw+aWnRzi/UepZpsPUF+pDaZSjL/hnqR9NF8U3RDznY1M4DxHNMZuWANJIqlVdDjP2
+         uhfmHnfUstnvmV4IdCwteXMEtyG39FtS4XlIxiA8qBz1tEQ3N8tCGsGRvX/bPuODNgD9
+         9Od2s3h8RH/qicipAMo56NH0LhdMhOCQVI3Z+CYOV3jmysEH+dkHnc611jzJWHJmyASI
+         dk6UKVU+W+qNpoF0qn7/kFEN2VeBLcyu6vKsBJAFD32PvyxzRfHZyjsF//RP/fHgm13c
+         sTkCUW4od2oDDDJMWnGSA+r5vgIuGRdCXxEnE+e2BDGSxioVy5EJJOowqq/lVjVGKG7J
+         p/Og==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750493449; x=1751098249;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uv6wxfrJppsxhE62iBQhcbElKSZgzipS3KVYWsXdRos=;
+        b=XrdP41uBkenbgUYTgLv5lvGIx/KU1ELh8h4TFgFeZcLccIlmhcQS28Wmn+5sBWvACD
+         fmWIprq1anpq63jcLRdMHPK773Iq66JxxFntTomf3rxNXonfsp/G607L1l5EyZ+SAHrU
+         9NgZpjdmuMk3z2QIsxfdDa3AMQcAE5cfgSGhelr/zOaGa2jLwUnliTD7TM3APFFg9y3H
+         iuQ5O6JZQUEmvniouUoqr/Vv+eRn80aWmBqug6TLEGWrDIL50KrYl1aazAszwkLBYHPa
+         sMo2636kP+bRnqEAdai2opb5mE6nY7YqqVd3AbblqaAg4c1n/TYYhdlEEL5Ju3pExlnx
+         SKfg==
+X-Forwarded-Encrypted: i=1; AJvYcCVCUugkHQPFwIvRtEmcOHkrBBM/k8mkz1Ky0XfFRdqKV3iDe/h3pzq/pkqMVLZ/JxQFNOSFSiZTKBI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxnzx9nkEJc0lEA0wbXBLTz/OYlfjeRaQ/tdstYUwayasaBcBGd
+	QzYYb4sPPb+WMXhaw1DIBwPezim7kreg/qG8Ry8yLYVopaRJdkEFKxjkfjCnbwsv3Vo057Y4bC9
+	7B0pUqzc6cuC4fxidJjI5L6kqJ3KmqfSs6XWVTCq5wQ==
+X-Gm-Gg: ASbGncsnXHs6F3qGGvYJnd1oHM7gqXJSoC8QizWButBslE/mVclMl2hp4GU1MVXtJgK
+	ZDo/MQz/ohDY490t32sVHyQawJkNdg1Hr5ppGcgoMNdjQ2IYI6e8Jtu4S8cd2Gr0PgknHM3+gxq
+	yhI7ve2duJicF65HJZfyws/iV70Ws7LC+zx22t82Ks1W5bq4YwB6ICeX6gjZ4TMj/RbAjZriHWS
+	cn6
+X-Google-Smtp-Source: AGHT+IHne2H/xECMfrQ5hD2vXtYM8uvntThObLzerHiwLYgtm+94fiQkXmkqgi1PpqPk2BT3LgZkb0zk4MJsYXLd4N0=
+X-Received: by 2002:a05:6102:41a4:b0:4e6:67f6:e9af with SMTP id
+ ada2fe7eead31-4e9c284a5camr3747596137.9.1750493448628; Sat, 21 Jun 2025
+ 01:10:48 -0700 (PDT)
 MIME-Version: 1.0
+From: Naresh Kamboju <naresh.kamboju@linaro.org>
+Date: Sat, 21 Jun 2025 13:40:37 +0530
+X-Gm-Features: Ac12FXzzjuLKwwB_cXCZktPbz85J27-ZMylRTlHgzb69EvDP-QZzdbjC_WTRMfQ
+Message-ID: <CA+G9fYuOnfvm7N0pa=PNvq=tQsp6CVA34eDq5=rGthEBrdMJuQ@mail.gmail.com>
+Subject: next-20250620: Qualcomm Dragonboard 845c Internal error Oops at ufs_qcom_setup_clocks
+To: open list <linux-kernel@vger.kernel.org>, 
+	Linux ARM <linux-arm-kernel@lists.infradead.org>, lkft-triage@lists.linaro.org, 
+	Linux Regressions <regressions@lists.linux.dev>, linux-phy@lists.infradead.org, 
+	linux-scsi@vger.kernel.org
+Cc: Nitin Rawat <quic_nitirawa@quicinc.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>, 
+	"Martin K. Petersen" <martin.petersen@oracle.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Bjorn Andersson <andersson@kernel.org>, konrad.dybcio@oss.qualcomm.com, 
+	dmitry.baryshkov@oss.qualcomm.com, Manivannan Sadhasivam <mani@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250621_003918_538435_DBBBEBA0 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20250621_011050_649220_0F8618E6 
+X-CRM114-Status: UNSURE (   5.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,43 +94,155 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgR2VyYWxkbywKCkFtIFNhbXN0YWcsIDIxLiBKdW5pIDIwMjUsIDAzOjQ3OjUxIE1pdHRlbGV1
-cm9ww6Rpc2NoZSBTb21tZXJ6ZWl0IHNjaHJpZWIgR2VyYWxkbyBOYXNjaW1lbnRvOgo+IER1cmlu
-ZyBhIDMwLWRheSBkZWJ1Z2dpbmctcnVuIGZpZ2h0aW5nIHF1aXJreSBQQ0llIGRldmljZXMgb24g
-UkszMzk5Cj4gc29tZSBxdWFsaXR5IGltcHJvdmVtZW50cyBiZWdhbiB0byB0YWtlIGZvcm0gYW5k
-IHRoaXMgaXMgbXkgYXR0ZW1wdAo+IGF0IHVwc3RyZWFtaW5nIGl0LiBJdCB3aWxsIGVuc3VyZSBt
-YXhpbXVtIGNoYW5jZSBvZiByZXRyYWluaW5nIHRvIEdlbjIKPiA1LjBHVC9zLCBvbiBhbGwgZm91
-ciBsYW5lcyBhbmQgZml4IGFzeW5jIHN0cm9iZSBURVNUX1dSSVRFIGRpc2FibGVtZW50LgoKanVz
-dCBhIGRyaXZlciBieSBjb21tZW50LCB5b3UgbWlnaHQgd2FudCB0byBkcm9wIHRoZSBSRkMgZWxl
-bWVudCBmcm9tCnRoZSBwYXRjaCBzdWJqZWN0cy4KCkl0IGRvZXMgbG9vayBsaWtlIHRoaW5ncyB0
-YWtlIGZvcm0gbmljZWx5IGFuZCBob3cgcGVvcGxlIHJlYWQgdGhvc2UKUkZDIG1hcmtzIHZhcmll
-cyB3aWxkbHkuIFNvbWUgbWF5IGV2ZW4gcmVhZCBpdCBhcyAidGhpcyBpcyB1bmZpbmlzaGVkIgpv
-ciBzb21ldGhpbmcgYW5kIHNwZW50IHJldmlldyB0aW1lIG9uIG90aGVyIHRoaW5ncy4KClNvIGlm
-IHlvdSdyZSBtb3N0bHkgaGFwcHkgd2l0aCB5b3VyIGNoYW5nZXMsIGp1c3QgZHJvcCB0aGUgUkZD
-IHBhcnQgOi0pCgoKPiAtLS0KPiBWNSAtPiBWNjogcmVmbG93IHRvIDc1IGNvbHMsIHVzZSA1LjBH
-VHMgaW5zdGVhZCBvZiBHZW4yIG5vbWVuY2xhdHVyZSwKPiBjbGFyaWZ5IHN0cm9iZSB3cml0ZSBh
-ZGp1c3RtZW50IGFuZCByZW1vdmUgUEhZX0NGR19SRF9NQVNLCj4gVjQgLT4gVjU6IGZpeCBidWls
-ZCBmYWlsdXJlLCByZWZsb3cgY29tbWl0IG1lc3NhZ2VzIGFuZCBhbHNvIGNvbnZlcnQKPiByZWdp
-c3RlcnMgZm9yIEVQIG9wZXJhdGlvbiwgYWxsIHN1Z2dlc3RlZCBieSBJbHBvCj4gVjMgLT4gVjQ6
-IGZpeCBzZXR0aW5nLXVwIG9mIFRMUyBpbiBMaW5rIENvbnRyb2wgYW5kIFN0YXR1cyBSZWdpc3Rl
-ciAyLAo+IGFsc28gYWRqdXN0IGNvbW1pdCB0aXRsZXMKPiBWMiAtPiBWMzogY29ycmVjdGx5IGNs
-ZWFuLXVwIHdpdGggc3RhbmRhcmQgUENJZSBkZWZpbmVzIGFzIHBlciBCam9ybidzCj4gc3VnZ2Vz
-dGlvbgo+IFYxIC0+IFYyOiB1c2Ugc3RhbmRhcmQgUENJZSBkZWZpbmVzIGFzIHN1Z2dlc3RlZCBi
-eSBCam9ybgo+IAo+IEdlcmFsZG8gTmFzY2ltZW50byAoNCk6Cj4gICBQQ0k6IHJvY2tjaGlwOiBV
-c2Ugc3RhbmRhcmQgUENJZSBkZWZpbmVzCj4gICBQQ0k6IHJvY2tjaGlwOiBTZXQgVGFyZ2V0IExp
-bmsgU3BlZWQgYmVmb3JlIHJldHJhaW5pbmcKPiAgIHBoeTogcm9ja2NoaXAtcGNpZTogRW5hYmxl
-IGFsbCBmb3VyIGxhbmVzIGlmIHJlcXVpcmVkCj4gICBwaHk6IHJvY2tjaGlwLXBjaWU6IFByb3Bl
-cmx5IGRpc2FibGUgVEVTVF9XUklURSBzdHJvYmUgc2lnbmFsCj4gCj4gIGRyaXZlcnMvcGNpL2Nv
-bnRyb2xsZXIvcGNpZS1yb2NrY2hpcC1lcC5jICAgfCAgNCArLQo+ICBkcml2ZXJzL3BjaS9jb250
-cm9sbGVyL3BjaWUtcm9ja2NoaXAtaG9zdC5jIHwgNDggKysrKysrKysrKystLS0tLS0tLS0tCj4g
-IGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1yb2NrY2hpcC5oICAgICAgfCAxMiArLS0tLS0K
-PiAgZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXBjaWUuYyAgICB8IDE1ICsrKy0t
-LS0KPiAgNCBmaWxlcyBjaGFuZ2VkLCAzNiBpbnNlcnRpb25zKCspLCA0MyBkZWxldGlvbnMoLSkK
-PiAKPiAKCgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+Regressions noticed on the Qualcomm Dragonboard 845c device while booting the
+Linux next tags from next-20250616..next-20250620 the following kernel oops
+noticed and boot failed.
+
+Regressions found on Thundercomm Dragonboard 845c (DT)
+- Boot
+
+Regression Analysis:
+- New regression? Yes
+- Reproducibility? Yes
+
+First seen on the next-20250616
+Good: next-20250613
+Bad:  next-20250616
+
+Boot regression: Qualcomm Dragonboard 845c Internal error Oops at
+ufs_qcom_setup_clocks
+
+Reported-by: Linux Kernel Functional Testing <lkft@linaro.org>
+
+## Boot log
+[    6.446825] ufshcd-qcom 1d84000.ufshc: ufshcd_populate_vreg: Unable
+to find vccq2-supply regulator, assuming enabled
+[    6.448070] Unable to handle kernel NULL pointer dereference at
+virtual address 0000000000000000
+[    6.448080] Mem abort info:
+[    6.448086]   ESR = 0x0000000096000006
+[    6.448093]   EC = 0x25: DABT (current EL), IL = 32 bits
+[    6.448101]   SET = 0, FnV = 0
+[    6.448107]   EA = 0, S1PTW = 0
+[    6.448113]   FSC = 0x06: level 2 translation fault
+[    6.448120] Data abort info:
+[    6.448125]   ISV = 0, ISS = 0x00000006, ISS2 = 0x00000000
+[    6.448132]   CM = 0, WnR = 0, TnD = 0, TagAccess = 0
+[    6.448139]   GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0
+[    6.448146] user pgtable: 4k pages, 48-bit VAs, pgdp=000000010447b000
+[    6.448154] [0000000000000000] pgd=080000010447d403,
+p4d=080000010447d403, pud=080000010447e403, pmd=0000000000000000
+[    6.448186] Internal error: Oops: 0000000096000006 [#1]  SMP
+[    6.448193] Modules linked in: qcom_q6v5_mss(+) ufs_qcom(+)
+cfg80211(+) coresight_stm stm_core phy_qcom_qmp_pcie rfkill qcom_wdt
+lmh(+) icc_osm_l3 qrtr slim_qcom_ngd_ctrl slimbus pdr_interface
+qcom_pdr_msg icc_bwmon qcom_q6v5_pas(+) llcc_qcom qcom_pil_info
+display_connector qcom_q6v5 qcom_sysmon drm_kms_helper qcom_common
+qcom_glink_smem mdt_loader qmi_helpers drm backlight socinfo rmtfs_mem
+[    6.448278] CPU: 6 UID: 0 PID: 385 Comm: (udev-worker) Not tainted
+6.16.0-rc2-next-20250620 #1 PREEMPT
+[    6.448288] Hardware name: Thundercomm Dragonboard 845c (DT)
+[    6.448292] pstate: 20400005 (nzCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+[    6.448299] pc : ufs_qcom_setup_clocks+0x28/0x148 ufs_qcom
+[    6.448317] lr : ufshcd_setup_clocks
+(drivers/ufs/core/ufshcd-priv.h:142 drivers/ufs/core/ufshcd.c:9290)
+[    6.448332] sp : ffff800081213640
+[    6.448335] x29: ffff800081213640 x28: 0000000000000001 x27: ffff00008b633270
+[    6.448347] x26: ffff00008b6332a0 x25: ffff00008b632870 x24: 0000000000000000
+[    6.448359] x23: ffff00008b633280 x22: ffff00008b6332a0 x21: 0000000000000000
+[    6.448369] x20: ffffd7eabf84d618 x19: ffff00008b632870 x18: 0000000000000000
+[    6.448380] x17: 5453595342555300 x16: 305f666d745f6973 x15: 0000000000000100
+[    6.448391] x14: ffffffffffffffff x13: 0000000000000030 x12: 0101010101010101
+[    6.448402] x11: ffff00008188ea18 x10: 0000000000000000 x9 : ffffd7eabd9c3c28
+[    6.448413] x8 : ffff8000812134b8 x7 : fefefefefefefefe x6 : 0000000000000001
+[    6.448423] x5 : ffffffffffffffc8 x4 : 00000000c0000000 x3 : ffffd7eab32aa058
+[    6.448433] x2 : 0000000000000000 x1 : 0000000000000001 x0 : ffff00008b632870
+[    6.448444] Call trace:
+[    6.448449] ufs_qcom_setup_clocks+0x28/0x148 ufs_qcom (P)
+[    6.448466] ufshcd_setup_clocks (drivers/ufs/core/ufshcd-priv.h:142
+drivers/ufs/core/ufshcd.c:9290)
+[    6.448477] ufshcd_init (drivers/ufs/core/ufshcd.c:9468
+drivers/ufs/core/ufshcd.c:10636)
+[    6.448485] ufshcd_pltfrm_init (drivers/ufs/host/ufshcd-pltfrm.c:504)
+[    6.448495] ufs_qcom_probe+0x28/0x68 ufs_qcom
+[    6.448508] platform_probe (drivers/base/platform.c:1404)
+[    6.448519] really_probe (drivers/base/dd.c:579 drivers/base/dd.c:657)
+[    6.448526] __driver_probe_device (drivers/base/dd.c:799)
+[    6.448532] driver_probe_device (drivers/base/dd.c:829)
+[    6.448539] __driver_attach (drivers/base/dd.c:1216)
+[    6.448545] bus_for_each_dev (drivers/base/bus.c:370)
+[    6.448556] driver_attach (drivers/base/dd.c:1234)
+[    6.448567] bus_add_driver (drivers/base/bus.c:678)
+[    6.448577] driver_register (drivers/base/driver.c:249)
+[    6.448584] __platform_driver_register (drivers/base/platform.c:868)
+[    6.448592] ufs_qcom_pltform_init+0x28/0xff8 ufs_qcom
+[    6.448605] do_one_initcall (init/main.c:1274)
+[    6.448615] do_init_module (kernel/module/main.c:3041)
+[    6.448626] load_module (kernel/module/main.c:3511)
+[    6.448635] init_module_from_file (kernel/module/main.c:3704)
+[    6.448644] __arm64_sys_finit_module (kernel/module/main.c:3715
+kernel/module/main.c:3741 kernel/module/main.c:3725
+kernel/module/main.c:3725)
+[    6.448653] invoke_syscall (arch/arm64/include/asm/current.h:19
+arch/arm64/kernel/syscall.c:54)
+[    6.448661] el0_svc_common.constprop.0
+(include/linux/thread_info.h:135 (discriminator 2)
+arch/arm64/kernel/syscall.c:140 (discriminator 2))
+[    6.448668] do_el0_svc (arch/arm64/kernel/syscall.c:152)
+[    6.448674] el0_svc (arch/arm64/include/asm/irqflags.h:82
+(discriminator 1) arch/arm64/include/asm/irqflags.h:123 (discriminator
+1) arch/arm64/include/asm/irqflags.h:136 (discriminator 1)
+arch/arm64/kernel/entry-common.c:165 (discriminator 1)
+arch/arm64/kernel/entry-common.c:178 (discriminator 1)
+arch/arm64/kernel/entry-common.c:768 (discriminator 1))
+[    6.448685] el0t_64_sync_handler (arch/arm64/kernel/entry-common.c:787)
+[    6.448694] el0t_64_sync (arch/arm64/kernel/entry.S:600)
+[ 6.448705] Code: a90157f3 aa0003f3 f90013f6 f9405c15 (f94002b6)
+All code
+========
+   0: a90157f3 stp x19, x21, [sp, #16]
+   4: aa0003f3 mov x19, x0
+   8: f90013f6 str x22, [sp, #32]
+   c: f9405c15 ldr x21, [x0, #184]
+  10:* f94002b6 ldr x22, [x21] <-- trapping instruction
+
+Code starting with the faulting instruction
+===========================================
+   0: f94002b6 ldr x22, [x21]
+[    6.448710] ---[ end trace 0000000000000000 ]---
+
+## Source
+* Kernel version: 6.16.0-rc2-next-20250620
+* Git tree: https://kernel.googlesource.com/pub/scm/linux/kernel/git/next/linux-next.git
+* Git sha: 2c923c845768a0f0e34b8161d70bc96525385782
+* Git describe: next-20250620
+* Project details:
+https://qa-reports.linaro.org/lkft/linux-next-master/build/next-20250620/
+* Architectures: arm64 Dragonboard 845c
+* Toolchains: gcc-13
+* Kconfigs: defconfig+lkfttestconfigs
+
+## Build arm64
+* Test log: https://qa-reports.linaro.org/api/testruns/28811906/log_file/
+* Test Lava log: https://lkft.validation.linaro.org/scheduler/job/8323501#L5646
+* Test Lava log 2:
+https://lkft.validation.linaro.org/scheduler/job/8323351#L5682
+* Test details:
+https://regressions.linaro.org/lkft/linux-next-master/next-20250620/boot/gcc-13-lkftconfig/
+* Build link: https://storage.tuxsuite.com/public/linaro/lkft/builds/2yj4otvwBRT4UktLTyKEN8ZtUQm/
+* Kernel config:
+https://storage.tuxsuite.com/public/linaro/lkft/builds/2yj4otvwBRT4UktLTyKEN8ZtUQm/config
+
+--
+Linaro LKFT
+https://lkft.linaro.org
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
