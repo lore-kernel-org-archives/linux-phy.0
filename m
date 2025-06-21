@@ -4,65 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB703C7115B
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Jun 2025 21:59:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 263ECC7115B
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Jun 2025 01:48:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cDixyutPsTteeF1g6A6zc07aZ/mJVb5jdpBvGg8s6wc=; b=uVH4jyGlUnVrqb
-	TXaC9thUcFp1j+Mh6DSmoBkQ9XbciK+S5RNJXjO1RVtHEMpErtaQd3iWuwJRcpzhkbgVfq4ppqaYL
-	HnhLIkzbn/CtNENf9yw5qOlJJ9dSSFyx2WXgy7xLTX6cBcyilObzUZXznRFLAogoQvOwY7GXkOrl+
-	ljbsJHc3y+EKCwWu9Wfzy3pKtCn4FqbESqRt9huCyKzgegFQn6R2xozihQlfwpiaPbT0Ms/9pEQQu
-	pFEv1Jk/2cPzKNo9iWZiW3V4qgFAO3IMNH2ink0erwjRapUUOB5NpzTfUZg1MuPpx48f+Ddtdsuqs
-	MqRV2F14ezU9IPDqxqeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wAhaNJdz3yXEV/QMx8b/dDSTpiCzMs9ldt9uYJuG+Nk=; b=ULWrdXZIMHQAPi
+	vcCyEPQEaKlPt0Xqh9lMeI6i2zs4XnCVlEHchGkw0OjOrCLrjYlMsmjyoRkNalzyBnET4IYmvXiu5
+	CS0lHpZDxDFlLKrX+zsu1CFKtfbEcwJ4Atm+3l9JrHV7quLgKvWBIJ/mVHBzlVAXO5TUzai3Ihsn5
+	Q9qfgjOLFFfVrIJSxG9TZnYRe3+juwrPFhB3k7IxyAmEkmf09RWkdu+H8IDpM0X1KNSVQU83xYkAI
+	6AvdQRg/OYKurP2+PaLeO4jmXuo9ERq67Y5mq42FwmLXtfgNC/E29XaDncCRtvYTIjLGmqXJ8fwmo
+	yf9EM9Legvc8v9rxxYSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSjlE-0000000Gfae-1iEL;
-	Fri, 20 Jun 2025 21:59:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uSjWw-0000000Gdo0-15la
-	for linux-phy@lists.infradead.org;
-	Fri, 20 Jun 2025 21:44:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB1C9169C;
-	Fri, 20 Jun 2025 14:43:53 -0700 (PDT)
-Received: from usa.arm.com (unknown [10.57.48.228])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C71483F673;
-	Fri, 20 Jun 2025 14:44:09 -0700 (PDT)
-From: Aishwarya <aishwarya.tcv@arm.com>
-To: quic_nitirawa@quicinc.com
-Cc: James.Bottomley@HansenPartnership.com,
-	aishwarya.tcv@arm.com,
-	andersson@kernel.org,
-	bvanassche@acm.org,
-	dmitry.baryshkov@oss.qualcomm.com,
-	kishon@kernel.org,
-	konrad.dybcio@oss.qualcomm.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	manivannan.sadhasivam@linaro.org,
-	martin.petersen@oracle.com,
-	neil.armstrong@linaro.org,
-	quic_cang@quicinc.com,
-	quic_rdwivedi@quicinc.com,
-	vkoul@kernel.org,
-	broonie@kernel.org
-Subject: Re: [PATCH V6 10/10] scsi: ufs: qcom : Refactor phy_power_on/off calls
-Date: Fri, 20 Jun 2025 22:44:08 +0100
-Message-Id: <20250620214408.11028-1-aishwarya.tcv@arm.com>
-X-Mailer: git-send-email 2.39.5 (Apple Git-154)
-In-Reply-To: <9c846734-9267-442d-bba0-578d993650c1@quicinc.com>
-References: <9c846734-9267-442d-bba0-578d993650c1@quicinc.com>
+	id 1uSnL1-0000000Gvru-20VC;
+	Sat, 21 Jun 2025 01:48:11 +0000
+Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uSnKx-0000000GvrE-3xiw;
+	Sat, 21 Jun 2025 01:48:09 +0000
+Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-234bfe37cccso31991155ad.0;
+        Fri, 20 Jun 2025 18:48:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750470487; x=1751075287; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NXz3exVEQXWDc3wTEzEXN840OGMK0hx/i3YSgfAvZ0s=;
+        b=NKyjYepAistIoUtC/cHcrZYxx2WrOQkOOyXQmjze0u38TAVBH02O9Qee9B+/Ip9F1X
+         fIVqdStMhCb8BVz3bb/QUJENiedykSa8aeE+9fOOtgB/f8P33id4ENTM0aqRGN/ave+t
+         k+YxZDTk6l/mdWIT2WnXox6nP4Y8tECmfZg2YTihsrQqyZwEiT0Zz6dA59GJKj3Vsqpj
+         z0AfCPkwHqIFCWbCnIGhHShVOpgAtNDGZOZCFSM25qw1ceXB0525OtMGLtb3cir+d7kZ
+         q5WfqVGo78tWq3OeBJW1cNkb9RfTHgdF3caNO1RitW8C5I74JFtmMx1dww6ybDydFWgy
+         lhZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750470487; x=1751075287;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NXz3exVEQXWDc3wTEzEXN840OGMK0hx/i3YSgfAvZ0s=;
+        b=cjIHc+mSjfE9iIjcspf8ULInodtwxEkEfI244yhGoqvCLWM/9dMwJxwetYhEhQ3JxB
+         aB/gUP50UXXVG7jiOkO0qyyYjGjNL00GDGQrAMxTG5f5bMPHMcDOAJ0t/Hg2spVI7dO8
+         Lb/tSn8isFFEKz5ugKnR+eWGonIeM07CUW0QtjSCg1YOgnwb4MuER0NW9NK8+sj7omHN
+         S7HGu1oZG09Wn8nUab94ocgRIVrGLg+i8NLzo1Hl1RhBOPi8mbVAO8pVOGlSPY7RakLU
+         /FQScSAP24MOoAG5rbALp6AlrpQEkQeoUDabNCFXFihdO2lWuu6ITQ1EIGLNy1JJliZR
+         P4jw==
+X-Forwarded-Encrypted: i=1; AJvYcCWIcgFR1YRQ48KJCl3MH2Rm7y5S19W3sTpy/ME7hXZok9XbNU/eN3Ep+SqrO0lqzxmVSTJWHus3wykM@lists.infradead.org, AJvYcCWs6ewGlfRPtwe/QfuWlt0NO+r2BUKv6/cf2YyNmjccEss5lTYN9iTUIFMf8MCwjRMpq0+3JVH3274q77zC/HMf@lists.infradead.org
+X-Gm-Message-State: AOJu0YxOt20m5OElWWGImLITZKP+6KLhm7y000+DcehtFHiiVQEBtVOJ
+	NKH11rag5+AhYyBvbbIRBpfxtmg+ck97IJ5Q1DPss9pYE9rsF5Bo9kGv0O7WWRhF
+X-Gm-Gg: ASbGncsxt4LXs1wmtsJ+42USsXrAX1ZjT+IIi0r2iCEq9tY6A2mphKT6kSZQsH01Yww
+	VHZmEenOEFfVlBjwuU6XcxJf0W6m09ZmLvAR8UPCHJq7eIiDDEl4FWTyVpRNjnSuHLnxlT63hLO
+	pJEUoWlsFb+XhM4jBuyaaOFAFnlTcln3kCyZt0By/iynzQLLBAGScwSi0hh0tSOnlZq1daXLja4
+	/unzyEtVeuNUEElcEJESp2wUkOkfeRHMeMUPMuP763USx5Hk17ZowN5AG+T4aQnrtscdwy127hH
+	7p3iZ0ZmW4FVOjpNj++nGFpHnNvGJKQRwKLJtlfqEieebd+9oQ==
+X-Google-Smtp-Source: AGHT+IFMj8zujnmQyUnnom6Sk4SjVcrZEQeYPoia8cwd9VCLwZSbqcg4mJosbw1axQAjm2sXPpgR7w==
+X-Received: by 2002:a17:903:32c5:b0:235:2799:61d with SMTP id d9443c01a7336-237d991f9b4mr79363855ad.33.1750470486935;
+        Fri, 20 Jun 2025 18:48:06 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:d1c8::dead:c001])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d8393893sm28573845ad.25.2025.06.20.18.48.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 20 Jun 2025 18:48:06 -0700 (PDT)
+Date: Fri, 20 Jun 2025 22:47:51 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: linux-rockchip@lists.infradead.org
+Cc: Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [RFC PATCH v6 0/4] PCI: rockchip: Improve driver quality
+Message-ID: <cover.1750470187.git.geraldogabriel@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250620_144414_341965_3A83A9FF 
-X-CRM114-Status: UNSURE (   3.72  )
+X-CRM114-CacheID: sfid-20250620_184807_989316_0D54E89F 
+X-CRM114-Status: UNSURE (   7.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,39 +97,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgTml0aW4sCgpUbyBjbGFyaWZ5IOKAlCB0aGUgZGVmY29uZmlnIGtlcm5lbCBkb2VzIGJvb3Qg
-c3VjY2Vzc2Z1bGx5IG9uIG91ciBBcm02NApRdWFsY29tbSBwbGF0Zm9ybXMgKFJCNSBhbmQgREI4
-NDVDKS4gSG93ZXZlciwgc3RhcnRpbmcgZnJvbQpuZXh0LTIwMjUwNjEzLCB3ZSBhcmUgc2VlaW5n
-IHRoZSBmb2xsb3dpbmcgdGhyZWUgdGVzdCBmYWlsdXJlcyBpbiB0aGUKYGJvb3RycmAgYmFzZWxp
-bmUgdGVzdCBpbiBvdXIgQ0kgZW52aXJvbm1lbnQ6CgogIC0gYmFzZWxpbmUuYm9vdHJyLnNjc2kt
-ZGlzay1kZXZpY2UwLXByb2JlZAogIC0gZG1lc2cuYWxlcnQKICAtIGRtZXNnLmVtZXJnCgpUZXN0
-IHN1aXRlOgogIGh0dHBzOi8vZ2l0aHViLmNvbS9rZXJuZWxjaS9ib290cnIvdHJlZS9tYWluCgpU
-aGVzZSBmYWlsdXJlcyBhcmUgZHVlIHRvIGtlcm5lbCBhbGVydHMgc2VlbiBpbiB0aGUgYm9vdCBs
-b2dzLiBBIHJlbGV2YW50CnNuaXBwZXQgaXMgc2hvd24gYmVsb3c6CgogIGtlcm4gIDphbGVydCA6
-IFVuYWJsZSB0byBoYW5kbGUga2VybmVsIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBhdAogIHZp
-cnR1YWwgYWRkcmVzcyAwMDAwMDAwMDAwMDAwMDAwCiAga2VybiAgOmFsZXJ0IDogTWVtIGFib3J0
-IGluZm86CiAga2VybiAgOmFsZXJ0IDogICBFU1IgPSAweDAwMDAwMDAwOTYwMDAwMDQKICBrZXJu
-ICA6YWxlcnQgOiAgIEVDID0gMHgyNTogREFCVCAoY3VycmVudCBFTCksIElMID0gMzIgYml0cwog
-IGtlcm4gIDphbGVydCA6ICAgU0VUID0gMCwgRm5WID0gMAogIGtlcm4gIDphbGVydCA6ICAgRUEg
-PSAwLCBTMVBUVyA9IDAKICBrZXJuICA6YWxlcnQgOiAgIEZTQyA9IDB4MDQ6IGxldmVsIDAgdHJh
-bnNsYXRpb24gZmF1bHQKICBrZXJuICA6YWxlcnQgOiBEYXRhIGFib3J0IGluZm86CiAga2VybiAg
-OmFsZXJ0IDogICBJU1YgPSAwLCBJU1MgPSAweDAwMDAwMDA0LCBJU1MyID0gMHgwMDAwMDAwMAog
-IGtlcm4gIDphbGVydCA6ICAgQ00gPSAwLCBXblIgPSAwLCBUbkQgPSAwLCBUYWdBY2Nlc3MgPSAw
-CiAga2VybiAgOmFsZXJ0IDogICBHQ1MgPSAwLCBPdmVybGF5ID0gMCwgRGlydHlCaXQgPSAwLCBY
-cyA9IDAKICBrZXJuICA6YWxlcnQgOiB1c2VyIHBndGFibGU6IDRrIHBhZ2VzLCA0OC1iaXQgVkFz
-LCBwZ2RwPTAwMDAwMDAxMDljNDEwMDAKICBrZXJuICA6YWxlcnQgOiBbMDAwMDAwMDAwMDAwMDAw
-MF0gcGdkPTAwMDAwMDAwMDAwMDAwMDAKICA8TEFWQV9TSUdOQUxfVEVTVENBU0UgVEVTVF9DQVNF
-X0lEPWFsZXJ0IFJFU1VMVD1mYWlsIFVOSVRTPWxpbmVzCiAgTUVBU1VSRU1FTlQ9MTM+CgogIGtl
-cm4gIDplbWVyZyA6IEludGVybmFsIGVycm9yOiBPb3BzOiAwMDAwMDAwMDk2MDAwMDA0IFsjMV0g
-U01QCiAga2VybiAgOmVtZXJnIDogQ29kZTogYTkwMTU3ZjMgYWEwMDAzZjMgZjkwMDEzZjYgZjk0
-MDVjMTUgKGY5NDAwMmI2KQogIDxMQVZBX1NJR05BTF9URVNUQ0FTRSBURVNUX0NBU0VfSUQ9ZW1l
-cmcgUkVTVUxUPWZhaWwgVU5JVFM9bGluZXMKICBNRUFTVVJFTUVOVD0yPgoKUGxlYXNlIGxldCBt
-ZSBrbm93IGlmIHlvdSBuZWVkIGZ1bGwgbG9ncyBvciBmdXJ0aGVyIGRldGFpbHMgdG8gaGVscAp3
-aXRoIGRlYnVnZ2luZy4KClRoYW5rcywKQWlzaHdhcnlhCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+During a 30-day debugging-run fighting quirky PCIe devices on RK3399
+some quality improvements began to take form and this is my attempt
+at upstreaming it. It will ensure maximum chance of retraining to Gen2
+5.0GT/s, on all four lanes and fix async strobe TEST_WRITE disablement.
+
+---
+V5 -> V6: reflow to 75 cols, use 5.0GTs instead of Gen2 nomenclature,
+clarify strobe write adjustment and remove PHY_CFG_RD_MASK
+V4 -> V5: fix build failure, reflow commit messages and also convert
+registers for EP operation, all suggested by Ilpo
+V3 -> V4: fix setting-up of TLS in Link Control and Status Register 2,
+also adjust commit titles
+V2 -> V3: correctly clean-up with standard PCIe defines as per Bjorn's
+suggestion
+V1 -> V2: use standard PCIe defines as suggested by Bjorn
+
+Geraldo Nascimento (4):
+  PCI: rockchip: Use standard PCIe defines
+  PCI: rockchip: Set Target Link Speed before retraining
+  phy: rockchip-pcie: Enable all four lanes if required
+  phy: rockchip-pcie: Properly disable TEST_WRITE strobe signal
+
+ drivers/pci/controller/pcie-rockchip-ep.c   |  4 +-
+ drivers/pci/controller/pcie-rockchip-host.c | 48 +++++++++++----------
+ drivers/pci/controller/pcie-rockchip.h      | 12 +-----
+ drivers/phy/rockchip/phy-rockchip-pcie.c    | 15 +++----
+ 4 files changed, 36 insertions(+), 43 deletions(-)
+
+-- 
+2.49.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
