@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 737E9C7115D
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Jun 2025 19:23:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE43FC7115D
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Jun 2025 19:24:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S70fLSU1iRhfBYOb/vuU4xmPPsaK6JYBlJdvvNLfRuk=; b=3apfmRbkpRQL2M
-	WcsQ2edJWJWqM8S2w1MAj0+nKbgsKxVdGA8KetykMf7AmFgTO8mSfG2Rb0p06hEv6vGyzNdRv0b4a
-	VhAidUzYbSCuQH9Sv0vN+NTdrqwa6zWfuZ3lGh9s8V/+OCvcrnMequTH1vrUhYcA+jjlnksu62onN
-	yEHPEG+MBzoQHlSaShMq81XA71yP6jv6mnMXZvwQUgYPkW8ZSsfPTS3smxvJrxCw/5owpx5dC82IS
-	LNWUQuNmxh0tf+xypGzjC5DhwyE/BBFjihNPN47CS2W76+7DObgUoyKx40NfIyjAfFvorDeRai7E2
-	IzlhmHmc7SDkGBOEbDgg==;
+	List-Owner; bh=hz3ObM3BUKDFwZn9J5FiyYDYQUJvM3aE6Lat5k6h5EQ=; b=PcvvTtOB8X+dx2
+	GUC+Rv+dQszbH5Eu3EwbePKxm/r7XS8hzA540huoTiXyMn26P6scVi2cjIfFVf7djV0ZXODJ6lVbX
+	FrftW74euZ8eLByBL2MX9EZxmELQ9IG7VrugmYBgL3yRxn09OqKNwnP5VVUciGX12aNWt6FfRjeG1
+	CQBh5MEgA2MrNAON/5OVrx8NFcufWzFeEfTzby4IrTCQ9e8k6JJgwsPoC/geYShu6wfZTiZsTKwfS
+	dJBNfdU2pNyrveUsZf8+UHa5FNxhMpuL6LoMbY6bYVqgVlvuZc3KwXEunQPTeEo9N6Rm3uasYfDQ5
+	OEdSih5IEr4TXrCPnQ2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTQI6-000000018Hn-0TOf;
-	Sun, 22 Jun 2025 19:23:46 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1uTQId-000000018LM-1jMU;
+	Sun, 22 Jun 2025 19:24:19 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTQI3-000000018HR-2g0f
+	id 1uTQIb-000000018Kn-2uYx
 	for linux-phy@lists.infradead.org;
-	Sun, 22 Jun 2025 19:23:44 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-adb2bd27c7bso524599666b.2
-        for <linux-phy@lists.infradead.org>; Sun, 22 Jun 2025 12:23:42 -0700 (PDT)
+	Sun, 22 Jun 2025 19:24:18 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-60768f080d8so6184511a12.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Jun 2025 12:24:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750620221; x=1751225021; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1750620256; x=1751225056; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=Br5VyEEaKP/ktAugIXCOxiXHE4k+9++aboaKBknJU3g=;
-        b=hUQ9En/aQjvSAM+dN1Vz63cS6YAEPxNWrdQuygYnHy9g5uGhJxDvvBxEtOMirI1HfH
-         xCiS3263tRUCRaxZyBv+7VQtb5EYsLWJ89KigSCknWeNHh1c2BlOrlInn6qk7/wtaSEa
-         aycQ3vLLYf+We4dxBExznUyYzlACb9Jlb0DrSMqWVJDRVEsHNG/+op8cn6HDWMFNv/ah
-         6rknasVbpaift1SZgRGXhHmHVcLmjj5LJbGuiH/sv29qUoR+rOWP9Ljf7Ihd450KfPnb
-         lujkhrmPeLGKzE5j1ydBe475KthluBd0WsUmGuQt8DOQCyXNNrGGw2uf+CeUd05s4qid
-         IjDg==
+        bh=IbjF/h91o8sYLkOV/LaCb7h1OWB7p+JRyaYdcedZZEg=;
+        b=tFn7GSW2kflkK0N263ow/vu/5yyEtiUTlC02SaK0orFX0V1LSiove6OZb40b3pnrUv
+         TnFQxeIqAXiymAyUt4qL4TTyRm6MNvPfVEFelKrPUhisWdsafRrw76JxZUAqJtNDgqIu
+         9xmkIYgNwr8OBJw/2ra637HBUX3bhUWlL16HkxkcjVClqfPR5jc9RiHyoxNs934ima+M
+         ZWReMQO/7cUCDEWh2KzQ908nhgP6Wc2Ed7RsJPSVo+Ebg6+aa2zuhsqkDh/vlq6m/HF5
+         W2vzM5Aa7Vkrnx40QVofi2sC+L9qbBc2ggzMNfCvR9544bPTuKoNdnkjs8N4mNqz09Qi
+         J7Vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750620221; x=1751225021;
+        d=1e100.net; s=20230601; t=1750620256; x=1751225056;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Br5VyEEaKP/ktAugIXCOxiXHE4k+9++aboaKBknJU3g=;
-        b=Ke53yyfvbxgM+ScD3uWFXH/oHOTHcUpL96nI1KxCJTQGLMIhX7V1mgfbIAMHP4+OsT
-         fR5JbC4mKDDJBBVbAyioQNPzNKGoHPH0t8INlUM6vPrM8JGpZmKgOecIU4B5iXluub3d
-         1Y27gPcskx1j96iJ0GUkUNkBFOlhUjGQw4nqE/0YDk/UgjeV1oISwMjQtj5R6enuDq1A
-         D6WOhvipE+n4HbTQ4RkFbIBKEqtYAO0DuLAUBxubzDV+L9/jSNxcSeF/uvWrLK0oevaZ
-         G5LCVcqXkNeZxjSdxv4UTJSCaYum6pJ2nuyah524JLx8txBSJp/EW5oQ7Qtj+Yl7fJwy
-         U9Wg==
-X-Forwarded-Encrypted: i=1; AJvYcCUwsHQ4BuDpRnrs2t/nNS5ErnDuIdlxZikbiOsTQ4pCxu7h3Nu4NEUB2kRO9WhgoY2ldCjotnsuFe0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyAtXIMk0IsmQwq8/4Wtz/KhfgjII886RvB+HuylWjN9u6h70OZ
-	5BmgIOkeJPGfg2Au5GEBJZycGGCUNtd3uMfd+rNLIjBx1vnACIhh0MjrvB7nCI7pcH0=
-X-Gm-Gg: ASbGncsqxXqqQGWwMRJP5chgncnopucOQMaoTenSPgG8XuK0yCig83SEQbcFColTkmn
-	aZIPVRO3G+QN1RgXXlpZOHKwy2dgZW6Xw6Olikty9y07+/Zq7BNIcPaLwhYYvCOxMw//VrL2STU
-	EocFBkvCfr0r3548YQM+zmki9C/xnv2hOmPUHzRenJQ/xYd08UzeTyq6CdqASukDnT0vAqkXrQN
-	KbghgqP+FE8NWvD1rWMSiMLEo+1ptTRGGFqRh86v/22ztSk5UIq16Qea+fuqCas4pgLMuCuozCN
-	AL+jOjS9JmhZtZ2MVkkRjA3weQ2YN5l87Y2qHJbHQbE50sx5AIQcfNyNjQQ=
-X-Google-Smtp-Source: AGHT+IE/CAE8fTyyaZhNwnHqQ6DluWGob1BPPepxXx61Kxfg9bpG3qc3aCqfgSMh1y8Qa1MPv/AJwg==
-X-Received: by 2002:a17:907:3f1a:b0:ad8:8717:bf9c with SMTP id a640c23a62f3a-ae057ef753fmr1060205766b.32.1750620221305;
-        Sun, 22 Jun 2025 12:23:41 -0700 (PDT)
+        bh=IbjF/h91o8sYLkOV/LaCb7h1OWB7p+JRyaYdcedZZEg=;
+        b=sY3NB7Jp30WIHLO1dTom89bcycYkhDkSJWJBfYSnnEEMuH0Fz88Q9pFCNafP4y0aKZ
+         lDGUpNGBIwcXzveU5LiYvkTyEWGA9bqCp5I4SqLOSEagQGtdfd7pzm79FffvPqcCiQB8
+         TMODD8T8K+aTdlt5u+i7yUDiQcj6tPXxxlRN4gi/1NRoC5TiGoVc+m7z3QUvtGRws4pg
+         yOuYMeCATy6xktNaRJJf/YKFM9JdXUv7/AEK0zHv64IUj4/e2VcxZ7C7jpowWgFh/LhN
+         17OmIbFVILyv/wapCJaPoamgcWlaaJKIqPymHO+Y5W5NRBEPqtiljtRSUOC9hrgDJoJ4
+         QJAg==
+X-Forwarded-Encrypted: i=1; AJvYcCXKT8uWEl5EPT0seLfcp7pYzKrQEH+jTvNeHRGOH5PJQAxQUi/2srDO+h8Mm52JgYgKiIuIHH/yKKc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxEiGeD0EGhWVvklsQ9Yec2wO003P6aORN4ghVt+UwdT9C4L1uw
+	Bhkhx/lxxtdGNRuRqjvYPtcIjGmYudWth+fyCmCC2djMRY1rNhX0k+mKkpoy7y1hZpg=
+X-Gm-Gg: ASbGncvcVQ5Ar7oCwtX3uorS/5J/Z04Y6lWakaCU00qVZO60CD3P2AHgo+28ymhWbZv
+	wolUMVb3H3yczXYYXJK3NNzXDd88k3fJL1rfKXaLb8LtUJmnPuYRsvR4ksjq2dZQccuU5sadXNS
+	9oH9jQKpkv0jrI8ig91G5eSt9Ycf2EKFCIKDDKPS2BX0Nw1DADuvU+8fMwRCnO8UfQ3Q/qGB6E1
+	F+F8NMczDP3+udr0ZDullVaOJl5yxO+22540FkZTWAw+UzuKLnQgZM/tTZ9EuY6E7PIbZ8JEeOo
+	ycGvRFoTR06bW6U5AYnZfhvd8ijhm2uMDiBmflR38QAm83kh+dBXnhj9BnA=
+X-Google-Smtp-Source: AGHT+IHnoYTbMPh1mNJsjdl28NGezTFEyAyfF+x9j3rQX5TVC51X/4ITVYOLyUMfiFovN1yLap6AKQ==
+X-Received: by 2002:a17:906:9f8a:b0:adb:43d0:aedb with SMTP id a640c23a62f3a-ae057fa74c6mr937853066b.61.1750620256156;
+        Sun, 22 Jun 2025 12:24:16 -0700 (PDT)
 Received: from linaro.org ([82.79.186.23])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae054209a2dsm587665566b.174.2025.06.22.12.23.38
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae053e8218bsm577845166b.4.2025.06.22.12.24.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Jun 2025 12:23:39 -0700 (PDT)
-Date: Sun, 22 Jun 2025 22:23:36 +0300
+        Sun, 22 Jun 2025 12:24:15 -0700 (PDT)
+Date: Sun, 22 Jun 2025 22:24:13 +0300
 From: Abel Vesa <abel.vesa@linaro.org>
 To: Nitin Rawat <quic_nitirawa@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
@@ -77,17 +77,17 @@ Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
 	quic_rdwivedi@quicinc.com, quic_cang@quicinc.com,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org
-Subject: Re: [PATCH V6 01/10] scsi: ufs: qcom: Prevent calling phy_exit
- before phy_init
-Message-ID: <aFhYOMPdCiCL2EV7@linaro.org>
+Subject: Re: [PATCH V6 02/10] scsi: ufs: qcom: add a new phy calibrate API
+ call
+Message-ID: <aFhYXfBMRMluXgdv@linaro.org>
 References: <20250526153821.7918-1-quic_nitirawa@quicinc.com>
- <20250526153821.7918-2-quic_nitirawa@quicinc.com>
+ <20250526153821.7918-3-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250526153821.7918-2-quic_nitirawa@quicinc.com>
+In-Reply-To: <20250526153821.7918-3-quic_nitirawa@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250622_122343_702294_926F6D97 
-X-CRM114-Status: UNSURE (   6.01  )
+X-CRM114-CacheID: sfid-20250622_122417_731801_298D4AA4 
+X-CRM114-Status: UNSURE (   6.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,15 +105,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-05-26 21:08:12, Nitin Rawat wrote:
-> Prevent calling phy_exit before phy_init to avoid abnormal power
-> count and the following warning during boot up.
+On 25-05-26 21:08:13, Nitin Rawat wrote:
+> Introduce a new phy calibrate API call in the UFS Qualcomm driver to
+> separate phy calibration from phy power-on. This change is a precursor
+> to the successive commits in this series, which requires these two
+> operations to be distinct.
 > 
-> [5.146763] phy phy-1d80000.phy.0: phy_power_on was called before phy_init
-> 
-> Fixes: 7bac65687510 ("scsi: ufs: qcom: Power off the PHY if it was already powered on in ufs_qcom_power_up_sequence()")
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
 Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
 
