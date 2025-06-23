@@ -4,66 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD6C1C77B7C
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jun 2025 15:26:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9D88C7EE2A
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jun 2025 19:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z/W6pcMif0+BXf3wfdUEdNHuHCQ8ghpJDxrGQ7MDVLA=; b=ZUz+VVutvqHDWB
-	LzCP/rEoFniap55EUggp7BiU5Lv4OlUuTKfcmnwGWaouN2xXe85MR+4LcBWJbEfzcQ9jd92Om31RL
-	Dbe5EZRlG0tjRHoeV1BVPphBjS6wMzAZbRUH8NFRXCbThlWmInvhD2zOvm0jJT6EPbvLF4XgovX2J
-	0Ot3/FnwBYKcAHLXs07I7y09+gEORPMtzN46viVxAC0CRaH0khTQ5FBPl345YSI/ALR9Qtr8opjjF
-	wGi1CUEjDUKnzKnydMHLSeSzI6owvFzLOyyWNrDjkyBRVGNU4OcsdSZ4adUrSntpySJUU/5syX06n
-	RRIOlyo++ZCGsZ99R1Cg==;
+	List-Owner; bh=dr6SEi8edC4fmBboLtI6SIEzVggwDnYkQvel2cfppt8=; b=FzvOaeDIfGX+I9
+	/IVwe7fkS5wsBaN3Kn9jILJOqlVZ3D5PgVfPFjPC2TGCXWEzBG+SZPv/NOR3sYDfrpxISscdeL2Xa
+	4hCl5N1POeAOqk+ScK45mcsqd3UxjaTFJsjalwjPX6A7jbfAQ/TxtIf6/Xe67lGt+cT5m+y/DfRqP
+	7dmOkkmHfa43yQFsvaqwFO6o56aZxmleve0LkQzM18O+oNQiMoLGGxbeUsyEpT5jxKDPCYfHFvTXt
+	ycK7J/A8vv0UwHYNu/t2iU3cJNdwycwwotznHY2AceYDV00OU/doaKJDeK9iKghqQ4aAFUOHM015D
+	fVgYvU35oPKz2KdyNMpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTj44-00000003E3l-1tBw;
-	Mon, 23 Jun 2025 15:26:32 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1uTn3i-00000003pgd-1pIH;
+	Mon, 23 Jun 2025 19:42:26 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTftR-00000002bVJ-1qoW;
-	Mon, 23 Jun 2025 12:03:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1750680200;
-	bh=Kep1UgV29OPQ4w66WpWqd9vnrdD0pGwhoXX2kcCncG8=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=BUzmfupdU6G5IRchHGNXcuAebw5hxhpDacHOT/DWgyEzLViO9xtUWxUcQ+gP9b8uF
-	 ndeIDVomCTwt6eJ+5DcV/s10pqt3z38Hy4XUGciZ7PVOps0f3jazLLIwHIenfzt2r/
-	 rtBLwhk2HcASt+uzC36u8Iii2WbuCPFfehLLp32R5HDZgZHleS0E6cF1iiCpdTHil1
-	 eH5qfPRptEesQLj7FLzqou88V6ruGw4bXvT8ld4uNnSg0MqVjQ68ZctKMRtLaTDmsV
-	 12svNUv9f9nuWa40CUPMRd/dKLDIYuwDuTrPNmdj4w+taFBIMo+X6Bxptg5PEbaU0h
-	 6hHD95Wu/jwnw==
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9107417E10D5;
-	Mon, 23 Jun 2025 14:03:19 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: chunfeng.yun@mediatek.com
-Cc: vkoul@kernel.org,
-	kishon@kernel.org,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@collabora.com
-Subject: [PATCH v1 2/2] phy: mediatek: tphy: Cleanup and document slew calibration
-Date: Mon, 23 Jun 2025 14:03:15 +0200
-Message-ID: <20250623120315.109881-3-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250623120315.109881-1-angelogioacchino.delregno@collabora.com>
-References: <20250623120315.109881-1-angelogioacchino.delregno@collabora.com>
+	id 1uTjh6-00000003Ljt-49np;
+	Mon, 23 Jun 2025 16:06:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1750694764; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=UVao7uPKb2Ut1L2cDmAKFM6EvbHFJRJRhzjSiR3OU7fc8TAq2vkP//x2lQ85ZKZBnrA5ZVgLn0N3WshR5q/SArOMQGYWDUh+5uE+KqBTfH47mg4GP792rXUg54EEPruBFGpfYaJtIVmWKsnRj2HVLVTg3QXutP9eReD31SSLnCw=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1750694764; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=iE9yh19l2ifejmMUwyg2PaFSbh+ZLdHsr2HyVG2JpXE=; 
+	b=KLSor59+fk9LAZCaS55LP3NyjRaHTxa/zZqVL8VBobubkrK3iPBj+8+i37q6pajVRKlhi3lxhM1Is3yWSOO/ZS4q9s69QbpU+PqcDL+6vZjdfvgD60O/8oi73A08mIUV4s/Mep7meA3flPLRRZOgnOcOdmH3/ClxT+jsoZisD4A=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750694764;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=iE9yh19l2ifejmMUwyg2PaFSbh+ZLdHsr2HyVG2JpXE=;
+	b=hJ5Aj3uplpiKDx8h+ipBhfmJ8l1L4DLklGLaMyLb/OlN2IOCKfQ8V2EB2YYC1xmx
+	RHZkF2ydgekMX00dHgsDxXb7edfllVicyUHvbDYeR0hHsX+RzanXWqULQArOhAGqzNf
+	7Oo23uvk7asskBGSDtkVzpYxYSbtt7c2S/JbgwPE=
+Received: by mx.zohomail.com with SMTPS id 1750694762676661.9667739946736;
+	Mon, 23 Jun 2025 09:06:02 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Mon, 23 Jun 2025 18:05:29 +0200
+Subject: [PATCH v2 01/20] bitmap: introduce hardware-specific bitfield
+ operations
 MIME-Version: 1.0
+Message-Id: <20250623-byeword-update-v2-1-cf1fc08a2e1f@collabora.com>
+References: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
+In-Reply-To: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
+To: Yury Norov <yury.norov@gmail.com>, 
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Shreeya Patel <shreeya.patel@collabora.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250623_050321_629277_934D6198 
-X-CRM114-Status: GOOD (  19.00  )
+X-CRM114-CacheID: sfid-20250623_090653_059581_FAB79C77 
+X-CRM114-Status: GOOD (  20.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,142 +112,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While it's true that, generally, the T-PHY V3 does not support the
-slew calibration process, some minor versions of it actually do,
-moreover, some SoCs may not support this even though the version
-of the PHY IP does.
+Hardware of various vendors, but very notably Rockchip, often uses
+32-bit registers where the upper 16-bit half of the register is a
+write-enable mask for the lower half.
 
-The reference clock and rate coefficient parameters are used only
-for slew calibration: move those to platform data, then document
-and change the checks in hs_slew_rate_calibrate() to perform the
-calibration only if:
- - EYE value was not supplied (pre-calculated calibration); and
- - Slew reference clock value is present (not zero); and
- - Slew coefficient is present (not zero).
+This type of hardware setup allows for more granular concurrent register
+write access.
 
-Moreover, change the probe function to always check if both the
-slew reference clock and coefficient properties are present and,
-if not, assign the value from platform data (which, as reminder,
-if not added means that it's zero!), instead of checking the PHY
-IP version.
+Over the years, many drivers have hand-rolled their own version of this
+macro, usually without any checks, often called something like
+HIWORD_UPDATE or FIELD_PREP_HIWORD, commonly with slightly different
+semantics between them.
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Clearly there is a demand for such a macro, and thus the demand should
+be satisfied in a common header file. As this is a convention that spans
+across multiple vendors, and similar conventions may also have
+cross-vendor adoption, it's best if it lives in a vendor-agnostic header
+file that can be expanded over time.
+
+Add hw_bitfield.h with two macros: FIELD_PREP_WM16, and
+FIELD_PREP_WM16_CONST. The latter is a version that can be used in
+initializers, like FIELD_PREP_CONST.
+
+Suggested-by: Yury Norov [NVIDIA] <yury.norov@gmail.com>
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/phy/mediatek/phy-mtk-tphy.c | 45 +++++++++++++++++------------
- 1 file changed, 27 insertions(+), 18 deletions(-)
+ MAINTAINERS                 |  1 +
+ include/linux/hw_bitfield.h | 62 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 63 insertions(+)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index 858824b4476e..e5ce1255d735 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -210,8 +210,6 @@
- #define P2F_USB_FM_VALID	BIT(0)
- #define P2F_RG_FRCK_EN		BIT(8)
- 
--#define U3P_REF_CLK		26	/* MHZ */
--#define U3P_SLEW_RATE_COEF	28
- #define U3P_SR_COEF_DIVISOR	1000
- #define U3P_FM_DET_CYCLE_CNT	1024
- 
-@@ -285,12 +283,16 @@ enum mtk_phy_version {
-  * @sw_efuse_supported:       Switches off eFuse auto-load from PHY and applies values
-  *                            read from different nvmem (usually different eFuse array)
-  *                            that is pointed at in the device tree node for this PHY
-+ * @slew_ref_clk_mhz:         Default reference clock (in MHz) for slew rate calibration
-+ * @slew_rate_coefficient:    Coefficient for slew rate calibration
-  * @version:                  PHY IP Version
-  */
- struct mtk_phy_pdata {
- 	bool avoid_rx_sen_degradation;
- 	bool sw_pll_48m_to_26m;
- 	bool sw_efuse_supported;
-+	u8 slew_ref_clock_mhz;
-+	u8 slew_rate_coefficient;
- 	enum mtk_phy_version version;
- };
- 
-@@ -686,12 +688,14 @@ static void hs_slew_rate_calibrate(struct mtk_tphy *tphy,
- 	int fm_out;
- 	u32 tmp;
- 
--	/* HW V3 doesn't support slew rate cal anymore */
--	if (tphy->pdata->version == MTK_PHY_V3)
--		return;
--
--	/* use force value */
--	if (instance->eye_src)
-+	/*
-+	 * If a fixed HS slew rate (EYE) value was supplied, don't run the
-+	 * calibration sequence and prefer using that value instead; also,
-+	 * if there is no reference clock for slew calibration or there is
-+	 * no slew coefficient, this means that the slew rate calibration
-+	 * sequence is not supported.
-+	 */
-+	if (instance->eye_src || !tphy->src_ref_clk || !tphy->src_coef)
- 		return;
- 
- 	/* enable USB ring oscillator */
-@@ -1516,12 +1520,16 @@ static const struct phy_ops mtk_tphy_ops = {
- 
- static const struct mtk_phy_pdata tphy_v1_pdata = {
- 	.avoid_rx_sen_degradation = false,
-+	.slew_ref_clock_mhz = 26,
-+	.slew_rate_coefficient = 28,
- 	.version = MTK_PHY_V1,
- };
- 
- static const struct mtk_phy_pdata tphy_v2_pdata = {
- 	.avoid_rx_sen_degradation = false,
- 	.sw_efuse_supported = true,
-+	.slew_ref_clock_mhz = 26,
-+	.slew_rate_coefficient = 28,
- 	.version = MTK_PHY_V2,
- };
- 
-@@ -1532,6 +1540,8 @@ static const struct mtk_phy_pdata tphy_v3_pdata = {
- 
- static const struct mtk_phy_pdata mt8173_pdata = {
- 	.avoid_rx_sen_degradation = true,
-+	.slew_ref_clock_mhz = 26,
-+	.slew_rate_coefficient = 28,
- 	.version = MTK_PHY_V1,
- };
- 
-@@ -1561,7 +1571,7 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 	struct resource *sif_res;
- 	struct mtk_tphy *tphy;
- 	struct resource res;
--	int port;
-+	int port, ret;
- 
- 	tphy = devm_kzalloc(dev, sizeof(*tphy), GFP_KERNEL);
- 	if (!tphy)
-@@ -1591,15 +1601,14 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 		}
- 	}
- 
--	if (tphy->pdata->version < MTK_PHY_V3) {
--		tphy->src_ref_clk = U3P_REF_CLK;
--		tphy->src_coef = U3P_SLEW_RATE_COEF;
--		/* update parameters of slew rate calibrate if exist */
--		device_property_read_u32(dev, "mediatek,src-ref-clk-mhz",
--					 &tphy->src_ref_clk);
--		device_property_read_u32(dev, "mediatek,src-coef",
--					 &tphy->src_coef);
--	}
-+	/* Optional properties for slew calibration variation */
-+	ret = device_property_read_u32(dev, "mediatek,src-ref-clk-mhz", &tphy->src_ref_clk);
-+	if (ret)
-+		tphy->src_ref_clk = tphy->pdata->slew_ref_clock_mhz;
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 41f13ccef4c84dcb1762c166553a2dc35704f211..8d2cf600d5cd722b5b08e81b6b24338fdc044240 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -4187,6 +4187,7 @@ F:	include/linux/bits.h
+ F:	include/linux/cpumask.h
+ F:	include/linux/cpumask_types.h
+ F:	include/linux/find.h
++F:	include/linux/hw_bitfield.h
+ F:	include/linux/nodemask.h
+ F:	include/linux/nodemask_types.h
+ F:	include/vdso/bits.h
+diff --git a/include/linux/hw_bitfield.h b/include/linux/hw_bitfield.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..df202e167ce487122e4440962eacb2e44817ad9f
+--- /dev/null
++++ b/include/linux/hw_bitfield.h
+@@ -0,0 +1,62 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++/*
++ * Copyright (C) 2025, Collabora Ltd.
++ */
 +
-+	ret = device_property_read_u32(dev, "mediatek,src-coef", &tphy->src_coef);
-+	if (ret)
-+		tphy->src_coef = tphy->pdata->slew_rate_coefficient;
- 
- 	port = 0;
- 	for_each_child_of_node_scoped(np, child_np) {
++#ifndef _LINUX_HW_BITFIELD_H
++#define _LINUX_HW_BITFIELD_H
++
++#include <linux/bitfield.h>
++#include <linux/build_bug.h>
++#include <linux/limits.h>
++
++/**
++ * FIELD_PREP_WM16() - prepare a bitfield element with a mask in the upper half
++ * @_mask: shifted mask defining the field's length and position
++ * @_val:  value to put in the field
++ *
++ * FIELD_PREP_WM16() masks and shifts up the value, as well as bitwise ORs the
++ * result with the mask shifted up by 16.
++ *
++ * This is useful for a common design of hardware registers where the upper
++ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
++ * register, a bit in the lower half is only updated if the corresponding bit
++ * in the upper half is high.
++ */
++#define FIELD_PREP_WM16(_mask, _val)					     \
++	({								     \
++		typeof(_val) __val = _val;				     \
++		typeof(_mask) __mask = _mask;				     \
++		__BF_FIELD_CHECK(__mask, ((u16)0U), __val,		     \
++				 "HWORD_UPDATE: ");			     \
++		(((typeof(__mask))(__val) << __bf_shf(__mask)) & (__mask)) | \
++		((__mask) << 16);					     \
++	})
++
++/**
++ * FIELD_PREP_WM16_CONST() - prepare a constant bitfield element with a mask in
++ *                           the upper half
++ * @_mask: shifted mask defining the field's length and position
++ * @_val:  value to put in the field
++ *
++ * FIELD_PREP_WM16_CONST() masks and shifts up the value, as well as bitwise ORs
++ * the result with the mask shifted up by 16.
++ *
++ * This is useful for a common design of hardware registers where the upper
++ * 16-bit half of a 32-bit register is used as a write-enable mask. In such a
++ * register, a bit in the lower half is only updated if the corresponding bit
++ * in the upper half is high.
++ *
++ * Unlike FIELD_PREP_WM16(), this is a constant expression and can therefore
++ * be used in initializers. Error checking is less comfortable for this
++ * version.
++ */
++#define FIELD_PREP_WM16_CONST(_mask, _val)				 \
++	(								 \
++		FIELD_PREP_CONST(_mask, _val) |				 \
++		(BUILD_BUG_ON_ZERO(const_true((u64)(_mask) > U16_MAX)) + \
++		 ((_mask) << 16))					 \
++	)
++
++
++#endif /* _LINUX_HW_BITFIELD_H */
+
 -- 
-2.49.0
+2.50.0
 
 
 -- 
