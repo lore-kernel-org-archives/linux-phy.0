@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 566EAC83000
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jun 2025 19:42:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B73AC7115B
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Jun 2025 19:44:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jnqPf57EkNkDKiXq0orEU2lzqlilVlr9PRhtzqF1Y88=; b=efEHSolpICa5N6
-	jnrM3WCOPgcr/uwhVnJyZSmwqjJPx3wJnm3Nuw3QAVeGfG7OvaEb47FT321o/WCbNOp8QeO4usEaz
-	wRoD36kbCqqElhUZKA2mKIpKP6VwyL332Doaep5tgCHMmkzgu5oQyTWnWmfMH/WHo6t1tQxn7Teyg
-	HdzyBP7VCy//DIBOoBU9rXq96W8POXHOWGJPwGpW5M8rjBN2rYYev1k+w5Fc9YO6udQQw/iIG49Bc
-	85CyGvmHEktxZkcZH05yW/ONLwmaxAW7JoA/MwTN98VPC6kczsQTB6YjlhmrSmYFSO407U9lGlJjX
-	uAAAUHSIYWFM3NZ62DhQ==;
+	List-Owner; bh=ViafJZ3qNlbRPCXnektH1gO0E3P8uxbT8klyHRMfIQo=; b=s1S8E6ZHt+WQbM
+	N9m04S/UEq7xHR6yOlq/QFDIpEQKXDvRyBPzLJaAZGxyHc96mcUR2iVqj5nU1Y4jeLtI+2P+TTL5/
+	y3RzVCk8GwCjINkBukdm8BGbxKJH3Cikq1/aefCf7YxK1o8yUvCbe8Q0GuYmnyScxu1N2fQlpUXMn
+	nE81cUH/eF4aEjKQCgLV3KWVgSnw6MIFwlEsSuZxGr0Q0XtJbdOe+0kUCQPZB5+mnZIsoQRlVlKLv
+	J8E7rJhJ/pzUcLa7NxaJAguNxEHyDKovWwAAmo8mfLc6gvbsN8b2n5xcpQR97yXS1OfJIWMbvfNIt
+	XLssmXo/VwvYG9RNI8qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTn3o-00000003psU-2lcm;
-	Mon, 23 Jun 2025 19:42:32 +0000
+	id 1uTn5h-00000003rRn-1dL5;
+	Mon, 23 Jun 2025 19:44:29 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTjhq-00000003Lv9-0Cve;
-	Mon, 23 Jun 2025 16:07:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1750694816; cv=none; 
+	id 1uTji8-00000003M51-14C7;
+	Mon, 23 Jun 2025 16:07:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1750694830; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=nLrO5oQeF65RNK+YOmn5Pt8mfbVivHcu5CLMl7sUgLMKyzGEZyY0JpYE68XdGcVRZyBZGq6c+0HWCvPfHmSvBMou4BR+xhw4GZ3ylk662LQWxIU4pXT4xjg6dGYEhiXqwS3AVEN56jfETB/z8BBVBZ3lgtrxkTHhWIi32LzYgGk=
+	b=loJS8W16Z02Cu6fnl3R0RD/dzALHZA4dxEuncXhZBhvJq+Jx+BmHws/0REPfKX6GvS4LKDBm7U9SJeuncg1yecSHB6bUmPwvLcTlHfgJ7WQOBNKrVSQmnOy9rDdeK7bU9w7jemn1HmKbQQ7D38Iqsg5zagMhdRK25qio1G5lbaA=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1750694816; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Qhjp8jVplNYCiKKq7znetwOB1awnMxI4TCcb8mGA9aY=; 
-	b=YxsSBvVVgc0SDA/3g+v8slJEZcUJZnN81NO81dHnfuwox7gDklhSeoHUn172Tj70RyHkAATsEa0t2lB5YDzyjP69ul676NoTpJOKjR8GppfpJJADbebGhOZ/3e93XNL0jd53nELp3u1aMMDVwToDd6ELyP3LBG/MmtyKxdBNh28=
+	t=1750694830; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=w4UQ2aQQRHizQgGHJB0otQTEkx720VSWFSPI0QYEkHo=; 
+	b=KMgkETM5XpmyKyeC+bjMzixubiqqS3C4M2/RFA7n9o/7X1aCHBqjGYraQIEW3poim8VAG+87A3sTTq0UMbMKGJ8xjFfq0N1cGev4yBvpiQ67nqKlTj/dpQ6FpUSD8lcey7gFreEyCbDplRq0Gz49mlyOypgocHUxw+lTdppw0l0=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750694816;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750694830;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=Qhjp8jVplNYCiKKq7znetwOB1awnMxI4TCcb8mGA9aY=;
-	b=Bkdfab8Lxq8HYeWCEuafXa3iN7d7R2E/BxpJGUPGYSUT/9KP0Ex4Xks4tIpn5G2M
-	/IZS0hHtOiYVrcbb7csqzZn7KtMmVuqKh6mPOrPjmucYhaIpXzFgCf2gCX42I5vdJss
-	DwRGEflJQKvRYrxAwGdYNFx/U83jgFjGswXihCDg=
-Received: by mx.zohomail.com with SMTPS id 1750694815522294.98488541831125;
-	Mon, 23 Jun 2025 09:06:55 -0700 (PDT)
+	bh=w4UQ2aQQRHizQgGHJB0otQTEkx720VSWFSPI0QYEkHo=;
+	b=T/FuRxcxjlZFOyVf/dMNjf1pk3VdNoieHWVKfSh/vHXALTivmf7DAokMhbIo6Qew
+	xmPVO3Z9Gah27lnlBQENxc0HMiMOaLxBjsFxcnMgC3mdSQALF6e/+JHKRCXi9BbWDxn
+	4tVNFdjpbA3BQj9d37nR7MgJb72RbTL23VKUgDyU=
+Received: by mx.zohomail.com with SMTPS id 1750694828635697.2662783904857;
+	Mon, 23 Jun 2025 09:07:08 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 23 Jun 2025 18:05:33 +0200
-Subject: [PATCH v2 05/20] drm/rockchip: lvds: switch to FIELD_PREP_WM16
+Date: Mon, 23 Jun 2025 18:05:34 +0200
+Subject: [PATCH v2 06/20] phy: rockchip-emmc: switch to FIELD_PREP_WM16
  macro
 MIME-Version: 1.0
-Message-Id: <20250623-byeword-update-v2-5-cf1fc08a2e1f@collabora.com>
+Message-Id: <20250623-byeword-update-v2-6-cf1fc08a2e1f@collabora.com>
 References: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
 In-Reply-To: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -94,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250623_090738_146548_8B1466D2 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20250623_090756_361411_E5204ED5 
+X-CRM114-Status: GOOD (  13.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,60 +115,36 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
 drivers that use constant masks.
 
-Remove rockchip_lvds.h's own HIWORD_UPDATE macro, and replace all
-instances of it with hw_bitfield.h's FIELD_PREP_WM16 macro, which gives
-us more error checking.
-
-For the slightly-less-trivial case of the 2-bit width instance, the
-results were checked during development to match all possible input
-values (0 to 3, inclusive).
+Replace the implementation of the rockchip eMMC PHY driver's
+HIWORD_UPDATE macro with hw_bitfield.h's FIELD_PREP_WM16. This makes the
+change more easily reviewable.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_lvds.h | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-emmc.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.h b/drivers/gpu/drm/rockchip/rockchip_lvds.h
-index ca83d7b6bea733588849d3ff379cf8540405462b..2d92447d819bed18adc99f84664c93c639c86a19 100644
---- a/drivers/gpu/drm/rockchip/rockchip_lvds.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_lvds.h
-@@ -9,6 +9,9 @@
- #ifndef _ROCKCHIP_LVDS_
- #define _ROCKCHIP_LVDS_
+diff --git a/drivers/phy/rockchip/phy-rockchip-emmc.c b/drivers/phy/rockchip/phy-rockchip-emmc.c
+index 20023f6eb9944eaab505101d57e806476ecfac71..5187983c58e5e9bc56e65c208122a3be7be00427 100644
+--- a/drivers/phy/rockchip/phy-rockchip-emmc.c
++++ b/drivers/phy/rockchip/phy-rockchip-emmc.c
+@@ -8,6 +8,7 @@
  
-+#include <linux/bits.h>
+ #include <linux/clk.h>
+ #include <linux/delay.h>
 +#include <linux/hw_bitfield.h>
-+
- #define RK3288_LVDS_CH0_REG0			0x00
- #define RK3288_LVDS_CH0_REG0_LVDS_EN		BIT(7)
- #define RK3288_LVDS_CH0_REG0_TTL_EN		BIT(6)
-@@ -106,18 +109,16 @@
- #define LVDS_VESA_18				2
- #define LVDS_JEIDA_18				3
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+@@ -21,7 +22,7 @@
+  * only if BIT(x + 16) set to 1 the BIT(x) can be written.
+  */
+ #define HIWORD_UPDATE(val, mask, shift) \
+-		((val) << (shift) | (mask) << ((shift) + 16))
++		(FIELD_PREP_WM16((mask) << (shift), (val)))
  
--#define HIWORD_UPDATE(v, h, l)  ((GENMASK(h, l) << 16) | ((v) << (l)))
--
- #define PX30_LVDS_GRF_PD_VO_CON0		0x434
--#define   PX30_LVDS_TIE_CLKS(val)		HIWORD_UPDATE(val,  8,  8)
--#define   PX30_LVDS_INVERT_CLKS(val)		HIWORD_UPDATE(val,  9,  9)
--#define   PX30_LVDS_INVERT_DCLK(val)		HIWORD_UPDATE(val,  5,  5)
-+#define   PX30_LVDS_TIE_CLKS(val)		FIELD_PREP_WM16(BIT(8), (val))
-+#define   PX30_LVDS_INVERT_CLKS(val)		FIELD_PREP_WM16(BIT(9), (val))
-+#define   PX30_LVDS_INVERT_DCLK(val)		FIELD_PREP_WM16(BIT(5), (val))
- 
- #define PX30_LVDS_GRF_PD_VO_CON1		0x438
--#define   PX30_LVDS_FORMAT(val)			HIWORD_UPDATE(val, 14, 13)
--#define   PX30_LVDS_MODE_EN(val)		HIWORD_UPDATE(val, 12, 12)
--#define   PX30_LVDS_MSBSEL(val)			HIWORD_UPDATE(val, 11, 11)
--#define   PX30_LVDS_P2S_EN(val)			HIWORD_UPDATE(val,  6,  6)
--#define   PX30_LVDS_VOP_SEL(val)		HIWORD_UPDATE(val,  1,  1)
-+#define   PX30_LVDS_FORMAT(val)			FIELD_PREP_WM16(GENMASK(14, 13), (val))
-+#define   PX30_LVDS_MODE_EN(val)		FIELD_PREP_WM16(BIT(12), (val))
-+#define   PX30_LVDS_MSBSEL(val)			FIELD_PREP_WM16(BIT(11), (val))
-+#define   PX30_LVDS_P2S_EN(val)			FIELD_PREP_WM16(BIT(6), (val))
-+#define   PX30_LVDS_VOP_SEL(val)		FIELD_PREP_WM16(BIT(1), (val))
- 
- #endif /* _ROCKCHIP_LVDS_ */
+ /* Register definition */
+ #define GRF_EMMCPHY_CON0		0x0
 
 -- 
 2.50.0
