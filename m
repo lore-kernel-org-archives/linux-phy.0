@@ -4,139 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76B69C7EE2A
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 07:45:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CBA4C77B7C
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 08:19:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F7WDDI54fwHAJPn8tyF3pNwJAD4b44qscwqcpTJM8zc=; b=Ks1Dq2gVAXGVoIfmqt22ftb3n8
-	wUpQKdmvF9Ta6AgPmeaRe74BmZ+pASOAqbc6cIcFh7PAVHvyajksenGJWflwp7p8qVpzsahxnsI98
-	mEFmT7XswRhj++SZNlkwaKg37ah5zz7WWqmKcoYvhXGHSpdEnc3e82vMYR5BibFx/sbUyVqq0RHXa
-	AH/nC9KDmL1FDFJW3loeg8/KReDZKK7vvNrVufcRmh9+SezHqozGD4vIItEfsuXai8YctQNU53hn1
-	qMchs8vZem5splQ3GjCkTqivDKmPlLu0Pjc6L6hXjcMYceuQHZn8yvy1+NcX6elhnVd4z4bnPd9Xw
-	QTRNxDbg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u5zsqYhfValjZdUZkrDQQHSXs6KuTc5foFvDs9wHkOM=; b=FLrJm8VwcAaCmT
+	dc8ETqTrN2jfomcTZGuNgGVhQOVKYyIYqfqt6yvv51Fq8kku9hBB2oQc21h1EUUoCCbZsiIDhV0PX
+	oR879Sx8JJUWwbF+sN32aXA3suSUNqE4bOfEds2X0dmCqbhwceOKTe/IDo9xf6n0xrbqxswQ+HQ7l
+	CAO6Or5zzzJtb9JVJ/lobg8Utd/8bR+EMCrguXaj8K94KnLDTdGALxejh2I000ZNqY5fK0NM63nAY
+	ynB+jeo0ClsGpDQDgIne0YxpelWrPQTHyD4Pp+ZR9K+OKdC9cHl0Kmaq3el0Mdv8o+mgvFAz37GGO
+	DQaY6ZXNFkGSH4/RXYEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTyLL-00000004v92-0yu0;
-	Tue, 24 Jun 2025 07:45:23 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1uTysP-00000004zWq-0ph0;
+	Tue, 24 Jun 2025 08:19:33 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTy5i-00000004rz2-1t6h
-	for linux-phy@lists.infradead.org;
-	Tue, 24 Jun 2025 07:29:15 +0000
-Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-3a50956e5d3so78493f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 24 Jun 2025 00:29:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750750153; x=1751354953; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=vXQvyWKGqoA++0+nLyhrIs47IOqxWVGOvjV4paCklaM=;
-        b=aw7mtLF7dB8Jx+uwmjhmY5vQ/ECi680Um0pV4h/mlCZVx9s/8USec31gjYn14ttVsF
-         hXZKvYFBfmy079U/Gw3FTPwUjGly4vUq0KJEOoGt/2i2kEBUgQ1vV9vHhYu9lJgZbqWd
-         6mTQIannpCCOzYmZkRG6jyE5xgYOX6OQPN6xb8M/b5k1k56imj7Ix5N6attAoOh1S5pS
-         6Vidc/bNKmMjV1qq6qajkcygU4BHHTr+5/RPqm6ppdwYl9SLXPoUMRHApCyoXdvf7xsX
-         nn29xcNC0VT6C/jchOEPEaakWvBAX7sXxucahAXUF3rz3r0HWnoQ8iZFN8tLeeHyqfy6
-         YmZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750750153; x=1751354953;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=vXQvyWKGqoA++0+nLyhrIs47IOqxWVGOvjV4paCklaM=;
-        b=fbAcaq+aokZCesmFDBzSR/QsDHqD0rO9s+z1BgLkD9v4LZdlLot4HxUjqygf5Nfr3D
-         sZFAzbpmAAXELv/XcQYgsgDW+khagm7Ub/dC8aPdPkH0dkmeuj94TAB+rCG8L3UYNNkX
-         g5yr5b6BJKqztSYsEHmaad99hcXIwG23vuVSs+kXBytK/Nx47EzBkdeO9rufYFODfG6/
-         yB9G6ulnmJgXmd/Xk/KPlLAlryIlRujbnhi21oYJq2OjENzeADpdsdJA2Fd2ACNdcif1
-         /BcFCl8oVAZTk6JIOEe4waTw8+HA3A3qC4dqfb45CU/yRqHktoIpbDt4I5mY/T9wyH0B
-         aMSg==
-X-Forwarded-Encrypted: i=1; AJvYcCXGVPR8vyvX/kVQec2ZHsQOLPYWf1iDCPWptt7gk7aN536gh952T5X2xRUZJn8syYZTVuwbCw0ppns=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwR3arLx3yXH9LUL0U2lQEnOzfP4+uK+si16pz7SFxHi+NkQp/4
-	C4gL0cHcriJTVJPjsDmQxI/jgOcuNLTsKkeuas8kVLHMLhv28QOV3TwnzFGBZ0L8CsA=
-X-Gm-Gg: ASbGncuKXKQjM/3Y+wbkHOO9x+mgyCz81XL0Lh3hOj9qJZaBkpl2f5X1DW73f9OfVWp
-	+TX5dWh3YBgmPJ+dzNXW4uDbYFyjc0aALeRYrocOmRL+FdNO8dfjwaXmmrL5E7LqaVpj5xfo/LF
-	xvElVB+YAegKd4g96wxZXqoG7Lfc/7xmk5SYxx+gQ2BfIc7gUBeBIkG0k3FAWmPu+h1lwPR7Mg4
-	ZHYJ5nlj2XbtlSdRCgN9+OvBs30DxJleTegGRtxxJ7ziOKAVS08K7G0+IsE5rsWDNBKsYYQkada
-	XLt6D6G5lc8LLQMF89mcKWSYJi2skESMD1CxWSmhVW+oOzfX9i474VJrwHgfbXrtD9JYLEdHrMK
-	Jws7ds6wDBqdjwvJF1MT2zONywyijjnPrlDuEr2o=
-X-Google-Smtp-Source: AGHT+IFNAvVc0Ym/Nl4SzjssDYkzNoxmE/MYxf9idIfGl+W01JZ50berxeUOTRJ/Uec/VhLDWdvcjg==
-X-Received: by 2002:a5d:64e6:0:b0:3a5:8d0b:600c with SMTP id ffacd0b85a97d-3a6d12bb37emr13160349f8f.3.1750750152898;
-        Tue, 24 Jun 2025 00:29:12 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:6fea:600c:ca20:f54a? ([2a01:e0a:3d9:2080:6fea:600c:ca20:f54a])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a6e80f27besm1190928f8f.57.2025.06.24.00.29.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 24 Jun 2025 00:29:12 -0700 (PDT)
-Message-ID: <754d260c-1a31-494e-af06-49f6aae1813f@linaro.org>
-Date: Tue, 24 Jun 2025 09:29:11 +0200
+	id 1uTyIp-00000004uj3-0LDS;
+	Tue, 24 Jun 2025 07:42:48 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 604C3A4F52D;
+	Tue, 24 Jun 2025 07:42:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77F39C4CEE3;
+	Tue, 24 Jun 2025 07:42:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1750750966;
+	bh=WBaglMgmsNR9cwyCV58jjVrD6lxTJfrwBw3z95EKGDE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Ras4Z74XQOb6XrKKxaKPMa+A5OowaHyysdGsFElfO18pkL/LpEyC9XZ5QKYk/XpQo
+	 FaUKZJTum0nS2x/j0M/k3fDitol6/1/k0H/8TwIGIUOxgqCXhfkHIX+/iXSgZ2Tpq8
+	 Yb+peXIzw3ElSIA/gLSgAaUrOhD/8otse1SXC/AYY+ZsvzvKUEsk4rn+x+MInytFCQ
+	 6TIIpGmeeoLxO5CIxd1CVzd9KDCf/bZP02jidZpqu1eF0pXNL1NnP3uyZlQ3xxYY/W
+	 LuK9jq5UTCY2iEXVkBi7CBTiIp29YpBucYpPbYK8xYoHEzpDLlcIXRC0CWp0ffj4zX
+	 Dow6lOMoX5k+w==
+Date: Tue, 24 Jun 2025 09:42:43 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Yao Zi <ziyao@disroot.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
+	Andy Yan <andy.yan@rock-chips.com>, Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, 
+	Detlev Casanova <detlev.casanova@collabora.com>, Shresth Prasad <shresthprasad7@gmail.com>, 
+	Chukun Pan <amadeus@jmu.edu.cn>, Jonas Karlman <jonas@kwiboo.se>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 2/6] dt-bindings: phy: rockchip: naneng-combphy: Add
+ power-domains property
+Message-ID: <nhsqnvfrz5s2635zm33nvhehcxoqowh7kipnh6e2wlvjdbxee2@6yd43t7kariv>
+References: <20250624033733.50197-1-ziyao@disroot.org>
+ <20250624033733.50197-3-ziyao@disroot.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: =?UTF-8?B?UmU6IOWbnuimhjogW1BBVENIIDAvN10gQWRkIEFTUEVFRCBQQ0llIFJv?=
- =?UTF-8?Q?ot_Complex_support?=
-To: Jacky Chou <jacky_chou@aspeedtech.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "lpieralisi@kernel.org" <lpieralisi@kernel.org>,
- "kwilczynski@kernel.org" <kwilczynski@kernel.org>,
- "mani@kernel.org" <mani@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>, "joel@jms.id.au"
- <joel@jms.id.au>, "andrew@codeconstruct.com.au"
- <andrew@codeconstruct.com.au>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
-Cc: "elbadrym@google.com" <elbadrym@google.com>,
- "romlem@google.com" <romlem@google.com>,
- "anhphan@google.com" <anhphan@google.com>, "wak@google.com"
- <wak@google.com>, "yuxiaozhang@google.com" <yuxiaozhang@google.com>,
- BMC-SW <BMC-SW@aspeedtech.com>
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
- <7178e816-4cb4-49b3-9a1e-1ecd4caa43ed@linaro.org>
- <SEYPR06MB513414A5AE38EE6749A2902C9D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <SEYPR06MB513414A5AE38EE6749A2902C9D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+Content-Disposition: inline
+In-Reply-To: <20250624033733.50197-3-ziyao@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250624_002914_491365_877B3B5C 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20250624_004247_185736_A447ED51 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,40 +75,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/06/2025 10:20, Jacky Chou wrote:
->>> This series has been tested on AST2600/AST2700 platforms and enables
->>> PCIe device enumeration and operation.
->>>
->>> Feedback and review are welcome.
->>
->> So it seems all PCIe RC code is bundled in a single driver and there's no PCIe
->> PHY driver code, is there a reason for that ? If yes I think it should be described
->> in the cover letter.
->>
+On Tue, Jun 24, 2025 at 03:37:29AM +0000, Yao Zi wrote:
+> Though isn't described in existing devicetrees, most Rockchip combphys
+> belong to a specific power-domain of the SoC. Taking RK3588 as example,
+> combphy 0 and combphy 2 belong to the PD_BUS domain. Document the
+> power-domains property to allow describing the information correctly
+> in devicetree.
 > 
-> Yes, because our design includes the PCIe RC and the PCIe EPs.
-> The two functions use the same PCIe PHY and are mutually exclusive.
-> And there are different configurations on RC and EP.
-> Therefore, we do not use a phy driver to configure our PCIe but use
-> the phandle of phy syscon to set the RC and EP drivers separately.
+> Signed-off-by: Yao Zi <ziyao@disroot.org>
+> ---
+>  .../devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml   | 3 +++
+>  1 file changed, 3 insertions(+)
 
-I don't get why a PHY drive could not exist, it could be used by either
-the RC or EP PCIe driver in an exclusive way.
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Neil
-
-> 
-> I will add more description in next version.
-> 
-> Thanks,
-> Jacky
-> 
+Best regards,
+Krzysztof
 
 
 -- 
