@@ -4,50 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3B30C77B7F
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 13:40:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BE82C77B7F
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 19:54:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=545i2pqdDCOL/xeGsJqtUanad74ioWiOvKgNiUonDLg=; b=MSuSWbUbR8JmVP
-	NUoZNLBqGoE99QsIxPKhQGrwl4GcuyvDxp/P+3llaVp4LpirxO6SYMxpRV2Cx83hVM38U/uAlNYKM
-	N7xohWZ/QWDlXPLAVeyEXJmDDc8+PEesP2kAOeUio6jCniCEAoY94fwRA57pJgYl1s9qLTfQ3R78c
-	CZtZmLq2/edMBUiOyYH848HAdGwj9Cq1sHItxSO2R8q+5BXEN3CGdIcmaATrzqDLtoKvDBRmbBzGe
-	cOeHjM7hv2zkkSpk9qMIqpWC+Mlm63tkLKWWP+rzS2lUTIIEut8di8LtSYoQiJ4oBnEMslwp6duw8
-	mQJYlKo6eJR7e7rszgxw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=9F4oERKjo+mF40XhXMufrxpW8wObbGsjdSxaJP+9Tc0=; b=IzSEZ5x2xwCgcH
+	Iv8JbxALruDL10BSuhn3MLs8Yyu843502xzeVJ8nqW2bezqFrM54GJR6mouQykUhvn/+iPQil9llG
+	mHsOXA+rVolL/daDqbBvniY00UqM3DuZ/wVGP1FwZxY9YawQHbfaqb1gBxmt/W2e9Mxtx8yJ48QgE
+	II75GTXk3SHg18WD5Kxjk76xEl7eISBEyGQBi56amZuzFacACbkfUWTVS5avWaye2LPepIgm/bXJ+
+	0LeNVUUDYSWqQFHdHU33pFbIFGz0FV3dwwKLRxqCTtF3VX/wRNdTtePJPoSLWNeFY83PbrpYP/x0u
+	YP6Q96PPfgoIexFDzu7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU3su-00000005k6j-1YVd;
-	Tue, 24 Jun 2025 13:40:24 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uU9ix-00000006fA2-2SLs;
+	Tue, 24 Jun 2025 19:54:31 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU3bg-00000005hLz-0aqr
-	for linux-phy@lists.infradead.org;
-	Tue, 24 Jun 2025 13:22:36 +0000
+	id 1uU5ZR-0000000675v-0iYu;
+	Tue, 24 Jun 2025 15:28:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:References;
+	bh=XsNdAHj/TeTWbS97LIusJoIJAQIBgxjV5yCRWn4yiOs=; b=lr2aNqyyPfR3kOe+jrordWATI0
+	0BJP2oQquYP+qXf6/2scytXgvZlsXjl3FLQrPQ2VyPLvkyGA165YB1npSZXt7eRrMkPF4HwAurvvt
+	vp7eMCqZmPBV07mWpp58xUhMI/KHzBdcQL33+/uTsbd/3HpNr+ErI3YymXRkYxw/RY8HKTRYpg1Vg
+	WfgIv/luOjNpRDwjlg7yQblfiAxoURxhLm6qN1YWl4wA3azHkIAjz7WxBR8SK2YMo1EPL2rkH8a3y
+	nQNBxskeMKjkc+ZY6kLkiaJh7CJuVrp7+TuzhACfNpgUvEbiyRp0yochMJWqgWmaYNofKg1Lu/uPU
+	mmYTSLdA==;
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uU5ZN-00000005Tcl-3eUm;
+	Tue, 24 Jun 2025 15:28:24 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3B9F86116F;
-	Tue, 24 Jun 2025 13:22:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D6CB5C4CEE3;
-	Tue, 24 Jun 2025 13:22:32 +0000 (UTC)
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Khuong Dinh <khuong@os.amperecomputing.com>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] dt-bindings: phy: apm,xgene-phy: Remove trailing whitespace
-Date: Tue, 24 Jun 2025 15:22:29 +0200
-Message-ID: <5b8e9b4f645bcac9d50059e513abba4db7e1aaea.1750771156.git.geert+renesas@glider.be>
-X-Mailer: git-send-email 2.43.0
+	by sea.source.kernel.org (Postfix) with ESMTP id 85429445D4;
+	Tue, 24 Jun 2025 15:28:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0BF9FC4CEE3;
+	Tue, 24 Jun 2025 15:28:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1750778896;
+	bh=Pl3NFZyhrvklSpvN1eF/J9iEI8F8auASAYz/1jCX/eI=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=aX667HMmD7Y51beRdU5f4Hd584kRCoEk7KvoexSEew+t+eRh1pj1fR9UYQkqZHZfh
+	 fWZBuBKFpWbUuR18ZgET27bcKTR21VWtudD2h/MiJg6xbrWNzJmKi4wWdNJxp8UTpF
+	 cLfLjNx7iOPtPZpUkfu58+hbZmJ888pu5bFPuQLLNe3jewq+aBRDEgJjvD7ycC26mJ
+	 gerZK14v2YkZRrVmf2+j4+xZpI9yO8HqO8Rg7b5p731cuNj3lCL5h1fcWXBFxZrqNF
+	 KCL0s7tmxxejQDhFnb583lC+8Fm9OWcJ3n4gkCCspwZLuTbTLsDNKxeUPWTTXNkXBe
+	 /ynLZbIg6aNbg==
+Date: Tue, 24 Jun 2025 10:28:14 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
+	"lpieralisi@kernel.org" <lpieralisi@kernel.org>,
+	"kwilczynski@kernel.org" <kwilczynski@kernel.org>,
+	"mani@kernel.org" <mani@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"joel@jms.id.au" <joel@jms.id.au>,
+	"andrew@codeconstruct.com.au" <andrew@codeconstruct.com.au>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>,
+	"linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+	"elbadrym@google.com" <elbadrym@google.com>,
+	"romlem@google.com" <romlem@google.com>,
+	"anhphan@google.com" <anhphan@google.com>,
+	"wak@google.com" <wak@google.com>,
+	"yuxiaozhang@google.com" <yuxiaozhang@google.com>,
+	BMC-SW <BMC-SW@aspeedtech.com>
+Subject: Re: =?utf-8?B?5Zue6KaG?= =?utf-8?Q?=3A?= [PATCH 5/7] ARM: dts:
+ aspeed-g6: Add PCIe RC node
+Message-ID: <20250624152814.GA1477818@bhelgaas>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <SEYPR06MB51343F38D4F9C130A4CE3FED9D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250624_162822_279630_3CAB7366 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,30 +110,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Remove trailing whitespace which hurts my eyes.
+On Fri, Jun 20, 2025 at 05:24:39AM +0000, Jacky Chou wrote:
+> > > +				resets = <&syscon ASPEED_RESET_H2X>,
+> > > +					 <&syscon ASPEED_RESET_PCIE_RC_O>;
+> > > +				reset-names = "h2x", "perst";
+> > 
+> > PERST# is clearly a per-Root Port item since it's a signal on the
+> > PCIe connector.  Can you separate this and any other per-Root Port
+> > things into a Root Port stanza to leave open the possibility of
+> > future hardware that supports multiple Root Ports in the RC?
+> 
+> The PCIe RC that designed by us is only one root port.
 
-Fixes: 65ad0d068c426c2f ("dt-bindings: phy: Convert apm,xgene-phy to DT schema")
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- Documentation/devicetree/bindings/phy/apm,xgene-phy.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Yes.  But this driver may be used in the future for other RCs that
+include more than one Root Port, and it would be good if that didn't
+require structural changes to the DT.  Also, there are RCs from other
+vendors that include more than one Root Port, and I'd like all the DTs
+and drivers to have similar structure.
 
-diff --git a/Documentation/devicetree/bindings/phy/apm,xgene-phy.yaml b/Documentation/devicetree/bindings/phy/apm,xgene-phy.yaml
-index d1e6b112b6de97d9..0674391feeae0091 100644
---- a/Documentation/devicetree/bindings/phy/apm,xgene-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/apm,xgene-phy.yaml
-@@ -8,7 +8,7 @@ title: APM X-Gene 15Gbps Multi-purpose PHY
- 
- maintainers:
-   - Khuong Dinh <khuong@os.amperecomputing.com>
--  
-+
- description:
-   PHY nodes are defined to describe on-chip 15Gbps Multi-purpose PHY. Each
-   PHY (pair of lanes) has its own node.
--- 
-2.43.0
-
+Bjorn
 
 -- 
 linux-phy mailing list
