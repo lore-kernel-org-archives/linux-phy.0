@@ -4,98 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71397C83000
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Jun 2025 19:56:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76205C71157
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 03:43:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HdevCB/+hv4jglHwf3yRxIhMYjQeYL8ykTGQwJi9z5A=; b=IT6ouou8VALGOg
-	vIiGupXu21dDM2iziWrgMn+VbdWvSLGmDjgrN7H2i0jkFHRMTGEm8lAWuVaeg3LHvkl7TOy8rlSQJ
-	AhFrE7DKW9U/Y3Izd6cl0K89TrhIGtF0ELvlBOVjrVD3ufBqheKJFTWi+Cftyyk9/i8qxsa0nGhSR
-	AFT0EhnjJLGEW53BZEdUT0uXIKjYc2F4JLWkYc6rwmKVpwNpijI9EpezRkaGDj5nVmhhCmK05L1/6
-	BB42xcxjiorHQVsK8S4X2EY8aVqdpibU/mDqzTLVus4BmNr98p7jnoj0NHZ3qGun0C6GPYo+laH11
-	3zmUj2Zh/SQHK81tLjQQ==;
+	List-Owner; bh=vN1SgAdJjdxVIzylm18SLbb1CFYpZl4HzcL9KjA2G6E=; b=F7LUaLNhbWRBw+
+	9Yo+oFlGzb1HY7lceYr0Hp4OYX7yKqRKjpo93H1OaFATnzZOdZdwvl3k0DGXrnSo7C7m0aNHSG0w/
+	wZ1OCEUPoRJOBBByNS33q2SJ6uAOSXj9e4IFuRTueMfWoJnRh8ICS5oS6xgeDztnUvt38u1egH9Fj
+	AAeIMJJ94NMJlho4oBBrLCgt6L/wNpvonQPKdWOXecc6ZHcjjfLHvK4XztWkL2+3leb5F3Z0CjC23
+	dTh1AQTB6vbEtPj7o+h89P+tmlV9EKIIZpnWBumJcYyzNL5slHI0ocayJjB+rlx2aQ7TBRDrnQy8C
+	thNQ+4gdr7lC8Dl1KHWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTnHL-00000003ss6-0D2B;
-	Mon, 23 Jun 2025 19:56:31 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1uTuYm-00000004Z5r-3nIF;
+	Tue, 24 Jun 2025 03:43:00 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTjl0-00000003MvT-1cDi;
-	Mon, 23 Jun 2025 16:10:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1750695014; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=EpBtJRjKcgPsO+xAJObVVmFvnI4hmdsZ6LijaICW3w0zdFpegt0k3I/wGT51x6yq9t7zXoX7sFb3yMWpHNE+rLAu2ZZjCp+N9VFX+Q4/04KiU/EsrfstavBLC9MQzFMo/b3QMwzBRvoc+e13RHmo8OoEeFd00ZASOpK3oSJJglM=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1750695014; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=LrDqBL7o/mg/nAqIiAJ/LSWqzkg2m3/2ojuA+PZ4zkE=; 
-	b=Yke2UH0sgLcdjm6t4ucqMhYEpUfHQfgnCY1vqDVFeITgfZA/sUs1RgZRk340I6Jejbq5/pXgjtH289g684o8J2aZHAELCY9xvv5ldmSWpCLm6se5G3BspfIU/bZG+gRqwJ87tvnoqoBCO23T0tPs75Dpj4AZstHKLhiuIw2w0TY=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750695014;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=LrDqBL7o/mg/nAqIiAJ/LSWqzkg2m3/2ojuA+PZ4zkE=;
-	b=ifhrRglTFZ2RX+hsYHYJv5VSQEYe/R1mGxnsPnU80GFRfFV+SXXAgL+bnaRD8IDJ
-	XMwx3CHErJ+Z05XkEGWJF+8nIMYLmSNdyD9nVywEoYVsytQSuhHMaK3gAoItL9dGZk9
-	hC/Qo/9ULp3XvQ8MVn1Ko0pBL0TX2Clu2xmUyeEg=
-Received: by mx.zohomail.com with SMTPS id 17506950128651017.218237604295;
-	Mon, 23 Jun 2025 09:10:12 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 23 Jun 2025 18:05:48 +0200
-Subject: [PATCH v2 20/20] phy: rockchip-pcie: switch to FIELD_PREP_WM16
- macro
+	id 1uTuTv-00000004Ygh-1X9u;
+	Tue, 24 Jun 2025 03:37:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=Znum/S7SRMtmUuuQFj/yP9ccBPH/iQCljK//v5yZGVk=; b=F0xRqOdlllcPBkWKOm099JHR6q
+	r5TEhm1VJeS18vNf3Ygvcw4oiy3nXo+8C3pZbuN8I7L8qHqjPpw6eu+G3JkK2eB5V8XOe3DTlx4/T
+	uwduCFVA9QkmisVY8kUGX5g6uiQsFMYJaJsKr/NKe7NRla3JfGUMD8i6OzGokI/iQ7+zLchuQyW0r
+	GFZHDrA2w9WYkFeeHG3E+UV+avkqaJ+tYUGS1kIM6JRza1ZC7s3UvGAlHXXJqx7J81FIwuunVigzH
+	9aM/Nx6/JD9VTXVa4floV279/Rj4raeeTpEat5NjZr1mfyCpmZT8dZNUIsfWSXubiolkUXXMEdejJ
+	B/5U4LEg==;
+Received: from layka.disroot.org ([178.21.23.139])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uTuTs-00000005NST-2OwW;
+	Tue, 24 Jun 2025 03:37:58 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 2DC3025C70;
+	Tue, 24 Jun 2025 05:37:55 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id heJSJyhvlytP; Tue, 24 Jun 2025 05:37:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1750736274; bh=utj6oBPEshKFYwO2HO/ggqVFO3Kb+yCOYzljkrGuNps=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=cj8iFtp0URBtjAOERfABgOSKtzq7oUscHvrpNVl1OEAHDQzVlT4hv5XFUyRrtQMmf
+	 NJDR0n5Kem4lZ7zenOubi0l1yNiqrheS+ddPtbOSrdGHzmEThlYV+KOpxrF15I8pQ5
+	 BTGxqDkFuxYZ8uuW5hRwciECaIDG1qcyQm5e4KYkyFpVU98Y/5/AkXpMm4zxDDtBIN
+	 AUcdUP8zdi/pY/E0p6osVmEyflJDChaSSSrcX/SsTtklOq8U2gtHj23qWb4soxVl/x
+	 /ing0fQl16HAHj3zWelZ80GPR2RdcGgF/oJCPPm7gf6YVrOyyhNLotDCgGz4ZFoIxT
+	 zoz7nZN827cQA==
+From: Yao Zi <ziyao@disroot.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Yao Zi <ziyao@disroot.org>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Detlev Casanova <detlev.casanova@collabora.com>,
+	Shresth Prasad <shresthprasad7@gmail.com>,
+	Chukun Pan <amadeus@jmu.edu.cn>,
+	Jonas Karlman <jonas@kwiboo.se>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH v4 1/6] dt-bindings: soc: rockchip: Add RK3528 pipe-phy GRF syscon
+Date: Tue, 24 Jun 2025 03:37:28 +0000
+Message-ID: <20250624033733.50197-2-ziyao@disroot.org>
+In-Reply-To: <20250624033733.50197-1-ziyao@disroot.org>
+References: <20250624033733.50197-1-ziyao@disroot.org>
 MIME-Version: 1.0
-Message-Id: <20250623-byeword-update-v2-20-cf1fc08a2e1f@collabora.com>
-References: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
-In-Reply-To: <20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com>
-To: Yury Norov <yury.norov@gmail.com>, 
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
- Jaehoon Chung <jh80.chung@samsung.com>, 
- Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
- Shreeya Patel <shreeya.patel@collabora.com>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, 
- Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- Shawn Lin <shawn.lin@rock-chips.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
- MyungJoo Ham <myungjoo.ham@samsung.com>, 
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
-Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
- linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
- linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250623_091054_479745_14610A83 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20250624_043756_841320_8D6A2327 
+X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,177 +103,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
-drivers that use constant masks.
+Add compatible string for pipe-phy GRF found on RK3528 SoC, which
+controls misc settings for the integrated naneng-combphy.
 
-The Rockchip PCIe PHY driver, used on the RK3399, has its own definition
-of HIWORD_UPDATE.
-
-Remove it, and replace instances of it with hw_bitfield.h's
-FIELD_PREP_WM16. To achieve this, some mask defines are reshuffled, as
-FIELD_PREP_WM16 uses the mask as both the mask of bits to write and to
-derive the shift amount from in order to shift the value.
-
-In order to ensure that the mask is always a constant, the inst->index
-shift is performed after the FIELD_PREP_WM16, as this is a runtime
-value.
-
-From this, we gain compile-time error checking, and in my humble opinion
-nicer code, as well as a single definition of this macro across the
-entire codebase to aid in code comprehension.
-
-Tested on a RK3399 ROCKPro64, where PCIe still works as expected when
-accessing an NVMe drive.
-
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Signed-off-by: Yao Zi <ziyao@disroot.org>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 ---
- drivers/phy/rockchip/phy-rockchip-pcie.c | 72 ++++++++++----------------------
- 1 file changed, 21 insertions(+), 51 deletions(-)
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-index bd44af36c67a5a504801275c1b0384d373fe7ec7..d7f994c3bcdf93faffd5c04ed4d0f9d29eaf43cc 100644
---- a/drivers/phy/rockchip/phy-rockchip-pcie.c
-+++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-@@ -8,6 +8,7 @@
- 
- #include <linux/clk.h>
- #include <linux/delay.h>
-+#include <linux/hw_bitfield.h>
- #include <linux/io.h>
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
-@@ -18,23 +19,14 @@
- #include <linux/regmap.h>
- #include <linux/reset.h>
- 
--/*
-- * The higher 16-bit of this register is used for write protection
-- * only if BIT(x + 16) set to 1 the BIT(x) can be written.
-- */
--#define HIWORD_UPDATE(val, mask, shift) \
--		((val) << (shift) | (mask) << ((shift) + 16))
- 
- #define PHY_MAX_LANE_NUM      4
--#define PHY_CFG_DATA_SHIFT    7
--#define PHY_CFG_ADDR_SHIFT    1
--#define PHY_CFG_DATA_MASK     0xf
--#define PHY_CFG_ADDR_MASK     0x3f
--#define PHY_CFG_RD_MASK       0x3ff
-+#define PHY_CFG_DATA_MASK     GENMASK(10, 7)
-+#define PHY_CFG_ADDR_MASK     GENMASK(6, 1)
-+#define PHY_CFG_RD_MASK       GENMASK(9, 0)
- #define PHY_CFG_WR_ENABLE     1
- #define PHY_CFG_WR_DISABLE    1
--#define PHY_CFG_WR_SHIFT      0
--#define PHY_CFG_WR_MASK       1
-+#define PHY_CFG_WR_MASK       BIT(0)
- #define PHY_CFG_PLL_LOCK      0x10
- #define PHY_CFG_CLK_TEST      0x10
- #define PHY_CFG_CLK_SCC       0x12
-@@ -49,11 +41,7 @@
- #define PHY_LANE_RX_DET_SHIFT 11
- #define PHY_LANE_RX_DET_TH    0x1
- #define PHY_LANE_IDLE_OFF     0x1
--#define PHY_LANE_IDLE_MASK    0x1
--#define PHY_LANE_IDLE_A_SHIFT 3
--#define PHY_LANE_IDLE_B_SHIFT 4
--#define PHY_LANE_IDLE_C_SHIFT 5
--#define PHY_LANE_IDLE_D_SHIFT 6
-+#define PHY_LANE_IDLE_MASK    BIT(3)
- 
- struct rockchip_pcie_data {
- 	unsigned int pcie_conf;
-@@ -100,22 +88,14 @@ static inline void phy_wr_cfg(struct rockchip_pcie_phy *rk_phy,
- 			      u32 addr, u32 data)
- {
- 	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
--		     HIWORD_UPDATE(data,
--				   PHY_CFG_DATA_MASK,
--				   PHY_CFG_DATA_SHIFT) |
--		     HIWORD_UPDATE(addr,
--				   PHY_CFG_ADDR_MASK,
--				   PHY_CFG_ADDR_SHIFT));
-+		     FIELD_PREP_WM16(PHY_CFG_DATA_MASK, data) |
-+		     FIELD_PREP_WM16(PHY_CFG_ADDR_MASK, addr));
- 	udelay(1);
- 	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
--		     HIWORD_UPDATE(PHY_CFG_WR_ENABLE,
--				   PHY_CFG_WR_MASK,
--				   PHY_CFG_WR_SHIFT));
-+		     FIELD_PREP_WM16(PHY_CFG_WR_MASK, PHY_CFG_WR_ENABLE));
- 	udelay(1);
- 	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
--		     HIWORD_UPDATE(PHY_CFG_WR_DISABLE,
--				   PHY_CFG_WR_MASK,
--				   PHY_CFG_WR_SHIFT));
-+		     FIELD_PREP_WM16(PHY_CFG_WR_MASK, PHY_CFG_WR_DISABLE));
- }
- 
- static int rockchip_pcie_phy_power_off(struct phy *phy)
-@@ -126,11 +106,9 @@ static int rockchip_pcie_phy_power_off(struct phy *phy)
- 
- 	guard(mutex)(&rk_phy->pcie_mutex);
- 
--	regmap_write(rk_phy->reg_base,
--		     rk_phy->phy_data->pcie_laneoff,
--		     HIWORD_UPDATE(PHY_LANE_IDLE_OFF,
--				   PHY_LANE_IDLE_MASK,
--				   PHY_LANE_IDLE_A_SHIFT + inst->index));
-+	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_laneoff,
-+		     FIELD_PREP_WM16(PHY_LANE_IDLE_MASK,
-+				     PHY_LANE_IDLE_OFF) << inst->index);
- 
- 	if (--rk_phy->pwr_cnt) {
- 		return 0;
-@@ -140,11 +118,9 @@ static int rockchip_pcie_phy_power_off(struct phy *phy)
- 	if (err) {
- 		dev_err(&phy->dev, "assert phy_rst err %d\n", err);
- 		rk_phy->pwr_cnt++;
--		regmap_write(rk_phy->reg_base,
--			     rk_phy->phy_data->pcie_laneoff,
--			     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
--					   PHY_LANE_IDLE_MASK,
--					   PHY_LANE_IDLE_A_SHIFT + inst->index));
-+		regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_laneoff,
-+			     FIELD_PREP_WM16(PHY_LANE_IDLE_MASK,
-+					     !PHY_LANE_IDLE_OFF) << inst->index);
- 		return err;
- 	}
- 
-@@ -172,15 +148,11 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
- 	}
- 
- 	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
--		     HIWORD_UPDATE(PHY_CFG_PLL_LOCK,
--				   PHY_CFG_ADDR_MASK,
--				   PHY_CFG_ADDR_SHIFT));
-+		     FIELD_PREP_WM16(PHY_CFG_ADDR_MASK, PHY_CFG_PLL_LOCK));
- 
--	regmap_write(rk_phy->reg_base,
--		     rk_phy->phy_data->pcie_laneoff,
--		     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
--				   PHY_LANE_IDLE_MASK,
--				   PHY_LANE_IDLE_A_SHIFT + inst->index));
-+	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_laneoff,
-+		     FIELD_PREP_WM16(PHY_LANE_IDLE_MASK,
-+				     !PHY_LANE_IDLE_OFF) << inst->index);
- 
- 	/*
- 	 * No documented timeout value for phy operation below,
-@@ -211,9 +183,7 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
- 	}
- 
- 	regmap_write(rk_phy->reg_base, rk_phy->phy_data->pcie_conf,
--		     HIWORD_UPDATE(PHY_CFG_PLL_LOCK,
--				   PHY_CFG_ADDR_MASK,
--				   PHY_CFG_ADDR_SHIFT));
-+		     FIELD_PREP_WM16(PHY_CFG_ADDR_MASK, PHY_CFG_PLL_LOCK));
- 
- 	err = regmap_read_poll_timeout(rk_phy->reg_base,
- 				       rk_phy->phy_data->pcie_status,
-
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index ccdcc889ba8e..8ddd963838f5 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -16,6 +16,7 @@ properties:
+           - enum:
+               - rockchip,rk3288-sgrf
+               - rockchip,rk3528-ioc-grf
++              - rockchip,rk3528-pipe-phy-grf
+               - rockchip,rk3528-vo-grf
+               - rockchip,rk3528-vpu-grf
+               - rockchip,rk3562-ioc-grf
 -- 
-2.50.0
+2.49.0
 
 
 -- 
