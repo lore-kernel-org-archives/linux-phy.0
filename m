@@ -4,58 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BE82C77B7F
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 19:54:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53F04C77B7C
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Jun 2025 19:54:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=9F4oERKjo+mF40XhXMufrxpW8wObbGsjdSxaJP+9Tc0=; b=IzSEZ5x2xwCgcH
-	Iv8JbxALruDL10BSuhn3MLs8Yyu843502xzeVJ8nqW2bezqFrM54GJR6mouQykUhvn/+iPQil9llG
-	mHsOXA+rVolL/daDqbBvniY00UqM3DuZ/wVGP1FwZxY9YawQHbfaqb1gBxmt/W2e9Mxtx8yJ48QgE
-	II75GTXk3SHg18WD5Kxjk76xEl7eISBEyGQBi56amZuzFacACbkfUWTVS5avWaye2LPepIgm/bXJ+
-	0LeNVUUDYSWqQFHdHU33pFbIFGz0FV3dwwKLRxqCTtF3VX/wRNdTtePJPoSLWNeFY83PbrpYP/x0u
-	YP6Q96PPfgoIexFDzu7g==;
+	List-Owner; bh=XX6wpPsgAL+F2qZMrEMxjYrLu5OiJO93bBXC5U33eK8=; b=LXS8NcJte31Zzl
+	6S3CD+XN1GqB9dReCQqUM1awSnvXM+UgvxPzm+tyjsEfyAKCXJ2qNcU6LsAHBBfJ1qY95Q6PQ5EQA
+	/pdsVcJsPE1N9+IbmYyjE0HyNo79lllE2sOVNVyoYyBnfPtDVyL+RUpsdEPI6wQcSDnvZzY05ACdb
+	BlovfyTfD/QwCTClZpZFwN2bApZZo5OKZG1riMqbt3X/XVSWCI9AKJBIIEII5bBNDsfe0Jmt6RCNq
+	c5VR8glHE6UxoQx/JcHFVv6KyB8yE43b52SODDdnZYI/YNOVpGMyH8VxU+mcuj7OpMjhVf4bRC0mg
+	qB2sxxJgKj4hGcIQIz7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU9ix-00000006fA2-2SLs;
-	Tue, 24 Jun 2025 19:54:31 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uU9iz-00000006fB1-0QGN;
+	Tue, 24 Jun 2025 19:54:33 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU5ZR-0000000675v-0iYu;
-	Tue, 24 Jun 2025 15:28:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:References;
-	bh=XsNdAHj/TeTWbS97LIusJoIJAQIBgxjV5yCRWn4yiOs=; b=lr2aNqyyPfR3kOe+jrordWATI0
-	0BJP2oQquYP+qXf6/2scytXgvZlsXjl3FLQrPQ2VyPLvkyGA165YB1npSZXt7eRrMkPF4HwAurvvt
-	vp7eMCqZmPBV07mWpp58xUhMI/KHzBdcQL33+/uTsbd/3HpNr+ErI3YymXRkYxw/RY8HKTRYpg1Vg
-	WfgIv/luOjNpRDwjlg7yQblfiAxoURxhLm6qN1YWl4wA3azHkIAjz7WxBR8SK2YMo1EPL2rkH8a3y
-	nQNBxskeMKjkc+ZY6kLkiaJh7CJuVrp7+TuzhACfNpgUvEbiyRp0yochMJWqgWmaYNofKg1Lu/uPU
-	mmYTSLdA==;
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uU5ZN-00000005Tcl-3eUm;
-	Tue, 24 Jun 2025 15:28:24 +0000
+	id 1uU5eC-000000068AX-1zNj;
+	Tue, 24 Jun 2025 15:33:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 85429445D4;
-	Tue, 24 Jun 2025 15:28:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0BF9FC4CEE3;
-	Tue, 24 Jun 2025 15:28:16 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7389B5C6764;
+	Tue, 24 Jun 2025 15:31:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61216C4CEE3;
+	Tue, 24 Jun 2025 15:33:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750778896;
-	bh=Pl3NFZyhrvklSpvN1eF/J9iEI8F8auASAYz/1jCX/eI=;
+	s=k20201202; t=1750779199;
+	bh=q6zc5t1ffrY54UuAj9wfKtHgj2vJk8nzvm5t/rgZlJ4=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=aX667HMmD7Y51beRdU5f4Hd584kRCoEk7KvoexSEew+t+eRh1pj1fR9UYQkqZHZfh
-	 fWZBuBKFpWbUuR18ZgET27bcKTR21VWtudD2h/MiJg6xbrWNzJmKi4wWdNJxp8UTpF
-	 cLfLjNx7iOPtPZpUkfu58+hbZmJ888pu5bFPuQLLNe3jewq+aBRDEgJjvD7ycC26mJ
-	 gerZK14v2YkZRrVmf2+j4+xZpI9yO8HqO8Rg7b5p731cuNj3lCL5h1fcWXBFxZrqNF
-	 KCL0s7tmxxejQDhFnb583lC+8Fm9OWcJ3n4gkCCspwZLuTbTLsDNKxeUPWTTXNkXBe
-	 /ynLZbIg6aNbg==
-Date: Tue, 24 Jun 2025 10:28:14 -0500
+	b=tAdJn0S2KFY7K9z1dPx1SBSRAXjgZzFEpuX9Cz8uE2gOzckJHxm7jz+0gdwzWO+ex
+	 CwT0ZhtL3tH9wwwdwjZBylW6D+MQ0M2HcWcRC2oWuS9rz02Rbu4tw8KGNnF3XJ80hQ
+	 iNmEoquScWaakp/njFSojt3F09lCIqgde2eukZOpgCGkqxK8JMJ4CbFm4/h2AGuVwS
+	 ITwBL8mhY6G4yj+CNxqP8lp9R651VyBgDXFGPM+uwbPELKLg4tpfsbFb2UGECQ8kOP
+	 v4pAFDhjBxAWCSbz34wWUDKlhtjtMzRHLkBhFjVhGsk0f9wG0bP/QpPAl++srzrNwW
+	 oQSp5ec0EoFFA==
+Date: Tue, 24 Jun 2025 10:33:18 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Jacky Chou <jacky_chou@aspeedtech.com>
 Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
@@ -85,15 +71,15 @@ Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
 	"wak@google.com" <wak@google.com>,
 	"yuxiaozhang@google.com" <yuxiaozhang@google.com>,
 	BMC-SW <BMC-SW@aspeedtech.com>
-Subject: Re: =?utf-8?B?5Zue6KaG?= =?utf-8?Q?=3A?= [PATCH 5/7] ARM: dts:
- aspeed-g6: Add PCIe RC node
-Message-ID: <20250624152814.GA1477818@bhelgaas>
+Subject: Re: =?utf-8?B?5Zue6KaGOiBbUEFUQw==?= =?utf-8?Q?H?= 7/7] pci: aspeed:
+ Add ASPEED PCIe host controller driver
+Message-ID: <20250624153318.GA1477975@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <SEYPR06MB51343F38D4F9C130A4CE3FED9D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+In-Reply-To: <SEYPR06MB51342E52B3C4A7AFD42485039D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250624_162822_279630_3CAB7366 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20250624_083320_604139_85F32240 
+X-CRM114-Status: GOOD (  14.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,25 +96,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 20, 2025 at 05:24:39AM +0000, Jacky Chou wrote:
-> > > +				resets = <&syscon ASPEED_RESET_H2X>,
-> > > +					 <&syscon ASPEED_RESET_PCIE_RC_O>;
-> > > +				reset-names = "h2x", "perst";
+On Fri, Jun 20, 2025 at 06:05:20AM +0000, Jacky Chou wrote:
+> > > Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
+> > > initialization, reset, clock, IRQ domain, and MSI domain setup.
+> > > Implement platform-specific setup and register configuration for
+> > > ASPEED. And provide PCI config space read/write and INTx/MSI interrupt
+> > > handling.
+
+> > > +static int aspeed_ast2600_rd_conf(struct pci_bus *bus, unsigned int devfn,
+> > > +				  int where, int size, u32 *val)
+> > > +{
+> > > +	struct aspeed_pcie *pcie = bus->sysdata;
+> > > +	u32 bdf_offset;
+> > > +	int rx_done_fail = 0, slot = PCI_SLOT(devfn);
+> > > +	u32 cfg_val, isr, type = 0;
+> > > +	u32 link_sts = 0;
+> > > +	int ret;
+> > > +
+> > > +	/* Driver may set unlock RX buffere before triggering next TX config
+> > > +*/
+> > > +	writel(PCIE_UNLOCK_RX_BUFF | readl(pcie->reg + H2X_DEV_CTRL),
+> > > +	       pcie->reg + H2X_DEV_CTRL);
+> > > +
+> > > +	if (bus->number == 128 && slot != 0 && slot != 8)
+> > > +		return PCIBIOS_DEVICE_NOT_FOUND;
+> > > +	type = (bus->number > 128);
 > > 
-> > PERST# is clearly a per-Root Port item since it's a signal on the
-> > PCIe connector.  Can you separate this and any other per-Root Port
-> > things into a Root Port stanza to leave open the possibility of
-> > future hardware that supports multiple Root Ports in the RC?
+> > Weird.  What's all this?  Some kind of device you want to hide?
+> > Deserves a hint about what's special.
 > 
-> The PCIe RC that designed by us is only one root port.
+> The bus range in our AST2600 design is just starting from 128.
+> There is no something special.  I will use the child_ops that is in
+> struct pci_host_bridge to distinguish the rc bridge and the other
+> bus.
 
-Yes.  But this driver may be used in the future for other RCs that
-include more than one Root Port, and it would be good if that didn't
-require structural changes to the DT.  Also, there are RCs from other
-vendors that include more than one Root Port, and I'd like all the DTs
-and drivers to have similar structure.
-
-Bjorn
+Is the 128 root bus number hardwired into the RC?  Maybe it should be
+described in DT?
 
 -- 
 linux-phy mailing list
