@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33B10C7EE33
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 11:07:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD553C7EE32
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 11:07:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RjAAsLzLUeV1JexKFaVvNWOPQVLC8SM0WAn5O9OmNeg=; b=SvuCgq6cz6n50JFCZuKwyZ9X0s
-	NisvO13F45eeRPxod6S7/Mi3GB/Dzf2kO9A6Z3udb80/2YSsKVemAGva5gmokOAxL1+C27j2GE7O0
-	KSo5/jNxHCpXez9Ji5SabFmigTsEwtiz2whgI5eZlviBZfi0Zu6q53CHN5c82fAHedW24mrtDfbFW
-	HMi+UYRWkcDLFswPM4C6LlaNkZDNiXqT/WNrEoL2o2vnntPpuB8lxL1bKrwR7JojEr+VoSk8TzoFp
-	Azojon/Fm96HRSyDEZw5ZnDwjAvZSEixvzrG4ElazX9C8HMhmYwZWE85bbTIkLCEsLiq8N6hSzuc8
-	wgKR06zg==;
+	bh=n2dBEIsYjFDF8lRH1wBakARYCfce3OZM76R8s0J6b+Y=; b=tpLmZ6UhmOddd5YQBCovgThEgt
+	foWlBVtFjledsxfG+JR3Mv43hmgzN8NESAKRYnZUZU17dc6sPVMoJRsTHZ0hnHLbmUvdRoWxcfJjB
+	vW+jzXVQBmacy3jcOlrs4IIPO8txEZR7VCg4wvbYE8Y9zbdq/77arwwWaphxFR19qafuSMhhiexW0
+	BZ4GWHKM54Fpxwd7+uluT5dC46pDuIlsPnBx1EpaDk2qU5Enrv3Cj3+jnS6YHo0t8OZ8AsDwk5Mlv
+	JLu6GxUPUro5xyiWOkXzRPBWF6de6nbad9X35YnwA36iNt6oOlguOJoqp92ZOTLB/volxJIxiWojK
+	5X4vHEKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUNyI-00000008Q8y-3ozb;
+	id 1uUNyI-00000008Q8V-2V2q;
 	Wed, 25 Jun 2025 11:07:18 +0000
-Received: from mail-wm1-f51.google.com ([209.85.128.51])
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUN42-00000008GNO-40PJ
+	id 1uUN3m-00000008G8F-15GW
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 10:09:12 +0000
-Received: by mail-wm1-f51.google.com with SMTP id 5b1f17b1804b1-4537fdec33bso9180545e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 03:09:10 -0700 (PDT)
+	Wed, 25 Jun 2025 10:08:55 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-450cf214200so55894165e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 03:08:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750846149; x=1751450949; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1750846132; x=1751450932; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=qneQjY3X2Jd798VANcewut/m2Zfu0vnaEkQ6ercd+fI=;
-        b=GoovhOrphbIAVO/JT3GIOIsxYf6+tV7S7TLfMYdilKdnz6FwQ29LTDfClmXQYI+Ffw
-         HtUquYW2hGnn6dqmARZzd12yl7jfg4PXwNI2cHJA3sw8YYy675LhT+8L+kjqb3uStaBa
-         R+qu/Z1Nmq93XVtbBEpmR+9w8mPqKXL9QI5WOfPv0Sq+OiakvkuyH3M7Pch2SU5lQfUP
-         fo+LQXfAbMyAKSxWwa2pQxS7aGMOE5upHRC8b5SYZhrOM9HXV9MLlGONgp0E2cxOLQov
-         2/Kv4WBGhbIQ1TxT6TdOVkZsb3lFttIbZh3NlreEFaBuq5+N+AsI9UmIra8ECKpOjkiQ
-         Wldg==
+        bh=J2a8kk6PcZkE03rGmBEJWejxQtEjJ7yXfgEnoE7M2mA=;
+        b=zyzX8DGoiDTrPeiVb336NfDOl1BPGSs/xXfm+269JX3ZtAcZT3FDUcQRITg9/AHC6A
+         2/RTvGxvx5srwe2xh+Sm0Xs2AYRh2r/2UYk1pNrsCC8VRBDz8C9fo3Q6gsaw9m3V4yF8
+         NmJ2wXZZoOPmHW6ZMx1HftT7StLrdlueWUD1xgt7UH12lu9NWuBTVY9Dq7Cb1m8J2cfv
+         ECgfel7iGmXXSPFib4JaftAg+1vAHSlt3jj6G7S79IOpbEGvQoyixtV1Um4MNmp/Dfep
+         /dBCT1QLAK6mvhw5OekfFZh8w4kXB5xjyX1BLuZFTlqFhnO8A2xAwsgX3V5aYE5/dAAK
+         Zlsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750846149; x=1751450949;
+        d=1e100.net; s=20230601; t=1750846132; x=1751450932;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=qneQjY3X2Jd798VANcewut/m2Zfu0vnaEkQ6ercd+fI=;
-        b=KUNWhlCk0S1s6/PtzeKEBbi85brPNSSggOA6w6BghBQ+MKkP7cYU2XvyJbGSsOvqqZ
-         /eOZ1sZwJbwb8O58kuPxAZ0juakLDn0DTEBW0jRQAyc2N7ygxaEJ1c5gC0s8v8wbnwal
-         DDw0yZP4uEtte2IfXtjw7P+9AqoX/jyHuJ4d+wlNdQe1TDtmrLLTn3q9GODKFRQQPMRE
-         zByeNzcXxPSkcBzOCcwZ0oEFbanGB/WbO+0vXqB/ZpSP25LqB0iRNXxrt9wKPSrtPXni
-         hmb8wqoYEg6w4fyhbWcUqWrd7US7YokvQb4C8NsuHFD2rJYMcaa175EJQiaVVAF36LgY
-         xyPQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVM8NxbA2rHRJKg+C1VAKyg2MS8GPzif0u+YM2ub0C93uK2R/P6toYff6mP0HXLP60JbZ8frvaB0Fk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyNpSs+J5wXx6xpXyI9q26J76AaQOIxbO+odpcvsAbqLIKyLsBr
-	C0e1kC9LZuUd/fJZCegKJW6ZzOYjG/mYFm5jFnqV2ak0HQfGasb0Bd8EPEd207c+iUc=
-X-Gm-Gg: ASbGncuvPET6aykDWoBJnXFSuuJMtGrwFZOOJaRguWTFh66bOimw6hGe2n1v4daz41A
-	dwdcdnvBD+DWAI3Yrmn/v67Xw5YLVj0QQ+tRqBcakopGCXJ1DhsOb3dYbMKXawuQgi1N4jrMl9H
-	WNaaDEZHLs6t5NES6cM/db9WVhmTXaBmvpWD5cBTgfldHYOvEO/86/AT7NZ0D2KxdsEQ+IiS1/e
-	ffuC2oCo3IpnzMNqyEpXc6mNibb+yiRajuEJe9/BptwbreFS71YnQC2xwnnQRCu4uaFkzZi7Cpl
-	gIRgw0PlZdKE1LFKAwZWAtnLJEcSTd9+98J5sN/YmpEvopmAEbfZO5n2ZZOMShXHQKzP3IC7Psg
-	JpjcwIEgSbXpaphWkaa/NQHJLayknfTjH9nlA
-X-Google-Smtp-Source: AGHT+IHnmTs+UY1GFEyjpH83eIaDxqFLZZxp8pZ7AF1bA5Pj3W8QC4Vs1NPzVLgo390Ifg/6DfCTDQ==
-X-Received: by 2002:a05:600c:34d5:b0:442:f97b:87e with SMTP id 5b1f17b1804b1-45381aa54a4mr19922005e9.6.1750846148895;
-        Wed, 25 Jun 2025 03:09:08 -0700 (PDT)
+        bh=J2a8kk6PcZkE03rGmBEJWejxQtEjJ7yXfgEnoE7M2mA=;
+        b=ulAVhdtVogPFvg5Y9/srnIMzTKexFiTgjgRSRfkk3jS2E+MEJFR1qNFCgoKe0ACqwY
+         S748i8q48oQRi70KS8/Pq6IfKG5zzbEg2J1w4KaDBdfS9xg4Ci5/bI8ES9Zd1xDTUa51
+         hMxbrd90m4/aSZRT02A5Lj1pieo/E+WVjERq9L0z97XH4IyVhQrzl+W/v5LHgc4DuHsd
+         XyFF6yEq2+Q9vGdHlnOkArU8cXBumX+GlrMJShfdN5KYTa3IDzb8MG8fTbfiZw0RiahO
+         12zUKwp85geO5MV8abNmQOd1wvRpGGhNBGS6dFo9UYQSGzTOyGHnoMVPKJM+fm7RKLjN
+         hDWw==
+X-Forwarded-Encrypted: i=1; AJvYcCUlqXxeCsGV7XD0l/k19LgkjRjd+6f83piL9+K7ERDzYzefZh4T/9dKTbaiHtyZGsYZ11BB8BmFuJ4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzjAOy5wbI4eO0yZ7AyO8Z7NlpXY34sezwbqSiBm9G6PLz7IpqQ
+	yEoKKLgx6v34BnjIIitnkhO5DP1DRtf0FPNnXxCvd+sGqS/Uhh94hctn+0f5P18ebhA=
+X-Gm-Gg: ASbGncuupsJpuBoe/ja6dYWuiCkztR/+vQATWpbDRX2jKy+tStvYvcCuktdfkry1ksm
+	rG7vjHn73hi7pYuk1aa7L5y0DSXQyRA53hDeL/pTA8oK4RAC/unTsX4HQqJtlgDYHNX2pbxx4HB
+	vf9BfNJGoxBi5BOfGVdDZoY65DG3yr4q09UuAaaCbsTG4RfKL5fmnMw6Ybhy9048Y22Wos005p+
+	pZ8XyZjeZF7yjXLgZlYTc7q5hI1HxlF60RbbJ3HBMx1xP4QGnFhkDT0X3DAJDOFRQWdS9pWfwRJ
+	pHGKnziE4ssU8YAq+B7aHIa9Z2nh64jnklu2vX7Y9LCAn6h+UTaBk1VtPKVfSIRYUsP+IXsZ0V4
+	NdSV3VYtWTWlEE/nR53QpM7L8mVYYvFi7Dcip
+X-Google-Smtp-Source: AGHT+IFJiC0S9QOgaQ2ScQ4U+1EQS39LaD4dPukyAK+89YpzNHu/8nXo31VXa8/vKLOYfbh15deE2A==
+X-Received: by 2002:a05:600c:154e:b0:44a:b478:1387 with SMTP id 5b1f17b1804b1-45381ae3576mr25646825e9.17.1750846132470;
+        Wed, 25 Jun 2025 03:08:52 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:b3df:bee7:215:e1a4? ([2a01:e0a:3d9:2080:b3df:bee7:215:e1a4])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-453823c42e1sm14946555e9.37.2025.06.25.03.09.08
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a6e8068fd0sm4309576f8f.38.2025.06.25.03.08.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Jun 2025 03:09:08 -0700 (PDT)
-Message-ID: <052364dd-743f-471b-b420-c9cd6bbc207c@linaro.org>
-Date: Wed, 25 Jun 2025 12:09:07 +0200
+        Wed, 25 Jun 2025 03:08:52 -0700 (PDT)
+Message-ID: <d923b289-1e4b-4c7c-9bec-7d0c2cbf8b86@linaro.org>
+Date: Wed, 25 Jun 2025 12:08:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 4/4] phy: qualcomm: phy-qcom-eusb2-repeater: Add support
- for PMIV0104
+Subject: Re: [PATCH 2/4] phy: qualcomm: phy-qcom-eusb2-repeater: Support
+ tune-res-fsdif prop
 To: Luca Weiss <luca.weiss@fairphone.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -86,7 +86,7 @@ Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
- <20250625-sm7635-eusb-repeater-v1-4-19d85541eb4c@fairphone.com>
+ <20250625-sm7635-eusb-repeater-v1-2-19d85541eb4c@fairphone.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -113,10 +113,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250625-sm7635-eusb-repeater-v1-4-19d85541eb4c@fairphone.com>
+In-Reply-To: <20250625-sm7635-eusb-repeater-v1-2-19d85541eb4c@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_030911_008175_F8033778 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20250625_030854_330833_C97BC2D2 
+X-CRM114-Status: GOOD (  11.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,45 +135,28 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 25/06/2025 11:14, Luca Weiss wrote:
-> Add support for the eUSB2 repeater found on the PMIV0104. There is no
-> default init table for this PMIC, just the board-specific tuning
-> parameters are used on top of the default tuning values.
+> Support reading the FS Differential TX Output Resistance Tuning from
+> devicetree and writing the register, as required on some boards.
 > 
 > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 12 ++++++++++++
->   1 file changed, 12 insertions(+)
+>   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 3 +++
+>   1 file changed, 3 insertions(+)
 > 
 > diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> index 61594739e5b12706775622e1f76af6ad5d2d29bf..3d4cdc4c18becd8efd5015e698b836ad4d7cf18c 100644
+> index d7493c2294ef23e37e484019a49ddf7b3d6a6a46..61594739e5b12706775622e1f76af6ad5d2d29bf 100644
 > --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
 > +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> @@ -82,6 +82,14 @@ static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
->   	.num_vregs	= ARRAY_SIZE(pm8550b_vreg_l),
->   };
+> @@ -136,6 +136,9 @@ static int eusb2_repeater_init(struct phy *phy)
+>   	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &val))
+>   		regmap_write(regmap, base + EUSB2_TUNE_IUSB2, val);
 >   
-> +static const struct eusb2_repeater_cfg pmiv0104_eusb2_cfg = {
-> +	/* No PMIC-specific init sequence, only board level tuning via DT */
-> +	.init_tbl	= (struct eusb2_repeater_init_tbl_reg[]) {},
-> +	.init_tbl_num	= 0,
-> +	.vreg_list	= pm8550b_vreg_l,
-> +	.num_vregs	= ARRAY_SIZE(pm8550b_vreg_l),
-> +};
+> +	if (!of_property_read_u8(np, "qcom,tune-res-fsdif", &val))
+> +		regmap_write(regmap, base + EUSB2_TUNE_RES_FSDIF, val);
 > +
->   static const struct eusb2_repeater_cfg smb2360_eusb2_cfg = {
->   	.init_tbl	= smb2360_init_tbl,
->   	.init_tbl_num	= ARRAY_SIZE(smb2360_init_tbl),
-> @@ -264,6 +272,10 @@ static const struct of_device_id eusb2_repeater_of_match_table[] = {
->   		.compatible = "qcom,pm8550b-eusb2-repeater",
->   		.data = &pm8550b_eusb2_cfg,
->   	},
-> +	{
-> +		.compatible = "qcom,pmiv0104-eusb2-repeater",
-> +		.data = &pmiv0104_eusb2_cfg,
-> +	},
->   	{
->   		.compatible = "qcom,smb2360-eusb2-repeater",
->   		.data = &smb2360_eusb2_cfg,
+>   	/* Wait for status OK */
+>   	ret = regmap_read_poll_timeout(regmap, base + EUSB2_RPTR_STATUS, poll_val,
+>   				       poll_val & RPTR_OK, 10, 5);
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
