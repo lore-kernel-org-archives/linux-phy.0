@@ -4,79 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BC6CC7EE2A
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 22:49:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C49E7C77B7C
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 23:08:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=uJyK5Rk7Z961eppB7gk7EhwZ1qEl+FVIPj6RgrWrL/Y=; b=YkxIUq6uRQ5syV
-	gfgVkn69acnuh1ku68ClAuWi+Z6ZQ2ua5LBznJ/Txecm75aWMaWye7tbNqCwdKqXZnvebI/XbHOWk
-	TscXNr6TV0VokCYbblrdbzGqkp0J1GaIn7qfcc+26VlhfRYa0cB8hLnI8evgnWXIKHO6KPMBSBm8V
-	Zy5Vp9BUk8B5Lpz9+6M/9bbouampb647bIbSdjTuQeVPf432RgbSg2tQEP+n2ZMOVBV5lw5/p6SZd
-	T0lkxS4Wjjt9RUStmxClERK3KauJiiQ9EkO+YfPb+1bZVCbufHchnJEabXfqxDzpFDdCyEIgagpXx
-	bsDaXzvQMG1LRl9VmOag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1jCIunGeGdEPBMrMmmNEGWcCgf/LZ92qBeBFJmdOP7c=; b=Er3RnzHmJFUM+d
+	XEQ2EGQYLekvNit85hbPUEPrhV6W/ua9popwYj1jgbg3WuKMQotxEMzGKM/+giyxLZkThUQb3n9Ln
+	XTkw41O2ZMokWVwGLMxiD3PlvKKrjhPdKRaO1ij7YfjltWn6E7adbRTEWdq6RKwsKsDZCcp074obJ
+	FMVhAqOoUI4UqIhHMtf6Rg4Owd5vHFnpvr4ZRkltWURcE7VCnlrQrbQ+2r+a6YWap+ZepR3ygfbX7
+	0RmI2lDHR9QFXhPFE+eXMZvrCh0MJCv0Kj/ZV048lDpmgcyOqebsu9Sco0uxAGA6+ohU2EAAUCF6R
+	vx3Jqc+rzVYN1LviMi0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUYw1-0000000A6hY-0L0j;
-	Wed, 25 Jun 2025 22:49:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uUZEb-0000000A9uS-1Fw4;
+	Wed, 25 Jun 2025 23:08:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUYQK-0000000A383-2DhE;
-	Wed, 25 Jun 2025 22:16:56 +0000
+	id 1uUXIg-00000009wAh-1SrF;
+	Wed, 25 Jun 2025 21:05:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A20CB615F0;
-	Wed, 25 Jun 2025 22:16:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2720CC4CEEA;
-	Wed, 25 Jun 2025 22:16:55 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 648325C5D32;
+	Wed, 25 Jun 2025 21:02:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DDAFC4CEEA;
+	Wed, 25 Jun 2025 21:04:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750889815;
-	bh=JPCUTE7k+d+bV0g/ym3IuJKj3lnwuQfByYVszEgGuWY=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=FRgvI8Ki3o+8iAvZxOIOLv4YJj2pE/da5dKHPk4INdG0jov6rqfxyEemaXfjw7Gch
-	 7/EpZGNRiorCi7p4OgarRC8qCQ/dx0UQ9I2J3SoVMztSbhHzrqfQSuT5BuAZWrnCwa
-	 0Gf4FPtA2UdyAGdoY7lWk0pnZG+LvElbmEFkd4erB8Ioo259Q2nrKXZ55Hh9EC0oXK
-	 /Q4N+vlPGYoJ5/LWKa3MzpD9yjxG6/yfB+QoaWFgwrx9j4i7mUTYPOOdtxwcB+6NlK
-	 o14doDX3YsC5c5DLWuPCeGWr/HKA5g9BOUlP184kbOtrpIE2lKxBg1GnhPxjAbEP3Y
-	 Vwjm1PXyLnUZg==
-Date: Wed, 25 Jun 2025 17:16:53 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
+	s=k20201202; t=1750885497;
+	bh=TwGs9xcqNKKZwXveR38XoItJjJjoTUCut41NngfDuik=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fcsXt6oS90PgQatLapdwcdjg5ia5EOeRBAAxyHyXaqEq509DGgKqAH4YB16oiKVbi
+	 gCHFaQ6danRokdU3VaXQHaDBpqN/4H24MIIog8UlfyAJYxnzu99ooq2/0+YXRDMXjk
+	 a9h+XgpAz6LVGHwkYUTGPmFSqAw6Rfoq3exAjLjg2aU6Zz53xULEhZAIRc0t8jhoT9
+	 keXTLpmUQpCKAziaUZLLNRHIFLP9x6Qp6neDgp5c2sLkHaPj7K9hMh7DOMSGfE1WEI
+	 Dn4XES7ca5/ZSM6IXyhhIwbx4CwW+gZ1caGsKqpyzW1G/Hnkz0ubIxFbpmYQvQhnkv
+	 O3QPMeeYOd9Og==
+Date: Wed, 25 Jun 2025 16:04:56 -0500
+From: Rob Herring <robh@kernel.org>
 To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
-	"lpieralisi@kernel.org" <lpieralisi@kernel.org>,
-	"kwilczynski@kernel.org" <kwilczynski@kernel.org>,
-	"mani@kernel.org" <mani@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"joel@jms.id.au" <joel@jms.id.au>,
-	"andrew@codeconstruct.com.au" <andrew@codeconstruct.com.au>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	"kishon@kernel.org" <kishon@kernel.org>,
-	"linus.walleij@linaro.org" <linus.walleij@linaro.org>,
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
-	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
-	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
-	"elbadrym@google.com" <elbadrym@google.com>,
-	"romlem@google.com" <romlem@google.com>,
-	"anhphan@google.com" <anhphan@google.com>,
-	"wak@google.com" <wak@google.com>,
-	"yuxiaozhang@google.com" <yuxiaozhang@google.com>,
-	BMC-SW <BMC-SW@aspeedtech.com>
-Subject: Re: =?utf-8?B?5Zue6KaGOiDlm57opoY=?= =?utf-8?Q?=3A?= [PATCH 5/7]
- ARM: dts: aspeed-g6: Add PCIe RC node
-Message-ID: <20250625221653.GA1590146@bhelgaas>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	mani@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
+	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
+	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org,
+	elbadrym@google.com, romlem@google.com, anhphan@google.com,
+	wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
+Subject: Re: [PATCH 3/7] dt-bindings: pci: Add document for ASPEED PCIe RC
+Message-ID: <20250625210456.GA2177479-robh@kernel.org>
+References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
+ <20250613033001.3153637-4-jacky_chou@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <SEYPR06MB51346BC9292066243CB845699D7BA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+In-Reply-To: <20250613033001.3153637-4-jacky_chou@aspeedtech.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250625_140458_471156_870B7F79 
+X-CRM114-Status: GOOD (  15.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,55 +80,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 25, 2025 at 08:27:26AM +0000, Jacky Chou wrote:
-> > > > > +				resets = <&syscon ASPEED_RESET_H2X>,
-> > > > > +					 <&syscon ASPEED_RESET_PCIE_RC_O>;
-> > > > > +				reset-names = "h2x", "perst";
-> > > >
-> > > > PERST# is clearly a per-Root Port item since it's a signal on the
-> > > > PCIe connector.  Can you separate this and any other per-Root Port
-> > > > things into a Root Port stanza to leave open the possibility of
-> > > > future hardware that supports multiple Root Ports in the RC?
-> > >
-> > > The PCIe RC that designed by us is only one root port.
-> > 
-> > Yes.  But this driver may be used in the future for other RCs that include more
-> > than one Root Port, and it would be good if that didn't require structural
-> > changes to the DT.  Also, there are RCs from other vendors that include more
-> > than one Root Port, and I'd like all the DTs and drivers to have similar
-> > structure.
+On Fri, Jun 13, 2025 at 11:29:57AM +0800, Jacky Chou wrote:
+> Add device tree binding documentation for the ASPEED PCIe Root Complex
+> controller. This binding describes the required and optional properties
+> for configuring the PCIe RC node, including support for syscon phandles,
+> MSI, clocks, resets, and interrupt mapping. The schema enforces strict
+> property validation and provides a comprehensive example for reference.
 > 
-> Thanks.
-> Is the "pciec" node in arch/arm/boot/dts/marvell/armada-385.dtsi
-> what you said?  Or could you provide some examples for us to modify
-> our pcie rc node?
+> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+> ---
+>  .../devicetree/bindings/pci/aspeed-pcie.yaml  | 159 ++++++++++++++++++
+>  1 file changed, 159 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml b/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
+> new file mode 100644
+> index 000000000000..5b50a9e2d472
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
+> @@ -0,0 +1,159 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pci/aspeed-pcie.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ASPEED PCIe Root Complex Controller
+> +
+> +maintainers:
+> +  - Jacky Chou <jacky_chou@aspeedtech.com>
+> +
+> +description: |
+> +  Device tree binding for the ASPEED PCIe Root Complex controller.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - aspeed,ast2600-pcie
+> +      - aspeed,ast2700-pcie
+> +
+> +  device_type:
+> +    const: pci
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  ranges:
+> +    minItems: 2
+> +    maxItems: 2
+> +
+> +  interrupts:
+> +    description: IntX and MSI interrupt
+> +
+> +  resets:
+> +    items:
+> +      - description: Module reset
+> +      - description: PCIe PERST
+> +
+> +  reset-names:
+> +    items:
+> +      - const: h2x
+> +      - const: perst
+> +
+> +  msi-parent: true
+> +
+> +  msi_address:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: MSI address
 
-Here are some examples of DT bindings and corresponding driver code:
+What's this for?
 
-* drivers/pci/controller/dwc/pcie-kirin.c
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/hisilicon,kirin-pcie.yaml?id=v6.16-rc1#n108
+> +
+> +  aspeed,ahbc:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: Phandle to ASPEED AHBC syscon.
+> +
+> +  aspeed,pciecfg:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: Phandle to ASPEED PCIe configuration syscon.
+> +
+> +  aspeed,pciephy:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: Phandle to ASPEED PCIe PHY syscon.
 
-    kirin_pcie_parse_port():
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/dwc/pcie-kirin.c?id=v6.16-rc1#n399
+Use the phy binding and make the phy control a separate driver.
 
-* drivers/pci/controller/pci-mvebu.c
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/marvell,kirkwood-pcie.yaml?id=v6.16-rc1#n125
-
-    mvebu_pcie_parse_port():
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pci-mvebu.c?id=v6.16-rc1#n1252
-
-* drivers/pci/controller/pcie-mt7621.c
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mediatek,mt7621-pcie.yaml?id=v6.16-rc1#n111
-
-    mt7621_pcie_parse_port():
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pcie-mt7621.c.c?id=v6.16-rc1#n198
-
-* drivers/pci/controller/pcie-mediatek.c
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mediatek-pcie.txt?id=v6.16-rc1#n85
-
-    mtk_pcie_parse_port():
-    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pcie-mediatek.c.c?id=v6.16-rc1#n909
-
+Rob
 
 -- 
 linux-phy mailing list
