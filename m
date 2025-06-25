@@ -4,127 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 535FCC7115C
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 07:04:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E544C7EE30
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 08:44:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/6zeYV+8ZWodFfmcPpuvQNRqHZN30BatvU1NRI/Egks=; b=VAcgGFJATAR54F
-	Bu5ZyuoXURNBlct5Qo01rnpyijzJWVNXUPDwvsPpRRMVGutx4KNVtXxFPootEvAlXBNtjvRzSoQrs
-	iug/bcWR8398sMjv49c6uhID7bWhzebGlsvOhBhVh4gZKxTlCfvA9Sr+sNkqjLoIpWEhu87xNsEUE
-	TRfWMD2Wwe4xGkRqTbvOGaG35WIe1pL2mF7lj43j+0FdlCeGsccJnzz2Jw1t7wrvJbgwXW0tSQEOn
-	Z0idPLaTxMPJ/GCJD5oJgvmcwdwo9IT6yH1J5WSzZsYCVaQfxDRWuFEvv3EM4M5JZCFPrilNkHPml
-	a/N93r1AYiJ4uxJSJXsg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=0YBHVLVDNR8MUiZSFMsaH6LO1i1YeLwIq3rpKxgAk2s=; b=aKrfWJSRsLZbPQMqKt9E0Y3X3h
+	j3Y7oecSVgSbyYbiWNtD3kDI4cQj4jYzN49DyzAZIMuZN5BekgqA33NCKKesiK1NisHs4AaIAwlSY
+	vgjJEdqGnGWypLIxGAjPSlV/EaKr4jOXm30hOiNZ90tUR7syJlYYKIMz8WsCshYvIr3bvY9VrPUEk
+	xjUdmT3AIKl+H024OtiC+mhR1Xs7N/kLeHPRKWkePJ/wFrDe2wjGV3Wbkt1Rd5YWjFWEQD5ES2/RF
+	5zg6mJbNfzdcXEHX42KG78tAdlmOxCIHiTe3wOR7iKuD0wTx37CUxtGcbFTqw6cSi23/OaIXwQk1y
+	dH6WjpWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUKBJ-00000007krI-4AhH;
-	Wed, 25 Jun 2025 07:04:29 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uULjv-000000080Qc-3jVP;
+	Wed, 25 Jun 2025 08:44:19 +0000
+Received: from leonov.paulk.fr ([185.233.101.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUK7r-00000007kSO-1rjv
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 07:00:56 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55P5NtHv032017
-	for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 07:00:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=pyzM2HxTz6vkcldnXZPq//
-	68fgMJwv6Rt9/cCgUKmGA=; b=dkbs6VOQuI2DV+BLwNtRkPU/722Zy3D6A25Dw7
-	4YQ7zjZEDOt9kKFSPRQBx4VVlaSWUaBqdyIOleW49kgF93GextQFFsBXYlx2bQoA
-	9go23sKh53SRAZ4MxpG0H3z6dZVTp/71MfCjj/WOy0oPLNdNnkgIEAD5Vso0b/A0
-	RaFPEXkbFx07VslLJv653uMuWqLzqA+H/wFT4jg2MtriYB/Caw+2vHD68ZtwfXx5
-	784vzZ760hMGfP1f78xIbt8n0Q+YtlCwcVKv+RA5hMteik0RWHfcN7h1Wm5nzBg7
-	ycwjN9aXHAIRBk0ZUXq/JSv6D2DOVm+zVG8q1khvctFLM2ow==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47esa4r2tc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 07:00:54 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-31315427249so1511832a91.1
-        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 00:00:53 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750834853; x=1751439653;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=pyzM2HxTz6vkcldnXZPq//68fgMJwv6Rt9/cCgUKmGA=;
-        b=KbfGbDk6NPL9vVhN5KM6Io9znxehYzsNI7gFrEZPBmfk7SA334M/J9UCaw0njtsRzk
-         7/+G85dIVWMeCD6Mpttq6vuH9sMJj2oZyon2rso3oG+X+jKj2VOQlPe84HquiAtwyLmH
-         TvFR77v2Ib8LP9vfb/iWh13QzdxqDeOZvcWV71Jiia4FSGRCThXdcBasw8wTkkYRHnzh
-         hce3oCJ+mqVz+jPRsCSGk92tCyrbUxOHhPUjRnP6FYF+gMbiv2AqSNr1+SmL3haiEbyj
-         egdrk1e7ieeybcY2GgA8QeHla0srvWseZzmQTBh+8cuhjScyzNlYeJVBNpkY4He82R+e
-         YtaA==
-X-Forwarded-Encrypted: i=1; AJvYcCW9rmgQ18MGgnCIMKgg5bIwU/VggoguIyyZsUzZj+Ah8uIhUNgQG+XQ9NtS5E7elOuyBq6KzEI7OwU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyjyzApmAhuiJWQHi7ceFVbkJzpG6ERq/5ez71Y+yWrjgZsIPki
-	rlEZEEGI8HD+t5VSF0IJ3qKyWtEzadbpwyLuFrJyDrXE811+nTt/B4eynS67eO3jJliRQ5qkqyr
-	9+ZeiGqQVMuP3OoMpB4YqLhFKN5GT7bfoxrgtf+i4XxuZFegcBvZJD5H94qcoQUbX79W9
-X-Gm-Gg: ASbGncsfBOzTSp1n1tKv+JeifR3yzxr1POvBbyLizxipI6xrlYxsNZSDrQouCWIryZC
-	RcoY7nJpZjhPmymSptWqdr1MQ7YBOtPptMbw0TKUai/vaXMxAph2I/64MbyCqyjVaTqiaSa42AN
-	YYe2OpxInNuVPvh4+zTCHjOBz71K9YS24cpOrejw+EmAuPCq26WVw65tIHAiUTu3dkU6IS7GGkr
-	CRmAgti3kSD1lZNLephlBXmxFBuIzdtOeuvzPEvS2QUO3npinXgikHdoaron80SvrDgkligjBYo
-	uWqLbiTrei3SnYFZOIqRyf7HA2nAeaYPdn9bdyPCLpq9ZTqyS2ShLAqF371D2NbK16sxK3IXaoX
-	UyCrMGqQkJFTkK/V3jFzaC+zHdQJpbYlkYdspkucX7x557gL/NNOv//kPcA==
-X-Received: by 2002:a17:90b:2c85:b0:312:e6f1:c05d with SMTP id 98e67ed59e1d1-315f25e7388mr3143098a91.2.1750834853035;
-        Wed, 25 Jun 2025 00:00:53 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFxulghq1aqMwRhsLHx6rKcs8jeRMiEBRz4TjDDZ8DEU2FlXcgU6xVBPD0ZuaW69ijwzrAUMA==
-X-Received: by 2002:a17:90b:2c85:b0:312:e6f1:c05d with SMTP id 98e67ed59e1d1-315f25e7388mr3143032a91.2.1750834852497;
-        Wed, 25 Jun 2025 00:00:52 -0700 (PDT)
-Received: from hu-kathirav-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-315f539e6aasm968494a91.15.2025.06.25.00.00.49
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Jun 2025 00:00:51 -0700 (PDT)
-From: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Date: Wed, 25 Jun 2025 12:30:46 +0530
-Subject: [PATCH] phy: qcom: phy-qcom-m31: Update IPQ5332 M31 USB phy
- initialization sequence
+	id 1uUKzV-00000007skR-2N9c;
+	Wed, 25 Jun 2025 07:56:23 +0000
+Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
+	by leonov.paulk.fr (Postfix) with ESMTPS id 1153F1F00050;
+	Wed, 25 Jun 2025 07:56:10 +0000 (UTC)
+Received: by laika.paulk.fr (Postfix, from userid 65534)
+	id 09850AC79EE; Wed, 25 Jun 2025 07:56:08 +0000 (UTC)
+Received: from shepard (unknown [192.168.1.1])
+	by laika.paulk.fr (Postfix) with ESMTPSA id BC2BDAC79E5;
+	Wed, 25 Jun 2025 07:56:04 +0000 (UTC)
+Date: Wed, 25 Jun 2025 09:56:02 +0200
+From: Paul Kocialkowski <paulk@sys-base.io>
+To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
+Cc: Maxime Ripard <mripard@kernel.org>,
+	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH 1/5] phy: allwinner: phy-sun6i-mipi-dphy: Support LVDS in
+ combo D-PHY
+Message-ID: <aFurkudIvrbRjJ5N@shepard>
+References: <20250221161751.1278049-1-kuba@szczodrzynski.pl>
+ <20250221161751.1278049-2-kuba@szczodrzynski.pl>
 MIME-Version: 1.0
-Message-Id: <20250625-ipq5332_hsphy_complaince-v1-1-06b4b8e66bc6@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAJ2eW2gC/x3M0QpAMBSA4VfRubbiMMqrSGvmsFPMbCWSd7dcf
- hf//0CkwBShyx4IdHLk3SWUeQbGareQ4CkZsEBZNCgF+0NWFSobvb2V2Te/anaGhKnlSEgtYq0
- h5T7QzNe/7of3/QAYkKSIagAAAA==
-X-Change-ID: 20250625-ipq5332_hsphy_complaince-c45be2e7224a
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@kernel.org,
-        Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1750834849; l=2192;
- i=kathiravan.thirumoorthy@oss.qualcomm.com; s=20230906;
- h=from:subject:message-id; bh=IOojmDcfA7xALANINpGpb3cHe1paDntB33v0oamHVOM=;
- b=SfKStKtNZyQJPNsfLoRZyp+/DtgguNjygO9NJmA3gnpnwmFv0LidhX3Pu+AggbylOqiCisoe0
- YMm/lDizgcgCv3T56wFgVHhpoj6NLR9rz5wJdWsRjHDgCC/gx3LeZCe
-X-Developer-Key: i=kathiravan.thirumoorthy@oss.qualcomm.com; a=ed25519;
- pk=xWsR7pL6ch+vdZ9MoFGEaP61JUaRf0XaZYWztbQsIiM=
-X-Authority-Analysis: v=2.4 cv=eLYTjGp1 c=1 sm=1 tr=0 ts=685b9ea6 cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=j3_UZ-iYLL1He1QCjhoA:9 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-GUID: mihELwzCiwQHBKZWa4n9E-5_5F1_-BMZ
-X-Proofpoint-ORIG-GUID: mihELwzCiwQHBKZWa4n9E-5_5F1_-BMZ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI1MDA1MSBTYWx0ZWRfXz2+Q0yc30DMm
- +hxNMleA8bTUIw1zistU2/kUbz+4M3UdAoGRpqZwucG35LfnVyp2xB2+UMvIT/CWBFZCRUL3uc6
- af/MCSqRZ/hMo/V6MSX66YpTObB7FJFTZZmsvfzJTVY/yeFXeMX9xBLJqADk5Jua3DnEzJj73nz
- o0eoa3FYHxr6KsDwZfKarhiWVQ3lwWRGAsi/pVoCndIf77QbOWAb15ZLNjKPwCM4xJcR73shbOi
- 8UEWDWkV4Rhj/HoLY475pDuvpprjd1fQnnFD/3sh8l6RcMwBjtCB8wz+kcLiAeKOFY8y4cI+qyY
- NEkmEAzDkWetyqO/R5c0NLU3oRz7dlkjI98/xuBgLaXNn+sXFVRiQ4HcJ9++dFpWwo77504I/KW
- 9ahP8PIwFRjlrYvEbqE06jSqIUrA16VaueLvcv9iWzAsy41eyLMmEXj6arCOrxc2QD46r3XF
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-06-25_01,2025-06-23_07,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 mlxscore=0 clxscore=1015 mlxlogscore=999
- suspectscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0 malwarescore=0
- adultscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506250051
+In-Reply-To: <20250221161751.1278049-2-kuba@szczodrzynski.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_000055_498274_4CDDFD8C 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20250625_005621_923794_63BF95BA 
+X-CRM114-Status: GOOD (  33.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,79 +71,253 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8509431906078845056=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The current configuration used for the IPQ5332 M31 USB PHY fails the
-Near End High Speed Signal Quality compliance test. To resolve this,
-update the initialization sequence as specified in the Hardware Design
-Document.
 
-Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
-Cc: stable@kernel.org
-Signed-off-by: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-m31.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+--===============8509431906078845056==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="M3lDD/H+Q2OgnYvP"
+Content-Disposition: inline
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
-index 7caeea1b109e922c0cd12e985bc8868d5bce8b4f..1a8a0f1262cd95bc00dfbf7397a1c48d88d52327 100644
---- a/drivers/phy/qualcomm/phy-qcom-m31.c
-+++ b/drivers/phy/qualcomm/phy-qcom-m31.c
-@@ -58,12 +58,14 @@
-  #define USB2_0_TX_ENABLE		BIT(2)
- 
- #define USB2PHY_USB_PHY_M31_XCFGI_4	0xc8
-- #define HSTX_SLEW_RATE_565PS		GENMASK(1, 0)
-+ #define HSTX_SLEW_RATE_400PS		GENMASK(2, 0)
-  #define PLL_CHARGING_PUMP_CURRENT_35UA	GENMASK(4, 3)
-  #define ODT_VALUE_38_02_OHM		GENMASK(7, 6)
- 
-+#define USB2PHY_USB_PHY_M31_XCFGI_9	0xDC
-+#define HSTX_CURRENT_17_1MA_385MV	BIT(1)
-+
- #define USB2PHY_USB_PHY_M31_XCFGI_5	0xcc
-- #define ODT_VALUE_45_02_OHM		BIT(2)
-  #define HSTX_PRE_EMPHASIS_LEVEL_0_55MA	BIT(0)
- 
- #define USB2PHY_USB_PHY_M31_XCFGI_11	0xe4
-@@ -164,7 +166,7 @@ static struct m31_phy_regs m31_ipq5332_regs[] = {
- 	},
- 	{
- 		USB2PHY_USB_PHY_M31_XCFGI_4,
--		HSTX_SLEW_RATE_565PS | PLL_CHARGING_PUMP_CURRENT_35UA | ODT_VALUE_38_02_OHM,
-+		HSTX_SLEW_RATE_400PS | PLL_CHARGING_PUMP_CURRENT_35UA | ODT_VALUE_38_02_OHM,
- 		0
- 	},
- 	{
-@@ -174,9 +176,13 @@ static struct m31_phy_regs m31_ipq5332_regs[] = {
- 	},
- 	{
- 		USB2PHY_USB_PHY_M31_XCFGI_5,
--		ODT_VALUE_45_02_OHM | HSTX_PRE_EMPHASIS_LEVEL_0_55MA,
-+		HSTX_PRE_EMPHASIS_LEVEL_0_55MA,
- 		4
- 	},
-+	{
-+		USB2PHY_USB_PHY_M31_XCFGI_9,
-+		HSTX_CURRENT_17_1MA_385MV,
-+	},
- 	{
- 		USB_PHY_UTMI_CTRL5,
- 		0x0,
 
----
-base-commit: 2ae2aaafb21454f4781c30734959cf223ab486ef
-change-id: 20250625-ipq5332_hsphy_complaince-c45be2e7224a
+--M3lDD/H+Q2OgnYvP
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Best regards,
--- 
-Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+Hi,
 
+Thanks for working on this! See a few comments below.
+
+On Fri 21 Feb 25, 17:17, Kuba Szczodrzy=C5=84ski wrote:
+> Some Allwinner chips (notably the D1s/T113 and the A100) have a "combo
+> MIPI DSI D-PHY" which is required when using single-link LVDS0.
+>=20
+> In this mode, the DSI peripheral is not used and the PHY is not
+> configured for DSI. Instead, the COMBO_PHY_REGx registers are set to
+> enable LVDS operation.
+>=20
+> Enable the PHY driver to work in LVDS mode on chips with a combo D-PHY.
+>=20
+> Signed-off-by: Kuba Szczodrzy=C5=84ski <kuba@szczodrzynski.pl>
+> ---
+>  drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 65 ++++++++++++++++++++-
+>  1 file changed, 63 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/al=
+lwinner/phy-sun6i-mipi-dphy.c
+> index 36eab9527..f958e34da 100644
+> --- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
+> +++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
+> @@ -166,8 +166,8 @@
+>  #define SUN50I_COMBO_PHY_REG0_EN_CP		BIT(0)
+> =20
+>  #define SUN50I_COMBO_PHY_REG1		0x114
+> -#define SUN50I_COMBO_PHY_REG2_REG_VREF1P6(n)	(((n) & 0x7) << 4)
+> -#define SUN50I_COMBO_PHY_REG2_REG_VREF0P8(n)	((n) & 0x7)
+> +#define SUN50I_COMBO_PHY_REG1_REG_VREF1P6(n)	(((n) & 0x7) << 4)
+> +#define SUN50I_COMBO_PHY_REG1_REG_VREF0P8(n)	((n) & 0x7)
+
+Good catch! Would be good to mention in the commit log (or split in a separ=
+ate
+patch but that might be overdoing it since this register wasn't used so far=
+).
+
+>  #define SUN50I_COMBO_PHY_REG2		0x118
+>  #define SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(n)	((n) & 0xff)
+> @@ -181,7 +181,9 @@ struct sun6i_dphy;
+> =20
+>  struct sun6i_dphy_variant {
+>  	void	(*tx_power_on)(struct sun6i_dphy *dphy);
+> +	void	(*lvds_power_on)(struct sun6i_dphy *dphy);
+>  	bool	rx_supported;
+> +	bool	is_combo_dphy;
+>  };
+> =20
+>  struct sun6i_dphy {
+> @@ -222,6 +224,18 @@ static int sun6i_dphy_configure(struct phy *phy, uni=
+on phy_configure_opts *opts)
+>  	return 0;
+>  }
+> =20
+> +static int sun6i_dphy_set_mode(struct phy *phy, enum phy_mode mode, int =
+submode)
+> +{
+> +	struct sun6i_dphy *dphy =3D phy_get_drvdata(phy);
+> +
+> +	if (mode =3D=3D PHY_MODE_LVDS && !dphy->variant->is_combo_dphy) {
+> +		/* Not a combo D-PHY: LVDS is not supported */
+
+Missing a final . in the comment.
+
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
+>  {
+>  	u8 lanes_mask =3D GENMASK(dphy->config.lanes - 1, 0);
+> @@ -329,6 +343,37 @@ static void sun50i_a100_mipi_dphy_tx_power_on(struct=
+ sun6i_dphy *dphy)
+>  	udelay(1);
+>  }
+> =20
+> +static void sun50i_a100_mipi_dphy_lvds_power_on(struct sun6i_dphy *dphy)
+> +{
+> +	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG1,
+> +		     SUN50I_COMBO_PHY_REG1_REG_VREF1P6(4) |
+> +		     SUN50I_COMBO_PHY_REG1_REG_VREF0P8(3));
+> +
+> +	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0,
+> +		     SUN50I_COMBO_PHY_REG0_EN_CP);
+> +	udelay(5);
+
+Please add a white space here...
+
+> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
+> +			   SUN50I_COMBO_PHY_REG0_EN_LVDS,
+> +			   SUN50I_COMBO_PHY_REG0_EN_LVDS);
+> +	udelay(5);
+
+here too...
+
+> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
+> +			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO,
+> +			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO);
+> +	udelay(5);
+
+here too...
+
+> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
+> +			   SUN50I_COMBO_PHY_REG0_EN_MIPI,
+> +			   SUN50I_COMBO_PHY_REG0_EN_MIPI);
+> +
+> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
+> +		     SUN6I_DPHY_ANA4_REG_EN_MIPI |
+> +		     SUN6I_DPHY_ANA4_REG_IB(2));
+here too...
+
+> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
+> +		     SUN6I_DPHY_ANA3_EN_LDOR |
+> +		     SUN6I_DPHY_ANA3_EN_LDOD);
+
+here too...
+
+> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA2_REG, 0);
+
+and here too in order to match the coding style.
+
+> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA1_REG, 0);
+> +}
+> +
+>  static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
+>  {
+>  	u8 lanes_mask =3D GENMASK(dphy->config.lanes - 1, 0);
+> @@ -492,6 +537,14 @@ static int sun6i_dphy_power_on(struct phy *phy)
+>  {
+>  	struct sun6i_dphy *dphy =3D phy_get_drvdata(phy);
+> =20
+> +	if (phy->attrs.mode =3D=3D PHY_MODE_LVDS && dphy->variant->is_combo_dph=
+y) {
+> +		if (dphy->variant->lvds_power_on) {
+> +			dphy->variant->lvds_power_on(dphy);
+> +			return 0;
+> +		}
+> +		return -EINVAL;
+
+This would look better the other way round: first check:
+	if (!dphy->variant->lvds_power_on)
+		return -EINVAL;
+
+and then call the function pointer and return 0 without extra indentation.
+
+> +	}
+> +
+>  	switch (dphy->direction) {
+>  	case SUN6I_DPHY_DIRECTION_TX:
+>  		return sun6i_dphy_tx_power_on(dphy);
+> @@ -514,6 +567,11 @@ static int sun6i_dphy_power_off(struct phy *phy)
+>  	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG, 0);
+>  	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG, 0);
+> =20
+> +	if (phy->attrs.mode =3D=3D PHY_MODE_LVDS && dphy->variant->is_combo_dph=
+y) {
+> +		regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG1, 0);
+> +		regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0, 0);
+> +	}
+> +
+>  	return 0;
+>  }
+> =20
+> @@ -533,6 +591,7 @@ static const struct phy_ops sun6i_dphy_ops =3D {
+>  	.configure	=3D sun6i_dphy_configure,
+>  	.power_on	=3D sun6i_dphy_power_on,
+>  	.power_off	=3D sun6i_dphy_power_off,
+> +	.set_mode	=3D sun6i_dphy_set_mode,
+>  	.init		=3D sun6i_dphy_init,
+>  	.exit		=3D sun6i_dphy_exit,
+>  };
+> @@ -619,6 +678,8 @@ static const struct sun6i_dphy_variant sun6i_a31_mipi=
+_dphy_variant =3D {
+> =20
+>  static const struct sun6i_dphy_variant sun50i_a100_mipi_dphy_variant =3D=
+ {
+>  	.tx_power_on	=3D sun50i_a100_mipi_dphy_tx_power_on,
+> +	.lvds_power_on	=3D sun50i_a100_mipi_dphy_lvds_power_on,
+> +	.is_combo_dphy	=3D true,
+>  };
+> =20
+>  static const struct of_device_id sun6i_dphy_of_table[] =3D {
+> --=20
+> 2.25.1
+>=20
+>=20
+
+--=20
+Paul Kocialkowski,
+
+Independent contractor - sys-base - https://www.sys-base.io/
+Free software developer - https://www.paulk.fr/
+
+Expert in multimedia, graphics and embedded hardware support with Linux.
+
+--M3lDD/H+Q2OgnYvP
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbq5IACgkQhP3B6o/u
+lQytpg//bGHggO6GMgSRUWrRfU67xQXC0LWqeX5lbWuCQJk2xbXl8iQMa9wosfOG
+oGqxsObFtN+fh7G/j+I8hBtoB8V6/5PfYpYmN4YmZxwy2lur5ULXAB82DApLV2ki
++Eb5/Fox4n+t3mcfkrL9vseJHEfu1Em4CiM06U3h/GQidM6plSj+NU4J0+Rnn93G
+ayYVPuuoqcfdfnjMbGCOoGJFjlVbCAM/D71wyeBepFaEYTPgq+4LidmpPhaS7irt
+BgSH+D59cMj2ChJJQCRh3E5BkbAOWi62T7TIbzfIc/eKCaZgABN0DGFcpBoA22JG
+tuRrdpDXp5YcfPYfitvRt0idVyJsBG+zcuHY2fQlqjCrMWAVcctNZWX8jpu8LY7r
+oT727jRFb1oVVBr0FNyP1AM9PKmBhY2fj3S+vQvjSBYe1kKTjvxaMhyeT9+K7ihC
+fY3Hm7hLbDjm5TO8mSfRADkZLXZ+mvtYw7wg7apzWWfE2aCmg+EItQcw9WYAIZrH
+cCzCC2LftXzY9B24svI8K5rSE0gMGFKcs+2WWoEaLFCXosGWeJ+w2es6a0jQGvJc
+augMFPF1G1NqbN61PLXrK5JYDvzwu//BgrmNKo9fgCHUsId03crklxmU/crqj3g5
+5pkqZEm8h+ZWxCUbO6sC0qauT63pXfy5OmMSLpJeIGqW2z8B3u0=
+=LII3
+-----END PGP SIGNATURE-----
+
+--M3lDD/H+Q2OgnYvP--
+
+
+--===============8509431906078845056==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8509431906078845056==--
+
