@@ -4,66 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C49E7C77B7C
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 23:08:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD492C7EE2A
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 02:37:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1jCIunGeGdEPBMrMmmNEGWcCgf/LZ92qBeBFJmdOP7c=; b=Er3RnzHmJFUM+d
-	XEQ2EGQYLekvNit85hbPUEPrhV6W/ua9popwYj1jgbg3WuKMQotxEMzGKM/+giyxLZkThUQb3n9Ln
-	XTkw41O2ZMokWVwGLMxiD3PlvKKrjhPdKRaO1ij7YfjltWn6E7adbRTEWdq6RKwsKsDZCcp074obJ
-	FMVhAqOoUI4UqIhHMtf6Rg4Owd5vHFnpvr4ZRkltWURcE7VCnlrQrbQ+2r+a6YWap+ZepR3ygfbX7
-	0RmI2lDHR9QFXhPFE+eXMZvrCh0MJCv0Kj/ZV048lDpmgcyOqebsu9Sco0uxAGA6+ohU2EAAUCF6R
-	vx3Jqc+rzVYN1LviMi0w==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=SFlQTRrT3ODIPKVpSOyJi8PyqoCewk9+0WRGyqUWwzA=; b=FGiYs3c7dLF+6k
+	bfelB56y4F4tZPQK5S7pv7WVHB6fRE/mIHg9gyaKMh2D0aBIzAzKNM2o60wzqgyll29IL7f7hirja
+	f2RM7MCp+7e3/wEAFNPJL19fYf+U14I0wWIZToFHJFGuhTYWvGKMFhHyNzQgSpMDk+76LrGryKmpE
+	ZSzdqL9jA5VuL4RWCE6KEnL/A9mWDi3cBnfBEp5x4QPlIvKH/4xfDjTZ01VmDyygABqP0KdDz5COy
+	FOWq20zSTfV75v8YzS47eyGq7Yy1NkNitrN1uVOWoDfNc/vxhL0Ya8wD7DGYx5xXx9z83Zw/K0QtV
+	xZ42MgOjMQLfOz0gBhJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUZEb-0000000A9uS-1Fw4;
-	Wed, 25 Jun 2025 23:08:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uUcUA-0000000ASJo-1OLw;
+	Thu, 26 Jun 2025 02:37:10 +0000
+Received: from [203.254.224.25] (helo=mailout2.samsung.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUXIg-00000009wAh-1SrF;
-	Wed, 25 Jun 2025 21:05:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 648325C5D32;
-	Wed, 25 Jun 2025 21:02:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DDAFC4CEEA;
-	Wed, 25 Jun 2025 21:04:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750885497;
-	bh=TwGs9xcqNKKZwXveR38XoItJjJjoTUCut41NngfDuik=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fcsXt6oS90PgQatLapdwcdjg5ia5EOeRBAAxyHyXaqEq509DGgKqAH4YB16oiKVbi
-	 gCHFaQ6danRokdU3VaXQHaDBpqN/4H24MIIog8UlfyAJYxnzu99ooq2/0+YXRDMXjk
-	 a9h+XgpAz6LVGHwkYUTGPmFSqAw6Rfoq3exAjLjg2aU6Zz53xULEhZAIRc0t8jhoT9
-	 keXTLpmUQpCKAziaUZLLNRHIFLP9x6Qp6neDgp5c2sLkHaPj7K9hMh7DOMSGfE1WEI
-	 Dn4XES7ca5/ZSM6IXyhhIwbx4CwW+gZ1caGsKqpyzW1G/Hnkz0ubIxFbpmYQvQhnkv
-	 O3QPMeeYOd9Og==
-Date: Wed, 25 Jun 2025 16:04:56 -0500
-From: Rob Herring <robh@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	mani@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
-	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
-	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	id 1uUcU6-0000000ASGZ-1bM0
+	for linux-phy@lists.infradead.org;
+	Thu, 26 Jun 2025 02:37:08 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250626023658epoutp02c88583840ff69545ca14c68c253d6052~MdzN_cMH_2400124001epoutp02B
+	for <linux-phy@lists.infradead.org>; Thu, 26 Jun 2025 02:36:58 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250626023658epoutp02c88583840ff69545ca14c68c253d6052~MdzN_cMH_2400124001epoutp02B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1750905418;
+	bh=uDMB1Z9AjVBe8c2zXxGE4Co7kt+hAiHK3QF5M3qdFBQ=;
+	h=From:To:Cc:Subject:Date:References:From;
+	b=LFbSOWBdPiv/5Afw4wRBYQ5xMdOgj7HY4Kd2lrrBUIQLvbHXm8DgL8SUU19H7OvDv
+	 S4Z+ZWdfxahT7zGXF8uhFrdphvPuEmYY5mtkKCOuCG07z16Y4WpWAv4hv/mGY+QXFI
+	 i9YcQhaqMfrzMbDHU/uOvsAcZki2a8dwoIXL9NRY=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTPS id
+	20250626023657epcas5p4a4a1cf57a1aa0c4c264120eec35ec18a~MdzNWH9ju2563825638epcas5p4e;
+	Thu, 26 Jun 2025 02:36:57 +0000 (GMT)
+Received: from epcas5p4.samsung.com (unknown [182.195.38.183]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4bSN9z4Sl6z6B9mC; Thu, 26 Jun
+	2025 02:36:55 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
+	20250625165241epcas5p471ca039a776513c4da7ee2a0955de5c2~MV1EnqnFE0913509135epcas5p4d;
+	Wed, 25 Jun 2025 16:52:41 +0000 (GMT)
+Received: from cheetah.samsungds.net (unknown [107.109.115.53]) by
+	epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20250625165238epsmtip2a96f05e6c212ccb6164b2e3fc64e727e~MV1B4OmR01741117411epsmtip2L;
+	Wed, 25 Jun 2025 16:52:38 +0000 (GMT)
+From: Shradha Todi <shradha.t@samsung.com>
+To: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org,
-	elbadrym@google.com, romlem@google.com, anhphan@google.com,
-	wak@google.com, yuxiaozhang@google.com, BMC-SW@aspeedtech.com
-Subject: Re: [PATCH 3/7] dt-bindings: pci: Add document for ASPEED PCIe RC
-Message-ID: <20250625210456.GA2177479-robh@kernel.org>
-References: <20250613033001.3153637-1-jacky_chou@aspeedtech.com>
- <20250613033001.3153637-4-jacky_chou@aspeedtech.com>
+	linux-fsd@tesla.com
+Cc: manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, kw@linux.com,
+	robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com,
+	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
+	vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de,
+	m.szyprowski@samsung.com, jh80.chung@samsung.com, pankaj.dubey@samsung.com,
+	Shradha Todi <shradha.t@samsung.com>
+Subject: [PATCH v2 00/10] Add PCIe support for Tesla FSD SoC
+Date: Wed, 25 Jun 2025 22:22:19 +0530
+Message-ID: <20250625165229.3458-1-shradha.t@samsung.com>
+X-Mailer: git-send-email 2.49.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250613033001.3153637-4-jacky_chou@aspeedtech.com>
+X-CMS-MailID: 20250625165241epcas5p471ca039a776513c4da7ee2a0955de5c2
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-541,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250625165241epcas5p471ca039a776513c4da7ee2a0955de5c2
+References: <CGME20250625165241epcas5p471ca039a776513c4da7ee2a0955de5c2@epcas5p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_140458_471156_870B7F79 
-X-CRM114-Status: GOOD (  15.50  )
+X-CRM114-CacheID: sfid-20250625_193707_052517_C127A9C9 
+X-CRM114-Status: GOOD (  16.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,92 +96,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 13, 2025 at 11:29:57AM +0800, Jacky Chou wrote:
-> Add device tree binding documentation for the ASPEED PCIe Root Complex
-> controller. This binding describes the required and optional properties
-> for configuring the PCIe RC node, including support for syscon phandles,
-> MSI, clocks, resets, and interrupt mapping. The schema enforces strict
-> property validation and provides a comprehensive example for reference.
-> 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-> ---
->  .../devicetree/bindings/pci/aspeed-pcie.yaml  | 159 ++++++++++++++++++
->  1 file changed, 159 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml b/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
-> new file mode 100644
-> index 000000000000..5b50a9e2d472
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/aspeed-pcie.yaml
-> @@ -0,0 +1,159 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/aspeed-pcie.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ASPEED PCIe Root Complex Controller
-> +
-> +maintainers:
-> +  - Jacky Chou <jacky_chou@aspeedtech.com>
-> +
-> +description: |
-> +  Device tree binding for the ASPEED PCIe Root Complex controller.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - aspeed,ast2600-pcie
-> +      - aspeed,ast2700-pcie
-> +
-> +  device_type:
-> +    const: pci
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  ranges:
-> +    minItems: 2
-> +    maxItems: 2
-> +
-> +  interrupts:
-> +    description: IntX and MSI interrupt
-> +
-> +  resets:
-> +    items:
-> +      - description: Module reset
-> +      - description: PCIe PERST
-> +
-> +  reset-names:
-> +    items:
-> +      - const: h2x
-> +      - const: perst
-> +
-> +  msi-parent: true
-> +
-> +  msi_address:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: MSI address
+FSD platform has three instances of DesignWare based PCIe IP,
+one is in FSYS0 block and other two in FSYS1 block.
+This patch series add required DT binding, DT file modifications,
+Controller driver support and PHY driver support for the same.
 
-What's this for?
+To keep single PCIe controller driver for all Samsung
+manufactured SoC, we have made changes to Exynos file to extend
+support for FSD platform and other Samsung manufactured SoCs which
+shall be upstreamed soon.
 
-> +
-> +  aspeed,ahbc:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to ASPEED AHBC syscon.
-> +
-> +  aspeed,pciecfg:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to ASPEED PCIe configuration syscon.
-> +
-> +  aspeed,pciephy:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to ASPEED PCIe PHY syscon.
+First a version was posted as a separate driver file:
+https://lore.kernel.org/lkml/20221121105210.68596-1-shradha.t@samsung.com/
+This was rejected and request was made to add the support in exynos file
+itself.
 
-Use the phy binding and make the phy control a separate driver.
+Then another patchset was posted to refactor existing exynos file:
+https://lore.kernel.org/lkml/649a8d88-0504-5aa9-d167-d25d394f3f26@linaro.org/T/
+This requested some major changes
 
-Rob
+Taking both these reviews into consideration, I have posted a fresh
+patchset where both changes to exynos framework and addition of new FSD
+support is present.
+
+v2:
+ - Reordered patches for removing unused MACROs and renaming them
+ - Fixed all incomplete DT bindings
+ - Modified PHY driver code to adopt better design
+ - Removed patch to add alignment data in PCI endpoint test driver
+ - Added dts changes in the patchset itself
+
+v1: https://lore.kernel.org/lkml/20250518193152.63476-1-shradha.t@samsung.com/ 
+
+Shradha Todi (10):
+  PCI: exynos: Remove unused MACROs in exynos PCI file
+  PCI: exynos: Change macro names to exynos specific
+  PCI: exynos: Reorder MACROs to maintain consistency
+  PCI: exynos: Add platform device private data
+  PCI: exynos: Add structure to hold resource operations
+  dt-bindings: PCI: Add bindings support for Tesla FSD SoC
+  dt-bindings: phy: Add PHY bindings support for FSD SoC
+  phy: exynos: Add PCIe PHY support for FSD SoC
+  PCI: exynos: Add support for Tesla FSD SoC
+  arm64: dts: fsd: Add PCIe support for Tesla FSD SoC
+
+ .../bindings/pci/samsung,exynos-pcie.yaml     | 121 ++--
+ .../bindings/pci/tesla,fsd-pcie-ep.yaml       |  91 +++
+ .../bindings/phy/samsung,exynos-pcie-phy.yaml |  25 +-
+ arch/arm64/boot/dts/tesla/fsd-evb.dts         |  36 ++
+ arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi    |  65 ++
+ arch/arm64/boot/dts/tesla/fsd.dtsi            | 147 +++++
+ drivers/pci/controller/dwc/pci-exynos.c       | 568 +++++++++++++++---
+ drivers/phy/samsung/phy-exynos-pcie.c         | 317 +++++++++-
+ 8 files changed, 1240 insertions(+), 130 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/tesla,fsd-pcie-ep.yaml
+
+-- 
+2.49.0
+
 
 -- 
 linux-phy mailing list
