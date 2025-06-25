@@ -4,83 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CAA9C7EE31
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 21:38:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BC6CC7EE2A
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 22:49:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LWBntMfrfEPapiyxEW5vxjy2vrdCrN5xrRe4mAV7A3U=; b=n8qh3Ne71R+tq1
-	gKBVKDUCgkO+TH+3kz15VYTDfGH9EToVwB3bA7JCleFvVRG4PGba4BIr5cukzLgpkbGZw0aQNifqn
-	qiyl5mbrizDyrEUljspUwBtvStoqOSQ7ALILoDC0ZD9TJVCUExiLyz59QCAxCAikHiVyYSbDBHlOc
-	wHMMkBVQgf6mf2BAcf7sTqcT0Wvye9CdJlkHEferiB5EZFcpb0fBOvLFDFO8f7xWs9tbKFxAzSr0w
-	kBgEd1d0l7cu2mw0VnOHBHc8//AlW3z8jm48u0yLrAZtxj1OqMyuW9STkwY4+Q0paHIylBdocNjSh
-	I3eYHxQutHE6GuRYytXQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=uJyK5Rk7Z961eppB7gk7EhwZ1qEl+FVIPj6RgrWrL/Y=; b=YkxIUq6uRQ5syV
+	gfgVkn69acnuh1ku68ClAuWi+Z6ZQ2ua5LBznJ/Txecm75aWMaWye7tbNqCwdKqXZnvebI/XbHOWk
+	TscXNr6TV0VokCYbblrdbzGqkp0J1GaIn7qfcc+26VlhfRYa0cB8hLnI8evgnWXIKHO6KPMBSBm8V
+	Zy5Vp9BUk8B5Lpz9+6M/9bbouampb647bIbSdjTuQeVPf432RgbSg2tQEP+n2ZMOVBV5lw5/p6SZd
+	T0lkxS4Wjjt9RUStmxClERK3KauJiiQ9EkO+YfPb+1bZVCbufHchnJEabXfqxDzpFDdCyEIgagpXx
+	bsDaXzvQMG1LRl9VmOag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUXpW-00000009yfy-0XBn;
-	Wed, 25 Jun 2025 21:38:54 +0000
-Received: from mgamail.intel.com ([192.198.163.19])
+	id 1uUYw1-0000000A6hY-0L0j;
+	Wed, 25 Jun 2025 22:49:41 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUVbf-00000009jBt-2oHh
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 19:16:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1750878987; x=1782414987;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=jQ6meuQJB7EAkIgLMqxwrSHNKFvoSijnin1Z/61bJus=;
-  b=Klc8A0R/JYGIt+Nbq+UgV4OLuaxUHOhY6FPq3D5l0X4UEui1fa+aFfOj
-   Tuy2H4GRaLlCRoeE2f8keOLG39E1/CUTuf/Etc1N1py6mK+QXZpaIUanG
-   CO/WmIQYNtmkWDbNchtl+U+qBpcD62pWajm+iiPCSCv9BYBX75GrTJSke
-   Xf/T46FBuCm8umWePuTBWCjECR3CtX/JHGGpev3CSuNn7bCZvVwXsOTE3
-   EHrpo9N8B1nYUbenJgCR5HIJcqSWCwtpU0/v4a5z1o5DLlOwfp7uFb6A2
-   qDEd7HkPpKmZUnv6wNxY5LRBdDSx9JWNcSut5zGsqk0iHdW8jDv5NhNa+
-   A==;
-X-CSE-ConnectionGUID: AdmgMPPtTSKsUcpyfC950w==
-X-CSE-MsgGUID: wmqDOa3HSQyYhdYvgNfl4g==
-X-IronPort-AV: E=McAfee;i="6800,10657,11475"; a="52280294"
-X-IronPort-AV: E=Sophos;i="6.16,265,1744095600"; 
-   d="scan'208";a="52280294"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Jun 2025 12:16:24 -0700
-X-CSE-ConnectionGUID: DiGq+pIDQrWqFy1yzVRG6g==
-X-CSE-MsgGUID: NNEVO8+jQdi+eQljjP0tqw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,265,1744095600"; 
-   d="scan'208";a="157800608"
-Received: from lkp-server01.sh.intel.com (HELO e8142ee1dce2) ([10.239.97.150])
-  by fmviesa004.fm.intel.com with ESMTP; 25 Jun 2025 12:16:18 -0700
-Received: from kbuild by e8142ee1dce2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uUVbU-000TQO-28;
-	Wed, 25 Jun 2025 19:16:16 +0000
-Date: Thu, 26 Jun 2025 03:15:55 +0800
-From: kernel test robot <lkp@intel.com>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, andersson@kernel.org,
-	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, jingoohan1@gmail.com, mani@kernel.org,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com,
-	johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-	quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-	Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: Re: [PATCH v3 1/3] PCI: qcom: Add equalization settings for 8.0 GT/s
-Message-ID: <202506260310.BUxJgnmS-lkp@intel.com>
-References: <20250625085801.526669-2-quic_ziyuzhan@quicinc.com>
+	id 1uUYQK-0000000A383-2DhE;
+	Wed, 25 Jun 2025 22:16:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id A20CB615F0;
+	Wed, 25 Jun 2025 22:16:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2720CC4CEEA;
+	Wed, 25 Jun 2025 22:16:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1750889815;
+	bh=JPCUTE7k+d+bV0g/ym3IuJKj3lnwuQfByYVszEgGuWY=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=FRgvI8Ki3o+8iAvZxOIOLv4YJj2pE/da5dKHPk4INdG0jov6rqfxyEemaXfjw7Gch
+	 7/EpZGNRiorCi7p4OgarRC8qCQ/dx0UQ9I2J3SoVMztSbhHzrqfQSuT5BuAZWrnCwa
+	 0Gf4FPtA2UdyAGdoY7lWk0pnZG+LvElbmEFkd4erB8Ioo259Q2nrKXZ55Hh9EC0oXK
+	 /Q4N+vlPGYoJ5/LWKa3MzpD9yjxG6/yfB+QoaWFgwrx9j4i7mUTYPOOdtxwcB+6NlK
+	 o14doDX3YsC5c5DLWuPCeGWr/HKA5g9BOUlP184kbOtrpIE2lKxBg1GnhPxjAbEP3Y
+	 Vwjm1PXyLnUZg==
+Date: Wed, 25 Jun 2025 17:16:53 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: "bhelgaas@google.com" <bhelgaas@google.com>,
+	"lpieralisi@kernel.org" <lpieralisi@kernel.org>,
+	"kwilczynski@kernel.org" <kwilczynski@kernel.org>,
+	"mani@kernel.org" <mani@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"joel@jms.id.au" <joel@jms.id.au>,
+	"andrew@codeconstruct.com.au" <andrew@codeconstruct.com.au>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>,
+	"linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+	"elbadrym@google.com" <elbadrym@google.com>,
+	"romlem@google.com" <romlem@google.com>,
+	"anhphan@google.com" <anhphan@google.com>,
+	"wak@google.com" <wak@google.com>,
+	"yuxiaozhang@google.com" <yuxiaozhang@google.com>,
+	BMC-SW <BMC-SW@aspeedtech.com>
+Subject: Re: =?utf-8?B?5Zue6KaGOiDlm57opoY=?= =?utf-8?Q?=3A?= [PATCH 5/7]
+ ARM: dts: aspeed-g6: Add PCIe RC node
+Message-ID: <20250625221653.GA1590146@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250625085801.526669-2-quic_ziyuzhan@quicinc.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_121627_719094_BF2B61F9 
-X-CRM114-Status: GOOD (  10.12  )
+In-Reply-To: <SEYPR06MB51346BC9292066243CB845699D7BA@SEYPR06MB5134.apcprd06.prod.outlook.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,85 +93,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Ziyue,
+On Wed, Jun 25, 2025 at 08:27:26AM +0000, Jacky Chou wrote:
+> > > > > +				resets = <&syscon ASPEED_RESET_H2X>,
+> > > > > +					 <&syscon ASPEED_RESET_PCIE_RC_O>;
+> > > > > +				reset-names = "h2x", "perst";
+> > > >
+> > > > PERST# is clearly a per-Root Port item since it's a signal on the
+> > > > PCIe connector.  Can you separate this and any other per-Root Port
+> > > > things into a Root Port stanza to leave open the possibility of
+> > > > future hardware that supports multiple Root Ports in the RC?
+> > >
+> > > The PCIe RC that designed by us is only one root port.
+> > 
+> > Yes.  But this driver may be used in the future for other RCs that include more
+> > than one Root Port, and it would be good if that didn't require structural
+> > changes to the DT.  Also, there are RCs from other vendors that include more
+> > than one Root Port, and I'd like all the DTs and drivers to have similar
+> > structure.
+> 
+> Thanks.
+> Is the "pciec" node in arch/arm/boot/dts/marvell/armada-385.dtsi
+> what you said?  Or could you provide some examples for us to modify
+> our pcie rc node?
 
-kernel test robot noticed the following build warnings:
+Here are some examples of DT bindings and corresponding driver code:
 
-[auto build test WARNING on e04c78d86a9699d136910cfc0bdcf01087e3267e]
+* drivers/pci/controller/dwc/pcie-kirin.c
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/hisilicon,kirin-pcie.yaml?id=v6.16-rc1#n108
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Ziyue-Zhang/PCI-qcom-Add-equalization-settings-for-8-0-GT-s/20250625-170049
-base:   e04c78d86a9699d136910cfc0bdcf01087e3267e
-patch link:    https://lore.kernel.org/r/20250625085801.526669-2-quic_ziyuzhan%40quicinc.com
-patch subject: [PATCH v3 1/3] PCI: qcom: Add equalization settings for 8.0 GT/s
-config: i386-buildonly-randconfig-002-20250626 (https://download.01.org/0day-ci/archive/20250626/202506260310.BUxJgnmS-lkp@intel.com/config)
-compiler: clang version 20.1.7 (https://github.com/llvm/llvm-project 6146a88f60492b520a36f8f8f3231e15f3cc6082)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250626/202506260310.BUxJgnmS-lkp@intel.com/reproduce)
+    kirin_pcie_parse_port():
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/dwc/pcie-kirin.c?id=v6.16-rc1#n399
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202506260310.BUxJgnmS-lkp@intel.com/
+* drivers/pci/controller/pci-mvebu.c
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/marvell,kirkwood-pcie.yaml?id=v6.16-rc1#n125
 
-All warnings (new ones prefixed by >>):
+    mvebu_pcie_parse_port():
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pci-mvebu.c?id=v6.16-rc1#n1252
 
->> drivers/pci/controller/dwc/pcie-qcom-common.c:15:17: warning: unused variable 'dev' [-Wunused-variable]
-      15 |         struct device *dev = pci->dev;
-         |                        ^~~
-   1 warning generated.
+* drivers/pci/controller/pcie-mt7621.c
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mediatek,mt7621-pcie.yaml?id=v6.16-rc1#n111
 
+    mt7621_pcie_parse_port():
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pcie-mt7621.c.c?id=v6.16-rc1#n198
 
-vim +/dev +15 drivers/pci/controller/dwc/pcie-qcom-common.c
+* drivers/pci/controller/pcie-mediatek.c
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mediatek-pcie.txt?id=v6.16-rc1#n85
 
-    10	
-    11	void qcom_pcie_common_set_equalization(struct dw_pcie *pci)
-    12	{
-    13		u32 reg;
-    14		u16 speed, max_speed = PCIE_SPEED_16_0GT;
-  > 15		struct device *dev = pci->dev;
-    16	
-    17		/*
-    18		 * GEN3_RELATED_OFF register is repurposed to apply equalization
-    19		 * settings at various data transmission rates through registers namely
-    20		 * GEN3_EQ_*. The RATE_SHADOW_SEL bit field of GEN3_RELATED_OFF
-    21		 * determines the data rate for which these equalization settings are
-    22		 * applied.
-    23		 */
-    24		if (pcie_link_speed[pci->max_link_speed] < PCIE_SPEED_32_0GT)
-    25			max_speed = pcie_link_speed[pci->max_link_speed];
-    26	
-    27		for (speed = PCIE_SPEED_8_0GT; speed <= max_speed; ++speed) {
-    28			reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
-    29			reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
-    30			reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
-    31			reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
-    32				  speed - PCIE_SPEED_8_0GT);
-    33			dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
-    34	
-    35			reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
-    36			reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
-    37				GEN3_EQ_FMDC_N_EVALS |
-    38				GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
-    39				GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
-    40			reg |= FIELD_PREP(GEN3_EQ_FMDC_T_MIN_PHASE23, 0x1) |
-    41				FIELD_PREP(GEN3_EQ_FMDC_N_EVALS, 0xd) |
-    42				FIELD_PREP(GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA, 0x5) |
-    43				FIELD_PREP(GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA, 0x5);
-    44			dw_pcie_writel_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF, reg);
-    45	
-    46			reg = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
-    47			reg &= ~(GEN3_EQ_CONTROL_OFF_FB_MODE |
-    48				GEN3_EQ_CONTROL_OFF_PHASE23_EXIT_MODE |
-    49				GEN3_EQ_CONTROL_OFF_FOM_INC_INITIAL_EVAL |
-    50				GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC);
-    51			dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, reg);
-    52		}
-    53	}
-    54	EXPORT_SYMBOL_GPL(qcom_pcie_common_set_equalization);
-    55	
+    mtk_pcie_parse_port():
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/pci/controller/pcie-mediatek.c.c?id=v6.16-rc1#n909
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
