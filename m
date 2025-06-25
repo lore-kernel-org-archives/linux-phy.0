@@ -4,126 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A741C83000
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 10:53:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DC26C7EE30
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 10:53:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YzC1g0Tye5dOoMqRdArp3vafA3BcFBgisdhPw+2q8iU=; b=xoknLiHO5z5dVH
-	N7hjxlIK4dEbxuohm1wsmqVUul1FapGVHRUYG/BLdgOgZHYbHKVFGIxQ7iLw1Om9O+kOnTJCOVwMr
-	oG+1ciZQQ5CWUua7iCRDCr7qPEkJyz0wIldxhWSjsvteYIKZY6Bz7JHw6ou2DVFcEUBUQ+ZMnfuaZ
-	XaF5gxcCOAkEo4njkmm4Poltbt6qTZOPuGPDVCm1oKXuNNWnSNUt+oe+JfIcR0cyt2EX4R+OxQx/+
-	dPwuIPU8Le/kIbvrWUrf7TQDBqmH8hWdgkbNJhK51xizjf0anupgMIqMIQ12cSNhGl/jgH6pYcP1r
-	pSSR+SXyPjPqq5fpaLaQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=e39Q5GslZ2aHphdasaeaRSR1mpf56nReAvXw9isrbsE=; b=CWlBYHHq9vpTOPs2ORspFMgaJO
+	CTaQ3tKu47X6W1LIRNF3ZdoHnpqzG8Q3KcbgEt0o1A5LqI7gVtRQEIdfqQq0Oild2N5c0T3+OaJDo
+	qqFIUL5p5TUp84FclN2JbFKV1d03RfefK3/bgCemtwLBLVvs0CO36G2HwGf9fgveGe7pJnUcy6t7o
+	vVVp38v9TzQg4mAJoa9mITzlOfV+ZgjSYGslazefIFFFvDeaUGqDDJoJEYa6sppQ6j6Je7FqiEiaQ
+	pTCqek6BXzCjCqyn3YlUfE7IFMLke57xafZO+H36uUMoE9nzEZmbIs5daMl82R/2oclg5w/4BHdM+
+	Z3sKRaTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUNl5-00000008NNZ-02vK;
-	Wed, 25 Jun 2025 10:53:39 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uUNlC-00000008NRJ-3qyR;
+	Wed, 25 Jun 2025 10:53:46 +0000
+Received: from leonov.paulk.fr ([185.233.101.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUMOK-000000087lt-0Zct
-	for linux-phy@bombadil.infradead.org;
-	Wed, 25 Jun 2025 09:26:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=zwFbCod67adpMZlQOACCrkZUdsZv49m0y8A3zdRFxZM=; b=BkXemuaOsuArnrTIaMmmyKXBw8
-	pwPRaTbeMppua3kjhtYvcPhez2IgWwUbm3xKeIEXF4aNM0rIfTRfRYmTCAiL7DWBxzz+oC1+xPmpS
-	5FAKdALFhtA4t/mFEq0JinSGigTOB28Hx//ipcb2UySs2oKR1GC44UFgQPmq62cYIEHTfu6sk4CXA
-	UWJyrTB9h8BlzUUgMgaWtortLbQqzzmVcvNKpQPhEHSYuK7NQ1xRGJLg+72bX1Nktvo07Ry75v+6f
-	xq4OyfBl6+g/pYFGDhxWwIObosojqzo6jTtewkZLmF2sRkVWmvafpJ93FXuukgG8hgEeB/XyxqOwk
-	00VbnuKw==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUMOE-00000005jVc-3JE7
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 09:26:02 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55P19GD2029963;
-	Wed, 25 Jun 2025 09:25:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=zwFbCod67ad
-	pMZlQOACCrkZUdsZv49m0y8A3zdRFxZM=; b=KFILDwlSFiefrHhWlkNKrtbZY0E
-	WxcQSJq+Ub6reTqJsJPHtwzPYc/P7TQhD/YdmKTOxlI+39OvkdXv+tCIwiuaFeoQ
-	qplDErexFOTOQgGzZMw9KkCY0FeAKiRZpoRwoCu5llJST6p8wT+hdEK+HPF40gur
-	jZaAoPSMdu2N8wf1al8Z6/9V0v+/Cu89BGWq5uVVafGH9hekjMdB2HtsByDigiGG
-	9uNTYvYeRZ4rt657tPbjFALOhtHhwMG3jG7qcxely7IpLeAKe3Ef+V7p9npjz9zt
-	qd3CSUNIfeSnb199tyZv7bVlFtmijub/flsM5pNhEVqMRUwxtCN625fVtMg==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ec269hca-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:25:46 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 55P9Pi8i024642;
-	Wed, 25 Jun 2025 09:25:44 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 47dntmauxw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:25:44 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 55P9Pifs024618;
-	Wed, 25 Jun 2025 09:25:44 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 55P9PhKc024609
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:25:44 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id D04D73865; Wed, 25 Jun 2025 17:25:42 +0800 (CST)
-From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v7 4/5] arm64: dts: qcom: qcs8300: enable pcie1
-Date: Wed, 25 Jun 2025 17:25:38 +0800
-Message-Id: <20250625092539.762075-5-quic_ziyuzhan@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250625092539.762075-1-quic_ziyuzhan@quicinc.com>
-References: <20250625092539.762075-1-quic_ziyuzhan@quicinc.com>
+	id 1uULmb-0000000819M-2Xpp;
+	Wed, 25 Jun 2025 08:47:07 +0000
+Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
+	by leonov.paulk.fr (Postfix) with ESMTPS id 830E51F00053;
+	Wed, 25 Jun 2025 08:46:59 +0000 (UTC)
+Received: by laika.paulk.fr (Postfix, from userid 65534)
+	id 2153DAC7A5F; Wed, 25 Jun 2025 08:46:56 +0000 (UTC)
+Received: from shepard (unknown [192.168.1.1])
+	by laika.paulk.fr (Postfix) with ESMTPSA id B42DBAC7A56;
+	Wed, 25 Jun 2025 08:46:54 +0000 (UTC)
+Date: Wed, 25 Jun 2025 10:46:52 +0200
+From: Paul Kocialkowski <paulk@sys-base.io>
+To: Parthiban Nallathambi <parthiban@linumiz.com>
+Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 10/22] pinctrl: sunxi: add missed lvds pins for a100/a133
+Message-ID: <aFu3fAMa8KPwjPbX@shepard>
+References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
+ <20241227-a133-display-support-v1-10-13b52f71fb14@linumiz.com>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI1MDA2OSBTYWx0ZWRfX6DD5Lq4x9nqM
- kIa6I1vse3/iy6dFVs9HEXuEh55ziL4MVknCk5a+ZVah0SHjZ2CEX8YmJzcX0UaI8OEr2JyKtE3
- tENTYLsseJYtgFk1b/pE8fQw0OWc2eGqRwSW0vT3lOI9+YsssT8rKQl9P7u0vydRnn0HXvAFfBQ
- Y/qD2JGv5LhuWVKYX90fU+bxk2DyTfj4nT+W8ileMA/szQqdMDGNh5mgc58qSXDJHq7gGhZggFQ
- SX+4ct28YqCS+RvPDMmBsYQmv4nCnyAXBK/V4BtiO2Hwmv0ji/JSoNwKm/ciOapvMHhXM7DsBEB
- Nkwdjj0xoTLkPMqkOYTvjJso6MvivEeyjwXc2eHOIepIm/Ez81VGVxImn3xOw6JtUiMGET4qY7e
- fXhFGhCets/KnDRtzW0D+32SFBghkVpFlvTlatRKXLTAsd7QgQQmmU+lS8iyk7lkVj0DNI3K
-X-Authority-Analysis: v=2.4 cv=XPQwSRhE c=1 sm=1 tr=0 ts=685bc09b cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=COk6AnOGAAAA:8
- a=K7kricVwaqq8vgrxYV0A:9 a=cvBusfyB2V15izCimMoJ:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: doWzkgtf1urPlZ4gftUbvHr9XPXieajR
-X-Proofpoint-ORIG-GUID: doWzkgtf1urPlZ4gftUbvHr9XPXieajR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-06-25_02,2025-06-23_07,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 impostorscore=0 clxscore=1015 suspectscore=0 mlxscore=0
- spamscore=0 phishscore=0 malwarescore=0 mlxlogscore=999 bulkscore=0
- priorityscore=1501 adultscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2506250069
+In-Reply-To: <20241227-a133-display-support-v1-10-13b52f71fb14@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_102559_252467_1F61F4C5 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20250625_014705_954039_8E383064 
+X-CRM114-Status: GOOD (  18.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,170 +77,175 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7828589214293446192=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add configurations in devicetree for PCIe1, including registers, clocks,
-interrupts and phy setting sequence.
 
-Add PCIe lane equalization preset properties for 8 GT/s and 16GT/s.
+--===============7828589214293446192==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="eDJzuACllP3V3fib"
+Content-Disposition: inline
 
-Acked-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
----
- arch/arm64/boot/dts/qcom/qcs8300.dtsi | 124 +++++++++++++++++++++++++-
- 1 file changed, 123 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/qcs8300.dtsi b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-index 7b7009567999..0dc536494ac7 100644
---- a/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-+++ b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
-@@ -620,7 +620,7 @@ gcc: clock-controller@100000 {
- 			clocks = <&rpmhcc RPMH_CXO_CLK>,
- 				 <&sleep_clk>,
- 				 <&pcie0_phy>,
--				 <0>,
-+				 <&pcie1_phy>,
- 				 <0>,
- 				 <0>,
- 				 <0>,
-@@ -2136,6 +2136,128 @@ pcie0_phy: phy@1c04000 {
- 			status = "disabled";
- 		};
- 
-+		pcie1: pci@1c10000 {
-+			device_type = "pci";
-+			compatible = "qcom,pcie-qcs8300", "qcom,pcie-sa8775p";
-+			reg = <0x0 0x01c10000 0x0 0x3000>,
-+			      <0x0 0x60000000 0x0 0xf20>,
-+			      <0x0 0x60000f20 0x0 0xa8>,
-+			      <0x0 0x60001000 0x0 0x4000>,
-+			      <0x0 0x60100000 0x0 0x100000>,
-+			      <0x0 0x01c13000 0x0 0x1000>;
-+			reg-names = "parf",
-+				    "dbi",
-+				    "elbi",
-+				    "atu",
-+				    "config",
-+				    "mhi";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges = <0x01000000 0x0 0x00000000 0x0 0x60200000 0x0 0x100000>,
-+				 <0x02000000 0x0 0x60300000 0x0 0x60300000 0x0 0x1fd00000>;
-+			bus-range = <0x00 0xff>;
-+
-+			dma-coherent;
-+
-+			linux,pci-domain = <1>;
-+			num-lanes = <4>;
-+
-+			interrupts = <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 518 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "msi0",
-+					  "msi1",
-+					  "msi2",
-+					  "msi3",
-+					  "msi4",
-+					  "msi5",
-+					  "msi6",
-+					  "msi7",
-+					  "global";
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 0x7>;
-+			interrupt-map = <0 0 0 1 &intc GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 2 &intc GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 3 &intc GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>,
-+					<0 0 0 4 &intc GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>;
-+
-+			clocks = <&gcc GCC_PCIE_1_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_AXI_CLK>,
-+				 <&gcc GCC_PCIE_1_SLV_Q2A_AXI_CLK>;
-+			clock-names = "aux",
-+				      "cfg",
-+				      "bus_master",
-+				      "bus_slave",
-+				      "slave_q2a";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_1_AUX_CLK>;
-+			assigned-clock-rates = <19200000>;
-+
-+			interconnects = <&pcie_anoc MASTER_PCIE_1 QCOM_ICC_TAG_ALWAYS
-+					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-+					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
-+					 &config_noc SLAVE_PCIE_1 QCOM_ICC_TAG_ACTIVE_ONLY>;
-+			interconnect-names = "pcie-mem", "cpu-pcie";
-+
-+			iommu-map = <0x0 &pcie_smmu 0x0080 0x1>,
-+				    <0x100 &pcie_smmu 0x0081 0x1>;
-+
-+			resets = <&gcc GCC_PCIE_1_BCR>,
-+				 <&gcc GCC_PCIE_1_LINK_DOWN_BCR>;
-+			reset-names = "pci",
-+				      "link_down";
-+
-+			power-domains = <&gcc GCC_PCIE_1_GDSC>;
-+
-+			phys = <&pcie1_phy>;
-+			phy-names = "pciephy";
-+
-+			eq-presets-8gts = /bits/ 16 <0x5555 0x5555 0x5555 0x5555
-+						     0x5555 0x5555 0x5555 0x5555>;
-+			eq-presets-16gts = /bits/ 8 <0x55 0x55 0x55 0x55 0x55 0x55 0x55 0x55>;
-+
-+			status = "disabled";
-+		};
-+
-+		pcie1_phy: phy@1c14000 {
-+			compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy";
-+			reg = <0x0 0x01c14000 0x0 0x4000>;
-+
-+			clocks = <&gcc GCC_PCIE_1_PHY_AUX_CLK>,
-+				 <&gcc GCC_PCIE_1_CFG_AHB_CLK>,
-+				 <&gcc GCC_PCIE_CLKREF_EN>,
-+				 <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPE_CLK>,
-+				 <&gcc GCC_PCIE_1_PIPEDIV2_CLK>;
-+			clock-names = "aux",
-+				      "cfg_ahb",
-+				      "ref",
-+				      "rchng",
-+				      "pipe",
-+				      "pipediv2";
-+
-+			assigned-clocks = <&gcc GCC_PCIE_1_PHY_RCHNG_CLK>;
-+			assigned-clock-rates = <100000000>;
-+
-+			resets = <&gcc GCC_PCIE_1_PHY_BCR>;
-+			reset-names = "phy";
-+
-+			#clock-cells = <0>;
-+			clock-output-names = "pcie_1_pipe_clk";
-+
-+			#phy-cells = <0>;
-+
-+			status = "disabled";
-+		};
-+
- 		ufs_mem_hc: ufs@1d84000 {
- 			compatible = "qcom,qcs8300-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
- 			reg = <0x0 0x01d84000 0x0 0x3000>;
--- 
-2.34.1
+--eDJzuACllP3V3fib
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi and thanks for your work!
+
+On Fri 27 Dec 24, 16:37, Parthiban Nallathambi wrote:
+> lvds, lcd, dsi all shares the same GPIO D bank and lvds0
+> data 3 lines and lvds1 pins are missed, add them.
+
+Would it also make sense to submit device-tree pin definitions here?
+
+Thanks!
+
+Paul
+
+> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> ---
+>  drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>=20
+> diff --git a/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c b/drivers/pinctr=
+l/sunxi/pinctrl-sun50i-a100.c
+> index df90c75fb3c5..b97de80ae2f3 100644
+> --- a/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c
+> +++ b/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c
+> @@ -256,72 +256,84 @@ static const struct sunxi_desc_pin a100_pins[] =3D {
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D12 */
+> +		  SUNXI_FUNCTION(0x3, "lvds0"),		/* D3P */
+>  		  SUNXI_FUNCTION(0x4, "dsi0"),		/* DP3 */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 8)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 9),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D13 */
+> +		  SUNXI_FUNCTION(0x3, "lvds0"),		/* D3N */
+>  		  SUNXI_FUNCTION(0x4, "dsi0"),		/* DM3 */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 9)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 10),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D14 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D0P */
+>  		  SUNXI_FUNCTION(0x4, "spi1"),		/* CS */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 10)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 11),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D15 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D0N */
+>  		  SUNXI_FUNCTION(0x4, "spi1"),		/* CLK */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 11)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 12),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D18 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D1P */
+>  		  SUNXI_FUNCTION(0x4, "spi1"),		/* MOSI */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 12)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 13),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D19 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D1N */
+>  		  SUNXI_FUNCTION(0x4, "spi1"),		/* MISO */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 13)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 14),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D20 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D2P */
+>  		  SUNXI_FUNCTION(0x4, "uart3"),		/* TX */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 14)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 15),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D21 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D2N */
+>  		  SUNXI_FUNCTION(0x4, "uart3"),		/* RX */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 15)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 16),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D22 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* CKP */
+>  		  SUNXI_FUNCTION(0x4, "uart3"),		/* RTS */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 16)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 17),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D23 */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* CKN */
+>  		  SUNXI_FUNCTION(0x4, "uart3"),		/* CTS */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 17)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 18),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* CLK */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D3P */
+>  		  SUNXI_FUNCTION(0x4, "uart4"),		/* TX */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 18)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 19),
+>  		  SUNXI_FUNCTION(0x0, "gpio_in"),
+>  		  SUNXI_FUNCTION(0x1, "gpio_out"),
+>  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* DE */
+> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D3N */
+>  		  SUNXI_FUNCTION(0x4, "uart4"),		/* RX */
+>  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 19)),
+>  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 20),
+>=20
+> --=20
+> 2.39.5
+>=20
+
+--=20
+Paul Kocialkowski,
+
+Independent contractor - sys-base - https://www.sys-base.io/
+Free software developer - https://www.paulk.fr/
+
+Expert in multimedia, graphics and embedded hardware support with Linux.
+
+--eDJzuACllP3V3fib
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbt3wACgkQhP3B6o/u
+lQyEFg//TrQuoq7rBWw2GiGLkr841GKFMfwbOgCvkZ1O7uCpLuCvW5wITVjF4qW8
+flSBcs6qcLbz66ZXQS/86ukYfNUAvm1r4vfhJ3Ptf7m3ko5sCrkCNC3jtlukzG+k
+Eq4GzElnseT7TosPmjtImNkDjp3u/Vh/pxOdRnUHzi6N7+jGWLvU72LcF6LJKq4d
+ftamg9783Xb1QAjNnot6b+fLooAtozg34ftrIe2SE2KXt+U7qeiXtrxNerNAd6Br
+Ld34QB2oMk23sar7GQTPgvoJRCiLUNEV3hJexXf/FNHz9OviwE8irhf6BBjNz7eQ
+XwnsDeqkt5p2IF/ClwfrlsviI8HRAzqX1G7WDtuPqHTsDm67QJb8LztQ4hAUqpmS
+hUjh+BowsXfez8fVAqyp+onplRVK07SebprsBd026Uhb/cG5kBMtg3Z5H+ENCFXg
+TDLc46jsp32Mplo6wP3CVFHz0qurThqF6L8XyzIn6VoreU5uX/FRkN8jAuWtmXup
+rYNpDSE54yEL5c5P0bO1fLMtwBNKZlHEhgxHlZJCNvxgegJrtXT9hDJfYC0cnCoa
+mjeOwFuo2wZziH22TX/5QxhZzUZzOVR0CeMPn+TjJhX/qgTRXwS4DO8RexsKHHm2
+u2Fj8LAaR6bglReFWl4F+LKIeo2AswAzTyS6581R7n62JhNuXGk=
+=9BCo
+-----END PGP SIGNATURE-----
+
+--eDJzuACllP3V3fib--
+
+
+--===============7828589214293446192==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7828589214293446192==--
+
