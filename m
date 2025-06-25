@@ -4,62 +4,181 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB49EC7115C
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 10:08:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45B6AC7EE30
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 10:23:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=VWFS8YexQ+Bi5aO0SobjfMLAxJngABN5/HY13u9CMxE=; b=rc9G4j5ULch1jOTCO4FBZSLoRp
-	izyV08OiFnBhFtUhtakqXN30EeCYRbxH+Bt7PrJcM6YP/RKUD0wsM7xmyQ6TxFWPMOnI3cjgCN0Ad
-	fzQlGsuchLeoV1XgRLMSeN+TT3RMFq+YLPIDlzvYUNta0mcZy9mtJG3DPVjzl+XT9K82GIGVr1BVq
-	aNWQFnXIQdPsDHbeyNCY90AMr2YkSjHGqY6c4HVE3b7+LYKKxOPuzGFtqS4uXczsHPdq+IHbfLF4O
-	sRZ6aopJb5TBBxASi3Nk8bOrrDF6QjqcBKX32PW6S0CSCGI2en5zfLObvxke0I2bljH5s5kXZMlJo
-	OEBrVpqQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/uJV/MjrDBMObUMM55LJms5ZF4GvCgzvalXbDGNIyKc=; b=H4saH8EzHE1i41
+	IN8eCB/8bNyR0hG6OUFpmFlzNPVJ6wPvhEYghL2BlT8+RzgvB6k3tdgUg9VZDVXjNUFZxuojZMxxF
+	woPIeYnaz202UbtN2vCgM/oOb4sAW40eVBElWuAL54SZZ6hxmwfa8/gCSAox8FDZjagibUqFsmnHQ
+	8OCnuY/twjWa24otgOosUFcE7iX5tfsXhvVn2ON5k2Hs7e6t27SS9/6Xyf9Zs501d1laQfuthRJL3
+	Y17mFM1kA3EqeOFgYA7TbaEaN/61G6xWdkH+jk+k8P2QOj97etl+QwDSRA7pT9y90FkKG1ckpA/cm
+	e3u6i8qs3VFYS8UAmOAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUN3h-00000008G3A-2Jlq;
-	Wed, 25 Jun 2025 10:08:49 +0000
-Received: from leonov.paulk.fr ([185.233.101.22])
+	id 1uUNI9-00000008IeF-3yV3;
+	Wed, 25 Jun 2025 10:23:45 +0000
+Received: from mail-koreacentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c40f::7] helo=SEYPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uULCB-00000007ucb-1SI3;
-	Wed, 25 Jun 2025 08:09:28 +0000
-Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
-	by leonov.paulk.fr (Postfix) with ESMTPS id 212581F00050;
-	Wed, 25 Jun 2025 08:09:22 +0000 (UTC)
-Received: by laika.paulk.fr (Postfix, from userid 65534)
-	id 944ABAC7A07; Wed, 25 Jun 2025 08:09:20 +0000 (UTC)
-Received: from shepard (unknown [192.168.1.1])
-	by laika.paulk.fr (Postfix) with ESMTPSA id 37E5AAC7A00;
-	Wed, 25 Jun 2025 08:09:19 +0000 (UTC)
-Date: Wed, 25 Jun 2025 10:09:16 +0200
-From: Paul Kocialkowski <paulk@sys-base.io>
-To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
-Cc: Maxime Ripard <mripard@kernel.org>,
-	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH 4/5] riscv: dts: allwinner: d1s-t113: Add D-PHY to TCON
- LCD0
-Message-ID: <aFuurDqkJ3yaMqRS@shepard>
-References: <20250221161751.1278049-1-kuba@szczodrzynski.pl>
- <20250221161751.1278049-5-kuba@szczodrzynski.pl>
+	id 1uULTk-00000007xCV-0sCA;
+	Wed, 25 Jun 2025 08:27:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=y2cTf0nCBYBlWGS9UMfJ0J4vgpebYEiBeR1yUG4XOXL7OaD6Q0dhgaMho1HE41RvJ8Jok/U5VaTWsFZL1ajqJVcrI+B5glQHpobHbXhcmNGR/j0nPy3rLBcj8Pkm2Bs6wNtOo6VjpYdYuuTHYzoz2njZSA4ouxn0+DWE/wC5mwDkYk95wlTX1FS91IHmMEIPSVt3OdmXm2oKlbKtlQqlcW0N7eLa1ZlcHjsaO7igX47Hvwk/3kkobrh90wKxvh3iFW2LrIWT3+uEyTRBkWj8OcbiOoxMfnhekjq+yUSuJNS6mbcml0t/0XXZAAmpTnU27X11zVRPoARTQNbRLd205Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tAbHwFHUD0fczEesoLl2wC/N/HCbXp9vM1FUXTByOls=;
+ b=XCxCg9+ZANRw3fKxkpPiQ7mituWyvgptRlwqVcgljMpQw4Gry5U0DzBqoxnmt8gBX/pN5M0VtQSVZ8VKpXmc6SKzVPOWtMHjCrFtUzRNOPoRusvwsp0nsucKoLSZwQYWkhMrtPlkmtareT4q6oUfCwNbOXRA6xrjJqIcyzd5VDgZh7ntk/CCQvL2rYnO39mBsztr58aM7AxvmgAPb5Y6GwP7yHMt1d15I+F6Y/Sb5oz4LBS4Taaye5DE5Xfcbk0CxvssgVP1p44FtQv9l+eG3xkfOqXjdx8bBKFw+DIEFgz/IxETl2zQJ3yRJbh2+YoA9VoaTXVfA0lDAsnK8og48w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tAbHwFHUD0fczEesoLl2wC/N/HCbXp9vM1FUXTByOls=;
+ b=QtPwl24ffYcLnh1/i5xKy953xyXeDXfOdYMumSngkWPHSdihz2n0n9gbC8AmRpHhesSh/IM5mdKPgvZBODiCz7BTrvElcJQtRIeR77aLxAc1FsDoqB/kSclc0xPApdkvl2XHnJfilf4yeKF+b4mIzX4O9StEOwDXQqiovJUByVxZFW/gcO/e+M95qwDihsU90KJ/5RkGgo4yW6uVfxaeEV20haCgUz+hMYOJjBMak2Hu2CoaAOPTMML3F5zdLlgwzA+6pMmYU1Y3Ioaybf5tFtUmqbWBqLBUmxswpZJkE2deV+oJXJ0d+3rHji2luBTEzhSr9FOhb8szG8+I0bAV9w==
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
+ by TYZPR06MB6045.apcprd06.prod.outlook.com (2603:1096:400:33c::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.26; Wed, 25 Jun
+ 2025 08:27:27 +0000
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28%5]) with mapi id 15.20.8857.026; Wed, 25 Jun 2025
+ 08:27:26 +0000
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+CC: "bhelgaas@google.com" <bhelgaas@google.com>, "lpieralisi@kernel.org"
+	<lpieralisi@kernel.org>, "kwilczynski@kernel.org" <kwilczynski@kernel.org>,
+	"mani@kernel.org" <mani@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+	"andrew@codeconstruct.com.au" <andrew@codeconstruct.com.au>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+	<kishon@kernel.org>, "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "openbmc@lists.ozlabs.org"
+	<openbmc@lists.ozlabs.org>, "linux-gpio@vger.kernel.org"
+	<linux-gpio@vger.kernel.org>, "elbadrym@google.com" <elbadrym@google.com>,
+	"romlem@google.com" <romlem@google.com>, "anhphan@google.com"
+	<anhphan@google.com>, "wak@google.com" <wak@google.com>,
+	"yuxiaozhang@google.com" <yuxiaozhang@google.com>, BMC-SW
+	<BMC-SW@aspeedtech.com>
+Subject: =?big5?B?pl7C0Dogpl7C0DogW1BBVENIIDUvN10gQVJNOiBkdHM6IGFzcGVlZC1nNjogQWRk?=
+ =?big5?Q?_PCIe_RC_node?=
+Thread-Topic: =?big5?B?pl7C0DogW1BBVENIIDUvN10gQVJNOiBkdHM6IGFzcGVlZC1nNjogQWRkIFBDSWUg?=
+ =?big5?Q?RC_node?=
+Thread-Index: AQHb3BN5+/k5uKYPMUe/SI/Gdc6Yn7QBPt8AgApPrpCABvJ/AIABGqbA
+Date: Wed, 25 Jun 2025 08:27:26 +0000
+Message-ID: <SEYPR06MB51346BC9292066243CB845699D7BA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+References: <SEYPR06MB51343F38D4F9C130A4CE3FED9D7CA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+ <20250624152814.GA1477818@bhelgaas>
+In-Reply-To: <20250624152814.GA1477818@bhelgaas>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|TYZPR06MB6045:EE_
+x-ms-office365-filtering-correlation-id: 9acf0b4c-dee2-493e-edcd-08ddb3c21de1
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|7416014|366016|38070700018;
+x-microsoft-antispam-message-info: =?big5?B?OEZ1NnpCT0hob3g3VUQ3aDM5aHBwUHN0QSthcDFsNitUajFVVDBIdzBiaXU0R2ZX?=
+ =?big5?B?RnYyYzF5dTNLeERPM3FRUFJqK2hNZm1OMXFHRjZaZVpFaVRVVVdiQWpUODE1djY1?=
+ =?big5?B?Sk9vNGM2YzFMc1hNOWNCa05TWlZpNW9kYkt2azdWNHU5SHBBL1JoV2gvQ1BsRmJV?=
+ =?big5?B?NEdRdUl6MWFxcFJOaDNrOVhaaUpTUWdOV3hiTXZYdWpYSnlMRks0T25ySS9LVitr?=
+ =?big5?B?c3M3UHRYaXgrZmRUYTR2c1gzZzg1cmhZYkV3cU1VYWZpTWNaeE13TVVoK1dtcWdI?=
+ =?big5?B?dklZZDVIaUJtdHRLMU15OWhlekw5dkhwWGR5V01zRThOVmZXU0twOGJHNXVVSXEw?=
+ =?big5?B?bmF4bU5xZkRBWjFBckkyQUJ2ZU01RUlES3dUTDFpTEFnUUozY0ZsTkJENzdSSGgr?=
+ =?big5?B?dUJGSXYzUzNGdmlKaU9DcjZSa1dzTGFMQjJpd3ZrNWcwRWsySFNHdG9qcXJhNHNY?=
+ =?big5?B?RGNONU8ycHBjQVJtTWpTeGxVSkt5UURxdzRtOHNvb1BiUWk2RWFSQ1AxRGhoVkVM?=
+ =?big5?B?MEEydjVEYlZpQTQ2RjdhOXZTeXp5N1JmU2g1eHZ3N2JPL0J4dU1idWRWVk42cG1V?=
+ =?big5?B?LzZ4ckw2eFB5c2lKcVJ6R3lsa1RiY3ZqSmRJQXdFZVpjblhjOWQ2Z3VFK2xxd0Ny?=
+ =?big5?B?ZEovRjdaUGpuNHJ3ek1LRUJPY09ORjFDWHpHU3VSRFQrbzFFY2Q5Y3ZHczFUY0hp?=
+ =?big5?B?VnBvQ3BHb3V4TTZoVEhKY0syNUpnbzhlSXEwdXo4M1k2OU1NSllacysxVEUvN3Ax?=
+ =?big5?B?ay9kODJDODJJY3VpbEdnTWZNeHQxSnowUTZUeUo1OXhTVW1kbUFaOEhLdXhtRTV4?=
+ =?big5?B?cmJ3OXJBL1N0T29icWw2YmlnUWpwOXkrenlGMndnOTE4Wk1PTTVEYVFDVXRGWERJ?=
+ =?big5?B?ZnpMbUdJTEc5bVlDUHBHcTJ1MWtYakt4WkRldkdTSmdPTGxDRGh5bm05K3RsMVZs?=
+ =?big5?B?NVRMem81WG95c1VUNkdTMHFHdFlOUzlBT2F1d3FjQ2JsenNxek9vUDhuZk1sVXhC?=
+ =?big5?B?OG5CNktGOS9LY2dqSHJsZ0lEbXJtdldzTDdCMWczQmFZRCthYmZ6ZkRLcjYwVU5H?=
+ =?big5?B?QVNydzlxMkdDTXd6TG5SNWN3TnQxT3VGWG9MNjNFR3FPcno1UUwrNnhKRHJxcjE2?=
+ =?big5?B?UjBmM2w2cThpQlBwenhFREh5ZnZQSW9SZ1JZU2tmVXN5V3pmdXlNNjNUeW8wUm5a?=
+ =?big5?B?YmFYMDBKNEk1a3g1YWV2WmZ3aVhwbVZ0NTY5L25uMXQ1WEJoOXFUMWs5YjJmNmkv?=
+ =?big5?B?N0E3SHlGUU8wUlNoRWJCU0JIRklyL3VxMHJXZEJ4c2dUelJpS3RVWXBRb24reDdl?=
+ =?big5?B?MmhmOUVqc2IxMmlxVjNGaE96RkROR2puRkh6MGxrOFl2VnY4UWtONjhwTklDRUdL?=
+ =?big5?B?Mi80ZmhVT2MwNndBWlcwNDZuUjY5Uko2QWFQaGJVOUhpUVNaYjdIeDQwbGdDK2Qx?=
+ =?big5?B?ZTJYa09nbCtUdjdIYTVKME91L1cxT0U0eURweTU3VlFkTG9OWE1vM3FycVp0VnVZ?=
+ =?big5?B?Rm9qV0h1REoyK0JtcjZ1djJCUmpZTEZyZGhod2dTYnFTRXZMRTZPc1M4dGE5U0cx?=
+ =?big5?B?OVJJQlVWMTRRNFR6b0tkdE5ndndISzM0QStLN09mSis0UHZCQnRKRTlDT21saHVQ?=
+ =?big5?B?aWt4STJWdU1HZGVVaTJwTENsdGJpVStWK3dKQ1ZPZFhUVGdKR2NMSDQ2U2RSNnBv?=
+ =?big5?B?OW1aMm1uUjIwL3ZhcXdHK3k5Q0RsdVVKbjZhblRUWUE4U2VIT2dUcDVONEJodXhu?=
+ =?big5?B?THFsQmZ1MFEzNVBFZ1Z5djRFNHdEMjVtZytETjJyaCtDMjF2ZzVVbGJGRWxBZzl4?=
+ =?big5?B?bUFNZjYvV3Mza0EyMCtwTzV3SFhhWHBNVXVsdXhaeXFkVDFGUnRoSEpmWVRlV1Zh?=
+ =?big5?B?NG5MbThBPT0=?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(7416014)(366016)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?big5?B?SWlzaDBQM3NLWm1Hekk1WXFNMnJuaHFhemxycEtxc2NxSzd6Y1crSXZiQmRKVVFi?=
+ =?big5?B?OEJlZUMzOFlTZ1M2UEJDTldqdWh3b1o4WTJ4VUFUMGFyQkxDZWVoZHBPUGRZUFRS?=
+ =?big5?B?NHhrbUV1dXNkczF0YWF4WHNCU1FZRjRxQStLUmJ5VkgxcnI4cVpQbTVqRkkxdGxz?=
+ =?big5?B?bzk5cDEzNVBxVHdnN0RWaGlobXNSVWFiZlV4ZWJSNXpUdkZ4WnNKN09TNjFCanBi?=
+ =?big5?B?RlB0Z0FEK2pmQTRNZWFxcG0wVlJrQU9TVm1VLzRLeHlEOXlOWklBM3RmaVZBZHBB?=
+ =?big5?B?aCs3NkU1c3hUaGpKVnQvRkQ3eE9jdmhITUlWVnUvYytaaHNzMDBFcWh1MjJ1MWVO?=
+ =?big5?B?K2lTRjNUZERucmtpMzVHUkY3dERyR09kSTNXdnFHOVVuUjFVUUFKdVljRkVyY0pK?=
+ =?big5?B?OWZ2VC9TV0h3QlJRODI0ck5YUFFWK2NTcHRYZ2krK01QSGRRVC80Zm1EajRRQ25Y?=
+ =?big5?B?cFFTVlhSRkdiMzkvbXJGUi9iQTFzZ0YvMVl3WGMzU0lvak9RMXZLSnJyMmtjd3JV?=
+ =?big5?B?Ri85L1BBNXIwaEphcEpZU09DSW5VTFkyekd2d1krYVgrSEUyL0tJRmdkTFI5RlNt?=
+ =?big5?B?V0N2cEhHaGZ2c09HM1pGZ2dXNiszK1hidnJZUWozTmo5cWxUZ3lSSG1PeUcyYUk1?=
+ =?big5?B?VCtLY2JUYTBkbEN0cjRYZzBHS2ZCbUpRS3hIYjcyckpXN25aUzNMVzdOdXBzei9P?=
+ =?big5?B?YS8zODB0TlluVVA5OFJQWXRzR1lxQWtqbmpXdXVnWWZMYzlhNGxzb3ZpbEtoZXZh?=
+ =?big5?B?K0V6cC85WXE1UGplR2tRQzl3dDFITVc5YlJuYUJJQ09Wanp5WUJpNlJiY2RXZjR4?=
+ =?big5?B?SGNjcTBJbk1Dc3dGcTRDWlNSbno4UC9FYU9ZL0dPcHduVDZPemsxMkNTM2d3bUpw?=
+ =?big5?B?aDh6ZU9BMWovbm9nVEE3bnZOd3k3KysxMVpWYlp1ZTluUUJhNExpYlRmUW9lUTc2?=
+ =?big5?B?ZnRBSFlQLzB2enUyclNoenJ0ejJyaVEyYlNwTk9RcEQ4TXJwbWc4Y05kZlpFTkxU?=
+ =?big5?B?c2daUThjYzZIMEh2QmZOSHhzeXpiNm0rbjJtZGU2eWxkaXN6YlF5TVdVTmJVTWRT?=
+ =?big5?B?dVJOc0R5S2s5YkMrbUwvMFdCVDB2a294UzFpNElNSURWcHVqNjhSVEYrbkh2dU9L?=
+ =?big5?B?UHhXUzBJblNPbm5hOEgxWUVWN1o3dldtZms1aVA4R1NjamZKMkN2Mmx5eU9yV3B3?=
+ =?big5?B?N2plREwzaG1uZWdqekl5ZGMyS1hCLzhCZjR0bThXWjYrakt1MEtDVFdhMS9ycFVB?=
+ =?big5?B?WFZLVHhJNTVvYkFSV1NFZ0Rwdys5ZmdxREsydlBRa2tGTXIrSVZtRTZUVzhqVW1B?=
+ =?big5?B?cmxmTVFZbUFWalR1SFNlODM3QXk0VE1MdStFZDFyZ1hMcVhIMVRkMjhDNEtCZ1dk?=
+ =?big5?B?eWVJdVZkTjIvYWpZWGRNR1diTTlGL2FZOXFXNkdYWDloVS9mdlh5MURHZUZaZ01B?=
+ =?big5?B?UHROSVJuMEFvNkp6TmlHSHZBL1R6SzY2aHpOdk1zMDcyakkvWDIrY01KWkpsdWph?=
+ =?big5?B?VnJTN1dia2p6dGpyZTVCMXRIR3NadjFOZGpOMUVoNXUwSEQycDVqVE10SmhtSEJC?=
+ =?big5?B?bFlrRlhJK2JrelViNHdWclJiOGNaUEl4R0tOa1FEQjNsMHJ1b1J2ZlY5MzRjeG9J?=
+ =?big5?B?SElOV0llZUt4L2pkdi81MElZNDB4RmozSmtKNFBpUDdyRWtmMEdRWnNEb0VRSlNp?=
+ =?big5?B?MjJPYzVsWXBvOU96MU9lSitlbEdkaGYzU2x4cDJMNGdvRmdqTnlNSVYzUXVsSjdW?=
+ =?big5?B?Q2dhMmVJU3pnUERLeW1LclBrenorclpneGZkTTJEMWc0OENjU0YxT1VIYVlnQzQy?=
+ =?big5?B?T01nWXJXd1hOdjdjU09iUUxKenBuNkwxMFl5ZXJwZkNSSUtYeE5VRzhTUm1ML3RE?=
+ =?big5?B?N0dQeDdIOE9rWTFvR3R3ZHdvek1YYTJyVEVJZlYyemhYOERZS2xYaEJBUmVSeisy?=
+ =?big5?B?QkNJNFpsVHo1T3dlY0c5dU4yWWVTUnRqcUw1WUp3YmpBcnA5N05McDBXbmFyYmZJ?=
+ =?big5?Q?N3BoSvRtEKds9BLT?=
 MIME-Version: 1.0
-In-Reply-To: <20250221161751.1278049-5-kuba@szczodrzynski.pl>
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9acf0b4c-dee2-493e-edcd-08ddb3c21de1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2025 08:27:26.2282
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Yiupq+6v2FYrGYQsMM3BfstK3EE2H6lRPM90Z+xHbCCjt01PaLXse/39gbSuaZETbE0BxLiL882a8fhsBpGvOm3xjT1yYL5FUqC++gf+Cr0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB6045
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_010927_541484_FC408864 
-X-CRM114-Status: GOOD (  18.87  )
+X-CRM114-CacheID: sfid-20250625_012736_526165_2EABD446 
+X-CRM114-Status: GOOD (  14.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,103 +190,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0042516344077568623=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+> > > > +				resets = <&syscon ASPEED_RESET_H2X>,
+> > > > +					 <&syscon ASPEED_RESET_PCIE_RC_O>;
+> > > > +				reset-names = "h2x", "perst";
+> > >
+> > > PERST# is clearly a per-Root Port item since it's a signal on the
+> > > PCIe connector.  Can you separate this and any other per-Root Port
+> > > things into a Root Port stanza to leave open the possibility of
+> > > future hardware that supports multiple Root Ports in the RC?
+> >
+> > The PCIe RC that designed by us is only one root port.
+> 
+> Yes.  But this driver may be used in the future for other RCs that include more
+> than one Root Port, and it would be good if that didn't require structural
+> changes to the DT.  Also, there are RCs from other vendors that include more
+> than one Root Port, and I'd like all the DTs and drivers to have similar
+> structure.
 
---===============0042516344077568623==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="id1qkDeCEtzLoxTA"
-Content-Disposition: inline
+Thanks.
+Is the "pciec" node in arch/arm/boot/dts/marvell/armada-385.dtsi what you said?
+Or could you provide some examples for us to modify our pcie rc node?
 
-
---id1qkDeCEtzLoxTA
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Fri 21 Feb 25, 17:17, Kuba Szczodrzy=C5=84ski wrote:
-> The sun4i TCON needs a reference to the D-PHY in order to support LVDS
-> on Allwinner D1s/T113.
->=20
-> Signed-off-by: Kuba Szczodrzy=C5=84ski <kuba@szczodrzynski.pl>
-> ---
->  arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi b/arch/ris=
-cv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
-> index e4175adb0..d241ba306 100644
-> --- a/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
-> +++ b/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi
-> @@ -828,6 +828,8 @@ tcon_lcd0: lcd-controller@5461000 {
->  			resets =3D <&ccu RST_BUS_TCON_LCD0>,
->  				 <&ccu RST_BUS_LVDS0>;
->  			reset-names =3D "lcd", "lvds";
-> +			phys =3D <&dphy>;
-> +			phy-names =3D "dphy";
-
-Like I mentionned in the other patch, I don't think the name "dphy" makes s=
-ense.
-"combo-phy" probably makes a lot more sense here.
-
-Also the dt binding should be updated to reflect the introduction of the
-property.
-
-Paul
-
->  			#clock-cells =3D <0>;
-> =20
->  			ports {
-> --=20
-> 2.25.1
->=20
->=20
-
---=20
-Paul Kocialkowski,
-
-Independent contractor - sys-base - https://www.sys-base.io/
-Free software developer - https://www.paulk.fr/
-
-Expert in multimedia, graphics and embedded hardware support with Linux.
-
---id1qkDeCEtzLoxTA
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbrqwACgkQhP3B6o/u
-lQw7sg//WLoQpyAqStd6AsRVh1QrfKNATtlAD2vpTMd1iAFGZif40Xf/eIUFKSHc
-SzaFwDnYhc5d/1hJbOJ4gs866AaSGCTexQtq4wAOHuPQE+Kk3NqJ49L26Td3MtCk
-aRmQ9brdHzvAK2DyMxWxro6Xrc5D3A7wtt0FM8Jwo5CpKJgOsC3OcAgmIx/eVkYr
-pwHh3ajrnCvcPDOLvQRaALp6OOrgL1DiAs+Y61v7nDdU7U7wWNNPXd1fh4dtQbjC
-lqsM2zbhxY8+pBU6Ec6XEKPC7yvwBYxmoah6D5ophlnyQoGJbah4nzZcJwILdlJl
-6Ptb2oaRIA5D7u+2SgPKNj4ZQbhX4hdWPXn9yRMeAnf2LGziJU4BQ/AegTPWT4Zc
-N7W1TsD/4SJ9fqsZYCu8FuKUHEWUfSLl36yROAoVOWLk6hVtEfMae/f2P3gUOUle
-XXCVmn7In8LRK8THK/40O076jqSiytSnnHl2Do5wNnb95g+Rh06BVPf3OL6Z4O8i
-hJaV4vdNSSR7ta+IenShS1fZcl15dIt1vjNFGoPUflEJUY+OVfL8zTwVRgi2KGSb
-DRFue9mLKEvEtyGkGvZKscxaLVZtqfCkDg9D6w3WZG4OOigyI+N8jVTuaoVjzcWC
-ohQ6sFkD+3w4n6uDKid8NSxD1p34DxSWphNP1vsz6OftJO/xFLM=
-=LCaF
------END PGP SIGNATURE-----
-
---id1qkDeCEtzLoxTA--
-
-
---===============0042516344077568623==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+Thanks,
+Jacky
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0042516344077568623==--
-
