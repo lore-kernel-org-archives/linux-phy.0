@@ -4,119 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD553C7EE32
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 11:07:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC1E3C7115C
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 11:07:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=n2dBEIsYjFDF8lRH1wBakARYCfce3OZM76R8s0J6b+Y=; b=tpLmZ6UhmOddd5YQBCovgThEgt
-	foWlBVtFjledsxfG+JR3Mv43hmgzN8NESAKRYnZUZU17dc6sPVMoJRsTHZ0hnHLbmUvdRoWxcfJjB
-	vW+jzXVQBmacy3jcOlrs4IIPO8txEZR7VCg4wvbYE8Y9zbdq/77arwwWaphxFR19qafuSMhhiexW0
-	BZ4GWHKM54Fpxwd7+uluT5dC46pDuIlsPnBx1EpaDk2qU5Enrv3Cj3+jnS6YHo0t8OZ8AsDwk5Mlv
-	JLu6GxUPUro5xyiWOkXzRPBWF6de6nbad9X35YnwA36iNt6oOlguOJoqp92ZOTLB/volxJIxiWojK
-	5X4vHEKQ==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=koXFFnrtggJqjxd7NURDQXtC4XiCoY46A5OTZt1fwY0=; b=eXTGyoqoxly5tQJKQtcnv6BV69
+	kDLRsCMZ3MjBLsLrt2VoSjuuipqRVG5tw3UxDs4yP7IGlsUC5v769ZWH+pF2UgdykdxBWbB0gWvuE
+	+hpuAK66hZnddECH8MZl3B54ijm9mF2Bhz4LlbpiOtd1la3ia0ysw724VbZNO2j60ripnG3m2lzZl
+	OgdUdEtPtNx7fgJQBLis5QMPGSd2UAMiwf+9+8reJA6BJmGzvaw1nPwX7sb7EUdn4LF/NFJPtCxYy
+	GktP01HBKPXxj5Ivdj8Vt9UhhNx2I8HT8ytCYcZcu3knK26kDxEuzPChmJiBK+HpX1nwOuFAQLRT6
+	eFXVU2aA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUNyI-00000008Q8V-2V2q;
-	Wed, 25 Jun 2025 11:07:18 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1uUNyS-00000008QFj-2gbz;
+	Wed, 25 Jun 2025 11:07:28 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUN3m-00000008G8F-15GW
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 10:08:55 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-450cf214200so55894165e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 03:08:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1750846132; x=1751450932; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=J2a8kk6PcZkE03rGmBEJWejxQtEjJ7yXfgEnoE7M2mA=;
-        b=zyzX8DGoiDTrPeiVb336NfDOl1BPGSs/xXfm+269JX3ZtAcZT3FDUcQRITg9/AHC6A
-         2/RTvGxvx5srwe2xh+Sm0Xs2AYRh2r/2UYk1pNrsCC8VRBDz8C9fo3Q6gsaw9m3V4yF8
-         NmJ2wXZZoOPmHW6ZMx1HftT7StLrdlueWUD1xgt7UH12lu9NWuBTVY9Dq7Cb1m8J2cfv
-         ECgfel7iGmXXSPFib4JaftAg+1vAHSlt3jj6G7S79IOpbEGvQoyixtV1Um4MNmp/Dfep
-         /dBCT1QLAK6mvhw5OekfFZh8w4kXB5xjyX1BLuZFTlqFhnO8A2xAwsgX3V5aYE5/dAAK
-         Zlsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750846132; x=1751450932;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=J2a8kk6PcZkE03rGmBEJWejxQtEjJ7yXfgEnoE7M2mA=;
-        b=ulAVhdtVogPFvg5Y9/srnIMzTKexFiTgjgRSRfkk3jS2E+MEJFR1qNFCgoKe0ACqwY
-         S748i8q48oQRi70KS8/Pq6IfKG5zzbEg2J1w4KaDBdfS9xg4Ci5/bI8ES9Zd1xDTUa51
-         hMxbrd90m4/aSZRT02A5Lj1pieo/E+WVjERq9L0z97XH4IyVhQrzl+W/v5LHgc4DuHsd
-         XyFF6yEq2+Q9vGdHlnOkArU8cXBumX+GlrMJShfdN5KYTa3IDzb8MG8fTbfiZw0RiahO
-         12zUKwp85geO5MV8abNmQOd1wvRpGGhNBGS6dFo9UYQSGzTOyGHnoMVPKJM+fm7RKLjN
-         hDWw==
-X-Forwarded-Encrypted: i=1; AJvYcCUlqXxeCsGV7XD0l/k19LgkjRjd+6f83piL9+K7ERDzYzefZh4T/9dKTbaiHtyZGsYZ11BB8BmFuJ4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzjAOy5wbI4eO0yZ7AyO8Z7NlpXY34sezwbqSiBm9G6PLz7IpqQ
-	yEoKKLgx6v34BnjIIitnkhO5DP1DRtf0FPNnXxCvd+sGqS/Uhh94hctn+0f5P18ebhA=
-X-Gm-Gg: ASbGncuupsJpuBoe/ja6dYWuiCkztR/+vQATWpbDRX2jKy+tStvYvcCuktdfkry1ksm
-	rG7vjHn73hi7pYuk1aa7L5y0DSXQyRA53hDeL/pTA8oK4RAC/unTsX4HQqJtlgDYHNX2pbxx4HB
-	vf9BfNJGoxBi5BOfGVdDZoY65DG3yr4q09UuAaaCbsTG4RfKL5fmnMw6Ybhy9048Y22Wos005p+
-	pZ8XyZjeZF7yjXLgZlYTc7q5hI1HxlF60RbbJ3HBMx1xP4QGnFhkDT0X3DAJDOFRQWdS9pWfwRJ
-	pHGKnziE4ssU8YAq+B7aHIa9Z2nh64jnklu2vX7Y9LCAn6h+UTaBk1VtPKVfSIRYUsP+IXsZ0V4
-	NdSV3VYtWTWlEE/nR53QpM7L8mVYYvFi7Dcip
-X-Google-Smtp-Source: AGHT+IFJiC0S9QOgaQ2ScQ4U+1EQS39LaD4dPukyAK+89YpzNHu/8nXo31VXa8/vKLOYfbh15deE2A==
-X-Received: by 2002:a05:600c:154e:b0:44a:b478:1387 with SMTP id 5b1f17b1804b1-45381ae3576mr25646825e9.17.1750846132470;
-        Wed, 25 Jun 2025 03:08:52 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:b3df:bee7:215:e1a4? ([2a01:e0a:3d9:2080:b3df:bee7:215:e1a4])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a6e8068fd0sm4309576f8f.38.2025.06.25.03.08.51
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Jun 2025 03:08:52 -0700 (PDT)
-Message-ID: <d923b289-1e4b-4c7c-9bec-7d0c2cbf8b86@linaro.org>
-Date: Wed, 25 Jun 2025 12:08:51 +0200
+	id 1uUN6L-00000008H4t-29mz;
+	Wed, 25 Jun 2025 10:11:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=pMubMqt0B41uAlKb5aE5NWQ2OgKtj3U7wBtBPllI5xE=; b=iyzEXZ1fynHPYUJ3w+5Xxl5R+K
+	XESQsOmXXEN8WQur1e1fxnpoymdMVjOa32PY8fjUsVZvMU3zDU0T4RZHzg0C1WB82PiuKHAx3mCwh
+	y0S31QNoJyCAn7/sI66H07lU2JDFJ9YCqHZ1PH3EyxzbGsmV6WBGiQ1ASOk9a5rDltrrXddU7I/YR
+	fpLkYzoWSibNtGfOyVeyPMEQmM1gOTYVecsE88rHsrLzy7kgKGh9LXwmSDe2Cj9omm9WQqflSdwzF
+	dPpAJCNX3nibmsT3bCMrLwGtvP2JlPkiS4sUsAzd900GoUKmpeKUwnFBtPQoOSgd6EGC3WC0/Q/46
+	6KrlZw2g==;
+Received: from leonov.paulk.fr ([185.233.101.22])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uUN6I-00000005m4s-1TRF;
+	Wed, 25 Jun 2025 10:11:32 +0000
+Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
+	by leonov.paulk.fr (Postfix) with ESMTPS id 5AA431F0003D;
+	Wed, 25 Jun 2025 10:11:14 +0000 (UTC)
+Received: by laika.paulk.fr (Postfix, from userid 65534)
+	id 34ED4AC7B27; Wed, 25 Jun 2025 10:11:12 +0000 (UTC)
+Received: from shepard (unknown [192.168.1.1])
+	by laika.paulk.fr (Postfix) with ESMTPSA id DA68DAC7B19;
+	Wed, 25 Jun 2025 10:11:09 +0000 (UTC)
+Date: Wed, 25 Jun 2025 12:11:07 +0200
+From: Paul Kocialkowski <paulk@sys-base.io>
+To: Parthiban <parthiban@linumiz.com>
+Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 10/22] pinctrl: sunxi: add missed lvds pins for a100/a133
+Message-ID: <aFvLO6GUY6NezkcF@shepard>
+References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
+ <20241227-a133-display-support-v1-10-13b52f71fb14@linumiz.com>
+ <aFu3fAMa8KPwjPbX@shepard>
+ <9c3ea5fb-a045-46bd-9753-26ffa67fe1bc@linumiz.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 2/4] phy: qualcomm: phy-qcom-eusb2-repeater: Support
- tune-res-fsdif prop
-To: Luca Weiss <luca.weiss@fairphone.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
- <20250625-sm7635-eusb-repeater-v1-2-19d85541eb4c@fairphone.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250625-sm7635-eusb-repeater-v1-2-19d85541eb4c@fairphone.com>
+In-Reply-To: <9c3ea5fb-a045-46bd-9753-26ffa67fe1bc@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_030854_330833_C97BC2D2 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20250625_111130_661504_58D55B12 
+X-CRM114-Status: GOOD (  19.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,40 +93,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============2444190512702639708=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/06/2025 11:14, Luca Weiss wrote:
-> Support reading the FS Differential TX Output Resistance Tuning from
-> devicetree and writing the register, as required on some boards.
-> 
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 3 +++
->   1 file changed, 3 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> index d7493c2294ef23e37e484019a49ddf7b3d6a6a46..61594739e5b12706775622e1f76af6ad5d2d29bf 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-> @@ -136,6 +136,9 @@ static int eusb2_repeater_init(struct phy *phy)
->   	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &val))
->   		regmap_write(regmap, base + EUSB2_TUNE_IUSB2, val);
->   
-> +	if (!of_property_read_u8(np, "qcom,tune-res-fsdif", &val))
-> +		regmap_write(regmap, base + EUSB2_TUNE_RES_FSDIF, val);
-> +
->   	/* Wait for status OK */
->   	ret = regmap_read_poll_timeout(regmap, base + EUSB2_RPTR_STATUS, poll_val,
->   				       poll_val & RPTR_OK, 10, 5);
-> 
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+--===============2444190512702639708==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="hh+oSgryr9OFE2vD"
+Content-Disposition: inline
+
+
+--hh+oSgryr9OFE2vD
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed 25 Jun 25, 15:06, Parthiban wrote:
+>=20
+> On 6/25/25 2:16 PM, Paul Kocialkowski wrote:
+> > Hi and thanks for your work!
+> >=20
+> > On Fri 27 Dec 24, 16:37, Parthiban Nallathambi wrote:
+> >> lvds, lcd, dsi all shares the same GPIO D bank and lvds0
+> >> data 3 lines and lvds1 pins are missed, add them.
+> > Would it also make sense to submit device-tree pin definitions here?
+>=20
+> this patch is already merged.=20
+> git show --stat cef4f1b5ba99a964cd6dd248bb373520573c972f
+> commit cef4f1b5ba99a964cd6dd248bb373520573c972f
+> Author: Parthiban Nallathambi <parthiban@linumiz.com>
+> Date:   Fri Dec 27 16:37:57 2024 +0530
+>=20
+>     pinctrl: sunxi: add missed lvds pins for a100/a133
+>    =20
+>     lvds, lcd, dsi all shares the same GPIO D bank and lvds0
+>     data 3 lines and lvds1 pins are missed, add them.
+>    =20
+>     Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+>     Link: https://lore.kernel.org/20241227-a133-display-support-v1-10-13b=
+52f71fb14@linumiz.com
+>     Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+>=20
+>  drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>=20
+> Do you mean the consumer/board devicetree changes?
+
+I mean the pin definitions for lvds in the sun50i-a100.dtsi device-tree.
+
+But maybe you wanted to submit those after the bindings/driver changes are
+merged?
+
+Cheers,
+
+Paul
+
+--=20
+Paul Kocialkowski,
+
+Independent contractor - sys-base - https://www.sys-base.io/
+Free software developer - https://www.paulk.fr/
+
+Expert in multimedia, graphics and embedded hardware support with Linux.
+
+--hh+oSgryr9OFE2vD
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbyzsACgkQhP3B6o/u
+lQyMGQ//f2vAQYHKFknpEFa9G97bwQAoBFvWmQSD1wmDY326lLbX+9Y05O/nICdQ
+datMQbAA6GBDyn///enJBKK2AURU+BrqhBgKbsbBFFSRcfxgqOrBRts1XgjbAA4J
+jdl51KH2mhO3rL83JU/DhlwedeW2q/JeZrlFxVV/DL94tc3WRVFHINq3XipGHfk/
+l2VdJ9XHwzIz1it4ZG/ypB5reTIvdskJQCjGqqEwpLy2BkYsVvVIW4ASYCWR76A4
+CJfYGi3RTEZxDTmiLpLrUiezKLT2y0sZybhIDlFYZG8aVAoMvmDYZafpsotsRD+E
+jv9Et5dsl/In0DiCJLdmNGgwdmVgQcn/Ln7D5Ad5hqUqHx5tteJ5Vc+XWVVXTVEh
+ngvtcEvY3PornqJ/yAmYqz8UZ0+ZPMjLUM5cBrO0kiVYU6//99FOZRLba7VpDrqt
+PpwHreipKusGGSgKjwNU0JBszR61dT9eEBF4CnyTJmsnH/CYgXk3ToqbwYrWInUD
+rmClxHtOUwQ+BUAz3GL7YszrAzifLjqmKTFtIydFEIi/xWI/7LDeImEjAjHtk0Vk
+eGDxBau9WCqk8IUf7kneF6UcCD2M+9rs8k+2p8rvO6gQOv6I7Ioq1sPfqmWSyA5v
+uVQSDI7Amj0SKgFZmKuXry4Qw/EWu+BNGf3Xii0csbO0ZAuxVos=
+=Yy5s
+-----END PGP SIGNATURE-----
+
+--hh+oSgryr9OFE2vD--
+
+
+--===============2444190512702639708==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2444190512702639708==--
+
