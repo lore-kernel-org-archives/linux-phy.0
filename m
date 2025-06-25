@@ -4,126 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED7F0C7EE39
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 09:55:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BD0AC7EE30
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 10:08:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CiRkHZBK6IfW7kSANfPbG3DKR0M+dkX+7PGek/0d+Rs=; b=3F+Dl7daaXC6kb
-	rxjsjFkqK7GAF3wxAnvMnJPdsMmtJsrSXs0jQN9WaNp/OVJrscDw4jG0/G/viRG9EGbD6RnDo5/l/
-	v96bJCmRZhdPOw/suvQkJrgXup/uEnmMotMA6joEM3tW1MLtXpaBCHAIHdYDC7lYwybfmv4+qTOig
-	SRH07c1fe0VaduOVM2U6I1ZhTG208rdyA/HY3b0hJeBtRuut8h13C8XSHXGHJbU6IYxQ5J4LUYCYc
-	Kwsui7TaBrWBQR+JT3D4sMo4+Gx0JsW3LGJwgisuca5B+v/29npBqs86iV+Krt9SXGPTiAQ+UThnR
-	7t03Qj+YfRODbnbB+pPQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=72JZoNn4bSWW1RAHaFrQgA/05SBo8ztLLgo1khcVAdo=; b=hfEqiOifFlGFTownE6ZFIaks67
+	NFr5NkpEItsznsLLj2gNNR2lqpw2BzV1b1PK9pfR75d8FjGLsxTss46JaisrdynlUPwPMIQ3Yfb5N
+	25XmnoVNXGnB4RzQw10EwPuMdN8KwrMIWsybPEY5eY9eNfPaBYbtSpptQMeuSktGnIu9XH+uEjw9R
+	LgGFiu19/kBOzWKK21Hr7BOLGpM6G9YFUHHUZG5gsaLeCuvTnxZ1vxx0Cbpf4cJKn25xK5Pm9lFnh
+	o8KcM7aITHO5c1CU42p5J9QjSXxYU7zBE2cr9Q4cYop/wVV3U6vECQf1B11jYK7qv03OW8KU1lGD0
+	4l7gAPOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUMqL-00000008DwO-2vWh;
-	Wed, 25 Jun 2025 09:55:01 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uUN3f-00000008G1P-3YPR;
+	Wed, 25 Jun 2025 10:08:47 +0000
+Received: from leonov.paulk.fr ([185.233.101.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUM0M-000000083Zu-0vmV
-	for linux-phy@bombadil.infradead.org;
-	Wed, 25 Jun 2025 09:01:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=EF6AjC4MUUFM1cgFCRP63nmXpijP6PySoR7J70JajKg=; b=kiJvJ9rYHKAILirTydArUqlMxC
-	uYKGCHoRv3DLay+nQfSuXqkngjWvCjrhJkQ/VF9tdDvvLTc/mX/EViDSpRiLOHcyPIpBTBNyAIRYU
-	YWzaeF7JxevWje5gUio04rh2y9/9PGkvwDLTKWfm3Jnjpr7OVQdpk3ecDOEB/598KfaVtbuJBx/jJ
-	ND3gmaGimNdQELv6Xs4c22yhUt+bX/JWEPnKfMJ7CCMMcutm0Dva9FqyLxy1bBT36mBtfy69xv5kt
-	Ytoc+aYDTePoiOriTwllahikTbNeW08fPeH3qSQRbBXfgJjFCSOj2Kp3O+fWY++HAmEZD/zqfJbPM
-	Dc9GeJlg==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUM0J-00000005iHy-1OFU
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 09:01:17 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55P1q5KG002448;
-	Wed, 25 Jun 2025 09:01:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=EF6AjC4MUUF
-	M1cgFCRP63nmXpijP6PySoR7J70JajKg=; b=TDmYPDKAnoBX3MHJDmhRzgUN/aL
-	wjMZ2OjxuSdJYiHrMxYQr8z9ZvavzuoqnOkaJ4WwoRFnpmLgdwBe0jFIQHAkk0QC
-	ElV4ySsr62BssW9P2pf47hQG+mta+9JS3bqEL9RNyJlnavO3o4eLzDPSNF3maqw7
-	qSImKvSGcwSU+y5s1WUstSGK6Psd4gBC2xerh+Q0AS4ZM3npTr1wt+9DQl2NSGfc
-	oc7VQxOo9YDHd68l9bOSrYPH/o5oTKbbAm+b90JtWIJPvPjG2CoF6HYAE1b0NlRy
-	ke/lkOQJQRlir3YbnBuyvxTxgYN7ac72BqOo9X0aSIejPW4EnJFkhjJ08PQ==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47g7td921d-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:01:02 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 55P910or032353;
-	Wed, 25 Jun 2025 09:01:00 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 47dntmargj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:01:00 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 55P90xxr032337;
-	Wed, 25 Jun 2025 09:00:59 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 55P90x6U032334
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Jun 2025 09:00:59 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 25A143864; Wed, 25 Jun 2025 17:00:58 +0800 (CST)
-From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: [PATCH v3 4/4] arm64: dts: qcom: sa8775p: add link_down reset for pcie
-Date: Wed, 25 Jun 2025 17:00:48 +0800
-Message-Id: <20250625090048.624399-5-quic_ziyuzhan@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
-References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
+	id 1uUL9X-00000007uBA-2ZNj;
+	Wed, 25 Jun 2025 08:06:45 +0000
+Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
+	by leonov.paulk.fr (Postfix) with ESMTPS id EE1301F00050;
+	Wed, 25 Jun 2025 08:06:39 +0000 (UTC)
+Received: by laika.paulk.fr (Postfix, from userid 65534)
+	id 7B867AC7A00; Wed, 25 Jun 2025 08:06:38 +0000 (UTC)
+Received: from shepard (unknown [192.168.1.1])
+	by laika.paulk.fr (Postfix) with ESMTPSA id C2E29AC79F3;
+	Wed, 25 Jun 2025 08:06:36 +0000 (UTC)
+Date: Wed, 25 Jun 2025 10:06:19 +0200
+From: Paul Kocialkowski <paulk@sys-base.io>
+To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
+Cc: Maxime Ripard <mripard@kernel.org>,
+	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH 3/5] drm/sun4i: Enable LVDS output on sun20i D1s/T113
+Message-ID: <aFut-yuJS2lfWaE8@shepard>
+References: <20250221161751.1278049-1-kuba@szczodrzynski.pl>
+ <20250221161751.1278049-4-kuba@szczodrzynski.pl>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=CPYqXQrD c=1 sm=1 tr=0 ts=685bbace cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=6IFa9wvqVegA:10 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=UMluCPnEzjiUAf4N7sYA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI1MDA2NyBTYWx0ZWRfXxF7PsBNX5ZT0
- KfSBZ4/fb59o7KkYMBVxxLF2DtloynEMvoJ5HkzhR+uwoQ4yBPkwtPwV2R4Z6cMNANLrQVdRQ9X
- jrnipQcOM1Nnduk6h6cqmcwpMV9lXa7QlvDviiZEE0wnnDG9JHXq5PCasVkDTw6LUKknqmNjSLX
- OtiiFixV4FvbgMikyrbeFHuEV4aEFmvJ0jasr9Dr5m+4QPu9oKJBvvKi1VIY0joYSERrnxJD1ep
- CtXNKCqqPnqLyRlm4ag7FbjggrkI6Zog8UGajGkkf5ncLeWR0QVZCNpQL2NtrvveW9tmDdLqQRR
- 7kND6fnztAIq/9gchEbwo1t2D8+IS7pMj20B3hMX0LQ1Z7MRfEXo2PITcqef7wimiUj+kZ8wxPn
- McAgGu8FOiulhnWH0FsKrtOnp/0cgKi+FpI3BgPBKDkmaVsu5pwPmfKNuL4zq8b/gXMhnsJm
-X-Proofpoint-GUID: dyx6eiLlFOj_jh9uXRcZ1JWQDNoy6omj
-X-Proofpoint-ORIG-GUID: dyx6eiLlFOj_jh9uXRcZ1JWQDNoy6omj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-06-25_02,2025-06-23_07,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 phishscore=0 mlxlogscore=999 lowpriorityscore=0 malwarescore=0
- impostorscore=0 suspectscore=0 clxscore=1015 spamscore=0 priorityscore=1501
- adultscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2506250067
+In-Reply-To: <20250221161751.1278049-4-kuba@szczodrzynski.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_100115_938316_23D8C43A 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250625_010643_962592_756A3078 
+X-CRM114-Status: GOOD (  25.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,57 +70,143 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8719586873812925701=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SA8775p supports 'link_down' reset on hardware, so add it for both pcie0
-and pcie1, which can provide a better user experience.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
----
- arch/arm64/boot/dts/qcom/sa8775p.dtsi | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+--===============8719586873812925701==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Zc2DNXh9m8XgbscL"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/boot/dts/qcom/sa8775p.dtsi b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-index 731bd80fc806..d0a6303cb133 100644
---- a/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sa8775p.dtsi
-@@ -7635,8 +7635,11 @@ pcie0: pcie@1c00000 {
- 		iommu-map = <0x0 &pcie_smmu 0x0000 0x1>,
- 			    <0x100 &pcie_smmu 0x0001 0x1>;
- 
--		resets = <&gcc GCC_PCIE_0_BCR>;
--		reset-names = "pci";
-+		resets = <&gcc GCC_PCIE_0_BCR>,
-+			 <&gcc GCC_PCIE_0_LINK_DOWN_BCR>;
-+		reset-names = "pci",
-+			      "link_down";
-+
- 		power-domains = <&gcc PCIE_0_GDSC>;
- 
- 		phys = <&pcie0_phy>;
-@@ -7803,8 +7806,11 @@ pcie1: pcie@1c10000 {
- 		iommu-map = <0x0 &pcie_smmu 0x0080 0x1>,
- 			    <0x100 &pcie_smmu 0x0081 0x1>;
- 
--		resets = <&gcc GCC_PCIE_1_BCR>;
--		reset-names = "pci";
-+		resets = <&gcc GCC_PCIE_1_BCR>,
-+			 <&gcc GCC_PCIE_1_LINK_DOWN_BCR>;
-+		reset-names = "pci",
-+			      "link_down";
-+
- 		power-domains = <&gcc PCIE_1_GDSC>;
- 
- 		phys = <&pcie1_phy>;
--- 
-2.34.1
 
+--Zc2DNXh9m8XgbscL
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Some comments below.
+
+On Fri 21 Feb 25, 17:17, Kuba Szczodrzy=C5=84ski wrote:
+> The Allwinner D1s/T113 needs to use the combo D-PHY to enable LVDS
+> output.
+>=20
+> Enable LVDS support in the TCON and configure it using the PHY.
+>=20
+> Signed-off-by: Kuba Szczodrzy=C5=84ski <kuba@szczodrzynski.pl>
+> ---
+>  drivers/gpu/drm/sun4i/sun4i_tcon.c | 28 ++++++++++++++++++++++++++++
+>  1 file changed, 28 insertions(+)
+>=20
+> diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/s=
+un4i_tcon.c
+> index ccf335a61..58230a552 100644
+> --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> @@ -171,6 +171,30 @@ static void sun6i_tcon_setup_lvds_phy(struct sun4i_t=
+con *tcon,
+>  			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
+>  }
+> =20
+> +static void sun20i_tcon_setup_lvds_dphy(struct sun4i_tcon *tcon,
+> +					const struct drm_encoder *encoder)
+> +{
+> +	union phy_configure_opts opts =3D { };
+> +
+> +	if (!tcon->quirks->has_combo_dphy || !tcon->dphy)
+> +		return;
+> +
+> +	phy_init(tcon->dphy);
+> +	phy_set_mode(tcon->dphy, PHY_MODE_LVDS);
+> +	phy_configure(tcon->dphy, &opts);
+> +	phy_power_on(tcon->dphy);
+
+While the callback doesn't have any return code (and it probably should, fe=
+el
+free to fix that), the return codes for the phy_ calls should be checked and
+the function aborted early in case of error.
+
+> +}
+> +
+> +static void sun20i_tcon_disable_lvds_dphy(struct sun4i_tcon *tcon,
+> +					  const struct drm_encoder *encoder)
+> +{
+> +	if (!tcon->quirks->has_combo_dphy || !tcon->dphy)
+> +		return;
+> +
+> +	phy_power_off(tcon->dphy);
+> +	phy_exit(tcon->dphy);
+
+Same comment here.
+
+> +}
+> +
+>  static void sun4i_tcon_lvds_set_status(struct sun4i_tcon *tcon,
+>  				       const struct drm_encoder *encoder,
+>  				       bool enabled)
+> @@ -1550,8 +1574,12 @@ static const struct sun4i_tcon_quirks sun9i_a80_tc=
+on_tv_quirks =3D {
+> =20
+>  static const struct sun4i_tcon_quirks sun20i_d1_lcd_quirks =3D {
+>  	.has_channel_0		=3D true,
+> +	.has_combo_dphy		=3D true,
+> +	.supports_lvds		=3D true,
+>  	.dclk_min_div		=3D 1,
+>  	.set_mux		=3D sun8i_r40_tcon_tv_set_mux,
+> +	.setup_lvds_phy		=3D sun20i_tcon_setup_lvds_dphy,
+> +	.disable_lvds_phy	=3D sun20i_tcon_disable_lvds_dphy,
+>  };
+> =20
+>  /* sun4i_drv uses this list to check if a device node is a TCON */
+> --=20
+> 2.25.1
+>=20
+>=20
+
+--=20
+Paul Kocialkowski,
+
+Independent contractor - sys-base - https://www.sys-base.io/
+Free software developer - https://www.paulk.fr/
+
+Expert in multimedia, graphics and embedded hardware support with Linux.
+
+--Zc2DNXh9m8XgbscL
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbrfsACgkQhP3B6o/u
+lQwpAQ//ejWbFNBH4z9VJ16EP4vlDwIeCKa/jCLxdPV14o7aRNZfyfLW+MU5LoZb
+583jqZAEAzyLgyElFfWOmpTVzZgoPzfZArozcWQKfzfTpvcn2y0/DSVXrh8XWVRW
+v9xC8/hIeMXflvorPgeJKJw2UagKbgwHTipQ1dq49by/uIz0UpidtfyfUI5Gc5Qz
++wxS9jIEyYX2Hq5hmQhDsVYjnL2MrCC6ITlCeE1Sq+ifiBA+bZ1UqQQKswh2IO2O
+BVzOseWscsfG1BazmVGLPOba0PyS/qRMuesCE1hDTmFMvvLKN6TDYw/fYAC4gE64
+xJm72Ou4GtoIz+7YSKZNDeVkap1ulDNxim4FpOFgTwssha1vNIM2YK1HoFAo5YhD
+H9mDqrpol1+ti4L4R9UjDtt7RAg97hxwXfvWhQzt6gMRDWsfkiMqAz2gB9Tn4SDP
+DzQZJYhL+k1AkxxIoQtw89+eQ6Ipcss4EBHu5LjB340x4CruXUrFXNXRPdDQyFUi
+qV6cV9fvMev1lDvQAmH8z2U45ezhLm0kdkgzXyHXGfXfV24UmuST3TcbBIhdrBcL
+2L0SJqcj87i4YLrrmp05O/oen1QseIlxyn6Y3l2HWq/35Q8iSA63iOnw+NySZnb6
+RUqGYYj48OX2EZHaCLWaiDRUh41yCSwbWQmyXPEfmgfu6K+YKGQ=
+=1Zjq
+-----END PGP SIGNATURE-----
+
+--Zc2DNXh9m8XgbscL--
+
+
+--===============8719586873812925701==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8719586873812925701==--
+
