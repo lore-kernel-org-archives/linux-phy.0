@@ -4,62 +4,198 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E544C7EE30
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 08:44:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEBBBC7115C
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 09:14:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0YBHVLVDNR8MUiZSFMsaH6LO1i1YeLwIq3rpKxgAk2s=; b=aKrfWJSRsLZbPQMqKt9E0Y3X3h
-	j3Y7oecSVgSbyYbiWNtD3kDI4cQj4jYzN49DyzAZIMuZN5BekgqA33NCKKesiK1NisHs4AaIAwlSY
-	vgjJEdqGnGWypLIxGAjPSlV/EaKr4jOXm30hOiNZ90tUR7syJlYYKIMz8WsCshYvIr3bvY9VrPUEk
-	xjUdmT3AIKl+H024OtiC+mhR1Xs7N/kLeHPRKWkePJ/wFrDe2wjGV3Wbkt1Rd5YWjFWEQD5ES2/RF
-	5zg6mJbNfzdcXEHX42KG78tAdlmOxCIHiTe3wOR7iKuD0wTx37CUxtGcbFTqw6cSi23/OaIXwQk1y
-	dH6WjpWw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6uwUJyiTTtm9xZ1ikxqXg57twPrJu6Fch8Ij8vDEGpg=; b=CL4WzIUniaEVXX
+	b7JjfS66pYfyQKZOwWZDAACY++1UHM5lWg/850a0D42V0VGMUNQBolZy8T48+noV3qFlNk7bfXYZ5
+	TioolZNBvmYh5QsrfjhpkQFg+AyKFLrQBvjWTbK0fdqDy2R1owBwUGprRg+jmJaSgbOe02nympnoU
+	QxOq3pjBEq66PdpXB9Auw4/eu6jFmAVGG+sWW5rZzU0pZyzr9wIboJ9KgEwEnUOcfUCd0gVYp2Q1N
+	MVplTbQZCT/1GlYe0/YyYS8gBpJSbtmr6/0HkHyXZChpFEajav5iUu3l0sHL/wzmJ/hbvlSNV87zi
+	/sAOfPdh4prlvQtXiwCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uULjv-000000080Qc-3jVP;
-	Wed, 25 Jun 2025 08:44:19 +0000
-Received: from leonov.paulk.fr ([185.233.101.22])
+	id 1uUMDX-000000085jG-2lIa;
+	Wed, 25 Jun 2025 09:14:55 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUKzV-00000007skR-2N9c;
-	Wed, 25 Jun 2025 07:56:23 +0000
-Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
-	by leonov.paulk.fr (Postfix) with ESMTPS id 1153F1F00050;
-	Wed, 25 Jun 2025 07:56:10 +0000 (UTC)
-Received: by laika.paulk.fr (Postfix, from userid 65534)
-	id 09850AC79EE; Wed, 25 Jun 2025 07:56:08 +0000 (UTC)
-Received: from shepard (unknown [192.168.1.1])
-	by laika.paulk.fr (Postfix) with ESMTPSA id BC2BDAC79E5;
-	Wed, 25 Jun 2025 07:56:04 +0000 (UTC)
-Date: Wed, 25 Jun 2025 09:56:02 +0200
-From: Paul Kocialkowski <paulk@sys-base.io>
-To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
-Cc: Maxime Ripard <mripard@kernel.org>,
-	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH 1/5] phy: allwinner: phy-sun6i-mipi-dphy: Support LVDS in
- combo D-PHY
-Message-ID: <aFurkudIvrbRjJ5N@shepard>
-References: <20250221161751.1278049-1-kuba@szczodrzynski.pl>
- <20250221161751.1278049-2-kuba@szczodrzynski.pl>
+	id 1uULYd-00000007y2i-1J6p;
+	Wed, 25 Jun 2025 08:32:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
+	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=Qitvdw7y71M0si5J6Xr4PF4TX/okXwb+cexPgZIERK4=; b=Pn+BwMdqgNdFYeHd8D+nL+tOnC
+	n7wfC+GIgyRKZDrB2LWNvpxiNY8amR+5HmPw6mILqa+gO2/UPAWrxlyJSYUZE2Yvbp9cGfUA33ViF
+	uvzIrFhqpguT44rcnaiSeYsH5Ly1HKU2iwUgCUR/P0rGsrrTsvk139TXvFhbjgeJKqqysjIBgRc7B
+	8rpYNMqhb2mogDmeZQukGjWyJ19+Quxg50Mrjfvls5TRaQWVFPYeY8cgJqhPbM3cQHMBXb1cx/oys
+	I/cxWOG6VY38Z1Ay8vGBgO82zdEY6mZOY2aFGgJiXq9ozQYCQkDlrWaaQHngBqzI6Cr8xqbBgDAqg
+	bjf2xOig==;
+Received: from mail-japanwestazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c406::3] helo=OS8PR02CU002.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uULYY-00000005grU-0HWU;
+	Wed, 25 Jun 2025 08:32:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=RqTufMNnpvFJzqR8eFTf22BzOXJ+V4K4o24NsiVcp7FtzBI2wB7Ugn2mnpqVF5+PnxfMIhK4tCfa4OC+2d+etVQrqi4M6paTf+qyDl8idxCiIWXkvFqx101QJ2TjaMh0ou73a3m5X0M4aD2yPvQwXs4igKrYJMnj1bWsa82F4crZymBKoiAceRgd8FesIpluqP2GJg8Ip606XDEAq3zYg0zJ0CwMN7c1cBzw0ZIwKM9BDyHU+Nv69KQovyFsNmaDQrsepQPpSyzAaqjcZc9m1uX0OjGd9hMhaQisXSW6FHG+BDOQHasJgytVGO8QlrTSBE1ZfdrqJ/77LgIOtnNAFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Qitvdw7y71M0si5J6Xr4PF4TX/okXwb+cexPgZIERK4=;
+ b=R4T4TxweD5HOh3QtLPl1FKkmQEX/adybRQM7US3f5ZQbnYdaqviCeb9V31K/ve0WlKNCSDx8jvnowI0vmXGoKjWK0lwqHE9ew0mreMpmBp/+685+lIg1O874JFLm2zr4nXA7y/DSnjKxUeSW3CCNHLreA+s2VQYz8xzL9pT0g07s9DlaBKvrq6CHDklf8ylnPqngcXYIJ6opktqS3DOHXK7F7/yHflQe770Rhibn29KTOkMzbQVRxRNOk2ibohQExOQgOWK0mFOsRXOEwWceQipyaz9LlboAHe6VEje7hLe34L0CDUDlR5WAe/IdvZrVUm5Yu6UGnxseJP6vdfwdKw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Qitvdw7y71M0si5J6Xr4PF4TX/okXwb+cexPgZIERK4=;
+ b=M/LgXsOKA3OUjYd8n/NbrC6phJ4JTSLsczQ7ZQ65i0GB5SY2u5/YS8yiUtYXb8I63bqfezZWpbzyx/LtilxevlmdAdQHliNmnRUjYseBFwHueAuowL9P/vycN4sUZgYblBB1JqJjpNcG3skCrZPywtimYxH6mU1HkcHmM47O0/kPM4wM0t1YHPCo7CJbCq6+x2fNr4zGJarQ8izc3fVgd25khQ/OaG+A3B0DQpy3aYLJNc1NnGDgb3L01jZZNP8zgbh39a5KyeeM2Lhve+7OhYryyVJKVGYuFL934yctvUFFcOhfHhKECSCKUimWEAxuTrf8JxhjeobZRgWQgkdrfw==
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
+ by SEYPR06MB6130.apcprd06.prod.outlook.com (2603:1096:101:db::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.29; Wed, 25 Jun
+ 2025 08:32:14 +0000
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28%5]) with mapi id 15.20.8857.026; Wed, 25 Jun 2025
+ 08:32:14 +0000
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+CC: =?utf-8?B?SWxwbyBKw6RydmluZW4=?= <ilpo.jarvinen@linux.intel.com>,
+	"bhelgaas@google.com" <bhelgaas@google.com>, "lpieralisi@kernel.org"
+	<lpieralisi@kernel.org>, "kwilczynski@kernel.org" <kwilczynski@kernel.org>,
+	"mani@kernel.org" <mani@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+	"andrew@codeconstruct.com.au" <andrew@codeconstruct.com.au>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+	<kishon@kernel.org>, "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, LKML <linux-kernel@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+	"elbadrym@google.com" <elbadrym@google.com>, "romlem@google.com"
+	<romlem@google.com>, "anhphan@google.com" <anhphan@google.com>,
+	"wak@google.com" <wak@google.com>, "yuxiaozhang@google.com"
+	<yuxiaozhang@google.com>, BMC-SW <BMC-SW@aspeedtech.com>
+Subject: =?utf-8?B?5Zue6KaGOiBbUEFUQ0ggNy83XSBwY2k6IGFzcGVlZDogQWRkIEFTUEVFRCBQ?=
+ =?utf-8?Q?CIe_host_controller_driver?=
+Thread-Topic: [PATCH 7/7] pci: aspeed: Add ASPEED PCIe host controller driver
+Thread-Index: AQHb3BN5QYkLFJ4SFk66wBBeIABUJbQA/lGAgA8cdnCAAmnUAIABGaYQ
+Date: Wed, 25 Jun 2025 08:32:13 +0000
+Message-ID: <SEYPR06MB5134003D5FA55835C9A5537E9D7BA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+References: <SEYPR06MB5134973F678EB5B163DD50809D79A@SEYPR06MB5134.apcprd06.prod.outlook.com>
+ <20250624154058.GA1478094@bhelgaas>
+In-Reply-To: <20250624154058.GA1478094@bhelgaas>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|SEYPR06MB6130:EE_
+x-ms-office365-filtering-correlation-id: f725c3ef-6f6a-4e3e-4b1a-08ddb3c2c969
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?SnlRVzZyaG81cFdWUmVlVFlYWFlzQ2szZGhsYm5ubS9xVHdUNGlpTFZCVzZ3?=
+ =?utf-8?B?dXRLbkk3WEQxcjNBTitpMGVWSzN0NU93cWttbHh5dlZqdjA1Q1F1YmkxdjJP?=
+ =?utf-8?B?WHlJNEllcEtLU3FxSFhDS2tXeUNnVUROWHJ6ak1WaTY2QXZUTVFCcm9tMzNX?=
+ =?utf-8?B?TlJkVno1ZVJQM0xVV21FOGcwMEN6d0hwNWdrWFZJUU5ZTy9haVZ1NC93WUo1?=
+ =?utf-8?B?M3RHOFNiRWM3SlNYQW5EWkZ0QUIxU3loTnVnRnlQeWlsejlYcTB0SEFnMWVW?=
+ =?utf-8?B?SFRENlI1ZDE0bnhZOEMvWEk3eVBCVDRranFIQ1pmQTlFV3g0ZEYwamJmMmZa?=
+ =?utf-8?B?dzBoQ0RUQktSVTdmZVVib0o2OFUwMEVqTDZwUTB4dWE5Ti9JN3VrNy9DOG5z?=
+ =?utf-8?B?b05aNFluSTFiaCt3cUtiRFFFZFpyTDZJS2tIeWt0STlKTmR6L1BKYU5Oa2NL?=
+ =?utf-8?B?RnhHZnlnS2ZKdTR5L0J4amdnK01BR2pJdTZCdVBrWjFqVnZRMDliNnZrN0N2?=
+ =?utf-8?B?T0IxSStuVm9ydlVSTHp4L29rQks1QmdZc2hacjg0VDBvMFBWRGx5ejh6d2M4?=
+ =?utf-8?B?ZzFWVDNoMFd6SVhrMGRZbm5wK2hjb29jNUVpaE9TZmZkSVJTUEdVcXFnSUFO?=
+ =?utf-8?B?cFpPazNDNjE2TFNZdUsrN1A5eTZ6NlBXVVNBM1lCU1gwVWp2dG13V2JIbS9m?=
+ =?utf-8?B?MXI5NmpJbXJGUHIzYnBYTTNLcE1EWTRkektEcHo2UWVQSEJaNXUxS3E3Nkh2?=
+ =?utf-8?B?QU94UmhWNUY5ZmV4M2x1aThzSVI0MTdpejZyRUVYNHBMMEVUVHU3YlNXUUtG?=
+ =?utf-8?B?WGxRd1VCdUpuNHMrMFpka0dtMWFCWFFGUmRXOWFBRFpBK3g2MG1Ub0dnYzVP?=
+ =?utf-8?B?T2FhYXViOHR5anE4TFNLV3hGUVh5Q2ZHb0oxRTJoTVJXMG1rZEx2N3pIWHBD?=
+ =?utf-8?B?WWNBNUZURHlkL1VQb2dxaTE4RGUvSk0zOXJNWUE5ak5jaFp5TW5sOWRsR3lt?=
+ =?utf-8?B?MnhFOXFvSEpZQ2ZOZFhaSkJQaDd4MFRhN2F5QWQvZGdqdW1HcFc2Nm1TbWgy?=
+ =?utf-8?B?dGp6aHg2K0lUb2tacVJjWHhXN1Jod256a3N4U2d1L3lnQ0ZBeDZsNGhhVjlJ?=
+ =?utf-8?B?UmpONGg2OW5QS2QwWXRJVmc0eUt5eVdDd3N5YmNLb0RmaHplTk5XbWo3aWQw?=
+ =?utf-8?B?K3QrZjFIb3dxQzArak05QzdQYm1OOUhHTWZuWkVRcDJjYU0vVlVxeWVGdzRj?=
+ =?utf-8?B?Y0hkL3FBZzFWb09Wb05pT2xjcFhXRDBWb3FjcmlDb3ltN0xycjBMamppWjJH?=
+ =?utf-8?B?WklGbWZiMktTWHdpZm1XV2ZSNVFFOHVFTWpibjJQbXN5MHRnSzl4SmFJc0tD?=
+ =?utf-8?B?Wlh3VnE5OW9tKzM3Ukp2YXNVS1BINGVrOXRNRm05OWoyOURLaGs4UkFRUHlv?=
+ =?utf-8?B?Q2REMnZ6SmRZNnVseG9RUE0vU3FpL2FPMlNnZlBPU1RKNTdaWTdPMklaemlu?=
+ =?utf-8?B?MFkvYmdmYUp1bmRtYkMwTC9TejB3K245SDhKbEthUzAyR1ZOeXpncjVvcWdk?=
+ =?utf-8?B?eGIvd21PdEE3K0E3N3dDM1Z1emx0aXBtQ3FkL2xmWXZNUlBDeVhnMnhvYVZa?=
+ =?utf-8?B?WXBGeDJlUmw5YjI3QkFGRURBSUtvMk9acUZJT2pMdXovOWkyejZkUWxiNGFM?=
+ =?utf-8?B?ZCtUN0NnK29nUy9pRVAxbTdsbGkwQ1dQWFFIRVk0azdQZjNSdTFuUzRXZUlE?=
+ =?utf-8?B?MjNQVEhBbCszN2RZc2IzZUJjOGdUZGtvTDREWi9IYU5ZRUxGS3RRandnMU9P?=
+ =?utf-8?B?Q2R0czZhQjFzcy9vMS85SVZtbElPQmFJQVpYMVNBakt5dFM0T2hYSmN2Nkt4?=
+ =?utf-8?B?cHNEaDhkNE54eFFpQWxGbzVPMXp1U3Z0a0xZTHBtY0VxNnJHTXhCS1lQWUt2?=
+ =?utf-8?B?UWhSbnBDa3ZnWHpSWU5McjZNcFRON00wZDB2L1lBaEJaS0xscnZnTzNTOWdK?=
+ =?utf-8?B?Si9GdHhZcGFBPT0=?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?ZWE1bmlnamhFKy9lSmZSYktFWlpGVi91L3JycWs2Z1dQQkl6b1pVclJNdlpM?=
+ =?utf-8?B?bFQ2NWFXSCtJam1HVGx2bFpNaGRMaGh6aGprU1JSeTVpcUVaQzdremF4N2Ev?=
+ =?utf-8?B?d1FMMVowbDJHdStsRFF3ZG5QZjdNVy9Gck5VV1UvUy9COGRKSVZOd1o2T1Q3?=
+ =?utf-8?B?SGluWFB2WXNkenUrSDUxK0ZxVU14RzB6NHJ5emRXYmUrbERHOGw5SHM1dEls?=
+ =?utf-8?B?VFRNd2xhVm1ic1lvckpxQ25tdXAyUW1XUUtYellaUXh6MDhEOXlWRW9CWnZX?=
+ =?utf-8?B?Vmp6czZFcjdXZTNSNnNqc041V01xQzBkYVc5TmEwb3NETVExdjJvZFF5S1Uw?=
+ =?utf-8?B?RWozaGI4WGdiT1psUFlOT1hJRkgyOEZScnlEMThZa2xvZHFMNU5lcENVbU5q?=
+ =?utf-8?B?VjNTY1RkU3NKSGxlRGkzaFJsMTluV25XVUhkTXp6eXlWbVNSQmxta2I0KzlZ?=
+ =?utf-8?B?aCtGUnZMRFR0R2dqMjhtME1DUmpQYy9ZaDZQNWg4VWpoQ3BnNnpmWHZFaGhB?=
+ =?utf-8?B?VVQ2eVpYTWJWdXJaeXRCY05ERnh6YTAzTTYxVjdCTlFOSnhTYThpa25xN1ZC?=
+ =?utf-8?B?K05MN1BZanYwcDViM0c5VE9wczZHNmJaVXQwSEppRHFKbHdzTEp2RURHcW5P?=
+ =?utf-8?B?UHllVkUwVlZqUHFlWk5meW8xb2I3NkhoK2tQWXZ1T05BbTNTT3NnVVJGWXBu?=
+ =?utf-8?B?R1VLR3JVd1c0K3ZtaDZVYkNpMzFGY2hlMi85ZU5oUVpGY0grMWxEZDFlZzRm?=
+ =?utf-8?B?MnJmK0RONjlNUWtzcnRqZGd0bXNvZVJaL0dIbFlsb2FzNnM1WFJEL3ZSZUt2?=
+ =?utf-8?B?aW44WmkzV1l0dnZReU8vYkJYZWwyUFdDck5ZN3VpMTlYeThmQUwwd2l1M0lL?=
+ =?utf-8?B?Rm51WDAyNnpZNjNXMUhPUHNQQlZ4NWtUYU10OXF3V1lNS21uMVIvNVZoL0ZO?=
+ =?utf-8?B?TmdUSEZTYnkyNm1VWVpLdVBWdkh6RlFORCtWaTRXdEIrNi9vdldlbDdXY3l0?=
+ =?utf-8?B?UGpiZnJablhSMk9IWk1XSkNrRzUyWGxiK2pCdmtycTc1ZitENHZ2dDU3Nkpz?=
+ =?utf-8?B?WXdYdFQyeTN4Y2tnbDAyWUVaTFVnd2ZiVktURzJKbnp0ZWhTU3VJWWlURGNY?=
+ =?utf-8?B?NnF1MFZSZFpiaWlYenppVm1ZYVV5c0FZVGpsNmNWcHZGUTBuWEdLMlFFUDVV?=
+ =?utf-8?B?Q1psWU5kN2t6WXh5NnRlSFhjaHBIOFVUNVdvVzZXVjRpbm5ibGpqUXhMTkRp?=
+ =?utf-8?B?eHpFYmM5SjVFWkxlMy91bG1yWU0vajZON2hOYnA2TXowMExQWFZqbDAxOVl4?=
+ =?utf-8?B?OGxQdEQwdW81REJKakJ0eUVvYXIvbXpHUVp3OVZNdVBuR2Nzby9vRERrSWNX?=
+ =?utf-8?B?WnQ2VmJpeEgwdFJEaDNFYUYvcUZnK2NyODBXbE1yVnZyZTNqL24wa2kzZ2J2?=
+ =?utf-8?B?U1htbmR0aklpN28zQXdRWVhZdEFpZnQ4Qm1LL1lYY3pEdmVFTTl5NE9YZlFQ?=
+ =?utf-8?B?dGhtK0FjbXp1bTAweHV2aFU5eVlkRWtDeFU0SGpVOFlwVmpDWFllSElMaEEy?=
+ =?utf-8?B?ZHNpdEZwbDYrUU8wejN3b1VTOC8yZ0tlWk1oQ2pUL284QkFEVGJnQXRwZUYr?=
+ =?utf-8?B?TzdVTHhQY2RPS2puK0M3K0JjMHJXTlRBaXh5WlR2RmxkelJNVFQ5T2t2QTB6?=
+ =?utf-8?B?VDQ2TmUxVzZLbzFlTkUwTlNOdHNqUEhrNjhFNC9BS3BNUzVqTUxDL1M5SjN1?=
+ =?utf-8?B?TitsYjhSODhwNXg4cEl4ajZrSzVIRUtqbDZUVENIMHZLbHZQbGZQV3VTOFdF?=
+ =?utf-8?B?ZXcxTzlMV2hyMFY3enRlYUpWNjJoWlk5VUhrUUY1VS9iMjZaTmdoNWYvZUdL?=
+ =?utf-8?B?NHNoNTZHRmdnV0dEMUxYQXF0dW9lcURhL0dVTHo3NTREalNBRWw3YlJzSG1H?=
+ =?utf-8?B?eUsxbE9qdDNwUjgyQ2VpK29rNFdkSUpBOHIzb0hwb2pXcHlLbXF2R0hKeEw5?=
+ =?utf-8?B?ejVmOStTTTBpYWhrdkozV3JkMlhsMko3RlJmaE0rL1FiMjUvTzg3VkNLVFhL?=
+ =?utf-8?B?blhyT2tFV3BqNUxRdXI0Q0ZkU2t4OWU4Y2oxR1VtR085ZWJHTGVYUHRuWHE2?=
+ =?utf-8?Q?9v9RHDUj2TEHxVKBWGy2RgH93?=
 MIME-Version: 1.0
-In-Reply-To: <20250221161751.1278049-2-kuba@szczodrzynski.pl>
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f725c3ef-6f6a-4e3e-4b1a-08ddb3c2c969
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2025 08:32:14.0506
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wmi2/N8DgvtVTkcCVsWxRlVmfhpIi6dP3+ystsZUX6NOrsUsm57N1hLErCczKyfMCO7bP/5z78uVqt3z43h9Qz/2ETc6ZMcnmRhAm1JfCr8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR06MB6130
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_005621_923794_63BF95BA 
-X-CRM114-Status: GOOD (  33.02  )
+X-CRM114-CacheID: sfid-20250625_093235_838472_7E790E53 
+X-CRM114-Status: GOOD (  19.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,253 +207,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8509431906078845056=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+> > > > +/* TLP configuration type 0 and type 1 */
+> > > > +#define CRG_READ_FMTTYPE(type)		(0x04000000 | (type << 24))
+> > > > +#define CRG_WRITE_FMTTYPE(type)		(0x44000000 | (type << 24))
+> > >
+> > > These are straight from PCIe spec, right?
+> > >
+> > > I think those should come from defines inside
+> > > include/uapi/linux/pci_regs.h, there might not be one already, so
+> > > you might have to add them.
+> > >
+> > > I also think you should actually use the type as boolean, and return
+> > > one of the two defines based on it. A helper to do that might be
+> > > generic PCI header material as well.
+> > >
+> >
+> > Agreed.  This definition is used on TLP header.  Maybe I will try to
+> > add some definitions to pci_regs.h or pci.h
+> 
+> This values might come from the PCIe spec, but unless they are needed outside
+> drivers/pci, any #defines should probably go in drivers/pci/pci.h.
 
---===============8509431906078845056==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="M3lDD/H+Q2OgnYvP"
-Content-Disposition: inline
+Got it. I will sperate some definitions that are from PCIe spec to drivers/pci/pci.h
+In next version.
+These values are like the content of TLP header format. I will define them in 
+drivers/pci/pci.h.
 
-
---M3lDD/H+Q2OgnYvP
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-Thanks for working on this! See a few comments below.
-
-On Fri 21 Feb 25, 17:17, Kuba Szczodrzy=C5=84ski wrote:
-> Some Allwinner chips (notably the D1s/T113 and the A100) have a "combo
-> MIPI DSI D-PHY" which is required when using single-link LVDS0.
->=20
-> In this mode, the DSI peripheral is not used and the PHY is not
-> configured for DSI. Instead, the COMBO_PHY_REGx registers are set to
-> enable LVDS operation.
->=20
-> Enable the PHY driver to work in LVDS mode on chips with a combo D-PHY.
->=20
-> Signed-off-by: Kuba Szczodrzy=C5=84ski <kuba@szczodrzynski.pl>
-> ---
->  drivers/phy/allwinner/phy-sun6i-mipi-dphy.c | 65 ++++++++++++++++++++-
->  1 file changed, 63 insertions(+), 2 deletions(-)
->=20
-> diff --git a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c b/drivers/phy/al=
-lwinner/phy-sun6i-mipi-dphy.c
-> index 36eab9527..f958e34da 100644
-> --- a/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-> +++ b/drivers/phy/allwinner/phy-sun6i-mipi-dphy.c
-> @@ -166,8 +166,8 @@
->  #define SUN50I_COMBO_PHY_REG0_EN_CP		BIT(0)
-> =20
->  #define SUN50I_COMBO_PHY_REG1		0x114
-> -#define SUN50I_COMBO_PHY_REG2_REG_VREF1P6(n)	(((n) & 0x7) << 4)
-> -#define SUN50I_COMBO_PHY_REG2_REG_VREF0P8(n)	((n) & 0x7)
-> +#define SUN50I_COMBO_PHY_REG1_REG_VREF1P6(n)	(((n) & 0x7) << 4)
-> +#define SUN50I_COMBO_PHY_REG1_REG_VREF0P8(n)	((n) & 0x7)
-
-Good catch! Would be good to mention in the commit log (or split in a separ=
-ate
-patch but that might be overdoing it since this register wasn't used so far=
-).
-
->  #define SUN50I_COMBO_PHY_REG2		0x118
->  #define SUN50I_COMBO_PHY_REG2_HS_STOP_DLY(n)	((n) & 0xff)
-> @@ -181,7 +181,9 @@ struct sun6i_dphy;
-> =20
->  struct sun6i_dphy_variant {
->  	void	(*tx_power_on)(struct sun6i_dphy *dphy);
-> +	void	(*lvds_power_on)(struct sun6i_dphy *dphy);
->  	bool	rx_supported;
-> +	bool	is_combo_dphy;
->  };
-> =20
->  struct sun6i_dphy {
-> @@ -222,6 +224,18 @@ static int sun6i_dphy_configure(struct phy *phy, uni=
-on phy_configure_opts *opts)
->  	return 0;
->  }
-> =20
-> +static int sun6i_dphy_set_mode(struct phy *phy, enum phy_mode mode, int =
-submode)
-> +{
-> +	struct sun6i_dphy *dphy =3D phy_get_drvdata(phy);
-> +
-> +	if (mode =3D=3D PHY_MODE_LVDS && !dphy->variant->is_combo_dphy) {
-> +		/* Not a combo D-PHY: LVDS is not supported */
-
-Missing a final . in the comment.
-
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static void sun6i_a31_mipi_dphy_tx_power_on(struct sun6i_dphy *dphy)
->  {
->  	u8 lanes_mask =3D GENMASK(dphy->config.lanes - 1, 0);
-> @@ -329,6 +343,37 @@ static void sun50i_a100_mipi_dphy_tx_power_on(struct=
- sun6i_dphy *dphy)
->  	udelay(1);
->  }
-> =20
-> +static void sun50i_a100_mipi_dphy_lvds_power_on(struct sun6i_dphy *dphy)
-> +{
-> +	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG1,
-> +		     SUN50I_COMBO_PHY_REG1_REG_VREF1P6(4) |
-> +		     SUN50I_COMBO_PHY_REG1_REG_VREF0P8(3));
-> +
-> +	regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0,
-> +		     SUN50I_COMBO_PHY_REG0_EN_CP);
-> +	udelay(5);
-
-Please add a white space here...
-
-> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
-> +			   SUN50I_COMBO_PHY_REG0_EN_LVDS,
-> +			   SUN50I_COMBO_PHY_REG0_EN_LVDS);
-> +	udelay(5);
-
-here too...
-
-> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
-> +			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO,
-> +			   SUN50I_COMBO_PHY_REG0_EN_COMBOLDO);
-> +	udelay(5);
-
-here too...
-
-> +	regmap_update_bits(dphy->regs, SUN50I_COMBO_PHY_REG0,
-> +			   SUN50I_COMBO_PHY_REG0_EN_MIPI,
-> +			   SUN50I_COMBO_PHY_REG0_EN_MIPI);
-> +
-> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG,
-> +		     SUN6I_DPHY_ANA4_REG_EN_MIPI |
-> +		     SUN6I_DPHY_ANA4_REG_IB(2));
-here too...
-
-> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG,
-> +		     SUN6I_DPHY_ANA3_EN_LDOR |
-> +		     SUN6I_DPHY_ANA3_EN_LDOD);
-
-here too...
-
-> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA2_REG, 0);
-
-and here too in order to match the coding style.
-
-> +	regmap_write(dphy->regs, SUN6I_DPHY_ANA1_REG, 0);
-> +}
-> +
->  static int sun6i_dphy_tx_power_on(struct sun6i_dphy *dphy)
->  {
->  	u8 lanes_mask =3D GENMASK(dphy->config.lanes - 1, 0);
-> @@ -492,6 +537,14 @@ static int sun6i_dphy_power_on(struct phy *phy)
->  {
->  	struct sun6i_dphy *dphy =3D phy_get_drvdata(phy);
-> =20
-> +	if (phy->attrs.mode =3D=3D PHY_MODE_LVDS && dphy->variant->is_combo_dph=
-y) {
-> +		if (dphy->variant->lvds_power_on) {
-> +			dphy->variant->lvds_power_on(dphy);
-> +			return 0;
-> +		}
-> +		return -EINVAL;
-
-This would look better the other way round: first check:
-	if (!dphy->variant->lvds_power_on)
-		return -EINVAL;
-
-and then call the function pointer and return 0 without extra indentation.
-
-> +	}
-> +
->  	switch (dphy->direction) {
->  	case SUN6I_DPHY_DIRECTION_TX:
->  		return sun6i_dphy_tx_power_on(dphy);
-> @@ -514,6 +567,11 @@ static int sun6i_dphy_power_off(struct phy *phy)
->  	regmap_write(dphy->regs, SUN6I_DPHY_ANA3_REG, 0);
->  	regmap_write(dphy->regs, SUN6I_DPHY_ANA4_REG, 0);
-> =20
-> +	if (phy->attrs.mode =3D=3D PHY_MODE_LVDS && dphy->variant->is_combo_dph=
-y) {
-> +		regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG1, 0);
-> +		regmap_write(dphy->regs, SUN50I_COMBO_PHY_REG0, 0);
-> +	}
-> +
->  	return 0;
->  }
-> =20
-> @@ -533,6 +591,7 @@ static const struct phy_ops sun6i_dphy_ops =3D {
->  	.configure	=3D sun6i_dphy_configure,
->  	.power_on	=3D sun6i_dphy_power_on,
->  	.power_off	=3D sun6i_dphy_power_off,
-> +	.set_mode	=3D sun6i_dphy_set_mode,
->  	.init		=3D sun6i_dphy_init,
->  	.exit		=3D sun6i_dphy_exit,
->  };
-> @@ -619,6 +678,8 @@ static const struct sun6i_dphy_variant sun6i_a31_mipi=
-_dphy_variant =3D {
-> =20
->  static const struct sun6i_dphy_variant sun50i_a100_mipi_dphy_variant =3D=
- {
->  	.tx_power_on	=3D sun50i_a100_mipi_dphy_tx_power_on,
-> +	.lvds_power_on	=3D sun50i_a100_mipi_dphy_lvds_power_on,
-> +	.is_combo_dphy	=3D true,
->  };
-> =20
->  static const struct of_device_id sun6i_dphy_of_table[] =3D {
-> --=20
-> 2.25.1
->=20
->=20
-
---=20
-Paul Kocialkowski,
-
-Independent contractor - sys-base - https://www.sys-base.io/
-Free software developer - https://www.paulk.fr/
-
-Expert in multimedia, graphics and embedded hardware support with Linux.
-
---M3lDD/H+Q2OgnYvP
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmhbq5IACgkQhP3B6o/u
-lQytpg//bGHggO6GMgSRUWrRfU67xQXC0LWqeX5lbWuCQJk2xbXl8iQMa9wosfOG
-oGqxsObFtN+fh7G/j+I8hBtoB8V6/5PfYpYmN4YmZxwy2lur5ULXAB82DApLV2ki
-+Eb5/Fox4n+t3mcfkrL9vseJHEfu1Em4CiM06U3h/GQidM6plSj+NU4J0+Rnn93G
-ayYVPuuoqcfdfnjMbGCOoGJFjlVbCAM/D71wyeBepFaEYTPgq+4LidmpPhaS7irt
-BgSH+D59cMj2ChJJQCRh3E5BkbAOWi62T7TIbzfIc/eKCaZgABN0DGFcpBoA22JG
-tuRrdpDXp5YcfPYfitvRt0idVyJsBG+zcuHY2fQlqjCrMWAVcctNZWX8jpu8LY7r
-oT727jRFb1oVVBr0FNyP1AM9PKmBhY2fj3S+vQvjSBYe1kKTjvxaMhyeT9+K7ihC
-fY3Hm7hLbDjm5TO8mSfRADkZLXZ+mvtYw7wg7apzWWfE2aCmg+EItQcw9WYAIZrH
-cCzCC2LftXzY9B24svI8K5rSE0gMGFKcs+2WWoEaLFCXosGWeJ+w2es6a0jQGvJc
-augMFPF1G1NqbN61PLXrK5JYDvzwu//BgrmNKo9fgCHUsId03crklxmU/crqj3g5
-5pkqZEm8h+ZWxCUbO6sC0qauT63pXfy5OmMSLpJeIGqW2z8B3u0=
-=LII3
------END PGP SIGNATURE-----
-
---M3lDD/H+Q2OgnYvP--
-
-
---===============8509431906078845056==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+Thanks,
+Jacky
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8509431906078845056==--
-
