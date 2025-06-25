@@ -4,98 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 013F7C7EE3A
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 12:38:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A681CC7EE30
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Jun 2025 16:30:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ikeQr6y3DaYJ1fRITAaUEmxteVhXVJ6SX5fyuclvFi8=; b=T32pL6YXUcYU3C
-	2IoSiIwrX7LLuHK62uh7Alo8E+Y1kRVPXZl8AjbG8DBskeuBCzBJ9MS4It9101xKweqR5Zz3ey0st
-	9+OF0J5rEK6BMM2buFNdGYXXColMybbwl/6us5qZiRY5n6A5KpPcTDjRaADzCkIYLSIxz7OR6XuWd
-	i0DhsfaIxcsOVRptQ4v1lfDZgaBzwzAMBhp6JYoOr9nhSFceu742TrV8HNkwcz0NjkvFkP3MioTiU
-	gVwAAEA2w+axVV8pwAhow7QtvasysLtwpd9oPfbFUoxydSrjzBA8w3gf87WRu05po7MGNGQKfhUPH
-	m9JJyQK4R5SbZDI9ILBg==;
+	List-Owner; bh=LwBtlCrhS4F5B5ScE2XBG6XVrONZomhxRyyVxnbDhdI=; b=MWuce7ECvCoDLC
+	xDG+3jdAczXUKCCnHEk/U75DmDShBcd83AJx/Pg8MnUPK6Li8H/MoreID7UgICI08fpEbi1yONG9e
+	mdDPifuZ87mYMdKn44EGjCZ1mIBDf+Ghc18O60R8fcRgWNg4o4Wa+8fr+vTNmp+vSmZQH5JK2bGHv
+	xGaaoFIDVSBtLirpSds2+5pa9y0hTwQBhrX1dInKy4Ccekxia6NHjfuLr16u2fR7/q2JwPMKvBv1p
+	teieGqYrume7lW/Q0IkE5UuyK9ygSjowOKvKgiW7ifYcD2LMOIgYWrqXiQDQzs6zMGnyrD+DFlAIg
+	A4px9oZZzBu9MOdGbleA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUPOs-00000008e9Q-38mG;
-	Wed, 25 Jun 2025 12:38:50 +0000
-Received: from mail-ed1-f51.google.com ([209.85.208.51])
+	id 1uUT0d-00000009HoB-0w6d;
+	Wed, 25 Jun 2025 16:30:03 +0000
+Received: from mail-ej1-f53.google.com ([209.85.218.53])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUMDn-000000085q8-1oep
+	id 1uUOUO-00000008VxT-1OTO
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Jun 2025 09:15:12 +0000
-Received: by mail-ed1-f51.google.com with SMTP id 4fb4d7f45d1cf-60c5b7cae8bso307891a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 02:15:11 -0700 (PDT)
+	Wed, 25 Jun 2025 11:40:29 +0000
+Received: by mail-ej1-f53.google.com with SMTP id a640c23a62f3a-ae0ccfd5ca5so14345166b.3
+        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 04:40:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1750842909; x=1751447709; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=nYAqoJ6/qKfU25b7tBm6m33uYwBP9NEeRrfJuuX4YuU=;
-        b=yCulmWKTss9Kvcd7efzCvlfW+sO6nBliiAR6yJ4024CWEPY/Mgmq1KB4k5XEq7T6Ix
-         7MTia1SXiNi9JjSWZnCx4w5QU/D4jLp0g44i7NtvYDXTv0nwby2JMc1oG2poYiiSya2g
-         WjuwLnt5+lqXKeoGKOCJA7ecDIr4X+/Qvp0NJfOwicWX0+YUSSXxwinczldCGbs8suNQ
-         nqfx+VanfuH5xKsrz7akOVSdZUvSTbo5GVls/KyEK6EzhCT0CM97noToX6xgCsIbdyuk
-         8Q7n92re4GfxS42kbmS6edMRkAY7zlskdh+l/hxZGntWiNyx3nkWruBWOFVdZfBXmgY2
-         RMbg==
+        d=linaro.org; s=google; t=1750851626; x=1751456426; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=5Ta2U+QcnogTft9XpE1aWdMlfFtTXMxtf8HD/ZE2i+8=;
+        b=jc0kmjXhm+QkXEIXjtlyIMbnsORIPhScNSWJ6Zbx0QI7mKDgnAq6tfQyMVEiE6Psmd
+         am2U3kjrQ/GVg1ZVbrB0kxxpyFH27UoGmPywbnEFdIgNuY+GAR7VOihzyKeU0UQx72K1
+         kSL90YQeDv4Q7CHeQSK1dYguJXmovehjeIcKt7ivW1uXAJYrhU1OgCUDg1k0mtqqU+Ag
+         eNSTSvMHJRyEDKrw9LectPLpsAJsGSRKYoGwu8iT80CXi3N5foYvb3SWy/VZPqXtHvQJ
+         fAovo5AwHKPa2/+nYz2QCYnuFcbY41XWoTJ/ESNd1XtURaxF4Vfma5YSAcDZpv+kcLk1
+         i59w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750842909; x=1751447709;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=nYAqoJ6/qKfU25b7tBm6m33uYwBP9NEeRrfJuuX4YuU=;
-        b=v5PcKu33vcrmZ8b2EsM/YjvgXWwXPZ4XEOsuzk+RC4PX0rTWUXVAwG3hjXI1NBLFwH
-         8y6FKVJXmd3XMIs6rs+FevbYCkCxP2ErgOyKJTWenm8VxPB74wq1iXb6aab0RH5LAkbE
-         0Gs5wlMsi2uD/TBcUAqNzS3hPnRfdgW025hk57P8Dkj24ZzSwwxsha1jn2YcYcsrP7L5
-         g4LG8l/GlosBhhrqNQRevVo5wdVj96ElfzIaIxo/USiw4JNXNmEhPHPDRUP/HI3aTTId
-         YHcGUDoJRPoYpiTjrL3FsdKmtVgoj+YUucRzuMsBR0zNlUSXQdzMkL5xG5qUGUK6aDjG
-         NAVg==
-X-Forwarded-Encrypted: i=1; AJvYcCWU+tfU6PFSpLH9uHe2mI6z9cbvauYPf87nBxFVZQLQPmBt6zJ1BvvRtp7kvCjXzU2CbjyZ1eXtkVk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzA3xct7UspIAskrRxktlWO2CXxrFQ+XgCBRWDxR+eufvgp/Goy
-	mvPCz43XQ2Mzf9ere0Y8vz6mfHlzGmQwbtwJ7RhwJN2UPNmXlxczfyrIG1hNcW241yw=
-X-Gm-Gg: ASbGncveBIK/TTv31Sl5Fe8PifFAOdKq/UAfMZ1vX3GiD2ir4hotvPt5fAWKks5EIJd
-	BskbYn4hyQ0IqbrBUx6vT9J9qE0bVRrh5BwZrOcKPaRNdYzh4OXUjpAqME9Z73a4140jkCau0iA
-	b4Ub8+6lndc3TF+r3CMJiYv5ztF47f81hR0tS6sHUOGQbiYKPTLgAYztlS//yvHKEiqKnbkfS7n
-	vdeT5FcyMACFw1abi74NAxbJ5xlDKuwtV8l2PTaSw/U2BTujl9+u67xXreXV+GQghSHUXFFyzY8
-	/Ai1C0dnUSl0EjW5dZKw82uoMbYqxSOalM8bCMI3BmArtPD8wRsXozwEoB1Kz021J8hVBxzYORY
-	7TmMmKMV+a6VwD72tbrsPkgPXLpoUw0DP
-X-Google-Smtp-Source: AGHT+IHTHT6smOWuvPBbg/OoSpzrmO4I1vDkFCL1KQ1NKNgVDgQsVVmwWjvkBuZNA/03futIChe+uA==
-X-Received: by 2002:a17:906:8f03:b0:ad5:430b:9013 with SMTP id a640c23a62f3a-ae0beabad4cmr197343066b.42.1750842909404;
-        Wed, 25 Jun 2025 02:15:09 -0700 (PDT)
-Received: from otso.local (144-178-202-138.static.ef-service.nl. [144.178.202.138])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae053ee4c2bsm1008972266b.71.2025.06.25.02.15.08
+        d=1e100.net; s=20230601; t=1750851626; x=1751456426;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=5Ta2U+QcnogTft9XpE1aWdMlfFtTXMxtf8HD/ZE2i+8=;
+        b=vetTj9qKm3VXIr5Ejt9iLF5ENHV/+ubiT7CvcEN1UrF3NGg8OEWOoxe/ydUYSA+Vjk
+         5V0E8eK/cXZMfkUMh9k7TV59ZDtIGAtF+EbYSc+ibr1flmm/eYTR9XQyrJajXVncNKrp
+         e5jIkgaLH4nHHo1OtNN3XPllK1gNlnuLdA5fZMgM3hp8H8aeVEo/3GOMC8EdSorpuJB9
+         G1eCXakWnK/ps/4TNc4HJaU9oIpe3D8+Nnx0hTM/2Is/tNzqXc7dcEEEYRYqZNGMrB5H
+         buUhwx0VbJKUCMYiF8WBMHDOpDbsS0MCBC1P8RxVcO5bRo2Y5eUOBhe6YvBmf25yM9iZ
+         yJrQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWh2fwMV1fXdaH4L1FJLMzP56zRtYi1hrNL18ipxea2TqMayPWjXG4UlhUewAsSRuX1y1TVBviariI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwuQQJWpOAZTWUhRKFZEeFJX0Iu+BbF+/8C1jWNWM9H7pSmK5PR
+	/Ta88GLx/Otkj+vCCE8GDZkElh4ctGp68q/AvXMD8YrkRpM+ua7JCAs/l09BmQo6E00=
+X-Gm-Gg: ASbGncuh9is+mhK3PZM2weZ4tJtYwe3mvMNA0jROXVlf2jW/fJsKa2dyQXs6A7Kq+73
+	BYMyXpkwB15sFadEN7fG2f0d8P9a3RUORdvSSzjhdiQciE5HiKZhKFC7B8ifJaJ+iG2OEQipDaV
+	NaeRZjx3t3N7d3yeEyDV99mn+jHMBzpyLvBk/8leeLiHoY9FrM043BDs5VwppiDR2PDEfosZrK0
+	eS7M1hnoSR25vpZaj5XA0bidHZ47mXJTnLglJFHun6JV7MEyOUhBvpk6MCO1QHEtWQr+lBRv4tt
+	5Yjyw76JwPqSYbMJLvYujvCLCgG9+iNdL1S04lQlVV7Czb584rVdE93YdG7ijL2vDP4Tsw==
+X-Google-Smtp-Source: AGHT+IGymkDJa2PepqWKYweFBWWgXgdsKbBJ6SsAwFL8JIz/ma8KQ3iqRebiC+IPQmWTbUJCcGFyWA==
+X-Received: by 2002:a17:907:9482:b0:ada:4b3c:ea81 with SMTP id a640c23a62f3a-ae0bef1b3f1mr265885666b.39.1750851625821;
+        Wed, 25 Jun 2025 04:40:25 -0700 (PDT)
+Received: from linaro.org ([82.79.186.23])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae0b1b1ba3bsm235787566b.93.2025.06.25.04.40.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Jun 2025 02:15:08 -0700 (PDT)
-From: Luca Weiss <luca.weiss@fairphone.com>
-Date: Wed, 25 Jun 2025 11:14:59 +0200
-Subject: [PATCH 4/4] phy: qualcomm: phy-qcom-eusb2-repeater: Add support
+        Wed, 25 Jun 2025 04:40:25 -0700 (PDT)
+Date: Wed, 25 Jun 2025 14:40:23 +0300
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 4/4] phy: qualcomm: phy-qcom-eusb2-repeater: Add support
  for PMIV0104
-MIME-Version: 1.0
-Message-Id: <20250625-sm7635-eusb-repeater-v1-4-19d85541eb4c@fairphone.com>
+Message-ID: <aFvgJ9euu1RwHXl+@linaro.org>
 References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
-In-Reply-To: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Luca Weiss <luca.weiss@fairphone.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1750842904; l=1626;
- i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
- bh=ir+Zz4LAiE20eWLdniulU6V2vglQQAqVFBeR34CuJG8=;
- b=poF4UgGeNsIdsHzqa+4Ufcgj3UOwUXQ9heUHTSr0dnvLoBGTxC7sTPQsPYsEOBqNDzaIkqivb
- 0Pe8NuBzS+DChDjGAvuxbBPb93e/Hf1JOEeKajCAGwAwTabDEokAhcp
-X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
- pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
+ <20250625-sm7635-eusb-repeater-v1-4-19d85541eb4c@fairphone.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250625-sm7635-eusb-repeater-v1-4-19d85541eb4c@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_021511_476389_0656D0A9 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20250625_044028_380035_488DDC67 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,49 +106,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the eUSB2 repeater found on the PMIV0104. There is no
-default init table for this PMIC, just the board-specific tuning
-parameters are used on top of the default tuning values.
+On 25-06-25 11:14:59, Luca Weiss wrote:
+> Add support for the eUSB2 repeater found on the PMIV0104. There is no
+> default init table for this PMIC, just the board-specific tuning
+> parameters are used on top of the default tuning values.
+> 
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 
-Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
----
- drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-index 61594739e5b12706775622e1f76af6ad5d2d29bf..3d4cdc4c18becd8efd5015e698b836ad4d7cf18c 100644
---- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-+++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-@@ -82,6 +82,14 @@ static const struct eusb2_repeater_cfg pm8550b_eusb2_cfg = {
- 	.num_vregs	= ARRAY_SIZE(pm8550b_vreg_l),
- };
- 
-+static const struct eusb2_repeater_cfg pmiv0104_eusb2_cfg = {
-+	/* No PMIC-specific init sequence, only board level tuning via DT */
-+	.init_tbl	= (struct eusb2_repeater_init_tbl_reg[]) {},
-+	.init_tbl_num	= 0,
-+	.vreg_list	= pm8550b_vreg_l,
-+	.num_vregs	= ARRAY_SIZE(pm8550b_vreg_l),
-+};
-+
- static const struct eusb2_repeater_cfg smb2360_eusb2_cfg = {
- 	.init_tbl	= smb2360_init_tbl,
- 	.init_tbl_num	= ARRAY_SIZE(smb2360_init_tbl),
-@@ -264,6 +272,10 @@ static const struct of_device_id eusb2_repeater_of_match_table[] = {
- 		.compatible = "qcom,pm8550b-eusb2-repeater",
- 		.data = &pm8550b_eusb2_cfg,
- 	},
-+	{
-+		.compatible = "qcom,pmiv0104-eusb2-repeater",
-+		.data = &pmiv0104_eusb2_cfg,
-+	},
- 	{
- 		.compatible = "qcom,smb2360-eusb2-repeater",
- 		.data = &smb2360_eusb2_cfg,
-
--- 
-2.50.0
-
+Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
 
 -- 
 linux-phy mailing list
