@@ -4,85 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26A3EC77B7C
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 03:03:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1346C7115B
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 04:13:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QLp/+RXDYX5Itt0AEyMkT+/scC6XndsmUEspyxX3FEg=; b=KtTgdREsN2njel
-	Mzce5wHa7DKmraWSR05cAfZ/Zv9eqxFk1M84kdCJyYo12hdK4aH0qp5lP1paS2A+4N3iDY0a/hq9F
-	2Hhxp7Tj907cyLYWxZzeonqSULr4gAe2PtsZTcO2Ezez18Gr2NURVoQEKQQRRM2o33e4C7hKsaRsx
-	f4xCwbXHlJ0pgifTauUwNnUsXYPrUwWLiaGouOCiQl4jl0bXzg7xKGBn3FxmbgmjljnRX6HvAFifg
-	CAbCgnDvI7xpvc20SX5b0cJuHn3fvijA2vW+FvJX+3ljFVxry73/w+Ihl2pj7889jdYtbghfdaDzK
-	u2zY+kfWHlmrR9ecllMg==;
+	List-Owner; bh=mNKJd+RZDrAhVs3iSgAj9dPV9PIegSeKPHDFgP8DjLY=; b=SW2UxeygulpN6o
+	OVy/3fHtiNqBwr0An0AA00OSSFBz4omFGpyXpxreA4CGYr0aVxQJy3N4gwuc6XIjtv/q7MmYCGfQ5
+	lOWgaBnHaxhE00XyfV9lZWZ4wIle+P574ffFnjBFIEY09sTSfIqypVi2bxCETQjrK3QKLLWYXOz+H
+	3jccJhgpIindqyPnaKt6vQICo6a2Xg6v/VjVYkchs0vZt4udVpVxcFkGlgH3WCR0B8MgQtJPU0HZ3
+	esvwjw/nHewpqUhS+Nyi1dPSaB3IsN/Y8I/Hg7sVmQ+BioFfDmALJs1cDkR/ssPGSxqRKEABUBT/a
+	cv/G7s5Ly1A1AlhtJgyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUctD-0000000AVBa-3RVq;
-	Thu, 26 Jun 2025 03:03:03 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1uUdzp-0000000AZwM-26ay;
+	Thu, 26 Jun 2025 04:13:57 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUcUz-0000000ASc8-1w8N
+	id 1uUdzm-0000000AZvw-3vPZ
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Jun 2025 02:38:03 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250626023759epoutp03c4300a3e80fd1dc6e209812c56345f03~Md0GydzRq2030420304epoutp03W
-	for <linux-phy@lists.infradead.org>; Thu, 26 Jun 2025 02:37:59 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250626023759epoutp03c4300a3e80fd1dc6e209812c56345f03~Md0GydzRq2030420304epoutp03W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1750905479;
-	bh=g/dIw6y8kcmo8LyyHZHnCh5ijJd2K5kh6Hh1rXMgcz4=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QjzfzeDzSu11dJtU03IFmwks7HTQtYobUEFeMtWjMBlywO7uzes2YYd8QVLSOtzNb
-	 xV3gy+hvjB0DJKC2xaOC5CiHMR0USNCj4my89vu8oW/lGZV6DXFJOcx5t/xV0GagR1
-	 Cv6i/jA1JK+cEm5e/HubiGjbaefCAAWMcli237Uw=
-Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPS id
-	20250626023758epcas5p4b32b1be235660e5c1f067356e4728958~Md0GSjQ4W0510205102epcas5p44;
-	Thu, 26 Jun 2025 02:37:58 +0000 (GMT)
-Received: from epcas5p1.samsung.com (unknown [182.195.38.179]) by
-	epsnrtp01.localdomain (Postfix) with ESMTP id 4bSNC838BWz6B9m5; Thu, 26 Jun
-	2025 02:37:56 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
-	20250625165332epcas5p4e138b7f7c8ebb938dc526c5dc29412bb~MV1z_GoE62849628496epcas5p4H;
-	Wed, 25 Jun 2025 16:53:32 +0000 (GMT)
-Received: from cheetah.samsungds.net (unknown [107.109.115.53]) by
-	epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20250625165329epsmtip2fc6e559e500702fdd2b1ad06ee61e433~MV1xNmFnm1255612556epsmtip2e;
-	Wed, 25 Jun 2025 16:53:28 +0000 (GMT)
-From: Shradha Todi <shradha.t@samsung.com>
-To: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-fsd@tesla.com
-Cc: manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, kw@linux.com,
-	robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com,
-	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
-	vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de,
-	m.szyprowski@samsung.com, jh80.chung@samsung.com, pankaj.dubey@samsung.com,
-	Shradha Todi <shradha.t@samsung.com>
-Subject: [PATCH v2 10/10] arm64: dts: fsd: Add PCIe support for Tesla FSD
- SoC
-Date: Wed, 25 Jun 2025 22:22:29 +0530
-Message-ID: <20250625165229.3458-11-shradha.t@samsung.com>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250625165229.3458-1-shradha.t@samsung.com>
+	Thu, 26 Jun 2025 04:13:56 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55Q0ELHp015250
+	for <linux-phy@lists.infradead.org>; Thu, 26 Jun 2025 04:13:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	WKpaUH3ipuBOWo6fi6C40F5MzgfHqDpT6bHI2/67zCs=; b=mooySDSQemqTTQSX
+	OHqw4k6q4ncS3vGS9VS+KyIvwPj5zPkoH2/eK6NZrZWUTqnE6UKqxC28lciQwMVI
+	dJADaOJfhkvIRO8IDa1LLIR0iFqLG9Ds7NHH/zvma8D+9IeATUmnw5dIVV2oNeRF
+	6wKOTTHkIB6+bPWWRxwfJKPfMc7ScfvO+KwPYnVcv+QxWKxRq0uW0yg7T1i0xenp
+	StAg27dSCOpSdQHFOo/9RT5B6YzMA4WUrLt+CTKgyJU6mIl4CrN2f41qG8xeLJMA
+	noVN2PiC7yi27fE1PR6n0aBhtLobes27hXV/9mcEsqB8PeWzSB7tqx0xDI+OqWbL
+	ipRAuw==
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47fbm20gff-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 26 Jun 2025 04:13:53 +0000 (GMT)
+Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b00e4358a34so350882a12.0
+        for <linux-phy@lists.infradead.org>; Wed, 25 Jun 2025 21:13:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750911232; x=1751516032;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WKpaUH3ipuBOWo6fi6C40F5MzgfHqDpT6bHI2/67zCs=;
+        b=o1usZcG3uZ6MH7MepQDmcDpm+Gjd/9CS9DTYH4y/Br7xwgDchCddhkaGAythu5kLpF
+         AwwTXkZNh2UemS/zjmeSm/7pwXPOo+tgkDseUmpmRUUP5O+X9PzB7fqZvNrtoBHQ2y3X
+         temPGXSM1dthZukcUxEe9pir3b/fCEnEF96PA6YliezHuY8zmJ7Yb3qMKUJ9M+k0xMTW
+         2bW5yIYGkOFzhi/oBl+/jIqdUsgZr3IWOcCOqozxLJEPw7qGV19WphKEjGFBx2X6qy2A
+         Y4zNPhHsPEvcbFIz3N56Y1izvKZqkdfAc8tXV8I4pmsi5tFR3kri+MSySUe+X4yq+dcO
+         DTpQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVhlKKGPTtE6pb4AF6zDUdXULpUyNciN3tjgAa7Tpxfhd6MjeRvYWXnFqqI46rmu7EcTLGgA/x9GBc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1JyBqBpcH9dWmiPmoE8wQ5wPHQ6vfzjM3f3n7p9EIfgiGRZlL
+	ndtGZmE8pd0KjV0N3BCkbPg1mNmcN6625RBy4GkprQ1aD143iNp99qYqcVd3jZoT6+ik6WznVHN
+	7smwSTMxagW49qyDafaBWOt3mj0F0xuUZfqwLBjghieMafaw+I7mO8ykmKjq+OBpGvko3ILB36F
+	To
+X-Gm-Gg: ASbGncv3eIXEe//hNfSoW5RXDPbS5P8D7+Y8oA9/mddmcYDcExhVL82ymRv4fSalO+B
+	VQznionhO1iFtxQ1R2dbt4oRI5VsljjRLCfhypzhq7+MvsYErVgcZM1RXf2OA7Eivi1Ry1PjaGU
+	ddW9zNv16BeOa6yvX3Ranyba18ld2lueAyEfqCc20+vzs6QKE0gq0o58IEm78MgbJajFHZ/v9We
+	ayXJDBCmfPdG0KhcKjz9VHCyVNooAgHUth0VSn4G6ak6nrf9VnfXVnY8hpjnXSrUYWeLXRfhIGM
+	hQHtS9CNANRBZyLxouLDlNZ2OBcN/UO50ehdGCPZ6zCc2aOBgFkOAj/y9kVIwlU=
+X-Received: by 2002:a17:902:e80c:b0:234:cc7c:d2e8 with SMTP id d9443c01a7336-23824062835mr82016875ad.37.1750911232003;
+        Wed, 25 Jun 2025 21:13:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFXPk6FeEEtqsAdoxjcE2zNg/rqvl84KjzqDPyy3NBWA71HBoKOuG1wxIQkEElpXh0w3mnQlQ==
+X-Received: by 2002:a17:902:e80c:b0:234:cc7c:d2e8 with SMTP id d9443c01a7336-23824062835mr82016515ad.37.1750911231447;
+        Wed, 25 Jun 2025 21:13:51 -0700 (PDT)
+Received: from [10.151.37.217] ([202.46.23.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d866b000sm146530625ad.162.2025.06.25.21.13.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 25 Jun 2025 21:13:50 -0700 (PDT)
+Message-ID: <eb1a43a4-bc10-410c-a747-e2efd1c46aa7@oss.qualcomm.com>
+Date: Thu, 26 Jun 2025 09:43:46 +0530
 MIME-Version: 1.0
-X-CMS-MailID: 20250625165332epcas5p4e138b7f7c8ebb938dc526c5dc29412bb
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-541,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250625165332epcas5p4e138b7f7c8ebb938dc526c5dc29412bb
-References: <20250625165229.3458-1-shradha.t@samsung.com>
-	<CGME20250625165332epcas5p4e138b7f7c8ebb938dc526c5dc29412bb@epcas5p4.samsung.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qcom: phy-qcom-m31: Update IPQ5332 M31 USB phy
+ initialization sequence
+Content-Language: en-US
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@kernel.org
+References: <20250625-ipq5332_hsphy_complaince-v1-1-06b4b8e66bc6@oss.qualcomm.com>
+ <dad809f1-9fed-47f5-9aea-34369a9b3608@oss.qualcomm.com>
+From: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+In-Reply-To: <dad809f1-9fed-47f5-9aea-34369a9b3608@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=YYu95xRf c=1 sm=1 tr=0 ts=685cc901 cx=c_pps
+ a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=G7AlkcFLQFj19gR95hsA:9 a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
+X-Proofpoint-GUID: e0apF5li_uR_WTC5LhEjdIR4_ZH3lSg3
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjI2MDAzMCBTYWx0ZWRfXzkwcnu3Hc7Ta
+ qCfFNES1tIMeDq0zXQqE/YMBtZAbZhV1FqUpIAcxPH9Uyuqk1VcfgjpWFkbomGPJWHsmHbZ05Ae
+ 6gga8JzkLLozcYaAnbFNE6t9v3fm8KISkEPfx7+ENrA3yEZZYa190aA9kcCkCcTLP9mzignQf9G
+ cmFDuZindtZao1BSl4tRfGUpPUp7HmtTQPO8z53dC8bcdSMx/iYP6GPYdREmZBd5T8Tjed5PjaT
+ pkZ5TEjPcuurEVElSzoBWkmhdXZdY11yJkMHkdhvObA48prYUPV9KGxwUYCwrC4FxDrdugFZa9j
+ 2BJk6RNXMSSxo6uRGP6EmVvc1+ym2kxTexqi+wAXv/4kZc+jrqnOdl7CUd5PHZcnOi0/a880Xof
+ bZnnYD1XaEC3UZ3FET4+vI4HmW6MGRjRJoIQmxIKpfv5Mc/s99Pei1K+KYfapLjteLaMpRME
+X-Proofpoint-ORIG-GUID: e0apF5li_uR_WTC5LhEjdIR4_ZH3lSg3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-06-26_02,2025-06-25_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 spamscore=0 impostorscore=0 suspectscore=0
+ lowpriorityscore=0 priorityscore=1501 phishscore=0 mlxlogscore=999
+ clxscore=1015 mlxscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506260030
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_193801_807280_A575CD1D 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20250625_211355_097497_66B9A198 
+X-CRM114-Status: GOOD (  15.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,324 +131,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the support for PCIe controller driver and phy driver for Tesla FSD.
-It includes support for both RC and EP.
 
-Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
-Signed-off-by: Shradha Todi <shradha.t@samsung.com>
----
- arch/arm64/boot/dts/tesla/fsd-evb.dts      |  36 +++++
- arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi |  65 +++++++++
- arch/arm64/boot/dts/tesla/fsd.dtsi         | 147 +++++++++++++++++++++
- 3 files changed, 248 insertions(+)
+On 6/25/2025 7:28 PM, Konrad Dybcio wrote:
+> On 6/25/25 9:00 AM, Kathiravan Thirumoorthy wrote:
+>> The current configuration used for the IPQ5332 M31 USB PHY fails the
+>> Near End High Speed Signal Quality compliance test. To resolve this,
+>> update the initialization sequence as specified in the Hardware Design
+>> Document.
+>>
+>> Fixes: 08e49af50701 ("phy: qcom: Introduce M31 USB PHY driver")
+>> Cc: stable@kernel.org
+>> Signed-off-by: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-m31.c | 14 ++++++++++----
+>>   1 file changed, 10 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-m31.c b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> index 7caeea1b109e922c0cd12e985bc8868d5bce8b4f..1a8a0f1262cd95bc00dfbf7397a1c48d88d52327 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-m31.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-m31.c
+>> @@ -58,12 +58,14 @@
+>>    #define USB2_0_TX_ENABLE		BIT(2)
+>>   
+>>   #define USB2PHY_USB_PHY_M31_XCFGI_4	0xc8
+>> - #define HSTX_SLEW_RATE_565PS		GENMASK(1, 0)
+>> + #define HSTX_SLEW_RATE_400PS		GENMASK(2, 0)
+>>    #define PLL_CHARGING_PUMP_CURRENT_35UA	GENMASK(4, 3)
+>>    #define ODT_VALUE_38_02_OHM		GENMASK(7, 6)
+>>   
+>> +#define USB2PHY_USB_PHY_M31_XCFGI_9	0xDC
+> lowercase hex, please
+>
+> also, please add it below XCFGI_5, so that it's sorted
+> both by name and by address
 
-diff --git a/arch/arm64/boot/dts/tesla/fsd-evb.dts b/arch/arm64/boot/dts/tesla/fsd-evb.dts
-index 9ff22e1c8723..c8f2019e6abf 100644
---- a/arch/arm64/boot/dts/tesla/fsd-evb.dts
-+++ b/arch/arm64/boot/dts/tesla/fsd-evb.dts
-@@ -19,6 +19,8 @@ / {
- 	aliases {
- 		serial0 = &serial_0;
- 		serial1 = &serial_1;
-+		pciephy0 = &pciephy0;
-+		pciephy1 = &pciephy1;
- 	};
- 
- 	chosen {
-@@ -130,3 +132,37 @@ &serial_0 {
- &ufs {
- 	status = "okay";
- };
-+
-+&pcierc2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie1_clkreq>, <&pcie1_wake>, <&pcie1_preset>,
-+			<&pcie0_slot1>;
-+};
-+
-+&pcieep2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie1_clkreq>, <&pcie1_wake>, <&pcie1_preset>,
-+			<&pcie0_slot1>;
-+};
-+
-+&pcierc0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake0>, <&pcie0_preset0>,
-+			 <&pcie0_slot0>;
-+};
-+
-+&pcieep0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake0>, <&pcie0_preset0>,
-+			 <&pcie0_slot0>;
-+};
-+
-+&pcierc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake1>, <&pcie0_preset0>;
-+};
-+
-+&pcieep1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_clkreq>, <&pcie0_wake1>, <&pcie0_preset0>;
-+};
-diff --git a/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi b/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-index 6f4658f57453..fa99aa4b9906 100644
---- a/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-+++ b/arch/arm64/boot/dts/tesla/fsd-pinctrl.dtsi
-@@ -120,6 +120,27 @@ eth0_mdio: eth0-mdio-pins {
- 		samsung,pin-pud = <FSD_PIN_PULL_NONE>;
- 		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
- 	};
-+
-+	pcie1_clkreq: pcie1-clkreq-pins {
-+		samsung,pins = "gpf6-0";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie1_wake: pcie1-wake-pins {
-+		samsung,pins = "gpf6-1";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie1_preset: pcie1-preset-pins {
-+		samsung,pins = "gpf6-2";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
- };
- 
- &pinctrl_peric {
-@@ -493,6 +514,50 @@ eth1_mdio: eth1-mdio-pins {
- 		samsung,pin-pud = <FSD_PIN_PULL_UP>;
- 		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
- 	};
-+
-+	pcie0_clkreq: pcie0-clkreq-pins {
-+		samsung,pins = "gpc8-0";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie0_wake0: pcie0-wake0-pins {
-+		samsung,pins = "gpc8-1";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie0_preset0: pcie0-preset0-pins {
-+		samsung,pins = "gpc8-2";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie0_wake1: pcie0-wake1-pins {
-+		samsung,pins = "gpc8-3";
-+		samsung,pin-function = <FSD_PIN_FUNC_2>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+	};
-+
-+	pcie0_slot0: pcie0-gpio22-pins {
-+		samsung,pins = "gpg2-6";
-+		samsung,pin-function = <FSD_PIN_FUNC_OUTPUT>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+		samsung,pin-val = <1>;
-+	};
-+
-+	pcie0_slot1: pcie0-gpio23-pins {
-+		samsung,pins = "gpg2-7";
-+		samsung,pin-function = <FSD_PIN_FUNC_OUTPUT>;
-+		samsung,pin-pud = <FSD_PIN_PULL_UP>;
-+		samsung,pin-drv = <FSD_PIN_DRV_LV4>;
-+		samsung,pin-val = <1>;
-+	};
- };
- 
- &pinctrl_pmu {
-diff --git a/arch/arm64/boot/dts/tesla/fsd.dtsi b/arch/arm64/boot/dts/tesla/fsd.dtsi
-index a5ebb3f9b18f..9e2d095546fa 100644
---- a/arch/arm64/boot/dts/tesla/fsd.dtsi
-+++ b/arch/arm64/boot/dts/tesla/fsd.dtsi
-@@ -1009,6 +1009,16 @@ ethernet1: ethernet@14300000 {
- 			status = "disabled";
- 		};
- 
-+		pciephy0: pcie-phy@15080000 {
-+			compatible = "tesla,fsd-pcie-phy";
-+			#phy-cells = <0>;
-+			reg = <0x0 0x15080000 0x0 0x2000>,
-+			      <0x0 0x150a0000 0x0 0x1000>;
-+			samsung,pmu-syscon = <&pmu_system_controller>;
-+			samsung,fsys-sysreg = <&sysreg_fsys0>;
-+			status = "disabled";
-+		};
-+
- 		ufs: ufs@15120000 {
- 			compatible = "tesla,fsd-ufs";
- 			reg = <0x0 0x15120000 0x0 0x200>,  /* 0: HCI standard */
-@@ -1057,6 +1067,143 @@ ethernet0: ethernet@15300000 {
- 			iommus = <&smmu_fsys0 0x0 0x1>;
- 			status = "disabled";
- 		};
-+
-+		pcierc2: pcie@15400000 {
-+			compatible = "tesla,fsd-pcie";
-+			reg = <0x0 0x15400000 0x0 0x2000>,
-+			      <0x0 0x15090000 0x0 0x1000>,
-+			      <0x0 0x15800000 0x0 0x1000>;
-+			reg-names = "dbi", "elbi", "config";
-+			ranges =  <0x82000000 0 0x15801000 0 0x15801000 0 0xffefff>;
-+			clocks = <&clock_fsys0 PCIE_SUBCTRL_INST0_AUX_CLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_DBI_ACLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_MSTR_ACLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_SLV_ACLK_SOC>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			dma-coherent;
-+			device_type = "pci";
-+			interrupts = <GIC_SPI 93 IRQ_TYPE_EDGE_RISING>;
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys0 0x434>;
-+			phys = <&pciephy0>;
-+			iommu-map = <0x0 &smmu_fsys0 0x4 0x10000>;
-+			iommu-map-mask = <0x0>;
-+			status = "disabled";
-+		};
-+
-+		pcieep2: pcie-ep@15400000 {
-+			compatible = "tesla,fsd-pcie-ep";
-+			reg = <0x0 0x15090000 0x0 0x1000>,
-+			      <0x0 0x15400000 0x0 0x2000>,
-+			      <0x0 0x15402000 0x0 0x80>,
-+			      <0x0 0x15800000 0x0 0xff0000>;
-+			reg-names = "elbi", "dbi", "dbi2", "addr_space";
-+			clocks = <&clock_fsys0 PCIE_SUBCTRL_INST0_AUX_CLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_DBI_ACLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_MSTR_ACLK_SOC>,
-+				 <&clock_fsys0 PCIE_SUBCTRL_INST0_SLV_ACLK_SOC>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys0 0x434>;
-+			phys = <&pciephy0>;
-+			status = "disabled";
-+		};
-+
-+		pciephy1: pcie-phy@16880000 {
-+			compatible = "tesla,fsd-pcie-phy";
-+			#phy-cells = <0>;
-+			reg = <0x0 0x16880000 0x0 0x2000>,
-+			      <0x0 0x16860000 0x0 0x1000>;
-+			samsung,pmu-syscon = <&pmu_system_controller>;
-+			samsung,fsys-sysreg = <&sysreg_fsys1>;
-+			status = "disabled";
-+		};
-+
-+		pcierc0: pcie@16a00000 {
-+			compatible = "tesla,fsd-pcie";
-+			reg = <0x0 0x16a00000 0x0 0x2000>,
-+			      <0x0 0x168b0000 0x0 0x1000>,
-+			      <0x0 0x17000000 0x0 0x1000>;
-+			reg-names = "dbi", "elbi", "config";
-+			ranges =  <0x82000000 0 0x17001000 0 0x17001000 0 0xffefff>;
-+			clocks = <&clock_fsys1 PCIE_LINK0_IPCLKPORT_AUX_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_DBI_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_MSTR_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_SLV_ACLK>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			dma-coherent;
-+			device_type = "pci";
-+			interrupts = <GIC_SPI 115 IRQ_TYPE_EDGE_RISING>;
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys1 0x50c>;
-+			phys = <&pciephy1>;
-+			iommu-map = <0x0 &smmu_imem 0x0 0x10000>;
-+			iommu-map-mask = <0x0>;
-+			status = "disabled";
-+		};
-+
-+		pcieep0: pcie-ep@16a00000 {
-+			compatible = "tesla,fsd-pcie-ep";
-+			reg = <0x0 0x168b0000 0x0 0x1000>,
-+			      <0x0 0x16a00000 0x0 0x2000>,
-+			      <0x0 0x16a02000 0x0 0x80>,
-+			      <0x0 0x17000000 0x0 0xff0000>;
-+			reg-names = "elbi", "dbi", "dbi2", "addr_space";
-+			clocks = <&clock_fsys1 PCIE_LINK0_IPCLKPORT_AUX_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_DBI_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_MSTR_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK0_IPCLKPORT_SLV_ACLK>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys1 0x50c>;
-+			phys = <&pciephy1>;
-+			status = "disabled";
-+		};
-+
-+		pcierc1: pcie@16b00000 {
-+			compatible = "tesla,fsd-pcie";
-+			reg = <0x0 0x16b00000 0x0 0x2000>,
-+			      <0x0 0x168c0000 0x0 0x1000>,
-+			      <0x0 0x18000000 0x0 0x1000>;
-+			reg-names = "dbi", "elbi", "config";
-+			ranges =  <0x82000000 0 0x18001000 0 0x18001000 0 0xffefff>;
-+			clocks = <&clock_fsys1 PCIE_LINK1_IPCLKPORT_AUX_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_DBI_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_MSTR_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_SLV_ACLK>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			dma-coherent;
-+			device_type = "pci";
-+			interrupts = <GIC_SPI 117 IRQ_TYPE_EDGE_RISING>;
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys1 0x510>;
-+			phys = <&pciephy1>;
-+			status = "disabled";
-+		};
-+
-+		pcieep1: pcie-ep@16b00000 {
-+			compatible = "tesla,fsd-pcie-ep";
-+			reg = <0x0 0x168c0000 0x0 0x1000>,
-+			      <0x0 0x16b00000 0x0 0x2000>,
-+			      <0x0 0x16b02000 0x0 0x80>,
-+			      <0x0 0x18000000 0x0 0xff0000>;
-+			reg-names = "elbi", "dbi", "dbi2", "addr_space";
-+			clocks = <&clock_fsys1 PCIE_LINK1_IPCLKPORT_AUX_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_DBI_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_MSTR_ACLK>,
-+				 <&clock_fsys1 PCIE_LINK1_IPCLKPORT_SLV_ACLK>;
-+			clock-names = "aux", "dbi", "mstr", "slv";
-+			num-lanes = <4>;
-+			samsung,syscon-pcie = <&sysreg_fsys1 0x510>;
-+			phys = <&pciephy1>;
-+			status = "disabled";
-+		};
- 	};
- };
- 
--- 
-2.49.0
+Ack. Will address this in V2.
 
+>
+> FWIW I can't find anything that would back up these changes, but
+> I trust what you're saying is true
+
+Thank You!. These changes are tested and confirmed by the relevant 
+folks. I will try to find the doc and share it offline for reference.
+
+>
+> Konrad
 
 -- 
 linux-phy mailing list
