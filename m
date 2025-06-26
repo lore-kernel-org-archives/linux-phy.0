@@ -4,36 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 908BBC7EE33
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 08:58:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D80AC7EE3A
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 08:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yE+9kygcs6fipiGbRVQap6hbpPRkoJSSNZAPJXfawl4=; b=iMwnhgwXy20+AV
-	aiII9VIYcVEv7fQmJPzx16GzKuHe7TMca3DWwjGcTo0FMB5h+4qC2rWv/EH04qAx5KK8zUCu+xLgx
-	Z2Irc+qTjGMwQ9lev/BkGzy7YzaBlc5pBF3MbQItpcq8eDoayMZpIXfukNVJmUyNJyakLFgOiFAfi
-	vbxfAg9wBZ8o4D213COiv9T0+9fGAnTOBoD7VSSI2RSouXYnICTeeIAJMeuF6eA3DlyhlQjiN11HK
-	QsrIvXdCdGPlvm0ZCAfqtvUkhDbWNV0OHwdMw0cYx5d6xkUCU6ma9gfJZwAUvs+3nPvBiyQ58C1BI
-	P8+Rp4B2hLr81gCrocug==;
+	List-Owner; bh=yE+9kygcs6fipiGbRVQap6hbpPRkoJSSNZAPJXfawl4=; b=FBjY0Jyzy2hjkN
+	iM59VcrYJG+K1rggD9WBByNiMoXJ20iz8Zgn6Iu080KSRIMhf+GjX14fk2W11rATYMGfkkzVCdjCz
+	DRWmdUOP/zf7/6bk+eyNWNJNe928b/X+U+R+WthboM9TIYOLi5dPHpN9bg6cqMT4iiWjHfvN87Nm4
+	lnxDTUUHc6Dxl4U8aM01UJtW0CKjtidyI+rFhzkPrKw3SQnbEp/SmyRRGytyvjQV8sTrkSQOe9Mvu
+	yy4E7ESQ/5J9DHCaSIBXkBOmC+nX+RfWl+QzUkAM2V+yWg+5uEZJ1mUAud9vahgMsGkR31RJhALmw
+	K6l8q6G62+HQvHmaAJhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUiRL-0000000B4BE-1LTf;
+	id 1uUiRL-0000000B4Bf-3YlV;
 	Thu, 26 Jun 2025 08:58:39 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUhpl-0000000AwY3-418V
+	id 1uUhuS-0000000AxWr-2Hme
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Jun 2025 08:19:51 +0000
-X-CSE-ConnectionGUID: zV76ipvDTJS0epjzXsMvUQ==
-X-CSE-MsgGUID: zxucR1TWTRCOytQkDG+fHQ==
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie5.idc.renesas.com with ESMTP; 26 Jun 2025 17:19:48 +0900
+	Thu, 26 Jun 2025 08:24:41 +0000
+X-CSE-ConnectionGUID: futPo8+7SuGN17aFMcVJHw==
+X-CSE-MsgGUID: MH/zGbVgSv2iX388bl2Qvw==
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+  by relmlie6.idc.renesas.com with ESMTP; 26 Jun 2025 17:24:39 +0900
 Received: from REE-DUD04480.adwin.renesas.com (unknown [10.226.78.19])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 22AD1401822A;
-	Thu, 26 Jun 2025 17:19:45 +0900 (JST)
+	by relmlir6.idc.renesas.com (Postfix) with ESMTP id 69D9B41A2767;
+	Thu, 26 Jun 2025 17:24:37 +0900 (JST)
 From: Michael Dege <michael.dege@renesas.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -42,14 +42,14 @@ Cc: Michael Dege <michael.dege@renesas.com>,
 	Uwe Kleine-Koenig <u.kleine-koenig@baylibre.com>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
-Date: Thu, 26 Jun 2025 10:19:29 +0200
-Message-Id: <20250626081929.1924713-1-michael.dege@renesas.com>
+Subject: [PATCH v3 1/2 RESEND] phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
+Date: Thu, 26 Jun 2025 10:24:33 +0200
+Message-Id: <20250626082433.1925917-1-michael.dege@renesas.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_011950_101017_A35DF3F4 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20250626_012440_688327_0DBB94BB 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
