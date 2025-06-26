@@ -4,69 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA927C7EE33
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Jun 2025 21:37:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5472CC7EE32
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 00:18:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gEI5XHfSazTh9sfWyNl6sNjzPEgf+CMpwp4cBuCfQCg=; b=gjON7NDRhFuela
-	uBASasiOjfly6wtp70NO4+/DVQlxd4pUP9Ys4KgU17VcefF+0WYG6wdADdYlsSNA2WNNARHh3mQQe
-	roqcwl9AjtJ/Qf4CmSKmqCbWNNHglcFAJauQUEV75BMD8D/vOgW5b6AZmC5mij9EwjBbs0/x3XEtZ
-	7xMxoFdzuC61Kno3hFcXG4wBB1mEk5fe6DpaSUsdFmBMeMYCLyv5vi1sfGczyMln0Q6C2VocGvcRM
-	CzlQy0943eBpGsx9/Mu7LroblWTQPj9D1bMyOkIBuElzCDrQm5FIyV4tdcFFIjvYy4u5aPqpkrV0n
-	7aWoX0IWa1XfoMmKmqeQ==;
+	List-Owner; bh=CGHyaGHzMxOQpDIC/r7IZ3OckhB7tShCowu01dV8Aks=; b=VHB6E+V1yBVKUC
+	cyh35uvq34twl4ajiR6jDK4KjXsmEkNTgvytHNXgEU2TiwghwaiFIYbmqziSweJnx+zGxysQqH3AC
+	30BZ3ONMrzaN3XT/hIrl3Z35BLfGSJvcnceYGCe6bza/87ufLpQ1jjjcVnim5bTbABdMYsQ6oR8vZ
+	2fXGoi5EbOtkvTNJwpTz2BA+U6T6hRJL9QT9LqdIZRtkpXDu29qRJ+e6HWTsXNqRQXiOFQuOZ+4mV
+	6be0GVazgD7NuzDVAgBSFFUnnF3vy5D8bpv5PY5XadnHx2Axj+nxMjRmxH++Pf8HPdSNQC6VzbPil
+	zJUklrSf+NT7IUfU1zbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUuI0-0000000Cr1j-2S3f;
-	Thu, 26 Jun 2025 21:37:48 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1uUwnY-0000000DBdC-3iok;
+	Fri, 27 Jun 2025 00:18:32 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUsnj-0000000Cg9P-2o3N;
-	Thu, 26 Jun 2025 20:02:29 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 5985225E01;
-	Thu, 26 Jun 2025 22:02:26 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id QvH0vo_XIayP; Thu, 26 Jun 2025 22:02:24 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1750968144; bh=kl8iNFIBnOgLWpvFT93EaWi/fQ7+TYZePru6lirB2A0=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=WeYCZ1YI/pQpQUDtKMdOVIWGMbrEj3ukq6PDmc5fOND7dvKKHien9UeyB/dYnB0NR
-	 +5d1Z24jns9j/G84OYd5V9fyuc+bi3UFrzBCTApEMDmsSlDTCYYfcZ3z0UfgeEcYSV
-	 kSkfATgpIJQb1Kz2iotPeKxgW8Zl85WNW+z/XBSOc2GdV2eov4wrwAZJLf6fPLQqo4
-	 u8RrRsM8Hd1ja3zpHPJtOxMTkTcbMZv8saxTqxqFzye3VcNz0fUhkqq5GVSzwhw+sJ
-	 2JKaQBgp0sOEx+w6QndM2FPUQurIISbtj9PuVckM2CZi2JPV3c6ipXokiSiXvIk8v7
-	 nCI3nGs8vqO9A==
-From: Kaustabh Chakraborty <kauschluss@disroot.org>
-Date: Fri, 27 Jun 2025 01:31:55 +0530
-Subject: [PATCH 2/2] phy: exynos-mipi-video: allow skipping absent PHYs
+	id 1uUvYP-0000000D0QA-3reQ
+	for linux-phy@lists.infradead.org;
+	Thu, 26 Jun 2025 22:58:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 20983A40BF3;
+	Thu, 26 Jun 2025 22:58:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4871C4CEEB;
+	Thu, 26 Jun 2025 22:58:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1750978728;
+	bh=FNCnQJMtGBc1Bo5uRWoSDLrtdiU75nfOcOk5CROnpxs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=aI+1XuFqNCRM9yQ+XMdbaJKlAN5ieAC0T3Ga9EF2pMznUQQOm8gguPknMffxHojF7
+	 yCOZ8NnCJzL44Na/pLOiHtMLRjsisQoi8BY4BjbwYD8PuMaFw5VvVOILHpdo1e4G8L
+	 5EH9b2So+wfDSmObeQhUrCjU3ed9AtSrat0vIv57BgdQOfPzTpdBq0+8s/ysq6Yjur
+	 B8veBiBfApow32yPLYetKZpzY/PWfBSe/6UOn8NWMmWDnzPV8XcBp9+YKn2KY6L60W
+	 BXT5N0oxXwnIO/83zrJd9koXc7x7TaqL9m7Px3RlvTrTUtl2zeDAkmFi4SaCkHe3Nz
+	 8YJmR5mO0cSTg==
+Date: Thu, 26 Jun 2025 15:58:47 -0700
+From: Vinod Koul <vkoul@kernel.org>
+To: Michael Dege <michael.dege@renesas.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Uwe Kleine-Koenig <u.kleine-koenig@baylibre.com>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 0/2 RESEND] phy: renesas: r8a779f0-ether-serdes:
+ driver enhancement
+Message-ID: <aF3Qp730y_Vusb-z@vaman>
+References: <20250626081723.1924070-1-michael.dege@renesas.com>
 MIME-Version: 1.0
-Message-Id: <20250627-exynos7870-mipi-phy-fix-v1-2-2eefab8b50df@disroot.org>
-References: <20250627-exynos7870-mipi-phy-fix-v1-0-2eefab8b50df@disroot.org>
-In-Reply-To: <20250627-exynos7870-mipi-phy-fix-v1-0-2eefab8b50df@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Kaustabh Chakraborty <kauschluss@disroot.org>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1750968127; l=10374;
- i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
- bh=kl8iNFIBnOgLWpvFT93EaWi/fQ7+TYZePru6lirB2A0=;
- b=dllRAVpa41utrX5agLKI6r43dJtae/TbO0r7TErIcBn11Gr/kOenhIj2D+k+HWe/PQm+CCyBa
- NL7SRwvc/DWCBYgNTtyEJHH9mKdxAaKEvaW7d3I7mFLYUvj5v5DXtr/
-X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
- pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
+Content-Disposition: inline
+In-Reply-To: <20250626081723.1924070-1-michael.dege@renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_130227_984643_AF41FD10 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20250626_155850_026662_E0A3A2E0 
+X-CRM114-Status: GOOD (  14.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,290 +75,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In Exynos7870 MIPI PHY, DSIM1 PHY is not present. The num_phys field of
-mipi_phy_device_desc when set to a value, say n, always unconditionally
-initializes the first n phys, so there is no mechanism to skip over
-these absent PHY blocks.
 
-Introduce a "present" flag in all PHY descriptors which needs to be set
-to true. And instead of checking the first n PHYs, check all of them. If
-a certain PHY is not defined, the flag remains false and is skipped
-during the init phase.
+Hi,
 
-The num_phys field has to go, it has no purpose as now we're checking
-all elements of the exynos_mipi_phy_desc array.
+On 26-06-25, 10:17, Michael Dege wrote:
+> Hi,
+> 
+> This patch set adds the following to the r8a779f0-ether-serdes driver:
 
-Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
----
- drivers/phy/samsung/phy-exynos-mipi-video.c | 100 ++++++++++++++++------------
- 1 file changed, 57 insertions(+), 43 deletions(-)
-
-diff --git a/drivers/phy/samsung/phy-exynos-mipi-video.c b/drivers/phy/samsung/phy-exynos-mipi-video.c
-index 1c9c340f708da0ca214639880d067706aaea8fc7..c120c4f3531661a45374793ed7d9e9f622ff3c5d 100644
---- a/drivers/phy/samsung/phy-exynos-mipi-video.c
-+++ b/drivers/phy/samsung/phy-exynos-mipi-video.c
-@@ -37,10 +37,10 @@ enum exynos_mipi_phy_regmap_id {
- };
- 
- struct mipi_phy_device_desc {
--	int num_phys;
- 	int num_regmaps;
- 	const char *regmap_names[EXYNOS_MIPI_REGMAPS_NUM];
- 	struct exynos_mipi_phy_desc {
-+		bool present;
- 		enum exynos_mipi_phy_id	coupled_phy_id;
- 		u32 enable_val;
- 		unsigned int enable_reg;
-@@ -54,10 +54,9 @@ struct mipi_phy_device_desc {
- static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
- 	.num_regmaps = 1,
- 	.regmap_names = {"syscon"},
--	.num_phys = 4,
- 	.phys = {
--		{
--			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-+		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
-@@ -65,8 +64,9 @@ static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_SRESETN,
- 			.resetn_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
-@@ -74,8 +74,9 @@ static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_MRESETN,
- 			.resetn_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM1,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(1),
-@@ -83,8 +84,9 @@ static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_SRESETN,
- 			.resetn_reg = EXYNOS4_MIPI_PHY_CONTROL(1),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS1,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(1),
-@@ -99,10 +101,9 @@ static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
- static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
- 	.num_regmaps = 1,
- 	.regmap_names = {"syscon"},
--	.num_phys = 5,
- 	.phys = {
--		{
--			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-+		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS5420_MIPI_PHY_CONTROL(0),
-@@ -110,8 +111,9 @@ static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_SRESETN,
- 			.resetn_reg = EXYNOS5420_MIPI_PHY_CONTROL(0),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS5420_MIPI_PHY_CONTROL(0),
-@@ -119,8 +121,9 @@ static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_MRESETN,
- 			.resetn_reg = EXYNOS5420_MIPI_PHY_CONTROL(0),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM1,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS5420_MIPI_PHY_CONTROL(1),
-@@ -128,8 +131,9 @@ static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_SRESETN,
- 			.resetn_reg = EXYNOS5420_MIPI_PHY_CONTROL(1),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS1,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS5420_MIPI_PHY_CONTROL(1),
-@@ -137,8 +141,9 @@ static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
- 			.resetn_val = EXYNOS4_MIPI_PHY_MRESETN,
- 			.resetn_reg = EXYNOS5420_MIPI_PHY_CONTROL(1),
- 			.resetn_map = EXYNOS_MIPI_REGMAP_PMU,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS2 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS2] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS5420_MIPI_PHY_CONTROL(2),
-@@ -162,10 +167,9 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 		"samsung,cam0-sysreg",
- 		"samsung,cam1-sysreg"
- 	},
--	.num_phys = 5,
- 	.phys = {
--		{
--			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-+		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
-@@ -173,8 +177,9 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 			.resetn_val = BIT(0),
- 			.resetn_reg = EXYNOS5433_SYSREG_CAM0_MIPI_DPHY_CON,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(0),
-@@ -182,8 +187,9 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 			.resetn_val = BIT(0),
- 			.resetn_reg = EXYNOS5433_SYSREG_DISP_MIPI_PHY,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_DISP,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(1),
-@@ -191,8 +197,9 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 			.resetn_val = BIT(1),
- 			.resetn_reg = EXYNOS5433_SYSREG_CAM0_MIPI_DPHY_CON,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(1),
-@@ -200,8 +207,9 @@ static const struct mipi_phy_device_desc exynos5433_mipi_phy = {
- 			.resetn_val = BIT(1),
- 			.resetn_reg = EXYNOS5433_SYSREG_DISP_MIPI_PHY,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_DISP,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS2 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS2] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS4_MIPI_PHY_CONTROL(2),
-@@ -220,10 +228,9 @@ static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
- 		"samsung,disp-sysreg",
- 		"samsung,cam0-sysreg",
- 	},
--	.num_phys = 4,
- 	.phys = {
--		{
--			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-+		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_DSIM0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
-@@ -231,8 +238,9 @@ static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
- 			.resetn_val = BIT(0),
- 			.resetn_reg = 0,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_DSIM0 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_DSIM0] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_CSIS0,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL0,
-@@ -240,8 +248,9 @@ static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
- 			.resetn_val = BIT(0),
- 			.resetn_reg = 0,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_DISP,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS1 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS1] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL1,
-@@ -249,8 +258,9 @@ static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
- 			.resetn_val = BIT(1),
- 			.resetn_reg = 0,
- 			.resetn_map = EXYNOS_MIPI_REGMAP_CAM0,
--		}, {
--			/* EXYNOS_MIPI_PHY_ID_CSIS2 */
-+		},
-+		[EXYNOS_MIPI_PHY_ID_CSIS2] = {
-+			.present = true,
- 			.coupled_phy_id = EXYNOS_MIPI_PHY_ID_NONE,
- 			.enable_val = EXYNOS4_PHY_ENABLE,
- 			.enable_reg = EXYNOS7870_MIPI_PHY_CONTROL2,
-@@ -365,12 +375,15 @@ static int exynos_mipi_video_phy_probe(struct platform_device *pdev)
- 		if (IS_ERR(state->regmaps[i]))
- 			return PTR_ERR(state->regmaps[i]);
- 	}
--	state->num_phys = phy_dev->num_phys;
-+	state->num_phys = 0;
- 	spin_lock_init(&state->slock);
- 
- 	dev_set_drvdata(dev, state);
- 
--	for (i = 0; i < state->num_phys; i++) {
-+	for (i = 0; i < EXYNOS_MIPI_PHYS_NUM; i++) {
-+		if (!phy_dev->phys[i].present)
-+			continue;
-+
- 		struct phy *phy = devm_phy_create(dev, NULL,
- 						  &exynos_mipi_video_phy_ops);
- 		if (IS_ERR(phy)) {
-@@ -378,6 +391,7 @@ static int exynos_mipi_video_phy_probe(struct platform_device *pdev)
- 			return PTR_ERR(phy);
- 		}
- 
-+		state->num_phys++;
- 		state->phys[i].phy = phy;
- 		state->phys[i].index = i;
- 		state->phys[i].data = &phy_dev->phys[i];
+I have a v3 and v3 resend and both are not threaded properly, Please post
+properly as a series which is threaded and not broken... 
+> 
+>  * USXGMII mode support for 2.5GBit/s ethernet Phys
+>  * A new configuration step suggested by the latest R-Car S4-8 users
+>    manual V. 1.20.
+> 
+> Changes in v3:
+> - Fixed wrong macro (reported by kernel test bot).
+> - Link to v2: https://lore.kernel.org/r/20250527-renesas-serdes-update-v2-0-ef17c71cd94c@renesas.com
+> 
+> Changes from v1:
+>  - Modify this driver for the R-Car S4-8 only
+>  - So, this patch set drops the followings:
+>  -- any dt doc modification
+>  -- X5H support.
+>  -- 5GBASER support
+>  -- Registers' macros
+> 
+> Thanks,
+> 
+> Michael
+> 
+> Michael Dege (2):
+>   phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
+>   phy: renesas: r8a779f0-ether-serdes: add new step added to latest
+>     datasheet
+> 
+>  drivers/phy/renesas/r8a779f0-ether-serdes.c | 97 ++++++++++++++++++---
+>  1 file changed, 85 insertions(+), 12 deletions(-)
+> 
+> -- 
+> 2.25.1
 
 -- 
-2.49.0
-
+~Vinod
 
 -- 
 linux-phy mailing list
