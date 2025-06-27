@@ -4,72 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 632C5C7EE31
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 09:28:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFA7CC7EE31
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 09:33:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Asw3baujaEuH3eiTrK7+4t+Sls2NFxC/4OJZ3UNZp5s=; b=VGn1n29/EV1SG0
-	cNEDhPmam1zqHo5ZlHte3RGaHPpNEWEBpm+w4TsiHWky7zxg3RcsLT7IiBvi++MdSMHo9h8tSzJis
-	mqrvqBeN77R0avbeC+34umEIxb/3cyPy9nUj32zC8SjMPl/iMudWoghkFH3yRCTwyPq/QLQW3zSCa
-	9yQFJyixQ18/3VzEcuEmBXIFWqhOZkx/kWua5iyTlLVz1oheSSP5Pe0e+zBvrYJKEeVfF0bG4XK3K
-	6Y+E0n0cKg9qlnqeS18QlYe6f9Fs20NrPjPBjfU5HWCuGohKRUY99HufOsKjb/HN4IHBB2bX0TdLk
-	LCBe6i4UWB2yMOE9rCsg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HXjBxojXBcwasYioIN7nxB0G002WcyjpPM8aZbdnBNM=; b=Epb+eQ/T12usEprAlpAbz/A2lY
+	TOYGdmCVRshoWA0fkwKoBIUPCldpkd0Xbrr4btXXOkglHhckwqtS94QEUtJxNMhOKDAA0Lo+6jmLY
+	VEGj8ZPJICAny/jNu9F/39/GsAkqLxjteSSfNkDhtRPRslzUo+jM6A5WkpkFRNeBf/PaQPHsnrEqU
+	XZ4325zLuKHWHC5KEdDbj9gS4czrTFungb0krJtQ+HLyW83c9o1x44dXvzXBrMCiwbZXeVk2I4p4z
+	0iA4vZndTeG3HARN66smkP6MVtuLbNiVuVFRurR4nJ3zyEDm7Ahu8RMthoHikz2Q49r6SShIYVEKs
+	KGmq1kxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV5O7-0000000E7RJ-0gSz;
-	Fri, 27 Jun 2025 09:28:51 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uV5Si-0000000E8Gi-2iXR;
+	Fri, 27 Jun 2025 09:33:36 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV5O5-0000000E7Qw-1Zgy
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Jun 2025 09:28:50 +0000
+	id 1uV5QP-0000000E7ti-0bFM;
+	Fri, 27 Jun 2025 09:31:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0C17545777;
-	Fri, 27 Jun 2025 09:28:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1F06C4CEE3;
-	Fri, 27 Jun 2025 09:28:48 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 74EE161120;
+	Fri, 27 Jun 2025 09:31:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02D37C4CEE3;
+	Fri, 27 Jun 2025 09:31:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751016528;
-	bh=NMdUf/+EgOboapTSK2P0BWd2KGOh4vtzeZ1cIy0waMQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EVM8rqp/Jt8lnO6gp/6oOYfJeZkJKCBM65127Pdwzk+90BDjC1vKMC1FrmJWGVrPG
-	 Gclq5nLOFnFPmBdIDG6sUiKDVq3maqQzwL5stg7wfdvwuUCyXi9RVeEHvJw/tu0L4T
-	 xsxT7uvLHf3J3T+rmGxCmw7ryGYu/mFfZ9pMs2Tpyjc0an87/YFT1sYoYEWU0KteNP
-	 +qKzT3oe6M5kAa3FdrHaYy6TqDIp9Hdcp6ZzqiHISl3ahpkJ+eag5e0u/OTwrkWv6T
-	 p1v07vNfR5vUWSpk+G+nHWJToQxCBo62O3DXdapdaWNq4fH8TN4x+pwH+9nY24NGtB
-	 Kzku7Wpgtspvg==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1uV5O4-000000000Co-3wci;
-	Fri, 27 Jun 2025 11:28:49 +0200
-Date: Fri, 27 Jun 2025 11:28:48 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-	kw@linux.com, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v3 2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document
- link_down reset
-Message-ID: <aF5kUDghdXUbaDo3@hovoldconsulting.com>
-References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
- <20250625090048.624399-3-quic_ziyuzhan@quicinc.com>
+	s=k20201202; t=1751016672;
+	bh=r+cMuNgB6MPRUwQ4haejjrte5YkesaM6//0oKaMCXtk=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=GrClMbDZTNQa2dxZzyHT23wfQZ+Hq5XA13kLv4KS8KBYx7TTbUDfI8C6vq3Oxm0XF
+	 8AJO0QYWYhMZKpOV+kULgKgUXiUoEeL+j7szQna4QkManv7XrVS0TQ8FkwJMr+GYFu
+	 DcO0X9OScLdS2NdTMXQUszJLmjcesqmP32f4ZBF+EKF0wOvRGKpkhdKlr6ddqKsOyn
+	 h4XIOC+OuhWqDmexSEZm1+Ci/oDpu+WYu6TN60C741Q8ytqqquOH71FnIw8ymTmQAL
+	 GC61zMQnZTnqSwHC9fMawPllsApHQWI6nFKqGokAm3k183VcW4/7h8/Cap7fELVmzw
+	 uPuzd4b05ckDQ==
+Date: Fri, 27 Jun 2025 04:31:11 -0500
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250625090048.624399-3-quic_ziyuzhan@quicinc.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250627_022849_434081_75AD0BB4 
-X-CRM114-Status: GOOD (  11.87  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-leds@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
+ Vincent Knecht <vincent.knecht@mailoo.org>, 
+ Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
+ Shawn Guo <shawnguo@kernel.org>, Li Jun <jun.li@nxp.com>, 
+ imx@lists.linux.dev, Lee Jones <lee@kernel.org>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ linux-arm-kernel@lists.infradead.org, Pavel Machek <pavel@kernel.org>, 
+ Fabio Estevam <festevam@gmail.com>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org>
+References: <20250627-dt-bindings-db-v1-0-d5c7072acbee@linaro.org>
+ <20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org>
+Message-Id: <175101667037.2392362.10689943517425489653.robh@kernel.org>
+Subject: Re: [PATCH 1/2] dt-bindings: leds: issi,is31fl319x: Drop 'db'
+ suffix duplicating dtschema
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,40 +79,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 25, 2025 at 05:00:46PM +0800, Ziyue Zhang wrote:
-> Each PCIe controller on sa8775p includes 'link_down'reset on hardware,
-> document it.
 
-Please describe what this reset does here as I asked you to earlier.
-
-> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-> ---
->  .../devicetree/bindings/pci/qcom,pcie-sa8775p.yaml  | 13 +++++++++----
->  1 file changed, 9 insertions(+), 4 deletions(-)
+On Fri, 27 Jun 2025 10:01:51 +0200, Krzysztof Kozlowski wrote:
+> A common property unit suffix '-db' was added to dtschema, thus
+> in-kernel bindings should not reference the type.
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
-> index 4b91b5608013..510c9e1c28e1 100644
-> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
-> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
-> @@ -66,11 +66,14 @@ properties:
->        - const: global
->  
->    resets:
-> -    maxItems: 1
-> +    items:
-> +      - description: PCIe controller reset
-> +      - description: PCIe link down reset
->  
->    reset-names:
->      items:
-> -      - const: pci
-> +      - const: pci # PCIe core reset
-> +      - const: link_down # PCIe link down reset
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> 
+> ---
+> 
+> RFC because this depends on dtschema changes and should be accepted
+> after new dtschema is released with this merged:
+> https://github.com/devicetree-org/dt-schema/pull/166
+> ---
+>  Documentation/devicetree/bindings/leds/issi,is31fl319x.yaml | 1 -
+>  1 file changed, 1 deletion(-)
+> 
 
-I think you can drop the comments since you already describe the resets
-above.
+My bot found errors running 'make dt_binding_check' on your patch:
 
-Johan
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/leds/issi,is31fl319x.yaml: audio-gain-db: missing type definition
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-phy mailing list
