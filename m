@@ -4,58 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB6E6C7EE30
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 00:53:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BA4EC7EE32
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 00:55:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SJr1lWIdLincx8mg/zXqcxvjoWrqvzYyRaJ2JFO6abo=; b=kVOe/mABIKPi19
-	YDikCCt6MR1SP1V/kXwFBnGKvSpEg0GHinLLI6yM+CMRvo9JX5YPKD3SmTlvHNmtEtQIwrW0hawEg
-	TDFhlfX9S9Za1wMw7xHp2BjK6YPiBvPgdAnWvlzdsoWpYudkX4uy9RbeUR6km83tUPHaX/+iB9z3j
-	LfHmKyyvOqLxFWTRsUXIhiV9qKAoeqJJDLD/8mhj1sgsqEcQmFNRtk78IaHdEFpmC2FxMC/vGm5ks
-	laTxKqo8QnVP2mrGgYdHgwEQ136ekJrMOhvuw4p3ZsHe+ZAH5eSQQ6YyQgphpjDBxuLjJGW3wWcdJ
-	Q7wTJlZDSc3YLHFT4VqQ==;
+	List-Owner; bh=cM/y+Ur/9Iz27qaxCc8J4JUfMmKPWz2vHjdUSRFBJYo=; b=p6sklBPLJH6jeC
+	6vEipzEp2TLX1hAPXPhhj9bkA8N3SwV1WMV6S5LHdvxiyixEnss5qpS/QXAW8iYyuvxPETwzy9XH/
+	othglJjwrVVknfYINlupS86V9BWcaGmIfxaONRzjB8QfA3svjTWl5XQ2EsPKbIM/XPEr5fp2B2N1l
+	ir2K9F9fY50xTGkkQCP1GkvQuhMfmf4T3tbqUVkYjzrnw/AiOAmFWce9re0hSNm1+RkIWy/b3JVMg
+	R6ACHi/Qx5VMJO15jLatXRyG1zqYklY7/Z846VP1Y81lBLUKc3fcW4mGaQOyS/uyKp/1qS4WHs3tN
+	AZGw45B7OXITBvdy8iaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUxLU-0000000DG1m-29lJ;
-	Fri, 27 Jun 2025 00:53:36 +0000
+	id 1uUxNi-0000000DGAh-3nS5;
+	Fri, 27 Jun 2025 00:55:54 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUxFD-0000000DEXV-2oQD
-	for linux-phy@lists.infradead.org;
+	id 1uUxFD-0000000DEXW-2p8L;
 	Fri, 27 Jun 2025 00:47:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 506F76111F;
+	by tor.source.kernel.org (Postfix) with ESMTP id C0600613AB;
 	Fri, 27 Jun 2025 00:47:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B421BC4CEED;
-	Fri, 27 Jun 2025 00:47:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 31F85C4CEF1;
+	Fri, 27 Jun 2025 00:47:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1750985226;
-	bh=hgeVknDOC/0zBF1/a5xJ9tCtK3wFHkbZAPTH1sx75Dg=;
+	bh=ZtbMVXVDyJuNabjsn9GAikjD6kRMnBKFTKPjsU9bxic=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=G73Nw3t83ZFM7Yc59Z15z979dAfVLGLng642E0ZsWHFjctl+bLIiBeI623MLDasLT
-	 8bz+amtyntoCCeDDwJUDJ3wx0ftmEInKVSce90M/DGZ6sGH92/fSbKVwHf4Z6N6Vv8
-	 mhU/BuWoEa/+uM5cBh930HisLc97kcs3h299T2SL4mMTsnlfft9hINYPtZa7F2PXpr
-	 5yE7JVWu5lQBSx/YkR4CQeTz4MzRwj1iJyQOCCzcoMuS+zJiZmZjo1tlM5ZBJzKsh8
-	 ogqW5FJzHR27hJgmwf3aak6VCGHc1ynBXyCiSZ2GBJ32QnG393coY8eXexl6W4Ae2u
-	 AY2Smj0jiQ8Tw==
+	b=KwM3Zca87D8YC8RYnQQAXmO4P4WUhczmBEkE81x3UuHm++NNVBLHOMqOhZTcWnJkB
+	 6/N4Ow5XOzeiL+XhAkIy8KJFCJiW8lbLVq5KCeBIo63s1p/EZSywspP6Jm203wzAwj
+	 Kdy0tgCKybwASUAzaBA96uqmXCt9rEob3EXoeMvOPTw0DpALAOsqU2NA/6BiLfHVMm
+	 tBwNOQSf7hs2VU+2F1iIx4AyCon+CDiMVpPN+sLRmNNKgVJSCurCjgIRSFi9eBDvt/
+	 BruKzSvs3p3JPG7VL9Ei96/6WyYpJEPbLHj0v3VcgMF55yogREO0rXM6jBqHggx3xD
+	 K4dPmIl7zQK0g==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Khuong Dinh <khuong@os.amperecomputing.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <5b8e9b4f645bcac9d50059e513abba4db7e1aaea.1750771156.git.geert+renesas@glider.be>
-References: <5b8e9b4f645bcac9d50059e513abba4db7e1aaea.1750771156.git.geert+renesas@glider.be>
-Subject: Re: [PATCH] dt-bindings: phy: apm,xgene-phy: Remove trailing
- whitespace
-Message-Id: <175098522563.106297.14885803182264962743.b4-ty@kernel.org>
-Date: Thu, 26 Jun 2025 17:47:05 -0700
+To: chunfeng.yun@mediatek.com, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: kishon@kernel.org, matthias.bgg@gmail.com, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel@collabora.com
+In-Reply-To: <20250623120315.109881-1-angelogioacchino.delregno@collabora.com>
+References: <20250623120315.109881-1-angelogioacchino.delregno@collabora.com>
+Subject: Re: [PATCH v1 0/2] MediaTek TPHY Cleanups
+Message-Id: <175098522610.106297.547358788124214801.b4-ty@kernel.org>
+Date: Thu, 26 Jun 2025 17:47:06 -0700
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,15 +72,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 24 Jun 2025 15:22:29 +0200, Geert Uytterhoeven wrote:
-> Remove trailing whitespace which hurts my eyes.
+On Mon, 23 Jun 2025 14:03:13 +0200, AngeloGioacchino Del Regno wrote:
+> While doing my usual round of cleanups, I've found some room for
+> improvement in the MediaTek T-PHY driver. This series performs some
+> cleanups on that.
 > 
+> AngeloGioacchino Del Regno (2):
+>   phy: mediatek: tphy: Clarify and add kerneldoc to mtk_phy_pdata
+>   phy: mediatek: tphy: Cleanup and document slew calibration
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: apm,xgene-phy: Remove trailing whitespace
-      commit: 05c6f31991300f1c0e5e80eb1f66a580b9b5ca5f
+[1/2] phy: mediatek: tphy: Clarify and add kerneldoc to mtk_phy_pdata
+      commit: 9cc82c2498b4fac77fb2438080458e42c1d0d5cb
+[2/2] phy: mediatek: tphy: Cleanup and document slew calibration
+      commit: d6306fc5d77b7cbdf75a90159f58ebb84ae6f02a
 
 Best regards,
 -- 
