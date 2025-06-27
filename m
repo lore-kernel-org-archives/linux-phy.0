@@ -4,65 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFA7CC7EE31
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 09:33:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21FA7C7EE31
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 09:35:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=HXjBxojXBcwasYioIN7nxB0G002WcyjpPM8aZbdnBNM=; b=Epb+eQ/T12usEprAlpAbz/A2lY
-	TOYGdmCVRshoWA0fkwKoBIUPCldpkd0Xbrr4btXXOkglHhckwqtS94QEUtJxNMhOKDAA0Lo+6jmLY
-	VEGj8ZPJICAny/jNu9F/39/GsAkqLxjteSSfNkDhtRPRslzUo+jM6A5WkpkFRNeBf/PaQPHsnrEqU
-	XZ4325zLuKHWHC5KEdDbj9gS4czrTFungb0krJtQ+HLyW83c9o1x44dXvzXBrMCiwbZXeVk2I4p4z
-	0iA4vZndTeG3HARN66smkP6MVtuLbNiVuVFRurR4nJ3zyEDm7Ahu8RMthoHikz2Q49r6SShIYVEKs
-	KGmq1kxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UBfCZk5ODU+niV7O5QLII2GCuAXoq2KcEYrTt/EEA/Y=; b=tOlnUt5sJfsyKQ
+	VArnrP46EWlL6W17akSGrKE0KqgFZmF/bT2RT6R/VIkXKumAFstaBkEtsGNvI4eLVkz7nlIAJbV1b
+	Mc0jWAiab5750nQSrRQ5ZLq8TX3eldTLc6c9nOZvNKRHh3wH9SWvzt7FKhcCeQhd4qrW+OldiVoe7
+	ShYF8hsQDu40mW2l6sGobHAQPy9yQy+FtMLqWMAQ5go0QwirXY9rJZHGGL33Gb1hgu4EVTW109nE3
+	pLBe/M0wAdXM+wRTOqr3Ubom54d4HtW5ZeyRNn7JoUTklPg+TyJPwBstyqH1bqgdcNGe4xDZ58fq+
+	YBx/SH498AhuZeXofbGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV5Si-0000000E8Gi-2iXR;
-	Fri, 27 Jun 2025 09:33:36 +0000
+	id 1uV5Uz-0000000E8YL-3hAk;
+	Fri, 27 Jun 2025 09:35:57 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uV5QP-0000000E7ti-0bFM;
-	Fri, 27 Jun 2025 09:31:13 +0000
+	id 1uV5Qo-0000000E7xf-0TPb
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Jun 2025 09:31:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 74EE161120;
-	Fri, 27 Jun 2025 09:31:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02D37C4CEE3;
-	Fri, 27 Jun 2025 09:31:11 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 8EEE461120;
+	Fri, 27 Jun 2025 09:31:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 38D03C4CEE3;
+	Fri, 27 Jun 2025 09:31:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751016672;
-	bh=r+cMuNgB6MPRUwQ4haejjrte5YkesaM6//0oKaMCXtk=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=GrClMbDZTNQa2dxZzyHT23wfQZ+Hq5XA13kLv4KS8KBYx7TTbUDfI8C6vq3Oxm0XF
-	 8AJO0QYWYhMZKpOV+kULgKgUXiUoEeL+j7szQna4QkManv7XrVS0TQ8FkwJMr+GYFu
-	 DcO0X9OScLdS2NdTMXQUszJLmjcesqmP32f4ZBF+EKF0wOvRGKpkhdKlr6ddqKsOyn
-	 h4XIOC+OuhWqDmexSEZm1+Ci/oDpu+WYu6TN60C741Q8ytqqquOH71FnIw8ymTmQAL
-	 GC61zMQnZTnqSwHC9fMawPllsApHQWI6nFKqGokAm3k183VcW4/7h8/Cap7fELVmzw
-	 uPuzd4b05ckDQ==
-Date: Fri, 27 Jun 2025 04:31:11 -0500
+	s=k20201202; t=1751016697;
+	bh=VVXzjakLrbQT4ZfJ9FQFUeBjGu5c9RhpGPfJmxmATuo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=h3QCbd3a3WNQO6uK0sf1DKlI8wHjWukKpFM/KjCKtA+rSTrUNhlikURX0cRcKGFka
+	 DVAew2kURrmw64+U+ImSg1Jism4TRa/lRm1w/ax6ym4YoQk7WAcKZZeCgk3GA6b9yg
+	 FQAogSMZPMWSsAHHg3X/B5h1Crf+Q1g6gRUP+tSvtA+pMzsD+kuilwxzzYKXIf3Sk0
+	 jq+W2CecRi5eekzvv2aTVf6RVsrf6Qe9vDxshtrOqIs8OZlwo5uxZJYuDafFah0sBQ
+	 iVdqrDmapGye4qXlYSW0sumwt8+CWiq80IDs7IXMHc50VynCUPpfvZ0SUa67ZvzJeY
+	 78t0FRuqcZ2TA==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1uV5Qn-000000000FB-1fEb;
+	Fri, 27 Jun 2025 11:31:37 +0200
+Date: Fri, 27 Jun 2025 11:31:37 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+	kw@linux.com, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v7 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings for qcs8300
+Message-ID: <aF5k-Scgk6KTI_uQ@hovoldconsulting.com>
+References: <20250625092539.762075-1-quic_ziyuzhan@quicinc.com>
+ <20250625092539.762075-2-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-leds@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
- Vincent Knecht <vincent.knecht@mailoo.org>, 
- Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
- Shawn Guo <shawnguo@kernel.org>, Li Jun <jun.li@nxp.com>, 
- imx@lists.linux.dev, Lee Jones <lee@kernel.org>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- linux-arm-kernel@lists.infradead.org, Pavel Machek <pavel@kernel.org>, 
- Fabio Estevam <festevam@gmail.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org>
-References: <20250627-dt-bindings-db-v1-0-d5c7072acbee@linaro.org>
- <20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org>
-Message-Id: <175101667037.2392362.10689943517425489653.robh@kernel.org>
-Subject: Re: [PATCH 1/2] dt-bindings: leds: issi,is31fl319x: Drop 'db'
- suffix duplicating dtschema
+Content-Disposition: inline
+In-Reply-To: <20250625092539.762075-2-quic_ziyuzhan@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,47 +83,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, Jun 25, 2025 at 05:25:35PM +0800, Ziyue Zhang wrote:
+> The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
+> specified in the device tree node. Hence, move the qcs8300 phy
+> compatibility entry into the list of PHYs that require six clocks.
+> 
+> As no compatible need the entry which require seven clocks, delete it.
 
-On Fri, 27 Jun 2025 10:01:51 +0200, Krzysztof Kozlowski wrote:
-> A common property unit suffix '-db' was added to dtschema, thus
-> in-kernel bindings should not reference the type.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> 
+Please add the missing Fixes tag.
+
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> Acked-by: Rob Herring (Arm) <robh@kernel.org>
 > ---
-> 
-> RFC because this depends on dtschema changes and should be accepted
-> after new dtschema is released with this merged:
-> https://github.com/devicetree-org/dt-schema/pull/166
-> ---
->  Documentation/devicetree/bindings/leds/issi,is31fl319x.yaml | 1 -
->  1 file changed, 1 deletion(-)
-> 
 
-My bot found errors running 'make dt_binding_check' on your patch:
+This patch depends on
 
-yamllint warnings/errors:
+	https://lore.kernel.org/lkml/20250625090048.624399-2-quic_ziyuzhan@quicinc.com/
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/leds/issi,is31fl319x.yaml: audio-gain-db: missing type definition
+(which you point out in the cover letter), but you should be removing
+the bogus 'phy_aux' clock when removing the last user and not before.
 
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250627-dt-bindings-db-v1-1-d5c7072acbee@linaro.org
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+Johan
 
 -- 
 linux-phy mailing list
