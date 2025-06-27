@@ -4,72 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DF09C7EE2A
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 19:40:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2793C7EE2A
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 19:45:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7RSJO91Db7b7I1RtJgLhi+35JamVCDBc8ygMVZlkrKI=; b=365OemgbXXpwdy
-	3XgEv1k6wLG51uz/0smbLJIHDKsJBybqgbt7RxzZRMjIUFvTmEZpC2KBjp3HSOENeKaMbRdCYlZl9
-	1InetqyY+OmeQT2kfyPP7Z6hKUDuqK9ccpdpMNa0vEGWZPDJyH/uuWj83zkbOXcv/hF+NW8nAywyb
-	Z9nuM+B4KXEDuNO9vVNgCcw2fqxqC4kyL0ilWB/cdqd4l//jCseWI0j3f7JsG/Thj5aoXWgW3lI7B
-	0Zm6Tiiwr7eg7W/GpCD5TgaJpAER+9AM4yWZr79NN+Q3n2Jq/jJnrdFEvNOQc2frqVgazofG3aHdW
-	Qc1AwlI65MV+BHMQpr5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=VzezKCOvTQL216+3RHfPq3WLGvfyWlnnZnWpKEbDJ58=; b=OgGAeH0sjq41QL
+	213mHpkHogZZtse9YRc3MmnfwosV7rRXCn58maH6WhRo9qiR/SqWj8mANhP71yWi+T4kjpnbXxmOB
+	wWiEZkpjFwH3cUj7hbAX8bUS2AjHhkl/xNTcS8iLGbEoZfVffF9b2RPr2TzU/a98Y0dURfkMrgJ7L
+	GuQ4bwdVU63OczYYC3/+lRLs5tTdSem98i0e/CEbu+i9rkdCqcM+K3hQbIQaqmlnYrbel7JulQVJ3
+	q214Yo+4O822UGjcSQNK0YePpDXygL8cVBh/dvk+nZ2gasQtscWIL6cKuKLXlfzWQrcuTeZW9bQTN
+	LwO4ZPo2mrZKRvZ/Kz+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVEvr-0000000FfQV-3bDm;
-	Fri, 27 Jun 2025 19:40:19 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uVF0Q-0000000Fg9Z-249a;
+	Fri, 27 Jun 2025 19:45:02 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uVEZo-0000000FcHp-1lTs;
-	Fri, 27 Jun 2025 19:17:34 +0000
+	id 1uVEmf-0000000Fdk5-07Xi;
+	Fri, 27 Jun 2025 19:30:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CEEB44520D;
-	Fri, 27 Jun 2025 19:17:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 891C0C4CEE3;
-	Fri, 27 Jun 2025 19:17:31 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 389A7A52FB8;
+	Fri, 27 Jun 2025 19:30:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A284EC4CEE3;
+	Fri, 27 Jun 2025 19:30:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751051851;
-	bh=4tIY5Xv1aq93hm2eYGyz9mdC6DOUVIOyHjZ+4y79CfQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=MrokVCE/iHGDnWfI2S2bpRHqVDTYWrOZjsS0Notwml4J1ce0uUyE0NYLMuxXrF4lL
-	 Gv8LJBYbedx1LqCCpBGikDCZggPY3HiPXy/DFIDkU5pmH4TC3mD7if3RPMp98TUkPx
-	 eOh6yRKMGs3LvXWwt/R7PUQpnz4M50xkqBZGg9wqFmfpn3psUG7Y4Oq3430IkwNbuJ
-	 Ym9DWQ7ES8tkLTsb4ybKl/bsoDxb0/i1Ae8lFNy+RBRCDTqZij0bd3e7EPK30+atEl
-	 QZhPzW6UwC0SH6Zj6DBR3tOnr1tIHtauojq/XTNg9+HePZ38UAfwwgREf4uO+E0Orp
-	 1F1HqILr8Mhzg==
-Date: Fri, 27 Jun 2025 14:17:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Michael Riesch <michael.riesch@collabora.com>
-Cc: Diederik de Haas <didi.debian@cknow.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Jagan Teki <jagan@amarulasolutions.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Collabora Kernel Team <kernel@collabora.com>,
-	Kever Yang <kever.yang@rock-chips.com>, devicetree@vger.kernel.org,
+	s=k20201202; t=1751052647;
+	bh=Ewt6x+TyLrnKWB9bcFNXn39ClBlBLwSs9oVDUkhN+5s=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=RPazJm95MCXTQsAh4h8EI9hYme1woTQj/7GHQ1aNwZf1LH+YtE91kNPlux6ZUBXs3
+	 tmn7wLtMkotusbLg+Ipj1PXvDzK+Ih5zJaBq89DdFZX2y+yNquxaS3TzCfVg+rKSE3
+	 cMh1XG5uXx3I+902Br+hvx+hOoBs5W1oSuav0bvOYvWquAGXVszjNqV0DMxIEZ9lXi
+	 SQQ7PRmO6QpvO9Ghk+62IjRV130WaRg+4TzLphnxY5Me5G6m0eD5LpBqLnRjcjUarm
+	 7YwJrjnxNeExgej4gvKNBhNgFbCi1cSRqguatqAJKpKOcGCFTA+mrrk3dp/kpQtqS6
+	 i5SNPirztErfA==
+Date: Fri, 27 Jun 2025 14:30:46 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Shradha Todi <shradha.t@samsung.com>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 2/5] dt-bindings: phy: rockchip-inno-csi-dphy: add rk3588
- variant
-Message-ID: <20250627191730.GA4025458-robh@kernel.org>
-References: <20250616-rk3588-csi-dphy-v1-0-84eb3b2a736c@collabora.com>
- <20250616-rk3588-csi-dphy-v1-2-84eb3b2a736c@collabora.com>
- <DAOVBOKLXLS2.S9MXDD29X68J@cknow.org>
- <e9db11c2-b02d-4fd5-8927-7b5857089533@collabora.com>
+	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-fsd@tesla.com,
+	manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org,
+	kw@linux.com, robh@kernel.org, bhelgaas@google.com,
+	jingoohan1@gmail.com, krzk+dt@kernel.org, conor+dt@kernel.org,
+	alim.akhtar@samsung.com, vkoul@kernel.org, kishon@kernel.org,
+	arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com,
+	pankaj.dubey@samsung.com
+Subject: Re: [PATCH v2 09/10] PCI: exynos: Add support for Tesla FSD SoC
+Message-ID: <20250627193046.GA1673824@bhelgaas>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e9db11c2-b02d-4fd5-8927-7b5857089533@collabora.com>
+In-Reply-To: <20250625165229.3458-10-shradha.t@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250627_121732_500013_1143D382 
-X-CRM114-Status: GOOD (  24.22  )
+X-CRM114-CacheID: sfid-20250627_123049_193577_88EDF5DF 
+X-CRM114-Status: GOOD (  19.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,143 +78,161 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 18, 2025 at 09:45:32AM +0200, Michael Riesch wrote:
-> Hi Diederik,
-> 
-> Thanks for your comments!
-> 
-> On 6/17/25 16:12, Diederik de Haas wrote:
-> > Hi,
-> > 
-> > I'm (unfortunately) not seeing any @rock-chips.com recipients ...
-> 
-> Oops, I meant to include at least Kever, but forgot to do it. Will do in v2.
-> 
-> Cc: Kever
-> 
-> > 
-> > On Tue Jun 17, 2025 at 10:54 AM CEST, Michael Riesch via B4 Relay wrote:
-> >> From: Michael Riesch <michael.riesch@collabora.com>
-> >>
-> >> The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
-> >> Add the variant and allow for the additional reset.
-> >>
-> >> Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
-> >> ---
-> >>  .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 60 ++++++++++++++++++++--
-> >>  1 file changed, 55 insertions(+), 5 deletions(-)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
-> >> index 5ac994b3c0aa..6755738b13ee 100644
-> >> --- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
-> >> +++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
-> >> @@ -21,6 +21,7 @@ properties:
-> >>        - rockchip,rk3326-csi-dphy
-> >>        - rockchip,rk3368-csi-dphy
-> >>        - rockchip,rk3568-csi-dphy
-> >> +      - rockchip,rk3588-csi-dphy
-> >>  
-> >>    reg:
-> >>      maxItems: 1
-> >> @@ -39,18 +40,49 @@ properties:
-> >>      maxItems: 1
-> >>  
-> >>    resets:
-> >> -    items:
-> >> -      - description: exclusive PHY reset line
-> >> +    minItems: 1
-> >> +    maxItems: 2
-> >>  
-> >>    reset-names:
-> >> -    items:
-> >> -      - const: apb
-> >> +    minItems: 1
-> >> +    maxItems: 2
-> >>  
-> >>    rockchip,grf:
-> >>      $ref: /schemas/types.yaml#/definitions/phandle
-> >>      description:
-> >>        Some additional phy settings are access through GRF regs.
-> >>  
-> >> +allOf:
-> >> +  - if:
-> >> +      properties:
-> >> +        compatible:
-> >> +          contains:
-> >> +            enum:
-> >> +              - rockchip,px30-csi-dphy
-> >> +              - rockchip,rk1808-csi-dphy
-> >> +              - rockchip,rk3326-csi-dphy
-> >> +              - rockchip,rk3368-csi-dphy
-> >> +              - rockchip,rk3568-csi-dphy
-> >> +    then:
-> >> +      properties:
-> >> +        resets:
-> >> +          items:
-> >> +            - description: exclusive PHY reset line
-> >> +
-> >> +        reset-names:
-> >> +          items:
-> >> +            - const: apb
-> >> +
-> >> +      required:
-> >> +        - reset-names
-> >> +    else:
-> >> +      properties:
-> >> +        resets:
-> >> +          minItems: 2
-> >> +
-> >> +        reset-names:
-> >> +          minItems: 2
+On Wed, Jun 25, 2025 at 10:22:28PM +0530, Shradha Todi wrote:
+> Add host and endpoint controller driver support for FSD SoC.
 
-You have to define the names. Ideally, at the top level and then keep 
-this part like this.
+> +++ b/drivers/pci/controller/dwc/pci-exynos.c
+> @@ -20,6 +20,8 @@
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/mod_devicetable.h>
+>  #include <linux/module.h>
+> +#include <linux/regmap.h>
+> +#include <linux/mfd/syscon.h>
 
-> >> +
-> >>  required:
-> >>    - compatible
-> >>    - reg
-> >> @@ -59,7 +91,6 @@ required:
-> >>    - '#phy-cells'
-> >>    - power-domains
-> >>    - resets
-> >> -  - reset-names
-> >>    - rockchip,grf
-> >>  
-> >>  additionalProperties: false
-> >> @@ -78,3 +109,22 @@ examples:
-> >>          reset-names = "apb";
-> >>          rockchip,grf = <&grf>;
-> >>      };
-> >> +  - |
-> >> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-> >> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
-> >> +
-> >> +    soc {
-> >> +        #address-cells = <2>;
-> >> +        #size-cells = <2>;
-> >> +
-> >> +        csi_dphy0: phy@fedc0000 {
-> >> +            compatible = "rockchip,rk3588-csi-dphy";
-> >> +            reg = <0x0 0xfedc0000 0x0 0x8000>;
-> >> +            clocks = <&cru PCLK_CSIPHY0>;
-> >> +            clock-names = "pclk";
-> >> +            #phy-cells = <0>;
-> >> +            resets = <&cru SRST_CSIPHY0>, <&cru SRST_P_CSIPHY0>;
-> >> +            rockchip,grf = <&csidphy0_grf>;
-> >> +            status = "disabled";
-> >> +        };
-> >> +    };
-> > 
-> > ... which could hopefully tell us what the value is/should be for the
-> > *required* 'power-domains' property, which is missing in this example.
-> > IOW: the binding example is invalid according to its own binding.
-> 
-> Huh, indeed. Hm. Why didn't make dt_binding_check warn me about that?!
+The trend is to sort these alphabetically.  The last couple additions
+didn't observe this, but maybe these new ones could go a little
+farther up and make it more sorted rather than less?
 
-You disabled the node, what do you want us to check?
+> +#define FSD_PCIE_CXPL_DEBUG_00_31		0x2C8
 
-Rob
+Existing #defines use lower-case hex; please follow suit.
+
+> +/* to store different SoC variants of Samsung */
+> +enum samsung_pcie_variants {
+> +	FSD,
+> +	EXYNOS_5433,
+> +};
+
+>  struct samsung_pcie_pdata {
+>  	struct pci_ops				*pci_ops;
+>  	const struct dw_pcie_ops		*dwc_ops;
+>  	const struct dw_pcie_host_ops		*host_ops;
+> +	const struct dw_pcie_ep_ops		*ep_ops;
+>  	const struct samsung_res_ops		*res_ops;
+> +	unsigned int				soc_variant;
+> +	enum dw_pcie_device_mode		device_mode;
+>  };
+
+> +static u32 fsd_pcie_read_dbi(struct dw_pcie *pci, void __iomem *base,
+> +				u32 reg, size_t size)
+> +{
+> +	void __iomem *addr;
+> +	u32 val;
+> +
+> +	addr = fsd_atu_setting(pci, base);
+> +
+> +	dw_pcie_read(addr + reg, size, &val);
+> +
+> +	return val;
+
+Remove blank lines to match style of fsd_pcie_write_dbi2().
+
+> +}
+> +
+> +static void fsd_pcie_write_dbi(struct dw_pcie *pci, void __iomem *base,
+> +				u32 reg, size_t size, u32 val)
+> +{
+> +	void __iomem *addr;
+> +
+> +	addr = fsd_atu_setting(pci, base);
+> +
+> +	dw_pcie_write(addr + reg, size, val);
+
+Ditto.
+
+> +}
+> +
+> +static void fsd_pcie_write_dbi2(struct dw_pcie *pci, void __iomem *base,
+> +				u32 reg, size_t size, u32 val)
+> +{
+> +	struct exynos_pcie *ep = to_exynos_pcie(pci);
+> +
+> +	fsd_atu_setting(pci, base);
+> +	dw_pcie_write(pci->dbi_base + reg, size, val);
+> +	regmap_write(ep->sysreg, ep->sysreg_offset, ADDR_TYPE_DBI);
+> +}
+
+> +static int fsd_pcie_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+> +				 unsigned int type, u16 interrupt_num)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +
+> +	switch (type) {
+> +	case PCI_IRQ_INTX:
+> +		return dw_pcie_ep_raise_intx_irq(ep, func_no);
+> +	case PCI_IRQ_MSIX:
+> +		dev_err(pci->dev, "EP does not support MSIX\n");
+
+s/MSIX/MSI-X/ to match spec usage.
+
+> @@ -373,13 +617,43 @@ static int exynos_pcie_probe(struct platform_device *pdev)
+>  		return ret;
+>  
+>  	platform_set_drvdata(pdev, ep);
+> -	ret = samsung_irq_init(ep, pdev);
+> -	if (ret)
+> -		goto fail_regulator;
+> -	ep->pci.pp.ops = pdata->host_ops;
+> -	ret = dw_pcie_host_init(&ep->pci.pp);
+> -	if (ret < 0)
+> +
+> +	if (pdata->res_ops->set_device_mode)
+> +		pdata->res_ops->set_device_mode(ep);
+> +
+> +	switch (ep->pdata->device_mode) {
+> +	case DW_PCIE_RC_TYPE:
+> +		ret = samsung_irq_init(ep, pdev);
+> +		if (ret)
+> +			goto fail_regulator;
+> +
+> +		ep->pci.pp.ops = pdata->host_ops;
+> +
+> +		ret = dw_pcie_host_init(&ep->pci.pp);
+> +		if (ret < 0)
+> +			goto fail_phy_init;
+> +
+> +		break;
+> +	case DW_PCIE_EP_TYPE:
+> +		phy_init(ep->phy);
+> +
+> +		ep->pci.ep.ops = pdata->ep_ops;
+> +
+> +		ret = dw_pcie_ep_init(&ep->pci.ep);
+> +		if (ret < 0)
+> +			goto fail_phy_init;
+> +
+> +		ret = dw_pcie_ep_init_registers(&ep->pci.ep);
+> +		if (ret)
+> +			goto fail_phy_init;
+> +
+> +		pci_epc_init_notify(ep->pci.ep.epc);
+> +
+> +		break;
+> +	default:
+> +		dev_err(dev, "invalid device type\n");
+>  		goto fail_phy_init;
+> +	}
+
+This would be a little nicer if you added soc_variant and device_mode
+and the code that sets and tests them for exynos_5433 first in a
+separate patch.  Then it would be more obvious that the new FSD parts
+don't affect exynos_5433 since this patch would only be *adding*
+FSD-specific things.
+
+>  static const struct samsung_pcie_pdata exynos_5433_pcie_rc_pdata = {
+>  	.dwc_ops		= &exynos_dw_pcie_ops,
+>  	.pci_ops		= &exynos_pci_ops,
+>  	.host_ops		= &exynos_pcie_host_ops,
+>  	.res_ops		= &exynos_res_ops_data,
+> +	.soc_variant		= EXYNOS_5433,
+> +	.device_mode		= DW_PCIE_RC_TYPE,
+>  };
+
+>  static const struct of_device_id exynos_pcie_of_match[] = {
+> @@ -449,6 +756,14 @@ static const struct of_device_id exynos_pcie_of_match[] = {
+>  		.compatible = "samsung,exynos5433-pcie",
+>  		.data = (void *) &exynos_5433_pcie_rc_pdata,
+>  	},
 
 -- 
 linux-phy mailing list
