@@ -4,62 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF0C3C8300F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 00:55:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D55FAC7EE2A
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Jun 2025 05:02:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JOkqkwRPEHsKof1RSp8whPx4ffPtuDRFF9rLe4Q8/vc=; b=0PqRtHO1AJ0LYX
-	tqXbDszdKW5d2l8dqCeSfp5W15GUP7+zT/eLh+OCin9t3wl7WoNrNpQ31/soj2YG2dCqScawQr/r6
-	8KtqEjrYxJ+Vu6N9nNGQpQoB1iGvTjK54areEkn9aNmT4uNLyxU8mIsKqn01Xk+wGaeB54kC7ILS9
-	ySMS0ZnuQBt+AhMHMKbZH+HB8YZdZl5cY1c2SAmis1uZ4g3ZQaS5D+RFzP+IePPXzNeQsGMc4ZfyN
-	LUVrDGdCnnrvWS0sdUt4Q459VdVOXpyE2Q9cm5ja3Vdk99yir+JHRqkKrE2m6Sk+F1o3T1ABj0eaL
-	DzxQj9w2ngsNJYT1VsTw==;
+	List-Owner; bh=ADdGB8T1UtgprhClVF+hsp8OGfqOZ5aP09IWi3p1t0Q=; b=2x8StJmNHik5hi
+	V26+hzE5p3VbISMaqGeqV6s0GGBMrCB6d6rBekNaQ41cGFxZJAeCE3uvGaKGCluyW1eT/aegpLc8T
+	zHvsYNQqnQLlhwPlsQfZurK66bIHw1dw0G/lLPgG9XNMyIL06Za0GlFWHTgeWku/l2+MlXYE099Lb
+	t5CX+ONlhEsB/4L3j5wxzSPoXaGRRpQh89PqBgbwRvosE8osSMAIzO7cov+Lp+ue9JqG3dZS3jSuN
+	3l4Iz9VRBTr0M/wst/yDB9lxBqzEfl1Bnbzi+po7TlTBeiGTD1oHMtuSDEktAz2Lc8c3t/KTRmFpm
+	AiF9AKsgIsotNQGma8Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUxNk-0000000DGCS-1lsS;
-	Fri, 27 Jun 2025 00:55:56 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uV1En-0000000Db7x-293B;
+	Fri, 27 Jun 2025 05:02:57 +0000
+Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUxFF-0000000DEYw-19nM
+	id 1uV14x-0000000DZwm-2LPD
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Jun 2025 00:47:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CE86E5C6A3E;
-	Fri, 27 Jun 2025 00:47:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66B1EC4CEF0;
-	Fri, 27 Jun 2025 00:47:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750985228;
-	bh=N6BtiYtAE91IjBviDHOKuD3lvCAmE+hW+1yotu7D/9g=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=h+HcB2Y3aEPv5xWqHZTcTioJJpF+LEjGSG2p45BLGMVfee5HYtBrACShOt8LDtDAW
-	 eG/scDecAw78231X0JNk3lktihknlZBwq1I8lOVueVb7gNjm+1pvPq+zzYq3nBugTK
-	 awtCgU5rmsE6CHdBv4la7Tyxe/GQxrlI6jPurORwl9fkZYCvLQZYC5jLMd3tH9Kk2v
-	 TfsysL8odTD389uqTpfmi2PXxmEYhj+PDw9mRzg6X6lOgU1aJEyrr3MM7r7Me3si5X
-	 Q+gPWA5JyBuSsdKUgNp2z9EfgdqZwkuQ5gVrGpxA0/AXvyg4bCC+UdJR8SUDtx+tq2
-	 E5hQmMmxVyYkw==
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Wesley Cheng <quic_wcheng@quicinc.com>, 
- Melody Olvera <melody.olvera@oss.qualcomm.com>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20250617080401.11147-1-johan+linaro@kernel.org>
-References: <20250617080401.11147-1-johan+linaro@kernel.org>
-Subject: Re: [PATCH] phy: qcom: m31-eusb2: drop registration printk
-Message-Id: <175098522832.106297.6161787629116315639.b4-ty@kernel.org>
-Date: Thu, 26 Jun 2025 17:47:08 -0700
+	Fri, 27 Jun 2025 04:52:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=hP36VL1LhaA/zvklg1EJJMECGJOTLsuACukGuXRZuOYLeN/erflv2QQ3xacvs4AErI7bdhzp3MCRcBKKWc8JpPzAZbiWB4JkWj4ATZGeQQPXK9eKnrld5Ljmffp5fU7AzqjDj+XnnbquvKOmae2BHWkc2OKFwdyq6CWY2XZL7u6geG5eAmC+cxXDsOSRXDg6qkjTZzeu20zR0EVrsfDdVSsc8SBHFjTMZPiKOuhm3pl3edXVfhvjwGY0OM2+yThGT1I0iDJ0HrWJfzJ1Exttl7tDtfJlaSlak1qbI/I3m2XqJFb1ac+QpOYkGa0XxK78oUUl2mFF2PSRrCzkxujnFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=5DDjxyeBKImDzw9xh6AGx1+8rPWRDpNBVrFACoWSbOY=;
+ b=f3/ksKhTSS0iyQBeiGbJ2SrqE+b7t11+J7x8phSFO0TO2nJd71yZG4QIiXyWCDkLWOsDoZq1teh/oVvtxRCEuRBxeohrwqNtyLZXb81bVAxRnNUd9gOjS38cLqHTbff2XfXxR6sv2F18kjcnTAmTkV1BaXnnh6GibWzLZlrOIHbdVwh0owpjeMgi7MWdlD/KLLso1ntQNDGCBQ+4TsE9P3WLcJIRkP2TDWNedcwTXj489rmCKiFjlJwhX0UPW3uS5aXlDszb7x4XoxN6k8Pn/JmKiGuE96wEIza4dE9puFUt/MZUPJ1mQqXhaMgGbTuyIRNM8naYuCFYsizrl4pcPQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5DDjxyeBKImDzw9xh6AGx1+8rPWRDpNBVrFACoWSbOY=;
+ b=NDZC0OyofIMcvxQ0QP2wTCaCzz6M/lApbql5FVAjji4Z744TnOGHsxdeo69RvjpT4o+sUMLher2RnGhmP/jE9eUJVXbOaHIBcPucDwePUUWB+BnFiPf+fqmgWjNyVO4GrpBrwzckfj09fJZuyYoxFFaO+cOtNEZodnSAHo5/Eug=
+Received: from TY4PR01MB14282.jpnprd01.prod.outlook.com (2603:1096:405:20d::9)
+ by OS7PR01MB14882.jpnprd01.prod.outlook.com (2603:1096:604:39a::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.26; Fri, 27 Jun
+ 2025 04:52:31 +0000
+Received: from TY4PR01MB14282.jpnprd01.prod.outlook.com
+ ([fe80::37ea:efd9:8ca0:706a]) by TY4PR01MB14282.jpnprd01.prod.outlook.com
+ ([fe80::37ea:efd9:8ca0:706a%6]) with mapi id 15.20.8857.026; Fri, 27 Jun 2025
+ 04:52:28 +0000
+From: Michael Dege <michael.dege@renesas.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: Kishon Vijay Abraham I <kishon@kernel.org>, Yoshihiro Shimoda
+	<yoshihiro.shimoda.uh@renesas.com>, Uwe Kleine-Koenig
+	<u.kleine-koenig@baylibre.com>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH v3 0/2 RESEND] phy: renesas: r8a779f0-ether-serdes: driver
+ enhancement
+Thread-Topic: [PATCH v3 0/2 RESEND] phy: renesas: r8a779f0-ether-serdes:
+ driver enhancement
+Thread-Index: AQHb5nLHBZp8vIQSbEWglXyRyngmqrQWDtmAgABhEEA=
+Date: Fri, 27 Jun 2025 04:52:27 +0000
+Message-ID: <TY4PR01MB142825081D5279CA2D8251EBE8245A@TY4PR01MB14282.jpnprd01.prod.outlook.com>
+References: <20250626081723.1924070-1-michael.dege@renesas.com>
+ <aF3Qp730y_Vusb-z@vaman>
+In-Reply-To: <aF3Qp730y_Vusb-z@vaman>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY4PR01MB14282:EE_|OS7PR01MB14882:EE_
+x-ms-office365-filtering-correlation-id: 6c357c49-fa4a-43bc-a166-08ddb5366abb
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|366016|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?E3PAT8eT8/vwVHIxVMpe0uyKEsgTi36u69CesgYTCjf5/xhm+iDLEh/ZA7v2?=
+ =?us-ascii?Q?sscCY12914dFUL7ygZSYTnnlhIkRxF6mmyKKfLcV6eToUOBNU3YLN2UIkxop?=
+ =?us-ascii?Q?LftKHtZf8m9iZu8Sf3lV1JMCpCmryB8zFYLx5sJr4bBLdp68K69WOAH+nlvW?=
+ =?us-ascii?Q?Kh4Pvl9uiMpGH9OIA8F5kJV2g85KoKopgSf2NBvhkN11djdU/kcDtSgz9RwW?=
+ =?us-ascii?Q?/9GBq5Ed52qjVoGLyxCRLXOsAtRbsnqiEk6z4/xTluB6FXi+EXX84YmPN+hN?=
+ =?us-ascii?Q?c0Xedyq8FSKRRHOfYiPu0JEM33DF1En4JMTVKrpF9I47jDB9ldLczKd6/x9C?=
+ =?us-ascii?Q?pRuGD4OI0uh8WMIeK9X+skTwrkB+5W2PM0XBZ8cxEgXQimwPsZepZ5G78Bfz?=
+ =?us-ascii?Q?FtCIxa8dTipF/bsmlJilY8FlOPT2gRcfnFWn33/RFE20IfXC5pOAvJZxAfQA?=
+ =?us-ascii?Q?HvBtWU5YV/3xgkyapC0QPC6ryFFlbrXadDECyjDLSA3G++/YolTa/uIq6ca5?=
+ =?us-ascii?Q?d/YY7SCXNWDyW8c81A61pmBumwGQ1B8iGKs/cUtuG8TznxXfNFec1mXJWy1V?=
+ =?us-ascii?Q?7MrlblL/vDGYG7l7/pnXtwgIwEByYQNbnP73klV58jHBA7nBBe1kyin/8GLB?=
+ =?us-ascii?Q?IHNhBtuFLEw0dBwuv8HrI1X55KWRROKkPshKInj+AUBzZegvtck3X2TfKfNP?=
+ =?us-ascii?Q?QBJjuQ5jAfqCm5jXscsspwUY9BgZZF+m/8ZIBJgF2QrhhhtK3b8kKGcY5J+I?=
+ =?us-ascii?Q?UMjdX3FlsPetTwVc4q2OQEF/d/fBDkLFtLbc7iD/KlI6wcyMotHrOr7a2a41?=
+ =?us-ascii?Q?QIn+0J+fhpe3Ao5bNN+C8k9BJce8TZMOStvqFIvmhvwB7Q5yU2CaYzp+Cz62?=
+ =?us-ascii?Q?A+JBKwI6gLv3aAEYHilhf5PWZftlQfYj+FkAj29ubVdBwuBtxgUD+lEHb/+d?=
+ =?us-ascii?Q?SwLSaRDojQqUESlPdxt2EOWeFeyyW79OJsvJ4FAeGiBJGJ9pSgdfVtXe8I1o?=
+ =?us-ascii?Q?nVq+H/iHl9NZqTqLhn51ml2F/08Okp24EzpKehwFjNgf95psKJ5Ivlwo68cF?=
+ =?us-ascii?Q?oDd2UoDXvTxsHVpuJY5JhhLw2had3Ittu5TcCLwaUB99Pg6AJCyT5Fo4I3Tz?=
+ =?us-ascii?Q?vh6l13I828ytAXPIJ0DmPgcGPJ9YYx77bNWcqVWsiq9qR2hvacbilWQp+4FI?=
+ =?us-ascii?Q?P3zP+xy3CqSBQLpm3jYTtUU41dY/utNECbp4672YjlvKAPG+wQKPxVjF23SY?=
+ =?us-ascii?Q?FCRUVOPCB3Yr2DPzRGQmHQdFUYXYJVBBd1k3XC7aKxVLbKJRGAL109ul+mfa?=
+ =?us-ascii?Q?taw1l0WQ8w+Ew9YoRC2dtJDBteYBBMGjh25CKRJK+ClX7TMOGh3SDo1/Exn9?=
+ =?us-ascii?Q?jefCW7gMVZq1roIszGoG5TkeBls2Ijc1dJQ2tw2ePJB0cHiQrrDPqDPAOsT8?=
+ =?us-ascii?Q?7M3LN2MAZepudZyOmgSnL6Jl3d3EEtt3wvaKgOpS4oGiTpr5V0hDGw=3D=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY4PR01MB14282.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?rfuiYqBf8js47Fyt/1oSMX8KoT/M5SJ/UrSp1QQ6kqFARf3pIUMJEM5oxyC+?=
+ =?us-ascii?Q?efDzK9MZuNd/wt5xuwwaha5c6GMyqno9IU3iqT0VgCNCYdafxiDl6Z9MEJqJ?=
+ =?us-ascii?Q?YVjgC7+kB0x1udajyRlu1R2Vbp6iqiPzBMUs4V3yFDRppBLHcqknMkGl7IBL?=
+ =?us-ascii?Q?7JT3AfNfauBogyzN1LpsLzcYo9Hq5IFiOX/JthCpQViH1+bj4zg3LfY5eTsu?=
+ =?us-ascii?Q?Y6QX9FtpnbuduedxSHiF5IIuxXKU4A4WR26SToZoLofKBmG3zxjKtUBUjrXj?=
+ =?us-ascii?Q?2Ti74TxVAimx3Q4BZW2qjpGAQ0EeYXzfCf226X9F8mqMzPx02M3bqVbKLAxO?=
+ =?us-ascii?Q?QnLwYKZUt/0qXUnkcCKDJQbxSf0UEuWVJu8AUzZxqjjxxN2XW2aKfQ7NSddz?=
+ =?us-ascii?Q?t0ZcB/j+VORkd480Mq75mEk1mMmu/qaZK8h5WIUvTudY/2nInNfzyHw9Bv3E?=
+ =?us-ascii?Q?UAxamEng2OKaLb+vFnMQpFj3NlCSSOKqLc6rMzvUxIPJ3t7OrlVCQU+CBNAf?=
+ =?us-ascii?Q?gFWygz5DI7OARJsm5ZMbUvAQykZMMjtGd5BSgmUubWJSOOAIMEvuoLivRUbu?=
+ =?us-ascii?Q?56+hCYaBiLohyoHkjfuw0hdLcWDdpfMrYvU6/eXo2JUIfufvlNRnQ6kByIOw?=
+ =?us-ascii?Q?ZXkFd1ckAbAw2NQx5MVyeCZDcMaz7nCKTn6jnRhYeN4iwr4bkFvpPtvDmUEN?=
+ =?us-ascii?Q?9iO5pOQDjZ7zNM54+OT4Ya8UvNSvJQlrfks8uA9rIS26xyz0bo1LdD0S54cp?=
+ =?us-ascii?Q?ZhzxI7LrgU4silLjxdu9eAJOioHjdCRcRCdS5GevYR2o5s86e0p+SR2wUFNO?=
+ =?us-ascii?Q?fWPUKei0KyXKVIn3YKUIUn5My49fFExr9xRUScr5Gl36RPpcm4405RNaj+Z2?=
+ =?us-ascii?Q?D6AE3UvpHzGIhTkLbieOS8ppjEsu98cWDV+OgoHH6nfhEql30DgChwV+INoK?=
+ =?us-ascii?Q?n3a9HaTXj/BrX7xO8y/GcjdEeWAT5pUTKEzu66jhPt+Ws9RXxSoIUnAu43ec?=
+ =?us-ascii?Q?SLu+21OZevAG2QmBe+LDRHoJtXxnHdp+0k5mZB0hUpujKwM1Bt3T0T/qsaRv?=
+ =?us-ascii?Q?cs3uZKTbOzfLM1A6AUdrYSEoeEafYTFv5MSSXkE08M7SEL555OY1ag6PMoWR?=
+ =?us-ascii?Q?TkQpulzNr/51CSYkeZDXOuQ+IvKG5uufQsZHKJ60NyAXVYO7bRcWf0jDOLoL?=
+ =?us-ascii?Q?db9gNrAVqzhDx2LnXyK/jFGJpynEf0vkHfV91YG5vWi/viRzpwlMJ5BTGxT6?=
+ =?us-ascii?Q?imCUaejbU4j5BGe1NxPQg42/9/VIlfigqAkmx01mhCQMM5wZYVn9xpUopwqd?=
+ =?us-ascii?Q?vB9mGNPdK75QEcJg0zBD2buda9RurkPN+rT7rUU9Q35Lq9q7xoWpPvmV1//T?=
+ =?us-ascii?Q?uKLkKnQz4F+RZRIcjP74EYavIdP6QfFNkkKf0qpx6Saz/n3YBbA7dkXErQHG?=
+ =?us-ascii?Q?SO15be4Bo88x86kgLAi3FKfG8OiKgn0zu97W5UHFrfcEP1+HvXUoz7iS6kUC?=
+ =?us-ascii?Q?jOa9MP2D4H/VSHaeuUQoFAiB+Fvnq6ksmuBkLtHOlt+sKIPZVoflZ98bpvXz?=
+ =?us-ascii?Q?9nIuIKyfRwS5XymLxZPnz/ihtZSxZVsLop92DT5i?=
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY4PR01MB14282.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6c357c49-fa4a-43bc-a166-08ddb5366abb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2025 04:52:27.9416
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: y/1mCX1ju6+YW5xdq2IrO3xm0CLppO68WqmN+qS7qv1o5Zvx2duqeQ5T6uw578aaFB3VzWj3ytTOS7PJuwQmygfmGJLkr3FlIf9xlK3raFo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS7PR01MB14882
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_174709_360164_2DEB93AF 
-X-CRM114-Status: UNSURE (   4.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250626_215247_615372_A3EA3C67 
+X-CRM114-Status: GOOD (  19.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,23 +165,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hello Vinod,
 
-On Tue, 17 Jun 2025 10:04:01 +0200, Johan Hovold wrote:
-> Drivers should generally be quiet on successful probe so drop the
-> registration printk from the recently added M31 EUSB2 driver.
-> 
-> 
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: Friday, June 27, 2025 12:59 AM
+> To: Michael Dege <michael.dege@renesas.com>
+> Cc: Kishon Vijay Abraham I <kishon@kernel.org>; Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>;
+> Uwe Kleine-Koenig <u.kleine-koenig@baylibre.com>; linux-phy@lists.infradead.org; linux-
+> kernel@vger.kernel.org
+> Subject: Re: [PATCH v3 0/2 RESEND] phy: renesas: r8a779f0-ether-serdes: driver enhancement
+>
+>
+> Hi,
+>
+> On 26-06-25, 10:17, Michael Dege wrote:
+> > Hi,
+> >
+> > This patch set adds the following to the r8a779f0-ether-serdes driver:
+>
+> I have a v3 and v3 resend and both are not threaded properly, Please post properly as a series which
+> is threaded and not broken...
 
-Applied, thanks!
-
-[1/1] phy: qcom: m31-eusb2: drop registration printk
-      commit: 2bff9083c1744dc8751ddc0844a65e3bee89f519
+Please bear with me this is the first attempt to upstream a patch. I used b4 to produce and send this
+patch series. I did have trouble when I tried to use b4 to resend. And ended up using "git send-email"
+to resend.
+I don't quite understand what you mean by threaded and what is broken. Could you please give
+me a hint what is wrong? I am willing to learn and would like to get it right.
 
 Best regards,
--- 
-~Vinod
 
+Michael
 
+> >
+> >  * USXGMII mode support for 2.5GBit/s ethernet Phys
+> >  * A new configuration step suggested by the latest R-Car S4-8 users
+> >    manual V. 1.20.
+> >
+> > Changes in v3:
+> > - Fixed wrong macro (reported by kernel test bot).
+> > - Link to v2:
+> > https://jpn01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore
+> > .kernel.org%2Fr%2F20250527-renesas-serdes-update-v2-0-ef17c71cd94c%40r
+> > enesas.com&data=05%7C02%7Cmichael.dege%40renesas.com%7C7e7e33dfe98345c
+> > af5e308ddb5050507%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C6388657
+> > 55354137682%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLj
+> > AuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7
+> > C&sdata=9sa0DnmyB5rRb4DSOlzz4%2BguzMxaMcP8W40OVS1ABZU%3D&reserved=0
+> >
+> > Changes from v1:
+> >  - Modify this driver for the R-Car S4-8 only
+> >  - So, this patch set drops the followings:
+> >  -- any dt doc modification
+> >  -- X5H support.
+> >  -- 5GBASER support
+> >  -- Registers' macros
+> >
+> > Thanks,
+> >
+> > Michael
+> >
+> > Michael Dege (2):
+> >   phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
+> >   phy: renesas: r8a779f0-ether-serdes: add new step added to latest
+> >     datasheet
+> >
+> >  drivers/phy/renesas/r8a779f0-ether-serdes.c | 97
+> > ++++++++++++++++++---
+> >  1 file changed, 85 insertions(+), 12 deletions(-)
+> >
+> > --
+> > 2.25.1
+>
+> --
+> ~Vinod
+________________________________
+
+Renesas Electronics Europe GmbH
+Registered Office: Arcadiastrasse 10
+DE-40472 Duesseldorf
+Commercial Registry: Duesseldorf, HRB 3708
+Managing Director: Carsten Jauch
+VAT-No.: DE 14978647
+Tax-ID-No: 105/5839/1793
+
+Legal Disclaimer: This e-mail communication (and any attachment/s) is confidential and contains proprietary information, some or all of which may be legally privileged. It is intended solely for the use of the individual or entity to which it is addressed. Access to this email by anyone else is unauthorized. If you are not the intended recipient, any disclosure, copying, distribution or any action taken or omitted to be taken in reliance on it, is prohibited and may be unlawful.
 
 -- 
 linux-phy mailing list
