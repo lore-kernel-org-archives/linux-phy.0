@@ -4,107 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCC3FC83029
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 18:40:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 885ECC83038
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 19:14:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pb+jzY6yyUDESZ84OkMmpP53h5J1wucq2/2rhtEMibA=; b=YUuQjrJuUZa7YE
-	S5XHYRgQWsG6+DbTwv4mu4cUCpgP9aMtKiQkECE9bMX70//gjeXEYfZR076z3Efq7IntY479VsMdP
-	Thd6htSM0TT6TY9C0RTOEvWs84xOpYGXq6ftxefPSMzBruObKpZx6+HISkV98toNpCFWOMZf19vvZ
-	Db2J30UFSIfk5GnUVmsVoocS+tMzngebgxWee78Zjvh/6mzkcUI4ZWmqjGWrt3wUTwTctUK0HVQbg
-	ylgK/ZObPchwO6wQtz4GgsXRoVKVuhV3JHMXH4rugVjJYhVxHceju4hQ8YV5hiszcDz/J7prLXbOm
-	EPBXFJRkJP16p95pSAJA==;
+	List-Owner; bh=G+Nbu0sieqsWVAAjjkSIG0VD3OW+45NHIPbbTJzFj48=; b=wESZQagJdtAJgm
+	jzb4JNgNv4bSxP2mj/DzGIbO0/C0/Cj5aw7b1jAieNXX9gy3XT6wy48g2hahleyE/MUztMpyAWmaz
+	3Z+A+tj1Gsbx5e2vLQVYtacg8PtO7YaoEXm9HOGDGQ4gqS+2FlYPkh1Sx2Ot5x2h3qnEFphdX+alV
+	r9Wnm56+fNYac6aSr596LcdEDUZ2mo339obwo+tYBcvi1JSIQmjA4yROBFFIlzarEiz8F30uMGPxd
+	P5FWs7kZNye0Oiq1KXvqom62clrvpNEzzD4aZSdek9OsrfP7RASMLt8NRbHe+dbcGRVGfdfkAZvf/
+	MgyLS/jY5/mFamVMEh6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWJQi-00000003DdG-2Bww;
-	Mon, 30 Jun 2025 18:40:36 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uWJxT-00000003Gi1-0nkL;
+	Mon, 30 Jun 2025 19:14:27 +0000
+Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWJ9B-00000003Bou-1e82;
-	Mon, 30 Jun 2025 18:22:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=rMkTHKD3jio2hpq8BtE0DToF1CwksemxWLN6Z8dMYEk=; b=mUz7NqgffV0rYPh3ZnLwvJkEpu
-	0J0LuhLwsePTDDo35/na7mHRt9ZIwvrSorQoLAIw8OacoMDEuj3HUm8PBstW43g/LDeaDB+DwmIrU
-	Jhx2Hr4BHJ2TtYRHPyqk8TOH86aK6tBMHiWP1z1bekinaaaB8iZh67Rp3UJg3WWd06qilocV9f5Nk
-	cRnxWgodAByFMsIyf0oQb1w9GbGtiLss3+OU1usksRezvb4Mxxm890rnCJVG2g8VUELO++F6Se4D5
-	ZlnmNbIAvUXpR9fQjZmf7Yg5CuS+UwPUqDbwxID/vt8yfxTkjKKa4OLH97c2Qj8SPwnWzBNix5ynG
-	mmNa7j/A==;
-Received: from mail-qv1-xf33.google.com ([2607:f8b0:4864:20::f33])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWJ98-00000006rIf-1pYh;
-	Mon, 30 Jun 2025 18:22:28 +0000
-Received: by mail-qv1-xf33.google.com with SMTP id 6a1803df08f44-700fee04941so16189756d6.1;
-        Mon, 30 Jun 2025 11:22:25 -0700 (PDT)
+	id 1uWJpk-00000003Flu-36cU
+	for linux-phy@lists.infradead.org;
+	Mon, 30 Jun 2025 19:06:30 +0000
+Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-237e6963f63so14236705ad.2
+        for <linux-phy@lists.infradead.org>; Mon, 30 Jun 2025 12:06:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751307744; x=1751912544; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=rMkTHKD3jio2hpq8BtE0DToF1CwksemxWLN6Z8dMYEk=;
-        b=V7v7wMwphrsIT8Rj/6jaXligTaOt/zIBNKM+Xkmf8B5ZEX8XDPVnFhL+mpv8FS9ZlS
-         I6kjK9M8VqzP+VJGi/VUP9uYpALdbnZeMG2TPy4URy+4bgneUJLoS6tZ0H7fcX/NmrNg
-         A14gozA2kYOGgimxHO/bQMKI0ldqp+GZjybv50TjU2j8+nQQTF7qzsRg594ZZUUUWn0Q
-         uujotyh+CtHJqURW7XDoWCNboBzh7YjmfvcenOjThPJ9PaKRBtyoVoDzIm9g2QM8kgIG
-         Gb8pa7/HvJEH7cVM/Lr+Cco0OxsLnfjKiGoQGQcHVcILNB3tf5cFtRWs1htbJ1hqx99h
-         XHVg==
+        d=broadcom.com; s=google; t=1751310388; x=1751915188; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=1ifqxTBeQ+hR1fKmYKfMtsbKbYA3naoBciBfh4zZv5Y=;
+        b=MNxEqIxA5NQnWxjxfWGaWGsz8I2jZvAosMJbExwAwVpX2GAJM1jYuKhdiXJSIRwR9w
+         DDkWCqgiKZmQObrIh2DF8BbBLpo7TgxWLeryrG9O8SnaTnPxf6LX/3l4/9AszruWXgbD
+         R1s3pSAYaGwijRal0iE8oq3IeP/HRRxE1vx7g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751307744; x=1751912544;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20230601; t=1751310388; x=1751915188;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=rMkTHKD3jio2hpq8BtE0DToF1CwksemxWLN6Z8dMYEk=;
-        b=tKM2O8O7Q6Slg7O0gAb75AUsMmM9hzy/AlXMFvQRR/AzeZNLp0VMUKGprqTNrmrLLi
-         5U54gd0jFm+w2sx6cv6q4sMaamAsmnnzaP4/ChcArswU7mPt0FFD/EizWK/4X2vlMTCs
-         at/EJ7hcpFlBM6+1GzmDHXvdO+EDGZZB77O9aEdSX0xwyrhVLjehm0dO386pwf8Bf9Z0
-         l7rPkVXs6xNEoZomqbE27ow2N63AwQFv9It1xy0Ek3A0SGNytw/qx+d6t1AfE84iJhBi
-         YmqGZ0JPQslGbVjDOhXutOqUrgXSWmhgEa7yxdcYS8aoDGygaPLys/3+/sEBdjZ37rY0
-         bQyg==
-X-Forwarded-Encrypted: i=1; AJvYcCWcjqDFyyDntQiOCDsiYEPsb+FH9TaZ4pcVNAMq8mlhS8+JmTRRAohOqE2nZ1RXhs/mTDDpOHMhhnfk@lists.infradead.org, AJvYcCXDH51P2YMsbdipCVvaz8WOCGDjPDFDduZU4vnUR4Da6W1CdOCkfjfbdIQR3qQPdXBSMDoSq/oevDa4uIIaXCcS@lists.infradead.org
-X-Gm-Message-State: AOJu0YzvlAai94ygY01GYOP26+BPNM4sZhtZ2nGQtFpw7zZEPHcXGDUN
-	sUcUsgZq3sBFlgvRzwVvDxT39a6GGswtkAEOfojzEKMLKijbfXTx78cGz9eVQaQK
-X-Gm-Gg: ASbGnctUTRB6lfXRNThDNH/iXFRzyNuAOYGQ4qwaHEFDZA7B5f373SLx5VJf3pizIGt
-	5Dj2hkJBHwaVD7sAiKA8EXoXPelA80paNMzNVOfi/x1Fh5lqfrgjR6bgmxjmd91fAoYPqo20cWm
-	3NwpFcgqZ2FK/eFb6HAsxsWfHiOpYRjcLbaoSgRLnpP6OqsBXuxRfDRoDD2t1ZFGv1bPojwgpAb
-	Cm+RjKsKCCnK2ZirLj9p19aIqMZE6GIC8jHG3v52xIRkOBJ6gKbjuz4wY6G0i0U2Z++YlZyeMdp
-	bSK/Nf5BB/Q9JNbuwbXyQhMZBWBX9uV3v1zTHM3RT7zo27k0eaZTvY2Jvq0p
-X-Google-Smtp-Source: AGHT+IGiwj5LxtClCIDG815VfHCCgo1NQzaiahcgS1gasNLfX8v0zIb2JwxXV6ze0QIzIZrdOwwtAQ==
-X-Received: by 2002:a05:6214:468b:b0:6fc:ff41:8eb7 with SMTP id 6a1803df08f44-700035b783bmr287653906d6.31.1751307744228;
-        Mon, 30 Jun 2025 11:22:24 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:4851::dead:c001])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6fd771bc01bsm70953466d6.40.2025.06.30.11.22.19
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Jun 2025 11:22:23 -0700 (PDT)
-Date: Mon, 30 Jun 2025 15:22:17 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: linux-rockchip@lists.infradead.org
-Cc: Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v8 4/4] phy: rockchip-pcie: Properly disable TEST_WRITE
- strobe signal
-Message-ID: <ec6557ed50171594de5297d46dd5e2c96c2459a4.1751307390.git.geraldogabriel@gmail.com>
-References: <cover.1751307390.git.geraldogabriel@gmail.com>
+        bh=1ifqxTBeQ+hR1fKmYKfMtsbKbYA3naoBciBfh4zZv5Y=;
+        b=iUmXrTdHRiwLtWR5agHI9bWR1RcWzHuEcFCOebNUue+ccGKEIj0plod/mqyGL8v1m5
+         pNFVStAXYVEkQJTqkUMcc91oAVp63aKW2jKZlXmEfplr+Tq7EX73xOrUu0bK7ozbV9Ko
+         GLKA4Nbtgo9cVgwGvSLvEGLvs3RP8r0udi9hPtdpr5TFAHKJy+8Z+zWHGuV27hNWdVXS
+         luMU7rNOTE4Uozm11tTiPI3O7kb3fuRQiOVA0z2HBv0/ezndmoK3QHjcd6KAS32yhEyD
+         K4QRBKyt3ZFJCbsRXsI/PlsbiyCWvEnPJVytvItE6U5vuUDDnD8rBJPYC9jc9fiJFz9Z
+         0i0A==
+X-Gm-Message-State: AOJu0Yx3RWbP3ArCCUF2pb3fBeS/R6gkvlHzGki8THx/aNu69jYscwjG
+	90J8Bs+HJ3D4lvjAA69qT6swbi78RTnlDB1ujQHikSFLdl7j4cLc5esvV7UDAnY3VQ==
+X-Gm-Gg: ASbGnctnSqjBa5r8Y2sIA9g7okHe0HHROSiL7dXJQ22tqfBrQ1JGrdIqrMsRsZR/niX
+	RBnMsGZvtAEYdeHonoFrZCt2OAz4eDrAHaKScVCzZyHT8BzuDpv92YbLYRadmP8PJX9ZtHFjbQl
+	7hmVhoDTy5+Vczm9Gp1kpcGjRy+whaUFnRofJN+KP1SteBbBUYBj7Y7vR1mh1o57mDLrLCtHo/d
+	b3avMJwDHN+BBYH9qU2kuOzsGK7begZKzsEiwoeGOa2gVMzcs5Cy2zDNj7ptNr8tocqKqmBAgom
+	Xui5RTXzDus0Fpo3NbW+Pd/ckmtZZf8c3snODXUN0OLrNX56BgM2cL1mdx/GkXJs508bI08Nql9
+	Pwm8sUPg0D+PliqzmRZew8jEkTQ==
+X-Google-Smtp-Source: AGHT+IGrr+s2yHRofWEifQmJDsOPRoZeaxvkG2kjOYNFEpJTQ0qMZgmXnhWfnA7mYAH2pHmMqgczjw==
+X-Received: by 2002:a17:902:f606:b0:237:cc75:77b0 with SMTP id d9443c01a7336-23ac4633f4cmr184335375ad.30.1751310387627;
+        Mon, 30 Jun 2025 12:06:27 -0700 (PDT)
+Received: from [10.67.48.245] ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23acb3ba530sm85783255ad.200.2025.06.30.12.06.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 30 Jun 2025 12:06:26 -0700 (PDT)
+Message-ID: <5a374bbf-8f2e-49fb-9e9f-a55a8362e134@broadcom.com>
+Date: Mon, 30 Jun 2025 12:06:25 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1751307390.git.geraldogabriel@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] dt-bindings: phy: Convert brcm,sr-usb-combo-phy to DT
+ schema
+To: "Rob Herring (Arm)" <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <20250627220126.214577-1-robh@kernel.org>
+Content-Language: en-US
+From: Florian Fainelli <florian.fainelli@broadcom.com>
+Autocrypt: addr=florian.fainelli@broadcom.com; keydata=
+ xsBNBFPAG8ABCAC3EO02urEwipgbUNJ1r6oI2Vr/+uE389lSEShN2PmL3MVnzhViSAtrYxeT
+ M0Txqn1tOWoIc4QUl6Ggqf5KP6FoRkCrgMMTnUAINsINYXK+3OLe7HjP10h2jDRX4Ajs4Ghs
+ JrZOBru6rH0YrgAhr6O5gG7NE1jhly+EsOa2MpwOiXO4DE/YKZGuVe6Bh87WqmILs9KvnNrQ
+ PcycQnYKTVpqE95d4M824M5cuRB6D1GrYovCsjA9uxo22kPdOoQRAu5gBBn3AdtALFyQj9DQ
+ KQuc39/i/Kt6XLZ/RsBc6qLs+p+JnEuPJngTSfWvzGjpx0nkwCMi4yBb+xk7Hki4kEslABEB
+ AAHNMEZsb3JpYW4gRmFpbmVsbGkgPGZsb3JpYW4uZmFpbmVsbGlAYnJvYWRjb20uY29tPsLB
+ IQQQAQgAywUCZWl41AUJI+Jo+hcKAAG/SMv+fS3xUQWa0NryPuoRGjsA3SAUAAAAAAAWAAFr
+ ZXktdXNhZ2UtbWFza0BwZ3AuY29tjDAUgAAAAAAgAAdwcmVmZXJyZWQtZW1haWwtZW5jb2Rp
+ bmdAcGdwLmNvbXBncG1pbWUICwkIBwMCAQoFF4AAAAAZGGxkYXA6Ly9rZXlzLmJyb2FkY29t
+ Lm5ldAUbAwAAAAMWAgEFHgEAAAAEFQgJChYhBNXZKpfnkVze1+R8aIExtcQpvGagAAoJEIEx
+ tcQpvGagWPEH/2l0DNr9QkTwJUxOoP9wgHfmVhqc0ZlDsBFv91I3BbhGKI5UATbipKNqG13Z
+ TsBrJHcrnCqnTRS+8n9/myOF0ng2A4YT0EJnayzHugXm+hrkO5O9UEPJ8a+0553VqyoFhHqA
+ zjxj8fUu1px5cbb4R9G4UAySqyeLLeqnYLCKb4+GklGSBGsLMYvLmIDNYlkhMdnnzsSUAS61
+ WJYW6jjnzMwuKJ0ZHv7xZvSHyhIsFRiYiEs44kiYjbUUMcXor/uLEuTIazGrE3MahuGdjpT2
+ IOjoMiTsbMc0yfhHp6G/2E769oDXMVxCCbMVpA+LUtVIQEA+8Zr6mX0Yk4nDS7OiBlvOwE0E
+ U8AbwQEIAKxr71oqe+0+MYCc7WafWEcpQHFUwvYLcdBoOnmJPxDwDRpvU5LhqSPvk/yJdh9k
+ 4xUDQu3rm1qIW2I9Puk5n/Jz/lZsqGw8T13DKyu8eMcvaA/irm9lX9El27DPHy/0qsxmxVmU
+ pu9y9S+BmaMb2CM9IuyxMWEl9ruWFS2jAWh/R8CrdnL6+zLk60R7XGzmSJqF09vYNlJ6Bdbs
+ MWDXkYWWP5Ub1ZJGNJQ4qT7g8IN0qXxzLQsmz6tbgLMEHYBGx80bBF8AkdThd6SLhreCN7Uh
+ IR/5NXGqotAZao2xlDpJLuOMQtoH9WVNuuxQQZHVd8if+yp6yRJ5DAmIUt5CCPcAEQEAAcLB
+ gQQYAQIBKwUCU8AbwgUbDAAAAMBdIAQZAQgABgUCU8AbwQAKCRCTYAaomC8PVQ0VCACWk3n+
+ obFABEp5Rg6Qvspi9kWXcwCcfZV41OIYWhXMoc57ssjCand5noZi8bKg0bxw4qsg+9cNgZ3P
+ N/DFWcNKcAT3Z2/4fTnJqdJS//YcEhlr8uGs+ZWFcqAPbteFCM4dGDRruo69IrHfyyQGx16s
+ CcFlrN8vD066RKevFepb/ml7eYEdN5SRALyEdQMKeCSf3mectdoECEqdF/MWpfWIYQ1hEfdm
+ C2Kztm+h3Nkt9ZQLqc3wsPJZmbD9T0c9Rphfypgw/SfTf2/CHoYVkKqwUIzI59itl5Lze+R5
+ wDByhWHx2Ud2R7SudmT9XK1e0x7W7a5z11Q6vrzuED5nQvkhAAoJEIExtcQpvGagugcIAJd5
+ EYe6KM6Y6RvI6TvHp+QgbU5dxvjqSiSvam0Ms3QrLidCtantcGT2Wz/2PlbZqkoJxMQc40rb
+ fXa4xQSvJYj0GWpadrDJUvUu3LEsunDCxdWrmbmwGRKqZraV2oG7YEddmDqOe0Xm/NxeSobc
+ MIlnaE6V0U8f5zNHB7Y46yJjjYT/Ds1TJo3pvwevDWPvv6rdBeV07D9s43frUS6xYd1uFxHC
+ 7dZYWJjZmyUf5evr1W1gCgwLXG0PEi9n3qmz1lelQ8lSocmvxBKtMbX/OKhAfuP/iIwnTsww
+ 95A2SaPiQZA51NywV8OFgsN0ITl2PlZ4Tp9hHERDe6nQCsNI/Us=
+In-Reply-To: <20250627220126.214577-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250630_192226_605407_498B7F95 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20250630_120628_785960_E1987324 
+X-CRM114-Status: UNSURE (   5.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,41 +131,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-pcie_conf is used to touch TEST_WRITE strobe signal. This signal should
-be enabled, a little time waited, and then disabled. Current code clearly
-was copy-pasted and never disables the strobe signal. Adjust the define.
-While at it, remove PHY_CFG_RD_MASK which has been unused since
-64cdc0360811 ("phy: rockchip-pcie: remove unused phy_rd_cfg function").
+On 6/27/25 15:01, 'Rob Herring (Arm)' via BCM-KERNEL-FEEDBACK-LIST,PDL 
+wrote:
+> Convert the Broadcom Stingray USB PHY binding to DT schema format. It's
+> a straight forward conversion.
+> 
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
----
- drivers/phy/rockchip/phy-rockchip-pcie.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-index f22ffb41cdc2..4e2dfd01adf2 100644
---- a/drivers/phy/rockchip/phy-rockchip-pcie.c
-+++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-@@ -30,9 +30,8 @@
- #define PHY_CFG_ADDR_SHIFT    1
- #define PHY_CFG_DATA_MASK     0xf
- #define PHY_CFG_ADDR_MASK     0x3f
--#define PHY_CFG_RD_MASK       0x3ff
- #define PHY_CFG_WR_ENABLE     1
--#define PHY_CFG_WR_DISABLE    1
-+#define PHY_CFG_WR_DISABLE    0
- #define PHY_CFG_WR_SHIFT      0
- #define PHY_CFG_WR_MASK       1
- #define PHY_CFG_PLL_LOCK      0x10
+Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
 -- 
-2.49.0
-
+Florian
 
 -- 
 linux-phy mailing list
