@@ -4,90 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17EC3C83038
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 19:35:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE469C83033
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 21:33:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hkJ/7leY0/wCHbsMYQFmzvE82vPmewVMz7WnTy8Rvqk=; b=ey6++FV27bR4Vs
-	rKLe9yfMP09Otd8xnlGFkCdihf1heTjTHbKo+6XmsBln+1uNxxgkgAHEq78SLKM8GQpzzf/vdZd53
-	GS+2jazubZs2aQoftEYNe9VY0E12SZbnzxpoCzt3MIWIGW3o56NzF2GdRfBfie7bvXP3IYO4iLU2j
-	x+xX62X2a05mOf2AzBaCSO29h1RzauS/TihcyNKz8iT1jLzDRimUU4uKsqd2wdeOCPW1IXJ4FpHQI
-	HTu2Xt0ExFIEtlhJBe6ulQ70Z1QrYypIYCNHEj0s3VKZml3u8c1GJZ6W/sji1dJd/LaEGXOCywuyB
-	ZjRrVq9u6FZsugIvSIAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hpnWawlUzC99ifSgnVCfbfdqZwo0/f52a2BVV6+rDKM=; b=e7DIUk3TTq9J6I
+	YwxnbWtHPyrC4KWXGnMXXxFRx8ynGhYAKwwALdK5NW2uyfIdGXljQItTS6MFwCxLp4bmxrlfQZ3Ic
+	aiYjKq5yO0rfDlFqGXVFma8quUqD7cQ3QsPCLkbTpJEHyfR4aUIn2TJSo//tdbd3InX6PjRBVDXMo
+	hRV1jLLORwhB5ZosQuJuac37dYGucaEQivJcecNK7V9114gmU/eyrCQMu16ThR+rZI7imTcCg6Qkh
+	86sSSJ9GClFhDAQVzQWXvuDapef5AjE6EO1D5B5kWzqLZLag9yqkzCc8+jepWy6dtrqAxmsu5SSh0
+	dIi1teziWCmav9TTAGow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWKI9-00000003J1m-3EWm;
-	Mon, 30 Jun 2025 19:35:49 +0000
-Received: from mail-qt1-x829.google.com ([2607:f8b0:4864:20::829])
+	id 1uWM85-00000003Ur6-1UiD;
+	Mon, 30 Jun 2025 21:33:33 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWJ88-00000003BZI-1wGl;
-	Mon, 30 Jun 2025 18:21:25 +0000
-Received: by mail-qt1-x829.google.com with SMTP id d75a77b69052e-4a77ffcb795so48639911cf.0;
-        Mon, 30 Jun 2025 11:21:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751307683; x=1751912483; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=j5oPe7NuWEBlVMssFfuoeeybtC7f7CEpTOJiXlRikAU=;
-        b=mIcWtAj1U4Y9LujxLZTI1V4CwrVVxkxWeB9Wxq6Xzzc1GoHukV7Yu/c5kRc12zcXsb
-         UecSE9RwoS41clmdH9cA7t5Vg0EqJE6Mv5tA1pygqFfTdulQaAtSobM0eAyPh+syyk5P
-         hJRyqNcC9RCyg/YQ6SatM3wTl/ZE9qZrawUnNja1srdDLIkcdfZxSyzVj1LkpfzckmZb
-         BgatZFVt+iTz1A81lD/lngSz+wfP3B+vlS0kDraSl6Z0gIsEqmzfkB1XRD9BMykOtTMg
-         fktWr8cHjEPOqShkwHrufmktypLixWFNMEDcQVR351+1dzBsrazd2GsqWJebNMBvXY7V
-         JYew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751307683; x=1751912483;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=j5oPe7NuWEBlVMssFfuoeeybtC7f7CEpTOJiXlRikAU=;
-        b=mYVXyscb8y5jLs4esSQ1Dryn5SW4gy9uTkceQJjcO4BaEJr0qOTnaMH+TuY0dhrxXr
-         w057Ksc9wF0hb0zdm6OmM4MlpVaJY/enLaPcKDoDl9cFiD8MNT6qrhySWbjYjQRGrvDs
-         BQ/Cb34wZL0YN8HreLsRbmaOIegqLFqBiTvVyx4Gazk5FrQbkY2JLJWBl04Xm+9mz93r
-         ccLG89QeZ9E5jEH0fa9SeFeGOtjiLwNkVlBkUMxD5ARgvWWt9xy23VwHQc4wlCIZgrab
-         CUygYjCX/r/OeylLpzyOVyD97KdRPwEXm+ciNA92cnWTJW7Gc6UHO9neo8h4eWyYv9Rn
-         gbSQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVp5gK5+chr9GpBDr8nacBJUiTKm+/Ct/Xo79eTDwyEagryuBxpQjxvQX4QTBV/fYQRfcTQt39eklgZ@lists.infradead.org, AJvYcCXFTCie6Bq3IentLyFziyt4HHzKMOklRnAxLgbWW1GIPXJ5m+gfz+XdDlghMHlHxYheIOcZKZqVB2tyWvuQyZdv@lists.infradead.org
-X-Gm-Message-State: AOJu0YyjKnASrxq5Sm7SH/gJVj0KMJA6l191u5SLwbztPVBA8C1DDbKH
-	l4h4rkhe707Mie2v2jktr9kkton3CZshn67Ry4hlhYZ/7vNOVjdVNUR8YlwE6Wl9
-X-Gm-Gg: ASbGnct+h5MP7IsR5SKBfp+ovOaNWwgj8K/FvDqhg7LaIQ1WadS8IWRbWl9WoV213is
-	5irIIao8NGVH3CvMswJxsOtwb/hqKBPEngqbuc6VT3hjlF7Tomj10tKlplKmtpHus7locK6s/X1
-	TRmsPaF9Ux8C4aqU7xY839CrZcsNMQsg6uW8w2JDViX5hWPitcKr1e2M/mtONeI2CbmdefkpK4c
-	9ivTTf55aqJPfWEzf21VL+we4RwWCYKAqHisIL9suDYrmeQy3mdYPGIvtluCqZit33ZUATfho/Q
-	plPkg+bs6t8ERg8VeC5qv+gPr4M69PnOJZpBSn9XgrRFn45nkw==
-X-Google-Smtp-Source: AGHT+IFsXJjoVwUXm0fcOFhLVNqsYO/moCefhcFNV46+xG5upfucPDlS2Uf2IOjWztKAdTp7b2Jfhg==
-X-Received: by 2002:a05:622a:1355:b0:4a4:4af2:5cff with SMTP id d75a77b69052e-4a7fc9d4f7amr238186611cf.3.1751307682697;
-        Mon, 30 Jun 2025 11:21:22 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:4851::dead:c001])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4a7fc5cd906sm62801131cf.79.2025.06.30.11.21.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Jun 2025 11:21:22 -0700 (PDT)
-Date: Mon, 30 Jun 2025 15:21:06 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: linux-rockchip@lists.infradead.org
+	id 1uWM82-00000003Upm-2907;
+	Mon, 30 Jun 2025 21:33:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
+	bh=BTJWDoX6+dZpqVbCI05HYOZjmWwxTYx7suIMcGN7BKI=; b=kXPOClJk1Kmb/DiiyBtViPQ7s4
+	BtvZG0K9yDMyQ4fGAOW0in3ubCmp2jBQZQuvmSkNvuRkZoBH5+Cd9uXGWaJLcrZnzwTlI6ctkPg0E
+	MPCtQMCm0MxNBF+z6YN3VNCvT0Y5AP4nvgRmrHCPBIAzCPyr/yGFufXgaB7zRpS5fSshucWqrdNkz
+	cTRAN+LkSxuoc10IY9ad5dILrvGnMUn61DobyKVq28TF0PSvch2asNQdHHgXEZLWQArucI5zeklKY
+	dl7HGTSabPyPOfaLNFCCXbNHXk2/MWobnlFcqn2HpHbxaBkwOcjzD90tFzh6Nld+AGVo80RkSVSmM
+	XfhReTgw==;
+Received: from i53875bfd.versanet.de ([83.135.91.253] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1uWM7s-00084a-BS; Mon, 30 Jun 2025 23:33:20 +0200
+From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org,
+ Geraldo Nascimento <geraldogabriel@gmail.com>
 Cc: Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v8 0/4] PCI: rockchip: Improve driver quality
-Message-ID: <cover.1751307390.git.geraldogabriel@gmail.com>
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Krzysztof =?UTF-8?B?V2lsY3p5xYRza2k=?= <kw@linux.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rick wertenbroek <rick.wertenbroek@gmail.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v8 3/4] phy: rockchip-pcie: Enable all four lanes if required
+Date: Mon, 30 Jun 2025 23:33:19 +0200
+Message-ID: <4006908.X513TT2pbd@diego>
+In-Reply-To: <d3e7dc38bd287aa93a5d6bba87bf3c428ae92ca4.1751307390.git.geraldogabriel@gmail.com>
+References: <cover.1751307390.git.geraldogabriel@gmail.com>
+ <d3e7dc38bd287aa93a5d6bba87bf3c428ae92ca4.1751307390.git.geraldogabriel@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250630_112124_500891_1B291651 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250630_143330_573245_F7E0CFC8 
+X-CRM114-Status: GOOD (  17.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,56 +75,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-During a 30-day debugging-run fighting quirky PCIe devices on RK3399
-some quality improvements began to take form and after feedback from
-community they reached more polished state.
-
-This will ensure maximum chance of retraining to 5.0GT/s, on all four
-lanes and fix async strobe TEST_WRITE disablement. On top of this,
-standard PCIe defines are now used to reference registers from offset
-at Capabilities Register.
-
-Unfortunately, it seems Rockchip-IP PCIe is unable to handle 16-bit
-register writes and there's risk of corrupting state of RW1C registers,
-an issue raised by Bjorn Helgaas. There's little I could do to fix that,
-so on this issue the situation remains the same.
-
----
-V7 -> V8: add Valmantas Paliksa Signed-off-by to third patch
-V6 -> V7: drop RFC tag as per Heiko Stuebner's reminder, update cover
-letter
-V5 -> V6: reflow to 75 cols, use 5.0GTs instead of Gen2 nomenclature,
-clarify strobe write adjustment and remove PHY_CFG_RD_MASK
-V4 -> V5: fix build failure, reflow commit messages and also convert
-registers for EP operation, all suggested by Ilpo
-V3 -> V4: fix setting-up of TLS in Link Control and Status Register 2,
-also adjust commit titles
-V2 -> V3: correctly clean-up with standard PCIe defines as per Bjorn's
-suggestion
-V1 -> V2: use standard PCIe defines as suggested by Bjorn
-
-Geraldo Nascimento (4):
-  PCI: rockchip: Use standard PCIe defines
-  PCI: rockchip: Set Target Link Speed before retraining
-  phy: rockchip-pcie: Enable all four lanes if required
-  phy: rockchip-pcie: Properly disable TEST_WRITE strobe signal
-
- drivers/pci/controller/pcie-rockchip-ep.c   |  4 +-
- drivers/pci/controller/pcie-rockchip-host.c | 48 +++++++++++----------
- drivers/pci/controller/pcie-rockchip.h      | 12 +-----
- drivers/phy/rockchip/phy-rockchip-pcie.c    | 15 +++----
- 4 files changed, 36 insertions(+), 43 deletions(-)
-
--- 
-2.49.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QW0gTW9udGFnLCAzMC4gSnVuaSAyMDI1LCAyMDoyMjowMSBNaXR0ZWxldXJvcMOkaXNjaGUgU29t
+bWVyemVpdCBzY2hyaWViIEdlcmFsZG8gTmFzY2ltZW50bzoKPiBDdXJyZW50IGNvZGUgZW5hYmxl
+cyBvbmx5IExhbmUgMCBiZWNhdXNlIHB3cl9jbnQgd2lsbCBiZSBpbmNyZW1lbnRlZCBvbgo+IGZp
+cnN0IGNhbGwgdG8gdGhlIGZ1bmN0aW9uLiBMZXQncyByZW9yZGVyIHRoZSBlbmFibGVtZW50IGNv
+ZGUgdG8gZW5hYmxlCj4gYWxsIDQgbGFuZXMgdGhyb3VnaCBHUkYuCj4gCj4gUmV2aWV3ZWQtYnk6
+IE5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPgo+IFJldmlld2VkLWJ5
+OiBSb2JpbiBNdXJwaHkgPHJvYmluLm11cnBoeUBhcm0uY29tPgo+IAo+IFNpZ25lZC1vZmYtYnk6
+IFZhbG1hbnRhcyBQYWxpa3NhIDx3YWxtaXNAZ21haWwuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEdl
+cmFsZG8gTmFzY2ltZW50byA8Z2VyYWxkb2dhYnJpZWxAZ21haWwuY29tPgoKaG1tLCBpZiBWYWxt
+YW50YXMgaXMgdGhlIG9yaWdpbmFsIGF1dGhvciB5b3Ugc2hvdWxkIHByb2JhYmx5IGtlZXAgdGhh
+dCBhdXRob3JzaGlwCiAgZ2l0IGNvbW1pdCAtLWFtZW5kIC0tYXV0aG9yPSJWYWxtYW50YXMgUGFs
+aWtzYSA8d2FsbWlzQGdtYWlsLmNvbT4iCnNob3VsZCBkbyB0aGUgdHJpY2suCgpUaGUgZmlyc3Qg
+c2lnbmVkLW9mZiBzaG91bGQgYmUgZnJvbSB0aGUgcGF0Y2ggYXV0aG9yLCB0aGVuIHlvdXIgc2ln
+bmVkLW9mZgppbmRpY2F0ZXMgeW91IGhhbmRsaW5nIHRoZSBwYXRjaCBsYXRlciBhcyBwYXJ0IG9m
+IHRoaXMgc2VyaWVzLgoKW29yLCBpZiB5b3UgbW9kaWZpZWQgdGhlIGNvZGUgb2YgdGhlIHBhdGNo
+IGhlYXZpbHksIENvLWRldmVsb3BlZC1ieSBjb3VsZAogYWxzbyBiZSBhcHByb3ByaWF0ZV0KCkhl
+aWtvCgo+IC0tLQo+ICBkcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtcGNpZS5jIHwg
+MTIgKysrKysrLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKyksIDYgZGVs
+ZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2Nr
+Y2hpcC1wY2llLmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtcGNpZS5jCj4g
+aW5kZXggYmQ0NGFmMzZjNjdhLi5mMjJmZmI0MWNkYzIgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9w
+aHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXBjaWUuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3JvY2tj
+aGlwL3BoeS1yb2NrY2hpcC1wY2llLmMKPiBAQCAtMTYwLDYgKzE2MCwxMiBAQCBzdGF0aWMgaW50
+IHJvY2tjaGlwX3BjaWVfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKPiAgCj4gIAlndWFy
+ZChtdXRleCkoJnJrX3BoeS0+cGNpZV9tdXRleCk7Cj4gIAo+ICsJcmVnbWFwX3dyaXRlKHJrX3Bo
+eS0+cmVnX2Jhc2UsCj4gKwkJICAgICBya19waHktPnBoeV9kYXRhLT5wY2llX2xhbmVvZmYsCj4g
+KwkJICAgICBISVdPUkRfVVBEQVRFKCFQSFlfTEFORV9JRExFX09GRiwKPiArCQkJCSAgIFBIWV9M
+QU5FX0lETEVfTUFTSywKPiArCQkJCSAgIFBIWV9MQU5FX0lETEVfQV9TSElGVCArIGluc3QtPmlu
+ZGV4KSk7Cj4gKwo+ICAJaWYgKHJrX3BoeS0+cHdyX2NudCsrKSB7Cj4gIAkJcmV0dXJuIDA7Cj4g
+IAl9Cj4gQEAgLTE3NiwxMiArMTgyLDYgQEAgc3RhdGljIGludCByb2NrY2hpcF9wY2llX3BoeV9w
+b3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCj4gIAkJCQkgICBQSFlfQ0ZHX0FERFJfTUFTSywKPiAg
+CQkJCSAgIFBIWV9DRkdfQUREUl9TSElGVCkpOwo+ICAKPiAtCXJlZ21hcF93cml0ZShya19waHkt
+PnJlZ19iYXNlLAo+IC0JCSAgICAgcmtfcGh5LT5waHlfZGF0YS0+cGNpZV9sYW5lb2ZmLAo+IC0J
+CSAgICAgSElXT1JEX1VQREFURSghUEhZX0xBTkVfSURMRV9PRkYsCj4gLQkJCQkgICBQSFlfTEFO
+RV9JRExFX01BU0ssCj4gLQkJCQkgICBQSFlfTEFORV9JRExFX0FfU0hJRlQgKyBpbnN0LT5pbmRl
+eCkpOwo+IC0KPiAgCS8qCj4gIAkgKiBObyBkb2N1bWVudGVkIHRpbWVvdXQgdmFsdWUgZm9yIHBo
+eSBvcGVyYXRpb24gYmVsb3csCj4gIAkgKiBzbyB3ZSBtYWtlIGl0IGxhcmdlIGVub3VnaCBoZXJl
+LiBBbmQgd2UgdXNlIGxvb3AtYnJlYWsKPiAKCgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
