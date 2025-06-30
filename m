@@ -4,93 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FE40C83029
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 17:43:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09DE8C8302D
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 18:21:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=rwLik1py0Mt+TtLpA8IXoz/1Dtfi3l7s2nYCq+qEIfI=; b=xPgxSy85ckGa4u
-	Uz8YoWbZv+5JuqcHaYUfQfMrnSq2mnSwaqDqFjivbjpRrUtO1YWp0jlmQQs1iU2r9XuHp9ssX1lBf
-	bOznN6Te2D30PENztP6cdndKlYZTjAqXbVwo2YcEVEoH2S2L1e8g80aeFIptWqQ0li8+akmytdOI3
-	Vp0JJKEXugpsKayVTGq75yDPLGl7UagxFVTqzRItfMfuI+C7QGk/xaP0uDLsIsI3ZzZIQXLWqH3tY
-	Oq9aWQA45eWCMNsS1NNUCRPQjDVsdhAiwbQCtseX5QWtiB+BZ8ANIuWWUJ8LZOZaUSLyodbD922a0
-	8WBxg0RfwECpIPwRhtOQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rthBrAxbCijOG73zNhHgljRb6yC+hRCqTqRvFBIPBnE=; b=CIxMAbKBXHXK+E
+	ga56JFmC+4V+5NgcgufwK/VwK4bzuM+k9ovkr5od8foaiBiXjkgddPyll4ZuFn6xxH/NialHs5VNl
+	eN1NpY1BzXsBl1/5MQ3uWN4mEFfGr8v+u+7LAn/geSn9+Zs9dPEyD5mbtc3rYDcnAKuoyYu3Vhp7D
+	3HZ+ovawLrhXR23ggHfIYsMoYeZmjeD5r0C7Js5Bc3ccjK7b5SvauonjTyofTJYNJW4gZ2aOY1wIB
+	nRp4fFEZDt6TKyygCpegpDK4HyJwdNSnTpX5+9ZsZoufUvFQF6C5OneLUuCsi5lCW4MaMMJq2MrrZ
+	OW1cBqAH481Gc4852VbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWIXg-000000036UR-3pcZ;
-	Mon, 30 Jun 2025 17:43:44 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1uWJ8O-00000003BdB-3JNF;
+	Mon, 30 Jun 2025 18:21:40 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWHL4-00000002v6Y-3O02
-	for linux-phy@lists.infradead.org;
-	Mon, 30 Jun 2025 16:26:40 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-6099d89a19cso4686634a12.2
-        for <linux-phy@lists.infradead.org>; Mon, 30 Jun 2025 09:26:38 -0700 (PDT)
+	id 1uWIis-000000037vE-1acr;
+	Mon, 30 Jun 2025 17:55:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=TkbKDizxju3W+51KZwQ3Fxa7XNUAV9NHwEQ1ocZXOb4=; b=laTEv76SlQnqYqVzSadMamABsf
+	b0ROIbHYv21v87SKh6Aw0HNUmchd1wUojZph3rxtfBVloSwegI8b7x5t+A5g7zJIFZcXTjTqu9muZ
+	4bxx5nBBwx2dNSsbb0goeZlMZ7oXxJDo2VAsjzFOgZjHazk17D+d9iSlFcQUuWuVPiMbcrcWfKcGy
+	uf/wu7lAMO2YlE+vl2I6gvwSa4uHSWysbY96E6pbo+WBBtZIMEov4VSh+h1ajPZqhm+PzCUU4q/iX
+	gb5qVYX5dvnmUMUWngmc90eQhJU1yhKazaZ+z/ygae4qq1knDPwEMYQ1INBBP4w8JRbcib+Byf3aI
+	xBshMS6g==;
+Received: from mail-qk1-x732.google.com ([2607:f8b0:4864:20::732])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uWIip-00000006qaQ-1mP9;
+	Mon, 30 Jun 2025 17:55:17 +0000
+Received: by mail-qk1-x732.google.com with SMTP id af79cd13be357-7d09f11657cso437871985a.0;
+        Mon, 30 Jun 2025 10:55:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1751300797; x=1751905597; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=535W8k9pU5sUVdNwdQXzTxnf8TouFsbPOMvqYlYzbaQ=;
-        b=bRoHoZU3E03tkEz0sDz/dIa4KI8Qi95j1sRQAjyhZGUoN4cwqrdrz1lXWlM5nYXGGH
-         uDEuGLOke9Yyw22yfHEvwSRlmp2CbZxCpcQIcexB7IEUhkqOGuWs9oekDOCezFLe+/wO
-         EB8iC+NSWz/2on8pFgzpzC1p3cK3zlJOV2DV2HH6kt3uroFs73e4HxrO9VmgW0U+jC3C
-         44IQxPRNu2uhpZM++Fsr05OnbDg+nD1CFfKY9tL1ENF3oaWBzNjGiyAwTCB7hK8k4hgV
-         lSO7+8e7OdNpL8JTCXxJbPgwLtFMRq902YSL7c4eyQeN2LIb7vDxBQYaIeR+CMpGDS0I
-         Zraw==
+        d=gmail.com; s=20230601; t=1751306113; x=1751910913; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=TkbKDizxju3W+51KZwQ3Fxa7XNUAV9NHwEQ1ocZXOb4=;
+        b=QEG+0edjyoAohSzi0CKmxeqoXzqjG4rJo0+OS2KILLvj055CIbPqU1lZjg1yQfho2e
+         NW/IKhwqV0YpL2LuxOBZDsVRXvqGI6pwVUMNnDt3SqbUYGyL2/F/KLSB8Ki9sMpcphud
+         dmENxLVDbXCdjBX2kMG23S8ttHSjtidt3kBJfLaUAEmRsdwIlyLOD+jB7OYTzpkn551c
+         MqBDfq6wx1B4Zrp5Y32dTnG0DGSlcHLSFCrEb52B+UMyCkG2kupa+P7umqXYwVm2FJbC
+         pL5IPMJ//lgDosJlSQVAlSo3Eob5VEf8P5ZDnjhcoy2apRRU3TgSo901HLJOCZScJBzX
+         FwQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751300797; x=1751905597;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=535W8k9pU5sUVdNwdQXzTxnf8TouFsbPOMvqYlYzbaQ=;
-        b=HDn3S14w5ftgR99sUWPQ8svLeN/onMDOPj9vMShSFOCnz/LGfAa0X9j+LF5CxfCko+
-         8v9PuQwwDbnQAelt4EsE1i+/EhxRRQ+aUCLxUrDzovV43+AakbBltYmGmDtSJashMbXU
-         DOO3KhPeLyD7hfXbC1i4KMTEJhm/hEyA2k5+TErXf9pTnX7tnT80TCcFAin+NqvIDDYw
-         ksVPPzLkAqFaFQdCm2xJ/tiqmgfZDu6j9qqx56vN1F7cM9oqRek+CtjaphgOaGfkBi/t
-         N0G6vl47sm0CQjBfgUWxMm5S6IfYjreAHxgqB4Co2NLLQUMAHBp4ziypafTb6lv9eQl1
-         VF4A==
-X-Forwarded-Encrypted: i=1; AJvYcCVLZVifiBpmKBW01ru/ARodnfDEYpTOrbkzOVW7uTGNvJ0X06GOI0Pl8w5B3NEYH0dA7frLJoLpyeQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzAo3fUbzOcEsJeMyb/u8GdmPouDdqCEMY3bAtHlC99jcYzY6cL
-	SM2sB0cd0HvMDJaAo9ygc79vhlG+LGPEZ3Vl6S4PyF+WAEbNKO6nj6qEd18PQT/3Pxw=
-X-Gm-Gg: ASbGncsH2Qp3cS8qlEEFxUbcoxE2OI7IAkkXoIE9k+Ui/TYQ8/62kDD63nzCzNPrLNp
-	Oq0RkZewfrzYBISHsChjS6yyUBrhUg+vSDsbiBFmdk4EpS2rFO/izDhdtOyrDmyC1qDUIkk20IX
-	0/6Z5goE+lNHoWwRxDjJSw4AiFjKJjav0PQJtDrIZcqlRAJKZS136IMBmyXzi1xjCbJBSeFBDR3
-	oaDa93wpCHxsV8lBmH7M9t2L6KJmGSwzVVvfBge3n8LYNuv+FcjLvEGSRanTF6XQ5dY7DQkNsjC
-	z5QANxD1R7a0qzKWyEboDVxnyatxCTxc5BKcVq3MH7kBStahytFOyS2t/odGUM5SxsDb4jYOK17
-	jptg=
-X-Google-Smtp-Source: AGHT+IEZUFYK3OlqCsPYEUjbY6KleNynpLo18SzDo4cGFtE9VgvfMNqI4nas16gqs6EKpGcliuTGQg==
-X-Received: by 2002:a17:907:94cc:b0:ad8:8719:f6f3 with SMTP id a640c23a62f3a-ae34fdbbadfmr1268647466b.22.1751300797043;
-        Mon, 30 Jun 2025 09:26:37 -0700 (PDT)
-Received: from localhost ([2603:8080:b800:f700:fb67:363d:328:e253])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae35776d0ebsm685350066b.155.2025.06.30.09.26.36
+        d=1e100.net; s=20230601; t=1751306113; x=1751910913;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TkbKDizxju3W+51KZwQ3Fxa7XNUAV9NHwEQ1ocZXOb4=;
+        b=ospTQDvnjbiv4ZvxfosOA552ojvI6dlqkHNRC/nJogsTvUYmBF9rkR8Ozd6Of0O/kO
+         Tj2vc8KDJxwnH7A3uvtS1BSw54XiVYcG79mCJPmIBxqbu3VjbYfnVdSqf4nQ0gyW41zm
+         XUYCJqXCXsLPvshqx7ymwJdsBv72rLMCyn7M5/WdCmoJF9r2/bgvsb0NfaKGay+8Si2P
+         A4tQWkF4VVK5vaL9Lif5TbdQLQeGrPwLnhNP3HicqSlqDTY79g+kktc4ZGT8DfIi5bHd
+         fqobZ8F3oQK7WjvyEGsfsM9heBc5sickS14Gty67Igvqg11m/lemjkY9K/cI1j7BrUp9
+         4yng==
+X-Forwarded-Encrypted: i=1; AJvYcCW5RsV3WQWT8R/CPfiVVbEUt1QOwkgYtkgbkpqcvqqMBLxDcKMBIeOYjwqm8Y73glvjBHo7lY2fdkfp@lists.infradead.org, AJvYcCWPy+wsGf5BUSXtU48u+IKZKmI8zbHyy5bdMI4U0muUtaqk3P97nGRpJ5Bcx2xAnpIeo56Idhww61TaZa4NulCg@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywauy1aJhtICkGnTCEsKOLuZ4Xrof7Pai+AM5bVaq73qouyYomV
+	/mtWNYcPNPy1gtUxn1EVyRNQwM0g4udWBVFFB7umFzYaTsOA0uGJpJ+p
+X-Gm-Gg: ASbGncveliphs7DKozvFVLZjCdkViUKYOJj8e9jSz0mHJm4nDbTz8KJnJCdU2VRxAL3
+	vd3qACgjCocDvCuXoFretu6C7xBEwibhPR1+xq+PAUHLI31qZAvL37uWQ2yra4tIeh1LrJMB7l7
+	wsSas/9pR7SQME2HInPcdlT3v+Yz/LDIHLJPSg7JrkuvTTZNU8SJlO2scu/0QdHh2LO866ztGHQ
+	NdieiB/6SJ7XWe0TWhIJ7jM5beWbGBRsOok0+eZDwjwvzrDI9CMiCc0sQXETnV0HzaggO+mALUL
+	LBasaI7yMWEPNnTgZ5Ru9lDD0QUzTuhA3f0zAZOXo0hciRq+4A==
+X-Google-Smtp-Source: AGHT+IEAoLv3ZFdFWjd7lAICC4bbFV6sU3+PxQlEK6DUAJNkCBCFRSmZ508WVU4rao0shvvKBCho+w==
+X-Received: by 2002:a05:620a:1993:b0:7d4:4d55:98f9 with SMTP id af79cd13be357-7d44d55b1f9mr1237496485a.28.1751306112549;
+        Mon, 30 Jun 2025 10:55:12 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:4851::dead:c001])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-7d443203279sm636637885a.54.2025.06.30.10.55.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Jun 2025 09:26:36 -0700 (PDT)
-Date: Mon, 30 Jun 2025 19:26:34 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev, Shradha Todi <shradha.t@samsung.com>,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-fsd@tesla.com
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org,
-	kw@linux.com, robh@kernel.org, bhelgaas@google.com,
-	jingoohan1@gmail.com, krzk+dt@kernel.org, conor+dt@kernel.org,
-	alim.akhtar@samsung.com, vkoul@kernel.org, kishon@kernel.org,
-	arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com,
-	pankaj.dubey@samsung.com, Shradha Todi <shradha.t@samsung.com>
-Subject: Re: [PATCH v2 09/10] PCI: exynos: Add support for Tesla FSD SoC
-Message-ID: <5ed352de-8319-4e3f-8cce-43a4bb332e66@suswa.mountain>
+        Mon, 30 Jun 2025 10:55:12 -0700 (PDT)
+Date: Mon, 30 Jun 2025 14:55:05 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v7 3/4] phy: rockchip-pcie: Enable all four lanes if
+ required
+Message-ID: <aGLPeZn9ZSw3FurH@geday>
+References: <cover.1751200382.git.geraldogabriel@gmail.com>
+ <b203b067e369411b029039f96cfeae300874b4c7.1751200382.git.geraldogabriel@gmail.com>
+ <2affed16-f3c4-47d3-9ca6-e4f48e875367@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250625165229.3458-10-shradha.t@samsung.com>
+In-Reply-To: <2affed16-f3c4-47d3-9ca6-e4f48e875367@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250630_092638_845509_4367FE3A 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250630_185515_613255_EC0AF3D8 
+X-CRM114-Status: GOOD (  17.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,73 +122,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Shradha,
+On Mon, Jun 30, 2025 at 02:48:25PM +0100, Robin Murphy wrote:
+> On 29/06/2025 9:58 pm, Geraldo Nascimento wrote:
+> > Current code enables only Lane 0 because pwr_cnt will be incremented on
+> > first call to the function. Let's reorder the enablement code to enable
+> > all 4 lanes through GRF.
+> 
+> As usual the TRM isn't very clear, but the way it describes the 
+> GRF_SOC_CON_5_PCIE bits does suggest they're driving external input 
+> signals of the phy block, so it seems reasonable that it could be OK to 
+> update the register itself without worrying about releasing the phy from 
+> reset first. In that case I'd agree this seems the cleanest fix, and if 
+> it works empirically then I think I'm now sufficiently convinced too;
+> 
+> Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
-kernel test robot noticed the following build warnings:
+Hi Robin and Neil,
 
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Thank you both for the positive reviews and the effort.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Shradha-Todi/PCI-exynos-Remove-unused-MACROs-in-exynos-PCI-file/20250626-104154
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git next
-patch link:    https://lore.kernel.org/r/20250625165229.3458-10-shradha.t%40samsung.com
-patch subject: [PATCH v2 09/10] PCI: exynos: Add support for Tesla FSD SoC
-config: um-randconfig-r071-20250630 (https://download.01.org/0day-ci/archive/20250630/202506301329.VWoiH0yn-lkp@intel.com/config)
-compiler: gcc-12 (Debian 12.2.0-14+deb12u1) 12.2.0
+I must admit however that it looks like this patch was lifted verbatim
+from Armbian and I'm missing the Signed-off-by from the original author.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202506301329.VWoiH0yn-lkp@intel.com/
+As Robin may attest, I initially started by blindingly enabling all
+lanes which, of course, is no good. I tried a suggestion by Robin which
+did not work, and eventually settled on this Armbian solution, which at
+least has got some battle-testing.
 
-smatch warnings:
-drivers/pci/controller/dwc/pci-exynos.c:621 exynos_pcie_probe() error: we previously assumed 'pdata->res_ops' could be null (see line 609)
-drivers/pci/controller/dwc/pci-exynos.c:655 exynos_pcie_probe() warn: missing error code 'ret'
+I already contacted Valmintas Paliksa, the original author of the patch,
+and asked permission to use his Signed-off-by. I'm aware I could probably
+use the Signed-off-by without strict permission, but it does not feel
+right to me.
 
-vim +621 drivers/pci/controller/dwc/pci-exynos.c
-
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  595  			dev_err(dev, "couldn't get the register offset for syscon!\n");
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  596  			return ret;
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  597  		}
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  598  	}
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  599  
-778f7c194b1dac drivers/pci/controller/dwc/pci-exynos.c Jaehoon Chung      2020-11-13  600  	/* External Local Bus interface (ELBI) registers */
-778f7c194b1dac drivers/pci/controller/dwc/pci-exynos.c Jaehoon Chung      2020-11-13  601  	ep->elbi_base = devm_platform_ioremap_resource_byname(pdev, "elbi");
-778f7c194b1dac drivers/pci/controller/dwc/pci-exynos.c Jaehoon Chung      2020-11-13  602  	if (IS_ERR(ep->elbi_base))
-778f7c194b1dac drivers/pci/controller/dwc/pci-exynos.c Jaehoon Chung      2020-11-13  603  		return PTR_ERR(ep->elbi_base);
-778f7c194b1dac drivers/pci/controller/dwc/pci-exynos.c Jaehoon Chung      2020-11-13  604  
-10106d5c1f9cee drivers/pci/controller/dwc/pci-exynos.c Cristian Ciocaltea 2024-12-17  605  	ret = devm_clk_bulk_get_all_enabled(dev, &ep->clks);
-6b11143f9344dd dripdata->res_opsvers/pci/controller/dwc/pci-exynos.c Shradha Todi       2024-02-20  606  	if (ret < 0)
-6b11143f9344dd drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2024-02-20  607  		return ret;
-4b1ced841b2e31 drivers/pci/host/pci-exynos.c           Jingoo Han         2013-07-31  608  
-ed1b6ec2c47ce8 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25 @609  	if (pdata->res_ops && pdata->res_ops->init_regulator) {
-                                                                                                    ^^^^^^^^^^^^^^
-This code assumes pdata->res_ops can be NULL
-
-ed1b6ec2c47ce8 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  610  		ret = ep->pdata->res_ops->init_regulator(ep);
-4b1ced841b2e31 drivers/pci/host/pci-exynos.c           Jingoo Han         2013-07-31  611  		if (ret)
-4b1ced841b2e31 drivers/pci/host/pci-exynos.c           Jingoo Han         2013-07-31  612  			return ret;
-ed1b6ec2c47ce8 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  613  	}
-4b1ced841b2e31 drivers/pci/host/pci-exynos.c           Jingoo Han         2013-07-31  614  
-ed1b6ec2c47ce8 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  615  	ret = samsung_regulator_enable(ep);
-3278478084747c drivers/pci/host/pci-exynos.c           Niyas Ahmed S T    2017-02-01  616  	if (ret)
-3278478084747c drivers/pci/host/pci-exynos.c           Niyas Ahmed S T    2017-02-01  617  		return ret;
-4b1ced841b2e31 drivers/pci/host/pci-exynos.c           Jingoo Han         2013-07-31  618  
-b2e6d3055d5545 drivers/pci/dwc/pci-exynos.c            Bjorn Helgaas      2017-02-21  619  	platform_set_drvdata(pdev, ep);
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  620  
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25 @621  	if (pdata->res_ops->set_device_mode)
-                                                                                                    ^^^^^^^^^^^^^^
-But this dereferences it without checking.  Most likely the
-NULL check should be removed?
-
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  622  		pdata->res_ops->set_device_mode(ep);
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  623  
-b9388ee21b4e79 drivers/pci/controller/dwc/pci-exynos.c Shradha Todi       2025-06-25  624  	switch (ep->pdata->device_mode) {
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
+Thanks,
+Geraldo Nascimento
 
 -- 
 linux-phy mailing list
