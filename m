@@ -4,159 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00015C7EE30
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:00:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B164C8303C
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:00:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SEe3CuVe4fcIrJxDPRb/bY2qPW5tT5l2T3WwbyZjF3o=; b=GTxIQ1nqBVOK9v
-	iky1xZRav6y32GNrw+OBRfnRQl4XK5cp/T2dUx1MU2KxF6n5Rs4agjvTqX4aWpul/mHkcvkEuyOnw
-	/YWAhukM6VsjL2IQhpIvbJIgUfywuQYOvSGPK9isg0xjhMxP98FJxfgUBlClEb363ZzdJH89W5pjx
-	iP0DMmtlS7QqJofJKpCrmv5Vm7mkb5oi6wKNNoG88qyBNNxBD0iDVrFOhOF+fjijVGn751ENTNOIW
-	VSz6BRNPMaUDfXuDsKeBrpM0wYSWLqrJG9jK/Bz/XJA5lB7iCZwo9KZ+3CtF4c0xjQ1dH1HkKbT9a
-	SmfEOpRSdkvEp0x9X17A==;
+	List-Owner; bh=M22rSOcPQnGpOjPE7x5vxuMgfMghYmnetUKmxdSeWL0=; b=jGIVXSyoHZaq3v
+	BVl2PG7LFVcZzOAfJS1KgsRzznppzZJdIbYU5Ubuawkkhkb3tHbvzARwUL1ilCH2JLXZACWCwiPAB
+	CNsIaXsBnN0KzKBonPyLgRT3Z/kAtA7Y/avUUCXiwzeX4P01s7f8hensn4LHZR6QV02/277xAek3f
+	PyboZ8MyoxqY7GstpH571fT9YyL6iU2bzzeeXEm5DBVDYguQQnnkpE9iCXkFpHdA7RzAkEtnprZMp
+	+n8rrGCS+J4/EL3jHfrJ2lYFMH5G0eG7tBMxVer63dfjkI2YKWSJ9Vhgj/FEkG1yB4pTYRneknKCO
+	V+QkJ6XWCQr0etTPyuLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWgDQ-00000006PCF-2qzP;
-	Tue, 01 Jul 2025 19:00:24 +0000
-Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
+	id 1uWgDS-00000006PDG-0Ods;
+	Tue, 01 Jul 2025 19:00:26 +0000
+Received: from [203.254.224.34] (helo=mailout4.samsung.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWdnl-000000062CM-01zL;
-	Tue, 01 Jul 2025 16:25:46 +0000
-Received: by mail-qk1-x734.google.com with SMTP id af79cd13be357-7d45f5fde50so170855985a.2;
-        Tue, 01 Jul 2025 09:25:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751387144; x=1751991944; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=MwCrqmYe9TCJHuYWG2jCcUWVn5259lJARsV/a3PINFE=;
-        b=lAsYTX5Q/b+rJKmHkojnbcUBDqsB9ytu+fhYKWzmWwNJlzCWFYgVES5ZbrKhTdviM6
-         VDRmXT8LyObUh/jbKHz7i5u1zzUa82H3RBjo++gK/unnXy+NQmF0zRqoLhqNWkb+e1ZI
-         vsVO2M+ffNINvaXYC7OTgUukugegJ0rr4ciCuJMin6ZGLSJwwouRCYqLAnuuJFKR+uTD
-         pCH8Avp6kw54rHrZgF9zaG8ECiRfaG0u919F/C5/MpUzncrAU8R2YsabnuK+NWqtGQ+Y
-         v3ZbPrgazCjdagcviyfzgHAOjmADovYmyb0JFlYUBzrpVSQcHLJNXwecqthl2MbCIUig
-         thgg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751387144; x=1751991944;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MwCrqmYe9TCJHuYWG2jCcUWVn5259lJARsV/a3PINFE=;
-        b=XQYXy+zWldHiBuIns2EtlPIjzIamKmUSjRheQBYZ0T3tsbMgnmiiGTU6o06Faq+pz5
-         D8HglteAq0PQOacRTjoIeZnpV5A7BqSKBdNZCV9NzHw8aerMVGSvHbUo8KyoWko53pyo
-         Q7QkSFBQnikubGL+7AzV+drlUcrpwons5PYGY6mDvOvbuez50ZORm0cWkbb/OOslFTgf
-         7a+A9G/a/tc1sLvxH6X0yvGydQyqGKP7SGpLWPpudrE26AGEnU84JVdo0orhQVz+W0/Z
-         AV07Y8hDjqiMaQbpW5BmKbc4aYcSxG1xjWwuNsGoxBZYrsv1QfOrQ7WiLEfHdaUnEDmg
-         g9Wg==
-X-Forwarded-Encrypted: i=1; AJvYcCUKh8TeSfhhtBzC5nGJAcSCSat1dpJA7xMBF6gJw527FIDsvad5aE4h16zlhYM4NKr+sYNaj1jvoyqDT2/6MLA=@lists.infradead.org, AJvYcCULJJbxVwRbtzIK78BGRsMC9sYc1PjLI+noAd+cuRq2G6PpyeOD5htwGrYP+980iYPcr08cYjIOTQOh@lists.infradead.org, AJvYcCUMOqvntwMRqIpkaluQQWpvot6WwrPOpj09/W+dAgSV4qhtpqFEbt/kbeIjvJiq3jeR5ztBueDzhC+r/D8vmIWnbA==@lists.infradead.org, AJvYcCV3IeoCKjZGiMT8GtoTk+EvLV2k8bnvnAeLXyAyFlqpJVS0E8xCYM4mDM0wKkhy6jesA1DM2FGlKpcvDBjezjA=@lists.infradead.org, AJvYcCV8vXWSNrDhWuzR7SZyFeYNWxHSKY5hPPA/pv3XD/MHpJo7EdGCAJKWnsXV8KbKV1IJky4hQib8IpUpbYwF@lists.infradead.org
-X-Gm-Message-State: AOJu0YwEmsffPNIfxb3eTE6ixHo27IzX9+fqcxHkkxhTj6g6Vh4O63OB
-	akSn/RFgLllXPsQxIwO/uKItHxz+kGZV4Y6zwrOJxdPcwFFmThFl02ay
-X-Gm-Gg: ASbGnctck+xuNSkRFKw0FQdEMq9CDUt+DPBvSMIab4iDckQ7MkyHkRivJi7pBwJHG+X
-	e22ISRhYGN7CddTDcj+TZzz5l6u6Js/nrfeduhqL4tYMLQd6thtUzBrYvogVv8n0qYFTTcVdpKP
-	1Fe1N6/GrfcSbJupRkSJmAkJLpCOdjDmmLgi94NXtMFyA1sztabDM7r3Wv7OLRZHKwdpCzkQvUL
-	e9sZrMrdVG4AVTdebShr38LY3MOvSy0mvXKv26cCrc576ZN4cBmzUjKhw6zsoU1SJioCyW4XKLL
-	lDUUXQPUSTbJfHrV8hTm9Dc/7jnXbYmouqm8wAfAXWSchaxRMg==
-X-Google-Smtp-Source: AGHT+IFaquJkOuj7GD/t4hRYC7j2CE8mxqIujMtOYOepN4kjeXyf+EKHtvQBv03/JpyXmxYQUG4sHA==
-X-Received: by 2002:a05:620a:1a1a:b0:7c5:95e6:ce1d with SMTP id af79cd13be357-7d4438566f9mr2476294085a.0.1751387143543;
-        Tue, 01 Jul 2025 09:25:43 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:55e2::dead:c001])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6fd772e4305sm86349236d6.66.2025.07.01.09.25.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 01 Jul 2025 09:25:43 -0700 (PDT)
-Date: Tue, 1 Jul 2025 13:25:19 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: Waqar Hameed <waqar.hameed@axis.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
-	Julien Panis <jpanis@baylibre.com>,
-	William Breathitt Gray <wbg@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Bartosz Golaszewski <brgl@bgdev.pl>, Peter Rosin <peda@axentia.se>,
-	Jonathan Cameron <jic23@kernel.org>,
-	David Lechner <dlechner@baylibre.com>,
-	Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>,
-	Andy Shevchenko <andy@kernel.org>,
-	Cosmin Tanislav <cosmin.tanislav@analog.com>,
-	Lars-Peter Clausen <lars@metafoo.de>,
-	Michael Hennerich <Michael.Hennerich@analog.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Matteo Martelli <matteomartelli3@gmail.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Francesco Dolcini <francesco@dolcini.it>,
-	=?utf-8?Q?Jo=C3=A3o_Paulo_Gon=C3=A7alves?= <jpaulo.silvagoncalves@gmail.com>,
-	Hugo Villeneuve <hvilleneuve@dimonoff.com>,
-	Subhajit Ghosh <subhajit.ghosh@tweaklogic.com>,
-	Mudit Sharma <muditsharma.info@gmail.com>,
-	Gerald Loacker <gerald.loacker@wolfvision.net>,
-	Song Qiang <songqiang1304521@gmail.com>, Crt Mori <cmo@melexis.com>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Karol Gugala <kgugala@antmicro.com>,
-	Mateusz Holenko <mholenko@antmicro.com>,
-	Gabriel Somlo <gsomlo@gmail.com>, Joel Stanley <joel@jms.id.au>,
-	Claudiu Manoil <claudiu.manoil@nxp.com>,
-	Vladimir Oltean <vladimir.oltean@nxp.com>,
-	Wei Fang <wei.fang@nxp.com>, Clark Wang <xiaoning.wang@nxp.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Sebastian Reichel <sre@kernel.org>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Jerome Brunet <jbrunet@baylibre.com>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Han Xu <han.xu@nxp.com>, Haibo Chen <haibo.chen@nxp.com>,
-	Yogesh Gaur <yogeshgaur.83@gmail.com>,
-	Mark Brown <broonie@kernel.org>, Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Souradeep Chowdhury <quic_schowdhu@quicinc.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Peter Ujfalusi <peter.ujfalusi@linux.intel.com>,
-	Bard Liao <yung-chuan.liao@linux.intel.com>,
-	Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
-	Daniel Baluta <daniel.baluta@nxp.com>,
-	Kai Vehmanen <kai.vehmanen@linux.intel.com>,
-	Pierre-Louis Bossart <pierre-louis.bossart@linux.dev>,
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, kernel@axis.com,
-	linux-iio@vger.kernel.org, linux-omap@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-input@vger.kernel.org,
-	linux-mmc@vger.kernel.org, imx@lists.linux.dev,
-	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
-	linux-pwm@vger.kernel.org, linux-amlogic@lists.infradead.org,
-	linux-spi@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	sound-open-firmware@alsa-project.org, linux-sound@vger.kernel.org
-Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
-Message-ID: <aGQL72Ssa4RHShIp@geday>
-References: <pnd7c0s6ji2.fsf@axis.com>
- <aGP92Aqcxt-x78nu@geday>
- <pndsejf6g5k.fsf@axis.com>
+	id 1uWdt1-0000000631b-0uDj
+	for linux-phy@lists.infradead.org;
+	Tue, 01 Jul 2025 16:31:14 +0000
+Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250701163105epoutp043342ce7736b43015c35331be8553c340~OLZ7qc71x2890828908epoutp04X
+	for <linux-phy@lists.infradead.org>; Tue,  1 Jul 2025 16:31:05 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250701163105epoutp043342ce7736b43015c35331be8553c340~OLZ7qc71x2890828908epoutp04X
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1751387465;
+	bh=NV08uxmKxQiLzKQgdc7Udco8g49OXPRD/TVseEZ79Sg=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=oQ6JxyiSsRb8OkrahQBSHBaP4SgZZP429A35wA+5j7trNIQjUSumf681zPY38ExXE
+	 DtAXWVAFrep5Qyi6a4WS7QGBjopcen1fvWduJ1uYz2zPM/3nOWhLMWxmRXHtAk8DnY
+	 zHHVzSruJiYtEna+RuSmMWF/ut4IyxrOnuM6kDBk=
+Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
+	20250701163104epcas5p1a96bded3717d037acd2cf0fd71346d8f~OLZ6XQIha2226522265epcas5p1u;
+	Tue,  1 Jul 2025 16:31:04 +0000 (GMT)
+Received: from epcas5p1.samsung.com (unknown [182.195.38.176]) by
+	epsnrtp01.localdomain (Postfix) with ESMTP id 4bWpS62zKGz6B9m6; Tue,  1 Jul
+	2025 16:31:02 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
+	20250701133519epcas5p487e7452860a95fd78fe65dea6781a0f4~OJAdeuWxM0466004660epcas5p4i;
+	Tue,  1 Jul 2025 13:35:19 +0000 (GMT)
+Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250701133516epsmtip2097055360b4361ec0ac62f1bab9d901a~OJAap0Ruh1523815238epsmtip2J;
+	Tue,  1 Jul 2025 13:35:16 +0000 (GMT)
+From: "Shradha Todi" <shradha.t@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, "'Rob Herring'"
+	<robh@kernel.org>
+Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-fsd@tesla.com>, <mani@kernel.org>, <lpieralisi@kernel.org>,
+	<kw@linux.com>, <bhelgaas@google.com>, <jingoohan1@gmail.com>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
+	<vkoul@kernel.org>, <kishon@kernel.org>, <arnd@arndb.de>,
+	<m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
+	<pankaj.dubey@samsung.com>
+In-Reply-To: <f877b3d7-d770-4424-9813-da748775f456@kernel.org>
+Subject: RE: [PATCH v2 07/10] dt-bindings: phy: Add PHY bindings support for
+ FSD SoC
+Date: Tue, 1 Jul 2025 19:05:15 +0530
+Message-ID: <02bf01dbea8c$fc835cb0$f58a1610$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <pndsejf6g5k.fsf@axis.com>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQFUClgbainc6hQuKSBO0V8ttZVgkwGg1JXJAfs/ltABn1f9rAD4JQ8bAeFf3fS07FvF0A==
+Content-Language: en-in
+X-CMS-MailID: 20250701133519epcas5p487e7452860a95fd78fe65dea6781a0f4
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-541,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250625165319epcas5p3721c19f6e6b482438c62dd1ef784de03
+References: <20250625165229.3458-1-shradha.t@samsung.com>
+	<CGME20250625165319epcas5p3721c19f6e6b482438c62dd1ef784de03@epcas5p3.samsung.com>
+	<20250625165229.3458-8-shradha.t@samsung.com>
+	<20250627211721.GA153863-robh@kernel.org>
+	<02af01dbea78$24f01310$6ed03930$@samsung.com>
+	<f877b3d7-d770-4424-9813-da748775f456@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_092545_046339_75702DD3 
-X-CRM114-Status: GOOD (  24.85  )
+X-CRM114-CacheID: sfid-20250701_093111_905085_D8EE666A 
+X-CRM114-Status: GOOD (  36.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -173,41 +106,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 01, 2025 at 06:15:51PM +0200, Waqar Hameed wrote:
-> On Tue, Jul 01, 2025 at 12:25 -0300 Geraldo Nascimento <geraldogabriel@gmail.com> wrote:
-> 
-> > [Some people who received this message don't often get email from geraldogabriel@gmail.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
-> >
-> > On Tue, Jul 01, 2025 at 05:03:33PM +0200, Waqar Hameed wrote:
-> >> When `devm_add_action_or_reset()` fails, it is due to a failed memory
-> >> allocation and will thus return `-ENOMEM`. `dev_err_probe()` doesn't do
-> >> anything when error is `-ENOMEM`. Therefore, remove the useless call to
-> >> `dev_err_probe()` when `devm_add_action_or_reset()` fails, and just
-> >> return the value instead.
-> >
-> > Hi Waqar,
-> >
-> > thank you for the patch. However I personally advise you to split the
-> > patches per-file and remember to then precede each individual patch
-> > subject with the proper subsystem and driver touched.
-> >
-> > While this looks like a nit-pick, it really isn't, and my suggestion
-> > will make reviewing much more easier and you'll get your Reviewed-by's
-> > and Acked-by's much more smoothly.
-> >
-> > The cover-letter should probably be preceded by "treewide" instead of
-> > a specific subsystem.
-> 
-> Thank you for the suggestion Geraldo! I will do that (as also answered
-> to David).
 
-You're welcome Waqar! Note that David's suggestion is even smarter than
-mine: instead of patch-bombing lots of maintainers with changes unrelated
-to their subsystems through a treewide change, he suggests you split the
-patch into one series per subsystem. This is indeed advisable.
 
-Thanks,
-Geraldo Nascimento
+> -----Original Message-----
+> From: Krzysztof Kozlowski <krzk@kernel.org>
+> Sent: 01 July 2025 16:55
+> To: Shradha Todi <shradha.t@samsung.com>; 'Rob Herring' <robh@kernel.org>
+> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; linux-
+> fsd@tesla.com; mani@kernel.org; lpieralisi@kernel.org; kw@linux.com; bhelgaas@google.com;
+> jingoohan1@gmail.com; krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+> vkoul@kernel.org; kishon@kernel.org; arnd@arndb.de; m.szyprowski@samsung.com;
+> jh80.chung@samsung.com; pankaj.dubey@samsung.com
+> Subject: Re: [PATCH v2 07/10] dt-bindings: phy: Add PHY bindings support for FSD SoC
+> 
+> On 01/07/2025 13:06, Shradha Todi wrote:
+> >
+> >
+> >> -----Original Message-----
+> >> From: Rob Herring <robh@kernel.org>
+> >> Sent: 28 June 2025 02:47
+> >> To: Shradha Todi <shradha.t@samsung.com>
+> >> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> > linux-
+> >> samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; linux-
+> >> fsd@tesla.com; manivannan.sadhasivam@linaro.org; lpieralisi@kernel.org; kw@linux.com;
+> >> bhelgaas@google.com; jingoohan1@gmail.com; krzk+dt@kernel.org; conor+dt@kernel.org;
+> >> alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org; arnd@arndb.de;
+> >> m.szyprowski@samsung.com; jh80.chung@samsung.com; pankaj.dubey@samsung.com
+> >> Subject: Re: [PATCH v2 07/10] dt-bindings: phy: Add PHY bindings support for FSD SoC
+> >>
+> >> On Wed, Jun 25, 2025 at 10:22:26PM +0530, Shradha Todi wrote:
+> >>> Document PHY device tree bindings for Tesla FSD SoCs.
+> >>>
+> >>> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
+> >>> ---
+> >>>  .../bindings/phy/samsung,exynos-pcie-phy.yaml | 25 +++++++++++++++++--
+> >>>  1 file changed, 23 insertions(+), 2 deletions(-)
+> >>>
+> >>> diff --git a/Documentation/devicetree/bindings/phy/samsung,exynos-pcie-phy.yaml
+> >> b/Documentation/devicetree/bindings/phy/samsung,exynos-pcie-phy.yaml
+> >>> index 41df8bb08ff7..4dc20156cdde 100644
+> >>> --- a/Documentation/devicetree/bindings/phy/samsung,exynos-pcie-phy.yaml
+> >>> +++ b/Documentation/devicetree/bindings/phy/samsung,exynos-pcie-phy.yaml
+> >>> @@ -15,10 +15,13 @@ properties:
+> >>>      const: 0
+> >>>
+> >>>    compatible:
+> >>> -    const: samsung,exynos5433-pcie-phy
+> >>> +    enum:
+> >>> +      - samsung,exynos5433-pcie-phy
+> >>> +      - tesla,fsd-pcie-phy
+> >>>
+> >>>    reg:
+> >>> -    maxItems: 1
+> >>> +    minItems: 1
+> >>> +    maxItems: 2
+> >>>
+> >>>    samsung,pmu-syscon:
+> >>>      $ref: /schemas/types.yaml#/definitions/phandle
+> >>> @@ -30,6 +33,24 @@ properties:
+> >>>      description: phandle for FSYS sysreg interface, used to control
+> >>>                   sysreg registers bits for PCIe PHY
+> >>>
+> >>> +allOf:
+> >>> +  - if:
+> >>> +      properties:
+> >>> +        compatible:
+> >>> +          contains:
+> >>> +            enum:
+> >>> +              - tesla,fsd-pcie-phy
+> >>> +    then:
+> >>> +      description:
+> >>> +        The PHY controller nodes are represented in the aliases node
+> >>> +        using the following format 'pciephy{n}'. Depending on whether
+> >>> +        n is 0 or 1, the phy init sequence is chosen.
+> >>
+> >> What? Don't make up your own aliases.
+> >>
+> >> If the PHY instances are different, then maybe you need a different
+> >> compatible. If this is just selecting the PHY mode, you can do that in
+> >> PHY cells as the mode depends on the consumer.
+> >>
+> >
+> > FSD PCIe has 2 instances of PHY. Both are the same HW Samsung
+> > PHYs (Therefore share the same register offsets). But the PHY used here
+> 
+> So same?
+> 
+> > does not support auto adaptation so we need to tune the PHYs
+> > according to the use case (considering channel loss, etc). This is why we
+> 
+> So not same? Decide. Either it is same or not, cannot be both.
+> 
+> If you mean that some wiring is different on the board, then how does it
+> differ in soc thus how it is per-soc property? If these are use-cases,
+> then how is even suitable for DT?
+> 
+> I use your Tesla FSD differently and then I exchange DTSI and compatibles?
+> 
+> You are no describing real problem and both binding and your
+> explanations are vague and imprecise. Binding tells nothing about it, so
+> it is example of skipping important decisions.
+> 
+> > have 2 different SW PHY initialization sequence depending on the instance
+> > number. Do you think having different compatible (something like
+> > tesla,fsd-pcie-phy0 and tesla,fsd-pcie-phy1) and having phy ID as platform data
+> > is okay in this case? I actually took reference from files like:
+> 
+> And in different use case on same soc you are going to reverse
+> compatibles or instance IDs?
+>
+
+Even though both the PHYs are exactly identical in terms of hardware,
+they need to be programmed/initialized/configured differently.
+
+Sorry for my misuse of the word "use-case". To clarify, these configurations
+will always remain the same for FSD SoC even if you use it differently.
+
+I will use different compatibles for them as I understand that it is the best
+option.
+ 
+> > drivers/usb/phy/phy-am335x-control.c
+> 
+> So you took 15 years old hardware, code and binding as an example.
+> 
+> No, don't do that ever.
+> 
+> Anyway, poor choices even in newer code should not drive your design.
+> Design it properly, describe the hardware.
+> 
+> > drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c
+> > who use alias to differentiate between register offsets for instances.
+> 
+> 
+> 
+> Best regards,
+> Krzysztof
+
 
 -- 
 linux-phy mailing list
