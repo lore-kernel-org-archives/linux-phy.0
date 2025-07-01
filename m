@@ -4,98 +4,182 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB481C7EE30
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 20:21:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D328DC7EE30
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 22:23:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YC94hRzt+di8Pw6GZ+ZZsO+WCdvaoo/w6SXU5O3CCgE=; b=0zj/FX2mLrvUFUhbz00Yr39Gv8
-	jqfjJuPbtcpgxD96Ps+R0wpGyezQmxASaJSO8yrB3aFcWUkuP7wOvO8yYphpceAhuQcETcozAUJbq
-	HUdWRwm3K5Ec0xr2CirC3flRqBFeq6ral7P3FbZPc3NiToZpcWKXQzCOxzMS7+eYJ2Tk5lmn+b0NA
-	xg8Z71CroJd667pdTV3M/LhETFch0pcTGFTKw74c4JuzbYf69x0KqpvraLK6ZoeekcPu/zDAZ90xn
-	YgFev6/Hbr+Ee9sEDVROdh/T+0jlrzn48V8/QeiRQicpOkFD6dh352iH9f2gd/gpaEXUfTrCedTt6
-	Iya6vXnQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
+	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ehBDt9aYq1sd5sPSO282srQghn2RpB1zK1vZaCY1vkU=; b=d0kKGRDugB8K9CXzWiMsJfs0tk
+	0f9hH1M3xjvquxBLEQiautZ0VCKhJriL6DSX3fNP3ddnBjvI+6Mht2CkaSIad0VP+kjdX02A265sq
+	cQ1IuTTgGIf0nRodCf+9UGpNMZd92nvv+rmSWPUFjqQ8uTYgvC0WOlmyZTraP1qbXZcJPaWlUJJFl
+	3fazYRqEfE+3Jewooi30DjVLQHSIAUXuZrsIf7Wned9UOjmFY4Cpy3N3TqjnhW/YWrOQBaH2NgBg/
+	+ySCxFJPLAbZ28DrLRwqYQUgjXimO9rMUHxvH9Zc/jgT1TV688Prw3tK2dH89KkFl7Od9eGnFw1lu
+	Wk4whm0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWhTR-00000006YuP-1oDS;
-	Tue, 01 Jul 2025 20:21:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uWjO2-00000006mA6-1W96;
+	Tue, 01 Jul 2025 22:23:34 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWf1q-00000006GJd-24oO;
-	Tue, 01 Jul 2025 17:44:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5CAA545F3B;
-	Tue,  1 Jul 2025 17:44:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A33B7C4CEEB;
-	Tue,  1 Jul 2025 17:44:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751391860;
-	bh=T/Oh3jotCzcmLKi13L685F87dDpqLPMtMcQj6fakPvk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PFC8LLDaQCERloxxDdzc9fDp24D33SKAmYgZ1QFEOmzF6jiKiF2fH1EYoGLBTDyic
-	 DAf4tg0M7jTvpKKWO6Bcb9xNER/kpNY8Am6LmTbfe7sVF+DtYDlF35U1Coo3CpV4M7
-	 /Th3Z18z7qwHtMSYuKvYYoGDluKbU7eBxqGLTb2vcV1rZcyfADPAoDl0EaInKSZQMy
-	 +523XjIJeVk/nSgi3w/m0+h4md8zNTFLXti5KrMVtUpNMoC8ixPYLXAhDIboKSx9jS
-	 e17VaG1/Z+x6oAaXb9lBOGsWH7AmAbp/zzL2jDYTGZ/Kq2PWkC1Yc60bP+K5sjuSO+
-	 BX5oEW8zb2ibw==
-Date: Tue, 1 Jul 2025 19:44:17 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>
-To: Waqar Hameed <waqar.hameed@axis.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>, 
-	Julien Panis <jpanis@baylibre.com>, William Breathitt Gray <wbg@kernel.org>, 
-	Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
-	Peter Rosin <peda@axentia.se>, Jonathan Cameron <jic23@kernel.org>, 
-	David Lechner <dlechner@baylibre.com>, Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>, 
-	Andy Shevchenko <andy@kernel.org>, Cosmin Tanislav <cosmin.tanislav@analog.com>, 
-	Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Matteo Martelli <matteomartelli3@gmail.com>, 
-	Heiko Stuebner <heiko@sntech.de>, Francesco Dolcini <francesco@dolcini.it>, 
-	=?utf-8?Q?Jo=C3=A3o_Paulo_Gon=C3=A7alves?= <jpaulo.silvagoncalves@gmail.com>, Hugo Villeneuve <hvilleneuve@dimonoff.com>, 
-	Subhajit Ghosh <subhajit.ghosh@tweaklogic.com>, Mudit Sharma <muditsharma.info@gmail.com>, 
-	Gerald Loacker <gerald.loacker@wolfvision.net>, Song Qiang <songqiang1304521@gmail.com>, 
-	Crt Mori <cmo@melexis.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Karol Gugala <kgugala@antmicro.com>, 
-	Mateusz Holenko <mholenko@antmicro.com>, Gabriel Somlo <gsomlo@gmail.com>, Joel Stanley <joel@jms.id.au>, 
-	Claudiu Manoil <claudiu.manoil@nxp.com>, Vladimir Oltean <vladimir.oltean@nxp.com>, 
-	Wei Fang <wei.fang@nxp.com>, Clark Wang <xiaoning.wang@nxp.com>, 
-	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Sebastian Reichel <sre@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Kevin Hilman <khilman@baylibre.com>, 
-	Jerome Brunet <jbrunet@baylibre.com>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
-	Han Xu <han.xu@nxp.com>, Haibo Chen <haibo.chen@nxp.com>, 
-	Yogesh Gaur <yogeshgaur.83@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>, "Martin K. Petersen" <martin.petersen@oracle.com>, 
-	Souradeep Chowdhury <quic_schowdhu@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Peter Ujfalusi <peter.ujfalusi@linux.intel.com>, 
-	Bard Liao <yung-chuan.liao@linux.intel.com>, Ranjani Sridharan <ranjani.sridharan@linux.intel.com>, 
-	Daniel Baluta <daniel.baluta@nxp.com>, Kai Vehmanen <kai.vehmanen@linux.intel.com>, 
-	Pierre-Louis Bossart <pierre-louis.bossart@linux.dev>, Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
-	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, kernel@axis.com, 
-	linux-iio@vger.kernel.org, linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-mediatek@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-input@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, imx@lists.linux.dev, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org, 
-	linux-pwm@vger.kernel.org, linux-amlogic@lists.infradead.org, linux-spi@vger.kernel.org, 
-	linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
-	sound-open-firmware@alsa-project.org, linux-sound@vger.kernel.org
-Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
-Message-ID: <ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
-References: <pnd7c0s6ji2.fsf@axis.com>
+	id 1uWj7z-00000006k5y-01Ie;
+	Tue, 01 Jul 2025 22:07:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=yHwAv12MJ2rVQshly9zOcpKx/s0nEnYBCXjhdC3BzHWegXBXpYnEVovjkhgKIJmU/MIe9ZhCoKHOjehTxIc4LS5DExeqUfOXc+FtklQwrEPbmpMMl0b6Vlau+QGzRtUvdHOy2OBUnf6lcYeLj+og98vw3jHwZtvXtWvvYHhhyK40WLGYzOQt9X8BHjl23X0MJeXy2tNHobxtXKYeDrp5oyQ1ejbpaDtFqwNlA5828qZ4W+qxn95N6WjJWW8pTgVQJThxTgyWr7EtTM7ZdZP41AQ3oO5pzm4W/esnoXS8K5z6fty50FGQ35C77JLMpujgznANmhOZ1wiR3I1T6N/d2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=uJPBeS3J7bnOdbZf1/iQiE6bdXKyCFIIRD7l0e9cQuU=;
+ b=RwL+zHQRHWVdma5LybV6QiCBsEErvabPlzYD3ANK1ycqgUeCsqMK0VvbOmm76BTs7ZJgi9OHDGAsnaQFUXs8UU7whdSmSL5u9pJQR8H6aa04Hrpn6PQo+GajBbVgdJW7UajG0lAMahoByMC98TrNDb5Qv4IkP/YlbHGW4u6WJssZUCpAiZet8tkVClwNoxl99aMLVKHvi4tPtfIUXaa0gn1gI9H60eqXsf/HMrAfZSpjS9ukmXWrjtmzFMf0y+vI+t8rBnDLW29skPpraV8u/u4NuNWe4S65yJKCngFrqBle7naUYzVbXrk1/ApEdFCaDORLvQM+Hz9DMn115XUXMw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uJPBeS3J7bnOdbZf1/iQiE6bdXKyCFIIRD7l0e9cQuU=;
+ b=KRR195a249yrRJuDOKfGls33fYRnp5zPlwYQBv9lYC19QnCGQSG3TDqlfBHmZ3LcRV8ufWnJbUkSaQARulay/s6Qi+V2QhTiYZ0GP/xh3KM/pv06ZDXQexrH2KBRJ0Dv9IkopOw3dGjBX5Lx2vuitrg/VLLA5EiYBXGaxx5zCBA6gD1F/uE9BD2qMULMEE73lTp2Iy65hQhOGCXzCavi/ksty3AOUDXHuKhS3lVo3Q96zoNNLtC+gd7fnuVBZccyPaLTMJiexiu0pzCoPpRvjKZZJBGGwxUaBswYO530voy4IOg8l4MThjGiSTHJxitIsZOwXiIcjqEL3EmY9Aea3g==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AM9PR04MB8843.eurprd04.prod.outlook.com (2603:10a6:20b:40a::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8880.32; Tue, 1 Jul
+ 2025 22:06:37 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%7]) with mapi id 15.20.8880.029; Tue, 1 Jul 2025
+ 22:06:37 +0000
+From: Frank Li <Frank.Li@nxp.com>
+Date: Tue, 01 Jul 2025 18:06:06 -0400
+Subject: [PATCH 1/7] dt-bindings: media: add DW MIPI CSI-2 Host support
+Message-Id: <20250701-95_cam-v1-1-c5172bab387b@nxp.com>
+References: <20250701-95_cam-v1-0-c5172bab387b@nxp.com>
+In-Reply-To: <20250701-95_cam-v1-0-c5172bab387b@nxp.com>
+To: Rui Miguel Silva <rmfrfs@gmail.com>, 
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+ Martin Kepplinger <martink@posteo.de>, Purism Kernel Team <kernel@puri.sm>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Eugen Hristev <eugen.hristev@linaro.org>, Shawn Guo <shawnguo@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>, 
+ Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+ Frank Li <Frank.Li@nxp.com>, Luis Oliveira <lolivei@synopsys.com>, 
+ Eugen Hristev <eugen.hristev@linaro.org>
+X-Mailer: b4 0.13-dev-e586c
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1751407588; l=5644;
+ i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
+ bh=19yk0dMzXlBZNGVaRoqoBXO+PAL+XkDyyZa0sTp9LUQ=;
+ b=7769/hkSijbCnn2ZugszPJRsUuddMVrRWO1ZWfuv1JfHtdnvhwyPtLhPi2jxvkcWDiVsUcrqb
+ y/6QQE8kn04BHGF1596xlaMk+6ahOFNdc4AffD1LARc4YCpVsOGeq34
+X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
+ pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
+X-ClientProxiedBy: AM9P250CA0027.EURP250.PROD.OUTLOOK.COM
+ (2603:10a6:20b:21c::32) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-In-Reply-To: <pnd7c0s6ji2.fsf@axis.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AM9PR04MB8843:EE_
+X-MS-Office365-Filtering-Correlation-Id: 575f1aa9-9a51-46b0-4291-08ddb8eb8cc3
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|52116014|376014|7416014|19092799006|921020|38350700014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?Z2JSQ0FzOTQ5Uy9vbmtQc3N0MkwvZ1dnMWY1enlKNVJXRkF0RXl3TXRrODUy?=
+ =?utf-8?B?MTdNRzU1aWlIS3pBUVVYVGJTRHorMXM3SnN2UDZ2cjBRUkVYQlVvbDVTa3lo?=
+ =?utf-8?B?TXZYelQzazBkWWFZRmNPc2xLUjhQejl0TEEvRDFBU29aVU1qbUN0djlLcEFq?=
+ =?utf-8?B?TWg5dzlvalZ3NGZLRmlIRi93U2o4R2xhQ0NYY2RBKysxL2JoWjl1dVFEMmtW?=
+ =?utf-8?B?bHc5bzJBaElmNGQ5RTcyTjd5Nm02ZnkrRDZzRGFPZFRrZVo0TDlVOERMVUZv?=
+ =?utf-8?B?RVcxekEzL2NoY0ZJRGh1VkIyTkd1SWRqTVpMYVBIVlFjOVVtRUFVaTBpWWJ0?=
+ =?utf-8?B?YVlsQ0F3OCtXcDJWcVlvUXRPQVZiaWYrRG9hZE9DbEVwTUY4QXBVVVZIb1VF?=
+ =?utf-8?B?MFljRG1GU0hqTW5nUDhuSWladnRIdVZFc2Zad2haZWRCcW8rblBzMG5JT1dT?=
+ =?utf-8?B?Q1lheEdaTjVEVktrcjFTZzV2aHZUbVBJTnZOZ3h1VnhJUkdXNmVQMmRSKytM?=
+ =?utf-8?B?NHYyTmYxUkhpM1NMZ3lVTmtXN2grQWVpOFBGS0lyQ29odFJGRENsbm9BenhT?=
+ =?utf-8?B?UnlocmZHN2VWTGg4WmNPTzNXQm10VGw3ZXhkU3E0bVpjWFQ3eWMwS0htT0RD?=
+ =?utf-8?B?ZWcyV0dJYUxzWUUwN3dLVStqR3d0anM5bllMaVVnd0V5OWtZK0pTZXpKV1hJ?=
+ =?utf-8?B?ZnloN2E3RlEyQnk5SE9VOVhJUTA1c0pOak5JOTl0TytFcjgwdm82TGdLZVVx?=
+ =?utf-8?B?TkwrMFZ4d21oZ2xwMnRONVJWTndGQzVXSTM3ZVNMV0xSOFhSTUVQc1oxeFpy?=
+ =?utf-8?B?alFKekZybjJXMVdDNi9lejYzdWFicHgwL2o5TWZqWDl0U2dXWVNyNmVCNW5i?=
+ =?utf-8?B?NnhlWHpRRlBMMHYrcXJ2TFNzME1hc3Fpbi8vSFRlTWQweFdnd0FUZHZJbFZI?=
+ =?utf-8?B?TXVnQnlLNnlsNmxmcHhNUW45LzFtcmZ3dy9UMEhWbmRoemVQUlFJclpDa2c5?=
+ =?utf-8?B?N0o0MHVTT05TbmdoQ3ZHUUxaRVRyUVl2bjVSNDVuUGkydXFFWkpadkNodVIx?=
+ =?utf-8?B?MjNnTDlPa2FhdThmZkxNVERYazZ4aEN2VUMxa3lSRGxrbis4b1N2Zy96b2Vi?=
+ =?utf-8?B?VUdId3R4WWpGam8zY2NocmdXaXRYNVNrRlRGeWJFTmg2OXZPT0RXVGMyQ0g3?=
+ =?utf-8?B?bDNadWR6cE9QbTdBQUU3SzN0cHNJWXNpaXh0ZVRFTlZ0NW9HcU16Q2ozNHEv?=
+ =?utf-8?B?alFtb1pMTlYvcS9veWhMVUxNU2hYQ1dEQWd4QjB0Q2U4d0hBa3FBYU5iRFpP?=
+ =?utf-8?B?ZG8xSTUrNWRYM1NtR0w5eGV2ZUgyZ0JiZWtjRzBjSmt2cXIyWGx4c3RBbFhQ?=
+ =?utf-8?B?aVZVdjdQRXNIdzJIblFGdTl1YXRLUHNBTEp6YzMrRnFYMjM1VVpuK0lvTUVZ?=
+ =?utf-8?B?TmlaYmxsMGRzOGlLMnoyeFhpUFhqcU5PekpQazVRaGQ0bnZLUWNzdUgzWEtx?=
+ =?utf-8?B?VHpjMlpsZ0E0czcrYnpQby9NQnYxUG5RMjllZS9NUERUNnkzbXo5bmdraTJt?=
+ =?utf-8?B?QUViSmRQQzJwUjd4V0crd2ZWU0Fkak9hZGN3M2s0ZFM0Y0NkR0MvbUpXQWhF?=
+ =?utf-8?B?bjA4MmhWekQ5VGlyVnJqV2hmSFJiWHhHWWs4QjhlWGw3OEFEcGJBUXE1U1VX?=
+ =?utf-8?B?Y2laYW4yT1E3SSs0WEI4c2pEeTRmSXprMTRPZE83blBLV3BOMTBIOTRpeURr?=
+ =?utf-8?B?TUFhcGdCWXRScDY4SjVWQk5qSG15OXljOVFEdkxDbGFyVGZMUzBkeG1Jd3Yz?=
+ =?utf-8?B?djBUNmExS2FMUDJ3NnVGd3l6akc0eXdRQ002L0hzVE81N3VVbGZqM3VPVFUz?=
+ =?utf-8?B?Q09rcVAwL2Fyck1SbU1wanY4aGtxVlVlSjgrTzhCellvQlBXTFVvbnU5Ym9s?=
+ =?utf-8?Q?jWoQzFuIjGHX/KkI3jF/r61oItFk6SNb?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(52116014)(376014)(7416014)(19092799006)(921020)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?SG56dVRtSkFhVjBSM0N1QUpxejJTZDdHWGdmelB5YTJQMTJ0RFJoOGRkUnUv?=
+ =?utf-8?B?ZFdBSHN3alZpSk9HVHhtaWFBQ3Y0UXpQdnFiUkJvcWwxQ21QNndqTWM3ekhL?=
+ =?utf-8?B?bm40Q0dreW1BRk9NeTNlRS9GS2crTnZpcWJ3dGVzWHMxTHhRUy9jZllTMzMx?=
+ =?utf-8?B?UVN4MlVGVnVzbTdhUEswWDVSdEpUY3NnSnc4dGdqaFhNOTV1TlA2a21LamJH?=
+ =?utf-8?B?c0VEZ3UvclVNRVpGMVFObHFYOXh0dDZ1VCtKQjZxMnM0L2R3anZLQjZVc0hI?=
+ =?utf-8?B?ZHVVWjQrenJSMS9pVmM5WlZJa3RUT215cGhpK1ZVQUZxa013QzBzLzBNOEZI?=
+ =?utf-8?B?eW5tQ2FOMW1WVkR2b1RHa2dHRHZjRVJVVkt5RGg5YmpwMWllc0VQQjdrOFpz?=
+ =?utf-8?B?akpGRkY0S1Q1UDNtK1lPMitUU09JMXdIN0VISkhhMEdYUVV6THhEbVBIYzd0?=
+ =?utf-8?B?TW0wWHBacHNzU1ZjU2t1STBwVWhjbVF2a3V6Sy8yYnYzWFRMRzJuT2lBRC9x?=
+ =?utf-8?B?VVhHY2kvUGJXdVR3WnFvME9Rbmp2aEY4empGRzQvbHo2NHNUeGVIcUtEZDAw?=
+ =?utf-8?B?VlduWVI0Q29zVlVrWkh6dDhpbTVlRW1PZWxDV1FlVXlzNWJ4Uk1pazIyZE82?=
+ =?utf-8?B?MkQyczUwUmpFWVJuMVBGREZOa1YzZFVuZkR0Ti9rNFZJMk9NL2lkVFBWYnlR?=
+ =?utf-8?B?T285bFFvWHNmeld3T1ZnVkc2dVpBQnZtY3dKMnorandWZDIvTzJtSzEvNG9n?=
+ =?utf-8?B?cFJJV00vbllOakRlZy9CTW5WUUZHV3ZFVlEyYzJMUTl0K2ZzV2kwWWNyNEky?=
+ =?utf-8?B?cHpLT2E5ejRhMzNMWkwvZjhlS3l1VGZKQW5QUUpRV1Vlc0pSOXA0N2UzeUFT?=
+ =?utf-8?B?bE9kVk1SZ1hORDZqQjhjeU9VNHZZcEhSVFdrcTlXR1RNN2ZkSStPR0dmWVpN?=
+ =?utf-8?B?MWhuS0swUUJLVkhjSjYrUDQ4RHcyYS9ZMmFLd0JFRlIvQlNTWTdrV3M4anR1?=
+ =?utf-8?B?Ny9kK01hakI4cHk1SXRHZHh6OXJGQ1ZXRHJjWisza1crek9ZYUFwTlEybkl3?=
+ =?utf-8?B?b3hQWnBTYWtyN2tpdXhoZEMrTWd0Z1JFMUk0ZThxZ0IvODdZS1duYTBzells?=
+ =?utf-8?B?aHJQa3JzaWN5cFRRajJVMm5TdklHOWpQMVZmMTdUWC91b2FERlBpWWdjbjlq?=
+ =?utf-8?B?eUM0b3pRQk9KTnhXUjkvRHFjVGdxeDluL0U4WVh2Q1ZjeXk2dzJ4eVJnUXhE?=
+ =?utf-8?B?VE9iRFVueHFhR1hKbVpndWxqc3lHUGhQY25LTG9zdElKRnFSL3VTUHQwYXkr?=
+ =?utf-8?B?bG4rTHFMcm9oamVnQmwvR2NPek9OUXNMZjJiUi8xL3preXRLZ2RIN1puUHVm?=
+ =?utf-8?B?TlFZalArVkJQSVBtLzZ1a2JDeDF3WC9ySU0xSC9aeGozZ0c1NGdPa3Z2QXJ4?=
+ =?utf-8?B?R2JtYUpacXIvWWZBYjhvNFhEMkpMTnpuc1p0QnpYZllndnVTbzFpNjRvMnV2?=
+ =?utf-8?B?VkdVQUJ1TFdObnZhamNPRnRSUlBvU0FYZlh1MTBNdU12QU9UVWtjTDlrSlIw?=
+ =?utf-8?B?a1ZnYUJtajlUWnBIRzk2aHZRQ1kxTUs3THF1TG1BbE11cktUenNGVWtkNmhH?=
+ =?utf-8?B?cUFLb09hSFRHMTFyTHd1dHhydFhOLzRwYmdwcHVURjlhN2R5N3hURXp4Rmw5?=
+ =?utf-8?B?cUFKcW91V0w3ZEtBbFV0WVdPQ1E4MU13SzRkaDM5aHZVcHpuSkhiYWRvb1BO?=
+ =?utf-8?B?cG1JTGxXRG1OWEtPUGhQT0hKb3d1UytEMnhRRkVjNU14WnAzWjg0MjB0ZEJZ?=
+ =?utf-8?B?YUhjVXlMMVl1eHlSQ2JPY0RrQmx1NHpvSWpXcGFrQlZiMGFkOXRsNkdxOTgy?=
+ =?utf-8?B?TXJKU1EvdWl2MnlsWjRFTXh6V3Z3Q0l4T0Z5TjRmbmcvU05neklHdTNxTUs0?=
+ =?utf-8?B?eFdmaW5VZkNyUkFZK2draW9DRldXV3lXcFBtbU0rZkhtcWRySU5aSmFHemlG?=
+ =?utf-8?B?SGxkbks1Y2szeGxHZnVSa0V2Q1lGb3pDZDZCNjBuMktBbGluUG1XRFN6bXBk?=
+ =?utf-8?B?bFRoS2l1SjdOOFNSbEE2djNHQVhFWE85ZHdOT3pqWDY0ZkVwTEVob3ZySUcy?=
+ =?utf-8?Q?1yMe6FOzI5oL5pzInjq5+JNKb?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 575f1aa9-9a51-46b0-4291-08ddb8eb8cc3
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2025 22:06:37.6380
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 1urvnpaZpZwuhIkWsqwWT6/QvyXFd56nyRw3d0/VM/BfgYgxNT+geMXtRtk/XPOzteh/050mtwSZDJmcri62zA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8843
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_104422_580916_6962B4BF 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20250701_150659_202027_80D13B31 
+X-CRM114-Status: GOOD (  14.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,150 +191,220 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4069253936772713816=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Eugen Hristev <eugen.hristev@linaro.org>
 
---===============4069253936772713816==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="siz3npg32duy4f54"
-Content-Disposition: inline
+Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
+and i.MX95 platform.
 
+Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
+Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+This is continue previous thread
+https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20221216143717.1002015-2-eugen.hristev@microchip.com/#3023663
 
---siz3npg32duy4f54
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
-MIME-Version: 1.0
+change in v1 (compared to previous post)
+- add reg-names
+- remove clk surfix
+- add imx93,dw-csi compatible string
+- add dphys subnode name
+- use compatible string snps,dw-mipi-csi2-v150 to avoid use general fallback
+compatible string.
+---
+ .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 161 +++++++++++++++++++++
+ MAINTAINERS                                        |   1 +
+ 2 files changed, 162 insertions(+)
 
-Hello,
-
-On Tue, Jul 01, 2025 at 05:03:33PM +0200, Waqar Hameed wrote:
->  drivers/pwm/pwm-meson.c                          | 3 +--
-
-Looking at this driver I tried the following:
-
-diff --git a/drivers/base/core.c b/drivers/base/core.c
-index 3809baed42f3..58a2ab74f14c 100644
---- a/drivers/base/core.c
-+++ b/drivers/base/core.c
-@@ -5062,7 +5062,7 @@ static void __dev_probe_failed(const struct device *d=
-ev, int err, bool fatal,
-  *
-  * Returns @err.
-  */
--int dev_err_probe(const struct device *dev, int err, const char *fmt, ...)
-+int _dev_err_probe(const struct device *dev, int err, const char *fmt, ...)
- {
- 	va_list vargs;
-=20
-@@ -5075,7 +5075,7 @@ int dev_err_probe(const struct device *dev, int err, =
-const char *fmt, ...)
-=20
- 	return err;
- }
--EXPORT_SYMBOL_GPL(dev_err_probe);
-+EXPORT_SYMBOL_GPL(_dev_err_probe);
-=20
- /**
-  * dev_warn_probe - probe error check and log helper
-diff --git a/include/linux/dev_printk.h b/include/linux/dev_printk.h
-index eb2094e43050..23ef250727f1 100644
---- a/include/linux/dev_printk.h
-+++ b/include/linux/dev_printk.h
-@@ -275,7 +275,13 @@ do {									\
- 	WARN_ONCE(condition, "%s %s: " format, \
- 			dev_driver_string(dev), dev_name(dev), ## arg)
-=20
--__printf(3, 4) int dev_err_probe(const struct device *dev, int err, const =
-char *fmt, ...);
-+__printf(3, 4) int _dev_err_probe(const struct device *dev, int err, const=
- char *fmt, ...);
+diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+new file mode 100644
+index 0000000000000..2a93bd72498f8
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+@@ -0,0 +1,161 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#define dev_err_probe(dev, err, ...) (								\
-+	(__builtin_constant_p(err) && err =3D=3D -ENOMEM) ? err : _dev_err_probe(=
-dev, err, __VA_ARGS__)	\
-+)
++title: Synopsys DesignWare CSI-2 Host controller (csi2host)
 +
++maintainers:
++  - Frank Li <Frank.Li@nxp.com>
++  - Eugen Hristev <eugen.hristev@microchip.com>
 +
- __printf(3, 4) int dev_warn_probe(const struct device *dev, int err, const=
- char *fmt, ...);
-=20
- /* Simple helper for dev_err_probe() when ERR_PTR() is to be returned. */
-diff --git a/include/linux/device/devres.h b/include/linux/device/devres.h
-index ae696d10faff..abfa5152b5a7 100644
---- a/include/linux/device/devres.h
-+++ b/include/linux/device/devres.h
-@@ -157,8 +157,11 @@ static inline int __devm_add_action_or_reset(struct de=
-vice *dev, void (*action)(
- 	int ret;
-=20
- 	ret =3D __devm_add_action(dev, action, data, name);
--	if (ret)
-+	if (ret) {
-+		if (ret !=3D -ENOMEM)
-+			__builtin_unreachable();
- 		action(data);
-+	}
-=20
- 	return ret;
- }
++description:
++  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
++  camera. It will convert the incoming CSI-2 stream into a dedicated
++  interface called the Synopsys IDI (Image Data Interface).
++  This interface is a 32-bit SoC internal only, and can be assimilated
++  with a CSI-2 interface.
++
++properties:
++  compatible:
++    oneOf:
++      - items:
++          - enum:
++              - fsl,imx93-mipi-csi2
++          - const: snps,dw-mipi-csi2-v150
++      - const: snps,dw-mipi-csi2-v150
++
++  reg:
++    items:
++      - description: MIPI CSI-2 core register
++
++  reg-names:
++    items:
++      - const: core
++
++  clocks:
++    maxItems: 2
++
++  clock-names:
++    items:
++      - const: per
++      - const: pixel
++
++  phys:
++    maxItems: 1
++    description: MIPI D-PHY
++
++  phy-names:
++    items:
++      - const: rx
++
++  resets:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  power-domains:
++    maxItems: 1
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        unevaluatedProperties: false
++        description:
++          Input port node, single endpoint describing the input port.
++
++        properties:
++          endpoint:
++            $ref: video-interfaces.yaml#
++            unevaluatedProperties: false
++            description: Endpoint connected to input device
++
++            properties:
++              bus-type:
++                const: 4
++
++              data-lanes:
++                minItems: 1
++                maxItems: 4
++                items:
++                  maximum: 4
++
++              clock-lanes:
++                maxItems: 1
++
++              remote-endpoint: true
++
++      port@1:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        unevaluatedProperties: false
++        description:
++          Output port node, single endpoint describing the output port.
++
++        properties:
++          endpoint:
++            unevaluatedProperties: false
++            $ref: video-interfaces.yaml#
++            description: Endpoint connected to output device
++
++            properties:
++              bus-type:
++                const: 4
++
++              remote-endpoint: true
++
++    required:
++      - port@0
++      - port@1
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - interrupts
++  - ports
++
++examples:
++  - |
++    csi@3000 {
++        compatible = "snps,dw-mipi-csi2-v150";
++        reg = <0x03000 0x1000>;
++        reg-names = "core";
++        phys = <&mipi_dphy_rx 0>;
++        phy-names = "rx";
++        resets = <&dw_rst 1>;
++        interrupts = <2>;
++
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            port@0 {
++                reg = <0>;
++
++                endpoint {
++                    bus-type = <4>; /* MIPI CSI2 D-PHY */
++                    remote-endpoint = <&camera_1>;
++                    data-lanes = <1 2>;
++                    clock-lanes = <0>;
++                };
++            };
++
++            port@1 {
++                reg = <1>;
++
++                endpoint {
++                    remote-endpoint = <&idi_receiver>;
++                    bus-type = <4>;
++                };
++            };
++        };
++    };
++
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 01d2aa62045c7..e208c91f1405f 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -15021,6 +15021,7 @@ F:	Documentation/devicetree/bindings/media/fsl,imx93-parallel-csi.yaml
+ F:	Documentation/devicetree/bindings/media/nxp,imx-mipi-csi2.yaml
+ F:	Documentation/devicetree/bindings/media/nxp,imx7-csi.yaml
+ F:	Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
++F:	Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+ F:	drivers/media/platform/nxp/imx-mipi-csis.c
+ F:	drivers/media/platform/nxp/imx-parallel-csi.c
+ F:	drivers/media/platform/nxp/imx7-media-csi.c
 
-With that
+-- 
+2.34.1
 
-        ret =3D devm_add_action_or_reset(dev, meson_pwm_s4_put_clk,
-                                       meson->channels[i].clk);
-        if (ret)
-                return dev_err_probe(dev, ret,
-                                     "Failed to add clk_put action\n");
-
-=66rom drivers/pwm/pwm-meson.c is optimized to
-
-        ret =3D devm_add_action_or_reset(dev, meson_pwm_s4_put_clk,
-                                       meson->channels[i].clk);
-        if (ret)
-                return ret;
-
-=2E
-
-I would prefer this approach, because a) there is no need to drop all
-dev_err_probe()s after devm_add_action_or_reset() and b) the
-dev_err_probe()s could stay for consistency in the error paths of a
-driver.
-
-Best regards
-Uwe
-
---siz3npg32duy4f54
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmhkHm4ACgkQj4D7WH0S
-/k40Ugf+IGBhMZPHVoCFXh9jXSPImkCDM81Omc7cyM5CZFFdOO09K82bfGBFD7bF
-X+9ZxJqCFCRmF8AtN+3Z6xmAia7Q4jKwUgvdR/iJY4jMX6uQk49IxGgv9Ux9aAu2
-/jttnDFocIwCi6sjUxxf2HCdfwLPKhfhrl+xNpQ80kh4oBZ+L0X5s6u6Mcsu8V2P
-2O3Q05nJZK/bpCYZNgRHMeg4k71v6nG8eYw2nJ6n7dbTOtj+HnQC3GCfajWFg7mf
-al8FLQxckEkDif0f7yDlSnjUT7oF78eg1G2pf9PDBr9I15efw+TkKSmkr/MIVXJE
-YFLNKMZeRFfoAyzKWfjfpuR/ZUe+3Q==
-=uD6x
------END PGP SIGNATURE-----
-
---siz3npg32duy4f54--
-
-
---===============4069253936772713816==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4069253936772713816==--
-
