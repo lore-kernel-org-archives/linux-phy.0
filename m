@@ -4,93 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C7B3C83030
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Jun 2025 22:52:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DEBEC8302F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 07:19:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+974+u578HcmCk62sz1FzXCDbOe3zZzseYGAeLT//l8=; b=vWg52C6FuWHRzi
-	FIDYnmOrwyQr1it+B1/RJo9sFR6D3OqiiVaEUtPu4A79pPfWxLehmikncbNBuFvZNE8H78aBTQC6l
-	29P0v5lpB9qtJX1JcdE4yS+lqED8npK8LcdvHieK4yzKVpvdp+VqXltRCkMLopdJTL+uYkt9bsfAo
-	TucEt2tqnxUpAyomIDnkubR4h3uqLDn9/gnIc/GhTTKyQ6O6JvtL1hrpkysk7JbHTyZJmypc4XGm4
-	GHWo/X1DGRIkg2IUaVZ32pjManr2Dsbr6HIIMf/tIdJEMT7QSOcvZVEhLDppIasaU2GRv4EUSB8Z+
-	Q8XIup34f1t3wuV9QywA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3GipOx/xY9G3OQTZc6mXqszTfWeQbYEPgeQ/3vBSpR8=; b=MBJ+iRCx0CFLRV
+	ictUBdugdvFrf6dqP85fDEBwpMfPjQNcA7lZjZ1iMyI5BupPFj8pSola+ZWr2hIIly0IeC5Bx0SQd
+	LRk0yKQzAZOpAO8PBypmB+QExfHHs9TVfSQuN1fjLS36KeDjrvlaLUU+TxAhyZdig1Z07RCMzo6o+
+	g/8q2DUxUHsI26TuzZv8aPOQREt1bGY+AWVOAmCVtBkH3orzGJsCade6iMbIdc3tl4WGxReKZN4Vy
+	/aOl1zXGJQYIVzCyNr+2l5gxgK5hwMnuhTJSATnPz2tO9A1jBDzn+PmxyFW5hta6NoQVR1Xso9A/D
+	iwWSPl2EjhXTJD9KC1AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWNM8-00000003eHo-3HxH;
-	Mon, 30 Jun 2025 22:52:08 +0000
-Received: from mail-il1-x12c.google.com ([2607:f8b0:4864:20::12c])
+	id 1uWVHC-00000004Fnj-0ptw;
+	Tue, 01 Jul 2025 07:19:34 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWN1b-00000003bqi-2gpU;
-	Mon, 30 Jun 2025 22:30:56 +0000
-Received: by mail-il1-x12c.google.com with SMTP id e9e14a558f8ab-3de18fdeab0so44242715ab.3;
-        Mon, 30 Jun 2025 15:30:55 -0700 (PDT)
+	id 1uWUbj-00000004AOU-0Mux
+	for linux-phy@lists.infradead.org;
+	Tue, 01 Jul 2025 06:36:44 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4535fc0485dso7030115e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 30 Jun 2025 23:36:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751322655; x=1751927455; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=BB+BO3+Ju9SCf7b/TLt6zXjibbwRGCyTQVjEHxQIl60=;
-        b=YJKuBmytGfV7/94RXxorpoO3IH3Y2dOVTjC8QJRI0QzH9F5kjDvWqnFWptFQEi7rly
-         Z+FsjTnBiC6feNEvcejPFtWULV9v6796x/oJgZBoGezwpdsQnIeOdczYiGApAmXKVpoE
-         I/0cA4DtoLvMZnfjACH29vBTWpk2QZEzvtBexe6r2SI3B9jV7fJdK2CiphKJm5nUxXjq
-         lTCVATrL26GIXkPGIGHp+6SbnMbON9FQhVlJwqXsmSgQyRKhhTR9w+rPUvdhAau1oPLm
-         mMNm30yOcpQNJbqHrL1N9N58SPMTqZ91gWh2mg8nMbW25QQhtacu4+VElJ5yq2fUoZnK
-         oaZw==
+        d=linaro.org; s=google; t=1751351801; x=1751956601; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=XF9BsXSBJjchhqC1W0y2iD+54l1AU0WSwwDuBKksZ/A=;
+        b=NXU5IJ59IJA+8ywbGKnYQsYS8SLjl/DSUNlrTZLLjMqS5xcHggEYtAHewqesiguRdk
+         J0bHf3wRH94lyQOCumrpUTcb2UGWQ+wT8VkvJgjX+1bfg71W4WI2tnR5R/t/DbERMep5
+         i99uTDME5+nrszsdMUbduqBtptMR/kDmSBmTaEjTuuSMtUejSP4FXkZRkdUDsGbHteuS
+         Yynu4fTlDOfC0jbnU3AHMolHTs1JH+UtcQm5LBHAdCTlVYK6UgzYx0jbGgbDQU9bq3TF
+         bwhmRLDllNtlQEJbC3qqXRsRoZcxSxTjdqhzV+3DBHy5B2j5hYt6ZK0yyWxcigegAHYK
+         5TFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751322655; x=1751927455;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=BB+BO3+Ju9SCf7b/TLt6zXjibbwRGCyTQVjEHxQIl60=;
-        b=KZmNQN+33SZoIm+bazTR9Lxsp1GF0sZ+CHSOuJIczZDtLrQaVIOcxm5riu0KB/2fbo
-         jjpGtus+ZHhqoi6vMCdlVexLIHv9UgDY0FLbpUtJCt4Gsao7ZdxQpMQ/lnYR1ene9Fif
-         3+KrxKsnzKeXkFKXnDhnGulf+0sotTKDlHiHRgJfbUNDT9FwmKrvvHKojYG/RXTjcIJ4
-         eIHGshDdBNNI+MwPFvLrAJRWcEXNsi8GGhGathwPGZ8a+XfCLH9VoBmqSisBjTS16wdW
-         OwHvObMSsjoxHVhZtqQYsICLnBFulqLe5LiihnxyPIwSpbAik33GqEKILF7X2ZLZp13H
-         /9IQ==
-X-Forwarded-Encrypted: i=1; AJvYcCX7MHrrt3v/Z2NMgcwEMT12ZnEE3Y6BMrNJ4/YkxfQUtrjzOaZFpWy3lu8tLITq9iwDTq6sXoixx2J6mG+l63I6@lists.infradead.org, AJvYcCXXdl/QmPRyFn0SKwRET8EQueZrhG/NRKmb9mjmpIWtWRLttLXfGntkpAeeNTZwQquwNVRuW0k/gjis@lists.infradead.org
-X-Gm-Message-State: AOJu0Yye4zI8hVbGewdK9epo7+P+g+s5nEfIjhZKI8VYPX6+jXtJ4Tmr
-	x/HVC83Y2xCBahn0KFkYUM4oLNet4iLKPGX3Fb+xr/z5XkD/JI/mQjB0g/v3u129
-X-Gm-Gg: ASbGnctDF2eOMHWiAmOHaLMr+dSiG7TXOilTPeLiCsJwQhsRttfJotcl5NcveyxmsaW
-	TLRfF/fv9OI09G2H18gEBXzHtG9nBVtkPaZ773Rlmaj9a8Jv4suVXOidxvi57Khcq8t5QhMXowP
-	hjQwEfsMUxtWdnzCZzeSADDMDJbJvHFH4S47EUuRDmC8jz0NQqdXGNokS1s+YaJ96dLpOpUHWBh
-	bXzZ+WoxiZ5V8AvNJp58jyIebfHtrRJ/tRm9LWdSPuD25cfwdJQWk0e8jXFnUdsaLhKRgOHO42Y
-	ETGy3cqQod9ICO5ObxCUviEIdqeuTRdu0/pYe5we+vM2jRCkww==
-X-Google-Smtp-Source: AGHT+IFTRrEGCx789ysocz2vuPu09+VjUsb7fSHj7n8oVet+ThKIVJeolTpBlxxkV1sBDbYfdguHzQ==
-X-Received: by 2002:a05:620a:27c6:b0:7c5:3c0a:ab7e with SMTP id af79cd13be357-7d443909f4amr2207841185a.5.1751322320919;
-        Mon, 30 Jun 2025 15:25:20 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:4851::dead:c001])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-7d44323bba2sm672602885a.109.2025.06.30.15.25.16
+        d=1e100.net; s=20230601; t=1751351801; x=1751956601;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=XF9BsXSBJjchhqC1W0y2iD+54l1AU0WSwwDuBKksZ/A=;
+        b=MKX3N4Ibx5i34BCBg4+Mf/IVTqJKxCcnoazZKQvuJRtOwG1XqLEnzD7G7sEhDVcVvL
+         RTk7v3Pm/v8EIgTug2amUyTUkHV5ruykfdLS2AwyBG4IWcnBUNPTYnToOz0EuxjYdeRa
+         aaPrYV8eg+Ez/wphxneoMI4D6nZtfRReXEBBj8kQFG9Pwqa03Zi+yNCgAzZ4Vep4ODDc
+         raMOpDNz/12pZ6J5kbtaWPAa2beNGzaiuYs7pq+tkuEMeWlrVqVH56IQNhXEBZsfpOY2
+         k+ED/rMNyqps7EAf5Xkp73LR4g3LcQO8WQ6+zUmm4pHBpRnz5eQntyxytMTDJqeLb6ak
+         HCww==
+X-Forwarded-Encrypted: i=1; AJvYcCVRlDZ+o/odIAXSLnwHicXkBrIIqP/9UHK7xF3fM9i+qAPOWYL72MOx8mkbsFkCsgehak6+czkw7f8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzcCCfs9dSmc3bUJ4vaZJZYYl3D412/70cH9zzNXWf1McTU71IZ
+	dDi/zOeF228NKJKlsAGIzGXP3Y5JXpRUMQYFwQyuCsYilljNvgZkTxL3vXVMYocQJUE=
+X-Gm-Gg: ASbGncuU5YX695QDVUOW5907wCC9khyt+PTLcu6Ba9v4GWDSBh3XIgSWCVGVHkYQ0t1
+	Bj/BggM9DugAo5bryOPSe5sO0IC3mDx1X88zCn0IH1iFYhVksB0Bxaw8MxHR1VgnDZrcs0lT9/g
+	9ytM0z4M6rS6++duw1FwxaY/N6DjDXrqEoGpZ4fHpIB4E6nA66JKqicMwB3qxmCvrNo/7+ELCHc
+	y8BXAQUXdYIAuUkg3O3+lNOKqwMJO9Y4ZT5JoUE+8tQE24+K6gGMRATDM+sIEmyIB57NUKB6XkD
+	TDCrYjk87K9pxeAjdgfpq0Snn4oJTZMTqGfzjrCdnlftDvAD5BCGfXm4TqF6fPsnTih6qJQUYjY
+	sEVmX/P05Sg==
+X-Google-Smtp-Source: AGHT+IGi0D+19VoSHVRWUeDZpEANnFxXdyNqWbA6Zz7HbqVloW2LQcu/8xvrAEhyjKTVBMpjMPDSIQ==
+X-Received: by 2002:a05:600c:470d:b0:43b:c0fa:f9c4 with SMTP id 5b1f17b1804b1-453a812fb30mr6274275e9.4.1751351801542;
+        Mon, 30 Jun 2025 23:36:41 -0700 (PDT)
+Received: from krzk-bin.. ([178.197.222.89])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4538a421434sm157119695e9.37.2025.06.30.23.36.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Jun 2025 15:25:20 -0700 (PDT)
-Date: Mon, 30 Jun 2025 19:25:14 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: linux-rockchip@lists.infradead.org
-Cc: Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+        Mon, 30 Jun 2025 23:36:40 -0700 (PDT)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lubomir Rintel <lkundrak@v3.sk>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [RESEND PATCH v9 3/4] phy: rockchip-pcie: Enable all four lanes if
- required
-Message-ID: <16b610aab34e069fd31d9f57260c10df2a968f80.1751322015.git.geraldogabriel@gmail.com>
-References: <cover.1751322015.git.geraldogabriel@gmail.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: marvell,mmp2-usb-phy: Drop status from the example
+Date: Tue,  1 Jul 2025 08:36:37 +0200
+Message-ID: <20250701063636.23872-2-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1751322015.git.geraldogabriel@gmail.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=779; i=krzysztof.kozlowski@linaro.org;
+ h=from:subject; bh=LVOBn5gIt8SN8+AKL1VG0Mcc4HlGoH1nt639zAe/kOo=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBoY4H0ffaPTbeopHCCCMc1UVmiQZRCkCVMP4baz
+ 8YHWXyqWvKJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCaGOB9AAKCRDBN2bmhouD
+ 1x01D/9XFJFW9DXK6yY20AHJAmi1JQG17UexaKXhKbRP1qjAcsWq3WePdUEIaMHDSBYOMY+CYsd
+ rS2q0FNN/yv+0pBPDnvC/XBhfS2tRQT4SCB4Vt4NH7BX78uSwnAr7pWiWGnQ145yCeEBD9vNA/b
+ sI5sRN9Ea+fZERgKqwpqQ59DQ65CyaPbmmp/dm0sAHxRBAVOc3cFWCaQQJvSJNXiUSlBYWH8rtI
+ uIefJGyUCu1pXsl/gsTIliVhn0JFTl8IXvAT3jPo+Hp6ZTmNB6OE8BVCl+PdR4pQ68fiMFqJ+Dn
+ awlO6/i8bPhUcCnpuw97SnTy8qBfEhWtkbeMjT+vZxa/dgFfl3ulUtLmb5gMNLiJDrdRnqk3+tz
+ 9VD7nITR7jv+58y6CyNFum3Mm2FO2j3F9W2eL96DQlHFjJCNna8zGk1d/IgTXaebHrHib97tMg9
+ xI2zLFoMKXAE5QiG0TZRr+z3BUNtEIk6DhJbuX5QrT8g2/OiTORqNt+/sL0Q4mS3eSu30pdinB0
+ KbmvcIbNWrJvgj5q1nIRagdSMHUanCwTxeOWsdq+j2CR66lHyNy5jo8rtI/x9tkKcOZN4KpMiX2
+ V5AGBDKfTCO+Q1kF+W1vMUuTfrzPRWzNERfxvjOTHlyvHFmP4SarDmzyUPjt60/8v0tMLDzKj0p dpsgim1dFMB5uuQ==
+X-Developer-Key: i=krzysztof.kozlowski@linaro.org; a=openpgp; fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250630_153055_675977_C305580E 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20250630_233643_153917_8397C03A 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,53 +118,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Valmantas Paliksa <walmis@gmail.com>
+Examples should not have the 'status' property and 'okay' is anyway by
+default.
 
-Current code enables only Lane 0 because pwr_cnt will be incremented on
-first call to the function. Let's reorder the enablement code to enable
-all 4 lanes through GRF.
-
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
-
-Signed-off-by: Valmantas Paliksa <walmis@gmail.com>
-Signed-off-by: Geraldo Nascimento <geraldogabriel@gmail.com>
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- drivers/phy/rockchip/phy-rockchip-pcie.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ Documentation/devicetree/bindings/phy/marvell,mmp2-usb-phy.yaml | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-pcie.c b/drivers/phy/rockchip/phy-rockchip-pcie.c
-index bd44af36c67a..f22ffb41cdc2 100644
---- a/drivers/phy/rockchip/phy-rockchip-pcie.c
-+++ b/drivers/phy/rockchip/phy-rockchip-pcie.c
-@@ -160,6 +160,12 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
- 
- 	guard(mutex)(&rk_phy->pcie_mutex);
- 
-+	regmap_write(rk_phy->reg_base,
-+		     rk_phy->phy_data->pcie_laneoff,
-+		     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
-+				   PHY_LANE_IDLE_MASK,
-+				   PHY_LANE_IDLE_A_SHIFT + inst->index));
-+
- 	if (rk_phy->pwr_cnt++) {
- 		return 0;
- 	}
-@@ -176,12 +182,6 @@ static int rockchip_pcie_phy_power_on(struct phy *phy)
- 				   PHY_CFG_ADDR_MASK,
- 				   PHY_CFG_ADDR_SHIFT));
- 
--	regmap_write(rk_phy->reg_base,
--		     rk_phy->phy_data->pcie_laneoff,
--		     HIWORD_UPDATE(!PHY_LANE_IDLE_OFF,
--				   PHY_LANE_IDLE_MASK,
--				   PHY_LANE_IDLE_A_SHIFT + inst->index));
--
- 	/*
- 	 * No documented timeout value for phy operation below,
- 	 * so we make it large enough here. And we use loop-break
+diff --git a/Documentation/devicetree/bindings/phy/marvell,mmp2-usb-phy.yaml b/Documentation/devicetree/bindings/phy/marvell,mmp2-usb-phy.yaml
+index 2441c5fae550..af1ae2406f65 100644
+--- a/Documentation/devicetree/bindings/phy/marvell,mmp2-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/marvell,mmp2-usb-phy.yaml
+@@ -34,5 +34,4 @@ examples:
+         compatible = "marvell,mmp2-usb-phy";
+         reg = <0xd4207000 0x40>;
+         #phy-cells = <0>;
+-        status = "okay";
+     };
 -- 
-2.49.0
+2.43.0
 
 
 -- 
