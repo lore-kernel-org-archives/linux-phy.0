@@ -4,129 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26721C83038
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:12:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB481C7EE30
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 20:21:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9sCs/Xa+4q7QykdsNGG88n6XaK/f9hyDgO/N2ICxjZk=; b=HEBoNfgVXU7x8E
-	nPjmri61fw/LgKSL1Wd3HgSAq/I80VUXKw6Fe6zA2MP4tpIAlMaT+xzF9X9U1JoFn7JnfRWxU98Xr
-	z0qdX/WpEwNrvS5bOsuwrJwx17tgpjZF3fz+2JSyKrAapCBkiX8pU43TXgUgA/Dx0VQQ83xrmkV/v
-	z6lg9xCBnrd4xebdN8o98Eo/jUKq6pU840ak+VXu3doFxkZfy3/B/e4SzDrdsVN9VN1uBDp73fgCj
-	25QHH1ZxXOF7c3564BLqBhel/L8YC4dbOUcorvqvSA4jX5kyk8aZjfPbZ3yZziPom5HzOQrNkJ7z+
-	V1Cbv6hZQAYe0pCXvmeg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YC94hRzt+di8Pw6GZ+ZZsO+WCdvaoo/w6SXU5O3CCgE=; b=0zj/FX2mLrvUFUhbz00Yr39Gv8
+	jqfjJuPbtcpgxD96Ps+R0wpGyezQmxASaJSO8yrB3aFcWUkuP7wOvO8yYphpceAhuQcETcozAUJbq
+	HUdWRwm3K5Ec0xr2CirC3flRqBFeq6ral7P3FbZPc3NiToZpcWKXQzCOxzMS7+eYJ2Tk5lmn+b0NA
+	xg8Z71CroJd667pdTV3M/LhETFch0pcTGFTKw74c4JuzbYf69x0KqpvraLK6ZoeekcPu/zDAZ90xn
+	YgFev6/Hbr+Ee9sEDVROdh/T+0jlrzn48V8/QeiRQicpOkFD6dh352iH9f2gd/gpaEXUfTrCedTt6
+	Iya6vXnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWgOz-00000006Rc1-3RHH;
-	Tue, 01 Jul 2025 19:12:21 +0000
-Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	id 1uWhTR-00000006YuP-1oDS;
+	Tue, 01 Jul 2025 20:21:01 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWfEj-00000006Hb6-2RDW;
-	Tue, 01 Jul 2025 17:57:42 +0000
-Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-adfb562266cso971625366b.0;
-        Tue, 01 Jul 2025 10:57:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751392659; x=1751997459; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=pXjfR544OdpbJ9besQg+JvGQxJKjojQewq85hiTyzvw=;
-        b=Sgxx4ynusHtXr2gqt5JkpK/jVHJHsNDpgyowH75ey3xbyafu07Wok+tiAvj4hfSLsf
-         BYojsJCsrnDFxBCVJFktGJqgNvFK3Zmnh48pYLpW7oTxHejko/VreV5QrTjSFY0gVmcH
-         9h5Tu6imCJrW/IRvFJuKk9LeTj8YqAjEvRuYuwNplT6EGUnSMtsc5gpzQGT4vYI3PP5A
-         dH4wNfTo7PuVTlBpdpdDIVcx8Si3qHCGKB5GjyhIYy1XlVOqnJlC3hoJw22n4ry1cYNu
-         6KnZgpDlxrtWC72yAQ+CfurgCtIjIeCELiM2uQfj/8+WHz+Ac04+dnlQRBPZqHzAVqwC
-         A/rA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751392659; x=1751997459;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=pXjfR544OdpbJ9besQg+JvGQxJKjojQewq85hiTyzvw=;
-        b=KkVhZor4JmL6hLm2YVAEdy6DwlE84QXlnUTxs0b3A+/7m43vAN/w+Nmhq3rCjJZQUM
-         gz1wQsFdzXUAiBAjZWRYys6b5HHM9aaNq+qPYvISAh09t6v9nawUJ1kDeGmzQdu4ey2+
-         Obh/uFUNf3gmMSUtgvSeuGKWwo4mzkJGNBYz0hvAvL3FiRIOIpsx5mSZbsxxK4cjusce
-         mJHyVWmJZF4vYwpOiXXJH62JV4u8CXHDnSuG77qXZbf8ED+Sj+I27Tqx3SdM/sgGovlk
-         lEIklVI66Vo9J0eTeDAxkz7yiQlxKE1eWl84VOiRHFzL9kAoh0Nz9aV1uGjRJClQWjxi
-         9YmA==
-X-Forwarded-Encrypted: i=1; AJvYcCUMDIXIBdcekB17ifXdjnGj3BANbaDdCTVZcjlPbeHq5LCVPgRL8zO6DoOtnUsWfqzLvi7UCyqxokXA@lists.infradead.org, AJvYcCWdohrLbtFuaIwkv9kXXHs3byQ0e0EnqXX3MgfEbq2MF2AIzeeiY4Tf0e9lmXQ4KMnejWEAh4AiLflrpBidGuv1ng==@lists.infradead.org, AJvYcCWoIW2FjiNjdWBchD+1pAikOYNEN3VCdgHKJM+GjnNWrnsSQ5EktXoC4kCvBqpSckiZ56Ap0eBQa6Bz6knK0Ok=@lists.infradead.org, AJvYcCWpgzTPs7f/grxgVxEzkalUowO8RZzoY95AKLMNQKrSaaianxydeInztVKb5sSDuzxA6ep0r+sT6TKyEljrxTE=@lists.infradead.org, AJvYcCWzdYrq6xucNSP/8PVn6L6wOUQmP+OZOmkYD3gefTkLksc7ZMEnZYONLW6Pyzk6cVYBP4N069owxVNAnpRq@lists.infradead.org
-X-Gm-Message-State: AOJu0YykT2oSnwUDlH05LyUqiplNuUToGp7slkX/+dUzif2f88k8hdny
-	I6GtWP/PNi96el0Ku0urVA/EJ03X/+9Wz2siqUY7N9yw3kXhVVia57UTFhMT/59cwb3WY0wg0/Y
-	GFXyJZnBS2DcyZfzKXwZxgCHImuacKa4=
-X-Gm-Gg: ASbGncvyRnASguFtYnVprwRDAE6sjM58juAcBtDUiDQF9LGmNcZnR0i+Xt8ugk1fhpW
-	kMNCvHvqoisqiV5neI2FVawgHMqKK/iBUfASJSYJjvSX48x6ny499xs0E88eZIzpCyN9S9O6Bow
-	IMpP0iZw7VIJQYJkmvwP/yzxH61HxwMcnvmWVJp2CdVFU=
-X-Google-Smtp-Source: AGHT+IFi2mQZLuvuKUJ5Vmbx2bMFhgEtTB1rODdhMnUJkkTAqMfdBOcO66FNReafO5ChqP0c8B6r5Lro21q2uCkd3k4=
-X-Received: by 2002:a17:907:1c18:b0:ae0:4410:47e3 with SMTP id
- a640c23a62f3a-ae3501a58a6mr1915225466b.51.1751392659068; Tue, 01 Jul 2025
- 10:57:39 -0700 (PDT)
-MIME-Version: 1.0
-References: <pnd7c0s6ji2.fsf@axis.com> <ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
-In-Reply-To: <ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Tue, 1 Jul 2025 20:57:02 +0300
-X-Gm-Features: Ac12FXyruF9twzstORuqQqTbcXFq7Oy0k32bhmiSfPFWKw8o7JRMkyPmwEAJIYk
-Message-ID: <CAHp75Ve=Zas8=6YKoPeTRrvjCaTyyRAyJG1gBLripqZgQpfg7g@mail.gmail.com>
-Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <ukleinek@kernel.org>
-Cc: Waqar Hameed <waqar.hameed@axis.com>, Vignesh Raghavendra <vigneshr@ti.com>, 
+	id 1uWf1q-00000006GJd-24oO;
+	Tue, 01 Jul 2025 17:44:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5CAA545F3B;
+	Tue,  1 Jul 2025 17:44:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A33B7C4CEEB;
+	Tue,  1 Jul 2025 17:44:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1751391860;
+	bh=T/Oh3jotCzcmLKi13L685F87dDpqLPMtMcQj6fakPvk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PFC8LLDaQCERloxxDdzc9fDp24D33SKAmYgZ1QFEOmzF6jiKiF2fH1EYoGLBTDyic
+	 DAf4tg0M7jTvpKKWO6Bcb9xNER/kpNY8Am6LmTbfe7sVF+DtYDlF35U1Coo3CpV4M7
+	 /Th3Z18z7qwHtMSYuKvYYoGDluKbU7eBxqGLTb2vcV1rZcyfADPAoDl0EaInKSZQMy
+	 +523XjIJeVk/nSgi3w/m0+h4md8zNTFLXti5KrMVtUpNMoC8ixPYLXAhDIboKSx9jS
+	 e17VaG1/Z+x6oAaXb9lBOGsWH7AmAbp/zzL2jDYTGZ/Kq2PWkC1Yc60bP+K5sjuSO+
+	 BX5oEW8zb2ibw==
+Date: Tue, 1 Jul 2025 19:44:17 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>
+To: Waqar Hameed <waqar.hameed@axis.com>
+Cc: Vignesh Raghavendra <vigneshr@ti.com>, 
 	Julien Panis <jpanis@baylibre.com>, William Breathitt Gray <wbg@kernel.org>, 
-	Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Peter Rosin <peda@axentia.se>, 
-	Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
-	=?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
+	Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
+	Peter Rosin <peda@axentia.se>, Jonathan Cameron <jic23@kernel.org>, 
+	David Lechner <dlechner@baylibre.com>, Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>, 
 	Andy Shevchenko <andy@kernel.org>, Cosmin Tanislav <cosmin.tanislav@analog.com>, 
 	Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>, 
 	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	Matteo Martelli <matteomartelli3@gmail.com>, Heiko Stuebner <heiko@sntech.de>, 
-	Francesco Dolcini <francesco@dolcini.it>, 
-	=?UTF-8?Q?Jo=C3=A3o_Paulo_Gon=C3=A7alves?= <jpaulo.silvagoncalves@gmail.com>, 
-	Hugo Villeneuve <hvilleneuve@dimonoff.com>, Subhajit Ghosh <subhajit.ghosh@tweaklogic.com>, 
-	Mudit Sharma <muditsharma.info@gmail.com>, Gerald Loacker <gerald.loacker@wolfvision.net>, 
-	Song Qiang <songqiang1304521@gmail.com>, Crt Mori <cmo@melexis.com>, 
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Karol Gugala <kgugala@antmicro.com>, Mateusz Holenko <mholenko@antmicro.com>, 
-	Gabriel Somlo <gsomlo@gmail.com>, Joel Stanley <joel@jms.id.au>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Matteo Martelli <matteomartelli3@gmail.com>, 
+	Heiko Stuebner <heiko@sntech.de>, Francesco Dolcini <francesco@dolcini.it>, 
+	=?utf-8?Q?Jo=C3=A3o_Paulo_Gon=C3=A7alves?= <jpaulo.silvagoncalves@gmail.com>, Hugo Villeneuve <hvilleneuve@dimonoff.com>, 
+	Subhajit Ghosh <subhajit.ghosh@tweaklogic.com>, Mudit Sharma <muditsharma.info@gmail.com>, 
+	Gerald Loacker <gerald.loacker@wolfvision.net>, Song Qiang <songqiang1304521@gmail.com>, 
+	Crt Mori <cmo@melexis.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>, 
+	Ulf Hansson <ulf.hansson@linaro.org>, Karol Gugala <kgugala@antmicro.com>, 
+	Mateusz Holenko <mholenko@antmicro.com>, Gabriel Somlo <gsomlo@gmail.com>, Joel Stanley <joel@jms.id.au>, 
 	Claudiu Manoil <claudiu.manoil@nxp.com>, Vladimir Oltean <vladimir.oltean@nxp.com>, 
 	Wei Fang <wei.fang@nxp.com>, Clark Wang <xiaoning.wang@nxp.com>, 
 	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Sebastian Reichel <sre@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Han Xu <han.xu@nxp.com>, 
-	Haibo Chen <haibo.chen@nxp.com>, Yogesh Gaur <yogeshgaur.83@gmail.com>, 
-	Mark Brown <broonie@kernel.org>, Avri Altman <avri.altman@wdc.com>, 
-	Bart Van Assche <bvanassche@acm.org>, 
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>, 
-	"Martin K. Petersen" <martin.petersen@oracle.com>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, 
+	Alim Akhtar <alim.akhtar@samsung.com>, Sebastian Reichel <sre@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Kevin Hilman <khilman@baylibre.com>, 
+	Jerome Brunet <jbrunet@baylibre.com>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+	Han Xu <han.xu@nxp.com>, Haibo Chen <haibo.chen@nxp.com>, 
+	Yogesh Gaur <yogeshgaur.83@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>, "Martin K. Petersen" <martin.petersen@oracle.com>, 
 	Souradeep Chowdhury <quic_schowdhu@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
 	Liam Girdwood <lgirdwood@gmail.com>, Peter Ujfalusi <peter.ujfalusi@linux.intel.com>, 
-	Bard Liao <yung-chuan.liao@linux.intel.com>, 
-	Ranjani Sridharan <ranjani.sridharan@linux.intel.com>, Daniel Baluta <daniel.baluta@nxp.com>, 
-	Kai Vehmanen <kai.vehmanen@linux.intel.com>, 
-	Pierre-Louis Bossart <pierre-louis.bossart@linux.dev>, Jaroslav Kysela <perex@perex.cz>, 
-	Takashi Iwai <tiwai@suse.com>, Shawn Guo <shawnguo@kernel.org>, 
-	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
-	Fabio Estevam <festevam@gmail.com>, kernel@axis.com, linux-iio@vger.kernel.org, 
-	linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-input@vger.kernel.org, 
+	Bard Liao <yung-chuan.liao@linux.intel.com>, Ranjani Sridharan <ranjani.sridharan@linux.intel.com>, 
+	Daniel Baluta <daniel.baluta@nxp.com>, Kai Vehmanen <kai.vehmanen@linux.intel.com>, 
+	Pierre-Louis Bossart <pierre-louis.bossart@linux.dev>, Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, kernel@axis.com, 
+	linux-iio@vger.kernel.org, linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-mediatek@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-input@vger.kernel.org, 
 	linux-mmc@vger.kernel.org, imx@lists.linux.dev, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
-	linux-pm@vger.kernel.org, linux-pwm@vger.kernel.org, 
-	linux-amlogic@lists.infradead.org, linux-spi@vger.kernel.org, 
-	linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-usb@vger.kernel.org, sound-open-firmware@alsa-project.org, 
-	linux-sound@vger.kernel.org
+	linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org, 
+	linux-pwm@vger.kernel.org, linux-amlogic@lists.infradead.org, linux-spi@vger.kernel.org, 
+	linux-scsi@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
+	sound-open-firmware@alsa-project.org, linux-sound@vger.kernel.org
+Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
+Message-ID: <ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
+References: <pnd7c0s6ji2.fsf@axis.com>
+MIME-Version: 1.0
+In-Reply-To: <pnd7c0s6ji2.fsf@axis.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_105741_628790_56F45E41 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20250701_104422_580916_6962B4BF 
+X-CRM114-Status: GOOD (  18.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,29 +107,150 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4069253936772713816=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBKdWwgMSwgMjAyNSBhdCA4OjQ04oCvUE0gVXdlIEtsZWluZS1Lw7ZuaWcgPHVrbGVp
-bmVrQGtlcm5lbC5vcmc+IHdyb3RlOgo+IE9uIFR1ZSwgSnVsIDAxLCAyMDI1IGF0IDA1OjAzOjMz
-UE0gKzAyMDAsIFdhcWFyIEhhbWVlZCB3cm90ZToKCi4uLgoKPiBXaXRoIHRoYXQKPgo+ICAgICAg
-ICAgcmV0ID0gZGV2bV9hZGRfYWN0aW9uX29yX3Jlc2V0KGRldiwgbWVzb25fcHdtX3M0X3B1dF9j
-bGssCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzb24tPmNoYW5u
-ZWxzW2ldLmNsayk7Cj4gICAgICAgICBpZiAocmV0KQo+ICAgICAgICAgICAgICAgICByZXR1cm4g
-ZGV2X2Vycl9wcm9iZShkZXYsIHJldCwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIkZhaWxlZCB0byBhZGQgY2xrX3B1dCBhY3Rpb25cbiIpOwo+Cj4gZnJvbSBkcml2ZXJz
-L3B3bS9wd20tbWVzb24uYyBpcyBvcHRpbWl6ZWQgdG8KPgo+ICAgICAgICAgcmV0ID0gZGV2bV9h
-ZGRfYWN0aW9uX29yX3Jlc2V0KGRldiwgbWVzb25fcHdtX3M0X3B1dF9jbGssCj4gICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzb24tPmNoYW5uZWxzW2ldLmNsayk7Cj4g
-ICAgICAgICBpZiAocmV0KQo+ICAgICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+Cj4gLgo+Cj4g
-SSB3b3VsZCBwcmVmZXIgdGhpcyBhcHByb2FjaCwgYmVjYXVzZSBhKSB0aGVyZSBpcyBubyBuZWVk
-IHRvIGRyb3AgYWxsCj4gZGV2X2Vycl9wcm9iZSgpcyBhZnRlciBkZXZtX2FkZF9hY3Rpb25fb3Jf
-cmVzZXQoKSBhbmQgYikgdGhlCj4gZGV2X2Vycl9wcm9iZSgpcyBjb3VsZCBzdGF5IGZvciBjb25z
-aXN0ZW5jeSBpbiB0aGUgZXJyb3IgcGF0aHMgb2YgYQo+IGRyaXZlci4KCldoeSBkbyB3ZSBuZWVk
-IGEgZGV2X2Vycl9wcm9iZSgpIGFmdGVyIGRldm1fYWRkX2FjdGlvbiooKT8gSSB3b3VsZApleHBl
-Y3QgdGhhdCB0aGUgb3JpZ2luYWwgY2FsbCAoaWYgbmVlZGVkKSBjYW4gc3BpdCBvdXQgYSBtZXNz
-YWdlLgoKCi0tIApXaXRoIEJlc3QgUmVnYXJkcywKQW5keSBTaGV2Y2hlbmtvCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+--===============4069253936772713816==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="siz3npg32duy4f54"
+Content-Disposition: inline
+
+
+--siz3npg32duy4f54
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
+MIME-Version: 1.0
+
+Hello,
+
+On Tue, Jul 01, 2025 at 05:03:33PM +0200, Waqar Hameed wrote:
+>  drivers/pwm/pwm-meson.c                          | 3 +--
+
+Looking at this driver I tried the following:
+
+diff --git a/drivers/base/core.c b/drivers/base/core.c
+index 3809baed42f3..58a2ab74f14c 100644
+--- a/drivers/base/core.c
++++ b/drivers/base/core.c
+@@ -5062,7 +5062,7 @@ static void __dev_probe_failed(const struct device *d=
+ev, int err, bool fatal,
+  *
+  * Returns @err.
+  */
+-int dev_err_probe(const struct device *dev, int err, const char *fmt, ...)
++int _dev_err_probe(const struct device *dev, int err, const char *fmt, ...)
+ {
+ 	va_list vargs;
+=20
+@@ -5075,7 +5075,7 @@ int dev_err_probe(const struct device *dev, int err, =
+const char *fmt, ...)
+=20
+ 	return err;
+ }
+-EXPORT_SYMBOL_GPL(dev_err_probe);
++EXPORT_SYMBOL_GPL(_dev_err_probe);
+=20
+ /**
+  * dev_warn_probe - probe error check and log helper
+diff --git a/include/linux/dev_printk.h b/include/linux/dev_printk.h
+index eb2094e43050..23ef250727f1 100644
+--- a/include/linux/dev_printk.h
++++ b/include/linux/dev_printk.h
+@@ -275,7 +275,13 @@ do {									\
+ 	WARN_ONCE(condition, "%s %s: " format, \
+ 			dev_driver_string(dev), dev_name(dev), ## arg)
+=20
+-__printf(3, 4) int dev_err_probe(const struct device *dev, int err, const =
+char *fmt, ...);
++__printf(3, 4) int _dev_err_probe(const struct device *dev, int err, const=
+ char *fmt, ...);
++
++#define dev_err_probe(dev, err, ...) (								\
++	(__builtin_constant_p(err) && err =3D=3D -ENOMEM) ? err : _dev_err_probe(=
+dev, err, __VA_ARGS__)	\
++)
++
++
+ __printf(3, 4) int dev_warn_probe(const struct device *dev, int err, const=
+ char *fmt, ...);
+=20
+ /* Simple helper for dev_err_probe() when ERR_PTR() is to be returned. */
+diff --git a/include/linux/device/devres.h b/include/linux/device/devres.h
+index ae696d10faff..abfa5152b5a7 100644
+--- a/include/linux/device/devres.h
++++ b/include/linux/device/devres.h
+@@ -157,8 +157,11 @@ static inline int __devm_add_action_or_reset(struct de=
+vice *dev, void (*action)(
+ 	int ret;
+=20
+ 	ret =3D __devm_add_action(dev, action, data, name);
+-	if (ret)
++	if (ret) {
++		if (ret !=3D -ENOMEM)
++			__builtin_unreachable();
+ 		action(data);
++	}
+=20
+ 	return ret;
+ }
+
+With that
+
+        ret =3D devm_add_action_or_reset(dev, meson_pwm_s4_put_clk,
+                                       meson->channels[i].clk);
+        if (ret)
+                return dev_err_probe(dev, ret,
+                                     "Failed to add clk_put action\n");
+
+=66rom drivers/pwm/pwm-meson.c is optimized to
+
+        ret =3D devm_add_action_or_reset(dev, meson_pwm_s4_put_clk,
+                                       meson->channels[i].clk);
+        if (ret)
+                return ret;
+
+=2E
+
+I would prefer this approach, because a) there is no need to drop all
+dev_err_probe()s after devm_add_action_or_reset() and b) the
+dev_err_probe()s could stay for consistency in the error paths of a
+driver.
+
+Best regards
+Uwe
+
+--siz3npg32duy4f54
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmhkHm4ACgkQj4D7WH0S
+/k40Ugf+IGBhMZPHVoCFXh9jXSPImkCDM81Omc7cyM5CZFFdOO09K82bfGBFD7bF
+X+9ZxJqCFCRmF8AtN+3Z6xmAia7Q4jKwUgvdR/iJY4jMX6uQk49IxGgv9Ux9aAu2
+/jttnDFocIwCi6sjUxxf2HCdfwLPKhfhrl+xNpQ80kh4oBZ+L0X5s6u6Mcsu8V2P
+2O3Q05nJZK/bpCYZNgRHMeg4k71v6nG8eYw2nJ6n7dbTOtj+HnQC3GCfajWFg7mf
+al8FLQxckEkDif0f7yDlSnjUT7oF78eg1G2pf9PDBr9I15efw+TkKSmkr/MIVXJE
+YFLNKMZeRFfoAyzKWfjfpuR/ZUe+3Q==
+=uD6x
+-----END PGP SIGNATURE-----
+
+--siz3npg32duy4f54--
+
+
+--===============4069253936772713816==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4069253936772713816==--
+
