@@ -4,89 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 501C6C8303F
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:00:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8328AC8303C
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:00:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tFfnBITOdcJlB3P5blkwUWKsXUZB/0Zrc7e8oYp8w4A=; b=uHleIBYOyq36bL
-	yEl4ugsuKQ+kbVE9mV6MJBh+1O4wmib8LIWiaKJkkPQzkT04VQUVbeCc9yL04I3WlexTJGSrUx40S
-	H8EYgeZF9CI0yhTRJwUroE1xWyC7J0LevQ6TDbzWk5acTKGcHlrqlDphCQTsU3+CCYldSdigLCaEQ
-	wqNQsJ818WhHqnIwCky1/aeem2CgbjjYh0dE9JaBArb5CfT3vDFCWTM7hAT6RlVv6DgCYxcHNUWIk
-	RL+OPTRQueYK5Jq7o0qKX/ze4BHRBWDmvg8UinPmvgt9F2JmgPVyrjYy/R7bCbUMjJ8U/bWN5qcsK
-	veFw0RerB1zz1ArFoMQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=HAKSExfvdcMvnpujn8wIV2f/ckKL0l6DHHFZ9PfgU8A=; b=wgTxbqlrr6lG+p
+	VZmfrVH+k/aIv/Gtq3vM2Yc3sZqDidxUNzdwdvRCBkRETLFA9xIfh1dbS9mSWUd4kfc9bs2aFeOwE
+	H/EpwfEF7r2nmIqNIsdCj08X7grhmY+5DA2CZuwA7AcnUzHij0jJxtIsqFJP0SfKYrjgOkLqhZNQQ
+	DAOp5Y2SpK0luBGRXIZAgsCWE4Oa/HAvhLdXQs21WCYpfjYnplSgOkO2SYtf9WAqQCh1+hCnKyznh
+	rHP4CXeiuFtpFfXPkAYbHhDLAyxJvlKoUD8WVYw+arRvip+G+Ytq9n537DA+2LUw6cMOXgtECvQIg
+	h1f4h3Z4ddiEamnbssOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWgDU-00000006PFV-0AlD;
-	Tue, 01 Jul 2025 19:00:28 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1uWgDj-00000006Pa5-13Ng;
+	Tue, 01 Jul 2025 19:00:43 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWdt7-0000000632d-02JQ
-	for linux-phy@lists.infradead.org;
-	Tue, 01 Jul 2025 16:31:18 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250701163112epoutp032a7bc755b113617b6951ec7da1e8fd7e~OLaCJ5IXC2043220432epoutp03I
-	for <linux-phy@lists.infradead.org>; Tue,  1 Jul 2025 16:31:12 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250701163112epoutp032a7bc755b113617b6951ec7da1e8fd7e~OLaCJ5IXC2043220432epoutp03I
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1751387472;
-	bh=CYCieZx7RGc4LBogHf+a8UqHutLdl5VHK4F8STwbvPM=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=oT3g7+5ykWliopi8mIAdsTlCpWF4z7LPDgU/YHY2nVhTIVLVp/iNxC6sMHGpCscf6
-	 xXqM5Vf8YsWk3RvOJ8/byHzgAuVETzDxQ3lqsd3/X5++BIaDvsp8+hk9g/aj6uzSwF
-	 qpm6UMUNgJgIvc3JXmvsYi33AP+FsPag3DbUfyZY=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
-	20250701163111epcas5p2709c45ba4dad180fe68d0ca67be7a784~OLaBi-Gsx2740427404epcas5p2f;
-	Tue,  1 Jul 2025 16:31:11 +0000 (GMT)
-Received: from epcas5p1.samsung.com (unknown [182.195.38.174]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4bWpSF6RFTz6B9m5; Tue,  1 Jul
-	2025 16:31:09 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250701133810epcas5p3e1acdfe3bfcf5276e6c70f12755fdf57~OJC9HjeEd0290902909epcas5p3y;
-	Tue,  1 Jul 2025 13:38:10 +0000 (GMT)
-Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250701133807epsmtip15aa5b5f8243b909f80b036d6b7b3ca61~OJC6dIU3K0912509125epsmtip18;
-	Tue,  1 Jul 2025 13:38:07 +0000 (GMT)
-From: "Shradha Todi" <shradha.t@samsung.com>
-To: "'Rob Herring'" <robh@kernel.org>
-Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-fsd@tesla.com>, <manivannan.sadhasivam@linaro.org>,
-	<lpieralisi@kernel.org>, <kw@linux.com>, <bhelgaas@google.com>,
-	<jingoohan1@gmail.com>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-	<alim.akhtar@samsung.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-	<arnd@arndb.de>, <m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
-	<pankaj.dubey@samsung.com>
-In-Reply-To: <20250627211236.GA147018-robh@kernel.org>
-Subject: RE: [PATCH v2 06/10] dt-bindings: PCI: Add bindings support for
- Tesla FSD SoC
-Date: Tue, 1 Jul 2025 19:08:06 +0530
-Message-ID: <02c001dbea8d$62b21d50$281657f0$@samsung.com>
+	id 1uWeIb-000000068P2-0lWr;
+	Tue, 01 Jul 2025 16:57:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4EA96613A9;
+	Tue,  1 Jul 2025 16:57:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C3601C4CEEB;
+	Tue,  1 Jul 2025 16:57:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1751389056;
+	bh=yt/kc/jTaSiC0j9rC9eyESiUppBPRZhs+YZzLBzzs2Q=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=k3cAUR1cwKTtg4sD128wLSlwJY88qu3T8AwGwte1udkUcUr3rKs7T6494qFObHT3B
+	 JTrodUx32RfXmXcNfG9GLlbH7Hv0sRG4CaLCPx0sd/i9FgvVUS06xnNt78wV/DcoOW
+	 YZD84F4eISrgrOurB154lqR8dX8fNxi3VqtMT67f+pxlua1FKRWSDMH5Zi5BQELAKU
+	 jRdwCi+sEZLy4Ds/xihdLxowlVRqTOkn6NUD+ZIuAz1phRiYvAx5s724BmTAiRVJeP
+	 QUQt/PRY4OOWRarBMjZsbQ/3HCYM0A0EbeQBGSiU75BNmWLRI8XMP2GnoUsfYoNV3c
+	 N7xUf38+SJ8iQ==
+Date: Tue, 1 Jul 2025 11:57:34 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Shradha Todi <shradha.t@samsung.com>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-fsd@tesla.com, mani@kernel.org,
+	lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
+	bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org,
+	conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org,
+	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com,
+	jh80.chung@samsung.com, pankaj.dubey@samsung.com
+Subject: Re: [PATCH v2 09/10] PCI: exynos: Add support for Tesla FSD SoC
+Message-ID: <20250701165734.GA1839534@bhelgaas>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQFUClgbainc6hQuKSBO0V8ttZVgkwK41mGpAfhwG8gB/KC3xLT3likQ
-Content-Language: en-in
-X-CMS-MailID: 20250701133810epcas5p3e1acdfe3bfcf5276e6c70f12755fdf57
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-541,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250625165315epcas5p19f081c8a0e2e7dc87698577cc2d460ca
-References: <20250625165229.3458-1-shradha.t@samsung.com>
-	<CGME20250625165315epcas5p19f081c8a0e2e7dc87698577cc2d460ca@epcas5p1.samsung.com>
-	<20250625165229.3458-7-shradha.t@samsung.com>
-	<20250627211236.GA147018-robh@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_093117_362254_76D18C34 
-X-CRM114-Status: GOOD (  14.04  )
+Content-Disposition: inline
+In-Reply-To: <02b101dbea79$d7e086c0$87a19440$@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,41 +74,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Jul 01, 2025 at 04:48:13PM +0530, Shradha Todi wrote:
+> > -----Original Message-----
+> > From: Bjorn Helgaas <helgaas@kernel.org>
+> > Sent: 28 June 2025 01:01
+> > To: Shradha Todi <shradha.t@samsung.com>
+> > Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+> linux-
+> > samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; linux-
+> > fsd@tesla.com; manivannan.sadhasivam@linaro.org; lpieralisi@kernel.org; kw@linux.com;
+> > robh@kernel.org; bhelgaas@google.com; jingoohan1@gmail.com; krzk+dt@kernel.org;
+> > conor+dt@kernel.org; alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org;
+> > arnd@arndb.de; m.szyprowski@samsung.com; jh80.chung@samsung.com; pankaj.dubey@samsung.com
+> > Subject: Re: [PATCH v2 09/10] PCI: exynos: Add support for Tesla FSD SoC
 
+Would be good if your mailer could support the usual quote mechanism,
+e.g. the "On Wed, Jun 25, 2025 at 10:22:28PM +0530, Shradha Todi
+wrote:" line below.  No need for all the header duplication above.
 
-> -----Original Message-----
-> From: Rob Herring <robh@kernel.org>
-> Sent: 28 June 2025 02:43
-> To: Shradha Todi <shradha.t@samsung.com>
-> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-linux-
-> samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; linux-
-> fsd@tesla.com; manivannan.sadhasivam@linaro.org; lpieralisi@kernel.org; kw@linux.com;
-> bhelgaas@google.com; jingoohan1@gmail.com; krzk+dt@kernel.org; conor+dt@kernel.org;
-> alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org; arnd@arndb.de;
-> m.szyprowski@samsung.com; jh80.chung@samsung.com; pankaj.dubey@samsung.com
-> Subject: Re: [PATCH v2 06/10] dt-bindings: PCI: Add bindings support for Tesla FSD SoC
-> 
-> On Wed, Jun 25, 2025 at 10:22:25PM +0530, Shradha Todi wrote:
-> > Document the PCIe controller device tree bindings for Tesla FSD
-> > SoC for both RC and EP.
-> 
-> Drop 'bindings support for ' in the subject.
-> 
-> >
-> > Signed-off-by: Shradha Todi <shradha.t@samsung.com>
-> > ---
-> >  .../bindings/pci/samsung,exynos-pcie.yaml     | 121 ++++++++++++------
-> 
-> I think this should be its own schema file. There's not much shared.
-> 
+> > On Wed, Jun 25, 2025 at 10:22:28PM +0530, Shradha Todi wrote:
+> > > Add host and endpoint controller driver support for FSD SoC.
 
-Resending my reply after trimming.
+> > This would be a little nicer if you added soc_variant and device_mode
+> > and the code that sets and tests them for exynos_5433 first in a
+> > separate patch.  Then it would be more obvious that the new FSD parts
+> > don't affect exynos_5433 since this patch would only be *adding*
+> > FSD-specific things.
+> 
+> Sure,  I have no issues in splitting the patches further. Though
+> unfortunately, I or anyone I know does not possess a board which has
+> Exynos 5433 chipset.  Therefore, I'm unable to verify these changes
+> for Exynos chipset. I took care to not disturb the exynos flow
+> functionally but would be great if someone could test this and
+> confirm that it works well on Exynos 5433 after the changes.
 
-Will make 2 new bindings - samsung,exynos-pcie-common.yaml and
-tesla,fsd-pcie.yaml
-Does that sound okay?
+Yeah, that's a common situation, and there's no problem with adding
+this functionality.  But in the unlikely event there's a mistake that
+relates to Exynos 5433, it will be easier for someone with that board
+to analyze the problem if the changes that affect exynos_5433 are
+split out into a patch that doesn't include any FSD-related changes.
 
+> > >  static const struct samsung_pcie_pdata exynos_5433_pcie_rc_pdata = {
+> > >  	.dwc_ops		= &exynos_dw_pcie_ops,
+> > >  	.pci_ops		= &exynos_pci_ops,
+> > >  	.host_ops		= &exynos_pcie_host_ops,
+> > >  	.res_ops		= &exynos_res_ops_data,
+> > > +	.soc_variant		= EXYNOS_5433,
+> > > +	.device_mode		= DW_PCIE_RC_TYPE,
+> > >  };
+> > 
+> > >  static const struct of_device_id exynos_pcie_of_match[] = {
+> > > @@ -449,6 +756,14 @@ static const struct of_device_id exynos_pcie_of_match[] = {
+> > >  		.compatible = "samsung,exynos5433-pcie",
+> > >  		.data = (void *) &exynos_5433_pcie_rc_pdata,
+> > >  	},
+> 
 
 -- 
 linux-phy mailing list
