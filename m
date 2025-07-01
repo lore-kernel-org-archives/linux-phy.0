@@ -4,64 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C39A0C83038
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:07:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB39EC8303F
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 19:10:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=f/DU/8YnY1HkAc0OZK7RDpC5Qqf6pSSY0YrisXTOHb8=; b=CNPGCujfjH6trM
-	gny1mevrfsUVYPL86NtlwAu0NLHXwVsFgxMVudZ1jw6LMyC+ECARUVeAkuPkDW7jxcPO18de9uRot
-	KcDGbyAPKnfLKCotqytd2+B8e41pUWHvf87qcpVaapb7hz0RP55fH4SB/tF3WOAxv/ZVTdxeWAmUk
-	518IzAeOxA4H9vHnEWaO2dCc3E5jQEJiDp1yMr6T51HcExm5oG2uKzajR1RT6rHL/7R83loHKZmFh
-	KLpDz5UPlSc+Wa8ZXRPoT1Hf/cF3v3nWpwUbCCTga1z/RwsSsIRjzYAqubSfkLKhJZFAZidzUe0M+
-	FkuJZ0pT1Q9lIYWVsXeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C5QBzbIeig8aWKB163SG+t1bCHE1PJsKJJc27wEoezQ=; b=lItMu3vIwinw3Z
+	2Unvj7Of4o/HyCqFScL9kGAlGBgWEtWZ50QPlb7Bfnrl8fwl9gIe8s46zlyxmtuRr7X81EXN8ltor
+	3E/VLCtbsT/0nvrqwuUaoaWtTZfYaG2NZqAgNchTaKEaCDqUcIDxlN+6Agtp9+dVNrJth5wMVAHLQ
+	CzFdzqNkbKMyGb29s3wFAUTqXDpgCOsWjMBQLDHydlQrrzb2z3F/uXfTNB3Hd++1SeyaLiQz3c87x
+	/0vPKLW2GUggNPRje+VseGbpK/vKX382+SQU82tmJ1xS2azzUcb7TFTGK5gDZ6z1beVr5ON6Vt2mi
+	4kTHV8ZZx/EcQfBYtfHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWgKL-00000006R56-2J36;
-	Tue, 01 Jul 2025 19:07:33 +0000
+	id 1uWgMn-00000006RNy-24Q3;
+	Tue, 01 Jul 2025 19:10:05 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWeb9-00000006CR5-0bTE;
-	Tue, 01 Jul 2025 17:16:48 +0000
+	id 1uWfCx-00000006HJP-3SnI;
+	Tue, 01 Jul 2025 17:55:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 428A343AA2;
-	Tue,  1 Jul 2025 17:16:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2B0BC4CEEB;
-	Tue,  1 Jul 2025 17:16:45 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DF98B460CA;
+	Tue,  1 Jul 2025 17:55:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59A38C4CEEB;
+	Tue,  1 Jul 2025 17:55:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751390206;
-	bh=IHpoblBzuvpr+bD38aHPPj2yibJOlQN5z3Zq9NJFVjw=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=R+7aGu9gGq1zndHEsz0rJcIVhpQTD5rgNkasa2YilgAe4wwaMjiKujUoB0kF5k6uH
-	 SNweTnElvr0PTCLs3uObcEfiPJsP7l9DKaNUF0+/m9pkCZ8hTKeEFST3A9GL0cLK/h
-	 Gq7XfGmJGwj+MMzr0Z8oPYDhwyn0zFAqChFKUIsz0FxR+vd4YB5G0WceGNuYs+lmRb
-	 tBr9M+RziKoYiayXRcNIyx97ZbuzBgz6ULScHWmhVSEJh9zVlnJInmO3Cy5QHAQjxr
-	 G1C68U3c/AvPcV3W0D2QsKOYHB5UuVGOBqnH3fLx+XM/jBzu3HHBUzcXun0wo8OAq1
-	 5dlyOmRNwjuwg==
-Date: Tue, 1 Jul 2025 12:16:44 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Shradha Todi <shradha.t@samsung.com>
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-fsd@tesla.com, mani@kernel.org,
-	lpieralisi@kernel.org, kw@linux.com, robh@kernel.org,
-	bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org,
-	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com,
-	jh80.chung@samsung.com, pankaj.dubey@samsung.com
-Subject: Re: [PATCH v2 06/10] dt-bindings: PCI: Add bindings support for
- Tesla FSD SoC
-Message-ID: <20250701171644.GA1839997@bhelgaas>
+	s=k20201202; t=1751392550;
+	bh=wNjXDKjq0I6/9yhbTcfL1kL2qUBF2TKpXGL7HuWci6Y=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=HriBBdwvDpiR3MqtXKwPsYZ1oyhJc4LuNhlhGwLR9DueVpFhqgxh0iifGRF8evW5b
+	 JkSKN6s2pXENJuY4L7jw9EN0o02oGOqxbejPJl98m6f7SgO53gilTl2QYWbDazLHJG
+	 GMk+QoES7HtD/8pJ/jE4gIULQYzcfilklDsIvNLqEXk8jjIvhTDISALb6F1T5xkyuV
+	 2ceg8TIweRtzrpnnwxZfvr4CfQb7JsO9KTeLrZbTN2IdbDo0841Ct19ICweXdr48Es
+	 os2K+GpqIeRuS8b0lEvHCyatYjQShJnNz4T08zfYD8j5YgIEEztxJptyVRDDkHG/JJ
+	 xDnujlxhZfnhA==
+Date: Tue, 1 Jul 2025 18:55:19 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Uwe =?UTF-8?B?S2xlaW5lLUvDtm5pZw==?= <ukleinek@kernel.org>
+Cc: Waqar Hameed <waqar.hameed@axis.com>, Vignesh Raghavendra
+ <vigneshr@ti.com>, Julien Panis <jpanis@baylibre.com>, William Breathitt
+ Gray <wbg@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Bartosz
+ Golaszewski <brgl@bgdev.pl>, Peter Rosin <peda@axentia.se>, David Lechner
+ <dlechner@baylibre.com>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy
+ Shevchenko <andy@kernel.org>, Cosmin Tanislav <cosmin.tanislav@analog.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich
+ <Michael.Hennerich@analog.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Matteo Martelli <matteomartelli3@gmail.com>, Heiko Stuebner
+ <heiko@sntech.de>, Francesco Dolcini <francesco@dolcini.it>,
+ =?UTF-8?B?Sm/Do28=?= Paulo =?UTF-8?B?R29uw6dhbHZlcw==?=
+ <jpaulo.silvagoncalves@gmail.com>, Hugo Villeneuve
+ <hvilleneuve@dimonoff.com>, Subhajit Ghosh <subhajit.ghosh@tweaklogic.com>,
+ Mudit Sharma <muditsharma.info@gmail.com>, Gerald Loacker
+ <gerald.loacker@wolfvision.net>, Song Qiang <songqiang1304521@gmail.com>,
+ Crt Mori <cmo@melexis.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Karol Gugala <kgugala@antmicro.com>,
+ Mateusz Holenko <mholenko@antmicro.com>, Gabriel Somlo <gsomlo@gmail.com>,
+ Joel Stanley <joel@jms.id.au>, Claudiu Manoil <claudiu.manoil@nxp.com>,
+ Vladimir Oltean <vladimir.oltean@nxp.com>, Wei Fang <wei.fang@nxp.com>,
+ Clark Wang <xiaoning.wang@nxp.com>, Andrew Lunn <andrew+netdev@lunn.ch>,
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet
+ <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+ <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar
+ <alim.akhtar@samsung.com>, Sebastian Reichel <sre@kernel.org>, Neil
+ Armstrong <neil.armstrong@linaro.org>, Kevin Hilman <khilman@baylibre.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Martin Blumenstingl
+ <martin.blumenstingl@googlemail.com>, Han Xu <han.xu@nxp.com>, Haibo Chen
+ <haibo.chen@nxp.com>, Yogesh Gaur <yogeshgaur.83@gmail.com>, Mark Brown
+ <broonie@kernel.org>, Avri Altman <avri.altman@wdc.com>, Bart Van Assche
+ <bvanassche@acm.org>, "James E.J. Bottomley"
+ <James.Bottomley@hansenpartnership.com>, "Martin K. Petersen"
+ <martin.petersen@oracle.com>, Souradeep Chowdhury
+ <quic_schowdhu@quicinc.com>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Liam Girdwood <lgirdwood@gmail.com>, Peter
+ Ujfalusi <peter.ujfalusi@linux.intel.com>, Bard Liao
+ <yung-chuan.liao@linux.intel.com>, Ranjani Sridharan
+ <ranjani.sridharan@linux.intel.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ Kai Vehmanen <kai.vehmanen@linux.intel.com>, Pierre-Louis Bossart
+ <pierre-louis.bossart@linux.dev>, Jaroslav Kysela <perex@perex.cz>, Takashi
+ Iwai <tiwai@suse.com>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, kernel@axis.com,
+ linux-iio@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-input@vger.kernel.org, linux-mmc@vger.kernel.org,
+ imx@lists.linux.dev, netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-pwm@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-spi@vger.kernel.org, linux-scsi@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+ sound-open-firmware@alsa-project.org, linux-sound@vger.kernel.org
+Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
+Message-ID: <20250701185519.1410e831@jic23-huawei>
+In-Reply-To: <ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
+References: <pnd7c0s6ji2.fsf@axis.com>
+	<ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
+X-Mailer: Claws Mail 4.3.1 (GTK 3.24.49; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <02b201dbea7b$fbaf5390$f30dfab0$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_101647_202728_CF403A51 
-X-CRM114-Status: GOOD (  20.11  )
+X-CRM114-CacheID: sfid-20250701_105551_909942_4365F03B 
+X-CRM114-Status: GOOD (  30.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,55 +121,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 01, 2025 at 05:03:31PM +0530, Shradha Todi wrote:
-> > -----Original Message-----
-> > From: Bjorn Helgaas <helgaas@kernel.org>
-> > Sent: 27 June 2025 22:00
-
-> > On Wed, Jun 25, 2025 at 10:22:25PM +0530, Shradha Todi wrote:
-> > > Document the PCIe controller device tree bindings for Tesla FSD
-> > > SoC for both RC and EP.
-
-> > > +++ b/Documentation/devicetree/bindings/pci/tesla,fsd-pcie-ep.yaml
-> > 
-> > I'm not sure about the "tesla,fsd-pcie-ep.yaml" filename.  I see that
-> > it currently only describes a tesla endpoint, but it seems like maybe
-> > this should be parallel to the "samsung,exynos-pcie.yaml" host
-> > controller binding.
-> 
-> Actually there is no support for Exynos5433 in EP mode. Initially I
-> named the binding file "samsung,exynos-pcie-ep.yaml" to make it
-> parallel to the host controller bindings. But I received a comment
-> that file names should match the compatible strings which makes
-> sense so I changed it to this.
-
-Certainly makes sense to match the compatible strings, although
-samsung,exynos-pcie.yaml now includes both:
-
-  samsung,exynos5433-pcie
-  tesla,fsd-pcie
-
-Exynos5433 may not support EP mode, but I assume the underlying IP for
-the Tesla FSD in EP mode is still Samsung, and I assume some Exynos
-device may someday support EP mode.
-
-But I see Krzysztof's suggestion that the filename match compatible
-and also Rob's observation that there's not much shared between
-samsung,exynos5433-pcie and tesla,fsd-pcie.
-
-Maybe that means both the RC and EP bindings should be named
-"tesla,fsd..."  It seems a little weird that the same hardware would
-be named described by either "samsung-exynos" or "tesla,fsd" just
-depending on a mode switch.
-
-Bjorn
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCAxIEp1bCAyMDI1IDE5OjQ0OjE3ICswMjAwClV3ZSBLbGVpbmUtS8O2bmlnIDx1a2xl
+aW5la0BrZXJuZWwub3JnPiB3cm90ZToKCj4gSGVsbG8sCj4gCj4gT24gVHVlLCBKdWwgMDEsIDIw
+MjUgYXQgMDU6MDM6MzNQTSArMDIwMCwgV2FxYXIgSGFtZWVkIHdyb3RlOgo+ID4gIGRyaXZlcnMv
+cHdtL3B3bS1tZXNvbi5jICAgICAgICAgICAgICAgICAgICAgICAgICB8IDMgKy0tICAKPiAKPiBM
+b29raW5nIGF0IHRoaXMgZHJpdmVyIEkgdHJpZWQgdGhlIGZvbGxvd2luZzoKPiAKCkhpIFVxZSwK
+CkknbSBub3Qgc3VyZSB3aGF0IHdlIGFjdHVhbGx5IHdhbnQgaGVyZS4KCk15IHRob3VnaHQgd2hl
+biBzdWdnZXN0aW5nIHJlbW92aW5nIGluc3RhbmNlcyBvZiB0aGlzCnBhcnRpY3VsYXIgY29tYmlu
+YXRpb24gd2Fzbid0IHNhdmluZyBvbiBjb2RlIHNpemUsIGJ1dCByYXRoZXIganVzdApnZW5lcmFs
+IHJlbW92YWwgb2YgcG9pbnRsZXNzIGNvZGUgdGhhdCB3YXMgZ2V0dGluZyBjdXQgYW5kCnBhc3Rl
+IGludG8gbmV3IGRyaXZlcnMgYW5kIHdhc3RpbmcgYSB0aW55IGJpdCBvZiByZXZpZXcgYmFuZHdp
+ZHRoLgpJJ2QgY29uc2lkZXIgaXQgYmFkIHByYWN0aWNlIHRvIGhhdmUgcGF0dGVybnMgbGlrZQoK
+dm9pZCAqc29tZXRoaW5nID0ga21hbGxvYygpOwppZiAgKCFzb21ldGhpbmcpCglyZXR1cm4gZGV2
+X2Vycl9wcm9iZShkZXYsIC1FTk9NRU0sIC4uKTsKCmFuZCBteSBhc3N1bXB0aW9uIHdhcyBwZW9w
+bGUgd291bGQgdGFrZSBhIHNpbWlsYXIgdmlldyB3aXRoCmRldm1fYWRkX2FjdGlvbl9vcl9yZXNl
+dCgpLgoKSXQgaXMgYSBiaXQgbnVhbmNlZCB0byBoYXZlIHNvbWUgY2FzZXMgd2hlcmUgd2UgdGhp
+bmsgcHJpbnRzCmFyZSByZWFzb25hYmxlIGFuZCBvdGhlcnMgd2hlcmUgdGhleSBhcmVuJ3Qgc28g
+SSBnZXQgeW91cgpwb2ludCBhYm91dCBjb25zaXN0ZW5jeS4KClRoZSBjb2RlIHNpemUgcmVkdWN0
+aW9uIGlzIG5pY2Ugc28gSSdkIG5vdCBiZSBhZ2FpbnN0IGl0IGFzIGFuIGV4dHJhCmlmIHRoZSBy
+ZWR1Y3Rpb24gYWNyb3NzIGEga2VybmVsIGJ1aWxkcyBpcyBzaWduaWZpY2FudCBhbmQgZW5vdWdo
+CnBlb3BsZSB3YW50IHRvIGtlZXAgdGhlc2Ugbm9uIHByaW50aW5nIHByaW50cy4KCkpvbmF0aGFu
+CgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9iYXNlL2NvcmUuYyBiL2RyaXZlcnMvYmFzZS9jb3Jl
+LmMKPiBpbmRleCAzODA5YmFlZDQyZjMuLjU4YTJhYjc0ZjE0YyAxMDA2NDQKPiAtLS0gYS9kcml2
+ZXJzL2Jhc2UvY29yZS5jCj4gKysrIGIvZHJpdmVycy9iYXNlL2NvcmUuYwo+IEBAIC01MDYyLDcg
+KzUwNjIsNyBAQCBzdGF0aWMgdm9pZCBfX2Rldl9wcm9iZV9mYWlsZWQoY29uc3Qgc3RydWN0IGRl
+dmljZSAqZGV2LCBpbnQgZXJyLCBib29sIGZhdGFsLAo+ICAgKgo+ICAgKiBSZXR1cm5zIEBlcnIu
+Cj4gICAqLwo+IC1pbnQgZGV2X2Vycl9wcm9iZShjb25zdCBzdHJ1Y3QgZGV2aWNlICpkZXYsIGlu
+dCBlcnIsIGNvbnN0IGNoYXIgKmZtdCwgLi4uKQo+ICtpbnQgX2Rldl9lcnJfcHJvYmUoY29uc3Qg
+c3RydWN0IGRldmljZSAqZGV2LCBpbnQgZXJyLCBjb25zdCBjaGFyICpmbXQsIC4uLikKPiAgewo+
+ICAJdmFfbGlzdCB2YXJnczsKPiAgCj4gQEAgLTUwNzUsNyArNTA3NSw3IEBAIGludCBkZXZfZXJy
+X3Byb2JlKGNvbnN0IHN0cnVjdCBkZXZpY2UgKmRldiwgaW50IGVyciwgY29uc3QgY2hhciAqZm10
+LCAuLi4pCj4gIAo+ICAJcmV0dXJuIGVycjsKPiAgfQo+IC1FWFBPUlRfU1lNQk9MX0dQTChkZXZf
+ZXJyX3Byb2JlKTsKPiArRVhQT1JUX1NZTUJPTF9HUEwoX2Rldl9lcnJfcHJvYmUpOwo+ICAKPiAg
+LyoqCj4gICAqIGRldl93YXJuX3Byb2JlIC0gcHJvYmUgZXJyb3IgY2hlY2sgYW5kIGxvZyBoZWxw
+ZXIKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9kZXZfcHJpbnRrLmggYi9pbmNsdWRlL2xp
+bnV4L2Rldl9wcmludGsuaAo+IGluZGV4IGViMjA5NGU0MzA1MC4uMjNlZjI1MDcyN2YxIDEwMDY0
+NAo+IC0tLSBhL2luY2x1ZGUvbGludXgvZGV2X3ByaW50ay5oCj4gKysrIGIvaW5jbHVkZS9saW51
+eC9kZXZfcHJpbnRrLmgKPiBAQCAtMjc1LDcgKzI3NSwxMyBAQCBkbyB7CQkJCQkJCQkJXAo+ICAJ
+V0FSTl9PTkNFKGNvbmRpdGlvbiwgIiVzICVzOiAiIGZvcm1hdCwgXAo+ICAJCQlkZXZfZHJpdmVy
+X3N0cmluZyhkZXYpLCBkZXZfbmFtZShkZXYpLCAjIyBhcmcpCj4gIAo+IC1fX3ByaW50ZigzLCA0
+KSBpbnQgZGV2X2Vycl9wcm9iZShjb25zdCBzdHJ1Y3QgZGV2aWNlICpkZXYsIGludCBlcnIsIGNv
+bnN0IGNoYXIgKmZtdCwgLi4uKTsKPiArX19wcmludGYoMywgNCkgaW50IF9kZXZfZXJyX3Byb2Jl
+KGNvbnN0IHN0cnVjdCBkZXZpY2UgKmRldiwgaW50IGVyciwgY29uc3QgY2hhciAqZm10LCAuLi4p
+Owo+ICsKPiArI2RlZmluZSBkZXZfZXJyX3Byb2JlKGRldiwgZXJyLCAuLi4pICgJCQkJCQkJCVwK
+PiArCShfX2J1aWx0aW5fY29uc3RhbnRfcChlcnIpICYmIGVyciA9PSAtRU5PTUVNKSA/IGVyciA6
+IF9kZXZfZXJyX3Byb2JlKGRldiwgZXJyLCBfX1ZBX0FSR1NfXykJXAo+ICspCj4gKwo+ICsKPiAg
+X19wcmludGYoMywgNCkgaW50IGRldl93YXJuX3Byb2JlKGNvbnN0IHN0cnVjdCBkZXZpY2UgKmRl
+diwgaW50IGVyciwgY29uc3QgY2hhciAqZm10LCAuLi4pOwo+ICAKPiAgLyogU2ltcGxlIGhlbHBl
+ciBmb3IgZGV2X2Vycl9wcm9iZSgpIHdoZW4gRVJSX1BUUigpIGlzIHRvIGJlIHJldHVybmVkLiAq
+Lwo+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L2RldmljZS9kZXZyZXMuaCBiL2luY2x1ZGUv
+bGludXgvZGV2aWNlL2RldnJlcy5oCj4gaW5kZXggYWU2OTZkMTBmYWZmLi5hYmZhNTE1MmI1YTcg
+MTAwNjQ0Cj4gLS0tIGEvaW5jbHVkZS9saW51eC9kZXZpY2UvZGV2cmVzLmgKPiArKysgYi9pbmNs
+dWRlL2xpbnV4L2RldmljZS9kZXZyZXMuaAo+IEBAIC0xNTcsOCArMTU3LDExIEBAIHN0YXRpYyBp
+bmxpbmUgaW50IF9fZGV2bV9hZGRfYWN0aW9uX29yX3Jlc2V0KHN0cnVjdCBkZXZpY2UgKmRldiwg
+dm9pZCAoKmFjdGlvbikoCj4gIAlpbnQgcmV0Owo+ICAKPiAgCXJldCA9IF9fZGV2bV9hZGRfYWN0
+aW9uKGRldiwgYWN0aW9uLCBkYXRhLCBuYW1lKTsKPiAtCWlmIChyZXQpCj4gKwlpZiAocmV0KSB7
+Cj4gKwkJaWYgKHJldCAhPSAtRU5PTUVNKQo+ICsJCQlfX2J1aWx0aW5fdW5yZWFjaGFibGUoKTsK
+PiAgCQlhY3Rpb24oZGF0YSk7Cj4gKwl9Cj4gIAo+ICAJcmV0dXJuIHJldDsKPiAgfQo+IAo+IFdp
+dGggdGhhdAo+IAo+ICAgICAgICAgcmV0ID0gZGV2bV9hZGRfYWN0aW9uX29yX3Jlc2V0KGRldiwg
+bWVzb25fcHdtX3M0X3B1dF9jbGssCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgbWVzb24tPmNoYW5uZWxzW2ldLmNsayk7Cj4gICAgICAgICBpZiAocmV0KQo+ICAgICAg
+ICAgICAgICAgICByZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIHJldCwKPiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIkZhaWxlZCB0byBhZGQgY2xrX3B1dCBhY3Rpb25cbiIp
+Owo+IAo+IGZyb20gZHJpdmVycy9wd20vcHdtLW1lc29uLmMgaXMgb3B0aW1pemVkIHRvCj4gCj4g
+ICAgICAgICByZXQgPSBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQoZGV2LCBtZXNvbl9wd21fczRf
+cHV0X2NsaywKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNvbi0+
+Y2hhbm5lbHNbaV0uY2xrKTsKPiAgICAgICAgIGlmIChyZXQpCj4gICAgICAgICAgICAgICAgIHJl
+dHVybiByZXQ7Cj4gCj4gLgo+IAo+IEkgd291bGQgcHJlZmVyIHRoaXMgYXBwcm9hY2gsIGJlY2F1
+c2UgYSkgdGhlcmUgaXMgbm8gbmVlZCB0byBkcm9wIGFsbAo+IGRldl9lcnJfcHJvYmUoKXMgYWZ0
+ZXIgZGV2bV9hZGRfYWN0aW9uX29yX3Jlc2V0KCkgYW5kIGIpIHRoZQo+IGRldl9lcnJfcHJvYmUo
+KXMgY291bGQgc3RheSBmb3IgY29uc2lzdGVuY3kgaW4gdGhlIGVycm9yIHBhdGhzIG9mIGEKPiBk
+cml2ZXIuCj4gCj4gQmVzdCByZWdhcmRzCj4gVXdlCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
+c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
