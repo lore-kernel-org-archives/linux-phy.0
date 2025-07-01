@@ -4,87 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6B90C8302F
-	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 11:47:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2B55C7EE30
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Jul 2025 13:39:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ChpO19gd86OARnIZp2DHy8/VHU4NkVGV8jQMUjidWJI=; b=m5eTum9KNp7f3J
-	rrErphrmuKkHA3nKRrcIMrhvYPKC9qqoXIvCzfZdVDTp8JZxjsNvf2/edEBE03JWK2aw5UFPEoGEe
-	87tMljUJyAzT12tAAeLTH9DryO+++yUaF2x9Za3NbEshSb/EsViQ1EHioba1drz+3IQ5N9d830fXv
-	4uHgr4Qy/0mXUSZjRNw3jgp3vfQuU5ytnxtcLspsKhUFLXCmvTHjc8auPnSoMvAwv9EBSnzz/ruoj
-	HvJ9DNT1rt9SrX2mm3VWFJcjFd99M5dIMmHt2RrovjSU95tTXJRbEk9+Z3wpbZq1xfgvRH6Wcf31R
-	1iyqJ3KBcKvqWMq2bX3Q==;
+	List-Owner; bh=T8jLhfQdHMEfW6pjN1mJEQQGHiLyCwv1ynwzBbD2Z0A=; b=zR9mPYPKRUSMgs
+	98IytIJ7KggkUMJdL2gwuoM1gYHvytlmztKWI9TTSmPGJXaGqVmfEQZn7CUJ8xKYbNEFOxWY61Kve
+	5/Y2UWGUEc6ipQ3qoncpWVS0d87xbo7NE+6BXjqPTR0S/WO44jKdkLr3JAJupHGldy1amM4/DUi59
+	jrX+mU4cShM2eMr2NUyY5emk+rtmPfSE0zz4JGUyZunw1VOyIEC8dvCMQVsGSn2FpxFVgUA6hYzvH
+	KK9/11LFJ/iqQfjlU+81phcPRQD17HUQAUyOoqlHv+lMQI9e80BW1YIac/aS5AqEGVWmdRVFjbl3u
+	0FylKFP7wMcDDgtWounQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWZSu-00000004ufi-1gi2;
-	Tue, 01 Jul 2025 11:47:56 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1uWbDC-00000005Y27-18na;
+	Tue, 01 Jul 2025 13:39:50 +0000
+Received: from mail-qk1-x735.google.com ([2607:f8b0:4864:20::735])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWZLg-00000004t7e-1f5s
-	for linux-phy@lists.infradead.org;
-	Tue, 01 Jul 2025 11:40:30 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250701114024epoutp02eb16883bb20222a70d0452257da6ba16~OHcIQRFsT2710927109epoutp02L
-	for <linux-phy@lists.infradead.org>; Tue,  1 Jul 2025 11:40:24 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250701114024epoutp02eb16883bb20222a70d0452257da6ba16~OHcIQRFsT2710927109epoutp02L
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1751370024;
-	bh=2Nli5jAMu0NC9zLKjZfj4lZI1r3k1lL6PZil61CiwoQ=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=KY7JO1IsHlfA9MJX/INx8OUB847GygezOpPrB/oKVBqWR2MCcGbK12Jt072bSnoBJ
-	 zI0/WThqCBwwTO3oKM9pVqvvpST/SigLVMAIRRB0OV3jRQh9C0Kiti219ZeHzcOB/N
-	 89AT5YOTsEUDcOR3qPlJQMDXwMWgDHnNnCFAxM9Y=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250701114023epcas5p33dd4f6f24af1c80abcf7c49a1993ea12~OHcHvVz-72271022710epcas5p3o;
-	Tue,  1 Jul 2025 11:40:23 +0000 (GMT)
-Received: from epcas5p1.samsung.com (unknown [182.195.38.180]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4bWh0j3BTSz6B9m7; Tue,  1 Jul
-	2025 11:40:21 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
-	20250701113336epcas5p1cfa1a369fad337b9a2211c7588cd7561~OHWMK6rHg2219722197epcas5p1d;
-	Tue,  1 Jul 2025 11:33:36 +0000 (GMT)
-Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250701113333epsmtip106136eafe25d00b19c1917b7fa970e20~OHWJXty0k3251632516epsmtip1u;
-	Tue,  1 Jul 2025 11:33:33 +0000 (GMT)
-From: "Shradha Todi" <shradha.t@samsung.com>
-To: "'Bjorn Helgaas'" <helgaas@kernel.org>
-Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-fsd@tesla.com>, <mani@kernel.org>, <lpieralisi@kernel.org>,
-	<kw@linux.com>, <robh@kernel.org>, <bhelgaas@google.com>,
-	<jingoohan1@gmail.com>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-	<alim.akhtar@samsung.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-	<arnd@arndb.de>, <m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
-	<pankaj.dubey@samsung.com>
-In-Reply-To: <20250627162943.GA1672296@bhelgaas>
-Subject: RE: [PATCH v2 06/10] dt-bindings: PCI: Add bindings support for
- Tesla FSD SoC
-Date: Tue, 1 Jul 2025 17:03:31 +0530
-Message-ID: <02b201dbea7b$fbaf5390$f30dfab0$@samsung.com>
+	id 1uWZi7-00000004zNY-3Kk8;
+	Tue, 01 Jul 2025 12:03:40 +0000
+Received: by mail-qk1-x735.google.com with SMTP id af79cd13be357-7d412988b14so568946585a.3;
+        Tue, 01 Jul 2025 05:03:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1751371418; x=1751976218; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=u96x1JfBwvgLGiFlKKRmBEu1YqkfwBmaBuctHI0YH60=;
+        b=bhvxa79wdgciYS3k21GpQB1+uns7T0YdaeFXo8GOblVfSDqFwj+x1T5WTG5lqrY2kS
+         oLYL1DyiOKrnG+GM8+PWJ/8eTwvA1JsspbHeeMbnHDv3FIeoMpsCc3ciMD4d+Hz7VpLL
+         SwvWNmDKL/vAgSt5BNJgSVzsOusPfjdsu3p0QU3F7HdqCfqYrRdAv4FfKRv7WLCqbB6J
+         N7TgZvOajcd9tme3vpbfXPuBitKjkNrSLbHDqnX2NMV/s1xs6eeBupx1Yw+ktF5ky0Lu
+         x5gLx8z2vqV3LK2tH3OB6w0a6A3PSapaoNdXvIVzo9/15rgnbFA1K4KmMJjd4PYIIr46
+         bteA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751371418; x=1751976218;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=u96x1JfBwvgLGiFlKKRmBEu1YqkfwBmaBuctHI0YH60=;
+        b=HRWy6e3QCyOkrrd81HuguWFRyJ/GpWBhR0582m3epS7aME6pQC+rNEvBOQ4I30gbgT
+         KXOAvnG0n4jsQvIERdU3faPB/s24ZVg3SsSUoSJb7BGOuOy405h2QF51rllqISSxTW3t
+         c3H/72D8JOiiaMGe0YcnZzEmNSEnM1+9A84QeqKLAGTtzlL0EzXta8snFaWpS24nJlM1
+         n2tMHYOBBDjWlFLKm50Wrhfie7SEJbEDKbijoX0nwYydYUFVgpz/TpPDhyK5ATI/aBc1
+         MwJRx9/B4WCgScBd5pfDB4oWCUdAoHFvzYKIjdegMGdWdDxY2HOhPsH5QrLFtOxEvM1a
+         Y0Ng==
+X-Forwarded-Encrypted: i=1; AJvYcCWhUjTXD5j9VYwJamaL8MI+KS4CMcrjI522La2BhasZgieibgTJmAslspG1uwWTrn/TPKHhegbdDvcjYhbLPHt4@lists.infradead.org, AJvYcCXvLAYGUj7XLNbSLG0lDarbLLbtBZeQr4nKZ0pZAQ3uZq72DpqtWaLoGpsSjj5LWTx11XpSXvnOiXpp@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw5pKHlM5qM2jbZ6d0/aJ3X1QBPPZMbkx4sXSeQgJvDL5+McjOT
+	uMx61nxIIExLApv9FXqlducXsCctApR/yRUPG9vyN5RZHhwUtO+IQr1c
+X-Gm-Gg: ASbGncsFDYJgHd376/17tX05y0RZgdAjrcEp5sqUmnF5QPgbQrdssT3WQENkdVwe/hV
+	49hq7FcNxaReMFLoKzEdc0E6HcdMElE85mhhCx1231ZGyfLFbYCGuNmdYNF4NG25sC3DjCseREd
+	YvtX965n/VIEF5SVhhVOQgpcUYJ1qUQsdxhu8QE8FS0vFWNw5HkIlQz8j+1V2l8HluKtG8LU1ib
+	PUlAytlopa5Gel4uhTwVhCTnEqNqU6/nawGse++ce3MwwwxyPKRxGN7Pfx8izTzhqECqY1+WbZv
+	6iZsZOFrocNNbUDrrvA9W4WQodYr8iq2xbj2co5t8y0Wf7zFCA==
+X-Google-Smtp-Source: AGHT+IEqGZkaKeymTeUbc3R0Jer5+f67MSqiVnEtF+k9RaGWT4yLl2LhTIn7tVAVFgdHVrYUcmDoQw==
+X-Received: by 2002:a05:620a:4623:b0:7d1:fc53:c6b2 with SMTP id af79cd13be357-7d443974577mr2475688285a.41.1751371418232;
+        Tue, 01 Jul 2025 05:03:38 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:4f51::dead:c001])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-7d44321a706sm753060185a.81.2025.07.01.05.03.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 01 Jul 2025 05:03:37 -0700 (PDT)
+Date: Tue, 1 Jul 2025 09:03:31 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: Philipp Stanner <pstanner@redhat.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [RESEND PATCH v9 1/4] PCI: rockchip: Use standard PCIe defines
+Message-ID: <aGPOkw2G2IeNhDRy@geday>
+References: <cover.1751322015.git.geraldogabriel@gmail.com>
+ <e81700ef4b49f584bc8834bfb07b6d8995fc1f42.1751322015.git.geraldogabriel@gmail.com>
+ <ce0fdbf2753075056c227ce7567a69386a5aa0a3.camel@redhat.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQLemVNzYEMOy/tIwP8yQfjCLghe+gHQOY9Ysgk/TyA=
-Content-Language: en-in
-X-CMS-MailID: 20250701113336epcas5p1cfa1a369fad337b9a2211c7588cd7561
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-541,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250627162949epcas5p1fc5eebd0036116ce2913cdcbabdab1fd
-References: <CGME20250627162949epcas5p1fc5eebd0036116ce2913cdcbabdab1fd@epcas5p1.samsung.com>
-	<20250627162943.GA1672296@bhelgaas>
+Content-Disposition: inline
+In-Reply-To: <ce0fdbf2753075056c227ce7567a69386a5aa0a3.camel@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_044028_740439_F155A809 
-X-CRM114-Status: GOOD (  21.53  )
+X-CRM114-CacheID: sfid-20250701_050339_836086_50EE2A63 
+X-CRM114-Status: GOOD (  14.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,72 +109,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Jul 01, 2025 at 09:54:51AM +0200, Philipp Stanner wrote:
+> On Mon, 2025-06-30 at 19:24 -0300, Geraldo Nascimento wrote:
+> > Current code uses custom-defined register offsets and bitfields for
+> > standard PCIe registers. Change to using standard PCIe defines. Since
+> > we are now using standard PCIe defines, drop unused custom-defined
+> > ones,
+> > which are now referenced from offset at added Capabilities Register.
+> 
+> This could be phrased a bit more cleanly. At least I don't get exactly
+> what "from offset" means. You mean you replace the unused custom ones?
+> But if they're unused, why are they even being replaced?
 
+Hi Philipp!
 
-> -----Original Message-----
-> From: Bjorn Helgaas <helgaas@kernel.org>
-> Sent: 27 June 2025 22:00
-> To: Shradha Todi <shradha.t@samsung.com>
-> Cc: linux-pci@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-linux-
-> samsung-soc@vger.kernel.org; linux-kernel@vger.kernel.org; linux-phy@lists.infradead.org; linux-
-> fsd@tesla.com; manivannan.sadhasivam@linaro.org; lpieralisi@kernel.org; kw@linux.com;
-> robh@kernel.org; bhelgaas@google.com; jingoohan1@gmail.com; krzk+dt@kernel.org;
-> conor+dt@kernel.org; alim.akhtar@samsung.com; vkoul@kernel.org; kishon@kernel.org;
-> arnd@arndb.de; m.szyprowski@samsung.com; jh80.chung@samsung.com; pankaj.dubey@samsung.com
-> Subject: Re: [PATCH v2 06/10] dt-bindings: PCI: Add bindings support for Tesla FSD SoC
-> 
-> On Wed, Jun 25, 2025 at 10:22:25PM +0530, Shradha Todi wrote:
-> > Document the PCIe controller device tree bindings for Tesla FSD
-> > SoC for both RC and EP.
-> 
-> > +++ b/Documentation/devicetree/bindings/pci/samsung,exynos-pcie.yaml
-> 
-> > -  clocks:
-> > -    items:
-> > -      - description: PCIe bridge clock
-> > -      - description: PCIe bus clock
-> 
-> > -  vdd10-supply:
-> > -    description:
-> > -      Phandle to a regulator that provides 1.0V power to the PCIe block.
-> > -
-> > -  vdd18-supply:
-> > -    description:
-> > -      Phandle to a regulator that provides 1.8V power to the PCIe block.
-> 
-> > +            - description: pcie bridge clock
-> > +            - description: pcie bus clock
-> 
-> Gratuitous "PCIe" capitalization changes here and in supplies below.
-> This is just plain English text so we can use English conventions.
-> 
-> > +        vdd10-supply:
-> > +          description:
-> > +            phandle to a regulator that provides 1.0v power to the pcie block.
-> > +
-> > +        vdd18-supply:
-> > +          description:
-> > +            phandle to a regulator that provides 1.8v power to the pcie block.
-> 
-> I *would* be OK if you dropped the periods at the end of these, which
-> would make them match the other descriptions in this binding.
-> 
-> > +++ b/Documentation/devicetree/bindings/pci/tesla,fsd-pcie-ep.yaml
-> 
-> I'm not sure about the "tesla,fsd-pcie-ep.yaml" filename.  I see that
-> it currently only describes a tesla endpoint, but it seems like maybe
-> this should be parallel to the "samsung,exynos-pcie.yaml" host
-> controller binding.
-> 
-> Bjorn
+"from offset" means we use standard PCIe defines for registers that are
+adjacent to Capabilities Register, and we reference them from the offset
+at Capabilities Register.
 
-Actually there is no support for Exynos5433 in EP mode. Initially I named
-the binding file "samsung,exynos-pcie-ep.yaml" to make it parallel to the host
-controller bindings. But I received a comment that file names should match
-the compatible strings which makes sense so I changed it to this.
+No, all registers replaced are in use, unused in that context means they
+(the custom-defined registers which can be referenced starting from
+Capabilities Register address) become unused after the change, only.
 
+> 
+> 
+> > 
+> > Suggested-By: Bjorn Helgaas <bhelgaas@google.com>
+> 
+> s/By/by
 
+Thanks for the capitalization catch. Unfortunately there's little I can do
+now that Mani went ahead and applied the first two patches (directly
+related to PCI subsystem).
+
+Thanks,
+Geraldo Nascimento
+
+> 
+> 
+> P.
 
 -- 
 linux-phy mailing list
