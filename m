@@ -4,98 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9742C83F1D
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 09:32:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBB08C83F22
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 09:40:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bu9iFdHT2IiJNDSN4SVeY7N0avow3XaxZLWcVg3W1Cw=; b=ORXigaCseFoaR5
-	IpmHjVrkDoQqxEalxWw2mKQ2JOkugTDZjbZx314NJcAoZBynTOTOSW95pZ0trxGqeLaLH8r1h0tik
-	8OXa8LkH7u8ocBdpv+dbMNWKfzuvWYFB4MHFhJ3cYcU8y45lgT5x5NNnIQLOluSQJeoCM6wlce7FR
-	J+eJlZAhxU6rsrcH7tjQhRvD4FLmgYl6yYNQqTcAK3GvL+J9JDz2gJq3Mm2bA+s9JNfgB20X7AFZG
-	IfYmpv91SBI7S1lPhmoz7VE6FKkgpKWZIVuvj0qAxDMe/7Twvwr8z7oRannCFgN69bKqwZozVhx3r
-	u3RsRo5mKFScVeJo9ITA==;
+	List-Owner; bh=cBO3IjSJ/WV93cZSxjVA2N8WKdekeRazSh8oMKXIhVs=; b=ADuiO2K4glOghk
+	i4I5vVGaQe8ehF2OLyGqtVg1OA/f4Fj2Y3+XpriTbs6whFi8lFyEOSKanLLt3f9NgsnSlynPIanIi
+	hzVgntYEetR0AvVrhbvXt6EI05GQTZ4scB6kgZaxqDus0AwOQo6maTAyVWrbuLmDn/L2pN84J6yqe
+	QPHjf2bOcUezwO8PXGoMONi9mFPRR6IHffpr/wD4R0w2/ag3rAbtYWw95lQBjEJ0gMmg8EQ83usZJ
+	4F9cb4v7Yo9jrpUBH2NqwFAhsbmXGYaRNrQQS2QqZ+s87Oi5HBmsqssOqWyfCJFlegs307DH2RtLS
+	U1TkLMLB0SvDYgFec/wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubc1Z-00000004gbv-2Qng;
-	Tue, 15 Jul 2025 09:32:33 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ubc8m-00000004iev-2euG;
+	Tue, 15 Jul 2025 09:40:00 +0000
+Received: from frasgout.his.huawei.com ([185.176.79.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubbP5-00000004aBF-0B83
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Jul 2025 08:52:48 +0000
-Received: by mail-wr1-x443.google.com with SMTP id ffacd0b85a97d-3a4e742dc97so3639093f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 01:52:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1752569565; x=1753174365; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=8rnVY1GAF/N5LWVPltTjR6zDyfcKdsovhZ7bcU1CtiQ=;
-        b=yNG8tKP1RQQK+8WYc7n0SccGMIEOmToClvAXA5cUHbqXowtoDEejFyDUIAzjDD/CaN
-         OljPHB6jmZ16WtqDTn4y0JVGZGUQ14scZDD5+26mm6Z+N7MBs/jSPceUotrETPrvDxmg
-         MvDYLKhaf0fku1J+y1C533TNYUzaWB0/D/vPHgI1R4sqEBq8ck40DuvRqC3s6/e6H39r
-         +r+nBBAeCE89nw3rjYTrsIS2I4fAmKvPwcbOBCvB414/UB6AB4Dn02L9yVffkFk3MR16
-         KCPNzN1L7uXi5VmrCaDGrLbyJ+WP6J8Zh9d2AQcdZ0uh9Tt4nff7ItpoQLEVlwNrmuSS
-         yPNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752569565; x=1753174365;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=8rnVY1GAF/N5LWVPltTjR6zDyfcKdsovhZ7bcU1CtiQ=;
-        b=fQrdGXR2GpIOXJO6rMSSaFvvlNnWZG1vDdKpttK5r8uwFNNqaXsX1lHZ3ragKECmEm
-         SUxEaJBy0KvNBTyzBLrXLn1u2G5c1+qssOL47zu1omw71xUknOcrPGPm8Y9JHfFAbXKI
-         7UghKMvQbNpEtD16NhZNIymeIaP2iOfl7ASk+WM+v2Zz/Z1Nq5W+8aHUXNGYJKpk08re
-         H8Ti9mF5EaSPfuXLJCjaRbcWqGlQBnW5dw+hxtzjFGRE1WUYDtvAA6hmcDZy/FaYOcac
-         WuOtDOb9WYlMbRibFuaN3poInL+cF9M0nNtC/3rKt2zk0HYsN3jljapYq4JAnij92g7/
-         Uo2Q==
-X-Forwarded-Encrypted: i=1; AJvYcCU1R/iYOh8AILoHfclt6OqJSW+W3mDCdAdOsaoNNyAL0GEgHzJy7Uh2fVrnr0qY3QdZBfleDKc/CzA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzF1l41F7kLDsfF/xFUlxWT7ZIWJ1uHGBaoUD4aKbOaYyXXOHgg
-	WJZ6YZ/NReGDweZ8LTcy1yFTfB3PaxuQZ3ljMJ3Ky3KERIxvoSch1HZTsWgTspOOCVFQ6loSGqQ
-	9fFXz7ULckYtW
-X-Gm-Gg: ASbGncuU+EF1DxZmaa5D6dsoZ46v3Tl7oUwOoA3ilwV2+n/jGfC6oeJCPfIlYdPOlxP
-	2fOF+7AS5ZMHMXVdYhNwC2kqZmopbft1r0mz7ArFaoP4LZAACdvCwIAaJ3BejVeH3vm3B1CTEf5
-	t3VJmI+QmP0+x8wcFHmKT/WdN/6YWEf0XUweOUsLxIb+2VWBsS+IURYfAZ3/AHH/kEKYzBe7rL7
-	bZDfN+LHcSgjKx/+kGBzTbYoR/bCjH1SG74Oi03gZmoH/o+2cz6CRxoyi3H+MfDZbz+9oXlTpTe
-	RBTY/2dYnZaqN6sPks+kWbxsk8YBKHL5hJyVZts1W605bvPce6nwv7qtGXSGsQ3tBFgMfmq/Z4e
-	qliBrOokYQHRIayVjWTMuzXEhtHxpWK+8i2IMBz/OmxfdzzSsGq8YE00atofeGo8aguaa+ty5gQ
-	==
-X-Google-Smtp-Source: AGHT+IFaQahPDaZUOJPsVC+qijtYvVYI6IpgA7gJn52e340/+24c8CKkEgyMH3/OfrM26Bc8TF0EMg==
-X-Received: by 2002:a05:6000:2289:b0:3b5:e077:af52 with SMTP id ffacd0b85a97d-3b60953435fmr2397025f8f.25.1752569565440;
-        Tue, 15 Jul 2025 01:52:45 -0700 (PDT)
-Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b5e8e26daasm14882980f8f.91.2025.07.15.01.52.44
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 15 Jul 2025 01:52:44 -0700 (PDT)
-Message-ID: <2f9c8b96-8051-4270-b151-661c569823df@linaro.org>
-Date: Tue, 15 Jul 2025 09:52:43 +0100
+	id 1uWuEi-00000007s3v-1VNK;
+	Wed, 02 Jul 2025 09:58:42 +0000
+Received: from mail.maildlp.com (unknown [172.18.186.31])
+	by frasgout.his.huawei.com (SkyGuard) with ESMTP id 4bXFdQ6LTjz6L55h;
+	Wed,  2 Jul 2025 17:55:38 +0800 (CST)
+Received: from frapeml500008.china.huawei.com (unknown [7.182.85.71])
+	by mail.maildlp.com (Postfix) with ESMTPS id B5DAB1404FD;
+	Wed,  2 Jul 2025 17:58:31 +0800 (CST)
+Received: from localhost (10.203.177.66) by frapeml500008.china.huawei.com
+ (7.182.85.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.1.2507.39; Wed, 2 Jul
+ 2025 11:58:28 +0200
+Date: Wed, 2 Jul 2025 10:58:26 +0100
+From: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+To: Uwe =?ISO-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>
+CC: Jonathan Cameron <jic23@kernel.org>, Waqar Hameed <waqar.hameed@axis.com>,
+	Vignesh Raghavendra <vigneshr@ti.com>, "Julien Panis" <jpanis@baylibre.com>,
+	William Breathitt Gray <wbg@kernel.org>, "Linus Walleij"
+	<linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Peter Rosin
+	<peda@axentia.se>, David Lechner <dlechner@baylibre.com>, Nuno
+ =?ISO-8859-1?Q?S=E1?= <nuno.sa@analog.com>, Andy Shevchenko
+	<andy@kernel.org>, Cosmin Tanislav <cosmin.tanislav@analog.com>, "Lars-Peter
+ Clausen" <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>, Matteo Martelli
+	<matteomartelli3@gmail.com>, Heiko Stuebner <heiko@sntech.de>, Francesco
+ Dolcini <francesco@dolcini.it>, =?ISO-8859-1?Q?Jo=E3o?= Paulo
+ =?ISO-8859-1?Q?Gon=E7alves?= <jpaulo.silvagoncalves@gmail.com>, Hugo
+ Villeneuve <hvilleneuve@dimonoff.com>, Subhajit Ghosh
+	<subhajit.ghosh@tweaklogic.com>, Mudit Sharma <muditsharma.info@gmail.com>,
+	Gerald Loacker <gerald.loacker@wolfvision.net>, Song Qiang
+	<songqiang1304521@gmail.com>, Crt Mori <cmo@melexis.com>, Dmitry Torokhov
+	<dmitry.torokhov@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>, Karol
+ Gugala <kgugala@antmicro.com>, Mateusz Holenko <mholenko@antmicro.com>,
+	Gabriel Somlo <gsomlo@gmail.com>, Joel Stanley <joel@jms.id.au>, Claudiu
+ Manoil <claudiu.manoil@nxp.com>, Vladimir Oltean <vladimir.oltean@nxp.com>,
+	Wei Fang <wei.fang@nxp.com>, Clark Wang <xiaoning.wang@nxp.com>, Andrew Lunn
+	<andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni
+	<pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+	<kishon@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar
+	<alim.akhtar@samsung.com>, Sebastian Reichel <sre@kernel.org>, "Neil
+ Armstrong" <neil.armstrong@linaro.org>, Kevin Hilman <khilman@baylibre.com>,
+	Jerome Brunet <jbrunet@baylibre.com>, Martin Blumenstingl
+	<martin.blumenstingl@googlemail.com>, Han Xu <han.xu@nxp.com>, Haibo Chen
+	<haibo.chen@nxp.com>, Yogesh Gaur <yogeshgaur.83@gmail.com>, Mark Brown
+	<broonie@kernel.org>, Avri Altman <avri.altman@wdc.com>, Bart Van Assche
+	<bvanassche@acm.org>, "James E.J. Bottomley"
+	<James.Bottomley@hansenpartnership.com>, "Martin K. Petersen"
+	<martin.petersen@oracle.com>, Souradeep Chowdhury
+	<quic_schowdhu@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Liam Girdwood <lgirdwood@gmail.com>, "Peter Ujfalusi"
+	<peter.ujfalusi@linux.intel.com>, Bard Liao
+	<yung-chuan.liao@linux.intel.com>, Ranjani Sridharan
+	<ranjani.sridharan@linux.intel.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+	Kai Vehmanen <kai.vehmanen@linux.intel.com>, Pierre-Louis Bossart
+	<pierre-louis.bossart@linux.dev>, Jaroslav Kysela <perex@perex.cz>, "Takashi
+ Iwai" <tiwai@suse.com>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
+	<s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, <kernel@axis.com>,
+	<linux-iio@vger.kernel.org>, <linux-omap@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-gpio@vger.kernel.org>,
+	<linux-i2c@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-rockchip@lists.infradead.org>,
+	<linux-input@vger.kernel.org>, <linux-mmc@vger.kernel.org>,
+	<imx@lists.linux.dev>, <netdev@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<linux-pm@vger.kernel.org>, <linux-pwm@vger.kernel.org>,
+	<linux-amlogic@lists.infradead.org>, <linux-spi@vger.kernel.org>,
+	<linux-scsi@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+	<linux-usb@vger.kernel.org>, <sound-open-firmware@alsa-project.org>,
+	<linux-sound@vger.kernel.org>, "Joe Perches" <joe@perches.com>, Andy
+ Whitcroft <apw@canonical.com>, "Dwaipayan Ray" <dwaipayanray1@gmail.com>,
+	Lukas Bulwahn <lukas.bulwahn@gmail.com>
+Subject: Re: [PATCH] Remove error prints for devm_add_action_or_reset()
+Message-ID: <20250702105826.0000315e@huawei.com>
+In-Reply-To: <jeajjewfbg5qo736imozpghnpxln2pux74aegtqsi57qsbpug2@opndel6zc3m3>
+References: <pnd7c0s6ji2.fsf@axis.com>
+	<ylr7cuxldwb24ccenen4khtyddzq3owgzzfblbohkdxb7p7eeo@qpuddn6wrz3x>
+	<20250701185519.1410e831@jic23-huawei>
+	<jeajjewfbg5qo736imozpghnpxln2pux74aegtqsi57qsbpug2@opndel6zc3m3>
+X-Mailer: Claws Mail 4.3.0 (GTK 3.24.42; x86_64-w64-mingw32)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom: Add MIPI CSI2 C-PHY/DPHY
- Combo schema
-To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
- <20250710-x1e-csi2-phy-v1-1-74acbb5b162b@linaro.org>
- <8ed5eeee-78a2-4b26-989f-03676a9e5da7@linaro.org>
- <01080f5f-f3e6-4989-ac84-766c030dda35@linaro.org>
- <dd3c2fea-2c85-4a4e-b048-68f95f4a7d5d@linaro.org>
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Content-Language: en-US
-In-Reply-To: <dd3c2fea-2c85-4a4e-b048-68f95f4a7d5d@linaro.org>
+X-Originating-IP: [10.203.177.66]
+X-ClientProxiedBy: lhrpeml100003.china.huawei.com (7.191.160.210) To
+ frapeml500008.china.huawei.com (7.182.85.71)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_015247_097029_19693FC5 
-X-CRM114-Status: UNSURE (   8.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250702_025840_678206_EEE540ED 
+X-CRM114-Status: GOOD (  42.05  )
+X-Mailman-Approved-At: Tue, 15 Jul 2025 02:34:05 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,35 +125,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/07/2025 07:40, Vladimir Zapolskiy wrote:
->>>
->>> There is no ports at all, which makes the device tree node unusable,
->>> since you can not provide a way to connect any sensors to the phy.
->>
->> data-ports should go from sensor to the consumer of the data camss/csid
->> not to the PHY.
-> 
-> No, this is an invalid description of links between hardware IPs, and
-> this mistake shall not be copied to CSIPHY/CAMSS.
+On Wed, 2 Jul 2025 08:54:48 +0200
+Uwe Kleine-K=F6nig <ukleinek@kernel.org> wrote:
 
-Why is it an invalid description ?
+> Hello Jonathan,
+> =
 
-https://lore.kernel.org/linux-media/20240220-rk3568-vicap-v9-12-ace1e5cc4a82@collabora.com/
+> On Tue, Jul 01, 2025 at 06:55:19PM +0100, Jonathan Cameron wrote:
+> > On Tue, 1 Jul 2025 19:44:17 +0200
+> > Uwe Kleine-K=F6nig <ukleinek@kernel.org> wrote:
+> >   =
 
-TBH I took a look at the rockchip stuff and said "nice, excellent, let's 
-do it that way".
+> > > On Tue, Jul 01, 2025 at 05:03:33PM +0200, Waqar Hameed wrote:  =
 
-I'm happy to shamelessly copy their stuff.
+> > > >  drivers/pwm/pwm-meson.c                          | 3 +--    =
 
----
-bod
+> > > =
 
--- 
+> > > Looking at this driver I tried the following:  =
+
+> > =
+
+> > I'm not sure what we actually want here.
+> > =
+
+> > My thought when suggesting removing instances of this
+> > particular combination wasn't saving on code size, but rather just
+> > general removal of pointless code that was getting cut and
+> > paste into new drivers and wasting a tiny bit of review bandwidth.
+> > I'd consider it bad practice to have patterns like
+> > =
+
+> > void *something =3D kmalloc();
+> > if  (!something)
+> > 	return dev_err_probe(dev, -ENOMEM, ..);
+> > =
+
+> > and my assumption was people would take a similar view with
+> > devm_add_action_or_reset().
+> >
+> > It is a bit nuanced to have some cases where we think prints
+> > are reasonable and others where they aren't so I get your
+> > point about consistency.  =
+
+> =
+
+> The problem I see is that there are two classes of functions: a) Those
+> that require an error message and b) those that don't. Class b) consists
+> of the functions that can only return success or -ENOMEM and the
+> functions that emit an error message themselves. (And another problem I
+> see is that for the latter the error message is usually non-optimal
+> because the function doesn't know the all details of the request. See my
+> reply to Andy for more details about that rant.)
+> =
+
+> IMHO what takes away the review bandwidth is that the reviewer has to
+> check which class the failing function is part of. If this effort
+> results in more driver authors not adding an error message after
+> devm_add_action_or_reset() that's nice, but in two months I have
+> forgotten the details of this discussion and I have to recheck if
+> devm_add_action_or_reset() is part of a) or b) and so the burden is
+> still on me.
+
+Maybe this is a job for checkpatch, at least for the common cases.
+
+There is already a check for kmalloc etc.
+https://elixir.bootlin.com/linux/v6.16-rc4/source/scripts/checkpatch.pl#L64=
+42
+
++CC Joe (who wrote the allocation functions test years ago) and other check=
+patch
+folk.
+
+
+> =
+
+> So to give my answer on your question "What do we actually want here?":
+> Please let us get rid of the need to care for a) or b).
+> =
+
+> > The code size reduction is nice so I'd not be against it as an extra
+> > if the reduction across a kernel builds is significant and enough
+> > people want to keep these non printing prints.  =
+
+> =
+
+> To complete implementing my wish all API functions would need to stop to
+> emit an error message. Unfortunately that isn't without downsides
+> because the result is that there are more error strings and so the
+> kernel size is increased. So you have to weight if you prefer individual
+> error messages and easier review/maintenance at the cost of a bigger
+> binary size and more dev_err_probe() calls in drivers eating vertical
+> space in your editor.
+> =
+
+> I know on which side I am, but I bet we won't find agreement about that
+> in the kernel community ...
+
+
+> =
+
+> Best regards
+> Uwe
+> =
+
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
