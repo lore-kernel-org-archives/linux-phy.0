@@ -4,48 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35AD0C7EE30
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Jul 2025 06:42:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B99EC7EE30
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Jul 2025 06:47:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zf2BhyJcj2ChsYby9v/jp7WAWTOz/oGQlu4NThS2b4E=; b=mtNj5A1vKmESSt
-	wTqnwpIcxlIrTDYKrVlOZPtA6auLE6+ot9m4eqvOHVAVP7kou4tuTBVp8p4GTjcnDsYk7B0t/DY41
-	tUGkuYXVZW60H2KXvXox3hu+gOxZVxm1ZQNqYjWJge0KFYiy2eOMV+WrsXrpMqSBOm9jB3jSB7Qmo
-	Y5qvjeoOfF1ysIPeOSaAHJUpiDlnqd6ZN3Kmo8Qqhs+lqn+fYQ1PFlnUbioZ5s9GUoJfOcJNU5zH0
-	Y9HU5R7q2lrYV+wfUZuoVqVD3eBXxIj3aNd2N7FVMrldJPvyjf7cgvFMsbH0dL2ewMmeotVx3+OyR
-	U6/TF/MQ2Y886DBQlVLw==;
+	List-Owner; bh=bGYl50JdSVqVTilmK/1IVY1sWv91enS0MXGVH0ashKs=; b=AriIZEVy4WhjT+
+	Vqmq9qYCwjGGT6wrZ+6/5QPFDHR36CJn24IVdpbsCBR92Gu+dcgouI1s083XYDqFtuSdP5tQbqasH
+	TlPCKvDWZ14nNWtJq0fL+fX3JkuNHrQf0ysvvLMg3jpQRqTYVBwKriCC77NzH14wtCUHer6d78Xl+
+	EGkWxrd2tT2nAkJOAbZIxNHsBO9gjJIin+bR96Nujrr90fxKaoLb6B+fX6NqFB5jXvs8pfLNofwbT
+	maHhzIcta1o8NMXMLKZx9arL9evDSH7xTCG8r1Ci1N1GdgT9dSY8rpNDnc9cK8s/oyizuvflaKDBT
+	Ixy5rT7UY/X8BTiW01Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWrBF-00000007Qpk-3vXp;
-	Wed, 02 Jul 2025 06:42:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uWrFq-00000007RK2-3n2g;
+	Wed, 02 Jul 2025 06:47:38 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWr78-00000007QGf-0RuY;
-	Wed, 02 Jul 2025 06:38:39 +0000
+	id 1uWr9c-00000007Qe6-0MPX;
+	Wed, 02 Jul 2025 06:41:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=d4UNEwrf7ydxg6GFqVnswz7L12jVLWkkm1QSiXm2rm4=; b=o9NZsKWtLiMVO5JOR0AIelqCDT
+	/wc7H2kLVxce3Qk+yqSF4MGEJ3dUtFujPyY/8HclJUkyx6guVUfvjELtmMKgPmxvhSckDhk1/hrFy
+	NKILFnszdqJtm4fLglA3PVK2XfR3co+badpXGXvVCTsPhNM13HuqowwJkCVTpIKerSXBBOsN6KM1k
+	LzoOBcsRfJW9+KHTPqSbDbeQ9eaoC5WA5axPPsC2qbddK+Mb/rLZ+bzKbxFMgbloeNTbxs4l9ROML
+	Z55ct2eEd4xrLI8OVoytQTUxlrqvdmhZfJyLb9yPOPkliF0Zb0n/R1SpYnqjrGp+YXxwWPQe4oUU3
+	tkIjWI4Q==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uWr9Y-00000007Hcc-2pNr;
+	Wed, 02 Jul 2025 06:41:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7E05943D00;
-	Wed,  2 Jul 2025 06:38:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D4AFBC4CEEE;
-	Wed,  2 Jul 2025 06:38:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1BC6D5C51B4;
+	Wed,  2 Jul 2025 06:41:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DAA0C4CEEE;
+	Wed,  2 Jul 2025 06:41:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751438317;
-	bh=oe9RZ6MJcibDug6PUcYbdx59wQ/BkvhR+1mgEYq+q7U=;
+	s=k20201202; t=1751438466;
+	bh=58rHWvmguDNq7qyQ1jxM+RaoQiyWMC2whgv5J7yu51g=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=cZZZf4FMD+xbd+LpVV+KtWdHfUJmTEmy2AM5l+WTBwR5cgqoQ03JnatWWWQ4+hPJK
-	 jrCROBqnYxDMWJxIT1QI+WsIkr7i2lCfnWWh3jMLBnJux+GaPGiPbeRft+Ybqt79X9
-	 Qer16xeThDhczV10AcgdNPbswruesSzgQKiZzxQ0vtyob9YQSmtWkJX1tNLDe5t1Sv
-	 m1/VaIJrw7Plm2ceW67J75nYIlmwzPOXSJHD/aoz+nncsdLNmwNBGC3jzowyntT9lj
-	 ePLKJJPbNcpWn6GFWkSavMcbCsdZx4aKV0NEgP0nTYkYflwqquTKRpAcoXPFGoYNYd
-	 48nis1FrrYGUg==
-Message-ID: <e4e612bc-b052-412b-952b-b7eee21d9a03@kernel.org>
-Date: Wed, 2 Jul 2025 08:38:29 +0200
+	b=TFWydULaaB5+SW+m3JZvNMoczmvosf9eVBqiiUCVpM4cWXbYA9kFq/Wacnnbq9Z4s
+	 6fpPidjXtaPKdmR+VLVJBY31W4Ufxrhavrzl6A3RSGWVTMoIllDjkE789wVj9Inf34
+	 KstckRS2wtdrz3tDVkaORQSS6BrzVdOghCM59BPfefcldyRjoeLPsuqlohOcpi4VMQ
+	 UptO2TcHskCxLcIeA2F2gOXHMTr91r7C2Izrn6X1OxB/xlS8RFRngqhZlD+UEKyNC7
+	 UJULOkT6FjTkX73KFfnQ9/SwcyuDvLECZ5bkEzCcHS32W8csdG9M+mQUbbeqUYgd2t
+	 IloUGxwcS6jhw==
+Message-ID: <5d22829c-f807-4416-ab5a-87d210ade897@kernel.org>
+Date: Wed, 2 Jul 2025 08:40:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/7] dt-bindings: media: add DW MIPI CSI-2 Host support
+Subject: Re: [PATCH 2/7] dt-bindings: soc: imx-blk-ctrl: add MIPI CSI2 dphy
+ support
 To: Frank Li <Frank.Li@nxp.com>, Rui Miguel Silva <rmfrfs@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Martin Kepplinger <martink@posteo.de>, Purism Kernel Team <kernel@puri.sm>,
@@ -60,10 +75,9 @@ To: Frank Li <Frank.Li@nxp.com>, Rui Miguel Silva <rmfrfs@gmail.com>,
  Philipp Zabel <p.zabel@pengutronix.de>
 Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, imx@lists.linux.dev,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- Luis Oliveira <lolivei@synopsys.com>
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
 References: <20250701-95_cam-v1-0-c5172bab387b@nxp.com>
- <20250701-95_cam-v1-1-c5172bab387b@nxp.com>
+ <20250701-95_cam-v1-2-c5172bab387b@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -109,10 +123,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250701-95_cam-v1-1-c5172bab387b@nxp.com>
+In-Reply-To: <20250701-95_cam-v1-2-c5172bab387b@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_233838_199452_27A6623B 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20250702_074109_311280_DFDB7D9D 
+X-CRM114-Status: GOOD (  19.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,170 +144,80 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 02/07/2025 00:06, Frank Li wrote:
-> From: Eugen Hristev <eugen.hristev@linaro.org>
-
-Linaro?
-
+> Add child node dphy-rx, which export phys interface to MIPI CSI2
+> controller.
 > 
-> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
-> and i.MX95 platform.
-> 
-> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
-> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-
-Microchip?
-
-Sorry, these two must match.
-
 > Signed-off-by: Frank Li <Frank.Li@nxp.com>
 > ---
-> This is continue previous thread
-> https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20221216143717.1002015-2-eugen.hristev@microchip.com/#3023663
+> imx media blk ctrl combined many small glue logic registers for display
+> , camera, power, clk and reset.
 > 
-> change in v1 (compared to previous post)
-> - add reg-names
-> - remove clk surfix
-> - add imx93,dw-csi compatible string
-> - add dphys subnode name
-> - use compatible string snps,dw-mipi-csi2-v150 to avoid use general fallback
-> compatible string.
+> There are some discussion at
+> https://lore.kernel.org/all/4414669.ejJDZkT8p0@steina-w/
+> to define whole schema for this.
+> 
+> But there are some difficults to cover whole once.
+> 
+> Plan use two steps to complete it
+> - add all camera related property and subnode
+> - add all display related property and subnode
 > ---
->  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 161 +++++++++++++++++++++
->  MAINTAINERS                                        |   1 +
->  2 files changed, 162 insertions(+)
+>  .../bindings/soc/imx/fsl,imx93-media-blk-ctrl.yaml | 28 ++++++++++++++++++++++
+>  1 file changed, 28 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> new file mode 100644
-> index 0000000000000..2a93bd72498f8
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> @@ -0,0 +1,161 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
-> +
-> +maintainers:
-> +  - Frank Li <Frank.Li@nxp.com>
-> +  - Eugen Hristev <eugen.hristev@microchip.com>
-
-For sure does not work. Also, needs some sort of Ack from Eugen now.
-
-> +
-> +description:
-> +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
-> +  camera. It will convert the incoming CSI-2 stream into a dedicated
-> +  interface called the Synopsys IDI (Image Data Interface).
-> +  This interface is a 32-bit SoC internal only, and can be assimilated
-> +  with a CSI-2 interface.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +              - fsl,imx93-mipi-csi2
-> +          - const: snps,dw-mipi-csi2-v150
-> +      - const: snps,dw-mipi-csi2-v150
-
-Same comment as before, you need SoC compatible. Drop the last one. You
-cannot use DW in a DW soc, can you?
-
-> +
-> +  reg:
-> +    items:
-> +      - description: MIPI CSI-2 core register
-> +
-> +  reg-names:
-> +    items:
-> +      - const: core
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: per
-> +      - const: pixel
-> +
-> +  phys:
-> +    maxItems: 1
-> +    description: MIPI D-PHY
-> +
-> +  phy-names:
-> +    items:
-> +      - const: rx
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
+> diff --git a/Documentation/devicetree/bindings/soc/imx/fsl,imx93-media-blk-ctrl.yaml b/Documentation/devicetree/bindings/soc/imx/fsl,imx93-media-blk-ctrl.yaml
+> index b3554e7f9e76d..708cd00f2b896 100644
+> --- a/Documentation/devicetree/bindings/soc/imx/fsl,imx93-media-blk-ctrl.yaml
+> +++ b/Documentation/devicetree/bindings/soc/imx/fsl,imx93-media-blk-ctrl.yaml
+> @@ -46,6 +46,34 @@ properties:
+>        - const: csi
+>        - const: dsi
+>  
+> +  dphy-rx:
+> +    type: object
 > +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        unevaluatedProperties: false
-> +        description:
-> +          Input port node, single endpoint describing the input port.
+> +      compatible:
+> +        enum:
+> +          - fsl,imx93-dphy-rx
 > +
-> +        properties:
-> +          endpoint:
-> +            $ref: video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +            description: Endpoint connected to input device
+> +      clocks:
+> +        maxItems: 1
 > +
-> +            properties:
-> +              bus-type:
-> +                const: 4
+> +      clock-names:
+> +        items:
+> +          - const: cfg
 > +
-> +              data-lanes:
-> +                minItems: 1
-> +                maxItems: 4
-> +                items:
-> +                  maximum: 4
+> +      '#phy-cells':
+> +        const: 0
 > +
-> +              clock-lanes:
-> +                maxItems: 1
-> +
-> +              remote-endpoint: true
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        unevaluatedProperties: false
-> +        description:
-> +          Output port node, single endpoint describing the output port.
-> +
-> +        properties:
-> +          endpoint:
-> +            unevaluatedProperties: false
-> +            $ref: video-interfaces.yaml#
-> +            description: Endpoint connected to output device
-> +
-> +            properties:
-> +              bus-type:
-> +                const: 4
-> +
-> +              remote-endpoint: true
+> +      power-domains:
+> +        maxItems: 1
+
+This looks wrong. How a parent device can take one power domain and
+child take a different one? If that's the same, then it is redundant,
+because it is part of parent's power domain.
+
+I have also some doubts about clock. Rarely syscon children have their
+own resources which would make this entire node redundant.
+
+Provide complete picture on this in commit msg.
+
 > +
 > +    required:
-> +      - port@0
-> +      - port@1
+> +      - compatible
+> +      - clocks
+> +      - clock-names
+> +      - '#phy-cells'
 > +
-> +additionalProperties: false
+> +    additionalProperties: false
 
-This goes after required: block.
+Please place it after type:.
 
+You also need to update the example.
 > +
+>  required:
+>    - compatible
+>    - reg
 > 
 
 
