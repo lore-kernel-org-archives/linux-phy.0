@@ -4,79 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA0DDC83030
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Jul 2025 08:30:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12E0CC83F05
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Jul 2025 08:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jbqTHoLuDdcMa2rr4E7J9o3bECgyYTGXFbI/RX97+Ro=; b=X/XVcr8eblhFr2
-	eQJdwltt4OAwx+eJJz+tLPN9uEuENsSch+2EUhJirnDWbXsl33S/gsjEsspAdSmfsaqMalZgY3Qn3
-	pZUqNeVd1EdWsEccnSQWmsSLXxLq4aAa23UNJfg4K04M8NLjYpAl8w71nsXTc3xEw9gGwD8dm9C/D
-	y4cRP4CPKl2kVNDKSl49Trq3kBTfqHMHkglYju/yXGMYCSo5wWlzDwjUxIfbi5L3PfJ6showBb0t4
-	D5K5adeMvfHNl1Zo5wW/4FAFcQmlz3gjxazoJHVtZmDbBZ+Ru94mC68D5ki3GwYFZ1kFvxuESarte
-	AQ1vufMMpTNZfRqUMWew==;
+	List-Owner; bh=tA0RTY0DufJPxDnvYg0dtld3kltBZ2NL2sjHqbLQI0M=; b=v767r7cQrSVDWJ
+	VzIpJK2O3QxKeb2+AQW9wX6jkUAHBtuFFFzrpIUEkI04dEbG46S8TwQ81Wty/f0wp/EH7eEyHZEy9
+	XBZUWoNv24uzb8p8bwzERUavzW+vReWXpQMNAKSVSIbadEoHxTxGfXH9+66oVDtjFgfE11UbJ6+Pa
+	4d5lAZ6etzHPjo82WLzjj+sBfZuXgiuJbFewG/DTvh4udN0CmQyX8jW1YhimPZwlsZibfRjCQVYOz
+	EtDnB7Zxa8rVf7Rb8QTFLgGAWkdhL+0e5xNr1/VX0ZY7BtA3pePdpWdB021aaLnSluYgsx2g8u0Kv
+	VhETjPNgCiLFz/GYwTjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXbo0-0000000DkCa-2OWG;
+	id 1uXbo0-0000000DkCs-3TQl;
 	Fri, 04 Jul 2025 08:30:00 +0000
 Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXbFw-0000000Dd8m-0GP5
+	id 1uXbFw-0000000DdAq-3r16
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Jul 2025 07:54:49 +0000
+	Fri, 04 Jul 2025 07:54:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1751615688; x=1783151688;
+  t=1751615689; x=1783151689;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=FD8NSdsEQqeGz8ildUOGKLMTm/GKTBxIB/60rQo+QMY=;
-  b=En+0ysoNqU0BccjmRiBi/5nZRtqcFVgdNMQkPzU3gCkZl1XSsi+5S6P4
-   0F6Lf7OIUJCgYXH1uUahcdX3gp1x2Q4YMopRKRKd+EtQVEVonsKxsixBV
-   27iBLaonymvpIpW6J0UAJfg6UiL4YaQg39uFvKB9SAFZKQ/gYIxF1uZxz
-   dkFRfWBkX3v5us55jvcZL6k/xn6J+2SsG6Ct29qqrCKn4JKXB0640SekI
-   2X58QWpNtb0lbkm/z9W3TuYv4vH21z3Ai+4Q1N9be2Sr1POXNKLnkmKDL
-   H2+arrftEVqyO54FZYRlPcQbCFhTZC4p6XoxjAukxHQnkYqHkDtA9Y/pL
-   w==;
-X-CSE-ConnectionGUID: Cn3NW/OtSd+F18jsEE6qXA==
-X-CSE-MsgGUID: U3DnGXNJTZGWSWNXx0OLAg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11483"; a="64194214"
+  bh=NO75yl0C/QCwRChAfVosDGNmtR5VgVEkJtdizny75eQ=;
+  b=jzdICNbbCkET6AUF087Bf8+poEYtU6w0it8TG+4QibIDT8gaG6S6VxM5
+   6LsKriCReihM9RS8qSRGwzg8EiaacOQL3HphEbk7o641hXh9WT74J5uJy
+   I1O7WMBfc+70tJXoBdaGI87VTrdOvSem/Q5taaDY+KE/UYAexcJYMmdVf
+   5nquS8iXvDj673ZEaGuCOOk8Vk4kdzX0DQ0P1BpTnXpnA6OTH16cTnmHw
+   e8/yp9qVcG7rYk5yJPZnsewQTCxI3mpGmnfByhtD1AcvPJAMzwvl0c14h
+   dGuEVufmyfybgtNi9bpup8+iFFBOkMgUL1mloHLv2hAAHvD5qTSygqBQ7
+   Q==;
+X-CSE-ConnectionGUID: Nq3FGwFASYmwd2w+4UgB7Q==
+X-CSE-MsgGUID: h2Em8x8BT1mq81PWFHIlZw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11483"; a="64194205"
 X-IronPort-AV: E=Sophos;i="6.16,286,1744095600"; 
-   d="scan'208";a="64194214"
+   d="scan'208";a="64194205"
 Received: from fmviesa003.fm.intel.com ([10.60.135.143])
   by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jul 2025 00:54:46 -0700
-X-CSE-ConnectionGUID: Bgwjjc6LR7GBqHNaIjSxEQ==
-X-CSE-MsgGUID: gXyyhgBTQJmOvqWtYsKw4A==
+X-CSE-ConnectionGUID: QEo8glDxTqWRbZPCkwigrA==
+X-CSE-MsgGUID: Vww84vogRU6mgpGMnplGHw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.16,286,1744095600"; 
-   d="scan'208";a="158616606"
+   d="scan'208";a="158616602"
 Received: from jkrzyszt-mobl2.ger.corp.intel.com (HELO svinhufvud.fi.intel.com) ([10.245.244.244])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jul 2025 00:54:44 -0700
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jul 2025 00:54:43 -0700
 Received: from svinhufvud.lan (localhost [IPv6:::1])
-	by svinhufvud.fi.intel.com (Postfix) with ESMTP id D896A44394;
+	by svinhufvud.fi.intel.com (Postfix) with ESMTP id 30B1844910;
 	Fri,  4 Jul 2025 10:54:41 +0300 (EEST)
 Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo
 From: Sakari Ailus <sakari.ailus@linux.intel.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>
 Cc: linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 53/80] phy: ti: phy-twl4030-usb: Remove redundant pm_runtime_mark_last_busy() calls
-Date: Fri,  4 Jul 2025 10:54:41 +0300
-Message-Id: <20250704075441.3221235-1-sakari.ailus@linux.intel.com>
+Subject: [PATCH 52/80] phy: motorola: phy-mapphone-mdm6600: Remove redundant pm_runtime_mark_last_busy() calls
+Date: Fri,  4 Jul 2025 10:54:40 +0300
+Message-Id: <20250704075440.3221183-1-sakari.ailus@linux.intel.com>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250704075225.3212486-1-sakari.ailus@linux.intel.com>
 References: <20250704075225.3212486-1-sakari.ailus@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250704_005448_135977_110B797A 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250704_005449_013646_D16D6A88 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,37 +111,29 @@ rc2:
         git://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git \
                 pm-runtime-6.17-rc1
 
- drivers/phy/ti/phy-twl4030-usb.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/phy/motorola/phy-mapphone-mdm6600.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
-index a26aec3ab29e..1d26189ace4f 100644
---- a/drivers/phy/ti/phy-twl4030-usb.c
-+++ b/drivers/phy/ti/phy-twl4030-usb.c
-@@ -505,7 +505,6 @@ static int twl4030_phy_power_on(struct phy *phy)
- 	dev_dbg(twl->dev, "%s\n", __func__);
- 	pm_runtime_get_sync(twl->dev);
- 	schedule_delayed_work(&twl->id_workaround_work, HZ);
--	pm_runtime_mark_last_busy(twl->dev);
- 	pm_runtime_put_autosuspend(twl->dev);
+diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+index fd0e0cd1c1cf..c82826bd2832 100644
+--- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
++++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+@@ -248,7 +248,6 @@ static irqreturn_t phy_mdm6600_wakeirq_thread(int irq, void *data)
+ 	}
  
- 	return 0;
-@@ -598,7 +597,6 @@ static irqreturn_t twl4030_usb_irq(int irq, void *_twl)
- 		if (atomic_add_unless(&twl->connected, -1, 0)) {
- 			dev_dbg(twl->dev, "%s: cable disconnected %i\n",
- 				__func__, status);
--			pm_runtime_mark_last_busy(twl->dev);
- 			pm_runtime_put_autosuspend(twl->dev);
- 			twl->musb_mailbox_pending = true;
- 		}
-@@ -636,7 +634,6 @@ static int twl4030_phy_init(struct phy *phy)
- 	pm_runtime_get_sync(twl->dev);
- 	twl->linkstat = MUSB_UNKNOWN;
- 	schedule_delayed_work(&twl->id_workaround_work, HZ);
--	pm_runtime_mark_last_busy(twl->dev);
- 	pm_runtime_put_autosuspend(twl->dev);
+ 	/* Just wake-up and kick the autosuspend timer */
+-	pm_runtime_mark_last_busy(ddata->dev);
+ 	pm_runtime_put_autosuspend(ddata->dev);
  
- 	return 0;
+ 	return IRQ_HANDLED;
+@@ -616,7 +615,6 @@ static int phy_mdm6600_probe(struct platform_device *pdev)
+ 		error = PTR_ERR(ddata->phy_provider);
+ 
+ idle:
+-	pm_runtime_mark_last_busy(ddata->dev);
+ 	pm_runtime_put_autosuspend(ddata->dev);
+ 
+ cleanup:
 -- 
 2.39.5
 
