@@ -4,49 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5D84C8303D
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Jul 2025 08:28:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BCD1C8303C
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Jul 2025 08:39:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VTg16fxS0mO1BRpXdzRE+r0IlUZBcYLennX3UDQ86ao=; b=NWE0xvGczhF/Ae
-	ztCpElGZsWeC+35Wmz7j8EHDwlKF5u4Ay49Vu3cLkcC/rWDb9U7rrLh19hEoai9DO9B3O1avvaDnJ
-	zju/8ft4/I58QaFrakXgkNnhsCX+isGpgA6rO/F/uONHL1ujTJ164moejZb5uRAhtAg5qSSr/2Kce
-	6S+4l4l0gzcxlfq4B+SjGaqi5rYzs5C7wVbk24lPqBjZOI9cYse/0BafFq/JGDkO6BkPr+p1io9o0
-	YA21zf4rPxHosKq2XIqrDnvsMTZ47vIhNeVHKq3HlslQj8aQWv0wdM51/GDHcye8paCFxXG98tYpP
-	ssHa9j45ol+h/gYplCuA==;
+	List-Owner; bh=xwqTFXKoWaSl3pwZ5i2rgXOTLwUgnHBdnNmioLZYC+U=; b=Q4QqesoDm+b2I9
+	MpPTn+f7TncnF6deeJR9JpvxWmPEqhzISAUgtNeykxxpwnL0eTsNaE/dtf1FRZOibXVM/Z5x1SX3A
+	ZIe0p9fwWC6V/ogLBUbw7x2G1s/5EaN0Vv8ZhSd6oOhj3uMd2ECuaPQCsEBRehwKGT7DjyvNB1pBN
+	FdmCSWzYTeGsio/lpw9X7Wo/1r/Dz9BCtu6U27SI3CdaqZak/ZtoOMCn//kw4PxmMJ0xw7PtBen7x
+	qlIgpDXgrJ9wC/xMnG8i2DHFcVVM4Vri4yWlisyXBd4Je2iNHdHWDaEyV5AJ4UPsiWtypJDe1r8P6
+	8CzUJkHqzUKnYNNmK9pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXyGO-0000000GI5v-14Lf;
-	Sat, 05 Jul 2025 08:28:48 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uXyR1-0000000GIp4-3mDk;
+	Sat, 05 Jul 2025 08:39:47 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXyE2-0000000GI0h-0XmB;
-	Sat, 05 Jul 2025 08:26:23 +0000
+	id 1uXyMb-0000000GIOu-48qD;
+	Sat, 05 Jul 2025 08:35:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3963E5C4A0F;
-	Sat,  5 Jul 2025 08:26:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B6D03C4CEE7;
-	Sat,  5 Jul 2025 08:26:18 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2AFF9A538A0;
+	Sat,  5 Jul 2025 08:35:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A06CC4CEE7;
+	Sat,  5 Jul 2025 08:35:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751703980;
-	bh=2vWcb12LUeJ5TfO3TZX3nCMIRZ8f2vaeQ78pRRCXp9M=;
+	s=k20201202; t=1751704512;
+	bh=OoZzuOzHiyo+cy87MtB1w+pqJRHbH3QJTYkmSakBpTs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=eITODc6SCZ78tC55ViK2fVrf/YVVg0ep23VuzHQeo7NFw2JfHhD/c2ppMBR/oK6x7
-	 mEAW++Ol4ZXewwqYJTeER27toMOxSr1z29HT2ROebB1UUzPXm5mmscjuspXBO3U87f
-	 wg2b7jTdX6eTZrQTFotjYYkGTkE+smGgj+ChsFMFhFeDFf+uz3kyCVJgExKF25US/y
-	 xI8xofYeoyv2I0ZwJbi6wqPHiveig5iqZuzpUe5hzx4MNmDjWMe/xjFikG/ral+MV7
-	 imvcECnz9ApJlBd/gXwfjRTo0098MAh15NT061XuvBo/6BmsoE6gQSXx4SxM51Oj9n
-	 BqYr+M9o4ZM3Q==
-Message-ID: <8ea1e2a2-96d2-47b6-8f8d-74fd2971db9e@kernel.org>
-Date: Sat, 5 Jul 2025 10:26:16 +0200
+	b=dfYGpn1iZAqx9EC2NttuDf/5YVjRJ9aW/yOg7faIOBFaC9CcEsgzZ3+EhKjU6LI4t
+	 3Ejq330Hjt0Otqvbx9AEORN4FbORQ4rKMYjGapz1gXIRVZOCC+L2OWv6we8pZ7Nvig
+	 SXX1ePuTYF0iztwFZCl/jDEzNgYNzZt7SEpIDpBHxlRpSFDGwjf8TsXl+g4S5qqaRZ
+	 gM9DkJUVYGEURTQrrYLqimK77PB+ssAYScm6NvXVkj6LPRJdGT3rgVdDX/yzpdASzN
+	 0LDd6GqLJQdRzEfKwB5ThRw8+Ggq8rkmyn62BxaBCPjg9TTRa7ujDafp3/Z/ZNfTXq
+	 zG8ODMGGhMrug==
+Message-ID: <ff887aaf-966a-41ff-a905-f791820136fd@kernel.org>
+Date: Sat, 5 Jul 2025 10:35:08 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] phy: exynos-mipi-video: correct cam0 sysreg
- compatible for exynos7870
+Subject: Re: [PATCH 2/2] phy: exynos-mipi-video: allow skipping absent PHYs
 To: Kaustabh Chakraborty <kauschluss@disroot.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Alim Akhtar <alim.akhtar@samsung.com>,
@@ -54,7 +53,7 @@ To: Kaustabh Chakraborty <kauschluss@disroot.org>,
 Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20250627-exynos7870-mipi-phy-fix-v1-0-2eefab8b50df@disroot.org>
- <20250627-exynos7870-mipi-phy-fix-v1-1-2eefab8b50df@disroot.org>
+ <20250627-exynos7870-mipi-phy-fix-v1-2-2eefab8b50df@disroot.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -100,11 +99,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250627-exynos7870-mipi-phy-fix-v1-1-2eefab8b50df@disroot.org>
+In-Reply-To: <20250627-exynos7870-mipi-phy-fix-v1-2-2eefab8b50df@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250705_012622_260434_C0D2B21E 
-X-CRM114-Status: UNSURE (   4.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250705_013514_162356_1956E9E5 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,16 +120,47 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 26/06/2025 22:01, Kaustabh Chakraborty wrote:
-> Fix the cam0 sysreg compatible (samsung,cam0-sysreg), which has been
-> erroneously declared as samsung,cam-sysreg. This follows the same
-> compatible name used in Exynos5433 PHY.
+>  
+>  struct mipi_phy_device_desc {
+> -	int num_phys;
+>  	int num_regmaps;
+>  	const char *regmap_names[EXYNOS_MIPI_REGMAPS_NUM];
+>  	struct exynos_mipi_phy_desc {
+> +		bool present;
+>  		enum exynos_mipi_phy_id	coupled_phy_id;
+>  		u32 enable_val;
+>  		unsigned int enable_reg;
+> @@ -54,10 +54,9 @@ struct mipi_phy_device_desc {
+>  static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
+>  	.num_regmaps = 1,
+>  	.regmap_names = {"syscon"},
+> -	.num_phys = 4,
+>  	.phys = {
+> -		{
+> -			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
+> +		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
 
-That's not a compatible, but property name from the binding. With fixing
-commit msg:
 
+This should be a separate change... but overall I don't like existing
+idea and I think your change is a reason to fix actual code style issue:
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+It is expected that each variant will define static const array and then
+you assign in:
 
+static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
+	.phys = exynos5420_mipi_phys_data
+}
+
+which means:
+1. You don't waste space for unused entries (now you always allocate 5
+entries, even if you have one phy)
+2. You can count them easily - ARRAY_SIZE
+3. Index in the array won't the the phy ID, so you need a separate ID
+member for that
+4. You do not need this odd 'present' field, because really code which
+is not initalized should mean 'not present' and it should be never
+needed to initialize additionally to indicate 'yes, I do exist' beyond
+basic initializations.
 
 Best regards,
 Krzysztof
