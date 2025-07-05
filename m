@@ -4,105 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BCD1C8303C
-	for <linux-phy@archiver.kernel.org>; Sat,  5 Jul 2025 08:39:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91858C8303D
+	for <linux-phy@archiver.kernel.org>; Sat,  5 Jul 2025 13:07:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwqTFXKoWaSl3pwZ5i2rgXOTLwUgnHBdnNmioLZYC+U=; b=Q4QqesoDm+b2I9
-	MpPTn+f7TncnF6deeJR9JpvxWmPEqhzISAUgtNeykxxpwnL0eTsNaE/dtf1FRZOibXVM/Z5x1SX3A
-	ZIe0p9fwWC6V/ogLBUbw7x2G1s/5EaN0Vv8ZhSd6oOhj3uMd2ECuaPQCsEBRehwKGT7DjyvNB1pBN
-	FdmCSWzYTeGsio/lpw9X7Wo/1r/Dz9BCtu6U27SI3CdaqZak/ZtoOMCn//kw4PxmMJ0xw7PtBen7x
-	qlIgpDXgrJ9wC/xMnG8i2DHFcVVM4Vri4yWlisyXBd4Je2iNHdHWDaEyV5AJ4UPsiWtypJDe1r8P6
-	8CzUJkHqzUKnYNNmK9pQ==;
+	List-Owner; bh=BDKMcmMB2i6d1wbEjZJvwsO/6sc3rn4zaocZxQi3sR0=; b=UTEx9UpDDaZBY8
+	FVZMvzLC+tZWwiigFnCdZd9aksYcbYZEPMJfgsu/0HPU68N34cAIFjnYoAgzORdUYEgrK/2VAqneN
+	ZF/Kc+42oipISMLafzbIOBHtLUQv4yuW6dyEAGn/geQhJW/2/RQ7HYzvmMCFTmkftnK41O/MlV8vF
+	ihUlS3EeGtkPZR1mUFIKsVN2UJHZC475P+TTGfbwvsVI29Fmfl+FOkojzBv+KJoBewqY97L1daoMX
+	CkqawPoYrEPWLtTv2Vjo8/kTxIKXOyzRwh70wUJxjAqKsz1BLtMOsDJf7AvODi/addMCJTCVjNEu8
+	C+s/k6Iz9J+iB8k0cSSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXyR1-0000000GIp4-3mDk;
-	Sat, 05 Jul 2025 08:39:47 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1uY2bg-0000000GWnH-49zo;
+	Sat, 05 Jul 2025 13:07:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXyMb-0000000GIOu-48qD;
-	Sat, 05 Jul 2025 08:35:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 2AFF9A538A0;
-	Sat,  5 Jul 2025 08:35:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A06CC4CEE7;
-	Sat,  5 Jul 2025 08:35:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751704512;
-	bh=OoZzuOzHiyo+cy87MtB1w+pqJRHbH3QJTYkmSakBpTs=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dfYGpn1iZAqx9EC2NttuDf/5YVjRJ9aW/yOg7faIOBFaC9CcEsgzZ3+EhKjU6LI4t
-	 3Ejq330Hjt0Otqvbx9AEORN4FbORQ4rKMYjGapz1gXIRVZOCC+L2OWv6we8pZ7Nvig
-	 SXX1ePuTYF0iztwFZCl/jDEzNgYNzZt7SEpIDpBHxlRpSFDGwjf8TsXl+g4S5qqaRZ
-	 gM9DkJUVYGEURTQrrYLqimK77PB+ssAYScm6NvXVkj6LPRJdGT3rgVdDX/yzpdASzN
-	 0LDd6GqLJQdRzEfKwB5ThRw8+Ggq8rkmyn62BxaBCPjg9TTRa7ujDafp3/Z/ZNfTXq
-	 zG8ODMGGhMrug==
-Message-ID: <ff887aaf-966a-41ff-a905-f791820136fd@kernel.org>
-Date: Sat, 5 Jul 2025 10:35:08 +0200
+	id 1uY2be-0000000GWmw-20jA
+	for linux-phy@lists.infradead.org;
+	Sat, 05 Jul 2025 13:07:03 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 565CiuYa010513
+	for <linux-phy@lists.infradead.org>; Sat, 5 Jul 2025 13:07:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=IKd8N3ast/derty+5n3+jvo7
+	9rRMBMcTu9wby44QbFA=; b=B8qMdPxdhn8B7S9xQezoUQ4O1W2gvM4L07ywLqiQ
+	pNwj4BQCNNL7ME2GLaDgDQlbzBVdH/onfvTsk7VpnW8GmcFC9rd46mFjCUuLLrho
+	DktEtCekx2HvvrPlEAA3tysKt5HMTHZOALIK9sDypkC0VPnqPpMI5Dc4iDiIJhnf
+	U13c9etLgMfxGxsKoJq9Fo+QS5d2WXLDESpEXDZ0Fzdn/wJFDOgX0sCCFx0uYKSg
+	doWCXGRnaE9mzye6te/QhhKAfXdImpqiNIBJaTZ66+Gy4Ujvcec7jpciexBSKywp
+	SwGdiMNiWcKUN6+g7dhv6RH2slLXXxBjOH9NV5MDvfvKoQ==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pu0vs3by-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 05 Jul 2025 13:07:01 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7d22790afd2so228946585a.2
+        for <linux-phy@lists.infradead.org>; Sat, 05 Jul 2025 06:07:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751720820; x=1752325620;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=IKd8N3ast/derty+5n3+jvo79rRMBMcTu9wby44QbFA=;
+        b=NMHj6YRNetS1OxU3g75FdTfVijiZI20lWW2rXqsT1UD2T9oo+EsO1fajEPJeveDeS9
+         nTW5EWHZ9sJWinV19uqFjrlgIZRC6H1D0EbS9bBmm6hDynWDIZDYRL8Eaep3T4Jblt/L
+         TgeCOvHc3zIZEu25Zkn88J71U1vulUSgCnLhFIcOoyvak1Nv6IAXff6J9qzps27SAyIX
+         AfAjpQHL2X2AUc9sYSj94dXTSSjhlEo1LTZ+nNpgrDWEtsgr7GiXzekR69AgB+OMvHCh
+         GPyVk2ulK6X8+BDurcKrkP9ifGOVWLAiQ+WPFd3tPulYpLhlzzjdpPuHDt7aHXstgo/z
+         haKA==
+X-Forwarded-Encrypted: i=1; AJvYcCV8+f4M5joE8aIVGHGFvGPa1bmbLk0zb29O+yssXNw5cI+sCYmVwWNHkF9JwpEzZSlfFKVMzPx9nA0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzn0sVxi4RXPD25pw7T9JiWi5FraN4XnYwVuilsxXZXHob24Mu5
+	jwn4XFBRKFg+5E77CnD/BckygdIff4F3dLpN+0bYm/o+z20wydoBLIPySoPSXPtRNoh1Zb3H51f
+	c3SPTN3kxJRG5/4xOgY+j0MB1jErJH1HGlAzJq9gVOq+K0Bxn+5q6Id5SLl60NF92zPhY
+X-Gm-Gg: ASbGnctnbo7twHttC8GHR5FjYVzr9Y4MgrOtsLv89moOHkNXpcCQh20jKu4Aw5yvNUC
+	ZiktIimTEaiBQ0tHKhcMZyuE9F/6D3isgd4qnC4jIVxXj3XOGTL39SG+qsbwujWWnqqe/uNeDkb
+	aS2IuXucJp7LkitieaSCtEt0arF6eiWAFzBXPwK2RWOk+2kguCRqp0syznMuureRBuG0WLx28sZ
+	R3gC/vCEZvY9ySvAe1MMB9QOHpl413L6KdXrgitGzJQgSWnFiES3ZFTRmfcZk6gNWX1vqdIwUPK
+	8nMlLqRE/cs+/Jf8l1GOCJEH3ts5WwcrfNLddEPF3LRZ/OK9jiV01nhh5l1SSECm8WCZjwzTT8m
+	2IM82ucR7CdY7QWr7UB1r6+MsQVsSabNuUsY=
+X-Received: by 2002:a05:620a:462c:b0:7d4:2854:7960 with SMTP id af79cd13be357-7d5dcd3380fmr989846185a.48.1751720819779;
+        Sat, 05 Jul 2025 06:06:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGl2P4eow0MB8ZATz7sgaNnaIhCr6NxTArKEUe0L5N4/jUT6bdGt4eYeFrdGpjGLiRly/SFRg==
+X-Received: by 2002:a05:620a:462c:b0:7d4:2854:7960 with SMTP id af79cd13be357-7d5dcd3380fmr989839985a.48.1751720819187;
+        Sat, 05 Jul 2025 06:06:59 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-32e1aff3f6asm4991761fa.45.2025.07.05.06.06.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 05 Jul 2025 06:06:58 -0700 (PDT)
+Date: Sat, 5 Jul 2025 16:06:56 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Xilin Wu <sophon@radxa.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Nitin Rawat <quic_nitirawa@quicinc.com>,
+        Manish Pandey <quic_mapa@quicinc.com>,
+        Dmitry Baryshkov <lumag@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qcom-qmp-ufs: Fix HS-G4 PHY init table for sc7280
+Message-ID: <o2chuy22dls3y3bsjke34z7pnyzap6m4m34tjxswueshulii4d@d5lbcragrbjb>
+References: <20250613-sc7280-ufsphy-g4-fix-v1-1-1bf60744f5ac@radxa.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: exynos-mipi-video: allow skipping absent PHYs
-To: Kaustabh Chakraborty <kauschluss@disroot.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250627-exynos7870-mipi-phy-fix-v1-0-2eefab8b50df@disroot.org>
- <20250627-exynos7870-mipi-phy-fix-v1-2-2eefab8b50df@disroot.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250627-exynos7870-mipi-phy-fix-v1-2-2eefab8b50df@disroot.org>
+Content-Disposition: inline
+In-Reply-To: <20250613-sc7280-ufsphy-g4-fix-v1-1-1bf60744f5ac@radxa.com>
+X-Proofpoint-ORIG-GUID: ZprbRTYvHamPgGysZiHTGuswkTIL6EQW
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA1MDA4NSBTYWx0ZWRfX0u1Z50M43S0X
+ h6aHUJOIZbn7nowHOyr2FVBPmMZfR94ozAvIM6m9x+AQiXy2iPqxsrnxkHLAsDl87cwXuV7fmg2
+ rbBc3wP2hWLZlBce9bIp9ofpMbKJ5DEkpZMz6zjfw3i+KfeGc/5/giRb+XOnOo4FiVmTmiWrlO/
+ 6YEeL3Aq4sxi1Jzyj1VZ0rgXHeuw5pQZ0vV05moP6Lj6NDQE39dzUxFnLdUrJwcFxh9o7jajaUg
+ ehFtlXU/3n5e14ziN6oPaPOF3Js4TYoK6VZCLaQ1bHz3MfihoOUKFxS7cJr1PQ9XwxZT99zNaXv
+ Dqkk6Cfgx7WmeWMpORm6RhTZUr4wghCXLqZiNQy/4n+YjD5ifDP3jvI32O/mTZgGX9X0cMlrRHC
+ +zb//Xcigvnt+DzLKao39uUzI1frYH9usbwCYsqn0MsOsWtSxFwhuT0NIWh1WUnacUrTaSIn
+X-Authority-Analysis: v=2.4 cv=Rd2QC0tv c=1 sm=1 tr=0 ts=68692375 cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=Wb1JkmetP80A:10 a=ksxQWNrZAAAA:8 a=vXUHhcYBCYzUoxaoE6oA:9 a=CjuIK1q_8ugA:10
+ a=IoWCM6iH3mJn3m4BftBB:22 a=l7WU34MJF0Z5EO9KEJC3:22
+X-Proofpoint-GUID: ZprbRTYvHamPgGysZiHTGuswkTIL6EQW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-04_07,2025-07-04_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 suspectscore=0 mlxscore=0 malwarescore=0 lowpriorityscore=0
+ mlxlogscore=999 impostorscore=0 spamscore=0 phishscore=0 priorityscore=1501
+ adultscore=0 clxscore=1015 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507050085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250705_013514_162356_1956E9E5 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20250705_060702_524929_7E72C689 
+X-CRM114-Status: GOOD (  20.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,51 +131,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/06/2025 22:01, Kaustabh Chakraborty wrote:
+On Fri, Jun 13, 2025 at 10:41:48PM +0800, Xilin Wu wrote:
+> The PHY is limited to operating in HS-G3 mode during the initial PCS
+> registers initialization. Extra PHY init sequence is required to allow
+> HS-G4 mode to work when needed.
+
+I can't find corresponding settings in either of HPGs.
+
+> 
+> Fixes: 8abe9792d1ff ("phy: qcom-qmp-ufs: Add Phy Configuration support for SC7280")
+> Signed-off-by: Xilin Wu <sophon@radxa.com>
+> ---
+> This might need testing on sm8150, sm8250 and sc8180x as well.
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index b33e2e2b5014d3ca8f19b623ba080887f53e616d..7797be329d75f95c80863e05351d0cf55fdf38c2 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -570,6 +570,13 @@ static const struct qmp_phy_init_tbl sm8150_ufsphy_pcs[] = {
 >  
->  struct mipi_phy_device_desc {
-> -	int num_phys;
->  	int num_regmaps;
->  	const char *regmap_names[EXYNOS_MIPI_REGMAPS_NUM];
->  	struct exynos_mipi_phy_desc {
-> +		bool present;
->  		enum exynos_mipi_phy_id	coupled_phy_id;
->  		u32 enable_val;
->  		unsigned int enable_reg;
-> @@ -54,10 +54,9 @@ struct mipi_phy_device_desc {
->  static const struct mipi_phy_device_desc s5pv210_mipi_phy = {
->  	.num_regmaps = 1,
->  	.regmap_names = {"syscon"},
-> -	.num_phys = 4,
->  	.phys = {
-> -		{
-> -			/* EXYNOS_MIPI_PHY_ID_CSIS0 */
-> +		[EXYNOS_MIPI_PHY_ID_CSIS0] = {
+>  static const struct qmp_phy_init_tbl sm8150_ufsphy_hs_g4_pcs[] = {
+>  	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x10),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_PLL_CNTL, 0x0b),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_MSB, 0x2d),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TIMER_20US_CORECLK_STEPS_LSB, 0xb0),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_PWM_GEAR_BAND, 0xff),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_HS_GEAR_BAND, 0x1b),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
+> +	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
+>  	QMP_PHY_INIT_CFG(QPHY_V4_PCS_UFS_BIST_FIXED_PAT_CTRL, 0x0a),
+>  };
+>  
+> 
+> ---
+> base-commit: bc6e0ba6c9bafa6241b05524b9829808056ac4ad
+> change-id: 20250613-sc7280-ufsphy-g4-fix-024542f31fac
+> 
+> Best regards,
+> -- 
+> Xilin Wu <sophon@radxa.com>
+> 
 
-
-This should be a separate change... but overall I don't like existing
-idea and I think your change is a reason to fix actual code style issue:
-
-It is expected that each variant will define static const array and then
-you assign in:
-
-static const struct mipi_phy_device_desc exynos5420_mipi_phy = {
-	.phys = exynos5420_mipi_phys_data
-}
-
-which means:
-1. You don't waste space for unused entries (now you always allocate 5
-entries, even if you have one phy)
-2. You can count them easily - ARRAY_SIZE
-3. Index in the array won't the the phy ID, so you need a separate ID
-member for that
-4. You do not need this odd 'present' field, because really code which
-is not initalized should mean 'not present' and it should be never
-needed to initialize additionally to indicate 'yes, I do exist' beyond
-basic initializations.
-
-Best regards,
-Krzysztof
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
