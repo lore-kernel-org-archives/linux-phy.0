@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8991CC8303C
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Jul 2025 06:36:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99E65C83F0D
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Jul 2025 06:36:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T0TsZ9QYqa0+8PL9Kt185QXCLPaIYG5FGzKFKQtTEZI=; b=ki3MXjKIwF7htC
-	zMccqndlLt93+zLcoteTnfgY5gGNdndj1Rrt+AJAkhizxoi/0YoHnvsj+eUQ9srWl7r1F7iVU1zfh
-	5kwF2iUNzP26vq2HV0r/b4P2KydFo7iVfy+GysTh7p60Ou1K/BOsqHD0Rtw9533H0IwFciMp2Bipl
-	ZG1Wq/qF2bGDeKnr5NvFCdkpce+ylgdJ97xZ97V1bi4vpnxHOYECIzpCDGWRrJPnsLu24nEYpuKjB
-	PFRbb2RrgrYiUsdc46H9haae3DFk05wAL8i0Ty00qhtHzXGjxKa8mBYvORrZf+cQ0dUzQF0mGJSh6
-	Bn3NFKiX4MYY3IwxC4pQ==;
+	List-Owner; bh=qBgPMQ7ObYXJDTnlZr2AStsEup+r00u02Iryql4qdNo=; b=ZIDIkR2lc3ePj/
+	cpmIFTvhxfxRaWZrDsL8IuVlAoWNigMmWE/uCC1ts8hbGBfcezaQHpLY20qtnd2zbVKW1WV6cKbQP
+	OE+AgD/nsLnabNORpQamyMHHoL4OXaYAAhqGu2Eh3WXBEuwtsMOseEdqI+qY/WFll0XAB7vZhxP9Q
+	SxphahEbSia6vYaQ7gRv1k6+lnT21UUMylUfHpgCiIhdOIr7qdT0iZD9iGKdigwZcr/ucEVP4bDZq
+	6jvK6z9zfS7i+ge79XsSFSUqw3JY/FI9TTsh4FVHOGZhtNsyIpJLVcVuT0t7rzRljwYmgRMkiBzvh
+	NaU7mIwpBCfHc+hbuidw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ1wb-00000004RsE-1KFZ;
-	Tue, 08 Jul 2025 06:36:45 +0000
-Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
+	id 1uZ1wc-00000004Rt1-1MC5;
+	Tue, 08 Jul 2025 06:36:46 +0000
+Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ1qv-00000004RFd-2hJF;
-	Tue, 08 Jul 2025 06:30:55 +0000
-Received: by mail-pg1-x536.google.com with SMTP id 41be03b00d2f7-b271f3ae786so3125670a12.3;
-        Mon, 07 Jul 2025 23:30:53 -0700 (PDT)
+	id 1uZ1qz-00000004RGv-155v;
+	Tue, 08 Jul 2025 06:30:58 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-23c8a505177so25667005ad.2;
+        Mon, 07 Jul 2025 23:30:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751956253; x=1752561053; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1751956256; x=1752561056; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=unrCE2h+xEs5THla5g6JIss9SJiJCc2wnfnjeuDD2ZM=;
-        b=aFUcJS6R5q4T9hwMirddfOb10jdoboGGNeAvJtvWePmry1JOPPdifGZtKvKlnu1wYo
-         E/yhmTZCHMdtKRybPOVG+FDfmxggNRtr6FNWmBsZtfey12OcJvoxKyWy2aRkPl2dijD7
-         +4qHtYkatGG+JzCJG4VenmhKW7HpfSV/bYmFrqS9rsvFGiXI4Mods+EQ85lnjLOir8qx
-         /S/67pVWAYlVEUrZpzkpWqdM0lrvaNd5bA8e/+1XusbffZuGNmPy63/mvHFR47kamRiC
-         cPsQdpsQZn3LKcceCH0VzenTHeY5vWa9aCFzscVuN+QcAkZgM4+K8T+l0SKthcB5p3Js
-         MZDw==
+        bh=QgtcCxhmZdnPAQq2J//8hYagFuErKydvAl0n9hMEJuw=;
+        b=dkAJXB+UpCryk6wntLqQet3utv2njsFnp3OwbDorHpUfF9Q5zzTlkabMMwj6lkIcuP
+         /wCZ+LhU9Myh+3P+N33kiBG03vCISmWUESPTqws91ej1Rb/fnnz9T0iPbaE/gNjnuHtz
+         rllB3W2opu8Lu1bbR5y5k2ZEJwz4Kmw0VAQ5m+Lkr7v08ZIQgZLLACDiAgL0fq5P9k3S
+         n5dGYa7Xmd1Jwhv8ouY0nsatkx601UYWNuFzgw0C9HsUboJjI40x9T70sGNIPgjV7Nw1
+         hsej2iBx8sxQxmzMMujW7+KSksDlsaA94OIPL3jlxaPntgTOLzvn//U5s7llLPy6Oy3d
+         xpaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751956253; x=1752561053;
+        d=1e100.net; s=20230601; t=1751956256; x=1752561056;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=unrCE2h+xEs5THla5g6JIss9SJiJCc2wnfnjeuDD2ZM=;
-        b=pmay37fcddJZP8GyDIBJGBHypPWjq8xXg4SoeBf+m2EZ4C5zT+i4OgHRCqZlp72rXW
-         L1nEJv5vXkF/BHEDe5RNqtf5ZgIwALstlisppiBZBmI0xyJtkBeR8Fr9qV9yWvT9STE1
-         duFcoTgse95PQ04hz59ZXVM2BCwLnpv/h8843qLb9D1C+gMOFYUfQoHOUk6bb1+939K2
-         7JnfVF8HuifgstooPqjI6jIgbFmojGXBftyF8LU1CGigKGPPb+l/g23y77b+iIBIt1ca
-         60LWmhPJ4aWHR90GQ0Vfju23+Creuv6mDpk24LEF1A+HJio+giKNXAwW3ruumQu8WIPd
-         mmIw==
-X-Forwarded-Encrypted: i=1; AJvYcCXfn7d7WW7G96vj8pTe3qa5WWeUlaxXzOArMeX9RJcD0NNVpH81qwVrhT2JwsXoH3vadfdHoRGIzHC0Dw==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwbIvrf2j9sDour4V0Sd8BGQkc1wzfUYlQfzN09mfhN+ynuEbBQ
-	KgqIDBCytw1siwcCmXqZgdrIs2MrOQy8Io9fY8cqiSehw4nFUz/7bTfC
-X-Gm-Gg: ASbGncvkX1mFV7kEAc3ToAc+WYf+J55Amb8HPNhOvvtcIpOKKaDwxBR3ITnfe19cENu
-	hK7j86P8PkS3jX7q1bNWzTR+0XPKUitxpcPBYTwNCEMMOptVmetp+9QYpHN6exkx0l5fJFeG4ci
-	sHdqyI/Bb/eWBo//zggLgdFNZlRMNtDySA2TQqe3O+X0RxMw5WylhUbx40x0SxbjG6Thb62zADy
-	vGF7US9sBlRA+ebnohVoywdMNp7LYXID6MUZkV1zl1yovq2zsBOmIQKFzEyMtKr/RI37G/1pZNz
-	6R7WQq0sk5xwvSnbTIe1Cba9Kq3r1CO6w5uMegpLrY47MQm0vVUKlzWaQc8nWQ==
-X-Google-Smtp-Source: AGHT+IG4k/cpRNSq91pRjiax3XUAglPeQQH9aGEgVn+1cSS8PugFjOb1sRvbj+Lujs1yMSOUO9eU6Q==
-X-Received: by 2002:a17:90b:2588:b0:311:baa0:89ca with SMTP id 98e67ed59e1d1-31c21e31fcdmr2286947a91.34.1751956252818;
-        Mon, 07 Jul 2025 23:30:52 -0700 (PDT)
+        bh=QgtcCxhmZdnPAQq2J//8hYagFuErKydvAl0n9hMEJuw=;
+        b=usXBjENwQDed/MM+OcrUiWCbdfiGY7a4Qb9zTdd8vLq3f7K0WGvZL+MqkL/lYHlN7d
+         GLFakJ/SWtnkA4lW2+OWG/dmhlTVrfo76tWbURte/jHHaGIwFHchjfVTmJ6ZpAvIDq2a
+         2221eF7NtZHjBFcScsPapt5c8KYy9c16zy+YSGfk7gJD/UUHKAwlyP55OkeG6korfJi5
+         ViZLjrnT1cUw/QnV4OCSMOmLPiv8P0cfoLX6FUmIR3v1MlzB+4sspbQhcODaH2cuzQXe
+         mUWCPLUefLF+E+a1rYIoGw6HUKnCutgVyqVCAbPHlgl7EN0QJxXqkOdwPBdmv0aBd2C+
+         mIvg==
+X-Forwarded-Encrypted: i=1; AJvYcCX96SuUsxU2U11lLU3N6hcGsCijAteIVIXwsIvx0wmxfhu0OvdwjA1UA0QK2aTfGuZIIG7MEY6tjsBO9Q==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw29D0YVcx1Tc5z2ndp//Y/KJ3Inr6K4UTahfy3R83iyIHyaWw9
+	X17uNpX1eoiq12hA/1xq+h0kTwvnjJxe1xJXXlofyt2cJdwe/fmlIuYE
+X-Gm-Gg: ASbGnctIlvutW9xNQYwlFRG/t+X1mF746BsziEjR0KTav8YhxfsDKKWlpwLmAQ2t1JX
+	1nGnh4TBXMcVTlXC1xZqdyx7824ICMk26OoVxIcLRd5/UnxlSyUNq1Acw/dzNEmWyLVg2OjSr7Q
+	8lVBAVaUqmY26WtUkW06KDvDzN/SGou0bbIysv8DD4rsCIeT3JktoxONe8L2VWaadMTKCpiDcDR
+	Vqn0jYzgivNTZSwMLEFVIpBYt1VzJ7dRRxrGlmgM1VSFSgfl4HgTJmVwPWOtbT3hYyHeG1Fi+o0
+	3Y0ftryzcANrZ72jpyMXj7AiLYnPmbIBMI1tCGILkNWYsAe54ZpgDCPFl4306g==
+X-Google-Smtp-Source: AGHT+IEHaKDnutmLE4TaqX3rV/8SGpSNjJFcfnVNZNoSPdwlmSzOuB4rVAWhWHt428WpS+ewzou8bA==
+X-Received: by 2002:a17:903:1a08:b0:236:6fbb:a5f3 with SMTP id d9443c01a7336-23dd0b16a81mr36467735ad.40.1751956256370;
+        Mon, 07 Jul 2025 23:30:56 -0700 (PDT)
 Received: from localhost ([2001:19f0:ac00:4eb8:5400:5ff:fe30:7df3])
-        by smtp.gmail.com with UTF8SMTPSA id 98e67ed59e1d1-31c21e8b48fsm1207893a91.33.2025.07.07.23.30.51
+        by smtp.gmail.com with UTF8SMTPSA id d9443c01a7336-23c845be91esm100729455ad.250.2025.07.07.23.30.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Jul 2025 23:30:52 -0700 (PDT)
+        Mon, 07 Jul 2025 23:30:56 -0700 (PDT)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -86,17 +86,17 @@ Cc: linux-phy@lists.infradead.org,
 	linux-riscv@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: [PATCH v5 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
-Date: Tue,  8 Jul 2025 14:30:36 +0800
-Message-ID: <20250708063038.497473-2-inochiama@gmail.com>
+	Alexander Sverdlin <alexander.sverdlin@gmail.com>
+Subject: [PATCH v5 2/2] phy: sophgo: Add USB 2.0 PHY driver for Sophgo CV18XX/SG200X
+Date: Tue,  8 Jul 2025 14:30:37 +0800
+Message-ID: <20250708063038.497473-3-inochiama@gmail.com>
 X-Mailer: git-send-email 2.50.0
 In-Reply-To: <20250708063038.497473-1-inochiama@gmail.com>
 References: <20250708063038.497473-1-inochiama@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250707_233053_724579_E505559D 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20250707_233057_298950_489A7BE3 
+X-CRM114-Status: GOOD (  22.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,79 +113,255 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
-"VBUS_DET" to get the right operation mode. If this pin is not
-connected, it only supports setting the mode manually.
-
-Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+Add USB 2.0 PHY driver for Sophgo CV18XX/SG200X. Currently
+this driver does not support OTG mode as lack of document.
 
 Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Tested-by: Alexander Sverdlin <alexander.sverdlin@gmail.com>
 ---
- .../bindings/phy/sophgo,cv1800b-usb2-phy.yaml | 54 +++++++++++++++++++
- 1 file changed, 54 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
+ drivers/phy/Kconfig                  |   1 +
+ drivers/phy/Makefile                 |   1 +
+ drivers/phy/sophgo/Kconfig           |  19 +++
+ drivers/phy/sophgo/Makefile          |   2 +
+ drivers/phy/sophgo/phy-cv1800-usb2.c | 170 +++++++++++++++++++++++++++
+ 5 files changed, 193 insertions(+)
+ create mode 100644 drivers/phy/sophgo/Kconfig
+ create mode 100644 drivers/phy/sophgo/Makefile
+ create mode 100644 drivers/phy/sophgo/phy-cv1800-usb2.c
 
-diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 58c911e1b2d2..678dd0452f0a 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -122,6 +122,7 @@ source "drivers/phy/renesas/Kconfig"
+ source "drivers/phy/rockchip/Kconfig"
+ source "drivers/phy/samsung/Kconfig"
+ source "drivers/phy/socionext/Kconfig"
++source "drivers/phy/sophgo/Kconfig"
+ source "drivers/phy/st/Kconfig"
+ source "drivers/phy/starfive/Kconfig"
+ source "drivers/phy/sunplus/Kconfig"
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index c670a8dac468..bfb27fb5a494 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -35,6 +35,7 @@ obj-y					+= allwinner/	\
+ 					   rockchip/	\
+ 					   samsung/	\
+ 					   socionext/	\
++					   sophgo/	\
+ 					   st/		\
+ 					   starfive/	\
+ 					   sunplus/	\
+diff --git a/drivers/phy/sophgo/Kconfig b/drivers/phy/sophgo/Kconfig
 new file mode 100644
-index 000000000000..2ff8f85d0282
+index 000000000000..2c943bbe1f81
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
-@@ -0,0 +1,54 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/sophgo,cv1800b-usb2-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/phy/sophgo/Kconfig
+@@ -0,0 +1,19 @@
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Phy drivers for Sophgo platforms
++#
 +
-+title: Sophgo CV18XX/SG200X USB 2.0 PHY
++if ARCH_SOPHGO || COMPILE_TEST
 +
-+maintainers:
-+  - Inochi Amaoto <inochiama@gmail.com>
++config PHY_SOPHGO_CV1800_USB2
++	tristate "Sophgo CV18XX/SG200X USB 2.0 PHY support"
++	depends on MFD_SYSCON
++	depends on USB_SUPPORT
++	select GENERIC_PHY
++	help
++	  Enable this to support the USB 2.0 PHY used with
++	  the DWC2 USB controller in Sophgo CV18XX/SG200X
++	  series SoC.
++	  If unsure, say N.
 +
-+properties:
-+  compatible:
-+    const: sophgo,cv1800b-usb2-phy
++endif # ARCH_SOPHGO || COMPILE_TEST
+diff --git a/drivers/phy/sophgo/Makefile b/drivers/phy/sophgo/Makefile
+new file mode 100644
+index 000000000000..318060661759
+--- /dev/null
++++ b/drivers/phy/sophgo/Makefile
+@@ -0,0 +1,2 @@
++# SPDX-License-Identifier: GPL-2.0
++obj-$(CONFIG_PHY_SOPHGO_CV1800_USB2)	+= phy-cv1800-usb2.o
+diff --git a/drivers/phy/sophgo/phy-cv1800-usb2.c b/drivers/phy/sophgo/phy-cv1800-usb2.c
+new file mode 100644
+index 000000000000..64f8e37b4b52
+--- /dev/null
++++ b/drivers/phy/sophgo/phy-cv1800-usb2.c
+@@ -0,0 +1,170 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2025 Inochi Amaoto <inochiama@outlook.com>
++ */
 +
-+  reg:
-+    maxItems: 1
++#include <linux/clk.h>
++#include <linux/bitfield.h>
++#include <linux/debugfs.h>
++#include <linux/kernel.h>
++#include <linux/mfd/syscon.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_address.h>
++#include <linux/of_gpio.h>
++#include <linux/platform_device.h>
++#include <linux/phy/phy.h>
++#include <linux/regmap.h>
++#include <linux/spinlock.h>
 +
-+  "#phy-cells":
-+    const: 0
++#define REG_USB_PHY_CTRL		0x048
 +
-+  clocks:
-+    items:
-+      - description: PHY app clock
-+      - description: PHY stb clock
-+      - description: PHY lpm clock
++#define PHY_VBUS_POWER_EN		BIT(0)
++#define PHY_VBUS_POWER			BIT(1)
++#define PHY_ID_OVERWRITE_EN		BIT(6)
++#define PHY_ID_OVERWRITE_MODE		BIT(7)
++#define PHY_ID_OVERWRITE_MODE_HOST	FIELD_PREP(BIT(7), 0)
++#define PHY_ID_OVERWRITE_MODE_DEVICE	FIELD_PREP(BIT(7), 1)
 +
-+  clock-names:
-+    items:
-+      - const: app
-+      - const: stb
-+      - const: lpm
++#define PHY_APP_CLK_RATE		125000000
++#define PHY_LPM_CLK_RATE		12000000
++#define PHY_STB_CLK_RATE		333334
 +
-+  resets:
-+    maxItems: 1
++struct cv1800_usb_phy {
++	struct phy	*phy;
++	struct regmap	*syscon;
++	spinlock_t	lock;
++	struct clk	*usb_app_clk;
++	struct clk	*usb_lpm_clk;
++	struct clk	*usb_stb_clk;
++	bool		support_otg;
++};
 +
-+required:
-+  - compatible
-+  - "#phy-cells"
-+  - clocks
-+  - clock-names
++static int cv1800_usb_phy_set_mode(struct phy *_phy,
++				   enum phy_mode mode, int submode)
++{
++	struct cv1800_usb_phy *phy = phy_get_drvdata(_phy);
++	unsigned int regval = 0;
++	int ret;
 +
-+additionalProperties: false
++	dev_info(&phy->phy->dev, "set mode %d", (int)mode);
 +
-+examples:
-+  - |
-+    phy@48 {
-+      compatible = "sophgo,cv1800b-usb2-phy";
-+      reg = <0x48 0x4>;
-+      #phy-cells = <0>;
-+      clocks = <&clk 93>, <&clk 94>, <&clk 95>;
-+      clock-names = "app", "stb", "lpm";
-+      resets = <&rst 58>;
-+    };
++	switch (mode) {
++	case PHY_MODE_USB_DEVICE:
++		regval = PHY_ID_OVERWRITE_EN | PHY_ID_OVERWRITE_MODE_DEVICE;
++		regmap_clear_bits(phy->syscon, REG_USB_PHY_CTRL, PHY_VBUS_POWER);
++		break;
++	case PHY_MODE_USB_HOST:
++		regval = PHY_ID_OVERWRITE_EN | PHY_ID_OVERWRITE_MODE_HOST;
++		regmap_set_bits(phy->syscon, REG_USB_PHY_CTRL, PHY_VBUS_POWER);
++		break;
++	case PHY_MODE_USB_OTG:
++		if (!phy->support_otg)
++			return 0;
++
++		ret = regmap_read(phy->syscon, REG_USB_PHY_CTRL, &regval);
++		if (ret)
++			return ret;
++
++		regval = FIELD_GET(PHY_ID_OVERWRITE_MODE, regval);
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	return regmap_update_bits(phy->syscon, REG_USB_PHY_CTRL,
++				  PHY_ID_OVERWRITE_EN | PHY_ID_OVERWRITE_MODE,
++				  regval);
++}
++
++static int cv1800_usb_phy_set_clock(struct cv1800_usb_phy *phy)
++{
++	int ret;
++
++	ret = clk_set_rate(phy->usb_app_clk, PHY_APP_CLK_RATE);
++	if (ret)
++		return ret;
++
++	ret = clk_set_rate(phy->usb_lpm_clk, PHY_LPM_CLK_RATE);
++	if (ret)
++		return ret;
++
++	return clk_set_rate(phy->usb_stb_clk, PHY_STB_CLK_RATE);
++}
++
++static const struct phy_ops cv1800_usb_phy_ops = {
++	.set_mode	= cv1800_usb_phy_set_mode,
++	.owner		= THIS_MODULE,
++};
++
++static int cv1800_usb_phy_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct device *parent = dev->parent;
++	struct cv1800_usb_phy *phy;
++	struct phy_provider *phy_provider;
++	int ret;
++
++	if (!parent)
++		return -ENODEV;
++
++	phy = devm_kmalloc(dev, sizeof(*phy), GFP_KERNEL);
++	if (!phy)
++		return -ENOMEM;
++
++	phy->syscon = syscon_node_to_regmap(parent->of_node);
++	if (IS_ERR_OR_NULL(phy->syscon))
++		return -ENODEV;
++
++	phy->support_otg = false;
++
++	spin_lock_init(&phy->lock);
++
++	phy->usb_app_clk = devm_clk_get_enabled(dev, "app");
++	if (IS_ERR(phy->usb_app_clk))
++		return dev_err_probe(dev, PTR_ERR(phy->usb_app_clk),
++			"Failed to get app clock\n");
++
++	phy->usb_lpm_clk = devm_clk_get_enabled(dev, "lpm");
++	if (IS_ERR(phy->usb_lpm_clk))
++		return dev_err_probe(dev, PTR_ERR(phy->usb_lpm_clk),
++			"Failed to get lpm clock\n");
++
++	phy->usb_stb_clk = devm_clk_get_enabled(dev, "stb");
++	if (IS_ERR(phy->usb_stb_clk))
++		return dev_err_probe(dev, PTR_ERR(phy->usb_stb_clk),
++			"Failed to get stb clock\n");
++
++	phy->phy = devm_phy_create(dev, NULL, &cv1800_usb_phy_ops);
++	if (IS_ERR(phy->phy))
++		return dev_err_probe(dev, PTR_ERR(phy->phy),
++			"Failed to create phy\n");
++
++	ret = cv1800_usb_phy_set_clock(phy);
++	if (ret)
++		return ret;
++
++	phy_set_drvdata(phy->phy, phy);
++	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct of_device_id cv1800_usb_phy_ids[] = {
++	{ .compatible = "sophgo,cv1800b-usb2-phy" },
++	{ },
++};
++MODULE_DEVICE_TABLE(of, cv1800_usb_phy_ids);
++
++static struct platform_driver cv1800_usb_phy_driver = {
++	.probe = cv1800_usb_phy_probe,
++	.driver = {
++		.name = "cv1800-usb2-phy",
++		.of_match_table = cv1800_usb_phy_ids,
++	 },
++};
++module_platform_driver(cv1800_usb_phy_driver);
++
++MODULE_AUTHOR("Inochi Amaoto <inochiama@outlook.com>");
++MODULE_DESCRIPTION("CV1800/SG2000 SoC USB 2.0 PHY driver");
++MODULE_LICENSE("GPL");
 -- 
 2.50.0
 
