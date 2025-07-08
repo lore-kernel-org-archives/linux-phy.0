@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 804B3C83F10
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7539CC83F0F
 	for <linux-phy@archiver.kernel.org>; Tue,  8 Jul 2025 08:23:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,37 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SUZ66/fItMxiQYfR5bUlEMRy3D1yy2C3ASKq4vgJMfA=; b=tjWcMhr4eFY2ei
-	wUUBWXGDwMuI81zybEtMBOLvEJP0DPeDrVZ3N3/TNDG9ImqYT6uJoahsPiyp7upyCoHwN21N+Hi8+
-	8N/dETgdsQpi0JJjm6ZszCoAGhnyNVt1ND+SAFqjumvz7Xx36fqxnEkQAxYOeACxdaiZ3e+LbN7v3
-	Hi7/TKzCjuJnZgGLebL/+ajGLYtzh8b0/CwhLwFWhatn2YF9OrmGeK0UIinWsdDsD7ecDEeMb141+
-	XpmFVnfhvzOiGJn7INdVz4oxmHhZOKXi/BQiBKP0bNOcT9KwwMqHOSusTrKyQ1tSTXe28ChSflvuj
-	bfIy8PiZnnhQxI+C+fAA==;
+	List-Owner; bh=I/WuSXHD4+/vrLB/sFF2+Ln08MnozYftP3TgxTwX6KQ=; b=ALdR5eAr+D6B/y
+	/xNUML+o5L0Rf2tho5LVbr2BkBjv/yTf1YunIaH3copOCczkg+0R9+Z7SSAXaoPKGX3qA/YyQoWyk
+	ZC/tOofBsJlFQJwzoYWd3Vj6au/apx5YOCKTth2q0J7s6DHrH1PbtwN1y2yF/s8DKBMNm1Y1YcpeY
+	o+v4WYqj8eHArmBh9Ir0jKr9EARgbE1dkXNaV7iGiEDimoUut/3Hq+f+Gbbk5ebTlhaYhRCyTmoel
+	57ZJstaLUHO8cg2w0ySeCyaf86X17qnIoa//GtEULPmeo27LpuN5juCapZOzMDOXwxq4fB15NYNu1
+	TrhlYUJ6ll0S0aEsdhQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ3c9-00000004jYB-0bP1;
-	Tue, 08 Jul 2025 08:23:45 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uZ3c8-00000004jXv-3fyB;
+	Tue, 08 Jul 2025 08:23:44 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ3aU-00000004jCx-2lzk
+	id 1uZ3a0-00000004j3O-0r7p
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Jul 2025 08:22:02 +0000
+	Tue, 08 Jul 2025 08:21:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CD86061471;
-	Tue,  8 Jul 2025 08:22:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7FAAC4CEED;
-	Tue,  8 Jul 2025 08:22:00 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 3E86246699;
+	Tue,  8 Jul 2025 08:21:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B7E0C4CEED;
+	Tue,  8 Jul 2025 08:21:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751962921;
-	bh=Xy3Qimr/6H1RzjOUBUNoF0Q63KzUY/WreVnonIIwPoU=;
+	s=k20201202; t=1751962891;
+	bh=8PN/PFOLCto+wJyr7ixRplnKv9QuyDqxu1RnCpRLIJE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NFvC7GU2ensgRjBqo4FLbNOfSIRi9ngQPU6c0RA0ieXxRDYMQhU32wnNLPBBhCyC7
-	 Xnc7s9Hp5E/rqUoFRrXi/h5mSvcqUVnoPa0OZV4Lxgd9qJETZCe758O0fXXKxsHtPm
-	 R3cjHn/1J/UQLMZijZucqd1RctntJ/0XYnPAiGEiPky3LoGnYUuOco2ZItX1x1i1DA
-	 uknMc+LM9c+HdumaSEA9FGudaOgw1qltE3sk6rktnwgX6xPvVSPAqtJu0lQ2nbQ3Me
-	 oMuDOeKXT6EGBN4S9fmK+FTijWC5kXfrrvdmpK4P9oVWu3zA9PZ3WCSasrRSq9zuRq
-	 XnVUR/9vRomEQ==
-Date: Tue, 8 Jul 2025 10:21:57 +0200
+	b=G3003mvuWma2TvBG0K8/VWpXIhlx4FnVnUWM1qerYmoXUDRdw2looXA7w1SbHFLZb
+	 j2OBaUKu0jFDD55kYynYdqYiMZsdwbUMeuSPwMM9OgfXxOae/aBnpze2Y4KlV1qGg6
+	 fPtHJnS9E9fZLpa2pHxTiN1D71kDfgs1vppAAdki9zQnJaHomqRa+xkPRqzrvLNEE/
+	 oFGb3oenSFbptvYk6ppJnt8ZaYnC4tiGBbEl7s+916aXUMGQ+ZGogMp7o7zZV4TuTR
+	 z3gI+gKpGPZ9VTPAuyEwjAcMmU64Tcczhu/WZQ+kZcN1j3w2dYVTQZ7m8T61jQVNEs
+	 GgSrGsmj4nHjQ==
+Date: Tue, 8 Jul 2025 10:21:27 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Luca Weiss <luca.weiss@fairphone.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -51,15 +51,18 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Abel Vesa <abel.vesa@linaro.org>, ~postmarketos/upstreaming@lists.sr.ht, 
 	phone-devel@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Document
- qcom,tune-res-fsdif
-Message-ID: <20250708-stoic-slim-bison-ac55ee@krzk-bin>
+Subject: Re: [PATCH 3/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ compatible for PMIV0104
+Message-ID: <20250708-analytic-misty-chital-3ddf86@krzk-bin>
 References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
- <20250625-sm7635-eusb-repeater-v1-1-19d85541eb4c@fairphone.com>
- <20250708-unicorn-of-ancient-excellence-e8945c@krzk-bin>
+ <20250625-sm7635-eusb-repeater-v1-3-19d85541eb4c@fairphone.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250708-unicorn-of-ancient-excellence-e8945c@krzk-bin>
+In-Reply-To: <20250625-sm7635-eusb-repeater-v1-3-19d85541eb4c@fairphone.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250708_012132_298178_9D2D7DA2 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,33 +79,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 08, 2025 at 10:13:24AM +0200, Krzysztof Kozlowski wrote:
-> On Wed, Jun 25, 2025 at 11:14:56AM +0200, Luca Weiss wrote:
-> > Document the FS Differential TX Output Resistance Tuning value found on
-> > the eUSB2 repeater on Qualcomm PMICs.
-> > 
-> > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> > ---
-> >  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> > index 27f064a71c9fb8cb60e8333fb285f0510a4af94f..6bfd11657e2992735998063b3ca390e04a03930d 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> > @@ -52,6 +52,12 @@ properties:
-> >      minimum: 0
-> >      maximum: 7
-> >  
-> > +  qcom,tune-res-fsdif:
-> > +    $ref: /schemas/types.yaml#/definitions/uint8
-> > +    description: FS Differential TX Output Resistance Tuning
+On Wed, Jun 25, 2025 at 11:14:58AM +0200, Luca Weiss wrote:
+> Add a dt-bindings compatible string for the Qualcomm's PMIV0104 PMIC.
 > 
-> Resistance is in Ohms, tuning could be in dB, so I wonder what are the
-> actual units here. Neither commit msg nor this description helps me to
-> understand that.
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 1 +
 
-I checked and the values are in Ohms.
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
