@@ -4,95 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40584C71130
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Jul 2025 23:05:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7103C71130
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Jul 2025 06:36:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jz0xMfB7k9zZVjENfegHsPhuoHtneins+QJg7JdHJo0=; b=Ijw62SUhGcAY+N
-	6m7MonZ3muTHJlakTR+9E6Sd515iTBJydtdUkKuIKEUkvGbCfG4/wAB7dU83TmQT27LIb9SpWiqKm
-	NukZk+5wlcK8leqBaFam+x2uJGwiTzeF32WxlJShmWmf7RvO4TwiZetMGYDylNn9Yj7fkUqhfGQtR
-	fIacB4/zEIlc4LfTTVcS1qcH+AGSjc/3pL+kZ4O2DpsYBhOujt692A4C5zgt1kUz+Tcz2Vem+CocW
-	Fx/8j68C2f1v1dtvRVRb73Sn4AWmBd2/u/NTMPqOzLx8c7XJMWVmsMe0oOuO0aWcus13sHkATm52v
-	FDgPWau2gLBdtuyMktig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=flR6nh0OpkGWC2lVpTLTIb3QELIuHQNnpvvMVjdzZGc=; b=mJvWqoStbKJ/+w
+	WczGZxcsbAyaBMc4HW14vjgGwFqeoDal7/hnfeRCOxoivGqN3Bzu53ADq5QkggQvkSvaJ5LxUS+AX
+	0XOC1NP7QzxzNPmVMABMvcx5u5g6jnIghnBhqT12lMvGCV9fpYg652m52FKA2yCGwPyZXNr+OkZFG
+	nZQi7io1dS6T4AzCQHX0/yliMA7KEJfyOwqqi4L5RlN6+c/p64cUB7L5S5Q8cW1QouytuP5WCoeRY
+	tiwbajvbbQIfENClabbj65TPDsZUFi6/LVSU8iII5zsz1y3fB8Ia2Tn3BvJPQfWf5Kga3zaS7zaOK
+	7zWqvcaMfDpRwDEBTlRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYutR-00000003kfZ-3qvn;
-	Mon, 07 Jul 2025 23:05:01 +0000
-Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
+	id 1uZ1wa-00000004Rrh-1gm7;
+	Tue, 08 Jul 2025 06:36:44 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYutP-00000003keg-13Kz;
-	Mon, 07 Jul 2025 23:05:00 +0000
-Received: by mail-qt1-x82e.google.com with SMTP id d75a77b69052e-4a9b09ba106so23928371cf.2;
-        Mon, 07 Jul 2025 16:04:58 -0700 (PDT)
+	id 1uZ1qs-00000004RF7-1nXZ;
+	Tue, 08 Jul 2025 06:30:51 +0000
+Received: by mail-pf1-x432.google.com with SMTP id d2e1a72fcca58-748f5a4a423so2284482b3a.1;
+        Mon, 07 Jul 2025 23:30:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751929498; x=1752534298; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=AgefRmwWFnLKksEjR/mE3fDGyeNnfCLVBN4aw7Do+mU=;
-        b=ZL9w1Wm9f5URnB7uycLDf/LMiL3LiiidrocMIOm/FsS0QJ/eGtVFFEC+5mhMeTboRW
-         wKX6Oa0xXvPcQhLwMxwewlhNpZwHrOlZ5cRL+jrSrueERyn6d57DzVRBmfMGEDivJnEA
-         3uRH+Bbcj6nP7z76QDBSWlGSFFlbA+rPT5JvV2f4KXpAE6j7bQqLlEo3xr/kAyvzS7ns
-         d8F2WqnyYW2os9FxGgLqGifxQ9BDxC3GEwM/oZsWqi8XZXe5xtL3ZAqb6OMU9MRIJHQq
-         dUH4lWZuY8asG7L4kwb55JYALkHLeiim5N/Oa5hS6x/iV8T95p6MsItPhNUZ/Tuf1zVA
-         2Z6w==
+        d=gmail.com; s=20230601; t=1751956249; x=1752561049; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=NTSaPd2KsxbQLmtDO+kQIyiudpoUlJNATnX1VXPLxSg=;
+        b=IJCB3wnknusKGoDcfMw4S2Gm5Q1cvDLAiaQEIUhaEFS+I1ufGdUptLK5UigvNnNnxq
+         pRFzch5+VrthAWByq0rBB9Hm2fjJRaBUpJp1u8hCheHtfxSXfq1LW4ek3ANZCxm1Fo2U
+         gBArj37r9XkbYiGU+oiz22aOwHpcJP+2a6vJyqIOFDRg9zeTiy5nomhyNtE64HnHW9cr
+         vWLK1zbznmBEL4Tgf0Yr7IgwaRjYwMgOgQms0ePzLehXMW2V5B2GCKXiL/2qxt/kUWsT
+         d8brlmtwijyzWKX3pc+O/eNdgGIchdTJN2iTmHIVlbsI/fYsMPk6q4UFl5LbFc+JEFix
+         coyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751929498; x=1752534298;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=AgefRmwWFnLKksEjR/mE3fDGyeNnfCLVBN4aw7Do+mU=;
-        b=VhbDCzojWS1jtJZ5f8zZqWwyI8HgdrCy6dIcy/RwsHRapNErESnomdc5yxj5UHgyMz
-         spFBV4GbqCbyPqpW4hNCmJHBcc68q2K7qV5Y+Wq0ykeIz1zD0S/UjxIxuq0k9R5L+v4E
-         wc1xz6yoYqMpIE4rH281DxQBNFeDRLDpz3C+k8Vj1qxYqOEKcMZkXnxYGIHtxHQu7LBh
-         zbR9jgqeCMdc7nJQZLC074dTO5dIoV/93M+SZpNJaRzE4ve9ABEsmp042Q+Hqdye5o7G
-         Q21ZitaOXkmO04jMLSOXF4cSqx+z9YxJ/nvndcQ5/71zXvw+xTCtvmO/gciCwsh/9qHt
-         AI1w==
-X-Forwarded-Encrypted: i=1; AJvYcCUxcE5TreO/njHQAOM7ILOGPZPE1ZUDQDKgt2/jMiqrJnnuMJCm1m/inLlhE1zB1b7mYo8XIytiVhzffy2K67Q3@lists.infradead.org, AJvYcCWe130z3tsZ6KL5sWGldfuWBh+tkLqbqOiE2eTqt2WN1tNQblnRG/nf/yjQ6DdfP9FrqiccMwXqP225@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxoj6uQ7LnwyW5UjQzxaQUag8iwHQRsKs5yCukwLyZnf0W7IK3k
-	O7YR+40owEoCV0C70U+jBKMdBgZGfI6txWwfp1RkRK9gUCPa+o3sk9Uq
-X-Gm-Gg: ASbGncs7Pd9RMXd86CnHlDvtrXPMnUqVMCkyO0x5iLp2bs0JXcmmQrHGJa4yyv14sXl
-	a6X+hs6QesyF6htZYZM2ALI3vJ11mo4dfGSbeOJw0Qaj6H35ncuGybTttvadZz4tqCAJCyGDQ/E
-	YgWNJWfRdOXH/Qf7r4nqnYltL4Afo3ja9O/nmnFu8cdl6TF9BYJxeFa8h4mfl1x/3LGEP9Q5duo
-	DqqROoo/4T9n17AoLe9fYnzC2NZ2tSbsKZFpaOf6OGxPy+lVxZkFMiKC9Gxv+2i9NE5Ygq5ejfI
-	q95RsUBZYE8xO+fYu0J7/OmmkguXRzytR3Cv00kT/0Xt3NkEk4owyNq3rIP0
-X-Google-Smtp-Source: AGHT+IEt38/qMtWKaR5SjIM0klOgkEeJMtKfunHHkkfEhSFc7UanZ5qQT5SVRGp91gGzCD3coMx+HA==
-X-Received: by 2002:a05:622a:255:b0:4a5:8387:8b9f with SMTP id d75a77b69052e-4a99647dcebmr219861971cf.15.1751929497497;
-        Mon, 07 Jul 2025 16:04:57 -0700 (PDT)
-Received: from geday ([2804:7f2:800b:a5e6::dead:c001])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4a9949fbe79sm71274421cf.31.2025.07.07.16.04.52
+        d=1e100.net; s=20230601; t=1751956249; x=1752561049;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=NTSaPd2KsxbQLmtDO+kQIyiudpoUlJNATnX1VXPLxSg=;
+        b=sP23f/jj3CJaJ7xtYc79oelv/fWsbwbpTDDPn5bmdfZsAJ2BBEymLxyHlD6mWJWH0f
+         k8vQas4/HhH4dvjW6lRYamN5Y9uy8NK/vsaToLWpAeXDtyYB574VQuyY5z8TBEXGX4mP
+         fE4V2WRhicX59RSmrsALC+DfkMB6xA+m4khFUqgr4rA2sE6mU8BnTjwnTwiDmrZxGCO4
+         SIcI7fN8w2Hi2Lkh+uQKhhYaorNnpkvzesta38hMnsVMVqk2m3GqSk2UvVgcmbRwKqAC
+         XBhacbySP48oCPA4f3SYYk/FxasD5uJvsiXyIZzBJj8TO0WtBg3nQ3k4kqo+tw3drIxJ
+         M53Q==
+X-Forwarded-Encrypted: i=1; AJvYcCW4pwco+c+9KkzPSJRdqApur/BTzS985qdd4tfaxTKKKpZHtZM94fw7MwjbNNjWeIoJRbhuBhYYNhXcAg==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyd2MfOcXlmykmfLO4m60hcfnx79bZbQ4DDicwNC5XXMHRZL8r4
+	Hek45eMbK9MdxiMWdRDB8FopxObNiDbVHvMduBDPiqJQUeaQAYxJUxpA
+X-Gm-Gg: ASbGnctKdU5jKgSxff75MiFXFXmXPpQtnunqmo+7ipRpcPJpwixxN/tnHO91owEMuun
+	3GFIRKqiBfsRsK3ESEazVeMpth3RnhCXrwkvJSCrjv2O/2p0y9Oaeco4N8X3MOezf/dtzfKtKYL
+	s1b93jba+DQyRuMDGLK4mUSS+109thZUpDy71MCcUh501z13wVpoAxM82b49drvPC0yvXmVbeWf
+	nBgOFCRC/ZLwWukH0lfFMu61f32HJx/XIBpIIS31D1M5gaZLKuoAF0QxIc+LqPRhpWEo4Q0psR4
+	lcLyVzsM8aTKWoQwAZPkw0IH7SXXrx1BXabTAY9Fr6F7G501ZvPanVGYD+UXkfWcmsKGxqis
+X-Google-Smtp-Source: AGHT+IF2gopwxM64FAD0FZDnw1lPgQORZkvtpUYpoRgRuNfklUmt4fK4rmjd5HBaL3Snj8yAGWBBoA==
+X-Received: by 2002:a05:6a00:3cd6:b0:748:3a1a:ba72 with SMTP id d2e1a72fcca58-74ce8acd777mr21400752b3a.20.1751956249103;
+        Mon, 07 Jul 2025 23:30:49 -0700 (PDT)
+Received: from localhost ([2001:19f0:ac00:4eb8:5400:5ff:fe30:7df3])
+        by smtp.gmail.com with UTF8SMTPSA id d2e1a72fcca58-74ce42cc925sm9765276b3a.152.2025.07.07.23.30.48
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 07 Jul 2025 16:04:56 -0700 (PDT)
-Date: Mon, 7 Jul 2025 20:04:45 -0300
-From: Geraldo Nascimento <geraldogabriel@gmail.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+        Mon, 07 Jul 2025 23:30:48 -0700 (PDT)
+From: Inochi Amaoto <inochiama@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rick wertenbroek <rick.wertenbroek@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Valmantas Paliksa <walmis@gmail.com>, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [RESEND PATCH v9 1/4] PCI: rockchip: Use standard PCIe defines
-Message-ID: <aGxSjb17kz2--_Sf@geday>
-References: <e81700ef4b49f584bc8834bfb07b6d8995fc1f42.1751322015.git.geraldogabriel@gmail.com>
- <20250707222210.GA2114615@bhelgaas>
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen Wang <unicorn_wang@outlook.com>,
+	Inochi Amaoto <inochiama@gmail.com>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Alexandre Ghiti <alex@ghiti.fr>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	sophgo@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org,
+	Yixun Lan <dlan@gentoo.org>,
+	Longbin Li <looong.bin@gmail.com>
+Subject: [PATCH v5 0/2] riscv: sophgo: add USB phy support for CV18XX series
+Date: Tue,  8 Jul 2025 14:30:35 +0800
+Message-ID: <20250708063038.497473-1-inochiama@gmail.com>
+X-Mailer: git-send-email 2.50.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250707222210.GA2114615@bhelgaas>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250707_160459_290941_12CB0D3B 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20250707_233050_485622_1D0AA0E8 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,43 +104,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdWwgMDcsIDIwMjUgYXQgMDU6MjI6MTBQTSAtMDUwMCwgQmpvcm4gSGVsZ2FhcyB3
-cm90ZToKPiBPbiBNb24sIEp1biAzMCwgMjAyNSBhdCAwNzoyNDo0MVBNIC0wMzAwLCBHZXJhbGRv
-IE5hc2NpbWVudG8gd3JvdGU6Cj4gPiBDdXJyZW50IGNvZGUgdXNlcyBjdXN0b20tZGVmaW5lZCBy
-ZWdpc3RlciBvZmZzZXRzIGFuZCBiaXRmaWVsZHMgZm9yCj4gPiBzdGFuZGFyZCBQQ0llIHJlZ2lz
-dGVycy4gQ2hhbmdlIHRvIHVzaW5nIHN0YW5kYXJkIFBDSWUgZGVmaW5lcy4gU2luY2UKPiA+IHdl
-IGFyZSBub3cgdXNpbmcgc3RhbmRhcmQgUENJZSBkZWZpbmVzLCBkcm9wIHVudXNlZCBjdXN0b20t
-ZGVmaW5lZCBvbmVzLAo+ID4gd2hpY2ggYXJlIG5vdyByZWZlcmVuY2VkIGZyb20gb2Zmc2V0IGF0
-IGFkZGVkIENhcGFiaWxpdGllcyBSZWdpc3Rlci4KPiAKPiA+IEBAIC0yNzgsMTAgKzI3OCwxMCBA
-QCBzdGF0aWMgdm9pZCByb2NrY2hpcF9wY2llX3NldF9wb3dlcl9saW1pdChzdHJ1Y3Qgcm9ja2No
-aXBfcGNpZSAqcm9ja2NoaXApCj4gPiAgCQlwb3dlciA9IHBvd2VyIC8gMTA7Cj4gPiAgCX0KPiA+
-ICAKPiA+IC0Jc3RhdHVzID0gcm9ja2NoaXBfcGNpZV9yZWFkKHJvY2tjaGlwLCBQQ0lFX1JDX0NP
-TkZJR19EQ1IpOwo+ID4gLQlzdGF0dXMgfD0gKHBvd2VyIDw8IFBDSUVfUkNfQ09ORklHX0RDUl9D
-U1BMX1NISUZUKSB8Cj4gPiAtCQkgIChzY2FsZSA8PCBQQ0lFX1JDX0NPTkZJR19EQ1JfQ1BMU19T
-SElGVCk7Cj4gPiAtCXJvY2tjaGlwX3BjaWVfd3JpdGUocm9ja2NoaXAsIHN0YXR1cywgUENJRV9S
-Q19DT05GSUdfRENSKTsKPiA+ICsJc3RhdHVzID0gcm9ja2NoaXBfcGNpZV9yZWFkKHJvY2tjaGlw
-LCBQQ0lFX1JDX0NPTkZJR19DUiArIFBDSV9FWFBfREVWQ0FQKTsKPiA+ICsJc3RhdHVzIHw9IEZJ
-RUxEX1BSRVAoUENJX0VYUF9ERVZDQVBfUFdSX1ZBTCwgcG93ZXIpOwo+ID4gKwlzdGF0dXMgfD0g
-RklFTERfUFJFUChQQ0lfRVhQX0RFVkNBUF9QV1JfU0NMLCBzY2FsZSk7Cj4gCj4gQWRkZWQgI2lu
-Y2x1ZGUgPGxpbnV4L2JpdGZpZWxkLmg+IGZvciB0aGlzOgo+IAo+ICAgQ0MgICAgICBkcml2ZXJz
-L3BjaS9jb250cm9sbGVyL3BjaWUtcm9ja2NoaXAtaG9zdC5vCj4gZHJpdmVycy9wY2kvY29udHJv
-bGxlci9wY2llLXJvY2tjaGlwLWhvc3QuYzogSW4gZnVuY3Rpb24g4oCYcm9ja2NoaXBfcGNpZV9z
-ZXRfcG93ZXJfbGltaXTigJk6Cj4gZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2llLXJvY2tjaGlw
-LWhvc3QuYzoyNzI6MjQ6IGVycm9yOiBpbXBsaWNpdCBkZWNsYXJhdGlvbiBvZiBmdW5jdGlvbiDi
-gJhGSUVMRF9NQVjigJkgWy1XZXJyb3I9aW1wbGljaXQtZnVuY3Rpb24tZGVjbGFyYXRpb25dCj4g
-ICAyNzIgfCAgICAgICAgIHdoaWxlIChwb3dlciA+IEZJRUxEX01BWChQQ0lfRVhQX0RFVkNBUF9Q
-V1JfVkFMKSkgewo+ICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICBefn5+fn5+fn4KPiBk
-cml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtcm9ja2NoaXAtaG9zdC5jOjI4MjoxOTogZXJyb3I6
-IGltcGxpY2l0IGRlY2xhcmF0aW9uIG9mIGZ1bmN0aW9uIOKAmEZJRUxEX1BSRVDigJkgWy1XZXJy
-b3I9aW1wbGljaXQtZnVuY3Rpb24tZGVjbGFyYXRpb25dCj4gICAyODIgfCAgICAgICAgIHN0YXR1
-cyB8PSBGSUVMRF9QUkVQKFBDSV9FWFBfREVWQ0FQX1BXUl9WQUwsIHBvd2VyKTsKPiAgICAgICB8
-ICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+fn4KPgoKSGkgQmpvcm4sCgpVZ2gsIHdoYXQgYSBt
-aXNzISBUaGFuayB5b3UgZm9yIHRha2luZyBjYXJlIG9mIHRoaXMhCgpHZXJhbGRvIE5hc2NpbWVu
-dG8KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+Add USB PHY support for CV18XX/SG200X series
+
+Changed from v4:
+- https://lore.kernel.org/all/20250611081804.1196397-1-inochiama@gmail.com
+1. patch 1: apply Conor's tag
+2. patch 2: remove dr_mode debugfs entry.
+3. patch 2: simplify the cv1800_usb_phy_set_clock function
+
+Changed from v3:
+- https://lore.kernel.org/all/IA1PR20MB4953C1876484E149AA390DD5BB1D2@IA1PR20MB4953.namprd20.prod.outlook.com/
+1. patch 1: remove vbus-gpio, switch-gpio and dr_mode properties.
+2. patch 2: remove all logic related to the bindings change.
+3. remove the syscon header file.
+
+Changed from v2:
+1. add item description for switch gpios.
+
+Changed from v1:
+1. remove dr_mode property and use default mode instead.
+2. improve the description of `vbus_det-gpios` and `sophgo,switch-gpios`
+
+Inochi Amaoto (2):
+  dt-bindings: phy: Add Sophgo CV1800 USB phy
+  phy: sophgo: Add USB 2.0 PHY driver for Sophgo CV18XX/SG200X
+
+ .../bindings/phy/sophgo,cv1800b-usb2-phy.yaml |  54 ++++++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/sophgo/Kconfig                    |  19 ++
+ drivers/phy/sophgo/Makefile                   |   2 +
+ drivers/phy/sophgo/phy-cv1800-usb2.c          | 170 ++++++++++++++++++
+ 6 files changed, 247 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800b-usb2-phy.yaml
+ create mode 100644 drivers/phy/sophgo/Kconfig
+ create mode 100644 drivers/phy/sophgo/Makefile
+ create mode 100644 drivers/phy/sophgo/phy-cv1800-usb2.c
+
+--
+2.50.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
