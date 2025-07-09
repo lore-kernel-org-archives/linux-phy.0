@@ -4,90 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F134DC83F03
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 11:34:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2209C83F03
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 12:05:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mxoQsdnnFFwZAUAvs+AJK+gMnt3ouE8XCbwizvyLGs4=; b=UkUlBeDH5rNuWI
-	HlXeKxovnKs3ykG6Nw2Re9HKpEvSzLplrQXDdYMfA+f8QaP9yyUDaHKIiXK3EU684MzRjLQfJ65Yq
-	fhK0FDqMyF6b/3NXxZlrLsyZ0UyrmhET31QnJvXBqgbdolQVSvBmF2QxGhnFOhTOaaB+ZYnlga+8+
-	paCybEUf5IdVYV2/cutNI0/DshPxJiLRm0DxpaN33K9G4tZR+ZKaCOQAQkcZ7A4X0AttsTXkWxiTX
-	vPxidf7tEM8TqU1v/h9fSfpFo6weXPHRU6lhaN6oFHvy1sX9bp5O9hiMdTOrmRm522HI+yxpquxbO
-	K7Hw2vRBphQzMAEItRrg==;
+	List-Owner; bh=HpPPqgLNsroSd2vWPSFRndVf2gtSvUG+bP29IWAMfBo=; b=VMlqM5NkrjSV1a
+	/GEN4jAMo3hFrJtRYZrX8WbbGPIQ3Mur/SPhlyihKo3N9+VowVomb4jOpDTuxPuZJCpK9Law3PN1S
+	LRIGVQGTI+ONNPlHTqtDuozSdpVWBGKacgrattNFToPqJ33ZpO81ypoamUzLv0dIdTfKrG8P4ZHiG
+	7Uvve7nCXyuOus2inPwpfqRvjmK7/J3r5kB250x6d6FIS7QA8yf+WCd9L4xnt1UWOwFqKeWxsbRds
+	V1IuL1lFG+d2GhbnBZJtDDP4VJ477THqU1xQFABFRu7dM2l91dJHum4Bx0gLUki3jl8XxSbNLVERj
+	9ZCm/TvVKE3+ZJQmn5nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZT4T-00000008W04-2b60;
-	Wed, 09 Jul 2025 11:34:41 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1uZTYK-00000008a7C-21V0;
+	Wed, 09 Jul 2025 12:05:32 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZRbn-00000008Dc7-2cWa
+	id 1uZRqm-00000008HR0-27eD
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Jul 2025 10:01:01 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
-	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20250709100056epoutp01a84d34e6ecb844519895320f46e53b7c~QjPkC-Zki0246902469epoutp01R
-	for <linux-phy@lists.infradead.org>; Wed,  9 Jul 2025 10:00:56 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20250709100056epoutp01a84d34e6ecb844519895320f46e53b7c~QjPkC-Zki0246902469epoutp01R
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1752055256;
-	bh=cimesBusUUV91WuSukFwoB37riuMSdtT5ntRgk2rp3U=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=dSN2X7WclO21MRD+00fqzdIAQPqNkJqga/ywHIIPNAMFno11BpKrnoXp36kv2NYYz
-	 a3tOUk3tT59L5FmIeT3FGktatot/mLzC3+UiRuOAOzWmHHOFOGzaKt/YO9mWcz9Efw
-	 vI4OPWf7/Jg4PxLi//yPzDdrcyUerCIXZMztNFdk=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
-	20250709100055epcas5p278a3a0658d2407780cbf48dc11bb00de~QjPjdukHC2819328193epcas5p2U;
-	Wed,  9 Jul 2025 10:00:55 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.181]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4bcYQF3P8Qz6B9m5; Wed,  9 Jul
-	2025 10:00:53 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250709085353epcas5p3e1e989544692330277c3096f40df8369~QiVBscay_1273512735epcas5p3n;
-	Wed,  9 Jul 2025 08:53:53 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250709085350epsmtip25f40e8338ed740108c76c2bec86ac6d7~QiU_rvWW-2672826728epsmtip2M;
-	Wed,  9 Jul 2025 08:53:50 +0000 (GMT)
-From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
-Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
-	<neil.armstrong@linaro.org>, <kauschluss@disroot.org>,
-	<ivo.ivanov.ivanov1@gmail.com>, <m.szyprowski@samsung.com>,
-	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <20250706-diamond-crab-of-will-72205e@krzk-bin>
-Subject: RE: [PATCH v4 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 combo SS phy
-Date: Wed, 9 Jul 2025 14:23:49 +0530
-Message-ID: <07d501dbf0ae$ff2126a0$fd6373e0$@samsung.com>
+	Wed, 09 Jul 2025 10:16:29 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id CD34BA5400D;
+	Wed,  9 Jul 2025 10:16:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60D75C4CEEF;
+	Wed,  9 Jul 2025 10:16:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752056186;
+	bh=WU1rxoEN5qTryIgIVLvNxwFkuceff06Lwe4kPoXlgC4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=lyFDM1DeGTIjOy6NpG5MKSX/cYOs/Xta57Tb8MAbFiOLsGgokVrlsI9crvwa3xBqT
+	 1MvGcz5Qm+jRZBKbaCvrgT41ifM3rTCmOriWm+DR7RF1Wvtu9pKOBG1K8yRTdME69X
+	 1c56b7DmtTiBkO5V7QYo33rwxxI6PPMF1EXV0JUCBJBUDCzDBRn0dFGXqN0Rh+6262
+	 C/RGmn7TrUiSH1cClo8uhJ1kMO5XyeVhrRppwLI0EqUcT92EwB5hpfHs0cgEe5cAZ6
+	 arQQohbHvRPr5DhP8gt1+usi0wS3TKVm3WiL2clx/WIYS4gQq0L1wtHsqvxiQLcKyj
+	 Rq3ADv0iEO7vQ==
+Message-ID: <1c7fdeca-d531-4f90-9e4c-4d8bfac67fae@kernel.org>
+Date: Wed, 9 Jul 2025 12:16:21 +0200
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQJAgQZ9LFXBZrDskwNBYris6jFv1AJ630FZAevjVggA58dhDrM15xjg
-Content-Language: en-in
-X-CMS-MailID: 20250709085353epcas5p3e1e989544692330277c3096f40df8369
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250701120009epcas5p46bc2870446c499f9c0008c1d396650bb
-References: <20250701120706.2219355-1-pritam.sutar@samsung.com>
-	<CGME20250701120009epcas5p46bc2870446c499f9c0008c1d396650bb@epcas5p4.samsung.com>
-	<20250701120706.2219355-6-pritam.sutar@samsung.com>
-	<20250706-diamond-crab-of-will-72205e@krzk-bin>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Document
+ qcom,tune-res-fsdif
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
+ ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
+ <20250625-sm7635-eusb-repeater-v1-1-19d85541eb4c@fairphone.com>
+ <20250708-unicorn-of-ancient-excellence-e8945c@krzk-bin>
+ <20250708-stoic-slim-bison-ac55ee@krzk-bin>
+ <DB6J86NHFTNT.31MFYDTZ6B4O0@fairphone.com>
+ <DB7FBNQ0TYFZ.3GGPN8XXJXGRW@fairphone.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <DB7FBNQ0TYFZ.3GGPN8XXJXGRW@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250709_030059_973662_235370B4 
-X-CRM114-Status: GOOD (  20.14  )
+X-CRM114-CacheID: sfid-20250709_031628_693672_609EED01 
+X-CRM114-Status: GOOD (  22.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,59 +127,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+On 09/07/2025 11:40, Luca Weiss wrote:
+> Hi Krzysztof,
+> 
+> On Tue Jul 8, 2025 at 10:31 AM CEST, Luca Weiss wrote:
+>> On Tue Jul 8, 2025 at 10:21 AM CEST, Krzysztof Kozlowski wrote:
+>>> On Tue, Jul 08, 2025 at 10:13:24AM +0200, Krzysztof Kozlowski wrote:
+>>>> On Wed, Jun 25, 2025 at 11:14:56AM +0200, Luca Weiss wrote:
+>>>>> Document the FS Differential TX Output Resistance Tuning value found on
+>>>>> the eUSB2 repeater on Qualcomm PMICs.
+>>>>>
+>>>>> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+>>>>> ---
+>>>>>  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 6 ++++++
+>>>>>  1 file changed, 6 insertions(+)
+>>>>>
+>>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+>>>>> index 27f064a71c9fb8cb60e8333fb285f0510a4af94f..6bfd11657e2992735998063b3ca390e04a03930d 100644
+>>>>> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+>>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+>>>>> @@ -52,6 +52,12 @@ properties:
+>>>>>      minimum: 0
+>>>>>      maximum: 7
+>>>>>  
+>>>>> +  qcom,tune-res-fsdif:
+>>>>> +    $ref: /schemas/types.yaml#/definitions/uint8
+>>>>> +    description: FS Differential TX Output Resistance Tuning
+>>>>
+>>>> Resistance is in Ohms, tuning could be in dB, so I wonder what are the
+>>>> actual units here. Neither commit msg nor this description helps me to
+>>>> understand that.
+>>>
+>>> I checked and the values are in Ohms.
+>>
+>> Yes it's Ohms but not 0x00 = 0 ohms, and it's also an offset in ohms
+>> from the nominal value according to the Hardware Register Description I
+>> have, e.g. 0x7 = -12.1ohm from the default
+>>
+>> I can try and create bindings using these Ohm offset values, I didn't
+>> worry about it too much since the other tuning values in these bindings
+>> are also just register values, presumably from before Konrad had access
+>> to the docs.
+> 
+> I've taken some more looks, and checked how similar tuning is handled in
+> qcom,usb-snps-femto-v2.yaml and phy-qcom-snps-femto-v2.c, and changing up
+> the concept of tuning in the eUSB2-repeater bindings+driver is not a
+> trivial task.
+> 
+> Since this is adding just one more property in-line with the already
+> supported properties in the bindings+driver, can we get this in as-is,
+> and deprecate all 4 qcom,tune-* properties later with a replacement that
+> describes the values better?
 
-> -----Original Message-----
-> From: Krzysztof Kozlowski <krzk@kernel.org>
-> Sent: 06 July 2025 03:14 PM
-> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
-> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
-> andre.draszik@linaro.org; peter.griffin@linaro.org; neil.armstrong@linaro.org;
-> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
-> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
-> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
-> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
-> faraz.ata@samsung.com; muhammed.ali@samsung.com;
-> selvarasu.g@samsung.com
-> Subject: Re: [PATCH v4 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
-> ExynosAutov920 combo SS phy
-> 
-> On Tue, Jul 01, 2025 at 05:37:05PM +0530, Pritam Manohar Sutar wrote:
-> > This phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
-> 
-> Agian, this?
-> 
-> > compatible to the USB3.0 SS(5Gbps). 'Add-on USB2.0' phy is required to
-> > support USB2.0 HS(480Mbps), FS(12Mbps) and LS(1.5Mbps) data rates.
-> > These two phys are combined to form a combo phy.
-> >
-> > Add a dedicated compatible string for USB combo SS phy found in this
-> > SoC. The SoC requires two clocks, named "phy" and "ref" and various
-> > power supplies (regulators) for the internal circuitry to work.
-> > The required voltages are:
-> > * avdd075_usb - 0.75v
-> > * avdd18_usb20 - 1.8v
-> > * avdd33_usb20 - 3.3v
-> 
-> One more commitm message completely copy-pasted and completely
-> uninforming. The voltages are irrelevant. Explain the architecture. This should be
-> just one patch with proper full description.
-> 
-> >
-> > Add schema only for 'USB3.1 SSP+' SS phy in this commit.
-> 
-> Why only? Add everything, describe everything, but not what voltages you have
-> there but the architecture of the PHY.
-> 
+This is a new property, so other existing properties do not matter here.
+We cannot take new code which you already think should be deprecated.
 
-Will combine patch 3 (combo HS phy) & 5(combo SS phy) to describe combo phy and even will add some details as mentioned in cover letter.
+register-like values are acceptable for vendor properties, but that does
+not make them usually more readable. The question is whether this should
+be more readable for hardware engineers or anyone writing/validating
+DTS. Is the actual resistance important or no one ever cares because you
+paste whatever qcom told you and you do not know what should be actually
+there?
 
-> Best regards,
-> Krzysztof
+I can imagine the first - that some document explains you should have
+resistance of foo because of bar, which would mean the property should
+be more readable. But I can also imagine the second. Make your claim in
+commit msg.
 
+> We have enough people at Qualcomm by now that should be able to do that,
+> and have the required resources to answer any potential questions.
+They are busy sending vendor/downstream tree patches...
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
