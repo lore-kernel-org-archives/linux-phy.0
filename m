@@ -4,63 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42293C8303C
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Jul 2025 20:30:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69694C83F0A
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 10:44:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dpNM7Me0vbJzJtW0QdG4IS+uUyNXlu08OsuN6tOEq5g=; b=AjvYgNHL6kX45h
-	9/E2nXOG2v9cJHX2O+GIKhSNtXyWkbVJxs6vmDo3LEs0EsbgbvsoCwAvVigUgClORRd1oIy6Qk5b9
-	3RTzAI7lZofbcyKxb2TZG/b/9q0xQfRSep5Ay6zLOdhKmnTP1jARPfTy88J78HlXXnp/EiMEEwqtD
-	B2uY1+k4rIBRIngMvnLK6T9grC8mb9pDXWdH9btFvKX1ilijgiFtrN2XDw1R0C/BRA4kzEWfx0n1X
-	grfdeHPK3DMLi2E9HyanXO+ZI4zXxf4ku9DUk8cIeRULn77LS7WQ2utiUjOkzV5oBM/KJRTOt7GaU
-	oeLJNbIQT/Y4dX1FAwZw==;
+	List-Owner; bh=gna5w3BFGpqQqE36L45ykwqLs5plTVvBn3IbaVHTfhc=; b=HPhkkoRph7ndHi
+	6BhFoO3ng/b7jk1WwA0yD9sWCDU7rcSXiKf1tqpzexQn1Cvd3T6d3cRkLNiu6qvsmxdZL4oPJNb7L
+	ilLu8mpABjDvbLMAxbm21DanD1TDapwYIKVWXsYGSyQVDAkZXJP68YcCYtKhjbL/N3HnipFV+cJWV
+	1Ol89vSKbc+vaPS/MrqZeyXXlfnSyCcjDyXQXtx8G/2HFRBy7mciRzv2vvAb4Ol5jgwt/OfcyubUa
+	c6z4War7yccMuhXlkIVAkslIGB54mO0oJ3XF47coE48nvn516lCgjqsQX6b7+3iPnega6OEEidRMu
+	qIX66xMi9xJQYyB2mGlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZExf-00000006W9G-3qV7;
-	Tue, 08 Jul 2025 20:30:43 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1uZSI7-00000008Lu5-3xV5;
+	Wed, 09 Jul 2025 10:44:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZE8M-00000006MHS-19dA;
-	Tue, 08 Jul 2025 19:37:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1752003461;
-	bh=85cNEu/vegIXt56X/JafGM7fT9pq4nywtSuoCIiShYc=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=R5wYKHHpVryN5MGBkA15iDZ38H1j4ZlGmDf/hiyyb7bvbF+wn9jDJ+jdfcaGaivCf
-	 zdhN8dnc/DvDRSDAbcp70evjnQGuM4hplTU9cz2ulhi+ooGvvzSwhwRyzPwDdUtAwn
-	 Efi3OsQmIDyXSgrgJSbvLDArlyQS6OZA5sgd1SBYzRABJIII/1qsxYk5D6m1OeyhSz
-	 yKr3qqLvZZh76MBG+4CTn1pFLN4MRZ+E7T6vb309mNE77rQiY5XwFjAsASaAm40H6b
-	 8/Qhz3Tlzg3OA2bY1lk87+os5Zu4E2iEq/QfIQECsAMqcCQY8y9/K4dGNRYm4zUZCO
-	 OS/geCExtwOww==
-Received: from localhost (unknown [212.93.144.165])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id C7D0C17E04AA;
-	Tue,  8 Jul 2025 21:37:40 +0200 (CEST)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 08 Jul 2025 22:35:53 +0300
-Subject: [PATCH 12/12] phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL
- support
+	id 1uZQuW-0000000860h-1aD1
+	for linux-phy@lists.infradead.org;
+	Wed, 09 Jul 2025 09:16:17 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5697ld3n023230
+	for <linux-phy@lists.infradead.org>; Wed, 9 Jul 2025 09:16:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Cv1BCk8MYMc74KhkADwnTl/g1Y3GZM+AUyi9qevFM4U=; b=MD04QiCbcyupDjwl
+	uMpXji2CFwUbWFMp4gW7xRrfwrZxp4LFM7WwubrPVypwEkJ4RNX5iWmon+pTowUp
+	JSmny1owcMo9YZW1vft36dB9wAFi2pcXdOLdReDPrdxwxGwAKAmeqRlidX/FTtSw
+	p1od8/Z6bq4ShAqeq9qtDW+4MDxabq/a2vZJf0Wtl+ubakfRm42HMYLSTsI6iIyP
+	pnEhGuFJ9ArUQcl2QMnMEXzZPgX6xjC5Sj2k+zbRX7SmHTmM+9RzntQeSv7km1K5
+	dxDP2hvWQSW7EetVn/i7lzhakHkyVMw6vpYV4yYGjybvf6aSVka0Kf8ILF9f3AqI
+	RtKmNQ==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47smbnr92e-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 09:16:13 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3130b8246c8so1389869a91.3
+        for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 02:16:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752052572; x=1752657372;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=Cv1BCk8MYMc74KhkADwnTl/g1Y3GZM+AUyi9qevFM4U=;
+        b=c26dmnAf4Tw5MbkyBOfXxH3nM8EcMbR5JtAoMhbxIFuIhl9SkUxnsOV9sEwUxFROGr
+         LmuG4MND14ZznD5LBaCuwXYP2Fyn7OlJNwLPQY0662agsUM0oeVVigYsCY+S9rC+c6Iq
+         3KMyxSEZwnreJokZviDauyYTRHYPxIXw5TiSQWuC8dDWmGEwqKVvxd5TxycLe4OleBm3
+         Upvse2INRASpasDYxwgoiuOqd7rRerxDyW27hC/Z3OKffaVIjAHORiS4OqGaStcHGIXK
+         tENqVmDCKFBvTE9uWo8VzpGF5rANvV9vd1S58MFTtQpyICcyicZLdvKGxRFzO2UU5AUg
+         XWaw==
+X-Forwarded-Encrypted: i=1; AJvYcCWP4+8HyyyAtCfvokYKlTESYBTrxWFVAvdVId5EX0ciLpuA1Oa6EH7d1pqDkOIogaBpzwhWOMV0i/o=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyWbuWkotUp/I6XO/Y+J2/VA4u5a54dBLcs+S03zSEENLYylOv/
+	4ZlqlFDfdWturANptrj8HI7N43CdBBqeWmLNoK85lO75FW6Wzq0xfkPXY+fj9Qc9vse86eMehmu
+	FcReQNEELdtbgTi2KarVCDrI6rIuPXV1mB0FFXljY7hbRFkxnCPhBieoNtdDb04FTgT5v
+X-Gm-Gg: ASbGncu1m69LQhx+9bkzjUAKl/+EYAmfqX+63DvvQ/g0KeeK3jkwLuyoG+E4ERB7XkS
+	pjA0wioYVSO6bUDfSUQTH6NrzhFlErY3GX9jvYPixteDEnF3oCZr0R7XRcJ8HhvmZLvlHcjCj9P
+	DecurRmgyd/kMOEkV4GLLoln2oU/DiPIz+ZDE2ctvSe5GWpf4j1vIn3PU6sGOAp1Ks1xwv96Qw5
+	INAKvZN3vKT3UTmK0XVY0/3h88rSKyxeTHUPL7iUjO2IRgsOUjJZ3IxeBSJGZbc2G9fEDh3wnzD
+	k+i2eNiUxC8aHse61Qd5FBXsiRqRIUvZE/hrVlvkYXr06LMCKpDk13E6IPRN+9uOMK43fOVZKII
+	FLAb8VzpNDZD+
+X-Received: by 2002:a17:90b:35ca:b0:312:25dd:1c8b with SMTP id 98e67ed59e1d1-31c2fcb0251mr1322497a91.2.1752052571538;
+        Wed, 09 Jul 2025 02:16:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGdfQoEh/GXWJ6Pu0rY5iE3WeMtosEwrdpewcGf70D85+7o6PThtirQuZHfaVGHEd9tQdVP5w==
+X-Received: by 2002:a17:90b:35ca:b0:312:25dd:1c8b with SMTP id 98e67ed59e1d1-31c2fcb0251mr1322454a91.2.1752052571046;
+        Wed, 09 Jul 2025 02:16:11 -0700 (PDT)
+Received: from [10.133.33.178] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-31c30067a55sm1502877a91.14.2025.07.09.02.16.04
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 09 Jul 2025 02:16:10 -0700 (PDT)
+Message-ID: <d427de7d-76ac-4e5b-b79a-3b7638a8e7fc@oss.qualcomm.com>
+Date: Wed, 9 Jul 2025 17:16:02 +0800
 MIME-Version: 1.0
-Message-Id: <20250708-phy-hdptx-frl-v1-12-cfe096e224f4@collabora.com>
-References: <20250708-phy-hdptx-frl-v1-0-cfe096e224f4@collabora.com>
-In-Reply-To: <20250708-phy-hdptx-frl-v1-0-cfe096e224f4@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        dmitry.baryshkov@oss.qualcomm.com
+Cc: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+ <quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Linus Walleij <linus.walleij@linaro.org>,
+        Bartosz Golaszewski
+ <brgl@bgdev.pl>, quic_lliu6@quicinc.com,
+        quic_fangez@quicinc.com, linux-arm-msm@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
+        quic_xiangxuy@quicinc.com
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
+ <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
+ <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
+ <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
+ <b4e1ea54-ff3c-408e-8716-f48001ec9113@oss.qualcomm.com>
+From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+In-Reply-To: <b4e1ea54-ff3c-408e-8716-f48001ec9113@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzA5MDA4MyBTYWx0ZWRfX0p17oLUmZs33
+ zzrihDmlC18tcbJvJjbyvuNSa2Ui5gD7ysVmd0+OjGNxdmRvrpGH7X+d2hTa0v5EgoQutZwQeFX
+ L3rc0qVqIvYdhBr9vAFvwFWiEz7NVdKEvhJbIsjuwWDAFBYMmicev7gbB+foNLWRRoGjJaLFJVO
+ ecXcc0QD6XqqvBCAo5Ygcc1vgITah9Byd4LCXjaXOv+8T5LQMokEPLZs65+88fp542f+2bIv/42
+ MUU36vjSt5pMdUHe05bh3QES2cy6j8OG6IJ8i1C+5QFiR6AngCqdhdbnI9l/h+gH1iCbXUEVTRp
+ dWHZDPzbm1dPRdoingTGFhmQrWwU3xpBQfZmNTuOQH67y4Kx2o8odcXrUTOICVl/LlRmDFQBRmz
+ i8Uz80bm2qYgjk3vWGVMoykN+7QVyLIbcUzz96Cn/1XLwWF45nYU5lIrbiuYwwgZl3yedkxQ
+X-Authority-Analysis: v=2.4 cv=QM1oRhLL c=1 sm=1 tr=0 ts=686e335d cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8 a=M9roUVu_bSbsc9sLP4sA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: kY0HckhTYROzApWY163hAvk5DY_-kvDj
+X-Proofpoint-GUID: kY0HckhTYROzApWY163hAvk5DY_-kvDj
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-09_02,2025-07-08_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 impostorscore=0 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 priorityscore=1501 bulkscore=0 adultscore=0 mlxscore=0
+ phishscore=0 mlxlogscore=999 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507090083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250708_123742_615538_D9D0564D 
-X-CRM114-Status: GOOD (  17.49  )
+X-CRM114-CacheID: sfid-20250709_021616_420921_4E9F76A0 
+X-CRM114-Status: GOOD (  16.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,581 +152,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY is capable of handling four HDMI 2.1 Fixed Rate Link (FRL)
-lanes, and each one can operate at any of the rates of 3Gbps, 6Gbps,
-8Gbps, 10Gbps or 12Gbps.
-
-Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
-Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 410 +++++++++++++++++++++-
- 1 file changed, 393 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index daccaf134c0ee36972f8f7c0eebf3dac86faeff1..0e75bac7358960dd8bb5203df445b5ea5284079f 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -22,6 +22,7 @@
- #include <linux/reset.h>
- 
- #define GRF_HDPTX_CON0			0x00
-+#define LC_REF_CLK_SEL			BIT(11)
- #define HDPTX_I_PLL_EN			BIT(7)
- #define HDPTX_I_BIAS_EN			BIT(6)
- #define HDPTX_I_BGR_EN			BIT(5)
-@@ -322,6 +323,9 @@
- 
- #define HDMI14_MAX_RATE			340000000
- #define HDMI20_MAX_RATE			600000000
-+#define FRL_8G4L_RATE			3200000000
-+#define FRL_6G3L_RATE			1800000000
-+#define FRL_3G3L_RATE			900000000
- 
- enum dp_link_rate {
- 	DP_BW_RBR,
-@@ -329,6 +333,37 @@ enum dp_link_rate {
- 	DP_BW_HBR2,
- };
- 
-+struct lcpll_config {
-+	unsigned long long rate;
-+	u8 lcvco_mode_en;
-+	u8 pi_en;
-+	u8 clk_en_100m;
-+	u8 pms_mdiv;
-+	u8 pms_mdiv_afc;
-+	u8 pms_pdiv;
-+	u8 pms_refdiv;
-+	u8 pms_sdiv;
-+	u8 pi_cdiv_rstn;
-+	u8 pi_cdiv_sel;
-+	u8 sdm_en;
-+	u8 sdm_rstn;
-+	u8 sdc_frac_en;
-+	u8 sdc_rstn;
-+	u8 sdm_deno;
-+	u8 sdm_num_sign;
-+	u8 sdm_num;
-+	u8 sdc_n;
-+	u8 sdc_n2;
-+	u8 sdc_num;
-+	u8 sdc_deno;
-+	u8 sdc_ndiv_rstn;
-+	u8 ssc_en;
-+	u8 ssc_fm_dev;
-+	u8 ssc_fm_freq;
-+	u8 ssc_clk_div_sel;
-+	u8 cd_tx_ser_rate_sel;
-+};
-+
- struct ropll_config {
- 	unsigned long long rate;
- 	u8 pms_mdiv;
-@@ -416,6 +451,19 @@ struct rk_hdptx_phy {
- 	unsigned int lanes;
- };
- 
-+static const struct lcpll_config rk_hdptx_frl_lcpll_cfg[] = {
-+	{ 4800000000ULL, 1, 0, 0, 0x7d, 0x7d, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2,
-+	  0, 0x13, 0x18, 1, 0, 0x20, 0x0c, 1, 0, },
-+	{ 4000000000ULL, 1, 1, 0, 0x68, 0x68, 1, 1, 0, 0, 0, 1, 1, 1, 1, 9, 0, 1, 1,
-+	  0, 2, 3, 1, 0, 0x20, 0x0c, 1, 0, },
-+	{ 2400000000ULL, 1, 0, 0, 0x7d, 0x7d, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2,
-+	  0, 0x13, 0x18, 1, 0, 0x20, 0x0c, 1, 0, },
-+	{ 1800000000ULL, 1, 0, 0, 0x7d, 0x7d, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2,
-+	  0, 0x13, 0x18, 1, 0, 0x20, 0x0c, 1, 0, },
-+	{ 900000000ULL, 1, 0, 0, 0x7d, 0x7d, 1, 1, 3, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2,
-+	  0, 0x13, 0x18, 1, 0, 0x20, 0x0c, 1, 0, },
-+};
-+
- static const struct ropll_config rk_hdptx_tmds_ropll_cfg[] = {
- 	{ 594000000ULL, 124, 124, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
- 	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
-@@ -533,6 +581,110 @@ static const struct reg_sequence rk_hdptx_common_cmn_init_seq[] = {
- 	REG_SEQ0(CMN_REG(009a), 0x11),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lcpll_cmn_init_seq[] = {
-+	REG_SEQ0(CMN_REG(0011), 0x00),
-+	REG_SEQ0(CMN_REG(0017), 0x00),
-+	REG_SEQ0(CMN_REG(0025), 0x10),
-+	REG_SEQ0(CMN_REG(0026), 0x53),
-+	REG_SEQ0(CMN_REG(0027), 0x01),
-+	REG_SEQ0(CMN_REG(0028), 0x0d),
-+	REG_SEQ0(CMN_REG(002e), 0x02),
-+	REG_SEQ0(CMN_REG(002f), 0x0d),
-+	REG_SEQ0(CMN_REG(0030), 0x00),
-+	REG_SEQ0(CMN_REG(0031), 0x20),
-+	REG_SEQ0(CMN_REG(0032), 0x30),
-+	REG_SEQ0(CMN_REG(0033), 0x0b),
-+	REG_SEQ0(CMN_REG(0034), 0x23),
-+	REG_SEQ0(CMN_REG(003d), 0x00),
-+	REG_SEQ0(CMN_REG(0042), 0xb8),
-+	REG_SEQ0(CMN_REG(0046), 0xff),
-+	REG_SEQ0(CMN_REG(0048), 0x44),
-+	REG_SEQ0(CMN_REG(004e), 0x14),
-+	REG_SEQ0(CMN_REG(0051), 0x00),
-+	REG_SEQ0(CMN_REG(0055), 0x00),
-+	REG_SEQ0(CMN_REG(0059), 0x11),
-+	REG_SEQ0(CMN_REG(005a), 0x03),
-+	REG_SEQ0(CMN_REG(005c), 0x05),
-+	REG_SEQ0(CMN_REG(005d), 0x0c),
-+	REG_SEQ0(CMN_REG(005e), 0x07),
-+	REG_SEQ0(CMN_REG(0060), 0x01),
-+	REG_SEQ0(CMN_REG(0064), 0x07),
-+	REG_SEQ0(CMN_REG(0065), 0x00),
-+	REG_SEQ0(CMN_REG(0069), 0x00),
-+	REG_SEQ0(CMN_REG(006b), 0x04),
-+	REG_SEQ0(CMN_REG(006c), 0x00),
-+	REG_SEQ0(CMN_REG(0070), 0x01),
-+	REG_SEQ0(CMN_REG(0073), 0x30),
-+	REG_SEQ0(CMN_REG(0074), 0x00),
-+	REG_SEQ0(CMN_REG(0081), 0x09),
-+	REG_SEQ0(CMN_REG(0086), 0x01),
-+	REG_SEQ0(CMN_REG(0087), 0x0c),
-+	REG_SEQ0(CMN_REG(0089), 0x02),
-+	REG_SEQ0(CMN_REG(0095), 0x00),
-+	REG_SEQ0(CMN_REG(0097), 0x00),
-+	REG_SEQ0(CMN_REG(0099), 0x00),
-+	REG_SEQ0(CMN_REG(009b), 0x10),
-+};
-+
-+static const struct reg_sequence rk_hdptx_frl_lcpll_ropll_cmn_init_seq[] = {
-+	REG_SEQ0(CMN_REG(0008), 0xd0),
-+	REG_SEQ0(CMN_REG(0011), 0x00),
-+	REG_SEQ0(CMN_REG(0017), 0x00),
-+	REG_SEQ0(CMN_REG(001e), 0x35),
-+	REG_SEQ0(CMN_REG(0020), 0x6b),
-+	REG_SEQ0(CMN_REG(0021), 0x6b),
-+	REG_SEQ0(CMN_REG(0022), 0x11),
-+	REG_SEQ0(CMN_REG(0024), 0x00),
-+	REG_SEQ0(CMN_REG(0025), 0x10),
-+	REG_SEQ0(CMN_REG(0026), 0x53),
-+	REG_SEQ0(CMN_REG(0027), 0x15),
-+	REG_SEQ0(CMN_REG(0028), 0x0d),
-+	REG_SEQ0(CMN_REG(002a), 0x09),
-+	REG_SEQ0(CMN_REG(002b), 0x01),
-+	REG_SEQ0(CMN_REG(002c), 0x02),
-+	REG_SEQ0(CMN_REG(002d), 0x02),
-+	REG_SEQ0(CMN_REG(002e), 0x0d),
-+	REG_SEQ0(CMN_REG(002f), 0x61),
-+	REG_SEQ0(CMN_REG(0030), 0x00),
-+	REG_SEQ0(CMN_REG(0031), 0x20),
-+	REG_SEQ0(CMN_REG(0032), 0x30),
-+	REG_SEQ0(CMN_REG(0033), 0x0b),
-+	REG_SEQ0(CMN_REG(0034), 0x23),
-+	REG_SEQ0(CMN_REG(0037), 0x00),
-+	REG_SEQ0(CMN_REG(003d), 0xc0),
-+	REG_SEQ0(CMN_REG(0042), 0xb8),
-+	REG_SEQ0(CMN_REG(0046), 0xff),
-+	REG_SEQ0(CMN_REG(0048), 0x44),
-+	REG_SEQ0(CMN_REG(004e), 0x14),
-+	REG_SEQ0(CMN_REG(0054), 0x19),
-+	REG_SEQ0(CMN_REG(0058), 0x19),
-+	REG_SEQ0(CMN_REG(0059), 0x11),
-+	REG_SEQ0(CMN_REG(005b), 0x30),
-+	REG_SEQ0(CMN_REG(005c), 0x25),
-+	REG_SEQ0(CMN_REG(005d), 0x14),
-+	REG_SEQ0(CMN_REG(005e), 0x0e),
-+	REG_SEQ0(CMN_REG(0063), 0x01),
-+	REG_SEQ0(CMN_REG(0064), 0x0e),
-+	REG_SEQ0(CMN_REG(0068), 0x00),
-+	REG_SEQ0(CMN_REG(0069), 0x02),
-+	REG_SEQ0(CMN_REG(006b), 0x00),
-+	REG_SEQ0(CMN_REG(006f), 0x00),
-+	REG_SEQ0(CMN_REG(0073), 0x02),
-+	REG_SEQ0(CMN_REG(0074), 0x00),
-+	REG_SEQ0(CMN_REG(007a), 0x00),
-+	REG_SEQ0(CMN_REG(0081), 0x09),
-+	REG_SEQ0(CMN_REG(0086), 0x11),
-+	REG_SEQ0(CMN_REG(0087), 0x0c),
-+	REG_SEQ0(CMN_REG(0089), 0x00),
-+	REG_SEQ0(CMN_REG(0095), 0x03),
-+	REG_SEQ0(CMN_REG(0097), 0x00),
-+	REG_SEQ0(CMN_REG(0099), 0x00),
-+	REG_SEQ0(CMN_REG(009b), 0x10),
-+	REG_SEQ0(CMN_REG(009e), 0x03),
-+	REG_SEQ0(CMN_REG(009f), 0xff),
-+	REG_SEQ0(CMN_REG(00a0), 0x60),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_cmn_init_seq[] = {
- 	REG_SEQ0(CMN_REG(0008), 0x00),
- 	REG_SEQ0(CMN_REG(0011), 0x01),
-@@ -586,6 +738,16 @@ static const struct reg_sequence rk_hdptx_common_sb_init_seq[] = {
- 	REG_SEQ0(SB_REG(0117), 0x00),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lntop_init_seq[] = {
-+	REG_SEQ0(LNTOP_REG(0200), 0x04),
-+	REG_SEQ0(LNTOP_REG(0201), 0x00),
-+	REG_SEQ0(LNTOP_REG(0202), 0x00),
-+	REG_SEQ0(LNTOP_REG(0203), 0xf0),
-+	REG_SEQ0(LNTOP_REG(0204), 0xff),
-+	REG_SEQ0(LNTOP_REG(0205), 0xff),
-+	REG_SEQ0(LNTOP_REG(0206), 0x05),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_lntop_highbr_seq[] = {
- 	REG_SEQ0(LNTOP_REG(0201), 0x00),
- 	REG_SEQ0(LNTOP_REG(0202), 0x00),
-@@ -657,6 +819,38 @@ static const struct reg_sequence rk_hdptx_common_lane_init_seq[] = {
- 	REG_SEQ0(LANE_REG(0620), 0xa0),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lane_init_seq[] = {
-+	REG_SEQ0(LANE_REG(0312), 0x3c),
-+	REG_SEQ0(LANE_REG(0412), 0x3c),
-+	REG_SEQ0(LANE_REG(0512), 0x3c),
-+	REG_SEQ0(LANE_REG(0612), 0x3c),
-+	REG_SEQ0(LANE_REG(0303), 0x2f),
-+	REG_SEQ0(LANE_REG(0403), 0x2f),
-+	REG_SEQ0(LANE_REG(0503), 0x2f),
-+	REG_SEQ0(LANE_REG(0603), 0x2f),
-+	REG_SEQ0(LANE_REG(0305), 0x03),
-+	REG_SEQ0(LANE_REG(0405), 0x03),
-+	REG_SEQ0(LANE_REG(0505), 0x03),
-+	REG_SEQ0(LANE_REG(0605), 0x03),
-+	REG_SEQ0(LANE_REG(0306), 0xfc),
-+	REG_SEQ0(LANE_REG(0406), 0xfc),
-+	REG_SEQ0(LANE_REG(0506), 0xfc),
-+	REG_SEQ0(LANE_REG(0606), 0xfc),
-+	REG_SEQ0(LANE_REG(0305), 0x4f),
-+	REG_SEQ0(LANE_REG(0405), 0x4f),
-+	REG_SEQ0(LANE_REG(0505), 0x4f),
-+	REG_SEQ0(LANE_REG(0605), 0x4f),
-+	REG_SEQ0(LANE_REG(0304), 0x14),
-+	REG_SEQ0(LANE_REG(0404), 0x14),
-+	REG_SEQ0(LANE_REG(0504), 0x14),
-+	REG_SEQ0(LANE_REG(0604), 0x14),
-+	/* Keep Inter-Pair Skew in the limits */
-+	REG_SEQ0(LANE_REG(031e), 0x02),
-+	REG_SEQ0(LANE_REG(041e), 0x02),
-+	REG_SEQ0(LANE_REG(051e), 0x02),
-+	REG_SEQ0(LANE_REG(061e), 0x02),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_lane_init_seq[] = {
- 	REG_SEQ0(LANE_REG(0312), 0x00),
- 	REG_SEQ0(LANE_REG(0412), 0x00),
-@@ -821,7 +1015,12 @@ static int rk_hdptx_post_enable_lane(struct rk_hdptx_phy *hdptx)
- 	       HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN;
- 	regmap_write(hdptx->grf, GRF_HDPTX_CON0, val);
- 
--	regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
-+	/* 3 lanes FRL mode */
-+	if (hdptx->hdmi_cfg.rate == FRL_6G3L_RATE ||
-+	    hdptx->hdmi_cfg.rate == FRL_3G3L_RATE)
-+		regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x07);
-+	else
-+		regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
- 
- 	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS, val,
- 				       (val & HDPTX_O_PHY_RDY) &&
-@@ -965,6 +1164,80 @@ static bool rk_hdptx_phy_clk_pll_calc(unsigned long long rate,
- 	return true;
- }
- 
-+static int rk_hdptx_frl_lcpll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	const struct lcpll_config *cfg = NULL;
-+	int i;
-+
-+	dev_dbg(hdptx->dev, "%s rate=%llu\n", __func__, hdptx->hdmi_cfg.rate);
-+
-+	for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++) {
-+		if (hdptx->hdmi_cfg.rate == rk_hdptx_frl_lcpll_cfg[i].rate) {
-+			cfg = &rk_hdptx_frl_lcpll_cfg[i];
-+			break;
-+		}
-+	}
-+
-+	if (!cfg) {
-+		dev_err(hdptx->dev, "%s cannot find pll cfg for rate=%llu\n",
-+			__func__, hdptx->hdmi_cfg.rate);
-+		return -EINVAL;
-+	}
-+
-+	rk_hdptx_pre_power_up(hdptx);
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0, LC_REF_CLK_SEL << 16);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lcpll_cmn_init_seq);
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0008),
-+			   LCPLL_EN_MASK | LCPLL_LCVCO_MODE_EN_MASK,
-+			   FIELD_PREP(LCPLL_EN_MASK, 1) |
-+			   FIELD_PREP(LCPLL_LCVCO_MODE_EN_MASK, cfg->lcvco_mode_en));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(001e),
-+			   LCPLL_PI_EN_MASK | LCPLL_100M_CLK_EN_MASK,
-+			   FIELD_PREP(LCPLL_PI_EN_MASK, cfg->pi_en) |
-+			   FIELD_PREP(LCPLL_100M_CLK_EN_MASK, cfg->clk_en_100m));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0020), cfg->pms_mdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(0021), cfg->pms_mdiv_afc);
-+	regmap_write(hdptx->regmap, CMN_REG(0022),
-+		     (cfg->pms_pdiv << 4) | cfg->pms_refdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(0023),
-+		     (cfg->pms_sdiv << 4) | cfg->pms_sdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(002a), cfg->sdm_deno);
-+	regmap_write(hdptx->regmap, CMN_REG(002b), cfg->sdm_num_sign);
-+	regmap_write(hdptx->regmap, CMN_REG(002c), cfg->sdm_num);
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(002d), LCPLL_SDC_N_MASK,
-+			   FIELD_PREP(LCPLL_SDC_N_MASK, cfg->sdc_n));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_POSTDIV_SEL_MASK,
-+			   FIELD_PREP(PLL_PCG_POSTDIV_SEL_MASK, cfg->pms_sdiv));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_CLK_SEL_MASK,
-+			   FIELD_PREP(PLL_PCG_CLK_SEL_MASK, (hdptx->hdmi_cfg.bpc - 8) >> 1));
-+
-+	return rk_hdptx_post_enable_pll(hdptx);
-+}
-+
-+static int rk_hdptx_frl_lcpll_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	dev_dbg(hdptx->dev, "%s rate=%llu\n", __func__, hdptx->hdmi_cfg.rate);
-+
-+	rk_hdptx_pre_power_up(hdptx);
-+
-+	/* ROPLL input reference clock from LCPLL (cascade mode) */
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     (LC_REF_CLK_SEL << 16) | LC_REF_CLK_SEL);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lcpll_ropll_cmn_init_seq);
-+
-+	return rk_hdptx_post_enable_pll(hdptx);
-+}
-+
- static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- {
- 	const struct ropll_config *cfg = NULL;
-@@ -996,6 +1269,8 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 
- 	rk_hdptx_pre_power_up(hdptx);
- 
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0, LC_REF_CLK_SEL << 16);
-+
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_cmn_init_seq);
- 
-@@ -1038,6 +1313,28 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 	return ret;
- }
- 
-+static int rk_hdptx_pll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	if (hdptx->hdmi_cfg.rate <= HDMI20_MAX_RATE)
-+		return rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+
-+	if (hdptx->hdmi_cfg.rate == FRL_8G4L_RATE)
-+		return rk_hdptx_frl_lcpll_ropll_cmn_config(hdptx);
-+
-+	return rk_hdptx_frl_lcpll_cmn_config(hdptx);
-+}
-+
-+static int rk_hdptx_frl_lcpll_mode_config(struct rk_hdptx_phy *hdptx)
-+{
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lntop_init_seq);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_lane_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lane_init_seq);
-+
-+	return rk_hdptx_post_enable_lane(hdptx);
-+}
-+
- static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
- {
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
-@@ -1114,7 +1411,7 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx)
- 	if (mode == PHY_MODE_DP) {
- 		rk_hdptx_dp_reset(hdptx);
- 	} else {
--		ret = rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+		ret = rk_hdptx_pll_cmn_config(hdptx);
- 		if (ret)
- 			goto dec_usage;
- 	}
-@@ -1414,7 +1711,7 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	enum phy_mode mode = phy_get_mode(phy);
- 	int ret, lane;
- 
--	if (mode != PHY_MODE_DP) {
-+	if (mode != PHY_MODE_DP && mode != PHY_MODE_HDMI_FRL) {
- 		if (!hdptx->hdmi_cfg.rate) {
- 			/*
- 			 * FIXME: Temporary workaround to setup TMDS char rate
-@@ -1461,7 +1758,11 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
- 			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
- 
--		ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
-+		if (mode == PHY_MODE_HDMI_FRL)
-+			ret = rk_hdptx_frl_lcpll_mode_config(hdptx);
-+		else
-+			ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
-+
- 		if (ret)
- 			rk_hdptx_phy_consumer_put(hdptx, true);
- 	}
-@@ -1482,16 +1783,49 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- {
- 	int i;
- 
--	if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
--		return -EINVAL;
-+	if (phy_get_mode(hdptx->phy) == PHY_MODE_HDMI_FRL) {
-+		unsigned long long frl_rate = 100000000ULL * hdmi_in->frl.lanes *
-+					      hdmi_in->frl.rate_per_lane;
- 
--	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
--		if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
-+		switch (hdmi_in->frl.rate_per_lane) {
-+		case 3:
-+		case 6:
-+		case 8:
-+		case 10:
-+		case 12:
- 			break;
-+		default:
-+			return -EINVAL;
-+		}
- 
--	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
--	    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
--		return -EINVAL;
-+		if (!hdmi_in->frl.lanes || hdmi_in->frl.lanes > 4)
-+			return -EINVAL;
-+
-+		if (frl_rate != FRL_8G4L_RATE) {
-+			for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++)
-+				if (frl_rate == rk_hdptx_frl_lcpll_cfg[i].rate)
-+					break;
-+			if (i == ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg))
-+				return -EINVAL;
-+		}
-+
-+		if (hdmi_out)
-+			hdmi_out->rate = frl_rate;
-+	} else {
-+		if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
-+			return -EINVAL;
-+
-+		for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
-+			if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
-+				break;
-+
-+		if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
-+		    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
-+			return -EINVAL;
-+
-+		if (hdmi_out)
-+			hdmi_out->rate = hdmi_in->tmds_char_rate;
-+	}
- 
- 	switch (hdmi_in->bpc) {
- 	case 0:
-@@ -1504,10 +1838,8 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- 		return -EINVAL;
- 	}
- 
--	if (hdmi_out) {
--		hdmi_out->rate = hdmi_in->tmds_char_rate;
-+	if (hdmi_out)
- 		hdmi_out->bpc = hdmi_in->bpc ?: 8;
--	}
- 
- 	return 0;
- }
-@@ -1862,17 +2194,61 @@ static void rk_hdptx_phy_clk_unprepare(struct clk_hw *hw)
- 
- static unsigned long rk_hdptx_phy_clk_calc_rate_from_pll_cfg(struct rk_hdptx_phy *hdptx)
- {
-+	struct lcpll_config lcpll_hw;
- 	struct ropll_config ropll_hw;
- 	u64 fout, sdm;
- 	u32 mode, val;
--	int ret;
-+	int ret, i;
- 
- 	ret = regmap_read(hdptx->regmap, CMN_REG(0008), &mode);
- 	if (ret)
- 		return 0;
- 
--	if (mode & LCPLL_LCVCO_MODE_EN_MASK)
-+	if (mode & LCPLL_LCVCO_MODE_EN_MASK) {
-+		ret = regmap_read(hdptx->regmap, CMN_REG(0020), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.pms_mdiv = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(0023), &val);
-+			return 0;
-+		lcpll_hw.pms_sdiv = val & 0xf;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002B), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_num_sign = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002C), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_num = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002A), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_deno = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002D), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdc_n = (val & LCPLL_SDC_N_MASK) >> 1;
-+
-+		for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++) {
-+			const struct lcpll_config *cfg = &rk_hdptx_frl_lcpll_cfg[i];
-+
-+			if (cfg->pms_mdiv == lcpll_hw.pms_mdiv &&
-+			    cfg->pms_sdiv == lcpll_hw.pms_sdiv &&
-+			    cfg->sdm_num_sign == lcpll_hw.sdm_num_sign &&
-+			    cfg->sdm_num == lcpll_hw.sdm_num &&
-+			    cfg->sdm_deno == lcpll_hw.sdm_deno &&
-+			    cfg->sdc_n == lcpll_hw.sdc_n)
-+				return cfg->rate;
-+		}
-+
-+		dev_dbg(hdptx->dev, "%s no FRL match found\n", __func__);
- 		return 0;
-+	}
- 
- 	ret = regmap_read(hdptx->regmap, CMN_REG(0051), &val);
- 	if (ret)
-@@ -2002,7 +2378,7 @@ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
- 	 * while the latter being executed only once, i.e. when clock remains
- 	 * in the prepared state during rate changes.
- 	 */
--	return rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+	return rk_hdptx_pll_cmn_config(hdptx);
- }
- 
- static const struct clk_ops hdptx_phy_clk_ops = {
-
--- 
-2.50.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiA1LzI4LzIwMjUgNDo0OSBBTSwgS29ucmFkIER5YmNpbyB3cm90ZToKPiBPbiAxMi8zLzI0
+IDM6MDcgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4+IE9uIFR1ZSwgRGVjIDAzLCAyMDI0
+IGF0IDA0OjEzOjIyUE0gKzA4MDAsIFhpYW5neHUgWWluIHdyb3RlOgo+Pj4KPj4+Cj4+PiBPbiAx
+MS8yOS8yMDI0IDk6NTMgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4+Pj4gT24gRnJpLCAy
+OSBOb3YgMjAyNCBhdCAwOTo1OSwgWGlhbmd4dSBZaW4gPHF1aWNfeGlhbmd4dXlAcXVpY2luYy5j
+b20+IHdyb3RlOgo+Pj4+Pgo+Pj4+PiBBZGQgYSBtZWNoYW5pc20gdG8gcmV0cnkgTGluayBUcmFp
+bmluZyAyIGJ5IGxvd2VyaW5nIHRoZSBwYXR0ZXJuIGxldmVsCj4+Pj4+IHdoZW4gdGhlIGxpbmsg
+dHJhaW5pbmcgIzIgZmlyc3QgYXR0ZW1wdCBmYWlscy4gVGhpcyBhcHByb2FjaCBlbmhhbmNlcwo+
+Pj4+PiBjb21wYXRpYmlsaXR5LCBwYXJ0aWN1bGFybHkgYWRkcmVzc2luZyBpc3N1ZXMgY2F1c2Vk
+IGJ5IGNlcnRhaW4gaHViCj4+Pj4+IGNvbmZpZ3VyYXRpb25zLgo+Pj4+Cj4+Pj4gUGxlYXNlIHJl
+ZmVyZW5jZSBjb3JyZXNwb25kaW5nIHBhcnQgb2YgdGhlIHN0YW5kYXJkLCBkZXNjcmliaW5nIHRo
+aXMgbG93ZXJpbmcuCj4+Pj4KPj4+IFBlciBEaXNwbGF5UG9ydCAxLjRhIHNwZWNpZmljYXRpb24g
+U2VjdGlvbiAzLjUuMS4yIGFuZCBUYWJsZSAzLTEwLCB3aGlsZSB0aGUgc3RhbmRhcmQgZG9lc24n
+dCBleHBsaWNpdGx5IGRlZmluZSBhIFRQUyBkb3duZ3JhZGUgbWVjaGFuaXNtLCBpdCBkb2VzIHNw
+ZWNpZnk6Cj4+Cj4+IEFueXRoaW5nIGluIERQIDIuMT8KPj4KSW4gdGhlIERQIDIuMSBzcGVjLCBt
+YWlubHkgb24gc2VjdGlvbiAnMy42LjcuMiA4Yi8xMGIgRFAgTGluayBMYXllciBMVFRQUiBMaW5r
+IFRyYWluaW5nIE1hbmRhdGVzJywgZGVmaW5lZCAnTFRUUFIgc2hhbGwgc3VwcG9ydCBUUFM0Jy4K
+VGhlIG90aGVyIHBhcnRzIHNlZW1zIHNpbWlsYXIgdG8gdGhlIDEuNCBzcGVjLgo+Pj4gLSBBbGwg
+ZGV2aWNlcyBzaGFsbCBzdXBwb3J0IFRQUzEgYW5kIFRQUzIKPj4+IC0gSERSMi1jYXBhYmxlIGRl
+dmljZXMgc2hhbGwgc3VwcG9ydCBUUFMzCj4+PiAtIEhEUjMtY2FwYWJsZSBkZXZpY2VzIHNoYWxs
+IHN1cHBvcnQgVFBTNAo+Pj4gV2hpbGUgdGhlc2UgY2FwYWJpbGl0aWVzIGFyZSBleHBsaWNpdGx5
+IGRlZmluZWQgRFBDRCBmb3Igc2luayBkZXZpY2VzLCBzb3VyY2UgZGV2aWNlIGNhcGFiaWxpdGll
+cyBhcmUgbGVzcyBzdHJpY3RseSBkZWZpbmVkLCB3aXRoIHRoZSBtaW5pbXVtIHJlcXVpcmVtZW50
+IGJlaW5nIHN1cHBvcnQgZm9yIFRQUzEgYW5kIFRQUzIuCj4+PiBJbiBRQ1M2MTUgRFAgcGh5IGlz
+IG9ubHkgc3VwcG9ydGluZyB0byBIQlIyLCB3ZSBvYnNlcnZlZCBhIGNyaXRpY2FsIGludGVyb3Bl
+cmFiaWxpdHkgc2NlbmFyaW8gd2l0aCBhIERQLT5IRE1JIGJyaWRnZS4gV2hlbiBsaW5rIHRyYWlu
+aW5nIGF0IFRQUzQgY29uc2lzdGVudGx5IGZhaWxlZCwgZG93bmdyYWRpbmcgdG8gdGhlIG5leHQg
+bG93ZXIgdHJhaW5pbmcgcGF0dGVybiBzdWNjZXNzZnVsbHkgZXN0YWJsaXNoZWQgdGhlIGxpbmsg
+YW5kIGRpc3BsYXkgb3V0cHV0IHN1Y2Nlc3NmdWxseS4KPj4KPj4gQW55IG90aGVyIGRyaXZlciBk
+b2luZyBzdWNoIFRQUyBsb3dlcmluZz8gT3IgbWF5YmUgd2Ugc2hvdWxkIGJlCj4+IHNlbGVjdGlu
+ZyBUUFMzIGZvciBIQlIyLW9ubHkgZGV2aWNlcz8KPiAKVGhpcyBsb2dpYyBpcyBwb3J0aW5nIGZy
+b20gcXVhbGNvbW0gZG93bnN0cmVhbSwgCkZvciBvdGhlciBkZXZpY2UsIG9ubHkgZm91bmQgaW4g
+c29tZSBvbGRlciBUeCBjaGlwcyBsaWtlIGk5MTXvvIhpbnRlbF9kcF90cmFpbmluZ19wYXR0ZXJu
+KSB1c2VkIHRoZSBtYXhpbXVtIGhhcmR3YXJlLXN1cHBvcnRlZCBwYXR0ZXJucywgYnV0IG5vdCBs
+b3dlcmluZy4KCkFjY29yZGluZyB0byB0aGUgZGVzY3JpcHRpb24gaW4gRFBDRCB0YWJsZSAyLTIz
+MiAwMDNoLCBGcm9tIHRoZSBEUCBzcGVjIHBlcnNwZWN0aXZlLCBpdCBhcHBlYXJzIHRoYXQgYWxs
+IHN1cHBvcnRlZCBjYXNlcyBzaG91bGQgcHJlZmVyYWJseSBhZG9wdCBUUFM0LCBhcyBpdCBpcyBt
+b3JlIHJvYnVzdC4KJ0RQUlhzIHNob3VsZCBzdXBwb3J0IFRQUzQgYW5kIHNldCB0aGlzIGJpdCwg
+cmVnYXJkbGVzcyBvZiB3aGV0aGVyIHRoZSBEUFJYIHN1cHBvcnRzIEhCUjMgYmVjYXVzZSBUUFM0
+IGlzIG1vcmUgY29uZHVjaXZlIHRvIHJvYnVzdCBsaW5rIGVzdGFibGlzaG1lbnQgdGhhbiBUUFMy
+IGFuZCBUUFMzLgowID0gVFBTNCBpcyBub3Qgc3VwcG9ydGVkLgoxID0gVFBTNCBpcyBzdXBwb3J0
+ZWQgKHNoYWxsIGJlIHN1cHBvcnRlZCBmb3IgZG93bnN0cmVhbSBkZXZpY2VzIHdpdGggRFBDRCBy
+MS40LCBleGNlcHQgZm9yIGVEUFJYcykuJwoKQWx0aG91Z2ggbWF4aW11bSBjYXBhYmlsaXR5IG9m
+IFFDUzYxNSBpcyBIQlIyLCBidXQgdGhlIGFjdHVhbCBwYXR0ZXJuIHN1cHBvcnRzIFRQUzQuIApG
+cm9tIHB1cmUgZGVzaWduIHBlcnNwZWN0aXZlLCBpdCB3b3VsZCBiZSBjbGVhbmVyIHRvIGRyb3Ag
+dGhpcyBsb3dlcmluZyBpbiBuZXh0IHBhdGNoLiAKPiBCdW1wLCB0aGlzIHBhdGNoIGxvb2tzIGlu
+dGVyZXN0aW5nIGFuZCBJJ2QgbGlrZSB0byBzZWUgaXQgcmV2aXNpdGVkIGlmCj4gaXQncyBjb3Jy
+ZWN0Cj4gCj4gS29ucmFkCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
