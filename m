@@ -4,115 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82DA1C83F14
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 15:59:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01615C83F03
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 17:11:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gqBmmiQ/noa4bl94QYtmV2Q1TIUhxHrRIxLG0dd9C90=; b=46G3AfQ1yDu1c9
-	UXCDc+UFXaxCZyD3DlE1mKbJC3G3KaZzw6h73YKQCH9qo4nm66ddI99x8iF39qFM29Judg/Xzss0e
-	s/psYq5VZ39m3OUhk1QIKDliPKch5Dc0Blfl04m6jAxzrKOB2xCB0MZvf5xTPhQgz7Ot0l94j0cSV
-	FxnVKjQ4d6S5OIsaOJwv4q6gV5q6nVQJ9SHhPOptZggus0U3SIdYQD+ginGgJhkc6OhjLxy4NNa0e
-	h85EXECE2yfglS7cG+jTempr8NoCXOSq1s4ESDrwq3Lplb5I9C68pIGFDD0nV5Lj5QG7CqxOa5qj6
-	KXHZYFk6ENgWqXvCP/1Q==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GrYo6ZUlWrojcSXtkeu9UkCmLySY1s+HgK4GQvNb7Y0=; b=45JTuXuAhxj6U8
+	scOGKV+ZGkZcafc0/vXoz/pj0HeVGprVk7tyRUa2qVU6IQi5Bov/7JLibTKceSM4u9CV9kSi9c3lh
+	xIJvjV/b1bt5F2snMgDBQ9igtcV/4X0mk/YYBsjA2XJZt04zsulTn5mwfWSXYFdur5um8dg8vpYzB
+	6clGSZxu7AS+96+OHZJi/wrTXEIXZPXXGNCqL5H6PDYn/g+hNjFlXMQXvSmF1w0wdX34WvEVtsdja
+	zLln4s38RoWe8/OA1alF3LzAxrcE91JG7Io2NhzIt/Qha5feRRukuVYjysgLhxwVrOt+3qesXxuVM
+	uDg0m8PPn7MaKvq0zMnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZXCH-00000009Eto-0eZ0;
-	Wed, 09 Jul 2025 15:59:01 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uZYKD-00000009P4n-2hy2;
+	Wed, 09 Jul 2025 17:11:17 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZVCf-00000008qFp-11mj
+	id 1uZWCj-000000093zg-30Hs
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Jul 2025 13:51:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 85DD5A53E46;
-	Wed,  9 Jul 2025 13:51:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96B24C4CEEF;
-	Wed,  9 Jul 2025 13:51:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752069076;
-	bh=7fDy/IDtzY+P10jh2FH05bGuxkbANfM+VBCgF1upyb0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Qvcq9pczvwZs/pgT3fBuh6JlQaf/4U/OlntMStbs5+RnniDq9sAMJ0yG2swfAxW39
-	 y8Ewv6JQ0cKwsYiM5F5CFarb2VMl1A4Zz9KOnwbrN6g4zlxdy8SMvF0tZHkYUBIY9o
-	 T49meZ/NxJJH4QX6FgjKQYG/APVEpS2B+Ra3KZvbSBjQ/tupkP1RJ8w7ENyy3dt091
-	 iZc/Xmsg/6I7DASsMa+V8/BbXXEWCcvEKGG0dY9VvrSyEouwfma5wrA0tZQejNbXaY
-	 SuOk9fsXN/Ixn+BtgZQnMpWD1yOioXiEdNUuJ9UCjVttI4b7Za77oLNX+nUAh27cLe
-	 DJjV2polVNeKQ==
-Message-ID: <eda9bf92-c5f7-4f3f-92e9-9749fbb67493@kernel.org>
-Date: Wed, 9 Jul 2025 15:51:10 +0200
+	Wed, 09 Jul 2025 14:55:26 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-ae3be3eabd8so3669966b.1
+        for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 07:55:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fairphone.com; s=fair; t=1752072924; x=1752677724; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=xsudQgPEXLO/8rlrHg7A+VcqH4UVc0XGQUOkZdmkbM4=;
+        b=pGKV8a49t0Fa1joqSQX6mkSXbBtF5DKmjWuadHilBzG/vZXeuZwzErZNf863K6Bg6b
+         FNOf8SlOhiquJ7fIq61Uo33F/mkeHbTgYn0b0SYIFKrRrZS7BodReduWCn1SsPVJTbPj
+         JM1MFB66vpk6hhmK0DXbsim4hI2LWcdW8UqTkHDXSB25INQooq+z6pLf5oNLMGfVotNT
+         SRJK2g+J7R+HQsiUhtWU5R++aRV2tnACIgXN6PkHe1UzOvQi7gflylKFGKB0krv2evAA
+         X7+CWegfN2ZKYXIrrZjqz8BqkBA5bMzeMCm/6ViJ7w9AZv40YEykybwzA3Gxwen9r8Z9
+         1+Gg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752072924; x=1752677724;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xsudQgPEXLO/8rlrHg7A+VcqH4UVc0XGQUOkZdmkbM4=;
+        b=vGdYCzErd7ZIOx9Ys4vq8Ge+y1WiRVN64hDVecYJ16NDwRXm7GLGBcA5CHj8fVnATQ
+         H6LmOLseEx0MmBru6RTEcR1GjTFmnG2QfGEYqRvau+OVmrof1bTd+jcwMQxm7url0Gq+
+         ZEZX3xnU/g0tdWQCQSRTJg4uLGywRr4xN7ylYEO+OOY/Exw+4BfLe7yYeFcTLmpKIfCs
+         G2m3gdra3QyloeCvjOoKPtf0OcWeWR6KITa2GTESuquVnTDZg6AwpNLNxWDyy14JPlph
+         Xz1dgY9QGwDjvmxuGKMQdy2M6sg7GSFGGY34SVQkJiNHGG8f2p2y4BH2kfd3P0Hrea+d
+         B9Cw==
+X-Forwarded-Encrypted: i=1; AJvYcCWjmwepZlTavlF+LGrxhgk6qoieeb/b4BOIB68o+4AnhoYKgpw1JERE9jrYRG6qt86q89/uSW6hvBQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwsZFPYKnaYF2FTGj/bnfgrm6vOntPZp8r4PihqazUlHu23FktQ
+	xYXvMdZFl9y2rKEWzEdwI2zTFnBTC+/T/v/3//iC1cc6MxzxjOncdk/McX+XE0HPQhY=
+X-Gm-Gg: ASbGnctCSi8drNS2Tbvj6sO0WI/qlNMQanNtMF9h1Kgxx2AP6AnmUH/BnHaBoHVGuEB
+	6t3cJyPpQ4Hao4pIRZm8bPZjjWOlNjg0tLuIYScwsgK5R6jtfTTjU8CLHFMZ+yw8IvmHYsiG6j7
+	M2T322dPnjbiVRoF+fQhVmPUcZ9crvZwkV3PjuJlMkIl/BSg+bWLedB7pSc/vBIXGd/MzGByee/
+	H2iY6g6pK+wWaT85G3SsLlCuFOJpR5YeEbyToxkJkytXKoOLsa7pHWQNnAGx3WM1DDE78cZyWhK
+	QjBXpiFcxEOl/u2r3oOeNBNB/yAQqn7EEcUt7+LS1XIz30ePlHOLRnE8xnfr5RJFmpT7T2pCK08
+	Wq08EH6FQi/JP/Wq5PzRd1X7FMyCPU0CC8hFIfv6gVfw=
+X-Google-Smtp-Source: AGHT+IEJi9D3i6knXbAjsckZ7Ciww/QJ7BLM67HvKfXZJLKXPgCmFN58CA6mh9SyrO15bCmZYpI2PQ==
+X-Received: by 2002:a17:907:3c88:b0:ae3:ee3a:56ee with SMTP id a640c23a62f3a-ae6d1266a1bmr305624866b.3.1752072924078;
+        Wed, 09 Jul 2025 07:55:24 -0700 (PDT)
+Received: from otso.local (144-178-202-139.static.ef-service.nl. [144.178.202.139])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae3f6b600ddsm1116795766b.158.2025.07.09.07.55.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 09 Jul 2025 07:55:23 -0700 (PDT)
+From: Luca Weiss <luca.weiss@fairphone.com>
+Subject: [PATCH v2 0/4] Add support for eUSB2 repeater on PMIV0104
+Date: Wed, 09 Jul 2025 16:55:13 +0200
+Message-Id: <20250709-sm7635-eusb-repeater-v2-0-b6eff075c097@fairphone.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater: Document
- qcom,tune-res-fsdif
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
- ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
- <20250625-sm7635-eusb-repeater-v1-1-19d85541eb4c@fairphone.com>
- <20250708-unicorn-of-ancient-excellence-e8945c@krzk-bin>
- <20250708-stoic-slim-bison-ac55ee@krzk-bin>
- <DB6J86NHFTNT.31MFYDTZ6B4O0@fairphone.com>
- <DB7FBNQ0TYFZ.3GGPN8XXJXGRW@fairphone.com>
- <1c7fdeca-d531-4f90-9e4c-4d8bfac67fae@kernel.org>
- <DB7IRWJ1AFCT.2CVF97683XYEO@fairphone.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <DB7IRWJ1AFCT.2CVF97683XYEO@fairphone.com>
+X-B4-Tracking: v=1; b=H4sIANGCbmgC/22Pwa7CIBBFf6WZtWOACtWu3n+8uKB0sCxKK1CiM
+ f33h/UlunB5ZzL3nHlApOAoQls9IFB20U2+BLGrwAzaXwhdXzIIJiRTgmEcG1VLpCV2GGgmnSg
+ g65ujlbIRJ2ahnM6BrLtttb/nVw50XUp7eg2h05HQTOPoUltltecKg+HwiS0WG7SsnjTxxqXFO
+ 39BK1Vdc6M6bnWbBTxJg4tpCvftn8w31L+6/K6eOTLkp/4o5YFTdzA/VrswD5OnffGD87quf4d
+ lDUsmAQAA
+X-Change-ID: 20250620-sm7635-eusb-repeater-0d78f557290f
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Luca Weiss <luca.weiss@fairphone.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752072923; l=1322;
+ i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
+ bh=+2bfuo/XxdFtjNlpBnRSz55oWsfelV2bXIgIhY/HOGo=;
+ b=xWvHS2PiKGx9o1Y75d8aHnX5JAyJpQ/n8m6U4OfOHpTGyPApAs6B48YmWcriEDLmsi3xk8qVe
+ PPsYGLmQPflDDpV6LeYtlYy1puVL7D8jpEP5qSk6tv1ji9/vpUFkq2+
+X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
+ pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250709_065117_426221_AAC2CBDE 
-X-CRM114-Status: GOOD (  26.41  )
+X-CRM114-CacheID: sfid-20250709_075525_773443_AFC43E78 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,92 +117,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/07/2025 14:22, Luca Weiss wrote:
-> On Wed Jul 9, 2025 at 12:16 PM CEST, Krzysztof Kozlowski wrote:
->> On 09/07/2025 11:40, Luca Weiss wrote:
->>> Hi Krzysztof,
->>>
->>> On Tue Jul 8, 2025 at 10:31 AM CEST, Luca Weiss wrote:
->>>> On Tue Jul 8, 2025 at 10:21 AM CEST, Krzysztof Kozlowski wrote:
->>>>> On Tue, Jul 08, 2025 at 10:13:24AM +0200, Krzysztof Kozlowski wrote:
->>>>>> On Wed, Jun 25, 2025 at 11:14:56AM +0200, Luca Weiss wrote:
->>>>>>> Document the FS Differential TX Output Resistance Tuning value found on
->>>>>>> the eUSB2 repeater on Qualcomm PMICs.
->>>>>>>
->>>>>>> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
->>>>>>> ---
->>>>>>>  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 6 ++++++
->>>>>>>  1 file changed, 6 insertions(+)
->>>>>>>
->>>>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>>>>>> index 27f064a71c9fb8cb60e8333fb285f0510a4af94f..6bfd11657e2992735998063b3ca390e04a03930d 100644
->>>>>>> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>>>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>>>>>> @@ -52,6 +52,12 @@ properties:
->>>>>>>      minimum: 0
->>>>>>>      maximum: 7
->>>>>>>  
->>>>>>> +  qcom,tune-res-fsdif:
->>>>>>> +    $ref: /schemas/types.yaml#/definitions/uint8
->>>>>>> +    description: FS Differential TX Output Resistance Tuning
->>>>>>
->>>>>> Resistance is in Ohms, tuning could be in dB, so I wonder what are the
->>>>>> actual units here. Neither commit msg nor this description helps me to
->>>>>> understand that.
->>>>>
->>>>> I checked and the values are in Ohms.
->>>>
->>>> Yes it's Ohms but not 0x00 = 0 ohms, and it's also an offset in ohms
->>>> from the nominal value according to the Hardware Register Description I
->>>> have, e.g. 0x7 = -12.1ohm from the default
->>>>
->>>> I can try and create bindings using these Ohm offset values, I didn't
->>>> worry about it too much since the other tuning values in these bindings
->>>> are also just register values, presumably from before Konrad had access
->>>> to the docs.
->>>
->>> I've taken some more looks, and checked how similar tuning is handled in
->>> qcom,usb-snps-femto-v2.yaml and phy-qcom-snps-femto-v2.c, and changing up
->>> the concept of tuning in the eUSB2-repeater bindings+driver is not a
->>> trivial task.
->>>
->>> Since this is adding just one more property in-line with the already
->>> supported properties in the bindings+driver, can we get this in as-is,
->>> and deprecate all 4 qcom,tune-* properties later with a replacement that
->>> describes the values better?
->>
->> This is a new property, so other existing properties do not matter here.
->> We cannot take new code which you already think should be deprecated.
->>
->> register-like values are acceptable for vendor properties, but that does
->> not make them usually more readable. The question is whether this should
->> be more readable for hardware engineers or anyone writing/validating
->> DTS. Is the actual resistance important or no one ever cares because you
->> paste whatever qcom told you and you do not know what should be actually
->> there?
->>
->> I can imagine the first - that some document explains you should have
->> resistance of foo because of bar, which would mean the property should
->> be more readable. But I can also imagine the second. Make your claim in
->> commit msg.
-> 
-> Would this text in the commit message work for you?
-> 
-> ---
-> Document the FS Differential TX Output Resistance Tuning value found on
-> the eUSB2 repeater on Qualcomm PMICs. The tuning values have special
-> meanings, being different offsets of the resistance to the default value
-> in Ohms but the exact meaning is not relevant here, as the correct
-> tuning is determined by hardware engineers to make sure the electrical
-> properties are as expected.
-> ---
-> 
-> I'm trying to avoid resending the whole series if we're not yet aligned
-> on the wording.
-Sounds fine.
+Add a new property qcom,tune-res-fsdif for the eUSB2 repeater and add
+the compatible for the repeater on the PMIV0104 PMIC.
+
+Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+---
+Changes in v2:
+- Expand the dt-bindings qcom,tune-res-fsdif commit message regarding
+  the register value in dt.
+- Pick up tags
+- Link to v1: https://lore.kernel.org/r/20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com
+
+---
+Luca Weiss (4):
+      dt-bindings: phy: qcom,snps-eusb2-repeater: Document qcom,tune-res-fsdif
+      phy: qualcomm: phy-qcom-eusb2-repeater: Support tune-res-fsdif prop
+      dt-bindings: phy: qcom,snps-eusb2-repeater: Add compatible for PMIV0104
+      phy: qualcomm: phy-qcom-eusb2-repeater: Add support for PMIV0104
+
+ .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml |  7 +++++++
+ drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c            | 15 +++++++++++++++
+ 2 files changed, 22 insertions(+)
+---
+base-commit: d9946fe286439c2aeaa7953b8c316efe5b83d515
+change-id: 20250620-sm7635-eusb-repeater-0d78f557290f
+prerequisite-change-id: 20250616-eusb2-repeater-tuning-f56331c6b1fa:v2
+prerequisite-patch-id: 5c504d171a4d1acd9ec376e01e0dd0fddbad92b8
+prerequisite-patch-id: 0c97dcf5472fbed8ef4cffbd482f3169fe1e972d
 
 Best regards,
-Krzysztof
+-- 
+Luca Weiss <luca.weiss@fairphone.com>
+
 
 -- 
 linux-phy mailing list
