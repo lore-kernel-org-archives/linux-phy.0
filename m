@@ -4,96 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65ED7C83F09
-	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 11:18:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F2AAC83F09
+	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 11:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jvenzFWIuUNUvFJGKVbDFx5NdKCtyypeYqIaur6N2e4=; b=yt4mSAEVG7WF05
-	urzvV7x+bsAYtpAfAhPhL8z28jjfqegrnmwYDhAQkFzX4vAsNtq/+DNjcS0c77+8bD+C2EADx/GjL
-	r8MGmxO8pHv+wAcAQCHpKQzJSVLFwKrE0mVE+4PDJJjolV8lgmfFO+O+5M86KjjKyHvSDNb5jVu08
-	At1bf5JvhfZlo547nT8ahGzkhufbqfJO4W7VwqGLBdB9dcof/QYLtjWkJ3X3qe7DrQkzQrrLlOu3J
-	V5gEH81LFvXCoRguxvlG+OE27Sxf4to9zvjrSdKEFbHyhiHqo939Gv+Wn/wFOlHXmxQXNgcMQcxMh
-	TK4Ka0wf6DTm9zkWqAiA==;
+	List-Owner; bh=1V19LIprHTk/O4jgqg3G0E5XPS5wVDg+8EZIm80hmcg=; b=hFusQ2+pSwunLD
+	MMZVMqvYOjptzgD/uDoezmVmcYoKAvneyIYLHFQ3WO4f9+VBoloPUnIjgvqPI2xHxFxf1cwJ0LOyH
+	1io9I50H0XzFJ9pHoLC2hdlagmINQASzCoJFhYaZ9oiWarUPa6OipAXBv3Vpf6fAsWX6qnCxiSrgQ
+	76Z8N3LU7kbEoeJ6ctZLEDTvdxuh9p28rW/7r4/xvsCU/0IITgsC5RmWXr8f4Dubo1k5HjlC6DlvX
+	oAvXp3cc95kyLmC+4fqI15BVzxXDnTxpWg2HxieqOxx6ouszJtXKTiZcyuiLtmcdlPLb3eD3y/T/j
+	4d7kqUx9ou1ixy4pfr2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZSoO-00000008TSn-0nqM;
-	Wed, 09 Jul 2025 11:18:04 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1uZT2C-00000008VhT-0t9V;
+	Wed, 09 Jul 2025 11:32:20 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZRID-00000008ANq-0wpa
+	id 1uZRbY-00000008DO7-0tod
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Jul 2025 09:40:46 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-60c9d8a16e5so9872389a12.0
-        for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 02:40:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1752054044; x=1752658844; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=IYVZhzdcLS888rj/FaoDivOZnyY0T9daEjwNUmKwLFQ=;
-        b=sIlAsXRogC4K0Xb4ubSC/gjyGGyMIXhUMID4g+Py9kOvc8Fqq/YtPMcYOAr4jRSQWM
-         cXFc4xScUPYUjChPF35zDRZhzJGS3XK79jG8r8D5AoZKL+72soXzPmLzNpB5rXoczTvy
-         foHgbmL6fHZ29/hBy7+7IwfK+CyLngw8uIzgopE6RGCcyZzhwXxEd6i6GLD5UKOa7KvD
-         y74D4mX6mqy4c0S9t7NEuBBZMbn6neHhuy7NhcGNNWHHTuc1jjHNunNhdbH2rxD+8Gm5
-         FZjdI3/dRTOkAmbuX+90a847/GKkGNHetU3a8wDh/uRcYc+iZEdtogWjniXmouxOAYF1
-         RH7Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752054044; x=1752658844;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=IYVZhzdcLS888rj/FaoDivOZnyY0T9daEjwNUmKwLFQ=;
-        b=k4b1WufuJkOT1gGDXXjERPtKuPHLVHggOr7UydJJTsSdKb+Psql+agmegddZQLfXN4
-         0KgHOozPvS35MV1ij6JZK8lnv4DYUL6PZenINWOyvdU0+ZtJGUXfhk0nDr28lmQ8dDc7
-         NNd5XC0k/dk+Dw3Y5KC1dnU9Itfiu1n7gtGrh+YzugNLEd0C4AmYbiuylKamnCN9/56P
-         gdlCxHSS4NXqzgri8F1zQdp5Gt4OjYSAgfX3uDefsH10mE2Kf40Ebxvvc0jDGixG+sET
-         YLMFXbpXdAdj28gYra+sC7gd6lTynoOxGpyruFnmH/A4sy2gqMiv8MJFcHSbPLwDrsEd
-         4A8Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVAXpIbwKTu9SeKebpNvY66XwTYOCabiK75dr8M69QhEQU17GDDe8ze/z157gXnhr1NOM+DNiQsdvY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzzm2aJ235Z4Tsn8taEiwPzxCL9JGs7pSC2l7zfzfeR34rHWfGb
-	soxQjseqme2ORWpYSubCOAcp4mVXdtWaOvQcx1FClPNT9jf0o46TkRKna9rDkKpSVq8=
-X-Gm-Gg: ASbGncuK9f5s6enyxBITdDOsHLKFZsXAPJoTv438FHBI96+R7bKWxNUQ/tgEBVtwRn9
-	+UFrBAS7mw7WwVKPoelzojUKyh281EDsL7SyJixyzOiyJd2tL0GLc88xjslvYSh2t5KKYSXbAi7
-	Hz9Kg856UN3ipi0C4L9XBwMUKLVQ82ms+LVXwVBPZ78p7Ety0+AT3/AwVm1k0bw0ySxmX+OcKM2
-	xyU8ZUm25fj4ULvYEzMMkV1e+gvbEXpX/ruqHqITw+IWGN0ZuAmNq+Jat/pMDV2DyZ30j26Yj59
-	/3yWNPbY2aIQ/YnV0aCSXj04UoWwuBUJFVa5RMkhzhZsdC78IwnCNC5fyPRA1IkymIKZghx2wFT
-	aLsYzCdYe2zWJBNF9hCgjoYw2lQ2oGuA=
-X-Google-Smtp-Source: AGHT+IFcyIW8fjvyL2XXssYm6oJtrTRwvz8J6yTAl1SegjjQ9SBTzzBbPsgLtLGnPcvW3tndrf/jXw==
-X-Received: by 2002:a17:907:db14:b0:ae3:f524:b51 with SMTP id a640c23a62f3a-ae6cf549811mr183000466b.10.1752054043586;
-        Wed, 09 Jul 2025 02:40:43 -0700 (PDT)
-Received: from localhost (144-178-202-139.static.ef-service.nl. [144.178.202.139])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae3f6b08568sm1069884166b.139.2025.07.09.02.40.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 09 Jul 2025 02:40:43 -0700 (PDT)
-Mime-Version: 1.0
-Date: Wed, 09 Jul 2025 11:40:42 +0200
-Message-Id: <DB7FBNQ0TYFZ.3GGPN8XXJXGRW@fairphone.com>
-Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
- <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>, "Abel Vesa"
- <abel.vesa@linaro.org>, <~postmarketos/upstreaming@lists.sr.ht>,
- <phone-devel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater:
- Document qcom,tune-res-fsdif
-From: "Luca Weiss" <luca.weiss@fairphone.com>
-To: "Luca Weiss" <luca.weiss@fairphone.com>, "Krzysztof Kozlowski"
- <krzk@kernel.org>
-X-Mailer: aerc 0.20.1-0-g2ecb8770224a-dirty
-References: <20250625-sm7635-eusb-repeater-v1-0-19d85541eb4c@fairphone.com>
- <20250625-sm7635-eusb-repeater-v1-1-19d85541eb4c@fairphone.com>
- <20250708-unicorn-of-ancient-excellence-e8945c@krzk-bin>
- <20250708-stoic-slim-bison-ac55ee@krzk-bin>
- <DB6J86NHFTNT.31MFYDTZ6B4O0@fairphone.com>
-In-Reply-To: <DB6J86NHFTNT.31MFYDTZ6B4O0@fairphone.com>
+	Wed, 09 Jul 2025 10:00:46 +0000
+Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250709100035epoutp0409f60e1796a382de035203ccb8fcc80b~QjPRIyCGL1924119241epoutp04W
+	for <linux-phy@lists.infradead.org>; Wed,  9 Jul 2025 10:00:35 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250709100035epoutp0409f60e1796a382de035203ccb8fcc80b~QjPRIyCGL1924119241epoutp04W
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1752055235;
+	bh=8YjDIVkSzZ1qBfDNEzt6aiWfmZ06SFpmvJBdwg8GbFU=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=crM7sDQ1Uz9NtR7Lf5itnb9Kxo52UH9FjSGOjp2JkszPtedhMD5yYtuYLOW3diez/
+	 JPkFeY49RxYNNxrnIaqgsbyUhQeN8lHbywF+MaOZmR+G2WbWzqcQ5AR4mnJDBjOoQ2
+	 uzRfhHRw+oNiDyxGt4ThAj8UYDSsUzBnjC+ZaEg0=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
+	20250709100035epcas5p11cefc566289685aa4dadd35429e93d22~QjPQiuHEG1114111141epcas5p1k;
+	Wed,  9 Jul 2025 10:00:35 +0000 (GMT)
+Received: from epcas5p1.samsung.com (unknown [182.195.38.180]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4bcYPr5Dhtz6B9mD; Wed,  9 Jul
+	2025 10:00:32 +0000 (GMT)
+Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250709085159epcas5p15cd74d4ab9d7944eef406ce118768a84~QiTXJ9MsA0055000550epcas5p1N;
+	Wed,  9 Jul 2025 08:51:59 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip1.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250709085156epsmtip13f8f84df1a677aaa0f8edc8247250f7a~QiTUNkrE12100421004epsmtip1O;
+	Wed,  9 Jul 2025 08:51:55 +0000 (GMT)
+From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
+Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
+	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
+	<neil.armstrong@linaro.org>, <kauschluss@disroot.org>,
+	<ivo.ivanov.ivanov1@gmail.com>, <m.szyprowski@samsung.com>,
+	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
+	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
+In-Reply-To: <20250706-grouse-of-pastoral-bloom-7d79b0@krzk-bin>
+Subject: RE: [PATCH v4 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo HS phy
+Date: Wed, 9 Jul 2025 14:21:54 +0530
+Message-ID: <07d401dbf0ae$bb0256b0$31070410$@samsung.com>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQJAgQZ9LFXBZrDskwNBYris6jFv1AJNRgOcAqL7pisBlv/N8LMsH/TA
+Content-Language: en-in
+X-CMS-MailID: 20250709085159epcas5p15cd74d4ab9d7944eef406ce118768a84
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250701120002epcas5p2c4d728d599a819057bcc40b724881276
+References: <20250701120706.2219355-1-pritam.sutar@samsung.com>
+	<CGME20250701120002epcas5p2c4d728d599a819057bcc40b724881276@epcas5p2.samsung.com>
+	<20250701120706.2219355-4-pritam.sutar@samsung.com>
+	<20250706-grouse-of-pastoral-bloom-7d79b0@krzk-bin>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250709_024045_271097_67AFFA9B 
-X-CRM114-Status: GOOD (  20.18  )
+X-CRM114-CacheID: sfid-20250709_030044_574778_EA9F6D51 
+X-CRM114-Status: GOOD (  12.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,60 +106,48 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Krzysztof,
 
-On Tue Jul 8, 2025 at 10:31 AM CEST, Luca Weiss wrote:
-> On Tue Jul 8, 2025 at 10:21 AM CEST, Krzysztof Kozlowski wrote:
->> On Tue, Jul 08, 2025 at 10:13:24AM +0200, Krzysztof Kozlowski wrote:
->>> On Wed, Jun 25, 2025 at 11:14:56AM +0200, Luca Weiss wrote:
->>> > Document the FS Differential TX Output Resistance Tuning value found on
->>> > the eUSB2 repeater on Qualcomm PMICs.
->>> > 
->>> > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
->>> > ---
->>> >  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 6 ++++++
->>> >  1 file changed, 6 insertions(+)
->>> > 
->>> > diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>> > index 27f064a71c9fb8cb60e8333fb285f0510a4af94f..6bfd11657e2992735998063b3ca390e04a03930d 100644
->>> > --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>> > +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
->>> > @@ -52,6 +52,12 @@ properties:
->>> >      minimum: 0
->>> >      maximum: 7
->>> >  
->>> > +  qcom,tune-res-fsdif:
->>> > +    $ref: /schemas/types.yaml#/definitions/uint8
->>> > +    description: FS Differential TX Output Resistance Tuning
->>> 
->>> Resistance is in Ohms, tuning could be in dB, so I wonder what are the
->>> actual units here. Neither commit msg nor this description helps me to
->>> understand that.
->>
->> I checked and the values are in Ohms.
->
-> Yes it's Ohms but not 0x00 = 0 ohms, and it's also an offset in ohms
-> from the nominal value according to the Hardware Register Description I
-> have, e.g. 0x7 = -12.1ohm from the default
->
-> I can try and create bindings using these Ohm offset values, I didn't
-> worry about it too much since the other tuning values in these bindings
-> are also just register values, presumably from before Konrad had access
-> to the docs.
+> -----Original Message-----
+> From: Krzysztof Kozlowski <krzk@kernel.org>
+> Sent: 06 July 2025 03:12 PM
+> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+> andre.draszik@linaro.org; peter.griffin@linaro.org; neil.armstrong@linaro.org;
+> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
+> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+> selvarasu.g@samsung.com
+> Subject: Re: [PATCH v4 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+> ExynosAutov920 combo HS phy
+> 
+> On Tue, Jul 01, 2025 at 05:37:03PM +0530, Pritam Manohar Sutar wrote:
+> > This phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
+> 
+> What is "this"? You add here HS PHY, so HS is 3.1?
+> 
 
-I've taken some more looks, and checked how similar tuning is handled in
-qcom,usb-snps-femto-v2.yaml and phy-qcom-snps-femto-v2.c, and changing up
-the concept of tuning in the eUSB2-repeater bindings+driver is not a
-trivial task.
+"this" means "combo phy". Combo phy is combination of 2 types of the phys. 
+1. one supports only USB3.1 SSP+ and denoted as "samsung,exynosautov920-usb31drd-combo-ssphy" as in patch no 5 (combo SS phy)
+2. another supports only USB2.0 HS and termed as "samsung,exynosautov920-usbdrd-combo-hsphy" as in this patch (combo HS phy)
 
-Since this is adding just one more property in-line with the already
-supported properties in the bindings+driver, can we get this in as-is,
-and deprecate all 4 qcom,tune-* properties later with a replacement that
-describes the values better?
+> If this is the same phy, why are you adding another compatible?
 
-We have enough people at Qualcomm by now that should be able to do that,
-and have the required resources to answer any potential questions.
+As explained earlier (even in cover letter), there are 3 types of the phys in this SoC.
+1. one is simmilar with exynos850 and termed as "samsung,exynosautov920-usbdrd-phy" as mentioned in patch no.1
+2. two phys are in combo phys as explained above (patch no 3 [combo HS phy] and 5[combo SS phy])
+			
+NOTE: hs phy in combo phy in "NOT" same as phy (patch no. 1 which is similar with exynos850). 
+			
+These three phys (usbdrd-phy, combo-hsphy, combo-ssphy) are totally deferent "NOT" same, hence added 3 three compatible for three phys.
 
-Regards
-Luca
+> 
+> Best regards,
+> Krzysztof
+
+
 
 -- 
 linux-phy mailing list
