@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 990A0C83F14
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07683C83F09
 	for <linux-phy@archiver.kernel.org>; Wed,  9 Jul 2025 10:47:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,69 +12,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=udfMWkFQ0ztEuAtTZ7Zhe3/0S2800i+nKS5tdkChY1Y=; b=QDtiiPKo7fB447
-	zHCMLphoqEVoyZ7m8kmy3xn0PWp6QndVxfvSXHCAWp2SmpL3enpSmvvxRKvRLtE7c+XgUnNGhHlKt
-	T6g6EKZkHKmbP7NfRtmAB3RJD4hLuCMul7EowRYQM1SWDSjnhH2lnJhANkCb5vJiYGwXxW+W+6vn7
-	sSPX8J/1H+bMLQh1qzr0cK9uxW5kjkf5q7Bqn4PzqhHy+vxRLXL3fyie6yZGWb9gtnL+tBAo5MSdE
-	pXO/xk5VSY3echFiV/qMR3kD6U9/J7MBMdn2V6Lo4sCodUTe2VHX/YgAy6SfMK5FRHhb2mqep1m7t
-	YhSvREi7cwLVzx8VACVw==;
+	List-Owner; bh=6iodVztDMYIzmWNnsA8pwdyBSZcoQRQKhjFg3FdL3Mk=; b=a2lux4FZqTRGlg
+	mgv9SV77skJ//kRNn/h81KIfo4hnQfYGUUuJca8PyuZ+MADtSbrzwd/6tv8Xo03kLdIWLAu8BqS5z
+	HqhEZs2NwrqH9bTYAVYMOyS2nHSMTavvohnWahuxqERUT+LeY5S78BS6iR1Aqorvlg3lvpO1XRWd8
+	y8Xex5FWAhmHcW3JyPJjg5DPmOtZ0PyOoQJ+iX8XsloYbMiAJvgbcKuw0YB6ElCQ30hPEivn2F9p+
+	M/76bciMIUUP+unqkBFSjto6DL8d2qmQxDVle/5DTqRjwv6v5Z6VXcqvHIAr05BlD+nP/t7pEvvwi
+	Flk2Auf3obOQiCYAWK7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZSKR-00000008MRI-1Usk;
-	Wed, 09 Jul 2025 10:47:07 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1uZSKQ-00000008MQc-3LEt;
+	Wed, 09 Jul 2025 10:47:06 +0000
+Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZQwx-000000086QC-0zdG
+	id 1uZQwv-000000086PW-0Via
 	for linux-phy@lists.infradead.org;
-	Wed, 09 Jul 2025 09:18:48 +0000
-Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-ae0bde4d5c9so1095001966b.3
-        for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 02:18:46 -0700 (PDT)
+	Wed, 09 Jul 2025 09:18:46 +0000
+Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-ae0b6532345so140223966b.1
+        for <linux-phy@lists.infradead.org>; Wed, 09 Jul 2025 02:18:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1752052726; x=1752657526; darn=lists.infradead.org;
+        d=fairphone.com; s=fair; t=1752052723; x=1752657523; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=uAQIOUI3dQN/BAWWa5L7E496C+B20N9+qpU1jibn7CE=;
-        b=K7CwPqCpTiOMJjIpMyJ5ihyvH/G61LWdNlSPCUnJtE/WjG4VFFbv1aXVSAMysASeBG
-         MfLZXclaWkM8t9nMwwEHkj/mI4PE32C1nUzkJIqbnP4TTRPsduIQHQ5dn5jzSgakOU81
-         jKuDgyl9mNAKxzGcxKXcmPE5vaDXIHSy5VdjgXEsm6sYIkD1yM7P0u1V84pGSpfCofpU
-         o6UICd6O5NnFW1d4nbhgtuH2XJfuvBrzt+ljLkQXCpktvyDCTFUmyhk5d5dtsyqL+H0L
-         PKpBuRNUPYB5ugWH6/UBsmfnEr/9YwyQv++w8OYa4r5NqUJBYttC24JxzUpZhU9ooTLM
-         lpcQ==
+        bh=KtyDxcaqf+W6rW1o4o1i13PWl3ydZ1ok9YquBu8um3Q=;
+        b=LqHacVuZEfCpd6bNOZszhb+GvcYPrbxnvX2Ooj4V7me/cchEgnYkc/1/zcciHqDLxf
+         hlQbIfneSmR1ldT6vmIKmd5Uqtkdr+58pLgtuYuoOs7YdvBKyS85McG9aXb2kX2KoReI
+         xQlAvzKQUd3DOFcHtHDTlH5Nh3oQWuLOLIA+b0jHSX/fsjty+I8+Kiq3Y3Li4XQc6az4
+         8gDSwM8n3gBIAkKMDwKQH4Hue+cT6Vqv0hRFqx/xwf3PuC+xWh6v3CfhzNvQyDI3ch+t
+         kesSMpgumJ3YrUCh61EzWknLZKqL2ws1pQGMVbLHzuLRh6GBPJACGOa3N/b6mx7SgOe6
+         cYnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752052726; x=1752657526;
+        d=1e100.net; s=20230601; t=1752052723; x=1752657523;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=uAQIOUI3dQN/BAWWa5L7E496C+B20N9+qpU1jibn7CE=;
-        b=xJXcjdHM7h4eiti0a/VP/fF2nJz9y5BQCKpwdeeis9M+ellnUNSW284bYhb6PPq8qh
-         Prdifj567XHWWeNnsVnkSZatpS/FeHn1nohDGI29moIi8I+eh9jA73bkOeyGUAfvMqWs
-         7jspvkB95410qvz80BxBHl+20xn9UkeMcbxqVlrgCT5G7WwqnVo5T4A0s3/q08wifmzg
-         0l+5Cq78fxU/00geQQJnAGSYdvPEPcG/D6ozBeyB0vm3znAq9KPELAhRBk2rwy37LyLj
-         W6OkVpHLAWqK4fgCmmrFJGwkNKNE/vOmESFKUzx7xJER4sKmyawhdGwuZ60uECwxhCJK
-         HnVg==
-X-Forwarded-Encrypted: i=1; AJvYcCW6jqlpdLPL6Ccm59CpeKm5PVJm9tLU9Ez3DxeKYTVCN+aP8uiS7RkSg67fALST6EmDclNwsvC53Ew=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyjABwfMymLwNoeaYvJ5BHo3aKRa0Q+w6LAnxGbxdGGydmdX8u/
-	Ntu17/kJrPv6lnq+KSdNcu4YaoTA1mJhhWi5X3ik0miuH2QE8si9DELjaCrouq7TP+4=
-X-Gm-Gg: ASbGnctHwcrh4tZTysJJ4C33mnWccpcRJOYOmErrFolNjbsyTBMC9is8OIl9yuczQaT
-	sHcl/GZLs7+6nQd6I2mZzquWOKej+/USZTjRqQpFTYMEnSn3nZrlG3Z16Wy4EhYVd5wgvSf5C8J
-	05og34ZOdBmt1ecmWdlX2NGoByiHcUFqT/tdrxQQJAC0IvSW9R72/2lpvy2t6VPbKiRTqaa1zhW
-	8cTnAfgqITLNm+1kdoZlDb6AF1fzHaIcgxQzGD5Mx2NmCdaVNmJJjjHHHVvLrmzDfG8ovkoOrop
-	hnHgGyDhTtb9SN/l1g3QOe+WQKfcrAvmmVJiDThO8CHDws5dC5UxWs7XkXx9qgVulap942Cc2zY
-	vuTGsDHTaqGchpSUMQUjbn9CGkvM2Hb/BvyWbbuU+u4M=
-X-Google-Smtp-Source: AGHT+IGx/vzlfyTviick6hyyNUlcbGsI+JPz+PSX0OW7+e4XECNcxPqd0I6M02c/e4D8+rgbMwjMcQ==
-X-Received: by 2002:a17:907:9281:b0:ae3:a8dd:418a with SMTP id a640c23a62f3a-ae6cfc748eamr190274466b.56.1752052725491;
-        Wed, 09 Jul 2025 02:18:45 -0700 (PDT)
+        bh=KtyDxcaqf+W6rW1o4o1i13PWl3ydZ1ok9YquBu8um3Q=;
+        b=Vz9KNJkKXVN0ioKl2T/CDqZstGaJzvwgIO+jqBzxvwXYreSEGTUMtSbO6/nQcwcYX1
+         XGMLgkYB5z8E9I85X2n414m/ThfMICPbouA4rp4qAZ6usgwN0Ei0ngJJ1zpYQD2l3HeC
+         nvMOOoBRCvjvQq6P2/g/U9Zpo8QjfFW8PS1oL5iYthvhAl4/tdX7m0wjvy7vHnZpj1qd
+         IFiE4mAgcF8D23a9Ea45qiJHW9moAlpAf19DrulRHk9oLfJjX3vMKG9NNFzGBNxVmYRz
+         ZCU9fnpv8R8Wwdpme11bpO/aoNllPZaTugeM/NVPLqvLNhy6Er+x67R+RjdGekwJ1D4U
+         dMVg==
+X-Forwarded-Encrypted: i=1; AJvYcCVUH9rHpMqs3h4SyrtaTYuth7qXwihsq86cMn1qQ21hBYLBH4ErvHtDYo0U/YONYf6zKXYrz1H+k6c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxneVUJaZetXhwYUdlztEpczyVpBwJeGKD/BM+1BkmeHhJn95E7
+	p+m88wsZ3jf8iSZ8kK/NC+KjW9JkUDPWHGnQZ+VVN+Bponws2cFIHXtII0+JwGTOloU=
+X-Gm-Gg: ASbGncsvMfHwR5P67TiG1Qfwu+h0zSK/R0OBLrs5KtzqC5cPzNHxg+5TMzgsFmoNb3x
+	ze2Pz34N3WkFqnipQw169zF07S9i3GTMSuTNwLXWtp+gcaYdyfMU+gBj4+yL0WEqN4foUXtUGA6
+	5UE8TUCaMlVrYlSz84/uHkLIgd+26nqp59JkENTgoqIj2g/UeUdAO8O7MUHAEmzAM95/MBibbEj
+	nnxU8XleUMbqq2RG1yHXa+AD3dr/RPTylj8QQo+O6kQ4fR5o3mrSiELQ5exnVsuMOttjOMaeM/H
+	+D3hNknplhxKVSOQQQWW44MhQnZwlvsTAlh8HBFzENyy4KtY5Md/rAhERWOgF3wXyf9wXa5Omfc
+	6U8erHunpJsKggi4HxkVCxrv2BuD+Hbaq
+X-Google-Smtp-Source: AGHT+IFjTub1n0rD6n3C//VfI0DUfJzgzG0dPyTmQDEg3WymTFqbXYGq9le/+InO8pAn1caBoGUS2g==
+X-Received: by 2002:a17:907:6029:b0:ae0:a7a1:593c with SMTP id a640c23a62f3a-ae6b2721112mr451588566b.25.1752052723357;
+        Wed, 09 Jul 2025 02:18:43 -0700 (PDT)
 Received: from otso.local (144-178-202-139.static.ef-service.nl. [144.178.202.139])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae3f6b5e737sm1060116866b.142.2025.07.09.02.18.44
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae3f6b5e737sm1060116866b.142.2025.07.09.02.18.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Jul 2025 02:18:45 -0700 (PDT)
+        Wed, 09 Jul 2025 02:18:43 -0700 (PDT)
 From: Luca Weiss <luca.weiss@fairphone.com>
-Date: Wed, 09 Jul 2025 11:18:18 +0200
-Subject: [PATCH v2 4/4] phy: qcom: phy-qcom-snps-eusb2: Add extra register
- write for Milos
+Date: Wed, 09 Jul 2025 11:18:16 +0200
+Subject: [PATCH v2 2/4] dt-bindings: phy: qcom,snps-eusb2: document the
+ Milos Synopsys eUSB2 PHY
 MIME-Version: 1.0
-Message-Id: <20250709-sm7635-eusb-phy-v2-4-4790eeee7ae0@fairphone.com>
+Message-Id: <20250709-sm7635-eusb-phy-v2-2-4790eeee7ae0@fairphone.com>
 References: <20250709-sm7635-eusb-phy-v2-0-4790eeee7ae0@fairphone.com>
 In-Reply-To: <20250709-sm7635-eusb-phy-v2-0-4790eeee7ae0@fairphone.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -85,19 +85,18 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
  linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Luca Weiss <luca.weiss@fairphone.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>
+ linux-phy@lists.infradead.org, Luca Weiss <luca.weiss@fairphone.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1752052719; l=1428;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752052719; l=906;
  i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
- bh=YZmEw3jGDd+2qgbm25oUb6kfM16R2p862EV52VAwfqs=;
- b=zN8r6w9eZkpsfJvCdS/uEyRLTfMfcMPeQkNPEXxwm1zg2mzNgMq6//5XUqXcPzpMEX576tiX8
- v8sIG6hQ6VlD7xQf/Q2ZKTCgES3vUcgQxUzwebHmbVyiNZdDrA4X384
+ bh=7JJoxQwx+4/wfRhr6BUnD92Rt+QxpRRv67tdCjuoJ3o=;
+ b=oqiJgUa+pEZRn08K3xP+dwnnlVdD43KZEv90EWs1Nrv4/EhFmjFjk3Ol3Z2ZY5J0FzMl9SErh
+ Br1G8yHy40UB4v66KWr2gkRj2YnN84GLBloqxJIe/DNzop3jd8tCHDK
 X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
  pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250709_021847_276957_03B3F2D5 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20250709_021845_174820_78967009 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,41 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-As per the downstream devicetree for Milos, add a register write for
-QCOM_USB_PHY_CFG_CTRL_1 as per the "eUSB2 HPG version 1.0.2 update".
+Document the Synopsys eUSB2 PHY on the Milos SoC by using the SM8550 as
+fallback.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 ---
-The downstream driver supports an arbitrary extra init sequence via
-qcom,param-override-seq.
+ Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-volcano-usb.dtsi has the following which is implemented in this patch:
-
-    /* eUSB2 HPG version 1.0.2 update */
-    qcom,param-override-seq =
-            <0x00 0x58>;
----
- drivers/phy/phy-snps-eusb2.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-index e232b8b4d29100b8fee9e913e2124788af09f2aa..87fc086424ba4d9fb3ce870aa7f7971a51d4a567 100644
---- a/drivers/phy/phy-snps-eusb2.c
-+++ b/drivers/phy/phy-snps-eusb2.c
-@@ -420,6 +420,12 @@ static int qcom_snps_eusb2_hsphy_init(struct phy *p)
- 	/* set default parameters */
- 	qcom_eusb2_default_parameters(phy);
- 
-+	if (of_device_is_compatible(p->dev.of_node, "qcom,milos-snps-eusb2-phy")) {
-+		/* eUSB2 HPG version 1.0.2 update */
-+		writel_relaxed(0x0, phy->base + QCOM_USB_PHY_CFG_CTRL_1);
-+		readl_relaxed(phy->base + QCOM_USB_PHY_CFG_CTRL_1);
-+	}
-+
- 	snps_eusb2_hsphy_write_mask(phy->base, QCOM_USB_PHY_HS_PHY_CTRL2,
- 				    USB2_SUSPEND_N_SEL | USB2_SUSPEND_N,
- 				    USB2_SUSPEND_N_SEL | USB2_SUSPEND_N);
+diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+index 142b3c8839d62d91377061ade3a7c400eb970609..854f70af0a6c1ff93615fa8dc1031b4c1ecc2e71 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml
+@@ -17,6 +17,7 @@ properties:
+     oneOf:
+       - items:
+           - enum:
++              - qcom,milos-snps-eusb2-phy
+               - qcom,sar2130p-snps-eusb2-phy
+               - qcom,sdx75-snps-eusb2-phy
+               - qcom,sm8650-snps-eusb2-phy
 
 -- 
 2.50.0
