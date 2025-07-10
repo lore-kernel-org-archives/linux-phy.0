@@ -4,153 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1184C83F1B
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 17:28:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46AECC83F1B
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 17:29:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JDVkXYjzbmr5lCTUGpi37sXb0SHIOae5+bQG+gepz7Y=; b=QF5AmPl+NH6uXJ
-	5yNv46Q4FXWn0A90MwBsLsmSU543yjcRxAibfy3g9ftv8R/NGrBESQWNG6kqfOLExT+TNfLbreWCw
-	FKjcLTLuUEGrUIVXo/MGMRcFGMjDNnLGy61G8J/fc1P5IZkpjKL/ZTWoG8HdHGLBEABRSs8nuwmGJ
-	RAdvnT4dWfW0Q9A/xuSbX5bq94uGPci4/9BMv1zGqFiraAQCDSmhP4TghCcrW2hkpbWwvl6uR+wfb
-	SQnL+hOGPMA+TxiKYDsbZ44Nu5USRuIb+tkBVRfIrGL3gl/nntpZZ7fLrtBwTH7ciBjcBmCOBJAKb
-	HiJ69BYiGPAmlMxBRZiQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h/ak0PBMOU6Tyi/qGZ+v1PCm/87VxIiSkDlRSnx9mME=; b=Xi5BKHLjowpL3K
+	O4bjs0ZPXsm4ciFr1wY2yl2v0Do7mvGPYiAuP0Jfbvy0k0RJCrljwmNCYVDF/i54ZfhOlEhQbisPw
+	AccaPnE5EyzMvm+oleoRPXBSHXQG0tAHb6ebpzUEKyFsCKS2JVdD3nz0i/zMFAEwFbBEA9EGqW9i8
+	VIkuLKMrHswpPTya4xdLhEWTccPUyxwZwrBNkR8ZSKXq9SepOxRgfnaFKwpHGFeJ+Cb1ix1p7mQYp
+	ku2ZfBrpq2Bv29SqVi+fEAy1su0bo+3HSvxlENbiC3Z0GZVJK4hP3YXNqXhzb0zyoNUsJMJodHc9Y
+	XVSD2vgAFC0tn05hhS9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZv4R-0000000CaAc-24Na;
-	Thu, 10 Jul 2025 17:28:31 +0000
-Received: from mail-centralusazlp170100005.outbound.protection.outlook.com ([2a01:111:f403:c111::5] helo=DM1PR04CU001.outbound.protection.outlook.com)
+	id 1uZv54-0000000CaJ3-09gG;
+	Thu, 10 Jul 2025 17:29:10 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZt7E-0000000CEr0-3noa;
-	Thu, 10 Jul 2025 15:23:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=VCbiOYoGzWRz3CmAoCugCXz3SXZdzEXcwHBGoYtrPyhzG6NFwBtbXvoR8MzzFC3xWakFniENqFF79PROA3IS/CJr5xI90FiOfKNsuBEw5X6fouhr8wb59BA4vXQ98vu25yqhdZVUvrx5V93cgoIrETN6jcsUlJQKMS+RNzHxwtcdn4D2C8C+XGsRaMKZ35EW7HuinxhlPnPByjNXbitMiJAK6Hjjf6TfX1Z0f9tEHcuS23lnH06xPSFf4TBE5+gmsl9bE0VG+qs46jSBLTvVLHFt0ni3qOUSofNgPa7p/r4vUp0QrYVN9RU7HVrwEhiZdoVncrTtKAtFL4PhhcGfaw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=IKzAyN3UxgggVyN4KZj4Pr8md5GcbQgqxRguhjWkY/Y=;
- b=RoFXsMs0wKJP/cLgOe53wPh8InIht48aIrLORr64W/jkoBpcHcnoxqPnmiS5cH7sI7phMt5ih3Us9FCaZxRTWpsdkHrNOjAJxkLMdK0NGOjRqCjLRC319fmHYyaEy/0FQcvLf3jtdIN9Ws9AHaCZEtt3wXHclfx/K4wNdR+hXCVrWRlZojej/Ipli2P4hzSr/z55WrCMpgYEWZPFjoJqJmOmqeQoT8mFazfMyEGuuPAlZXAA1ZC5kZ8u4Rq5FcnrkQulCZEByK9B7cf8RPjsInFYxWGMJU4ev/uXlo2Ci+T5bzdISWz9mV0L+S8FIkXYq0ZQy/KwTObyu+BbpiCHug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=inmusicbrands.com; dmarc=pass action=none
- header.from=inmusicbrands.com; dkim=pass header.d=inmusicbrands.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=inmusicbrands.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IKzAyN3UxgggVyN4KZj4Pr8md5GcbQgqxRguhjWkY/Y=;
- b=cbLyDErt3djkT+UmsDiqded0Tk0uCGZwDQmYO/3C0MJCQ5hIRE3p6AFtWOVowAYMJ6+3I+aImTI9OtqQ3VMDm2DSLLa7v8dMlWjqPEHEDFk/xLQdksFEvgklS/rlQZ/BbdMYsuQLJSMOvop7/R1zE0i8A9F8xDm6sK/9jEBsh5o=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=inmusicbrands.com;
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com (2603:10b6:303:1bd::18)
- by SA1PR08MB8367.namprd08.prod.outlook.com (2603:10b6:806:336::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8901.27; Thu, 10 Jul
- 2025 15:23:08 +0000
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401]) by MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401%7]) with mapi id 15.20.8901.024; Thu, 10 Jul 2025
- 15:23:06 +0000
-From: John Keeping <jkeeping@inmusicbrands.com>
-To: linux-rockchip@lists.infradead.org
-Cc: John Keeping <jkeeping@inmusicbrands.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC/PATCH 0/2] dwc3/rockchip orientation fixes
-Date: Thu, 10 Jul 2025 16:22:48 +0100
-Message-ID: <20250710152252.2532020-1-jkeeping@inmusicbrands.com>
-X-Mailer: git-send-email 2.50.0
-X-ClientProxiedBy: LO4P123CA0621.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:294::21) To MW4PR08MB8282.namprd08.prod.outlook.com
- (2603:10b6:303:1bd::18)
+	id 1uZsKs-0000000C7sO-059E
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Jul 2025 14:33:18 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 17AC761165;
+	Thu, 10 Jul 2025 14:33:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2253C4CEE3;
+	Thu, 10 Jul 2025 14:33:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752157996;
+	bh=ELRQc3uwkKFItDCmx75wbbSO3KRM0Y8LMvnQDThCfK4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=QRzvPLgFU0NXysFH/E2aHj3HTfCCb9P3xZP0sfcx7EPgn4Hz/B0eeFZ7jn6JcmDBq
+	 5GglNdwLqZ4k6kP0dYlj0gjMzW/Za6DQF2S6o9fwIs1XlSiz+i+yzYsZ7rdVXsbPv8
+	 CV+TjSLUy3IO459fh5QL3FYqG4DQ6RfjROMk5l0f6+OHKVPRpmQs57uNHdnwUkj8MY
+	 4UlIcr9oGr4fBazdJcKl3JAswwk7x5uvrWu1PVFjoxYr1IVqK5cfuiADBoJb+KS0RW
+	 Jcrj6NkF0ULgxCjKHsN5xn+SEyAey/cPDI85pFBcTAAqwkd6FHQZHDhcyVEEQlCcEW
+	 Id3IwzxsJf5ew==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1uZsKj-000000005IY-1wLn;
+	Thu, 10 Jul 2025 16:33:10 +0200
+Date: Thu, 10 Jul 2025 16:33:09 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+	kw@linux.com, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v8 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings for QCS615
+Message-ID: <aG_PJbA4t0wgz9b2@hovoldconsulting.com>
+References: <20250703095630.669044-1-ziyue.zhang@oss.qualcomm.com>
+ <20250703095630.669044-2-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW4PR08MB8282:EE_|SA1PR08MB8367:EE_
-X-MS-Office365-Filtering-Correlation-Id: 801bd232-d26d-4450-eff5-08ddbfc5ab65
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|7416014|52116014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?n5oUA06jKw/dBrbfT3zYSNkEdV+l8nnYcVJ5TE+dGD5tS+YbxMEyB2F/tXRP?=
- =?us-ascii?Q?xJBPECv3XQ+qGzXnRzW2b7lWr7/t9ilq2NBhh2vbmrXsHLBVzEbR/u8N2dt2?=
- =?us-ascii?Q?wsG2MqtmdXIXNDa2uxcURNanfYDhhQOA3YZK0Hm5PapVyTkaxjcM8jZCFTI0?=
- =?us-ascii?Q?wxBbodPexx8QdLo5YL4Vaz2xhTEZR8clbtG4dDzvfc7UVdp3odK3X3Hy7tCa?=
- =?us-ascii?Q?JRphj8+MnNJ8+HR626KSd/68BHtmysKBWyvBqtgTr4JTdLLa9DZiv7oUuxo5?=
- =?us-ascii?Q?b+cqX7299gJBThS5owkaO+uSmQsFwdW6ZilD8d8r+qt6ATnT+6z2vJyVbgzA?=
- =?us-ascii?Q?IDxwUXp+Q+uIpklu2CTamOsxocM3mAIp1uCbMQeBadAHAu4xRhs9O42N84OU?=
- =?us-ascii?Q?kGP18otZ95OeikA156P2xjADJeI6g5ru3eFbU1msbJzjzVQjXKzTUJkRzDHm?=
- =?us-ascii?Q?lq9uaHN8maeNa1b4qb9KuGSpZmkKbRsz02dZp4aO793fgwtTPF//kYtiti4A?=
- =?us-ascii?Q?HME7V6ukgfk1PjGs3HO+z+J9UjKFoWepDM+mZV4i0BcoQMHFM2Vyoxnhpw8E?=
- =?us-ascii?Q?rrnPc6hQdquYEdWnwqlIA2Uk8MFQaXiXCx1s5IaVlcWpDl/hcGBF1jqrwJSG?=
- =?us-ascii?Q?1CGyhk/03W6H7bZhlKCMdaIbjn+CdbgzsnmebFdhsq32w7XstWZX5Ls+QNDH?=
- =?us-ascii?Q?FkenmPpJEbPDgHncYGQhTtI+qHwTwI+ihoLGBpifeVRfaGEoGLoy56Kl8HXh?=
- =?us-ascii?Q?VxBSCeWMxfz0f7bNlMijKF/KH/KlnrdToxOsSjtyERRV/HscNL9anlI/HHSr?=
- =?us-ascii?Q?/TGtwswBHDl1EAk8SEpa0IMyXlwcKQA+t62OGE47Zzsbe/+fCmdvp4tJ0UX8?=
- =?us-ascii?Q?utPCK/+ciGuo0apch70PKJLmP3UUK57OnbkAMPT1Klc5rTEqK7J93ShcMhZo?=
- =?us-ascii?Q?DxXO/pahvbb6VTZAL3WrlnUw7EFhzX8hIgQq6wLUGGi6y+lGWo5E5ZR03YPm?=
- =?us-ascii?Q?jb+fTCVXYnMdpAKsE7bQz/0btlqxvK5BXfxuEoHx3jUWRZdAYR6d1njQuZrl?=
- =?us-ascii?Q?DOhxoSKR7oz9X6eVer7mRnc4/4xOW34NTz5hmDhA1kdrgeNVKObw9Je1+bp0?=
- =?us-ascii?Q?bH64rojjDax3cG4KebByJI1WwTS1eetO32tcN3qFeKD4DiEADouSIZjJ9Skg?=
- =?us-ascii?Q?npxfV0x4aGtw9rElcrzFmxaGU1Wz0EP3m86bF9MbKF36KjFS05yEmy4LqGWZ?=
- =?us-ascii?Q?FBewmSQJn04HwJHTFjI+7SdpLaOFVvCkrTx5R/zYvOGKvcmZUAz7XCQ+ryOo?=
- =?us-ascii?Q?Nw0ozrQLxDzIai5UZ+qkvURscKr0wa0efYdeagyzbI8gj3vgA6U2L6fJqqtW?=
- =?us-ascii?Q?21lpaLGI8AJ7FgCWZm/lKZEh+UDAk/mn/meOJgjg8VhKUG5ghyqCskHFJszf?=
- =?us-ascii?Q?j6Olu+UheBYoIvMon5/QsQZtRVsPLfcbYwHzNA3n+EWAffqPCMGsjOXqOR6m?=
- =?us-ascii?Q?gI9jOCoCaBxFHj4=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MW4PR08MB8282.namprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(52116014)(1800799024)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?OrAP6UpnfBPNb4b97Gm2BlTFJcSpKapcd6a3loosWP+DpCEBes4nd9NV1b9g?=
- =?us-ascii?Q?TsTqlhRrcGjEw50S02OeJPGa94YRfN42dXY0Hzu+FwkdUciy7e0Sx/b3/TcH?=
- =?us-ascii?Q?9jmLVwlUqxVzQt7+TXt7/5Uxjt9rV8t/nC3U+C9FTZ55VeII5ovusoS9coVb?=
- =?us-ascii?Q?e9hIWk/gKWEd8lkQuxFYfbnKEKAFcDYntlUkTEaEVPCN43WL9TeSHuWDKcAZ?=
- =?us-ascii?Q?UQhOIvJLHL+ndPIY6Nebc22UxUGzrQrCqTaKDdWEaAdeAV1KURneyI7/7psa?=
- =?us-ascii?Q?OutPjsaI/G1oR+o23WtTE9DlkIlD+2XtVQoGpRt9YXgDMj8cpA0eRXgFAOmw?=
- =?us-ascii?Q?nsww7LW0znGivsyZKNuGzI84YIvebMkj8ba4BPRgJVz7fD79ftrBe9ydLpV1?=
- =?us-ascii?Q?JCulO+9I86N+zKpoYVrFNUQi9nKWdxc5U4+09LeSBEtby1hwLnjR6wZWsHCf?=
- =?us-ascii?Q?aTXjo0kGKygTCXuRlU2Mbx6IEHb4GkjvVnZew9xKEdQmKyLQJaQ54jObSlft?=
- =?us-ascii?Q?sPAYtNYTDJF8StCdL953sySvgy+/92ayqGdZ8uirm8gjqtrzIKqpsESx147n?=
- =?us-ascii?Q?jqKkbJguPHu733TSHvBNQM1CL1YiogBxgbzcn8b5Sa1XfroPCv11OH+2h7gX?=
- =?us-ascii?Q?1CWYdWdXJFmgjiYhcLzMLzrFSIPE2GmaTou2QTKE3m0O+0fHaMPbImf9bm6O?=
- =?us-ascii?Q?5vGCC+nFwV4PQIXFW3HXp9MYf+mX3q8xsGJ6lFrbpQ/5f6jUsn/TsYLZcvFI?=
- =?us-ascii?Q?dPqD2NFE5qoa89AxsWGJJrl1f0wI1t/V445lKksaZgeLsXAxggqRLfYIPYjT?=
- =?us-ascii?Q?rEWvkomWfbMRSyOIikxHD1dLfNzsK1t0O/oL9w1tH1/M9i7pHuO9ZZpdEzBD?=
- =?us-ascii?Q?I9lVm2u4sbdXLXkIT4LEaYvW5pgg1t4fNpkoMZQAJEDLjjLbjicX5LSmczM8?=
- =?us-ascii?Q?nSAt2x7aiL22OF1p/OYDXLE1DgNPuKFBcqo74E/UHonGYhMNHm6sjxShKYOt?=
- =?us-ascii?Q?ex3KSAyBi3MbuK+uGrxeNpsCzVsRdDgiLKF9VdXk1UovNcFDg4ywnZcPkQiK?=
- =?us-ascii?Q?qkrmE7oHpVWlijn0arhtbKZwrFkDI6WCwBzMujTwilhpx/lKLV3wLqDTFkrk?=
- =?us-ascii?Q?ET5hUVeeyYwiRtMuWeGFR2m0w3BLRN+AdlmIC+pt2IAlx6v2yfll9FygzTOb?=
- =?us-ascii?Q?NOHIy6BXsQaiN5DWtZjg/KiVKlVfJJs6RxND6g5EWLiST4ofpJEJh4p4FYEx?=
- =?us-ascii?Q?M2PUrsOQbDjtL4C0zd/p3WPgV5XC+iyRiZQiRC8cKmV5jAiK4mVd5h1HKyNz?=
- =?us-ascii?Q?0azeeLFX960uNSbWgEdwojiK5vfb6Bdn04ec2BtTkB6Ylp1pUMY+9KDHxWbX?=
- =?us-ascii?Q?ThxMW4QDv8ZcG2NWxW66F0LrUixqEij+mXs8YROAAHFhiZpygImHZMUH+y4x?=
- =?us-ascii?Q?YJ0sVxaIOUP5T4ve7UAEewdKKzTqHd+LlR1BhNi4Oc78SL62ScVa0plR6n7U?=
- =?us-ascii?Q?79FY17LRMCEqtAKYBthaK9LgmKxG8BYVdNScJ1+5D8WWf3voNY24kPfG/Hh+?=
- =?us-ascii?Q?UdJUsifFEIY1hhlrfUXnKjeVeU4lvJa9LhhTxwWkX5zL/H94KQFqn/I6DYFm?=
- =?us-ascii?Q?Xw=3D=3D?=
-X-OriginatorOrg: inmusicbrands.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 801bd232-d26d-4450-eff5-08ddbfc5ab65
-X-MS-Exchange-CrossTenant-AuthSource: MW4PR08MB8282.namprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jul 2025 15:23:06.5651
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 24507e43-fb7c-4b60-ab03-f78fafaf0a65
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: R06wzE9KWxrWd5o6lewFoeGP6quKv1dHO7wx1uWk8YWMZ1HHFYHsZ/HXUqvN04vG+0nEekY/wxoJ5MvUClPfPsqByhdp//HwmhRwLqkBdqM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR08MB8367
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250710_082316_977581_E0FECBEF 
-X-CRM114-Status: GOOD (  12.59  )
+Content-Disposition: inline
+In-Reply-To: <20250703095630.669044-2-ziyue.zhang@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,39 +83,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series attempts to fix an issue with using the USB PHY on RK3588 as
-an orientation switch.  The phy driver only updates its internal state
-and does not write to the hardware when notified of an orientation
-switch.
+On Thu, Jul 03, 2025 at 02:56:28AM -0700, Ziyue Zhang wrote:
+> QCS615 pcie phy only use 5 clocks, which are aux, cfg_ahb, ref,
+> ref_gen, pipe. So move "qcom,qcs615-qmp-gen3x1-pcie-phy" compatible
+> from 6 clocks' list to 5 clocks' list.
+> 
+> Fixes: 1e889f2bd837 ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS615 QMP PCIe PHY Gen3 x1")
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 
-An early patch addressing this issue [1] updated the hardware directly,
-but this changes the phy state underneath the USB controller when it is
-not expecting the state to change.  That was addressed in [2] but my
-testing of that shows runtime PM overflows that cause the device to be
-left disabled unexpectedly.
-
-This approach updates the dwc3 driver so that it always signals a phy
-mode change when a plug event occurs, allowing the phy to reset safely
-at a point when the USB controller expects it to do so.
-
-The dwc3 changes seem to work in my testing, but I have no idea of the
-full implications of setting an "unsupported" role.
-
-[1] https://lore.kernel.org/r/20250226103810.3746018-1-heiko@sntech.de
-[2] https://lore.kernel.org/r/20250610-rk3576-sige5-usb-v4-0-7e7f779619c1@collabora.com
-
-John Keeping (2):
-  usb: dwc3: disable for USB_ROLE_NONE
-  phy: rockchip: usbdp: implement .set_mode
-
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 14 ++++++++++++++
- drivers/usb/dwc3/core.c                   |  3 ---
- drivers/usb/dwc3/drd.c                    |  5 +----
- 3 files changed, 15 insertions(+), 7 deletions(-)
-
--- 
-2.50.0
-
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 
 -- 
 linux-phy mailing list
