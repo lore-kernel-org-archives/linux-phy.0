@@ -4,154 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83007C83F17
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 17:30:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7A0FC83F1B
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 18:23:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CyaUwYUDO8eyBSBicbDBatZX8TSC7AHk0MlPUkG4l+k=; b=DP4CMf2KohX82g
-	mdSvAIc10xif0Mr+tDVdpHruvcJMHlg7hssDjHbWmLnsJoZD7mu6/DlDu1beQ1xja02WLit6e9IsG
-	w2LveYbH832MSfKk4YuMFBtXFXI4dpff4ivZye25vtrJe1227mEZypdrZ9PXEYP/xL8iWAPDVE5jT
-	F8KIa0GM3vyS2HvYmFLznNuBZSGf/81mF+vBsKl7qRSR3vRhEbWrobJ2f0wpC/A579AUoOhdIqj4P
-	KPs/mYBPMoeaM44KnuCaXL/wmtdmtZhM7bb34rDBQLoGAzl8LDrgjCMXgKdtSye7J3GmCHmWoUzoY
-	4hh95/aT4O8shpbfHOlA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z2OQEy9sz6t9IRp2PYIkLtqdLsRpO6ARL2CLKqeu92E=; b=sMiiwgmOy5pvUg
+	B1S7q3ZrkJ4LF+mNmxgpKR0VDWD6N4Axmo3bx7nkaFbbuoOlpRaSb8q2b65AO6XWeH4SaUdk7tIgF
+	pI4J7qiIV9w+W09A6Ac1Pvb3RgDTZUwca71mFXGB2HN6qTdqss+KPeEaZd9V9cjIbYcKJjKnFR0ua
+	AdMVyzDmd5oY66iGMjuKW9KDvx/RO9k8m4LmKl+o9UTWBW0+vmoqcjXV1QM50Xiu+QzqpuBfCI6oU
+	X+Su9uh99TlkjV3H72RiXAzrxRIkYHO0qQMKvY3QTJTOgc1R7wD/CoaZAtFNGly90ToGEVkICJUvF
+	D2kdzbp8YY+PEGdVBugw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZv6k-0000000CawQ-1CL1;
-	Thu, 10 Jul 2025 17:30:54 +0000
-Received: from mail-dm6nam10on2070b.outbound.protection.outlook.com ([2a01:111:f403:2413::70b] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1uZvvj-0000000CgxW-2g2C;
+	Thu, 10 Jul 2025 18:23:35 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZt7G-0000000CEr1-18wb;
-	Thu, 10 Jul 2025 15:23:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=KiWrWHW2IfA01lzGsoRWKKP502xc7mZu29oDYAz8hc6c8PWUYMA0QCpJkkqe+D13Gb2YNXdbMM0WqQ/gJ/tfO3emaAExI7BikGOWXCL/4TItLoBrg3pt7rdz2ofb5+01N9L2L+IkxNFJgVlnQS3zDiJTC9YQ2nj6E+JISt5aK6eO97wQjKzhjqo2ZUUlOXmaQRIoyGW75thz9pi9ZAm6kzwMquPChKixQiXkpJNTttK0NvRJtDw/TklQhSp+satzJg0BA55NOusBx3BVhwAxWa1M5394o2UJRnexdPns8a7/KdFlHykxAE07lKUkh9GzZ4c/c2zHOjUeaiAjI/3vRA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=sFgfYgelPFWu10+orQ/pP3pc8XDCsaez4z9Zz3a1F6c=;
- b=OiJZRnA/jaIgJTHV0LCj9oyF1Yhd0lYmS9qpg8Tz1UqjutYY4wUlTBQhgHJpcFCl5ntmIJdtRrTjBKRDKdlDaSawvreI4eeFEqCE8Q+1aoaCQZRrPTwxsZByZ7p2p4pODb+tYGVAYaSzdcaaeWkRJjC9RxiBszhsoQB2te54nD+MLkUJOZdtJsIMiLhDcMkzv+2O/vXqSbPzz8GofylFtRJG42WMn5NCcU5xVLS4USHYtibUgCf0Wifg73O+YcI9nsKzo4ba7W3wnUyIYxrFwo8spMR9NZF0R30D4GrcmyDag+Fn2H9uYaTfwKRcmhS3lptfnCiRZoRWQt15Py7jEw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=inmusicbrands.com; dmarc=pass action=none
- header.from=inmusicbrands.com; dkim=pass header.d=inmusicbrands.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=inmusicbrands.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sFgfYgelPFWu10+orQ/pP3pc8XDCsaez4z9Zz3a1F6c=;
- b=Xg7uVNUEgIRz0VvpoZj6V60iOF1WYTL67M9rlFMouOjlsoXWTRH7xy5YqXddVlC90U8jBnzCXybhE162IK7wxaW1YNuv8O2H2lrJkXaO4pqPYc8M2WLgloSFZW48H2aavBj9mMKqRR+zcABS9mTEpWV0httzyPawL2RHnYo9h2o=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=inmusicbrands.com;
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com (2603:10b6:303:1bd::18)
- by PH8PR08MB8487.namprd08.prod.outlook.com (2603:10b6:510:25a::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8901.29; Thu, 10 Jul
- 2025 15:23:12 +0000
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401]) by MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401%7]) with mapi id 15.20.8901.024; Thu, 10 Jul 2025
- 15:23:12 +0000
-From: John Keeping <jkeeping@inmusicbrands.com>
-To: linux-rockchip@lists.infradead.org
-Cc: John Keeping <jkeeping@inmusicbrands.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC/PATCH 2/2] phy: rockchip: usbdp: implement .set_mode
-Date: Thu, 10 Jul 2025 16:22:50 +0100
-Message-ID: <20250710152252.2532020-3-jkeeping@inmusicbrands.com>
-X-Mailer: git-send-email 2.50.0
-In-Reply-To: <20250710152252.2532020-1-jkeeping@inmusicbrands.com>
-References: <20250710152252.2532020-1-jkeeping@inmusicbrands.com>
-X-ClientProxiedBy: LO4P123CA0621.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:294::21) To MW4PR08MB8282.namprd08.prod.outlook.com
- (2603:10b6:303:1bd::18)
+	id 1uZtoj-0000000CMDU-0FBA
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Jul 2025 16:08:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1752163692;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=9y0trkj4fUoS0RrnudnNCXl9kNIfdjh6JnTKD549Do8=;
+	b=HbOw7XLWj7QVXo9WS0h5OsfAmHGJefRBxk4lESE5VcJqk4NVwhFqwfVi8KQ0sZA89vaS2p
+	p69Ut+B3I2GNjq4lpSQXbxwkSRlhs7l8lnilSesGNkp5iguUXjXeDdXamK2r6rWhMs/KCD
+	Om/U64oDkP+VRoj0se/iF4b3Sj8IPVQ=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-482-d32Q5xpbPd-lMY_9Ubep2Q-1; Thu, 10 Jul 2025 12:08:10 -0400
+X-MC-Unique: d32Q5xpbPd-lMY_9Ubep2Q-1
+X-Mimecast-MFC-AGG-ID: d32Q5xpbPd-lMY_9Ubep2Q_1752163689
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-6fb3654112fso20217766d6.3
+        for <linux-phy@lists.infradead.org>; Thu, 10 Jul 2025 09:08:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752163689; x=1752768489;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=9y0trkj4fUoS0RrnudnNCXl9kNIfdjh6JnTKD549Do8=;
+        b=Q4yOnLgD41YIxUXoz136YZ2N0UnXGeH8l9CFpm6AIOBlVzzLjPioTfK9LMV1zue8Wv
+         eeLw7tkI71NmmdDNrd0kC5VXY/2btiWmlS8gFvwuIDLEdXjsP+7/cE4V6EM5ey6uvVEk
+         V4Ek6wvvO41q45bOs/uo0Ju/FHt+iTdUHkubEN6Z8bzPy8f2AiP+BnGYngu3+oMhnu6q
+         TxYYwpOcci86tuX8un7bOEhyQ2qOhya24EF683Jnps9Pks6h3OhgO1TdEe1DdmFnzSaX
+         73CvtlJyFJNOIHESogz3tDWk0gO56YOTn/VIr60YVe2aulZlyH6F1pb785cbfOFEl/4a
+         s+NA==
+X-Forwarded-Encrypted: i=1; AJvYcCUrynUnoir6kwZLH/JnG7e7GkWy33yKgBe9afI3n7bz5T5+sl52tPOLPDjyaYP2YGIe6i2znRligas=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxYFmuuPhasodoZGV+/j6oeqBluNQ1f6d4cjq4JeLm/DtTCgwJn
+	VAFVQPQaqyl59/ig+ZWIAjOds5RsIsntj9ui3ExeeWK3PnTxyJd5t39TAfbWw0tGHE9zyhfuRfV
+	L8l3wZIb418SFNcJvcT/pmS0gXRU48UjxdQd+BD0ra7HGCVs0B/m8suZR5EOb+x6fgZnpjEcH36
+	3pKaxZ+PuHG7Jb3HdjE3UrtzFBOAfQE2K5CMq8Wd2b4axbz+9KZw==
+X-Gm-Gg: ASbGncue6EQn9UmHZ+ON7/Sw9fm4541K55RLn29725VAawAwMAlhTtOT4IDEsOI2vbJ
+	iLRLO3v16C/i2N1SlhD0ByzqfR2tLVvvmhOxHZ4hr4z2Yo/uQUdmfUXN1jdfhHNXGhmJEXD8RM1
+	eS12VB0Ie6oKrYvOX+Ng5cLUfVk69ccxVgMHouOlJIbbSH/jLdxOeunScMffgvxB4AdlqVYSrAr
+	oMRpjIx8y6raU+IyQAEcIMzB2+WBBXTvipIKpp9lgXB/VBHsYbsx0zxRErE5cg/rRkEX+AqFlKQ
+	szmQDLAae9Yk6fDUxon8hvvXyXwDh2OOM3/TECQKlYUIrMZbwMeztZFkTBmU
+X-Received: by 2002:a05:6214:2b0b:b0:704:a23f:9d36 with SMTP id 6a1803df08f44-704a23fc534mr3788606d6.25.1752163688678;
+        Thu, 10 Jul 2025 09:08:08 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE4gXy2Dkx4egeBxiGddHTDVbGuVB+8YXO54lWBniB7kXUceb7curtnNMZMf9c09zPdEAmsFw==
+X-Received: by 2002:a05:6214:2b0b:b0:704:a23f:9d36 with SMTP id 6a1803df08f44-704a23fc534mr3787296d6.25.1752163687765;
+        Thu, 10 Jul 2025 09:08:07 -0700 (PDT)
+Received: from [192.168.1.3] (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-70497d39749sm9670216d6.58.2025.07.10.09.08.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Jul 2025 09:08:07 -0700 (PDT)
+From: Brian Masney <bmasney@redhat.com>
+Subject: [PATCH 0/9] phy: convert from clk round_rate() to determine_rate()
+Date: Thu, 10 Jul 2025 12:07:10 -0400
+Message-Id: <20250710-phy-clk-round-rate-v1-0-0ff274055e42@redhat.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW4PR08MB8282:EE_|PH8PR08MB8487:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1c55ccdc-78c4-4719-4d4e-08ddbfc5af07
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|7416014|376014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?k6vjpUasFN1qWzI8br+G4SVg9y1qJSWZtqxAK2ilL/3hpZ9xETdGsjSVd78b?=
- =?us-ascii?Q?73fuEyADGluVnuFlo/CVWZ6HVGDEgEn2IJnf7300T8OKYHoYi/3TY/yNuqnt?=
- =?us-ascii?Q?++3YYMkPEN0FV8WH+xj+akoSFSYfM7GTCA7fST99jOiaNn4kDDqMJMRmNRqh?=
- =?us-ascii?Q?7qt2sgZntkhlmY9b55KIt+EIvTynv1qenu4LxScZhQuhgNO2ff31r78pUcpp?=
- =?us-ascii?Q?CkFIzGGkKyqVQzqw7QrSXIz/bNjFaoZi9nQpCtK/G1B+tW0iqc9T1zwzsjVP?=
- =?us-ascii?Q?AEh0QlyEwg/6qx0XxnJUE2g2LLmKgXBed6QvC+29Z3m+KaJX9MSh5EUsAuVy?=
- =?us-ascii?Q?lBXDzxoKAcDoHmNTSJOX9UJUjeDREN1PmapO2Jx9ohPPIzRq7tuqQP5tW2XK?=
- =?us-ascii?Q?u92gmxIRCLnMDZdaASc1Z9Nf+tRV/ShzlSy8TpShpZIbkXIHzCJDkYKJ2Uzo?=
- =?us-ascii?Q?CfYu/w29UV3pnvwvUqBLPXyXF7xMEv3S40a8ME/TfBuy/btphU5dve4azhRe?=
- =?us-ascii?Q?Ht275RUeM4byZq/GQhLWgAKWRlj5rm0XKjxgdEl4Mc7KUuQcQIHLdlfXcr9U?=
- =?us-ascii?Q?J6pfdoj/OlzjHJIJMuGEebHfUzyYdUKjJVlio6yCvP4tDLY7U1+aprhnWbZb?=
- =?us-ascii?Q?P84BSXupaDJZcVHr5xYprU5f5ORIcsjxep+RdWi4qggoUeGREjLFmwoFjc71?=
- =?us-ascii?Q?uVubQy9cy+MCy3css4cURkio+cNqgOVfmZObfhZQyZ1smgXZoCrgUmTE3uTn?=
- =?us-ascii?Q?nxposXdmMfc3z8qrg+9VfwOEC1VVVR/L/8myeZEBjnec31XC5PobvuDQkiCC?=
- =?us-ascii?Q?tmE+4UD7BE7tuBrC1VPkW5QbAiPhVyaGzQQBVphTNZ5n94rkGrC8XENLfYZs?=
- =?us-ascii?Q?tA7HFJm51BoDhLfY8zoBLU3/a+JQM1m7B9OATKhbl2ygPGCKBGWjSBaCOCOD?=
- =?us-ascii?Q?dgMSHEQDehd2ZJbe4e5JMZeBG+GDke+MS/Dw6yNRdzaL6tkpjqD/KBCPh4nt?=
- =?us-ascii?Q?MYKZas3sTsX/buXwzU9UDV6exuvRxkDkdsF964vvAGwykQqjv4PW8FTle86r?=
- =?us-ascii?Q?t+MSDoA6QGqVQdy2tuy4uYERDxxm+2VqNGs1dt4fmtNMkvm/0eJdAb7pCCsC?=
- =?us-ascii?Q?edGmLudMRx1SKH7xyckF3ZAAQjtuj5QOtpP9bTv4+JNcBuIerihFxyRJ6YLg?=
- =?us-ascii?Q?dDJhoR9OCpsf0E12dTCu2wUtQ2yN/DYRfYqnMyTKzmJacP+R6pcbxxa6TL2x?=
- =?us-ascii?Q?Hfekf0lBodPF3ROb5Cof7H6F0n/JXwj5wbHdAiUtwA31Ap1YRAObHzA6hRLs?=
- =?us-ascii?Q?e8MrMaHzYnjWRx62NC3K1VyDQ1uv4hbn/tt9xjU1du29vQTCCZO6eMopss3S?=
- =?us-ascii?Q?nJCLGbTYleK8ZUSwxqTeKOVCzoTmwN5+vQ2Agmx2oqpzw0qibbtQ2yM0WwxK?=
- =?us-ascii?Q?AI9PgeQKYwsgHHLtPlKzymbhCp0+ZiiYgvf114RdVDz96AuPfuRrsQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MW4PR08MB8282.namprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(7416014)(376014)(366016)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?LmCiaT8iTyzEf6ooSf5R9yRhud4KDh9Ur4LW/3fghEhvCeJGBie9eYKESFUi?=
- =?us-ascii?Q?eFWCEMo4Qg7AThKzk22A4CaEOBT2yw1xyId6ZBrtkwrcdv3O7jFrSEYNB/Es?=
- =?us-ascii?Q?vgpM4S3s8ay/rKGUrqMZtYfyO54v43WyLq8DL36SaNIFJ0Xu2JrUYVtCA/zR?=
- =?us-ascii?Q?EyQaW1Dw/r5Iy5yRTYFMO1t7EHZQxppl6yqHDD48goiLiacpWl3kNPK0adFE?=
- =?us-ascii?Q?RDHceI/Bc6dXTJSoW+v5CvC1e56IytSNcwktAL+YutecwDnlciBqvB2GIODs?=
- =?us-ascii?Q?7yKP3CNGUH0IaD1ELLtiVvSwch9d3Z7gBK5lS5tibQ9tVDdrJy2E4akMGV4O?=
- =?us-ascii?Q?PcupqziYq4XUwJETJa7xKDqP8aPp1PLqIzX+ig7dcu+9mCEnQw18sbq2YpLm?=
- =?us-ascii?Q?b0pByT3XjDViFN0cVWVfjNB9TA96mHLOgL+rfFn9VFHeJ6jLRqS0ArgnXrSm?=
- =?us-ascii?Q?9b9DmjYaxZfStIfSzYqvs+whWiK3wrAZhg+koPQi4dVjKgQx0bIVuvT/pIuC?=
- =?us-ascii?Q?EK0Q4EbEiZAWBh7o4/DkYbyyzILkTLRTASK+ZGctpEK8MNXDuJeOCauFnrO8?=
- =?us-ascii?Q?jrPXHT9BfAEjxOGjVrs371viKdzb2BhbCWxwDF8sQOiVrJ4jZWsmcju6TPhM?=
- =?us-ascii?Q?NkmKOEsk8Ke43jgMro86Dm3bOfRP96HsuIlqPVoUNVrmgThlcgPnS/jjYxSu?=
- =?us-ascii?Q?pNClBUjZ0/4gbnQWZhu01ynoLfPq/y+3XBI9Btf0Bzke5iB1n3NGmFOARwO9?=
- =?us-ascii?Q?buqbxSu83pdLRV08TT1DLfFJSK1h7kGszva4U1GfD/6k2ytdaMhGK/mepZ3u?=
- =?us-ascii?Q?ad861Rq5+Ash5aLeVw7O4oQNU478ucYuKKoW6UrEBlF/WfkTBGWJr/9u+b8A?=
- =?us-ascii?Q?cNPYzFzyMKpbP5D6oqzFfgeRchGDtku2lPfQxgM03Dx4Au5He4W5NGv7p5Pm?=
- =?us-ascii?Q?ujYO33ejvF7cpnPkc+X686oRNkjD2HPlC3MqTg9SneHvbaH8QSGwwkzfcyJk?=
- =?us-ascii?Q?sW3ZwnTxo8lwrIpA+vQcWy4zbCJZUVUMGuplylglWEKrwFAcDFXvBapNv63K?=
- =?us-ascii?Q?l50Oj+T8bX5nrC2RpK2w5B8NkLJI7pSWQsaISzfB7Iwcvn5pZHt75BgUqkEz?=
- =?us-ascii?Q?pd6qrmCp1UA5mGOM2xx8xmC1xLrP+X68y0jlM2rctLzD/W6TMnS+caR8VR3g?=
- =?us-ascii?Q?XQi58K97ct/eyWmI5aCYxPZSjjQSktMTHERaT0uArajWwTU2yTjCKm4q6DBf?=
- =?us-ascii?Q?FWPGZ2UY8e0lG1vRtaSMqDrnRZ4Lbl2fjoGjqfc+IrAnqQvM5BgWZZudmtt0?=
- =?us-ascii?Q?upto7ZsLOcKQl23loSY6YqmzUBwhJvnGrlciy870lhfQsuO1Gwdzm7DfpHQU?=
- =?us-ascii?Q?1qPS8od4IKak4Q5CBZ7jjAfjZoL+g30MTKdYurwI+ruYIOL61+W2U3fCT6hc?=
- =?us-ascii?Q?D0hNd8A1+Ku4kVbkmZw1Y8JIK6XXpWBLOQCwf3BN9wjXcDLIUvVBUMVCCRwY?=
- =?us-ascii?Q?26OFwIJDXEMdga+PSJqBZm3vTAJyWEy6lGBZMUSGsrp+4wtnpVRKIDkfvi49?=
- =?us-ascii?Q?MCOftOTF2vzB+afMS8X0uXlpWknCBZLsMKhF0JxN01TlZahaFxw8S+ToHoKc?=
- =?us-ascii?Q?mg=3D=3D?=
-X-OriginatorOrg: inmusicbrands.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1c55ccdc-78c4-4719-4d4e-08ddbfc5af07
-X-MS-Exchange-CrossTenant-AuthSource: MW4PR08MB8282.namprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jul 2025 15:23:12.3877
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 24507e43-fb7c-4b60-ab03-f78fafaf0a65
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 7Fb9n8FZwHBpRwDDRLwjBQMrSVLrJvjvWsrQvFMwCJk/OZRiqso2Wtj5CQQgKaUTGQwgQicM/0Z0RWSKjw/aXZunJzN+3/OSWA5QSVPZXKg=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH8PR08MB8487
+X-B4-Tracking: v=1; b=H4sIAC/lb2gC/x3MQQ5AMBBA0avIrE3SChquIhYNU52QkilCxN01l
+ m/x/wORhClCmz0gdHLkNSToPIPB2zAR8pgMhSoqZbTCzd84LDPKeoQRxe6EpbWGnK6VowZSuAk
+ 5vv5p17/vByQloVBkAAAA
+X-Change-ID: 20250710-phy-clk-round-rate-4aa7ef160fe9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Heiko Stuebner <heiko@sntech.de>, Maxime Ripard <mripard@kernel.org>, 
+ Stephen Boyd <sboyd@kernel.org>
+Cc: linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, Brian Masney <bmasney@redhat.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752163685; l=5746;
+ i=bmasney@redhat.com; s=20250528; h=from:subject:message-id;
+ bh=oHw4EaNbWszhl2nWjfiTC4gPuNzXI86YghpIW4T3XYU=;
+ b=+YTf6TGhVZLwRnFkAqozoviaA3InI8pyoCfUeHJRT13VIoshFQfOj4nk5h5s6PLxBjQMoxHBQ
+ 8+w6S9SAMg+C2VTLAoUj9UtD3pjNbsegU6UjRkwkyeFq4rIhJkVs1CU
+X-Developer-Key: i=bmasney@redhat.com; a=ed25519;
+ pk=x20f2BQYftANnik+wvlm4HqLqAlNs/npfVcbhHPOK2U=
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: tpHoASBa0cCAr9pleCqPBm3ZCmWjRxtP7CM6remwz4M_1752163689
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250710_082318_314487_B2888808 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20250710_090813_164826_0378ABB9 
+X-CRM114-Status: GOOD (  14.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,50 +127,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When the orientation of a type C cable changes, usbdp set the new
-configuration in its internal state but does not write this to the
-hardware.
+The round_rate() clk ops is deprecated in the clk framework in favor
+of the determine_rate() clk ops, so let's go ahead and convert the
+drivers in the phy subsystem using the Coccinelle semantic patch
+posted below. I did a few minor cosmetic cleanups of the code in a
+few cases.
 
-Make use of phy_ops::set_mode to write this new state.  This should be
-called by the USB controller when it is notified of a role change
-(assuming it is acting as the role switch) and will be called at a point
-when the controller does not expect the phy to be operating normally.
+Coccinelle semantic patch:
 
-Signed-off-by: John Keeping <jkeeping@inmusicbrands.com>
+    virtual patch
+
+    // Look up the current name of the round_rate function
+    @ has_round_rate @
+    identifier round_rate_name =~ ".*_round_rate";
+    identifier hw_param, rate_param, parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    	...
+    }
+
+    // Rename the route_rate function name to determine_rate()
+    @ script:python generate_name depends on has_round_rate @
+    round_rate_name << has_round_rate.round_rate_name;
+    new_name;
+    @@
+
+    coccinelle.new_name = round_rate_name.replace("_round_rate", "_determine_rate")
+
+    // Change rate to req->rate; also change occurrences of 'return XXX'.
+    @ chg_rate depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    identifier ERR =~ "E.*";
+    expression E;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    (
+    -return -ERR;
+    +return -ERR;
+    |
+    - return rate_param;
+    + return 0;
+    |
+    - return E;
+    + req->rate = E;
+    +
+    + return 0;
+    |
+    - rate_param
+    + req->rate
+    )
+    ...>
+    }
+
+    // Coccinelle only transforms the first occurrence of the rate parameter
+    // Run a second time. FIXME: Is there a better way to do this?
+    @ chg_rate2 depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    - rate_param
+    + req->rate
+    ...>
+    }
+
+    // Change parent_rate to req->best_parent_rate
+    @ chg_parent_rate depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    (
+    - *parent_rate_param
+    + req->best_parent_rate
+    |
+    - parent_rate_param
+    + &req->best_parent_rate
+    )
+    ...>
+    }
+
+    // Convert the function definition from round_rate() to determine_rate()
+    @ func_definition depends on chg_rate @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    identifier generate_name.new_name;
+    @@
+
+    - long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+    -               unsigned long *parent_rate_param)
+    + int new_name(struct clk_hw *hw, struct clk_rate_request *req)
+    {
+        ...
+    }
+
+    // Update the ops from round_rate() to determine_rate()
+    @ ops depends on func_definition @
+    identifier has_round_rate.round_rate_name;
+    identifier generate_name.new_name;
+    @@
+
+    {
+        ...,
+    -   .round_rate = round_rate_name,
+    +   .determine_rate = new_name,
+        ...,
+    }
+
+Note that I used coccinelle 1.2 instead of 1.3 since the newer version
+adds unnecessary braces as described in this post.
+https://lore.kernel.org/cocci/67642477-5f3e-4b2a-914d-579a54f48cbd@intel.com/
+
+Signed-off-by: Brian Masney <bmasney@redhat.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+Brian Masney (9):
+      phy: freescale: phy-fsl-samsung-hdmi: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt2701: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt8173: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt8195: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-mipi-dsi-mt8173: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-mipi-dsi-mt8183: convert from round_rate() to determine_rate()
+      phy: rockchip: phy-rockchip-inno-hdmi: convert from round_rate() to determine_rate()
+      phy: rockchip: phy-rockchip-samsung-hdptx: convert from round_rate() to determine_rate()
+      phy: ti: phy-j721e-wiz: convert from round_rate() to determine_rate()
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index c066cc0a7b4f1..00368fb09307a 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1335,9 +1335,23 @@ static int rk_udphy_usb3_phy_exit(struct phy *phy)
- 	return 0;
- }
- 
-+static int rk_udphy_usb3_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	struct rk_udphy *udphy = phy_get_drvdata(phy);
-+	int ret = 0;
-+
-+	mutex_lock(&udphy->mutex);
-+	if (udphy->mode != UDPHY_MODE_NONE)
-+		ret = rk_udphy_init(udphy);
-+	mutex_unlock(&udphy->mutex);
-+
-+	return ret;
-+}
-+
- static const struct phy_ops rk_udphy_usb3_phy_ops = {
- 	.init		= rk_udphy_usb3_phy_init,
- 	.exit		= rk_udphy_usb3_phy_exit,
-+	.set_mode	= rk_udphy_usb3_phy_set_mode,
- 	.owner		= THIS_MODULE,
- };
- 
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c      | 13 ++++++----
+ drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c        |  8 +++---
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c        | 16 ++++++------
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c        | 10 ++++----
+ drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c    | 10 +++++---
+ drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c    | 10 +++++---
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c     | 30 ++++++++++++-----------
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 21 ++++++++++------
+ drivers/phy/ti/phy-j721e-wiz.c                    | 11 ++++++---
+ 9 files changed, 73 insertions(+), 56 deletions(-)
+---
+base-commit: b551c4e2a98a177a06148cf16505643cd2108386
+change-id: 20250710-phy-clk-round-rate-4aa7ef160fe9
+
+Best regards,
 -- 
-2.50.0
+Brian Masney <bmasney@redhat.com>
 
 
 -- 
