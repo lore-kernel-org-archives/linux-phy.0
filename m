@@ -4,62 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CC45C83F17
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 12:35:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C10C83F17
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 12:40:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FM7KWlQFqrz1JcQkw3aKCrGRZFPZvbIrCUS0OjHG/2Y=; b=y9i5NuI/B4ocui
-	OMCsKBXqY/ms64B5/5sMSa+sB7m0K3TBAwKPsFtUb9NUfs+kZYfDxEUygqZ1ko6Z77eTGzw3DIRbF
-	Y55G6d1U4mo9LBsTUXSfx3Q4dVaIX3/GTZwcxrZnlrasEfAG1c6+5UTnjPz0dO8vd34Ns/aPV8VcG
-	ZXsnZlKCvzy79uLUyIrw/xIjSgJ/X4ur7Xla8fT6eyzkz+C8ZYTDhJYzP+dDxYDQcJENJFEt7xHan
-	8WdUL73BmxkHi5DA/2MuHDw0O6LHz8T9b0Q8vIrsipil3jd9Nos+Ipf0oZKMsRpujo5WDEsANDGHN
-	jg2XJf3sBHW7yQTNesxA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JCVQl0sTQfA6OF7FDZiOfd4YwbCqmHo2ZcrDf3Ruluw=; b=UhKsFsX5aVbQB1
+	vdWh7iqxGgyS39D9i0nWT66sSqZhk+haNCyBp5xgQ2eF1Qf4k6xlJS7eX/wN7Qi7V9VOVKG6OnNl+
+	4PusUdqifgVzkWhpsEuY8ycmUFk5xnxBBXcZZpt1i82VZxOEIh50+tUfbiwQsQ8H03IWdiBkZ/QQ+
+	GCPX8njx4PNUOrjLSfNsp9VfDSvwPGyikHO9Uu1UV15a6pwrIdAeNKpspW2I4a1sUocwSgw//WrA1
+	eQA0g3R0u/F6eYu+5wcWTmunXfyIjbIt5lEnPPdaCg7/+y13YA/eF0Im1MK7Z8R6cCLh29+IpI8tZ
+	R8llk5+3RTPzAXkQEQLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZqUn-0000000Bn2H-3f8Q;
-	Thu, 10 Jul 2025 12:35:25 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uZqZQ-0000000BnqI-3Wk2;
+	Thu, 10 Jul 2025 12:40:12 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZp7b-0000000BaDK-0fcr
-	for linux-phy@lists.infradead.org;
-	Thu, 10 Jul 2025 11:07:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 97E6F6146C;
-	Thu, 10 Jul 2025 11:07:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D291FC4CEE3;
-	Thu, 10 Jul 2025 11:07:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752145642;
-	bh=cP0YccyJ7Yk/7NkZ0wkAWEv1jfHKscTcSiPWI1OSaEc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HubwSBRYx9IEb9EKj8DZFkbR21tO2VOA+6fqxxJ5OF2hK0PkWBlnlachA9wlCk7WE
-	 +kQ/jEblR1G04I4sWZDFGCQXJNT0zWDdxw4ZnFwUWgiJRS3GKIwSqf5bnf93r3DmKP
-	 3VOGJ3Lk9i/j3f+rMAbx/fTgPhK6IyjwHCk1t3gNHqEQdN0H65qF74jKcsDuzk8t3Z
-	 fxQ6iv7mnU8TBpCLbiVrJMtpaabtHy8gbPC89bBFffiEHSmUb3tdg/Vn+TP36EVohP
-	 sWjHQhhs3f9oh4yOh/q+SAAtMqi8NSRSDUbvuM7ofeNRgvG8LMzCvfAUUqDH6xd7rP
-	 n+FzMYlyjx5Fg==
-Date: Thu, 10 Jul 2025 13:07:19 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Abel Vesa <abel.vesa@linaro.org>, ~postmarketos/upstreaming@lists.sr.ht, 
-	phone-devel@vger.kernel.org, linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,snps-eusb2: document the
- Milos Synopsys eUSB2 PHY
-Message-ID: <20250710-little-zebra-of-priority-f1fdaa@krzk-bin>
-References: <20250709-sm7635-eusb-phy-v2-0-4790eeee7ae0@fairphone.com>
- <20250709-sm7635-eusb-phy-v2-2-4790eeee7ae0@fairphone.com>
+	id 1uZpD7-0000000Bb9W-2Gjv;
+	Thu, 10 Jul 2025 11:13:07 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 9065120E4B;
+	Thu, 10 Jul 2025 13:13:01 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id GEsDnv1RYoAT; Thu, 10 Jul 2025 13:13:00 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1752145980; bh=9/R3I2QTvmAT11keXIpb9oxTfzuCpNx6iVbeNs8GKZ4=;
+	h=From:Date:Subject:To:Cc;
+	b=ejolLtlCHS97Q1CYEqWwE0gQlrPQw7JSZkvhf6n+/CrhWa1jkT9GMnZUj0FDP+hBp
+	 ihfPgVCgUYva5wryaflZjvltbfLC+O+kEkQqAhXXrNncS2MbWieZN2btBeGHNQFULT
+	 nPi04s7nlGAsO2B+LJoQHJTLC/+xnYmf6JrLIntfOr5RdSMV22LR4p9ZvLbGpy2V2J
+	 D4DmS+WgOyV0D1/igyKdVK3haZodOrgNH0gdNw1G0lDtOfvPdbslvVYgy5GVfPG297
+	 hXkTSALlq2r7GMrIO0rrmv78f6Qke4FOHuanwRpnACUreNx3QqWd5KaUzAP/MuKFlI
+	 oM2NSCdWX9ttg==
+From: Kaustabh Chakraborty <kauschluss@disroot.org>
+Date: Thu, 10 Jul 2025 16:42:48 +0530
+Subject: [PATCH v2] phy: exynos-mipi-video: correct cam0 sysreg property
+ name for exynos7870
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250709-sm7635-eusb-phy-v2-2-4790eeee7ae0@fairphone.com>
+Message-Id: <20250710-exynos7870-mipi-phy-fix-v2-1-5cf50d69c9d7@disroot.org>
+X-B4-Tracking: v=1; b=H4sIAC+gb2gC/3WNQQqDMBBFryKz7pQxJY3tynsUF2omOosaSSQo4
+ t2bCl12+R7893eIHIQjPIsdAieJ4qcM6lJAP7bTwCg2MyhSmu5KI6/b5KOpDOFbZsF53NDJiub
+ GpNlVD0s95PUcOOuz/GoyjxIXH7bzKJVf+2uav81UIqFidm1XdZqsq63E4P1y9WGA5jiODzI1u
+ PfAAAAA
+X-Change-ID: 20250625-exynos7870-mipi-phy-fix-73e05ef89d0c
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Kaustabh Chakraborty <kauschluss@disroot.org>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752145974; l=1740;
+ i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
+ bh=9/R3I2QTvmAT11keXIpb9oxTfzuCpNx6iVbeNs8GKZ4=;
+ b=6zaZcpyBYmtLQRw2NAbiS13U61IX/RUnZZ3bzEL0nX80n8mv9RvaT2jnG/9yjwHrWTu90FXDx
+ uNwFk+7suv+B/95Y73oY1OLSWQhtOS0DQ2Pa/Kna1vnYtDKvCKO3YfA
+X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
+ pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250710_041305_998689_D1323E3E 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,19 +88,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 09, 2025 at 11:18:16AM +0200, Luca Weiss wrote:
-> Document the Synopsys eUSB2 PHY on the Milos SoC by using the SM8550 as
-> fallback.
-> 
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
+Fix the cam0 sysreg property name (samsung,cam0-sysreg), which has been
+erroneously declared as samsung,cam-sysreg. This follows the same name
+used in Exynos5433 PHY.
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Fixes: 543f5e314282 ("phy: exynos-mipi-video: introduce support for exynos7870")
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+---
+A few issues have been realized after Exynos7870 MIPI PHY support got
+merged [1], this patch series aims to address them.
+
+More information about the fixes is provided in respective commit
+descriptions.
+
+[1] https://lore.kernel.org/r/20250612-exynos7870-mipi-phy-v1-0-3fff0b62d9d3@disroot.org
+---
+Changes in v2:
+- tweaked commit message of [v1 1/2] (krzk)
+- dropped useless patch [v1 2/2]
+- Link to v1: https://lore.kernel.org/r/20250627-exynos7870-mipi-phy-fix-v1-0-2eefab8b50df@disroot.org
+---
+ drivers/phy/samsung/phy-exynos-mipi-video.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/samsung/phy-exynos-mipi-video.c b/drivers/phy/samsung/phy-exynos-mipi-video.c
+index b184923b9b400f0d536a913bdf32f3156c0a1854..be925508ed97a397239bd41f34b61ead20d04d27 100644
+--- a/drivers/phy/samsung/phy-exynos-mipi-video.c
++++ b/drivers/phy/samsung/phy-exynos-mipi-video.c
+@@ -218,7 +218,7 @@ static const struct mipi_phy_device_desc exynos7870_mipi_phy = {
+ 	.regmap_names = {
+ 		"samsung,pmu-syscon",
+ 		"samsung,disp-sysreg",
+-		"samsung,cam-sysreg"
++		"samsung,cam0-sysreg"
+ 	},
+ 	.num_phys = 4,
+ 	.phys = {
+
+---
+base-commit: 26ffb3d6f02cd0935fb9fa3db897767beee1cb2a
+change-id: 20250625-exynos7870-mipi-phy-fix-73e05ef89d0c
 
 Best regards,
-Krzysztof
+-- 
+Kaustabh Chakraborty <kauschluss@disroot.org>
 
 
 -- 
