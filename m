@@ -4,74 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24DF5C83F1D
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 11:16:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63C90C83F17
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 11:48:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DfYhEqSgJIKZvRHH6XZXIaogad8AupGQUfXpPAbo+70=; b=uvSeYWzbFHj/Up
-	bhE7rerQLxBVuX8sceVOSEuxLykt5v70f3bZGOjQUMRp7J8hjAH5moeI73UQ9wDEK36ObWgxBMavd
-	LKClaAooHvgErQsIDVB226DHLTTkL2nAf/Lm6xhQ0wRWHZsABipDJn5qPU3Exf8ljHqZVBCTgGos7
-	nIXVn8vi1N0WRDxc+qxj4Ey3X138u7+pnKPV7GOnmxk+1L/fvmnQ3k5Wl42PEfEWmMMAUarWX0IIw
-	ldb935P4H+znY3KlExxVJfsbRli8GMIe6uleFLcBZ2eexX2DmzZ3fc1Ccz0Iu6TXxfkFS95tMS54m
-	oyQOcf63eJB1eESwTORA==;
+	List-Owner; bh=wJAJ7PZbHj6zE9jh7jEVLG26/YvhgLaWje8RiaNwrCM=; b=Y9e/lgAwFXaImP
+	jfDkH5B0FHVNopihUPJWKlM+wWt2uh4oBUWwLLS7DWYW3W65SR7iCN8M7ykA9GCP2xm/Nb7kn3lJm
+	76dShh/1nZbO6facmfpExF34pDiT9tFUNpD9tSDVe0PVdeE10nw1ONrqqEdtc3Cha4Qymy5IzTgoT
+	YFaVvuAyFkRT0aMG9uDo3kxLSGRokxzTrulL6ztMg8IRi12l2ATd/a0WyurH1b3LhBoudSZzBRrHX
+	y/IX8/Y1F9eUFPq2S1qD7zyjtc8WrP5KD+bqsWcCnx0kN4AwIMVyGped50Vhmnmc8z83J1LD8vXtM
+	f+T9Z9VNsuOLQ/vQIVAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZpGM-0000000Bblg-3pV2;
-	Thu, 10 Jul 2025 11:16:26 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uZpkw-0000000Bfib-0BrZ;
+	Thu, 10 Jul 2025 11:48:02 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZnoy-0000000BNMa-1SnW
+	id 1uZoT4-0000000BTW3-0WyC
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Jul 2025 09:44:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 644615C6C0F;
-	Thu, 10 Jul 2025 09:44:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01BF7C4CEE3;
-	Thu, 10 Jul 2025 09:44:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752140643;
-	bh=OU/QsfAeucBR7oxpGsODCpofrzQWdr3cYK9kvHOY4ZY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pvzNd9W7F14LZ3NMVuHlyMTdYHIrwMlvFjwNtGXVr4y167/5oI1u7CcdXC/sjHx71
-	 hUQtWyFvsO9ZuR2nf10JExVRH+94fBSNGCHWwJ+42/sl9pTzeEnvcGMoFQY2k2JRu0
-	 z4SqFNbCK1nBpztddMsK1cV97KkcJz/xxpxctuMFxXGDMP00Oe3P+r5z7Z7QSBMuiH
-	 BmPTJaERj5540O+cAS0L8YzdbfBiwglRH+jR470UksWJGPCZApPAwTlygv0mdGphjj
-	 kcDiEe0VAJsfOx42rnaiIei/vb6JzitZnmxk5ceHRQ/S+cfYqqpZnF9U2/gGTecjCb
-	 tUdHzPBAIN1yA==
-Received: from johan by xi.lan with local (Exim 4.97.1)
-	(envelope-from <johan@kernel.org>)
-	id 1uZnop-000000007hu-3HaY;
-	Thu, 10 Jul 2025 11:43:55 +0200
-Date: Thu, 10 Jul 2025 11:43:55 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-	kw@linux.com, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com
+	Thu, 10 Jul 2025 10:25:31 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56A8kAKU016804;
+	Thu, 10 Jul 2025 10:25:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	1q0jGZCotwRtBVi9Aa70CLuH18o7Rq0YgwEDCowVdiI=; b=R1DYcAdGBOka5kQf
+	dR1Y6DcyRnhF3EDfh74/NWthtnfrOLl13OK9dWLgRCgJuP9ZUK3d4xYu3Z1eTCCP
+	nq1QDZle87zvvbbYZHSPwqsBgr/1Ha9keG5vsVYgLQGqF7+6rUuf/q5sAhgADUVa
+	oQnEp+X55NsM7HS5fLuPYXx+DmaMLDjz6LhpnP8Nts6o5pDmgUcKSj2dqIz2U/xD
+	8DAg3mAvGIhd+oAWMS++crbhILAl9uBENXYPjemLWcQTbYQJh1HO2q29dHdDyxP5
+	LctrbFLhVJZtlkFTlhQJ2NGCyPRgwb6dwiromfbaCrBSKSJszb0PhCBMbCMhj+2C
+	ipdsKg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47smbnvjfn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 10 Jul 2025 10:25:16 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 56AAP7Yo032077
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 10 Jul 2025 10:25:07 GMT
+Received: from [10.253.75.243] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 10 Jul
+ 2025 03:25:00 -0700
+Message-ID: <4f963fcc-2b92-4a01-93a4-f0ae942c1b6f@quicinc.com>
+Date: Thu, 10 Jul 2025 18:24:57 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 3/4] arm64: dts: qcom: sa8775p: remove aux clock from
  pcie phy
-Message-ID: <aG-LWxKE11Ah_GS0@hovoldconsulting.com>
+To: Johan Hovold <johan@kernel.org>,
+        Konrad Dybcio
+	<konrad.dybcio@oss.qualcomm.com>
+CC: <andersson@kernel.org>, <konradybcio@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <jingoohan1@gmail.com>,
+        <mani@kernel.org>, <lpieralisi@kernel.org>, <kwilczynski@kernel.org>,
+        <bhelgaas@google.com>, <johan+linaro@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <neil.armstrong@linaro.org>,
+        <abel.vesa@linaro.org>, <kw@linux.com>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <qiang.yu@oss.qualcomm.com>,
+        <quic_krichai@quicinc.com>, <quic_vbadigan@quicinc.com>
 References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
  <20250625090048.624399-4-quic_ziyuzhan@quicinc.com>
  <25ddb70a-7442-4d63-9eff-d4c3ac509bbb@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <25ddb70a-7442-4d63-9eff-d4c3ac509bbb@oss.qualcomm.com>
+ <aG-LWxKE11Ah_GS0@hovoldconsulting.com>
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+In-Reply-To: <aG-LWxKE11Ah_GS0@hovoldconsulting.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzEwMDA4OSBTYWx0ZWRfXx6u/93p3/wSe
+ gmB5E7RkHIwssuQY8Ga0spaR3+9/JDEBNrEg1pA3W+uuhNQmDvMV5JPHwUPn1eXx2Wys/010R6d
+ urXqbJluJg6Clw2r4gEjBTuAOkFcZhc7t9gQsuWOCVXXBk69iGfiXbd5uGhpKRD8KFO7/i/+GzM
+ 5wOaFCQxeMHJqA2n6Y0eN8tpSmec/wtiIMUAk0aAXoLSektSToZBkJwF2kZHU6k3QrYB0m5FgT6
+ 3y+S1wTpSqi+yaWkNQmLBtmV/9BY/n5qW6Dn6979GuAAlG8Fnw2eOzUe2gW+j8tJKVF4p4A1DB/
+ XzSKj7ydm++4LG6OMfyVsKMJFmMaQ3yElo1e+2WlWvmBTe90SVJ8ampvIBJoQN2ZqrJ4lIS2S2X
+ 8YOheIgNK0D1IyQZehpLl1Qi1cRrjsUoXULe0KONg1hWJqIAciNm6LstuePNr4QHSO9qKOqF
+X-Authority-Analysis: v=2.4 cv=QM1oRhLL c=1 sm=1 tr=0 ts=686f950c cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10
+ a=EnfF8tveDwBOVxb-o-4A:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-ORIG-GUID: Rsc-n-n6tRHAxd-CNuI8U1R0DAQDFAUn
+X-Proofpoint-GUID: Rsc-n-n6tRHAxd-CNuI8U1R0DAQDFAUn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-10_02,2025-07-09_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1011 impostorscore=0 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 priorityscore=1501 bulkscore=0 adultscore=0 mlxscore=0
+ phishscore=0 mlxlogscore=999 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507100089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250710_024404_432464_A5F89A5E 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20250710_032530_175559_6137745D 
+X-CRM114-Status: GOOD (  12.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,27 +118,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 27, 2025 at 04:50:57PM +0200, Konrad Dybcio wrote:
-> On 6/25/25 11:00 AM, Ziyue Zhang wrote:
-> > gcc_aux_clk is used in PCIe RC and it is not required in pcie phy, in
-> > pcie phy it should be gcc_phy_aux_clk, so remove gcc_aux_clk and
-> > replace it with gcc_phy_aux_clk.
-> 
-> GCC_PCIE_n_PHY_AUX_CLK is a downstream of the PHY's output..
-> are you sure the PHY should be **consuming** it too?
 
-Could we get a reply here, please? 
+On 7/10/2025 5:43 PM, Johan Hovold wrote:
+> On Fri, Jun 27, 2025 at 04:50:57PM +0200, Konrad Dybcio wrote:
+>> On 6/25/25 11:00 AM, Ziyue Zhang wrote:
+>>> gcc_aux_clk is used in PCIe RC and it is not required in pcie phy, in
+>>> pcie phy it should be gcc_phy_aux_clk, so remove gcc_aux_clk and
+>>> replace it with gcc_phy_aux_clk.
+>> GCC_PCIE_n_PHY_AUX_CLK is a downstream of the PHY's output..
+>> are you sure the PHY should be **consuming** it too?
+> Could we get a reply here, please?
+>
+> A bunch of Qualcomm SoCs in mainline do exactly this currently even
+> though it may not be correct (and some downstream dts do not use these
+> clocks).
+>
+> Johan
 
-A bunch of Qualcomm SoCs in mainline do exactly this currently even
-though it may not be correct (and some downstream dts do not use these
-clocks).
+Hi Johan
 
-Johan
+After reviewing the downstream platforms, it seems that GCC_PCIE_n_PHY_AUX_CLK
+is generally needed. Would you mind letting us know if there are any platforms
+where this clock is not required?
+
 
 -- 
 linux-phy mailing list
