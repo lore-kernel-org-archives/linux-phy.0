@@ -4,63 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41B20C83F0F
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 03:32:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80BE8C83F09
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 03:57:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=6sdvOe/I/OQmlXGFHpKs6AM6dmVRQwjwJ14wkb2xfPI=; b=kzBAz7Tkn8WIxHgu3XIzKO2/wi
-	KilbVeimVB89L/5ENkk0GuRJ4pqvwF9ReHRXh5+nhnhsmrAOeOPn8wOh48doScNcNpJGtwodK0Qb2
-	MtmoXLgbHedVOn71SjC8urJFjwK8JgbKuOOz/qqSDjv8CQAhdG5M8mKvVM4+iOGr0CQaMzuyMECmE
-	OfDrgQjOqbdG9hmjnXSa1I3O+s3I9M2hIuliKqXWeRnHjk3lhIcqKWR9XShef07Ob8lPoDNRh7sBd
-	jJN/6uqSqETOxux51Ftcvyb3EWL+PYoIdfptW76wNwvEkUOpj/h0qMLu4SqI9fHzGixZ1SCp+P3h6
-	9Yuihfpg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uz0KreAlNSYcAaYQ6YWTRX9oLCrB48jO+Dt4qz6AwjE=; b=fD+OwxJm+oKudQ
+	+P1dcpVFmPi3ocdStQruWV2tNptEyNocNoisB9HlTPAgkh3f69cI2tu6i5LGPHLj3dnDSqGszM55T
+	HqLzu6aAUVAE/oImkJhxP4I0NCI4Sv3oCGTuC0TCvQFgZrcIGpGKWnZNe52WQbSJ8BTKXoScso8Qm
+	AOI5dbD1DqZwgLjnzQyT5zAz3GVNQL/moIE55OvUqgAEXejOwXFNhpXbTV+TeF7ctJSza0vwtpNPF
+	h4RCMlnHsBSQRLRIoCcowZIC2m9bvou6UfDRpYv6Yk2BPSjgk6SxGIbCWgsJTZBtH5wvU3KDzUkFJ
+	dSGwgu7oAzhv5hSe/lJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZi1L-0000000AaMa-2jcs;
-	Thu, 10 Jul 2025 03:32:27 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uZiPN-0000000AcyJ-0jiw;
+	Thu, 10 Jul 2025 03:57:17 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZi1J-0000000AaMC-0G7S
+	id 1uZiPK-0000000Acwd-2O9t
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Jul 2025 03:32:26 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id EDE89A53DB7;
-	Thu, 10 Jul 2025 03:32:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21A33C4CEEF;
-	Thu, 10 Jul 2025 03:32:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752118343;
-	bh=oxGPO90kQ8j+s8Nl8EgW9xfp03BNzI52lv+hwW5eeqI=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=hAoVTWu32BeoY6rMDV1LAW6x1InCW45cEMjW3Ok3rX1vaXaAkfIybTgrZQ6DrfF0C
-	 yK/0L8ipNICEfa/yzlJHR1Tb7iWiq42J6Ca77rFmVkfWZrqq2qlR28KIArzhoFS/zr
-	 94/tTOFTfGlTuYtNaaPkD3un3cdGZyEZqglmlHu7gRSAM6A78M5O6ICyedni4N9DpP
-	 fqTLhR+jt9PlLmKZC11MK5d9So7/BF4z11ZtMhF1z+qvTGhno21FD6eqmOV9YwdznQ
-	 rt5dVkeV6vjfS4JDzs/VVYakb8x94IE3zrb1e8qujyJ/VDt+rr2ovWlCRslG2La/db
-	 0lwpKxUzAHzWA==
-Date: Wed, 09 Jul 2025 22:32:22 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-kernel@vger.kernel.org, vkoul@kernel.org, anishkmr@amazon.com, 
- krzk+dt@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, 
- jyxiong@amazon.com, miguel.lopes@synopsys.com, kishon@kernel.org, 
- linux-phy@lists.infradead.org
+	Thu, 10 Jul 2025 03:57:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=w8RbPakBVAz7CqYIFMfUsbKRS9boYM5qvG0znqDuRuwutzVr+x7PsKlGefYmRE0EaahSeaNMtfmFDfnQpoUy0QDNmVxRm4Ach9sGpa+0if9U5cQg/qhxUal9ndf90zUoybuurxPL8mVw4/9LGAsZ6KtYEPIEH0FYVsoJ0NjWWk3a9MAGQ0mWeh4axCXJTyKw6pt8RDzMJRMAUne6xRrh/nkdIRkH+GTfkiUQxRe1KFa+TVurUETPEaYm3fwdclELXpR2svNkmkDHMogr4v21vsQrE+GcXMNrYkGhBPL1VQBbgC3HD0+oaDfPVvxRQeX9Y+uE90/RviypQqdGLUJ3Ow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0uE94xv/gbYL+JOToHWjh7/X9GZzMXtUvl35QJfWLBo=;
+ b=wUpaITfVcP+blWRSgR1FOrnKYiViVt+hrcsrSvY48TJw/Uksb4atNuVXJBGFpwd1jpWI9VBSaV6AhFXRUS4BZgqaZ+itblsx/hqGZiyNjR/1gpbgHxVRBRk/Z3fZ0lYx32iw2v1rjhbg7ZaPiLMvP8Pe7HIR4wR64U7znLH6wwE3X+u7W1cSmTq2QtDnRZ6ndcUWD7pEl6fVsPL/bFgVtUwVGLCwXGf8MPc6+FVW62mIG8qpC1pXBrH7tTHNUJHBfIqTazqokbhXR71DjMW2WyunUV7aUhOmyKGjmzrLCJRvJEq5JVrx0Cr30cBQEJ6hyRdA4zmUtMXKXGPrEi9vtg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0uE94xv/gbYL+JOToHWjh7/X9GZzMXtUvl35QJfWLBo=;
+ b=QWVF9nYrV980J99Sc7FxGypsPD11fFXcHrXJ3VBYDDSTOMh8e8XIcFEItSM4ZRfeQNWtPIWYKZgGLD2TOca2vVOCsB2RR2xxA4i/UhZnsrUsknBWgFlzdSntFV/EIHw4+qMUqUZ/PsF1J85srQkjtP2Hk6ut4lnhb6jsa/HkJ3Z6VR8B7uC/maR7NBbRabu8XkVLPvnGuaPADNYTwSS5LMOLkHOCxm6W7oJZ0UoQC9+uEK2MOW73qmOTuZxfc99zBzop28AxvkrqjIuj7gbiG0JlNBQHR8mZFM0RjFV32ZS5PKCTdysMS9PGQWvsPsnr1C9/PxDiQ/9oQlfmrjoncg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by VI1PR04MB7072.eurprd04.prod.outlook.com (2603:10a6:800:12c::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8901.28; Thu, 10 Jul
+ 2025 03:56:54 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8901.023; Thu, 10 Jul 2025
+ 03:56:54 +0000
+Date: Wed, 9 Jul 2025 23:56:49 -0400
+From: Frank Li <Frank.li@nxp.com>
 To: Karthik Poduval <kpoduval@lab126.com>
-In-Reply-To: <7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com>
+Cc: jyxiong@amazon.com, miguel.lopes@synopsys.com, anishkmr@amazon.com,
+	vkoul@kernel.org, kishon@kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 0/2] Synopsys DW DPHY Driver
+Message-ID: <aG86ATqLZOPMo131@lizhi-Precision-Tower-5810>
 References: <cover.1752106239.git.kpoduval@lab126.com>
- <7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com>
-Message-Id: <175211834224.541763.16377287764717313428.robh@kernel.org>
-Subject: Re: [PATCH v2 2/2] phy: dw-dphy-rx: Add dt bindings for Synopsys
- MIPI D-PHY RX
+Content-Disposition: inline
+In-Reply-To: <cover.1752106239.git.kpoduval@lab126.com>
+X-ClientProxiedBy: AS4P251CA0019.EURP251.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5d3::7) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|VI1PR04MB7072:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4b1addcb-5620-4dc8-6d59-08ddbf65cf22
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|52116014|7416014|376014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?vEDe4b/emGHUcfAXhshXHZt8Py9s9gV8ljKomlU3KJzvth8IUec1QzFGVtCP?=
+ =?us-ascii?Q?wb7uRaNjiALfXQKgL6rtteJfCyJoYSFRb9I67SyaqFLkYg4UKr8VAC+4gkRc?=
+ =?us-ascii?Q?28LjiGTTlS1bBulOOkZJlGjkln1lGlKarGsx29PgFqyzDy1BkY55BMr3Tw3b?=
+ =?us-ascii?Q?3gicDCayfjXBNPl/ezF/ToVNdpMxkC8FqtJgf05mXSGHyT9BeASmOHUyF1eI?=
+ =?us-ascii?Q?ZlWklnqG/DLRA1l1GKIO0pFWYLp/ZAIzMKAJIaogO1iuDkhayPU3G4hMxo9C?=
+ =?us-ascii?Q?VefHqTvJHTE5bgabplQnq+Ky8u1/+K9aWGPUosCKZYqs2w3yVTSqOD8NaYYw?=
+ =?us-ascii?Q?F2xnjLCLXqYtWir+Ik7OyEFqy8n1pCbid5hoccnUMDTsobVyOpxj1iJmUKKp?=
+ =?us-ascii?Q?Vx6xQWYCUB//3qwe/8q99bidFPvUVQ4LTO1OgFHXQERynlqz9Z/Y2LOlw6W1?=
+ =?us-ascii?Q?tV3pCG3F2XKmA4214w6bmWtz/bKOQaTXD/oB8EsDevKAHTOb7WJQcK9bZAiV?=
+ =?us-ascii?Q?4o9P4YT3oj9RowVqKpmMXoX7ac3Mmk/qi5cRzESkyXP6zkU3GciCwIrb0dTz?=
+ =?us-ascii?Q?zSdQ66uEIrFUOgVTZHCIQ1apX9Dy6r+aO2Dx9yYcgO0GRvEEK8pMRjebudkO?=
+ =?us-ascii?Q?m4ebM/mFfOUFLzbYWHM29gcTC5TxUTgfvBKRw/km7Z0TUqny2cLDS1VWlRt7?=
+ =?us-ascii?Q?kZcSqzqmnpZvbylPuDMA6+HoRYHR7WhGYjyz//tCQcunCymE75WfEkroXkg+?=
+ =?us-ascii?Q?P/zJPb7jTkYg/FNienTu6hkW9KilIeduxJTmeR3Qe8a/RDq0Sb2fcvHSrlYo?=
+ =?us-ascii?Q?kzFfLN3I+EtoYPDkMRllO/f8AJr1KjbWrUBaghmyr+sOvoS8G7JYLxWIBPhB?=
+ =?us-ascii?Q?RrtT2xpVcPINV4W0VyWKbMjV0YoVWbFAbMXwP+ATVs0B9KxxnuEqIA1+EQyJ?=
+ =?us-ascii?Q?OsyLZ9YCeja8VKC2ktEcNxiPnDsr2TsHOIvxBAfl3NfiOHxnHW+3t6krS1vl?=
+ =?us-ascii?Q?HEkjRerxbQWpoAtG1sVOCtTV/4+NRazamb5UcAKpOPP2VA4c/2asBdF05Wnq?=
+ =?us-ascii?Q?tEf98yKURwE5B9oMmpQwOK2ELsso4Z4OO/8zkMw6bvJamfpQRvidWwy1tjO9?=
+ =?us-ascii?Q?mHZIkEbFEN7ewzlzUMgkOb9R6aWck7Rch7S4mu4Yg33Ty0TWQdq+RXZRUWNB?=
+ =?us-ascii?Q?ysJ4qPKh3+NQsDlFdVUkFVO1C1p8nKtSIsXWVLXe3lSvg7UiQjUilss1VKqe?=
+ =?us-ascii?Q?QugJPOawJSn+jYcRJyBtz04ARyD9WbB9xqC/Zddi+54aF/Y6tAh0Ko4/53q4?=
+ =?us-ascii?Q?JEKJIzNsPU7GzxqMhXF/8Dzysy9kMakJbMIohhOaXGTvH37uctjdvTmp8Gd7?=
+ =?us-ascii?Q?gymqSvIZ4ratTUZgE79l3duNUUwt1Q7dHrSV6rPU4pgvlGy0zHCc2aLnrVAY?=
+ =?us-ascii?Q?MM3y4bRy//9NCC4Vhb0MoyapbGsEJa7Jr/jvrkeI7dT/mmEgWRkaiw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(52116014)(7416014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?BfKN4hkRUmOVNZhTWFA+y93ip3fCE1rNv3sTHxmYZY0SQttcuO0MhNQaUmUT?=
+ =?us-ascii?Q?Wc7XbkeXbCJQQ5FzhXf6hVv5c0mo3k6mI7/LnTXDVo6eyqyVXbBbeBK7vQBt?=
+ =?us-ascii?Q?qe3UB8TfcCnhn6A8w5+5+ncJwtG1dH7p/tI7qYO0YR5SLcUWf3r5AntkFojQ?=
+ =?us-ascii?Q?DPwMwYX9bjE8RVGAEvZ99il5Cwq14OWvGWhsIC8yFEJoneCNlUBiEUzw3DW+?=
+ =?us-ascii?Q?yWjWVH/TMMgOVcYnODOjqyPdkJ0i+kZndhyaqSFob8ePttXwdl+yQ9QMnasB?=
+ =?us-ascii?Q?D+yXtf4oJJlFj7lk5pu0IE+92rxQx6C2awzPzo9Epx27c94OIcp0Lm1h+Hdk?=
+ =?us-ascii?Q?zNes8pNMH6vN1EQzSUiT9qfw5Hwjh70SmqlMCmDalqwPC5zx4TclhlhiO4jK?=
+ =?us-ascii?Q?O2uGvUt+sdeogWB/c8wmnmLoaBuSEc6T6QSFyTQ13T6IUGdf4tcgz3SLFGdJ?=
+ =?us-ascii?Q?Rwmd80TvKVDhUAXVlPEno7giZCe9FbIuPyErr/cfvzIgbGGNHM/PVX5YiCVR?=
+ =?us-ascii?Q?okc5po0SNVs8K5FBbFGMGP/VZd0EYi7hmST7tOZrCyQQB9HkAc71jOanOSME?=
+ =?us-ascii?Q?smboF88BQGpzqb2LtqNBDOHWXRPLLm4cEQI5amDPJYFXSolZ0s1W99lb38ON?=
+ =?us-ascii?Q?/GABAfVGrq0uneWh4Jq4CeqI4wYKVeuh7fY5YDviQt3ehB3OkUA9Vxf0TaGP?=
+ =?us-ascii?Q?AX5Zel8Vox1/XUzQSd3Oj/mh/1/2vRXKYSYSCbhllI9vKmhd95xcygumLWCl?=
+ =?us-ascii?Q?42L602LS8uhoUA2m4X/Iyw/Ya25NY5vSn6o8BIAfUXuq9S5Xvk53HLzOaPOx?=
+ =?us-ascii?Q?0K0gqLA0alSSfG7HYg9R45+gyuMoc9rBI8GKuA9/yow8k+fMlkugj264kV5x?=
+ =?us-ascii?Q?RluOJD0eCOQMaj++FvrhBnJvYkYOblSmlRdtu9po2/4b7h8WFbZJZXsp6c/H?=
+ =?us-ascii?Q?RVu4P19OqBX3+HdSy/74vP7lKSl0ZYSAk1ZGZMt0fMLa4k4Pr9ihYs7qDsTz?=
+ =?us-ascii?Q?vaRdnbnllHN02mbh2BrJUj5eioGNsdWmziEzRWDkCDbhB7YQ9zv4wdxeN98h?=
+ =?us-ascii?Q?TYAL65RKHfsbNrVld95kSy4+n4ytijSqsPQT+/o2bCVyxi0Iez/uINhMuMBR?=
+ =?us-ascii?Q?0lIkYWtkGTQucft67TYW8VGBDhwL2c6kopEYojKOVbPTDjfS7u5ToD5qHvsY?=
+ =?us-ascii?Q?5OZ3cZoWCDHGSQxftmXkNmaY4Wzfp3Yek70c6TN+g+8Rl5MHKXfG/ZqSvbAm?=
+ =?us-ascii?Q?8Er9dzvJxlCiNGv7QLYBBkM5PRIbaSm9cHRuhTk2LHfVw6TE5gGsIuvmTavA?=
+ =?us-ascii?Q?zIUCwELhpZaDu/L5oDv1+aHKjC5YEZwZKaLnE7mnTY2vZR3w7b7JcF0+UqTm?=
+ =?us-ascii?Q?QJad38PDA6DTyLpmy0ArFhT/FHpzE/b+Owz24uaG59DtUif67R2ksk9vxpft?=
+ =?us-ascii?Q?7wQFOhM8doN4JedC/J0L+pExlCwsRvSVROjeGllDvRFsoCTJPjSpOVvPGf1/?=
+ =?us-ascii?Q?KG/xOSF9amzXRPiUG6pKiARTSJc77Lnuop08V+BAFNYkE00UiLiMi+iV802y?=
+ =?us-ascii?Q?2GUJB1tKznIN0GZKQP4=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4b1addcb-5620-4dc8-6d59-08ddbf65cf22
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jul 2025 03:56:54.6927
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ikkn3n6AAYTBs/zPI/r2dD5sNQOh/Xb6ELyG7yRVqYk+lR+ePPaE+hEAO67COr6F+AHnaZU971BxnKXX9ngK5g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7072
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250709_203225_173145_CA71A336 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250709_205714_607144_92BFCA7D 
+X-CRM114-Status: GOOD (  10.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,43 +158,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, Jul 09, 2025 at 07:42:19PM -0700, Karthik Poduval wrote:
+> v2: fix dt_binding_check errors
+>
+> Karthik Poduval (2):
+>   phy: dw-dphy-rx: Add Synopsys DesignWare D-PHY RX
+>   phy: dw-dphy-rx: Add dt bindings for Synopsys MIPI D-PHY RX
 
-On Wed, 09 Jul 2025 19:42:21 -0700, Karthik Poduval wrote:
-> Add DT Bindings for Synopsys D-PHY RX, presently tested on version 1.2
-> 
-> Signed-off-by: Karthik Poduval <kpoduval@lab126.com>
-> ---
->  .../bindings/phy/snps,dw-dphy-rx.yaml         | 44 +++++++++++++++++++
->  MAINTAINERS                                   |  7 +++
->  2 files changed, 51 insertions(+)
+Can you post patches or link, which use this phy?
+
+There were many attempt to try to support this PHY.
+
+Frank
+
+>
+>  .../bindings/phy/snps,dw-dphy-rx.yaml         |  44 ++
+>  MAINTAINERS                                   |   7 +
+>  drivers/phy/Kconfig                           |  11 +
+>  drivers/phy/Makefile                          |   1 +
+>  drivers/phy/phy-dw-dphy.c                     | 575 ++++++++++++++++++
+>  5 files changed, 638 insertions(+)
 >  create mode 100644 Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.yaml
-> 
-
-My bot found errors running 'make dt_binding_check' on your patch:
-
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/snps,dw-dphy-rx.example.dtb: dw-dphy@900000040 (snps,dw-dphy-1p2): reg: [[0, 2415919168], [0, 32], [0, 2415923200], [0, 8]] is too long
-	from schema $id: http://devicetree.org/schemas/phy/snps,dw-dphy-rx.yaml#
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+>  create mode 100644 drivers/phy/phy-dw-dphy.c
+>
+> --
+> 2.43.0
+>
 
 -- 
 linux-phy mailing list
