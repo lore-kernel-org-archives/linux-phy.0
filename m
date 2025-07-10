@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29EAAC83F1D
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 01:19:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E61F3C83F17
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 01:20:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iKuc7xJhcAWncaa5nztFCIWHKBVJFxW0ylyw0xaovEw=; b=qRZqDKZa/q8/DZ
-	A1l+pKrihWaxVIkxe1VBIn4Y4yWFscOhrE7lBE3HNnSn7Vtb5aWwtnYtc4RWvwZ5jp1NRoPOF1W5z
-	pfUnkq1WipLozZmcuh4Fiugxrq6RwCC5Lod6xrUZb9SvD6xMhki6nELRRYPxJk1cg1PVi9ROU/v6j
-	BMXIS7mUFSniloitMZBgFNcoPiVIWRlRnCGCV8C5JkroofmOTgfmVZUg6cB1R1VGhnOcIf2vjGcaz
-	xlY2pMtX71DSaeH8bBx3itFU425t9L5twzWsLWa5Obajwuw4HJP6cTPpALkItFa0TpHs0uK55lbjD
-	AN39/mQBjLoV8/bvaT/A==;
+	List-Owner; bh=zvPt2FGe5BpQjPQonHq9cZPoqcOvZ13N2A0pf86NL/k=; b=06H8fc+PBD8qmM
+	gSVAjhHtcX1UYWKGEyzEEMAPIV3SJtjTBVYWQYQv7gI7f0PaMX82d2jTButQw4Vi9plDyhlKk1W9c
+	gIL3cH1cRs3x8czJH4lYRf06qyzHEeoW0gC1bb14qsGg66WUk89i7L98E4Op4ilJRl99/qhZNfhLs
+	CYTuIBuUACiLMBDtkkfjypOsX+XD+fsigqaBfVs/w5SSokFAy5fX4w2QXUeMsLnBg1a035zVWmwa7
+	ykzjrt9angea5Fv3KCZyQo2eZnQer1p4DhLGdMkpmCPj6ndTopvQhJ/fc3o9mjSefHsaliDR30/nx
+	y2EU3NTYnjVwX1hi9Xeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ua2QL-0000000DQPd-2dyz;
-	Fri, 11 Jul 2025 01:19:37 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1ua2RC-0000000DRVx-2dRb;
+	Fri, 11 Jul 2025 01:20:30 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZzdW-0000000D9DL-24js
+	id 1ua0Nk-0000000DEUx-2lpQ
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Jul 2025 22:21:03 +0000
+	Thu, 10 Jul 2025 23:08:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id A69F4A548EF;
-	Thu, 10 Jul 2025 22:21:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 265EEC4CEE3;
-	Thu, 10 Jul 2025 22:21:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C0C986143B;
+	Thu, 10 Jul 2025 23:08:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E65FC4CEE3;
+	Thu, 10 Jul 2025 23:08:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752186061;
-	bh=7vOsASejqUANov9z3gdTadG0WWN2JSm8R2ZdKlBY8fc=;
+	s=k20201202; t=1752188927;
+	bh=v5cEblJiF+k/jXiSINmQRV8w5aE0inYcqN0Zq9PgItk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=io1hn25Pq7wRvQZv0SS7B3dW0ZKk3PdBbljT/aCgMnf0IPwwqtKIW63Ap8mDJjKGP
-	 RQkqa69yhifUXBfwfT9HkGC+jKe+g982qqKvbc4sS/0xbUFkDoJzAGOyO/IbZ9eD+F
-	 fzpbZNkj0+NNH8ykOShWxaR6IuYqoN00me4wTEjM2g6JMpj/wKmCMe53XrSQiT6qyz
-	 CoGjNwWME7IYQn2lOwdR1C6gAuKCe3By13RRUp59riT80jt2lFnebRxNY0vyYYoOCV
-	 DAWBcKOAs3JLY3HIOhPKsdrQJUTnqDZsC6xaYlgkBNZ1nI92/ZIYFsZcH4BLDKmfdx
-	 cGn4ijCFf78Fg==
-Date: Thu, 10 Jul 2025 17:21:00 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Conor Dooley <conor+dt@kernel.org>, phone-devel@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
-	~postmarketos/upstreaming@lists.sr.ht,
+	b=H8Yh71qMkAt17Nzl11tn+JVsq12nLOiVrKKoHXmP0+l8qxkG0vLvYLcV1FHAe8fCD
+	 1n1DxSSleOBA4NiD0ecfGQjyAqHSGBImgqoiwGnAiW3Qwi7HDEUKU5nXo4g8moXRAI
+	 eM8sbqD8NClIg+KmphRf3NVCMQjxpaIjG6HRKLC4ftHmTXQ1yVC8uTjozUd38CcOCo
+	 3ycPlS0vBEeqs9XntyFI2PDHjqQbvxP+cG09R8n4NeEfGzGRPsRl7y0Rmhg6s9IEUC
+	 DHh8zCEOUHChoY20Xg/4N7+f6fg7+1A/hwTqFXSLhv64/Xh/OYewn1fuuh2zcVBXQI
+	 lvkAmuzx3A6iA==
+Date: Thu, 10 Jul 2025 18:08:46 -0500
+From: Rob Herring <robh@kernel.org>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH v2 1/4] dt-bindings: phy: qcom,snps-eusb2-repeater:
- Document qcom,tune-res-fsdif
-Message-ID: <175218605943.4171086.4708337107584931560.robh@kernel.org>
-References: <20250709-sm7635-eusb-repeater-v2-0-b6eff075c097@fairphone.com>
- <20250709-sm7635-eusb-repeater-v2-1-b6eff075c097@fairphone.com>
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bryan O'Donoghue <bod@kernel.org>,
+	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom: Add MIPI CSI2 C-PHY/DPHY
+ Combo schema
+Message-ID: <20250710230846.GA44483-robh@kernel.org>
+References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
+ <20250710-x1e-csi2-phy-v1-1-74acbb5b162b@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250709-sm7635-eusb-repeater-v2-1-b6eff075c097@fairphone.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250710_152102_596292_B56F1887 
-X-CRM114-Status: GOOD (  10.41  )
+In-Reply-To: <20250710-x1e-csi2-phy-v1-1-74acbb5b162b@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,23 +78,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Wed, 09 Jul 2025 16:55:14 +0200, Luca Weiss wrote:
-> Document the FS Differential TX Output Resistance Tuning value found on
-> the eUSB2 repeater on Qualcomm PMICs. The tuning values have special
-> meanings, being different offsets of the resistance to the default value
-> in Ohms but the exact meaning is not relevant here, as the correct
-> tuning is determined by hardware engineers to make sure the electrical
-> properties are as expected.
+On Thu, Jul 10, 2025 at 05:16:47PM +0100, Bryan O'Donoghue wrote:
+> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+> PHY devices.
 > 
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> The hardware can support both C-PHY and D-PHY modes. The CSIPHY devices
+> have their own pinouts on the SoC as well as their own individual voltage
+> rails.
+> 
+> The need to model voltage rails on a per-PHY basis leads us to define
+> CSIPHY devices as individual nodes.
+> 
+> Two nice outcomes in terms of schema and DT arise from this change.
+> 
+> 1. The ability to define on a per-PHY basis voltage rails.
+> 2. The ability to require those voltage.
+> 
+> We have had a complete bodge upstream for this where a single set of
+> voltage rail for all CSIPHYs has been buried inside of CAMSS.
+> 
+> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
+> CAMSS parlance, the CSIPHY devices should be individually modelled.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
+>  .../phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml     | 95 ++++++++++++++++++++++
+>  1 file changed, 95 insertions(+)
 > 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..e0976f012516452ae3632ff4732620b5c5402d3b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml
+> @@ -0,0 +1,95 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm MIPI CSI2 Combo PHY
+> +
+> +maintainers:
+> +  - Bryan O'Donoghue <bod@kernel.org>
+> +
+> +description:
+> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
+> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
+> +  modes.
+> +
+> +properties:
+> +  compatible:
+> +    const: qcom,x1e80100-mipi-csi2-combo-phy
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Kind of long. CSI2 implies MIPI and is there a non-combo phy for the 
+SoC? Could drop either or both mipi and combo...
 
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  clocks:
+> +    maxItems: 4
+> +
+> +  clock-names:
+> +    items:
+> +      - const: camnoc_axi
+> +      - const: cpas_ahb
+
+These look like the source is included in the name. Is there more than 1 
+AXI and AHB bus for this device?
+
+> +      - const: csiphy
+> +      - const: csiphy_timer
+
+Module clocks should probably come first.
+
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  vdda-0p8-supply:
+> +    description: Phandle to a 0.8V regulator supply to a PHY.
+> +
+> +  vdda-1p2-supply:
+> +    description: Phandle to 1.2V regulator supply to a PHY.
+> +
+> +  phy-type:
+> +    description: D-PHY or C-PHY mode
+> +    enum: [ 10, 11 ]
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+
+Perhaps putting this in phy cells would be better because the consumer 
+decides on the mode.
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - vdda-0p8-supply
+> +  - vdda-1p2-supply
+> +  - phy-type
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
+> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    csiphy0: csiphy@ace4000 {
+
+Drop unused labels.
+
+> +        compatible = "qcom,x1e80100-mipi-csi2-combo-phy";
+> +        reg = <0x0ace4000 0x2000>;
+> +        #phy-cells = <0>;
+> +
+> +        clocks = <&camcc CAM_CC_CAMNOC_AXI_RT_CLK>,
+> +                 <&camcc CAM_CC_CPAS_AHB_CLK>,
+> +                 <&camcc CAM_CC_CSIPHY0_CLK>,
+> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>;
+> +        clock-names = "camnoc_axi",
+> +                      "cpas_ahb",
+> +                      "csiphy",
+> +                      "csiphy_timer";
+> +
+> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
+> +
+> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
+> +
+> +        vdda-0p8-supply = <&vreg_l2c_0p8>;
+> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
+> +
+> +        phy-type = <PHY_TYPE_DPHY>;
+> +    };
+> 
+> -- 
+> 2.49.0
+> 
 
 -- 
 linux-phy mailing list
