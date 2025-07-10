@@ -4,58 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3410C83F18
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 08:17:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95109C83F1A
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Jul 2025 08:38:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UMfYOSAAc32ytQhcoKJKkaEvZf/hbt2BijDi3AjvskE=; b=lYrCfAgIC3HzBU
-	rezSSO/1WhDOhbFTOqy+/BDvNlTXhpoMy2RzoO1eL4j8hjvpZSPC7HQzaGU41iRHjM9Qht1dg8eLT
-	LPlk3EqzFA/rTxviJwZJGrLQruT9SKohqdHnGnzt6aZ0uEgLWKy+KXrHv4Rvno4XDuY/1qTYFHdwv
-	7ZjEYzO1cKj2jDNriW7MKWxNJiHBCbQxSo509FmhwBlARLVnbjNSjxaasENtJA6xHiXK1RXZKliiQ
-	/vQCPsPmw2c75xu/IdLc4Gw6ae3Bvc+sFajAJ68WDJv9d62R2FBW53Er1iil8rwbzi/iJc8dWeRxu
-	En2S/pfUN1saj+kroA+g==;
+	List-Owner; bh=DPdltMq9MUc9nwa++U39DYEH5N3aFtqtAUU6b7J3Ywg=; b=RKEvF+3F20fJvv
+	sIKmSPbOu8l3G73WszTgZf+G/kr+Ie+RJ9hBGBZ+2fz3ls5X6PFzQ/TD+0GXZgPUChlnLJQsyioEB
+	kw+WEX2MpabMnLNr5yVnqPwHIugKSWCC7vOPswh65BDTx3HGkcUChkVpJfsOJpcQxCMXMKmBxYMTp
+	eJ901JzkB2WX7/bHIHUtABfZsT8vT6+L11//woNhBOqSqeNAIAanvY1vtSqabUyF2A8OCIk/xNNQb
+	oI2rkOas0ffUBr0xB867t5xX+Wpm2KBPlni6obGqFf80aUCo2Tx63ArOAzsMYDVRuXkofR1tw3ijk
+	W1DK4+jrgpyxR8M3j5Rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZmSm-0000000B8w5-1Ies;
-	Thu, 10 Jul 2025 08:17:04 +0000
+	id 1uZmnY-0000000BCth-13yR;
+	Thu, 10 Jul 2025 08:38:32 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZlfS-0000000B09R-3GQQ
+	id 1uZlh2-0000000B0TD-1CtY
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Jul 2025 07:26:06 +0000
+	Thu, 10 Jul 2025 07:27:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D81756146A;
-	Thu, 10 Jul 2025 07:26:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05D63C4CEE3;
-	Thu, 10 Jul 2025 07:26:04 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B84D86146A;
+	Thu, 10 Jul 2025 07:27:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD582C4CEE3;
+	Thu, 10 Jul 2025 07:27:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752132365;
-	bh=S8zzqP7m8nDKjbkX5GeKEnyhQD//kGc7olrVD3SohzA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rB+FnS+NgGqBg7cfEhioIsVnv9NflbSh5+zGFkD7Q5AgHl9IJEWfX3+5wZQxvziiw
-	 wNxrOF5iE7oWRaZgbznYwWp7XMTAF6kH5htQsgEaN07x4jmt6PVhn6/duqO7Z2VDgq
-	 zMSKeMEWs7ZaumQHdsoDFlSFUuUcm7UCrI35ch8VQud98CT1DE7r1ecTnh5NPO+EgE
-	 6hyLP4kEPWPb51HRxlZtEZQgFce2WzGPYVar3OHUfA0gwQm/FJGrW0aubh2SwJ0H1O
-	 zy8tYOCpQNxpA4blXYUjXYxPc7lavF507PopQIhvqN+AGW3ofXYmSAbW5aV+rUgan0
-	 gfV8l3glDHnaA==
-Date: Thu, 10 Jul 2025 09:26:02 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Karthik Poduval <kpoduval@lab126.com>
-Cc: jyxiong@amazon.com, miguel.lopes@synopsys.com, anishkmr@amazon.com, 
-	vkoul@kernel.org, kishon@kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] phy: dw-dphy-rx: Add Synopsys DesignWare D-PHY RX
-Message-ID: <20250710-sly-rigorous-silkworm-6d67ea@krzk-bin>
-References: <cover.1752106239.git.kpoduval@lab126.com>
- <2383f8cf2a8f5e1b914d4cf9bd11674ed55876d2.1752106239.git.kpoduval@lab126.com>
+	s=k20201202; t=1752132463;
+	bh=h0YebiovxpRIuIh1HXoEbATEl+USKNW/WUZh+lkGt24=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=QYrhwPeIk52TGbe1CHNZGTXI+8TkNU2DpmSCx+zDkvuT/Th/I3Vx9M+7O5zeC3A3y
+	 TezKgsmv4Plqd53D+QkUEr2b1AXl67HT29XG+5Eu+OjNYeKMUyhLmPGyIAMlnY3rqf
+	 xysmxvWnSdt4y/Bnh0ITXg+rvPnSpcsyZ2i+Pa2+CG3UrBpVGdVwFXBAPORdpq7lwV
+	 I27v9Ylg6zNvDZeXXNE1qv3etzvo40QvzQsZnSkB77Lqds5p99MW7jogVZhD0PHou5
+	 V3VxlZNlvir+asX/L2OUTOnWvx3QyFN+XCrBRShvY0TBBgmlVukYWqJsESu/qJkzcM
+	 yYO9hpxvI1Nwg==
+Message-ID: <6cc6ea6e-fd81-4886-97e2-4d977afea848@kernel.org>
+Date: Thu, 10 Jul 2025 09:27:37 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2383f8cf2a8f5e1b914d4cf9bd11674ed55876d2.1752106239.git.kpoduval@lab126.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 2/2] phy: dw-dphy-rx: Add dt bindings for Synopsys MIPI
+ D-PHY RX
+To: Karthik Poduval <kpoduval@lab126.com>, jyxiong@amazon.com,
+ miguel.lopes@synopsys.com, anishkmr@amazon.com, vkoul@kernel.org,
+ kishon@kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, devicetree@vger.kernel.org
+References: <cover.1752106239.git.kpoduval@lab126.com>
+ <7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
+ QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
+ +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
+ ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
+ 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
+ hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
+ tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
+ 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
+ naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
+ hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
+ whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
+ qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
+ RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
+ Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
+ H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
+ dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
+ AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
+ jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
+ zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
+ XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
+In-Reply-To: <7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,147 +117,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 09, 2025 at 07:42:20PM -0700, Karthik Poduval wrote:
-> +static const struct regmap_config dw_dphy_regmap_cfg1 = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.name = "dw-dhpy-cfg1",
-> +	.fast_io = true,
-> +};
-> +
-> +/**
-> + * dw_dphy_regmap_cfg2 - Register map configuration for DW DPHY
-> + * @reg_bits: Width of register address in bits (32)
-> + * @val_bits: Width of register value in bits (32)
-> + * @reg_stride: Number of bytes between registers (4)
-> + * @name: Name identifier for this register map
-> + * @fast_io: Flag to indicate fast I/O operations are supported
-> + *
-> + **/
-
-Drop
-
-> +static const struct regmap_config dw_dphy_regmap_cfg2 = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.name = "dw-dhpy-cfg2",
-> +	.fast_io = true,
-> +};
-> +
-> +/**
-> + * dw_dphy_probe - Probe and initialize DW DPHY device
-> + * @pdev: Platform device pointer
-> + * Return: 0 on success, negative error code on failure
-> + *
-> + **/
-
-Drop
-
-> +static int dw_dphy_probe(struct platform_device *pdev)
-> +{
-> +	struct dw_dphy *dphy;
-> +	struct resource *res;
-> +	struct device *dev = &pdev->dev;
-> +	struct phy_provider *phy_provider;
-> +	int ret;
-> +
-> +	dphy = devm_kzalloc(&pdev->dev, sizeof(*dphy), GFP_KERNEL);
-> +	if (!dphy)
-> +		return -ENOMEM;
-> +
-> +	dphy->dt_data =
-> +		(struct dt_data_dw_dphy *)of_device_get_match_data(&pdev->dev);
-> +	dev_set_drvdata(&pdev->dev, dphy);
-> +	dphy->dev = &pdev->dev;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	dphy->iomem_cfg1 = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(dphy->iomem_cfg1))
-> +		return PTR_ERR(dphy->iomem_cfg1);
-> +
-> +	dphy->regmap_cfg1 =
-> +		devm_regmap_init_mmio(dev, dphy->iomem_cfg1, &dw_dphy_regmap_cfg1);
-> +	if (IS_ERR(dphy->regmap_cfg1))
-> +		return PTR_ERR(dphy->regmap_cfg1);
-> +
-> +	ret = devm_regmap_field_bulk_alloc(dev, dphy->regmap_cfg1, dphy->rf_cfg1,
-> +					   dw_dphy_v1_2_cfg1, DW_DPHY_RF_CFG1_MAX);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Could not alloc RF\n");
-> +		return ret;
-> +	}
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-> +	dphy->iomem_cfg2 = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(dphy->iomem_cfg2))
-> +		return PTR_ERR(dphy->iomem_cfg2);
-> +
-> +	dphy->regmap_cfg2 = devm_regmap_init_mmio(dev, dphy->iomem_cfg2,
-> +						 &dw_dphy_regmap_cfg2);
-> +	if (IS_ERR(dphy->regmap_cfg2))
-> +		return PTR_ERR(dphy->regmap_cfg2);
-> +
-> +	ret = devm_regmap_field_bulk_alloc(dev, dphy->regmap_cfg2, dphy->rf_cfg2,
-> +					   dw_dphy_v1_2_cfg2, DW_DPHY_RF_CFG2_MAX);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Could not alloc RF\n");
-> +		return ret;
-> +	}
-> +
-> +	dphy->phy = devm_phy_create(&pdev->dev, NULL, dphy->dt_data->phy_ops);
-> +	if (IS_ERR(dphy->phy)) {
-> +		dev_err(dev, "failed to create PHY\n");
-> +		return PTR_ERR(dphy->phy);
-> +	}
-> +
-> +	phy_set_drvdata(dphy->phy, dphy);
-> +	phy_provider =
-> +		devm_of_phy_provider_register(&pdev->dev, of_phy_simple_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +/**
-> + * dw_dphy_of_match - Device tree match table for DW DPHY
-> + * @compatible: Compatible string to match device tree node
-> + * @data: Pointer to configuration data for matched device
-> + *
-> + * Table of compatible strings and associated configuration data
-> + * for supported DW DPHY variants.
-> + * Currently supports:
-> + * - DW DPHY v1.2 ("snps,dw-dphy-1p2")
-> + *
-> + **/
-
-Drop
-
-> +static const struct of_device_id dw_dphy_of_match[] = {
-> +	{ .compatible = "snps,dw-dphy-1p2", .data = &dw_dphy_1p2 },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, dw_dphy_of_match);
-> +
-> +/**
-> + * dw_dphy_platform_driver - Platform driver structure for DW DPHY
-> + * @probe: Pointer to probe function called on device discovery
-> + * @driver: Core driver structure containing:
-> + *         - name: Driver name used for matching and debugging
-> + *         - of_match_table: Table of compatible device tree matches
-> + *
-> + **/
-
-Drop all such useless generic kerneldocs. Not helpful. Keep useful ones,
-so ones not saying obvious parts of core
-
-
-> +static struct platform_driver dw_dphy_platform_driver = {
-> +	.probe		= dw_dphy_probe,
+On 10/07/2025 04:42, Karthik Poduval wrote:
+> Add DT Bindings for Synopsys D-PHY RX, presently tested on version 1.2
+> 
+> Signed-off-by: Karthik Poduval <kpoduval@lab126.com>
+> ---
+>  .../bindings/phy/snps,dw-dphy-rx.yaml         | 44 +++++++++++++++++++
+>  MAINTAINERS                                   |  7 +++
+>  2 files changed, 51 insertions(+)
+Please use subject prefixes matching the subsystem. You can get them for
+example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
+your patch is touching. For bindings, the preferred subjects are
+explained here:
+https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
 
 Best regards,
 Krzysztof
-
 
 -- 
 linux-phy mailing list
