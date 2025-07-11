@@ -4,75 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35FF3C8303C
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 09:00:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 826B2C8303C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 09:26:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7OkG6lFrJxLGXN2PNtcWO5l9Rr0InTzR8aO2RINsRRA=; b=QsTBsGbzI0C7kx
-	DU9pmk2RNfOOJ9SvqQzh8/43m1eqU1ROmDDAc5rgItA8DluUe5wibPmfJBUgjHB8Qc5hC8err0jGs
-	k/qhlpaag65zYJtLM/irmfKFllwWIUuCUva60XzH85KC3FzWVDsyxe+1HczlVhki8OD282hkzthLa
-	YGoDn4UG+/WBAqrzCsF0+h3LFvQXq4l6J7E3gLR0RG4Y1ku5sIDqRdFTTJd0MHmYGI3gZZbVguADv
-	9XlQqfTdDXPdtk95mTTLrsNa8ZQjomAEBhdHrV1Qe9xlh1tIWGd7Zc2S+yTmZALhdKHS6opZ8Z8tW
-	s6aS6KaHLKtRci+sCRcQ==;
+	List-Owner; bh=UZR6pDfJCEvkykL+Q/Rth80sFqPBVIQHYMUFVxPKnfQ=; b=d+Lgwat/gsUFCs
+	ZOUTC2ogIH42vmN27gJ69YtEyHuks2uYt4jP00+1mcoU7gJnoHgYKD+OpZPg5lForSusZr5NWNKm7
+	h2h8G1cjPfyPOfMh1nR7Ve+0+ekuW/1+rL/suPOoBi3DZIcuvP5wFiEYJjmqq2g0vpt6E1DBH4ZL9
+	vRnjIij/8qciQsJklBOeE02lha9QunoBzthAFykOZaNlwpF9BFBNZus+MBlyb4oUYyOAsdvokEP3+
+	k4ubpJUH2eV0P1V9+DXK5lE+cKddGAEBKANbcOgPY1zDG8Ggl89UcmtQX5XkDUeAKe4s3zrha2pbt
+	EPJ82pmOVwLp/Ngyayzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ua9c4-0000000EEzI-3rWc;
-	Fri, 11 Jul 2025 09:00:12 +0000
-Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
+	id 1uaA1a-0000000EIfm-0kMH;
+	Fri, 11 Jul 2025 09:26:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ua8sS-0000000E60X-25EN
+	id 1ua95U-0000000E85C-23NI
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Jul 2025 08:13:05 +0000
-Received: from fllvem-sh04.itg.ti.com ([10.64.41.54])
-	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 56B8Cgee1984752;
-	Fri, 11 Jul 2025 03:12:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1752221562;
-	bh=WMD3xrgiF98me+Yp3/1SVavZPEcDUvxBFb64BI/zS2w=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=P32IEVOyFAD8NZJz9gZyCjxXBR4MF9E8XCNrJ3VTWPqXR+a+tZNRbATgglGDDBqj7
-	 BP+mvEd9w7r/CMoBxuwFWupEgf7iMndyTUiUK+x2nG+DWdWddJIdWEt6KtvDRWksWz
-	 SKNv9ynD6HGEk3a0ZY+CCGFeeXK6WTTiQBjhVozk=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
-	by fllvem-sh04.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 56B8Cg1J126244
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Fri, 11 Jul 2025 03:12:42 -0500
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Fri, 11
- Jul 2025 03:12:41 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Fri, 11 Jul 2025 03:12:41 -0500
-Received: from [172.24.227.12] (hkshenoy.dhcp.ti.com [172.24.227.12])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 56B8CbQ33138235;
-	Fri, 11 Jul 2025 03:12:38 -0500
-Message-ID: <c2576c2f-2e19-40e8-bfea-27cf0acdc686@ti.com>
-Date: Fri, 11 Jul 2025 13:42:37 +0530
+	Fri, 11 Jul 2025 08:26:33 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56B1XMje030881;
+	Fri, 11 Jul 2025 08:26:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	kxzoflC2PyKGhcEfEIOuEh5rgftPwliDdjfw5NgFuU4=; b=TbTHVDSlVIdL0pOS
+	A1tajtm+R98duCnbPURH8uGzs0Pdylf8dGmzrCMxjFOQzH71IzKhEY/Pv5bRLgMq
+	bceHEsRdAj10hgLelKdc6Aaj8itTfuFn3ePvBcOLFudR+fFJkBr0OUAO6kJFrl8G
+	4DHzfHxfq4GcpgVzeJdvDt9J+bQUTHojYnBeSJPD1ibLvlHBS7v8Sf9jqlwFfnXk
+	IxcwrZ6xui0y7bt0Uyf2HvZlMoy1KjRmc52O3UkQXWeY/YoB4xpOHGyK7/CEpR/8
+	bJHzQ2ZbF3bim/t+gS1hV5WXuEZMZc7KIOCWg7QFHreJHSvmm8frxAuhX0Ja6yPo
+	39vHig==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47smbeqwh1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 11 Jul 2025 08:26:25 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 56B8QOIR030866
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 11 Jul 2025 08:26:24 GMT
+Received: from [10.253.32.112] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Fri, 11 Jul
+ 2025 01:26:17 -0700
+Message-ID: <ff2fb737-a833-474d-b402-120d4ed68d39@quicinc.com>
+Date: Fri, 11 Jul 2025 16:26:14 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: cadence: cdns-dphy: Update calibration wait
- time for startup state machine
-To: Devarsh Thakkar <devarsht@ti.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-CC: <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>, <r-donadkar@ti.com>,
-        <tomi.valkeinen@ideasonboard.com>, <j-choudhary@ti.com>,
-        "Shenoy,
- Harikrishna" <h-shenoy@ti.com>
-References: <20250704125915.1224738-1-devarsht@ti.com>
- <20250704125915.1224738-3-devarsht@ti.com>
-Content-Language: en-US
-From: Harikrishna Shenoy <a0512644@ti.com>
-In-Reply-To: <20250704125915.1224738-3-devarsht@ti.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Subject: Re: [PATCH v3 2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document
+ link_down reset
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <andersson@kernel.org>, <konradybcio@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <jingoohan1@gmail.com>,
+        <mani@kernel.org>, <lpieralisi@kernel.org>, <kwilczynski@kernel.org>,
+        <bhelgaas@google.com>, <johan+linaro@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <neil.armstrong@linaro.org>,
+        <abel.vesa@linaro.org>, <kw@linux.com>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <qiang.yu@oss.qualcomm.com>,
+        <quic_krichai@quicinc.com>, <quic_vbadigan@quicinc.com>
+References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
+ <20250625090048.624399-3-quic_ziyuzhan@quicinc.com>
+ <20250627-flashy-flounder-of-hurricane-d4c8d8@krzk-bin>
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+In-Reply-To: <20250627-flashy-flounder-of-hurricane-d4c8d8@krzk-bin>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzExMDA1OCBTYWx0ZWRfX+z+r8++6epTR
+ gw99rxcdGSc64xZ+vTz1TjkJ8/bMBlMR8RtYJV9glCN8JaGMcFNpxYiRE/cGXzSuNOYL271vkr9
+ 6l32XhIM2SZrS1i1cDEjrs8LPgTOOdQrEY6NfxOHC7n6MNBKNiguGzSr+Uy7jY68YgQAQDoNaAu
+ UL+qOZIdqZ3joE9rh2T28dJlGE2Hzoid0MVomtBPikdH4GY1U/vQG9qwdvKP0XKIuGbBtGwpBPw
+ 5hCCvrJjgOiuWgNzsWK8HiT1UDbZY5fhmdREzp/9EEzBeYWx6pbUfBsv1UG9z4oeEkfr3r9brTV
+ JQrkA7ZzssGzP8saM47QMJD3/OscFocDJdThKDu58UHSzH5la3CFWhvuxW44kWrHsbkrqsjaUNE
+ JxF0CQpIT1ZIQJbN0jTnyBqXUNgCIky3ZNHV3PzWQ6jUQOcEmEE3ZYMZf4KGdj8FUnPQqhjo
+X-Proofpoint-GUID: SSkEo2SFQtZoMRhJ0ZK5FHDxqCxz770l
+X-Proofpoint-ORIG-GUID: SSkEo2SFQtZoMRhJ0ZK5FHDxqCxz770l
+X-Authority-Analysis: v=2.4 cv=VpQjA/2n c=1 sm=1 tr=0 ts=6870cab1 cx=c_pps
+ a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10
+ a=u5fknsGAV_5u-2U6WwMA:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-11_02,2025-07-09_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 malwarescore=0 suspectscore=0 clxscore=1015 impostorscore=0
+ phishscore=0 mlxlogscore=678 lowpriorityscore=0 adultscore=0
+ priorityscore=1501 bulkscore=0 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507110058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250711_011304_627550_D336066F 
-X-CRM114-Status: GOOD (  16.96  )
+X-CRM114-CacheID: sfid-20250711_012632_543280_B3DBFF4A 
+X-CRM114-Status: GOOD (  13.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,66 +120,34 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Devarsh,
 
-Thank you for the patch.
+On 6/27/2025 3:08 PM, Krzysztof Kozlowski wrote:
+> On Wed, Jun 25, 2025 at 05:00:46PM +0800, Ziyue Zhang wrote:
+>> Each PCIe controller on sa8775p includes 'link_down'reset on hardware,
+>> document it.
+> This is an ABI break, so you need to clearly express it and explain the
+> impact. Following previous Qualcomm feedback we cannot give review to
+> imperfect commits, because this would be precedent to accept such
+> imperfectness in the future.
+>
+> Therefore follow all standard rules about ABI.
+>
+> Best regards,
+> Krzysztof
 
-On 04/07/25 18:29, Devarsh Thakkar wrote:
-> Do read-modify-write so that we re-use the characterized reset value as
-> specified in TRM [1] to program calibration wait time which defines number
-> of cycles to wait for after startup state machine is in bandgap enable
-> state.
->
-> This fixes PLL lock timeout error faced while using RPi DSI Panel on TI's
-> AM62L and J721E SoC since earlier calibration wait time was getting
-> overwritten to zero value thus failing the PLL to lockup and causing
-> timeout.
->
-> [1] AM62P TRM (Section 14.8.6.3.2.1.1 DPHY_TX_DPHYTX_CMN0_CMN_DIG_TBIT2):
-> Link: https://www.ti.com/lit/pdf/spruj83
->
-> Cc: stable@vger.kernel.org
-> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
-> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
+Hi Krzysztof
 
 
-Tested-by: Harikrishna Shenoy <h-shenoy@ti.com>
+This does not break the ABI. In the Qualcomm PCIe driver, we use the APIs
+devm_reset_control_array_get_exclusive, reset_control_assert, and
+reset_control_deassert to handle the resets defined in the device tree.
+Regardless of how many resets are provided in the DTS, these three APIs
+treat them as an array and operate on all of them collectively.
+Therefore, adding a new reset does not affect the existing ABI behavior.
 
+BRs
+Ziyue
 
-> ---
-> V4: No change
-> V3:
-> - Do read-modify-write to preserve reset value for calibration wait
->    time
-> V2:
-> Introduced this as as separate patch
->
->   drivers/phy/cadence/cdns-dphy.c | 4 +++-
->   1 file changed, 3 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index da8de0a9d086..24a25606996c 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -30,6 +30,7 @@
->   
->   #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
->   #define DPHY_CMN_SSM_EN			BIT(0)
-> +#define DPHY_CMN_SSM_CAL_WAIT_TIME	GENMASK(8, 1)
->   #define DPHY_CMN_TX_MODE_EN		BIT(9)
->   
->   #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
-> @@ -410,7 +411,8 @@ static int cdns_dphy_power_on(struct phy *phy)
->   	writel(reg, dphy->regs + DPHY_BAND_CFG);
->   
->   	/* Start TX state machine. */
-> -	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
-> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
-> +	writel((reg & DPHY_CMN_SSM_CAL_WAIT_TIME) | DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
->   	       dphy->regs + DPHY_CMN_SSM);
->   
->   	ret = cdns_dphy_wait_for_pll_lock(dphy);
->
 
 -- 
 linux-phy mailing list
