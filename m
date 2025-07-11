@@ -4,130 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C330C8303C
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 11:05:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EFCDC8303C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 11:39:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tSVEnyrpWBVWoxvTYAgLI2BdcoMbWb1DRneMCnKroao=; b=12V7wjZ0Iel1pX
-	tkmG9dkHVeknK/34Rb5rCy874Rg9j8IPxFzVGPrKf4JQ+RdPiiG0bs9+k5O7X6QkMB2YExqIORLwT
-	3nuu5C/aEjCRTFmbhdCwLy98NkzMDHCnSk6ZByh93jtVctnZK2cTxaOAGjAfDYFLV61DjLLgc4aS3
-	TODl0r4pP88nVKEboUB/uzu3/mmjtbr4pmDk1NHXpbf2Eo2i9r6Ss8BVAgbgkRqVdKECWFJbBhxEw
-	o+Fdjl4F62G/+/S5hBirAZgLAnQqVrVTMmLxz1n8PKXRjXYVVwOPuskVJj8K+2bjNxUFCOKTXXx5e
-	YCladwshE2O2cu4a0phQ==;
+	List-Owner; bh=syjEIkKWQ0P2S3rmc2mxUhKKMadFQuohatR/Z+G8rb4=; b=qVaFN7FpMMz58Q
+	4LkfEpHbNZfd4riw1CrTjSvBOWgDr7HHJxgyNXVEVKr3Jzdz1IztFrGGkO0yMLPss01sqsJ1+ekGF
+	TeeppGQrUrg0Nqie+WCDgfyDtJ3j0LaWtsxfLKoqPd5GhWSh7bJPFeAdjvGx7TaR6oRASR9vq3yzF
+	XRK/BKJXln+l9eAE0o/06lWMalsV0XQyg4hD9pAGhaNGTeQdxOvkRc+sYY6/0TKMqy6Kz8+zpmL8E
+	MCuedRKQdKJjSKxd0TJ7hVqa55b6bw/Unsd32H1WgbJBAdGWUe8CHjUCSKT3AeQlzH+6xZkVo+Bxm
+	OP9KXoESJS9HLbbWFrDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uaBZI-0000000EYZZ-3csV;
-	Fri, 11 Jul 2025 11:05:28 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uaC5l-0000000Ec5A-3eGo;
+	Fri, 11 Jul 2025 11:39:01 +0000
+Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uaAVC-0000000EOVs-2MUK
+	id 1uaBi9-0000000EZbO-2zqC
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Jul 2025 09:57:11 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56B1XdKT002704
-	for <linux-phy@lists.infradead.org>; Fri, 11 Jul 2025 09:57:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	V4oAm1F+mw0qWWBJIzHoogPbCCFnCCeogdv2Fm/i06c=; b=Z/9TXDuBX6DLWExy
-	amIfnDq2nwAGxAmsKPGGMdV1zGp7rbIEd36Bcke7MdK/kpAls3A8j9AK+sroPED4
-	w4Iy1/Pw2QG213/xbqAiXRDZ9WLaukhJc4mOGYo4DILOLcYOgBh0ktLoU61Pm4vr
-	cDcI8ngeNVKeOqESAJ8aEWAOjCWNdyzzBpeaWTCsAb9HofRYBDYBjkDxBov5otr9
-	boPqlh2/MuAeirb9RSiw2dqsNhc8OM7T7lO3jZPTGrNHHFl8YB0EuD8KLKLjWc7e
-	waCZn6tFiQKk93dNh99sR0ScI93DWdOgFI+WEpHFfdPgQig7diPREBRYq+gNU7Rn
-	D0tVxQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47pucnbk64-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 11 Jul 2025 09:57:08 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7deca3ef277so17182785a.1
-        for <linux-phy@lists.infradead.org>; Fri, 11 Jul 2025 02:57:08 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752227827; x=1752832627;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=V4oAm1F+mw0qWWBJIzHoogPbCCFnCCeogdv2Fm/i06c=;
-        b=gWdBAYMLDCuOfBAiyM64Pk/X3q5KgmMndPrCMTJ8h5ykV14ohwUZg5w/GbF0mwUxb6
-         HxXYHRtLAz+TCjNkYGJF6flhWjp7DVX3VVepfTnGQ9Aqd25BJZuyoUPSrs7odWgFoGcn
-         dUN10uokQZyh06kKoZGflhL6Nk8YGjguXwn41esL1t0wk1jqCr0w0El/yBv3hIcq6AjU
-         QMZ2E6lianenpIpBCHAWXtrIERAF8k03+gFW6IpkhgbPk+62timTXJPt6+ZYmy+oJSWi
-         EhwvT1SfiWNBUFFfrblecFN6c33uWr4jLx39+MxEsS+XxjrA3/tJvB1FTPx46KBQyjKe
-         2hDQ==
-X-Forwarded-Encrypted: i=1; AJvYcCW1osADz4cj9WZHW39KeRAMDU6gBmNKsMKXJCB3LSCKpE7ptAb5rrsTLNMRO+l8Gb6RrIFa7hin8Us=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzfGZnO5SH+gi/2+sf6uYO8kKUdBgMUpH1mTxRCLo7t/vIEzd/W
-	Hzf5NqES3+Q+0mOP9CgxcAaHm4BzKK3pBJrnCqJbGOF8Tyg7USvSTVAu4ju2M4Oqq8wnNzopHnQ
-	R/h6yVqmZbIiRXrF/9RouJpfCiBdsSgDwyDTiWwXZTj+v24YSOPjlLYd5dIbZ6E3HNUbq
-X-Gm-Gg: ASbGncv67Y/PeMySYshqqbOXN6fZ2Bq+YcdR216ccH6vnU2XH61lQYTcQDrc2cBdBte
-	lJ9xEq+Jjal0QyB0VcDre0rbEB0YCp3bDePPFExZz6PGfPneL239z+VYx05pi9P1O6OORJ5VlXM
-	6s0hDvlaOrytOlgFSHKt+lg21xxW7BnMPHZrxi7Ao569Y1mRCdN131t/H4f/4fHxNasq5uqUFiL
-	aIBs951yp5+QY8I/L9aDvMcqgVfXTaMuJz8JzgcfWRk/I38vS00v+DoJ8s+5fSZL5iX6ZHvRrLe
-	MSHzehvmdwwgARz/R7xDORJ3FKecRH5ltJw+g2Xbe9iSjmNGXNFd7kvjcHLQn1mCDRk+lkUq5ig
-	jgLMposnqeMEgGrZNZoFW
-X-Received: by 2002:ac8:58d4:0:b0:4a7:4eed:2582 with SMTP id d75a77b69052e-4aa35db7dcamr13443521cf.4.1752227827439;
-        Fri, 11 Jul 2025 02:57:07 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEYKec4bEyWI8YGiR6x1O+xUwfyU3XWv0u55EjX9PHiUbFeje3VltrjTPWAUpQi1AAK/4AayA==
-X-Received: by 2002:ac8:58d4:0:b0:4a7:4eed:2582 with SMTP id d75a77b69052e-4aa35db7dcamr13443241cf.4.1752227826920;
-        Fri, 11 Jul 2025 02:57:06 -0700 (PDT)
-Received: from [192.168.143.225] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae6e7e910f3sm273314866b.31.2025.07.11.02.57.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 11 Jul 2025 02:57:05 -0700 (PDT)
-Message-ID: <465f4136-418e-48b8-93f4-e384244cb913@oss.qualcomm.com>
-Date: Fri, 11 Jul 2025 11:57:02 +0200
+	Fri, 11 Jul 2025 11:14:39 +0000
+Received: from fllvem-sh03.itg.ti.com ([10.64.41.86])
+	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 56BBEKLM2020144;
+	Fri, 11 Jul 2025 06:14:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1752232460;
+	bh=kXo2gccLVeMo1chWBSmhBag69c7fTd8KSpmiGFlUblw=;
+	h=Date:Subject:To:CC:References:From:In-Reply-To;
+	b=XFsqV1hC/kD4yd+026d36i7G/3fMGQK3HVYNp+AeuTEy9eyu3AzBd0YLz0quwNZU3
+	 qzBkNP3amFazMh0z05HVBVFfKDKYRsPShJKSCEey73L+zR5wWqq9I8MO1ni/ZJFwb8
+	 zGyuGF3Fh+1j2emcjdup5dsmy51MX6OoCbYb6+dk=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+	by fllvem-sh03.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 56BBEKXq3978216
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
+	Fri, 11 Jul 2025 06:14:20 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Fri, 11
+ Jul 2025 06:14:20 -0500
+Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
+ Frontend Transport; Fri, 11 Jul 2025 06:14:20 -0500
+Received: from [172.24.227.12] (hkshenoy.dhcp.ti.com [172.24.227.12])
+	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 56BBEGvb3381417;
+	Fri, 11 Jul 2025 06:14:17 -0500
+Message-ID: <1caa40e7-fe18-482c-97c3-2aeb0b7e67b1@ti.com>
+Date: Fri, 11 Jul 2025 16:44:16 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document
- link_down reset
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-        qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-        quic_vbadigan@quicinc.com
-References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
- <20250625090048.624399-3-quic_ziyuzhan@quicinc.com>
- <20250627-flashy-flounder-of-hurricane-d4c8d8@krzk-bin>
- <ff2fb737-a833-474d-b402-120d4ed68d39@quicinc.com>
- <1606591b-5707-48bf-8f60-44063ecf8f1a@kernel.org>
+Subject: Re: [PATCH v4 1/2] phy: cadence: cdns-dphy: Fix PLL lock and
+ O_CMN_READY polling
+To: Devarsh Thakkar <devarsht@ti.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+CC: <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>, <r-donadkar@ti.com>,
+        <tomi.valkeinen@ideasonboard.com>, <j-choudhary@ti.com>
+References: <20250704125915.1224738-1-devarsht@ti.com>
+ <20250704125915.1224738-2-devarsht@ti.com>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <1606591b-5707-48bf-8f60-44063ecf8f1a@kernel.org>
-X-Authority-Analysis: v=2.4 cv=GdQXnRXL c=1 sm=1 tr=0 ts=6870dff4 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=00NdyYYEmPKBbhCvcP8A:9
- a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-GUID: eeaeRBOy84Xss1Dpzhlbp367BRbNbD-k
-X-Proofpoint-ORIG-GUID: eeaeRBOy84Xss1Dpzhlbp367BRbNbD-k
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzExMDA3MCBTYWx0ZWRfX//SWiV3lnUxu
- 1HYigxQHioXDrEcy15BBonvwIO8yczHKRHalWbUKYCSWF1xAT3rGNLHuWU2oLZrSGppYmEEc6g/
- 5TjsSdN7MZzftwNnBjXGx9StHUgq5gHC3brikPDDQLGSN7MsOLyfmoqibOuTWzdGSgXjD4kO02O
- nkyOPBNObnArEKNSBxtMBiImTwiJYUF2ZfSJCihlF2wI+/iPGbMubhYeFF2SgVG0P029aS7Oc97
- +aVa6K4J/aI1R02ycmtEPdCejZ808wXkp9g1DqymMepApr8RG5sTPqr5wMxL8pkLa3W2BEMDA5h
- tsRLzfDJYT6FWTK3Q7pbR+YaF3+tUzImr0aSf7GQdBDpRj7jgkyQcvZlqUiegA/4fc80sLQMGKW
- n07/UrRtE29yRRmICZqGem3l9NDxCtL+E7VXjFD5mpgXSbxbXiaw4Ua9fmEkOLOD+duiBBfT
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-11_03,2025-07-09_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 phishscore=0 adultscore=0 bulkscore=0 clxscore=1015
- spamscore=0 suspectscore=0 mlxlogscore=566 priorityscore=1501 impostorscore=0
- malwarescore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507110070
+From: Harikrishna Shenoy <a0512644@ti.com>
+In-Reply-To: <20250704125915.1224738-2-devarsht@ti.com>
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250711_025710_723833_64570693 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20250711_041437_932414_14F5163F 
+X-CRM114-Status: GOOD (  37.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,66 +82,291 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/11/25 10:44 AM, Krzysztof Kozlowski wrote:
-> On 11/07/2025 10:26, Ziyue Zhang wrote:
->>
->> On 6/27/2025 3:08 PM, Krzysztof Kozlowski wrote:
->>> On Wed, Jun 25, 2025 at 05:00:46PM +0800, Ziyue Zhang wrote:
->>>> Each PCIe controller on sa8775p includes 'link_down'reset on hardware,
->>>> document it.
->>> This is an ABI break, so you need to clearly express it and explain the
->>> impact. Following previous Qualcomm feedback we cannot give review to
->>> imperfect commits, because this would be precedent to accept such
->>> imperfectness in the future.
->>>
->>> Therefore follow all standard rules about ABI.
->>>
->>> Best regards,
->>> Krzysztof
->>
->> Hi Krzysztof
->>
->>
->> This does not break the ABI. In the Qualcomm PCIe driver, we use the APIs
->> devm_reset_control_array_get_exclusive, reset_control_assert, and
-> 
-> I see in the binding requirement of 1 reset before and after your patch:
-> requirement of two reset lines.
-> 
-> This is an ABI change. My entire comment stays valid, so don't just
-> deflect it but resolve it.
+Hi Devarsh,
 
-Ziyue, the change is good, but it needs a better explanation.
+Thanks for the patch.
 
-Try something like:
+On 04/07/25 18:29, Devarsh Thakkar wrote:
+> PLL lockup and O_CMN_READY assertion can only happen after common state
+> machine gets enabled by programming DPHY_CMN_SSM register, but driver was
+> polling them before the common state machine was enabled which is
+> incorrect.  This is as per the DPHY initialization sequence as mentioned in
+> J721E TRM [1] at section "12.7.2.4.1.2.1 Start-up Sequence Timing Diagram".
+> It shows O_CMN_READY polling at the end after common configuration pin
+> setup where the common configuration pin setup step enables state machine
+> as referenced in "Table 12-1533. Common Configuration-Related Setup
+> mentions state machine"
+>
+> To fix this :
+> - Add new function callbacks for polling on PLL lock and O_CMN_READY
+>    assertion.
+> - As state machine and clocks get enabled in power_on callback only, move
+>    the clock related programming part from configure callback to power_on
+> callback and poll for the PLL lockup and O_CMN_READY assertion after state
+> machine gets enabled.
+> - The configure callback only saves the PLL configuration received from the
+>    client driver which will be applied later on in power_on callback.
+> - Add checks to ensure configure is called before power_on and state
+>    machine is in disabled state before power_on callback is called.
+> - Disable state machine in power_off so that client driver can re-configure
+>    the PLL by following up a power_off, configure, power_on sequence.
+>
+> [1]: https://www.ti.com/lit/zip/spruil1
+>
+> Cc: stable@vger.kernel.org
+> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
+> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
 
-SA8775P PCIe RCs include two reset lines: a core one ("pci") used
-to reset most of the block, and a "link_down" one, used to ABCDXYZ.
+Tested-by: Harikrishna Shenoy <h-shenoy@ti.com>
 
-As the latter was omitted with the initial submisison, describe it.
-Because ABCDXYZ is not required for most of the block's functionality,
-devicetrees lacking it will not see much of a difference - it is
-however required to ensure maximum robustness when shutting down the
-core.
 
-----
-
-Note that there are physically more reset lines going to/near the RC,
-but many of them are either inaccessible to the OS, or very much
-should never ever be. This is the case with most hw blocks, so don't
-be surprised if you see a list with more than these two. I believe
-"pci" and "link_down" are the only ones intended for OS consumption.
-
-You can see some of that bleeding out to Linux on e.g. some IPQ
-platforms that don't have a separate MCU (some flavor of RPM) that
-would do the bus management.
-
-Konrad
+> ---
+> V4:
+> - Optimize wait_for_pll_lock, wait_for_cmn_ready calls to oneline
+>    using conditional operator
+> - Remove superflous init for ret variable in cdns_dphy_configure
+> - Enable pll and psm ref clocks before configuring PLL
+> - Update commit message to refer to TRM
+> - Rebased on top of:
+>    https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-4-862c841dbe02@ideasonboard.com/
+>    https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-5-862c841dbe02@ideasonboard.com/
+>    from the series:
+>    https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com/
+>
+> V3:
+> - Move out clock programming logic to power_on as PLL polling and enable
+>    can happen only after SSM enable
+> - Disable state machine on power off
+>
+> V2:
+> - Return error code on polling timeout
+> - Moved out calibration logic to separate patch
+>
+>   drivers/phy/cadence/cdns-dphy.c | 124 +++++++++++++++++++++++---------
+>   1 file changed, 92 insertions(+), 32 deletions(-)
+>
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index 33a42e72362e..da8de0a9d086 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -92,6 +92,8 @@ struct cdns_dphy_ops {
+>   	void (*set_pll_cfg)(struct cdns_dphy *dphy,
+>   			    const struct cdns_dphy_cfg *cfg);
+>   	unsigned long (*get_wakeup_time_ns)(struct cdns_dphy *dphy);
+> +	int (*wait_for_pll_lock)(struct cdns_dphy *dphy);
+> +	int (*wait_for_cmn_ready)(struct cdns_dphy *dphy);
+>   };
+>   
+>   struct cdns_dphy {
+> @@ -101,6 +103,8 @@ struct cdns_dphy {
+>   	struct clk *pll_ref_clk;
+>   	const struct cdns_dphy_ops *ops;
+>   	struct phy *phy;
+> +	bool is_configured;
+> +	bool is_powered;
+>   };
+>   
+>   /* Order of bands is important since the index is the band number. */
+> @@ -186,6 +190,16 @@ static unsigned long cdns_dphy_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   	return dphy->ops->get_wakeup_time_ns(dphy);
+>   }
+>   
+> +static int cdns_dphy_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	return dphy->ops->wait_for_pll_lock ? dphy->ops->wait_for_pll_lock(dphy) : 0;
+> +}
+> +
+> +static int cdns_dphy_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	return  dphy->ops->wait_for_cmn_ready ? dphy->ops->wait_for_cmn_ready(dphy) : 0;
+> +}
+> +
+>   static unsigned long cdns_dphy_ref_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   {
+>   	/* Default wakeup time is 800 ns (in a simulated environment). */
+> @@ -227,7 +241,6 @@ static unsigned long cdns_dphy_j721e_get_wakeup_time_ns(struct cdns_dphy *dphy)
+>   static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>   					const struct cdns_dphy_cfg *cfg)
+>   {
+> -	u32 status;
+>   
+>   	/*
+>   	 * set the PWM and PLL Byteclk divider settings to recommended values
+> @@ -244,13 +257,6 @@ static void cdns_dphy_j721e_set_pll_cfg(struct cdns_dphy *dphy,
+>   
+>   	writel(DPHY_TX_J721E_WIZ_LANE_RSTB,
+>   	       dphy->regs + DPHY_TX_J721E_WIZ_RST_CTRL);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> -			   (status & DPHY_TX_WIZ_PLL_LOCK), 0, POLL_TIMEOUT_US);
+> -
+> -	readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> -			   (status & DPHY_TX_WIZ_O_CMN_READY), 0,
+> -			   POLL_TIMEOUT_US);
+>   }
+>   
+>   static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+> @@ -258,6 +264,23 @@ static void cdns_dphy_j721e_set_psm_div(struct cdns_dphy *dphy, u8 div)
+>   	writel(div, dphy->regs + DPHY_TX_J721E_WIZ_PSM_FREQ);
+>   }
+>   
+> +static int cdns_dphy_j721e_wait_for_pll_lock(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_PLL_CTRL, status,
+> +			       status & DPHY_TX_WIZ_PLL_LOCK, 0, POLL_TIMEOUT_US);
+> +}
+> +
+> +static int cdns_dphy_j721e_wait_for_cmn_ready(struct cdns_dphy *dphy)
+> +{
+> +	u32 status;
+> +
+> +	return readl_poll_timeout(dphy->regs + DPHY_TX_J721E_WIZ_STATUS, status,
+> +			       status & DPHY_TX_WIZ_O_CMN_READY, 0,
+> +			       POLL_TIMEOUT_US);
+> +}
+> +
+>   /*
+>    * This is the reference implementation of DPHY hooks. Specific integration of
+>    * this IP may have to re-implement some of them depending on how they decided
+> @@ -273,6 +296,8 @@ static const struct cdns_dphy_ops j721e_dphy_ops = {
+>   	.get_wakeup_time_ns = cdns_dphy_j721e_get_wakeup_time_ns,
+>   	.set_pll_cfg = cdns_dphy_j721e_set_pll_cfg,
+>   	.set_psm_div = cdns_dphy_j721e_set_psm_div,
+> +	.wait_for_pll_lock = cdns_dphy_j721e_wait_for_pll_lock,
+> +	.wait_for_cmn_ready = cdns_dphy_j721e_wait_for_cmn_ready,
+>   };
+>   
+>   static int cdns_dphy_config_from_opts(struct phy *phy,
+> @@ -328,21 +353,36 @@ static int cdns_dphy_validate(struct phy *phy, enum phy_mode mode, int submode,
+>   static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>   {
+>   	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -	struct cdns_dphy_cfg cfg = { 0 };
+> -	int ret, band_ctrl;
+> -	unsigned int reg;
+> +	int ret;
+>   
+> -	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &cfg);
+> -	if (ret)
+> -		return ret;
+> +	ret = cdns_dphy_config_from_opts(phy, &opts->mipi_dphy, &dphy->cfg);
+> +	if (!ret)
+> +		dphy->is_configured = true;
+> +
+> +	return ret;
+> +}
+> +
+> +static int cdns_dphy_power_on(struct phy *phy)
+> +{
+> +	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	int ret;
+> +	u32 reg;
+> +
+> +	if (!dphy->is_configured || dphy->is_powered)
+> +		return -EINVAL;
+> +
+> +	clk_prepare_enable(dphy->psm_clk);
+> +	clk_prepare_enable(dphy->pll_ref_clk);
+>   
+>   	/*
+>   	 * Configure the internal PSM clk divider so that the DPHY has a
+>   	 * 1MHz clk (or something close).
+>   	 */
+>   	ret = cdns_dphy_setup_psm(dphy);
+> -	if (ret)
+> -		return ret;
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "Failed to setup PSM with error %d\n", ret);
+> +		goto err_power_on;
+> +	}
+>   
+>   	/*
+>   	 * Configure attach clk lanes to data lanes: the DPHY has 2 clk lanes
+> @@ -357,40 +397,60 @@ static int cdns_dphy_configure(struct phy *phy, union phy_configure_opts *opts)
+>   	 * Configure the DPHY PLL that will be used to generate the TX byte
+>   	 * clk.
+>   	 */
+> -	cdns_dphy_set_pll_cfg(dphy, &cfg);
+> +	cdns_dphy_set_pll_cfg(dphy, &dphy->cfg);
+>   
+> -	band_ctrl = cdns_dphy_tx_get_band_ctrl(opts->mipi_dphy.hs_clk_rate);
+> -	if (band_ctrl < 0)
+> -		return band_ctrl;
+> +	ret = cdns_dphy_tx_get_band_ctrl(dphy->cfg.hs_clk_rate);
+> +	if (ret < 0) {
+> +		dev_err(&dphy->phy->dev, "Failed to get band control value with error %d\n", ret);
+> +		goto err_power_on;
+> +	}
+>   
+> -	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, band_ctrl) |
+> -	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, band_ctrl);
+> +	reg = FIELD_PREP(DPHY_BAND_CFG_LEFT_BAND, ret) |
+> +	      FIELD_PREP(DPHY_BAND_CFG_RIGHT_BAND, ret);
+>   	writel(reg, dphy->regs + DPHY_BAND_CFG);
+>   
+> -	return 0;
+> -}
+> -
+> -static int cdns_dphy_power_on(struct phy *phy)
+> -{
+> -	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> -
+> -	clk_prepare_enable(dphy->psm_clk);
+> -	clk_prepare_enable(dphy->pll_ref_clk);
+> -
+>   	/* Start TX state machine. */
+>   	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+>   	       dphy->regs + DPHY_CMN_SSM);
+>   
+> +	ret = cdns_dphy_wait_for_pll_lock(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "Failed to lock PLL with error %d\n", ret);
+> +		goto err_power_on;
+> +	}
+> +
+> +	ret = cdns_dphy_wait_for_cmn_ready(dphy);
+> +	if (ret) {
+> +		dev_err(&dphy->phy->dev, "O_CMN_READY signal failed to assert with error %d\n",
+> +			ret);
+> +		goto err_power_on;
+> +	}
+> +
+> +	dphy->is_powered = true;
+> +
+>   	return 0;
+> +
+> +err_power_on:
+> +	clk_disable_unprepare(dphy->pll_ref_clk);
+> +	clk_disable_unprepare(dphy->psm_clk);
+> +
+> +	return ret;
+>   }
+>   
+>   static int cdns_dphy_power_off(struct phy *phy)
+>   {
+>   	struct cdns_dphy *dphy = phy_get_drvdata(phy);
+> +	u32 reg;
+>   
+>   	clk_disable_unprepare(dphy->pll_ref_clk);
+>   	clk_disable_unprepare(dphy->psm_clk);
+>   
+> +	/* Stop TX state machine. */
+> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
+> +	writel(reg & ~DPHY_CMN_SSM_EN, dphy->regs + DPHY_CMN_SSM);
+> +
+> +	dphy->is_powered = false;
+> +
+>   	return 0;
+>   }
+>   
+>
 
 -- 
 linux-phy mailing list
