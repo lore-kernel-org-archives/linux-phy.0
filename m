@@ -4,115 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07F25C8303C
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 07:09:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7290BC8303C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Jul 2025 07:14:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGiy9zkcUltJi89966hcj+AAgaIcafnqOYoaolhNIMc=; b=V2cCzEPosGkNZy
-	8tWaYIH5wc+str6GoGG30ZU+NVkBykyd3DxuccjIaq/Fz5f1x2/JvEhKgrmzf3xBL8BKOs6evtlFd
-	SMJqdOCbRsBEXFVrJJ0NjerbG8wQTiH1dnPXlZjQB8rvl71dmh2CPaHev6AZSW57xPDD3+friFU81
-	ZZZBafyvimG5ORhO/bavAV8DuvX/8V+oRuALpgKzeGt1d8C6NKHgmVEmvjmJwQRnCDws0jT+dm6lI
-	YtjEH637TbOW+TVyZHV/sDplIF3jf2dRqVb5BEaPyLYv58H9lEe6RLk4BW5CqFMoNKUhr9SzTAByy
-	p/2uLviFUFmBf5/604vQ==;
+	List-Owner; bh=J5yA6+tH1YZg/e/Aj8tSPbICJw4Y7yAPitMHO17LRjk=; b=2Mkf88VemMoWJa
+	C5Yx9HO5AYejcxKis0peF+I9dNj5S0JdFG+QAWfo6QbXhG9cB5EelRrhoS6oLt+hXvEfSCHQIIKty
+	8rcAxaslW2+d44IuFppubuj4vUvOGHowmbVqH4ELD5DGgREE5dD9Kp2QAvxTbzZrrOFVjlx+MdGOD
+	HAI6dPKcDotzjfgr3FvC5ql543o6rhgcLwDVQZ1hB+0PVtS43xZyDRl85UgEybL1Fa6NVh69OeVsn
+	frbFa7IQi6VDClzN3TbsjDLbab0MxPcqQkqJ/p5Yj4fwY/cVMOL9LXpkO5CIv1cezXJADqq8sTNqt
+	1cBq6WPNHg20x73xB4uA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ua7t7-0000000Dv0r-2mik;
-	Fri, 11 Jul 2025 07:09:41 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1ua7xK-0000000DvIj-0skD;
+	Fri, 11 Jul 2025 07:14:02 +0000
+Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ua7t4-0000000DuzJ-1M81
+	id 1ua7xI-0000000DvHj-1dfm
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Jul 2025 07:09:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 85EC844896;
-	Fri, 11 Jul 2025 07:09:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEBA3C4CEED;
-	Fri, 11 Jul 2025 07:09:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752217777;
-	bh=AeM9nVKzaPE89Cup3Ni/lGPwJYkloERSY2Zx0y+Xh8U=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=MOlib49w8X1PdWLJJBlPK7mbTvJKLRvwi36EoQuxmGgInD/9aX1GXSKU1ehsqcdJr
-	 K38dpoPKQY+3836c+uSIpmZS+PXtZuVsf2bdMaw2QNRMQrIiDWxSHj5eqTeCQ5h/my
-	 dts/Hc2hpJjN1lNe3jhvtNESt4H9mJjiMIsC7ks0g6TdlrxYNoS8aygPaEFp2d6TTt
-	 omEIvMRIgy810g0RPQsA0FN3hTi7oBwh+8oNCxE4vmEw0UBOY1SoU3D1HEKw2rXXve
-	 5xhKqduC9TGURPrlAV0NdhhxVgDzbxHWfJtv8AEGz+VcMgkAH6np6c9JVtyLJWxSG5
-	 qbrMlkG4c7+Pg==
-Message-ID: <1a4f27e3-49e7-4499-acad-c33d5cfec7a8@kernel.org>
-Date: Fri, 11 Jul 2025 09:09:25 +0200
+	Fri, 11 Jul 2025 07:14:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1752218040; x=1783754040;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=/a5/cmTFwfGsSy5KThxd9G4sDvgIOEC9EzVwlO1Hz3Q=;
+  b=huGkSrfZLCPXGpNHj6IcFPJGuyZG1JspZ13utPp65xgTKMjfKy3a/Jx8
+   cV8ug8oMvwgwjn2vO49gd/p5gx8NxNWO4K5/yWoks75NFgKDg082P2DXy
+   KocT/k5Ttz7r8YU4JPr3MdJAYFyR2JRk5/GmYDF5LD9Gufj8Howt1dK5q
+   9DnOQiF+kt9fRc5uPgosSratBPiPJSgXNEGCwHcIPvtWNevzGmG09COQL
+   7nZlh0zR96VeW7ewzlJPDcruzVzPg5sD33DItYhmgUaigYQzbBdhB9tsK
+   r3GeLLrUUt+m+sHrm6gVcdraJ9fVUvM3BaWQzJNkphQWtHXZ/OKKDzvZQ
+   g==;
+X-CSE-ConnectionGUID: 6/G3BRoHSn+0go6hfpt/Dw==
+X-CSE-MsgGUID: UNFmO4+YS6C7Oa0FWCifyQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11490"; a="54638610"
+X-IronPort-AV: E=Sophos;i="6.16,302,1744095600"; 
+   d="scan'208";a="54638610"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jul 2025 00:13:59 -0700
+X-CSE-ConnectionGUID: g7SdpPTpTa2TCKfUZ0hk7A==
+X-CSE-MsgGUID: e77LfgKXRkWvHNFw49V9Ug==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,302,1744095600"; 
+   d="scan'208";a="179997241"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by fmviesa002.fm.intel.com with ESMTP; 11 Jul 2025 00:13:55 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1ua7xA-00064R-2n;
+	Fri, 11 Jul 2025 07:13:52 +0000
+Date: Fri, 11 Jul 2025 15:13:13 +0800
+From: kernel test robot <lkp@intel.com>
+To: Karthik Poduval <kpoduval@lab126.com>, jyxiong@amazon.com,
+	miguel.lopes@synopsys.com, anishkmr@amazon.com, vkoul@kernel.org,
+	kishon@kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, Karthik Poduval <kpoduval@lab126.com>
+Subject: Re: [PATCH v2 1/2] phy: dw-dphy-rx: Add Synopsys DesignWare D-PHY RX
+Message-ID: <202507111412.83Oiz7hO-lkp@intel.com>
+References: <2383f8cf2a8f5e1b914d4cf9bd11674ed55876d2.1752106239.git.kpoduval@lab126.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] phy: dw-dphy-rx: Add dt bindings for Synopsys MIPI
- D-PHY RX
-To: "Poduval, Karthik" <kpoduval@lab126.com>
-Cc: "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>, "Xiong, Jason" <jyxiong@amazon.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "Anish Kumar, FNU" <anishkmr@amazon.com>,
- "miguel.lopes@synopsys.com" <miguel.lopes@synopsys.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>
-References: <cover.1752106239.git.kpoduval@lab126.com>
- <7f4b676678b27ea91314c834a297c1e057959b09.1752106239.git.kpoduval@lab126.com>
- <20250710-dainty-tarsier-from-hyperborea-ecf9d3@krzk-bin>
- <1c135aa4989f7a49cc58a092986e27712210d662.camel@lab126.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <1c135aa4989f7a49cc58a092986e27712210d662.camel@lab126.com>
+Content-Disposition: inline
+In-Reply-To: <2383f8cf2a8f5e1b914d4cf9bd11674ed55876d2.1752106239.git.kpoduval@lab126.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250711_000938_398400_24326B53 
-X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-CacheID: sfid-20250711_001400_480927_E54725DD 
+X-CRM114-Status: UNSURE (   9.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,33 +87,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTAvMDcvMjAyNSAyMzoyNCwgUG9kdXZhbCwgS2FydGhpayB3cm90ZToKPj4+ICttYWludGFp
-bmVyczoKPj4+ICvCoCAtIEthcnRoaWsgUG9kdXZhbCA8a3BvZHV2YWxAbGFiMTI2LmNvbT4KPj4+
-ICvCoCAtIEphc29uIFhpb25nIDxqeXhpb25nQGFtYXpvbi5jb20+Cj4+PiArwqAgLSBNaWd1ZWwg
-TG9wZXMgPG1pZ3VlbC5sb3Blc0BzeW5vcHN5cy5jb20KPj4+ICsKPj4+ICtkZXNjcmlwdGlvbjog
-fAo+Pj4gK8KgIFRoZXNlIGFyZSB0aGUgYmluZGluZ3MgZm9yIFN5bm9wc3lzIERlc2lnbndhcmUg
-TUlQSSBEUEhZIFJYIHBoeQo+Pj4gZHJpdmVyLgo+Pj4gK8KgIEN1cnJlbnRseSBvbmx5IHN1cHBv
-cnRlZCBwaHkgdmVyc2lvbiBpcyB2MS4yLgo+Pj4gKwo+Pj4gK3Byb3BlcnRpZXM6Cj4+PiArwqAg
-Y29tcGF0aWJsZToKPj4+ICvCoMKgwqAgY29uc3Q6IHNucHMsZHctZHBoeS0xcDIKPj4KPj4gWW91
-IHNob3VsZCByYXRoZXIgdXNlIFNvQyBjb21wYXRpYmxlcy4KPiBJZiBzaW1pbGFyIFN5bm9wc3lz
-IEQtUEhZIGlzIHVzZWQgaW4gbXVsdGlwbGUgU29DcyB3aXRoIHNsaWdodAo+IHZhcmlhdGlvbnMs
-IHNob3VsZCBlYWNoIFNvQyBoYXZlIGl0cyBvd24gRC1QSFkgZHJpdmVyIG9yIGlzIGl0IGJldHRl
-cgoKWW91ciBpbmNvcnJlY3Qgc3ViamVjdCBwcm9iYWJseSBtaXNsZWFkIHlvdSwgYnV0IHRoaXMg
-aXMgbm90IGEgZHJpdmVyCnBhdGNoLiBUaGVzZSBhcmUgRFQgYmluZGluZ3MuCgpTb0Mgc3BlY2lm
-aWMgY29tcGF0aWJsZXMgYXJlIGFsbW9zdCBhbHdheXMgcHJlZmVycmVkLgoKPiB0byBoYXZlIGEg
-Y29tbW9uIG9uZSB0aGF0IHdvcmtzIGZvciBhbGwgU29DcyBsaWtlIGFybSxzbW11LXYzIG9yIGxp
-a2UKPiB0aGUgRUVQUk9NIGRyaXZlciBiZWxvdyA/wqAKPiBodHRwczovL2dpdC5rZXJuZWwub3Jn
-L3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9kcml2ZXJz
-L21pc2MvZWVwcm9tL2VlcHJvbV85M3h4NDYuYz9oPXY2LjE2LXJjNSNuMzkxCj4gd2hlcmUgZHJp
-dmVyIHNwZWNpZmljIGRyaXZlcl9kYXRhIGNvdWxkIHN1cHBvcnQgbXVsdGlwbGUgdmVyc2lvbnMg
-b3IKPiBTb0MgdmFyaWF0aW9ucy4gCj4gT3VyIHRlYW0gdGhvdWdodCBvZiB0aGUgY29tbW9uIGRy
-aXZlciBhcHByb2FjaCBob3dldmVyIGxvb2tpbmcgZm9yCj4gZ2VuZXJhbCBndWlkYW5jZSBmcm9t
-IFBIWSBzdWJzeXN0ZW0gbWFpbnRhaW5lcnMgYW5kIGNvbnRyaWJ1dG9ycy4KCldlIGRvbid0IGRp
-c2N1c3MgaGVyZSBkcml2ZXIuCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Karthik,
+
+kernel test robot noticed the following build warnings:
+
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on linus/master v6.16-rc5 next-20250710]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Karthik-Poduval/phy-dw-dphy-rx-Add-Synopsys-DesignWare-D-PHY-RX/20250710-104505
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/2383f8cf2a8f5e1b914d4cf9bd11674ed55876d2.1752106239.git.kpoduval%40lab126.com
+patch subject: [PATCH v2 1/2] phy: dw-dphy-rx: Add Synopsys DesignWare D-PHY RX
+config: sparc-randconfig-r123-20250711 (https://download.01.org/0day-ci/archive/20250711/202507111412.83Oiz7hO-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 12.4.0
+reproduce: (https://download.01.org/0day-ci/archive/20250711/202507111412.83Oiz7hO-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507111412.83Oiz7hO-lkp@intel.com/
+
+sparse warnings: (new ones prefixed by >>)
+>> drivers/phy/phy-dw-dphy.c:112:24: sparse: sparse: symbol 'range_gen3' was not declared. Should it be static?
+>> drivers/phy/phy-dw-dphy.c:427:24: sparse: sparse: symbol 'dw_dphy_1p2' was not declared. Should it be static?
+
+vim +/range_gen3 +112 drivers/phy/phy-dw-dphy.c
+
+   107	
+   108	/*
+   109	 * DW DPHY Gen3 calibration table
+   110	 *
+   111	 */
+ > 112	struct range_dphy_gen3 range_gen3[] = {
+   113		{ 80, 0b0000000, 460 },	  { 90, 0b0010000, 460 },
+   114		{ 100, 0b0100000, 460 },  { 110, 0b0110000, 460 },
+   115		{ 120, 0b0000001, 460 },  { 130, 0b0010001, 460 },
+   116		{ 140, 0b0100001, 460 },  { 150, 0b0110001, 460 },
+   117		{ 160, 0b0000010, 460 },  { 170, 0b0010010, 460 },
+   118		{ 180, 0b0100010, 460 },  { 190, 0b0110010, 460 },
+   119		{ 205, 0b0000011, 460 },  { 220, 0b0010011, 460 },
+   120		{ 235, 0b0100011, 460 },  { 250, 0b0110011, 460 },
+   121		{ 275, 0b0000100, 460 },  { 300, 0b0010100, 460 },
+   122		{ 325, 0b0100101, 460 },  { 350, 0b0110101, 460 },
+   123		{ 400, 0b0000101, 460 },  { 450, 0b0010110, 460 },
+   124		{ 500, 0b0100110, 460 },  { 550, 0b0110111, 460 },
+   125		{ 600, 0b0000111, 460 },  { 650, 0b0011000, 460 },
+   126		{ 700, 0b0101000, 460 },  { 750, 0b0111001, 460 },
+   127		{ 800, 0b0001001, 460 },  { 850, 0b0011001, 460 },
+   128		{ 900, 0b0101001, 460 },  { 950, 0b0111010, 460 },
+   129		{ 1000, 0b0001010, 460 }, { 1050, 0b0011010, 460 },
+   130		{ 1110, 0b0101010, 460 }, { 1150, 0b0111011, 460 },
+   131		{ 1200, 0b0001011, 460 }, { 1250, 0b0011011, 460 },
+   132		{ 1300, 0b0101011, 460 }, { 1350, 0b0111100, 460 },
+   133		{ 1400, 0b0001100, 460 }, { 1450, 0b0011100, 460 },
+   134		{ 1500, 0b0101100, 460 }, { 1550, 0b0111101, 285 },
+   135		{ 1600, 0b0001101, 295 }, { 1650, 0b0011101, 304 },
+   136		{ 1700, 0b0101110, 313 }, { 1750, 0b0111110, 322 },
+   137		{ 1800, 0b0001110, 331 }, { 1850, 0b0011110, 341 },
+   138		{ 1900, 0b0101111, 350 }, { 1950, 0b0111111, 359 },
+   139		{ 2000, 0b0001111, 368 }, { 2050, 0b1000000, 377 },
+   140		{ 2100, 0b1000001, 387 }, { 2150, 0b1000010, 396 },
+   141		{ 2200, 0b1000011, 405 }, { 2250, 0b1000100, 414 },
+   142		{ 2300, 0b1000101, 423 }, { 2350, 0b1000110, 432 },
+   143		{ 2400, 0b1000111, 442 }, { 2450, 0b1001000, 451 },
+   144		{ 2500, 0b1001001, 460 }
+   145	};
+   146	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
