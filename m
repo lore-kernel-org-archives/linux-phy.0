@@ -4,155 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7FBFC83F17
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jul 2025 17:07:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84156C83F17
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jul 2025 17:10:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4hilSpdGFzTxWIjgB94exy+tifkpz4Z7BtXhtDAos0g=; b=0pjjekYTMY75Q6
-	6U9ywYPgeNW4vYq1pmv6gTdGrsj7qmMpm0i03H6AqmKOVxR67hD2M6lFqd5RJry+bZKpVI6TdSoUx
-	nDpkMPcuHpstcJ2tqKQ0tqLnGDlw+5q89bocCPEmt+/DlOUVIzsf3Pm2eSKz7+luOaWzfzpuJKTXK
-	+mNwbdAWMWM1wtFzaMgtsdHt4dGdyFqD9pThCnBRK21gM97Q2Z4hkSx58wRr77ovWw2ikEJEJ2TuN
-	T1IkJ8BUzG3m7HGHuEtwfMrHIa4JE9aJJMe9OiQyJFtwbEIvkfFK1Pt/z+BsyR0iECmPff06XRpQL
-	e7xZHVKx320HcckMaBsw==;
+	List-Owner; bh=NAGZ9Dv394WwWYBt01tp8sbsZldtlBsrSj2tSNJqv4Q=; b=1zddVovZRmAubb
+	S6pPIZCK6rtcCE02MfbgAuoZTbyCqyAZ9vjlRUdwUnVzJIo0xBZlql6KimBtGRYD/k+nuSXS5yxpQ
+	Tk1v27hIg2rKPdEs+/oLey0tcXW5WY7jGXWDCLtCv6vv1MLj2RTZmZRSi9pAf4qg8NtAcpebMB8jF
+	QPb/FhHu5HirffqBagDahwfU8CENC/WJTP11pZJzGhP2Bwgtj2/0u6zT2bW+xep8Zs6XZQUORsJgw
+	bAnGQ85EsKNYlw0wDaquBgwU0S6384+0L66lwcarfMwsA6l1gPo+O/0GBpKxUDy1LT/HFxBP2M6P3
+	m5XuwDhJ0dsCGE8dRN1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubMeQ-00000002uqZ-1SH3;
-	Mon, 14 Jul 2025 17:07:38 +0000
-Received: from mail-eastus2azlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c110::1] helo=BN1PR04CU002.outbound.protection.outlook.com)
+	id 1ubMgs-00000002vDj-0hNw;
+	Mon, 14 Jul 2025 17:10:10 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubKuQ-00000002cgx-0VVy;
-	Mon, 14 Jul 2025 15:16:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=jk2IqVgMNJ9O1tLnhnQqoagsZw178bQ3iNEdlEwTrh4h7gHdhl4uKGVPPAHiEbfjyChmTX8oTR9xmb8Ss1mXVyi41RHkmGhfwr0bFRBzd2UJJ2aU2lIDfC1g0tXNi+KF1mb1iCK2o+pLXhrScfIEy4NfppEmwAOdo2auAzTbjKTBXs0RpJRnqxc0McQzaumf4YMCpyw7KtRSASE6ZF3pZ3vFFcPWneif/BlpL1BmsWuXl+kK5xzciYrVo+AdT85P9dI4eedGc7ghOYUG5GzVl+TH6HH0qyIFeI03VgVC7iCKIgHgoDhl8SSuxUiqjLHFjCnKuvlsKlcZXxJmyMN0WA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=9ygSKGZL8Na83xJlW8HqlTS26a5PsVkiYYDDUARydCI=;
- b=KsPS3myTnyEIomHLSBL/+PvVLzJRSUAHmIhZ4wE6V3V6Ff/jbMiFvgAPPpNooAsNBIFKfb1JMcOSkZuW4gG+wFYpSLBXUn+CDKj5ehSkW1KEelBYNQ2rSm/S0GbsZvpBHAegFbdxeU/Ul8EbpW4KjaoX8aR83aViBAuct2CevG7BmneZn/IydD64vgo7VN02VJufG8vSL5uPY69pH1NaJ8HMHuqmRc/wXqpabxmcf2tpykdJcIzK2ZFGMp1JBRpb1wwNOh4z+k7tDLBqKX/fLs87WZwa8v8zp3qI+Iqo4zYtjsOYFamBLPmYKbso3Y9O61fSaq3cGh1RONdUzUMl3A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=inmusicbrands.com; dmarc=pass action=none
- header.from=inmusicbrands.com; dkim=pass header.d=inmusicbrands.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=inmusicbrands.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9ygSKGZL8Na83xJlW8HqlTS26a5PsVkiYYDDUARydCI=;
- b=G6egAU5oA4Knn2YdT69BP9TCGU3IWOiMtNYWXmWbylbXk4vXmhIUkBVAVJAR7Pvh3iAekhxtlGTRmiGNdsVRcTv3q0YNkRCjBQyHu7M4zxov4kLy8yKgmkfwA9mLy7p2VbXIt7IaglHJaLTiqkEY4+Wzeo5vgl1tL4TnLQiPW14=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=inmusicbrands.com;
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com (2603:10b6:303:1bd::18)
- by SA2PR08MB6716.namprd08.prod.outlook.com (2603:10b6:806:11c::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.33; Mon, 14 Jul
- 2025 15:15:42 +0000
-Received: from MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401]) by MW4PR08MB8282.namprd08.prod.outlook.com
- ([fe80::55b3:31f1:11c0:4401%7]) with mapi id 15.20.8922.023; Mon, 14 Jul 2025
- 15:15:40 +0000
-Date: Mon, 14 Jul 2025 16:15:32 +0100
-From: John Keeping <jkeeping@inmusicbrands.com>
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [RFC/PATCH 1/2] usb: dwc3: disable for USB_ROLE_NONE
-Message-ID: <aHUfFGnGZP4z7UgK-jkeeping@inmusicbrands.com>
-References: <20250710152252.2532020-1-jkeeping@inmusicbrands.com>
- <20250710152252.2532020-2-jkeeping@inmusicbrands.com>
- <20250712001131.ax3rw24h3deekxfv@synopsys.com>
-Content-Disposition: inline
-In-Reply-To: <20250712001131.ax3rw24h3deekxfv@synopsys.com>
-X-ClientProxiedBy: LO2P265CA0160.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:9::28) To MW4PR08MB8282.namprd08.prod.outlook.com
- (2603:10b6:303:1bd::18)
+	id 1ubKvR-00000002czu-1r1u
+	for linux-phy@lists.infradead.org;
+	Mon, 14 Jul 2025 15:17:06 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-455b002833bso9561935e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 14 Jul 2025 08:17:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1752506224; x=1753111024; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=xCjJs+mAQ+eyQ0cHltxO4UYluhIlp5Nf/WChKLF+U7U=;
+        b=pxD3Q8JQ+oiFFXvibO+AQy3mq7eAd2oObo0tZbRcykY9qKYK70I6HzHwhV6X03XU02
+         lwsbPCAkRtntZSJhyXIzJWL8HnOCvIzoU/+xAxMj2RGYLHVlHC5jBFVW/mxUqp0XKO/K
+         9dT04CsjXgzspyKDlfn90DVQxBuGMpD69z+4073q44U7cUBL3pYAfEleNekJEwQA8a5+
+         eBnOFR3xwDam6w1+LcWYIy8czoqW8ECKi3hkTJ6XB1NoUbfEIL60gi1hz5kb1zxX9h3B
+         TPrcQu0HMBCzKQDQK+g6oFjoh6CndPg1uOW1tkABQKCXai/+ROfMaAMKxu3RuD4aKTd1
+         /n3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752506224; x=1753111024;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=xCjJs+mAQ+eyQ0cHltxO4UYluhIlp5Nf/WChKLF+U7U=;
+        b=LFqE9sJ4kmNjdrJF2el2vohOQv918/NS/Hz6jGAQJfXL9uP2RfaZXAj1XzowhnQdtc
+         cRvzhiddyNWV9gPMsUJ74I5UkqSJc7QexcEgKePouTZJ9Q1z6TIVpTRgncyVf8mInDWT
+         R8QQQf/RiS1mWBpevWr2WhtNpRMJupLC3xlCB+JEgNdU4P9/B6ZeJL4I3i8qtiVGA9ks
+         hssQaHFM5CR+n1ekiAuAFn5IjFohpIVJIAGkiBmj7+kZoMNL5WhVwwa+PUofILra/aQG
+         t/OuMKlkFOJ1Q1bBQdbHAnFGeFgAaNjq1u2Otu9kjR3yozH/MUrz5CRd1h7yFxHIQ003
+         1Whg==
+X-Forwarded-Encrypted: i=1; AJvYcCUlhnlGc/VzKd0S0+CjriJU6uBi5nhiT2BipDfXtOzE/EQ5SW0w6NerJg/O2vHzR4AyIZesRALneT0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwLSVRGGJhc8KpRkE3lnrPFSHqEWjqZmDTsJTpltQ2ulrHrXVt7
+	E4zMvNbW8mTPefqNSg+z6ucRoFbsy81T+M4ucKO2kLOWyR9RfYF9rSLfS32CzSHRN+A=
+X-Gm-Gg: ASbGncsMKvOZCRPMNBygBwaVSHYKKQ4t0zPXjMsOQKf1Jm2o6PdHXtMtr6+irSVHU4t
+	y2tcLRdiqSKb9L/ZMbLOvI+QRHJ6LUzWMtPZk1mS+3CjPftN9yrAId7Hv+INNxIvFbmnw/PrCQI
+	Wq8LDnfzLfFThvEnxZxx1+B3hJygVejcaR75lH04hBs5tbr6/GzTbj3ZdSXYGD0thbgOenA9xfD
+	9MoctlMrFgaeKrOdY8e66OrpuP2SHRjdKMses7XsoIG0sLkLT/q/006/w/PzMMq7BBNtz4vZJi6
+	zroR78aOOZhp4P+oJquDrPP6lQrWUDzc/MIQWZPxKvJOVv5DM7tEBZjyquiOLfyV4uEWdOwftpG
+	Dn5nTTmTxdiYQbuYaEmlu1ICZESnnKZnDogQKDttt3UV/Z+w0bMCnFAM3yurb1LY=
+X-Google-Smtp-Source: AGHT+IEpin0kK7Y62+zwW4eiqts/4lq2fhVPTieQctRVVCnIYpoH+CSOCtblJicWaiIjBRT5U9/Y+A==
+X-Received: by 2002:a05:600c:c096:b0:441:a715:664a with SMTP id 5b1f17b1804b1-455e7890b03mr75864705e9.20.1752506223867;
+        Mon, 14 Jul 2025 08:17:03 -0700 (PDT)
+Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-454dd540b52sm135696755e9.28.2025.07.14.08.17.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 14 Jul 2025 08:17:03 -0700 (PDT)
+Message-ID: <c93624bb-ee7b-45ac-8b53-b5391f11c9c9@linaro.org>
+Date: Mon, 14 Jul 2025 16:17:01 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW4PR08MB8282:EE_|SA2PR08MB6716:EE_
-X-MS-Office365-Filtering-Correlation-Id: fb44d944-6b74-4f7b-8379-08ddc2e94b59
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?0muWFhu+jsXp1WDpSsQ6WpMKg+FRXzQY9xpCbmPQN4s0uDwxgrUgfO6RcWnn?=
- =?us-ascii?Q?yW1X+DTxU/Do1ZADAqnvvHS6X9td6uAGr3XaaOitWrq7vsrKKVSgtadtKxex?=
- =?us-ascii?Q?9LlNLCepIxDW3tBGKABFKrNBUWt3uQQP5meYQkEu99dgGuRJu5pSB8cjtiys?=
- =?us-ascii?Q?cnRVxTZln7n+82BIkTTCSmWnXGspPWxoOSS9jdDn5SlyNXmexL5rol/tinFi?=
- =?us-ascii?Q?j1lO2oAax6oAIC2H5L+0gSXAiPLn1PdvAmZNUMr5FDVloo41wKFm3SEHE3Z5?=
- =?us-ascii?Q?HD4t7h4ARSxSbh5tl8I8TWL1l2cp2BNexiq7lflFrCRBvZuYOa6RhL8cqPfL?=
- =?us-ascii?Q?Itmluq4EUh7nGpOQSnNWJwdXpg/69KLjQISv/+c71GxO+zP3rCaY16O0JA1B?=
- =?us-ascii?Q?EwxmJkG/nf4VWVpESBvAyJgRj/Wr5dMF0T4g7tHxlSbbc2m56PUdJP4yUvH2?=
- =?us-ascii?Q?pTuYfleZz3+TS17YpqK/rGOviaUg9cVslRV2nIflBl5EB9aDuhA0ircsNu6x?=
- =?us-ascii?Q?3EYC3/2fdqbfQj3rdTredUJt6y74+Orts6e6R/KatcvoGPhIliXrr0pdgJdG?=
- =?us-ascii?Q?u2ps0Mw8JjP7A1aLtyT6Y6w5vn+2/jOe8iqD9kyyUfs/hZozjaoosVkUXsG+?=
- =?us-ascii?Q?CnzW0wuO0H6iOF1lQVDNd+Cmtg11uMpJ55J5QdoYZmDxAu2TTbWcwyd4Rz7x?=
- =?us-ascii?Q?CeAPcvM88kiMfe8tu6WY2NGYQsD+UAqUIWl3BERaSY3uVSZA7nz+TPth0Yl5?=
- =?us-ascii?Q?JhBdgptiRhpNU+aQ90pOuWy8AOj3OHm6Z9zsgYlUuakSAxHwDJLPkp1G7t1F?=
- =?us-ascii?Q?um6QyriwKsqpTS9aKlt6mYE/36yjrx/SUNZ8rVSZbjfPcsYgkPXcTaFO38SI?=
- =?us-ascii?Q?Jeg6gHBC4F4by9JRq8NCEroffjIG+JwtnRrAgRwMi0jOqnq17/UXYBO2385W?=
- =?us-ascii?Q?oOghl35JC6YHf0JEsydWXAE39v7p19K0SABj/a0tSj565MfpU2Du/Mei1i90?=
- =?us-ascii?Q?wMN/pdAYet6OKuHVbLQY98XE8Vc8tzvssZm2eGBWwf9VGfKG0VuJiYGlKBI1?=
- =?us-ascii?Q?CpBkyvjFcw6rMlTxTrQ8grGMGS6KEMM1yNoZX8mCR6CWTPPtwGl/kf5k9tEI?=
- =?us-ascii?Q?g3V88Wj274pisSNux9/bl4cTQvnon0teFZnhyiQBLyKhcdrKtnsSVAjGZ16d?=
- =?us-ascii?Q?zCz3pTdCDzxqMV5TYw7PVU8XkGdduon1TXqnxCKxVqMAw6k/UZn965HkaGMY?=
- =?us-ascii?Q?+nVnZGhI58eSIcywlMxdHDhX8rkHYAdg98X/MSyyCa3Cp1ldb5qxsuCIHKs8?=
- =?us-ascii?Q?S+eXpr79PU/fvlM6++tuSauHSazKIfJd2i8u/PrvY3p+gvFIWw3yToQvC8Pa?=
- =?us-ascii?Q?vX7imMeuSNK4I1MxDEsZ6WXPtuZcmFzvWUfqK1m8BOusIlR+ZopOnCfwWGGe?=
- =?us-ascii?Q?Prwy837iAS1EIudlFOhiUzIneOUqyPQHmWXV8Ic3X8B/mIzz6RwkfQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MW4PR08MB8282.namprd08.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(52116014)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?wzAEQy2pRTc+RXH+nSa5S5ZLviB9wpHnDeSVTxO3pPR//T9UTUZ2YtSSSkm3?=
- =?us-ascii?Q?HMgCBFF+L6oLS5nexHNmYn2SOUOi0RwDmrv1cEM0LAQzpJcgl2qi+MgLi8H7?=
- =?us-ascii?Q?KM3UgK9OaCAJ9sZHGQGh0j5hNPMbTGSHXgXA5T+heRUG2K15o+NJBd+QRZ8u?=
- =?us-ascii?Q?jUB819xmdN59x6DzqsKQF6S6A7NgKf2Z8bikXSrEqQ7rv1DrqmfF9bOZ7cu7?=
- =?us-ascii?Q?c1ZAyJgf3wC9Gdni5bv9dDnu8xDoAe+JdE8KLk5WzYNHU4PY4lYsgHBc0qWP?=
- =?us-ascii?Q?XAJ8tqC+36M8SOJFU3RgRPx3RW5aX59ZFP7Mh4DkLT7qns7DVEHPf88XTCG1?=
- =?us-ascii?Q?rwYDvyhIO54l93AlzRYF28KirwhsKL72kh7qC+2pz4mD3+uUY3Op6YqzIMKA?=
- =?us-ascii?Q?/vOKAeTegvKtPMEVG1qEuTtYaxEGItyudU9LlBzebDB18zV6NJLrJPY7kwu1?=
- =?us-ascii?Q?tA3iX8kAqPd6YxymUrXVegqAQBQ/VrFT/GOB6lmkCMkWOOwczfLugrRQqCcW?=
- =?us-ascii?Q?36j4EOU5KqgkXuIYusZfzzC4+R6XlRY6UK0HsFUq0rMG5+7DBRZLykJELiyk?=
- =?us-ascii?Q?NaI8WvkI7Qtp0T+C9lMRRqBm3rP7w+zGAoTaMtmTg+hUmmsV4M6ShitCK8kp?=
- =?us-ascii?Q?hT/7+d8XjWMZ8PKmforg7cxgIO7WBMLoW/xJrg62FZS2tUk09JoEwLI9IWEP?=
- =?us-ascii?Q?8ZcaHysyqmWPZ+zbb2h1vnlKESE8bA7Fw5h2KeuQy4DdGNjUoxr4IXq/ZowB?=
- =?us-ascii?Q?madkeep/To4MOZJVjcaEva3qfIhHKE61C0YPjz9LYWaEvMFEG9MLhAyf8rPv?=
- =?us-ascii?Q?MXJLNL8vJkBhXNHbDEOP5vQq3dUBsmnRh+CApsXZ+C0k5HydmapMLJEqr/7c?=
- =?us-ascii?Q?CjLH1kKmBeeRhPhaQojHkdXw9/VoGG63Tkavw0xT/hGDUv5yaFN3/lh859jq?=
- =?us-ascii?Q?VuSeF6uXoqiPJxFBuOtKX1TxKTnOTp9hnRSeKvFMBXz0WkupCl810AZB9HYe?=
- =?us-ascii?Q?gFAPHAqAgLBiUTeCSvXO6QyBlbxPW1et8Wqfm8kwzVMU+9THPyl0HvFu1Y92?=
- =?us-ascii?Q?cq+LZO98PZSqb1Wxh5rOREZvzRoLCD9XTBvgeV4VNJ+XlKZcFjaEW7wEMHEP?=
- =?us-ascii?Q?web9HcIy3pjSVSNF62tOZGTnSXI38babhGtURMEYlp1aHjtZbpnDxNVB8rgZ?=
- =?us-ascii?Q?pZNtWhsLeCI3jeJL60Wh+YIT3aAnjLgfCfv4Dh8CbjI2AQaVFnLzM9pjS5xB?=
- =?us-ascii?Q?uYwiHfxzQVm70MY0gs5zz4DaO9PTx2ap9G+ViYaB2iTyRcFfoPUz/17I+PYC?=
- =?us-ascii?Q?tsB3wlfWK5Gh2CqgpjhB6faJpb8ww36ogq8tjjlyCBANmqsQxNo6WVvD6zYI?=
- =?us-ascii?Q?wXFX9GutdNV/x09mgAe+z7WkMpRdYlVBOaHO6xft81gxWDKq/MAgkrwaIFoY?=
- =?us-ascii?Q?wmANAFWY3alOh7a/LQjILrZmedsDfdUjelZIka5oon9zCJMoPAJDopapiM1X?=
- =?us-ascii?Q?Ue5Wb0T58GwOl082jdUYGiS0i8eDXI7AHeigOjxA0Z9iwgTq13HBcRffSl7/?=
- =?us-ascii?Q?7qDJ/DyR+QADp0uGGMTgUPjmYpbk0TtfZ9DjoGeGsXYZTZfSQE8rBpH/9R8D?=
- =?us-ascii?Q?0w=3D=3D?=
-X-OriginatorOrg: inmusicbrands.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fb44d944-6b74-4f7b-8379-08ddc2e94b59
-X-MS-Exchange-CrossTenant-AuthSource: MW4PR08MB8282.namprd08.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2025 15:15:40.6539
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 24507e43-fb7c-4b60-ab03-f78fafaf0a65
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: BIRFrvxbTCO5LNAgtmpW08oNvGwPaCGcjmcYnGRSQc8NuBGat/I+QBZUOLcFS+ceCWzoyMc/v9nbdZJQLqfGkfzijnH6lOwAex7K7/aMqZI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA2PR08MB6716
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
+To: Vladimir Zapolskiy <vz@mleia.com>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
+ <20250710-x1e-csi2-phy-v1-2-74acbb5b162b@linaro.org>
+ <11b573d5-ce4d-476c-b94c-216d427cd838@linaro.org>
+ <08261aa4-689b-4d6b-bfd2-221c1976d254@linaro.org>
+ <a7f64b31-4767-4281-b452-a2bc5351d745@mleia.com>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-US
+In-Reply-To: <a7f64b31-4767-4281-b452-a2bc5351d745@mleia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_081602_177337_CCDAB98F 
-X-CRM114-Status: GOOD (  34.72  )
+X-CRM114-CacheID: sfid-20250714_081705_484353_3729B32B 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,89 +105,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Jul 12, 2025 at 12:11:38AM +0000, Thinh Nguyen wrote:
-> On Thu, Jul 10, 2025, John Keeping wrote:
-> > When the phy is acting as a Type C mux, it may need to reset when the
-> > cable direction changes.  But this should not happen while DWC3 is
-> > trying to use the USB connection.
-> > 
-> > In this case, there must be a connection manager to notify the phy of
-> > the orientation change and tcpm_mux_set() ensures this happens before
-> > DWC3's role switch is informed of a change.
-> > 
-> > It should not be possible to go directly from device->device or
-> > host->host with a change in orientation without transitioning through
-> > the "none" role as the cable is unplugged.  So ensuring that DWC3 always
+On 14/07/2025 15:58, Vladimir Zapolskiy wrote:
 > 
-> The controller is either host or device mode. It's odd to use "none" to
-> indicate connection.
+> This proposed device node scheme does not solve the known and already
+> discussed technical issue expectedly, namely there is no given way
+> to describe a combo mode hardware configuration, when two independant
+> sensors are wired to the same CSIPHY. This is an unsolvable problem
+> with this design.
 
-There is no connection in this state.  When the type C controller
-indicates that the role is "none" then there cannot be a USB connection.
+I think that is genuinely something we should handle in camss-csid.c 
+maybe with some meta-data inside of the ports/endpoints..
 
-> > informs the phy of the new mode whenever a plug is detected should be
-> > sufficient for the phy to safely reset itself at a time that is safe for
-> > DWC3.
 > 
-> Couldn't the phy do this as it detects connection/disconnection.
+> Sensors are conneced to CSIPHY IP blocks, CSIPHY is connected to CSID.
+My understanding of best practice is data-endpoints go into the consumer 
+not the PHY.
 
-I don't think the phy can detect a connection.  If it is configured for
-the wrong orientation then it will not monitor the correct data lines.
-The phy hardware does not signal any interrupts to the CPU for the
-driver to react to.
+These are PHYs with their own SoC pins and voltage rails. They should 
+look like other PHYs in qcom and across DT, IMO.
 
-> It seems what you need is a full controller initialization upon new
-> connection on orientation change, and you're using role_switch selecting
-> "none" to do so.
-
-I'm not sure whether a complete initialization is necessary, but what I
-want to avoid is the phy resetting while the controller is part-way
-through device enumeration or setting up a gadget configuration.
-
-It may be that simply avoiding resetting the phy if the orientation is
-unchanged is enough to avoid some of this problem, but I suspect there
-are still problems if the clocks from the phy to the controller are
-stopped unexpectedly.  However, I have run some tests of this change and
-it looks promising.
-
-> I'm not sure if role-switch has the right interface to do so. Perhaps we
-> can introduce one? I don't think we should change the behavior of the
-> current flow and apply that to all other platforms.
-
-I don't think it's unreasonable for the controller to be idle when there
-is an external type C controller notifying the connection state.
-
-The hardware setup looks like this, with the Linux type C code notifying
-the phy driver of the orientation change and the DWC3 driver of the role
-change:
-
-                      +------+          
-                      | DWC3 |<----+    
-                      +--^---+     |    
-                         |         |    
-                      +--v--+      |    
-                +---->| PHY |      |Role
-                |     +--^--+      |    
-    Orientation |        |         |    
-                |   +----v----+    |    
-                +---+ FUSB302 +----+    
-                    +---------+
-
-The advantage of using the role hook is that we are guaranteed that it
-is called after the phy has been notified of the orientation change.
-
-Do you have an idea of a new interface?  Or do you think it is safe to
-reset the phy underneath the controller when that will halt the clocks
-from the phy to the controller for some period of time?
-
-
-Regards,
-John
+---
+bod
 
 -- 
 linux-phy mailing list
