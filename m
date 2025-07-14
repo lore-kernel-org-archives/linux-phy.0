@@ -4,108 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23DBDC83F1B
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jul 2025 08:37:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0031C83F17
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Jul 2025 09:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2nnlYzO6N4//GJOSTiFnWC/BRvOlF6NGGzO3E+byLg=; b=Afw8IkR9+PVScb
-	uud2pdP0Qni2IsK2J82znJdL7ysSV3WPbBthh27IX4Q9OsnJ+Pt/94d23BpOy+xQhYboNeZWCWRZs
-	QM5xUj6hIWUgFVLy7mm9+qkk1bdsdGZPNlKlo679UJaMPjGqBmMASxlcqYdcR3DVDIth4mIuT0x95
-	TtpBDh9NNqQ2++NOskxfphR8pQ81zEVna4SOe2P1p0AvIUh6Gb/QKX6p4SBTeCV5DyiiMHlaEfOfW
-	KZ/B7z7eqja631UEdo461S6Fa9KgE49sgVc8tDYLd9SonIHI0Hxkb9VvF8/dmPuIvEpiMzZaI8uB7
-	562auzDODvnMV1oK+WYQ==;
+	List-Owner; bh=ZFPsNMPjRbQlIP1aKDFgH4U37vikR4jHOYfIgTBLx2s=; b=b6zoJSKvzqbtra
+	B6SxFml/di/zM4kI60Qd+lEo/ozjmnCJVFgZz9mdFaVPHxq9HmUEXTTVYKbSxdJXCOkPe/320fdT7
+	Y8T2X+UNK0YyRHPclnotWzBvgVh+N0nUtFAMVTBM1nuR8zXSpvt+JOICBMU6Nes48mPOlD/nOVJJT
+	ID24j/noinhHIJGsoQDi0eXGqXMvBUazyg24s9w8PKuHF5AwRlTS8OI0YpOGS4o78DgzrcN5oWT6p
+	uTA735AH5thYlnOZ/jctMFW985txYk6rVbe5malm+WNccNgzwezMJ2J/mDp9Jvz/Vbby9XsH8eDci
+	xpjQCv9IBhpPU3UIyiYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubEgJ-00000001fLU-3jEV;
-	Mon, 14 Jul 2025 08:37:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ubFG2-00000001k9T-24NM;
+	Mon, 14 Jul 2025 09:13:58 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubERE-00000001cf0-2l8r
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Jul 2025 08:21:29 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56DNkrj1011602;
-	Mon, 14 Jul 2025 08:21:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=Y6HtbKPGtLz
-	1dNZ+Aif5/MMaYjq5JeSprvxGgPvwNYc=; b=WWeO68C5hSkAnH4LghlEoygZpV9
-	TIl7wJ+l8SzqsGEV2RTUqAkWpwEoxc9jTtxRuELTGA2mhbuY1KXnQKUpupg4cAvm
-	AR8Rlax2J9Cb5lVyKAaTQZUG1TCQmi4Gfs4d/ODfnzfUvGxT4Cntm4eTFoGHuqmV
-	AXxCWQDpchCaXqN4klHZlfucbpJjcf4P21onoFnZHbzBRlFd4q6AcZxzIo5GDHgc
-	UwGTYd7+DBLutM5nY0ccxWF43d2cQqdSWv+UiTXW8VV6ywxfpN+MqiFUnBcmL7t3
-	l9zjL7oqyquEcqYqaKZTl39JgHTtrnJ914xFZJsct5PiXcL2FCx7tFhtatg==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ugfhbue0-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Jul 2025 08:21:16 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 56E8LDEH027033;
-	Mon, 14 Jul 2025 08:21:13 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 47ugsm5yds-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Jul 2025 08:21:13 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 56E8LDQu027023;
-	Mon, 14 Jul 2025 08:21:13 GMT
-Received: from cse-cd01-lnx.ap.qualcomm.com (cse-cd01-lnx.qualcomm.com [10.64.75.209])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 56E8LCgl027014
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Jul 2025 08:21:13 +0000
-Received: by cse-cd01-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id C497A20F33; Mon, 14 Jul 2025 16:21:11 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v4 1/3] PCI: qcom: Add equalization settings for 8.0 GT/s
-Date: Mon, 14 Jul 2025 16:21:08 +0800
-Message-Id: <20250714082110.3890821-2-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250714082110.3890821-1-ziyue.zhang@oss.qualcomm.com>
-References: <20250714082110.3890821-1-ziyue.zhang@oss.qualcomm.com>
+	id 1ubFDZ-00000001jc1-1OUm;
+	Mon, 14 Jul 2025 09:11:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1752484282;
+	bh=TcXuSKCzrCCwa2pmT8ZHf1Y2DIXZfwVMWsiDggJctoQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=B5bbabNSKmfNjM9++JQ90q4tsvfZkUqd0NHtfw2dUAe7hIS3PaXzD7HksVYxhHNab
+	 wKmWXPRAWP00WwEUhjUURuoDXv7oP88Owx7G6axYcInakd5jvBrnwGh+5B5wZA4vej
+	 FNTQKY3beSXG+GhSo/assdVNtSQFqiyBf7htZu5HnMZ+a2Z7wS8ybeJW6BFMohb2dA
+	 gHU6GVhnlXLprKdYC8dD/uEoGkRf5Whwgh5nyLswGC1suMHvCJSzMMjnx79TXdKaIw
+	 73Aiuly5kWcvTP7AT6Jt21nMD/o/UlNg/whhB+786BLG3fTUndHJbCWCU3b63x2Ttj
+	 mUJscYPAujZRQ==
+Received: from [192.168.1.90] (unknown [82.79.138.60])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 57A9F17E0FFA;
+	Mon, 14 Jul 2025 11:11:22 +0200 (CEST)
+Message-ID: <751975b2-c9dc-4f89-9537-475773b16883@collabora.com>
+Date: Mon, 14 Jul 2025 12:11:21 +0300
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: xQtiRMspL7prhXdg7tnEeyLnvI_ilqud
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE0MDA0OCBTYWx0ZWRfX2IvbUaJF/RcG
- ioaHfNs/J7BETTktpCns4TKQ/gy0fFuMaV3LVzQOm13PSsb1F9vpiZsu+GpEjKztwnJUXI4nARP
- HvHNc2jn9Q5p6cK9Z/rdxQ09u5xte8m8GimS0MZoREFiErlTDUFYtSAy73T/2UKK9ymcV018UbJ
- DoUuVqifjGX4JqiDDl0M9KtaqkekqyuJCo+97y/s/R2m/VUNtCUo6Ff1GP2fFGqKwcFKTSIvkxF
- WI9Zjcc0ksHFkCyA5zM8RP3reEDRX54vTXUF54uMuit5wv2n6vQKwZN1puM0ZS1U71lp/TVrk/S
- MvfYbHVZSEGpJ9idylnhD3GSYUyRhwBmbHIxFdrQtH7bHNf/aHZsvJ/+mG+08JGDeGrrEHeWE7g
- 3WhXHI6QWJRpriw9vfyTB6D+P5eRFYafeMJRXwpVZ3h+wMeKRjPOpGPJFweWz51sU4L4B9IT
-X-Proofpoint-GUID: xQtiRMspL7prhXdg7tnEeyLnvI_ilqud
-X-Authority-Analysis: v=2.4 cv=HYkUTjE8 c=1 sm=1 tr=0 ts=6874bdfc cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=dYy-u6rEkQU6C3rztJEA:9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-14_01,2025-07-09_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 priorityscore=1501 bulkscore=0 clxscore=1015
- mlxscore=0 mlxlogscore=999 malwarescore=0 impostorscore=0 spamscore=0
- lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507140048
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 8/9] phy: rockchip: phy-rockchip-samsung-hdptx: convert
+ from round_rate() to determine_rate()
+To: Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, Maxime Ripard <mripard@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>
+Cc: linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <20250710-phy-clk-round-rate-v1-0-0ff274055e42@redhat.com>
+ <20250710-phy-clk-round-rate-v1-8-0ff274055e42@redhat.com>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20250710-phy-clk-round-rate-v1-8-0ff274055e42@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_012128_702032_6ADBD840 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20250714_021125_533606_40A9C5B4 
+X-CRM114-Status: GOOD (  20.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,170 +86,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add lane equalization setting for 8.0 GT/s to enhance link stability and
-avoid AER Correctable Errors reported on some platforms (eg. SA8775P).
+Hi Brian,
 
-8.0 GT/s and 16.0 GT/s require the same equalization setting. This
-setting is programmed into a group of shadow registers, which can be
-switched to configure equalization for different speeds by writing 00b,
-01b to `RATE_SHADOW_SEL`.
+On 7/10/25 7:07 PM, Brian Masney wrote:
+> The round_rate() clk ops is deprecated, so migrate this driver from
+> round_rate() to determine_rate() using the Coccinelle semantic patch
+> on the cover letter of this series.
+> 
+> Signed-off-by: Brian Masney <bmasney@redhat.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 21 +++++++++++++--------
+>  1 file changed, 13 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index 79db57ee90d1487b51f4ddadde870a275dd7b17b..f027d2caa4c2ebfc0fdec08bcebf3f415ff1a064 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -1869,8 +1869,8 @@ static unsigned long rk_hdptx_phy_clk_recalc_rate(struct clk_hw *hw,
+>  	return hdptx->hw_rate;
+>  }
+>  
+> -static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
+> -					unsigned long *parent_rate)
+> +static int rk_hdptx_phy_clk_determine_rate(struct clk_hw *hw,
+> +					   struct clk_rate_request *req)
+>  {
+>  	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
+>  
+> @@ -1879,14 +1879,17 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
+>  	 * To be dropped as soon as the RK DW HDMI QP bridge driver
+>  	 * switches to make use of phy_configure().
+>  	 */
+> -	if (!hdptx->restrict_rate_change && rate != hdptx->hdmi_cfg.tmds_char_rate) {
+> +	if (!hdptx->restrict_rate_change && req->rate != hdptx->hdmi_cfg.tmds_char_rate) {
+>  		struct phy_configure_opts_hdmi hdmi = {
+> -			.tmds_char_rate = rate,
+> +			.tmds_char_rate = req->rate,
+>  		};
+>  		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi);
+>  
+> -		if (ret)
+> -			return ret;
+> +		if (ret) {
+> +			req->rate = ret;
 
-Hence program equalization registers in a loop using link speed as index,
-so that equalization setting can be programmed for both 8.0 GT/s and
-16.0 GT/s.
+This is not quite right, since "ret" is expected to contain an error number,
+typically -EINVAL.
 
-Co-developed-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
----
- drivers/pci/controller/dwc/pcie-designware.h  |  1 -
- drivers/pci/controller/dwc/pcie-qcom-common.c | 54 ++++++++++---------
- drivers/pci/controller/dwc/pcie-qcom-common.h |  2 +-
- drivers/pci/controller/dwc/pcie-qcom-ep.c     |  6 +--
- drivers/pci/controller/dwc/pcie-qcom.c        |  6 +--
- 5 files changed, 37 insertions(+), 32 deletions(-)
+> +
+> +			return 0;
 
-diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-index 1bf1e08ab4c3..8e0a02abab60 100644
---- a/drivers/pci/controller/dwc/pcie-designware.h
-+++ b/drivers/pci/controller/dwc/pcie-designware.h
-@@ -123,7 +123,6 @@
- #define GEN3_RELATED_OFF_GEN3_EQ_DISABLE	BIT(16)
- #define GEN3_RELATED_OFF_RATE_SHADOW_SEL_SHIFT	24
- #define GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK	GENMASK(25, 24)
--#define GEN3_RELATED_OFF_RATE_SHADOW_SEL_16_0GT	0x1
- 
- #define GEN3_EQ_CONTROL_OFF			0x8A8
- #define GEN3_EQ_CONTROL_OFF_FB_MODE		GENMASK(3, 0)
-diff --git a/drivers/pci/controller/dwc/pcie-qcom-common.c b/drivers/pci/controller/dwc/pcie-qcom-common.c
-index 3aad19b56da8..3914d409b486 100644
---- a/drivers/pci/controller/dwc/pcie-qcom-common.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom-common.c
-@@ -8,9 +8,10 @@
- #include "pcie-designware.h"
- #include "pcie-qcom-common.h"
- 
--void qcom_pcie_common_set_16gt_equalization(struct dw_pcie *pci)
-+void qcom_pcie_common_set_equalization(struct dw_pcie *pci)
- {
- 	u32 reg;
-+	u16 speed;
- 
- 	/*
- 	 * GEN3_RELATED_OFF register is repurposed to apply equalization
-@@ -19,32 +20,37 @@ void qcom_pcie_common_set_16gt_equalization(struct dw_pcie *pci)
- 	 * determines the data rate for which these equalization settings are
- 	 * applied.
- 	 */
--	reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
--	reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
--	reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
--	reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
--			  GEN3_RELATED_OFF_RATE_SHADOW_SEL_16_0GT);
--	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
- 
--	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
--	reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
--		GEN3_EQ_FMDC_N_EVALS |
--		GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
--		GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
--	reg |= FIELD_PREP(GEN3_EQ_FMDC_T_MIN_PHASE23, 0x1) |
--		FIELD_PREP(GEN3_EQ_FMDC_N_EVALS, 0xd) |
--		FIELD_PREP(GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA, 0x5) |
--		FIELD_PREP(GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA, 0x5);
--	dw_pcie_writel_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF, reg);
-+	for (speed = PCIE_SPEED_8_0GT; speed <= pcie_link_speed[pci->max_link_speed]; ++speed) {
-+		if (speed > PCIE_SPEED_16_0GT)
-+			break;
-+		reg = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
-+		reg &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
-+		reg &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
-+		reg |= FIELD_PREP(GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK,
-+			  speed - PCIE_SPEED_8_0GT);
-+		dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, reg);
- 
--	reg = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
--	reg &= ~(GEN3_EQ_CONTROL_OFF_FB_MODE |
--		GEN3_EQ_CONTROL_OFF_PHASE23_EXIT_MODE |
--		GEN3_EQ_CONTROL_OFF_FOM_INC_INITIAL_EVAL |
--		GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC);
--	dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, reg);
-+		reg = dw_pcie_readl_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF);
-+		reg &= ~(GEN3_EQ_FMDC_T_MIN_PHASE23 |
-+			GEN3_EQ_FMDC_N_EVALS |
-+			GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA |
-+			GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA);
-+		reg |= FIELD_PREP(GEN3_EQ_FMDC_T_MIN_PHASE23, 0x1) |
-+			FIELD_PREP(GEN3_EQ_FMDC_N_EVALS, 0xd) |
-+			FIELD_PREP(GEN3_EQ_FMDC_MAX_PRE_CUSROR_DELTA, 0x5) |
-+			FIELD_PREP(GEN3_EQ_FMDC_MAX_POST_CUSROR_DELTA, 0x5);
-+		dw_pcie_writel_dbi(pci, GEN3_EQ_FB_MODE_DIR_CHANGE_OFF, reg);
-+
-+		reg = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
-+		reg &= ~(GEN3_EQ_CONTROL_OFF_FB_MODE |
-+			GEN3_EQ_CONTROL_OFF_PHASE23_EXIT_MODE |
-+			GEN3_EQ_CONTROL_OFF_FOM_INC_INITIAL_EVAL |
-+			GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC);
-+		dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, reg);
-+	}
- }
--EXPORT_SYMBOL_GPL(qcom_pcie_common_set_16gt_equalization);
-+EXPORT_SYMBOL_GPL(qcom_pcie_common_set_equalization);
- 
- void qcom_pcie_common_set_16gt_lane_margining(struct dw_pcie *pci)
- {
-diff --git a/drivers/pci/controller/dwc/pcie-qcom-common.h b/drivers/pci/controller/dwc/pcie-qcom-common.h
-index 7d88d29e4766..7f5ca2fd9a72 100644
---- a/drivers/pci/controller/dwc/pcie-qcom-common.h
-+++ b/drivers/pci/controller/dwc/pcie-qcom-common.h
-@@ -8,7 +8,7 @@
- 
- struct dw_pcie;
- 
--void qcom_pcie_common_set_16gt_equalization(struct dw_pcie *pci);
-+void qcom_pcie_common_set_equalization(struct dw_pcie *pci);
- void qcom_pcie_common_set_16gt_lane_margining(struct dw_pcie *pci);
- 
- #endif
-diff --git a/drivers/pci/controller/dwc/pcie-qcom-ep.c b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-index bf7c6ac0f3e3..aaf060bf39d4 100644
---- a/drivers/pci/controller/dwc/pcie-qcom-ep.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom-ep.c
-@@ -511,10 +511,10 @@ static int qcom_pcie_perst_deassert(struct dw_pcie *pci)
- 		goto err_disable_resources;
- 	}
- 
--	if (pcie_link_speed[pci->max_link_speed] == PCIE_SPEED_16_0GT) {
--		qcom_pcie_common_set_16gt_equalization(pci);
-+	qcom_pcie_common_set_equalization(pci);
-+
-+	if (pcie_link_speed[pci->max_link_speed] == PCIE_SPEED_16_0GT)
- 		qcom_pcie_common_set_16gt_lane_margining(pci);
--	}
- 
- 	/*
- 	 * The physical address of the MMIO region which is exposed as the BAR
-diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 9b12f2f02042..e5e686705e48 100644
---- a/drivers/pci/controller/dwc/pcie-qcom.c
-+++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -298,10 +298,10 @@ static int qcom_pcie_start_link(struct dw_pcie *pci)
- {
- 	struct qcom_pcie *pcie = to_qcom_pcie(pci);
- 
--	if (pcie_link_speed[pci->max_link_speed] == PCIE_SPEED_16_0GT) {
--		qcom_pcie_common_set_16gt_equalization(pci);
-+	qcom_pcie_common_set_equalization(pci);
-+
-+	if (pcie_link_speed[pci->max_link_speed] == PCIE_SPEED_16_0GT)
- 		qcom_pcie_common_set_16gt_lane_margining(pci);
--	}
- 
- 	/* Enable Link Training state machine */
- 	if (pcie->cfg->ops->ltssm_enable)
--- 
-2.34.1
+We shall continue returning the error code here.
 
+Regards,
+Cristian
+
+> +		}
+>  
+>  		hdptx->hdmi_cfg = hdmi;
+>  	}
+> @@ -1896,7 +1899,9 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
+>  	 * hence ensure rk_hdptx_phy_clk_set_rate() won't be invoked with
+>  	 * a different rate argument.
+>  	 */
+> -	return hdptx->hdmi_cfg.tmds_char_rate;
+> +	req->rate = hdptx->hdmi_cfg.tmds_char_rate;
+> +
+> +	return 0;
+>  }
+>  
+>  static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
+> @@ -1925,7 +1930,7 @@ static const struct clk_ops hdptx_phy_clk_ops = {
+>  	.prepare = rk_hdptx_phy_clk_prepare,
+>  	.unprepare = rk_hdptx_phy_clk_unprepare,
+>  	.recalc_rate = rk_hdptx_phy_clk_recalc_rate,
+> -	.round_rate = rk_hdptx_phy_clk_round_rate,
+> +	.determine_rate = rk_hdptx_phy_clk_determine_rate,
+>  	.set_rate = rk_hdptx_phy_clk_set_rate,
+>  };
+>  
+> 
 
 -- 
 linux-phy mailing list
