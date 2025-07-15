@@ -4,68 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4130C83F17
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 16:04:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5CD7C83F17
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 19:14:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+fu4LLapRJko6rt1xVbGGH7q4c5je5WxUg1Vl7aPoSg=; b=Sr6zPxFdPot1+iLF1UVmSK6/2E
-	1fAhB0P3Si+dwJisPcqnaFpqPbZ9+O/cA4YCEhUrTGeQ2k2TR9PI1AQOzms4mRF5wnnuCb8pz58xB
-	t41rcQ81T0FlSWMDx84U9BMzbDvIXRaae2WA5hJn1IFFR9VpTkYUeSYI8r2J6JQGPiSSetPGrLa+N
-	smGM14OzUyaxCWa1YSBrUtTp2Qwh6wshQ5l3hCddQoBfQNZ7nKumOHwikmiZ4jRLaCo+li4b6fcaJ
-	r6wXkbuMr0FfgxrK3pFBFmv2cCou+iDGQ1QYJCgE8OLaqr1wpjpN+Bn+xPVf1O/Sfi6tRZrh2QfX2
-	73MPxT3A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1AmEJbZj3+fhKYeB0Aikbcn171I1CnUo3T1R6xy+ZiI=; b=xUKm8CoSliXnnu
+	t10AvyMty114mh+5L2N5UMNkX6TahNxQfaACmqKW/kLios8b/bDL9rDYnVSknzOJPgnwBRjlEnNXU
+	shKpD9Gz2kjtI05HsduRVC85gJq7duaymTRe55TamBZbszvORZeVeVm9VX2NwMtiPQxXL2BfpM5eW
+	aciYJ8ckojfdChngiCvlyGszNrJ0+MHsWJ2NiFr0wai1vECVtYdPjmNhocftB5QZ8pRzBK5MOKg9i
+	agEcxUv1gQx9fEVkTyatbupxJXBLJ95/W0YJ/zJY8cslo0VfQEIzIFQtow8iD7VxxZ6Tk4ky+Q/mi
+	gNXmZET52ukSuWAWOc7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubi8h-00000005h16-2M3q;
-	Tue, 15 Jul 2025 16:04:19 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1ubl6z-00000005xzc-3YVa;
+	Tue, 15 Jul 2025 19:14:45 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubgbZ-00000005MYK-0L8b;
-	Tue, 15 Jul 2025 14:26:01 +0000
+	id 1ubhQW-00000005ZR1-3aEB
+	for linux-phy@lists.infradead.org;
+	Tue, 15 Jul 2025 15:18:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2CE6261462;
-	Tue, 15 Jul 2025 14:26:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BE2DC4CEE3;
-	Tue, 15 Jul 2025 14:25:59 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 007666115E;
+	Tue, 15 Jul 2025 15:18:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C258C4CEE3;
+	Tue, 15 Jul 2025 15:18:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752589559;
-	bh=4Iuh1W4p/GuvtYKXIWTDTZsm2HB078xwuI7VRYFOyrw=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=kTO9LMpppBNDHQsBuRHRm7reVUOsGe4WX1YKctqv6iQWzbpNpKKQr3XuqAkSK85bq
-	 qD5CJ4tAUv4cq0Nw/3C25mnl5K4VFYtuHHI8TV2w/b9GmIuoLhDXBUIySdpcLApvic
-	 mZhp6F9t9M6TNAtr4xx4Stm8+7csKiPYehRn4VI17JPmZvDP9eycI3HkjLgv7VZP95
-	 86VFSx/X1SJV5jLNwnTO40XUc1OapKhEI6IwCSntnvT6tvzmwpI9BxtnDbZGa23GR/
-	 4HivpPBJIf/oE9L8cJ0GsWg2OI4gPGr8u/Jj9/LbezFz49+hdJ/20/ZgdzEBaeongY
-	 YDjIAY54qI2GQ==
-Date: Tue, 15 Jul 2025 09:25:58 -0500
+	s=k20201202; t=1752592719;
+	bh=q9VBgZoVnvlYmzkNOY4MseIlWIGaQ1fU9AXJh1oGUOA=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=HOS/GGQlPyAUoJj8L470mRd2H5zQAJXW0edmGkkNbJMdPOLp5gh0pP1350jq0Jj5i
+	 7HoEF3kQtAJUnDMRpIW8GLNJh5nXNZoUKznaV9BAvQLtkykzLrB0M+Wydxzi3w9NdA
+	 ZoNvi/ywXtEFGnvQBuwUEOYc+k+BoPTeMJL6s5n/YwuHZN8sCHR9wtz+plaKC2FaN2
+	 9592FrqDGXpwjqS0vlJW28RD5cyL3vKj89Zj9lfYm31xCyoDL+zU5n76mT8eXZkzPL
+	 v8fvS1pZDHat338e2mhdHUWLdyejwpVEXFK+n1YVWGtcJRf7+7vpgNXXo9haH7amsr
+	 i9fb6JfJuw6MA==
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Abel Vesa <abel.vesa@linaro.org>, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Harshit Mogalapalli <harshit.m.mogalapalli@oracle.com>
+Cc: dan.carpenter@linaro.org, kernel-janitors@vger.kernel.org, 
+ error27@gmail.com
+In-Reply-To: <20250710172403.2593193-1-harshit.m.mogalapalli@oracle.com>
+References: <20250710172403.2593193-1-harshit.m.mogalapalli@oracle.com>
+Subject: Re: [PATCH] phy: qcom: fix error code in snps_eusb2_hsphy_probe()
+Message-Id: <175259271714.535271.17010232009134065105.b4-ty@kernel.org>
+Date: Tue, 15 Jul 2025 20:48:37 +0530
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Frank Wang <frank.wang@rock-chips.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, dri-devel@lists.freedesktop.org, 
- Thomas Zimmermann <tzimmermann@suse.de>, Conor Dooley <conor+dt@kernel.org>, 
- Amit Sunil Dhamne <amitsd@google.com>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>, 
- linux-kernel@vger.kernel.org, David Airlie <airlied@gmail.com>, 
- Andy Yan <andy.yan@rock-chips.com>, linux-phy@lists.infradead.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Diederik de Haas <didi.debian@cknow.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Dragan Simic <dsimic@manjaro.org>, linux-arm-kernel@lists.infradead.org, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, Simona Vetter <simona@ffwll.ch>, 
- linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org, 
- Sandy Huang <hjc@rock-chips.com>, Maxime Ripard <mripard@kernel.org>
-To: Chaoyi Chen <kernel@airkyi.com>
-In-Reply-To: <20250715112456.101-1-kernel@airkyi.com>
-References: <20250715112456.101-1-kernel@airkyi.com>
-Message-Id: <175258937557.1273563.1571687320229620719.robh@kernel.org>
-Subject: Re: [PATCH 0/5] Add Type-C DP support for RK3399 EVB IND board
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,80 +73,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 15 Jul 2025 19:24:51 +0800, Chaoyi Chen wrote:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> 
-> The RK3399 EVB IND board has a Type-C interface DisplayPort. It use
-> fusb302 chip as Type-C controller.
-> 
-> This series focuses on adding TCPM support for USBDP PHY and DP driver.
-> Before this, the USBDP PHY and DP controller of RK3399 sensed state
-> changes through extcon, and devices such as the RK3399 Gru-Chromebook
-> rely on them. This series should not break them.
-> 
-> Patch1 add missing "displayport" prop for USB connector binding.
-> Patch2 add new Type-C mode/orientation switch for RK3399 USBDP phy
-> binding.
-> Patch3 add TCPM support for RK3399 USBDP PHY.
-> Patch4 add TCPM support for CDN-DP.
-> Patch5 add Type-C DP support for RK3399 EVB IND board.
-> 
-> Chaoyi Chen (5):
->   dt-bindings: connector: Add displayport connector for hotplug notify
->   dt-bindings: phy: rockchip: rk3399-typec-phy: Support mode/orientation
->     switch
->   phy: rockchip: phy-rockchip-typec: Add support for Type-C TCPM
->   drm/rockchip: cdn-dp: Add support for Type-C TCPM
->   arm64: dts: rockchip: rk3399-evb-ind: Add support for DisplayPort
-> 
->  .../bindings/connector/usb-connector.yaml     |   4 +
->  .../phy/rockchip,rk3399-typec-phy.yaml        |  14 +
->  .../boot/dts/rockchip/rk3399-evb-ind.dts      | 119 +++++++
->  drivers/gpu/drm/rockchip/cdn-dp-core.c        |  37 +-
->  drivers/phy/rockchip/phy-rockchip-typec.c     | 335 +++++++++++++++++-
->  5 files changed, 482 insertions(+), 27 deletions(-)
-> 
-> --
-> 2.49.0
-> 
-> 
+On Thu, 10 Jul 2025 10:24:02 -0700, Harshit Mogalapalli wrote:
+> When phy->ref_clk is NULL PTR_ERR(NULL) will be a success. Fix this by
+> using -ENOENT when phy->ref_clk is NULL instead.
 > 
 > 
 
+Applied, thanks!
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+[1/1] phy: qcom: fix error code in snps_eusb2_hsphy_probe()
+      commit: b7acfeab8af9ee661c933522132f3d1d92ed12d6
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: attempting to guess base-commit...
- Base: tags/next-20250715 (exact match)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/rockchip/' for 20250715112456.101-1-kernel@airkyi.com:
-
-arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dtb: dp@fec00000 (rockchip,rk3399-cdn-dp): ports: 'port@0' is a required property
-	from schema $id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3399-cdn-dp.yaml#
-arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dtb: dp@fec00000 (rockchip,rk3399-cdn-dp): ports: 'port@1' is a required property
-	from schema $id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3399-cdn-dp.yaml#
-arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dtb: dp@fec00000 (rockchip,rk3399-cdn-dp): Unevaluated properties are not allowed ('ports' was unexpected)
-	from schema $id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3399-cdn-dp.yaml#
-arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dtb: /sound: failed to match any schema with compatible: ['rockchip,rk3399-gru-sound']
-
-
-
+Best regards,
+-- 
+~Vinod
 
 
 
