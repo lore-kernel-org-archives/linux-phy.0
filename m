@@ -4,54 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8EB8C83F22
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 04:36:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A109C83F27
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 04:36:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LpbWN4FnvNVmKJ2YVK1exUEPMSTkhLcjqzRRZONS+v0=; b=F49Cv0UdwI5Ebz
-	v3qyuIAXj0elTqVtNX6o0znh+NklzQ73Wf9CfSTyfSFCGLK784HAVD4d0ojcc8ASgcOz+WdNO15Xa
-	EzG7m574SbdRpodlQcU6T1ful2ft3q8yYFGJSY1m+RNnGX5zleDRt63/UcVAtuQ8J1iBqNCdYr08A
-	v4L8P9L350l+3V/P05Oqt5aJib4JhjqhtMis/x/sMCjKudi/y2aMOKWY+5qx8q2xGXi3e1Heb/iam
-	ufXygbcNHB7JinCHvghFeXBmzelHA0I8B4POcOKntKL567doClVzJiuyLV2N54/bzZy8Gm46I9Xx3
-	2jqPZ52YyUJJSpOJjEiw==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+lRdNvKznbdVfFmUDLsqt31ycVA8kKCeB4n35mUjRl8=; b=n3difgOx/z82gu
+	w/QNPXx9hGe5IEWVYnxjo9rm4dhhV9WfNA9a3Z8ccbS9CBKgOxslAmymYbxMbg4nEiUPtKhu8ZZF+
+	eiF9APZBBCOYvzayN9+MSYoe5kMFMyBCK41ZvRY6VELuqAVbBtqjuJIdbLAlsUSVXn8iZNIXrD7fU
+	USkKpLVhAz8QP5p7qEcj6v1KGaE3P7a29DJPm1LRHkeMgVwXqjvZiXUkhikh1k7MeKToZsuWtwnZO
+	JMGz4nEhKI8WNUMJE658nEeDRyTSIEy1n3/d2sT4xty7gUoDuH+h5+8ATA3wUVBYlwaFy6ld+XpaV
+	7Xx0gQrpl9tTXZaKTJIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubXOi-000000041F1-3UW5;
-	Tue, 15 Jul 2025 04:36:09 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1ubXOj-000000041Gg-409f;
+	Tue, 15 Jul 2025 04:36:10 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubWtU-00000003xoz-1qeM
+	id 1ubWtT-00000003xns-2uPs
 	for linux-phy@lists.infradead.org;
 	Tue, 15 Jul 2025 04:03:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id BDE2E61492;
-	Tue, 15 Jul 2025 04:03:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 7EC91C4CEF1;
-	Tue, 15 Jul 2025 04:03:51 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id C4100433E7;
+	Tue, 15 Jul 2025 04:03:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 9303AC4CEE3;
+	Tue, 15 Jul 2025 04:03:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752552231;
-	bh=8XHtSfC2ebH34+htWvEVWam88ECVhbOPEjKTBosP36M=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=g/l2XBgvd8t+W6vEh/KOnsx4FBK4zAHQi5sEFcvjPZ4vc9KMsd/uJUUBWkg07WDnb
-	 Kkmf2IUfqfJo0As0P4IgRq+GwXK7YphNXQLzSNHF1KKBfOMZf7XwSAiMOHrJ25uOs5
-	 fzuSqgM9Ly3nQe+37FcBFmHzLAaLPeCBtdWuCkjRVPtaV7+SMRQ2wVgZLHWlkXNelb
-	 RdM84H4cYS/S/J4L2EaQ5sAqNWRe4OQg/RMmjcnwnDcbxiEaZW/kT87Ff10Z+iXKXt
-	 ZkzdZuQ3xqcrJHJfYFGVFPi6sPte4GiAgDHya8qDYUAruuh3O4VHc/B0FYHaacl/eD
-	 FfyYlP74vLY3w==
+	s=k20201202; t=1752552230;
+	bh=lJMnWbcy+KGskhz7uaYT1aihHLwVRIM23Hj82ckJ5Po=;
+	h=From:Subject:Date:To:Cc:Reply-To:From;
+	b=ruyyNqafKzOGp8V3DxpibLRSDryzwhZkIMQnrvd+cLPU2P6Hk8rWTc9oTChJce9s+
+	 I0UxkSczIfTDHuKV4of4HSi5B8aWuxitjD/KaNZ6aqivVMe0ENdvVZiTveqKSy+I+2
+	 tkMC3Z2TZ24xAR94bGJp+rOpbtETLwdr7blf7g41I6d4A0b0TdYp8amLZs4gcGvfZz
+	 yuHkPi6993gIR/e6RyVwar68GlIcL4muSNTi/xI3cpGkyIamNkxDbIBcrkRT2birJo
+	 FNAIO86EhempjYNvZ/vEhFgWseLLV290acjteEzpA3DKurDVvcaQmqPS40ZWta/FIF
+	 RmTmhbL7Z7sAA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 747D7C83F2E;
-	Tue, 15 Jul 2025 04:03:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 82569C83F1D;
+	Tue, 15 Jul 2025 04:03:50 +0000 (UTC)
 From: Aaron Kling via B4 Relay <devnull+webgeek1234.gmail.com@kernel.org>
-Date: Mon, 14 Jul 2025 23:02:56 -0500
-Subject: [PATCH 13/17] thermal: tegra: Add Tegra210B01 Support
+Subject: [PATCH 00/17] arm64: tegra: Add Tegra210B01 support
+Date: Mon, 14 Jul 2025 23:02:43 -0500
+Message-Id: <20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com>
 MIME-Version: 1.0
-Message-Id: <20250714-t210b01-v1-13-e3f5f7de5dce@gmail.com>
-References: <20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com>
-In-Reply-To: <20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAOPSdWgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDUwNL3RIjQ4MkA0PdZENTk+REgzQLS0sTJaDqgqLUtMwKsEnRsbW1AM3
+ FRUtZAAAA
+X-Change-ID: 20250509-t210b01-c154ca0f8994
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
  Conor Dooley <conor+dt@kernel.org>, 
  Thierry Reding <thierry.reding@gmail.com>, 
@@ -70,18 +72,21 @@ Cc: devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-usb@vger.kernel.org, Thierry Reding <treding@nvidia.com>, 
  linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, 
- Aaron Kling <webgeek1234@gmail.com>
+ Aaron Kling <webgeek1234@gmail.com>, Azkali Manad <a.ffcc7@gmail.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1752552229; l=4724;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752552229; l=3831;
  i=webgeek1234@gmail.com; s=20250217; h=from:subject:message-id;
- bh=ZTHZksfHlIxysbAaJHHhbZR9I6Z/OnRkEYYXQcE8KVM=;
- b=8bwnEv+juqDwOC653qmsqpRvdzpkcOy+aV1SQ5AXOhYjO+I7luZqUcUhrFn/V12PUyySpevTJ
- rschJRrtETMCPrFH4PwCgkuKQ4zsJb+1XHs5LFtfJ2zabx2dj9ychbW
+ bh=lJMnWbcy+KGskhz7uaYT1aihHLwVRIM23Hj82ckJ5Po=;
+ b=ad6asFcWywsWGTUc+VsSSdWsJa0QLq14/57QoeJylGYnViVg/FccIfLjDNpPN9eHX4spILcBd
+ kfyTmQg6dL7CVt4Y1+GTPik2zSOUh4Ifu30qdNy0JjH2kvJRTIYPTD2
 X-Developer-Key: i=webgeek1234@gmail.com; a=ed25519;
  pk=TQwd6q26txw7bkK7B8qtI/kcAohZc7bHHGSD7domdrU=
 X-Endpoint-Received: by B4 Relay for webgeek1234@gmail.com/20250217 with
  auth_id=342
 X-Original-From: Aaron Kling <webgeek1234@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250714_210351_780465_513FD3A7 
+X-CRM114-Status: GOOD (  12.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,154 +104,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Aaron Kling <webgeek1234@gmail.com>
+Also known as Tegra X1+, the Tegra210B01 has higher CPU and GPU clocks
+than the original Tegra210.
 
-Add Tegra210B01 SOC_THERM configuration
+This series adds Tegra210B01 support to several drivers, as a slight
+extension to the existing Tegra210 support. Then adds a generic soc dtsi
+in the same vein as other tegra archs. And finally adds a barebones
+device dts to be used for dt checks. Further device support will be
+submitted in later series.
+
+Earlier internal revisions of this series included changes to the dfll
+driver to support Tegra210B01, but those did not work in testing, thus
+was dropped from the series. A bindings update to match is still in the
+series so the soc dtsi can declare a separate compatible from Tegra210,
+preventing the driver from attempting incorrect initialization on
+Tegra210B01.
 
 Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
 ---
- drivers/thermal/tegra/soctherm.c          |  4 ++
- drivers/thermal/tegra/soctherm.h          |  1 +
- drivers/thermal/tegra/tegra210-soctherm.c | 78 +++++++++++++++++++++++++++++++
- 3 files changed, 83 insertions(+)
+Aaron Kling (16):
+      dt-bindings: arm: tegra: pmc: Document Tegra210B01
+      dt-bindings: phy: tegra-xusb: Document Tegra210B01
+      dt-bindings: usb: tegra-xusb: Document Tegra210B01
+      dt-bindings: usb: tegra-xudc: Document Tegra210B01
+      dt-bindings: thermal: tegra: Document Tegra210B01
+      dt-bindings: clock: tegra: Document Tegra210B01
+      dt-bindings: clock: tegra124-dfll: Document Tegra210B01
+      dt-bindings: tegra: Document Shield TV 2019
+      phy: tegra: xusb: Add Tegra201B01 Support
+      usb: xhci: tegra: Add Tegra210B01 support
+      usb: gadget: tegra-xudc: Add Tegra210B01 Support
+      thermal: tegra: Add Tegra210B01 Support
+      clk: tegra: Add Tegra210B01 support
+      arm64: tegra: Add BPMP node for Tegra210
+      arm64: tegra: Add Tegra210B01 support
+      arm64: tegra: Add support for NVIDIA Shield TV Pro 2019
 
-diff --git a/drivers/thermal/tegra/soctherm.c b/drivers/thermal/tegra/soctherm.c
-index 926f1052e6de04fc4d5ff78334b52ffe98cdf4ca..e07ae0e5553f38b78f30bb88a0e02aca995d7b5a 100644
---- a/drivers/thermal/tegra/soctherm.c
-+++ b/drivers/thermal/tegra/soctherm.c
-@@ -2065,6 +2065,10 @@ static const struct of_device_id tegra_soctherm_of_match[] = {
- 		.compatible = "nvidia,tegra210-soctherm",
- 		.data = &tegra210_soctherm,
- 	},
-+	{
-+		.compatible = "nvidia,tegra210b01-soctherm",
-+		.data = &tegra210b01_soctherm,
-+	},
- #endif
- 	{ },
- };
-diff --git a/drivers/thermal/tegra/soctherm.h b/drivers/thermal/tegra/soctherm.h
-index 70501e73d586230d3caca8dea0966afd7f23142a..0d80e739b67da23571137db0cc3140c8967fa071 100644
---- a/drivers/thermal/tegra/soctherm.h
-+++ b/drivers/thermal/tegra/soctherm.h
-@@ -147,6 +147,7 @@ extern const struct tegra_soctherm_soc tegra132_soctherm;
- 
- #ifdef CONFIG_ARCH_TEGRA_210_SOC
- extern const struct tegra_soctherm_soc tegra210_soctherm;
-+extern const struct tegra_soctherm_soc tegra210b01_soctherm;
- #endif
- 
- #endif
-diff --git a/drivers/thermal/tegra/tegra210-soctherm.c b/drivers/thermal/tegra/tegra210-soctherm.c
-index d0ff793f18c561230497b57b325ae87f12a7b83a..80f67c1fd496d613147ecc6618c4934d03b1e67e 100644
---- a/drivers/thermal/tegra/tegra210-soctherm.c
-+++ b/drivers/thermal/tegra/tegra210-soctherm.c
-@@ -44,6 +44,14 @@ static const struct tegra_tsensor_configuration tegra210_tsensor_config = {
- 	.tsample_ate = 480,
- };
- 
-+static const struct tegra_tsensor_configuration tegra210b01_tsensor_config = {
-+	.tall = 16300,
-+	.tiddq_en = 1,
-+	.ten_count = 1,
-+	.tsample = 240,
-+	.tsample_ate = 480,
-+};
-+
- static const struct tegra_tsensor_group tegra210_tsensor_group_cpu = {
- 	.id = TEGRA124_SOCTHERM_SENSOR_CPU,
- 	.name = "cpu",
-@@ -125,6 +133,12 @@ static const struct tegra_tsensor_group *tegra210_tsensor_groups[] = {
- 	&tegra210_tsensor_group_mem,
- };
- 
-+static const struct tegra_tsensor_group *tegra210b01_tsensor_groups[] = {
-+	&tegra210_tsensor_group_cpu,
-+	&tegra210_tsensor_group_gpu,
-+	&tegra210_tsensor_group_pll,
-+};
-+
- static const struct tegra_tsensor tegra210_tsensors[] = {
- 	{
- 		.name = "cpu0",
-@@ -193,6 +207,58 @@ static const struct tegra_tsensor tegra210_tsensors[] = {
- 	},
- };
- 
-+static const struct tegra_tsensor tegra210b01_tsensors[] = {
-+	{
-+		.name = "cpu0",
-+		.base = 0xc0,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x098,
-+		.fuse_corr_alpha = 1085000,
-+		.fuse_corr_beta = 3244200,
-+		.group = &tegra210_tsensor_group_cpu,
-+	}, {
-+		.name = "cpu1",
-+		.base = 0xe0,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x084,
-+		.fuse_corr_alpha = 1126200,
-+		.fuse_corr_beta = -67500,
-+		.group = &tegra210_tsensor_group_cpu,
-+	}, {
-+		.name = "cpu2",
-+		.base = 0x100,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x088,
-+		.fuse_corr_alpha = 1098400,
-+		.fuse_corr_beta = 2251100,
-+		.group = &tegra210_tsensor_group_cpu,
-+	}, {
-+		.name = "cpu3",
-+		.base = 0x120,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x12c,
-+		.fuse_corr_alpha = 1108000,
-+		.fuse_corr_beta = 602700,
-+		.group = &tegra210_tsensor_group_cpu,
-+	}, {
-+		.name = "gpu",
-+		.base = 0x180,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x154,
-+		.fuse_corr_alpha = 1074300,
-+		.fuse_corr_beta = 2734900,
-+		.group = &tegra210_tsensor_group_gpu,
-+	}, {
-+		.name = "pllx",
-+		.base = 0x1a0,
-+		.config = &tegra210_tsensor_config,
-+		.calib_fuse_offset = 0x160,
-+		.fuse_corr_alpha = 1039700,
-+		.fuse_corr_beta = 6829100,
-+		.group = &tegra210_tsensor_group_pll,
-+	},
-+};
-+
- /*
-  * Mask/shift bits in FUSE_TSENSOR_COMMON and
-  * FUSE_TSENSOR_COMMON, which are described in
-@@ -226,3 +292,15 @@ const struct tegra_soctherm_soc tegra210_soctherm = {
- 	.use_ccroc = false,
- 	.thermtrips = tegra210_tsensor_thermtrips,
- };
-+
-+const struct tegra_soctherm_soc tegra210b01_soctherm = {
-+	.tsensors = tegra210b01_tsensors,
-+	.num_tsensors = ARRAY_SIZE(tegra210b01_tsensors),
-+	.ttgs = tegra210b01_tsensor_groups,
-+	.num_ttgs = ARRAY_SIZE(tegra210b01_tsensor_groups),
-+	.tfuse = &tegra210_soctherm_fuse,
-+	.thresh_grain = TEGRA210_THRESH_GRAIN,
-+	.bptt = TEGRA210_BPTT,
-+	.use_ccroc = false,
-+	.thermtrips = tegra210_tsensor_thermtrips,
-+};
+Azkali Manad (1):
+      soc/tegra: pmc: Add Tegra210B01 support
 
+ Documentation/devicetree/bindings/arm/tegra.yaml   |    5 +
+ .../bindings/clock/nvidia,tegra124-dfll.txt        |    1 +
+ .../bindings/clock/nvidia,tegra20-car.yaml         |    1 +
+ .../bindings/phy/nvidia,tegra210-xusb-padctl.yaml  |    4 +-
+ .../bindings/soc/tegra/nvidia,tegra20-pmc.yaml     |    5 +-
+ .../bindings/thermal/nvidia,tegra124-soctherm.yaml |    2 +
+ .../devicetree/bindings/usb/nvidia,tegra-xudc.yaml |    2 +
+ .../bindings/usb/nvidia,tegra210-xusb.yaml         |    4 +-
+ arch/arm64/boot/dts/nvidia/Makefile                |    1 +
+ arch/arm64/boot/dts/nvidia/tegra210.dtsi           |   11 +
+ .../boot/dts/nvidia/tegra210b01-p2894-0050-a08.dts |   10 +
+ arch/arm64/boot/dts/nvidia/tegra210b01-p2894.dtsi  |   70 +
+ arch/arm64/boot/dts/nvidia/tegra210b01.dtsi        |   64 +
+ drivers/clk/tegra/Makefile                         |    1 +
+ drivers/clk/tegra/clk-tegra-periph.c               |    3 +
+ drivers/clk/tegra/clk-tegra210b01.c                | 3758 ++++++++++++++++++++
+ drivers/clk/tegra/clk-utils.c                      |    5 +-
+ drivers/clk/tegra/clk.c                            |   19 +-
+ drivers/clk/tegra/clk.h                            |    6 +
+ drivers/phy/tegra/xusb-tegra210.c                  |   41 +
+ drivers/phy/tegra/xusb.c                           |    4 +
+ drivers/phy/tegra/xusb.h                           |    1 +
+ drivers/soc/tegra/pmc.c                            |  117 +
+ drivers/thermal/tegra/soctherm.c                   |    4 +
+ drivers/thermal/tegra/soctherm.h                   |    1 +
+ drivers/thermal/tegra/tegra210-soctherm.c          |   78 +
+ drivers/usb/gadget/udc/tegra-xudc.c                |   20 +
+ drivers/usb/host/xhci-tegra.c                      |   25 +
+ include/dt-bindings/clock/tegra210-car.h           |    5 +-
+ 29 files changed, 4261 insertions(+), 7 deletions(-)
+---
+base-commit: 347e9f5043c89695b01e66b3ed111755afcf1911
+change-id: 20250509-t210b01-c154ca0f8994
+
+Best regards,
 -- 
-2.50.0
+Aaron Kling <webgeek1234@gmail.com>
 
 
 
