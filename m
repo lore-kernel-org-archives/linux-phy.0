@@ -4,80 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7FC8C83F17
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Jul 2025 17:29:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBF85C83F1A
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 00:22:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qRx28NWvYTMjGxz2J+tWrjcJB3vKjF6lp1kq/mXk4Fw=; b=gMcVQ91qRiuuMR
-	RMMnae1lqhkmfvSjGnxi3rKoYHvG5pkjs5jDimIC+QSfc3fFo98nDgXjkGGjO+a5yll79Rxvd00NH
-	rXVz26dpJ0H8T1pKb1MVkIBog6eGIhLMXFBhrUzgozRJ/R5kbDMVMAr9vZTerohLgrDgQylaBIFtp
-	jkWuMFrIArS/S8UuA/PF2yTwkS4ulf4lcw2qCEupe7O9sfeQ4Zd1OrJy9u7oobgjeD5XHCSS1u5ed
-	oDHJ04nT0NBLj+6ePrWWv3VOmI1pJtBExsz+Xbdt7rP2zZSW3084TIZN5al1TRcLUFz6Ie/8kS2T1
-	vz0P4lrV7zTo1gk/j+6A==;
+	List-Owner; bh=5fS6uRstOwejZuwupWRKwUqvRd+aGEYlV7GE4qLIirU=; b=ZT2yzpF/LzG0SO
+	oGO9X06r88UVqA+hKXEPsj4N+POLU61hAAX6Sh5/O814xQTkmO3ldAV7FCGdU6CirEf4jtCTbD3c8
+	fHZJQrB/AVgxlGAC1qGNjnWC7IuiPehp1zscLqfgCkcEZbiKubZZ58UuGJZ7F62wcfR6zfk8Sc49J
+	BtpwTia28Ht04SD7NF1abTadUmF/QZW7eavoWxHQQC26gOC+sFPedZVoOpk71gKg2VypjGW7z07jr
+	FjzeKKEhP7MLdq4ZoNLS2kLIHwY7WIHKqHvpSl0enXOd6IVYzaeWKpg0eHoy1Fa4OQ7zn1wmZSA7h
+	y6p1vJJ3BpU3z+MKogYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubMzw-00000002xoK-2TMM;
-	Mon, 14 Jul 2025 17:29:52 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1ubTRE-00000003cyA-32qr;
+	Tue, 15 Jul 2025 00:22:28 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubL8n-00000002gKe-3f4S
+	id 1ubTI9-00000003bzf-2Auq
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Jul 2025 15:30:55 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-553b7a3af9aso284254e87.2
-        for <linux-phy@lists.infradead.org>; Mon, 14 Jul 2025 08:30:53 -0700 (PDT)
+	Tue, 15 Jul 2025 00:13:06 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-3a575a988f9so2797869f8f.0
+        for <linux-phy@lists.infradead.org>; Mon, 14 Jul 2025 17:13:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1752507052; x=1753111852; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=linaro.org; s=google; t=1752538384; x=1753143184; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=GhPM3WYx0FxLSMjDVhXzRCwSNY+8UAUHTyFHv1jdzFE=;
-        b=mp6gVflmRKcxn+NV9K7zwpyGDneeuTNpc3luJOm+/L3Vya9W1WYLvcZpEhaFyujmGb
-         AJMNZaB+K0eN9S2swuGpxVNoOHUjidYCcIgFoNTX5eZ9sErLyUpryDAv2RnNY+mV6O8X
-         2CMWxM/Lk5wEgMdp10uhywQydH5PkIuYNsxwn8wyJprmpFZTGIz4qekhBuNtKjhtDfkj
-         hTIubl0knUOjBdZjhWjTBWRhVX60xloutabkujqP8t2c0Xx+sXq73m2TQe8fpv1Vjjq0
-         JIqFC+NCCLJtLXEQ5tUSg7iIIjn+BeL/GpgUiuA4193HQxhqciq6Uakk+4r3qN7ALR7q
-         51kw==
+        bh=wjjlBO5McvqWYarNTItF1TpVtLRk0nuxtxgk1AQtFqQ=;
+        b=Ypq0BjFGE3vI7p7twdAMQBnIsCYwpAL7zWYtUh2UqcFnrj4+u85WAa/tTV/urUYRHN
+         PRGl4t+y21FVvE/EEgCReeZC46PKT+te68fPS3oVYxTcNjaLdXBoJuQ3TBc+Me8LUWmy
+         FPtZ5QpkHjCoAVAFta/c2+8HC6slm/Xps1vjUPlhTeMzUH8VcCbJ1wjM53eLEUJbRuJy
+         exYEi+e26Dis+EsfuoP6EMWdH4GZpnkCx7ZJTklU6Kz251vG/y/q89tRnp0XT9xosTi7
+         nRrNdVMQbipwkIRYKrCWFA+QLnA+4pv7rJaMGksk+1Z8VjxqDA/VpBmAlpVSYeT66z8w
+         y9fA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752507052; x=1753111852;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
+        d=1e100.net; s=20230601; t=1752538384; x=1753143184;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=GhPM3WYx0FxLSMjDVhXzRCwSNY+8UAUHTyFHv1jdzFE=;
-        b=sVo0QaAKBsZtP/b+3GTdOIhXuOPkEDJ4aSn38M5Pb1DbOc/lTlnTRJ5KVtrsn6Hbax
-         KAA7LvddA24v+Mgovrs65UUjqSKhB0TRYZelp5dhHA4djHmDUnJFqOjUuKJeG4iliqnJ
-         nEK4pKLNtU9qyzP8tQh3GpjVrM0a5lIkLK/VuNrefMoMcmMxVpMRf5HdwZA22cJ+bxnh
-         q4EG1Ql3FJSyAtXZfMBLqaVQ3/R8+v5s6Huw6oMKN8hBtLmPW1yAcRW/KV0AT9mbx6L9
-         rP7OpT+KtCMjYCtiM+AafPfOAg1BU5Ww+mA/GPBAD8pKN4hLkW7lOm+nVy4wc5os2jlc
-         yaXw==
-X-Forwarded-Encrypted: i=1; AJvYcCWYuovo1Oi4FcnV372d323CJISuWiGi1nUeOB7s26Y+vBjJoQljjvvG72m8exQqsPMg4rZj8Q3OoKM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyh2EP5qA4TL24ySeap+s522cyeATOxSSywg4Bb3L66YhOaxrMU
-	EdFdX4lKDYQidJFDLN/EdaJvzqMGEFd3B0bVd0wMQnJzh6yQP/zbqJqIR6j/D45hQW0=
-X-Gm-Gg: ASbGnct95jQ+QEr6iktExrgwXSy54qdymM5AWT7frDj4ZLfnp0wH4w6h4yrY0VYBOa3
-	7J5KRjXgtXmOs817ziR7i1DTYw9IjVegDJ5ZPCfblW/4vevp//i4NKe89J/SnrZ+29QmYNMEmqm
-	23tiUG95ShkHx5kL8TkjTIDVUOfY+l+K2Srw/P/g8IVtb9wmvCl+JQZFv19J0sVS9qGlrLWf84n
-	xYN9VekuCq9eEDzGOiLd2bLiD496IS5DaIZ8FsLY1nDER2Q/sZZ6xwofjcQf//W956rc2btD3qD
-	+cOpyW4UG8cYb5Rrh1q89uNw7szbne/CnxAl/M+JR/reMo5vJzFWigCCtWyumFWFcpr2jz5J6ad
-	w3nyzCrgUQmIVjbD3i0mipoXb+FTI8wLh0MOAElsOO8EjQUjdlJZDpYYpnT6qpDRJB53z8C9Zvh
-	kQ
-X-Google-Smtp-Source: AGHT+IHfIWtfLwmI4o3tG95if0xJBRcWewfBclWlcePGlLyhwHi1HTCoA+WOs0ItuEmU884D+uo5xw==
-X-Received: by 2002:a05:6512:2388:b0:554:f76a:bab8 with SMTP id 2adb3069b0e04-55a049b4b48mr1393417e87.15.1752507051897;
-        Mon, 14 Jul 2025 08:30:51 -0700 (PDT)
-Received: from [192.168.1.100] (88-112-128-43.elisa-laajakaista.fi. [88.112.128.43])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5593c9d0f35sm1985120e87.108.2025.07.14.08.30.51
+        bh=wjjlBO5McvqWYarNTItF1TpVtLRk0nuxtxgk1AQtFqQ=;
+        b=IENGKWRfBn/sOtQfNbIyD7kwRC8WiUa9f1Q/gmqm8dIzMQHM6wwn/w5vlQ5IJ/CxWK
+         G5mLwSJYN7zFxaJCKFNkm+0z04KW9oNHIsH8AdxJIHpD5iDKblHM7vB6xKLAHgFJZEcU
+         Pk9s4QmIMj7oYcwOM/RNzV5thqmbQIMcoZwpN4WKY+hCxKgYdSeEgyOy/pFRg15ZFkuV
+         BPSjZFGXb3MV2PFkO1FSdnbN7e5OJRaFfj7GATBqoefUzk+ZrJzXBRhnB6PcdNFCXkE7
+         6sFk6v/dXTC7MLk7NcSJS8nga1Nyxp+A+52ySJA53+HBwIsRvK3JqwrgyOb0XTRXE/Tj
+         4EpA==
+X-Forwarded-Encrypted: i=1; AJvYcCWe3zN07mt0o1lzacyjyqdM1qAmxK5aNRKeRaYIb2TJHUR5qeJP4EUuYwX5QDgVrsdDfepjVhnLkoU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHBrVTDDq5fFqqDKBA+7La+9uHymkBO7fWSeLV85tBSEyF3hLp
+	z4sAHYOL25aMTaQbnpydqZOY8T34BLSArLYnmSi38qExWMAEwLFgNkFYYE925gIzgcNXqMRENmB
+	0xKLz+RKfiw==
+X-Gm-Gg: ASbGncv3QBk2EfOOoBB+8cwkYnCLWKNMov4U/iEAwBfpz4tRlKfiXP4c+QIpy40KoAa
+	OZUBbjM6HjNn4yRAeVvK+/UFISUS7kSzwzjSwrPIirHU+fhLRdTtdic/uMmRtqhaQHsDOAysTgg
+	vE6ubY88z+zZijkh4aMFMhuz/uM8hJCMp3lXiuWnK6jq6T6NrmXsNyB16PEk22eWFRHESBQChkT
+	nl+/D6TMR+IURvgYmCsskGReicyIdBgM0udOSa0gaBSpW5FSpAqFxPPB+5j6SFWC/T8RCu55ar6
+	UidvgA3YjsMc8othll2qJaXPI1IXCmYMJo0srYuZetoFGuXui0bcSbTZ+YkMIoCjYl9nWk+XPY4
+	0fKzWw77SnOX1vnqWNg2FNQSkAmPyRLOgJFRhF7zL69lyJLiPcF+V2y5L4t27pDo=
+X-Google-Smtp-Source: AGHT+IFJd4axtAtvmY0ckIvQbLgd8yggih4zpyTmoTOUg1GtduaU49kxIVWw0qgHHk8eix9/zHH8ow==
+X-Received: by 2002:a05:6000:e0a:b0:3a4:e841:b236 with SMTP id ffacd0b85a97d-3b5f18cebeemr10550712f8f.33.1752538383914;
+        Mon, 14 Jul 2025 17:13:03 -0700 (PDT)
+Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b5e8e211dcsm13335901f8f.84.2025.07.14.17.13.02
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 14 Jul 2025 08:30:51 -0700 (PDT)
-Message-ID: <eac3a877-a4aa-4789-9013-ab8b6c91e0f3@linaro.org>
-Date: Mon, 14 Jul 2025 18:30:50 +0300
+        Mon, 14 Jul 2025 17:13:03 -0700 (PDT)
+Message-ID: <0a12879f-dc4a-47fb-87a0-ac4b8bcd4d75@linaro.org>
+Date: Tue, 15 Jul 2025 01:13:01 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
-Content-Language: ru-RU
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+To: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>
@@ -90,11 +88,13 @@ References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
  <08261aa4-689b-4d6b-bfd2-221c1976d254@linaro.org>
  <a7f64b31-4767-4281-b452-a2bc5351d745@mleia.com>
  <c93624bb-ee7b-45ac-8b53-b5391f11c9c9@linaro.org>
-From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <c93624bb-ee7b-45ac-8b53-b5391f11c9c9@linaro.org>
+ <eac3a877-a4aa-4789-9013-ab8b6c91e0f3@linaro.org>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-US
+In-Reply-To: <eac3a877-a4aa-4789-9013-ab8b6c91e0f3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_083053_920382_AEFC0AD3 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20250714_171305_579215_3922B608 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,29 +111,69 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/14/25 18:17, Bryan O'Donoghue wrote:
-> On 14/07/2025 15:58, Vladimir Zapolskiy wrote:
+On 14/07/2025 16:30, Vladimir Zapolskiy wrote:
 >>
->> This proposed device node scheme does not solve the known and already
->> discussed technical issue expectedly, namely there is no given way
->> to describe a combo mode hardware configuration, when two independant
->> sensors are wired to the same CSIPHY. This is an unsolvable problem
->> with this design.
+>> I think that is genuinely something we should handle in camss-csid.c
+>> maybe with some meta-data inside of the ports/endpoints..
+>>
 > 
-> I think that is genuinely something we should handle in camss-csid.c
-> maybe with some meta-data inside of the ports/endpoints..
-> 
+> This is a CSIPHY property, a CSIPHY hardware configuration and a wiring
+> of sensors to a CSIPHY. Where is the relation to CSID here? There is no.
 
-This is a CSIPHY property, a CSIPHY hardware configuration and a wiring
-of sensors to a CSIPHY. Where is the relation to CSID here? There is no.
+All the PHY really needs to know is the # of lanes in aggregate, which 
+physical lanes to map to which logical lanes and the pixel clock.
 
-Please share at least a device tree node description, which supports
-a connection of two sensors to a single CSIPHY, like it shall be done
-expectedly.
+We should add additional support to the Kernel's D-PHY API parameters 
+mechanism to support that physical-to-logical mapping but, that's not 
+required for this series or for any currently know upstream user of CAMSS.
 
--- 
-Best wishes,
-Vladimir
+> Please share at least a device tree node description, which supports
+> a connection of two sensors to a single CSIPHY, like it shall be done
+> expectedly.
+&camss {
+     port@0 {
+         csiphy0_lanes01_ep: endpoint0 {
+             data-lanes = <0 1>;
+             remote-endpoint = <&sensor0_ep>;
+         };
+
+         csiphy0_lanes23_ep: endpoint0 {
+             data-lanes = <2 3>;
+             remote-endpoint = <&sensor1_ep>;
+         };
+      };
+};
+
+&csiphy0 {
+     status = "okay";
+
+     vdda-0p8-supply = <&vreg_0p8>;
+     vdda-1p2-supply = <&vreg_1p2>;
+     phy-mode = <PHY_TYPE_DPHY>;
+};
+
+sensor0 {
+     compatible = "manufacturer,sensor0";
+     port {
+         sensor0_ep: endpoint {
+             data-lanes = <0 1>;
+             remote-endpoint = <&csiphy0_lanes01_ep>;
+         };
+     };
+};
+
+sensor1 {
+     compatible = "manufacturer,sensor1";
+     port {
+         sensor1_ep: endpoint {
+             data-lanes = <0 1>;
+             remote-endpoint = <&csiphy1_lanes23_ep>;
+         };
+     };
+};
+
+---
+bod
 
 -- 
 linux-phy mailing list
