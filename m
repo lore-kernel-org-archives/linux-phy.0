@@ -4,129 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D931BC83F21
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 12:07:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6A98C83F22
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 12:45:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVA5g32c2pGx5WCZw5AQPzLg1IH3vohL/qzDo70+Vgw=; b=WG0uBczL+PpBew
-	CUCy6Ne5wOOSIfiwMIOf21p0oqMdThu80Y5NIc0REiGTsU0XYBp7DHCI3VbFM1ebvCOsImU5Zrqhy
-	VeSUKBK8qfNNQmE76/2LpFPmeHaNG1U/+bK7J/WYp6DK6MFJsAg388HiVjpffYhbB4DGhQUzi+bQB
-	RvChf+507U5EdEJ2AlSW7BtoaTiLY7YgrsQ9ts1EZhAtOYsVrR+QCXQE1wCjL2/PGKdIRRRteYHPS
-	FXna1GmGE58YtCyDWy0Aulkqu69ZvQ4oDn7tTcabxnmhcw1NQpH2vfgtvt59/otRnYNi3MKrugSKz
-	dp3CCOm+EyS5a72xKfoA==;
+	List-Owner; bh=FGIqbzL7d9tK4o+mf9A8rc8ATdsN0OXq8TAzIbTUNbw=; b=tap0g15akfrnJG
+	L0Wt4eQE/9Ww+3hNauZkbWknn2/yR+wuNE0lyUPM1hbD9yUYv+ByaKwMLg6Hx9gZHviEn1TNt76i6
+	isbGOrYtm+N5qllTWucLPsyn9FdhsJszWD4aI1ubh1r2MSD2LNaclaclA4paK5yaxI18juavh2KeX
+	W4tgs77SOOBB/u6Td4VfcX0FDvvd1+TJDAgPNIGpb+irJh2JU06IYsTEpHS4o6hJfAhTYSJQheFHf
+	ORzMBAFYuLQn4HPBJwv46kQP+EMm8F/4FgnmOXn98wVHOXFtg8kXh4vZ2EQnrOMjsgdbtxhqqF5JA
+	d9FL6MwfkMoHNGQT774Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubeRu-000000051za-2Nno;
-	Tue, 15 Jul 2025 12:07:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ubf1w-000000056lS-20BZ;
+	Tue, 15 Jul 2025 12:45:08 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ube8O-00000004yqJ-3nuR
+	id 1ubeOJ-000000051U6-0pZK
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Jul 2025 11:47:46 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56F7pwBF032437
-	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 11:47:42 GMT
+	Tue, 15 Jul 2025 12:04:12 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56F5cN1q011111
+	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 12:04:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+iXLFGA6J5aFgF0rOG2NVhZA5bpjJjvu96bzK64t0fc=; b=hxeTaSLlbwM3IkY9
-	VOUWJ9zFL+zNuiklw2zu7Rk5K6+pYJeZylNTefM6ZedT7EIkJV61sPN6m3f21dJ2
-	tcOt5qZVjhE8BJr/nTCSb3KeQY9p9l4mm9tt+qQ/ADsnqcMVf2ywTxK7PJqVNOR2
-	Y3XJ1vCu7msHKb/uFl5cGVb2i0PiOFcxc8rT92emwI4LAqr99EuHYQmcRC501QT4
-	3XN8JumPnAvzB8uNWTs5JOD3MIyYFkoYc6iDlEPRr5rQiD34CCQXBWPFFdr4G/Pk
-	k2U83jvX+/07lR1dnL6YmJW7SwEPD747tE/YnMbo7o4Ei++gAvwDZ3eFDMYPtulI
-	V86oRw==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ufut7ydj-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=uewLyWaWo+XEtP3pU1ovudoo
+	X8FXuLSHNKA5wv9Jbhg=; b=dGtPvDSXLEiPdl3CHjLxdrhQbN0NwOq3l+YIPu4X
+	hVkm5cNDxft1J4ab42X7iJgqqENQGeXEmEU36rxBCi6BDwLZa78Ii6TK61uWkNEL
+	H9DGn7x5fOduOzuOz6Z+S7RbZg9o6LQUuDw4Ls0rRfeHx5bQtUWxnbt379YRfbHq
+	1sTTyY7oPBz+I0nqX0ojmZx6Hu2sZ0QI4RiOHoUEHheUKrl//Rs/4oBAGA9QeeUf
+	OYwVj54GmbV91u36r1i83vQGmmXpHhYf9guevfNPIWlzlr2Y0RBbxKAzx1cu8Wwq
+	shVqwzuDNxs4w5lBq68BQGmYGhYB86tQV8LAGtiCgIoNXg==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5dyjx37-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 11:47:42 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4ab3ab7f74bso12248801cf.2
-        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 04:47:42 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 12:04:10 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7e338e627f1so218400485a.0
+        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 05:04:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752580061; x=1753184861;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+iXLFGA6J5aFgF0rOG2NVhZA5bpjJjvu96bzK64t0fc=;
-        b=haXLsQ2DS9IbfflIHV5FoLI6o9ExCKclF5ADCefvm/+OOdLyQw23y05ayISDUZURb7
-         5SIBrRYB8bWXr2MdtzkURjssuoc/C6UIX+6iXObW7tdP0C2Sdtnej+878iDfS7n7YCDU
-         aWGvrbTbQFaffMre88l7bBHTPHZGQMkjOJoDFs1J+f3x4h4lI2hwfQUwCQlaVwHsKzl8
-         eFhvv8iUHDRjyQJ3Dl0WmEPs23DtiHz0q5DpPSOmUIJJ5MZTtCRHWtoNFMLjobujCDSs
-         G0IpV5H713W+pv1Zeqw8OdpEA0xepPiSSNkMZTeW/2WpgaYyhY1sTGTyDHH8D54uo1Pq
-         NkHg==
-X-Forwarded-Encrypted: i=1; AJvYcCUQjWrYJsNyd5ZBL8WpyspEhAc9NNmlUEILs6QSmWEgZUASwHCoFzz1IsQtRSvidJfG7b/ogiwWpeA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyX/UsBbZuolDFM4P+BfSU3OH3Vvw3ynPtsgigp3aRFAV5+C+Wv
-	pwmFc7qZpe1uqPfP3lKgnqdDYvag//ojyIrB6AX+uCC8z6rezBpJXw7N+5ANGk68B58tPRHW5iK
-	j6cSE1lOAvAlpy8VpB8JUyhGf0Cj9WhJzNL4uT2RC5+g0XU40YfEteGYwF6K7brLJ6l3Q
-X-Gm-Gg: ASbGncsoY+/R4hVII0VBrlC60K8TGne6ad98Q21fWiJjRUnifqordPqH/9DLGy4u0g9
-	QOR3Ka+Ej05SdFGAH0vFOYl/rtvPLoM3jbTLqN7UaNDR/6NPo38fQzDTesux1+LhOp8c1IidRut
-	M2cYyaVPgTKGV21i/OLTaFZsNDrVMoR5CN0W8A4i6ucIfFiCTb1wle9oKPLGMTe6tlU2jUtyh53
-	VQg1j4BY2qjbXKeCsi7l7SFdGdTxsgtlpn5aF24CyCuQtxThprCKlrato2QgfcdtYQdSMk4yOzf
-	KomBCcIRPeyR03ydz0FvWm9SxytwIccmkReIwanfZppq08FQuIHj9B8IW30Obt+0nmVKERKFa/u
-	3G3RdWkCv1dlydVi/TKXQ
-X-Received: by 2002:ac8:5a93:0:b0:472:2122:5a37 with SMTP id d75a77b69052e-4ab86e22a8cmr7185551cf.4.1752580061440;
-        Tue, 15 Jul 2025 04:47:41 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE16WXzqfrkizeZwS9xDN1JalpfUl7uZPacEPMkaJASCCYgdE2C9z7E6fN8uPL5G0sXubPD7A==
-X-Received: by 2002:ac8:5a93:0:b0:472:2122:5a37 with SMTP id d75a77b69052e-4ab86e22a8cmr7185261cf.4.1752580060937;
-        Tue, 15 Jul 2025 04:47:40 -0700 (PDT)
-Received: from [192.168.143.225] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae6e7e90a07sm987503366b.6.2025.07.15.04.47.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 15 Jul 2025 04:47:40 -0700 (PDT)
-Message-ID: <98088092-1987-41cc-ab70-c9a5d3fdbb41@oss.qualcomm.com>
-Date: Tue, 15 Jul 2025 13:47:37 +0200
+        d=1e100.net; s=20230601; t=1752581049; x=1753185849;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=uewLyWaWo+XEtP3pU1ovudooX8FXuLSHNKA5wv9Jbhg=;
+        b=tkf3n8u2qrJMaxR1KEDVLI6rzgDvVZ9uofC5WZRHQugDejksZoSgaY3NOosyNdBLbW
+         nZ8HCzUjVqvoeacYApy8gRYMPt8xD0qt1H6VBalQNVKDXkn+4MEp/G7qEdGKB379E42B
+         8k6su6wgOH/VxIWRL21lUnSR/KBb8L6t+q0vY61lWQkcCw3xxGXnF97cDRE+pm/uzJCK
+         aGNu1sWoi01lmzzlbWygixSBTrpCs4jrIBb9ZIFgA74w48ETePAe6OO8fD2cq6FKKNFg
+         p6+gQ8oI/BvKTBfomsdOJUB0FyiHjpgUfTB05F+Dj+LKyvghBwpQh75biXTSnaKFDYVQ
+         6t1A==
+X-Forwarded-Encrypted: i=1; AJvYcCUYRHrdst8AmHio22HEmU/47xFqXoAottqFEtbtHNfBR8SY98aTKcKMbuRnJwCw5MZSqbkP+Fr+woU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzS47zs8ThHUgVXeosbYBZuJwBpD2fwUcnZN6yP0UQeV1Fh9fOk
+	zUV+ERSEEjORIABhHRqwpcAEZyncLxcHdnQ8B9BZVj4XsUJGSyzaZ5xHtO7Rey8giJADqn/dxiV
+	8e8yANotM8BkLZYmJQCxxTIoEx+GTteDN2vJkUX+8tF+9w5WXkuZ+w2ywSf7fUWg9ki7j
+X-Gm-Gg: ASbGncsF3P+P6GWY+2Jle4eA7E3jHsn+GET+QHidL/SLfv4vj4RTvItNlqmN4Fj3kbl
+	SV1y6aKBbHiK2Os9H960Y8yZavfRjvLhOnt/bMivhS7t/XG2lyrH8N9dKRQAStTfpQH57d57OzN
+	C/SeAlPZ4QRyhSQDMghMwkL9akBWNfQVZ6ZQAgA4WMM46gByr2TTrQTATkMFkGouxZpRIswv1ze
+	Emfnqgjl8kvDOp1n1N2LKMkpXW2polrRJSIP0KgoA+kL+Gzmi3B9mHu+/sto9nimEDlZ/7sAfd+
+	UrAbZUg7XQcClpfsPIj4uECpDMO/kjPD0l7xTV/mv4IUikFMmr+rZhGqq5DHSXDAf3pa72IWSmo
+	lgf6vl6uirmdj4zwpt4W/Q9CyZ5yAjkK+SdmZTsD+EJWRsxwN6uVA
+X-Received: by 2002:a05:620a:440a:b0:7e3:35dd:4829 with SMTP id af79cd13be357-7e335dd4ee6mr517582785a.46.1752581049145;
+        Tue, 15 Jul 2025 05:04:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGG+QA3kcqdK27HrgZ41em40tegk2sEjV/HwigntzMPoVZCR1JNaYYEpmMQ+MrBS7T3eBGxTw==
+X-Received: by 2002:a05:620a:440a:b0:7e3:35dd:4829 with SMTP id af79cd13be357-7e335dd4ee6mr517577685a.46.1752581048678;
+        Tue, 15 Jul 2025 05:04:08 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5593c7bbfcfsm2266306e87.40.2025.07.15.05.04.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 15 Jul 2025 05:04:07 -0700 (PDT)
+Date: Tue, 15 Jul 2025 15:04:06 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+        Andy Yan <andy.yan@rock-chips.com>,
+        Yubing Zhang <yubing.zhang@rock-chips.com>,
+        Frank Wang <frank.wang@rock-chips.com>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Amit Sunil Dhamne <amitsd@google.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+        Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+        Diederik de Haas <didi.debian@cknow.org>, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-arm-kernel@lists.infradead.org,
+        linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH 1/5] dt-bindings: connector: Add displayport connector
+ for hotplug notify
+Message-ID: <r7b4y74lr5qwejkejquosaar75mthjvjfy4pp6bbl4pgte6cq4@n3gwjolsaw2j>
+References: <20250715112456.101-1-kernel@airkyi.com>
+ <20250715112456.101-2-kernel@airkyi.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/4] arm64: dts: qcom: sa8775p: remove aux clock from
- pcie phy
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, Johan Hovold <johan@kernel.org>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-        qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-        quic_vbadigan@quicinc.com
-References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
- <20250625090048.624399-4-quic_ziyuzhan@quicinc.com>
- <25ddb70a-7442-4d63-9eff-d4c3ac509bbb@oss.qualcomm.com>
- <aG-LWxKE11Ah_GS0@hovoldconsulting.com>
- <4f963fcc-2b92-4a01-93a4-f0ae942c1b6f@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <4f963fcc-2b92-4a01-93a4-f0ae942c1b6f@quicinc.com>
-X-Authority-Analysis: v=2.4 cv=e7gGSbp/ c=1 sm=1 tr=0 ts=68763fde cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=dJGf4bKP5mfmDP1ZOs4A:9
- a=QEXdDO2ut3YA:10 a=dawVfQjAaf238kedN5IG:22
-X-Proofpoint-GUID: RmvbmIt0UN8AFo-LfJkgS-QzWpC9Lg0c
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDEwNiBTYWx0ZWRfX1ejNU17E+/kj
- P3qBzotfHIVS2WV0t72hmJJyU+xu+INXIf2fdE05UYtbJd92cWtkYPE3lCz1KqzMmbIraybl4b7
- dn1zodVOckaE/AupLlW8eyEzNYJCVu+eCAv1emQpUYcS37eKmL6GEQXIsPdhFB7TlLBhKbkwAMM
- l1aGhC3DBmWnhW3HpNQ2p95pLX3biPQzQRfOB+xj9WLwl6B6ZDCrbGGF6uqH/GIz8IpOg/1m08y
- imgU3szWy9f+L6q/7H7EbeQ5cO+spbxJSu2a5hLbxzMnUbJVwKDmz3ez7lsyn8nggkdVwbjcB9L
- 6mlhtOMx0eJjL4LzPU72WVI+t5OsGX7WAZaHzI2hazjgOAl0hw97uRvH52gznHISawvgT6sx0Nz
- 4pNvVWmrGn5q6s7qKhzkAJ+iVsfVMgUeq9RjV0AGxVruPMXgFEfcixxH4qezHgfFs8s0xhU6
-X-Proofpoint-ORIG-GUID: RmvbmIt0UN8AFo-LfJkgS-QzWpC9Lg0c
+Content-Disposition: inline
+In-Reply-To: <20250715112456.101-2-kernel@airkyi.com>
+X-Proofpoint-ORIG-GUID: TNyDZeKgvvjf5QS6MpvE2M3WhYx17UYg
+X-Authority-Analysis: v=2.4 cv=RtXFLDmK c=1 sm=1 tr=0 ts=687643ba cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=20KFwNOVAAAA:8 a=s8YR1HE3AAAA:8
+ a=w3lZJLl83XfeLKIF-PIA:9 a=CjuIK1q_8ugA:10 a=IoWCM6iH3mJn3m4BftBB:22
+ a=jGH_LyMDp9YhSvY-UuyI:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDExMCBTYWx0ZWRfX25l39o1V1j3G
+ QrQwlPqpVNxxLV3ZHGvNYFtTHMvp+vJHck1ixXqFI8r2ghaqmO4ZJpc9aSSQyNq6Jd/PoveX160
+ w418wQ3fRk0+PYstXKs5FlCiFpV5f1U/nwVDekYJQ3l1vVfjV5Z5FBaBUon0pS0yQ0pLGVignlw
+ o8xh6kEr3iD1PbrTZPCsldcWyXtZIhlpWFqZW1Hj1eKAfMIXE7SvsY2JsmAwSpu/RwLIP6BGOn8
+ Hmd/6GCpmpwNqgF6+PMHRXw3nDpk8X1zJX4gf9JM17yPZlMt7f35d5/5fi4wZvIGU72a7vsUrI+
+ WgGW7f8K3GVq++r5f01NSeaTvFXPPM7xtoj/UEONaMsODdKqqa2/KUeSgW5B7cMjveHxrbeinv7
+ CwDMoBxWTqYXS7UE6BV0qdG2a6gywmR/vygl751zgKBVC9tysaVmAgymwhuPNZH+wip+mjhH
+X-Proofpoint-GUID: TNyDZeKgvvjf5QS6MpvE2M3WhYx17UYg
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-15_01,2025-07-14_01,2025-03-28_01
+ definitions=2025-07-15_03,2025-07-14_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 suspectscore=0
- phishscore=0 bulkscore=0 impostorscore=0 clxscore=1015 adultscore=0
- malwarescore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507150106
+ adultscore=0 mlxscore=0 bulkscore=0 suspectscore=0 lowpriorityscore=0
+ impostorscore=0 malwarescore=0 clxscore=1015 mlxlogscore=984
+ priorityscore=1501 phishscore=0 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507150110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_044745_075623_4F8C1080 
-X-CRM114-Status: GOOD (  16.94  )
+X-CRM114-CacheID: sfid-20250715_050411_263102_DF854C02 
+X-CRM114-Status: GOOD (  15.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,35 +148,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/10/25 12:24 PM, Ziyue Zhang wrote:
+On Tue, Jul 15, 2025 at 07:24:52PM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > 
-> On 7/10/2025 5:43 PM, Johan Hovold wrote:
->> On Fri, Jun 27, 2025 at 04:50:57PM +0200, Konrad Dybcio wrote:
->>> On 6/25/25 11:00 AM, Ziyue Zhang wrote:
->>>> gcc_aux_clk is used in PCIe RC and it is not required in pcie phy, in
->>>> pcie phy it should be gcc_phy_aux_clk, so remove gcc_aux_clk and
->>>> replace it with gcc_phy_aux_clk.
->>> GCC_PCIE_n_PHY_AUX_CLK is a downstream of the PHY's output..
->>> are you sure the PHY should be **consuming** it too?
->> Could we get a reply here, please?
->>
->> A bunch of Qualcomm SoCs in mainline do exactly this currently even
->> though it may not be correct (and some downstream dts do not use these
->> clocks).
->>
->> Johan
+> The USB Type-C DisplayPort alternate mode driver will find
+> "displayport" property for DRM hotplug event notify[0].
 > 
-> Hi Johan
+> [0]: https://lore.kernel.org/all/20210817215201.795062-9-hdegoede@redhat.com/
 > 
-> After reviewing the downstream platforms, it seems that GCC_PCIE_n_PHY_AUX_CLK
-> is generally needed. Would you mind letting us know if there are any platforms
-> where this clock is not required?
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+>  .../devicetree/bindings/connector/usb-connector.yaml          | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
 
-Do you base this on "downstream has it", or did you check with the
-relevant folks internally? I'm still unconvinced by the clock looping back
-to the PHY.
+Please see how it was done on other platforms. For example, qualcomm
+(both tcpm and pmic-glink) use port / endpoint to link to the DP PHY /
+DP controller.
 
-Konrad
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
