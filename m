@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67FF4C83F27
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 07:34:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21A88C83F1D
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 07:34:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WXnrOI5XQZjBvVQBPa1C9WRv3ce05TpsWiKKD6EgoYY=; b=OgCyUNP8hAeW5s
-	oBFTUUAnUDwSeJw0VH0v2JHmo7uENL5wiT+JIvl8bTuPYKEWO0fwT4a5senTg6UFpFzjLZ7RsW6QT
-	dJXFTlxyFD2GUrObsHcY5smHnI+NqbAQymG8kqEUK7HZSoonCAyEbA02mbNp5auaSKNFg1yLTXixP
-	J8+ZAXA3pXyXu/FzTMgHrOPpGtSd+HbS1w38LT5lqh4efWeHj5mNschUQnbDqF7c33apR3LsurrpY
-	uWiiPe3qwa5YPpIDxVUgDXcZF57g0w2vvp8oS0Rf8ldNsiSJXMVTe65mv88zsDNYLQGKN+xUQRCkT
-	vIW6N3ExsmkEmos9LPpw==;
+	List-Owner; bh=wwteqrzNXa0uLmxxX5O0awZ+yX5sld1YL5z65pfBWjo=; b=W47Mfa+3VLgg9Y
+	A63QXU/6olIx0haY96Fg0tl+db1W/OwalvqyKtTXz+TREWk7DiyCUO0fQ3FnFWFvdhvy8qawj8Inz
+	EjgNo5Ob3aWKHCUu3YTbc77pCat4hCJyTkX6NcTUrKc81wpuqNpy8QnoAUaOWPQUGK9CfBpVJ3FUG
+	I1xEWUWLAfc5V7y9HNz7wDNRCLbzTAbpr5QZQvRNauZGU+gzd09NLMyetxgMND/ifI5BctU9hwpkL
+	TouXkdAaBv4mZ27uucgA4Huw+FycD2WADaoUKifkSzfAEiVFTzQK2n4lthEaP6KWbye5JW7+NP4tD
+	XqJReNs60ntSaBERDZAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubaBT-00000004Mic-3dVv;
-	Tue, 15 Jul 2025 07:34:39 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1ubaBU-00000004MjQ-2v9K;
+	Tue, 15 Jul 2025 07:34:40 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uba6r-00000004LkQ-370i
+	id 1uba6t-00000004Ll4-1AU3
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Jul 2025 07:29:55 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-45610582d07so16013955e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 00:29:53 -0700 (PDT)
+	Tue, 15 Jul 2025 07:29:56 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-455b002833bso11676235e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 00:29:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1752564592; x=1753169392; darn=lists.infradead.org;
+        d=fairphone.com; s=fair; t=1752564594; x=1753169394; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=igRKmJztcKVpdUX+y9lchuje3E9fuLqSjyB5RDorqw4=;
-        b=MVu2wxj0hquKgM/4XAXmeTDQ6k01YYB47ZdcdeH9q5h/McoxpO9rzn9oskm5iZu3FF
-         uFW4/iLqlsqg+6gks9kYbJfZ0VA8EXKEDJmabBusEg+a4wz5IHYlJqwbzQFn/08Qp60q
-         AcA9yyp+XqgZWJz7WVXZ15D1k5PsCHRQBCQryDoH+CS7DZ0FEOgrNXAUMbftRuN2I3vE
-         g3gEO7ZE9RzC8HTn1vgfC0touXgNEXRN1R7XXro585lE/qnGbjE0zFyWbGtbx3QG8jJx
-         D3v55BrDISdyiw1hJKzf3ka6fzeYf8eYet0lY/huAIfNr3rUW+nob0ifTKZ3HWcXaOeJ
-         V81g==
+        bh=cKX26aKnBjtUzQOYUax+zZK1e97PUjbyxNSQ0DpaCR0=;
+        b=A8fadxNmczu4rfs6ERvQuazISIzS2WmbTDZyl7uAcJxO6FVckl0qsbfocgalVG8KK9
+         jJk4OFzYQ08F3McZTLA7QKP+GsXunLM6TQxJRaAbD1JiY1sIwwZ5RbYpMBabJVR14Sg7
+         wygS0qQ8t26JXLN1Cvwq9PEU+1aNurdWFNrAQU0MwtjSgEZImAuIfzwf9ldjxzk3jWSd
+         gCMeiNiHySnaVOCPdb1THAcvMsMrwvfurGoXVlK8cHfU4clfAChePI7x12NEx+3OiqmM
+         6BKHCkg6XC7mDu7nUu3ZQTNMvvrDT8eKhxSh79T4X1OTCQO6GylL8wS7GgDyXSA389Kt
+         lzxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752564592; x=1753169392;
+        d=1e100.net; s=20230601; t=1752564594; x=1753169394;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=igRKmJztcKVpdUX+y9lchuje3E9fuLqSjyB5RDorqw4=;
-        b=Dr26A75p7ry9y19eGdcnF1dCxdN+Fdic6hE4Vy7L1N67+LzzmBFu6Ny8t94VFOibfX
-         164cQxrFl/Imnu0/pYb/hV9cthyluWG8uT3O6ma1uJJYGkhpdCxJcGxQGuw+1Cqciiwa
-         WFF+wAfCU/FAGvmcfmrsaLLDRvi/pIO0CdRJBgseuajTmXvFMSngUMp2xpCKhR8gwmwD
-         oxmpOM9Vqgvqyo6j7zeF9VAPLrYHruzNpGln9+5TFfAkszS2v630NVs+c3SPTgLH+Ne5
-         l405+htimYytRjwGm2lO6lNEQxueWRgFvc5TehL9Sr55Tkv6zMWRFk7fPCALUo5vf7sc
-         zTbA==
-X-Forwarded-Encrypted: i=1; AJvYcCWPe8+1Z6fD9QRkiaxyJ80qhVNP4p0XJqrLx7sg+G5/I1Zi9hR+7uhJxpNqzdt5m/nhQaoNGjpLB58=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz5/Rnq790WMydjThUm0Vgbqc0zCVxUXbY8d/zweeW6OsVSZ/FJ
-	CmEXNp6Abs0DVw7ZRecFtCDE+dtf3VLvKs5LaYFaHTcrMBoKwlmwT5BWhKrx0EcVFRo=
-X-Gm-Gg: ASbGncvkl6PB5UZCaGkEJGCMEzfcD+IJj6wZMQjnl+kFiSkOz9cdDmPAcHw2yH8HDqY
-	ukrkZVk+qhfSGuCf2phrO3gtstWFEBfg7ihIfO8Xc1ta53Lnl+LFcU9hNjd2YkHr3k64uNALqws
-	SFJtQL1S+X3taJ1ANaPer07LSsXn4+Y0XxDxr0cJJSUYeogeIwBWyfWNNK7uAVwgNw/DfxNly1q
-	EVUSTKvDI8hN9LbgosyXQPj+isE28UYvWWFZ9a1Ai1mjLjdXNY+OK9qwBdnlvtPIOz8PatmwYtH
-	tddsm1s0YTupIZWSGxbCgKC8ViDnTPTvoHu2x7/3A+514m9Hd7Gt/GZpvgUsM1oFw0G57ZW8QRc
-	PixM2aIFfRFDGrKPqT8D5hn3JSIyBBclGDKYbD+jE732aFOJ6+DWd7FB3
-X-Google-Smtp-Source: AGHT+IEOswgcSDktjdBdtB5rnegG/4cAp7K55K7A8UnA371xrsFvPIVkAf0I9oWpxgphOBT3WowzKg==
-X-Received: by 2002:a05:600c:8714:b0:456:12ad:ec30 with SMTP id 5b1f17b1804b1-45612adef9amr76669595e9.13.1752564592119;
-        Tue, 15 Jul 2025 00:29:52 -0700 (PDT)
+        bh=cKX26aKnBjtUzQOYUax+zZK1e97PUjbyxNSQ0DpaCR0=;
+        b=LnfoTST6rIL++FbiYma+Ggkx04v85vkjPllsTpHXZsiHgdtXEqfVyrLgGvOBRF9d/N
+         POOWGvCw8bZt6iaISe7MKXH68suQqN1Z9q1FHihHppvS7+933WgNYJEomtsd5dLWTZ/r
+         TTd/47ujLbjzr8Y3ZgJcaT+zuZSHz/TWZble5y4TBcOGVpj8R7j0G8U5zzSxz59h0Yw4
+         f8D632Bh1UKbchqDu2hyINtCSTjH9plOpQszsHyl3IWySZRMhPEWZ6sEfhlbdwln2agr
+         RX1nHexsZRWK/iXVbJ7OBY4DRbHPCD1jvv1qoylWkL3qAA6YZdPsydM16Ai8hCpq+Hs3
+         2pcA==
+X-Forwarded-Encrypted: i=1; AJvYcCVfslglaqtHxr457Nd8WK6kcslD+7XUER0YbZaZLYkJbotMtNrLaEqvKYQ1tdK9uVKPslFhlJhcIo8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxBRjSqvwkQhOhc5h2QyI3eEWhvmyq1Aekxe3o4Lv/deUWo5jfZ
+	6xt6cGJ2iKmese+WK5cyLXOUbv6MPKDlOWQu1suo/tuVgvlH3/LSzNJe3p/CXR1zGo8=
+X-Gm-Gg: ASbGncubyO1O1NSxxH1i68USdKfht8XM/GNstOE3nlzDRQ0JhPzO95BGTU3EFBIa3pu
+	GULnZWyklErgJYwPHHqBKYl6tYOPaniyuMUBKEMjTr//GpaHsJavyq3LwKuVNZif3AL8Lw95kTQ
+	fAdJY0ACAf8kjklj7NpV94p23h2wU3PmaMjrxk8UJH481I2PuIr/pX7YNufDWHpJyk+dyg7hkUu
+	fG3ArJLDu6LcFBK8oaU9Dg4CuWLXplbJgsasqwN1Xa2GBYcsWuKbW6gAUJLDYrLtHRwQuiSsTtb
+	YRrLVrTN7AKo6ujlBE27YaRYhfu3wK/716zPfy9GFE9XEEIJq9Q8bIhd11Pf2T3n2gAsZfdkohg
+	PCmq1FwQi+Qlmds0HnX1UYzShH6PDT8K2roG1eRLPRvksXO7dMm9mF5IqjDk0XD9J36Q=
+X-Google-Smtp-Source: AGHT+IH/721YD0d2nZC/ZtDRok89aWdqeORozs5yHiHN61ozNTDLlak1hxt58SbOisTPzHt9mdONKg==
+X-Received: by 2002:a05:600c:1f11:b0:454:ccd6:327 with SMTP id 5b1f17b1804b1-456272d233fmr13038635e9.1.1752564593644;
+        Tue, 15 Jul 2025 00:29:53 -0700 (PDT)
 Received: from otso.local (212095005088.public.telering.at. [212.95.5.88])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-455f8fc5a01sm106703395e9.32.2025.07.15.00.29.50
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-455f8fc5a01sm106703395e9.32.2025.07.15.00.29.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Jul 2025 00:29:51 -0700 (PDT)
+        Tue, 15 Jul 2025 00:29:53 -0700 (PDT)
 From: Luca Weiss <luca.weiss@fairphone.com>
-Date: Tue, 15 Jul 2025 09:29:36 +0200
-Subject: [PATCH v3 3/4] phy: qcom: phy-qcom-snps-eusb2: Add missing write
- from init sequence
+Date: Tue, 15 Jul 2025 09:29:37 +0200
+Subject: [PATCH v3 4/4] phy: qcom: phy-qcom-snps-eusb2: Update init
+ sequence per HPG 1.0.2
 MIME-Version: 1.0
-Message-Id: <20250715-sm7635-eusb-phy-v3-3-6c3224085eb6@fairphone.com>
+Message-Id: <20250715-sm7635-eusb-phy-v3-4-6c3224085eb6@fairphone.com>
 References: <20250715-sm7635-eusb-phy-v3-0-6c3224085eb6@fairphone.com>
 In-Reply-To: <20250715-sm7635-eusb-phy-v3-0-6c3224085eb6@fairphone.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -85,21 +85,18 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
  linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Luca Weiss <luca.weiss@fairphone.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>
+ linux-phy@lists.infradead.org, Luca Weiss <luca.weiss@fairphone.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1752564584; l=1183;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752564584; l=1041;
  i=luca.weiss@fairphone.com; s=20250611; h=from:subject:message-id;
- bh=wYiuInhT/0IBi5aTMYTxCqi+FJtCIlWWKNx/cq1PoSw=;
- b=Yd5Rujjbob3CnCPjRrUIgB1geUfHyw5dfBFoS8gbMx739dw0yhhLnWpk15eAQh/7MCWe03jQN
- M+taRvi0PcPCziUhIAqZCZ+WtyBcBNQO8ZKR4WMbJL8aW+96LRZGqNk
+ bh=dKRIX2zCBDl46th6tpWYKQ8ftUYUz3Ovibvr6genGas=;
+ b=jg+3EAQfrVGVvex10SEG9/YqZt9ntRuWJlCNcEabPPuV1ZNP043tJEYI08EeUFSbw7GXST/WE
+ y1W/CWHqrcmCs+Q8gklChp3SDKzDopYBRGsktodY6QduCnNEF9NHpeO
 X-Developer-Key: i=luca.weiss@fairphone.com; a=ed25519;
  pk=O1aw+AAust5lEmgrNJ1Bs7PTY0fEsJm+mdkjExA69q8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_002953_808937_381DB2F6 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250715_002955_340613_087B416D 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,34 +113,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-As per a commit from Qualcomm's downstream 6.1 kernel[0], the init
-sequence is missing setting the CMN_CTRL_OVERRIDE_EN bit back to 0 at
-the end, as per the 'latest' HPG revision (as of November 2023).
+The eUSB2 HPG version 1.0.2 asks to clear bits [7:1] on all targets.
+Implement that change in the driver to follow.
 
-[0] https://git.codelinaro.org/clo/la/kernel/qcom/-/commit/b77774a89e3fda3246e09dd39e16e2ab43cd1329
+See also https://lore.kernel.org/linux-arm-msm/7d073433-f254-4d75-a68b-d184f900294a@oss.qualcomm.com/
 
-Fixes: 80090810f5d3 ("phy: qcom: Add QCOM SNPS eUSB2 driver")
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
 ---
- drivers/phy/phy-snps-eusb2.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/phy-snps-eusb2.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-index b73a1d7e57b32cfdfbe314ab938ec54746ed53be..e232b8b4d29100b8fee9e913e2124788af09f2aa 100644
+index e232b8b4d29100b8fee9e913e2124788af09f2aa..90b3da79900467dccbbec226db1cc83297ce8834 100644
 --- a/drivers/phy/phy-snps-eusb2.c
 +++ b/drivers/phy/phy-snps-eusb2.c
-@@ -437,6 +437,9 @@ static int qcom_snps_eusb2_hsphy_init(struct phy *p)
- 	snps_eusb2_hsphy_write_mask(phy->base, QCOM_USB_PHY_HS_PHY_CTRL2,
- 				    USB2_SUSPEND_N_SEL, 0);
+@@ -392,7 +392,7 @@ static int qcom_snps_eusb2_hsphy_init(struct phy *p)
  
-+	snps_eusb2_hsphy_write_mask(phy->base, QCOM_USB_PHY_CFG0,
-+				    CMN_CTRL_OVERRIDE_EN, 0);
-+
- 	return 0;
- }
+ 	snps_eusb2_hsphy_write_mask(phy->base, QCOM_USB_PHY_CFG_CTRL_1,
+ 				    PHY_CFG_PLL_CPBIAS_CNTRL_MASK,
+-				    FIELD_PREP(PHY_CFG_PLL_CPBIAS_CNTRL_MASK, 0x1));
++				    FIELD_PREP(PHY_CFG_PLL_CPBIAS_CNTRL_MASK, 0x0));
  
+ 	snps_eusb2_hsphy_write_mask(phy->base, QCOM_USB_PHY_CFG_CTRL_4,
+ 				    PHY_CFG_PLL_INT_CNTRL_MASK,
 
 -- 
 2.50.1
