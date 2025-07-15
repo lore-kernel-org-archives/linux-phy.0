@@ -4,115 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B58EC83F21
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 12:00:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D931BC83F21
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 12:07:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qdX031RTXPexN30d1+VHO0BG2yRnKzg5q7T7CBE1cGQ=; b=RgOaCur9OGb1bq
-	5abznkv8nddG+zVgp02++wwhf40VEgAbg4eMTXSBV0ZWpQksAraAA4gw14ffRzb+TEWOIRCgsSxyM
-	3WUv/ZsrohqMd1rr6AjUvYV+4iqQVqtlMXb6FsgsgpBs5j6XZR8q1+2roV/2UR+Bpc5ZQtZBsk6ic
-	L80n/EMdjrUIlCkgT8D3m4XOutjdPchRatNMyPclRn0ZW/7b1n4rAGBrI3AgfQDIYfNq0JpPuUOSV
-	90jIxx5HKZLzyvQU5/40/jX6t2ASi2HZbvivXMbT8Rmwl9wLpLkgh9SRdpAyI5LtZuOA6soauOaVx
-	XqOmZdlE+yuUBCNZoYvA==;
+	List-Owner; bh=CVA5g32c2pGx5WCZw5AQPzLg1IH3vohL/qzDo70+Vgw=; b=WG0uBczL+PpBew
+	CUCy6Ne5wOOSIfiwMIOf21p0oqMdThu80Y5NIc0REiGTsU0XYBp7DHCI3VbFM1ebvCOsImU5Zrqhy
+	VeSUKBK8qfNNQmE76/2LpFPmeHaNG1U/+bK7J/WYp6DK6MFJsAg388HiVjpffYhbB4DGhQUzi+bQB
+	RvChf+507U5EdEJ2AlSW7BtoaTiLY7YgrsQ9ts1EZhAtOYsVrR+QCXQE1wCjL2/PGKdIRRRteYHPS
+	FXna1GmGE58YtCyDWy0Aulkqu69ZvQ4oDn7tTcabxnmhcw1NQpH2vfgtvt59/otRnYNi3MKrugSKz
+	dp3CCOm+EyS5a72xKfoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubeKd-000000050zP-0JpZ;
-	Tue, 15 Jul 2025 12:00:23 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1ubeRu-000000051za-2Nno;
+	Tue, 15 Jul 2025 12:07:54 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubdz6-00000004xtP-0Er5;
-	Tue, 15 Jul 2025 11:38:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C550B60053;
-	Tue, 15 Jul 2025 11:38:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44BEDC4CEF1;
-	Tue, 15 Jul 2025 11:38:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752579486;
-	bh=k3Pt22s3urH1ffPht49H+gTfknzAhbGPucTExEY/I64=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=DHCY5xQjmFJX69MUX4vYWPw8P17yNMGOpFFR35NcdrKuCa9bNGljgInX7Iyvks0BV
-	 g2BdCE6bEtcWQXKsPR3t76G6LNF3oBVrxIB7RGS4faIf0EOemPNRYmhferOp7sna+9
-	 7ZBskGv1Eb8CRRcPEuIxwaDgLA/44hkbaVxt9OyJg8CBZ0923dNyBJRGGzmF88JuKn
-	 11U7XL3MwiZ4w7diF5Om0zFOdkDkyE2KfJwdPr9JTMJqCGxumd2phg+jKqzu+Xx7Y7
-	 ZHeLSRMMa++3DCWGk1W7CpFAy0HWWlRK6y+PDRFv8VTl5OnAdqlmBURUpIhDYPEVMR
-	 ctzEdSx3SPj8A==
-Message-ID: <c62d168b-92b5-44a2-9a9a-402d7f4815a2@kernel.org>
-Date: Tue, 15 Jul 2025 13:37:58 +0200
+	id 1ube8O-00000004yqJ-3nuR
+	for linux-phy@lists.infradead.org;
+	Tue, 15 Jul 2025 11:47:46 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56F7pwBF032437
+	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 11:47:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+iXLFGA6J5aFgF0rOG2NVhZA5bpjJjvu96bzK64t0fc=; b=hxeTaSLlbwM3IkY9
+	VOUWJ9zFL+zNuiklw2zu7Rk5K6+pYJeZylNTefM6ZedT7EIkJV61sPN6m3f21dJ2
+	tcOt5qZVjhE8BJr/nTCSb3KeQY9p9l4mm9tt+qQ/ADsnqcMVf2ywTxK7PJqVNOR2
+	Y3XJ1vCu7msHKb/uFl5cGVb2i0PiOFcxc8rT92emwI4LAqr99EuHYQmcRC501QT4
+	3XN8JumPnAvzB8uNWTs5JOD3MIyYFkoYc6iDlEPRr5rQiD34CCQXBWPFFdr4G/Pk
+	k2U83jvX+/07lR1dnL6YmJW7SwEPD747tE/YnMbo7o4Ei++gAvwDZ3eFDMYPtulI
+	V86oRw==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47ufut7ydj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 11:47:42 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4ab3ab7f74bso12248801cf.2
+        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 04:47:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752580061; x=1753184861;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+iXLFGA6J5aFgF0rOG2NVhZA5bpjJjvu96bzK64t0fc=;
+        b=haXLsQ2DS9IbfflIHV5FoLI6o9ExCKclF5ADCefvm/+OOdLyQw23y05ayISDUZURb7
+         5SIBrRYB8bWXr2MdtzkURjssuoc/C6UIX+6iXObW7tdP0C2Sdtnej+878iDfS7n7YCDU
+         aWGvrbTbQFaffMre88l7bBHTPHZGQMkjOJoDFs1J+f3x4h4lI2hwfQUwCQlaVwHsKzl8
+         eFhvv8iUHDRjyQJ3Dl0WmEPs23DtiHz0q5DpPSOmUIJJ5MZTtCRHWtoNFMLjobujCDSs
+         G0IpV5H713W+pv1Zeqw8OdpEA0xepPiSSNkMZTeW/2WpgaYyhY1sTGTyDHH8D54uo1Pq
+         NkHg==
+X-Forwarded-Encrypted: i=1; AJvYcCUQjWrYJsNyd5ZBL8WpyspEhAc9NNmlUEILs6QSmWEgZUASwHCoFzz1IsQtRSvidJfG7b/ogiwWpeA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyX/UsBbZuolDFM4P+BfSU3OH3Vvw3ynPtsgigp3aRFAV5+C+Wv
+	pwmFc7qZpe1uqPfP3lKgnqdDYvag//ojyIrB6AX+uCC8z6rezBpJXw7N+5ANGk68B58tPRHW5iK
+	j6cSE1lOAvAlpy8VpB8JUyhGf0Cj9WhJzNL4uT2RC5+g0XU40YfEteGYwF6K7brLJ6l3Q
+X-Gm-Gg: ASbGncsoY+/R4hVII0VBrlC60K8TGne6ad98Q21fWiJjRUnifqordPqH/9DLGy4u0g9
+	QOR3Ka+Ej05SdFGAH0vFOYl/rtvPLoM3jbTLqN7UaNDR/6NPo38fQzDTesux1+LhOp8c1IidRut
+	M2cYyaVPgTKGV21i/OLTaFZsNDrVMoR5CN0W8A4i6ucIfFiCTb1wle9oKPLGMTe6tlU2jUtyh53
+	VQg1j4BY2qjbXKeCsi7l7SFdGdTxsgtlpn5aF24CyCuQtxThprCKlrato2QgfcdtYQdSMk4yOzf
+	KomBCcIRPeyR03ydz0FvWm9SxytwIccmkReIwanfZppq08FQuIHj9B8IW30Obt+0nmVKERKFa/u
+	3G3RdWkCv1dlydVi/TKXQ
+X-Received: by 2002:ac8:5a93:0:b0:472:2122:5a37 with SMTP id d75a77b69052e-4ab86e22a8cmr7185551cf.4.1752580061440;
+        Tue, 15 Jul 2025 04:47:41 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE16WXzqfrkizeZwS9xDN1JalpfUl7uZPacEPMkaJASCCYgdE2C9z7E6fN8uPL5G0sXubPD7A==
+X-Received: by 2002:ac8:5a93:0:b0:472:2122:5a37 with SMTP id d75a77b69052e-4ab86e22a8cmr7185261cf.4.1752580060937;
+        Tue, 15 Jul 2025 04:47:40 -0700 (PDT)
+Received: from [192.168.143.225] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae6e7e90a07sm987503366b.6.2025.07.15.04.47.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 15 Jul 2025 04:47:40 -0700 (PDT)
+Message-ID: <98088092-1987-41cc-ab70-c9a5d3fdbb41@oss.qualcomm.com>
+Date: Tue, 15 Jul 2025 13:47:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 5/5] arm64: dts: rockchip: rk3399-evb-ind: Add support for
- DisplayPort
-To: Chaoyi Chen <kernel@airkyi.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20250715112456.101-1-kernel@airkyi.com>
- <20250715112456.101-6-kernel@airkyi.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 3/4] arm64: dts: qcom: sa8775p: remove aux clock from
+ pcie phy
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, Johan Hovold <johan@kernel.org>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+        qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
+        quic_vbadigan@quicinc.com
+References: <20250625090048.624399-1-quic_ziyuzhan@quicinc.com>
+ <20250625090048.624399-4-quic_ziyuzhan@quicinc.com>
+ <25ddb70a-7442-4d63-9eff-d4c3ac509bbb@oss.qualcomm.com>
+ <aG-LWxKE11Ah_GS0@hovoldconsulting.com>
+ <4f963fcc-2b92-4a01-93a4-f0ae942c1b6f@quicinc.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250715112456.101-6-kernel@airkyi.com>
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <4f963fcc-2b92-4a01-93a4-f0ae942c1b6f@quicinc.com>
+X-Authority-Analysis: v=2.4 cv=e7gGSbp/ c=1 sm=1 tr=0 ts=68763fde cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=dJGf4bKP5mfmDP1ZOs4A:9
+ a=QEXdDO2ut3YA:10 a=dawVfQjAaf238kedN5IG:22
+X-Proofpoint-GUID: RmvbmIt0UN8AFo-LfJkgS-QzWpC9Lg0c
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDEwNiBTYWx0ZWRfX1ejNU17E+/kj
+ P3qBzotfHIVS2WV0t72hmJJyU+xu+INXIf2fdE05UYtbJd92cWtkYPE3lCz1KqzMmbIraybl4b7
+ dn1zodVOckaE/AupLlW8eyEzNYJCVu+eCAv1emQpUYcS37eKmL6GEQXIsPdhFB7TlLBhKbkwAMM
+ l1aGhC3DBmWnhW3HpNQ2p95pLX3biPQzQRfOB+xj9WLwl6B6ZDCrbGGF6uqH/GIz8IpOg/1m08y
+ imgU3szWy9f+L6q/7H7EbeQ5cO+spbxJSu2a5hLbxzMnUbJVwKDmz3ez7lsyn8nggkdVwbjcB9L
+ 6mlhtOMx0eJjL4LzPU72WVI+t5OsGX7WAZaHzI2hazjgOAl0hw97uRvH52gznHISawvgT6sx0Nz
+ 4pNvVWmrGn5q6s7qKhzkAJ+iVsfVMgUeq9RjV0AGxVruPMXgFEfcixxH4qezHgfFs8s0xhU6
+X-Proofpoint-ORIG-GUID: RmvbmIt0UN8AFo-LfJkgS-QzWpC9Lg0c
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
+ definitions=2025-07-15_01,2025-07-14_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 priorityscore=1501 mlxscore=0 spamscore=0 suspectscore=0
+ phishscore=0 bulkscore=0 impostorscore=0 clxscore=1015 adultscore=0
+ malwarescore=0 mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507150106
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250715_044745_075623_4F8C1080 
+X-CRM114-Status: GOOD (  16.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,82 +143,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/07/2025 13:24, Chaoyi Chen wrote:
->  /dts-v1/;
-> +#include <dt-bindings/usb/pd.h>
->  #include "rk3399.dtsi"
->  
->  / {
-> @@ -19,6 +20,16 @@ chosen {
->  		stdout-path = "serial2:1500000n8";
->  	};
->  
-> +	vbus_typec: vbus-typec-regulator {
+On 7/10/25 12:24 PM, Ziyue Zhang wrote:
+> 
+> On 7/10/2025 5:43 PM, Johan Hovold wrote:
+>> On Fri, Jun 27, 2025 at 04:50:57PM +0200, Konrad Dybcio wrote:
+>>> On 6/25/25 11:00 AM, Ziyue Zhang wrote:
+>>>> gcc_aux_clk is used in PCIe RC and it is not required in pcie phy, in
+>>>> pcie phy it should be gcc_phy_aux_clk, so remove gcc_aux_clk and
+>>>> replace it with gcc_phy_aux_clk.
+>>> GCC_PCIE_n_PHY_AUX_CLK is a downstream of the PHY's output..
+>>> are you sure the PHY should be **consuming** it too?
+>> Could we get a reply here, please?
+>>
+>> A bunch of Qualcomm SoCs in mainline do exactly this currently even
+>> though it may not be correct (and some downstream dts do not use these
+>> clocks).
+>>
+>> Johan
+> 
+> Hi Johan
+> 
+> After reviewing the downstream platforms, it seems that GCC_PCIE_n_PHY_AUX_CLK
+> is generally needed. Would you mind letting us know if there are any platforms
+> where this clock is not required?
 
-use consistent naming. How other regulators are called? foo-regulator?
+Do you base this on "downstream has it", or did you check with the
+relevant folks internally? I'm still unconvinced by the clock looping back
+to the PHY.
 
-> +		compatible = "regulator-fixed";
-> +		enable-active-high;
-> +		gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_HIGH>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&vcc5v0_typec0_en>;
-> +		regulator-name = "vbus_typec";
-> +		vin-supply = <&vcc5v0_sys>;
-> +	};
-> +
->  	vcc5v0_sys: regulator-vcc5v0-sys {
->  		compatible = "regulator-fixed";
->  		enable-active-high;
-> @@ -29,6 +40,16 @@ vcc5v0_sys: regulator-vcc5v0-sys {
->  		regulator-max-microvolt = <5000000>;
->  		regulator-min-microvolt = <5000000>;
->  	};
-> +
-> +	sound: sound {
-> +		compatible = "rockchip,rk3399-gru-sound";
-> +		rockchip,cpu = <&i2s0 &spdif>;
-> +	};
-> +};
-> +
-> +&cdn_dp {
-> +	status = "okay";
-> +	phys = <&tcphy0_dp>;
->  };
->  
->  &cpu_b0 {
-> @@ -341,6 +362,66 @@ regulator-state-mem {
->  	};
->  };
->  
-> +&i2c4 {
-> +	i2c-scl-rising-time-ns = <475>;
-> +	i2c-scl-falling-time-ns = <26>;
-> +	status = "okay";
-> +
-> +	usbc0: fusb302@22 {
-
-Node names should be generic. See also an explanation and list of
-examples (not exhaustive) in DT specification:
-https://devicetree-specification.readthedocs.io/en/latest/chapter2-devicetree-basics.html#generic-names-recommendation
-
-
-> +		compatible = "fcs,fusb302";
-> +		reg = <0x22>;
-> +		interrupt-parent = <&gpio1>;
-> +		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&usbc0_int>;
-> +		vbus-supply = <&vbus_typec>;
-> +		status = "okay";
-
-Why? What disabled it?
-
-> +
-> +		usb_con: connector {
-> +			compatible = "usb-c-connector";
-> +			label = "USB-C";
-Best regards,
-Krzysztof
+Konrad
 
 -- 
 linux-phy mailing list
