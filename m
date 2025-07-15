@@ -4,126 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4375FC83F22
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 19:19:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EA4FC83F27
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 22:10:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a3slmNQG+yhH8X3ZDAxXQsoR2BJMts7HeaQ9oDoBI80=; b=fqwlmhiTmabWTp
-	73+D+UKEYScZSm46agBl+hE31tnhLAMRRYwZTLPufbR2YdsijpH1ioRZnU8rn1mf0jMKeVREiiXPA
-	dfxQkmReEGkF4drryzauUAHsDuEaeT3rUaIJWRjIjtoPLhzgaeXpPFYiMvAae5AcicqX5lU/M2YXd
-	Pvv2fXCxQ0iiaCPAgzJTowII9C6ki50JbA8G9nxQZrVvRoFbEAdcGjuUA+zdKHgEZONirrZkMmlfv
-	HQx3vEgJ8CGac7B92g4DicISn4c164IY8eC1+nIX4V7E/Pt9HFFu1AHOsZ9pWvnWndWMSzy/dvCee
-	MeEWK4XGZ4R+e80IzXhA==;
+	List-Owner; bh=CgoR5/Kc11Fb5AYY6xSbSM5KkRb0uEbvYP4X7BOH2cE=; b=YR/xefFpdvd352
+	qHt1wse7cP1vdfYwSApQcQEEuocNMgfUgO2tbauFMMqWezHbqWxAFhFgWcB4izTNSYr++hpA4Cehi
+	kcIpsYBPSUseVdWIBzAgGn1yIPnsiB67pQd2d74bE6Bi+sHTlabmckZ/YTawc8ORQ3+31ywjpe2uK
+	iTYDVQbNloCsEwTHGMMMYH90bsCXzY3/hHlBKBcQ3nVYuOjQEBhOlUOOrbLL20EMhsi1wbXiNLDFM
+	O6fEv4PG0w6ls3ex64QZeGbucE8in7DwvgmvCrzN+6Y83dNKv2EVBrcpEyFsXSWmc+qnamiJupfYz
+	tPupCYeiRChNa+Hx9FxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ublBn-00000006206-2vzS;
-	Tue, 15 Jul 2025 19:19:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ubnqy-00000006J42-2rWh;
+	Tue, 15 Jul 2025 22:10:24 +0000
+Received: from mgamail.intel.com ([198.175.65.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubjYs-00000005pve-1AFB
+	id 1ubnoX-00000006IlT-3J4t
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Jul 2025 17:35:27 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56FGDEDk024488
-	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 17:35:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=YwHMduJFVZ0XMQsQOdCu9rTr
-	BXiDOqf57dZo0ADVf/k=; b=HtSSWESmR1v8aUvbmxFz2n7lv4gFQQKPmoVqHA/B
-	INn32DeLsRf5fkKXgD8Ae2eet3yealk6LUaWq0zXbhU68ttL3LRbOUs2zi9WrE9/
-	BE6OcAqfBGfnVef7n4cOSUHHj8x2RwS9kz5mM6ktfYrTIHh/QVm1Mz/N5DqHsmRS
-	sW5YkTnZxb8Yb1s5jWyY3BVwMJyOGf6hol4Iip/9FYjYcHI0ha8mdGWinyNdxX8T
-	Z9TgsfLgWSmJepkif1i/zHKYX4mJBXsmwO3vXAdTXdS/2RMAfgCUwIULweluiAQC
-	INvCL10uUOkWDMrPXwAe72ATx4/BA56yOJVCCORFzx3V7A==
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47w5dpc12c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 17:35:16 +0000 (GMT)
-Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7e269587d8eso433239385a.3
-        for <linux-phy@lists.infradead.org>; Tue, 15 Jul 2025 10:35:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752600903; x=1753205703;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=YwHMduJFVZ0XMQsQOdCu9rTrBXiDOqf57dZo0ADVf/k=;
-        b=fxiKGmbqasYzpvFTzIk13Mj3W/qPi/eUdYwhknG4MaXv9D7dyGtsedjqCogxvd9Mea
-         mVgeBF8A2cIKqlvplxO2Scy3X60IM+kaGzHGliLaovODTP2Gmlz5BnonjvPIGl7mnYH1
-         bWeBlTMRU7Bt07jRE6xg8d5/fBDJmEsZoTNpKzD24vLzSfTj0j0urRXvwLJQay7uqbWZ
-         vQenb4XQh4UPTZHL/x70nIL1cI/73va7rLxKSL7TagED+oUz2EG+zHkVgf6U6nn8hHSc
-         4YeEfO0iealXhIasq7n/6weQAP457mckCXIHgtAr3U+2qtmS+78gYfTztfj81wboPUX2
-         duFw==
-X-Forwarded-Encrypted: i=1; AJvYcCUJ8eKquOn+pnCRvhx1s1DS8gNdJ/OqqQwnChJH3Hh6rbshsktgXLtCD4rYI44Mup8y5Onxus0n3nQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy3jrQJFC78GC0A4fyHAzQguTPowebWus2E+eqspMvEExgPvDI+
-	VyfEwCJMMT2IJQ3lk0yx5UEPz1fTAfU7Qm9KT0hBnoqIufCWUBVMx2BbEsdC0esjItChWJPEO7K
-	OlUOg6Tn+gEVuylZUENomkHqfXbavnCIiwP3goM9PYz/0NWhXbC/bFG1/ZauJzLn+fQiC
-X-Gm-Gg: ASbGncvlM6J/GEaTlTFeyguwx+zqFjSb+T4I8V7mqU/CC0hJnpB3l5LWb2lMN5xRgAd
-	edLw0rUr0WYhWXM5yT8VpyjXuF5MXL5h2K25x+fRQkiDbMr+LDhdN8mwrJQJhr9hja8V/REEn3j
-	VdZGqw7rQKkHlbPkprONZ5hrV6T4qAfioqRc68sfJ0p/hvIJyjvM5HcNV9zQa1CTfrxFV+tyP/D
-	YULHeHu0MKO3wJ9GTj2+i7r9LK6ZqJh8dbyhT5jZByHfPJNZNZq69O2qiYr2Xgytm7mywS7wl+v
-	jGRVc0k2kWsHM7aQpr9413HDhEIPJ2bOHSiWMKNhtwtXH/dlchdx19edRCqAMUYYYTE7eimX12i
-	r4rM3gb+QWyrvk7sPAIoxQDIOM2uiG3BfRpGSARaiuhrNr0I7QN5c
-X-Received: by 2002:a05:620a:4513:b0:7e3:33af:c45a with SMTP id af79cd13be357-7e333afc5a9mr1078301085a.49.1752600902899;
-        Tue, 15 Jul 2025 10:35:02 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEgkC/RAmmlrlOop2nd4cM+Qb/s+gLrKuUEGXd0Hyq1/Zw3CSYcbKVNpSB1ZGZ2gTFs/qFsWQ==
-X-Received: by 2002:a05:620a:4513:b0:7e3:33af:c45a with SMTP id af79cd13be357-7e333afc5a9mr1078294185a.49.1752600902369;
-        Tue, 15 Jul 2025 10:35:02 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-32fab8ed429sm19601101fa.85.2025.07.15.10.35.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 15 Jul 2025 10:35:00 -0700 (PDT)
-Date: Tue, 15 Jul 2025 20:34:58 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Abel Vesa <abel.vesa@linaro.org>,
-        ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 4/4] phy: qcom: phy-qcom-snps-eusb2: Update init
- sequence per HPG 1.0.2
-Message-ID: <n3khphjtqwcfhzxbdici255in2cbceujp3jlrtkrqsd77jtftm@ggpa6eek2xna>
-References: <20250715-sm7635-eusb-phy-v3-0-6c3224085eb6@fairphone.com>
- <20250715-sm7635-eusb-phy-v3-4-6c3224085eb6@fairphone.com>
+	Tue, 15 Jul 2025 22:07:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1752617274; x=1784153274;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=Zd8zXCwF0hQTiVzyVbw1IEp0HkYJGefGxnsNS4GWNqE=;
+  b=hJxL1QV+HcyChGetheMDP19YQ896IpEDKkHe+4L8kFBRdlQeQcyzdich
+   83n0FbvgHmfhEysMc7Ul731rOpFJ3UNTcYnLIFLKIsAIw+U8UzEVU7jSM
+   qGF0DoNoQolL7zbLUERuU3HaPNg9ivUKbcOUHoZdMD/6CsBafxfc0Sz16
+   YepXMYWeFKgmPGkLLUOspe5du070JBRdUdk9y2+OTAtJijKMkAabyVVgE
+   yM7Ppz8pUPjZs9cL7JrqywlOUWUjUDx88Pp6o9JP2F95vdBR0PVS7H86q
+   z0r+SOTNTYpy7FbBr+eBwj2JloZy6Kzv4BvRtj2od64MmLPZ/wGM5TUqv
+   Q==;
+X-CSE-ConnectionGUID: 9z367DUGT4iqbkK2q3jacg==
+X-CSE-MsgGUID: 3TKeQ5Y3QAWbJUDSDWAhOQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11493"; a="54826715"
+X-IronPort-AV: E=Sophos;i="6.16,314,1744095600"; 
+   d="scan'208";a="54826715"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jul 2025 15:07:53 -0700
+X-CSE-ConnectionGUID: 2/CTSCq4QzqxTY/7962AOA==
+X-CSE-MsgGUID: h6UmUrYARBK8MvLyxd9OmQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,314,1744095600"; 
+   d="scan'208";a="156731421"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by orviesa010.jf.intel.com with ESMTP; 15 Jul 2025 15:07:47 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1ubnoO-000BaZ-1F;
+	Tue, 15 Jul 2025 22:07:44 +0000
+Date: Wed, 16 Jul 2025 06:06:56 +0800
+From: kernel test robot <lkp@intel.com>
+To: Aaron Kling <webgeek1234@gmail.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Nagarjuna Kristam <nkristam@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Mathias Nyman <mathias.nyman@intel.com>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>
+Cc: oe-kbuild-all@lists.linux.dev, devicetree@vger.kernel.org,
+	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+	linux-pm@vger.kernel.org, linux-clk@vger.kernel.org,
+	Aaron Kling <webgeek1234@gmail.com>
+Subject: Re: [PATCH 13/17] thermal: tegra: Add Tegra210B01 Support
+Message-ID: <202507160557.t7TfWvFP-lkp@intel.com>
+References: <20250714-t210b01-v1-13-e3f5f7de5dce@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250715-sm7635-eusb-phy-v3-4-6c3224085eb6@fairphone.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE1MDE2MSBTYWx0ZWRfX1HMvoY1KaLjV
- BYZDHSRInwkOwqR/F36BGhdbc1cn55QAPwDqSp5WmDC9ezsllPhXTbnemM+eIjXfNLZRPjrpaex
- wX/MRcqeQ+wdD1wK0wu9I3SKRcidPn1xV8H3Ym4T+PN4FZH6eXr3fnw4mCpeXndguIb1OqPoI+h
- CHkYlRjwkTJijHAaX/PE6GQDnAWFTxVXrDE8i1j9h04CcAuKx/YyeoOlMRhytnpvElyA+puS9C7
- ECy9E4NVyViFBleBbBWW2MeMa4CLCZRPTD3grjp+COyBaBi4REiLgnK8UBWsKFXYEBgxIgVhe6w
- 6Xxy2KJmUHmQnudWchcIbT41zHt/GTyQffddyLK0Cu0jpgqXK6iSVJ1UjDR7fOvvZYwIVk6t+o9
- ///MvWvJ1CCMfxV7pNhZNZoyb7Qk2VW71ScCK23sP+oC5Iu0isx8ewdmQMBTSen8BBpAFJ1n
-X-Proofpoint-GUID: 78og2gVbXLkA5aXa6W416amsZRv3z_7t
-X-Proofpoint-ORIG-GUID: 78og2gVbXLkA5aXa6W416amsZRv3z_7t
-X-Authority-Analysis: v=2.4 cv=Y+r4sgeN c=1 sm=1 tr=0 ts=68769154 cx=c_pps
- a=HLyN3IcIa5EE8TELMZ618Q==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=6H0WHjuAAAAA:8
- a=xixfk-lNQEsWtM5knIAA:9 a=CjuIK1q_8ugA:10 a=bTQJ7kPSJx9SKPbeHEYW:22
- a=Soq9LBFxuPC4vsCAQt-j:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-15_04,2025-07-15_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 mlxlogscore=950 phishscore=0 malwarescore=0 priorityscore=1501
- adultscore=0 impostorscore=0 mlxscore=0 suspectscore=0 lowpriorityscore=0
- bulkscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507150161
+In-Reply-To: <20250714-t210b01-v1-13-e3f5f7de5dce@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_103526_319188_D4F5ADE5 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20250715_150753_864088_E0D20EAD 
+X-CRM114-Status: GOOD (  10.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,24 +107,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 15, 2025 at 09:29:37AM +0200, Luca Weiss wrote:
-> The eUSB2 HPG version 1.0.2 asks to clear bits [7:1] on all targets.
-> Implement that change in the driver to follow.
-> 
-> See also https://lore.kernel.org/linux-arm-msm/7d073433-f254-4d75-a68b-d184f900294a@oss.qualcomm.com/
-> 
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->  drivers/phy/phy-snps-eusb2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+Hi Aaron,
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+kernel test robot noticed the following build warnings:
 
+[auto build test WARNING on 347e9f5043c89695b01e66b3ed111755afcf1911]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Aaron-Kling/dt-bindings-arm-tegra-pmc-Document-Tegra210B01/20250715-160630
+base:   347e9f5043c89695b01e66b3ed111755afcf1911
+patch link:    https://lore.kernel.org/r/20250714-t210b01-v1-13-e3f5f7de5dce%40gmail.com
+patch subject: [PATCH 13/17] thermal: tegra: Add Tegra210B01 Support
+config: arm64-randconfig-003-20250716 (https://download.01.org/0day-ci/archive/20250716/202507160557.t7TfWvFP-lkp@intel.com/config)
+compiler: aarch64-linux-gcc (GCC) 8.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250716/202507160557.t7TfWvFP-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507160557.t7TfWvFP-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/thermal/tegra/tegra210-soctherm.c:47:49: warning: 'tegra210b01_tsensor_config' defined but not used [-Wunused-const-variable=]
+    static const struct tegra_tsensor_configuration tegra210b01_tsensor_config = {
+                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+vim +/tegra210b01_tsensor_config +47 drivers/thermal/tegra/tegra210-soctherm.c
+
+    46	
+  > 47	static const struct tegra_tsensor_configuration tegra210b01_tsensor_config = {
+    48		.tall = 16300,
+    49		.tiddq_en = 1,
+    50		.ten_count = 1,
+    51		.tsample = 240,
+    52		.tsample_ate = 480,
+    53	};
+    54	
 
 -- 
-With best wishes
-Dmitry
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
