@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8033C83F27
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 04:36:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EAB4C83F1D
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 04:36:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTA3HmaLAN+IcN/oVBSUitD1Uk1j0CTUfbOneYyObso=; b=a/V5qZZl1Yg1Ts
-	IL0iDkcf3m/uJe1MmTNzX0My9GzCUdhT1y0syqOIJvK7f/3OxfjJDXvKoErnNgRMYSvuFn4IeXOHB
-	piw5Wr8qg1D898VgtLt25yqETPdpe237A+hzDiOQCntG5BPjAg5jWZ3ImY0MRh7Zv162DuDaY4VQj
-	AH+5kEhsfagN72D0pUKyzSMhHoJgUsPZHBZ6cOWEYN4sPrZYiWj6dgu5x0TkIlqbpTzFvIBJme7l2
-	XziLe2gTT/0kVg5hbV2eFk4J6SRGOEWZMpNkOlnA86i32eIpLO2N3/oSTPAtomnXoUt+XDCmds0c+
-	nwU4srQGohbwTT0bc4tQ==;
+	List-Owner; bh=Tnge8+3MLOU5OyNZf7GS/oJn0EqO+y7jTECT+UxYxUQ=; b=d0KDcV0shA6zSY
+	DnAm3UXhButoKUrUWaUAoQ0h0OKR51D1yBiztVtnrIMemNwWB7rh5mFCDajL+NkhYx+JqhesrovLg
+	DNrtn6p1gr8kqy0VsNZ1e/ZlK0W+pWCSoayIEcK0nO8qQLa4UR2W1WfOMAGKiOJnXyvUMNla2GOsU
+	isFB+G9dFpHuGyzOkK72ljqguxqw9+YE7xJyDQAPF29mEIBlIH/kvJW/BxHJQh2c3Ntv46Gy8o0XE
+	I+Tq2dyd0m+PEfoXwdneKIhVX/NGUuTR3VpSUpg8hEw8MIK0VAG8VY7SBjAx+dZcWjSRTAvHYgkTQ
+	KHhhZ3T80/wxsoTsrFHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubXOq-000000041M8-1Y6C;
-	Tue, 15 Jul 2025 04:36:16 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1ubXOr-000000041NR-2r6R;
+	Tue, 15 Jul 2025 04:36:17 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubWtU-00000003xp6-3OFw
+	id 1ubWtV-00000003xpe-04kH
 	for linux-phy@lists.infradead.org;
 	Tue, 15 Jul 2025 04:03:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 113A4A4FD1C;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6FFF15C568C;
 	Tue, 15 Jul 2025 04:03:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id A1660C19424;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id D593FC4AF52;
 	Tue, 15 Jul 2025 04:03:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752552231;
-	bh=DJu5S4IwJo18/zBTs5hjXsnqZFl0TuSdcXyF/MtV004=;
+	s=k20201202; t=1752552232;
+	bh=htHW6rtHg7NSjIcI/4lWhbhWmP6UNSBw9fjzNoVOG+c=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=V3Cs58xy93Hb6rGfpE7MpIhsyYB8A7ZNsS8Tq/Vf6l2o7WRiGEK4lNEmiv6Ajewlb
-	 gbnvSynNYL0KJNOV1ms2VI7/M5jutInqVw83LdbGKNt/3vKeXg7gNhKeADI4StUYGn
-	 p4ii0he3kV0sBVJ2yyI51EFdh+327AURGHn/GcuYV4QJZsJ8esrrvEfxIXR7YAE729
-	 xwAYcNhN/I7DQgVasDaZBML/wLUH1fmjRxBq2rG8NEAqKpRrira6BTWXzmPV+NH1eo
-	 9A+xpB4wMYu9s6tkSeMh/q9RlAEdNVz/wE+NsFL9D/OMK7PZncP42tU3YwPvai/wTk
-	 uSZ/VbPRG3S3A==
+	b=F6O04kvvIj2entXcpHjijwWVFKNbId5Ft7+2xkar8HPtwglWLAu3b62JxMSlHwvi4
+	 zA3rR33pp+21x37MHL7RkNQJ1oFYUb6dMdO3TV1qebXQBqbcFZq4+bS9gnkzvdHvJg
+	 MJFR8T5Dxoier5Q5BYDKb48TcCQRUb+k2+C5ux4V4pfkaPsTjHZ8cLFNtYpJYeLnhc
+	 9QstN6ruwurdg9vK5u5h6MuH3Hks6QTCq+/7sAUIVdQfwEonZQKr5jez8ZXV60QpAc
+	 c42tgrRMpCrn6xaXDmnWkXXrjhJo2fLQ/UJU+IjrYEuEIKipEwfyrUpK2xRB/N4pDT
+	 +0cg5Obh6xFmw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9238EC83F17;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C405BC83F2D;
 	Tue, 15 Jul 2025 04:03:50 +0000 (UTC)
 From: Aaron Kling via B4 Relay <devnull+webgeek1234.gmail.com@kernel.org>
-Date: Mon, 14 Jul 2025 23:02:44 -0500
-Subject: [PATCH 01/17] dt-bindings: arm: tegra: pmc: Document Tegra210B01
+Date: Mon, 14 Jul 2025 23:02:47 -0500
+Subject: [PATCH 04/17] dt-bindings: usb: tegra-xudc: Document Tegra210B01
 MIME-Version: 1.0
-Message-Id: <20250714-t210b01-v1-1-e3f5f7de5dce@gmail.com>
+Message-Id: <20250714-t210b01-v1-4-e3f5f7de5dce@gmail.com>
 References: <20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com>
 In-Reply-To: <20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -72,19 +72,19 @@ Cc: devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, 
  Aaron Kling <webgeek1234@gmail.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1752552229; l=1125;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752552229; l=1146;
  i=webgeek1234@gmail.com; s=20250217; h=from:subject:message-id;
- bh=cgMpw5zuA5nEV4NkcEZ4qpIA/kC31MfIetXY4+pWRrc=;
- b=kwDtUeynLZztzgV6Gshl/q8j63IovMWnSvwrd3YLif7L1wSA/cqLk3gNCrdSYbhROPsAo87P3
- 7e5yZJp5bK+AcLPkRna/ltvB4dcls6TLZVYoeNL4plCZvMNt6e6biY+
+ bh=Jyy45qLdZDq9DiQVnsxM/Qp0gR79KFt6neXymT4FCWQ=;
+ b=TcCa6TVpGjZW7jzTH8gjJ6dgjSh/2EdBKGUTbaM2ZDtD0kBy23zs1eI/CDye8JwKO2xOUgB31
+ lQDc77DFvRuA+nPAP4zJoCewfmgWm9F49iS26kbUgAvOq9BDkIfHDPO
 X-Developer-Key: i=webgeek1234@gmail.com; a=ed25519;
  pk=TQwd6q26txw7bkK7B8qtI/kcAohZc7bHHGSD7domdrU=
 X-Endpoint-Received: by B4 Relay for webgeek1234@gmail.com/20250217 with
  auth_id=342
 X-Original-From: Aaron Kling <webgeek1234@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_210353_095279_FED02D2A 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20250714_210353_227494_BBB48DC3 
+X-CRM114-Status: UNSURE (   7.82  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,36 +105,34 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Aaron Kling <webgeek1234@gmail.com>
 
-Add the PMC driver compatible strings for Tegra210B01
+Extend the Tegra XUSB controller device tree binding with Tegra210B01
+support.
 
 Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
 ---
- Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-index 7140c312d8986b0b733c519b1e89e360d9602add..eddcafc2f9398ad6fb4d2d46b3181ab91c89a229 100644
---- a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-+++ b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
-@@ -18,6 +18,7 @@ properties:
-       - nvidia,tegra114-pmc
-       - nvidia,tegra124-pmc
-       - nvidia,tegra210-pmc
-+      - nvidia,tegra210b01-pmc
- 
-   reg:
-     maxItems: 1
-@@ -346,7 +347,9 @@ allOf:
-       properties:
-         compatible:
+diff --git a/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml b/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
+index c6e661e8915ca4d3e905331299d981f4d3964314..4574e66e7c1d3d3c918991920bbf4f3ea0ee6ab2 100644
+--- a/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
++++ b/Documentation/devicetree/bindings/usb/nvidia,tegra-xudc.yaml
+@@ -20,6 +20,7 @@ properties:
+     items:
+       - enum:
+           - nvidia,tegra210-xudc # For Tegra210
++          - nvidia,tegra210b01-xudc # For Tegra210B01
+           - nvidia,tegra186-xudc # For Tegra186
+           - nvidia,tegra194-xudc # For Tegra194
+           - nvidia,tegra234-xudc # For Tegra234
+@@ -130,6 +131,7 @@ allOf:
            contains:
--            const: nvidia,tegra210-pmc
-+            enum:
-+              - nvidia,tegra210-pmc
-+              - nvidia,tegra210b01-pmc
+             enum:
+               - nvidia,tegra210-xudc
++              - nvidia,tegra210b01-xudc
      then:
        properties:
-         pinmux:
+         reg:
 
 -- 
 2.50.0
