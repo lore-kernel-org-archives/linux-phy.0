@@ -4,93 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EA4FC83F27
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 22:10:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C29C83F17
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Jul 2025 23:22:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CgoR5/Kc11Fb5AYY6xSbSM5KkRb0uEbvYP4X7BOH2cE=; b=YR/xefFpdvd352
-	qHt1wse7cP1vdfYwSApQcQEEuocNMgfUgO2tbauFMMqWezHbqWxAFhFgWcB4izTNSYr++hpA4Cehi
-	kcIpsYBPSUseVdWIBzAgGn1yIPnsiB67pQd2d74bE6Bi+sHTlabmckZ/YTawc8ORQ3+31ywjpe2uK
-	iTYDVQbNloCsEwTHGMMMYH90bsCXzY3/hHlBKBcQ3nVYuOjQEBhOlUOOrbLL20EMhsi1wbXiNLDFM
-	O6fEv4PG0w6ls3ex64QZeGbucE8in7DwvgmvCrzN+6Y83dNKv2EVBrcpEyFsXSWmc+qnamiJupfYz
-	tPupCYeiRChNa+Hx9FxQ==;
+	List-Owner; bh=pS4X3deSBjXYaFtdmExlak3hdlWzanVbMVi3MELENek=; b=JwoTiIUYzg++Fe
+	OMT42BjuQrUIbLgMjFQM7VWBS3HnfbBnQ/l4ccmhpOFfGQwsk9YO8S6PY48KJR2yoYiAQfMlqZls4
+	izrvySwVad7QVA30Lq/CLCPaCo0KZ3Rwu2iKSP5RI6XsG8FVvtg7ZTp9iSiySmy+rw01DQWFA2dql
+	XbtXmLacTNbSXM5uo3AZTLuT9j22TQwQ3l8AfedUYEtEDSYIge2lbnailVzsfREKMzdA8JzwCZ8t+
+	61+LuPAszttmynjxmoDSaLYw/S64qosA1p6Fmy8Y3SEaBhwafSyfRaYxA6KRdNqRif+1wIWvPICv0
+	6x1M0h7epvVPj3vhKSCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubnqy-00000006J42-2rWh;
-	Tue, 15 Jul 2025 22:10:24 +0000
-Received: from mgamail.intel.com ([198.175.65.17])
+	id 1uboyo-00000006OiG-0eld;
+	Tue, 15 Jul 2025 23:22:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubnoX-00000006IlT-3J4t
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Jul 2025 22:07:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1752617274; x=1784153274;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=Zd8zXCwF0hQTiVzyVbw1IEp0HkYJGefGxnsNS4GWNqE=;
-  b=hJxL1QV+HcyChGetheMDP19YQ896IpEDKkHe+4L8kFBRdlQeQcyzdich
-   83n0FbvgHmfhEysMc7Ul731rOpFJ3UNTcYnLIFLKIsAIw+U8UzEVU7jSM
-   qGF0DoNoQolL7zbLUERuU3HaPNg9ivUKbcOUHoZdMD/6CsBafxfc0Sz16
-   YepXMYWeFKgmPGkLLUOspe5du070JBRdUdk9y2+OTAtJijKMkAabyVVgE
-   yM7Ppz8pUPjZs9cL7JrqywlOUWUjUDx88Pp6o9JP2F95vdBR0PVS7H86q
-   z0r+SOTNTYpy7FbBr+eBwj2JloZy6Kzv4BvRtj2od64MmLPZ/wGM5TUqv
-   Q==;
-X-CSE-ConnectionGUID: 9z367DUGT4iqbkK2q3jacg==
-X-CSE-MsgGUID: 3TKeQ5Y3QAWbJUDSDWAhOQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11493"; a="54826715"
-X-IronPort-AV: E=Sophos;i="6.16,314,1744095600"; 
-   d="scan'208";a="54826715"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jul 2025 15:07:53 -0700
-X-CSE-ConnectionGUID: 2/CTSCq4QzqxTY/7962AOA==
-X-CSE-MsgGUID: h6UmUrYARBK8MvLyxd9OmQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,314,1744095600"; 
-   d="scan'208";a="156731421"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by orviesa010.jf.intel.com with ESMTP; 15 Jul 2025 15:07:47 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1ubnoO-000BaZ-1F;
-	Tue, 15 Jul 2025 22:07:44 +0000
-Date: Wed, 16 Jul 2025 06:06:56 +0800
-From: kernel test robot <lkp@intel.com>
-To: Aaron Kling <webgeek1234@gmail.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Nagarjuna Kristam <nkristam@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Mathias Nyman <mathias.nyman@intel.com>,
-	Peter De Schrijver <pdeschrijver@nvidia.com>,
-	Prashant Gaikwad <pgaikwad@nvidia.com>
-Cc: oe-kbuild-all@lists.linux.dev, devicetree@vger.kernel.org,
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
-	linux-pm@vger.kernel.org, linux-clk@vger.kernel.org,
-	Aaron Kling <webgeek1234@gmail.com>
-Subject: Re: [PATCH 13/17] thermal: tegra: Add Tegra210B01 Support
-Message-ID: <202507160557.t7TfWvFP-lkp@intel.com>
-References: <20250714-t210b01-v1-13-e3f5f7de5dce@gmail.com>
+	id 1ubouc-00000006O6v-0dNA;
+	Tue, 15 Jul 2025 23:18:15 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5607D5C606C;
+	Tue, 15 Jul 2025 23:18:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FDDDC4CEE3;
+	Tue, 15 Jul 2025 23:18:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752621493;
+	bh=AUahzZtoXc5ty3fkQO9PKsTZSnvoat888MImzDyfSaU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=RxebOClDE6XG13qHrmUoM/32uqXeyE68HU7kXpwgYwSgjCaQdOUtfzfzf2a6Xl4ia
+	 7beFC/fw/a9gkJ1bLE+iJaKDUxb98U1I98V8pvfYJh1npd7qY5wvhBSN7XBG40ZB9G
+	 sAf1oEUDazh+zUz1qEpgQijFmtaV5ne4YyPAB9qN+ZlQkaUsaoJCoN+b3hFxouKQ2R
+	 PDKqUGDaWouD6jY1UfF3kPyqW0+V/vm5O2XGEELUgGlZmGQasqZMuO/7gIYr79oiw0
+	 FSLW9E7D7OnaNQbbo80UdDeXEKg6eQqcild99OPbCztgrszE/KYR7TNNlNzT8bW3XB
+	 HJziJTSqD9dag==
+Message-ID: <5a7f47a7-c81e-4f70-9391-0dd1e3aa9f65@kernel.org>
+Date: Wed, 16 Jul 2025 08:18:10 +0900
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250714-t210b01-v1-13-e3f5f7de5dce@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: rockchip-snps-pcie3: add support for
+ rockchip,phy-ref-use-pad
+To: Rick Wertenbroek <rick.wertenbroek@gmail.com>
+Cc: rick.wertenbroek@heig-vd.ch, alberto.dassatti@heig-vd.ch,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20250715105820.4037272-1-rick.wertenbroek@gmail.com>
+Content-Language: en-US
+From: Damien Le Moal <dlemoal@kernel.org>
+Organization: Western Digital Research
+In-Reply-To: <20250715105820.4037272-1-rick.wertenbroek@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250715_150753_864088_E0D20EAD 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20250715_161814_277774_C9874716 
+X-CRM114-Status: GOOD (  28.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,47 +77,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Aaron,
+On 7/15/25 19:58, Rick Wertenbroek wrote:
+>>From the RK3588 Technical Reference Manual, Part1,
+> section 6.19 PCIe3PHY_GRF Register Description: "ref_use_pad"
+> 
+> "Select reference clock connected to ref_pad_clk_p/ref_pad_clk_m.
+> Selects the external ref_pad_clk_p and ref_pad_clk_m inputs as the
+> reference clock source when asserted. When de-asserted, ref_alt_clk_p
+> and ref_alt_clk_m are the sources of the reference clock."
+> 
+> The hardware reset value for this field is 0x1 (enabled).
+> Note that this register field is only available on RK3588, not on RK3568.
+> 
+> Add support for the device tree property rockchip,phy-ref-use-pad,
+> such that the PCIe PHY can be used on boards where there is no PCIe
+> reference clock generated or connected to the external pad, by setting
+> this property to 0 so that the internal clock is used.
+> 
+> DT bindings for internal clocks are CLK_PHY0_REF_ALT_P/M and
+> CLK_PHY1_REF_ALT_P/M and clock rate should be set to 100MHz in
+> the RK3588 cru clock controller (PLL_PPLL).
+> 
+> Example DT overlay where PHY0 uses internal clock (the first clock of
+> the cru (PLL_PPLL) must be set to 100MHz, other values are copied from
+> rk3588-base.dtsi) and PHY1 uses the external pad (the default):
+> 
+> ---
+> &cru {
+>         assigned-clock-rates =
+>                 <100000000>, <786432000>,
+>                 <850000000>, <1188000000>,
+>                 <702000000>,
+>                 <400000000>, <500000000>,
+>                 <800000000>, <100000000>,
+>                 <400000000>, <100000000>,
+>                 <200000000>, <500000000>,
+>                 <375000000>, <150000000>,
+>                 <200000000>;
+> };
+> 
+> &pcie30phy {
+>         rockchip,rx-common-refclk-mode = <0 0 1 1>;
+>         rockchip,phy-ref-use-pad = <0 1>;
+>         clocks = <&cru PCLK_PCIE_COMBO_PIPE_PHY>, <&cru CLK_PHY0_REF_ALT_P>,
+>                          <&cru CLK_PHY0_REF_ALT_M>, <&cru CLK_PHY1_REF_ALT_P>,
+>                          <&cru CLK_PHY1_REF_ALT_M>;
+>         clock-names = "pclk", "phy0_ref_alt_p",
+>                               "phy0_ref_alt_m", "phy1_ref_alt_p",
+>                               "phy1_ref_alt_m";
+> };
+> ---
+> 
 
-kernel test robot noticed the following build warnings:
-
-[auto build test WARNING on 347e9f5043c89695b01e66b3ed111755afcf1911]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Aaron-Kling/dt-bindings-arm-tegra-pmc-Document-Tegra210B01/20250715-160630
-base:   347e9f5043c89695b01e66b3ed111755afcf1911
-patch link:    https://lore.kernel.org/r/20250714-t210b01-v1-13-e3f5f7de5dce%40gmail.com
-patch subject: [PATCH 13/17] thermal: tegra: Add Tegra210B01 Support
-config: arm64-randconfig-003-20250716 (https://download.01.org/0day-ci/archive/20250716/202507160557.t7TfWvFP-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 8.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250716/202507160557.t7TfWvFP-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202507160557.t7TfWvFP-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
->> drivers/thermal/tegra/tegra210-soctherm.c:47:49: warning: 'tegra210b01_tsensor_config' defined but not used [-Wunused-const-variable=]
-    static const struct tegra_tsensor_configuration tegra210b01_tsensor_config = {
-                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+This looks OK to me, but don't you need to also update the dt-bindings yaml to
+document this new "phy-ref-use-pad" property ?
 
 
-vim +/tegra210b01_tsensor_config +47 drivers/thermal/tegra/tegra210-soctherm.c
+> Signed-off-by: Rick Wertenbroek <rick.wertenbroek@gmail.com>
+> ---
+>  .../phy/rockchip/phy-rockchip-snps-pcie3.c    | 32 +++++++++++++++++++
+>  1 file changed, 32 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+> index 4e8ffd173096..0859c7960167 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
+> @@ -33,6 +33,8 @@
+>  /* Register for RK3588 */
+>  #define PHP_GRF_PCIESEL_CON			0x100
+>  #define RK3588_PCIE3PHY_GRF_CMN_CON0		0x0
+> +#define RK3588_PCIE3PHY_GRF_PHY0_CONTROL6	0x118
+> +#define RK3588_PCIE3PHY_GRF_PHY1_CONTROL6	0x218
+>  #define RK3588_PCIE3PHY_GRF_PHY0_STATUS1	0x904
+>  #define RK3588_PCIE3PHY_GRF_PHY1_STATUS1	0xa04
+>  #define RK3588_PCIE3PHY_GRF_PHY0_LN0_CON1	0x1004
+> @@ -44,6 +46,8 @@
+>  #define RK3588_BIFURCATION_LANE_0_1		BIT(0)
+>  #define RK3588_BIFURCATION_LANE_2_3		BIT(1)
+>  #define RK3588_LANE_AGGREGATION		BIT(2)
+> +#define RK3588_PHY_REF_USE_PAD_EN		((BIT(2) << 16 | BIT(2)))
+> +#define RK3588_PHY_REF_USE_PAD_DIS		((BIT(2) << 16))
+>  #define RK3588_RX_CMN_REFCLK_MODE_EN		((BIT(7) << 16) |  BIT(7))
+>  #define RK3588_RX_CMN_REFCLK_MODE_DIS		(BIT(7) << 16)
+>  #define RK3588_PCIE1LN_SEL_EN			(GENMASK(1, 0) << 16)
+> @@ -67,6 +71,7 @@ struct rockchip_p3phy_priv {
+>  	int num_lanes;
+>  	u32 lanes[4];
+>  	u32 rx_cmn_refclk_mode[4];
+> +	u32 phy_ref_use_pad[2];
+>  };
+>  
+>  struct rockchip_p3phy_ops {
+> @@ -157,6 +162,14 @@ static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
+>  		     priv->rx_cmn_refclk_mode[3] ? RK3588_RX_CMN_REFCLK_MODE_EN :
+>  		     RK3588_RX_CMN_REFCLK_MODE_DIS);
+>  
+> +	/* Select PHY reference clock, external pad or internal clock */
+> +	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY0_CONTROL6,
+> +		     priv->phy_ref_use_pad[0] ? RK3588_PHY_REF_USE_PAD_EN :
+> +		     RK3588_PHY_REF_USE_PAD_DIS);
+> +	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_PHY1_CONTROL6,
+> +		     priv->phy_ref_use_pad[1] ? RK3588_PHY_REF_USE_PAD_EN :
+> +		     RK3588_PHY_REF_USE_PAD_DIS);
+> +
+>  	/* Deassert PCIe PMA output clamp mode */
+>  	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_CMN_CON0, BIT(8) | BIT(24));
+>  
+> @@ -312,6 +325,25 @@ static int rockchip_p3phy_probe(struct platform_device *pdev)
+>  		return ret;
+>  	}
+>  
+> +	ret = of_property_read_variable_u32_array(dev->of_node,
+> +						  "rockchip,phy-ref-use-pad",
+> +						  priv->phy_ref_use_pad, 1,
+> +						  ARRAY_SIZE(priv->phy_ref_use_pad));
+> +
+> +	/*
+> +	 * if no rockhip,phy-use-internal-clk, assume PHY uses pad for the
+> +	 * reference clock in order to be DT backwards compatible. (Since HW
+> +	 * reset val is enabled.)
+> +	 */
+> +	if (ret == -EINVAL) {
+> +		for (int i = 0; i < ARRAY_SIZE(priv->phy_ref_use_pad); i++)
+> +			priv->phy_ref_use_pad[i] = 1;
+> +	} else if (ret < 0) {
+> +		dev_err(dev, "failed to read rockchip,phy-ref-use-pad property %d\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+>  	priv->phy = devm_phy_create(dev, NULL, &rockchip_p3phy_ops);
+>  	if (IS_ERR(priv->phy)) {
+>  		dev_err(dev, "failed to create combphy\n");
 
-    46	
-  > 47	static const struct tegra_tsensor_configuration tegra210b01_tsensor_config = {
-    48		.tall = 16300,
-    49		.tiddq_en = 1,
-    50		.ten_count = 1,
-    51		.tsample = 240,
-    52		.tsample_ate = 480,
-    53	};
-    54	
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Damien Le Moal
+Western Digital Research
 
 -- 
 linux-phy mailing list
