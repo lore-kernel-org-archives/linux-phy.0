@@ -4,75 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE906C83F17
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 08:39:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6B6EC87FC7
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 10:34:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=goZPoQaNu8wd+B/cyDp8YMioOErpufmRu9AaHAYyjBg=; b=SldmtGNYiVfYhs
-	shEChmb6F9NV6e7XXYZjgHZW5nAxjllBQW0TEkr4xdlaPuKlzp8vhOd5WwwiBNI1ixyw1Hi4U3xYg
-	506f1bMWCzuSwD5wycY81JbhORNep2UDStBvSQaFL3HP19lVc/rKE2nIg/cqq4WuBJjIXNGXFtjTO
-	4jzQ/dqAsSnLUPLR0WGnq12mW92dQ0udhtYE614CBcGh+0bAnu1hS0nQtfFHp/2osJmuq2iF4y1kX
-	4Tl5PrtTp3yksP9JoCoWShkbkYhfa5D22O8M6Y9Syv0tFB/prm6er8V0n2qM0a3XziyQaFiWEMUSY
-	m11fGQbkUIBvJWtL4Kcw==;
+	List-Owner; bh=4UhsP1rQo5z1AGxPRZ2bBJlL4F6qyvtXkPAk6LVnqoQ=; b=0BBQ5ebDgna8+x
+	a/rWB9nkR/e4zfw70/vm3oNtaKucIXNFaJRYNmrYgYRPcXD5EVAumD2Vh/hgVSO8vttW7YnPQMLVE
+	IMxQ98gZgJHo829dA5M8ywRXp70oTZZwombvBkOs0XnkiGYn4KKBMA8syF/2XWz0n0QqGlg+gi8Bn
+	MxZNwZd95Mj0Bo1eOWxSnWlwRFL5/GEwpeefBUrPwsvohw5BGju9zpwJs4uvIOaq/bdnXYOfBEpzI
+	yjZKuuu48CWjMp9efJ3+rVhFlatM8/sIyTeKbBL1paIYQHtTiXxFXlmR+Yn1GwSjwcXuQaqhQE1ip
+	qbYd8tUA6FeHKuDmBJZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgcl-0000000C4A2-1ZcT;
-	Fri, 18 Jul 2025 08:39:23 +0000
-Received: from mail-m1973189.qiye.163.com ([220.197.31.89])
+	id 1uciQJ-0000000CJQG-2JfT;
+	Fri, 18 Jul 2025 10:34:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgUK-0000000C2pW-1Qhj;
-	Fri, 18 Jul 2025 08:30:42 +0000
-Received: from [172.16.12.153] (gy-adaptive-ssl-proxy-2-entmail-virt205.gy.ntes [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 1c79131e1;
-	Fri, 18 Jul 2025 16:30:22 +0800 (GMT+08:00)
-Message-ID: <71251cf5-edf9-489f-94db-9eb74791ea54@rock-chips.com>
-Date: Fri, 18 Jul 2025 16:29:42 +0800
+	id 1uchr6-0000000CFUw-0Oie
+	for linux-phy@lists.infradead.org;
+	Fri, 18 Jul 2025 09:58:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 36FFD44C8F;
+	Fri, 18 Jul 2025 09:58:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 060F0C4CEEB;
+	Fri, 18 Jul 2025 09:58:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752832695;
+	bh=NfmOqmeSOcfW01whIDBlzmIOyiOsJC5Q+mnMOm68vwc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AzVlDQP7xThkbAW4ildT7244pG9paEzEfTrI4Sdg9INXObFp8/Xfdeyrcj6ifANnw
+	 2NualuVxLRj7B4r5qspIrEqHXA2lpxurZnDJROTK9c+TlqFcbdpi6m2E81awemqhd+
+	 WYovK3CueWFy0WpxcH/lxIcZj7FGTNajWj0Z7hrnRSeDuu22LKj4QbLSMDuuKPFX7f
+	 SPP3CFCd/2ehB6IT+663pFuYychzE5Gbnza8J4OOsFpWJ66MHUwVnMMMZZkp9r62DQ
+	 gN2Xxszm9eAlTX2XPRjlSp+ZztCX3SVVh/h++Hb7bgTFArCFtn98Xq3PfNXuPcFPvz
+	 lUX2vCmMdy06g==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1uchqw-000000007n3-1HHC;
+	Fri, 18 Jul 2025 11:58:07 +0200
+Date: Fri, 18 Jul 2025 11:58:06 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+	kw@linux.com, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v5 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings
+Message-ID: <aHoarsqbnsBGtwni@hovoldconsulting.com>
+References: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
+ <20250718081718.390790-2-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] arm64: dts: rockchip: rk3399-evb-ind: Add support
- for DisplayPort
-To: Krzysztof Kozlowski <krzk@kernel.org>, Chaoyi Chen <kernel@airkyi.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
- Diederik de Haas <didi.debian@cknow.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20250718062619.99-1-kernel@airkyi.com>
- <20250718062619.99-6-kernel@airkyi.com>
- <2691a1ca-7325-4129-999d-61d883d1bac4@kernel.org>
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <2691a1ca-7325-4129-999d-61d883d1bac4@kernel.org>
-X-HM-Tid: 0a981ca7e66903abkunmc03baa52123841
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ08eQlYaHUoZHkNKGkIfSE5WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=f4elrr2yrukBrG0T2pA0xg2Zn1ijyeEtt36iL+JwKtzWgjhTbohQ23NYc1T1ISuHDdevrv8P9aJ3mpWCaVJoFWB7OQROrbmrnQL4wZlgOFRUZWKj+O1waTPK+7R2e25Wvg5cVr54ZTu5LSLmbzlhMbczTTFaqdZiBsqUs8mHr9o=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=3qLZheDap41+YH7RXHcCPq8E9eTIuAxIIHxzGTMVwQE=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <20250718081718.390790-2-ziyue.zhang@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250718_013040_566360_12447E6F 
-X-CRM114-Status: UNSURE (   9.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250718_025816_159017_018A9CD6 
+X-CRM114-Status: GOOD (  11.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,53 +81,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+On Fri, Jul 18, 2025 at 04:17:15PM +0800, Ziyue Zhang wrote:
+> The gcc_aux_clk is required by the PCIe controller but not by the PCIe
+> PHY. In PCIe PHY, the source of aux_clk used in low-power mode should
+> be gcc_phy_aux_clk. Hence, remove gcc_aux_clk and replace it with
+> gcc_phy_aux_clk.
+ 
+> Removed the phy_aux clock from the PCIe PHY binding as it is no longer
+> used by any instance.
 
-On 2025/7/18 16:14, Krzysztof Kozlowski wrote:
-> On 18/07/2025 08:26, Chaoyi Chen wrote:
->> +			altmodes {
->> +				displayport {
->> +					svid = /bits/ 16 <0xff01>;
->> +					vdo = <0xffffffff>;
->> +				};
->> +			};
->> +
->> +			ports {
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +
->> +				port@0 {
->> +					reg = <0>;
->> +
->> +					usbc0_orien_sw: endpoint {
->> +						remote-endpoint = <&tcphy0_orientation_switch>;
-> How did you address feedback given here? I don't see any replies.
+This paragraph no longer applies to this patch (but to the qcs8300 one
+that removes the clock).
 
-Sorry, I miss it. The port@0 should be used for USB HS. Will fix in v3.
+> Fixes: fd2d4e4c1986 ("dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY")
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -176,6 +176,8 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,qcs615-qmp-gen3x1-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> @@ -197,8 +199,6 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,qcs8300-qmp-gen4x2-pcie-phy
+> -              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> -              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>      then:
+>        properties:
+>          clocks:
 
->
->> +					};
->> +				};
->> +
->> +				port@1 {
->> +					reg = <1>;
->> +
->> +					dp_mode_sw: endpoint {
->> +						remote-endpoint = <&tcphy_dp_altmode_switch>;
->> +					};
->> +				};
->
->
-> Best regards,
-> Krzysztof
->
->
+Johan
 
 -- 
 linux-phy mailing list
