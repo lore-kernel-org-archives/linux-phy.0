@@ -4,120 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 617F9C83F17
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 08:26:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E765C83F3B
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 08:29:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBIqRKy2qVFd0c+FG25G+kCgpvqTrMCwa2kQHvP44Is=; b=06NoK96eHTfiBZ
-	MNvIDngP3Q6fhJLwodDs/zFozzFFpzmz4eivBrvMxy3vzNSoic6sfJz+5zxtd7vF8pYUS2DsYPete
-	J0I0i16T74XRoPrbA+oRp1dh0g5IuDiOP45a55GTECDGXqrDVpw/OiESZ7NalyKT/fnEKKrb42b2w
-	ipPOwggklY1SLemjpiO10BdxugSZeB5y4iIgt0QnK2txiOBQsc8vz33rBm8bCo5J2+rOsWO03B6m9
-	U/vFc44R2tJK6clHUgVNt/LHL3hjk75IxKSXoCd/DIr5PH5TlVfP6TL9NaR3O2tQkz/UULQbLy5IZ
-	SWZV7hYRsmhY2UrfcvmA==;
+	List-Owner; bh=kWLN4ykvYu5iqSYjhSwGGHL0Z8YO1K+XBqgMN+iIc3M=; b=LWznVy6iJcq33L
+	wBS/yny1DYCw02qliCvxgZhyqcZKozmIuzGrJBv0W/X9BVQlTIdke+Zjz0xrcZ8LpFrwE5rv/pRNF
+	Dc5BN56oTW0wJe79KcLc9OGntCvLo+WuK6CyHsyJN7HxOwb5eGQ4qheXeKrhFlB2YJNS3/3+7KF+9
+	GJQpuUTDB96KWsswvRigMoNb1OerJAy1s/RDMuwyixnq+jZD+hu2AJQltyDZFW+jaIBwtPDlogxmr
+	WORYOPG/XDrNOlIvnrlf8JASyWaSkfaytCvRlKjPLx4wz4+dgHTGOknFqe/eGduKZOUZMCtYvRk8Y
+	e7MtqskZSj2BIQ+K3EHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgQZ-0000000C1hq-0XWF;
-	Fri, 18 Jul 2025 08:26:47 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1ucgT2-0000000C2AB-3RHf;
+	Fri, 18 Jul 2025 08:29:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucgFC-0000000BzqY-1CAC;
-	Fri, 18 Jul 2025 08:15:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 6DD34A4EDDC;
-	Fri, 18 Jul 2025 08:15:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DBD53C4CEEB;
-	Fri, 18 Jul 2025 08:14:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752826501;
-	bh=a1VHiYig2tcCBF/qnEVeRZwRbUaQmriCu4Wwqc44OpY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=mGzi81tPM04nWK2+LRQLytTu69FIv4oYRxTfCiNCu9Q/ABQ3cK3lZQpVP9dnOwonR
-	 uhQ0Utshv1nQ9cRXW7J224yLgtG2846/EO1e8nxCVPtgcrykXewafSarYEqfH7kEMT
-	 I9qIjR95/y5iaduHAfRXS6NFvPOY5mBq+S92nY0+ug9XB496BDAcCUo0PWmopNaok1
-	 g6rjtLl6ObF2eDqEYtb67rNzTslwCsUL09vMHbDWlbCtblRDbpU3W6xka71Ui02tiG
-	 GUYCsXs3apBac5PiMwkI6Z4kUqtTVVzxmymtzp3dKWIqg9jH8PPhNkdJbXIXjv/JIC
-	 MDXIdDT/PJLRg==
-Message-ID: <2691a1ca-7325-4129-999d-61d883d1bac4@kernel.org>
-Date: Fri, 18 Jul 2025 10:14:51 +0200
+	id 1ucgHd-0000000C0Cf-3qE0
+	for linux-phy@lists.infradead.org;
+	Fri, 18 Jul 2025 08:17:35 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56HLqEHM007306;
+	Fri, 18 Jul 2025 08:17:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=zVcXn+xouwm
+	9M08R+gXXqzI0UC+BcJoS5cp4Pak5RCg=; b=NlS+OyHhnXBEDBfCa/5wTU8iZPT
+	Q1bk/phcLnrkOUKh7LE9wbUmCRgH+RSPUNPYv1Idenk9AllLWUmP8Wnk+uHsYtFe
+	NLZX0uY0d+FUyiW2/FLoah/FGuPXI2VwkszsE5g1waLUd66qecRwUVNgZaAzQowb
+	UI9TX2jy55/Rnqo0sCMSQNKQi6HrcQfXtsMt1aNTaJetI5OnKbuJl0QdXiW1hdZQ
+	SaP7ZHfF94ktr2PkYBYtDoifUvwl01Qo4+GoEn2gxBZ7fDBLuFJbZDBshYOJMF90
+	H4aj5gVjvIBO8d3sLZrbO/j4KpHb8smPmPlnDBS1uuvbTbMER3XHNuhoubA==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47wfcabv4q-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 18 Jul 2025 08:17:24 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 56I8HMTv009040;
+	Fri, 18 Jul 2025 08:17:22 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 47ugsn1e3n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 18 Jul 2025 08:17:22 +0000
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 56I8HLSL009026;
+	Fri, 18 Jul 2025 08:17:21 GMT
+Received: from cse-cd01-lnx.ap.qualcomm.com (cse-cd01-lnx.qualcomm.com [10.64.75.209])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 56I8HLwY009017
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 18 Jul 2025 08:17:21 +0000
+Received: by cse-cd01-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id C7F1420F0D; Fri, 18 Jul 2025 16:17:19 +0800 (CST)
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Subject: [PATCH v5 2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document link_down reset
+Date: Fri, 18 Jul 2025 16:17:16 +0800
+Message-Id: <20250718081718.390790-3-ziyue.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
+References: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] arm64: dts: rockchip: rk3399-evb-ind: Add support
- for DisplayPort
-To: Chaoyi Chen <kernel@airkyi.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20250718062619.99-1-kernel@airkyi.com>
- <20250718062619.99-6-kernel@airkyi.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250718062619.99-6-kernel@airkyi.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE4MDA2NCBTYWx0ZWRfXwIq40YDNN5zl
+ 1ItrSG+sTbs9UYR1genU5cmifV5FwnZ0VJv1Y73ZoitBGUFwrr/EO9c4Cq/vsz4q7paZfuYuZ3z
+ 0grphOj9P2YZ5Q5Xqy25adtg4Cf83LQjEoEochg4f3+bLhpR3sIGnNGmZ0/V4q571zaDUqOD8HS
+ WdlkUXq/DpKCfZ995JBW4QG6puq0Knxe23F9utO8ciRI+0YtyBJjrRkub7QHflyhaiwdGAk8RfQ
+ 5aXjnqC8X9vMeBYl7yUajuwqhwvi3owHBt2Qt5fyztZzdlk1FJrI8a8n+dOn3mgli1nNPsc6O0S
+ izusmUf95HqXUyG731gN6ZEBKc8DNehWVRV5U/V2UePn/CT7Yq2H0k9AR5aFMabUxyukrRMIHxO
+ 2MDMZMq0hdX099HkPtP9DRWfadWNIhjah8RmwdGw9iLGRWA5rvCh6s01V81XqmiIgDGHf6Ol
+X-Proofpoint-GUID: EhVVNoOK0H0ITpnirQkqVb9GfTNLjT4p
+X-Authority-Analysis: v=2.4 cv=SeX3duRu c=1 sm=1 tr=0 ts=687a0315 cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=pGOvZgHL2iAvQvMqjSkA:9
+X-Proofpoint-ORIG-GUID: EhVVNoOK0H0ITpnirQkqVb9GfTNLjT4p
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-18_01,2025-07-17_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 mlxscore=0 priorityscore=1501 bulkscore=0 phishscore=0
+ lowpriorityscore=0 mlxlogscore=999 impostorscore=0 clxscore=1015 adultscore=0
+ suspectscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507180064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250718_011502_464026_38AC894F 
-X-CRM114-Status: UNSURE (   7.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250718_011734_067235_2933957F 
+X-CRM114-Status: GOOD (  11.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,41 +122,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18/07/2025 08:26, Chaoyi Chen wrote:
-> +			altmodes {
-> +				displayport {
-> +					svid = /bits/ 16 <0xff01>;
-> +					vdo = <0xffffffff>;
-> +				};
-> +			};
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +
-> +					usbc0_orien_sw: endpoint {
-> +						remote-endpoint = <&tcphy0_orientation_switch>;
+Each PCIe controller on SA8775P includes a 'link_down' reset line in
+hardware. This patch documents the reset in the device tree binding.
 
-How did you address feedback given here? I don't see any replies.
+The 'link_down' reset is used to forcefully bring down the PCIe link
+layer, which is useful in scenarios such as link recovery after errors,
+power management transitions, and hotplug events. Including this reset
+line improves robustness and provides finer control over PCIe controller
+behavior.
 
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +
-> +					dp_mode_sw: endpoint {
-> +						remote-endpoint = <&tcphy_dp_altmode_switch>;
-> +					};
-> +				};
+As the 'link_down' reset was omitted in the initial submission, it is now
+being documented. While this reset is not required for most of the block's
+basic functionality, and device trees lacking it will continue to function
+correctly in most cases, it is necessary to ensure maximum robustness when
+shutting down or recovering the PCIe core. Therefore, its inclusion is
+justified despite the minor ABI change.
 
+Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+---
+ .../devicetree/bindings/pci/qcom,pcie-sa8775p.yaml    | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
+index 4b91b5608013..19afe2a03409 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie-sa8775p.yaml
+@@ -66,11 +66,14 @@ properties:
+       - const: global
+ 
+   resets:
+-    maxItems: 1
++    items:
++      - description: PCIe controller reset
++      - description: PCIe link down reset
+ 
+   reset-names:
+     items:
+       - const: pci
++      - const: link_down
+ 
+ required:
+   - interconnects
+@@ -166,8 +169,10 @@ examples:
+ 
+             power-domains = <&gcc PCIE_0_GDSC>;
+ 
+-            resets = <&gcc GCC_PCIE_0_BCR>;
+-            reset-names = "pci";
++            resets = <&gcc GCC_PCIE_0_BCR>,
++                     <&gcc GCC_PCIE_0_LINK_DOWN_BCR>;
++            reset-names = "pci",
++                          "link_down";
+ 
+             perst-gpios = <&tlmm 2 GPIO_ACTIVE_LOW>;
+             wake-gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+-- 
+2.34.1
 
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
