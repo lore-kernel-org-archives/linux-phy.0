@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6B6EC87FC7
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 10:34:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ABE5C87FC9
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Jul 2025 10:34:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4UhsP1rQo5z1AGxPRZ2bBJlL4F6qyvtXkPAk6LVnqoQ=; b=0BBQ5ebDgna8+x
-	a/rWB9nkR/e4zfw70/vm3oNtaKucIXNFaJRYNmrYgYRPcXD5EVAumD2Vh/hgVSO8vttW7YnPQMLVE
-	IMxQ98gZgJHo829dA5M8ywRXp70oTZZwombvBkOs0XnkiGYn4KKBMA8syF/2XWz0n0QqGlg+gi8Bn
-	MxZNwZd95Mj0Bo1eOWxSnWlwRFL5/GEwpeefBUrPwsvohw5BGju9zpwJs4uvIOaq/bdnXYOfBEpzI
-	yjZKuuu48CWjMp9efJ3+rVhFlatM8/sIyTeKbBL1paIYQHtTiXxFXlmR+Yn1GwSjwcXuQaqhQE1ip
-	qbYd8tUA6FeHKuDmBJZw==;
+	List-Owner; bh=cy/XDnA65KzABt7ZgRrEQKEYu/8pXvAI9b6yxXHQ5PU=; b=l+YPmCfsuub2SG
+	4nHiHB0KUeBWa/+VsrxtoML7RJYqzPzqsmIwmvQHtcbXD4St+/IJAQ2FuZTY4qcgzVnSy9+i322uq
+	yyaanIi2Kc14pMmiwwa/SHb0koUynjVU72BVXZ2yZMBJDwMfqe4isk+TdTWyljk3HcftHwk+mIttA
+	6sbzWAxFvc3m0cS4KZVKt0MTQjoxqtLzVZuBwQ394WqZ1TWfMF+T/iqzV8BLrO6M5eZlmN3BEYP55
+	5TEshjlv1Yxl+j3Y0hnCCX5618SuSWFvI9H3/rmyBkssJodowG4GBiasXBJxE2kSV0xeLyqavLsew
+	6qjeWU4kMSGpdOa7JU9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uciQJ-0000000CJQG-2JfT;
+	id 1uciQJ-0000000CJQa-3TPV;
 	Fri, 18 Jul 2025 10:34:39 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uchr6-0000000CFUw-0Oie
+	id 1uchsA-0000000CFhy-0qNz
 	for linux-phy@lists.infradead.org;
-	Fri, 18 Jul 2025 09:58:17 +0000
+	Fri, 18 Jul 2025 09:59:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 36FFD44C8F;
-	Fri, 18 Jul 2025 09:58:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 060F0C4CEEB;
-	Fri, 18 Jul 2025 09:58:15 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8A33C5C5DF0;
+	Fri, 18 Jul 2025 09:59:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2836DC4CEEB;
+	Fri, 18 Jul 2025 09:59:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1752832695;
-	bh=NfmOqmeSOcfW01whIDBlzmIOyiOsJC5Q+mnMOm68vwc=;
+	s=k20201202; t=1752832761;
+	bh=eMUkr54lkYoKQmZN2GMHBPpSnw2Q4SW0POsRqEonAvE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=AzVlDQP7xThkbAW4ildT7244pG9paEzEfTrI4Sdg9INXObFp8/Xfdeyrcj6ifANnw
-	 2NualuVxLRj7B4r5qspIrEqHXA2lpxurZnDJROTK9c+TlqFcbdpi6m2E81awemqhd+
-	 WYovK3CueWFy0WpxcH/lxIcZj7FGTNajWj0Z7hrnRSeDuu22LKj4QbLSMDuuKPFX7f
-	 SPP3CFCd/2ehB6IT+663pFuYychzE5Gbnza8J4OOsFpWJ66MHUwVnMMMZZkp9r62DQ
-	 gN2Xxszm9eAlTX2XPRjlSp+ZztCX3SVVh/h++Hb7bgTFArCFtn98Xq3PfNXuPcFPvz
-	 lUX2vCmMdy06g==
+	b=kXHLIMzUaarVTFKEETAaC4ekSCt5drsqnhxPQifyVVyWq7T/5RNlRKBqlaSOdKvf+
+	 mcRV25NMpnoijDgs/TS0Unz2p8L7xJHlREJMq0xDDw6dkWuRSyVVm3T3F/rZg7D9UO
+	 8EqD1OVMuXipifavTghH3kykTdG4eXWrLsipdcDlR1rabHasR98YNsoADfSDVp5tE4
+	 V0XARyBzKjeclZEvAyUn+CF9/+k+ErzJAH9ZEm3a7r6tlA0TnxDkdf3XQOj2yGTNU5
+	 emguyoscBqB/X06asclvbcuNq0+IQaABRmTpPfMAm5zdCdf5DEQQ9yFqmyO8Yb/1k1
+	 aHTar4JaaiGqg==
 Received: from johan by xi.lan with local (Exim 4.97.1)
 	(envelope-from <johan@kernel.org>)
-	id 1uchqw-000000007n3-1HHC;
-	Fri, 18 Jul 2025 11:58:07 +0200
-Date: Fri, 18 Jul 2025 11:58:06 +0200
+	id 1uchs1-000000007oH-1DEc;
+	Fri, 18 Jul 2025 11:59:13 +0200
+Date: Fri, 18 Jul 2025 11:59:13 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
@@ -59,17 +59,17 @@ Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
 	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
 	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
 	quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v5 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Update pcie phy bindings
-Message-ID: <aHoarsqbnsBGtwni@hovoldconsulting.com>
+Subject: Re: [PATCH v5 2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document
+ link_down reset
+Message-ID: <aHoa8fgIsPY3no3Q@hovoldconsulting.com>
 References: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
- <20250718081718.390790-2-ziyue.zhang@oss.qualcomm.com>
+ <20250718081718.390790-3-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250718081718.390790-2-ziyue.zhang@oss.qualcomm.com>
+In-Reply-To: <20250718081718.390790-3-ziyue.zhang@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250718_025816_159017_018A9CD6 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20250718_025922_284227_DB6B63F7 
+X-CRM114-Status: GOOD (  10.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,43 +86,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 18, 2025 at 04:17:15PM +0800, Ziyue Zhang wrote:
-> The gcc_aux_clk is required by the PCIe controller but not by the PCIe
-> PHY. In PCIe PHY, the source of aux_clk used in low-power mode should
-> be gcc_phy_aux_clk. Hence, remove gcc_aux_clk and replace it with
-> gcc_phy_aux_clk.
- 
-> Removed the phy_aux clock from the PCIe PHY binding as it is no longer
-> used by any instance.
-
-This paragraph no longer applies to this patch (but to the qcs8300 one
-that removes the clock).
-
-> Fixes: fd2d4e4c1986 ("dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY")
+On Fri, Jul 18, 2025 at 04:17:16PM +0800, Ziyue Zhang wrote:
+> Each PCIe controller on SA8775P includes a 'link_down' reset line in
+> hardware. This patch documents the reset in the device tree binding.
+> 
+> The 'link_down' reset is used to forcefully bring down the PCIe link
+> layer, which is useful in scenarios such as link recovery after errors,
+> power management transitions, and hotplug events. Including this reset
+> line improves robustness and provides finer control over PCIe controller
+> behavior.
+> 
+> As the 'link_down' reset was omitted in the initial submission, it is now
+> being documented. While this reset is not required for most of the block's
+> basic functionality, and device trees lacking it will continue to function
+> correctly in most cases, it is necessary to ensure maximum robustness when
+> shutting down or recovering the PCIe core. Therefore, its inclusion is
+> justified despite the minor ABI change.
+> 
 > Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -176,6 +176,8 @@ allOf:
->            contains:
->              enum:
->                - qcom,qcs615-qmp-gen3x1-pcie-phy
-> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
-> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
->                - qcom,sc8280xp-qmp-gen3x1-pcie-phy
->                - qcom,sc8280xp-qmp-gen3x2-pcie-phy
->                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-> @@ -197,8 +199,6 @@ allOf:
->            contains:
->              enum:
->                - qcom,qcs8300-qmp-gen4x2-pcie-phy
-> -              - qcom,sa8775p-qmp-gen4x2-pcie-phy
-> -              - qcom,sa8775p-qmp-gen4x4-pcie-phy
->      then:
->        properties:
->          clocks:
-
-Johan
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 
 -- 
 linux-phy mailing list
