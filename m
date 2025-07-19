@@ -4,155 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E4BEC83F27
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Jul 2025 09:43:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4D22C83F27
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Jul 2025 10:53:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YwLmyUggo4XqffIEj90Lpez3Gy9d+7B338hWVK/DIOI=; b=gjvdrZpghmjrwF
-	19KIiMSTvtdus8fwujSYXH/pmB5PZ/eSP03IWjJrzIwyPXEnN2INnZ8sdxYvQqn+ATcbpzyJbFEa0
-	wav4BMl/mWDoqLT5EbLiv/01MFqXLjak/p103a/bB/D5OFI+KYScc2xq63hJcd58/0neig0Y6m3un
-	abEFf9k18WId2/qWDKZgPPzEqkY/dWi8pVEhOvOW/3d/LDGwIDgPJxXYJliPjVNNBHD5CFqijqtwZ
-	vd1Ak7S01ko2nCbrEOINjPRdHxUyNGc0mUqqyGFc5nYuUZOuU9l5nt7CTLXVtlrsw8jcS7KP3N2tl
-	QgUqWNlvuWN5sbwbS+2g==;
+	List-Owner; bh=QrXhLiaJUfiPLQoZL5PxIK8TsKrUDrZw2bRmhR4ND2U=; b=qANtIPBI/hlwNF
+	9DrRvJ8UmEypuwjKYpF0RNOfC+okhrezPzgio8CcdzR4C8d3S/eAWhGmRhCWmdiOceOTnexgR5Hka
+	ezgeKOR8OIE+iIEkuGBeMe1RpWjwguF9Tst9Uj0hDdqxZ5eniVSrabta2Z8EIpvBXzdNMuuSGvXvd
+	mGcknbfMIMeFrpzRlDVDJ3UPmlR+BHQv0dQt6FVMlD7vE4/8AfhbkNIerzmblv2CcUBXJN2Cr8p1I
+	PSXHfYZpw2FBAB+o1lO1rTUIqLgPBfm3k0gyX6ortyC1XC0P92lwyJ3lyomz4IeYeebH+m+cNiPkP
+	5pTGQ+vIT6hhnuzXNtYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ud46f-0000000E6dd-09hP;
-	Sat, 19 Jul 2025 09:43:49 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ud5C4-0000000E9eI-1dyj;
+	Sat, 19 Jul 2025 10:53:28 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ud46d-0000000E6dW-2ea2
-	for linux-phy@bombadil.infradead.org;
-	Sat, 19 Jul 2025 09:43:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=rhgfcFJFu0pycjGyM1cFEjZ0PRIhr6IT98FgwjCWEYk=; b=DgeR18R7VLTdzlGVhVIxVEE49m
-	raQK+0jE1y84oiApyfpIu8jPJNuCK3JDs9B/J/Pv3rfyUMPU+Ee4QkV/Hw3gIKgJzhxOhbHEN51Nu
-	N8SS8LHkb9ixqBN5arO9SK0g3Qa8cBRWCIQlgg0HvVYvI1Ef0okcJbxxgmjPwqPpCGjuAu5175I5z
-	QVoJMBMlqQZByVqEBvyhrJ43UOuVyNdbc7g1W/x5CjgtoW4Mjacq1s6rz3TP02a6Zx9jp+dFtMq79
-	lWuvtQv3y/qgRiSn3rQL4KzGySg3UHIRtw4FXvGSA6ufP7aSXxZZ6Jbp8qM08SlloIMl3/ET1TsEV
-	K659moQA==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ud46Z-0000000AhyD-3apv
+	id 1ud59a-0000000E9Wz-1wQl
 	for linux-phy@lists.infradead.org;
-	Sat, 19 Jul 2025 09:43:46 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56J4Bmqf004245
-	for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 09:43:38 GMT
+	Sat, 19 Jul 2025 10:50:56 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56J4F7vs024893
+	for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 10:50:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rhgfcFJFu0pycjGyM1cFEjZ0PRIhr6IT98FgwjCWEYk=; b=eIKe/XQW+VCrw6qy
-	YDZuIu71jU6krVAEG2ro//VgSU2zD6oREy2R73F5f006S9h81k8XEGWAIURic6/s
-	3C/z2ibBhsgp0kMODRuAAN+JBFcjgvxv/koBXdeEy39ebHbJAxNJqDY17Gwpojwq
-	f/KI17OGkh0tUZ4fhv39qWLu7OlGVjfbVkD0m57Ao03Sn0UGqG6EhvTY1rU6Coce
-	RoIwuwbAHtSCf3oPsN5jdsd1aMnjD/beax6buRrZfJimzhSvAS3+kcO7eCbWRKYN
-	cXCct5kYpWcudSGRIiTgogUiLLa+1MOoQLpfnConsFxieo1+CKhVwXaferS3JKCf
-	avz83w==
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48044d8ee4-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=8bWRC+nyUTbnELtrQkJApxVg
+	RlBOEUvNmWuQElnY2wg=; b=hsd8+FBb47O/w+UmniIXkxeCpDvF7pKn7BFkHm0L
+	jSVY0uFMYAc9Xe/AAubuo3x0atiOU+pLs8QeEiZGzvEXwsIQW9M5EzcKnIaB4z4o
+	1HsAr+yidzY+1GC1JLLzuCnzHHsom3mjKXg0qNbpkJlKUH3m00jcqJC6ZxkB07/h
+	rHjwaeWUnyIGfYrpGucBQue26DNN2osr01O7Juwq44hcqphZoqTR5Z38D8PlsMsz
+	TPxIA4MmGX/xg8sr40c3K72dOxJ6F53bdUxnp1zv0drjwrIy5guTYqdHp3xxm3NE
+	lWvWWkqx6cpbR3r1bdRMD8NXV+dHHvmtjLdJ3mWu+pjjjA==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48045vrgjb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 09:43:37 +0000 (GMT)
-Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-7e237c2f4ddso387137885a.0
-        for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 02:43:37 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 10:50:53 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4ab684d3b55so51065671cf.0
+        for <linux-phy@lists.infradead.org>; Sat, 19 Jul 2025 03:50:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752918217; x=1753523017;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=rhgfcFJFu0pycjGyM1cFEjZ0PRIhr6IT98FgwjCWEYk=;
-        b=lLXkPHo7+qLyAV/ngf0KoqXwO7xK3Dvy3ev1RWLT0VHOSSvWosKbbpCckMOtT7lOlo
-         AOieLfDpT/oYh1x5W2AZ+EwIu8anWwgFD/avwizB0v3Wc4ffB7q5AFszMl3E8+fQRY2c
-         c3puJ+RbKDH2ueKbVHhZs/rFcEM/RUHWp5/xZu0bOG5uexHcyK297OkcTL+OYj40BQm4
-         CcI22jJvi3Njh5AMYrkZ5ODrK4DAhQ2qjuSgS/y92t9RZ4gsq7H5FCIaGzydUfQa8/B9
-         Bzxxn9dvXitj9mk7ck6HIDNBaNK+e8sXgCPrhrXfAb86Ef33gVIe9yP4D4mWRxif8+we
-         tJPg==
-X-Forwarded-Encrypted: i=1; AJvYcCX0t6ETOyNHpPioemKaUfxenoKUJxPBbc+UvDqoYURQQo60DQE3QPW/KW5ao5GI3n+iKbCrjdyPAU0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy0dge4tAygFP43oFM+EX9Z1ngqow69K06nv6+Fflo8uhAC7x1Z
-	gUD01y2C9Gp5m2tJ2XT0QjSC9UkAi7MkcJkBbXvz9lv1yGxuq8huim6wV/VQJsRlOjyg4AGzkO+
-	j3AGoP/+kc+jaBJoxu0ea8g1n6YIy+7DNU5VMhk8M6mGs0SkVC7gzBlwZjUR0/nPAxsbS
-X-Gm-Gg: ASbGncvA6FfxQvK+cQjocJIh+j4Y+H3uYD72ZKYwCEmrawPDa4y/dA3MR1pCAkaxZ7r
-	zwOHd6qGb+qY09Ig4SanH+BfRW2K6R2xI6ep2vGpIaI+M+ZINTxVfNJyyvhM+B5+HRxdWzo/hNP
-	yKttCLeK6DptxrFZFSk4w1l69LlWRLQ9UtIeLyYrtJ5jG9K7blAndcIfn3/lB/+Bpx44xRj+v2i
-	Qy4JuVrq+BN2mCVSwsGl5Js1vJpOIN/wawLYOaBUgpkPn5P/5G3Ovgd1Cqwx0Jkf9/G+Tc3hEj3
-	5wnG+tSsyEFZlPB2SHDp8QPxq8Cn3PXzANM6w+KPgo0Nj9bwb3b8gcownHUy6Dr2VFDuOqdTtkS
-	yXB/CN/7OHXExUa3SK1NABhk8ElclvfpIuG/o/kmLE490g36fnb8e
-X-Received: by 2002:a05:620a:8509:b0:7e3:35e3:3412 with SMTP id af79cd13be357-7e34d9ac2e5mr834617885a.34.1752918217103;
-        Sat, 19 Jul 2025 02:43:37 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEO4TN2m1HCMk2uK61roXdJAndfjxoSfPKSTjVyKPnhMXeMW5zR1fepHcMLF91nfBnN6lMC7g==
-X-Received: by 2002:a05:620a:8509:b0:7e3:35e3:3412 with SMTP id af79cd13be357-7e34d9ac2e5mr834614885a.34.1752918216533;
-        Sat, 19 Jul 2025 02:43:36 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1752922252; x=1753527052;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8bWRC+nyUTbnELtrQkJApxVgRlBOEUvNmWuQElnY2wg=;
+        b=DSQIRTeQCX1l98l/bjZOp4CPNfx2BGsXgRAUyfpMn573uNzFHkgQjpOhxxGAIcu5Gf
+         S9Cbscy5REsEgx3NUhrcSuTgCr8JZvcJ074pSZlIKG8JcC1et+zoP+/zNJKi63hQfpZM
+         DzBB16s9QIeb14pFTqe6ZF2Og6Vy8rkI/KYlwuG3wPtgomyx9TyVp4h73SrfuCu6aK6E
+         dq0SyiIepQD58KuvnSbT7LMLH5ltayB2sIAHrYrEMdMf2JJv7GIh4YolsIxDuJnMYLTP
+         psXNv8bZ2F/9EqOVj7HKsQu1bYdCk5XGCRcpeVNj0vqFjSwVrch5eiYMQv2UmVoAVPWy
+         rHTg==
+X-Forwarded-Encrypted: i=1; AJvYcCVYiZXYKScu0JzvYhU+wttqxQnBNUMlEMCjKiEKFI3R15W7Vvgp/OWp4JQmugR/+CiU9X61272G49Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwhDgOFaDWVQwlfiHivHb/eZTrkXRxqKe6Ufjo5fRroMLMRujde
+	lzn7U0SKOPdsYzYorSseQUhE9NcE2sfTvdDnQrwrKAFHpFA5A5IB/Rg6VLtmWMLsk9vqFj8xnd2
+	af6FDUmvtVNZaceEr6MNUWov5NgGxCJSMwD7ED0X9jXBRW/3Dxpsbqa/Kh2q63B2WQAge
+X-Gm-Gg: ASbGncvLDGmdJiYSF9OE/YBLCqyFetb5FHYjbdcTCuWgR6bj2TAg2k/h4aZVXAoIuDK
+	YBtJVtHwxCGqrgaZKWP8R9SBJ4tKCtHI3DBe/d/LLfoaE6Zgn2Txe4+VM6ELEHUZQJB71zwZ557
+	XrZtk3WEmIGdLbDSroUwBHRnBJYbF6Ye3QqnA9F7uRf2Aqtd92mT6Uj+rhzlfu0IkBMtnQ1mjB0
+	CfKhYNbPPnSG09E1QF3aiviGvbvIZDV9Sl+Yi9Ym9l/fw5rGfiAMkGxggH9ydZckiMnY2LmUoxa
+	hIGw9EWSjJU8nVNRks1nEwHWEEPBf5jTq6dO/hkITrkvB5PWP3linMUmqJ319IQ/RQhYk1zFfQA
+	JQr88A/O9AAb9Uw/1VF29sC+KJuRV8hUuqe1dNSlQr87+TXZmkc0w
+X-Received: by 2002:a05:622a:4898:b0:4ab:622b:fffb with SMTP id d75a77b69052e-4abb078731emr123876401cf.5.1752922251591;
+        Sat, 19 Jul 2025 03:50:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IELvC0t2DoePnMMUcCjwnNp/NwYyNzJMw/LSjDMY6XQx3gX8ifMzX4kwnCHJthxZrRbYsOq9A==
+X-Received: by 2002:a05:622a:4898:b0:4ab:622b:fffb with SMTP id d75a77b69052e-4abb078731emr123875991cf.5.1752922250968;
+        Sat, 19 Jul 2025 03:50:50 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-55a31d7c7basm652746e87.94.2025.07.19.02.43.35
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-55a31d9122fsm667474e87.152.2025.07.19.03.50.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 19 Jul 2025 02:43:35 -0700 (PDT)
-Date: Sat, 19 Jul 2025 12:43:33 +0300
+        Sat, 19 Jul 2025 03:50:50 -0700 (PDT)
+Date: Sat, 19 Jul 2025 13:50:48 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+        Andy Yan <andy.yan@rock-chips.com>,
+        Yubing Zhang <yubing.zhang@rock-chips.com>,
+        Frank Wang <frank.wang@rock-chips.com>,
         Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
         Maxime Ripard <mripard@kernel.org>,
         Thomas Zimmermann <tzimmermann@suse.de>,
         David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Linus Walleij <linus.walleij@linaro.org>,
-        Bartosz Golaszewski <brgl@bgdev.pl>, quic_lliu6@quicinc.com,
-        quic_fangez@quicinc.com, linux-arm-msm@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
-        quic_xiangxuy@quicinc.com
-Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
-Message-ID: <w66xyhu5w7ajpkennvj24cad4j6izvapsp3reyla7iui2jdgkx@d43b6z3qw5tj>
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
- <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
- <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
- <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
- <b4e1ea54-ff3c-408e-8716-f48001ec9113@oss.qualcomm.com>
- <d427de7d-76ac-4e5b-b79a-3b7638a8e7fc@oss.qualcomm.com>
+        Amit Sunil Dhamne <amitsd@google.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+        Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+        Diederik de Haas <didi.debian@cknow.org>, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-arm-kernel@lists.infradead.org,
+        linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v2 5/5] arm64: dts: rockchip: rk3399-evb-ind: Add support
+ for DisplayPort
+Message-ID: <skvceiwrg77ysx74bmywp6buk6yp6dlllrwpkfea4brposrveh@2rqtawpiaikk>
+References: <20250718062619.99-1-kernel@airkyi.com>
+ <20250718062619.99-6-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d427de7d-76ac-4e5b-b79a-3b7638a8e7fc@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=BJ6zrEQG c=1 sm=1 tr=0 ts=687b68ca cx=c_pps
- a=HLyN3IcIa5EE8TELMZ618Q==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
- a=Wb1JkmetP80A:10 a=COk6AnOGAAAA:8 a=YZjHnbvoZT85EzRjquwA:9 a=3ZKOabzyN94A:10
- a=QEXdDO2ut3YA:10 a=bTQJ7kPSJx9SKPbeHEYW:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: P0W-doKQIwJ3DpQJI7rHuXY2vP-RQeCy
-X-Proofpoint-ORIG-GUID: P0W-doKQIwJ3DpQJI7rHuXY2vP-RQeCy
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE5MDA5NiBTYWx0ZWRfXzLikO8ipX122
- mo+6riC2JGtkjq/5hgYyTssfYWa4LBc/M2S+2GqFxHcX3Wl22hgbcvhqfvjO0yL7W3NIZ403YnF
- 26XYT5PpExzOdCl8OePlrGujAQ1T6G0VMoy0CnwX7HgEnJMzgYd+cEnyPxRLAVWQwaBfoQR+Aog
- b5PBx8L7MWXAiKDOHhIkvlbCCchIV3/I+q5bEkH7XYuHya6tMK+6NJy5KoUQz8wF4UDq1W6HJcT
- 4vevS5/gVJMAcMZShxZZRpg9/Fi51x/BvFNfWeQ+IO3vEQySMOhpFBYzeIlynjmi3+2f8zH2njf
- I4VNpk6FBmSHAtOw8DrZ2vgkYNbzGZKImf3LP1pcjJgklNmZz4DQ72Kyuz6NMhSkR0hTCZwI7zu
- PnryQO0v2vhGgFmQ0zCMxTlCcATyE746nAIxL4N5y+bc0yaNWCPB73s2qkSTIaVpaawdN2tP
+In-Reply-To: <20250718062619.99-6-kernel@airkyi.com>
+X-Authority-Analysis: v=2.4 cv=LL1mQIW9 c=1 sm=1 tr=0 ts=687b788d cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=Wb1JkmetP80A:10 a=s8YR1HE3AAAA:8 a=ikJCsuYIIW8Wf-eC7T4A:9 a=CjuIK1q_8ugA:10
+ a=dawVfQjAaf238kedN5IG:22 a=jGH_LyMDp9YhSvY-UuyI:22
+X-Proofpoint-GUID: eQxzsxr62Ow_BxLjhH6xLx3_DhYGhJuP
+X-Proofpoint-ORIG-GUID: eQxzsxr62Ow_BxLjhH6xLx3_DhYGhJuP
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE5MDEwNyBTYWx0ZWRfXwhY6HohmssgI
+ kq4B2mSX2G7yuBhWmkeDKpjWBLkDFVP/Dikud9XJv8lAjLScsFHFz1u7Y+dN8x33q8sKxamEh5l
+ FcjL1LecZlIcvw4hijZGp20FqGbhGBObFoVhp2tbW3crIWGIgrdIAhhvee6W5S8eW0DuIOR6j9z
+ ipIJS+O8tsVucuZGjxSz+bXWKGrW6iD/U/uTGcULHk8dbYWJvqXZUcAeJCkFGpaQV5zogEFu/IL
+ V0Oyayr2v26XWibNC8r1q9V2yqIiDTBmG7DnfFahwu9lBuCByypMT40n4QvDB+0ydRvzlRu14+Y
+ 7qfiMbJ+KXixgyQ3eEfUryVLy3+m1KOjkir7Yk4RLmumw+Q8hOS/f3HYXfOhnzrPcvXtIygJkeg
+ DlyilkI4rnthwvGaRO6RRoHEN9RmC/NxZQ5/M0O8R5IOwGJteO6tP3cAmEss90s1FxtHK4Bn
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-07-19_01,2025-07-17_02,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 clxscore=1015 spamscore=0
- mlxlogscore=999 suspectscore=0 impostorscore=0 phishscore=0 adultscore=0
- mlxscore=0 malwarescore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a
+ priorityscore=1501 mlxlogscore=999 clxscore=1015 mlxscore=0 adultscore=0
+ suspectscore=0 spamscore=0 malwarescore=0 impostorscore=0 bulkscore=0
+ lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
  authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507190096
+ engine=8.19.0-2505280000 definitions=main-2507190107
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250719_104344_434712_7862D500 
-X-CRM114-Status: GOOD (  26.58  )
+X-CRM114-CacheID: sfid-20250719_035054_515883_5288677E 
+X-CRM114-Status: GOOD (  24.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,65 +142,251 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBKdWwgMDksIDIwMjUgYXQgMDU6MTY6MDJQTSArMDgwMCwgWGlhbmd4dSBZaW4gd3Jv
-dGU6Cj4gCj4gCj4gT24gNS8yOC8yMDI1IDQ6NDkgQU0sIEtvbnJhZCBEeWJjaW8gd3JvdGU6Cj4g
-PiBPbiAxMi8zLzI0IDM6MDcgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gPj4gT24gVHVl
-LCBEZWMgMDMsIDIwMjQgYXQgMDQ6MTM6MjJQTSArMDgwMCwgWGlhbmd4dSBZaW4gd3JvdGU6Cj4g
-Pj4+Cj4gPj4+Cj4gPj4+IE9uIDExLzI5LzIwMjQgOTo1MyBQTSwgRG1pdHJ5IEJhcnlzaGtvdiB3
-cm90ZToKPiA+Pj4+IE9uIEZyaSwgMjkgTm92IDIwMjQgYXQgMDk6NTksIFhpYW5neHUgWWluIDxx
-dWljX3hpYW5neHV5QHF1aWNpbmMuY29tPiB3cm90ZToKPiA+Pj4+Pgo+ID4+Pj4+IEFkZCBhIG1l
-Y2hhbmlzbSB0byByZXRyeSBMaW5rIFRyYWluaW5nIDIgYnkgbG93ZXJpbmcgdGhlIHBhdHRlcm4g
-bGV2ZWwKPiA+Pj4+PiB3aGVuIHRoZSBsaW5rIHRyYWluaW5nICMyIGZpcnN0IGF0dGVtcHQgZmFp
-bHMuIFRoaXMgYXBwcm9hY2ggZW5oYW5jZXMKPiA+Pj4+PiBjb21wYXRpYmlsaXR5LCBwYXJ0aWN1
-bGFybHkgYWRkcmVzc2luZyBpc3N1ZXMgY2F1c2VkIGJ5IGNlcnRhaW4gaHViCj4gPj4+Pj4gY29u
-ZmlndXJhdGlvbnMuCj4gPj4+Pgo+ID4+Pj4gUGxlYXNlIHJlZmVyZW5jZSBjb3JyZXNwb25kaW5n
-IHBhcnQgb2YgdGhlIHN0YW5kYXJkLCBkZXNjcmliaW5nIHRoaXMgbG93ZXJpbmcuCj4gPj4+Pgo+
-ID4+PiBQZXIgRGlzcGxheVBvcnQgMS40YSBzcGVjaWZpY2F0aW9uIFNlY3Rpb24gMy41LjEuMiBh
-bmQgVGFibGUgMy0xMCwgd2hpbGUgdGhlIHN0YW5kYXJkIGRvZXNuJ3QgZXhwbGljaXRseSBkZWZp
-bmUgYSBUUFMgZG93bmdyYWRlIG1lY2hhbmlzbSwgaXQgZG9lcyBzcGVjaWZ5Ogo+ID4+Cj4gPj4g
-QW55dGhpbmcgaW4gRFAgMi4xPwo+ID4+Cj4gSW4gdGhlIERQIDIuMSBzcGVjLCBtYWlubHkgb24g
-c2VjdGlvbiAnMy42LjcuMiA4Yi8xMGIgRFAgTGluayBMYXllciBMVFRQUiBMaW5rIFRyYWluaW5n
-IE1hbmRhdGVzJywgZGVmaW5lZCAnTFRUUFIgc2hhbGwgc3VwcG9ydCBUUFM0Jy4KPiBUaGUgb3Ro
-ZXIgcGFydHMgc2VlbXMgc2ltaWxhciB0byB0aGUgMS40IHNwZWMuCj4gPj4+IC0gQWxsIGRldmlj
-ZXMgc2hhbGwgc3VwcG9ydCBUUFMxIGFuZCBUUFMyCj4gPj4+IC0gSERSMi1jYXBhYmxlIGRldmlj
-ZXMgc2hhbGwgc3VwcG9ydCBUUFMzCj4gPj4+IC0gSERSMy1jYXBhYmxlIGRldmljZXMgc2hhbGwg
-c3VwcG9ydCBUUFM0Cj4gPj4+IFdoaWxlIHRoZXNlIGNhcGFiaWxpdGllcyBhcmUgZXhwbGljaXRs
-eSBkZWZpbmVkIERQQ0QgZm9yIHNpbmsgZGV2aWNlcywgc291cmNlIGRldmljZSBjYXBhYmlsaXRp
-ZXMgYXJlIGxlc3Mgc3RyaWN0bHkgZGVmaW5lZCwgd2l0aCB0aGUgbWluaW11bSByZXF1aXJlbWVu
-dCBiZWluZyBzdXBwb3J0IGZvciBUUFMxIGFuZCBUUFMyLgo+ID4+PiBJbiBRQ1M2MTUgRFAgcGh5
-IGlzIG9ubHkgc3VwcG9ydGluZyB0byBIQlIyLCB3ZSBvYnNlcnZlZCBhIGNyaXRpY2FsIGludGVy
-b3BlcmFiaWxpdHkgc2NlbmFyaW8gd2l0aCBhIERQLT5IRE1JIGJyaWRnZS4gV2hlbiBsaW5rIHRy
-YWluaW5nIGF0IFRQUzQgY29uc2lzdGVudGx5IGZhaWxlZCwgZG93bmdyYWRpbmcgdG8gdGhlIG5l
-eHQgbG93ZXIgdHJhaW5pbmcgcGF0dGVybiBzdWNjZXNzZnVsbHkgZXN0YWJsaXNoZWQgdGhlIGxp
-bmsgYW5kIGRpc3BsYXkgb3V0cHV0IHN1Y2Nlc3NmdWxseS4KPiA+Pgo+ID4+IEFueSBvdGhlciBk
-cml2ZXIgZG9pbmcgc3VjaCBUUFMgbG93ZXJpbmc/IE9yIG1heWJlIHdlIHNob3VsZCBiZQo+ID4+
-IHNlbGVjdGluZyBUUFMzIGZvciBIQlIyLW9ubHkgZGV2aWNlcz8KPiA+IAo+IFRoaXMgbG9naWMg
-aXMgcG9ydGluZyBmcm9tIHF1YWxjb21tIGRvd25zdHJlYW0sIAoKSG9wZWZ1bGx5IGEgZG93bnN0
-cmVhbSBoYXMgc29tZSBzZW5zaWJsZSBjb21taXQgbWVzc2FnZSB3aGljaCBkZXNjcmliZXMKdGhl
-IGlzc3VlIGFuZCB0aGUgY29uZmlndXJhdGlvbiB0byByZXByb2R1Y2UgaXQ/Cgo+IEZvciBvdGhl
-ciBkZXZpY2UsIG9ubHkgZm91bmQgaW4gc29tZSBvbGRlciBUeCBjaGlwcyBsaWtlIGk5MTXvvIhp
-bnRlbF9kcF90cmFpbmluZ19wYXR0ZXJuKSB1c2VkIHRoZSBtYXhpbXVtIGhhcmR3YXJlLXN1cHBv
-cnRlZCBwYXR0ZXJucywgYnV0IG5vdCBsb3dlcmluZy4KPiAKPiBBY2NvcmRpbmcgdG8gdGhlIGRl
-c2NyaXB0aW9uIGluIERQQ0QgdGFibGUgMi0yMzIgMDAzaCwgRnJvbSB0aGUgRFAgc3BlYyBwZXJz
-cGVjdGl2ZSwgaXQgYXBwZWFycyB0aGF0IGFsbCBzdXBwb3J0ZWQgY2FzZXMgc2hvdWxkIHByZWZl
-cmFibHkgYWRvcHQgVFBTNCwgYXMgaXQgaXMgbW9yZSByb2J1c3QuCgpJZiBvdGhlciBkcml2ZXJz
-IGRvbid0IHBlcmZvcm0gdGhpcyBraW5kIG9mIGxvd2VyaW5nLCBJJ2QgcHJlZmVyIGlmIHdlCmRv
-bid0IHBlcmZvcm0gaXQgdG9vLgoKPiAnRFBSWHMgc2hvdWxkIHN1cHBvcnQgVFBTNCBhbmQgc2V0
-IHRoaXMgYml0LCByZWdhcmRsZXNzIG9mIHdoZXRoZXIgdGhlIERQUlggc3VwcG9ydHMgSEJSMyBi
-ZWNhdXNlIFRQUzQgaXMgbW9yZSBjb25kdWNpdmUgdG8gcm9idXN0IGxpbmsgZXN0YWJsaXNobWVu
-dCB0aGFuIFRQUzIgYW5kIFRQUzMuCj4gMCA9IFRQUzQgaXMgbm90IHN1cHBvcnRlZC4KPiAxID0g
-VFBTNCBpcyBzdXBwb3J0ZWQgKHNoYWxsIGJlIHN1cHBvcnRlZCBmb3IgZG93bnN0cmVhbSBkZXZp
-Y2VzIHdpdGggRFBDRCByMS40LCBleGNlcHQgZm9yIGVEUFJYcykuJwo+IAo+IEFsdGhvdWdoIG1h
-eGltdW0gY2FwYWJpbGl0eSBvZiBRQ1M2MTUgaXMgSEJSMiwgYnV0IHRoZSBhY3R1YWwgcGF0dGVy
-biBzdXBwb3J0cyBUUFM0LiAKPiBGcm9tIHB1cmUgZGVzaWduIHBlcnNwZWN0aXZlLCBpdCB3b3Vs
-ZCBiZSBjbGVhbmVyIHRvIGRyb3AgdGhpcyBsb3dlcmluZyBpbiBuZXh0IHBhdGNoLiAKPiA+IEJ1
-bXAsIHRoaXMgcGF0Y2ggbG9va3MgaW50ZXJlc3RpbmcgYW5kIEknZCBsaWtlIHRvIHNlZSBpdCBy
-ZXZpc2l0ZWQgaWYKPiA+IGl0J3MgY29ycmVjdAo+ID4gCj4gPiBLb25yYWQKPiAKPiAKCi0tIApX
-aXRoIGJlc3Qgd2lzaGVzCkRtaXRyeQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Fri, Jul 18, 2025 at 02:26:19PM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> 
+> The RK3399 EVB IND board has a Type-C interface DisplayPort.
+> It use fusb302 chip as Type-C controller.
+> 
+> fusb302 chip ---> USB/DP PHY0 <----> CDN-DP controller
+> 
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+> 
+> Changes in v2:
+> - Add endpoint to link DP PHY and DP controller.
+> - Fix devicetree coding style.
+> 
+>  .../boot/dts/rockchip/rk3399-evb-ind.dts      | 133 ++++++++++++++++++
+>  1 file changed, 133 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
+> index 70aee1ab904c..997b822a57ff 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
+> @@ -4,6 +4,7 @@
+>   */
+>  
+>  /dts-v1/;
+> +#include <dt-bindings/usb/pd.h>
+>  #include "rk3399.dtsi"
+>  
+>  / {
+> @@ -19,6 +20,21 @@ chosen {
+>  		stdout-path = "serial2:1500000n8";
+>  	};
+>  
+> +	sound: sound {
+> +		compatible = "rockchip,rk3399-gru-sound";
+> +		rockchip,cpu = <&i2s0 &spdif>;
+> +	};
+> +
+> +	vbus_typec: regulator-vbus-typec {
+> +		compatible = "regulator-fixed";
+> +		enable-active-high;
+> +		gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_HIGH>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&vcc5v0_typec0_en>;
+> +		regulator-name = "vbus_typec";
+> +		vin-supply = <&vcc5v0_sys>;
+> +	};
+> +
+>  	vcc5v0_sys: regulator-vcc5v0-sys {
+>  		compatible = "regulator-fixed";
+>  		enable-active-high;
+> @@ -31,6 +47,11 @@ vcc5v0_sys: regulator-vcc5v0-sys {
+>  	};
+>  };
+>  
+> +&cdn_dp {
+> +	phys = <&tcphy0_dp>;
+> +	status = "okay";
+> +};
+> +
+>  &cpu_b0 {
+>  	cpu-supply = <&vdd_cpu_b>;
+>  };
+> @@ -55,6 +76,12 @@ &cpu_l3 {
+>  	cpu-supply = <&vdd_cpu_l>;
+>  };
+>  
+> +&dp_out {
+> +	dp_controller_output: endpoint {
+> +		remote-endpoint = <&dp_phy_in>;
+> +	};
+> +};
+> +
+>  &emmc_phy {
+>  	status = "okay";
+>  };
+> @@ -341,6 +368,63 @@ regulator-state-mem {
+>  	};
+>  };
+>  
+> +&i2c4 {
+> +	i2c-scl-rising-time-ns = <475>;
+> +	i2c-scl-falling-time-ns = <26>;
+> +	status = "okay";
+> +
+> +	usbc0: typec-portc@22 {
+> +		compatible = "fcs,fusb302";
+> +		reg = <0x22>;
+> +		interrupt-parent = <&gpio1>;
+> +		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&usbc0_int>;
+> +		vbus-supply = <&vbus_typec>;
+> +
+> +		usb_con: connector {
+> +			compatible = "usb-c-connector";
+> +			label = "USB-C";
+> +			data-role = "dual";
+> +			power-role = "dual";
+> +			try-power-role = "sink";
+> +			op-sink-microwatt = <1000000>;
+> +			sink-pdos =
+> +				<PDO_FIXED(5000, 2500, PDO_FIXED_USB_COMM)>;
+> +			source-pdos =
+> +				<PDO_FIXED(5000, 1500, PDO_FIXED_USB_COMM)>;
+> +
+> +			altmodes {
+> +				displayport {
+> +					svid = /bits/ 16 <0xff01>;
+> +					vdo = <0xffffffff>;
+
+I don't think that this VDO is correct. Please adjust it according to
+the spec.
+
+> +				};
+> +			};
+> +
+> +			ports {
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +
+> +				port@0 {
+> +					reg = <0>;
+> +
+> +					usbc0_orien_sw: endpoint {
+> +						remote-endpoint = <&tcphy0_orientation_switch>;
+> +					};
+> +				};
+> +
+> +				port@1 {
+> +					reg = <1>;
+> +
+> +					dp_mode_sw: endpoint {
+> +						remote-endpoint = <&tcphy_dp_altmode_switch>;
+> +					};
+> +				};
+> +			};
+> +		};
+> +	};
+> +};
+> +
+>  &i2s2 {
+>  	status = "okay";
+>  };
+> @@ -354,6 +438,16 @@ &io_domains {
+>  };
+>  
+>  &pinctrl {
+> +	usb-typec {
+> +		usbc0_int: usbc0-int {
+> +			rockchip,pins = <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>;
+> +		};
+> +
+> +		vcc5v0_typec0_en: vcc5v0-typec0-en {
+> +			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+>  	pmic {
+>  		pmic_int_l: pmic-int-l {
+>  			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
+> @@ -400,10 +494,48 @@ &sdmmc {
+>  	status = "okay";
+>  };
+>  
+> +&sound {
+> +	rockchip,codec = <&cdn_dp>;
+> +	status = "okay";
+> +};
+> +
+> +&spdif {
+> +	status = "okay";
+> +};
+> +
+>  &tcphy0 {
+>  	status = "okay";
+>  };
+>  
+> +&tcphy0_dp {
+> +	mode-switch;
+
+But not an orientation-switch? Shouldn't it also note the SBU pins
+orientation? Or DP lanes orientation?
+
+> +
+> +	port {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		tcphy_dp_altmode_switch: endpoint@0 {
+> +			reg = <0>;
+> +			remote-endpoint = <&dp_mode_sw>;
+> +		};
+> +
+> +		dp_phy_in: endpoint@1 {
+> +			reg = <1>;
+> +			remote-endpoint = <&dp_controller_output>;
+> +		};
+> +	};
+> +};
+> +
+> +&tcphy0_usb3 {
+> +	orientation-switch;
+
+
+Hmmm.
+
+> +
+> +	port {
+> +		tcphy0_orientation_switch: endpoint {
+> +			remote-endpoint = <&usbc0_orien_sw>;
+> +		};
+> +	};
+> +};
+> +
+>  &tcphy1 {
+>  	status = "okay";
+>  };
+> @@ -461,6 +593,7 @@ &usb_host1_ohci {
+>  };
+>  
+>  &usbdrd_dwc3_0 {
+> +	usb-role-switch;
+
+This is an SoC-level property.
+
+>  	status = "okay";
+>  };
+>  
+> -- 
+> 2.49.0
+> 
+> 
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
