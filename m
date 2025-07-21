@@ -4,71 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8FB0C83F1A
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 16:42:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22CEEC83F25
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 16:43:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tm2CbPHPkS3HLc2rqTI5o72vYkOek5S981MPDVuxT+M=; b=sa0MXYFij+Un6+SuX4WtVK8gGM
-	pT+/2+19QPz6h0ZPtT6z8q1nIUoHWEQA0grnxH5+qFwNbpcABw86tySGaWclqbaq/qxUCpgPUum89
-	n5+OeM8hqVmBXxKkWC72++pVsqxuqyjCNnSzvbsZ2oBOV+KfbVGT6TQNs1KTVgwVjIoQkLmERhYDR
-	C53JS5NwSGlqSQMXCjsPV1tpeIyJmq4zqQyeRAznQD5UcHD3iybJvzDm0J264l3LRqCVA+LGgywps
-	VHTu9pvimMO7aEq0L7D6HNeBpU/OBxm/uRoAfWbKm2y+KfymOEgLzQg8lkp462w/GtNqS8ggUm4gA
-	i3ikAPkQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LHXVW5PN9ZVCVWySLB7nN9e1c8hJYNpXv9Mh8vnuM5U=; b=o58moDTYe7GdcW
+	rVKvfMUdbsm1Rpv8VMIXk4qHm9TdvysLvqp1j/RLMHUN/802pJ0/ZJGvu1yMpuKrp23yk699pjYJa
+	4u3lSWQzRj+/gGl0AAZtUaXd9LGDxl3+EDjz7OJbzRsDjFe+9bOvKeTFGeJXj/ANMnWT4z2xiip0r
+	kTUKR7HeH1a6qSryCsAWep6GlUybh2b8CcpU7ZA4Dy0RyTU/7gKDQ/ROWwDEPR3HB/zyEplk/W9of
+	1pEjLckKR6RzikUZOHlSeaM79XzklFzXvNK6GQfTMUF4kIufqUNTL7MXzGwqEnUgAxvjHw4RzB3++
+	0IH6sHfMQoU86Wh/fMYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udtbB-00000000Byw-1i6g;
-	Mon, 21 Jul 2025 16:42:45 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1udtbZ-00000000Cft-22wW;
+	Mon, 21 Jul 2025 16:43:09 +0000
+Received: from mail-ua1-x929.google.com ([2607:f8b0:4864:20::929])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udrPe-0000000HVTZ-3jPf
-	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 14:22:43 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id DFE5D61360;
-	Mon, 21 Jul 2025 14:22:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6ED11C4CEED;
-	Mon, 21 Jul 2025 14:22:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753107761;
-	bh=hjlOeyxnWBA0TOKevAsG8is1xc1FHdQAJGdi4sv+25E=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=fCPLqNbk4Np3CnxgYlMcSjlwKA8svRsnfJNRoC4iuS5dWBr1Y2vz1VzwdiIa7oIRa
-	 AQKz+iYI7ERtgAC5sCquPQlu//5IKGu+UGUhg4WPE2tC2UwFo3VGWyKJHbKvusSR2B
-	 8RxcD7kdb2ufVVCa9KYGKaYWELY2AyMVk2HNk4RYO0fSLa2oy7PtuB3M87X4M8Z6x5
-	 cqmo37jgd3CxzOw+dZkFXQsSyruW4B0DfU+KzbvbwxWppZWNw0VPbLLeL3kJ/ZZ/9y
-	 q5U2unWXn3zw0cLYafQ/Nqc3AVhxvnSRIb9mVwkarwrcUnlcusUtj6rAeipq8m3s5Q
-	 F4xR+XYNhgQWA==
-Date: Mon, 21 Jul 2025 09:22:40 -0500
+	id 1udrsL-0000000006z-0D4m;
+	Mon, 21 Jul 2025 14:52:22 +0000
+Received: by mail-ua1-x929.google.com with SMTP id a1e0cc1a2514c-87f4c8e9cdcso2515866241.2;
+        Mon, 21 Jul 2025 07:52:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1753109539; x=1753714339; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=h9pKFUGnES5BOvIgz7OhSqjKvwg3RjLuuOEjVJ2EOIQ=;
+        b=Cc5KaId5Ysygss5xwOhIBggn6cktbcILeTzudFSqWnERcYDcb6J4UkaD/x8Stx6qpY
+         H5lbrXzRAowDNaCq+8PBIuCE7rc41UVguW9PGfcAzqkyiD7lBVfpDOjxEfGPEsjxVULc
+         5lYacWN9DBQfnxH409Mca33W3SJ3PLAc6eDIhth1pRik5Mj926Cvu6b3N2mXTh7hhheA
+         e1oMYn4kYH/EKNxq0I05y4o9T8oqtwdRVi2FKFqInXIXRqXVUiGiCHLYR6krv9bTSRCt
+         B3jl2H7r6yY9IW1Xa8JvVLHkLKOyrlEh82ocm7TvPYYf6+Vy8PMm6mECzH8ggINlvd7y
+         OYxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753109539; x=1753714339;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=h9pKFUGnES5BOvIgz7OhSqjKvwg3RjLuuOEjVJ2EOIQ=;
+        b=ETnkPKJguO7MVDDjaBbROmmKHelnp4Kn7QcUpPRhcCv49HZJQTDKabgFBnAOFk2Jmz
+         uqPmxpjQ5tfMkVbTI07pMigKbQzhvV9OwiTFWNxcahDrCykU8nQF0Jm+XjAJy9w21UYk
+         TbOS1HX2lfjaGdqn9jCoIaVHHkVb2JF2lHNHsqfxnTqwKl7SkzYZfc1IPBR3/flYUbwT
+         EioOTGn002GNziJc/gPEhwAFVfw9HuJZGOP+ffJEf2T9hKmPSqqB6CeOiQJQY07770/9
+         luMrisfXh18HtfBc/besDb6NZv6DO2KbVxckoaJsqojylXXv+RDcf7IfOa/wQrHTLhK/
+         4EYQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVgbH5jIEoBAFX9z881JoW47YYgAbUtdzGCOGhERPfyz73hLrjbWDA2bjzYepM1mfpmpLu067yC7TcjeJQY4bbo@lists.infradead.org, AJvYcCWUQkJiD952RE9rpaOKAb+zKXfLNQT4I6NDeruptzWHh3znwF+rHjruqDHPXoFovuWcgckzgfMxJVGg@lists.infradead.org
+X-Gm-Message-State: AOJu0YycbpN7qniJeBCQelxkXZw5yXfh4CDn6fkZcPRPTJXa+GGs1Bx6
+	idvFJWfn7eomgM+agFsSi9ICLH+RqSa4edHNUj1HFEtsCNTOqBQ3Lz87
+X-Gm-Gg: ASbGncvRFf8djR0Guy3nDKIUqWDDRpRNQyvDXinK5phqiASIpxnTnYO5IgsOjTNlLey
+	Z/V3SzfogjqpU6ZCUPh37H4mVB0/5C4skq2iK1cWKtBd6Y4DZmjH73FCiaZAqPYSn8oJanCI2gf
+	sW0JKSoQKyEciDYNZMq4aAnX+HmoGVpMuMhnB8WBOR1yxhYBal0cUl/L0SJbL71gf4rgNTwXbTu
+	RKrb2TQSIJDXB/hz7hYgwC0mmnfiFSHlXahv81K+rbjDmRKW2LhhMdqGGM3vCRXH4EToXVca67G
+	WX6buFf/BujiTYgnqWqQ01POqvLW/boFWxa0xEEJ5YK2rv01BvvdDLWNkuwUSi8l8jf2eWcc6l6
+	XtbfrZs9Siw==
+X-Google-Smtp-Source: AGHT+IGmd9k2a2Hbn8hJD4fenPYbM7kP6VlkdwpccXej9YWy59eUsaAV2qcil8B3QUVuuNtyCfMeoA==
+X-Received: by 2002:a05:6122:1d56:b0:529:f50:7904 with SMTP id 71dfb90a1353d-5374f6b4ddemr7449549e0c.9.1753109539382;
+        Mon, 21 Jul 2025 07:52:19 -0700 (PDT)
+Received: from geday ([2804:7f2:800b:6584::dead:c001])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-53764f2bd69sm2823702e0c.14.2025.07.21.07.52.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 21 Jul 2025 07:52:18 -0700 (PDT)
+Date: Mon, 21 Jul 2025 11:52:12 -0300
+From: Geraldo Nascimento <geraldogabriel@gmail.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Cc: linux-rockchip@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rick wertenbroek <rick.wertenbroek@gmail.com>,
+	linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v7 3/4] phy: rockchip-pcie: Enable all four lanes if
+ required
+Message-ID: <aH5UHPAtAVb2snSK@geday>
+References: <cover.1751200382.git.geraldogabriel@gmail.com>
+ <b203b067e369411b029039f96cfeae300874b4c7.1751200382.git.geraldogabriel@gmail.com>
+ <2affed16-f3c4-47d3-9ca6-e4f48e875367@arm.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Azkali Manad <a.ffcc7@gmail.com>, Zhang Rui <rui.zhang@intel.com>, 
- linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org, 
- devicetree@vger.kernel.org, JC Kuo <jckuo@nvidia.com>, 
- Conor Dooley <conor+dt@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>, 
- Prashant Gaikwad <pgaikwad@nvidia.com>, Stephen Boyd <sboyd@kernel.org>, 
- Nagarjuna Kristam <nkristam@nvidia.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Daniel Lezcano <daniel.lezcano@linaro.org>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Peter De Schrijver <pdeschrijver@nvidia.com>, linux-phy@lists.infradead.org, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Thierry Reding <treding@nvidia.com>, 
- Thierry Reding <thierry.reding@gmail.com>, 
- Lukasz Luba <lukasz.luba@arm.com>, linux-pm@vger.kernel.org, 
- Mathias Nyman <mathias.nyman@intel.com>, Vinod Koul <vkoul@kernel.org>, 
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
-To: Aaron Kling <webgeek1234@gmail.com>
-In-Reply-To: <20250720-t210b01-v2-0-9cb209f1edfc@gmail.com>
-References: <20250720-t210b01-v2-0-9cb209f1edfc@gmail.com>
-Message-Id: <175310755862.577282.10932067975211977362.robh@kernel.org>
-Subject: Re: [PATCH v2 00/17] arm64: tegra: Add Tegra210B01 support
+Content-Disposition: inline
+In-Reply-To: <2affed16-f3c4-47d3-9ca6-e4f48e875367@arm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250721_075221_088300_87D34E99 
+X-CRM114-Status: GOOD (  14.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,159 +110,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Sun, 20 Jul 2025 21:14:54 -0500, Aaron Kling wrote:
-> Also known as Tegra X1+, the Tegra210B01 has higher CPU and GPU clocks
-> than the original Tegra210.
+On Mon, Jun 30, 2025 at 02:48:25PM +0100, Robin Murphy wrote:
+> On 29/06/2025 9:58 pm, Geraldo Nascimento wrote:
+> > Current code enables only Lane 0 because pwr_cnt will be incremented on
+> > first call to the function. Let's reorder the enablement code to enable
+> > all 4 lanes through GRF.
 > 
-> This series adds Tegra210B01 support to several drivers, as a slight
-> extension to the existing Tegra210 support. Then adds a generic soc dtsi
-> in the same vein as other tegra archs. And finally adds a barebones
-> device dts to be used for dt checks. Further device support will be
-> submitted in later series.
+> As usual the TRM isn't very clear, but the way it describes the 
+> GRF_SOC_CON_5_PCIE bits does suggest they're driving external input 
+> signals of the phy block, so it seems reasonable that it could be OK to 
+> update the register itself without worrying about releasing the phy from 
+> reset first. In that case I'd agree this seems the cleanest fix, and if 
+> it works empirically then I think I'm now sufficiently convinced too;
 > 
-> Earlier internal revisions of this series included changes to the dfll
-> driver to support Tegra210B01, but those did not work in testing, thus
-> was dropped from the series. A bindings update to match is still in the
-> series so the soc dtsi can declare a separate compatible from Tegra210,
-> preventing the driver from attempting incorrect initialization on
-> Tegra210B01.
-> 
-> Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
-> ---
-> Changes in v2:
-> - Fix patch 1 subject
-> - Add descriptive name in patch 8
-> - Fix copy-paste error in patch 13, discovered by kernel ci
-> - Link to v1: https://lore.kernel.org/r/20250714-t210b01-v1-0-e3f5f7de5dce@gmail.com
-> 
-> ---
-> Aaron Kling (16):
->       dt-bindings: soc: tegra: pmc: Document Tegra210B01
->       dt-bindings: phy: tegra-xusb: Document Tegra210B01
->       dt-bindings: usb: tegra-xusb: Document Tegra210B01
->       dt-bindings: usb: tegra-xudc: Document Tegra210B01
->       dt-bindings: thermal: tegra: Document Tegra210B01
->       dt-bindings: clock: tegra: Document Tegra210B01
->       dt-bindings: clock: tegra124-dfll: Document Tegra210B01
->       dt-bindings: tegra: Document Shield TV 2019
->       phy: tegra: xusb: Add Tegra201B01 Support
->       usb: xhci: tegra: Add Tegra210B01 support
->       usb: gadget: tegra-xudc: Add Tegra210B01 Support
->       thermal: tegra: Add Tegra210B01 Support
->       clk: tegra: Add Tegra210B01 support
->       arm64: tegra: Add BPMP node for Tegra210
->       arm64: tegra: Add Tegra210B01 support
->       arm64: tegra: Add support for NVIDIA Shield TV Pro 2019
-> 
-> Azkali Manad (1):
->       soc/tegra: pmc: Add Tegra210B01 support
-> 
->  Documentation/devicetree/bindings/arm/tegra.yaml   |    6 +
->  .../bindings/clock/nvidia,tegra124-dfll.txt        |    1 +
->  .../bindings/clock/nvidia,tegra20-car.yaml         |    1 +
->  .../bindings/phy/nvidia,tegra210-xusb-padctl.yaml  |    4 +-
->  .../bindings/soc/tegra/nvidia,tegra20-pmc.yaml     |    5 +-
->  .../bindings/thermal/nvidia,tegra124-soctherm.yaml |    2 +
->  .../devicetree/bindings/usb/nvidia,tegra-xudc.yaml |    2 +
->  .../bindings/usb/nvidia,tegra210-xusb.yaml         |    4 +-
->  arch/arm64/boot/dts/nvidia/Makefile                |    1 +
->  arch/arm64/boot/dts/nvidia/tegra210.dtsi           |   11 +
->  .../boot/dts/nvidia/tegra210b01-p2894-0050-a08.dts |   10 +
->  arch/arm64/boot/dts/nvidia/tegra210b01-p2894.dtsi  |   70 +
->  arch/arm64/boot/dts/nvidia/tegra210b01.dtsi        |   64 +
->  drivers/clk/tegra/Makefile                         |    1 +
->  drivers/clk/tegra/clk-tegra-periph.c               |    3 +
->  drivers/clk/tegra/clk-tegra210b01.c                | 3758 ++++++++++++++++++++
->  drivers/clk/tegra/clk-utils.c                      |    5 +-
->  drivers/clk/tegra/clk.c                            |   19 +-
->  drivers/clk/tegra/clk.h                            |    6 +
->  drivers/phy/tegra/xusb-tegra210.c                  |   41 +
->  drivers/phy/tegra/xusb.c                           |    4 +
->  drivers/phy/tegra/xusb.h                           |    1 +
->  drivers/soc/tegra/pmc.c                            |  117 +
->  drivers/thermal/tegra/soctherm.c                   |    4 +
->  drivers/thermal/tegra/soctherm.h                   |    1 +
->  drivers/thermal/tegra/tegra210-soctherm.c          |   78 +
->  drivers/usb/gadget/udc/tegra-xudc.c                |   20 +
->  drivers/usb/host/xhci-tegra.c                      |   25 +
->  include/dt-bindings/clock/tegra210-car.h           |    5 +-
->  29 files changed, 4262 insertions(+), 7 deletions(-)
-> ---
-> base-commit: 347e9f5043c89695b01e66b3ed111755afcf1911
-> change-id: 20250509-t210b01-c154ca0f8994
-> 
-> Best regards,
-> --
-> Aaron Kling <webgeek1234@gmail.com>
-> 
-> 
-> 
+> Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
+Hi everyone,
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+Patches 1 and 2 of this series were merged thhrough pci git but patches
+3 and 4 of present series got R-b's but were completely ignored by phy
+maintainers.
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
+Do you think it's fair if I resend these ones with a new, phy only, cover
+letter but keep the R-b tags?
 
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: using specified base-commit 347e9f5043c89695b01e66b3ed111755afcf1911
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/nvidia/' for 20250720-t210b01-v2-0-9cb209f1edfc@gmail.com:
-
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /pcie@1003000: failed to match any schema with compatible: ['nvidia,tegra210-pcie']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /host1x@50000000/tsec@54100000: failed to match any schema with compatible: ['nvidia,tegra210-tsec']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /host1x@50000000/tsec@54500000: failed to match any schema with compatible: ['nvidia,tegra210-tsec']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /gpu@57000000: failed to match any schema with compatible: ['nvidia,gm20b']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /interrupt-controller@60004000: failed to match any schema with compatible: ['nvidia,tegra210-ictlr']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /dma@60020000: failed to match any schema with compatible: ['nvidia,tegra210-apbdma', 'nvidia,tegra148-apbdma']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /dma@60020000: failed to match any schema with compatible: ['nvidia,tegra210-apbdma', 'nvidia,tegra148-apbdma']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /memory-controller@70019000: failed to match any schema with compatible: ['nvidia,tegra210-mc']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: external-memory-controller@7001b000 (nvidia,tegra210-emc): '#cooling-cells' does not match any of the regexes: '^pinctrl-[0-9]+$'
-	from schema $id: http://devicetree.org/schemas/memory-controllers/nvidia,tegra210-emc.yaml#
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /clock@70110000: failed to match any schema with compatible: ['nvidia,tegra210b01-dfll']
-arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: usb-phy@7d000000 (nvidia,tegra210-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
-	['nvidia,tegra210-usb-phy', 'nvidia,tegra30-usb-phy'] is too long
-	'nvidia,tegra210-usb-phy' is not one of ['nvidia,tegra124-usb-phy', 'nvidia,tegra114-usb-phy']
-	'nvidia,tegra210-usb-phy' is not one of ['nvidia,tegra30-usb-phy', 'nvidia,tegra20-usb-phy']
-	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra20-usb-phy.yaml#
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /usb-phy@7d000000: failed to match any schema with compatible: ['nvidia,tegra210-usb-phy', 'nvidia,tegra30-usb-phy']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: usb-phy@7d004000 (nvidia,tegra210-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
-	['nvidia,tegra210-usb-phy', 'nvidia,tegra30-usb-phy'] is too long
-	'nvidia,tegra210-usb-phy' is not one of ['nvidia,tegra124-usb-phy', 'nvidia,tegra114-usb-phy']
-	'nvidia,tegra210-usb-phy' is not one of ['nvidia,tegra30-usb-phy', 'nvidia,tegra20-usb-phy']
-	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra20-usb-phy.yaml#
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: /usb-phy@7d004000: failed to match any schema with compatible: ['nvidia,tegra210-usb-phy', 'nvidia,tegra30-usb-phy']
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: cpu@0 (arm,cortex-a57): 'operating-points' is a dependency of 'clock-latency'
-	from schema $id: http://devicetree.org/schemas/arm/cpus.yaml#
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: cpu@0 (arm,cortex-a57): Unevaluated properties are not allowed ('clock-latency' was unexpected)
-	from schema $id: http://devicetree.org/schemas/arm/cpus.yaml#
-arch/arm64/boot/dts/nvidia/tegra210b01-p2894-0050-a08.dtb: thermal-zones: mem-thermal:cooling-maps: 'dram-active', 'dram-passive' do not match any of the regexes: '^map[-a-zA-Z0-9]*$', '^pinctrl-[0-9]+$'
-	from schema $id: http://devicetree.org/schemas/thermal/thermal-zones.yaml#
-arch/arm64/boot/dts/nvidia/tegra210-p2371-0000.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210-p2371-2180.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210-p2571.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-arch/arm64/boot/dts/nvidia/tegra210-p2894-0050-a08.dtb: /bpmp@70016000: failed to match any schema with compatible: ['nvidia,tegra210-bpmp']
-
-
-
-
-
+Thank you,
+Geraldo Nascimento
 
 -- 
 linux-phy mailing list
