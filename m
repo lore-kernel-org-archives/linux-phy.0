@@ -4,52 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF44AC87FC9
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 02:17:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69B2BC87FCA
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 02:17:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FL2Mw8xGr+SOXjPvaVncsDux/eck9yxI05A9p/LnGx8=; b=ML/wGv8+dWx1IT
-	KRlJt4DqGNI4sDZ5dR5DssSPq6bgm8cWbctMbcnRm0IiasbK832P7mchsUETod02fUgx10R89rmo7
-	+R+EbfzX2Nlbe6cJRb0wYHSuRZzhKW5vuIB6lIdaG94gkkFEKVMQFQhj6TA0XcQNP2sYyxzxRKtAl
-	IDZZxPen2cHgfZKoZ7J75fyBRsW8WdaA5wNFeBKvy+R6KE7gad9zpu1STdiSuVtxdc2vImMto6NLZ
-	Z7gUPaXe5w3Lysaq9ztJiH46YrP1F2+hmbWffFsqVihvW6irJIV3j0yak9Phoo/pd/EC7xL61nVjo
-	4rOJc4We+jbVVlYz2MlQ==;
+	List-Owner; bh=pUrzFGgAPsyrp7BzDGK1x671kivVQ/f3Mt1in3Wisw8=; b=ndiAwdXLQKEdh8
+	UDEwRdzNF8Fpndr57kZH/nMmwvwwmQdWfcLMcKKGpJpDdyEYazBQIiOKii1aE2e99ftfOr/SyGEyR
+	w9hj7bp1eb1WN6xzmmRYZsgx0ZZczSaJ56iAqX0yC/klrlYOR4a1BOhKxEVuNm81h3zOEpq07kIBQ
+	ADpe3ByRyyckUm3vctMINTsDVpULa+bA+wEvSLIzGvmv1kCzcYv6Po7rVR4rgWdWzTmefvH9SHJut
+	BiMuGxCxe3IX5r6MSB2kQtBvz9RhKGwzKJ0Oiz//5b8/00xIhpWTfrZlWEQG8P1qqxGFuC3jJ/O+q
+	fZPtZ5Mt+7faltISVzBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udg5n-0000000FxSC-2K0i;
-	Mon, 21 Jul 2025 02:17:27 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1udg5o-0000000FxSv-0nR5;
+	Mon, 21 Jul 2025 02:17:28 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udg5h-0000000FxKh-2u5G
+	id 1udg5h-0000000FxKd-3aLb
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 02:17:23 +0000
+	Mon, 21 Jul 2025 02:17:24 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E7BAF45D21;
+	by nyc.source.kernel.org (Postfix) with ESMTP id BB0FCA527BB;
 	Mon, 21 Jul 2025 02:17:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C1AD4C4CEFA;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 3E76AC4CEF1;
 	Mon, 21 Jul 2025 02:17:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1753064240;
-	bh=bdC9wX6n4hiDvxjd/IEtrULXnVLCmEutSg8lyBriUwk=;
+	bh=+N08sZPiGNzkS31ZMq73XQsRz/6PC2CS+i/IRLP1KHk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=a3eIaew33b5QylPFnLefSY/eqPiqESzuC3iXjR3iD9RJQ5AijSMd8yi0fNtPfN3/d
-	 ja7HSkISaidHsOm1Onqb8YgSQ/9+GTZbP3Le3zHUM89DW0tf/zqRMicgCPSIAuc5nZ
-	 VhFu42qyGOhbu5b49TPMwTwKRD+adSyVYtg2+9Pa/zVUl4L9EvbFZ3GLT0S4uwQBKW
-	 scBk9t9CVf0gnQDGhApt5Tgjk065bdqYCp1ECFytzpcYxHR+d7HvHwTKFjMIi1aMlY
-	 pNi1MMmNSh5rXEsg6JBjmyKypm2M860v4p8IpirqatHQvzkOEAkqc0ddDh9493TPFT
-	 S83DMNr3wgLYg==
+	b=XH3v0xeDRLUNwZvVLXSfSChV9/5puplFLP56SWDE8N5NLfT5/N/LwCLWq/iYq6RA6
+	 Twrq2+/RCq4IyvFUvGTq+2QDWNoYChaNQ9KjBpxhCmFCl1yRJLqGqPsG1ImF2yXzBg
+	 mFPzqxQV7iqMnP9uwdj2CnxUnqMsLsqCHewkrpsLgFt1DTmNmaH8ollUge3M98XfJt
+	 fPO33n8aja0zRgKXEwDNB8IApTbOvOSyqWCwHWbkcdf5DGj+9kSPUReTR3QIOi68uc
+	 VzK9XnSOGTYCtrL/3eEzHaQWpYNM8lTYEXCu5cYstFcvsKjlGuQkljqr/FCN/LnIPI
+	 yK/33ohkY1Kbw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B7C64C83F22;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3385CC87FC3;
 	Mon, 21 Jul 2025 02:17:20 +0000 (UTC)
 From: Aaron Kling via B4 Relay <devnull+webgeek1234.gmail.com@kernel.org>
-Date: Sun, 20 Jul 2025 21:15:03 -0500
-Subject: [PATCH v2 09/17] soc/tegra: pmc: Add Tegra210B01 support
+Date: Sun, 20 Jul 2025 21:14:57 -0500
+Subject: [PATCH v2 03/17] dt-bindings: usb: tegra-xusb: Document
+ Tegra210B01
 MIME-Version: 1.0
-Message-Id: <20250720-t210b01-v2-9-9cb209f1edfc@gmail.com>
+Message-Id: <20250720-t210b01-v2-3-9cb209f1edfc@gmail.com>
 References: <20250720-t210b01-v2-0-9cb209f1edfc@gmail.com>
 In-Reply-To: <20250720-t210b01-v2-0-9cb209f1edfc@gmail.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -70,21 +71,21 @@ Cc: devicetree@vger.kernel.org, linux-tegra@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-usb@vger.kernel.org, Thierry Reding <treding@nvidia.com>, 
  linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, 
- Aaron Kling <webgeek1234@gmail.com>, Azkali Manad <a.ffcc7@gmail.com>
+ Aaron Kling <webgeek1234@gmail.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1753064238; l=7406;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1753064238; l=944;
  i=webgeek1234@gmail.com; s=20250217; h=from:subject:message-id;
- bh=v2EHSP1hOunXXW1PT0V+1LWhmRxko09yrzRXPz95FzM=;
- b=y82WX/7KaKy37B3q6ZJHRgHbZKP28zOHOTQIenMfAGVuiYWLrKYVLuqW3CPGF5QsFzM3VGdWi
- s78fMBXZEe/A4+QNIBorcDaqWkkWJSisejNC7h0r4+P9tnxUd0orJBA
+ bh=Nh6f3WIWhHTEV0li2SkjJP6VUkET3tGtA5Y1/bQ0xS4=;
+ b=MKvWtyQKbqNPY3woOWQs4qzFh2uYhbwzLsig4HH0zT8z9D2bKFHp/4x34k1Eh7LjoIRTzAg7A
+ Ru15aqCaWqjAkI7i/a/6aXmAV9EQVrtJke/6159qIKCBUyYDrQv4e+S
 X-Developer-Key: i=webgeek1234@gmail.com; a=ed25519;
  pk=TQwd6q26txw7bkK7B8qtI/kcAohZc7bHHGSD7domdrU=
 X-Endpoint-Received: by B4 Relay for webgeek1234@gmail.com/20250217 with
  auth_id=342
 X-Original-From: Aaron Kling <webgeek1234@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250720_191721_802424_39F508F1 
-X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-CacheID: sfid-20250720_191722_033724_F2A8AEEF 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -103,147 +104,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Azkali Manad <a.ffcc7@gmail.com>
+From: Aaron Kling <webgeek1234@gmail.com>
 
+Add the compatible string for Tegra210B01 XUSB
+
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
 ---
- drivers/soc/tegra/pmc.c | 117 ++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 117 insertions(+)
+ Documentation/devicetree/bindings/usb/nvidia,tegra210-xusb.yaml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index e0d67bfe955cdea6b4703952741b0b9970084d66..689354c280883f7096f007ae714dad1b379a2852 100644
---- a/drivers/soc/tegra/pmc.c
-+++ b/drivers/soc/tegra/pmc.c
-@@ -3732,6 +3732,122 @@ static const struct tegra_pmc_soc tegra210_pmc_soc = {
- 	.has_single_mmio_aperture = true,
- };
+diff --git a/Documentation/devicetree/bindings/usb/nvidia,tegra210-xusb.yaml b/Documentation/devicetree/bindings/usb/nvidia,tegra210-xusb.yaml
+index c0e313c70bbaba4f5da9cb090ab6f3027d274a2d..543355118282f52b276a087185709320dd8e09d6 100644
+--- a/Documentation/devicetree/bindings/usb/nvidia,tegra210-xusb.yaml
++++ b/Documentation/devicetree/bindings/usb/nvidia,tegra210-xusb.yaml
+@@ -15,7 +15,9 @@ description: The Tegra xHCI controller supports both USB2 and USB3 interfaces
  
-+static const struct tegra_io_pad_soc tegra210b01_io_pads[] = {
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_AUDIO, 17, 0x1b8, 0x1bc, 5, "audio"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_AUDIO_HV, 29, 0x1c0, 0x1c4, 18, "audio-hv"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CAM, 4, 0x1c0, 0x1c4, 10, "cam"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIA, 0, 0x1b8, 0x1bc, UINT_MAX, "csia"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIB, 1, 0x1b8, 0x1bc, UINT_MAX, "csib"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIC, 10, 0x1c0, 0x1c4, UINT_MAX, "csic"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSID, 11, 0x1c0, 0x1c4, UINT_MAX, "csid"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIE, 12, 0x1c0, 0x1c4, UINT_MAX, "csie"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIF, 13, 0x1c0, 0x1c4, UINT_MAX, "csif"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DBG, 25, 0x1b8, 0x1bc, 19, "dbg"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DEBUG_NONAO, 26, 0x1b8, 0x1bc, UINT_MAX, "debug-nonao"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DMIC, 18, 0x1c0, 0x1c4, 20, "dmic"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DP, 19, 0x1c0, 0x1c4, UINT_MAX, "dp"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DSI, 2, 0x1b8, 0x1bc, UINT_MAX, "dsi"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DSIB, 7, 0x1c0, 0x1c4, UINT_MAX, "dsib"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DSIC, 8, 0x1c0, 0x1c4, UINT_MAX, "dsic"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_DSID, 9, 0x1c0, 0x1c4, UINT_MAX, "dsid"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_EMMC, 3, 0x1c0, 0x1c4, UINT_MAX, "emmc"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_EMMC2, 5, 0x1c0, 0x1c4, UINT_MAX, "emmc2"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_GPIO, 27, 0x1b8, 0x1bc, 21, "gpio"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_HDMI, 28, 0x1b8, 0x1bc, UINT_MAX, "hdmi"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_HSIC, 19, 0x1b8, 0x1bc, UINT_MAX, "hsic"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_LVDS, 25, 0x1c0, 0x1c4, UINT_MAX, "lvds"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_MIPI_BIAS, 3, 0x1b8, 0x1bc, UINT_MAX, "mipi-bias"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_PEX_BIAS, 4, 0x1b8, 0x1bc, UINT_MAX, "pex-bias"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_PEX_CLK1, 5, 0x1b8, 0x1bc, UINT_MAX, "pex-clk1"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_PEX_CLK2, 6, 0x1b8, 0x1bc, UINT_MAX, "pex-clk2"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_PEX_CNTRL, UINT_MAX, UINT_MAX, UINT_MAX, 11, "pex-cntrl"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_SDMMC1, 1, 0x1c0, 0x1c4, 12, "sdmmc1"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_SDMMC3, 2, 0x1c0, 0x1c4, 13, "sdmmc3"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_SPI, 14, 0x1c0, 0x1c4, 22, "spi"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_SPI_HV, 15, 0x1c0, 0x1c4, 23, "spi-hv"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_UART, 14, 0x1b8, 0x1bc, 2, "uart"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_USB0, 9, 0x1b8, 0x1bc, UINT_MAX, "usb0"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_USB1, 10, 0x1b8, 0x1bc, UINT_MAX, "usb1"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_USB2, 11, 0x1b8, 0x1bc, UINT_MAX, "usb2"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_USB3, 18, 0x1b8, 0x1bc, UINT_MAX, "usb3"),
-+	TEGRA_IO_PAD(TEGRA_IO_PAD_USB_BIAS, 12, 0x1b8, 0x1bc, UINT_MAX, "usb-bias"),
-+};
-+
-+static const struct pinctrl_pin_desc tegra210b01_pin_descs[] = {
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_AUDIO, "audio"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_AUDIO_HV, "audio-hv"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CAM, "cam"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSIA, "csia"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSIB, "csib"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSIC, "csic"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSID, "csid"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSIE, "csie"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_CSIF, "csif"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DBG, "dbg"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DEBUG_NONAO, "debug-nonao"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DMIC, "dmic"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DP, "dp"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DSI, "dsi"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DSIB, "dsib"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DSIC, "dsic"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_DSID, "dsid"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_EMMC, "emmc"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_EMMC2, "emmc2"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_GPIO, "gpio"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_HDMI, "hdmi"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_HSIC, "hsic"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_LVDS, "lvds"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_MIPI_BIAS, "mipi-bias"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_PEX_BIAS, "pex-bias"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_PEX_CLK1, "pex-clk1"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_PEX_CLK2, "pex-clk2"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_PEX_CNTRL, "pex-cntrl"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_SDMMC1, "sdmmc1"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_SDMMC3, "sdmmc3"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_SPI, "spi"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_SPI_HV, "spi-hv"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_UART, "uart"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_USB0, "usb0"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_USB1, "usb1"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_USB2, "usb2"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_USB3, "usb3"),
-+	TEGRA_IO_PIN_DESC(TEGRA_IO_PAD_USB_BIAS, "usb-bias"),
-+};
-+
-+static const struct tegra_pmc_soc tegra210b01_pmc_soc = {
-+	.supports_core_domain = false,
-+	.num_powergates = ARRAY_SIZE(tegra210_powergates),
-+	.powergates = tegra210_powergates,
-+	.num_cpu_powergates = ARRAY_SIZE(tegra210_cpu_powergates),
-+	.cpu_powergates = tegra210_cpu_powergates,
-+	.has_tsense_reset = true,
-+	.has_gpu_clamps = true,
-+	.needs_mbist_war = true,
-+	.has_impl_33v_pwr = false,
-+	.maybe_tz_only = true,
-+	.num_io_pads = ARRAY_SIZE(tegra210b01_io_pads),
-+	.io_pads = tegra210b01_io_pads,
-+	.num_pin_descs = ARRAY_SIZE(tegra210b01_pin_descs),
-+	.pin_descs = tegra210b01_pin_descs,
-+	.regs = &tegra20_pmc_regs,
-+	.init = tegra20_pmc_init,
-+	.setup_irq_polarity = tegra20_pmc_setup_irq_polarity,
-+	.powergate_set = tegra114_powergate_set,
-+	.irq_set_wake = tegra210_pmc_irq_set_wake,
-+	.irq_set_type = tegra210_pmc_irq_set_type,
-+	.reset_sources = tegra210_reset_sources,
-+	.num_reset_sources = ARRAY_SIZE(tegra210_reset_sources),
-+	.reset_levels = NULL,
-+	.num_reset_levels = 0,
-+	.num_wake_events = ARRAY_SIZE(tegra210_wake_events),
-+	.wake_events = tegra210_wake_events,
-+	.pmc_clks_data = tegra_pmc_clks_data,
-+	.num_pmc_clks = ARRAY_SIZE(tegra_pmc_clks_data),
-+	.has_blink_output = true,
-+	.has_usb_sleepwalk = true,
-+	.has_single_mmio_aperture = true,
-+};
-+
- static const struct tegra_io_pad_soc tegra186_io_pads[] = {
- 	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIA, 0, 0x74, 0x78, UINT_MAX, "csia"),
- 	TEGRA_IO_PAD(TEGRA_IO_PAD_CSIB, 1, 0x74, 0x78, UINT_MAX, "csib"),
-@@ -4253,6 +4369,7 @@ static const struct of_device_id tegra_pmc_match[] = {
- 	{ .compatible = "nvidia,tegra194-pmc", .data = &tegra194_pmc_soc },
- 	{ .compatible = "nvidia,tegra186-pmc", .data = &tegra186_pmc_soc },
- 	{ .compatible = "nvidia,tegra210-pmc", .data = &tegra210_pmc_soc },
-+	{ .compatible = "nvidia,tegra210b01-pmc", .data = &tegra210b01_pmc_soc },
- 	{ .compatible = "nvidia,tegra132-pmc", .data = &tegra124_pmc_soc },
- 	{ .compatible = "nvidia,tegra124-pmc", .data = &tegra124_pmc_soc },
- 	{ .compatible = "nvidia,tegra114-pmc", .data = &tegra114_pmc_soc },
+ properties:
+   compatible:
+-    const: nvidia,tegra210-xusb
++    enum:
++      - nvidia,tegra210-xusb
++      - nvidia,tegra210b01-xusb
+ 
+   reg:
+     items:
 
 -- 
 2.50.1
