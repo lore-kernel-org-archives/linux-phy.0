@@ -4,107 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0D4BC83F1A
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 18:57:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D0ABC83F1A
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 18:58:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6YjOZc5qgVj9EGC9khR/zxvd8m6xKGAGCevQ6JVoFI=; b=PeT4UWe5BhMsF9
-	3V81hPAOp3ATxsgF6RPT2ACj2YFP53ltEcpVp8jypE58qC1snZfIm9kU+P2DkpfXsOw9vDUnv5+Mj
-	G+qdVcovh+NUJOianQ5ke/UoHadS2DyQJmjOnHi2dwNyaj2aZ9VJK0znSA0adjkc85pRkasUO+X2p
-	BINh8RM/UsMj0ZowCr/5Jwcoe6LXoi5b/IopmKy35ixO4es4x3x+6LGk4X3azLTlpOQLQ1FDwTmd/
-	WgAxmIDQWhyXZX2P/Bc3Ggb0zpZmXLfDY6pO3KDW+u+a9h1NB6QKXu6peKdaeh0wJTZ81N3fXAoaC
-	YE2BSnc+rUdfIpMq1zXA==;
+	List-Owner; bh=50xbvkkvjCSiDHpS2SUpkLzITP7hxVvh9zuPtJaFums=; b=WM4XhXQJXbxIQm
+	dqSWKiHGEMQQl4q0COgc1i5AWzBAwVDeCt/S71thJjSwMPMrEb55nN/PMElmzz8FgDhNLFEX1VQY2
+	CAINfgthYRWih1YfycbreGAJ7AW5my+dyuqrMRKk10Dlgok8vXFxCBVnfGStL+PnLq6LePBABDwmg
+	gwN0ete9oGnq2MLKjNztt7BvSat1wg8XgsLuDo3bQ8anbPUp5UmzKuwUvza6et+2Noy+A3Idcx7Pu
+	fwjQQdG9n38pix/bMjHmEo+SOWl67ZWmCRvsE8/ecxpCh/SL0U7svVf2Nf/ai9wQNTnvLN0mKBM8X
+	CSBE8O+qyPpwd3zsWNBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udvhm-00000000RfS-2hXw;
-	Mon, 21 Jul 2025 18:57:43 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1udvi6-00000000S8n-3hUd;
+	Mon, 21 Jul 2025 18:58:02 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udtOV-00000000Azu-42Dv
+	id 1udvFG-00000000Pl8-40Ws
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 16:29:41 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-3a50956e5d3so3420691f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 21 Jul 2025 09:29:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1753115378; x=1753720178; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:from:subject:user-agent:mime-version:date:message-id:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=mDqcrroJ3qLkh5t4BQvEhf/oMY2x7lp1dD/3eXpKYqI=;
-        b=Bt5MhkDj2dkID9yMGhSfsul10A897cOyDCmDWPi2KkUQTM82QzWyAioeAzQdqkBArF
-         NtE/Uuggt1XTL7UTm1J/H2gxKlWM1VSEP9cDjRdAyeW4RMwqQclWK6yJuLVA/nqDiusI
-         hMVmT0C1o8YzOQ9ha4Il1mA6f+Fz2gThb4zFByeDhZi+SEnXwiZ2dI8UgjMtWf+8gt/C
-         geJvpUVBGeI46qZCa+lt34F2hSTPkvH4gjIJ6KnwoAfrsAvaNYumOwd/NQ44Jk67TX8Y
-         lOZEvyO8dU+kwk70WHQ/aF3F/p8H35H1/bj12GcKDrfd2pSjmk47DMlMmC0mvCJT8JSY
-         zHkQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753115378; x=1753720178;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:from:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mDqcrroJ3qLkh5t4BQvEhf/oMY2x7lp1dD/3eXpKYqI=;
-        b=T8PMNVYnvFe1Dc77sJ6u2HIUoKVeAuoXI8w38tC7TJf4oACCKz7PC7lHkQMZZApuaj
-         yMfuulHJPKfxNjU5M2FttKmTwzw/Xh4B52oCxVLklpeDxPNx4cuU73I5dDklnDSUW59q
-         9DfcPd+2ZjZiiFm1zkJKDmPivEyjLc9CyPxiUkoliyAZKUpoipL7YEQdypJH/JU+I+ZX
-         fZJbrqJ56gvgPUCpC3CSK5frUDB0ijti96ww9YRNeuQyPwRmi9pSe+Chlw5cuRv6dHgZ
-         07Xjok7zoANpFt2mUOTesPl44y6Ch/5RYucQ+lrQV+23fIfkQCBDRspcUEwo2TDGgQhn
-         A7fw==
-X-Forwarded-Encrypted: i=1; AJvYcCWTQ2WbkOauaPITAAdzzkp4e3PU5OzV9NXKeChZusrkdMZRC96R0Cc0OFOUSsCby5BuLO1onrplzR4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yybjt/qlinOYwuHqulGPzSlQQIbWZxlVoTiGPT6V3TvXCSdTmx0
-	tCI0aR7KtZZtpwPvRA3Ghfqgtr438gKTZzAmXA7cl6G7/dKsclBGyBI7RK2r2aCc/9s=
-X-Gm-Gg: ASbGncuSfwec//9Cmzggmu+29JJsOoJ/OSDUTBUj99Rchx4ix7ayLvFBupfV3ydbAX0
-	OvHXSumdtf1KKl3FyyIbbyeeJAtPTC0sTFuy6qUXKYjh8Ql8LwzwrtWB/NBH4Fe6DxansJiiiZl
-	wnLKOgQfz2QutKcA70ocvTWNkW3OLwWUDJ6r31rL0vDXNZFVMvSBxz/n+Rc7iw5+JcJlbP/ImeA
-	Qk7xzgabqYGKlfmQi756DzNlPe7B1KhI/6OpPMUU5oFxxmx2UJAKmBicHDjasvgNzkvaiKUgXfH
-	MEyGZV878/xAUfwIhJrcyqBjzYFhKGhFEv1BhpAuLTtppYtivTej4ze6VNw3E3QmxLs+MCRdvYD
-	mxG4ZUIUJBU59m7To2EKG+vXMSACHfwOoRYrSEmTTZ2dufblVhxVhkidQqgrll7Y=
-X-Google-Smtp-Source: AGHT+IEyGrnEx/ClY8Jxxfj68ZCw16qbV6UiWvo0mvnQsuihoYuu1pQ1oczOVmJPNRJcxc4Dt5O++w==
-X-Received: by 2002:a05:6000:2482:b0:3a5:243c:6042 with SMTP id ffacd0b85a97d-3b60dd4a88emr17973192f8f.2.1753115378060;
-        Mon, 21 Jul 2025 09:29:38 -0700 (PDT)
-Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b61ca5c8besm10819066f8f.81.2025.07.21.09.29.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 21 Jul 2025 09:29:37 -0700 (PDT)
-Message-ID: <94ca7625-4943-49a7-bc91-5e354d62cfaf@linaro.org>
-Date: Mon, 21 Jul 2025 17:29:36 +0100
+	Mon, 21 Jul 2025 18:28:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1753122495; x=1784658495;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=UTzS2RxGqJmq8w5RvId10WeNvFeCpoCyyyvV61HPfmA=;
+  b=a1n/zTUDBITrN1CkX3fib3yOpuJliDXPcHKDCXptGJ/wfND3wKsN3RmR
+   N4VbFvCkl5tm4VAlSXQw6uqcf/ZcCZLMtIUgB3+4u+JeOh18wgPrpXzWu
+   n3yYDyMWRPIgBrXG732ykc/c5o1I0Usw55RxkJyfamc6wgdROL6UolDFK
+   keYxt5FN5FJaCaDnPu8VTwAMm+6CIageByI03OtKF9Bh+XfCIEXtuC9b/
+   Yse6+rMxN9xVgHvveva76VgdCIGClCodgRZursv17i0gsuvBaHDxVGaSg
+   7hejhpCNmIFlO99GgudYXqRsRUUvfEAwis4gmaCPSuSElFD9zr3bDVKVP
+   w==;
+X-CSE-ConnectionGUID: FpoZqAGVRv29Irr2YuQhSw==
+X-CSE-MsgGUID: fs/ImkiHSyuW4o+FNpwpmQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11499"; a="65915318"
+X-IronPort-AV: E=Sophos;i="6.16,329,1744095600"; 
+   d="scan'208";a="65915318"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jul 2025 11:28:08 -0700
+X-CSE-ConnectionGUID: d7zoVHWXQViN4D8+s1Ga0w==
+X-CSE-MsgGUID: Ffn1JglIQtagiH8+sp4tqQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,329,1744095600"; 
+   d="scan'208";a="195988638"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by orviesa001.jf.intel.com with ESMTP; 21 Jul 2025 11:28:04 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1udvF3-000H4D-1x;
+	Mon, 21 Jul 2025 18:28:01 +0000
+Date: Tue, 22 Jul 2025 02:27:21 +0800
+From: kernel test robot <lkp@intel.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	sboyd@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org
+Subject: Re: [PATCH v1 4/7] phy: qualcomm: eusb2-repeater: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <202507220236.c4472GGM-lkp@intel.com>
+References: <20250721075525.29636-5-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
- <20250710-x1e-csi2-phy-v1-2-74acbb5b162b@linaro.org>
- <11b573d5-ce4d-476c-b94c-216d427cd838@linaro.org>
- <08261aa4-689b-4d6b-bfd2-221c1976d254@linaro.org>
- <a7f64b31-4767-4281-b452-a2bc5351d745@mleia.com>
- <c93624bb-ee7b-45ac-8b53-b5391f11c9c9@linaro.org>
- <eac3a877-a4aa-4789-9013-ab8b6c91e0f3@linaro.org>
- <0a12879f-dc4a-47fb-87a0-ac4b8bcd4d75@linaro.org>
- <53a19b1d-5665-4937-a07c-5dd1fcde06c5@linaro.org>
- <3b760685-97db-46e3-80a3-7fad69ad31cd@oss.qualcomm.com>
- <94b75177-9401-4e0c-966b-5847a29cb6f7@linaro.org>
- <427548c0-b0e3-4462-a15e-bd7843f00c7f@oss.qualcomm.com>
- <3UXVZ6ANM9mDjVdMV4SXsiIx_pT3S1lp3RC_Q7mh_o7jF2dpYsni1Sl2TAWv6OCMCRTFmi9aE6BxDquGkOnwEg==@protonmail.internalid>
- <8b908a20-0bf3-447d-82ea-a5ecee1bf54c@linaro.org>
- <57501e81-7e9c-4cb1-9a37-18307d1e06ca@linaro.org>
- <90a896f0-7b67-494a-abe4-dceb52067e65@linaro.org>
-Content-Language: en-US
-In-Reply-To: <90a896f0-7b67-494a-abe4-dceb52067e65@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20250721075525.29636-5-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_092940_013872_66399730 
-X-CRM114-Status: UNSURE (   5.79  )
+X-CRM114-CacheID: sfid-20250721_112815_006650_46749465 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -117,32 +93,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/07/2025 17:22, Bryan O'Donoghue wrote:
-> On 21/07/2025 17:16, Bryan O'Donoghue wrote:
->> drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c Documentation/ 
->> devicetree/ bindings/parch/arm64/boot/dts/amlogic/meson-khadas-vim3- 
->> ts050.dtsoc/ meson-axg.dtsi
-> 
-> Documentation/devicetree/bindings/phDocumentation/devicetree/bindings/ 
-> phy/amlogic,axg-mipi-dphy.yaml
-> 
-> Rockchip, Broadcom, etc.
-> 
-> The allocation of lanes is known by CAMSS and easily communicated to a 
-> separate standalone node.
-> 
-> ---
-> bod
+Hi AngeloGioacchino,
 
-In fact its part of the dphy params data structure...
+kernel test robot noticed the following build errors:
 
----
-bod
+[auto build test ERROR on next-20250718]
+[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16-rc7 v6.16-rc6 v6.16-rc5 v6.16-rc7]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250721-155809
+base:   next-20250718
+patch link:    https://lore.kernel.org/r/20250721075525.29636-5-angelogioacchino.delregno%40collabora.com
+patch subject: [PATCH v1 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
+config: sparc-randconfig-002-20250721 (https://download.01.org/0day-ci/archive/20250722/202507220236.c4472GGM-lkp@intel.com/config)
+compiler: sparc64-linux-gcc (GCC) 13.4.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250722/202507220236.c4472GGM-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507220236.c4472GGM-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "devm_spmi_subdevice_alloc_and_add" [drivers/phy/qualcomm/phy-qcom-eusb2-repeater.ko] undefined!
+>> ERROR: modpost: "__devm_regmap_init_spmi_ext" [drivers/phy/qualcomm/phy-qcom-eusb2-repeater.ko] undefined!
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
