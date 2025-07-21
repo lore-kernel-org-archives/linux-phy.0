@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96C7BC83F1A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1C19C87FC5
 	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 07:55:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=81gErym5WyvZnPwyKwKvIKpc6wQv9VUoi3Bi6lyE4nU=; b=KXbv1sZvXWHVwQ
-	anfolPxuN7B1qqEBzrSTaeywf9aERrEl8/l6l6nuyYr4Jg+peII4SMTBIjQtoc9Qb8Kj197z0VEFL
-	5oWrRidaG/NcPdyX3+ILAlDygeJSigMAyDZxvKqIR5lL9wT6bodUVOgaNdfQXBJvjXUX4sexcO85Q
-	sVr7uo+mYqZaxWctylH+NvzxIWRLAEszeC3EYzdBCIE3zyDlrmPo2BydrLcowQLlmzPle3tgODS6x
-	AWSdh9Mg+zmf4Ytuw4cGtv/e9UoV+uZgWN7SqLt/wtC+ZWJHmaZcuxWyzGHUJ5D0UzZw4FUdgIlxp
-	N7cR5I8N9OsIiZkK3qeA==;
+	List-Owner; bh=f/a32NK4N90NM2OZPZNbObXLSvjXJM0wns0Pp/tUB5w=; b=EMIuZfKhb6gJ2k
+	S0W2Im5omLleVSweFHRlPpYRPrjaGbw2knP6j9QLwUC4TpgJDMu5JN9I3tbcT1dI39AcXhM5PSJe0
+	0F2d3w7gQcdPk7uySFnidJAtEdr834ZRny7VXpb5eRCpF27ipffePePdByx+vW6/+TzKpObtgKBdJ
+	7r3NTHqti6xvT+Gi4+ep+rokTHhlExQfdOy7PRLGBQTLSc1TJAnaWRv71UW+R4MLj8ojomln6lrDv
+	AMbJwRpC7rsx99W/RhKv5rbwWmj2RcAEVV8Zq8JD0Ajf3ENPou7n3P166fuisxGAsBdhLuA5Psktk
+	K8ABQ7aHphIcwHrkXHYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udlND-0000000GZTX-1XXK;
+	id 1udlND-0000000GZTz-2iKU;
 	Mon, 21 Jul 2025 07:55:47 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udlN9-0000000GZQB-1yvr
+	id 1udlNB-0000000GZQv-0bpQ
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 07:55:44 +0000
+	Mon, 21 Jul 2025 07:55:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753084542;
-	bh=T4P098naYAM9YUoh7uKMjJGbpd3jAMCnvo73Fygwv1U=;
+	s=mail; t=1753084543;
+	bh=EWrSyZWJqNf9vZ/4yt+3iqdg/iKzq/YpQ3Klm8c4kUU=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZtEgtCzR8K8GOzhuFOMzDtUxNFdSICytW7VGZej/bTyLGRaxkrySVSDfgM+w6lSXI
-	 NXd50AQLyLoTCBehTTbN7CGzX/+4M2njxx6SGo9wMkKM8yQ69cIh2a/TRj0gOWcE6I
-	 zNQTGSxq+n32HU3ZyL0XiN1CK55v98xqLaIDI/Yku/DhIomRpFwlw/VJqCBmm4mhfY
-	 PIt03TY/hNDEmPXR7153w9MHAS5e4LaXsF7Yz+B7a3yUReW88KjuKW6n/fl7PvndnI
-	 yXMgmGkfXskf0la31nlzcq+JAFew4iqKfl+wWkyw7j/tZw6pOJEHasNX5zzt/rakrg
-	 9ss+VjxtLz3Og==
+	b=b9THtPyFdNeegoD4oJ00q2hB7oXRYfxQ70HRv1f/P/nFjQVYmByytc1tfCUtDL8Ln
+	 4PRl4w0f5UDPwqrnI3b7wRuz1EM9naJHkoHR2hTM1Qomj4d9if+bLMD1EwkHVVIuw2
+	 e8h8Jur+lA6YgJ5KeaIzhOdKYSc7A2VdfoGbdAsb9JQWcP90tXlV7NISE7otpwr03W
+	 JiTRriujzo+3fJUWeMru6Xcvk37/Gp66T3YOZmL6yOfy2025smmRqxbR5ycb8FZoHQ
+	 o8ES/DDbOdXWWYGxuyHYjr2LpkdlCua6ZoILGMmA49SEtNX9GY+NsmmLOgpb8TRpOQ
+	 bbG//2p7qvqvA==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E54DA17E132A;
-	Mon, 21 Jul 2025 09:55:40 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4385A17E1541;
+	Mon, 21 Jul 2025 09:55:42 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: sboyd@kernel.org
 Cc: jic23@kernel.org,
@@ -66,16 +66,16 @@ Cc: jic23@kernel.org,
 	linux-pm@vger.kernel.org,
 	kernel@collabora.com,
 	wenst@chromium.org
-Subject: [PATCH v1 2/7] nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Mon, 21 Jul 2025 09:55:20 +0200
-Message-ID: <20250721075525.29636-3-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v1 3/7] power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Mon, 21 Jul 2025 09:55:21 +0200
+Message-ID: <20250721075525.29636-4-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250721075525.29636-1-angelogioacchino.delregno@collabora.com>
 References: <20250721075525.29636-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_005543_655513_C2807C32 
-X-CRM114-Status: GOOD (  15.73  )
+X-CRM114-CacheID: sfid-20250721_005545_326309_F0948431 
+X-CRM114-Status: GOOD (  14.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,11 +92,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrate a SDAM device, internally located in
-a specific address range reachable through SPMI communication.
+Some Qualcomm PMICs integrates a Power On device supporting pwrkey
+and resin along with the Android reboot reason action identifier.
 
 Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device for SDAM
+of syscon in this driver, register a new SPMI sub-device for PON
 and initialize its own regmap with this sub-device's specific base
 address, retrieved from the devicetree.
 
@@ -106,111 +106,90 @@ by the regmap API instead.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/nvmem/qcom-spmi-sdam.c | 41 +++++++++++++++++++++++++---------
- 1 file changed, 30 insertions(+), 11 deletions(-)
+ drivers/power/reset/qcom-pon.c | 33 ++++++++++++++++++++++++++-------
+ 1 file changed, 26 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/nvmem/qcom-spmi-sdam.c b/drivers/nvmem/qcom-spmi-sdam.c
-index 4f1cca6eab71..1b80e8563a33 100644
---- a/drivers/nvmem/qcom-spmi-sdam.c
-+++ b/drivers/nvmem/qcom-spmi-sdam.c
-@@ -9,6 +9,7 @@
- #include <linux/nvmem-provider.h>
- #include <linux/platform_device.h>
+diff --git a/drivers/power/reset/qcom-pon.c b/drivers/power/reset/qcom-pon.c
+index 7e108982a582..bd7e7e04ff02 100644
+--- a/drivers/power/reset/qcom-pon.c
++++ b/drivers/power/reset/qcom-pon.c
+@@ -11,6 +11,7 @@
+ #include <linux/reboot.h>
+ #include <linux/reboot-mode.h>
  #include <linux/regmap.h>
 +#include <linux/spmi.h>
  
- #define SDAM_MEM_START			0x40
- #define REGISTER_MAP_ID			0x40
-@@ -20,7 +21,6 @@
- struct sdam_chip {
- 	struct regmap			*regmap;
- 	struct nvmem_config		sdam_config;
--	unsigned int			base;
- 	unsigned int			size;
+ #define PON_SOFT_RB_SPARE		0x8f
+ 
+@@ -22,7 +23,6 @@
+ struct qcom_pon {
+ 	struct device *dev;
+ 	struct regmap *regmap;
+-	u32 baseaddr;
+ 	struct reboot_mode_driver reboot_mode;
+ 	long reason_shift;
  };
+@@ -35,7 +35,7 @@ static int qcom_pon_reboot_mode_write(struct reboot_mode_driver *reboot,
+ 	int ret;
  
-@@ -73,7 +73,7 @@ static int sdam_read(void *priv, unsigned int offset, void *val,
- 		return -EINVAL;
- 	}
+ 	ret = regmap_update_bits(pon->regmap,
+-				 pon->baseaddr + PON_SOFT_RB_SPARE,
++				 PON_SOFT_RB_SPARE,
+ 				 GENMASK(7, pon->reason_shift),
+ 				 magic << pon->reason_shift);
+ 	if (ret < 0)
+@@ -46,27 +46,46 @@ static int qcom_pon_reboot_mode_write(struct reboot_mode_driver *reboot,
  
--	rc = regmap_bulk_read(sdam->regmap, sdam->base + offset, val, bytes);
-+	rc = regmap_bulk_read(sdam->regmap, offset, val, bytes);
- 	if (rc < 0)
- 		dev_err(dev, "Failed to read SDAM offset %#x len=%zd, rc=%d\n",
- 						offset, bytes, rc);
-@@ -100,7 +100,7 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
- 		return -EINVAL;
- 	}
- 
--	rc = regmap_bulk_write(sdam->regmap, sdam->base + offset, val, bytes);
-+	rc = regmap_bulk_write(sdam->regmap, offset, val, bytes);
- 	if (rc < 0)
- 		dev_err(dev, "Failed to write SDAM offset %#x len=%zd, rc=%d\n",
- 						offset, bytes, rc);
-@@ -110,28 +110,47 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
- 
- static int sdam_probe(struct platform_device *pdev)
+ static int qcom_pon_probe(struct platform_device *pdev)
  {
-+	struct regmap_config sdam_regmap_config = {
++	struct regmap_config qcom_pon_regmap_config = {
 +		.reg_bits = 16,
 +		.val_bits = 16,
 +		.max_register = 0x100,
 +		.fast_io = true
 +	};
- 	struct sdam_chip *sdam;
- 	struct nvmem_device *nvmem;
-+	struct spmi_device *sparent;
 +	struct spmi_subdevice *sub_sdev;
- 	unsigned int val;
- 	int rc;
++	struct spmi_device *sparent;
+ 	struct qcom_pon *pon;
+ 	long reason_shift;
+ 	int error;
  
 +	if (!pdev->dev.parent)
 +		return -ENODEV;
 +
- 	sdam = devm_kzalloc(&pdev->dev, sizeof(*sdam), GFP_KERNEL);
- 	if (!sdam)
+ 	pon = devm_kzalloc(&pdev->dev, sizeof(*pon), GFP_KERNEL);
+ 	if (!pon)
  		return -ENOMEM;
  
--	sdam->regmap = dev_get_regmap(pdev->dev.parent, NULL);
--	if (!sdam->regmap) {
--		dev_err(&pdev->dev, "Failed to get regmap handle\n");
--		return -ENXIO;
--	}
+ 	pon->dev = &pdev->dev;
+ 
+-	pon->regmap = dev_get_regmap(pdev->dev.parent, NULL);
+-	if (!pon->regmap) {
+-		dev_err(&pdev->dev, "failed to locate regmap\n");
 +	sparent = to_spmi_device(pdev->dev.parent);
 +	if (!sparent)
-+		return -ENODEV;
- 
--	rc = of_property_read_u32(pdev->dev.of_node, "reg", &sdam->base);
+ 		return -ENODEV;
+-	}
++
 +	sub_sdev = devm_spmi_subdevice_alloc_and_add(&pdev->dev, sparent);
 +	if (IS_ERR(sub_sdev))
 +		return PTR_ERR(sub_sdev);
-+
-+	rc = of_property_read_u32(pdev->dev.of_node, "reg", &sdam_regmap_config.reg_base);
- 	if (rc < 0) {
- 		dev_err(&pdev->dev, "Failed to get SDAM base, rc=%d\n", rc);
- 		return -EINVAL;
- 	}
  
--	rc = regmap_read(sdam->regmap, sdam->base + SDAM_SIZE, &val);
-+	sdam->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regmap_config);
-+	if (IS_ERR(sdam->regmap)) {
-+		dev_err(&pdev->dev, "Failed to get regmap handle\n");
-+		return PTR_ERR(sdam->regmap);
+ 	error = of_property_read_u32(pdev->dev.of_node, "reg",
+-				     &pon->baseaddr);
++				     &qcom_pon_regmap_config.reg_base);
+ 	if (error)
+ 		return error;
+ 
++	pon->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &qcom_pon_regmap_config);
++	if (!pon->regmap) {
++		dev_err(&pdev->dev, "failed to locate regmap\n");
++		return -ENODEV;
 +	}
 +
-+	rc = regmap_read(sdam->regmap, SDAM_SIZE, &val);
- 	if (rc < 0) {
- 		dev_err(&pdev->dev, "Failed to read SDAM_SIZE rc=%d\n", rc);
- 		return -EINVAL;
-@@ -159,7 +178,7 @@ static int sdam_probe(struct platform_device *pdev)
- 	}
- 	dev_dbg(&pdev->dev,
- 		"SDAM base=%#x size=%u registered successfully\n",
--		sdam->base, sdam->size);
-+		sdam_regmap_config.reg_base, sdam->size);
+ 	reason_shift = (long)of_device_get_match_data(&pdev->dev);
  
- 	return 0;
- }
+ 	if (reason_shift != NO_REASON_SHIFT) {
 -- 
 2.50.1
 
