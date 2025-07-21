@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ADB0C83F25
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 13:45:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 995E0C83F25
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 13:50:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyNQL+tDSzIl6W/L/wsY9/fiZ3c3Xcx6oI8lxnC79ws=; b=KHq1zPz3iSKwei
-	u9zCrZsZgE9kJftGZkXv+SjF+CmybAao/MFtDW9dSO/RnLxzsFag0TK5V4UsYjpYuOsDIbFdiVDnp
-	vTyepXOZPh8EbqWKAekTbQDmBjHXWPRwa4yVCKnH06WGA3h0Nb6sFpHe8OiVUwqCaayb7ZGTwgdLj
-	SLCCNPPxNID9Nq+FxdbZeGzduxBJT6iLrm688hqV3lhVJcf85xp62PqspEezh/EUwpORNqKkSx3dq
-	VLYgcFPkqG5iAUyxZgylXIqvFlsVBqicjHVXoXEkSuQpuPYoy2V3TCnsGrPj5hXZHdOKxXAUsvHeB
-	WgwN+fOI5nXMiGLo5STw==;
+	List-Owner; bh=wn1mmkJDmlRFRVR1FPXdWI8cFVtaWgJlh0dx6vz9oIY=; b=ldUePFyfu8KkuV
+	vSON4ffM2ztyqVVqseVXSIJREz3Qhg4WmdETiaXMe6TRdXVROn95DjXM/S/6R7FpS2h/Ipc6W6nf7
+	/9XUxW3IOMz3L71qbeTBHnJb65Z/qFvLXcGnpDM4LnCd/fHnXiG/n7zHIK7O1dMDKUbmJSxkGxLeJ
+	7dUdUItL7g1zBr6vtqATeiQUt+atAsZqbvzGcrd8zseNrrYrInjU4jBGD2nzFY8Vk9GA3ckjKm42z
+	j+75x1NRLZ/0Id7SynqwJUgswXf9z+WH1/QO7cW14cX+691RDsYDVOUuKPGTEttlQBNh4jl2H0BNC
+	fQoXWeSvDgV0T+4JQCfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udqpL-0000000HQ5D-0l0q;
-	Mon, 21 Jul 2025 13:45:11 +0000
+	id 1udquL-0000000HQem-1L6F;
+	Mon, 21 Jul 2025 13:50:21 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udpu6-0000000HHdc-0htm
+	id 1udq7t-0000000HJxn-1w8i
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 12:46:05 +0000
+	Mon, 21 Jul 2025 13:00:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753101960;
-	bh=WGUQgDlE1s2YTapj41wUMa0BgEKsNgWIMJNz10NotwM=;
+	s=mail; t=1753102815;
+	bh=onM7/yXXPy0rj+kktsvtqW+dskVE/IL1W226F8FF398=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=kSPo9cv75vw9UZ0CR4OLbjZU8t3subAZ5maiKshA0TNSuGgefVTXxIYzo/HTqAlgl
-	 LIyQd3zMu9eP/O31LM7EpmNAo7PT495/rRzlRj82cqeKI/VrrXYPFmxeiLrX6PuuIP
-	 FCR9FhRLbhFcUXn4dj+LLZYLFUw9GKsIwj9PUOM2iGTpKqPdSIXa/f18ZCZA86UKME
-	 +Z9Ijtncdp/ontJplBRxZ1+jGDXvsgzV1EH1u0r6UTWn6d68hOKx4jkrUJoRPRYeOd
-	 GyogLDsta52fywRoObfEo9lSGMyOW6s0xxYE1qPFDVgWDaYnWQfFay4V3JnABrkBmc
-	 u7FkwJT88NMNw==
+	b=YfBd131RRhLqcHMO/9DBRhnsopOkDpwTVB8S0Lr0U/Ix7wq16RlG2EcpqKPNRnGX9
+	 dvGGkzmOcl5DJYdiGk2aTJ60HVxgH4FLoisShh9SbofSB1IxXzGJy+2JKGwesarirp
+	 VAgtFpXecyC6q8W8JUTCbfuINLHeCkhkJo2pNPAwLBA3dKePdMDNliDzMNKF0K67T2
+	 pkp++VhOPaHmVN600g2Bmyw9pRGB2e6N0SCW4sC/LKZAVrEgzfGQIQ/DPAcp0jF86z
+	 3y/C17t2npUbHF19zBvO9crGDXcXIhs2NKye3hUNc/W62M2B2smXPId/s4u4xO0vat
+	 XGCXq/JVGT7LQ==
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 53ADF17E0CA1;
-	Mon, 21 Jul 2025 14:45:59 +0200 (CEST)
-Message-ID: <b06969d2-0c35-44c7-bb2c-162942186c53@collabora.com>
-Date: Mon, 21 Jul 2025 14:45:58 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 940C517E0FA8;
+	Mon, 21 Jul 2025 15:00:14 +0200 (CEST)
+Message-ID: <cb34fd4e-d87a-4a98-b27e-93ecb851e85e@collabora.com>
+Date: Mon, 21 Jul 2025 15:00:13 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-To: Casey Connolly <casey.connolly@linaro.org>, sboyd@kernel.org
-Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
- andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
- srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org,
- krzysztof.kozlowski@linaro.org, u.kleine-koenig@baylibre.com,
- linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org
+Subject: Re: [PATCH v1 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and
+ devm variant
+To: Andy Shevchenko <andriy.shevchenko@intel.com>
+Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
+ nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+ u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+ kernel@collabora.com, wenst@chromium.org
 References: <20250721075525.29636-1-angelogioacchino.delregno@collabora.com>
- <20250721075525.29636-3-angelogioacchino.delregno@collabora.com>
- <e724e6a2-21a8-436a-8809-ce73c0afa433@linaro.org>
+ <20250721075525.29636-2-angelogioacchino.delregno@collabora.com>
+ <aH4lwVpaiau1Ick3@smile.fi.intel.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <e724e6a2-21a8-436a-8809-ce73c0afa433@linaro.org>
+In-Reply-To: <aH4lwVpaiau1Ick3@smile.fi.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_054602_365619_BB786D68 
-X-CRM114-Status: GOOD (  22.31  )
+X-CRM114-CacheID: sfid-20250721_060017_672607_346D21DB 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,101 +84,58 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 21/07/25 12:44, Casey Connolly ha scritto:
-> Hi Angelo,
-> 
-> On 21/07/2025 09:55, AngeloGioacchino Del Regno wrote:
->> Some Qualcomm PMICs integrate a SDAM device, internally located in
->> a specific address range reachable through SPMI communication.
+Il 21/07/25 13:34, Andy Shevchenko ha scritto:
+> On Mon, Jul 21, 2025 at 09:55:19AM +0200, AngeloGioacchino Del Regno wrote:
+>> Some devices connected over the SPMI bus may be big, in the sense
+>> that those may be a complex of devices managed by a single chip
+>> over the SPMI bus, reachable through a single SID.
 >>
->> Instead of using the parent SPMI device (the main PMIC) as a kind
->> of syscon in this driver, register a new SPMI sub-device for SDAM
->> and initialize its own regmap with this sub-device's specific base
->> address, retrieved from the devicetree.
+>> Add new functions aimed at managing sub-devices of a SPMI device
+>> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
+>> for adding a new subdevice and removing it respectively, and also
+>> add their devm_* variants.
 >>
->> This allows to stop manually adding the register base address to
->> every R/W call in this driver, as this can be, and is now, handled
->> by the regmap API instead.
-> 
-> This is honestly a really nice improvement :D>
-
-Thanks! :-D
-
->> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
->> ---
->>   drivers/nvmem/qcom-spmi-sdam.c | 41 +++++++++++++++++++++++++---------
->>   1 file changed, 30 insertions(+), 11 deletions(-)
+>> The need for such functions comes from the existance of	those
+>> complex Power Management ICs (PMICs), which feature one or many
+>> sub-devices, in some cases with these being even addressable on
+>> the chip in form of SPMI register ranges.
 >>
->> diff --git a/drivers/nvmem/qcom-spmi-sdam.c b/drivers/nvmem/qcom-spmi-sdam.c
->> index 4f1cca6eab71..1b80e8563a33 100644
->> --- a/drivers/nvmem/qcom-spmi-sdam.c
->> +++ b/drivers/nvmem/qcom-spmi-sdam.c
->> @@ -9,6 +9,7 @@
->>   #include <linux/nvmem-provider.h>
->>   #include <linux/platform_device.h>
->>   #include <linux/regmap.h>
->> +#include <linux/spmi.h>
->>   
->>   #define SDAM_MEM_START			0x40
->>   #define REGISTER_MAP_ID			0x40
->> @@ -20,7 +21,6 @@
->>   struct sdam_chip {
->>   	struct regmap			*regmap;
->>   	struct nvmem_config		sdam_config;
->> -	unsigned int			base;
->>   	unsigned int			size;
->>   };
->>   
->> @@ -73,7 +73,7 @@ static int sdam_read(void *priv, unsigned int offset, void *val,
->>   		return -EINVAL;
->>   	}
->>   
->> -	rc = regmap_bulk_read(sdam->regmap, sdam->base + offset, val, bytes);
->> +	rc = regmap_bulk_read(sdam->regmap, offset, val, bytes);
->>   	if (rc < 0)
->>   		dev_err(dev, "Failed to read SDAM offset %#x len=%zd, rc=%d\n",
->>   						offset, bytes, rc);
->> @@ -100,7 +100,7 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
->>   		return -EINVAL;
->>   	}
->>   
->> -	rc = regmap_bulk_write(sdam->regmap, sdam->base + offset, val, bytes);
->> +	rc = regmap_bulk_write(sdam->regmap, offset, val, bytes);
->>   	if (rc < 0)
->>   		dev_err(dev, "Failed to write SDAM offset %#x len=%zd, rc=%d\n",
->>   						offset, bytes, rc);
->> @@ -110,28 +110,47 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
->>   
->>   static int sdam_probe(struct platform_device *pdev)
->>   {
->> +	struct regmap_config sdam_regmap_config = {
->> +		.reg_bits = 16,
->> +		.val_bits = 16,
+>> Examples of those devices can be found in both Qualcomm platforms
+>> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
+>> sub-devices, and in newer MediaTek platforms showing similar HW
+>> features and a similar layout with those also having many subdevs.
 > 
-> I believe registers are 8 bits wide, at least on Qualcomm platforms.
+> ...
+> 
+>>   EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
+> 
+>> +EXPORT_SYMBOL_GPL(devm_spmi_subdevice_alloc_and_add);
+> 
+> I am wondering how hard to move these to a dedicated namespace.
+> Basically you can define a default namespace, and at the same time
+> add import to all (current) users.
 > 
 
-I used 16 because usually that's the usual default for SPMI - but if you're sure
-about Qualcomm platforms having 8-bits wide registers and you can confirm that,
-I can change both of those to 8 in a jiffy.
+I can check if this can be done "relatively easily" (as in, if I can do that
+without requiring "a hundred" immutable branches for every subsystem using
+SPMI).
 
-I anyway have to send a v2 because I forgot an error check - so changing this is
-not a problem at all for me.
+If turns out being feasible - I do actually like the idea so yes I'd be pleased
+to do that... even though honestly it's completely out of scope for this series.
 
-But.
+In case I can't - it's still something that can be done later.
 
-Before me changing - can you please please please double check and confirm?
+> ...
+> 
+>> +	dev_set_name(&sdev->dev,
+>> +		     "%d-%02x.%d.auto", sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
+> 
+> No error check?
+> 
 
-If you can also check the register width of the others that I converted, I'd really
-appreciate that (I have no datasheets for qcom so it's a bit of a guessing game for
-me here... :-P), just so that we get everything right from the get-go ... even if
-a mismatch wouldn't really cause issues in the current state of things.
+Heh, whoops, forgot about it :-)
 
-That's because - I just noticed - in qcom-spmi-pmic.c, reg_bits is 16, but val_bits
-is 8 (which basically means "the registers are 16-bits wide, but we always only
-care about the lower 8 bits).
-
-Thanks again!
+Thanks for catching that - adding the check for v2.
 
 Cheers,
 Angelo
