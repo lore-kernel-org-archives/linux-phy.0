@@ -4,83 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D0ABC83F1A
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 18:58:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43928C83F1A
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Jul 2025 20:28:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=50xbvkkvjCSiDHpS2SUpkLzITP7hxVvh9zuPtJaFums=; b=WM4XhXQJXbxIQm
-	dqSWKiHGEMQQl4q0COgc1i5AWzBAwVDeCt/S71thJjSwMPMrEb55nN/PMElmzz8FgDhNLFEX1VQY2
-	CAINfgthYRWih1YfycbreGAJ7AW5my+dyuqrMRKk10Dlgok8vXFxCBVnfGStL+PnLq6LePBABDwmg
-	gwN0ete9oGnq2MLKjNztt7BvSat1wg8XgsLuDo3bQ8anbPUp5UmzKuwUvza6et+2Noy+A3Idcx7Pu
-	fwjQQdG9n38pix/bMjHmEo+SOWl67ZWmCRvsE8/ecxpCh/SL0U7svVf2Nf/ai9wQNTnvLN0mKBM8X
-	CSBE8O+qyPpwd3zsWNBg==;
+	List-Owner; bh=mGXCxVv8vE2lJ9Fh2BeREQSFCpoRkG6Cj8k5lm3su7k=; b=ZUv8QhQ2XCAKMa
+	UJnuqkqclHELwjJokVyLw2q9Z1+UKFOv2/urTG69c5oZrmNZY3NEP4NlUKAHSZ59dfSTHukhSGrwm
+	TSRvF9faYLvihlHB1NCqH6sQdcvN+YJJLMKGM9hx0VD8Ijne3Cu2Xta7Kq/PFZhmhPwrVFgQ0C41Q
+	2JFH1Ao2pow1YzckGftB+o1C9h07Km0k5dfFkqBZrJLjWcUrSV7L/a61lTrSVSJTTqm4JI+r7SbsD
+	Yp0cDku6M4R+rihmZ23XFsJiEOqsOkgfwvrUd7V8cs0zCjY8hTJfOxdySuBkMne12RkpLzjhV2j5C
+	+O6TOPsPgzJ3FRJs4F9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udvi6-00000000S8n-3hUd;
-	Mon, 21 Jul 2025 18:58:02 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1udx7J-00000000d47-08F5;
+	Mon, 21 Jul 2025 20:28:09 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udvFG-00000000Pl8-40Ws
+	id 1udwvI-00000000b13-3NfW
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Jul 2025 18:28:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1753122495; x=1784658495;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=UTzS2RxGqJmq8w5RvId10WeNvFeCpoCyyyvV61HPfmA=;
-  b=a1n/zTUDBITrN1CkX3fib3yOpuJliDXPcHKDCXptGJ/wfND3wKsN3RmR
-   N4VbFvCkl5tm4VAlSXQw6uqcf/ZcCZLMtIUgB3+4u+JeOh18wgPrpXzWu
-   n3yYDyMWRPIgBrXG732ykc/c5o1I0Usw55RxkJyfamc6wgdROL6UolDFK
-   keYxt5FN5FJaCaDnPu8VTwAMm+6CIageByI03OtKF9Bh+XfCIEXtuC9b/
-   Yse6+rMxN9xVgHvveva76VgdCIGClCodgRZursv17i0gsuvBaHDxVGaSg
-   7hejhpCNmIFlO99GgudYXqRsRUUvfEAwis4gmaCPSuSElFD9zr3bDVKVP
-   w==;
-X-CSE-ConnectionGUID: FpoZqAGVRv29Irr2YuQhSw==
-X-CSE-MsgGUID: fs/ImkiHSyuW4o+FNpwpmQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11499"; a="65915318"
-X-IronPort-AV: E=Sophos;i="6.16,329,1744095600"; 
-   d="scan'208";a="65915318"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jul 2025 11:28:08 -0700
-X-CSE-ConnectionGUID: d7zoVHWXQViN4D8+s1Ga0w==
-X-CSE-MsgGUID: Ffn1JglIQtagiH8+sp4tqQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,329,1744095600"; 
-   d="scan'208";a="195988638"
-Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
-  by orviesa001.jf.intel.com with ESMTP; 21 Jul 2025 11:28:04 -0700
-Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1udvF3-000H4D-1x;
-	Mon, 21 Jul 2025 18:28:01 +0000
-Date: Tue, 22 Jul 2025 02:27:21 +0800
-From: kernel test robot <lkp@intel.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	sboyd@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
-	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
-	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
-	u.kleine-koenig@baylibre.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org
-Subject: Re: [PATCH v1 4/7] phy: qualcomm: eusb2-repeater: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-Message-ID: <202507220236.c4472GGM-lkp@intel.com>
-References: <20250721075525.29636-5-angelogioacchino.delregno@collabora.com>
+	Mon, 21 Jul 2025 20:15:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 08D10A55DA1;
+	Mon, 21 Jul 2025 20:15:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88C3BC4CEED;
+	Mon, 21 Jul 2025 20:15:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1753128943;
+	bh=nkiA1xZGAUGjmHRJ4jMF5cNu7pJ2iZ4JK/ULWm22zkc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=hf03Mbgmg8UXAaiSvZVsYNOpxI1lRgk/w+kb96/iEtNZKUdI3zi8yMVwwXluqmn2d
+	 l6oupsCI42Oj+s1HLGqgdr5P/1Gzt9zxAegC/2cKzvPeF7ZATTLqV2RfzjTmSvW5O8
+	 FgJTzDtUo84QX/jzlaYmo2owrMl1pS41LWPUJA4VK4prBr+8JR3Mo4XlW+NsdW5LAM
+	 gVoebTmOHJOode+RHExAM6EsQWKOWk3fj6B4KDbldu04+VpFUgdmLDdjFgtGbIm3Gz
+	 eM1GX0hcpBiGYw1hqCd4aRU6wmZ9ElqjEdUINq2dlAhcYDjTE6/YZuYKqVyZg6TIE2
+	 R7/Tfu/qzT1RQ==
+Date: Mon, 21 Jul 2025 15:15:42 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Aaron Kling <webgeek1234@gmail.com>
+Cc: JC Kuo <jckuo@nvidia.com>, Stephen Boyd <sboyd@kernel.org>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Prashant Gaikwad <pgaikwad@nvidia.com>, linux-usb@vger.kernel.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Peter De Schrijver <pdeschrijver@nvidia.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Mathias Nyman <mathias.nyman@intel.com>,
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
+	linux-clk@vger.kernel.org, Jonathan Hunter <jonathanh@nvidia.com>,
+	devicetree@vger.kernel.org,
+	Thierry Reding <thierry.reding@gmail.com>,
+	linux-tegra@vger.kernel.org, linux-phy@lists.infradead.org,
+	Thierry Reding <treding@nvidia.com>,
+	Nagarjuna Kristam <nkristam@nvidia.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-pm@vger.kernel.org
+Subject: Re: [PATCH v2 08/17] dt-bindings: tegra: Document Shield TV 2019
+Message-ID: <175312894245.1247819.6745937548885403054.robh@kernel.org>
+References: <20250720-t210b01-v2-0-9cb209f1edfc@gmail.com>
+ <20250720-t210b01-v2-8-9cb209f1edfc@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250721075525.29636-5-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250720-t210b01-v2-8-9cb209f1edfc@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_112815_006650_46749465 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20250721_131544_912056_9A439B2B 
+X-CRM114-Status: UNSURE (   7.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,37 +92,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi AngeloGioacchino,
 
-kernel test robot noticed the following build errors:
+On Sun, 20 Jul 2025 21:15:02 -0500, Aaron Kling wrote:
+> Add the device tree binding documentation for NVIDIA Shield TV 2019
+> 
+> Signed-off-by: Aaron Kling <webgeek1234@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/arm/tegra.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
 
-[auto build test ERROR on next-20250718]
-[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16-rc7 v6.16-rc6 v6.16-rc5 v6.16-rc7]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250721-155809
-base:   next-20250718
-patch link:    https://lore.kernel.org/r/20250721075525.29636-5-angelogioacchino.delregno%40collabora.com
-patch subject: [PATCH v1 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
-config: sparc-randconfig-002-20250721 (https://download.01.org/0day-ci/archive/20250722/202507220236.c4472GGM-lkp@intel.com/config)
-compiler: sparc64-linux-gcc (GCC) 13.4.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250722/202507220236.c4472GGM-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202507220236.c4472GGM-lkp@intel.com/
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
->> ERROR: modpost: "devm_spmi_subdevice_alloc_and_add" [drivers/phy/qualcomm/phy-qcom-eusb2-repeater.ko] undefined!
->> ERROR: modpost: "__devm_regmap_init_spmi_ext" [drivers/phy/qualcomm/phy-qcom-eusb2-repeater.ko] undefined!
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
