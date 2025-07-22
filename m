@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 013BBC83F34
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 14:17:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4EF9C83F27
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 14:20:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ny7axWrhbVRYiQL45Tmjf15HvLkppCkSWBteYUUwwv4=; b=tWbsch/NdawbvG
-	dsxTMpzlGGYcAkZmSMQruuDEJ8eDm4stLTqBqg3P9zwCQetDOubgqdW70ol442ohZa+/LtlbYUIok
-	0zFVNgaW5OnbMxck7nAgYJv/kqkp3NOkDm+sqGLkMBdMzPgCumW5Hmm9nADqjU0e3c4vs5x0buzP0
-	rDtZNxvkZ7WAtLwvcF8mNPihozHi2s9iDnELY4BFOOvQtvghz9Yhy/gpTXYA/XukYKJSMQOsxEWyz
-	pN6zwdRWb3m1eb00bxDy0SC27Rkq6KWLbiLqbJcxlYtvB0uLSQoXoLBtKelS9TZ2Ir+53nBaPJII+
-	zGIbBIRJFg2t0AlQvYtg==;
+	List-Owner; bh=eXmpkUY3DNpFioM5N4NlcDvIr85tmc0MhId5NHsdEUM=; b=cFbVvDRhKH6XKH
+	+lMT/6kvgh/w0dqzxbgoT9gCGMR/L6ZkRM1w4o7k/20QdW/xppVYJiidONlWdUov9gPtn4vcCkmdQ
+	TOr3xY+GVihc1FK01K1qOwXqC06S03y2jvgY3WAeedoKqF48MIL4gJ5LikAdod9QhtkD+EdMNBuCw
+	+k1+TFgkjaYagExi0EiDRy2ORXcW5QT9gugg54fFWML4Mkx5hpeXcRw5ER3Eq2r4PkcmFFpzNllCX
+	j1avX+QaYYnSl32mmuVoce0E3tLYjS8x0+70XDzKb2+R+KmrUCcsZiXE0gcgxZmDpGi3qVIG3xy0H
+	lxGk84zAxgcES2QesGlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueDoT-00000002fux-3CR2;
-	Tue, 22 Jul 2025 14:17:49 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1ueDqw-00000002gFv-1cta;
+	Tue, 22 Jul 2025 14:20:22 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueDBf-00000002ZM2-0JqJ
-	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 13:37:44 +0000
+	id 1ueDBl-00000002ZO3-3qWn;
+	Tue, 22 Jul 2025 13:37:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CFF1D41A88;
-	Tue, 22 Jul 2025 13:37:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 489B3C4CEF5;
-	Tue, 22 Jul 2025 13:37:40 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 5C2E7601FB;
+	Tue, 22 Jul 2025 13:37:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21798C4CEF1;
+	Tue, 22 Jul 2025 13:37:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753191462;
-	bh=19yBFzDmu5QiQTTTGUCqhuUWVhFvwAFT+PqajB6IGqo=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=CPw/Qnszvq4+yQ3ZPOz6ILa0ml8Og4sZI8c6MbhdqAr5DTZSOJJWw/yuazrjnRsOi
-	 xOlMXoVe22NsvkEM1Klq6XcJ++E6T5Jd3Lb9GCEvvauorJrnfOZvHnGS9XTZz54yxc
-	 Tn/yyASb92EiB+cVyEGxWtnC0yB/0jds/4+EZNofShHYsZ656doefTX7sf8IAUmwzg
-	 uHnXOfldzkFUwqdAW1aQzlAXScNlUrSTJs0tI2VQhAw8hYvLp51WRAAdi7g3r+os4i
-	 P/hIJ9SWA5j5T4IDzsg82DJ9J4qcSGpgfr8IM7AWdLdHaE5l5ve1gj9b+sMh4LpB7j
-	 F28RtDCqPprjA==
+	s=k20201202; t=1753191469;
+	bh=wC1RXxQIm9EggCGpr5mxoFHZrulqQ/Ry2RyskGcaurg=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=vNFCReVw33rx+cRYq3uv7R+665IbodnXYV4q5AluskgBCnoh9L2+lXciDRq2Rsaph
+	 LUpQD3mh6wK7YpPYRE40E+7TPfViFZXfrtGi4HvH+YbrmQZ19Bjw5lpPhvJfUkqpwz
+	 H5w1DEgkFmy2wMQvLSnL+/tZih3o97KnhGaoDia5H9xxb5h8yEOMBBIb2orDZiBrgk
+	 AcoFAek5m+Wqx3jV0j9733u29yWhNe2Z2XDtPxUAuGs9TRk8JliINicTQFMI3Yz/kt
+	 lqkSwd590XNK0Plj5Ke25EEmqBUHg6RtKBQz7OS8jaK/oFt/XtU1G3N9JhxG3JGzDg
+	 O+dMDWSRuPp3w==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Lubomir Rintel <lkundrak@v3.sk>, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20250701063636.23872-2-krzysztof.kozlowski@linaro.org>
-References: <20250701063636.23872-2-krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH] dt-bindings: phy: marvell,mmp2-usb-phy: Drop status
- from the example
-Message-Id: <175319145991.114152.16396253727506565143.b4-ty@kernel.org>
-Date: Tue, 22 Jul 2025 19:07:39 +0530
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Ray Jui <rjui@broadcom.com>, 
+ Scott Branden <sbranden@broadcom.com>, 
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+ "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20250627220126.214577-1-robh@kernel.org>
+References: <20250627220126.214577-1-robh@kernel.org>
+Subject: Re: [PATCH v2] dt-bindings: phy: Convert brcm,sr-usb-combo-phy to
+ DT schema
+Message-Id: <175319146575.114152.5994506906661121885.b4-ty@kernel.org>
+Date: Tue, 22 Jul 2025 19:07:45 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_063743_136204_0A704653 
-X-CRM114-Status: UNSURE (   4.78  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,16 +75,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 01 Jul 2025 08:36:37 +0200, Krzysztof Kozlowski wrote:
-> Examples should not have the 'status' property and 'okay' is anyway by
-> default.
+On Fri, 27 Jun 2025 17:01:25 -0500, Rob Herring (Arm) wrote:
+> Convert the Broadcom Stingray USB PHY binding to DT schema format. It's
+> a straight forward conversion.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: marvell,mmp2-usb-phy: Drop status from the example
-      commit: a91ec5efde530747c23f3182cc5b53ba99b57051
+[1/1] dt-bindings: phy: Convert brcm,sr-usb-combo-phy to DT schema
+      commit: 4c3d05da59eb75bdb7869f8668778dae87229168
 
 Best regards,
 -- 
