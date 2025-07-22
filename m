@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1A86C83F25
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:39:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 228FAC87FC5
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:39:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v3AlwYCVVkzIJFANZhyhWDXdcnjDJoltnX1oiAaTyS0=; b=Q59OZL4Gqxr+Xw
-	RpZ8xo6G6bl0wH8pNJlp5sjfqZPghsJmZVwaFcRHsx+rLutXyPsHh7KrOw7DZ1jgKi4siFMbSiUIB
-	EtxP4xttV17NuClgWBNwVOFlnUWZhal9jCCMX8rWOYLFkPMI1DyRcKgbQOgjOcwZ1StK3KLJ1Ju3C
-	hQomHJTe1vMzKBEgFcAxDASeT2QJHOirGztXuDUJMg7rO0VZKK12gBwYByMh8dozvpPazyHRZIG20
-	T8XN5EBKqhHkc0MIHcR3ZE19ydJbW3T4XkUpfSwvgWo7aEPFrSdQPcc5IQIDwjHjM6N9fr3c5xFAB
-	Sod6CA6bRUNwbNpErT1g==;
+	List-Owner; bh=nJEwVX+BbclF2nk1sW9VadCLs3SgZekk1TLf5zBzd48=; b=RQ/ZHlQP5VAInb
+	6Ux+kqD3CQCGKN8u544zliXa7Nt7hZjNKLSzSN/vbU2Gcgj0lcJLj4Q4A41RFZh3Rt/FhVaDTJCez
+	rqGJQNDOe2i44y4Tu8xmXur9FcZg4T4Fv/YdIq6TP3o43u/c4nYpAzlQZJ2b5iKsjCq2noyVjpoqQ
+	VNKQFMnkAQVpmLWQ1unwlPKAFDzZYS6YVgDTWovcF3mh5aIoEo1XZnMQKXQreMGsgc6nKaONEyclH
+	JmnMTv1Ki0wSij/VOaRz/P3oe5l8B038uRvI2/A2y4dKKWUGI5Syt+9rw1IUhgBQps0d61WOwVcAU
+	gbvJpyA9QFBwED82YHhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9TM-000000022Aa-2pnx;
-	Tue, 22 Jul 2025 09:39:44 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1ue9TN-000000022BP-3dPu;
+	Tue, 22 Jul 2025 09:39:45 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9AO-00000001z95-09hx
+	id 1ue9DO-000000020Hx-3MNy
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 09:20:08 +0000
+	Tue, 22 Jul 2025 09:23:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 774E661135;
-	Tue, 22 Jul 2025 09:20:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECA3CC4CEEB;
-	Tue, 22 Jul 2025 09:20:00 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id EEE3C61135;
+	Tue, 22 Jul 2025 09:23:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 836E3C4CEEB;
+	Tue, 22 Jul 2025 09:23:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753176007;
-	bh=B1T2MWPDPDtUYOSFsDx/tfdQ/pEGziEZ3AKWuscvoqs=;
+	s=k20201202; t=1753176193;
+	bh=iYT38q0vkIlt677rfAYxqq2CIp6/tDmkB90sG8ZjiEg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=iXUykyln4dJhQGpxCRNG5+tveBFfMM/aZyBOVCGy/PEZz9eR8G5iK1skRzqTr0fHq
-	 kN0teNAZyFW9l2F+koQIDL7iZU03RH4YYLAd8CEV0PviK9kAPjeCVFV1fh2scUA2xe
-	 dBlku0E1DO2YV1HCqX3mZZCpqpdyxKVfk3A7scH8wkQ771S8yuJkbMATcAyI95r38W
-	 ORg2mmWFd0g3dlAVVN6cvqtBxpq2JNXja6QBPiGoWO3WMrBgyayUjFy0G5WSh6+1Qk
-	 rxbugE3vsX/PSap08fUMLLVLWKfh5YrypS4A1UMGSl2P0PYdWrwbKWxGebPbk95dTD
-	 kEDEgFR3jfiow==
-Message-ID: <2fd202a6-2c92-469c-81c0-8852562d4e35@kernel.org>
-Date: Tue, 22 Jul 2025 11:19:59 +0200
+	b=fG6YjahE5uoLdVNFku95vCJ0a0w4aUb1MNaf0i3k4IILzQIOxneUF7CiCk9cMNk8J
+	 hVbAjlkwQtXGKWGte08hqP8gHK3bxPA2hTsN3y4ogEQr0rwWYUfGTexv9FlacNI0lA
+	 Ti62dH2SIsDGg1MVS2bwJzOQRjtrXAeU9UuNhokrZKusXFj+SkupGiYlumvegg1Rvy
+	 2BshPnAIPHJYhBkmeIc7nHSYGQbl5aVF4iLsRMlgVPVewXgWkzdWWIHXeElNzCIyVs
+	 Rk90bpJ4sm7zIKNFnReSiO5HD7DVeY/MOq/twalrl8aPGVPZiTvXoeX8wY91f7wDxu
+	 V03OIqOcnMMTg==
+Message-ID: <b810f0d9-b1e8-4182-9551-601b248d572d@kernel.org>
+Date: Tue, 22 Jul 2025 11:23:05 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/13] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy:
- support dual TCSR registers
-To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
+Subject: Re: [PATCH v2 01/13] dt-bindings: display/msm: Document DP on QCS615
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
  Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
  <lumag@kernel.org>, Abhinav Kumar <abhinav.kumar@linux.dev>,
  Jessica Zhang <jessica.zhang@oss.qualcomm.com>, Sean Paul <sean@poorly.run>,
@@ -62,11 +62,12 @@ To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
 Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dmitry.baryshkov@oss.qualcomm.com, konrad.dybcio@oss.qualcomm.com,
- fange.zhang@oss.qualcomm.com, quic_lliu6@quicinc.com,
- quic_yongmou@quicinc.com
+ konrad.dybcio@oss.qualcomm.com, fange.zhang@oss.qualcomm.com,
+ quic_lliu6@quicinc.com, quic_yongmou@quicinc.com
 References: <20250722-add-displayport-support-for-qcs615-platform-v2-0-42b4037171f8@oss.qualcomm.com>
- <20250722-add-displayport-support-for-qcs615-platform-v2-3-42b4037171f8@oss.qualcomm.com>
+ <20250722-add-displayport-support-for-qcs615-platform-v2-1-42b4037171f8@oss.qualcomm.com>
+ <e15df8ba-f058-4eb2-919c-bc327290e66a@kernel.org>
+ <5ec480ac-ee60-473d-83e6-c2f25d3d30d8@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -112,7 +113,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250722-add-displayport-support-for-qcs615-platform-v2-3-42b4037171f8@oss.qualcomm.com>
+In-Reply-To: <5ec480ac-ee60-473d-83e6-c2f25d3d30d8@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,50 +130,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/07/2025 09:22, Xiangxu Yin wrote:
-> Add support for specifying two TCSR register addresses in the
-> qcom,tcsr-reg property to enable DP-only mode switching. This change
-> maintains backward compatibility with the original single-register
-> format.
+On 22/07/2025 11:16, Dmitry Baryshkov wrote:
+> On 22/07/2025 12:13, Krzysztof Kozlowski wrote:
+>> On 22/07/2025 09:22, Xiangxu Yin wrote:
+>>> The QCS615 platform is based on the SM6150 SoC. Since the DP hardware is
+>>> shared with SM6150, the compatible string qcom,sm6150-dp is used to
+>>> represent the DP controller on QCS615.
+>>
+>>
+>> No, you cannot use other SoC compatible for different one. Look at
+>> qcs615.dtsi and board DTS - there is nothing saying that this is the
+>> same die.
 > 
-> Also update #clock-cells and #phy-cells to <1> to support clock and PHY
-> provider interfaces, respectively. This is required for platforms that
-> consume the PHY clock and select PHY mode dynamically.
-> 
-> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-> ---
->  .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    | 28 +++++++++++++++++-----
->  1 file changed, 22 insertions(+), 6 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-> index 1636285fbe535c430fdf792b33a5e9c523de323b..badfc46cda6c3a128688ac63b00d97dc2ba742d6 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
-> @@ -44,13 +44,21 @@ properties:
->    vdda-pll-supply: true
->  
->    "#clock-cells":
-> -    const: 0
-> +    oneOf:
-> +      - description: Set to 0 for legacy platforms without clock provider
-> +        const: 0
-> +      - description: Set to 1 to expose PHY pipe clock.
-> +        const: 1
->  
->    clock-output-names:
->      maxItems: 1
->  
->    "#phy-cells":
-> -    const: 0
-> +    oneOf:
-> +      - description: Set to 0 for legacy platforms
-> +        const: 0
-> +      - description: Set to 1 to supports mode selection (e.g. USB/DP)
-> +        const: 1
+> Please take another look, we even have renamed qcs615.dtsi to sm6150.dtsi
 
-I don't understand why EXISTING platforms now get more clocks. What did
-you change in the hardware? This you must explain in the commit msg.
+I checked on recent next, although not latest next-20250716. Commit msg
+should explain that. Any qcs615 feel then inappropriate here.
 
+Subject says clearly "on QCS615". Patch does something completely else!
+
+For gods sake how anyone can understand this?
 
 Best regards,
 Krzysztof
