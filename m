@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E0FEC83F27
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 13:34:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0AA8C83F1A
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 13:52:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KivMosHyYRbvziWn4q8kqLDdBDzEKssfnL4lT4uaHss=; b=Qz31Ew4puMpBLd
-	GnSmh9qKsLMOvbwgH4dRuv42FgECnWl4mcn/BM7dlv52/xDYdbNg5+3gNwcFNS6jiQUvI7aA8n9Ve
-	qSuBnBocmOX1q+HFfiiNK1ZyFjXdJhpcD3cuqzdVBrbPYXmCOPfZMqdgSN47EjYkz9G9cgbL7rkHQ
-	HEoIsde794qFV97lirDpmAPVWQQVyhxwAT0yBpn6NyIIBzAVyxnI41y7V98ySO7MI5evu14yovgZj
-	zuTSNYJ8i1Fwlmmu2AQdCeOAGZs441+Jx6CVBnVG/URMZ3E0WWV6kHhL7yJUFbc//TLGfyQZZkRaF
-	+ppnqMI+TcYJrXvQRoLg==;
+	List-Owner; bh=mLzGOypWBx31gGF+vVtVD42ZkEyxWXQEIA8J7knQfuE=; b=0tsv5tYAiavQqh
+	ps8otUF6AVBXr50ZKg+//y+JBEamvKDKGah3YKLIGo6yD7HCCbcv6xSC4oImuxt38Vr51DX/AxtVS
+	FCBwZPB0lv87wPwloCsQrXbTmij3FKIU6L4eKvgpS3AAwVrxehYqY7hGlqmJ9YKqxc+Y06/2mx14N
+	jUs8SglfjrwDZj+6rATcWvkEtJQsEyPw0sgdEFAv5HIZK2scge1j2SycY5xnlSEgtO0tUp/g1NN/q
+	KSJVviB8E4krq/yqXpqeiILGaGnpj55LkwanpmHPZCTmr1zdrzHqb3tk84z+/SeZST2BDaWmEkHok
+	aMKjnBi9WDx+qoMFRSAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueD8O-00000002YvN-01n8;
-	Tue, 22 Jul 2025 13:34:20 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1ueDPh-00000002bPs-2LyT;
+	Tue, 22 Jul 2025 13:52:13 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueCCh-00000002RfM-3Fub;
-	Tue, 22 Jul 2025 12:34:44 +0000
+	id 1ueCQC-00000002TkU-28C2
+	for linux-phy@lists.infradead.org;
+	Tue, 22 Jul 2025 12:48:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id ABB4044102;
-	Tue, 22 Jul 2025 12:34:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BFB6C4CEEB;
-	Tue, 22 Jul 2025 12:34:41 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C73AD601FB;
+	Tue, 22 Jul 2025 12:48:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0BA3C4CEEB;
+	Tue, 22 Jul 2025 12:48:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753187682;
-	bh=a70tJ26fYKY4q6tpubfdXTZO+/PdkIHK1Zjw5PmgqU4=;
+	s=k20201202; t=1753188518;
+	bh=Ywpj9KtSP+ovMY56xhAFq1DkwH1i/O2u+uNgff666K0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=U4Cb+XCJQVrf0JzVqRTC+Il6MWtUoddr+J9pbIYV84xcAARh7s2FHk4aoD4v8046T
-	 aPleOJ5NiCD6+8Qq7FxcomIZ+a1WMoVocD2ItQpkel+Rh5z4IpRr/loKzYI5YZWobO
-	 SI67AXvozJMV0D0X6JXCG52VUnWatgtWYF5o7KCraK8wyoexgdehalIvbFKRXo5MOe
-	 0jIUF4G1RpXas3Lau8UqDCuD3Aiu0nyqfE01GrsjWkIsSvGMEWkpbQLcrjPUPKvU66
-	 h/sL96eTLpKwHC5D9h84CGm5A6hC6wOjfgzAdCAM9AsfRdSn1v2ymnmESTiLWEgIZG
-	 jh9r23oCUvCAg==
-Date: Tue, 22 Jul 2025 18:04:38 +0530
+	b=SDEg+MM6VDeLUdKeW5uBLBWR3OtMYDKzWlV9uvXMvgYTLpA0NAAwGHD+kDPZE+6eJ
+	 nDH04FbpKs6PRBNHnlJYvJ9N9bXO/GJ4esbXgXaN2fB25rxNblCuQgPau4cinVAjxS
+	 aPmjAj7z71rtPlQSRp2UUpXzeFF1ZeiJb2vjlIBM5GfiXhR+xCW9ZtLY+VTkmw/XxQ
+	 b0gczj+ZscvHmmRv8FnixTLCEobQKZm/aR3Okeg9jzu85jfXQ2f0Q7grKTAP4KnXiI
+	 pf8qOr0vIT9haHAil3ZbV3VYFYsDKMPUkgTIaflPVUTagbCo4bqAe0d0itbZYa3bUg
+	 yZjVx51MzoW0w==
+Date: Tue, 22 Jul 2025 18:18:34 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Damien Le Moal <dlemoal@kernel.org>
-Cc: Rick Wertenbroek <rick.wertenbroek@gmail.com>,
-	rick.wertenbroek@heig-vd.ch, alberto.dassatti@heig-vd.ch,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip-snps-pcie3: add support for
- rockchip,phy-ref-use-pad
-Message-ID: <aH-FXrb-qvF3ffv1@vaman>
-References: <20250715105820.4037272-1-rick.wertenbroek@gmail.com>
- <5a7f47a7-c81e-4f70-9391-0dd1e3aa9f65@kernel.org>
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	bhelgaas@google.com, johan+linaro@kernel.org, kishon@kernel.org,
+	neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+	quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v8 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings for qcs8300
+Message-ID: <aH-Ioi5WO6gA_7WY@vaman>
+References: <20250714081529.3847385-1-ziyue.zhang@oss.qualcomm.com>
+ <20250714081529.3847385-2-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5a7f47a7-c81e-4f70-9391-0dd1e3aa9f65@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_053443_830756_2BF6432A 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250714081529.3847385-2-ziyue.zhang@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,26 +78,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-07-25, 08:18, Damien Le Moal wrote:
-> On 7/15/25 19:58, Rick Wertenbroek wrote:
-
-> > &pcie30phy {
-> >         rockchip,rx-common-refclk-mode = <0 0 1 1>;
-> >         rockchip,phy-ref-use-pad = <0 1>;
-> >         clocks = <&cru PCLK_PCIE_COMBO_PIPE_PHY>, <&cru CLK_PHY0_REF_ALT_P>,
-> >                          <&cru CLK_PHY0_REF_ALT_M>, <&cru CLK_PHY1_REF_ALT_P>,
-> >                          <&cru CLK_PHY1_REF_ALT_M>;
-> >         clock-names = "pclk", "phy0_ref_alt_p",
-> >                               "phy0_ref_alt_m", "phy1_ref_alt_p",
-> >                               "phy1_ref_alt_m";
-> > };
-> > ---
-> > 
+On 14-07-25, 16:15, Ziyue Zhang wrote:
+> The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
+> specified in the device tree node. Hence, move the qcs8300 phy
+> compatibility entry into the list of PHYs that require six clocks.
 > 
-> This looks OK to me, but don't you need to also update the dt-bindings yaml to
-> document this new "phy-ref-use-pad" property ?
+> Fixes: e46e59b77a9e ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2")
+> Fixes: Fixes: fd2d4e4c1986 ("dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY")
 
-Absolutely, without update to binding this is a no-go
+Pls fix the two 'Fixes'
+
+Please run checkpatch, that would catch these
+
+Also this needs rebase on phy/next
+
+> 
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+> Acked-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index 2c6c9296e4c0..1d4815056bc2 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -176,6 +176,7 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,qcs615-qmp-gen3x1-pcie-phy
+> +              - qcom,qcs8300-qmp-gen4x2-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> @@ -196,7 +197,6 @@ allOf:
+>          compatible:
+>            contains:
+>              enum:
+> -              - qcom,qcs8300-qmp-gen4x2-pcie-phy
+>                - qcom,sa8775p-qmp-gen4x2-pcie-phy
+>                - qcom,sa8775p-qmp-gen4x4-pcie-phy
+>      then:
+> -- 
+> 2.34.1
 
 -- 
 ~Vinod
