@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7191CC83F25
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 10:35:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31EA8C87FC8
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 10:35:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lFvDT2Ia+ZYe1mu50W5UHG+Zjy9zuZmS7vxsdocLcAM=; b=Ggt59D4xcIpnwp
-	aSGKQrpNbIK4lr6S3ZhzXritwd8cc4YKAmjMfRPSqHxNrDsUmMmmNZJgsiFS5EP+JztCBa18YxXb3
-	MdwbuSq2mReZFFu6ecee9jbtjBW5+s8hOm5sNaV8MBXM2jAuTLq932mEKt/Ml60fWFdp3fcEfJMtx
-	Bf9doYehUL+lliwl1MDDDEuw6ZDgjBhx/u+v9cq+MwQ9BVVDGb6FN0ikIfw+2h06uor4cLflsziju
-	8sfwqqXpcD7If4N5YfmfKjZGHsd++UpYkIpQxzKaf1EwubQCrqghBz8P7/jX9eO7Nx9o85zJnNYYW
-	f/kxEAkhaHVN7Mumj6aQ==;
+	List-Owner; bh=DIYNlLjnqJ2QWxPecrq55pAYM8DuRk8nquKosB6/p4E=; b=c8RFaJ/ZGhliC4
+	35GYJgdCivHymf/6wrLyN6n6pBXyu0bqwPg3TOiF9BkDHpVlOs/HR8yoeSQpn7lzJwuxPMGszzPaA
+	SrLngez4H3FP9v/GNpebsYck8QAGticX22QRW830lQBkogiBQxxPpPgcApu8bIFMFC5OnITS0If1r
+	PJwUE33oKoHT5YvGI58zTGSEWnd5o7Jb5bgnDR08ljQphCqV1w0C7RnB4dZOMtlX6oLQ1hokSUPjk
+	yHnxqJ5hRAnlKRkOnCjHINXBfbiB9N1JMgAbb33ExIN6jNtiRAA2LJYgmbK+Qrv5CV5fuwCW6hYMc
+	WMDJEYhjhhoiFAeMqehQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueAL2-00000002AXN-0T9D;
+	id 1ueAL2-00000002AYJ-41aW;
 	Tue, 22 Jul 2025 10:35:12 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9zz-000000027zS-0fNK
+	id 1ueA02-0000000280d-0yS7
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 10:13:29 +0000
+	Tue, 22 Jul 2025 10:13:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753179205;
-	bh=AXJhbda1yCJyeDidWix2YMh9O5FyfrGCeMY4fxZW2go=;
+	s=mail; t=1753179208;
+	bh=/eR2Io6v2x+YB4KtlVbbokRE6ovQWr+oH9Pw2JAtBXo=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Msqk8/yOWmrtdokJAtdoiCxSvigT4NRj0ZDbOHqr/O2fd1rdzlB6MUkUArPzR5ELs
-	 2THO+/Jp0TFoXxTbnsD7AJAqtyaVXg3e9/lNy+2rDMxfpdh/YuwfgdRaKJE5CnOH9q
-	 0qYdPKNYJSwQsjpHD1qeDs1zwbp22HunevRTV57XP8Ymg6vQaEFRLK3oZKWy+K/P9U
-	 7E/4RjdcQOEPZOineUOS77lHCWrX7w7V1sjj0sEF2H15DykgoxKpGSTLkl7nJ9Dva3
-	 ZpUbtsGMncZZCJMKXlNVACmZoGNiNia62FsVAvz3zdA3f0JCALitsMGMM3h00RffMb
-	 FNnTJT2SXDkhQ==
+	b=AvBFN/1QalYDMhIHX3mjbH/q7cRxh1IC1iHFTDpF6grzYXSf6SIeNNiAkOXKtwT+f
+	 W3dvN3n6HaN/3ZeIDhcueLKfcsOCHgrCCvVnbneCjsDk1eK1/A59ZqXUHCts5daqcL
+	 +GSoOiiq3NoNkqJfoml/thd4ryoxxaxxOSvUVufD7fx7CiGRStEwW8fnAauQHQ15LG
+	 iQ148EYep0O1SMDyWt1x8I4AvC2ZYp+vOhq0rgcA2Yp67hB6S9XSJwGult6zqJvrmd
+	 tvMDLGzAjCWWZt889Rs001LP1QhWeoE9VamTi+k0mdUHeAVduRdTbq1Y9gBEBMl56o
+	 1FlB3bG99P+Vw==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4C9D417E1324;
-	Tue, 22 Jul 2025 12:13:24 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DDD6317E1563;
+	Tue, 22 Jul 2025 12:13:27 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: sboyd@kernel.org
 Cc: jic23@kernel.org,
@@ -67,16 +67,16 @@ Cc: jic23@kernel.org,
 	kernel@collabora.com,
 	wenst@chromium.org,
 	casey.connolly@linaro.org
-Subject: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
-Date: Tue, 22 Jul 2025 12:13:11 +0200
-Message-ID: <20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v2 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Tue, 22 Jul 2025 12:13:14 +0200
+Message-ID: <20250722101317.76729-5-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
 References: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_031327_342126_002262F0 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20250722_031330_419487_6267B6A6 
+X-CRM114-Status: GOOD (  17.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,211 +93,170 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some devices connected over the SPMI bus may be big, in the sense
-that those may be a complex of devices managed by a single chip
-over the SPMI bus, reachable through a single SID.
+Some Qualcomm PMICs integrate an USB Repeater device, used to
+convert between eUSB2 and USB 2.0 signaling levels, reachable
+in a specific address range over SPMI.
 
-Add new functions aimed at managing sub-devices of a SPMI device
-spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
-for adding a new subdevice and removing it respectively, and also
-add their devm_* variants.
+Instead of using the parent SPMI device (the main PMIC) as a kind
+of syscon in this driver, register a new SPMI sub-device for EUSB2
+and initialize its own regmap with this sub-device's specific base
+address, retrieved from the devicetree.
 
-The need for such functions comes from the existance of	those
-complex Power Management ICs (PMICs), which feature one or many
-sub-devices, in some cases with these being even addressable on
-the chip in form of SPMI register ranges.
-
-Examples of those devices can be found in both Qualcomm platforms
-with their PMICs having PON, RTC, SDAM, GPIO controller, and other
-sub-devices, and in newer MediaTek platforms showing similar HW
-features and a similar layout with those also having many subdevs.
-
-Also, instead of generally exporting symbols, export them with a
-new "SPMI" namespace: all users will have to import this namespace
-to make use of the newly introduced exports.
+This allows to stop manually adding the register base address to
+every R/W call in this driver, as this can be, and is now, handled
+by the regmap API instead.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/spmi/spmi-devres.c | 23 +++++++++++
- drivers/spmi/spmi.c        | 83 ++++++++++++++++++++++++++++++++++++++
- include/linux/spmi.h       | 16 ++++++++
- 3 files changed, 122 insertions(+)
+ .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 51 ++++++++++++-------
+ 1 file changed, 33 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/spmi/spmi-devres.c b/drivers/spmi/spmi-devres.c
-index 62c4b3f24d06..7e00e38be2ff 100644
---- a/drivers/spmi/spmi-devres.c
-+++ b/drivers/spmi/spmi-devres.c
-@@ -60,5 +60,28 @@ int devm_spmi_controller_add(struct device *parent, struct spmi_controller *ctrl
- }
- EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
+diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+index e0f2acc8109c..50eeebfb51a9 100644
+--- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
++++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+@@ -9,6 +9,7 @@
+ #include <linux/regmap.h>
+ #include <linux/of.h>
+ #include <linux/phy/phy.h>
++#include <linux/spmi.h>
  
-+static void devm_spmi_subdevice_remove(void *res)
-+{
-+	spmi_subdevice_remove((struct spmi_subdevice *)res);
-+}
-+
-+struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *dev,
-+							 struct spmi_device *sparent)
-+{
-+	struct spmi_subdevice *sub_sdev;
-+	int ret;
-+
-+	sub_sdev = spmi_subdevice_alloc_and_add(sparent);
-+	if (IS_ERR(sub_sdev))
-+		return sub_sdev;
-+
-+	ret = devm_add_action_or_reset(dev, devm_spmi_subdevice_remove, sub_sdev);
-+	if (ret)
-+		return ERR_PTR(ret);
-+
-+	return sub_sdev;
-+}
-+EXPORT_SYMBOL_NS_GPL(devm_spmi_subdevice_alloc_and_add, "SPMI");
-+
- MODULE_LICENSE("GPL");
- MODULE_DESCRIPTION("SPMI devres helpers");
-diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
-index 3cf8d9bd4566..62bb782b2bbc 100644
---- a/drivers/spmi/spmi.c
-+++ b/drivers/spmi/spmi.c
-@@ -19,6 +19,7 @@
- 
- static bool is_registered;
- static DEFINE_IDA(ctrl_ida);
-+static DEFINE_IDA(spmi_subdevice_ida);
- 
- static void spmi_dev_release(struct device *dev)
- {
-@@ -31,6 +32,18 @@ static const struct device_type spmi_dev_type = {
- 	.release	= spmi_dev_release,
+ /* eUSB2 status registers */
+ #define EUSB2_RPTR_STATUS		0x08
+@@ -55,7 +56,6 @@ struct eusb2_repeater {
+ 	struct phy *phy;
+ 	struct regulator_bulk_data *vregs;
+ 	const struct eusb2_repeater_cfg *cfg;
+-	u32 base;
+ 	enum phy_mode mode;
  };
  
-+static void spmi_subdev_release(struct device *dev)
-+{
-+	struct spmi_device *sdev = to_spmi_device(dev);
-+	struct spmi_subdevice *sub_sdev = container_of(sdev, struct spmi_subdevice, sdev);
-+
-+	kfree(sub_sdev);
-+}
-+
-+static const struct device_type spmi_subdev_type = {
-+	.release	= spmi_subdev_release,
-+};
-+
- static void spmi_ctrl_release(struct device *dev)
- {
- 	struct spmi_controller *ctrl = to_spmi_controller(dev);
-@@ -90,6 +103,19 @@ void spmi_device_remove(struct spmi_device *sdev)
- }
- EXPORT_SYMBOL_GPL(spmi_device_remove);
+@@ -110,7 +110,6 @@ static int eusb2_repeater_init(struct phy *phy)
+ 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
+ 	struct device_node *np = rptr->dev->of_node;
+ 	struct regmap *regmap = rptr->regmap;
+-	u32 base = rptr->base;
+ 	u32 poll_val;
+ 	int ret;
+ 	u8 val;
+@@ -119,25 +118,25 @@ static int eusb2_repeater_init(struct phy *phy)
+ 	if (ret)
+ 		return ret;
  
-+/**
-+ * spmi_subdevice_remove() - Remove an SPMI subdevice
-+ * @sub_sdev:	spmi_device to be removed
-+ */
-+void spmi_subdevice_remove(struct spmi_subdevice *sub_sdev)
-+{
-+	struct spmi_device *sdev = &sub_sdev->sdev;
-+
-+	device_unregister(&sdev->dev);
-+	ida_free(&spmi_subdevice_ida, sub_sdev->devid);
-+}
-+EXPORT_SYMBOL_NS_GPL(spmi_subdevice_remove, "SPMI");
-+
- static inline int
- spmi_cmd(struct spmi_controller *ctrl, u8 opcode, u8 sid)
- {
-@@ -431,6 +457,63 @@ struct spmi_device *spmi_device_alloc(struct spmi_controller *ctrl)
- }
- EXPORT_SYMBOL_GPL(spmi_device_alloc);
+-	regmap_write(regmap, base + EUSB2_EN_CTL1, EUSB2_RPTR_EN);
++	regmap_write(regmap, EUSB2_EN_CTL1, EUSB2_RPTR_EN);
  
-+/**
-+ * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
-+ * @sparent:	SPMI parent device with previously registered SPMI controller
-+ *
-+ * Returns:
-+ * Pointer to newly allocated SPMI sub-device for success or negative ERR_PTR.
-+ */
-+struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
-+{
+ 	/* Write registers from init table */
+ 	for (int i = 0; i < rptr->cfg->init_tbl_num; i++)
+-		regmap_write(regmap, base + rptr->cfg->init_tbl[i].reg,
++		regmap_write(regmap, rptr->cfg->init_tbl[i].reg,
+ 			     rptr->cfg->init_tbl[i].value);
+ 
+ 	/* Override registers from devicetree values */
+ 	if (!of_property_read_u8(np, "qcom,tune-usb2-amplitude", &val))
+-		regmap_write(regmap, base + EUSB2_TUNE_USB2_PREEM, val);
++		regmap_write(regmap, EUSB2_TUNE_USB2_PREEM, val);
+ 
+ 	if (!of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &val))
+-		regmap_write(regmap, base + EUSB2_TUNE_HSDISC, val);
++		regmap_write(regmap, EUSB2_TUNE_HSDISC, val);
+ 
+ 	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &val))
+-		regmap_write(regmap, base + EUSB2_TUNE_IUSB2, val);
++		regmap_write(regmap, EUSB2_TUNE_IUSB2, val);
+ 
+ 	/* Wait for status OK */
+-	ret = regmap_read_poll_timeout(regmap, base + EUSB2_RPTR_STATUS, poll_val,
++	ret = regmap_read_poll_timeout(regmap, EUSB2_RPTR_STATUS, poll_val,
+ 				       poll_val & RPTR_OK, 10, 5);
+ 	if (ret)
+ 		dev_err(rptr->dev, "initialization timed-out\n");
+@@ -150,7 +149,6 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+ {
+ 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
+ 	struct regmap *regmap = rptr->regmap;
+-	u32 base = rptr->base;
+ 
+ 	switch (mode) {
+ 	case PHY_MODE_USB_HOST:
+@@ -159,8 +157,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+ 		 * per eUSB 1.2 Spec. Below implement software workaround until
+ 		 * PHY and controller is fixing seen observation.
+ 		 */
+-		regmap_write(regmap, base + EUSB2_FORCE_EN_5, F_CLK_19P2M_EN);
+-		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, V_CLK_19P2M_EN);
++		regmap_write(regmap, EUSB2_FORCE_EN_5, F_CLK_19P2M_EN);
++		regmap_write(regmap, EUSB2_FORCE_VAL_5, V_CLK_19P2M_EN);
+ 		break;
+ 	case PHY_MODE_USB_DEVICE:
+ 		/*
+@@ -169,8 +167,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
+ 		 * repeater doesn't clear previous value due to shared
+ 		 * regulators (say host <-> device mode switch).
+ 		 */
+-		regmap_write(regmap, base + EUSB2_FORCE_EN_5, 0);
+-		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, 0);
++		regmap_write(regmap, EUSB2_FORCE_EN_5, 0);
++		regmap_write(regmap, EUSB2_FORCE_VAL_5, 0);
+ 		break;
+ 	default:
+ 		return -EINVAL;
+@@ -195,13 +193,23 @@ static const struct phy_ops eusb2_repeater_ops = {
+ 
+ static int eusb2_repeater_probe(struct platform_device *pdev)
+ {
++	struct regmap_config eusb2_regmap_config = {
++		.reg_bits = 16,
++		.val_bits = 8,
++		.max_register = 0x100,
++		.fast_io = true,
++	};
++	struct spmi_device *sparent;
+ 	struct eusb2_repeater *rptr;
 +	struct spmi_subdevice *sub_sdev;
-+	struct spmi_device *sdev;
-+	int ret;
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
+ 	struct device_node *np = dev->of_node;
+-	u32 res;
+ 	int ret;
+ 
++	if (!dev->parent)
++		return -ENODEV;
 +
+ 	rptr = devm_kzalloc(dev, sizeof(*rptr), GFP_KERNEL);
+ 	if (!rptr)
+ 		return -ENOMEM;
+@@ -213,15 +221,21 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
+ 	if (!rptr->cfg)
+ 		return -EINVAL;
+ 
+-	rptr->regmap = dev_get_regmap(dev->parent, NULL);
+-	if (!rptr->regmap)
++	sparent = to_spmi_device(dev->parent);
 +	if (!sparent)
-+		return ERR_PTR(-EINVAL);
-+
-+	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
-+	if (!sub_sdev)
-+		return ERR_PTR(-ENOMEM);
-+
-+	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-+	if (ret < 0)
-+		goto err_ida_alloc;
-+
-+	sdev = &sub_sdev->sdev;
-+	sdev->ctrl = sparent->ctrl;
-+	device_initialize(&sdev->dev);
-+	sdev->dev.parent = &sparent->dev;
-+	sdev->dev.bus = &spmi_bus_type;
-+	sdev->dev.type = &spmi_subdev_type;
-+
-+	sub_sdev->devid = ret;
-+	sdev->usid = sparent->usid;
-+
-+	ret = dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
-+			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
-+	if (ret)
-+		goto err_set_name;
-+
-+	ret = device_add(&sdev->dev);
-+	if (ret) {
-+		dev_err(&sdev->dev, "Can't add %s, status %d\n",
-+			dev_name(&sdev->dev), ret);
-+		put_device(&sdev->dev);
-+		return ERR_PTR(ret);
-+	}
-+
-+	return sub_sdev;
-+
-+err_set_name:
-+	ida_free(&ctrl_ida, sub_sdev->devid);
-+err_ida_alloc:
-+	kfree(sub_sdev);
-+	return ERR_PTR(ret);
-+}
-+EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
-+
- /**
-  * spmi_controller_alloc() - Allocate a new SPMI controller
-  * @parent:	parent device
-diff --git a/include/linux/spmi.h b/include/linux/spmi.h
-index 28e8c8bd3944..7cea0a5b034b 100644
---- a/include/linux/spmi.h
-+++ b/include/linux/spmi.h
-@@ -69,6 +69,22 @@ int spmi_device_add(struct spmi_device *sdev);
+ 		return -ENODEV;
  
- void spmi_device_remove(struct spmi_device *sdev);
+-	ret = of_property_read_u32(np, "reg", &res);
++	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
++	if (IS_ERR(sub_sdev))
++		return PTR_ERR(sub_sdev);
++
++	ret = of_property_read_u32(np, "reg", &eusb2_regmap_config.reg_base);
+ 	if (ret < 0)
+ 		return ret;
  
-+/**
-+ * struct spmi_subdevice - Basic representation of an SPMI sub-device
-+ * @sdev:	Sub-device representation of an SPMI device
-+ * @devid:	Platform Device ID of an SPMI sub-device
-+ */
-+struct spmi_subdevice {
-+	struct spmi_device	sdev;
-+	unsigned int		devid;
-+};
-+
-+struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent);
-+void spmi_subdevice_remove(struct spmi_subdevice *sdev);
-+
-+struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *dev,
-+							 struct spmi_device *sparent);
-+
- /**
-  * struct spmi_controller - interface to the SPMI master controller
-  * @dev:	Driver model representation of the device.
+-	rptr->base = res;
++	rptr->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &eusb2_regmap_config);
++	if (IS_ERR(rptr->regmap))
++		return -ENODEV;
+ 
+ 	ret = eusb2_repeater_init_vregs(rptr);
+ 	if (ret < 0) {
+@@ -280,3 +294,4 @@ module_platform_driver(eusb2_repeater_driver);
+ 
+ MODULE_DESCRIPTION("Qualcomm PMIC eUSB2 Repeater driver");
+ MODULE_LICENSE("GPL");
++MODULE_IMPORT_NS("SPMI");
 -- 
 2.50.1
 
