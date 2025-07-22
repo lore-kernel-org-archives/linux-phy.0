@@ -4,51 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 228FAC87FC5
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:39:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB2C0C83F34
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:39:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nJEwVX+BbclF2nk1sW9VadCLs3SgZekk1TLf5zBzd48=; b=RQ/ZHlQP5VAInb
-	6Ux+kqD3CQCGKN8u544zliXa7Nt7hZjNKLSzSN/vbU2Gcgj0lcJLj4Q4A41RFZh3Rt/FhVaDTJCez
-	rqGJQNDOe2i44y4Tu8xmXur9FcZg4T4Fv/YdIq6TP3o43u/c4nYpAzlQZJ2b5iKsjCq2noyVjpoqQ
-	VNKQFMnkAQVpmLWQ1unwlPKAFDzZYS6YVgDTWovcF3mh5aIoEo1XZnMQKXQreMGsgc6nKaONEyclH
-	JmnMTv1Ki0wSij/VOaRz/P3oe5l8B038uRvI2/A2y4dKKWUGI5Syt+9rw1IUhgBQps0d61WOwVcAU
-	gbvJpyA9QFBwED82YHhA==;
+	List-Owner; bh=VC7vJ8pa/x3wr2BLxNRfk2fVZUL422HHU97iC81ZG7k=; b=laVBGoa/3+gW8v
+	k06SbK8IKa0cY2s6MDyon/R+ULWCScPBY2g10ZXP28ZKBy53mphBQN/1J3y8ZRWvVZBCFKeszp7cs
+	4mUSMoQbi6xevyIWNAPZq22sPxkhSV7IA5Zb73dt1VKnMB2eBfCgFnhOWQtd+wzxawYvSOc80T530
+	Jej+hyor8xhhXi3rzqwfkhllRRpi5RPWR8ojZct/s2W3Nsx/EXyJUaWnwiPE+DglOf9y4KMoxoPRX
+	O0dR1y1A/qyKCkv6Sm/+sD1CHx120CNWsykPZ3XT2Q+OCeccf3+67u/YPTUPdDWge0t+4Eu+wThF0
+	/m7xXtabuDhhD+V+xAVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9TN-000000022BP-3dPu;
+	id 1ue9TN-000000022B7-2PMs;
 	Tue, 22 Jul 2025 09:39:45 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9DO-000000020Hx-3MNy
+	id 1ue9C1-00000001zRC-1BQz
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 09:23:14 +0000
+	Tue, 22 Jul 2025 09:21:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id EEE3C61135;
-	Tue, 22 Jul 2025 09:23:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 836E3C4CEEB;
-	Tue, 22 Jul 2025 09:23:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5EB535C3E57;
+	Tue, 22 Jul 2025 09:21:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC046C4CEEB;
+	Tue, 22 Jul 2025 09:21:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753176193;
-	bh=iYT38q0vkIlt677rfAYxqq2CIp6/tDmkB90sG8ZjiEg=;
+	s=k20201202; t=1753176108;
+	bh=03h99rwdlaftyLCQRNswUUAcFdErDW9dGKOcWE+JySo=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fG6YjahE5uoLdVNFku95vCJ0a0w4aUb1MNaf0i3k4IILzQIOxneUF7CiCk9cMNk8J
-	 hVbAjlkwQtXGKWGte08hqP8gHK3bxPA2hTsN3y4ogEQr0rwWYUfGTexv9FlacNI0lA
-	 Ti62dH2SIsDGg1MVS2bwJzOQRjtrXAeU9UuNhokrZKusXFj+SkupGiYlumvegg1Rvy
-	 2BshPnAIPHJYhBkmeIc7nHSYGQbl5aVF4iLsRMlgVPVewXgWkzdWWIHXeElNzCIyVs
-	 Rk90bpJ4sm7zIKNFnReSiO5HD7DVeY/MOq/twalrl8aPGVPZiTvXoeX8wY91f7wDxu
-	 V03OIqOcnMMTg==
-Message-ID: <b810f0d9-b1e8-4182-9551-601b248d572d@kernel.org>
-Date: Tue, 22 Jul 2025 11:23:05 +0200
+	b=cWn0jZkUFZOluvKv6bmbyATKVWy1bkg+lnaGFGhNjCvP7/rYMSavgYwuJrgYP54lr
+	 gJgttUHbssF+a8ZyVhH7i6BcqJIPGltXcAL1ylzxzG8AqEVTk9MYgWelPCYj4nFiv4
+	 IpfLpo0Pg+lph878RN6vKNnwxue/S0Kbd69fXilhr60tG4MW3Y9IBY7y2siD/yWFvl
+	 T4aUobIZgT1RPIP/6MgfJQRzSOwD4JSzx6ox25pVf5DEy9cvJ5CcfZuzaMy5zf4iyF
+	 qyncpPdW259n2TQMntkRLq82EFyimrCcKa7WMY0UTyGsMtaNJrFXKHufUjtS/FrKek
+	 P8r9HEqg7kWYA==
+Message-ID: <bca68e7a-cb36-4903-bde9-15cb1945c71e@kernel.org>
+Date: Tue, 22 Jul 2025 11:21:39 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 01/13] dt-bindings: display/msm: Document DP on QCS615
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
+Subject: Re: [PATCH v2 12/13] drm/msm/dp: Add DisplayPort support for QCS615
+To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
  Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
  <lumag@kernel.org>, Abhinav Kumar <abhinav.kumar@linux.dev>,
  Jessica Zhang <jessica.zhang@oss.qualcomm.com>, Sean Paul <sean@poorly.run>,
@@ -62,12 +61,11 @@ To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
 Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- konrad.dybcio@oss.qualcomm.com, fange.zhang@oss.qualcomm.com,
- quic_lliu6@quicinc.com, quic_yongmou@quicinc.com
+ dmitry.baryshkov@oss.qualcomm.com, konrad.dybcio@oss.qualcomm.com,
+ fange.zhang@oss.qualcomm.com, quic_lliu6@quicinc.com,
+ quic_yongmou@quicinc.com
 References: <20250722-add-displayport-support-for-qcs615-platform-v2-0-42b4037171f8@oss.qualcomm.com>
- <20250722-add-displayport-support-for-qcs615-platform-v2-1-42b4037171f8@oss.qualcomm.com>
- <e15df8ba-f058-4eb2-919c-bc327290e66a@kernel.org>
- <5ec480ac-ee60-473d-83e6-c2f25d3d30d8@oss.qualcomm.com>
+ <20250722-add-displayport-support-for-qcs615-platform-v2-12-42b4037171f8@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -113,7 +111,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <5ec480ac-ee60-473d-83e6-c2f25d3d30d8@oss.qualcomm.com>
+In-Reply-To: <20250722-add-displayport-support-for-qcs615-platform-v2-12-42b4037171f8@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250722_022149_408482_FACF66F1 
+X-CRM114-Status: GOOD (  13.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,26 +131,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/07/2025 11:16, Dmitry Baryshkov wrote:
-> On 22/07/2025 12:13, Krzysztof Kozlowski wrote:
->> On 22/07/2025 09:22, Xiangxu Yin wrote:
->>> The QCS615 platform is based on the SM6150 SoC. Since the DP hardware is
->>> shared with SM6150, the compatible string qcom,sm6150-dp is used to
->>> represent the DP controller on QCS615.
->>
->>
->> No, you cannot use other SoC compatible for different one. Look at
->> qcs615.dtsi and board DTS - there is nothing saying that this is the
->> same die.
+On 22/07/2025 09:22, Xiangxu Yin wrote:
+> The Qualcomm QCS615 platform comes with a DisplayPort controller use the
+> same base offset as sc7180. add support for this in DP driver.
 > 
-> Please take another look, we even have renamed qcs615.dtsi to sm6150.dtsi
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+> ---
+>  drivers/gpu/drm/msm/dp/dp_display.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+> index d87d47cc7ec3eb757ac192c411000bc50b824c59..ddb22b50490035779904d4cab20e2fee7e0f9657 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_display.c
+> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
+> @@ -196,6 +196,7 @@ static const struct of_device_id msm_dp_dt_match[] = {
+>  	{ .compatible = "qcom,sc8280xp-dp", .data = &msm_dp_desc_sc8280xp },
+>  	{ .compatible = "qcom,sc8280xp-edp", .data = &msm_dp_desc_sc8280xp },
+>  	{ .compatible = "qcom,sdm845-dp", .data = &msm_dp_desc_sdm845 },
+> +	{ .compatible = "qcom,sm6150-dp", .data = &msm_dp_desc_sc7180 },
 
-I checked on recent next, although not latest next-20250716. Commit msg
-should explain that. Any qcs615 feel then inappropriate here.
 
-Subject says clearly "on QCS615". Patch does something completely else!
-
-For gods sake how anyone can understand this?
+So devices are compatible? Why are you adding this entry instead of
+expressing compatibility?
 
 Best regards,
 Krzysztof
