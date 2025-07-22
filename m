@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A312AC83F34
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 10:35:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9A8BC87FCC
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 10:35:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BoNyapDjIpqVrv9BZ12KWV23mI41G2ctYe7LjW9YlYc=; b=e50sNA2QOcA9aI
-	aRbKpDg8YohNiPu+alFrk4Hdq9JmPRngkZPoT+cZK+e/o65dD1aCcR4ljdlB5v02u/9Zf6waklBMZ
-	DlETEdg/+T8YPfzdvpA9eY/KUuAIGRJwHGlynwURQUzXS0PXKnOu0s8/EPEqwr24RZYCZdTz8lOFo
-	4TUWnuMpMSmMXyzKfu3q2Tb/sGlUUHlbffjGGatvpcUJEaIdnEnfkWCII7axtu+V3QZUnF71P7zeK
-	8YdN2RRqWo0SzHKvYIg5hTZ4Ey3erJc2yhGHj/C8rNA/q8g+DXv0nbN9uD71YoZ2RVBVilMUzxRKV
-	zT1tqpNdti50k2kaEAWw==;
+	List-Owner; bh=gMN6Bfv8ioGM8NJopII17IkZh7zB7Bagb6nw0PuX/Fg=; b=HbLMar6GvXQEIN
+	WoeJewUBPHuLk4TGE9Exaz58H2ZSlb5DYWjGLsPYq/ppPw75Lmw7y80cLTjVXk/RjxGCl/sMB8EZl
+	qx8JXHoCkh5VbKOFTcBRcLpPDaI4A9h/O9daMged6V0vTXmEo928qurbLx4UXS83eYBEvpewsUtmd
+	+nuDyN3NwttkL1niDDTDlww0p41V/W/ZB5auz0XR9+8RgHiuY+SykAR2OlyVUoLcMinLIWs1w1/0K
+	OmCUQtMG3T1xflRQrjsDpypMsorsVgy1otAFZWDll9oOvt74E1O8H+oyRaCDQgyLWZJCWCu88ojr2
+	CFxFRu8+Hn4VHYxW5g7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueAL2-00000002AXd-1iXV;
-	Tue, 22 Jul 2025 10:35:12 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1ueAL3-00000002AZ0-2MSY;
+	Tue, 22 Jul 2025 10:35:13 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueA00-000000027zj-07Rk
+	id 1ueA04-0000000281P-2gDY
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 10:13:29 +0000
+	Tue, 22 Jul 2025 10:13:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753179206;
-	bh=QGb8GqGY598O2QWef1VDjXTOMWEPkYHiRuUezCy9h5k=;
+	s=mail; t=1753179211;
+	bh=Zl45Sp752j3kbveJVbJG3Co5ddYS+kiIWQF02duR3WI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=UFbeOouQnucHrw1CANpZZv7A4mv+lOoL2NpGn8PKSrp32NFdu+EycTmNdpQvLwS3r
-	 NaC8LhGPCEo0Sr9Ngxf+Dr1A0RVq5BGu3UOjyAd6+Mhi4KSWAby86VV7c/aOwlPhgg
-	 mJ7Hkk10MyjCoerXQM5sbtfmzGLAoIgmCOYRY0T6l7rmTF/Y/t39/rVvXsPS970JcX
-	 nY6eO2tzMPYXlpxZaR6SE6Zn/FmdXR9q2Sky8FItpCZsKVowSZKQF3/IRagFA9ZpyM
-	 DT/xEwIeag1XbjmJ5lyDObZzo7vsvUww8UP+XOGwtqqgZirk5DK/b/+VZuqmVXtsyo
-	 0cip+Ktb9r26Q==
+	b=l5XUIhfHx3NdMAj6Fi8IsEI8jETgNOrdAh2PUnnW66E505F4+5V9CMcwSxuyyoc9J
+	 e1w2EVnhHxn6BMe6IKw+gqZ2cutClSNXFIDvSE/h5Q4y6+NnEOiLSflbZVo0vqjSXf
+	 Dqh80YZAfJUViNqoR8jx7LyIy8S22QZJfNUymIixzenDuK+6M+AYFeUb++uWCdB5oK
+	 JgapbVeQy6PzffrPM5P5yjEf+ff5mtvTpsFxYaRuoIBHNcgAetP4av5B+Z9tQF3UF+
+	 /pZp3XX/zShAzurQAxnyZut78bwcYZnx8JaEX2T4jfG6zTw/NLZZPX7zUQtybclE2g
+	 ANzk83Ls8P6EQ==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7E4E317E1540;
-	Tue, 22 Jul 2025 12:13:25 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4C84C17E1324;
+	Tue, 22 Jul 2025 12:13:30 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: sboyd@kernel.org
 Cc: jic23@kernel.org,
@@ -67,16 +67,16 @@ Cc: jic23@kernel.org,
 	kernel@collabora.com,
 	wenst@chromium.org,
 	casey.connolly@linaro.org
-Subject: [PATCH v2 2/7] nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Tue, 22 Jul 2025 12:13:12 +0200
-Message-ID: <20250722101317.76729-3-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v2 6/7] iio: adc: qcom-spmi-iadc: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Tue, 22 Jul 2025 12:13:16 +0200
+Message-ID: <20250722101317.76729-7-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
 References: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_031328_214008_102E395C 
-X-CRM114-Status: GOOD (  16.05  )
+X-CRM114-CacheID: sfid-20250722_031332_832527_FB40B3B4 
+X-CRM114-Status: GOOD (  17.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,12 +93,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrate a SDAM device, internally located in
-a specific address range reachable through SPMI communication.
+Some Qualcomm PMICs integrate an Current ADC device, reachable
+in a specific address range over SPMI.
 
 Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device for SDAM
-and initialize its own regmap with this sub-device's specific base
+of syscon in this driver, register a new SPMI sub-device and
+initialize its own regmap with this sub-device's specific base
 address, retrieved from the devicetree.
 
 This allows to stop manually adding the register base address to
@@ -107,116 +107,121 @@ by the regmap API instead.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/nvmem/qcom-spmi-sdam.c | 43 +++++++++++++++++++++++++---------
- 1 file changed, 32 insertions(+), 11 deletions(-)
+ drivers/iio/adc/qcom-spmi-iadc.c | 36 +++++++++++++++++++++++---------
+ 1 file changed, 26 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/nvmem/qcom-spmi-sdam.c b/drivers/nvmem/qcom-spmi-sdam.c
-index 4f1cca6eab71..b2c5734d8dc1 100644
---- a/drivers/nvmem/qcom-spmi-sdam.c
-+++ b/drivers/nvmem/qcom-spmi-sdam.c
-@@ -9,6 +9,7 @@
- #include <linux/nvmem-provider.h>
+diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
+index b64a8a407168..985967c85bca 100644
+--- a/drivers/iio/adc/qcom-spmi-iadc.c
++++ b/drivers/iio/adc/qcom-spmi-iadc.c
+@@ -16,6 +16,7 @@
  #include <linux/platform_device.h>
  #include <linux/regmap.h>
+ #include <linux/slab.h>
 +#include <linux/spmi.h>
  
- #define SDAM_MEM_START			0x40
- #define REGISTER_MAP_ID			0x40
-@@ -20,7 +21,6 @@
- struct sdam_chip {
- 	struct regmap			*regmap;
- 	struct nvmem_config		sdam_config;
--	unsigned int			base;
- 	unsigned int			size;
- };
+ /* IADC register and bit definition */
+ #define IADC_REVISION2				0x1
+@@ -94,7 +95,6 @@
+  * struct iadc_chip - IADC Current ADC device structure.
+  * @regmap: regmap for register read/write.
+  * @dev: This device pointer.
+- * @base: base offset for the ADC peripheral.
+  * @rsense: Values of the internal and external sense resister in micro Ohms.
+  * @poll_eoc: Poll for end of conversion instead of waiting for IRQ.
+  * @offset: Raw offset values for the internal and external channels.
+@@ -105,7 +105,6 @@
+ struct iadc_chip {
+ 	struct regmap	*regmap;
+ 	struct device	*dev;
+-	u16		base;
+ 	bool		poll_eoc;
+ 	u32		rsense[2];
+ 	u16		offset[2];
+@@ -119,7 +118,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
+ 	unsigned int val;
+ 	int ret;
  
-@@ -73,7 +73,7 @@ static int sdam_read(void *priv, unsigned int offset, void *val,
- 		return -EINVAL;
- 	}
+-	ret = regmap_read(iadc->regmap, iadc->base + offset, &val);
++	ret = regmap_read(iadc->regmap, offset, &val);
+ 	if (ret < 0)
+ 		return ret;
  
--	rc = regmap_bulk_read(sdam->regmap, sdam->base + offset, val, bytes);
-+	rc = regmap_bulk_read(sdam->regmap, offset, val, bytes);
- 	if (rc < 0)
- 		dev_err(dev, "Failed to read SDAM offset %#x len=%zd, rc=%d\n",
- 						offset, bytes, rc);
-@@ -100,7 +100,7 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
- 		return -EINVAL;
- 	}
+@@ -129,7 +128,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
  
--	rc = regmap_bulk_write(sdam->regmap, sdam->base + offset, val, bytes);
-+	rc = regmap_bulk_write(sdam->regmap, offset, val, bytes);
- 	if (rc < 0)
- 		dev_err(dev, "Failed to write SDAM offset %#x len=%zd, rc=%d\n",
- 						offset, bytes, rc);
-@@ -110,28 +110,48 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
- 
- static int sdam_probe(struct platform_device *pdev)
+ static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
  {
-+	struct regmap_config sdam_regmap_config = {
+-	return regmap_write(iadc->regmap, iadc->base + offset, data);
++	return regmap_write(iadc->regmap, offset, data);
+ }
+ 
+ static int iadc_reset(struct iadc_chip *iadc)
+@@ -270,7 +269,7 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
+ 
+ static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
+ {
+-	return regmap_bulk_read(iadc->regmap, iadc->base + IADC_DATA, data, 2);
++	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
+ }
+ 
+ static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
+@@ -483,12 +482,22 @@ static const struct iio_chan_spec iadc_channels[] = {
+ 
+ static int iadc_probe(struct platform_device *pdev)
+ {
++	struct regmap_config iadc_regmap_config = {
 +		.reg_bits = 16,
 +		.val_bits = 8,
 +		.max_register = 0x100,
 +		.fast_io = true,
 +	};
- 	struct sdam_chip *sdam;
- 	struct nvmem_device *nvmem;
-+	struct spmi_device *sparent;
+ 	struct device_node *node = pdev->dev.of_node;
+ 	struct device *dev = &pdev->dev;
 +	struct spmi_subdevice *sub_sdev;
-+	struct device *dev = &pdev->dev;
- 	unsigned int val;
- 	int rc;
- 
++	struct spmi_device *sparent;
+ 	struct iio_dev *indio_dev;
+ 	struct iadc_chip *iadc;
+ 	int ret, irq_eoc;
+-	u32 res;
++
 +	if (!dev->parent)
 +		return -ENODEV;
-+
- 	sdam = devm_kzalloc(&pdev->dev, sizeof(*sdam), GFP_KERNEL);
- 	if (!sdam)
- 		return -ENOMEM;
  
--	sdam->regmap = dev_get_regmap(pdev->dev.parent, NULL);
--	if (!sdam->regmap) {
--		dev_err(&pdev->dev, "Failed to get regmap handle\n");
--		return -ENXIO;
--	}
+ 	indio_dev = devm_iio_device_alloc(dev, sizeof(*iadc));
+ 	if (!indio_dev)
+@@ -497,18 +506,24 @@ static int iadc_probe(struct platform_device *pdev)
+ 	iadc = iio_priv(indio_dev);
+ 	iadc->dev = dev;
+ 
+-	iadc->regmap = dev_get_regmap(dev->parent, NULL);
+-	if (!iadc->regmap)
 +	sparent = to_spmi_device(dev->parent);
 +	if (!sparent)
-+		return -ENODEV;
+ 		return -ENODEV;
  
--	rc = of_property_read_u32(pdev->dev.of_node, "reg", &sdam->base);
 +	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
 +	if (IS_ERR(sub_sdev))
 +		return PTR_ERR(sub_sdev);
 +
-+	rc = of_property_read_u32(dev->of_node, "reg", &sdam_regmap_config.reg_base);
- 	if (rc < 0) {
- 		dev_err(&pdev->dev, "Failed to get SDAM base, rc=%d\n", rc);
- 		return -EINVAL;
- 	}
+ 	init_completion(&iadc->complete);
+ 	mutex_init(&iadc->lock);
  
--	rc = regmap_read(sdam->regmap, sdam->base + SDAM_SIZE, &val);
-+	sdam->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regmap_config);
-+	if (IS_ERR(sdam->regmap)) {
-+		dev_err(&pdev->dev, "Failed to get regmap handle\n");
-+		return PTR_ERR(sdam->regmap);
-+	}
-+
-+	rc = regmap_read(sdam->regmap, SDAM_SIZE, &val);
- 	if (rc < 0) {
- 		dev_err(&pdev->dev, "Failed to read SDAM_SIZE rc=%d\n", rc);
- 		return -EINVAL;
-@@ -159,7 +179,7 @@ static int sdam_probe(struct platform_device *pdev)
- 	}
- 	dev_dbg(&pdev->dev,
- 		"SDAM base=%#x size=%u registered successfully\n",
--		sdam->base, sdam->size);
-+		sdam_regmap_config.reg_base, sdam->size);
+-	ret = of_property_read_u32(node, "reg", &res);
++	ret = of_property_read_u32(node, "reg", &iadc_regmap_config.reg_base);
+ 	if (ret < 0)
+ 		return -ENODEV;
  
- 	return 0;
- }
-@@ -181,3 +201,4 @@ module_platform_driver(sdam_driver);
+-	iadc->base = res;
++	iadc->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &iadc_regmap_config);
++	if (IS_ERR(iadc->regmap))
++		return PTR_ERR(iadc->regmap);
  
- MODULE_DESCRIPTION("QCOM SPMI SDAM driver");
+ 	ret = iadc_version_check(iadc);
+ 	if (ret < 0)
+@@ -584,3 +599,4 @@ MODULE_ALIAS("platform:qcom-spmi-iadc");
+ MODULE_DESCRIPTION("Qualcomm SPMI PMIC current ADC driver");
  MODULE_LICENSE("GPL v2");
+ MODULE_AUTHOR("Ivan T. Ivanov <iivanov@mm-sol.com>");
 +MODULE_IMPORT_NS("SPMI");
 -- 
 2.50.1
