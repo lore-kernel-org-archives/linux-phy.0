@@ -4,71 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17FA0C83F27
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 08:51:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C140C83F27
+	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:21:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Q4ztuoSXc73OYa1kihS+FtlIkhAeCyP4UQmREzLRfE=; b=4rLk+a66pjYra5
-	oWqlQKPoepCDPVtRFBfAh/xxU6iDoWDDrdvd7FgIuEjmMvs2u8jUOIgiArxC+1QuHTsoULw3WGZRt
-	q1IGHgsiKl6SC7a5aZlIwHvEnyQjnjPbboopZfF6cJs5oc07QlXKBfm5dcyl0583D9CMqA4B/yB1d
-	GL5BkAQT9qckamR4pjr8MtTGCGSSDd//jq4BdMU317PT7aRXtE0x/HBxyL7gJzYR+HQSXuArxn+UP
-	U/kRdzAobstS43MOurN1jaEecTBm2oJvV0n50w/yHuCeKGOtqU8rUdRPFpXukAEUQr3/Q8ctg2s3g
-	cjRAm6uXqisM2rTekEOg==;
+	List-Owner; bh=3UV/e7oBx2SvjB2z13Lvwc5SsLB0xKhCOI6JzH+g1vk=; b=RvzQ651MkJR3ys
+	zoL0iQC8/2iQadZtwyowpoMbEvSOqQxROtLFtUfEIRFWV+Per4NeLYBYWb2nw+E15Qe6oNhn6tjgl
+	l80bi7660LTZ3oDLhxLDaq8AIRfdSsCOTSXsQTqtyXI7tnU04ACVysNZ0yjCsGVfga5gPdy1tAi1W
+	tuumValgMKKpOsJn9kJv+hCXxb8fVMPtviSDpN8OFh/IL1+yY9N4UsRT3bEkANMuQf1nR0SzBl+qw
+	a+mc4INwKB1rNZhRPY16b5wAkf+NkRHfK9cM7zzlLiZr03O4Zm5KCD+WgqMUDh7NZPMSQSEPrCaP+
+	UlAO2KQlpIDSt92CVWsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue8ip-00000001u1k-3WSA;
-	Tue, 22 Jul 2025 08:51:39 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1ue9CA-00000001zVA-34k9;
+	Tue, 22 Jul 2025 09:21:58 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue8bO-00000001rkK-0pZ2;
-	Tue, 22 Jul 2025 08:44:01 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 0CAD2431FC;
-	Tue, 22 Jul 2025 08:43:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1753173836;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=lL0vBxv9N/cBdRGCto9TruzZjRh7DSP5woNWAvZPKD8=;
-	b=NUPWCHsYkURdekhDUMdZwqGKFREk6+4V2tal/89Cg+5EABkccB+EcustxKaIbxe6RRaK3T
-	81LsIvBcwO9uoSd+jS+5AwhkqkFrKVLYPnOVujqGc9w4Afl5EABBq2b3alD5dJvWTB2DA9
-	z/d9lL0TydRL+SVxzqF+RhkAmXqds4bJZXcYJ7FyrFCPDMOnUhkPAkLaf3KNH6RyRdGzH2
-	adVV/liPPzNq7ubSIZPsETYA6ScqpqS/+7DYLlBCNu5lpHHv/GD15tcnZ+RsxeGY2AMcZf
-	t9xI66f+YJ1n6/jd5p0Uf0ktCzTfBiIzn5yqqN8pgwD+8qOTBKthwb37A9E9xA==
-From: Luca Ceresoli <luca.ceresoli@bootlin.com>
-Date: Tue, 22 Jul 2025 10:43:44 +0200
-Subject: [PATCH 2/2] phy: rockchip: inno-usb2: fix communication disruption
- in gadget mode
+	id 1ue8yu-00000001wsy-0YWu
+	for linux-phy@lists.infradead.org;
+	Tue, 22 Jul 2025 09:08:17 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-45629703011so36000695e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 22 Jul 2025 02:08:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1753175294; x=1753780094; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=On3JvqZOf5viVWmDtf1F5EeuSK6iuUoSgcnf4ZkG6MQ=;
+        b=R/IFRGo2GzZ3TlOQLMjyRGZsQbn+nEIqZPRNBx9r+/KmdOo3iiy1Pv9lg0ghREl3h8
+         NOihtnwoKThPcv1IxT34qwRpkK6BiaYhACjN/phihBL9953QGObm6egW1sNlYxVe9Fl3
+         iZ+DFi5qllW1nq5nDgfLl6aP31sDMy7qxwTMdENf3II4pQmeCWOwhlTrqg9pAJIhJuSy
+         a0oPcu3nVPln/AH5plrwiJpwiX0GPMe3AiIoGVCU7ccUBr9HtdF7/s9b37jElk6MlduS
+         GTEZmgntx6cQNDmB7BzBzZgfuP95nu1k9k8AzR8KilPVp62uG/jyIDpI9Wpa0UsUXzXA
+         T4wA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753175294; x=1753780094;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=On3JvqZOf5viVWmDtf1F5EeuSK6iuUoSgcnf4ZkG6MQ=;
+        b=wvBT4MMlk6pV5rVNI+wP6smjUX4Clv7zcytkgrrPGVreGdJTzZpbWvj5l6yWDHvrHy
+         upKgORS5eQvL6NfLVDi+NSZZl5pQ4WLGwbjzzvPFVmJvPj6Fxy3fXidjnDl7PVI8mBOy
+         Ftve5qG+0PEZQ0eSHTpYWWtH/MGzz0t6bR1oyBcddhuWfRso/FocsMACMFgBvsbEIIrh
+         qdK7yL63oTMrx3m+LjhWYOr6TkJk42UWBfWEk8MA0Boi1PCrcbpiUvmjb+5Oa4xDFeN+
+         ZOzTEcy8q6bTujY+GI1O4AMP5YdtyEa9MmaFWkDPbyzvFjw+A7eb7Q54og2XP/9MfgnL
+         j61A==
+X-Forwarded-Encrypted: i=1; AJvYcCWw5sXkAOTGZUNA6jPxogOecTPZ0jMIvAMLeO892PhZnGIyxBhNGSNQgXopvo11kAqXZBEI+msfk5U=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyvWsw4sglByzNc9kODLGbCPBKLkB/wWhDaK/cNR/AqdsurKspn
+	U0gVMoqFnNE3PK1O99De+ZndcbyUExmTQoqUQnsG4GG5mGzeAqxo8zZZNGIwi1sqeOU=
+X-Gm-Gg: ASbGncsYDGhbKMkPjs2vs0Zz0sfsrpgO6O2bOErhaLxdT0Zfhv269pJ9W4Za1Rbiele
+	cEYkMbtpvKj8xPRcL4vT6xdQmFENo897wr4AutrxWGM+oYxmDQjo9ITdHCz9n6JepZpBTucuisy
+	HTE7hx4dAHVcc81Fc+rF1A92IvhyM9qcSX8JxinpqJ8FKi4jS7U/YM/7CPJrfet6dwkzYdbztaf
+	/45HXeayW10YptTtqEu/qaF7NZ9Kh25zPFHhvO5mchEHmXX4j36+SudBir99+K/hQn2XmsODDIv
+	wqB9DhmuY8YOgMrDyWdf6WWE1Xit9a/Yq6S+1dSnms63zul5aybifLLpHaIZnHokVZD3zcpjHu4
+	23oJrqBOqH0skSlHV0EtAcq+0rw/h+lSjDs4MXIRh89LqFbiVrn1jkl0JkVC3KGjawXFLe4gzDQ
+	==
+X-Google-Smtp-Source: AGHT+IGIe5v+xkseT1R+b83ynGM35H1dtttBfIBKdXEdhjXXuEssWueZy6PEB6lRJfSUU+5XBI6EAg==
+X-Received: by 2002:a05:600c:8b85:b0:456:2347:3f01 with SMTP id 5b1f17b1804b1-456355c60d3mr166991665e9.20.1753175294468;
+        Tue, 22 Jul 2025 02:08:14 -0700 (PDT)
+Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b61ca253f9sm13035086f8f.6.2025.07.22.02.08.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 22 Jul 2025 02:08:13 -0700 (PDT)
+Message-ID: <4edefe21-27b6-4884-befa-ddb451bb9376@linaro.org>
+Date: Tue, 22 Jul 2025 10:08:11 +0100
 MIME-Version: 1.0
-Message-Id: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-2-239872f05f17@bootlin.com>
-References: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-0-239872f05f17@bootlin.com>
-In-Reply-To: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-0-239872f05f17@bootlin.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, William Wu <wulf@rock-chips.com>
-Cc: Kever Yang <kever.yang@rock-chips.com>, 
- Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>, 
- Alan Stern <stern@rowland.harvard.edu>, 
- Louis Chauvet <louis.chauvet@bootlin.com>, 
- =?utf-8?q?Herv=C3=A9_Codina?= <herve.codina@bootlin.com>, 
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Luca Ceresoli <luca.ceresoli@bootlin.com>
-X-Mailer: b4 0.14.2
-X-GND-State: clean
-X-GND-Score: -100
-X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgdejgeeggecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfitefpfffkpdcuggftfghnshhusghstghrihgsvgenuceurghilhhouhhtmecufedtudenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhephfffufggtgfgkfhfjgfvvefosehtjeertdertdejnecuhfhrohhmpefnuhgtrgcuvegvrhgvshholhhiuceolhhutggrrdgtvghrvghsohhlihessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhepheejgfdugedvudekgeevtdfgudduhedtgfetfeevgfehkeejhedviefhtdffhfeknecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucfkphepvdgrtddvmeeijedtmedvtddvtdemvggrtddumegsvgegudemleehvgejmeefgeefmeeludefvgenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvrgdtvdemieejtdemvddtvddtmegvrgdtudemsggvgedumeelhegvjeemfeegfeemledufegvpdhhvghloheplgduledvrdduieekrddujeekrdejhegnpdhmrghilhhfrhhomheplhhutggrrdgtvghrvghsohhlihessghoohhtlhhinhdrtghomhdpnhgspghrtghpthhtohepudeipdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohepkhgvvhgvrhdrhigrnhhgsehrohgtkhdqtghhihhpshdrtghomhdprhgtphhtthhopehthhhomhgrshdrphgvthgri
- iiiohhnihessghoohhtlhhinhdrtghomhdprhgtphhtthhopehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopefoihhnrghsrdfjrghruhhthihunhihrghnsehshihnohhpshihshdrtghomhdprhgtphhtthhopehhvghikhhosehsnhhtvggthhdruggvpdhrtghpthhtohepfihulhhfsehrohgtkhdqtghhihhpshdrtghomhdprhgtphhtthhopehkihhshhhonheskhgvrhhnvghlrdhorhhg
-X-GND-Sasl: luca.ceresoli@bootlin.com
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
+ <20250710-x1e-csi2-phy-v1-2-74acbb5b162b@linaro.org>
+ <11b573d5-ce4d-476c-b94c-216d427cd838@linaro.org>
+ <08261aa4-689b-4d6b-bfd2-221c1976d254@linaro.org>
+ <a7f64b31-4767-4281-b452-a2bc5351d745@mleia.com>
+ <c93624bb-ee7b-45ac-8b53-b5391f11c9c9@linaro.org>
+ <eac3a877-a4aa-4789-9013-ab8b6c91e0f3@linaro.org>
+ <0a12879f-dc4a-47fb-87a0-ac4b8bcd4d75@linaro.org>
+ <53a19b1d-5665-4937-a07c-5dd1fcde06c5@linaro.org>
+ <3b760685-97db-46e3-80a3-7fad69ad31cd@oss.qualcomm.com>
+ <94b75177-9401-4e0c-966b-5847a29cb6f7@linaro.org>
+ <427548c0-b0e3-4462-a15e-bd7843f00c7f@oss.qualcomm.com>
+ <3UXVZ6ANM9mDjVdMV4SXsiIx_pT3S1lp3RC_Q7mh_o7jF2dpYsni1Sl2TAWv6OCMCRTFmi9aE6BxDquGkOnwEg==@protonmail.internalid>
+ <8b908a20-0bf3-447d-82ea-a5ecee1bf54c@linaro.org>
+ <57501e81-7e9c-4cb1-9a37-18307d1e06ca@linaro.org>
+ <33d76d7f-ab14-4e76-8ffb-eb370901a046@linaro.org>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-US
+In-Reply-To: <33d76d7f-ab14-4e76-8ffb-eb370901a046@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_014358_972498_1C44E0C3 
-X-CRM114-Status: GOOD (  17.76  )
+X-CRM114-CacheID: sfid-20250722_020816_178528_2882B4B9 
+X-CRM114-Status: GOOD (  13.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,96 +117,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When the OTG USB port is used to power to SoC, configured as peripheral and
-used in gadget mode, communication stops without notice about 6 seconds
-after the gadget is configured and enumerated.
+On 22/07/2025 09:32, Neil Armstrong wrote:
+> The whole key point here is the combo mode, as I understood the combo 
+> mode feature
+> makes the PHY lanes available as 2 separate streams, like if you got 2 
+> "controllers"
+> attached to the same PHY. So in fact, the PHY should have a single node, 
+> but 2 PHY
+> interfaces in combo mode.
+> 
+> This makes all this controller/phy model very complex to handle and add 
+> a lot of
+> logic in the camss side. Moving the "csiphy" as an independent media 
+> device that
+> can declare up to 2 endpoints in combo mode makes things much simpler, 
+> and allows
+> us to attach each "csiphy" stream to any "controller" side of camss.
 
-The problem was observed on a Radxa Rock Pi S board, which can only be
-powered by the only USB-C connector. That connector is the only one usable
-in gadget mode. This implies the USB cable is connected from before boot
-and never disconnects while the kernel runs.
+I think there should be a generic extension to PHY/linux-media to 
+support that instead of something Qualcomm specific.
 
-The related code flow in the PHY driver code can be summarized as:
+The first task is qcom/CAMSS specific which is separate the CSIPHYs out 
+from the CAMSS block - done in this series and do so in a way that 
+doesn't break the existing ABI - done in the context of adding Hamoa/x1e.
 
- * UDC start code (triggered via configfs at any time after boot)
-   -> phy_init
-       -> rockchip_usb2phy_init
-           -> schedule_delayed_work(otg_sm_work [A], 6 sec)
-   -> phy_power_on
-       -> rockchip_usb2phy_power_on
-           -> enable clock
-           -> rockchip_usb2phy_reset
+The second step should be to extend the existing linux-media and PHY API 
+to support multiple sensors on the same CSIPHY in a generic way.
 
- * Now the gadget interface is up and running.
+If you want to ship me some hardware, I'll help.
 
- * 6 seconds later otg_sm_work starts [A]
-   -> rockchip_usb2phy_otg_sm_work():
-       if (B_IDLE state && VBUS present && ...):
-           schedule_delayed_work(&rport->chg_work [B], 0);
-
- * immediately the chg_detect_work starts [B]
-   -> rockchip_chg_detect_work():
-       if chg_state is UNDEFINED:
-            property_enable(base, &rphy->phy_cfg->chg_det.opmode, false); [Y]
-
- * rockchip_chg_detect_work() changes state and re-triggers itself a few
-   times until it reached the DETECTED state:
-   -> rockchip_chg_detect_work():
-       if chg_state is DETECTED:
-            property_enable(base, &rphy->phy_cfg->chg_det.opmode, true); [Z]
-
-At [Y] there is no disconnection and the USB device appears still present
-to userspace, but all existing communications stop. E.g. using a CDC serial
-gadget, the /dev/tty* devices are still present on both host and device,
-but no data is transferred anymore. The later call with a 'true' argument
-at [Z] does not restore it.
-
-Due to the lack of documentation, what chg_det.opmode does exactly is not
-clear, however by code inspection it seems reasonable that is disables
-something needed to keep the communication working, and testing proves that
-disabling these lines lefs gadget mode keep working. So prevent changes to
-chg_det.opmode when there is a cable connected (VBUS present).
-
-Fixes: 98898f3bc83c ("phy: rockchip-inno-usb2: support otg-port for rk3399")
-Closes: https://lore.kernel.org/lkml/20250414185458.7767aabc@booty/
-Signed-off-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 0106d7b7ae24ead91d9c996daaa56671de02a39a..e5efae7b013590f5b0bf65654008cdc167f52e3f 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -833,7 +833,8 @@ static void rockchip_chg_detect_work(struct work_struct *work)
- 		if (!rport->suspended && !vbus_attach)
- 			rockchip_usb2phy_power_off(rport->phy);
- 		/* put the controller in non-driving mode */
--		property_enable(base, &rphy->phy_cfg->chg_det.opmode, false);
-+		if (!vbus_attach)
-+			property_enable(base, &rphy->phy_cfg->chg_det.opmode, false);
- 		/* Start DCD processing stage 1 */
- 		rockchip_chg_enable_dcd(rphy, true);
- 		rphy->chg_state = USB_CHG_STATE_WAIT_FOR_DCD;
-@@ -896,7 +897,8 @@ static void rockchip_chg_detect_work(struct work_struct *work)
- 		fallthrough;
- 	case USB_CHG_STATE_DETECTED:
- 		/* put the controller in normal mode */
--		property_enable(base, &rphy->phy_cfg->chg_det.opmode, true);
-+		if (!vbus_attach)
-+			property_enable(base, &rphy->phy_cfg->chg_det.opmode, true);
- 		rockchip_usb2phy_otg_sm_work(&rport->otg_sm_work.work);
- 		dev_dbg(&rport->phy->dev, "charger = %s\n",
- 			 chg_to_string(rphy->chg_type));
-
--- 
-2.50.1
-
+bod
 
 -- 
 linux-phy mailing list
