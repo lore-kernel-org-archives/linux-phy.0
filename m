@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D54CC83F27
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1A86C83F25
 	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 09:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,42 +12,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NB31Zp11a8EWB47FmOeo/Pz4Y1XcyKAY3cZ32jWwz9s=; b=AJ+mtHtxpM61ww
-	qgH8SkP0+ViR5sgWEKqerONbZzbsbVps612RtmQ2mwd8sYyUXdWv8XbdptHIs2grv+V47R8BSmhK5
-	MJxuQWa98HknEdYiEqoBaWnXS3NCuEsZ+xWnbieNPtDJKdp3p3dEyrRzXYlcA/HuE6Bg94xRRDN/w
-	kZJK6BGu05SASUhaaKJijEtQFAoNWX8bj1oze7WVNVQmdicocO/McuSN+GCzJ7O8FTUIUrZ3oDMEu
-	dpHaFXds6T97xmoygfzSE52mo+l6SO1a2r0mEqkJWadOwDJHRuAs7tS6C1G1lXVhiU3nPcpAN5ac5
-	VWUNnYWliSqvEqcLsV0A==;
+	List-Owner; bh=v3AlwYCVVkzIJFANZhyhWDXdcnjDJoltnX1oiAaTyS0=; b=Q59OZL4Gqxr+Xw
+	RpZ8xo6G6bl0wH8pNJlp5sjfqZPghsJmZVwaFcRHsx+rLutXyPsHh7KrOw7DZ1jgKi4siFMbSiUIB
+	EtxP4xttV17NuClgWBNwVOFlnUWZhal9jCCMX8rWOYLFkPMI1DyRcKgbQOgjOcwZ1StK3KLJ1Ju3C
+	hQomHJTe1vMzKBEgFcAxDASeT2QJHOirGztXuDUJMg7rO0VZKK12gBwYByMh8dozvpPazyHRZIG20
+	T8XN5EBKqhHkc0MIHcR3ZE19ydJbW3T4XkUpfSwvgWo7aEPFrSdQPcc5IQIDwjHjM6N9fr3c5xFAB
+	Sod6CA6bRUNwbNpErT1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue9TM-000000022AP-1hP6;
+	id 1ue9TM-000000022Aa-2pnx;
 	Tue, 22 Jul 2025 09:39:44 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ue99Q-00000001yww-3uXd
+	id 1ue9AO-00000001z95-09hx
 	for linux-phy@lists.infradead.org;
-	Tue, 22 Jul 2025 09:19:09 +0000
+	Tue, 22 Jul 2025 09:20:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1F43461135;
-	Tue, 22 Jul 2025 09:19:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA66DC4CEEB;
-	Tue, 22 Jul 2025 09:19:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 774E661135;
+	Tue, 22 Jul 2025 09:20:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECA3CC4CEEB;
+	Tue, 22 Jul 2025 09:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753175947;
-	bh=5lRPv2f/qyW3DqGyiltC1DhUAYkoI/BAX4G5BcSjXKg=;
+	s=k20201202; t=1753176007;
+	bh=B1T2MWPDPDtUYOSFsDx/tfdQ/pEGziEZ3AKWuscvoqs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=KJBgUbzuv3sf8jL/JvhMOe5M95a4a4ETaRYi/72QkcP7RbfhXq+81NSf78vYqbGYu
-	 IB+n463y6TCxEyejBDX+mmibKVCHw5f3ES6K8eYf+vCRlmyt87mT1AjGRJXlbTVGH7
-	 nfcMYLZmtfJw42Y1M6wcHH2vFZuKTtUChy7pUlBeMmkT1y1Bizxa470AV/U54AQqlr
-	 2eOAWJtWHujITd+zeIAm6RJYJz3N8QHvCibHiV44HfyLzKMrVCfNeEYtEKPI4qixFj
-	 ErBLVB1IqqZ+KT71bSrS+dh/gUfopO3uluKYZW3IhEwDIYa3SnZlhsp5zFtIt8F3yK
-	 kpjJ670cdZROg==
-Message-ID: <0c94206c-f70f-4bed-81ec-bb2870748121@kernel.org>
-Date: Tue, 22 Jul 2025 11:18:59 +0200
+	b=iXUykyln4dJhQGpxCRNG5+tveBFfMM/aZyBOVCGy/PEZz9eR8G5iK1skRzqTr0fHq
+	 kN0teNAZyFW9l2F+koQIDL7iZU03RH4YYLAd8CEV0PviK9kAPjeCVFV1fh2scUA2xe
+	 dBlku0E1DO2YV1HCqX3mZZCpqpdyxKVfk3A7scH8wkQ771S8yuJkbMATcAyI95r38W
+	 ORg2mmWFd0g3dlAVVN6cvqtBxpq2JNXja6QBPiGoWO3WMrBgyayUjFy0G5WSh6+1Qk
+	 rxbugE3vsX/PSap08fUMLLVLWKfh5YrypS4A1UMGSl2P0PYdWrwbKWxGebPbk95dTD
+	 kEDEgFR3jfiow==
+Message-ID: <2fd202a6-2c92-469c-81c0-8852562d4e35@kernel.org>
+Date: Tue, 22 Jul 2025 11:19:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 02/13] dt-bindings: phy: Add binding for QCS615
- standalone QMP DP PHY
+Subject: Re: [PATCH v2 03/13] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy:
+ support dual TCSR registers
 To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
  Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
  <lumag@kernel.org>, Abhinav Kumar <abhinav.kumar@linux.dev>,
@@ -66,7 +66,7 @@ Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  fange.zhang@oss.qualcomm.com, quic_lliu6@quicinc.com,
  quic_yongmou@quicinc.com
 References: <20250722-add-displayport-support-for-qcs615-platform-v2-0-42b4037171f8@oss.qualcomm.com>
- <20250722-add-displayport-support-for-qcs615-platform-v2-2-42b4037171f8@oss.qualcomm.com>
+ <20250722-add-displayport-support-for-qcs615-platform-v2-3-42b4037171f8@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -112,7 +112,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250722-add-displayport-support-for-qcs615-platform-v2-2-42b4037171f8@oss.qualcomm.com>
+In-Reply-To: <20250722-add-displayport-support-for-qcs615-platform-v2-3-42b4037171f8@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,139 +130,49 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 22/07/2025 09:22, Xiangxu Yin wrote:
-> Introduce device tree binding documentation for the Qualcomm QMP DP PHY
-> on QCS615 SoCs. This PHY supports DisplayPort functionality and is
-> designed to operate independently from the USB3 PHY.
-
-A nit, subject: drop second/last, redundant "binding for". The
-"dt-bindings" prefix is already stating that these are bindings.
-See also:
-https://elixir.bootlin.com/linux/v6.7-rc8/source/Documentation/devicetree/bindings/submitting-patches.rst#L18
-
+> Add support for specifying two TCSR register addresses in the
+> qcom,tcsr-reg property to enable DP-only mode switching. This change
+> maintains backward compatibility with the original single-register
+> format.
 > 
-> Unlike combo PHYs found on other platforms, the QCS615 DP PHY is
-> standalone and does not support USB/DP multiplexing. The binding
-> describes the required clocks, resets, TCSR configuration, and clock/PHY
-> cells for proper integration.
+> Also update #clock-cells and #phy-cells to <1> to support clock and PHY
+> provider interfaces, respectively. This is required for platforms that
+> consume the PHY clock and select PHY mode dynamically.
 > 
 > Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 > ---
->  .../bindings/phy/qcom,qcs615-qmp-dp-phy.yaml       | 111 +++++++++++++++++++++
->  1 file changed, 111 insertions(+)
+>  .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    | 28 +++++++++++++++++-----
+>  1 file changed, 22 insertions(+), 6 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-dp-phy.yaml
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..17e37c1df7b61dc2f7aa35ee106fd94ee2829c5f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-dp-phy.yaml
-> @@ -0,0 +1,111 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,qcs615-qmp-dp-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm QMP PHY controller (DP, QCS615)
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> index 1636285fbe535c430fdf792b33a5e9c523de323b..badfc46cda6c3a128688ac63b00d97dc2ba742d6 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> @@ -44,13 +44,21 @@ properties:
+>    vdda-pll-supply: true
+>  
+>    "#clock-cells":
+> -    const: 0
+> +    oneOf:
+> +      - description: Set to 0 for legacy platforms without clock provider
+> +        const: 0
+> +      - description: Set to 1 to expose PHY pipe clock.
+> +        const: 1
+>  
+>    clock-output-names:
+>      maxItems: 1
+>  
+>    "#phy-cells":
+> -    const: 0
+> +    oneOf:
+> +      - description: Set to 0 for legacy platforms
+> +        const: 0
+> +      - description: Set to 1 to supports mode selection (e.g. USB/DP)
+> +        const: 1
 
-That's too vague title. You are not adding here Qualcomm QMP PHY
-controllers.
+I don't understand why EXISTING platforms now get more clocks. What did
+you change in the hardware? This you must explain in the commit msg.
 
-> +
-> +maintainers:
-> +  - Vinod Koul <vkoul@kernel.org>
-
-Hm? Why?
-
-> +
-> +description:
-> +  The QMP DP PHY controller supports DisplayPort physical layer functionality
-> +  on Qualcomm QCS615 SoCs. This PHY is independent from USB3 PHY and does not
-> +  support combo mode.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - qcom,qcs615-qmp-dp-phy
-> +
-> +  reg:
-> +    maxItems: 4
-
-I don't understand what you are doing here. Why previous patch evolved
-into this? Where is any reasoning for that in the changelog? You said:
-
-"- Add new binding qcom,qcs615-qmp-dp-phy.yaml for QCS615 standalone DP
-[Krzysztof]"
-
-but you must say WHY you are doing things...
-
-Anyway, missing constraints. Look at other Qualcomm bindings.
-
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: cfg_ahb
-> +      - const: ref
-> +
-> +  clock-output-names:
-> +    maxItems: 2
-> +    description:
-> +      Names of the clocks provided by the PHY.
-
-Drop description, redundant. It cannot be anything else.
-
-> +
-> +  qcom,tcsr-reg:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    items:
-> +      - items:
-> +          - description: phandle to TCSR hardware block
-> +          - description: offset of the DP PHY moode register
-> +    description:
-> +      DP PHY moode register present in the TCSR
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    items:
-> +      - const: phy
-
-Drop reset-names, useless.
-
-> +
-> +  vdda-phy-supply: true
-> +
-> +  vdda-pll-supply: true
-> +
-> +  "#clock-cells":
-> +    const: 1
-> +    description:
-> +      See include/dt-bindings/phy/phy-qcom-qmp.h
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description:
-> +      See include/dt-bindings/phy/phy-qcom-qmp.h
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - clock-output-names
-> +  - qcom,tcsr-reg
-> +  - resets
-> +  - reset-names
-> +  - vdda-phy-supply
-> +  - vdda-pll-supply
-> +  - "#clock-cells"
-> +  - "#phy-cells"
-> +
-Why introducing completely different order? See existing binding and DTS
-coding style.
 
 Best regards,
 Krzysztof
