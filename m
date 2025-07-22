@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4EF9C83F27
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFD69C83F1A
 	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 14:20:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eXmpkUY3DNpFioM5N4NlcDvIr85tmc0MhId5NHsdEUM=; b=cFbVvDRhKH6XKH
-	+lMT/6kvgh/w0dqzxbgoT9gCGMR/L6ZkRM1w4o7k/20QdW/xppVYJiidONlWdUov9gPtn4vcCkmdQ
-	TOr3xY+GVihc1FK01K1qOwXqC06S03y2jvgY3WAeedoKqF48MIL4gJ5LikAdod9QhtkD+EdMNBuCw
-	+k1+TFgkjaYagExi0EiDRy2ORXcW5QT9gugg54fFWML4Mkx5hpeXcRw5ER3Eq2r4PkcmFFpzNllCX
-	j1avX+QaYYnSl32mmuVoce0E3tLYjS8x0+70XDzKb2+R+KmrUCcsZiXE0gcgxZmDpGi3qVIG3xy0H
-	lxGk84zAxgcES2QesGlA==;
+	List-Owner; bh=QCRu8JEiUX/hMlQf9aFtsw0NfVYtojNre90f8FSx+TI=; b=xo2ZggJJ1NXa6n
+	4i9pirrJBLi6xJ/9WzUkHbg0AJathQVlH9hXKohOBXdDGZbycEkXdv7c1cb8My7QCCobNsShpzmY/
+	T9n38OaEuSCpONDztNXmBmaBVn03rZiHEuFLfFVgb6kZB704dTM3P8jUaAREOzVx3FuJGV/Lfld9s
+	4vDx2OxVUmznlDkhrmqqql1zwl2lMzB701QENh8TePzeNw5ovM/F6KwX3GyNLm5sz19l3Jf1G5ZBy
+	AtmBK/1Digfy3g2DXnYYqC8wEkLmgM4XhU2yBKYIVnkFkN0rG8YBeEuvhh9Z0/vjXaiWLIxWOTIqO
+	iDjDkIAZDVGOX1c5uguA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueDqw-00000002gFv-1cta;
+	id 1ueDqw-00000002gGK-2llJ;
 	Tue, 22 Jul 2025 14:20:22 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueDBl-00000002ZO3-3qWn;
-	Tue, 22 Jul 2025 13:37:49 +0000
+	id 1ueDBo-00000002ZOW-10PD
+	for linux-phy@lists.infradead.org;
+	Tue, 22 Jul 2025 13:37:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5C2E7601FB;
+	by sea.source.kernel.org (Postfix) with ESMTP id F05B445C36;
+	Tue, 22 Jul 2025 13:37:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A5714C4CEF9;
 	Tue, 22 Jul 2025 13:37:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21798C4CEF1;
-	Tue, 22 Jul 2025 13:37:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753191469;
-	bh=wC1RXxQIm9EggCGpr5mxoFHZrulqQ/Ry2RyskGcaurg=;
+	s=k20201202; t=1753191471;
+	bh=NjAE4n+e6SZHziIRn2JtRoddQFIce9KdubkyfGd8BLA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=vNFCReVw33rx+cRYq3uv7R+665IbodnXYV4q5AluskgBCnoh9L2+lXciDRq2Rsaph
-	 LUpQD3mh6wK7YpPYRE40E+7TPfViFZXfrtGi4HvH+YbrmQZ19Bjw5lpPhvJfUkqpwz
-	 H5w1DEgkFmy2wMQvLSnL+/tZih3o97KnhGaoDia5H9xxb5h8yEOMBBIb2orDZiBrgk
-	 AcoFAek5m+Wqx3jV0j9733u29yWhNe2Z2XDtPxUAuGs9TRk8JliINicTQFMI3Yz/kt
-	 lqkSwd590XNK0Plj5Ke25EEmqBUHg6RtKBQz7OS8jaK/oFt/XtU1G3N9JhxG3JGzDg
-	 O+dMDWSRuPp3w==
+	b=HNnBnAt/iknYpQ+K7HFfXvy/EjZGWLywfFvn0G9IeFoTwkD1PCnYJH9gl9AKHOfmz
+	 xLVXX/qSoKB8gyc/6CRYYiglIz1gUpuBrVoQPX9jc0hy5q6Fn9Lwkd1C4SY9qEbWsL
+	 A23suMVMrxZ/p4l8YeZMdGibO1HS4EMh67vZfeAzRv15/g8WvER6ieiXv7McuwudKd
+	 sUekcBOfbG1hXLTTAlqMO6FIfaYeSMrJtFDsUqm3RHaVyATlYTqbB+iVPyONq543iH
+	 q0b5eyOv3h9nxbkJZBxySg7LeE7Ne7rBYlXCkpzrTXHaX8J0kcEXvfGaRBmrwFb64I
+	 zyUQTjydvO3BA==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Ray Jui <rjui@broadcom.com>, 
- Scott Branden <sbranden@broadcom.com>, 
- Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
- "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20250627220126.214577-1-robh@kernel.org>
-References: <20250627220126.214577-1-robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: phy: Convert brcm,sr-usb-combo-phy to
- DT schema
-Message-Id: <175319146575.114152.5994506906661121885.b4-ty@kernel.org>
-Date: Tue, 22 Jul 2025 19:07:45 +0530
+ Bjorn Andersson <andersson@kernel.org>, 
+ Varadarajan Narayanan <quic_varada@quicinc.com>, 
+ Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, stable@kernel.org
+In-Reply-To: <20250630-ipq5332_hsphy_complaince-v2-1-63621439ebdb@oss.qualcomm.com>
+References: <20250630-ipq5332_hsphy_complaince-v2-1-63621439ebdb@oss.qualcomm.com>
+Subject: Re: [PATCH v2] phy: qcom: phy-qcom-m31: Update IPQ5332 M31 USB phy
+ initialization sequence
+Message-Id: <175319146929.114152.10973803473678608653.b4-ty@kernel.org>
+Date: Tue, 22 Jul 2025 19:07:49 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250722_063752_300726_F33ACF2F 
+X-CRM114-Status: UNSURE (   5.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,16 +78,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 27 Jun 2025 17:01:25 -0500, Rob Herring (Arm) wrote:
-> Convert the Broadcom Stingray USB PHY binding to DT schema format. It's
-> a straight forward conversion.
+On Mon, 30 Jun 2025 13:48:13 +0530, Kathiravan Thirumoorthy wrote:
+> The current configuration used for the IPQ5332 M31 USB PHY fails the
+> Near End High Speed Signal Quality compliance test. To resolve this,
+> update the initialization sequence as specified in the Hardware Design
+> Document.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: Convert brcm,sr-usb-combo-phy to DT schema
-      commit: 4c3d05da59eb75bdb7869f8668778dae87229168
+[1/1] phy: qcom: phy-qcom-m31: Update IPQ5332 M31 USB phy initialization sequence
+      commit: 4a3556b81b99f0c8c0358f7cc6801a62b4538fe2
 
 Best regards,
 -- 
