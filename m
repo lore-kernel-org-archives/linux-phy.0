@@ -4,99 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4812FC83F1A
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 13:09:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AD19C83F1A
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 14:58:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z6P0A1cRpbN93Pft6ZITOSLcQimhNFtzsdlM3CzcWpI=; b=wx7tj7X0azRJJp
-	/aJ0Xog1PrC+JdWpMc6djCkIaIutQGuj243Wc0x3lTdtdvZPqkxKFO0lRIIb8qTLwPVm6sG8PYc4u
-	bl5dB8XDNXC7HO5dQ6XiOb+75lSniBqV1ncyNMFlOuYH5QaXRrFlPjca3xLrONb3usO4qizu7sF/p
-	KW57nCRRHm3pUMe6GM5RH5eJkKIay35hzb9frv96kUvmJVj6HQ1d79sK7fgUk7hoKatrbtGkFYVEA
-	vtOlzS6U4sUESFXf5VoolGuNri3gbJPR9vNEBsTyHkSnn1k0UftISzTcOAOpuwc1fD/fVlavqBK4L
-	GAjIY5GuumfFXeBtbAog==;
+	List-Owner; bh=UYc3cACxIK+0Y8oPETYZCTDS/bmCy9u3rgESU2rgfYI=; b=i5gJ2dn6Mu3WBY
+	Iu1gSHDaje84jY2LuGsB6zSIBB9zPigvEPmfdtojgAGAB6K/jyQon7lK7BbgRKlUn//9nKBmsAQ6e
+	eAcNPF3cZFxlN6P0+MDcf6QaHQ49BTXUxm4/2xuo8cu1S00f+aP+z7sYyfVG2efeJVx8C/AF7z2Bh
+	qQRsGWFhT7rfWpHDhiLcLQczYtvrcAhtLD5iJJdOcvbc25gvFh4XKQdJ9NHF0I7k61B7OWLhFv6Cs
+	tpI5jtNtWPCau4jAahpUlfeA9QfDSMqYFucZQv/9rXrzCScRV+EwJVjXYsUDGoQckKx9wpbjvVtVJ
+	vN2c77PV6RM8pDEarDIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueZDf-00000004zkk-49qQ;
-	Wed, 23 Jul 2025 13:09:15 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1ueavV-00000005Ili-0P2c;
+	Wed, 23 Jul 2025 14:58:37 +0000
+Received: from mail-m49198.qiye.163.com ([45.254.49.198])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueYqY-00000004wHP-1RTi
-	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 12:45:25 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250723124516epoutp02183512abcad67094e3a831e80d4afc1e~U4hCx7twF1361613616epoutp02Q
-	for <linux-phy@lists.infradead.org>; Wed, 23 Jul 2025 12:45:16 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250723124516epoutp02183512abcad67094e3a831e80d4afc1e~U4hCx7twF1361613616epoutp02Q
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1753274716;
-	bh=PEOfka7o20zIZPmyJjhDlnK3FdIZ1ayZnAmiWFOAY8o=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=Th3ykaYLsbUr7KCPyz3pnLe7ntpQviosxGR/2/NTX7YjsIa2F6uvGG4/t8bK2qXi6
-	 +7KYSWEKgoP+QUS/P1ZtifH1h4YMgmiBvknkZH2QImhHyU2qDjLbf0tW2ADHno+lLk
-	 KQa+ncSUwSb50Qbsz0xYXyxOlH4+NZjURykH1CZE=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
-	20250723124515epcas5p1aaf594fdd1861aef3eb2f4883c0973b8~U4hBuY4AX2230822308epcas5p1z;
-	Wed, 23 Jul 2025 12:45:15 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.90]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4bnDPQ1b3Qz6B9m6; Wed, 23 Jul
-	2025 12:45:14 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
-	20250723124513epcas5p40a7150ee82c674eb479589288323da54~U4hAQiFXe2820028200epcas5p4a;
-	Wed, 23 Jul 2025 12:45:13 +0000 (GMT)
-Received: from INBRO002756 (unknown [107.122.3.168]) by epsmtip2.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250723124510epsmtip201e2e3138007aeaccacf564c5214f1c8~U4g9PPG5e2748727487epsmtip2V;
-	Wed, 23 Jul 2025 12:45:10 +0000 (GMT)
-From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, "'Pritam Manohar Sutar'"
-	<pritam.sutar@samsung.com>, "'Krzysztof Kozlowski'"
-	<krzysztof.kozlowski@linaro.org>
-Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <andre.draszik@linaro.org>,
-	<peter.griffin@linaro.org>, <neil.armstrong@linaro.org>,
-	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
-	<m.szyprowski@samsung.com>, <s.nawrocki@samsung.com>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-samsung-soc@vger.kernel.org>, <rosa.pila@samsung.com>,
-	<dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <6e1c67d2-9bfa-442a-9d53-8c5970a2a9ef@kernel.org>
-Subject: RE: [PATCH v4 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-Date: Wed, 23 Jul 2025 18:15:08 +0530
-Message-ID: <2a1901dbfbcf$a21b45e0$e651d1a0$@samsung.com>
+	id 1ueaU6-00000005Cnm-2os0;
+	Wed, 23 Jul 2025 14:30:20 +0000
+Received: from localhost.localdomain (unknown [119.122.214.181])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 1d03a2599;
+	Wed, 23 Jul 2025 22:30:14 +0800 (GMT+08:00)
+From: Chukun Pan <amadeus@jmu.edu.cn>
+To: jonas@kwiboo.se
+Cc: amadeus@jmu.edu.cn,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org,
+	heiko@sntech.de,
+	kishon@kernel.org,
+	krzk+dt@kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	robh@kernel.org,
+	vkoul@kernel.org,
+	ziyao@disroot.org
+Subject: Re: [PATCH 07/11] arm64: dts: rockchip: Add USB nodes for RK3528
+Date: Wed, 23 Jul 2025 22:30:06 +0800
+Message-Id: <20250723143006.1083489-1-amadeus@jmu.edu.cn>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20250723122323.2344916-8-jonas@kwiboo.se>
+References: <20250723122323.2344916-8-jonas@kwiboo.se>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: en-us
-Thread-Index: AQJAgQZ9LFXBZrDskwNBYris6jFv1AKCX9A9Aa5wAf0Bi5UAqwCML2yKAWUlSf8CRPacEQIi1iyNAmb2xVkCD/Nw+wC0VRd5AgU5Triy3GiwIA==
-X-CMS-MailID: 20250723124513epcas5p40a7150ee82c674eb479589288323da54
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250701115955epcas5p320cfe73ca33522cd2f9f7970cfde1c63
-References: <20250701120706.2219355-1-pritam.sutar@samsung.com>
-	<CGME20250701115955epcas5p320cfe73ca33522cd2f9f7970cfde1c63@epcas5p3.samsung.com>
-	<20250701120706.2219355-2-pritam.sutar@samsung.com>
-	<20250706-fresh-meaty-cougar-5af170@krzk-bin>
-	<07d301dbf0ae$0658cbe0$130a63a0$@samsung.com>
-	<9a2d0ad7-cb1f-473d-a91a-3a1b59b71280@kernel.org>
-	<000c01dbf70b$ccdbf630$6693e290$@samsung.com>
-	<a43cfe4f-8ff9-4dbd-b7f4-07ccc3d8e01b@kernel.org>
-	<00ff01dbfac1$ee528860$caf79920$@samsung.com>
-	<9a97cc9e-2221-44d6-83e9-25b1bec10a6f@kernel.org>
-	<000901dbfb90$42873060$c7959120$@samsung.com>
-	<6e1c67d2-9bfa-442a-9d53-8c5970a2a9ef@kernel.org>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkaThpCVh1JGRlKGU0dSx5LTlYeHw5VEwETFhoSFy
+	QUDg9ZV1kYEgtZQVlKSkJVSklJVUlKT1VKQ0pZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0tVSktLVU
+	tZBg++
+X-HM-Tid: 0a9837b12a7003a2kunm2a36e8dcff846
+X-HM-MType: 10
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6P006STo4ODEpCDEODBk3HUIt
+	CQhPChpVSlVKTE5ISUNKS0pOTkhMVTMWGhIXVRoWGh8eDgg7ERYOVR4fDlUYFUVZV1kSC1lBWUpK
+	QlVKSUlVSUpPVUpDSllXWQgBWUFJTENJNwY+
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_054524_623111_92357B18 
-X-CRM114-Status: GOOD (  19.11  )
+X-CRM114-CacheID: sfid-20250723_073018_910663_F6B00236 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,73 +79,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi,
 
+> The DWC3 node does not contain any default phys because out of current
+> and pending supported boards only one board, ROCK 2A, can use USB3.
+> Remaining boards use the Naneng Combo PHY for PCIe instead of USB3.
 
-> -----Original Message-----
-> From: Krzysztof Kozlowski <krzk@kernel.org>
-> Sent: Wednesday, July 23, 2025 2:13 PM
-> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>; 'Krzysztof
-> Kozlowski' <krzysztof.kozlowski@linaro.org>
-> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
-[snip]
-> >>>>> Ok got it. Will change supplies name as below avdd075_usb =>
-> >>>>> avdd075-usb
-> >>>>> avdd18_usb20 => avdd18-usb20
-> >>>>> avdd33_usb20 => avdd33-usb20
-> >>>>>
-> >>>>> Confirm the above change that is meant in terms of DTS style.
-> >>>> Yes. I have doubts that actual supplies have suffix usb20. Are
-> >>>> there more than one avdd18 for this block?
-> >>>>
-> >>>
-> >>> Yes, there are more than one vdd18 supplies for this block.
-> >>
-> >> And their names are?
-> >>
-> >>>
-> >>> Re-analysed your comment on adding new supplies.
-> >>> Going to re-use existing supplies as mentioned below, rather than
-> >>> introducing new supplies
-> >>>
-> >>>   dvdd-usb20-supply   => for 0.75v
-> >>>   vddh-usb20-supply   => for 1.8v
-> >>>   vdd33-usb20-supply => for 3.3v
-> >>
-> >>
-> >> You just expect us to guess whether this is correct...
-> >
-> > Sorry about not being clear so far.
-> >
-> > V920 needs three supplies, 0.75v, 1.8v and 3.3v for USB PHY The naming
-> > convention used in the schematic are avdd075-usb, avdd18_usb20,
-> > avdd33_usb20.
-> >
-> > However, PHY's user manual just mentions DVDD, VDD33 and VDD18.
-> 
-> 
-> Then dvdd, vdd33 and vdd18.
-> 
-> > Since GS101 binding already using supply names similar to what is
-> mentioned in the PHY user manual.
-> 
-> 
-> GS101 has USB 2.0 and DP, thus the suffix made some sense. I think you have
-> only USB 2.0, that's why I question the suffix.
-> 
-I cross checked the schematic of v920 SADK, this is a combo PHY which support USB-3.0 as well. 
-@ Pritam
-Schema should capture all the supplies including USB-3.0, similar to GS101 (which has USB2.0 and DP combo).
-So that would be as below:
-dvdd075-usb20-supply
-vdd18-usb20-supply
-vdd33-usb20-supply
-dvdd075-usb30-supply
-vdd18-usb30-supply
-please cross check the supply at your end and do the needful. 
+I have other RK3528 boards with USB3 and can test this in a few days.
+Or do you think that usb3-phy should be added in the dts of the device?
 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3528.dtsi b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
+> index 85bc3f5aa2c7..3e51a3f51e05 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3528.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
+> @@ -243,6 +243,29 @@ soc {
+>  		#address-cells = <2>;
+>  		#size-cells = <2>;
 > 
-> Best regards,
-> Krzysztof
+> +		usb_host0_xhci: usb@fe500000 {
+> +			compatible = "rockchip,rk3528-dwc3", "snps,dwc3";
+> +			reg = <0x0 0xfe500000 0x0 0x400000>;
+> +			clocks = <&cru CLK_REF_USB3OTG>,
+> +				 <&cru CLK_SUSPEND_USB3OTG>,
+> +				 <&cru ACLK_USB3OTG>;
+> +			clock-names = "ref_clk", "suspend_clk", "bus_clk";
+> +			interrupts = <GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH>;
+> +			power-domains = <&power RK3528_PD_VPU>;
+> +			resets = <&cru SRST_A_USB3OTG>;
+> +			dr_mode = "otg";
+> +			phy_type = "utmi_wide";
+> +			snps,dis_enblslpm_quirk;
+> +			snps,dis-del-phy-power-chg-quirk;
+> +			snps,dis-tx-ipgap-linecheck-quirk;
+> +			snps,dis-u1-entry-quirk;
+> +			snps,dis-u2-entry-quirk;
+> +			snps,dis-u2-freeclk-exists-quirk;
+> +			snps,parkmode-disable-hs-quirk;
+> +			snps,parkmode-disable-ss-quirk;
+
+Maybe "snps,dis_u2_susphy_quirk" is needed?
+Downstream kernels add this on USB2.0 only devices:
+https://github.com/rockchip-linux/kernel/blob/develop-5.10/arch/arm64/boot/dts/rockchip/rk3528-demo.dtsi#L474
+
+> +		u2phy: usb2phy@ffdf0000 {
+> +			u2phy_otg: otg-port {
+> +			u2phy_host: host-port {
+
+I think it would be better to call it usb2phy, usb2phy0_otg and usb2phy0_host?
+In this way, we can put these USB nodes close together in the device's dts.
+
+--
+2.25.1
+
 
 
 -- 
