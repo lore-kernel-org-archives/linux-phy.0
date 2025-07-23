@@ -4,64 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 427DEC83F25
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 08:21:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9537C83F17
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 08:24:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OiOQcooOGcR1QACmSZTcpOVEvMVew2y8/CtQD/acIGE=; b=TBOjBPuJE+p/+D
-	zmhfg6vshLlan2hjNdyef4aFiOz1nWvB1WXS3dRlAdpqUbQ4MTqUI5KF9tHF9wGO8lJQa6wxqMiYQ
-	hdXH0UdWjHhhaz3gOTvpvxbcOn5PWwOUFeXXDCDXzliK9y2M+KlDwjlVFWpNPHodwZWZr6aa4UmYD
-	d9ZuUrpl5a2MCfRqO04kY6pVCyP6rYntk+T+oiM+/qBhJ/bdqm8U+e47HjhmPsb4WP+RmxyzCXaCv
-	6M+8T7QpxJouvPCEYqk32cjnhiq9GyoWzrhMQBlIPPYESJI2Waanmaqi16oUceOHvlEUKM3oh+n80
-	FhGknByCNruUDcj5pYQQ==;
+	List-Owner; bh=fN/GISZZXfp87F3lQO+AKAUVDz8XjEQwyqB5mFYafvY=; b=XVUPiwtAndD29X
+	BV0/CnoEcPIeiDWH5ECg3Cnb+XVCgEYqqXx1o4JkIdlC/1Q1EAmMEhjkn9exSAiEBvQH5AmMutVop
+	Mdk5Pr+QFSAdhHYqhYKAImWKIFPZqysVZ9c8dLGCsTQ4h+skML4JHvVf5GVoWbXQVkN3bP2JxfLY+
+	Evyj96A9IAR8Fv179Rz5gFy2NKu9WvqXCOBWDCWJZ8JNP6NFPRxdQMsx61YtS6Ux5hFqZrNi3qlDT
+	AX31lVbYvoP4oUsBKfeO5x6jIJG6y7dLe+OUpVOgUsfEBvV0SMJJUr76P5v7oCgz41D6Bt6GJ2b41
+	k8xWknfsFqozqMD6bipA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueUjK-00000004MWt-3zvO;
-	Wed, 23 Jul 2025 08:21:38 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ueUll-00000004Mls-1lZq;
+	Wed, 23 Jul 2025 08:24:09 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueUSS-00000004Jrk-0nVK;
-	Wed, 23 Jul 2025 08:04:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5EB695C593F;
-	Wed, 23 Jul 2025 08:04:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A6BAC4CEE7;
-	Wed, 23 Jul 2025 08:04:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753257851;
-	bh=5G0MzIPGQyVzSDEfSUskutOnD5XbLYr6VIzJy8hOBhA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TvK5C2/fwmiSxXzWTRkggiNfcnyKIjny40VwN1Iu+CBZ1S39waBVQlHolf1xIA0Xt
-	 TK5zIgXYTW8ZuXP2B+q48VTDm5AmPwfzuIc/4N3oQPphbF+AaEOf1g4FJIdL3JARUy
-	 qyhtk6UgCl6sPP4PmVreb+IpEEpXpxBx94fmxIHGjaA+yUsR9Gt3fKGw3/A2v85Q84
-	 FtmhCs70ViIr6RsOPpzQKp5yfDSd+tLJgqKTyKp+QBARrdCgfxEfA4dFP73MJAGWmB
-	 uQQJl2gW580fJJXyZJ97+j7n2gpNTZRiN7P/A8lPx3GU7npGE+dSKb3NrLMjLFtO8r
-	 Eig/hwOm4gQnQ==
-Date: Wed, 23 Jul 2025 13:34:01 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Peter Griffin <peter.griffin@linaro.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?utf-8?B?QW5kcsOp?= Draszik <andre.draszik@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, kernel-team@android.com, 
-	William Mcvicker <willmcvicker@google.com>
-Subject: Re: [PATCH v2 1/2] phy: add new phy_notify_pmstate() api
-Message-ID: <yaz4ozb55t3pkwd2gj4l4d2hdspdcsqjm2dfsux7lfdxy6lxjl@uae2qz2vjo64>
-References: <20250703-phy-notify-pmstate-v2-0-fc1690439117@linaro.org>
- <20250703-phy-notify-pmstate-v2-1-fc1690439117@linaro.org>
- <e2lhm237c3xtbdjux2wuesq5fwu7nky3w7oq2fnsgn2pqcg5kh@xhxktriooyes>
- <aICKM-ebp9SMAkZ_@vaman>
+	id 1ueUVD-00000004KTu-3yLL
+	for linux-phy@lists.infradead.org;
+	Wed, 23 Jul 2025 08:07:05 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id C8819C66;
+	Wed, 23 Jul 2025 10:06:19 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1753257980;
+	bh=8aecLTAzLm8TXTXNAqv86bF9B9YQxFXwXcdqeERA7Z8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=IQUIsMItpWJDPqoFjfn9sUxnY1GzstPIpRxIB/NkzRo20ERg3SMuBDJt9f0YYWkLD
+	 6HQw7ZNE4kFZfglV9tpgu0R1ogEgZm5zqjEd3rBJFL4FEun+KOKypWHJIbBGNUyHOz
+	 lxXVmolGm76zDlpzHk7ynhhTE3OUQQGR0tFjrLug=
+Message-ID: <d12fc642-bb6b-4d97-9660-f50d2dad1202@ideasonboard.com>
+Date: Wed, 23 Jul 2025 11:06:54 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aICKM-ebp9SMAkZ_@vaman>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/2] phy: cadence: cdns-dphy: Update calibration wait
+ time for startup state machine
+To: Devarsh Thakkar <devarsht@ti.com>
+Cc: aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com,
+ j-choudhary@ti.com, a0512644@ti.com, vkoul@kernel.org, kishon@kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250704125915.1224738-1-devarsht@ti.com>
+ <20250704125915.1224738-3-devarsht@ti.com>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ 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
+In-Reply-To: <20250704125915.1224738-3-devarsht@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_010412_317960_7F6413B9 
-X-CRM114-Status: GOOD (  27.52  )
+X-CRM114-CacheID: sfid-20250723_010704_134348_90A68DC7 
+X-CRM114-Status: GOOD (  17.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,56 +109,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBKdWwgMjMsIDIwMjUgYXQgMTI6Mzc6MzFQTSBHTVQsIFZpbm9kIEtvdWwgd3JvdGU6
-Cj4gT24gMjItMDctMjUsIDIyOjA0LCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4gPiBP
-biBUaHUsIEp1bCAwMywgMjAyNSBhdCAwMjowMzoyMlBNIEdNVCwgUGV0ZXIgR3JpZmZpbiB3cm90
-ZToKPiA+ID4gQWRkIGEgbmV3IHBoeV9ub3RpZnlfcG1zdGF0ZSgpIGFwaSB0aGF0IG5vdGlmaWVz
-IGFuZCBjb25maWd1cmVzIGEgcGh5IGZvciBhCj4gPiA+IGdpdmVuIFBNIGxpbmsgc3RhdGUgdHJh
-bnNpdGlvbi4KPiA+ID4gCj4gPiA+IFRoaXMgaXMgaW50ZW5kZWQgdG8gYmUgYnkgcGh5IGRyaXZl
-cnMgd2hpY2ggbmVlZCB0byBkbyBzb21lIHJ1bnRpbWUKPiA+ID4gY29uZmlndXJhdGlvbiBvZiBw
-YXJhbWV0ZXJzIGR1cmluZyB0aGUgdHJhbnNpdGlvbiB0aGF0IGNhbid0IGJlIGhhbmRsZWQgYnkK
-PiA+ID4gcGh5X2NhbGlicmF0ZSgpIG9yIHBoeV9wb3dlcl97b258b2ZmfSgpLgo+ID4gPiAKPiA+
-ID4gVGhlIGZpcnN0IHVzYWdlIG9mIHRoaXMgQVBJIGlzIGluIHRoZSBTYW1zdW5nIFVGUyBwaHkg
-dGhhdCBuZWVkcyB0byBpc3N1ZQo+ID4gPiBzb21lIHJlZ2lzdGVyIHdyaXRlcyB3aGVuIGVudGVy
-aW5nIGFuZCBleGl0aW5nIHRoZSBoaWJlcm5hdGUgbGluayBzdGF0ZS4KPiA+ID4gCj4gPiA+IFNp
-Z25lZC1vZmYtYnk6IFBldGVyIEdyaWZmaW4gPHBldGVyLmdyaWZmaW5AbGluYXJvLm9yZz4KPiA+
-ID4gLS0tCj4gPiA+ICBkcml2ZXJzL3BoeS9waHktY29yZS5jICB8IDI1ICsrKysrKysrKysrKysr
-KysrKysrKysrKysKPiA+ID4gIGluY2x1ZGUvbGludXgvcGh5L3BoeS5oIHwgMjUgKysrKysrKysr
-KysrKysrKysrKysrKysrKwo+ID4gPiAgMiBmaWxlcyBjaGFuZ2VkLCA1MCBpbnNlcnRpb25zKCsp
-Cj4gPiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcGh5LWNvcmUuYyBiL2RyaXZl
-cnMvcGh5L3BoeS1jb3JlLmMKPiA+ID4gaW5kZXggMDRhNWEzNGU3YTk1MGFlOTRmYWU5MTU2NzNj
-MjVkNDc2ZmMwNzFjMS4uMGIyOWJjMmM3MDk4OTBkN2ZjMjdkMTQ4MGEzNWNkYTZhODI2ZmQzMCAx
-MDA2NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9waHkvcGh5LWNvcmUuYwo+ID4gPiArKysgYi9kcml2
-ZXJzL3BoeS9waHktY29yZS5jCj4gPiA+IEBAIC01MjAsNiArNTIwLDMxIEBAIGludCBwaHlfbm90
-aWZ5X2Rpc2Nvbm5lY3Qoc3RydWN0IHBoeSAqcGh5LCBpbnQgcG9ydCkKPiA+ID4gIH0KPiA+ID4g
-IEVYUE9SVF9TWU1CT0xfR1BMKHBoeV9ub3RpZnlfZGlzY29ubmVjdCk7Cj4gPiA+ICAKPiA+ID4g
-Ky8qKgo+ID4gPiArICogcGh5X25vdGlmeV9wbXN0YXRlKCkgLSBwaHkgbGluayBzdGF0ZSBub3Rp
-ZmljYXRpb24KPiA+IAo+ID4gJ3Btc3RhdGUnIGRvZXNuJ3QgY29ycmVzcG9uZCB0byAnbGluayBz
-dGF0ZScuIFNvIGhvdyBhYm91dCwKPiA+IHBoeV9ub3RpZnlfbGlua19zdGF0ZSgpPwo+ID4gCj4g
-PiBzL3BoeS9QSFkgKGhlcmUgYW5kIGJlbG93KQo+ID4gCj4gPiA+ICsgKiBAcGh5OiB0aGUgcGh5
-IHJldHVybmVkIGJ5IHBoeV9nZXQoKQo+ID4gPiArICogQHN0YXRlOiB0aGUgbGluayBzdGF0ZQo+
-ID4gPiArICoKPiA+ID4gKyAqIE5vdGlmeSB0aGUgcGh5IG9mIHNvbWUgUE0gbGluayBzdGF0ZSB0
-cmFuc2l0aW9uLiBVc2VkIHRvIG5vdGlmeSBhbmQKPiA+IAo+ID4gTGluayBzdGF0ZSBjaGFuZ2Ug
-aXMgY29tbW9uIGZvciB0aGUgUEhZLiBTbyByZW1vdmUgJ1BNJy4KPiAKPiBJcyBpdCByZWFsbHkg
-bGluayBvciBwaHkgc3RhdGU/Cj4gCgpUaGlzIGlzIGEgYml0IG9mIGFtYmlndWl0eS4gQnV0IGFz
-IHBlciB0aGUgc3BlYywgSGliZXJuOCBpcyB0aGUgbG93IHBvd2VyIHN0YXRlCm9mIHRoZSBNLVBI
-WSBhbmQgVW5pcHJvIGNvbnRyb2xsZXIuCgpNYXliZSwgcGh5X25vdGlmeV9zdGF0ZSgpPwoKPiA+
-IAo+ID4gPiArICogY29uZmlndXJlIHRoZSBwaHkgYWNjb3JkaW5nbHkuCj4gPiA+ICsgKgo+ID4g
-PiArICogUmV0dXJuczogJTAgaWYgc3VjY2Vzc2Z1bCwgYSBuZWdhdGl2ZSBlcnJvciBjb2RlIG90
-aGVyd2lzZQo+ID4gPiArICovCj4gPiA+ICtpbnQgcGh5X25vdGlmeV9wbXN0YXRlKHN0cnVjdCBw
-aHkgKnBoeSwgZW51bSBwaHlfbGlua3N0YXRlIHN0YXRlKQo+ID4gCj4gPiBJIHRoaW5rIHlvdSBu
-ZWVkIHRvIHVzZSAnaW50IHN0YXRlJyBhbmQgbGV0IGRyaXZlcnMgcGFzcyB0aGVpciBvd24gbGlu
-ayBzdGF0ZQo+ID4gdmFsdWVzLiBZb3UgY2Fubm90IGhhdmUgZ2VuZXJpYyBsaW5rIHN0YXRlcyBh
-Y3Jvc3MgYWxsIHBlcmlwaGVyYWxzLgo+IAo+IEkgd291bGQgYXZvaWQgdGhhdCwgcGVvcGxlIHN0
-YXJ0IG92ZXJsb2FkaW5nIHRoaXMgaWYgd2UgbGV0IGl0IGtlZXAKPiBvcGVuISBJIHdvdWxkIGxp
-a2UgdG8gYXZvaWQgdGhlIGFwaSAtKGFiKXVzZQo+IAoKVGhlbiB3ZSB3aWxsIGVuZCB1cCB3aXRo
-IHBlcmlwaGVyYWwgc3BlY2lmaWMgZW51bXMgaW4gaW5jbHVkZS9saW51eC9waHkvcGh5LmguCklm
-IHlvdSBhcmUgT0sgd2l0aCB0aGF0LCBmaW5lIHdpdGggbWUuCgotIE1hbmkKCi0tIArgrq7grqPg
-rr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi,
+
+On 04/07/2025 15:59, Devarsh Thakkar wrote:
+> Do read-modify-write so that we re-use the characterized reset value as
+> specified in TRM [1] to program calibration wait time which defines number
+> of cycles to wait for after startup state machine is in bandgap enable
+> state.
+> 
+> This fixes PLL lock timeout error faced while using RPi DSI Panel on TI's
+> AM62L and J721E SoC since earlier calibration wait time was getting
+> overwritten to zero value thus failing the PLL to lockup and causing
+> timeout.
+> 
+> [1] AM62P TRM (Section 14.8.6.3.2.1.1 DPHY_TX_DPHYTX_CMN0_CMN_DIG_TBIT2):
+> Link: https://www.ti.com/lit/pdf/spruj83
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
+> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
+> ---
+> V4: No change
+> V3:
+> - Do read-modify-write to preserve reset value for calibration wait
+>   time
+> V2:
+> Introduced this as as separate patch
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
+> index da8de0a9d086..24a25606996c 100644
+> --- a/drivers/phy/cadence/cdns-dphy.c
+> +++ b/drivers/phy/cadence/cdns-dphy.c
+> @@ -30,6 +30,7 @@
+>  
+>  #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
+>  #define DPHY_CMN_SSM_EN			BIT(0)
+> +#define DPHY_CMN_SSM_CAL_WAIT_TIME	GENMASK(8, 1)
+>  #define DPHY_CMN_TX_MODE_EN		BIT(9)
+>  
+>  #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
+> @@ -410,7 +411,8 @@ static int cdns_dphy_power_on(struct phy *phy)
+>  	writel(reg, dphy->regs + DPHY_BAND_CFG);
+>  
+>  	/* Start TX state machine. */
+> -	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
+> +	writel((reg & DPHY_CMN_SSM_CAL_WAIT_TIME) | DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
+>  	       dphy->regs + DPHY_CMN_SSM);
+
+That's not how you do read-modify-write. You should first read the
+register, then clear the fields you want to set/clear, then set the
+fields, then write.
+
+reg = readl(dphy->regs + DPHY_CMN_SSM, dphy->regs + DPHY_CMN_SSM);
+reg &= ~(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN)
+reg |= DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN;
+writel(reg, dphy->regs + DPHY_CMN_SSM);
+
+That's the general form, in this particular case the and-line is not
+necessary, of course.
+
+There's also FIELD_MODIFY() (and related), but I'm not sure if I like
+them... Up to you.
+
+ Tomi
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
