@@ -4,85 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 020A5C83F1A
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 810C0C83F17
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 12:23:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxBpBOoA0fyHdiKQdj5+bbMBNMzTbmYmGOPQjOUKkiA=; b=POX18KQ8K2p8wU
-	Nkjwmuw8lh0ZrlVka4frXt7J021qLS8Z2rb7vPx5TKXHc+NYPPAFNfyTC1C1fsg5zVUvcA1mWdTDu
-	ZtWCQyitOiA9D2CrCLvVUCEyf2omE7IJ77i01J8bJJw/gmMezF9xa//Uib0t0P9LIaOP3/OCa/z1s
-	xjpJTs3PWQlZ0oIf3VMlUS/ZW55oUh6n5ko4NwPyvupPBKusY/O3qIEW0lwqVrLZHTFRC557cOl57
-	mxPGoUV+1AwUCkUCh+HblVFw/NjPl5rGEg4/szUDKh3tG0WYlkqFhpfQAld9aT1RyUSewq2dkZsZv
-	aSlc+DNhffZ4nz+Rey3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IR8KCPy5csN+dAk4zfZyGGTHUPklZCWcIlBIyAiWEmY=; b=e64nnvDzeECQX0
+	+V3hjTtVAzcN5rYWmoUPwiHbVLupl1aHqfeV2pR5+KeJHlwQjBUnX8CYCuJc494aKIqfP/JkDG6Y9
+	6SJXYw2Hx43kf/AFGCoFoBF4UmTxPr3T7d34udr3L7xh5Cb/G+DKF5YCjQeUEpyrvU6Vv23n9a+hf
+	WBlAffBqk8BIArlqa3WNsB3UzTyU/b0m8cMBDIzIDcsujmHu7CKRAzJ9O8XUwFJhcQvdMYKr1Hfan
+	hifVqyhnvc+XNXP+worZD7DEv4KOzkzmeiGHj+fyh/C0ofPnJ/VetaoYUmU05pGtn7ttKTbueOe1k
+	sazQeRUNPoXOnBUyIkOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWcT-00000004fbX-35iR;
-	Wed, 23 Jul 2025 10:22:41 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ueYVa-00000004tgD-4BBy;
+	Wed, 23 Jul 2025 12:23:42 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWMA-00000004cNY-2nii
+	id 1ueYVX-00000004teI-2gCO
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 10:05:52 +0000
-Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5BDE51733;
-	Wed, 23 Jul 2025 12:05:10 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753265111;
-	bh=BrIsZY7PNeailKwzMPwyX4UVV3ZOBX2nZ4UDWTTe6Zs=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=dKWk08SQQRbx7shGYW18DfnydlpqVcdCBcISFL88SxC+Jpp72zjdJBAkQBykLjSG6
-	 p7SNfaqYlfGvu+pRI9R01D4EBymMcNK1pPxFDcLNurZeiptx3kDpZ1wqZn3L6KZOPT
-	 0yTm+qE5tOVR59F2NrZ8mpV447g2Hb5w+1NG/VhM=
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 23 Jul 2025 13:05:16 +0300
-Subject: [PATCH v5 10/15] drm/bridge: cdns-dsi: Adjust mode to negative
- syncs
+	Wed, 23 Jul 2025 12:23:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=Content-Transfer-Encoding: MIME-Version: Message-ID: Date: Subject: Cc:
+ To: From; q=dns/txt; s=fe-e1b5cab7be; t=1753273417;
+ bh=S3oLltbznTlbaAbBKI9c992XjzDx7TeK4WIwFzqJJ7g=;
+ b=UScr2djUk7heAL1OVFY/qpOZBm6JqQIXIIj5S7sn28Cb7FTfj/LOZAGtls9zXKQZUbjj1G1jd
+ bSTjN6txHKVPIt8hb2n8hJdj0mzuEtcspIdYr7Cj1bGjWOV3JGYXj18l7r3RzCkoiQwE7q0OUu/
+ uY/kh46phEWWrfgzj++SrhjucHJgGda+cSKrkrW8V5BS9r3iTUNIPdeTUih+I6jQfyLzQ0jfE4x
+ DFeGKVZn0Kc1GPLuaQRK2D35cZTGGlt0RyDEuNpLE1aiCGLfpe8mDrjCbq1/9S76FdtwR+9xSHv
+ rVSiY4hfYUiROd7XDCjI6LHfRSZ3JPsCXrLyyxMDMhLg==
+X-Forward-Email-ID: 6880d441cb0ee86f9731a046
+X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
+ 149.28.215.223
+X-Forward-Email-Version: 1.1.6
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Heiko Stuebner <heiko@sntech.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Yao Zi <ziyao@disroot.org>,
+	Chukun Pan <amadeus@jmu.edu.cn>,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Jonas Karlman <jonas@kwiboo.se>
+Subject: [PATCH 00/11] rockchip: Add USB 2.0 support for RK3528
+Date: Wed, 23 Jul 2025 12:22:58 +0000
+Message-ID: <20250723122323.2344916-1-jonas@kwiboo.se>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-Message-Id: <20250723-cdns-dsi-impro-v5-10-e61cc06074c2@ideasonboard.com>
-References: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
-In-Reply-To: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
-To: Jyri Sarha <jyri.sarha@iki.fi>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Andrzej Hajda <andrzej.hajda@intel.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Jayesh Choudhary <j-choudhary@ti.com>, Dmitry Baryshkov <lumag@kernel.org>
-Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>, 
- Aradhya Bhatia <aradhya.bhatia@linux.dev>, 
- Devarsh Thakkar <devarsht@ti.com>, 
- Parth Pancholi <parth.pancholi@toradex.com>, 
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1706;
- i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=BrIsZY7PNeailKwzMPwyX4UVV3ZOBX2nZ4UDWTTe6Zs=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPscCoAuwajUn2NN5f7RfvfrQq2bchc1EgAb
- aUXF1Bd6g2JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz7AAKCRD6PaqMvJYe
- 9UEBD/4jCgkBMOcT6LN6eNoYdt8E6YjbnhYxs9n1s5bVd7ihVrU7yvCIUf4mgUt76VvMxw0w22n
- YaFcI96dDz+ZrY+efGkDBCXCnQKKvMDhqA+jAUCrtyjL6Hur2mlFzAsnb6YSEmLW35dzGPFXT72
- tUFhBUc9c5vTURqLMXGd3frgTn+VTlOczs/ASDetnWVwVeblUDPJl5Caq+alRVZei6UR6KCFiNL
- X7VqsN5vfWFahRAFqgCZk+JbPxR3A0+ixxgCNtrH+FRMoBJSZidp4JwBrp8UdzJYwPU4ZKeYfF/
- hBztx0Ew/IqM2SpkW58DSzh4bROaJHQG1SDC/JAWPXfpq5q4dHmojkwUjO2uk6rJoyb5Y8/tDG/
- cYQ6bbuj8zgtUNmVD9Cbc8M9vchV59hf/JOrvVv8HjDv3m9LmAplwvGhEPADMeJWxXLOHVrzGGN
- +H87rfLbtn3TAdtcMZOjnmNWGj71hOB2/ywg34ST88pBDCtX8M6BkAqSQB/P/9gguGRCWs9zS2r
- ZX8wz5mJSBaoDi3f2oMLptxXdYFDIbs693UVaGXaJKNmMeOaZzpoX7NUx5DkAmbfySS12xY557M
- 6nZLOU9N5ky35neRsyYSNBEHOAqI2QwGppt1Kw2tf4idH9EixQjbrvrc1dNks6PME24UcRqu9A2
- qsDnKImp/kaYftA==
-X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
- fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_030550_848739_64EF50DB 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250723_052340_021313_7D11B76C 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,44 +83,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Cadence DSI requires negative syncs from the incoming video signal,
-but at the moment that requirement is not expressed in any way. If the
-crtc decides to use positive syncs, things break down.
+This series adds support for USB 2.0 on Rockchip RK3528. It also enables
+use of USB 2.0 ports on current supported and pending RK3528 boards.
 
-Use the adjusted_mode in atomic_check to set the sync flags to negative
-ones.
+Only Radxa ROCK 2A of current pending boards has a USB 3.0 port, and for
+that to work the series "Support RK3528 variant of Rockchip
+naneng-combphy" [1] is also required.
 
-Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
-Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
-Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
-Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
----
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+Patch 1-2 tries to clean up and simplify use of usbgrf.
 
-diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index f7d7d277367e..d49b4789a074 100644
---- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-+++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -908,9 +908,13 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
- 	struct cdns_dsi_input *input = bridge_to_cdns_dsi_input(bridge);
- 	struct cdns_dsi *dsi = input_to_dsi(input);
- 	struct cdns_dsi_bridge_state *dsi_state = to_cdns_dsi_bridge_state(bridge_state);
--	const struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
-+	struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
- 	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
- 
-+	/* cdns-dsi requires negative syncs */
-+	adjusted_mode->flags &= ~(DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC);
-+	adjusted_mode->flags |= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC;
-+
- 	return cdns_dsi_check_conf(dsi, adjusted_mode, dsi_cfg);
- }
- 
+Patch 3-6 add support for the RK3528 variant of USB2PHY.
+
+Patch 7-11 enables use of USB 2.0 ports in device tree files.
+
+This series may need the series "rockchip: Add power controller support
+for RK3528" [2] and "arm64: dts: rockchip: Add ROCK 2A/2F, Sige1 and
+NanoPi Zero2" [3] for a clean apply.
+
+A branch with all these (and some more) patches can be found at [4].
+
+[1] https://lore.kernel.org/r/20250624033733.50197-1-ziyao@disroot.org
+[2] https://lore.kernel.org/r/20250723085654.2273324-1-jonas@kwiboo.se
+[3] https://lore.kernel.org/r/20250717103720.2853031-1-jonas@kwiboo.se
+[4] https://github.com/Kwiboo/linux-rockchip/commits/next-20250722-rk3528/
+
+Jianwei Zheng (1):
+  phy: rockchip: inno-usb2: Add support for RK3528
+
+Jonas Karlman (10):
+  dt-bindings: phy: rockchip,inno-usb2phy: Require GRF for RK3568/RV1108
+  phy: rockchip: inno-usb2: Simplify rockchip,usbgrf handling
+  dt-bindings: phy: rockchip,inno-usb2phy: Add compatible for RK3528
+  phy: rockchip: inno-usb2: Add clkout_ctl_phy support
+  dt-bindings: usb: dwc3: Add compatible for RK3528
+  arm64: dts: rockchip: Add USB nodes for RK3528
+  arm64: dts: rockchip: Enable USB 2.0 ports on Radxa E20C
+  arm64: dts: rockchip: Enable USB 2.0 ports on Radxa ROCK 2A/2F
+  arm64: dts: rockchip: Enable USB 2.0 ports on ArmSoM Sige1
+  arm64: dts: rockchip: Enable USB 2.0 ports on NanoPi Zero2
+
+ .../bindings/phy/rockchip,inno-usb2phy.yaml   |  44 ++++-
+ .../bindings/usb/rockchip,dwc3.yaml           |   3 +
+ .../boot/dts/rockchip/rk3528-armsom-sige1.dts |  24 +++
+ .../boot/dts/rockchip/rk3528-nanopi-zero2.dts |  29 +++
+ .../boot/dts/rockchip/rk3528-radxa-e20c.dts   |  47 +++++
+ .../boot/dts/rockchip/rk3528-rock-2.dtsi      |  13 ++
+ .../boot/dts/rockchip/rk3528-rock-2f.dts      |  12 ++
+ arch/arm64/boot/dts/rockchip/rk3528.dtsi      |  76 ++++++++
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 181 ++++++++++++------
+ 9 files changed, 370 insertions(+), 59 deletions(-)
 
 -- 
-2.43.0
+2.50.1
 
 
 -- 
