@@ -4,76 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FE2BC83F34
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DCFBC87FC5
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:20:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NX0FSMA3kvp8oSYU9z51OsDxa9WqtjVSJ1anOAASN2U=; b=ZP+jys7Lqhk84s
-	tZ0XNxoMTYKJwwXLJW1rCByOrdbr3tiBZI2TAzRgEtvqc6kCVexuBM0BZS9isEJjp3gLCIOmVbxez
-	PXIDdz1gWvnJzgcve0ZZbKTRbOxwhCVLE28OSGrb0N2qw34V/HCqmDCtsXixPjuot+P47c6t6rPSQ
-	1wTo1BJqHtaAfgMKo7jsw+IhfyQ53HZcT98ZmkpBIcTegL6BqiEn8//umy9g1+fNiX0d966zBNPoO
-	z4MtCzyKXo2Y+kXU9ODGX7grSju0cUIi2xGJA6iyHClXqNXhdFPl+ql/JidAWVD7nPhYH/3wZBBLc
-	meTZgXndzJjmYIggVXPA==;
+	List-Owner; bh=AWXST1Ym+9qm4M16t1PubdmiUBn2D3ubQHDJdKcYoBs=; b=iF83gynlKfVfwf
+	IIHxV7pDIGdCVCoSf4q+QJK6PooxaW/aleyra6mDrYkfslSlmTnLPv2RruP6vIPmRMNZL6aJIJdpt
+	U2h+O3zHQDF+oPvHqAPjawJcobMJeCgUUYVLE3xBPzWVl88cCeXf+imsrDZinghOqpwoD8xvLDOkl
+	yumc6REQyKR8F0+HHzyZBoLpDWi3XH6u07fToo9ZQOxpPliPg+WiN2LAaXCa3txqf8rNLuUjEuVSm
+	1Hm6KL8em7RAYqddcIvFx4tt2tjVMjwhzP4d7yqGtVCoGPCvCjST/9487GsVJwElFpDTFpXYpeIpg
+	utKgRlmYKvE4F7SmUIrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWa1-00000004fEQ-3geg;
-	Wed, 23 Jul 2025 10:20:09 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ueWa2-00000004fFE-1EJ4;
+	Wed, 23 Jul 2025 10:20:10 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWJ0-00000004bi0-1nDr
+	id 1ueWJg-00000004bsO-47El
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 10:02:36 +0000
-Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 89BB2F0B;
-	Wed, 23 Jul 2025 12:01:54 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753264915;
-	bh=ubLhijbPFpmnKtpMPd2eMRomUhKyh3UJpvvcvParxTk=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=nn2QlpMxwtJrNobp3egnfC+cSiif2h4aMklMu1ALmLW9yq1N83masvUj9gxNE3cbt
-	 Np7gLOFSHB8ifTTwufdbUcYemL6BfRrIABiT1aXP4H1H/mgsU+fkuQDfu89xmk2X6i
-	 ADQCITZ+EVRCmP1B9CIJCS4ChNTGVONZ2zD42rb8=
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 23 Jul 2025 13:01:29 +0300
-Subject: [PATCH 2/2] phy: cdns-dphy: Remove leftover code
+	Wed, 23 Jul 2025 10:03:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1753264997; x=1784800997;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=IgGeQ0m8gC+koUHZIYM5w+vZO68unmZ9DltKgstIvlI=;
+  b=nulBNLEZBZCvyEWy/C8KnYzipnlTm2jR7DwuJfvQg5UjHxUdozBwAXmC
+   dGX/unGFHUXHF35SBBn0kNRsvzbMCO2pItAeSEo2WLXiksBCbSOi8fyJl
+   UyJuht3zSVxAtV/qSM+ZwD3oEtPMov8HqQlYz9DWwAjdtrzSs7bhPylFD
+   D+feX7IOr+ulwOH4lDnn98n6j5yrZPIpWeONf7fZSPPd9JRsrjKakuTPt
+   Id858RNbjbkQuRdvyoLuIA0lk4GaIHblpHzDEFa9YAXYrrTiwui1vE6uF
+   HImDnky5vtLWn4s17AzgP8aP24RzpnMybf+yALruwd3NESkCUbFl46oVY
+   Q==;
+X-CSE-ConnectionGUID: hwZVCOJuSsaQu+ej6HTlzg==
+X-CSE-MsgGUID: C98f8jllSWCq8Mm3IFysmA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11500"; a="55246050"
+X-IronPort-AV: E=Sophos;i="6.16,333,1744095600"; 
+   d="scan'208";a="55246050"
+Received: from fmviesa010.fm.intel.com ([10.60.135.150])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jul 2025 03:03:16 -0700
+X-CSE-ConnectionGUID: ft00YaJdTlqFioQ43nM3gA==
+X-CSE-MsgGUID: wLiVLnrkS1mmgRzFTZqG0g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,333,1744095600"; 
+   d="scan'208";a="160130656"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by fmviesa010.fm.intel.com with ESMTP; 23 Jul 2025 03:03:11 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1ueWJZ-000JDF-0O;
+	Wed, 23 Jul 2025 10:03:09 +0000
+Date: Wed, 23 Jul 2025 18:02:25 +0800
+From: kernel test robot <lkp@intel.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	sboyd@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+	casey.connolly@linaro.org
+Subject: Re: [PATCH v2 4/7] phy: qualcomm: eusb2-repeater: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <202507231743.Z1ToUg4r-lkp@intel.com>
+References: <20250722101317.76729-5-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-Message-Id: <20250723-cdns-dphy-hs-clk-rate-fix-v1-2-d4539d44cbe7@ideasonboard.com>
-References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
-In-Reply-To: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Parth Pancholi <parth.pancholi@toradex.com>, 
- Devarsh Thakkar <devarsht@ti.com>, Francesco Dolcini <francesco@dolcini.it>, 
- Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>, 
- Aradhya Bhatia <aradhya.bhatia@linux.dev>, 
- Jayesh Choudhary <j-choudhary@ti.com>
-X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2424;
- i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=ubLhijbPFpmnKtpMPd2eMRomUhKyh3UJpvvcvParxTk=;
- b=kA0DAAgB+j2qjLyWHvUByyZiAGiAszaiEm1o5niwWdlRP1o0/dLv5mQAyuYraUhEINRMvLG4g
- 4kCMwQAAQgAHRYhBMQ4DD6WXv2BB5/zp/o9qoy8lh71BQJogLM2AAoJEPo9qoy8lh71Rs8P/RNO
- CxjDTLGNiQyEic6a6DKs3HawdH3SYQSbZG8uZJcM8S47wgQzWrOKx53aUQvLF/l6xrA8s7/ZMAb
- UCRqxfRVuijRjvG09z+JrUTkyWR4EhvXBjXwomzn15ol7/N36YyJyjQxyFZc69vT8DsGF3nlWmx
- BtprOepyyUkeknqoXiSvw58+c0LV7pvClLTqIyL413iaiHSPw0txGOgc9QY1qdwpkDBpu2kYzmh
- 2f/H6x+3kwjxwfax02ZRgFWGI/LT5IhlB1Mkql5sEPfZG76vhmMHkSQiTeLZduz48NIE0FDqZzb
- 9D2jaJIekz0LCY4dEp9L3al982mEqNWVgjOndgKiBT7KWGvNQKKnF4zgERHb80xSOlkx5n7HlWb
- crRQCdE4Y5SR7TsjWeiucokiXgtc+vEU4DiDYug5tmAwlmnpMspi/SLPUZZM/6Zb1ZLnUvetSup
- c1aK2pqI8YJ1GsNFMZcF7TmPbOpQzZeLUPBFJNKp6jNcsYYL+xxyk5YWhFHSzQemDuyLBHGmTgn
- uhiQ8wSHdbYjkAZxKd0QPX3IidhZUZPvS8CC2nybJ2lZdK40TYkT4bveTKeXek2/nE2VRmY+X3Z
- HbmwPvbOoxSkWzsIWnNIqL+jbaBh1RQ/xZZXvZFJl0botqQO1SOKrs/NyaiOlqR1T0BW4KaFD6O
- QyBvS
-X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
- fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
+Content-Disposition: inline
+In-Reply-To: <20250722101317.76729-5-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_030234_608493_17FC2805 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250723_030317_063209_9BF88B11 
+X-CRM114-Status: GOOD (  12.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,75 +98,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The code in cdns-dphy has probably been part of a DSI driver in the
-past. Remove DSI defines and variables which are not used or do not
-actually do anything. Also rename cdns_dsi_get_dphy_pll_cfg() to
-cdns_dphy_get_pll_cfg(), i.e. drop the "dsi", as it's not relevant here.
+Hi AngeloGioacchino,
 
-Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
-Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
-Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
-Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
-Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
----
- drivers/phy/cadence/cdns-dphy.c | 19 ++++---------------
- 1 file changed, 4 insertions(+), 15 deletions(-)
+kernel test robot noticed the following build errors:
 
-diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-index f79ec4fab409..33a42e72362e 100644
---- a/drivers/phy/cadence/cdns-dphy.c
-+++ b/drivers/phy/cadence/cdns-dphy.c
-@@ -55,14 +55,6 @@
- #define DPHY_PSM_CFG_FROM_REG		BIT(0)
- #define DPHY_PSM_CLK_DIV(x)		((x) << 1)
- 
--#define DSI_HBP_FRAME_OVERHEAD		12
--#define DSI_HSA_FRAME_OVERHEAD		14
--#define DSI_HFP_FRAME_OVERHEAD		6
--#define DSI_HSS_VSS_VSE_FRAME_OVERHEAD	4
--#define DSI_BLANKING_FRAME_OVERHEAD	6
--#define DSI_NULL_FRAME_OVERHEAD		6
--#define DSI_EOT_PKT_SIZE		4
--
- #define DPHY_TX_J721E_WIZ_PLL_CTRL	0xF04
- #define DPHY_TX_J721E_WIZ_STATUS	0xF08
- #define DPHY_TX_J721E_WIZ_RST_CTRL	0xF0C
-@@ -117,10 +109,9 @@ static const unsigned int tx_bands[] = {
- 	870, 950, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2500
- };
- 
--static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
--				     struct cdns_dphy_cfg *cfg,
--				     struct phy_configure_opts_mipi_dphy *opts,
--				     unsigned int *dsi_hfp_ext)
-+static int cdns_dphy_get_pll_cfg(struct cdns_dphy *dphy,
-+				 struct cdns_dphy_cfg *cfg,
-+				 struct phy_configure_opts_mipi_dphy *opts)
- {
- 	unsigned long pll_ref_hz = clk_get_rate(dphy->pll_ref_clk);
- 	u64 dlane_bps;
-@@ -289,15 +280,13 @@ static int cdns_dphy_config_from_opts(struct phy *phy,
- 				      struct cdns_dphy_cfg *cfg)
- {
- 	struct cdns_dphy *dphy = phy_get_drvdata(phy);
--	unsigned int dsi_hfp_ext = 0;
- 	int ret;
- 
- 	ret = phy_mipi_dphy_config_validate(opts);
- 	if (ret)
- 		return ret;
- 
--	ret = cdns_dsi_get_dphy_pll_cfg(dphy, cfg,
--					opts, &dsi_hfp_ext);
-+	ret = cdns_dphy_get_pll_cfg(dphy, cfg, opts);
- 	if (ret)
- 		return ret;
- 
+[auto build test ERROR on next-20250722]
+[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16-rc7 v6.16-rc6 v6.16-rc5 v6.16-rc7]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250722-181911
+base:   next-20250722
+patch link:    https://lore.kernel.org/r/20250722101317.76729-5-angelogioacchino.delregno%40collabora.com
+patch subject: [PATCH v2 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
+config: sparc-randconfig-001-20250723 (https://download.01.org/0day-ci/archive/20250723/202507231743.Z1ToUg4r-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 8.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250723/202507231743.Z1ToUg4r-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507231743.Z1ToUg4r-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   sparc-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.o: in function `eusb2_repeater_probe':
+>> drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:228: undefined reference to `devm_spmi_subdevice_alloc_and_add'
+>> sparc-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:236: undefined reference to `__devm_regmap_init_spmi_ext'
+
+
+vim +228 drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
+
+   193	
+   194	static int eusb2_repeater_probe(struct platform_device *pdev)
+   195	{
+   196		struct regmap_config eusb2_regmap_config = {
+   197			.reg_bits = 16,
+   198			.val_bits = 8,
+   199			.max_register = 0x100,
+   200			.fast_io = true,
+   201		};
+   202		struct spmi_device *sparent;
+   203		struct eusb2_repeater *rptr;
+   204		struct spmi_subdevice *sub_sdev;
+   205		struct device *dev = &pdev->dev;
+   206		struct phy_provider *phy_provider;
+   207		struct device_node *np = dev->of_node;
+   208		int ret;
+   209	
+   210		if (!dev->parent)
+   211			return -ENODEV;
+   212	
+   213		rptr = devm_kzalloc(dev, sizeof(*rptr), GFP_KERNEL);
+   214		if (!rptr)
+   215			return -ENOMEM;
+   216	
+   217		rptr->dev = dev;
+   218		dev_set_drvdata(dev, rptr);
+   219	
+   220		rptr->cfg = of_device_get_match_data(dev);
+   221		if (!rptr->cfg)
+   222			return -EINVAL;
+   223	
+   224		sparent = to_spmi_device(dev->parent);
+   225		if (!sparent)
+   226			return -ENODEV;
+   227	
+ > 228		sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
+   229		if (IS_ERR(sub_sdev))
+   230			return PTR_ERR(sub_sdev);
+   231	
+   232		ret = of_property_read_u32(np, "reg", &eusb2_regmap_config.reg_base);
+   233		if (ret < 0)
+   234			return ret;
+   235	
+ > 236		rptr->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &eusb2_regmap_config);
+   237		if (IS_ERR(rptr->regmap))
+   238			return -ENODEV;
+   239	
+   240		ret = eusb2_repeater_init_vregs(rptr);
+   241		if (ret < 0) {
+   242			dev_err(dev, "unable to get supplies\n");
+   243			return ret;
+   244		}
+   245	
+   246		rptr->phy = devm_phy_create(dev, np, &eusb2_repeater_ops);
+   247		if (IS_ERR(rptr->phy)) {
+   248			dev_err(dev, "failed to create PHY: %d\n", ret);
+   249			return PTR_ERR(rptr->phy);
+   250		}
+   251	
+   252		phy_set_drvdata(rptr->phy, rptr);
+   253	
+   254		phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+   255		if (IS_ERR(phy_provider))
+   256			return PTR_ERR(phy_provider);
+   257	
+   258		return 0;
+   259	}
+   260	
 
 -- 
-2.43.0
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
