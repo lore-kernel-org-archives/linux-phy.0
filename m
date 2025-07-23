@@ -4,45 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1483C87FCD
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45E36C87FD1
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gmcNsAhyUWhUhkIMWP0i82t49yP8B8g+51vuTkMrDKw=; b=eLyHo3ovs1VWM2
-	eRIToTlCdc1nC6HcYlx6MODxekC0gnHgDmDUdsuRTo7hRlKPGodhRFT1GWZyt/CeBKhMxhw0frF08
-	zgJ7boQ6hrOSUgjfOwgjW49aijdPvvluJfesO6+o77NJl144JC2t5c/5C6sqjdibUHE9q4cjwvw/n
-	qhRjsIwAv4jLkZc395vI5LMgLPzIrASJ8dBHUAiVsTWtVN3oXkjE8C03pDTExxOseIxOHSp4QM73F
-	0DPhG+I6IYmQbJTizlxoIfMXRCQLmRhGl1lec/lN73z9rfFJvLENPB2QlKlVXE6AtYS/joeX26dU5
-	gIOWSxCV6+FYLNpCF4tg==;
+	List-Owner; bh=pghZl2X9WsUUmMGaY0BpRoMxxiisJRvEmqGYb+J+aR4=; b=KnJfEYGrXv1qJ9
+	v/XE7bLCXZbaKjSuoWuSnjPGyq8exxQqOWRt9Nt0FUptJ98aJNUfXxQ5LoN/ui4JXvp7rtTjccj5M
+	rBrjOw2Fv69kyxfzf3XSH8TGg1zBHo8gDAZvQrLtmnbovi0yjGsY6DQWCc5p9M8rmZ79WU6Y6UtAa
+	rYFgjxb/W1NZTYbOS6mw/VlVNuAJEwt2X8ct6bg1vG+DCnuWlHNz4gih/4Y/dj2+H57sB6IYU7baY
+	ffjxz5DYyLoY0tH+HsIj+9OV2Vcl3zYovFcom8Z4crlaXK5Yu/03RERmQdrZQMt0BZXo+ZlNp7TOt
+	mai/qD9QN9Wo+9xEJbdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWcT-00000004fay-1crP;
-	Wed, 23 Jul 2025 10:22:41 +0000
+	id 1ueWcT-00000004fbs-4BvV;
+	Wed, 23 Jul 2025 10:22:42 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWM9-00000004cMk-1SoD
+	id 1ueWMB-00000004cOK-3qzo
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 10:05:50 +0000
+	Wed, 23 Jul 2025 10:05:53 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 1442F134F;
-	Wed, 23 Jul 2025 12:05:09 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id A78C5F06;
+	Wed, 23 Jul 2025 12:05:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753265110;
-	bh=AIjszP/iGXkGjj23VjMych22bAgvN9HKxmaLXYlZiI4=;
+	s=mail; t=1753265112;
+	bh=Xc+qT2XQjEkYeWWEXGGWk/XOfjaEnBSg823/HrVp0v4=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=nxD906sUntKXTKtqZlII27MbW5l6FC8MENd0MOKOH6jry3MkjbckQiA7yeXSlW1Fj
-	 PFRTWYGRyDmHDnyxHnZ/x9okPrRDWJsJrCtA7I4LaXUmMgsoaC/SE1pCJuVKuZ5agU
-	 6c4gWOUgWUb2WU2h3BihPoE0kJOwjOQOXFw6TvRY=
+	b=aF8oG2GF200u4HlLCmle9UZm93z+3lNEG/3gOBDfpS+leSKjEwnMdEyGr/Grqe2RS
+	 WtJp4F7QAxiDTBoMAhwaypxAeLEmg3mspLt73tsSwaIgDqMjOJcD4j3gLaWuWljAqe
+	 TJRBHGNSVQbJ4ofECPReQAdrCwEHbRIjMyKOtqcM=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 23 Jul 2025 13:05:15 +0300
-Subject: [PATCH v5 09/15] drm/bridge: cdns-dsi: Drop
- cdns_dsi_adjust_phy_config()
+Date: Wed, 23 Jul 2025 13:05:17 +0300
+Subject: [PATCH v5 11/15] drm/bridge: cdns-dsi: Fix REG_WAKEUP_TIME value
 MIME-Version: 1.0
-Message-Id: <20250723-cdns-dsi-impro-v5-9-e61cc06074c2@ideasonboard.com>
+Message-Id: <20250723-cdns-dsi-impro-v5-11-e61cc06074c2@ideasonboard.com>
 References: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 In-Reply-To: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -62,26 +61,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Parth Pancholi <parth.pancholi@toradex.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4077;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2068;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=AIjszP/iGXkGjj23VjMych22bAgvN9HKxmaLXYlZiI4=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPsk20j3LpAdEg4rSjoqN0ZJ1Hhayte5db8D
- bdtCrCOyc2JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz7AAKCRD6PaqMvJYe
- 9QnNEACQRtFQ6t1lr3SbQOaOL6qwBZuRIEfBoCq29OO1WbAWvUWjXqRtFgnF8O720V1VTh4GjIk
- DmF8Qyon5+Qes/47i4pwIJqjgkoBS1rGJZBoHgn+Bxybem+qnWB7T8bQuWWNYyZCEkX133fuBmq
- vYkdBNnE3J6wABuNmllbyTs09KzZqJLdftFDELwQ/Hi4nLMnH4LGgfQg4ZsBggQ9vZki+xLo0Ww
- 19QQk9BcRQ+pFndKhwslVB/PDJG1TDgIna04uykiu1wZcFN+A3jz/36kqpmJM9/WpKak8dousKg
- hA0prPtwaahzJ/z9ZFI/4g6JiJouGX2cxaoKTtwPZNL7YaNtBWDrIjIdjWl32ZRUZzHzBH2tknK
- Md7ZQemeLcYODB4XRqf1Ck/CbYm8zKUMFyyxAqQbedpeZjNznuiRurpmIW5TreiYUXYW9Fomj1R
- k19litD2W2gNf+ogKaejpXZ6SZCmP3ndMw4LimYoiOHxyqf4hg4jLWjpz5xZRiZcqMbwCbJIeP7
- 1IrVPTB+STE9EvmnQR1rsfnfQpGx/LZxSjirAiOHILDcFxerQlQDtaXBVy6gQ/ljfFd3XI6w/OG
- PrP9rlvhUzuJqlk4W26orr+o8zbQekMyi57iBcunef03bmBtBJTtfxwUliRNOKTTkjQbx6Lwi2r
- tpl8xnWhVJVJWBg==
+ bh=Xc+qT2XQjEkYeWWEXGGWk/XOfjaEnBSg823/HrVp0v4=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPtNazPSbQ5KpE3M+6zEt/M6XZbg5m3Yefhq
+ qf4Qd41bDCJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz7QAKCRD6PaqMvJYe
+ 9U35EACXI0Z3p/DF0JFrEZbdyogW0eK8s1n4cQdf4cM9+c3Es3LV+L0muS/5NKMC5O3eLh2xxjk
+ vameoiILDZGFDMRD5QILgdQs1dUzl6jIYptjTe22j9sDPXmz33WEBYi0n0z/2lHMnkJwPTe+Tpi
+ tn34Rf4xcFGahLdpjwWQ5AxSHHkhnkMenuQY2VVSOts0Uhm5MZoQtupQXdPQxlBxjyqMzsc2sTR
+ PYI6QmB0ba8BPa4Mv5otq0NG9CrpiWKU4CUvdE9HAQMDsPsQlL7u2upPhdmU7gU51w+vK36yBLe
+ mQPrTxvormuvNeJl/uxubHLJ0l27DXTFWq/WySFIuKxE7WUBKe6xcUGeiLcxSZZd1Joj4IpPkOo
+ 6/lphWtI1xrkKFnNouFOSsce7OuDyd2Bq4O8zpixDfd8jowVG/lTXiFq0l8v3EswXBFuIlPGYV2
+ dg+BY4yIAREtJT1JsRHo+soUey4i/038geEOgCEUH54PuISCfV09dCBYkGvrhItky9gTTWM9pgO
+ clhPqLLINeXXBKFmHkDhXwrYQHHp3Dk7Fhto7AKtRsMJW2Mvd19H2AjTPs38NTm+5cyFlFSOMsp
+ 8lJC+XDg49oizu6q5ym+AkFzbqRzIznt8FJ8T2YDDP1Va+lwFywL4qIGASQ5h0oDLXxIRrZdJdG
+ Rhy5bOCQUUW6x3Q==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_030549_542795_C8DF8992 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20250723_030552_116597_700DAD52 
+X-CRM114-Status: GOOD (  14.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,109 +97,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-cdns_dsi_adjust_phy_config() is called from cdns_dsi_check_conf(), which
-is called from .atomic_check(). It checks the DSI htotal and adjusts it
-to align on the DSI lane boundary by changing hfp and then recalculating
-htotal and HS clock rate.
+The driver tries to calculate the value for REG_WAKEUP_TIME. However,
+the calculation itself is not correct, and to add on it, the resulting
+value is almost always larger than the field's size, so the actual
+result is more or less random.
 
-This has a few problems.
+According to the docs, figuring out the value for REG_WAKEUP_TIME
+requires HW characterization and there's no way to have a generic
+algorithm to come up with the value. That doesn't help at all...
 
-First is the fact that the whole thing is not needed: we do not need to
-align on the lane boundary. The whole frame is sent in HS mode, and it
-is fine if the line's last byte clock tick fills, say, only 2 of the 4
-lanes. The next line will just continue from there. Assuming the
-DSI timing values have been calculated to match the incoming DPI stream,
-and the HS clock is compatible with the DPI pixel clock, the "uneven"
-DSI lines will even out when multiple lines are being sent.
+However, we know that the value must be smaller than the line time, and,
+at least in my understanding, the proper value for it is quite small.
+Testing shows that setting it to 1/10 of the line time seems to work
+well. All video modes from my HDMI monitor work with this algorithm.
 
-But we could do the align, aligning is not a problem as such. However,
-adding more bytes to the hfp, as the function currently does, makes the
-DSI line time longer, so the function then adjusts the HS clock rate.
-This is where things fail: we don't know what rates we can get from the
-HS clock, and at least in TI K3 SoC case the rates are quite coarsely
-grained. Thus small adjustment to hfp will lead to a big change in HS
-clock rate, and things break down.
-
-We could do a loop here, adjusting hfp, adjusting clock, checking clock
-rate, adjusting hfp again, etc., but considering that the whole
-adjustment shouldn't be needed at all, it's easier to just remove the
-function.
-
-Something like this function should be added back later, when adding
-burst mode support, but that's a bigger change and I don't think this
-function would help that work in any way.
+Hopefully we'll get more information on how to calculate the value, and
+we can then update this.
 
 Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
 Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
 Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 45 --------------------------
- 1 file changed, 45 deletions(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 7103878df1e7..f7d7d277367e 100644
+index d49b4789a074..6bc0a0d00d69 100644
 --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -508,47 +508,6 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
- 	return 0;
- }
+@@ -793,7 +793,13 @@ static void cdns_dsi_bridge_atomic_pre_enable(struct drm_bridge *bridge,
  
--static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
--			      struct cdns_dsi_cfg *dsi_cfg,
--			      struct phy_configure_opts_mipi_dphy *phy_cfg,
--			      const struct drm_display_mode *mode)
--{
--	struct cdns_dsi_output *output = &dsi->output;
--	unsigned long long dlane_bps;
--	unsigned long adj_dsi_htotal;
--	unsigned long dsi_htotal;
--	unsigned long dpi_hz;
--	unsigned int dsi_hfp_ext;
--	unsigned int lanes = output->dev->lanes;
--
--	dsi_htotal = dsi_cfg->htotal;
--
--	/*
--	 * Make sure DSI htotal is aligned on a lane boundary when calculating
--	 * the expected data rate. This is done by extending HFP in case of
--	 * misalignment.
--	 */
--	adj_dsi_htotal = dsi_htotal;
--	if (dsi_htotal % lanes)
--		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
--
--	dpi_hz = mode->clock * 1000;
--	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
--
--	/* data rate in bytes/sec is not an integer, refuse the mode. */
--	if (do_div(dlane_bps, lanes * mode->htotal))
--		return -EINVAL;
--
--	/* data rate was in bytes/sec, convert to bits/sec. */
--	phy_cfg->hs_clk_rate = dlane_bps * 8;
--
--	dsi_hfp_ext = adj_dsi_htotal - dsi_htotal;
--	dsi_cfg->hfp += dsi_hfp_ext;
--	dsi_cfg->htotal = dsi_htotal + dsi_hfp_ext;
--
--	return 0;
--}
--
- static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 			       const struct drm_display_mode *mode,
- 			       struct cdns_dsi_cfg *dsi_cfg)
-@@ -568,10 +527,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 	if (ret)
- 		return ret;
+ 	tx_byte_period = DIV_ROUND_DOWN_ULL((u64)NSEC_PER_SEC * 8,
+ 					    phy_cfg->hs_clk_rate);
+-	reg_wakeup = (phy_cfg->hs_prepare + phy_cfg->hs_zero) / tx_byte_period;
++
++	/*
++	 * Estimated time [in clock cycles] to perform LP->HS on D-PHY.
++	 * It is not clear how to calculate this, so for now,
++	 * set it to 1/10 of the total number of clocks in a line.
++	 */
++	reg_wakeup = dsi_cfg.htotal / nlanes / 10;
+ 	writel(REG_WAKEUP_TIME(reg_wakeup) | REG_LINE_DURATION(tmp),
+ 	       dsi->regs + VID_DPHY_TIME);
  
--	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode);
--	if (ret)
--		return ret;
--
- 	ret = phy_validate(dsi->dphy, PHY_MODE_MIPI_DPHY, 0, &output->phy_opts);
- 	if (ret)
- 		return ret;
 
 -- 
 2.43.0
