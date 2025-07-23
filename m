@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7336DC83F17
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 12:38:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A8CAC83F1A
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 12:41:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sOkHCdtMhxKH1ufJGAkMzeClEkyCN0tSi9+ac23QnWw=; b=f/W5ZxXhq20wmj
-	XvVnAcsKpwKds/exCJ5jPE7IPy5brm0UnYr1lvEmxoGFQPk/XzmQuIvC6+5GEhSV4GxHlRvrOwCv/
-	ah+rD8p9d/NmvDfncMyqvGit1YrfSGuqbT93XbsRQcnAiKIFOXusi3+8jC2raT+g9s67lXhtTEINg
-	7dPQktClOA+LiRk2IOO91ZBWnxem5KZqsCY4kmP4PuM1lo/FvNKhnIAJSM6FbuFDVa2y0waYIUAC4
-	IlXooEgWQorKRwcJsomzlfEx+PSprh/nCbDIVFSkMpDxHA/Xra7UMVqXkh6ac8iGHtObl/LwSxVgH
-	kfOU5pG+Va3yoH1ma+eA==;
+	List-Owner; bh=H+EQ99OPx9MdHfEOmo7zDx/1f796v92/N8C9HTaH9p0=; b=zgqcBkBBaC7xkR
+	LeVUH6FvtPpPnUgP9oSoe0wX+VPJY13WgcoyqbV9YRb7uhn0ZOV2PsvUrtrAKSC0PZln7/WLK1F/F
+	v5xAeyO9C9GLmotIFohIOSd+ue6bdKol89TXfbops5vWTTDron0sBmGFKhMPW/4zFYlL4DAxP/16F
+	1Tokeno6rkmCyqEgysLi5NVoRMRSyYh7WvtlZNwHgnqArYTmqi71BWD8R+Kkn8TTtlPGmXPMMvQY1
+	n8It18d2Zn4qh5ooKbwDRAOTNQ59OjmEfWjEFreSAC2Auekr7ChpzOynX9wE3f+PAyeocPjOavGsG
+	5iFviqq8mVrgMPIUxCbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueYkC-00000004vfm-0v3n;
-	Wed, 23 Jul 2025 12:38:48 +0000
-Received: from smtp.forwardemail.net ([121.127.44.73])
+	id 1ueYmb-00000004vrT-3b1N;
+	Wed, 23 Jul 2025 12:41:17 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueYVl-00000004tmy-47j6
+	id 1ueYVw-00000004ttb-1Kik
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 12:23:56 +0000
+	Wed, 23 Jul 2025 12:24:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
  h=Content-Transfer-Encoding: MIME-Version: References: In-Reply-To:
  Message-ID: Date: Subject: Cc: To: From; q=dns/txt; s=fe-e1b5cab7be;
- t=1753273433; bh=zhhvg5zJxU5T4KsEk/esqcxT0PtM2GilClP+9BqeGhw=;
- b=G20bDmJjTXyYiUzhQK+gafAnjJI2igDGmNUN5Sr003fQLq6VhjfuGXl7Nq/IQHIbHdeAckMHi
- SIg67etURm8Sueu0wQzv66SMkG+4F/GKFDCBkmyT+LoiRC33TcG+WrLLrX8iumIZewfXPvTQKkf
- R2SRhXtybBmaPG9EpKh19/mAPej3+7nnKPDbDnd84In7vpeG5wKcxrffgaC9cRBsBq4Edm3iTYv
- Gh7s8LpgIPDnoSWk8ztT760ON9H32aSRj2IN1d+67YRk/3obkknFhKDVh2OB1GQ7CeUcKcxJ6Q7
- 3uHvNWvqlHQTC8f4B9EmeBUGZNOQAT5Tvpxz4wvUGWyQ==
-X-Forward-Email-ID: 6880d457cb0ee86f9731a0cb
+ t=1753273444; bh=qM2kjDv8yiHdNanOkkqrr4uaRt3f/qugOPAoj2T+6O4=;
+ b=R+L7xcTijbt8Y8BeoE/wrh24Wda9qtu00opFFzr8qA9MN/RVCjMfpSgXAfO0bcfLXTFfPb57O
+ pxC5USXcA9Up8wYAvt8LoD4DDbvAwJAO5cJY/SG9vBUHs1DPix20L3aBtnGvteSFzbhlS81pt7N
+ Lz9qJ309Fbd3qg6Gp8/7Mz8WLmP797o7HvySygzZpQ96rAUyp3FvJI7yQxc7aSsPKSf0edWRRbo
+ aFBCzETnSByZduuFeTSQZ1/+6eniLTk4RBmSCfQbvxm/5oKrTMGe33o8PecAt2//DM8qHZvCm/H
+ R9ixKx/5T/ZtXiCgQ/jyLFCpZxABMXtEp7o5aJ/L1T9Q==
+X-Forward-Email-ID: 6880d460cb0ee86f9731a0f5
 X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
- 121.127.44.73
+ 149.28.215.223
 X-Forward-Email-Version: 1.1.6
 X-Forward-Email-Website: https://forwardemail.net
 X-Complaints-To: abuse@forwardemail.net
@@ -58,18 +58,18 @@ Cc: Yao Zi <ziyao@disroot.org>,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jianwei Zheng <jianwei.zheng@rock-chips.com>
-Subject: [PATCH 05/11] phy: rockchip: inno-usb2: Add support for RK3528
-Date: Wed, 23 Jul 2025 12:23:03 +0000
-Message-ID: <20250723122323.2344916-6-jonas@kwiboo.se>
+	Jonas Karlman <jonas@kwiboo.se>
+Subject: [PATCH 07/11] arm64: dts: rockchip: Add USB nodes for RK3528
+Date: Wed, 23 Jul 2025 12:23:05 +0000
+Message-ID: <20250723122323.2344916-8-jonas@kwiboo.se>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250723122323.2344916-1-jonas@kwiboo.se>
 References: <20250723122323.2344916-1-jonas@kwiboo.se>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_052354_136273_F13A2688 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20250723_052404_418229_2D20283E 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,130 +86,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Jianwei Zheng <jianwei.zheng@rock-chips.com>
+Rockchip RK3528 has one USB 3.0 DWC3 controller, a USB 2.0 EHCI/OHCI
+controller and uses a USB2PHY for USB 2.0. The DWC3 controller may also
+use the Naneng Combo PHY for USB3.
 
-The RK3528 has a single USB2PHY with a otg and host port.
+Add device tree nodes to describe these USB controllers along with the
+USB 2.0 PHYs.
 
-Add support for the RK3528 variant of USB2PHY.
-
-PHY tuning for RK3528:
-
-- Turn off differential receiver in suspend mode to save power
-  consumption.
-
-- Set HS eye-height to 400mV instead of default 450mV.
-
-- Choose the Tx fs/ls data as linestate from TX driver for otg port
-  which uses dwc3 controller to improve fs/ls devices compatibility with
-  long cables.
-
-This is based on vendor kernel linux-stan-6.1-rkr5 tag.
-
-Signed-off-by: Jianwei Zheng <jianwei.zheng@rock-chips.com>
 Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 74 +++++++++++++++++++
- 1 file changed, 74 insertions(+)
+The DWC3 node does not contain any default phys because out of current
+and pending supported boards only one board, ROCK 2A, can use USB3.
+Remaining boards use the Naneng Combo PHY for PCIe instead of USB3.
+---
+ arch/arm64/boot/dts/rockchip/rk3528.dtsi | 76 ++++++++++++++++++++++++
+ 1 file changed, 76 insertions(+)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index cd1a02b990ef..b8950d9f9e97 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1507,6 +1507,28 @@ static int rk3128_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- 				BIT(2) << BIT_WRITEABLE_SHIFT | 0);
- }
+diff --git a/arch/arm64/boot/dts/rockchip/rk3528.dtsi b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
+index 85bc3f5aa2c7..3e51a3f51e05 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3528.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3528.dtsi
+@@ -243,6 +243,29 @@ soc {
+ 		#address-cells = <2>;
+ 		#size-cells = <2>;
  
-+static int rk3528_usb2phy_tuning(struct rockchip_usb2phy *rphy)
-+{
-+	int ret = 0;
++		usb_host0_xhci: usb@fe500000 {
++			compatible = "rockchip,rk3528-dwc3", "snps,dwc3";
++			reg = <0x0 0xfe500000 0x0 0x400000>;
++			clocks = <&cru CLK_REF_USB3OTG>,
++				 <&cru CLK_SUSPEND_USB3OTG>,
++				 <&cru ACLK_USB3OTG>;
++			clock-names = "ref_clk", "suspend_clk", "bus_clk";
++			interrupts = <GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH>;
++			power-domains = <&power RK3528_PD_VPU>;
++			resets = <&cru SRST_A_USB3OTG>;
++			dr_mode = "otg";
++			phy_type = "utmi_wide";
++			snps,dis_enblslpm_quirk;
++			snps,dis-del-phy-power-chg-quirk;
++			snps,dis-tx-ipgap-linecheck-quirk;
++			snps,dis-u1-entry-quirk;
++			snps,dis-u2-entry-quirk;
++			snps,dis-u2-freeclk-exists-quirk;
++			snps,parkmode-disable-hs-quirk;
++			snps,parkmode-disable-ss-quirk;
++			status = "disabled";
++		};
 +
-+	/* Turn off otg port differential receiver in suspend mode */
-+	ret |= regmap_write(rphy->phy_base, 0x30, BIT(18) | 0x0000);
+ 		gic: interrupt-controller@fed01000 {
+ 			compatible = "arm,gic-400";
+ 			reg = <0x0 0xfed01000 0 0x1000>,
+@@ -256,6 +279,30 @@ gic: interrupt-controller@fed01000 {
+ 			#interrupt-cells = <3>;
+ 		};
+ 
++		usb_host0_ehci: usb@ff100000 {
++			compatible = "generic-ehci";
++			reg = <0x0 0xff100000 0x0 0x40000>;
++			clocks = <&cru HCLK_USBHOST>, <&cru HCLK_USBHOST_ARB>,
++				 <&u2phy>;
++			interrupts = <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
++			phys = <&u2phy_host>;
++			phy-names = "usb";
++			power-domains = <&power RK3528_PD_VO>;
++			status = "disabled";
++		};
 +
-+	/* Turn off host port differential receiver in suspend mode */
-+	ret |= regmap_write(rphy->phy_base, 0x430, BIT(18) | 0x0000);
++		usb_host0_ohci: usb@ff140000 {
++			compatible = "generic-ohci";
++			reg = <0x0 0xff140000 0x0 0x40000>;
++			clocks = <&cru HCLK_USBHOST>, <&cru HCLK_USBHOST_ARB>,
++				 <&u2phy>;
++			interrupts = <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>;
++			phys = <&u2phy_host>;
++			phy-names = "usb";
++			power-domains = <&power RK3528_PD_VO>;
++			status = "disabled";
++		};
 +
-+	/* Set otg port HS eye height to 400mv (default is 450mv) */
-+	ret |= regmap_write(rphy->phy_base, 0x30, GENMASK(22, 20) | 0x0000);
+ 		qos_crypto_a: qos@ff200000 {
+ 			compatible = "rockchip,rk3528-qos", "syscon";
+ 			reg = <0x0 0xff200000 0x0 0x20>;
+@@ -1109,6 +1156,35 @@ dmac: dma-controller@ffd60000 {
+ 			#dma-cells = <1>;
+ 			arm,pl330-periph-burst;
+ 		};
 +
-+	/* Set host port HS eye height to 400mv (default is 450mv) */
-+	ret |= regmap_write(rphy->phy_base, 0x430, GENMASK(22, 20) | 0x0000);
++		u2phy: usb2phy@ffdf0000 {
++			compatible = "rockchip,rk3528-usb2phy";
++			reg = <0x0 0xffdf0000 0x0 0x10000>;
++			clocks = <&cru CLK_REF_USBPHY>, <&cru PCLK_USBPHY>;
++			clock-names = "phyclk", "pclk";
++			#clock-cells = <0>;
++			clock-output-names = "clk_usbphy_480m";
++			power-domains = <&power RK3528_PD_VO>;
++			rockchip,usbgrf = <&vo_grf>;
++			status = "disabled";
 +
-+	/* Choose the Tx fs/ls data as linestate from TX driver for otg port */
-+	ret |= regmap_write(rphy->phy_base, 0x94, GENMASK(22, 19) | 0x0018);
++			u2phy_otg: otg-port {
++				interrupts = <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "otg-bvalid", "otg-id",
++						  "linestate";
++				#phy-cells = <0>;
++				status = "disabled";
++			};
 +
-+	return ret;
-+}
-+
- static int rk3576_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- {
- 	int ret;
-@@ -1920,6 +1942,57 @@ static const struct rockchip_usb2phy_cfg rk3399_phy_cfgs[] = {
- 	{ /* sentinel */ }
++			u2phy_host: host-port {
++				interrupts = <GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "linestate";
++				#phy-cells = <0>;
++				status = "disabled";
++			};
++		};
+ 	};
  };
  
-+static const struct rockchip_usb2phy_cfg rk3528_phy_cfgs[] = {
-+	{
-+		.reg = 0xffdf0000,
-+		.num_ports	= 2,
-+		.phy_tuning	= rk3528_usb2phy_tuning,
-+		.clkout_ctl_phy	= { 0x041c, 7, 2, 0, 0x27 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x004c, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x0074, 3, 2, 0, 3 },
-+				.bvalid_det_st	= { 0x0078, 3, 2, 0, 3 },
-+				.bvalid_det_clr	= { 0x007c, 3, 2, 0, 3 },
-+				.idfall_det_en	= { 0x0074, 5, 5, 0, 1 },
-+				.idfall_det_st	= { 0x0078, 5, 5, 0, 1 },
-+				.idfall_det_clr	= { 0x007c, 5, 5, 0, 1 },
-+				.idrise_det_en	= { 0x0074, 4, 4, 0, 1 },
-+				.idrise_det_st	= { 0x0078, 4, 4, 0, 1 },
-+				.idrise_det_clr	= { 0x007c, 4, 4, 0, 1 },
-+				.ls_det_en	= { 0x0074, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x0078, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x007c, 0, 0, 0, 1 },
-+				.utmi_avalid	= { 0x006c, 1, 1, 0, 1 },
-+				.utmi_bvalid	= { 0x006c, 0, 0, 0, 1 },
-+				.utmi_id	= { 0x006c, 6, 6, 0, 1 },
-+				.utmi_ls	= { 0x006c, 5, 4, 0, 1 },
-+			},
-+			[USB2PHY_PORT_HOST] = {
-+				.phy_sus	= { 0x005c, 8, 0, 0x1d2, 0x1d1 },
-+				.ls_det_en	= { 0x0090, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x0094, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x0098, 0, 0, 0, 1 },
-+				.utmi_ls	= { 0x006c, 13, 12, 0, 1 },
-+				.utmi_hstdet	= { 0x006c, 15, 15, 0, 1 },
-+			}
-+		},
-+		.chg_det = {
-+			.opmode		= { 0x004c, 3, 0, 5, 1 },
-+			.cp_det		= { 0x006c, 19, 19, 0, 1 },
-+			.dcp_det	= { 0x006c, 18, 18, 0, 1 },
-+			.dp_det		= { 0x006c, 20, 20, 0, 1 },
-+			.idm_sink_en	= { 0x0058, 1, 1, 0, 1 },
-+			.idp_sink_en	= { 0x0058, 0, 0, 0, 1 },
-+			.idp_src_en	= { 0x0058, 2, 2, 0, 1 },
-+			.rdm_pdwn_en	= { 0x0058, 3, 3, 0, 1 },
-+			.vdm_src_en	= { 0x0058, 5, 5, 0, 1 },
-+			.vdp_src_en	= { 0x0058, 4, 4, 0, 1 },
-+		},
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct rockchip_usb2phy_cfg rk3562_phy_cfgs[] = {
- 	{
- 		.reg = 0xff740000,
-@@ -2287,6 +2360,7 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
- 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
- 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
-+	{ .compatible = "rockchip,rk3528-usb2phy", .data = &rk3528_phy_cfgs },
- 	{ .compatible = "rockchip,rk3562-usb2phy", .data = &rk3562_phy_cfgs },
- 	{ .compatible = "rockchip,rk3568-usb2phy", .data = &rk3568_phy_cfgs },
- 	{ .compatible = "rockchip,rk3576-usb2phy", .data = &rk3576_phy_cfgs },
 -- 
 2.50.1
 
