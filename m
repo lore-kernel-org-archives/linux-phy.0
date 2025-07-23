@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B95CC87FCC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE777C87FCE
 	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bEbJOmdzfvbzPziMKr4J+wqYsfMxD0At4DsLd93OVV4=; b=qLePaCKEVRs5s1
-	rSyps0NlN9L8Q7lpMtblPXbutrkRybgOnvFrjJRMKmt7yO9/6SENBMvMqj7+4YYCZwfYZou+vm0nB
-	HU4E+aOljVNzzlvNWRzpKScL4EVDWdN31ERN2Nkn96fVqf0IEkiM5/kcWfICsJCpBQNWzeqY40FQS
-	1OlJDlwUh6B9jb59g60kQIFP5ZT+H1zrbcK6nlkhWGczZOYAIKoFm+5UMxBKPJ/lz/GWYa2pnQ45h
-	0ouzbknFV9EW+NFtKJ6QKqdIHCDomrWLK1UATEYg7RMbKDl6w6qpeYHWpHUNd5cflTo10ee7M/zF8
-	60I1439U4zPjY7jPimIg==;
+	List-Owner; bh=ac3oTt2egjYnntWEqaMUdglqHXI6ZRkVks2i8sOEDn0=; b=zVBiTj81gt1cPm
+	DhYt0z1UaRaFVaxqS4r52vh8R3RANp3PnLoxQWYm9VC0Z5c2xo1WXZiTSZdFxCC5CkIJ0eVPNYIRH
+	8AirDnRrLExtWggjTLtjGzq22ZvdBRd1X6BxsGbSWS84LaDJEelYi0lHBrqP21i7h6fF6BaQKy55U
+	gmWDws1+AofI3Ppbv5rgOGj6HEv55niyiEkd0xcTVWJBIardbVFvv3haktox0xD+rR8RksYJt1g0t
+	ikxql5eCY/irekgBtvk0PrhGzB+7PPXGfrniON6bMipe8Kv9pSFOrVXEp6Rot9d8MqaDaD7VXtZLc
+	0VCs2JiGDFDpQyVvU39g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWcS-00000004fZC-0XMz;
+	id 1ueWcS-00000004fZb-1uCW;
 	Wed, 23 Jul 2025 10:22:40 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWM4-00000004cJ7-007b
+	id 1ueWM5-00000004cJj-1I9K
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 10:05:45 +0000
+	Wed, 23 Jul 2025 10:05:46 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B4981111F;
-	Wed, 23 Jul 2025 12:05:03 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0B9DC1129;
+	Wed, 23 Jul 2025 12:05:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753265104;
-	bh=fIos1sJRvSwScwZuDc+xyilJlDcV87vU4OaAE7gJEVM=;
+	s=mail; t=1753265106;
+	bh=+PxAbR0AgAh+6ttH91klZ+Aji+1hZOcFtaS/g/i1Q0s=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=IyPWKTUl9iEWsioY9DdHKB2Jiah/x6L+QrowG77h+mDWqcuKnn0dKC1sZXSLfAsKU
-	 hENjQ43DXfWexzJpP8GVHLc9xdLGdZY1OHgv3zF7KWS9BTRnJ12JoD9TA23fZfDdVe
-	 rbtFgG9/5OXfgn5TPCnj/pU3vLvXgINWCfDFm8oA=
+	b=RX1xMwKKPpK5WRz44L6QlrkdK2tshCe6rta1BfyesxjjiAK0rd9qw1n2zx9AchHFD
+	 LHhbk6hlcYg7cvduzEblm0OUQbdlCr0AihRY2/Ht95rNkjLRONyW8AU0hkuLE8KWj8
+	 0D5Wk6GAGxQ4QZQ2cDeGVfnEfdAIRN8jIMLqsmPo=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 23 Jul 2025 13:05:11 +0300
-Subject: [PATCH v5 05/15] drm/bridge: cdns-dsi: Drop crtc_* code
+Date: Wed, 23 Jul 2025 13:05:12 +0300
+Subject: [PATCH v5 06/15] drm/bridge: cdns-dsi: Remove broken fifo emptying
+ check
 MIME-Version: 1.0
-Message-Id: <20250723-cdns-dsi-impro-v5-5-e61cc06074c2@ideasonboard.com>
+Message-Id: <20250723-cdns-dsi-impro-v5-6-e61cc06074c2@ideasonboard.com>
 References: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 In-Reply-To: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -61,26 +62,26 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Parth Pancholi <parth.pancholi@toradex.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=6510;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2010;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=fIos1sJRvSwScwZuDc+xyilJlDcV87vU4OaAE7gJEVM=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPqVZYAbbf4uhzLQqYSbcWlgdfraKC9Fdv+8
- ERYsxC8OmSJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz6gAKCRD6PaqMvJYe
- 9R5uD/94AOCk/0SE4i7Q3YlDd60chTaSZNfvo0NxYWgaTP8NlmDB5IB+frblDC6xnH8K7NDJ3qD
- aCYMGtq3gYIgTy0pPzMpXOKesWpmORkYPf7TmzttYP+0pBeBznaCtSu8qXJ8zJoUK1WoqZ1BcO1
- m5PjZhkEbZrvyEFYsD7Vg0P9sPSHM8fSOcJtddpnPMeadxkX/tiX/2F/81d/50CYGNDCcHDZFRt
- stWSpx292JBC9ePjf8mTlw9GsmP81ZNZDEFb3pwNow229YmcrlO+uUku30kXOFF255bG8s89Iqe
- K+NQqN/Uiw2X7UNXWREkmC3yxYVvs+70L2JeJFOTtH1QTs7/Vxyr1WjOIRNlMGinr/hPztsDr16
- hnnTWjbB39bSCfrk9ivyNjSFKrTLpgp44+K/8pcX0AMDN8usRFDgSXlOCFqpqaJncoeo2967Gxu
- S5Ugg/uroAFSTCFwQ48UQmkdx+/7fAzstlGdPo4uiT4PrMopLekoggcnl6qazmlsPkeVcuu35za
- jCxUy88jpa+Ueuqv003Z4PgKWUjt1jqmiJiZkrfIc0NDK+4nb2C/iLOI7qv/T8K963BXxZNOkIW
- rUX9R+RafJEbPujd4+lo22TPlV55JntiELpitX8qrCL/UXS7M1w22viLvAffxdVBe8QD43GQr6f
- zxoLXNX6wTRcntA==
+ bh=+PxAbR0AgAh+6ttH91klZ+Aji+1hZOcFtaS/g/i1Q0s=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPrTWKpTI7qlDcFlmzpTrNDGKKo18w9aaIO6
+ KxFKD5lOS2JAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz6wAKCRD6PaqMvJYe
+ 9RRAEACdS40ggRn6TNhjMQt8B5FDvfYJ1X91p5qVBMm853Zy5ZJ1LS1L1M5deJpBeBU2XjGHmvg
+ LGNeNqz/gVeVlGh9Ab8GClyFgcziAl3nWfBRdGXG70Um/OWZjdn8bJRFodJJIGxkjmmWWwwKbtL
+ tTFlVefMDKvHDwCvgVAHG1Rxdtp8bn1L1irWH2x9SmQbmHbLnLkEyL638VGcT+1Aj2jjboVDqE9
+ ETLyfK5Pe6gRACRz0y7HWsCPIsMDSRxRCZmkDgiBjmCXktMVxul1Dad+V5CmPKZZ4tP4HowXBRV
+ DbZmE1/OrGc4TagxxfrSEPoGh2EFdOMZTaut7xebklIf77rDmJoVSd6l14vLPimsrCy/4QuntH+
+ iurDqd5h4jAYLJxaW45Bfj2OZvgXGz3vZkbTRxKA+5j0nPnTLGL6XkTnWD/JraXau+K2hcTpkie
+ qoohrmuXfF81+pPSnekpHeL5AmwGIntKlZaqdiphdTFwC26MAxG+NJm94vNOjEbNhJ4rwXUDZqU
+ p2DOiocvo2yADK8cHXVYm0g5zIX5PdnkK3lSbcgr2Lvz5JgQ3xsZZxmlclCg5RRaWpxTVQA/Pwm
+ LF5pYJ7NUvy/ZhLLKhqp/d5M9fXRonuX84oBWrZ77TD6b5rGa9Icr57aKutAqZwsFbwTvZQ47D7
+ eA5Izv94iKfXodw==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_030544_185052_64B9243F 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20250723_030545_488776_033A5DE3 
+X-CRM114-Status: GOOD (  13.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,177 +98,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-With recent change the cdns_dsi_check_conf() is always called with
-mode_valid_check = true. We can thus remove all the code related to the
-"false" paths.
+The driver checks if "DPI(HFP) > DSI(HSS+HSA+HSE+HBP)", and rejects the
+mode if not.
+
+However, testing shows that this doesn't hold at all. I can set the hfp
+to very small values, with no errors. The feedback from the HW team also
+was that the check is not right, although it's not clear if there's a
+way to validate the FIFO emptying.
+
+The check rejects quite a lot of modes, apparently for no good reason,
+so drop the check.
 
 Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
 Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
 Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 60 ++++++++------------------
- 1 file changed, 17 insertions(+), 43 deletions(-)
+ drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 15 ---------------
+ 1 file changed, 15 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 0c7ad05b6e53..eae9469ef431 100644
+index eae9469ef431..000c5a2367fe 100644
 --- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
 +++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -452,15 +452,6 @@ bridge_to_cdns_dsi_input(struct drm_bridge *bridge)
- 	return container_of(bridge, struct cdns_dsi_input, bridge);
- }
- 
--static unsigned int mode_to_dpi_hfp(const struct drm_display_mode *mode,
--				    bool mode_valid_check)
--{
--	if (mode_valid_check)
--		return mode->hsync_start - mode->hdisplay;
--
--	return mode->crtc_hsync_start - mode->crtc_hdisplay;
--}
--
- static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
- 				      unsigned int dpi_bpp,
- 				      unsigned int dsi_pkt_overhead)
-@@ -477,8 +468,7 @@ static unsigned int dpi_to_dsi_timing(unsigned int dpi_timing,
- 
- static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
- 			     const struct drm_display_mode *mode,
--			     struct cdns_dsi_cfg *dsi_cfg,
--			     bool mode_valid_check)
-+			     struct cdns_dsi_cfg *dsi_cfg)
- {
- 	struct cdns_dsi_output *output = &dsi->output;
- 	unsigned int tmp;
-@@ -492,30 +482,20 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
- 
- 	bpp = mipi_dsi_pixel_format_to_bpp(output->dev->format);
- 
--	if (mode_valid_check)
--		tmp = mode->htotal -
--		      (sync_pulse ? mode->hsync_end : mode->hsync_start);
--	else
--		tmp = mode->crtc_htotal -
--		      (sync_pulse ?
--		       mode->crtc_hsync_end : mode->crtc_hsync_start);
-+	tmp = mode->htotal -
-+		(sync_pulse ? mode->hsync_end : mode->hsync_start);
- 
- 	dsi_cfg->hbp = dpi_to_dsi_timing(tmp, bpp, DSI_HBP_FRAME_OVERHEAD);
- 
- 	if (sync_pulse) {
--		if (mode_valid_check)
--			tmp = mode->hsync_end - mode->hsync_start;
--		else
--			tmp = mode->crtc_hsync_end - mode->crtc_hsync_start;
-+		tmp = mode->hsync_end - mode->hsync_start;
- 
- 		dsi_cfg->hsa = dpi_to_dsi_timing(tmp, bpp,
- 						 DSI_HSA_FRAME_OVERHEAD);
- 	}
- 
--	dsi_cfg->hact = dpi_to_dsi_timing(mode_valid_check ?
--					  mode->hdisplay : mode->crtc_hdisplay,
--					  bpp, 0);
--	dsi_cfg->hfp = dpi_to_dsi_timing(mode_to_dpi_hfp(mode, mode_valid_check),
-+	dsi_cfg->hact = dpi_to_dsi_timing(mode->hdisplay, bpp, 0);
-+	dsi_cfg->hfp = dpi_to_dsi_timing(mode->hsync_start - mode->hdisplay,
- 					 bpp, DSI_HFP_FRAME_OVERHEAD);
- 
- 	return 0;
-@@ -524,14 +504,12 @@ static int cdns_dsi_mode2cfg(struct cdns_dsi *dsi,
- static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
- 			      struct cdns_dsi_cfg *dsi_cfg,
- 			      struct phy_configure_opts_mipi_dphy *phy_cfg,
--			      const struct drm_display_mode *mode,
--			      bool mode_valid_check)
-+			      const struct drm_display_mode *mode)
- {
- 	struct cdns_dsi_output *output = &dsi->output;
- 	unsigned long long dlane_bps;
- 	unsigned long adj_dsi_htotal;
- 	unsigned long dsi_htotal;
--	unsigned long dpi_htotal;
- 	unsigned long dpi_hz;
- 	unsigned int dsi_hfp_ext;
- 	unsigned int lanes = output->dev->lanes;
-@@ -552,12 +530,11 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
- 	if (dsi_htotal % lanes)
- 		adj_dsi_htotal += lanes - (dsi_htotal % lanes);
- 
--	dpi_hz = (mode_valid_check ? mode->clock : mode->crtc_clock) * 1000;
-+	dpi_hz = mode->clock * 1000;
- 	dlane_bps = (unsigned long long)dpi_hz * adj_dsi_htotal;
- 
- 	/* data rate in bytes/sec is not an integer, refuse the mode. */
--	dpi_htotal = mode_valid_check ? mode->htotal : mode->crtc_htotal;
--	if (do_div(dlane_bps, lanes * dpi_htotal))
-+	if (do_div(dlane_bps, lanes * mode->htotal))
- 		return -EINVAL;
- 
- 	/* data rate was in bytes/sec, convert to bits/sec. */
-@@ -572,27 +549,25 @@ static int cdns_dsi_adjust_phy_config(struct cdns_dsi *dsi,
- 
- static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 			       const struct drm_display_mode *mode,
--			       struct cdns_dsi_cfg *dsi_cfg,
--			       bool mode_valid_check)
-+			       struct cdns_dsi_cfg *dsi_cfg)
+@@ -553,7 +553,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
  {
  	struct cdns_dsi_output *output = &dsi->output;
  	struct phy_configure_opts_mipi_dphy *phy_cfg = &output->phy_opts.mipi_dphy;
- 	unsigned long dsi_hss_hsa_hse_hbp;
+-	unsigned long dsi_hss_hsa_hse_hbp;
  	unsigned int nlanes = output->dev->lanes;
--	int mode_clock = (mode_valid_check ? mode->clock : mode->crtc_clock);
  	int ret;
  
--	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg, mode_valid_check);
-+	ret = cdns_dsi_mode2cfg(dsi, mode, dsi_cfg);
+@@ -575,20 +574,6 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
  	if (ret)
  		return ret;
  
--	ret = phy_mipi_dphy_get_default_config(mode_clock * 1000,
-+	ret = phy_mipi_dphy_get_default_config(mode->clock * 1000,
- 					       mipi_dsi_pixel_format_to_bpp(output->dev->format),
- 					       nlanes, phy_cfg);
- 	if (ret)
- 		return ret;
- 
--	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode, mode_valid_check);
-+	ret = cdns_dsi_adjust_phy_config(dsi, dsi_cfg, phy_cfg, mode);
- 	if (ret)
- 		return ret;
- 
-@@ -610,9 +585,8 @@ static int cdns_dsi_check_conf(struct cdns_dsi *dsi,
- 	 * interface.
- 	 */
- 	if ((u64)phy_cfg->hs_clk_rate *
--	    mode_to_dpi_hfp(mode, mode_valid_check) * nlanes <
--	    (u64)dsi_hss_hsa_hse_hbp *
--	    (mode_valid_check ? mode->clock : mode->crtc_clock) * 1000)
-+	    (mode->hsync_start - mode->hdisplay) * nlanes <
-+	    (u64)dsi_hss_hsa_hse_hbp * mode->clock  * 1000)
- 		return -EINVAL;
- 
+-	dsi_hss_hsa_hse_hbp = dsi_cfg->hbp + DSI_HBP_FRAME_OVERHEAD;
+-	if (output->dev->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
+-		dsi_hss_hsa_hse_hbp += dsi_cfg->hsa + DSI_HSA_FRAME_OVERHEAD;
+-
+-	/*
+-	 * Make sure DPI(HFP) > DSI(HSS+HSA+HSE+HBP) to guarantee that the FIFO
+-	 * is empty before we start a receiving a new line on the DPI
+-	 * interface.
+-	 */
+-	if ((u64)phy_cfg->hs_clk_rate *
+-	    (mode->hsync_start - mode->hdisplay) * nlanes <
+-	    (u64)dsi_hss_hsa_hse_hbp * mode->clock  * 1000)
+-		return -EINVAL;
+-
  	return 0;
-@@ -663,7 +637,7 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
- 	if ((mode->hdisplay * bpp) % 32)
- 		return MODE_H_ILLEGAL;
- 
--	ret = cdns_dsi_check_conf(dsi, mode, &dsi_cfg, true);
-+	ret = cdns_dsi_check_conf(dsi, mode, &dsi_cfg);
- 	if (ret)
- 		return MODE_BAD;
- 
-@@ -1000,7 +974,7 @@ static int cdns_dsi_bridge_atomic_check(struct drm_bridge *bridge,
- 	const struct drm_display_mode *adjusted_mode = &crtc_state->adjusted_mode;
- 	struct cdns_dsi_cfg *dsi_cfg = &dsi_state->dsi_cfg;
- 
--	return cdns_dsi_check_conf(dsi, adjusted_mode, dsi_cfg, true);
-+	return cdns_dsi_check_conf(dsi, adjusted_mode, dsi_cfg);
  }
  
- static struct drm_bridge_state *
 
 -- 
 2.43.0
