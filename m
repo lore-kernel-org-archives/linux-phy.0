@@ -4,62 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EA09C83F1A
-	for <linux-phy@archiver.kernel.org>; Tue, 22 Jul 2025 16:57:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E88CC83F17
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 05:16:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/9SYvBhkxiY45vHo8T9+JoUE7P+YpnZU4wfJ2Fw5aF4=; b=hC+zYb5W3cZGYo
-	0+OjurBwVMXI0bz3uHrFRKbggwwktYSCzJGMfmDGdDkBVVOh+YW7v/om7Q0kWtHJ3geJHHW54OFaN
-	zCszRV4kZjXu9t9XrU1o1wcXmvPyyFzudaQpEtbW7y3Q6KthwGJC+cjuL8dVlB4Bl4nEISWz5J7Y3
-	ZpT3pdZqBOs3OfboaGj0nBlRMV/g6bDn57LKuNWd1LA/ImIq0q1YuB507vY4U9qoa+F+mBImWL1fS
-	J0++v/b1/2uIM4Pi3Ruvow0jWsUUC1bUOgUcTmsv6NV19mjXcLnJRpwsrXilnrsK9zSlfVPwtKcZE
-	tWibQk+0PEejaDk+hMjg==;
+	List-Owner; bh=Cti5w1sVIqtWOtstm5rnRlRMxR+TX1fCLIRVvDLd3h4=; b=3Fk4OBc+vZk/S2
+	mwNLhiZwOs/E7lUFQjhEL1hQQPeN1H4bWHzDF0kjcHMvIKru8a4i2Q4aplvItZbVhj27EYHiCwE5T
+	8haNrIibAm5hKo+GAaDiLxMYrnBI5PX4SdHapuZT2mfOSZxydz0vzg5GEV6bsL9zTZpPeYUjUAnKa
+	xExRdIkjkCknSgW7qtXg5S6rgBjRfASj3TulzEjPBDbK2i6DQttkjdJ69PBV6EfZLSXAyi+4WKcl1
+	i58bxpMDLCl6uzGrkODW6UzsosqZCEBfT+yG/JZ1ybP54hixgHa7CGdKsHLYKc+oL2pksf8hUr4Z9
+	JE3YXiWxnRncPX1t2nRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueGJ6-000000034aS-3R6Z;
-	Tue, 22 Jul 2025 16:57:36 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1ueRpy-000000042lY-010m;
+	Wed, 23 Jul 2025 05:16:18 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueFwZ-000000032VH-3WqZ;
-	Tue, 22 Jul 2025 16:34:21 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 9ED8CA56238;
-	Tue, 22 Jul 2025 16:34:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A86E0C4CEEB;
-	Tue, 22 Jul 2025 16:34:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753202058;
-	bh=aP0kRJnomYTNmKcx92VJhprLZ5W2ThM9Yi65CH9ynA0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SUA84AF31j/BjwV6SDkZ2aGqvUGYg/QxwTcRFuaVaEHs0nz4sogzQ+HsnSRo62JrC
-	 Kj5L6kuMXoX8yWeLhspJ1z/pHLNWH3qdA17mCbBY9dorWlS6P3pyTWf5EFmznQq/5c
-	 Fz4bTAWBbsorgHA94aAyTIp0CLFmJ3sEPyJe2IWb1BBQjGeseVFzZrV1F9ViT3/1g9
-	 1ImLafdQQ80H0W82fahVsYLAs7HQ/djpaKb1J42Gh59CZB38i8w1xogHSMvUuSx3F0
-	 vtzcoKWuwaia0JhtxaJmH+YyNLXebiPWOQlJ9YYtY9mW7SlvEIhEBvTov1l/YWbgIW
-	 paI9oAIHTX5mw==
-Date: Tue, 22 Jul 2025 22:04:08 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Peter Griffin <peter.griffin@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?utf-8?B?QW5kcsOp?= Draszik <andre.draszik@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, kernel-team@android.com, 
-	William Mcvicker <willmcvicker@google.com>
-Subject: Re: [PATCH v2 1/2] phy: add new phy_notify_pmstate() api
-Message-ID: <e2lhm237c3xtbdjux2wuesq5fwu7nky3w7oq2fnsgn2pqcg5kh@xhxktriooyes>
-References: <20250703-phy-notify-pmstate-v2-0-fc1690439117@linaro.org>
- <20250703-phy-notify-pmstate-v2-1-fc1690439117@linaro.org>
+	id 1ueRmC-000000042UQ-1puB
+	for linux-phy@lists.infradead.org;
+	Wed, 23 Jul 2025 05:12:29 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250723051215epoutp042cd579b9156179f0d6884ec0bc681e3b~UyVhC16tS0932009320epoutp04t
+	for <linux-phy@lists.infradead.org>; Wed, 23 Jul 2025 05:12:15 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250723051215epoutp042cd579b9156179f0d6884ec0bc681e3b~UyVhC16tS0932009320epoutp04t
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1753247535;
+	bh=IoOtrbeFHn5e1/Xtu2aEuqosP9/5TZJzgfaIJ8FAwVw=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=YzpXVGaeKBdahD4O1K7MxAae0WhiCSSMJ/4EqEiCWru/oOvUNtko+rgHcnJNA03hr
+	 94UXec9t3f7jWjVE0bpi72c6E5bY6BEY8VYztjvTqTpZcCapc4O83DDy5T6wWkvpdf
+	 tgcTdTJpoSP4byk6Y9GIFVEj0AvOSnPbA40pBn3k=
+Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
+	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
+	20250723051215epcas5p212e2b5380f798498c5c80f442874a239~UyVgY52qc2028920289epcas5p2l;
+	Wed, 23 Jul 2025 05:12:15 +0000 (GMT)
+Received: from epcas5p3.samsung.com (unknown [182.195.38.92]) by
+	epsnrtp01.localdomain (Postfix) with ESMTP id 4bn2Lj5rTmz6B9m4; Wed, 23 Jul
+	2025 05:12:13 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250723051134epcas5p13eb4eedb2beb180423c5237f4a272f06~UyU66C8CP1233212332epcas5p1N;
+	Wed, 23 Jul 2025 05:11:34 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250723051131epsmtip2df639fe0e527bf88b1c968e311ad775e~UyU3yq7j60675706757epsmtip2K;
+	Wed, 23 Jul 2025 05:11:31 +0000 (GMT)
+From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, "'Krzysztof Kozlowski'"
+	<krzysztof.kozlowski@linaro.org>
+Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
+	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
+	<neil.armstrong@linaro.org>, <kauschluss@disroot.org>,
+	<ivo.ivanov.ivanov1@gmail.com>, <m.szyprowski@samsung.com>,
+	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
+	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
+In-Reply-To: <9a97cc9e-2221-44d6-83e9-25b1bec10a6f@kernel.org>
+Subject: RE: [PATCH v4 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+Date: Wed, 23 Jul 2025 10:41:30 +0530
+Message-ID: <000901dbfb90$42873060$c7959120$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250703-phy-notify-pmstate-v2-1-fc1690439117@linaro.org>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQJAgQZ9LFXBZrDskwNBYris6jFv1AKCX9A9Aa5wAf0Bi5UAqwCML2yKAWUlSf8CRPacEQIi1iyNAmb2xVkCD/Nw+7Lxui8Q
+Content-Language: en-in
+X-CMS-MailID: 20250723051134epcas5p13eb4eedb2beb180423c5237f4a272f06
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250701115955epcas5p320cfe73ca33522cd2f9f7970cfde1c63
+References: <20250701120706.2219355-1-pritam.sutar@samsung.com>
+	<CGME20250701115955epcas5p320cfe73ca33522cd2f9f7970cfde1c63@epcas5p3.samsung.com>
+	<20250701120706.2219355-2-pritam.sutar@samsung.com>
+	<20250706-fresh-meaty-cougar-5af170@krzk-bin>
+	<07d301dbf0ae$0658cbe0$130a63a0$@samsung.com>
+	<9a2d0ad7-cb1f-473d-a91a-3a1b59b71280@kernel.org>
+	<000c01dbf70b$ccdbf630$6693e290$@samsung.com>
+	<a43cfe4f-8ff9-4dbd-b7f4-07ccc3d8e01b@kernel.org>
+	<00ff01dbfac1$ee528860$caf79920$@samsung.com>
+	<9a97cc9e-2221-44d6-83e9-25b1bec10a6f@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_093420_022909_E28DA44A 
-X-CRM114-Status: GOOD (  24.45  )
+X-CRM114-CacheID: sfid-20250722_221225_920740_76433BEB 
+X-CRM114-Status: GOOD (  18.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,67 +106,92 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKdWwgMDMsIDIwMjUgYXQgMDI6MDM6MjJQTSBHTVQsIFBldGVyIEdyaWZmaW4gd3Jv
-dGU6Cj4gQWRkIGEgbmV3IHBoeV9ub3RpZnlfcG1zdGF0ZSgpIGFwaSB0aGF0IG5vdGlmaWVzIGFu
-ZCBjb25maWd1cmVzIGEgcGh5IGZvciBhCj4gZ2l2ZW4gUE0gbGluayBzdGF0ZSB0cmFuc2l0aW9u
-Lgo+IAo+IFRoaXMgaXMgaW50ZW5kZWQgdG8gYmUgYnkgcGh5IGRyaXZlcnMgd2hpY2ggbmVlZCB0
-byBkbyBzb21lIHJ1bnRpbWUKPiBjb25maWd1cmF0aW9uIG9mIHBhcmFtZXRlcnMgZHVyaW5nIHRo
-ZSB0cmFuc2l0aW9uIHRoYXQgY2FuJ3QgYmUgaGFuZGxlZCBieQo+IHBoeV9jYWxpYnJhdGUoKSBv
-ciBwaHlfcG93ZXJfe29ufG9mZn0oKS4KPiAKPiBUaGUgZmlyc3QgdXNhZ2Ugb2YgdGhpcyBBUEkg
-aXMgaW4gdGhlIFNhbXN1bmcgVUZTIHBoeSB0aGF0IG5lZWRzIHRvIGlzc3VlCj4gc29tZSByZWdp
-c3RlciB3cml0ZXMgd2hlbiBlbnRlcmluZyBhbmQgZXhpdGluZyB0aGUgaGliZXJuYXRlIGxpbmsg
-c3RhdGUuCj4gCj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIgR3JpZmZpbiA8cGV0ZXIuZ3JpZmZpbkBs
-aW5hcm8ub3JnPgo+IC0tLQo+ICBkcml2ZXJzL3BoeS9waHktY29yZS5jICB8IDI1ICsrKysrKysr
-KysrKysrKysrKysrKysrKysKPiAgaW5jbHVkZS9saW51eC9waHkvcGh5LmggfCAyNSArKysrKysr
-KysrKysrKysrKysrKysrKysrCj4gIDIgZmlsZXMgY2hhbmdlZCwgNTAgaW5zZXJ0aW9ucygrKQo+
-IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9waHktY29yZS5jIGIvZHJpdmVycy9waHkvcGh5
-LWNvcmUuYwo+IGluZGV4IDA0YTVhMzRlN2E5NTBhZTk0ZmFlOTE1NjczYzI1ZDQ3NmZjMDcxYzEu
-LjBiMjliYzJjNzA5ODkwZDdmYzI3ZDE0ODBhMzVjZGE2YTgyNmZkMzAgMTAwNjQ0Cj4gLS0tIGEv
-ZHJpdmVycy9waHkvcGh5LWNvcmUuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3BoeS1jb3JlLmMKPiBA
-QCAtNTIwLDYgKzUyMCwzMSBAQCBpbnQgcGh5X25vdGlmeV9kaXNjb25uZWN0KHN0cnVjdCBwaHkg
-KnBoeSwgaW50IHBvcnQpCj4gIH0KPiAgRVhQT1JUX1NZTUJPTF9HUEwocGh5X25vdGlmeV9kaXNj
-b25uZWN0KTsKPiAgCj4gKy8qKgo+ICsgKiBwaHlfbm90aWZ5X3Btc3RhdGUoKSAtIHBoeSBsaW5r
-IHN0YXRlIG5vdGlmaWNhdGlvbgoKJ3Btc3RhdGUnIGRvZXNuJ3QgY29ycmVzcG9uZCB0byAnbGlu
-ayBzdGF0ZScuIFNvIGhvdyBhYm91dCwKcGh5X25vdGlmeV9saW5rX3N0YXRlKCk/CgpzL3BoeS9Q
-SFkgKGhlcmUgYW5kIGJlbG93KQoKPiArICogQHBoeTogdGhlIHBoeSByZXR1cm5lZCBieSBwaHlf
-Z2V0KCkKPiArICogQHN0YXRlOiB0aGUgbGluayBzdGF0ZQo+ICsgKgo+ICsgKiBOb3RpZnkgdGhl
-IHBoeSBvZiBzb21lIFBNIGxpbmsgc3RhdGUgdHJhbnNpdGlvbi4gVXNlZCB0byBub3RpZnkgYW5k
-CgpMaW5rIHN0YXRlIGNoYW5nZSBpcyBjb21tb24gZm9yIHRoZSBQSFkuIFNvIHJlbW92ZSAnUE0n
-LgoKPiArICogY29uZmlndXJlIHRoZSBwaHkgYWNjb3JkaW5nbHkuCj4gKyAqCj4gKyAqIFJldHVy
-bnM6ICUwIGlmIHN1Y2Nlc3NmdWwsIGEgbmVnYXRpdmUgZXJyb3IgY29kZSBvdGhlcndpc2UKPiAr
-ICovCj4gK2ludCBwaHlfbm90aWZ5X3Btc3RhdGUoc3RydWN0IHBoeSAqcGh5LCBlbnVtIHBoeV9s
-aW5rc3RhdGUgc3RhdGUpCgpJIHRoaW5rIHlvdSBuZWVkIHRvIHVzZSAnaW50IHN0YXRlJyBhbmQg
-bGV0IGRyaXZlcnMgcGFzcyB0aGVpciBvd24gbGluayBzdGF0ZQp2YWx1ZXMuIFlvdSBjYW5ub3Qg
-aGF2ZSBnZW5lcmljIGxpbmsgc3RhdGVzIGFjcm9zcyBhbGwgcGVyaXBoZXJhbHMuCgo+ICt7Cj4g
-KwlpbnQgcmV0Owo+ICsKPiArCWlmICghcGh5IHx8ICFwaHktPm9wcy0+bm90aWZ5X3Btc3RhdGUp
-Cj4gKwkJcmV0dXJuIDA7Cj4gKwo+ICsJbXV0ZXhfbG9jaygmcGh5LT5tdXRleCk7Cj4gKwlyZXQg
-PSBwaHktPm9wcy0+bm90aWZ5X3Btc3RhdGUocGh5LCBzdGF0ZSk7Cgonbm90aWZ5X2xpbmtfc3Rh
-dGUnCgo+ICsJbXV0ZXhfdW5sb2NrKCZwaHktPm11dGV4KTsKPiArCj4gKwlyZXR1cm4gcmV0Owo+
-ICt9Cj4gK0VYUE9SVF9TWU1CT0xfR1BMKHBoeV9ub3RpZnlfcG1zdGF0ZSk7Cj4gKwo+ICAvKioK
-PiAgICogcGh5X2NvbmZpZ3VyZSgpIC0gQ2hhbmdlcyB0aGUgcGh5IHBhcmFtZXRlcnMKPiAgICog
-QHBoeTogdGhlIHBoeSByZXR1cm5lZCBieSBwaHlfZ2V0KCkKPiBkaWZmIC0tZ2l0IGEvaW5jbHVk
-ZS9saW51eC9waHkvcGh5LmggYi9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaAo+IGluZGV4IDEzYWRk
-MGMyYzQwNzIxZmU5Y2EzZjAzNTBkMTNjMDM1Y2QyNWFmNDUuLmQ5MDRlYzRlZGI3ZTJiZTQxZmNm
-NmFiNzgwZDMxNDhjMmVlOGE5NTAgMTAwNjQ0Cj4gLS0tIGEvaW5jbHVkZS9saW51eC9waHkvcGh5
-LmgKPiArKysgYi9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaAo+IEBAIC01Myw2ICs1MywxMSBAQCBl
-bnVtIHBoeV9tZWRpYSB7Cj4gIAlQSFlfTUVESUFfREFDLAo+ICB9Owo+ICAKPiArZW51bSBwaHlf
-bGlua3N0YXRlIHsKPiArCVBIWV9VRlNfSElCRVJOOF9FTlRFUiwKPiArCVBIWV9VRlNfSElCRVJO
-OF9FWElULAo+ICt9OwoKUGxlYXNlIG1vdmUgdGhlc2UgdG8gaW5jbHVkZS9saW51eC9waHkvdWZz
-LmggYXMgZGVmaW5lcy4KCj4gKwo+ICAvKioKPiAgICogdW5pb24gcGh5X2NvbmZpZ3VyZV9vcHRz
-IC0gT3BhcXVlIGdlbmVyaWMgcGh5IGNvbmZpZ3VyYXRpb24KPiAgICoKPiBAQCAtMTMyLDYgKzEz
-NywxOCBAQCBzdHJ1Y3QgcGh5X29wcyB7Cj4gIAlpbnQJKCpjb25uZWN0KShzdHJ1Y3QgcGh5ICpw
-aHksIGludCBwb3J0KTsKPiAgCWludAkoKmRpc2Nvbm5lY3QpKHN0cnVjdCBwaHkgKnBoeSwgaW50
-IHBvcnQpOwo+ICAKPiArCS8qKgo+ICsJICogQG5vdGlmeV9wbXN0YXRlOgo+ICsJICoKPiArCSAq
-IE9wdGlvbmFsLgo+ICsJICoKPiArCSAqIFVzZWQgdG8gbm90aWZ5IGFuZCBjb25maWd1cmUgdGhl
-IHBoeSBmb3IgYSBQTSBsaW5rIHN0YXRlCj4gKwkgKiB0cmFuc2l0aW9uLgo+ICsJICoKPiArCSAq
-IFJldHVybnM6IDAgaWYgc3VjY2Vzc2Z1bCwgYW4gbmVnYXRpdmUgZXJyb3IgY29kZSBvdGhlcndp
-c2UKCkkgdGhpbmsgeW91IGNhbiBkcm9wIHRoZSBpbmxpbmUgY29tbWVudCBhbmQganVzdCBhZGQg
-dG8gdGhlIHRvcCBsZXZlbAprZXJuZWwtZG9jLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j
-4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Krzysztof,
+
+> -----Original Message-----
+> From: Krzysztof Kozlowski <krzk@kernel.org>
+> Sent: 22 July 2025 11:37 AM
+> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>; 'Krzysztof Kozlowski'
+> <krzysztof.kozlowski@linaro.org>
+> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+> andre.draszik@linaro.org; peter.griffin@linaro.org; neil.armstrong@linaro.org;
+> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
+> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+> selvarasu.g@samsung.com
+> Subject: Re: [PATCH v4 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+> ExynosAutov920 HS phy compatible
+> 
+> On 22/07/2025 06:34, Pritam Manohar Sutar wrote:
+> >>>> Nothing is explained in changelog/cover letter. You claim you only
+> >>>> added Rb
+> >> tag.
+> >>>> This is an entirely silent change while keeping the review.
+> >>>
+> >>> Will add more explanations in cover letter/changelog why this block is
+> added.
+> >>>
+> >>>> Combined with not even following DTS style!
+> >>>
+> >>> Ok got it. Will change supplies name as below avdd075_usb =>
+> >>> avdd075-usb
+> >>> avdd18_usb20 => avdd18-usb20
+> >>> avdd33_usb20 => avdd33-usb20
+> >>>
+> >>> Confirm the above change that is meant in terms of DTS style.
+> >> Yes. I have doubts that actual supplies have suffix usb20. Are there
+> >> more than one avdd18 for this block?
+> >>
+> >
+> > Yes, there are more than one vdd18 supplies for this block.
+> 
+> And their names are?
+> 
+> >
+> > Re-analysed your comment on adding new supplies.
+> > Going to re-use existing supplies as mentioned below, rather than
+> > introducing new supplies
+> >
+> >   dvdd-usb20-supply   => for 0.75v
+> >   vddh-usb20-supply   => for 1.8v
+> >   vdd33-usb20-supply => for 3.3v
+> 
+> 
+> You just expect us to guess whether this is correct...
+
+Sorry about not being clear so far. 
+
+V920 needs three supplies, 0.75v, 1.8v and 3.3v for USB PHY
+The naming convention used in the schematic are
+avdd075-usb, 
+avdd18_usb20, 
+avdd33_usb20.
+
+However, PHY's user manual just mentions DVDD, VDD33 and VDD18.
+Since GS101 binding already using supply names similar to what is mentioned in the PHY user manual.
+I thought of using the same instead of earlier naming conventions (which was as per v920 schematic).
+
+Let me know if this make sense or we should be just using as per schematic?
+
+> 
+> Best regards,
+> Krzysztof
+
+Regards,
+Pritam
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
