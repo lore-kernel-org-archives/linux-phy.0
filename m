@@ -4,65 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CFF4C83F17
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 09:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BA26C83F1A
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 09:59:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Cc:References:To:From:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4YbT45pPHMUSDNs/4Rej4mZVVfZfnKiqT02ZVeXNZyQ=; b=KpkY6rs6R5Srpz
-	N82FzAK1fo3Dgodq6ZXTBExRqVDIMYP2GltnXkyMQxVlTeWu5z7CxkoLXl2k8FrrcwM5ODsAkUiSu
-	nI6iTu5UE9T7Jr0iZWYNOGpjy083x0Zd1jbwJ/7k/som13M5gsN7iaNvjFd7H2n+ip5zjoo5DTxxm
-	j4Y4ec1ZseEZnJMHoA+PGk/SGHC0XBlvsBC4g10xq34CjQNWfnFSpo8Z4KeI4G72oixVr02RiDec4
-	yZApV48M0ZrsG6vtJAy+l6E9aQsRdxqqUcXHlQk64uemu0bZg5sD1yudN88PqmSlhx4MV6K1DEvoo
-	cOAy8KgmpgHdvNkK6DzA==;
+	List-Owner; bh=iwmkTdazuW1TCUsoM0VSoTu+I07HqXP1xu158OjAtWA=; b=BtPlWrYaQJnC2N
+	vKqSY8oj58widbOJAMDX55LjnxT+7GG5fRk7n+ZDOhQRW13Z+J6ivfTRvA00UwELY3uGNJzvrO/+c
+	ztn6YnEgVZ7nreSJmFcIw11WRtz6OveX8pLuzfHEST/WjQBekSJN/DmmZ6mcuFTxFc3/h7MpR3dc9
+	qiW993jhe34nOs8/OpYkINaG5PcGO0bjd9pqXuVRf30pcc29EIGIX1x3zJe8Xy9tcvoB9Ec7NCVmb
+	mO6jxHH7myBaDMMVvQy4Fw2eg9NmHFWYiCtLNv2/0DCeWXWVGvDoFlHS7jNMOqLvvjgYgALMuzpOr
+	eEF9sTkKviZu6yLh/olw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueVW7-00000004TNd-038U;
-	Wed, 23 Jul 2025 09:12:03 +0000
+	id 1ueWGU-00000004bBL-0CNL;
+	Wed, 23 Jul 2025 09:59:58 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueVAM-00000004Psk-0t0g
+	id 1ueVur-00000004Wtp-2Q2s
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 08:49:35 +0000
+	Wed, 23 Jul 2025 09:37:38 +0000
 Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 57138FDB;
-	Wed, 23 Jul 2025 10:48:53 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6B09FC70;
+	Wed, 23 Jul 2025 11:36:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753260534;
-	bh=n/BFI3i+7yYVGpz0RCjmwyYbEE92PN4+Sj+OGTL48eU=;
-	h=Date:Subject:From:To:References:Cc:In-Reply-To:From;
-	b=F1nc6UQnx7RX+nwsKxG+UTzeKqNSt1UrpEO/xpMlMpAwIKh8ken+FLkpICOg4Y5zS
-	 mb1cdvtNW6VhwUSvrjzLEL9/Kp4JyatnQxvDfwccaf/3Z0hA7Am0WFe37AjC72J87X
-	 CraJm2ITxhgX3c728GIIg2qLOVA3/g5xg6GnQmzs=
-Message-ID: <b3af4b52-03e0-4e41-9666-a9af267f57b0@ideasonboard.com>
-Date: Wed, 23 Jul 2025 11:49:29 +0300
+	s=mail; t=1753263416;
+	bh=9lbXW47zYRBbNIAHssQzUMi4FIW/6MYbIiMbRSaBNo0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rYeMw/Z/5d6HMieBznhzKxln+P5JCikaDAQo5CczlPI3N5qcORPGyX64b08fxURiF
+	 HJQ2NdZTMGwm+BzSht/p7M9l6/6v0jhD4ZTyNpXYMKA2JHpqIjd7nczqibdGtAepNs
+	 CfbFLbJJunj0p0azTZfcqK6pO1XCt/whx9yihCcQ=
+Message-ID: <2bec3583-6078-4650-a8d0-6cfe8fcec3f3@ideasonboard.com>
+Date: Wed, 23 Jul 2025 12:37:31 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 05/17] phy: cdns-dphy: Remove leftover code
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-To: Vinod Koul <vkoul@kernel.org>
-References: <20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com>
- <20250618-cdns-dsi-impro-v4-5-862c841dbe02@ideasonboard.com>
- <aF3YgKoaLniqs1XC@vaman>
- <cd59d7b0-6b31-4cbd-93e8-df713a9210f6@ideasonboard.com>
+Subject: Re: [PATCH v4 0/2] Fix PLL lock timeout and calibration wait time
+To: Devarsh Thakkar <devarsht@ti.com>
+Cc: aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com,
+ j-choudhary@ti.com, a0512644@ti.com, vkoul@kernel.org, kishon@kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250704125915.1224738-1-devarsht@ti.com>
 Content-Language: en-US
-Cc: Jyri Sarha <jyri.sarha@iki.fi>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Jayesh Choudhary <j-choudhary@ti.com>, Dmitry Baryshkov <lumag@kernel.org>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Francesco Dolcini <francesco@dolcini.it>,
- Aradhya Bhatia <aradhya.bhatia@linux.dev>, Devarsh Thakkar
- <devarsht@ti.com>, Parth Pancholi <parth.pancholi@toradex.com>
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
  xsFNBE6ms0cBEACyizowecZqXfMZtnBniOieTuFdErHAUyxVgtmr0f5ZfIi9Z4l+uUN4Zdw2
  wCEZjx3o0Z34diXBaMRJ3rAk9yB90UJAnLtb8A97Oq64DskLF81GCYB2P1i0qrG7UjpASgCA
@@ -106,10 +92,10 @@ Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
  ueeIlwJl5CpT5l8RpoZXEOVtXYn8zzOJ7oGZYINRV9Pf8qKGLf3Dft7zKBP832I3PQjeok7F
  yjt+9S+KgSFSHP3Pa4E7lsSdWhSlHYNdG/czhoUkSCN09C0rEK93wxACx3vtxPLjXu6RptBw
  3dRq7n+mQChEB1am0BueV1JZaBboIL0AGlSJkm23kw==
-In-Reply-To: <cd59d7b0-6b31-4cbd-93e8-df713a9210f6@ideasonboard.com>
+In-Reply-To: <20250704125915.1224738-1-devarsht@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_014934_396749_5EA9ADEB 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20250723_023737_762958_149790C9 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,35 +112,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hi,
 
-(I accidentally sent my mail only to you. List added here).
-
-On 23/07/2025 10:36, Tomi Valkeinen wrote:
-> Hi Vinod,
+On 04/07/2025 15:59, Devarsh Thakkar wrote:
+> This fixes PLL lockup and O_CMN_READY timeout by moving the polling
+> function after common state machine gets enabled. Also fix the
+> calibration wait time to optimize the polling time.
 > 
-> On 27/06/2025 02:32, Vinod Koul wrote:
->> On 18-06-25, 12:59, Tomi Valkeinen wrote:
->>> The code in cdns-dphy has probably been part of a DSI driver in the
->>> past. Remove DSI defines and variables which are not used or do not
->>> actually do anything. Also rename cdns_dsi_get_dphy_pll_cfg() to
->>> cdns_dphy_get_pll_cfg(), i.e. drop the "dsi", as it's not relevant here.
->>
->> Acked-by: Vinod Koul <vkoul@kernel.org>
->>
+> NOTE: This needs to be applied on top of  
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-4-862c841dbe02@ideasonboard.com/           
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-5-862c841dbe02@ideasonboard.com/           
+>   from the series:                                                                                  
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com/    
 > 
-> Are you fine merging the two cdns-dphy patches (this and 4/17) via drm
-> tree? I think that's the easiest way to merge this.
+> Changelog:
+> V4:                                                                                                 
+> - Optimize wait_for_pll_lock, wait_for_cmn_ready calls to oneline                                   
+>   using conditional operator                                                                        
+> - Remove superflous init for ret variable in cdns_dphy_configure                                    
+> - Enable pll and psm ref clocks before configuring PLL                                              
+> - Update commit message to refer to TRM                                                             
+> - Rebased on top of:                                                                                
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-4-862c841dbe02@ideasonboard.com/           
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-5-862c841dbe02@ideasonboard.com/           
+>   from the series:                                                                                  
+>   https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02@ideasonboard.com/    
 > 
-> I could also drop the 5/17 patch from the series, as it's just a
-> cleanup, and it could be merged at some later point via phy tree.
+> V3: 
+> -   Use read-modify-write for using calibrated value for PLL
+>     lock time
+> -   Move out PLL clock configuration part to power_on function
+> 
+> V2: Separate patch for calibration logic and
+>     return error code on polling 
+> 
+> Previous versions:
+> V3: https://lore.kernel.org/all/20250502033451.2291330-1-devarsht@ti.com/
+> V2: https://lore.kernel.org/all/20250326152320.3835249-1-devarsht@ti.com/
+> V1: https://lore.kernel.org/all/20241230125319.941372-1-devarsht@ti.com/
+> 
+> Test logs:
+> Link: https://gist.github.com/devarsht/d08d851399ca327e5594266a8d66d478
+> 
+> Rangediff:
+> V3->V4:
+> https://gist.github.com/devarsht/e4db52e1f4aec2d45596b3ed019e92ef
+> 
+> V2->V3:
+> https://gist.github.com/devarsht/c4d2c4f6715ec7aa4df4cb2c7991b7aa
+> 
+> Devarsh Thakkar (2):
+>   phy: cadence: cdns-dphy: Fix PLL lock and O_CMN_READY polling
+>   phy: cadence: cdns-dphy: Update calibration wait time for startup
+>     state machine
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 126 ++++++++++++++++++++++++--------
+>  1 file changed, 94 insertions(+), 32 deletions(-)
+> 
 
-Actually, I take that back. Devarsh also has some cdns-dphy patches,
-which depend on my patches. It could get messy.
+For the series:
 
-There's no compile-time dependency, and my DRM series doesn't depend on
-the dphy changes even at runtime. I think it's best if I drop the dphy
-changes from my series and send them separately.
+Reviewed-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 
  Tomi
 
