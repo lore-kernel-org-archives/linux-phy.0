@@ -4,45 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CBCC87FCF
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 784C5C83F34
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 10:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CWRdcAG+f3RM8BfF8JONuq3YJqxCJ4u+JIOVCOrnp4E=; b=esFAE8wzonmXon
-	9QcWz6M+Wx5t8pIgDvrca1RjizDVDxZcyEPiO4UzoE1ta6iZqSOtx9TE1/Z2pIkYQRPVO/3GGrcCu
-	2yya2C8TGvHkb2aC+sAwkQePerxrg4O6iW8DzOkcRwCyFBkG8O0kM+ON77ntCxMwR2v5bQestnlb8
-	97p8bTNBy0lRn+6wfbMjdznH5cjYhp58zvKX5UfCpf16vMePnrDOnOWTBVqPEubJPNMPLvAASVpOY
-	rIsD/xhEvSgCgpyMaUfgpz8uCrkwpF29unQ0ac8DorUEXGq9Je85qH8eediYarJMVYhDzeKOPgw4H
-	DNhIXN6gX5E91aJhFE5A==;
+	List-Owner; bh=DyEY0aRlpLLQg/l4uRGCIihFqJYFPY6dgNxinzy2Zgs=; b=Da1Vu1V87ivdK8
+	ic6Ybg77i7u/k/lv1oprOZ2i6gv/Me+qrs5EqLhCsVg9dqIESEMtB1BrjgT+i2a3u6dY0M6NSFwvN
+	i1R8c3rnDBxhdmIAHp4GcGsBhIycNIi0kzktCfmcwSZkk+7addIODxSnZXcxWu9l/gQGT8n8Ayh7C
+	EfeOMgPmOs5Ic527BLw6vCpChHq2e4hhZshOO0ZT51KqZvznqz6O8Cs69AVc5u8DOdxBuwT5bmMCy
+	O0eb6VmlPZnVwRo3ZvCqbgndvfMLhfJlxxhfvGC4nMAeTc/WuzY91sAe2e833fMllwewos7hScdnm
+	pvPigORdan9n1j8vxW9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWcS-00000004fa0-374p;
-	Wed, 23 Jul 2025 10:22:40 +0000
+	id 1ueWcR-00000004fXk-0wqz;
+	Wed, 23 Jul 2025 10:22:39 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueWM6-00000004cKd-2jsU
+	id 1ueWM0-00000004cGG-0vtk
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 10:05:47 +0000
+	Wed, 23 Jul 2025 10:05:41 +0000
 Received: from [127.0.1.1] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 59BA811EB;
-	Wed, 23 Jul 2025 12:05:06 +0200 (CEST)
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B2C6BF0B;
+	Wed, 23 Jul 2025 12:04:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753265107;
-	bh=GKcU1UDIh+qNv6o0wu+RLbDsP2jO/MtpcsqLrcqVXJU=;
+	s=mail; t=1753265100;
+	bh=ORJ+r9QXRlTePgAiA6Oc9ykTVuz6BMPrXnHDUBW7+tA=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Xtq+tOduJR8iGODWJ2SARLbVYE5At9AIhgY7+mn6vEX8J9eJKIQP9HEfDKkgsSnYF
-	 FsqENAEn8OQpBRYn/s6/28wvcU49K4l2FTg0J7ZwaYDTmKV/9b1kSPXPo51q7CjZQX
-	 vNB24CWA2rA9ywDxCnDlQS3SwM5QxBiJTXds44zs=
+	b=ZwBw95RmpEJaC4q9D0iCiR3XOHlc5Eke5Y1lPizelg4h3jhxfsDa09QGaScgRs+Xu
+	 g7UuCo0KAl06l6wl+kwJiZsyjs73D6RW76WWYrV21AbobbaLNgcK3BHnP2V0gfHG/T
+	 47UiPbsU9pffBjoyQW/TvOZUFHp+BqHCobmmt1cw=
 From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Date: Wed, 23 Jul 2025 13:05:13 +0300
-Subject: [PATCH v5 07/15] drm/bridge: cdns-dsi: Drop checks that shouldn't
- be in .mode_valid()
+Date: Wed, 23 Jul 2025 13:05:08 +0300
+Subject: [PATCH v5 02/15] drm/tidss: Fix missing includes and struct decls
 MIME-Version: 1.0
-Message-Id: <20250723-cdns-dsi-impro-v5-7-e61cc06074c2@ideasonboard.com>
+Message-Id: <20250723-cdns-dsi-impro-v5-2-e61cc06074c2@ideasonboard.com>
 References: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 In-Reply-To: <20250723-cdns-dsi-impro-v5-0-e61cc06074c2@ideasonboard.com>
 To: Jyri Sarha <jyri.sarha@iki.fi>, 
@@ -62,26 +61,27 @@ Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  Parth Pancholi <parth.pancholi@toradex.com>, 
  Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 X-Mailer: b4 0.15-dev-c25d1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1734;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2357;
  i=tomi.valkeinen@ideasonboard.com; h=from:subject:message-id;
- bh=GKcU1UDIh+qNv6o0wu+RLbDsP2jO/MtpcsqLrcqVXJU=;
- b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPrXDOKTajwpiWsvJg/fjW9aMV6vKjSC5ngs
- N8WHfpn9tmJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz6wAKCRD6PaqMvJYe
- 9eXDD/wNul3Vpi6+NHNqLrIHcNuGnMTOhgLHR+YpIOHcI+zK7IecB24a7nc4srlTZtnhsp0SlNE
- StA6bcE95ADqqltoPyK49R2Xyh5Yi/lBhDMsdnPslIq5c/KGNTkjO941Z0NDINCAnNNr4ugeV7A
- d1r8yRRnsa2ZUuOVL+TsVWU6MwwfQPGcEzc6HktEuTG5NyDAlBnGDLW9FqQZRem9SoaOJWxZIg3
- s+aOwFJFE+HhivjWkyAmqrf3fF8XpQn+XsaW/SH2S/VwtBUlda9SUkeeQG9HIx90vra/FIcEpqA
- eP9b4+dX2Itdd+LpLnEAT3+qXcEOEOK7UTMr1fL77g4I2txOr8lSJo1YNG2hkay2IWERlv4gTTU
- TvVNVKIF3Ri3/J4rHVkU9BySBP41S334VK8+oRyyjeLY65Tk17QiivokJh5rYtadsjYGy0fIKW3
- zy5fD0nmzzrAKVkS4GkUbGZlov8ob6NGkn01tVcjybQ2UrkbKxmlG337OLkaEq0DoBxgmWBo8Qf
- VK9qqfwQwMmOQ644yUrlw11rODFyKlroHFbx+wLnBnMLLU8AH9+HI1pRBOUDSDwyQI0R9w6VBrM
- UtMPAWWz8vG/AEz2JzWvNx/I3qpF5V4gcdR5uODq24lU1cSZeCAM0KI2XJx8n3LoH7CBx3hnB45
- ljaYeCttdHMWoqQ==
+ bh=ORJ+r9QXRlTePgAiA6Oc9ykTVuz6BMPrXnHDUBW7+tA=;
+ b=owEBbQKS/ZANAwAIAfo9qoy8lh71AcsmYgBogLPp6kU/4JIExEPKogdspBc6ktmg57XLDNNpo
+ iOOklnleBuJAjMEAAEIAB0WIQTEOAw+ll79gQef86f6PaqMvJYe9QUCaICz6QAKCRD6PaqMvJYe
+ 9aDUD/4s3YKIhT5PfWB6Fy4SGIOCjBhxa2MDayzUI4BoaHAjSEuJ4O1G2T73C3FWVLOlKjdtxL+
+ tnDLofKetsbnw/HDU1YdPtm8gbPhScEJP4uHL6MKTPSD1CJEd/aq4HKlzh3KTkLNsrXZkCVt0il
+ QSBhpn6VLauVh85jUiDKyOR4ARqIOSUU/Nf1VPn5YBKWHsvOh8pjwx5LXiD3YoRXoXpC8JtvZ1r
+ VnCSHpTlqzo3NKsj4BSaqk7bEn7QZL/2EjSZrbzSMf+zroAUUwV1Xoeqbv8rAF8myyEnE+/pwIE
+ ORs6q4Bgz0H9el1oWUPTZUD4AdCN1zL7BUPQvcLuXii5hzDlFeTXxviZJWDBgJjSL8qaUplp6Dt
+ VcvAwJD7cQLyBie737+yqBP4yXlVSsCw1emL99WrEGRD3fDEUJ5ugxlPbe40o6QuJmVxJUe7K2o
+ /a8K27ftRdTheuGdQz6Kv8KwrNNO4Zkq7ki7j9EVTsdel83XbyWAG2GDBW1NQe1T7ovT7gl1q02
+ 7HHjhgng/B8NsKTUbvZVdgtFyLS12lkJwWXw7WA7VsZATkQPsODU4nkWzW0N6OBbbJvSK0H2vtA
+ sldzNcTS5M+mfmrJuo7q2bczzxdIR1ZPXktZEC0+ODbqomNYHqmpZnA1sE7VqR6MFqZr2n6+iZj
+ 2AX71AJqsUl87uw==
 X-Developer-Key: i=tomi.valkeinen@ideasonboard.com; a=openpgp;
  fpr=C4380C3E965EFD81079FF3A7FA3DAA8CBC961EF5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_030546_862535_BB2D10B0 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20250723_030540_404906_9996B7C5 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,16 +98,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The docs say about mode_valid():
-
-"it is not allowed to look at anything else but the passed-in mode, and
-validate it against configuration-invariant hardware constraints"
-
-We're doing a lot more than just looking at the mode. The main issue
-here is that we're doing checks based on the pixel clock, before we know
-what the pixel clock from the crtc actually is.
-
-So, drop the cdns_dsi_check_conf() call from .mode_valid().
+Fix missing includes and struct declarations. Even if these don't cause
+any compile issues at the moment, it's good to have them correct.
 
 Reviewed-by: Aradhya Bhatia <aradhya.bhatia@linux.dev>
 Tested-by: Parth Pancholi <parth.pancholi@toradex.com>
@@ -115,34 +107,70 @@ Tested-by: Jayesh Choudhary <j-choudhary@ti.com>
 Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
 Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+ drivers/gpu/drm/tidss/tidss_dispc.h       | 3 +++
+ drivers/gpu/drm/tidss/tidss_drv.h         | 2 ++
+ drivers/gpu/drm/tidss/tidss_plane.h       | 2 ++
+ drivers/gpu/drm/tidss/tidss_scale_coefs.h | 2 ++
+ 4 files changed, 9 insertions(+)
 
-diff --git a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-index 000c5a2367fe..b2b6529b1c70 100644
---- a/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-+++ b/drivers/gpu/drm/bridge/cadence/cdns-dsi-core.c
-@@ -603,8 +603,7 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
- 	struct cdns_dsi_input *input = bridge_to_cdns_dsi_input(bridge);
- 	struct cdns_dsi *dsi = input_to_dsi(input);
- 	struct cdns_dsi_output *output = &dsi->output;
--	struct cdns_dsi_cfg dsi_cfg;
--	int bpp, ret;
-+	int bpp;
+diff --git a/drivers/gpu/drm/tidss/tidss_dispc.h b/drivers/gpu/drm/tidss/tidss_dispc.h
+index b8614f62186c..60c1b400eb89 100644
+--- a/drivers/gpu/drm/tidss/tidss_dispc.h
++++ b/drivers/gpu/drm/tidss/tidss_dispc.h
+@@ -7,11 +7,14 @@
+ #ifndef __TIDSS_DISPC_H__
+ #define __TIDSS_DISPC_H__
  
- 	/*
- 	 * VFP_DSI should be less than VFP_DPI and VFP_DSI should be at
-@@ -622,10 +621,6 @@ cdns_dsi_bridge_mode_valid(struct drm_bridge *bridge,
- 	if ((mode->hdisplay * bpp) % 32)
- 		return MODE_H_ILLEGAL;
++#include <drm/drm_color_mgmt.h>
++
+ #include "tidss_drv.h"
  
--	ret = cdns_dsi_check_conf(dsi, mode, &dsi_cfg);
--	if (ret)
--		return MODE_BAD;
--
- 	return MODE_OK;
- }
+ struct dispc_device;
  
+ struct drm_crtc_state;
++struct drm_plane_state;
+ 
+ enum tidss_gamma_type { TIDSS_GAMMA_8BIT, TIDSS_GAMMA_10BIT };
+ 
+diff --git a/drivers/gpu/drm/tidss/tidss_drv.h b/drivers/gpu/drm/tidss/tidss_drv.h
+index d14d5d28f0a3..84454a4855d1 100644
+--- a/drivers/gpu/drm/tidss/tidss_drv.h
++++ b/drivers/gpu/drm/tidss/tidss_drv.h
+@@ -9,6 +9,8 @@
+ 
+ #include <linux/spinlock.h>
+ 
++#include <drm/drm_device.h>
++
+ #define TIDSS_MAX_PORTS 4
+ #define TIDSS_MAX_PLANES 4
+ #define TIDSS_MAX_OLDI_TXES 2
+diff --git a/drivers/gpu/drm/tidss/tidss_plane.h b/drivers/gpu/drm/tidss/tidss_plane.h
+index aecaf2728406..92c560c3a621 100644
+--- a/drivers/gpu/drm/tidss/tidss_plane.h
++++ b/drivers/gpu/drm/tidss/tidss_plane.h
+@@ -7,6 +7,8 @@
+ #ifndef __TIDSS_PLANE_H__
+ #define __TIDSS_PLANE_H__
+ 
++#include <drm/drm_plane.h>
++
+ #define to_tidss_plane(p) container_of((p), struct tidss_plane, plane)
+ 
+ struct tidss_device;
+diff --git a/drivers/gpu/drm/tidss/tidss_scale_coefs.h b/drivers/gpu/drm/tidss/tidss_scale_coefs.h
+index 9c560d0fdac0..9824d02d9d1f 100644
+--- a/drivers/gpu/drm/tidss/tidss_scale_coefs.h
++++ b/drivers/gpu/drm/tidss/tidss_scale_coefs.h
+@@ -9,6 +9,8 @@
+ 
+ #include <linux/types.h>
+ 
++struct device;
++
+ struct tidss_scale_coefs {
+ 	s16 c2[16];
+ 	s16 c1[16];
 
 -- 
 2.43.0
