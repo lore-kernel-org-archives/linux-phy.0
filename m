@@ -4,100 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9537C83F17
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 08:24:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1CCAC83F1A
+	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 09:04:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fN/GISZZXfp87F3lQO+AKAUVDz8XjEQwyqB5mFYafvY=; b=XVUPiwtAndD29X
-	BV0/CnoEcPIeiDWH5ECg3Cnb+XVCgEYqqXx1o4JkIdlC/1Q1EAmMEhjkn9exSAiEBvQH5AmMutVop
-	Mdk5Pr+QFSAdhHYqhYKAImWKIFPZqysVZ9c8dLGCsTQ4h+skML4JHvVf5GVoWbXQVkN3bP2JxfLY+
-	Evyj96A9IAR8Fv179Rz5gFy2NKu9WvqXCOBWDCWJZ8JNP6NFPRxdQMsx61YtS6Ux5hFqZrNi3qlDT
-	AX31lVbYvoP4oUsBKfeO5x6jIJG6y7dLe+OUpVOgUsfEBvV0SMJJUr76P5v7oCgz41D6Bt6GJ2b41
-	k8xWknfsFqozqMD6bipA==;
+	List-Owner; bh=Ya5tzPjzSd5p8U0eecT/SevMReM5CkHBW3dxvWCQtjI=; b=4wy0df0ZT0h7US
+	FhZvvAb/PR1iiR7Jj4J1tXYWvH9qROcqINezdmw26Oc9hG33WR8M1N92bDupOUa928kVgvOtuCUES
+	Pxl/7SYUCRuCrAaiC61vELTAOS1kmyr4KidPEAutj/B4vPRA2eQTD4dhbfds5VU6AGIGJRXWH9RU0
+	jNE9D6XHCNuvwZ6XpVftcIgt3KVx+wPsuqWzY2jDxEboR+F0vXly9bkVVY90R3cwS4OoGaJn8NEdJ
+	bop2uGuKv7WiGU8Lp1cNG2x+r0X0ZLbBLCVq4WmvVSEyE5cJwfw6D0UXIVJmptxqpjswkOr08UsGG
+	u6zEp+rCypEA1HWEHMkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueUll-00000004Mls-1lZq;
-	Wed, 23 Jul 2025 08:24:09 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1ueVOm-00000004SHJ-1bM9;
+	Wed, 23 Jul 2025 09:04:28 +0000
+Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueUVD-00000004KTu-3yLL
+	id 1ueUzH-00000004OOv-27PX
 	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 08:07:05 +0000
-Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id C8819C66;
-	Wed, 23 Jul 2025 10:06:19 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1753257980;
-	bh=8aecLTAzLm8TXTXNAqv86bF9B9YQxFXwXcdqeERA7Z8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=IQUIsMItpWJDPqoFjfn9sUxnY1GzstPIpRxIB/NkzRo20ERg3SMuBDJt9f0YYWkLD
-	 6HQw7ZNE4kFZfglV9tpgu0R1ogEgZm5zqjEd3rBJFL4FEun+KOKypWHJIbBGNUyHOz
-	 lxXVmolGm76zDlpzHk7ynhhTE3OUQQGR0tFjrLug=
-Message-ID: <d12fc642-bb6b-4d97-9660-f50d2dad1202@ideasonboard.com>
-Date: Wed, 23 Jul 2025 11:06:54 +0300
+	Wed, 23 Jul 2025 08:38:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1753259888; x=1784795888;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=4qbZQMMBOmmLEL/u4/6u8vCeedLqEVOr855SNhW0HrM=;
+  b=RiqrWl5GowWx3Srs9SRg7+hG0m3Ro3fTeyzxmo+483Mu0bdHamqiBtOy
+   GJv+PMcwEZlkalAuElG6T7bVntGo4kGDVrVuFxLfiawzGm8rpTFMg/Trs
+   nsWJEOo/oKozKAFB8AgUrB8fsDuLoLCoGUQVMrTxQ9h6LqcsEqObQG2zV
+   wmGL8t9f2sgIkp2CxsS9hreY7Fe88Rt1OAHVY/qvVB4Q/LuIyImGfMHgB
+   MHjTPeSJ/MIVx3hdRbmSswTVkQN3HEe4MrEZYE7BweQ1zFtR82UTOUpU9
+   EaTdvgekkY3lfBngJIHzusG2nQDkkDEp2q3FzAKg+OpuAA1Q+zQ4qGI2X
+   Q==;
+X-CSE-ConnectionGUID: ZUf05UXBQOuiW5/bpeOm3g==
+X-CSE-MsgGUID: zaSPy2HYQrimzeNc2qYV/g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11500"; a="55382778"
+X-IronPort-AV: E=Sophos;i="6.16,333,1744095600"; 
+   d="scan'208";a="55382778"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jul 2025 01:38:07 -0700
+X-CSE-ConnectionGUID: LQ9Qcj+iT52wKy4Bwqf+PQ==
+X-CSE-MsgGUID: i1lLUci5QUGmNhtoGsrTIQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,333,1744095600"; 
+   d="scan'208";a="190348638"
+Received: from lkp-server01.sh.intel.com (HELO 9ee84586c615) ([10.239.97.150])
+  by orviesa002.jf.intel.com with ESMTP; 23 Jul 2025 01:38:01 -0700
+Received: from kbuild by 9ee84586c615 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1ueUz9-000J8l-16;
+	Wed, 23 Jul 2025 08:37:59 +0000
+Date: Wed, 23 Jul 2025 16:37:30 +0800
+From: kernel test robot <lkp@intel.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	sboyd@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+	casey.connolly@linaro.org
+Subject: Re: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
+ and devm variant
+Message-ID: <202507231529.OH2sdMoF-lkp@intel.com>
+References: <20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: cadence: cdns-dphy: Update calibration wait
- time for startup state machine
-To: Devarsh Thakkar <devarsht@ti.com>
-Cc: aradhya.bhatia@linux.dev, s-jain1@ti.com, r-donadkar@ti.com,
- j-choudhary@ti.com, a0512644@ti.com, vkoul@kernel.org, kishon@kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250704125915.1224738-1-devarsht@ti.com>
- <20250704125915.1224738-3-devarsht@ti.com>
-Content-Language: en-US
-From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
-Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
- 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
-In-Reply-To: <20250704125915.1224738-3-devarsht@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_010704_134348_90A68DC7 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20250723_013807_618707_F380569C 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,74 +99,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi AngeloGioacchino,
 
-On 04/07/2025 15:59, Devarsh Thakkar wrote:
-> Do read-modify-write so that we re-use the characterized reset value as
-> specified in TRM [1] to program calibration wait time which defines number
-> of cycles to wait for after startup state machine is in bandgap enable
-> state.
-> 
-> This fixes PLL lock timeout error faced while using RPi DSI Panel on TI's
-> AM62L and J721E SoC since earlier calibration wait time was getting
-> overwritten to zero value thus failing the PLL to lockup and causing
-> timeout.
-> 
-> [1] AM62P TRM (Section 14.8.6.3.2.1.1 DPHY_TX_DPHYTX_CMN0_CMN_DIG_TBIT2):
-> Link: https://www.ti.com/lit/pdf/spruj83
-> 
-> Cc: stable@vger.kernel.org
-> Fixes: 7a343c8bf4b5 ("phy: Add Cadence D-PHY support")
-> Signed-off-by: Devarsh Thakkar <devarsht@ti.com>
-> ---
-> V4: No change
-> V3:
-> - Do read-modify-write to preserve reset value for calibration wait
->   time
-> V2:
-> Introduced this as as separate patch
-> 
->  drivers/phy/cadence/cdns-dphy.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index da8de0a9d086..24a25606996c 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -30,6 +30,7 @@
->  
->  #define DPHY_CMN_SSM			DPHY_PMA_CMN(0x20)
->  #define DPHY_CMN_SSM_EN			BIT(0)
-> +#define DPHY_CMN_SSM_CAL_WAIT_TIME	GENMASK(8, 1)
->  #define DPHY_CMN_TX_MODE_EN		BIT(9)
->  
->  #define DPHY_CMN_PWM			DPHY_PMA_CMN(0x40)
-> @@ -410,7 +411,8 @@ static int cdns_dphy_power_on(struct phy *phy)
->  	writel(reg, dphy->regs + DPHY_BAND_CFG);
->  
->  	/* Start TX state machine. */
-> -	writel(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
-> +	reg = readl(dphy->regs + DPHY_CMN_SSM);
-> +	writel((reg & DPHY_CMN_SSM_CAL_WAIT_TIME) | DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN,
->  	       dphy->regs + DPHY_CMN_SSM);
+kernel test robot noticed the following build warnings:
 
-That's not how you do read-modify-write. You should first read the
-register, then clear the fields you want to set/clear, then set the
-fields, then write.
+[auto build test WARNING on next-20250722]
+[also build test WARNING on v6.16-rc7]
+[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16-rc7 v6.16-rc6 v6.16-rc5]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-reg = readl(dphy->regs + DPHY_CMN_SSM, dphy->regs + DPHY_CMN_SSM);
-reg &= ~(DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN)
-reg |= DPHY_CMN_SSM_EN | DPHY_CMN_TX_MODE_EN;
-writel(reg, dphy->regs + DPHY_CMN_SSM);
+url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250722-181911
+base:   next-20250722
+patch link:    https://lore.kernel.org/r/20250722101317.76729-2-angelogioacchino.delregno%40collabora.com
+patch subject: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
+config: sparc-randconfig-001-20250723 (https://download.01.org/0day-ci/archive/20250723/202507231529.OH2sdMoF-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 8.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250723/202507231529.OH2sdMoF-lkp@intel.com/reproduce)
 
-That's the general form, in this particular case the and-line is not
-necessary, of course.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507231529.OH2sdMoF-lkp@intel.com/
 
-There's also FIELD_MODIFY() (and related), but I'm not sure if I like
-them... Up to you.
+All warnings (new ones prefixed by >>, old ones prefixed by <<):
 
- Tomi
+>> WARNING: modpost: module spmi-devres uses symbol spmi_subdevice_remove from namespace SPMI, but does not import it.
+>> WARNING: modpost: module spmi-devres uses symbol spmi_subdevice_alloc_and_add from namespace SPMI, but does not import it.
 
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
