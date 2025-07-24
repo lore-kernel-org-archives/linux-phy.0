@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0191EC87FCF
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:51:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61D78C87FD2
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:51:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ptu5WEggTc+MCL4//nbXZmvFGgd0Jvu2sLFlv6ModNE=; b=rD/TlP+ND8B3af
-	zFGbPI23bG4N3uRenf0AJRBujxa66Cun1vmP+CMW6BvO9agMfhY3RFLE/tdAYGkgUhFEJQcnj0SZG
-	ZxVRCViGRvrKZegpfES2BArmjRByiF/joanSJNHEKO+ywI4esFvRAFx80l5iIg3Hb87TG7LUXtibF
-	HcqzNUClo3Oi5l9JcCHRt3aPoqJQQVQJftcDdzpTS0aD7mEJeUXITXyF1dca38rHPSiYQh/TtjlIq
-	wN8V9BIh9RXGcNpECrC5/BAcThOrdT8TuXAYQNGphG2aDG1z0qz+/YQHkr4tAQk6IU5h5ZTuokhEI
-	kO1XATZ1UA6V+SFugh2A==;
+	List-Owner; bh=Q2R+dK0v+2qKAcpyrqeayCA19yv3Qxcnr6Hvqrf5KKQ=; b=WBfjqCFFb9kXPl
+	fgAw2R2ruBJVXWgiWqbwv57WRzFACh57rsFMPsO3CfnwQ48VFv0U/6ymN6Oqww7WQk4dbk9uc5Cio
+	mrFpTqrFHnz4jGjST+pLxxjVbcrChxIvmjPl+LOOx672z3fn518wf5q3DNmawEMuoJHmrlXDWBRAy
+	W36cP3Fs+i9mSyECToE6c3TBgveYnAgLxQ6AQ2dXLiWaDzQ2QilAQmD0iAVpXc17AMJ3JZCmkbCkD
+	ZpyUx9pBFAIgcl0p1jYUWacHIsrcM2R85c5/DXEQKc+ecOlCJwuNhupw24HGU1Bl2CsP4A9DqURYt
+	5LjGQViIXH6O0HtkemMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesbp-000000077Zy-32B3;
-	Thu, 24 Jul 2025 09:51:29 +0000
+	id 1uesbr-000000077cG-0ETY;
+	Thu, 24 Jul 2025 09:51:31 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uerVe-00000006uBG-0A2i;
-	Thu, 24 Jul 2025 08:41:03 +0000
+	id 1uerVj-00000006uEL-1HEB;
+	Thu, 24 Jul 2025 08:41:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753346460;
-	bh=isBcp22K4ow+WwdLtmfT8eS5RNhAYShdyGLUfi1Qu/k=;
+	s=mail; t=1753346466;
+	bh=B3CsW3fupLeNYb98MufEHqQnnbS1JREMQP80NpqoAvM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=YPe5uV2pDuw1U0jY1d+yJY6bMNp5dERWkNdlL0QglioHjCPsArwEd8SCpGPQWqTo+
-	 SYyhQJRBE3rDdl/X0TwKbAK1Q2LxbUrcBIfsRS/tcv1ZfleQVz5NJeycQkeWpc5laf
-	 CJaUbz5jXjGDXOdhYNHBgXrjwdqiWugCM+JwQA8PIa8pYSoqY55Jcoe421gxT75fzP
-	 ll8zcQEA7XpjYXvVHtT409AUyVdIoV31Hct0g3E+5Ol9bf9qjL4l8KEcGrEfPXzS5n
-	 gTN0A7Zi7EKqqiCbViC43QCktjNSZzZpGt83FIntyVCF52O+SWLYC8kznPUjdWoqCw
-	 H1i7Vlgwyr1Pg==
+	b=k4uXIOfOiJfGvxbxd9tJwlQiHQnrACaUK133JcQoARmvOPlPu554K4W+kHlQPKNNz
+	 kU+iq3w5H8p62xWT+s2irE1YpD+Q45oSLpwIiuKBwAVRYVJetS89P3dFgOIfd97+qi
+	 UgZXxN3ee11t+obnIZ8ta0nJVNGPHGkSoyh/hMJCDbhBaXhZ3WGg/BQfzwpjycYYf9
+	 1Lt9KjIQIlbF92Qw8H+tWVP+YQ5gkpdhczsQxg+kBX+ouldOFXzOpZLg93nW6OHu1Q
+	 9pa2jozQDo6g+wQcPEMCMsDxTfqXzmXO+7cMGuW9NV97Nb1RpfQiv+sMGtypvfMpnu
+	 6QDan0Kv1YnFQ==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4DFFC17E0C96;
-	Thu, 24 Jul 2025 10:40:58 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 92AD217E0FC2;
+	Thu, 24 Jul 2025 10:41:03 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: linux-mediatek@lists.infradead.org,
 	robh@kernel.org
@@ -100,17 +100,16 @@ Cc: herbert@gondor.apana.org.au,
 	linux-gpio@vger.kernel.org,
 	linux-remoteproc@vger.kernel.org,
 	linux-sound@vger.kernel.org
-Subject: [PATCH 36/38] arm64: dts: mediatek: mt8195-cherry: Add missing regulators to rt5682
-Date: Thu, 24 Jul 2025 10:39:12 +0200
-Message-ID: <20250724083914.61351-37-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 38/38] arm64: dts: mediatek: mt8516-pumpkin: Fix machine compatible
+Date: Thu, 24 Jul 2025 10:39:14 +0200
+Message-ID: <20250724083914.61351-39-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_014102_223882_DC2E3A5A 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250724_014107_492359_52083E01 
+X-CRM114-Status: GOOD (  10.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,32 +126,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the missing DBVDD and LDO1-IN power supplies to the codec
-node as both RT5682i and RT5682s require those.
+This devicetree contained only the SoC compatible but lacked the
+machine specific one: add a "mediatek,mt8516-pumpkin" compatible
+to the list to fix dtbs_check warnings.
 
-This commit only fixes a dtbs_check warning but doesn't produce
-any functional changes because the VIO18 LDO is already powered
-on because it's assigned as AVDD supply anyway.
-
+Fixes: 9983822c8cf9 ("arm64: dts: mediatek: add pumpkin board dts")
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi b/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
-index d40f4c1b9766..b3761b80cac7 100644
---- a/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
-@@ -534,7 +534,9 @@ audio_codec: codec@1a {
- 		realtek,jd-src = <1>;
+diff --git a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
+index cce642c53812..3d3db33a64dc 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
+@@ -11,7 +11,7 @@
  
- 		AVDD-supply = <&mt6359_vio18_ldo_reg>;
-+		DBVDD-supply = <&mt6359_vio18_ldo_reg>;
- 		MICVDD-supply = <&pp3300_z2>;
-+		LDO1-IN-supply = <&mt6359_vio18_ldo_reg>;
- 	};
- };
+ / {
+ 	model = "Pumpkin MT8516";
+-	compatible = "mediatek,mt8516";
++	compatible = "mediatek,mt8516-pumpkin", "mediatek,mt8516";
  
+ 	memory@40000000 {
+ 		device_type = "memory";
 -- 
 2.50.1
 
