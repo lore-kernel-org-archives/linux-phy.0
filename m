@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B4BFC87FCE
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 10:09:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94A2AC87FCD
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 10:09:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sSWzDuiuEn6GFJyDTvXlb2sXCXBMRejwBMYMTXvV9Kk=; b=49JZJDTmo1rqnU
-	AUk4Gcz+jlTRr39GTqBnNzOiYGEE2G04WYYIsKXsUIUBm9Ugiw1zNakiT/bS0FENZLqagHwhB3Whz
-	hWtZRwFP4FHfFQRmemKUdGjCS0htZCERaLplPkQFvMJAfCEGRbKsnFIefByAe5fGpYSIYzyCQfu9M
-	Vuv3vM3g6eAjOpCcB2M8uWzTokdNocp6UBXh5ZbLdhBLCSBm1uoaQDZA27ve7FaJgbWJTIwVR2ZZ7
-	AzxxefZJKFJyvfb3nGEk9PUj41wRSVW7eq+a5tZRsl5ULksfYcbtpOCqBXiyUg++zHuqyrpAvGPnM
-	+e1wND+wutT/pe5JAxLg==;
+	List-Owner; bh=gjcxMeD3IZar03zH2BCu30lcu+1tA0xKSxLgpjOSc00=; b=sGSEwbQ3oa22yN
+	BVR2fjqtdPnaRKcMTOxLbkpUc9B31PYee9WOpsLPpYQu3djwM61rtkrPFQv9jp73XNuHcVGAgz0tl
+	lPsPdOpOs7lmlhCesoCILaXJ0ln/EZWcsUxQCa9Sc7gkjhlxfBwe3vhp/YO9drWRBfLFDUpaXDr4a
+	s8huBC/wUJBnQfTWzCJjkkxyZHyVIV2v+bugT8hr/pNW7RSWIzYxksdKmvI/QyMP+giqJ3/YrgQ/e
+	OhpfTUMWtRpebGhV7Ky/nNzO2+wmsfqUejWRwTh6MllDml32wyTT7c/BNrd+aUiC6J2oWoiAIN1aB
+	KwYHJSQpxcqgXy2w3RGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesss-00000007AQS-3KGL;
-	Thu, 24 Jul 2025 10:09:06 +0000
+	id 1uessu-00000007ASu-12az;
+	Thu, 24 Jul 2025 10:09:08 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ues2U-000000070LM-0dDc;
-	Thu, 24 Jul 2025 09:14:58 +0000
+	id 1ues4P-000000070d7-3geu;
+	Thu, 24 Jul 2025 09:16:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 74807601D5;
-	Thu, 24 Jul 2025 09:14:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9FB83C4CEF4;
-	Thu, 24 Jul 2025 09:14:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 31A56601D5;
+	Thu, 24 Jul 2025 09:16:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AD75C4CEED;
+	Thu, 24 Jul 2025 09:16:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753348497;
-	bh=HvehlH/2CLE3MGaL9UtFsif+bmgfGYTsR5JQ7GEt1p0=;
+	s=k20201202; t=1753348616;
+	bh=gLORg7WAea4eN1Mqc10+yOs087nAZlxpUfDwe9l0JTQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=j6GRV9cY8JJjAsshQQczASZlfbPLxoOPeuumnGEhTmG1bf+islCdh1pt0NH/SZWHJ
-	 D3eI9TQ8eZsT2Kx2fCrTiCwCMYx21ExNTJqECq7o7PUbHH0KzQKL7jnSIyaQwqWVz2
-	 5p3evYUmAdvKhoN06V5EpvbN/gZCjWuZyDXE0WVhKytxSzrU6qLdYkfD7GwfmfepHD
-	 IIlE1v3cJaR7xL+0k5Vsb1FfIPhV94Z99cKISQHLT9Myj1PXYxzLMp1EWX7z7i73KK
-	 2Mc25V+caW5Vbd2Z4ypLj3g3fY973i4pYzDaGvsSszA0z9CGCF5jDofdpRxHN4t6c1
-	 ItqoHCvcdyvPQ==
-Message-ID: <70ae6787-ee0b-43a0-851e-1fb6c82f6c31@kernel.org>
-Date: Thu, 24 Jul 2025 11:14:43 +0200
+	b=aYUNgm7Ff+tivpPttJxQq303eCzdTXpewStJi6yJzYUXUqMADmVdyXnbWx3SxTdbU
+	 pCzCg129TrbpPLeKSL4FOr7o5uSFjeQ6XMl82krm+kNvrE7vH8uVIv4A43oNE8xgTn
+	 LhCVjuULHrgYX/9WWq3/VGQgbdX1GthXDV0FKKDrIbAL8N7GuNKVTdxhPBTUHTnsUs
+	 cKZhrhfTP3ewRINN+Iq11x2Lu1N9ugUOtZGu2RvkMjrHuxPLgXTFrSaTkSLFb0E7ZF
+	 g1msK36kfjp28TbttN3YHdBKyNqvQw6oY18eb5v2A6+sKObOiD8LIcNfTCAaQeGS/H
+	 nAFpfaTtCbGSg==
+Message-ID: <ee525312-bde1-4724-b32f-83be32c87696@kernel.org>
+Date: Thu, 24 Jul 2025 11:16:43 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 14/38] dt-bindings: media: mediatek,mt8195-jpeg: Allow
- range number in node address
+Subject: Re: [PATCH 15/38] dt-bindings: phy: mediatek,hdmi-phy: Fix clock
+ output names for MT8195
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -70,7 +70,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
  linux-remoteproc@vger.kernel.org, linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-15-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-16-angelogioacchino.delregno@collabora.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -116,7 +116,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250724083914.61351-15-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-16-angelogioacchino.delregno@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,21 +134,82 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
-> The dual and triple core jpeg encoder and decoder (respectively)
-> on MT8195 are far apart: the only way to have this to make sense
-> is to split those in multiple address ranges in device trees as
-> one big range would overlap with other IP in at least the MT8195
-> SoC.
+> For all of the HDMI PHYs compatible with the one found on MT8195
+> the output clock has a different datasheet name and specifically
+> it is called "hdmi_txpll", differently from the older HDMI PHYs
+> which output block is called "hdmitx_dig_cts".
 > 
-> Change both the jpegdec and jpegenc bindings to allow specifying
-> children nodes such as "jpegdec@0,10000", "jpegdec@1,0" or for
-> encoder "jpegenc@0,0", "jpegenc@1,0" to resolve dtbs_check issues.
+> Add a conditional to allow the new clock output name on all of the
+> HDMI PHY IPs that are perfectly compatible with MT8195.
+> 
+> Fixes: c78fe548b062 ("dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible")
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 
-This should not be needed for standard MMIO/simple-bus nodes. I think
-DTS is wrong here.
+Please organize fixes separately from this patchset. You touch here
+really too many subsystems and putting fixes in the middle of patchset
+is another issue.
 
-Which cases really need the ','?
+> ---
+>  .../bindings/phy/mediatek,hdmi-phy.yaml       | 25 ++++++++++++++++---
+>  1 file changed, 22 insertions(+), 3 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> index f3a8b0b745d1..f1207aea8605 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> @@ -26,6 +26,10 @@ properties:
+>            - enum:
+>                - mediatek,mt7623-hdmi-phy
+>            - const: mediatek,mt2701-hdmi-phy
+> +      - items:
+> +          - enum:
+> +              - mediatek,mt8188-hdmi-phy
+> +          - const: mediatek,mt8195-hdmi-phy
+>        - const: mediatek,mt2701-hdmi-phy
+>        - const: mediatek,mt8173-hdmi-phy
+>        - const: mediatek,mt8195-hdmi-phy
+> @@ -41,9 +45,7 @@ properties:
+>      items:
+>        - const: pll_ref
+>  
+> -  clock-output-names:
+> -    items:
+> -      - const: hdmitx_dig_cts
+> +  clock-output-names: true
+
+
+Instead:
+maxItems: 1
+
+>  
+>    "#phy-cells":
+>      const: 0
+> @@ -76,6 +78,23 @@ required:
+>    - "#phy-cells"
+>    - "#clock-cells"
+>  
+> +if:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        enum:
+> +          - mediatek,mt8195-hdmi-phy
+> +then:
+> +  properties:
+> +    clock-output-names:
+> +      items:
+> +        - const: hdmi_txpll
+> +else:
+> +  properties:
+> +    clock-output-names:
+> +      items:
+> +        - const: hdmitx_dig_cts
+
+
+And drop this if:then:else. Binding should not enforce output clock
+naming, because if this is fixed, then you do not need that property at
+all. Things which are const are implied by compatible.
 
 
 Best regards,
