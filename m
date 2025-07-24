@@ -4,125 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41263C83F17
-	for <linux-phy@archiver.kernel.org>; Wed, 23 Jul 2025 16:06:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA5F5C83F26
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 05:27:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bi1w3BYhsUFhrBynsCbq5dUwa4EJxF2Q0+u/NF1VI4s=; b=PT9EtM/RyM5g1g
-	H4kn5cD2qIUEzie24Nj7uzhvltM6VB77XoGmokONmcciWPqFZBF1PlyHiAcXOGZQuFMFsLrjVbfFC
-	maIYcdexstYB0lkEU16wX6CkzkLL+akICWdceuJJC4QS0IHf05NGoOXfi6nihLdef7TEutsfHvmeM
-	kHYiGQNsn6NQeA0N2gbRY2xzdHDsyb+sUpZ46fI3mycslYmYYVsIvomyz+4spx55Br7NWOHGRyORy
-	T5aPrHtHTIYBCTIHjuByrNDlbqmo+YHK9n4KRqJOT/nJgqSy1IbGlvZqnk4+JM1RzZ/O4XyivPv0p
-	WYotfa/anCv87SCGbIQA==;
+	List-Owner; bh=JIMhkPpG4YjKFDCXt9Eq7v2lxymN+Tc8X6+VULUl6DI=; b=CT6QL0T83M72RB
+	7np1fy6qKGcHf2atEiX6QGjvSo2MT2xQNpJuz+ykD0lfMobpo66C9HLOQNMXU4eCL8Gt5YIXBSVH3
+	Sd1qDBU/+o2lZKZoflT0VY5ZyplOgGI0Enm55rLmzfvdY7OY4B73dY0M9o+P3rQhTNBENruRvCeui
+	NDqRmrYmhwpDnN3IalG7OVdhbk/eeENBLXC6sxVRtoAxoPo3L3pJ7fo6j1zaLmUdocyBwgGOGPWvn
+	cFAcVrC1RUlckDT8JPTs6AecYckKqDIYsTZybK196xsBjtEx5MvmyQY3P4F6N9OoE4DXMCcJblRMB
+	M7LQfNaEJWHP4/utvXdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uebyu-00000005SqC-3xba;
-	Wed, 23 Jul 2025 16:06:12 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ueoTu-00000006VFD-1IYl;
+	Thu, 24 Jul 2025 05:27:02 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uebx2-00000005SgM-0bOc
-	for linux-phy@lists.infradead.org;
-	Wed, 23 Jul 2025 16:04:17 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56N9PGFD001802
-	for <linux-phy@lists.infradead.org>; Wed, 23 Jul 2025 16:04:15 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1IVq+bSzc+i0gbcHvdWX5X0gFlHkos8QZkR6QJHMwvk=; b=kju2Vkh5qgJixjmy
-	0LuCVz/DmtBSHrsGDasQ2Tu4i4rfNXAg2XZijdJlxWiM0RpwLAZbVFKCm8Hoovgd
-	WyypJ2Tp2ECJ6/D1ZBIJHVqwaTsrmnVKfxO05S/8LVeJ0NmZJe+U7mjn8HyvKFW5
-	WcNqfS5NM8YhZeMkOp0DKg7PAe1X3OEvU2mHfm1mF6KDDKQijF22o/x9jptCNyUh
-	BOS1stNXo85wblzZy+glcyioFMYcaFb4KIcBZXUd5gJC3WFcJPxUA5DOEv/iR8ME
-	wjI4qeGDb7YbpAdubb2R/ukaMSlVLcn4TxEL7E+S9nP8vhm/uE+yAodgIFoYaY9w
-	wTDMiA==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48045w46pd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 23 Jul 2025 16:04:15 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7e350826d99so7298385a.2
-        for <linux-phy@lists.infradead.org>; Wed, 23 Jul 2025 09:04:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753286654; x=1753891454;
-        h=content-transfer-encoding:mime-version:date:message-id:subject
-         :references:in-reply-to:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=1IVq+bSzc+i0gbcHvdWX5X0gFlHkos8QZkR6QJHMwvk=;
-        b=cqZcPEhtv47/K7mE676ZdEWRxH2OTPHwACtYOsjOhvVzcYLHgmOpxIlc1zBKSuMiSw
-         eTcYCue4w+sV+p/m1Ql1cykSB+AFFg2aDZSVZEehvTb3nP7HVLJp3IBINKP98Dm3Nqc2
-         f9Fk0LE4+yy37HlG6awRmdVGLt8d73wbwdAJshPtoABznTNqb/JHdvepluSsaWxqDtCV
-         DwVCrqLIsQR4w1YkstBJcSR3uF4fKhftFDffGYT1R+HUAQ8AmSnm/+lJrvOdHZfxmF9z
-         AGFV+2I5q8aDxzlH0k6GJZ2mKtxbzmCWEyhVRU2Lv8HwNS/uySIlS02lj7FzPd8qA1FB
-         iqfg==
-X-Forwarded-Encrypted: i=1; AJvYcCXRwXP8dfeIQhQRxWwO512UTVhF6yjb5AcuoiBT+MGohunjdNkmEb2TdPTrL60pck3q0Rqrw5PrMRs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxtVdaCAOrlW74vIXSrFHU7KclY2rRLbltNi69dlyRnkuuHPIUr
-	UYh9UCwQbKeBJng2QcRjVgkv+EHYAFDMFmCBFkDD+6z5WcZwpzjI2PuEWuD56AAxONsAXcHf0/b
-	acpt1pFeh+arU1JudaHl+oant1MRuPWQQrjKGcYL3C1o/+Sr7T89YKIapd1qjj+SSVjc/
-X-Gm-Gg: ASbGncsYhduRjHq1AddS/PF+aU+WVoDfOKYAh8paZD32VhCroe2f5w81xNxJ/kCCoQJ
-	/PUuf6j/4UMBUHm+/G2tEHsQvbDpuJL6xbxDWSuGfudydvIlB1+MG/FC4lf0x6HGP4AyaWFB+5f
-	8ChKE4QbRdwTQleVB5XY1CDBMTFJUZbuPSQsZjqHBuDqIxSXJ2mAjb1YrvUJsQN4MhIt+XAavwf
-	ZrRwqFdDflkrs0wF/wgUqxqTWULU8QodwAd1hiL1hWRpNEtBj+z1e0z7bTjTbuwBEBAKD+73x9N
-	Jf6tSi2qQA7cvGUtzUcR5IseOT4juKxn29s=
-X-Received: by 2002:a05:6214:1c86:b0:6fa:c81a:6231 with SMTP id 6a1803df08f44-707006aa843mr42537746d6.8.1753286653612;
-        Wed, 23 Jul 2025 09:04:13 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHhZaSVPPcM0H02S0SyrGlN2YH/RRRuvuVz7tS54TmJPI+kAWBGLQw4aW0+GxosM+D8oehJNQ==
-X-Received: by 2002:a05:6214:1c86:b0:6fa:c81a:6231 with SMTP id 6a1803df08f44-707006aa843mr42536996d6.8.1753286652887;
-        Wed, 23 Jul 2025 09:04:12 -0700 (PDT)
-Received: from [192.168.1.17] ([61.2.112.87])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-7051b8bc2dasm64468956d6.12.2025.07.23.09.04.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 23 Jul 2025 09:04:12 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-X-Google-Original-From: Manivannan Sadhasivam <mani@kernel.org>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com,
-        johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-        neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-In-Reply-To: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
-References: <20250718081718.390790-1-ziyue.zhang@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v5 0/4] pci: qcom: drop unrelated clock and
- add link_down reset for sa8775p
-Message-Id: <175328664500.29282.12330427204137280127.b4-ty@kernel.org>
-Date: Wed, 23 Jul 2025 21:34:05 +0530
+	id 1ueoRR-00000006V5x-0EhU;
+	Thu, 24 Jul 2025 05:24:31 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 8322A20E4F;
+	Thu, 24 Jul 2025 07:24:24 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id 5DFJ1MI43x0K; Thu, 24 Jul 2025 07:24:22 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1753334662; bh=r1LO7zNuqvNeqzo4vTqtN0YoQhEqVRxw4VlweKdkvoQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=SWkPTjds8+DpTNDSbJjZbO1kvx/lUtM3GPh5QSFVVHetzWK4LjJAzxk6YxsrQ6H3+
+	 sqKhRsoSFz9HjHuuzl8p/nydm4BTm3AHEQzfs8Ku7ONP043g7Czwu18geKr5BsmI9m
+	 Ngbl2wFzfJ4ptvgE1wUR4UORdC3cc5qzMHKaFg9tgi/mfgRF3pe540hCl0FxGbnVWR
+	 g/a9orwCLiTy6B59UGuCNRp36seF1TMjXmdJjLrzElKXP+WlqsZSNTQ+cGuq5mRbNY
+	 +RtuwTtnBTepXrs/TE3+4MU1Cac2/Kx2C1V4CL7/t/JUNu8MRWzytqiPbbdnhao4Gd
+	 Fn1scoPBlhdIQ==
+Date: Thu, 24 Jul 2025 05:23:55 +0000
+From: Yao Zi <ziyao@disroot.org>
+To: Jonas Karlman <jonas@kwiboo.se>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Detlev Casanova <detlev.casanova@collabora.com>,
+	Shresth Prasad <shresthprasad7@gmail.com>,
+	Chukun Pan <amadeus@jmu.edu.cn>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 5/6] phy: rockchip: naneng-combphy: Add RK3528 support
+Message-ID: <aIHDSW0XO9BCfch3@pie.lan>
+References: <20250624033733.50197-1-ziyao@disroot.org>
+ <20250624033733.50197-6-ziyao@disroot.org>
+ <eb7c9e40-3c17-488f-98a2-17b972f61e75@kwiboo.se>
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
-X-Authority-Analysis: v=2.4 cv=LL1mQIW9 c=1 sm=1 tr=0 ts=688107ff cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=L2vWZV9GmkZVUxua0bORKQ==:17
- a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=AxdmJqN1ex9b-t5leqYA:9
- a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-GUID: xqQg5sBoBdwoFVR6YVolqozbg7Su-Neu
-X-Proofpoint-ORIG-GUID: xqQg5sBoBdwoFVR6YVolqozbg7Su-Neu
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzIzMDEzOCBTYWx0ZWRfXzD6fMoos3B7M
- VW6pNpcBqu6AOxjAnSdmz4pknrjf9NBDM/6KUQWlLG87mO0vTOk/rt8k/AHBxp+52R3jpC517xf
- lIYBY5CV1z+tq1ksVXfEu1tys2njsvOJxUn0UZfQN///SUQzC4r+ii4Tf+pCN6vOGbLVHTPbcLE
- +tWWk7y8sZSJnBHOqHPuwIzO+oHDpc1Nmhc1wX+V7ooqrVicnhfL28+NfDJn/qLg579QPhwui60
- CMvU/dvYNz2kTnVK+z1ZcbXC1+aLmhzbaZkBGhngI6w4HrkfW4mgNgo0gNv/rixEq9THEEx0Qhn
- exUz9Qbbuz8zF1MsDxW09XuxFng+kOXs+TWTsZAy6uCC/2g6RqO5s4f0v0GHdrE5PPaJRAYd5Sd
- RAhy2I/wcGoppfD1+EmyBiJ/q/iLEF0/Eq+c3vsTpT31mZRgkWQcjcqdt3B6zjhumz5BEF7t
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-23_02,2025-07-23_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 mlxlogscore=895 clxscore=1011 mlxscore=0 adultscore=0
- suspectscore=0 spamscore=0 malwarescore=0 impostorscore=0 bulkscore=0
- lowpriorityscore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
- authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2505280000 definitions=main-2507230138
+Content-Disposition: inline
+In-Reply-To: <eb7c9e40-3c17-488f-98a2-17b972f61e75@kwiboo.se>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_090416_196602_9AC9AD8D 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20250723_222429_639994_FB82A06B 
+X-CRM114-Status: GOOD (  35.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,30 +87,279 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 18 Jul 2025 16:17:14 +0800, Ziyue Zhang wrote:
-> This series drop gcc_aux_clock in pcie phy, the pcie aux clock should
-> be gcc_phy_aux_clock. And sa8775p platform support link_down reset in
-> hardware, so add it for both pcie0 and pcie1 to provide a better user
-> experience.
+On Wed, Jul 23, 2025 at 04:51:15PM +0200, Jonas Karlman wrote:
+> Hi Yao Zi,
 > 
-> Have follwing changes:
->   - Update pcie phy bindings for sa8775p.
->   - Document link_down reset.
->   - Remove aux clock from pcie phy.
->   - Add link_down reset for pcie.
+> On 6/24/2025 5:37 AM, Yao Zi wrote:
+> > Rockchip RK3528 integrates one naneng-combphy that is able to operate in
+> > PCIe and USB3 mode. The control logic is similar to previous variants of
+> > naneng-combphy but the register layout is apperantly different from the
+> > RK3568 one.
+> > 
+> > Signed-off-by: Yao Zi <ziyao@disroot.org>
+> > Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+> > Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+> > ---
+> >  .../rockchip/phy-rockchip-naneng-combphy.c    | 186 +++++++++++++++++-
+> >  1 file changed, 185 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > index 1d1c7723584b..bf00a85a113b 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> > @@ -20,7 +20,46 @@
+> >  #define REF_CLOCK_25MHz			(25 * HZ_PER_MHZ)
+> >  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+> >  
+> > -/* COMBO PHY REG */
+> > +/* RK3528 COMBO PHY REG */
+> > +#define RK3528_PHYREG6				0x18
+> > +#define RK3528_PHYREG6_PLL_KVCO			GENMASK(12, 10)
+> > +#define RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
+> > +#define RK3528_PHYREG6_SSC_DIR			GENMASK(5, 4)
+> > +#define RK3528_PHYREG6_SSC_UPWARD		0
+> > +#define RK3528_PHYREG6_SSC_DOWNWARD		1
+> > +
+> > +#define RK3528_PHYREG40				0x100
+> > +#define RK3528_PHYREG40_SSC_EN			BIT(20)
+> > +#define RK3528_PHYREG40_SSC_CNT			GENMASK(10, 0)
+> > +#define RK3528_PHYREG40_SSC_CNT_VALUE		0x17d
+> > +
+> > +#define RK3528_PHYREG42				0x108
+> > +#define RK3528_PHYREG42_CKDRV_CLK_SEL		BIT(29)
+> > +#define RK3528_PHYREG42_CKDRV_CLK_PLL		0
+> > +#define RK3528_PHYREG42_CKDRV_CLK_CKRCV		1
+> > +#define RK3528_PHYREG42_PLL_LPF_R1_ADJ		GENMASK(10, 7)
+> > +#define RK3528_PHYREG42_PLL_LPF_R1_ADJ_VALUE	0x9
+> > +#define RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ	GENMASK(6, 4)
+> > +#define RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ_VALUE 0x7
+> > +#define RK3528_PHYREG42_PLL_KVCO_ADJ		GENMASK(2, 0)
+> > +#define RK3528_PHYREG42_PLL_KVCO_ADJ_VALUE	0x0
+> > +
+> > +#define RK3528_PHYREG80				0x200
+> > +#define RK3528_PHYREG80_CTLE_EN			BIT(17)
+> > +
+> > +#define RK3528_PHYREG81				0x204
+> > +#define RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X	BIT(5)
+> > +#define RK3528_PHYREG81_SLEW_RATE_CTRL		GENMASK(2, 0)
+> > +#define RK3528_PHYREG81_SLEW_RATE_CTRL_SLOW	0x7
+> > +
+> > +#define RK3528_PHYREG83				0x20c
+> > +#define RK3528_PHYREG83_RX_SQUELCH		GENMASK(2, 0)
+> > +#define RK3528_PHYREG83_RX_SQUELCH_VALUE	0x6
+> > +
+> > +#define RK3528_PHYREG86				0x218
+> > +#define RK3528_PHYREG86_RTERM_DET_CLK_EN	BIT(14)
+> > +
+> > +/* RK3568 COMBO PHY REG */
+> >  #define RK3568_PHYREG6				0x14
+> >  #define RK3568_PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
+> >  #define RK3568_PHYREG6_PLL_DIV_SHIFT		6
+> > @@ -398,6 +437,147 @@ static int rockchip_combphy_probe(struct platform_device *pdev)
+> >  	return PTR_ERR_OR_ZERO(phy_provider);
+> >  }
+> >  
+> > +static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
+> > +{
+> > +	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
+> > +	unsigned long rate;
+> > +	u32 val;
+> > +
+> > +	/* Set SSC downward spread spectrum */
+> > +	val = FIELD_PREP(RK3528_PHYREG6_SSC_DIR, RK3528_PHYREG6_SSC_DOWNWARD);
+> > +	rockchip_combphy_updatel(priv, RK3528_PHYREG6_SSC_DIR, val, RK3528_PHYREG6);
+> > +
+> > +	switch (priv->type) {
+> > +	case PHY_TYPE_PCIE:
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
+> > +		break;
+> > +	case PHY_TYPE_USB3:
+> > +		/* Enable adaptive CTLE for USB3.0 Rx */
+> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG80_CTLE_EN, RK3528_PHYREG80_CTLE_EN,
+> > +					 RK3528_PHYREG80);
+> > +
+> > +		/* Set slow slew rate control for PI */
+> > +		val = FIELD_PREP(RK3528_PHYREG81_SLEW_RATE_CTRL,
+> > +				 RK3528_PHYREG81_SLEW_RATE_CTRL_SLOW);
+> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG81_SLEW_RATE_CTRL, val,
+> > +					 RK3528_PHYREG81);
+> > +
+> > +		/* Set CDR phase path with 2x gain */
+> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X,
+> > +					 RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X, RK3528_PHYREG81);
+> > +
+> > +		/* Set Rx squelch input filler bandwidth */
+> > +		val = FIELD_PREP(RK3528_PHYREG83_RX_SQUELCH, RK3528_PHYREG83_RX_SQUELCH_VALUE);
+> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG83_RX_SQUELCH, val, RK3528_PHYREG83);
+> > +
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txcomp_sel, false);
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txelec_sel, false);
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->usb_mode_set, true);
 > 
-> [...]
+> I suggest we add something like following here:
+> 
+> 		rockchip_combphy_param_write(priv->pipe_grf, &cfg->u3otg0_port_en, true);
+> 
+> to ensure that U3 is enabled in case boot firmware disable the U3 port.
 
-Applied, thanks!
+Thanks for the hint, I'm willing to adapt it. Should we handle the case
+that USB is enabled by firmware but PCIe is going to be used in kernel,
+too? It's desirable to make fewer assumptions about the state set by
+firmware.
 
-[2/4] dt-bindings: PCI: qcom,pcie-sa8775p: document link_down reset
-      commit: 10e7298dc0f14c52d9b5c52fb52558f567815b7c
+P.S., I'm assuming the register should be written as "disabled" value
+whenever PCIe is used, and "enabled" whenever USB is used, as
+the LSB of USB_GRF_USB3OTG0_CON1 is said to be "USB 3.0 SS Port Disable
+control" according to RK3588's TRM, which doesn't look like something
+compatible with PCIe mode when setting to 1'b0 (port enabled). Please
+correct me if I'm wrong.
 
-Best regards,
--- 
-Manivannan Sadhasivam <mani@kernel.org>
+Regards,
+Yao Zi
 
+> > +		break;
+> > +	default:
+> > +		dev_err(priv->dev, "incompatible PHY type\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	rate = clk_get_rate(priv->refclk);
+> > +
+> > +	switch (rate) {
+> > +	case REF_CLOCK_24MHz:
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_24m, true);
+> > +		if (priv->type == PHY_TYPE_USB3) {
+> > +			/* Set ssc_cnt[10:0]=00101111101 & 31.5KHz */
+> > +			val = FIELD_PREP(RK3528_PHYREG40_SSC_CNT, RK3528_PHYREG40_SSC_CNT_VALUE);
+> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG40_SSC_CNT, val,
+> > +						 RK3528_PHYREG40);
+> > +		} else if (priv->type == PHY_TYPE_PCIE) {
+> > +			/* tx_trim[14]=1, Enable the counting clock of the rterm detect */
+> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG86_RTERM_DET_CLK_EN,
+> > +						 RK3528_PHYREG86_RTERM_DET_CLK_EN, RK3528_PHYREG86);
+> > +		}
+> > +		break;
+> > +	case REF_CLOCK_100MHz:
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
+> > +		if (priv->type == PHY_TYPE_PCIE) {
+> > +			/* PLL KVCO tuning fine */
+> > +			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
+> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
+> > +						 RK3528_PHYREG6);
+> > +
+> > +			/* su_trim[6:4]=111, [10:7]=1001, [2:0]=000, swing 650mv */
+> > +			writel(0x570804f0, priv->mmio + RK3528_PHYREG42);
+> > +		}
+> > +		break;
+> > +	default:
+> > +		dev_err(priv->dev, "Unsupported rate: %lu\n", rate);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	if (device_property_read_bool(priv->dev, "rockchip,ext-refclk")) {
+> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_ext, true);
+> > +
+> > +		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
+> > +			val = FIELD_PREP(RK3528_PHYREG42_CKDRV_CLK_SEL,
+> > +					 RK3528_PHYREG42_CKDRV_CLK_CKRCV);
+> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_LPF_R1_ADJ,
+> > +					  RK3528_PHYREG42_PLL_LPF_R1_ADJ_VALUE);
+> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ,
+> > +					  RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ_VALUE);
+> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_KVCO_ADJ,
+> > +					  RK3528_PHYREG42_PLL_KVCO_ADJ_VALUE);
+> > +			rockchip_combphy_updatel(priv,
+> > +						 RK3528_PHYREG42_CKDRV_CLK_SEL		|
+> > +						 RK3528_PHYREG42_PLL_LPF_R1_ADJ		|
+> > +						 RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ	|
+> > +						 RK3528_PHYREG42_PLL_KVCO_ADJ,
+> > +						 val, RK3528_PHYREG42);
+> > +
+> > +			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
+> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
+> > +						 RK3528_PHYREG6);
+> > +		}
+> > +	}
+> > +
+> > +	if (priv->type == PHY_TYPE_PCIE) {
+> > +		if (device_property_read_bool(priv->dev, "rockchip,enable-ssc"))
+> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG40_SSC_EN,
+> > +						 RK3528_PHYREG40_SSC_EN, RK3528_PHYREG40);
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct rockchip_combphy_grfcfg rk3528_combphy_grfcfgs = {
+> > +	/* pipe-phy-grf */
+> > +	.pcie_mode_set		= { 0x0000, 5, 0, 0x00, 0x11 },
+> > +	.usb_mode_set		= { 0x0000, 5, 0, 0x00, 0x04 },
+> > +	.pipe_rxterm_set	= { 0x0000, 12, 12, 0x00, 0x01 },
+> > +	.pipe_txelec_set	= { 0x0004, 1, 1, 0x00, 0x01 },
+> > +	.pipe_txcomp_set	= { 0x0004, 4, 4, 0x00, 0x01 },
+> > +	.pipe_clk_24m		= { 0x0004, 14, 13, 0x00, 0x00 },
+> > +	.pipe_clk_100m		= { 0x0004, 14, 13, 0x00, 0x02 },
+> > +	.pipe_rxterm_sel	= { 0x0008, 8, 8, 0x00, 0x01 },
+> > +	.pipe_txelec_sel	= { 0x0008, 12, 12, 0x00, 0x01 },
+> > +	.pipe_txcomp_sel	= { 0x0008, 15, 15, 0x00, 0x01 },
+> > +	.pipe_clk_ext		= { 0x000c, 9, 8, 0x02, 0x01 },
+> > +	.pipe_phy_status	= { 0x0034, 6, 6, 0x01, 0x00 },
+> > +	.con0_for_pcie		= { 0x0000, 15, 0, 0x00, 0x110 },
+> > +	.con1_for_pcie		= { 0x0004, 15, 0, 0x00, 0x00 },
+> > +	.con2_for_pcie		= { 0x0008, 15, 0, 0x00, 0x101 },
+> > +	.con3_for_pcie		= { 0x000c, 15, 0, 0x00, 0x0200 },
+> 
+> And adding something like this:
+> 
+> 	/* pipe-grf */
+> 	.u3otg0_port_en		= { 0x0044, 15, 0, 0x0181, 0x1100 },
+> 
+> Should be possible with ("phy: rockchip: naneng-combphy: Enable U3 OTG
+> port for RK3568") [1].
+> 
+> Most RK3528 boards I have come across this far seem to use PCIe instead
+> of USB3, so having boot firmware disable U3 early (to help support USB
+> gadget in boot firmware) and instead having this PHY driver re-enable U3
+> when needed seem most logical to me.
+> 
+> I will push an updated U-Boot rk3528 branch [2] where I include such
+> early U3 port disable once source.denx.de is back online again.
+> 
+> [1] https://lore.kernel.org/r/20250723072324.2246498-1-jonas@kwiboo.se
+> [2] https://source.denx.de/u-boot/contributors/kwiboo/u-boot/-/commits/rk3528
+> 
+> Regards,
+> Jonas
+> 
+> > +};
+> > +
+> > +static const struct rockchip_combphy_cfg rk3528_combphy_cfgs = {
+> > +	.num_phys	= 1,
+> > +	.phy_ids	= {
+> > +		0xffdc0000,
+> > +	},
+> > +	.grfcfg		= &rk3528_combphy_grfcfgs,
+> > +	.combphy_cfg	= rk3528_combphy_cfg,
+> > +};
+> > +
+> >  static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
+> >  {
+> >  	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
+> > @@ -1213,6 +1393,10 @@ static const struct rockchip_combphy_cfg rk3588_combphy_cfgs = {
+> >  };
+> >  
+> >  static const struct of_device_id rockchip_combphy_of_match[] = {
+> > +	{
+> > +		.compatible = "rockchip,rk3528-naneng-combphy",
+> > +		.data = &rk3528_combphy_cfgs,
+> > +	},
+> >  	{
+> >  		.compatible = "rockchip,rk3562-naneng-combphy",
+> >  		.data = &rk3562_combphy_cfgs,
+> 
 
 -- 
 linux-phy mailing list
