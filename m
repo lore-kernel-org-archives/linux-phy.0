@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EE02C83F26
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10A72C87FD3
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P06DVmZnxYUOK1E4uDhaVbtEcoP3391tdrL/onBYfso=; b=N/w89nzsuXsSDg
-	cX/aF4fPSXQ88dT6RPNFDKAmHIhMkwwSR70K9d5mpZxXaWNU7YJT1gWOoNNEoNGUIDKvykz1uxpcY
-	dPFbzeNglsZ5qPwm0084s4IiFy+qzJ2+XmwmRq0FFaQKqWZqogiTECppdIovUYgd6WOolySFBFtKd
-	bd3QyMzFRRcVTdyzW0EZnvtJRanlJuUiSB7Xzg8ZRpukC2pJe8ySzJgUIH1NWnkbzZF8nOXqH/YkG
-	x9lJULUUOrgD8TH7/vh0MGv0bQzxJGE/ED+uHaeOjmnrdRfA9KQzxXgsg37pM0DKeb28fFWtp5Z1e
-	Cp9DewfIm/B4FqhT/R2g==;
+	List-Owner; bh=zfE8mrRZfqEPRNU+GJPiw+6c4tz4H6m08f6K0dMMQFY=; b=Q7P0GMhVSMfGYD
+	xfppyRqj5/cW5NrHUi/EO43bBZSAUrLRXjjEpQCOTl5gx7ejznENFcXDGBodV64VUCrgRZXqeO6nd
+	jIIQG6W/hCKrLxhe7hEPG26ahNeAJ/TdW3WjA28zZu+SdW2X5WtNrvs71KoM9V/Lxlemg+1YlyWFQ
+	9TyVoO/M/zWN7XZFgFGLZnMFEU1QrPLKYO2xboQKdh5WGo+pESFTqMiDBjZuJhDYclZsh1hKlCjSs
+	L7jA6G/LRWs1MvV3XJY/DJT77/Yl1WA9gPtqolD5fPm0s7yBhsFpKvT3wyDDErO+puFX0x1N1qwn7
+	iQ7WZGGurqF1uvMB+XeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesYh-000000076HM-1bWZ;
-	Thu, 24 Jul 2025 09:48:15 +0000
+	id 1uesYi-000000076KA-3MVB;
+	Thu, 24 Jul 2025 09:48:16 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uerUF-00000006tE7-1oQr;
-	Thu, 24 Jul 2025 08:39:36 +0000
+	id 1uerUK-00000006tH7-0AXI;
+	Thu, 24 Jul 2025 08:39:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753346373;
-	bh=JpQk+FGZsDFw2WNBbFKeKhta2M3RGl/yx4vMeoVONmk=;
+	s=mail; t=1753346378;
+	bh=6CgbYs3SG2IR6WIZz01cZuVTz2VzyFQJdQsRvlhNBo8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=oOtIKsc0p7Y/dpdGR5/Mn8nvRa1T1EtOXoL59Vd5dV6TXjXHxTWeVn3lcw6mhzTbv
-	 80vFyrBxNI5Hzlo7MJW/MB5jjTz76t+v0HaHX/YpfDpseR6cYhTVWrK19EZy2X5B2N
-	 B1ygduk3LZTL5l2kceKyxA6i55igPGeFcy9EaCFz8BjLFp/PNnWrQeaock6NbiwR2q
-	 t8VD/W7Eg5NSqFcI9/XRqyRzU2Ob/bTPPSTr1Snf7JFQAzOVrNWXDznN4Bz23aKTwV
-	 4fkaj9azqpu1VQkmtBrk0kR+FNJrV3Rxmm2fG20vWxAtPOJ8SAXbw9KIqjhmNyy32Q
-	 h83XdTw5L9clg==
+	b=CmSfABGEc8SQw0UJmpA97+uocr/ZovezaTEshYPAzq55rdKnILTp02leZFhic30z3
+	 cEZMbLP47944DCFUF6i5hI3ulQ6p3hP2CXBQqtSTH9WyfHjaJqfQdgD/1jkxOg4K0y
+	 ivNDqW4PrzDlDnVh8RbG5CTNHbf4S1e52ykLUeMwhQk5ZG10tmXT/kF2Xl3VAOT8Sb
+	 5Qwy5Hpw0T0eJoipf68Fm84rCeWcLNGbJnDUQ8l4IvK+FV5zvw33JDLSCUwhXyDDaY
+	 0i6lz2f2l63t0ZHd17QgS9tyn8gI/yEUCZ2dvE2gcvA23e0D1LLQ4MsqMnSe2PxrWh
+	 xziwGKfC63Lyg==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id F2F9617E128C;
-	Thu, 24 Jul 2025 10:39:30 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4679617E129E;
+	Thu, 24 Jul 2025 10:39:36 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: linux-mediatek@lists.infradead.org,
 	robh@kernel.org
@@ -100,16 +100,16 @@ Cc: herbert@gondor.apana.org.au,
 	linux-gpio@vger.kernel.org,
 	linux-remoteproc@vger.kernel.org,
 	linux-sound@vger.kernel.org
-Subject: [PATCH 03/38] dt-bindings: mailbox: mediatek,gce-mailbox: Make clock-names optional
-Date: Thu, 24 Jul 2025 10:38:39 +0200
-Message-ID: <20250724083914.61351-4-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 05/38] dt-bindings: crypto: inside-secure,safexcel: Mandate only ring IRQs
+Date: Thu, 24 Jul 2025 10:38:41 +0200
+Message-ID: <20250724083914.61351-6-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_013935_651226_52F52B6E 
-X-CRM114-Status: UNSURE (   7.26  )
+X-CRM114-CacheID: sfid-20250724_013940_235714_64F9786D 
+X-CRM114-Status: UNSURE (   8.75  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,39 +127,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The GCE Mailbox needs only one clock and the clock-names can be
-used only by the driver (which, for instance, does not use it),
-and this is true for all of the currently supported MediaTek SoCs.
+Not all IP implementations of EIP97 and EIP197 have the EIP and
+MEM interrupts hooked up to the SoC, and those are not required
+for functionality as status for both can be polled (and anyway
+there's even no real need to poll, but that's another story).
 
-Stop requiring to specify clock-names on all non-MT8195 GCEs.
+As an example of this, the MediaTek MT7968A and MT7986B SoCs do
+not have those two interrupts hooked up to their irq controlller.
+
+For this reason, make the EIP and MEM interrupt optional.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- .../bindings/mailbox/mediatek,gce-mailbox.yaml        | 11 -----------
- 1 file changed, 11 deletions(-)
+ .../devicetree/bindings/crypto/inside-secure,safexcel.yaml      | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml b/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
-index 73d6db34d64a..587126d03fc6 100644
---- a/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
-+++ b/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
-@@ -60,17 +60,6 @@ required:
-   - interrupts
-   - clocks
+diff --git a/Documentation/devicetree/bindings/crypto/inside-secure,safexcel.yaml b/Documentation/devicetree/bindings/crypto/inside-secure,safexcel.yaml
+index 343e2d04c797..22025b23d580 100644
+--- a/Documentation/devicetree/bindings/crypto/inside-secure,safexcel.yaml
++++ b/Documentation/devicetree/bindings/crypto/inside-secure,safexcel.yaml
+@@ -26,9 +26,11 @@ properties:
+     maxItems: 1
  
--allOf:
--  - if:
--      not:
--        properties:
--          compatible:
--            contains:
--              const: mediatek,mt8195-gce
--    then:
--      required:
--        - clock-names
--
- additionalProperties: false
+   interrupts:
++    minItems: 4
+     maxItems: 6
  
- examples:
+   interrupt-names:
++    minItems: 4
+     items:
+       - const: ring0
+       - const: ring1
 -- 
 2.50.1
 
