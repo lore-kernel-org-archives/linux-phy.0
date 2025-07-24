@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73C62C87FD1
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD2FCC87FCD
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WctBjfasFU+P1Yte/qZiWyM8jVHc9EhAl1IRdjIg1gY=; b=aoSvRF3VtOhTVa
-	DQqpvd6nyYPq7mSdz8+oDFF1oR3a/YVqdTIEWtAftLnL1ltbLNDL04vlxZhhMlQnExmo2Kr3g0EjW
-	pMJ7Pcx6FmP+VSxGTUS8G+AZKk96lVMEbq0tP0yaBn0Xzqea/dCw0/fSUdsTaBSJoLJrEAXy6dn5a
-	v7t3bUXngRhDiSk0NRgUQny2tI/45WzDV/cMLhbp3W9iez3YWHe189wkUplnmwXL69q72Px4291JR
-	fQjM1iiZbnpitJ65BnZDYWogFgpzB8I7vZseWOYwvYngHuNrlHnbDSOJuRRln9oSAfCdnb7kef+Mn
-	Uz2g7QFJX3xRi8t3Zv6A==;
+	List-Owner; bh=1tRpvDE2oX2zBSIYf0N/q0eJlVUuiALP/NZbrQ9bZ2U=; b=Qae/fkYUdTb7m3
+	fhXdlX4PKFTvjbUQ2nzDCiZ7HBSHwhBp7nfVBqhKCcPxisa0hDWPVISm/j8szIW4/eRlTKuUNmbxP
+	YcKH0PBzf7EYizgAY+Pl+Jn1d6DFxg/Zi/YtUmHQMOTN0hdQS5VZ/oSWJtCib0bSADkmR+5Nywmzb
+	BLevXCHDcaSvbcupvviMSmb14G+pj4sS2A+qj2lr3+YKzvpv7TF/AxeUm8EzGMPX68B7jg6qPUd18
+	eq4vea/2CDz6rY4gQ6qwmA3kL82ftKA+cn09FnxQ5tRpxNvPFCWUtqTr+DMdYD2rPV8Fb0jekAxpA
+	zThB6TOL7XB+G1Vt6aKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesYi-000000076Iz-0g8k;
-	Thu, 24 Jul 2025 09:48:16 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uesYj-000000076LJ-20Bs;
+	Thu, 24 Jul 2025 09:48:17 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uerUH-00000006tFa-2woD;
-	Thu, 24 Jul 2025 08:39:39 +0000
+	id 1uerUM-00000006tJ4-38dT;
+	Thu, 24 Jul 2025 08:39:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753346376;
-	bh=TGYeEn4rASoelIzUMmy2maV8vGwdr+8gRNZVgzYxZXU=;
+	s=mail; t=1753346381;
+	bh=ipw6xj/zBv9ATtscbBPbWZRp9dpDTL2eyHmZwXPQkgY=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=YqSRG/fCxQRunFFV1yGdU6hNqpqitP4mUJtNHR93jnSyNVDd3Sk8tGhDtEzxJAMXQ
-	 sD6xmva1gESfpH1fDDwHsbrXi/KruWYbrpyQ8GdEfI05FnHdMGF7BApomejzwxxRaC
-	 HLJEp2BhbB1VDYvszNp7zyD/wPULNWnqTwE2Il5GdP527r78pWae5QbIZqg5VybC5f
-	 bRpZckGWQBfIPfyc3KDRBE2QYnr1yv1p/lmfjDVSDwu2i160GYGFAc3fPu/aDKZtYu
-	 6S4GPENKRehIwdZjMcl0r1qzPbMClhKcA8bXFW9WoAEV1n7RYt3nelGmR3E6gWHV0E
-	 0vM1jkRwenw3g==
+	b=e7nOO/tjS/HjLjEJvQEKRUNk1SLmzde7qmZiDGiCfP1iwxOfYX5lP/Qkr3ayd1Qk+
+	 XTIcZ2o7b3lFVOcGqAfxH01Fs/EYAyVS0TVUJOEutIW5uLXcmn7nRvLuxSdScA4Mjs
+	 /kKyzoYapKap3J9qbBpWJ3JSbyfMtLTcapxYvQJL/AcULvkXLcUhtYKIxW4M5+KtYU
+	 56meXtTCMd7pzDcYhkHLbtnvjrYbZHUueHiXcI7qtvPHb5BObZeEN80p3aZkAuvguW
+	 VrYhGzSXlZX/kkF8TmJXcG4JHGIX3kSMkGj1nucf0VDewKhQdzmH1qDylnpVvc6F0g
+	 50NBhWV+72MRA==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9C4ED17E129C;
-	Thu, 24 Jul 2025 10:39:33 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E5E9117E1301;
+	Thu, 24 Jul 2025 10:39:38 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: linux-mediatek@lists.infradead.org,
 	robh@kernel.org
@@ -100,16 +100,16 @@ Cc: herbert@gondor.apana.org.au,
 	linux-gpio@vger.kernel.org,
 	linux-remoteproc@vger.kernel.org,
 	linux-sound@vger.kernel.org
-Subject: [PATCH 04/38] ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks and clock-names
-Date: Thu, 24 Jul 2025 10:38:40 +0200
-Message-ID: <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 06/38] dt-bindings: timer: mediatek: Add compatible for MT6795 GP Timer
+Date: Thu, 24 Jul 2025 10:38:42 +0200
+Message-ID: <20250724083914.61351-7-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_013937_920725_5C78CAC8 
-X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-CacheID: sfid-20250724_013942_938776_637FBD69 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,140 +127,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Both clocks and clock-names are missing (a lot of) entries: add
-all the used audio clocks and their description and also fix the
-example node.
+Add a compatible for the General Purpose Timer (GPT) found on the
+MediaTek Helio X10 MT6795 SoC which is fully compatible with the
+one found in MT6577.
 
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- .../bindings/sound/mt8192-afe-pcm.yaml        | 106 +++++++++++++++++-
- 1 file changed, 104 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/timer/mediatek,timer.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.yaml b/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.yaml
-index 8ddf49b0040d..96ee0a47360d 100644
---- a/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.yaml
-+++ b/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.yaml
-@@ -47,16 +47,118 @@ properties:
-       - description: AFE clock
-       - description: ADDA DAC clock
-       - description: ADDA DAC pre-distortion clock
--      - description: audio infra sys clock
--      - description: audio infra 26M clock
-+      - description: ADDA ADC clock
-+      - description: ADDA6 ADC clock
-+      - description: Audio low-jitter 22.5792m clock
-+      - description: Audio low-jitter 24.576m clock
-+      - description: Audio PLL1 tuner clock
-+      - description: Audio PLL2 tuner clock
-+      - description: Audio Time-Division Multiplexing interface clock
-+      - description: ADDA ADC Sine Generator clock
-+      - description: audio Non-LE clock
-+      - description: Audio DAC High-Resolution clock
-+      - description: Audio High-Resolution ADC clock
-+      - description: Audio High-Resolution ADC SineGen clock
-+      - description: Audio ADDA6 High-Resolution ADC clock
-+      - description: Tertiary ADDA DAC clock
-+      - description: Tertiary ADDA DAC pre-distortion clock
-+      - description: Tertiary ADDA DAC Sine Generator clock
-+      - description: Tertiary ADDA DAC High-Resolution clock
-+      - description: Audio infra sys clock
-+      - description: Audio infra 26M clock
-+      - description: Mux for audio clock
-+      - description: Mux for audio internal bus clock
-+      - description: Mux main divider by 4
-+      - description: Primary audio mux
-+      - description: Primary audio PLL
-+      - description: Secondary audio mux
-+      - description: Secondary audio PLL
-+      - description: Primary audio en-generator clock
-+      - description: Primary PLL divider by 4 for IEC
-+      - description: Secondary audio en-generator clock
-+      - description: Secondary PLL divider by 4 for IEC
-+      - description: Mux selector for I2S port 0
-+      - description: Mux selector for I2S port 1
-+      - description: Mux selector for I2S port 2
-+      - description: Mux selector for I2S port 3
-+      - description: Mux selector for I2S port 4
-+      - description: Mux selector for I2S port 5
-+      - description: Mux selector for I2S port 6
-+      - description: Mux selector for I2S port 7
-+      - description: Mux selector for I2S port 8
-+      - description: Mux selector for I2S port 9
-+      - description: APLL1 and APLL2 divider for I2S port 0
-+      - description: APLL1 and APLL2 divider for I2S port 1
-+      - description: APLL1 and APLL2 divider for I2S port 2
-+      - description: APLL1 and APLL2 divider for I2S port 3
-+      - description: APLL1 and APLL2 divider for I2S port 4
-+      - description: APLL1 and APLL2 divider for IEC
-+      - description: APLL1 and APLL2 divider for I2S port 5
-+      - description: APLL1 and APLL2 divider for I2S port 6
-+      - description: APLL1 and APLL2 divider for I2S port 7
-+      - description: APLL1 and APLL2 divider for I2S port 8
-+      - description: APLL1 and APLL2 divider for I2S port 9
-+      - description: Top mux for audio subsystem
-+      - description: 26MHz clock for audio subsystem
- 
-   clock-names:
-     items:
-       - const: aud_afe_clk
-       - const: aud_dac_clk
-       - const: aud_dac_predis_clk
-+      - const: aud_adc_clk
-+      - const: aud_adda6_adc_clk
-+      - const: aud_apll22m_clk
-+      - const: aud_apll24m_clk
-+      - const: aud_apll1_tuner_clk
-+      - const: aud_apll2_tuner_clk
-+      - const: aud_tdm_clk
-+      - const: aud_tml_clk
-+      - const: aud_nle
-+      - const: aud_dac_hires_clk
-+      - const: aud_adc_hires_clk
-+      - const: aud_adc_hires_tml
-+      - const: aud_adda6_adc_hires_clk
-+      - const: aud_3rd_dac_clk
-+      - const: aud_3rd_dac_predis_clk
-+      - const: aud_3rd_dac_tml
-+      - const: aud_3rd_dac_hires_clk
-       - const: aud_infra_clk
-       - const: aud_infra_26m_clk
-+      - const: top_mux_audio
-+      - const: top_mux_audio_int
-+      - const: top_mainpll_d4_d4
-+      - const: top_mux_aud_1
-+      - const: top_apll1_ck
-+      - const: top_mux_aud_2
-+      - const: top_apll2_ck
-+      - const: top_mux_aud_eng1
-+      - const: top_apll1_d4
-+      - const: top_mux_aud_eng2
-+      - const: top_apll2_d4
-+      - const: top_i2s0_m_sel
-+      - const: top_i2s1_m_sel
-+      - const: top_i2s2_m_sel
-+      - const: top_i2s3_m_sel
-+      - const: top_i2s4_m_sel
-+      - const: top_i2s5_m_sel
-+      - const: top_i2s6_m_sel
-+      - const: top_i2s7_m_sel
-+      - const: top_i2s8_m_sel
-+      - const: top_i2s9_m_sel
-+      - const: top_apll12_div0
-+      - const: top_apll12_div1
-+      - const: top_apll12_div2
-+      - const: top_apll12_div3
-+      - const: top_apll12_div4
-+      - const: top_apll12_divb
-+      - const: top_apll12_div5
-+      - const: top_apll12_div6
-+      - const: top_apll12_div7
-+      - const: top_apll12_div8
-+      - const: top_apll12_div9
-+      - const: top_mux_audio_h
-+      - const: top_clk26m_clk
- 
- required:
-   - compatible
+diff --git a/Documentation/devicetree/bindings/timer/mediatek,timer.yaml b/Documentation/devicetree/bindings/timer/mediatek,timer.yaml
+index e3e38066c2cb..337580dc77d8 100644
+--- a/Documentation/devicetree/bindings/timer/mediatek,timer.yaml
++++ b/Documentation/devicetree/bindings/timer/mediatek,timer.yaml
+@@ -30,6 +30,7 @@ properties:
+               - mediatek,mt6580-timer
+               - mediatek,mt6582-timer
+               - mediatek,mt6589-timer
++              - mediatek,mt6795-timer
+               - mediatek,mt7623-timer
+               - mediatek,mt8127-timer
+               - mediatek,mt8135-timer
 -- 
 2.50.1
 
