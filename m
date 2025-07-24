@@ -4,73 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA5F5C83F26
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 05:27:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E895C83F26
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JIMhkPpG4YjKFDCXt9Eq7v2lxymN+Tc8X6+VULUl6DI=; b=CT6QL0T83M72RB
-	7np1fy6qKGcHf2atEiX6QGjvSo2MT2xQNpJuz+ykD0lfMobpo66C9HLOQNMXU4eCL8Gt5YIXBSVH3
-	Sd1qDBU/+o2lZKZoflT0VY5ZyplOgGI0Enm55rLmzfvdY7OY4B73dY0M9o+P3rQhTNBENruRvCeui
-	NDqRmrYmhwpDnN3IalG7OVdhbk/eeENBLXC6sxVRtoAxoPo3L3pJ7fo6j1zaLmUdocyBwgGOGPWvn
-	cFAcVrC1RUlckDT8JPTs6AecYckKqDIYsTZybK196xsBjtEx5MvmyQY3P4F6N9OoE4DXMCcJblRMB
-	M7LQfNaEJWHP4/utvXdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z+WmAGIWs+cNbLmsql3SUcwyAs3HRQaJdNOFt+skzGg=; b=jElTudUGQhL7qT
+	xOgu8qL2ar5e1iTInZK54fN768enNuOHwlFpJHjQ2WuEK4r5Ay70Ljk1m8tZlBnHgSo343RFedZrl
+	/X5Tagl4doVb6Yr+elOVO7JmHmyZNUoA0oF7QXLAS9aN/rx6Umxzuhw23nLudszFf/Ymq1MxXIOnj
+	D/zDE3pKlj1vGsa2NE+KLuybXXyF0qKDJSldL/n7pZ/hkNYj/7Mn8Gbas6ALWdysYQDYutiveb4gK
+	BBJEl7z3AjG1YlIk1CNYaBkXCO/XDPHwfr5CCUTmxJOhRl3kyQn09DXfZJE42+cjMyoyljwOwNcn7
+	Y/NplUWpvm0Nb42nNGbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueoTu-00000006VFD-1IYl;
-	Thu, 24 Jul 2025 05:27:02 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1uesYe-000000076DL-3VMZ;
+	Thu, 24 Jul 2025 09:48:12 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueoRR-00000006V5x-0EhU;
-	Thu, 24 Jul 2025 05:24:31 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 8322A20E4F;
-	Thu, 24 Jul 2025 07:24:24 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id 5DFJ1MI43x0K; Thu, 24 Jul 2025 07:24:22 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1753334662; bh=r1LO7zNuqvNeqzo4vTqtN0YoQhEqVRxw4VlweKdkvoQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=SWkPTjds8+DpTNDSbJjZbO1kvx/lUtM3GPh5QSFVVHetzWK4LjJAzxk6YxsrQ6H3+
-	 sqKhRsoSFz9HjHuuzl8p/nydm4BTm3AHEQzfs8Ku7ONP043g7Czwu18geKr5BsmI9m
-	 Ngbl2wFzfJ4ptvgE1wUR4UORdC3cc5qzMHKaFg9tgi/mfgRF3pe540hCl0FxGbnVWR
-	 g/a9orwCLiTy6B59UGuCNRp36seF1TMjXmdJjLrzElKXP+WlqsZSNTQ+cGuq5mRbNY
-	 +RtuwTtnBTepXrs/TE3+4MU1Cac2/Kx2C1V4CL7/t/JUNu8MRWzytqiPbbdnhao4Gd
-	 Fn1scoPBlhdIQ==
-Date: Thu, 24 Jul 2025 05:23:55 +0000
-From: Yao Zi <ziyao@disroot.org>
-To: Jonas Karlman <jonas@kwiboo.se>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
-	Detlev Casanova <detlev.casanova@collabora.com>,
-	Shresth Prasad <shresthprasad7@gmail.com>,
-	Chukun Pan <amadeus@jmu.edu.cn>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 5/6] phy: rockchip: naneng-combphy: Add RK3528 support
-Message-ID: <aIHDSW0XO9BCfch3@pie.lan>
-References: <20250624033733.50197-1-ziyao@disroot.org>
- <20250624033733.50197-6-ziyao@disroot.org>
- <eb7c9e40-3c17-488f-98a2-17b972f61e75@kwiboo.se>
+	id 1uerU7-00000006t9C-2bt9;
+	Thu, 24 Jul 2025 08:39:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1753346365;
+	bh=4NBMeskJJYDnenHlSqSeWLJKYF+YSmg93IfAieUBW9w=;
+	h=From:To:Cc:Subject:Date:From;
+	b=SFfgW1X8GoYI4sLbMqsbPp0GVsh2Cpeh5In9VC6Zz3n05nZQDpl6q6RkZlvlfyq64
+	 NdLQadh6AdBs0l+SzJZIr5lnSg5ndZjvvPA3eAheT+9xiSWOuxTYvphf4jpzQJpfwv
+	 SVNm6JaH5Xn+0PRwm/w3sGIrNgy7R/LDuBsE/WPf+vfYprQuEhjvP30VnFa3bTrXmW
+	 gyB30ejOXqbTeR4IIjC7vY4L5DzCNjWyUI41+lY3MnyBTIcJYHy00hNx3A2QAPOV/W
+	 +mGT71Oa1FEHEbaDpdvGDbR+iHqM/ezow8Mj56sUt84sQepXREM13OFjolgFO0tYym
+	 oa6SoAoo78OUw==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0509D17E0FC2;
+	Thu, 24 Jul 2025 10:39:22 +0200 (CEST)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: linux-mediatek@lists.infradead.org,
+	robh@kernel.org
+Cc: herbert@gondor.apana.org.au,
+	davem@davemloft.net,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	chunkuang.hu@kernel.org,
+	p.zabel@pengutronix.de,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	maarten.lankhorst@linux.intel.com,
+	mripard@kernel.org,
+	tzimmermann@suse.de,
+	jassisinghbrar@gmail.com,
+	mchehab@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	chunfeng.yun@mediatek.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	sean.wang@kernel.org,
+	linus.walleij@linaro.org,
+	lgirdwood@gmail.com,
+	broonie@kernel.org,
+	andersson@kernel.org,
+	mathieu.poirier@linaro.org,
+	daniel.lezcano@linaro.org,
+	tglx@linutronix.de,
+	atenart@kernel.org,
+	jitao.shi@mediatek.com,
+	ck.hu@mediatek.com,
+	houlong.wei@mediatek.com,
+	kyrie.wu@mediatek.corp-partner.google.com,
+	andy.teng@mediatek.com,
+	tinghan.shen@mediatek.com,
+	jiaxin.yu@mediatek.com,
+	shane.chien@mediatek.com,
+	olivia.wen@mediatek.com,
+	granquet@baylibre.com,
+	eugen.hristev@linaro.org,
+	arnd@arndb.de,
+	sam.shih@mediatek.com,
+	jieyy.yang@mediatek.com,
+	frank-w@public-files.de,
+	mwalle@kernel.org,
+	fparent@baylibre.com,
+	linux-crypto@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-media@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-gpio@vger.kernel.org,
+	linux-remoteproc@vger.kernel.org,
+	linux-sound@vger.kernel.org
+Subject: [PATCH 00/38] MediaTek devicetree/bindings warnings sanitization
+Date: Thu, 24 Jul 2025 10:38:36 +0200
+Message-ID: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <eb7c9e40-3c17-488f-98a2-17b972f61e75@kwiboo.se>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_222429_639994_FB82A06B 
-X-CRM114-Status: GOOD (  35.33  )
+X-CRM114-CacheID: sfid-20250724_013927_806065_30218940 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,279 +124,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 23, 2025 at 04:51:15PM +0200, Jonas Karlman wrote:
-> Hi Yao Zi,
-> 
-> On 6/24/2025 5:37 AM, Yao Zi wrote:
-> > Rockchip RK3528 integrates one naneng-combphy that is able to operate in
-> > PCIe and USB3 mode. The control logic is similar to previous variants of
-> > naneng-combphy but the register layout is apperantly different from the
-> > RK3568 one.
-> > 
-> > Signed-off-by: Yao Zi <ziyao@disroot.org>
-> > Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> > Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> > ---
-> >  .../rockchip/phy-rockchip-naneng-combphy.c    | 186 +++++++++++++++++-
-> >  1 file changed, 185 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> > index 1d1c7723584b..bf00a85a113b 100644
-> > --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> > +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> > @@ -20,7 +20,46 @@
-> >  #define REF_CLOCK_25MHz			(25 * HZ_PER_MHZ)
-> >  #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
-> >  
-> > -/* COMBO PHY REG */
-> > +/* RK3528 COMBO PHY REG */
-> > +#define RK3528_PHYREG6				0x18
-> > +#define RK3528_PHYREG6_PLL_KVCO			GENMASK(12, 10)
-> > +#define RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
-> > +#define RK3528_PHYREG6_SSC_DIR			GENMASK(5, 4)
-> > +#define RK3528_PHYREG6_SSC_UPWARD		0
-> > +#define RK3528_PHYREG6_SSC_DOWNWARD		1
-> > +
-> > +#define RK3528_PHYREG40				0x100
-> > +#define RK3528_PHYREG40_SSC_EN			BIT(20)
-> > +#define RK3528_PHYREG40_SSC_CNT			GENMASK(10, 0)
-> > +#define RK3528_PHYREG40_SSC_CNT_VALUE		0x17d
-> > +
-> > +#define RK3528_PHYREG42				0x108
-> > +#define RK3528_PHYREG42_CKDRV_CLK_SEL		BIT(29)
-> > +#define RK3528_PHYREG42_CKDRV_CLK_PLL		0
-> > +#define RK3528_PHYREG42_CKDRV_CLK_CKRCV		1
-> > +#define RK3528_PHYREG42_PLL_LPF_R1_ADJ		GENMASK(10, 7)
-> > +#define RK3528_PHYREG42_PLL_LPF_R1_ADJ_VALUE	0x9
-> > +#define RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ	GENMASK(6, 4)
-> > +#define RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ_VALUE 0x7
-> > +#define RK3528_PHYREG42_PLL_KVCO_ADJ		GENMASK(2, 0)
-> > +#define RK3528_PHYREG42_PLL_KVCO_ADJ_VALUE	0x0
-> > +
-> > +#define RK3528_PHYREG80				0x200
-> > +#define RK3528_PHYREG80_CTLE_EN			BIT(17)
-> > +
-> > +#define RK3528_PHYREG81				0x204
-> > +#define RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X	BIT(5)
-> > +#define RK3528_PHYREG81_SLEW_RATE_CTRL		GENMASK(2, 0)
-> > +#define RK3528_PHYREG81_SLEW_RATE_CTRL_SLOW	0x7
-> > +
-> > +#define RK3528_PHYREG83				0x20c
-> > +#define RK3528_PHYREG83_RX_SQUELCH		GENMASK(2, 0)
-> > +#define RK3528_PHYREG83_RX_SQUELCH_VALUE	0x6
-> > +
-> > +#define RK3528_PHYREG86				0x218
-> > +#define RK3528_PHYREG86_RTERM_DET_CLK_EN	BIT(14)
-> > +
-> > +/* RK3568 COMBO PHY REG */
-> >  #define RK3568_PHYREG6				0x14
-> >  #define RK3568_PHYREG6_PLL_DIV_MASK		GENMASK(7, 6)
-> >  #define RK3568_PHYREG6_PLL_DIV_SHIFT		6
-> > @@ -398,6 +437,147 @@ static int rockchip_combphy_probe(struct platform_device *pdev)
-> >  	return PTR_ERR_OR_ZERO(phy_provider);
-> >  }
-> >  
-> > +static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
-> > +{
-> > +	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-> > +	unsigned long rate;
-> > +	u32 val;
-> > +
-> > +	/* Set SSC downward spread spectrum */
-> > +	val = FIELD_PREP(RK3528_PHYREG6_SSC_DIR, RK3528_PHYREG6_SSC_DOWNWARD);
-> > +	rockchip_combphy_updatel(priv, RK3528_PHYREG6_SSC_DIR, val, RK3528_PHYREG6);
-> > +
-> > +	switch (priv->type) {
-> > +	case PHY_TYPE_PCIE:
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
-> > +		break;
-> > +	case PHY_TYPE_USB3:
-> > +		/* Enable adaptive CTLE for USB3.0 Rx */
-> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG80_CTLE_EN, RK3528_PHYREG80_CTLE_EN,
-> > +					 RK3528_PHYREG80);
-> > +
-> > +		/* Set slow slew rate control for PI */
-> > +		val = FIELD_PREP(RK3528_PHYREG81_SLEW_RATE_CTRL,
-> > +				 RK3528_PHYREG81_SLEW_RATE_CTRL_SLOW);
-> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG81_SLEW_RATE_CTRL, val,
-> > +					 RK3528_PHYREG81);
-> > +
-> > +		/* Set CDR phase path with 2x gain */
-> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X,
-> > +					 RK3528_PHYREG81_CDR_PHASE_PATH_GAIN_2X, RK3528_PHYREG81);
-> > +
-> > +		/* Set Rx squelch input filler bandwidth */
-> > +		val = FIELD_PREP(RK3528_PHYREG83_RX_SQUELCH, RK3528_PHYREG83_RX_SQUELCH_VALUE);
-> > +		rockchip_combphy_updatel(priv, RK3528_PHYREG83_RX_SQUELCH, val, RK3528_PHYREG83);
-> > +
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txcomp_sel, false);
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txelec_sel, false);
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->usb_mode_set, true);
-> 
-> I suggest we add something like following here:
-> 
-> 		rockchip_combphy_param_write(priv->pipe_grf, &cfg->u3otg0_port_en, true);
-> 
-> to ensure that U3 is enabled in case boot firmware disable the U3 port.
+As Rob pointed out, MediaTek devicetrees are *poor* in the dtbs_check
+tests, and got an infinite load of warnings.
 
-Thanks for the hint, I'm willing to adapt it. Should we handle the case
-that USB is enabled by firmware but PCIe is going to be used in kernel,
-too? It's desirable to make fewer assumptions about the state set by
-firmware.
+This series starts attacking this situation.
 
-P.S., I'm assuming the register should be written as "disabled" value
-whenever PCIe is used, and "enabled" whenever USB is used, as
-the LSB of USB_GRF_USB3OTG0_CON1 is said to be "USB 3.0 SS Port Disable
-control" according to RK3588's TRM, which doesn't look like something
-compatible with PCIe mode when setting to 1'b0 (port enabled). Please
-correct me if I'm wrong.
+I didn't really count how many warnings I have resolved - it's a lot
+of them anyway - and I think that this is a good start in any case.
 
-Regards,
-Yao Zi
+More will come, but I'll be on a long holiday soon, so not from me
+(or anyway not before I come back anyway), but most probably from
+someone else (in August...!).
 
-> > +		break;
-> > +	default:
-> > +		dev_err(priv->dev, "incompatible PHY type\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	rate = clk_get_rate(priv->refclk);
-> > +
-> > +	switch (rate) {
-> > +	case REF_CLOCK_24MHz:
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_24m, true);
-> > +		if (priv->type == PHY_TYPE_USB3) {
-> > +			/* Set ssc_cnt[10:0]=00101111101 & 31.5KHz */
-> > +			val = FIELD_PREP(RK3528_PHYREG40_SSC_CNT, RK3528_PHYREG40_SSC_CNT_VALUE);
-> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG40_SSC_CNT, val,
-> > +						 RK3528_PHYREG40);
-> > +		} else if (priv->type == PHY_TYPE_PCIE) {
-> > +			/* tx_trim[14]=1, Enable the counting clock of the rterm detect */
-> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG86_RTERM_DET_CLK_EN,
-> > +						 RK3528_PHYREG86_RTERM_DET_CLK_EN, RK3528_PHYREG86);
-> > +		}
-> > +		break;
-> > +	case REF_CLOCK_100MHz:
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
-> > +		if (priv->type == PHY_TYPE_PCIE) {
-> > +			/* PLL KVCO tuning fine */
-> > +			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
-> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
-> > +						 RK3528_PHYREG6);
-> > +
-> > +			/* su_trim[6:4]=111, [10:7]=1001, [2:0]=000, swing 650mv */
-> > +			writel(0x570804f0, priv->mmio + RK3528_PHYREG42);
-> > +		}
-> > +		break;
-> > +	default:
-> > +		dev_err(priv->dev, "Unsupported rate: %lu\n", rate);
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	if (device_property_read_bool(priv->dev, "rockchip,ext-refclk")) {
-> > +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_ext, true);
-> > +
-> > +		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
-> > +			val = FIELD_PREP(RK3528_PHYREG42_CKDRV_CLK_SEL,
-> > +					 RK3528_PHYREG42_CKDRV_CLK_CKRCV);
-> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_LPF_R1_ADJ,
-> > +					  RK3528_PHYREG42_PLL_LPF_R1_ADJ_VALUE);
-> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ,
-> > +					  RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ_VALUE);
-> > +			val |= FIELD_PREP(RK3528_PHYREG42_PLL_KVCO_ADJ,
-> > +					  RK3528_PHYREG42_PLL_KVCO_ADJ_VALUE);
-> > +			rockchip_combphy_updatel(priv,
-> > +						 RK3528_PHYREG42_CKDRV_CLK_SEL		|
-> > +						 RK3528_PHYREG42_PLL_LPF_R1_ADJ		|
-> > +						 RK3528_PHYREG42_PLL_CHGPUMP_CUR_ADJ	|
-> > +						 RK3528_PHYREG42_PLL_KVCO_ADJ,
-> > +						 val, RK3528_PHYREG42);
-> > +
-> > +			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
-> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
-> > +						 RK3528_PHYREG6);
-> > +		}
-> > +	}
-> > +
-> > +	if (priv->type == PHY_TYPE_PCIE) {
-> > +		if (device_property_read_bool(priv->dev, "rockchip,enable-ssc"))
-> > +			rockchip_combphy_updatel(priv, RK3528_PHYREG40_SSC_EN,
-> > +						 RK3528_PHYREG40_SSC_EN, RK3528_PHYREG40);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct rockchip_combphy_grfcfg rk3528_combphy_grfcfgs = {
-> > +	/* pipe-phy-grf */
-> > +	.pcie_mode_set		= { 0x0000, 5, 0, 0x00, 0x11 },
-> > +	.usb_mode_set		= { 0x0000, 5, 0, 0x00, 0x04 },
-> > +	.pipe_rxterm_set	= { 0x0000, 12, 12, 0x00, 0x01 },
-> > +	.pipe_txelec_set	= { 0x0004, 1, 1, 0x00, 0x01 },
-> > +	.pipe_txcomp_set	= { 0x0004, 4, 4, 0x00, 0x01 },
-> > +	.pipe_clk_24m		= { 0x0004, 14, 13, 0x00, 0x00 },
-> > +	.pipe_clk_100m		= { 0x0004, 14, 13, 0x00, 0x02 },
-> > +	.pipe_rxterm_sel	= { 0x0008, 8, 8, 0x00, 0x01 },
-> > +	.pipe_txelec_sel	= { 0x0008, 12, 12, 0x00, 0x01 },
-> > +	.pipe_txcomp_sel	= { 0x0008, 15, 15, 0x00, 0x01 },
-> > +	.pipe_clk_ext		= { 0x000c, 9, 8, 0x02, 0x01 },
-> > +	.pipe_phy_status	= { 0x0034, 6, 6, 0x01, 0x00 },
-> > +	.con0_for_pcie		= { 0x0000, 15, 0, 0x00, 0x110 },
-> > +	.con1_for_pcie		= { 0x0004, 15, 0, 0x00, 0x00 },
-> > +	.con2_for_pcie		= { 0x0008, 15, 0, 0x00, 0x101 },
-> > +	.con3_for_pcie		= { 0x000c, 15, 0, 0x00, 0x0200 },
-> 
-> And adding something like this:
-> 
-> 	/* pipe-grf */
-> 	.u3otg0_port_en		= { 0x0044, 15, 0, 0x0181, 0x1100 },
-> 
-> Should be possible with ("phy: rockchip: naneng-combphy: Enable U3 OTG
-> port for RK3568") [1].
-> 
-> Most RK3528 boards I have come across this far seem to use PCIe instead
-> of USB3, so having boot firmware disable U3 early (to help support USB
-> gadget in boot firmware) and instead having this PHY driver re-enable U3
-> when needed seem most logical to me.
-> 
-> I will push an updated U-Boot rk3528 branch [2] where I include such
-> early U3 port disable once source.denx.de is back online again.
-> 
-> [1] https://lore.kernel.org/r/20250723072324.2246498-1-jonas@kwiboo.se
-> [2] https://source.denx.de/u-boot/contributors/kwiboo/u-boot/-/commits/rk3528
-> 
-> Regards,
-> Jonas
-> 
-> > +};
-> > +
-> > +static const struct rockchip_combphy_cfg rk3528_combphy_cfgs = {
-> > +	.num_phys	= 1,
-> > +	.phy_ids	= {
-> > +		0xffdc0000,
-> > +	},
-> > +	.grfcfg		= &rk3528_combphy_grfcfgs,
-> > +	.combphy_cfg	= rk3528_combphy_cfg,
-> > +};
-> > +
-> >  static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
-> >  {
-> >  	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-> > @@ -1213,6 +1393,10 @@ static const struct rockchip_combphy_cfg rk3588_combphy_cfgs = {
-> >  };
-> >  
-> >  static const struct of_device_id rockchip_combphy_of_match[] = {
-> > +	{
-> > +		.compatible = "rockchip,rk3528-naneng-combphy",
-> > +		.data = &rk3528_combphy_cfgs,
-> > +	},
-> >  	{
-> >  		.compatible = "rockchip,rk3562-naneng-combphy",
-> >  		.data = &rk3562_combphy_cfgs,
-> 
+Cheers!
+Angelo
+
+AngeloGioacchino Del Regno (38):
+  dt-bindings: display: mediatek: dpi: Allow specifying resets
+  dt-bindings: display: mediatek,dp: Allow DisplayPort AUX bus
+  dt-bindings: mailbox: mediatek,gce-mailbox: Make clock-names optional
+  ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks and clock-names
+  dt-bindings: crypto: inside-secure,safexcel: Mandate only ring IRQs
+  dt-bindings: timer: mediatek: Add compatible for MT6795 GP Timer
+  dt-bindings: pinctrl: mediatek,mt7622-pinctrl: Add missing pwm_ch7_2
+  dt-bindings: pinctrl: mediatek,mt7622-pinctrl: Add missing base reg
+  dt-bindings: pinctrl: mt6779: Allow common MediaTek pinctrl node names
+  dt-bindings: regulator: mediatek,mt6332-regulator: Add missing
+    compatible
+  dt-bindings: regulator: mediatek,mt6331: Fix various regulator names
+  dt-bindings: regulator: mediatek,mt6331: Add missing compatible
+  dt-bindings: remoteproc: mediatek: Remove l1tcm MMIO from MT8188 dual
+  dt-bindings: media: mediatek,mt8195-jpeg: Allow range number in node
+    address
+  dt-bindings: phy: mediatek,hdmi-phy: Fix clock output names for MT8195
+  arm64: dts: mediatek: mt6331: Fix pmic, regulators, rtc, keys node
+    names
+  arm64: dts: mediatek: mt6797: Fix pinctrl node names
+  arm64: dts: mediatek: mt6797: Remove bogus id property in i2c nodes
+  arm64: dts: mediatek: mt6795: Add mediatek,infracfg to iommu node
+  arm64: dts: mediatek: mt6795-xperia-m5: Fix mmc0 latch-ck value
+  arm64: dts: mediatek: mt6795-sony-xperia-m5: Add pinctrl for mmc1/mmc2
+  arm64: dts: mediatek: Fix node name for SYSIRQ controller on all SoCs
+  arm64: dts: mediatek: mt7986a: Fix PCI-Express T-PHY node address
+  arm64: dts: mediatek: mt7986a-bpi-r3: Fix SFP I2C node names
+  arm64: dts: mediatek: mt7986a-bpi-r3: Set interrupt-parent to mdio
+    switch
+  arm64: dts: mediatek: acelink-ew-7886cax: Remove unnecessary cells in
+    spi-nand
+  arm64: dts: mediatek: mt7988a: Fix PCI-Express T-PHY node address
+  arm64: dts: mediatek: mt8173: Fix pinctrl node names and cleanup
+  arm64: dts: mediatek: mt8183: Fix pinctrl node names
+  arm64: dts: mediatek: pumpkin-common: Fix pinctrl node names
+  arm64: dts: mediatek: mt8183-pumpkin: Add power supply for CCI
+  arm64: dts: mediatek: mt8183: Migrate to display controller OF graph
+  arm64: dts: mediatek: mt8183-kukui: Move DSI panel node to machine
+    dtsis
+  arm64: dts: mediatek: mt8195: Fix ranges for jpeg enc/decoder nodes
+  arm64: dts: mediatek: mt8195-cherry: Move VBAT-supply to Tomato R1/R2
+  arm64: dts: mediatek: mt8195-cherry: Add missing regulators to rt5682
+  arm64: dts: mediatek: mt8395-kontron-i1200: Fix MT6360 regulator nodes
+  arm64: dts: mediatek: mt8516-pumpkin: Fix machine compatible
+
+ .../crypto/inside-secure,safexcel.yaml        |   2 +
+ .../display/mediatek/mediatek,dp.yaml         |   3 +
+ .../display/mediatek/mediatek,dpi.yaml        |   7 +
+ .../mailbox/mediatek,gce-mailbox.yaml         |  11 -
+ .../media/mediatek,mt8195-jpegdec.yaml        |   2 +-
+ .../media/mediatek,mt8195-jpegenc.yaml        |   2 +-
+ .../bindings/phy/mediatek,hdmi-phy.yaml       |  25 +-
+ .../pinctrl/mediatek,mt6779-pinctrl.yaml      |   4 +-
+ .../pinctrl/mediatek,mt7622-pinctrl.yaml      |   5 +-
+ .../regulator/mediatek,mt6331-regulator.yaml  |  19 +-
+ .../regulator/mediatek,mt6332-regulator.yaml  |   7 +
+ .../bindings/remoteproc/mtk,scp.yaml          |  23 +-
+ .../bindings/sound/mt8192-afe-pcm.yaml        | 106 +++++++-
+ .../bindings/timer/mediatek,timer.yaml        |   1 +
+ arch/arm64/boot/dts/mediatek/mt6331.dtsi      |  10 +-
+ arch/arm64/boot/dts/mediatek/mt6755.dtsi      |   2 +-
+ arch/arm64/boot/dts/mediatek/mt6779.dtsi      |   2 +-
+ .../dts/mediatek/mt6795-sony-xperia-m5.dts    |  40 ++-
+ arch/arm64/boot/dts/mediatek/mt6795.dtsi      |   3 +-
+ arch/arm64/boot/dts/mediatek/mt6797.dtsi      |  52 ++--
+ .../mediatek/mt7986a-acelink-ew-7886cax.dts   |   2 -
+ .../dts/mediatek/mt7986a-bananapi-bpi-r3.dts  |  11 +-
+ arch/arm64/boot/dts/mediatek/mt7986a.dtsi     |  12 +-
+ arch/arm64/boot/dts/mediatek/mt7988a.dtsi     |  28 +-
+ .../boot/dts/mediatek/mt8173-elm-hana.dtsi    |  34 ++-
+ arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi  | 138 +++++-----
+ arch/arm64/boot/dts/mediatek/mt8173-evb.dts   |  60 +++--
+ arch/arm64/boot/dts/mediatek/mt8173.dtsi      |  28 +-
+ .../mediatek/mt8183-kukui-audio-da7219.dtsi   |   4 +-
+ .../mediatek/mt8183-kukui-audio-ts3a227e.dtsi |   2 +-
+ .../dts/mediatek/mt8183-kukui-jacuzzi.dtsi    |  27 +-
+ .../dts/mediatek/mt8183-kukui-kakadu.dtsi     |  43 +++-
+ .../dts/mediatek/mt8183-kukui-kodama.dtsi     |  40 ++-
+ .../boot/dts/mediatek/mt8183-kukui-krane.dtsi |  40 ++-
+ .../arm64/boot/dts/mediatek/mt8183-kukui.dtsi | 101 +++-----
+ .../boot/dts/mediatek/mt8183-pumpkin.dts      |  12 +-
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 239 +++++++++++++++++-
+ .../dts/mediatek/mt8195-cherry-tomato-r1.dts  |   1 +
+ .../dts/mediatek/mt8195-cherry-tomato-r2.dts  |   1 +
+ .../boot/dts/mediatek/mt8195-cherry.dtsi      |   3 +-
+ arch/arm64/boot/dts/mediatek/mt8195.dtsi      |  30 ++-
+ .../mediatek/mt8395-kontron-3-5-sbc-i1200.dts |  16 +-
+ .../boot/dts/mediatek/mt8516-pumpkin.dts      |   2 +-
+ .../boot/dts/mediatek/pumpkin-common.dtsi     |  18 +-
+ 44 files changed, 843 insertions(+), 375 deletions(-)
+
+-- 
+2.50.1
+
 
 -- 
 linux-phy mailing list
