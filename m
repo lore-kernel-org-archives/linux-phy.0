@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AAAEC87FC5
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 18:34:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07E76C87FD2
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 18:34:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PeRq/hM62T+YeVAD8OJ+1D4DaGBI08t31Txm39M63ec=; b=1dGv52uQXaIX0v
-	boGKj425exo+bzuiy0emQZUHAvZ5UuKFjVJth+2xfVv3iDcLY9uaU6X7sG+mjMHcqxuUMtOyc+uLl
-	I4BaNH4CmdbFDMvZNVh3RglhirCRj03yGcGWbCTXuegkMXL2aaz494jN9266GhIkCyQlhb+j2V6HO
-	s2xQc92h5RGHe35Bi5Kd1w5QU2L0/3++qFdLtSwwyad8kTtPSkfvYLnWa7ACTxI8bBI77H7t/k/qo
-	O27Qcl6WDbJvI2VdApVgHdJH6pBrOhJvWm6kIkNOagmdxr+wV8inGPq6r+fuW0hND3dNh0iwxzk6E
-	v0SRk+M4j0GAGsLOhlEA==;
+	List-Owner; bh=laN2cPs3rcaa2UflYtmdNAKn03ycYzSS1lsGBimYKBo=; b=U9uS/eDnr9j+3j
+	BQlZAl8Sj1+6nr8Uzkign4xWQpBXpopVUMVrIBBejVij2EKXdDEI0HpqyTziHZkWtThLYLtgkFA5/
+	rSohyxb1y8LMheidpPxJV9qUkdxzQzWJvsDiz+dRs5U9Lern37W0MA2FWOVaWxiMCZoqK+X0oh5NN
+	/zG+GPdP21HaBzKGNQ6dVP89wlZow5gB3BgT1ybQlfzhHCPyUxx30p7XD4PUXzyPsxvP6O+S6iedB
+	PyYXlCUpVM4mCjzkV/MtM72dtMdXZiQyGQ9A17TW/W8L2b+chQiCxwj77EgAola2TaI06kWY6Hh1P
+	y/68SMxy8VrTqOydVC7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uf0lf-00000008CrX-3brI;
-	Thu, 24 Jul 2025 18:34:11 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uf0lg-00000008Csw-3Drk;
+	Thu, 24 Jul 2025 18:34:12 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueyBZ-00000007vCV-2r1G
+	id 1ueyBZ-00000007vCX-3diq
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Jul 2025 15:48:46 +0000
+	Thu, 24 Jul 2025 15:48:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 374075C6873;
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3901BA562FD;
 	Thu, 24 Jul 2025 15:48:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABC13C4CEF7;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9C64C4CEF8;
 	Thu, 24 Jul 2025 15:48:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1753372124;
-	bh=Bq2r2hveffpY5PXSTNXKCnxw/gMsdsoG6aIVMHQlAIg=;
+	bh=MqIH2WftlenJEkZ7aVZ4T+tqBDomTp3GL6m592tTZXA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=atcrX1Ger+zMzUxQK50yM1K74N5XcrTpJG2sCS5I6msMeyQfCKeL3T9bKFZ9NlhPp
-	 kaSbUts6BbI4Bsfvlcpu4UVcD1E/Qs6FCxWfgd83TkaTSr9S0BFQylVaoAlqvQZCAE
-	 pmdNM+zQChjGYOnyblFt+G5LsQcgWeg84aHlD+XnUQnmTFOaj00ijusqvEO8QQ4RJS
-	 b/fAoiqOlapRLaUjwRGnuG/ysbIYK8YLnQdgVeX1wRHkLwtOE6JqUMy8i++/xssy0j
-	 qk+lLjEFcyaI2EvFaoXDu3yRjp5dFycy+BHY+zAFDzgoaDMVaqyXGk1OnsVviTMkZM
-	 FAX2p4qXbT4yQ==
+	b=JLlxFYS9KffpIHCeFtPrikomy2NVw2jM52pMA7wEbxF51HxO/c0KrShpZ6xJG/+0t
+	 z89Jw5vZxJTb16DGB5YsvxYv5LD2niZkDMbzAUTjPTL5jQiyvdDJp5UBbk+prIqQiu
+	 CuZkEXsgyWNqSlKEwQJ6a4lhhAGFwBt0poZ6+FUlVdqqkf3lUDriYuw5+cKq8k8lp+
+	 +DtnGjSmxI1EhDuXU+DYa6UcGn8P7liYspCi1gBZGciVZba2+obJtadHQyy9x11iEW
+	 O1sP9leOKXBMqkSMrk20hlWWDw5+En7+KnsOsJ932R/Ejt4+VMAdOvLTUlddITGE5Y
+	 NENG1BQqHqJpA==
 Received: from johan by xi.lan with local (Exim 4.98.2)
 	(envelope-from <johan@kernel.org>)
-	id 1ueyBU-000000004Ay-1gdX;
+	id 1ueyBU-000000004B3-2JWp;
 	Thu, 24 Jul 2025 17:48:40 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>
@@ -55,16 +55,16 @@ Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Johan Hovold <johan@kernel.org>
-Subject: [PATCH 02/11] phy: broadcom: brcm-usb: drop unused module alias
-Date: Thu, 24 Jul 2025 17:48:14 +0200
-Message-ID: <20250724154823.15998-3-johan@kernel.org>
+Subject: [PATCH 04/11] phy: hisilicon: hi6220-usb: drop unused module alias
+Date: Thu, 24 Jul 2025 17:48:16 +0200
+Message-ID: <20250724154823.15998-5-johan@kernel.org>
 X-Mailer: git-send-email 2.49.1
 In-Reply-To: <20250724154823.15998-1-johan@kernel.org>
 References: <20250724154823.15998-1-johan@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_084845_762699_BAE5975F 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20250724_084846_017994_5646861E 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,27 +82,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since commit 9d5f51dcdb64 ("phy: usb: Add support for new Synopsys USB
-controller on the 7211b0") the driver only supports OF probe so drop the
-unused platform module alias.
+The driver has never supported anything but OF probe so drop the unused
+platform module alias.
 
 Signed-off-by: Johan Hovold <johan@kernel.org>
 ---
- drivers/phy/broadcom/phy-brcm-usb.c | 1 -
+ drivers/phy/hisilicon/phy-hi6220-usb.c | 1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index 0666864c2f77..59d756a10d6c 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -691,7 +691,6 @@ static struct platform_driver brcm_usb_driver = {
+diff --git a/drivers/phy/hisilicon/phy-hi6220-usb.c b/drivers/phy/hisilicon/phy-hi6220-usb.c
+index 97bd363dfe87..22d8d8a8dabe 100644
+--- a/drivers/phy/hisilicon/phy-hi6220-usb.c
++++ b/drivers/phy/hisilicon/phy-hi6220-usb.c
+@@ -161,5 +161,4 @@ static struct platform_driver hi6220_phy_driver = {
+ module_platform_driver(hi6220_phy_driver);
  
- module_platform_driver(brcm_usb_driver);
- 
--MODULE_ALIAS("platform:brcmstb-usb-phy");
- MODULE_AUTHOR("Al Cooper <acooper@broadcom.com>");
- MODULE_DESCRIPTION("BRCM USB PHY driver");
- MODULE_LICENSE("GPL v2");
+ MODULE_DESCRIPTION("HISILICON HI6220 USB PHY driver");
+-MODULE_ALIAS("platform:hi6220-usb-phy");
+ MODULE_LICENSE("GPL");
 -- 
 2.49.1
 
