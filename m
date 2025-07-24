@@ -4,137 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70158C83F26
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 13:52:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C71C83F26
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 13:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
-	References:In-Reply-To:Subject:CC:To:From:Date:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qdkIDGrz6Fk1/4y/nd4t/1yllinB5DlWLpMB+3FkQaY=; b=fCN87cRl5RnVUK
-	jLT8kVTk535dZHGuwwGpnK3d9CfDeFRqvjdVMXBsorUTZRLLvX4H8bMKJjUpooGWjTIfUeT8wIx7S
-	hBEHQHYNIxQbVGUYmuzbKFy7xdsRc5gTM0rxLGCzTRAcz44H8nO3ugFtDyMP0nDMaxbR1AEYiQDa3
-	4OQQ2SqsgorDDAFPnnngJo6/qg1DSQs3sSRZxYIaY41wHsdkStRRM08F1JuR4S5RDO4I2CKfyD6ME
-	gxMlL56XZUlCQEm5ad6YXLltaq6xEQDfjq0qQSNg7sSj2PK9DRd5fPoOkJuGEG/iW8e7qVLdR+1Yw
-	5dmJI8segVm3nQ0hhwjQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=uaNMwK1EEstb4qxuSWc6S8feCiL2IgoFpCQArxOqYAY=; b=iWugBdFZxcU6OAaceTyq31SPiV
+	MNnaqSgK8aucUhx45LqU3fKApGe0aZFJON9OavgUCWM6oqt2Uc1wBEAW8cTgj7kh42UD62M+32wiR
+	K83t2x/GXT6sf14N2zIN93eifEPSqv1P9JWMBRrMFKJvMOAoyA9bffTM/VilYFBBoJ0nRbCyGvRRu
+	OyJOotiHi2zz4fbgHgUR4SswWehThvPlrQgXXVU9Iqu0BnKBt7ztD1Eqgne2m8JXe2nE2vw0khG5W
+	2uMBLyPnQgRlZNHWnGDlkfM9AULSBI+x2zKZht/BNa4MtA+dH2ngGfHe9irD79yxKVXYoIYsGjYSE
+	QfS/VVUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uewNC-00000007ZMi-4AdP;
-	Thu, 24 Jul 2025 13:52:39 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1uewOB-00000007bBm-0mHE;
+	Thu, 24 Jul 2025 13:53:39 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uetJf-00000007DqT-3mAu;
-	Thu, 24 Jul 2025 10:36:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=public-files.de;
-	s=s31663417; t=1753353342; x=1753958142; i=frank-w@public-files.de;
-	bh=qwlcmLAbRr/MQRSxhxjFBqTr2CYUizJoPcZmxNDBDks=;
-	h=X-UI-Sender-Class:Date:From:To:CC:Subject:Reply-to:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:cc:content-transfer-encoding:
-	 content-type:date:from:message-id:mime-version:reply-to:subject:
-	 to;
-	b=J9z+BkZjf/3pjoMBKQ93ZNsxGhw7Zxdh8y4xg7zbiy4DSaQ1ePRJQs2YkfcpTYnb
-	 md8nMxMdY/TMXuKoKHkEywgXE1w3+wVBUaABS2tZDmZ/YV7QRCaBfY4JnvXC9jKPi
-	 RT1tq8gcEqqjnIn/R/Bk8j1AvE0+xGYiYLVL2dnqPhYZEyAzkzu6COE0HC1y36Ulc
-	 /u9ZFI0u75euPWamsARzcyiKWc4oVSCPhLUeK0iNoZHOvZDZezygyLhA0rrvOJtfl
-	 rDmc9aAW05+fe4eC3lwaLN9Z0yxZPLdeXPoLJMUxd80i33UCjtqbV2MZ9vKeiI6BR
-	 vuJDYtLquF2SrGnqpg==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from [IPv6:::1] ([80.187.69.140]) by mail.gmx.net (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MzhnN-1uSBvr1TE1-00qu8U; Thu, 24
- Jul 2025 12:35:42 +0200
-Date: Thu, 24 Jul 2025 12:35:32 +0200
-From: Frank Wunderlich <frank-w@public-files.de>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- linux-mediatek@lists.infradead.org, robh@kernel.org
-CC: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
- conor+dt@kernel.org, chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
- airlied@gmail.com, simona@ffwll.ch, maarten.lankhorst@linux.intel.com,
- mripard@kernel.org, tzimmermann@suse.de, jassisinghbrar@gmail.com,
- mchehab@kernel.org, matthias.bgg@gmail.com,
- angelogioacchino.delregno@collabora.com, chunfeng.yun@mediatek.com,
- vkoul@kernel.org, kishon@kernel.org, sean.wang@kernel.org,
- linus.walleij@linaro.org, lgirdwood@gmail.com, broonie@kernel.org,
- andersson@kernel.org, mathieu.poirier@linaro.org, daniel.lezcano@linaro.org,
- tglx@linutronix.de, atenart@kernel.org, jitao.shi@mediatek.com,
- ck.hu@mediatek.com, houlong.wei@mediatek.com,
- kyrie.wu@mediatek.corp-partner.google.com, andy.teng@mediatek.com,
- tinghan.shen@mediatek.com, jiaxin.yu@mediatek.com, shane.chien@mediatek.com,
- olivia.wen@mediatek.com, granquet@baylibre.com, eugen.hristev@linaro.org,
- arnd@arndb.de, sam.shih@mediatek.com, jieyy.yang@mediatek.com,
- mwalle@kernel.org, fparent@baylibre.com, linux-crypto@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-media@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-sound@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_27/38=5D_arm64=3A_dts=3A_mediatek=3A_m?=
- =?US-ASCII?Q?t7988a=3A_Fix_PCI-Express_T-PHY_node_address?=
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20250724083914.61351-28-angelogioacchino.delregno@collabora.com>
-References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com> <20250724083914.61351-28-angelogioacchino.delregno@collabora.com>
-Message-ID: <E00D9C7A-CEC6-4BB3-8568-CC54C80E1F9F@public-files.de>
+	id 1uetz3-00000007K8J-1MXW;
+	Thu, 24 Jul 2025 11:19:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id E49685C6664;
+	Thu, 24 Jul 2025 11:19:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69BD5C4CEEF;
+	Thu, 24 Jul 2025 11:19:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1753355971;
+	bh=s3ZnbItH7r6cLHTy+VwbS1Kg3RPe/mzeNlY5FzZW73M=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=CStr8z/rOsij9S3z3BJm9fHa9iakjiAXVR9PdOK5taBZURJfAPAAkHbj0KuQviY7p
+	 KiL6Uvucdwz8LxwOWz7lwhX5I2qtRnTp09/USJTZHE24W+o2XT/5ls0Mo+DqJ/EQGy
+	 4vOkkwAzobpebJvh+VgDfNRDeqyhbjww7Rd7PHdXbcy0KDnMtuIOIRC83Uv6MAlwmL
+	 VYSko7BVS+mI+5gLRGV68wZS0TlpY3UDdnSSzeclWayt2BApahaiftZuAN6c9obWp0
+	 2tUwExST1V+igIM59xAHMg7CBzYem4LQ8BDzMMNqgOtJqDmA0vvctgoZdBWhL20O8G
+	 xRs89hLXeFgbA==
+Date: Thu, 24 Jul 2025 06:19:30 -0500
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:nkz0xBWOn6njT18nQoUfw6V1GVlL8WpIemZpMHLlbE8QqNvMruQ
- Dw1Pn/9vrDC5T+QE1uC+gQrBvCbuCBubKZuNY/QtmAr8uYJpemV1UWgy1GRhjhzujMe4Sno
- OFT//bgrHPOQkyWfSsQl5jIAop0RmK2bQYCM8GBsuQbZ18A3HnORU53wBCWooCm/gqkZStX
- r26BYjnhKxDQSZciDLXoQ==
-UI-OutboundReport: notjunk:1;M01:P0:LqPQEsDz8IY=;vMKO03lm15WSc5MEUEg0Iky4Zzx
- 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
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: frank-w@public-files.de, herbert@gondor.apana.org.au, 
+ maarten.lankhorst@linux.intel.com, tzimmermann@suse.de, 
+ linux-phy@lists.infradead.org, krzk+dt@kernel.org, eugen.hristev@linaro.org, 
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, 
+ jiaxin.yu@mediatek.com, jitao.shi@mediatek.com, daniel.lezcano@linaro.org, 
+ linux-remoteproc@vger.kernel.org, granquet@baylibre.com, 
+ lgirdwood@gmail.com, linux-crypto@vger.kernel.org, 
+ tinghan.shen@mediatek.com, mwalle@kernel.org, sam.shih@mediatek.com, 
+ sean.wang@kernel.org, p.zabel@pengutronix.de, matthias.bgg@gmail.com, 
+ vkoul@kernel.org, mripard@kernel.org, 
+ kyrie.wu@mediatek.corp-partner.google.com, olivia.wen@mediatek.com, 
+ dri-devel@lists.freedesktop.org, atenart@kernel.org, arnd@arndb.de, 
+ conor+dt@kernel.org, shane.chien@mediatek.com, houlong.wei@mediatek.com, 
+ devicetree@vger.kernel.org, kishon@kernel.org, fparent@baylibre.com, 
+ airlied@gmail.com, tglx@linutronix.de, linux-sound@vger.kernel.org, 
+ broonie@kernel.org, andy.teng@mediatek.com, jieyy.yang@mediatek.com, 
+ mathieu.poirier@linaro.org, chunfeng.yun@mediatek.com, 
+ linux-arm-kernel@lists.infradead.org, jassisinghbrar@gmail.com, 
+ linux-media@vger.kernel.org, davem@davemloft.net, simona@ffwll.ch, 
+ linus.walleij@linaro.org, chunkuang.hu@kernel.org, ck.hu@mediatek.com, 
+ andersson@kernel.org, linux-mediatek@lists.infradead.org, 
+ mchehab@kernel.org
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
+References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
+Message-Id: <175335596838.1587473.6783798436849190740.robh@kernel.org>
+Subject: Re: [PATCH 04/38] ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks
+ and clock-names
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_033648_234416_D7858078 
-X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-CacheID: sfid-20250724_041933_445887_AD1914C8 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -147,99 +89,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am 24. Juli 2025 10:39:03 MESZ schrieb AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>:
->The PCIe and USB TPHYs are under the soc bus, which provides MMIO,
->and all nodes under that must use the bus, otherwise those would
->clearly be out of place.
->
->Add ranges to both the tphy(s) and assign the address to the main
->node to silence a dtbs_check warning, and fix the children to
->use the MMIO range of t-phy.
->
->Fixes: ("f693e6ba55ae arm64: dts: mediatek: mt7988: Add t-phy for ssusb1")
->Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
->---
-> arch/arm64/boot/dts/mediatek/mt7988a.dtsi | 28 +++++++++++------------
-> 1 file changed, 14 insertions(+), 14 deletions(-)
->
->diff --git a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
->index 560ec86dbec0..cc0d3e3f4374 100644
->--- a/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
->+++ b/arch/arm64/boot/dts/mediatek/mt7988a.dtsi
->@@ -629,20 +629,20 @@ pcie_intc1: interrupt-controller {
-> 		tphy: t-phy@11c50000 {
-> 			compatible = "mediatek,mt7986-tphy",
-> 				     "mediatek,generic-tphy-v2";
->-			#address-cells = <2>;
->-			#size-cells = <2>;
->-			ranges;
->+			#address-cells = <1>;
->+			#size-cells = <1>;
->+			ranges = <0 0 0x11c50000 0x1000>;
-> 			status = "disabled";
+
+On Thu, 24 Jul 2025 10:38:40 +0200, AngeloGioacchino Del Regno wrote:
+> Both clocks and clock-names are missing (a lot of) entries: add
+> all the used audio clocks and their description and also fix the
+> example node.
 > 
->-			tphyu2port0: usb-phy@11c50000 {
->-				reg = <0 0x11c50000 0 0x700>;
->+			tphyu2port0: usb-phy@0 {
->+				reg = <0 0x700>;
-> 				clocks = <&infracfg CLK_INFRA_USB_UTMI_CK_P1>;
-> 				clock-names = "ref";
-> 				#phy-cells = <1>;
-> 			};
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> ---
+>  .../bindings/sound/mt8192-afe-pcm.yaml        | 106 +++++++++++++++++-
+>  1 file changed, 104 insertions(+), 2 deletions(-)
 > 
->-			tphyu3port0: usb-phy@11c50700 {
->-				reg = <0 0x11c50700 0 0x900>;
->+			tphyu3port0: usb-phy@700 {
->+				reg = <0 0x700 0 0x900>;
 
-This one looks wrong to me
+My bot found errors running 'make dt_binding_check' on your patch:
 
-I guess it should be 
+yamllint warnings/errors:
 
-reg = <0x700 0x900>;
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.example.dtb: mt8192-afe-pcm (mediatek,mt8192-audio): clock-names:3: 'aud_adc_clk' was expected
+	from schema $id: http://devicetree.org/schemas/sound/mt8192-afe-pcm.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.example.dtb: mt8192-afe-pcm (mediatek,mt8192-audio): clock-names:4: 'aud_adda6_adc_clk' was expected
+	from schema $id: http://devicetree.org/schemas/sound/mt8192-afe-pcm.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.example.dtb: mt8192-afe-pcm (mediatek,mt8192-audio): clock-names: ['aud_afe_clk', 'aud_dac_clk', 'aud_dac_predis_clk', 'aud_infra_clk', 'aud_infra_26m_clk'] is too short
+	from schema $id: http://devicetree.org/schemas/sound/mt8192-afe-pcm.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/sound/mt8192-afe-pcm.example.dtb: mt8192-afe-pcm (mediatek,mt8192-audio): clocks: [[4294967295, 0], [4294967295, 7], [4294967295, 8], [4294967295, 47], [4294967295, 58]] is too short
+	from schema $id: http://devicetree.org/schemas/sound/mt8192-afe-pcm.yaml#
 
-> 				clocks = <&infracfg CLK_INFRA_USB_PIPE_CK_P1>;
-> 				clock-names = "ref";
-> 				#phy-cells = <1>;
->@@ -659,20 +659,20 @@ topmisc: system-controller@11d10084 {
-> 		xsphy: xs-phy@11e10000 {
-> 			compatible = "mediatek,mt7988-xsphy",
-> 				     "mediatek,xsphy";
->-			#address-cells = <2>;
->-			#size-cells = <2>;
->-			ranges;
->+			#address-cells = <1>;
->+			#size-cells = <1>;
->+			ranges = <0 0 0x11e10000 0x3900>;
-> 			status = "disabled";
-> 
->-			xphyu2port0: usb-phy@11e10000 {
->-				reg = <0 0x11e10000 0 0x400>;
->+			xphyu2port0: usb-phy@0 {
->+				reg = <0 0x400>;
-> 				clocks = <&infracfg CLK_INFRA_USB_UTMI>;
-> 				clock-names = "ref";
-> 				#phy-cells = <1>;
-> 			};
-> 
->-			xphyu3port0: usb-phy@11e13000 {
->-				reg = <0 0x11e13400 0 0x500>;
->+			xphyu3port0: usb-phy@3400 {
->+				reg = <0x3400 0x500>;
-> 				clocks = <&infracfg CLK_INFRA_USB_PIPE>;
-> 				clock-names = "ref";
-> 				#phy-cells = <1>;
+doc reference errors (make refcheckdocs):
 
-Hi Angelo,
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250724083914.61351-5-angelogioacchino.delregno@collabora.com
 
-thanks for taking case of many of current binding errors (only wondering about this one as i had checked it before sending upstream).
-regards Frank
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-phy mailing list
