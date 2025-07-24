@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05048C83F1A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE6F3C87FD5
 	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 09:48:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,37 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X2xXgGYJ42KoHjDAP8OJPM9hq/zYnip8+PaY6LI8XII=; b=vVxviYDiV8LW9/
-	TNCYswo41fzB5x93wEzUpedx/ArepmzwLTfcv8HAWL4UBgm3gzGmhZkoku/0ZJ/KrC51uYle4iSZ0
-	5/l4ZJQ9zBZ/aASx5iSQW6k9Z2hUVW96qJi50c41l0oSG5EtZf0LVXamBaT3RMJmqlp14Vt1vIo12
-	wMFnIaNxXklHFHB1gL8nPYBd5tzXJqP9WTgG95mmeUClXI0rG2ZH7xC/fAlOODHWlYf3OjBjFx6fX
-	9nTSiwA3yyYhkshv6hqcWcKPNHXIihHzrFWozfRL6SoeuCmyfVuDA4DDyDHfBJq7qRSUQ6++5k9tI
-	EtOUZSaO7YAa2p2TKpww==;
+	List-Owner; bh=lsdAI8RBbntWh7GRlyfVgq9gVXuaYppelYlpc5ywDt4=; b=cpOyC0qq1jGnXb
+	iSX5624HHzTzwoIP6WQJQ2S6vlmE2/PFuP6MVHdDaqNovwHRSePEewieIcPGverxWipyntwCAfHml
+	uk6AV42RtTKp/Ym0Fw4sG8xWUR9u480PMSXTzuS3LWhwLqpUIQyjM8oVpp2VcmDoQwBx7tRa6Dk9Q
+	nRyC+3VnCi+vQzr9kBZn1dBYRMZ4GyZnw//ZcvCTYJ0uVwmh8ho62AoQVt/c56HIyO+Y/2gGsuc/R
+	mAnjDnZSzUOYavJhkcchLS4DerG5GIPa22shHuB0uPejxps5n1xjiPrTetDW4v7cRy0+wwyuR2gGg
+	UESMGwTZwOBBdQ+JGC7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesYl-000000076PQ-2ejk;
-	Thu, 24 Jul 2025 09:48:19 +0000
+	id 1uesYm-000000076Qe-1pKO;
+	Thu, 24 Jul 2025 09:48:20 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uerUU-00000006tQR-2buu;
-	Thu, 24 Jul 2025 08:39:52 +0000
+	id 1uerUX-00000006tSk-2Fkk;
+	Thu, 24 Jul 2025 08:39:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753346389;
-	bh=DucEN5nByiIF7ZPbQzbe0BMHYNANbPFA712Y4ni2T3Q=;
+	s=mail; t=1753346392;
+	bh=HaevetnnFKHRcc+1X06S28eq0CnYSBndrM5Inix6OWk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=RpGcGL15DqzBenugq8/kTUlLG7wBeNX2Ndua5R8zea2cpThcFFVFQXkSMvNVT1xAj
-	 uj2rr5MtrP5yLsgHYte71R5gIkDUR8uEBgWNs1CDBBQKsL7yCgPEoNLhGQe99NOwHg
-	 f5KUS/AJcNj2b1lgl+U1JPfjI4KAZ3bO1tPj4d14HfbxDZzcOAzL9xMUkODmNeQU9Q
-	 V4OCRckyrGWC8mz3qTg8pTYmqaXb+da3M0r/o7HIlGbqBRHpxUGUja8GP+khiMzwmg
-	 ilzFhz7fi6LsbAAjF7zC9Ba0AArURcs/EBZ+EIrQbz+DARrzcS1t9hQk4YG8X8f8rf
-	 0GoTT0lTBytXA==
+	b=A0xSFSrwXmhFdEpFiRIOiNyey3TgbknRE5XDUw1F5tUVQsL5f3WK/l2eKQoWsNmRo
+	 yH8XaCq0zkGZRPW0Qgi9g5jVNN3j1g7JR6PJlOCxt4ruz0mWBJHOnyRy6d4XxDyqf0
+	 UQobqYC9ol5z4zOej529l1Qe/7xQbkJrMikUfRAXGUlnIM3wcHdbWcfzzjCPLEF50z
+	 CGAwS4lSyM6+9V3UFJKb0Utew0gYeNpbHXhNhTQIEuPEJ6c/uCBh8SehctDl/Faqy5
+	 OcQu8iPCfO1jKE/q7cjVlaxxRtDcPl8qvYVc67mm4HXEsdsNdl8WYHzRWlYtMBnqX/
+	 9TwJmccLNoygw==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D612E17E11EE;
-	Thu, 24 Jul 2025 10:39:46 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8073D17E1298;
+	Thu, 24 Jul 2025 10:39:49 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: linux-mediatek@lists.infradead.org,
 	robh@kernel.org
@@ -100,16 +100,16 @@ Cc: herbert@gondor.apana.org.au,
 	linux-gpio@vger.kernel.org,
 	linux-remoteproc@vger.kernel.org,
 	linux-sound@vger.kernel.org
-Subject: [PATCH 09/38] dt-bindings: pinctrl: mt6779: Allow common MediaTek pinctrl node names
-Date: Thu, 24 Jul 2025 10:38:45 +0200
-Message-ID: <20250724083914.61351-10-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH 10/38] dt-bindings: regulator: mediatek,mt6332-regulator: Add missing compatible
+Date: Thu, 24 Jul 2025 10:38:46 +0200
+Message-ID: <20250724083914.61351-11-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_013950_816476_55A5BFA3 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20250724_013953_762121_E344627A 
+X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,34 +127,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Allow node names like "uart0-pins" for the main nodes and "pins-bus"
-for the children to make this binding consistent with the majority
-of the other MediaTek pinctrl bindings.
+This binding had no compatible and for this reason would not be
+applied to anything: add the missing "mediatek,mt6332-regulator"
+compatible.
 
+Fixes: e22943e32e1f regulator: ("Add bindings for MT6332 regulator")
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- .../devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml  | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../bindings/regulator/mediatek,mt6332-regulator.yaml      | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml
-index f4bab7a132d3..84d2713a573f 100644
---- a/Documentation/devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml
-+++ b/Documentation/devicetree/bindings/pinctrl/mediatek,mt6779-pinctrl.yaml
-@@ -111,12 +111,12 @@ allOf:
-         - "#interrupt-cells"
+diff --git a/Documentation/devicetree/bindings/regulator/mediatek,mt6332-regulator.yaml b/Documentation/devicetree/bindings/regulator/mediatek,mt6332-regulator.yaml
+index 2eb512c29a0d..475f18d4f261 100644
+--- a/Documentation/devicetree/bindings/regulator/mediatek,mt6332-regulator.yaml
++++ b/Documentation/devicetree/bindings/regulator/mediatek,mt6332-regulator.yaml
+@@ -15,6 +15,10 @@ description: |
+   buck-<name> and ldo-<name>.
+   MT6332 regulators node should be sub node of the MT6397 MFD node.
  
++properties:
++  compatible:
++    const: mediatek,mt6332-regulator
++
  patternProperties:
--  '-[0-9]*$':
-+  '-([0-9]*|pins)$':
+   "^buck-v(dram|dvfs2|pa|rf18a|rf18b|sbst)$":
      type: object
-     additionalProperties: false
+@@ -36,6 +40,9 @@ patternProperties:
  
-     patternProperties:
--      '-pins*$':
-+      '^pins':
-         type: object
-         description:
-           A pinctrl node should contain at least one subnodes representing the
+     unevaluatedProperties: false
+ 
++required:
++  - compatible
++
+ additionalProperties: false
+ 
+ examples:
 -- 
 2.50.1
 
