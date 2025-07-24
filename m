@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0EA2C87FC5
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 10:04:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32738C87FC5
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 10:09:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aseXjEtEV+fynGZnrYyvQ0aekLv20QEoRMRG1Ok1G+Y=; b=RnL/OqxH/isOBU
-	6NLgiWBF4Zc7gWY3OLV3tl97GRtw/iQ+v/GQFDKagfCAa2fgtEu1afxLDzKai0MUj+gy6VctcCtEU
-	jWF1vCYw6n4JJ1wXpmIQbvDYOTrN9g2QFOI6XhE3RE+FeliMYSM3Oy4DivXkqD8ikzfCXQFsPzTqf
-	D2Nl22Qe8CllHrkROLAYHCGfT2jHF0BujugNAjIS9dmoerwxype4jMhoTlv5ArB2VeM1p4w3yAB8+
-	gxU5IOoCo182onO9oNvGk1SZRTyKylardeC8uyF5N5pkFhlcZMROqu8PWawgMIGdTJvahPJ0BW7DL
-	/L5znWcL1BvO4bqrM5+g==;
+	List-Owner; bh=jljUXZS/GnPLQ5GjQVq78wgKw4Xcqy1DBaoqY18x+6o=; b=nCpavdkdx8JBUV
+	4YM2JjNOXJtYGm7A2QbdkeJWCDULQ01uexayn45jUh9s0dHRUJwFeO6O6Cls5HkiSUGik49VZ2x0L
+	w1n5OJGVjX5UFIKC+b62MEPFzOnCD0hh7+KtW/N7YXNcYELteOV7ZyyPUXgwaUvqh0KdBAJKA20O5
+	IODbX0eL5ShDQ1G2BGwpEnoxV56Q6gJNfc18eZFMJDPolxMXym0g49nX0eg0unC6np9Ms9vqi5+x5
+	fYcjs8VnVa6fWOVr629rlud8NZ/dfBef2tV/cbD6Ex4gI6yvkI82neI4orDOu3jLT7CcHXee7k6jv
+	b6UPIoarm+0vplQD2txA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueso0-000000079lz-15iN;
-	Thu, 24 Jul 2025 10:04:04 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uessq-00000007AOd-41yx;
+	Thu, 24 Jul 2025 10:09:04 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueryG-00000006zXC-0ojb;
-	Thu, 24 Jul 2025 09:10:37 +0000
+	id 1ues0F-00000006ztf-0I7E;
+	Thu, 24 Jul 2025 09:12:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A98E043F19;
-	Thu, 24 Jul 2025 09:10:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05053C4CEED;
-	Thu, 24 Jul 2025 09:10:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 408175C5CFD;
+	Thu, 24 Jul 2025 09:12:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82816C4CEED;
+	Thu, 24 Jul 2025 09:12:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753348235;
-	bh=Zd9OpEjRiIzb39t5LxgO0mowTxzXV9MUzTsMnRqyMR0=;
+	s=k20201202; t=1753348357;
+	bh=VfHGj9b2WOUFNsbslX9McB3nZJ+BtjApE8CBh+ZIpls=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=FCZd+o0+la8dDvf554+uYLsCDrmhuv9fQEAPLSc42ID/pQQJlkLk/yEkl/TAjyX+0
-	 /eY5csmQeU82/T2RqRT/wA40C2URTCrd9N3SxCqDrnjZ8vjHbzoEXObJNi/LGykLPy
-	 NbnKY81MTWRdBohRDumI1xKiTCRJVIF1XzWuB/gAAZztsl4fO06aoup5YNrzkefnv/
-	 IoWgsq2gRRQX7iY5gVJgsIRh9jyvjG2G+6BNwvistJ1zUfWNetCNM+bJHGXowBcPkU
-	 wIQA2Tdm4HpJFz6LjP4sL2xw0L7lBXV99nUck0ZQyzTrEG6LZ62jtzp/JaxGAlDT4w
-	 6J5Ha4n2gOr8g==
-Message-ID: <f4c00e80-5f1e-47d2-ad49-80343668ac3f@kernel.org>
-Date: Thu, 24 Jul 2025 11:10:22 +0200
+	b=S8WoU3TLnSRW4LXVCwwFvCr9P21ZmAddBoZQbufmufALRMQKzFBFJdCdyti4okj0y
+	 le2OlC0HqtFA53cWkTZgAzD3zJJ4JJ+kXgsaaL6vAjdWWGA8qeNfJrZfDrHEgS/8v4
+	 IZkDQZiGWzy35JI4VIpMjUKnNdQhMnosEBcn899kJQhkXIm4Y3I1ZMLf5ZB0eL/CLJ
+	 +b4wpcugBODPsDWcyjz7t4jjgS4mFjVOwE/YoZxEhVGbzXG7/WQCBih2scfv5afrc9
+	 zNPLxo9rqks+J5MkFHtWd/JJPVHBPFlHjErax/ksUHGPIefqLlNg8bffZOwMDalaM5
+	 +fwkfbNoZqKCA==
+Message-ID: <b7c9f6b8-4f29-4e38-9c93-e22cfed7229d@kernel.org>
+Date: Thu, 24 Jul 2025 11:12:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/38] dt-bindings: crypto: inside-secure,safexcel:
- Mandate only ring IRQs
+Subject: Re: [PATCH 04/38] ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks and
+ clock-names
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -70,7 +70,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
  linux-remoteproc@vger.kernel.org, linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-6-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -116,10 +116,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250724083914.61351-6-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_021036_284744_9C551BA8 
-X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-CacheID: sfid-20250724_021239_180217_E3C8D4A2 
+X-CRM114-Status: UNSURE (   5.89  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -138,21 +138,40 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
-> Not all IP implementations of EIP97 and EIP197 have the EIP and
-> MEM interrupts hooked up to the SoC, and those are not required
-> for functionality as status for both can be polled (and anyway
-> there's even no real need to poll, but that's another story).
-> 
-> As an example of this, the MediaTek MT7968A and MT7986B SoCs do
-> not have those two interrupts hooked up to their irq controlller.
-> 
-> For this reason, make the EIP and MEM interrupt optional.
-> 
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> ---
+>  
+>    clock-names:
+>      items:
+>        - const: aud_afe_clk
+>        - const: aud_dac_clk
+>        - const: aud_dac_predis_clk
+> +      - const: aud_adc_clk
+> +      - const: aud_adda6_adc_clk
+> +      - const: aud_apll22m_clk
+> +      - const: aud_apll24m_clk
+> +      - const: aud_apll1_tuner_clk
+> +      - const: aud_apll2_tuner_clk
+> +      - const: aud_tdm_clk
+> +      - const: aud_tml_clk
+> +      - const: aud_nle
+> +      - const: aud_dac_hires_clk
+> +      - const: aud_adc_hires_clk
+> +      - const: aud_adc_hires_tml
+> +      - const: aud_adda6_adc_hires_clk
+> +      - const: aud_3rd_dac_clk
+> +      - const: aud_3rd_dac_predis_clk
+> +      - const: aud_3rd_dac_tml
+> +      - const: aud_3rd_dac_hires_clk
+>        - const: aud_infra_clk
+>        - const: aud_infra_26m_clk
 
-Same comments as for Aleksander patch doing the same. You solved second
-part of them, but first - missing SoC compatibles - needs to be addressed.
+
+You can only add to the end of lists, not in the middle.
+
+Also, please drop all _clk suffixes and aud/top prefixes. These are
+supposed to be clock inputs, so you name them based on this device. Not
+based on the provider's name.
+
+
 
 Best regards,
 Krzysztof
