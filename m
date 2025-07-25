@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C35F9C87FCE
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jul 2025 20:28:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C2DEC87FCA
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jul 2025 20:29:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xI5Dc/GRleYH1DoMMUK9MDqizKuTvk+x2RLMHqsTF4E=; b=2mwBELVW6c7nfk
-	ZEIL7jtuJ1MOagF9bUitglOXwNHO/vmqk5mQ80tDXtQFtHrBt8ISQDv9DWsY84DJdP6xvD4lBUS+M
-	Osoaxyr6loDaQHwjsN4Hl+ErfzzVZlT5lLZMg2Q0jeZxncaIJlSAz+ZV0COp0Woiv2SiqsOC+x2X5
-	tjTuZm0EHNJyNzU5nHGh5V/TeikShrqX42TFT98Bvp7BO/M/kaHTd0a/8v5x4UOIYlFkJnAvX+O+z
-	KYVVP228YZiqKuP02QvloClB1+jHWZpWpePWRMjfZ+zCYuAmGRr+g7MbXtTJFgABUVGG9K7CD/lXi
-	zqztjoqodgy20QtxOs1g==;
+	List-Owner; bh=eW8fSwV/Qpk6eYDW9h5OTJOQPfE+sgkaLA4l8OlYYow=; b=hCEx1oQ92Pfg0T
+	quiXXnd4Z2RBjhK4ZtOuPAqTcLdR+Huy79I/X+5knNmabnlO6qZNxpTfF/WiQ40lT+/DVYxkbSdkd
+	QWk4lo1XvMugdlgC+u9JV/hxAjWzjED1Mja19SC87ObjtMzmio7CuLlGtRrfBk1vvRKBi6R5oNl7R
+	CpaZqlmp0gDpIk0DbaTTqqb9PQ+JrPVxzEKo5Q82HDAw8FejUeyBjlv4P/c7Q+cqVnzXyFO1ng4U/
+	gRFKI5TkZVpsGOLh0pX1/l0eB8xQuJSokSygsaPe75J8aMkDDlpaonXYoKru9v3Zb+zvTswzt7Ek2
+	vqjwc+XIHSXuEOOovQIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ufP1m-0000000Adjp-2Gr0;
-	Fri, 25 Jul 2025 20:28:26 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1ufP2M-0000000Advi-0DdK;
+	Fri, 25 Jul 2025 20:29:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ufP1j-0000000Adi8-0OOg;
-	Fri, 25 Jul 2025 20:28:24 +0000
+	id 1ufP2K-0000000AduR-0HvJ;
+	Fri, 25 Jul 2025 20:29:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9B8C4416DC;
-	Fri, 25 Jul 2025 20:28:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49DE1C4CEF6;
-	Fri, 25 Jul 2025 20:28:22 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 72A155C6410;
+	Fri, 25 Jul 2025 20:28:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EBE74C4CEE7;
+	Fri, 25 Jul 2025 20:28:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753475302;
-	bh=90YjidsW0zLfZ2EVgtXoscfqDLtrHgB9m/jDQVG5PWk=;
+	s=k20201202; t=1753475339;
+	bh=2lR8zBkPfCL0XzsAZKYS6/0c97bv4h+0epH74tNqB9s=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hCV5qzX5FcJQA4jUKlOvPOf0uPNZFnxjS8SpjO4vPyWdTLmiiniC01y1vRcAEqpuQ
-	 ch5awJmTQUZXLkBsqHUw8LR+DvmjjRGNmsiUY3gnWa8juFrOwKLkFaNAywPkRH6X1L
-	 2T0Rm+Hnl3I7WH874DB9G1Cfg/rBdOomAfOL9Z0F4gujhwDlk7z4Qvs41FKYpl6kvB
-	 +oKfi+dcjn9xFtoLqSl9eOho8FtJ+BZkG4T8okai1wn2zzuXT59v/kd0lUfL7zYJ5a
-	 5n5RQAebqjE94nWw6X5XcvwBXf1t/4PmAN0PROqQuBvwdbxGx/oE9W1UiLZLYeAWPz
-	 ipk20JnM64rnw==
-Date: Fri, 25 Jul 2025 15:28:21 -0500
+	b=Nmhx7Z8/FBwNijNFPpZf4SqJoOStQ0XsxTd/CcwodEvheITYeVzDATI0vkqopVZpN
+	 ahWJcPhWgy+F6oKOWucoyS8HKVtTZ65qkKO8rnMdpLbkTDaCq5kdB43VdABXLgIuDr
+	 AM/H9YWG4msnlSmTFWa7aBLB+g4755Mt+4XTP+zmXW/Yj4MklkggEMOnWzWa+wULQ5
+	 WGiC6obE6FEykCeFOOC0Vg2eGT4khYCcJCTXm7Kcot8eL3Y4GZ6LqEPpW7zeM7EEVS
+	 8NizKGJ9SwGA6+f9JSlBLusqpEgsBUK4k1GQ/Wm6GpWdOOeE//dPy40IOSp7ZOPZfq
+	 Lrk5Ir8nxLrrQ==
+Date: Fri, 25 Jul 2025 15:28:58 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-arm-kernel@lists.infradead.org, conor+dt@kernel.org,
-	chunkuang.hu@kernel.org, atenart@kernel.org, ck.hu@mediatek.com,
-	sean.wang@kernel.org, kyrie.wu@mediatek.corp-partner.google.com,
-	airlied@gmail.com, olivia.wen@mediatek.com, frank-w@public-files.de,
-	sam.shih@mediatek.com, krzk+dt@kernel.org, simona@ffwll.ch,
-	eugen.hristev@linaro.org, fparent@baylibre.com, mchehab@kernel.org,
-	herbert@gondor.apana.org.au, tinghan.shen@mediatek.com,
-	jiaxin.yu@mediatek.com, linux-remoteproc@vger.kernel.org,
-	jitao.shi@mediatek.com, linux-sound@vger.kernel.org,
-	mripard@kernel.org, matthias.bgg@gmail.com, jieyy.yang@mediatek.com,
-	broonie@kernel.org, shane.chien@mediatek.com,
-	linus.walleij@linaro.org, davem@davemloft.net,
-	jassisinghbrar@gmail.com, kishon@kernel.org, lgirdwood@gmail.com,
-	granquet@baylibre.com, dri-devel@lists.freedesktop.org,
-	arnd@arndb.de, andy.teng@mediatek.com, linux-kernel@vger.kernel.org,
-	daniel.lezcano@linaro.org, mathieu.poirier@linaro.org,
-	linux-phy@lists.infradead.org, p.zabel@pengutronix.de,
-	tglx@linutronix.de, maarten.lankhorst@linux.intel.com,
-	andersson@kernel.org, houlong.wei@mediatek.com,
-	linux-mediatek@lists.infradead.org, linux-crypto@vger.kernel.org,
-	linux-media@vger.kernel.org, tzimmermann@suse.de,
-	chunfeng.yun@mediatek.com, vkoul@kernel.org,
-	linux-gpio@vger.kernel.org, mwalle@kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 03/38] dt-bindings: mailbox: mediatek,gce-mailbox: Make
- clock-names optional
-Message-ID: <175347530117.1835509.4802205566620946645.robh@kernel.org>
+Cc: linux-gpio@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org, mripard@kernel.org,
+	linux-sound@vger.kernel.org, devicetree@vger.kernel.org,
+	daniel.lezcano@linaro.org, krzk+dt@kernel.org, vkoul@kernel.org,
+	chunfeng.yun@mediatek.com, tinghan.shen@mediatek.com, arnd@arndb.de,
+	herbert@gondor.apana.org.au, shane.chien@mediatek.com,
+	andersson@kernel.org, linux-mediatek@lists.infradead.org,
+	linux-kernel@vger.kernel.org, lgirdwood@gmail.com,
+	linux-phy@lists.infradead.org, airlied@gmail.com,
+	matthias.bgg@gmail.com, linus.walleij@linaro.org,
+	jieyy.yang@mediatek.com, granquet@baylibre.com,
+	maarten.lankhorst@linux.intel.com, mchehab@kernel.org,
+	linux-media@vger.kernel.org, tglx@linutronix.de,
+	conor+dt@kernel.org, jiaxin.yu@mediatek.com,
+	frank-w@public-files.de, davem@davemloft.net, sam.shih@mediatek.com,
+	broonie@kernel.org, kyrie.wu@mediatek.corp-partner.google.com,
+	chunkuang.hu@kernel.org, eugen.hristev@linaro.org, simona@ffwll.ch,
+	andy.teng@mediatek.com, linux-remoteproc@vger.kernel.org,
+	tzimmermann@suse.de, mwalle@kernel.org, ck.hu@mediatek.com,
+	houlong.wei@mediatek.com, p.zabel@pengutronix.de,
+	olivia.wen@mediatek.com, jitao.shi@mediatek.com,
+	mathieu.poirier@linaro.org, kishon@kernel.org,
+	jassisinghbrar@gmail.com, sean.wang@kernel.org, atenart@kernel.org,
+	fparent@baylibre.com, linux-crypto@vger.kernel.org
+Subject: Re: [PATCH 06/38] dt-bindings: timer: mediatek: Add compatible for
+ MT6795 GP Timer
+Message-ID: <175347533780.1836400.4840892261408767765.robh@kernel.org>
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-4-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-7-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250724083914.61351-4-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-7-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250725_132823_151538_257F6C8D 
-X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-CacheID: sfid-20250725_132900_137017_C4697156 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,17 +97,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 24 Jul 2025 10:38:39 +0200, AngeloGioacchino Del Regno wrote:
-> The GCE Mailbox needs only one clock and the clock-names can be
-> used only by the driver (which, for instance, does not use it),
-> and this is true for all of the currently supported MediaTek SoCs.
-> 
-> Stop requiring to specify clock-names on all non-MT8195 GCEs.
+On Thu, 24 Jul 2025 10:38:42 +0200, AngeloGioacchino Del Regno wrote:
+> Add a compatible for the General Purpose Timer (GPT) found on the
+> MediaTek Helio X10 MT6795 SoC which is fully compatible with the
+> one found in MT6577.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 > ---
->  .../bindings/mailbox/mediatek,gce-mailbox.yaml        | 11 -----------
->  1 file changed, 11 deletions(-)
+>  Documentation/devicetree/bindings/timer/mediatek,timer.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
