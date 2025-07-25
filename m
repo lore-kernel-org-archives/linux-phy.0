@@ -4,82 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0E71C87FCA
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Jul 2025 20:30:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 139EEC87FCE
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jul 2025 23:08:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T/UZvTCfGP9lbD2dEONAHd7xBreudUe4ZmgV7A3+v8I=; b=hNzNtNgDlRWANH
-	18rcuaYyToBs6710zfbkOR7pzK7zYBwd/M/P6omxdHb4xAPoD8DgB72ESx2kPgHDbTH1KxaIk7Vj9
-	hgcvxlLvkJvVhlo9adyQU74LLipSdAAkBVs/jtEtP17wzJuNfxZx4WCYWCFttiO7wmIqbA9dohpsN
-	Ck3KM34CZG7cS2Toq+l9PLbhvS1BNLkXEt3nJtKhlq2YHpOykUzEJKnZAq1PM4wvI6LOvAx0MRyCX
-	uLHBjb9xIRZoFMAM3sckwA0KBtXxTj7DlfdWGnhZlDTyE8LJGk6eGXs55oNLXD9ub0OANE4MLWNYi
-	/rzNraoA6z9c4RMKCqGQ==;
+	List-Owner; bh=Q67woZS28rJRFPR2qw9wVxz65iCvgE4zOF57gLSyRWA=; b=Rqk1mvPoGfueYr
+	rdF5Fy6uLL4J/bwsL2Hpn959ml++PvbcCFJjNE9CS7vhrXC2HWYjISTSt2+Zgpr/eBLj3zqEyyvhF
+	z0dIYEcLiNJ6WMgH4HXY5mNnfKcXOb4PORtKPuVih6dvUWwambNtQKfe05h0y2K3kKtte7PXeTiHz
+	DxFJMC1sd6eXhXukyGMJd+hscGUcL2tZWRvio3xiWUupAnVFKTnLP3lVMESo1MZ126tEqWN8RWiMD
+	DAiXjcNlKsZpwjVp39A45abwL2NHX4FEMokYtpo0JhOKkwRxDX0z79ePcAX13DGSizEE8k4HFwNHw
+	/EfoeN79g0cAhXRkzDHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ufP3n-0000000AeO1-38uT;
-	Fri, 25 Jul 2025 20:30:31 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1ufRX2-0000000ApaJ-2gy2;
+	Fri, 25 Jul 2025 23:08:52 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ufP3k-0000000AeLp-1o0S;
-	Fri, 25 Jul 2025 20:30:29 +0000
+	id 1ufRSH-0000000ApC3-3Beg;
+	Fri, 25 Jul 2025 23:03:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2391944F67;
-	Fri, 25 Jul 2025 20:30:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3FC8C4CEE7;
-	Fri, 25 Jul 2025 20:30:27 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 218BD601DC;
+	Fri, 25 Jul 2025 23:03:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92499C4CEE7;
+	Fri, 25 Jul 2025 23:03:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753475428;
-	bh=ba7r3CQWnc9Pg59zckBMYOhewHfZtzF4js8BFZ+0f9c=;
+	s=k20201202; t=1753484636;
+	bh=/ihqXbiLnvze8X7uQMIFreBNaBY/ADD8BZyIiZGUufc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dbW8S110p3NBmLaJdPOPH54qeqD00XyhjoRdv89Oc/9seV5Gebju3lz+V2fFMuB/Q
-	 ZG8upnvyRHMVpuySek1hBhmyctGYtzAQ6cXCXKjp1lQQHSzkE4iUJER7UN+9bgbZVA
-	 QD1lVSbKRyDW0ZEe0/EMwhfbQ3E0gDpivtn/VhyvaLE9BDL80GMlVu3pdeb2Z5HYzH
-	 TunHOOTBpQ6fbovuC8fjR2Xisgued54rZ+8BjIfP0ES1hs+vhy0arR1Uy65Q8BhfC2
-	 L9k/9/uQq129XN7CqmqHgViTcChBd1BD0wYRt70Q9poeuLwbSEYOWmAUrgkw/tMMZW
-	 DvOdLKPmgYbZg==
-Date: Fri, 25 Jul 2025 15:30:27 -0500
+	b=FEXjstUOI0TN9HQBSTBwqbatkXGLTR8j38MRH0gaYGIjujVkhVpmcdbrufiYTszqh
+	 ixhIl1p7DSDHg+eXdv19MOviwgiL6yDT3Sdfr9UvFsaDUwIURonuKLJ4buX0FqURKj
+	 vJDuCcW94BuqQ2EeIuKROn1vn3TyYKszJkmmbyqApPir9CHfxOO/XqucVDJnSRazip
+	 9Nzcwxa+Yf3rEBR3wHIxoOYkXz4bnce80LHQaI7vkxojkbhp7CKUyO+pus/y705TKF
+	 uWbYGINWxygVgHZH6wPF4H5nP+zOhZzq5vqqSUqJ/HLOI3kS82hUx6KZ4mpYuuo0zO
+	 N/mMYbJxHCwtw==
+Date: Fri, 25 Jul 2025 18:03:55 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: andersson@kernel.org, devicetree@vger.kernel.org, ck.hu@mediatek.com,
-	olivia.wen@mediatek.com, linus.walleij@linaro.org,
-	tglx@linutronix.de, mathieu.poirier@linaro.org,
-	sean.wang@kernel.org, andy.teng@mediatek.com,
-	jiaxin.yu@mediatek.com, kishon@kernel.org,
-	linux-sound@vger.kernel.org, linux-kernel@vger.kernel.org,
-	jieyy.yang@mediatek.com, simona@ffwll.ch,
-	linux-mediatek@lists.infradead.org, krzk+dt@kernel.org,
-	linux-remoteproc@vger.kernel.org, mwalle@kernel.org,
-	davem@davemloft.net, airlied@gmail.com, chunfeng.yun@mediatek.com,
-	linux-crypto@vger.kernel.org, tinghan.shen@mediatek.com,
-	arnd@arndb.de, chunkuang.hu@kernel.org, atenart@kernel.org,
-	linux-phy@lists.infradead.org, frank-w@public-files.de,
-	linux-media@vger.kernel.org, sam.shih@mediatek.com,
-	mripard@kernel.org, lgirdwood@gmail.com, daniel.lezcano@linaro.org,
-	maarten.lankhorst@linux.intel.com, houlong.wei@mediatek.com,
-	dri-devel@lists.freedesktop.org, herbert@gondor.apana.org.au,
-	matthias.bgg@gmail.com, jassisinghbrar@gmail.com, vkoul@kernel.org,
-	mchehab@kernel.org, linux-gpio@vger.kernel.org,
-	kyrie.wu@mediatek.corp-partner.google.com,
-	linux-arm-kernel@lists.infradead.org, shane.chien@mediatek.com,
-	conor+dt@kernel.org, p.zabel@pengutronix.de, granquet@baylibre.com,
-	jitao.shi@mediatek.com, fparent@baylibre.com, tzimmermann@suse.de,
-	eugen.hristev@linaro.org, broonie@kernel.org
-Subject: Re: [PATCH 12/38] dt-bindings: regulator: mediatek,mt6331: Add
- missing compatible
-Message-ID: <175347542615.1838505.12887834541571951617.robh@kernel.org>
-References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-13-angelogioacchino.delregno@collabora.com>
+To: Jonas Karlman <jonas@kwiboo.se>
+Cc: linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Yao Zi <ziyao@disroot.org>, devicetree@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+	Vinod Koul <vkoul@kernel.org>, Chukun Pan <amadeus@jmu.edu.cn>
+Subject: Re: [PATCH 01/11] dt-bindings: phy: rockchip,inno-usb2phy: Require
+ GRF for RK3568/RV1108
+Message-ID: <20250725230355.GB1993803-robh@kernel.org>
+References: <20250723122323.2344916-1-jonas@kwiboo.se>
+ <20250723122323.2344916-2-jonas@kwiboo.se>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250724083914.61351-13-angelogioacchino.delregno@collabora.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250725_133028_489019_C2642DAA 
-X-CRM114-Status: UNSURE (   8.50  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250723122323.2344916-2-jonas@kwiboo.se>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,16 +78,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 24 Jul 2025 10:38:48 +0200, AngeloGioacchino Del Regno wrote:
-> This binding had no compatible and for this reason would not be
-> applied to anything: add the missing "mediatek,mt6331-regulator"
-> comaptible.
+On Wed, 23 Jul 2025 12:22:59 +0000, Jonas Karlman wrote:
+> Typically these Rockchip USB2 PHYs are fully contained within a single
+> GRF. However, for RK3568 and RV1108 regs to control the USB2 PHY is
+> located in a different GRF compared to the base address.
 > 
-> Fixes: 6385e21692bb ("regulator: Add bindings for MT6331 regulator")
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Update this binding to require rockchip,usbgrf for RK3568 and RV1108 to
+> properly reflect that the USB GRF is required to control the USB2 PHYs
+> on these variants. Also disable use of rockchip,usbgrf for variants
+> where it is not required.
+> 
+> This should not introduce any breakage as the affected usb2phy nodes for
+> RK3568 and RV1108 were added together with a rockchip,usbgrf phandle in
+> their initial commit.
+> 
+> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 > ---
->  .../bindings/regulator/mediatek,mt6331-regulator.yaml      | 7 +++++++
->  1 file changed, 7 insertions(+)
+>  .../bindings/phy/rockchip,inno-usb2phy.yaml        | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
