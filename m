@@ -4,68 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B3F0C87FD5
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Jul 2025 18:34:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 292BFC83F26
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Jul 2025 03:24:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EcZJOAcislOzpilsFMTklmqI508ZsHGvudj+hwsMbW4=; b=LD6zPgvhNTZrLO
-	j06hK2acWze9e1fuMacpDd5vlQW0MS+Ti84gxruPg/k2DUGfPnklBtcMazjXkIkunVDwDyfclK/iV
-	fQ792sDYqbbNLw15RrFYXG6nbDUqgFUSepUwJOJC3PkoD/Szgf0iKSL3saeGFKRlduvex+dtcUNE6
-	pEp84YrT68tbMl8K7qOk3i8IEMlJRcVOovCV16Jg+bYq8VjaSsopgEo5IOKfQpeOpz6ZC27rEGeh/
-	ayQkCe9wBg+AIV/LZoLsHhB0pSGEgq1OmNV3hB0JBjo8rais86wDvskipRrcxFCzFGmZkc8HCi2+s
-	c94adCx/uVslMJ3m7wYg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=pKtKZrS5IP/Mj99enkB1ax9sSKp44pM5YKaDpvV3Klo=; b=Vvc7lEPhaHyhOQbqK/dWIcaa89
+	J6TfVsva/4TbT4Zhm54EwZtlwvVt5RgSsYblyatq8fmWkwBi37Xg0HCgeK5NIflpw1DBO5kjekraL
+	1+vZ2DLsqeq5gHDnojQFw/ZYWJmX8zgPByywk52NeL27yLEp+usElrOx570x+jBRayPznd9HxeFsi
+	2c3ah1H7JpSSP71/ig1jFXDVbkQ1LCUTalnNOeSRUIUA4vzQMWYLjV7Mshu1PC9PL9HjqKBMcLBrc
+	XcgTkXQ2jDeedoGSRvDHJGWazpWqiDpg0BWjp2K+QM1JBxr4NtH0RPncUa+jOETEI4RiaxaqGGRTg
+	xliPxaHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uf0li-00000008Cuu-0pob;
-	Thu, 24 Jul 2025 18:34:14 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uf933-00000008y3B-2vw4;
+	Fri, 25 Jul 2025 03:24:41 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueyBa-00000007vCZ-0Uc0
-	for linux-phy@lists.infradead.org;
-	Thu, 24 Jul 2025 15:48:49 +0000
+	id 1uf8y1-00000008xVD-2z2j;
+	Fri, 25 Jul 2025 03:19:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5A0BD4676D;
-	Thu, 24 Jul 2025 15:48:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DA4DC4CEED;
-	Thu, 24 Jul 2025 15:48:45 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0910A466DA;
+	Fri, 25 Jul 2025 03:19:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA661C4CEF1;
+	Fri, 25 Jul 2025 03:19:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753372125;
-	bh=EwsPyx7dz7vSpeeYkSkzX73MFwyn2UY9p6ctVWyUVJ8=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=TTfOYXzXn83LMaoSCKQ7FQTrldOsvDJkszbaNyRHLH19Ep//UAGcACCxg6d28dQbl
-	 JiNup8Yo6ASaCMf4rgh50vlQig0v/xcBEo97rJw8Eg0pKhk4N/H6ycoz8d43UJVLzM
-	 stTH4MqniaNaJMooZs179P1HggFZsG045HVKWc1PYwnlR0nqhbMRBD/zOTvpqraTwS
-	 CuB9CBr7RI0jk0gFLZjyMtw3+QeIpQV2meqUk7ej+5Wm3ccjSKrfBKF1vVOvW4GYxU
-	 a177XwHZdDmrrKu+T/BALViZ6fK1CxZTi4BCfP8+DBI9eZAFJ5Ya8dtsQZ8Pm7ZI3A
-	 tVXX5TcqG2HPg==
-Received: from johan by xi.lan with local (Exim 4.98.2)
-	(envelope-from <johan@kernel.org>)
-	id 1ueyBV-000000004BL-0MEm;
-	Thu, 24 Jul 2025 17:48:41 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Justin Chen <justin.chen@broadcom.com>,
-	Al Cooper <alcooperx@gmail.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan@kernel.org>
-Subject: [PATCH 10/11] phy: ti: dm816x-usb: drop unused module alias
-Date: Thu, 24 Jul 2025 17:48:22 +0200
-Message-ID: <20250724154823.15998-11-johan@kernel.org>
-X-Mailer: git-send-email 2.49.1
-In-Reply-To: <20250724154823.15998-1-johan@kernel.org>
-References: <20250724154823.15998-1-johan@kernel.org>
+	s=k20201202; t=1753413568;
+	bh=0KiFC8fwEUOu3JvvhwPCsV2fW+CJ2VM2NDno0CyQEeI=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=RDkK4YiLJ2iFFBHK5wf2cHj2RxA+t+fxQys+SaL/PTj9HvRgelM5CUJlPs2VzzTKR
+	 6ukreCa7eKYG6jnzW4OA9FLqDyR0vQEqa4Fu5OoZGU3d+A1r05xE8xMUt0MQl8WaE/
+	 LQmBPOtu4mJgQgbUXcAOcQ3usfuF4L7qC3my2zoHOip/7uzKFJbkir2pGpcmjlnZEF
+	 tKgT2j1v+0OtPaYnbN/XBMjF5mEHuNTO95tzcPAHkJMESq0wnicADiPYitW6U+Jisu
+	 qCm9CxBrqPNwuFuwrH6LlYeL2CbvQKt/jazszvNuYEOkt3Az3f9RIIGR5XmnufO6eL
+	 8FGnKugOHyUIg==
+Date: Thu, 24 Jul 2025 22:19:28 -0500
 MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: dri-devel@lists.freedesktop.org, kishon@kernel.org, 
+ jieyy.yang@mediatek.com, airlied@gmail.com, linus.walleij@linaro.org, 
+ chunkuang.hu@kernel.org, daniel.lezcano@linaro.org, 
+ linux-crypto@vger.kernel.org, mchehab@kernel.org, 
+ linux-phy@lists.infradead.org, davem@davemloft.net, 
+ herbert@gondor.apana.org.au, sean.wang@kernel.org, andersson@kernel.org, 
+ chunfeng.yun@mediatek.com, conor+dt@kernel.org, jiaxin.yu@mediatek.com, 
+ granquet@baylibre.com, mripard@kernel.org, fparent@baylibre.com, 
+ linux-arm-kernel@lists.infradead.org, linux-remoteproc@vger.kernel.org, 
+ jitao.shi@mediatek.com, p.zabel@pengutronix.de, sam.shih@mediatek.com, 
+ kyrie.wu@mediatek.corp-partner.google.com, shane.chien@mediatek.com, 
+ lgirdwood@gmail.com, broonie@kernel.org, eugen.hristev@linaro.org, 
+ mathieu.poirier@linaro.org, frank-w@public-files.de, vkoul@kernel.org, 
+ devicetree@vger.kernel.org, ck.hu@mediatek.com, 
+ linux-kernel@vger.kernel.org, krzk+dt@kernel.org, jassisinghbrar@gmail.com, 
+ linux-sound@vger.kernel.org, maarten.lankhorst@linux.intel.com, 
+ simona@ffwll.ch, tinghan.shen@mediatek.com, houlong.wei@mediatek.com, 
+ olivia.wen@mediatek.com, mwalle@kernel.org, andy.teng@mediatek.com, 
+ tglx@linutronix.de, linux-media@vger.kernel.org, tzimmermann@suse.de, 
+ arnd@arndb.de, linux-gpio@vger.kernel.org, matthias.bgg@gmail.com, 
+ atenart@kernel.org, linux-mediatek@lists.infradead.org
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
+References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
+Message-Id: <175341328431.3754787.18018620819896424784.robh@kernel.org>
+Subject: Re: [PATCH 00/38] MediaTek devicetree/bindings warnings
+ sanitization
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_084846_235335_98B176F1 
-X-CRM114-Status: UNSURE (   7.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250724_201929_830296_6E7B2264 
+X-CRM114-Status: GOOD (  19.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,28 +91,502 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver has never supported anything but OF probe so drop the unused
-platform module alias.
 
-Signed-off-by: Johan Hovold <johan@kernel.org>
----
- drivers/phy/ti/phy-dm816x-usb.c | 1 -
- 1 file changed, 1 deletion(-)
+On Thu, 24 Jul 2025 10:38:36 +0200, AngeloGioacchino Del Regno wrote:
+> As Rob pointed out, MediaTek devicetrees are *poor* in the dtbs_check
+> tests, and got an infinite load of warnings.
+> 
+> This series starts attacking this situation.
+> 
+> I didn't really count how many warnings I have resolved - it's a lot
+> of them anyway - and I think that this is a good start in any case.
+> 
+> More will come, but I'll be on a long holiday soon, so not from me
+> (or anyway not before I come back anyway), but most probably from
+> someone else (in August...!).
+> 
+> Cheers!
+> Angelo
+> 
+> AngeloGioacchino Del Regno (38):
+>   dt-bindings: display: mediatek: dpi: Allow specifying resets
+>   dt-bindings: display: mediatek,dp: Allow DisplayPort AUX bus
+>   dt-bindings: mailbox: mediatek,gce-mailbox: Make clock-names optional
+>   ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks and clock-names
+>   dt-bindings: crypto: inside-secure,safexcel: Mandate only ring IRQs
+>   dt-bindings: timer: mediatek: Add compatible for MT6795 GP Timer
+>   dt-bindings: pinctrl: mediatek,mt7622-pinctrl: Add missing pwm_ch7_2
+>   dt-bindings: pinctrl: mediatek,mt7622-pinctrl: Add missing base reg
+>   dt-bindings: pinctrl: mt6779: Allow common MediaTek pinctrl node names
+>   dt-bindings: regulator: mediatek,mt6332-regulator: Add missing
+>     compatible
+>   dt-bindings: regulator: mediatek,mt6331: Fix various regulator names
+>   dt-bindings: regulator: mediatek,mt6331: Add missing compatible
+>   dt-bindings: remoteproc: mediatek: Remove l1tcm MMIO from MT8188 dual
+>   dt-bindings: media: mediatek,mt8195-jpeg: Allow range number in node
+>     address
+>   dt-bindings: phy: mediatek,hdmi-phy: Fix clock output names for MT8195
+>   arm64: dts: mediatek: mt6331: Fix pmic, regulators, rtc, keys node
+>     names
+>   arm64: dts: mediatek: mt6797: Fix pinctrl node names
+>   arm64: dts: mediatek: mt6797: Remove bogus id property in i2c nodes
+>   arm64: dts: mediatek: mt6795: Add mediatek,infracfg to iommu node
+>   arm64: dts: mediatek: mt6795-xperia-m5: Fix mmc0 latch-ck value
+>   arm64: dts: mediatek: mt6795-sony-xperia-m5: Add pinctrl for mmc1/mmc2
+>   arm64: dts: mediatek: Fix node name for SYSIRQ controller on all SoCs
+>   arm64: dts: mediatek: mt7986a: Fix PCI-Express T-PHY node address
+>   arm64: dts: mediatek: mt7986a-bpi-r3: Fix SFP I2C node names
+>   arm64: dts: mediatek: mt7986a-bpi-r3: Set interrupt-parent to mdio
+>     switch
+>   arm64: dts: mediatek: acelink-ew-7886cax: Remove unnecessary cells in
+>     spi-nand
+>   arm64: dts: mediatek: mt7988a: Fix PCI-Express T-PHY node address
+>   arm64: dts: mediatek: mt8173: Fix pinctrl node names and cleanup
+>   arm64: dts: mediatek: mt8183: Fix pinctrl node names
+>   arm64: dts: mediatek: pumpkin-common: Fix pinctrl node names
+>   arm64: dts: mediatek: mt8183-pumpkin: Add power supply for CCI
+>   arm64: dts: mediatek: mt8183: Migrate to display controller OF graph
+>   arm64: dts: mediatek: mt8183-kukui: Move DSI panel node to machine
+>     dtsis
+>   arm64: dts: mediatek: mt8195: Fix ranges for jpeg enc/decoder nodes
+>   arm64: dts: mediatek: mt8195-cherry: Move VBAT-supply to Tomato R1/R2
+>   arm64: dts: mediatek: mt8195-cherry: Add missing regulators to rt5682
+>   arm64: dts: mediatek: mt8395-kontron-i1200: Fix MT6360 regulator nodes
+>   arm64: dts: mediatek: mt8516-pumpkin: Fix machine compatible
+> 
+>  .../crypto/inside-secure,safexcel.yaml        |   2 +
+>  .../display/mediatek/mediatek,dp.yaml         |   3 +
+>  .../display/mediatek/mediatek,dpi.yaml        |   7 +
+>  .../mailbox/mediatek,gce-mailbox.yaml         |  11 -
+>  .../media/mediatek,mt8195-jpegdec.yaml        |   2 +-
+>  .../media/mediatek,mt8195-jpegenc.yaml        |   2 +-
+>  .../bindings/phy/mediatek,hdmi-phy.yaml       |  25 +-
+>  .../pinctrl/mediatek,mt6779-pinctrl.yaml      |   4 +-
+>  .../pinctrl/mediatek,mt7622-pinctrl.yaml      |   5 +-
+>  .../regulator/mediatek,mt6331-regulator.yaml  |  19 +-
+>  .../regulator/mediatek,mt6332-regulator.yaml  |   7 +
+>  .../bindings/remoteproc/mtk,scp.yaml          |  23 +-
+>  .../bindings/sound/mt8192-afe-pcm.yaml        | 106 +++++++-
+>  .../bindings/timer/mediatek,timer.yaml        |   1 +
+>  arch/arm64/boot/dts/mediatek/mt6331.dtsi      |  10 +-
+>  arch/arm64/boot/dts/mediatek/mt6755.dtsi      |   2 +-
+>  arch/arm64/boot/dts/mediatek/mt6779.dtsi      |   2 +-
+>  .../dts/mediatek/mt6795-sony-xperia-m5.dts    |  40 ++-
+>  arch/arm64/boot/dts/mediatek/mt6795.dtsi      |   3 +-
+>  arch/arm64/boot/dts/mediatek/mt6797.dtsi      |  52 ++--
+>  .../mediatek/mt7986a-acelink-ew-7886cax.dts   |   2 -
+>  .../dts/mediatek/mt7986a-bananapi-bpi-r3.dts  |  11 +-
+>  arch/arm64/boot/dts/mediatek/mt7986a.dtsi     |  12 +-
+>  arch/arm64/boot/dts/mediatek/mt7988a.dtsi     |  28 +-
+>  .../boot/dts/mediatek/mt8173-elm-hana.dtsi    |  34 ++-
+>  arch/arm64/boot/dts/mediatek/mt8173-elm.dtsi  | 138 +++++-----
+>  arch/arm64/boot/dts/mediatek/mt8173-evb.dts   |  60 +++--
+>  arch/arm64/boot/dts/mediatek/mt8173.dtsi      |  28 +-
+>  .../mediatek/mt8183-kukui-audio-da7219.dtsi   |   4 +-
+>  .../mediatek/mt8183-kukui-audio-ts3a227e.dtsi |   2 +-
+>  .../dts/mediatek/mt8183-kukui-jacuzzi.dtsi    |  27 +-
+>  .../dts/mediatek/mt8183-kukui-kakadu.dtsi     |  43 +++-
+>  .../dts/mediatek/mt8183-kukui-kodama.dtsi     |  40 ++-
+>  .../boot/dts/mediatek/mt8183-kukui-krane.dtsi |  40 ++-
+>  .../arm64/boot/dts/mediatek/mt8183-kukui.dtsi | 101 +++-----
+>  .../boot/dts/mediatek/mt8183-pumpkin.dts      |  12 +-
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 239 +++++++++++++++++-
+>  .../dts/mediatek/mt8195-cherry-tomato-r1.dts  |   1 +
+>  .../dts/mediatek/mt8195-cherry-tomato-r2.dts  |   1 +
+>  .../boot/dts/mediatek/mt8195-cherry.dtsi      |   3 +-
+>  arch/arm64/boot/dts/mediatek/mt8195.dtsi      |  30 ++-
+>  .../mediatek/mt8395-kontron-3-5-sbc-i1200.dts |  16 +-
+>  .../boot/dts/mediatek/mt8516-pumpkin.dts      |   2 +-
+>  .../boot/dts/mediatek/pumpkin-common.dtsi     |  18 +-
+>  44 files changed, 843 insertions(+), 375 deletions(-)
+> 
+> --
+> 2.50.1
+> 
+> 
+> 
 
-diff --git a/drivers/phy/ti/phy-dm816x-usb.c b/drivers/phy/ti/phy-dm816x-usb.c
-index e8f842d4e841..d274831b731c 100644
---- a/drivers/phy/ti/phy-dm816x-usb.c
-+++ b/drivers/phy/ti/phy-dm816x-usb.c
-@@ -269,7 +269,6 @@ static struct platform_driver dm816x_usb_phy_driver = {
- 
- module_platform_driver(dm816x_usb_phy_driver);
- 
--MODULE_ALIAS("platform:dm816x_usb");
- MODULE_AUTHOR("Tony Lindgren <tony@atomide.com>");
- MODULE_DESCRIPTION("dm816x usb phy driver");
- MODULE_LICENSE("GPL v2");
--- 
-2.49.1
+
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+This patch series was applied (using b4) to base:
+ Base: attempting to guess base-commit...
+ Base: tags/next-20250724 (exact match)
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/mediatek/' for 20250724083914.61351-1-angelogioacchino.delregno@collabora.com:
+
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8173-elm.dtb: pinctrl@1000b000 (mediatek,mt8173-pinctrl): 'gpio-line-names' does not match any of the regexes: '^pinctrl-[0-9]+$', 'pins$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt65xx-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8173-elm-hana-rev7.dtb: pinctrl@1000b000 (mediatek,mt8173-pinctrl): 'gpio-line-names' does not match any of the regexes: '^pinctrl-[0-9]+$', 'pins$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt65xx-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku1.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku7.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8173-elm-hana.dtb: pinctrl@1000b000 (mediatek,mt8173-pinctrl): 'gpio-line-names' does not match any of the regexes: '^pinctrl-[0-9]+$', 'pins$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt65xx-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel-sku6.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel14-sku2.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-makomo-sku0.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt7988a-bananapi-bpi-r4.dtb: t-phy@11c50000 (mediatek,mt7986-tphy): usb-phy@700:reg: [[0, 1792], [0, 2304]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/mediatek,tphy.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu-sku22.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt7988a-bananapi-bpi-r4-2g5.dtb: t-phy@11c50000 (mediatek,mt7986-tphy): usb-phy@700:reg: [[0, 1792], [0, 2304]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/mediatek,tphy.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kappa.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: pmic (mediatek,mt6331): 'mt6332-led' does not match any of the regexes: '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/mfd/mediatek,mt6397.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: pmic (mediatek,mt6331): regulators:compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt6331-regulator'] is too short
+	'mediatek,mt6331-regulator' is not one of ['mediatek,mt6323-regulator', 'mediatek,mt6328-regulator', 'mediatek,mt6358-regulator', 'mediatek,mt6359-regulator', 'mediatek,mt6397-regulator']
+	'mediatek,mt6331-regulator' is not one of ['mediatek,mt6366-regulator']
+	from schema $id: http://devicetree.org/schemas/mfd/mediatek,mt6397.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: regulators (mediatek,mt6331-regulator): 'ldo-vio28' does not match any of the regexes: '^buck-v(core2|io18|dvfs11|dvfs12|dvfs13|dvfs14)$', '^ldo-(avdd32aud|vauxa32)$', '^ldo-v(dig18|emc33|ibr|mc|mch|mipi|rtc|sim1|sim2|sram|usb10)$', '^ldo-vcam(a|af|d|io)$', '^ldo-vgp[1234]$', '^ldo-vtcxo[12]$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/regulator/mediatek,mt6331-regulator.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: regulators (mediatek,mt6331-regulator): ldo-vcamio:regulator-name:0: 'vcam_io' does not match '^vcam(a|_af|d|io)$'
+	from schema $id: http://devicetree.org/schemas/regulator/mediatek,mt6331-regulator.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-juniper-sku16.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: mmc@11240000 (mediatek,mt6795-mmc): pinctrl-names: ['default'] is too short
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: mmc@11240000 (mediatek,mt6795-mmc): Unevaluated properties are not allowed ('pinctrl-names' was unexpected)
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: mmc@11250000 (mediatek,mt6795-mmc): pinctrl-names: ['default'] is too short
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml#
+arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dtb: mmc@11250000 (mediatek,mt6795-mmc): Unevaluated properties are not allowed ('pinctrl-names' was unexpected)
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku32.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-katsu-sku38.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-pico.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): 'gpio-line-names' does not match any of the regexes: '-pins(-[a-z]+)?$', '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc0-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-default-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-cmd-dat:mediatek,pull-up-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dtb: pinctrl@10005000 (mediatek,mt8183-pinctrl): mmc1-uhs-pins:pins-clk:mediatek,pull-down-adv: 10 is not one of [0, 1, 2, 3]
+	from schema $id: http://devicetree.org/schemas/pinctrl/mediatek,mt8183-pinctrl.yaml#
+
+
+
+
 
 
 -- 
