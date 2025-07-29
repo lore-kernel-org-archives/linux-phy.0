@@ -4,73 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39A39C87FCB
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Jul 2025 16:36:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B11FC83F26
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 09:04:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kzn0o8NWdf2YJhVPvjW4KQz3H8ZP0Y2w7SrmUCqHvPs=; b=16HX9xERBZg34P
-	Zl7DYLILsPAcSZFMumdLK/vY2Bs7y5KZUkwaF4osVyADH/xXuh592kzhHkQu+Y184OXe4ZnLmZL1o
-	VAyGgCIahTTvzSPGH/MBSAiHmu7ETWUp8zJQv88kU+n+wZW2DXuOfpdkZuOZ+AXKUniQtsKusfPA9
-	X3v4r+85TTAsNAJUFQGyLSNTaqOpJlRglcXImB2F7UF6kTUNG89H21YayDaGd9Dr0tA4AQaTpc6Vs
-	lMRzCtpIM5obDTfQwcFY436YKTq02b2wZIpkzQTMzDe7aDNEsB6TiDe2A5PcjMDIAWl77RNuRAlqZ
-	9V5wctSScL/zW3Yrrdag==;
+	List-Owner; bh=VJ/ad2pUBn4vtq5BmKTRksx0k0HpvCCCtI1Ai9RlkxY=; b=jUjKyiBVd58APx
+	ySdltwvYQJlsX4IcXAL/UxYHkWf9Lzar+Du9mt8aPVlm8ipkSP1aYhUg7UBo9VZoId4wOjh9rfFkH
+	lAtY+5gJ771huvXkyXj231nxOrL1w3bT7qYQYaqUvMTtwAe6XS++J31SpZhEpdP1cgOaCJdOzNH2M
+	zXdWv3iqHLCerKQBOujqP3yE9MSQnVleA/drVrYZpGIwToZygOt8Bq1i2WJDAB0pT28af1Z5/EqVi
+	UGHM/WwLNQcnes+T+6fFDreEHa95W1GxWjkaC5kwByCL9lm5+DyvTMFW9qhk6c8EzbW2NJpstKsxW
+	nY9niLYtQYE8+Q6Cvz1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ugQq2-0000000Ezo3-4Bh8;
-	Mon, 28 Jul 2025 16:36:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uggG6-0000000GKfu-3Xv3;
+	Tue, 29 Jul 2025 09:04:30 +0000
+Received: from smtpbg154.qq.com ([15.184.224.54])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ugPxR-0000000Er1F-485f
-	for linux-phy@lists.infradead.org;
-	Mon, 28 Jul 2025 15:40:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 633A8601F5;
-	Mon, 28 Jul 2025 15:39:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C5B16C4CEF7;
-	Mon, 28 Jul 2025 15:39:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753717178;
-	bh=cFi44ncW4MLjAmtCd1ltfr6b+orIKdQtgComk8+rcgU=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=LqS+nC0am/Xdg2Lw4s+SvMCVin19X8OFX6HQqOaLsI2rRX19Ijax4rVRrY34nlULU
-	 I2NJGMVPnvGP2cgAX7AIOvEMjZxe27bEFM/Baj1FhI/JF+f2OJ8Pm1jq8wbzH0ErNz
-	 Uc2JbeCyqbKZ8dY6Q2ChvzlpokWsDV0dRzxik5oE0aaK9v350AMb2uTOFHWljBrh3A
-	 PiocqsIBgdmQ7IMbleuLuzlkfzvDURhcopo3dYt/2g/0RcQD9yLCPDWuNRC5Ls0LuE
-	 h80bDTZLau829MCRluXDY0K1k9VC1DU74hxTkxaJV2pkQQnFrDIL6Wjj96CwcbOC3O
-	 4kG4YJtfH/Ttw==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AE12DC87FCB;
-	Mon, 28 Jul 2025 15:39:38 +0000 (UTC)
-From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Date: Mon, 28 Jul 2025 17:39:30 +0200
-Subject: [PATCH 2/2] phy: add basic support for NXPs TJA1145 CAN
- transceiver
-MIME-Version: 1.0
-Message-Id: <20250728-tja1145-support-v1-2-ebd8494d545c@liebherr.com>
-References: <20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com>
-In-Reply-To: <20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1753717177; l=7261;
- i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=xQm1ZMNyyki2fr/Z9Lg4N4qqLulA01+okhg1FBDHbTI=;
- b=q1Yjlb9vh+DnMv54ZDY3F/knMVixj141CVkcp3bXqda8uSp4GVGy+TibUE1ICSIPjtHFKhy3t
- ivoIWOZJfjXC1Cl11jTrpvGBmYcAqeZRzbXFLUvRqqo7t5L1YGVhOqc
-X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
- pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
-X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
- with auth_id=290
-X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+	id 1uggDb-0000000GK46-1UxS;
+	Tue, 29 Jul 2025 09:01:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1753779659;
+	bh=RN1WwuxpO4LBAyRHMTh9poQETUIZdvEm0QRwkE/4D2M=;
+	h=From:To:Subject:Date:Message-Id;
+	b=KkG2ySehTeBQkOmAt5k0R0G0NtoKWFklOzK/saBy4xqKa4sCChrtgN94J7N5xFzrp
+	 c+GR9alQnc8GoIXC0vMY9Iv00LAMx1vrLZJa0cKv+fQJWgK/CMQ4bKz9SKGEyjQ06I
+	 fzPL0v6NBxA56RH4ieUKQAP6cSgHIF210+CbCdj4=
+X-QQ-mid: zesmtpgz1t1753779650tbf9605c9
+X-QQ-Originating-IP: HOYsq8iA7FlhH8Rvf76IYCZ9Rt5I5SBH31MTUBKXFD4=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Tue, 29 Jul 2025 17:00:48 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 18407573237461644155
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>,
+	Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Robinson <pbrobinson@gmail.com>
+Cc: devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH v3 3/5] drm/rockchip: cdn-dp: Support handle lane info and HPD without extcon
+Date: Tue, 29 Jul 2025 17:00:30 +0800
+Message-Id: <20250729090032.97-4-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20250729090032.97-1-kernel@airkyi.com>
+References: <20250729090032.97-1-kernel@airkyi.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
+X-QQ-XMAILINFO: NNy5VkfPTUBB1aBU7kJ+xjDPayt1AIYaz0QiCOWf2xy80aMQ08Nyl71m
+	13siKxWIvK/ee0aI3k6b5OwkPXiplWUcRfVJ1i/3x3rZfKOfNUU6hIpgedzvxrdv6ib4o2F
+	4Dg7nYIToKWu/Uvdr+th/bC45+fKLQ0e77vk6DDRhFOOLSjzIRZjVRQfhBb9nMLt7Bipj0k
+	sx8chqQWYFMNqgXBdP2wjuIFSAO14L7Vbr5YPkVUULkM3pRd7WlNI9VExPy5WEyuiegzKBB
+	1us94CwyVHflMMqnUO8lHexOFD8jSf3s3tnbRWfTxGF/cfSexCMVD23tKgQLcni5eeJh0+/
+	BTsnweVgI9UrDgmoLAlnkMwHbMnzFq48DIwBg6qki/MYJkaHC85/EueK5H9v/HAbTFhbPvu
+	nBsLoemqVT8bukMZdnUtDsLovN2XFtYzH+tOZwPs1mdEGErEO1VojvV7CZqH1ouoI4syHe4
+	iBc+wA5YUsrh3NjGSUHOyncQyxOs725AtZPMo7w85fXr+fsYj/QCrLCNsx+nZlLwRDf0Q2l
+	XPhUb2s6tXMGTiHTfa5BndpqePnJirs1B8FGn+kHQIrPKCDOzi8fnnfbR742Nfc4CHVR3+L
+	8OUu0a8tDuAmv5+2aaq8TkSTB44ytqssZQWq0NkGLDoK15z0EVoYazwbxoncgHpeQUxOvOz
+	vpDVc2A2wFhBDjO+oNsgMc9yEBryaXZE9LqBlIIlAtAGWdq39j8WN7Vp1XY5PQ2CGNSpaXk
+	51qUOVJRvlLTK9mXIXPyJe9gCD0xVxJe6pR2NzZvEhPFe8D9KbdX05DVBaJSSSoZXgbIRwt
+	87AEkky5h507WPQIsit+jpxVZ2gvk86oZ3GdFZUeNxbBomzU/3y5Rpq7u2BVgqQv4NYZcUU
+	9zmk6KzEI8a/m4nwoBml0eV4/BK7s+owv7E4rOvyDKydN7loVIETLgy5Ok7gHpqA9++jg6P
+	TNETq5q7OZUIdYi7/obMHoLI1lGHGrAlO6d+6Xai8TJXXZtQyPNt9rrm353vmh5SkwSAUJ9
+	D3eNfE60Kn1E5XXBwU
+X-QQ-XMRINFO: NyFYKkN4Ny6FSmKK/uo/jdU=
+X-QQ-RECHKSPAM: 0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250729_020156_012840_15475C3B 
+X-CRM114-Status: GOOD (  17.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,252 +111,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dimitri.fedrau@liebherr.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
-PHY up/down by switching to normal/standby mode using SPI commands.
+This patch add support for get PHY lane info and handle HPD state
+without help of extcon.
 
-Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+There is no extcon needed if the Type-C controller is present. In this
+case, cdn_dp_hpd_notify() will handle HPD event from USB/DP combo PHY,
+and the lane info can be get from PHY instead of extcon.
+
+The extcon device should still be supported if Type-C controller is
+not present.
+
+Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 ---
- drivers/phy/Kconfig           |  10 +++
- drivers/phy/Makefile          |   1 +
- drivers/phy/phy-nxp-tja1145.c | 185 ++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 196 insertions(+)
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 58c911e1b2d20a0398f02550e938ce62633230d4..c47e2b62fa6279ee610493b028d3c14f6499ca85 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -101,6 +101,16 @@ config PHY_NXP_PTN3222
- 	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
- 	  Speed and High Speed.
+Changes in v2:
+- Ignore duplicate HPD events.
+
+ drivers/gpu/drm/rockchip/cdn-dp-core.c | 37 ++++++++++++++++++++------
+ 1 file changed, 29 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/gpu/drm/rockchip/cdn-dp-core.c b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+index 24f6b3879f4b..b574b059b58d 100644
+--- a/drivers/gpu/drm/rockchip/cdn-dp-core.c
++++ b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+@@ -156,6 +156,9 @@ static int cdn_dp_get_port_lanes(struct cdn_dp_port *port)
+ 	int dptx;
+ 	u8 lanes;
  
-+config PHY_NXP_TJA1145
-+	tristate "NXP TJA1145 CAN transceiver PHY"
-+	select GENERIC_PHY
-+	select REGMAP_SPI
-+	depends on SPI
-+	help
-+	  This option enables support for NXPs TJA1145 CAN transceiver as a PHY.
-+	  This driver provides function for putting the transceiver in various
-+	  functional modes using SPI commands.
++	if (!edev)
++		return phy_get_bus_width(port->phy);
 +
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index c670a8dac46807863c9ef990beb149082238ad16..16da564c74b0f14befb486366dcd10cd5fc67741 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -13,6 +13,7 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
-+obj-$(CONFIG_PHY_NXP_TJA1145)		+= phy-nxp-tja1145.o
- obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
-diff --git a/drivers/phy/phy-nxp-tja1145.c b/drivers/phy/phy-nxp-tja1145.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..fa8f588f84913ec3d49533d7be540b3d61b6b304
---- /dev/null
-+++ b/drivers/phy/phy-nxp-tja1145.c
-@@ -0,0 +1,185 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2025 Liebherr-Electronics and Drives GmbH
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/module.h>
-+#include <linux/regmap.h>
-+
-+#include <linux/phy/phy.h>
-+#include <linux/spi/spi.h>
-+
-+#define TJA1145_MODE_CTRL		0x01
-+#define TJA1145_MODE_CTRL_MC		GENMASK(2, 0)
-+#define TJA1145_MODE_CRTL_STBY		BIT(2)
-+#define TJA1145_MODE_CRTL_NORMAL	TJA1145_MODE_CTRL_MC
-+
-+#define TJA1145_CAN_CTRL		0x20
-+#define TJA1145_CAN_CTRL_CMC		GENMASK(1, 0)
-+#define TJA1145_CAN_CTRL_ACTIVE		BIT(1)
-+
-+#define TJA1145_IDENT			0x7e
-+#define TJA1145_IDENT_TJA1145T		0x70
-+
-+#define TJA1145_SPI_READ_BIT		BIT(0)
-+#define TJA1145T_MAX_BITRATE		1000000
-+
-+static int tja1145_phy_power_on(struct phy *phy)
+ 	dptx = extcon_get_state(edev, EXTCON_DISP_DP);
+ 	if (dptx > 0) {
+ 		extcon_get_property(edev, EXTCON_DISP_DP,
+@@ -219,7 +222,7 @@ static bool cdn_dp_check_sink_connection(struct cdn_dp_device *dp)
+ 	 * some docks need more time to power up.
+ 	 */
+ 	while (time_before(jiffies, timeout)) {
+-		if (!extcon_get_state(port->extcon, EXTCON_DISP_DP))
++		if (port->extcon && !extcon_get_state(port->extcon, EXTCON_DISP_DP))
+ 			return false;
+ 
+ 		if (!cdn_dp_get_sink_count(dp, &sink_count))
+@@ -385,11 +388,14 @@ static int cdn_dp_enable_phy(struct cdn_dp_device *dp, struct cdn_dp_port *port)
+ 		goto err_power_on;
+ 	}
+ 
+-	ret = extcon_get_property(port->extcon, EXTCON_DISP_DP,
+-				  EXTCON_PROP_USB_TYPEC_POLARITY, &property);
+-	if (ret) {
+-		DRM_DEV_ERROR(dp->dev, "get property failed\n");
+-		goto err_power_on;
++	property.intval = 0;
++	if (port->extcon) {
++		ret = extcon_get_property(port->extcon, EXTCON_DISP_DP,
++					  EXTCON_PROP_USB_TYPEC_POLARITY, &property);
++		if (ret) {
++			DRM_DEV_ERROR(dp->dev, "get property failed\n");
++			goto err_power_on;
++		}
+ 	}
+ 
+ 	port->lanes = cdn_dp_get_port_lanes(port);
+@@ -821,6 +827,17 @@ static int cdn_dp_audio_mute_stream(struct drm_connector *connector,
+ 	return ret;
+ }
+ 
++static void cdn_dp_hpd_notify(struct drm_bridge *bridge,
++			      enum drm_connector_status status)
 +{
-+	struct regmap *map = phy_get_drvdata(phy);
-+	int ret;
++	struct cdn_dp_device *dp = bridge_to_dp(bridge);
++	enum drm_connector_status last_status =
++		dp->connected ? connector_status_connected : connector_status_disconnected;
 +
-+	/*
-+	 * Switch operating mode to normal which is the active operating mode.
-+	 * In this mode, the device is fully operational.
-+	 */
-+	ret = regmap_update_bits(map, TJA1145_MODE_CTRL, TJA1145_MODE_CTRL_MC,
-+				 TJA1145_MODE_CRTL_NORMAL);
-+	if (ret)
-+		return ret;
-+
-+	/*
-+	 * Switch to CAN operating mode active where the PHY can transmit and
-+	 * receive data.
-+	 */
-+	return regmap_update_bits(map, TJA1145_CAN_CTRL, TJA1145_CAN_CTRL_CMC,
-+				  TJA1145_CAN_CTRL_ACTIVE);
++	if (last_status != status)
++		schedule_work(&dp->event_work);
 +}
 +
-+static int tja1145_phy_power_off(struct phy *phy)
-+{
-+	struct regmap *map = phy_get_drvdata(phy);
+ static const struct drm_bridge_funcs cdn_dp_bridge_funcs = {
+ 	.atomic_duplicate_state = drm_atomic_helper_bridge_duplicate_state,
+ 	.atomic_destroy_state = drm_atomic_helper_bridge_destroy_state,
+@@ -831,6 +848,7 @@ static const struct drm_bridge_funcs cdn_dp_bridge_funcs = {
+ 	.atomic_disable = cdn_dp_bridge_atomic_disable,
+ 	.mode_valid = cdn_dp_bridge_mode_valid,
+ 	.mode_set = cdn_dp_bridge_mode_set,
++	.hpd_notify = cdn_dp_hpd_notify,
+ 
+ 	.dp_audio_prepare = cdn_dp_audio_prepare,
+ 	.dp_audio_mute_stream = cdn_dp_audio_mute_stream,
+@@ -1028,6 +1046,9 @@ static int cdn_dp_bind(struct device *dev, struct device *master, void *data)
+ 	for (i = 0; i < dp->ports; i++) {
+ 		port = dp->port[i];
+ 
++		if (!port->extcon)
++			continue;
 +
-+	/*
-+	 * Switch to operating mode standby, the PHY is unable to transmit or
-+	 * receive data in standby mode.
-+	 */
-+	return regmap_update_bits(map, TJA1145_MODE_CTRL, TJA1145_MODE_CTRL_MC,
-+				  TJA1145_MODE_CRTL_STBY);
-+}
-+
-+static const struct phy_ops tja1145_phy_ops = {
-+	.power_on = tja1145_phy_power_on,
-+	.power_off = tja1145_phy_power_off,
-+};
-+
-+static const struct regmap_range tja1145_wr_holes_ranges[] = {
-+	regmap_reg_range(0x00, 0x00),
-+	regmap_reg_range(0x02, 0x03),
-+	regmap_reg_range(0x05, 0x05),
-+	regmap_reg_range(0x0b, 0x1f),
-+	regmap_reg_range(0x21, 0x22),
-+	regmap_reg_range(0x24, 0x25),
-+	regmap_reg_range(0x30, 0x4b),
-+	regmap_reg_range(0x4d, 0x60),
-+	regmap_reg_range(0x62, 0x62),
-+	regmap_reg_range(0x65, 0x67),
-+	regmap_reg_range(0x70, 0xff),
-+};
-+
-+static const struct regmap_access_table tja1145_wr_table = {
-+	.no_ranges = tja1145_wr_holes_ranges,
-+	.n_no_ranges = ARRAY_SIZE(tja1145_wr_holes_ranges),
-+};
-+
-+static const struct regmap_range tja1145_rd_holes_ranges[] = {
-+	regmap_reg_range(0x00, 0x00),
-+	regmap_reg_range(0x02, 0x02),
-+	regmap_reg_range(0x05, 0x05),
-+	regmap_reg_range(0x0b, 0x1f),
-+	regmap_reg_range(0x21, 0x21),
-+	regmap_reg_range(0x24, 0x25),
-+	regmap_reg_range(0x30, 0x4a),
-+	regmap_reg_range(0x4d, 0x5f),
-+	regmap_reg_range(0x62, 0x62),
-+	regmap_reg_range(0x65, 0x67),
-+	regmap_reg_range(0x70, 0x7d),
-+	regmap_reg_range(0x7f, 0xff),
-+};
-+
-+static const struct regmap_access_table tja1145_rd_table = {
-+	.no_ranges = tja1145_rd_holes_ranges,
-+	.n_no_ranges = ARRAY_SIZE(tja1145_rd_holes_ranges),
-+};
-+
-+
-+static const struct regmap_config tja1145_regmap_config = {
-+	.reg_bits = 8,
-+	.reg_shift = -1,
-+	.val_bits = 8,
-+	.wr_table = &tja1145_wr_table,
-+	.rd_table = &tja1145_rd_table,
-+	.read_flag_mask = TJA1145_SPI_READ_BIT,
-+	.max_register = TJA1145_IDENT,
-+};
-+
-+static int tja1145_check_ident(struct device *dev, struct regmap *map)
-+{
-+	unsigned int val;
-+	int ret;
-+
-+	ret = regmap_read(map, TJA1145_IDENT, &val);
-+	if (ret)
-+		return ret;
-+
-+	if (val != TJA1145_IDENT_TJA1145T) {
-+		dev_err(dev, "Expected device id: 0x%02x, got: 0x%02x\n",
-+			TJA1145_IDENT_TJA1145T, val);
-+		return -ENODEV;
-+	}
-+
-+	return 0;
-+}
-+
-+static int tja1145_probe(struct spi_device *spi)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &spi->dev;
-+	struct regmap *map;
-+	struct phy *phy;
-+	int ret;
-+
-+	map = devm_regmap_init_spi(spi, &tja1145_regmap_config);
-+	if (IS_ERR(map))
-+		return dev_err_probe(dev, PTR_ERR(map), "failed to init regmap\n");
-+
-+	ret = tja1145_check_ident(dev, map);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to identify device\n");
-+
-+	phy = devm_phy_create(dev, dev->of_node, &tja1145_phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy), "failed to create PHY\n");
-+
-+	phy->attrs.max_link_rate = TJA1145T_MAX_BITRATE;
-+	phy_set_drvdata(phy, map);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct spi_device_id tja1145_spi_id[] = {
-+	{ "tja1145" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(spi, tja1145_spi_id);
-+
-+static const struct of_device_id tja1145_of_match[] = {
-+	{ .compatible = "nxp,tja1145" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, tja1145_of_match);
-+
-+static struct spi_driver tja1145_driver = {
-+	.driver = {
-+		.name = "tja1145",
-+		.of_match_table = tja1145_of_match,
-+	},
-+	.probe = tja1145_probe,
-+	.id_table = tja1145_spi_id,
-+};
-+module_spi_driver(tja1145_driver);
-+
-+MODULE_DESCRIPTION("NXP TJA1145 CAN transceiver PHY driver");
-+MODULE_AUTHOR("Dimitri Fedrau <dimitri.fedrau@liebherr.com>");
-+MODULE_LICENSE("GPL");
-
+ 		port->event_nb.notifier_call = cdn_dp_pd_event;
+ 		ret = devm_extcon_register_notifier(dp->dev, port->extcon,
+ 						    EXTCON_DISP_DP,
+@@ -1120,14 +1141,14 @@ static int cdn_dp_probe(struct platform_device *pdev)
+ 		    PTR_ERR(phy) == -EPROBE_DEFER)
+ 			return -EPROBE_DEFER;
+ 
+-		if (IS_ERR(extcon) || IS_ERR(phy))
++		if (IS_ERR(phy) || PTR_ERR(extcon) != -ENODEV)
+ 			continue;
+ 
+ 		port = devm_kzalloc(dev, sizeof(*port), GFP_KERNEL);
+ 		if (!port)
+ 			return -ENOMEM;
+ 
+-		port->extcon = extcon;
++		port->extcon = IS_ERR(extcon) ? NULL : extcon;
+ 		port->phy = phy;
+ 		port->dp = dp;
+ 		port->id = i;
 -- 
-2.39.5
-
+2.49.0
 
 
 -- 
