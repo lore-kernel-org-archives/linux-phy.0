@@ -4,70 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18545C87FC9
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 10:59:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 567C5C87FC9
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 13:32:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jSpNL5KilmeW5rct5CH/2sDWnFHp5AGfFnHSWwly2Eo=; b=JuhL3tZzuF6YfP
-	QB0P+8xi4fTF6AX35JxwhDfRxvztr9n40uoyKuET74zcp5yDivICsXePzqVBsqIFajCi6lenWtac0
-	bgFkKNbxeuXuXZ2raF2P5ASzrYCUA2+TxGy2Fk7tZLlmGdmF6CiBc3JzxMAlbYJGftVUthJK6MlRm
-	3K/X3DUD20ZCT3LBQZYRon0IAAdbh0FRVdnpZy6JPNaxyGAlffsMFdQZD0ZF21QX4BGxnrbwWHQAc
-	xqiSBAaFIJBYT9HI3qLXCRvmTFaHARvSi3q/YGev+22Lww/8eHsRsBS75oqJmaSJkKxLZhV8wsqGR
-	XW3efSSYfsA+OUhJ2Y2Q==;
+	List-Owner; bh=uUBrAVUkrfFS9IOnQY571sADAoZw6F3SXKVPeAzvI9E=; b=xYg+rV8QYMcHFO
+	APw129Cy71h5lz3ILLKUGt06ni3UzJdLx0kU9ByPGANhHvong8ab2TRcbIknDPVXay8BIK+cYBNiz
+	0G9CCbttj35/W16ZwE6a0TX5twqe5Xh18nCywbuf4HnD5Lvt9sg5RS94VmSFmqtADYODlu3yhPkqb
+	xZwYDPPBvapF+LG83/WgKAL6FTDbcG+1jnGeL3WHgOczKkxvHUtcmYNa3waqn6cEq6Cu3vnFW28Bl
+	XZtyV8GiKb7S+ZfDqOukO9huavv5g3zE3WGTu5JPINInRY4gG8G3sO81/LyduagfLZPp7mWoI1SZp
+	3G1uRFKGd3cUDF6yIOPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ugi3D-0000000GaBV-32Oo;
-	Tue, 29 Jul 2025 10:59:19 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1ugkRB-0000000Goa0-3lfL;
+	Tue, 29 Jul 2025 13:32:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ughp0-0000000GYzL-2FX1
+	id 1ugkR8-0000000GoZe-38Tp
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Jul 2025 10:44:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1753785876;
-	bh=nU5WXYZ5Ubm0JEqaTpOcsj1mUeZ2KBa1iqurY0olt6s=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lC0oIZO9yZLVv56w72qdXrBp+FWFHozmGeMG3NEBw3vYJ6e+pKmI/o2/UmjPoxxhz
-	 hh+L3KbyyrJUgIhaEWY963l2K2c1YrRFvgP7ZE1N8xj0apn7hALiTaMjdBSaxeI3iT
-	 RtPOeeUi6ONSQVNIrkH3/P2HK4Z5CqgsqLoclTcN0usdXwU41Z77//5oW3cRzGIaxa
-	 j0QjzrK6rDCSSrxzxpfqN3oBEMMUdfWKHFWzLYQSdD0GP5nvU1zT9X/TKaPhsoLcEq
-	 C4ClcgnC7vjnQlbCD0g0WFVMa7xDUx1/6JNXhBOxSN419VS6UCtIN+P8MpGe/IuU68
-	 wTkJ680R0i9DA==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6637B17E0EC0;
-	Tue, 29 Jul 2025 12:44:35 +0200 (CEST)
-Message-ID: <6ea0495e-21d8-41a8-b1b0-1c99c2929de5@collabora.com>
-Date: Tue, 29 Jul 2025 12:44:34 +0200
+	Tue, 29 Jul 2025 13:32:12 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56TA2urb016216
+	for <linux-phy@lists.infradead.org>; Tue, 29 Jul 2025 13:32:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Rxf3Nnt90oOV5L8CNTt+oQ9ToPCocW8enMiasd1MNto=; b=jpnWDldJ9rk8DHmw
+	ADBKBxby2tR09BvFzV5peoYbLgDHaxu1NVUEEVdOAODl8IAqMUWC2G60HthJ6vYG
+	/ShgPqyY0SRQrqoJR6iTJkSy5K6anl7cHdIY+ORJWlCLcbUMIdNs9lT3m3By5yus
+	u47vk/XSzMKMbBaW40Kp67l5Ddt9no3/5HqKysSgsVFxTIVo6h5QhHjr35ZoURBR
+	T/s9WgeCN6sArXuSaSlJkBWjlnp+VV9T45FvpHWJvuSYldnMb/JI5im96jwCtbro
+	SAGkx6TbuYH+HHC2q/xV/ileXpfqBo2+FaMlVhJU5KeHaDniMB1dgpL3PyPz4Krb
+	Q1vDMg==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 486v6y0k0w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 29 Jul 2025 13:32:08 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-23e1f9f2010so13224095ad.2
+        for <linux-phy@lists.infradead.org>; Tue, 29 Jul 2025 06:32:08 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753795928; x=1754400728;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Rxf3Nnt90oOV5L8CNTt+oQ9ToPCocW8enMiasd1MNto=;
+        b=heO4iTQZb/7iZPLSubHm1q9a4fuYpu8uAj+ojhjE82YFjkkpgWTqV5svoqoQ7DGDJj
+         GRre0jGpOly/8Ls54kRR4ICwMzfQ093WKSEW/p1GHT/yppfFEV2DZiVEZmvjROpC4MXN
+         P9bAv5BT/2WWEz3ugRAeU/yKr9z5VX1uILDMn3F84li5sX7V11fKMXmkvAevLTrB04ys
+         20EzEZkskLdIypcuI50zUdHCRfxcSLmZuYkluwGDKp85HpJAbBOBpW6SwQywx9MCzkTS
+         KkAfBpyaTfkti12Q9qDBQOG5zRo1IroBE3iOxw3+pmm2eRfoyPo/0F2TN01E+cvNq352
+         eKmw==
+X-Forwarded-Encrypted: i=1; AJvYcCWF8FdA+Z5DiHXo5Bb+jDKbvxNjhI5sqX1lhY+o4uF1r67ub96hDNgCDSidl3cu5cpurxvs12J3sCw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmlijNRZE/7NgOX2Hm6A8dpnBOEIeJFrGxTkootrpYiTPJSqmd
+	8Hx6qmSOSF2hVCtHl/nyRlimzl7MdDRa0+26Mlw7w+oZvPAi0lx25GSiN2qJfdN6DW41Q+l6jEM
+	PsWr/y3Uclw/bFMvbY0hSE4oVfA+8L6koD0NDNh1ALA71ahvzIIoYRru626RqcMYoE2Kr
+X-Gm-Gg: ASbGncvrFq2QIetBjei5Bsb/AEUG3iW7i5ATs9+1oC+nLUblc6nbPH72V0inUafgmpN
+	V5AiDciKu6iRpWvW/l9muyp+boo71W9idizqq88KRfnqhEHwj71LdJBA4QIsxruWfdJy3tSc+Ml
+	UZOUicUfaVY/SRC9iulqAwBJsvH4hZxF0MdvrpMPLD4LctzXyYrTdWZDn6lqMKTFs85YxC8E1bR
+	H/TK1ondCqi1ZOsxY1ALPdBYOl97jiU4L9wWTzu368Y5/mekrHbeLICkApIHpu252gSqh5eqU99
+	pRTHymAYM4u2QNphferv7rhOS1uXhLHD85V6kDKhC74hTPJGFCLLgUqh55BSiEr8b5V4IGao0Vi
+	fZRBWTXbKwa/pP/ft9w==
+X-Received: by 2002:a05:6a21:4603:b0:235:6606:6840 with SMTP id adf61e73a8af0-23d701797efmr10497074637.6.1753795927894;
+        Tue, 29 Jul 2025 06:32:07 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGppZH4tBm0B0ZjZxNPeIr5Ha36dgu+n0hmG3OmQx2BO7yLnrEJlDf1YuOvKQHgy5pzupLEDg==
+X-Received: by 2002:a05:6a21:4603:b0:235:6606:6840 with SMTP id adf61e73a8af0-23d701797efmr10497026637.6.1753795927390;
+        Tue, 29 Jul 2025 06:32:07 -0700 (PDT)
+Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af8f62b27a1sm19823066b.54.2025.07.29.06.32.03
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 29 Jul 2025 06:32:05 -0700 (PDT)
+Message-ID: <8dca591d-0a4e-43ee-903a-7a6dccff9250@oss.qualcomm.com>
+Date: Tue, 29 Jul 2025 15:32:03 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and
- devm variant
-To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
-Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
- nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
- u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org
-References: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
- <20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
- <20250722150930.00000a2f@huawei.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: Re: [PATCH v7 2/3] arm64: dts: qcom: sa8775p: remove aux clock from
+ pcie phy
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>, andersson@kernel.org,
+        konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org, jingoohan1@gmail.com, mani@kernel.org,
+        lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com,
+        johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+        neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+References: <20250725102231.3608298-1-ziyue.zhang@oss.qualcomm.com>
+ <20250725102231.3608298-3-ziyue.zhang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20250722150930.00000a2f@huawei.com>
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250725102231.3608298-3-ziyue.zhang@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzI5MDEwNCBTYWx0ZWRfX7MhQ84zLraXK
+ tOL2DPTWYLOySYaT2Q4On+RiINCR8YZMNDGOahg9pBGE4hSboj1SyF1IVO+s69l+5yFey2O9NMR
+ un6/AoJxOt3x7mYCYt8TfaBiE3k2S14TSNx8DDttE1vAFhkP+XtmLQX1GoZ87cSubkIZQBw5kO7
+ eZEfytBgASZiIKzo9IekljAeCQ0eL7cJobz14o4ytQNEep8LCS3IDmlFsn7UoA2WTYc8LIX9+8C
+ WI14//5uDyK7h2z0tS37/unCoYO2pGU3hyciOFtK83HZrRMergQ5BXqRHHRiwwKlnZ99XY4Q4ec
+ qXn/W8FiiOgi6SrpVHK3Qfp89W3q7hP7pR933gUdeSFIZ+C2NlokjFCgm2OHkCjFYKWfRB/q1RW
+ gsHpPpTB9aswxI4/Fk5O1vgGNpgNWXUOH+jNoxEQo5ZFcWTYSEbJdEVO/BYO0l0JStvh4QZw
+X-Proofpoint-GUID: wdWb3ToBMldE5L3cfQ9mbJ46g6EguxPn
+X-Proofpoint-ORIG-GUID: wdWb3ToBMldE5L3cfQ9mbJ46g6EguxPn
+X-Authority-Analysis: v=2.4 cv=QYlmvtbv c=1 sm=1 tr=0 ts=6888cd58 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=8Yr4R-HfXjpLVZqX0moA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-29_03,2025-07-28_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 phishscore=0 clxscore=1015 suspectscore=0 mlxlogscore=999
+ lowpriorityscore=0 bulkscore=0 impostorscore=0 adultscore=0
+ priorityscore=1501 mlxscore=0 spamscore=0 classifier=spam authscore=0
+ authtc=n/a authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507290104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250729_034438_757098_0CDADFC8 
-X-CRM114-Status: GOOD (  33.66  )
+X-CRM114-CacheID: sfid-20250729_063210_790403_75E3C76B 
+X-CRM114-Status: GOOD (  12.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,256 +134,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 22/07/25 16:09, Jonathan Cameron ha scritto:
-> On Tue, 22 Jul 2025 12:13:11 +0200
-> AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com> wrote:
-> 
->> Some devices connected over the SPMI bus may be big, in the sense
->> that those may be a complex of devices managed by a single chip
->> over the SPMI bus, reachable through a single SID.
->>
->> Add new functions aimed at managing sub-devices of a SPMI device
->> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
->> for adding a new subdevice and removing it respectively, and also
->> add their devm_* variants.
->>
->> The need for such functions comes from the existance of	those
->> complex Power Management ICs (PMICs), which feature one or many
->> sub-devices, in some cases with these being even addressable on
->> the chip in form of SPMI register ranges.
->>
->> Examples of those devices can be found in both Qualcomm platforms
->> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
->> sub-devices, and in newer MediaTek platforms showing similar HW
->> features and a similar layout with those also having many subdevs.
->>
->> Also, instead of generally exporting symbols, export them with a
->> new "SPMI" namespace: all users will have to import this namespace
->> to make use of the newly introduced exports.
->>
->> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
->> ---
->>   drivers/spmi/spmi-devres.c | 23 +++++++++++
->>   drivers/spmi/spmi.c        | 83 ++++++++++++++++++++++++++++++++++++++
->>   include/linux/spmi.h       | 16 ++++++++
->>   3 files changed, 122 insertions(+)
->>
->> diff --git a/drivers/spmi/spmi-devres.c b/drivers/spmi/spmi-devres.c
->> index 62c4b3f24d06..7e00e38be2ff 100644
->> --- a/drivers/spmi/spmi-devres.c
->> +++ b/drivers/spmi/spmi-devres.c
->> @@ -60,5 +60,28 @@ int devm_spmi_controller_add(struct device *parent, struct spmi_controller *ctrl
->>   }
->>   EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
->>   
->> +static void devm_spmi_subdevice_remove(void *res)
->> +{
->> +	spmi_subdevice_remove((struct spmi_subdevice *)res);
-> 
-> Why the cast?  Implicit casts are fine for void * to any other pointer type
-> so
-> 	spmi_subdevice_remove(res);
-> should be fine.
-> 
-
-Because style consistency across the file... but yeah, I'm removing the cast.
-
-> 
->> +}
-> 
->>   MODULE_LICENSE("GPL");
->>   MODULE_DESCRIPTION("SPMI devres helpers");
->> diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
->> index 3cf8d9bd4566..62bb782b2bbc 100644
->> --- a/drivers/spmi/spmi.c
->> +++ b/drivers/spmi/spmi.c
->> @@ -19,6 +19,7 @@
->>   
->>   static bool is_registered;
->>   static DEFINE_IDA(ctrl_ida);
->> +static DEFINE_IDA(spmi_subdevice_ida);
->>   
->>   static void spmi_dev_release(struct device *dev)
->>   {
->> @@ -31,6 +32,18 @@ static const struct device_type spmi_dev_type = {
->>   	.release	= spmi_dev_release,
->>   };
->>   
->> +static void spmi_subdev_release(struct device *dev)
->> +{
->> +	struct spmi_device *sdev = to_spmi_device(dev);
->> +	struct spmi_subdevice *sub_sdev = container_of(sdev, struct spmi_subdevice, sdev);
->> +
->> +	kfree(sub_sdev);
->> +}
->> +
->> +static const struct device_type spmi_subdev_type = {
->> +	.release	= spmi_subdev_release,
->> +};
->> +
->>   static void spmi_ctrl_release(struct device *dev)
->>   {
->>   	struct spmi_controller *ctrl = to_spmi_controller(dev);
->> @@ -90,6 +103,19 @@ void spmi_device_remove(struct spmi_device *sdev)
->>   }
->>   EXPORT_SYMBOL_GPL(spmi_device_remove);
->>   
->> +/**
->> + * spmi_subdevice_remove() - Remove an SPMI subdevice
->> + * @sub_sdev:	spmi_device to be removed
->> + */
->> +void spmi_subdevice_remove(struct spmi_subdevice *sub_sdev)
->> +{
->> +	struct spmi_device *sdev = &sub_sdev->sdev;
->> +
->> +	device_unregister(&sdev->dev);
->> +	ida_free(&spmi_subdevice_ida, sub_sdev->devid);
-> 
-> Why not make the ida free part of the release? If not
-> the device_unregister could (I think) result in a reference
-> count drop and freeing of sub_sdev before you dereference it here.
-> 
-
-That's right, I moved it to the release, before the kfree.
-
-> 
->> +}
->> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_remove, "SPMI");
->> +
->>   static inline int
->>   spmi_cmd(struct spmi_controller *ctrl, u8 opcode, u8 sid)
->>   {
->> @@ -431,6 +457,63 @@ struct spmi_device *spmi_device_alloc(struct spmi_controller *ctrl)
->>   }
->>   EXPORT_SYMBOL_GPL(spmi_device_alloc);
->>   
->> +/**
->> + * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
->> + * @sparent:	SPMI parent device with previously registered SPMI controller
->> + *
->> + * Returns:
->> + * Pointer to newly allocated SPMI sub-device for success or negative ERR_PTR.
->> + */
->> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
->> +{
->> +	struct spmi_subdevice *sub_sdev;
->> +	struct spmi_device *sdev;
->> +	int ret;
->> +
->> +	if (!sparent)
->> +		return ERR_PTR(-EINVAL);
-> 
-> Is this protecting against a real possibility? Feels like something went
-> very wrong if you are allocating a subdevice of 'nothing'.
-> If it's just defensive programming I'd drop it.
-> 
-
-That was defensive programming. Dropping.
-
->> +
->> +	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
->> +	if (!sub_sdev)
->> +		return ERR_PTR(-ENOMEM);
->> +
->> +	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-> 
->> +	if (ret < 0)
->> +		goto err_ida_alloc;
->> +
->> +	sdev = &sub_sdev->sdev;
->> +	sdev->ctrl = sparent->ctrl;
->> +	device_initialize(&sdev->dev);
-> 
-> Read the device_initialize() documentation for what you need to do
-> if an error occurs after this point. Specifically the last 'NOTE'.
-> 
-
-Sorry. That was a bad miss :-)
-
-> 
->> +	sdev->dev.parent = &sparent->dev;
->> +	sdev->dev.bus = &spmi_bus_type;
->> +	sdev->dev.type = &spmi_subdev_type;
->> +
->> +	sub_sdev->devid = ret;
->> +	sdev->usid = sparent->usid;
->> +
->> +	ret = dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
->> +			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
->> +	if (ret)
->> +		goto err_set_name;
->> +
->> +	ret = device_add(&sdev->dev);
->> +	if (ret) {
->> +		dev_err(&sdev->dev, "Can't add %s, status %d\n",
->> +			dev_name(&sdev->dev), ret);
->> +		put_device(&sdev->dev);
->> +		return ERR_PTR(ret);
->> +	}
->> +
->> +	return sub_sdev;
->> +
->> +err_set_name:
->> +	ida_free(&ctrl_ida, sub_sdev->devid);
->> +err_ida_alloc:
->> +	kfree(sub_sdev);
->> +	return ERR_PTR(ret);
->> +}
->> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
->> +
->>   /**
->>    * spmi_controller_alloc() - Allocate a new SPMI controller
->>    * @parent:	parent device
->> diff --git a/include/linux/spmi.h b/include/linux/spmi.h
->> index 28e8c8bd3944..7cea0a5b034b 100644
->> --- a/include/linux/spmi.h
->> +++ b/include/linux/spmi.h
->> @@ -69,6 +69,22 @@ int spmi_device_add(struct spmi_device *sdev);
->>   
->>   void spmi_device_remove(struct spmi_device *sdev);
->>   
->> +/**
->> + * struct spmi_subdevice - Basic representation of an SPMI sub-device
->> + * @sdev:	Sub-device representation of an SPMI device
->> + * @devid:	Platform Device ID of an SPMI sub-device
->> + */
->> +struct spmi_subdevice {
->> +	struct spmi_device	sdev;
-> 
-> Having something called a subdevice containing an instance of a device
-> does seem a little odd.  Maybe the spmi_device naming is inappropriate after
-> this patch?
-> 
-
-A SPMI Sub-Device is a SPMI Device on its own, but one that is child of a device.
-
-Controller -> Device -> Sub-Device
-
-Before this version, I initially added devid to spmi_device, but that felt wrong
-because:
-  1. Sub-devices are children of devices (though, still also devices themselves)
-  2. The devid field would be useless in "main" SPMI devices (struct spmi_device)
-     and would not only waste (a very small amount of) memory for each device but,
-     more importantly, would confuse people with an unused field there.
-
-So, this defines a SPMI Sub-Device as an extension of a SPMI Device, where:
-  - Device has controller-device numbers
-  - Sub-device has controller-device.subdev_id numbers.
-
-I don't really see any cleaner way of defining this, but I am completely open to
-any idea :-)
-
-Cheers,
-Angelo
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gNy8yNS8yNSAxMjoyMiBQTSwgWml5dWUgWmhhbmcgd3JvdGU6Cj4gVGhlIGdjY19hdXhfY2xr
+IGlzIHVzZWQgYnkgdGhlIFBDSWUgUm9vdCBDb21wbGV4IChSQykgYW5kIGlzIG5vdCByZXF1aXJl
+ZAo+IGJ5IHRoZSBQSFkuIFRoZSBjb3JyZWN0IGNsb2NrIGZvciB0aGUgUEhZIGlzIGdjY19waHlf
+YXV4X2Nsaywgd2hpY2ggdGhpcwo+IHBhdGNoIHVzZXMgdG8gcmVwbGFjZSB0aGUgaW5jb3JyZWN0
+IHJlZmVyZW5jZS4KPiAKPiBUaGUgZGlzdGluY3Rpb24gYmV0d2VlbiBBVVhfQ0xLIGFuZCBQSFlf
+QVVYX0NMSyBpcyBpbXBvcnRhbnQ6IEFVWF9DTEsgaXMKPiB0eXBpY2FsbHkgdXNlZCBieSB0aGUg
+Y29udHJvbGxlciwgd2hpbGUgUEhZX0FVWF9DTEsgaXMgcmVxdWlyZWQgYnkgY2VydGFpbgo+IFBI
+WXPigJRwYXJ0aWN1bGFybHkgR2VuNCBRTVAgUEhZc+KAlGZvciBpbnRlcm5hbCBvcGVyYXRpb25z
+IHN1Y2ggYXMgY2xvY2sKPiBnYXRpbmcgYW5kIHBvd2VyIG1hbmFnZW1lbnQuIFNvbWUgbm9uLUdl
+bjQgUXVhbGNvbW0gUEhZcyBhbHNvIHVzZQo+IFBIWV9BVVhfQ0xLLCBidXQgdGhleSBkbyBub3Qg
+cmVxdWlyZSBBVVhfQ0xLLgo+IAo+IFRoaXMgY2hhbmdlIGVuc3VyZXMgcHJvcGVyIGNsb2NrIGNv
+bmZpZ3VyYXRpb24gYW5kIGF2b2lkcyB1bm5lY2Vzc2FyeQo+IGRlcGVuZGVuY2llcy4KPiAKPiBT
+aWduZWQtb2ZmLWJ5OiBaaXl1ZSBaaGFuZyA8eml5dWUuemhhbmdAb3NzLnF1YWxjb21tLmNvbT4K
+PiAtLS0KClJldmlld2VkLWJ5OiBLb25yYWQgRHliY2lvIDxrb25yYWQuZHliY2lvQG9zcy5xdWFs
+Y29tbS5jb20+CgpLb25yYWQKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
