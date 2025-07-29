@@ -4,101 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E98BEC83F26
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 09:17:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18545C87FC9
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 10:59:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9nJLzJQkXSWiGtvhYHhm4zURHu1WUUfSmC7JUg2A/Cc=; b=lFSaJOmEC6ZGSo
-	axTZTC4XGAnJTZwfyZG9FIXDBeY/JhG8qbMGD+rqBtdWVexMYIkWMPyAfjHVjLDY4LD2rweU0vIbJ
-	YoVXbPCBwfOKHG6UTxxWvYbx5FWUPjnRXXUYkbWnKk3f+t15dGegjvB1KNfDqiVh3GHEZvbkRmr7o
-	BliNQ0VI2F9Sl0HxsDX2h3MYIPW94IueUiLRRjOk+/TXKfuXVf2Ejl7nHcqtBl2wLJ69vgxV/vAB+
-	PVe+o77TcB5+w0dsyxZUVdkW161KiQxZ1hbMSYNV346Td8/xW5dUTbgUwkbM6p21g3m27NUr4Tnz7
-	9t3e7H+TCMji+wF1vErw==;
+	List-Owner; bh=jSpNL5KilmeW5rct5CH/2sDWnFHp5AGfFnHSWwly2Eo=; b=JuhL3tZzuF6YfP
+	QB0P+8xi4fTF6AX35JxwhDfRxvztr9n40uoyKuET74zcp5yDivICsXePzqVBsqIFajCi6lenWtac0
+	bgFkKNbxeuXuXZ2raF2P5ASzrYCUA2+TxGy2Fk7tZLlmGdmF6CiBc3JzxMAlbYJGftVUthJK6MlRm
+	3K/X3DUD20ZCT3LBQZYRon0IAAdbh0FRVdnpZy6JPNaxyGAlffsMFdQZD0ZF21QX4BGxnrbwWHQAc
+	xqiSBAaFIJBYT9HI3qLXCRvmTFaHARvSi3q/YGev+22Lww/8eHsRsBS75oqJmaSJkKxLZhV8wsqGR
+	XW3efSSYfsA+OUhJ2Y2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uggSR-0000000GMt5-2q20;
-	Tue, 29 Jul 2025 09:17:15 +0000
-Received: from smtpbguseast2.qq.com ([54.204.34.130])
+	id 1ugi3D-0000000GaBV-32Oo;
+	Tue, 29 Jul 2025 10:59:19 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uggDj-0000000GK7B-110w;
-	Tue, 29 Jul 2025 09:02:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1753779652;
-	bh=q6Q48lBZu83JxJ63QhH8HxOwFpopi36sswkLOu+jOhU=;
-	h=From:To:Subject:Date:Message-Id;
-	b=f3vxZF3sBb2F/tOX8chU38Wz+P8+cALBHdASqXt+vCvkAmbyzM+gfKqrqSSFA0UkI
-	 eB4lFIhLMJJVdDwZB2JmPdN9451ZyQsUcpQ1Ju3D70+SVFO7O47gKctJqzfJaclMxU
-	 kc6RdiaNzV9CrxtkYsUu54WWBiIFoSjrRzbCvTt4=
-X-QQ-mid: zesmtpgz1t1753779643t83ca4cf2
-X-QQ-Originating-IP: GNy0TVRpqK5gjjPPYnOaHZTZmyoTUAn1duABOXp26z8=
-Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Tue, 29 Jul 2025 17:00:40 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 17940541300271697831
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>,
-	Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Robinson <pbrobinson@gmail.com>
-Cc: devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 1/5] dt-bindings: phy: rockchip: rk3399-typec-phy: Support mode-switch
-Date: Tue, 29 Jul 2025 17:00:28 +0800
-Message-Id: <20250729090032.97-2-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20250729090032.97-1-kernel@airkyi.com>
-References: <20250729090032.97-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
-X-QQ-XMAILINFO: OalYlZRf2lKLUAeMCXjbGYP9HGcj2M+CKDdxhvxk+HFKFElrocLT7229
-	NLtxF+eL1Yd573caTx2KKo6gYzFiG5NNdUkCn5c8a/nd1jhp3VP/DRTnI5PJ8Bg8GEyFoi4
-	4c/vO7dDCwluAY4xnrgGB+fd3fBaJv6O7dimFgc0WPuFeEw/TiqaggTM10GBLv6ou/+INU7
-	ThRXdM+btSp1L+2XtTzOoFXfQvD5nkbeH/4iVA/2+ysN71kvw3IV9NSiRLeV3ClEJlcKyNg
-	6y+oJthG+YITV8qI8mZs7suZvjhxc3yolWA1nyygHB47iaJvSckv9i0k44s1MtaDj75oYGL
-	9s3e75G5xxFE77820n00LBMPQvkwauajVidxj2Iry95YnQJHy4UoDjCS6msrbwjTbBtahTN
-	KKShl3i1KwDA974X+LxecziikLqAh1AG2MD4nJnjVtvAsW6m/KBPPjTMWfGsAu4OGF5J+pN
-	iA/eo+KD0F2jW+HZwGAQ3cOR3/w+l6mV7pmKYQcGLlvY3xFF9eA1/giFcT0vTK2FzYhNyxs
-	kOZDaKcV20vPjVL8MibJbUridntmoR+EUGNUkQmae3IRWo4BLlZgN5QyDWBemNVlL5EnQMH
-	WfJIcAvxUwDSYFLbAofAL6g0u1EVXYYjvSCvQyx0DK4CsKSJsVh8xW9CzPzs/T+lvzz61e5
-	ngkawO2KUeIK4IFaVkFXqUNosTKpd9ZHzqjVv5ZH+FXcV9bbLz/JeicZW5z8lMSrbJ5LDKc
-	511gyVLoxehnbGBUS3Hals3WxPrkL+CFm4AUaIJvBTzgsd3seh+sJNJP89mmM4CuW6ZL04V
-	dyLm3SeaEvuf5fL1evtYt5VihY4ZmBI1pUeGqR41YsCoIsaoZHRknQkg+ldk+ZLQT0KLYvR
-	lCexgwZcBa5mYh46Wp7MAIyeF5nFkEe6JypaUTJuL6xjz9/ShSxz/rlkA8DpcfYrceK6FBR
-	fy1F0Ni2HLRjmuEPQfkQhdEjOOyPAnYW7ZV0=
-X-QQ-XMRINFO: MSVp+SPm3vtS1Vd6Y4Mggwc=
-X-QQ-RECHKSPAM: 0
+	id 1ughp0-0000000GYzL-2FX1
+	for linux-phy@lists.infradead.org;
+	Tue, 29 Jul 2025 10:44:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1753785876;
+	bh=nU5WXYZ5Ubm0JEqaTpOcsj1mUeZ2KBa1iqurY0olt6s=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=lC0oIZO9yZLVv56w72qdXrBp+FWFHozmGeMG3NEBw3vYJ6e+pKmI/o2/UmjPoxxhz
+	 hh+L3KbyyrJUgIhaEWY963l2K2c1YrRFvgP7ZE1N8xj0apn7hALiTaMjdBSaxeI3iT
+	 RtPOeeUi6ONSQVNIrkH3/P2HK4Z5CqgsqLoclTcN0usdXwU41Z77//5oW3cRzGIaxa
+	 j0QjzrK6rDCSSrxzxpfqN3oBEMMUdfWKHFWzLYQSdD0GP5nvU1zT9X/TKaPhsoLcEq
+	 C4ClcgnC7vjnQlbCD0g0WFVMa7xDUx1/6JNXhBOxSN419VS6UCtIN+P8MpGe/IuU68
+	 wTkJ680R0i9DA==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6637B17E0EC0;
+	Tue, 29 Jul 2025 12:44:35 +0200 (CEST)
+Message-ID: <6ea0495e-21d8-41a8-b1b0-1c99c2929de5@collabora.com>
+Date: Tue, 29 Jul 2025 12:44:34 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and
+ devm variant
+To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
+ nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+ u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+ kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org
+References: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
+ <20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
+ <20250722150930.00000a2f@huawei.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20250722150930.00000a2f@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250729_020203_840103_ADE7FE91 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20250729_034438_757098_0CDADFC8 
+X-CRM114-Status: GOOD (  33.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,62 +79,253 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Il 22/07/25 16:09, Jonathan Cameron ha scritto:
+> On Tue, 22 Jul 2025 12:13:11 +0200
+> AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com> wrote:
+> 
+>> Some devices connected over the SPMI bus may be big, in the sense
+>> that those may be a complex of devices managed by a single chip
+>> over the SPMI bus, reachable through a single SID.
+>>
+>> Add new functions aimed at managing sub-devices of a SPMI device
+>> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
+>> for adding a new subdevice and removing it respectively, and also
+>> add their devm_* variants.
+>>
+>> The need for such functions comes from the existance of	those
+>> complex Power Management ICs (PMICs), which feature one or many
+>> sub-devices, in some cases with these being even addressable on
+>> the chip in form of SPMI register ranges.
+>>
+>> Examples of those devices can be found in both Qualcomm platforms
+>> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
+>> sub-devices, and in newer MediaTek platforms showing similar HW
+>> features and a similar layout with those also having many subdevs.
+>>
+>> Also, instead of generally exporting symbols, export them with a
+>> new "SPMI" namespace: all users will have to import this namespace
+>> to make use of the newly introduced exports.
+>>
+>> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+>> ---
+>>   drivers/spmi/spmi-devres.c | 23 +++++++++++
+>>   drivers/spmi/spmi.c        | 83 ++++++++++++++++++++++++++++++++++++++
+>>   include/linux/spmi.h       | 16 ++++++++
+>>   3 files changed, 122 insertions(+)
+>>
+>> diff --git a/drivers/spmi/spmi-devres.c b/drivers/spmi/spmi-devres.c
+>> index 62c4b3f24d06..7e00e38be2ff 100644
+>> --- a/drivers/spmi/spmi-devres.c
+>> +++ b/drivers/spmi/spmi-devres.c
+>> @@ -60,5 +60,28 @@ int devm_spmi_controller_add(struct device *parent, struct spmi_controller *ctrl
+>>   }
+>>   EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
+>>   
+>> +static void devm_spmi_subdevice_remove(void *res)
+>> +{
+>> +	spmi_subdevice_remove((struct spmi_subdevice *)res);
+> 
+> Why the cast?  Implicit casts are fine for void * to any other pointer type
+> so
+> 	spmi_subdevice_remove(res);
+> should be fine.
+> 
 
-The RK3399 SoC integrates two USB/DP combo PHYs, each of which
-supports software-configurable pin mapping and DisplayPort lane
-assignment. These capabilities enable the PHY itself to handle both
-mode switching and orientation switching, based on the Type-C plug
-orientation and USB PD negotiation results.
+Because style consistency across the file... but yeah, I'm removing the cast.
 
-While an external Type-C controller is still required to detect cable
-attachment and report USB PD events, the actual mode and orientation
-switching is performed internally by the PHY through software
-configuration. This allows the PHY to act as a Type-C multiplexer for
-both data role and DP altmode configuration.
+> 
+>> +}
+> 
+>>   MODULE_LICENSE("GPL");
+>>   MODULE_DESCRIPTION("SPMI devres helpers");
+>> diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
+>> index 3cf8d9bd4566..62bb782b2bbc 100644
+>> --- a/drivers/spmi/spmi.c
+>> +++ b/drivers/spmi/spmi.c
+>> @@ -19,6 +19,7 @@
+>>   
+>>   static bool is_registered;
+>>   static DEFINE_IDA(ctrl_ida);
+>> +static DEFINE_IDA(spmi_subdevice_ida);
+>>   
+>>   static void spmi_dev_release(struct device *dev)
+>>   {
+>> @@ -31,6 +32,18 @@ static const struct device_type spmi_dev_type = {
+>>   	.release	= spmi_dev_release,
+>>   };
+>>   
+>> +static void spmi_subdev_release(struct device *dev)
+>> +{
+>> +	struct spmi_device *sdev = to_spmi_device(dev);
+>> +	struct spmi_subdevice *sub_sdev = container_of(sdev, struct spmi_subdevice, sdev);
+>> +
+>> +	kfree(sub_sdev);
+>> +}
+>> +
+>> +static const struct device_type spmi_subdev_type = {
+>> +	.release	= spmi_subdev_release,
+>> +};
+>> +
+>>   static void spmi_ctrl_release(struct device *dev)
+>>   {
+>>   	struct spmi_controller *ctrl = to_spmi_controller(dev);
+>> @@ -90,6 +103,19 @@ void spmi_device_remove(struct spmi_device *sdev)
+>>   }
+>>   EXPORT_SYMBOL_GPL(spmi_device_remove);
+>>   
+>> +/**
+>> + * spmi_subdevice_remove() - Remove an SPMI subdevice
+>> + * @sub_sdev:	spmi_device to be removed
+>> + */
+>> +void spmi_subdevice_remove(struct spmi_subdevice *sub_sdev)
+>> +{
+>> +	struct spmi_device *sdev = &sub_sdev->sdev;
+>> +
+>> +	device_unregister(&sdev->dev);
+>> +	ida_free(&spmi_subdevice_ida, sub_sdev->devid);
+> 
+> Why not make the ida free part of the release? If not
+> the device_unregister could (I think) result in a reference
+> count drop and freeing of sub_sdev before you dereference it here.
+> 
 
-To reflect this hardware design, this patch introduces a new
-"mode-switch" property for the dp-port node in the device tree bindings.
-This property indicates that the connected PHY is capable of handling
-Type-C mode switching itself.
+That's right, I moved it to the release, before the kfree.
 
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
----
+> 
+>> +}
+>> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_remove, "SPMI");
+>> +
+>>   static inline int
+>>   spmi_cmd(struct spmi_controller *ctrl, u8 opcode, u8 sid)
+>>   {
+>> @@ -431,6 +457,63 @@ struct spmi_device *spmi_device_alloc(struct spmi_controller *ctrl)
+>>   }
+>>   EXPORT_SYMBOL_GPL(spmi_device_alloc);
+>>   
+>> +/**
+>> + * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
+>> + * @sparent:	SPMI parent device with previously registered SPMI controller
+>> + *
+>> + * Returns:
+>> + * Pointer to newly allocated SPMI sub-device for success or negative ERR_PTR.
+>> + */
+>> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
+>> +{
+>> +	struct spmi_subdevice *sub_sdev;
+>> +	struct spmi_device *sdev;
+>> +	int ret;
+>> +
+>> +	if (!sparent)
+>> +		return ERR_PTR(-EINVAL);
+> 
+> Is this protecting against a real possibility? Feels like something went
+> very wrong if you are allocating a subdevice of 'nothing'.
+> If it's just defensive programming I'd drop it.
+> 
 
-Changes in v3:
-- Add more descriptions to clarify the role of the PHY in switching.
+That was defensive programming. Dropping.
 
-Changes in v2:
-- Reuse dp-port/usb3-port in rk3399-typec-phy binding.
+>> +
+>> +	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
+>> +	if (!sub_sdev)
+>> +		return ERR_PTR(-ENOMEM);
+>> +
+>> +	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
+> 
+>> +	if (ret < 0)
+>> +		goto err_ida_alloc;
+>> +
+>> +	sdev = &sub_sdev->sdev;
+>> +	sdev->ctrl = sparent->ctrl;
+>> +	device_initialize(&sdev->dev);
+> 
+> Read the device_initialize() documentation for what you need to do
+> if an error occurs after this point. Specifically the last 'NOTE'.
+> 
 
- .../devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml  | 6 ++++++
- 1 file changed, 6 insertions(+)
+Sorry. That was a bad miss :-)
 
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-index 91c011f68cd0..ccbe1c9cb0bf 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-@@ -51,6 +51,12 @@ properties:
-       '#phy-cells':
-         const: 0
- 
-+      mode-switch:
-+        description: |
-+          Indicates the PHY can handle altmode switching. In this case,
-+          requires an external USB Type-C controller to report USB PD message.
-+        type: boolean
-+
-       port:
-         $ref: /schemas/graph.yaml#/properties/port
-         description: Connection to USB Type-C connector
--- 
-2.49.0
+> 
+>> +	sdev->dev.parent = &sparent->dev;
+>> +	sdev->dev.bus = &spmi_bus_type;
+>> +	sdev->dev.type = &spmi_subdev_type;
+>> +
+>> +	sub_sdev->devid = ret;
+>> +	sdev->usid = sparent->usid;
+>> +
+>> +	ret = dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
+>> +			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
+>> +	if (ret)
+>> +		goto err_set_name;
+>> +
+>> +	ret = device_add(&sdev->dev);
+>> +	if (ret) {
+>> +		dev_err(&sdev->dev, "Can't add %s, status %d\n",
+>> +			dev_name(&sdev->dev), ret);
+>> +		put_device(&sdev->dev);
+>> +		return ERR_PTR(ret);
+>> +	}
+>> +
+>> +	return sub_sdev;
+>> +
+>> +err_set_name:
+>> +	ida_free(&ctrl_ida, sub_sdev->devid);
+>> +err_ida_alloc:
+>> +	kfree(sub_sdev);
+>> +	return ERR_PTR(ret);
+>> +}
+>> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
+>> +
+>>   /**
+>>    * spmi_controller_alloc() - Allocate a new SPMI controller
+>>    * @parent:	parent device
+>> diff --git a/include/linux/spmi.h b/include/linux/spmi.h
+>> index 28e8c8bd3944..7cea0a5b034b 100644
+>> --- a/include/linux/spmi.h
+>> +++ b/include/linux/spmi.h
+>> @@ -69,6 +69,22 @@ int spmi_device_add(struct spmi_device *sdev);
+>>   
+>>   void spmi_device_remove(struct spmi_device *sdev);
+>>   
+>> +/**
+>> + * struct spmi_subdevice - Basic representation of an SPMI sub-device
+>> + * @sdev:	Sub-device representation of an SPMI device
+>> + * @devid:	Platform Device ID of an SPMI sub-device
+>> + */
+>> +struct spmi_subdevice {
+>> +	struct spmi_device	sdev;
+> 
+> Having something called a subdevice containing an instance of a device
+> does seem a little odd.  Maybe the spmi_device naming is inappropriate after
+> this patch?
+> 
+
+A SPMI Sub-Device is a SPMI Device on its own, but one that is child of a device.
+
+Controller -> Device -> Sub-Device
+
+Before this version, I initially added devid to spmi_device, but that felt wrong
+because:
+  1. Sub-devices are children of devices (though, still also devices themselves)
+  2. The devid field would be useless in "main" SPMI devices (struct spmi_device)
+     and would not only waste (a very small amount of) memory for each device but,
+     more importantly, would confuse people with an unused field there.
+
+So, this defines a SPMI Sub-Device as an extension of a SPMI Device, where:
+  - Device has controller-device numbers
+  - Sub-device has controller-device.subdev_id numbers.
+
+I don't really see any cleaner way of defining this, but I am completely open to
+any idea :-)
+
+Cheers,
+Angelo
+
 
 
 -- 
