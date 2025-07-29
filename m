@@ -4,68 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBFCCC87FC9
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 18:52:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E512EC87FCA
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Jul 2025 19:59:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fX4aCalixzgeKwK1PERysO1UwxlxnEwUDbpUXJJwddQ=; b=E8dyJ9TUltvXiq
-	EvZYodxQYajSKNOQIsYLWhbflWRvuVzamA+1bW/WLW+njHoeIMSbkVj3Xaoj10yBcbZsItvDlrRUP
-	qJpkff2A2ItkKcpKsBxxaLZiVoq3qYOgVy2rtHYdGfp89HiQ6CDPuxJGljOuaSBVNtRJ0JE+MB2oM
-	Bd3QCktO8uDZ4bDbNX5ByY/ofZYJ6KcLtiJa6XPZKQzIs8DX1wyXaVTlf1Q+1KspotvQFyGv0xFTS
-	tczxPYFEf0aWPIedHAKi2gsZukOhzEGxU8afwxdeDLXx/i3YZUBNiafImAJohEIfVwGZfnRUdUSRL
-	pKHGwy3Nc0OJlibOg3FA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AxZiyjJfIbPE5ibVlljAV+jFEbeZOsWEtwBM0cYGOVM=; b=dlZyHNEli8AtYfdLEiap4fyArU
+	byBAR0Qy9XurFRko06u02qvJfczsSbngpJ2MDws5lVXCCDNwqmejnNpf/16QKZlb8jDtuD+wNAA7+
+	6IcWS1H5CPfWhGC1gzmeJCE9ogDuhtrRtxxWJmk9UorGP/0ncvn1+eloTc898cm9f/jfxyPfURnAr
+	ct9ChwHw3vfDsPpOLnkgoiObKd04z6ggGYw7eIbDuddSdRRTDzJspYvEGF1VeEblWksBojrea93Ts
+	FmHKqQ42QXS/+axKFxU6nk4Q1lIIUIZcGz7gxo9latZY0oNOaHkyPhs2m7nn1uctaKc2BNb6BkDTJ
+	HHF4UYgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ugpRS-0000000HUqt-27vR;
-	Tue, 29 Jul 2025 18:52:50 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1ugqTv-000000001AY-0qHS;
+	Tue, 29 Jul 2025 19:59:27 +0000
+Received: from out-170.mta0.migadu.com ([2001:41d0:1004:224b::aa])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ugpH2-0000000HTVQ-0GqK
+	id 1ugqTs-0000000019m-0veF
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Jul 2025 18:42:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 37AB744E0F;
-	Tue, 29 Jul 2025 18:42:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FA4BC4CEEF;
-	Tue, 29 Jul 2025 18:41:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753814523;
-	bh=V6Dcqa0TG7W5slu9uXHtRB+QqM48OfTcq9W5IaelKrU=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=bhf5H2tN9kMMxWl2WeZhvWPmpxfLH67XYeFVV/Xl0v3LAO5IKnbHUGx6cetAw8r0E
-	 NelH/JRUL7KPtddjW2mY7kr7uscHlx82JXR8M/D7wnaN/BSVWG5YRbG2PwoySQDHVr
-	 3FVSj7MEg1Sl4KKhtpobSnWImVZdjcdhMRfUBodtAxJ6oJYmzJ5W+HcvXMSM0TePYS
-	 GqoloI3NFa22QSdSkQmso8fHGjMcWucCv9CBXLvVP//8Y3Q7ejE2jXgXsNFuQjlqWe
-	 mvY6mquSuCyIyS4jxoOsNUCMvkQ/frlVHDw5PWcbWiVDFJYaMn7pdUYUtI991hiIgd
-	 I1roqP1SAbJyQ==
-Date: Tue, 29 Jul 2025 19:41:50 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Jonathan Cameron <Jonathan.Cameron@huawei.com>, sboyd@kernel.org,
- dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
- u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org
-Subject: Re: [PATCH v2 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
- and devm variant
-Message-ID: <20250729194150.1985404b@jic23-huawei>
-In-Reply-To: <6ea0495e-21d8-41a8-b1b0-1c99c2929de5@collabora.com>
-References: <20250722101317.76729-1-angelogioacchino.delregno@collabora.com>
-	<20250722101317.76729-2-angelogioacchino.delregno@collabora.com>
-	<20250722150930.00000a2f@huawei.com>
-	<6ea0495e-21d8-41a8-b1b0-1c99c2929de5@collabora.com>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.49; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+	Tue, 29 Jul 2025 19:59:26 +0000
+Mime-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
+	t=1753819157;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=OcthrL0Xe+fdbwJ+7ct553yzhsg4eVUVDzsOcSB6eAI=;
+	b=xH6bv/Vl6xdZ1vLDAdzZn5s3YjOUgRr+1aTVe6G+zr84L6yRGGOVX8FLfWGaUOvAUNnlE8
+	OkJnIsxTPLgZPwebAIBIXU7JOWLjxBeLZadQnyYcyV+Y2Vfgkp+aCcSlX7UpwqmPpScSHw
+	YNl6ErX0r7qmEXJMigEFrzj+eF52Z8nbqK4AhrYbWaMXjiGQpixAa5p5AkJXzTjPk2TNKY
+	3CwvGNBQZyVzE5aSpvyt8P+KqlQRTV4IXH3fqrGTUEFoluwLKK8OInxSTONR6iuXkLLqf3
+	hlc1zw9l4s/WOFJWkT9fyDHI25o1uymTqosLMs6a2gIyxx6PNBl6s7qtaftYpA==
+Date: Tue, 29 Jul 2025 21:59:02 +0200
+Message-Id: <DBOSZZ7TMD2P.U0MGKUR3DXN@cknow.org>
+Cc: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <dri-devel@lists.freedesktop.org>
+Subject: Re: [PATCH v3 4/5] arm64: dts: rockchip: Add missing dp_out port
+ for RK3399 CDN-DP
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: "Diederik de Haas" <didi.debian@cknow.org>
+To: "Chaoyi Chen" <kernel@airkyi.com>, "Rob Herring" <robh@kernel.org>,
+ "Krzysztof Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley"
+ <conor+dt@kernel.org>, "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay
+ Abraham I" <kishon@kernel.org>, "Heiko Stuebner" <heiko@sntech.de>, "Sandy
+ Huang" <hjc@rock-chips.com>, "Andy Yan" <andy.yan@rock-chips.com>, "Yubing
+ Zhang" <yubing.zhang@rock-chips.com>, "Frank Wang"
+ <frank.wang@rock-chips.com>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
+ <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Amit Sunil Dhamne"
+ <amitsd@google.com>, "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
+ "Chaoyi Chen" <chaoyi.chen@rock-chips.com>, "Dragan Simic"
+ <dsimic@manjaro.org>, "Johan Jonker" <jbx6244@gmail.com>, "Dmitry
+ Baryshkov" <dmitry.baryshkov@oss.qualcomm.com>, "Peter Robinson"
+ <pbrobinson@gmail.com>
+References: <20250729090032.97-1-kernel@airkyi.com>
+ <20250729090032.97-5-kernel@airkyi.com>
+In-Reply-To: <20250729090032.97-5-kernel@airkyi.com>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250729_114204_126398_6D6717B7 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20250729_125925_255060_49EA8468 
+X-CRM114-Status: GOOD (  14.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,57 +81,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5892497085062724667=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============5892497085062724667==
+Content-Type: multipart/signed;
+ boundary=2fd07b92180be8290edbe889ada7baa056994820fa28317a2cadcfeab9c7;
+ micalg=pgp-sha512; protocol="application/pgp-signature"
 
-> >> +/**
-> >> + * struct spmi_subdevice - Basic representation of an SPMI sub-device
-> >> + * @sdev:	Sub-device representation of an SPMI device
-> >> + * @devid:	Platform Device ID of an SPMI sub-device
-> >> + */
-> >> +struct spmi_subdevice {
-> >> +	struct spmi_device	sdev;  
-> > 
-> > Having something called a subdevice containing an instance of a device
-> > does seem a little odd.  Maybe the spmi_device naming is inappropriate after
-> > this patch?
-> >   
-> 
-> A SPMI Sub-Device is a SPMI Device on its own, but one that is child of a device.
-> 
-> Controller -> Device -> Sub-Device
-> 
-> Before this version, I initially added devid to spmi_device, but that felt wrong
-> because:
->   1. Sub-devices are children of devices (though, still also devices themselves)
->   2. The devid field would be useless in "main" SPMI devices (struct spmi_device)
->      and would not only waste (a very small amount of) memory for each device but,
->      more importantly, would confuse people with an unused field there.
-> 
-> So, this defines a SPMI Sub-Device as an extension of a SPMI Device, where:
->   - Device has controller-device numbers
->   - Sub-device has controller-device.subdev_id numbers.
-> 
-> I don't really see any cleaner way of defining this, but I am completely open to
-> any idea :-)
-I was thinking it was a specialization at the same level as the old spmi_device
-(not it's child). As a child this is fine.
+--2fd07b92180be8290edbe889ada7baa056994820fa28317a2cadcfeab9c7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
 
-Just showing my complete lack of knowledge of the SPMI code :)
+On Tue Jul 29, 2025 at 11:00 AM CEST, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>
+> Let's make the ports nodes of cdn_dp in the same style as the other
+> display interface, and match the style of ports's yaml.
+>
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3399-base.dtsi | 12 +++++++++++-
+>  1 file changed, 11 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-base.dtsi b/arch/arm64/b=
+oot/dts/rockchip/rk3399-base.dtsi
+> index 9d5f5b083e3c..edeb177bc433 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-base.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-base.dtsi
+> @@ -618,7 +618,11 @@ cdn_dp: dp@fec00000 {
+>  		status =3D "disabled";
+> =20
+>  		ports {
+> -			dp_in: port {
+> +			#address-cells =3D <1>;
+> +			#size-cells =3D <0>;
+> +
+> +			dp_in: port@0 {
+> +				reg =3D <0>;
+>  				#address-cells =3D <1>;
+>  				#size-cells =3D <0>;
+> =20
+> @@ -632,6 +636,12 @@ dp_in_vopl: endpoint@1 {
+>  					remote-endpoint =3D <&vopl_out_dp>;
+>  				};
+>  			};
+> +
+> +			dp_out: port@1 {
+> +				reg =3D <1>;
+> +				#address-cells =3D <1>;
+> +				#size-cells =3D <0>;
+> +			};
 
-Jonathan
+Patch 5 adds a single endpoint to dp_out (without a reg property), so it
+seems that #address/#size-cells is not needed?
+If you run ``make CHECK_DTBS=3Dy W=3D1 rockchip/rk3399-evb-ind.dtb`` it
+should spit out a warning about that.
 
-> 
-> Cheers,
-> Angelo
-> 
-> 
+Cheers,
+  Diederik
 
+>  		};
+>  	};
+> =20
+
+
+--2fd07b92180be8290edbe889ada7baa056994820fa28317a2cadcfeab9c7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCaIkoCgAKCRDXblvOeH7b
+brfGAP91vbmzqtSHHq487babaTkFfCZ5yunCKjR4z8ny048RbAEAionq5YOmCJoU
+pi+lTvFwVYBJkyoMcr/Yv7tpfvlC2w0=
+=ePLo
+-----END PGP SIGNATURE-----
+
+--2fd07b92180be8290edbe889ada7baa056994820fa28317a2cadcfeab9c7--
+
+
+--===============5892497085062724667==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5892497085062724667==--
+
