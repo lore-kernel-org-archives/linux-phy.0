@@ -4,110 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E589CC87FCE
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Jul 2025 12:26:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABD90C87FCB
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jul 2025 12:31:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MHWWX356jYwY14ec02OvpZmDDrZbKk1/U3ooSs5mEbA=; b=u8kF66uQpJiQFw
-	7suai8YxZSyzWrCSSMBwzAxQElcNKE1b93FMh9HG6mne8vXrOHTZziPQdrGWJm+jBFlPB3F9Zod/l
-	iHP5MbEbh0sAGK9Hb8Wv5NeX9GIKG23Vdjx/+U346qv3WWFD5uL5JxgjdnKxGu2rtWssQN50A3TD4
-	cqErQIjSvftfp2GfiNBodEmva2lzgXUPV6CI3GrhneSbu3uVqOKGePxTBqtkXed0IRjOGar9houRb
-	DF+JIZ7uS1vb26ptQrVAFIJ12xUDKgdP3TjQmyRKdvvytdbPiFQabCOI2W3T9Njdooil5RTVTqudC
-	NV5KnRTRwemAzUwKCdEg==;
+	List-Owner; bh=rMtYgYMsa7m49pa9DZ5trwXCOvaR61vmGV/c2SJpITQ=; b=JBuM5ohhrXdBhw
+	xuEV+9BRZCTeIhGaP7Avl+8n0KuUsg7q3W2U9RA5/Ga9W7DbSscMg7xEai1utwRfohFoJ3PycNW0F
+	jwezURgVos8v6dbZqI5DFyvs6a1fautW0XJzgJV8IHOzUaY7yF/afA5+SLFP/Mg2ISu9WJvZq8IpZ
+	JPnFC0J8GTPfjWV1ul528VyJnDhF0XrDU0cgzUvtvY1nQsMB2o3nOIBW8Ud9oAKGAMUw7CGk02aJK
+	TItViRBG5bV3rOziJlsRFTElMMIe8nMIR58LeuodWNA+FcrfPCLuV+AY/4rFjgTSEUOV/FIbf22OC
+	83+Cj2z6cWCTT2N+ZdrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uh5tT-00000001Ss1-2sIs;
-	Wed, 30 Jul 2025 12:26:51 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1uh5yO-00000001TLz-1w6s;
+	Wed, 30 Jul 2025 12:31:56 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uh5H5-00000001NiS-1VRi
+	id 1uh5Sa-00000001P1D-21qt
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Jul 2025 11:47:12 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-3b792b0b829so1450117f8f.3
-        for <linux-phy@lists.infradead.org>; Wed, 30 Jul 2025 04:47:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1753876030; x=1754480830; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=AFnYn+gQt6+MG5K/TVuKXMgEtgBw3Z9XRwFVYYsDrdI=;
-        b=jhleR9BagebHBG6iXQVX5Xu1s1pQs3tF3HLAEoS54I4w8K+gApmZMXF96wVC1/FJDz
-         tzYm+rADgMxISDwEZxWoBo5WBOhFZn5STVVfS5cUgMqt0vXZvZPImr+6O1tV/U5SC5wa
-         3+MR3wtvRTKCZ1UYKxr3SpsafOHUnxApS+M6M2Ybjc5VP/EHfsXm+2F4c21pEUALMwYW
-         O0MGAuEKX6f3juryO5kQjXhLdC0Qz/ZT5g5uneMSrn0eJ8NGJmqNF7ZeGigpoFSn3qzq
-         B6X7nrs/6Mo/EgmXrS83Q56lOzBEmLK50S4ACz+pUCsHGesffEXyYywiOuXQwbrdx7H0
-         e0vw==
+	Wed, 30 Jul 2025 11:59:05 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56U6WCMZ017815
+	for <linux-phy@lists.infradead.org>; Wed, 30 Jul 2025 11:59:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Gk5vGXil7RKOKTWhaZMiJw3ByMsUyxc9oWInTblZhxs=; b=crORyQp4VZYYq5OJ
+	vXVC7Wpf33iPtrORDiTeGescorvgBNvzaX4JO8AvZP8vQDXOCg/Ow3SnuduUbFNz
+	5lDV1TGFjX5DcZ5nsVlQrUMDFdelzDcKVx67ta3K2GGceIKhf68wIH6yE5v7Jssl
+	vhr5j5BcVHsX7UVDX0w2HFlTruIJOVRDdbXUq64BVvHHNliW41/NnqWfsvvzDHom
+	rTUCBP2VIvo7Y5edUNpOZAKSZRS4mM8ICO7mr6sLV78K2xWxEl0gsz2xVIoeYN3R
+	D8Q+xHdxpbPFgeoFoqx4iVrQwUtpQKOnAws3Cr5yn0m6Ray+fyJpKE5sGd0vwHS+
+	doS0Eg==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 484p1akk0y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 30 Jul 2025 11:59:03 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-70771f26fb7so208596d6.2
+        for <linux-phy@lists.infradead.org>; Wed, 30 Jul 2025 04:59:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753876030; x=1754480830;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=AFnYn+gQt6+MG5K/TVuKXMgEtgBw3Z9XRwFVYYsDrdI=;
-        b=Xe8oWysZs1S/yvxm4YQSazgEnKHv1F8O3MQeOOMyl5V1bAT/AudDsCkk0HfcKQunTl
-         bHK7TayPuDqPRr06iYANyAn1XmrvmPP2wNeFdzaLTjOj0agPFCHUeRrl1em4t30DVu20
-         gLUGYegg7/cl+v3arWjC4wa6sqZXxLOsfZKGGIUh1KDQZk3JMECT077PBm40pT6MX+uQ
-         ioeMH3RKbWhnKAiT8nMY5qfeYcXIN5ZsrWgPLI/3M7sRavzYeW7UOpXwoU1U2ZVNYyBc
-         LTFDm38KiQpmHiX8+aw8gheowNa0vGB0qeugkIELobamChZE/JsN5ijSoYd6PfXhbZk4
-         DsFA==
-X-Forwarded-Encrypted: i=1; AJvYcCW7nKQrrY6Ugx/vmbtif/0dDM1L6YrlWmiarU0DeKYy625wqWvC7l8odno2yw3YTDZi7TDLJOh7OXY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyTxcrKeUWyR3/JfV2wiZr25ykKlLFJgwztFwH/WFHeZdf2pis8
-	adJ+2RZBHA6gtnyUylisnZSkstMtvhcSEc/g1+asJ8KWrAtbY86jyEI3XqSQJ+nnYYk=
-X-Gm-Gg: ASbGncvx782FoKVG1F5+KPcYfrh52Hpu9l4YssVo30ktQYZdNDi3kEWDU5wLZ9i5Jvg
-	N8l2CPIPVU7L80+HHy3yjdL4D/giwID/uB3C3VvVIBoa3wteAe7ohi3v9FjHo4vpx13A+TV6uMG
-	22tDxaEUyZJGyM6XZS+z0bqQiXaY/TmgE1Oi3HO5hmCCYPHMRBzkECBP7x6mZZ/Toigla1mBWHg
-	FU+pdT/Q9qaqLSSEEVDqk0zVwCShKTa+WCGWhJmr41CVCNbfgF80dBoukrM5Yh60W8hPAyW4s5T
-	AhP9UpyC76UnmhgsdLX6XAE8leLHFvmI6admwbvn821YQ0ztCPKoC72QxCzWBjOQvmsfn+pWu/k
-	bi+xxqfrQAtixKWl0Lo7m
-X-Google-Smtp-Source: AGHT+IFMji6om7tlTNWa3TC7JHM7L0ptnzBOJ1YCf2Ql8mWH/oJ5ojl7gyzzXBirrKhH28LDNZgVEQ==
-X-Received: by 2002:a05:6000:2210:b0:3b7:8a03:4b6f with SMTP id ffacd0b85a97d-3b794ffe6cemr2315812f8f.29.1753876029714;
-        Wed, 30 Jul 2025 04:47:09 -0700 (PDT)
-Received: from [127.0.1.1] ([82.79.186.23])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-458953eaeeesm24503235e9.25.2025.07.30.04.47.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 30 Jul 2025 04:47:08 -0700 (PDT)
-From: Abel Vesa <abel.vesa@linaro.org>
-Date: Wed, 30 Jul 2025 14:46:49 +0300
-Subject: [PATCH 2/3] phy: qcom: edp: Add missing refclk for X1E80100
+        d=1e100.net; s=20230601; t=1753876742; x=1754481542;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Gk5vGXil7RKOKTWhaZMiJw3ByMsUyxc9oWInTblZhxs=;
+        b=iLUYPI0WynID6jeymLPd8bqBWeeu1d6Vc2N1J2KfVAWvhlHHWKotHypD6iKZwdR41r
+         9w5foUYkN029+nIU9A7hZLvipnRbcf4ab2w8v8JADSeikAqx0y4xEktqAOa6yISIg837
+         A8FIsh9r5FNnx/OSlqgSOJEpaMtrNO0c2PgBeGvfETZlGyqWyTRwVhIOWPJDUdq2wJXJ
+         +S1cRn7HVn/zalzagsSJKY+2BC1RICS3PNzZ15XMKrfFne8ojeeXShIIlNPv25Z2RTD9
+         v4xgNfBGFE05z7If/SFVdc4uhKUxfWuv74u1j/+haRmAD+IvctAQrY3SS4li/kd05Qbt
+         N8xA==
+X-Forwarded-Encrypted: i=1; AJvYcCVJjJCFu1omKGvkTv/l+Uiiw00/ADNwpOdT0URPB+bwdSoFgL1H6L0Mvqw2x9xoNutZE9ARna3IQz4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwdnVVP0VMCKUi923S619QC/SszmzqeF0xRLli6+k/wejYpsqfn
+	7tajwED1wqUDtCOzBxo9vQyiNjFSCcuqagHR4Lvcqs8BER8ZJgsS2k41yFYTush9o6WYVABDRdt
+	UMZm/+QW8rsPk6AxEAYMUMlsnGmf2rlGewb592mXzY/ZSeXYFDOn7+M8rY7A5PgkQukNH
+X-Gm-Gg: ASbGncv0jv/wgkd1bJR/wL6VnfCMU73QfVMkJO7NJR+jk2pO9WuFg4L+oWfyRsRuCrq
+	b+0VlKIPXGmtSY/O3Xr65LVHD+gpE1JNwYeR6M4SOSjTil+DC+Ko/YX5uPsmNNUGV94U6E3pvu4
+	DfCqIVqxzOPjpDX9B3UeY/GBxz6kxfvuR5iq++dNwDAbCbo+oHOmP+d7efPqqYGAbxnLAqs35tv
+	wg+10IFQ+xHBIiNOj5RU8IP9l6K2tHPFzqfl1xLxzaOifkHmsWs1iaalvf1FcDmFqgWRIo7d5HX
+	4Vem/dQRehNoyYrJV67K33ivfS5WFgRxBXqno58HG7lHuvgEpqRIcm9bALbV9Fp9FWey2Np/S9i
+	d8zXXKhj3NbGMYYn3rg==
+X-Received: by 2002:a05:620a:2546:b0:7e6:39a2:3ebe with SMTP id af79cd13be357-7e66ef831b1mr218065485a.1.1753876742513;
+        Wed, 30 Jul 2025 04:59:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEy3Ac2RJmbNiBhetSgsrV4zyrjPh4J4l/19B5GXz/9xAxchLE62srybp1Dcr/TAc04N6REnA==
+X-Received: by 2002:a05:620a:2546:b0:7e6:39a2:3ebe with SMTP id af79cd13be357-7e66ef831b1mr218063685a.1.1753876742082;
+        Wed, 30 Jul 2025 04:59:02 -0700 (PDT)
+Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af635ad9cb9sm741180666b.123.2025.07.30.04.58.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 30 Jul 2025 04:59:01 -0700 (PDT)
+Message-ID: <e7952a9e-23db-45fc-9abf-0373fa26f2ee@oss.qualcomm.com>
+Date: Wed, 30 Jul 2025 13:58:58 +0200
 MIME-Version: 1.0
-Message-Id: <20250730-phy-qcom-edp-add-missing-refclk-v1-2-6f78afeadbcf@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/3] phy: qcom: edp: Add missing refclk for X1E80100
+To: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Sibi Sankar <quic_sibis@quicinc.com>,
+        Rajendra Nayak <quic_rjendra@quicinc.com>
+Cc: Johan Hovold <johan@kernel.org>, Taniya Das <quic_tdas@quicinc.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        stable@vger.kernel.org
 References: <20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org>
-In-Reply-To: <20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
- Sibi Sankar <quic_sibis@quicinc.com>, 
- Rajendra Nayak <quic_rjendra@quicinc.com>
-Cc: Johan Hovold <johan@kernel.org>, Taniya Das <quic_tdas@quicinc.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Abel Vesa <abel.vesa@linaro.org>, stable@vger.kernel.org
-X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4867; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=TgBYRJy76udBMDySYWNWrLvaijcn07Ed0RCtJm+44cE=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBoigY1doaswV8VD2318yl/LfkNsEW+6sNCWpajc
- PSF0sKaLCuJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaIoGNQAKCRAbX0TJAJUV
- VhAjD/4+VMHhxoeu9h/2nzfsGIvYgKCWkQF9w9Zox7i91PDgwD+pH1RVv3v/lXQGM2dVSKHI9Kf
- mmkrqJdeU7kxdBFkZ6LJGpfYJYAAL0A4RMa6L7ps1O9482bcpNuilxc3UtZBzbmmsWMZtmqz1BM
- XbWtZ9iGEjelgUF4bsxMLNgwM/vvPjPofwhlvLqU4Wf2vnpONd7ydb1rwaBGd3KIPZvOPPgOIjm
- Lvfew11goRPnEkxsLZiX8Psn+lq/PF2RiGROg8E3ASS35Vvm7s/TBCyZ+U7gBZov1As3Lp8z6bK
- kHHC+iWVRtqlDq2wM1WmfQ4Ptc3dCNy/YObXZnLfDSGyMC4n44yKCAK0s60UEd57iqUfPTitoOD
- 8t6lIkuEGUJdNZ1MJ+gcEiiBy3Ffa/b/jcdyQQ5AbypZMiC7nH7VqWu8By2SiKNYnhQrirFK5lU
- UMA19UqdID9N4ws5zjpV78tKEZdtqk+wyJqz/jYIt4XE28VN4Lu7ZHOpH4rtS4uvxPic11m3vb0
- V3Ywg3dSKTv0dOdIwa+vmqh2sM1wVCKmJeouRJLHVUONKJ+GCC2IPOyCkFd1RvRtH9j78NlBuA2
- +I5XKn39dNIngtJ7LAYXrCSiR/2flI1Xc33ak6fpDCER9506M2Lx/nHvwnATGDe4xP7RExP/Xg3
- 8pMWty4e+D7rQUA==
-X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
- fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
+ <20250730-phy-qcom-edp-add-missing-refclk-v1-2-6f78afeadbcf@linaro.org>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250730-phy-qcom-edp-add-missing-refclk-v1-2-6f78afeadbcf@linaro.org>
+X-Proofpoint-ORIG-GUID: nbFlwG5oJnwIPALYqQHPcM11EkUbWo63
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzMwMDA4MyBTYWx0ZWRfXyNFg3RGZNFIW
+ JN2OCGUwmpRSkgc/1rnqxixvv6n+0M7VzyRy4C4Wm7lj/kIMPjQkkLuz9/skz2GQj6sZDN/0IPi
+ NZJrY/zkAOqdz5uP7ZXNO930BP/z4yfuI/uEQXILJ9t8d+Ed66CULDbPyz2KDTIm40sBrC904LL
+ VHaX+rqnTivELg8k7ay8bT2IZhPw/KbHxQ+dUY5S+MjgOq0p5Y0quL0nrpN3uXGGkAcJSRvTnw1
+ Idl/NmKSnGZ/mSz4Hr966yRmWCxkUboTBHSucwHQi/b/pOovLjhUt0abhHxUCFGJ7X/UlGvOUt4
+ 2yZMHE2QBU62x3OWUpln46fW8XDdMZad9mZc9/e4bCrNYv7YE3hPebQWj+x/DVKzCAk1KnJNqbV
+ 2fcIwoELgB9adEwqsmYYhWoykOT8mSLzLoQEGE24x4pMu7YQDTC5Nn6TwMmv1YF874pOkW4u
+X-Proofpoint-GUID: nbFlwG5oJnwIPALYqQHPcM11EkUbWo63
+X-Authority-Analysis: v=2.4 cv=KtNN2XWN c=1 sm=1 tr=0 ts=688a0907 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8
+ a=C9jaBoPFOhspESL_4l8A:9 a=QEXdDO2ut3YA:10 a=1HOtulTD9v-eNWfpl4qZ:22
+ a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-30_04,2025-07-30_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 lowpriorityscore=0 suspectscore=0
+ adultscore=0 mlxlogscore=807 bulkscore=0 spamscore=0 impostorscore=0
+ mlxscore=0 malwarescore=0 phishscore=0 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2507300083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250730_044711_405786_C9782392 
-X-CRM114-Status: GOOD (  15.66  )
+X-CRM114-CacheID: sfid-20250730_045904_649784_A9D64498 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,155 +145,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On X Elite, the DP PHY needs another clock called refclk.
-Rework the match data to allow passing different number of clocks and
-add the refclk to the X1E80100 config data.
+On 7/30/25 1:46 PM, Abel Vesa wrote:
+> On X Elite, the DP PHY needs another clock called refclk.
+> Rework the match data to allow passing different number of clocks and
+> add the refclk to the X1E80100 config data.
+> 
+> Cc: stable@vger.kernel.org # v6.10
+> Fixes: db83c107dc29 ("phy: qcom: edp: Add v6 specific ops and X1E80100 platform support")
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
 
-Cc: stable@vger.kernel.org # v6.10
-Fixes: db83c107dc29 ("phy: qcom: edp: Add v6 specific ops and X1E80100 platform support")
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 43 +++++++++++++++++++++++++++++++------
- 1 file changed, 36 insertions(+), 7 deletions(-)
+[...]
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index f1b51018683d51df064f60440864c6031638670c..785de5bc6d1a8b11bd4cb87d8fa52dc2baa56646 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -85,6 +85,8 @@ struct qcom_edp_phy_cfg {
- 	const u8 *aux_cfg;
- 	const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
- 	const struct phy_ver_ops *ver_ops;
-+	const char * const *clks;
-+	int num_clks;
- };
- 
- struct qcom_edp {
-@@ -103,9 +105,11 @@ struct qcom_edp {
- 
- 	struct phy_configure_opts_dp dp_opts;
- 
--	struct clk_bulk_data clks[2];
- 	struct regulator_bulk_data supplies[2];
- 
-+	struct clk_bulk_data *clks;
-+	int num_clks;
-+
- 	bool is_edp;
- };
- 
-@@ -218,7 +222,7 @@ static int qcom_edp_phy_init(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
-+	ret = clk_bulk_prepare_enable(edp->num_clks, edp->clks);
- 	if (ret)
- 		goto out_disable_supplies;
- 
-@@ -524,6 +528,10 @@ static int qcom_edp_com_configure_pll_v4(const struct qcom_edp *edp)
- 	return 0;
- }
- 
-+static const char * const qcom_edp_clks_v4[] = {
-+	"aux", "cfg_ahb",
-+};
-+
- static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- 	.com_power_on		= qcom_edp_phy_power_on_v4,
- 	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v4,
-@@ -537,17 +545,23 @@ static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v5,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
-+	.clks = qcom_edp_clks_v4,
-+	.num_clks = ARRAY_SIZE(qcom_edp_clks_v4),
- };
- 
- static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
-+	.clks = qcom_edp_clks_v4,
-+	.num_clks = ARRAY_SIZE(qcom_edp_clks_v4),
- };
- 
- static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
-+	.clks = qcom_edp_clks_v4,
-+	.num_clks = ARRAY_SIZE(qcom_edp_clks_v4),
- };
- 
- static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
-@@ -555,6 +569,8 @@ static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
-+	.clks = qcom_edp_clks_v4,
-+	.num_clks = ARRAY_SIZE(qcom_edp_clks_v4),
- };
- 
- static int qcom_edp_phy_power_on_v6(const struct qcom_edp *edp)
-@@ -730,10 +746,16 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
- 	.com_configure_ssc	= qcom_edp_com_configure_ssc_v6,
- };
- 
-+static const char * const qcom_edp_clks_v6[] = {
-+	"aux", "cfg_ahb", "refclk",
-+};
-+
- static struct qcom_edp_phy_cfg x1e80100_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v6,
-+	.clks = qcom_edp_clks_v6,
-+	.num_clks = ARRAY_SIZE(qcom_edp_clks_v6),
- };
- 
- static int qcom_edp_phy_power_on(struct phy *phy)
-@@ -885,7 +907,7 @@ static int qcom_edp_phy_exit(struct phy *phy)
- {
- 	struct qcom_edp *edp = phy_get_drvdata(phy);
- 
--	clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
-+	clk_bulk_disable_unprepare(edp->num_clks, edp->clks);
- 	regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
- 
- 	return 0;
-@@ -1066,7 +1088,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
- 	struct qcom_edp *edp;
--	int ret;
-+	int ret, i;
- 
- 	edp = devm_kzalloc(dev, sizeof(*edp), GFP_KERNEL);
- 	if (!edp)
-@@ -1092,9 +1114,16 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- 	if (IS_ERR(edp->pll))
- 		return PTR_ERR(edp->pll);
- 
--	edp->clks[0].id = "aux";
--	edp->clks[1].id = "cfg_ahb";
--	ret = devm_clk_bulk_get(dev, ARRAY_SIZE(edp->clks), edp->clks);
-+	edp->clks = devm_kcalloc(dev, edp->cfg->num_clks, sizeof(*edp->clks), GFP_KERNEL);
-+	if (IS_ERR(edp->clks))
-+		return PTR_ERR(edp->clks);
-+
-+	for (i = 0; i < edp->cfg->num_clks; i++)
-+		edp->clks[i].id = edp->cfg->clks[i];
-+
-+	edp->num_clks = edp->cfg->num_clks;
-+
-+	ret = devm_clk_bulk_get(dev, edp->num_clks, edp->clks);
- 	if (ret)
- 		return ret;
- 
+> +	edp->num_clks = edp->cfg->num_clks;
+> +
+> +	ret = devm_clk_bulk_get(dev, edp->num_clks, edp->clks);
 
--- 
-2.34.1
+Go with devm_clk_bulk_get_all() instead, no need to be so stringent
 
+Konrad
 
 -- 
 linux-phy mailing list
