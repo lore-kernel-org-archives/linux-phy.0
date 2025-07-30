@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DE76C87FCB
-	for <linux-phy@archiver.kernel.org>; Wed, 30 Jul 2025 09:48:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BB55C87FCB
+	for <linux-phy@archiver.kernel.org>; Wed, 30 Jul 2025 09:53:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E34H/Te2RJ8UtkIsMC36PBnhtw0yk/1dcCOv2hwwql8=; b=YLHFaMz4zUGdco
-	99YHhOvQcCjH9YpyFnGOQEGncRiNB/JvtCdThkjEN3Qkg5d16/T81spzTbMd5sIr4eYDcRwMpHas1
-	w4l+xim33+MqGa2LNH//gj3hSckc8JNcA8/HQVKoCul6ZrhNRlRzpF76FC4zbCsgDVxYP321WTAJJ
-	vIGs4IGr9t0OR7X8/B/W48QdtBS0pZT2ywTZR+NLipwtM8pcyj6W51+TASKSJb8puZrZ819qnymgc
-	CVHEWII/DINsX/09HSi8jDGdGToTVZMsy3fDUTticAmnFLRwqhhqyHNqBRdAQomByWT6FBi1B23qu
-	NvFkB/cZQx5qemWMyfBA==;
+	List-Owner; bh=E8AsiU6RE8ty42NgZQfILp7Cji6KhM6O9YjZAnvJtLc=; b=wxCwd+cAmOh+GO
+	dclnquxkpxIGdf5XXzYDCQojyvF9HCLNZS5qOdzBG7kRiXGEA07iR9zGjRftwt2WV3kD58LWR0K28
+	zoYr/25VKrYwY/vaKDLpoRJ/3WNsDLLuI4fX2AMmJL5fBML/2jlHYXPfJ+FplYY79BmkTsZIyr5x3
+	vSkvym/cmWAwguQ/07OZ0r01r7RwH/ryFqXuXVblBoVb2bHeVbIDrIHDu/ngqNv3gc7/jAEPT6Xqp
+	dK25dMQv7QnI6Dfg47RvZRogSFqTZmRWJyXz7Kvm3m4XicOh8KjCS1XNm/0BZdos37siM+IUITQWg
+	WNUrXnenRAXNC9E5Uqwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uh3Pu-000000019r8-0JVo;
-	Wed, 30 Jul 2025 09:48:10 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uh3Uj-00000001AVg-1Y7C;
+	Wed, 30 Jul 2025 09:53:09 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uh3Pr-000000019qM-3LZc
+	id 1uh3TB-00000001AG4-3QwY
 	for linux-phy@lists.infradead.org;
-	Wed, 30 Jul 2025 09:48:08 +0000
+	Wed, 30 Jul 2025 09:51:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 75864412EC;
-	Wed, 30 Jul 2025 09:48:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DCA3C4CEF5;
-	Wed, 30 Jul 2025 09:48:07 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 21C36601E1;
+	Wed, 30 Jul 2025 09:51:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA0DAC4CEF5;
+	Wed, 30 Jul 2025 09:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753868887;
-	bh=8YrxCuXCK98kwQnH2GEjHBy78tJhFnVfKZEbIqP+f1A=;
+	s=k20201202; t=1753869092;
+	bh=uUO5w+7fXASYNU9Kt8APciPnhPDC3kbEVI7LeC/Sc4Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hiBXEMapNuIohdzdO4nE/XGyfIAfvbU+vj/sOuZJ1kJ/A5OYjPQ0aKr0A39hxjDPV
-	 mpqQBILoTuVqQwmtPQq2tPcC8SUW71oZM1LYputhKCJCTNe7tilQHbwEZuHJ2JsfgH
-	 KRcnQ+aJRZ1I+ZVBkuskWnXuimg9qHmwix44evQABHp/NS4SXHhFbbKLPkiBKYGtRe
-	 tfCxh5jzs/2EYYaI/ywEwZGjCMPXQGGsnzoS8onVL1d424nd6vuzeaSzsj591aY37a
-	 quDhI8p1oprtEWTvjTRim6rxYXqpdjaDWwwLGl7EuelWl+1Mz08R/wNtt+//eFa09t
-	 FLnnUDqcxLdVg==
+	b=Zqi+/lTLLKqTT3gUTKNdXehod98TDjxVREm0tnOYwfqqbR9mv/KBI4JWcyEDPCVHw
+	 O3QTfI7RmT5L4nX22c8XHVf8ZkW97GFLYZNQ1BjndCHwOOHmyPj0tyCVIwZUGBBcv/
+	 B4P3bQg829uFoSmX9dEigr9agioqbZlqfcoHfnbZGZKtqz464YUSXQzoj5lWWT+wAx
+	 z2zwsmn39eVS1hjGOhoMKmUGMRHXRYwF2DSDXxbVCbumq11pULQBhLpi3gSfA/3JMW
+	 wPxQfbYuBdTkyAsdvTxHJyt0Fnw7C+4c9LztCSJS3AN7rwYApLCna/kDNsIF43PaNd
+	 cprISPI3KpLew==
 Received: from johan by xi.lan with local (Exim 4.98.2)
 	(envelope-from <johan@kernel.org>)
-	id 1uh3Pr-000000006CL-3rL5;
-	Wed, 30 Jul 2025 11:48:07 +0200
-Date: Wed, 30 Jul 2025 11:48:07 +0200
+	id 1uh3TB-000000006FV-1CuA;
+	Wed, 30 Jul 2025 11:51:33 +0200
+Date: Wed, 30 Jul 2025 11:51:33 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
@@ -59,18 +59,14 @@ Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
 	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
 	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
 	quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v9 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Update pcie phy bindings for qcs8300
-Message-ID: <aInqV5IEAN9LRvFV@hovoldconsulting.com>
-References: <20250725104037.4054070-1-ziyue.zhang@oss.qualcomm.com>
- <20250725104037.4054070-2-ziyue.zhang@oss.qualcomm.com>
+Subject: Re: [PATCH v7 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings
+Message-ID: <aInrJT5A0EZwzwrb@hovoldconsulting.com>
+References: <20250725102231.3608298-1-ziyue.zhang@oss.qualcomm.com>
+ <20250725102231.3608298-2-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250725104037.4054070-2-ziyue.zhang@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250730_024807_852901_745F647D 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250725102231.3608298-2-ziyue.zhang@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,16 +83,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 25, 2025 at 06:40:33PM +0800, Ziyue Zhang wrote:
-> The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
-> specified in the device tree node. Hence, move the qcs8300 phy
-> compatibility entry into the list of PHYs that require six clocks.
+On Fri, Jul 25, 2025 at 06:22:29PM +0800, Ziyue Zhang wrote:
+> The gcc_aux_clk is required by the PCIe controller but not by the PCIe
+> PHY. In PCIe PHY, the source of aux_clk used in low-power mode should
+> be gcc_phy_aux_clk. Hence, remove gcc_aux_clk and replace it with
+> gcc_phy_aux_clk.
 > 
-> Removed the phy_aux clock from the PCIe PHY binding as it is no longer
-> used by any instance.
-> 
-> Fixes: e46e59b77a9e ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2")
-> 
+> Fixes: fd2d4e4c1986 ("dt-bindings: phy: qcom,qmp: Add sa8775p QMP PCIe PHY")
 > Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 > Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
