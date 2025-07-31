@@ -4,72 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3340C87FCB
-	for <linux-phy@archiver.kernel.org>; Thu, 31 Jul 2025 02:20:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3655C87FCA
+	for <linux-phy@archiver.kernel.org>; Thu, 31 Jul 2025 04:00:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=weE3bALkDdewcHDPquyRU7Mw+6MHhlb7xwHx8ikjeFs=; b=y2WO7WK03HiEwv
-	hOFV+3kTaKgAE6vdvQI0fp4Z6Ej1R/E7xvnMAQe6PLIBHlIcI/fMYjmb4anjKs+5FLyf1+5wzk842
-	SSVP/PnBnBQopmwQKwDJjv4rL5f/KkBU+L6PAp5FO/+7ynBbsErlRTwE17g/NXC/xwSrIEjGVF+Uy
-	2v3ejDb5sNcxnbC150i/LmIYX78Y1B/w/aGDKPnxJxs04/bVJeKHpXluZfqY24Pe2xpQ3zuynJMPG
-	lPLjsXxaeBsHBrQnU1ASY9XyqfRB7DSvjU1F12hHraXscFmyio1zUPeNgRUJWA0azToryWlVTVaJZ
-	/MTbuoa+19etDDFVVcVw==;
+	List-Owner; bh=Nxo+P0l4zoWKz/kJzkt/gVCQ3VaYorxzFaDYqE74yUQ=; b=kMd3rAFCR9cmX0
+	yX7d7RhNSwicY4HA0GO4abSM5jV9pwM6oT/sMKZbmGn9O2ge7c77d0pbp6i0TXntEorDWrBMPkjOr
+	NYpAFde5y9qNwd06VOME6W5ygWdfaCBNSjcC7KWRBr7Bn1GPZyUsfxCJtsm81bIbvScKcEYkIXrRw
+	dJjv1GAzbRpRp/S+7pz6JoEEnBn1PRUILURsF9puFD9dqgWG//4FbNxKiUDUBON6oWvWYLgPuisP2
+	hBP/x9WB0u3fMtLUWcoN14jReHL/XHv/JqBcSAbWve1ss/TWqLEAtiFT5OnqqcqWUa+FvoE2vsdEI
+	BKGTsrOuHhbLD8DpFADQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhItx-00000002lQ9-1qO6;
-	Thu, 31 Jul 2025 02:20:13 +0000
-Received: from mail-m603.netease.com ([210.79.60.3])
+	id 1uhKSY-00000002rB3-1pzM;
+	Thu, 31 Jul 2025 04:00:02 +0000
+Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhItu-00000002lNR-0A0b;
-	Thu, 31 Jul 2025 02:20:12 +0000
-Received: from [172.16.12.153] (gy-adaptive-ssl-proxy-4-entmail-virt151.gy.ntes [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 1dcdf18ba;
-	Thu, 31 Jul 2025 10:19:51 +0800 (GMT+08:00)
-Message-ID: <63ec11cf-7927-431a-995e-a5fc35ef1ba7@rock-chips.com>
-Date: Thu, 31 Jul 2025 10:19:49 +0800
+	id 1uhKSW-00000002rAM-0IHV
+	for linux-phy@lists.infradead.org;
+	Thu, 31 Jul 2025 04:00:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1753934400; x=1785470400;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=OcrZsUyHq3wWNpX5cgXufQ+ZLvYsQ6Y63zo9gqCOHL4=;
+  b=TiNBGAaXlu6OEnHALgN2m6PscmHjtsqTHcUx3Dwx23QvRsaSZnZBfhgD
+   TlIvcUrDTOc9wZR/0lDQ/Ept96k0kC5J/gYShvlSzWRWritbI9S9NIWp6
+   Jn+G1xSVWqtoj1VNqDiAZ4Sg5I7orkCQdomWEyrN90AIHcZEcmsz6u6ON
+   uvdCCCaxBsmkJK00C7a/PMBqL5psKS/kX6XXdkJELYoJnGBnt6boYBiXS
+   clGu//Mf9+xiGKRZF3oWwwVM8HDEVbGAwdefOw0g6drlBnbmpZNzf2OZd
+   GoOzuE3WCv6laNzzDVpRy/Oh/DIeULmhzrKFs9AcDB7w766dUK/k3cGqN
+   Q==;
+X-CSE-ConnectionGUID: 0b4il6LiS+iS0rbP8a+Ivg==
+X-CSE-MsgGUID: /pn1GSObSP6HiAf4RLzj6A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11507"; a="56336423"
+X-IronPort-AV: E=Sophos;i="6.16,353,1744095600"; 
+   d="scan'208";a="56336423"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jul 2025 20:59:59 -0700
+X-CSE-ConnectionGUID: gYjm9tjYSkK3pLYlL9EdZg==
+X-CSE-MsgGUID: p6F5ISCGQ2S6IQroCGXimQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.16,353,1744095600"; 
+   d="scan'208";a="194138761"
+Received: from lkp-server01.sh.intel.com (HELO 160750d4a34c) ([10.239.97.150])
+  by orviesa002.jf.intel.com with ESMTP; 30 Jul 2025 20:59:54 -0700
+Received: from kbuild by 160750d4a34c with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uhKSN-0003Oi-0h;
+	Thu, 31 Jul 2025 03:59:51 +0000
+Date: Thu, 31 Jul 2025 11:59:47 +0800
+From: kernel test robot <lkp@intel.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	sboyd@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+	casey.connolly@linaro.org
+Subject: Re: [PATCH v3 4/7] phy: qualcomm: eusb2-repeater: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <202507311150.5ofvQlKl-lkp@intel.com>
+References: <20250730112645.542179-5-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/5] Add Type-C DP support for RK3399 EVB IND board
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- dri-devel@lists.freedesktop.org
-References: <20250729090032.97-1-kernel@airkyi.com>
- <3kefqzjewmsyzfvyi33kvlgjd6jphjg3fsnixb3of7yb3xkgs2@hgi6xfkgd653>
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <3kefqzjewmsyzfvyi33kvlgjd6jphjg3fsnixb3of7yb3xkgs2@hgi6xfkgd653>
-X-HM-Tid: 0a985e475b1003abkunm77c0d17969e27b
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQhpLHlZKTE5DQhgfSUsZSBlWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=RO16iif7fvE2I/NqgFVWubst7c5eff+ThID3ba+yjSGE1Deh2av4GXUdv8xcfOjIoQRF5I8v1uaoBxKb/+DD1K1YmFe3nXoNmqmLqsqYOc6GjQA/eU0CqsQeM8yRVB7HTls4tRM/6RHXOdZnkUd6HI2cIMr02K/o8X0yNF8Ofbc=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=+TiEqyL1AH0iOF6kXInInA83bu0TufgWM4xm6RFb5sQ=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <20250730112645.542179-5-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250730_192010_650787_05A78414 
-X-CRM114-Status: GOOD (  20.87  )
+X-CRM114-CacheID: sfid-20250730_210000_182054_7FE4BB3A 
+X-CRM114-Status: GOOD (  10.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,56 +93,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgRG1pdHJ5LAoKT24gNy8zMS8yMDI1IDM6MTMgQU0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6
-Cj4gT24gVHVlLCBKdWwgMjksIDIwMjUgYXQgMDU6MDA6MjdQTSArMDgwMCwgQ2hhb3lpIENoZW4g
-d3JvdGU6Cj4+IEZyb206IENoYW95aSBDaGVuIDxjaGFveWkuY2hlbkByb2NrLWNoaXBzLmNvbT4K
-Pj4KPj4gVGhpcyBzZXJpZXMgZm9jdXNlcyBvbiBhZGRpbmcgVHlwZS1DIERQIHN1cHBvcnQgZm9y
-IFVTQkRQIFBIWSBhbmQgRFAKPj4gZHJpdmVyLiBUaGUgVVNCRFAgUEhZIGFuZCBEUCB3aWxsIHBl
-cmNlaXZlIHRoZSBjaGFuZ2VzIGluIGNhYmxlIHN0YXR1cwo+PiBiYXNlZCBvbiB0aGUgVVNCIFBE
-IGFuZCBUeXBlLUMgc3RhdGUgbWFjaGluZXMgcHJvdmlkZWQgYnkgVENQTS4gQmVmb3JlCj4+IHRo
-aXMsIHRoZSBVU0JEUCBQSFkgYW5kIERQIGNvbnRyb2xsZXIgb2YgUkszMzk5IHNlbnNlZCBjYWJs
-ZSBzdGF0ZQo+PiBjaGFuZ2VzIHRocm91Z2ggZXh0Y29uLCBhbmQgZGV2aWNlcyBzdWNoIGFzIHRo
-ZSBSSzMzOTkgR3J1LUNocm9tZWJvb2sKPj4gcmVseSBvbiB0aGVtLiBUaGlzIHNlcmllcyBzaG91
-bGQgbm90IGJyZWFrIHRoZW0uCj4+Cj4gWy4uLi5dCj4KPj4gPT09PQo+PiAyLiBEUCBIUEQgZXZl
-bnQgbm90aWZ5Cj4+Cj4+IFRoZSBSSzMzOTkgaGFzIHR3byBVU0IvRFAgY29tYm8gUEhZIGFuZCBv
-bmUgQ0ROLURQIGNvbnRyb2xsZXIuIEFuZAo+PiB0aGUgQ0ROLURQIGNhbiBiZSBzd2l0Y2hlZCB0
-byBvdXRwdXQgdG8gb25lIG9mIHRoZSBQSFlzLgo+Pgo+PiBVU0IvRFAgUEhZMCAtLS0rCj4+ICAg
-ICAgICAgICAgICAgICB8IDwtLS0tPiBDRE4tRFAgY29udHJvbGxlcgo+PiBVU0IvRFAgUEhZMSAt
-LS0rCj4gQ291bGQgeW91IHBsZWFzZSBjbGFyaWZ5IHRoaXMsIGNhbiB5b3Ugc3dpdGNoIERQIHN0
-cmVhbSBiZXR3ZWVuIHR3bwo+IFVTQi1DIG91dHB1dHM/IFdoYXQgaGFwcGVucyBpZiB1c2VyIHBs
-dWdzIGluIERQIGRvbmdsZXMgaW4gYm90aCBVU0ItQwo+IHBvcnRzPwoKQ3VycmVudGx5LCB0aGUg
-c29mdHdhcmUgc2ltcGx5IHNlbGVjdHMgdGhlIGZpcnN0IGF2YWlsYWJsZSBwb3J0LiBTbyBpZiAK
-dXNlciBwbHVncyBpbiBEUCBkb25nbGVzIGluIGJvdGggVVNCLUMgcG9ydHMsIHRoZSBEUCBkcml2
-ZXIgd2lsbCBzZWxlY3QgCnRoZSBmaXJzdCBwb3J0LiBUaGlzIHByb2Nlc3MgaXMgaW1wbGVtZW50
-ZWQgaW4gY2RuX2RwX2Nvbm5lY3RlZF9wb3J0KCkgLgoKCgo+Cj4+IEJUVywgb25lIG9mIHRoZSBp
-bXBvcnRhbnQgdGhpbmdzIHRvIGRvIGlzIHRvIGltcGxlbWVudCBleHRjb24tbGlrZQo+PiBub3Rp
-ZmljYXRpb25zLiBJIGZvdW5kIGluY2x1ZGUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmggLCBidXQg
-aWYgdGhlCj4+IGF1eC1icmlkZ2UgaXMgdXNlZCwgdGhlIGJyaWRnZSBjaGFpbiB3b3VsZCBsb29r
-IGxpa2UgdGhpczoKPj4KPj4gUEhZMCBhdXgtYnJpZGdlIC0tLSsKPj4gICAgICAgICAgICAgICAg
-ICAgICB8IC0tLS0+IENETi1EUCBicmlkZ2UKPj4gUEhZMSBhdXgtYnJpZGdlIC0tLSsKPj4KPj4g
-T2gsIENETi1EUCBicmlkZ2UgaGFzIHR3byBwcmV2aW91cyBhdXgtYnJpZGdlIQo+Pgo+PiBOb3cs
-IEkgdHJ5IHRvIHVzZSBkcm1fY29ubmVjdG9yX29vYl9ob3RwbHVnX2V2ZW50KCkgdG8gbm90aWZ5
-IEhQRAo+PiBzdGF0ZSBiZXR3ZWVuIFBIWSBhbmQgQ0ROLURQIGNvbnRyb2xsZXIuCj4gRG9lcyBp
-dCBhY3R1YWxseSB3b3JrPyBUaGUgT09CIEhQRCBldmVudCB3aWxsIGJlIHJlcG90ZWQgZm9yIHRo
-ZSB1c2ItYwo+IGNvbm5lY3RvcidzIGZ3bm9kZSwgYnV0IHRoZSBEUCBjb250cm9sbGVyIGlzbid0
-IGNvbm5lY3RlZCB0byB0aGF0IG5vZGUKPiBhbnlob3cuIElmIEknbSBub3QgbWlzdGFrZW4sIHRo
-ZSBIUEQgc2lnbmFsIHdpbGwgbm90IHJlYWNoIERQIGRyaXZlciBpbgo+IHRoaXMgY2FzZS4KClll
-cy7CoCBXaGF0IHlvdSBtZW50aW9uZWQgaXMgdGhlIGNhc2UgaW4gCmRyaXZlcnMvdXNiL3R5cGVj
-L2FsdG1vZGVzL2Rpc3BsYXlwb3J0LmMgLiBJIGhhdmUgYWxzbyBhZGRlZCBhIG5ldyBPT0IgCmV2
-ZW50IG5vdGlmeSBpbiB0aGUgUEhZIGRyaXZlciBpbiBQYXRjaCAzLCB3aGVyZSB0aGUgZXhwZWN0
-ZWQgZndub2RlIGlzIAp1c2VkIGluIHRoZSBQSFkuIFNvIG5vdyB3ZSBoYXZlIHR3byBPT0IgSFBE
-IGV2ZW50cywgb25lIGZyb20gCmFsdG1vZGVzL2Rpc3BsYXlwb3J0LmMgYW5kIHRoZSBvdGhlciBm
-cm9tIFBIWS4gT25seSB0aGUgSFBEIGZyb20gUEhZIGlzIApldmVudHVhbGx5IHBhc3NlZCB0byB0
-aGUgRFAgZHJpdmVyLgoKCgo+Cj4+IFBhdGNoMSBhZGQgbmV3IFR5cGUtQyBtb2RlIHN3aXRjaCBm
-b3IgUkszMzk5IFVTQkRQIHBoeSBiaW5kaW5nLgo+PiBQYXRjaDIgYWRkIHR5cGVjX211eCBhbmQg
-dHlwZWNfc3dpdGNoIGZvciBSSzMzOTkgVVNCRFAgUEhZLgo+PiBQYXRjaDMgZHJvcHMgQ0ROLURQ
-J3MgZXh0Y29uIGRlcGVuZGVuY3kgd2hlbiBUeXBlLUMgaXMgcHJlc2VudC4KPj4gUGF0Y2g0IGFk
-ZCBtaXNzaW5nIGRwX291dCBwb3J0IGZvciBSSzMzOTkgQ0ROLURQLgo+PiBQYXRjaDUgYWRkIFR5
-cGUtQyBEUCBzdXBwb3J0IGZvciBSSzMzOTkgRVZCIElORCBib2FyZC4KPj4KCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi AngeloGioacchino,
+
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on next-20250730]
+[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16 v6.16-rc7 v6.16-rc6 v6.16]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250730-193217
+base:   next-20250730
+patch link:    https://lore.kernel.org/r/20250730112645.542179-5-angelogioacchino.delregno%40collabora.com
+patch subject: [PATCH v3 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
+config: arm64-randconfig-002-20250731 (https://download.01.org/0day-ci/archive/20250731/202507311150.5ofvQlKl-lkp@intel.com/config)
+compiler: aarch64-linux-gcc (GCC) 13.4.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250731/202507311150.5ofvQlKl-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202507311150.5ofvQlKl-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+>> aarch64-linux-ld: Unexpected GOT/PLT entries detected!
+>> aarch64-linux-ld: Unexpected run-time procedure linkages detected!
+   aarch64-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.o: in function `eusb2_repeater_probe':
+   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:228:(.text+0x5a8): undefined reference to `devm_spmi_subdevice_alloc_and_add'
+>> aarch64-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:236:(.text+0x61c): undefined reference to `__devm_regmap_init_spmi_ext'
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
