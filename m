@@ -4,84 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3655C87FCA
-	for <linux-phy@archiver.kernel.org>; Thu, 31 Jul 2025 04:00:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9CB2C87FCA
+	for <linux-phy@archiver.kernel.org>; Thu, 31 Jul 2025 04:48:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nxo+P0l4zoWKz/kJzkt/gVCQ3VaYorxzFaDYqE74yUQ=; b=kMd3rAFCR9cmX0
-	yX7d7RhNSwicY4HA0GO4abSM5jV9pwM6oT/sMKZbmGn9O2ge7c77d0pbp6i0TXntEorDWrBMPkjOr
-	NYpAFde5y9qNwd06VOME6W5ygWdfaCBNSjcC7KWRBr7Bn1GPZyUsfxCJtsm81bIbvScKcEYkIXrRw
-	dJjv1GAzbRpRp/S+7pz6JoEEnBn1PRUILURsF9puFD9dqgWG//4FbNxKiUDUBON6oWvWYLgPuisP2
-	hBP/x9WB0u3fMtLUWcoN14jReHL/XHv/JqBcSAbWve1ss/TWqLEAtiFT5OnqqcqWUa+FvoE2vsdEI
-	BKGTsrOuHhbLD8DpFADQ==;
+	List-Owner; bh=Jb1fDu/NxYsiW8MCZhcq1rI/f0vty/R9aMti12FcqbA=; b=Zf7YnL4s582YdM
+	UKXVTWjX7svKDlXhj8vbUHkawNH0S2yu0dkNIGcH5s9ruJ5GJ6YvrsijESkLkgd6oWsP/rKn25lyI
+	62yAgBMr5ZpiKyOrt2DtbDB4y0018jwftCcaPMpMlomQZdgItt8t7l4/U7W8gb2w3FO7de0xowZo8
+	esZ+DEcR3WwWtw083bvAroyJOTg5FsVtuRhLoDUZtA0n1ljkUiqqAbtHk34fwV7LfPYM003IoSHJE
+	jGTuPI7fEhgVXotCVuxh0PUrx0Yqv+6HKxTZMn0gdh2hyquOZ5hvrN+WMgdiYn/tqmvG8x92l9ysJ
+	UmwEop1kRGPWnljkMpbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhKSY-00000002rB3-1pzM;
-	Thu, 31 Jul 2025 04:00:02 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1uhLDT-00000002tsZ-2aoV;
+	Thu, 31 Jul 2025 04:48:31 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhKSW-00000002rAM-0IHV
+	id 1uhLDR-00000002ts7-0osQ
 	for linux-phy@lists.infradead.org;
-	Thu, 31 Jul 2025 04:00:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1753934400; x=1785470400;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=OcrZsUyHq3wWNpX5cgXufQ+ZLvYsQ6Y63zo9gqCOHL4=;
-  b=TiNBGAaXlu6OEnHALgN2m6PscmHjtsqTHcUx3Dwx23QvRsaSZnZBfhgD
-   TlIvcUrDTOc9wZR/0lDQ/Ept96k0kC5J/gYShvlSzWRWritbI9S9NIWp6
-   Jn+G1xSVWqtoj1VNqDiAZ4Sg5I7orkCQdomWEyrN90AIHcZEcmsz6u6ON
-   uvdCCCaxBsmkJK00C7a/PMBqL5psKS/kX6XXdkJELYoJnGBnt6boYBiXS
-   clGu//Mf9+xiGKRZF3oWwwVM8HDEVbGAwdefOw0g6drlBnbmpZNzf2OZd
-   GoOzuE3WCv6laNzzDVpRy/Oh/DIeULmhzrKFs9AcDB7w766dUK/k3cGqN
-   Q==;
-X-CSE-ConnectionGUID: 0b4il6LiS+iS0rbP8a+Ivg==
-X-CSE-MsgGUID: /pn1GSObSP6HiAf4RLzj6A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11507"; a="56336423"
-X-IronPort-AV: E=Sophos;i="6.16,353,1744095600"; 
-   d="scan'208";a="56336423"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Jul 2025 20:59:59 -0700
-X-CSE-ConnectionGUID: gYjm9tjYSkK3pLYlL9EdZg==
-X-CSE-MsgGUID: p6F5ISCGQ2S6IQroCGXimQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,353,1744095600"; 
-   d="scan'208";a="194138761"
-Received: from lkp-server01.sh.intel.com (HELO 160750d4a34c) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 30 Jul 2025 20:59:54 -0700
-Received: from kbuild by 160750d4a34c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uhKSN-0003Oi-0h;
-	Thu, 31 Jul 2025 03:59:51 +0000
-Date: Thu, 31 Jul 2025 11:59:47 +0800
-From: kernel test robot <lkp@intel.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	sboyd@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
-	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
-	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
-	u.kleine-koenig@baylibre.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
-	casey.connolly@linaro.org
-Subject: Re: [PATCH v3 4/7] phy: qualcomm: eusb2-repeater: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-Message-ID: <202507311150.5ofvQlKl-lkp@intel.com>
-References: <20250730112645.542179-5-angelogioacchino.delregno@collabora.com>
+	Thu, 31 Jul 2025 04:48:30 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-45634205adaso1859555e9.2
+        for <linux-phy@lists.infradead.org>; Wed, 30 Jul 2025 21:48:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1753937307; x=1754542107; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=b+OrFG1RW/4OrT91GMBpoWi+WkQwdsqdJLp/SCREI/0=;
+        b=P7CzbnRzCL20aGsRAFKhJ3Gzj8ZlukyuGSixL/AkjtLp+39k91iVMDnkYTyJTpG30O
+         nFiDhrV9grY0ZMi5tUeMyk7LeGP4MFF22NEwNBcYpM8nsoaahoZYe/iOQWZqhcRIFPwi
+         6+G7g9k+0RP+Av0Vhd/xeFnxJYHEeyAlkT81OSjCqD/TETu38/K63gsBMtIQJLgMgbKL
+         zdBmSEHoRxVzRjVYeSPJB4up0Udw6/OlrOHZjVvgpML1OU8LD6Aam8/W2NipjS2TmAN9
+         Biivmopepu8RfnMvqXKQEhKjtnyJDOJ4ihLA5WAUqepiGoHGuEn6D7OXcNVkk72bRiBG
+         WzjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1753937307; x=1754542107;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=b+OrFG1RW/4OrT91GMBpoWi+WkQwdsqdJLp/SCREI/0=;
+        b=GV+q8y7FofAhFs8+Q2gD8+c5Y4rZBz4pPYocyEc5raUAzCIRR4TlxGH1u7QtZ9oB7o
+         q7qGVi4VwgyBlm62SBrRsFbMFFYy8gy/LbX5/uQaiDvM8L326YGRCdJRvbbxSRUi8lAU
+         q31lk++wpI0nuwphCFqUUKYsW6H3oLIdzAksAmx65htQnThaW1MVu8+MoJDqL/XjsO7V
+         23fW4EMPkTxi83LXU4Jvh0ZFksu67sJ+SiN05itYx2uvzPUsEiLAx4vPNEiYB7/6YJFz
+         TXSp/cE/lH5cKlEcSazNELJVeEFJ7KvBNkLyLoDsPfrvycHLfFmIaIpTTNqgd1A+eEJ6
+         RLfQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWUjloNq/zINyeU5l6Owj2Wi5GG0YuA03FGLtYSsuBCUYfuKqadz0b1uzMjbj77YN3MnrS72TZ9kh8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx2obN/LNVPfzl5x8B87ZtiYak8KqzGy9FAI9VMPgA9oNCPMX/3
+	Hny2blJQbVCKgU59YE7yxCuqXS8X16lDH+qX1WgUkCwE8xfBIUSwF7Gb
+X-Gm-Gg: ASbGncufoi2183oiazdc5OUz61bCJPW5wycxHm11sXH141u5s4ruDAE77XwogYEQjGS
+	SfGzErN7A+9y4qgY+UyP1wLM1LzxCsWBwOrxRbGCovTHtJT1T058VsQZhAZg4G2V4P0/kWl7LAN
+	0XhebmmlYd6CFAGsjp4d4lBdnMR88uy5Nn7FJ98BnfDxwnH4B2gMAx34UlC+NzspcoC6yIlVtbh
+	zo0T7JKVIk7jPgd3jJvv7SWzqjParr1qjd6qwaaRDsL1RwhWJ1vdFDixfKNx/pDbjNYwAzTDJP9
+	B3lfDa95f0//BFY4ZfukVAEPOjWKhCJu80TudoIskvdca9NWBAPLrPHrbAZV40CbYVl0JPHNqFF
+	aj2+pdLuJo859kRlwf4+kSlVRByUBpZg=
+X-Google-Smtp-Source: AGHT+IFCKD8iIuL/MkTHk1LNw7dIB6eXL268mG1FZ3NC7vk5GOS2xCLYOJP6CKbFGwLGoLV6x8T+EQ==
+X-Received: by 2002:a05:600c:45cc:b0:456:2dc1:a603 with SMTP id 5b1f17b1804b1-4589eeb25cbmr7156195e9.5.1753937306889;
+        Wed, 30 Jul 2025 21:48:26 -0700 (PDT)
+Received: from legfed1 ([2a00:79c0:60f:e800:22ea:3d6a:5919:85f8])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-458953cff16sm49305285e9.19.2025.07.30.21.48.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 30 Jul 2025 21:48:26 -0700 (PDT)
+Date: Thu, 31 Jul 2025 06:48:24 +0200
+From: Dimitri Fedrau <dima.fedrau@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Dimitri Fedrau <dimitri.fedrau@liebherr.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN
+ transceiver
+Message-ID: <20250731044824.GA3815@legfed1>
+References: <20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com>
+ <20250728-tja1145-support-v1-1-ebd8494d545c@liebherr.com>
+ <20250730-aromatic-optimistic-hyena-f1db1a@kuoka>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250730112645.542179-5-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250730-aromatic-optimistic-hyena-f1db1a@kuoka>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250730_210000_182054_7FE4BB3A 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20250730_214829_238060_4F891421 
+X-CRM114-Status: GOOD (  24.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,40 +106,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi AngeloGioacchino,
+Hi Krzysztof,
 
-kernel test robot noticed the following build errors:
+Am Wed, Jul 30, 2025 at 09:35:12AM +0200 schrieb Krzysztof Kozlowski:
+> On Mon, Jul 28, 2025 at 05:39:29PM +0200, Dimitri Fedrau wrote:
+> > Adding documentation for NXPs TJA1145 CAN transceiver.
+> > 
+> > Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> > ---
+> >  .../devicetree/bindings/phy/nxp,tja1145-can.yaml   | 79 ++++++++++++++++++++++
+> 
+> Why isn't this in can directory with rest of CAN bindings?
+> 
+The directory contains CAN controller bindings. This is a CAN transceiver
+binding. And the only CAN transceiver binding I could find so far is this:
+https://elixir.bootlin.com/linux/v6.16/source/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+The driver uses the generic PHY framework as the driver for the tja1145
+does.
 
-[auto build test ERROR on next-20250730]
-[cannot apply to jic23-iio/togreg sre-power-supply/for-next char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus linus/master v6.16 v6.16-rc7 v6.16-rc6 v6.16]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> >  1 file changed, 79 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml b/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml
+> > new file mode 100644
+> > index 0000000000000000000000000000000000000000..10bf2bce1b35788b3284c42e544a56eda6d79947
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml
+> 
+> Filename should match compatible.
+> 
+Ok, will fix this.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250730-193217
-base:   next-20250730
-patch link:    https://lore.kernel.org/r/20250730112645.542179-5-angelogioacchino.delregno%40collabora.com
-patch subject: [PATCH v3 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
-config: arm64-randconfig-002-20250731 (https://download.01.org/0day-ci/archive/20250731/202507311150.5ofvQlKl-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 13.4.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250731/202507311150.5ofvQlKl-lkp@intel.com/reproduce)
+> > @@ -0,0 +1,79 @@
+> > +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/nxp,tja1145-can.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: TJA1145 CAN transceiver
+> > +
+> > +maintainers:
+> > +  - Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> > +
+> > +allOf:
+> > +  - $ref: /schemas/spi/spi-peripheral-props.yaml#
+> 
+> Missing ref to transceiver properties. Look at other CAN bindings.
+>
+There is only one transceiver property(max-bitrate) which I don't need
+because the max-bitrate is known for the device. So why should I add it
+to the DT ?
+I'm only aware of CAN controller bindings making use of the transceiver
+property which I think is because the PHYs they are supporting with this
+are very simple which need no or little configuration to operate and the
+max-bitrate property is needed to limit the bitrate.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202507311150.5ofvQlKl-lkp@intel.com/
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: nxp,tja1145
+> > +
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> 
+> reg is the second property, also in "required:" block.
+> 
+Will fix this.
 
-All errors (new ones prefixed by >>):
+> > +
+> > +  spi-max-frequency:
+> > +    maximum: 4000000
+> > +
+> > +  spi-cpha: true
+> > +
+> > +  spi-cs-setup-delay-ns:
+> > +    minimum: 50
+> > +    default: 50
+> > +
+> > +  spi-cs-hold-delay-ns:
+> > +    minimum: 50
+> > +    default: 50
+> > +
+> > +  spi-cs-inactive-delay-ns:
+> > +    minimum: 250
+> > +    default: 250
+> > +
+> > +  vcc-supply:
+> > +    description:
+> > +      CAN transceiver supply voltage
+> > +
+> > +  vio-supply:
+> > +    description:
+> > +      Supply voltage for I/O level adaptor
+> > +
+> > +  vbat-supply:
+> > +    description:
+> > +      Battery supply voltage
+> > +
+> > +required:
+> > +  - compatible
+> > +  - "#phy-cells"
+> > +  - reg
+> > +
+> > +unevaluatedProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    spi {
+> > +        #address-cells = <1>;
+> > +        #size-cells = <0>;
+> > +        canphy@0 {
+> 
+> can-phy if something like this exist. If not, then probably can-transceiver
+>
+Will fix this.
 
->> aarch64-linux-ld: Unexpected GOT/PLT entries detected!
->> aarch64-linux-ld: Unexpected run-time procedure linkages detected!
-   aarch64-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.o: in function `eusb2_repeater_probe':
-   drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:228:(.text+0x5a8): undefined reference to `devm_spmi_subdevice_alloc_and_add'
->> aarch64-linux-ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c:236:(.text+0x61c): undefined reference to `__devm_regmap_init_spmi_ext'
+> > +            compatible = "nxp,tja1145";
+> > +            #phy-cells = <0>;
+> > +            reg = <0>;
+> 
+> Please follow DTS coding style.
+>
+Ok.
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Best regards,
+Dimitri Fedrau
 
 -- 
 linux-phy mailing list
