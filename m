@@ -4,135 +4,167 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4598C87FD2
-	for <linux-phy@archiver.kernel.org>; Sat,  2 Aug 2025 09:56:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DFD1C87FCB
+	for <linux-phy@archiver.kernel.org>; Sun,  3 Aug 2025 06:37:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J81AZqefJd2ZkYY03hxV9QMyCRTQwNN9YxSl2MFPOIU=; b=DdoQ7xiu6QqFk8
-	SJB2mucgliEkZaC6X3J0E81LkWIIq9+NL2qUFQgLMJi5L/cL3Cp+2AVVHrTG2yf0Y1KX8dXrMXYue
-	NJD9i0+TmEa5JDgs83b/PVHgKoplaYW/R1cX/wkWXHa0rjhSvtAdUGUeGy6zV04g0l7NHNe0smZ5c
-	/DpOr4mt2NBXeadwoeOE9+mvlvPbczCnXvfj7It936j3pwQRKZx+aoUvMNZFm8f0rNw8bAZc9B4yY
-	maLV/Zi5QOaiqEfgh3r6MktwvTrndkx/srDFgQ03vjYaONwEGFuKw796yN73jfLnvaJkhk4aBRjYG
-	Ymt18uLCHg1F5s3+wXKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=acjrbs9M9VVdRQsPznSoBUdmSNnYL9L6rY/0DWkxePE=; b=Wmk3QReG9YGAKM
+	hciYguzKOzPJMbZbYyojMHgIMznLooDgu6DV0UW5Cvx+5+DWwWiKNUacd0FkJt0l/gGbJfMIJVSbd
+	k7TaicNMOjjPwkBFundGiDeF0s00oFW65RJIh23x6lKq/g3/Vu3/VIVkItdYp+TJcwFwEk81bmZ6U
+	1IuQadfQyb/xOtIxmawWP84Neg8giKylly75T3kJ5+vVf22CFzVjOtJO52A71NAFp4LLLsykJpHqn
+	hhw1HXJuRJhSL3o3jzZnGatzhi1W+CG0yML95KR5ckcq6J5Sbe21E3QXYG/aHDLio5SRwsYM+SH0k
+	elJTAFqQawAw5KyqAAlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ui8yL-00000007W51-0T13;
-	Sat, 02 Aug 2025 09:56:13 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uiSLi-00000008Sf9-3OYk;
+	Sun, 03 Aug 2025 06:37:38 +0000
+Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ui8yG-00000007W38-0wJt
-	for linux-phy@lists.infradead.org;
-	Sat, 02 Aug 2025 09:56:12 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5725fCAn002883
-	for <linux-phy@lists.infradead.org>; Sat, 2 Aug 2025 09:56:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Asqzu24OO8UYIDi9bC459VXzWsN/7IVQ4DWi2UawXoM=; b=RrMHPVM73DxKGGJg
-	qqsIWm2Q/ZTftd8Fup41iicv4JvJklA/4eAeX7aUHbhLxKYR8ZmnvoSWb1utRHaa
-	gj8mIJXbltj2Qkz7gEnelSrogPSjtGN6M+uXFhKRM1oaxxxKMCLYCnaVAL01LFhk
-	YgK4QaldVVykklAyWbWn+2u9imuUvi4/ZooQeCHIbN/1AdnkMgXEX2bWgu0ts4Q1
-	hf+mEcYNDhM5BWjVCLDRFiYxVCuxJGMOrpkU2GAums6U8H0OFxriXG5/2W9oTjuI
-	x5OlK/Tf2KXh4u/eXDYp6X8OF/fCQrLcvyI0JZuQxznMb3WYdTAUTACFlOcannvI
-	HQ79zg==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 489aw70jqb-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 02 Aug 2025 09:56:05 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-70743a15d33so40176016d6.0
-        for <linux-phy@lists.infradead.org>; Sat, 02 Aug 2025 02:56:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754128564; x=1754733364;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Asqzu24OO8UYIDi9bC459VXzWsN/7IVQ4DWi2UawXoM=;
-        b=OdcHt5Fu9LvBHAESp50o68IO++4D5zQ4yiuYWP7RCFhJSMztvARU3rU8QQmWvwvNPJ
-         l6U3y5+2x1BUbD6KoGcDR3Y5urZpmrL/gKHU07cEX5aALeigIA1+c1kV6sV+7RiZ8F5m
-         SNTKCJ8xsAU8Upeqv8Y11rVup8Pv0BizdMaAOvwi6zHGKtGyU+XYyxW2HBHNKgHhYl3O
-         qy1q8bBEa3om2rzUBYTw+ZlVJzxOSekrNmbjeUYF8tbUJy+h1D/up0SkO5ahC1yGfc+K
-         YjvYOWShQ6Q29sN+1n5j2ZfMLv2SHd3JyGNYVC87vijtQcUu/yrrDEyNa2vAj/FVZ22e
-         DdFQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWJ6atp36w1wDSTE+H0eLhb/QvjGYNaU0xx60s9rA03Z1CgYOrK1mrFwOFuIDoBLF7wNhaDQR/IGhk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwrVN8J7e4QmB24udLSvV4CrZ5wkNlsuv+lbqrZLiymjo0yrGGV
-	W/urXiqIB0bSncI2/0JjmWJqdLsCCIm9XLk6TvIYuGIA5fVStzBvnW9YIDsH3jBDmi2QeJ96BL5
-	vQ3XrgS4OYYmqLB3LJKoz62oZ0uBecz28tfa9DHEvYmjPLZ6p+DaMC2EYKmAEctqWnchN
-X-Gm-Gg: ASbGncujzsAWVGDpumXe/ugiOhrzM5dykYZJuAB1mJ0TUGCcEU2h1LSFIAyLE/Lmw06
-	H0EX8ySUFEYTxciGL0FhXptnee2uccT5EvOHN/L/hsxeYanVlDFbxq/ZqYKB5+XEoCd9MN9PoKN
-	es8nxMy6s5HzqPaJaA+bVcZRJyzE+lxffaZJjVYW1sbOcRPupJO8QVoBeYZ0h1DTIN2KkiSS6/e
-	ydXpxN98vsqTOqNIaJA1g5+o7IwkROruScyFa2qFoqyz3cNIicy38CMHtLC4/d4AWevI5lnIpkv
-	T+purrai2lHOXcbEQuPeCZif29PgwtsIAzWBUzEQEv2sHEmvAdBDbAk8M9mHbmW7V2MvWqTg9a3
-	hDmRBgN+TuS76FiQKRB9QLsttuL8yaTu4SW2YH8qAg/Jo1/EFP+dM
-X-Received: by 2002:a05:6214:400b:b0:705:8d7:a0c3 with SMTP id 6a1803df08f44-7093630075cmr37002346d6.34.1754128564351;
-        Sat, 02 Aug 2025 02:56:04 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGOTdM2Iczyvgl46yWDi8GTyzV7HP8tA/9iXZHl881FgxKm6LV0IC4YJNQAmmZo1HrO7zCu2w==
-X-Received: by 2002:a05:6214:400b:b0:705:8d7:a0c3 with SMTP id 6a1803df08f44-7093630075cmr37002056d6.34.1754128563864;
-        Sat, 02 Aug 2025 02:56:03 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-332388d8ca4sm10105271fa.45.2025.08.02.02.56.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 02 Aug 2025 02:56:01 -0700 (PDT)
-Date: Sat, 2 Aug 2025 12:55:59 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-        Andy Yan <andy.yan@rock-chips.com>,
-        Yubing Zhang <yubing.zhang@rock-chips.com>,
-        Frank Wang <frank.wang@rock-chips.com>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Amit Sunil Dhamne <amitsd@google.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-        Diederik de Haas <didi.debian@cknow.org>,
-        Peter Robinson <pbrobinson@gmail.com>, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v3 0/5] Add Type-C DP support for RK3399 EVB IND board
-Message-ID: <pk5wecbbpxn7v4bdwtghhdnm76fmrmglelytljwfb4cgvpu2i6@rk5turgyt5xq>
-References: <20250729090032.97-1-kernel@airkyi.com>
- <3kefqzjewmsyzfvyi33kvlgjd6jphjg3fsnixb3of7yb3xkgs2@hgi6xfkgd653>
- <63ec11cf-7927-431a-995e-a5fc35ef1ba7@rock-chips.com>
+	id 1uiS0r-00000008RFN-0skx;
+	Sun, 03 Aug 2025 06:16:09 +0000
+Received: from pps.filterd (m0250810.ppops.net [127.0.0.1])
+	by mx0a-0064b401.pphosted.com (8.18.1.8/8.18.1.8) with ESMTP id 5736FscD3642366;
+	Sat, 2 Aug 2025 23:15:54 -0700
+Received: from nam02-sn1-obe.outbound.protection.outlook.com (mail-sn1nam02on2064.outbound.protection.outlook.com [40.107.96.64])
+	by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 489dy10jck-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 02 Aug 2025 23:15:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=D0A41/oiTSpayDBXzlkManml2z4BLNfI0bfPYH0AunNCi9DAGH58NAakt1zgzuwzduJNYZfzj++eAjAitP4qKOv5uN5nAuJxiK7+/9tlZT0jio+1VLI6BR0XZb7LO0i1pNnK20/cc4lKPX9v8Dv6VhL8oH4YiiG8JSnAMwj7reW2onh2ekH7E8TKkifRV9WI4r7ANfkKuLEjSlbWDGK0qCa67NJMFBI6vIYpnaeQYjeDjEXn9kESo1u1vND+BPAAamZUSwHTnIi9Z8U6Z+24mfVEZCSpD+7oHPQguSYNmFmojVyXZi5mctr8h6/zrJ4+Z7pxj2UMriI5O0tgQuxXYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ZBOpHnUPvu1XSkJc5l7vxi1xEJZ24djbdSX+Rn/nmPo=;
+ b=A3gw2LcCkECF4PLmecJ1YnZUdwtcguGXGTSRK0eD1dEvdHtAavT8p4hYFi9tsJivxLRjCO9hdmIHWKk/L6Yzragt1X/BCQeS7lFcLXUXXaG6g22O/ywWWcsAS6LJd4c42Vks45XbX7GZBEoKSML43Neq/L1Sy3PWgKstSgs5S6VytTEnZcVPLqSnWTvsgrbJlhpeQYmvSiU61kmaJ3M5FXHeCtHXPYvp3N4NMBmjleGkkJMs4W5vfc8FjM74jmUtf26JcYpOdCXBdgL8oukb90qbQsSaqkpFYICBgth1VD7GDDWJhO1jY6+OXC1iqaoemnd0KwW/O5P6Uke8LR+U6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=windriver.com; dmarc=pass action=none
+ header.from=windriver.com; dkim=pass header.d=windriver.com; arc=none
+Received: from IA0PR11MB7792.namprd11.prod.outlook.com (2603:10b6:208:409::16)
+ by PH7PR11MB7002.namprd11.prod.outlook.com (2603:10b6:510:209::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.16; Sun, 3 Aug
+ 2025 06:15:49 +0000
+Received: from IA0PR11MB7792.namprd11.prod.outlook.com
+ ([fe80::385b:609e:4289:5e04]) by IA0PR11MB7792.namprd11.prod.outlook.com
+ ([fe80::385b:609e:4289:5e04%5]) with mapi id 15.20.8989.017; Sun, 3 Aug 2025
+ 06:15:49 +0000
+From: quanyang.wang@windriver.com
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+        Richard Zhu <hongxing.zhu@nxp.com>, Frank Li <Frank.Li@nxp.com>
+Cc: Quanyang Wang <quanyang.wang@windriver.com>, linux-phy@lists.infradead.org,
+        imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+Subject: [PATCH v2] phy: freescale: imx8qm-hsio: Fix a use of uninitialized mutex
+Date: Sun,  3 Aug 2025 14:15:29 +0800
+Message-ID: <20250803061529.2303291-1-quanyang.wang@windriver.com>
+X-Mailer: git-send-email 2.43.0
+X-ClientProxiedBy: SG2P153CA0023.APCP153.PROD.OUTLOOK.COM (2603:1096:4:c7::10)
+ To IA0PR11MB7792.namprd11.prod.outlook.com (2603:10b6:208:409::16)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <63ec11cf-7927-431a-995e-a5fc35ef1ba7@rock-chips.com>
-X-Proofpoint-GUID: ojo4kHPvIhpeUaxNalqPfy-9rBUoDcyd
-X-Proofpoint-ORIG-GUID: ojo4kHPvIhpeUaxNalqPfy-9rBUoDcyd
-X-Authority-Analysis: v=2.4 cv=MrZS63ae c=1 sm=1 tr=0 ts=688de0b5 cx=c_pps
- a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
- a=2OwXVqhp2XgA:10 a=JfrnYn6hAAAA:8 a=s8YR1HE3AAAA:8 a=GTOoGQlhK9DRF86BnBwA:9
- a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10 a=pJ04lnu7RYOZP9TFuWaZ:22
- a=1CNFftbPRP8L7MoqJWF3:22 a=jGH_LyMDp9YhSvY-UuyI:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODAyMDA4MyBTYWx0ZWRfXz4ehx0mvYkN8
- uFLpNfBIspkU1rOCMF8vNeS9A8STNZwpwPYYOBwekpbIBLZh4b1t/DsKGPGWFJr09rm5FWiNRXJ
- ZKOkrFWSwF4sdSYlubJoPKYAZiqMc0CT8IcT562DgMGCnfmwybRqr99tt6usR1TaKn24V4y1XTp
- 4NVq/ZvR0zZ8j3D0Aryz9XkWTHfYA5vemARM30wFnJi6K/VCDCS3T34IlLfXA7RPHS/xaV/LHyY
- BDVqdhZrBKfVHl5J3gxHqrSmGDHQ6vcVZIHojmLOkv47pPI05V6fhzuSjooYsf2fMPm0FEk0NRi
- NUAgO1oGIbaFvsOKUdmXcrOVMHjnGTU9U0kX4EPiPQjnHWtjdPD1OayGKgfghWQ827UAzbJ10Rf
- MYN8xltLQkxSKryZY96MJMs+NRCWe26WGCVLAHgHjsqNe5a20dMLaGavGvoid5ax7FfYVnEP
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA0PR11MB7792:EE_|PH7PR11MB7002:EE_
+X-MS-Office365-Filtering-Correlation-Id: 32528e73-267f-4a13-2755-08ddd25530d4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|7416014|52116014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Jed6ZaEmlNwioR0ijocRzh8L2dhO/jB0gsut7aQFQN2+3TuGNk08MSCUUIxH?=
+ =?us-ascii?Q?scMGpU31mJ46pjWQommKkG9btznCNt+CJV6umZFmZAyyV7LeBqKMl5eJDZ+b?=
+ =?us-ascii?Q?yvamxYLQkHKblOYwxKlAZYWYbMxDX72G2T1INn3DNRtnBL52qInuUt8JVsct?=
+ =?us-ascii?Q?DsU1z7kwPO5MW1cS/3zoCT0a8IIAlf9mRprBO3Tw5+tw4x9YP7LvnVdp//6U?=
+ =?us-ascii?Q?V9ijlosEes9ttWlAKk21oxTgjhXHaK4X3nHULHFAUIXmezQmIfpMYKsu7PH5?=
+ =?us-ascii?Q?AXFGf4NPJ1UVIHGXslWIRVJInjh3EERweHCplgxvpI8jVJZLGh7odNzRz2eh?=
+ =?us-ascii?Q?XCkUFSujFAglEfIzMXeQi8+hWm83vBYxHBSHrCQtT3yIxpknhXpuKnBZO8E8?=
+ =?us-ascii?Q?mJ1eHb8oz83kBpyaBw8T2IpElAvGBTUD2KILfMkdd4fBxlHZcxGhd1v1+bDF?=
+ =?us-ascii?Q?Z6zFD8fQ6XKuUX2PmcX70BBzs13BzwYCvf+9PKvr/TLBz1bl5Jjw3QcVbHUx?=
+ =?us-ascii?Q?fa/UP+u6Coq1/XTFdY9kWWr4XcH+hDEEilfcgANyG6F62TlHxuD1I+3/ubVZ?=
+ =?us-ascii?Q?6RjUtPUyUsEcKHREQ8kJ8fbNYFajnDbmh4pWeAcUCTbhJ8Vq2KAwVTTjBLeO?=
+ =?us-ascii?Q?QjbL2itcSU7Y0zykaxYj7rXbBaT20OlYMI4myq5htBRvTmGT3fDMbtPfgw1Y?=
+ =?us-ascii?Q?nth7p+ogflz12xvGyLciHT+T72lcXcOUAfKdGwFmkBAyWD5V1+8y1FSFsyrg?=
+ =?us-ascii?Q?vi5ahQzpxc9Vl0rsFDSoGKCyaqMRvbU5KBeVCqhNU2GD4WwbexZRe6vr8gOE?=
+ =?us-ascii?Q?LBfGmvOOQQSiSodpO5jIWi3V0oN+li6ni07COXtwBR++Hnndh3eRtEVGarjU?=
+ =?us-ascii?Q?xyMdVCgB0qrq8uZPvc2vBYCGTR71GuTbglTNkQPZrxGb2mfFRAV9d0cJ7yf7?=
+ =?us-ascii?Q?N573JMwlPEV6bNjjb2WlPaG2PiD0YmJc1V9psrQA3oRBRU4h1e9NaF0ptBPs?=
+ =?us-ascii?Q?Ebexz2/JRdv05+FGTzbhWAyJKWs79JGe7QOLd3FZCZXWZS4d3W5UiJbtFnBs?=
+ =?us-ascii?Q?NT7PftOTNwehPRf98mNJu9P2DGpTEncmMZ+HVLUHTlOWZARMAIwtzqydhSaw?=
+ =?us-ascii?Q?0gwC1c4C6nMree3esom/wITVGQ2Fus9CajA9oUY4KoMSpQeKe8o/WpHgaAmD?=
+ =?us-ascii?Q?9kwGi/aCjHGG+Q0idHaT9HDMxASl24aDKISI8rx2qK841WKdJEEPk7OoDsTG?=
+ =?us-ascii?Q?jR+m4muUCrWJsgR04j1YOHv69edFucJwZJuH8fRMpPrO1EPBGxnkr9jcjEsA?=
+ =?us-ascii?Q?khtlPO34AfysDf7UanDiQmOvAvh8bIf5mHzH0FXhs3ZP2pRZ074Z3DkYzEJs?=
+ =?us-ascii?Q?Vth0rfPulPvrrHu3JK4vUyzo5EtIzxlQT4RfXbNcvagQVfhlU9UBPZP8M2oD?=
+ =?us-ascii?Q?scAgizqKCosaM6/b+wKv+imzXrJC8pjqhaHjcbk+T92kB13zx+YSTFOuYm4U?=
+ =?us-ascii?Q?9wQBo99j4q+Z8Io=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA0PR11MB7792.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(7416014)(52116014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?4XqwCKexG52rsyrBfWDe+q1zQ0HojmGsJ/etWzaZYAGA7et5W0KuWInT1MF9?=
+ =?us-ascii?Q?l/0spu2gdeoNUH1Uvfryir0OAeNy9UsMbYDmrk7yA41I9Y49ADVV6EeDF+ob?=
+ =?us-ascii?Q?2E7gYND3fF3zCZS0TPTW4VZA+EMesmbsRhqaS9ITaCmJhU+2xslG7gsZbObg?=
+ =?us-ascii?Q?S10Zf7iUQXFJcHZerrjebf1Q3q6ecJfnGqRY3zMzWvVwVfGp3Hex2zV04JoM?=
+ =?us-ascii?Q?tFhjrzv2BcqmPdgQfn/obxShofO6A+XSR8Cf0TAdkY8B/+8Se2lBFPFmEu1X?=
+ =?us-ascii?Q?PMsFt11iouuDrF9brnECQmYUBxa5daDPcC1pQrhWHNXQ3X2swM+rTb4sxXsJ?=
+ =?us-ascii?Q?/oxGp9wqmigdYF6HPK4SXuaFNaSgnnbcPeBj+YWNbUQkZPhqGbL8s4VDMXX3?=
+ =?us-ascii?Q?fs6dHw9mlGbIFmaEf8oxcgj3ZISPm4HwTghkvpF2R301iFasqq2OozqW28al?=
+ =?us-ascii?Q?s6q5nRzEbBUXC4t2dvEG5pla7EhlyjEgqx7hWniP6gy7CwetVEiyGaMIGRYY?=
+ =?us-ascii?Q?6bNnzd6qhrQ6M8WycY/kRFRR3BgcsdruiNUSgrVUroIk3kcGnQi4MHrFY1Ek?=
+ =?us-ascii?Q?B/EDmtnX2kowkIUReI7IKdt5WDNH7XXkg2jzsaen33uE/24N86RfSp2j7Kr3?=
+ =?us-ascii?Q?9FXiXEsR0ww+jHX96z2obwWuiA1M9t08g5bp1wU3BmzzLxmi2QUx7ObiQN0T?=
+ =?us-ascii?Q?2b+kEJMH5ckfIeNPV/Jis48A3MaVZ4+moIk/nViYObB+5GRFBE7YeIuVFB6Y?=
+ =?us-ascii?Q?D4fHnY3nuecqqCqazIHwRAEbsXQAsIqjaj9aaVH70DRw0XRKrRJzBq9/WQuW?=
+ =?us-ascii?Q?JFg9sic+kieiXZn0or0NQdZQcWcOtGgLwLXCdb7u4Y3VR4iTnW/xELPqpR4K?=
+ =?us-ascii?Q?iuq+ESQu9iN4G8QIZaeLb8+3R8cRm7MGYR5K6GfGmEUhg12pByhn8BDsugoY?=
+ =?us-ascii?Q?l3FSS4Qou2rmgsMRdKvBr6Te8REu9HgGEVBOLgrJuBCBtzCH2RX1DJg9AsPp?=
+ =?us-ascii?Q?u4DEC7WX8SCtLBV8A7BVECmfhqLLvAJ21WbZdbYflonWrqTs5N9b6qMpFDJn?=
+ =?us-ascii?Q?EqXOx+1kdo3aQyTrBt7HjxrOuNw2MMATyubaMqxJ+u8RI2LmeruYS+r6L/3X?=
+ =?us-ascii?Q?+zfkHc1FHpsT6Q2Fd7gmz4GiWklNdQWZ1gebU7UUpebMZ2hnGNA2qMO060w1?=
+ =?us-ascii?Q?v+6bOvAMIUNixWUcON5k0C1U5CoPwTaqVzjxLFeRXJLoP79BPcv5ev4WaM8o?=
+ =?us-ascii?Q?nIVMcWDZUc7aVcxF3scHPi6pX4vlIAnK6VkAhiFhWf/AAWQLRk+cKhSK+bOK?=
+ =?us-ascii?Q?seDMD7qrwiZiuTXIIWNjXRA56Em0PnhXjrf1LL0brvo6/XQs16P33qOfpYDi?=
+ =?us-ascii?Q?1UTEoUwYDwcZ4d+mmBiid1u8Jr1RWfNr6t6ENJrKN4KvQYn4VfbpoodSIMqF?=
+ =?us-ascii?Q?sK0qUyscu7FoKfO6kKjytUPr2wM3j1nMUP49E9l+CTnlmcH/YRMcl4/y0wv0?=
+ =?us-ascii?Q?9lUfe/CZ9ims9X2W0lZEyucY6mlfSQTjmNp0jPob6V8YOoE6dFRpJy/wEmIT?=
+ =?us-ascii?Q?lcMJC0MonDWwYu+rk6hr12SBYKDh4aI2vHQk+hlkcf+G6ZomDKVkqBiaJHxh?=
+ =?us-ascii?Q?9g=3D=3D?=
+X-OriginatorOrg: windriver.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 32528e73-267f-4a13-2755-08ddd25530d4
+X-MS-Exchange-CrossTenant-AuthSource: IA0PR11MB7792.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Aug 2025 06:15:49.1495
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 8ddb2873-a1ad-4a18-ae4e-4644631433be
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: ct+EWS/uQwnFqeaNh+lorhO07+zCtvMlIRzPkae8o95+wKqqnWncZtM6J3M/01arfUIcp8USYMsm503tgXgwCRDP0SBXNwQMHgEK+vCHmUg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR11MB7002
+X-Proofpoint-ORIG-GUID: Dz6xghd0qcxi_u3XJoXPiGjDlgcLEgJR
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODAzMDA0MCBTYWx0ZWRfX0KTrILCOsi4i
+ z7aisPecwafYVlf0mZdy1Zn1+DUlSNSvec8u6n6/1EVKMmJPcyGpvkJAN9PecQ+JuaUYMO3CWv+
+ viYj5/X/wxmIFVcp/I52oEuD/GtOiZh9FftEY/mSDzwCFcv0pAbC8MBq+enPc/duwf1Fjv12auF
+ 2XCDjmVG4VydEoAe/xqexkTpNB3M8PmpXmzPfMTn1ig4/unL9ApKE35nbYg0RyvTIY6KHPB4lG0
+ tXXvIeS9NvEXUgmrxk/HC+hyconZ3TRLZiXw1QTBecc9IRLMkj34UvkN8Xt1fUIx/gdphO3Ez6J
+ ar44SJYVqnc2d8pKqvUxQgsQZ9YjNKkXryaylfiaBqGEgjprQ13CRl6dDAHFEh59N5P6Wg7TqPk
+ yJ+6dAS3
+X-Proofpoint-GUID: Dz6xghd0qcxi_u3XJoXPiGjDlgcLEgJR
+X-Authority-Analysis: v=2.4 cv=LtOSymdc c=1 sm=1 tr=0 ts=688efe99 cx=c_pps
+ a=/81dOUaqqWO4f6DVepChjA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+ a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
+ a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
+ a=xqWC_Br6kY4A:10 a=2OwXVqhp2XgA:10 a=t7CeM3EgAAAA:8 a=QANj-dxJC74haVyuHsoA:9
+ a=FdTzh2GWekK77mhwV6Dw:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-01_08,2025-08-01_01,2025-03-28_01
+ definitions=2025-08-03_02,2025-08-01_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 spamscore=0 clxscore=1015 adultscore=0 lowpriorityscore=0
- impostorscore=0 bulkscore=0 phishscore=0 mlxlogscore=999 priorityscore=1501
- malwarescore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2508020083
+ clxscore=1015 malwarescore=0 impostorscore=0 spamscore=0 bulkscore=0
+ phishscore=0 priorityscore=1501 adultscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2507210000 definitions=main-2508020059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250802_025608_278925_2817D5EB 
-X-CRM114-Status: GOOD (  41.56  )
+X-CRM114-CacheID: sfid-20250802_231605_262102_05F22E7E 
+X-CRM114-Status: GOOD (  12.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,136 +176,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 31, 2025 at 10:19:49AM +0800, Chaoyi Chen wrote:
-> Hi Dmitry,
-> =
+From: Quanyang Wang <quanyang.wang@windriver.com>
 
-> On 7/31/2025 3:13 AM, Dmitry Baryshkov wrote:
-> > On Tue, Jul 29, 2025 at 05:00:27PM +0800, Chaoyi Chen wrote:
-> > > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > > =
+Using an uninitialized mutex leads to the following warning when
+CONFIG_DEBUG_MUTEXES is enabled.
 
-> > > This series focuses on adding Type-C DP support for USBDP PHY and DP
-> > > driver. The USBDP PHY and DP will perceive the changes in cable status
-> > > based on the USB PD and Type-C state machines provided by TCPM. Before
-> > > this, the USBDP PHY and DP controller of RK3399 sensed cable state
-> > > changes through extcon, and devices such as the RK3399 Gru-Chromebook
-> > > rely on them. This series should not break them.
-> > > =
+ DEBUG_LOCKS_WARN_ON(lock->magic != lock)
+ WARNING: CPU: 2 PID: 49 at kernel/locking/mutex.c:577 __mutex_lock+0x690/0x820
+ Modules linked in:
+ CPU: 2 UID: 0 PID: 49 Comm: kworker/u16:2 Not tainted 6.16.0-04405-g4b290aae788e #23 PREEMPT
+ Hardware name: Freescale i.MX8QM MEK (DT)
+ Workqueue: events_unbound deferred_probe_work_func
+ pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+ pc : __mutex_lock+0x690/0x820
+ lr : __mutex_lock+0x690/0x820
+ sp : ffff8000830b3900
+ x29: ffff8000830b3960 x28: ffff80008223bac0 x27: 0000000000000000
+ x26: ffff000802fc4680 x25: ffff000800019a0d x24: 0000000000000000
+ x23: ffff8000806f0d6c x22: 0000000000000002 x21: 0000000000000000
+ x20: ffff8000830b3930 x19: ffff000802338090 x18: fffffffffffe6138
+ x17: 67657220796d6d75 x16: 6420676e69737520 x15: 0000000000000038
+ x14: 0000000000000000 x13: ffff8000822636f0 x12: 000000000000044a
+ x11: 000000000000016e x10: ffff8000822bd940 x9 : ffff8000822636f0
+ x8 : 00000000ffffefff x7 : ffff8000822bb6f0 x6 : 000000000000016e
+ x5 : 000000000000016f x4 : 40000000fffff16e x3 : 0000000000000000
+ x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff0008003b8000
+ Call trace:
+  __mutex_lock+0x690/0x820 (P)
+  mutex_lock_nested+0x24/0x30
+  imx_hsio_power_on+0x4c/0x764
+  phy_power_on+0x7c/0x12c
+  imx_sata_enable+0x1ec/0x488
+  imx_ahci_probe+0x1a4/0x560
+  platform_probe+0x5c/0x98
+  really_probe+0xac/0x298
+  __driver_probe_device+0x78/0x12c
+  driver_probe_device+0xd8/0x160
+  __device_attach_driver+0xb8/0x138
+  bus_for_each_drv+0x88/0xe8
+  __device_attach+0xa0/0x190
+  device_initial_probe+0x14/0x20
+  bus_probe_device+0xac/0xb0
+  deferred_probe_work_func+0x8c/0xc8
+  process_one_work+0x1e4/0x440
+  worker_thread+0x1b4/0x350
+  kthread+0x138/0x214
+  ret_from_fork+0x10/0x20
 
-> > [....]
-> > =
+Fixes: 82c56b6dd24f ("phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support")
+Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
+---
 
-> > > =3D=3D=3D=3D
-> > > 2. DP HPD event notify
-> > > =
+Changes in v2:
+* Use devm_mutex_init instead of mutex_init, as suggested by Frank
 
-> > > The RK3399 has two USB/DP combo PHY and one CDN-DP controller. And
-> > > the CDN-DP can be switched to output to one of the PHYs.
-> > > =
+ drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-> > > USB/DP PHY0 ---+
-> > >                 | <----> CDN-DP controller
-> > > USB/DP PHY1 ---+
-> > Could you please clarify this, can you switch DP stream between two
-> > USB-C outputs? What happens if user plugs in DP dongles in both USB-C
-> > ports?
-> =
+diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+index 5dca93cd325c8..348fefcfe7a5c 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
++++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+@@ -534,6 +534,7 @@ static struct phy *imx_hsio_xlate(struct device *dev,
+ static int imx_hsio_probe(struct platform_device *pdev)
+ {
+ 	int i;
++	int ret;
+ 	void __iomem *off;
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
+@@ -590,6 +591,10 @@ static int imx_hsio_probe(struct platform_device *pdev)
+ 		phy_set_drvdata(phy, lane);
+ 	}
+ 
++	ret = devm_mutex_init(dev, &priv->lock);
++	if (ret)
++		return dev_err_probe(dev, ret, "Failed to initialize lock\n");
++
+ 	dev_set_drvdata(dev, priv);
+ 	dev_set_drvdata(&pdev->dev, priv);
+ 
+-- 
+2.43.0
 
-> Currently, the software simply selects the first available port. So if us=
-er
-> plugs in DP dongles in both USB-C ports, the DP driver will select the fi=
-rst
-> port. This process is implemented in cdn_dp_connected_port() .
-> =
 
-
-I think Stephen Boyd has been looking on similar issues for Chromebooks,
-which were sharing DP controller between several USB-C ports. I don't
-remember what was his last status. I think there it was easier since the
-bifurcation point was the EC.
-
-I think, CDN-DP needs to register up to two encoders and up to two
-connectors, having a separate drm_bridge chain for each of the DP
-signals paths (in the end, you can not guarantee that both branches will
-have the same simple CDN-DP -> PHY -> USB-C configuration: there can be
-different retimers, etc).
-
-Both encoders should list the same CRTC in possible_crtcs, etc. Of
-course, it should not be possible to enable both of them.
-
-This way if the user plugs in two DP dongles, it would be possible to
-select, which output actually gets a signal.
-
-> =
-
-> =
-
-> > =
-
-> > > BTW, one of the important things to do is to implement extcon-like
-> > > notifications. I found include/drm/bridge/aux-bridge.h , but if the
-> > > aux-bridge is used, the bridge chain would look like this:
-> > > =
-
-> > > PHY0 aux-bridge ---+
-> > >                     | ----> CDN-DP bridge
-> > > PHY1 aux-bridge ---+
-> > > =
-
-> > > Oh, CDN-DP bridge has two previous aux-bridge!
-> > > =
-
-> > > Now, I try to use drm_connector_oob_hotplug_event() to notify HPD
-> > > state between PHY and CDN-DP controller.
-> > Does it actually work? The OOB HPD event will be repoted for the usb-c
-> > connector's fwnode, but the DP controller isn't connected to that node
-> > anyhow. If I'm not mistaken, the HPD signal will not reach DP driver in
-> > this case.
-> =
-
-> Yes.=A0 What you mentioned is the case in
-> drivers/usb/typec/altmodes/displayport.c . I have also added a new OOB ev=
-ent
-> notify in the PHY driver in Patch 3, where the expected fwnode is used in
-> the PHY. So now we have two OOB HPD events, one from altmodes/displayport=
-.c
-> and the other from PHY. Only the HPD from PHY is eventually passed to the=
- DP
-> driver.
-
-This way you will loose IRQ_HPD pulse events from the DP. They are used
-by DPRX (aka DP Sink) to signal to DPTX (DP Source) that there was a
-change on the DPRX side and the DPTX should reread link params and maybe
-retrain the link.
-
-> > > Patch1 add new Type-C mode switch for RK3399 USBDP phy binding.
-> > > Patch2 add typec_mux and typec_switch for RK3399 USBDP PHY.
-> > > Patch3 drops CDN-DP's extcon dependency when Type-C is present.
-> > > Patch4 add missing dp_out port for RK3399 CDN-DP.
-> > > Patch5 add Type-C DP support for RK3399 EVB IND board.
-> > > =
-
-> =
-
-> -- =
-
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
--- =
-
-With best wishes
-Dmitry
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
