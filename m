@@ -4,82 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 850F2CA0EC3
-	for <linux-phy@archiver.kernel.org>; Mon,  4 Aug 2025 09:26:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEEE5C87FCF
+	for <linux-phy@archiver.kernel.org>; Mon,  4 Aug 2025 14:57:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=karrzHLGtYe1gVnFcQwKzO94RaefWNsS7Pz5cYrjn2E=; b=4fdg5JcQ8HHd0Y
-	+UXpyWkGecL5MJpuiPPtmMKdvleCENVAFmGCRxfB79diJH6JvUNBYVR7jAk1SBogDlODOSwRE4Rtz
-	ohwqMkSBI9TSBg61skmljdDHzaxoZCYpY7okXTYz5oNp6Ucksm7ZScn5w65arIfvGLVzAPVXpuY9i
-	dFKNRqOFTckS9qgkMH7QPifme+JvC8odcjUs3I0SFBuKfg2jwhfsjj5LF4+3VLAvNJ0Y0EoQSaSo7
-	Cs2C6LL6/JGpRi3W8triG5l8La+bCBVoXc3fYRFHwXXPO/fB3RLZPXpE9C8vl91hxFtxy3tJCcMzQ
-	14l2KYQkpiSvQJoo6CmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tB7uJYMBuD/pRjrJALd/0Av/suzsYQiBZE8Kj4HJpzE=; b=zhpSlAmPpK1nGW
+	Gk64UvtVncwUIMAq9eIqC6N7GZhXtwE3KCFz6Kk9gFzjLqcMXzFWRW9pThvnZloDFDBRpILA8P7yI
+	GROOAYd2OYQmF7vTBRMwaqAusbZwfKdjmjsa8bgG3vwRpY41B85HLoQtIvZuzENNkDhJdTQ7c7ndO
+	Juc5sK1w2bbMIDGR3BBAgMt4FrP5VfgHjBcPGavtd17TpM8MAs/vgpyyd0L3szkPRjDWxlNb9+p//
+	1WAwrOOwxTFB75EGJfhiByX1YCWL6tjVOld72MBIqYLAVsaPA++l2dD1Dj3byFNdcDnzv6W/nF9WS
+	5yOU5jES+lnRWsym2eTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uirSn-0000000A4os-0v3Y;
-	Mon, 04 Aug 2025 09:26:37 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1uiwcb-0000000AiyV-21Pt;
+	Mon, 04 Aug 2025 14:57:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uirB1-0000000A325-3FiB;
-	Mon, 04 Aug 2025 09:08:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1754298493;
-	bh=dNCb1GbU+zMwwHGSEs5J88EmPe3I2aoFVC/o3+7U2F0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=PlBHTgSi+7JUOYuxMn8femLuLfq3RszCQHshgoXnZkewKPTRWb22SaKzxCGHhf840
-	 FQTF+WkJpIePV9vztC7CZg4vYnqlyZRMQG56aEoIjG7KFvVRT+Kj4scAov60j7U5ec
-	 Fzz8Ec1QZUc8YC4G13q8/RbRYSKruZQQxe1PirBbachk/U30E0fnliOldzBjunQON/
-	 +dvTmo6jULLhF59a8odkYh/Q+tot5DtamutSrYLrrNMH9Bvnh+GB6u9hPnunLJtliO
-	 0tmK/DIrbt53tW3dHiFdNBmZ5ChqnnxHdFu1OtU3dZyHCGWHzIoP9IUvu9EYfsEQhh
-	 u/iH0Tx98hw7Q==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9849017E0593;
-	Mon,  4 Aug 2025 11:08:11 +0200 (CEST)
-Message-ID: <fe135942-3040-4858-b2e4-a8e4507b89e9@collabora.com>
-Date: Mon, 4 Aug 2025 11:08:11 +0200
+	id 1uivqC-0000000AcFd-2oot
+	for linux-phy@lists.infradead.org;
+	Mon, 04 Aug 2025 14:07:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 55C425C6241;
+	Mon,  4 Aug 2025 14:07:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1D70C4CEE7;
+	Mon,  4 Aug 2025 14:07:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754316423;
+	bh=g4R8Y73hb4BzJAzzDJSVFxqOj3sFPPyhtqJp7GLNKqA=;
+	h=From:To:Cc:Subject:Date:From;
+	b=HVsKZFNL8augUOA5FqoPeyp2uE6lxeZwLHClECoWoBhbq9F+yveLuSe4YauCVUVPZ
+	 kiMkC1vWPVzu2USw8EfOBAl+Xr+L6PLxq5JQpXsLgtbW83Z2Y6Cny4uOPdmJhQ5GH5
+	 PVSBL9Ol4R6NJR9AFbdc/pQr1HlEsU9azz26yJWqldNWPGdOq8ba2VFg5VUehzrnlm
+	 +BH922GbqJBAWjymt7ypwqVf4yyWiS88ENQOX7iD62k9KQPKJ66Zz5CX3irxPl6yTP
+	 fBrbAmkV6obtx7OyP2Ep/Zzt9ZhKjE4gTMxcagUcIoxN5HNEaWcaOPkknGEhM4cmNC
+	 wTp79soAE95fA==
+From: Michael Walle <mwalle@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Siddharth Vadapalli <s-vadapalli@ti.com>,
+	Matthias Schiffer <matthias.schiffer@ew.tq-group.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	netdev@vger.kernel.org,
+	nm@ti.com,
+	vigneshr@ti.com,
+	Michael Walle <mwalle@kernel.org>
+Subject: [PATCH] phy: ti: gmii-sel: Force RGMII TX delay
+Date: Mon,  4 Aug 2025 16:06:52 +0200
+Message-Id: <20250804140652.539589-1-mwalle@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/38] ASoC: dt-bindings: mt8192-afe-pcm: Fix clocks and
- clock-names
-To: Krzysztof Kozlowski <krzk@kernel.org>,
- linux-mediatek@lists.infradead.org, robh@kernel.org
-Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
- conor+dt@kernel.org, chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
- airlied@gmail.com, simona@ffwll.ch, maarten.lankhorst@linux.intel.com,
- mripard@kernel.org, tzimmermann@suse.de, jassisinghbrar@gmail.com,
- mchehab@kernel.org, matthias.bgg@gmail.com, chunfeng.yun@mediatek.com,
- vkoul@kernel.org, kishon@kernel.org, sean.wang@kernel.org,
- linus.walleij@linaro.org, lgirdwood@gmail.com, broonie@kernel.org,
- andersson@kernel.org, mathieu.poirier@linaro.org, daniel.lezcano@linaro.org,
- tglx@linutronix.de, atenart@kernel.org, jitao.shi@mediatek.com,
- ck.hu@mediatek.com, houlong.wei@mediatek.com,
- kyrie.wu@mediatek.corp-partner.google.com, andy.teng@mediatek.com,
- tinghan.shen@mediatek.com, jiaxin.yu@mediatek.com, shane.chien@mediatek.com,
- olivia.wen@mediatek.com, granquet@baylibre.com, eugen.hristev@linaro.org,
- arnd@arndb.de, sam.shih@mediatek.com, jieyy.yang@mediatek.com,
- frank-w@public-files.de, mwalle@kernel.org, fparent@baylibre.com,
- linux-crypto@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-sound@vger.kernel.org
-References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-5-angelogioacchino.delregno@collabora.com>
- <b7c9f6b8-4f29-4e38-9c93-e22cfed7229d@kernel.org>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <b7c9f6b8-4f29-4e38-9c93-e22cfed7229d@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250804_020815_987317_E28FA80E 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20250804_070704_786034_9E4D0038 
+X-CRM114-Status: GOOD (  15.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,67 +73,130 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 24/07/25 11:12, Krzysztof Kozlowski ha scritto:
-> On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
->>   
->>     clock-names:
->>       items:
->>         - const: aud_afe_clk
->>         - const: aud_dac_clk
->>         - const: aud_dac_predis_clk
->> +      - const: aud_adc_clk
->> +      - const: aud_adda6_adc_clk
->> +      - const: aud_apll22m_clk
->> +      - const: aud_apll24m_clk
->> +      - const: aud_apll1_tuner_clk
->> +      - const: aud_apll2_tuner_clk
->> +      - const: aud_tdm_clk
->> +      - const: aud_tml_clk
->> +      - const: aud_nle
->> +      - const: aud_dac_hires_clk
->> +      - const: aud_adc_hires_clk
->> +      - const: aud_adc_hires_tml
->> +      - const: aud_adda6_adc_hires_clk
->> +      - const: aud_3rd_dac_clk
->> +      - const: aud_3rd_dac_predis_clk
->> +      - const: aud_3rd_dac_tml
->> +      - const: aud_3rd_dac_hires_clk
->>         - const: aud_infra_clk
->>         - const: aud_infra_26m_clk
-> 
-> 
-> You can only add to the end of lists, not in the middle.
-> 
+Some SoCs are just validated with the TX delay enabled. With commit
+ca13b249f291 ("net: ethernet: ti: am65-cpsw: fixup PHY mode for fixed
+RGMII TX delay"), the network driver will patch the delay setting on the
+fly assuming that the TX delay is fixed. In reality, the TX delay is
+configurable and just skipped in the documentation. There are
+bootloaders, which will disable the TX delay and this will lead to a
+transmit path which doesn't add any delays at all. Fix that by always
+forcing the TX delay to be enabled.
 
-The devicetree follows exactly what I've done here, and if I add to the
-end of the list (which was wrong from the beginning), I'd have to reorder
-all of the clocks in the devicetree node as well.
+Fixes: ca13b249f291 ("net: ethernet: ti: am65-cpsw: fixup PHY mode for fixed RGMII TX delay")
+Signed-off-by: Michael Walle <mwalle@kernel.org>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 52 +++++++++++++++++++++++++++++------
+ 1 file changed, 44 insertions(+), 8 deletions(-)
 
-I know that I'm not supposed to add those there, but this is not about adding
-new clocks, it's about adding ones that were missing in the middle.
-
-> Also, please drop all _clk suffixes and aud/top prefixes. These are
-> supposed to be clock inputs, so you name them based on this device. Not
-> based on the provider's name.
-
-That breaks everything: the driver uses the _clk suffixes and aud/top prefixes
-to get clocks by name - I know that "driver" and "binding" are not two words
-that go together in that sense, but *otherwise* we'd need to perform way bigger
-changes to get this situation resolved.
-
-Those "way bigger changes" would also add bloat to the kernel as we'd need to
-parse clocks with old and new names.
-
-Can we please avoid this on SoCs from years ago, which are only getting maintenance
-and no new feat/dev?
-
-Thanks,
-Angelo
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index ff5d5e29629f..a0c19d00ff3a 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -34,6 +34,7 @@ enum {
+ 	PHY_GMII_SEL_PORT_MODE = 0,
+ 	PHY_GMII_SEL_RGMII_ID_MODE,
+ 	PHY_GMII_SEL_RMII_IO_CLK_EN,
++	PHY_GMII_SEL_FIXED_TX_DELAY,
+ 	PHY_GMII_SEL_LAST,
+ };
+ 
+@@ -127,6 +128,16 @@ static int phy_gmii_sel_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 		goto unsupported;
+ 	}
+ 
++	/*
++	 * Some SoCs only support fixed MAC side TX delays. According to the
++	 * datasheet, they are always enabled, but that turns out not to be the
++	 * case and the delay is configurable. But according to the vendor that
++	 * mode is not validated and might not work. Some bootloaders disable
++	 * that bit. To work around that enable it again.
++	 */
++	if (soc_data->features & BIT(PHY_GMII_SEL_FIXED_TX_DELAY))
++		rgmii_id = 0;
++
+ 	if_phy->phy_if_mode = submode;
+ 
+ 	dev_dbg(dev, "%s id:%u mode:%u rgmii_id:%d rmii_clk_ext:%d\n",
+@@ -210,25 +221,46 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_dm814 = {
+ 
+ static const
+ struct reg_field phy_gmii_sel_fields_am654[][PHY_GMII_SEL_LAST] = {
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x0, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x4, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x8, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0xC, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x10, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x14, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x18, 0, 2), },
+-	{ [PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x1C, 0, 2), },
++	{
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x0, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x0, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x4, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x4, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x8, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x8, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0xC, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0xC, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x10, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x10, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x14, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x14, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x18, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x18, 4, 4),
++	}, {
++		[PHY_GMII_SEL_PORT_MODE] = REG_FIELD(0x1C, 0, 2),
++		[PHY_GMII_SEL_RGMII_ID_MODE] = REG_FIELD(0x1C, 4, 4),
++	},
+ };
+ 
+ static const
+ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
+ 	.use_of_data = true,
++	.features = BIT(PHY_GMII_SEL_RGMII_ID_MODE) |
++		    BIT(PHY_GMII_SEL_FIXED_TX_DELAY),
+ 	.regfields = phy_gmii_sel_fields_am654,
+ };
+ 
+ static const
+ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
+ 	.use_of_data = true,
++	.features = BIT(PHY_GMII_SEL_RGMII_ID_MODE) |
++		    BIT(PHY_GMII_SEL_FIXED_TX_DELAY),
+ 	.regfields = phy_gmii_sel_fields_am654,
+ 	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII) |
+ 		       BIT(PHY_INTERFACE_MODE_USXGMII),
+@@ -239,6 +271,8 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
+ static const
+ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j721e = {
+ 	.use_of_data = true,
++	.features = BIT(PHY_GMII_SEL_RGMII_ID_MODE) |
++		    BIT(PHY_GMII_SEL_FIXED_TX_DELAY),
+ 	.regfields = phy_gmii_sel_fields_am654,
+ 	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII),
+ 	.num_ports = 8,
+@@ -248,6 +282,8 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j721e = {
+ static const
+ struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw9g_soc_j784s4 = {
+ 	.use_of_data = true,
++	.features = BIT(PHY_GMII_SEL_RGMII_ID_MODE) |
++		    BIT(PHY_GMII_SEL_FIXED_TX_DELAY),
+ 	.regfields = phy_gmii_sel_fields_am654,
+ 	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII) |
+ 		       BIT(PHY_INTERFACE_MODE_USXGMII),
+-- 
+2.39.5
 
 
 -- 
