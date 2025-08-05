@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AA19C87FD2
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 12:42:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C7D4C87FD1
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 12:42:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LGbFzm3oiK4yHi25Hl1V8pVDO40BtiN7C7kvjnlnOl8=; b=X2XukMWbOElyTZ
-	XM9G/kwZzbq+gvwnQYs/Ld6ED1HhzaY3URPEjysetPNV7bcDyafGQPJlB6iWVAiIeb1gW79n5/YWP
-	cnFY/6HxYQ63VRZICgNcq7g/Bt06GE6bNX4AGutucr5N2pscL7WDNoSF48567DBwq0yGCgz1kUiJV
-	Ayk4ifiR9GXq/eLLDSUhwuTJSm+c+Da8ZCr3X2KB8yfVIYPFzXg2PmkqcWaHOeXAOJDl32swjRLdo
-	owktJWBRf4Dfn4V+TUJslsDa3Cu0EeHkHJCPmGujvzipl88McES+3BnyaUPvVr68sJmw2Rd6EZgtw
-	vDKedkfvZjnVL0cCCJOA==;
+	List-Owner; bh=NniEdlh4TfDSspLb94/tD0CMsH/Qkyvv2Gv0tbkLpXE=; b=Ghefmojg12HhBp
+	xXzz52wvvGfmsh2KOP4qzBLeP5TqQ+cp0/yzlzbRSBahydgScFtxYm2EYLOtAYcduoSWGhKhDT0+l
+	DRkTH6wE3iCrncQjWT08mypjjfOobNiDuTxHgD2NvHgksvVRh2GqtS4HlogxRXxuqS8lVCFlWjQ22
+	Z+1zPWBK69NtbKiM8SoPGsNfLsXztUNf6sXWcsBk/SjhG7NqQVLM/pBee+/+whqTDoRL8Pyzym1II
+	ouDEzXYxNFFASbQn65kuh44aMduncbUJUoopRHtVnwMEZft7g/waQtpWey8Kpm6xWNBTc7MtQP10e
+	gf4W5PdYYFtnP9w2eNfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujH01-0000000Ck5E-2uIx;
-	Tue, 05 Aug 2025 12:42:37 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1ujH02-0000000Ck5p-16OA;
+	Tue, 05 Aug 2025 12:42:38 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujGjZ-0000000ChXQ-1ipI
+	id 1ujGjc-0000000ChYM-16U8
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Aug 2025 12:25:38 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-3b7886bee77so4603427f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 05 Aug 2025 05:25:37 -0700 (PDT)
+	Tue, 05 Aug 2025 12:25:41 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-3b7961cf660so4307739f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 05 Aug 2025 05:25:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1754396736; x=1755001536; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1754396739; x=1755001539; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=I5Ep8m0VKAwV5mXrgq4DZR9sXOgq4tSE6SfXbq4E5+g=;
-        b=P/HErILCwg6A63osNhNgaeAtR0Z8w6OyAuHvOGME0BCxcYUR0HjkXPNdMy6gEt7M3a
-         wy2NShWFsL5qYkS9RnbUwkTaHUrOTnZpmheG82ZeI7eAMJbe2zGSI9oA4L2ha6FakAlz
-         WaXEpuxrpsZ82ztEhl5iG5bYysnSAHwRFIi0dd+YNb89t86iMzSAgcggYbcWBbmJJKy0
-         N3d6olc/6FrvOwhx3/QvvZSzOHeDekad1KBP+Aw7TbUOE9iqZXBZkGDTA4cIspQ4kgL4
-         K1jDtB3vg6ghPfXGvMic2XjYh3iL2xZMEyfcZjnG13Nmwd5hW3FC6Ff9Gwpmd93PGT7s
-         Qe/w==
+        bh=o1nM+ZKQrBb+Htee3aK8Av9Uv/f3aSiUUxHDlz6amBA=;
+        b=U2XMgONBWnsopHL/soL9tZnSc35gxKAj2msIEUPQXkZdrgSHpdykov46pR5TM1OCKV
+         XDiU26wkjru96S9aHz1mJ2V+jJEn3UtocDe34bCfOY7/BEWBLBD9ztG+/W4RQkNHWrUh
+         0NZ9b3UYmK8gIlffYR6TBS0P7g/srikWd45qz7uxEz9rzCRq74VmxxYQYwtsQc+BHpfD
+         ifSVLOqmJunOYbHeMwjbfUv+j2W/qyXpp9dy1c2iU+/jcXstBIXQPtm3bCeK8eJW10MB
+         Ir4f5yarpx88Zj+gG6S00ULa+QMawN+OMMEgbc1BWePQA2vTNhjb6A/zTW0TD3JwNgtI
+         xjDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754396736; x=1755001536;
+        d=1e100.net; s=20230601; t=1754396739; x=1755001539;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=I5Ep8m0VKAwV5mXrgq4DZR9sXOgq4tSE6SfXbq4E5+g=;
-        b=d/J+ek3GPZI4YcHSNlt6yhAqg+H2QRum84BbNGeJU/nua3luV+dN0W+rTIDgXtX1Bp
-         O6f62qUqKhB7GD1JYH/UThJTrshTGMLhxBb8nWobIOFPwVvJUEtGomNzgdZvJPzm1b3Z
-         XgvLMY38V8iWXDZU926V6eZttoacqkM6ZhVh9Ln1ZLk+amws1KkelQZLuG3iFLKb81FY
-         nZ8Krr+ygC8muIBrgZJDGhZlPtWI9hWkL+fCzeLuJaWUO7yoJekYf5+Lk5YvmlGm3V9l
-         M20hw8kkavzRlJyZx+m3bzD3xOCkppw43wjbtuhoLoHyDiHLH4gTavMU4CqjoBQ+7LEc
-         jQyA==
-X-Gm-Message-State: AOJu0YyxQKXOjq/9oj/TOpuAytRT7MowubJefJPSQV8Nz5H52Layn9O4
-	K9DBcgJzwndaXdi0K+N6KxePuA7j3CyLuPSfFUgvVuJ0S+K1ikOBAgk8
-X-Gm-Gg: ASbGncu1ga51xoRLd8H3nrAOyX5EoYvXwGhdjkPlltwiJtKqawve0nEU2oCA8Kk0d5E
-	FM8uc0Xo16Wcrfoq+vRlO3px0PSypUXzQF3Rn/cuSE4uXuz96pqJ+RTWms9Mbraahb2zWHv/RAy
-	fBrW520iLgtAi1ZrWue/cWGoVdG35B/+vlir1aCAIJUm0CX3YOShhI3KxJ5VxJZH80tv8Cv/Qke
-	KkiSpFNxsaoC9ac5GEMxHaqskWQWzWrL81lHLLWKOAK/vTJ/wz7lYlXQNgx7n4kt6okBtUsXcae
-	NH+6fT3saHjHmsSnxIeN0rE8LnTOzOYG5maKKYrAWyAE771EWFsglMxDGztJ2Rf9tPPJi3Ss14k
-	N/n3WyUsnyo8ITjAbUr8txUfKaZRtEi9hT63tgzxa0EwmTwiZJUbieyo27uhGhCF2hl7Z8jMMAQ
+        bh=o1nM+ZKQrBb+Htee3aK8Av9Uv/f3aSiUUxHDlz6amBA=;
+        b=Gv6RGNMoSZqJ5DE4RTYcfiPdonKpbRg5XLhYAcEpca8aJpyrvPBswdqgx5i59mbEud
+         Dkl/EYulIDqU1pkyH8NoBuaiSBhX1rZ2hC2xohAsXysBrDi4zAZ13xfRcvQWRclmmjCj
+         3Ym2eA0NyvCoD5eOBSECm//4bIDYcPJum1/vr8FTzMoRkPrNGXfwdfMZALLLMi9t9XXv
+         s7+lAi3+mw2OzRJM6aDps21nCg1iVDFkmipa2nzqIpK3itkMNOvYEbhUFxaS22vmGsN/
+         JTfZ5JgtUsK38uWnhxhOH05sLgpQoJ/M6FXaxgngs3HEMbQa+B9o9Bvsk3ifZeke+dEZ
+         +WdA==
+X-Gm-Message-State: AOJu0Yx0IPDcM5rG6q5CW8HRaW6AOgny2gtCSDKRSnyoe7LnrMzRIgls
+	wJPFFrfRjTi6cJvqUkrHeYnk6hMCWGO0wQloVKsau0byn/387W8r8nBIDyWzFXnK
+X-Gm-Gg: ASbGncvDiUnJogpKmU/McJbROW/wlhDT0AtDG5P7Tad3rOV0xYU/4SxvabzdpvgNdbs
+	+OXatyBkEiExHVt/e9AAnmPg3Fpu9m/HdXcFshZQYQAlS5gL4Te0YjQ5Azzqakrichnxk+tcUXa
+	Rp7FNoXM5AJywv+hYc1wrFngk0eIbtrP6aTSWhSuG0JCrlAzVzvUAMQ1elj1CYe7LnAZGUPhJ4c
+	mrqfaEg1J7UMS3LJvcl1NzZiNNI9AckYJRKYh+4dpCW5pynJZlPvFikK27O3j18yrpuCdvC73ji
+	Ehv8P39XGrXo1REmExGVOixk7cyaFDYMcRY2fAVJrWXsCV6ELSzMAZM3JXEWgRwDZnHh4ueNcpV
+	6VYK4xd8s4fPW+vLCidr1ny9O7qGO/K5DK+CloQq9urMJE+HRLmvXUfL6/Qetr5saLHvl66ONDQ
 	==
-X-Google-Smtp-Source: AGHT+IH/BxE0hPVHk64qSFzfFDBSwRmjvC2GF0gHc1dmVlCBwJCvHU1LVAoN9rANd8IFap/CwdRMcw==
-X-Received: by 2002:a05:6000:2013:b0:3b7:8146:463c with SMTP id ffacd0b85a97d-3b8d94cf0bbmr9070989f8f.59.1754396735746;
-        Tue, 05 Aug 2025 05:25:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHc5Icm1SVZv69DweZwMA+oPfcG9+hBe7KOaiBLVovbZ2Nqsy9UgfyhAA8WbXjZU5OUGPlLOQ==
+X-Received: by 2002:a05:6000:2912:b0:3b7:9d87:97ad with SMTP id ffacd0b85a97d-3b8d94bc889mr10154634f8f.37.1754396738587;
+        Tue, 05 Aug 2025 05:25:38 -0700 (PDT)
 Received: from iku.Home (97e54365.skybroadband.com. [151.229.67.101])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b79c48a05bsm19153986f8f.69.2025.08.05.05.25.34
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3b79c48a05bsm19153986f8f.69.2025.08.05.05.25.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 05 Aug 2025 05:25:34 -0700 (PDT)
+        Tue, 05 Aug 2025 05:25:37 -0700 (PDT)
 From: Prabhakar <prabhakar.csengg@gmail.com>
 X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Vinod Koul <vkoul@kernel.org>,
@@ -87,17 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	Biju Das <biju.das.jz@bp.renesas.com>,
 	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
 	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: [PATCH 1/5] dt-bindings: phy: renesas,usb2-phy: Add RZ/T2H and RZ/N2H support
-Date: Tue,  5 Aug 2025 13:25:25 +0100
-Message-ID: <20250805122529.2566580-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH 3/5] phy: renesas: rcar-gen3-usb2: Allow SoC-specific OBINT bits via phy_data
+Date: Tue,  5 Aug 2025 13:25:27 +0100
+Message-ID: <20250805122529.2566580-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20250805122529.2566580-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <20250805122529.2566580-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_052537_450331_4760231B 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250805_052540_307402_638A50A2 
+X-CRM114-Status: GOOD (  17.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,55 +115,140 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Document the USB2 PHY controller for the Renesas RZ/T2H (r9a09g077) and
-RZ/N2H (r9a09g087) SoCs. These SoCs share the same PHY block, which is
-similar to the one on RZ/G2L but differs in clocks, resets, and register
-bits. To account for these differences, a new compatible string
-`renesas,usb2-phy-r9a09g077` is introduced.
-
-The RZ/N2H SoC uses the same PHY as RZ/T2H, so it reuses the RZ/T2H
-compatible string as a fallback.
+Update the PHY driver to support SoC-specific OBINT enable bits by
+introducing the `obint_enable_bits` field in the `rcar_gen3_phy_drv_data`
+structure. This allows each SoC to specify bits required.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 ---
- .../bindings/phy/renesas,usb2-phy.yaml          | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 27 ++++++++++++------------
+ 1 file changed, 14 insertions(+), 13 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-index f45c5f039ae8..179cb4bfc424 100644
---- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-@@ -44,6 +44,12 @@ properties:
-           - const: renesas,usb2-phy-r9a09g056 # RZ/V2N
-           - const: renesas,usb2-phy-r9a09g057
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index cfa9667c7680..ea387941c6f7 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -71,8 +71,7 @@
+ /* OBINTSTA and OBINTEN */
+ #define USB2_OBINT_SESSVLDCHG		BIT(12)
+ #define USB2_OBINT_IDDIGCHG		BIT(11)
+-#define USB2_OBINT_BITS			(USB2_OBINT_SESSVLDCHG | \
+-					 USB2_OBINT_IDDIGCHG)
++#define USB2_OBINT_IDCHG_EN		BIT(0) /*  RZ/G2L specific */
  
-+      - const: renesas,usb2-phy-r9a09g077 # RZ/T2H
-+
-+      - items:
-+          - const: renesas,usb2-phy-r9a09g087 # RZ/N2H
-+          - const: renesas,usb2-phy-r9a09g077
-+
-   reg:
-     maxItems: 1
+ /* VBCTRL */
+ #define USB2_VBCTRL_OCCLREN		BIT(16)
+@@ -93,7 +92,6 @@
+ #define USB2_ADPCTRL_DRVVBUS		BIT(4)
  
-@@ -120,6 +126,17 @@ allOf:
-       required:
-         - resets
+ /*  RZ/G2L specific */
+-#define USB2_OBINT_IDCHG_EN		BIT(0)
+ #define USB2_LINECTRL1_USB2_IDMON	BIT(0)
  
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: renesas,usb2-phy-r9a09g077
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 2
-+        resets: false
-+
- additionalProperties: false
+ #define NUM_OF_PHYS			4
+@@ -130,7 +128,6 @@ struct rcar_gen3_chan {
+ 	struct work_struct work;
+ 	spinlock_t lock;	/* protects access to hardware and driver data structure. */
+ 	enum usb_dr_mode dr_mode;
+-	u32 obint_enable_bits;
+ 	bool extcon_host;
+ 	bool is_otg_channel;
+ 	bool uses_otg_pins;
+@@ -141,6 +138,7 @@ struct rcar_gen3_phy_drv_data {
+ 	bool no_adp_ctrl;
+ 	bool init_bus;
+ 	bool utmi_ctrl;
++	u32 obint_enable_bits;
+ };
  
- examples:
+ /*
+@@ -225,9 +223,9 @@ static void rcar_gen3_control_otg_irq(struct rcar_gen3_chan *ch, int enable)
+ 	u32 val = readl(usb2_base + USB2_OBINTEN);
+ 
+ 	if (ch->uses_otg_pins && enable)
+-		val |= ch->obint_enable_bits;
++		val |= ch->drvdata->obint_enable_bits;
+ 	else
+-		val &= ~ch->obint_enable_bits;
++		val &= ~ch->drvdata->obint_enable_bits;
+ 	writel(val, usb2_base + USB2_OBINTEN);
+ }
+ 
+@@ -430,7 +428,7 @@ static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
+ 	mdelay(20);
+ 
+ 	writel(0xffffffff, usb2_base + USB2_OBINTSTA);
+-	writel(ch->obint_enable_bits, usb2_base + USB2_OBINTEN);
++	writel(ch->drvdata->obint_enable_bits, usb2_base + USB2_OBINTEN);
+ 
+ 	rcar_gen3_device_recognition(ch);
+ }
+@@ -450,9 +448,9 @@ static irqreturn_t rcar_gen3_phy_usb2_irq(int irq, void *_ch)
+ 
+ 	scoped_guard(spinlock, &ch->lock) {
+ 		status = readl(usb2_base + USB2_OBINTSTA);
+-		if (status & ch->obint_enable_bits) {
++		if (status & ch->drvdata->obint_enable_bits) {
+ 			dev_vdbg(dev, "%s: %08x\n", __func__, status);
+-			writel(ch->obint_enable_bits, usb2_base + USB2_OBINTSTA);
++			writel(ch->drvdata->obint_enable_bits, usb2_base + USB2_OBINTSTA);
+ 			rcar_gen3_device_recognition(ch);
+ 			ret = IRQ_HANDLED;
+ 		}
+@@ -591,28 +589,35 @@ static const struct phy_ops rz_g1c_phy_usb2_ops = {
+ static const struct rcar_gen3_phy_drv_data rcar_gen3_phy_usb2_data = {
+ 	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
+ 	.no_adp_ctrl = false,
++	.obint_enable_bits = USB2_OBINT_SESSVLDCHG |
++			     USB2_OBINT_IDDIGCHG,
+ };
+ 
+ static const struct rcar_gen3_phy_drv_data rz_g1c_phy_usb2_data = {
+ 	.phy_usb2_ops = &rz_g1c_phy_usb2_ops,
+ 	.no_adp_ctrl = false,
++	.obint_enable_bits = USB2_OBINT_SESSVLDCHG |
++			     USB2_OBINT_IDDIGCHG,
+ };
+ 
+ static const struct rcar_gen3_phy_drv_data rz_g2l_phy_usb2_data = {
+ 	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
+ 	.no_adp_ctrl = true,
++	.obint_enable_bits = USB2_OBINT_IDCHG_EN,
+ };
+ 
+ static const struct rcar_gen3_phy_drv_data rz_g3s_phy_usb2_data = {
+ 	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
+ 	.no_adp_ctrl = true,
+ 	.init_bus = true,
++	.obint_enable_bits = USB2_OBINT_IDCHG_EN,
+ };
+ 
+ static const struct rcar_gen3_phy_drv_data rz_v2h_phy_usb2_data = {
+ 	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
+ 	.no_adp_ctrl = true,
+ 	.utmi_ctrl = true,
++	.obint_enable_bits = USB2_OBINT_IDCHG_EN,
+ };
+ 
+ static const struct of_device_id rcar_gen3_phy_usb2_match_table[] = {
+@@ -748,7 +753,6 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 	if (IS_ERR(channel->base))
+ 		return PTR_ERR(channel->base);
+ 
+-	channel->obint_enable_bits = USB2_OBINT_BITS;
+ 	channel->dr_mode = rcar_gen3_get_dr_mode(dev->of_node);
+ 	if (channel->dr_mode != USB_DR_MODE_UNKNOWN) {
+ 		channel->is_otg_channel = true;
+@@ -788,9 +792,6 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 			goto error;
+ 	}
+ 
+-	if (phy_data->no_adp_ctrl)
+-		channel->obint_enable_bits = USB2_OBINT_IDCHG_EN;
+-
+ 	spin_lock_init(&channel->lock);
+ 	for (i = 0; i < NUM_OF_PHYS; i++) {
+ 		channel->rphys[i].phy = devm_phy_create(dev, NULL,
 -- 
 2.50.1
 
