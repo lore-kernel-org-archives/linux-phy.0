@@ -4,64 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0817C87FD1
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 12:34:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4780C87FD1
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 12:37:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qAhBUJF9aPVeodUvYnUEioy7thP/9rWcX9zXdxi+xps=; b=NgQUBCG9UoA/1m
-	//fnyPyS4BtYt3P/1+0ok+e4hfwc0jiOw9x/qsGQuIwjzkduRJMCFI10THskNt01Dg7QdMq8hLgHu
-	wL4q4UhJI/Z+T5jL6wTLmZKioQwjLltsRgAqGdasDmu4/ezkcoicSj0LYIf+fjWBuv6/DwLiMLQ40
-	Ck1XdUl1cnOcd07vjBAyg2JZ6VBO2D1BydnOVI8WZcHVqL+j1n4TG4/wqKl+BOEdgEqmQh1nUyzrZ
-	9yCAVMXK07X+LYdSxXFKEk++RU4QMBOs7rwxSjDEHXxRVWC5iUAtMyDk3KX/jBgyHu/5u6QI9USjr
-	o+Bu9rQtw13Yfmsl4TZw==;
+	List-Owner; bh=H8zF7d6rcZ+NvHXZJfSzkzwaGCfvT5tywYdxAiBvn9E=; b=pqQ6f9Goh6apB5
+	U+dRzbUKEWf+ZQQoRlgjEeeAFDwldlLMXK+Pz/eWrga1enr6K08X0ZSB2Y54nFkswm8GZH5X8y/xT
+	ZK3HAnZTkjFcEL+j+FFbSbgIuud47b3K+Q9mrb8069oNmZ7EoUEL3uFpB+rJKMh2Zxke6Jp/O9DCx
+	Es5W1A9kvFlgodPAQaRxsvMx9kI0a8dO4LVK92vbN1BphAChtahNExCprpLQstbNZqv6UR5EVXBCH
+	inqbeIxVUhxQSEEmHjDEAZwMG4L6FV1H38py21IqHyAONa/E9PykISdO/CVlWVgge2ZW9IMLEVM+n
+	zAIJ2G95pqzPCYprWDbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujGsD-0000000Cj2n-1SS3;
-	Tue, 05 Aug 2025 12:34:33 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1ujGuo-0000000CjGX-2chz;
+	Tue, 05 Aug 2025 12:37:14 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujGHr-0000000Cdl7-0gBC;
-	Tue, 05 Aug 2025 11:57:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1754395017;
-	bh=xMXen/bHQmq8eILCFZkOq3t0CKOepKADVu7/ZOwpRaE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=hBRYKf5xtHx5sucEvqK4GD538m/d/Y5W5uoF0SNFq2XenO30SQSs0/oUg9TtkxhrO
-	 ddFsvwxiZszzR51Uo+3MEdgbtaXBeuJWnsru/lxGeJ+EugIaUmauagRBHs69gcrbGH
-	 GbVQWL+ijOSF8B8PwlkECi3lUDA/gcH8l6McdKmILSWqLDWPCghhelk6PABV0050Sm
-	 W7Ivyk29NpYcgp3IZHhqvHntSNcmKc0Ibi/aQnMFSZ93dyFIYgo5J5lRi++IQMBHWu
-	 vRV7lo2tOUVs5kVP6XTtzB6ugt9wpvUv7UOyaESrjnzahoYKiPXg2djS01wvv3O1Gs
-	 BbTAN3DLOHQvg==
-Received: from localhost (unknown [82.79.138.60])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 69E8C17E0202;
-	Tue,  5 Aug 2025 13:56:57 +0200 (CEST)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 05 Aug 2025 14:56:55 +0300
-Subject: [PATCH v2 13/14] phy: rockchip: samsung-hdptx: Extend
- rk_hdptx_phy_verify_hdmi_config() helper
+	id 1ujGOV-0000000CerH-0ovw
+	for linux-phy@lists.infradead.org;
+	Tue, 05 Aug 2025 12:03:52 +0000
+Received: from [192.168.88.20] (91-158-153-178.elisa-laajakaista.fi [91.158.153.178])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6AB151775;
+	Tue,  5 Aug 2025 14:02:59 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1754395379;
+	bh=1NVdk8GdDMY6dJ0etVURAVdHQBQXTl0gHe6ztBZkYq8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=whMW4X1K3i/yLt5Dg2VoNm2kFbc6jUqcA5/GgtJVaqQoXHBu9ZrOP9IZXuQ0TZfgb
+	 9+CHwxLmdnc3FcNQxzhVZFkP5QZFgC7FSRyGoUj68cj2N75Dx9FdSiw0WOTbHmWQb6
+	 WTgBb9kJHKO3QEiT6D+sRTDvBV70dJcLDyTam8V8=
+Message-ID: <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
+Date: Tue, 5 Aug 2025 15:03:44 +0300
 MIME-Version: 1.0
-Message-Id: <20250805-phy-hdptx-frl-v2-13-d118bd4b6e0b@collabora.com>
-References: <20250805-phy-hdptx-frl-v2-0-d118bd4b6e0b@collabora.com>
-In-Reply-To: <20250805-phy-hdptx-frl-v2-0-d118bd4b6e0b@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
- Dmitry Baryshkov <lumag@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/2] phy: cdns-dphy: hs-clk improvement and a cleanup
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Parth Pancholi <parth.pancholi@toradex.com>,
+ Devarsh Thakkar <devarsht@ti.com>, Francesco Dolcini <francesco@dolcini.it>,
+ Aradhya Bhatia <aradhya.bhatia@linux.dev>,
+ Jayesh Choudhary <j-choudhary@ti.com>
+References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
+Content-Language: en-US
+From: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Autocrypt: addr=tomi.valkeinen@ideasonboard.com; keydata=
+ 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
+In-Reply-To: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_045659_391684_1C6EFEC1 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20250805_050351_380612_E94A3660 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,116 +115,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In order to facilitate introduction of HDMI 2.1 FRL support and to avoid
-recomputing the link rate after verifying the HDMI configuration given
-as input, extend rk_hdptx_phy_verify_hdmi_config() by providing an
-optional output parameter to store the validated configuration.
+Hi Vinod, Kishon,
 
-For improved code readability, also rename the existing hdmi input
-parameter.
+On 23/07/2025 13:01, Tomi Valkeinen wrote:
+> A cdns-dphy improvement to return the actual hs clock rate, and a
+> cleanup to remove leftover code.
+> 
+> These were part of a Cadence DSI series:
+> 
+> https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02%40ideasonboard.com/
+> 
+> but are now separately here for easier merging.
+> 
+> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+> ---
+> Tomi Valkeinen (2):
+>       phy: cdns-dphy: Store hs_clk_rate and return it
+>       phy: cdns-dphy: Remove leftover code
+> 
+>  drivers/phy/cadence/cdns-dphy.c | 24 +++++++++---------------
+>  1 file changed, 9 insertions(+), 15 deletions(-)
+> ---
+> base-commit: 89be9a83ccf1f88522317ce02f854f30d6115c41
+> change-id: 20250723-cdns-dphy-hs-clk-rate-fix-a8857a5789dd
 
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 35 ++++++++++++-----------
- 1 file changed, 18 insertions(+), 17 deletions(-)
+Is this good to merge, and if so, do you have any estimate when? While
+this is independent from the DSI series, I'd rather push the DSI series
+into drm-misc about the same time, so both would appear in linux-next
+relatively together.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index a44614bc73e9461d4d38663776f547f595169c3b..58eac67cc3b21c17939c303bbea3fcdc5e6b0518 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -1472,25 +1472,24 @@ static int rk_hdptx_phy_power_off(struct phy *phy)
- }
- 
- static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
--					   struct phy_configure_opts_hdmi *hdmi)
-+					   struct phy_configure_opts_hdmi *hdmi_in,
-+					   struct rk_hdptx_hdmi_cfg *hdmi_out)
- {
- 	int i;
- 
--	if (!hdmi->tmds_char_rate || hdmi->tmds_char_rate > HDMI20_MAX_RATE)
-+	if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
- 		return -EINVAL;
- 
- 	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
--		if (hdmi->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
-+		if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
- 			break;
- 
- 	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
--	    !rk_hdptx_phy_clk_pll_calc(hdmi->tmds_char_rate, NULL))
-+	    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
- 		return -EINVAL;
- 
--	if (!hdmi->bpc)
--		hdmi->bpc = 8;
--
--	switch (hdmi->bpc) {
-+	switch (hdmi_in->bpc) {
-+	case 0:
- 	case 8:
- 	case 10:
- 	case 12:
-@@ -1500,6 +1499,11 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- 		return -EINVAL;
- 	}
- 
-+	if (hdmi_out) {
-+		hdmi_out->rate = hdmi_in->tmds_char_rate;
-+		hdmi_out->bpc = hdmi_in->bpc ?: 8;
-+	}
-+
- 	return 0;
- }
- 
-@@ -1765,17 +1769,15 @@ static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opt
- 	int ret;
- 
- 	if (mode != PHY_MODE_DP) {
--		ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi);
-+		ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi, &hdptx->hdmi_cfg);
- 		if (ret) {
- 			dev_err(hdptx->dev, "invalid hdmi params for phy configure\n");
- 		} else {
--			hdptx->hdmi_cfg.rate = opts->hdmi.tmds_char_rate;
--			hdptx->hdmi_cfg.bpc = opts->hdmi.bpc;
- 			hdptx->restrict_rate_change = true;
-+			dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
-+				hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
- 		}
- 
--		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
--			hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
- 		return ret;
- 	}
- 
-@@ -1819,7 +1821,7 @@ static int rk_hdptx_phy_validate(struct phy *phy, enum phy_mode mode,
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
- 
- 	if (mode != PHY_MODE_DP)
--		return rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi);
-+		return rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi, NULL);
- 
- 	return rk_hdptx_phy_verify_dp_config(hdptx, &opts->dp);
- }
-@@ -1959,12 +1961,11 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
- 		struct phy_configure_opts_hdmi hdmi = {
- 			.tmds_char_rate = rate,
- 		};
--		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi);
-+
-+		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi, &hdptx->hdmi_cfg);
- 
- 		if (ret)
- 			return ret;
--
--		hdptx->hdmi_cfg.rate = rate;
- 	}
- 
- 	/*
-
--- 
-2.50.0
+ Tomi
 
 
 -- 
