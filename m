@@ -4,129 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEACAC87FD1
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 09:47:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31BE6C87FD1
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 11:01:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6Y1b+Gl5NNrU6HiNrzjjgYL+I1kNpXqfFeW0s6dShnE=; b=2sdA5xm3kvGHfq
-	CDsApv2s0I4BnGTsORov710yl1YagkHQRSB07M0WvxA7Pb9u+D6cN/Is9FEqmHGrZ6KavNjBgE2Ot
-	+jxaB5FCA6c3AaD0UApQt5B8qj04+iW5Y2sqaHXrM5tCDzAHfa3e06Wy2H++97rgBtFpek0jX4gHH
-	1dfz35Ud4YKvLjsnm9/XR/8MGdjTCsxYOzt8iH6cKqtaU+OMglDQGkb6m3LiND1rDv0NUIN/JdTRU
-	xTXo0LhOjYn9q6hSXJNjzcXs6+SfaEWfLgKI7F/Rkqh4UrqrpON11N8hhCs3o41bIyqIsv3JH0ahp
-	WkSnTzwcAFZ7to+cRr7w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zbvY+D06fKc0sQSqIyM/4MO413E6M1p8uzPMgt55azQ=; b=WsfqZTa4yXTpjP
+	t1JTg7BYF5OQcXYaZrs83VOnF3iMFF87D8z0L2rrEetG6OY8JWrGSaWx96FAQyhV8dxD3FWNmnWx2
+	/L9gSuu9mOJDCu7Aorb/ClL+oJWpp4JL4YXvJpF1QpCleAn7y1iVnbrQUDXp4Sr5Me+YSn3yE9esm
+	qIEWcCDg2y9LObA5WVH8cVBmk6NLD3ngXVmMTsg62CuvwnNQ1BjlOmr71Fe/clHLx4Oh+VyYRuM9H
+	PryUpYANKORuQixYV3Crb3FWQEkF+LeubsAgZD8b4ogeY/mKR1vGgQ6Y5wJCKbOz/HjJmY467SJpS
+	F/2nsNwK+qftAFDuOOCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujEGS-0000000CPWv-1rPY;
-	Tue, 05 Aug 2025 09:47:24 +0000
-Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1ujFPn-0000000CYK2-3ibK;
+	Tue, 05 Aug 2025 11:01:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujE3J-0000000CMmK-0PIM;
-	Tue, 05 Aug 2025 09:33:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oVTrqm6gav1g6hjS/bsXfylDA9nYBSujqj3LxYuMK79S44uAQR2SHVYOLLz8Ru0xdsgYAWa8SEZ1VlrN1QaTAUAJ/tydyw8toIPZBZoVycDu3T4/pxSvQ89b+9zNli2y4Vy8qlzzPhoUr/HoRzsGUxbNVXSitPLZilmOGMIYd4L2b16FrEmTmR7baFyqbNrNf5qOxLsgBlG4tm1mAcDP/oW7GtphQfCbHKXwzZQA/kL/4L+UGG68AMRzErCTQpTe2YRDgwOVzUJI/UB/mjAXIICWMR0lD4Em1luFDPUhmFKF/uU5tyxgiSSiCgFd3EGXTP57tmJourZMfT4k1kDr5w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XSdyPORcOcEQ4J3OnKiTKjN8U+AEHy1K3NzmFwwhEL0=;
- b=CRptoBsCLTGkHC+bJX51xJBFPeLiRBcfNOKnt+3bsre7Abp1rmjJcvSkG2a9qh5aLQC5+2o3lCwQ4t0ogqUgkXtqVXE5c3psQ4wKE5D/EZiwpjnh91mnpsIwzEZ7EklChRT1pcMjyWo2IQ9Lko169+i3LUToTr0xBvMVRI02xmLg/xXhDpzCXvJRogmRdesYNGm/ymiimZ56VqXslmJMYNYmb+duBK5M5GAkYPM5WlNqEuL5ZyGzYLoQ8hiJGMTmIMbNWV6RwN6iS4Sh25dv3fg9JYe686xeL9lvbdTp3wyoEwjx9+PdnlXb9QmmTXYq7cA1pDb1HQLq90GsEoxlRg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 195.60.68.100) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=axis.com;
- dmarc=pass (p=none sp=none pct=100) action=none header.from=axis.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axis.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XSdyPORcOcEQ4J3OnKiTKjN8U+AEHy1K3NzmFwwhEL0=;
- b=SLuNOKYK2vSPlbKnmoPd12bdwh7jcHQ7QadrvWC0Ynqasp2pPIUDSNn6d5DrOXXCqRVA3IC64Pk3ls21hTDsgif/pdo9e1TSue2p+VyQ7UZWWkhZ4RaFhu8JX//2YiDtDKjTB70Tprrdx561FQfUHah6e0ChYHm7JwtEuGKew2U=
-Received: from CWLP123CA0001.GBRP123.PROD.OUTLOOK.COM (2603:10a6:401:56::13)
- by GV1PR02MB8260.eurprd02.prod.outlook.com (2603:10a6:150:63::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.20; Tue, 5 Aug
- 2025 09:33:43 +0000
-Received: from AM3PEPF0000A790.eurprd04.prod.outlook.com
- (2603:10a6:401:56:cafe::28) by CWLP123CA0001.outlook.office365.com
- (2603:10a6:401:56::13) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.21 via Frontend Transport; Tue,
- 5 Aug 2025 09:33:42 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 195.60.68.100)
- smtp.mailfrom=axis.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=axis.com;
-Received-SPF: Pass (protection.outlook.com: domain of axis.com designates
- 195.60.68.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=195.60.68.100; helo=mail.axis.com; pr=C
-Received: from mail.axis.com (195.60.68.100) by
- AM3PEPF0000A790.mail.protection.outlook.com (10.167.16.119) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.9009.8 via Frontend Transport; Tue, 5 Aug 2025 09:33:42 +0000
-Received: from pc52311-2249 (10.4.0.13) by se-mail01w.axis.com (10.20.40.7)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.44; Tue, 5 Aug
- 2025 11:33:35 +0200
-From: Waqar Hameed <waqar.hameed@axis.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>
-CC: <kernel@axis.com>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] phy: exynos5-usbdrd: Remove error print for
- devm_add_action_or_reset()
-User-Agent: a.out
-Date: Tue, 5 Aug 2025 11:33:35 +0200
-Message-ID: <pnd34a6m7tc.a.out@axis.com>
+	id 1ujF9u-0000000CWRL-1OD7
+	for linux-phy@lists.infradead.org;
+	Tue, 05 Aug 2025 10:44:43 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 575787Rr027487
+	for <linux-phy@lists.infradead.org>; Tue, 5 Aug 2025 10:44:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	HQj3FZoctR5ZS2xg/dOfzXuT0Dr0fvmcc9XZPTdXy0Y=; b=D0/F8yS6/OcIy9ah
+	7YaYrsXNvAazegfh/GMt3/QvEy/j3/9zjhmhDdSZN5eOoxX0//gOc93vmKCwwaio
+	tuQrFNy8O1HrQHG+Ye3CNeQqk2LaLBk00aHITaNjZm9dy6BCLlC2vhe614Pgqm/H
+	IsBydYHwgenHTj0I2Ffgd36qePbfRXGL34H7NhfPxok74Q5WUhg7qpasftnYSMPG
+	dmQJO7tUjBd5FtDTP8CcORgTyjhKfOpWBJWxLmrxA5oNclvJjLAvJCoJPE7U8Md1
+	iKB+ndNvnLf99f4CTyG4cDWhe9YRVij8SDgNTVpAkEC/M9eY1nlKQzoUc2CpNKqW
+	JMxy1w==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bd9w8m6s-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 05 Aug 2025 10:44:41 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-7073140087aso94713176d6.1
+        for <linux-phy@lists.infradead.org>; Tue, 05 Aug 2025 03:44:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754390680; x=1754995480;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=HQj3FZoctR5ZS2xg/dOfzXuT0Dr0fvmcc9XZPTdXy0Y=;
+        b=RLJHT1/1927baZilvWebGQSwnw+uBlMMU2X8Ssu5PVE8auVFEGQkaqQfFvy8B/IPyI
+         G2+0DPHCQFzWgrL+T72H4tkfKsBw/9AbWyDm/u9WnjTC44RkugTpdzkeaGHtmLiQnaHA
+         xTXz8Cims8V713LCCzD3Ys/tl7nY3lk1gKCIs88SRvjw3CK67r3RjIQDgNSt1G+T+wB0
+         OQj6JzdQwslUsmXrC791RPp4Q6UVl/fQavdaa7pA58IplSHXnKz7d+ohvKrF1Spaqa+i
+         2IrUjjqc66bHRA/+A1HpUBSAlHPsHzCHft/CsUTQYaJLTPRErV7N3pb7q7mS58EGHbCS
+         x+MA==
+X-Forwarded-Encrypted: i=1; AJvYcCV42WsJxluD9KLzho/9M+GnFlgLFpRdBpUTqma+XH2cHTkU5TpMm60slgKL/vKlOd/KhWBtZvfJmds=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxnjZCBrzw4/YFWPhN0UIgM9SZO+anTUFH0d7pIKOWfi74KZzaC
+	ELbB6WK2+BktTa42q2XuN5bSCahxfqzd3r88Nl0p2iQMzK7ss+7M7JW7/23sRUCpObPRkxyD4I7
+	Sp0OxFgO3OmPj3upwLESDdUK3fgZhnmma6xnav+HwJSTdLzFHyXKaY5O8nWpd4ysKA8p2
+X-Gm-Gg: ASbGncuKphzJRUcnbHpAUDFbDZ/WuQWrb9L897IiReWuEZzUoft4JKFyYvUCm7vA4KB
+	/xPMu1WCyg5NuEfTaWcrrA0fQyQgY4Wgm2k1wtQcvi7CGTdxH83fXfN8Rl+Q9QdpwE2f+Ykm+4o
+	WAC1imSr7GkrWFCPHokuRq9OoYzFBSruYNzz6hWxPqYW4u7sHg4F5Oeqd+F8pOe4mBrlbbmvy3r
+	rd54z2KlUAaA54s2by6tT9/CxmKDS9ltu55o4YbdgEF65Ng6CeUvMqMTShppFod4YymksxziUuK
+	R1eYtIM06bgZ6Au5i+/WXmKjrZFexUcnIjWniolYmuCMT8K7caDAnh612EWnBJosUExXsG8JxPG
+	HuB++279x01b6PdQh6t2IhD0myo0sswptnMDArR8v7GstK+Bu6hyK
+X-Received: by 2002:a05:6214:5001:b0:707:6425:23fc with SMTP id 6a1803df08f44-709362430abmr166448996d6.26.1754390680326;
+        Tue, 05 Aug 2025 03:44:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG+lMiAsbHz8RoaMN5eHDsdtapu2Nr4qMF3fZ3qhDMKzwzlcVX/R3oTueoOHY1lwn3LqnbIIg==
+X-Received: by 2002:a05:6214:5001:b0:707:6425:23fc with SMTP id 6a1803df08f44-709362430abmr166448516d6.26.1754390679809;
+        Tue, 05 Aug 2025 03:44:39 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-332389807eesm19601341fa.88.2025.08.05.03.44.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 05 Aug 2025 03:44:38 -0700 (PDT)
+Date: Tue, 5 Aug 2025 13:44:37 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+        Andy Yan <andy.yan@rock-chips.com>,
+        Yubing Zhang <yubing.zhang@rock-chips.com>,
+        Frank Wang <frank.wang@rock-chips.com>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Amit Sunil Dhamne <amitsd@google.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+        Diederik de Haas <didi.debian@cknow.org>,
+        Peter Robinson <pbrobinson@gmail.com>, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-arm-kernel@lists.infradead.org,
+        linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v3 0/5] Add Type-C DP support for RK3399 EVB IND board
+Message-ID: <6nfmxwtwcvuyo2jaao7fele7jcgcykfpy7czbcbjmjxv7cs5sc@dmbtot73kw63>
+References: <20250729090032.97-1-kernel@airkyi.com>
+ <3kefqzjewmsyzfvyi33kvlgjd6jphjg3fsnixb3of7yb3xkgs2@hgi6xfkgd653>
+ <63ec11cf-7927-431a-995e-a5fc35ef1ba7@rock-chips.com>
+ <pk5wecbbpxn7v4bdwtghhdnm76fmrmglelytljwfb4cgvpu2i6@rk5turgyt5xq>
+ <0207826d-a987-4464-b306-29bdbfac45bc@rock-chips.com>
+ <3e880194-5ac8-4056-929c-ac103bedc737@oss.qualcomm.com>
+ <f726862a-bd18-43ee-b307-8daef2451e6b@rock-chips.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.4.0.13]
-X-ClientProxiedBy: se-mail02w.axis.com (10.20.40.8) To se-mail01w.axis.com
- (10.20.40.7)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM3PEPF0000A790:EE_|GV1PR02MB8260:EE_
-X-MS-Office365-Filtering-Correlation-Id: e7fe37cf-c51c-4c0d-cc47-08ddd4032b0b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|82310400026|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Ko80Gj1OvHB2UutXT4EkNI37WT+8cudgDTMRMl2sjqL3Is9oq1RB1YNeSUoO?=
- =?us-ascii?Q?zNV23DHMFbx0uzorPm77PjdVGLbn7g2o5H0bbuol9p2g7Itk9BTVWb4qW95A?=
- =?us-ascii?Q?tW4sRRu9+iRQctx2/Jj/mDDJzbV827xWu+devxL8PD9AgOKC8f8lR1LyFacW?=
- =?us-ascii?Q?1gEyuAKw1dyOHtFahV6fDP5jsA3ppo6QHW1YcaSJgas1OGyDIqJjy0IOMoHU?=
- =?us-ascii?Q?sq3KQdI24pU+TqZyb0A+6r55utQIG4UywGS46SFn4CIwbw/L1ky/0kzoAFWW?=
- =?us-ascii?Q?u44+cRmmNeOZBv/CDeiCMj0tyx/A/EoL0lU26PU060wGNAAshlY57tldsNIk?=
- =?us-ascii?Q?jHTrZ77YeZ8eaRQPPKAG9GNE3bk7RhSnHVu3xxyK28VuLeCBtXO/GuOYaAPP?=
- =?us-ascii?Q?KO/JSaudEJztOTp6MgCrT9581artRr9cNYZRuzkjzhA592+rnchYVPMuQagp?=
- =?us-ascii?Q?S7VNiGb/V+gPXu7DSL+GYIiUDzBq72Heg/KgaVq4ayJCpOBunOetDzPl06uC?=
- =?us-ascii?Q?eCt/Pmc6uydiPCWBF3qq8jRCmNjp/u3G8XR/ArEV/xuXF24mZtnnOqa1Z0Yw?=
- =?us-ascii?Q?Q22hDZT3snk7+ZGuToOy50/2y8GURO/t03HHIlkk4y5v3Le8PvSdJLgxaDri?=
- =?us-ascii?Q?G62YblMFivqBrhV1xoxNSclE+DnJ8m7ozE6kniA4CT34FjwlsjN5WE8TRlda?=
- =?us-ascii?Q?mHtmIl6imXKdeL9qg0hcvneOyBMe4uuYUS6ZZ2xENfVt23fH6BHiw+RDynYl?=
- =?us-ascii?Q?q773Iebv4MIJnQMzotZUv2T4d/y2P22rLUUx9++NC6a5xddcmgAnnzZAQrDL?=
- =?us-ascii?Q?yN4giA7X/OgEQYPU3i2JWv6Ex1mEy7ZGwdQnNMDcR4trIjhfeciPArsY0rYs?=
- =?us-ascii?Q?Ypi4EHmFjFM1D5BFjx3mupasXypsQfm4Y5ZoU+BoxlSoSsOm+56rNlvdOo9N?=
- =?us-ascii?Q?ux5Es0zyBeSzfYX9P19EQU3fvkoJS5n56rIUVeVr0Ssei5lX5phD8Fw8KmHE?=
- =?us-ascii?Q?0wv6inrTjLLvq5Bd8hcfmIB8bENaGXRp8/d4AuNPp35vOb4jhYRZBU7o6ewU?=
- =?us-ascii?Q?kGFp4gPOTQOFT6LXQtkLZ1mFQTv6YiIduTqNGOx3sGjRjTzgzJ5Yxmjg8kZl?=
- =?us-ascii?Q?ACaeAQPkTsh+SrmPoK0HJYwyf18OuAwwgzIvOuSgFKGofyhMSoXQKOqK0AvP?=
- =?us-ascii?Q?ahxrMSXTKpLEc9vkRf0C3m82QwQwsxk4xO0EflvxWi5TUN1L3mF89GgCn2Tb?=
- =?us-ascii?Q?qyH/y01+J+8lpPyj6xemcefhHmFUYhXsv9yx5bXaN+SoyFlL4oGd4wJ88EXS?=
- =?us-ascii?Q?nXobKabEbrq3EW4u5mztZq2m1rQ97QcKmdpTVteGXiNeojdKFq6p7WhQ6FvS?=
- =?us-ascii?Q?K5DqfafIFzQLpIYInNOORJbFw2kaLj9WUcYjQL4LlTJOjqpNBgiZzWaO+zLb?=
- =?us-ascii?Q?oeHORXCqOSDGs82JhGyJ1BbpFri89c+XDLw9SJI+twI5nNZptkaQVhEYl+t/?=
- =?us-ascii?Q?6p72hQIbcpQgKi8Gad3EoDfwK1oixtQerdV0?=
-X-Forefront-Antispam-Report: CIP:195.60.68.100;CTRY:SE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.axis.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(82310400026)(1800799024)(376014);DIR:OUT;SFP:1101;
-X-OriginatorOrg: axis.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Aug 2025 09:33:42.8238
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e7fe37cf-c51c-4c0d-cc47-08ddd4032b0b
-X-MS-Exchange-CrossTenant-Id: 78703d3c-b907-432f-b066-88f7af9ca3af
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=78703d3c-b907-432f-b066-88f7af9ca3af;Ip=[195.60.68.100];Helo=[mail.axis.com]
-X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A790.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR02MB8260
+Content-Disposition: inline
+In-Reply-To: <f726862a-bd18-43ee-b307-8daef2451e6b@rock-chips.com>
+X-Authority-Analysis: v=2.4 cv=NN7V+16g c=1 sm=1 tr=0 ts=6891e099 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+ a=2OwXVqhp2XgA:10 a=rd-FPC7Uua5lUePm5bYA:9 a=3ZKOabzyN94A:10
+ a=wPNLvfGTeEIA:10 a=1HOtulTD9v-eNWfpl4qZ:22
+X-Proofpoint-GUID: zqnavYzRVik65-4yLvTuU50SR64mlf44
+X-Proofpoint-ORIG-GUID: zqnavYzRVik65-4yLvTuU50SR64mlf44
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA1MDA3OCBTYWx0ZWRfX3qqwQ0aarLKy
+ z4JdEc2dwB1bg9/TmhbNgDT4HC8+95kHzoRDsH7DiJ1QmHPYlzOgZS0FtylTTYpg74ubR7K8a0N
+ 6W+Xjgre9/QfvEfFRc9r5vKFKsirUlvo5Sfbq59NlQu+JWYt/3m0YTNoLcGeRevuAbJqPQ4MGHG
+ t+TxTcIkzE7URMerqJlovGxq+5vjViyoRpoSA5jTOtabr3VSFd3xQcLg7yOkTZtl7dVtZNqusKg
+ joSwvdeHyQvXWC3Q2xKXYrJxlUBvD4hkLM+Itmri8COyt0I8lkSLe+8isl0FsyzFE16SzFP8JBw
+ lGnGNxxUn0NhK5qnNOptU8Wo7FzhCr7mj4ylxEpbyX5gGbq+LQgJQmHkIkWuCvluHiQajQfCwKt
+ kJLJUpTWcsefB80JvHk2Wupr6v/jK83TkUazERlpoknBs3d7m3VWcuevhiriktBsGDfO0hrM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-05_03,2025-08-04_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015 spamscore=0
+ phishscore=0 priorityscore=1501 mlxscore=0 suspectscore=0 mlxlogscore=999
+ bulkscore=0 malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2508050078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_023354_193635_F8E5855A 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20250805_034442_379791_866FBB0C 
+X-CRM114-Status: GOOD (  47.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,49 +147,121 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When `devm_add_action_or_reset()` fails, it is due to a failed memory
-allocation and will thus return `-ENOMEM`. `dev_err_probe()` doesn't do
-anything when error is `-ENOMEM`. Therefore, remove the useless call to
-`dev_err_probe()` when `devm_add_action_or_reset()` fails, and just
-return the value instead.
+On Tue, Aug 05, 2025 at 02:32:17PM +0800, Chaoyi Chen wrote:
+> Hi Dmitry,
+> =
 
-Signed-off-by: Waqar Hameed <waqar.hameed@axis.com>
----
-Changes in v2:
+> On 8/5/2025 12:26 PM, Dmitry Baryshkov wrote:
+> > On 05/08/2025 09:13, Chaoyi Chen wrote:
+> > > Hi Dmitry,
+> > > =
 
-* Split the patch to one seperate patch for each sub-system.
+> > > On 8/2/2025 5:55 PM, Dmitry Baryshkov wrote:
+> > > =
 
-Link to v1: https://lore.kernel.org/all/pnd7c0s6ji2.fsf@axis.com/
+> > > [...]
+> > > =
 
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+> > > =
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index 917a76d584f0..28ba11e42823 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -1859,8 +1859,7 @@ static int exynos5_usbdrd_setup_notifiers(struct exynos5_usbdrd_phy *phy_drd)
- 					       exynos5_usbdrd_orien_switch_unregister,
- 					       phy_drd);
- 		if (ret)
--			return dev_err_probe(phy_drd->dev, ret,
--					     "Failed to register TypeC orientation devm action\n");
-+			return ret;
- 	}
- 
- 	return 0;
+> > > > > > > BTW, one of the important things to do is to implement extcon=
+-like
+> > > > > > > notifications. I found include/drm/bridge/aux-bridge.h , but =
+if the
+> > > > > > > aux-bridge is used, the bridge chain would look like this:
+> > > > > > > =
 
-base-commit: 260f6f4fda93c8485c8037865c941b42b9cba5d2
--- 
-2.39.5
+> > > > > > > PHY0 aux-bridge ---+
+> > > > > > > =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =
+| ----> CDN-DP bridge
+> > > > > > > PHY1 aux-bridge ---+
+> > > > > > > =
 
+> > > > > > > Oh, CDN-DP bridge has two previous aux-bridge!
+> > > > > > > =
 
--- 
+> > > > > > > Now, I try to use drm_connector_oob_hotplug_event() to notify=
+ HPD
+> > > > > > > state between PHY and CDN-DP controller.
+> > > > > > Does it actually work? The OOB HPD event will be repoted
+> > > > > > for the usb-c
+> > > > > > connector's fwnode, but the DP controller isn't
+> > > > > > connected to that node
+> > > > > > anyhow. If I'm not mistaken, the HPD signal will not
+> > > > > > reach DP driver in
+> > > > > > this case.
+> > > > > Yes.=A0 What you mentioned is the case in
+> > > > > drivers/usb/typec/altmodes/displayport.c . I have also added
+> > > > > a new OOB event
+> > > > > notify in the PHY driver in Patch 3, where the expected
+> > > > > fwnode is used in
+> > > > > the PHY. So now we have two OOB HPD events, one from
+> > > > > altmodes/ displayport.c
+> > > > > and the other from PHY. Only the HPD from PHY is eventually
+> > > > > passed to the DP
+> > > > > driver.
+> > > > This way you will loose IRQ_HPD pulse events from the DP. They are =
+used
+> > > > by DPRX (aka DP Sink) to signal to DPTX (DP Source) that there was a
+> > > > change on the DPRX side and the DPTX should reread link params
+> > > > and maybe
+> > > > retrain the link.
+> > > =
+
+> > > Sorry, I still don't quite understand your point. I think the entire
+> > > notification path is as follows:
+> > > =
+
+> > > Type-C mux callback -> RK3399 USBDP PHY -> PHY calls
+> > > drm_connector_oob_hotplug_event() -> DP driver
+> > > =
+
+> > > Are you concerned that the IRQ_HPD event is not being handled
+> > > somewhere along the path? Is it that the Type-C mux callback didn't
+> > > notify the PHY, or that after the PHY passed the event to the DP
+> > > driver via the OOB event, the DP driver didn't handle it?
+> > =
+
+> > The IRQ_HPD is an event coming from DPRX, it is delivered as a part of
+> > the attention VDM, see DP_STATUS_IRQ_HPD. It's being handled by the
+> > altmode displayport.c driver and is then delivered as an OOB hotplug
+> > call. However, it's not a mux event, so it is not (and it should not)
+> > being broadcasted over the typec_mux devices.
+> > =
+
+> > The way we were handling that is by having a chain of drm_aux_bridges
+> > for all interim devices, ending up with a drm_dp_hpd_bridge registered
+> > by the TCPM. This way when the DPRX triggers the IRQ_HPD event, it is
+> > being handled by the displayport.c and then delivered through that
+> > bridge to the DP driver.
+> =
+
+> I think the issue goes back to the beginning. The key is to reuse the log=
+ic
+> in displayport.c, and the previous approach of directly setting the fwnode
+> has already been rejected. Is it a good idea to register the aux hpd brid=
+ge
+> in displayport.c? In this way, we don't need to register it with a bunch =
+of
+> PD drivers (such as fusb302), which seems like a more generic solution.
+
+displayport.c comes into play only when you actually attach a DP dongle,
+which is too late for bringing up the display pipeline. But your point
+is valid, it might be worth moving drm_dp_hpd registration to
+typec_port_register_altmode().
+
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
