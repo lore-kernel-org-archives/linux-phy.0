@@ -4,78 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F41FFC87FD1
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 11:11:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21821C87FCB
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 12:02:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Y+2+qCZNsY9c8PARHibLdk0FslNoA5KNFlVh3t76nM=; b=VoDyjhm7pM8nCh
-	PPbYQYmovT7n/nLMllXBFuBk/RdG8QgyzvyZuaFDRRZetwEvtj1Nir/jGpkQ/9MtuiO2C7XvusQUc
-	h7QDYD9MzXHi4r/FH3jyFOccdQZzzr1IUhelCmt178zlSgFoGxmAqR/EdewLrDi1a7O5UOap4Le8q
-	qBfeYB2fjoRTF55mfPE8ZDeFCVIrUc0XnoYEx+IEhwKM3hfZt9P4oJKCNNB4WDVp56sNA6vigPgL9
-	TpuGTiXPvjomdNLFMy3ZOyRSxBnvteDWNM2yAvDp++5va0mJ5zYYPcky/tyk1q7OlltnsbbXKmZ+8
-	axuP+s+ygva+3Xilr/Uw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OSrXcM/DAWvrKTt1q8P1/OLvhPrlE3m7XEZF+0gx96M=; b=EYkwgDnqpBf6R4
+	lw90B0z3dScNIh5R8HsDPq76/CvnXsL/lB+ur4jQc2DyQQtBa5tWtUvCmQcuLW+EAsoCoOd3x8vA9
+	jX6lB6kkC40MG7R6o9UZ+wpXe0eENOfUSwlhx97Iv50/RQmxp1SrKv3wfFhKToDKNrVGIMZc9XAat
+	cIHrj6jkDML599Yfh7INV4DblEOAaiNP/y0aO1/HUT44svdXn8x4rbxWIRzby+LzU5RDRIzuzdr/R
+	MYJDO5ehLJw6pbhd2Y4SNC0whEWYD27HQqFVTEdFBNHmxPzoPX66gPt1XwPRyM3+NU9GMEzg5QZ+/
+	ppIrXON+6iBuka/LEobw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujFaD-0000000CZhl-2a4L;
-	Tue, 05 Aug 2025 11:11:53 +0000
-Received: from mail-m21470.qiye.163.com ([117.135.214.70])
+	id 1ujGMz-0000000Cege-3jkq;
+	Tue, 05 Aug 2025 12:02:17 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujFVu-0000000CZEk-3FR3;
-	Tue, 05 Aug 2025 11:07:28 +0000
-Received: from [172.16.12.153] (gy-adaptive-ssl-proxy-3-entmail-virt135.gy.ntes [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 1e5e73aa8;
-	Tue, 5 Aug 2025 19:07:10 +0800 (GMT+08:00)
-Message-ID: <a7988745-ea31-45cd-8ffd-905e6e4d1315@rock-chips.com>
-Date: Tue, 5 Aug 2025 19:07:09 +0800
+	id 1ujGHg-0000000Cdd5-3q0M;
+	Tue, 05 Aug 2025 11:56:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1754395006;
+	bh=k1SsbcEubPLdbrG03mOUs1Bmt3XqU87WofwUgso3Gtc=;
+	h=From:Subject:Date:To:Cc:From;
+	b=F5GEecRf6Mfk4fSlMzpjcS80VspDpmMbvMLI9o5RmQTwNQyAndZgIjb7wQ+KHfDDR
+	 qyGZb6oBmdMkenMmAFmS85WaGC/AzZawf+eIpJTYGjnyMSHX2gIG3tvTZuj2jLitvf
+	 ybVVZsbLJO4cJvUgmSPB4zGXqQJcA4LCNujaYv0UYXDYw5zQbyTH97C+aDfii9YS+n
+	 pJh5I03XNEEuOAaS3BkrL7Jk38QS6pu6l88dPXSPdKYkPDidWBdLi/hPWbtUkFeKsM
+	 06HyzT3EYRJB3ArnKEQtum1Ius1gGRqmsiBSQSS4sk9y5Tv3PRJlwQLQz+GpM6qpWx
+	 SzTai64H5Av4Q==
+Received: from localhost (unknown [82.79.138.60])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 824E417E0202;
+	Tue,  5 Aug 2025 13:56:46 +0200 (CEST)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Subject: [PATCH v2 00/14] Add HDMI 2.1 FRL support to
+ phy-rockchip-samsung-hdptx
+Date: Tue, 05 Aug 2025 14:56:42 +0300
+Message-Id: <20250805-phy-hdptx-frl-v2-0-d118bd4b6e0b@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/5] Add Type-C DP support for RK3399 EVB IND board
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
- Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- dri-devel@lists.freedesktop.org
-References: <20250729090032.97-1-kernel@airkyi.com>
- <3kefqzjewmsyzfvyi33kvlgjd6jphjg3fsnixb3of7yb3xkgs2@hgi6xfkgd653>
- <63ec11cf-7927-431a-995e-a5fc35ef1ba7@rock-chips.com>
- <pk5wecbbpxn7v4bdwtghhdnm76fmrmglelytljwfb4cgvpu2i6@rk5turgyt5xq>
- <0207826d-a987-4464-b306-29bdbfac45bc@rock-chips.com>
- <3e880194-5ac8-4056-929c-ac103bedc737@oss.qualcomm.com>
- <f726862a-bd18-43ee-b307-8daef2451e6b@rock-chips.com>
- <6nfmxwtwcvuyo2jaao7fele7jcgcykfpy7czbcbjmjxv7cs5sc@dmbtot73kw63>
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <6nfmxwtwcvuyo2jaao7fele7jcgcykfpy7czbcbjmjxv7cs5sc@dmbtot73kw63>
-X-HM-Tid: 0a9879e9ebce03abkunm2a7119d6701883
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGksaS1YZHR1IHR8ZTUoZGRpWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=QO3VG4Co4nsteQv8Qv57Hfls+cf5t683+xOusxx1peKmZ26y3oXrzV2n1Yh8IPkMsUuZPGO92FYmZYsqJJuvr7R1Do+nJTWWLEytFOuX7IY7byJ2OCGPylXYwmvRz5z63+IDQxi0wCeE+ZhGlRNJmm2zpuZgUlf2I/6B0gWLdlA=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=DcI3MBPSj0BIlngssBgBDQc0EsKF1spVCU2qV220AlE=;
-	h=date:mime-version:subject:message-id:from;
+X-B4-Tracking: v=1; b=H4sIAHrxkWgC/3XMQQ6CMBCF4auQWTumFLTCynsYFlCmdpJKm5YQC
+ OHuVvYu/5e8b4dEkSlBW+wQaeHEfsohLwVo209vQh5zgxTyJpR4YLAb2jHMK5ro0OiqUmocGiM
+ J8idEMrye3qvLbTnNPm4nv5S/9Z+0lChQGxLNnaSsTf3U3rl+8LG/av+B7jiOL2++RQiuAAAA
+X-Change-ID: 20250708-phy-hdptx-frl-fc3377db9f2e
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_040727_469219_CA7B775F 
-X-CRM114-Status: GOOD (  22.81  )
+X-CRM114-CacheID: sfid-20250805_045649_108248_B164782F 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,76 +76,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gOC81LzIwMjUgNjo0NCBQTSwgRG1pdHJ5IEJhcnlzaGtvdiB3cm90ZToKCj4gT24gVHVlLCBB
-dWcgMDUsIDIwMjUgYXQgMDI6MzI6MTdQTSArMDgwMCwgQ2hhb3lpIENoZW4gd3JvdGU6Cj4+IEhp
-IERtaXRyeSwKPj4KPj4gT24gOC81LzIwMjUgMTI6MjYgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3Jv
-dGU6Cj4+PiBPbiAwNS8wOC8yMDI1IDA5OjEzLCBDaGFveWkgQ2hlbiB3cm90ZToKPj4+PiBIaSBE
-bWl0cnksCj4+Pj4KPj4+PiBPbiA4LzIvMjAyNSA1OjU1IFBNLCBEbWl0cnkgQmFyeXNoa292IHdy
-b3RlOgo+Pj4+Cj4+Pj4gWy4uLl0KPj4+Pgo+Pj4+Cj4+Pj4+Pj4+IEJUVywgb25lIG9mIHRoZSBp
-bXBvcnRhbnQgdGhpbmdzIHRvIGRvIGlzIHRvIGltcGxlbWVudCBleHRjb24tbGlrZQo+Pj4+Pj4+
-PiBub3RpZmljYXRpb25zLiBJIGZvdW5kIGluY2x1ZGUvZHJtL2JyaWRnZS9hdXgtYnJpZGdlLmgg
-LCBidXQgaWYgdGhlCj4+Pj4+Pj4+IGF1eC1icmlkZ2UgaXMgdXNlZCwgdGhlIGJyaWRnZSBjaGFp
-biB3b3VsZCBsb29rIGxpa2UgdGhpczoKPj4+Pj4+Pj4KPj4+Pj4+Pj4gUEhZMCBhdXgtYnJpZGdl
-IC0tLSsKPj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-fCAtLS0tPiBDRE4tRFAgYnJpZGdlCj4+Pj4+Pj4+IFBIWTEgYXV4LWJyaWRnZSAtLS0rCj4+Pj4+
-Pj4+Cj4+Pj4+Pj4+IE9oLCBDRE4tRFAgYnJpZGdlIGhhcyB0d28gcHJldmlvdXMgYXV4LWJyaWRn
-ZSEKPj4+Pj4+Pj4KPj4+Pj4+Pj4gTm93LCBJIHRyeSB0byB1c2UgZHJtX2Nvbm5lY3Rvcl9vb2Jf
-aG90cGx1Z19ldmVudCgpIHRvIG5vdGlmeSBIUEQKPj4+Pj4+Pj4gc3RhdGUgYmV0d2VlbiBQSFkg
-YW5kIENETi1EUCBjb250cm9sbGVyLgo+Pj4+Pj4+IERvZXMgaXQgYWN0dWFsbHkgd29yaz8gVGhl
-IE9PQiBIUEQgZXZlbnQgd2lsbCBiZSByZXBvdGVkCj4+Pj4+Pj4gZm9yIHRoZSB1c2ItYwo+Pj4+
-Pj4+IGNvbm5lY3RvcidzIGZ3bm9kZSwgYnV0IHRoZSBEUCBjb250cm9sbGVyIGlzbid0Cj4+Pj4+
-Pj4gY29ubmVjdGVkIHRvIHRoYXQgbm9kZQo+Pj4+Pj4+IGFueWhvdy4gSWYgSSdtIG5vdCBtaXN0
-YWtlbiwgdGhlIEhQRCBzaWduYWwgd2lsbCBub3QKPj4+Pj4+PiByZWFjaCBEUCBkcml2ZXIgaW4K
-Pj4+Pj4+PiB0aGlzIGNhc2UuCj4+Pj4+PiBZZXMuwqAgV2hhdCB5b3UgbWVudGlvbmVkIGlzIHRo
-ZSBjYXNlIGluCj4+Pj4+PiBkcml2ZXJzL3VzYi90eXBlYy9hbHRtb2Rlcy9kaXNwbGF5cG9ydC5j
-IC4gSSBoYXZlIGFsc28gYWRkZWQKPj4+Pj4+IGEgbmV3IE9PQiBldmVudAo+Pj4+Pj4gbm90aWZ5
-IGluIHRoZSBQSFkgZHJpdmVyIGluIFBhdGNoIDMsIHdoZXJlIHRoZSBleHBlY3RlZAo+Pj4+Pj4g
-Zndub2RlIGlzIHVzZWQgaW4KPj4+Pj4+IHRoZSBQSFkuIFNvIG5vdyB3ZSBoYXZlIHR3byBPT0Ig
-SFBEIGV2ZW50cywgb25lIGZyb20KPj4+Pj4+IGFsdG1vZGVzLyBkaXNwbGF5cG9ydC5jCj4+Pj4+
-PiBhbmQgdGhlIG90aGVyIGZyb20gUEhZLiBPbmx5IHRoZSBIUEQgZnJvbSBQSFkgaXMgZXZlbnR1
-YWxseQo+Pj4+Pj4gcGFzc2VkIHRvIHRoZSBEUAo+Pj4+Pj4gZHJpdmVyLgo+Pj4+PiBUaGlzIHdh
-eSB5b3Ugd2lsbCBsb29zZSBJUlFfSFBEIHB1bHNlIGV2ZW50cyBmcm9tIHRoZSBEUC4gVGhleSBh
-cmUgdXNlZAo+Pj4+PiBieSBEUFJYIChha2EgRFAgU2luaykgdG8gc2lnbmFsIHRvIERQVFggKERQ
-IFNvdXJjZSkgdGhhdCB0aGVyZSB3YXMgYQo+Pj4+PiBjaGFuZ2Ugb24gdGhlIERQUlggc2lkZSBh
-bmQgdGhlIERQVFggc2hvdWxkIHJlcmVhZCBsaW5rIHBhcmFtcwo+Pj4+PiBhbmQgbWF5YmUKPj4+
-Pj4gcmV0cmFpbiB0aGUgbGluay4KPj4+PiBTb3JyeSwgSSBzdGlsbCBkb24ndCBxdWl0ZSB1bmRl
-cnN0YW5kIHlvdXIgcG9pbnQuIEkgdGhpbmsgdGhlIGVudGlyZQo+Pj4+IG5vdGlmaWNhdGlvbiBw
-YXRoIGlzIGFzIGZvbGxvd3M6Cj4+Pj4KPj4+PiBUeXBlLUMgbXV4IGNhbGxiYWNrIC0+IFJLMzM5
-OSBVU0JEUCBQSFkgLT4gUEhZIGNhbGxzCj4+Pj4gZHJtX2Nvbm5lY3Rvcl9vb2JfaG90cGx1Z19l
-dmVudCgpIC0+IERQIGRyaXZlcgo+Pj4+Cj4+Pj4gQXJlIHlvdSBjb25jZXJuZWQgdGhhdCB0aGUg
-SVJRX0hQRCBldmVudCBpcyBub3QgYmVpbmcgaGFuZGxlZAo+Pj4+IHNvbWV3aGVyZSBhbG9uZyB0
-aGUgcGF0aD8gSXMgaXQgdGhhdCB0aGUgVHlwZS1DIG11eCBjYWxsYmFjayBkaWRuJ3QKPj4+PiBu
-b3RpZnkgdGhlIFBIWSwgb3IgdGhhdCBhZnRlciB0aGUgUEhZIHBhc3NlZCB0aGUgZXZlbnQgdG8g
-dGhlIERQCj4+Pj4gZHJpdmVyIHZpYSB0aGUgT09CIGV2ZW50LCB0aGUgRFAgZHJpdmVyIGRpZG4n
-dCBoYW5kbGUgaXQ/Cj4+PiBUaGUgSVJRX0hQRCBpcyBhbiBldmVudCBjb21pbmcgZnJvbSBEUFJY
-LCBpdCBpcyBkZWxpdmVyZWQgYXMgYSBwYXJ0IG9mCj4+PiB0aGUgYXR0ZW50aW9uIFZETSwgc2Vl
-IERQX1NUQVRVU19JUlFfSFBELiBJdCdzIGJlaW5nIGhhbmRsZWQgYnkgdGhlCj4+PiBhbHRtb2Rl
-IGRpc3BsYXlwb3J0LmMgZHJpdmVyIGFuZCBpcyB0aGVuIGRlbGl2ZXJlZCBhcyBhbiBPT0IgaG90
-cGx1Zwo+Pj4gY2FsbC4gSG93ZXZlciwgaXQncyBub3QgYSBtdXggZXZlbnQsIHNvIGl0IGlzIG5v
-dCAoYW5kIGl0IHNob3VsZCBub3QpCj4+PiBiZWluZyBicm9hZGNhc3RlZCBvdmVyIHRoZSB0eXBl
-Y19tdXggZGV2aWNlcy4KPj4+Cj4+PiBUaGUgd2F5IHdlIHdlcmUgaGFuZGxpbmcgdGhhdCBpcyBi
-eSBoYXZpbmcgYSBjaGFpbiBvZiBkcm1fYXV4X2JyaWRnZXMKPj4+IGZvciBhbGwgaW50ZXJpbSBk
-ZXZpY2VzLCBlbmRpbmcgdXAgd2l0aCBhIGRybV9kcF9ocGRfYnJpZGdlIHJlZ2lzdGVyZWQKPj4+
-IGJ5IHRoZSBUQ1BNLiBUaGlzIHdheSB3aGVuIHRoZSBEUFJYIHRyaWdnZXJzIHRoZSBJUlFfSFBE
-IGV2ZW50LCBpdCBpcwo+Pj4gYmVpbmcgaGFuZGxlZCBieSB0aGUgZGlzcGxheXBvcnQuYyBhbmQg
-dGhlbiBkZWxpdmVyZWQgdGhyb3VnaCB0aGF0Cj4+PiBicmlkZ2UgdG8gdGhlIERQIGRyaXZlci4K
-Pj4gSSB0aGluayB0aGUgaXNzdWUgZ29lcyBiYWNrIHRvIHRoZSBiZWdpbm5pbmcuIFRoZSBrZXkg
-aXMgdG8gcmV1c2UgdGhlIGxvZ2ljCj4+IGluIGRpc3BsYXlwb3J0LmMsIGFuZCB0aGUgcHJldmlv
-dXMgYXBwcm9hY2ggb2YgZGlyZWN0bHkgc2V0dGluZyB0aGUgZndub2RlCj4+IGhhcyBhbHJlYWR5
-IGJlZW4gcmVqZWN0ZWQuIElzIGl0IGEgZ29vZCBpZGVhIHRvIHJlZ2lzdGVyIHRoZSBhdXggaHBk
-IGJyaWRnZQo+PiBpbiBkaXNwbGF5cG9ydC5jPyBJbiB0aGlzIHdheSwgd2UgZG9uJ3QgbmVlZCB0
-byByZWdpc3RlciBpdCB3aXRoIGEgYnVuY2ggb2YKPj4gUEQgZHJpdmVycyAoc3VjaCBhcyBmdXNi
-MzAyKSwgd2hpY2ggc2VlbXMgbGlrZSBhIG1vcmUgZ2VuZXJpYyBzb2x1dGlvbi4KPiBkaXNwbGF5
-cG9ydC5jIGNvbWVzIGludG8gcGxheSBvbmx5IHdoZW4geW91IGFjdHVhbGx5IGF0dGFjaCBhIERQ
-IGRvbmdsZSwKPiB3aGljaCBpcyB0b28gbGF0ZSBmb3IgYnJpbmdpbmcgdXAgdGhlIGRpc3BsYXkg
-cGlwZWxpbmUuIEJ1dCB5b3VyIHBvaW50Cj4gaXMgdmFsaWQsIGl0IG1pZ2h0IGJlIHdvcnRoIG1v
-dmluZyBkcm1fZHBfaHBkIHJlZ2lzdHJhdGlvbiB0bwo+IHR5cGVjX3BvcnRfcmVnaXN0ZXJfYWx0
-bW9kZSgpLgoKVmVyeSBpbnNpZ2h0ZnVsLCB0aGFuayB5b3UhIEkgd2lsbCB0cnkgdG8gZG8gdGhp
-cyBpbiB2NCA6KQoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+The Samsung HDMI/eDP Transmitter Combo PHY is capable of handling four
+HDMI 2.1 Fixed Rate Link (FRL) lanes, while each lane can operate at
+3Gbps, 6Gbps, 8Gbps, 10Gbps or 12Gbps.
+
+This patchset extends the HDMI PHY configuration API to manage the FRL
+mode and provides all the required HDMI driver changes to enable FRL in
+addition to the already supported TMDS mode.
+
+The series also contains a few driver fixes/improvements that are not
+directly related, but are not deemed critical enough to warrant separate
+submission.
+
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+---
+Changes in v2:
+- Added a couple of new patches:
+  * Fix reported clock rate in high bpc mode
+  * Drop hw_rate driver data
+- Applied several tweaks to the following patches:
+  * Compute clk rate from PLL config
+  * Switch to driver specific HDMI config
+  * Add HDMI 2.1 FRL support
+- Rebased series onto next-20250804
+- Link to v1: https://lore.kernel.org/r/20250708-phy-hdptx-frl-v1-0-cfe096e224f4@collabora.com
+
+---
+Cristian Ciocaltea (14):
+      phy: hdmi: Add HDMI 2.1 FRL configuration options
+      phy: rockchip: samsung-hdptx: Fix reported clock rate in high bpc mode
+      phy: rockchip: samsung-hdptx: Reduce ROPLL loop bandwidth
+      phy: rockchip: samsung-hdptx: Prevent Inter-Pair Skew from exceeding the limits
+      phy: rockchip: samsung-hdptx: Use usleep_range() instead of udelay()
+      phy: rockchip: samsung-hdptx: Fix coding style alignment
+      phy: rockchip: samsung-hdptx: Consistently use [rk_]hdptx_[tmds_] prefixes
+      phy: rockchip: samsung-hdptx: Enable lane output in common helper
+      phy: rockchip: samsung-hdptx: Cleanup *_cmn_init_seq lists
+      phy: rockchip: samsung-hdptx: Compute clk rate from PLL config
+      phy: rockchip: samsung-hdptx: Drop hw_rate driver data
+      phy: rockchip: samsung-hdptx: Switch to driver specific HDMI config
+      phy: rockchip: samsung-hdptx: Extend rk_hdptx_phy_verify_hdmi_config() helper
+      phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL support
+
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 670 ++++++++++++++++++----
+ include/linux/phy/phy-hdmi.h                      |  14 +-
+ include/linux/phy/phy.h                           |   3 +-
+ 3 files changed, 581 insertions(+), 106 deletions(-)
+---
+base-commit: 5c5a10f0be967a8950a2309ea965bae54251b50e
+change-id: 20250708-phy-hdptx-frl-fc3377db9f2e
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
