@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B998C87FCB
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 17:54:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19884C87FD1
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 17:59:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1c8DJ6g0DLP9qlFiWcLtv4MEioRb+vMqX4k5iobXHA=; b=w3LLNUEGtms9jA
-	rBeP/xuQ07c4eu8T0LjWjOXl27tLZ/u1fJfEqy8UGbRv8tZy/CRW/2dxq3999cYgAr4+cUVAecvai
-	Y3TeqUHaUF2NxI9doayAJwOXvZxq5J8CqkZ5OXqfSjcvHm/BA37YDdqTCJJGGMq/Ib7A4M3KYRqpw
-	pGgEWdJ9HWTJLboMmgLj7BaCAUhwTtuAKW3h0npLxPs8HmD7zkZUVy4arcKYcvK5YXkpIUwgtuBlw
-	RfiOxDVS3AcwVVDX1MEf0Ojt36Xz6YruzGdkU2yHo/zr264BsMm9bAPHXjsCabQ18NQNR6YtnD8IW
-	xfs3LhvH6pdWioOtN7VQ==;
+	List-Owner; bh=7zy/2TU3hyJvViNm4gSxI0ZhMdE0XQbooRk3kHQZxAg=; b=2xiH6bzz+QF0L4
+	gYULX4wBhti4XTfNj9eEjIMiNp3PVd0MvYfrUCk9VMq/e13muLsz5WqeOcIYkdETSQwOJ7m6/O5yd
+	AX9oHJNdGElgU4z+9PbMYWF1OCLyW8XoYVVkAmyo3qaiOyLxdVqpGUbp8NBdntT+2Y2luFLm96E6j
+	RkNIQmEXMeiRd4tEG8Ea7EvUm3+iA8RAteqhYmr27pQFQ7aPpi3tChE/LKQLLFhsbdYREhvugMhVT
+	RJj//nH/+kA+g0OJMMMdYEVxmtXC6Fjlwq6kqsVxr+EFM1ZTbII6pOJM0n3iOimbXLAcHwcubW3xr
+	0VVCWT1m8PCVmWk3qCBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujLrQ-0000000DToc-3Oc8;
-	Tue, 05 Aug 2025 17:54:04 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1ujLwb-0000000DUdp-3BIy;
+	Tue, 05 Aug 2025 17:59:25 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujLMm-0000000DPz1-0LNu
+	id 1ujLMt-0000000DQ2f-3B6g
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Aug 2025 17:22:26 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20250805172222epoutp0185eff32430375d639fce88144a100987~Y7rsonEjv2141321413epoutp01f
-	for <linux-phy@lists.infradead.org>; Tue,  5 Aug 2025 17:22:22 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20250805172222epoutp0185eff32430375d639fce88144a100987~Y7rsonEjv2141321413epoutp01f
+	Tue, 05 Aug 2025 17:22:33 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250805172229epoutp03c549b23ed6979e357df516ffd921beab~Y7ry9UyEf3248532485epoutp034
+	for <linux-phy@lists.infradead.org>; Tue,  5 Aug 2025 17:22:29 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250805172229epoutp03c549b23ed6979e357df516ffd921beab~Y7ry9UyEf3248532485epoutp034
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1754414542;
-	bh=dhnfANikopJT/vwucIQUfk1KgArZX737C9MRzPq2qk4=;
+	s=mail20170921; t=1754414549;
+	bh=BNHXYcAm7wmL0lZdeOl7MIvgCH9t824lfy0oiwY4fbs=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=GblRTWE2/yDWmwX3foiY04erZl2kNLpwUJPxiP62nze91GANk+YSiz8aLga5fKfA1
-	 90G2Ar13iqr2zoAFxOAOBx0DAi1OxMagn9dVy3oScuEOUxUYx1fMRyEGP1WSAZjLTh
-	 XxvOL2FIyVZicfbhoZklyW0/u3dAkAFK8cB791R0=
-Received: from epsnrtp01.localdomain (unknown [182.195.42.153]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
-	20250805172221epcas5p2b96cd6ede2b1006ea068f1de5ef9b701~Y7rr-aZ2G2112121121epcas5p2C;
-	Tue,  5 Aug 2025 17:22:21 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.88]) by
-	epsnrtp01.localdomain (Postfix) with ESMTP id 4bxKx90Qftz6B9m4; Tue,  5 Aug
-	2025 17:22:21 +0000 (GMT)
+	b=iraWJDz88mAuv6TQ2+9n32c9RS4hobOBmDEQZ7tpRY0gXBocSXFpbScVNi2/f0fpV
+	 Wa0aVwSUxl14QW3xrR+H1/KF8HsT6EwtGxTgm/dbs1yF2XRnLw8HKEPRf5H2d99E0v
+	 ci3s1NcKukGisu80fV1tlY9AZN4ATBoLnagziUZI=
+Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
+	20250805172228epcas5p1d191955528134891861a78b8e22dc8e3~Y7ryMChg53014130141epcas5p1K;
+	Tue,  5 Aug 2025 17:22:28 +0000 (GMT)
+Received: from epcas5p4.samsung.com (unknown [182.195.38.87]) by
+	epsnrtp02.localdomain (Postfix) with ESMTP id 4bxKxH3WT3z2SSKX; Tue,  5 Aug
+	2025 17:22:27 +0000 (GMT)
 Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114310epcas5p459aa232884d22501f5fefe42f239fecc~Y3Dh7FitL1900519005epcas5p4l;
-	Tue,  5 Aug 2025 11:43:10 +0000 (GMT)
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0~Y3DlCZJbV0972209722epcas5p1D;
+	Tue,  5 Aug 2025 11:43:13 +0000 (GMT)
 Received: from bose.samsungds.net (unknown [107.108.83.9]) by
 	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114306epsmtip157d0092bce9065a832b9f7eb9386c854~Y3DfC2XDs1422814228epsmtip19;
-	Tue,  5 Aug 2025 11:43:06 +0000 (GMT)
+	20250805114310epsmtip1165bc01a75ab7919847d37fd5d53d33b~Y3DiKEXXv1447314473epsmtip1r;
+	Tue,  5 Aug 2025 11:43:10 +0000 (GMT)
 From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
 	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
@@ -64,25 +64,26 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
 	dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
 	selvarasu.g@samsung.com
-Subject: [PATCH v5 2/6] phy: exynos5-usbdrd: support HS phy for
- ExynosAutov920
-Date: Tue,  5 Aug 2025 17:22:12 +0530
-Message-Id: <20250805115216.3798121-3-pritam.sutar@samsung.com>
+Subject: [PATCH v5 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo hsphy
+Date: Tue,  5 Aug 2025 17:22:13 +0530
+Message-Id: <20250805115216.3798121-4-pritam.sutar@samsung.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250805115216.3798121-1-pritam.sutar@samsung.com>
 MIME-Version: 1.0
-X-CMS-MailID: 20250805114310epcas5p459aa232884d22501f5fefe42f239fecc
+X-CMS-MailID: 20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0
 X-Msg-Generator: CA
 X-Sendblock-Type: REQ_APPROVE
 CMS-TYPE: 105P
 cpgsPolicy: CPGSC10-542,Y
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250805114310epcas5p459aa232884d22501f5fefe42f239fecc
+X-CMS-RootMailID: 20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0
 References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
-	<CGME20250805114310epcas5p459aa232884d22501f5fefe42f239fecc@epcas5p4.samsung.com>
+	<CGME20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0@epcas5p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_102224_467130_C2ADCB5C 
-X-CRM114-Status: GOOD (  18.87  )
+X-CRM114-CacheID: sfid-20250805_102232_103462_C7DE6458 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,169 +100,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable UTMI+ phy support for this SoC which is very similar to what
-the existing Exynos850 supports.
+This phy only supports USB2.0 HS(480Mbps), FS(12Mbps) and
+LS(1.5Mbps) data rates. It requires two clocks, named as "phy" and "ref".
+The required supplies for this phy, named as vdd075_usb20(0.75v),
+vdd18_usb20(1.8v), vdd33_usb20(3.3v).
 
-Add required change in phy driver to support HS phy for this SoC.
+Add schema for combo hsphy found on this SoC.
 
 Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 ---
- drivers/phy/samsung/phy-exynos5-usbdrd.c    | 123 ++++++++++++++++++++
- include/linux/soc/samsung/exynos-regs-pmu.h |   2 +
- 2 files changed, 125 insertions(+)
+ .../devicetree/bindings/phy/samsung,usb3-drd-phy.yaml          | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index dd660ebe8045..5400dd23e500 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -2054,6 +2054,126 @@ static const struct exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
- 	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
- };
+diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+index 1932a2272ef9..4a84b5405cd2 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+@@ -34,6 +34,7 @@ properties:
+       - samsung,exynos7870-usbdrd-phy
+       - samsung,exynos850-usbdrd-phy
+       - samsung,exynos990-usbdrd-phy
++      - samsung,exynosautov920-usbdrd-combo-hsphy
+       - samsung,exynosautov920-usbdrd-phy
  
-+static int exynosautov920_usbdrd_phy_init(struct phy *phy)
-+{
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+	int ret;
-+
-+	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
-+	if (ret)
-+		return ret;
-+
-+	/* Bypass PHY isol */
-+	inst->phy_cfg->phy_isol(inst, false);
-+
-+	/* UTMI or PIPE3 specific init */
-+	inst->phy_cfg->phy_init(phy_drd);
-+
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
-+
-+	return 0;
-+}
-+
-+static int exynosautov920_usbdrd_phy_exit(struct phy *phy)
-+{
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+	int ret = 0;
-+
-+	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
-+	if (ret)
-+		return ret;
-+
-+	exynos850_usbdrd_phy_exit(phy);
-+
-+	/* enable PHY isol */
-+	inst->phy_cfg->phy_isol(inst, true);
-+
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
-+
-+	return 0;
-+}
-+
-+static int exynosautov920_usbdrd_phy_power_on(struct phy *phy)
-+{
-+	int ret;
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+
-+	dev_dbg(phy_drd->dev, "Request to power_on usbdrd_phy phy\n");
-+
-+	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_core_clks,
-+				      phy_drd->core_clks);
-+	if (ret)
-+		return ret;
-+
-+	/* Enable supply */
-+	ret = regulator_bulk_enable(phy_drd->drv_data->n_regulators,
-+				    phy_drd->regulators);
-+	if (ret) {
-+		dev_err(phy_drd->dev, "Failed to enable PHY regulator(s)\n");
-+		goto fail_supply;
-+	}
-+
-+	return 0;
-+
-+fail_supply:
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_core_clks,
-+				   phy_drd->core_clks);
-+
-+	return ret;
-+}
-+
-+static int exynosautov920_usbdrd_phy_power_off(struct phy *phy)
-+{
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+
-+	dev_dbg(phy_drd->dev, "Request to power_off usbdrd_phy phy\n");
-+
-+	/* Disable supply */
-+	regulator_bulk_disable(phy_drd->drv_data->n_regulators,
-+			       phy_drd->regulators);
-+
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_core_clks,
-+				   phy_drd->core_clks);
-+
-+	return 0;
-+}
-+
-+static const char * const exynosautov920_usb20_regulators[] = {
-+	"dvdd075-usb20", "vdd18-usb20", "vdd33-usb20",
-+};
-+
-+static const struct phy_ops exynosautov920_usbdrd_phy_ops = {
-+	.init		= exynosautov920_usbdrd_phy_init,
-+	.exit		= exynosautov920_usbdrd_phy_exit,
-+	.power_on       = exynosautov920_usbdrd_phy_power_on,
-+	.power_off      = exynosautov920_usbdrd_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const struct exynos5_usbdrd_phy_config phy_cfg_exynosautov920[] = {
-+	{
-+		.id		= EXYNOS5_DRDPHY_UTMI,
-+		.phy_isol	= exynos5_usbdrd_phy_isol,
-+		.phy_init	= exynos850_usbdrd_utmi_init,
-+	},
-+};
-+
-+static const struct exynos5_usbdrd_phy_drvdata exynosautov920_usbdrd_phy = {
-+	.phy_cfg		= phy_cfg_exynosautov920,
-+	.phy_ops		= &exynosautov920_usbdrd_phy_ops,
-+	.pmu_offset_usbdrd0_phy	= EXYNOSAUTOV920_PHY_CTRL_USB20,
-+	.clk_names		= exynos5_clk_names,
-+	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
-+	.core_clk_names		= exynos5_core_clk_names,
-+	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
-+	.regulator_names	= exynosautov920_usb20_regulators,
-+	.n_regulators		= ARRAY_SIZE(exynosautov920_usb20_regulators),
-+};
-+
- static const struct exynos5_usbdrd_phy_config phy_cfg_gs101[] = {
- 	{
- 		.id		= EXYNOS5_DRDPHY_UTMI,
-@@ -2260,6 +2380,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
- 	}, {
- 		.compatible = "samsung,exynos990-usbdrd-phy",
- 		.data = &exynos990_usbdrd_phy
-+	}, {
-+		.compatible = "samsung,exynosautov920-usbdrd-phy",
-+		.data = &exynosautov920_usbdrd_phy
- 	},
- 	{ },
- };
-diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
-index 71e0c09a49eb..4923f9be3d1f 100644
---- a/include/linux/soc/samsung/exynos-regs-pmu.h
-+++ b/include/linux/soc/samsung/exynos-regs-pmu.h
-@@ -688,4 +688,6 @@
- #define GS101_GRP2_INTR_BID_UPEND				(0x0208)
- #define GS101_GRP2_INTR_BID_CLEAR				(0x020c)
- 
-+/* exynosautov920 */
-+#define EXYNOSAUTOV920_PHY_CTRL_USB20				(0x0710)
- #endif /* __LINUX_SOC_EXYNOS_REGS_PMU_H */
+   clocks:
+@@ -226,6 +227,7 @@ allOf:
+               - samsung,exynos7870-usbdrd-phy
+               - samsung,exynos850-usbdrd-phy
+               - samsung,exynos990-usbdrd-phy
++              - samsung,exynosautov920-usbdrd-combo-hsphy
+               - samsung,exynosautov920-usbdrd-phy
+     then:
+       properties:
+@@ -248,6 +250,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - samsung,exynosautov920-usbdrd-combo-hsphy
+               - samsung,exynosautov920-usbdrd-phy
+     then:
+       required:
 -- 
 2.34.1
 
