@@ -4,85 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0DA8C87FCB
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 18:07:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56A93C87FCB
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 21:15:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UpA7hsaYRc/yEXI5+DsdBvhf00lol421gFCIMmsQGrk=; b=UMVsj7knn/YmoZ
-	NXIq3iOe0ebgtXi7azkeRXJvQvIDsqYHMRJcynDUwe3G6nq3TbT3ttwtQ0GYnB6xnWc1z9akNHfbA
-	mbCquCjkF2qM5ofqcwKfUhq5ToJNq7tVRkuUNKdObRJc+7irsVgmtToYJ1NkIeCXUQYteIhFCYunl
-	iGja5SYV1zXkrn/Tf302SsbKUxDH1VZmgkGz1U6B8dkawhhk9yx4cJ5oQJWMjWmNmMaA79OUfZ6Tp
-	tJrcGyHfZp37xjoOihd/tuFPf4qMIPO48X9Bmr03Uh8jdQI4d+uUfqnPL0DCib90BS0OU7IWSoS1E
-	B83YcBoq2PJ3aGGgMXwQ==;
+	List-Owner; bh=YC79cB0iIC31GfUkBHXIdox10WTiDitp8VqR5g9FoA4=; b=mCt6tu+BXLMApT
+	a6fAkm58B/zHvvJxvTOyjClaAgwLVfiaMLJrJdfP6TuIZI99QYjx3yNSgx1eFdsmVpuIVl/ecXWti
+	m6KQyR2AuX7b7Ds6LGSe3WJdIdgEl5cuT9V4XizuIjexUVIX9GEalzsl73ILh6nafWpSwUFrwGy35
+	3Q2WMahFIqSnmBN1ikcM+otXanRUjtuh0BIGGA/jsi0IZtGBNZdUzgQ9iZSeRbWxON+MvfHSmUyas
+	dytLU1918OicSkjPQMh0a+7eGq26kPUVtYiIea90rpR4qJer1XUQesiSm5nzT4rEoe0pfqCJ61pve
+	d+7TCtIJRieh4SJcsfTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujM4M-0000000DVip-1vOg;
-	Tue, 05 Aug 2025 18:07:26 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1ujP0H-0000000DoJx-41e1;
+	Tue, 05 Aug 2025 21:15:25 +0000
+Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujLNH-0000000DQAr-2c4p
-	for linux-phy@lists.infradead.org;
-	Tue, 05 Aug 2025 17:22:57 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250805172254epoutp03caccf8c3ace10274960242f9876500e8~Y7sKANwfC0096800968epoutp03c
-	for <linux-phy@lists.infradead.org>; Tue,  5 Aug 2025 17:22:54 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250805172254epoutp03caccf8c3ace10274960242f9876500e8~Y7sKANwfC0096800968epoutp03c
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1754414574;
-	bh=7qlEmXtUe88tYGGLiS67TbZMPfh8OvX4Lcv4IHrwwh0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bxUFRXijLZN86xasIXt9DKGemVxNiD3R+/tFeonXRsJbLJJhotGR2XvE2Xk68gXf8
-	 +cHKQGyqsQicJUOKnYXNUbj4KIKeKp5h0g83kw+cRr+KKidpzW7Zgz5BM2rkUsj6fy
-	 8HASbSBscno2CYpycUW1hnM56Dx/mwQm3eM2Iuvc=
-Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250805172253epcas5p3b7d4a6b9dca682c57c7db1fc4f44b72a~Y7sJfchN51099910999epcas5p3v;
-	Tue,  5 Aug 2025 17:22:53 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.89]) by
-	epsnrtp02.localdomain (Postfix) with ESMTP id 4bxKxm5RDhz2SSKY; Tue,  5 Aug
-	2025 17:22:52 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9~Y3DuehpYS1320213202epcas5p3O;
-	Tue,  5 Aug 2025 11:43:23 +0000 (GMT)
-Received: from bose.samsungds.net (unknown [107.108.83.9]) by
-	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114320epsmtip1e718719114067311541af92e1c7cd1b1~Y3DrlBtv01422814228epsmtip1K;
-	Tue,  5 Aug 2025 11:43:20 +0000 (GMT)
-From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
-	andre.draszik@linaro.org, peter.griffin@linaro.org, kauschluss@disroot.org,
-	ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org,
-	m.szyprowski@samsung.com, s.nawrocki@samsung.com, pritam.sutar@samsung.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
-	dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
-	selvarasu.g@samsung.com
-Subject: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
- ExynosAutov920
-Date: Tue,  5 Aug 2025 17:22:16 +0530
-Message-Id: <20250805115216.3798121-7-pritam.sutar@samsung.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250805115216.3798121-1-pritam.sutar@samsung.com>
+	id 1ujOzm-0000000DoG1-1mCr;
+	Tue, 05 Aug 2025 21:14:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=XrmFNzWb49NUTLy6LjNDlAroORRX+dfLD0xZy0Kp9YbftNIJ6DqBQ3f8sWIUV/beIXH1SwGetC2iN8+y+4m9UloG+Oci4xeeT6cktGrpX7FJXX7LBscpHeFpy4hVesiA4w0bMZjw85oMuhRHxve6TrKDiupQX02LidisI2n1hjOAbb97D3BcckpkIOzW90Pj0bsyTAAIS2lmgONiw+oeU9qqrO5ue68b4LV4/9I7ivJpE6Jr6MMhjr6rt4LQ0ocIpth1A9W7dX7QVax6hDBfD4OLoIq7fZH+9CWZ4aqv7eZb6IOpSiRJt3+IjUmeiq7FsmPTEgC7vNritxcCktq8CQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=EyZtWbP9vm9kp5jkxbSFeD9O471u1BcriJCXYr0+S6Y=;
+ b=AVVQVq3z33CVxr02DAxIVdF8Y658iH1iBBlaKmfaTBrnALoe/Ymy7bEAmSthFniTgb3cqL3wWw88VFD20ZLB7CXchWZlsbPx+0yvgCfZcjuXtEdTB4FXk63+wHoGgsKHTAzdjzAQ9MlGU4S2YudRnp33SdSZm0gBB0vJSlJkzYUIFZXbsmxR/N5DgBdttsoXmMduvgxUrW6woMHx+bw0bBdykHvpaCg61G+htB4KzBESXvAcE1p4C73G4Q/74NSYpZ2tl14Q0VaZKr9GkJKqs2a947XiKXj1NHoC+IS8f/jnfgi9l9bvPpXeYw/p8ErBCAOIz6TNP5bRwK9uxyMVfw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=EyZtWbP9vm9kp5jkxbSFeD9O471u1BcriJCXYr0+S6Y=;
+ b=YBbsJewaVjC6xgxw6AfcG4yEtevKuo3bkf4oebT148n+os/dp5EgphL/yMsafQRutEuIoYcFi01iDb3Vhrh3kVnWME2DXe3VBUJX/9bXnl7MCJ0AZMv3Ug6TODH2+03wFftFsXK1De2vwX3m1sN795pqE7sd4qw1/Wj634+DQ8Q+Q6MxJBWLTlwV/E3Ep+sIaFsV9IEcSjPiQ074dx2WdQ10VPhf0iC/+eHRyK5QErps5yLNuVAEi1TmK0IwMwpUD0ajEf8xEP9CDRumUczB6bD480PrEuOo9Md01ayYDJVOUdt+2UoKiEK6HWfET+0PWSG9T9+bxzfnGo/gg67CjQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by DU4PR04MB11007.eurprd04.prod.outlook.com (2603:10a6:10:582::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.21; Tue, 5 Aug
+ 2025 21:14:42 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8989.018; Tue, 5 Aug 2025
+ 21:14:42 +0000
+Date: Tue, 5 Aug 2025 17:14:35 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: quanyang.wang@windriver.com
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Richard Zhu <hongxing.zhu@nxp.com>, linux-phy@lists.infradead.org,
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: freescale: imx8qm-hsio: Fix a use of
+ uninitialized mutex
+Message-ID: <aJJ0O2fZgn5kvOIv@lizhi-Precision-Tower-5810>
+References: <20250803061529.2303291-1-quanyang.wang@windriver.com>
+Content-Disposition: inline
+In-Reply-To: <20250803061529.2303291-1-quanyang.wang@windriver.com>
+X-ClientProxiedBy: SJ0PR05CA0188.namprd05.prod.outlook.com
+ (2603:10b6:a03:330::13) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-X-CMS-MailID: 20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9
-References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
-	<CGME20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9@epcas5p3.samsung.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DU4PR04MB11007:EE_
+X-MS-Office365-Filtering-Correlation-Id: f82942da-7c85-471c-0d7d-08ddd4651878
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|19092799006|52116014|376014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?wMexXjnKsTIdlddOVpeWBA2HtLdPICnaanArPm8v+z5oH1TbWzMtKz1mg7Ly?=
+ =?us-ascii?Q?5gZfwOThW8Bu4C4U0u1sVcMiOHdHSgY56pG86Fv2Pdbsmm5w0m+yI8n+aRZ6?=
+ =?us-ascii?Q?ZZ+htN/hd6AZ9epdhm/hk7Qvm0bNNQyFzX8/BtYCERX3f/Vxnao2Tk/NtWBN?=
+ =?us-ascii?Q?x+DwoTRADvrW45OEJxMLwEDD1Y1lumabQH0Z8Ozln8JOke6ss15ZQZZvcsbG?=
+ =?us-ascii?Q?fpzS1+GuQm/0CX27YtBy4dRxNiRJ9bZT5rNrNsxwJ8pseqwgLLS6A6UoJGz+?=
+ =?us-ascii?Q?K+C3GHKBpW2rgwqK5dVjEgTzZjfGWxfO621/Cg2q2/QkAflsghSZVls/0XIo?=
+ =?us-ascii?Q?d8sMdQpxpY4gSERKbQjxpZqrakbsYSF1nWrelVTGaJLqS6NdiWxcn5rPrlYF?=
+ =?us-ascii?Q?yh8bzhRGQUWSP+9h9tWUHJI/ZI9LwpsWL/UxGQWcoo9Jbgn7Z41mbwDOsGHZ?=
+ =?us-ascii?Q?BnEtlSoHCUyHTSV/E8dDkku081Nx47AxrVjYHmlWq46QFv07OPlQi9JcUm3f?=
+ =?us-ascii?Q?/kXoNoSaBWLk1y9oskAhln+NuEFzABBHnTNrx7HEG2qh8BkZyBXLOW6ub4RW?=
+ =?us-ascii?Q?Stj6r9LQzCGboEG1Q9jKKY5IJfPBdWWK+cDx1mlVtAdElwv3P2eBnOh6RRpy?=
+ =?us-ascii?Q?knRd4dMzonqiHqPLMBqie8uHxotjOpW0nB2IeJYNDLqyS90J23gXKDvYVO4h?=
+ =?us-ascii?Q?PhJSbx1azCuHqbvEFHl7put8TqcXgC5AZKA6QdPf2McK+ys3cx7UeQrSLRPU?=
+ =?us-ascii?Q?dcNNga7Q9Tj7TVF9e5B5gATAFhkC5vJBZOR6X+a3DJhgEzCQ8goqllM9xEhq?=
+ =?us-ascii?Q?OJcBmUagHKqoI2yAjDfocXOBMVuzE4aSXrpWodmgETZag9JjRWuszteQm0Vh?=
+ =?us-ascii?Q?QrUGHgfScuDbok5mqZe2vr27I+xkrP1BHjX1IjiJF+AxkIdHUhD3imKvn1lD?=
+ =?us-ascii?Q?FO7YyW57x8WMVn3ivRLH6/ymcOmPgyZvBm7LRkbtkkug3KBG+bLDreHcj7s3?=
+ =?us-ascii?Q?sMTn9jZ4rmWbEVLnksWLIpYc8LsVoPNGRxjquZWzRON8LWXediDQVs+VPL54?=
+ =?us-ascii?Q?pDrGPJIz4QK9dfiUeBHAIpihM5287amrULTKyWJV6sPeR3e1gTFsqR/pn4Mb?=
+ =?us-ascii?Q?KunJWrYu6XHLpc5qOsqKdXNllS9KVQTMx5F73vR+Rg/KZ+WPtQ4IaVchJ0OY?=
+ =?us-ascii?Q?dPWuW+V71q5W62VNRezvAVTRt4okvBpw2nBHZkD55ubJR/ylVQO26B5A3CoR?=
+ =?us-ascii?Q?Yl1L9ai3xo7Iifvpbs1ythfAhg0LxL9svfAGA68P58VgKSu2mrj+MWRuBa9z?=
+ =?us-ascii?Q?Ct77o36nkYIoFlLE/FXAxacGaxhv5OyuVzH9q4xdTmgBFjny9Lt2IsyCC5E1?=
+ =?us-ascii?Q?vh3+sH/NNy6245/hfRNPH+6TsLv43z1frFZTzOJDe5ZtULukLnVvzvNytxg0?=
+ =?us-ascii?Q?H++r2StEOj9eEEsUUwu7Zu13zgLMLUsYJmyx4gLiH/CNrmriF8/XgQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(19092799006)(52116014)(376014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?B7+0OXITv07ujUrOpp/5IvLU7uHKRLJ3/80bW+ijKz/uMYIf8mr96vGK8988?=
+ =?us-ascii?Q?pi2joPIkezwe75An14TKyclzJQqdaRKLlbySi+fighGzZ3Cr78+Nbrl4LgWy?=
+ =?us-ascii?Q?MzbyLMhsUQl0BhDJiBLNhSxJ7iIZcuzVviSd0mBGZvGu9+cM8JMXK6pokDWe?=
+ =?us-ascii?Q?Z008h0YOF2abo/FibnYcZ4XCXZPGC+4XXli5ZAkY6v89JBi+JKov7/+xVj/9?=
+ =?us-ascii?Q?//RgH8Iea6uPYWn1y32LsjvoLFjEoxY8QfyVsC8+A7nOpgNQszVDShfCWR72?=
+ =?us-ascii?Q?ANXNAA9W6dkAk/gKhkqyhzMIJHZV3hPtwGloCSsN2ntAIHjgM12JOXwo/ytm?=
+ =?us-ascii?Q?QSLve6aE9i5giE7eQqHy6zMqN9ZVLR+tiMx8Ae/HFtWJ4UBlStVnT3XCYPcX?=
+ =?us-ascii?Q?k4GhOcTRHpQpV5ejGrQBs5rxvy4gJmIrcuhkdHmng3pHCJAETAHTz0tgcDKf?=
+ =?us-ascii?Q?z9HKSaa8DIROJXofNk+XI9g5ReOk8QYmmMXb4/2sgsHk6KjW0MrzFlI0oR5a?=
+ =?us-ascii?Q?hP3zXQtosCi+wtBBAXGGd9/AQnUIDv2w3ZExAQBd4iE90sWewBB5b1/DK+xf?=
+ =?us-ascii?Q?h5XGACmmCiTpS2xYqZKfChq8HJcgSaOgw0gLITy5d+nPZACEwWWin06vKr0R?=
+ =?us-ascii?Q?OlJDDBs/oiosQTaySygknp3q+jvxjDYFxeLNIchOAQ99VaLYaVNfxrr34erU?=
+ =?us-ascii?Q?G/RbuFkK/XY1hZruKZYUuJHLoqoBBMRhZa/wpytBi9TrJ9jSGsGnUEvCf+b/?=
+ =?us-ascii?Q?pIWmcOxv7RehIh77NFY95/G3DID35+OtEXcEmEaJdNk2c+f9gFDypPXjbGTf?=
+ =?us-ascii?Q?V16qAwuxeiJ9tiUpmp/A0OB5G6/pPhTGWukcurxsmsV/WE1KIPr8+Z+ZxKuL?=
+ =?us-ascii?Q?apHZHOakb+zrvDBttvIqk9/dptBaQQOV/Dp85Ar78Z7hQ6VM58M+TRG9C355?=
+ =?us-ascii?Q?YeY3E/TgPB5xUkDtYiYR7cKRuDIH4iSrUA0wzoxDF2aySUXzWFJtLtrCKOu6?=
+ =?us-ascii?Q?aWfeTqLruMG8E3acxIvOQ87n2LapaWqqhKkJWXJ2H0+VzGE7/XG/o0SH+ZOz?=
+ =?us-ascii?Q?rSzrFBWnqUw/bT/8fb+QtM8yCZPHjUyLrY8tHEE+rFXAWhoHQGfX6/nLGtA2?=
+ =?us-ascii?Q?OlZj1bEEYIUHWtAzc9UQ381QgUns9YRxDMOTJG+UdPWY917zCn/fNPOb6hb7?=
+ =?us-ascii?Q?HEl1mxmmSa91KACxIpfVZ3/lDIARZ5y0TCmYZdFRCTz5138EP4U+t2jzyrom?=
+ =?us-ascii?Q?xo14McGoLDaO/55/gA9aPJeVX8K4dHB/t+SeL7BFJS/T6sh2LTYNp44ulUnQ?=
+ =?us-ascii?Q?qlWov5vy2W8QYKN6MEHBCRHA2b/NgKYvhPiav51vW4Em88Fp1Np5XzhhYGJH?=
+ =?us-ascii?Q?AIWokyRcHMSA+AmkaSua13md727thbBJTLEypT4tpqGnHBgXdFDvkg7JELjC?=
+ =?us-ascii?Q?cyUXNBEZfMEJ117Ysz5DMeetR1abJ2iWn3f0vX3ZZ2JeIKmn+PDkzwN5D31Y?=
+ =?us-ascii?Q?EpTEKWxLaUy87qZ0Ovzd1lVcCGPJ3i7ZP9jhAPB+w2Dt+Df1ibUGM8EqIeGp?=
+ =?us-ascii?Q?tgtYvEgzK0P1o2VMgHnnmbPheL0NiPMdzk4fS1+J?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f82942da-7c85-471c-0d7d-08ddd4651878
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Aug 2025 21:14:42.5502
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: XqwbzIMDkGjuoB/rh1TnmYA38DJQkljBFEa0oMngRk5yaT5vwg7sfIqNiebWQfBTn2NP0DziZgSqOctZg1I5Mw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11007
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_102255_982057_CCD3B5AE 
-X-CRM114-Status: GOOD (  23.78  )
+X-CRM114-CacheID: sfid-20250805_141454_463556_9370413C 
+X-CRM114-Status: GOOD (  20.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,406 +161,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add required change in phy driver to support combo SS phy for this SoC.
+On Sun, Aug 03, 2025 at 02:15:29PM +0800, quanyang.wang@windriver.com wrote:
+> From: Quanyang Wang <quanyang.wang@windriver.com>
+>
+> Using an uninitialized mutex leads to the following warning when
+> CONFIG_DEBUG_MUTEXES is enabled.
+>
+>  DEBUG_LOCKS_WARN_ON(lock->magic != lock)
+>  WARNING: CPU: 2 PID: 49 at kernel/locking/mutex.c:577 __mutex_lock+0x690/0x820
+>  Modules linked in:
+>  CPU: 2 UID: 0 PID: 49 Comm: kworker/u16:2 Not tainted 6.16.0-04405-g4b290aae788e #23 PREEMPT
+>  Hardware name: Freescale i.MX8QM MEK (DT)
+>  Workqueue: events_unbound deferred_probe_work_func
+>  pstate: 60000005 (nZCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+>  pc : __mutex_lock+0x690/0x820
+>  lr : __mutex_lock+0x690/0x820
+>  sp : ffff8000830b3900
+>  x29: ffff8000830b3960 x28: ffff80008223bac0 x27: 0000000000000000
+>  x26: ffff000802fc4680 x25: ffff000800019a0d x24: 0000000000000000
+>  x23: ffff8000806f0d6c x22: 0000000000000002 x21: 0000000000000000
+>  x20: ffff8000830b3930 x19: ffff000802338090 x18: fffffffffffe6138
+>  x17: 67657220796d6d75 x16: 6420676e69737520 x15: 0000000000000038
+>  x14: 0000000000000000 x13: ffff8000822636f0 x12: 000000000000044a
+>  x11: 000000000000016e x10: ffff8000822bd940 x9 : ffff8000822636f0
+>  x8 : 00000000ffffefff x7 : ffff8000822bb6f0 x6 : 000000000000016e
+>  x5 : 000000000000016f x4 : 40000000fffff16e x3 : 0000000000000000
+>  x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff0008003b8000
+>  Call trace:
+>   __mutex_lock+0x690/0x820 (P)
+>   mutex_lock_nested+0x24/0x30
+>   imx_hsio_power_on+0x4c/0x764
+>   phy_power_on+0x7c/0x12c
+>   imx_sata_enable+0x1ec/0x488
+>   imx_ahci_probe+0x1a4/0x560
+>   platform_probe+0x5c/0x98
+>   really_probe+0xac/0x298
+>   __driver_probe_device+0x78/0x12c
+>   driver_probe_device+0xd8/0x160
+>   __device_attach_driver+0xb8/0x138
+>   bus_for_each_drv+0x88/0xe8
+>   __device_attach+0xa0/0x190
+>   device_initial_probe+0x14/0x20
+>   bus_probe_device+0xac/0xb0
+>   deferred_probe_work_func+0x8c/0xc8
+>   process_one_work+0x1e4/0x440
+>   worker_thread+0x1b4/0x350
+>   kthread+0x138/0x214
+>   ret_from_fork+0x10/0x20
+>
+> Fixes: 82c56b6dd24f ("phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support")
+> Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
 
-Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
----
- drivers/phy/samsung/phy-exynos5-usbdrd.c    | 327 +++++++++++++++++++-
- include/linux/soc/samsung/exynos-regs-pmu.h |   1 +
- 2 files changed, 324 insertions(+), 4 deletions(-)
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index c22f4de7d094..1108f0c07755 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -273,6 +273,36 @@
- #define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
- #define HSPPLLTUNE_FSEL				GENMASK(18, 16)
- 
-+/* ExynosAutov920 phy usb31drd port reg */
-+#define EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL	0x000
-+#define PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN	BIT(5)
-+#define PHY_RST_CTRL_PIPE_LANE0_RESET_N		BIT(4)
-+#define PHY_RST_CTRL_PHY_RESET_OVRD_EN		BIT(1)
-+#define PHY_RST_CTRL_PHY_RESET			BIT(0)
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0	0x0004
-+#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR		GENMASK(31, 16)
-+#define PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK		BIT(8)
-+#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK		BIT(4)
-+#define PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL		BIT(0)
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1	0x0008
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2	0x000c
-+#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN		BIT(0)
-+#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA		GENMASK(31, 16)
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0	0x100
-+#define PHY_CONFIG0_PHY0_PMA_PWR_STABLE		BIT(14)
-+#define PHY_CONFIG0_PHY0_PCS_PWR_STABLE		BIT(13)
-+#define PHY_CONFIG0_PHY0_ANA_PWR_EN		BIT(1)
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7	0x11c
-+#define PHY_CONFIG7_PHY_TEST_POWERDOWN		BIT(24)
-+
-+#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4	0x110
-+#define PHY_CONFIG4_PIPE_RX0_SRIS_MODE_EN	BIT(2)
-+
- /* Exynos9 - GS101 */
- #define EXYNOS850_DRD_SECPMACTL			0x48
- #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL		GENMASK(13, 12)
-@@ -2077,6 +2107,253 @@ static const struct exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
- 	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
- };
- 
-+static void
-+exynosautov920_usb31drd_cr_clk(struct exynos5_usbdrd_phy *phy_drd, bool high)
-+{
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 reg = 0;
-+
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+	if (high)
-+		reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-+	else
-+		reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-+
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+	fsleep(1);
-+}
-+
-+static void
-+exynosautov920_usb31drd_port_phy_ready(struct exynos5_usbdrd_phy *phy_drd)
-+{
-+	struct device *dev = phy_drd->dev;
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	static const unsigned int timeout_us = 20000;
-+	static const unsigned int sleep_us = 40;
-+	u32 reg = 0;
-+	int err;
-+
-+	/* Clear cr_para_con */
-+	reg &= ~(PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-+			PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR);
-+	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+	writel(0x0, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1);
-+	writel(0x0, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-+
-+	exynosautov920_usb31drd_cr_clk(phy_drd, true);
-+	exynosautov920_usb31drd_cr_clk(phy_drd, false);
-+
-+	/*
-+	 * The maximum time from phy reset de-assertion to de-assertion of
-+	 * tx/rx_ack can be as high as 5ms in fast simulation mode.
-+	 * Time to phy ready is < 20ms
-+	 */
-+	err = readl_poll_timeout(reg_phy +
-+				EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0,
-+			reg, !(reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK),
-+			sleep_us, timeout_us);
-+	if (err)
-+		dev_err(dev, "timed out waiting for rx/tx_ack: %#.8x\n", reg);
-+
-+	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+}
-+
-+static void
-+exynosautov920_usb31drd_cr_write(struct exynos5_usbdrd_phy *phy_drd,
-+				 u16 addr, u16 data)
-+{
-+	struct device *dev = phy_drd->dev;
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 cnt = 0;
-+	u32 reg = 0;
-+
-+	/* Pre Clocking */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+
-+	/*
-+	 * tx clks must be available prior to assertion of tx req.
-+	 * tx pstate p2 to p0 transition directly is not permitted.
-+	 * tx clk ready must be asserted synchronously on tx clk prior
-+	 * to internal transmit clk alignment sequence in the phy
-+	 * when entering from p2 to p1 to p0.
-+	 */
-+	do {
-+		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-+		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-+		cnt++;
-+	} while (cnt < 15);
-+
-+	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+
-+	/*
-+	 * tx data path is active when tx lane is in p0 state
-+	 * and tx data en asserted. enable cr_para_wr_en.
-+	 */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-+	reg &= ~PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA;
-+	reg |= FIELD_PREP(PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA, data) |
-+		PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-+
-+	/* write addr */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR;
-+	reg |= FIELD_PREP(PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR, addr) |
-+		PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-+		PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+
-+	/* check cr_para_ack*/
-+	cnt = 0;
-+	do {
-+		/*
-+		 * data symbols are captured by phy on rising edge of the
-+		 * tx_clk when tx data enabled.
-+		 * completion of the write cycle is acknowledged by assertion
-+		 * of the cr_para_ack.
-+		 */
-+		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-+		reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-+		if ((reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK))
-+			break;
-+
-+		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-+
-+		/*
-+		 * wait for minimum of 10 cr_para_clk cycles after phy reset
-+		 * is negated, before accessing control regs to allow for
-+		 * internal resets.
-+		 */
-+		cnt++;
-+	} while (cnt < 10);
-+
-+	if (cnt == 10)
-+		dev_dbg(dev, "CR write failed to 0x%04x\n", addr);
-+	else
-+		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-+}
-+
-+static void
-+exynosautov920_usb31drd_phy_reset(struct exynos5_usbdrd_phy *phy_drd, int val)
-+{
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 reg;
-+
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+	reg &= ~PHY_RST_CTRL_PHY_RESET_OVRD_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+	if (val)
-+		reg |= PHY_RST_CTRL_PHY_RESET;
-+	else
-+		reg &= ~PHY_RST_CTRL_PHY_RESET;
-+
-+	reg |= PHY_RST_CTRL_PHY_RESET_OVRD_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+}
-+
-+static void
-+exynosautov920_usb31drd_lane0_reset(struct exynos5_usbdrd_phy *phy_drd, int val)
-+{
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 reg;
-+
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+	reg |= PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+	if (val)
-+		reg &= ~PHY_RST_CTRL_PIPE_LANE0_RESET_N;
-+	else
-+		reg |= PHY_RST_CTRL_PIPE_LANE0_RESET_N;
-+
-+	reg &= ~PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL);
-+}
-+
-+static void
-+exynosautov920_usb31drd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
-+{
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 reg;
-+
-+	/*
-+	 * Phy and Pipe Lane reset assert.
-+	 * assert reset (phy_reset = 1).
-+	 * The lane-ack outputs are asserted during reset (tx_ack = rx_ack = 1)
-+	 */
-+	exynosautov920_usb31drd_phy_reset(phy_drd, 1);
-+	exynosautov920_usb31drd_lane0_reset(phy_drd, 1);
-+
-+	/*
-+	 * ANA Power En, PCS & PMA PWR Stable Set
-+	 * ramp-up power suppiles
-+	 */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0);
-+	reg |= PHY_CONFIG0_PHY0_ANA_PWR_EN | PHY_CONFIG0_PHY0_PCS_PWR_STABLE |
-+		PHY_CONFIG0_PHY0_PMA_PWR_STABLE;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0);
-+
-+	fsleep(10);
-+
-+	/*
-+	 * phy is not functional in test_powerdown mode, test_powerdown to be
-+	 * de-asserted for normal operation
-+	 */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7);
-+	reg &= ~PHY_CONFIG7_PHY_TEST_POWERDOWN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7);
-+
-+	/*
-+	 * phy reset signal be asserted for minimum 10us after power
-+	 * supplies are ramped-up
-+	 */
-+	fsleep(10);
-+
-+	/*
-+	 * Phy and Pipe Lane reset assert de-assert
-+	 */
-+	exynosautov920_usb31drd_phy_reset(phy_drd, 0);
-+	exynosautov920_usb31drd_lane0_reset(phy_drd, 0);
-+
-+	/* Pipe_rx0_sris_mode_en  = 1 */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4);
-+	reg |= PHY_CONFIG4_PIPE_RX0_SRIS_MODE_EN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4);
-+
-+	/*
-+	 * wait for lane ack outputs to de-assert (tx_ack = rx_ack = 0)
-+	 * Exit from the reset state is indicated by de-assertion of *_ack
-+	 */
-+	exynosautov920_usb31drd_port_phy_ready(phy_drd);
-+
-+	/* override values for level settings */
-+	exynosautov920_usb31drd_cr_write(phy_drd, 0x22, 0x00F5);
-+}
-+
-+static void
-+exynosautov920_usb31drd_ssphy_disable(struct exynos5_usbdrd_phy *phy_drd)
-+{
-+	void __iomem *reg_phy = phy_drd->reg_phy;
-+	u32 reg;
-+
-+	/* 1. Assert reset (phy_reset = 1) */
-+	exynosautov920_usb31drd_lane0_reset(phy_drd, 1);
-+	exynosautov920_usb31drd_phy_reset(phy_drd, 1);
-+
-+	/* phy test power down */
-+	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7);
-+	reg |= PHY_CONFIG7_PHY_TEST_POWERDOWN;
-+	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7);
-+}
-+
- static void
- exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
-@@ -2171,12 +2448,15 @@ exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 	/* after POR low and delay 75us, PHYCLOCK is guaranteed. */
- 	fsleep(75);
- 
--	/* force pipe3 signal for link */
-+	/* Disable forcing pipe interface */
- 	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
--	reg |= LINKCTRL_FORCE_PIPE_EN;
--	reg &= ~LINKCTRL_FORCE_PHYSTATUS;
--	reg |= LINKCTRL_FORCE_RXELECIDLE;
-+	reg &= ~LINKCTRL_FORCE_PIPE_EN;
- 	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
-+
-+	/* Pclk to pipe_clk */
-+	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
-+	reg |= EXYNOS2200_CLKRST_LINK_PCLK_SEL;
-+	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
- }
- 
- static void
-@@ -2263,6 +2543,8 @@ static int exynosautov920_usbdrd_combo_phy_exit(struct phy *phy)
- 
- 	if (inst->phy_cfg->id == EXYNOS5_DRDPHY_UTMI)
- 		exynosautov920_usbdrd_hsphy_disable(phy_drd);
-+	else if (inst->phy_cfg->id == EXYNOS5_DRDPHY_PIPE3)
-+		exynosautov920_usb31drd_ssphy_disable(phy_drd);
- 
- 	/* enable PHY isol */
- 	inst->phy_cfg->phy_isol(inst, true);
-@@ -2319,10 +2601,44 @@ static int exynosautov920_usbdrd_phy_power_off(struct phy *phy)
- 	return 0;
- }
- 
-+static const char * const exynosautov920_usb30_regulators[] = {
-+	"dvdd075-usb30", "vdd18-usb30",
-+};
-+
- static const char * const exynosautov920_usb20_regulators[] = {
- 	"dvdd075-usb20", "vdd18-usb20", "vdd33-usb20",
- };
- 
-+static const struct
-+exynos5_usbdrd_phy_config usb31drd_phy_cfg_exynosautov920[] = {
-+	{
-+		.id		= EXYNOS5_DRDPHY_PIPE3,
-+		.phy_isol	= exynos5_usbdrd_phy_isol,
-+		.phy_init	= exynosautov920_usb31drd_pipe3_init,
-+	},
-+};
-+
-+static const struct phy_ops exynosautov920_usb31drd_combo_ssphy_ops = {
-+	.init		= exynosautov920_usbdrd_phy_init,
-+	.exit		= exynosautov920_usbdrd_combo_phy_exit,
-+	.power_on	= exynosautov920_usbdrd_phy_power_on,
-+	.power_off	= exynosautov920_usbdrd_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const
-+struct exynos5_usbdrd_phy_drvdata exynosautov920_usb31drd_combo_ssphy = {
-+	.phy_cfg		= usb31drd_phy_cfg_exynosautov920,
-+	.phy_ops		= &exynosautov920_usb31drd_combo_ssphy_ops,
-+	.pmu_offset_usbdrd0_phy	= EXYNOSAUTOV920_PHY_CTRL_USB31,
-+	.clk_names		= exynos5_clk_names,
-+	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
-+	.core_clk_names		= exynos5_core_clk_names,
-+	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
-+	.regulator_names	= exynosautov920_usb30_regulators,
-+	.n_regulators		= ARRAY_SIZE(exynosautov920_usb30_regulators),
-+};
-+
- static const struct phy_ops exynosautov920_usbdrd_combo_hsphy_ops = {
- 	.init		= exynosautov920_usbdrd_phy_init,
- 	.exit		= exynosautov920_usbdrd_combo_phy_exit,
-@@ -2587,6 +2903,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
- 	}, {
- 		.compatible = "samsung,exynos990-usbdrd-phy",
- 		.data = &exynos990_usbdrd_phy
-+	}, {
-+		.compatible = "samsung,exynosautov920-usb31drd-combo-ssphy",
-+		.data = &exynosautov920_usb31drd_combo_ssphy
- 	}, {
- 		.compatible = "samsung,exynosautov920-usbdrd-combo-hsphy",
- 		.data = &exynosautov920_usbdrd_combo_hsphy
-diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
-index 4923f9be3d1f..f96c773b85c9 100644
---- a/include/linux/soc/samsung/exynos-regs-pmu.h
-+++ b/include/linux/soc/samsung/exynos-regs-pmu.h
-@@ -690,4 +690,5 @@
- 
- /* exynosautov920 */
- #define EXYNOSAUTOV920_PHY_CTRL_USB20				(0x0710)
-+#define EXYNOSAUTOV920_PHY_CTRL_USB31				(0x0714)
- #endif /* __LINUX_SOC_EXYNOS_REGS_PMU_H */
--- 
-2.34.1
-
+> ---
+>
+> Changes in v2:
+> * Use devm_mutex_init instead of mutex_init, as suggested by Frank
+>
+>  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+>
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> index 5dca93cd325c8..348fefcfe7a5c 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> @@ -534,6 +534,7 @@ static struct phy *imx_hsio_xlate(struct device *dev,
+>  static int imx_hsio_probe(struct platform_device *pdev)
+>  {
+>  	int i;
+> +	int ret;
+>  	void __iomem *off;
+>  	struct device *dev = &pdev->dev;
+>  	struct device_node *np = dev->of_node;
+> @@ -590,6 +591,10 @@ static int imx_hsio_probe(struct platform_device *pdev)
+>  		phy_set_drvdata(phy, lane);
+>  	}
+>
+> +	ret = devm_mutex_init(dev, &priv->lock);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "Failed to initialize lock\n");
+> +
+>  	dev_set_drvdata(dev, priv);
+>  	dev_set_drvdata(&pdev->dev, priv);
+>
+> --
+> 2.43.0
+>
 
 -- 
 linux-phy mailing list
