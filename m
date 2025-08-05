@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19884C87FD1
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 17:59:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3714DC87FCB
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Aug 2025 18:02:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7zy/2TU3hyJvViNm4gSxI0ZhMdE0XQbooRk3kHQZxAg=; b=2xiH6bzz+QF0L4
-	gYULX4wBhti4XTfNj9eEjIMiNp3PVd0MvYfrUCk9VMq/e13muLsz5WqeOcIYkdETSQwOJ7m6/O5yd
-	AX9oHJNdGElgU4z+9PbMYWF1OCLyW8XoYVVkAmyo3qaiOyLxdVqpGUbp8NBdntT+2Y2luFLm96E6j
-	RkNIQmEXMeiRd4tEG8Ea7EvUm3+iA8RAteqhYmr27pQFQ7aPpi3tChE/LKQLLFhsbdYREhvugMhVT
-	RJj//nH/+kA+g0OJMMMdYEVxmtXC6Fjlwq6kqsVxr+EFM1ZTbII6pOJM0n3iOimbXLAcHwcubW3xr
-	0VVCWT1m8PCVmWk3qCBQ==;
+	List-Owner; bh=LhEziiwrrALaBmTxYJKABPLwl7GII/CGP2VnbxOJcmg=; b=o/jTxwWoX0Fd5W
+	5BRc0SM7mhQPXAPQOJJImDRtHMsNeR+ofb5wzaBiOQUp7CbmpQQnlrJZ0SMQbtEzux3Lo5C5efHdp
+	yBzxhzTfKcc/5Erlh9mjHUZybdpqHpNTkD3li7bwx2MaaRyxCZHBGRpZJVN5WgQVU6j9S6iyhdvmZ
+	l7dBk75WS8mezeROYGYSlEGzVajsJKJ6dYzGCyyGsMVBhmZMrwHIu3iPmHV2WOkortiCxEhNIfp+I
+	z/IM3bO+X0NuqAYWm+HEMm/v4Su/z7G9Oq6+XYujkJH4hfcABwvTBcrMT5/SjSXsIArPoRc8mG4dA
+	RvtttH6h/8ko+51Cb+Vw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujLwb-0000000DUdp-3BIy;
-	Tue, 05 Aug 2025 17:59:25 +0000
+	id 1ujLzC-0000000DVAi-49G1;
+	Tue, 05 Aug 2025 18:02:06 +0000
 Received: from mailout3.samsung.com ([203.254.224.33])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujLMt-0000000DQ2f-3B6g
+	id 1ujLNA-0000000DQ7l-3Dzp
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Aug 2025 17:22:33 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250805172229epoutp03c549b23ed6979e357df516ffd921beab~Y7ry9UyEf3248532485epoutp034
-	for <linux-phy@lists.infradead.org>; Tue,  5 Aug 2025 17:22:29 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250805172229epoutp03c549b23ed6979e357df516ffd921beab~Y7ry9UyEf3248532485epoutp034
+	Tue, 05 Aug 2025 17:22:50 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250805172247epoutp036f8e22ad37acc7775c7cb178ee2fa04f~Y7sDoKe243035930359epoutp03d
+	for <linux-phy@lists.infradead.org>; Tue,  5 Aug 2025 17:22:47 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250805172247epoutp036f8e22ad37acc7775c7cb178ee2fa04f~Y7sDoKe243035930359epoutp03d
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1754414549;
-	bh=BNHXYcAm7wmL0lZdeOl7MIvgCH9t824lfy0oiwY4fbs=;
+	s=mail20170921; t=1754414567;
+	bh=butMxkt3CmNqo8ZKkw5fJLl7FH5PZlVxY7GC0RKm6xw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=iraWJDz88mAuv6TQ2+9n32c9RS4hobOBmDEQZ7tpRY0gXBocSXFpbScVNi2/f0fpV
-	 Wa0aVwSUxl14QW3xrR+H1/KF8HsT6EwtGxTgm/dbs1yF2XRnLw8HKEPRf5H2d99E0v
-	 ci3s1NcKukGisu80fV1tlY9AZN4ATBoLnagziUZI=
-Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
+	b=DVYrcYqPjBomcfUqG/eUKK42h91dI+7pDZZJzbr8QEJTuzp3WJ0OQO5gRArOF57Bz
+	 SRNoZOG6vrrM0Am31w8hWKJcRWKXln/xNDTCKZlkpSvcmLo0+PEUpZmhCk2EImZAeI
+	 WseZ1lVCLkbOze65f42g7618SovqTJIU/O68DDQM=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
 	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
-	20250805172228epcas5p1d191955528134891861a78b8e22dc8e3~Y7ryMChg53014130141epcas5p1K;
-	Tue,  5 Aug 2025 17:22:28 +0000 (GMT)
-Received: from epcas5p4.samsung.com (unknown [182.195.38.87]) by
-	epsnrtp02.localdomain (Postfix) with ESMTP id 4bxKxH3WT3z2SSKX; Tue,  5 Aug
-	2025 17:22:27 +0000 (GMT)
+	20250805172246epcas5p16c95b3e82936251b80118d788a48a3b4~Y7sCnLayd3014130141epcas5p1T;
+	Tue,  5 Aug 2025 17:22:46 +0000 (GMT)
+Received: from epcas5p1.samsung.com (unknown [182.195.38.93]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4bxKxd0xrYz6B9m5; Tue,  5 Aug
+	2025 17:22:45 +0000 (GMT)
 Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0~Y3DlCZJbV0972209722epcas5p1D;
-	Tue,  5 Aug 2025 11:43:13 +0000 (GMT)
+	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+	20250805114320epcas5p3968288f8d01944d3d730b3094a7befe4~Y3DrVW8uf1521715217epcas5p3C;
+	Tue,  5 Aug 2025 11:43:20 +0000 (GMT)
 Received: from bose.samsungds.net (unknown [107.108.83.9]) by
 	epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20250805114310epsmtip1165bc01a75ab7919847d37fd5d53d33b~Y3DiKEXXv1447314473epsmtip1r;
-	Tue,  5 Aug 2025 11:43:10 +0000 (GMT)
+	20250805114316epsmtip1786da2ef65e10ab19b965d79fc527bc4~Y3DoafOPg1492214922epsmtip1L;
+	Tue,  5 Aug 2025 11:43:16 +0000 (GMT)
 From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
 	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
@@ -64,25 +64,25 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
 	dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
 	selvarasu.g@samsung.com
-Subject: [PATCH v5 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 combo hsphy
-Date: Tue,  5 Aug 2025 17:22:13 +0530
-Message-Id: <20250805115216.3798121-4-pritam.sutar@samsung.com>
+Subject: [PATCH v5 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo ssphy
+Date: Tue,  5 Aug 2025 17:22:15 +0530
+Message-Id: <20250805115216.3798121-6-pritam.sutar@samsung.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250805115216.3798121-1-pritam.sutar@samsung.com>
 MIME-Version: 1.0
-X-CMS-MailID: 20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0
+X-CMS-MailID: 20250805114320epcas5p3968288f8d01944d3d730b3094a7befe4
 X-Msg-Generator: CA
 X-Sendblock-Type: REQ_APPROVE
 CMS-TYPE: 105P
 cpgsPolicy: CPGSC10-542,Y
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0
+X-CMS-RootMailID: 20250805114320epcas5p3968288f8d01944d3d730b3094a7befe4
 References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
-	<CGME20250805114313epcas5p15b843d7fe692feb20828a789cef49dc0@epcas5p1.samsung.com>
+	<CGME20250805114320epcas5p3968288f8d01944d3d730b3094a7befe4@epcas5p3.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_102232_103462_C7DE6458 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20250805_102249_124919_C177F8BE 
+X-CRM114-Status: UNSURE (   9.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,46 +100,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This phy only supports USB2.0 HS(480Mbps), FS(12Mbps) and
-LS(1.5Mbps) data rates. It requires two clocks, named as "phy" and "ref".
-The required supplies for this phy, named as vdd075_usb20(0.75v),
-vdd18_usb20(1.8v), vdd33_usb20(3.3v).
+This phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
+compatible to the USB3.0 SS(5Gbps). It requires two clocks, named
+"phy" and "ref". The required supplies for USB3.1 are named as
+vdd075_usb30(0.75v), vdd18_usb30(1.8v).
 
-Add schema for combo hsphy found on this SoC.
+Add schemas for combo ssphy found on this SoC.
 
 Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 ---
- .../devicetree/bindings/phy/samsung,usb3-drd-phy.yaml          | 3 +++
- 1 file changed, 3 insertions(+)
+ .../bindings/phy/samsung,usb3-drd-phy.yaml    | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-index 1932a2272ef9..4a84b5405cd2 100644
+index 4a84b5405cd2..7a71cff10fb5 100644
 --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
 @@ -34,6 +34,7 @@ properties:
        - samsung,exynos7870-usbdrd-phy
        - samsung,exynos850-usbdrd-phy
        - samsung,exynos990-usbdrd-phy
-+      - samsung,exynosautov920-usbdrd-combo-hsphy
++      - samsung,exynosautov920-usb31drd-combo-ssphy
+       - samsung,exynosautov920-usbdrd-combo-hsphy
        - samsung,exynosautov920-usbdrd-phy
  
-   clocks:
-@@ -226,6 +227,7 @@ allOf:
+@@ -118,6 +119,12 @@ properties:
+   vdd18-usb20-supply:
+     description: 1.8V power supply for the USB 2.0 phy.
+ 
++  dvdd075-usb30-supply:
++    description: 0.75V power supply for the USB 3.0 phy.
++
++  vdd18-usb30-supply:
++    description: 1.8V power supply for the USB 3.0 phy.
++
+ required:
+   - compatible
+   - clocks
+@@ -227,6 +234,7 @@ allOf:
                - samsung,exynos7870-usbdrd-phy
                - samsung,exynos850-usbdrd-phy
                - samsung,exynos990-usbdrd-phy
-+              - samsung,exynosautov920-usbdrd-combo-hsphy
++              - samsung,exynosautov920-usb31drd-combo-ssphy
+               - samsung,exynosautov920-usbdrd-combo-hsphy
                - samsung,exynosautov920-usbdrd-phy
      then:
-       properties:
-@@ -248,6 +250,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - samsung,exynosautov920-usbdrd-combo-hsphy
-               - samsung,exynosautov920-usbdrd-phy
-     then:
-       required:
+@@ -258,6 +266,17 @@ allOf:
+         - vdd18-usb20-supply
+         - vdd33-usb20-supply
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - samsung,exynosautov920-usb31drd-combo-ssphy
++    then:
++      required:
++        - dvdd075-usb30-supply
++        - vdd18-usb30-supply
++
+ unevaluatedProperties: false
+ 
+ examples:
 -- 
 2.34.1
 
