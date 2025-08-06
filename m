@@ -4,102 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58AE4C87FDA
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 15:55:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F328C87FD3
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 16:03:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GolTKVN+qEI/1QXRhCYyNwMo+eF8P7BcJCCDZJgjThc=; b=rB/ZLpFnn4ztEO
-	Wrz/VkN9M2v9kmIO/bRMmJjmWQeY8/wVuT0rLRAw8wJVAP9JGLVc75FNDkXH1ndNVy323IXpwWqZ1
-	hMBIxabAZG8WlRvxz/2saBvUy48PuL0noHUdYk30lwZ/53VLRYPSuLNaR1/R5kQpcYznNR9dH4coC
-	itQWOVIMLAW+KIH9Y5Ng2IJLWYLtzTxlM3DZSFLJi5PlJTIpbpyYneafKPu/QNCqe4ZUonF0eqzGm
-	LaEcDyDwB9lPJqX8ZfjpdH1/RiNvvV4A20vNaeZeNXzrF5Tg6s7Z7sTl8H4xuUwRNPiBSctk787Al
-	1dwPbtzsqL8hFQ8/LIpg==;
+	List-Owner; bh=BYiU1a9BIC5vUeNlfx9cC28XD68sjSSdmzU/507Sjho=; b=ShlqsYHyxca2d2
+	WsG17bVXeLZfiAq4FtiMZO8vyktMfcWV0E0HYS5rsL2VHKch/nAyKKhXwqTB1XfmnCuEMnHl/a161
+	VXp+/asVS5gDiaREVzF+I1zEeuPopnHELTAFOJnxyXQwvKxdMgVvQODVMgTmyxiNTaD07efUa+HoK
+	D3Y87y8HYPTDOkji1UbjBVOMc1b8PV9hZsC6EJAMuc+jxunO5VfilcyNbPcscfomuGmjkWUHLM5Co
+	3A7Q4acZZ1S6tJOABnKQvzEQFv6B4zg3TLTAEZ6TPgH/bjI1sQh5bmsLRpOOqkwvEmMYmvJX1wE8S
+	wMBbzn1ld3OUrQTBBVNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujgUX-0000000FgKc-0Rpc;
-	Wed, 06 Aug 2025 15:55:49 +0000
+	id 1ujgc1-0000000Fi2v-3j2W;
+	Wed, 06 Aug 2025 16:03:33 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujgJB-0000000FeDD-2xiS
+	id 1ujgNx-0000000FfCQ-3guM
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Aug 2025 15:44:07 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576AMsZp017483;
-	Wed, 6 Aug 2025 15:43:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=IsWfsVTApBM
-	Ug9Jimj6VrDClaqRQJrZuUah8ATnJRMQ=; b=Eg1LCu56k+CIqS8VJfboyc5am0l
-	smV6jLWzAo30LsMHdkqnRVjjhEh1okYGYSl68Q5sft9TnyeUvVIH1TTGmsp1uYDS
-	orkPIeT2pIhFuzNA07FidWKiUMqReUqFtj/uqXD3pe7QMQoxv614hYTaWP83gf6f
-	mWGIH1qw8C0xW3x+s4o3rtFV6Azd8gd+jhrUuNJqA0SxgCrXuQ9JuPwuqQLLzAuz
-	CVTRNF+gv09hpWV5AmnrWVKOM3ilRoOm8sa8ljAX7OcCE2UTqbBsOnTyKa5EgYPi
-	4ZSUhNPzu+/qI1W/ZgPdBEKxlPYUHeIy2tXtNxLprQ6P1+NQmfcCIy3ULXw==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48c5868uqp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 06 Aug 2025 15:43:49 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 576Fhki5022969;
-	Wed, 6 Aug 2025 15:43:46 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 489brkx9ut-1;
-	Wed, 06 Aug 2025 15:43:46 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 576FhkZb022964;
-	Wed, 6 Aug 2025 15:43:46 GMT
-Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 576FhkOB022963;
-	Wed, 06 Aug 2025 15:43:46 +0000
-Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
-	id AE62D571922; Wed,  6 Aug 2025 21:13:45 +0530 (+0530)
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-To: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org, conor+dt@kernel.org,
-        bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org,
-        dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org,
-        krzk+dt@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-        Nitin Rawat <quic_nitirawa@quicinc.com>
-Subject: [PATCH V1 3/4] arm64: dts: qcom: sm8650: add max-microamp for UFS PHY and PLL supplies
-Date: Wed,  6 Aug 2025 21:13:39 +0530
-Message-ID: <20250806154340.20122-4-quic_nitirawa@quicinc.com>
-X-Mailer: git-send-email 2.48.1
-In-Reply-To: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
-References: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
+	Wed, 06 Aug 2025 15:49:03 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5769epFY032380
+	for <linux-phy@lists.infradead.org>; Wed, 6 Aug 2025 15:49:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	EdCOe8rcZOVsB/eSOWtFT/kaLn+Ejjtvoiw1zmIh8iQ=; b=iIuTDNl20jiEYEIT
+	uAqVcosWj93FpEaRO+rUtsjjGMX1QmB2YUXF2KCfd/i4TZVSoNibuAE2emrow3O1
+	xAga+MGlPqsBUw3tn50rJnsJphYO3Ug/6pt9Qb776WsXCGWPzbqmusu+CYLaTibz
+	zK/1GYqiXXOTnQ0dNz5YeZ65Dxxt6cgwbCNROm7fCv09Psd9aAGlAcyYlxQYh5BG
+	HryJdqEd742A06TYO4DuPuIEQ1ua0mrKTpPXg8JObyfynXno029teCnVwBXFoXxA
+	FWFuW+V0h+UlubainCr7XM73D7zqsXa8rfDMAOGsepc2cTf6+MPOfrAT+Q+Zbmwt
+	pRPFRA==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpw2uagj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 15:49:00 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4b071271e3eso123611cf.1
+        for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 08:49:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754495339; x=1755100139;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=EdCOe8rcZOVsB/eSOWtFT/kaLn+Ejjtvoiw1zmIh8iQ=;
+        b=TQ2HbDQCVOQMGNnxWgKyUSFTS3sWamGBxYwSzVoZM11DdVdN2NKfCCayUFblkHwjhh
+         jvJp8RtQ/Wxs9FK9bQAcZFv4IxvMplYu9oqQbbwHAg5s21fFzmkW0o8cjgKGiRgCAMtx
+         MJYuRUCGcaM3D9lgt7QPo79Rt8r8aF7fLFf1F8p5sZf1wc9lZYl2zIPj+baI57OLYpJz
+         3+J2k5vR84QWr7hHh5yfRKVVSgJjMbAfnPjYxa9798AksSbf6ByL3GVMYZXLN2cptz5W
+         7Ycw6ntDhSj5BGex2gslpQsgMwJHKAbMWOs66wlWHbZyp5V1sScvEZVS6Le0Z1GC0/+I
+         vh4A==
+X-Forwarded-Encrypted: i=1; AJvYcCVo/s3FAt+mwGE3pVDZP7rxD/isTgVQOTKvrixKxocchqdUcvgXJgBAoagv+bsL5oJMUnC166x6Ijw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzk7poRrC4dlUiNPzSxcLgstKGNZWs0boiVl20MvtBC8Kx5/rzB
+	q3eNXMkBTD8i/moE2VhdVz1M3Yt4Xg0DNfejKvbh4XeVDGi3OxEU3qpdVTbqRyowISuIvsIosvT
+	AdTjP7NPH0uT8TQFmEoBQSBDCffvVz1mkrYKMhMTs9QGZ0XKkj6WuWGj6HyUAZxIKtTOg
+X-Gm-Gg: ASbGncsMNTBqQm8ajhD2XwQQcsJOYjeBuU+DfmzdeH1+FIDtege25718v7GU7Oa9MDZ
+	wTSS3Dirp2yCLhl/nyLdacgpPAExLd3RajNy8exmdX3c+2ttcjv/zTwPayVGQN5+S79c6mZ9r4V
+	NLGK86Eu6jHB2N2+olIFIwfGYw7thJTYPRP2aKp86hVKtAdaPs7bmWSQi1xsnBQ9rDzaEzLQ2af
+	Z3gA+ZLZssvHxsFXFkmQXne0qvAvVMIuuvYFsMq7eY15mqATdOgcUbYeXIbWFUP2et5azxE6NI+
+	SpfSajzaWQ3aDURwcNAZR4WeBChZaHCVpi2yY4KGtSbLczPAUMwpEN1YFxsC7lVT0BNY9RyC7nY
+	xVDwosRnZO5NaddK4iA==
+X-Received: by 2002:ac8:7e94:0:b0:4ab:635b:a309 with SMTP id d75a77b69052e-4b0910145f2mr26950591cf.0.1754495339258;
+        Wed, 06 Aug 2025 08:48:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHYe5Tt26YGSNtspI4Adw8RhbSGkHq9bCQs03PaJmHMaILl3gZLSyjG6dCEODCsa2/y8OOGnQ==
+X-Received: by 2002:ac8:7e94:0:b0:4ab:635b:a309 with SMTP id d75a77b69052e-4b0910145f2mr26950151cf.0.1754495338571;
+        Wed, 06 Aug 2025 08:48:58 -0700 (PDT)
+Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a0a374dsm1112625966b.36.2025.08.06.08.48.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 06 Aug 2025 08:48:57 -0700 (PDT)
+Message-ID: <f21b7d52-4c3f-4e5b-bee7-f8b2945b5b02@oss.qualcomm.com>
+Date: Wed, 6 Aug 2025 17:48:55 +0200
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: r3Ml9cxUFq3SHXZfhmPHG0j8Pvb6SCmn
-X-Authority-Analysis: v=2.4 cv=MZpsu4/f c=1 sm=1 tr=0 ts=68937835 cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=b944Eujiixzs7VeoIpIA:9
- a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: r3Ml9cxUFq3SHXZfhmPHG0j8Pvb6SCmn
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDA2NCBTYWx0ZWRfX6hREKWPeXzKS
- i26sicA17rer7Lly2/RFWCo9NOeVrYEDV0+nG6nXEQoyRhuP047/d/9yuNtR9yd2UlOTRt3kDxO
- dY75RReyXRgT9dDuhV8PeS1lh+GaDtGzyPiohqVue4I8XVT+IHohG2yQmn8J7PtmeMPsT/k7xMY
- TSeiUCsXgnY3fs6uT4dFbc3j6Hny/zbBYEncsig/k31dODj6dJPUfh0jA714HOXxE72ysX2G+iH
- 48ungKB0zvi4hDOD0lKMXKhhlgAYCiWchKoXf799lXBkZFbthDtI7JJ7WorPfqcKPfApHZqeMKS
- ChH3Be+P+U0QdaB07rzO/9+3qHXtubOoGtj8fR8C63eCam01J4hvKX1yQeXK1oFGU/Ad4q5dwTf
- s45hAKv8
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Krzysztof Kozlowski <krzk@kernel.org>
+References: <20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com>
+ <styd5gjksbsqt7efylpfn6bgwgyvt6zexxiooihjsnmp25yigp@unq7dor6gso2>
+ <447c3b13-8d6d-4bcb-83c1-9456b915a77e@oss.qualcomm.com>
+ <inpfuxskvmrebxitqtqwzvpnpicibo6zakgk4ujpcrqrpef2vw@nhclj5rg7axr>
+ <9037fefe-aa40-4884-97ee-b81ff8346944@oss.qualcomm.com>
+ <htufwjvfgdtav2gtgrytc356py6xqhrffbwjg42sgo7k4zzxof@z4xaf35qz7kq>
+ <aa17d7d4-b77d-4a0a-88c3-86255dfbc29d@oss.qualcomm.com>
+ <75dde9a2-3c0d-481b-bc73-089ba89a77e0@linaro.org>
+ <71196aad-6d80-4356-bbe5-3070f6b74bfe@oss.qualcomm.com>
+ <fhzdhzxdwcoiuhx2eogpshwt5cxagjkrygrefqikmfbx3cfcov@awmhgrvurnfi>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <fhzdhzxdwcoiuhx2eogpshwt5cxagjkrygrefqikmfbx3cfcov@awmhgrvurnfi>
+X-Authority-Analysis: v=2.4 cv=Vbz3PEp9 c=1 sm=1 tr=0 ts=6893796c cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=p9fLoZ6QpVtK1h1Of3EA:9
+ a=QEXdDO2ut3YA:10 a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-ORIG-GUID: vEGiDtGF5vma4l76j5zusaSJNl06utqx
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOCBTYWx0ZWRfX4YYPxAD5RscG
+ OcvMEV9e4Az5JONMWCM1ns3qRb1OnRRTmq0MYhFx3Zi99ZArDnFn73uaUBY/w5DL0DKmwlc7iiw
+ xwfQUI5KxG08yAbMkobaJDVzP1P6Av7jOt7/37LseCnYAQiPtZw3wG85Fb9QE94UghOYvKblLfy
+ eWySeANayaIpGksSP8vFsHSQuhaN+fc91BIy/kXJiKiFdqeEJ0j2DVOe0luyLuII+fqBQdvfH2D
+ foe/Bs6MxhH4RZ5BtYcSfIXNgbN/DcZpvBJ3nIcN8U3mHiOXyS9ONR16MtZCANAgOXQSYh3Z4zf
+ 9cqbQ20JztCcHZoXwZ+ZiJzT5OBtdzOP9fLYJQWiGt4NqS2vXWHzsk6hlZbE+k1HSjhMBAFypUE
+ PPfoID0b
+X-Proofpoint-GUID: vEGiDtGF5vma4l76j5zusaSJNl06utqx
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-06_04,2025-08-06_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 spamscore=0 clxscore=1015 bulkscore=0
- adultscore=0 suspectscore=0 phishscore=0 priorityscore=1501
+ clxscore=1015 malwarescore=0 adultscore=0 suspectscore=0 bulkscore=0
+ phishscore=0 priorityscore=1501 spamscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060064
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_084405_858398_C178C1F3 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20250806_084902_042512_F16FF71A 
+X-CRM114-Status: GOOD (  36.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,67 +149,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add `vdda-phy-max-microamp` and `vdda-pll-max-microamp` properties to
-the UFS PHY node in the device tree.
+On 6/3/25 3:17 PM, Dmitry Baryshkov wrote:
+> On Tue, Jun 03, 2025 at 01:03:11PM +0200, Konrad Dybcio wrote:
+>> On 6/2/25 10:55 AM, Neil Armstrong wrote:
+>>> On 28/05/2025 18:56, Konrad Dybcio wrote:
+>>>> On 5/28/25 1:22 PM, Dmitry Baryshkov wrote:
+>>>>> On Wed, May 28, 2025 at 01:13:26PM +0200, Konrad Dybcio wrote:
+>>>>>> On 5/28/25 11:00 AM, Dmitry Baryshkov wrote:
+>>>>>>> On Wed, May 28, 2025 at 12:24:02AM +0200, Konrad Dybcio wrote:
+>>>>>>>> On 5/27/25 11:10 PM, Dmitry Baryshkov wrote:
+>>>>>>>>> On Tue, May 27, 2025 at 10:40:02PM +0200, Konrad Dybcio wrote:
+>>>>>>>>>> Register a typec mux in order to change the PHY mode on the Type-C
+>>>>>>>>>> mux events depending on the mode and the svid when in Altmode setup.
+>>>>>>>>>>
+>>>>>>>>>> The DisplayPort phy should be left enabled if is still powered on
+>>>>>>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+>>>>>>>>>> PHY is not powered off.
+>>>>>>>>>
+>>>>>>>>> This series doesn't seem to solve the USB side of a problem. When the
+>>>>>>>>> PHY is being switch to the 4-lane mode, USB controller looses PIPE
+>>>>>>>>> clock, so it needs to be switched to the USB-2 mode.
+>>>>>>>>
+>>>>>>>> I didn't find issues with that on X13s.. Not sure if it's related, but
+>>>>>>>> on the SL7, after plugging in a 4ln DP connection, I need to plug in
+>>>>>>>> the USB thumb drive twice for the first time (only in that sequence)
+>>>>>>>
+>>>>>>> Might be.
+>>>>>>>
+>>>>>>>> But there's nothing interesting in dmesg and the phy seems to be
+>>>>>>>> programmed with the same values on both the initial and the subsequent
+>>>>>>>> working plug-in
+>>>>>>>
+>>>>>>> Please try using a DP dongle with USB 2 passthrough (there are some).
+>>>>>>> Or just emulate this by enabling DP PHY / DP chain for plugged in USB3
+>>>>>>> devices. Would you be able to see the USB device on a bus?
+>>>>>>
+>>>>>> I only have a dongle with both display and usb that does 2ln dp
+>>>>>> (I tested 4ln dp on a type-c display that I don't think has a hub)
+>>>>>>
+>>>>>> USB3 - yes, USB2 - no (but it works after a replug)
+>>>>>>
+>>>>>> Are you talking about essentially doing qcom,select-utmi-as-pipe-clk
+>>>>>> at runtime?
+>>>>>
+>>>>> I think so.
+>>>>
+>>>> So after quite some time playing with that, I noticed that the USB2
+>>>> device was never actually kicked off the bus.. and works totally fine
+>>>> after connecting the display output (2ln DP)
+>>>>
+>>>> I was looking at dmesg, checking for discovery/disconnect messages,
+>>>> but the device was simply never disconnected (which makes sense given
+>>>> repurposing USB3 TX/RX lanes doesn't affect the D+/D- of USB2)
+>>>>
+>>>> I also read some docs and learnt that what we call
+>>>> qcom,select-utmi-as-pipe-clk is suppossed to be a debug feature
+>>>> and is unnecessary to set on USB2.0-only controllers
+>>>>
+>>>> The USB controller programming guide though doesn't talk about DP,
+>>>> but I'd expect that we may need to set that override for 4lnDP+USB2
+>>>> use cases (which I don't have a dongle for)
+>>>
+>>> Yeah basically we need to:
+>>> 1) power-off the USB3 PHY
+>>> 2) switch to UTMI clock
+>>>
+>>> In the following states:
+>>> - USB safe mode (USB2 lanes may still be connected)
+>>> - 4lanes DP mode
+>>> - DP-only mode
+>>>
+>>> But for this, the dwc3 should also get USB-C events with an addition mode-switch property.
+>>> The flatten DWC3 node now allows that !
+>>
+>> Yeah, I got even more confirmation this is intended..
+>>
+>> I hacked up something that boils down to:
+>>
+>> diff --git a/drivers/usb/dwc3/drd.c b/drivers/usb/dwc3/drd.c
+>> index 7977860932b1..e5a0a8ec624d 100644
+>> --- a/drivers/usb/dwc3/drd.c
+>> +++ b/drivers/usb/dwc3/drd.c
+>> @@ -464,6 +464,11 @@ static int dwc3_usb_role_switch_set(struct usb_role_switch *sw,
+>>  		break;
+>>  	}
+>>  
+>> +	if (dwc->mode_fn)
+>> +		dwc->mode_fn(dwc, mode);
+>>
+>> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
+>> index 7334de85ad10..ea56f5087ecb 100644
+>> --- a/drivers/usb/dwc3/dwc3-qcom.c
+>> +++ b/drivers/usb/dwc3/dwc3-qcom.c
+>> +static void mode_fn(struct dwc3 *dwc, enum usb_role role)
+>> +{
+>> +	struct dwc3_qcom *qcom = to_dwc3_qcom(dwc);
+>> +
+>> +	if (dwc->usb3_generic_phy[0])
+>> +		dwc3_qcom_select_utmi_clk(qcom, role == USB_ROLE_NONE);
+> 
+> This part is a hack for devices with no USB-2 passthrough, isn't it?
+> 
+>>  }
+>>
+>>
+>> It was easy to tap into because there's already mode switch handling..
+>> But obviously it's a hack - should I register a typec_mux in there?
+> 
+> I think so, we should listen to mode changes, instead of host/device
+> changes.
+> 
+>> Should it go to dwc3-common or dwc3-qcom?
+> 
+> I'd say, dwc3-qcom. Not all dwc3 controllers are USB 3 capable, not
+> talking about the USB-C.
 
-These properties define the maximum current (in microamps) expected
-from the PHY and PLL regulators. This allows the PHY driver to
-configure regulator load accurately and ensure proper regulator mode
-based on load requirements.
+I did some coding and we can't switch clock sources at runtime (not a
+huge shocker), but the bigger issue is that, paraphrasing the HPG, the
+DWC3 controller must be programmed as if it was not SS-capable (probably
+skipping starting some subcores), which is not trivial
 
-Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
----
- arch/arm64/boot/dts/qcom/sm8650-hdk.dts | 2 ++
- arch/arm64/boot/dts/qcom/sm8650-mtp.dts | 3 ++-
- arch/arm64/boot/dts/qcom/sm8650-qrd.dts | 2 ++
- 3 files changed, 6 insertions(+), 1 deletion(-)
+I also came up with a sneaky workaround of simply keeping the USB PLL
+always-on, but the hardware disagrees to do so if the PHY is configured
+in the DP_ONLY mode (which I suppose makes sense)
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-hdk.dts b/arch/arm64/boot/dts/qcom/sm8650-hdk.dts
-index d0912735b54e..356254b11906 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-hdk.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-hdk.dts
-@@ -1294,7 +1294,9 @@ &ufs_mem_hc {
- 
- &ufs_mem_phy {
- 	vdda-phy-supply = <&vreg_l1d_0p88>;
-+	vdda-phy-max-microamp = <211000>;
- 	vdda-pll-supply = <&vreg_l3i_1p2>;
-+	vdda-pll-max-microamp = <18300>;
- 
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-index 76ef43c10f77..f47f62e0b0d9 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-@@ -841,8 +841,9 @@ &ufs_mem_hc {
- 
- &ufs_mem_phy {
- 	vdda-phy-supply = <&vreg_l1d_0p88>;
-+	vdda-phy-max-microamp = <211000>;
- 	vdda-pll-supply = <&vreg_l3i_1p2>;
--
-+	vdda-pll-max-microamp = <18300>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-index 71033fba21b5..c4359f8033e3 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-@@ -1277,7 +1277,9 @@ &ufs_mem_hc {
- 
- &ufs_mem_phy {
- 	vdda-phy-supply = <&vreg_l1d_0p88>;
-+	vdda-phy-max-microamp = <211000>;
- 	vdda-pll-supply = <&vreg_l3i_1p2>;
-+	vdda-pll-max-microamp = <18300>;
- 
- 	status = "okay";
- };
--- 
-2.48.1
+All in all, I was not able to find people with a device that actually
+does 4ln DP + USB2 and IIUC the only drawback would be that USB2 would
+not work (and not stall the system). Not sure if/how it recovers after
+you'd plug something else into that port later on, but again, I don't
+have anyone that could test it.
 
+With that in mind, would you be okay with me resubmitting this series
+with just a rebase & taking care of the comment to patch 5 (pertaining
+to the default mode setting if svid != DP)?
+
+Konrad
 
 -- 
 linux-phy mailing list
