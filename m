@@ -4,58 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45D40C87FD3
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 23:45:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39A5BC87FD3
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 23:47:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3XP2Pf5yGn8WYtnYpUrhUToqlLfVdPa9d6dT9710g+4=; b=Fcft0HS1/0wdA5
-	a04GTnvio0MX0bPQOpAAi9ugKYQTvkZSVVJ4c8okzHWwB+mo4rip4FFp3okXhXnq03rLjt5PGMGa6
-	UeTObZzsTvsUupg0F4FEliqxW8FFA9ZCCIoKiBvlsOJtQClGnjAErUrAivoVabNm84JfI8BhWA3er
-	xrWVQonOYUko6ZrFEuUhJEmpNpYv/aByWMh+FeJZaRo1vMSvmwNvpBd0dbZjRgl3hI5l+pLpYnbYZ
-	uaPkHFGq6dOxAPsXWb69kLd75WO54Wovrd29a2pzOVesooTGwus9NU4dZ9RtpDPc0+W7UEOte8/HO
-	dVA7ZIGt9ePfj3vzzVAw==;
+	List-Owner; bh=v2YKl1ciTRScXHGhLZbz4xuQxskZ4kDpGMZ0PTcHG4o=; b=d2BmTR4+FxKuLH
+	IrNZZh6nsGjwqWQsCVUaAIwVx4/cqBTMsjSNXbBUb9iICspM9Ro0JBM8UHKHEZ+oCyYzpKX0lpQSP
+	20GDICxPkp9E4xLKsfJenWqmRTQKnSX6MGF3Cf5Tk4ufTzysccLRJOasl/4NIcKDAfUfk7x58+WN+
+	H7cBW1mbBWc/6hC2qyy28pST48568bg11gY4aoE4eqwXYUcWzG/yGY+cgdqJoNvLMWFgAVPRRillH
+	gUqc1h+qyhDa49TLsMDNY4UJF01m7CuuaEs5wwWIGYwoOtZ6VbxRgQPJ64mqyuKvkoy4n4UrFK9Wl
+	blvT0niTQ5GiC4Z7BUKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujnoa-0000000Gqnb-42ax;
-	Wed, 06 Aug 2025 23:45:00 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ujnr6-0000000Gr1d-4AaG;
+	Wed, 06 Aug 2025 23:47:36 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujnm5-0000000GqX8-2HKb;
-	Wed, 06 Aug 2025 23:42:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=Zk4yMu+5CuXun8sXYIo2TFOnzoml9++c5d7JiiKGt8A=; b=fHulWqH5eIoJkmVJjwYTUrwihX
-	ATR8WljDtI6jFIw3Q/VnQ6EvtfSf9hyEtH+whsLyNHhCZDC6i0p4UUy34odgcXa0WYN1xGGOziPQi
-	uuwVxtEfTsJHpCYqNoBRHFj2N/I2GAKz6Sc3f5WwTKQef37BKTCFVzjm03i0MUOaShSXw8hQqxJCM
-	LKcpUtF+jUtRhEsjkj5uaBCkm0iNaat1D/mywfsGfCFBmcymIIvQG92ERxft+JNBu34uI09AfLp79
-	6eI+qkOQzikz7YQ11nmkOGr9jAsWfxdB3erOlW7WoiHBL9GSlh1PY3faLxr30X6Sbmst8G+/9p+Zs
-	b7lIpCNQ==;
-Received: from nyc.source.kernel.org ([147.75.193.91])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujnm2-0000000ETos-0zTB;
-	Wed, 06 Aug 2025 23:42:24 +0000
+	id 1ujnmq-0000000Gqby-0Jjl;
+	Wed, 06 Aug 2025 23:43:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C8DB8A50120;
-	Wed,  6 Aug 2025 23:42:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E403C4CEE7;
-	Wed,  6 Aug 2025 23:42:18 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 36DAB60202;
+	Wed,  6 Aug 2025 23:43:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BCDFFC4CEE7;
+	Wed,  6 Aug 2025 23:43:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1754523738;
-	bh=fT+0nxGaI/I9WVL1BF+SKc8auvCNd+sDv/v6lTZlbh4=;
+	s=k20201202; t=1754523790;
+	bh=XvKaSBjQUK3Lb4uJy6GhrqjQJdMOVbIiQ9JzMOob2KQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=m6FbtGLuBIsaxm9rAcCORBKES0EYWoX6s/2EZ0HirwpLVzAoXocRpQ7Wf6KdRSriA
-	 paPcxDCTqwVX91F3IYgz53wtrEfOW9z/IW7PzbesLbolDRUsuYhMVB5CDklCpG5EYT
-	 1JJqcebLBRAwgfPtG6Y4LmxEsT967vKr7bcxp6f1jyAebMl8rBSZD6x2BTBlM9cFv6
-	 o20FyeacpZ5sefYTkdcs1EsoW3BjaS0h6KB4D71epHNNQmI9t5cALb2QXrHygOTL4V
-	 9axVKctbXg3sUkmkYvSPEOHDN4zZWg6nnuoQmhntZR/1skJXXtVJyl1tuzJvUZuv9x
-	 VyUtl+vl/G0DQ==
-Date: Wed, 6 Aug 2025 18:42:17 -0500
+	b=AqgTzIerTzEYEvnC3+PF40eUaqMe6OKuvfEPihBe2N0abgzpfioGzdVfFXvFN2dvu
+	 Q2iwTTnN5I6UiOYccj2rFT6D0aG7B95IA6n58G8fDp5YTn1a43yCPJ7AMt4gVTPEWz
+	 Gw/zoIwOFb1RyzjoJkdUx9T1WMHQLsBH42XnP0ofm1dceoJ+XFBUfgCMxLUXtqEOm6
+	 T0DQyN/pf+Qc4z46KItB9dSNv9bS+CGUrgA7g3w0/Smuv1/ruT49+ojdciQs9lpB2m
+	 Ka7z2UYYgunxy/Nx9yDk/yIFz/7W1EI+PPiL6zNoT8kB3oQkfVAocqeeICLIqlN7b4
+	 Xup7U5VzQN6Wg==
+Date: Wed, 6 Aug 2025 18:43:09 -0500
 From: Rob Herring <robh@kernel.org>
 To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
@@ -69,18 +55,15 @@ Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
 	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
 	dev.tailor@samsung.com, faraz.ata@samsung.com,
 	muhammed.ali@samsung.com, selvarasu.g@samsung.com
-Subject: Re: [PATCH v5 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-Message-ID: <20250806234217.GA2030512-robh@kernel.org>
+Subject: Re: [PATCH v5 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo ssphy
+Message-ID: <20250806234309.GA2032999-robh@kernel.org>
 References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
- <CGME20250805114306epcas5p37782c02ae0ddc6b77094786c90af247a@epcas5p3.samsung.com>
- <20250805115216.3798121-2-pritam.sutar@samsung.com>
+ <CGME20250805114320epcas5p3968288f8d01944d3d730b3094a7befe4@epcas5p3.samsung.com>
+ <20250805115216.3798121-6-pritam.sutar@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250805115216.3798121-2-pritam.sutar@samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250807_004222_673877_B317C302 
-X-CRM114-Status: GOOD (  13.76  )
+In-Reply-To: <20250805115216.3798121-6-pritam.sutar@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,12 +80,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Aug 05, 2025 at 05:22:11PM +0530, Pritam Manohar Sutar wrote:
-> This SoC has USB2.0 phy and supports only UTMI+ interface. This phy
-> requires two clocks, named as "phy" and "ref". The required supplies for
-> this phy are vdd075_usb20(0.75v), vdd18_usb20(1.8v), vdd33_usb20(3.3v).
+On Tue, Aug 05, 2025 at 05:22:15PM +0530, Pritam Manohar Sutar wrote:
+> This phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
+> compatible to the USB3.0 SS(5Gbps). It requires two clocks, named
+> "phy" and "ref". The required supplies for USB3.1 are named as
+> vdd075_usb30(0.75v), vdd18_usb30(1.8v).
 > 
-> Add a dedicated compatible string for USB HS phy found in this SoC.
+> Add schemas for combo ssphy found on this SoC.
 > 
 > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 > ---
@@ -110,61 +94,54 @@ On Tue, Aug 05, 2025 at 05:22:11PM +0530, Pritam Manohar Sutar wrote:
 >  1 file changed, 19 insertions(+)
 > 
 > diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> index e906403208c0..1932a2272ef9 100644
+> index 4a84b5405cd2..7a71cff10fb5 100644
 > --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
 > +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
 > @@ -34,6 +34,7 @@ properties:
 >        - samsung,exynos7870-usbdrd-phy
 >        - samsung,exynos850-usbdrd-phy
 >        - samsung,exynos990-usbdrd-phy
-> +      - samsung,exynosautov920-usbdrd-phy
+> +      - samsung,exynosautov920-usb31drd-combo-ssphy
+>        - samsung,exynosautov920-usbdrd-combo-hsphy
+>        - samsung,exynosautov920-usbdrd-phy
 >  
->    clocks:
->      minItems: 1
-> @@ -110,6 +111,12 @@ properties:
->    vddh-usbdp-supply:
->      description: VDDh power supply for the USB DP phy.
+> @@ -118,6 +119,12 @@ properties:
+>    vdd18-usb20-supply:
+>      description: 1.8V power supply for the USB 2.0 phy.
 >  
-> +  dvdd075-usb20-supply:
-> +    description: 0.75V power supply for the USB 2.0 phy.
+> +  dvdd075-usb30-supply:
+> +    description: 0.75V power supply for the USB 3.0 phy.
 > +
-> +  vdd18-usb20-supply:
-> +    description: 1.8V power supply for the USB 2.0 phy.
+> +  vdd18-usb30-supply:
+> +    description: 1.8V power supply for the USB 3.0 phy.
 > +
 >  required:
 >    - compatible
 >    - clocks
-> @@ -219,6 +226,7 @@ allOf:
+> @@ -227,6 +234,7 @@ allOf:
 >                - samsung,exynos7870-usbdrd-phy
 >                - samsung,exynos850-usbdrd-phy
 >                - samsung,exynos990-usbdrd-phy
-> +              - samsung,exynosautov920-usbdrd-phy
+> +              - samsung,exynosautov920-usb31drd-combo-ssphy
+>                - samsung,exynosautov920-usbdrd-combo-hsphy
+>                - samsung,exynosautov920-usbdrd-phy
 >      then:
->        properties:
->          clocks:
-> @@ -235,6 +243,17 @@ allOf:
+> @@ -258,6 +266,17 @@ allOf:
+>          - vdd18-usb20-supply
+>          - vdd33-usb20-supply
 >  
->          reg-names:
->            maxItems: 1
 > +  - if:
 > +      properties:
 > +        compatible:
 > +          contains:
 > +            enum:
-> +              - samsung,exynosautov920-usbdrd-phy
+> +              - samsung,exynosautov920-usb31drd-combo-ssphy
 > +    then:
 > +      required:
-> +        - dvdd075-usb20-supply
-> +        - vdd18-usb20-supply
-> +        - vdd33-usb20-supply
+> +        - dvdd075-usb30-supply
+> +        - vdd18-usb30-supply
 
-Presumably the existing devices don't have these new supplies, so:
-
-else:
-  properties:
-    dvdd075-usb20-supply: false
-    vdd18-usb20-supply: false
-
+Similar issue here.
 
 -- 
 linux-phy mailing list
