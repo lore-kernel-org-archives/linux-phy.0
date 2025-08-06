@@ -4,117 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF8AAC87FD3
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 16:16:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C4FCC87FCB
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 16:16:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=BYiUYLddtFK+93I4swzKltz8fGcaxhYMEuKKC//0nok=; b=plxwNMGv3/UdDL17h+BEHtzLDo
-	CFwcZcxiiMvBPMc/PIjP9klmtOrWQlwVDSomDcom2I0B4jVbFc37D+cMwE2wNiHTC12jGqIz2WIg+
-	GRzCCx9esgeTVKqVzslOSizL5lYZ/f2xPXsWdIkzFMjKHuGhG8/jHME2OYgA5rHDxj+w4UCFo5u9O
-	v5BuAQ1aKEY9XC0SAgetEQ6BUT+4GVoOyhaBne9OUkOaKZd+ydhyUBrZ9IjNHTqzfKeQDQ8iViX3f
-	KY3MNVEW03/A1dzkB89mIAerohweiHWPlGii0+L7I9U/A+zfNS9MScaKUp7XDwCVBrAZ8y3zddeia
-	tORGg/dQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+HNTHye74l4xMMsEmDBlkmM9Z1aOFcT7vaKucGElRY0=; b=Q4XbYdbnRu97m8
+	XZ0tkRY1LWGstzERudTubTE7XjmmfkIfTOTXL/yM5wUphc0MWcha9mX7lEiITngdIFIOLI4C/z7QT
+	slTFw6S3z9zlpg8kqGVFg3pPZb+xnl8ppjy22IAd9DqT1tXEOKUON3YSD7uNTFn+ZmMAMB4gAn0U0
+	lmMvI1RUfKCnDs3x5cnr10/5b07NYjnxtl2pC/Zrz+OrpFANRE0dlBwov2nfXqYagZZTPN+hHwbUO
+	yrTFy+eFYSPWHVx3411W5LLt53PYwnIfBqrl7Z7ryNyTPfxfjGwnFV3np9x11BO1J4TcsxON5WuIu
+	mSiUXjJxevxo6p0dRjQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujgoV-0000000Fjbx-2WZ3;
+	id 1ujgoV-0000000FjcJ-3fk5;
 	Wed, 06 Aug 2025 16:16:27 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujgVl-0000000FgVW-0nVF
+	id 1ujgXH-0000000FgmO-1wHG
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Aug 2025 15:57:06 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-459e39ee7ccso733165e9.2
-        for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 08:57:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1754495823; x=1755100623; darn=lists.infradead.org;
-        h=content-transfer-encoding:organization:autocrypt:in-reply-to
-         :content-language:references:cc:to:reply-to:subject:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=96W7uwKlHpbfRFLEo9z4md6wRw17C44cZB3jokXIckE=;
-        b=Nq9WWDitL1RIQwsZyz8XJdpI0S8HwIRmUq2M3IMFhKOuVDseDymwfzqKgkZFsXtQmO
-         p/ZBxr9sAy5jTcSEXKIhNLI0PuHbr5+w1R1zbpxcAcTysJNy0k+u6wVpZculf3TiAyco
-         lespnhuioOsr2ulqvsC7LGzSSU0db0N2hT/YzMtqdZkMCOeGz0CaAfwlPiLhBUjxRB62
-         2egXwWMz/r7LRi7ryn+7gqol9OvovnjZ/es5LgJVaRPIwcb6b329UK/rRNbhox48Q+2P
-         WZ+7f9scBt2pNurzPH2vK/NbfkmpkzHLSYF+AwEzuSZfFjk23OhN8Fox+DKmfQlOIBuM
-         KSDg==
+	Wed, 06 Aug 2025 15:58:40 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576ANgBO019477
+	for <linux-phy@lists.infradead.org>; Wed, 6 Aug 2025 15:58:38 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	QNS/uT0UsRLTZGD2d6XkWPD5SB9JWddvW75QWH/H0eU=; b=AVYKFz1jdDIocdhe
+	0o5fmMz+DfjGieO6x0g+rQWNH5CaTK8jk7KRHLUEISUv8IEDX2O+f8VVue8xWmpc
+	8OwMlUTuzuVivad8WHfjixUvac4VTIyiMT2UwiuuBf0w1LMStUAhV7Nfq4TfdgTF
+	58nAu6jegsO4PaWqb25GfMeisXKhUFfHW0SHQ52xgr4yjdIuNWOrGKGxd3+qSeFe
+	509UJeVj5T09RmA3gKSbgyU/0pR6oeon8uOf+iHHo53iiXoHCAacxCeuxoZzxrtj
+	xBMtA3/Euf7oMzFiFCnC1CNJY4W7ZjKQ5udtDyN2sGp9S6SFW/fSazgsK1w5XOIF
+	n1WscQ==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48c5868w60-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 15:58:38 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7e802ee0d2aso370685a.1
+        for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 08:58:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754495823; x=1755100623;
-        h=content-transfer-encoding:organization:autocrypt:in-reply-to
-         :content-language:references:cc:to:reply-to:subject:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=96W7uwKlHpbfRFLEo9z4md6wRw17C44cZB3jokXIckE=;
-        b=vstx/8qAdJhFJQkVQK7Z1lYBY0qtz6zG6a1wpcOwn5st01spoZ5so713t0BQMfOZ+0
-         dYZkLzM8HHsKAJZnGz7EC8CxrTfHM1q8rnHkFXNd8qdD/yDLbx0/TA+Yqswv1nB1VZUj
-         S/EedSjTJuH8IeebGhJJQvyYqH/hSvdtbgWVGbCGJiWL5xqHYRn66ysf8VeN2eA+jIy1
-         kjo3evmhL8DmLP5bAvCc4vgLBfkiX3YcY8tZIPPc+umjw2aSXcGDRxsBADsKgre+cbZO
-         FEdzV+EPBUea+UrcvAjn8RPAlAal85P8SbP1+gzMSwET0NdSFo5JTWWqEPTCQZ1LdRaT
-         C2bA==
-X-Forwarded-Encrypted: i=1; AJvYcCXCgYMHMIJKHMjgmqK18IVnxxOefyBWdGGMIeMtJM03/D8tq24jvuTsC50ZcQYKIhIyeTib9G6uM3Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzood1jiBU4tYbHRt2iNZa+mbkzKC33gzTiqDx/jif1K2cHJuoL
-	PeC/KlLSlGlj3e83g7gUfdAvoLVLxpCH1hfV35rmqTJHXCFuqO96Y0pdaoF4XW9iFp4=
-X-Gm-Gg: ASbGnctfpoEgOma6Olyf6901oulxtOhypT75rMuzbjvx8jRWLhF5rF7t30aoMtlu4p3
-	gP4tSg9SJ12xZcICR5+PoR1Vwt3bD5+mTIlIMbFLpgGFHVBtEfrc7QKut9ZmTuOTpL2D21K5ZL7
-	OBh38XaTagLTueEarl39mbS9W2Gra0/yp3WY5WXs+uOU1RMJVy8DxgbW2bZRUBll81e65CcY7Ke
-	f3cf3kmi+aBRDt1WCKq3z+T4t8UQmt4zHeHrY8KjTr5/zqUDXoj8FTTEZU+NZRtf0cz63nif3xa
-	Wgci3DsnmeIGr6mycck1QJ4Y3AV1EfhJSUL3ComnwLKofHLEcDnEGLFr4ETyHtXQkYclMC9LSyy
-	fKazDteLIdQmUSEkeBuRCLDI1JJ7UEMk70qUq/ZwfyUk+7H0NXWIANd3TUujxNgBQ5Jl6nUHpAM
-	pvuoOy/eqmxQ==
-X-Google-Smtp-Source: AGHT+IHGLHNn1kN0J6PwjJjw74PpNaOuAm5Zj48JGv0mBJzoVMk+XWDaoq/829VYh8bGLXdX56kq/w==
-X-Received: by 2002:a05:600c:4506:b0:456:1923:7549 with SMTP id 5b1f17b1804b1-459e70e877fmr29064575e9.26.1754495823518;
-        Wed, 06 Aug 2025 08:57:03 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:96df:e381:55b8:1990? ([2a01:e0a:3d9:2080:96df:e381:55b8:1990])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-458953cfd10sm319363385e9.21.2025.08.06.08.57.02
+        d=1e100.net; s=20230601; t=1754495917; x=1755100717;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=QNS/uT0UsRLTZGD2d6XkWPD5SB9JWddvW75QWH/H0eU=;
+        b=EG0IbWqZdVYDgdqOWMjVufdzuMsXp5bFXqLjbRokKVvhDOW8EXJN+YU6zavMg18uMh
+         PvigfUxNk5/GV2XgDKgTwe6Jm7XU5kPxQjZ8rcXGCiOt1iNfUbKZ32l6+oBWbEV5SZXg
+         dyrN/BDo1La8Ex042MQQ4o208gzPgJnsNkUIXkp2iT6kx1NaXBxHWqkiEGr+yIgZZtQH
+         1sx+sLvJqi13fYlVchzSM3+HkEY81/4J7cuf1JaKyuYFshcbRWRHQ4lOk7KEBBkkHZ++
+         o2vkvO8hMstCnXZf6WS9i7njgiHxwwrMarN47LvJMY7ocdIePDwwTcxCximAkGSm5nWn
+         3/3w==
+X-Forwarded-Encrypted: i=1; AJvYcCUidVmLjkO4/x7OoMFMgj56Rm6oui24xiMdIZ8xuIrlLTnQyFzozucHm9m+dGF+oXC0Mwa6+ncskfg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwrtATwIRcfFWAoyHpeVeZSYD8qUNaRXPUaM2tm6IEO5qD6AfVn
+	HfOGwsVeUxMEYAV4wZzr6gwuLT4ietDLAtMKubuTt6QwDekBvl+IDRVzHkdlFSZsZfrlP+tKe+F
+	LUNpl/prm2Ix/P+hzVuYx/HdLvqX14DAJyqtB0p8PLLBr4j/d2HtAn+Flq3l6Yz3gdm6a
+X-Gm-Gg: ASbGnct0aygvj0DyRrVTEMSnanoF+HeFYeMd6QrOZhLnXIcaMSR6W9Ajdz7YbOplZ6C
+	01QfxB4ts/qADbX7rFyQ+4vShXALlXFKwG+UIEW+pKP+oCJ6B4ZFgwIaTEz49vELXys6FBDTWcf
+	Plmpu9sFSCrKNbyqhCX8DVllLCNY0pWVMmtq9W+s60Hac5oYNFLLkkMjX+DiBeVHe8A6kPN6I7F
+	BrmjNaUX/m37N2T5+q1SdqHu/CtEjpGqQYG4I6MCWOJgRQAzRdVoZfoxPgxUmP+PfSo2QRIcs9z
+	3ZRw49q2puNWGE0wzXObUU0PCu/emcAGau4cQglxWv4bjf0o/Ls8Gps+/3SEjDEonBPMk0CNm9y
+	SwWGG7KPCX345+3JiEA==
+X-Received: by 2002:a05:620a:2584:b0:7e6:81d9:359a with SMTP id af79cd13be357-7e814df0c35mr241157285a.9.1754495917407;
+        Wed, 06 Aug 2025 08:58:37 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE2XRnua00uhBgXJfMjuaXYjlV+/ag9i/MerbwZyjSbEZJVYDAvoxc5k5/SUInzS+jgdX/iJg==
+X-Received: by 2002:a05:620a:2584:b0:7e6:81d9:359a with SMTP id af79cd13be357-7e814df0c35mr241144185a.9.1754495914102;
+        Wed, 06 Aug 2025 08:58:34 -0700 (PDT)
+Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-615a8feaf2fsm10329223a12.38.2025.08.06.08.58.31
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 Aug 2025 08:57:03 -0700 (PDT)
-Message-ID: <3a073dc8-bda5-46ea-9db0-48155b0bce37@linaro.org>
-Date: Wed, 6 Aug 2025 17:57:02 +0200
+        Wed, 06 Aug 2025 08:58:33 -0700 (PDT)
+Message-ID: <f368b6da-1aa3-4b8e-9106-3c29d4ab5c5e@oss.qualcomm.com>
+Date: Wed, 6 Aug 2025 17:58:30 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 00/11] phy: drop unused module aliases
-To: Johan Hovold <johan@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
- Justin Chen <justin.chen@broadcom.com>, Al Cooper <alcooperx@gmail.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250724154823.15998-1-johan@kernel.org>
-Content-Language: en-US, fr
-In-Reply-To: <20250724154823.15998-1-johan@kernel.org>
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
+Subject: Re: [PATCH V1 4/4] phy: qcom-qmp-ufs: read max-microamp values from
+ device tree
+To: Mark Brown <broonie@kernel.org>, Nitin Rawat <quic_nitirawa@quicinc.com>,
+        vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
+        conor+dt@kernel.org, bvanassche@acm.org, andersson@kernel.org,
+        neil.armstrong@linaro.org, dmitry.baryshkov@oss.qualcomm.com,
+        konradybcio@kernel.org, krzk+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
+ <20250806154340.20122-5-quic_nitirawa@quicinc.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250806154340.20122-5-quic_nitirawa@quicinc.com>
+X-Proofpoint-GUID: NUGCEn6gKMLaLcZb1_tcgGxR-I2j5dAp
+X-Authority-Analysis: v=2.4 cv=MZpsu4/f c=1 sm=1 tr=0 ts=68937bae cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=LTPa4ebz5QvcgEhxLXIA:9
+ a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: NUGCEn6gKMLaLcZb1_tcgGxR-I2j5dAp
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDA2NCBTYWx0ZWRfX6muwbqyt1JE1
+ VSWLRuuBvH/wEUhRSm56xPdALSer17CPwnEOM/XabxLRYX26tGlF98MxU3SJk/HugaMMWWIJ2Z1
+ 8TtxsNXzDTcDRGVkfgTsVmxMa9oOCPFzZeHjPREUfK45pKir3csllbyABAgifhajJAJQAjsXtf0
+ oP61vCLxpa3WcZJWfylZi+X1PWO4Im8qUU1Eb9myt4Aaa0dQLWCir/IZQ5mcWIl8qYmoey/G9w+
+ eOGUQDy0hEuGXxq0Cuac0BZWic9dme587XFtdiDkv327eMGAN3i8oLdKd+Hn0J+pkC6MaDy1RMX
+ p1tK7m1xGfIFxXYsmpYCOcSmEGlKvxmOh5Nq0wX2QfJaiGqzHn8thaH5xm2s2YZ/RwEO/KZDfr/
+ wMbnVpLf
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-06_04,2025-08-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 malwarescore=0 spamscore=0 clxscore=1015 bulkscore=0
+ adultscore=0 suspectscore=0 phishscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_085705_230051_DD8DB6E3 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250806_085839_630714_8E6E5066 
+X-CRM114-Status: GOOD (  24.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,52 +130,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/07/2025 17:48, Johan Hovold wrote:
-> When fixing up some device leaks in the TI drivers I noticed that the
-> commits introducing the leaks had also converted the drivers to only
-> support OF probe.
+On 8/6/25 5:43 PM, Nitin Rawat wrote:
+> Add support in QMP PHY driver to read optional vdda-phy-max-microamp
+> and vdda-pll-max-microamp properties from the device tree.
 > 
-> This series drops the unused platform module alias from the PHY drivers
-> that never have supported or no longer supports anything but OF probing.
+> These properties define the expected maximum current (in microamps) for
+> each supply. The driver uses this information to configure regulators
+> more accurately and ensure they operate in the correct mode based on
+> client load requirements.
 > 
-> Johan
+> If the property is not present, the driver defaults load to
+> `QMP_VREG_UNUSED`.
 > 
+> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 22 +++++++++++++++++++---
+>  1 file changed, 19 insertions(+), 3 deletions(-)
 > 
-> Johan Hovold (11):
->    phy: broadcom: brcm-sata: drop unused module alias
->    phy: broadcom: brcm-usb: drop unused module alias
->    phy: cadence: Sierra: drop unused module alias
->    phy: hisilicon: hi6220-usb: drop unused module alias
->    phy: qualcomm: ipq806x-usb: drop unused module alias
->    phy: samsung: exynos5-usbdrd: drop unused module alias
->    phy: samsung: usb2: drop unused module alias
->    phy: ti: omap-usb2: drop unused module alias
->    phy: ti: ti-pipe3: drop unused module alias
->    phy: ti: dm816x-usb: drop unused module alias
->    phy: ti: omap-control: drop unused module alias
-> 
->   drivers/phy/broadcom/phy-brcm-sata.c        | 1 -
->   drivers/phy/broadcom/phy-brcm-usb.c         | 1 -
->   drivers/phy/cadence/phy-cadence-sierra.c    | 1 -
->   drivers/phy/hisilicon/phy-hi6220-usb.c      | 1 -
->   drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c | 1 -
->   drivers/phy/samsung/phy-exynos5-usbdrd.c    | 1 -
->   drivers/phy/samsung/phy-samsung-usb2.c      | 1 -
->   drivers/phy/ti/phy-dm816x-usb.c             | 1 -
->   drivers/phy/ti/phy-omap-control.c           | 1 -
->   drivers/phy/ti/phy-omap-usb2.c              | 1 -
->   drivers/phy/ti/phy-ti-pipe3.c               | 1 -
->   11 files changed, 11 deletions(-)
-> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index 9c69c77d10c8..6e116f7370c3 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -39,6 +39,8 @@
+>  #define PHY_INIT_COMPLETE_TIMEOUT		10000
+>  
+>  #define NUM_OVERLAY				2
+> +#define QMP_VREG_UNUSED				-1
+> +#define MAX_PROP_NAME				32
+>  
+>  /* set of registers with offsets different per-PHY */
+>  enum qphy_reg_layout {
+> @@ -1894,15 +1896,29 @@ static int qmp_ufs_vreg_init(struct qmp_ufs *qmp)
+>  {
+>  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>  	struct device *dev = qmp->dev;
+> +	struct device_node *np = dev->of_node;
+> +	char prop_name[MAX_PROP_NAME];
+>  	int num = cfg->num_vregs;
+> -	int i;
+> +	const char *supply;
+> +	int i, ret;
+>  
+>  	qmp->vregs = devm_kcalloc(dev, num, sizeof(*qmp->vregs), GFP_KERNEL);
+>  	if (!qmp->vregs)
+>  		return -ENOMEM;
+>  
+> -	for (i = 0; i < num; i++)
+> -		qmp->vregs[i].supply = cfg->vreg_list[i];
+> +	for (i = 0; i < num; i++) {
+> +		supply = cfg->vreg_list[i];
+> +		qmp->vregs[i].supply = supply;
+> +
+> +		/* Defaults to unused */
+> +		qmp->vregs[i].init_load_uA = QMP_VREG_UNUSED;
+> +
+> +		snprintf(prop_name, sizeof(prop_name), "%s-max-microamp", supply);
+> +		ret = of_property_read_u32(np, prop_name, &qmp->vregs[i].init_load_uA);
+> +		if (ret)
+> +			dev_dbg(qmp->dev, "No max microamp for %s, using default %d\n",
+> +				supply, QMP_VREG_UNUSED);
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
++Mark
 
+do you think having this in regulator core would make sense?
+
+Konrad
 
 -- 
 linux-phy mailing list
