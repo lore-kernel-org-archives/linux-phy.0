@@ -4,88 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B8B6C87FD3
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 14:56:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0BB3C87FCB
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 15:55:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3unU07w8MiIVa9/HC71EPbqnltE0/G5WAixecidjkdA=; b=jhpoYcJ6Z3iwc2
-	LIvAQlveHduuzaznk9EqlPFwoW0V+iQmkd38H1wkpgSlEkVFT61badYb6D2Ha952/bRTDu5qDAMnc
-	qvv95u4GqUClFsCKwQCvHdRBTvQG1Cl42C0Kuv+YZJDMHM7MCs+ExT+xH9cYzLVd84rBkpUk8EnnY
-	73Qpx5nCaKAP93umMcAP7e/ofGitQoT5+Z0e12iXm7wHPz3bs/lzk/+i8VfJ8HSwL88/dKks/tTht
-	x08YL5m8HfRkcEyShEqrPID9XZ0ic8zqHncYXsSdIXLhtbtHztGWOfx0wbWBGWR8dDseHO2NpVj9G
-	K3gUFFgA6e4AsDgdwhJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uxDP0dusaR652tI8f8SkSGJBKxX9pzpU3qBwnzyiYVw=; b=gI9/uU3OanZD3o
+	ILcs1KX0bJgy94CHAR24mAdv5Vq/7m6e0SuwgCb9jkygxmZ/Oher3/87225AOClmpBES7axuOufuU
+	scPm/W2BWt8iThd1HmCbIkuxBVcUB6FT5Uzdx/mt4Dr17wwJ6Es9lN1hbj0roEXiDNdoozS0DUM/D
+	7+jNRiIuIgNzrl2/yZG/U6bRKj5CTC8HXYjH5Msv7gj5vUc/TtOSvZ1vZWs89sQZ1RiQsoANBrFKs
+	pH2IC0VCJVVW9uIc2gs2NVYlCEqtrKpx+4sAWg4Ie0Qav8rBAgG09d328kAIr43qs92I7QdfgkIjM
+	caCy9hvT2RvK19UN1AWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujfYh-0000000FV7Z-3Wyd;
-	Wed, 06 Aug 2025 14:56:03 +0000
-Received: from mail-ed1-f49.google.com ([209.85.208.49])
+	id 1ujgUW-0000000FgK9-2NPx;
+	Wed, 06 Aug 2025 15:55:48 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujfUy-0000000FUXt-3jrp
+	id 1ujgJA-0000000FeCD-3YLW
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Aug 2025 14:52:13 +0000
-Received: by mail-ed1-f49.google.com with SMTP id 4fb4d7f45d1cf-61568fbed16so8939318a12.3
-        for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 07:52:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754491927; x=1755096727;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/bUCDOg425OaXLwp4YJbQCNBVfG3s0em33qOC0MlAJ0=;
-        b=O8l4pkWxJn/2F59uLr4bSfFoYL76PJE09I78o7x0CVFJL8Uau1TO1a7Qg7NEdeRb+E
-         41HjHZ1091zd1VGOTGx6xGpDEAlIU4zZKj1v+AqKf8/BZQMyux3u+vtiv48n4YJo7J8L
-         ZMBOhjIGWyA6ShZhEkldYso8ZqyBR0ldKTn/5ezulmaZjzf+9dqnf2OGyIXlobVVv96J
-         1oDelB6EDQxCj1QIbkfGjLyd7XTnUkdq7dej4xy3sDcUxNDvHPHwYeaSgwIS7DF5Dmd7
-         GyZrpIacVgeMWc4W5YDU6sT2JOymzSUePQ6WJn1vNNRaBMjA14sCzCOU18IBbgSN4lms
-         PIPA==
-X-Forwarded-Encrypted: i=1; AJvYcCWZGCr3UrDK826tzLlWTj4oFR2i6mLqjw9+L5XOTTkljuLL1xRLGXpIGrpmuVcerZvxLBF6ilpgXcY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwHaZ7TD66T4WXv4l7jlxEgzjhnIoCa9ktUKFjYnApo2jIRUBxk
-	J8UYIf56oN3zEumt0CeuscLMAm9wDwVYeJHD24jYdrlOF+1I/VOmhL+Unl25FjSk5qs=
-X-Gm-Gg: ASbGncuEn1LhYqVP4eHitqphieS7VTuLlzhavcnqaXDGbwCUlirmocrIKTnSyfLxUS6
-	0jQT49Q2oi/alWu0F8vxU+Dewx97aDNAUIstI+bsHp9FLQFg2JGSnKMtg9HgsDy71JLJFn5vVSj
-	PQFhx6TKgeiLBhBdjJYyhaDeGXPHBEdj3WbwVwMT7TDZdSIoUMyUq+SfwrXntrlf6tQY1IpzfgB
-	vshbjyGf792aGU2ecJnXtXmSZCyAw8UiT0CWJ3TREA5r+KJAT5iDLrSTRZw23bFbaBxcMRtTcMr
-	/hZ2RWcP8Qvw4M7Ak/27YcxhbtRT+wwPX4ODHuHlObjXREPT5pCaVXtR7HwSdrPh4CRy6dR7sWI
-	cg66Z/1jOhCCcuOjwEyUd/vHAjDm5CVqEQUq4QM82gaED9WNsemVCR2o1jqdY
-X-Google-Smtp-Source: AGHT+IG+i/2Mik/y7K8jT1x4ZzLLGC1uiSxJznbxfmAGnIXYG06T/BHVJL5VJ4nOuwQvmlY10riE6A==
-X-Received: by 2002:a05:6402:42c7:b0:617:a905:c2dd with SMTP id 4fb4d7f45d1cf-617a905c389mr844624a12.33.1754491927038;
-        Wed, 06 Aug 2025 07:52:07 -0700 (PDT)
-Received: from mail-ed1-f53.google.com (mail-ed1-f53.google.com. [209.85.208.53])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-615a8ffd72esm10140300a12.55.2025.08.06.07.52.04
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 Aug 2025 07:52:05 -0700 (PDT)
-Received: by mail-ed1-f53.google.com with SMTP id 4fb4d7f45d1cf-615378b42ecso10035240a12.0
-        for <linux-phy@lists.infradead.org>; Wed, 06 Aug 2025 07:52:04 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCV4G8UH4srttvvRW+ZEC1PeS5lPDhz8NIAN7AqELv6XUI9X4aJE9zvlrCWASvbJ62OynebrFy10egU=@lists.infradead.org
-X-Received: by 2002:a17:907:3c89:b0:af9:3c4d:e978 with SMTP id
- a640c23a62f3a-af992bcfc70mr250833266b.41.1754491924075; Wed, 06 Aug 2025
- 07:52:04 -0700 (PDT)
+	Wed, 06 Aug 2025 15:44:06 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 576DxnPf017396;
+	Wed, 6 Aug 2025 15:43:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=LqpSPln97LrahdHxRB1JPKa8uvBPxzjRN+S
+	AKgg47IM=; b=k4sMBTU3C7hlgGjBnsIpeZPyWhVPOPyoBXQFzpquZAgECKXcoHF
+	sFupm5kDadOv3BI+/QWNvkS8bFun8WG8YGHnoOysCbGjWDqg5mst89IKbPCZZL1n
+	Ns5dp/d73SQ1bj4dWQeiRXEbGLEe9hxf3z9egffPZb7Lrl+axHLospnggVQzmQjf
+	Gg7QPCkGwfGUskUiSmQM+2VYZD3a4WTRT3jMySe6auO8pC7O0cG5pSnDtX8qciHL
+	pCeG/I1ZyT1hZx1V8nXUuwwR20zb4EY7LKWleegxNBH3SOQGiQYUuEcXCrWtjsmn
+	KgQQuUS3Hv1R9+2h2QZjS49YBUgzfn3UvbA==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpvvu8h1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 06 Aug 2025 15:43:46 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 576Fhhdg022927;
+	Wed, 6 Aug 2025 15:43:43 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 489brkx9u5-1;
+	Wed, 06 Aug 2025 15:43:43 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 576FhhqP022922;
+	Wed, 6 Aug 2025 15:43:43 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 576FhgiM022921;
+	Wed, 06 Aug 2025 15:43:42 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 11032571922; Wed,  6 Aug 2025 21:13:42 +0530 (+0530)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org, conor+dt@kernel.org,
+        bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org,
+        dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org,
+        krzk+dt@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+        Nitin Rawat <quic_nitirawa@quicinc.com>
+Subject: [PATCH V1 0/4] Add support to configure regulator load for UFS QMP PHY
+Date: Wed,  6 Aug 2025 21:13:36 +0530
+Message-ID: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-References: <20250805122529.2566580-1-prabhakar.mahadev-lad.rj@bp.renesas.com> <20250805122529.2566580-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20250805122529.2566580-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 6 Aug 2025 16:51:48 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdVMKzJtomQzzZaHXbhhEJ_3u71Kj7QcMhRgCXcDWY-Kqw@mail.gmail.com>
-X-Gm-Features: Ac12FXyYEz7rzk5aBSzN8UgmC_MvtiytMIezYQg5UvwlqRx6eIwBFlTcBsz1ug8
-Message-ID: <CAMuHMdVMKzJtomQzzZaHXbhhEJ_3u71Kj7QcMhRgCXcDWY-Kqw@mail.gmail.com>
-Subject: Re: [PATCH 4/5] phy: renesas: rcar-gen3-usb2: Add support for RZ/T2H SoC
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	Biju Das <biju.das.jz@bp.renesas.com>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: HE5WUHhspQYMBI8K5wb3WXZ387c_0ach
+X-Authority-Analysis: v=2.4 cv=GttC+l1C c=1 sm=1 tr=0 ts=68937832 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=2OwXVqhp2XgA:10 a=0ZrUP_scgLWD7QagsokA:9
+X-Proofpoint-GUID: HE5WUHhspQYMBI8K5wb3WXZ387c_0ach
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOSBTYWx0ZWRfX3Q6iMSTSyy3Z
+ k4HNESXeh90Qy6iZ4iLWTywhBlEjMqTYoOxpP5KmOwDW3LyQvoK1MRjhunHjdXFZ17yyhxGrM5t
+ 6lQPiN2c4/dzwz1XeeeIXBPJ3lcfwqoT6VUQZtHlJmCBWAF8LJ+1/cK34N47wv97izFz0cT2QeL
+ haIdQKI1p5CvMTIkWYNW7rNNuFI8RfW45CodzmWRShzdPLyu1/BrPW3TNqbVTzayKe9msSz087y
+ 92w+SZAcLyVqaJopJr2kOuW89ce0ctsskZdhV0dqqd5ZrARnzbcqlmCAX9pbqNkC/lv+TzblDDX
+ d9nXJZYdy02xpmSv8S3D3umA53Kdj7WheZuNH61pKS9+mIT03xVQcCwb8HveZOHBGRWgi++TE2H
+ d0eUO0Ma
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-06_04,2025-08-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 priorityscore=1501 phishscore=0 impostorscore=0 clxscore=1015
+ spamscore=0 suspectscore=0 malwarescore=0 adultscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508060009
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250806_075212_929572_61E700E5 
-X-CRM114-Status: GOOD (  24.50  )
+X-CRM114-CacheID: sfid-20250806_084404_898833_FB762D95 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,71 +114,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Prabhakar,
+Add support in the Qualcomm QMP UFS PHY driver to configure regulator
+load using max-microamp values from the device tree.
 
-On Tue, 5 Aug 2025 at 14:25, Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
-> Add initial support for the Renesas RZ/T2H SoC to the R-Car Gen3 USB2 PHY
-> driver. The RZ/T2H SoC requires configuration of additional
-> hardware-specific bits for proper VBUS level control and OTG operation.
->
-> Introduce the `vblvl_ctrl` flag in the SoC-specific driver data to enable
-> handling of VBUS level selection logic using `VBCTRL.VBLVL` bits. This is
-> required for managing the VBUS status detection and drive logic based on
-> SoC-specific needs.
->
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Patch introduces two optional properties in the SC8280XP QMP UFS
+PHY binding.
 
-Thanks for your patch!
+These properties define the expected maximum current (in microamps) for
+each supply. The driver uses this information to configure regulators
+more accurately and ensure they operate in the correct mode based on
+client load requirements.
 
-> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+This change is tested on m8550-qrd, m8750-mtp and sm8650-mtp.
 
-> @@ -284,6 +293,21 @@ static void rcar_gen3_init_from_a_peri_to_a_host(struct rcar_gen3_chan *ch)
->
->  static bool rcar_gen3_check_id(struct rcar_gen3_chan *ch)
->  {
-> +       if (ch->drvdata->vblvl_ctrl) {
-> +               bool vbus_valid = false;
-> +               bool device = false;
+Nitin Rawat (4):
+  dt-bindings: phy: Add max-microamp properties for PHY and PLL supplies
+  arm64: dts: qcom: sm8750: add max-microamp for UFS PHY and PLL
+    supplies
+  arm64: dts: qcom: sm8650: add max-microamp for UFS PHY and PLL
+    supplies
+  phy: qcom-qmp-ufs: read max-microamp values from device tree
 
-No need to preinitialize these two variables.
-
-> +
-> +               device = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_IDDIG);
-> +               vbus_valid = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_VBUSVALID);
-> +
-> +               if (device && vbus_valid)
-> +                       return true;
-> +               else if (!device && vbus_valid)
-
-No need for else after return, but...
-
-> +                       return false;
-> +
-> +               return !(device && !vbus_valid);
-
-... all logic above can be simplified to
-
-    return vbus_valid ? device : !device;
-
-> +       }
-> +
->         if (!ch->uses_otg_pins)
->                 return (ch->dr_mode == USB_DR_MODE_HOST) ? false : true;
->
-
-Gr{oetje,eeting}s,
-
-                        Geert
+ .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        | 10 +++++++++
+ arch/arm64/boot/dts/qcom/sm8650-hdk.dts       |  2 ++
+ arch/arm64/boot/dts/qcom/sm8650-mtp.dts       |  3 ++-
+ arch/arm64/boot/dts/qcom/sm8650-qrd.dts       |  2 ++
+ arch/arm64/boot/dts/qcom/sm8750-mtp.dts       |  2 ++
+ arch/arm64/boot/dts/qcom/sm8750-qrd.dts       |  2 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 22 ++++++++++++++++---
+ 7 files changed, 39 insertions(+), 4 deletions(-)
 
 --
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.48.1
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
