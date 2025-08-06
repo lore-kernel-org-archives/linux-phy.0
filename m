@@ -4,72 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45F29C87FD1
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 05:55:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49BAAC87FCB
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Aug 2025 11:59:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TNK8o5wcsa0YEAO/fejNP4oDpYZ6YcUErvZ/7kpzt48=; b=bDmzhKNMGWdf33
-	YYRixp41/8af4VoVbvYpRkZAW9j42qkmtxClkBriWA2cYvwVME1dvtowsPH1ng+J1GK1CeUVZtEc5
-	2wEO/0/tmygiQqSQcJ5j6zBeDBtaVl/LJX6K4QiOdWfKrOAcvPGCV5dbFEYTYfg99C6E26QivPOMv
-	nVOii9g9DdANePjNTeAOQs4RbH6d1SiRTQNW0VJRHQoquGrIWIK1V9VmpQKVWnL6atKzitzY6ogvm
-	TWFmZn6gAc9RcBNTPe/r0PeyXDcGW2tC8xdJ4S9U/vbVU1VrsJpNmAGyrYadLlHhj4dupuio3YQxq
-	UUwooMll+GjLHCX93LTw==;
+	List-Owner; bh=S4h2X+xHGU4JdnPhTEGiCTYfxy9eC81e7Cjxh6SeZNg=; b=k1NW+f7hlRcJlg
+	1NGdKB/MMmL7lPT+gL9Spip3jBDJvxh3quf+/aSVGQwYunNHFkUFIG/lUCXZlFxmrNOFgGk6uISdL
+	YCrfE6YO5eXymozLBPpJctFY3H1LKlu+iuvv+7ZjGRf2oxYvCTlJtvKhARrNINmkJyO/LAu3KU1ca
+	c2lLM8OTJ1Se21dW1gRzGW6ukoPnHY8jRMuQn/diRRzZAdQ+q5iSl4xLb0gUd++YqA/XWuMu7VwsQ
+	ZluFEmG+3Y5/jkafcMzxI7KJATLFoIRx5vDfIWR3TTe5+RP/sTfi8wx7y7LlA82nnYtbuJUWF61Bx
+	w/CEiSAe/Y1fgKxfMiGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujX7c-0000000EMUB-3pjV;
-	Wed, 06 Aug 2025 05:55:32 +0000
-Received: from lelvem-ot01.ext.ti.com ([198.47.23.234])
+	id 1ujco9-0000000F4zl-4BOa;
+	Wed, 06 Aug 2025 11:59:49 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ujX7Z-0000000EMTn-3CA5
+	id 1ujbmn-0000000ExTc-3LNa
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Aug 2025 05:55:31 +0000
-Received: from lelvem-sh01.itg.ti.com ([10.180.77.71])
-	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTP id 5765tOjD052489;
-	Wed, 6 Aug 2025 00:55:24 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1754459724;
-	bh=gcuSVn9btBKHc65kLz4H5AYTIgr2bH7AoR+0HbNH/CM=;
-	h=Date:Subject:To:References:From:In-Reply-To;
-	b=ukV00SyLTfHvl3tmbh2Hvkaq76gjpkBqzVcR57VB8EDfaOpn1Kgjv+7SO9FaKDSEn
-	 X9Z4wcB0ugHpRv00Rgd7aWcdbBWb1wJjJ0jzABdrAfQsJYXenNfrpkOLVtolWREHN1
-	 QUCb9skmabje6lwSW4pQe2+mqoXQQRE1ptWCOb1M=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
-	by lelvem-sh01.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 5765tOUn2860820
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Wed, 6 Aug 2025 00:55:24 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Wed, 6
- Aug 2025 00:55:23 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Wed, 6 Aug 2025 00:55:23 -0500
-Received: from [10.249.145.16] ([10.249.145.16])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 5765tKDV3348142;
-	Wed, 6 Aug 2025 00:55:21 -0500
-Message-ID: <385d9185-e187-48c2-9854-10cdd98d2f1b@ti.com>
-Date: Wed, 6 Aug 2025 11:25:19 +0530
+	Wed, 06 Aug 2025 10:54:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id B2A13A569C6;
+	Wed,  6 Aug 2025 10:54:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0120C4CEE7;
+	Wed,  6 Aug 2025 10:54:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754477660;
+	bh=i2uI+lUBfjiSG+v9KMFT8zJfDvUFVH+PsQfODjy3ias=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=tKGApy0lewt7v918KB25guqvipI+Nz5f2IgnqBt6dnZVP1TaS7PhzA98LjNkDbC0X
+	 gO1+GGthaP/bwlVW48oUqO7M71/s8nUQ82LzuVXYf+kjvjwNfFWOtmPKzm8kV3ZFuv
+	 GEUoBoenKV/oTkp4DrH0kM5BXx/E1rpMS4iRpwTO05iV+lBwfGv/D+hvAOAo/n/XhX
+	 9Gf2rp22cND8P9EZ+DF1zGo4ZjssN6zXYaPbaKjeYvFEYl3hdakuVY4Ba+FNa011Iz
+	 zNZRFGeZQo/MRktAZxlcLfCxZxDEG7jTURd1aCfP/pGvwTIM38BZlE4FIsNy1+A7Bp
+	 q3O2y8WeHhpaw==
+Date: Wed, 6 Aug 2025 16:24:16 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Parth Pancholi <parth.pancholi@toradex.com>,
+	Devarsh Thakkar <devarsht@ti.com>,
+	Francesco Dolcini <francesco@dolcini.it>,
+	Aradhya Bhatia <aradhya.bhatia@linux.dev>,
+	Jayesh Choudhary <j-choudhary@ti.com>
+Subject: Re: [PATCH 0/2] phy: cdns-dphy: hs-clk improvement and a cleanup
+Message-ID: <aJM0WPVDUkte9E_D@vaman>
+References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
+ <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] drivers: phy: cadence: cdns-dphy: Enable lower
- resolutions in dphy
-To: Harikrishna Shenoy <h-shenoy@ti.com>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <u.kleine-koenig@baylibre.com>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <u-kumar1@ti.com>, <s-jain1@ti.com>
-References: <20250806052650.429767-1-h-shenoy@ti.com>
-Content-Language: en-US
-From: devarsh <devarsht@ti.com>
-In-Reply-To: <20250806052650.429767-1-h-shenoy@ti.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Content-Disposition: inline
+In-Reply-To: <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250805_225529_895965_0D2B54CC 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20250806_035421_898509_AB3371DA 
+X-CRM114-Status: GOOD (  15.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,59 +78,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/08/25 10:56, Harikrishna Shenoy wrote:
-> Enable support for hs_clk_rate between 80-160 Mbps cdns dphy
-
-Enable support for data lane rates between 80-160 Mbps
-
-> as mentioned in TRM [0] by setting the pll_opdiv field to 16.
-> This change enables lower resolutions like 640x480 at 60Hz.
+On 05-08-25, 15:03, Tomi Valkeinen wrote:
+> Hi Vinod, Kishon,
 > 
-> [0]: https://www.ti.com/lit/zip/spruil1
-> (Table 12-552. DPHY_TX_PLL_CTRL Register Field Descriptions)
+> On 23/07/2025 13:01, Tomi Valkeinen wrote:
+> > A cdns-dphy improvement to return the actual hs clock rate, and a
+> > cleanup to remove leftover code.
+> > 
+> > These were part of a Cadence DSI series:
+> > 
+> > https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02%40ideasonboard.com/
+> > 
+> > but are now separately here for easier merging.
+> > 
+> > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+> > ---
+> > Tomi Valkeinen (2):
+> >       phy: cdns-dphy: Store hs_clk_rate and return it
+> >       phy: cdns-dphy: Remove leftover code
+> > 
+> >  drivers/phy/cadence/cdns-dphy.c | 24 +++++++++---------------
+> >  1 file changed, 9 insertions(+), 15 deletions(-)
+> > ---
+> > base-commit: 89be9a83ccf1f88522317ce02f854f30d6115c41
+> > change-id: 20250723-cdns-dphy-hs-clk-rate-fix-a8857a5789dd
 > 
-> Reviewed-by: Udit Kumar <u-kumar1@ti.com>
-> Signed-off-by: Harikrishna Shenoy <h-shenoy@ti.com>
+> Is this good to merge, and if so, do you have any estimate when? While
+> this is independent from the DSI series, I'd rather push the DSI series
+> into drm-misc about the same time, so both would appear in linux-next
+> relatively together.
 
-With suggested change,
-Reviewed-by: Devarsh Thakkar <devarsht@ti.com>
+I will start taking patches after merge window closes next monday, so
+next week should be a good estimate
 
-Regards
-Devarsh
-> ---
-> Changes in v2:
-> - Updated commit message and title.
-> - Added Reviewed-by tag.
-> - Link to v1: https://lore.kernel.org/all/1ebb82ea-4b6c-4496-b7c0-17d4168d8ddf@ti.com/
-> 
-> Test log: https://gist.github.com/h-shenoy/3975156baf403a0ff8dbcce5b49b2b89
-> 
->  drivers/phy/cadence/cdns-dphy.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/cadence/cdns-dphy.c b/drivers/phy/cadence/cdns-dphy.c
-> index ed87a3970f83..9abed2ece9b0 100644
-> --- a/drivers/phy/cadence/cdns-dphy.c
-> +++ b/drivers/phy/cadence/cdns-dphy.c
-> @@ -139,7 +139,7 @@ static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
->  
->  	dlane_bps = opts->hs_clk_rate;
->  
-> -	if (dlane_bps > 2500000000UL || dlane_bps < 160000000UL)
-> +	if (dlane_bps > 2500000000UL || dlane_bps < 80000000UL)
->  		return -EINVAL;
->  	else if (dlane_bps >= 1250000000)
->  		cfg->pll_opdiv = 1;
-> @@ -149,6 +149,8 @@ static int cdns_dsi_get_dphy_pll_cfg(struct cdns_dphy *dphy,
->  		cfg->pll_opdiv = 4;
->  	else if (dlane_bps >= 160000000)
->  		cfg->pll_opdiv = 8;
-> +	else if (dlane_bps >= 80000000)
-> +		cfg->pll_opdiv = 16;
->  
->  	cfg->pll_fbdiv = DIV_ROUND_UP_ULL(dlane_bps * 2 * cfg->pll_opdiv *
->  					  cfg->pll_ipdiv,
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
