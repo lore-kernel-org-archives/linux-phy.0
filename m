@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38BFBC87FCF
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Aug 2025 13:45:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94ACDC87FCA
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Aug 2025 15:31:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nC4UVN0MScFYkma8S+OPNrRPWFfOuU4XsKs2vloAc2E=; b=xf3S3Ts9wepDZ1lo5zc/gJ05RU
-	y3GIhxmxy/D7x0/LyodyBUJEmdKtJBDKmjlS5ICHgtQM69w8OnS6TvIDh5Fyn7HLH5nAVa4FEeuIO
-	yWLSrkog9FZOiKFbHLtcC1na8H9Dl4MqHi1Oy9iogCWRyTJbYTUFGBshj04Qg9R90EtO7qOJ53s8h
-	6vO2jjj1Urgag1IxkRQHI/g0ItvwNAh6hD3OfcosW2mM4DDfH9G72QX6nd/vhJB00w81i7j4O5MwK
-	GxzTPtlJ0tSBLPN3ChlRgrWpQmEs6OoQljXNhWkZL6bWWxg6ORBM4qjMW2mlh4XqKAZ5eRIsLCzXI
-	azpgtlqQ==;
+	bh=fv+CCD2fPzwZkrJaPaWGmLeC+FhhK+C7uwATvkzxC+g=; b=GHZ/ES5cFNrA2dZbfxNDxnjEIk
+	6xLnkGQGv/74WnPGGwnlOl6U0g7QT3iqNYXXbRaT/pCvdLeoO4cePVV4j4jVBolwSFe9r0PTRkWN+
+	F5NABmUM9fs6DoatO5Ze0W4MTJNNHYFgcvFKeMCAcrYYMjW4EfNNRbc8i8i2VPNsJMycjvK2016SX
+	qpujshTRBTTUVkvlML7yHWVd4+l7+e6tiBMBl4Wx4i16ju9d8GfCiuQsjG0XrwKH+FInSyZ0YYsSQ
+	zdsawarAywjYkHz+xNLYCPJ47u2n0ETEiDWIyew600OipOFjNiRpZ/fyZPGPStROsVGRoQ6hTh+zO
+	e5Mqn+UA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk0vc-00000000jhs-3b3s;
-	Thu, 07 Aug 2025 13:45:08 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1uk2b0-0000000111m-0y8P;
+	Thu, 07 Aug 2025 15:31:58 +0000
+Received: from leonov.paulk.fr ([185.233.101.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk0va-00000000jhD-2cCe
-	for linux-phy@lists.infradead.org;
-	Thu, 07 Aug 2025 13:45:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 54D83A56246;
-	Thu,  7 Aug 2025 13:45:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A24CC4CEEB;
-	Thu,  7 Aug 2025 13:45:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1754574305;
-	bh=C9ZTC2V4f6Krh0DfrGNI8J67KB1RXxeKMeyb+CQylsw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mZq6qTtt97Mtn+Uldg4voJ3qdLR8kAiZxKCJ7pvjgr2NOlzjVSLJtW0nvT0uF8SGp
-	 IB9ThGlxViuyE8IgpAl349YaDT2LmEMeJWmK4X5IALumsNUSyQtsZJUalkMGcSKmYr
-	 /WTcRzfv8CvbChDtYcUTiorjYtm4cFD3E9xNNfC2G5YuofPBH7q0n1xAQtohbNb541
-	 yaWHTcO+27V4rhkwxeYk0G7bxqtEYMBLOWJrE8mdv6AI3+OLVonfrm1o6wKbu9pnrL
-	 HcEIl3GRRspSfSXs6e/Jit+T1aK+lJEzluJGoByBtcHTBOmXU66X4Y9pXbea702b9H
-	 pVg+NT7OK6SeQ==
-Date: Thu, 7 Aug 2025 14:44:58 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
-	kishon@kernel.org, mani@kernel.org, conor+dt@kernel.org,
-	bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org,
-	dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org,
-	krzk+dt@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH V1 4/4] phy: qcom-qmp-ufs: read max-microamp values from
- device tree
-Message-ID: <acf89420-743b-4178-ac05-d4ca492bfee3@sirena.org.uk>
-References: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
- <20250806154340.20122-5-quic_nitirawa@quicinc.com>
- <f368b6da-1aa3-4b8e-9106-3c29d4ab5c5e@oss.qualcomm.com>
- <fe2bc07c-8fe9-47fd-bcd7-c2f0ebbd596f@sirena.org.uk>
- <aed1de56-fafe-4ccc-b542-69400b574def@oss.qualcomm.com>
+	id 1uk2UI-00000000zly-3oO8;
+	Thu, 07 Aug 2025 15:25:05 +0000
+Received: from laika.paulk.fr (12.234.24.109.rev.sfr.net [109.24.234.12])
+	by leonov.paulk.fr (Postfix) with ESMTPS id C8DA01F00055;
+	Thu,  7 Aug 2025 15:24:49 +0000 (UTC)
+Received: by laika.paulk.fr (Postfix, from userid 65534)
+	id EB05BB012C0; Thu,  7 Aug 2025 15:24:46 +0000 (UTC)
+Received: from shepard (unknown [192.168.1.1])
+	by laika.paulk.fr (Postfix) with ESMTPSA id 92918B012AF;
+	Thu,  7 Aug 2025 15:24:44 +0000 (UTC)
+Date: Thu, 7 Aug 2025 17:24:41 +0200
+From: Paul Kocialkowski <paulk@sys-base.io>
+To: Parthiban Nallathambi <parthiban@linumiz.com>
+Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 07/22] dt-bindings: vendor-prefixes: Shenzhen Baijie
+ Technology
+Message-ID: <aJTFOV_MK4GftLWu@shepard>
+References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
+ <20241227-a133-display-support-v1-7-13b52f71fb14@linumiz.com>
 MIME-Version: 1.0
-In-Reply-To: <aed1de56-fafe-4ccc-b542-69400b574def@oss.qualcomm.com>
-X-Cookie: Real Users hate Real Programmers.
+In-Reply-To: <20241227-a133-display-support-v1-7-13b52f71fb14@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250807_064506_798641_2AA73A04 
-X-CRM114-Status: GOOD (  28.12  )
+X-CRM114-CacheID: sfid-20250807_082503_260115_9AE40AB6 
+X-CRM114-Status: GOOD (  17.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,93 +78,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5236726707941292164=="
+Content-Type: multipart/mixed; boundary="===============7713737313304085843=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5236726707941292164==
+--===============7713737313304085843==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="LPspi1OYnjr8G9Mq"
+	protocol="application/pgp-signature"; boundary="ho7mfi0SoROEEEAS"
 Content-Disposition: inline
 
 
---LPspi1OYnjr8G9Mq
-Content-Type: text/plain; charset=us-ascii
+--ho7mfi0SoROEEEAS
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Aug 07, 2025 at 03:06:01PM +0200, Konrad Dybcio wrote:
-> On 8/6/25 6:51 PM, Mark Brown wrote:
+Hi,
 
-> > I'm not clear why the driver is trying to do this at all, the driver is
-> > AFAICT making no other effort to manage the load at all.  We already
-> > impose any constraints that are defined for a regulator while initially
-> > parsing them so it's not clear to me what this is supposed to
-> > accomplish, and it'll be broken if the supply is ever shared since it'll
-> > set the load from this individual consumer to the maximum that's
-> > permitted for the regulator as a whole.
+On Fri 27 Dec 24, 16:37, Parthiban Nallathambi wrote:
+> Add entry for Shenzhen Baijie Technology (https://szbaijie.com)
+>=20
+> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> ---
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Doc=
+umentation/devicetree/bindings/vendor-prefixes.yaml
+> index da01616802c7..81cbc8b6b195 100644
+> --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
+> +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+> @@ -1466,6 +1466,8 @@ patternProperties:
+>    "^synopsys,.*":
+>      description: Synopsys, Inc. (deprecated, use snps)
+>      deprecated: true
+> +  "^szbaijie,.*":
 
-> Qualcomm regulators feature a low- and a high-power mode. As one may
-> imagine, low- is preferred, and high- needs to be engaged if we go
-> over a current threshold.
+It's quite common for Chinese companies to have their main location as a pr=
+efix
+in their name, for example Rockchip's full name is Fuzhou Rockchip Electron=
+ics
+Co., Ltd.
 
-Sure, but the driver is like I say doing nothing to actively manage the
-current reporting.  It's just pulling a random number not specific to
-the device (the max-microamp configuration is part of the constraints
-which apply to the regualtor as a whole) out of the DT and throwing it
-at the framework.
+Since the company here calls itself "Baijie Technology" I think the "sz" pa=
+rt
+should be dropped from the vendor prefix and just be "baijie,.*".
 
-> The specific regulator instances in question are often shared between
-> a couple PHYs (UFS, PCIe, USB..) and we need to convey to the
-> framework how much each consumer requires (and consumers can of course
-> go on/off at runtime). The current value varies between platforms, so
-> we want to read from DT.
+All the best,
 
-In that case this will definitely encounter the bug I mentioned above
-where it's trying to read the maximum load permitted for the regulator
-as a whole and report it as the load from this one specific device.
+Paul
 
-> The intended use is to set the load requirement and then only en/disable
-> the consumer, so that the current load is updated in core (like in the
-> kerneldoc of _regulator_handle_consumer_enable())
+> +    description: Shenzhen Baijie Technology Co., Ltd.
+>    "^tbs,.*":
+>      description: TBS Technologies
+>    "^tbs-biometrics,.*":
+>=20
+> --=20
+> 2.39.5
+>=20
+>=20
 
-> My question was about moving the custom parsing of
-> $supplyname-max-micromap introduced in this patch into the regulator
-> core, as this seems like a rather common problem.
+--=20
+Paul Kocialkowski,
 
-Wait, is this supposed to be some new property that you want to
-standardise?  I didn't see a proposal for that, it's not something that
-currently exists - the only standard properties that currently exist are
-for the regulator as a whole. =20
+Independent contractor - sys-base - https://www.sys-base.io/
+Free software developer - https://www.paulk.fr/
 
-I'm not super convinced this is a particularly common issue, most
-devices perform pretty much the same regardless of the board design so
-the driver should just know their peak consumption and it's becoming
-less and less common for regulators to need software help to adapt to
-loads.  The main use case these days seems to be for safety (eg,
-constraining how much can be drawn via a USB port) which seems like it'd
-either be for the full supply or just known by the driver.
+Expert in multimedia, graphics and embedded hardware support with Linux.
 
---LPspi1OYnjr8G9Mq
-Content-Type: application/pgp-signature; name="signature.asc"
+--ho7mfi0SoROEEEAS
+Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmiUrdkACgkQJNaLcl1U
-h9BNGQf9GbS9mdCYh2Eh2IQodPUt5Q9D+YNr3KqV5S+1Vv5ylf9uh1NDYdTgwCFA
-uxhVIvleyp9Sg69zLOYlacB6se0YXE2MrzdnhTpdlYogxM87SFY0uCFvkRsuVkd6
-a6QQknpbzpWXqtXh6XXLuUmlzVY8v5OaddoCOAFRtwjP8jWGmOWg899ZfkBpUA4I
-rZEIpyHyKXLwHH80d/vc/zZAhJOkG0L5kJwNPRXoV3eHpaj7rxbhNVa63qvioxlY
-ilgx7wgo32i/BHUxyRCkrDMYX+Zyb16wygKoIDmgGQiz2sCLj1Icyt4UOGwUApXa
-fmo0UcAZqA5z+vjYxBU2gvvqE/VFyQ==
-=CqME
+iQIzBAEBCgAdFiEEAbcMXZQMtj1fphLChP3B6o/ulQwFAmiUxTkACgkQhP3B6o/u
+lQwopA/+OeQYWbpgzDlU7JSXZXYWbcSY72g6g2qNUV8nGT5ut5lkOdPpDbag40ll
+kW45uiqEwvjAqNjfNv2jP1oIIZJ/OzRfJ+5rFc0e5iskSa4bd8NOv8AHZMF0ibL6
+Qc9N+qH1HdFiL/7e0btMZKjWTPTyoBqSLN2oJbEPrI14E/YyOpnmi0FQwP9tSBvD
+GJHPXfijHfK/JJnlIV70cJSUugUvmcLzpy3JxoiuW8PModhutaIYXdZiyDsqWxBK
+d+kxznL9QDfnY1qtQkse38eigagjwswfQXmSjTAXXNTFl+sQXFsKoxDZ21HBgd7X
+3rwxa/hqesqIe6EPAs5xDQi6F2BOBa+ZLzLnjqmlj5FEZttLx/c8IePLqPHlKcg2
+ycEsXE4XE0hpqs676aUwb/xVjVXbchBriZYX9ftKokBhRw/8AkRAUE6O4RNS4sGR
+X+rhGpoaFKBiI2kcu1aF7cAjv6BhYfOhs9d6wFVfF0dDVsC2Cf+9pBMysCc0zSXX
+/OLwkZj3sucRQHpNV5ZVsSQqR/ZUlae8K4INMLaMZFt97nW4EyCaHdmHlHrM7A7D
+dp3NaIPkts0QyUswwDFY0Ahn/dqLKRxCVlUBix05YuGy0gbfigILHXxcERddkoyq
+SG3VlZcyst6/ryITN66ZxWnPBrhxVFGN1NheSCPPe6E93GYPfuc=
+=jRKT
 -----END PGP SIGNATURE-----
 
---LPspi1OYnjr8G9Mq--
+--ho7mfi0SoROEEEAS--
 
 
---===============5236726707941292164==
+--===============7713737313304085843==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,5 +181,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5236726707941292164==--
+--===============7713737313304085843==--
 
