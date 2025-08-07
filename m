@@ -4,82 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CD42C87FCA
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Aug 2025 15:59:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1FDEC87FCF
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Aug 2025 16:33:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+uHW2AkWHl4AHrZhXEd6DuUIsnSIekKGBMYY256R/Kc=; b=ZWrz9dj/2v7dn+
-	BFkaUt7MXS1ViZlwqF3C21MWOKVFzoK0TZHcuQ9B8Sl3cawO/Z01Pad7Z8ExK1iSMKF6bVn2fU/y1
-	bR2DXiJ0FY0lE8BYgC6tJZxwRdGaFtVvFh+nCREv6L8hIVLFcuQRAkm6cW5UmHRpNxlEczRe9nqJT
-	4Pzk0Z163204kS/7bdSmVuU1FhXbzA0yFn1DLeC2iqvjd32ZgPJofKaBmC+u0+Y7fCwor+CwdNjz0
-	1UAFSU+2IXYkcHXKHqlEqPkgTLq/uHYEP+qH2wOPOXIwmI+9wF1slRj84yzV5IPh7SLpLHBHOYdxB
-	ToSljl4NkVZNBDh3IetQ==;
+	List-Owner; bh=QNtiJnMyIATOZHaZhIigoAqoNjX1iqxorBUA4Jc/GMg=; b=UuKHPn3GDowzav
+	0obKeudAEjGumTq73Avs0YHDgw1QdL9k2nVeioTwWfJnXSuaFX18prEwDrxtHi/A6wGUNCnWkhPPg
+	kZs618/DjcgPTBwC/RmLkjRuPOW/A0eWjFOk3SYci7fp7y4RnEmEDsmUJZHGsCEkF12WYF+GoBsPG
+	GOOTCHFM21ed1v7Q+xlPQpt/pRLrHCpIgS+jNFwuSGJH9TzSjEkloZEW83GVle4iyARI+C4G4oxB5
+	I33jCRSz7tA/vnIjRupVXZQaEVYYbPpMYLG2lt21Rn9CUfVWJpUxBqHCIzRMSLMNTEKwcza/vRsv7
+	X/+f0eQvN1w4sxiuuaCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk31L-000000013wT-0rPK;
-	Thu, 07 Aug 2025 15:59:11 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1uk3YX-000000019tQ-1Zww;
+	Thu, 07 Aug 2025 16:33:29 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk2zq-000000013mH-2QMJ
+	id 1uk3YW-000000019sz-3Fjk
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Aug 2025 15:57:39 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3b792b0b829so963968f8f.3
-        for <linux-phy@lists.infradead.org>; Thu, 07 Aug 2025 08:57:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1754582257; x=1755187057; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=YDm7xuzZ3WZp2L951p3V77ZXofZpPOxg0/UTfDzrt5o=;
-        b=V7jVSld6krwtYT9iC/H5cXW+zjwoaCCMM5NnxxYKFFas3YpLA/IsdUwqvPGEWSiYnL
-         PzWeQCIsxnIT95iE2sYjMZFgAg+KtPnWQ3nj+q3OQQTtBRxH5FBzt+kY4N0KI4bmu0b1
-         Y73/HQNYt1foHmB+40YH15VY7c3cj+5sfrA2dDWbyvK0t/HAsyWrKZSSjcRo4yFD+Gc7
-         AsxcEaGbcoQeloRyy4sqagGQfcTA5GcT+3zoDj9mVj22rE0jJEh3hRI3+qq53lOwXZOo
-         tiCCOx7braltrFKTcAQ4j0fKGbANjLXc9G7wh0JsjNwScsQxm8GKucf7OoZnyuwen7kk
-         MwLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754582257; x=1755187057;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=YDm7xuzZ3WZp2L951p3V77ZXofZpPOxg0/UTfDzrt5o=;
-        b=Cw+yzOSBXIWvZ7Q+0l72WH6qwuof+gBt0HFaEnO+CmvO5Bd9mFKLDlOnU6EDXoAz1s
-         sBUGFXPd7hkbCagpWNbdDNEvkErN4cw3otWvQ6liOjM7COPn+nKgvU6JrHH5c70o6/w+
-         CVddrDqdL6OKC44t4HPh/XipRhR5FPMgRUkvthjaAe0JJyXJbVc/ieEUQZMX4ATMGLXy
-         pJ5YYc/P1TSIPIYejtMScSDS7eMyUjx8xEgg75JrCMx5k+PhULM2Zi7ZscoTkOcVGEOT
-         j/QBwG25F6X/t1drcN6A8YDKdg6t5IISdIUw9QRgS80icT34kJy0KehiFEqF1EQGcrDj
-         z3xA==
-X-Gm-Message-State: AOJu0YyAfmKvcPYG/LHDVwmpr5XfT0z7Mq0ka8vLCE8YibqES5tNpuGF
-	swPmbGGoatO8r3HPrxYQx13Eeskka1iuzoctKHB1c8/Xn3DOmU9+XlwOAm2XHim66EdTmFnkF8m
-	FKqoC
-X-Gm-Gg: ASbGnct6m1rqnSrz0Yj6TeCfzDuJsvTP2Fb05sI6KjndQ74iUItCgOVW+W4DgXHPMUv
-	caPEJwkuQ/vOeObTA2ZB4gjSRm2JbxxPV88U3ZhFttPv963Vc8FZ+QGfq1i3NvitKGvINHtZ47I
-	SUnYBL0bwjzybWu+LTrQWUWH2e5i0VO9WObKDEnap8mlmR0imZTKlrdSRYxDDqpMqTmElo0sHck
-	7nwhfaZO6CZYSLim5c1w1eo7Lpqn0rgulE6UclALMMyRYvrL0PxPrTOqTRVUf1ywUBujy+/xcRG
-	7EztiVk4irpe1wKEsQyZpzAB8Ow9tNf5SFL5otpXIw6kErwVp0+v/T2D6fsVu2ZVRwiRDt2S5AN
-	xqLHFa24aJg0LB/Xz9bOjYuDToB8=
-X-Google-Smtp-Source: AGHT+IGGmIep/WNOn8LW1LvCG7k8OybAdQVUUYFpu7r+RJ5bwDlSAJYYfM3DwIHfura7dsAo7NSisg==
-X-Received: by 2002:a05:6000:210e:b0:3b7:825e:2d28 with SMTP id ffacd0b85a97d-3b8f48cd052mr5287825f8f.9.1754582256890;
-        Thu, 07 Aug 2025 08:57:36 -0700 (PDT)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3b79c469319sm26699851f8f.54.2025.08.07.08.57.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 07 Aug 2025 08:57:35 -0700 (PDT)
-Date: Thu, 7 Aug 2025 18:57:32 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: Vincent Shih <vincent.sunplus@gmail.com>,
-	Srinivas Kandagatla <srini@kernel.org>
-Cc: linux-phy@lists.infradead.org
-Subject: [bug report] phy: usb: Add USB2.0 phy driver for Sunplus SP7021
-Message-ID: <aJTM7MTRPQunUvzt@stanley.mountain>
+	Thu, 07 Aug 2025 16:33:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id E7428600AA;
+	Thu,  7 Aug 2025 16:33:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D9ABC4CEEB;
+	Thu,  7 Aug 2025 16:33:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754584407;
+	bh=ntY80xGs44MCWDEx+rS2FTKDH2ewj/KkXkqdRUEQtzA=;
+	h=From:Subject:Date:To:Cc:From;
+	b=pcsVTv95AOk4GT3TZuN4VwAiJqk79yawyISf+hInmdCSlZHO5/sKwxv78Xz8bQ2QT
+	 evUt12uO/XPjIO/NGeA3xFrwP6Ut+GB4PL7Gg++cAfozdY+2MTrm1ZPGD3jgvsilR8
+	 r6P8KpKWB+edaYXIuOuvKgdP6mczOmeP0/fFw+niCjPfw8XviQ+vTVAi3kX5FTaZ70
+	 WMyPDaBryo/Nc+xBIKY039ZKwzsxbRaoBbTp8bcV2IBL/qlPtc6QoGiGgMVrFyWdeq
+	 cZkg1/1p+jqkiMpJCFrB/JsELnTrTo+eftqONC0OxiuoOOn1mOnGMhZFOBxkmorpJO
+	 8Db5yFy9/aiTw==
+From: Konrad Dybcio <konradybcio@kernel.org>
+Subject: [PATCH v4 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+Date: Thu, 07 Aug 2025 18:33:18 +0200
+Message-Id: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250807_085738_620720_053452BD 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-B4-Tracking: v=1; b=H4sIAE7VlGgC/32NXQqDMBCEryL73EhI/O1T71FEQlzrgiZp1kqLe
+ PemHqAvA9/AfLMDYyRkuGY7RNyIybsExSUDOxn3QEFDYlBSlbJUtVh9ICuK2fVD6CNyICds1ar
+ CNI0qLUJahogjvU/rvUs8Ea8+fs6TTf/a/75NCynG1si60mhV0948c/58mdn6ZclTQHccxxdnu
+ 9LGvQAAAA==
+X-Change-ID: 20250527-topic-4ln_dp_respin-c6924a8825ce
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Dmitry Baryshkov <lumag@kernel.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1754584403; l=3376;
+ i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
+ bh=ntY80xGs44MCWDEx+rS2FTKDH2ewj/KkXkqdRUEQtzA=;
+ b=4Mu66jGvNs15b1lFXrxpIhZlawB5x17VH9OKrXMcilTSwqjhazeYSPsduJrAIASFh8lZZltay
+ RU2DVsVtXF6DNT4J5qp1XgIgxhYsY+axrqiauvthRbjKrpU0zM5hHIR
+X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
+ pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,73 +90,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Vincent Shih,
+Register a typec mux in order to change the PHY mode on the Type-C
+mux events depending on the mode and the svid when in Altmode setup.
 
-Commit 99d9ccd97385 ("phy: usb: Add USB2.0 phy driver for Sunplus
-SP7021") from Jul 25, 2022 (linux-next), leads to the following
-Smatch static checker warning:
+The DisplayPort phy should be left enabled if is still powered on
+by the DRM DisplayPort controller, so bail out until the DisplayPort
+PHY is not powered off.
 
-	drivers/phy/sunplus/phy-sunplus-usb2.c:92 update_disc_vol()
-	error: 'cell' dereferencing possible ERR_PTR()
+The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+will be set in between of USB-Only, Combo and DisplayPort Only so
+this will leave enough time to the DRM DisplayPort controller to
+turn of the DisplayPort PHY.
 
-drivers/phy/sunplus/phy-sunplus-usb2.c
-    78 static int update_disc_vol(struct sp_usbphy *usbphy)
-    79 {
-    80         struct nvmem_cell *cell;
-    81         char *disc_name = "disc_vol";
-    82         ssize_t otp_l = 0;
-    83         char *otp_v;
-    84         u32 val, set;
-    85 
-    86         cell = nvmem_cell_get(usbphy->dev, disc_name);
-    87         if (IS_ERR_OR_NULL(cell)) {
-    88                 if (PTR_ERR(cell) == -EPROBE_DEFER)
-    89                         return -EPROBE_DEFER;
+The patchset also includes bindings changes and DT changes.
 
-I don't love the if if (IS_ERR_OR_NULL(cell)) check.  The
-nvmem_cell_get() function can't actually return NULL.  The normal thing
-would be to make it return NULL if CONFIG_NVMEM wasn't set.  Even then
-we would still only check for:
+This has been successfully tested on an SM8550 board, but the
+Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+PD USB Hubs and PD Altmode Dongles to make sure the switch works
+as expected.
 
-	if (IS_ERR(cell))
-		return PTR_ERR(cell);
+The DisplayPort 4 lanes setup can be check with:
+$ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+	name = msm_dp
+	drm_dp_link
+		rate = 540000
+		num_lanes = 4
+...
 
-I have written a longer explanation here:
-https://staticthinking.wordpress.com/2022/08/01/mixing-error-pointers-and-null/
+This patchset depends on [1] to allow broadcasting the type-c mode
+to the PHY, otherwise the PHY will keep the combo state while the
+retimer would setup the 4 lanes in DP mode.
 
-Can PHY_SUNPLUS_USB really work without CONFIG_NVMEM?  If not then we
-could just add that as a depend in the Kconfig.  The other way to fix
-this would be:
+[1] https://lore.kernel.org/all/20240527-topic-sm8x50-upstream-retimer-broadcast-mode-v1-0-79ec91381aba@linaro.org/
 
-	if (IS_ERR(cell) && PTR_ERR(cell) != -EOPNOTSUPP)
-		return PTR_ERR(cell);
+Changes in v4:
+- Default to USB3_ONLY if there's no DP SVID (Dmitry)
+- Pick up tags, dropped T-bys due to the above change
+- Add missing submitter's sign-off on some patches
+- The odd 4-lane-DP + USB2 case remains unhandled for now, but it's
+  not a huge deal, see:
+  <c2f2ba36-1a25-450e-99b9-79aa4fd4913d@linaro.org>
+- Link to v3: https://lore.kernel.org/r/20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com
+Changes in v3:
+- Take the series from Neil
+- Rebase
+- Rename many variables
+- Test on X1E & X13s
+- Apply a number of small cosmetic/codestyle changes
+- Remove some unused variables
+- Some smaller bugfixes
+- Link to v2: https://lore.kernel.org/lkml/20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org/
+Changes in v2:
+- Reference usb-switch.yaml in bindings patch
+- Fix switch/case indenting
+- Check svid for USB_TYPEC_DP_SID
+- Fix X13s patch subject
+- Update SM8650 patch to enable 4 lanes on HDK aswell
+- Link to v1: https://lore.kernel.org/r/20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org
 
-    90         }
-    91 
---> 92         otp_v = nvmem_cell_read(cell, &otp_l);
-                                       ^^^^
-This will crash if the nvmem_cell_get() has an error.
+Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+---
+Konrad Dybcio (1):
+      phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
 
-    93         nvmem_cell_put(cell);
-    94 
-    95         if (!IS_ERR(otp_v)) {
-    96                 set = *(otp_v + 1);
-    97                 set = (set << (sizeof(char) * 8)) | *otp_v;
-    98                 set = (set >> usbphy->disc_vol_addr_off) & J_DISC;
-    99         }
-    100 
-    101         if (IS_ERR(otp_v) || set == 0)
-    102                 set = OTP_DISC_LEVEL_DEFAULT;
-    103 
-    104         val = readl(usbphy->phy_regs + CONFIG7);
-    105         val = (val & ~J_DISC) | set;
-    106         writel(val, usbphy->phy_regs + CONFIG7);
-    107 
-    108         return 0;
-    109 }
+Neil Armstrong (5):
+      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch
+      phy: qcom: qmp-combo: store DP phy power state
+      phy: qcom: qmp-combo: introduce QMPPHY_MODE
+      phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE
+      arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set up 4-lane DP
 
-regards,
-dan carpenter
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   7 +-
+ .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 179 +++++++++++++++++++--
+ 3 files changed, 170 insertions(+), 22 deletions(-)
+---
+base-commit: 442d93313caebc8ccd6d53f4572c50732a95bc48
+change-id: 20250527-topic-4ln_dp_respin-c6924a8825ce
+
+Best regards,
+-- 
+Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
