@@ -4,123 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AF33C87FD2
-	for <linux-phy@archiver.kernel.org>; Fri,  8 Aug 2025 08:58:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 969CFC87FD2
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Aug 2025 09:29:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cCXGqn1VL+TSYxjoTUiquoG/qVq9yMqkgwTdie7VbQ0=; b=psjb5KuZNIkwus
-	EMYJmxFxFHvlWXvBLGilTVYVvjSDPMKilQiwpxM6ZVpa+Mz3NMrA85WQO1q7UYbfhb4PTa0hWXsQP
-	FWVpVtPxIfEy3gcYMS+ufC9SBXm7ZGN2y531mvd0bg5AGTmT7pFnFDWUuvbj5Ndbo48DAIVnls1gb
-	ospI2WIFgOQW5YH2tPu4obk4VSU1HXKAxN1LOyV1glqyF3GsSpYcipgle1dyxKekJDGXyCSerApC1
-	yOCpb/FlPAUEzxLZyLEU55yPN63jj+XRYaUEQhK1L+7tHrR5747PYcGQthUq/C8ssJykgAdzmWoZA
-	EBHjgOh0HFZG1fj6JUOQ==;
+	List-Owner; bh=hpvO7cY4rYrfKEO8rcdS6CxFBjW0TTHDOnK3Ifd7KlA=; b=B2aXuWMU4VPNs7
+	HKWbIw86ipEkCrUUKaRQeYujZijSYMt9fyDSLECvmI9M7RFW4OlLXnO1seGWfLplcW57kYxKylzab
+	EGr/jLLJ7zUu7QEIx+DbLlkuzX+wJ/+4SvKdhYCL8+86D+m8pkehfjZrHV2E/YRezw2DmdOFFVpDc
+	Nje9QMAOK8vkgdq4IwLi/+se+0kinAUZrl43ge7NA/O37Ju6uLtEGBtdde+7QmmcwxTli6U0RkuX2
+	1S2lGKfEl7eVuOibzifQ0zieFiX+6+Jg7h21twhe/UO97lCHcKLaP3xcdGN2QWfTjJnAuXcBlyVJS
+	coGDL157i6fPKO8ESdjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukIvk-00000002PVc-0v2H;
-	Fri, 08 Aug 2025 08:58:28 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ukJPe-00000002SGU-118n;
+	Fri, 08 Aug 2025 09:29:22 +0000
+Received: from mail-vk1-f179.google.com ([209.85.221.179])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukIvh-00000002PUy-3ndE
+	id 1ukJPb-00000002SG6-1M7Q
 	for linux-phy@lists.infradead.org;
-	Fri, 08 Aug 2025 08:58:27 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5787EUo3008004
-	for <linux-phy@lists.infradead.org>; Fri, 8 Aug 2025 08:58:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	R6Q9n1VBcmPjQskeZ/W9TfLHZuyYCWbxE9Bhoq5xM3o=; b=Tej4IWsX+JmGeVih
-	QSTcVIuaVYUBxkH2Im54AmnuSffT3Spd1cVyUYPXW8bkSPidIuSLIGmbl0kGo2vz
-	k7soJ6D99KF8nTutfdtUlYm75nq8UFgTkWohLTcaNCLAlll2DDDWrOLmlSZDmwrv
-	ka6YRXkaylQzKU7E4/W3s9GYhOKZ6r45OFhKMgGSJv7mKy50uTpJk3QqPB1Br70m
-	xFqMc+l9ddQW9j0Qb0AuqHqyBmx+AVyjsyDBe4E+a90Gb6qLOZTNEC9OlsjzJ4aB
-	aaaT+xbR7fff7DjR17v6OOexpWHE4KE0HiW4BzLu4HePwZfh+bgjw7IoyHUGSETY
-	sW/bbA==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpy71cnf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 08 Aug 2025 08:58:25 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7e802190d0dso68351785a.2
-        for <linux-phy@lists.infradead.org>; Fri, 08 Aug 2025 01:58:25 -0700 (PDT)
+	Fri, 08 Aug 2025 09:29:20 +0000
+Received: by mail-vk1-f179.google.com with SMTP id 71dfb90a1353d-5393cfc2e77so1249463e0c.3
+        for <linux-phy@lists.infradead.org>; Fri, 08 Aug 2025 02:29:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754643504; x=1755248304;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=R6Q9n1VBcmPjQskeZ/W9TfLHZuyYCWbxE9Bhoq5xM3o=;
-        b=mikDXu5GKfiqFqdOYC8zCV25VXw+x5LhpBKPDfdSIfom4C6kGBWBK+dThLvKx3YBpg
-         4v+QMC5Aq9YWh68pArfhyvykNSfoJ//dlusVzOgDEvN9DHHM/mthPkBRwaedSE0b/ckL
-         J45irAu5PqceVea35GiXqehb4jz9QPxxamQS/0f25CIpONRM2xMe97GCMtQvV4I7naoQ
-         jJsC6RlPlzSgcZ5ODNM817WXLBGArcrTqWb3srNCSF3vE7xjP/UVXx7Pm1ukYkk8ktig
-         9qh3BRrmzMY5DM9w/eUtlJ+1pV0EPoqkl5Ny5fokwUBSnHc+2KNUFGchVkvbqFIxnzZ9
-         gikg==
-X-Forwarded-Encrypted: i=1; AJvYcCXNJo0Qx6+w1R3m7tW6kun1vDoyZnC/BSDr+ZZR7/MDApX5YVMwaD3c2toGVOxU/IchWLK9O/O0niQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyE5a2SgTlUF0zZ3qj1jcQQQzGUFsT9TT1TlAUtRkeHygNToAIA
-	ppW0PK7+wvkYj3zYFRJBHskzrn2FuEYmUi1L7rTuxRKHxmk08KWTOSYIUSzf3jWv+s3eQAHPwRI
-	0QEHymdpI55pCwlJgdCqOrOLG15Yz2GpgMGqkjUHOMnHZfkq6lajfP4PpWb1kkM9qlle+
-X-Gm-Gg: ASbGncsOun3OcIep4jHlBNdNzCXwZ0SL2EslvqvIDFWpdgzfVetpx/RHyNSxZSuwu70
-	HziFSCis5jnf7v9evK3JRYZ4aoeEDChjk2nO0oPA6S5++FPH9LxH8LHkU6/M6zIkojq/DKMQ7t3
-	P3/5BerpWj8JpjWkJ1WYVzwx69IcYmaN01A7tqAD9zrHgqUja9H1CZ3d2Ap1y3VtGKHqZkHE5rg
-	vY+7wRySh9uSdOxdFW4MWr40QhDYSfkdrdd0urPHPnq4KycfhB31A8CYis3NfH3u9k7PyO+KKhL
-	haCSfiSTmuG+ibVIDKXABz+W/HTz5E82Gsw/Jz5s6fYxX9jdQc1PXp3g8TPKkR5eKJNILuoZ2t/
-	qd/NSnjDMF+LsZIg5hg==
-X-Received: by 2002:ac8:7e94:0:b0:4ab:67a3:ec09 with SMTP id d75a77b69052e-4b0aed20c07mr17186201cf.6.1754643503763;
-        Fri, 08 Aug 2025 01:58:23 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEh16OD+ZoyT6jx0iozIhaDryFGFQR4TtUyX+fYll//iyn3c+QGTMne8GP/ly3AC+UnMV9iww==
-X-Received: by 2002:ac8:7e94:0:b0:4ab:67a3:ec09 with SMTP id d75a77b69052e-4b0aed20c07mr17186061cf.6.1754643503317;
-        Fri, 08 Aug 2025 01:58:23 -0700 (PDT)
-Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a0a1bf9sm1460998466b.31.2025.08.08.01.58.21
+        d=1e100.net; s=20230601; t=1754645358; x=1755250158;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ONUQQjbxoiIGrp2xGll/nfaLwIlt2Mqw8O1vqEtflFg=;
+        b=GRAYvfxqAXbakWy1gywg3vnkBQkdQKiN1yQ2YvB/0EQ6no1kA9owSz7mvauw3ZvIj4
+         S76Bt/vjVdvinSaWtFImh9su7s9nfLgbgCgmycqpWQIqh99CxGzxNUfl9Sb3ZbLbzAy/
+         ZMCbqa/1xb3TfLsP9nhFBtP43HpGh/5n7mwGZ/14fAlQf9QvooJO2WUQOGdiGnGVdZAX
+         CCeINT9Jyv1qxqJcMmxGSWLtjET+2abKF94tVMwN5ekjT80XenTQGupYcWvKKyyF5a/M
+         bgfO3c1KAKR1+jNmmVloSKFq9MCIrlQrSp804G5iU3zrUpzFFbj8QRQkTwTbEQIW8mY4
+         xw3g==
+X-Forwarded-Encrypted: i=1; AJvYcCUD4HLj5W4g0IucCkpz8+QeOv9SjwSMbOlfHjEYgboV+UWZYyrT5KCPoJfvKSVcpfQ6SzYwW+78+No=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxHWO/I+JCv2FSFjnoTTM4ne3qlIhP9/Hmz5hPyPOSDU3qI5mzk
+	+BGiN1WVxwjgAINDTvaFJxLDTRn/qXsLq087ZSonTq4R8o1hsNlkANmqD9FzTYHh
+X-Gm-Gg: ASbGncvKvQwPMLR2IyGoMgKCJWlT1Lm3ic5Pu1gPgvOdD6k/Ds+y1kybgKHN6EM/RiX
+	1WojTXBbgwHe+hT5KQVoajxRFUJ3zQMXdqWrE2h9zpYrZS4JMyucE8tm9i0l0QKhQdhwtfnswke
+	d/EbATbvbfhqbv5OIcHuXkwlcvnVxRYSNweLKIGDp9KTthUQilapDTlFc2p1eQIri1MfSIQKvot
+	uDchf9MqPEfMyJCoUllIYVbvWeu8hYjzlC7N85ZTRJFkS3UeN0DRDEXfVwsjnCYts8onDT+g/ll
+	1laNXUISRsIP4lc1JNfNw9FHPnELkTfrxZVC7bhp+u1RsCVv/i8EGFSjSD85K5WpCtJq5xwyKI3
+	VZavkVsiZ+GIZ1rbaQaOl+/CqV0CAuGKA9YpinW45TZU+G4GSF+ugtZbaksr8T/BU
+X-Google-Smtp-Source: AGHT+IEK65Z+wZJ/0PI3Kme7kRjnN5jVxnfDhTljMtTJOom41Abr5PkDU8uiVRGjk5Kta+6QeCslcg==
+X-Received: by 2002:a05:6122:1804:b0:537:b126:bf07 with SMTP id 71dfb90a1353d-53a52d71f20mr785167e0c.1.1754645357896;
+        Fri, 08 Aug 2025 02:29:17 -0700 (PDT)
+Received: from mail-vk1-f171.google.com (mail-vk1-f171.google.com. [209.85.221.171])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-539b02a39f5sm955068e0c.27.2025.08.08.02.29.17
+        for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 08 Aug 2025 01:58:22 -0700 (PDT)
-Message-ID: <9af71063-0629-4ccc-bc76-3fb588677bf4@oss.qualcomm.com>
-Date: Fri, 8 Aug 2025 10:58:20 +0200
+        Fri, 08 Aug 2025 02:29:17 -0700 (PDT)
+Received: by mail-vk1-f171.google.com with SMTP id 71dfb90a1353d-5392ba07940so1335246e0c.2
+        for <linux-phy@lists.infradead.org>; Fri, 08 Aug 2025 02:29:17 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCWueeJ6WZ/fzVYBctEVvj4lD20KDBlS0lHxpubq+cy/64aj9xHB7Ghjjc3APly17H0JrUIaV7V3yxs=@lists.infradead.org
+X-Received: by 2002:a05:6122:8285:b0:535:e35d:49f4 with SMTP id
+ 71dfb90a1353d-53a52f1316bmr853973e0c.11.1754645357385; Fri, 08 Aug 2025
+ 02:29:17 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V1 2/4] arm64: dts: qcom: sm8750: add max-microamp for UFS
- PHY and PLL supplies
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org, conor+dt@kernel.org,
-        bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org,
-        dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org,
-        krzk+dt@kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        devicetree@vger.kernel.org
-References: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
- <20250806154340.20122-3-quic_nitirawa@quicinc.com>
- <20250808-calm-boa-of-swiftness-a4a7ce@kuoka>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250808-calm-boa-of-swiftness-a4a7ce@kuoka>
-X-Proofpoint-ORIG-GUID: YVCaPyBSxi0NCY94OnLP9bTiFwt_RIv3
-X-Proofpoint-GUID: YVCaPyBSxi0NCY94OnLP9bTiFwt_RIv3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOSBTYWx0ZWRfX5UkGNBXvXknn
- R/ZDKrlbqsp+lNbPoViXCOhcSC+VoIyl/j6H8VcnW5oxgUr2x+oZxEcg3AJOwcqfUaYeHrjUUX0
- wIe33Gh1iiANy7BsE0t2zGTLKNjXHPyW75iWQC5Ai2MDAvny4JRvR39VSApqQ+TOpxxk6hTevUc
- pq9SLgQWUUeYJMx3dHqwDKbXHWXXwgVCEaqRTJ9K6sp/A3bWg61evMTBse/t6D9gEQO/woN2jj2
- tyNOF1OD7DgD2vt04fAKwvl0hCnix7386M7fM1dnT/etzV84TtCveninxSiomSea9vgojUSYmWw
- zwnchEo66RwiiJabZ0epsxUDoBpSTYXyC+KVcJRBlmsmBUmHu+mBJxvQqx9lcZnCiIGypq1gcm5
- ydQOKpER
-X-Authority-Analysis: v=2.4 cv=LNVmQIW9 c=1 sm=1 tr=0 ts=6895bc31 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=WmDcBHyyyws--uAXJ9AA:9
- a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-08_02,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 clxscore=1015 malwarescore=0 adultscore=0
- phishscore=0 priorityscore=1501 impostorscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508060009
+References: <20250808061806.2729274-1-claudiu.beznea.uj@bp.renesas.com> <20250808061806.2729274-2-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20250808061806.2729274-2-claudiu.beznea.uj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 8 Aug 2025 11:29:06 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdUsFFd+orb17oQqoEidzYWMRjPoqMyzpgrdnicc=MRSYQ@mail.gmail.com>
+X-Gm-Features: Ac12FXx8i1QT-zXz7J1iKPWv5wh3EdWdZPqRg8Ft3ReMHz9bkxHLJxwo8ny7LqM
+Message-ID: <CAMuHMdUsFFd+orb17oQqoEidzYWMRjPoqMyzpgrdnicc=MRSYQ@mail.gmail.com>
+Subject: Re: [PATCH v4 1/8] soc: renesas: rz-sysc: Add syscon/regmap support
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, magnus.damm@gmail.com, 
+	yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	John Madieu <john.madieu.xa@bp.renesas.com>, 
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250808_015825_952139_AAC10F84 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20250808_022919_360066_0B897E2C 
+X-CRM114-Status: GOOD (  29.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,36 +100,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/8/25 9:29 AM, Krzysztof Kozlowski wrote:
-> On Wed, Aug 06, 2025 at 09:13:38PM +0530, Nitin Rawat wrote:
->> Add `vdda-phy-max-microamp` and `vdda-pll-max-microamp` properties to
->> the UFS PHY node in the device tree.
->>
->> These properties define the maximum current (in microamps) expected
->> from the PHY and PLL regulators. This allows the PHY driver to
->> configure regulator load accurately and ensure proper regulator
->> mode based on load requirements.
-> 
-> That's not the property of phy, but regulator.
-> 
-> Also reasoning is here incomplete - you just post downstream code. :/
+Hi Claudiu,
 
-The reason for this change is good, but perhaps not explained clearly
+On Fri, 8 Aug 2025 at 08:18, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+> From: John Madieu <john.madieu.xa@bp.renesas.com>
+>
+> The RZ/G3E system controller has various registers that control or report
+> some properties specific to individual IPs. The regmap is registered as a
+> syscon device to allow these IP drivers to access the registers through the
+> regmap API.
+>
+> As other RZ SoCs might have custom read/write callbacks or max-offsets,
+> register a custom regmap configuration.
+>
+> Signed-off-by: John Madieu <john.madieu.xa@bp.renesas.com>
+> [claudiu.beznea:
+>  - do not check the match->data validity in rz_sysc_probe() as it is
+>    always valid
+>  - dinamically allocate regmap_cfg]
+> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> ---
+>
+> Changes in v4:
+> - adjusted the patch description by dropping "add" from
+>   "add register a custom regmap configuration"
+> - updated the list of changes from Claudiu Beznea
+> - dynamically allocate the regmap_config as proposed at [2]
+> - this patch is needed for proper function of USB (as proposed in this
+>   series) that being the reason it is introduced here, as well
+>
+> [2] https://lore.kernel.org/all/CAMuHMdVyf3Xtpw=LWHrnD2CVQX4xYm=FBHvY_dx9OesHDz5zNg@mail.gmail.com/
 
-All of these values refer to the maximum current draw that needs to be
-allocated on a shared voltage supply for this peripheral (because the
-supply's capabilities change depending on the maximum potential load
-at any given time, which the regulator driver must be aware of)
+Thanks for the update!
 
-This is a property of a regulator *consumer*, i.e. if we had a chain
-of LEDs hanging off of this supply, we'd need to specify NUM_LEDS * 
-MAX_CURR under the "led chain" device, to make sure that if the
-aggregated current requirements go over a certain threshold (which is
-unknown to Linux and hidden in RPMh fw), the regulator can be
-reconfigured to allow for a higher current draw (likely at some
-downgrade to efficiency)
+> --- a/drivers/soc/renesas/rz-sysc.c
+> +++ b/drivers/soc/renesas/rz-sysc.c
+=
+> @@ -117,7 +125,26 @@ static int rz_sysc_probe(struct platform_device *pdev)
+>                 return PTR_ERR(sysc->base);
+>
+>         sysc->dev = dev;
+> -       return rz_sysc_soc_init(sysc, match);
+> +       ret = rz_sysc_soc_init(sysc, match);
+> +       if (ret)
+> +               return ret;
+> +
+> +       regmap_cfg = devm_kzalloc(dev, sizeof(*regmap_cfg), GFP_KERNEL);
+> +       if (!regmap_cfg)
+> +               return -ENOMEM;
 
-Konrad
+Is there any specific reason you decided to allocate regmap_cfg
+separately, instead of embedding it into struct rz_sysc?
+
+The rest LGTM.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
