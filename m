@@ -4,111 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F14DC87FCF
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Aug 2025 20:45:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DFFAC87FCF
+	for <linux-phy@archiver.kernel.org>; Fri,  8 Aug 2025 02:49:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JQ5xLafroGIZoG5okJ3mMmpYi4WcaPWshUO/SggK39M=; b=lLUV9nxL3ETezl
-	rVWSI7TcfDtAFudUsBm1kC8Xw9j6ArOGxcNY6XqJfmSK9HVUU9ipQPHxzQdgIl+qTtMgg5iGqqVwT
-	s0F7/jTvnwHxK2xCOTIWTeb2SxuySri9fWfpoqUwl0ifdWKHoWWP9YmHGxz84hOXZlTMFNXKlJQBn
-	yhpcrXYKwx2E9HY6RcnhgyYPWj09jGMOMzd24q2fnnYGb2MLsqM3u13hp6ejPhynl4oTdo5vH+2og
-	lmxnZwpbA3GIWCkiU1ksDy2ZykfmNfr4toZqVNjBTeXigm3jlGO+PzLmFycgMhjrAQ4/E5+fhl1A/
-	oM16BIpoce/lZc/0v3Pw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YQCrsPo6kKEndOKpcDPI24RJabOHQQPSe5nEAXonF2Q=; b=UlM3sy+0Be/5/8Js1mguhm/BZO
+	NVjetbBlsTNlxwNGqzPKO72DxrFPISe2c2RjvAt+xMRFRBHPBKNbE+qfbRQEiyq/6riZ6h6jHIggq
+	/4TteKkEYOnev3Lg3PD+PavTInB/7kbkUqnwqQiYArtxPJTjIfT6gUwgLmtIGtv2OyzK9iy4CzWd1
+	RRsGAu4i2irFW9wGnlUhj8Xb7M8ocu+MVXEmGoBuxDmI0OJQOjhiyR1e72mklWj/Z4aB/X6vBs0P8
+	uKN5nY95WEc+6ah3f7g/XBsI3MKlaVqMDrNNsh4PKXeRZli0y/FpEUg9ZeVSQcxEt6094krib3hhv
+	7MD8CMsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk7Uo-00000001VvA-35ni;
-	Thu, 07 Aug 2025 20:45:54 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ukDAl-00000001scA-0FQU;
+	Fri, 08 Aug 2025 02:49:35 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uk7Ul-00000001Vuk-3wNK
+	id 1ukDAk-00000001sc3-1bC7
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Aug 2025 20:45:53 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 577EDJsh006876;
-	Thu, 7 Aug 2025 20:45:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1y/Zhzh0xKBSqXOG4QAbfLqjcK4EPmh64vtepr7nrYA=; b=Q7/iSzqFZKIwQQO4
-	nKWuJX+3HLVw2jPzx68MALM7KQLqfiVXFRVXqsn06KqDTOiYi9hRajeDt8jHnatH
-	nDmYKCRbO/aE1F1zd0+rJG2GaVgM4k0q4wzl85XDK5PVGRtBs/2wcVjZxC9w2kfY
-	kHZQ1fmxoK5jeArUJE0u5l4Va0QISM43uEr8POZwDV2Rv/abHjWCFaNs6Scsu+1r
-	nhFPX2vNcv7nY3Uno4IXzTQwyHmAayhTADhSEaeGdVUs5AURjf7CZZvj1CkNl4j9
-	EdJnq1XYCMcimVSGkqFQPnWB6NEYSB6pUkUAX/c7eXdqUPG8rFF3dczIXHWNc8dI
-	8HIGYw==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48bpybftpn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 07 Aug 2025 20:45:43 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 577KjgdM002043
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 7 Aug 2025 20:45:42 GMT
-Received: from [10.216.57.148] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 7 Aug
- 2025 13:45:36 -0700
-Message-ID: <52625e59-c7d0-45d1-8af3-d9958c5ef01a@quicinc.com>
-Date: Fri, 8 Aug 2025 02:15:31 +0530
+	Fri, 08 Aug 2025 02:49:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 88C70601E1;
+	Fri,  8 Aug 2025 02:49:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1519C4CEEB;
+	Fri,  8 Aug 2025 02:49:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754621372;
+	bh=10ULHA2ZfRJaxdS6yC3e5YO63AZx8LE/bdGck8qPwZg=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=lGstSPfme1V9e3EkSBzwcl4NR39OfGQzPXOI2ZUFSpCKsjfLcIxsic/T2AEK8zLvu
+	 tcL1hrKBi7gkiSPfJFzVr46w6SUa0rUsjxWYgM5hspsHPbMkwmaI6YWyLk/TNZefCr
+	 5LWKBldDeKvFMdy9hLvPowUCpT9NgqPgHBu99bwfQKg05ODR7wg44QpZwq/VXZYrLV
+	 E2B/FSspLaOEMxR6VZlewTs4+jE6Zbz1iZI5XCHn9akSfGktR7PRN65P7GjI+GYQfl
+	 N5vp39Fc9f/dLaW6nlTqez61jF/M3iV02I4Ja4YYB7us89XEjpCGDK1mo8DhLDfCZp
+	 TZ3KMwvG1yzVA==
+Date: Thu, 07 Aug 2025 21:49:30 -0500
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V1 4/4] phy: qcom-qmp-ufs: read max-microamp values from
- device tree
-To: Mark Brown <broonie@kernel.org>
-CC: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <mani@kernel.org>, <conor+dt@kernel.org>,
-        <bvanassche@acm.org>, <andersson@kernel.org>,
-        <neil.armstrong@linaro.org>, <dmitry.baryshkov@oss.qualcomm.com>,
-        <konradybcio@kernel.org>, <krzk+dt@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
-References: <20250806154340.20122-5-quic_nitirawa@quicinc.com>
- <f368b6da-1aa3-4b8e-9106-3c29d4ab5c5e@oss.qualcomm.com>
- <fe2bc07c-8fe9-47fd-bcd7-c2f0ebbd596f@sirena.org.uk>
- <aed1de56-fafe-4ccc-b542-69400b574def@oss.qualcomm.com>
- <acf89420-743b-4178-ac05-d4ca492bfee3@sirena.org.uk>
- <599b8a4b-324a-4543-ba27-0451f05c3dfd@quicinc.com>
- <3aa82f65-4812-4bf0-9323-96f40824a004@sirena.org.uk>
- <685e3d36-c0e3-4faa-b817-aecc15976a25@quicinc.com>
- <c1435858-6288-4525-8c92-e27ed86cb55e@sirena.org.uk>
- <31461227-3f3a-4316-9c8a-c851209d0278@quicinc.com>
- <4efc8a3a-ceb6-40dc-b877-328b86348e0b@sirena.org.uk>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <4efc8a3a-ceb6-40dc-b877-328b86348e0b@sirena.org.uk>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA2MDAwOSBTYWx0ZWRfX0Ab7AMZ7i3/E
- RXqQB/cLZsmAKhOBD4mDskR1A2Pko7dNEnXTmQeWpWfX/iQPwD9ethuJLj2FFiGEtkRlFx9QeA8
- EpMbJahXFfYRebhCpTNMTIFY/88T2LDSfRAxl7HcQXTIoCctERXZADYXJqSyW/AAz6wOraEv3Ok
- bdbWLkbJfmDYP9jSuteHLvblq+Y6HPBbUoMHs5ca0UpSpD9t8NL9pIufEPODQvDTOusKaa6Yk2J
- 8L3rj0Lm7XbsIsEh2kOnrF6KzHrV5r3jxTb7ab0PP5Ul6rniTFw3Yt89sp7LTMaeqkV3PH4JBXI
- JSbplRgV+5F1Um74adOhfMRILoWt7tdIGIj696jtl7ajhUusYoE3KUKCcHpwXLgj4zCl2lYr9us
- 4IY1le4k
-X-Proofpoint-GUID: R58dcDIoPMNJvs0kQ5NPhRSGdgCgz_16
-X-Authority-Analysis: v=2.4 cv=EavIQOmC c=1 sm=1 tr=0 ts=68951077 cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10
- a=qAuQnvhxRzsbetId1DgA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-ORIG-GUID: R58dcDIoPMNJvs0kQ5NPhRSGdgCgz_16
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-07_05,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 clxscore=1015 priorityscore=1501 adultscore=0 bulkscore=0
- phishscore=0 spamscore=0 suspectscore=0 malwarescore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508060009
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250807_134552_127618_E0A8A2E5 
-X-CRM114-Status: GOOD (  17.94  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ devicetree@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <lumag@kernel.org>, 
+ Marijn Suijten <marijn.suijten@somainline.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ linux-phy@lists.infradead.org, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-msm@vger.kernel.org
+To: Konrad Dybcio <konradybcio@kernel.org>
+In-Reply-To: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
+References: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
+Message-Id: <175462129176.394940.16810637795278334342.robh@kernel.org>
+Subject: Re: [PATCH v4 0/6] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,53 +74,332 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiA4LzgvMjAyNSAxMjoxNSBBTSwgTWFyayBCcm93biB3cm90ZToKPiBPbiBUaHUsIEF1ZyAw
-NywgMjAyNSBhdCAxMToyNjoxN1BNICswNTMwLCBOaXRpbiBSYXdhdCB3cm90ZToKPiAKPj4gMS4g
-UmVndWxhdG9yIGFuZCBQTUlDIGNvbmZpZ3VyYXRpb25zIGFyZSBib2FyZC1zcGVjaWZpYywgbWVh
-bmluZyB0aGV5IGNhbgo+PiB2YXJ5IHNpZ25pZmljYW50bHkgYWNyb3NzIGRpZmZlcmVudCBwbGF0
-Zm9ybXMuIEZvciBleGFtcGxlLCBzb21lIGJvYXJkcyBtYXkKPj4gdXNlIGRpZmZlcmVudCBnZW5l
-cmF0aW9ucyBvZiBVRlMgZGV2aWNlcyDigJQgc3VjaCBhcyBVRlMgMi54IOKAlCB3aGljaCBjb21l
-IHdpdGgKPj4gZGlzdGluY3QgcG93ZXIgYW5kIGxvYWQgcmVxdWlyZW1lbnRzIGFuZCBzb21lIHdp
-dGggVUZTMy54IHdoaWNoIGhhcyBpdCBvd24KPj4gcG93ZXIvbG9hZCByZXF1aXJlbWVudC4KPiAK
-PiBSZXF1aXJlbWVudHMgZnJvbSBnZW5lcmF0aW9ucyBvZiBVRlMgZGV2aWNlcyBwcmVzdW1hYmx5
-IGNvbWUgZnJvbSB0aGUKPiBVRlMgc3BlYyBhbmQgc2hvdWxkIGp1c3QgYmUga25vd24gdGhvdWdo
-Pwo+IAo+PiAyLiBVRlMgUEhZIGxvYWQgYW5kIFBNSUMgcmVxdWlyZW1lbnRzIGFsc28gdmFyaWVz
-IGFjcm9zcyB0YXJnZXRzLCBkZXBlbmRpbmcKPj4gb24gdGhlIHVuZGVybHlpbmcgdGVjaG5vbG9n
-eSBub2RlIGFuZCB0aGUgc3BlY2lmaWMgUEhZIGNhcGFiaWxpdGllcy4gVGhlc2UKPj4gZGlmZmVy
-ZW5jZXMgY2FuIGJlIGluZmx1ZW5jZWQgYnkgdGhlIE1JUEkgdmVyc2lvbiBvciBvdGhlciBpbXBs
-ZW1lbnRhdGlvbgo+PiBkZXRhaWxzLgo+IAo+IElmIHlvdSd2ZSBnb3Qgbm9uLWVudW1lcmFibGUg
-UEhZcyB0aGF0IGhhdmUgYSBiaWcgaW1wYWN0IHRoYXQncyBhIG11Y2gKPiBjbGVhcmVyIHVzZSBj
-YXNlIGZvciBwdXR0aW5nIHRoaW5ncyBpbiBEVC4KCldoYXQgSSBtZWFudCBpcyB0aGF0IGRpZmZl
-cmVudCBib2FyZHMgbWF5IHVzZSBkaWZmZXJlbnQgVUZTIHBhcnRzLCBhbmQgCnRoZSBhc3NvY2lh
-dGVkIFBIWSBsb2FkIHJlcXVpcmVtZW50cyBhcmUgbm90IGdvdmVybmVkIGJ5IHRoZSBVRlMgCnNw
-ZWNpZmljYXRpb24gaXRzZWxmLiBJbnN0ZWFkLCB0aGVzZSByZXF1aXJlbWVudHMgZGVwZW5kIG9u
-IG91ciBzcGVjaWZpYyAKUEhZIGRlc2lnbiBhbmQgTUlQSSwgd2hpY2ggY2FuIHZhcnkgYWNyb3Nz
-IHBsYXRmb3Jtcy4KCkJlY2F1c2UgdGhlc2UgY2hhcmFjdGVyaXN0aWNzIOKAlCBzdWNoIGFzIGxv
-YWQgcmVxdWlyZW1lbnRzIOKAlCBhcmUgbm90IAplbnVtZXJhYmxlIG9yIGF1dG9tYXRpY2FsbHkg
-ZGV0ZWN0YWJsZSwgaXQgbWFrZXMgc2Vuc2UgdG8gZGVzY3JpYmUgdGhlbSAKZXhwbGljaXRseSBp
-biB0aGUgZGV2aWNlIHRyZWUuIFRoaXMgYXBwcm9hY2ggZW5zdXJlcyB0aGF0IGJvYXJkLXNwZWNp
-ZmljIAp2YXJpYXRpb25zIGFyZSBhY2N1cmF0ZWx5IGNhcHR1cmVkIHdpdGhvdXQgaGFyZGNvZGlu
-ZyB0aGVtIGludG8gdGhlIGRyaXZlci4KCj4gCj4+IEdpdmVuIHRoaXMgdmFyaWFiaWxpdHksIGV4
-cHJlc3NpbmcgdGhlc2UgcmVxdWlyZW1lbnRzIGluIHRoZSBkZXZpY2UgdHJlZQo+PiBhbGxvd3Mg
-Zm9yIGEgZmxleGlibGUgYW5kIGFjY3VyYXRlIHdheSB0byBkZXNjcmliZSBib2FyZC1zcGVjaWZp
-Ywo+PiBjb25zdHJhaW50cyB3aXRob3V0IGhhcmRjb2RpbmcgdGhlbSBpbnRvIHRoZSBkcml2ZXIu
-Cj4gCj4gVGhlcmUncyBzdGlsbCB0aGUgaXNzdWUgd2l0aCBtYWtpbmcgdGhpcyBhIHRoaW5nIGZv
-ciBhbGwgcmVndWxhdG9ycywgbm90Cj4ganVzdCBmb3IgdGhpcyBzcGVjaWZpYyBkZXZpY2UuCgoK
-SSBzZWUgeW91ciBwb2ludC4gSnVzdCB0byBjbGFyaWZ5IOKAlCBteSBwYXRjaCBpcyBzcGVjaWZp
-Y2FsbHkgc2NvcGVkIHRvIApVRlMgUEhZIGFuZCBQTEwgcmVndWxhdG9ycy4gVGhlIGRldmljZSB0
-cmVlIGJpbmRpbmcgZGVmaW5lcyB0aGVzZSAKcHJvcGVydGllcyBhcyBvcHRpb25hbCwgYW5kIHRo
-ZXkgYXJlIG9ubHkgZW5hYmxlZCBmb3IgdGFyZ2V0cyB3aGVyZSBsb2FkIAp2b3RpbmcgaXMgcmVx
-dWlyZWQuCgpTbywgdGhpcyBpc27igJl0IGludGVuZGVkIHRvIGJlIGEgZ2VuZXJpYyBjaGFuZ2Ug
-Zm9yIGFsbCByZWd1bGF0b3JzLCBidXQgCnJhdGhlciBhIHRhcmdldGVkIHNvbHV0aW9uIGZvciBz
-cGVjaWZpYyBjb25zdW1lcnMgdGhhdCBuZWVkIGl0LgoKVGhhdOKAmXMgd2h5IEnigJl2ZSBjaG9z
-ZW4gdG8ga2VlcCB0aGUgcmVndWxhdG9yIHBhcnNpbmcgbG9naWMgYW5kIApjb3JyZXNwb25kaW5n
-IGxvYWQgdm90aW5nIHN1cHBvcnQgd2l0aGluIHRoZSBVRlMgUEhZIGRyaXZlciwgcmF0aGVyIHRo
-YW4gCmV4dGVuZGluZyBpdCB0byB0aGUgY29yZSByZWd1bGF0b3IgZnJhbWV3b3JrLgoKClRoYW5r
-cywKTml0aW4KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+
+On Thu, 07 Aug 2025 18:33:18 +0200, Konrad Dybcio wrote:
+> Register a typec mux in order to change the PHY mode on the Type-C
+> mux events depending on the mode and the svid when in Altmode setup.
+> 
+> The DisplayPort phy should be left enabled if is still powered on
+> by the DRM DisplayPort controller, so bail out until the DisplayPort
+> PHY is not powered off.
+> 
+> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+> will be set in between of USB-Only, Combo and DisplayPort Only so
+> this will leave enough time to the DRM DisplayPort controller to
+> turn of the DisplayPort PHY.
+> 
+> The patchset also includes bindings changes and DT changes.
+> 
+> This has been successfully tested on an SM8550 board, but the
+> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+> PD USB Hubs and PD Altmode Dongles to make sure the switch works
+> as expected.
+> 
+> The DisplayPort 4 lanes setup can be check with:
+> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+> 	name = msm_dp
+> 	drm_dp_link
+> 		rate = 540000
+> 		num_lanes = 4
+> ...
+> 
+> This patchset depends on [1] to allow broadcasting the type-c mode
+> to the PHY, otherwise the PHY will keep the combo state while the
+> retimer would setup the 4 lanes in DP mode.
+> 
+> [1] https://lore.kernel.org/all/20240527-topic-sm8x50-upstream-retimer-broadcast-mode-v1-0-79ec91381aba@linaro.org/
+> 
+> Changes in v4:
+> - Default to USB3_ONLY if there's no DP SVID (Dmitry)
+> - Pick up tags, dropped T-bys due to the above change
+> - Add missing submitter's sign-off on some patches
+> - The odd 4-lane-DP + USB2 case remains unhandled for now, but it's
+>   not a huge deal, see:
+>   <c2f2ba36-1a25-450e-99b9-79aa4fd4913d@linaro.org>
+> - Link to v3: https://lore.kernel.org/r/20250527-topic-4ln_dp_respin-v3-0-f9a0763ec289@oss.qualcomm.com
+> Changes in v3:
+> - Take the series from Neil
+> - Rebase
+> - Rename many variables
+> - Test on X1E & X13s
+> - Apply a number of small cosmetic/codestyle changes
+> - Remove some unused variables
+> - Some smaller bugfixes
+> - Link to v2: https://lore.kernel.org/lkml/20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org/
+> Changes in v2:
+> - Reference usb-switch.yaml in bindings patch
+> - Fix switch/case indenting
+> - Check svid for USB_TYPEC_DP_SID
+> - Fix X13s patch subject
+> - Update SM8650 patch to enable 4 lanes on HDK aswell
+> - Link to v1: https://lore.kernel.org/r/20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org
+> 
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> ---
+> Konrad Dybcio (1):
+>       phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
+> 
+> Neil Armstrong (5):
+>       dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch
+>       phy: qcom: qmp-combo: store DP phy power state
+>       phy: qcom: qmp-combo: introduce QMPPHY_MODE
+>       phy: qcom: qmp-combo: register a typec mux to change the QMPPHY_MODE
+>       arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set up 4-lane DP
+> 
+>  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   7 +-
+>  .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 179 +++++++++++++++++++--
+>  3 files changed, 170 insertions(+), 22 deletions(-)
+> ---
+> base-commit: 442d93313caebc8ccd6d53f4572c50732a95bc48
+> change-id: 20250527-topic-4ln_dp_respin-c6924a8825ce
+> 
+> Best regards,
+> --
+> Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> 
+> 
+> 
+
+
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+This patch series was applied (using b4) to base:
+ Base: using specified base-commit 442d93313caebc8ccd6d53f4572c50732a95bc48
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com:
+
+arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r4.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-wifi.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r4.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r9.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-kb.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r4.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-r1.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-acer-aspire1.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-kingoftown.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r9.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-kb.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r3.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-idp.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r10.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe-rt5682s.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-kb.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-parade.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-ti.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-r1-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-ti.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx-rt5682s.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-parade.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r2.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r5.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-kb.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sm7125-xiaomi-joyeuse.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r10.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0-lte.dtb: phy@88e8000 (qcom,sc7180-qmp-usb3-dp-phy): 'oneOf' conditional failed, one must be fixed:
+	'port' is a required property
+	'ports' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml#
+
+
+
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
