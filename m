@@ -4,68 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43CC9C87FCF
-	for <linux-phy@archiver.kernel.org>; Sat,  9 Aug 2025 11:07:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81D66C87FCF
+	for <linux-phy@archiver.kernel.org>; Sun, 10 Aug 2025 22:48:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yda8FJh2ly80CBFIC9J9GxPEfJaZWPFfuyhvaBznzTE=; b=OmJfgU31Oa5XPN
-	208XLa3ouhXG4AcBkqxp0Fx38QYip4UHL/u75pirBjvUs/ty3Taa8P7fs5rEjWtih3LxPY9LzVSSk
-	AoWw39emvB65aRbcv7m1uduojirdQ6F7AC3nq6vipN4lbmqG2qPaptmTET7baH0/zTQHGcQ5eu/Yn
-	gzQMddcCpo3EjYIJKV/IGOgI1oj+X/HECEhUrqaq6ocV61LBNfWK8vJ1594Q1VfoFbsrI0D/F8i6y
-	bKLH32V7DXKI7JTkda7Cn7omUBZSBILxH1uA3Sz7pSsB+ax3SVN+l27LYs3FPuk0QJlYITlqguLin
-	6v2FUgMwE0V/Whc7keqQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ri0/Wvl9zgREhQxSFb7NsJ6MWFoaWOgTrgi3XeCDb90=; b=VKzZGwEs/eZJL6
+	qrqP/pDU9bZ8E2/oeybj1FDBgBNCMxHcgBQZOBoLv/CosL9/4/FR9NlH4Fn84VfVuiksDswd3sFVL
+	QNiF3mstF/K9lYfZdOOfQ1hfjpFDHXnuuCeM5C3hlLol6xsJzByBSQhG1zUDf2x4U/VERQVOXAXQw
+	ohgvTlXWcS31PQxOAuC7L2R2fWK4Z162RFfTP9JZ4CcLdmezFiS4T6VUbba4aiP3Cw9xJC6reBMZI
+	wHF3/l8PoVUrCNd3g68BiaMnwv9xXSJ2amSXjorbiuJCepuNrbvw/IyIh+SqfuYwsBdJKW0csCcPe
+	6nJLSfLr/8zc+2o/Y/lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukhQ9-00000004PCw-3LLd;
-	Sat, 09 Aug 2025 11:07:29 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1ulEqE-000000068UR-0uyF;
+	Sun, 10 Aug 2025 22:48:38 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukhQ6-00000004PCb-3UDd
+	id 1ulEnd-000000067xl-1JQF
 	for linux-phy@lists.infradead.org;
-	Sat, 09 Aug 2025 11:07:28 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4DDB05C4DAF;
-	Sat,  9 Aug 2025 11:07:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BB1DC4CEE7;
-	Sat,  9 Aug 2025 11:07:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1754737645;
-	bh=Vzcdy7Bmdprjq8PC3M/XGPvgtWnTKOmAgeFWKAdcUiU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LZbRBrACf+A7SN4Jax2Mez9gcRca9ppiqBx4xniGcOYFRUeZ+lPqmKq/dIKluupjS
-	 d5cbMKMmYlHmN2oeYlke5xXxKm83UDGuGcYAUINJb47ofcru3NXVRdU6dVOJjpbQn4
-	 byZblDTmCZ07vXp5yVjk7pzi7FNp4+3QLp7yQ1KkcqttJrUn5olI9LgEJAsHEgWp/l
-	 s/V8sz56fMT+jgIkGP+G+AoTm5vKxJirczpVBtMGFtkbKfZtaMQn9L0ZY9HTOETowd
-	 wnlGGPnkpLQ85jdczZDM3rb9GzF4cgTCJ6fSzye1RrNyi3nZaIzTqEU69D52KE9x4i
-	 wsR0lqg/vgZUA==
-Date: Sat, 9 Aug 2025 16:37:16 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, vkoul@kernel.org, kishon@kernel.org, conor+dt@kernel.org, 
-	bvanassche@acm.org, andersson@kernel.org, neil.armstrong@linaro.org, 
-	dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org, krzk+dt@kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH V1 2/4] arm64: dts: qcom: sm8750: add max-microamp for
- UFS PHY and PLL supplies
-Message-ID: <rh3qxu2rijpjswfash3rpmmh6sw47l3b6j5p5upti6zffknasz@cywwm3fypghd>
-References: <20250806154340.20122-1-quic_nitirawa@quicinc.com>
- <20250806154340.20122-3-quic_nitirawa@quicinc.com>
- <20250808-calm-boa-of-swiftness-a4a7ce@kuoka>
- <9af71063-0629-4ccc-bc76-3fb588677bf4@oss.qualcomm.com>
- <292907f3-25d6-40d9-be6e-b6b83e646d73@kernel.org>
- <5e32be05-0dbd-4d6f-879d-8ce97fb430ba@quicinc.com>
+	Sun, 10 Aug 2025 22:45:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1754865956;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=zejlDygpGrwzEF/Tl2mTtzsn7pmvzE6JdbSkjCZTc90=;
+	b=A4r5NCpNjnWcOhf+Q3yw7XW4o6xxHxJ26XMfmXWAD8OarF44I9xCAine4xkuef8WMI2G5z
+	5NW08BvTXrrqce15x35qdXFEoPoShgdQqXu2UgfqxhWG6mYOZMgIqAkNmXN1W94hWzJxy7
+	/25ciug/9duuP88IGTSGhGKnmAzaEWQ=
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
+ [209.85.222.198]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-96-bnD4LSOUP7mei390PoVlrw-1; Sun, 10 Aug 2025 18:45:55 -0400
+X-MC-Unique: bnD4LSOUP7mei390PoVlrw-1
+X-Mimecast-MFC-AGG-ID: bnD4LSOUP7mei390PoVlrw_1754865954
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7e348600cadso932206285a.3
+        for <linux-phy@lists.infradead.org>; Sun, 10 Aug 2025 15:45:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754865954; x=1755470754;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=zejlDygpGrwzEF/Tl2mTtzsn7pmvzE6JdbSkjCZTc90=;
+        b=dRJQeeZMu/EOicid9kqCSTuolNcqvTVk4H8XnM5YD3wJdrkR9YgZScwEI2TJRZx0T1
+         yRQnGJ8C5tf5AkAKw0fKYMGMrT2PioqWUciILvYRCcvOaQKe066VtHyUZrh+LsqEUMtJ
+         bkDSe7Up5iZmjg7TIeISkF5JMouuJeTazcj3zKH4pim6sa3e1yvh4imRFrVWQkKcSqLa
+         SktfXs83rypFJk6XuNhBYtYOxK1008BoiDFADBDbRzUNJMivPcWecR2ETF8+/IiTAo74
+         6JPtrOb+09pcjlUkSLFnDRC1rE+AIKFbvDlJkNI60OwYwWdmIsEA7ZyzpQaVMowNQDhB
+         I/1A==
+X-Gm-Message-State: AOJu0YzexF/oymVqft++cQfTV4fpc/6xPX0VmIghqSJOtfAjLVZwmVfK
+	dhKnNEKjyCOjQ9oaVey3TL3R6AM1thqVtQFRz+rYkYay+vPsIBpySSKwVnBxa+jZSldriZWgDbK
+	wX1LNiUMIvyLdK1PbxYy+h8+mKEvhGTxCHjTLuWSUkBm7XirOcZpsUuoc3jvtqojHBpQ=
+X-Gm-Gg: ASbGncubphpDHn6t6D1cFhXmpmJ89sBTEgHdAq/Msmo5lBlGS0Ih6Coen9SB8kKeRyW
+	xIRtGtOZ0FPTTpN+2AZYmq0vqFL/4LQg07mfJGFJMbCMDjYGkq+fbBhV7wQSxooaPewm+7vVkXS
+	02Mrmj0M2uXs9YhTVFPJnyzxkedrJgcKpnuZZDTrg8tftj/YSUkhb5NmA3sMrBtbv8T9aAvKS6T
+	93KIRnMc9GVJk3A4h98y6F7FK0q35ZyUzp7YE+QASOaCaycR7vJgQduiGrsoFog05OxsMlOp4CB
+	j0UCFcB6I4ARG2BP12ciV/IBg/m1zX9/qGZjxFk0iyDgAJQiIrPmxToXYv5JiNwTIvuRh9NmVg1
+	jAXaJWw==
+X-Received: by 2002:ac8:5992:0:b0:4b0:743a:b4f0 with SMTP id d75a77b69052e-4b0aedf6b1amr162625101cf.41.1754865954318;
+        Sun, 10 Aug 2025 15:45:54 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHMMVuRi+pB2hB00rh/4lBT2A6xNejEN6UKRgkLWeOvqElbSCAZq0WUzWxXHj0FePs3qQpk7g==
+X-Received: by 2002:ac8:5992:0:b0:4b0:743a:b4f0 with SMTP id d75a77b69052e-4b0aedf6b1amr162624811cf.41.1754865953842;
+        Sun, 10 Aug 2025 15:45:53 -0700 (PDT)
+Received: from [10.144.145.224] (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4b0ad996459sm42685171cf.46.2025.08.10.15.45.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 10 Aug 2025 15:45:53 -0700 (PDT)
+From: Brian Masney <bmasney@redhat.com>
+Subject: [PATCH v2 0/9] phy: convert from clk round_rate() to
+ determine_rate()
+Date: Sun, 10 Aug 2025 18:45:28 -0400
+Message-Id: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5e32be05-0dbd-4d6f-879d-8ce97fb430ba@quicinc.com>
+X-B4-Tracking: v=1; b=H4sIAAghmWgC/x3MQQ5AMBBA0avIrE1SDRquIhYNU52QkilCxN01l
+ m/x/wORhClCmz0gdHLkNSToPIPB2zAR8pgMWulKmULh5m8clhllPcKIYnfC0lpDrqiVowZSuAk
+ 5vv5p17/vByfwFxlkAAAA
+X-Change-ID: 20250710-phy-clk-round-rate-4aa7ef160fe9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ Brian Masney <bmasney@redhat.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1754865940; l=5842;
+ i=bmasney@redhat.com; s=20250528; h=from:subject:message-id;
+ bh=aLGfKmyNU+bomSynOaLohW6Y59bxgPyE9ULfin1cZyo=;
+ b=O9IhL3QDOUiwO05Lg7AXKinAxwzs6mf8jMpnbEWniYrx2Csle3lF/NzYZAfa6oTvLYjtyMKTB
+ 35n8Z5Wp2HwCqzPx1ryQAePsX3611g3M7mBqcbq1xRSaFHhbzl6z6wG
+X-Developer-Key: i=bmasney@redhat.com; a=ed25519;
+ pk=x20f2BQYftANnik+wvlm4HqLqAlNs/npfVcbhHPOK2U=
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: IX0anFb6OGtoUEzi4nGriBQyKpsEQcv5kh7E_NHsKbw_1754865954
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250809_040726_953754_9D3556A3 
-X-CRM114-Status: GOOD (  33.31  )
+X-CRM114-CacheID: sfid-20250810_154557_437423_7949D2F4 
+X-CRM114-Status: GOOD (  14.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,84 +121,183 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBBdWcgMDgsIDIwMjUgYXQgMDg6NDk6NDVQTSBHTVQsIE5pdGluIFJhd2F0IHdyb3Rl
-Ogo+IAo+IAo+IE9uIDgvOC8yMDI1IDM6MDkgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6
-Cj4gPiBPbiAwOC8wOC8yMDI1IDEwOjU4LCBLb25yYWQgRHliY2lvIHdyb3RlOgo+ID4gPiBPbiA4
-LzgvMjUgOToyOSBBTSwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKPiA+ID4gPiBPbiBXZWQs
-IEF1ZyAwNiwgMjAyNSBhdCAwOToxMzozOFBNICswNTMwLCBOaXRpbiBSYXdhdCB3cm90ZToKPiA+
-ID4gPiA+IEFkZCBgdmRkYS1waHktbWF4LW1pY3JvYW1wYCBhbmQgYHZkZGEtcGxsLW1heC1taWNy
-b2FtcGAgcHJvcGVydGllcyB0bwo+ID4gPiA+ID4gdGhlIFVGUyBQSFkgbm9kZSBpbiB0aGUgZGV2
-aWNlIHRyZWUuCj4gPiA+ID4gPiAKPiA+ID4gPiA+IFRoZXNlIHByb3BlcnRpZXMgZGVmaW5lIHRo
-ZSBtYXhpbXVtIGN1cnJlbnQgKGluIG1pY3JvYW1wcykgZXhwZWN0ZWQKPiA+ID4gPiA+IGZyb20g
-dGhlIFBIWSBhbmQgUExMIHJlZ3VsYXRvcnMuIFRoaXMgYWxsb3dzIHRoZSBQSFkgZHJpdmVyIHRv
-Cj4gPiA+ID4gPiBjb25maWd1cmUgcmVndWxhdG9yIGxvYWQgYWNjdXJhdGVseSBhbmQgZW5zdXJl
-IHByb3BlciByZWd1bGF0b3IKPiA+ID4gPiA+IG1vZGUgYmFzZWQgb24gbG9hZCByZXF1aXJlbWVu
-dHMuCj4gPiA+ID4gCj4gPiA+ID4gVGhhdCdzIG5vdCB0aGUgcHJvcGVydHkgb2YgcGh5LCBidXQg
-cmVndWxhdG9yLgo+ID4gPiA+IAo+ID4gPiA+IEFsc28gcmVhc29uaW5nIGlzIGhlcmUgaW5jb21w
-bGV0ZSAtIHlvdSBqdXN0IHBvc3QgZG93bnN0cmVhbSBjb2RlLiA6Lwo+ID4gPiAKPiA+ID4gVGhl
-IHJlYXNvbiBmb3IgdGhpcyBjaGFuZ2UgaXMgZ29vZCwgYnV0IHBlcmhhcHMgbm90IGV4cGxhaW5l
-ZCBjbGVhcmx5Cj4gPiA+IAo+ID4gPiBBbGwgb2YgdGhlc2UgdmFsdWVzIHJlZmVyIHRvIHRoZSBt
-YXhpbXVtIGN1cnJlbnQgZHJhdyB0aGF0IG5lZWRzIHRvIGJlCj4gPiA+IGFsbG9jYXRlZCBvbiBh
-IHNoYXJlZCB2b2x0YWdlIHN1cHBseSBmb3IgdGhpcyBwZXJpcGhlcmFsIChiZWNhdXNlIHRoZQo+
-ID4gCj4gPiAKPiA+IEl0IHNvdW5kcyB2ZXJ5IGRpZmZlcmVudCB0aGFuIGhvdyBtdWNoIGl0IGNh
-biBiZSBkcmF3bi4gSG93IG11Y2ggY2FuIGJlCj4gPiBkcmF3biBpcyB0aGUgcHJvcGVydHkgb2Yg
-dGhlIHJlZ3VsYXRvci4gVGhlIHJlZ3VsYXRvciBrbm93cyBob3cgbXVjaAo+ID4gY3VycmVudCBp
-dCBjYW4gc3VwcG9ydC4KPiAKPiBDb25zdW1lcnMgYXJlIGF3YXJlIG9mIHRoZWlyIGR5bmFtaWMg
-bG9hZCByZXF1aXJlbWVudHMsIHdoaWNoIGNhbiB2YXJ5IGF0Cj4gcnVudGltZeKAlHRoaXMgYXdh
-cmVuZXNzIGlzIG5vdCByZWNpcHJvY2FsLiBUaGUgcG93ZXIgZ3JpZCBpcyBkZXNpZ25lZCBiYXNl
-ZAo+IG9uIHRoZSBjb2xsZWN0aXZlIGxvYWQgcmVxdWlyZW1lbnRzIG9mIGFsbCBjbGllbnRzIHNo
-YXJpbmcgdGhlIHNhbWUgcG93ZXIKPiByYWlsLgo+IAo+IFNpbmNlIHJlZ3VsYXRvcnMgY2FuIG9w
-ZXJhdGUgaW4gbXVsdGlwbGUgbW9kZXMgZm9yIHBvd2VyIG9wdGltaXphdGlvbiwgZWFjaAo+IGNv
-bnN1bWVyIGlzIGV4cGVjdGVkIHRvIHZvdGUgZm9yIGl0cyBydW50aW1lIHBvd2VyIG5lZWRzLiBU
-aGVzZSB2b3RlcyBoZWxwCj4gdGhlIHJlZ3VsYXRvciBmcmFtZXdvcmsgbWFpbnRhaW4gdGhlIHJl
-Z3VsYXRvciBpbiB0aGUgYXBwcm9wcmlhdGUgbW9kZSwKPiBlbnN1cmluZyBzdGFibGUgYW5kIGVm
-ZmljaWVudCBvcGVyYXRpb24gYWNyb3NzIGFsbCBjbGllbnRzLgo+IAo+IAo+IFN0YWJpbGl0eSBp
-c3N1ZXMgY2FuIGFyaXNlIGlmIGVhY2ggY29uc3VtZXIgZG9lcyBub3Qgdm90ZSBmb3IgaXRzIG93
-biBsb2FkCj4gcmVxdWlyZW1lbnQuCj4gRm9yIGV4YW1wbGUsIGNvbnNpZGVyIGEgc2NlbmFyaW8g
-d2hlcmUgYSBzaW5nbGUgcmVndWxhdG9yIGlzIHNoYXJlZCBieSB0d28KPiBjb25zdW1lcnMuCj4g
-Cj4gSWYgdGhlIGZpcnN0IGNsaWVudCByZXF1ZXN0cyBsb3ctcG93ZXIgbW9kZSBieSB2b3Rpbmcg
-Zm9yIHplcm8gb3IgYSBtaW5pbWFsCj4gbG9hZCB0byByZWd1bGF0b3IgZnJhbWV3b3JrIGR1cmlu
-ZyBpdHMgZHJpdmVyJ3MgTFBNIHNlcXVlbmNlLCBhbmQgdGhlIHNlY29uZAo+IGNsaWVudCAoZS5n
-LiwgVUZTIFBIWSkgaGFzIG5vdCB2b3RlZCBmb3IgaXRzIG93biBsb2FkIHJlcXVpcmVtZW50IHRo
-cm91Z2gKPiB0aGUgcmVndWxhdG9yIGZyYW1ld29yaywgdGhlIHJlZ3VsYXRvciBtYXkgdHJhbnNp
-dGlvbiB0byBsb3ctcG93ZXIgbW9kZS4KPiBUaGlzIGNhbiBsZWFkIHRvIGlzc3VlcyBmb3IgdGhl
-IHNlY29uZCBjbGllbnQsIHdoaWNoIGV4cGVjdHMgYSBoaWdoZXIgcG93ZXIKPiBzdGF0ZSB0byBv
-cGVyYXRlIGNvcnJlY3RseS4KPiAKCkkgdGhpbmsgd2UgYWxsIGFncmVlIG9uIGNvbnN1bWVycyBz
-ZXR0aW5nIHRoZSBsb2FkIGZvciBzaGFyZWQgcmVndWxhdG9ycywgYnV0CnRoZSBuYW1pbmcgYW5k
-IGRlc2NyaXB0aW9uIG9mIHRoZSBEVCBwcm9wZXJ0eSBpcyB3aGF0IGNhdXNpbmcgY29uZnVzaW9u
-IGhlcmUuClRoZXJlIGlzIG5vIHdheSB0aGUgY29uc3VtZXJzIGNhbiBzZXQgdGhlICptYXgqIGN1
-cnJlbnQgZHJhdyBmb3IgYSBzaGFyZWQKcmVndWxhdG9yLiBUaGV5IGNhbiBvbmx5IHJlcXVlc3Qg
-bG9hZCBhcyBwZXIgdGhlaXIgcmVxdWlyZW1lbnQuIEJ1dCB0aGUgbWF4CmN1cnJlbnQgZHJhdyBp
-cyBhIHJlZ3VsYXRvciBjb25zdHJhaW50LgoKPiAKPiA+IAo+ID4gCj4gPiA+IHN1cHBseSdzIGNh
-cGFiaWxpdGllcyBjaGFuZ2UgZGVwZW5kaW5nIG9uIHRoZSBtYXhpbXVtIHBvdGVudGlhbCBsb2Fk
-Cj4gPiA+IGF0IGFueSBnaXZlbiB0aW1lLCB3aGljaCB0aGUgcmVndWxhdG9yIGRyaXZlciBtdXN0
-IGJlIGF3YXJlIG9mKQo+ID4gPiAKPiA+ID4gVGhpcyBpcyBhIHByb3BlcnR5IG9mIGEgcmVndWxh
-dG9yICpjb25zdW1lciosIGkuZS4gaWYgd2UgaGFkIGEgY2hhaW4KPiA+ID4gb2YgTEVEcyBoYW5n
-aW5nIG9mZiBvZiB0aGlzIHN1cHBseSwgd2UnZCBuZWVkIHRvIHNwZWNpZnkgTlVNX0xFRFMgKgo+
-ID4gPiBNQVhfQ1VSUiB1bmRlciB0aGUgImxlZCBjaGFpbiIgZGV2aWNlLCB0byBtYWtlIHN1cmUg
-dGhhdCBpZiB0aGUKPiA+ID4gYWdncmVnYXRlZCBjdXJyZW50IHJlcXVpcmVtZW50cyBnbyBvdmVy
-IGEgY2VydGFpbiB0aHJlc2hvbGQgKHdoaWNoIGlzCj4gPiA+IHVua25vd24gdG8gTGludXggYW5k
-IGhpZGRlbiBpbiBSUE1oIGZ3KSwgdGhlIHJlZ3VsYXRvciBjYW4gYmUKPiA+ID4gcmVjb25maWd1
-cmVkIHRvIGFsbG93IGZvciBhIGhpZ2hlciBjdXJyZW50IGRyYXcgKGxpa2VseSBhdCBzb21lCj4g
-PiA+IGRvd25ncmFkZSB0byBlZmZpY2llbmN5KQo+ID4gCj4gPiAKPiA+IFRoZSBwcm9ibGVtIGlz
-IHRoYXQgcmF0aW9uYWxlIGlzIGRvd25zdHJlYW0uIEluc3RlYWQgSSB3YW50IHRvIHNlZSBzb21l
-Cj4gPiByZWFzb246IGUuZy4gZGF0YXNoZWV0cywgc3BlYywgdHlwZSBvZiBVRlMgZGV2aWNlICh0
-aGF0IHdhcyB0aGUgYXJndW1lbnQKPiA+IGluIHRoZSBkcml2ZXIgcGF0Y2ggZGlzY3Vzc2lvbiku
-Cj4gCj4gCj4gVGhlIFBIWSBsb2FkIHJlcXVpcmVtZW50cyBmb3IgY29uc3VtZXJzIHN1Y2ggYXMg
-VUZTLCBVU0IsIFBDSWUgYXJlIGRlZmluZWQKPiBieSBRdWFsY29tbeKAmXMgUEhZIElQIGFuZCBh
-cmUgd2VsbC1kb2N1bWVudGVkIGluIFF1YWxjb21t4oCZcyBkYXRhc2hlZXRzIGFuZAo+IHBvd2Vy
-IGdyaWQgZG9jdW1lbnRhdGlvbi4gVGhlc2UgdmFsdWVzIGNhbiBkZXBlbmRpbmcgb24gdGhlIHBy
-b2Nlc3Mgb3IKPiB0ZWNobm9sb2d5IG5vZGUsIGJvYXJkIGRlc2lnbiwgYW5kIGV2ZW4gdGhlIGNo
-aXAgZm91bmRyeSB1c2VkLgo+IAo+IEFzIGEgcmVzdWx0LCB0aGUgbG9hZCB2YWx1ZXMgY2FuIGRp
-ZmZlciBhY3Jvc3MgU29DcyBvciBtYXkgYmUgZXZlbgo+IGJvYXJkKHVubGlrZWx5IHRob3VnaCkg
-ZHVlIHRvIHZhcmlhdGlvbnMgaW4gYW55IG9mIHRoZXNlIHBhcmFtZXRlcnMuCj4gCgpPa2F5LiBU
-aGlzIGdvZXMgaW50byB0aGUgY29tbWl0IG1lc3NhZ2UgYW5kIHBvc3NpYmx5IHNvbWUgcGFydCBv
-ZiBpdCB0byBwcm9wZXJ0eQpkZXNjcmlwdGlvbiBhbHNvLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/
-4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+The round_rate() clk ops is deprecated in the clk framework in favor
+of the determine_rate() clk ops, so let's go ahead and convert the
+drivers in the phy subsystem using the Coccinelle semantic patch
+posted below. I did a few minor cosmetic cleanups of the code in a
+few cases.
+
+Changes since v1:
+- Patch 8 (phy-rockchip-samsung-hdptx): fix returning error code
+  (Cristian)
+
+Coccinelle semantic patch:
+
+    virtual patch
+
+    // Look up the current name of the round_rate function
+    @ has_round_rate @
+    identifier round_rate_name =~ ".*_round_rate";
+    identifier hw_param, rate_param, parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    	...
+    }
+
+    // Rename the route_rate function name to determine_rate()
+    @ script:python generate_name depends on has_round_rate @
+    round_rate_name << has_round_rate.round_rate_name;
+    new_name;
+    @@
+
+    coccinelle.new_name = round_rate_name.replace("_round_rate", "_determine_rate")
+
+    // Change rate to req->rate; also change occurrences of 'return XXX'.
+    @ chg_rate depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    identifier ERR =~ "E.*";
+    expression E;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    (
+    -return -ERR;
+    +return -ERR;
+    |
+    - return rate_param;
+    + return 0;
+    |
+    - return E;
+    + req->rate = E;
+    +
+    + return 0;
+    |
+    - rate_param
+    + req->rate
+    )
+    ...>
+    }
+
+    // Coccinelle only transforms the first occurrence of the rate parameter
+    // Run a second time. FIXME: Is there a better way to do this?
+    @ chg_rate2 depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    - rate_param
+    + req->rate
+    ...>
+    }
+
+    // Change parent_rate to req->best_parent_rate
+    @ chg_parent_rate depends on generate_name @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    @@
+
+    long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+                  unsigned long *parent_rate_param)
+    {
+    <...
+    (
+    - *parent_rate_param
+    + req->best_parent_rate
+    |
+    - parent_rate_param
+    + &req->best_parent_rate
+    )
+    ...>
+    }
+
+    // Convert the function definition from round_rate() to determine_rate()
+    @ func_definition depends on chg_rate @
+    identifier has_round_rate.round_rate_name;
+    identifier has_round_rate.hw_param;
+    identifier has_round_rate.rate_param;
+    identifier has_round_rate.parent_rate_param;
+    identifier generate_name.new_name;
+    @@
+
+    - long round_rate_name(struct clk_hw *hw_param, unsigned long rate_param,
+    -               unsigned long *parent_rate_param)
+    + int new_name(struct clk_hw *hw, struct clk_rate_request *req)
+    {
+        ...
+    }
+
+    // Update the ops from round_rate() to determine_rate()
+    @ ops depends on func_definition @
+    identifier has_round_rate.round_rate_name;
+    identifier generate_name.new_name;
+    @@
+
+    {
+        ...,
+    -   .round_rate = round_rate_name,
+    +   .determine_rate = new_name,
+        ...,
+    }
+
+Note that I used coccinelle 1.2 instead of 1.3 since the newer version
+adds unnecessary braces as described in this post.
+https://lore.kernel.org/cocci/67642477-5f3e-4b2a-914d-579a54f48cbd@intel.com/
+
+Signed-off-by: Brian Masney <bmasney@redhat.com>
+---
+Brian Masney (9):
+      phy: freescale: phy-fsl-samsung-hdmi: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt2701: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt8173: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-hdmi-mt8195: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-mipi-dsi-mt8173: convert from round_rate() to determine_rate()
+      phy: mediatek: phy-mtk-mipi-dsi-mt8183: convert from round_rate() to determine_rate()
+      phy: rockchip: phy-rockchip-inno-hdmi: convert from round_rate() to determine_rate()
+      phy: rockchip: phy-rockchip-samsung-hdptx: convert from round_rate() to determine_rate()
+      phy: ti: phy-j721e-wiz: convert from round_rate() to determine_rate()
+
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c      | 13 ++++++----
+ drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c        |  8 +++---
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c        | 16 ++++++------
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c        | 10 ++++----
+ drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c    | 10 +++++---
+ drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c    | 10 +++++---
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c     | 30 ++++++++++++-----------
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 14 ++++++-----
+ drivers/phy/ti/phy-j721e-wiz.c                    | 11 ++++++---
+ 9 files changed, 68 insertions(+), 54 deletions(-)
+---
+base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+change-id: 20250710-phy-clk-round-rate-4aa7ef160fe9
+
+Best regards,
+-- 
+Brian Masney <bmasney@redhat.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
