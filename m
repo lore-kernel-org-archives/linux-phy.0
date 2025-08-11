@@ -4,112 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24E44C87FD2
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 14:35:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F59FCA0ED1
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 16:31:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I2kmO3AhtdJXdAsFbFevlAX8s7HhNPrc/kYuhV0QcOE=; b=jyFSdBCpd3zdjN
-	jBmxOj65e14BbTSy6HwKvf0vDHNC+GGCzqW3BHlHqyMIdM576wPUkW8VVuCgaz+CijBACF99Vdt8y
-	ZjDoiD/t7JfYb1sI+8Umt05RAL741VRYqZfFHZewQehQQsDUyW1SwsXbHa+izFpoEWjupwDMoitpG
-	KtYJCIqkvAj8tDgM/g51w6xqRdVdGkE2txIgwo/BUp3W1+u8D2tcdwAbY60qzatTTge/Su1UwYXro
-	95YFsjxyAwL2lbCSTNWBgWzXDTO9L1ik6fu5Y5QB5x+4ywBTfoc8b+s0BIHSZOk/Ygtzim4Gme/Hm
-	yeNyzjL+ub7DCEQihZWg==;
+	List-Owner; bh=E9EbSnHdr3G3RRuhLmVX1WjhBF+DhC/apThqzTr7uZc=; b=sAAENgofMe/s7R
+	JLNeLAJPdBpBD02mFAYEViChbXV6SpxOo97xLY95p7gIUAZvSRbso4fsNR9ABzv9arF593uC8KC1R
+	uJPUXwBlLIcdBB/MeoJxln/nuyFZq+zotDvSoXQ9YadrzZmnemxHyWqvDoU1OKD6ehQ5zucmKEZBE
+	+N3/JqF4f/v5Cc1Ytws2wLS2n+eVx4JBT/k4A/1fDpd/Fu/L2Gpaln853KtBVNukuc6IXjrwPmurF
+	GEboc5g3unz71mK+Ko9MxrOc1cdFniFrJ/GoJHDlJ2Jlk1tzbOtG0M4Fu33RS3Gz7nNDPvj4kxEFA
+	CRGU3mBjNaENSLB+ALuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulTcx-0000000833C-3pMq;
-	Mon, 11 Aug 2025 14:35:55 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1ulVQZ-00000008PfH-4071;
+	Mon, 11 Aug 2025 16:31:15 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulSyf-00000007thB-3ou2
+	id 1ulTN2-000000080CT-1Wub
 	for linux-phy@lists.infradead.org;
-	Mon, 11 Aug 2025 13:54:19 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-af933e84619so68420466b.0
-        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 06:54:17 -0700 (PDT)
+	Mon, 11 Aug 2025 14:19:29 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-af9176e6134so53408366b.3
+        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 07:19:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1754920456; x=1755525256; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=y33Pv3KzofFQINb0XIyuYWEMtrAvE50zQkghzUlQZqo=;
-        b=oCJDwB7GkWhssESaTGyI7TPx0OWlS7TbtQJqCQigAldIhGIIQ6SGNorcAv9TK8k/n+
-         PkLdzCsY1ta20WxiJro1ob74OiEug4fHluwi8XMHD7hmCrZCYWZz7oJZD06fZCaaCk74
-         1pxeA44qjDShoQb1iMyPzvLtY8m0va+n+M08Ov7pli8Jo7py4hHG1GiUwH8clhdXgRl7
-         RAqUW8++MtdZkbgR7edQGuko5Wil46TzV3129pYqPwpCFKJxiAiCDeAJ4boVTXC1SkyS
-         aw1k+5MwL4nkZqElRwrXV76GzOfHxVRHSQjrnV4YZQvHqpmySTd+00voWSDRm8fmTAr7
-         RLWg==
+        d=linaro.org; s=google; t=1754921967; x=1755526767; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=b7EmAb0UwLypvaNyKn31+KtkbKYbjrEsTvCuMSjsWSk=;
+        b=LqM/By48iCosH3cpbA2Nv1OwhComWuRUj0yEQpCLFuFMKu8+3+yKiEWco/PHX/muJb
+         eNE22fbljvHCfOakeErLY0blGoFY5VVn/8gKTEBtBKzyyDAP0XD144F1tkc6PhA3YyGa
+         5rKyzD7s/d7lL+P6CLBTqqU1pUt4ARtmsOcrnMMhDUucKZLk97MynchyxFXIUBCkrV/b
+         UMsUJoT4BFccMxeUCZQrZP/ziaQEPp1o1d2wGkqhTnt1ixtJZYhIVQprVBSGKVbDpdGs
+         +aG1/3lQNcZNv2NaOsAh9o7FLlf+mcgq6B+aEFIeGY1/kNc0smZ+ihvd3Gm7v9pVrYku
+         QcFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754920456; x=1755525256;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=y33Pv3KzofFQINb0XIyuYWEMtrAvE50zQkghzUlQZqo=;
-        b=NLvGJEgUE0w7fLHuRCFDDlbmiEnwNBoIFe/P/N2vMzKjS0naxY6AY6Mg9Pm8h4HrB6
-         p4raaA5NUZ6TrG/zvgCVhixucpFAhPJBFptE0d5OWjGsts9pDk+iraftB/o25ooYkwEK
-         u1xyZFIQDXOPHUgFWEhagMcP4VUESSqMmLYCuSUJa/sidsdMwdUh5JHg9OqLJDkQMcch
-         gR4j3jl0yutf92LFT1xC12KXkrXjeqEWgVKY26vd9ldaLD5gBy9BxBQSUCKFDZdWAu6c
-         8wO8VfUTi+huwUJrNvT3/H1fd05XE/fOX2anQC9eeWIcPEHYXwbqZvf4DjhPM3VlnDI0
-         VQmQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV7p7CQytcT6CI72BXqQLGzxSrO3y+yGSmVAptQ/JzBgF2ndUVcwH1sUutNedISpnlXd6fS76nnA2U=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx+zhdNrChbvOje5UjcSoh2Lkw4Tjk0uYqahzDDqy/l8DsCSvds
-	XMnbw8zD3Frbdb3kn6D+6xRTlwzzFr68558YucmpPbf4P9HtRzIeaEz2NiU8VwcJsQw=
-X-Gm-Gg: ASbGncuJ/FvTK8F6Z4V9vUspyp9Qq0rVvcWBhFY6hqPbBGZyJawEJAuK3Sue3nPmUto
-	oAuD6IoT8BImmibmHEt3iU1KfTavmoRLcqHsSw2hT1RT2T1ee/xHnGrMZ55OERajRVSO5IEoGpp
-	/6syncGgZLoKQ9QSceTQgPaGtRJsQtiSEykBV3MSzEiTF0aZ0MDk9jn9T335g/1a3qIM/JvMgof
-	ykqmT/n2s7sIij+0DL0hkJ28hjWCETe83wxBwEnYB34Ru20wSG4fVIJ731jjom+cAiWA8cgSpy0
-	oLclVfgSb9+/J4jQBuYwikCRlL76LLpiAv2txg9WyxlNKtKg7d6EIEeJBbhXjTHa9hbN4R12WjH
-	epR5gI61S39sZxaJBK2REE8oNJnLiHrZfmfE/n/g=
-X-Google-Smtp-Source: AGHT+IH4Qf+ySBLIVJ9RkUzdhUf9nuY3HqBodr3qXxNFSQgHsOTF3ilWLqfyHr1IQq10+Kz8o09S9Q==
-X-Received: by 2002:a17:907:3ccb:b0:af9:aaa6:a86c with SMTP id a640c23a62f3a-af9dead3f1fmr358990066b.10.1754920456487;
-        Mon, 11 Aug 2025 06:54:16 -0700 (PDT)
-Received: from [127.0.1.1] ([178.197.219.123])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af986a477c4sm1179029866b.56.2025.08.11.06.54.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 11 Aug 2025 06:54:15 -0700 (PDT)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Date: Mon, 11 Aug 2025 15:54:04 +0200
-Subject: [PATCH RESEND 2/2] dt-bindings: phy: fsl,imx8mq-usb: Drop 'db'
- suffix duplicating dtschema
+        d=1e100.net; s=20230601; t=1754921967; x=1755526767;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=b7EmAb0UwLypvaNyKn31+KtkbKYbjrEsTvCuMSjsWSk=;
+        b=HwwPCd4Zpk7RC00tcrtWxsWZZyKCQ1hI+Q5cIsr7NpDD/GATqEp6ntjVLvdbHzjZ7L
+         O6dV8H6ihLmyin2M990BigEiwouZy2ZUYGQ7L8dyBzLRjNTdMGUShcNVH8PGFP6R+wwE
+         Qop7C95thHFu3ko9MirF+9ACcnUbCAYkW8qHzoFfcbYea6jVfW/S5ov0LnJa/Z+BT68I
+         SgqTr45qmEShaFC0YzESuutsWU499HBV4VvpfUHoeo34ih2BX0z56CeFY0PQ7oPOblG6
+         x5NFTHhPu1xd4nYgcV1bxA5+Q6+vYzj7S+A0sc/p80tqyv4BOCl5aIMSHVhAYzKFt08U
+         b3KA==
+X-Forwarded-Encrypted: i=1; AJvYcCUxYq8+v11h5tGZi6Caudc7iN7N78pl6gLI6y3GpjdQo50x7SVCw3reWy13fp6xl1d3BMU5feBiAX8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyo4cqbYF7DCFRm/SPSSfi2mXIvFOPhYXVCqZqKRfF8tLYZdgu3
+	WJPAwC1DKnGOcU7SCFApv5cZlNZzCCdnbyifrocFeIGVfdgSjM4KEvSlnGsNdUE+vLs=
+X-Gm-Gg: ASbGnctV4CjO/7TVpP8bz6dNRiPUNd6xUU7E8TaXH+kVyGq2wjlaoO3GOCVmT5nKGNl
+	ToZYgRqD7tFvUclxfeihvyIcPMS0/Z3aIJPz5GzqGY4EqMyVaqWrqpBjVDEwegv+GFtcRPZNEEv
+	/zqwCWFdOaniVD7WW3RLDP1hs2O4JcWAL3ltuIavSdE07JW3tkpgDyBr/jYXpF6/Z+5DCEI6mlb
+	9zy1ZMaE1Bf8j7j/pTp9Zz1CtcVMJhO2OcBfT3nMkGkSP+btGIOJ6vq/9OfNLfxMTLAuNi/NKhq
+	xyB0UqOG1flG8d1oTNWsTfw2wXrf/JS24hQHkQiTkKPfmoyoBJ333QGS/WYuar49vQ16WqraPcW
+	EdeR0kiNagD4BD6K1QKdzhY+KQw+XQZkdcL2KUe56tmmM36F0YEoSNA==
+X-Google-Smtp-Source: AGHT+IG+xsCh2QVwytiFvQzuSZRz6Y4edmgDh+btFCvKCUACSti+UZJeOTU+gkn1fB0y0p92sMOgAg==
+X-Received: by 2002:a17:907:3f15:b0:af9:566c:4cd2 with SMTP id a640c23a62f3a-af9dec3c054mr388659266b.10.1754921966654;
+        Mon, 11 Aug 2025 07:19:26 -0700 (PDT)
+Received: from [192.168.1.29] ([178.197.219.123])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a0a3e80sm2042966466b.47.2025.08.11.07.19.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 11 Aug 2025 07:19:26 -0700 (PDT)
+Message-ID: <deb5f02e-e26c-4e33-9e8b-2b3c04ddd4c9@linaro.org>
+Date: Mon, 11 Aug 2025 16:19:23 +0200
 MIME-Version: 1.0
-Message-Id: <20250811-dt-bindings-db-v1-2-457301523bb5@linaro.org>
-References: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
-In-Reply-To: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
-To: Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Vincent Knecht <vincent.knecht@mailoo.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RESEND 1/2] dt-bindings: leds: issi,is31fl319x: Drop 'db'
+ suffix duplicating dtschema
+To: Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Vincent Knecht <vincent.knecht@mailoo.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>
-Cc: linux-leds@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1112;
- i=krzysztof.kozlowski@linaro.org; h=from:subject:message-id;
- bh=c3RG28Ko/mx6f7xdaUC6cmwJZ34iCoqiGu5BWiOS8Xk=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBomfYCAhXzoTChGKL7Xql44UhldrwIyMLU8rSvj
- ClxLJtPxI+JAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCaJn2AgAKCRDBN2bmhouD
- 1/rGD/95sl+p+L3yZcu4PpLeRAKVr8M0CAYYWYQISgDBn6rgUWKMSxWpjRCK+XTyJTfIVm2M0da
- rshpXmRzJhjNa2N6onDSKhQIhcWQxb8ziD1k7w2CoWg+38e9S8dzL/Dpfb8egWwXGVa/COwBnSo
- g4fNEx+07u433Bn5HQy8MfjFOczQXrOFsuFS8iQ8jXqER9zY9u66tjwNpkKuSandtQNQn9hrb3J
- gc8bWN3fkE5gVxt89ZVe32cD0Jg6cftQCiIG7K4N2zmSpzeiSPWKwo4UOvyqjE7zOFQI54ert7X
- gMFwj2f5Qxv6M5KuecERmUWYaVOFrurwMa3274qrvyahcAGfK+mDU06akPsgfdiE1Vsr5hTIZiQ
- 4f+KYICmuJoClFIRJzuorhp24lAjhcEgcEDB9T2e2L2uQzYjTIrPiuMBEWYhPhp43mHSd1KTs9o
- FtpspdYBCN1VfmOyqpzK1nf9Nf6NEhZR5GsJ5AryaPV44iJNm6xIKJd724oyK+P8HL4Ae9n2l3p
- U5VFAsCg3b3+3mp+j9MmDIgyll8GFVqTkCzFndCkdhNQd7AJHdSHsi2uYFatm191/KHTZGuXRsk
- Bfj9yHmaePvlSvESbySzB/IoUn9p5izL5PH3oq7+Ly7Sbba6OFqrsGsuJsgk95oDdjbNnsK20KQ
- 09bNiVFG/ckn9GA==
-X-Developer-Key: i=krzysztof.kozlowski@linaro.org; a=openpgp;
- fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
+Cc: linux-leds@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+References: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
+ <20250811-dt-bindings-db-v1-1-457301523bb5@linaro.org>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ 2+47PN9NZAOyb771QoVr8A==
+In-Reply-To: <20250811-dt-bindings-db-v1-1-457301523bb5@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_065417_981115_B97283EA 
-X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-CacheID: sfid-20250811_071928_428564_9E3BF753 
+X-CRM114-Status: UNSURE (   8.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,36 +156,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A common property unit suffix '-db' was added to dtschema, thus
-in-kernel bindings should not reference the type.
+On 11/08/2025 15:54, Krzysztof Kozlowski wrote:
+> A common property unit suffix '-db' was added to dtschema, thus
+> in-kernel bindings should not reference the type.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> 
+> ---
+> 
+> RFC because this depends on dtschema changes and should be accepted
+> after new dtschema is released with this merged:
+> https://github.com/devicetree-org/dt-schema/pull/166
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
----
+This note is outdated - you can apply the patch.
 
-RFC because this depends on dtschema changes and should be accepted
-after new dtschema is released with this merged:
-https://github.com/devicetree-org/dt-schema/pull/166
----
- Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml | 1 -
- 1 file changed, 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-index 22dd91591a09428214afaa4c9c8e37aae9bd8aba..6a47e08e0e97b286538798190225ca2966a7ab34 100644
---- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-@@ -76,7 +76,6 @@ properties:
-     description:
-       Adjust TX de-emphasis attenuation in dB at nominal
-       3.5dB point as per USB specification
--    $ref: /schemas/types.yaml#/definitions/uint32
-     minimum: 0
-     maximum: 36
- 
 
--- 
-2.48.1
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
