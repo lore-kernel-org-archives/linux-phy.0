@@ -4,123 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70075C87FDA
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 07:30:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B8BBC87FD2
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 07:42:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3bR2rVbbb+RtaYWjepKAbTQvSJzKT7bmUydGa+YSt50=; b=SskW94bEOBGTvR
-	0Ft0GeKuIrQckRLw7gbCD9eOcL/EPpgJtTNLbkaPrIN1iZEry2bpo1tJsr7YbKaLIipg4lVCK+XhV
-	VdaVAky6tYLi7XYNOs5IHovSIPDb8rRCp41ZrFTUvORVQbcNl2qfhGyef4dDls5ca1vcylzJGwWUL
-	AIA0PUkkafOIRL1josFDrbCBy3BppamwuE9EEqoe9hYTrWyiBSIhPVd+4a3Kf9bcloirWyAwu0PQA
-	szCw1Op2Q5Mqkqv+749ylwPUhjjDlwFIr2DPoEdESLIPEdm99qZ/0dsRQvCCVtPmSBiUVTFy5mJsZ
-	Do8UJz6yD5C8NQCyuqcQ==;
+	List-Owner; bh=AqkcM/BzSaC4ZmKDeOGKyGLEZdaMGES4vbk32sm4RxM=; b=nDhzwfULx5Rf5e
+	/Qi66LK6eCrD5j8QCkl/mB5egKX4BhKTUBarYilK2JxLBnpY/1/fLCLfTPf7NsVcw1EorS6+i1aWW
+	ScNT7UJJwPoyB+5M3c96xHSAsBkbh5fabAzY0MQL6caBv7gO2iFrAfy2hJLA9mevOi+T7MJ9mLkXR
+	CgT6OK5CpaM451pyBVN/GmbKkzyquq3/K901kBFFGmTLNTd/MVo9fLYev1g8jNl+V/wFJRToOxIAx
+	iglQKVeMRSSRVeKmRgPOzoKXVOmdib+K+Gy6cwZ3ZVu85RSzMjIEJt5z/T3NosHHFxz47K/ZkwPwX
+	JrOWaF8aSbUWjzA+xfdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulMz9-00000006iB2-0AEy;
-	Mon, 11 Aug 2025 07:30:23 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ulNBF-00000006jr7-3niH;
+	Mon, 11 Aug 2025 07:42:53 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulMz6-00000006i9L-1mqP
+	id 1ulN8c-00000006jSA-1rVd
 	for linux-phy@lists.infradead.org;
-	Mon, 11 Aug 2025 07:30:21 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57AMrSvX005380
-	for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 07:30:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	OcP8VyIXvYe2IEmI7Z5YRpFJhorfq3DAeG+V0H/cwMw=; b=VapAIphbd8bN8TYF
-	KwQSuuSb3hiRYQTYuLISG6SZfskrWNw6Y2pgFpEbB6BBiDhnOzKFlZIXPQE7x91f
-	yiCK8qaiHN4f7Z/ZBBc8IxtiMo0KpinwBS1Uj+uujrvhAuHJy2yJjmVN6m674Q7l
-	fVm98d+K1AYJsop9feoQeqGixCsh7tYiVlHM/b04Oq3K6NS77sreOqYBjJg5mmTm
-	WmrYuaB/3Zt88OHfrkMZFNL/u1tv49W9ugzONqGiVbYGe35EH4ugRmwRbZ2SemuR
-	m6haRxxUuP8MPAa9zo7icgn36bIc/AhoamaKy2MA7R6VqbFEz1Y2k7A+OL9fzPdO
-	T4jqXQ==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48dxduuex1-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 07:30:18 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-76c0039e0f6so4275192b3a.2
-        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 00:30:18 -0700 (PDT)
+	Mon, 11 Aug 2025 07:40:11 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-455b00339c8so25034135e9.3
+        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 00:40:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1754898008; x=1755502808; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=POALZcOL5uP4hmBAgsW0NLC3bq36nPwjL/gPbRn+/O8=;
+        b=RQE68j+771lnPaj/QuIvqnuIiyHkPM6qcylRHhaApoCxohLaiXIbPz50QBu8eeTGdy
+         4wTCW+DW4TfepiVmScbNygkg86E7u4TmbIf92qOHN2x2M/zLivou0YEYg89TLkfUpGwG
+         qqzAYBz1QXXSOujZNaC+D88y9jYSuUWViAL4y01CbSo3ewvHgVwSoI7mSvnIMmksFeHf
+         JYumXUiHzmkxh9yBE3cBYtfw4QAk1nk9ODQnPSvp5xG2o222lQeKkROCcAvIp0oMC0bY
+         j+obKXTyfIURjfTqRcsV+ze2xX4fYea1yVkVLMiRfTmdZe+3jbaKikALBrhM+vlxVhxx
+         5bPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754897417; x=1755502217;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=OcP8VyIXvYe2IEmI7Z5YRpFJhorfq3DAeG+V0H/cwMw=;
-        b=irKTBxImcSMl4lUJ9SidjVF+3+7WUOXK8uDGqwGk/EIqvs7C3DGgTtkPXqbHmLFCsA
-         ka76bUkM4BJgqlUzpBi7NRAs/dbDkU98kv0Yg/UM3q9Pkq88jgamKuos5afbEIB02HT1
-         ffJR9oLTIj8bWH9RkKvM4bNZcnlmVjH/w7qpekJYp1jpkbNXCf/54Q7ux2ALQZIFB7St
-         gFqLygQtqOgSbmHcmWwq/jwx7QzdXDUJycJJkrhXA1HqlVMOylGEbvTnnVb+ZxS3HFJJ
-         KJUWfgQeI2TiSx403E6OYNiCPb2VxsaUYhfll9UugPKMohg7tgGVvu+Wxg9/LzpIoUeS
-         UVuA==
-X-Forwarded-Encrypted: i=1; AJvYcCUCM1BhpM+yMhVqI9VBVtGTwJ2cYwLemdJD+V2ceRiHuZVCHzZnV9Ks0uc0vcmB0fo6D5sNZbCAXWI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxLoxCH6q9hoVwaaftG9VFpoBOH0rZyOjQ0WyZtjBGir5Q7JhPN
-	74QOnQAYnk5FUqzWhGVEnkKeFFTxR6X0Bn9KuwcI79VRMjvO1JzkTDqKgCu/lDIzqa3kgmDKww+
-	QAsMzDRt69mDHtxL/yQLaF2lsJkUUJmblpG6nzbJNPeKKXrVrkv9H1pAbNvqvffMKdB3S
-X-Gm-Gg: ASbGncvtqLSYuHVzizsQ4Dy/nvLC9vYMb+CSLZMiUUVHDzd73mch8d4eYILmFfdAFCh
-	5lsg5rULJKIZG7A8QJmYhgrG49OhbnupNlmLvp+4ePe2d73R2KR4kCO7jr7l9/EC3rx8R/PJpa9
-	n9Oyibwo5WCJ3/QfKL/DuxGeXsqOTzJF3hc27Il62KBY7iOrYGGfVI4XRVBD1QqgTRwNkgytjgp
-	lUknWxfDfDLnmIs1peP9chZxqsUMREYPeCG4et5A+XzdPsgXZXoL725V7TEJFzL9KspIuy13ovS
-	HcmflKrkxx+DTIL4PVDUwnlnWjPFSoc4Cd/v8FME0YQAdQ5LlnTyv2MVmPGrh2l28NmJWf6hBOQ
-	mShbwERyo/hXinkP1bCAwb6wGb++H
-X-Received: by 2002:a05:6a00:b85:b0:76b:c9b9:a11b with SMTP id d2e1a72fcca58-76c46088bc4mr19460954b3a.3.1754897417513;
-        Mon, 11 Aug 2025 00:30:17 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFcltBUJ0g3R1fj2EUKLW6qYXdOXJ4NHnBg4nb4hNe0riHVIhAk6EPyUknxW89lXsGXleL63A==
-X-Received: by 2002:a05:6a00:b85:b0:76b:c9b9:a11b with SMTP id d2e1a72fcca58-76c46088bc4mr19460907b3a.3.1754897417066;
-        Mon, 11 Aug 2025 00:30:17 -0700 (PDT)
-Received: from [10.133.33.12] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-76bccfd8ebbsm26141096b3a.102.2025.08.11.00.30.10
+        d=1e100.net; s=20230601; t=1754898008; x=1755502808;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=POALZcOL5uP4hmBAgsW0NLC3bq36nPwjL/gPbRn+/O8=;
+        b=hqJU8a73BdpBNFGD5j5XfujasxxYnnmMx85Q8qXYHvKKG/erKqKQkRGNBzQMPVNZ/H
+         40QZ9TrrYKKCizSKOyNW0H3I7ojTO+jZs3mMvud3HHCJ/vYohkDdglunwH1KFk56/EXL
+         wIYbP32D/DcGra/DxX1jT+p9egneXCEhln0DFmlVX8W/4ohHZ/4wJ1IpNcziXfoYWL8Y
+         uGZxDh5kpZkfxiPut6enIfR+YrljvstnyMBbU0LaLNhN44PXh3fc811g8sO4XH4sPY04
+         4DQlLLI6b/7Gke/W6RjeVESL8CK9c2Zm9Q1iN8ApvieXGXNpSmBb8rTxlF08POQSwcvz
+         HCOA==
+X-Forwarded-Encrypted: i=1; AJvYcCWnrjdsDzBJYFlxRR+mAz6J8Q7YLCxJwU+faHtXwBuoE+u9gRiOeK7/UIz4FOWVNM3c1Auq0EgsUj8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxPjYcsw1AGQnPLOti4ta21+SfYxDKEOdUpW+Kb8HRSzlMqALVQ
+	r9+VDNtpam6aqNLOCUUtLYSFUGSQAl/NSAXoqRi5mGONIuQWrmEbcGbCM6CdfkrqYcE=
+X-Gm-Gg: ASbGncuwOBZ2Drk30rw16shrOGdFVghN2i3TflXv+9gQr2mOs7Z/44dxiDvgOm6w8I2
+	Sa0dr7E+ADiWXR7hvMsftC25DKM1T4GmseiV62E4Vh7zLFcjTb/W7zhxkVtquhzJOQZ+CxcX7YA
+	4umhmyI0ol2cJ7WMju8Zk6hE+mRawDDBYqnBvRZg3X4YPrCtl6DWpsrz1JcZsCaxdnhxDcH0Zpp
+	gZ3JUbuhD3on+E/kFhqp4vMAbmwIiXNhVN7k3ROgC4Y0/gLlQxi3wvFGqhvOQgZ9wtui/FKB0aQ
+	f+GD8H+xZJb81eoifmS/qd3W4lvTNNSRkKgT36QJIiEZfHkCTjdKiRoLdRVp9vcUaYU8CvglNpu
+	J8rdu8i/gjHcvBoynJt1XRMLtO+XVWS+KDI1QHFn/uD0siYB8EiUi7cPd1hkJRnc9yfdjF0aEKQ
+	tQuKDhI0m9Ww==
+X-Google-Smtp-Source: AGHT+IH4eA/RKU/GboTJ9VfoA/pYzZzZec5od8RkolpPdI5Ifcjq96waQtwfFh9MBuje3p8eQLal9g==
+X-Received: by 2002:a05:600c:1c83:b0:456:2698:d4d9 with SMTP id 5b1f17b1804b1-459f4f2e2eemr97639165e9.3.1754898008092;
+        Mon, 11 Aug 2025 00:40:08 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:b0fa:b045:4b82:de09? ([2a01:e0a:3d9:2080:b0fa:b045:4b82:de09])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-459dbba5210sm314243925e9.2.2025.08.11.00.40.07
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 11 Aug 2025 00:30:16 -0700 (PDT)
-Message-ID: <e9e77527-202c-411e-add2-2af9d82b8e8d@oss.qualcomm.com>
-Date: Mon, 11 Aug 2025 15:30:08 +0800
+        Mon, 11 Aug 2025 00:40:07 -0700 (PDT)
+Message-ID: <9f2bdd43-da4c-47b2-bba5-d69bc0b06ac7@linaro.org>
+Date: Mon, 11 Aug 2025 09:40:06 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 0/2] pci: qcom: Add QCS615 PCIe support
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
-References: <20250725112346.614316-1-ziyue.zhang@oss.qualcomm.com>
-Content-Language: en-US
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-In-Reply-To: <20250725112346.614316-1-ziyue.zhang@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=IuYecK/g c=1 sm=1 tr=0 ts=68999c0a cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=COk6AnOGAAAA:8 a=0rveLjV9VWli9pvRdbwA:9 a=QEXdDO2ut3YA:10
- a=zc0IvFSfCIW2DFIPzwfm:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-ORIG-GUID: pTqNMvdb0Al6OIWnxm8L4ihDJGCS2wUM
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA5MDAyNSBTYWx0ZWRfX5i2bA0B1+FO/
- YZzDdtNowmyPv7eGJ+a87cWoRaz0NgWGKRxhf4sjciF0XlwAhom4zrhF2/MYl73s81+TODOgLfF
- LQyc/9N9fyQgZAKAe36Oz9sxCmCgawUf6e6S4dg0kmD9dET/0ySwQPnxmsTF9WAbvV9678Q9nnP
- mmSk/bnozDSKnYOOn2i/RHsZwJ3RL5birixlrEZQLJYUP+Ka403Ea+K70Y8nsPv7/z6u94VVjj2
- zm1W9frARksOBbXbVQIEs7241qHbMaCeD4LSszPgvM5dsAcpKSsq82wElWZg+CgBF8/qMqSTZNx
- Ss4WEuDAFeBSYhi9x02Kt4tcLKQqZaqA1jTlwT6yJzMN0PfjEAXLWGEJm3t19THGQU63nFyJtzb
- kLSA7/2z
-X-Proofpoint-GUID: pTqNMvdb0Al6OIWnxm8L4ihDJGCS2wUM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-11_01,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 spamscore=0 priorityscore=1501 adultscore=0
- clxscore=1015 phishscore=0 suspectscore=0 bulkscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508090025
+Subject: Re: [PATCH v4 2/6] phy: qcom: qmp-combo: Rename 'mode' to 'phy_mode'
+To: Konrad Dybcio <konradybcio@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+References: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
+ <20250807-topic-4ln_dp_respin-v4-2-43272d6eca92@oss.qualcomm.com>
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20250807-topic-4ln_dp_respin-v4-2-43272d6eca92@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_003020_590471_3E5882FB 
-X-CRM114-Status: GOOD (  23.38  )
+X-CRM114-CacheID: sfid-20250811_004010_501015_916F5A13 
+X-CRM114-Status: GOOD (  17.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,93 +130,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 7/25/2025 7:23 PM, Ziyue Zhang wrote:
-> This series adds document, phy, configs support for PCIe in QCS615.
->
-> This series depend on the dt-bindings change
-> https://lore.kernel.org/all/20250521-topic-8150_pcie_drop_clocks-v1-0-3d42e84f6453@oss.qualcomm.com/
->
-> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
-> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+On 07/08/2025 18:33, Konrad Dybcio wrote:
+> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> 
+> There are a numbers of ""modes"" involved: USB mode, Type-C mode (with
+> its altmodes), phy_mode and QMP_PHY mode (DP/combo/USB/off).
+> 
+> Rename the generic sounding 'mode' to 'phy_mode' to hopefully make
+> the code easier to follow.
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > ---
-> Have following changes:
-> 	- Add a new Document the QCS615 PCIe Controller
-> 	- Add configurations in devicetree for PCIe, including registers, clocks, interrupts and phy setting sequence.
-> 	- Add configurations in devicetree for PCIe, platform related gpios, PMIC regulators, etc.
->
-> Changes in v9:
-> - Patch rebased
-> - Link to v8: https://lore.kernel.org/all/20250703095630.669044-1-ziyue.zhang@oss.qualcomm.com/
->
-> Changes in v8:
-> - Fix scripts/checkpatch.pl error (Krzystof)
-> - Link to v7: https://lore.kernel.org/all/20250702103549.712039-1-ziyue.zhang@oss.qualcomm.com/
->
-> Changes in v7:
-> - Add Fixes tag to phy bindings patch (Johan)
-> - QCS615 is Gen3 controller but Gen2 phy, so limited max link speed to Gen2.
-> - Remove eq-presets-8gts and oppopp-8000000 for only support Gen2.
-> - Link to v6: https://lore.kernel.org/all/t6bwkld55a2dcozxz7rxnvdgpjis6oveqzkh4s7nvxgikws4rl@fn2sd7zlabhe/
->
-> Changes in v6:
-> - Change PCIe equalization setting to one lane
-> - Add reviewed by tags
-> - Link to v5: https://lore.kernel.org/all/t6bwkld55a2dcozxz7rxnvdgpjis6oveqzkh4s7nvxgikws4rl@fn2sd7zlabhe/
->
-> Changes in v5:
-> - Drop qcs615-pcie.yaml and use sm8150, as qcs615 is the downgraded
->    version of sm8150, which can share the same yaml.
-> - Drop compatible enrty in driver and use sm8150's enrty (Krzysztof)
-> - Fix the DT format problem (Konrad)
-> - Link to v4: https://lore.kernel.org/all/20250507031559.4085159-1-quic_ziyuzhan@quicinc.com/
->
-> Changes in v4:
-> - Fixed compile error found by kernel test robot(Krzysztof)
-> - Update DT format (Konrad & Krzysztof)
-> - Remove QCS8550 compatible use QCS615 compatible only (Konrad)
-> - Update phy dt bindings to fix the dtb check errors.
-> - Link to v3: https://lore.kernel.org/all/20250310065613.151598-1-quic_ziyuzhan@quicinc.com/
->
-> Changes in v3:
-> - Update qcs615 dt-bindings to fit the qcom-soc.yaml (Krzysztof & Dmitry)
-> - Removed the driver patch and using fallback method (Mani)
-> - Update DT format, keep it same with the x1e801000.dtsi (Konrad)
-> - Update DT commit message (Bojor)
-> - Link to v2: https://lore.kernel.org/all/20241122023314.1616353-1-quic_ziyuzhan@quicinc.com/
->
-> Changes in v2:
-> - Update commit message for qcs615 phy
-> - Update qcs615 phy, using lowercase hex
-> - Removed redundant function
-> - split the soc dtsi and the platform dts into two changes
-> - Link to v1: https://lore.kernel.org/all/20241118082619.177201-1-quic_ziyuzhan@quicinc.com/
->
->
-> Krishna chaitanya chundru (2):
->    arm64: dts: qcom: qcs615: enable pcie
->    arm64: dts: qcom: qcs615-ride: Enable PCIe interface
->
->   arch/arm64/boot/dts/qcom/qcs615-ride.dts |  42 +++++++
->   arch/arm64/boot/dts/qcom/sm6150.dtsi     | 138 +++++++++++++++++++++++
->   2 files changed, 180 insertions(+)
->
->
-> base-commit: d7af19298454ed155f5cf67201a70f5cf836c842
-Hi Maintainers,
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 12 ++++++------
+>   1 file changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index f07d097b129fb7b3fad003103b7468b16c1c4390..30749943f66280c3aa9e9673466f6f736d1adbc8 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -1846,7 +1846,7 @@ struct qmp_combo {
+>   	int init_count;
+>   
+>   	struct phy *usb_phy;
+> -	enum phy_mode mode;
+> +	enum phy_mode phy_mode;
+>   	unsigned int usb_init_count;
+>   
+>   	struct phy *dp_phy;
+> @@ -3282,7 +3282,7 @@ static int qmp_combo_usb_set_mode(struct phy *phy, enum phy_mode mode, int submo
+>   {
+>   	struct qmp_combo *qmp = phy_get_drvdata(phy);
+>   
+> -	qmp->mode = mode;
+> +	qmp->phy_mode = mode;
+>   
+>   	return 0;
+>   }
+> @@ -3311,8 +3311,8 @@ static void qmp_combo_enable_autonomous_mode(struct qmp_combo *qmp)
+>   	void __iomem *pcs_misc = qmp->pcs_misc;
+>   	u32 intr_mask;
+>   
+> -	if (qmp->mode == PHY_MODE_USB_HOST_SS ||
+> -	    qmp->mode == PHY_MODE_USB_DEVICE_SS)
+> +	if (qmp->phy_mode == PHY_MODE_USB_HOST_SS ||
+> +	    qmp->phy_mode == PHY_MODE_USB_DEVICE_SS)
+>   		intr_mask = ARCVR_DTCT_EN | ALFPS_DTCT_EN;
+>   	else
+>   		intr_mask = ARCVR_DTCT_EN | ARCVR_DTCT_EVENT_SEL;
+> @@ -3355,7 +3355,7 @@ static int __maybe_unused qmp_combo_runtime_suspend(struct device *dev)
+>   {
+>   	struct qmp_combo *qmp = dev_get_drvdata(dev);
+>   
+> -	dev_vdbg(dev, "Suspending QMP phy, mode:%d\n", qmp->mode);
+> +	dev_vdbg(dev, "Suspending QMP phy, mode:%d\n", qmp->phy_mode);
+>   
+>   	if (!qmp->init_count) {
+>   		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+> @@ -3375,7 +3375,7 @@ static int __maybe_unused qmp_combo_runtime_resume(struct device *dev)
+>   	struct qmp_combo *qmp = dev_get_drvdata(dev);
+>   	int ret = 0;
+>   
+> -	dev_vdbg(dev, "Resuming QMP phy, mode:%d\n", qmp->mode);
+> +	dev_vdbg(dev, "Resuming QMP phy, mode:%d\n", qmp->phy_mode);
+>   
+>   	if (!qmp->init_count) {
+>   		dev_vdbg(dev, "PHY not initialized, bailing out\n");
+> 
 
-It seems the patches get reviewed tag for a long time, can you give this
-
-series further comment or help me to merge them ?
-Thanks very much.
-
-BRs
-Ziyue
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
