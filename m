@@ -4,133 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D471C87FDB
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 11:36:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF743C87FD2
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 13:35:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WT+KQqj+yQWBbsiLstIiIKgINPK5mBSRK31hOwaK6w=; b=ziwXx5KWNQGUPT
-	MLh6U+kkGmLlxtSR0MMhSnUNOzQLZCQIQ4/Id0TbAy6HtzBNWisADs/XA7+uID7R7NPr8VDjbwAaz
-	u6yuG0WjrZ9gLK2XkmfNGeS33/BBLpl4FDY4pTQC69QKo4E35e1qZ5322I9QgV8/KQKFvOWJhOcXX
-	u+QZbkaFGzZKbDZ5ld9ALIqrkXiKSrMz9auvgU83OFM8Q69CAgG7ArtZzGMmInL7WbroIPDvAiseY
-	b1534rcQOdgnnW32rhVf91juSEjTvHk3rHJDEaQNOcdDzc1cZvtPyLD3qN19OpVQOCEAk4poarcmP
-	pU52TdQtrFBKK5R+UV8g==;
+	List-Owner; bh=dugOiLVDM8laiZHT/pxos7Amws+i5coKNU7R+ctzGrk=; b=tas9U0DkDAVr9U
+	enz6G7gF49jqHdIHis26JaRFjEIb2jS1NOg43oA6EecNWVozXUjvHYYDJVtnqn9L+3X5S0tWy1uMC
+	Bq31Rufut3yu0IpW/la7/UvcPH9I6guzGRPSY+ZBh8F3mSjsVawWUdgyn/VwA4nbcVvnGJTY+vzkK
+	4UNoYHHhloUh2fJFlno3RroZE3iBM2bPI6d3qCrwxivnfr7O3Leqmm2JiaezFnp3s049l1IHd+NDl
+	JEtxIs85c1cgZFCWCC52k0QTbwPFDwz0ZByGKYQnikj2H8cCPH5DstU6pdjgbiWwqJZXBfFh67LrL
+	/pNVWmyT0Cqw/IKX3aZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulQpU-00000007Xvt-3ieV;
-	Mon, 11 Aug 2025 11:36:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ulSgv-00000007qKl-296u;
+	Mon, 11 Aug 2025 13:35:57 +0000
+Received: from mail-vs1-f52.google.com ([209.85.217.52])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulQUA-00000007TUX-2aSJ
+	id 1ulSf9-00000007ptS-1gDd
 	for linux-phy@lists.infradead.org;
-	Mon, 11 Aug 2025 11:14:39 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57B9dKWu018323
-	for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 11:14:38 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FMVgCALr0eA8+Us8AyPrgn7ofcaNBLZnHFXRdCHjjtM=; b=ktTDidAItFqOW24t
-	S2HZKgTLd608Um1Wjh9VBp6qsSawH55zNd6TIZw11mULKqEatccWJTDo7Mjm5C6n
-	DwQlz/d12F0HPP2jPg0x+seP3HZr+XLAINcB7wcGiqNdwY5VQJm9glOX5mxo8/da
-	rzrKG9D4mjdzpf6exaer6qjLaWEum3Uq5SgPpNl5ZmEHsJbhvOnURV1ondGMOEnG
-	UeBeEHbIybYWKH641vvZNVqfu8TmAhRjb8wgr3S4obhADzh+mpZA9OeQmOOYlKVp
-	4WGchkteboag+vIkXj4KcPEYY64Oswak4OkZfCz59BGRPTPLZIOdV9VOXV3whK74
-	9LibGA==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48dy3g444b-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 11:14:38 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4b071271e3eso10880771cf.1
-        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 04:14:37 -0700 (PDT)
+	Mon, 11 Aug 2025 13:34:08 +0000
+Received: by mail-vs1-f52.google.com with SMTP id ada2fe7eead31-4fe98e7b241so3132421137.2
+        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 06:34:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754910877; x=1755515677;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FMVgCALr0eA8+Us8AyPrgn7ofcaNBLZnHFXRdCHjjtM=;
-        b=lGtCuX7U2c5zs4xUPvUb0C3iwiGsLLUJqt4evNh3nyRD7Wps70PdNBl9mvwFAYVyeL
-         yVqEiG9zJvn5q24+AmDxDqADHJk7sQBVgxH0dHHyn9xsRK6GOXuHiVL46pidLYyhhrse
-         7nhUk5Vd5H/6rnsuMBrAaR0ylhBvZK62UyVzn3l7M35BVziaxHpLJNYRhNp0mSTFN8gm
-         xrd6CI1q5Pjb4yxNKzG1In/j16MJn3vE2XFwz3F5W3A6T2qF/jLYMrOPlbQC59cPpo7t
-         87Icl2G7ITwgiabRcPQxXOjD9gp/DOphI+OZNJvChz3znhJd483OOccEv6sYnC5BPFOh
-         mUDw==
-X-Forwarded-Encrypted: i=1; AJvYcCV9WfsyxAjS0ZFU9ZbyiXJYmSpAM8BxwAwpeIMKhii/Jd64kPUCDFSwUJ3pIK4bbT2519aNYER0EIo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyDDBE+FOsxN8NlTvZT5yFSyYhHK24cU7/k+d2XndwISeUOZBBV
-	xLivQ014jXK6WpvMg0tzKMwpe681pHHeJUfnALEu36RLU4BdO/TjaT6GSv9ih0krFPt55qGtTZ2
-	PgOAmt6bZ9B9+7WL4/LpJ8dBWwf8E+7R4pcou/pxuFx0pCqCYDsUFI6oC5z2lk4vOBUmu
-X-Gm-Gg: ASbGncuM1syuRABOixhlbac1p34QtR+mp1zYeeJmb+jeDqu61jVv2P9JEdiUShP8XBS
-	Fv7w2h676jId6OGj15epzhop01ZFO7i1AIiVJujWae4EpEo8h3GwCQUhzy/r1XgN31v17lrQZN9
-	OM0PBNsKkdQ3J8N8x/DGycO/WcOcZxtMyB0KEbrPE/mhjKN86NHWfKBMo4aL7qY5GbmNz3uFXnF
-	8QU41bmAcZsOpU5l/KD4BnCIlne0p203S9m1lpvP749sPALtQXbhQ5bxI2LT45B2/EsBIhyGxdQ
-	TobkJ2kXFTvXgO7kyb6pooJraw2YgSK/FnE6g4Gdnw2rPzQniTk5Ffh/OLr8RAhxPfsQeYSsgL8
-	DHYM2h0Vt+x2XOJsEfw==
-X-Received: by 2002:ac8:7d14:0:b0:4ae:d762:c070 with SMTP id d75a77b69052e-4b0ea60d209mr1240941cf.2.1754910876591;
-        Mon, 11 Aug 2025 04:14:36 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGcUfndsz+/5jp0G9OaiDDbR36Irm8Uk+PPCGZvdlMWx0v8ppULBdZLYX9OArLLxW8LKzxvuQ==
-X-Received: by 2002:ac8:7d14:0:b0:4ae:d762:c070 with SMTP id d75a77b69052e-4b0ea60d209mr1240671cf.2.1754910876078;
-        Mon, 11 Aug 2025 04:14:36 -0700 (PDT)
-Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-af91a21ac0asm2000540266b.99.2025.08.11.04.14.34
+        d=1e100.net; s=20230601; t=1754919245; x=1755524045;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=RjQkspi4MLubyyjI0/WFDwsqdNcqXCarE9lDU/gnxqA=;
+        b=feIX6FC5QETtnOhrefyUAqy105K7wsbPGBemQVK52WFiY9EvfiuSxKmNQUoWp8RTK3
+         ur0EKk5yKRF65HN/udV97/8Klffk5erAaq3IbJ4q+R4+cI3BX7pSFvetd8YZbJ+E63oS
+         lFcfKhxc85/amKNaOYJEl2LuHM9Ldm0a7BlKN0fdtX5WPICGMPZYHNQLbXKEwO3HXsjG
+         s8G+C/IGUaQw65zpmvR6/U36335OCSYmCMZCvDEEFfHOIHGwMthRJJ0iCgtZc3nR66KO
+         pKkpBITf0BlewZnis6rwz8cdjjTdnQRd3Mn+jl7c7/eqUF0KeF9pWdIgvs/pdeOR800w
+         1xZQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWUmlZPATYH84yhpnRgoctqEmkgJl2LIl+THjyFJzgIngA/GBn4nLs4zi6zoa4BMj6IYV/OFHgO7Ac=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxmKNkOM8aGIYxw27rnVzrHOiRpyOO+UcGrTkSRSba+y8HwTedo
+	0LYhHWhmgsnjekbwT0wOmrZmRW64ynpYoODAda2QLGdMBC663XOuGWUtH4ucG0YO
+X-Gm-Gg: ASbGnctAYosheLTvuSpAFkZ6k7WYp2vT/+SS6WVAOVlY1pcqWNhxcsHCOSTKTieE1Po
+	3P9rW/aE2yPDbFQ50w55kopqkOYd7Zj6eDWL92CPPaNBHGAV8ehHS4lWjWKL9dbfy+2Nbdo3Nid
+	iiMpfTPKJYnFwFc3aQNlp7HolSTRsGHuPAHxQGRScaPb8gByZfumbT5pUN+suRmA7FTXMViaEGa
+	6k7IoF/fjWBpDjh4zVyJkw9krI7fmL3VtiHsRaz89aKJYhZj6XXVqMeWGUY1NKaZQND8+9DvgPG
+	ALuhJKihM6rZWeADY7FaHBG/46J++dho2aCs/BvVnO8qW263QuSk9lEu22s9WGYvDJc9qcfBBmw
+	Rb2hYFrkyw+0B9XWDhkYRaxmjFCJmkh6e4/0lwO1ZjLomFZzbgd29K1mPLF9TC0VG7Uh9luo=
+X-Google-Smtp-Source: AGHT+IHjNdKlBEViCsW5Q/qHiUnEKLUg8AKnGU/uuYAfklD/4BYrCBSlAntk8PYrseVlyzI7bRJQPA==
+X-Received: by 2002:a05:6102:d90:b0:4fb:ebe1:7db1 with SMTP id ada2fe7eead31-5060d6ab629mr4998309137.12.1754919245507;
+        Mon, 11 Aug 2025 06:34:05 -0700 (PDT)
+Received: from mail-vs1-f44.google.com (mail-vs1-f44.google.com. [209.85.217.44])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-50629bdd28asm1744708137.8.2025.08.11.06.34.04
+        for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 11 Aug 2025 04:14:35 -0700 (PDT)
-Message-ID: <a6dbfe06-00bc-4fb0-9496-fb7ca849f832@oss.qualcomm.com>
-Date: Mon, 11 Aug 2025 13:14:33 +0200
+        Mon, 11 Aug 2025 06:34:04 -0700 (PDT)
+Received: by mail-vs1-f44.google.com with SMTP id ada2fe7eead31-4fe98e7b241so3132386137.2
+        for <linux-phy@lists.infradead.org>; Mon, 11 Aug 2025 06:34:04 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCURAL8i5f8M5VRtzTqdV+tFYPJOpV1/HTfsBDBoQkyG9EJk2vpM7R6B4nXRsr/x889w2YQOCR3EUoI=@lists.infradead.org
+X-Received: by 2002:a05:6102:5109:b0:4fc:1631:cdd1 with SMTP id
+ ada2fe7eead31-5060eed10aamr4511549137.15.1754919243985; Mon, 11 Aug 2025
+ 06:34:03 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/4] arm64: dts: qcom: sm8750: Add PCIe PHY and controller
- node
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Lorenzo Pieralisi
- <lpieralisi@kernel.org>,
-        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, quic_vbadigan@quicinc.com,
-        quic_mrana@quicinc.com
-References: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
- <20250809-pakala-v1-4-abf1c416dbaa@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250809-pakala-v1-4-abf1c416dbaa@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=X4lSKHTe c=1 sm=1 tr=0 ts=6899d09e cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=gkRObvzxmN_HJK3DEhcA:9
- a=QEXdDO2ut3YA:10 a=a_PwQJl-kcHnX1M80qC6:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA5MDAzMSBTYWx0ZWRfX506LwPgPN3gv
- uyh8WJsysWFbC6P7/iEyQYh7Igcr8F0gNeHUVOa00BHeV8Gt4sDtd0i84toHjVbkCSJ6vxaECfm
- kmULWfX7efaTziPaYEGrSLcYJKt5cxz5CIA99MI6LW8J014jalb5GOzu/bWAhFLqEUY2WDQIRXZ
- CDrHhRWrXKA4yIGYD23494uiJz4OQj5gposKuT3tQjUTex9hQOLHrPBym8TzfbiKSMmZn+LynsE
- KM67g0dCgSpQ/8xUs+Mabs/sqqK1e9NJMUmj7VALph/OogTTGFDMGKzZyJAd+kA4wtLDKlCqIic
- sT/WKNXMku7J62uK15aD7PjlDOVBYD+DlptZU+1eJkvrV8A3ntR1xlJmEwmIdV8vaavy2cMiqIM
- zulWZW3r
-X-Proofpoint-GUID: NT30-wwsK3VkvLgz0g6SQrnkKQIdhtrJ
-X-Proofpoint-ORIG-GUID: NT30-wwsK3VkvLgz0g6SQrnkKQIdhtrJ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-11_02,2025-08-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 clxscore=1015 malwarescore=0 adultscore=0
- spamscore=0 bulkscore=0 suspectscore=0 impostorscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508090031
+References: <20250808215209.3692744-1-prabhakar.mahadev-lad.rj@bp.renesas.com> <20250808215209.3692744-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20250808215209.3692744-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 11 Aug 2025 15:33:51 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdUWo=hYPWPrweoYn5rFC50aV5EV1xqwFHmLp27GRjEADw@mail.gmail.com>
+X-Gm-Features: Ac12FXyaruwz2KkVarRF9RjlDkdsU830kR7SxQSLDrclAsRoH40uxlU_2WKaBv8
+Message-ID: <CAMuHMdUWo=hYPWPrweoYn5rFC50aV5EV1xqwFHmLp27GRjEADw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/5] dt-bindings: phy: renesas,usb2-phy: Add RZ/T2H and
+ RZ/N2H support
+To: Prabhakar <prabhakar.csengg@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Magnus Damm <magnus.damm@gmail.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, Biju Das <biju.das.jz@bp.renesas.com>, 
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+	Conor Dooley <conor.dooley@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_041438_661795_D5E46E40 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250811_063407_438886_001D85EF 
+X-CRM114-Status: GOOD (  22.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,28 +103,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/9/25 11:59 AM, Krishna Chaitanya Chundru wrote:
-> Add PCIe controller and PHY nodes which supports data rates of 8GT/s
-> and x2 lane.
-> 
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> ---
+Hi Prabhakar,
 
-[...]
+On Fri, 8 Aug 2025 at 23:52, Prabhakar <prabhakar.csengg@gmail.com> wrote:
+> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>
+> Document the USB2 PHY controller for the Renesas RZ/T2H (r9a09g077) and
+> RZ/N2H (r9a09g087) SoCs. These SoCs share the same PHY block, which is
+> similar to the one on RZ/G2L but differs in clocks, resets, and register
+> bits. To account for these differences, a new compatible string
+> `renesas,usb2-phy-r9a09g077` is introduced.
+>
+> The RZ/N2H SoC uses the same PHY as RZ/T2H, so it reuses the RZ/T2H
+> compatible string as a fallback.
+>
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
-> +			phys = <&pcie0_phy>;
-> +			phy-names = "pciephy";
+Thanks for your patch!
+
+> --- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
+
+> @@ -120,6 +126,17 @@ allOf:
+>        required:
+>          - resets
+>
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: renesas,usb2-phy-r9a09g077
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 2
+> +        resets: false
+
+By the time this hits upstream, you will probably have reset support
+for RZ/T2H and RZ/N2H, so you just add renesas,usb2-phy-r9a09g077
+to the conditional section above?
+
 > +
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			ranges = <0x01000000 0 0x00000000 0 0x40200000 0 0x100000>,
-> +				 <0x02000000 0 0x60300000 0 0x40300000 0 0x3d00000>;
+>  additionalProperties: false
+>
+>  examples:
 
-The BAR space is larger (0x2400_0000)
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-please align the overall node style with x1e80100.dtsi
+Gr{oetje,eeting}s,
 
-Konrad
+                        Geert
+
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
