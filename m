@@ -4,74 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89BE8CA0EDE
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 22:02:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D20A4CA0EDA
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 22:02:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3JnNSmDtTdx+iNgWjbRBUjztQiw4z6met9DvNoCAToU=; b=WEwVp+JTYx9c8ZU1/m2+51vSRz
-	vyCWhzetMSa89dokLDRFAcXPgAo28eeRXfgK8LOq2SnWQECn5wEy0mzAkPwItfu2w1BzXYrpLppLu
-	uZPs8Mjn2C0KdoOvN4WAH2Cy6q2y+cqrDYoDEu4P5q5aEYEjk4Xzds3kV2K/qS/Suo1O3TyFIykCy
-	ZmDIRSAL/DIdzDF+SJ6c6iEmgsLLdChHpo3lNurNDoSg12b5xvimJO5Ud1cvwz5IKdV1ytOnLErtm
-	sJgWmwaJJbfJSAqg2iGTowY2m9lflzd9Nadnggj/4/AOzsmrtNtKwQBi0yjRIv7/o5fCBhd9HsMrd
-	EVmxaY/g==;
+	bh=nrmER/25msKZurARvltP+0//l8RMK5a9SPPlM88mOA8=; b=NeAy0A5ke2V4lTwohdopyA6+cB
+	fX08ktu8c/6nEVWOujX+fdjOH0aLHRPTm5AKiAuL8engFv+OOgDB2+qpLRjF2qsTS+RSsan1S9Oe8
+	ms+Vhr57hHWMw9IERC+iQ9bYzVnvGLZ8yeZu+pt2/97790fRdhPPaGLUQ12CERgowpLkGAthCi4an
+	AgeiVLIzy4UX8SYxgu0PcfBZGK6526N8VRi8nznmPQIiXJA16cH+nC39BZHq+RT4dVpf90bEHouZD
+	Du3X2BwDRfGX2UEpF5V1wmp7CGilWPEWmPnN19JgsVTweSnkBjU5RZ8qouslARGPfXygfYDrsFlgR
+	D1AyaKcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulaaq-000000099gL-3dZo;
+	id 1ulaaq-000000099ee-1lZC;
 	Mon, 11 Aug 2025 22:02:12 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulVA7-00000008MDc-2ZjT
-	for linux-phy@lists.infradead.org;
-	Mon, 11 Aug 2025 16:14:16 +0000
+	id 1ulV85-00000008Lmt-1iDX;
+	Mon, 11 Aug 2025 16:12:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 77CEDA5746C;
-	Mon, 11 Aug 2025 16:14:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5191C4CEED;
-	Mon, 11 Aug 2025 16:14:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 591CE45D6D;
+	Mon, 11 Aug 2025 16:12:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92CC1C4CEED;
+	Mon, 11 Aug 2025 16:12:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1754928854;
-	bh=zUvFB3N7aRigcs85SVTI8l61IaGOrKzSv0p4/Mkmidc=;
+	s=k20201202; t=1754928728;
+	bh=ywB2J7ZtGdpNwTs5xx/wUpxuvR6/Qw9lbD1G2ulil+4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DQKZkosJk4fVVmEqzcG9LhpFHnU38nzt9N2S2KsEaamcoz4FpBvVMyt8LUi5F/qyF
-	 C7xYTz7BDI+O+TthuXIlRLj//tWa5hGP/mQFeP3RY1D7BBdE96qz7bPhym6uDrOUfG
-	 h3Ba79ALK1lk/EDrV16kcRHtTzzlxGx2QJbH6zaYuqjiacbN2CCuzlMEOZPVjlRGfc
-	 M8khlsQOvYvwWBPi1+H6wpxtC5VmewhfG7t/evRDD7HJ+nwM7crN9kBVNKZfz4Yc8J
-	 jB1kQGjrrMjle/7cA9taNeHCadeT9XICl+9qzYPkEoH5qxemzLwf25JOMIqRoefNAc
-	 vCl+lOKI+dMkQ==
-Date: Mon, 11 Aug 2025 17:14:08 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
-	kishon@kernel.org, mani@kernel.org, conor+dt@kernel.org,
-	bvanassche@acm.org, neil.armstrong@linaro.org,
-	dmitry.baryshkov@oss.qualcomm.com, konradybcio@kernel.org,
-	krzk+dt@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH V1 4/4] phy: qcom-qmp-ufs: read max-microamp values from
- device tree
-Message-ID: <81858c88-151a-46ea-9172-76d3052467e9@sirena.org.uk>
-References: <20250806154340.20122-5-quic_nitirawa@quicinc.com>
- <f368b6da-1aa3-4b8e-9106-3c29d4ab5c5e@oss.qualcomm.com>
- <fe2bc07c-8fe9-47fd-bcd7-c2f0ebbd596f@sirena.org.uk>
- <aed1de56-fafe-4ccc-b542-69400b574def@oss.qualcomm.com>
- <acf89420-743b-4178-ac05-d4ca492bfee3@sirena.org.uk>
- <599b8a4b-324a-4543-ba27-0451f05c3dfd@quicinc.com>
- <3aa82f65-4812-4bf0-9323-96f40824a004@sirena.org.uk>
- <8c7f8cfc-2090-449e-b6ec-688a0021bac4@oss.qualcomm.com>
- <14566f49-7f7b-4583-98b7-8a473054f7c3@sirena.org.uk>
- <kwp3q4r5rzahzro5f6l6ml24vbiutyxokrhjsbtzcb5kvanx5e@elagxv6w5dq7>
+	b=LzaJfVEl3M/Ys3WfHZ9dLYbAm7auCaWvW/s4YH+7GSZcPf0mUlTZguwPJCtvpH7GF
+	 L6Lhba1BWh9vLiFbS8jmINS2Cww+GLUaLep5CHuJi4g3A10hZfY8CE1DZDLuXHR3vo
+	 rnHZz4w1wSzqK0CkspWvZSNGWPd4xMvvQNsRsaZt4J0/R6Fgs/kChA1HVzG0rohErO
+	 D/jS9qAv0IGK7nbN6FbNrJDlCi2vjckCtupQ7qqEbrJuldmHXTkDHFn1L/2yzdKZzC
+	 OF9hdX8oFPVFscbSwb7CMG1pvpyXu9xtJn3MfMpm60uCXiM4e69kSC6s6V3bg/Mflp
+	 YQzxt+93tYqxg==
+Date: Mon, 11 Aug 2025 17:12:02 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vincent Knecht <vincent.knecht@mailoo.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>,
+	linux-leds@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH RESEND 0/2] dt-bindings: Drop 'db' suffix duplicating
+ dtschema
+Message-ID: <20250811-pretext-nurture-f26afcb71bc4@spud>
+References: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <kwp3q4r5rzahzro5f6l6ml24vbiutyxokrhjsbtzcb5kvanx5e@elagxv6w5dq7>
-X-Cookie: Preserve the old, but know the new.
+In-Reply-To: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_091415_784916_88A94459 
-X-CRM114-Status: GOOD (  17.94  )
+X-CRM114-CacheID: sfid-20250811_091209_469261_FA420DEF 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,73 +79,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4058442127311952348=="
+Content-Type: multipart/mixed; boundary="===============7898185511818364601=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4058442127311952348==
+--===============7898185511818364601==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="RYB+8S+psHX1nRNn"
+	protocol="application/pgp-signature"; boundary="i7RBXh8TXneQyLtd"
 Content-Disposition: inline
 
 
---RYB+8S+psHX1nRNn
+--i7RBXh8TXneQyLtd
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Mon, Aug 11, 2025 at 10:50:27AM -0500, Bjorn Andersson wrote:
-> On Thu, Aug 07, 2025 at 08:09:56PM +0100, Mark Brown wrote:
-> > On Thu, Aug 07, 2025 at 07:43:15PM +0200, Konrad Dybcio wrote:
+On Mon, Aug 11, 2025 at 03:54:02PM +0200, Krzysztof Kozlowski wrote:
+> Resending because all dependencies are merged.
+>=20
+> Please take individual patches via respective subsystems (phy, leds).
+>=20
+> Previously:
+> - Link to v1: https://lore.kernel.org/r/20250627-dt-bindings-db-v1-0-d5c7=
+072acbee@linaro.org
+>=20
+> Best regards,
+> Krzysztof
 
-> > > I was never able to get a reliable source for those numbers myselfe
-> > > either.. At least some of them are prooooobably? chosen based on the
-> > > used regulator type, to ensure it's always in HPM..
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
-> > That's what set_mode() is for.  Like I say it's becoming less and less
-> > relevant though.
-
-> set_mode() just applies the mode to the regulator_dev, so in cases where
-> you have multiple consumers of a regulator_dev things would break.
-
-> Further, there are numerous cases where we have multiple consumers each
-> needing a "low" mode, but their combined load requires a "high" mode.
-
-> set_load() and its aggregation of the inputs deals with both of these
-> issues.
-
-That sort of active mode management is not the suggestion above that all
-this stuff is just intended to force the regulator to always be in high
-power mode.  If that's the goal then like I say just use set_mode() and
-directly express it.
-
-> Whether mode setting is becoming less relevant in our hardware, that I
-> don't have the definitive answer to.
-
-I rather get the impression that nobody understands what any of this
-stuff is actually trying to accomplish in these systems and is just
-copying things around from older code or BSPs, I'm not entirely
-convinced it's actually doing anything useful in modern systems.
-
---RYB+8S+psHX1nRNn
+--i7RBXh8TXneQyLtd
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmiaFs8ACgkQJNaLcl1U
-h9BxhQf/UJqZKs8mo12KlYBhGyWFco3u7lVCgt4l+vj3fCKJh/itUOLOKH88rJHY
-5bo974wYeOZIoR+rasvIWrlL4l6TD8GZJUKXrnwczYVD/V2saf5pDUdxIZN+QuwZ
-QZFAj8tK1iE5JorOYirLzAG4Y/VHpFK7PTXljI5DWeSzZsvxTtUqCPbxUyEtIwWi
-0TIbFBeEmU4Z6mZLO6DFcNmXJFajAQO3NVQQyQwnmqGm593+8OZpdSggKN/SrCO+
-1PTy9oucOf7K6cAM5SJEjT1ozMuCT5deSq+2C5SL+QxfoMtRjnD9rgGUoufst9KK
-vKK5kKDcrWDg+TRAFfl2FpHWzvB3HA==
-=y1Fm
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaJoWUgAKCRB4tDGHoIJi
+0jEAAP9vwCB8aZKzy3TpMtP3zqVyMGQwcwldZvWKjvk5CrVmKgD/UvaQDx8AyMC8
+Dc/Ub+g7NWs3WeUczFQzekOgSwe1QQw=
+=6OLD
 -----END PGP SIGNATURE-----
 
---RYB+8S+psHX1nRNn--
+--i7RBXh8TXneQyLtd--
 
 
---===============4058442127311952348==
+--===============7898185511818364601==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -160,5 +134,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4058442127311952348==--
+--===============7898185511818364601==--
 
