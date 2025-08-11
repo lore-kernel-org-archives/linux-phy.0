@@ -4,136 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1840C87FDA
-	for <linux-phy@archiver.kernel.org>; Sun, 10 Aug 2025 23:12:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF4D5CA0EC0
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Aug 2025 07:12:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LAj5A7lSPtbeeLwtpSTBAbZZZA0FCEWWDojFdl7pUwM=; b=4sg2wclfkY9l2y
-	DPcjbI/ghqKVXRXNwGm8QeODiZ8ESppyYp6fQsC9RifTLchfkL11TyDpig7gt7EjgEjb/CjA084SJ
-	y8Lszbv6SyAmqXc39XD3G4NBzDMzZt7GDIXbnk59ESfbqzhNv8RatEngvuucTdTH1fzhv58zQG+sR
-	BkANCy2HzKMMV7fFq3NMahQLynozZ84FbZQAO83dmx20Qnutf353KAuyhcxYFa1ge18GovgL1g8yX
-	zUdl1hTczZwxCcDk0cV8e6LBc52JD1dHRh9yxtOpQpJEE/wgjg3tUKKbue3nmRG+8TF2nfniWggTL
-	5AHgUo2gadUwVaAcSPCA==;
+	List-Owner; bh=yqn8uK4uKJHewVy+KHbUQqAdZ8S6JSMehXhQ17pjf8Y=; b=s9ZiLhx7ERtIlg
+	B5JGMSGt2r+T/dNc5n88CuxozoKcpCVsVCVZrIAI4nV6H8CREI8u1ypv3N0K4zaRTh8okDBEyNkbW
+	UCjWqIXuxphEgDokz3ar2/4xNK/h/JMAKZcw65wnl+PKCAXmztvhq+aCn621ZNL9EIdURb/ZZC6fi
+	Y8vrBKxeMD9fo6FTGEf203IS4/B5uuxCxB5nUxro485aBv0oM4nM9Hfub+IOv5VopyPy+C8M9n7TG
+	LJmXRDHBSnTMPNMcn0hAiAURyFS+0kVEgMkFpuWzCocIyRStutwKUXixLILnLZLssD9R9JqCScKnP
+	XKv1kS72e3knBy7P1HIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulFDG-00000006AkK-2pBw;
-	Sun, 10 Aug 2025 23:12:26 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ulMhq-00000006gfo-2BqV;
+	Mon, 11 Aug 2025 07:12:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulEp1-000000068Mb-0NYP
-	for linux-phy@bombadil.infradead.org;
-	Sun, 10 Aug 2025 22:47:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:Cc:To:In-Reply-To:References:Message-Id:MIME-Version:Subject:Date:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=9LIwrTzSIdW4XyPecxETwMmYAEX2pSsme7PIKfMfdJI=; b=KT7nJl+sL23vUrHUceYboPDtcI
-	CV9Yy8OExjaw1UwwsmmizHfmadG+T7ZrREcfg5V44Bwe39+5Crwdb7tubQVpg9ys9vEvf/3yrC5ez
-	rAdBA5pz8+YMqxkFQ29F1XZeREGYXkbPtGnVd4scFyJI5ZXxc42WtNrBxl/2y4pwV/6Wx/TkCOOgc
-	z10nw0BVwJ4U9L/E29wc4nO3tM1O14HK2FjtXV5xh/9s2/Ie6HssELdp1F7WEvSpZ+z9qcgHpQIxb
-	kgMIOifpUicb7ZLtADLqvs3HEjuBd//t3RX4SXtEWdzwyUFZi1679pm+/4GiZhrBgIIH+Qudx66oA
-	fxjf1Vgg==;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulEoy-0000000FJmq-0gPT
+	id 1ulMh9-00000006gXR-2Xsq
 	for linux-phy@lists.infradead.org;
-	Sun, 10 Aug 2025 22:47:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1754866039;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9LIwrTzSIdW4XyPecxETwMmYAEX2pSsme7PIKfMfdJI=;
-	b=iGrh0RlxiSXdAITnExU++9MSNN51jixN8PgLlI3jGCsOWc2xbSbz/JQG4kt0EP0cb4CcOi
-	Hh961vt0W7X5dToFBPsK/9XmeOmxrajYHBOiG8eqKaYWMJnm3ussUzDaUIYeGLiX3M1F9L
-	ZZ8IHD5NM0i4Zdqlf4i9QGL1VsNaz7M=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1754866039;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=9LIwrTzSIdW4XyPecxETwMmYAEX2pSsme7PIKfMfdJI=;
-	b=iGrh0RlxiSXdAITnExU++9MSNN51jixN8PgLlI3jGCsOWc2xbSbz/JQG4kt0EP0cb4CcOi
-	Hh961vt0W7X5dToFBPsK/9XmeOmxrajYHBOiG8eqKaYWMJnm3ussUzDaUIYeGLiX3M1F9L
-	ZZ8IHD5NM0i4Zdqlf4i9QGL1VsNaz7M=
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
- [209.85.160.197]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-388-DX5s_QU-Md-KGEoJCMcIkw-1; Sun, 10 Aug 2025 18:47:15 -0400
-X-MC-Unique: DX5s_QU-Md-KGEoJCMcIkw-1
-X-Mimecast-MFC-AGG-ID: DX5s_QU-Md-KGEoJCMcIkw_1754866035
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4b081b2a94cso130922671cf.2
-        for <linux-phy@lists.infradead.org>; Sun, 10 Aug 2025 15:47:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1754866035; x=1755470835;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=9LIwrTzSIdW4XyPecxETwMmYAEX2pSsme7PIKfMfdJI=;
-        b=jtMCeVpDhR2msn/Zyspl7+BzkUuWzROvxczvJHXq1zbUZBGmeEYAC26arsiw355V2N
-         3PCJuYUaIBpPCe6WwbXP2Tz83bXRUrauwoZRefxcm8BWOocjGRMZfV4l2+tt+5bGKrGU
-         LcQuBX2SUN7f6Ph2UXTicklAN8PvX9PEytAZOQSFo7404xTLoFYOAUsN4CFLf+HAFanN
-         5c9Wh1UtWJgZxSTwn3WEVZsqzgT2ZZ1gB2xAj9sb7hgYmqJxpOWZjMBTstXjnxp9Gk2L
-         vq19eyHpRedBdwqXTbmV5l1jlAVpg9rdETUWuD0NcircwxvekJPvyT5uCd2+I38qytLm
-         2Jgw==
-X-Gm-Message-State: AOJu0Yzzq+J+IEJpNEV6jWH/a9JQ4D9UYkaKH6M3+V1eRqChQgFv7XrW
-	R/BKZjVO29oKrmrDNPcuerM12F3l1TTRMhvryNr37A9fjqm7beoOqlEJqfGZZQaLnarvBgEqajI
-	zBUlbEMJ5s+RAY4BbTsfrhmaVPTPyZxH2o3g1UfgEuMJbQa0wjaU26AjaMVgUWrLcKe0=
-X-Gm-Gg: ASbGncui3kCwHNfv9MQuOl6yFJ0y1csTmx+b0a3qVKBP7kKyyD4bXaeJVqDa4kN6P9v
-	C3A1NtUPmZj2r9ae+lMDHEpSic1Eocv9wNxB/IW8QiaU/K/rVe7VsYLjap5l+oCXTHbVlK45YfS
-	cMlfolciSR75n1FMqhDMUFf884mqZb4PykSAlWfj7AhAJI+4kv1/3CEbAfsIYpPp3IH1HMdEeLR
-	1bknNMF4ZvymWOnjNbKrv1GKeA0CVk7nvvPZ+/iZ7ltM/LJOJOOFkJm8dOxbkg0lwfe/oDAVqEj
-	wZMUynhsygWz2bLv5Idy2V7cIc6RF0QJwyk06tcf2JIzESCmirbU63cfAYg81hQWdCCH7M9VDh2
-	4ruoapg==
-X-Received: by 2002:a05:622a:400c:b0:4ae:cc29:829e with SMTP id d75a77b69052e-4b0aed983f4mr137421411cf.59.1754866035173;
-        Sun, 10 Aug 2025 15:47:15 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEI4R4FgcBh6uwgYNS05a9B+ckO+bJARHrSqSCTHnGOa6vmcxR/BVXe8/wOen8M9+MhpG9xPw==
-X-Received: by 2002:a05:622a:400c:b0:4ae:cc29:829e with SMTP id d75a77b69052e-4b0aed983f4mr137421231cf.59.1754866034829;
-        Sun, 10 Aug 2025 15:47:14 -0700 (PDT)
-Received: from [10.144.145.224] (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4b0ad996459sm42685171cf.46.2025.08.10.15.47.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 10 Aug 2025 15:47:14 -0700 (PDT)
-From: Brian Masney <bmasney@redhat.com>
-Date: Sun, 10 Aug 2025 18:45:37 -0400
-Subject: [PATCH v2 9/9] phy: ti: phy-j721e-wiz: convert from round_rate()
- to determine_rate()
+	Mon, 11 Aug 2025 07:11:49 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57ANSLPQ031212;
+	Mon, 11 Aug 2025 07:11:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=P7cycLzFxBb
+	cEOFGQtoTvLrSRhApMC/9IHl57YKVPMU=; b=cUhlBX6F0cXYMS/WtDbaaLb2cwX
+	ti1BCVoJ0MWaT1THSVE9iPK2bO+q6rkFPqBxw6KV6NXadpEj2jaihPAW2DXQa3F3
+	MeY1fmk6+SCsT68u+51kTM38hZX9K7Tl2wvKr9xEHZmDeQjuTXEn3dUFnxckBMYF
+	mkYOd2tKTPdA3On59DHNNZUcJN2SV3Hvt+/VzezVIHUbLa+S0Qs8N4pXFZ01Nl3I
+	xF0P1nrRhyWZCc1Bpg0RXO8R85hJHLHktjG4L1xkk7hufFmBKvN0HnoWFSlwu9fP
+	cXfJUhvyFsoVs5tN8mAkJwXSr78PrczvRyhQOHQMIWBwMsrFE7KGbMzahYQ==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48dupmkjca-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 11 Aug 2025 07:11:40 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57B7Bbf9031611;
+	Mon, 11 Aug 2025 07:11:37 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 48dydkwb8s-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 11 Aug 2025 07:11:37 +0000
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57B7BZpY031560;
+	Mon, 11 Aug 2025 07:11:37 GMT
+Received: from ziyuzhan-gv.ap.qualcomm.com (ziyuzhan-gv.qualcomm.com [10.64.66.102])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 57B7BaMC031599
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 11 Aug 2025 07:11:37 +0000
+Received: by ziyuzhan-gv.ap.qualcomm.com (Postfix, from userid 4438065)
+	id B1E9BA60; Mon, 11 Aug 2025 15:11:33 +0800 (CST)
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: [PATCH v10 5/5] arm64: dts: qcom: qcs8300-ride: enable pcie1 interface
+Date: Mon, 11 Aug 2025 15:11:31 +0800
+Message-ID: <20250811071131.982983-6-ziyue.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20250811071131.982983-1-ziyue.zhang@oss.qualcomm.com>
+References: <20250811071131.982983-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-Message-Id: <20250810-phy-clk-round-rate-v2-9-9162470bb9f2@redhat.com>
-References: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
-In-Reply-To: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Heiko Stuebner <heiko@sntech.de>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- Brian Masney <bmasney@redhat.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1754865941; l=1629;
- i=bmasney@redhat.com; s=20250528; h=from:subject:message-id;
- bh=PfVBnMEhY+1VXjQch+u5PcV+HyG2IR2115kG2w+VUSA=;
- b=sL0ngpJvf7ih79HfcU+J6TF8fc534hLr/WKGFEbE4MP2Jf9cX1ovwrN2LEAg3nNaEFb5Q2o2o
- 4np7Je1hPi0C73RtTCBtGYON4LSvFYcTDMVZedGa2hpQZpsBbEsg5Fg
-X-Developer-Key: i=bmasney@redhat.com; a=ed25519;
- pk=x20f2BQYftANnik+wvlm4HqLqAlNs/npfVcbhHPOK2U=
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: BB5G3sb0G4Bm3vhv6JsutHK0kYG6VGBZJKtfxFZQZ0A_1754866035
-X-Mimecast-Originator: redhat.com
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=bY5rUPPB c=1 sm=1 tr=0 ts=689997ac cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=0LYZJ8Fh9g_wO_RM1qMA:9
+X-Proofpoint-GUID: _5_jJdDZ7smiwPnrDPiBPvK9rZ8gaDkW
+X-Proofpoint-ORIG-GUID: _5_jJdDZ7smiwPnrDPiBPvK9rZ8gaDkW
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODA5MDAwMCBTYWx0ZWRfX8vBAGfs+xDHJ
+ hQjxYztbmtUllShkDc4IZAygwPS0TP35ak33Oe8NINse02yV1cZe/7nURbcN5Ym/4+CR9+/4PJc
+ B4GY0fBHvu70KxeXXzQeRNAUdYqd8YsLDALdRkI+YgTHoisQtxCgVKppbJa0QE68KEtT08n+113
+ /v88lF7qD5lZcP9f7rgzfx7oghLqdt58xkYS6m2Jx7zCB9kMewzmtkd0LNm6620PsVWo4q+av4g
+ EYvmmEhR7FN0Avmpo3FDxhoq2Sb08KtCDfYuXZvRFO8lklAWwokHjRDxu415U5u8bW3SPuXLtZN
+ 1dFfU8y291b42hmGQzkaKYGc2mSbc+plPYV/Pgp6FF4UqdyS0CxO5HEgLhd/DjIQjCmM+qB/ci1
+ B0Ok+kxg
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-11_01,2025-08-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 malwarescore=0 bulkscore=0 impostorscore=0 priorityscore=1501
+ spamscore=0 clxscore=1015 phishscore=0 adultscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508090000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250810_234720_498474_BFB1B8A3 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20250811_001147_798969_A763E7B3 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,50 +123,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The round_rate() clk ops is deprecated, so migrate this driver from
-round_rate() to determine_rate() using the Coccinelle semantic patch
-on the cover letter of this series.
+Add configurations in devicetree for PCIe1, board related gpios,
+PMIC regulators, etc for qcs8300-ride platform.
 
-Signed-off-by: Brian Masney <bmasney@redhat.com>
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts | 40 +++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index ab2a4f2c0a5bf3aa4b77045f4da8b0ddcc079f7a..12dafb2bd49bc33c13dd49246bc26df082e3dd40 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -934,12 +934,15 @@ static unsigned long wiz_clk_div_recalc_rate(struct clk_hw *hw,
- 	return divider_recalc_rate(hw, parent_rate, val, div->table, 0x0, 2);
- }
- 
--static long wiz_clk_div_round_rate(struct clk_hw *hw, unsigned long rate,
--				   unsigned long *prate)
-+static int wiz_clk_div_determine_rate(struct clk_hw *hw,
-+				      struct clk_rate_request *req)
- {
- 	struct wiz_clk_divider *div = to_wiz_clk_div(hw);
- 
--	return divider_round_rate(hw, rate, prate, div->table, 2, 0x0);
-+	req->rate = divider_round_rate(hw, req->rate, &req->best_parent_rate,
-+				       div->table, 2, 0x0);
-+
-+	return 0;
- }
- 
- static int wiz_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
-@@ -958,7 +961,7 @@ static int wiz_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
- 
- static const struct clk_ops wiz_clk_div_ops = {
- 	.recalc_rate = wiz_clk_div_recalc_rate,
--	.round_rate = wiz_clk_div_round_rate,
-+	.determine_rate = wiz_clk_div_determine_rate,
- 	.set_rate = wiz_clk_div_set_rate,
+diff --git a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+index e8e382db2b99..bec2905c5d8f 100644
+--- a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
++++ b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+@@ -325,6 +325,23 @@ &pcie0_phy {
+ 	status = "okay";
  };
  
-
++&pcie1 {
++	perst-gpios = <&tlmm 23 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
++
++	pinctrl-0 = <&pcie1_default_state>;
++	pinctrl-names = "default";
++
++	status = "okay";
++};
++
++&pcie1_phy {
++	vdda-phy-supply = <&vreg_l6a>;
++	vdda-pll-supply = <&vreg_l5a>;
++
++	status = "okay";
++};
++
+ &qupv3_id_0 {
+ 	status = "okay";
+ };
+@@ -388,6 +405,29 @@ perst-pins {
+ 			bias-pull-down;
+ 		};
+ 	};
++
++   pcie1_default_state: pcie1-default-state {
++		wake-pins {
++			pins = "gpio21";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		clkreq-pins {
++			pins = "gpio22";
++			function = "pcie1_clkreq";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		perst-pins {
++			pins = "gpio23";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-down;
++		};
++	};
+ };
+ 
+ &uart7 {
 -- 
-2.50.1
+2.43.0
 
 
 -- 
