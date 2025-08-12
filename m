@@ -4,76 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40447CA0EC4
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:24:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6447CA0EDB
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:24:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fl9P96CIVqmzFnsNcf4mRjXVXwfxkewbvjR07Gd7J20=; b=NVwiL+kw0PPOOR
-	C/NTBkE3SzbM8Z45/u1ndZZOkXWqdh+DydAmdvSN+zN3BTH0z/u5KvXo8nOwb8PVusbdpcsWpStUp
-	x4d4AQJosWjdnOmdjigzz5+JEAquLlKxJft2uFnuXYN4ADvO9JzvrhyUm+Sr10ieu1k5JnSNHmPgz
-	0S85NOfVeuONf36kc+Ld3z8+35O3k0nDBMXZ++soKBTrnrsT/sWWsI2ZngEH/znjgzmyUxqsI5O6Y
-	qK/xSrmc5bcnxwFIBIGMQQdVTlWgz5y0JenZX1o4c5T/QypkwStrwZ5EZrAmmhcwp7WV45H5M95Dz
-	ONpGbpB+fuYH3VF+G3iw==;
+	List-Owner; bh=x1hqYmXkUH9Sbr3J6JaqCjfIqaGAFfdM+C3Nti06C2o=; b=eMqFk1i2uHnGa6
+	7ZmebpwuQqEiMLQN+uUeDT0JO1re4B4qHTCyMK2CZ6RQxQK3l0R0JjRbwMEzx3rFQsywzLSSKhneM
+	1rqxguJkJJ9CyKsSTFKD4cnJeEua9cYXJD8LjyBItTzhyBeTN3cWmYDi1ksnQWv8G8A78Ythaqhin
+	lxzGu25uvobmwW+f7ZdjOobZEJDlkX27RDYSsumCCx4m3YzoiNijWMBsxa/mh9ZNQfdKxz8adHKyk
+	3LZb6mXkbpi/9xORW0RfszYB8lebKiNnjDGougk7JWjHIrX/h7Nb2gGwPihyVuGi+lteK5gXmUSQg
+	ShFALecIU3Cma28MzTxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uluc9-0000000BpCg-00iB;
-	Tue, 12 Aug 2025 19:24:53 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ulucA-0000000BpFI-1l4z;
+	Tue, 12 Aug 2025 19:24:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uls4Q-0000000BSD6-0euR
-	for linux-phy@bombadil.infradead.org;
-	Tue, 12 Aug 2025 16:41:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=CTzI/MBpf1iwGM3rYp/q1YNiSmLoQIIMgDNX4zIJwEQ=; b=jMsFxmUnsAOJBjQqoJOQJ08C2M
-	U8d3If8hpWUa96+5J2F7EQgsy2ViPN4tvdrv05P1q5tk4hEnW5mUqrOd+VTCjZEnPTOmWB5aGbbMN
-	ewFCNRpZHhm840TVJRUDb6xYJ21DGv65ZX5c5rqYZ6s4CT6b1Ph0dxDyWxe1NTCV3RDLvfwvmpGO1
-	McSXpVcjX/qsE9eywh8WK1enfKuWu7atKN8fVvBqfu3BVg/Cqrg/VelcoPDKG4Ty5dAWs8rS5c/kt
-	RupJE3UaVBpUWmZ3QlQSwr1TUPLozjAsM0GNVmZF4p/MDa9+0bPH8uUZV6KXjYUsyzsekS+7gsbwa
-	kIpPii/g==;
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uls4M-0000000FrJv-3WDE
-	for linux-phy@lists.infradead.org;
-	Tue, 12 Aug 2025 16:41:53 +0000
+	id 1uls4T-0000000BSDm-1vyZ;
+	Tue, 12 Aug 2025 16:41:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7C33045F86;
-	Tue, 12 Aug 2025 16:41:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37333C4CEF1;
-	Tue, 12 Aug 2025 16:41:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id CF415601E4;
+	Tue, 12 Aug 2025 16:41:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C953EC4CEF8;
+	Tue, 12 Aug 2025 16:41:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755016908;
-	bh=hs1EeUJADn7q7ZOde0HvLyucF1ZRGoxSA8x+URMHgOI=;
+	s=k20201202; t=1755016916;
+	bh=qylFsF0HkvEqH5od8S1haU8m9Yen1Xq7TJ1PYMkZias=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=R7Vf9Gs9kQtNWGFJA+PkvyG9xazwBDXkknHrhuHeZnwGDhJlT+G24QynElQny6HB6
-	 P/hAwS95X9AA+7AGhgGGof8AioNlen0OLkK/1y0dwLo4x/Zz2vS+/FHtJAxpq81Lnk
-	 0wWTIyF5HcSujyUuqJ4RSTKIylS7HLh7zzkjjVELjhLBy76z3fZG1olK0DJr4OTwqs
-	 iztpnDTIl8qLg9A1LHWLEMCM276dpdNWQqfNT9omvaxm2+lmCoEjFSwyiC0OuX297a
-	 7fWoFYgc5heZ43C9bKv3+7ZEybyIjcO7yJKQC2pc39HKGo7E+7HEU38qEm/R3dTr65
-	 N5bshTLv2i7Eg==
+	b=EsA/mEHmCN10Kazb1TmB4OujmNIqjyo9ou7fbL6gpyghMgeQbNn6UY0w1lJWikO/9
+	 IrkN8VHSFQYroUiu8bXSmnPX/YZbx9N7nHEa31yq0dBeHh6pj6GpcL8PY3VryKwMkY
+	 45IgdIQA8S/q+W2zwMCj8kBbGE6rjxU0wbElH2gIBQ0W1vNLsVjl6wJ3XEcjK/2Ajj
+	 bzLYDo5SUqHIT5ga7OEVia6GC6935zfdLh/uEyux7qeM5VNbO84dw+UHJRUY5HNfBz
+	 /jlTgdPLSTscyikEtks38OHjPoYksQXk+9WSmn+v+FOJD/dIRw4/CO+h9zOgKqf77J
+	 +EAc6qmda75fA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Justin Chen <justin.chen@broadcom.com>, Al Cooper <alcooperx@gmail.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20250724154823.15998-1-johan@kernel.org>
-References: <20250724154823.15998-1-johan@kernel.org>
-Subject: Re: [PATCH 00/11] phy: drop unused module aliases
-Message-Id: <175501690578.633310.16974700832772559803.b4-ty@kernel.org>
-Date: Tue, 12 Aug 2025 22:11:45 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Yifeng Zhao <yifeng.zhao@rock-chips.com>, 
+ Johan Jonker <jbx6244@gmail.com>, Jonas Karlman <jonas@kwiboo.se>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20250723072324.2246498-1-jonas@kwiboo.se>
+References: <20250723072324.2246498-1-jonas@kwiboo.se>
+Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Enable U3 OTG port for
+ RK3568
+Message-Id: <175501691338.633310.6315313120573301384.b4-ty@kernel.org>
+Date: Tue, 12 Aug 2025 22:11:53 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_174151_242766_85EBE03B 
-X-CRM114-Status: UNSURE (   6.67  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,40 +72,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 24 Jul 2025 17:48:12 +0200, Johan Hovold wrote:
-> When fixing up some device leaks in the TI drivers I noticed that the
-> commits introducing the leaks had also converted the drivers to only
-> support OF probe.
+On Wed, 23 Jul 2025 07:23:22 +0000, Jonas Karlman wrote:
+> The boot firmware may disable the U3 port early during boot and leave it
+> up to the controller or PHY driver to re-enable U3 when needed.
 > 
-> This series drops the unused platform module alias from the PHY drivers
-> that never have supported or no longer supports anything but OF probing.
+> The Rockchip USBDP PHY driver currently does this for RK3576 and RK3588,
+> something the Rockchip Naneng Combo PHY driver never does for RK3568.
+> This may result in USB 3.0 ports being limited to only using USB 2.0 or
+> in special cases not working at all on RK3568.
 > 
 > [...]
 
 Applied, thanks!
 
-[01/11] phy: broadcom: brcm-sata: drop unused module alias
-        commit: b4e1e9108c948896661ecf5c61a29f6086e53f38
-[02/11] phy: broadcom: brcm-usb: drop unused module alias
-        commit: 33e64f6e38b2dccbaba8c3533cd0c45e1245c205
-[03/11] phy: cadence: Sierra: drop unused module alias
-        commit: d81e02d02b5f0c0f53e6cfb8982489fdacd546b6
-[04/11] phy: hisilicon: hi6220-usb: drop unused module alias
-        commit: b4d4af09092b50b940b37892445f0ae5a007e888
-[05/11] phy: qualcomm: ipq806x-usb: drop unused module alias
-        commit: 8cbb931b8ac285cd1ec46f8764a91a627704ccab
-[06/11] phy: samsung: exynos5-usbdrd: drop unused module alias
-        commit: a4c3d8015f4298d90d4d145101dd04de8854e6f9
-[07/11] phy: samsung: usb2: drop unused module alias
-        commit: 7ee2e0347cc781f0f87777558218961c51ec6aba
-[08/11] phy: ti: omap-usb2: drop unused module alias
-        commit: 36d20c023bfe98eb999ec5ba4f051460f6080564
-[09/11] phy: ti: ti-pipe3: drop unused module alias
-        commit: e709cc0741e8f155a39174d97eb9ae9c0cba2623
-[10/11] phy: ti: dm816x-usb: drop unused module alias
-        commit: 00837ae34f6321f9b6c290f92eb369e7f9259d41
-[11/11] phy: ti: omap-control: drop unused module alias
-        commit: e04f91e1d881120ff97389960cf7c765d510213e
+[1/1] phy: rockchip: naneng-combphy: Enable U3 OTG port for RK3568
+      commit: 4e346666edcc0506d8f0e581de4280b85b0d3e98
 
 Best regards,
 -- 
