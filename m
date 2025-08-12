@@ -4,62 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF479CA0EDC
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:24:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E42CCA0EE0
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:24:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shF2E+4chWTM6qfdGAIS801MBYqdaeTbK5zK9o2jHpA=; b=YSE5Z/BYpAqTWK
-	BhHMCCh/c3V8igP/p7PcOau6JG0EfasfVT+2wAxFvH3tixpuEeKiW5cx3e3HkNUhJZLqCfhn5geAV
-	4u5Utleoy9xXWaV7mOia4xrDjcQ1YrJn0vN700mZzOm2pM57vx/H3020ERMHd9M7r9t0juFHW9yXk
-	UNn48t+B0ZnGb/Ga87LqvHJHcazhSIjZGi6rI0fhw0hAv87zKyDCIwB/leCh0WFuSG77bOmmn1AUy
-	BVptkKA9zxbhpur0/aCkHoQ3yAK8c5NCReDsKe6Zx6XdBSFdmTY5rPTt0QTQXfkq9k5WF9TyccWNQ
-	moWgCxj17GzjFCpUYgsg==;
+	List-Owner; bh=fjSmHDyPQv9Ck0um6NgyaPQUz/vM0zH/cAEQJ/kyAek=; b=0TLs0EHpQXp/tX
+	6ZLpnU+U0ZRKLf1t6NrxKeTuBUW7jnGpwJRfJnqMKjZVaYTiqfCOAav/YOBZ/PYiiwEwjaxWt8ufS
+	Jy7vSdX2QC14FfXHze3Yg1+n/chMhHak6BnqbWLqYzqpM13VD5/ZppBhJAMRacw6+PdvvwPcUcZA2
+	3cPwhIOfyffmVaOv45EXwJXs7/9BQoukcpYJCQfdD7Ff7ji18jR6Ng59/VQczHIz31D42kmEcIU6h
+	kv4uNR32JeMSGIda6wyIITYzgcd/uZhfOahn2vjjBVs4hZSn7P0knrulJZ/qPBHsnpdlKT9Tg0Xul
+	pwTdRaR0Vi+B0SSaxfmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uluc5-0000000Bp5x-2BhM;
+	id 1uluc5-0000000Bp6g-3YZj;
 	Tue, 12 Aug 2025 19:24:49 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uls44-0000000BS8d-2kjf;
-	Tue, 12 Aug 2025 16:41:32 +0000
+	id 1uls4A-0000000BSAJ-2OGk
+	for linux-phy@lists.infradead.org;
+	Tue, 12 Aug 2025 16:41:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 11508601E4;
-	Tue, 12 Aug 2025 16:41:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E4A5C4CEF1;
-	Tue, 12 Aug 2025 16:41:25 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 08DF1601EC;
+	Tue, 12 Aug 2025 16:41:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C259EC4CEF0;
+	Tue, 12 Aug 2025 16:41:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755016891;
-	bh=RpDjRJiLb5VsAKP90NEwluXA2g+8CuZTXLDSu6vFNqQ=;
+	s=k20201202; t=1755016897;
+	bh=ptedwgzuDsEGl1cN2Loga4AsZu/U6huv+JI5qvZuTzU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=sSpQX7Xqp3Ga/zn5ks20ncAR+XkGXgnA4nm1swQ99t9DNtzMQOHvN76Q19gay/zVQ
-	 C2iEI3Ufb1kU58Ox0VUh/MrFNdKvSyHCTCS4s442NkDAcD4Ci99ML5WVRGfCtXszzn
-	 7TdgajRF6rJQqnEauVPpNpRluXlM+Z3bAhEfq5KLRi8FyflnSY2ARCWVS+LYHxP6tm
-	 VL2dXpiXliH+I+s8u6HK3mJiLqqnMvEdpr+IXHzOe51srWLJff6HgeGK6VmgkkUz0O
-	 Yp6THY57GW3zSm7XUWmJ04nYK5O7WsVfaLZbv/ehptzPhnPsp9BtH7hk7+nmmU3NsP
-	 RDlbB5ihTZ7jw==
+	b=bTrh7gzGt+Fd5cXKsZBHSmWy9H1GO+/m1PHOz39g5+TR2f+zx6L03J6M0t2iY8qd9
+	 zuMbyjQlE71g2ZHkDn5qDdgMJUxf6ZliEy6UINEmGfd6v0V8eGqAmJR69KKivA8nuC
+	 zgsTHpDYduKaZAhaf+ut3RmW/q9vMjANjCNl7hAZgjIK5aJ6U/NhwqK+od1RgOzElP
+	 MuU3lZapBcpaBlSJvIcGKVSwlIywFI6odq8mVoTod9zuvNBO5UvH91KF6KuMyiMQVg
+	 mUi1pMf2fJbNPuW+vBR9L86nUthYxvksOZk6elxxK4t6Px/qbB0sdxVcrAp4Xq8o9V
+	 nFgv6evA468Nw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Vincent Knecht <vincent.knecht@mailoo.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: linux-leds@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
-In-Reply-To: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
-References: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
-Subject: Re: (subset) [PATCH RESEND 0/2] dt-bindings: Drop 'db' suffix
- duplicating dtschema
-Message-Id: <175501688581.633310.2083661450340253592.b4-ty@kernel.org>
-Date: Tue, 12 Aug 2025 22:11:25 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Jai Luthra <jai.luthra@ideasonboard.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Devarsh Thakkar <devarsht@ti.com>, 
+ Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+In-Reply-To: <20250224-cdns_phy_pm-v1-1-0fe2c544cc87@ideasonboard.com>
+References: <20250224-cdns_phy_pm-v1-1-0fe2c544cc87@ideasonboard.com>
+Subject: Re: [PATCH] phy: cadence: cdns-dphy-rx: Add runtime PM support
+Message-Id: <175501689535.633310.5617884055739697680.b4-ty@kernel.org>
+Date: Tue, 12 Aug 2025 22:11:35 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -79,20 +72,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 11 Aug 2025 15:54:02 +0200, Krzysztof Kozlowski wrote:
-> Resending because all dependencies are merged.
+On Mon, 24 Feb 2025 18:10:05 +0530, Jai Luthra wrote:
+> Enable runtime power management for the device. The PHY framework
+> handles calling pm_runtime_(get|put)_sync when powering on/off this
+> device.
 > 
-> Please take individual patches via respective subsystems (phy, leds).
 > 
-> Previously:
-> - Link to v1: https://lore.kernel.org/r/20250627-dt-bindings-db-v1-0-d5c7072acbee@linaro.org
-> 
-> [...]
 
 Applied, thanks!
 
-[2/2] dt-bindings: phy: fsl,imx8mq-usb: Drop 'db' suffix duplicating dtschema
-      commit: 78a474b5a31a25e0a77e50df42be925f7cb575e6
+[1/1] phy: cadence: cdns-dphy-rx: Add runtime PM support
+      commit: a230d52c90cfb48f1f32d3957dc962165373895b
 
 Best regards,
 -- 
