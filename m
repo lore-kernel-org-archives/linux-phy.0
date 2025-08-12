@@ -4,69 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CE97CA0EC4
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 17:52:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBE45CA0EDC
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2sQZC19vNhWctgd5sbwcxnji7K3rZHc+6NHfjgdmuOo=; b=q56/uStfZtpkdA
-	VLi+0tFWKVP5OaNWjOtHbSN+TfJxaOG1xYqMmBE2QYb4wCLPmDIckXfsQdJ/3tpnIuuFKBgKKbPvb
-	xVTPNRR9ZP5HbyZQv3lI3TXCLSvFdV0pqRDzwUDVHrCNtRyAvskUpO8G67mS+IvjuSpf1rog4boD0
-	8Rf1aJAEbD4HOHFvq3utjzTp2tiU/fvTqgOVDjt0cPuzWMn5LN/ZKuxUkxVMz1ey8HuzcRf0on3ob
-	W5tKkHQcj7+Hp5Jrx6MOHBy30TRX8iveC2YQZ3yDh5wSXLy/tiHDMhKMG8L98LoJF3dkEXrwAgku8
-	VM0BFCdIkeuvUyUSjghg==;
+	List-Owner; bh=o9U5BHtkyguwDLkbvcfCA2c1CPy5M/AnBof4zNXYImM=; b=hY/xWS/+HXqLWU
+	dRAvjfXL5hjMW7jdre9784wVs+/4qijA9VvohzCDyVXtlO7PJGo5cXczhXc7ZVkejMNK75LmmW+Ex
+	dwH4b4suSN1ClO1F3g5aEq+WitTw/rk+HKDFUQXQ9L2wiQnd4cpaibp6yQ+Du0v/aNzNSsgKmyP6R
+	Em88480hiuhP8MXBjSR247ts3X2FCKBgyMJxpNUIya1mxRPOSf5UkNeRwG6OVH3mvMdRMp9ZR/9JW
+	JYMjs/41Z4sKWixA4dxWVZ4RJobNvB9BMWwr3r9NsWaqgeFydJh0FoeL+sxO/I5K4gwXz7rICZxkU
+	GWgMvIlzjrMxUKOOafCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ultAp-0000000BeNZ-1Op3;
-	Tue, 12 Aug 2025 17:52:35 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uluaj-0000000Bmx5-1c4W;
+	Tue, 12 Aug 2025 19:23:25 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulpsh-0000000B2e8-3G33;
-	Tue, 12 Aug 2025 14:21:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 038715C5B57;
-	Tue, 12 Aug 2025 14:21:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14C53C4CEF0;
-	Tue, 12 Aug 2025 14:21:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755008498;
-	bh=32dxnq96SImnSTkRiNIusVAtLmhJTDIedNBn4szGg1M=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mh+R0weGvZchr4qwuIprSkbYA8TJGU9c37khvcqjkQ5GFY9/kGlAP1PaTHusAObvx
-	 02RVjJgJvoXBG1jLP7ZU3Y8eLvYclLkaF5hNHslKWgTEHwtPcurtnEkG2qWcgNTfnE
-	 CSvzm7fCVbkuwu9K1WqSY9pI+NbN0pAzrAdJPBsfcovsxoXxsriCvYxx1gwftDAO3v
-	 r29Z51xBqBRxPMsV1iiJuKZwwqsBHsCaTZi4U0OLetk4oCQOQ8/CyIFIU8fxxIYc4y
-	 iP9uQ25hAk+DIsD8k4pEVBp2ihk7d/h1GN0V3ZZFdHC+KGYcOxL9PNqRpugdV0GNgI
-	 rITCVqKzKMpLA==
-Date: Tue, 12 Aug 2025 19:51:34 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, alim.akhtar@samsung.com,
-	andre.draszik@linaro.org, peter.griffin@linaro.org,
-	kauschluss@disroot.org, ivo.ivanov.ivanov1@gmail.com,
-	igor.belwon@mentallysanemainliners.org, m.szyprowski@samsung.com,
-	s.nawrocki@samsung.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
-	dev.tailor@samsung.com, faraz.ata@samsung.com,
-	muhammed.ali@samsung.com, selvarasu.g@samsung.com
-Subject: Re: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
- ExynosAutov920
-Message-ID: <aJtN7uVUV3YhfY5-@vaman>
-References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
- <CGME20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9@epcas5p3.samsung.com>
- <20250805115216.3798121-7-pritam.sutar@samsung.com>
+	id 1ulqZJ-0000000B909-3E7I
+	for linux-phy@lists.infradead.org;
+	Tue, 12 Aug 2025 15:05:42 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-458baf449cbso54262465e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 12 Aug 2025 08:05:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1755011140; x=1755615940; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=iFiyXHmzPTJSM/FpIqJQMHXEodXhM8NURp+djBOJcws=;
+        b=Zgqniad38RvXAzUWc4NE0JD/KZs8c9itQu5mWGOH1pxBD51pGRBiaJnfapStlRBHWI
+         ig6rx9Xewe+vekdnLN3sPzHdaDk2Uu/7eAmCWKZKi156SSJJt7jTvrbtw1kWkS2nJNne
+         v9TL+6OuMpA2imquEKhy+t2kv/C7H7/oTIEa6t1DW9lCVDzZsUh1qmNT1/Lpt1PCCQez
+         B3yUXUjUXkDC+oumNxbbb5xcJ3NxPWIQPNcVJzSSF2vyT4E6wxyLKwklTNIO7h1pjbxd
+         8o/Wh7jBx7SVTNvwqgMl7vjFm2wme/ljWEJdCO9Q/0TguK4j/85GWyI5jbi436rwxfO1
+         uokw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755011140; x=1755615940;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=iFiyXHmzPTJSM/FpIqJQMHXEodXhM8NURp+djBOJcws=;
+        b=DDgTfxaomzEkfNNDKnL6Q8PptnVahcq8i/Qhb1UGvIqfu6mRLfp0I9/4GyTL/EN/jV
+         97ys1AaC9aADVdRgWgOmF0h60GXw1ZlhMmd/GxYIakbqoifmGQ9KdB6bR9YNEyPwBEoB
+         NOtJcfGrAQ8KrqdMWUvwrGdbIQl4Plo49/UX4CHSb7T8yinbiX13vSx8CEsxQhFf4RHE
+         Ax9YBvXA3CgYX8VyKmgFC2YJUzkZGF0CqjCMNDKNZ9Q5NV0O9Xm6TNgFYSCwl6TqviVh
+         Jnfodrv5aduMmJ7X2dX3ahs2Xgm0YDEJ/me3fj5mM4x/0aO8umLnOSdRQuUBKQNBxUQe
+         3TXg==
+X-Forwarded-Encrypted: i=1; AJvYcCX1rbwjrOizgH8Xty19Rdyq2WvbjpZHabl0eFe6dnsOi6VYkXggHN5F0IjZse3AoRGs/Pachmoafz4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyNvd6OlLcZeuyqWooOAmaxx4pZmASnf4vUEeSft8p8TGyCqA4Y
+	cJcL4oDGibG94Q9bqoo7OdNXBtW5yI3MIt2zFSbANVW5PrnElMeKoLmnWM38RVpvYVQ=
+X-Gm-Gg: ASbGnctVzGY0vlnp9o8hALBk1alCS3phVQ6opcJmmaFYKHZ15u8CUhwnBWiPNMGTK5R
+	I60lnPmIoFi8f0swhrYY8BzJAKCHXJIztQNa2TqZM0gbLsRKKuH7T0FLRZQOotA9dUlG/Wfvd6S
+	H8fR4O/o3nysxFe5WYkNIt8t2sSx3DZn6hklLVj0aFl0ArxB8g2Cx+SgegiUtg/Nsrf4uOzt/9j
+	uaSE1u3+zEtGmhrHeh+XscVSWFY3FVPixxFZKVekCvl7BDSfe819eczV7xzTKC70YwOcRaNADyp
+	A7980zoRWuhfgbgt99a6TtchxtmdX6GnwompLNRYctm6u8coAIRObcW6QF+H0u2PQCqtHbO5Qr8
+	1gr0hzUcDakt3lOGDRE7ssGPA0+jTRZauTGPxyEisccJaS5rkymi8oBksWYQpwIQ=
+X-Google-Smtp-Source: AGHT+IFaF18WlpXLiOPapLF9skeq6bos29ChTJTlyHVAm8O0Lnm+tnZQv8MZbqesSAf81giG9PV3vg==
+X-Received: by 2002:a05:600c:474c:b0:456:1923:7549 with SMTP id 5b1f17b1804b1-45a15b555demr1276015e9.26.1755011139689;
+        Tue, 12 Aug 2025 08:05:39 -0700 (PDT)
+Received: from [192.168.0.35] (188-141-3-146.dynamic.upc.ie. [188.141.3.146])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-459e5873c43sm327424985e9.22.2025.08.12.08.05.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 12 Aug 2025 08:05:39 -0700 (PDT)
+Message-ID: <16e4883a-a056-46c3-a7c7-a87ff5da89a1@linaro.org>
+Date: Tue, 12 Aug 2025 16:05:38 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250805115216.3798121-7-pritam.sutar@samsung.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
+To: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
+ <20250710-x1e-csi2-phy-v1-2-74acbb5b162b@linaro.org>
+ <d7949778-73c4-4575-8db3-a3724f75eb38@linaro.org>
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Content-Language: en-US
+In-Reply-To: <d7949778-73c4-4575-8db3-a3724f75eb38@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_072139_899969_14C9BB1B 
-X-CRM114-Status: GOOD (  25.79  )
+X-CRM114-CacheID: sfid-20250812_080541_809540_4B528FEA 
+X-CRM114-Status: UNSURE (   6.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,207 +104,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-08-25, 17:22, Pritam Manohar Sutar wrote:
-> Add required change in phy driver to support combo SS phy for this SoC.
-> 
-> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> ---
->  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 327 +++++++++++++++++++-
->  include/linux/soc/samsung/exynos-regs-pmu.h |   1 +
->  2 files changed, 324 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> index c22f4de7d094..1108f0c07755 100644
-> --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> @@ -273,6 +273,36 @@
->  #define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
->  #define HSPPLLTUNE_FSEL				GENMASK(18, 16)
->  
-> +/* ExynosAutov920 phy usb31drd port reg */
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL	0x000
-> +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN	BIT(5)
-> +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N		BIT(4)
-> +#define PHY_RST_CTRL_PHY_RESET_OVRD_EN		BIT(1)
-> +#define PHY_RST_CTRL_PHY_RESET			BIT(0)
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0	0x0004
-> +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR		GENMASK(31, 16)
-> +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK		BIT(8)
-> +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK		BIT(4)
-> +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL		BIT(0)
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1	0x0008
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2	0x000c
-> +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN		BIT(0)
-> +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA		GENMASK(31, 16)
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0	0x100
-> +#define PHY_CONFIG0_PHY0_PMA_PWR_STABLE		BIT(14)
-> +#define PHY_CONFIG0_PHY0_PCS_PWR_STABLE		BIT(13)
-> +#define PHY_CONFIG0_PHY0_ANA_PWR_EN		BIT(1)
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7	0x11c
-> +#define PHY_CONFIG7_PHY_TEST_POWERDOWN		BIT(24)
-> +
-> +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4	0x110
-> +#define PHY_CONFIG4_PIPE_RX0_SRIS_MODE_EN	BIT(2)
-> +
->  /* Exynos9 - GS101 */
->  #define EXYNOS850_DRD_SECPMACTL			0x48
->  #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL		GENMASK(13, 12)
-> @@ -2077,6 +2107,253 @@ static const struct exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
->  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
->  };
->  
-> +static void
-> +exynosautov920_usb31drd_cr_clk(struct exynos5_usbdrd_phy *phy_drd, bool high)
-> +{
-> +	void __iomem *reg_phy = phy_drd->reg_phy;
-> +	u32 reg = 0;
-
-again..
-
-> +
-> +	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +	if (high)
-> +		reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> +	else
-> +		reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> +
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +	fsleep(1);
-> +}
-> +
-> +static void
-> +exynosautov920_usb31drd_port_phy_ready(struct exynos5_usbdrd_phy *phy_drd)
-> +{
-> +	struct device *dev = phy_drd->dev;
-> +	void __iomem *reg_phy = phy_drd->reg_phy;
-> +	static const unsigned int timeout_us = 20000;
-> +	static const unsigned int sleep_us = 40;
-> +	u32 reg = 0;
-
-here too
-
-> +	int err;
-> +
-> +	/* Clear cr_para_con */
-> +	reg &= ~(PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-> +			PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR);
-> +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +	writel(0x0, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1);
-> +	writel(0x0, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> +
-> +	exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> +	exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> +
-> +	/*
-> +	 * The maximum time from phy reset de-assertion to de-assertion of
-> +	 * tx/rx_ack can be as high as 5ms in fast simulation mode.
-> +	 * Time to phy ready is < 20ms
-> +	 */
-> +	err = readl_poll_timeout(reg_phy +
-> +				EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0,
-> +			reg, !(reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK),
-> +			sleep_us, timeout_us);
-> +	if (err)
-> +		dev_err(dev, "timed out waiting for rx/tx_ack: %#.8x\n", reg);
-> +
-> +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +}
-> +
-> +static void
-> +exynosautov920_usb31drd_cr_write(struct exynos5_usbdrd_phy *phy_drd,
-> +				 u16 addr, u16 data)
-> +{
-> +	struct device *dev = phy_drd->dev;
-> +	void __iomem *reg_phy = phy_drd->reg_phy;
-> +	u32 cnt = 0;
-> +	u32 reg = 0;
-
-this one, former is okay
-
-> +
-> +	/* Pre Clocking */
-> +	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +
-> +	/*
-> +	 * tx clks must be available prior to assertion of tx req.
-> +	 * tx pstate p2 to p0 transition directly is not permitted.
-> +	 * tx clk ready must be asserted synchronously on tx clk prior
-> +	 * to internal transmit clk alignment sequence in the phy
-> +	 * when entering from p2 to p1 to p0.
-> +	 */
-> +	do {
-> +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> +		cnt++;
-> +	} while (cnt < 15);
-> +
-> +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +
-> +	/*
-> +	 * tx data path is active when tx lane is in p0 state
-> +	 * and tx data en asserted. enable cr_para_wr_en.
-> +	 */
-> +	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> +	reg &= ~PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA;
-> +	reg |= FIELD_PREP(PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA, data) |
-> +		PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> +
-> +	/* write addr */
-> +	reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR;
-> +	reg |= FIELD_PREP(PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR, addr) |
-> +		PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-> +		PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> +	writel(reg, reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +
-> +	/* check cr_para_ack*/
-> +	cnt = 0;
-> +	do {
-> +		/*
-> +		 * data symbols are captured by phy on rising edge of the
-> +		 * tx_clk when tx data enabled.
-> +		 * completion of the write cycle is acknowledged by assertion
-> +		 * of the cr_para_ack.
-> +		 */
-> +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> +		reg = readl(reg_phy + EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> +		if ((reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK))
-> +			break;
-> +
-> +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> +
-> +		/*
-> +		 * wait for minimum of 10 cr_para_clk cycles after phy reset
-> +		 * is negated, before accessing control regs to allow for
-> +		 * internal resets.
-> +		 */
-> +		cnt++;
-> +	} while (cnt < 10);
-> +
-> +	if (cnt == 10)
-> +		dev_dbg(dev, "CR write failed to 0x%04x\n", addr);
-
-Not error?
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTIvMDgvMjAyNSAxNDozOSwgbmVpbC5hcm1zdHJvbmdAbGluYXJvLm9yZyB3cm90ZToKPj4g
+K8KgwqDCoCAuY2xrX2ZyZXEgPSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCB6ZXJvLAo+IAo+IEl0IHNl
+ZW1zIGNsYW5nIGRvZXNuJ3QgbGlrZSB0aGlzIGF0IGFsbDoKPiBkcml2ZXJzL3BoeS9xdWFsY29t
+bS9waHktcWNvbS1taXBpLWNzaTItM3BoLWRwaHkuYzo0ODY6MzogZXJyb3I6IAo+IGluaXRpYWxp
+emVyIGVsZW1lbnQgaXMgbm90IGEgY29tcGlsZS10aW1lIGNvbnN0YW50Cj4gIMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCB6ZXJvLAo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgXn5+fgo+IDEgZXJyb3IgZ2VuZXJhdGVkLgoKV2VpcmRseSBJIGNvbXBpbGUgd2l0aCBjbGFu
+Zy4uCgp0aHggdGhvdWdoCgotLS0KYm9kCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
+eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1waHkK
