@@ -4,124 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 264B5CA0EE1
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:23:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2510CA0EDC
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 19:24:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wbZpdg1cdMNtzeT6f1Y2lpGsLZ5icqFZcapOuDT67B0=; b=iSIp9DPGUCUemZCviKAvEf7yR6
-	F9zxEO3iaTsYydDY3YgK7TOcMDhuT9scEDLgMeHgOCv2dmgUf6X1m4wjqn1yt7JlROESGCyxoiYVJ
-	2FdxRvKyG0G39ifwus2cORRMt+NmkIHOrSzFD+5tSzQpR2npATqMe7oe0+4fXpQfdribPdP6D4pTg
-	fsPnxA2+WM8bwygymaJpvpM1L78P/0tEv32MsVNSzSESJlRqWT48O4S9Ata7LyW9Oh/cMfXnBF26C
-	Syn3Zb115xkE86oB0DsWGOekAyVgp43enzfbxbA1YrBouF6OzcdJvWnUJeC3f+1V8DNrfFqFwyb+a
-	f84oWMRw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TXrH8LE4fQ4YDDoJqRIuVbHqzrJAeirRmb1tVzChPVA=; b=PvSSK0jUdFqxt/
+	hc96VkTgV3PnKY5jFr4ZWqdUdN2uWMoGUUrl8rPuoPbfbti8yDTE/NmT6/rhtwSccZ9sCdA9NPI05
+	iN5fG8cmDowJnCS2IfuGCGgq/LcL4unSbr7rwM848OJTXmxWEawQbwbli6JmYnJ19zgnaCsXV85EC
+	dcPAmeKhU0pXolsfVYixxKFfKMACN2Vi7dGM0F0bT7EmvfXb7P1Yq37uvnWJXoCGbQKbQViGy6pct
+	pHJZX5pBxnBMOkYMKK8iE0ZMSwzxC/4bnoBjA+i5hOpgH2AS6cBr6fBq6R1gfyJR5h9HsrNmGEejq
+	roLfpw/ng/DcpYCLlPJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uluay-0000000BnNI-3Kzo;
-	Tue, 12 Aug 2025 19:23:40 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1ulubx-0000000Bosl-13Zj;
+	Tue, 12 Aug 2025 19:24:41 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ulrYK-0000000BFwM-0IGU
+	id 1ulrtK-0000000BPzw-2nla
 	for linux-phy@lists.infradead.org;
-	Tue, 12 Aug 2025 16:08:45 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-459e1338565so53019295e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 12 Aug 2025 09:08:43 -0700 (PDT)
+	Tue, 12 Aug 2025 16:30:27 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-458bf6d69e4so51767035e9.2
+        for <linux-phy@lists.infradead.org>; Tue, 12 Aug 2025 09:30:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1755014922; x=1755619722; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=BFSWMsjZodOzDrOuJCoS7BkVLEszHuWpZmYI2ozmnzw=;
-        b=BGh2chmyba9NIwCWRPOWH8hHdjRqnA3NZY73xYv7ElkszCYITrvTGd9YMmDX/bpamA
-         uc8bG4kQyvMgs6wFmlqN49D18FBn0S5yb+0wfcsw31yO7pE0l3YpsEihf3nXbIv/LNBK
-         ysPwvuxs5fko8clNFtm2gvrlYDWUQsEU38hIEtqPXBvoOlDLouwf1TvVKheUNZMjTF+0
-         27AIepL0FjSZA5ysYuOouFGZTdH8BMj3C9LOBOUDCNdUjM7t9mYJKe4p1j9zjwpOReA/
-         BTSdSgE7MnR64yHg506scnUMCKAnsg48SWY4mUuxShtxCLWhgzAsWPL0VS/a67mCuoQa
-         kvoQ==
+        d=linaro.org; s=google; t=1755016225; x=1755621025; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=CNJTYQpCcdsbSgf4CELO6wfx+k3jz1AKmn5lQQ5LUkc=;
+        b=B7RbuWmz1iOoF3I5Cj+I9h/J4uVVCu+zjWTvxovlA7WOtYwZVnARzqVzgjpPKtRH90
+         jRpxDBMfux43rT5tkgIj6fEOavnUpC6ZQxj77oB/ZLzScPFj7D1DuxxEblEU8zSflrA5
+         6f4Ykd+3kI+mN//zWV77WfkbhX6JqKsfT+PCdznmu1J7E09vKO4Np0oaGq4EJEgxw+bO
+         3HzLHha4ko8XFaYA3G1/XYIzDP+YL/7qTu4de6VtInI+6aCvQWV/Wfzjj+EbMyNVrfym
+         AiBSQhlLJaihqkB81oDJv9Ac7xmvzbEb1ihmqMer4OmQr0968050Q3ivU3Ik2/MpN/Ii
+         9A5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755014922; x=1755619722;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=BFSWMsjZodOzDrOuJCoS7BkVLEszHuWpZmYI2ozmnzw=;
-        b=cGpxZrdKZHpvyxuS1cKOIl9QjBohVvoy0UQiMf64iZUVN6sH5j7kRx/FfNB8x6L3tB
-         UNn8uUa82vGkuKeCESFdEorm/Hf+RADVUwYjzhsWZCeRE/mTum5ncGnet9rOwtPH9W7e
-         RvfbYWNdp1grC9Leu8anH4X2+NudYicfby2ZYqMtOSD1iwRcjEsxnoNVJJz3WXmYo+8C
-         HZfzi2dFyEvwlG3JefIhFvlTZkLQwxq5uIQHNiArrU7Leq81CXJ04rdN07cenkLaG8lC
-         pviL1ehbvERq1idCDpM9DgpvAIE9V8byLcyOeOFDlOQ1Ngmi3EZiQhnnYkE+c3+yUl/w
-         qxPA==
-X-Forwarded-Encrypted: i=1; AJvYcCUQlydhQbhzein/Fml/lpA31HFOkb7OCsJVQ7eEbYo+Y3Mh+NUEZplzPkKnS4jVHL5x4o0yXrPTbsQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz/wR9WDUM2R4pDrdQu/VsZvu1bdGKQwYaMxpNkS58X1o5gwT+i
-	4T90EE4oOErpYYZ8W6kIE+UFTTqOzszzHr4dlWnf9SQXS2CdIeH06Y6MNYES1cdhVZQ=
-X-Gm-Gg: ASbGncuznOmrbddzMvR0FNWPrscjKpBiLi2m7uJ6GJ37O+m2z+9dEL+9dqrt/1oQo3T
-	WZYTvP46MgubPT4NiKpWYCNPZD7hB7s7B8SXv1LplYd2zETNNGkFNg9pZ4iVBGp8WfulHd8dh6O
-	ygFCZpipMcOuZ0IBNTChcn3cpKafMj1SY8CERV+oqsEFdrdaAJyWBz9F42qGvf5U7T8SgYsJCfN
-	wLXZOnPi6JwtiWMaO40r6jGBjsUCKHJR2N78heNPBsMLrwAyW8nKBqH7ZS3B6TXUCcguKmHQm8e
-	d2hZn/knQYSIUV0RNZq63VU4E0tDWcxpAw1AjHSUsjNM1fLSkiRzMA1BGnihuZQFjo3PsQYWOmG
-	w4RaUr7y8kd67wlzQi/cwUsg7goHb9n5ytp9XpS74RVuuD/b8XuH63E/Pxo1hzqrBHTwo0W9Mrt
-	v2lJef67xC0w==
-X-Google-Smtp-Source: AGHT+IGWhSp2YqDcC+/Jt+aP3cE7/6QMFB+yYZoU2vCD1m9RO2LLMzcUXXdfrtNNkB+uXFFUtvtc/g==
-X-Received: by 2002:a05:600c:1c88:b0:456:11cc:360d with SMTP id 5b1f17b1804b1-45a15b17f2amr3800875e9.9.1755014921954;
-        Tue, 12 Aug 2025 09:08:41 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:9086:bd36:16a7:1f8b? ([2a01:e0a:3d9:2080:9086:bd36:16a7:1f8b])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-459e5843021sm328553675e9.3.2025.08.12.09.08.41
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 12 Aug 2025 09:08:41 -0700 (PDT)
-Message-ID: <8b8207bf-e841-4033-8356-dffa2c2e2d25@linaro.org>
-Date: Tue, 12 Aug 2025 18:08:41 +0200
+        d=1e100.net; s=20230601; t=1755016225; x=1755621025;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=CNJTYQpCcdsbSgf4CELO6wfx+k3jz1AKmn5lQQ5LUkc=;
+        b=IGU7pKP2Ar4B9HFOHQm9FHgOr6HmNaKaIzTj4Jc3jz8s148Zd6MBO6XDXQCHFYTdAj
+         0A8dvZapDWPG42YDjU6OP68afFSnj0Jx7CH7C+tL7a4RUDUgczhD5oxD+lU3TIWgfAqc
+         sFwL2x91p3wFDATHYQGOkyNXPot77qTvT6Ds7RNY/B9VFk7glgrHoOMMCGMdmYgtlnsW
+         3N81++jN0VBAuzDteW+vse9NvG0vTY4cg3Nz8Gje4NWQIBeyEiDt/NBB8kSLBMrVJymC
+         e45EOuPjU/4nbNGqMFQQq8//r7w/7u7I0j4rvpvT5nU0WzGVGILEnzxhw/RMISKQOqon
+         Zfgg==
+X-Forwarded-Encrypted: i=1; AJvYcCWrlecz5jjM1NWnQa49l7ySCSGLfRX6NpgaO/TKSozakKcd+uAjrIFeGUiwrTDij8Cg5IxX9nA7P0Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzha5Mr9GLCaRbxxsqRZgKIrDkY6jd36ysKnEbVt/+Cho4DTWmr
+	C/fFkhEc9O2mZdOTRN2EQeLlbVxbngtU7t1SkQinv4hpdMADR0Lf1YP2s6xFRAkyKSM=
+X-Gm-Gg: ASbGnctsDZuChLnvtaeVXhHF8tcHx9pDjUOQTqeOZBdA9yFw+C1SQqh1MV/nRuPKwYA
+	BU939BsMo100A9G0xqwKrB9swGQpuD0ZKSzleTKnS2fwcnqwOnbtNLy0yo9pldSf0OtGrECHTSu
+	ZLUu3qvKbm+9X+vbzZ+p5hg0Knfw5aFedZDwg6KmyZiWcuKZuzoCOmi+NAOmvoNikLrciyA/vwO
+	z43j0uucr2IgAvSl2E+v+4uxfFcYVRz+K+ibRtuiSTjzMv3SelvMPRs+IavDlwmkgsycjukhxMY
+	IX/yfSm1qkE6JTd5fu5Ha7FC1TIjP6pG60d8ThoVyrW4JAC6VDTaN2N9F74V5sjWHHNxIgxmTPo
+	y4qD8hcSr/w7ec0Fq/5qKLfcFh77SFxwMqp4ANw==
+X-Google-Smtp-Source: AGHT+IGKttqGjU9A0Fpe3dGN2nfDw184nCvOK8JV6Aat2Ur/HPfemJjjc8pzEQn+FGTR50sl9gI5qw==
+X-Received: by 2002:a05:600c:1d25:b0:43c:fe5e:f03b with SMTP id 5b1f17b1804b1-45a15b55a73mr4428905e9.30.1755016224641;
+        Tue, 12 Aug 2025 09:30:24 -0700 (PDT)
+Received: from [127.0.0.2] ([2a02:2454:ff21:ef41:5574:c911:d648:8bca])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-459ebede65asm255302755e9.8.2025.08.12.09.30.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 12 Aug 2025 09:30:24 -0700 (PDT)
+From: Stephan Gerhold <stephan.gerhold@linaro.org>
+Date: Tue, 12 Aug 2025 18:30:19 +0200
+Subject: [PATCH] phy: qcom: qmp-pcie: Fix PHY initialization when powered
+ down by firmware
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI D-PHY driver
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250710-x1e-csi2-phy-v1-0-74acbb5b162b@linaro.org>
- <20250710-x1e-csi2-phy-v1-2-74acbb5b162b@linaro.org>
- <d7949778-73c4-4575-8db3-a3724f75eb38@linaro.org>
- <16e4883a-a056-46c3-a7c7-a87ff5da89a1@linaro.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <16e4883a-a056-46c3-a7c7-a87ff5da89a1@linaro.org>
+Message-Id: <20250812-phy-qcom-qmp-pcie-nocsr-fix-v1-1-9a7d0a5d2b46@linaro.org>
+X-B4-Tracking: v=1; b=H4sIABpsm2gC/x3MPQqAMAxA4atIZgNt/UG9ijhIjJrBtrYgSvHuF
+ sfvDS9B5CAcYSgSBL4kirMZuiyA9tlujLJkg1GmUZ026PcHT3IHnodHT8JoHcWAq9yoW1Vp1Zq
+ +pgXywQfO+b+P0/t+8JKf320AAAA=
+X-Change-ID: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Wenbin Yao <quic_wenbyao@quicinc.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konradybcio@kernel.org>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250812_090844_126963_17979DE0 
-X-CRM114-Status: UNSURE (   7.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250812_093026_715340_6D001741 
+X-CRM114-Status: GOOD (  15.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,23 +99,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTIvMDgvMjAyNSAxNzowNSwgQnJ5YW4gTydEb25vZ2h1ZSB3cm90ZToKPiBPbiAxMi8wOC8y
-MDI1IDE0OjM5LCBuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnIHdyb3RlOgo+Pj4gK8KgwqDCoCAu
-Y2xrX2ZyZXEgPSB7Cj4+PiArwqDCoMKgwqDCoMKgwqAgemVybywKPj4KPj4gSXQgc2VlbXMgY2xh
-bmcgZG9lc24ndCBsaWtlIHRoaXMgYXQgYWxsOgo+PiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHkt
-cWNvbS1taXBpLWNzaTItM3BoLWRwaHkuYzo0ODY6MzogZXJyb3I6IGluaXRpYWxpemVyIGVsZW1l
-bnQgaXMgbm90IGEgY29tcGlsZS10aW1lIGNvbnN0YW50Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIHplcm8sCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIF5+
-fn4KPj4gMSBlcnJvciBnZW5lcmF0ZWQuCj4gCj4gV2VpcmRseSBJIGNvbXBpbGUgd2l0aCBjbGFu
-Zy4uCgpUaGUgdHV4bWFrZSBsb2cgaXMgYXZhaWxhYmxlIGF0IGh0dHBzOi8vc3RvcmFnZS50dXhz
-dWl0ZS5jb20vcHVibGljL2xpbmFyby9uZWlsLmFybXN0cm9uZy9idWlsZHMvMzFCb3NzMzFLNm1l
-ZVlBeHFoSlVabzh5aHdLL2J1aWxkLmxvZwoKSXQgdXNlcyBjbGFuZy0xNgoKTmVpbAoKPiAKPiB0
-aHggdGhvdWdoCj4gCj4gLS0tCj4gYm9kCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
+support") added support for using the "no_csr" reset to skip configuration
+of the PHY if the init sequence was already applied by the boot firmware.
+The expectation is that the PHY is only turned on/off by using the "no_csr"
+reset, instead of powering it down and re-programming it after a full
+reset.
+
+The boot firmware on X1E does not fully conform to this expectation: If the
+PCIe3 link fails to come up (e.g. because no PCIe card is inserted), the
+firmware powers down the PHY using the QPHY_PCS_POWER_DOWN_CONTROL
+register. The QPHY_START_CTRL register is kept as-is, so the driver assumes
+the PHY is already initialized and skips the configuration/power up
+sequence. The PHY won't come up again without clearing the
+QPHY_PCS_POWER_DOWN_CONTROL, so eventually initialization fails:
+
+  qcom-qmp-pcie-phy 1be0000.phy: phy initialization timed-out
+  phy phy-1be0000.phy.0: phy poweron failed --> -110
+  qcom-pcie 1bd0000.pcie: cannot initialize host
+  qcom-pcie 1bd0000.pcie: probe with driver qcom-pcie failed with error -110
+
+This can be reliably reproduced on the X1E CRD, QCP and Devkit when no card
+is inserted for PCIe3.
+
+Fix this by checking the QPHY_PCS_POWER_DOWN_CONTROL register in addition
+to QPHY_START_CTRL. If the PHY is powered down with the register, it
+doesn't conform to the expectations for using the "no_csr" reset, so we
+fully re-initialize with the normal reset sequence.
+
+Cc: stable@vger.kernel.org
+Fixes: 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention support")
+Signed-off-by: Stephan Gerhold <stephan.gerhold@linaro.org>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 95830dcfdec9b1f68fd55d1cc3c102985cfafcc1..6a469a8f5ae7eba6e4d1d702efaae1c658c4321e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -4339,10 +4339,12 @@ static int qmp_pcie_init(struct phy *phy)
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+ 	int ret;
+ 
+-	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
++	qmp->skip_init = qmp->nocsr_reset &&
++		readl(pcs + cfg->regs[QPHY_START_CTRL]) &&
++		readl(pcs + cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL]);
++
+ 	/*
+ 	 * We need to check the existence of init sequences in two cases:
+ 	 * 1. The PHY doesn't support no_csr reset.
+
+---
+base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+change-id: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+
+Best regards,
+-- 
+Stephan Gerhold <stephan.gerhold@linaro.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
