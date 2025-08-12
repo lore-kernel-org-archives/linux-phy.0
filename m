@@ -4,80 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6D2EC87FCB
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 06:03:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A87EDC87FCB
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Aug 2025 06:36:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZDZcdWEoPkVvWDTnmoJK3Tuh+F0MygW1q69249sQ7Dg=; b=ieeEyD2ry86vBh
-	E5/xCayi/uPbeXgd39IQDVnMRTVMF/gxmrTlQSoO8dTwZ1WugVOe2tl9Gpv3gGB3hHWIgUeZA8I3f
-	V1LZosJeDCLNp+V6k/fqoGbY5FM17mZRnTMgrHNwYqQIkB6u8sgE75bdLXdLu59hCuud+g4ZLkWqr
-	R8xvJz6rukZA+hn6ooaapmOe+s9l+sf55S/96SC1782k2BjsKS+doT+sGPXCos6yUx/SGtEe+90f4
-	AknXIP/B9AObMP8NTQsfFNnr/+amKuouUVPG/dFRCOrgCEB68iI2ItCMCI/+Y1UT5ce6FEtHUsi5P
-	kYQb0xLz4yDr7AbDqV6g==;
+	List-Owner; bh=0fvcs5zSrCIX04XlsQIYyM9U3AXmmDUP0VhaeuSEZEA=; b=c4ZjESOE4776v0
+	jiPHg9uwvtX1fpdDQoFrFNO4OzrVw9SiPmrfvonD7em53o6JCq8CKDUVioED5y+xj3qK7ZXC0yAnp
+	lSObXozibki+bM01v3FeYOSC6ZYPoQxpi3g0yS3NZHXniyZ2ZYpV01IoesQiJUl3VL3TnJL9Cg4Ci
+	1doky31+wLl+EqMImYsOyGH1AJpjnSPwq3k7zT87LwrTwcBbXsXCf7G4BB+BDdx7BkcCgcF4uJgsa
+	WB4yV3f2cppaaq4tNt4RsKPT4xGF+dcfnwXExSrV9ByWY6P40EL1DmOAR6mtY1kaHrr52XaHqi5tz
+	SVc4NvYYw8b+IrZxQNiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uli69-00000009z4O-1qAP;
-	Tue, 12 Aug 2025 06:03:01 +0000
-Received: from lelvem-ot02.ext.ti.com ([198.47.23.235])
+	id 1ulick-0000000A2Uc-1cPP;
+	Tue, 12 Aug 2025 06:36:42 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uli65-00000009z3f-3cNY
-	for linux-phy@lists.infradead.org;
-	Tue, 12 Aug 2025 06:02:59 +0000
-Received: from lelvem-sh02.itg.ti.com ([10.180.78.226])
-	by lelvem-ot02.ext.ti.com (8.15.2/8.15.2) with ESMTP id 57C62No81813763;
-	Tue, 12 Aug 2025 01:02:23 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1754978543;
-	bh=LKxlbDvFLQZ0H4jE21FQwtxVpoVXTA6dd8wgZE2a5v8=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=WZIFBMLo0CW8OoHP906jfiQSuaM7Sj+4uKbiiPUuVlJtg9tAZ17Kzpk4qiKitNAvt
-	 mc+M5PkSW4r2BO5cJj4Kt/T/Qk9Oa1zVFCeM3Qlk3lc1ozhpAcXgZeC4gnhL8KmGac
-	 jWJtuSKJrDSSYKhCyftfvbe72jrXq8/8xK+JER3k=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
-	by lelvem-sh02.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 57C62Ncl023237
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Tue, 12 Aug 2025 01:02:23 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Tue, 12
- Aug 2025 01:02:22 -0500
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Tue, 12 Aug 2025 01:02:22 -0500
-Received: from [10.249.145.16] ([10.249.145.16])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 57C62ISw182509;
-	Tue, 12 Aug 2025 01:02:19 -0500
-Message-ID: <cac3d853-11aa-481b-90bb-aeb2cd4608f8@ti.com>
-Date: Tue, 12 Aug 2025 11:32:17 +0530
+	id 1uliYN-0000000A26r-1UUa;
+	Tue, 12 Aug 2025 06:32:12 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 57ACE5C667E;
+	Tue, 12 Aug 2025 06:32:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F55EC4CEF0;
+	Tue, 12 Aug 2025 06:32:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754980330;
+	bh=otaBZh9TNVNUn4n+KFk4zIkvpGN9iEpnVss/ZcBnHBM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dEBiK2bMfsD5IpNQj20sm4pOp7cKkzzvO9rSw4Gc4mSvnL/LXBIClBjlBy62c4S7M
+	 rfwQdg/BnNkCGdBP3kGdr9AKfczzi+2jHXCQmDZP17F55Y1pNSNbQltkKeSP1idjn4
+	 Mz/44PhO+5nt8U3jsM3jW3W07IqePKAdArDZy70bBM92HV6nONtFFedk17iGAHAVIx
+	 KvK3rhg/cIVEyjTpRr82UQpTH5O2+4tWhJPTQmil/LFV1jsSS+vRu0Gcq/FuawBsC1
+	 SiPbsZ3LBDb8cB8e6Apc5MLF6hlQvArB64uhltW9jZIlumYpHy17P5kdYmjK/tZUeh
+	 2yCqq2tPYPW9A==
+Message-ID: <4a47b758-5c20-4e30-bc61-206acd48bdd0@kernel.org>
+Date: Tue, 12 Aug 2025 08:32:03 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/2] phy: cdns-dphy: hs-clk improvement and a cleanup
-To: Vinod Koul <vkoul@kernel.org>,
-        Tomi Valkeinen
-	<tomi.valkeinen@ideasonboard.com>, <kishon@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        Parth
- Pancholi <parth.pancholi@toradex.com>,
-        Francesco Dolcini
-	<francesco@dolcini.it>,
-        Aradhya Bhatia <aradhya.bhatia@linux.dev>,
-        Jayesh
- Choudhary <j-choudhary@ti.com>
-References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
- <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
- <aJM0WPVDUkte9E_D@vaman>
+Subject: Re: [PATCH v3 06/12] dt-bindings: PCI: Split exynos host into two
+ files
+To: Shradha Todi <shradha.t@samsung.com>, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+ robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com,
+ krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
+ vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de,
+ m.szyprowski@samsung.com, jh80.chung@samsung.com, pankaj.dubey@samsung.com
+References: <20250811154638.95732-1-shradha.t@samsung.com>
+ <CGME20250811154721epcas5p26c9e2880ca55a470f595d914b4030745@epcas5p2.samsung.com>
+ <20250811154638.95732-7-shradha.t@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: devarsh <devarsht@ti.com>
-In-Reply-To: <aJM0WPVDUkte9E_D@vaman>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250811154638.95732-7-shradha.t@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250811_230258_091438_D8399794 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20250811_233211_480871_FD45C70D 
+X-CRM114-Status: GOOD (  13.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,58 +124,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod, Kishon,
-
-On 06/08/25 16:24, Vinod Koul wrote:
-> On 05-08-25, 15:03, Tomi Valkeinen wrote:
->> Hi Vinod, Kishon,
->>
->> On 23/07/2025 13:01, Tomi Valkeinen wrote:
->>> A cdns-dphy improvement to return the actual hs clock rate, and a
->>> cleanup to remove leftover code.
->>>
->>> These were part of a Cadence DSI series:
->>>
->>> https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02%40ideasonboard.com/
->>>
->>> but are now separately here for easier merging.
->>>
->>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
->>> ---
->>> Tomi Valkeinen (2):
->>>       phy: cdns-dphy: Store hs_clk_rate and return it
->>>       phy: cdns-dphy: Remove leftover code
->>>
->>>  drivers/phy/cadence/cdns-dphy.c | 24 +++++++++---------------
->>>  1 file changed, 9 insertions(+), 15 deletions(-)
->>> ---
->>> base-commit: 89be9a83ccf1f88522317ce02f854f30d6115c41
->>> change-id: 20250723-cdns-dphy-hs-clk-rate-fix-a8857a5789dd
->>
->> Is this good to merge, and if so, do you have any estimate when? While
->> this is independent from the DSI series, I'd rather push the DSI series
->> into drm-misc about the same time, so both would appear in linux-next
->> relatively together.
+On 11/08/2025 17:46, Shradha Todi wrote:
+> The current Exynos PCIe yaml binding file is hard to reuse by
+> other Samsung SoCs. Refactoring it by:
+>  - Moving common Samsung PCIe properties into samsung,exynos-pcie.yaml
+>  - Creating a dedicated samsung,exynos5433-pcie.yaml file for properties
+>    and constraints specific to the Exynos5433 SoC
 > 
-> I will start taking patches after merge window closes next monday, so
-> next week should be a good estimate
+> Signed-off-by: Shradha Todi <shradha.t@samsung.com>
+> ---
+>  .../bindings/pci/samsung,exynos-pcie.yaml     | 70 +--------------
+>  .../bindings/pci/samsung,exynos5433-pcie.yaml | 89 +++++++++++++++++++
+>  2 files changed, 91 insertions(+), 68 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pci/samsung,exynos5433-pcie.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/samsung,exynos-pcie.yaml b/Documentation/devicetree/bindings/pci/samsung,exynos-pcie.yaml
+> index f20ed7e709f7..fd0b97b30821 100644
+> --- a/Documentation/devicetree/bindings/pci/samsung,exynos-pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/samsung,exynos-pcie.yaml
+> @@ -11,7 +11,7 @@ maintainers:
+>    - Jaehoon Chung <jh80.chung@samsung.com>
+>  
+>  description: |+
+> -  Exynos5433 SoC PCIe host controller is based on the Synopsys DesignWare
+> +  Samsung SoCs PCIe host controller is based on the Synopsys DesignWare
+>    PCIe IP and thus inherits all the common properties defined in
+>    snps,dw-pcie.yaml.
+>  
+> @@ -19,9 +19,6 @@ allOf:
+>    - $ref: /schemas/pci/snps,dw-pcie.yaml#
+>  
+>  properties:
+> -  compatible:
+> -    const: samsung,exynos5433-pcie
+> -
+>    reg:
+>      items:
+>        - description: Data Bus Interface (DBI) registers.
 
-On top of this series [1], we have the cadence DPHY fixes for fixing PLL
-lockup timeout [2] and one more patch which enables lower resolutions
-[3], both have been reviewed and tested too.
 
-Would it be possible for you too merge all 3 together in below order ?
+So the only common part left here is reg and phy? I don't think such
+common file brings any value.
 
-[1]:
-https://lore.kernel.org/all/cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com/
-[2]: https://lore.kernel.org/all/20250704125915.1224738-1-devarsht@ti.com/
-[3]: https://lore.kernel.org/all/20250807052002.717807-1-h-shenoy@ti.com/
 
-Kindly let us know if anything required from our side.
-
-Regards
-Devarsh
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
