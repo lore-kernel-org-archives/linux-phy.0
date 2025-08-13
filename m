@@ -4,70 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C198CA0EE6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 15:24:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70849CA0EEB
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 18:13:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=RuqpmvxMvhRiqsyJLJWttfpXzcKonASMuMbPsqbhao0=; b=yl8KF8eVxWzkoP7FQYS9in8gr6
-	C+MBBWiTNDgnlfvP7Qp1aSx57hNYqlK52XFEk8WG89A8FK3TgBN4B8MytU4gbSuxfh9IQzmy7TUum
-	LFYi9a4zv64ni8iCKv0Ta+Im/FyqsZXiB/dUMTZ1UREJ3neCcYFYM/Vw66K2YlgiofynbVg2Y6tGt
-	TYg1A5NcncOf7R+d+Ekyum0Ce56AaGT1kgzqKTFHUqjcWcUaY1z0u83HPKNxfzb+hs0qO2yLFUZ1q
-	wxckAgOQtM8mizfz0Wey1tWAPWhiiAfkmayvbty+F3N+EcRzGoNrG993PZIOJo5Yi9aLunr20IWeb
-	HWS8Nylg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/mNeUXTFs1K9xANBheaGBSUKFaWF/wG6lyICn+ovz/g=; b=RiCKppQrqdjaqy
+	aNH9SchojRwwCK+wPPcTNcueEAxG+i6cmHt2MSuxfbFQAzWIttBeTnuf0BLgCnowt/mSo/dD5NI8q
+	C0Rgil8shXqqctDlt5ee1PD31x76Nkzp05bRPa5Lu1Ny4RE2BSDMdDtJA1MnPjSwsOnWNjFJHkLCX
+	No57TNcy7AUwBaeROVX8AqEf9WKL97Eywb3RPGxE6g9djHg+5HjaooB5upkogBPQyc9+QbB9002j1
+	ks8EmbosoyUnk3Z7WwE35RIiuAA4etcsIB2Z2s9+oBWF3OlQKm2SX9vR54KXNQLxapEOEI4S1bPjo
+	I06wSFpJ2vC2Fhv7K+Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoOCY-0000000Aszs-0wSj;
-	Tue, 19 Aug 2025 15:24:42 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uoQpR-0000000BBw9-0S41;
+	Tue, 19 Aug 2025 18:13:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoLVr-0000000ARaI-2M6j
-	for linux-phy@lists.infradead.org;
-	Tue, 19 Aug 2025 12:32:28 +0000
+	id 1umJ1c-0000000F1V0-3Czz;
+	Wed, 13 Aug 2025 21:28:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2CD00454A5;
-	Tue, 19 Aug 2025 12:32:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E84DBC113D0;
-	Tue, 19 Aug 2025 12:32:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0F0895C62BA;
+	Wed, 13 Aug 2025 21:28:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 038F0C4CEEB;
+	Wed, 13 Aug 2025 21:28:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755606747;
-	bh=oRf1mvv6p2bt2J9+yBXoa4O3Bz8NmOE1R+ShJsBwd/s=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=rUE5LiKs3wj2ajNOjxxegJfOJU8PKCbDqCkia0L24pJDJUnoEBpH7zpSgei2uCkS6
-	 MlQ5EpxK5lGGVUaL6gcQKCguaQWb0jb8fx/TKgH8DPN92sHL2cHHLXEzmbgvhxQWg0
-	 nPM7lLP/6ptWbi7kxdigC2mTsk1A+AmOTAKE2Nf5kURMusvQ/gaUMHMZObmEvWQJQ6
-	 J4S5IMEwX6w3PQiaaExlQZMXmkufrUFzQgjJ6YjpCfrrVmJu4gqtcjSYbzZU0awYJU
-	 uNsbf8fh7R90vtCInXNcRjwTt438nmStKF3n45xlLEqFsN0bnT6vHmuLGzbEx7a8nD
-	 MzuQTX0pccz3w==
-Date: Tue, 19 Aug 2025 07:32:25 -0500
+	s=k20201202; t=1755120527;
+	bh=w6o+Mcmx0kfk0qJVojOnLq3WRRaroXEK6NqPwh8WeEA=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=tW0weATX4jZ11jXl3He1Ule5FSJuMatBGd51oT3bMN01eb3cT3/18BB0KpS64oSbV
+	 6A4QDHJDbE2i5JqtnfsyVBALsh6Bm5ABrlcwIeEaVVJKF8Ys4lmXD08V4Cf547I5mm
+	 6sCZgBGCfMRs6QPVrGxU4nTnD7f31+rWw2qkW80zdobtK+0W0QNMcTpZiJJZuxp3e3
+	 f72jB75x9bqVrnObcwmG+vOT476m4B3xoHJM2Tk0dvct2jHtt8v2WNoP/JeukhjYFa
+	 P4b7UnXzBQig+oKbLe5NjU5NaUCh5y3uOUysgIl6JhmCWTjHv+RyKuGvEMG/hhDxtg
+	 oUrRFt19OPnjQ==
+From: Mark Brown <broonie@kernel.org>
+To: linux-kernel@vger.kernel.org, 
+ Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: Adrian Hunter <adrian.hunter@intel.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, Alexandre Torgue <alexandre.torgue@foss.st.com>, Alim Akhtar <alim.akhtar@samsung.com>, Andrea della Porta <andrea.porta@suse.com>, =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, Andrzej Hajda <andrzej.hajda@intel.com>, Andy Shevchenko <andy@kernel.org>, Andy Yan <andy.yan@rock-chips.com>, Avi Fishman <avifishman70@gmail.com>, Bartosz Golaszewski <brgl@bgdev.pl>, Benjamin Fair <benjaminfair@google.com>, Bjorn Andersson <andersson@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Daniel Lezcano <daniel.lezcano@linaro.org>, David Airlie <airlied@gmail.com>, David Lechner <dlechner@baylibre.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>, Drew Fustini <fustini@kernel.org>, dri-devel@lists.freedesktop.org, Fabio Estevam <festevam@gmail.com>, Fabrice Gasnier <fabrice.gasnier@foss.st.com>, Fu Wei <wefu@redhat.com>, Guo Ren <guoren@kernel.org>, Hans Verkuil <hverkuil@kernel.org>, =?utf-8?q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, imx@lists.linux.dev, Iwona Winiarska <iwona.winiarska@intel.com>, Jaroslav Kysela <perex@perex.cz>, Jassi Brar <jassisinghbrar@gmail.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, Jerome Brunet <jbrunet@baylibre.com>, Jonas Karlman <jonas@kwiboo.se>, Jonathan Cameron <jic23@kernel.org>, Kevin Hilman <khilman@baylibre.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Lee Jones <lee@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Linus Walleij <linus.walleij@linaro.org>, linux-actions@lists.infradead.org, linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, linux-iio@vger.kernel.org, linux-input@vger.kernel.org, linux-media@vger.kernel.org, linux-mmc@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, linuxppc-dev@lists.ozlabs.org, linux-pwm@vger.kernel.org, linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-rtc@vger.kernel.org, linux-samsung-soc@vger.kernel.org, linux-sound@vger.kernel.org, linux-spi@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, linux-sunxi@lists.linux.dev, Liu Ying <victor.liu@nxp.com>, Lukasz Luba <lukasz.luba@arm.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Manivannan Sadhasivam <mani@kernel.org>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, Maxime Ripard <mripard@kernel.org>, Michael Turquette <mturquette@baylibre.com>, Miquel Raynal <miquel.raynal@bootlin.com>, Nancy Yuen <yuenn@google.com>, Neil Armstrong <neil.armstrong@linaro.org>, Nicolin Chen <nicoleotsuka@gmail.com>, =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, openbmc@lists.ozlabs.org, Patrick Venture <venture@google.com>, Paul Walmsley <paul.walmsley@sifive.com>, Pengutronix Kernel Team <kernel@pengutronix.de>, Philipp Zabel <p.zabel@pengutronix.de>, Piotr Wojtaszczyk <piotr.wojtaszczyk@timesys.com>, "Rafael J. Wysocki" <rafael@kernel.org>, Robert Foss <rfoss@kernel.org>, Samuel Holland <samuel.holland@sifive.com>, Samuel Holland <samuel@sholland.org>, Sandy Huang <hjc@rock-chips.com>, Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, Shengjiu Wang <shengjiu.wang@gmail.com>, Simona Vetter <simona@ffwll.ch>, Stephen Boyd <sboyd@kernel.org>, Takashi Iwai <tiwai@suse.com>, Tali Perry <tali.perry1@gmail.com>, Thomas Zimmermann <tzimmermann@suse.de>, Tomer Maimon <tmaimon77@gmail.com>, Ulf Hansson <ulf.hansson@linaro.org>, =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <ukleinek@kernel.org>, Vasily Khoruzhick <anarsoul@gmail.com>, Vinod Koul <vkoul@kernel.org>, Vladimir Zapolskiy <vz@mleia.com>, Xiubo Li <Xiubo.Lee@gmail.com>, Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>
+In-Reply-To: <20250813161517.4746-1-wsa+renesas@sang-engineering.com>
+References: <20250813161517.4746-1-wsa+renesas@sang-engineering.com>
+Subject: Re: (subset) [PATCH 00/21] treewide: remove unneeded 'fast_io'
+ parameter in regmap_config
+Message-Id: <175512050873.352044.97744864083041762.b4-ty@kernel.org>
+Date: Wed, 13 Aug 2025 22:28:28 +0100
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, konrad.dybcio@oss.qualcomm.com, 
- linux-kernel@vger.kernel.org, 
- Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
- devicetree@vger.kernel.org, qiang.yu@oss.qualcomm.com
-To: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
-In-Reply-To: <20250819-glymur_pcie5-v1-1-2ea09f83cbb0@oss.qualcomm.com>
-References: <20250819-glymur_pcie5-v1-0-2ea09f83cbb0@oss.qualcomm.com>
- <20250819-glymur_pcie5-v1-1-2ea09f83cbb0@oss.qualcomm.com>
-Message-Id: <175560674306.26088.17838769805587892599.robh@kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the Glymur QMP PCIe PHY
+X-Mailer: b4 0.15-dev-cff91
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250819_053227_617230_959BAF9D 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20250813_142848_885629_CD3A1203 
+X-CRM114-Status: GOOD (  17.14  )
+X-Mailman-Approved-At: Tue, 19 Aug 2025 07:51:35 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,43 +73,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 19 Aug 2025 02:52:05 -0700, Wenbin Yao wrote:
-> From: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
+On Wed, 13 Aug 2025 18:14:46 +0200, Wolfram Sang wrote:
+> While working on a driver using regmap with MMIO, I wondered if I need
+> to set 'fast_io' in the config. Turned out I don't need to, so I added
+> documentation for it with commit ffc72771ff6e ("regmap: Annotate that
+> MMIO implies fast IO").
 > 
-> The fifth PCIe instance on Glymur has a Gen5 4-lane PHY. Document it as a
-> separate compatible.
+> This series fixes the existing users in the tree which needlessly set
+> the flag. They have been found using this coccinelle script:
 > 
-> Signed-off-by: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
-> Signed-off-by: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+> [...]
 
-My bot found errors running 'make dt_binding_check' on your patch:
+Applied to
 
-yamllint warnings/errors:
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-next
 
-dtschema/dtc warnings/errors:
+Thanks!
 
+[15/21] regulator: remove unneeded 'fast_io' parameter in regmap_config
+        commit: 37533933bfe92cd5a99ef4743f31dac62ccc8de0
 
-doc reference errors (make refcheckdocs):
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250819-glymur_pcie5-v1-1-2ea09f83cbb0@oss.qualcomm.com
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Thanks,
+Mark
 
 
 -- 
