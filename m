@@ -4,59 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1720DCA0ED1
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 05:38:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 171FFCA0ED1
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 06:11:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y5LmY9c1xEx/edskwEwAbGIZ8cctv7SJ4yRd0OXjb98=; b=LAuosk9WL2cqpz
-	UtJZdeEuY83aXyUgBsPcXMgbAHhRqjvLW0a0oJAe7TSZvCbBNgpWb2RMKtCgBTGTomHIhnjYmVrcq
-	VlltaPcjPxLdUDIyvLFAKGVSzROt94kxy+aNjEF1IVNQjNjOC+gikjpfU8u/22daiitVP/1QEckpc
-	tNrxip/NWDeMBUfw4FuYK9hRKhtksKg5vPiGpG9ux/5N0nBxKrgaDH3uQXkHhRdNRrtRZUyiy72uG
-	1vMbyVFaAAPhUDtoO+emm1MEIfO1J0jOdzjsv85/yX3T7e1Euc2v+4JmsFC8xWHxT4Zut7mPsUx7a
-	CLJHivyX8N12fODYrDHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6QoyMD1DYiY04DqTLT0t2ux52j0e9ZO2ng1zCBvoVnc=; b=AHU3MlWISJQ/I5
+	Gev503Kw2nFq/7orM1NpORfvuxy9c36sZ4ILDfUL9Ijlxz9hEG0bjXNUP7+V8h1FfdszVjezZCWug
+	gTXeCnzF+Ex4XauLMjMNddU3AJePNVwoj0+TdzsH2Qr6XnBMh26ydoEgq6vhnWx4GYbEIFheRsEK+
+	8MzJe/9IpTQHvpHorlV+lJ/JCZ7hp3u8Wt9nkg7/9skNtVKX5XrKYSk5aElTQLZneFNw2w79Hgg94
+	FsQYzxq97lbSwX2eweMLeXrT8Om25SyWUwd8rwIh9MY/k5SjeyCXpAjVSv+djSX11G6WLtTcV/Vld
+	GJG7X9gvZYZSDTdBvymQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umQfH-0000000Fpf1-1ykc;
-	Thu, 14 Aug 2025 05:38:15 +0000
-Received: from m16.mail.163.com ([220.197.31.5])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umQfE-0000000FpeV-27pX
-	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 05:38:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=nh
-	v8WVKq3WU5Ll3+dcG7vTMSWNp5cpIVD8CJmKcyYZ4=; b=JlTkrJRHBacTOUhr0S
-	/RvI2EjONdA+ENzPC2nq5eEuJI8Dd+thaGXYlssPWsQDDv2w0cT++nz9RRONZ1i3
-	Ubx9Q0JxrByNv5KrM3w2p+CN4OQrT3XxFQeMMpQr/QLr+BNmh4ALh9kLequT97J1
-	pvUi/rGngL/vFFUBkwYl/mg4s=
-Received: from localhost.localdomain (unknown [])
-	by gzga-smtp-mtada-g0-0 (Coremail) with SMTP id _____wAnOrQudp1ojstDBw--.33177S2;
-	Thu, 14 Aug 2025 13:37:51 +0800 (CST)
-From: Yang Xiuwei <yangxiuwei2025@163.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Yang Xiuwei <yangxiuwei@kylinos.cn>
-Subject: [PATCH] phy: use IS_ERR_OR_NULL() helper in of_phy_put()
-Date: Thu, 14 Aug 2025 13:37:42 +0800
-Message-Id: <20250814053742.2186419-1-yangxiuwei2025@163.com>
-X-Mailer: git-send-email 2.25.1
+	id 1umRBZ-0000000FuWn-3Erg;
+	Thu, 14 Aug 2025 06:11:37 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1umRBX-0000000FuWQ-1kpr;
+	Thu, 14 Aug 2025 06:11:36 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 926285C5850;
+	Thu, 14 Aug 2025 06:11:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A59AC4CEEF;
+	Thu, 14 Aug 2025 06:11:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755151894;
+	bh=AjyQa8y9UfBgjQMOC+7KWvV2R22HtBSn7C/+oY4QT5c=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=oolw18pAKDaCqEejn9ERIeMvz53RDfGyoVui4G0KZzslIFUtl3vZqA1f7MprbyDox
+	 CP1sgLOqiPhMDi5L1VZKiwaDLhfjIlxjicqgh7JcnD1NnnM4YiF6+Y6pJXBmw2UYqw
+	 qYHYuVWcvLVD5OJ9GWCi3FqJmSZA6o1HIxdDdDBMMZ2DH0yud6b+IdEpNR+ApTF3EJ
+	 4eb3GAzmlfB71DELb/DkUuWvszxGglQaNL0Qw9kqaD7h+QC2zVKdajHFAjhRD/ezVa
+	 Ut3CF0OYwAhLOg9PrDz8X7xgNCTu4nquw6HVdzCPPGqgTlrzgmEfRHWFDH8Uf1AF0/
+	 rQZLG/e9Yc6uQ==
+Message-ID: <22bd5b5b-ca06-4499-b21f-22c2ff202167@kernel.org>
+Date: Thu, 14 Aug 2025 08:11:24 +0200
 MIME-Version: 1.0
-X-CM-TRANSID: _____wAnOrQudp1ojstDBw--.33177S2
-X-Coremail-Antispam: 1Uf129KBjvdXoWrKw45JF1xAr1rKFyxuF4fAFb_yoWxZFc_Wr
-	1xXrn3ArsakF47Wr17CFWSv34jgFykurWruan29rWfAa47Jr1SyF1UA34rtr97G393uFyD
-	ta17ZF1ay34UAjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUnvdgtUUUUU==
-X-Originating-IP: [116.128.244.169]
-X-CM-SenderInfo: p1dqw55lxzvxisqskqqrwthudrp/xtbBDgapkGidcheADwAAsu
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
+ PHY
+To: Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+ mani@kernel.org, bhelgaas@google.com, vkoul@kernel.org, kishon@kernel.org
+Cc: dlan@gentoo.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
+ aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
+ tglx@linutronix.de, johan+linaro@kernel.org, thippeswamy.havalige@amd.com,
+ namcao@linutronix.de, mayank.rana@oss.qualcomm.com, shradha.t@samsung.com,
+ inochiama@gmail.com, quic_schintav@quicinc.com, fan.ni@samsung.com,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250813184701.2444372-1-elder@riscstar.com>
+ <20250813184701.2444372-2-elder@riscstar.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250813184701.2444372-2-elder@riscstar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250813_223812_936920_BEE13FC1 
-X-CRM114-Status: UNSURE (   4.53  )
+X-CRM114-CacheID: sfid-20250813_231135_546093_622C3D70 
+X-CRM114-Status: UNSURE (   4.13  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,30 +126,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Yang Xiuwei <yangxiuwei@kylinos.cn>
+On 13/08/2025 20:46, Alex Elder wrote:
+> +                      "mstr",
+> +                      "slv",
+> +                      "global";
+> +        spacemit,syscon-pmu = <&syscon_apmu>;
+> +        #phy-cells = <1>;
+> +        status = "disabled";
 
-The current check for `!phy || IS_ERR(phy)` can be simplified to
-the standard helper macro IS_ERR_OR_NULL(). This improves code
-readability and maintains consistency with kernel coding practices.
+You cannot have disabled examples. This also means it could not be
+checked/tested.
 
-Signed-off-by: Yang Xiuwei <yangxiuwei@kylinos.cn>
+> +    };
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 04a5a34e7a95..9248f2249849 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -677,7 +677,7 @@ EXPORT_SYMBOL_GPL(of_phy_get);
-  */
- void of_phy_put(struct phy *phy)
- {
--	if (!phy || IS_ERR(phy))
-+	if (IS_ERR_OR_NULL(phy))
- 		return;
- 
- 	mutex_lock(&phy->mutex);
--- 
-2.25.1
 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
