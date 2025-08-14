@@ -4,121 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82700CA0ED1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AEBCCA0EE4
 	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 10:30:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mul93KiohsJkAyrwMZ138hbbxvCRO5048roDHy5vvKE=; b=Z07rv5EYQhDNe3
-	cTnoEloxqs8Tj8xN3d2px+16Cz13ojlGx/MG/EumoyaW6hmlFfxzkl03UmTUNLnzJcJPACnhPSmIl
-	JzIZECyv5XxkDGuxoxuAC1TBxz1OCFALC8ccdL2EVoVq9PtFgH/3vQnaNHgwRD5z0Z4I+0Qr2bWWw
-	C5nWGIfRo7BVJgFV86lDCG+bxSb/l5x4jrV2bt1+/7vW59Emrfo3JxVTC+zpdg7O/cWl0J5zi2ABn
-	5MI/HP+rE9fbJw/8iN2kNBlqf/xo9f+HUAWg3hUsa0pUylDK2xuGMT5D0WL+zx62XfFwg+ODiyJEH
-	gtKQSaft1oGE4kx5DUWQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rIjPIv2JWLCL15/TCFJroZEP4D4/SEcA2GsMeab+7CU=; b=GU7Hqb7WZbxKb9
+	YRjohZZPZlpS377/Pbysd5+vscED9G1tzUCOWsdXOqfHFJmM/gXKsPVkW1TcP8XJ528R5DFRUDUv+
+	8jjK9D6X7XldQCNvKc4UC0u3IY/pwQtLIgVNXjMEwL04reTFp4NMNztrI50Xo1LSZ0PQpr51Hvp29
+	91vGg5CKmotU1Zqsot/uWARqqjQiLaGEya9Z1PJvWiHdMG/+YSpRDpjxQ3CoECqqQ/7DIRZSLmtkl
+	IhVPHN38joivUS8GwF0xg1epvDi8/Pd+vXJ3EgPb6nuHpzNFkDWsB0VHYe+K/QjbgGJ72k6x60rWR
+	KljH/wBO26lBdLYDurXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umVEH-0000000Gb08-0LSi;
+	id 1umVEH-0000000Gb0b-1aRB;
 	Thu, 14 Aug 2025 10:30:41 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umUEw-0000000GOye-0adr
+	id 1umUF3-0000000GP0N-2zHL
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 09:27:19 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57E00TeE029470
-	for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 09:27:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	8liDg8V8jJXUIuWDLIxvpQ4YE8ananmMfhqXJvLliEY=; b=HToJcEMPQ4HP4wB9
-	t1OtzocbXVlWu/n6pFUkjBE+wINPkNrLU3/a3JzVZLWXXPp3bm68JTAVhluBEg7H
-	J1udt41fqeIcopO4PQqVdOoXMfOA+kM1vKhJv1hF8WU7qT0166+yITvAvDU0qkiO
-	+txbGDmFHuyK52G0r6QzMDYCi4geB8uOweR3LBYfWyMI7xIAuowZcf61zpqc0Eik
-	5IYUffPL4fwkverXTj4TgvrhM0DUWMljx6efvouRIZtex4txsHc5buaeV9Al/cYI
-	Vin0aTzjd3JzUmk/MBs900b7UwgHPwdncTG96WTa7YQx3eORBRTOlCom3gTYOn0J
-	gtOAhw==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48g9q9x730-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 09:27:17 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4b1099194ffso3420711cf.0
-        for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 02:27:17 -0700 (PDT)
+	Thu, 14 Aug 2025 09:27:27 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-45a1b05ac1eso3131075e9.1
+        for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 02:27:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1755163644; x=1755768444; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=XqAuWv6c6I6Tmj7XNLmRavDkRG/hDMAr96wkLjEqxuw=;
+        b=o2b1T6sKmjx6taJDXjsLeGy1zUfeEBuoqvUI3e3CoQBWf1yx51eqXdOnTeEkokEWpl
+         dOpIYhuFV6xssTJQocaNZlayNt+NOtWFWIiK/X78I1C/U7TLfKeQMJ8pvp5sbBo53iFj
+         mKHgi27UUCVhL3Z2cGRlhUy07bUtzstMAI3IdQHyzrGBYZAlyAQWO31ZJGpzhuMoQgKK
+         4suvTzky3TZoIaK+he8jbwd9YRa3pq6+AiZMvhQ89DaVhw8gfdsgWTc+WySSbxxttLGb
+         8tAY8NGotKvNnZD4x0l0u6mjt9YYtRh2V0rlchdnSlhLOFyrfI3C21I8yQXGxb7v3yUL
+         68uA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755163636; x=1755768436;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=8liDg8V8jJXUIuWDLIxvpQ4YE8ananmMfhqXJvLliEY=;
-        b=s+Iu+rDzAbbinj5jPngCG3gKXdh/Vm2xTfLBbYFtlNc8Bk5XX5yOlYmojsxuaw3EEL
-         GhZhZ5gkd4cexeRK15u5ErYM1Pk0Q4HWrKzAcNGSHcZ9XrM+O0dqMVaTYqnoxzmAsLD6
-         c5vgI+sBOaKcPFaup718tw0cfjeKUlxe3hbgRD55pg2dEFZqkCuYebuFYJ94DWf1Jwqu
-         X4VGp1IobLvZKSh79UXemUoZO+hpZNjZQryQkUre/GlVDr4obnis19FRPGFJ9uDURSaq
-         H1m0ResvTwzSVJCR3x/uh8yLIiNNGUoMmPdlyt/+PjNdj4lZXRVzpvcrCIknRUGbltMW
-         SVQw==
-X-Forwarded-Encrypted: i=1; AJvYcCVlZT/uBNZ0Cl8Pv+LJ3HYT3OP/rjv+8hV44HAooUpBjVze/NeD3O1Kp/6Yz04asB+aZjB0pvsoAlI=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9RRKTgyNKKy08vk7vcDB9TCU2eDrBRr7B4ZH2FY1HvQz244k8
-	HgJLjmZXrDPiG3fJEAiJX5QCrzAot+wIvkR8srgRvBTGWJPuOdp7U2Ix8pa2c2D9KymrSZrdwV+
-	mG1FcR3I349OzCEu4lxH7BdUGtsql1WYeQOcVSbESxXaxEjm5rPbRh95ly1tjtcaWq9v5
-X-Gm-Gg: ASbGncspZaTpuaRyh7vx/Fq3hBAOWaferQN1ZTUp4wDpdLC1sMnfAoY+a6K7PvluS6K
-	QoAN5B0eI/ns1xIV+PICg6nKMs9KeH806ispQ/fdHa19krzIP0mZ5kTLXkO+GrKZp6qJtVEMcBm
-	uWYAxS9AaxSBIyKBQt9JniTOTz/j39DE8k96/dhksNjM57Wg5fErdZ02kYU666Wso97mQPjvvR2
-	T3ARZamYpdBI/flkdx+AL4SjMoU4CRnuUhtGb+clNfPvYTmlKK/6EiGfO4yjIlo7pRDsWjyio0c
-	O+XAh9kulnzf1aAKpNrfuBLOvNSKt3X5ZsBlxt3UxKzyLE7toeL0EHQ6HgRM0Ym+iB3DzWTdJFF
-	CZ5LpteXMEF76h5NRXA==
-X-Received: by 2002:ad4:5fcc:0:b0:707:43a1:5b10 with SMTP id 6a1803df08f44-70adc06e445mr15766956d6.0.1755163636101;
-        Thu, 14 Aug 2025 02:27:16 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF9SwT7H/YCBwkzSO8UzX7j114raEKqqbTh+pISy8oflkO6NLP0NtoNDbBk/MM3LTCvC9zjmw==
-X-Received: by 2002:ad4:5fcc:0:b0:707:43a1:5b10 with SMTP id 6a1803df08f44-70adc06e445mr15766726d6.0.1755163635640;
-        Thu, 14 Aug 2025 02:27:15 -0700 (PDT)
-Received: from [192.168.43.16] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6176052d163sm17241998a12.48.2025.08.14.02.27.13
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 14 Aug 2025 02:27:15 -0700 (PDT)
-Message-ID: <0e1fbd77-b651-4614-adf9-d2f8e66abac2@oss.qualcomm.com>
-Date: Thu, 14 Aug 2025 11:27:12 +0200
+        d=1e100.net; s=20230601; t=1755163644; x=1755768444;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=XqAuWv6c6I6Tmj7XNLmRavDkRG/hDMAr96wkLjEqxuw=;
+        b=KFN6GznjuBu99chiJFSwaDlbjwZEmxclu1VxceRJceKSIaeYPgHojS3S5L9lYnuO0d
+         c+9qs8XTYmvsXpCqmd/pl198x9eqx+YwXLtCXwsXC7npZuoZoq3xduizWfo46eeugr73
+         kqUvi8uA4kSyTlDbvrdqWTbePQufKRXcd5lDw9Lp0VT8nrvxaBAeX8O1t7yJQw/k+RIt
+         jN5d38+AlNbvn47UdsFMQj1Raua2QKTMhLozTtTqv+RKnTIRasR4I2p8BOW/YGUGKc4A
+         8GxJlH8OahIEPojdvc9HLLKUj9zG+jdJVtye5H9Oq/pjq+me4S5H6xxBkifzmtGeXG4V
+         rsiA==
+X-Forwarded-Encrypted: i=1; AJvYcCVnAyg4wPV2irKkcmAJkzTTQ75dc8DRRgYay4RhjupVNaIi/eD2FS/UbhJ9/oF5N/tmE2t+VWiRk6E=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyd+zUDFB9celNJsjVGeqJTaq97t1m2BVyhn4eugIVnsqkUyb0J
+	HCUTP3kXY1Y8nMFESu9ABtQ+JEkazGe0s6BOQ9yl8AScxewRSMQCDq+FwRjSErQZmjU=
+X-Gm-Gg: ASbGncsh8iF8gfaF35sVT1j0yfepRbbOgX0ypZOsc97X4kf16N4q1/Js5xSZAvrAQZR
+	RmN4jRHyFbeeJZGkg/tr50Puk+e/0ZCAN1nuCyacp3iuxf86VwHCh0vJRn/DyWUqdP61SUmEq+O
+	Vfjd3ycTG9MAM37ebacIB7QqxzlSl136rP37TsjcypFXJiIaOy9UWkBlpyXEkO4RbRYZ2vR25f8
+	us9/reZbzaegr5mu6TtDgWCMiMHHtnL0oIsz0LXGUaOT9Ldh5x65nse/rjhp2qw3sUm2OvcVlUp
+	AW3Kv+IuNvZpv0EkfknJMdQsi17Jr75x2q+gRWaFM6R7SpTEY5qWZDTcqXE2sAeMIh0quwwgW29
+	iVZqvXP+KvqLCFqD9sfxi7Gu5gIulAcQ023ow
+X-Google-Smtp-Source: AGHT+IHd8S//p6vOsVTG4x5VxdE8TgAqYiOfk7VAHWwTIJ/ja0G7fBRZA7iqBF/C2V/BVdk/rCDUYQ==
+X-Received: by 2002:a05:600c:3507:b0:458:ba04:fe6d with SMTP id 5b1f17b1804b1-45a1b60ce04mr17300535e9.14.1755163643794;
+        Thu, 14 Aug 2025 02:27:23 -0700 (PDT)
+Received: from [127.0.0.2] ([2a02:2454:ff21:ef41:ea13:2485:4711:708])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45a1c790689sm14706025e9.28.2025.08.14.02.27.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 14 Aug 2025 02:27:23 -0700 (PDT)
+From: Stephan Gerhold <stephan.gerhold@linaro.org>
+Date: Thu, 14 Aug 2025 11:27:10 +0200
+Subject: [PATCH v2] phy: qcom: qmp-pcie: Fix PHY initialization when
+ powered down by firmware
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/3] Describe x1e80100 ufs
-To: Harrison Vanderbyl <harrison.vanderbyl@gmail.com>, marcus@nazgul.ch,
-        kirill@korins.ky, vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, mani@kernel.org,
-        alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org,
-        andersson@kernel.org, agross@kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Wesley Cheng <quic_wcheng@quicinc.com>
-References: <20250814005904.39173-1-harrison.vanderbyl@gmail.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250814005904.39173-1-harrison.vanderbyl@gmail.com>
-X-Authority-Analysis: v=2.4 cv=CNMqXQrD c=1 sm=1 tr=0 ts=689dabf5 cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8 a=0dJSgm4hv7TTYW4Xl4AA:9
- a=QEXdDO2ut3YA:10 a=a_PwQJl-kcHnX1M80qC6:22
-X-Proofpoint-GUID: k4T3H8yAHjdjeaoXH9xCde0USSt0dXH_
-X-Proofpoint-ORIG-GUID: k4T3H8yAHjdjeaoXH9xCde0USSt0dXH_
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODEyMDE2NCBTYWx0ZWRfX7CZGeyIihKPR
- UWSWc9TrY2ENi5vhSoR8WuBRUaX4qHrnIS4TEZiKTz/sSZg4tWve5dGaqByr4SNIk4rNg/Ddzpp
- JQK8ByaPpLBkKWzAsxwQAU3WA77EudLw4ddQMYVg+8uHh2SpTawsEVPQMMUGxAQTep7IoF1OGDs
- VNd/jrS4jZIojtIfg9uE/wo4BkzwwS/v84X9Mv0YU85K5Nbg6HhRMgHvQ4kahd7JUT9n/V8nuFN
- 5HcGSMwZcuCkdB32gKzLP+cBQYua5zqt3E+5qvEjLGXY3W9PP+FlM1E/WZ/Z33F0Q73LYLMUuPz
- X9N7k04aH2GzDlftFFIgUa64KF2cj+j4XnrnRsrj/G+luRyLRZ5OXdKIm/jN64ZkMFRsywQEoEj
- HhJ0vYCc
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-13_02,2025-08-11_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 phishscore=0 bulkscore=0 clxscore=1015
- malwarescore=0 impostorscore=0 priorityscore=1501 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508120164
+Message-Id: <20250814-phy-qcom-qmp-pcie-nocsr-fix-v2-1-fe562b5d02a1@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAO2rnWgC/42NQQ6CMBAAv0L27Jq2Aoon/2E41LbCJtKWrSES0
+ r9beYHHmcPMBskxuQTXagN2CyUKvoA6VGBG7QeHZAuDEqoRF6kwjivOJkw4TxGjIYc+mMT4pA/
+ KVpykaFVXGwulENkVvdfvfeGR0jvwus8W+bP/dReJEjt9tkI3Vj3q9vYirzkcAw/Q55y/t94P3
+ ccAAAA=
+X-Change-ID: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Wenbin Yao <quic_wenbyao@quicinc.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konradybcio@kernel.org>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_022718_184923_E2AE6BAA 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20250814_022725_755876_42D4FAA9 
+X-CRM114-Status: GOOD (  17.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,20 +105,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/14/25 2:59 AM, Harrison Vanderbyl wrote:
-> Describes the UFS nodes for the x1e80100/x1p42100 chipset.
-> 
-> This is relevant to the following devices/patches:
-> Surface Pro 12 Inch 
-> HONOR MagicBook Art 14 
-> Link: https://lore.kernel.org/r/871px910m1.wl-kirill@korins.ky/
-> Samsung Galaxy Book4 Edge 
-> Link: https://lore.kernel.org/r/p3mhtj2rp6y2ezuwpd2gu7dwx5cbckfu4s4pazcudi4j2wogtr@4yecb2bkeyms/
+Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
+support") added support for using the "no_csr" reset to skip configuration
+of the PHY if the init sequence was already applied by the boot firmware.
+The expectation is that the PHY is only turned on/off by using the "no_csr"
+reset, instead of powering it down and re-programming it after a full
+reset.
 
-+Wesley I think you had it going on the Samsung laptop at one point, could
-you compare the diff and maybe give it a test?
+The boot firmware on X1E does not fully conform to this expectation: If the
+PCIe3 link fails to come up (e.g. because no PCIe card is inserted), the
+firmware powers down the PHY using the QPHY_PCS_POWER_DOWN_CONTROL
+register. The QPHY_START_CTRL register is kept as-is, so the driver assumes
+the PHY is already initialized and skips the configuration/power up
+sequence. The PHY won't come up again without clearing the
+QPHY_PCS_POWER_DOWN_CONTROL, so eventually initialization fails:
 
-Konrad
+  qcom-qmp-pcie-phy 1be0000.phy: phy initialization timed-out
+  phy phy-1be0000.phy.0: phy poweron failed --> -110
+  qcom-pcie 1bd0000.pcie: cannot initialize host
+  qcom-pcie 1bd0000.pcie: probe with driver qcom-pcie failed with error -110
+
+This can be reliably reproduced on the X1E CRD, QCP and Devkit when no card
+is inserted for PCIe3.
+
+Fix this by checking the QPHY_PCS_POWER_DOWN_CONTROL register in addition
+to QPHY_START_CTRL. If the PHY is powered down with the register, it
+doesn't conform to the expectations for using the "no_csr" reset, so we
+fully re-initialize with the normal reset sequence.
+
+Also check the register more carefully to ensure all of the bits we expect
+are actually set. A simple !!(readl()) is not enough, because the PHY might
+be only partially set up with some of the expected bits set.
+
+Cc: stable@vger.kernel.org
+Fixes: 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention support")
+Signed-off-by: Stephan Gerhold <stephan.gerhold@linaro.org>
+---
+Changes in v2:
+- Ensure that all expected bits are set (Konrad)
+- Link to v1: https://lore.kernel.org/r/20250812-phy-qcom-qmp-pcie-nocsr-fix-v1-1-9a7d0a5d2b46@linaro.org
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 95830dcfdec9b1f68fd55d1cc3c102985cfafcc1..80973527fafcb294273dff1864828532dab738db 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -3067,6 +3067,14 @@ struct qmp_pcie {
+ 	struct clk_fixed_rate aux_clk_fixed;
+ };
+ 
++static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
++{
++	u32 reg;
++
++	reg = readl(base + offset);
++	return (reg & val) == val;
++}
++
+ static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+ {
+ 	u32 reg;
+@@ -4339,10 +4347,12 @@ static int qmp_pcie_init(struct phy *phy)
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+ 	int ret;
+ 
+-	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
++	qmp->skip_init = qmp->nocsr_reset &&
++		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
++		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
++
+ 	/*
+ 	 * We need to check the existence of init sequences in two cases:
+ 	 * 1. The PHY doesn't support no_csr reset.
+
+---
+base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+change-id: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+
+Best regards,
+-- 
+Stephan Gerhold <stephan.gerhold@linaro.org>
+
 
 -- 
 linux-phy mailing list
