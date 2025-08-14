@@ -4,104 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 771E1CA0EE9
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 15:16:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0525CA0EDC
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 15:23:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g/oAVYe0/fWcjERxOgmlapBiMtbm0ezBrQrLuPW9q+k=; b=NTceYtJeY3DEBL
-	It5+Szd963p8Bwl8wvQdJVbwU/vs4sCODuSnGC6H0RgUdN+zj6DkhHfUH/5UhWjWZBGbxIppUxeoX
-	4xe6qms3HhO9rRu3mErH+MUmd4YKVY5h9md24EePzF/TXHhunKz6mazZcZ+3bcm0+KSl+iWweCrth
-	TD+kwM0J7ftIf+oqAu0HSzE2uIO+VdTF8BzpxYeCcDe4AiXOWH8Hzfes6uP6cKny0WJfVH70bz3EZ
-	F2bgSwPVUHMiXm1PrOk/c6eGpdqa4sQtfWcz/8CqLWnfly++Ci3LmPf5w3xWQLQRJwNH28QhwatE/
-	IN8AmS0zLHTmck+v5pDA==;
+	List-Owner; bh=QUcW4JjOM4/Jc56M80a22GyZYFicwHFmZHpisMRckx0=; b=cdcelaXc4OTmUV
+	BFGdWe13IU1YQzJ3NkvPV2EMv8DZgTQAia8RSVeUa6ll9Ha9q137ePPc/gH8uV/CkVKizSQ7GrYKQ
+	cXDOYOw5i1R0irF2qwJw2QwF6/CzOMiai349zfpGQN3Q0wosTekqw8CTWcgdoy94L1xWrHhm+GeP1
+	vnS8K7dsWh9LmQG+bcC2PTatN0xACDIh1crnqOgjxH1uF6C9sINanO8md6V5iNXMTgjmVBigDN029
+	LBl1789EDuvJ4SUsCYe5c+gdew64D0FSbHY6OUevd+wg53hZ4hXxdaP0FX6V3A3euF+CNbjMlzqqS
+	B1L5SRFhfBqKJ+y0ix5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umZh3-0000000HOhE-0dIT;
-	Thu, 14 Aug 2025 15:16:41 +0000
+	id 1umZnG-0000000HQFG-2KTU;
+	Thu, 14 Aug 2025 15:23:06 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umY0m-0000000H3KS-27kD
+	id 1umYlB-0000000HDFb-3znX
 	for linux-phy@bombadil.infradead.org;
-	Thu, 14 Aug 2025 13:28:56 +0000
+	Thu, 14 Aug 2025 14:16:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=References:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:In-Reply-To:Cc
-	:To:From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=L3ufGPnyrW0N3UVpr3/riCJH1PQGRtTjLIlg9Lbrstg=; b=ZDthPNcVcG7d8HgY/nOMJnnxeT
-	3krYcPelCSZgUO4GU3BembX+kGf6XPWkgEiggu5q1blJamC8FCTmmm9c4p62NosE29uCEmVnm1qBa
-	3urYtid1cl7QggdjWyFVzBYpwChXxXwpSmyKUlY42psyRo1GkCwGs5zQWbPYjOkry60vVRUzJuv4e
-	WjXgBuIL+KGZMQjlu0+knjvNB5cYzuMX2DHSb64/nSOpkOQsYRnhN0iFs7bllVlB8NQcAk0+n3+Mf
-	6Ym0bBcDggS5RTD1JS0FStP+0bgQx7InuVqnDJb1DudGQ9qzn3BgLVO4whQLoGBJwquTe916E+Ryo
-	HuMdI3lw==;
-Received: from mailout4.samsung.com ([203.254.224.34])
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=vV6wVTLTtC47m8MAGeIMhZGYTNk3AK0p6ajLjVn9TFk=; b=VSXk3KLPtk33rGTnQQ8/0kI995
+	EeKodNhUIKzTSPvvBjNWyE4S+/dbz07SCS0MXVf5trIK5HXiugyM7QyfYl5YiWfYsY4GTrNfsjGG5
+	yFBKVqpvVLOdGkAZjc+ESVwHo6wYs0QPsCFPcdM/Tx1ePffWuU3xheKiLBVTbN83+x8MD8k8yzgYr
+	Bv/8STEL1zZIDqMtJ6UUy4kOAZVbAeXGnuO/hnanX1UcDhTAfIYUFKtrxUAIwBSAdKEp9WddItrur
+	dT/cLon6aXwBFAH6ziabHcT7cxYwPSxwZi3YrZG7Uq60HgQD6hCxgr5FzSNIuBzIPxkJUDa6otpce
+	vVsN8PPA==;
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umY0g-0000000GP9F-3OGO
+	id 1umYl8-0000000GRHP-0n6j
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 13:28:55 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250814132839epoutp045e80623b407f6c8be8908ad09fd3a6a4~bpTM-kO4K0273302733epoutp04D
-	for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 13:28:39 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250814132839epoutp045e80623b407f6c8be8908ad09fd3a6a4~bpTM-kO4K0273302733epoutp04D
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1755178119;
-	bh=L3ufGPnyrW0N3UVpr3/riCJH1PQGRtTjLIlg9Lbrstg=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=ZzRxVVY5/wPdoVLxiMHEU5kpHumoK0S66oxLoNIMT+d4vhRsTLFh2Z+Ce+MWHDkOG
-	 LfhHE3VzzpQXqt+UWdVLNcSatvUVQVOcNZ4Qp7RPX1fWDait/49tMsZ/J7ivfIBZFf
-	 UNYY6UXvJ8rL0Fkt/Zonw5Ue59gdHqCKjTkPjq/I=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250814132838epcas5p3c3693b0f5672407d67efe160b31fcc0c~bpTMXiWWT1937819378epcas5p3c;
-	Thu, 14 Aug 2025 13:28:38 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.92]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4c2mKK6nlKz6B9m7; Thu, 14 Aug
-	2025 13:28:37 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
-	20250814132606epcas5p1cdf8e1a97f5abe9d71dcd1b425a07648~bpQ_QWk6L2554225542epcas5p1n;
-	Thu, 14 Aug 2025 13:26:06 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250814132602epsmtip1c22abee846ffe43383ffacb28125aafe~bpQ7V3wRg3173831738epsmtip1Y;
-	Thu, 14 Aug 2025 13:26:02 +0000 (GMT)
-From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
-To: "'Vinod Koul'" <vkoul@kernel.org>
-Cc: <kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
-	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
-	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
-	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <aJtMdHcidETZyiIp@vaman>
-Subject: RE: [PATCH v5 2/6] phy: exynos5-usbdrd: support HS phy for
- ExynosAutov920
-Date: Thu, 14 Aug 2025 18:56:01 +0530
-Message-ID: <02f101dc0d1e$fd018ef0$f704acd0$@samsung.com>
+	Thu, 14 Aug 2025 14:16:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3F847A54976;
+	Thu, 14 Aug 2025 14:16:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05C30C4CEEF;
+	Thu, 14 Aug 2025 14:16:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755181005;
+	bh=S7GgsxcKNtoORFbwkhFg/o2U/CGUU4Ner6zZ/evpaAo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=SvihKLFO0reZ3355bGC3y/5Gq4H1ugK95PWcRDdlSxGJbhRdcR0O+V4/7Bh5WRptU
+	 GV7EcxnYeZTVcDYJnqTPYlEy7bkxB10kCMBzJ4Zr0VRwrCygXo0CN1FnUlRkavnM08
+	 jxldecqZWVvF95995uDgTIgI/IFXGl4RxGLnhyAFbFmyFWCa5BZQ+vBqOqD2vd4kTh
+	 oCmFaeOUwBZzBSu54nhoPeBBT1J/tNUezQYn7X4sZUJngN9SplYGnBd4rILKQUfvT5
+	 XTqU3y8pB4J+Tp7ze7yAftyrB5USXx4d2dZfaEmTs/CxVmFautbuxyfjjV5A9CTakd
+	 spnRZK5r318EQ==
+Date: Thu, 14 Aug 2025 09:16:43 -0500
+From: Bjorn Andersson <andersson@kernel.org>
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	cros-qcom-dts-watchers@chromium.org, Konrad Dybcio <konradybcio@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Document SC7280 PCIe0 phy
+Message-ID: <yncizuu6bhr3xvuzkb5xri4gh6mdjg4r4d4nkufgxxpquetyir@kiagpup6wqgx>
+References: <20250812-sc7280-v2-0-814e36121af0@oss.qualcomm.com>
+ <20250812-sc7280-v2-1-814e36121af0@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQJ+ZgWj3OwstM5ZbwFL0KmcSzrOlQIGOcp3ARbD4UABdmTpTbL41iug
-Content-Language: en-in
-X-CMS-MailID: 20250814132606epcas5p1cdf8e1a97f5abe9d71dcd1b425a07648
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250805114310epcas5p459aa232884d22501f5fefe42f239fecc
-References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
-	<CGME20250805114310epcas5p459aa232884d22501f5fefe42f239fecc@epcas5p4.samsung.com>
-	<20250805115216.3798121-3-pritam.sutar@samsung.com> <aJtMdHcidETZyiIp@vaman>
+Content-Disposition: inline
+In-Reply-To: <20250812-sc7280-v2-1-814e36121af0@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_142851_662085_77234122 
-X-CRM114-Status: GOOD (  20.14  )
+X-CRM114-CacheID: sfid-20250814_151650_503660_64758B4E 
+X-CRM114-Status: GOOD (  14.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,112 +93,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod, 
+On Tue, Aug 12, 2025 at 07:26:44PM +0530, Krishna Chaitanya Chundru wrote:
+> SC7280 PCIe0 PHY is functionally compatible with the SM8250 Gen3 x1 PCIe
+> PHY. To reflect this compatibility, update the binding schema to include
+      ^--- I think here would be a good place to break for a new
+           paragraph, to give separation between problem description and
+	   solution description.
 
-> -----Original Message-----
-> From: Vinod Koul <vkoul@kernel.org>
-> Sent: 12 August 2025 07:45 PM
-> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
-> peter.griffin@linaro.org; kauschluss@disroot.org;
-> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
-> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
-> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
-> dev.tailor@samsung.com; faraz.ata@samsung.com;
-> muhammed.ali@samsung.com; selvarasu.g@samsung.com
-> Subject: Re: [PATCH v5 2/6] phy: exynos5-usbdrd: support HS phy for
-> ExynosAutov920
+> qcom,sc7280-qmp-gen3x1-pcie-phy using enum within a oneOf block, while
+> retaining qcom,sm8250-qmp-gen3x1-pcie-phy as a const.
 > 
-> On 05-08-25, 17:22, Pritam Manohar Sutar wrote:
-> > Enable UTMI+ phy support for this SoC which is very similar to what
-> > the existing Exynos850 supports.
-> >
-> > Add required change in phy driver to support HS phy for this SoC.
-> >
-> > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > ---
-> >  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 123
-> ++++++++++++++++++++
-> >  include/linux/soc/samsung/exynos-regs-pmu.h |   2 +
-> >  2 files changed, 125 insertions(+)
-> >
-> > diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > index dd660ebe8045..5400dd23e500 100644
-> > --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > @@ -2054,6 +2054,126 @@ static const struct
-> exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
-> >  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
-> >  };
-> >
-> > +static int exynosautov920_usbdrd_phy_init(struct phy *phy) {
-> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-> > +	int ret;
-> > +
-> > +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks,
-> phy_drd->clks);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	/* Bypass PHY isol */
-> > +	inst->phy_cfg->phy_isol(inst, false);
-> > +
-> > +	/* UTMI or PIPE3 specific init */
-> > +	inst->phy_cfg->phy_init(phy_drd);
-> > +
-> > +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks,
-> > +phy_drd->clks);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int exynosautov920_usbdrd_phy_exit(struct phy *phy) {
-> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-> > +	int ret = 0;
-> 
-> Superfluous init..
-> 
-> > +
-> > +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks,
-> phy_drd->clks);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	exynos850_usbdrd_phy_exit(phy);
-> > +
-> > +	/* enable PHY isol */
-> > +	inst->phy_cfg->phy_isol(inst, true);
-> > +
-> > +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks,
-> > +phy_drd->clks);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int exynosautov920_usbdrd_phy_power_on(struct phy *phy) {
-> > +	int ret;
-> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-> 
-> Reverse chrsitmas tree pls
-> 
-> --
-> ~Vinod
 
-Will address these comments in next version of the patch-set (v6).
+Isn't this the case for &pcie1 as well? If so, can you please fix both?
 
-Thank you.
+
+Also, before we do that, the fact that they are "functionally
+compatible", can you confirm that these two platforms really has the
+same PHY settings?
 
 Regards,
-Pritam
+Bjorn
 
-
+> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> ---
+>  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 69 ++++++++++++----------
+>  1 file changed, 37 insertions(+), 32 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index a1ae8c7988c891a11f6872e58d25e9d04abb41ce..1e08e26892f7b769b75bb905377d30a301e6631c 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -15,38 +15,43 @@ description:
+>  
+>  properties:
+>    compatible:
+> -    enum:
+> -      - qcom,qcs615-qmp-gen3x1-pcie-phy
+> -      - qcom,qcs8300-qmp-gen4x2-pcie-phy
+> -      - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> -      - qcom,sa8775p-qmp-gen4x4-pcie-phy
+> -      - qcom,sar2130p-qmp-gen3x2-pcie-phy
+> -      - qcom,sc8180x-qmp-pcie-phy
+> -      - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+> -      - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+> -      - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> -      - qcom,sdm845-qhp-pcie-phy
+> -      - qcom,sdm845-qmp-pcie-phy
+> -      - qcom,sdx55-qmp-pcie-phy
+> -      - qcom,sdx65-qmp-gen4x2-pcie-phy
+> -      - qcom,sm8150-qmp-gen3x1-pcie-phy
+> -      - qcom,sm8150-qmp-gen3x2-pcie-phy
+> -      - qcom,sm8250-qmp-gen3x1-pcie-phy
+> -      - qcom,sm8250-qmp-gen3x2-pcie-phy
+> -      - qcom,sm8250-qmp-modem-pcie-phy
+> -      - qcom,sm8350-qmp-gen3x1-pcie-phy
+> -      - qcom,sm8350-qmp-gen3x2-pcie-phy
+> -      - qcom,sm8450-qmp-gen3x1-pcie-phy
+> -      - qcom,sm8450-qmp-gen4x2-pcie-phy
+> -      - qcom,sm8550-qmp-gen3x2-pcie-phy
+> -      - qcom,sm8550-qmp-gen4x2-pcie-phy
+> -      - qcom,sm8650-qmp-gen3x2-pcie-phy
+> -      - qcom,sm8650-qmp-gen4x2-pcie-phy
+> -      - qcom,x1e80100-qmp-gen3x2-pcie-phy
+> -      - qcom,x1e80100-qmp-gen4x2-pcie-phy
+> -      - qcom,x1e80100-qmp-gen4x4-pcie-phy
+> -      - qcom,x1e80100-qmp-gen4x8-pcie-phy
+> -      - qcom,x1p42100-qmp-gen4x4-pcie-phy
+> +    oneOf:
+> +      - items:
+> +          - const: qcom,sc7280-qmp-gen3x1-pcie-phy
+> +          - const: qcom,sm8250-qmp-gen3x1-pcie-phy
+> +      - items:
+> +          - enum:
+> +              - qcom,qcs615-qmp-gen3x1-pcie-phy
+> +              - qcom,qcs8300-qmp-gen4x2-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x2-pcie-phy
+> +              - qcom,sa8775p-qmp-gen4x4-pcie-phy
+> +              - qcom,sar2130p-qmp-gen3x2-pcie-phy
+> +              - qcom,sc8180x-qmp-pcie-phy
+> +              - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+> +              - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+> +              - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> +              - qcom,sdm845-qhp-pcie-phy
+> +              - qcom,sdm845-qmp-pcie-phy
+> +              - qcom,sdx55-qmp-pcie-phy
+> +              - qcom,sdx65-qmp-gen4x2-pcie-phy
+> +              - qcom,sm8150-qmp-gen3x1-pcie-phy
+> +              - qcom,sm8150-qmp-gen3x2-pcie-phy
+> +              - qcom,sm8250-qmp-gen3x1-pcie-phy
+> +              - qcom,sm8250-qmp-gen3x2-pcie-phy
+> +              - qcom,sm8250-qmp-modem-pcie-phy
+> +              - qcom,sm8350-qmp-gen3x1-pcie-phy
+> +              - qcom,sm8350-qmp-gen3x2-pcie-phy
+> +              - qcom,sm8450-qmp-gen3x1-pcie-phy
+> +              - qcom,sm8450-qmp-gen4x2-pcie-phy
+> +              - qcom,sm8550-qmp-gen3x2-pcie-phy
+> +              - qcom,sm8550-qmp-gen4x2-pcie-phy
+> +              - qcom,sm8650-qmp-gen3x2-pcie-phy
+> +              - qcom,sm8650-qmp-gen4x2-pcie-phy
+> +              - qcom,x1e80100-qmp-gen3x2-pcie-phy
+> +              - qcom,x1e80100-qmp-gen4x2-pcie-phy
+> +              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+> +              - qcom,x1e80100-qmp-gen4x8-pcie-phy
+> +              - qcom,x1p42100-qmp-gen4x4-pcie-phy
+>  
+>    reg:
+>      minItems: 1
+> 
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
