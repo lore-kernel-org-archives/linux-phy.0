@@ -4,99 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81853CA0EDC
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 13:22:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF9CECA0EE4
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 13:27:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/iJfIqR7OQkH12XgDUDCn/ibR98iaN3lb1LPlEdSTWQ=; b=RE+PWbLpBrsbZf
-	iiJqRu5V4XFJI9Ho/UsuaAABzZeSmLFpgo9qsz9hHNACHZMjaCwHeeOQ3l7ISYahdjMuzGs9hM4jP
-	pGOSCTcxISIgDpuPlExVjqGuprKEmFdEX4UIIGrJIoQAAI1Vw4T8SBgBk/d9oVNVUy28LwG4w4jDv
-	fYHKQnsjCPZ67b52gx82TsaAu7a66Sf+yT6MVoZfrLNBkCiuK490/f3LkSjM0ZvFtE+cseeVM+/fa
-	htTL0d6hUGA5bJp79YYo8q+SMuP0F9pzG1xXICr6QYbz7BYszPj1jKsrEVrD2KG3tueSYwL/UVHoc
-	FZi+XN15A2UoflLENdMw==;
+	List-Owner; bh=QmptaloCeNGv2iIZocnrzu22wlvrlv2Ua32VeprxYgg=; b=U1z30kLrqt3lpy
+	2KexYTI2AZG30hhveVgSOL4wnkGNBY89/4AyfXy+2+Fg0BXu2Q+M+7xDv998ZOes2amfgAXwIIa/G
+	mx+eFxe/iHdGHuJq884398HGuvn1QfW9ydLIhxaRjK9pq93VF4UY4DE0AtwB3NpUAv14U+KYWbfjg
+	ldhhqI2L1pU5h0B+bZBfGEjR2WvNQcBiCHJbSIQN/all13RMOAKlI9GtFYDX3mvMsphb5syhb8w8M
+	CmrQf3tMuy5hXt1vOEkBlLsMi9BCCALFt/+xAgyMDKy0p0TFiytPfD0BzddmGHikMQVkqiXVFaTXl
+	ZiN2ln/PsU+KH6EPTWcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umXul-0000000H2FP-0uQe;
-	Thu, 14 Aug 2025 13:22:43 +0000
-Received: from mail-il1-x12c.google.com ([2607:f8b0:4864:20::12c])
+	id 1umXzn-0000000H35k-201I;
+	Thu, 14 Aug 2025 13:27:55 +0000
+Received: from mail-il1-x133.google.com ([2607:f8b0:4864:20::133])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umWce-0000000GnaC-47W9
+	id 1umWry-0000000GpWJ-3Bfc
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 11:59:58 +0000
-Received: by mail-il1-x12c.google.com with SMTP id e9e14a558f8ab-3e57376f644so4261645ab.1
-        for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 04:59:56 -0700 (PDT)
+	Thu, 14 Aug 2025 12:15:47 +0000
+Received: by mail-il1-x133.google.com with SMTP id e9e14a558f8ab-3e57010c2bbso5224865ab.3
+        for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 05:15:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1755172796; x=1755777596; darn=lists.infradead.org;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1755173746; x=1755778546; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=VkZ6MdXAK8oUuFYjzHuswEeWUTNOi4hs6qI/H9CSMKA=;
-        b=y7SRTTCwQrIqJD860dM2o5nuKvmRzLciorQ5yM85b34XMyuxpu/gNAXRRv3AttVECa
-         KbS9R7BYbrNx0YOzX0nng4k4J18OQ8rSfFS4QEHY8EyUra5MbXWTtj4VVT3QXE6IrwSj
-         6xf+eWv6p+05i3Bprh048AXK6r9hanfPcTksqhT5KDsSBGBoI7Sw6PiX7MKZ3tyOTw54
-         3MeA1tfZt7UX5ylYOt58zxHbS1y1QPeZ4M1vwXp7kThjBjUZD3FVXaSP3nZDvTcioNKh
-         5bbH7pMn8KwwoXxiDZPvx7d+O0taZ9lv8WfJhBFCplpeo/lb5SYMkRc/LJRbJkRPJADL
-         IQdQ==
+        bh=jH/A5TldJIt0r8HRzTTERB8tMOGIsMMgINBB+z4/hxw=;
+        b=DHi/J1L2PnzXrYIwsFsEJzSCMhDXHjOJ3euEKDxVIoKtZWsqn9KBVWPBUqEgF/1Ktr
+         6IFMVjUEupOjGFjBDYuXL+w/PqxR9NzBu0nl5wXa+iL34Z4Ei7wwsH9rci1Xuk20r73D
+         kUS3Ex+PMD1pvjHT4Z73tb0hMupOQb8b0B7Xaw5mgzo1DfBP4Fvz/ilIvq/GRpq0ot/+
+         gt4n53y/oPZs6jDo0PwLH5MWGDw1ucCnmC0t9nAmpQ+5d67/K2cntohLsUw1DPA4lvSh
+         K1Xc7yFUAaAUFvSfDkugRSrDXZwIlHaLODpVvnBTUOActYCEeYfwgw5CzBRHkmcVYh6/
+         75kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755172796; x=1755777596;
+        d=1e100.net; s=20230601; t=1755173746; x=1755778546;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=VkZ6MdXAK8oUuFYjzHuswEeWUTNOi4hs6qI/H9CSMKA=;
-        b=SIdPj2E2if4v4bQnZg1g1C1FX040uVMinxI9NtSxaST5yimWMcgSWT3fhsDYIVUwUm
-         3DqaJFFyr8CJB3I1DyPVggb7faCzoT8EbmiftTiknLg432JHufl9XYVe1tsc4vAOIEFM
-         r9vnJkBdNGDK7zYFsMx3KTSpWZgnGHlL2xex/zvisxZJ7cXVnjfCXAeSwK6OpPrVFY4p
-         BjlmuHEzWDivAZ4ZnHGfeeVcZenElaKVO1M0KFLw6aya0YD6g1k/x24AWImOm+kGFem7
-         vnBufpMyFDB7qdwHTLeKw9uq6M0lNxSokMGx8gBxi31yqRQGhITMiHHv4zCGUj9rCg1Z
-         fEnQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWeXhDy8AwvC38l9rK4VoouG/Zk0WAVFLcsjkLtL1ancqgwV8YnAbrYAd3YVmlbI//bIU2IFWf/v4U=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyN+m8IO31COUhbYZq52EBbOleNTrEsQd8T52LbG3uNxukzNTcm
-	7UR49Orb7Zc1GdeJVV7dOhPDYxbZvByNItfOYDHHB/vdu2Y6uAb4wRJqERhMe3B66pQ=
-X-Gm-Gg: ASbGncsD8JFVerdNaLxBOCECEG7t3Q82fd/AoiaGNlv/h36LQMKhvwsmklwtW+7B7Uz
-	PiAP3C/nChLW8rUHDqZlCiigYnrCwdL7e2BtqzfYgYf7JNxtzPPyjntNsAmD0XOLxkXBTfjR9yC
-	q0yBQrPPsKmbTK/hB/Qgm1sQ1O4fyXjiUQ5mOxiIo6LKPlXIRYTk3N3Of2w8VkV+u5P+EwRPsQK
-	6d2HEwfWkNrLW+Saw1RMnoE2sP8iH9K2cCQf2Bp2H2ZfDUJxrPwni7UIETUTnUnKcGHsvxPcMaa
-	hbjUusOkFx6iI8p2jcy13qUsXidQrIYiqSh55nhXyTtBxT35jT8BxA6NVDoQIUtV8otjoqQ8e1u
-	Osz2PkhIt9bNIgHtYNeBGUObFXRxnRfBokApV140BD3pnXYV/rpSLpUEG3ii/jQ==
-X-Google-Smtp-Source: AGHT+IE3y11zxXdSZ7xsXLUpghewNnJCpWK8G2mFkAzcKjVS5vSn5G3dmjKvLqQoKez3LPNe1hHEcQ==
-X-Received: by 2002:a05:6e02:184c:b0:3e5:6daf:ddfe with SMTP id e9e14a558f8ab-3e57084ff05mr51337105ab.10.1755172795698;
-        Thu, 14 Aug 2025 04:59:55 -0700 (PDT)
+        bh=jH/A5TldJIt0r8HRzTTERB8tMOGIsMMgINBB+z4/hxw=;
+        b=VjVQR6LDOrSB9h8jqsiEQlFADioNRH9GiLWemN/il19eWNZnKWyTqH75n9J4Msqivh
+         ToxHQkmrh1zrBBPqQ6L1VgD1I8sY0WvYz2n/ev6qzi+WboVYHtNkIvsHUA4wh1H1mVJO
+         QuBuCXeQrtsWQfgYzlrHpSE+OtDsZzw0SHZZ0a/BeCnLK2cr3bTPFE7BvpvaqZdjkikU
+         4YLgQYfG/33md7uwi4rWpTllQDrvzv7rgAkvXRwrZhIu1G1wvokujinph8WXhxwn/gt1
+         XLcWPbOtTY3nXdCTLKWMGnCulBKCTlLGlWrXUuXQ21c5Ohp33hPMVQn1Ex2HhhYHfcoU
+         on0Q==
+X-Forwarded-Encrypted: i=1; AJvYcCW/JZWk4uIqFv+jDDIx50QtTnB9gXxujiL6g1py5GYlSwgsH7b2iLf+uLFPEEZq0Udc8WbzZTcVRAU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy79I/S6KWy+S+6cKev/KRseGPHDAhauaHhqr9HxyGd0tDM+g2J
+	iDfa2Qv3aHNMoEk1VrTd20IMSl5wWzTSamuXXCNfYYpzegDIkIRjN8Me6A59DTbt1oA=
+X-Gm-Gg: ASbGncukeVbGMM4Fd2LAyrEjknGWe5xLUEh2kjKaAhnv+HR9lv/+sUgBbq63N3RoV/T
+	whqae0bLDqErdXDsIYkFHghib5PxPuQrbc3o8w/FcdcSK4ZuNKj0CXvD6anGAHUFlKGYD9JjG6e
+	zUmyYmNQp+dJn7F8UDSbr4fbFDbET9XNT2OMwXxKipHA4hC/LppbFuGo3ecJ+rplPJKRVTaaInJ
+	7PwexLj6KO/oqS9uouxsa/YExUyftMRSBtp1pX0mlUr60444pA7qdFLXBWGELHN6boFMP24druL
+	sgFIV/WVqBZq5TypXd6Rt5zekbzQyppJpcUK6mkfVIU3AbGjYBm8Hpc3g2EJ5OmmndWINCPnPfu
+	3IwhnGqJpWiR3x9J0RdqmDLjL8gpQKezBkyp0SuK4MIwVWWhn5scZz6MMKQR8xw==
+X-Google-Smtp-Source: AGHT+IEk5Gf6e1UB1FErhDDdp2cqW5OM5qB7djdZQAW5/M0csvkRq5HHXBwlwGdJnT74jfJk+RYeIA==
+X-Received: by 2002:a05:6e02:3bc7:b0:3e5:4631:54a5 with SMTP id e9e14a558f8ab-3e5709835e8mr60618705ab.18.1755173745691;
+        Thu, 14 Aug 2025 05:15:45 -0700 (PDT)
 Received: from [172.22.22.28] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-50ae9cbb659sm4480210173.93.2025.08.14.04.59.53
+        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-3e55b077b34sm27683845ab.51.2025.08.14.05.15.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 14 Aug 2025 04:59:55 -0700 (PDT)
-Message-ID: <86174012-fd87-41d7-9568-f9c0b544c1c4@riscstar.com>
-Date: Thu, 14 Aug 2025 06:59:53 -0500
+        Thu, 14 Aug 2025 05:15:45 -0700 (PDT)
+Message-ID: <4eaa30bc-9a25-4fe0-b685-1d0d8fa503c2@riscstar.com>
+Date: Thu, 14 Aug 2025 07:15:43 -0500
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
- PHY
-To: Krzysztof Kozlowski <krzk@kernel.org>, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, lpieralisi@kernel.org,
- kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
+Subject: Re: [PATCH 4/6] phy: spacemit: introduce PCIe/combo PHY
+To: Inochi Amaoto <inochiama@gmail.com>, lpieralisi@kernel.org,
+ kwilczynski@kernel.org, mani@kernel.org, robh@kernel.org,
+ bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
  vkoul@kernel.org, kishon@kernel.org
 Cc: dlan@gentoo.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
  aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
  tglx@linutronix.de, johan+linaro@kernel.org, thippeswamy.havalige@amd.com,
  namcao@linutronix.de, mayank.rana@oss.qualcomm.com, shradha.t@samsung.com,
- inochiama@gmail.com, quic_schintav@quicinc.com, fan.ni@samsung.com,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
- linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+ quic_schintav@quicinc.com, fan.ni@samsung.com, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
+ spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Junzhong Pan <panjunzhong@linux.spacemit.com>
 References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-2-elder@riscstar.com>
- <22bd5b5b-ca06-4499-b21f-22c2ff202167@kernel.org>
+ <20250813184701.2444372-5-elder@riscstar.com>
+ <valmrbddij2dn4fjxefr46zud2u6eco2isyaa62sd66d27foyl@4hrhafqftgb5>
 Content-Language: en-US
 From: Alex Elder <elder@riscstar.com>
-In-Reply-To: <22bd5b5b-ca06-4499-b21f-22c2ff202167@kernel.org>
+In-Reply-To: <valmrbddij2dn4fjxefr46zud2u6eco2isyaa62sd66d27foyl@4hrhafqftgb5>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_045957_140775_AC5E1F67 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250814_051546_810626_42FDB4E9 
+X-CRM114-Status: GOOD (  21.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,30 +111,84 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/14/25 1:11 AM, Krzysztof Kozlowski wrote:
-> On 13/08/2025 20:46, Alex Elder wrote:
->> +                      "mstr",
->> +                      "slv",
->> +                      "global";
->> +        spacemit,syscon-pmu = <&syscon_apmu>;
->> +        #phy-cells = <1>;
->> +        status = "disabled";
-> 
-> You cannot have disabled examples. This also means it could not be
-> checked/tested.
-> 
->> +    };
-> 
-> 
-> Best regards,
-> Krzysztof
+On 8/13/25 6:42 PM, Inochi Amaoto wrote:
+> On Wed, Aug 13, 2025 at 01:46:58PM -0500, Alex Elder wrote:
+>> Introduce a driver that supports three PHYs found on the SpacemiT
+>> K1 SoC.  The first PHY is a combo PHY that can be configured for
+>> use for either USB 3 or PCIe.  The other two PHYs support PCIe
+>> only.
+>>
+>> All three PHYs must be programmed with an 8 bit receiver termination
+>> value, which must be determined dynamically; only the combo PHY is
+>> able to determine this value.  The combo PHY performs a special
+>> calibration step at probe time to discover this, and that value is
+>> used to program each PHY that operates in PCIe mode.  The combo
+>> PHY must therefore be probed--first--if either of the PCIe-only
+>> PHYs will be used.
+>>
+>> During normal operation, the USB or PCIe driver using the PHY must
+>> ensure clocks and resets are set up properly.  However clocks are
+>> enabled and resets are de-asserted temporarily by this driver to
+>> perform the calibration step on the combo PHY.
+>>
+>> Tested-by: Junzhong Pan <panjunzhong@linux.spacemit.com>
+>> Signed-off-by: Alex Elder <elder@riscstar.com>
+>> ---
+>>   drivers/phy/Kconfig                |  11 +
+>>   drivers/phy/Makefile               |   1 +
+>>   drivers/phy/phy-spacemit-k1-pcie.c | 639 +++++++++++++++++++++++++++++
+>>   3 files changed, 651 insertions(+)
+>>   create mode 100644 drivers/phy/phy-spacemit-k1-pcie.c
 
-OK I'll fix that in both places.  I think I just copied in the
-actual DTS content, but I now understand the problem.
+. . .
+
+>> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+>> index c670a8dac4680..20f0078e543c7 100644
+>> --- a/drivers/phy/Makefile
+>> +++ b/drivers/phy/Makefile
+
+. . .
+
+>> +static int k1_pcie_pll_lock(struct k1_pcie_phy *k1_phy, bool pcie)
+>> +{
+>> +	u32 val = pcie ? CFG_FORCE_RCV_RETRY : 0;
+>> +	void __iomem *virt;
+>> +
+>> +	writel(val, k1_phy->regs + PCIE_RC_DONE_STATUS);
+>> +
+>> +	/*
+>> +	 * Wait for indication the PHY PLL is locked.  Lanes for ports
+>> +	 * B and C share a PLL, so it's enough to sample just lane 0.
+>> +	 */
+>> +	virt = k1_phy->regs + PCIE_PU_ADDR_CLK_CFG;	/* Lane 0 */
+>> +
+>> +	return readl_poll_timeout(virt, val, val & PLL_READY,
+>> +				  POLL_DELAY, PLL_TIMEOUT);
+>> +}
+>> +
+> 
+> Can we use standard clk_ops and clk_mux to normalize this process?
+
+I understand you're suggesting that we represent this as a clock.
+
+Can you be more specific about how you suggest I do that?
+
+For example, are you suggesting I create a separate clock driver
+for this one PLL (in each PCIe register space)?
+
+Or do you mean use clock structures and callbacks within this
+driver to represent this?
+
+I'm just not sure what you have in mind, and the two options I
+mention seem a lot more complicated than this one function.
 
 Thanks.
 
 					-Alex
+
+> Regards,
+> Inochi
+
 
 -- 
 linux-phy mailing list
