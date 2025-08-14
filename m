@@ -4,70 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA7EFC87FCF
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 02:52:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1720DCA0ED1
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 05:38:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u+0hkWfzQIFDY4JtYdm32+q+eo0M7/IQwAyb/9cppdg=; b=KD1ehNSTEz0IXJ
-	DCaa1CZIoQLL1UVcz2+gGsvFXn5pwKeptcBAmt67/5sxEQH4l2iJ1sT49zzSDgVwt2is9p/BqiSKA
-	VEcOPMgah5dod+YpxTD5POg+AbzOTLbYpuuGKvZOpcMpi/G76MKKaYgxRWY3MolMJbsKQ+bgOkyBb
-	JU7kf44jtsDE6rw6p4NW5Ti4gWWSEKjfEiGuf0KOm5ItWKDBsRoLtTTsKIIzWe/gQhyGU0t95BnoQ
-	NxBuPo7HQMbORV/2ODGn99GtLC174uaibfzAGt5hla4J03bU7MbWOsjOyKj1bftD42Lyb0HAWD7Pj
-	u2g+rEsvnvWcSXab2YUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Y5LmY9c1xEx/edskwEwAbGIZ8cctv7SJ4yRd0OXjb98=; b=LAuosk9WL2cqpz
+	UtJZdeEuY83aXyUgBsPcXMgbAHhRqjvLW0a0oJAe7TSZvCbBNgpWb2RMKtCgBTGTomHIhnjYmVrcq
+	VlltaPcjPxLdUDIyvLFAKGVSzROt94kxy+aNjEF1IVNQjNjOC+gikjpfU8u/22daiitVP/1QEckpc
+	tNrxip/NWDeMBUfw4FuYK9hRKhtksKg5vPiGpG9ux/5N0nBxKrgaDH3uQXkHhRdNRrtRZUyiy72uG
+	1vMbyVFaAAPhUDtoO+emm1MEIfO1J0jOdzjsv85/yX3T7e1Euc2v+4JmsFC8xWHxT4Zut7mPsUx7a
+	CLJHivyX8N12fODYrDHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umO4v-0000000FbvB-1H4T;
-	Thu, 14 Aug 2025 02:52:33 +0000
-Received: from layka.disroot.org ([178.21.23.139])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umO4s-0000000FbuS-3TOl;
-	Thu, 14 Aug 2025 02:52:32 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 7B03E2524A;
-	Thu, 14 Aug 2025 04:52:27 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id cu1DZ5Gm8wiw; Thu, 14 Aug 2025 04:52:26 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1755139946; bh=HTBR17vhoYZ8Fi2t2D3VIezhF9RyLF5ybAAkSkRGq8Q=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=IP0lyHCvPv+3+laZDJpARS5vDAKdwVsdhv8aZpJ5IvVRrvQM1z27khXbxpnj+zrMB
-	 5HcafG2t4IiYPOLHc+fFm3/m3okPNtlifM+Dybdo6Tbb6qDXcejrXy+B9S/rtORe87
-	 CFwCebY00Xoo9MC7aAAX7+Q6gKCFG5K5B5W8f+dnGNnkPPDpz2PT7s/gvNMf9CrcdA
-	 Juphco4xYgVhAf4Uk/RQCMspBrS/y1vDm7KtATFNruZtsj1GjTrzhjobOW4G5mrFHy
-	 erPVFeKHdD2DosHAtc+A7v8eDaX/bTg5ucv1Z4toHLO04pnCYWESuA/1XsVdBkaVQP
-	 m1Zirohbl2zOA==
-Date: Thu, 14 Aug 2025 02:52:03 +0000
-From: Yao Zi <ziyao@disroot.org>
-To: Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	mani@kernel.org, bhelgaas@google.com, vkoul@kernel.org,
+	id 1umQfH-0000000Fpf1-1ykc;
+	Thu, 14 Aug 2025 05:38:15 +0000
+Received: from m16.mail.163.com ([220.197.31.5])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1umQfE-0000000FpeV-27pX
+	for linux-phy@lists.infradead.org;
+	Thu, 14 Aug 2025 05:38:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=nh
+	v8WVKq3WU5Ll3+dcG7vTMSWNp5cpIVD8CJmKcyYZ4=; b=JlTkrJRHBacTOUhr0S
+	/RvI2EjONdA+ENzPC2nq5eEuJI8Dd+thaGXYlssPWsQDDv2w0cT++nz9RRONZ1i3
+	Ubx9Q0JxrByNv5KrM3w2p+CN4OQrT3XxFQeMMpQr/QLr+BNmh4ALh9kLequT97J1
+	pvUi/rGngL/vFFUBkwYl/mg4s=
+Received: from localhost.localdomain (unknown [])
+	by gzga-smtp-mtada-g0-0 (Coremail) with SMTP id _____wAnOrQudp1ojstDBw--.33177S2;
+	Thu, 14 Aug 2025 13:37:51 +0800 (CST)
+From: Yang Xiuwei <yangxiuwei2025@163.com>
+To: vkoul@kernel.org,
 	kishon@kernel.org
-Cc: dlan@gentoo.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
-	aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
-	tglx@linutronix.de, johan+linaro@kernel.org,
-	thippeswamy.havalige@amd.com, namcao@linutronix.de,
-	mayank.rana@oss.qualcomm.com, shradha.t@samsung.com,
-	inochiama@gmail.com, quic_schintav@quicinc.com, fan.ni@samsung.com,
-	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
- PHY
-Message-ID: <aJ1PJBax-Pj983OZ@pie>
-References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-2-elder@riscstar.com>
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Yang Xiuwei <yangxiuwei@kylinos.cn>
+Subject: [PATCH] phy: use IS_ERR_OR_NULL() helper in of_phy_put()
+Date: Thu, 14 Aug 2025 13:37:42 +0800
+Message-Id: <20250814053742.2186419-1-yangxiuwei2025@163.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250813184701.2444372-2-elder@riscstar.com>
+X-CM-TRANSID: _____wAnOrQudp1ojstDBw--.33177S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrKw45JF1xAr1rKFyxuF4fAFb_yoWxZFc_Wr
+	1xXrn3ArsakF47Wr17CFWSv34jgFykurWruan29rWfAa47Jr1SyF1UA34rtr97G393uFyD
+	ta17ZF1ay34UAjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUnvdgtUUUUU==
+X-Originating-IP: [116.128.244.169]
+X-CM-SenderInfo: p1dqw55lxzvxisqskqqrwthudrp/xtbBDgapkGidcheADwAAsu
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250813_195231_286912_8E3574E2 
-X-CRM114-Status: GOOD (  17.26  )
+X-CRM114-CacheID: sfid-20250813_223812_936920_BEE13FC1 
+X-CRM114-Status: UNSURE (   4.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,76 +74,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 13, 2025 at 01:46:55PM -0500, Alex Elder wrote:
-> Add the Device Tree binding for the PCIe/USB 3.0 combo PHY found in
-> the SpacemiT K1 SoC.  This is one of three PCIe PHYs, and is unusual
-> in that only the combo PHY can perform a calibration step needed to
-> determine settings used by the other two PCIe PHYs.
-> 
-> Calibration must be done with the combo PHY in PCIe mode, and to allow
-> this to occur independent of the eventual use for the PHY (PCIe or USB)
-> some PCIe-related properties must be supplied: clocks; resets; and a
-> syscon phandle.
-> 
-> Signed-off-by: Alex Elder <elder@riscstar.com>
-> ---
->  .../bindings/phy/spacemit,k1-combo-phy.yaml   | 110 ++++++++++++++++++
->  1 file changed, 110 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
-> new file mode 100644
-> index 0000000000000..ed78083a53231
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+From: Yang Xiuwei <yangxiuwei@kylinos.cn>
 
-...
+The current check for `!phy || IS_ERR(phy)` can be simplified to
+the standard helper macro IS_ERR_OR_NULL(). This improves code
+readability and maintains consistency with kernel coding practices.
 
-> +  spacemit,syscon-pmu:
-> +    description:
-> +      PHandle that refers to the APMU system controller, whose
-> +      regmap is used in setting the mode
-> +    $ref: /schemas/types.yaml#/definitions/phandle
+Signed-off-by: Yang Xiuwei <yangxiuwei@kylinos.cn>
 
-Clock controllers and ethernet controllers all use spacemit,apmu to
-refer the APMU system controller. Do you think it's better to keep them
-aligned?
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 04a5a34e7a95..9248f2249849 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -677,7 +677,7 @@ EXPORT_SYMBOL_GPL(of_phy_get);
+  */
+ void of_phy_put(struct phy *phy)
+ {
+-	if (!phy || IS_ERR(phy))
++	if (IS_ERR_OR_NULL(phy))
+ 		return;
+ 
+ 	mutex_lock(&phy->mutex);
+-- 
+2.25.1
 
-...
-
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
-> +    combo_phy: phy@c0b10000 {
-
-This label is unnecessary.
-
-> +        compatible = "spacemit,k1-combo-phy";
-> +        reg = <0xc0b10000 0x1000>;
-> +        clocks = <&syscon_apmu CLK_PCIE0_DBI>,
-> +                 <&syscon_apmu CLK_PCIE0_MASTER>,
-> +                 <&syscon_apmu CLK_PCIE0_SLAVE>;
-> +        clock-names = "dbi",
-> +                      "mstr",
-> +                      "slv";
-> +        resets = <&syscon_apmu RESET_PCIE0_DBI>,
-> +                 <&syscon_apmu RESET_PCIE0_MASTER>,
-> +                 <&syscon_apmu RESET_PCIE0_SLAVE>,
-> +                 <&syscon_apmu RESET_PCIE0_GLOBAL>;
-> +        reset-names = "dbi",
-> +                      "mstr",
-> +                      "slv",
-> +                      "global";
-> +        spacemit,syscon-pmu = <&syscon_apmu>;
-> +        #phy-cells = <1>;
-> +        status = "disabled";
-> +    };
-
-Best regards,
-Yao Zi
 
 -- 
 linux-phy mailing list
