@@ -4,143 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 952F5CA0EE4
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 15:01:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 771E1CA0EE9
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 15:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Xro4TUimltnF8wamhWMuNoN/qywquSWJSZPVr+aRcLc=; b=MbwWILnQ6Sl4Ap
-	sdYxZXVBJaQ+X/fHA5Z7522WairXw3/a9nSlXFj+7ysOlg8V0fvFn6tDv68s9bOiBRKZcCPSdawwu
-	0WSRtgKkIhQ3IV+SXfKETFi1Dxfa4kJvNaEjsQdqboTiys2OtY1Tb+mIsPpzuuYOjeaOqVQJy/fN/
-	MVsYeHICipwxlkxFlAEDBmBllAMU/H8jO0c72J5Kac6yk6tMM7EPTIPvu9jITsmaup30xJdzPpwQn
-	hMagchyW2rapGMuH5/kU7fZH5OeZImUQ3aARaWpJUEIX11JCguPGi6dKJhDEz5o1U9vzpdyJ6yhiA
-	7QBqrKuonBz4bLagieLg==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g/oAVYe0/fWcjERxOgmlapBiMtbm0ezBrQrLuPW9q+k=; b=NTceYtJeY3DEBL
+	It5+Szd963p8Bwl8wvQdJVbwU/vs4sCODuSnGC6H0RgUdN+zj6DkhHfUH/5UhWjWZBGbxIppUxeoX
+	4xe6qms3HhO9rRu3mErH+MUmd4YKVY5h9md24EePzF/TXHhunKz6mazZcZ+3bcm0+KSl+iWweCrth
+	TD+kwM0J7ftIf+oqAu0HSzE2uIO+VdTF8BzpxYeCcDe4AiXOWH8Hzfes6uP6cKny0WJfVH70bz3EZ
+	F2bgSwPVUHMiXm1PrOk/c6eGpdqa4sQtfWcz/8CqLWnfly++Ci3LmPf5w3xWQLQRJwNH28QhwatE/
+	IN8AmS0zLHTmck+v5pDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umZSQ-0000000HM00-0Tcr;
-	Thu, 14 Aug 2025 15:01:34 +0000
-Received: from mail-japaneastazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c405::5] helo=TYPPR03CU001.outbound.protection.outlook.com)
+	id 1umZh3-0000000HOhE-0dIT;
+	Thu, 14 Aug 2025 15:16:41 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umXmi-0000000GxLK-3urz
+	id 1umY0m-0000000H3KS-27kD
+	for linux-phy@bombadil.infradead.org;
+	Thu, 14 Aug 2025 13:28:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=References:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:In-Reply-To:Cc
+	:To:From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=L3ufGPnyrW0N3UVpr3/riCJH1PQGRtTjLIlg9Lbrstg=; b=ZDthPNcVcG7d8HgY/nOMJnnxeT
+	3krYcPelCSZgUO4GU3BembX+kGf6XPWkgEiggu5q1blJamC8FCTmmm9c4p62NosE29uCEmVnm1qBa
+	3urYtid1cl7QggdjWyFVzBYpwChXxXwpSmyKUlY42psyRo1GkCwGs5zQWbPYjOkry60vVRUzJuv4e
+	WjXgBuIL+KGZMQjlu0+knjvNB5cYzuMX2DHSb64/nSOpkOQsYRnhN0iFs7bllVlB8NQcAk0+n3+Mf
+	6Ym0bBcDggS5RTD1JS0FStP+0bgQx7InuVqnDJb1DudGQ9qzn3BgLVO4whQLoGBJwquTe916E+Ryo
+	HuMdI3lw==;
+Received: from mailout4.samsung.com ([203.254.224.34])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1umY0g-0000000GP9F-3OGO
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 13:14:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qVJWVNQKtqa8B9m4KILOjgICWcCd829Tk96G/4vaGggEsc/IBGwF7zBfEXK8ycOFfsROHVruEbf3CabbBQGbHycrVe6cPEBeSjcJR1vtcL4ynsgtlCL5Gwd8W6aHOhcB/GwYSTgfjwyYihrDE82cpXtS49SM/Cuiep2xRGFl10j6o+aNTRvOypZXRW4Q0C0sljjaaUJi4BuXSmdEU1qnO34AyK51EDudRkgXphE3Jj0lQkz8JXBgg3Q0XBPFghqtS7ZDH3Pyrr7a6S5BrsUlNuUqYBQwjaeoMd35O0hHLMcxxAVqW18u5tsHAbmxt3BfZSNtASldiWMe1XVTJiQkgQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=m1FHLgLeq3n7Q6f//yrtwBxKQ9obrZqDi/eh0BlSX/M=;
- b=UU5JuURSIsfZ4YPOddknQ+hPxDtUgCh11tl9QoAS5Q0Gg0FSWdELd+0XTvwZwM3MlsPUMUktBDXEGsCi5GAePizRnHFqYM219/HP69lcsLpl8DX4J8AHDLsBGyYC3yeM/8DfmIgCgIGFh7Do/QK7LkC/0ne/Xko3FBLDHMZ7Fs1UJNS7LQMbdCDSWHW6FTiGgrtvF5VqMpEYq0v+4WAWZhCvo5tCcRu7o4fx/4Le1kP++6z30hex/e+c3LtmPmUGoK0chCFvcWI2NTa1jZUAx/YxTiDh0Y/L7hqMIBocD56wfjZH1n1cX3EbK8e+oKg5rrDc3aWA1nmXL6amdFxW8g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
- dkim=pass header.d=vivo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=m1FHLgLeq3n7Q6f//yrtwBxKQ9obrZqDi/eh0BlSX/M=;
- b=Mqwve9Z08Bwo39qB/E39RccSXKZ9I583TmkKn3ahcJRYUDQk5n8XdMTKHlNXAw2xLJo/wxNiRmx0sjwHtbEBcHP/Eta5+RlAanDShMYtjt2oYpjUDB9+JFE2b8vHR9lULd9id30US1V0B9UIIaM4kEj8ae8V7QdhT5a5DlJVSIh+9GAWn7llrFKqg3Ovi2zwGb2QPXQspdv9kaSFpZ+E59chncF+YP1JMblauQYlDn/yuGUcmbpsEOsPJ426KlpQ5NkttPIXtqmIT8i1gpJFnwck4t4HUNSRvsTWpgYwCz3qIDqvAVBGUscRzRrgfabwHIJjuyrLCUzmVhkp66+nUg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=vivo.com;
-Received: from SEZPR06MB5576.apcprd06.prod.outlook.com (2603:1096:101:c9::14)
- by SE2PPFDCBF4279B.apcprd06.prod.outlook.com (2603:1096:108:1::7f0) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9009.18; Thu, 14 Aug
- 2025 13:14:05 +0000
-Received: from SEZPR06MB5576.apcprd06.prod.outlook.com
- ([fe80::5c0a:2748:6a72:99b6]) by SEZPR06MB5576.apcprd06.prod.outlook.com
- ([fe80::5c0a:2748:6a72:99b6%5]) with mapi id 15.20.9031.014; Thu, 14 Aug 2025
- 13:14:05 +0000
-From: Liao Yuanhong <liaoyuanhong@vivo.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
-	linux-kernel@vger.kernel.org (open list)
-Cc: Liao Yuanhong <liaoyuanhong@vivo.com>
-Subject: [PATCH] phy: core: Use IS_ERR_OR_NULL() to simplify code
-Date: Thu, 14 Aug 2025 21:13:53 +0800
-Message-Id: <20250814131353.231276-1-liaoyuanhong@vivo.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: TYCP286CA0176.JPNP286.PROD.OUTLOOK.COM
- (2603:1096:400:3c6::8) To SEZPR06MB5576.apcprd06.prod.outlook.com
- (2603:1096:101:c9::14)
+	Thu, 14 Aug 2025 13:28:55 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250814132839epoutp045e80623b407f6c8be8908ad09fd3a6a4~bpTM-kO4K0273302733epoutp04D
+	for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 13:28:39 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250814132839epoutp045e80623b407f6c8be8908ad09fd3a6a4~bpTM-kO4K0273302733epoutp04D
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1755178119;
+	bh=L3ufGPnyrW0N3UVpr3/riCJH1PQGRtTjLIlg9Lbrstg=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=ZzRxVVY5/wPdoVLxiMHEU5kpHumoK0S66oxLoNIMT+d4vhRsTLFh2Z+Ce+MWHDkOG
+	 LfhHE3VzzpQXqt+UWdVLNcSatvUVQVOcNZ4Qp7RPX1fWDait/49tMsZ/J7ivfIBZFf
+	 UNYY6UXvJ8rL0Fkt/Zonw5Ue59gdHqCKjTkPjq/I=
+Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
+	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
+	20250814132838epcas5p3c3693b0f5672407d67efe160b31fcc0c~bpTMXiWWT1937819378epcas5p3c;
+	Thu, 14 Aug 2025 13:28:38 +0000 (GMT)
+Received: from epcas5p3.samsung.com (unknown [182.195.38.92]) by
+	epsnrtp04.localdomain (Postfix) with ESMTP id 4c2mKK6nlKz6B9m7; Thu, 14 Aug
+	2025 13:28:37 +0000 (GMT)
+Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20250814132606epcas5p1cdf8e1a97f5abe9d71dcd1b425a07648~bpQ_QWk6L2554225542epcas5p1n;
+	Thu, 14 Aug 2025 13:26:06 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip1.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250814132602epsmtip1c22abee846ffe43383ffacb28125aafe~bpQ7V3wRg3173831738epsmtip1Y;
+	Thu, 14 Aug 2025 13:26:02 +0000 (GMT)
+From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
+To: "'Vinod Koul'" <vkoul@kernel.org>
+Cc: <kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
+	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
+	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
+	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
+	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
+	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
+In-Reply-To: <aJtMdHcidETZyiIp@vaman>
+Subject: RE: [PATCH v5 2/6] phy: exynos5-usbdrd: support HS phy for
+ ExynosAutov920
+Date: Thu, 14 Aug 2025 18:56:01 +0530
+Message-ID: <02f101dc0d1e$fd018ef0$f704acd0$@samsung.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SEZPR06MB5576:EE_|SE2PPFDCBF4279B:EE_
-X-MS-Office365-Filtering-Correlation-Id: 14a3c03c-12df-4ba3-312f-08dddb347215
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|376014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?uocBIcrDcQ1EyILW1vYdx52ACde7qmr0ShmQjn1sqOG3UI1jbrHGbitPJTXY?=
- =?us-ascii?Q?9FjQyPZkcS6kuHcz06R77yxsUbEYHNbFZ0gQK0/vMl+iz4klcGjkXoo65XeA?=
- =?us-ascii?Q?pxjoPz7USBrbN6x7Atxishku08WvkMKKL4bnPtW2awlgHpght5J2o2dss2UK?=
- =?us-ascii?Q?DvL2hC6oLbAGkoW2nS7hdr3bQMmI80NFLAUJLDOqoq2xjMQlPE/ZoiGbjNha?=
- =?us-ascii?Q?4y19UVLAJpoUyE1o3wo9HS6DrPXH7F3nbME8mnpzLY6UyT00UXm9gjNvjrY/?=
- =?us-ascii?Q?iY9tqbObZvJICWeSXVAK+6aj+98U+ToU42jqiUZYJMz4g0MMW/BY39C+aGPE?=
- =?us-ascii?Q?9CXmDJLoibT50n8+9zpxzg0q2wZaNtHAj6bIGZI1UOY+U5JcDA0jiuS6HNF0?=
- =?us-ascii?Q?zSU3ZeRsdnKL5PdWl56eb2I9tJ9/GKONWpPrvHi7W2vS1ASlw5F1welWFEBR?=
- =?us-ascii?Q?9pTZHsXtw2y40TtkC+cQHziZIjRUQf5h9bwRR7KvOwfnTEHxkk5XlxDKSBA4?=
- =?us-ascii?Q?R667VVJEgVvMAOtPE6Zpc4eN6kWNhBgJtpFAJXoBKrmLlRsH9a5WYtFeqosU?=
- =?us-ascii?Q?zTuQXCyf2BjxjMtcfknjlwLo8lzXKEjHjKhgKpvRW/jVB7PNxB7Ngv+Z4jkR?=
- =?us-ascii?Q?oBAxVfTkbP4prMhZ8cvEVVpS6IWWKxJjEM+mcqKQzowTgQcFLU4YCg4idmgS?=
- =?us-ascii?Q?A6wOIN814Iu0pSyNEvlAENa8ePpeDXc4+f5OAsryAhHUGIT7Hh93wJw7kbf0?=
- =?us-ascii?Q?LiXYIGlTDYZZOt9VoI31GT3XB8KADutAoOlbI54CdUIwnbDHTHN7GfIbTcQv?=
- =?us-ascii?Q?mkMLo0JeIozMHBjocEeVXzSfjnsunGAY+ZKsfy+l9CVnITRJ/7873zz55JfE?=
- =?us-ascii?Q?b/kTJfLfDH2jYgYXkPjkTKsbMK1YriSXE60heqq9kwYMbyaZ8IYTqvAH869J?=
- =?us-ascii?Q?MCnZqDg4tqoicmbyS/vpfR8po1sm8Wxq0wD0C33jL5cfzoPB/Qr7ap1whMql?=
- =?us-ascii?Q?eurhbONuFFhBBBVfjWNG4QxvTieKLpfZ/cQfAgAIwrMS7C1ZiBRQSn4f6Gvu?=
- =?us-ascii?Q?rqiNtPD1EjWw6H97K2UrC0GAvAU4BFWvemNWsQPrs99PnuY8TXQyXXtpwqU/?=
- =?us-ascii?Q?Q3QssSZEj1f9PgRhnCYMofTVOPgbEZ5Ig5Nb7RTMOia7fgT868JYjp6nUo34?=
- =?us-ascii?Q?5+mEVklYj0aNlYi/cLmP8O8lCxxzG091FhH2YLirxi3LBG+uTUUD9IjzTef1?=
- =?us-ascii?Q?wxdIT8P/QDi8jKT7V08e0vSgwTxX8yQysprwbLhoybAhWkRUi3ntdSGT/ynw?=
- =?us-ascii?Q?+lIhHoOCDGfRpAKSyCx1I3xUuzNwZnqEFxtmiuv+T1QlxQVXfgjGy3RVeSwM?=
- =?us-ascii?Q?05tE3CYJTvB69wGO2EHmXbSczCxIfhvJGq5+/4GOsTwU/xVCiJeLCNfOAqrx?=
- =?us-ascii?Q?zk5iGgBMaX+WTPKj1L05J21YuOpzetjQ+YBsWbrbPsg6VTdsDeQZIQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEZPR06MB5576.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?csnOnuvZMgvyJzWPdIlxMQQeImO5C3M+fWPP2s3Ka+EPGjQaGmqFT7K+d9f6?=
- =?us-ascii?Q?Q1iYbBgoiyD66OwgN2AJq5zpYRniw61FeEup9ZIjH8OZj6gMTmcj4RL173lD?=
- =?us-ascii?Q?2X9VeAFBvCKb10HXIMhyrH2qNZ4eRz5+vveUjL/l+H2011A2xRt8kHgQhhGJ?=
- =?us-ascii?Q?LpmEgmlg04hWf3iMClVULQ33imernJDTuZQLC+0n/bLNxuxFbtIe5E+mZQpm?=
- =?us-ascii?Q?rclXRE64oWraorKTZ08dwtoDLOTd47yvAgdpqMrbJpJY16HeLjrfpdhsm93y?=
- =?us-ascii?Q?SLhxiN1BOcSoP1+fDGPYiv96+tO41xbvOkvz+9/gOChEustR/xaL/BSGhx/o?=
- =?us-ascii?Q?RwRUURrPa/uHu6cc60c3oodQfXz7SE/mOn6CUqhOELdzyRg2e+KUkrNeV/JW?=
- =?us-ascii?Q?lTxYSZ1PWobt4D4t2g0DqJYJXATiauftKuOAXsPqKqNilnfD5LGDuO2eeFSA?=
- =?us-ascii?Q?TCLflyk3+NTan6qNPUVA80cVXE9JGbG8gXRZcN6CAU5SCaOroqC27vvxLfiO?=
- =?us-ascii?Q?G72x9Ocnva6D9J9DkEqO8k7xB+b9xUEP8d0V7ccJoU/8wc3mhfk/tecaEMRv?=
- =?us-ascii?Q?j4b4zeVymHxOtYob4EdTyk/L8nd8ogtByjiNQnoY5UNnt9Ld/sp6ci0lRrSl?=
- =?us-ascii?Q?+JeLKdNSzhTmY742wgRlajF58mG8vFmWoj/bWeqQMnU/yZ5uBz+WCwSTAgcK?=
- =?us-ascii?Q?aWu2tOEeV65z3ZTFY7qhT6unavloK3hT6ragxqDxbepo14hb0aV09Y+kprh3?=
- =?us-ascii?Q?BIXY8S0xtcbR44Ih7TUifftrAGuCJsVxN6lx8KsOe3p/8Tu6xdsxBnmWxlSq?=
- =?us-ascii?Q?X2NC//oT4g6EzYaPzacWPzo0M6/gW2uiEymtcAxfupizsSzPnHV4Pxyx5xEB?=
- =?us-ascii?Q?0MBZfr1ctPqgGhO5sXMpGm/zQ8paV7RtcCFvH1Mu8KLdJVDXQBAEXf7EJgUN?=
- =?us-ascii?Q?mJ/sUp9kOhKmt3pCt5Fda/XHphtrOM3LHxgBGZ/PniEZCuwB/EGVAsfaoVRF?=
- =?us-ascii?Q?RfYLuw/Cou+foGIC3Bq1Jz6SC3OE7smxg/aPr6YGux1zu7GA+IlEhAF36X9Q?=
- =?us-ascii?Q?Gdr6UusitSvOw1xzP2yiXfyAxvO9YWGTYWuNpOHs8GYqpe13heVazLyRIVEq?=
- =?us-ascii?Q?/HxsQih5JD9sAZ51MMBOCdQHL//QAiJachQH5eK5c/wvKIcKSEPnCuEJF/lh?=
- =?us-ascii?Q?bJL0nCKGSPvr8r78ukBFKBLOsbnlsPyQrpC9UYsB4QTdsvsgbAYWbGXlA7Qx?=
- =?us-ascii?Q?QAip8tzwmxLC21Q5082FhF0ivhj9zfN2e9sAz94/s4f8cAupRAmyifgVVk0c?=
- =?us-ascii?Q?UKqIcMhFyS+J8sn1eZEy1XxGG3aF8pjFr5ffnbKO1PnibBpSL0sQ46CR3vgY?=
- =?us-ascii?Q?0Mwb/AtdpbBg/Pia9n8Ue85wvhjjZXJqrp473MFovGYMEaCEYJytCD0AHClF?=
- =?us-ascii?Q?JcMXKuToHl6DYRqwRcIm1oBg3jIhh6MUrEUBcJmjGbsR3Cb6yUtKOMUUKLon?=
- =?us-ascii?Q?eWNX08MqIVj+OisrN0XnOzYLqUKNvoBQdd+OvMZ/+38BJaanaEGiduwLh8sJ?=
- =?us-ascii?Q?UTr/XUUW/ZB3cuobzLTgMxHA4hFI2fr6Ljcj1h4P?=
-X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 14a3c03c-12df-4ba3-312f-08dddb347215
-X-MS-Exchange-CrossTenant-AuthSource: SEZPR06MB5576.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Aug 2025 13:14:05.7741
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qpD1OMSDbP0ay5GMC2Ev/cwRsoXR7nxtDF8VM6l5MioohQMyIFGgqqQq9Y/89LY/Vk5b+6Rx4dmcPQWIl5eLzg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE2PPFDCBF4279B
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQJ+ZgWj3OwstM5ZbwFL0KmcSzrOlQIGOcp3ARbD4UABdmTpTbL41iug
+Content-Language: en-in
+X-CMS-MailID: 20250814132606epcas5p1cdf8e1a97f5abe9d71dcd1b425a07648
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250805114310epcas5p459aa232884d22501f5fefe42f239fecc
+References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
+	<CGME20250805114310epcas5p459aa232884d22501f5fefe42f239fecc@epcas5p4.samsung.com>
+	<20250805115216.3798121-3-pritam.sutar@samsung.com> <aJtMdHcidETZyiIp@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_061424_974282_824D6BA9 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250814_142851_662085_77234122 
+X-CRM114-Status: GOOD (  20.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,29 +118,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use IS_ERR_OR_NULL() instead of the original !xxx || IS_ERR(xxx) logic.
-This will simplify the code and enhance readability.
+Hi Vinod, 
 
-Signed-off-by: Liao Yuanhong <liaoyuanhong@vivo.com>
----
- drivers/phy/phy-core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: 12 August 2025 07:45 PM
+> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
+> conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
+> peter.griffin@linaro.org; kauschluss@disroot.org;
+> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
+> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
+> dev.tailor@samsung.com; faraz.ata@samsung.com;
+> muhammed.ali@samsung.com; selvarasu.g@samsung.com
+> Subject: Re: [PATCH v5 2/6] phy: exynos5-usbdrd: support HS phy for
+> ExynosAutov920
+> 
+> On 05-08-25, 17:22, Pritam Manohar Sutar wrote:
+> > Enable UTMI+ phy support for this SoC which is very similar to what
+> > the existing Exynos850 supports.
+> >
+> > Add required change in phy driver to support HS phy for this SoC.
+> >
+> > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> > ---
+> >  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 123
+> ++++++++++++++++++++
+> >  include/linux/soc/samsung/exynos-regs-pmu.h |   2 +
+> >  2 files changed, 125 insertions(+)
+> >
+> > diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > index dd660ebe8045..5400dd23e500 100644
+> > --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > @@ -2054,6 +2054,126 @@ static const struct
+> exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
+> >  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
+> >  };
+> >
+> > +static int exynosautov920_usbdrd_phy_init(struct phy *phy) {
+> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
+> > +	int ret;
+> > +
+> > +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks,
+> phy_drd->clks);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	/* Bypass PHY isol */
+> > +	inst->phy_cfg->phy_isol(inst, false);
+> > +
+> > +	/* UTMI or PIPE3 specific init */
+> > +	inst->phy_cfg->phy_init(phy_drd);
+> > +
+> > +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks,
+> > +phy_drd->clks);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int exynosautov920_usbdrd_phy_exit(struct phy *phy) {
+> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
+> > +	int ret = 0;
+> 
+> Superfluous init..
+> 
+> > +
+> > +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks,
+> phy_drd->clks);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	exynos850_usbdrd_phy_exit(phy);
+> > +
+> > +	/* enable PHY isol */
+> > +	inst->phy_cfg->phy_isol(inst, true);
+> > +
+> > +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks,
+> > +phy_drd->clks);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int exynosautov920_usbdrd_phy_power_on(struct phy *phy) {
+> > +	int ret;
+> > +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> > +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
+> 
+> Reverse chrsitmas tree pls
+> 
+> --
+> ~Vinod
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 04a5a34e7a95..9248f2249849 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -677,7 +677,7 @@ EXPORT_SYMBOL_GPL(of_phy_get);
-  */
- void of_phy_put(struct phy *phy)
- {
--	if (!phy || IS_ERR(phy))
-+	if (IS_ERR_OR_NULL(phy))
- 		return;
- 
- 	mutex_lock(&phy->mutex);
--- 
-2.34.1
+Will address these comments in next version of the patch-set (v6).
+
+Thank you.
+
+Regards,
+Pritam
+
 
 
 -- 
