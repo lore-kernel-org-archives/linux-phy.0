@@ -4,117 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04294CA0EE3
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 07:31:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0837FCA0EE3
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 08:29:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GlZCk1/TRqcQjX0owIK90Q+hqyc/ZJJBJER7vKuaYXA=; b=0TgrXoIPFoIHtnWXMmrJOE8ek5
-	IgEtNLibOZYFX7yg//bupFsKEfJz+EPwU3kLCM/y7JXGxQi4LWAUj1UkA8jGJ00pUzCgk/3frzqLT
-	PX/4mX2ramjxBYU2nluw2PIVp3Do5phu3dCGkfgsMO9M+wjQSJGWaHDrrWqHklc6TEX5EVES6VkAl
-	gjhBpLOUb72tQy5TxcTLxT/djcJKj+efPX2GzPhU+rjvlTpibDlPyCcGOThGLeLwUS6Loa2VGbvby
-	0Tf0P6gYBdzD7DvhWhUOR/X4D5aJhs51+IC9LnF5QXcSDNxRmJczkUDsnLDfXPhSQEG3IOyp8Mu8i
-	aXs/WUxQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IszPTerPRtY2CPDyeGhWT+vPDgsO6cp6wjEd40duS+k=; b=FlMBsN3fz39SBg
+	bZf3VWao40mvoQZFTthblQoguZGnoYcT67aMNNNULRXe+arRPSLaJOno/pI9ogoBEWnRLrvdUUvad
+	EtbutwHFNT7SAqSqKHRuoS9oZ8uJG5hHf2E5Q8TK5xnD+/G/yu5OQMlJzZZqLdEHOYVClYzhbotfL
+	FH0a60pYXWuRjXw5hoDEj0FM1uHO7x6P8GwfniX4KTPNRfnLgmuKQs29Xx2d6gpnPsn1owQurQL7r
+	Q6MugQ5ERakFlwXpTONdpJXbT8JR89MMychiZGCqtXnlH9Iuiyrn3Of1v0NgR00ONfwyi9W1LoyZG
+	IE+Rkvdr4taIgWD6DNWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umSR0-0000000G5dH-3Gtf;
-	Thu, 14 Aug 2025 07:31:38 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1umTLB-0000000GFOu-3GGq;
+	Thu, 14 Aug 2025 08:29:41 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umSGY-0000000G4M9-0TbN
-	for linux-phy@bombadil.infradead.org;
-	Thu, 14 Aug 2025 07:20:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description;
-	bh=RsScPcpy4lyc0qyWfKF/vKWfu+4Gt4nFM/6cBTbAPSw=; b=DvJJmWc20lViCq+vjN7vhD9b+L
-	jJUoWrX+4pnuREy/ohbe3uVhEih6hNBTnMeJ4WSFd6nyNSQ+9pCDwniDNS7zcHh+DsQzL108Kr2LA
-	I+fnO2AS37mew6Aoe0EpfLH907aCGNSVrYOaeaMLDrIXJzBHIitME1H5cYLKeneLfBaCZhH/b9v/t
-	XmHXeqWWlVJKmRbJslc1qFwIYwg8N40Zx9fiazLynavByEe1rhLOmdS9RL9Gq98Vfoa67Ool8/7d1
-	grysuZxcIZW1JUdOd6ggj6ZbxH8j+z1VMQUMUdfRykMfDE3FfxZnxSRgVzx8vxlLzNETlRM5a/ALl
-	Tfnxz9DQ==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umSGR-0000000GHv0-1tsi
-	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 07:20:48 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57DLkD4k031974;
-	Thu, 14 Aug 2025 07:20:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	RsScPcpy4lyc0qyWfKF/vKWfu+4Gt4nFM/6cBTbAPSw=; b=UJEXMVqLLcZi+p3N
-	A2lCRP16sPiscs5eIT/WBC+BLzjgjQz3HwTkUl/mEyfXFs95l3YC3XFmZZaTrWy8
-	Z0q26ZpvykYw1yEW5W+wmowIocUU2RWgw1qvoZLNWyyW7D2ZM/GdvDSKt7ZvoeVZ
-	DOOXWO8ppvLnUQmnmW9fpe6gSqOarUV/QCxKXX9ULJvQlsSK5ip+gizxxZsZZb+L
-	TBiT3oN2bSKldWGUZpa/ABlXTpfTq/7Obfe6VudWCtpAoiqISX3SKc9sU7nCfHEy
-	XYJAtk33KfZE3y0atJjlN6rzhF3OrvvTwW2pycCVTO63qp7ZJAhjr3Yr8t1CBK74
-	cryiFA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48fem4jq28-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Aug 2025 07:20:29 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 57E7KSFX021991
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 14 Aug 2025 07:20:28 GMT
-Received: from [10.216.15.102] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 14 Aug
- 2025 00:20:21 -0700
-Message-ID: <bc001360-1cfe-4886-a023-367a8edc21c5@quicinc.com>
-Date: Thu, 14 Aug 2025 12:50:17 +0530
+	id 1umT5f-0000000GD0n-1e2G;
+	Thu, 14 Aug 2025 08:13:39 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id B247D60209;
+	Thu, 14 Aug 2025 08:13:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CDC14C4CEF4;
+	Thu, 14 Aug 2025 08:13:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755159218;
+	bh=2D1OOFtNbdpnycHdnojgPyCPrVecspF1AWE0YpTc5Ms=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UmDFlGeuPH1XfHlUH4Z3k2aCt3AaRHbvrNWNEngpXoKELe0G7p8j9wn597XTJ6iRN
+	 L3uQCWlFV7V11dHkYcctJnDXVUiM/pnqLIpHn5b6459R2ZpjsJfxczmbkz0dyiIr6k
+	 lRmDayR2Z4PLhL5m8hChhnNuaQ2eJT6crOpObWEpHB59dqLxSjv7imEUReeqZk4Z3Z
+	 vWNlmem+zPdfiStTM7Gsgo9euIJOjnoSjYx9dEXDLUFQ84fUlCDU8TYPkepLsnbB0n
+	 VYJJgnTxtFcVsbm1BqiBT7BQtfg9fASWovDCmdB+MXojxqkC+WjgOCGfrg4DLdXPZD
+	 4qmMis49DPJYQ==
+Date: Thu, 14 Aug 2025 10:13:35 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Shradha Todi <shradha.t@samsung.com>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org, 
+	robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org, kishon@kernel.org, 
+	arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com, 
+	pankaj.dubey@samsung.com
+Subject: Re: [PATCH v3 08/12] dt-bindings: phy: Add PCIe PHY support for FSD
+ SoC
+Message-ID: <20250814-refreshing-watchful-lemming-4feb03@kuoka>
+References: <20250811154638.95732-1-shradha.t@samsung.com>
+ <CGME20250811154729epcas5p456ddb0d1ba34b992204f54724b57a401@epcas5p4.samsung.com>
+ <20250811154638.95732-9-shradha.t@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/3] dts: describe x1e80100 ufs
-To: Harrison Vanderbyl <harrison.vanderbyl@gmail.com>, <marcus@nazgul.ch>,
-        <kirill@korins.ky>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mani@kernel.org>, <alim.akhtar@samsung.com>, <avri.altman@wdc.com>,
-        <bvanassche@acm.org>, <andersson@kernel.org>, <agross@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>
-References: <20250814005904.39173-1-harrison.vanderbyl@gmail.com>
- <20250814005904.39173-4-harrison.vanderbyl@gmail.com>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <20250814005904.39173-4-harrison.vanderbyl@gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: YSxe04GFzNwz5z3pryrGGbxCF4rljt4H
-X-Proofpoint-ORIG-GUID: YSxe04GFzNwz5z3pryrGGbxCF4rljt4H
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODExMDA2OCBTYWx0ZWRfX7ifYVO1VrwO9
- 2uaWKsyal7TYIgXXTDi76hHS/MDZcG5/kwWI8LvPyih8rS8SUwv2m9/RdrKv7CB+5QqlgJJu1tI
- kCBeRajqk3vMF041wqz+XxZjZImXndbDYYiJDjSaQjo4At/aOr3NVPliiLTrX5s7Tydf/3u+imt
- XjjlsOaL0mDzFHlzw0q8iogO4Ztdh/L7igK9STf4hMZpJzDzAgJmq3gasMwHEMuclRGDGi8Im7b
- VRPFb68lUDDuCJfXYrdVcy7C7CQ9JVzM88KRCjyk7ThV3sFwcrot+b2dwEnhKmTCzTbWyqWdXPD
- HG7AsZoMs5gTD+plgSe/1u4gW/gqnaq1v76zWo8wTNdLt0ghUYE8pBQvypHJlgdulzFJE8KoSYv
- 9op27r2X
-X-Authority-Analysis: v=2.4 cv=YMafyQGx c=1 sm=1 tr=0 ts=689d8e3d cx=c_pps
- a=ouPCqIW2jiPt+lZRy3xVPw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=VwQbUJbxAAAA:8
- a=EUspDBNiAAAA:8 a=pGLkceISAAAA:8 a=bSFmR1_Cq-7rNE1wWKgA:9
- a=Kjs97tkqnXMi_ocT:21 a=QEXdDO2ut3YA:10
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-13_02,2025-08-11_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 clxscore=1011 priorityscore=1501 spamscore=0 suspectscore=0
- adultscore=0 impostorscore=0 malwarescore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508110068
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_082044_185093_DBF7DDA4 
-X-CRM114-Status: GOOD (  12.50  )
+Content-Disposition: inline
+In-Reply-To: <20250811154638.95732-9-shradha.t@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,134 +71,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 8/14/2025 6:29 AM, Harrison Vanderbyl wrote:
-> Describe device tree entry for x1e80100 ufs device
-> Signed-off-by: Harrison Vanderbyl <harrison.vanderbyl@gmail.com>
-> ---
->   arch/arm64/boot/dts/qcom/x1e80100.dtsi | 91 ++++++++++++++++++++++++++
->   1 file changed, 91 insertions(+)
+On Mon, Aug 11, 2025 at 09:16:34PM +0530, Shradha Todi wrote:
+> Since Tesla FSD SoC uses Samsung PCIe PHY, add support in
+> exynos PCIe PHY bindings.
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/x1e80100.dtsi b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> index a9a7bb676c6f..effa776e3dd0 100644
-> --- a/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> @@ -2819,6 +2819,97 @@ tsens3: thermal-sensor@c274000 {
->   			#thermal-sensor-cells = <1>;
->   		};
->   
-> +
-> +		ufs_mem_hc: ufs@1d84000 {
-> +			compatible = "qcom,x1e80100-ufshc",
-> +			"qcom,ufshc", "jedec,ufs-2.0";
-> +			reg = <0 0x01d84000 0 0x3000>;
-> +			
-> +			
-> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
-> +
-> +			phys = <&ufs_mem_phy>;
-> +			phy-names = "ufsphy";
-> +
-> +			lanes-per-direction = <2>;
-> +
-> +			#reset-cells = <1>;
-> +			resets = <&gcc GCC_UFS_PHY_BCR>;
-> +
-> +			reset-gpios = <&tlmm 238 GPIO_ACTIVE_LOW>;
-> +			reset-names = "rst";
-> +
-> +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
-> +
-> +			iommus = <&apps_smmu 0x1a0 0x0>;
-> +
-> +			clock-names = "core_clk",
-> +				      "bus_aggr_clk",
-> +				      "iface_clk",
-> +				      "core_clk_unipro",
-> +				      "ref_clk",
-> +				      "tx_lane0_sync_clk",
-> +				      "rx_lane0_sync_clk",
-> +				      "rx_lane1_sync_clk";
-> +
-> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
-> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
-> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
-> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
-> +				 <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
-> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
-> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_1_CLK>;
-> +
-> +			freq-table-hz = <100000000 403000000>,
-> +					<0 0>,
-> +					<0 0>,
-> +					<100000000 403000000>,
-> +					<100000000 403000000>,
-> +					<0 0>,
-> +					<0 0>,
-> +					<0 0>;
-> +
-Please use OPP table instead of freq-table-hz.
+> In Tesla FSD SoC, the two PHY instances, although having identical
+> hardware design and register maps, are placed in different locations
+> (Placement and routing) inside the SoC and have distinct
+> PHY-to-Controller topologies. (One instance is connected to two PCIe
+> controllers, while the other is connected to only one). As a result,
+> they experience different analog environments, including varying
+> channel losses and noise profiles.
+> 
+> Since these PHYs lack internal adaptation mechanisms and f/w based
+> tuning, manual register programming is required for analog tuning.
+> To ensure optimal signal integrity, it is essential to use different
+> register values for each PHY instance, despite their identical hardware
+> design. This is because the same register values may not be suitable
+> for both instances due to their differing environments and topologies.
 
+Would be nice if above (or most of it) would be reflected in binding
+description. Please do so and:
 
-> +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
-> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
-> +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-For Config Path, use QCOM_ICC_TAG_ACTIVE_ONLY.
-
-YOu can refer to ICC discussion link for SM8750 - 
-https://lore.kernel.org/linux-devicetree/354f8710-a5ec-47b5-bcfa-bff75ac3ca71@oss.qualcomm.com/ 
-
-
-
-
-> +			interconnect-names = "ufs-ddr", "cpu-ufs";
-> +
-> +			qcom,ice = <&ice>;
-> +
-> +			status = "disabled";
-> +		};
-> +
-> +		ufs_mem_phy: phy@1d80000 {
-> +			compatible = "qcom,x1e80100-qmp-ufs-phy";
-> +			reg = <0 0x01d80000 0 0x2000>;
-> +
-> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>;
-> +
-> +			clock-names = "ref",
-> +				      "ref_aux",
-> +				      "qref";
-> +
-> +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
-> +
-> +			resets = <&ufs_mem_hc 0>;
-> +			reset-names = "ufsphy";
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
-> +		ice: crypto@1d90000 {
-> +			compatible = "qcom,x1e80100-inline-crypto-engine",
-> +				     "qcom,inline-crypto-engine";
-> +			reg = <0 0x1d88000 0 0x8000>;
-> +
-> +			clocks = <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
-> +		};
-> +
->   		usb_1_ss0_hsphy: phy@fd3000 {
->   			compatible = "qcom,x1e80100-snps-eusb2-phy",
->   				     "qcom,sm8550-snps-eusb2-phy";
+Best regards,
+Krzysztof
 
 
 -- 
