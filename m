@@ -4,69 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 194CACA0EE4
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 20:54:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3831CA0EDC
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 21:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kR3cS4W8V5e7ztM1/kRTS5BnDuG51aL4ERGg/1wYTDo=; b=ilXh6iZL4sWb7t
-	Ry58tJqmZ3gwtbQWDqplKyakbrmX3KqF8dVtPzpWAYZdlaxHv+jOMDRLGxB6KJDThRuWVvZsSJ0tf
-	1GqsHmz/G938FRGl1J0vTMfjMea9k8mVtX2dWuQ0j5DzDh3lsonbFRrdlwtGfXmSicUviXb92IB7+
-	sOZFD0VvX7dYUyfzVzcPVweEM7U3ie0DzMkceieVGSFi5jVYjmQ1zdZxK9EGJ61wbiWtFYQ87HpTf
-	Zb2DfZbAOIPIhma9BR+lJZzOpDwlC8HB9dSAvZ1lyei4a9oQTMrnoRz4zLjZvc8TjStE3UjkKBfJj
-	4IxNPksZI9ERzU8UffIA==;
+	List-Owner; bh=8Ra2kwEdtqdZzSMPvJr8eFmaXUvl80Ati2O9iEULXIk=; b=J8Jfqg8ydgSgd5
+	9Av24wbzfhnqUqfgvHp6JXtEjdFiKdZ3zLeYE7raf5bHmURCNV+taPhlDWGWDYDMsolYPZ2Ll3CH9
+	WvH6+XFLDN3FRrCSdbOYTwXmb7cPEiK2h0DD441xU4V9KNp2PPVd4QrUb307wr2L1+SQ85H+/fvwQ
+	A/x5OJYge3AW9m7mjLcrawf59Zb8HbH55WfYvzUWG8vxNy57U74ndB/bE+np/rozPGsEipRs7fvgE
+	rdYL2D2EkkBVFqJu0B7HI/UsXtYHfmvixPsgR44i8SJEAeXpmLRtZGOttUmzGUrGjZmMjFofZAHV0
+	U+9n54t8VsmOGfbDOlrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umexU-00000000XKm-32Mp;
-	Thu, 14 Aug 2025 20:54:00 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1umfHs-00000000ZYE-1uQR;
+	Thu, 14 Aug 2025 21:15:04 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umev4-00000000X6q-2ID8;
-	Thu, 14 Aug 2025 20:51:32 +0000
+	id 1umfFK-00000000ZOl-2LyK;
+	Thu, 14 Aug 2025 21:12:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B9744A56ED1;
-	Thu, 14 Aug 2025 20:51:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DC8DC4CEED;
-	Thu, 14 Aug 2025 20:51:29 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A5E9361132;
+	Thu, 14 Aug 2025 21:12:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30E66C4CEED;
+	Thu, 14 Aug 2025 21:12:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755204689;
-	bh=/M4EE7DFqLJynRJpaxxdZKYC5XpUZmPw2hnoERrqOp8=;
+	s=k20201202; t=1755205945;
+	bh=7QZaE8oo44a3hYjhoB1A0+u5s3r77l5Hwj7B/t3szLI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OVn6XjXkVgHKX31q8ZfXo7rw69ZgSzBWspUWLyQB3kVd5itiTtfuFBvXWGnEPnlNH
-	 cVN536Wy1xooiv/AYneWTv9Q1ftQuxJwOsji2f0HR8OBJ3knOX5kA2oPTBPIlfuEiY
-	 hoLmiMQT02eO2M5fA8wpc51tUbPMp3nhwTv5nNrrU8nlyOnwzE07HQw/oFHowNr1Ce
-	 LsaGcLzhbszy3+41SAnLDDpj8Fg+yqCAOstZmhjsz8TZbcXoBGmQut9q9oBGGQvpMa
-	 J8tXi/RpjBlBTOcbcf2W7NwGGej/V0cUSamfgSLYgWWks1TgKjA3eNht+rxAJPSdFv
-	 iGooIKvdVXTvg==
-Date: Thu, 14 Aug 2025 15:51:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Alex Elder <elder@riscstar.com>
-Cc: krzk+dt@kernel.org, conor+dt@kernel.org, lpieralisi@kernel.org,
-	kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
-	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
-	paul.walmsley@sifive.com, palmer@dabbelt.com, aou@eecs.berkeley.edu,
-	alex@ghiti.fr, p.zabel@pengutronix.de, tglx@linutronix.de,
-	johan+linaro@kernel.org, thippeswamy.havalige@amd.com,
-	namcao@linutronix.de, mayank.rana@oss.qualcomm.com,
-	shradha.t@samsung.com, inochiama@gmail.com,
-	quic_schintav@quicinc.com, fan.ni@samsung.com,
-	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
- PHY
-Message-ID: <20250814205128.GA3873683-robh@kernel.org>
-References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-2-elder@riscstar.com>
+	b=u3mLTxc+L9jdNvAx1uNjhvCnXnxHRXoLi4oXzEKAX1Zjeb/2hu6ak9EYXz0ZDuNCL
+	 IPCWug3YsskWSP8BExrDXNMqvx10RoXWwx8G/kD6AWBO807cxSxWGcS6mNExHT6SPD
+	 /mWfkISKdgA4R0CSHV/yNcZXKbMpKJYH1fnnhUdqIR4BwLaxi8+yOrY9TisUpnsJZ8
+	 noXprwMZsi92ZzJr4sbrMIDtt7AB2ETQ4SfcIZFioD6xIHk/hgOcL0+0IFjpt+mKIm
+	 gEX+2PqY+ejS26Kwr2sr9pzaWlxorbQYankCmkyb98c+4eiR57guKi1SY5qcGKWayz
+	 Q7lonV8WfQQIQ==
+Date: Thu, 14 Aug 2025 16:12:24 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Fabio Estevam <festevam@gmail.com>, devicetree@vger.kernel.org,
+	linux-leds@vger.kernel.org, Li Jun <jun.li@nxp.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>,
+	Vincent Knecht <vincent.knecht@mailoo.org>, imx@lists.linux.dev,
+	Shawn Guo <shawnguo@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH RESEND 1/2] dt-bindings: leds: issi,is31fl319x: Drop 'db'
+ suffix duplicating dtschema
+Message-ID: <175520594376.3919024.11270343433080389857.robh@kernel.org>
+References: <20250811-dt-bindings-db-v1-0-457301523bb5@linaro.org>
+ <20250811-dt-bindings-db-v1-1-457301523bb5@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250813184701.2444372-2-elder@riscstar.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_135130_737533_B4198825 
-X-CRM114-Status: GOOD (  26.06  )
+In-Reply-To: <20250811-dt-bindings-db-v1-1-457301523bb5@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,158 +79,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 13, 2025 at 01:46:55PM -0500, Alex Elder wrote:
-> Add the Device Tree binding for the PCIe/USB 3.0 combo PHY found in
-> the SpacemiT K1 SoC.  This is one of three PCIe PHYs, and is unusual
-> in that only the combo PHY can perform a calibration step needed to
-> determine settings used by the other two PCIe PHYs.
+
+On Mon, 11 Aug 2025 15:54:03 +0200, Krzysztof Kozlowski wrote:
+> A common property unit suffix '-db' was added to dtschema, thus
+> in-kernel bindings should not reference the type.
 > 
-> Calibration must be done with the combo PHY in PCIe mode, and to allow
-> this to occur independent of the eventual use for the PHY (PCIe or USB)
-> some PCIe-related properties must be supplied: clocks; resets; and a
-> syscon phandle.
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > 
-> Signed-off-by: Alex Elder <elder@riscstar.com>
 > ---
->  .../bindings/phy/spacemit,k1-combo-phy.yaml   | 110 ++++++++++++++++++
->  1 file changed, 110 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
-> new file mode 100644
-> index 0000000000000..ed78083a53231
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
-> @@ -0,0 +1,110 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combo-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: SpacemiT K1 PCIe/USB3 Combo PHY
-> +
-> +maintainers:
-> +  - Alex Elder <elder@riscstar.com>
-> +
-> +description:
-
-You need a '>' or the paragraphs formatting will not be maintained 
-(should we ever render docs from this).
-
-> +  Of the three PHYs on the SpacemiT K1 SoC capable of being used for
-> +  PCIe, one is a combo PHY that can also be configured for use by a
-> +  USB 3 controller.  Using PCIe or USB 3 is a board design decision.
-> +
-> +  The combo PHY is also the only PCIe PHY that is able to determine
-> +  PCIe calibration values to use, and this must be determined before
-> +  the other two PCIe PHYs can be used.  This calibration must be
-> +  performed with the combo PHY in PCIe mode, and is this is done
-> +  when the combo PHY is probed.
-> +
-> +  During normal operation, the PCIe or USB port driver is responsible
-> +  for ensuring all clocks needed by a PHY are enabled, and all resets
-> +  affecting the PHY are deasserted.  However, for the combo PHY to
-> +  perform calibration independent of whether it's later used for
-> +  PCIe or USB, all PCIe mode clocks and resets must be defined.
-> +
-> +properties:
-> +  compatible:
-> +    const: spacemit,k1-combo-phy
-> +
-> +  reg:
-> +    items:
-> +      - description: PHY control registers
-> +
-> +  clocks:
-> +    items:
-> +      - description: DWC PCIe Data Bus Interface (DBI) clock
-> +      - description: DWC PCIe application AXI-bus Master interface clock
-> +      - description: DWC PCIe application AXI-bus Slave interface clock.
-
-End with a period or don't. Just be consistent.
-
-You need DWC PCIe clocks for your PHY? A ref clock would make sense, but 
-these? I've never seen a PHY with a AXI master interface.
-
-> +
-> +  clock-names:
-> +    items:
-> +      - const: dbi
-> +      - const: mstr
-> +      - const: slv
-> +
-> +  resets:
-> +    items:
-> +      - description: DWC PCIe Data Bus Interface (DBI) reset
-> +      - description: DWC PCIe application AXI-bus Master interface reset
-> +      - description: DWC PCIe application AXI-bus Slave interface reset.
-
-Same here (on both points).
-
-> +      - description: Global reset; must be deasserted for PHY to function
-> +
-> +  reset-names:
-> +    items:
-> +      - const: dbi
-> +      - const: mstr
-> +      - const: slv
-> +      - const: global
-> +
-> +  spacemit,syscon-pmu:
-> +    description:
-> +      PHandle that refers to the APMU system controller, whose
-> +      regmap is used in setting the mode
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description:
-> +      The argument value (PHY_TYPE_PCIE or PHY_TYPE_USB3) determines
-> +      whether the PHY operates in PCIe or USB3 mode.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - spacemit,syscon-pmu
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
-> +    combo_phy: phy@c0b10000 {
-
-Drop unused labels.
-
-> +        compatible = "spacemit,k1-combo-phy";
-> +        reg = <0xc0b10000 0x1000>;
-> +        clocks = <&syscon_apmu CLK_PCIE0_DBI>,
-> +                 <&syscon_apmu CLK_PCIE0_MASTER>,
-> +                 <&syscon_apmu CLK_PCIE0_SLAVE>;
-> +        clock-names = "dbi",
-> +                      "mstr",
-> +                      "slv";
-> +        resets = <&syscon_apmu RESET_PCIE0_DBI>,
-> +                 <&syscon_apmu RESET_PCIE0_MASTER>,
-> +                 <&syscon_apmu RESET_PCIE0_SLAVE>,
-> +                 <&syscon_apmu RESET_PCIE0_GLOBAL>;
-> +        reset-names = "dbi",
-> +                      "mstr",
-> +                      "slv",
-> +                      "global";
-> +        spacemit,syscon-pmu = <&syscon_apmu>;
-> +        #phy-cells = <1>;
-> +        status = "disabled";
-> +    };
-> -- 
-> 2.48.1
+> RFC because this depends on dtschema changes and should be accepted
+> after new dtschema is released with this merged:
+> https://github.com/devicetree-org/dt-schema/pull/166
+> ---
+>  Documentation/devicetree/bindings/leds/issi,is31fl319x.yaml | 1 -
+>  1 file changed, 1 deletion(-)
 > 
+
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+
 
 -- 
 linux-phy mailing list
