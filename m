@@ -4,58 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1403CA0EE5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7520ACA0EE4
 	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 07:10:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wakl1+VoV2AvrIX2AXVYI5it+MbMLu0MZcXWyimzptY=; b=aZyia4yvzMNt7G
-	Az4wNl71X4eoJFgbeYYMwlWY9M7ynLHgf9xtSC4gBj0uquEkHwNLyQ5kTFJ6xO6SlbqwnsjOcA726
-	IJH4ptFtTzzSMD7lUEoiS7afZCYatYmKs1Y7XmR2cKmHpdr14GAeDv6NbAMhZu5sfq7Zk3/AS4/zH
-	2yt9JT+DQHdSVY3BcqBTFTgPceKoTtlK2e0bIKITEZqY/ry4pX+2qLpRvESYqFP1BilrZ3ciw2Akw
-	Rr85eEZrgKEN9dRjFJVBxDO4eXSKmn/VAy5OL72P77i/YPyN7gKWaV2gi9Wq7oHbT4OJ/SLZtyRCU
-	/YFqM6qGzAIZ6Lb6Ie1Q==;
+	List-Owner; bh=lQ0fj6r1mHtHnjW8+5iAx5s+PTu0ej7v2FihsfbeQfQ=; b=V7sxpGNLZo5Onb
+	0qJBqvLgXPrX8FJLiTEryPLnP0FJlYUr1VZPrbX5GkvijP3zFqvASbBs2cTsH8Ij5eVYJK0t+AdL+
+	VnH/btom+837dJAyi29tfvKSweyMQZbcEmKEbbxAozmtuEGE0AdJfR+xT4i73CQMg1OJQPAhJiyZE
+	TnxRX0EcqzJDbzSfN8JMavh6Gym3iZf3SiH45JaIISSHbShaHCIq7vpIgMjFNYhv1tK02JinQA7fA
+	3T01plobnJT0mxJWLy6RuEv+g2Na8fLUG3Iw0EEFEk+BssyEnRhccjh49iETGMTTvI4vgCxBKVvga
+	qTNYcW83uHqWgoYy8oYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umS6k-0000000G2iK-23Hn;
+	id 1umS6k-0000000G2i5-0uWc;
 	Thu, 14 Aug 2025 07:10:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umRvt-0000000G0YZ-1ARk
+	id 1umRve-0000000G0SE-0tJv
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 06:59:30 +0000
+	Thu, 14 Aug 2025 06:59:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AD53D5C6A48;
-	Thu, 14 Aug 2025 06:59:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DBE84C4CEEF;
-	Thu, 14 Aug 2025 06:59:23 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 93FC0601DE;
+	Thu, 14 Aug 2025 06:59:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D908C4CEEF;
+	Thu, 14 Aug 2025 06:59:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755154768;
-	bh=CtmqplZwY66VaRI3jcehqVyC7vyWcB4HKqdwUObY6qk=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=ERAdkFp4+b09ZVe/VqAVH5IEu/83yRDmVGoVN+WAja6HHm3TV8yaC/MamtvTxdWZx
-	 hQf0Rh9cSXsydAKvMYmZgok77TiHrn+hKofWDuiv7PsUDvj8t0XszRgULbsShhrW+a
-	 FT8DRX46k6f8a5/pDGqSGQbKGEcOV3TbpIzOjT0nYE+ZVK//5X31FDGwn7T+X3HgOH
-	 AyA7Ut5/ApAemQ77Yb1/d06/b9VSEWZ7FQrn68am7HdID5gF9MqetSOwM5XYFj1jnt
-	 XuChR59P4onxP5YzWrdGvhHfj+CE3scaxDqfEogICMd8EBPwjE2IctwcZuzlUzXdWt
-	 tB+CKI0uos5eQ==
-Message-ID: <6a22ef70-02ed-4436-8c6d-822d04f2c930@kernel.org>
-Date: Thu, 14 Aug 2025 08:59:22 +0200
+	s=k20201202; t=1755154753;
+	bh=/y8w2S2gQylcdktfsTWUUbQnJ/Bmtkf58d1TAbyJLfc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=MWEU/VebAf2+EW+zguXlsy0qViH1iwuLh7aLY8ua1oj1989u9OcLI//ZxvOf64Kbh
+	 wltq3V5s3li+QH5QY5CyV93YJ9o1iAzYLgXvCCoQcA/sVhSpzmFYFrT/CXRjR+BWZ5
+	 amymTP3Z0pY1MoSXo3OqMcxKhdbc7a6mCrPAe+ABsAKHkiPInGwTiVxoMpLQb+Y8Z/
+	 4DactE4aIWbKttOjm4VrHags66mRo8Mt1c5kPPDF6T0twz9V464wSjqZPy16XNgJgg
+	 9oaf/d1j0H73ZyzUtPuCLCy5zMLzH1uZSYsbMp4OZi41c0pLsOpjNfHyJ5EmN4ZDfC
+	 qvufC9BBGFbdg==
+Message-ID: <57ce520f-a562-471f-b6b4-44f0766a7556@kernel.org>
+Date: Thu, 14 Aug 2025 08:59:07 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/3] ufs: ufs-qcom: describe x1e80100 quirks
-To: Harrison Vanderbyl <harrison.vanderbyl@gmail.com>, marcus@nazgul.ch,
- kirill@korins.ky, vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, mani@kernel.org,
+Subject: Re: [PATCH 3/3] dts: describe x1e80100 ufs
+To: Bjorn Andersson <andersson@kernel.org>,
+ Harrison Vanderbyl <harrison.vanderbyl@gmail.com>
+Cc: marcus@nazgul.ch, kirill@korins.ky, vkoul@kernel.org, kishon@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, mani@kernel.org,
  alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org,
- andersson@kernel.org, agross@kernel.org, linux-arm-msm@vger.kernel.org,
+ agross@kernel.org, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org
 References: <20250814005904.39173-1-harrison.vanderbyl@gmail.com>
- <20250814005904.39173-3-harrison.vanderbyl@gmail.com>
+ <20250814005904.39173-4-harrison.vanderbyl@gmail.com>
+ <tlkv63ccpnti367am47ymhaw3agjnyuonqstgtfaazhhptvgsp@q4wzuzdph323>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,10 +103,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250814005904.39173-3-harrison.vanderbyl@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250813_235929_397403_A4D7EAF9 
-X-CRM114-Status: GOOD (  10.81  )
+In-Reply-To: <tlkv63ccpnti367am47ymhaw3agjnyuonqstgtfaazhhptvgsp@q4wzuzdph323>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,44 +120,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/08/2025 02:59, Harrison Vanderbyl wrote:
-> Describe describe driver quirks for x1e80100 ufs device
-> Signed-off-by: Harrison Vanderbyl <harrison.vanderbyl@gmail.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
->  drivers/ufs/host/ufs-qcom.c             | 1 +
->  2 files changed, 4 insertions(+)
+On 14/08/2025 04:42, Bjorn Andersson wrote:
+> On Thu, Aug 14, 2025 at 10:59:04AM +1000, Harrison Vanderbyl wrote:
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index 9c69c77d10c8..b88cafac4da7 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -2168,6 +2168,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
->  	}, {
->  		.compatible = "qcom,sm8750-qmp-ufs-phy",
->  		.data = &sm8750_ufsphy_cfg,
-> +	}, {
-> +		.compatible = "qcom,x1e80100-qmp-ufs-phy",
-> +		.data = &sm8550_ufsphy_cfg,
+> Welcome to LKML, Harrison. Some small things to improve.
+> 
+> Please extend the subject prefix to match other changes in the files of
+> each patch, e.g. this one would be "arm64: dts: qcom: x1e80100: ".
+> 
+> "git log --oneline -- file" is your friend here.
+> 
+>> Describe device tree entry for x1e80100 ufs device
 
-So it is fully compatible? If so then don't duplicate entries and
-express compatibility with fallback.
-
->  	},
->  
->  	{ },
-> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-> index 76fc70503a62..2e143ccd1a03 100644
-> --- a/drivers/ufs/host/ufs-qcom.c
-> +++ b/drivers/ufs/host/ufs-qcom.c
-> @@ -2282,6 +2282,7 @@ static const struct of_device_id ufs_qcom_of_match[] __maybe_unused = {
->  	{ .compatible = "qcom,ufshc" },
->  	{ .compatible = "qcom,sm8550-ufshc", .data = &ufs_qcom_sm8550_drvdata },
->  	{ .compatible = "qcom,sm8650-ufshc", .data = &ufs_qcom_sm8550_drvdata },
-> +	{ .compatible = "qcom,x1e80100-ufshc", .data = &ufs_qcom_sm8550_drvdata },
-
-Same problem here.
-
+This is duplicating earlier patches:
+https://lore.kernel.org/all/szudb2teaacchrp4kn4swkqkoplgi5lbw7vbqtu5vhds4qat62@2tciswvelbmu/
 
 Best regards,
 Krzysztof
