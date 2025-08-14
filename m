@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D1AECA0EE6
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 16:58:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 194CACA0EE4
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 20:54:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b5n3xiiMynf7sD/ABkTAyaid3ogT/q9u6+1J/MDfsvo=; b=zk+0dAdWlbpVlt
-	ZV65H8LsfZvQaosIylGA6UeI1Pj7UPKrPeFb5tQZUdxYEoTkIp5udCL6NZjhW4T8DA6Y3sSY9zOTq
-	0i/10xV9hPs8ksNfQWEV/PnCTMCu1gJQONmDYdajFSfmwEakf/McTmRWpwpa8xFxizIARcEbanZBa
-	CBHsrRZfJVbsYkdQ+qhEs1HRUayXakaCMhGfezH4irU+B0DwZjlueZ4SKjzvcp7GFQdVqlu0q/8JH
-	KZS/V/U+gQrv1sOad966gppyfEexwkwt61w62yyBButz6H9vXvo7zViZ2L8U39CKiD74nWcWf56dx
-	sruhxYJ0U1sq4/85GUwg==;
+	List-Owner; bh=kR3cS4W8V5e7ztM1/kRTS5BnDuG51aL4ERGg/1wYTDo=; b=ilXh6iZL4sWb7t
+	Ry58tJqmZ3gwtbQWDqplKyakbrmX3KqF8dVtPzpWAYZdlaxHv+jOMDRLGxB6KJDThRuWVvZsSJ0tf
+	1GqsHmz/G938FRGl1J0vTMfjMea9k8mVtX2dWuQ0j5DzDh3lsonbFRrdlwtGfXmSicUviXb92IB7+
+	sOZFD0VvX7dYUyfzVzcPVweEM7U3ie0DzMkceieVGSFi5jVYjmQ1zdZxK9EGJ61wbiWtFYQ87HpTf
+	Zb2DfZbAOIPIhma9BR+lJZzOpDwlC8HB9dSAvZ1lyei4a9oQTMrnoRz4zLjZvc8TjStE3UjkKBfJj
+	4IxNPksZI9ERzU8UffIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umbHO-000000008EY-0DFn;
-	Thu, 14 Aug 2025 16:58:18 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1umexU-00000000XKm-32Mp;
+	Thu, 14 Aug 2025 20:54:00 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umawa-0000000052z-31RU;
-	Thu, 14 Aug 2025 16:36:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1755189406;
-	bh=d+QXGdRD+AohxHQ66KXmOAFqY41YYQSeMyLGgADIGUw=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=kyVwDXgVko4JOin5YkL6hLrpr6jRMeA+k/1VgK+3YzB+LJc9nw+7qYXy86fTHYP9x
-	 CGM8VKsljNOmQN8intxPr4xZMxuRZAFZXrFnxddZHvDI2pEJWvGUNqit4AYiYbi24s
-	 GjEUdWxMw8bxxFVeFjnu5I6sMOZZswD1medpe9mbVwqXPJhpBXbaUKdLUJMekiTI5Z
-	 GEnCWexFI/Ev5agsYlCHwK56ZEMaR7I5euO1GyX33FKxVHotVbnsZyA8NTdU1c5+OM
-	 GD9BZcTIs5wpPt+NVQNNSermb+zmFPBCgbIHFO7e0T6RBfzE2K9Pb09wplSWjMCXhI
-	 2wlsEyPR86v+w==
-Received: from [192.168.1.90] (unknown [82.79.138.60])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 68C8B17E1273;
-	Thu, 14 Aug 2025 18:36:45 +0200 (CEST)
-Message-ID: <708d3814-f414-4174-95b3-d3450e9780ec@collabora.com>
-Date: Thu, 14 Aug 2025 19:36:44 +0300
+	id 1umev4-00000000X6q-2ID8;
+	Thu, 14 Aug 2025 20:51:32 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id B9744A56ED1;
+	Thu, 14 Aug 2025 20:51:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DC8DC4CEED;
+	Thu, 14 Aug 2025 20:51:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755204689;
+	bh=/M4EE7DFqLJynRJpaxxdZKYC5XpUZmPw2hnoERrqOp8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=OVn6XjXkVgHKX31q8ZfXo7rw69ZgSzBWspUWLyQB3kVd5itiTtfuFBvXWGnEPnlNH
+	 cVN536Wy1xooiv/AYneWTv9Q1ftQuxJwOsji2f0HR8OBJ3knOX5kA2oPTBPIlfuEiY
+	 hoLmiMQT02eO2M5fA8wpc51tUbPMp3nhwTv5nNrrU8nlyOnwzE07HQw/oFHowNr1Ce
+	 LsaGcLzhbszy3+41SAnLDDpj8Fg+yqCAOstZmhjsz8TZbcXoBGmQut9q9oBGGQvpMa
+	 J8tXi/RpjBlBTOcbcf2W7NwGGej/V0cUSamfgSLYgWWks1TgKjA3eNht+rxAJPSdFv
+	 iGooIKvdVXTvg==
+Date: Thu, 14 Aug 2025 15:51:28 -0500
+From: Rob Herring <robh@kernel.org>
+To: Alex Elder <elder@riscstar.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, lpieralisi@kernel.org,
+	kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
+	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
+	paul.walmsley@sifive.com, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, p.zabel@pengutronix.de, tglx@linutronix.de,
+	johan+linaro@kernel.org, thippeswamy.havalige@amd.com,
+	namcao@linutronix.de, mayank.rana@oss.qualcomm.com,
+	shradha.t@samsung.com, inochiama@gmail.com,
+	quic_schintav@quicinc.com, fan.ni@samsung.com,
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
+ PHY
+Message-ID: <20250814205128.GA3873683-robh@kernel.org>
+References: <20250813184701.2444372-1-elder@riscstar.com>
+ <20250813184701.2444372-2-elder@riscstar.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 8/9] phy: rockchip: phy-rockchip-samsung-hdptx: convert
- from round_rate() to determine_rate()
-To: Brian Masney <bmasney@redhat.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-References: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
- <20250810-phy-clk-round-rate-v2-8-9162470bb9f2@redhat.com>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20250810-phy-clk-round-rate-v2-8-9162470bb9f2@redhat.com>
+Content-Disposition: inline
+In-Reply-To: <20250813184701.2444372-2-elder@riscstar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_093648_913406_F5526269 
-X-CRM114-Status: GOOD (  18.09  )
+X-CRM114-CacheID: sfid-20250814_135130_737533_B4198825 
+X-CRM114-Status: GOOD (  26.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,57 +83,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/11/25 1:45 AM, Brian Masney wrote:
-> The round_rate() clk ops is deprecated, so migrate this driver from
-> round_rate() to determine_rate() using the Coccinelle semantic patch
-> on the cover letter of this series.
+On Wed, Aug 13, 2025 at 01:46:55PM -0500, Alex Elder wrote:
+> Add the Device Tree binding for the PCIe/USB 3.0 combo PHY found in
+> the SpacemiT K1 SoC.  This is one of three PCIe PHYs, and is unusual
+> in that only the combo PHY can perform a calibration step needed to
+> determine settings used by the other two PCIe PHYs.
 > 
-> Signed-off-by: Brian Masney <bmasney@redhat.com>
+> Calibration must be done with the combo PHY in PCIe mode, and to allow
+> this to occur independent of the eventual use for the PHY (PCIe or USB)
+> some PCIe-related properties must be supplied: clocks; resets; and a
+> syscon phandle.
+> 
+> Signed-off-by: Alex Elder <elder@riscstar.com>
 > ---
->  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 14 ++++++++------
->  1 file changed, 8 insertions(+), 6 deletions(-)
+>  .../bindings/phy/spacemit,k1-combo-phy.yaml   | 110 ++++++++++++++++++
+>  1 file changed, 110 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> index 79db57ee90d1487b51f4ddadde870a275dd7b17b..0d4e578c8c6a08aad355aa8aa5a1cf75c7d354ed 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -1869,8 +1869,8 @@ static unsigned long rk_hdptx_phy_clk_recalc_rate(struct clk_hw *hw,
->  	return hdptx->hw_rate;
->  }
->  
-> -static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
-> -					unsigned long *parent_rate)
-> +static int rk_hdptx_phy_clk_determine_rate(struct clk_hw *hw,
-> +					   struct clk_rate_request *req)
->  {
->  	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
->  
-> @@ -1879,9 +1879,9 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
->  	 * To be dropped as soon as the RK DW HDMI QP bridge driver
->  	 * switches to make use of phy_configure().
->  	 */
-> -	if (!hdptx->restrict_rate_change && rate != hdptx->hdmi_cfg.tmds_char_rate) {
-> +	if (!hdptx->restrict_rate_change && req->rate != hdptx->hdmi_cfg.tmds_char_rate) {
->  		struct phy_configure_opts_hdmi hdmi = {
-> -			.tmds_char_rate = rate,
-> +			.tmds_char_rate = req->rate,
->  		};
->  		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi);
->  
-> @@ -1896,7 +1896,9 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
->  	 * hence ensure rk_hdptx_phy_clk_set_rate() won't be invoked with
->  	 * a different rate argument.
->  	 */
-> -	return hdptx->hdmi_cfg.tmds_char_rate;
-> +	req->rate = hdptx->hdmi_cfg.tmds_char_rate;
+> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+> new file mode 100644
+> index 0000000000000..ed78083a53231
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+> @@ -0,0 +1,110 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combo-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +	return 0;
->  }
+> +title: SpacemiT K1 PCIe/USB3 Combo PHY
+> +
+> +maintainers:
+> +  - Alex Elder <elder@riscstar.com>
+> +
+> +description:
 
-This LGTM now, hence
+You need a '>' or the paragraphs formatting will not be maintained 
+(should we ever render docs from this).
 
-Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> +  Of the three PHYs on the SpacemiT K1 SoC capable of being used for
+> +  PCIe, one is a combo PHY that can also be configured for use by a
+> +  USB 3 controller.  Using PCIe or USB 3 is a board design decision.
+> +
+> +  The combo PHY is also the only PCIe PHY that is able to determine
+> +  PCIe calibration values to use, and this must be determined before
+> +  the other two PCIe PHYs can be used.  This calibration must be
+> +  performed with the combo PHY in PCIe mode, and is this is done
+> +  when the combo PHY is probed.
+> +
+> +  During normal operation, the PCIe or USB port driver is responsible
+> +  for ensuring all clocks needed by a PHY are enabled, and all resets
+> +  affecting the PHY are deasserted.  However, for the combo PHY to
+> +  perform calibration independent of whether it's later used for
+> +  PCIe or USB, all PCIe mode clocks and resets must be defined.
+> +
+> +properties:
+> +  compatible:
+> +    const: spacemit,k1-combo-phy
+> +
+> +  reg:
+> +    items:
+> +      - description: PHY control registers
+> +
+> +  clocks:
+> +    items:
+> +      - description: DWC PCIe Data Bus Interface (DBI) clock
+> +      - description: DWC PCIe application AXI-bus Master interface clock
+> +      - description: DWC PCIe application AXI-bus Slave interface clock.
 
+End with a period or don't. Just be consistent.
+
+You need DWC PCIe clocks for your PHY? A ref clock would make sense, but 
+these? I've never seen a PHY with a AXI master interface.
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +
+> +  resets:
+> +    items:
+> +      - description: DWC PCIe Data Bus Interface (DBI) reset
+> +      - description: DWC PCIe application AXI-bus Master interface reset
+> +      - description: DWC PCIe application AXI-bus Slave interface reset.
+
+Same here (on both points).
+
+> +      - description: Global reset; must be deasserted for PHY to function
+> +
+> +  reset-names:
+> +    items:
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +      - const: global
+> +
+> +  spacemit,syscon-pmu:
+> +    description:
+> +      PHandle that refers to the APMU system controller, whose
+> +      regmap is used in setting the mode
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +    description:
+> +      The argument value (PHY_TYPE_PCIE or PHY_TYPE_USB3) determines
+> +      whether the PHY operates in PCIe or USB3 mode.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - spacemit,syscon-pmu
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
+> +    combo_phy: phy@c0b10000 {
+
+Drop unused labels.
+
+> +        compatible = "spacemit,k1-combo-phy";
+> +        reg = <0xc0b10000 0x1000>;
+> +        clocks = <&syscon_apmu CLK_PCIE0_DBI>,
+> +                 <&syscon_apmu CLK_PCIE0_MASTER>,
+> +                 <&syscon_apmu CLK_PCIE0_SLAVE>;
+> +        clock-names = "dbi",
+> +                      "mstr",
+> +                      "slv";
+> +        resets = <&syscon_apmu RESET_PCIE0_DBI>,
+> +                 <&syscon_apmu RESET_PCIE0_MASTER>,
+> +                 <&syscon_apmu RESET_PCIE0_SLAVE>,
+> +                 <&syscon_apmu RESET_PCIE0_GLOBAL>;
+> +        reset-names = "dbi",
+> +                      "mstr",
+> +                      "slv",
+> +                      "global";
+> +        spacemit,syscon-pmu = <&syscon_apmu>;
+> +        #phy-cells = <1>;
+> +        status = "disabled";
+> +    };
+> -- 
+> 2.48.1
+> 
 
 -- 
 linux-phy mailing list
