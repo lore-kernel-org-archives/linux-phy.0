@@ -4,98 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E25C0CA0EE4
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 21:48:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7134CA0EE4
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 22:26:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V4DQ8LwllKI2IMwwQfokgb9nO6SDJMB9GkdDG9gxF5M=; b=sNGG8cDDNKQZvr
-	CIC1LkUxIYDfrVQ3c6RQGVKq1brN9Aj7FugTTqdpt8u29HGiMFTBOZYI4DvwYCOCC8O3/WQUqpjUw
-	0V60l7Lr1hJIJ6CbFB/1eeKh4GQDo6B3uu3G48P7ZJNPpDCvaUEiETsrcLgqw99jSby60MPVm5eZ3
-	uYqL7cVXlnDnLzVWBoFg5Uh7rWMhUrMmtfCPc/S46ifG9mRFUPbISCtoVhg/hh/eQQw412bDHkJ36
-	L+FQ1ozGwzzCZv8nE3N8voZ8ykLvFkZsm/DPgUabA3CrJ/pQCn9UB9ztV8Xn76CM4QrrDmHQlpMQB
-	X1cvbvkb9iSx2RL/4mig==;
+	List-Owner; bh=mEZOHjgXmb8/7/NUBN6IlstZioLfceswbfAv5E3hNE8=; b=pLYOxrcClBP69c
+	RNeqdTcC5pYUrqgJrkB1lTDrROAHa17O31+AiuaWCYKNPETyKMjNgRKd+gCCxndqiPog9w0z6Nndh
+	0isTGxGfaXY9Lxa0v33BGxq4527QzZpCOBjGZOBjcSHEx+IVdHL2HF4nvjWZHjUlCoQZHwPrSaWyl
+	e4XOMLb6kW4ZYMyn26dEAagtVF/pi+UcOYkJEdq79HO/n0oOil3zHsyp87AfMlxvkkirNDDn1TZIi
+	gqcG+nmaif1GjBdgWd68h7VcGc7EDjpx4ytm/9BMjeVrnig4NbjCszKMe+Lw6XT0/MewqSECWElxO
+	p6+wHOm2R/YL4r7xnnTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umfod-00000000ced-23yB;
-	Thu, 14 Aug 2025 21:48:55 +0000
-Received: from mail-il1-x135.google.com ([2607:f8b0:4864:20::135])
+	id 1umgOh-00000000g4B-1cAa;
+	Thu, 14 Aug 2025 22:26:11 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umfoa-00000000ccf-3sig
+	id 1umgOg-00000000g3y-0OuH
 	for linux-phy@lists.infradead.org;
-	Thu, 14 Aug 2025 21:48:54 +0000
-Received: by mail-il1-x135.google.com with SMTP id e9e14a558f8ab-3e57003ee3fso6864935ab.2
-        for <linux-phy@lists.infradead.org>; Thu, 14 Aug 2025 14:48:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1755208132; x=1755812932; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=XCt+/c8MTw4m0fkTKSEjZUjQW40svl96k4sq8RtcJzA=;
-        b=FwZLbQysT1DKYRmCVGGPH6f+p3mvPM6BMqdjCGZkMqL1Z4a2orc04fWquZ/WzYDnoD
-         PJoQFzu/ra5OGfT7HM7fk0eRrzBWgvj5gqI04qqZl8/0wHSKYRfTH8jRu2H6/uMfBP+s
-         ny6Sdi6VQ0mWJwoAQUnF8II1gr0qvEqMKIpXWQ2a+rdEJax6aw3ACplXX3iY28WPdXJf
-         V5j4GHBBAxYjRv8SawqGOhdC4/4lIdCF9LSvURRQ8rF05SFpZfGrdaeaURRLKOxlEzpy
-         wEfba3SWQdw2OgRH9i634DKCJk0UsvtNz+C6d5i1zG0tOvcpbkbYriQpyUCEyeylJtsR
-         j7sA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755208132; x=1755812932;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=XCt+/c8MTw4m0fkTKSEjZUjQW40svl96k4sq8RtcJzA=;
-        b=WVKb9OoJ5areQfVHk93vC4KVsK0/xdFFHzpU6LiNv1egdgkLMrBPGRo5zS7/anFSHn
-         izVCIRINlJ8qdIbUI9N9lFp2PO03pzhY2/UNbSTpU+ToTQze1sGOSwOfNCHMnhymgOz3
-         ACji58lobyKipprGIAo62gH/zex9rpdIylM5I9//qc57zW0/863DQwIh7Tu4LbQI0eLE
-         91pLELphCX4HawYOrTaYSNR+grGiBpVp5BtJfHroGoOs4JbopEc5EkxcyVPaMjhLEBQy
-         GoOES7Gf6oJTCZdlJarq7g0fUwx80waRUeefYnDeAAJfpNWkjykqZ9FnVlBsFbGoV3cB
-         ex7g==
-X-Forwarded-Encrypted: i=1; AJvYcCUXTJFQz+SLyPk0MZ4w9pJxS2FyBYz+MwZiY+EiHuBQO1hIbtRs5VGCTZ034gNcCSbnlDU5hD9+R3A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwDwze1dkLf8m3BDvQsuiYQexFgjOM6Tis8mpYOg6hrzpDchU/p
-	qY1tV6Btbf+nBGE9ZYa3CfU5/NPtA5XMFF2mSbyJzOzUET5W28ORrn8Y6AioHEvurl4=
-X-Gm-Gg: ASbGncsoHlEMnxMLqkwzOgciS78vFBWwKtgpRuOpYE3XUeu81CQVD2PV9dglk0uPJBq
-	vbEnWzaPCunStDSGRJRkXV8UwB4U1XQCiAEwFo5Fv9ZeVS/OiEB+/3debS6XX6V8czY9HNoX47R
-	53O2j/oOhRG74vwe2Bvo15M5EMq6cKbfPkriD0q1KV4yVISQLrdKms06jfc0RQwIDmwnGKdZqSC
-	/Rmqhsio1Oa/RxJt1Z1ExMz+pIHD9EpiiGYm+DJLZ9gSo9YZalinCkEHurQXWbX+J8lSW8Vp5tC
-	Oibf5CecnIxqbHath1tZNX5vPHQCBhPEFafDiHfvI+f2Zh8BE96E5ZPjRxfr+ZJBt8frRJVzzDx
-	3PThMxoz8kwsrE22XMDwj8UDASCz6EERqdK2jB76Ji925ZUaI0d5f6G1sRkHNeA==
-X-Google-Smtp-Source: AGHT+IFztpZaPjE0ea4cNoutzDsxWfnWI0H8yYAAWojxd3NMEw8UDJycdrDTch6nLLHh52NEA2N7Sw==
-X-Received: by 2002:a92:cd8c:0:b0:3e5:4eb2:73e3 with SMTP id e9e14a558f8ab-3e57ba5c53emr13235285ab.16.1755208131603;
-        Thu, 14 Aug 2025 14:48:51 -0700 (PDT)
-Received: from [172.22.22.28] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-50ae9bd3291sm4605468173.63.2025.08.14.14.48.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 14 Aug 2025 14:48:51 -0700 (PDT)
-Message-ID: <bc6975bd-cc1a-41ff-887c-0509bc8f03c3@riscstar.com>
-Date: Thu, 14 Aug 2025 16:48:48 -0500
+	Thu, 14 Aug 2025 22:26:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id DEC5460208;
+	Thu, 14 Aug 2025 22:26:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9108C4CEED;
+	Thu, 14 Aug 2025 22:26:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755210367;
+	bh=PpBhujVqq3G2HXm3lppYS9UmsqQ/kcjSTxjYIgy9JsQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=YrPSpGBCHsXyFNPh/6g8o48PRM8/VHyukR+Q2tNpy/lPpGHzqxIv+PX4iMKS8xziU
+	 /1IDAXelY11oCexwNRsr1KJ9SauhS55BkB+y12+9MbtdPUo6XIK649neJkr+KizhWr
+	 tIL/SbPWTXMKu3BR0+3UMabEjQhOTES3bDgd/GqH/2VNKqqmLLPjKCHcW3OO2FfSXj
+	 Lijt6iv/rlDxjBPPx1JsFvjIQKibcvoDRQplXwTZgGVHX/AlzE8RcFJu22ubNZIUiS
+	 Jc/wlLLoMwew5dvkJp/f8Say7hXWS0D5CJEtcbiQ20ijkioAV9Gsk8/Wk593jwt998
+	 TKxvHrli/s4fw==
+Date: Thu, 14 Aug 2025 17:26:05 -0500
+From: Bjorn Andersson <andersson@kernel.org>
+To: Stephan Gerhold <stephan.gerhold@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Wenbin Yao <quic_wenbyao@quicinc.com>, 
+	Qiang Yu <qiang.yu@oss.qualcomm.com>, Manivannan Sadhasivam <mani@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Konrad Dybcio <konradybcio@kernel.org>
+Subject: Re: [PATCH v2] phy: qcom: qmp-pcie: Fix PHY initialization when
+ powered down by firmware
+Message-ID: <e5hn42qxz2eqgjanyoxb2456wvuw6zy55ibbg6fh33jma7utvq@mlq2a57owz4g>
+References: <20250814-phy-qcom-qmp-pcie-nocsr-fix-v2-1-fe562b5d02a1@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
- PHY
-To: Rob Herring <robh@kernel.org>
-Cc: krzk+dt@kernel.org, conor+dt@kernel.org, lpieralisi@kernel.org,
- kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
- vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
- paul.walmsley@sifive.com, palmer@dabbelt.com, aou@eecs.berkeley.edu,
- alex@ghiti.fr, p.zabel@pengutronix.de, tglx@linutronix.de,
- johan+linaro@kernel.org, thippeswamy.havalige@amd.com, namcao@linutronix.de,
- mayank.rana@oss.qualcomm.com, shradha.t@samsung.com, inochiama@gmail.com,
- quic_schintav@quicinc.com, fan.ni@samsung.com, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
- spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-2-elder@riscstar.com>
- <20250814205128.GA3873683-robh@kernel.org>
-Content-Language: en-US
-From: Alex Elder <elder@riscstar.com>
-In-Reply-To: <20250814205128.GA3873683-robh@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_144853_081576_A9F6A42A 
-X-CRM114-Status: GOOD (  36.86  )
+Content-Disposition: inline
+In-Reply-To: <20250814-phy-qcom-qmp-pcie-nocsr-fix-v2-1-fe562b5d02a1@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,227 +68,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/14/25 3:51 PM, Rob Herring wrote:
-> On Wed, Aug 13, 2025 at 01:46:55PM -0500, Alex Elder wrote:
->> Add the Device Tree binding for the PCIe/USB 3.0 combo PHY found in
->> the SpacemiT K1 SoC.  This is one of three PCIe PHYs, and is unusual
->> in that only the combo PHY can perform a calibration step needed to
->> determine settings used by the other two PCIe PHYs.
->>
->> Calibration must be done with the combo PHY in PCIe mode, and to allow
->> this to occur independent of the eventual use for the PHY (PCIe or USB)
->> some PCIe-related properties must be supplied: clocks; resets; and a
->> syscon phandle.
->>
->> Signed-off-by: Alex Elder <elder@riscstar.com>
->> ---
->>   .../bindings/phy/spacemit,k1-combo-phy.yaml   | 110 ++++++++++++++++++
->>   1 file changed, 110 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
->> new file mode 100644
->> index 0000000000000..ed78083a53231
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
->> @@ -0,0 +1,110 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combo-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: SpacemiT K1 PCIe/USB3 Combo PHY
->> +
->> +maintainers:
->> +  - Alex Elder <elder@riscstar.com>
->> +
->> +description:
+On Thu, Aug 14, 2025 at 11:27:10AM +0200, Stephan Gerhold wrote:
+> Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
+> support") added support for using the "no_csr" reset to skip configuration
+> of the PHY if the init sequence was already applied by the boot firmware.
+> The expectation is that the PHY is only turned on/off by using the "no_csr"
+> reset, instead of powering it down and re-programming it after a full
+> reset.
 > 
-> You need a '>' or the paragraphs formatting will not be maintained
-> (should we ever render docs from this).
-
-OK.
-
->> +  Of the three PHYs on the SpacemiT K1 SoC capable of being used for
->> +  PCIe, one is a combo PHY that can also be configured for use by a
->> +  USB 3 controller.  Using PCIe or USB 3 is a board design decision.
->> +
->> +  The combo PHY is also the only PCIe PHY that is able to determine
->> +  PCIe calibration values to use, and this must be determined before
->> +  the other two PCIe PHYs can be used.  This calibration must be
->> +  performed with the combo PHY in PCIe mode, and is this is done
->> +  when the combo PHY is probed.
->> +
->> +  During normal operation, the PCIe or USB port driver is responsible
->> +  for ensuring all clocks needed by a PHY are enabled, and all resets
->> +  affecting the PHY are deasserted.  However, for the combo PHY to
->> +  perform calibration independent of whether it's later used for
->> +  PCIe or USB, all PCIe mode clocks and resets must be defined.
->> +
->> +properties:
->> +  compatible:
->> +    const: spacemit,k1-combo-phy
->> +
->> +  reg:
->> +    items:
->> +      - description: PHY control registers
->> +
->> +  clocks:
->> +    items:
->> +      - description: DWC PCIe Data Bus Interface (DBI) clock
->> +      - description: DWC PCIe application AXI-bus Master interface clock
->> +      - description: DWC PCIe application AXI-bus Slave interface clock.
+> The boot firmware on X1E does not fully conform to this expectation: If the
+> PCIe3 link fails to come up (e.g. because no PCIe card is inserted), the
+> firmware powers down the PHY using the QPHY_PCS_POWER_DOWN_CONTROL
+> register. The QPHY_START_CTRL register is kept as-is, so the driver assumes
+> the PHY is already initialized and skips the configuration/power up
+> sequence. The PHY won't come up again without clearing the
+> QPHY_PCS_POWER_DOWN_CONTROL, so eventually initialization fails:
 > 
-> End with a period or don't. Just be consistent.
-
-OK.
-
-> You need DWC PCIe clocks for your PHY? A ref clock would make sense, but
-> these? I've never seen a PHY with a AXI master interface.
-
-*This* is what I was waiting for.  I explained it briefly in
-the patch headers and elsewhere but I expected questions.
-
-This is needed to support USB mode, while also supporting the other
-PCIe interfaces.
-
-The SpacemiT IP requires its PCIe interfaces to have 4-bit RX and TX
-receiver termination values be configured during initialization.  The
-values to use must be determined dynamically by doing a calibration
-step, then reading a (PCIe) register that contains the values to use.
-
-Only the combo PHY is able to perform this calibration. and the
-configuration values it determines must then be used to configure
-the other two PCIe (only) PHYs.
-
-This means that to calibrate, the combo PHY must be started (clocks
-enabled, resets de-asserted) in PCIe mode.
-
-If the combo PHY were going to be used for PCIe, this could be done
-when it is initialized, because the PCIe driver would ensure the
-clocks and resets were set up properly.
-
-But if the combo PHY is going to be used for USB, the PCIe
-calibration step would (otherwise) never be done, and that
-means the other two PCIe interfaces could not be used.
-
-So my solution is to move this calibration step into the PHY.
-The combo PHY performs the calibration step when it is probed,
-and to do that the driver needs to use its PCIe clocks and resets.
-Once the calibration values are known, the clocks and resets
-are essentially forgotten, and the PHY is available for use (by
-either PCIe or USB 3).
-
-The other two PCIe interfaces cannot probe (-EPROBE_DEFER) until
-the calibration values are known, which means they might have to
-wait until after the combo PHY has probed successfully.
-
-I asked SpacemiT about this a lot, but their answer is that the
-combo PHY is the only one that can determine these values, and
-they must be determined each time the hardware is powered up.
-
-I think this approach is less ugly than some alternatives.
-
-Is this clear?  Can you think of a different way of handling it?
-
->> +
->> +  clock-names:
->> +    items:
->> +      - const: dbi
->> +      - const: mstr
->> +      - const: slv
->> +
->> +  resets:
->> +    items:
->> +      - description: DWC PCIe Data Bus Interface (DBI) reset
->> +      - description: DWC PCIe application AXI-bus Master interface reset
->> +      - description: DWC PCIe application AXI-bus Slave interface reset.
+>   qcom-qmp-pcie-phy 1be0000.phy: phy initialization timed-out
+>   phy phy-1be0000.phy.0: phy poweron failed --> -110
+>   qcom-pcie 1bd0000.pcie: cannot initialize host
+>   qcom-pcie 1bd0000.pcie: probe with driver qcom-pcie failed with error -110
 > 
-> Same here (on both points).
-
-I will remove the period on the third one.
-
+> This can be reliably reproduced on the X1E CRD, QCP and Devkit when no card
+> is inserted for PCIe3.
 > 
->> +      - description: Global reset; must be deasserted for PHY to function
->> +
->> +  reset-names:
->> +    items:
->> +      - const: dbi
->> +      - const: mstr
->> +      - const: slv
->> +      - const: global
->> +
->> +  spacemit,syscon-pmu:
->> +    description:
->> +      PHandle that refers to the APMU system controller, whose
->> +      regmap is used in setting the mode
->> +    $ref: /schemas/types.yaml#/definitions/phandle
->> +
->> +  "#phy-cells":
->> +    const: 1
->> +    description:
->> +      The argument value (PHY_TYPE_PCIE or PHY_TYPE_USB3) determines
->> +      whether the PHY operates in PCIe or USB3 mode.
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - reset-names
->> +  - spacemit,syscon-pmu
->> +  - "#phy-cells"
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
->> +    combo_phy: phy@c0b10000 {
+> Fix this by checking the QPHY_PCS_POWER_DOWN_CONTROL register in addition
+> to QPHY_START_CTRL. If the PHY is powered down with the register, it
+> doesn't conform to the expectations for using the "no_csr" reset, so we
+> fully re-initialize with the normal reset sequence.
 > 
-> Drop unused labels.
+> Also check the register more carefully to ensure all of the bits we expect
+> are actually set. A simple !!(readl()) is not enough, because the PHY might
+> be only partially set up with some of the expected bits set.
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention support")
+> Signed-off-by: Stephan Gerhold <stephan.gerhold@linaro.org>
+> ---
+> Changes in v2:
+> - Ensure that all expected bits are set (Konrad)
+> - Link to v1: https://lore.kernel.org/r/20250812-phy-qcom-qmp-pcie-nocsr-fix-v1-1-9a7d0a5d2b46@linaro.org
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 ++++++++++++--
+>  1 file changed, 12 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index 95830dcfdec9b1f68fd55d1cc3c102985cfafcc1..80973527fafcb294273dff1864828532dab738db 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -3067,6 +3067,14 @@ struct qmp_pcie {
+>  	struct clk_fixed_rate aux_clk_fixed;
+>  };
+>  
+> +static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
+> +{
+> +	u32 reg;
+> +
+> +	reg = readl(base + offset);
+> +	return (reg & val) == val;
+> +}
+> +
+>  static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+>  {
+>  	u32 reg;
+> @@ -4339,10 +4347,12 @@ static int qmp_pcie_init(struct phy *phy)
+>  	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+>  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>  	void __iomem *pcs = qmp->pcs;
+> -	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+>  	int ret;
+>  
+> -	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
+> +	qmp->skip_init = qmp->nocsr_reset &&
+> +		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
+> +		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
 
-OK.
+IMHO the "phy_initialized" variable does provide valuable context to
+what those (now) two lines represents. That is particularly relevant as
+the second one is active low...so at least I need to think a bit extra
+to understand what's going on.
 
->> +        compatible = "spacemit,k1-combo-phy";
->> +        reg = <0xc0b10000 0x1000>;
->> +        clocks = <&syscon_apmu CLK_PCIE0_DBI>,
->> +                 <&syscon_apmu CLK_PCIE0_MASTER>,
->> +                 <&syscon_apmu CLK_PCIE0_SLAVE>;
->> +        clock-names = "dbi",
->> +                      "mstr",
->> +                      "slv";
->> +        resets = <&syscon_apmu RESET_PCIE0_DBI>,
->> +                 <&syscon_apmu RESET_PCIE0_MASTER>,
->> +                 <&syscon_apmu RESET_PCIE0_SLAVE>,
->> +                 <&syscon_apmu RESET_PCIE0_GLOBAL>;
->> +        reset-names = "dbi",
->> +                      "mstr",
->> +                      "slv",
->> +                      "global";
->> +        spacemit,syscon-pmu = <&syscon_apmu>;
->> +        #phy-cells = <1>;
->> +        status = "disabled";
+Other than that, I think this looks good.
 
-Krzysztof also pointed out that I can't disable it so I'll drop
-the above line as well.
+Regards,
+Bjorn
 
-Thanks for the review.
-
-					-Alex
-
->> +    };
->> -- 
->> 2.48.1
->>
-
+> +
+>  	/*
+>  	 * We need to check the existence of init sequences in two cases:
+>  	 * 1. The PHY doesn't support no_csr reset.
+> 
+> ---
+> base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+> change-id: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+> 
+> Best regards,
+> -- 
+> Stephan Gerhold <stephan.gerhold@linaro.org>
+> 
 
 -- 
 linux-phy mailing list
