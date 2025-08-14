@@ -4,49 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 171FFCA0ED1
-	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 06:11:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21582CA0EDC
+	for <linux-phy@archiver.kernel.org>; Thu, 14 Aug 2025 06:17:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6QoyMD1DYiY04DqTLT0t2ux52j0e9ZO2ng1zCBvoVnc=; b=AHU3MlWISJQ/I5
-	Gev503Kw2nFq/7orM1NpORfvuxy9c36sZ4ILDfUL9Ijlxz9hEG0bjXNUP7+V8h1FfdszVjezZCWug
-	gTXeCnzF+Ex4XauLMjMNddU3AJePNVwoj0+TdzsH2Qr6XnBMh26ydoEgq6vhnWx4GYbEIFheRsEK+
-	8MzJe/9IpTQHvpHorlV+lJ/JCZ7hp3u8Wt9nkg7/9skNtVKX5XrKYSk5aElTQLZneFNw2w79Hgg94
-	FsQYzxq97lbSwX2eweMLeXrT8Om25SyWUwd8rwIh9MY/k5SjeyCXpAjVSv+djSX11G6WLtTcV/Vld
-	GJG7X9gvZYZSDTdBvymQ==;
+	List-Owner; bh=hQ0NrYoJjjssiTk81jcOjWtqf3rsNu3EcQBgGNtlW+E=; b=V9cwNa1blT/HvR
+	zU25KGgUXm4YBIIW6A1hU/FtYMhf/0i3eOg1PRw/LOBy68TMmBt+gWj99uhTD09VLDBiW+Ak6Y1m5
+	eXdEW+sfrpEURL81/3OlyCEkX8UN8J0OPDPBZF2foWvWt4oqyQiZIFyKATY8WsAdzBWiJSObniswK
+	HesXxEzl1rJMSdyeSjvic34CsMurrFw8YwEt53kxy+eLBVXC9tl3oBw/Kn7GOWIJCeKN26OVJG9z4
+	/DLQyLHp4NZqpoZZZAw7Lsc4+XnuXbubkyU9y02emWIYQeip4SGRF7meSZYlCMrTjrnxVrIeck5s0
+	s45q/77jjER2qErSNJPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umRBZ-0000000FuWn-3Erg;
-	Thu, 14 Aug 2025 06:11:37 +0000
+	id 1umRHQ-0000000Fv8O-3mhE;
+	Thu, 14 Aug 2025 06:17:40 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umRBX-0000000FuWQ-1kpr;
-	Thu, 14 Aug 2025 06:11:36 +0000
+	id 1umRHO-0000000Fv7w-0i7I;
+	Thu, 14 Aug 2025 06:17:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 926285C5850;
-	Thu, 14 Aug 2025 06:11:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A59AC4CEEF;
-	Thu, 14 Aug 2025 06:11:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 411D95C6EA1;
+	Thu, 14 Aug 2025 06:17:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FA53C4CEEF;
+	Thu, 14 Aug 2025 06:17:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755151894;
-	bh=AjyQa8y9UfBgjQMOC+7KWvV2R22HtBSn7C/+oY4QT5c=;
+	s=k20201202; t=1755152256;
+	bh=zNG9Nu3Wh8t0MKtdRA10J2MqMnwX4xIXhtIIrfXTNa0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=oolw18pAKDaCqEejn9ERIeMvz53RDfGyoVui4G0KZzslIFUtl3vZqA1f7MprbyDox
-	 CP1sgLOqiPhMDi5L1VZKiwaDLhfjIlxjicqgh7JcnD1NnnM4YiF6+Y6pJXBmw2UYqw
-	 qYHYuVWcvLVD5OJ9GWCi3FqJmSZA6o1HIxdDdDBMMZ2DH0yud6b+IdEpNR+ApTF3EJ
-	 4eb3GAzmlfB71DELb/DkUuWvszxGglQaNL0Qw9kqaD7h+QC2zVKdajHFAjhRD/ezVa
-	 Ut3CF0OYwAhLOg9PrDz8X7xgNCTu4nquw6HVdzCPPGqgTlrzgmEfRHWFDH8Uf1AF0/
-	 rQZLG/e9Yc6uQ==
-Message-ID: <22bd5b5b-ca06-4499-b21f-22c2ff202167@kernel.org>
-Date: Thu, 14 Aug 2025 08:11:24 +0200
+	b=ocClVtY7tl5nu1Ssc93Ga/baNkQ3LtLSkkb4JdLo2Nm5h8LQZmUYtpivjLB6LOGQ7
+	 yNrY1ELToFhkAS/dC+h46ks0c8hj6bLMXT0VrOy0SB94DmxvlpQLk78VzIuimsIl2m
+	 fIDNsRT0WqxwwIQpVURA9NzDdMFhKjvvHM51BeQlEINaKpKkqguSbPnPHaVNU5cKD+
+	 790ewLK+UGq4UMwRYxQhsOgFVBPhMtZetTHhhbxJAjCq1oOBg9YxVWfMq3gwgflEki
+	 FrzZMUVWfORzmxw2jABPZPJAmswLurI8Ly3vFKZpdh8iUYzDqAYYv/o10KcLHUnrN8
+	 m3SKXMIAw6bvQ==
+Message-ID: <ab151314-c504-4a26-9ca2-685ab57b8fe9@kernel.org>
+Date: Thu, 14 Aug 2025 08:17:28 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: phy: spacemit: add SpacemiT PCIe/combo
- PHY
+Subject: Re: [PATCH 2/6] dt-bindings: phy: spacemit: introduce PCIe PHY
 To: Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org,
  conor+dt@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
  mani@kernel.org, bhelgaas@google.com, vkoul@kernel.org, kishon@kernel.org
@@ -59,7 +58,7 @@ Cc: dlan@gentoo.org, paul.walmsley@sifive.com, palmer@dabbelt.com,
  linux-pci@vger.kernel.org, spacemit@lists.linux.dev,
  linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-2-elder@riscstar.com>
+ <20250813184701.2444372-3-elder@riscstar.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +104,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250813184701.2444372-2-elder@riscstar.com>
+In-Reply-To: <20250813184701.2444372-3-elder@riscstar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250813_231135_546093_622C3D70 
-X-CRM114-Status: UNSURE (   4.13  )
+X-CRM114-CacheID: sfid-20250813_231738_290398_B527FB70 
+X-CRM114-Status: UNSURE (   4.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,18 +126,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13/08/2025 20:46, Alex Elder wrote:
-> +                      "mstr",
-> +                      "slv",
-> +                      "global";
-> +        spacemit,syscon-pmu = <&syscon_apmu>;
-> +        #phy-cells = <1>;
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
+> +    pcie1_phy: phy@c0c10000 {
+> +        compatible = "spacemit,k1-pcie-phy";
+> +        reg = <0xc0c10000 0x1000>;
+> +        #phy-cells = <0>;
 > +        status = "disabled";
-
-You cannot have disabled examples. This also means it could not be
-checked/tested.
-
-> +    };
-
+Same problem here.
 
 Best regards,
 Krzysztof
