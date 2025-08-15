@@ -4,66 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4165CA0ED1
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Aug 2025 03:46:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9601CA0EE0
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Aug 2025 07:31:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=IfwrTqsDnBea8/XoyJi1ZpuMvB5PvJECf8XO7J+waGw=; b=lds28dnSgCrqxYmermd9sZAxpy
-	4+q68kqsGQKne2aWnqD0WAo4af1m8t3aYa1XKt1rtaKM8BxD164wkVfz7i/0e0do3qTu5Jj8srYTU
-	joQbeGH+NdfPvXOquzHEuO6f3WcXz6zgW3+jP3P3mNx6B4mQ9xqUg+sBbNhXl8PdqdCix2MifCr22
-	RjGwvd6hrFpea/QwVQia0fTgs+d2k4sgxf/CRAaw2d5JOvqH1GOE/5ZJyK1el9ZYf7bLPz9McXfy9
-	jq6c4YhnvtbPLKI9+AKXm/JrP5YI1fYZDFoHaSmsVq/b8+U1ume50zeaTjpAH7Bp8FufAPOimFK87
-	/Wo/AwaQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6A/lcLmgKla1EYz71pz2rLSNel8sofGAPvBUypr1Rfo=; b=ap0JTTltshGtjD
+	/x+/GxxPI6NrA+HdZKIEl7WS8RfcO+lamwKKQhIG04EFOuqGaJoddZCI/8bcFQDc6MwOboigC7+03
+	9XUmvNqQ2WWfMA6XrhYrJ9TtmSdWjlg00B9VlA3XKzPovBVNm6vbIV5Eyyvx7cC7Q3rvuFgGfoFe9
+	DQaDR8GoboyJ2bLttBWLeEjj+XZyvFSeLGNZIhkcfTHv6CvTtekhy+SVGlekTmU5l5eL3ZHaBLxke
+	t2Ha9Ce4Iy/3nLQeX6TmANO5nO4v6C7881IFI59sXnOEYyE/YFg5QypfiQLU8axBu4GhSuMr7YwsI
+	B2FiO3NF+rsS1PNvQobQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umlOt-00000001KUE-2FwM;
-	Fri, 15 Aug 2025 03:46:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1umoue-00000001k2f-1PEs;
+	Fri, 15 Aug 2025 07:31:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umkBi-000000019qs-3nZO;
-	Fri, 15 Aug 2025 02:29:04 +0000
+	id 1umnvn-00000001cT3-0lDn;
+	Fri, 15 Aug 2025 06:28:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6BE38461BA;
-	Fri, 15 Aug 2025 02:29:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34840C4CEED;
-	Fri, 15 Aug 2025 02:29:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 44AA76116F;
+	Fri, 15 Aug 2025 06:28:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BBEDC4CEEB;
+	Fri, 15 Aug 2025 06:28:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755224942;
-	bh=mrIFnf38WHuWo+npT76l0eVvwyuTXr6L3piFWujpfYc=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=EzZtiW0EkhDcPGb/p/XGknovtZlObtJ74JLzKRktWStLzPDoAREAwQEFmBGG4/lcU
-	 kJuJFI88d1Yg2M2TvE6lsWrgbzUKuygxVu9K21jHkXSEyd1FkDWAAvE4XTtV3NbK/h
-	 geGbVEAi8hJOV6ODUe/wkbWQEUtBmi3R97vumnNvgkw7oFM08dk40yR+BSI14Hb3oN
-	 4U5DLAgmgVEtkvI86f+afxxIuhyerFeqA48dlhOsUNbh8eW9vI71vzTPwjN2zTWAaP
-	 zpEC0HK44AeIIe/NNS5pDu6IK2kTLuPo1zCSpF0fhgfUHJBF7/+WEvv7QnxVxLTclW
-	 6z8ISRsmiX7cg==
-Date: Thu, 14 Aug 2025 21:29:01 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, devicetree@vger.kernel.org, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- linux-mediatek@lists.infradead.org, ~postmarketos/upstreaming@lists.sr.ht, 
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- linux-arm-kernel@lists.infradead.org, 
- Matthias Brugger <matthias.bgg@gmail.com>, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org
+	s=k20201202; t=1755239329;
+	bh=yKdH7Z9mYp9349ekyyGJWE0NQ8UBnE41L7EHWM+Ek4E=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=i7vsWi/BXk//+Pjnr9JDZdR0HIPG2NYFOihtA77ypfoS55mcrb4ozma1lsZEyZoVk
+	 m+FYAHOG3jF1ZPXvAfl8bIAMzsC2Tqg6OgqkfQRnRPXo1gniB49cNcY+EUexxtGe3a
+	 RpCy+0o0/Raz0YwrudQGXyX2yEwXjfeGTasxx8W4CLaFUhDAwT5nzY9ltBOkt1SA2Z
+	 Ey/MbjOPMAsosrwbYb6j3toEkjm4zuY1L8jZtHmUJW3whHri/XTos+gT5HuAZkRNqb
+	 0WWUhekbWH/zwuUpvT08oUTY05vmjF4w0aTeclQ1C82wC77PbGOA2Nzgn1SjCKbT0q
+	 9k4tN3DihrAXw==
+Date: Fri, 15 Aug 2025 08:28:47 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Arseniy Velikanov <me@adomerle.pw>
-In-Reply-To: <20250814234825.810-1-me@adomerle.pw>
-References: <20250814234825.810-1-me@adomerle.pw>
-Message-Id: <175522494130.180632.985870901068506270.robh@kernel.org>
+Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, linux-arm-kernel@lists.infradead.org, 
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
 Subject: Re: [PATCH v1 1/2] dt-bindings: phy: mtk-tphy: add property for
  software role switch
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250814_192902_963744_8265E2FA 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+Message-ID: <20250815-important-warm-dove-03dde5@kuoka>
+References: <20250814234825.810-1-me@adomerle.pw>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250814234825.810-1-me@adomerle.pw>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,8 +74,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 15 Aug 2025 03:48:24 +0400, Arseniy Velikanov wrote:
+On Fri, Aug 15, 2025 at 03:48:24AM +0400, Arseniy Velikanov wrote:
 > Add a boolean property to enable software control of the PHY mode
 > switching.
 > 
@@ -90,30 +83,22 @@ On Fri, 15 Aug 2025 03:48:24 +0400, Arseniy Velikanov wrote:
 >  Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6 ++++++
 >  1 file changed, 6 insertions(+)
 > 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> index b2218c151939..a90890d4a86f 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+> @@ -255,6 +255,12 @@ patternProperties:
+>            use the property "mediatek,syscon-type" for newer SoCs that support it.
+>          type: boolean
+>  
+> +      mediatek,software-role-switch:
 
-My bot found errors running 'make dt_binding_check' on your patch:
+No, bindings do not describe software.
 
-yamllint warnings/errors:
+Also, never tested.
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml: mediatek,software-role-switch: missing type definition
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250814234825.810-1-me@adomerle.pw
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+Krzysztof
 
 
 -- 
