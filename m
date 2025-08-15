@@ -4,112 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E904ECA0EE4
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Aug 2025 12:45:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CDB6CA0ED1
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Aug 2025 13:14:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lti9m2X3cvVwYhhQTdnvcRvuiJIsBQOdylWFSGKU+OY=; b=hT/N1bBcCye69W
-	Pmc+MR6wPRGuz6jCNuaHRoFrdonEu8O3MFlh9TqNlIxWqbVqt8Jt1Qo7smmM27z/tHHuZtDG0Q/7H
-	ZaZSTXyIIqy4E+0mXZVS9zLmz8Qr9VQXW7S3OIe0/Ag9vBLAfreizf6qxKOhjcavwOYaLmaf786at
-	lwKb6rfKeJakmxYRpRXWuMo0eTk49GA/Z83DtecAnvcTyI52v435vICphAV5IdfkTJHo9xVWu+pFQ
-	jCutNF0ksX7FhtMxZ5mo4I0QRw3+LkLYLd+3Xhw836ScXbyuotjDrV3LsJVCun4y4zIoJku8JFzft
-	l8jjb6z8HM9s6nB1wgjQ==;
+	List-Owner; bh=XBIpal2MCtx5Z3E71YRN/czQCm9iy0u/6+I3jt/0gF0=; b=KUbgzQHr0Wmz4P
+	Vf3jVv4fNva4s7ZHo9lv4p550UwLwALf2PLFBGVR7YOClxTzwuhcH/FOCR9qyE9ZbIiW/F7j6qsQT
+	+iceVUeVF6ZB1UAkoKUznpmrFRjbmtuEASK2qyazjZI/P/VKHKDt8TZZysfuCzxS2HcJTNRLAKAHm
+	SPkthukXcbv1NZGDPXNUhRi2nX/z1uCnFm7PkTk/ysk3Ieib/t03KnTV9gA2g/yNSFx+ibjkVKOfZ
+	UDbow2xSiGYVLllmfs+JmqKVLhYVAV5SLDvIrOBJXzZbp1bls5u5fXdeYJRPY/gK/rTRSWCabjo60
+	m9pv2BE7nN5Rkhd7drFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umtoG-00000002UXn-2gsG;
-	Fri, 15 Aug 2025 12:45:28 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1umuG4-00000002Xzg-0FS3;
+	Fri, 15 Aug 2025 13:14:12 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1umqXe-000000021bF-22vP
+	id 1umqy6-0000000262z-0NvH
 	for linux-phy@lists.infradead.org;
-	Fri, 15 Aug 2025 09:16:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 10FE443F93;
-	Fri, 15 Aug 2025 09:16:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0647FC4CEEB;
-	Fri, 15 Aug 2025 09:15:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755249365;
-	bh=J+HxohW+Gt7vNHh8MWojAKCIWXQWxSZdX4kZ2s5hLNE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=iSsVElQ7V/NINp5P+HTu9cLLLHyl4OlmwdNuh0/9gfnEQI+YGGwoFLA6auicKqj8M
-	 qmxbA81vkgkalQQjJmb1BhPspejpmgnZKzmdDae9t+iZrEEqibNsxokN9buIUIryLQ
-	 jz1rS1D5FyaeXKhwjYchW1mdZ1L6a9ApHn6MvSmlVeAmBPX2iuyb8jgpvfBJtReK7p
-	 7vBzMwxbDP5NJmsHgLK16AMUv91YUDde/yp1jNlzJT5V8+S/ZJOWFkVZhuAAwp7ORN
-	 4wiDrWwYmGt6lec32Hn5DyupfcPLn6jXqFR6eawvlsTUPfMFwDuu6JtZDAjZJJ/KFj
-	 aR5RUCX/2IRWg==
-Message-ID: <8783e13d-65d0-4bfd-97e7-b3a0d1c7efe1@kernel.org>
-Date: Fri, 15 Aug 2025 11:15:58 +0200
+	Fri, 15 Aug 2025 09:43:27 +0000
+Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-afcb61f6044so317880266b.0
+        for <linux-phy@lists.infradead.org>; Fri, 15 Aug 2025 02:43:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1755251004; x=1755855804; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=jIr+uIGhy3/hPvKk8/B9PmGr5pRUF0q2I5T786hltSY=;
+        b=ojtLebPDQaSHfPyLEHjqfhD4UcWyEoLcFweyOxbeto9jHn+GLUczRcnk3GQShxz5lR
+         UJq1n+Vq3K62WCocxIBOZFfjP2GdBac+L9jmnakBbGFxHoYus0S9+wVzeyNTTRE0G5VX
+         LSBZvhfHPbcRQzeTto2uWUpXLq3YQi6nvTLlJdG+XkAMtNV0TyLCs58wteaWw7+ktwdW
+         NNcA8UBB82ud3K0L8mpij9Qo2I1G4Wzo1qkBy1sYau4a21kgKGoYydbM0kIuI1Q55Slu
+         bWXkhtHqOcs6WzBJUw4xqshUkNAjkzQaGNADGg0y2xfzRe825ZiNIKg/2Sbtko9loEeu
+         Kyww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755251004; x=1755855804;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=jIr+uIGhy3/hPvKk8/B9PmGr5pRUF0q2I5T786hltSY=;
+        b=lDl0JARRLiCZQ84/uSHafTvM528KkEKB/a/Gcf+oClFv3cvKPXemTrIG7BxJil1tQC
+         YVeX5YUzo1zr0Zv9r2U85qiDSLHvzCtsdCMySzj/QZSZ5cp3LXA203oFDX9XwkD6KxI1
+         FbV2cHk0eZucX1EhNpzRvg/xEfqdp/sDLXXffTAc/j2USFnve0BwCT/vw3pYG9ZxzPYQ
+         nOXhXDCA/eRrgPNM3gKOdklLjx4d3oyECUuB2FlwCuI2FF1iFMEPDzA+0MDdIUvyLvC9
+         B3mWCF2pXVVfYk0e7NssI95JeU7h5zTjtcDxz1fczSDrOl+2PVuP/wsfOuvK1DH34ybu
+         ZgwA==
+X-Forwarded-Encrypted: i=1; AJvYcCXrhOLdPZ9aSiqJ2OmIUauk1UsxTZ4c71RpEXnxWMik65jVejAjTRV2xJfwrp/cl/uM/ienRJ0dqpo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxqmQGIJZIBheKEeRVETbWf1iwrQX4t9yvgxd+HIVX/M/krQXCh
+	w4Y7kMPbj8arIVhEFJ40PndUIWqM2N8LtDMns3GTDYFPd/NEnIgwHWd1GxgEZSLOf2s=
+X-Gm-Gg: ASbGnctBNILaUvBoVStarenI+W57Sn9vNpsxsk7UA8Y5r4P5qM1B/mKHNLiZBSQRrHE
+	MI7WQEzippIJu/lH1z+ciWlMjYG3B+nMoT4QbJmWmDhy8SPkLWYVtgxTYCIXmTLjwFk9v1xDJSh
+	kku1rCWlivWHJPA0TSmduXTrMMJYzmCykwFe1YVm8QoxibvDqwRzLwkkQT4bx7BJV6Hf0NyZnCc
+	ImwULgajKHRYJaJPiZMq+DHpwIm3lOHUxpMN79mC34YEwfnj8p6DnrmKAjq7D7NdRZhZAEiqtjZ
+	Hh13nuhONyVQxD2BnMR07QURxApehonDm2o2FJN2mmczoJ/kM/jVej4VXdyT9z0vSEXwXH6cvmO
+	z4TfgPHlERaK4YZby49DZ5i8Ys2qEOyBoVA==
+X-Google-Smtp-Source: AGHT+IG3FtBw8Sw50EV/ShR8IgGNVLCbfdP5Y/YJBpfd6Jr9H+5a0yrsFxM506Jl/2wK+oZGIgZH4Q==
+X-Received: by 2002:a17:906:7310:b0:af8:fded:6b7a with SMTP id a640c23a62f3a-afcbd80b8bemr620525866b.17.1755251004118;
+        Fri, 15 Aug 2025 02:43:24 -0700 (PDT)
+Received: from linaro.org ([2a02:2454:ff21:ef30:68bb:56a:7ad6:2647])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-afcdce53f37sm105301066b.21.2025.08.15.02.43.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 15 Aug 2025 02:43:23 -0700 (PDT)
+Date: Fri, 15 Aug 2025 11:43:18 +0200
+From: Stephan Gerhold <stephan.gerhold@linaro.org>
+To: Bjorn Andersson <andersson@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Wenbin Yao <quic_wenbyao@quicinc.com>,
+	Qiang Yu <qiang.yu@oss.qualcomm.com>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Konrad Dybcio <konradybcio@kernel.org>
+Subject: Re: [PATCH v2] phy: qcom: qmp-pcie: Fix PHY initialization when
+ powered down by firmware
+Message-ID: <aJ8BNq7NLgYzzOMA@linaro.org>
+References: <20250814-phy-qcom-qmp-pcie-nocsr-fix-v2-1-fe562b5d02a1@linaro.org>
+ <e5hn42qxz2eqgjanyoxb2456wvuw6zy55ibbg6fh33jma7utvq@mlq2a57owz4g>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v10 0/5] pci: qcom: Add QCS8300 PCIe support
-To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>, andersson@kernel.org,
- konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, jingoohan1@gmail.com, mani@kernel.org,
- lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com,
- johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
- quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
- Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-References: <20250811071131.982983-1-ziyue.zhang@oss.qualcomm.com>
- <c931bbc5-f246-4d34-9280-0c1a551a1e7e@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <c931bbc5-f246-4d34-9280-0c1a551a1e7e@oss.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <e5hn42qxz2eqgjanyoxb2456wvuw6zy55ibbg6fh33jma7utvq@mlq2a57owz4g>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250815_021606_570680_E550E05E 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250815_024326_146587_640E1F5B 
+X-CRM114-Status: GOOD (  40.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,34 +106,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/08/2025 10:51, Ziyue Zhang wrote:
->>
->>   .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  17 +-
->>   arch/arm64/boot/dts/qcom/qcs8300-ride.dts     |  80 +++++
->>   arch/arm64/boot/dts/qcom/qcs8300.dtsi         | 296 +++++++++++++++++-
->>   3 files changed, 376 insertions(+), 17 deletions(-)
->>
->>
->> base-commit: e2622a23e8405644c7188af39d4c1bd2b405bb27
-> Hi Maintainers,
+On Thu, Aug 14, 2025 at 05:26:05PM -0500, Bjorn Andersson wrote:
+> On Thu, Aug 14, 2025 at 11:27:10AM +0200, Stephan Gerhold wrote:
+> > Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
+> > support") added support for using the "no_csr" reset to skip configuration
+> > of the PHY if the init sequence was already applied by the boot firmware.
+> > The expectation is that the PHY is only turned on/off by using the "no_csr"
+> > reset, instead of powering it down and re-programming it after a full
+> > reset.
+> > 
+> > The boot firmware on X1E does not fully conform to this expectation: If the
+> > PCIe3 link fails to come up (e.g. because no PCIe card is inserted), the
+> > firmware powers down the PHY using the QPHY_PCS_POWER_DOWN_CONTROL
+> > register. The QPHY_START_CTRL register is kept as-is, so the driver assumes
+> > the PHY is already initialized and skips the configuration/power up
+> > sequence. The PHY won't come up again without clearing the
+> > QPHY_PCS_POWER_DOWN_CONTROL, so eventually initialization fails:
+> > 
+> >   qcom-qmp-pcie-phy 1be0000.phy: phy initialization timed-out
+> >   phy phy-1be0000.phy.0: phy poweron failed --> -110
+> >   qcom-pcie 1bd0000.pcie: cannot initialize host
+> >   qcom-pcie 1bd0000.pcie: probe with driver qcom-pcie failed with error -110
+> > 
+> > This can be reliably reproduced on the X1E CRD, QCP and Devkit when no card
+> > is inserted for PCIe3.
+> > 
+> > Fix this by checking the QPHY_PCS_POWER_DOWN_CONTROL register in addition
+> > to QPHY_START_CTRL. If the PHY is powered down with the register, it
+> > doesn't conform to the expectations for using the "no_csr" reset, so we
+> > fully re-initialize with the normal reset sequence.
+> > 
+> > Also check the register more carefully to ensure all of the bits we expect
+> > are actually set. A simple !!(readl()) is not enough, because the PHY might
+> > be only partially set up with some of the expected bits set.
+> > 
+> > Cc: stable@vger.kernel.org
+> > Fixes: 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention support")
+> > Signed-off-by: Stephan Gerhold <stephan.gerhold@linaro.org>
+> > ---
+> > Changes in v2:
+> > - Ensure that all expected bits are set (Konrad)
+> > - Link to v1: https://lore.kernel.org/r/20250812-phy-qcom-qmp-pcie-nocsr-fix-v1-1-9a7d0a5d2b46@linaro.org
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 ++++++++++++--
+> >  1 file changed, 12 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index 95830dcfdec9b1f68fd55d1cc3c102985cfafcc1..80973527fafcb294273dff1864828532dab738db 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > @@ -3067,6 +3067,14 @@ struct qmp_pcie {
+> >  	struct clk_fixed_rate aux_clk_fixed;
+> >  };
+> >  
+> > +static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
+> > +{
+> > +	u32 reg;
+> > +
+> > +	reg = readl(base + offset);
+> > +	return (reg & val) == val;
+> > +}
+> > +
+> >  static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
+> >  {
+> >  	u32 reg;
+> > @@ -4339,10 +4347,12 @@ static int qmp_pcie_init(struct phy *phy)
+> >  	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+> >  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+> >  	void __iomem *pcs = qmp->pcs;
+> > -	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+> >  	int ret;
+> >  
+> > -	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
+> > +	qmp->skip_init = qmp->nocsr_reset &&
+> > +		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
+> > +		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
 > 
-> It seems the patches get reviewed tag for a long time, can you give this
+> IMHO the "phy_initialized" variable does provide valuable context to
+> what those (now) two lines represents. That is particularly relevant as
+> the second one is active low...so at least I need to think a bit extra
+> to understand what's going on.
 > 
-> series further comment or help me to merge them ?
 
+I dropped the "phy_initialized" variable mainly because it didn't "look
+good" together with the line wrapping of the two new longer lines. :-)
 
-You pinged after one day.
+Perhaps it would already help to reuse and clarify the comment block
+below, like this?
 
-I asked you to stop.
+Thanks,
+Stephan
 
-No respond. Now you pinged after 2 days.
-
-Pinging time is 2 weeks. Read your internal guideline or kernel process
-documents. Such frequent pings are only contributing to unnecessary
-mailbox traffic.
-
-Best regards,
-Krzysztof
+@@ -4339,16 +4347,21 @@ static int qmp_pcie_init(struct phy *phy)
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *pcs = qmp->pcs;
+-	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+ 	int ret;
+ 
+-	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
+ 	/*
+-	 * We need to check the existence of init sequences in two cases:
+-	 * 1. The PHY doesn't support no_csr reset.
+-	 * 2. The PHY supports no_csr reset but isn't initialized by bootloader.
+-	 * As we can't skip init in these two cases.
++	 * We can skip PHY initialization if all of the following conditions
++	 * are met:
++	 *  1. The PHY supports the nocsr_reset that preserves the PHY config.
++	 *  2. The PHY was started (and not powered down again) by the
++	 *     bootloader, with all of the expected bits set correctly.
++	 * In this case, we can continue without having the init sequence
++	 * defined in the driver.
+ 	 */
++	qmp->skip_init = qmp->nocsr_reset &&
++		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
++		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
++
+ 	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
+ 		dev_err(qmp->dev, "Init sequence not available\n");
+ 		return -ENODATA;
 
 -- 
 linux-phy mailing list
