@@ -4,100 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8423CA0EE6
-	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:08:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46204CA0EE6
+	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:32:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wWAaBzrX/nSxXp8PR7jnjfLh5HxCwUJPSEnv7uT93dA=; b=x1Y9tGlLNeW3ce
-	kRTE+HF3YR6iuDD4g3+UxnDdnvs1lIZU2j8/crLDn5EIp8lOa4v5DZPTgRDBpJVgPY4xrA4zFFcht
-	M7rHrmT2BgrHeMSerJy51ccssIyy7aKsKMNtv928HAMD4NgHb3R3rPylcxF9h9ah2/TvMTcvGt4rQ
-	kIYORf3f3ccxVn647sDOj20L2tp/P+0UJBvY9wHtJvVuvCzgWV9jjBgZlh8xmpbHLnmlPjbUFfk7w
-	qRMVSpvCPuJXW5FD2RadjOTuEHm7wfoko2uDmNcm/w4zB8CHlKXJ0r0wqHTqCBQ4nEd4IT6U7DBqr
-	V1oH1/2ligb6ueTT7Itg==;
+	List-Owner; bh=RaayC+PF2Puezj6Q9AS0E7o6qmp2FE4wp/uTmD4JZso=; b=PygkRG2ycaFbvz
+	QarrYEgZCQgIbxYMAQlBgpxLTS1LII1L/Nk68SYeZbjYI8P7HiShB2B6Sq7AbBmPHc5vuj49Sub9b
+	WplRGiEBJNGpPZ1EPoNSLKB4iwC339Vd1kFjcNZzi6uqDD9Wm3eurDmOzvnF/b8OCOd8an68KSRG/
+	Ug3XnAtRcIRU5PTPZOgMiZ3DC1yO8xt52r+/o9fG3zFRExKJqUhDVdst8w1r71Qh9dd7/tztYavlf
+	eK3kl87vn5rYZaFAO98dBDnhYONEBwVZ7GOpsdvqSmJIOXVHft4bUwVaCqWnooDbBEdhEjOj7QDjX
+	5YTQAakOwZdSVpN+I1Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unCtf-00000004Mi5-2i1t;
-	Sat, 16 Aug 2025 09:08:19 +0000
-Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
+	id 1unDHK-00000004Oct-3qG8;
+	Sat, 16 Aug 2025 09:32:46 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unCaV-00000004KHx-1AFv;
-	Sat, 16 Aug 2025 08:48:32 +0000
-Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-76e1ff326bbso2859595b3a.1;
-        Sat, 16 Aug 2025 01:48:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1755334110; x=1755938910; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=EDWOGAR/V8qhS+DEW6fYz84GWwsYflwCKKabdx3FCTA=;
-        b=kc9JqcYlYSWttZRxAgHjNzNZsqIKBqjxaUZOxWWmZW0CvnvGOsb1b6DHdEb91nupxe
-         6S4uviahfOnfwKfpnjCezhbH1LbBfeyMMA9W4q2ryDzVzthTm/I4qiPbmzHZwFwDIs0D
-         bSHRbqlPJ03yY8hpv1hwPZKpW/uyb6bLZdrgho4fAVovOTAH5v9zh4XwzzgDyVr6ehHU
-         Lhm+hSWcJ13IfBnYrBfbUP3r8CACgujAC2/aHyGJ3KcOnDGEYwQnqFehbmMO+FQDWg7w
-         rbvXvpJvzwvON4nL4Q6CePTeQIYk9nZlSHqrX9Fso82IfwZKt0ON9rWCvZ5hbu8nmEAt
-         etEg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755334110; x=1755938910;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=EDWOGAR/V8qhS+DEW6fYz84GWwsYflwCKKabdx3FCTA=;
-        b=KUWw75CfxNsNHgIgH0N+q4Ppr9Tlo/euWojqMaJcsWkspmGbdI7qlB1zzW5j/DsjcV
-         Ji9sfZePBSRJLH+45Y7aeUF8nam+v2VjsJA5AsgD4YFoQAZ6FOdPWlw8M/FxLJYPH5VN
-         j6/cV8iGTpdltu8AYmkc6mYNp3DntFJEK6EE/3xA2czLOuuIg3rkbx/GJjIY8V8mNVh9
-         z1OLzbWAa2Z09KvI3Vdc86K4RN+V/homC8umi5HP4xoBnC3Q7UmFeqdndzG4ShgeqdMH
-         xmtgYu5L5CCkpbXWz5q/HbXvHn65jjWBhplvbqbm3YoAdgQVjRDGGRvy/zS2nNah90v0
-         BDag==
-X-Forwarded-Encrypted: i=1; AJvYcCUQB+LC82VMeyz9dTf4NmmmXrpiZJUEJ/BdTISwxpuLFqx0je9yTETejo7vvxE7/JAjekZfpjEFx7Bs4YQ7G5qd@lists.infradead.org, AJvYcCVLMqwpAZDF5Y0Z3QqRYeSpyQfNnjX7RDp4u9yf9TkIm7yqkTAJI8MdCa+uLNbFqrvgqZfDtSO8nxdU@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxmh97ju/zCjC0OHyv2ibOVaRPE7PWD1Tib37/Q0qEvAxl249yk
-	YvDp75T+CIkVxnN2dJ5gZ4z8a7Jl99ffCqSzBGn8HmcbnyaGgwDWjq8bg40q2ncfQ8g=
-X-Gm-Gg: ASbGnctYf8ZRFKB0Y+yCPGqNlHGcDVsCLIX3VKBTI7PMA5q423+L2MQVnA0muqb68Eb
-	Jpw5J0hwCg1xMsUE0QfSCtuy8kTjBM5wxYhS/tQN7VqQO7QiFnc0rnZukJCTSKU5ErOXkkIWmuE
-	j9Y4plAZ1exbnt9Zit0WFCK7jd/0XWN69AjmNT8xYMbhjhbMrDJyzh4YyZFbzFkWn1hD7PtlNvG
-	A8ZqyXIqfh6Kj9Ru5qJv8184+ZKjCwCq81YxYK5EEbasjzhdhp9ANMcx4A7p5HLW4pe00KT4akm
-	VE5hiHXmafzfOJ2G92t/+iyyeMFg9fpwkNSk57iGTOTDsc1z/ufPSdbEpgxh8h8RyXKPxridpgl
-	QiPpiIMA/Kig=
-X-Google-Smtp-Source: AGHT+IGsQHajlRxkkJKhsBN5q8Xue9SzeHzYvWpvVEasktK/+7UqcjxhnXytQgxkbXL5divXvBb2fw==
-X-Received: by 2002:a17:902:d50b:b0:242:b138:8110 with SMTP id d9443c01a7336-244598679d7mr146468085ad.24.1755334110487;
-        Sat, 16 Aug 2025 01:48:30 -0700 (PDT)
-Received: from junAIR ([212.192.12.80])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2446d57f12esm31048215ad.157.2025.08.16.01.48.21
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 16 Aug 2025 01:48:30 -0700 (PDT)
-From: iuncuim <iuncuim@gmail.com>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Andre Przywara <andre.przywara@arm.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>
-Cc: devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-clk@vger.kernel.org,
-	linux-sunxi@lists.linux.dev
-Subject: [PATCH 7/7] arm64: dts: allwinner: a523: activate USB3 for all boards
-Date: Sat, 16 Aug 2025 16:47:00 +0800
-Message-ID: <20250816084700.569524-8-iuncuim@gmail.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <20250816084700.569524-1-iuncuim@gmail.com>
-References: <20250816084700.569524-1-iuncuim@gmail.com>
+	id 1unDEn-00000004ON4-2kxR;
+	Sat, 16 Aug 2025 09:30:09 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 2E55261431;
+	Sat, 16 Aug 2025 09:30:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91131C4CEEF;
+	Sat, 16 Aug 2025 09:30:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755336607;
+	bh=L2pDXt7Di7jsWWHk1cqmaqgT51d11o638zJ41+YNieA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dxn2Ubou6yl9kFWMgk/D7RxcLoM2tDpKhszvc4dgSOULYOESiXAGX0J6gYgEa2anA
+	 bSyFjMdc/kk5DAIuSMix4zeJtOITqNGpIFUbSJYZqlSWlD+yrNwoNz+1fgbRBomRfr
+	 zNn4CvsRYzpm4PgZpQP2cXDTx53/Lkzrno+9UMT24isuxs7NaoqX97rtVI7LTxRyxI
+	 cLI1CGXEUeLE0VS2kUSVcj38Jli0NZNNSLsvG/2+cdWDMccLxF4HBRbqEohMLUO9xz
+	 8pbhAVLVVUtd/BoYUqvHtgrBhFGwo4S0er/oFx2XxMzOKdXG50ykdBqX5WVi2n2HNY
+	 WEi8RSTQnoRWg==
+Message-ID: <0e149bdb-8830-42a2-927b-a489b4195015@kernel.org>
+Date: Sat, 16 Aug 2025 11:30:01 +0200
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250816_014831_315403_76F65A10 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/7] clk: sunxi-ng: a523: add missing usb related clocks
+To: iuncuim <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>, Andre Przywara
+ <andre.przywara@arm.com>, Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-sunxi@lists.linux.dev
+References: <20250816084700.569524-1-iuncuim@gmail.com>
+ <20250816084700.569524-2-iuncuim@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250816084700.569524-2-iuncuim@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,78 +122,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Mikhail Kalashnikov <iuncuim@gmail.com>
+On 16/08/2025 10:46, iuncuim wrote:
+> From: Mikhail Kalashnikov <iuncuim@gmail.com>
+> 
+> Several clocks were omitted when adding the original driver. These clocks
+> are necessary for USB 3.0 to work correctly. I added these declarations
+> according to the driver's BSP code.
+> 
+> Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
+> ---
+>  drivers/clk/sunxi-ng/ccu-sun55i-a523.c      | 32 +++++++++++++++++++++
+>  drivers/clk/sunxi-ng/ccu-sun55i-a523.h      |  2 +-
+>  include/dt-bindings/clock/sun55i-a523-ccu.h |  4 +++
 
-Currently, these devices have a USB 3.0 port. Therefore, we can activate
-it.
 
-Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
----
- arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dts | 8 ++++++++
- arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts  | 8 ++++++++
- arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts | 8 ++++++++
- 3 files changed, 24 insertions(+)
+Bindings should be a separate patch. Checkpatch should also suggest that.
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dts b/arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dts
-index 553ad774e..6842f8e8d 100644
---- a/arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dts
-@@ -47,6 +47,14 @@ reg_usb_vbus: vbus {
- 	};
- };
- 
-+&combophy {
-+	status = "okay";
-+};
-+
-+&dwc3 {
-+	status = "okay";
-+};
-+
- &ehci0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts b/arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts
-index a96927fbd..19388bc11 100644
---- a/arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts
-@@ -46,6 +46,14 @@ reg_vcc3v3: vcc3v3 {
- 	};
- };
- 
-+&combophy {
-+	status = "okay";
-+};
-+
-+&dwc3 {
-+	status = "okay";
-+};
-+
- &ehci0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts b/arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
-index b9eeb6753..6f05cd297 100644
---- a/arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
-@@ -57,6 +57,14 @@ reg_usb_vbus: vbus {
- 	};
- };
- 
-+&combophy {
-+	status = "okay";
-+};
-+
-+&dwc3 {
-+	status = "okay";
-+};
-+
- &ehci0 {
- 	status = "okay";
- };
--- 
-2.50.1
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
