@@ -4,111 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1299CA0EE6
-	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CB0FCA0EE4
+	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 13:36:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g8KK+3kH/ZCDgEv90o4SqjAfqsgszPe+nijy94y/weo=; b=atnea8eSIYiU+o
-	9RnegcMuU1uvJUhjNN9MiJghL5jmm96YvSsvLmFfX+epxJuNV/anDQKlvSDplBtWcYggF4hNOgu7S
-	9mPgyYjLtTBO9NAuaip++b+vmCcV48gIey3RFw9eyFtjcDAyF7Xf8Aj8zGsEiPckq4Z7bJX6MNo2S
-	D+Ojm6xZxWpH6uIm6UJEnATFRv2UDW5wjJfZ7DmWRzq61qUa0W3mftxqZSS1L6hDyXj21xnp/4xcR
-	Rk9RfMyZ0kmVvEBfowKnuwzzPgRu8bQYI502LG+KqFULXHZDX53V/2W2yaHwh9uW6yZcBLZ9kDHEX
-	wN2/jLSJotom30XCVWOQ==;
+	List-Owner; bh=7Ac62gSyPTNX/EhtEhYU6vVMyqTsCJou8YYBbXE9Hkg=; b=GmiQ0HsaG96dl5
+	+0jbuNxTVdfZPK51sFH9RAKeAcWy8RzKVkmShZIGD/kQwnlm7ouo+oX1gqXG/Fr7fK27BEke/KYg8
+	sX6JoDgpAdlUno5PQuMekSGPQdG5UlLi5OnqzWAeWh6iuQWhRj9+63Ii9uvRZJJwxbMl3XLdhoQ7U
+	4PqqllSdA2g++3dr81VuR2G+Tb/TFHIsPsM3MaNraVusDWE1lVBqwgRnBwo2/8pwa7PZYNaxX5SGs
+	hwRMfJ8zRZ6Uuav6lpjJWN9i9zaF5xhB44rqjCaO//YCGNhQVYjHABlTo81tvasg6mPR0Icb5ZSPX
+	rvRgkCec8bS+1Fmw+pHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDRQ-00000004Q1k-2Bsr;
-	Sat, 16 Aug 2025 09:43:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDHl-00000004Oj3-46FC;
-	Sat, 16 Aug 2025 09:33:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id AB59845C4B;
-	Sat, 16 Aug 2025 09:33:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2AFAC4CEEF;
-	Sat, 16 Aug 2025 09:33:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755336793;
-	bh=CGm9yLJptkx/owDsJQBhgom8+2ST8ifFCJpbZhGlWus=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LWylBKzmboh6g8QmqLgQs7AM6K5L8Ww3TEfU0JKccbD8j58oEDnl4gEKayAhdfpZX
-	 r6zVnfVUCKMPN8BuOTY8mnF4r5G2Tzu21HFIQeU0kJ+0QX+v4PH/7CuRpUAPNWskel
-	 fb1pLoAWdJAqchrxf38Z6rnzaWcq99jMrqZiXG+Nrcm38nek4IZ9+3o1x4aBT5e9pK
-	 i4wA4r1F+z6jvEASMqrWEv0IjaHPQtYDi9tHRRnYQcF8enh9sqptmILGMUg9rP7pbH
-	 iHMKhNcmlNzE9cJFcB8cWSA42xM8L8p0G+DwEwYFDaSC+wD2aD05H/GdbYcKeKa78g
-	 ofyMhmRA4sUNg==
-Message-ID: <484e4ff2-c7b2-4087-8850-5a972e7c82b4@kernel.org>
-Date: Sat, 16 Aug 2025 11:33:07 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/7] phy: allwinner: a523: add USB3/PCIe PHY driver
-To: iuncuim <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>, Andre Przywara
- <andre.przywara@arm.com>, Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	id 1unH5a-00000004hFN-10Bq;
+	Sat, 16 Aug 2025 13:36:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1unH2w-00000004h7Z-2dra;
+	Sat, 16 Aug 2025 13:34:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 940551691;
+	Sat, 16 Aug 2025 06:33:59 -0700 (PDT)
+Received: from minigeek.lan (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 874CD3F5A1;
+	Sat, 16 Aug 2025 06:34:05 -0700 (PDT)
+Date: Sat, 16 Aug 2025 14:31:17 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: iuncuim <iuncuim@gmail.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej
+ Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-sunxi@lists.linux.dev
+Subject: Re: [PATCH 3/7] phy: sun4i-usb: a523: add support for the USB2 PHY
+Message-ID: <20250816143117.4b86ecc6@minigeek.lan>
+In-Reply-To: <20250816084700.569524-4-iuncuim@gmail.com>
 References: <20250816084700.569524-1-iuncuim@gmail.com>
- <20250816084700.569524-5-iuncuim@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250816084700.569524-5-iuncuim@gmail.com>
+	<20250816084700.569524-4-iuncuim@gmail.com>
+Organization: Arm Ltd.
+X-Mailer: Claws Mail 4.2.0 (GTK 3.24.31; x86_64-slackware-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250816_023314_063730_240CFCA3 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20250816_063410_754967_2C667B66 
+X-CRM114-Status: GOOD (  24.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,75 +71,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/08/2025 10:46, iuncuim wrote:
-> +
-> +	phy->reset = devm_reset_control_get(dev, NULL);
-> +	if (IS_ERR(phy->reset)) {
-> +		dev_err(dev, "failed to get reset control\n");
-> +		return PTR_ERR(phy->reset);
+On Sat, 16 Aug 2025 16:46:56 +0800
+iuncuim <iuncuim@gmail.com> wrote:
 
-Syntax is return dev_err_probe.
+Hi Mikhail,
 
-> +	}
-> +
-> +	phy->regs = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(phy->regs))
-> +		return PTR_ERR(phy->regs);
-> +
-> +	phy->regs_clk = phy->regs + PHY_CLK_OFFSET;
-> +	if (IS_ERR(phy->regs_clk))
-> +		return PTR_ERR(phy->regs_clk);
-> +
-> +	phy->phy = devm_phy_create(dev, NULL, &sun55i_usb3_pcie_phy_ops);
-> +	if (IS_ERR(phy->phy)) {
-> +		dev_err(dev, "failed to create PHY\n");
-> +		return PTR_ERR(phy->phy);
-> +	}
-> +
-> +	phy_set_drvdata(phy->phy, phy);
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +
-> +	ret = sun55i_usb3_pcie_clk_init(phy);
-> +	if (ret)
-> +		return ret;
-> +	dev_info(phy->dev, "phy version is: 0x%x\n", readl(phy->regs));
+many thanks for posting these patches, that's a nice surprise to see
+this moving forward!
+
+I think there are some issues with this series, but we can surely iron
+those out.
+
+> From: Mikhail Kalashnikov <iuncuim@gmail.com>
+> 
+> Previously, USB PHY was compatible with D1 and did not require
+> separatedata options. But now we need to add a third PHY, which makes it
+> incompatible. The third PHY is used together with USB3/PCIe combophy with
+> DWC3 controller.
+
+It is really used together? I think on IRC we lately established that
+the USB2.0 and USB3.0 parts are somewhat independent, and I think the
+Radxa board wires PHY1 to the D-/D+ pins of the USB3.0 socket, instead
+of PHY2.
+
+Regardless: this change would be a compatibility break: When a new
+kernel with this change sees an old DT, it would bail out, because it
+doesn't find the resources for the third PHY in the DT.
+
+What I'd suggest instead is to drop the hardcoded assumption about the
+number of PHYs, and instead just enumerate all "pmu<x>" cells in
+reg-names. That would work with both old and new DTs, and then we can
+also keep the fallback compatible name in the DT, to allow new DTs on
+older kernels (for instance a U-Boot provided DT on a stable kernel).
+
+As an added benefit, it would make future enablement easier, as we are
+more likely to find a matching compatible string, even when the number
+of PHYs differ.
+
+Cheers,
+Andre
+
+> In the BSP code, the third PHY requires a separate glue
+> driver, but it seems that it is not needed.
 
 
-This should be rather dev_dbg. See coding style.
 
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +static const struct of_device_id sun55i_usb3_pcie_phy_of_match[] = {
-> +	{ .compatible = "allwinner,sun55i-a523-usb3-pcie-phy" },
 
-Please run scripts/checkpatch.pl on the patches and fix reported
-warnings. After that, run also 'scripts/checkpatch.pl --strict' on the
-patches and (probably) fix more warnings. Some warnings can be ignored,
-especially from --strict run, but the code here looks like it needs a
-fix. Feel free to get in touch if the warning is not clear.
 
-> +	{ },
+> 
+> Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
+> ---
+>  drivers/phy/allwinner/phy-sun4i-usb.c | 10 ++++++++++
+>  1 file changed, 10 insertions(+)
+> 
+> diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+> index 8873aed3a..bb79339f2 100644
+> --- a/drivers/phy/allwinner/phy-sun4i-usb.c
+> +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+> @@ -1025,6 +1025,15 @@ static const struct sun4i_usb_phy_cfg sun50i_h616_cfg = {
+>  	.siddq_in_base = true,
+>  };
+>  
+> +static const struct sun4i_usb_phy_cfg sun55i_a523_cfg = {
+> +	.num_phys = 3,
+> +	.phyctl_offset = REG_PHYCTL_A33,
+> +	.dedicated_clocks = true,
+> +	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
+> +	.phy0_dual_route = true,
+> +	.siddq_in_base = true,
 > +};
-> +MODULE_DEVICE_TABLE(of, sun55i_usb3_pcie_phy_of_match);
 > +
-> +static struct platform_driver sun55i_usb3_pcie_phy_driver = {
-> +	.probe	= sun55i_usb3_pcie_phy_probe,
-> +	.driver = {
-> +		.of_match_table	= sun55i_usb3_pcie_phy_of_match,
-> +		.name  = "sun55i-usb3-pcie-phy",
-> +	}
-> +};
-> +module_platform_driver(sun55i_usb3_pcie_phy_driver);
-> +
-> +MODULE_DESCRIPTION("Allwinner A523 USB3/PCIe phy driver");
-> +MODULE_AUTHOR("Mikhail Kalashnikov <iuncuim@gmail.com>");
-> +MODULE_LICENSE("GPL");
+>  static const struct of_device_id sun4i_usb_phy_of_match[] = {
+>  	{ .compatible = "allwinner,sun4i-a10-usb-phy", .data = &sun4i_a10_cfg },
+>  	{ .compatible = "allwinner,sun5i-a13-usb-phy", .data = &sun5i_a13_cfg },
+> @@ -1041,6 +1050,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+>  	  .data = &sun50i_a64_cfg},
+>  	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+>  	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
+> +	{ .compatible = "allwinner,sun55i-a523-usb-phy", .data = &sun55i_a523_cfg },
+>  	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
+>  	  .data = &suniv_f1c100s_cfg },
+>  	{ },
 
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
