@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34C75CA0EE4
-	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:38:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34E48CA0EE6
+	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGJqvRvYsT1VDVpbDUfLR/e4Kzhb/cM7cmKbjV6VMeY=; b=oj04cZUe7Jf8wD
-	/QagYsHQcaK3QtK14CfwW9ZsNZiuabntM4rUKMqwkxrYmeewIs4WUDICidXvASxkgjcysr4bPNSvT
-	YjMyrD8YvLKHpTx1bc/oIOtGx5NAGM5tccsYOvPOP8+wvv/TFAf7pIY+ddm5X1moCfupgBTwHWLef
-	ihBanaN8oO5Xgd58QRfNrv9lHeO0cG4zRdXXSDpplhoJ2yBeU9RSZ+ZfpMHqOXGHPJK4TKd1cTIaE
-	Pd8O/yEWIivykzBxlNlI9uZ+iOCCGCUUE8XYBIhnH0ICbpMOWXQFEzloUxFxMxLtUn5VkANJkOk0y
-	xfHhHh6Qt+8H7wOUKWXQ==;
+	List-Owner; bh=UQaRADmkVfAcyazWicAWPxMbWFDOjGHhL2rq1V2Ffps=; b=BSM68QaGwhRDuX
+	MF1EsBb7WbSyB8oVAaEp+j0pAcgjma5ZAJPIf+q5XpOAHJCSds2OV4/Fr4xx1aV5ECRo4Ypnd0rlY
+	MjgG7OpQIY1a1kHhqjdUdzJj1A2a95rMgIykyIT2qpI6mnr3p2SnDQlUjgkrK9oa1WLUVN19Jft1Z
+	IE8YKSm3KDt6lHh94uGdk/N2OXeriCr7FZ+2gDykojczdH30uZnnxNqC1U8weHFpBnmwCmz2yV9K/
+	lnCEbQCE4VcSwyGBObcfmdavWPxwFWWTqYG3sIS4cH1OEq5Sbh1IExsD5wNrImZQv4OoIbWuhGOVp
+	5MQAdklk0Eo0R3lTETRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDMN-00000004POo-41fY;
-	Sat, 16 Aug 2025 09:37:59 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1unDOt-00000004PYP-47aG;
+	Sat, 16 Aug 2025 09:40:35 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDFy-00000004OU6-06NO;
-	Sat, 16 Aug 2025 09:31:22 +0000
+	id 1unDGi-00000004OXK-2FI2;
+	Sat, 16 Aug 2025 09:32:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 70D1F6143F;
-	Sat, 16 Aug 2025 09:31:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D396C4CEEF;
-	Sat, 16 Aug 2025 09:31:14 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id EDA7144F1D;
+	Sat, 16 Aug 2025 09:32:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BD12C4CEEF;
+	Sat, 16 Aug 2025 09:32:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755336678;
-	bh=b3nZU4EntGbWNXI7FIE7S/NEvJ6E/2WZETtliu2GRLk=;
+	s=k20201202; t=1755336726;
+	bh=oEyF2eJ6WhDQJU764/6uBj7AJ/pKHLod7UwFKVQuEmI=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=j+EN03jDrf9NJ3ILfY2KjleJ2Of4kMKFqry7Vd5Uvr8odKcnjF7QzIXFGNOlCMq2q
-	 0S9BDOC5FGe2n9S9/nOm+8zb9hZRYhYd5Gwsal/pWpT4OPOFxsoBwW6ZzO1nXKRMeH
-	 Zu2J/3Dr3iMncjIaYqltAOAG+INEQc+s7uErdkFWNCYSUBpIM+eki0gtj6/MCIzV3K
-	 L3ux2shZReP2/IFYG3K48D8WrSUveqCj3TKhcmAhql0sYp70fhHawjqSAIC2+qpEGF
-	 KIL3fQY2mB+uPaguUjGymuoHW+JkJtWBXDZAwuItb6qT+vLTbMI/WCgQVDVRuhdUEW
-	 WII4dlUkMXYCQ==
-Message-ID: <c7468189-deee-449f-b7d0-fa1830ca88fc@kernel.org>
-Date: Sat, 16 Aug 2025 11:31:12 +0200
+	b=qeiDbmo8SFZVpreHbV3TyxkEafKo6aIVu8hKK+LyPE/V9/Ml8s+IuYUOYHN1/wt2R
+	 zlUpiX8S66IOKUYiRkkEwUzry4zqQ7he5t+c2FeIHW0wwpUTm3Ofzc4LDMWraEtxEQ
+	 cGnyyTPXKHQOgL9WHex/YXEtfQr9phCkyBU2lBSLuHU9RYHJeOkXFDIOkzQM34xlX1
+	 hQSyrZIGBi+9Qjm+DDMeXFezd6oCUWcQ6qKIx4m3dck7eBVBXCQ5u2eR5TFv/GPydy
+	 LRnZ1Ql07ABzPJCh5U4lvLdiUSKzTOIgxRgDp64ipA8qsxdWi6dp/W6n9zDmGjRDDO
+	 BS05vfLm/V1rA==
+Message-ID: <5e89d0c7-5ac5-4376-bc6e-c7ff8ee05024@kernel.org>
+Date: Sat, 16 Aug 2025 11:32:00 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/7] arm64: dts: allwinner: a523: add third usb2 phy
+Subject: Re: [PATCH 5/7] arm64: dts: allwinner: a523: add USB3.0 phy node
 To: iuncuim <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -59,9 +59,9 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-sunxi@lists.linux.dev
 References: <20250816084700.569524-1-iuncuim@gmail.com>
- <20250816084700.569524-3-iuncuim@gmail.com>
-Content-Language: en-US
+ <20250816084700.569524-6-iuncuim@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -105,7 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250816084700.569524-3-iuncuim@gmail.com>
+In-Reply-To: <20250816084700.569524-6-iuncuim@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250816_023208_616337_24EAF681 
+X-CRM114-Status: GOOD (  10.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,37 +128,20 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 16/08/2025 10:46, iuncuim wrote:
 > From: Mikhail Kalashnikov <iuncuim@gmail.com>
 > 
-> It seems that there are actually three usb2 phys in the processor, which
-> makes it incompatible with D1.
-> The third phy is used together with USB3/PCIe combophy with DWC3
-> controller. In the BSP code, the third PHY requires a separate glue
-> driver, but it seems that it is not needed.
-> According to the BSP code, the third phy does not have a reset line; the
-> only reset is declared in the DWC3 node, but none of this is documented.
-> Since sun4i-usb-phy driver requires a reset, I added RST_BUS_3 here.
+> After adding the phy driver, we can also add phy node. In addition to the
+> clk and reset lines, the power domain PD_PCIE is declared in this node
+> according to the bsp dtb. So let's mention it. 
+> Currently, phy driver does not support role selection and only works in
+> USB3.0 mode.
 > 
 > Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
 > ---
->  .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 21 ++++++++++++-------
->  1 file changed, 13 insertions(+), 8 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi b/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
-> index 6b6f2296b..e4ed4fa82 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
-> @@ -503,22 +503,27 @@ usb_otg: usb@4100000 {
->  		};
->  
->  		usbphy: phy@4100400 {
-> -			compatible = "allwinner,sun55i-a523-usb-phy",
-> -				     "allwinner,sun20i-d1-usb-phy";
-> +			compatible = "allwinner,sun55i-a523-usb-phy";
+>  arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi | 10 ++++++++++
+>  1 file changed, 10 insertions(+)
 
-
-That's potential break of all users. Also, having third phy (so
-additional piece) is not making things incompatible.
-
-
+Please organize your patches correctly. One DTS was in the middle of
+patchset, other is at the end. They all must be at the end, because you
+cannot have dependency of driver on DTS.
 
 Best regards,
 Krzysztof
