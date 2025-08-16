@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46204CA0EE6
-	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:32:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34C75CA0EE4
+	for <linux-phy@archiver.kernel.org>; Sat, 16 Aug 2025 09:38:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RaayC+PF2Puezj6Q9AS0E7o6qmp2FE4wp/uTmD4JZso=; b=PygkRG2ycaFbvz
-	QarrYEgZCQgIbxYMAQlBgpxLTS1LII1L/Nk68SYeZbjYI8P7HiShB2B6Sq7AbBmPHc5vuj49Sub9b
-	WplRGiEBJNGpPZ1EPoNSLKB4iwC339Vd1kFjcNZzi6uqDD9Wm3eurDmOzvnF/b8OCOd8an68KSRG/
-	Ug3XnAtRcIRU5PTPZOgMiZ3DC1yO8xt52r+/o9fG3zFRExKJqUhDVdst8w1r71Qh9dd7/tztYavlf
-	eK3kl87vn5rYZaFAO98dBDnhYONEBwVZ7GOpsdvqSmJIOXVHft4bUwVaCqWnooDbBEdhEjOj7QDjX
-	5YTQAakOwZdSVpN+I1Kg==;
+	List-Owner; bh=hGJqvRvYsT1VDVpbDUfLR/e4Kzhb/cM7cmKbjV6VMeY=; b=oj04cZUe7Jf8wD
+	/QagYsHQcaK3QtK14CfwW9ZsNZiuabntM4rUKMqwkxrYmeewIs4WUDICidXvASxkgjcysr4bPNSvT
+	YjMyrD8YvLKHpTx1bc/oIOtGx5NAGM5tccsYOvPOP8+wvv/TFAf7pIY+ddm5X1moCfupgBTwHWLef
+	ihBanaN8oO5Xgd58QRfNrv9lHeO0cG4zRdXXSDpplhoJ2yBeU9RSZ+ZfpMHqOXGHPJK4TKd1cTIaE
+	Pd8O/yEWIivykzBxlNlI9uZ+iOCCGCUUE8XYBIhnH0ICbpMOWXQFEzloUxFxMxLtUn5VkANJkOk0y
+	xfHhHh6Qt+8H7wOUKWXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDHK-00000004Oct-3qG8;
-	Sat, 16 Aug 2025 09:32:46 +0000
+	id 1unDMN-00000004POo-41fY;
+	Sat, 16 Aug 2025 09:37:59 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unDEn-00000004ON4-2kxR;
-	Sat, 16 Aug 2025 09:30:09 +0000
+	id 1unDFy-00000004OU6-06NO;
+	Sat, 16 Aug 2025 09:31:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2E55261431;
-	Sat, 16 Aug 2025 09:30:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91131C4CEEF;
-	Sat, 16 Aug 2025 09:30:03 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 70D1F6143F;
+	Sat, 16 Aug 2025 09:31:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D396C4CEEF;
+	Sat, 16 Aug 2025 09:31:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755336607;
-	bh=L2pDXt7Di7jsWWHk1cqmaqgT51d11o638zJ41+YNieA=;
+	s=k20201202; t=1755336678;
+	bh=b3nZU4EntGbWNXI7FIE7S/NEvJ6E/2WZETtliu2GRLk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dxn2Ubou6yl9kFWMgk/D7RxcLoM2tDpKhszvc4dgSOULYOESiXAGX0J6gYgEa2anA
-	 bSyFjMdc/kk5DAIuSMix4zeJtOITqNGpIFUbSJYZqlSWlD+yrNwoNz+1fgbRBomRfr
-	 zNn4CvsRYzpm4PgZpQP2cXDTx53/Lkzrno+9UMT24isuxs7NaoqX97rtVI7LTxRyxI
-	 cLI1CGXEUeLE0VS2kUSVcj38Jli0NZNNSLsvG/2+cdWDMccLxF4HBRbqEohMLUO9xz
-	 8pbhAVLVVUtd/BoYUqvHtgrBhFGwo4S0er/oFx2XxMzOKdXG50ykdBqX5WVi2n2HNY
-	 WEi8RSTQnoRWg==
-Message-ID: <0e149bdb-8830-42a2-927b-a489b4195015@kernel.org>
-Date: Sat, 16 Aug 2025 11:30:01 +0200
+	b=j+EN03jDrf9NJ3ILfY2KjleJ2Of4kMKFqry7Vd5Uvr8odKcnjF7QzIXFGNOlCMq2q
+	 0S9BDOC5FGe2n9S9/nOm+8zb9hZRYhYd5Gwsal/pWpT4OPOFxsoBwW6ZzO1nXKRMeH
+	 Zu2J/3Dr3iMncjIaYqltAOAG+INEQc+s7uErdkFWNCYSUBpIM+eki0gtj6/MCIzV3K
+	 L3ux2shZReP2/IFYG3K48D8WrSUveqCj3TKhcmAhql0sYp70fhHawjqSAIC2+qpEGF
+	 KIL3fQY2mB+uPaguUjGymuoHW+JkJtWBXDZAwuItb6qT+vLTbMI/WCgQVDVRuhdUEW
+	 WII4dlUkMXYCQ==
+Message-ID: <c7468189-deee-449f-b7d0-fa1830ca88fc@kernel.org>
+Date: Sat, 16 Aug 2025 11:31:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/7] clk: sunxi-ng: a523: add missing usb related clocks
+Subject: Re: [PATCH 2/7] arm64: dts: allwinner: a523: add third usb2 phy
 To: iuncuim <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -59,9 +59,9 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-sunxi@lists.linux.dev
 References: <20250816084700.569524-1-iuncuim@gmail.com>
- <20250816084700.569524-2-iuncuim@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <20250816084700.569524-3-iuncuim@gmail.com>
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -105,7 +105,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250816084700.569524-2-iuncuim@gmail.com>
+In-Reply-To: <20250816084700.569524-3-iuncuim@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,18 +125,37 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 16/08/2025 10:46, iuncuim wrote:
 > From: Mikhail Kalashnikov <iuncuim@gmail.com>
 > 
-> Several clocks were omitted when adding the original driver. These clocks
-> are necessary for USB 3.0 to work correctly. I added these declarations
-> according to the driver's BSP code.
+> It seems that there are actually three usb2 phys in the processor, which
+> makes it incompatible with D1.
+> The third phy is used together with USB3/PCIe combophy with DWC3
+> controller. In the BSP code, the third PHY requires a separate glue
+> driver, but it seems that it is not needed.
+> According to the BSP code, the third phy does not have a reset line; the
+> only reset is declared in the DWC3 node, but none of this is documented.
+> Since sun4i-usb-phy driver requires a reset, I added RST_BUS_3 here.
 > 
 > Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
 > ---
->  drivers/clk/sunxi-ng/ccu-sun55i-a523.c      | 32 +++++++++++++++++++++
->  drivers/clk/sunxi-ng/ccu-sun55i-a523.h      |  2 +-
->  include/dt-bindings/clock/sun55i-a523-ccu.h |  4 +++
+>  .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 21 ++++++++++++-------
+>  1 file changed, 13 insertions(+), 8 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi b/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+> index 6b6f2296b..e4ed4fa82 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+> @@ -503,22 +503,27 @@ usb_otg: usb@4100000 {
+>  		};
+>  
+>  		usbphy: phy@4100400 {
+> -			compatible = "allwinner,sun55i-a523-usb-phy",
+> -				     "allwinner,sun20i-d1-usb-phy";
+> +			compatible = "allwinner,sun55i-a523-usb-phy";
 
 
-Bindings should be a separate patch. Checkpatch should also suggest that.
+That's potential break of all users. Also, having third phy (so
+additional piece) is not making things incompatible.
+
+
 
 Best regards,
 Krzysztof
