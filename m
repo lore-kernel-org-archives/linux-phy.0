@@ -4,95 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0B35CA0EE6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 05:21:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBD9DCA0EE6
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 05:30:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6GRRoNW9AEfZxvY5v1qsUO9yZpL5n50Kisdi1P9NOFE=; b=MFaORfwytO+04c
-	l8YomPwi8nYQHU7gKAJSWb14aJ4WLgqOapQL79uILgZBrfU7zBR57/2tks2crI7qkI1Q7yp4Ckkpt
-	8hzt19WM6Om5H7Vl03Ih+MjZNdIXniYS6mmlPx4TerufsIzSC9Zw0MakFHaZtpCM8BfO2YC//6/oM
-	Vlin7p496GdAL3IPrJN5Y2tJpR4iSTygVuboBAwNNWD1pJwC9G7mU079g19kbm8aQz4HarqGX8O6s
-	aWUJMWeVwgMHsqJnOA6HwWtq+QVNsiqiZF6ghALPH6KddalSTVD8lYCprHxg6Ya/w8TL9wLBokP42
-	pLp2sryx43zZk7yX+02g==;
+	List-Owner; bh=XYb6KUUMGJnHIWppqbuORYXxAMyWurNqsjI4VHsJk5A=; b=UV7LLyb8UkuCd7
+	jJ5BXXUi8kNaYi9JeUD4rr5IM8oWMzxZStRz8aF7wKW/JXSbn8gZZmx8jlnlRjVZ/mTGq5TsD1h8v
+	zoUiSQpnzBbfNIhq/8sOKtyI05Wdbk9mAR2F1bo0NDCoohlCWN3OCMKVra6U9WFpE0RNMHIWGCEVm
+	Ii7hURpUw3NDE+l93U5VZAglAP2n47PBYCEl3HJRo9U+/emBc/Zy3G4CIaC+G3gfIS4LJvKgrzdgy
+	hc7QAO0FyBGKDFqbgGTGmvvOt/ajt5sEFSORUlAl1GDHwgtDnL8b0/4qnvkdXBPTMXcsyG9FMLjQU
+	pSyzuEuiq5i6/X1EJ7JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoEmf-00000009QPc-2E0a;
-	Tue, 19 Aug 2025 05:21:21 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1uoEvl-00000009R2K-2GNa;
+	Tue, 19 Aug 2025 05:30:45 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoEmc-00000009QP1-3DJX
+	id 1uoEuZ-00000009Qsx-2slv
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Aug 2025 05:21:20 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-afcb61f6044so815176466b.0
-        for <linux-phy@lists.infradead.org>; Mon, 18 Aug 2025 22:21:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1755580877; x=1756185677; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=dEbBJBOCsv8FoKMcsZux3iuZl2krc57rvNsAxShKVFs=;
-        b=caxdKsEX8O9AVL0QSRMjU7AvEDZ1kz+PBqQCupGCfk+hUZ2KJz1HZkuC9G/+ASrN32
-         669zyFJtHVNKu6T6/5rcytcG0QBLi4rcOAYjjMf47KRD5ZDQvZLaBpAMVxtQ2b4irl7t
-         rD2cImQfQ3Eeq/XWvY0V36JWESHpnmRVaouqaTIcChfkJxTHmSBpyzSW9kJ2o3RUvH2S
-         nakPkfpNsyXNYk9qQcPRF34vEtrheOyyMBjrSiSxYeTJgGfdAViG7+ox+nHmJs5HDCHv
-         GJl6+Ofj/KgDDmwMfN9OAtU14eb+PeZdbzuL+aJbCsCZ6YnPmBo/EM+LT87JhEnxDZK1
-         tx8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755580877; x=1756185677;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=dEbBJBOCsv8FoKMcsZux3iuZl2krc57rvNsAxShKVFs=;
-        b=NalalG0s51xacNb/I4VuTrq9JoZsrfL3IaNGFeXOah+WesQ9ACKdmv56Ok8RK16pPV
-         ep3mEc5UgnEEm+Iv3VM3dLAmqlI0qzFtAep0QESH2q/fY78Tk/K6mgqBB2KZU+RIeoRB
-         ltzl3nSed0zG+4upEJMNCGtsnYqcpUH2SwEwmNpYIwC7MF6ZoYAjaXJT2vmmvXUFAYY4
-         QHhZwFL8g6YI/tR2lg8PQhO94xjfIVluGf5+yaFZZWt7PoKlbv95sdR2PgX6eClvlSbG
-         l44jfJAKia7tarjd2II0Uvo5TBr+n4psS3LqllMuX/smD7ZFQYJQblskUKOItNcN5flG
-         DUyA==
-X-Forwarded-Encrypted: i=1; AJvYcCWCcsuVkFc6DJdORcygXDyZedmQwlH5ViskqRruRLUHi04Hf4+u0xikETtt/7/6xy8dN8dpIyoOPoc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy/qyHtVVrvKqa2xJmE1XYfdyJdvcQsLVng9VriwnZ+/jE8cx66
-	clETLb6M5oHwVGfWFE8IgSODqfrGZWo4uwbbwQk20go/bFhYoEH33aLa8Ql+F2Xa5Sc=
-X-Gm-Gg: ASbGncvy2L3VTkq/vst2IdRdlm0QAySqf6LyetB0AXMs16zg1u62ZRK/dF7OrAFnoSV
-	rYIOx3drenmMyMPxZK97kg73cyTsAxaQ4gQJFS9uk1uxhIR/8L+wA7hvNVJDGPS+LQiP/PXLovo
-	S5tPDaZapciSRDElw4Lb9IO77NSzoaFPJPKzK+wuuivylMe2mrtnvE8xJEiP04oCebhPlTm7VRG
-	s3q1Q4WYnvoG01K71P/7Z+kSUGIFS//63Ni4Uxl7xx17s6iCeuksnCI0TYz0E/2vAuZoGflsmgu
-	Tde7c+ERXUrAQpE4EWEoaXaFxpyCujxhPL+7qCCp0/gZxko8AYG7pncSXDAssJPXOFzKNDTybYn
-	OQohmt8UPs3gd+vqUOOTvEoAGNmxxklmjxh/Kj0IpSJXm3Pf/Q7ztZ+5vqBGeFIvSfFTIoyhPBG
-	wKuA==
-X-Google-Smtp-Source: AGHT+IEsAxLjtuxFrd5xwHWqn7m4ZVS5u3/PVQsGkPC7Jx1JsTOvbmLGxcEv8DcPfcOnvXJsChzMvA==
-X-Received: by 2002:a17:906:6a1d:b0:ae3:ee3a:56ee with SMTP id a640c23a62f3a-afddf019718mr100922166b.3.1755580877167;
-        Mon, 18 Aug 2025 22:21:17 -0700 (PDT)
-Received: from ?IPV6:2a02:2f04:620a:8b00:4343:2ee6:dba1:7917? ([2a02:2f04:620a:8b00:4343:2ee6:dba1:7917])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-afcdd0107ecsm915013566b.86.2025.08.18.22.21.15
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 18 Aug 2025 22:21:16 -0700 (PDT)
-Message-ID: <f71ba698-6c8e-42c7-ac04-3b67cd774784@tuxon.dev>
-Date: Tue, 19 Aug 2025 08:21:14 +0300
+	Tue, 19 Aug 2025 05:29:34 +0000
+Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
+	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250819052923epoutp020039f2eaabb24dd8ac39b9fddfa84f00~dE-LEWSyN2880928809epoutp02_
+	for <linux-phy@lists.infradead.org>; Tue, 19 Aug 2025 05:29:23 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250819052923epoutp020039f2eaabb24dd8ac39b9fddfa84f00~dE-LEWSyN2880928809epoutp02_
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1755581363;
+	bh=6MG+/Jai4e9wBAwA5aA5ZNa5PbIOBcMt7Lw3JvyLk6w=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=d67urHkAZCwPT6xGIAQeP+7Mr4oeVqK3CMHCwe+Bzw0iZh+ZIDas4vM5tHIW2Zxkt
+	 /hVeIH8bg/z8qSzULkWnA5nFNdOT3OBEiR9gOnM88/KKVeTs/DvoPVDJXwvdXii+57
+	 d0FPOs0kA0iOIskNZ8lhuis/+MErNgNln37WUtj4=
+Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
+	epcas5p4.samsung.com (KnoxPortal) with ESMTPS id
+	20250819052922epcas5p48d6c5c5c355795ed5a957f8effe6dbd3~dE-KYwSKb1102711027epcas5p4U;
+	Tue, 19 Aug 2025 05:29:22 +0000 (GMT)
+Received: from epcas5p3.samsung.com (unknown [182.195.38.86]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4c5dS03lX4z3hhT7; Tue, 19 Aug
+	2025 05:29:20 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+	20250818074152epcas5p38e555d935cb93f38ed0a590003a53da1~czJkANOlH1134711347epcas5p3L;
+	Mon, 18 Aug 2025 07:41:52 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20250818074149epsmtip265c95d1fd9e613f0c41ca6c3c05681fa~czJhJl2tB1399313993epsmtip2R;
+	Mon, 18 Aug 2025 07:41:49 +0000 (GMT)
+From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
+To: "'Vinod Koul'" <vkoul@kernel.org>
+Cc: <kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
+	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
+	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
+	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
+	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
+	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
+In-Reply-To: <aJtN7uVUV3YhfY5-@vaman>
+Subject: RE: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
+ ExynosAutov920
+Date: Mon, 18 Aug 2025 13:11:48 +0530
+Message-ID: <038a01dc1013$900a2800$b01e7800$@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 4/8] dt-bindings: reset: renesas,rzg2l-usbphy-ctrl:
- Document RZ/G3S support
-To: Rob Herring <robh@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
- magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com,
- biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20250808061806.2729274-1-claudiu.beznea.uj@bp.renesas.com>
- <20250808061806.2729274-5-claudiu.beznea.uj@bp.renesas.com>
- <20250813232100.GA950521-robh@kernel.org>
-Content-Language: en-US
-From: claudiu beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20250813232100.GA950521-robh@kernel.org>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQJ+ZgWj3OwstM5ZbwFL0KmcSzrOlQGuc5yxAsdJ9S8B+nVVqLLv1zHQ
+Content-Language: en-in
+X-CMS-MailID: 20250818074152epcas5p38e555d935cb93f38ed0a590003a53da1
+X-Msg-Generator: CA
+X-Sendblock-Type: REQ_APPROVE
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9
+References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
+	<CGME20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9@epcas5p3.samsung.com>
+	<20250805115216.3798121-7-pritam.sutar@samsung.com> <aJtN7uVUV3YhfY5-@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_222118_811014_7AA3D716 
-X-CRM114-Status: GOOD (  20.30  )
+X-CRM114-CacheID: sfid-20250818_222932_378142_D9B526D2 
+X-CRM114-Status: GOOD (  32.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,146 +98,265 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Rob,
+Hi Vinod, 
 
-On 8/14/25 02:21, Rob Herring wrote:
-> On Fri, Aug 08, 2025 at 09:18:02AM +0300, Claudiu wrote:
->> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>
->> The Renesas USB PHY hardware block needs to have the PWRRDY bit in the
->> system controller set before applying any other settings. The PWRRDY bit
->> must be controlled during power-on, power-off, and system suspend/resume
->> sequences as follows:
->> - during power-on/resume, it must be set to zero before enabling clocks and
->>    modules
->> - during power-off/suspend, it must be set to one after disabling clocks
->>    and modules
->>
->> Add the renesas,sysc-pwrrdy device tree property, which allows the
->> reset-rzg2l-usbphy-ctrl driver to parse, map, and control the system
->> controller PWRRDY bit at the appropriate time. Along with it add a new
->> compatible for the RZ/G3S SoC.
->>
->> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->> ---
->>
->> Changes in v4:
->> - dropped blank line from compatible section
->> - s/renesas,sysc-signals/renesas,sysc-pwrrdy/g
->> - dropped description from renesas,sysc-pwrrdy
->> - updated description of renesas,sysc-pwrrdy items
->> - updated patch description
->>
->> Changes in v3:
->> - none; this patch is new
->>
->>   .../reset/renesas,rzg2l-usbphy-ctrl.yaml      | 40 ++++++++++++++++---
->>   1 file changed, 34 insertions(+), 6 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/reset/renesas,rzg2l-usbphy-ctrl.yaml b/Documentation/devicetree/bindings/reset/renesas,rzg2l-usbphy-ctrl.yaml
->> index b0b20af15313..c1d5f3228aa9 100644
->> --- a/Documentation/devicetree/bindings/reset/renesas,rzg2l-usbphy-ctrl.yaml
->> +++ b/Documentation/devicetree/bindings/reset/renesas,rzg2l-usbphy-ctrl.yaml
->> @@ -15,12 +15,14 @@ description:
->>   
->>   properties:
->>     compatible:
->> -    items:
->> -      - enum:
->> -          - renesas,r9a07g043-usbphy-ctrl # RZ/G2UL and RZ/Five
->> -          - renesas,r9a07g044-usbphy-ctrl # RZ/G2{L,LC}
->> -          - renesas,r9a07g054-usbphy-ctrl # RZ/V2L
->> -      - const: renesas,rzg2l-usbphy-ctrl
->> +    oneOf:
->> +      - items:
->> +          - enum:
->> +              - renesas,r9a07g043-usbphy-ctrl # RZ/G2UL and RZ/Five
->> +              - renesas,r9a07g044-usbphy-ctrl # RZ/G2{L,LC}
->> +              - renesas,r9a07g054-usbphy-ctrl # RZ/V2L
->> +          - const: renesas,rzg2l-usbphy-ctrl
->> +      - const: renesas,r9a08g045-usbphy-ctrl # RZ/G3S
->>   
->>     reg:
->>       maxItems: 1
->> @@ -48,6 +50,19 @@ properties:
->>       $ref: /schemas/regulator/regulator.yaml#
->>       unevaluatedProperties: false
->>   
->> +  renesas,sysc-pwrrdy:
->> +    description: The system controller PWRRDY indicates to the USB PHY if the
->> +                 power supply is ready. PWRRDY needs to be set during power-on
->> +                 before applying any other settings. It also needs to
->> +                 be set before powering off the USB.
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: 12 August 2025 07:52 PM
+> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
+> conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
+> peter.griffin@linaro.org; kauschluss@disroot.org;
+> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
+> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
+> dev.tailor@samsung.com; faraz.ata@samsung.com;
+> muhammed.ali@samsung.com; selvarasu.g@samsung.com
+> Subject: Re: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
+> ExynosAutov920
 > 
-> Where did this odd formatting come from?
-
-I formatted it like this by mistake.
-
-> If copied from somewhere else,
-> patches reformatting them welcome.
+> On 05-08-25, 17:22, Pritam Manohar Sutar wrote:
+> > Add required change in phy driver to support combo SS phy for this SoC.
+> >
+> > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> > ---
+> >  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 327
+> +++++++++++++++++++-
+> >  include/linux/soc/samsung/exynos-regs-pmu.h |   1 +
+> >  2 files changed, 324 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > index c22f4de7d094..1108f0c07755 100644
+> > --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> > @@ -273,6 +273,36 @@
+> >  #define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
+> >  #define HSPPLLTUNE_FSEL				GENMASK(18, 16)
+> >
+> > +/* ExynosAutov920 phy usb31drd port reg */
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL	0x000
+> > +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN	BIT(5)
+> > +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N		BIT(4)
+> > +#define PHY_RST_CTRL_PHY_RESET_OVRD_EN		BIT(1)
+> > +#define PHY_RST_CTRL_PHY_RESET			BIT(0)
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0
+> 	0x0004
+> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR
+> 	GENMASK(31, 16)
+> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK		BIT(8)
+> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK		BIT(4)
+> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL		BIT(0)
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1
+> 	0x0008
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2
+> 	0x000c
+> > +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN		BIT(0)
+> > +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA
+> 	GENMASK(31, 16)
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0	0x100
+> > +#define PHY_CONFIG0_PHY0_PMA_PWR_STABLE		BIT(14)
+> > +#define PHY_CONFIG0_PHY0_PCS_PWR_STABLE		BIT(13)
+> > +#define PHY_CONFIG0_PHY0_ANA_PWR_EN		BIT(1)
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7	0x11c
+> > +#define PHY_CONFIG7_PHY_TEST_POWERDOWN		BIT(24)
+> > +
+> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4	0x110
+> > +#define PHY_CONFIG4_PIPE_RX0_SRIS_MODE_EN	BIT(2)
+> > +
+> >  /* Exynos9 - GS101 */
+> >  #define EXYNOS850_DRD_SECPMACTL			0x48
+> >  #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL
+> 	GENMASK(13, 12)
+> > @@ -2077,6 +2107,253 @@ static const struct
+> exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
+> >  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
+> >  };
+> >
+> > +static void
+> > +exynosautov920_usb31drd_cr_clk(struct exynos5_usbdrd_phy *phy_drd,
+> > +bool high) {
+> > +	void __iomem *reg_phy = phy_drd->reg_phy;
+> > +	u32 reg = 0;
 > 
->      description:
->        The system controller PWRRDY indicates to the USB PHY if the power
->        supply is ready. PWRRDY needs to be set during power-on before applying
->        any other settings. It also needs to be set before powering off the USB.
-
-OK
-
+> again..
 > 
+> > +
+> > +	reg = readl(reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +	if (high)
+> > +		reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
+> > +	else
+> > +		reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
+> > +
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +	fsleep(1);
+> > +}
+> > +
+> > +static void
+> > +exynosautov920_usb31drd_port_phy_ready(struct exynos5_usbdrd_phy
+> > +*phy_drd) {
+> > +	struct device *dev = phy_drd->dev;
+> > +	void __iomem *reg_phy = phy_drd->reg_phy;
+> > +	static const unsigned int timeout_us = 20000;
+> > +	static const unsigned int sleep_us = 40;
+> > +	u32 reg = 0;
 > 
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      - items:
->> +          - description: System controller phandle required by USB PHY CTRL
->> +                         driver to set PWRRDY
+> here too
 > 
-> Indent by 2 more than 'description'
+> > +	int err;
+> > +
+> > +	/* Clear cr_para_con */
+> > +	reg &= ~(PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
+> > +			PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR);
+> > +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +	writel(0x0, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1);
+> > +	writel(0x0, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
+> > +
+> > +	exynosautov920_usb31drd_cr_clk(phy_drd, true);
+> > +	exynosautov920_usb31drd_cr_clk(phy_drd, false);
+> > +
+> > +	/*
+> > +	 * The maximum time from phy reset de-assertion to de-assertion of
+> > +	 * tx/rx_ack can be as high as 5ms in fast simulation mode.
+> > +	 * Time to phy ready is < 20ms
+> > +	 */
+> > +	err = readl_poll_timeout(reg_phy +
+> > +
+> 	EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0,
+> > +			reg, !(reg &
+> PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK),
+> > +			sleep_us, timeout_us);
+> > +	if (err)
+> > +		dev_err(dev, "timed out waiting for rx/tx_ack: %#.8x\n",
+> reg);
+> > +
+> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +}
+> > +
+> > +static void
+> > +exynosautov920_usb31drd_cr_write(struct exynos5_usbdrd_phy
+> *phy_drd,
+> > +				 u16 addr, u16 data)
+> > +{
+> > +	struct device *dev = phy_drd->dev;
+> > +	void __iomem *reg_phy = phy_drd->reg_phy;
+> > +	u32 cnt = 0;
+> > +	u32 reg = 0;
+> 
+> this one, former is okay
+> 
+> > +
+> > +	/* Pre Clocking */
+> > +	reg = readl(reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +
+> > +	/*
+> > +	 * tx clks must be available prior to assertion of tx req.
+> > +	 * tx pstate p2 to p0 transition directly is not permitted.
+> > +	 * tx clk ready must be asserted synchronously on tx clk prior
+> > +	 * to internal transmit clk alignment sequence in the phy
+> > +	 * when entering from p2 to p1 to p0.
+> > +	 */
+> > +	do {
+> > +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
+> > +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
+> > +		cnt++;
+> > +	} while (cnt < 15);
+> > +
+> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +
+> > +	/*
+> > +	 * tx data path is active when tx lane is in p0 state
+> > +	 * and tx data en asserted. enable cr_para_wr_en.
+> > +	 */
+> > +	reg = readl(reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
+> > +	reg &= ~PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA;
+> > +	reg |=
+> FIELD_PREP(PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA, data) |
+> > +		PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
+> > +
+> > +	/* write addr */
+> > +	reg = readl(reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR;
+> > +	reg |= FIELD_PREP(PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR,
+> addr) |
+> > +		PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
+> > +		PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
+> > +	writel(reg, reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +
+> > +	/* check cr_para_ack*/
+> > +	cnt = 0;
+> > +	do {
+> > +		/*
+> > +		 * data symbols are captured by phy on rising edge of the
+> > +		 * tx_clk when tx data enabled.
+> > +		 * completion of the write cycle is acknowledged by
+assertion
+> > +		 * of the cr_para_ack.
+> > +		 */
+> > +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
+> > +		reg = readl(reg_phy +
+> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
+> > +		if ((reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK))
+> > +			break;
+> > +
+> > +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
+> > +
+> > +		/*
+> > +		 * wait for minimum of 10 cr_para_clk cycles after phy reset
+> > +		 * is negated, before accessing control regs to allow for
+> > +		 * internal resets.
+> > +		 */
+> > +		cnt++;
+> > +	} while (cnt < 10);
+> > +
+> > +	if (cnt == 10)
+> > +		dev_dbg(dev, "CR write failed to 0x%04x\n", addr);
+> 
+> Not error?
 
-OK
+This is only for debugging purpose. It is not considered as error. 
+
+> --
+> ~Vinod
 
 
-Thank you,
-Claudiu
+Will address other comments in next version of the patch-set (v6).
 
-> 
-> With that,
-> 
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> 
->> +          - description: Register offset associated with PWRRDY
->> +          - description: Register bitmask associated with PWRRDY
->> +
->>   required:
->>     - compatible
->>     - reg
->> @@ -57,6 +72,19 @@ required:
->>     - '#reset-cells'
->>     - regulator-vbus
->>   
->> +allOf:
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            const: renesas,r9a08g045-usbphy-ctrl
->> +    then:
->> +      required:
->> +        - renesas,sysc-pwrrdy
->> +    else:
->> +      properties:
->> +        renesas,sysc-pwrrdy: false
->> +
->>   additionalProperties: false
->>   
->>   examples:
->> -- 
->> 2.43.0
->>
+Thank you.
+
+Regards,
+Pritam
 
 
 -- 
