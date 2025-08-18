@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7838CA0EE4
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 18:59:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23D95CA0EE4
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 19:37:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=4Dz+cQQooia7KqVpCYkq9Qp0hwwBwqO3d633cUxurYU=; b=gLKFnft6tJur58
-	JiBTEgbwon91N3v6sUChMaLFqO6Wz9Vhi/cr7F1LI7r90eKeQpc5OZ/qa27ck9QECSgb5vV/BSLuh
-	XZweVkTARlh8C7PC7iw3PNZQQ/M/YrG2ik7SZADKyVMAgQdSG72JWkGaFmXZJhvAB7af0+eE2sJeq
-	rDgzpPnyWFAAQzS7pnE6SNFS4+8ooxnxmEiahoO3wo0tjzKiWwI1+fFkDQmKebY1LJ3ehTJoqln3G
-	FWZxiC+oSLIslDwGaJuAdmJorJhfJl3w5WhWQg71VpdHg5x9AaM6PDEkfnPUg3Jdq2b6EAB2/rB9e
-	37WLxB5KK27xXxsYsO/A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2rHRzJ4nC8oTni7AWoF4sF74E428AjOMzDCYZ46RBy0=; b=cudrTh3xkkzXHe
+	k6Zt4fHMZzgfaRnPjzpS4cLlP4kZexQdRR6aEhRQPw+RTok0o5jSz6bJCYYapYF3HErMz9mglHGHE
+	ccgvrVYLKzlYvsXU3gAhNUAPN4z1Z7UQTxUftvP7n4FeyiZfAoXLAGNcHfc/xrlwfe8r0dvuEv44E
+	+1ZDKZsnU8MCpjT+YxGoHBj4y8V7LQ5Ip3B0L2gfiwLxzJmwZeYVezfgMiL11RUq85Ma3EN8o+nWP
+	fsbW1ChhCDYZ8TG6pzPPicBAMhe20/p96OsKQdZfu+krQxxizxx4msDHfWVwpLGEYHeyvj1kEEs7z
+	2T87HQ2r5YfDTXmwNBWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo54u-00000008R7X-2e59;
-	Mon, 18 Aug 2025 18:59:32 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uo5fR-00000008XLK-3ice;
+	Mon, 18 Aug 2025 19:37:17 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo4YF-00000008Kdu-3yT9;
-	Mon, 18 Aug 2025 18:25:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 23F565C62A4;
-	Mon, 18 Aug 2025 18:25:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50078C4CEEB;
-	Mon, 18 Aug 2025 18:25:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755541546;
-	bh=P5OJ4RHbL7bfCZueIbVBkF40afwl0Pm482XBXI7/HfQ=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=IDIrUk6equNseS0ZrN+tjnJzBgBbvhGFPTLcNrmqpDYFo8ThI70gRQ1UQo83gHjLN
-	 y6axwix4PwvKDr3Qxm4V+5NyFfjqgcbavchlT1oHZgZygTQm9lVuS1d70g6BqQBdya
-	 50XI46xc97f1NcbV9SKLIwwXvcY/QHJfm5PPEZ4BRJ7f61zRejSLUpXnWGVDzcerDF
-	 fzJ9IGTpdNW9EmIJ52biPC64T7A73pMNSc5BRcd6QmhoC2Y9A4KEwaVUs17c44r9Zj
-	 4Ba762DlDExTmr4RoFgVk3fpKr7j0VmeHipw0KWx8OadDdKkSeegTBvmRmNl//M3xp
-	 UHGRuax/NOnLA==
-Date: Mon, 18 Aug 2025 13:25:44 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Shradha Todi <shradha.t@samsung.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, mani@kernel.org,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, robh@kernel.org,
-	bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, alim.akhtar@samsung.com, vkoul@kernel.org,
-	kishon@kernel.org, arnd@arndb.de, m.szyprowski@samsung.com,
-	jh80.chung@samsung.com, pankaj.dubey@samsung.com
-Subject: Re: [PATCH v3 11/12] PCI: exynos: Add support for Tesla FSD SoC
-Message-ID: <20250818182544.GA534647@bhelgaas>
+	id 1uo54k-00000008QyU-11qi;
+	Mon, 18 Aug 2025 18:59:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1755543560;
+	bh=KCf8mGsR1gsCa0BBbnSNhtvNKeu0P1lUjsNkZEwyXIw=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=qBdwTp1UmdtCTM/gTRlV/HAWeIePLu9Z/CsHMoAXn36HP3/5CCoRZr0WRc+AFkgKo
+	 2jfvO30/CxA2cUWZVnwTsltW4wzMS5IY6jSnIXPUmc3uEhx7Len/hIEUMZCzF2Gq5C
+	 JggHOykGcHWJBrTtFBP3jT9NgwIPPbgt3JGofd94xJ6m0jIM4SwwEsH1IaG5B49C+U
+	 e3zyFR5mMs8BbJpbRMq3qVrFfcPd0/8B39WT8N+BFnbfpH5vASj4RluVyD8LRQUUKs
+	 c+znXeVDzrcnTyYLTcAM40x8fSBs1ulyJ4cFvI771/BY2oNAZg1WnV/gEfgiN8gM/r
+	 NdABcdUc3oBmg==
+Received: from localhost (unknown [82.79.138.60])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 9EC5317E04C0;
+	Mon, 18 Aug 2025 20:59:20 +0200 (CEST)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Date: Mon, 18 Aug 2025 21:59:01 +0300
+Subject: [PATCH v3 01/14] phy: hdmi: Add HDMI 2.1 FRL configuration options
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <000d01dc1022$ad8c0740$08a415c0$@samsung.com>
+Message-Id: <20250818-phy-hdptx-frl-v3-1-c79997d8bb2b@collabora.com>
+References: <20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com>
+In-Reply-To: <20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_112548_068591_3F272F4F 
-X-CRM114-Status: GOOD (  33.01  )
+X-CRM114-CacheID: sfid-20250818_115922_431927_C35CD943 
+X-CRM114-Status: GOOD (  12.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,95 +77,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-[+to Krzysztof]
+The HDMI 2.1 specification introduced the Fixed Rate Link (FRL) mode,
+aiming to replace the older Transition-Minimized Differential Signaling
+(TMDS) mode used in previous HDMI versions to support much higher
+bandwidths (up to 48 Gbps) for modern video and audio formats.
 
-On Mon, Aug 18, 2025 at 03:00:00PM +0530, Shradha Todi wrote:
-> > On Mon, Aug 11, 2025 at 09:16:37PM +0530, Shradha Todi wrote:
-> > > Add host and endpoint controller driver support for FSD SoC.
+FRL has been designed to support ultra high resolution formats at high
+refresh rates like 8K@60Hz or 4K@120Hz, and eliminates the need for
+dynamic bandwidth adjustments, which reduces latency.  It operates with
+3 or 4 lanes at different link rates: 3Gbps, 6Gbps, 8Gbps, 10Gbps or
+12Gbps.
 
-> > It's kind of unfortunate that the driver uses "ep" everywhere for
-> > struct exynos_pcie pointers.  It's going to be confusing because "ep"
-> > is also commonly used for endpoint-related things, e.g., struct
-> > dw_pcie_ep pointers.  Maybe it's not worth changing; I dunno.
-> 
-> I did try to rename the structure and the pointers 
-> (https://lore.kernel.org/all/20230214121333.1837-9-shradha.t@samsung.com/)
-> But the intention was different back then and so the idea was rejected.
-> I could add a patch to only rename the pointers to something less
-> confusing like "exy_pci"
+Add support for configuring the FRL mode for HDMI PHYs.
 
-The patch you mention did several renames:
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+---
+ include/linux/phy/phy-hdmi.h | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
 
-  s/to_exynos_pcie/to_samsung_pcie/
-  s/struct exynos_pcie/struct samsung_pcie/
-  s/struct exynos_pcie *ep/struct samsung_pcie *sp/
+diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
+index f0ec963c6e84f1b7728acafc824dff191c6b873d..83330d359e3ae345554f20429519da14506b8ab5 100644
+--- a/include/linux/phy/phy-hdmi.h
++++ b/include/linux/phy/phy-hdmi.h
+@@ -6,16 +6,31 @@
+ #ifndef __PHY_HDMI_H_
+ #define __PHY_HDMI_H_
+ 
++#include <linux/types.h>
++
++enum phy_mode_hdmi {
++	PHY_MODE_HDMI_TMDS,
++	PHY_MODE_HDMI_FRL,
++};
++
+ /**
+  * struct phy_configure_opts_hdmi - HDMI configuration set
+- * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
+  * @bpc: Bits per color channel.
++ * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
++ * @frl.rate_per_lane: HDMI FRL Rate per Lane in Gbps.
++ * @frl.lanes: HDMI FRL lanes count.
+  *
+  * This structure is used to represent the configuration state of a HDMI phy.
+  */
+ struct phy_configure_opts_hdmi {
+-	unsigned long long tmds_char_rate;
+ 	unsigned int bpc;
++	union {
++		unsigned long long tmds_char_rate;
++		struct {
++			u8 rate_per_lane;
++			u8 lanes;
++		} frl;
++	};
+ };
+ 
+ #endif /* __PHY_HDMI_H_ */
 
-I'm only concerned about the confusion of "ep" being used both for
-"struct exynos_pcie *" and for "struct dw_pcie_ep *".
+-- 
+2.50.1
 
-It would still be sort of an annoying patch to do something like this:
-
-  s/struct exynos_pcie *ep/struct exynos_pcie *pcie/
-
-But 'git grep "struct .*_pcie \*.*=" drivers/pci/controller/' says
-using "pcie" in this way is quite common, so maybe it would be worth
-doing.
-
-What do you think, Krzysztof?
-
-> > > +static irqreturn_t fsd_pcie_irq_handler(int irq, void *arg)
-> > > +{
-> > > +	u32 val;
-> > > +	struct exynos_pcie *ep = arg;
-> > > +	struct dw_pcie *pci = &ep->pci;
-> > > +	struct dw_pcie_rp *pp = &pci->pp;
-> > > +
-> > > +	val = readl(ep->elbi_base + FSD_IRQ2_STS);
-> > > +	if ((val & FSD_IRQ_MSI_ENABLE) == FSD_IRQ_MSI_ENABLE) {
-> > > +		val &= FSD_IRQ_MSI_ENABLE;
-> > > +		writel(val, ep->elbi_base + FSD_IRQ2_STS);
-> > 
-> > This looks weird because FSD_IRQ_MSI_ENABLE sounds like an *enable*
-> > bit, but here you're treating it as a *status* bit.
-> > 
-> > As far as I can tell, you set FSD_IRQ_MSI_ENABLE once at probe-time in
-> > fsd_pcie_msi_init(), then you clear it here in an IRQ handler, and it
-> > will never be set again.  That seems wrong; am I missing something?
-> 
-> Actually the status IRQ and enable IRQ registers are different offsets
-> but the bit position for MSI remains same in both cases so I just reused
-> the macro.
-
-Ah, that's what I missed, thanks!  At probe-time, fsd_pcie_msi_init()
-enables it in FSD_IRQ2_EN.  Here you clear it in FSD_IRQ2_STS.
-
-> But I understand that it's confusing so I will add another
-> macro for FSD_IRQ_MSI_STATUS or just rename the macro to
-> FSD_IRQ_MSI to re-use.
-
-Using the same name just because a similar bit happens to be at the
-same position in two different registers is definitely confusing.  I
-think it will be better to have two macros, one for FSD_IRQ2_STS and
-another for FSD_IRQ2_EN, e.g.,
-
-  #define FSD_IRQ2_STS                         0x008
-  #define   FSD_IRQ2_STS_MSI                   BIT(17)
-  #define FSD_IRQ2_EN                          0x018
-  #define   FSD_IRQ2_EN_MSI                    BIT(17)
-
-Another question about the test:
-
-  if ((val & FSD_IRQ_MSI_ENABLE) == FSD_IRQ_MSI_ENABLE) {
-
-This assumes there are no other bits in FSD_IRQ2_STS that could be
-set.  I would have expected a test like this:
-
-  if (val & FSD_IRQ_MSI_ENABLE) {
-
-Is there a reason to restrict it to the case when *only*
-FSD_IRQ_MSI_ENABLE is set?
-
-Bjorn
 
 -- 
 linux-phy mailing list
