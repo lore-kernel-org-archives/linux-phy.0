@@ -4,67 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D738CA0EE4
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 20:25:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65BB6CA0EF1
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 23:17:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eQb59X9DpUIMNZoEUs+LLEqfiEd+B9ZT7cNBXR4mniQ=; b=rmwCsm3K4dSNt4
-	ZBP27t9s76SgPAHXQDIyofdd76NjKrdhsze+/liFGYJFG55UxGLDGAJZpAJSloXEfxpFGP5B2I/RF
-	iC6JTwCGjqNG16CT7xBc6dJB6iVj7k3dak/wKXxZu1UP+53bu5UhlAU7QsdNVA7VZCIEVo83qYXfg
-	ukqrT70RBqowYZaUQa6CViWKWOfSiDCXIXbZsH32Jho0fgHcYSEDudL0VTjiuDkEuPV/dYn2R6P5C
-	KrLbMlkv6mSt1k7B9Mt01ALgh0cJVJw3NolGgushGm2ZjUNK7tE5Ok0bAPE4GAgBfZkPQGfNBO5ea
-	ZBYKHGmOWn67jYTNBACg==;
+	List-Owner; bh=7YxdEzn4aMOxw4kQh2QEEu7SSoDTNtvbei4PE/VPR84=; b=aQLoX9ymd53ww8
+	Y1ObFeDoKtCLlXPyWNe5V2vrlbFMAKCKPRlBrYIRhg/MKCk3UhDUtzt37DMSAEU1UNVX0LaZzsxVK
+	ami6I7cq/raY9LZn4vETHITIFaH9pt7clmOjaY5xw6YYxY/PncLiblks2PqHF0n+pk12VRwtsgN6U
+	1mDFY0IBbOuWwcMQfiUY1u5gJ7LRgheZNagU3buF+6WkRdheMtXeOoH00c65+XB2nApoIRmxb0aih
+	j/rhUatUq81uP+M26BsjiXlCF7V/9eeH7swHOuH+6br+thVr25UzjOVb+KlCadduHC6uQPHZ67SJj
+	j2b+5hpj5Ip9kFbpNIbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo6Q9-00000008cgP-0trB;
-	Mon, 18 Aug 2025 20:25:33 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uo96I-00000008tqv-0BJS;
+	Mon, 18 Aug 2025 23:17:14 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo5CJ-00000008SuH-3JCX;
-	Mon, 18 Aug 2025 19:07:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1755544030;
-	bh=J1eZ5XRnn37Z4WoTM1MwkW3Lzx55zP9wT2RCCr2Fek8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=T+dOXorp7h6JkyqQNCAl3wEg59iUtraI+4nqQcP3GDoxAF3zAW30U5hEipVY1cJz2
-	 GB4gEqSAP56qRrL7xutGFdR8R2KprrgSO3seOvQcdalMuWf85dsu0ztLYBA5HCt3pm
-	 sX+/mLif1mvrChQziqoWg1zmUnZN4h37RqrtBNszwrlj/CCmtyAKXyBlV41JgeUOSt
-	 ik1yYwVSu/NYdZhXp0abqJkJOhq8dp0rME4YI9c4grLdXUK7RkEuLPcXcs/grHHScQ
-	 GGR97OJCKcu9w3hyVtXNKBnJit1C4i8rUoqep8gidfZQ+2IPPxxnOjlny0zoAxJADS
-	 hoIDakPN2mOyw==
-Received: from [192.168.1.90] (unknown [82.79.138.60])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D485E17E04C0;
-	Mon, 18 Aug 2025 21:07:09 +0200 (CEST)
-Message-ID: <a3632629-188f-4645-a8b9-825075684194@collabora.com>
-Date: Mon, 18 Aug 2025 22:07:09 +0300
+	id 1uo93i-00000008tSJ-2RRg;
+	Mon, 18 Aug 2025 23:14:35 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8F26E45C41;
+	Mon, 18 Aug 2025 23:14:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 65358C4CEF1;
+	Mon, 18 Aug 2025 23:14:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755558873;
+	bh=1sx3B1KICtDjf4DR2eWZu0vSeJzYHOxzQ4xJumzeAtc=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=kp5TBcx5Et95AVIF80WQgYameSH77W80k98u6hqqbT8XzHN2hNZGQpMZt/eD6VLw5
+	 mMYVyk/aBPJparD/w/9SKCrKD+LYNPAvFgBh1YVQQcctliVOgNMzDiffKzzuBdYeGP
+	 HvIB9cjaTf9kfH4pVI8m9z8gLDKQgc69Zur+n6abDgQ47ZZZdYNg91qD6BSoqFQdEY
+	 IXdeX69O/fuSHZ8UTl0jQArVjLtS1MFnlAYer5AGFPhbzzNQ15OJVhELHS3xHQa4mg
+	 MtoUeANZRV+pxsNT6q7VVVANpDkQTNRS4XVmh8+B/UvVbXUTJQSOuW1Mchfv8qyB+Y
+	 fIXvh6o4l2+qw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5449ACA0ED1;
+	Mon, 18 Aug 2025 23:14:33 +0000 (UTC)
+From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
+Date: Tue, 19 Aug 2025 01:00:35 +0200
+Subject: [PATCH v2 1/7] dt-bindings: soc: rockchip: add rk3588 csidphy grf
+ syscon
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 01/14] phy: hdmi: Add HDMI 2.1 FRL configuration
- options
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
- Dmitry Baryshkov <lumag@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-References: <20250805-phy-hdptx-frl-v2-0-d118bd4b6e0b@collabora.com>
- <20250805-phy-hdptx-frl-v2-1-d118bd4b6e0b@collabora.com>
- <3d796f6c-d1d0-4499-8e63-bd37bfcc7c3a@oss.qualcomm.com>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <3d796f6c-d1d0-4499-8e63-bd37bfcc7c3a@oss.qualcomm.com>
+Message-Id: <20250616-rk3588-csi-dphy-v2-1-7a94f079b712@collabora.com>
+References: <20250616-rk3588-csi-dphy-v2-0-7a94f079b712@collabora.com>
+In-Reply-To: <20250616-rk3588-csi-dphy-v2-0-7a94f079b712@collabora.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Jagan Teki <jagan@amarulasolutions.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Diederik de Haas <didi.debian@cknow.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Collabora Kernel Team <kernel@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, 
+ Michael Riesch <michael.riesch@collabora.com>
+X-Mailer: b4 0.12.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1755558041; l=927;
+ i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
+ bh=+caMXhRTVArPpx+x7pVyqXS9t7uDPpRu8sQdXP1mzpo=;
+ b=mJW2C/Sgu9YPmlfYtkC+t4kXopDPZCvY9eIm5X81XBhFsZaeowIt+14ocQDcDKAc018WvOPlQ
+ WBDDe2to+igBcK/Q3l2DVWYyg2rCmxf+2fbYTmWIH+YEx0HVj9GH3J6
+X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
+ pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
+X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
+ with auth_id=371
+X-Original-From: Michael Riesch <michael.riesch@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_120711_979123_78F0D804 
-X-CRM114-Status: GOOD (  18.83  )
+X-CRM114-CacheID: sfid-20250818_161434_649201_777DD194 
+X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,94 +93,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: michael.riesch@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+From: Michael Riesch <michael.riesch@collabora.com>
 
-On 8/16/25 1:23 AM, Dmitry Baryshkov wrote:
-> On 05/08/2025 14:56, Cristian Ciocaltea wrote:
->> Add support for configuring the Fixed Rate Link (FRL) mode for HDMI
->> PHYs.
->>
->> For improved clarity, also rename existing HDMI mode to HDMI_TMDS.
->> Since this mode is currently not being used explicitly, no further
->> changes are needed.
-> 
-> 
-> I'd say, this need some explanation, especially for those who don't have access 
-> to the HDMI standard. Please mention that FRL is an alternative to the traditional TMDS mode, etc.
+Add CSIDPHY GRF syscon compatible for the Rockchip RK3588.
 
-Done in v3 [1].
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+---
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-> 
->>
->> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
->> ---
->>   include/linux/phy/phy-hdmi.h | 14 ++++++++++++--
->>   include/linux/phy/phy.h      |  3 ++-
->>   2 files changed, 14 insertions(+), 3 deletions(-)
->>
->> diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
->> index f0ec963c6e84f1b7728acafc824dff191c6b873d..0b26472d8defcc9ded142d4283e29861dc2b3746 100644
->> --- a/include/linux/phy/phy-hdmi.h
->> +++ b/include/linux/phy/phy-hdmi.h
->> @@ -6,16 +6,26 @@
->>   #ifndef __PHY_HDMI_H_
->>   #define __PHY_HDMI_H_
->>   +#include <linux/types.h>
->> +
->>   /**
->>    * struct phy_configure_opts_hdmi - HDMI configuration set
->> - * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
->>    * @bpc: Bits per color channel.
->> + * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
->> + * @frl.rate_per_lane: HDMI FRL Rate per Lane in Gbps.
->> + * @frl.lanes: HDMI FRL lanes count.
->>    *
->>    * This structure is used to represent the configuration state of a HDMI phy.
->>    */
->>   struct phy_configure_opts_hdmi {
->> -    unsigned long long tmds_char_rate;
->>       unsigned int bpc;
->> +    union {
->> +        unsigned long long tmds_char_rate;
->> +        struct {
->> +            u8 rate_per_lane;
->> +            u8 lanes;
->> +        } frl;
->> +    };
->>   };
->>     #endif /* __PHY_HDMI_H_ */
->> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
->> index 13add0c2c40721fe9ca3f0350d13c035cd25af45..04c84c1dbd6dac55fd04c54203cff4f9d939d970 100644
->> --- a/include/linux/phy/phy.h
->> +++ b/include/linux/phy/phy.h
->> @@ -44,7 +44,8 @@ enum phy_mode {
->>       PHY_MODE_SATA,
->>       PHY_MODE_LVDS,
->>       PHY_MODE_DP,
->> -    PHY_MODE_HDMI,
->> +    PHY_MODE_HDMI_TMDS,
->> +    PHY_MODE_HDMI_FRL,
-> 
-> I'd maybe suggest keeping PHY_MODE_HDMI and having two submodes: one for TMDS (default), one for FRL.
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 1ab0b092e2a5..b6e04e6491e9 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -47,6 +47,7 @@ properties:
+               - rockchip,rk3576-vop-grf
+               - rockchip,rk3588-bigcore0-grf
+               - rockchip,rk3588-bigcore1-grf
++              - rockchip,rk3588-csidphy-grf
+               - rockchip,rk3588-dcphy-grf
+               - rockchip,rk3588-hdptxphy-grf
+               - rockchip,rk3588-ioc
 
-Also done in v3 [1].
+-- 
+2.39.5
 
-Thank you for the review!
 
-Regards,
-Cristian
-
-> 
->>   };
->>     enum phy_media {
->>
-
-[1] https://lore.kernel.org/all/20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com/
 
 -- 
 linux-phy mailing list
