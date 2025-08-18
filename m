@@ -4,89 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5AEACA0EF3
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92274CA0EF2
 	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 13:43:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r3WjXEZ5+5Eq2T+mr5vFTL71AsiFH3ON0tLE5sUb9mI=; b=k1TKNFCrk/8taC
-	lGQ68ch6rZt93ogYrAiLh/WdIYmkae6BloYGOKXImE2yS3hthC+pkDGsxubHrCNKtsxqlpxtcDPGe
-	98gqAIhccELSQ7QPOMVVPE0hEdaoVfBcw9lVzatu1iOY4ZKV+ncW6/wDWLjd92w5xU86Xe9XyqfSH
-	gmm8jwsJYYuqAPK+lDZKzIA+1JkkQBt8TlhrN23zg7JPbBLk/8IFU4C9fXnLA/vV1xpXllDPHJyC0
-	6tWdu58mcD0qxZXBMLF/Cs4ia2fY06HMEtTM1ADzuEgURXQxWCn+oI8TDFbUcR96kR+UBeEVF9lbQ
-	46f4IHnGTLneVtvsIO+Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qfN77rNI0UPBLP90UWOQmU7ZWVdSb9XQED7p3/jDssg=; b=G+AoOnqPVDu++n
+	wGOA2/h4znuiU8Shi6WxOLuy9NvaMW5K/74YQgyY3K4nhxiBeuef6RWFBUUBGa4dQX9F3nanNqupq
+	+HcfgP6LjZ9bmjnDZRMZZiHaJTnLEe4FL1ZX4qUzRUmUpZcdUtk1etVKc5puuqvECvpJ+i+JTrvat
+	gmI5cft+yz/6daHwSrAcIetbudk7cDC3Y+LPrnD8UQLre3vap2gfFYvapnfKfC6v/MumLoLqt011n
+	wRZNrS94CkprBF9J12Po+kuIq3jrtrxawWVc4gPCbGAKL/BhG2JjrP9MWvQp5bHSIjrPlsZjGJODA
+	4jZrwY4ZTRGaOe7MwyEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo08x-00000007dbP-2CDO;
+	id 1uo08x-00000007daf-0Yq5;
 	Mon, 18 Aug 2025 13:43:23 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unzAt-00000007MGZ-0bRK
+	id 1unzAs-00000007MGV-472i
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Aug 2025 12:41:21 +0000
+	Mon, 18 Aug 2025 12:41:20 +0000
 Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57I7V3u3004103;
-	Mon, 18 Aug 2025 12:41:17 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57I7V45E004110;
+	Mon, 18 Aug 2025 12:41:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=5WuhBaY26A2
-	2ywHZgEPCbKm0v4jlN/JvdqhSe84JpbI=; b=QJX+ozMlP9n3guDtwSUOzLs6JZm
-	xZ1LHsBoFVMpjz+1y5I52HHPtbxqm/kHM72VbtWQhXsn8QTnXrqj5oDKxUPdtfEz
-	ikhzdSGJd/OohxrzcE+hkSDLptXxU+b9B3bOwhAeAvqkAFDCaC9ArYHD3tKD9H0D
-	k4u6vSM9QEnUVjU9M2jY4jmnM8HE1cbUZmPdBdpANFBUs+cgX+pZwaJnyi2CPczX
-	rgqX9u1ZqVCFBbvttjyOpLBcQIfVXvtnPvooiuWASuboM/8iBKVlTKb7CRd2Xh12
-	uI8xO6TtTVRK0Mbc0ISBAgQ1WRNWc/rmTuvKvk2ouLbr8NurKTOBH9aKf9Q==
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=YzkVLAGR/2wpz3nUZgJCWzEQHXpDoZJCDh1
+	hFmuux+c=; b=e5a2oCrh/wCfKqb0mPlHuhRyoSSggp79+BQ8Va//uDk1PPCX+Cr
+	eg6q3Xl5vw8Y+aHHndfRqb4aKLq/4n+H/WRMvP/iuoZ4V142ajaSkofLCMy4Jw3W
+	EzdiqtT2o3V51CiEm1qC8EdLQjD2Q32XxHD+l4a9XS+K19zZsyjw4yxymo2BCp+D
+	lewozuzJsEToCQ8CqL6JmYLczcwg2B5y7YU6vKenyDwrZ7Byt/XFxa6GBEaf0AVN
+	9SPh04+VfHiE4kYdzWUbUjnQ+skgHWosAxisJB/SlK+iPE2+z1ZRe1a3vjTLGRAH
+	Vzuz7YATd8XE8PhXo6hYVSsG4MsuQL5msLA==
 Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48kyur8wwd-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48kyur8wwc-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 18 Aug 2025 12:41:16 +0000 (GMT)
+	Mon, 18 Aug 2025 12:41:15 +0000 (GMT)
 Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57ICfCO4009290;
-	Mon, 18 Aug 2025 12:41:13 GMT
+	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57ICfCY9009281;
+	Mon, 18 Aug 2025 12:41:12 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 48jk2khku5-1;
-	Mon, 18 Aug 2025 12:41:13 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 48jk2khktv-1;
+	Mon, 18 Aug 2025 12:41:12 +0000
 Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57ICfDsV009294;
-	Mon, 18 Aug 2025 12:41:13 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57ICfCFA009275;
+	Mon, 18 Aug 2025 12:41:12 GMT
 Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 57ICfCkg009293;
-	Mon, 18 Aug 2025 12:41:13 +0000
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 57ICfC4D009273;
+	Mon, 18 Aug 2025 12:41:12 +0000
 Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
-	id 55C4B57363A; Mon, 18 Aug 2025 18:11:12 +0530 (+0530)
+	id 5884757363A; Mon, 18 Aug 2025 18:11:11 +0530 (+0530)
 From: Nitin Rawat <quic_nitirawa@quicinc.com>
 To: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
         dmitry.baryshkov@oss.qualcomm.com, andersson@kernel.org,
         konradybcio@kernel.org
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org, Nitin Rawat <quic_nitirawa@quicinc.com>
-Subject: [PATCH V2 2/2] phy: qcom-qmp-ufs: Add regulator loads for SM8550 and SM8750
-Date: Mon, 18 Aug 2025 18:11:10 +0530
-Message-ID: <20250818124110.8136-3-quic_nitirawa@quicinc.com>
+Subject: [PATCH V2 0/2] Add regulator load support for QMP UFS PHY
+Date: Mon, 18 Aug 2025 18:11:08 +0530
+Message-ID: <20250818124110.8136-1-quic_nitirawa@quicinc.com>
 X-Mailer: git-send-email 2.48.1
-In-Reply-To: <20250818124110.8136-1-quic_nitirawa@quicinc.com>
-References: <20250818124110.8136-1-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE4MDA2OSBTYWx0ZWRfX370wC/iPAMBx
- GbmCEB6mLvswmg0uCRfFHMndDplH98AlYJBKGocBiFSkkcz2gKtWH8GYiKN4cVZgkVmx8NnxHsR
- kZMfEfjQo8V2+kF4HSAlfYITZgVPgxReQNz65aqHsDSk0p4rEShqce+uvXSdenvTogYdeRTCZaV
- /Ry0UO4dQ2vUKOTu5AmA+RQONglApI4FwERfLmmfTdWClmLJCuhCfUFmPY6IUeAhSfATQ29NcLt
- f0U/k6w2njltv0CNcLx1O0S31omipfSZmhpKo/34MmjaD1+yvjnMp0GeVUYg7rt/4jjB7SiKly+
- TpExLs6YGul9m+28NyfoMGPx6Su4PsQp8rGPpxz33mQQiOIkqWcfNDIF8t3KO0n157n4w5Dc2Wt
- SWV59jg9
-X-Proofpoint-ORIG-GUID: AawgkywRK8_cGJ0-pVW-k_02gAtPjPA9
-X-Proofpoint-GUID: AawgkywRK8_cGJ0-pVW-k_02gAtPjPA9
-X-Authority-Analysis: v=2.4 cv=YtIPR5YX c=1 sm=1 tr=0 ts=68a31f6c cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE4MDA2OSBTYWx0ZWRfX0lhTUaClx/Wn
+ jSsE+CoEPwrdQiaWqXIGW8GwQtlIXzr0OYlp+kSbgo3iDmrnlNdXvrCdvw6TZnWqljBqfQKUO+h
+ IXG7ANUTTnfwF+pCt0LsfQoMuGZKRgmjXBwtR11haVSogviMYQAIC1kL3rtbUVwwZKznP8gFiTe
+ 5rUtOYcDi/UU4U00DwF9kpu2nh9OA7YqtnUpgKl6jABcpxfyjehYjGT0a9bM+t3GV66yx55HATm
+ 92gm/R1y8uv2drB2/w7bjpwb53tak0Q5fDV1XmIiJFFtaWxYTc1xNetdQLBQvBVcGAoAqqfBSWS
+ VTpV5L8DPsT6YZ+tEhNy4j9s7V8+xWUR+Cj72MGVfSYTxM/Z8cuLk14TYCC2Vg9fWV+OmAYOyfU
+ pX25bZ38
+X-Proofpoint-ORIG-GUID: _GG5dkQMdypki_fZulONdKRJPWv_mjIq
+X-Proofpoint-GUID: _GG5dkQMdypki_fZulONdKRJPWv_mjIq
+X-Authority-Analysis: v=2.4 cv=YtIPR5YX c=1 sm=1 tr=0 ts=68a31f6b cx=c_pps
  a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=2OwXVqhp2XgA:10 a=COk6AnOGAAAA:8 a=pWRrd-rm6bt4-Ij3yoUA:9
- a=TjNXssC_j7lpFel5tvFf:22
+ a=2OwXVqhp2XgA:10 a=oykH4de7tLrJ1zPsMkEA:9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-18_05,2025-08-14_01,2025-03-28_01
@@ -96,8 +93,9 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
  engine=8.19.0-2507300000 definitions=main-2508180069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_054119_185878_A3ACD335 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20250818_054119_024159_F98F1836 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,59 +112,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add regulator load configuration for SM8550 and SM8750 UFS PHY.
-This ensure proper regulator load management and mode selection for
-optimal power efficiency on these SoC platforms where regulators may
-be shared with other IP blocks.
+This patch series adds regulator load support to the QMP UFS PHY driver.
+Currently, the driver only sets regulator supply names without specifying
+load requirements, which can lead to suboptimal power management.
 
-The load requirements are:
+On some SoCs, regulators are shared between the QMP UFS PHY and other IP
+blocks. The regulator framework needs to know the maximum load
+requirements from all consumers to determine the appropriate
+regulator mode (Low Power Mode vs High Power Mode) and ensure stable
+operation.
 
-- SM8550: vdda-phy=205000uA, vdda-pll=17500uA
-- SM8750: vdda-phy=213000uA, vdda-pll=18300uA
+The series implements a simple and efficient approach for regulator load
+handling, with varying load requirements across different SoC
+configurations.
 
-Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+Changes from v1:
+1. Addressed comments to move load configuration from device tree to
+   hardcoded, per-compatible data within the driver.
+2. Accordingly updated commit text to reflect the same.
+3. Addressed Manivannan's comment to avoid initialization of load.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index f7a4a8334026..50875d9609f6 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1172,6 +1172,17 @@ static const char * const qmp_phy_vreg_l[] = {
- 	"vdda-phy", "vdda-pll",
- };
+Nitin Rawat (2):
+  phy: qcom-qmp-ufs: Add regulator load voting for UFS QMP Phy
+  phy: qcom-qmp-ufs: Add regulator loads for SM8550 and SM8750
 
-+/* Regulator load arrays for specific configurations */
-+static const int sm8650_vreg_load_ua[] = {
-+	205000, /* vdda-phy */
-+	17500,  /* vdda-pll */
-+};
-+
-+static const int sm8750_vreg_load_ua[] = {
-+	213000, /* vdda-phy */
-+	18300,  /* vdda-pll */
-+};
-+
- static const struct qmp_ufs_offsets qmp_ufs_offsets = {
- 	.serdes		= 0,
- 	.pcs		= 0xc00,
-@@ -1642,6 +1653,7 @@ static const struct qmp_phy_cfg sm8650_ufsphy_cfg = {
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
 
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.vreg_load_ua		= sm8650_vreg_load_ua,
- 	.regs			= ufsphy_v6_regs_layout,
- };
-
-@@ -1680,6 +1692,7 @@ static const struct qmp_phy_cfg sm8750_ufsphy_cfg = {
-
- 	.vreg_list		= qmp_phy_vreg_l,
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.vreg_load_ua		= sm8750_vreg_load_ua,
- 	.regs			= ufsphy_v6_regs_layout,
-
- };
 --
 2.48.1
 
