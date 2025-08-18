@@ -4,98 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92274CA0EF2
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 13:43:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00346CA0EE4
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 14:49:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qfN77rNI0UPBLP90UWOQmU7ZWVdSb9XQED7p3/jDssg=; b=G+AoOnqPVDu++n
-	wGOA2/h4znuiU8Shi6WxOLuy9NvaMW5K/74YQgyY3K4nhxiBeuef6RWFBUUBGa4dQX9F3nanNqupq
-	+HcfgP6LjZ9bmjnDZRMZZiHaJTnLEe4FL1ZX4qUzRUmUpZcdUtk1etVKc5puuqvECvpJ+i+JTrvat
-	gmI5cft+yz/6daHwSrAcIetbudk7cDC3Y+LPrnD8UQLre3vap2gfFYvapnfKfC6v/MumLoLqt011n
-	wRZNrS94CkprBF9J12Po+kuIq3jrtrxawWVc4gPCbGAKL/BhG2JjrP9MWvQp5bHSIjrPlsZjGJODA
-	4jZrwY4ZTRGaOe7MwyEg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s/hklN8bmeeIJzdm/cqteECOkNHfkPbsvAmZDcWJqqY=; b=1kIuhVVH74pmUY
+	oZFZWVvOUFFXt+VCmL+r2SFVQ+YroH/TDOus1wTzKioEmXzRjV4VaU5XYT+6pnZt6jO97HF41OItC
+	kE7KlsGENdEihS9LPhYc4udyMlq1/49OYxPwjFgeKos06PexmcC3Hd8ntTFLpPzalv8lZMgm7tMT7
+	pPZ513OfxyGS5eOAluJFPpe0T5oMI1Zdja4IORAL4lCtfqShMtc0EirwhoQtsDPa/mb3ZFqUTuDA0
+	bDoQ8FrpWpsWzO6UlMqx+hvvcBhKK/thboPrMGjJaEZwCRFAD5cGr9gCk22NZXvwnIOj3N6aDBjtJ
+	fbLKBZeaxg6XZZ+mJdow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo08x-00000007daf-0Yq5;
-	Mon, 18 Aug 2025 13:43:23 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uo1B6-00000007pq3-2Ewp;
+	Mon, 18 Aug 2025 14:49:40 +0000
+Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unzAs-00000007MGV-472i
+	id 1unzZ1-00000007P0u-4AHl
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Aug 2025 12:41:20 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57I7V45E004110;
-	Mon, 18 Aug 2025 12:41:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=YzkVLAGR/2wpz3nUZgJCWzEQHXpDoZJCDh1
-	hFmuux+c=; b=e5a2oCrh/wCfKqb0mPlHuhRyoSSggp79+BQ8Va//uDk1PPCX+Cr
-	eg6q3Xl5vw8Y+aHHndfRqb4aKLq/4n+H/WRMvP/iuoZ4V142ajaSkofLCMy4Jw3W
-	EzdiqtT2o3V51CiEm1qC8EdLQjD2Q32XxHD+l4a9XS+K19zZsyjw4yxymo2BCp+D
-	lewozuzJsEToCQ8CqL6JmYLczcwg2B5y7YU6vKenyDwrZ7Byt/XFxa6GBEaf0AVN
-	9SPh04+VfHiE4kYdzWUbUjnQ+skgHWosAxisJB/SlK+iPE2+z1ZRe1a3vjTLGRAH
-	Vzuz7YATd8XE8PhXo6hYVSsG4MsuQL5msLA==
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48kyur8wwc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 18 Aug 2025 12:41:15 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57ICfCY9009281;
-	Mon, 18 Aug 2025 12:41:12 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 48jk2khktv-1;
-	Mon, 18 Aug 2025 12:41:12 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57ICfCFA009275;
-	Mon, 18 Aug 2025 12:41:12 GMT
-Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 57ICfC4D009273;
-	Mon, 18 Aug 2025 12:41:12 +0000
-Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
-	id 5884757363A; Mon, 18 Aug 2025 18:11:11 +0530 (+0530)
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-To: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
-        dmitry.baryshkov@oss.qualcomm.com, andersson@kernel.org,
-        konradybcio@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, Nitin Rawat <quic_nitirawa@quicinc.com>
-Subject: [PATCH V2 0/2] Add regulator load support for QMP UFS PHY
-Date: Mon, 18 Aug 2025 18:11:08 +0530
-Message-ID: <20250818124110.8136-1-quic_nitirawa@quicinc.com>
-X-Mailer: git-send-email 2.48.1
+	Mon, 18 Aug 2025 13:06:17 +0000
+Received: from fllvem-sh04.itg.ti.com ([10.64.41.54])
+	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 57ID5ijE3083938;
+	Mon, 18 Aug 2025 08:05:44 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1755522344;
+	bh=G/dZgny3HqdfA7AWtx2mQOrx+Lcbf5Q9l2n2ndqcyls=;
+	h=Date:Subject:From:To:CC:References:In-Reply-To;
+	b=LjBd65TUWw6YkiXnw9PWg309LjELR9/eAq/AbIF96ljNNseRM6rufIXSQaBtj+Zg1
+	 qKYgqqqaIxddfBzwO19GBm1eYosKG8kXithItDoAiRFQSxzTfwEp5GAz44KX7OnFcf
+	 +YiL4rWbtH4vd7ttFCugDXfVS7d/pcJMeC38KgLE=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+	by fllvem-sh04.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 57ID5iF1528241
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
+	Mon, 18 Aug 2025 08:05:44 -0500
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Mon, 18
+ Aug 2025 08:05:43 -0500
+Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
+ Frontend Transport; Mon, 18 Aug 2025 08:05:43 -0500
+Received: from [172.24.233.62] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.233.62])
+	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 57ID5eEf1056903;
+	Mon, 18 Aug 2025 08:05:41 -0500
+Message-ID: <b0f176de-3476-4e66-ade3-0df39578c3ac@ti.com>
+Date: Mon, 18 Aug 2025 18:35:40 +0530
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODE4MDA2OSBTYWx0ZWRfX0lhTUaClx/Wn
- jSsE+CoEPwrdQiaWqXIGW8GwQtlIXzr0OYlp+kSbgo3iDmrnlNdXvrCdvw6TZnWqljBqfQKUO+h
- IXG7ANUTTnfwF+pCt0LsfQoMuGZKRgmjXBwtR11haVSogviMYQAIC1kL3rtbUVwwZKznP8gFiTe
- 5rUtOYcDi/UU4U00DwF9kpu2nh9OA7YqtnUpgKl6jABcpxfyjehYjGT0a9bM+t3GV66yx55HATm
- 92gm/R1y8uv2drB2/w7bjpwb53tak0Q5fDV1XmIiJFFtaWxYTc1xNetdQLBQvBVcGAoAqqfBSWS
- VTpV5L8DPsT6YZ+tEhNy4j9s7V8+xWUR+Cj72MGVfSYTxM/Z8cuLk14TYCC2Vg9fWV+OmAYOyfU
- pX25bZ38
-X-Proofpoint-ORIG-GUID: _GG5dkQMdypki_fZulONdKRJPWv_mjIq
-X-Proofpoint-GUID: _GG5dkQMdypki_fZulONdKRJPWv_mjIq
-X-Authority-Analysis: v=2.4 cv=YtIPR5YX c=1 sm=1 tr=0 ts=68a31f6b cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=2OwXVqhp2XgA:10 a=oykH4de7tLrJ1zPsMkEA:9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-08-18_05,2025-08-14_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 adultscore=0 malwarescore=0 priorityscore=1501
- spamscore=0 bulkscore=0 phishscore=0 impostorscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508180069
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/2] phy: cdns-dphy: hs-clk improvement and a cleanup
+From: Devarsh Thakkar <devarsht@ti.com>
+To: Vinod Koul <vkoul@kernel.org>,
+        Tomi Valkeinen
+	<tomi.valkeinen@ideasonboard.com>, <kishon@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Parth
+ Pancholi <parth.pancholi@toradex.com>,
+        Francesco Dolcini
+	<francesco@dolcini.it>,
+        Aradhya Bhatia <aradhya.bhatia@linux.dev>,
+        Jayesh
+ Choudhary <j-choudhary@ti.com>
+References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
+ <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
+ <aJM0WPVDUkte9E_D@vaman> <cac3d853-11aa-481b-90bb-aeb2cd4608f8@ti.com>
+Content-Language: en-US
+In-Reply-To: <cac3d853-11aa-481b-90bb-aeb2cd4608f8@ti.com>
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_054119_024159_F98F1836 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250818_060616_167695_9CB809E9 
+X-CRM114-Status: GOOD (  14.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,40 +89,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds regulator load support to the QMP UFS PHY driver.
-Currently, the driver only sets regulator supply names without specifying
-load requirements, which can lead to suboptimal power management.
+Gentle reminder.
 
-On some SoCs, regulators are shared between the QMP UFS PHY and other IP
-blocks. The regulator framework needs to know the maximum load
-requirements from all consumers to determine the appropriate
-regulator mode (Low Power Mode vs High Power Mode) and ensure stable
-operation.
+Hi Vinod,
 
-The series implements a simple and efficient approach for regulator load
-handling, with varying load requirements across different SoC
-configurations.
+On 12/08/25 11:32, devarsh wrote:
+> Hi Vinod, Kishon,
+> 
+> On 06/08/25 16:24, Vinod Koul wrote:
+>> On 05-08-25, 15:03, Tomi Valkeinen wrote:
+>>> Hi Vinod, Kishon,
+>>>
+>>> On 23/07/2025 13:01, Tomi Valkeinen wrote:
+>>>> A cdns-dphy improvement to return the actual hs clock rate, and a
+>>>> cleanup to remove leftover code.
+>>>>
+>>>> These were part of a Cadence DSI series:
+>>>>
+>>>> https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02%40ideasonboard.com/
+>>>>
+>>>> but are now separately here for easier merging.
+>>>>
+>>>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
+>>>> ---
+>>>> Tomi Valkeinen (2):
+>>>>        phy: cdns-dphy: Store hs_clk_rate and return it
+>>>>        phy: cdns-dphy: Remove leftover code
+>>>>
+>>>>   drivers/phy/cadence/cdns-dphy.c | 24 +++++++++---------------
+>>>>   1 file changed, 9 insertions(+), 15 deletions(-)
+>>>> ---
+>>>> base-commit: 89be9a83ccf1f88522317ce02f854f30d6115c41
+>>>> change-id: 20250723-cdns-dphy-hs-clk-rate-fix-a8857a5789dd
+>>>
+>>> Is this good to merge, and if so, do you have any estimate when? While
+>>> this is independent from the DSI series, I'd rather push the DSI series
+>>> into drm-misc about the same time, so both would appear in linux-next
+>>> relatively together.
+>>
+>> I will start taking patches after merge window closes next monday, so
+>> next week should be a good estimate
+> 
+> On top of this series [1], we have the cadence DPHY fixes for fixing PLL
+> lockup timeout [2] and one more patch which enables lower resolutions
+> [3], both have been reviewed and tested too.
+> 
+> Would it be possible for you too merge all 3 together in below order ?
+> 
+> [1]:
+> https://lore.kernel.org/all/cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com/
+> [2]: https://lore.kernel.org/all/20250704125915.1224738-1-devarsht@ti.com/
+> [3]: https://lore.kernel.org/all/20250807052002.717807-1-h-shenoy@ti.com/
+>
 
-Changes from v1:
-1. Addressed comments to move load configuration from device tree to
-   hardcoded, per-compatible data within the driver.
-2. Accordingly updated commit text to reflect the same.
-3. Addressed Manivannan's comment to avoid initialization of load.
+As I understand we see [1] got merged to linux-next but [2] and [3] are 
+still pending. Could you please let us know if anything further required 
+on our side for these two i.e. [2] and [3] ?
 
-Nitin Rawat (2):
-  phy: qcom-qmp-ufs: Add regulator load voting for UFS QMP Phy
-  phy: qcom-qmp-ufs: Add regulator loads for SM8550 and SM8750
+Regards
+Devarsh
 
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 21 ++++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
-
---
-2.48.1
+> Kindly let us know if anything required from our side.
+> 
+> Regards
+> Devarsh
+> 
 
 
 -- 
