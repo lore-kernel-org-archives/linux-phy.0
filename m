@@ -4,80 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00346CA0EE4
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 14:49:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1208CA0EE9
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 17:31:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:CC:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s/hklN8bmeeIJzdm/cqteECOkNHfkPbsvAmZDcWJqqY=; b=1kIuhVVH74pmUY
-	oZFZWVvOUFFXt+VCmL+r2SFVQ+YroH/TDOus1wTzKioEmXzRjV4VaU5XYT+6pnZt6jO97HF41OItC
-	kE7KlsGENdEihS9LPhYc4udyMlq1/49OYxPwjFgeKos06PexmcC3Hd8ntTFLpPzalv8lZMgm7tMT7
-	pPZ513OfxyGS5eOAluJFPpe0T5oMI1Zdja4IORAL4lCtfqShMtc0EirwhoQtsDPa/mb3ZFqUTuDA0
-	bDoQ8FrpWpsWzO6UlMqx+hvvcBhKK/thboPrMGjJaEZwCRFAD5cGr9gCk22NZXvwnIOj3N6aDBjtJ
-	fbLKBZeaxg6XZZ+mJdow==;
+	List-Owner; bh=cX1Ub9qoSraNvk2Z7Y/r2kdv61ELYAQIIpjN3TqoMeM=; b=vpHBQGKmXqmRet
+	xrnMmVTwCqoA/YBSdSH4gSMvWVOatBhDO4QdLWsGoPZCQqQ3U4W1Ea8V9cS8RPHJUQ8ppf5BSRJic
+	nbah/uzUNd1ObNdqo3SP/FjoidkT4pZeAvTsb9TrQS4hXqcvmRvxBvobl/RSsE4MI8Em5GomVTKb0
+	WdG8A2pL4Y7/201YdapeIbL9cJdMTB5Hisj1QMK0hGxCiTTy4/0isWcmkqp+Ghvs7uoyFw05OMO1Q
+	/AYDIqtPFDVGzet39qvjvK8He1x9+YvtXeAhOGdHqo0B5jBPEA6yXYYNSXV1bqQNJ1HvyqFE3KAn9
+	aphPOIZNJOlWHzEZEavQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo1B6-00000007pq3-2Ewp;
-	Mon, 18 Aug 2025 14:49:40 +0000
-Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
+	id 1uo3hI-000000088d3-0u48;
+	Mon, 18 Aug 2025 17:31:04 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1unzZ1-00000007P0u-4AHl
-	for linux-phy@lists.infradead.org;
-	Mon, 18 Aug 2025 13:06:17 +0000
-Received: from fllvem-sh04.itg.ti.com ([10.64.41.54])
-	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTP id 57ID5ijE3083938;
-	Mon, 18 Aug 2025 08:05:44 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1755522344;
-	bh=G/dZgny3HqdfA7AWtx2mQOrx+Lcbf5Q9l2n2ndqcyls=;
-	h=Date:Subject:From:To:CC:References:In-Reply-To;
-	b=LjBd65TUWw6YkiXnw9PWg309LjELR9/eAq/AbIF96ljNNseRM6rufIXSQaBtj+Zg1
-	 qKYgqqqaIxddfBzwO19GBm1eYosKG8kXithItDoAiRFQSxzTfwEp5GAz44KX7OnFcf
-	 +YiL4rWbtH4vd7ttFCugDXfVS7d/pcJMeC38KgLE=
-Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
-	by fllvem-sh04.itg.ti.com (8.18.1/8.18.1) with ESMTPS id 57ID5iF1528241
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-SHA256 bits=128 verify=FAIL);
-	Mon, 18 Aug 2025 08:05:44 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55; Mon, 18
- Aug 2025 08:05:43 -0500
-Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.55 via
- Frontend Transport; Mon, 18 Aug 2025 08:05:43 -0500
-Received: from [172.24.233.62] (devarsh-precision-tower-3620.dhcp.ti.com [172.24.233.62])
-	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 57ID5eEf1056903;
-	Mon, 18 Aug 2025 08:05:41 -0500
-Message-ID: <b0f176de-3476-4e66-ade3-0df39578c3ac@ti.com>
-Date: Mon, 18 Aug 2025 18:35:40 +0530
+	id 1uo11E-00000007mPB-06Fd;
+	Mon, 18 Aug 2025 14:39:29 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 69CB15C560C;
+	Mon, 18 Aug 2025 14:39:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8C3CC4CEEB;
+	Mon, 18 Aug 2025 14:39:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755527967;
+	bh=NNGx1BhKiXpo8fP1NrAIVQqjVfRV0yTMXi9fh1F4zrg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=IohbkpI8Oqjzlt/YDjYYRVYKn0OTs7UpZ3CYOJTtRM0KKfLEG1mXf7DnloIT8p/of
+	 9U1LnNJ7jRGeYBndKXNgPCjeF69GvqZgWjAqN+9NvvpuGcKr8WaXJqW4aqKRulGOzW
+	 sevKtR2n4c8VtLo/4jDooMKRi9n8SJtSduy/gbGw5ewRPEgrNX3zWsKXcYQkAca5LO
+	 8BuUy5rdvuU99dw3mwlKHIP7zlWPI2eQP/QHENnpk+mkF247WOX6v32+l0Om8XZFmU
+	 G33Nre2FH6SHIJw0k6l8TehFUFvf4uaz0WnBw4OZm26HEvRbw+F7V/CUyVUDwjRth3
+	 n5Il0Pkuozg5Q==
+Date: Mon, 18 Aug 2025 09:39:26 -0500
+From: Rob Herring <robh@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
+Subject: Re: [PATCH v2 01/32] dt-bindings: media: add DW MIPI CSI-2 Host
+ support
+Message-ID: <20250818143926.GA1025181-robh@kernel.org>
+References: <20250808-95_cam-v2-0-4b29fa6919a7@nxp.com>
+ <20250808-95_cam-v2-1-4b29fa6919a7@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/2] phy: cdns-dphy: hs-clk improvement and a cleanup
-From: Devarsh Thakkar <devarsht@ti.com>
-To: Vinod Koul <vkoul@kernel.org>,
-        Tomi Valkeinen
-	<tomi.valkeinen@ideasonboard.com>, <kishon@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        Parth
- Pancholi <parth.pancholi@toradex.com>,
-        Francesco Dolcini
-	<francesco@dolcini.it>,
-        Aradhya Bhatia <aradhya.bhatia@linux.dev>,
-        Jayesh
- Choudhary <j-choudhary@ti.com>
-References: <20250723-cdns-dphy-hs-clk-rate-fix-v1-0-d4539d44cbe7@ideasonboard.com>
- <cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com>
- <aJM0WPVDUkte9E_D@vaman> <cac3d853-11aa-481b-90bb-aeb2cd4608f8@ti.com>
-Content-Language: en-US
-In-Reply-To: <cac3d853-11aa-481b-90bb-aeb2cd4608f8@ti.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+Content-Disposition: inline
+In-Reply-To: <20250808-95_cam-v2-1-4b29fa6919a7@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_060616_167695_9CB809E9 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20250818_073928_140052_F15634C4 
+X-CRM114-Status: GOOD (  18.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,77 +87,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Gentle reminder.
-
-Hi Vinod,
-
-On 12/08/25 11:32, devarsh wrote:
-> Hi Vinod, Kishon,
+On Fri, Aug 08, 2025 at 06:39:04PM -0400, Frank Li wrote:
+> From: Eugen Hristev <eugen.hristev@linaro.org>
 > 
-> On 06/08/25 16:24, Vinod Koul wrote:
->> On 05-08-25, 15:03, Tomi Valkeinen wrote:
->>> Hi Vinod, Kishon,
->>>
->>> On 23/07/2025 13:01, Tomi Valkeinen wrote:
->>>> A cdns-dphy improvement to return the actual hs clock rate, and a
->>>> cleanup to remove leftover code.
->>>>
->>>> These were part of a Cadence DSI series:
->>>>
->>>> https://lore.kernel.org/all/20250618-cdns-dsi-impro-v4-0-862c841dbe02%40ideasonboard.com/
->>>>
->>>> but are now separately here for easier merging.
->>>>
->>>> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>
->>>> ---
->>>> Tomi Valkeinen (2):
->>>>        phy: cdns-dphy: Store hs_clk_rate and return it
->>>>        phy: cdns-dphy: Remove leftover code
->>>>
->>>>   drivers/phy/cadence/cdns-dphy.c | 24 +++++++++---------------
->>>>   1 file changed, 9 insertions(+), 15 deletions(-)
->>>> ---
->>>> base-commit: 89be9a83ccf1f88522317ce02f854f30d6115c41
->>>> change-id: 20250723-cdns-dphy-hs-clk-rate-fix-a8857a5789dd
->>>
->>> Is this good to merge, and if so, do you have any estimate when? While
->>> this is independent from the DSI series, I'd rather push the DSI series
->>> into drm-misc about the same time, so both would appear in linux-next
->>> relatively together.
->>
->> I will start taking patches after merge window closes next monday, so
->> next week should be a good estimate
+> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
+> and i.MX95 platform.
 > 
-> On top of this series [1], we have the cadence DPHY fixes for fixing PLL
-> lockup timeout [2] and one more patch which enables lower resolutions
-> [3], both have been reviewed and tested too.
+> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
+> Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> Change in v2
+> - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
+> - update ugen Hristev's s-o-b tag to align original author's email address
+> - remove single snps,dw-mipi-csi2-v150 compatible string
+> - move additionalProperties after required
+> ---
+>  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 158 +++++++++++++++++++++
+>  MAINTAINERS                                        |   1 +
+>  2 files changed, 159 insertions(+)
 > 
-> Would it be possible for you too merge all 3 together in below order ?
-> 
-> [1]:
-> https://lore.kernel.org/all/cc0e4cf5-1bd9-4ae3-a130-0483dbfc6335@ideasonboard.com/
-> [2]: https://lore.kernel.org/all/20250704125915.1224738-1-devarsht@ti.com/
-> [3]: https://lore.kernel.org/all/20250807052002.717807-1-h-shenoy@ti.com/
->
+> diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..fc1b167d6d3b142a01e2ea7f04230934260a05e6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+> @@ -0,0 +1,158 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
+> +
+> +maintainers:
+> +  - Frank Li <Frank.Li@nxp.com>
+> +
+> +description:
+> +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
+> +  camera. It will convert the incoming CSI-2 stream into a dedicated
+> +  interface called the Synopsys IDI (Image Data Interface).
+> +  This interface is a 32-bit SoC internal only, and can be assimilated
+> +  with a CSI-2 interface.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - fsl,imx93-mipi-csi2
+> +      - const: snps,dw-mipi-csi2-v150
+> +
+> +  reg:
+> +    items:
+> +      - description: MIPI CSI-2 core register
+> +
+> +  reg-names:
+> +    items:
+> +      - const: core
+> +
+> +  clocks:
+> +    maxItems: 2
+> +
+> +  clock-names:
+> +    items:
+> +      - const: per
+> +      - const: pixel
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description: MIPI D-PHY
+> +
+> +  phy-names:
+> +    items:
+> +      - const: rx
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description:
+> +          Input port node, single endpoint describing the input port.
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +            description: Endpoint connected to input device
+> +
+> +            properties:
+> +              bus-type:
+> +                const: 4
+> +
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +                items:
+> +                  maximum: 4
+> +
+> +              clock-lanes:
+> +                maxItems: 1
 
-As I understand we see [1] got merged to linux-next but [2] and [3] are 
-still pending. Could you please let us know if anything further required 
-on our side for these two i.e. [2] and [3] ?
+Drop. clock-lanes is always 1 entry.
 
-Regards
-Devarsh
+> +
+> +              remote-endpoint: true
 
-> Kindly let us know if anything required from our side.
-> 
-> Regards
-> Devarsh
-> 
+Drop.
 
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description:
+> +          Output port node, single endpoint describing the output port.
+> +
+> +        properties:
+> +          endpoint:
+> +            unevaluatedProperties: false
+> +            $ref: video-interfaces.yaml#
+> +            description: Endpoint connected to output device
+> +
+> +            properties:
+> +              bus-type:
+> +                const: 4
+> +
+> +              remote-endpoint: true
+
+Drop.
+
+Rob
 
 -- 
 linux-phy mailing list
