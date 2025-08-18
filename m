@@ -4,68 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A18A5CA0ED1
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 17:31:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59026CA0EE4
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 17:31:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PVmMW6gkOC9FWFPUFNqVpbzOjZx59CQwdZTwZAiqBio=; b=MPA3ItlYAvu20n
-	YRfc/qJYz0pktgKZ/IYJgtRIh4bWwq8IiyPV9APNJt210QQaEE+IDiqFv0rAH9fInyIRfp61gXEbt
-	ZQ0rF96suIhWeCnvU3rFS80zAhOypZBIWjWtlh32JCz2+gmAr4gkjUBP5WWm3t7R+W3M7YRvaV6JY
-	NDwQSrPQ8pVs2Ip4Bu5qBfusR7S1/+5RBP/exu9mAA2fPhKd2pzb/T50QeZmYRt37l2J3KaziectZ
-	xBTEeXuP07PRnZ6E6xjewNSJrC6ggUQIgvtVmoFqsVYlvtMlivGWCl2VOwrWuV7j3D3lhU2BEBI4T
-	uE/tpSqKWg8Iu3Lu3dFQ==;
+	List-Owner; bh=1fT0U/mrx1H5e1CimUyKTmxXwbg9VY6RC+8TPmSLDOw=; b=mY4eVex36PegX/
+	iHk7eGdwhA1cYUHZ0VMkKzOd6RP6bFs7z4091zQdKYYa+SEukyb0k2lKEgbZN9dAstVsDGVTQmap1
+	6sW5ZDwVxGo+9DeDFwDt5QO1ajl4pV1uax6QHfxVxcHK5PuKJZjbruR6X/8ykq7JXJenNRCgKy36G
+	/JjQyqhx3W7BXwKsTqnxSq0L9XetaVCyECtzFxYPUaB28E35jQLIKpx6VGaEt/+qeQF9apCWGtTFa
+	IQtz4PyTYhE8h1Z0w0Ry65m4b2MZLNl9o1HH6/KJvyKOP1mAFn7xoUTuAMHbZBPi8nE0iSgsdjmg4
+	E/Tpg5m3KX9IEdzZp9Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo3hl-000000089Pa-1ij5;
-	Mon, 18 Aug 2025 17:31:33 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uo3hm-000000089Qn-0BDZ;
+	Mon, 18 Aug 2025 17:31:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo1Fp-00000007rGI-48au
+	id 1uo1G8-00000007rIj-0i7F
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Aug 2025 14:54:34 +0000
+	Mon, 18 Aug 2025 14:54:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6A075601E4;
-	Mon, 18 Aug 2025 14:54:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A205BC4CEEB;
-	Mon, 18 Aug 2025 14:54:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 73FF85C5D6D;
+	Mon, 18 Aug 2025 14:54:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED5DEC4CEEB;
+	Mon, 18 Aug 2025 14:54:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755528872;
-	bh=LFc1YiNOV2HvPL/yXZhgHCq5LYNPLTl74ZTaym00VFk=;
+	s=k20201202; t=1755528891;
+	bh=cuZ1pa9bmDYPYfV+jIPPjvIT7gQMFovHPkrwyoJxtVs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=FGVRRJJO/ik7ARGyhYK3IpIVfwQ/pSsQdElGOufMPEoUkcM/5tYKBkyixosRu5oj0
-	 hKwADwthaldFnM4oqCy4ZqzCGjaY4tsfHy3KkPa6lo9YS5uT7ZQk4fa1Mg7M9ziCLT
-	 XUQmAK0nz+tFK3oEM3ku78ALJHNgxZSQXlXJJLfjOTpxoGxd2bDph6BRqPYLjFe0b/
-	 cH70GzAowq4qqGfIh0zdu5nCQSB5RcSQpxd788hIuFS/2GtBvvEFgsKzK1nGgqEdxG
-	 SM4+f+wu4xKiNiH0tQlf9ouklCaAAiAjtBDgRaoaic/8fu7TDxSW0vJW6mAvq8BxRb
-	 5HSrpPFxYEviQ==
-Date: Mon, 18 Aug 2025 09:54:31 -0500
+	b=GNlWJ/O/Q9mNZZxVdOxN36kc2Wb8xQlyD8sQdQMc9boQzjkddfNyqDREgvi82T4WE
+	 Y/NXGhdUdvQ2L+f2gKz9zYAyTtR2F66evnQ1o3DmM7dn63trsb+5DrEfiek+CJTwmG
+	 WtKT039P9KdoARyi/NrvQywbZcpbRcLmuQVUnqsGPhGRkH8wjdRsHDQ5puS2DPqaY8
+	 4p9MgLtMn/8HJhXZIw2W/d2iuziRosoQYwkayfF/QwmuVODvoJXZ7dptIyeifcAWzj
+	 Zlf4YKlr6kBP5Fp9xmqmh8SbHmFOoPpaXXLM/R760Si+3dU8wKDdt+9tDGhl0KwFDS
+	 n2Mm2ZpfseCRg==
+Date: Mon, 18 Aug 2025 09:54:50 -0500
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: quic_vbadigan@quicinc.com, devicetree@vger.kernel.org,
+Cc: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
 	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>, quic_mrana@quicinc.com,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Vinod Koul <vkoul@kernel.org>,
 	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the SM8750 QMP PCIe PHY Gen3 x2
-Message-ID: <175552887070.1211494.12034577229167513641.robh@kernel.org>
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>, devicetree@vger.kernel.org,
+	quic_vbadigan@quicinc.com, linux-kernel@vger.kernel.org,
+	quic_mrana@quicinc.com, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH 3/4] dt-bindings: PCI: qcom,pcie-sm8550: Add SM8750
+ compatible
+Message-ID: <175552888940.1212051.15924500632335799397.robh@kernel.org>
 References: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
- <20250809-pakala-v1-1-abf1c416dbaa@oss.qualcomm.com>
+ <20250809-pakala-v1-3-abf1c416dbaa@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250809-pakala-v1-1-abf1c416dbaa@oss.qualcomm.com>
+In-Reply-To: <20250809-pakala-v1-3-abf1c416dbaa@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250818_075452_247149_3839F2B1 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,13 +85,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 09 Aug 2025 15:29:16 +0530, Krishna Chaitanya Chundru wrote:
-> Document the QMP PCIe PHY on the SM8750 platform.
+On Sat, 09 Aug 2025 15:29:18 +0530, Krishna Chaitanya Chundru wrote:
+> On the Qualcomm SM8750 platform the PCIe host is compatible with the
+> DWC controller present on the SM8550 platorm.
 > 
 > Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
