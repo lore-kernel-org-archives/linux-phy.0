@@ -4,86 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96A18CA0EE9
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 18:06:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F3ACCA0EE4
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 18:48:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gKz5nIum4QQD7RyTl7ASt9mV06+4ERmVzZk9sYl/0LU=; b=HclEnC+DN4PMg7
-	/xmPEGALs3P1NHjUVa8yS0y5Nske6oR89nc8s4sqL821iXbd5dvPUrXeSTnfKE8+KzBxKvmjj//WA
-	b9+R6JnDOpaKGKNu61fPqyAXg1DHWXI8q39gewXlWxnOqVvPg0VxuqJ0XDGgHBld7D+hhkrNpgksE
-	Wlv2Ep21iObP1K/NboNQ0EdLe612qwEFSo3Mtnv4VAWcCR/VTPzBpTYtEceMVT3GlW5hjHAEer/6H
-	QBERisRBC4cO68hno9MqhgJUuHzH5LXkY8Gwwmu4Rkj76jBRQxyttVDQ3h7Bt/W7h1X8AI3JI39+t
-	cIABQT535AzMmBg9VyRA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nmki6gTzx9srzFA6vuoTiwzAoCTCmrjzohOLsopc5P4=; b=Yb5FH65+x91jJcXL6BdZXdEGv5
+	dzI30/zQbF3oBhzPn/D80gr5M2fCGUnTdXPF4YqZRVloNuT20EvJjozZyVjyqJNpUvRQKuPOlz6ys
+	dwI8yoow2At+pJC1tfVHlIvCBpOyaAvnVlLLC1gAyNkqgdrkBZh16AJ4VaRRSJLsDFoSpxQ0kbq0S
+	rmRMXpSNJZ5egmiTcWbE7uUUs9UNBjgEQHRHURl9iCSILhFjJTBNqUePInHgGH5kMILUoe6ISWph9
+	ZqLT0VpIfQNK5crHdx7wyQdIRcc2DPak6pbxOv1di48zfKr0cgWbeHDt70dFGlYgNsTDTrtcLQO62
+	ok8g57zA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo4FJ-00000008Hau-1WPJ;
-	Mon, 18 Aug 2025 18:06:13 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1uo4uf-00000008P8I-3iJ7;
+	Mon, 18 Aug 2025 18:48:57 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo3Vu-000000087GA-16qE
-	for linux-phy@lists.infradead.org;
-	Mon, 18 Aug 2025 17:19:19 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250818171916epoutp0491e40259a352cd72d3402343d254a384~c7BtEEqAv1187511875epoutp04M
-	for <linux-phy@lists.infradead.org>; Mon, 18 Aug 2025 17:19:16 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250818171916epoutp0491e40259a352cd72d3402343d254a384~c7BtEEqAv1187511875epoutp04M
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1755537556;
-	bh=RP2yA5MEhaqxhoH+gVDmsv00FKB2mOwlfQHcTXbYEOE=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=TGnmXPWwB5xXV9w1wRLWryg35S4Xw2TeqlANsWJUrT6M/NLqnOEFlb2BCMSPIKQSs
-	 gWUHGswOGwzpX81YAyrEcQXOtfd4zr+asG7jDVuIhR2qdajhH2EtW4cW31D5oP0IXt
-	 KaKuOYCtEoS1sOhVKN4ihMhNAeiJks79pdclQrrg=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250818171915epcas5p3fda06f50b251c0e3ea18d58c37f0d1af~c7BsVktPW0774307743epcas5p3t;
-	Mon, 18 Aug 2025 17:19:15 +0000 (GMT)
-Received: from epcas5p1.samsung.com (unknown [182.195.38.92]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4c5KFZ6Nmgz3hhT3; Mon, 18 Aug
-	2025 17:19:14 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPA id
-	20250818093004epcas5p4c46fe2d6fc7c91374cf77db02bf234cb~c0oCDGq7H2540125401epcas5p49;
-	Mon, 18 Aug 2025 09:30:04 +0000 (GMT)
-Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250818093001epsmtip194aa4c1a2b5b3c72a857795443a3da04~c0n-VJYuJ2375823758epsmtip1C;
-	Mon, 18 Aug 2025 09:30:01 +0000 (GMT)
-From: "Shradha Todi" <shradha.t@samsung.com>
-To: "'Bjorn Helgaas'" <helgaas@kernel.org>
-Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<mani@kernel.org>, <lpieralisi@kernel.org>, <kwilczynski@kernel.org>,
-	<robh@kernel.org>, <bhelgaas@google.com>, <jingoohan1@gmail.com>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<vkoul@kernel.org>, <kishon@kernel.org>, <arnd@arndb.de>,
-	<m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
-	<pankaj.dubey@samsung.com>
-In-Reply-To: <20250813230744.GA299971@bhelgaas>
-Subject: RE: [PATCH v3 11/12] PCI: exynos: Add support for Tesla FSD SoC
-Date: Mon, 18 Aug 2025 15:00:00 +0530
-Message-ID: <000d01dc1022$ad8c0740$08a415c0$@samsung.com>
+	id 1uo4XD-00000008KIC-3f7Z;
+	Mon, 18 Aug 2025 18:24:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id EE980600AE;
+	Mon, 18 Aug 2025 18:24:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E943C4CEEB;
+	Mon, 18 Aug 2025 18:24:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755541482;
+	bh=EtzxoV3mnhEERBKMayyfjmOhWE0QWt9AxeuBtdSTkTU=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=JiSsISxCoILf8P8IAu4QEDM5/orNPxkhDcIKyvwzOprKYDkmqysLOl7K4C8nyeHb1
+	 RF/MWQToWMreGNTumjzPAthTKMKdvP7v7J9iBb/Wh7tZk7atUDLXE0BhPOi6126AlY
+	 fqsZrzEtbDprU/xUsWhDQUdKzGpipIBzeTJzfvHeTmHddD9A/JIOEUmcmz7OFJtKXZ
+	 56Kw7YtqIQGmBTZdhO3H2KR/3Rc3Rq+XmHbe3YO/w3Ov+L2yBfVbCHXcU2z/oKgK3/
+	 x/HkEztPyRgma5dqHg47MD0Ul2BiLQjfZwbqObKTvowX500w8SSOaZGgob2/hJhhSJ
+	 nyCEzGZ0B50tQ==
+Date: Mon, 18 Aug 2025 13:24:41 -0500
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQHOko1UmKBgSR8l8U+0sy0UMlp1MAHKE5YvtHTNStA=
-Content-Language: en-in
-X-CMS-MailID: 20250818093004epcas5p4c46fe2d6fc7c91374cf77db02bf234cb
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-541,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250813230750epcas5p2101d8bb07332cde1beabe70ca6227aca
-References: <CGME20250813230750epcas5p2101d8bb07332cde1beabe70ca6227aca@epcas5p2.samsung.com>
-	<20250813230744.GA299971@bhelgaas>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_101918_630060_4F7673F6 
-X-CRM114-Status: GOOD (  37.60  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Samuel Holland <samuel@sholland.org>, 
+ linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
+ linux-sunxi@lists.linux.dev, Andre Przywara <andre.przywara@arm.com>, 
+ linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Stephen Boyd <sboyd@kernel.org>, 
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+To: iuncuim <iuncuim@gmail.com>
+In-Reply-To: <20250816084700.569524-1-iuncuim@gmail.com>
+References: <20250816084700.569524-1-iuncuim@gmail.com>
+Message-Id: <175554055617.1719671.12698982859500685788.robh@kernel.org>
+Subject: Re: [PATCH 0/7] arm64: allwinner: a523: add USB3.0 support
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,146 +76,150 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> On Mon, Aug 11, 2025 at 09:16:37PM +0530, Shradha Todi wrote:
-> > Add host and endpoint controller driver support for FSD SoC.
+
+On Sat, 16 Aug 2025 16:46:53 +0800, iuncuim wrote:
+> From: Mikhail Kalashnikov <iuncuim@gmail.com>
 > 
-> I think this might be easier if you added host mode first, then added
-> endpoint mode with a separate patch.
+> This series is a draft and does not include patches for dt-bindings.
+> The first series is necessary for testing on other devices and
+> initiating discussion.
+> 
+> This series of patches adds USB 3.0 functionality for the
+> A523/A527/H728/T527 processor.Most of the code is derived from the BSP,
+>  as the datasheet does not fully describe this feature.
+> 
+> I have verified functionality on two of my boards, walnutpi 2b (t527)
+> and x96qproplus (h728). When testing usb3.0 on x96qproplus, I get
+> reconnections of my nvme, it looks like the port does not provide enough
+>  current to work. I have encountered similar complaints from users of the
+>   device on Android. In the case of walnutpi, there is no such problem.
+> 
+> Based on 6.17-rc1
+> 
+> Mikhail Kalashnikov (7):
+>   clk: sunxi-ng: a523: add missing usb related clocks
+>   arm64: dts: allwinner: a523: add third usb2 phy
+>   phy: sun4i-usb: a523: add support for the USB2 PHY
+>   phy: allwinner: a523: add USB3/PCIe PHY driver
+>   arm64: dts: allwinner: a523: add USB3.0 phy node
+>   arm64: dts: allwinner: a523: add DWC3 USB3.0 node
+>   arm64: dts: allwinner: a523: activate USB3 for all boards
+> 
+>  .../arm64/boot/dts/allwinner/sun55i-a523.dtsi |  52 +++-
+>  .../dts/allwinner/sun55i-a527-cubie-a5e.dts   |   8 +
+>  .../dts/allwinner/sun55i-h728-x96qpro+.dts    |   8 +
+>  .../dts/allwinner/sun55i-t527-avaota-a1.dts   |   8 +
+>  drivers/clk/sunxi-ng/ccu-sun55i-a523.c        |  32 +++
+>  drivers/clk/sunxi-ng/ccu-sun55i-a523.h        |   2 +-
+>  drivers/phy/allwinner/Kconfig                 |   9 +
+>  drivers/phy/allwinner/Makefile                |   1 +
+>  drivers/phy/allwinner/phy-sun4i-usb.c         |  10 +
+>  drivers/phy/allwinner/phy-sun55i-usb3-pcie.c  | 267 ++++++++++++++++++
+>  include/dt-bindings/clock/sun55i-a523-ccu.h   |   4 +
+>  11 files changed, 392 insertions(+), 9 deletions(-)
+>  create mode 100644 drivers/phy/allwinner/phy-sun55i-usb3-pcie.c
+> 
+> --
+> 2.50.1
+> 
+> 
 > 
 
-Will do.
 
-> It's kind of unfortunate that the driver uses "ep" everywhere for
-> struct exynos_pcie pointers.  It's going to be confusing because "ep"
-> is also commonly used for endpoint-related things, e.g., struct
-> dw_pcie_ep pointers.  Maybe it's not worth changing; I dunno.
-> 
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
 
-I did try to rename the structure and the pointers 
-(https://lore.kernel.org/all/20230214121333.1837-9-shradha.t@samsung.com/)
-But the intention was different back then and so the idea was rejected.
-I could add a patch to only rename the pointers to something less
-confusing like "exy_pci"
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
 
-> > +static irqreturn_t fsd_pcie_irq_handler(int irq, void *arg)
-> > +{
-> > +	u32 val;
-> > +	struct exynos_pcie *ep = arg;
-> > +	struct dw_pcie *pci = &ep->pci;
-> > +	struct dw_pcie_rp *pp = &pci->pp;
-> > +
-> > +	val = readl(ep->elbi_base + FSD_IRQ2_STS);
-> > +	if ((val & FSD_IRQ_MSI_ENABLE) == FSD_IRQ_MSI_ENABLE) {
-> > +		val &= FSD_IRQ_MSI_ENABLE;
-> > +		writel(val, ep->elbi_base + FSD_IRQ2_STS);
-> 
-> This looks weird because FSD_IRQ_MSI_ENABLE sounds like an *enable*
-> bit, but here you're treating it as a *status* bit.
-> 
-> As far as I can tell, you set FSD_IRQ_MSI_ENABLE once at probe-time in
-> fsd_pcie_msi_init(), then you clear it here in an IRQ handler, and it
-> will never be set again.  That seems wrong; am I missing something?
-> 
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
 
-Actually the status IRQ and enable IRQ registers are different offsets
-but the bit position for MSI remains same in both cases so I just reused
-the macro. But I understand that it's confusing so I will add another
-macro for FSD_IRQ_MSI_STATUS or just rename the macro to
-FSD_IRQ_MSI to re-use.
+  pip3 install dtschema --upgrade
 
-> > +		dw_handle_msi_irq(pp);
-> > +	}
-> > +
-> > +	return IRQ_HANDLED;
-> > +}
-> > +
-> > +static void fsd_pcie_msi_init(struct exynos_pcie *ep)
-> > +{
-> > +	int val;
-> > +
-> > +	val = readl(ep->elbi_base + FSD_IRQ2_EN);
-> > +	val |= FSD_IRQ_MSI_ENABLE;
-> > +	writel(val, ep->elbi_base + FSD_IRQ2_EN);
-> > +}
-> > +
-> > +static void __iomem *fsd_atu_setting(struct dw_pcie *pci, void __iomem *base)
-> 
-> The "setting" name suggests that this merely returns an address
-> without side effects, but in fact it actively *sets* the view.
-> 
-> In this case there's no locking around:
-> 
->   addr = fsd_atu_setting(pci, base);
->   dw_pcie_read(addr + reg, size, &val);
-> 
-> even though concurrent calls would cause issues, but I think that's OK
-> because we only get there via the driver, and I assume multiple DBI or
-> DBI2 accesses never happen because they're not used in asynchronous
-> paths like interrupt handlers.
-> 
 
-Yes, there is no concurrent access to this function and hence I have
-not added locking mechanism.
+This patch series was applied (using b4) to base:
+ Base: attempting to guess base-commit...
+ Base: remotes/korg/master-95-g90d970cade8e (exact match)
 
-> But I think a name that hints at the fact that this does have side
-> effects would be helpful as a reminder in the callers that they must
-> not be used concurrently.
-> 
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
 
-Sure, I will change the name and also add comment as a reminder.
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/allwinner/' for 20250816084700.569524-1-iuncuim@gmail.com:
 
-> > +static const struct pci_epc_features fsd_pcie_epc_features = {
-> > +	.linkup_notifier = false,
-> > +	.msi_capable = true,
-> > +	.msix_capable = false,
-> 
-> I think we should omit features we do *not* support instead of calling
-> them out explicitly, e.g., we don't need .linkup_notifier or
-> .msix_capable.
-> 
-> We've added them in the past, but they're unnecessary and they lead to
-> either pervasive changes (adding ".new_feature = false" to all
-> existing drivers when adding the feature) or inconsistency (new
-> drivers include ".new_feature = false" but existing drivers do not).
-> 
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clock-names: ['usb0_phy', 'usb1_phy', 'usb2_phy'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clocks: [[5], [5], [2, 179]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
+	['allwinner,sun55i-a523-usb-phy'] is too short
+	'allwinner,sun55i-a523-usb-phy' is not one of ['allwinner,sun20i-d1-usb-phy', 'allwinner,sun50i-a64-usb-phy']
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg: [[68158464, 256], [68163584, 256], [69208064, 256], [81788928, 256]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg-names: ['phy_ctrl', 'pmu0', 'pmu1', 'pmu2'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reset-names: ['usb0_reset', 'usb1_reset', 'usb2_reset'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clock-names: ['usb0_phy', 'usb1_phy', 'usb2_phy'] is too long
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): resets: [[2, 49], [2, 50], [2, 56]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clocks: [[5], [5], [2, 179]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
+	['allwinner,sun55i-a523-usb-phy'] is too short
+	'allwinner,sun55i-a523-usb-phy' is not one of ['allwinner,sun20i-d1-usb-phy', 'allwinner,sun50i-a64-usb-phy']
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg: [[68158464, 256], [68163584, 256], [69208064, 256], [81788928, 256]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg-names: ['phy_ctrl', 'pmu0', 'pmu1', 'pmu2'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reset-names: ['usb0_reset', 'usb1_reset', 'usb2_reset'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): resets: [[2, 49], [2, 50], [2, 56]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clock-names: ['usb0_phy', 'usb1_phy', 'usb2_phy'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clocks: [[5], [5], [2, 179]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
+	['allwinner,sun55i-a523-usb-phy'] is too short
+	'allwinner,sun55i-a523-usb-phy' is not one of ['allwinner,sun20i-d1-usb-phy', 'allwinner,sun50i-a64-usb-phy']
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg: [[68158464, 256], [68163584, 256], [69208064, 256], [81788928, 256]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg-names: ['phy_ctrl', 'pmu0', 'pmu1', 'pmu2'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reset-names: ['usb0_reset', 'usb1_reset', 'usb2_reset'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): resets: [[2, 49], [2, 50], [2, 56]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clock-names: ['usb0_phy', 'usb1_phy', 'usb2_phy'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): clocks: [[5], [5], [2, 179]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): compatible: 'oneOf' conditional failed, one must be fixed:
+	['allwinner,sun55i-a523-usb-phy'] is too short
+	'allwinner,sun55i-a523-usb-phy' is not one of ['allwinner,sun20i-d1-usb-phy', 'allwinner,sun50i-a64-usb-phy']
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg: [[68158464, 256], [68163584, 256], [69208064, 256], [81788928, 256]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reg-names: ['phy_ctrl', 'pmu0', 'pmu1', 'pmu2'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): reset-names: ['usb0_reset', 'usb1_reset', 'usb2_reset'] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: phy@4100400 (allwinner,sun55i-a523-usb-phy): resets: [[2, 49], [2, 50], [2, 56]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/allwinner,sun50i-a64-usb-phy.yaml#
+arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dtb: /soc/phy@4f00000: failed to match any schema with compatible: ['allwinner,sun55i-a523-usb3-pcie-phy']
+arch/arm64/boot/dts/allwinner/sun55i-a527-cubie-a5e.dtb: /soc/phy@4f00000: failed to match any schema with compatible: ['allwinner,sun55i-a523-usb3-pcie-phy']
+arch/arm64/boot/dts/allwinner/sun55i-t527-orangepi-4a.dtb: /soc/phy@4f00000: failed to match any schema with compatible: ['allwinner,sun55i-a523-usb3-pcie-phy']
+arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb: /soc/phy@4f00000: failed to match any schema with compatible: ['allwinner,sun55i-a523-usb3-pcie-phy']
 
-Will remove
 
-> > +	if (ep->pdata->soc_variant == FSD) {
-> > +		ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(36));
-> > +		if (ret)
-> > +			return ret;
-> > +
-> > +		ep->sysreg = syscon_regmap_lookup_by_phandle(dev->of_node,
-> > +				"samsung,syscon-pcie");
-> > +		if (IS_ERR(ep->sysreg)) {
-> > +			dev_err(dev, "sysreg regmap lookup failed.\n");
-> > +			return PTR_ERR(ep->sysreg);
-> > +		}
-> > +
-> > +		ret = of_property_read_u32_index(dev->of_node, "samsung,syscon-pcie", 1,
-> > +						 &ep->sysreg_offset);
-> > +		if (ret) {
-> > +			dev_err(dev, "couldn't get the register offset for syscon!\n");
-> > +			return ret;
-> > +		}
-> > +	}
-> 
-> This is a good example of a complicated set of things where I think
-> you should either add a SoC-specific function pointer to do this or
-> test a property, e.g., "DMA width", instead of testing for a specific
-> SoC.
-> 
 
-Got your point and it makes sense. In future, other drivers could also
-want to set DMA width, etc. Will make properties to replace soc_variant:
- - DMA_width
- - has_syscon
- - function pointer to assert_core_reset and deassert_core_reset
 
-Any suggestions or is this approach okay?
-
--Shradha
 
 
 -- 
