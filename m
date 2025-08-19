@@ -4,83 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A21FDCA0EF2
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Aug 2025 23:35:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 294E5CA0EF5
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 00:24:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7O4AGiqUs3tHZIvwAiyJrPlZHFsdxc001nt+QV8Cn8=; b=pWPmoD0yEMJnqi
-	SsMmLlOY4P18fDbALm0xoHghT8t39P5asZJuPidBJXUR5yQeTem7zsQaS8rgkHG4ZIexLD9yWQuDS
-	eo40AD2vpKKRIXMkfWvTxo/Sis5AlwuYMqDzXKn7sMb/UNSGXJ4ghgIWiX3o6NAO/cfVdIpmsP10S
-	Qq+vB/vcScV/+vHseWKgCPr3RrZuEcyWtK8+2tCiycNGEscTf4prK30ccGoVPQ691psOTYUAvogkw
-	u1VNGosQILy+gDd7LlW2hn96Ck4kx8v2B4LY3kEAOK/kLWsBpeGEA26VSFyU7/TMDlSxQVmU91C5q
-	kePcPsXWBONTbYFq+3Vw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IHZwuiQtNaFZw189U06w0wVg+Kk4drh4Mm6bWzsYRgo=; b=m4dAi178PkHnyl
+	6EQxySM43JejEh8vKAF5pCAxV8TscgJRYqCHdKnI3t9s6FMpz14l5/wbhi8txrupqBsIpktRm9u7n
+	iMeQ6MaJz8bR9f8n3rXMR2Cshsa+pklZYa13+fYg7qodfVMm0HuiiDnSFjEPFj5hsqlCnkq0qhdKh
+	2YqPbGI5rNs9QU8qaUsiS+WLz6ewC2JdlmpEXiJ651MhP9QePKXGoj1ahUq8hekCzX5NIiUuwPsVR
+	dXVD0qiHCloLsV9nnCpxr/yUdmwPEgrI5WSNdmAMGxtO894dGPKQ561GvQuB+Ydt8ejsK4hvqvJVW
+	a8xAJeUiWi2FuG5x+ncg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo9O3-00000008vHJ-1DlJ;
-	Mon, 18 Aug 2025 23:35:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uo93o-00000008tUx-1d16;
-	Mon, 18 Aug 2025 23:14:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 41D2F46087;
-	Mon, 18 Aug 2025 23:14:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 854FFC19422;
-	Mon, 18 Aug 2025 23:14:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755558873;
-	bh=wzR4Qs8i+nZbzUbJH0z7ZvWkf0jeanCfOT0T/c8WVY0=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=L9ucp7Uc0m8SjWdcDmIQXxiOl51ybpRVUE07PHOWyBiCmBI0rRCH06d4EGEArP+6d
-	 1Sj1yIldLWSRSUONlREC6FYRwJgLL+k7xeiRO2bKsiX/dpu0ZUmzdEjm39MMYHmCbm
-	 r+ag05HrAk8COsjTfcYl4IgZCZg40XB2JAh6385czQsGEUxpWXGD65a2tSlCRUjlIp
-	 QLSqKJ9WNMuS1eK1IPGV7uTRgIC31Y/tUGlZZlBNOmC3aItamImegnP+o5Ak+tSWG0
-	 yaPllTB+wylW7Zt/q7FRN3P9LrmzjBGd4I53+/LyA8/ZkB2f/rHzsJsrVmAPXa7Mv9
-	 ti+E9E31Pf29g==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7E4CECA0EEB;
-	Mon, 18 Aug 2025 23:14:33 +0000 (UTC)
-From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
-Date: Tue, 19 Aug 2025 01:00:38 +0200
-Subject: [PATCH v2 4/7] phy: rockchip: phy-rockchip-inno-csidphy: allow
- writes to grf register 0
+	id 1uoA9p-00000008zsA-3Kte;
+	Tue, 19 Aug 2025 00:24:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uoA3S-00000008zJw-28Od;
+	Tue, 19 Aug 2025 00:18:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 225EE1595;
+	Mon, 18 Aug 2025 17:18:11 -0700 (PDT)
+Received: from localhost.localdomain (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5BD8F3F63F;
+	Mon, 18 Aug 2025 17:18:17 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Samuel Holland <samuel@sholland.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>
+Cc: Mikhail Kalashnikov <iuncuim@gmail.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev
+Subject: [PATCH] phy: sun4i-usb: drop num_phys assumption
+Date: Tue, 19 Aug 2025 01:15:22 +0100
+Message-ID: <20250819001522.13011-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.46.3
 MIME-Version: 1.0
-Message-Id: <20250616-rk3588-csi-dphy-v2-4-7a94f079b712@collabora.com>
-References: <20250616-rk3588-csi-dphy-v2-0-7a94f079b712@collabora.com>
-In-Reply-To: <20250616-rk3588-csi-dphy-v2-0-7a94f079b712@collabora.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Kever Yang <kever.yang@rock-chips.com>, 
- Jagan Teki <jagan@amarulasolutions.com>, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Diederik de Haas <didi.debian@cknow.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, 
- Collabora Kernel Team <kernel@collabora.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, 
- Michael Riesch <michael.riesch@collabora.com>
-X-Mailer: b4 0.12.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1755558041; l=1635;
- i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
- bh=l+DL7hvrQb52Alb7OjVyKnZ7Z6pkTmglNXwtSvoPg4M=;
- b=pXPJZwAy06i273TUpg9KStsF+R+c795F7yrhSxnbDxTPGjyeDidNQSJcylokou69ywyeFxbSe
- DW2SJ7n2sj3C+8v1jwb9/XmlIWoeYc+HwLDA+foqYa9v4RP1NChfR7J
-X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
- pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
-X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
- with auth_id=371
-X-Original-From: Michael Riesch <michael.riesch@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_161440_471772_D76E7CA9 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20250818_171822_626116_37C022FC 
+X-CRM114-Status: GOOD (  26.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,57 +64,253 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: michael.riesch@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Michael Riesch <michael.riesch@collabora.com>
+So far we set a number of expected Allwinner USB PHY instances for any
+given compatible string, and would fail if we do not find every PHY
+described properly in the DT (missing reset/PMU/clocks).
+This is somewhat redundant, as the DT only describes the resources for
+the implemented PHYs, but goes in line with being strict about firmware
+descriptions, and rather fixing things in the driver code, based on the
+compatible string.
+However this causes issues when we make a mistake, like we did recently
+on the A523: there are actually three USB PHYs, not two, as we assumed.
+Changing the number in the driver and the compatible string would cause
+all kinds of compatibility issues, both with older and newer DTs.
 
-The driver for the Rockchip MIPI CSI-2 DPHY uses GRF register offset
-value 0 to sort out undefined registers. However, the RK3588 CSIDPHY GRF
-this offset is perfectly fine (in fact, register 0 is the only one in
-this register file).
-Introduce a boolean variable to indicate valid registers and allow writes
-to register 0.
+To avoid problems with newer kernels and older or newer DTs, we can change
+the driver code to deduce the number of PHY instances from what's
+described in the DT. This has the added advantage of not requiring new
+compatible strings for new SoCs when just the number of PHYs change, which
+already happened and might occur again in the future.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+Drop the num_phys member from the config struct, and remove the fixed
+number of PHYs from each SoC's config description. Then enumerate the
+usb<x>_reset properties for all of the maximum four PHY instances, and
+just stop once we cannot find such a property anymore.
+The binding describes the reset property as mandatory for each PHY
+instance, and each DT in the kernel tree matches exactly the num_phys
+value in the current driver code, so we can rely on that.
+
+Apart from being more future proof, this will solve the A523 mishap:
+Older DTs would just describe two PHYs, whereas newer ones would feature
+all three of them. In any case we would get a valid number, matching the
+other nodes in the DT. Older kernels would always enumerate two PHYs,
+which at least does not cause any regressions.
+
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+Hi,
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-index 2ab99e1d47eb..75533d071025 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-@@ -87,10 +87,11 @@ struct dphy_reg {
- 	u32 offset;
- 	u32 mask;
- 	u32 shift;
-+	u8 valid;
+this is in response to Mikhail's patch series for adding USB3.0 support
+for the Allwinner A523 SoC, which revealed the problem with the number
+of PHYs begin wrong:
+https://lore.kernel.org/linux-sunxi/20250816143117.4b86ecc6@minigeek.lan/
+
+Regression tested on A64 and H6.
+
+Cheers,
+Andre
+
+ drivers/phy/allwinner/phy-sun4i-usb.c | 38 +++++++++------------------
+ 1 file changed, 13 insertions(+), 25 deletions(-)
+
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index 8873aed3a52aa..59d38d88efb08 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -97,7 +97,6 @@
+ #define POLL_TIME			msecs_to_jiffies(250)
+ 
+ struct sun4i_usb_phy_cfg {
+-	int num_phys;
+ 	int hsic_index;
+ 	u32 disc_thresh;
+ 	u32 hci_phy_ctl_clear;
+@@ -115,6 +114,7 @@ struct sun4i_usb_phy_data {
+ 	const struct sun4i_usb_phy_cfg *cfg;
+ 	enum usb_dr_mode dr_mode;
+ 	spinlock_t reg_lock; /* guard access to phyctl reg */
++	int num_phys;
+ 	struct sun4i_usb_phy {
+ 		struct phy *phy;
+ 		void __iomem *pmu;
+@@ -686,7 +686,7 @@ static struct phy *sun4i_usb_phy_xlate(struct device *dev,
+ {
+ 	struct sun4i_usb_phy_data *data = dev_get_drvdata(dev);
+ 
+-	if (args->args[0] >= data->cfg->num_phys)
++	if (args->args[0] >= data->num_phys)
+ 		return ERR_PTR(-ENODEV);
+ 
+ 	if (data->cfg->missing_phys & BIT(args->args[0]))
+@@ -779,13 +779,22 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
+-	for (i = 0; i < data->cfg->num_phys; i++) {
++	for (i = 0; i < MAX_PHYS; i++) {
+ 		struct sun4i_usb_phy *phy = data->phys + i;
+ 		char name[32];
+ 
+ 		if (data->cfg->missing_phys & BIT(i))
+ 			continue;
+ 
++		snprintf(name, sizeof(name), "usb%d_reset", i);
++		phy->reset = devm_reset_control_get(dev, name);
++		if (IS_ERR(phy->reset)) {
++			if (PTR_ERR(phy->reset) == -ENOENT)
++				break;
++			dev_err(dev, "failed to get reset %s\n", name);
++			return PTR_ERR(phy->reset);
++		}
++
+ 		snprintf(name, sizeof(name), "usb%d_vbus", i);
+ 		phy->vbus = devm_regulator_get_optional(dev, name);
+ 		if (IS_ERR(phy->vbus)) {
+@@ -828,13 +837,6 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 			}
+ 		}
+ 
+-		snprintf(name, sizeof(name), "usb%d_reset", i);
+-		phy->reset = devm_reset_control_get(dev, name);
+-		if (IS_ERR(phy->reset)) {
+-			dev_err(dev, "failed to get reset %s\n", name);
+-			return PTR_ERR(phy->reset);
+-		}
+-
+ 		if (i || data->cfg->phy0_dual_route) { /* No pmu for musb */
+ 			snprintf(name, sizeof(name), "pmu%d", i);
+ 			phy->pmu = devm_platform_ioremap_resource_byname(pdev, name);
+@@ -851,6 +853,7 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ 		phy->index = i;
+ 		phy_set_drvdata(phy->phy, &data->phys[i]);
+ 	}
++	data->num_phys = i;
+ 
+ 	data->id_det_irq = gpiod_to_irq(data->id_det_gpio);
+ 	if (data->id_det_irq > 0) {
+@@ -901,28 +904,24 @@ static int sun4i_usb_phy_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct sun4i_usb_phy_cfg suniv_f1c100s_cfg = {
+-	.num_phys = 1,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = true,
  };
  
- #define PHY_REG(_offset, _width, _shift) \
--	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, }
-+	{ .offset = _offset, .mask = BIT(_width) - 1, .shift = _shift, .valid = 1, }
+ static const struct sun4i_usb_phy_cfg sun4i_a10_cfg = {
+-	.num_phys = 3,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+ };
  
- static const struct dphy_reg rk1808_grf_dphy_regs[] = {
- 	[GRF_DPHY_CSIPHY_FORCERXMODE] = PHY_REG(RK1808_GRF_PD_VI_CON_OFFSET, 4, 0),
-@@ -145,7 +146,7 @@ static inline void write_grf_reg(struct rockchip_inno_csidphy *priv,
- 	const struct dphy_drv_data *drv_data = priv->drv_data;
- 	const struct dphy_reg *reg = &drv_data->grf_regs[index];
+ static const struct sun4i_usb_phy_cfg sun5i_a13_cfg = {
+-	.num_phys = 2,
+ 	.disc_thresh = 2,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+ };
  
--	if (reg->offset)
-+	if (reg->valid)
- 		regmap_write(priv->grf, reg->offset,
- 			     HIWORD_UPDATE(value, reg->mask, reg->shift));
- }
-
+ static const struct sun4i_usb_phy_cfg sun6i_a31_cfg = {
+-	.num_phys = 3,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = true,
+@@ -930,14 +929,12 @@ static const struct sun4i_usb_phy_cfg sun6i_a31_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun7i_a20_cfg = {
+-	.num_phys = 3,
+ 	.disc_thresh = 2,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = false,
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a23_cfg = {
+-	.num_phys = 2,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A10,
+ 	.dedicated_clocks = true,
+@@ -945,7 +942,6 @@ static const struct sun4i_usb_phy_cfg sun8i_a23_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a33_cfg = {
+-	.num_phys = 2,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -953,7 +949,6 @@ static const struct sun4i_usb_phy_cfg sun8i_a33_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_a83t_cfg = {
+-	.num_phys = 3,
+ 	.hsic_index = 2,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -961,7 +956,6 @@ static const struct sun4i_usb_phy_cfg sun8i_a83t_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_h3_cfg = {
+-	.num_phys = 4,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -970,7 +964,6 @@ static const struct sun4i_usb_phy_cfg sun8i_h3_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_r40_cfg = {
+-	.num_phys = 3,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -979,7 +972,6 @@ static const struct sun4i_usb_phy_cfg sun8i_r40_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
+-	.num_phys = 1,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -988,7 +980,6 @@ static const struct sun4i_usb_phy_cfg sun8i_v3s_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun20i_d1_cfg = {
+-	.num_phys = 2,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+ 	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
+@@ -997,7 +988,6 @@ static const struct sun4i_usb_phy_cfg sun20i_d1_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
+-	.num_phys = 2,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+@@ -1006,7 +996,6 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
+-	.num_phys = 4,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
+ 	.phy0_dual_route = true,
+@@ -1015,7 +1004,6 @@ static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
+ };
+ 
+ static const struct sun4i_usb_phy_cfg sun50i_h616_cfg = {
+-	.num_phys = 4,
+ 	.disc_thresh = 3,
+ 	.phyctl_offset = REG_PHYCTL_A33,
+ 	.dedicated_clocks = true,
 -- 
-2.39.5
-
+2.46.3
 
 
 -- 
