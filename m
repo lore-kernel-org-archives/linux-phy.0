@@ -4,89 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBD9DCA0EE6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 05:30:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7287CA0EE6
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 05:42:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XYb6KUUMGJnHIWppqbuORYXxAMyWurNqsjI4VHsJk5A=; b=UV7LLyb8UkuCd7
-	jJ5BXXUi8kNaYi9JeUD4rr5IM8oWMzxZStRz8aF7wKW/JXSbn8gZZmx8jlnlRjVZ/mTGq5TsD1h8v
-	zoUiSQpnzBbfNIhq/8sOKtyI05Wdbk9mAR2F1bo0NDCoohlCWN3OCMKVra6U9WFpE0RNMHIWGCEVm
-	Ii7hURpUw3NDE+l93U5VZAglAP2n47PBYCEl3HJRo9U+/emBc/Zy3G4CIaC+G3gfIS4LJvKgrzdgy
-	hc7QAO0FyBGKDFqbgGTGmvvOt/ajt5sEFSORUlAl1GDHwgtDnL8b0/4qnvkdXBPTMXcsyG9FMLjQU
-	pSyzuEuiq5i6/X1EJ7JQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1C14fPtJXgjGALzU1r62n7EcyuZ/tCVYfrwgG+9e20Y=; b=rj6ZD3bvV0FyDb
+	yuB8nJtQN690WHA8jwhbkNlfslYYoUjbwWMhh4KIjC6MkoUzKav42PD5E9wWDVC9UGwQ3iN9N4D8g
+	6lg3gLEjz36CqA9wqWSxGw2DPoImquWwscoi9KJHQo9GVWHEvbsABakx8N27h8v3b1HArdjw1X+iI
+	HpHHclap3tiYmA5Jb0PtOYHBFInB76p6JT1D1jje58L85U7VLa/160MCN6M9nlXqcAdoUltuCM0L+
+	eu/vymKSgI6kd7/22n/MBoST4JshbBaZ7pLFA4UMWabo1RGI1yPibWhwiGH0jeOkzsWvQup2QwkNn
+	ZL/wQyfN388HWpD0Y6Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoEvl-00000009R2K-2GNa;
-	Tue, 19 Aug 2025 05:30:45 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1uoF6y-00000009S7d-2bC8;
+	Tue, 19 Aug 2025 05:42:20 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoEuZ-00000009Qsx-2slv
+	id 1uoF6v-00000009S6L-1tQU
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Aug 2025 05:29:34 +0000
-Received: from epcas5p4.samsung.com (unknown [182.195.41.42])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250819052923epoutp020039f2eaabb24dd8ac39b9fddfa84f00~dE-LEWSyN2880928809epoutp02_
-	for <linux-phy@lists.infradead.org>; Tue, 19 Aug 2025 05:29:23 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250819052923epoutp020039f2eaabb24dd8ac39b9fddfa84f00~dE-LEWSyN2880928809epoutp02_
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1755581363;
-	bh=6MG+/Jai4e9wBAwA5aA5ZNa5PbIOBcMt7Lw3JvyLk6w=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=d67urHkAZCwPT6xGIAQeP+7Mr4oeVqK3CMHCwe+Bzw0iZh+ZIDas4vM5tHIW2Zxkt
-	 /hVeIH8bg/z8qSzULkWnA5nFNdOT3OBEiR9gOnM88/KKVeTs/DvoPVDJXwvdXii+57
-	 d0FPOs0kA0iOIskNZ8lhuis/+MErNgNln37WUtj4=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPS id
-	20250819052922epcas5p48d6c5c5c355795ed5a957f8effe6dbd3~dE-KYwSKb1102711027epcas5p4U;
-	Tue, 19 Aug 2025 05:29:22 +0000 (GMT)
-Received: from epcas5p3.samsung.com (unknown [182.195.38.86]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4c5dS03lX4z3hhT7; Tue, 19 Aug
-	2025 05:29:20 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250818074152epcas5p38e555d935cb93f38ed0a590003a53da1~czJkANOlH1134711347epcas5p3L;
-	Mon, 18 Aug 2025 07:41:52 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250818074149epsmtip265c95d1fd9e613f0c41ca6c3c05681fa~czJhJl2tB1399313993epsmtip2R;
-	Mon, 18 Aug 2025 07:41:49 +0000 (GMT)
-From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
-To: "'Vinod Koul'" <vkoul@kernel.org>
-Cc: <kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
-	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
-	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
-	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <aJtN7uVUV3YhfY5-@vaman>
-Subject: RE: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
- ExynosAutov920
-Date: Mon, 18 Aug 2025 13:11:48 +0530
-Message-ID: <038a01dc1013$900a2800$b01e7800$@samsung.com>
+	Tue, 19 Aug 2025 05:42:18 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-3bb30c72433so1549134f8f.3
+        for <linux-phy@lists.infradead.org>; Mon, 18 Aug 2025 22:42:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1755582136; x=1756186936; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=FYBD35HCDZhJxxlEqUtk9Ype0nn1sCDpABM37Hbr1TU=;
+        b=TI2vE6BYPonWGsTxADHP+/pc6v/hV6q+mLvf1xzAojKr1ySvsoFLnANWwWdZPytbhT
+         bY28g7BDPVtipLIaQii9SwTfdKlGM6/LIn89whJdkSIrXg3091YV5UgKMq8q+DJMwrJp
+         W52W5a7ioFXfW0+/FrB1p1J51vwfRi7GJfnFM1XU6/nKRdhU6GIAAdbuco+tQcqtTt5S
+         r2AcH1B738hSKpObuP0rpv1KLpASyvF4V4s1BTc2P9QVP3VN+l4iE2dOFBMqAaY8HaQj
+         D3Kk0oQ49P3M7aHwA1M1QOMo5/mCBf/PULMyn9LVgygF7nT93lLeo7F3IPbwQCNc6dNr
+         GoYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755582136; x=1756186936;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=FYBD35HCDZhJxxlEqUtk9Ype0nn1sCDpABM37Hbr1TU=;
+        b=INJSIZPB0zI2Y6WDx9ak+MkxTZDseVSdpqv97Q56AgmcyyGfvythBbDhA7uWLJeZKO
+         sYUL4s5coRSck8AwBXmPQaUB6oEtm59S0uaZGVecgq6xqjsg4nViuPe2oF2CxCGHhFOu
+         UXMhwJGO5M/8j3Hly68oIK/NJ4GaOeJkWkDwYuIhx5vd3YFNrA05efwK6dqZ+ocE3oBs
+         CN9FdBqI8UBPhvYiwUB7Hz0Po4FLkiyMX1bTPjnKFLUQysKVNIpd0A9OPLMlwhUdnawQ
+         GApQxMJ+rY7oV3/3PfpoIJ7//Q2fuc93WjyuZDT2HoZSz//uETpBRojoVbboxDGvO1W5
+         DDtw==
+X-Gm-Message-State: AOJu0YxVHOoJ06TwmNW/Fyju69KLnzjlcCgpcc8qMbOhKNLFKQbz8yXs
+	adbuAOyvDyTh8R01SYaTjE8DBQQ17M/vx0trkOvngnnPUL91o8nR/2teiwxC1AENOdY=
+X-Gm-Gg: ASbGncsaw5+NPUD2U8olUzO74po3xXWYHFtVz2QA6abzWRDHxFJDkm4lAMw2xh+6VQm
+	tI4UYjl2xB6VkRxgXNWa3z/xqWTdgRh/p2xXFhjL0hqVg7ac46t71+tSE4V6D1qrbGw/UdGzx7L
+	UauCrmqW2pSy4hxV+4cq3/fcHAibOYHtccnUQGj9pZ5oMWGeWXmDoiPpgcLr+/5XrWX1AMJU79/
+	GEebx9O7hD+h/s7TrwRA1rgB4XfJzfvLAIk8MwabhXB2vkHl7JeSfV5VqR1+RvwMqJQZDkHXTv8
+	u9AXUtgTfiDbhjjuGpV8wl47OLQ1OYa6E00lITgZVpB2W0lv+IMpqZCPeLSLzxlBG7I0BrATVsA
+	lWkOAMJ9REqcKiah9KPwfyjW6oKvCjg6CTRrJhKFZ7e40aTUPQEma45csmhf420FurUp8zMbp6u
+	a/srLBf2z0R6dh/AmRgg==
+X-Google-Smtp-Source: AGHT+IEgGTIugp1HiWMyYhCVeQS6qBeOS7J/8q5Qx7oJ8SywICyhuxqRWT9NuSlOgGBaMEf3p33pgQ==
+X-Received: by 2002:a05:6000:2485:b0:3aa:34f4:d437 with SMTP id ffacd0b85a97d-3c0ecc31e8fmr848054f8f.37.1755582135654;
+        Mon, 18 Aug 2025 22:42:15 -0700 (PDT)
+Received: from claudiu-TUXEDO-InfinityBook-Pro-AMD-Gen9.. ([2a02:2f04:620a:8b00:4343:2ee6:dba1:7917])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b42a9847fsm25097345e9.26.2025.08.18.22.42.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 18 Aug 2025 22:42:15 -0700 (PDT)
+From: Claudiu <claudiu.beznea@tuxon.dev>
+X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	p.zabel@pengutronix.de,
+	geert+renesas@glider.be,
+	magnus.damm@gmail.com,
+	yoshihiro.shimoda.uh@renesas.com,
+	biju.das.jz@bp.renesas.com
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org
+Subject: [PATCH v5 0/7] Add initial USB support for the Renesas RZ/G3S SoC
+Date: Tue, 19 Aug 2025 08:42:05 +0300
+Message-ID: <20250819054212.486426-1-claudiu.beznea.uj@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQJ+ZgWj3OwstM5ZbwFL0KmcSzrOlQGuc5yxAsdJ9S8B+nVVqLLv1zHQ
-Content-Language: en-in
-X-CMS-MailID: 20250818074152epcas5p38e555d935cb93f38ed0a590003a53da1
-X-Msg-Generator: CA
-X-Sendblock-Type: REQ_APPROVE
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9
-References: <20250805115216.3798121-1-pritam.sutar@samsung.com>
-	<CGME20250805114323epcas5p39bf73c5e0a9382ff54b1832724804cc9@epcas5p3.samsung.com>
-	<20250805115216.3798121-7-pritam.sutar@samsung.com> <aJtN7uVUV3YhfY5-@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_222932_378142_D9B526D2 
-X-CRM114-Status: GOOD (  32.54  )
+X-CRM114-CacheID: sfid-20250818_224217_519138_BBB34FCE 
+X-CRM114-Status: GOOD (  20.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,268 +103,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod, 
-
-> -----Original Message-----
-> From: Vinod Koul <vkoul@kernel.org>
-> Sent: 12 August 2025 07:52 PM
-> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
-> peter.griffin@linaro.org; kauschluss@disroot.org;
-> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
-> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
-> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
-> dev.tailor@samsung.com; faraz.ata@samsung.com;
-> muhammed.ali@samsung.com; selvarasu.g@samsung.com
-> Subject: Re: [PATCH v5 6/6] phy: exynos5-usbdrd: support SS combo phy for
-> ExynosAutov920
-> 
-> On 05-08-25, 17:22, Pritam Manohar Sutar wrote:
-> > Add required change in phy driver to support combo SS phy for this SoC.
-> >
-> > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > ---
-> >  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 327
-> +++++++++++++++++++-
-> >  include/linux/soc/samsung/exynos-regs-pmu.h |   1 +
-> >  2 files changed, 324 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > index c22f4de7d094..1108f0c07755 100644
-> > --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> > @@ -273,6 +273,36 @@
-> >  #define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
-> >  #define HSPPLLTUNE_FSEL				GENMASK(18, 16)
-> >
-> > +/* ExynosAutov920 phy usb31drd port reg */
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_RST_CTRL	0x000
-> > +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N_OVRD_EN	BIT(5)
-> > +#define PHY_RST_CTRL_PIPE_LANE0_RESET_N		BIT(4)
-> > +#define PHY_RST_CTRL_PHY_RESET_OVRD_EN		BIT(1)
-> > +#define PHY_RST_CTRL_PHY_RESET			BIT(0)
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0
-> 	0x0004
-> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR
-> 	GENMASK(31, 16)
-> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK		BIT(8)
-> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK		BIT(4)
-> > +#define PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL		BIT(0)
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1
-> 	0x0008
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2
-> 	0x000c
-> > +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN		BIT(0)
-> > +#define PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA
-> 	GENMASK(31, 16)
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG0	0x100
-> > +#define PHY_CONFIG0_PHY0_PMA_PWR_STABLE		BIT(14)
-> > +#define PHY_CONFIG0_PHY0_PCS_PWR_STABLE		BIT(13)
-> > +#define PHY_CONFIG0_PHY0_ANA_PWR_EN		BIT(1)
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG7	0x11c
-> > +#define PHY_CONFIG7_PHY_TEST_POWERDOWN		BIT(24)
-> > +
-> > +#define EXYNOSAUTOV920_USB31DRD_PHY_CONFIG4	0x110
-> > +#define PHY_CONFIG4_PIPE_RX0_SRIS_MODE_EN	BIT(2)
-> > +
-> >  /* Exynos9 - GS101 */
-> >  #define EXYNOS850_DRD_SECPMACTL			0x48
-> >  #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL
-> 	GENMASK(13, 12)
-> > @@ -2077,6 +2107,253 @@ static const struct
-> exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
-> >  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
-> >  };
-> >
-> > +static void
-> > +exynosautov920_usb31drd_cr_clk(struct exynos5_usbdrd_phy *phy_drd,
-> > +bool high) {
-> > +	void __iomem *reg_phy = phy_drd->reg_phy;
-> > +	u32 reg = 0;
-> 
-> again..
-> 
-> > +
-> > +	reg = readl(reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +	if (high)
-> > +		reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> > +	else
-> > +		reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> > +
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +	fsleep(1);
-> > +}
-> > +
-> > +static void
-> > +exynosautov920_usb31drd_port_phy_ready(struct exynos5_usbdrd_phy
-> > +*phy_drd) {
-> > +	struct device *dev = phy_drd->dev;
-> > +	void __iomem *reg_phy = phy_drd->reg_phy;
-> > +	static const unsigned int timeout_us = 20000;
-> > +	static const unsigned int sleep_us = 40;
-> > +	u32 reg = 0;
-> 
-> here too
-> 
-> > +	int err;
-> > +
-> > +	/* Clear cr_para_con */
-> > +	reg &= ~(PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-> > +			PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR);
-> > +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +	writel(0x0, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON1);
-> > +	writel(0x0, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> > +
-> > +	exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> > +	exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> > +
-> > +	/*
-> > +	 * The maximum time from phy reset de-assertion to de-assertion of
-> > +	 * tx/rx_ack can be as high as 5ms in fast simulation mode.
-> > +	 * Time to phy ready is < 20ms
-> > +	 */
-> > +	err = readl_poll_timeout(reg_phy +
-> > +
-> 	EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0,
-> > +			reg, !(reg &
-> PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK),
-> > +			sleep_us, timeout_us);
-> > +	if (err)
-> > +		dev_err(dev, "timed out waiting for rx/tx_ack: %#.8x\n",
-> reg);
-> > +
-> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +}
-> > +
-> > +static void
-> > +exynosautov920_usb31drd_cr_write(struct exynos5_usbdrd_phy
-> *phy_drd,
-> > +				 u16 addr, u16 data)
-> > +{
-> > +	struct device *dev = phy_drd->dev;
-> > +	void __iomem *reg_phy = phy_drd->reg_phy;
-> > +	u32 cnt = 0;
-> > +	u32 reg = 0;
-> 
-> this one, former is okay
-> 
-> > +
-> > +	/* Pre Clocking */
-> > +	reg = readl(reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +	reg |= PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +
-> > +	/*
-> > +	 * tx clks must be available prior to assertion of tx req.
-> > +	 * tx pstate p2 to p0 transition directly is not permitted.
-> > +	 * tx clk ready must be asserted synchronously on tx clk prior
-> > +	 * to internal transmit clk alignment sequence in the phy
-> > +	 * when entering from p2 to p1 to p0.
-> > +	 */
-> > +	do {
-> > +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> > +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> > +		cnt++;
-> > +	} while (cnt < 15);
-> > +
-> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +
-> > +	/*
-> > +	 * tx data path is active when tx lane is in p0 state
-> > +	 * and tx data en asserted. enable cr_para_wr_en.
-> > +	 */
-> > +	reg = readl(reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> > +	reg &= ~PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA;
-> > +	reg |=
-> FIELD_PREP(PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_DATA, data) |
-> > +		PHY_CR_PARA_CON2_PHY0_CR_PARA_WR_EN;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON2);
-> > +
-> > +	/* write addr */
-> > +	reg = readl(reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +	reg &= ~PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR;
-> > +	reg |= FIELD_PREP(PHY_CR_PARA_CON0_PHY0_CR_PARA_ADDR,
-> addr) |
-> > +		PHY_CR_PARA_CON0_PHY0_CR_PARA_CLK |
-> > +		PHY_CR_PARA_CON0_PHY0_CR_PARA_SEL;
-> > +	writel(reg, reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +
-> > +	/* check cr_para_ack*/
-> > +	cnt = 0;
-> > +	do {
-> > +		/*
-> > +		 * data symbols are captured by phy on rising edge of the
-> > +		 * tx_clk when tx data enabled.
-> > +		 * completion of the write cycle is acknowledged by
-assertion
-> > +		 * of the cr_para_ack.
-> > +		 */
-> > +		exynosautov920_usb31drd_cr_clk(phy_drd, true);
-> > +		reg = readl(reg_phy +
-> EXYNOSAUTOV920_USB31DRD_PHY_CR_PARA_CON0);
-> > +		if ((reg & PHY_CR_PARA_CON0_PHY0_CR_PARA_ACK))
-> > +			break;
-> > +
-> > +		exynosautov920_usb31drd_cr_clk(phy_drd, false);
-> > +
-> > +		/*
-> > +		 * wait for minimum of 10 cr_para_clk cycles after phy reset
-> > +		 * is negated, before accessing control regs to allow for
-> > +		 * internal resets.
-> > +		 */
-> > +		cnt++;
-> > +	} while (cnt < 10);
-> > +
-> > +	if (cnt == 10)
-> > +		dev_dbg(dev, "CR write failed to 0x%04x\n", addr);
-> 
-> Not error?
-
-This is only for debugging purpose. It is not considered as error. 
-
-> --
-> ~Vinod
-
-
-Will address other comments in next version of the patch-set (v6).
-
-Thank you.
-
-Regards,
-Pritam
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogQ2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJwLnJlbmVzYXMuY29tPgoK
+SGksCgpTZXJpZXMgYWRkcyBpbml0aWFsIFVTQiBzdXBwb3J0IGZvciB0aGUgUmVuZXNhcyBSWi9H
+M1MgU29DLgoKU2VyaWVzIGlzIHNwbGl0IGFzIGZvbGxvd3M6Ci0gcGF0Y2hlcyAxLTIvNwkJLSBm
+aXhlcyBvbiBiaW5kaW5ncyBhbmQgZHJpdmVyIGZvciBVU0IgUEhZCi0gcGF0Y2hlcyAzLTUvNwkJ
+LSB1cGRhdGVzIHRoZSByemcybC11c2JwaHktY3RybCBkcml2ZXIgYW5kIGRvY3VtZW50YXRpb24K
+CQkJICB3aXRoIHN1cHBvcnQgZm9yIHNldHRpbmcgUFdSUkRZIHRob3VnaCBTWVNDCi0gcGF0Y2hl
+cyA2LTcvNwkJLSBhZGQgZGV2aWNlIHRyZWUgc3VwcG9ydAoKTWVyZ2Ugc3RyYXRlZ3ksIGlmIGFu
+eToKLSBwYXRjaGVzIDEtMi83IGNhbiBnbyB0aHJvdWdoIHRoZSBQSFkgdHJlZQotIHBhdGNoZXMg
+My01LzcgY2FuIGdvIHRocm91Z2ggdGhlIHJlc2V0IHRyZWUKLSBwYXRjaGVzIDYtNy83IGNhbiBn
+byB0aHJvdWdoIFJlbmVzYXMgdHJlZQoKVGhhbmsgeW91LApDbGF1ZGl1IEJlem5lYQoKQ2hhbmdl
+cyBpbiB2NToKLSBkcm9wcGVkIHBhdGNoICJzb2M6IHJlbmVzYXM6IHJ6LXN5c2M6IEFkZCBzeXNj
+b24vcmVnbWFwIHN1cHBvcnQiIGFzIGl0CiAgYWxyZWFkeSBtb2RpZmllZCBhbmQgcHViaXNoZWQg
+YWxzbyBhdCBbMl0gd2l0aCB0aGUgbGF0ZXN0IHJldmlldyBjb21tZW50cwogIGFkZHJlc3NlZAot
+IGZpeGVkIHRoZSBkb2N1bWVudGF0aW9uCgpDaGFuZ2VzIGluIHY0OgotIHJlcGxhY2VkICJyZW5l
+c2FzLHN5c2Mtc2lnbmFscyIgRFQgcHJvcGVydHkgd2l0aCAicmVuZXNhcyxzeXNjLXB3cnJkeSIK
+LSBkcm9wcGVkIHRoZSAicmVuZXNhcyxzeXNjLXNpZ25hbHMiIHByb3BlcnR5IGZyb20gVVNCIFBI
+WSAoYXMgcHJvcG9zZWQKICBpbiB2MykgYW5kIGxldCBvbmx5IHRoZSBVU0IgUEhZIENUUkwgZHJp
+dmVyIHRvIGhhbmRsZSBpdCBhcyBvbiBSWi9HM1MKICB0aGUgVVNCIFBIWSBDVFJMIGRyaXZlciBu
+ZWVkcyB0byBiZSBwcm9iZWQgYmVmb3JlIGFueSBvdGhlciBVU0IgZHJpdmVyCi0gZHJvcHBlZCB0
+aGUgc2lnbmFsIGFic3RyYWN0aW9uIGZyb20gU1lTQyBkcml2ZXIgYXMgdGhlcmUgaXMgbm8gbmVl
+ZAogIGZvciByZWZlcmVuY2UgY291bnRpbmcgaXQgbm93Ci0gYWRqdXN0ZWQgdGhlICJzb2M6IHJl
+bmVzYXM6IHJ6LXN5c2M6IEFkZCBzeXNjb24vcmVnbWFwIHN1cHBvcnQiIHRvCiAgY29tcGx5IHdp
+dGggdGhlIGxhdGVzdCByZXZpZXcgY29tbWVudHMKCkNoYW5nZXMgaW4gdjM6Ci0gYXMgdGhlIGJh
+c2ljcyBvZiB0aGUgU1lTQyBkcml2ZXIgd2FzIGludGVncmF0ZWQsIG9ubHkgdGhlIHNpZ25hbCBz
+dXBwb3J0CiAgd2FzIHByZXNlcnZlZCBpbiB0aGlzIHNlcmllcywgaW4gYSBzZXBhcmF0ZSBwYXRj
+aDsgcGF0Y2ggMDEvMTIgd2FzCiAgYWRqdXN0ZWQgKGJ5IGFkZHJlc3NpbmcgdGhlIHJldmlldyBj
+b21tZW50cyByZWNlaXZlZCBhdCBbMV0pIGFzIGl0IGlzCiAgbmVjZXNzYXJ5IHRvIGJ1aWxkIHRo
+ZSBzaWduYWwgc3VwcG9ydCBvbiB0b3Agb2YgaXQKLSBhZnRlciBsb25nIGRpc2N1c3Npb25zIHdp
+dGggdGhlIGludGVybmFsIEhXIHRlYW0gaXQgaGFzIGJlZW4gY29uZmlybWVkCiAgdGhhdCB0aGUg
+cmVsYXRpb24gYi93IGluZGl2aWR1YWwgVVNCIHNwZWNpZmljIEhXIGJsb2NrcyBhbmQgc2lnbmFs
+cwogIGlzIGxpa2U6CgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUjOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAogICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUguKXhOKUgOKUgCBD
+UEdfQ0xLT05fVVNCLkNMSzBfT04KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDi
+lIIgICAgIFVTQiBDSDAgICAgICAgICAgICAgICAgICDilIIKICAgIOKUjOKUgOKUgOKUgOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
+gOKUgOKUgOKUkCAgIOKUguKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCDilILil4TilIDi
+lIAgQ1BHX0NMS09OX1VTQi5DTEsyX09OCiAgICDilIIgICAgICAgICAgICAgICAgIOKUjOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgIOKUguKUgmhvc3QgY29udHJvbGxlciByZWdpc3RlcnMg
+IOKUgiDilIIKICAgIOKUgiAgICAgICAgICAgICAgICAg4pSCICAgICAgICDilIIgICDilILilIJm
+dW5jdGlvbiBjb250cm9sbGVyIHJlZ2lzdGVyc+KUggogICAg4pSCICAgICAgICAgICAgICAgICDi
+lIIgUEhZMCAgIOKUguKXhOKUgOKUgOKUpOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDi
+lIIKICAgIOKUgiAgICAgVVNCIFBIWSAgICAg4pSCICAgICAgICDilIIgICDilJTilIDilIDilIDi
+lIDilIDilIDilIDilIDilIDilIDilIDilIDilrLilIDilIDilIDilIDilIDilIDilIDilIDilIDi
+lIDilIDilIDilIDilIDilIDilIDilIDilJgKICAgIOKUgiAgICAgICAgICAgICAgICAg4pSU4pSA
+4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAgICAgICAgICAgICAgIOKUggogICAg4pSCICAgICAg
+ICAgICAgICAgICAgICAgICAgICDilIIgICAgQ1BHX0JVU19QRVJJX0NPTV9NU1RPUC5NU1RPUHs2
+LCA1fV9PTgogICAg4pSC4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
+4pSA4pSQIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAogICAg4pSC4pSCVVNCUEhZIGNv
+bnRyb2zilIIg4pSCICAgICAgICDilIIKICAgIOKUguKUgiAgcmVnaXN0ZXJzICAg4pSCIOKUgiBQ
+SFkxICAg4pSCICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
+4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICDi
+lILilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgg4pSCICAg
+ICAgICDilILil4TilIDilIDilKQgICAgIFVTQiBDSDEgICAgICAgICAgICAgICAgICDilIIKICAg
+IOKUgiAgICAgICAgICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAg4pSC
+4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
+4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQIOKUguKXhOKUgOKUgCBDUEdfQ0xLT05fVVNC
+LkNMSzFfT04KICAgIOKUlOKUgOKWsuKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWsuKUgOKUgOKUgOKU
+gOKUgOKUgOKUgOKUgOKUgOKWsuKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgIOKUguKUgiBob3N0IGNv
+bnRyb2xsZXIgcmVnaXN0ZXJzIOKUgiDilIIKICAgICAg4pSCICAgICAgIOKUgiAgICAgICAgIOKU
+giAgICAgICAgICDilILilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDi
+lIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgg4pSCCiAgICAgIOKU
+giAgICAgICDilIIgICAgICAgICDilIIgICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA
+4pSA4pSA4pSA4pSA4pSA4pay4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA
+4pSA4pSA4pSA4pSA4pSYCiAgICAgIOKUgiAgICAgICDilIIgICAgICAgICDilIIgICAgICAgICAg
+ICAgICAgICAgICAgIOKUggogICAgICDilIIgICAgICAg4pSCICAgICAgICAg4pSCICAgICAgICAg
+ICBDUEdfQlVTX1BFUklfQ09NX01TVE9QLk1TVE9QN19PTgogICAgICDilIJQV1JSRFkg4pSCICAg
+ICAgICAg4pSCCiAgICAgIOKUgiAgICAgICDilIIgICBDUEdfQ0xLX09OX1VTQi5DTEszX09OCiAg
+ICAgIOKUgiAgICAgICDilIIKICAgICAg4pSCICBDUEdfQlVTX1BFUklfQ09NX01TVE9QLk1TVE9Q
+NF9PTgogICAgICDilIIKICAgIOKUjOKUgOKUgOKUgOKUgOKUkAogICAg4pSCU1lTQ+KUggogICAg
+4pSU4pSA4pSA4pSA4pSA4pSYCgogIHdoZXJlOgogIC0gQ1BHX0NMS09OX1VTQi5DTEsuQ0xLWF9P
+TiBpcyB0aGUgcmVnaXN0ZXIgYml0IGNvbnRyb2xsaW5nIHRoZSBjbG9jayBYCiAgICAgIG9mIGRp
+ZmZlcmVudCBVU0IgYmxvY2tzLCBYIGluIHswLCAxLCAyLCAzfQogIC0gQ1BHX0JVU19QRVJJX0NP
+TV9NU1RPUC5NU1RPUFhfT04gaXMgdGhlIHJlZ2lzdGVyIGJpdCBjb250cm9sbGluZyB0aGUKICAg
+IE1TVE9QIG9mIGRpZmZlcmVudCBVU0IgYmxvY2tzLCBYIGluIHs0LCA1LCA2LCA3fQogIC0gVVNC
+IFBIWSBpcyB0aGUgVVNCIFBIWSBibG9jayBleHBvc2luZyAyIHBvcnRzLCBwb3J0MCBhbmQgcG9y
+dDEsIHVzZWQKICAgIGJ5IHRoZSBVU0IgQ0gwLCBVU0IgQ0gxCiAgLSBTWVNDIGlzIHRoZSBzeXN0
+ZW0gY29udHJvbGxlciBibG9jayBjb250cm9sbGluZyB0aGUgUFdSUkRZIHNpZ25hbAogIC0gVVNC
+IENIeCBhcmUgaW5kaXZpZHVhbCBVU0IgYmxvY2sgd2l0aCBob3N0IGFuZCBmdW5jdGlvbiBjYXBh
+YmlsaXRpZXMKICAgIChVU0IgQ0gwIGhhdmUgYm90aCBob3N0IGFuZCBmdW5jdGlvbiBjYXBhYmls
+aXRpZXMsIFVTQiBDSDEgaGFzIG9ubHkKICAgIGhvc3QgY2FwYWJpbGl0aWVzKQoKICBEdWUgdG8g
+dGhpcywgdGhlIFBXUlJEWSBzaWduYWwgd2FzIGFsc28gcGFzc2VkIHRvIHRoZSByZXNldC1yemcy
+bC11c2JwaHktY3RybAogIHJlc2V0IGRyaXZlciAoYXMgaXQgY29udHJvbHMgdGhlIFVTQlBIWSBj
+b250cm9sIHJlZ2lzdGVycykgYW5kIHRoZXNlCiAgYXJlIGluIHRoZSBVU0IgUEhZIGJsb2NrIGNv
+bnRyb2xsZWQgYnkgUFdSUkRZIHNpZ25hbC4KCiAgVGhlIFBXUlJEWSBzaWduYWwgbmVlZCB0byBi
+ZSBkZS1hc3NlcnRlZCBvbiBwcm9iZSBiZWZvcmUgZW5hYmxpbmcgdGhlIG1vZHVsZQogIGNsb2Nr
+cyBhbmQgdGhlIG1vZHVsZSBNU1RPUC4gVG8gYXZvaWQgYW55IHZpb2xhdGlvbiBvZiB0aGlzIGNv
+bmZpZ3VyYXRpb24KICBzZXF1ZW5jZSwgdGhlIFBXUlJEWSBzaWduYWwgaXMgbm93IGNvbnRyb2xs
+ZWQgYnkgVVNCIFBIWSBkcml2ZXIgYW5kIHRoZQogIHJlc2V0LXJ6ZzJsLXVzYnBoeS1jdHJsIGRy
+aXZlci4KCiAgQXMgdGhlIFBIWXMgZ2V0cyByZXNldCBzaWduYWxzIGZyb20gdGhlIFVTQiByZXNl
+dCBjb250cm9sbGVyIGRyaXZlciwgdGhlCiAgcmVzZXQtcnpnMmwtdXNicGh5LWN0cmwgaXMgcHJv
+YmVkIGJlZm9yZSB0aGUgVVNCIFBIWSBkcml2ZXIgYW5kIHRodXMsCiAgaW4gdGhlb3J5LCB3ZSBj
+YW4gZHJvcCB0aGUgc2lnbmFsIHN1cHBvcnQgKHJlZmVyZW5jZSBjb3VudGluZyBvZiB0aGUKICBV
+U0IgUFdSUkRZKSBhbmQgY29uZmlndXJlIHRoZSBVU0IgUFdSUkRZIGp1c3QgaW4gdGhlIHJlc2V0
+LXJ6ZzJsLXVzYnBoeS1jdHJsLgoKICBIb3dldmVyLCB0byBoYXZlIGEgcHJvcGVyIGRlc2NyaXB0
+aW9uIG9mIHRoZSBkaWFncmFtIGRlc2NyaWJlZCBhYm92ZSBpbiAKICBkZXZpY2UgdHJlZSBhbmQg
+ZW5zdXJlIHRoZSBjb25maWd1cmF0aW9uIHNlcXVlbmNlIGIvdyBQUldSRFksIENMSyBhbmQgTVNU
+T1AKICBpcyBwcmVzZXJ2ZWQsIHRoZSBQV1JSRFkgc2lnbmFsIGlzIGNvbnRyb2xsZWQgaW4gdGhp
+cyBzZXJpZXMgaW4gYWxsIHRoZQogIGRyaXZlcnMgdGhhdCB3b3JrIHdpdGggcmVnaXN0ZXJzIGZy
+b20gdGhlIFVTQiBQSFkgYmxvY2suCgogIFBsZWFzZSBwcm92aWRlIHlvdXIgZmVlZGJhY2sgb24g
+dGhpcyBzb2x1dGlvbi4KClRoYW5rIHlvdSwKQ2xhdWRpdQoKWzFdIGh0dHBzOi8vbG9yZS5rZXJu
+ZWwub3JnL2FsbC8yMDI1MDMzMDIxNDk0NS4xODU3MjUtMi1qb2huLm1hZGlldS54YUBicC5yZW5l
+c2FzLmNvbS8KWzJdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI1MDgxODE2Mjg1OS45
+NjYxLTItam9obi5tYWRpZXUueGFAYnAucmVuZXNhcy5jb20vCgpDaGFuZ2VzIGluIHYyOgotIGRy
+b3BwZWQgdjEgcGF0Y2hlcyBhbHJlYWR5IGFwcGxpZWQKLSBhZGRlZCBmaXhlcyBwYXRjaGVzICgw
+Ny8xNCBhbmQgMDkvMTQpCi0gZHJvcHBlZCB0aGUgYXBwcm9hY2ggb2YgaGFuZGxpbmcgdGhlIFVT
+QiBQV1JSRFkgdGhvdWdoIGEgcmVzZXQgY29udHJvbGxlcgogIGRyaXZlciBhbmQgaW50cm9kdWNl
+ZCB0aGUgc2lnbmFsIGNvbmNlcHQgZm9yIHRoZSBTWVNDIGRyaXZlcjsgYmVjYXVzZQogIG9mIHRo
+aXMsIG1vc3Qgb2YgdGhlIHdvcmsgZG9uZSBpbiB2MSB3YXMgZHJvcHBlZAotIHBlciBwYXRjaCBj
+aGFuZ2VzIGFyZSBsaXN0ZWQgaW4gaW5kaXZpZHVhbCBwYXRjaGVzLCBpZiBhbnkKCkNocmlzdG9w
+aGUgSkFJTExFVCAoMSk6CiAgcGh5OiByZW5lc2FzOiByY2FyLWdlbjMtdXNiMjogRml4IGFuIGVy
+cm9yIGhhbmRsaW5nIHBhdGggaW4KICAgIHJjYXJfZ2VuM19waHlfdXNiMl9wcm9iZSgpCgpDbGF1
+ZGl1IEJlem5lYSAoNik6CiAgZHQtYmluZGluZ3M6IHBoeTogcmVuZXNhcyx1c2IyLXBoeTogTWFy
+ayByZXNldHMgYXMgcmVxdWlyZWQgZm9yIFJaL0czUwogIGR0LWJpbmRpbmdzOiByZXNldDogcmVu
+ZXNhcyxyemcybC11c2JwaHktY3RybDogRG9jdW1lbnQgUlovRzNTIHN1cHBvcnQKICByZXNldDog
+cnpnMmwtdXNicGh5LWN0cmw6IEFkZCBzdXBwb3J0IGZvciBVU0IgUFdSUkRZCiAgcmVzZXQ6IHJ6
+ZzJsLXVzYnBoeS1jdHJsOiBBZGQgc3VwcG9ydCBmb3IgUlovRzNTIFNvQwogIGFybTY0OiBkdHM6
+IHJlbmVzYXM6IHI5YTA4ZzA0NTogQWRkIFVTQiBzdXBwb3J0CiAgYXJtNjQ6IGR0czogcmVuZXNh
+czogcnpnM3Mtc21hcmM6IEVuYWJsZSBVU0Igc3VwcG9ydAoKIC4uLi9iaW5kaW5ncy9waHkvcmVu
+ZXNhcyx1c2IyLXBoeS55YW1sICAgICAgICB8ICAgMSArCiAuLi4vcmVzZXQvcmVuZXNhcyxyemcy
+bC11c2JwaHktY3RybC55YW1sICAgICAgfCAgNDEgKysrKystCiBhcmNoL2FybTY0L2Jvb3QvZHRz
+L3JlbmVzYXMvcjlhMDhnMDQ1LmR0c2kgICAgfCAxMTggKysrKysrKysrKysrKysrKysrCiBhcmNo
+L2FybTY0L2Jvb3QvZHRzL3JlbmVzYXMvcnpnM3Mtc21hcmMuZHRzaSAgfCAgNTcgKysrKysrKysr
+CiBkcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdlbjMtdXNiMi5jICAgICAgfCAgMTEgKy0K
+IGRyaXZlcnMvcmVzZXQvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMSArCiBk
+cml2ZXJzL3Jlc2V0L3Jlc2V0LXJ6ZzJsLXVzYnBoeS1jdHJsLmMgICAgICAgfCAgNzAgKysrKysr
+KysrKysKIDcgZmlsZXMgY2hhbmdlZCwgMjkyIGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0p
+CgotLSAKMi40My4wCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
