@@ -4,86 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5FA8CA0EE6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 14:00:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6243CA0EEB
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 15:24:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYwAPlVT7jMEBVTrri5bloAJ5Zhqp6UZak68j4QQ1UU=; b=kWsI/NPeuymBlQ
-	cvvpncy+QCrLa8mHI544qDvkUIQZwEtSRbDPyplcWScr0oTLuucZA/ioeby/4I0/W1QwGFRqc3nXc
-	tUAv9Nn521p7GCRL7qO+0NrLYnd2o9y8xKSam11LD2daDNeeVovZGqWoPb/SY0NODyhzCqPlG/+yI
-	piNrvGq/MmqkR/fgp89ktuiMv9sG16i4lLfWXkgPRbPFIj2vRZvYQqmOfgjzoPMN8UainYgQuBVOR
-	6YojC9rO6fr5esfMsGzHkiN2WukSR5qNNPgdRAlBlkurz6Yg7yp2rYmUPR6MblQ2wy5sTrLMM1Jzn
-	RsxtCD5Yl0dBlVyTuIGw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=AvAMaU7LCskHGLHrDL5iyoTUj8vOvXjD7WZtL6IxmQo=; b=np3VBYmx/iDXJWC0YZ4fY6adwG
+	XnNexVaOncIKOYoUoLWI4iXI7Er2AqiGiDlrC6z+80SDA+NQuQwCSyZh+nFqXh+4SHU7d689v3iln
+	8aQfzJ7bq4M8WtWC1Q6Vtr71596WYZGEuDX40H7OZlQln+v/inZW8VZN1IheygUHJr7b+mAGMeADg
+	3IJlgW+zfkNF8WMMIS/AqigjiG6T53xeEqokBnpdb/io77BmV915aMjCTrdgnkqBzkHYYg+Rx7uNk
+	Boy6qI3t8bZgI+yVyRz95XJPXPY+dfRNmmbtialObCrT3GUnyBT2Zo7JbGUd4CGgyTwPilBIM1lt7
+	BXXROWCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoMtS-0000000Agfa-1Msp;
-	Tue, 19 Aug 2025 14:00:54 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1uoOCY-0000000At02-22q3;
+	Tue, 19 Aug 2025 15:24:42 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoKgs-0000000AJc0-456N
+	id 1uoLVs-0000000ARas-1uQh
 	for linux-phy@lists.infradead.org;
-	Tue, 19 Aug 2025 11:39:49 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250819113941epoutp025effb2b1fcede59fcf9949521bd6d348~dKCfpNWX40454104541epoutp02j
-	for <linux-phy@lists.infradead.org>; Tue, 19 Aug 2025 11:39:41 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250819113941epoutp025effb2b1fcede59fcf9949521bd6d348~dKCfpNWX40454104541epoutp02j
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1755603581;
-	bh=1P2Rps+nWLL6vuu8v5AZ6QLluRY8gS5KDMDYoN14d3E=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=ZVvYutnRrj1vsaoIzlGc1d/RjPE60V5uAz1QTRDCZxI81j7cue1sfgSA7oaKZO8YW
-	 2qVnzb45IaXeEFXrgbk+ARvR9GiIrmLx90CgXtFOidCb4d1xvFEEGV8mqz30CiOzoN
-	 ZcxgykS5DuOVlEM5wzk/ytKYpW7LZdaE9Lb5rgp8=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas5p4.samsung.com (KnoxPortal) with ESMTPS id
-	20250819113940epcas5p44becd1ec50dff43ea959114a166fe0dd~dKCeeitQH2997129971epcas5p49;
-	Tue, 19 Aug 2025 11:39:40 +0000 (GMT)
-Received: from epcas5p4.samsung.com (unknown [182.195.38.87]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4c5ngH2cfwz3hhT3; Tue, 19 Aug
-	2025 11:39:39 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250819113938epcas5p3cac2467171b234b921448bf9b537cce2~dKCdAIEYh2225622256epcas5p3a;
-	Tue, 19 Aug 2025 11:39:38 +0000 (GMT)
-Received: from FDSFTE462 (unknown [107.122.81.248]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250819113935epsmtip16d1c515c409672f87d62e0dbcafa0d4d~dKCaJwZgR0293302933epsmtip1n;
-	Tue, 19 Aug 2025 11:39:35 +0000 (GMT)
-From: "Shradha Todi" <shradha.t@samsung.com>
-To: "'Bjorn Helgaas'" <helgaas@kernel.org>, "'Krzysztof Kozlowski'"
-	<krzysztof.kozlowski@linaro.org>
-Cc: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<mani@kernel.org>, <lpieralisi@kernel.org>, <kwilczynski@kernel.org>,
-	<robh@kernel.org>, <bhelgaas@google.com>, <jingoohan1@gmail.com>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<vkoul@kernel.org>, <kishon@kernel.org>, <arnd@arndb.de>,
-	<m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
-	<pankaj.dubey@samsung.com>
-In-Reply-To: <20250818182544.GA534647@bhelgaas>
-Subject: RE: [PATCH v3 11/12] PCI: exynos: Add support for Tesla FSD SoC
-Date: Tue, 19 Aug 2025 17:09:34 +0530
-Message-ID: <00b501dc10fd$f1fecc10$d5fc6430$@samsung.com>
+	Tue, 19 Aug 2025 12:32:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 25009462D3;
+	Tue, 19 Aug 2025 12:32:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAB60C4CEF1;
+	Tue, 19 Aug 2025 12:32:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755606748;
+	bh=AW3nkhwvENrqUTmWgqTETJ2cofqdIM0bMSih3AfLtY4=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=Ue6MIP5I7QWsWMRSgbYR7pvkld+A/Jw07jpjDEPHvPpJ8YJ09qEyTKhXa/s4dpcmL
+	 awq5yrzFh6efFyKSVQrzYe68L7sxyaN47ybljYdiryvjPs1wrosHczLU2jiGuHOtYu
+	 7WjEpQKRgYCbukAA0PfYU4liAH3h3kN7FVnTrtZvNQL6m2J/6enKNolPkM9HTga8lg
+	 yewIi2b6oHK5nd8GuA+JaW5vIf7zs8S2QnhNzCoazTfBN5VsqohKBo3QzdboGhrDAa
+	 KpKWjOKgSXAPz3d73A3HFpFKz3akDNwPDIibQYpq7VCGGT1L+0s+mq4bcC+49xYwib
+	 gKAHPFG5supmw==
+Date: Tue, 19 Aug 2025 07:32:27 -0500
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQFRpmM4OvQHoLmp1/7yOMMM/WjwMQMTDUGCtWYRPHA=
-Content-Language: en-in
-X-CMS-MailID: 20250819113938epcas5p3cac2467171b234b921448bf9b537cce2
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-541,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250818182551epcas5p33fbe099df79778031b489f0902cceed3
-References: <CGME20250818182551epcas5p33fbe099df79778031b489f0902cceed3@epcas5p3.samsung.com>
-	<20250818182544.GA534647@bhelgaas>
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Manivannan Sadhasivam <mani@kernel.org>, linux-pci@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, konrad.dybcio@oss.qualcomm.com, 
+ Vinod Koul <vkoul@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ linux-arm-msm@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, qiang.yu@oss.qualcomm.com, 
+ linux-kernel@vger.kernel.org
+To: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
+In-Reply-To: <20250819-glymur_pcie5-v1-2-2ea09f83cbb0@oss.qualcomm.com>
+References: <20250819-glymur_pcie5-v1-0-2ea09f83cbb0@oss.qualcomm.com>
+ <20250819-glymur_pcie5-v1-2-2ea09f83cbb0@oss.qualcomm.com>
+Message-Id: <175560674407.26155.2834845935745858066.robh@kernel.org>
+Subject: Re: [PATCH 2/4] dt-bindings: PCI: qcom: Document the Glymur PCIe
+ Controller
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250819_043947_630607_22C8EB99 
-X-CRM114-Status: GOOD (  29.44  )
+X-CRM114-CacheID: sfid-20250819_053228_511523_0F538D8C 
+X-CRM114-Status: GOOD (  12.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,66 +82,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > > > +static irqreturn_t fsd_pcie_irq_handler(int irq, void *arg)
-> > > > +{
-> > > > +	u32 val;
-> > > > +	struct exynos_pcie *ep = arg;
-> > > > +	struct dw_pcie *pci = &ep->pci;
-> > > > +	struct dw_pcie_rp *pp = &pci->pp;
-> > > > +
-> > > > +	val = readl(ep->elbi_base + FSD_IRQ2_STS);
-> > > > +	if ((val & FSD_IRQ_MSI_ENABLE) == FSD_IRQ_MSI_ENABLE) {
-> > > > +		val &= FSD_IRQ_MSI_ENABLE;
-> > > > +		writel(val, ep->elbi_base + FSD_IRQ2_STS);
-> > >
-> > > This looks weird because FSD_IRQ_MSI_ENABLE sounds like an *enable*
-> > > bit, but here you're treating it as a *status* bit.
-> > >
-> > > As far as I can tell, you set FSD_IRQ_MSI_ENABLE once at probe-time in
-> > > fsd_pcie_msi_init(), then you clear it here in an IRQ handler, and it
-> > > will never be set again.  That seems wrong; am I missing something?
-> >
-> > Actually the status IRQ and enable IRQ registers are different offsets
-> > but the bit position for MSI remains same in both cases so I just reused
-> > the macro.
+
+On Tue, 19 Aug 2025 02:52:06 -0700, Wenbin Yao wrote:
+> From: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
 > 
-> Ah, that's what I missed, thanks!  At probe-time, fsd_pcie_msi_init()
-> enables it in FSD_IRQ2_EN.  Here you clear it in FSD_IRQ2_STS.
+> On the Qualcomm Glymur platform the PCIe host is compatible with the DWC
+> controller present on the X1E80100 platform. So document the PCIe
+> controllers found on Glymur and use the X1E80100 compatible string as a
+> fallback in the schema.
 > 
-> > But I understand that it's confusing so I will add another
-> > macro for FSD_IRQ_MSI_STATUS or just rename the macro to
-> > FSD_IRQ_MSI to re-use.
-> 
-> Using the same name just because a similar bit happens to be at the
-> same position in two different registers is definitely confusing.  I
-> think it will be better to have two macros, one for FSD_IRQ2_STS and
-> another for FSD_IRQ2_EN, e.g.,
-> 
->   #define FSD_IRQ2_STS                         0x008
->   #define   FSD_IRQ2_STS_MSI                   BIT(17)
->   #define FSD_IRQ2_EN                          0x018
->   #define   FSD_IRQ2_EN_MSI                    BIT(17)
-> 
-> Another question about the test:
-> 
->   if ((val & FSD_IRQ_MSI_ENABLE) == FSD_IRQ_MSI_ENABLE) {
-> 
-> This assumes there are no other bits in FSD_IRQ2_STS that could be
-> set.  I would have expected a test like this:
-> 
->   if (val & FSD_IRQ_MSI_ENABLE) {
+> Signed-off-by: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
+> Signed-off-by: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
+> ---
+>  Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml | 7 ++++++-
+>  1 file changed, 6 insertions(+), 1 deletion(-)
 > 
 
-Thanks for pointing this out. FSD_IRQ_MSI_ENABLE is a single-bit, so there
-is no functional difference in the two statements. I didn't have a specific
-reason for using "== FSD_IRQ_MSI_ENABLE".
-But I see that "val & FSD_IRQ_MSI_ENABLE" would have been the more
-standard way to write this. I will update this for clarity.
+My bot found errors running 'make dt_binding_check' on your patch:
 
-> Is there a reason to restrict it to the case when *only*
-> FSD_IRQ_MSI_ENABLE is set?
-> 
-> Bjorn
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250819-glymur_pcie5-v1-2-2ea09f83cbb0@oss.qualcomm.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
