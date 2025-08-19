@@ -4,61 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A5CCCA0EE6
-	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 06:29:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7A7FCA0EE9
+	for <linux-phy@archiver.kernel.org>; Tue, 19 Aug 2025 06:36:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7T4HJxRBvXBytLskoldAal2fW965PTmtshybA85GxW0=; b=SpNlRasmC1iLHGpVg6LBSYtOJ/
-	no3oj7v9hX9HbUQbg4RU43QYJuCasa7zDPgwZUic4RKWY/G1+lInzHK6p1PvQEFfc8ueoJWY8c9aB
-	IkSTvERt9+6ykEbFeAXNlx3aEjM/DKV6wGYmt7O0HhaAJAiX8Wa7WlXCiw058aAO93vz56sn6NZCk
-	k1IOwa5g+58a43BgalOcYGmOsPHcmzy82f7QAR91xZ12dt/SE3dXWz6u/yFK8zC123px5Otv3Pshx
-	Mo06OYqK6iLMEbWpcALZzegZOKGS/DplSJvP9PvEZkWMdxX9uZcnM1+DyhEwTsqjp+nHOqp5b4Bke
-	Nplofn3g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=txIETC6OyCDHM7uOrWIaKh97DCF/GSQd2SnCNU270Go=; b=ahZCxWQ+eS/a0t
+	sFkxmRogJ44tfH3uKRqogaojtjRMvmq/biirUO2deYy5w2C0Z1KDf1OaCRSwKtev2JhdVIcIT7eXN
+	q50w+4vPKSMEAdbGHUORo+E8u1Sjk0v9mJ/Ibf+3C15TcmP0Q+5ydGZp6xCW8tE4P9Y0uWJRa7BZA
+	2f059BAdTEnaaF+FtcX2dJYgl7fZGyGcxT/6PfN7PJM3L3JLxofaSXTOk5cq1/TUC4hPGtzW6+527
+	sNrBiZdx42+fpNDA22TsBJ2Dwg4M/h7aziDcYhrr5qirww0wuexT83FS8PkDJy9ZKN1XZ1pmey4hV
+	qM7tUhAYNeKmlSPS/c8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoFqT-00000009XAJ-1Kei;
-	Tue, 19 Aug 2025 06:29:21 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uoFxp-00000009YLL-1PNH;
+	Tue, 19 Aug 2025 06:36:57 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoFqS-00000009X9h-2J7A
-	for linux-phy@lists.infradead.org;
-	Tue, 19 Aug 2025 06:29:20 +0000
+	id 1uoFvA-00000009XrG-1Ua0;
+	Tue, 19 Aug 2025 06:34:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A5877613FA;
-	Tue, 19 Aug 2025 06:29:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3474C113CF;
-	Tue, 19 Aug 2025 06:29:18 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 293BF5C4B48;
+	Tue, 19 Aug 2025 06:34:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67D55C116B1;
+	Tue, 19 Aug 2025 06:34:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755584959;
-	bh=33iJBot7S5LwwyXwV9Q7aUs8pqt5AdVKb1EuKgPON70=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=VB5z9w+yPAkEqZs+JpC5OAMBHnmP3l8z//DBSeMGv6HP0+pC3UXLhY+VViI0wYL53
-	 kC9vOzszLygIWCz9uBFsDvN8i3sg5XuRROsaF//oPzr+zzoTlkX9fyBCWAwh8I9gnb
-	 PxJ5KLCRwmBF5+1ArkKUcGhFD3sPsetxfU8sm8Wi6ztUlSg5RVLdFmIffzt/YQpxEg
-	 to53WrfQ6D7DRS+M1SHiJFhs1kGVLTXMdfXFIP1ShcN8jtdXLt+KEMr8OLzL9Ne2tw
-	 EmTK0fm/WwiF7B1ZW/jD9OOiBer8McVI5jMxL2aH086AU9YM97QJYMopY6x21HJUq4
-	 rzIkocCx9jGmA==
-Date: Tue, 19 Aug 2025 01:29:18 -0500
+	s=k20201202; t=1755585250;
+	bh=9tBtgRf5Ie1dj/J4hFT2ndZIaef60tq+Owe/LAehexU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=GczAaAHjBVx6HLhTco4kfP0yl4ZiUi3jKTMyOyDiuvawN2LTAlAbSGcVtVl7lFIlS
+	 qXl1HrIaMJmGFjkbwWMhlXvchMOa+B0m/6H/ueQiGcIdRZsGUHyyqahoQqspEtV01Q
+	 tBBZlimZ9jaAMsQlvbLiMrqNEcl3noirrFrAoAxmB+W//mBbYGmb1Hrs1OSX+IR228
+	 fFC4wInW/v4NINrHOPwNkdZ1CcdGWb3rP0iez8tsLDsDebzpFzSUiY2OTaGpD1qDfC
+	 YkAvUEozp4FyTUIuR5Wrpil4CBCajqCwDOBRXfeJceLBFo6OgKPkK/FklJct/GR4So
+	 O50QrKtX6oQkQ==
+Message-ID: <29287880-9436-4acd-b3f9-b4d9eb726896@kernel.org>
+Date: Tue, 19 Aug 2025 08:34:03 +0200
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
- kishon@kernel.org, krzk+dt@kernel.org, p.zabel@pengutronix.de, 
- yoshihiro.shimoda.uh@renesas.com, conor+dt@kernel.org, 
- magnus.damm@gmail.com, geert+renesas@glider.be, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
- vkoul@kernel.org
-To: Claudiu <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20250819054212.486426-4-claudiu.beznea.uj@bp.renesas.com>
-References: <20250819054212.486426-1-claudiu.beznea.uj@bp.renesas.com>
- <20250819054212.486426-4-claudiu.beznea.uj@bp.renesas.com>
-Message-Id: <175558495586.3265727.15591420113777968646.robh@kernel.org>
-Subject: Re: [PATCH v5 3/7] dt-bindings: reset: renesas,rzg2l-usbphy-ctrl:
- Document RZ/G3S support
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 11/12] PCI: exynos: Add support for Tesla FSD SoC
+To: Bjorn Helgaas <helgaas@kernel.org>, Shradha Todi <shradha.t@samsung.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+ robh@kernel.org, bhelgaas@google.com, jingoohan1@gmail.com,
+ krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com,
+ vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de,
+ m.szyprowski@samsung.com, jh80.chung@samsung.com, pankaj.dubey@samsung.com
+References: <20250818182544.GA534647@bhelgaas>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250818182544.GA534647@bhelgaas>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250818_233412_545193_240391DF 
+X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,70 +122,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 19 Aug 2025 08:42:08 +0300, Claudiu wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On 18/08/2025 20:25, Bjorn Helgaas wrote:
+> [+to Krzysztof]
 > 
-> The Renesas USB PHY hardware block needs to have the PWRRDY bit in the
-> system controller set before applying any other settings. The PWRRDY bit
-> must be controlled during power-on, power-off, and system suspend/resume
-> sequences as follows:
-> - during power-on/resume, it must be set to zero before enabling clocks and
->   modules
-> - during power-off/suspend, it must be set to one after disabling clocks
->   and modules
+> On Mon, Aug 18, 2025 at 03:00:00PM +0530, Shradha Todi wrote:
+>>> On Mon, Aug 11, 2025 at 09:16:37PM +0530, Shradha Todi wrote:
+>>>> Add host and endpoint controller driver support for FSD SoC.
 > 
-> Add the renesas,sysc-pwrrdy device tree property, which allows the
-> reset-rzg2l-usbphy-ctrl driver to parse, map, and control the system
-> controller PWRRDY bit at the appropriate time. Along with it add a new
-> compatible for the RZ/G3S SoC.
+>>> It's kind of unfortunate that the driver uses "ep" everywhere for
+>>> struct exynos_pcie pointers.  It's going to be confusing because "ep"
+>>> is also commonly used for endpoint-related things, e.g., struct
+>>> dw_pcie_ep pointers.  Maybe it's not worth changing; I dunno.
+>>
+>> I did try to rename the structure and the pointers 
+>> (https://lore.kernel.org/all/20230214121333.1837-9-shradha.t@samsung.com/)
+>> But the intention was different back then and so the idea was rejected.
+>> I could add a patch to only rename the pointers to something less
+>> confusing like "exy_pci"
 > 
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> ---
+> The patch you mention did several renames:
 > 
-> Changes in v5:
-> - fixed description formatting
-> - collected tags
+>   s/to_exynos_pcie/to_samsung_pcie/
+>   s/struct exynos_pcie/struct samsung_pcie/
+>   s/struct exynos_pcie *ep/struct samsung_pcie *sp/
 > 
-> Changes in v4:
-> - dropped blank line from compatible section
-> - s/renesas,sysc-signals/renesas,sysc-pwrrdy/g
-> - dropped description from renesas,sysc-pwrrdy
-> - updated description of renesas,sysc-pwrrdy items
-> - updated patch description
+> I'm only concerned about the confusion of "ep" being used both for
+> "struct exynos_pcie *" and for "struct dw_pcie_ep *".
 > 
-> Changes in v3:
-> - none; this patch is new
+> It would still be sort of an annoying patch to do something like this:
 > 
->  .../reset/renesas,rzg2l-usbphy-ctrl.yaml      | 41 ++++++++++++++++---
->  1 file changed, 35 insertions(+), 6 deletions(-)
+>   s/struct exynos_pcie *ep/struct exynos_pcie *pcie/
 > 
+> But 'git grep "struct .*_pcie \*.*=" drivers/pci/controller/' says
+> using "pcie" in this way is quite common, so maybe it would be worth
+> doing.
+> 
+> What do you think, Krzysztof?
 
-My bot found errors running 'make dt_binding_check' on your patch:
+I think you want other Krzysztof, but nevertheless, the reasoning there
+"Changing it to samsung_pcie for making it
+generic."
+is wrong. The naming of these structures do not matter, they are not
+less generic. This is rather churn, which will affect backporting for
+ZERO readability increase. Why zero? Because calling all this "exynos"
+is the same as calling all this "samsung". It just does not matter.
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
+However s/ep/pcie/ in variable name makes sense if that's more common.
 
 
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250819054212.486426-4-claudiu.beznea.uj@bp.renesas.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
