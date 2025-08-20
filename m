@@ -4,70 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92220CA0EDC
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9BC1CA0EDC
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AIsgbZbn4JGX+s7H4LMQsN8TsfENKe2r5DAdpfO2NWI=; b=3shTde+orcY9De
-	+2G/mhAnR5DXQZZElZpmtMjmLlR6e3vO65iv8z9KjPUj+XcnIje8TjE1Od7XiJGeAOE7HYIer3YxS
-	OQ3TlP8ifb7WJ+jBPywd0s7inOWcn9u0CJtv25HXbyjBvUdJ1JNPZLFryT3jac87Ur09Ppt32U83i
-	HM2JhCfdzk2ejrMwlXjotg6uRqLlPf8JOyXctZCxSOI1tQhu47Z0kNArzWyBCEQr8ytLa1zkMgmmQ
-	tFxjHEyKKG/34lDfGPaQ7Qh71qrOo4hknBOWk2wcwJUnHwaf8vMvx0miEpXnrH2tM+Z2soOrRkbAO
-	nnwOfflLNhWLuP+HKPpg==;
+	List-Owner; bh=oxORTDGiBrebkcR4WMRopWhloC+J/2EvplRBG007p6E=; b=mJ7QhFbR3eCKWC
+	RyoPlIxcjp9kABqgLlBiOFzv7UKHkG9bteQ3qBEoKyLl8tmTW9NaJEDsZM1YNDoMw54RMPye+YMCt
+	3ESTYY57E0Umi1daMGzU2aDZC4unj7mj6oM/i9UTQTf0r774/CjHOHhCP0Bs5WaQ57Vn6oJwHkY6C
+	FuuFtWTlsx9QpEmAmnkhgMOrAeMlkpfS6SpHuHGyVrAT3BkZR4A87W09YAoeXBlvpkyPRiJVFabrM
+	jZZt7PREuFcTTRVOawwUcO5/45i4ldG1AtNMZBIe8pr1RhWk6qR97AYvIHRx41g8cZEO4ndSFT3p5
+	XL3C6Deb6Lm7V6YlAKZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uopmd-0000000EuoK-1Mhf;
-	Wed, 20 Aug 2025 20:51:47 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uopmn-0000000Euve-2gn2;
+	Wed, 20 Aug 2025 20:51:57 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uomCb-0000000ETD9-3MKh
-	for linux-phy@lists.infradead.org;
-	Wed, 20 Aug 2025 17:02:23 +0000
+	id 1uomCg-0000000ETEI-19aM;
+	Wed, 20 Aug 2025 17:02:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BC2CB45A62;
+	by dfw.source.kernel.org (Postfix) with ESMTP id A318E5C06F0;
+	Wed, 20 Aug 2025 17:02:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1CB9C4CEE7;
 	Wed, 20 Aug 2025 17:02:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 784D1C4CEE7;
-	Wed, 20 Aug 2025 17:02:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755709340;
-	bh=tNTj9tNEMOWtDcM1RzN6AMMbLh3U5S0eKicHECZ6bHY=;
+	s=k20201202; t=1755709345;
+	bh=iGAz2ljwaJdqkt9H440YjvvYDSFEfsAKSStmeLrCUtM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=vG5wBt6EGRHnth+pzXz7cuVql9/xvF5h6qKMLT0c39Yyss10licpn2FXtasr1r55w
-	 nv39rhwK3Bg8R4YFYLUN42ZkBup894xfHZDUY0qNRIrlVhBoMkS9aZmRrkc8vjuIbr
-	 KPC3jv5wh+WQpJsXLxIRXH67MDcqDX26vbb2bNxEbRyJDPtxHwafTRDpe+bhWvMZt6
-	 LrG0xzZz93sFtkMQNzbeC/xWSUGXAWzzoXc+IYS16SCj0YCUP9SPqJNYWPoJEoz+m/
-	 KO4tHwqw4eJcW+zuZiXIU8yRuScDw6av5MU4vJwJ/zwItT1lyIMXR1MA/st9nklMiF
-	 QzwbMZtg2P+Gg==
+	b=o8WHHzrBCF8m1uztqxoxerTqOYUVvqikj/uRwyCVCFDuspbKMmSCWOL58ea/p0Xqt
+	 WLygirDGp+yeoV7qPpCbIbUKJkLuDrCWggSL+UeUxtKZZvpYAgmnLO6Xjbcgh3Z39H
+	 grkFrAG/YNyXVd1qydT20YlBnd6sSjqktY7BUAlVKp/aPp1Ixjofxb08x3dG8Tgk9M
+	 u5Rp1yGWGAkGD6P5OxIEHvJkwNkgBJh+Gz+usbt75Dj8Os/daQRuClzX8WYnXfAbn4
+	 DXPk/QU5bOefp3MRv1m0uPGnZD3+lDbu5XAKy4C8FMFuyjhkD/p47i3xHdYeXOly/6
+	 fHBGgaE7Egt/A==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-pci@vger.kernel.org, quic_vbadigan@quicinc.com, 
- quic_mrana@quicinc.com
-In-Reply-To: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
-References: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH 0/4] arm64: dts: qcom: Add PCIe Support for
- sm8750
-Message-Id: <175570933399.66459.8492859060215712340.b4-ty@kernel.org>
-Date: Wed, 20 Aug 2025 22:32:13 +0530
+ Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Andre Przywara <andre.przywara@arm.com>
+Cc: Mikhail Kalashnikov <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
+In-Reply-To: <20250819001522.13011-1-andre.przywara@arm.com>
+References: <20250819001522.13011-1-andre.przywara@arm.com>
+Subject: Re: [PATCH] phy: sun4i-usb: drop num_phys assumption
+Message-Id: <175570934053.66459.17487502489276312055.b4-ty@kernel.org>
+Date: Wed, 20 Aug 2025 22:32:20 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250820_100221_868457_F654B362 
-X-CRM114-Status: UNSURE (   4.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250820_100226_357474_E7C16BBD 
+X-CRM114-Status: GOOD (  10.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,18 +77,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 09 Aug 2025 15:29:15 +0530, Krishna Chaitanya Chundru wrote:
-> Describe PCIe controller and PHY. Also add required system resources like
-> regulators, clocks, interrupts and registers configuration for PCIe.
+On Tue, 19 Aug 2025 01:15:22 +0100, Andre Przywara wrote:
+> So far we set a number of expected Allwinner USB PHY instances for any
+> given compatible string, and would fail if we do not find every PHY
+> described properly in the DT (missing reset/PMU/clocks).
+> This is somewhat redundant, as the DT only describes the resources for
+> the implemented PHYs, but goes in line with being strict about firmware
+> descriptions, and rather fixing things in the driver code, based on the
+> compatible string.
+> However this causes issues when we make a mistake, like we did recently
+> on the A523: there are actually three USB PHYs, not two, as we assumed.
+> Changing the number in the driver and the compatible string would cause
+> all kinds of compatibility issues, both with older and newer DTs.
 > 
-> 
+> [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the SM8750 QMP PCIe PHY Gen3 x2
-      commit: edafd4f3fd52a614c5cee2684559367eac2286dc
-[2/4] phy: qcom-qmp-pcie: add dual lane PHY support for SM8750
-      commit: 0f051749c804b5a4f485013c0e3c932e1dd9f70b
+[1/1] phy: sun4i-usb: drop num_phys assumption
+      commit: 75c21418beb92382dda164fdc2554610b49ed441
 
 Best regards,
 -- 
