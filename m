@@ -4,66 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12255CA0EF8
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92220CA0EDC
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kF5m9MfVy53J/ReGt/VaH9zDh0YGzHcnkWpJ/l2rPHo=; b=KwIjIlYS9EoSBA
-	IKrC6QBCIR/I0IQq1VDm2WuA8OE0cBD1q6TJ6RZ4MsY9fkofsD9Ztse3+1bPJr/n7O7NcmaJZcd1v
-	kv9CmKrJ0XPID8brsSw5JbYaKe7+dTLktbwL6ru0NvHvPLKHin8b6kCs0qOGQlsc+VcLyuLAkEa2g
-	hG+hdgtAZEva0KMrDoZyUMR+rFhZTVvfzqLXF1OIWsxdYdCO+DBew5huzYNunHun8B23+FTrqRSuA
-	izkcHzFLBPHkRK/4GiJR+2BiaP9q4Vlu+VbcyUAzx5mnkecdpWQdqlYX0/ttXI18TbXLYAeu2bjMt
-	sofyczt2JsmFoDmB5w4Q==;
+	List-Owner; bh=AIsgbZbn4JGX+s7H4LMQsN8TsfENKe2r5DAdpfO2NWI=; b=3shTde+orcY9De
+	+2G/mhAnR5DXQZZElZpmtMjmLlR6e3vO65iv8z9KjPUj+XcnIje8TjE1Od7XiJGeAOE7HYIer3YxS
+	OQ3TlP8ifb7WJ+jBPywd0s7inOWcn9u0CJtv25HXbyjBvUdJ1JNPZLFryT3jac87Ur09Ppt32U83i
+	HM2JhCfdzk2ejrMwlXjotg6uRqLlPf8JOyXctZCxSOI1tQhu47Z0kNArzWyBCEQr8ytLa1zkMgmmQ
+	tFxjHEyKKG/34lDfGPaQ7Qh71qrOo4hknBOWk2wcwJUnHwaf8vMvx0miEpXnrH2tM+Z2soOrRkbAO
+	nnwOfflLNhWLuP+HKPpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uopmF-0000000EuQf-3GPG;
-	Wed, 20 Aug 2025 20:51:23 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uopmd-0000000EuoK-1Mhf;
+	Wed, 20 Aug 2025 20:51:47 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uollY-0000000EPjJ-3Wlq;
-	Wed, 20 Aug 2025 16:34:26 +0000
+	id 1uomCb-0000000ETD9-3MKh
+	for linux-phy@lists.infradead.org;
+	Wed, 20 Aug 2025 17:02:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4CE275C673D;
-	Wed, 20 Aug 2025 16:34:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12721C4CEE7;
-	Wed, 20 Aug 2025 16:34:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id BC2CB45A62;
+	Wed, 20 Aug 2025 17:02:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 784D1C4CEE7;
+	Wed, 20 Aug 2025 17:02:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755707664;
-	bh=1SmINIXApk/rDoKKx82uVKPJSOdJg4DUAj+yAYn/Qlo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=P25E8I0+N9soufsYxe6o1473U2YqA0vAMqaUeSoWcBvu3nz5DZxu7YpXwArUa4dp0
-	 C7Q6nq6HFLweUc1x7FKbAmYPsTJ5jDweX7ErKBDU4+icafh84YyWVK15Sw2vHUYiC6
-	 8ZqdFgzXHrNG7BHasTre09//Aj7CKO/ttOudvO3EuFyZ4ec0jiJGif3jRkX5ILY2LT
-	 fL08dCXQdRS+OX8ZFs0TBKqYE4KuiU2LxRWv0gQZoBOXWArDZq3PF6PH1gnf0SpbtB
-	 6DS4v3H30/RNHz9TM4IsQaXcLzZT4Yzat4gRjTj8fA1MDDSzZCUCgZzI8PaClHTGSG
-	 fmaMdfOtn9TtQ==
-Date: Wed, 20 Aug 2025 22:04:19 +0530
+	s=k20201202; t=1755709340;
+	bh=tNTj9tNEMOWtDcM1RzN6AMMbLh3U5S0eKicHECZ6bHY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=vG5wBt6EGRHnth+pzXz7cuVql9/xvF5h6qKMLT0c39Yyss10licpn2FXtasr1r55w
+	 nv39rhwK3Bg8R4YFYLUN42ZkBup894xfHZDUY0qNRIrlVhBoMkS9aZmRrkc8vjuIbr
+	 KPC3jv5wh+WQpJsXLxIRXH67MDcqDX26vbb2bNxEbRyJDPtxHwafTRDpe+bhWvMZt6
+	 LrG0xzZz93sFtkMQNzbeC/xWSUGXAWzzoXc+IYS16SCj0YCUP9SPqJNYWPoJEoz+m/
+	 KO4tHwqw4eJcW+zuZiXIU8yRuScDw6av5MU4vJwJ/zwItT1lyIMXR1MA/st9nklMiF
+	 QzwbMZtg2P+Gg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Griffin <peter.griffin@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, kernel-team@android.com,
-	William Mcvicker <willmcvicker@google.com>,
-	Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org
-Subject: Re: [PATCH v3 1/2] phy: add new phy_notify_state() api
-Message-ID: <aKX5C9Xlx2CSJraY@vaman>
-References: <20250813-phy-notify-pmstate-v3-0-3bda59055dd3@linaro.org>
- <20250813-phy-notify-pmstate-v3-1-3bda59055dd3@linaro.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-pci@vger.kernel.org, quic_vbadigan@quicinc.com, 
+ quic_mrana@quicinc.com
+In-Reply-To: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
+References: <20250809-pakala-v1-0-abf1c416dbaa@oss.qualcomm.com>
+Subject: Re: (subset) [PATCH 0/4] arm64: dts: qcom: Add PCIe Support for
+ sm8750
+Message-Id: <175570933399.66459.8492859060215712340.b4-ty@kernel.org>
+Date: Wed, 20 Aug 2025 22:32:13 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250813-phy-notify-pmstate-v3-1-3bda59055dd3@linaro.org>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250820_093424_964540_5D11789C 
-X-CRM114-Status: GOOD (  23.49  )
+X-CRM114-CacheID: sfid-20250820_100221_868457_F654B362 
+X-CRM114-Status: UNSURE (   4.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,120 +84,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13-08-25, 16:00, Peter Griffin wrote:
-> Add a new phy_notify_state() api that notifies and configures a phy for a
-> given state transition.
-> 
-> This is intended to be by phy drivers which need to do some runtime
-                    ^^^^^^^^^^
-Missing 'used' possibly? 
 
-> configuration of parameters that can't be handled by phy_calibrate() or
-> phy_power_{on|off}().
+On Sat, 09 Aug 2025 15:29:15 +0530, Krishna Chaitanya Chundru wrote:
+> Describe PCIe controller and PHY. Also add required system resources like
+> regulators, clocks, interrupts and registers configuration for PCIe.
 > 
-> The first usage of this API is in the Samsung UFS phy that needs to issue
-> some register writes when entering and exiting the hibernate link state.
 > 
-> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> ---
->  drivers/phy/phy-core.c  | 25 +++++++++++++++++++++++++
->  include/linux/phy/phy.h | 19 +++++++++++++++++++
->  2 files changed, 44 insertions(+)
-> 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 04a5a34e7a950ae94fae915673c25d476fc071c1..60be8af984bf06649ef00e695d0ed4ced597cdb9 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -520,6 +520,31 @@ int phy_notify_disconnect(struct phy *phy, int port)
->  }
->  EXPORT_SYMBOL_GPL(phy_notify_disconnect);
->  
-> +/**
-> + * phy_notify_state() - phy state notification
-> + * @phy: the PHY returned by phy_get()
-> + * @state: the PHY state
-> + *
-> + * Notify the PHY of a state transition. Used to notify and
-> + * configure the PHY accordingly.
-> + *
-> + * Returns: %0 if successful, a negative error code otherwise
-> + */
-> +int phy_notify_state(struct phy *phy, union phy_notify state)
-> +{
-> +	int ret;
-> +
-> +	if (!phy || !phy->ops->notify_phystate)
-> +		return 0;
-> +
-> +	mutex_lock(&phy->mutex);
-> +	ret = phy->ops->notify_phystate(phy, state);
-> +	mutex_unlock(&phy->mutex);
-> +
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(phy_notify_state);
-> +
->  /**
->   * phy_configure() - Changes the phy parameters
->   * @phy: the phy returned by phy_get()
-> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> index 13add0c2c40721fe9ca3f0350d13c035cd25af45..664d0864c3a5042949cb121e982368fe0a97827f 100644
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -53,6 +53,15 @@ enum phy_media {
->  	PHY_MEDIA_DAC,
->  };
->  
-> +enum phy_ufs_state {
-> +	PHY_UFS_HIBERN8_ENTER,
-> +	PHY_UFS_HIBERN8_EXIT,
-> +};
-> +
-> +union phy_notify {
-> +	enum phy_ufs_state ufs_state;
-> +};
-> +
->  /**
->   * union phy_configure_opts - Opaque generic phy configuration
->   *
-> @@ -83,6 +92,7 @@ union phy_configure_opts {
->   * @set_speed: set the speed of the phy (optional)
->   * @reset: resetting the phy
->   * @calibrate: calibrate the phy
-> + * @notify_phystate: notify and configure the phy for a particular state
->   * @release: ops to be performed while the consumer relinquishes the PHY
->   * @owner: the module owner containing the ops
->   */
-> @@ -132,6 +142,7 @@ struct phy_ops {
->  	int	(*connect)(struct phy *phy, int port);
->  	int	(*disconnect)(struct phy *phy, int port);
->  
-> +	int	(*notify_phystate)(struct phy *phy, union phy_notify state);
->  	void	(*release)(struct phy *phy);
->  	struct module *owner;
->  };
-> @@ -255,6 +266,7 @@ int phy_reset(struct phy *phy);
->  int phy_calibrate(struct phy *phy);
->  int phy_notify_connect(struct phy *phy, int port);
->  int phy_notify_disconnect(struct phy *phy, int port);
-> +int phy_notify_state(struct phy *phy, union phy_notify state);
->  static inline int phy_get_bus_width(struct phy *phy)
->  {
->  	return phy->attrs.bus_width;
-> @@ -412,6 +424,13 @@ static inline int phy_notify_disconnect(struct phy *phy, int index)
->  	return -ENOSYS;
->  }
->  
-> +static inline int phy_notify_phystate(struct phy *phy, union phy_notify state)
-> +{
-> +	if (!phy)
-> +		return 0;
-> +	return -ENOSYS;
 
-Should be -ENOSYS either way, right?
+Applied, thanks!
 
+[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the SM8750 QMP PCIe PHY Gen3 x2
+      commit: edafd4f3fd52a614c5cee2684559367eac2286dc
+[2/4] phy: qcom-qmp-pcie: add dual lane PHY support for SM8750
+      commit: 0f051749c804b5a4f485013c0e3c932e1dd9f70b
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
