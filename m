@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 375E1CA0EDC
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:50:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 762A1CA0EFC
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:50:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CeqcI7j1ab3Fj6gY34jK8Je2++JFwCH3Yhccw8b/2m0=; b=AadbLrGqjzPqht
-	54fYgxnLawuiHViTDc916eR4uGoBWplJpnTpsfu5MLfoUgwSQEMllQYPeUnVrV/yr7XGCXKPE5+rj
-	lqT2+iYeGm0KTrZPRW1Teac5JBS4iReml4zddF2mHkmp9/G3W/5es9v/LPTllnCcKDwzj1A0Zul+g
-	LzChjVIegeGR/hOUFLwePhq5gDlXyMPLVnxAH/PIOq8oWVBz4I2QME6cGQme9CsTREwNBJx0fwR65
-	HBfnbxREzj4cjYZvngJjlvNUOCLg4Q4FbxwgYmqf7X4UlmuPbDJjNVkkgyFE/pIATXmY15n1SRDjm
-	/xqdJEs6XObVIIYkkanA==;
+	List-Owner; bh=1wOVxcYzOdr5mBQugrRd6bZ3gOANtkdyzWiEU2i4l70=; b=HjeU3XLbxdm3vY
+	JPXQKs8Xkd32d7/8L5j7qRYEbs31YllPBeIoHQYRlGoRvXU/DmMkMJ+1frFyzJljsCwZ32SS5nnGC
+	inf1scOCqoc99NIJ8tdoXNce+m6EqR+TjPFlyIdVBgsMIPb6vM5lIyWDrK3kt9jhPGfUuEvsvxW0t
+	2RXqKKXxpzXdaEUkMNqdGiwDnEHQpDg4IeEVN40bscZyWcg63sGUi94nSw1qpyr2jS8GWaH22b1sy
+	dpS2xWRMI8cFXMj43HPjeg/k6lk01/t8/eT55nzLY9tprMvQJxQcoG5E3a9vJDPX2NHPHfvS4+2hj
+	553bdd1jGtD4b7q6odKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoplA-0000000Et6G-3VLc;
-	Wed, 20 Aug 2025 20:50:16 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uoplG-0000000EtGL-3mqG;
+	Wed, 20 Aug 2025 20:50:22 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uolLi-0000000ELdR-3YWO
-	for linux-phy@lists.infradead.org;
-	Wed, 20 Aug 2025 16:07:43 +0000
+	id 1uolVA-0000000EN7V-3rpr;
+	Wed, 20 Aug 2025 16:17:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 347824629C;
-	Wed, 20 Aug 2025 16:07:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39AFDC4CEE7;
-	Wed, 20 Aug 2025 16:07:40 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 5A0F2601E5;
+	Wed, 20 Aug 2025 16:17:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0149BC4CEEB;
+	Wed, 20 Aug 2025 16:17:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755706062;
-	bh=Fc6Djx8B9AyLUd9B+FppF5No5ax5Rsl2+whttkvW4ps=;
+	s=k20201202; t=1755706640;
+	bh=fONdSSWLD4ciYiiYXbL5hX7jHz6dYO1YgPzjDtd1z2M=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SdYg4dng5SJPT6E+XjYcNIxfPAKCyJ9Ma7ZguYWwFhh2yhFJyMgyhP0ZH3aAicOxE
-	 AtkAsPmudNikzTaA3UvB6/Yt2FgkUP2uVHPbyuh6irNEKtqmd6633yG0LXRA8xn7bf
-	 FsbX17YAY5k08e+JpWuNuqedoEr+KzZ48UMqv4T60r+ct3FJ4hgCRmASxrwaHnX91t
-	 UpwVtQT4NwEyibJfweA15QmoeCfpRLTBDIh1XXqbrc1n7m45ODBi/apkFF+dBcsCfH
-	 gz6hdrGVbjIATtgoD88fmOVgB8Kl0W66znKJtOF/s3zDNgoxYEMQGt8wXgDFgbt+Cz
-	 B1o+wU8Yb8/Bg==
-Date: Wed, 20 Aug 2025 21:37:36 +0530
+	b=uMW9dXlDZPJXeW4+QXLmySJuT9NWSD5weVPY9F1YR2z7W7y861mVHF9PbtkN6u+Rt
+	 QHEreW6gwrcrYFhPaxFDZwrMuOiMykNohoQpBMmB/OLplJoMF2AOwMWIrbPLubn7p0
+	 vdhDjuZCTxFXgmWsNR5hVb6N7fg76n6FaiglEh87wRYpoBzMh4qOZ697eZVPw3Op34
+	 Kc18qXW8Be16tw2WkEkHjGU6BITglxm5iIqU7qJUtVFoySwAp6qbBM5XOF2Pw7E2y6
+	 shyD3n6WygFBUZrOk038tn+Gm66qQhDMElBc/6xtFy/9p6J1zEwPV5mWhBrXqisTdM
+	 9uB594EVlImYQ==
+Date: Wed, 20 Aug 2025 21:47:15 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Yulin Lu <luyulin@eswincomputing.com>
-Cc: dlemoal@kernel.org, cassel@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	kishon@kernel.org, linux-phy@lists.infradead.org,
-	ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com, lianghujun@eswincomputing.com
-Subject: Re: [PATCH v2 3/3] phy: eswin: Create eswin directory and add
- EIC7700 SATA PHY driver
-Message-ID: <aKXyyAT-xRPhoYDx@vaman>
-References: <20250819134722.220-1-luyulin@eswincomputing.com>
- <20250819140043.1862-1-luyulin@eswincomputing.com>
+To: "payne.lin" <payne.lin@mediatek.com>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Project_Global_Chrome_Upstream_Group@mediatek.com,
+	sirius.wang@mediatek.com, vince-wl.liu@mediatek.com,
+	jh.hsu@mediatek.com, Bincai Liu <bincai.liu@mediatek.com>
+Subject: Re: [PATCH] phy: mediatek: Modify mipi clk upper bound to 2.5Gbps
+Message-ID: <aKX1CxD_2mlOwYn-@vaman>
+References: <20250814125406.4161220-1-payne.lin@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250819140043.1862-1-luyulin@eswincomputing.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250820_090742_908207_A61A4B57 
-X-CRM114-Status: GOOD (  11.52  )
+In-Reply-To: <20250814125406.4161220-1-payne.lin@mediatek.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,46 +78,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 19-08-25, 22:00, Yulin Lu wrote:
-> From: luyulin <luyulin@eswincomputing.com>
+On 14-08-25, 20:54, payne.lin wrote:
+> From: Bincai Liu <bincai.liu@mediatek.com>
 > 
-> Created the eswin phy driver directory and added support for
-> the SATA phy driver on the EIC7700 SoC platform.
+> Mipi dphy can support up to 4k30 without dsc.
+
+Good, how does that translate to below value change, can you please
+explain?
+
 > 
-> Signed-off-by: luyulin <luyulin@eswincomputing.com>
-
-Please use full name as you have used in the copyright notices
-
-
-> +#define SATA_P0_PHY_TX_PREEMPH_GEN2	(0x05 << 8)
-> +#define SATA_P0_PHY_TX_PREEMPH_GEN3	(0x08 << 16)
-> +#define SATA_MPLL_MULTIPLIER		(0x3c << 16)
-
-Use GENMASK for these
-
-> +static int eic7700_sata_phy_init(struct phy *phy)
-> +{
-> +	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-> +	u32 val = 0;
-> +	int ret = 0;
-
-both initializations are superfluous
-
-> +static int eic7700_sata_phy_exit(struct phy *phy)
-> +{
-> +	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-> +	u32 val = 0;
-
-here and other places
-
-> +static struct platform_driver eic7700_sata_phy_driver = {
-> +	.probe	= eic7700_sata_phy_probe,
-> +	.driver = {
-> +		.of_match_table	= eic7700_sata_phy_of_match,
-> +		.name  = "eswin,sata-phy",
-> +		.suppress_bind_attrs = true,
-
-why?
+> Signed-off-by: Bincai Liu <bincai.liu@mediatek.com>
+> Signed-off-by: Payne Lin <payne.lin@mediatek.com>
+> ---
+>  drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> index 553725e1269c..b8233c496070 100644
+> --- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> +++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.c
+> @@ -100,7 +100,7 @@ static void mtk_mipi_tx_pll_disable(struct clk_hw *hw)
+>  static long mtk_mipi_tx_pll_round_rate(struct clk_hw *hw, unsigned long rate,
+>  				       unsigned long *prate)
+>  {
+> -	return clamp_val(rate, 125000000, 1600000000);
+> +	return clamp_val(rate, 125000000, 2500000000);
+>  }
+>  
+>  static const struct clk_ops mtk_mipi_tx_pll_ops = {
+> -- 
+> 2.45.2
 
 -- 
 ~Vinod
