@@ -4,65 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47D3BCA0EFC
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12255CA0EF8
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Aug 2025 20:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CHjZoUhAqDm22M2r1+P8thyHQolx96yGtwIr0NV3pno=; b=jVaWOTBqSHmSMI
-	3lDycFrj2XeEFDDvfwuOyMlbtis2Hcd0siPhgw+MOPO76OZE3doj75pEHSMFwCO+sZ5lrZGt5g1Mq
-	RJb2te8swk9dmDxU2HMhjL7AmT/Ms7MgmUWrELjQoiSmF6FSglcRGfjosyAElADeaQ+ie7nb06l2M
-	0ThKVSDMHwhssU08W+XlHnkNqzeMqh/qj4pmtLRvX26MIhzuCxmKp1h8ejAxlWObbuCmdJYenKmww
-	AHHpA5XUl8eCFh0+rCYO4jss1+knxxa9OlnwK+tZMuEJNTFTADonicBYDxYVBKJVKoI9QHIEHLmO2
-	lwYDcUCr0NY/Rvpml01Q==;
+	List-Owner; bh=kF5m9MfVy53J/ReGt/VaH9zDh0YGzHcnkWpJ/l2rPHo=; b=KwIjIlYS9EoSBA
+	IKrC6QBCIR/I0IQq1VDm2WuA8OE0cBD1q6TJ6RZ4MsY9fkofsD9Ztse3+1bPJr/n7O7NcmaJZcd1v
+	kv9CmKrJ0XPID8brsSw5JbYaKe7+dTLktbwL6ru0NvHvPLKHin8b6kCs0qOGQlsc+VcLyuLAkEa2g
+	hG+hdgtAZEva0KMrDoZyUMR+rFhZTVvfzqLXF1OIWsxdYdCO+DBew5huzYNunHun8B23+FTrqRSuA
+	izkcHzFLBPHkRK/4GiJR+2BiaP9q4Vlu+VbcyUAzx5mnkecdpWQdqlYX0/ttXI18TbXLYAeu2bjMt
+	sofyczt2JsmFoDmB5w4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uopmA-0000000EuK8-3Uu0;
-	Wed, 20 Aug 2025 20:51:18 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uopmF-0000000EuQf-3GPG;
+	Wed, 20 Aug 2025 20:51:23 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uolgp-0000000EOpt-0hxM;
-	Wed, 20 Aug 2025 16:29:31 +0000
+	id 1uollY-0000000EPjJ-3Wlq;
+	Wed, 20 Aug 2025 16:34:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 953CC601D7;
-	Wed, 20 Aug 2025 16:29:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAF51C4CEE7;
-	Wed, 20 Aug 2025 16:29:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4CE275C673D;
+	Wed, 20 Aug 2025 16:34:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12721C4CEE7;
+	Wed, 20 Aug 2025 16:34:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755707370;
-	bh=Qzu3sAyj5y1ZHEYtAgX6Nl+Q7wQ4tl5rXdQK2r2hq9s=;
+	s=k20201202; t=1755707664;
+	bh=1SmINIXApk/rDoKKx82uVKPJSOdJg4DUAj+yAYn/Qlo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CbgkpQOOkJMnf7YOfm3L+2WNCbvN5KEBLTDdwMgR39opZMxwb3V5MK73vcbQHirnK
-	 WevPSToBA1Z2Bd1BJLSfJUjYuaTPfwrbFLBngxvVkBwusojgB7i28p0pf2CAjQGOTI
-	 OWGI4RYaIQWxIe4yHc/B2L9MU3Oc48+TlxaqVGOJ28GF/EveSvbMI88t5jJUz/4gdL
-	 nf1y1c9dXmjFaPj6ZVW4UfP4MnM2Kun7XmhFDsJkrQBpw2OmE8LzrNOto2vNhkkKLu
-	 UZiKOWNEGnG9LzNAeH6ukYhQHtK47/+VD6Z4TrSDqQmwMgcGIcapZ+oEPd9Sevi3CG
-	 OMAOYwUjQ3ETg==
-Date: Wed, 20 Aug 2025 21:59:25 +0530
+	b=P25E8I0+N9soufsYxe6o1473U2YqA0vAMqaUeSoWcBvu3nz5DZxu7YpXwArUa4dp0
+	 C7Q6nq6HFLweUc1x7FKbAmYPsTJ5jDweX7ErKBDU4+icafh84YyWVK15Sw2vHUYiC6
+	 8ZqdFgzXHrNG7BHasTre09//Aj7CKO/ttOudvO3EuFyZ4ec0jiJGif3jRkX5ILY2LT
+	 fL08dCXQdRS+OX8ZFs0TBKqYE4KuiU2LxRWv0gQZoBOXWArDZq3PF6PH1gnf0SpbtB
+	 6DS4v3H30/RNHz9TM4IsQaXcLzZT4Yzat4gRjTj8fA1MDDSzZCUCgZzI8PaClHTGSG
+	 fmaMdfOtn9TtQ==
+Date: Wed, 20 Aug 2025 22:04:19 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Brian Masney <bmasney@redhat.com>
+To: Peter Griffin <peter.griffin@linaro.org>
 Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
+	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
+	Tudor Ambarus <tudor.ambarus@linaro.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v2 2/9] phy: mediatek: phy-mtk-hdmi-mt2701: convert from
- round_rate() to determine_rate()
-Message-ID: <aKX35U4jX55W3W61@vaman>
-References: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
- <20250810-phy-clk-round-rate-v2-2-9162470bb9f2@redhat.com>
+	linux-samsung-soc@vger.kernel.org, kernel-team@android.com,
+	William Mcvicker <willmcvicker@google.com>,
+	Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org
+Subject: Re: [PATCH v3 1/2] phy: add new phy_notify_state() api
+Message-ID: <aKX5C9Xlx2CSJraY@vaman>
+References: <20250813-phy-notify-pmstate-v3-0-3bda59055dd3@linaro.org>
+ <20250813-phy-notify-pmstate-v3-1-3bda59055dd3@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250810-phy-clk-round-rate-v2-2-9162470bb9f2@redhat.com>
+In-Reply-To: <20250813-phy-notify-pmstate-v3-1-3bda59055dd3@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250820_093424_964540_5D11789C 
+X-CRM114-Status: GOOD (  23.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,50 +80,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10-08-25, 18:45, Brian Masney wrote:
-> The round_rate() clk ops is deprecated, so migrate this driver from
-> round_rate() to determine_rate() using the Coccinelle semantic patch
-> on the cover letter of this series.
+On 13-08-25, 16:00, Peter Griffin wrote:
+> Add a new phy_notify_state() api that notifies and configures a phy for a
+> given state transition.
 > 
-> Signed-off-by: Brian Masney <bmasney@redhat.com>
+> This is intended to be by phy drivers which need to do some runtime
+                    ^^^^^^^^^^
+Missing 'used' possibly? 
+
+> configuration of parameters that can't be handled by phy_calibrate() or
+> phy_power_{on|off}().
+> 
+> The first usage of this API is in the Samsung UFS phy that needs to issue
+> some register writes when entering and exiting the hibernate link state.
+> 
+> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
->  drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
+>  drivers/phy/phy-core.c  | 25 +++++++++++++++++++++++++
+>  include/linux/phy/phy.h | 19 +++++++++++++++++++
+>  2 files changed, 44 insertions(+)
 > 
-> diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> index e51b2d13eab473dddace48c75c2a8d73c8c65635..b0b6497e7eedcb6867541b573d22156ded29a4d5 100644
-> --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> @@ -90,10 +90,10 @@ static void mtk_hdmi_pll_unprepare(struct clk_hw *hw)
->  	usleep_range(80, 100);
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 04a5a34e7a950ae94fae915673c25d476fc071c1..60be8af984bf06649ef00e695d0ed4ced597cdb9 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -520,6 +520,31 @@ int phy_notify_disconnect(struct phy *phy, int port)
 >  }
+>  EXPORT_SYMBOL_GPL(phy_notify_disconnect);
 >  
-> -static long mtk_hdmi_pll_round_rate(struct clk_hw *hw, unsigned long rate,
-> -				    unsigned long *parent_rate)
-> +static int mtk_hdmi_pll_determine_rate(struct clk_hw *hw,
-> +				       struct clk_rate_request *req)
->  {
-> -	return rate;
-> +	return 0;
-
-This does not sound correct to me? should this not check the requested
-rate?
-
->  }
->  
->  static int mtk_hdmi_pll_set_rate(struct clk_hw *hw, unsigned long rate,
-> @@ -170,7 +170,7 @@ static const struct clk_ops mtk_hdmi_phy_pll_ops = {
->  	.prepare = mtk_hdmi_pll_prepare,
->  	.unprepare = mtk_hdmi_pll_unprepare,
->  	.set_rate = mtk_hdmi_pll_set_rate,
-> -	.round_rate = mtk_hdmi_pll_round_rate,
-> +	.determine_rate = mtk_hdmi_pll_determine_rate,
->  	.recalc_rate = mtk_hdmi_pll_recalc_rate,
+> +/**
+> + * phy_notify_state() - phy state notification
+> + * @phy: the PHY returned by phy_get()
+> + * @state: the PHY state
+> + *
+> + * Notify the PHY of a state transition. Used to notify and
+> + * configure the PHY accordingly.
+> + *
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_state(struct phy *phy, union phy_notify state)
+> +{
+> +	int ret;
+> +
+> +	if (!phy || !phy->ops->notify_phystate)
+> +		return 0;
+> +
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->notify_phystate(phy, state);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_state);
+> +
+>  /**
+>   * phy_configure() - Changes the phy parameters
+>   * @phy: the phy returned by phy_get()
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index 13add0c2c40721fe9ca3f0350d13c035cd25af45..664d0864c3a5042949cb121e982368fe0a97827f 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -53,6 +53,15 @@ enum phy_media {
+>  	PHY_MEDIA_DAC,
 >  };
 >  
-> 
-> -- 
-> 2.50.1
+> +enum phy_ufs_state {
+> +	PHY_UFS_HIBERN8_ENTER,
+> +	PHY_UFS_HIBERN8_EXIT,
+> +};
+> +
+> +union phy_notify {
+> +	enum phy_ufs_state ufs_state;
+> +};
+> +
+>  /**
+>   * union phy_configure_opts - Opaque generic phy configuration
+>   *
+> @@ -83,6 +92,7 @@ union phy_configure_opts {
+>   * @set_speed: set the speed of the phy (optional)
+>   * @reset: resetting the phy
+>   * @calibrate: calibrate the phy
+> + * @notify_phystate: notify and configure the phy for a particular state
+>   * @release: ops to be performed while the consumer relinquishes the PHY
+>   * @owner: the module owner containing the ops
+>   */
+> @@ -132,6 +142,7 @@ struct phy_ops {
+>  	int	(*connect)(struct phy *phy, int port);
+>  	int	(*disconnect)(struct phy *phy, int port);
+>  
+> +	int	(*notify_phystate)(struct phy *phy, union phy_notify state);
+>  	void	(*release)(struct phy *phy);
+>  	struct module *owner;
+>  };
+> @@ -255,6 +266,7 @@ int phy_reset(struct phy *phy);
+>  int phy_calibrate(struct phy *phy);
+>  int phy_notify_connect(struct phy *phy, int port);
+>  int phy_notify_disconnect(struct phy *phy, int port);
+> +int phy_notify_state(struct phy *phy, union phy_notify state);
+>  static inline int phy_get_bus_width(struct phy *phy)
+>  {
+>  	return phy->attrs.bus_width;
+> @@ -412,6 +424,13 @@ static inline int phy_notify_disconnect(struct phy *phy, int index)
+>  	return -ENOSYS;
+>  }
+>  
+> +static inline int phy_notify_phystate(struct phy *phy, union phy_notify state)
+> +{
+> +	if (!phy)
+> +		return 0;
+> +	return -ENOSYS;
+
+Should be -ENOSYS either way, right?
 
 -- 
 ~Vinod
