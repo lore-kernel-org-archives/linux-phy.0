@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73F4FCA0EFA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33CDDCA0FE4
 	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:12:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,69 +12,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yhUGuU1br75BTyS7wISPlf+/rh9/w5hRK/3oEEQBlwc=; b=zZG06TrBaLmVkP
-	Y6vZhOluB5nKtZR0+glM36m1J0PbZ5cyQIZ7LPpH5huDig6yPcJwxQzVaYFlSzGU+Fdrx1Sa2cFvB
-	7cN8SqFSyjfJ1VHnAH3tGXqFONPlrcZ0aPDoVUbq4/lBepWJ49FPtYmbF5TkgzNyZy7cutKyDXqzP
-	CrvMPMs3mSdOWBqrlSAZPw73F9qy54JJP9v4cnvYC/4ZRjVpRw7Qj6scLc7beb4gYP06gqmMfgyXl
-	HB89TisfFZngQZBfT6gkMkOMNsQ2z+p4GPcyl4LUSiXCV6g6+9/PmeHdJHnC0qGM2HWZ6oK1wXuJY
-	lO7POHbicpSnUDMN/LCw==;
+	List-Owner; bh=9PtqFETsfoIXJCH4HPDQAdCNjhxX/R52drkH5H0i32U=; b=F+mqYaahiNIrzb
+	EyFHbyw+ex5hAokuAByuq1PO5HA6yTT/MdE3D2sxUxNmOU9csCNZnNgCYppbrzVYSk8q5LnhfuoBi
+	AnQBaW52y1osF9va27xvi8KC/4ZjWMs+nQ01GnbGaaORtlvAGSRuH3IRPKcIdueFBJ35PJe8i64l+
+	2WtQrc7TzmsAIjxtS+Prm8byY+sZu3YE8li9qBead65EaCu2Z2RwGRvIDOgCRPIYX5jMzZdXHrMbz
+	7z1Ofy0SrYS2NHFi1gSjNXjdoRormzEOSiBXCBwVEAkkJhCiz5NnnB0qVIIozWpm7VKOq9iAsqGVF
+	rJ58q/iFZLJhC230rl7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upAi0-00000000EnA-3Q6D;
+	id 1upAi0-00000000EmD-17Tk;
 	Thu, 21 Aug 2025 19:12:24 +0000
-Received: from mail-wm1-f42.google.com ([209.85.128.42])
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up5jQ-0000000H7yQ-2gRr
+	id 1up5jP-0000000H7xp-2fPw
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Aug 2025 13:53:33 +0000
-Received: by mail-wm1-f42.google.com with SMTP id 5b1f17b1804b1-45a1b0c52f3so6255125e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 21 Aug 2025 06:53:32 -0700 (PDT)
+	Thu, 21 Aug 2025 13:53:32 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-45a1ac7c066so6289675e9.1
+        for <linux-phy@lists.infradead.org>; Thu, 21 Aug 2025 06:53:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1755784411; x=1756389211; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1755784410; x=1756389210; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=e1ILbTWVVpwSmSFNMNdMYlh6Zb0YmwB9OaOmacH3ozk=;
-        b=NVYnYHiTGFebdEfy23Wo8vbJctX2RzbrurENdGeVHAbhNXWRLeKYGaX+ElTYRCtZHQ
-         YvpoCCMq3CzCnTTyfgHyiSDtHtJN8JudCO1hx7NlYgzzVlv333vWlYP6UVwb7EFCTbH7
-         Fm1mBOjeJom5zIfR5ecNN+jrIKOBUKaz571GvPl/Zo9Zp6iSHnvwanouaxZ5xwWve4ha
-         FFr/0x1P6iA5rX33TxJ2ogkrjTzfL5bokiGI9OO7vHUPCpUS3hdv3Ce/jih9g1JhS/mH
-         DAs4VHgicXPb5QJ5QIzyyxK6S/OaFaMXrWkjClX/OrqTWw+wUfGE1agKiuFiX5A89rS7
-         dWxg==
+        bh=4EIBQO1Gz3enJDEIRLN/ppBfRRD6TDZUCn9XNdLrwEY=;
+        b=EqhD/Ca3+DTtg7708AfF7XW052glnT25oN+PViH/NXNRPMB8ElPIg5cMYkVEo8KokE
+         mzHWKcsi66yfdhOR7BjRqI0xtUm/TJ6RZGTdfTwLMGUh3g0h9XsS1ge8rbIH+RYAr/u+
+         hgW2MOvvs6Qq6KvBGHdwSmiLBr8rFKQxqT/rR53AJUfOFNcM+PqC5f9iGS1qq0FfbT1/
+         OENfUs8dN9xkHvmZsntP0qtcHRDjWJ9z5ZISiGP/cQP9jIWqr93/dsQHSrEcIs4kDkkj
+         +peqfoJHnBCdQkCdxBO1KYZvWEbaGjVMgsk9vB+BAY3w+7aqHjMCtzNca33xtuYmHcKG
+         XYVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755784411; x=1756389211;
+        d=1e100.net; s=20230601; t=1755784410; x=1756389210;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=e1ILbTWVVpwSmSFNMNdMYlh6Zb0YmwB9OaOmacH3ozk=;
-        b=hJcVu0a0+FFsN/P2D239ZEVSGQLJgF4m6t0+zntHHqlJL/ARiysLt/nGCbcF9D5Rkz
-         zdKRxh4GTTtdk3GLq7ai0TNJFULtq3mg2z9Ot/Rw6IZlE8Ln9JnaqZ8X4Er/oMBWcikR
-         idCoBTxamn92RUhcLc4llO1K5o9oB5XGJgpVK1yxdGMjmwT3RbYkSbHmQau8mkfeUwXi
-         Bz9tVIrDVtf1KRsBwbeHbSEKzqO51QgteylwjMP5tmNTi55bxc/zEUXbub67CNauzXGc
-         UjqElHNIW6gEt1tjpadc83q63UK0M5fUYSWJCyagtrV6hbG4aUyK/+GQpnEpyXsN04Jr
-         FhSw==
-X-Forwarded-Encrypted: i=1; AJvYcCVR0tYJB5Q//UZfHj5eEtvCP8u5uHkyhJR3pzbAf/LTPoRvHU+UEQPZV+kuqyfe7TxAvmTQWJs981A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxsYdAx8pZp5gbPFSSbMNxa5G0g/sa1GfPtzxztgfpBFvVJ+gdp
-	c3qFyfA+uFLt2uFLB6RwVVMuI82ig+HqcY9/ukJXA4VVcktdLAtZDMHRBXvUn9MB4nI=
-X-Gm-Gg: ASbGncsHZ2BNvTYM8MoDUe2LBoYq+2WG/Wic3Opp/3jxDOm6AdPnzL/CPdk5yjclu7M
-	e1r3QP3RntT2spl1ORcT847Dfs3j19kvHlhWkFI6sxbofxDXCDxkK6n8PWcpxvPO415LXpCCiZi
-	JI/XwLXIfj4qBfuzG85G8m1VslZSsgG4yvRcZFqfi8qcJlFTb0DBVTzoyAGKmrfFT9zr5wye2o8
-	sbiYIQS7yDGhbXNQuTkxzZfG+AYed3frTpgelruU4W1cLuSvWYZ2llPTWlKpOWUcPcrxdB9XDbb
-	CAg9nxM6LZt1qH3EaaW3I0WVhxoshf9ntRJkXoWT+siqy3SMP2iPvLs2IbGh+vx2/my7lCTWH0V
-	Ifi2CdNxC5OhaU2s1dXShDJQsnbfPQ0nUDyknhPsUeSg=
-X-Google-Smtp-Source: AGHT+IHzxFhZ5bX07Dc56gfIt9C/HteSV73uQJi38+JQ7zvs/0J0ficW3iAyseTimoWe+tg8LI3jWw==
-X-Received: by 2002:a05:600c:1f0e:b0:456:19b2:6aa8 with SMTP id 5b1f17b1804b1-45b4d84c455mr22092775e9.19.1755784410744;
-        Thu, 21 Aug 2025 06:53:30 -0700 (PDT)
+        bh=4EIBQO1Gz3enJDEIRLN/ppBfRRD6TDZUCn9XNdLrwEY=;
+        b=nzXjFpSfvzWPsYwPjY0sWubG3JmycVWqZ17GYdYJN7fGmBjwlsyMbKmjjCYyJPg6pA
+         eElPKTmOuyuT9/s4WSDBdKen+R0C2kgNDF13IUfW07/XO5wFHAMX8GXw2ubljnP4qBgj
+         zwATNV0g9hxdw++qqJnQb78WTjyZ9AQdoYIQFxSn/1Wt3f+9uV382mOqwei1bxZ+MBuB
+         qynY5PdQAAi1nYDK02oGLLUZjljFlzWX1F0HN81uc/xnr63uPSagI16+dOyH496dpUs/
+         wcxMThvsT56njp8R6N94cbiZrxGYEWJqOiy5JCNWKiS2lVIf/I0ZCV46eU4YRRrlCdVU
+         rehA==
+X-Forwarded-Encrypted: i=1; AJvYcCXvTLyshhD3zMMSbnbnRh+MVkZOqHFEKpoh0mqwpOabOALSWroKuQcAE8FlU5E6oeztdFjFmeT0mwQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwT0cw9jmq8zmI03D5EO9PeO4LJ/54zNL5CRCRiVmWDy7DG5jRF
+	gJEWIXdTnHWU8ZQ4bgoLaDbC8QttveWvv4B9KBTs/0HE6eE8o0K6mRlWlaSLTUkxVTw=
+X-Gm-Gg: ASbGnctsDgoaDX6L3OtjDS+2W2rgrtoGIAOBwCG8riSJ+i9IA4Iz3KOC/4F19cBMWC1
+	zDlQ34gswFP+diQgCCF4NJ59gHgAame8CRR0etd1OX5wBN9Lfcp1JwxaX3NYpj7/zcPFpD4pqLv
+	n3lFiA612vFtwbR2kCE1xds6kSU1IDVO2GL7RNux01dSgT489JRfrBjnwZTBy43oJ9OWGCeDxRR
+	23ETlGQCch+Smrz/wU0t2EBJRhusUyK3FJHBAMEqiprB1DjYI5yUz2BVXR3G88Hoe1AXVANkVcF
+	gqIr867y7953UBTxZEebmcYMXuMWg41OHs22YHFoiNcPBmWJFcLsfk+X/O8G6c2xcP+OsbyHVYM
+	YMUruiNWDJGWyHOI2D/G8I5IAQxb5N+KQHMJPSnDropHuNWBrZEnhXQ==
+X-Google-Smtp-Source: AGHT+IGAIzsMBvakvxJeKR4kacsmerciP2sEoorpYm9uAOK1lVz1iyXKtDjbXi0GfpWXuuUcYEAuhw==
+X-Received: by 2002:a05:600c:5249:b0:439:4b23:9e8e with SMTP id 5b1f17b1804b1-45b4d8de696mr24534735e9.3.1755784409986;
+        Thu, 21 Aug 2025 06:53:29 -0700 (PDT)
 Received: from arrakeen.starnux.net ([2a01:e0a:3d9:2080:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b4e269d20sm14825015e9.2.2025.08.21.06.53.30
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b4e269d20sm14825015e9.2.2025.08.21.06.53.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 21 Aug 2025 06:53:30 -0700 (PDT)
+        Thu, 21 Aug 2025 06:53:29 -0700 (PDT)
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Thu, 21 Aug 2025 15:53:27 +0200
-Subject: [PATCH RFC 2/3] phy: qcom: qmp-combo: get default qmpphy_mode from
- DT
+Date: Thu, 21 Aug 2025 15:53:26 +0200
+Subject: [PATCH RFC 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Document default phy mode
 MIME-Version: 1.0
-Message-Id: <20250821-topic-x1e80100-hdmi-v1-2-f14ad9430e88@linaro.org>
+Message-Id: <20250821-topic-x1e80100-hdmi-v1-1-f14ad9430e88@linaro.org>
 References: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
 In-Reply-To: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -86,25 +86,26 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2458;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1974;
  i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=pyH/63l8u2jxoznNAi489bH4KgxW+yncyv7Dzzy0ooQ=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBopyTXxH8cN7bUQsx2ZIWRdTEbt3s4adIu96+85UQQ
- fLvZ5muJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCaKck1wAKCRB33NvayMhJ0TLhD/
- 93xZ6P1uVT6kCXpqkhY/UQNa/NPxUJX9u7kDYnffn2/GBILFXp+woumwdl+2flJztSwB0+KfdQzyKu
- KJPGQaruufOfFYr05BehiOOe2kbjgvNnmn9yyWw4zTo5VrXkFOoHQ4iuTzKHYk32F8uMqG10/RO5qQ
- /nNbVvOKEvs8amuanTT0MbET2lkXyydwwLgXB3gti3aB7c9QmyEBOtwetV0NOdJimpZdnmO2mWtWTe
- I9TX6bZo9RAvOLyE6oB/hn7EXwdrFDuNuoidurmQABLnYeRJOdNZshmKuyFBBxDGz+d7MP2TACSBbs
- UyH1NEHvvHpI3CgO/vr7toDmSb/eJYK+B0M9b+UIBcPo1cKaUPWLXmRMC6arMI4HaznMZIPo3sAt3t
- wUTLPwaJVTff7rE4/Up2VO2xHUfc3kROJUG5hTA8+4Uz8VgDYCl1TwWOWhRS2yqYz+EW7KpqSXboiZ
- R4kC/2X5BpVou+Gq7CiK5JtNLT1LZuQ0v4MNRoE4nFRGwre+lRi1ItlCjx1gv6fPWYHmdrnMhHYyel
- woXs3YXppSdI5a/ui3pEv2bPe6ccbqZOOOlTqKizqJV1fOGBymr1drs04raN77W2x3RD7PSvjy9uSO
- wiJtNpDh1FpTLwa6id8vxMoB0E/UHnyxqUbaDJvw4tnxLs9s9yRxu82YpRXg==
+ bh=Aq4B8ubCvdna8UpVPGeOGxwN0aFnE91nXSAPqGRX4oM=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBopyTXldbpm4aBJ2CsjXkwQ24ndf393shGxX332QEv
+ OXcBGm6JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCaKck1wAKCRB33NvayMhJ0cV9D/
+ 9Ki7JcUNOAeH+4OzoHkHUP+vqAWxGIqz0PI1mKTURjsY+W1XGqbumr63HVm10/uPe+ctdQpVLJcfuf
+ P7Zlp2uzHtdNuvdNHUFWiFP2jIOxEK1HkwmTMmw04jj7RMUxj3Wd9+cf4pJJ+1DFLxkM/wCkuIU0lR
+ MMhrQWmsHBgI6On5U/7nYJr5EMepeTV8P3nyWYklErdKvijuWm1GRgjNnl57Ff6gNMu+2tmn7Cz5Ct
+ 8oJjm9W7Tx99PeMsMx2ypyWeLqMpRmOTpxSRN5WerUHcl0OJ3CNkuapZ3JLT8IgF4rU2KTKCE0Z36+
+ CDoahhIPvFO17Tz7Zy7jk6vqQMXHNi7SJKyFST/kGfgtfuM/9SNI698IsBScm+pLMxvtPCSB1FUqQY
+ oon8yBV31VcPp1385R5sJHfckSgYKihZDz1iAKFMbVvtKFNEEwqgGF8WJR4/VXBbmVaKi+Dif9hFEP
+ 2bB2O/nFsHUGhu8EEv3ghfexcSnnYKoH3Wydbwal/eXBmPuN1Kh8GPY4knHmqO8MrbbwXfyIgEOvsq
+ nDIXQLPzsOzvQHY6XRmSL8bb5NRdxqYBT0dVa/VXLHVW5WsJPHPAArX5opq+p6a/vYUQ9e+y0zRT4S
+ WDm4iqLuQx9488Xz1o0C46fbw0xJYmU7qt4CgLdUy/BaJHDfyvp1krYTiS9w==
 X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
  fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_065332_687236_97C3F666 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20250821_065331_683170_0D630563 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,58 +140,38 @@ But if a 4lanes DP->HDMI bridge is directly connected to the
 QMP Comby PHY lanes, in the default routing 2 or the 4 lanes would
 probbaly be USB3, making the DP->HDMI bridge non functional.
 
-Support the property to set in which layout mode the QMP Comby PHY
+Add a property to hint in which layout mode the QMP Comby PHY
 should be as startup.
 
 Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 20 +++++++++++++++++++-
- 1 file changed, 19 insertions(+), 1 deletion(-)
+ .../bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7b5af30f1d028c592500e723ecd27b54ed554709..622db8a204d3c7c95f110e59cab96b07eadabade 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -4117,13 +4117,19 @@ static struct phy *qmp_combo_phy_xlate(struct device *dev, const struct of_phand
- 	return ERR_PTR(-EINVAL);
- }
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+index c8bc512df08b5694c8599f475de78679a4438449..129475a1d9527733e43ded5a38aad766f9810fe7 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -76,6 +76,19 @@ properties:
+   mode-switch: true
+   orientation-switch: true
  
-+static const char * const qmpphy_mode_str[] = {
-+	[QMPPHY_MODE_USB3DP] = "usb3+dp",
-+	[QMPPHY_MODE_DP_ONLY] = "dp",
-+	[QMPPHY_MODE_USB3_ONLY] = "usb3",
-+};
++  qcom,combo-initial-mode:
++    description:
++      Describe the initial mode of the Combo PHY configuration.
++      The Combo PHY is a wrapper on top of a DP PHY and an USB3 PHY,
++      sharing the same SuperSpeed lanes with either DisplayPort over
++      the 4 lanes (dp), USB3 on a pair of lanes (usb3) or both
++      technologies in a 2+2 configuration (usb3+dp) as default.
++    default: usb3+dp
++    enum:
++      - usb3+dp
++      - usb3
++      - dp
 +
- static int qmp_combo_probe(struct platform_device *pdev)
- {
- 	struct qmp_combo *qmp;
- 	struct device *dev = &pdev->dev;
- 	struct device_node *dp_np, *usb_np;
- 	struct phy_provider *phy_provider;
--	int ret;
-+	int ret, i;
- 
- 	qmp = devm_kzalloc(dev, sizeof(*qmp), GFP_KERNEL);
- 	if (!qmp)
-@@ -4195,6 +4201,18 @@ static int qmp_combo_probe(struct platform_device *pdev)
- 	 */
- 	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
- 
-+	/* Replace with DT provided mode */
-+	if (of_find_property(dev->of_node, "qcom,combo-initial-mode", NULL)) {
-+		for (i = 0; i < ARRAY_SIZE(qmpphy_mode_str); ++i) {
-+			ret = of_property_match_string(dev->of_node, "qcom,combo-initial-mode",
-+						       qmpphy_mode_str[i]);
-+			if (!ret) {
-+				qmp->qmpphy_mode = i;
-+				break;
-+			}
-+		}
-+	}
-+
- 	qmp->usb_phy = devm_phy_create(dev, usb_np, &qmp_combo_usb_phy_ops);
- 	if (IS_ERR(qmp->usb_phy)) {
- 		ret = PTR_ERR(qmp->usb_phy);
+   ports:
+     $ref: /schemas/graph.yaml#/properties/ports
+     properties:
 
 -- 
 2.34.1
