@@ -4,92 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95DD9CA0EEB
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 09:41:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F75CCA0EF8
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 11:36:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=elRzV3ac1Gwo9h9MyYR+O7lpRLpxK64uSnwTbaGQ9xc=; b=q7Bg5uJ2VA8qN7
-	KaVm0TXFwntDRhGGcjXqBrLg8p/E50RNzi7k6SjYJ7SvCegc4biFXZtCKAbXn7q2pEUpq1kV4FGM2
-	bMNK4n+mMfUmR8n46S7Q3W5ZBM811U75hWJr1p1hvz4n0LMBTFvrshkdZ0L+w580uUYt0Oabcdflx
-	VRMrz/LXnALj0JGze4uIv9SE25niD8a9AyaNKhqdws379TgstnC79u0icGYhbx/JdrcGuuQ2mD/W0
-	diPKWUg55FasSl/UeCTnwl9f+ix6yM3/6j/i2Wy9nlBT5ukwiODUXP4f6/Tb1hfL6ZJQOzYbb2XV0
-	QUqDu44ZFczGFkCdOnow==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fAKYBD8drwh/GPIYazJXaH4dxQyCaAPbqxf0uNrHTb4=; b=UpC+Vju4kYEKsY
+	tl838Yk4lFFz3agk+387peiCZhcs8u5TMFcj3ZR74Ya2JpET6foTMcrFYR7YwcE812LYuJPE/pveE
+	Ekhg/yAw6RZZNOVQogtrvwHrb0gSB7Hd5ODUpg7huuTVZmGoNRx6TCft1LmLrsIWNttvXwmGPGgdc
+	D8r3hX/PjG7Uwq0KmSFGKjPQqmYRTG2OisKh2SL1TOSyEHpeaYqovkbeMKOwx17fsUHg7OziB4v1U
+	/RRYB638AJh1Lmh+awKhvfGHe1fFtHgPy+J2PPYw2LyUnnNb+dWJpO/na/1Frngd01wD1dyWtT3ln
+	rjJefoSEbRyvpaHtmanA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up1nY-0000000GSx5-43Eg;
-	Thu, 21 Aug 2025 09:41:33 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1up3aN-0000000GmDr-3zbK;
+	Thu, 21 Aug 2025 11:36:03 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up0FL-0000000GAxk-2u5V
+	id 1up0rP-0000000GHqD-49gM
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Aug 2025 08:02:09 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-45a1b00f23eso3639155e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 21 Aug 2025 01:02:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1755763326; x=1756368126; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Hn27vZnhIqBSicegyUAo/osnGXFM0EzIXplvQ6HEFls=;
-        b=dVKIkpVmAnaPyy07wlw9gRwiKUt4ERl5ACNYTkBKiQiPY9YIT2pPYS3NDg5ToWPryU
-         WAqw9QdRg8Xli2E5Xvrb9Wm4NcSwtGuWgKDk2bzcMuacnr36xl2v+Ytrpyvt054EHRkY
-         43P4DQhNk9r5Ez6Zg/Px9mVs1j77/k9VQ1rE05D2L3J0jbAJBIJPNLhE6gZcBmTJXOTw
-         IQa6il7B6+grmWKxo19tD/0sB+go9oAoa+XsvePk+6w7hoFVeVjH9FdAyIrTx/BFIuH8
-         lMSzqCtuYk886QtUQ6XovjfbzH/U66C8VAgPXnTLNTpRJUjWhHsE2auwyVsgF79XKk+8
-         Ijig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755763326; x=1756368126;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Hn27vZnhIqBSicegyUAo/osnGXFM0EzIXplvQ6HEFls=;
-        b=Eg/d/TiBWxWAJ+0J/w0WadC8F/kq4R4IPd2jICeEPFfaUt49JVPA5QDPxBmho45tOa
-         Q1a0N5HLoP+SanTetbwxKYZ3a5Qm+nVcg2HC75AO+Hd9LZumdcpOe4yDjLaxWVUzGVOe
-         zaGtHXXmObtUkeyV7y/TQQWYDgH9S4nVptOoAkCMKXRPrRIgbdv7OUlA6uaV2x2ZJ8BP
-         i/SFcSfNkY6JVWozC1DyZopgqoIAT5XBCTOZFoPHJPI11oQj4eJLeGDBWktvt65DJZlq
-         Et3vcTL6n9Ij0om85Hi14DekZpAHG+p3qrxBPVFZdMib//crYoj5+QJ26jqhWv0MRJIa
-         70Gw==
-X-Forwarded-Encrypted: i=1; AJvYcCUxNeWh5zRnFynk4cCR6UQM+8heD01GHsoObgfNE2pfBa3PI9Oa2cXOf5r8XvOH3yKSmHPu/OeYRsc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy2HjaUZ8Ded/XUHppQdG9mnXJ7SIfjAqi+w9vzh9sTjQp5aubE
-	qhaAS/Ik7tgbDL6RZ7cNzHxjRE1uH3OT2AZW1+/WHhestQFyG/g4hxLUkAqVJRz4p+U=
-X-Gm-Gg: ASbGncsKsNAKUOmjGg9koeMC5ylc2qiuKc3Km3GzGWmHzFzCo9m2E7J7z1QiT4t8l1W
-	6HHY7E5XYI4gg5J3M3TA26lrHFiTvRmWK38LBMVccExTkvGF3RZ/2Pq1HTJnvKxHtApViTmzwat
-	5rs9KGtLl228UtB5aGfMbAvAoMLZZ4oDOTKaJ5xOaE2bigxk20SdFOnbxvP0n0uWW5RUocuZ7fI
-	NKSm62Es16f7l9BhBZ3bWI/cCpfP58X7WBSjGZupywtam6xPOkB2rAUHtyrnKLOLmHIctgrLkZ4
-	w89iy/NWj8HsU7g0EnrCk33484tH6UCeXASuI7nW/alDGA9gZLTezPG4JyOTD64/ZkeO2gBCtGw
-	7eWQT1MRI6PWipykjpP4HtOS3n4wa9AudwqBb
-X-Google-Smtp-Source: AGHT+IFyf4GxZUgfH24ON3BuA2aO3p7JoOEyz8RGPT602L+yh2FycWNW4H1ldr6Xsp2nsN+1IQ/uyQ==
-X-Received: by 2002:a05:600c:138f:b0:456:1824:4808 with SMTP id 5b1f17b1804b1-45b4d8779camr9361005e9.32.1755763325420;
-        Thu, 21 Aug 2025 01:02:05 -0700 (PDT)
-Received: from [127.0.0.2] ([2a02:2454:ff21:ef41:a59f:f2cf:3ca3:965])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b4dc28fc8sm16337285e9.24.2025.08.21.01.02.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 21 Aug 2025 01:02:05 -0700 (PDT)
-From: Stephan Gerhold <stephan.gerhold@linaro.org>
-Date: Thu, 21 Aug 2025 10:01:47 +0200
-Subject: [PATCH v3] phy: qcom: qmp-pcie: Fix PHY initialization when
- powered down by firmware
+	Thu, 21 Aug 2025 08:41:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1755765688; x=1787301688;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=Hr2Mq/c3wRRLOd0x+eYAg6WQzQOLsymSwbT9bZ4h144=;
+  b=HD0r3L/cDDk7R3aywK8QY9JhcZly0fd1cfosIe0VCOgAoemNGwgIdrpZ
+   FY4TCzzOhbdNAZ+GYcv5wSLlTHsQ1dSk9qPQsW1xoCVRgJ5jr5BBAti6Y
+   tsdzPvya1dLENq9X4Rcbuo0nNj1kpRL/rPP314w4jtY1UkxdvKaWEJ+UV
+   Tmei+Zavh9lGP1Zlf3BZiMMx+wKoGm+Zxwli+say/0bbaoXFyV2iBAgzV
+   qRlen75xkBEb3heKYPgRLoK/O7NHzhpLuOSoXfVsIx9OIKKtOIZi+eocU
+   ua9iP7jwZQN9tOGp4Kz/SfWbU6CWTsNI+Xg76+EGfR1nd+6LYN58DOYa1
+   w==;
+X-CSE-ConnectionGUID: QsT1kSoqRvWC6TwhWjjSNA==
+X-CSE-MsgGUID: NcE1lyTeRjemqu7RTJl87Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11527"; a="57759725"
+X-IronPort-AV: E=Sophos;i="6.17,306,1747724400"; 
+   d="scan'208";a="57759725"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Aug 2025 01:41:24 -0700
+X-CSE-ConnectionGUID: VBxdbat7RHmC/2tZJbIT4A==
+X-CSE-MsgGUID: sI80Ql8OSPiy1PZeQZXOGA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.17,306,1747724400"; 
+   d="scan'208";a="199229185"
+Received: from lkp-server02.sh.intel.com (HELO 4ea60e6ab079) ([10.239.97.151])
+  by fmviesa001.fm.intel.com with ESMTP; 21 Aug 2025 01:41:19 -0700
+Received: from kbuild by 4ea60e6ab079 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1up0rF-000K6l-0s;
+	Thu, 21 Aug 2025 08:41:17 +0000
+Date: Thu, 21 Aug 2025 16:41:05 +0800
+From: kernel test robot <lkp@intel.com>
+To: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
+	cassel@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, linux-ide@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
+	linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
+	fenglin@eswincomputing.com, lianghujun@eswincomputing.com,
+	luyulin <luyulin@eswincomputing.com>
+Subject: Re: [PATCH v2 3/3] phy: eswin: Create eswin directory and add
+ EIC7700 SATA PHY driver
+Message-ID: <202508211623.d8Spdqn7-lkp@intel.com>
+References: <20250819140043.1862-1-luyulin@eswincomputing.com>
 MIME-Version: 1.0
-Message-Id: <20250821-phy-qcom-qmp-pcie-nocsr-fix-v3-1-4898db0cc07c@linaro.org>
-X-B4-Tracking: v=1; b=H4sIAGrSpmgC/43NsQ6DIBSF4VcxzL0NXIXWTn2PpgMCKkkVhIbUG
- N+96NQuTcf/DN9ZSDTBmkguxUKCSTZaN+YoDwVRvRw7A1bnJkiR0zND8P0Mk3IDTIMHr6yB0ak
- YoLUvYIKWjAqsK6VJFnwwed712z13b+PThXk/S2xb/3MTAwa1PGkqucamEteHHWVwRxc6ssEJP
- 7HqN4YZaw0X2HBNUbIvbF3XN3EVRhcUAQAA
-X-Change-ID: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Wenbin Yao <quic_wenbyao@quicinc.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>
-X-Mailer: b4 0.14.2
+Content-Disposition: inline
+In-Reply-To: <20250819140043.1862-1-luyulin@eswincomputing.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_010207_749643_F26987D5 
-X-CRM114-Status: GOOD (  21.67  )
+X-CRM114-CacheID: sfid-20250821_014128_083522_F3C3E989 
+X-CRM114-Status: GOOD (  14.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,110 +96,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
-support") added support for using the "no_csr" reset to skip configuration
-of the PHY if the init sequence was already applied by the boot firmware.
-The expectation is that the PHY is only turned on/off by using the "no_csr"
-reset, instead of powering it down and re-programming it after a full
-reset.
+Hi Yulin,
 
-The boot firmware on X1E does not fully conform to this expectation: If the
-PCIe3 link fails to come up (e.g. because no PCIe card is inserted), the
-firmware powers down the PHY using the QPHY_PCS_POWER_DOWN_CONTROL
-register. The QPHY_START_CTRL register is kept as-is, so the driver assumes
-the PHY is already initialized and skips the configuration/power up
-sequence. The PHY won't come up again without clearing the
-QPHY_PCS_POWER_DOWN_CONTROL, so eventually initialization fails:
+kernel test robot noticed the following build errors:
 
-  qcom-qmp-pcie-phy 1be0000.phy: phy initialization timed-out
-  phy phy-1be0000.phy.0: phy poweron failed --> -110
-  qcom-pcie 1bd0000.pcie: cannot initialize host
-  qcom-pcie 1bd0000.pcie: probe with driver qcom-pcie failed with error -110
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on linus/master v6.17-rc2 next-20250820]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-This can be reliably reproduced on the X1E CRD, QCP and Devkit when no card
-is inserted for PCIe3.
+url:    https://github.com/intel-lab-lkp/linux/commits/Yulin-Lu/dt-bindings-ata-eswin-Document-for-EIC7700-SoC-ahci/20250820-213411
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250819140043.1862-1-luyulin%40eswincomputing.com
+patch subject: [PATCH v2 3/3] phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
+config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20250821/202508211623.d8Spdqn7-lkp@intel.com/config)
+compiler: clang version 18.1.8 (https://github.com/llvm/llvm-project 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250821/202508211623.d8Spdqn7-lkp@intel.com/reproduce)
 
-Fix this by checking the QPHY_PCS_POWER_DOWN_CONTROL register in addition
-to QPHY_START_CTRL. If the PHY is powered down with the register, it
-doesn't conform to the expectations for using the "no_csr" reset, so we
-fully re-initialize with the normal reset sequence.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202508211623.d8Spdqn7-lkp@intel.com/
 
-Also check the register more carefully to ensure all of the bits we expect
-are actually set. A simple !!(readl()) is not enough, because the PHY might
-be only partially set up with some of the expected bits set.
+All errors (new ones prefixed by >>):
 
-Cc: stable@vger.kernel.org
-Fixes: 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention support")
-Signed-off-by: Stephan Gerhold <stephan.gerhold@linaro.org>
----
-Changes in v3:
-- Move up existing comment block and clarify it, so that it is more obvious
-  what the additional checks really do (Bjorn)
-- Link to v2: https://lore.kernel.org/r/20250814-phy-qcom-qmp-pcie-nocsr-fix-v2-1-fe562b5d02a1@linaro.org
+>> drivers/phy/eswin/phy-eic7700-sata.c:60:8: error: call to undeclared function 'readl'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      60 |                 if ((readl(base + reg) & checkbit) == status)
+         |                      ^
+   drivers/phy/eswin/phy-eic7700-sata.c:79:8: error: call to undeclared function 'readl'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      79 |         val = readl(sata_phy->regs + SATA_CLK_CTRL);
+         |               ^
+>> drivers/phy/eswin/phy-eic7700-sata.c:81:2: error: call to undeclared function 'writel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      81 |         writel(val, sata_phy->regs + SATA_CLK_CTRL);
+         |         ^
+   drivers/phy/eswin/phy-eic7700-sata.c:119:8: error: call to undeclared function 'readl'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     119 |         val = readl(sata_phy->regs + SATA_RESET_CTRL);
+         |               ^
+   drivers/phy/eswin/phy-eic7700-sata.c:121:2: error: call to undeclared function 'writel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     121 |         writel(val, sata_phy->regs + SATA_RESET_CTRL);
+         |         ^
+   drivers/phy/eswin/phy-eic7700-sata.c:172:8: error: call to undeclared function 'readl'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     172 |         val = readl(sata_phy->regs + SATA_CLK_CTRL);
+         |               ^
+   drivers/phy/eswin/phy-eic7700-sata.c:174:2: error: call to undeclared function 'writel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     174 |         writel(val, sata_phy->regs + SATA_CLK_CTRL);
+         |         ^
+   7 errors generated.
 
-Changes in v2:
-- Ensure that all expected bits are set (Konrad)
-- Link to v1: https://lore.kernel.org/r/20250812-phy-qcom-qmp-pcie-nocsr-fix-v1-1-9a7d0a5d2b46@linaro.org
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 25 +++++++++++++++++++------
- 1 file changed, 19 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 95830dcfdec9b1f68fd55d1cc3c102985cfafcc1..0fa63b734b67b8f44580b56555950bb5d74ef94c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -3067,6 +3067,14 @@ struct qmp_pcie {
- 	struct clk_fixed_rate aux_clk_fixed;
- };
- 
-+static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
-+{
-+	u32 reg;
-+
-+	reg = readl(base + offset);
-+	return (reg & val) == val;
-+}
-+
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
- {
- 	u32 reg;
-@@ -4339,16 +4347,21 @@ static int qmp_pcie_init(struct phy *phy)
- 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *pcs = qmp->pcs;
--	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
- 	int ret;
- 
--	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
- 	/*
--	 * We need to check the existence of init sequences in two cases:
--	 * 1. The PHY doesn't support no_csr reset.
--	 * 2. The PHY supports no_csr reset but isn't initialized by bootloader.
--	 * As we can't skip init in these two cases.
-+	 * We can skip PHY initialization if all of the following conditions
-+	 * are met:
-+	 *  1. The PHY supports the nocsr_reset that preserves the PHY config.
-+	 *  2. The PHY was started (and not powered down again) by the
-+	 *     bootloader, with all of the expected bits set correctly.
-+	 * In this case, we can continue without having the init sequence
-+	 * defined in the driver.
- 	 */
-+	qmp->skip_init = qmp->nocsr_reset &&
-+		qphy_checkbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START) &&
-+		qphy_checkbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], cfg->pwrdn_ctrl);
-+
- 	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
- 		dev_err(qmp->dev, "Init sequence not available\n");
- 		return -ENODATA;
+vim +/readl +60 drivers/phy/eswin/phy-eic7700-sata.c
 
----
-base-commit: aac1256a41cfbbaca12d6c0a5753d1e3b8d2d8bf
-change-id: 20250812-phy-qcom-qmp-pcie-nocsr-fix-1603106294cd
+    52	
+    53	static int wait_for_phy_ready(void __iomem *base, u32 reg, u32 checkbit,
+    54				      u32 status)
+    55	{
+    56		unsigned long start = jiffies;
+    57		unsigned long timeout = start + PHY_READY_TIMEOUT;
+    58	
+    59		while (time_before(start, timeout)) {
+  > 60			if ((readl(base + reg) & checkbit) == status)
+    61				return 0;
+    62			usleep_range(50, 70);
+    63		}
+    64	
+    65		return -EFAULT;
+    66	}
+    67	
+    68	static int eic7700_sata_phy_init(struct phy *phy)
+    69	{
+    70		struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
+    71		u32 val = 0;
+    72		int ret = 0;
+    73	
+    74		/*
+    75		 * The SATA_CLK_CTRL register offset controls the pmalive, rxoob,
+    76		 * and rbc clocks gate provided by the PHY through the HSP bus,
+    77		 * and it is not registered in the clock tree.
+    78		 */
+    79		val = readl(sata_phy->regs + SATA_CLK_CTRL);
+    80		val |= SATA_SYS_CLK_EN;
+  > 81		writel(val, sata_phy->regs + SATA_CLK_CTRL);
+    82	
+    83		writel(SATA_CLK_RST_SOURCE_PHY, sata_phy->regs + SATA_REF_CTRL1);
+    84		writel(SATA_P0_AMPLITUDE_GEN1 | SATA_P0_AMPLITUDE_GEN2 |
+    85		       SATA_P0_AMPLITUDE_GEN3, sata_phy->regs + SATA_PHY_CTRL0);
+    86		writel(SATA_P0_PHY_TX_PREEMPH_GEN1 | SATA_P0_PHY_TX_PREEMPH_GEN2 |
+    87		       SATA_P0_PHY_TX_PREEMPH_GEN3, sata_phy->regs + SATA_PHY_CTRL1);
+    88		writel(SATA_LOS_LEVEL | SATA_LOS_BIAS,
+    89		       sata_phy->regs + SATA_LOS_IDEN);
+    90		writel(SATA_M_CSYSREQ | SATA_S_CSYSREQ,
+    91		       sata_phy->regs + SATA_AXI_LP_CTRL);
+    92		writel(SATA_REF_REPEATCLK_EN | SATA_REF_USE_PAD,
+    93		       sata_phy->regs + SATA_REG_CTRL);
+    94		writel(SATA_MPLL_MULTIPLIER, sata_phy->regs + SATA_MPLL_CTRL);
+    95		usleep_range(15, 20);
+    96	
+    97		/*
+    98		 * The SATA_RESET_CTRL register offset controls reset/deassert
+    99		 * for both the port and the PHY through the HSP bus,
+   100		 * and it is not registered in the reset tree.
+   101		 */
+   102		val = readl(sata_phy->regs + SATA_RESET_CTRL);
+   103		val &= ~(SATA_PHY_RESET | SATA_PORT_RESET);
+   104		writel(val, sata_phy->regs + SATA_RESET_CTRL);
+   105	
+   106		ret = wait_for_phy_ready(sata_phy->regs, SATA_P0_PHY_STAT,
+   107					 SATA_P0_PHY_READY, 1);
+   108		if (ret < 0)
+   109			dev_err(&sata_phy->phy->dev,
+   110				"PHY READY check failed\n");
+   111		return ret;
+   112	}
+   113	
 
-Best regards,
 -- 
-Stephan Gerhold <stephan.gerhold@linaro.org>
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
