@@ -4,52 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 794BECA0FF0
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:54:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7DD9CA0EFF
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:54:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qQvXsAtruNOpQ4u9sX2mjVUIc/NBi9YefNWUGkWAz6c=; b=Ugg8s66fIhb1bT
-	i5vzrcLf4pvpodruei7wlqUwdXEd0DEI+oBbJ/zAkDtSHLSW9wd1GC59aAN8juLxtmmnDTagFuQja
-	5Xfw7Db8FkTxFc0X+eNKGAN38APh1pf2QkUwbI7Khz9PVOsOzUmI1S/1S+YrnqAG8lDER3hYN5y+r
-	on11BfeklOTV/PRgPkpwkbmP2rwXsmJ+flcpiUx8AXuYL6QNMw+AGfw3/ePxAOeXdL3CsgFqBuWHf
-	Grjk5Q/NilaSRJl14j7ypJX11CiEtIs+hRdpsb4m7Drz+xZrCNs8lmgPeVXoT89yT15+YFjJIwrU/
-	MEqKrnmnF7vzmifFoRWA==;
+	List-Owner; bh=jb3e3hAYjTCJ2U0yGqbxESaLtzyss10YPtfi3nlqNOQ=; b=Zg3v1xUEoPUPTz
+	URGotJugHQSyUDR8yQM02TgUQ8rX4VzGDqFUevw62VD0znruNJXXUnGiPE9OKX+hgonxmBoaoHBb5
+	zDk6jjtwR68wmInWXgJOYw40037VLGIG0UlziYFU1WOOJFSrvRrlGZgMlxLNjwIFeJYgl+rt+xJ32
+	DcobNIrBoJkoJMiDpJWVbJIG4gXaVzjldmnCMjBZA/cFOS+DyiE2zRX+rTXLJ4JsNt19CRqfmwqAL
+	I9VvmaxvZjifnzuDnhp05hUjmFP7kD+84Kj60EeR7kVIQzNQuOCn92xRKu5DqtDULDrJUU0qpUMQh
+	7R/mvRaOavqT1ptL2Dug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upBMI-00000000Ltt-0p6C;
-	Thu, 21 Aug 2025 19:54:02 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1upBMK-00000000Lwh-1OdC;
+	Thu, 21 Aug 2025 19:54:04 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up7OX-0000000HQXO-00Fy;
-	Thu, 21 Aug 2025 15:40:08 +0000
+	id 1up7Oe-0000000HQe5-1OX1;
+	Thu, 21 Aug 2025 15:40:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=XiXnh+B7JiCGrkXuz1WWSKeQSMq3KHxW7sbUHbPPStM=; b=fGZ1l5uV6xx/xT6pCuBy7JEkKo
+	EOzc3xvYpYa9FZnY87MMIJ8LIrHFyG/CRnBlsgsS18GIJgreJzxSGkTK/ll9gw+TanEi7DSelSdXn
+	eNvuAj31mxVg+xXckIT9ulWfO4JrBTqg6nzz0B0T4zt3Y0LlbKrHReEfYufqxLPuzkFkK8r4tYoTm
+	TlMxyQ6exWIsURr4SBjTE+CmOCwz0mLJ79KWJkbf6vxjhX7hbJEBuHefMyZ+rf0TQXcpAjYesv+as
+	dYfEQWiGNCCw8GN1MyJ6JwRch9IXRoFPSc1rhokebl4yiNZuUwihgr+xzAnATLv/+ZljHU969T3Us
+	7WIsLE7Q==;
+Received: from sea.source.kernel.org ([172.234.252.31])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1up7Oa-00000000bK6-3kRE;
+	Thu, 21 Aug 2025 15:40:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 62F7E5C5D63;
+	by sea.source.kernel.org (Postfix) with ESMTP id 7CBBF419D0;
 	Thu, 21 Aug 2025 15:40:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C0049C4AF12;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E4AF2C4AF64;
 	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755790803;
-	bh=ZU/ah4guW5/JR15Fg0P75HIjEN5tcqmapd5/VETG0AI=;
+	s=k20201202; t=1755790804;
+	bh=C86MXQmNc7kleels4/FwPfEBEO3GlObgdaJqsVfJRGQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=WuMm542aqa4sWUYaCtLS66EVjj263bxrB1iBZ0crLF9C1dqnWfp7KL/nnQXL5ZaEO
-	 hdWrsS+Ex8PeaLubZkxkJictWcFXOByzJYHU4aTJ6kjawZ8fCs7SkZAQre99kT92h6
-	 DCTJARt9Q3sAptmtO+lRrP9poXaQoRhI1UTcX8V2+lMSRUL1GUw/bHbXu1CbHFM+/w
-	 IsnIYcSF/Qbvr7DrEfd2E/hJd9JKZV6VREK6O+fDRTPS/rW/dBMJylWAdTvsDFGSCg
-	 0KTaFwUe6Ea6nwnCm3nSt9jKU9RHMy6JGm2P4GuXUUVRsaKpwP6EUu0xwEzY091Oqx
-	 Zz/DPgTqn8jJQ==
+	b=bV3tjymFqK1wFff8Nim+X7fmIih1Dg6TJqGO9p/YanfNVjcFeYO3RZR3I0nzFbixU
+	 CvfzvWrcyPBBwZpATBHg0D6gHiOIdd/p8IyDygI00+7jkKG8ki2PXwZ+H45+H+VYZ7
+	 khgKXJGmXnX0alb/DVJPAFpUAl6aSLkAYDBNG4Kr3Gww2m8kgT12ze+UuOcAtaaSIV
+	 NGetzUl8a5fd7J3CdUzHdgytM/HIndgveC2T9w0uQ2L1Uzv+XQJYhJfAureFUotGW+
+	 EM5wh6WbIZWrSGLbhLEE1qPlSaBk4FB/Qn5bIOQJfGghjAawUCygUPV7vW7b7mCama
+	 EiT4zFGLgp9rw==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B2A43CA0FE7;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D964DCA0EFC;
 	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
 From: Sven Peter <sven@kernel.org>
-Date: Thu, 21 Aug 2025 15:39:04 +0000
-Subject: [PATCH RFC 12/22] usb: typec: tipd: Add cd321x struct with
- separate size
+Date: Thu, 21 Aug 2025 15:39:07 +0000
+Subject: [PATCH RFC 15/22] usb: typec: tipd: Update partner identity when
+ power status was updated
 MIME-Version: 1.0
-Message-Id: <20250821-atcphy-6-17-v1-12-172beda182b8@kernel.org>
+Message-Id: <20250821-atcphy-6-17-v1-15-172beda182b8@kernel.org>
 References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
 In-Reply-To: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -64,22 +78,22 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- Sven Peter <sven@kernel.org>
+ Sven Peter <sven@kernel.org>, Hector Martin <marcan@marcan.st>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3506; i=sven@kernel.org;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1322; i=sven@kernel.org;
  h=from:subject:message-id;
- bh=ZU/ah4guW5/JR15Fg0P75HIjEN5tcqmapd5/VETG0AI=;
- b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy2w12UnfuHZn8e//ziTqlcUJxIYeFOhQXq5++qbWv2
- fuIdpNeRykLgxgHg6yYIsv2/famTx6+EVy66dJ7mDmsTCBDGLg4BWAi0qUM/9PMnm3xKZtX/GXF
- eZMPDxses89mnidQuTfW6Zd8uyCbjyXDf//lk9PNzhblNnZNmRO3/O88TgOXjS+v2rqe/qY45UC
- 4PgMA
+ bh=SCOtQQKEz98UryM3qGwaYKjximp44wDd7gohi1eJ+XI=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy2y1nI2M8brztf9gRnfXv6vJgse5PZRwtubOYgw41h
+ oScnfOlo5SFQYyDQVZMkWX7fnvTJw/fCC7ddOk9zBxWJpAhDFycAjCRc86MDPP2tJ9zlfv9ybJS
+ vKlCUTHQxbaVqX5mHIe82ttXgfMXWTD8r9i2tXa3s2bd4rW+WeHaYVc/X5kvvTi6q9yHU/70pKe
+ mPAA=
 X-Developer-Key: i=sven@kernel.org; a=openpgp;
  fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
  auth_id=407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_084005_184759_6840C04F 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20250821_164009_446613_4CCAA23B 
+X-CRM114-Status: GOOD (  12.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,100 +110,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-We're about to add more fields to struct tps6598x which are only relevant
-for Apple's CD321x and to ensure that we don't waste memory everywhere for
-those add a separate struct for cd321x and prepare to allocate more space
-inside probe.
+From: Hector Martin <marcan@marcan.st>
 
+Whenever the power status is changed make sure to also update the
+partner identity to be able to detect changes once de-bouncing and mode
+changes arre added for CD321x.
+
+Signed-off-by: Hector Martin <marcan@marcan.st>
 Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- drivers/usb/typec/tipd/core.c | 20 +++++++++++++++-----
- 1 file changed, 15 insertions(+), 5 deletions(-)
+ drivers/usb/typec/tipd/core.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
-index 19d713937870304e68325a441b0de63eb5db3b80..51b0f3be8b66a743ddc3ea96c1b25f597a1e8f6c 100644
+index e369897bfa017ca96e559a8bd70da11207d4513a..b0fdd4dddd3a490dbc2a8ced21ea0803658f36a7 100644
 --- a/drivers/usb/typec/tipd/core.c
 +++ b/drivers/usb/typec/tipd/core.c
-@@ -113,6 +113,7 @@ struct tps6598x;
- struct tipd_data {
- 	irq_handler_t irq_handler;
- 	u64 irq_mask1;
-+	size_t tps_struct_size;
- 	int (*register_port)(struct tps6598x *tps, struct fwnode_handle *node);
- 	void (*trace_data_status)(u32 status);
- 	void (*trace_power_status)(u16 status);
-@@ -148,6 +149,10 @@ struct tps6598x {
- 	const struct tipd_data *data;
- };
+@@ -636,9 +636,16 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+ 	if (!tps6598x_read_status(tps, &status))
+ 		goto err_unlock;
  
-+struct cd321x {
-+	struct tps6598x tps;
-+};
-+
- static enum power_supply_property tps6598x_psy_props[] = {
- 	POWER_SUPPLY_PROP_USB_TYPE,
- 	POWER_SUPPLY_PROP_ONLINE,
-@@ -1297,18 +1302,24 @@ tps25750_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
+-	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE)
++	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE) {
+ 		if (!tps6598x_read_power_status(tps))
+ 			goto err_unlock;
++		if (TPS_POWER_STATUS_PWROPMODE(tps->pwr_status) == TYPEC_PWR_MODE_PD) {
++			if (tps6598x_read_partner_identity(tps)) {
++				dev_err(tps->dev, "%s: failed to partner identity\n", __func__);
++				tps->partner_identity = (struct usb_pd_identity) {0};
++			}
++		}
++	}
  
- static int tps6598x_probe(struct i2c_client *client)
- {
-+	const struct tipd_data *data;
- 	struct tps6598x *tps;
- 	struct fwnode_handle *fwnode;
- 	u32 status;
- 	u32 vid;
- 	int ret;
- 
--	tps = devm_kzalloc(&client->dev, sizeof(*tps), GFP_KERNEL);
-+	data = i2c_get_match_data(client);
-+	if (!data)
-+		return -EINVAL;
-+
-+	tps = devm_kzalloc(&client->dev, data->tps_struct_size, GFP_KERNEL);
- 	if (!tps)
- 		return -ENOMEM;
- 
- 	mutex_init(&tps->lock);
- 	tps->dev = &client->dev;
-+	tps->data = data;
- 
- 	tps->reset = devm_gpiod_get_optional(tps->dev, "reset", GPIOD_OUT_LOW);
- 	if (IS_ERR(tps->reset))
-@@ -1334,10 +1345,6 @@ static int tps6598x_probe(struct i2c_client *client)
- 	if (i2c_check_functionality(client->adapter, I2C_FUNC_I2C))
- 		tps->i2c_protocol = true;
- 
--	tps->data = i2c_get_match_data(client);
--	if (!tps->data)
--		return -EINVAL;
--
- 	if (tps->data->switch_power_state) {
- 		ret = tps->data->switch_power_state(tps, TPS_SYSTEM_POWER_STATE_S0);
- 		if (ret)
-@@ -1521,6 +1528,7 @@ static const struct tipd_data cd321x_data = {
- 	.irq_mask1 = APPLE_CD_REG_INT_POWER_STATUS_UPDATE |
- 		     APPLE_CD_REG_INT_DATA_STATUS_UPDATE |
- 		     APPLE_CD_REG_INT_PLUG_EVENT,
-+	.tps_struct_size = sizeof(struct cd321x),
- 	.register_port = tps6598x_register_port,
- 	.trace_data_status = trace_cd321x_data_status,
- 	.trace_power_status = trace_tps6598x_power_status,
-@@ -1535,6 +1543,7 @@ static const struct tipd_data tps6598x_data = {
- 	.irq_mask1 = TPS_REG_INT_POWER_STATUS_UPDATE |
- 		     TPS_REG_INT_DATA_STATUS_UPDATE |
- 		     TPS_REG_INT_PLUG_EVENT,
-+	.tps_struct_size = sizeof(struct tps6598x),
- 	.register_port = tps6598x_register_port,
- 	.trace_data_status = trace_tps6598x_data_status,
- 	.trace_power_status = trace_tps6598x_power_status,
-@@ -1549,6 +1558,7 @@ static const struct tipd_data tps25750_data = {
- 	.irq_mask1 = TPS_REG_INT_POWER_STATUS_UPDATE |
- 		     TPS_REG_INT_DATA_STATUS_UPDATE |
- 		     TPS_REG_INT_PLUG_EVENT,
-+	.tps_struct_size = sizeof(struct tps6598x),
- 	.register_port = tps25750_register_port,
- 	.trace_data_status = trace_tps6598x_data_status,
- 	.trace_power_status = trace_tps25750_power_status,
+ 	if (event & APPLE_CD_REG_INT_DATA_STATUS_UPDATE)
+ 		if (!tps->data->read_data_status(tps))
 
 -- 
 2.34.1
