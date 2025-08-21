@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F440CA0FF1
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:54:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 794BECA0FF0
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:54:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TTZxcWCpv79k8l9klNHzO8yCA+XToMmiHaBq91GusNQ=; b=fonNuDFqGWjkg5
-	gXrvE/Dl4kKJBwm5WwrBYTN0dVoTEh+0hWu1gyOCu5II1UuZozc27FtxmIUGU8/axn/skjJsKUuKM
-	C927TbaKMd6FTTQKO9E7Awwo9KCr42ndXrZJ4z8hgPMN4oSqN7z+4c8XS0a5pUIRi9lCq3wYZ8zf4
-	JT+RD0wOqqJa5jI4yMtIPFwLWcDt4xWDoS3nFeJ5au9d5Yhc9orAU7lOe/iVOil+/rjaJPHc9aZ25
-	nTfav+AR+VhwhptV5wPCi4lmNRcBGfI9UOtFNA6euZc1aW/MCgMazH+ej65J9oTW7K4GmZAbu60BP
-	6n/2asYa5p5PlSzBqa+Q==;
+	List-Owner; bh=qQvXsAtruNOpQ4u9sX2mjVUIc/NBi9YefNWUGkWAz6c=; b=Ugg8s66fIhb1bT
+	i5vzrcLf4pvpodruei7wlqUwdXEd0DEI+oBbJ/zAkDtSHLSW9wd1GC59aAN8juLxtmmnDTagFuQja
+	5Xfw7Db8FkTxFc0X+eNKGAN38APh1pf2QkUwbI7Khz9PVOsOzUmI1S/1S+YrnqAG8lDER3hYN5y+r
+	on11BfeklOTV/PRgPkpwkbmP2rwXsmJ+flcpiUx8AXuYL6QNMw+AGfw3/ePxAOeXdL3CsgFqBuWHf
+	Grjk5Q/NilaSRJl14j7ypJX11CiEtIs+hRdpsb4m7Drz+xZrCNs8lmgPeVXoT89yT15+YFjJIwrU/
+	MEqKrnmnF7vzmifFoRWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upBMI-00000000Lui-3EiA;
+	id 1upBMI-00000000Ltt-0p6C;
 	Thu, 21 Aug 2025 19:54:02 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up7OX-0000000HQZN-2LJl;
-	Thu, 21 Aug 2025 15:40:09 +0000
+	id 1up7OX-0000000HQXO-00Fy;
+	Thu, 21 Aug 2025 15:40:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BDDC641942;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 62F7E5C5D63;
 	Thu, 21 Aug 2025 15:40:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 2A3D5C116C6;
-	Thu, 21 Aug 2025 15:40:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id C0049C4AF12;
+	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755790804;
-	bh=YOUvjA7ZxBoWfbdlcJU7aVjGOvnp3BfxTVe9MsnlukQ=;
+	s=k20201202; t=1755790803;
+	bh=ZU/ah4guW5/JR15Fg0P75HIjEN5tcqmapd5/VETG0AI=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=MabXnc5ygb9IfJn05RWLX0FIUPq74OEuDXN4vXihub4HoC8xY4VcP8QsItt24FCkp
-	 uQYeHV4kzjtaR3lsEmb+o1+t+LosOW4y5lbveM3GRA437n5/qUf2pFGEuPNsaV0IN8
-	 tuxnWIU0MsWIPjQrXfZr7JU4v4D7YpTsPjNgUQXUeyNSjSExtQLpXgiLkbpIq78Eze
-	 b6bwvEqAh9zcmK0IH6uEqQCOzQGBuc+81VKeUos0J2OQ/usJkX5pP16Vyt1UVjGCeE
-	 /AKlo79zZIuh/o+4D0qQt9YFJfYVop6A4dTb86s5y1tay7nr+yoz2n813Qo/iCY7Po
-	 yHJjxt75JBibA==
+	b=WuMm542aqa4sWUYaCtLS66EVjj263bxrB1iBZ0crLF9C1dqnWfp7KL/nnQXL5ZaEO
+	 hdWrsS+Ex8PeaLubZkxkJictWcFXOByzJYHU4aTJ6kjawZ8fCs7SkZAQre99kT92h6
+	 DCTJARt9Q3sAptmtO+lRrP9poXaQoRhI1UTcX8V2+lMSRUL1GUw/bHbXu1CbHFM+/w
+	 IsnIYcSF/Qbvr7DrEfd2E/hJd9JKZV6VREK6O+fDRTPS/rW/dBMJylWAdTvsDFGSCg
+	 0KTaFwUe6Ea6nwnCm3nSt9jKU9RHMy6JGm2P4GuXUUVRsaKpwP6EUu0xwEzY091Oqx
+	 Zz/DPgTqn8jJQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0E093CA0EEB;
-	Thu, 21 Aug 2025 15:40:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B2A43CA0FE7;
+	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
 From: Sven Peter <sven@kernel.org>
-Date: Thu, 21 Aug 2025 15:39:10 +0000
-Subject: [PATCH RFC 18/22] usb: typec: mux: Introduce data_role to mux
- state
+Date: Thu, 21 Aug 2025 15:39:04 +0000
+Subject: [PATCH RFC 12/22] usb: typec: tipd: Add cd321x struct with
+ separate size
 MIME-Version: 1.0
-Message-Id: <20250821-atcphy-6-17-v1-18-172beda182b8@kernel.org>
+Message-Id: <20250821-atcphy-6-17-v1-12-172beda182b8@kernel.org>
 References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
 In-Reply-To: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -64,23 +64,22 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- Sven Peter <sven@kernel.org>, Hector Martin <marcan@marcan.st>
+ Sven Peter <sven@kernel.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=832; i=sven@kernel.org;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3506; i=sven@kernel.org;
  h=from:subject:message-id;
- bh=JRN0Pkcv1Gw9Rq/i5eF+ACOnqAvxuHK0oC9pDd6cKvY=;
- b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy233WGZb7kycy/csIv9MoWLJLr6P0mWfg/jSNDxKST
- q8L0z07SlkYxDgYZMUUWbbvtzd98vCN4NJNl97DzGFlAhnCwMUpABPZOpWRYRk3h9t/k1k257m0
- GFvPl7k9vnvu1M5pF6/eV9nQJnT2WCvD/8ItJ1ynXdys4DJ9nmP53TPh5nHccsFrAx2X+30qdlx
- 8mREA
+ bh=ZU/ah4guW5/JR15Fg0P75HIjEN5tcqmapd5/VETG0AI=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy2w12UnfuHZn8e//ziTqlcUJxIYeFOhQXq5++qbWv2
+ fuIdpNeRykLgxgHg6yYIsv2/famTx6+EVy66dJ7mDmsTCBDGLg4BWAi0qUM/9PMnm3xKZtX/GXF
+ eZMPDxses89mnidQuTfW6Zd8uyCbjyXDf//lk9PNzhblNnZNmRO3/O88TgOXjS+v2rqe/qY45UC
+ 4PgMA
 X-Developer-Key: i=sven@kernel.org; a=openpgp;
  fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
  auth_id=407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_084005_711750_CCDC2277 
-X-CRM114-Status: UNSURE (   8.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250821_084005_184759_6840C04F 
+X-CRM114-Status: GOOD (  13.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,30 +96,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Hector Martin <marcan@marcan.st>
+We're about to add more fields to struct tps6598x which are only relevant
+for Apple's CD321x and to ensure that we don't waste memory everywhere for
+those add a separate struct for cd321x and prepare to allocate more space
+inside probe.
 
-Some muxes may need to know the data role that is being switched to,
-such as to direct the data pins to separate host/device controllers or
-configure a unified PHY correctly.
-
-Signed-off-by: Hector Martin <marcan@marcan.st>
 Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- include/linux/usb/typec_mux.h | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/usb/typec/tipd/core.c | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
 
-diff --git a/include/linux/usb/typec_mux.h b/include/linux/usb/typec_mux.h
-index 2489a7857d8e10a73450a66ee85b5068f401f047..89b64ed081aecaa70529aaa717579c0dc7a5f961 100644
---- a/include/linux/usb/typec_mux.h
-+++ b/include/linux/usb/typec_mux.h
-@@ -45,6 +45,7 @@ void *typec_switch_get_drvdata(struct typec_switch_dev *sw);
- struct typec_mux_state {
- 	struct typec_altmode *alt;
- 	unsigned long mode;
-+	enum typec_data_role data_role;
- 	void *data;
+diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
+index 19d713937870304e68325a441b0de63eb5db3b80..51b0f3be8b66a743ddc3ea96c1b25f597a1e8f6c 100644
+--- a/drivers/usb/typec/tipd/core.c
++++ b/drivers/usb/typec/tipd/core.c
+@@ -113,6 +113,7 @@ struct tps6598x;
+ struct tipd_data {
+ 	irq_handler_t irq_handler;
+ 	u64 irq_mask1;
++	size_t tps_struct_size;
+ 	int (*register_port)(struct tps6598x *tps, struct fwnode_handle *node);
+ 	void (*trace_data_status)(u32 status);
+ 	void (*trace_power_status)(u16 status);
+@@ -148,6 +149,10 @@ struct tps6598x {
+ 	const struct tipd_data *data;
  };
  
++struct cd321x {
++	struct tps6598x tps;
++};
++
+ static enum power_supply_property tps6598x_psy_props[] = {
+ 	POWER_SUPPLY_PROP_USB_TYPE,
+ 	POWER_SUPPLY_PROP_ONLINE,
+@@ -1297,18 +1302,24 @@ tps25750_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
+ 
+ static int tps6598x_probe(struct i2c_client *client)
+ {
++	const struct tipd_data *data;
+ 	struct tps6598x *tps;
+ 	struct fwnode_handle *fwnode;
+ 	u32 status;
+ 	u32 vid;
+ 	int ret;
+ 
+-	tps = devm_kzalloc(&client->dev, sizeof(*tps), GFP_KERNEL);
++	data = i2c_get_match_data(client);
++	if (!data)
++		return -EINVAL;
++
++	tps = devm_kzalloc(&client->dev, data->tps_struct_size, GFP_KERNEL);
+ 	if (!tps)
+ 		return -ENOMEM;
+ 
+ 	mutex_init(&tps->lock);
+ 	tps->dev = &client->dev;
++	tps->data = data;
+ 
+ 	tps->reset = devm_gpiod_get_optional(tps->dev, "reset", GPIOD_OUT_LOW);
+ 	if (IS_ERR(tps->reset))
+@@ -1334,10 +1345,6 @@ static int tps6598x_probe(struct i2c_client *client)
+ 	if (i2c_check_functionality(client->adapter, I2C_FUNC_I2C))
+ 		tps->i2c_protocol = true;
+ 
+-	tps->data = i2c_get_match_data(client);
+-	if (!tps->data)
+-		return -EINVAL;
+-
+ 	if (tps->data->switch_power_state) {
+ 		ret = tps->data->switch_power_state(tps, TPS_SYSTEM_POWER_STATE_S0);
+ 		if (ret)
+@@ -1521,6 +1528,7 @@ static const struct tipd_data cd321x_data = {
+ 	.irq_mask1 = APPLE_CD_REG_INT_POWER_STATUS_UPDATE |
+ 		     APPLE_CD_REG_INT_DATA_STATUS_UPDATE |
+ 		     APPLE_CD_REG_INT_PLUG_EVENT,
++	.tps_struct_size = sizeof(struct cd321x),
+ 	.register_port = tps6598x_register_port,
+ 	.trace_data_status = trace_cd321x_data_status,
+ 	.trace_power_status = trace_tps6598x_power_status,
+@@ -1535,6 +1543,7 @@ static const struct tipd_data tps6598x_data = {
+ 	.irq_mask1 = TPS_REG_INT_POWER_STATUS_UPDATE |
+ 		     TPS_REG_INT_DATA_STATUS_UPDATE |
+ 		     TPS_REG_INT_PLUG_EVENT,
++	.tps_struct_size = sizeof(struct tps6598x),
+ 	.register_port = tps6598x_register_port,
+ 	.trace_data_status = trace_tps6598x_data_status,
+ 	.trace_power_status = trace_tps6598x_power_status,
+@@ -1549,6 +1558,7 @@ static const struct tipd_data tps25750_data = {
+ 	.irq_mask1 = TPS_REG_INT_POWER_STATUS_UPDATE |
+ 		     TPS_REG_INT_DATA_STATUS_UPDATE |
+ 		     TPS_REG_INT_PLUG_EVENT,
++	.tps_struct_size = sizeof(struct tps6598x),
+ 	.register_port = tps25750_register_port,
+ 	.trace_data_status = trace_tps6598x_data_status,
+ 	.trace_power_status = trace_tps25750_power_status,
 
 -- 
 2.34.1
