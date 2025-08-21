@@ -4,54 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C11C3CA0EEB
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:53:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B852CA0EFA
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Aug 2025 19:53:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UQAcvOANIuhuO4Y/OZiQ69PTm/eOGukgoD7AQBBk7iQ=; b=kH3yDH0ScBQJuV
-	tBDpyL6w8fr5C2D/S0uU2FRdUya0AkikfS+7/F8MIyIYfE3yJit8CSh2jvvzhnW7fH0ivNXpMbGkR
-	jKArEYs47KDP51Rf4VprL07N7g6Bgrpc97deXU85HLAvwiZ0S9ga0/kEBEKp2SAYLZK1OapLywZOG
-	UWe9DuI36rk0lA8KcmFTsL43zXZWU3ok7kYhvUTC7hrgyxr1yJ+bWvPKvrXY/Vt4+tu+JKjEWo0pd
-	YDFUhfsG9yKuLmhko3ae4hoPHXGlUYxWScUSyUMkT/QP1tpdjk7V3cpvvp9P0CcTHAfvK50UHaz+x
-	vY8IV2c2TRj8wxiX+oFw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AGEAIJn/EMs0WGzgh7mw9ybToTwNTjIoaxZRUUbRIyE=; b=dlmWq9InNtDNgX
+	SkoBoyalMQ2S/13USgcu1igQmc7XAiyF8EoBm6cAwShwNPw/WwF1eaIRwQTJHriO7V7arXue6iZKz
+	oRCjdKXiWp/jn5yG3TbAC4fSNkYEw9/vbE1HmWl6iOgyiX6tPoijIoPoq+E84nGoNdUIMZSdXArsj
+	ES0KLgxfST8vjqIyoTCy3w0ZQlNVyblJ5CR5QBkQrCaJ5FG+gfjPnIdOke+0pJGHxCEcVjq7W7pUz
+	4VgNfMcf6RAGgSXoO4U45y4QptCAK8nAnqnzUr2V/QcT2TuB3WqXIKQO0rxo2+lwAd0wJi0uzxc2R
+	gnLxBlqAy/9BbhQ3Us+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upBME-00000000Los-1vlg;
+	id 1upBME-00000000LpG-36Vb;
 	Thu, 21 Aug 2025 19:53:58 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1up7OW-0000000HQWe-3VB4;
-	Thu, 21 Aug 2025 15:40:04 +0000
+	id 1up7OV-0000000HQWK-2lr0;
+	Thu, 21 Aug 2025 15:40:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0836260241;
-	Thu, 21 Aug 2025 15:40:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 507A2C2BCB5;
+	by sea.source.kernel.org (Postfix) with ESMTP id 294C140692;
 	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id EE573C4CEEB;
+	Thu, 21 Aug 2025 15:40:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1755790803;
-	bh=IkYJcWoLA2rLfckELzZ7/MEeJmaNFSfjqJBO6WsyuPI=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=FsfyrmlEOKV+Wb+nIM0lqChcTyEtRUJwpKmwIfppm56OsPjLHZRUvzYwEjEnTEbKB
-	 YWZR+I0Bi1RIr+OVpFr/hTBtjm/7sdd2/jFUTyDkJIwew2u1UGbp1g526XOxIeB5WC
-	 5eSM2pZyRYyGNVOkTFw5VLud2gG2nRh50775TpImxEsaWCbi8yJrR4IaQ1otIbzIB1
-	 l9pC2ffPSY4mi7svuFSz1B6GNMuhqgsTuLV5V+A4PsGoNiJGH+AeevRuZTk5g+wpvn
-	 4FaflDJI0AB1oQkibW0qL57LAiLvAqzfMwQlI1HQkaUVhPXpZLEHudEd5K5Vdeq+S3
-	 JgNJEhEU0gi4A==
+	bh=Ffhri9SjHSf/0JyrOM8P9yB5VxqUTJqas+Uuy3v7zJ8=;
+	h=From:Subject:Date:To:Cc:From;
+	b=ZCadD0RFHlKN5iyFo7ll/4qzPl87fAwXHR5iDeI086x32ktz4C681VTsa97Bqx0W5
+	 HEoHuxQZgFUKlAzRWCnWI06i4lmCkVE56zImxz7He9EUjJ8cSl6vOFaUpiQOCUdzga
+	 zcDQjgiymTmBsGvolsl8RbP7K2MZzStCCKH1Gmsu3/R47RmAmVCd9ZQ/LtEmAD7xTp
+	 +iPFMtMjEpCIQM1wgYvOwVbYJJwwCNnzW+It+vLe+iKj4+nlu2/uMKDQUeEUrBEtJP
+	 UKsibveOCTg3i7TIK36yGVPyzrWmypyDOYEeeXXVPaitQDXY3YMqbUzl1BGS326v5L
+	 lh2RkOPiWSeuQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 47261CA0EEB;
-	Thu, 21 Aug 2025 15:40:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E3FF1CA0FE1;
+	Thu, 21 Aug 2025 15:40:02 +0000 (UTC)
 From: Sven Peter <sven@kernel.org>
-Date: Thu, 21 Aug 2025 15:38:58 +0000
-Subject: [PATCH RFC 06/22] usb: dwc3: apple: Use synchronous role switch
- for apple
+Subject: [PATCH RFC 00/22] Apple Silicon USB3 support
+Date: Thu, 21 Aug 2025 15:38:52 +0000
+Message-Id: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
 MIME-Version: 1.0
-Message-Id: <20250821-atcphy-6-17-v1-6-172beda182b8@kernel.org>
-References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
-In-Reply-To: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
+X-B4-Tracking: v=1; b=H4sIAIw9p2gC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDCyMD3cSS5IKMSl0zXUNz3STz1MQ0I+OkVEPzZCWgjoKi1LTMCrBp0Up
+ Bbs5KsbW1ABc+4BViAAAA
+X-Change-ID: 20250820-atcphy-6-17-b7eaf23be17c
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
  Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>, 
@@ -64,19 +65,23 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- Sven Peter <sven@kernel.org>, Hector Martin <marcan@marcan.st>
+ Sven Peter <sven@kernel.org>, Hector Martin <marcan@marcan.st>, 
+ stable@kernel.org
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2573; i=sven@kernel.org;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=6416; i=sven@kernel.org;
  h=from:subject:message-id;
- bh=058aqG9bEa8oe7SO+GMmVlqjGZcjvS/tEo3r4EQvouk=;
- b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy2+UC0hd+Bh823r3XcKJ8oEPnnJ3HmfjaXOV2l7ybd
- 2dpspNjRykLgxgHg6yYIsv2/famTx6+EVy66dJ7mDmsTCBDGLg4BWAij7IYGfq0fz73rlgw8+zH
- w99XssXN+PqrL/+oTxr39wN3ha5FGaswMvyzSAzbEJJwf1ad3P38q6p3lrSHS6XvVD/GPOHQ5a5
- VR3gB
+ bh=Ffhri9SjHSf/0JyrOM8P9yB5VxqUTJqas+Uuy3v7zJ8=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Zy27nOvKsmrbr5ZHFFULWSbmqNU6Cf/GdhsxZJDpOlr
+ /YtNZzUUcrCIMbBICumyLJ9v73pk4dvBJduuvQeZg4rE8gQBi5OAZhITQTD/yApX4eCr+cqeRw1
+ T5XvdD0t9Tg+mjlFZc70zo2Kl85v5WVkWPFqbkp+4sUwCT7P/bIazrIej3UUzwgFLfKW/b+uw4u
+ PBQA=
 X-Developer-Key: i=sven@kernel.org; a=openpgp;
  fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
  auth_id=407
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250821_084003_750070_23B334ED 
+X-CRM114-Status: GOOD (  24.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,74 +98,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Hector Martin <marcan@marcan.st>
+Hi,
 
-Apple's dwc3 is connected to a Type-C PHY which supports multiple
-protocols (USB2, 3, DisplayPort, Thunderbolt) and has to act as a Type-C
-protocol mux driven by the PD prot driver (tipd). The mode and mux
-transitions have to be tightly synchronized with dwc3 bringup and
-shutdown.
+This series includes changes to dwc3, tipd and a new phy driver to enable
+USB3 on these machines. There's also some preparations to eventually enable
+DisplayPort AltMode and Thunderbolt but those need future work.
+Overall, this entire setup is quite a mess and we've tried to make it work
+for quite a while now and finally came up with this solution here.
 
-To avoid racing PHY (re-)configuration during hotplug or role switch
-events run the role switching inside dwc3 synchronously instead of
-relying on a work queue on these controllers.
+The USB3 controller is a very special kind of broken: It never sees any port
+plug/unplug events that should normally arrive directly at dwc3.
+Additionally, it needs to go through a full hard reset for every new connection
+and most mode change. Details on why this is required are in the commit
+description.
 
-Signed-off-by: Hector Martin <marcan@marcan.st>
-[sven: added commit description]
+On top of that we need to keep the Type-C PHY bringup and dwc3 bringup tightly
+synchronized. If there's a race between the two systems at best the port stops
+working until a system reboot and at worst there's a watchdog somewhere that 
+forcefully resets the entire SoC after ~5 seconds. I've only seen the latter
+when bringing up thunderbolt so far but wouldn't be surprised if it happens
+with just usb3 as well.
+
+The entire bringup/bringup is orchestrated by a TIPD variant called CD321x
+found on these machines. Unlike the original chips we however get no control
+over which mode is negotiated or are even able to see the PDOs or VDOs. We only
+get to know once the mode has been negotiated and have to act accordingly. I
+even went as far as dumping the firmware from the chip to confirm this [1][2].
+
+Hector wrote another summary of this early in January as well [3] and this
+series is the only way we've been able to bring these ports up reliably.
+It's not pretty in some places but I have no other idea how to implement this,
+hence the RFC tag. Happy to discuss other approaches as well.
+
+Both the PHY and the TIPD driver already include changes for DisplayPort
+AltMode and USB4/Thunderbolt. These need additional work though but
+since we can't control the mode devices end up in we can already merge
+them now.
+
+I used phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml as a template for the dt-binding
+for atcphy (especially the ports). That was the most recent binding I found for
+a PHY with similar features.
+
+In order to test this you need to run the latest m1n1 master [4] because the
+1.5.0 release does not include the code that lifts the tunables from Apple's
+device tree. A kernel tree for testing is also tagged as apple-usb3-v1 at [5].
+
+If the overall approach here is fine and no one can think of a better way to
+support this SoC I'll drop the RFC and include the dts changes for the other
+M1 and M2 machines as well.
+
+Best,
+
+Sven
+
+[1] https://social.treehouse.systems/@sven/111092587315536174
+[2] https://social.treehouse.systems/@sven/111096589846468888
+[3] https://lore.kernel.org/all/fda8b831-1ffc-4087-8e7b-d97779b3ecc5@marcan.st/
+[4] https://github.com/AsahiLinux/m1n1
+[5] https://git.kernel.org/pub/scm/linux/kernel/git/sven/linux.git
+
 Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- drivers/usb/dwc3/core.c | 6 +++++-
- drivers/usb/dwc3/core.h | 3 +++
- 2 files changed, 8 insertions(+), 1 deletion(-)
+Hector Martin (7):
+      usb: dwc3: apple: Use synchronous role switch for apple
+      usb: dwc3: apple: Adjust vendor-specific registers during init
+      usb: typec: tipd: Update partner identity when power status was updated
+      usb: typec: tipd: Use read_power_status function in probe
+      usb: typec: tipd: Read data status in probe and cache its value
+      usb: typec: mux: Introduce data_role to mux state
+      usb: typec: tipd: Handle mode transitions for CD321x
 
-diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index 8d2dc7fa18114102cc8893c4ca0e745e16f30754..f8013ba2bdc22fa5e719df0841b12b84d9465b62 100644
---- a/drivers/usb/dwc3/core.c
-+++ b/drivers/usb/dwc3/core.c
-@@ -317,7 +317,10 @@ void dwc3_set_mode(struct dwc3 *dwc, u32 mode)
- 	dwc->desired_dr_role = mode;
- 	spin_unlock_irqrestore(&dwc->lock, flags);
- 
--	queue_work(system_freezable_wq, &dwc->drd_work);
-+	if (dwc->synchronous_drd_switch)
-+		__dwc3_set_mode(&dwc->drd_work);
-+	else
-+		queue_work(system_freezable_wq, &dwc->drd_work);
- }
- 
- u32 dwc3_core_fifo_space(struct dwc3_ep *dep, u8 type)
-@@ -2274,6 +2277,7 @@ int dwc3_core_probe(const struct dwc3_probe_data *data)
- 			dwc->dr_mode = USB_DR_MODE_OTG;
- 			dwc->role_switch_reset_quirk = true;
- 			dwc->no_early_roothub_poweroff = true;
-+			dwc->synchronous_drd_switch = true;
- 		}
- 	}
- 
-diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index 3c3a36ec37345b2f9e71444ba3b90b52dbd24443..98e748cc348dfd9de1962c93fcf9f6a6690c2388 100644
---- a/drivers/usb/dwc3/core.h
-+++ b/drivers/usb/dwc3/core.h
-@@ -1156,6 +1156,8 @@ struct dwc3_scratchpad_array {
-  *		  before PM suspend.
-  * @role_switch_reset_quirk: set to force reinitialization after any role switch
-  * @no_early_roothub_poweroff: set to skip early root hub port power off
-+ * @synchronous_drd_switch: set to perform role switches synchronously instead
-+ *			    of using a workqueue
-  * @imod_interval: set the interrupt moderation interval in 250ns
-  *			increments or 0 to disable.
-  * @max_cfg_eps: current max number of IN eps used across all USB configs.
-@@ -1396,6 +1398,7 @@ struct dwc3 {
- 
- 	unsigned		role_switch_reset_quirk:1;
- 	unsigned		no_early_roothub_poweroff:1;
-+	unsigned		synchronous_drd_switch:1;
- 
- 	u16			imod_interval;
- 
+Janne Grunau (1):
+      usb: dwc3: apple: Do not use host-vbus-glitches workaround
 
+Sven Peter (14):
+      dt-bindings: usb: snps,dwc3: Allow multiple iommus
+      dt-bindings: usb: Add Apple dwc3
+      dt-bindings: phy: Add Apple Type-C PHY
+      usb: dwc3: apple: Reset dwc3 during role switches
+      usb: typec: tipd: Clear interrupts first
+      usb: typec: tipd: Move initial irq mask to tipd_data
+      usb: typec: tipd: Move switch_power_state to tipd_data
+      usb: typec: tipd: Trace data status for CD321x correctly
+      usb: typec: tipd: Add cd321x struct with separate size
+      usb: typec: tipd: Read USB4, Thunderbolt and DisplayPort status for cd321x
+      usb: typec: tipd: Register DisplayPort and Thunderbolt altmodes for cd321x
+      soc: apple: Add hardware tunable support
+      phy: apple: Add Apple Type-C PHY
+      arm64: dts: apple: t8103: Add Apple Type-C PHY and dwc3 nodes
+
+ .../devicetree/bindings/phy/apple,atcphy.yaml      |  210 ++
+ .../devicetree/bindings/usb/apple,dwc3.yaml        |   82 +
+ .../devicetree/bindings/usb/snps,dwc3.yaml         |    2 +-
+ MAINTAINERS                                        |    3 +
+ arch/arm64/boot/dts/apple/t8103-j274.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j293.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j313.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j456.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j457.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-jxxx.dtsi          |  137 ++
+ arch/arm64/boot/dts/apple/t8103.dtsi               |  105 +
+ drivers/phy/Kconfig                                |    1 +
+ drivers/phy/Makefile                               |    1 +
+ drivers/phy/apple/Kconfig                          |   14 +
+ drivers/phy/apple/Makefile                         |    4 +
+ drivers/phy/apple/atc.c                            | 2537 ++++++++++++++++++++
+ drivers/soc/apple/Kconfig                          |    4 +
+ drivers/soc/apple/Makefile                         |    3 +
+ drivers/soc/apple/tunable.c                        |   77 +
+ drivers/usb/dwc3/core.c                            |   85 +-
+ drivers/usb/dwc3/core.h                            |   26 +
+ drivers/usb/dwc3/drd.c                             |   11 +-
+ drivers/usb/dwc3/host.c                            |    8 +-
+ drivers/usb/typec/tipd/core.c                      |  569 ++++-
+ drivers/usb/typec/tipd/tps6598x.h                  |    5 +
+ drivers/usb/typec/tipd/trace.h                     |   39 +
+ include/linux/soc/apple/tunable.h                  |   64 +
+ include/linux/usb/typec_mux.h                      |    1 +
+ 28 files changed, 3987 insertions(+), 61 deletions(-)
+---
+base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+change-id: 20250820-atcphy-6-17-b7eaf23be17c
+
+Best regards,
 -- 
-2.34.1
+Sven Peter <sven@kernel.org>
 
 
 
