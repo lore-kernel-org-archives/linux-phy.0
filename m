@@ -4,82 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2EFCCA0EFC
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 03:37:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D88ACA0EED
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 03:40:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eGkhOrl9xbuEqhS3Nw8R7Kdl+VpTc1PQ7bnuU2be0UM=; b=EOZGtfyMYO55ZgMdWg00Swcgr1
-	sNWJaUcGZsCc5qwKC6GZn66lThvlzVnnFDoV8Yrhd8he8pDGMULk/jwZn3pM5my4qFWSZnKOXcKXy
-	XFMEYnovucB9CTzbahTj54EwSZutHO2E2Ac+UeLDY3FpObQXwdE0rvc1RkTw6nOmps4gsegv/56P9
-	sN96wvnJpQZbbhDEsoNkyT1qGnhiX/+9r4Mfkj1cbeBrWdFF4WFCQYRV+yAm1HO5CxOVH+6qOJ/Md
-	5IbuyoFSGrVBZach+pYfMFK55pYmyqYcwM4VZRWnUtTzWp1H7TrnY2//gyu2sYtAltkW6TVtj/yTv
-	nUzQiSWg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q40+ThXlDphQtcgXUPmO4u2yjOmUR8YwubrdnlnzEIg=; b=30lRaCauddLsJX
+	g3SHm6aBuAP0YnK7s8t8KJRJVufFLw0xIiPa6G7Aimd+HjedGd8oezA+CmHgUgqCJ2vLpMkTakZiB
+	E8Ht5rc/H/nI67bTIsDHd8pPEbZ0GiTEBy+fIt7jyb42qZcnCQPwx4NVeqDJHBwzNXyfQaD+dwki/
+	MDe0PXhNreUxu8r6XdY0JdJWbaAZSfiNIfj3KLuJYhZ6Uo2CAHSnxXxGGhIgDrYnfqY/jaVm//A7T
+	vfSVb+kifqDwhlpc9jxmt0FtxGt6NfjCUECwAsGDYdvsEl6W+C3OXFtxQw1483+cwg+0I8GDqRJUP
+	pPP4KF4OStYC5OVteJ3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upIal-00000001PcC-21xo;
-	Fri, 22 Aug 2025 03:37:27 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1upIdS-00000001Pwi-1ITg;
+	Fri, 22 Aug 2025 03:40:14 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upDwv-00000000pG1-17Qb;
-	Thu, 21 Aug 2025 22:40:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Content-Transfer-Encoding:Content-Type:
-	Date:Sender:Reply-To:Content-ID:Content-Description;
-	bh=06dhcOjk7xtKnoaCq/pBsM3+GvkIYSpvDs3WRK86UCo=; b=fWq5TP9uMm11xXNKvmJPjWe1KQ
-	HJpTXpRHqZzs/UTiiJN9cNXHGORomjuaDcLi5z72ostVzaH5EAQYGptp3MHL+irU2EqNj01ZQ3umP
-	IJN26Knf9tx7vVmEywI8oOHqSqWSKiT/mEoM5q3WXijJGOfLyMyMGy/0y3hXHi1eyo+27PtyUdpd8
-	5nC6rbtaofdv2wpZWnQZPXS4VOrLl18VFx3ttikpNu/P/5SpYbmRbGbCirDsED5F1ORkavGmNj56W
-	KzbY1rp5MGbW3cX9n2+PZ6rlkjTRnJL3cN1LZvEWGsXS1X0iojulptTPXeId1DDy17jNnt+0tF5pE
-	kIRfEsCw==;
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upDwr-00000000h1j-08xS;
-	Thu, 21 Aug 2025 22:39:59 +0000
+	id 1upEGu-00000000sx3-3bbJ;
+	Thu, 21 Aug 2025 23:00:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 821F4A5873C;
-	Thu, 21 Aug 2025 22:39:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1335BC4CEEB;
-	Thu, 21 Aug 2025 22:39:53 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 382C45C60F9;
+	Thu, 21 Aug 2025 23:00:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA4D0C113D0;
+	Thu, 21 Aug 2025 23:00:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755815993;
-	bh=GD7PJkZToLyN/G6cbgeaBFRiaVPlRrInWRqkwNMGA5A=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=Yb3myAfSJfILtlMiaszHClJxxkXZ/Ultvs3mR7J9CqIP/z5wf+Q+VV8xV2mB7QtYa
-	 lKxj+Ia0ox6sV6AkZ/SbA01BNTer2ER7hqcDX59Q8seqkSdHjCZYbX0nqWBXop1sbH
-	 /lo4hRoYzz7p9JTJVxVKAwJPAOWmKwWhGRWXNXXltewAGNs1itzUmdsGjOYs2siaX/
-	 DjbILz797hYqIg1DwLGJbzagSL82A2zGYPk706ZxQUmXoaR+NRAejIpSe05ZCQQUQO
-	 j6bBRkdHutGkLdqHnFrz0/ln2tLn9tTc4xP5ntfuKxZ2/wyiZu7J4jCAIf4pVHLa6j
-	 NSpF0t2DgaXjg==
-Date: Thu, 21 Aug 2025 17:39:52 -0500
+	s=k20201202; t=1755817239;
+	bh=7rA8qT8sloOt+Gomxv3Dk1liyMq9TmAjnM4+H4zgnNg=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=ZtagFIkRBhoOh73FBc0x7ALmgqNspRrbh6BmuUp6WEuXtyEux8yoMDvLnF7mWh4gZ
+	 PXE49H392eRD9iyygMGGk/bRgRh/3fIq9WybGzxcJ58hueOJpf08zGfKgyhyKwv5fK
+	 GSt5FuGAcA+rlzqgpfUYEL+Ii2zot892scxQtsyXnYub2/eZupTrCIDFY9o/5l2vMT
+	 weR9WqrCgVZqfSQILqY52+eOQIEHmgWE9FLZpUZze5KkRVikfdG3Y0rF4dl3NAL7xt
+	 4bhWYhO6PYpVy51nDJzd/ibMu0PsFE9UajxHXd0IOnbLX/4DG81W/ooKCDDMdjh2eq
+	 uwCZbECdBkPVw==
+Received: by mail-ej1-f44.google.com with SMTP id a640c23a62f3a-afcb7a16441so220934366b.2;
+        Thu, 21 Aug 2025 16:00:39 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCU6t8PO3J1vKvjNlWMFbugNGYvScevkhuRXFfU5qRd1waTAC2DgizlWGQThYz9HZcvolr2ti8SM2xG1hQct26an@lists.infradead.org, AJvYcCUvahCdhH2JtUV62snp5UdaiVmCom99Ek0Yd6KhGf5DWcNnilkp5BzJKabdkV8/3jdQpF0g1vHfEkAN@lists.infradead.org
+X-Gm-Message-State: AOJu0YwPlc6wsRN023z9EqZkB9BpnoZU6QvZ90l8289rbYICrTYuvU/Y
+	L3+2SakZEmfl4DIfciYqLQwv2oesOCgEwUmo9M2VBSp53UzGp1Ztqo3LKNZy7Eaw16oYuo/m2Rx
+	nCzPcIVjNW5wxS92dZwwUC0ERn3Q/yw==
+X-Google-Smtp-Source: AGHT+IH5ReMKgM2/3Os0oHRo+pFjl/n9LIXHNBEW/4vyJJ36lhUYYD+Ni5LGTFHEdqrEFWxNcknX16jT/C8BnP/4Q+Q=
+X-Received: by 2002:a17:907:72d2:b0:af9:8c20:145b with SMTP id
+ a640c23a62f3a-afe28f7622amr76678966b.10.1755817238412; Thu, 21 Aug 2025
+ 16:00:38 -0700 (PDT)
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Janne Grunau <j@jannau.net>, Felipe Balbi <balbi@kernel.org>, 
- linux-usb@vger.kernel.org, Alyssa Rosenzweig <alyssa@rosenzweig.io>, 
- Neal Gompa <neal@gompa.dev>, linux-arm-kernel@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
- Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, asahi@lists.linux.dev
-To: Sven Peter <sven@kernel.org>
-In-Reply-To: <20250821-atcphy-6-17-v1-3-172beda182b8@kernel.org>
 References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
- <20250821-atcphy-6-17-v1-3-172beda182b8@kernel.org>
-Message-Id: <175581575975.1136737.15772006298653971684.robh@kernel.org>
+ <20250821-atcphy-6-17-v1-3-172beda182b8@kernel.org> <20250821163320.GE1270980@robin.jannau.net>
+In-Reply-To: <20250821163320.GE1270980@robin.jannau.net>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 21 Aug 2025 18:00:27 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqL=y2OT4YrzT8z0O0T2hpM5X1k2pFEb8XjBRPoNMdO5kw@mail.gmail.com>
+X-Gm-Features: Ac12FXwdtTBi83iz9IiQlPSDZ_3W-XM65JsHn03GR3jMgiJWuYGJBjpjvfkth58
+Message-ID: <CAL_JsqL=y2OT4YrzT8z0O0T2hpM5X1k2pFEb8XjBRPoNMdO5kw@mail.gmail.com>
 Subject: Re: [PATCH RFC 03/22] dt-bindings: phy: Add Apple Type-C PHY
+To: Janne Grunau <j@jannau.net>
+Cc: Sven Peter <sven@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Felipe Balbi <balbi@kernel.org>, Alyssa Rosenzweig <alyssa@rosenzweig.io>, Neal Gompa <neal@gompa.dev>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_233957_393392_25129FA5 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20250821_160040_983751_E46F1449 
+X-CRM114-Status: GOOD (  22.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,63 +85,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 21 Aug 2025 15:38:55 +0000, Sven Peter wrote:
-> Apple's Type-C PHY (ATCPHY) is a PHY for USB 2.0, USB 3.x,
-> USB4/Thunderbolt, and DisplayPort connectivity found in Apple Silicon
-> SoCs.
-> 
-> The PHY handles muxing between these different protocols and also provides
-> the reset controller for the attached dwc3 USB controller.
-> 
-> Signed-off-by: Sven Peter <sven@kernel.org>
-> ---
->  .../devicetree/bindings/phy/apple,atcphy.yaml      | 210 +++++++++++++++++++++
->  MAINTAINERS                                        |   1 +
->  2 files changed, 211 insertions(+)
-> 
-
-My bot found errors running 'make dt_binding_check' on your patch:
-
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/apple,atcphy.yaml: properties:power-domains: 'anyOf' conditional failed, one must be fixed:
-	'minItems' is not one of ['maxItems', 'description', 'deprecated']
-		hint: Only "maxItems" is required for a single entry if there are no constraints defined for the values.
-	'minItems' is not one of ['description', 'deprecated', 'const', 'enum', 'minimum', 'maximum', 'multipleOf', 'default', '$ref', 'oneOf']
-	'maxItems' is not one of ['description', 'deprecated', 'const', 'enum', 'minimum', 'maximum', 'multipleOf', 'default', '$ref', 'oneOf']
-	1 is less than the minimum of 2
-		hint: Arrays must be described with a combination of minItems/maxItems/items
-	hint: cell array properties must define how many entries and what the entries are when there is more than one entry.
-	from schema $id: http://devicetree.org/meta-schemas/power-domain.yaml#
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/apple,atcphy.example.dtb: phy@383000000 (apple,t8103-atcphy): reg: [[3, 2197815296], [0, 311296], [3, 2198142976], [0, 32768], [3, 2147483648], [0, 16384], [3, 2192113664], [0, 16384], [3, 2192064512], [0, 16384]] is too long
-	from schema $id: http://devicetree.org/schemas/phy/apple,atcphy.yaml#
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250821-atcphy-6-17-v1-3-172beda182b8@kernel.org
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBBdWcgMjEsIDIwMjUgYXQgMTE6MzPigK9BTSBKYW5uZSBHcnVuYXUgPGpAamFubmF1
+Lm5ldD4gd3JvdGU6Cj4KPiBPbiBUaHUsIEF1ZyAyMSwgMjAyNSBhdCAwMzozODo1NVBNICswMDAw
+LCBTdmVuIFBldGVyIHdyb3RlOgo+ID4gQXBwbGUncyBUeXBlLUMgUEhZIChBVENQSFkpIGlzIGEg
+UEhZIGZvciBVU0IgMi4wLCBVU0IgMy54LAo+ID4gVVNCNC9UaHVuZGVyYm9sdCwgYW5kIERpc3Bs
+YXlQb3J0IGNvbm5lY3Rpdml0eSBmb3VuZCBpbiBBcHBsZSBTaWxpY29uCj4gPiBTb0NzLgo+ID4K
+PiA+IFRoZSBQSFkgaGFuZGxlcyBtdXhpbmcgYmV0d2VlbiB0aGVzZSBkaWZmZXJlbnQgcHJvdG9j
+b2xzIGFuZCBhbHNvIHByb3ZpZGVzCj4gPiB0aGUgcmVzZXQgY29udHJvbGxlciBmb3IgdGhlIGF0
+dGFjaGVkIGR3YzMgVVNCIGNvbnRyb2xsZXIuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogU3ZlbiBQ
+ZXRlciA8c3ZlbkBrZXJuZWwub3JnPgo+ID4gLS0tCj4gPiAgLi4uL2RldmljZXRyZWUvYmluZGlu
+Z3MvcGh5L2FwcGxlLGF0Y3BoeS55YW1sICAgICAgfCAyMTAgKysrKysrKysrKysrKysrKysrKysr
+Cj4gPiAgTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+fCAgIDEgKwo+ID4gIDIgZmlsZXMgY2hhbmdlZCwgMjExIGluc2VydGlvbnMoKykKPiA+Cj4gPiBk
+aWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9hcHBsZSxh
+dGNwaHkueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvYXBwbGUs
+YXRjcGh5LnlhbWwKPiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwLi5lYjE0MDEwNTU3Yzk0ZjMxM2I1NGI1Mjhl
+MmQ0MDM5ZmU1NDAwNjJhCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9Eb2N1bWVudGF0aW9u
+L2RldmljZXRyZWUvYmluZGluZ3MvcGh5L2FwcGxlLGF0Y3BoeS55YW1sCj4gPiBAQCAtMCwwICsx
+LDIxMCBAQAo+ID4gKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9ubHkgT1Ig
+QlNELTItQ2xhdXNlKQo+ID4gKyVZQU1MIDEuMgo+ID4gKy0tLQo+ID4gKyRpZDogaHR0cDovL2Rl
+dmljZXRyZWUub3JnL3NjaGVtYXMvcGh5L2FwcGxlLGF0Y3BoeS55YW1sIwo+ID4gKyRzY2hlbWE6
+IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29yZS55YW1sIwo+ID4gKwo+ID4g
+K3RpdGxlOiBBcHBsZSBUeXBlLUMgUEhZIChBVENQSFkpCj4gPiArCj4gPiArbWFpbnRhaW5lcnM6
+Cj4gPiArICAtIFN2ZW4gUGV0ZXIgPHN2ZW5Aa2VybmVsLm9yZz4KPiA+ICsKPiA+ICtkZXNjcmlw
+dGlvbjoKPiA+ICsgIFRoZSBBcHBsZSBUeXBlLUMgUEhZIChBVENQSFkpIGlzIGEgUEhZIGZvciBV
+U0IgMi4wLCBVU0IgMy54LAo+ID4gKyAgVVNCNC9UaHVuZGVyYm9sdCwgYW5kIERpc3BsYXlQb3J0
+IGNvbm5lY3Rpdml0eSBmb3VuZCBpbiBBcHBsZSBTaWxpY29uIFNvQ3MuCj4gPiArCj4gPiArICBU
+aGUgUEhZIGhhbmRsZXMgbXV4aW5nIGJldHdlZW4gdGhlc2UgZGlmZmVyZW50IHByb3RvY29scyBh
+bmQgYWxzbyBwcm92aWRlcyB0aGUKPiA+ICsgIHJlc2V0IGNvbnRyb2xsZXIgZm9yIHRoZSBhdHRh
+Y2hlZCBkd2MzIFVTQiBjb250cm9sbGVyLgo+ID4gKwo+ID4gKyAgVGhlIFBIWSBpcyBkZXNpZ25l
+ZCBmb3IgVVNCNCBvcGVyYXRpb24gYW5kIGRvZXMgbm90IGhhbmRsZSBpbmRpdmlkdWFsCj4gPiAr
+ICBkaWZmZXJlbnRpYWwgcGFpcnMgYXMgZGlzdGluY3QgRGlzcGxheVBvcnQgbGFuZXMuIEFueSBy
+ZWZlcmVuY2UgdG8gbGFuZSBpbgo+ID4gKyAgdGhpcyBiaW5kaW5nIGhlbmNlIHJlZmVycyB0byB0
+d28gZGlmZmVyZW50aWFsIHBhaXJzIChSWCBhbmQgVFgpIGFzIHVzZWQgaW4gVVNCCj4gPiArICB0
+ZXJtaW5vbG9neS4KPiA+ICsKPiA+ICtwcm9wZXJ0aWVzOgo+ID4gKyAgY29tcGF0aWJsZToKPiA+
+ICsgICAgZW51bToKPiA+ICsgICAgICAtIGFwcGxlLHQ2MDAwLWF0Y3BoeQo+ID4gKyAgICAgIC0g
+YXBwbGUsdDYwMDAtYXRjcGh5LWRwLW9ubHkgIyBQSFkgaGFyZHdpcmVkIHRvIERQLXRvLUhETUkg
+Y29udmVydGVyIG9uIE0yIFBybyBNYWNCb29rCj4KPiBUaGUgY29tbWVudCBpcyBtaXNsZWFkaW5n
+LCAidDYwMDAtYXRjcGh5LWRwLW9ubHkiIHdvdWxkIGJlIGZvciBNMQo+IFByby9NYXggTWFjYm9v
+a3MuIE0yIFByby9NYXggTWFjYm9va3MgdXNlIHRoZSBzYW1lIGRlc2lnbiBzbyB0aGUKPiBjb3Jy
+ZXNwb25kaW5nICJhcHBsZSx0NjAyMC1hdGNwaHktZHAtb25seSIgY29tcGF0aWJsZSBpcyBtaXNz
+aW5nLgo+IEknbSBub3Qgc3VyZSB0aGlzIGlzIHRoZSBjb3JyZWN0IGRlc2lnbiB0aG91Z2ggYXMg
+dGhlIEhXIGJsb2NrIGlzCj4gaWRlbnRpY2FsIHRvICJhcHBsZSx0NjAwMC1hdGNwaHkiLgo+IEkg
+dGhpbmsgaXQgbWlnaHQgYmUgYmV0dGVyIHRvIGhhdmUgZWl0aGVyIHRoZSBEUk0gS01TIGRyaXZl
+ciBvciBhCj4gY3VzdG9tIERQLT5IRE1JIGRybV9icmlkZ2Ugc3dpdGNoIHRoZSBtb2RlIHRvIERQ
+LW9ubHkuCj4gT3IgYXRjcGh5IGNvdWxkIGluaXRpYWxpemUgaXRzZWxmIHRvIERQLW9ubHkgYmFz
+ZWQgb24gdGhlIGF2YWlsYWJsZQo+IHBvcnRzLgoKRG9lc24ndCBzb3VuZCBsaWtlIHRoaXMgc2hv
+dWxkIGJlIGEgZGlmZmVyZW50IGNvbXBhdGlibGUuIFRoZXJlJ3MgYQoncGh5LW1vZGUnIHByb3Bl
+cnR5IG9yIHlvdSBjYW4gZGVmaW5lIHRoZSBtb2RlIGluIHRoZSAncGh5cycgY2VsbHMgZm9yCnRo
+ZSBEUCBjb250cm9sbGVyLgoKUm9iCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
