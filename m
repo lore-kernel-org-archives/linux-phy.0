@@ -4,62 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95B81CA0FE8
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 15:34:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7B7FCA0EED
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 15:34:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r9Ok7shJGpbSSqkqp+TZ+eGFWij2BVDGs4hLgdm023Q=; b=4C0FDbs0qnaIT/
-	uRVQ8+AvFCe34zkE229qF9yxZEHxamdKsfhrcOZ9ufZrk1yxHfBEVTo8Mdd2KSNL9nxnGitm0JSOG
-	H0Vc+yckp56m3ofSOycdajVPjRCtfz3EBF/0CDnKThb+v7+8+kmWZFfPQu3sd8ACRFpsp7tznssl0
-	XaDcuWJNFXYTyv56fB/mgT+gHotruLvR9l/DF73PSijw9QpWYzhuH7qiLFbjiCzmGiDMXRyrB0ksE
-	uqnsvJB4T3T3RRvx+fj4XvLZEfO/6KsoTzC+IdAe0NriYyeFgzTq915NJgaRJktnCDwXYPXHOoapq
-	UDo3cbzosjsY0sJpG13w==;
+	List-Owner; bh=PraMpfszJS+Ou0lqX2sksyrJS4xxQNvl8w4jgwy0LJI=; b=Mn0rM+Q/Jjmvn0
+	gs2oDNa7dNSaxglTy0JpnlXaLhLGR9RLRSMEfxvRJTdaOynrXA+fJ7eIEQo/O8x5mtW2T50of+IcP
+	ospnSYbRXahvl0PJ7LOPpMm8P7uoLvsTuikF5vOMYhiPDtmjEb/fFy69i0+9chfgHAjJgID2Bv6rb
+	ppD4mJ+B/U4PjR0XRGZ9Naqx9yZD6b4ueqmlWSqLAGeCbdu9k+5yfMYt1pgNz6O4PTzfoF8bYJ/en
+	+nlGIB3kmfrTLAXzSpBZ/8P2mrrlvmq3hTIKReybeO/KQsJ6gCZ2F6F8aBoexTLmBuK2m5MVHLqRG
+	gC4vW/P8vj5E/oNUso8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upTn1-000000032so-0gKO;
-	Fri, 22 Aug 2025 15:34:51 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1upTn5-000000032zX-0Ero;
+	Fri, 22 Aug 2025 15:34:55 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upNXF-00000001zYS-2zsi
-	for linux-phy@lists.infradead.org;
-	Fri, 22 Aug 2025 08:54:10 +0000
+	id 1upNwQ-000000021kd-1wc7;
+	Fri, 22 Aug 2025 09:20:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 0644FA588BD;
-	Fri, 22 Aug 2025 08:54:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B7F7BC4CEF1;
-	Fri, 22 Aug 2025 08:54:05 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6201544E04;
+	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 2834DC19423;
+	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755852848;
-	bh=1Kedd5nrOXuqAb/MAHK84Atl2vdOv9kO06NAwi1B5WQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=F240bS+X1iIQcVx+R2bCIVfkVa0pseohmnJkOicqQVt8EvB8jijjBLohl33+Ke0A9
-	 9lg7HeMnud+kWU8NoZPSu0ZExjDq5D9SHMQkP4GZrTEVWQw9iwLSEG/7XrR2cQHR9a
-	 P/b7mWA9rti9ZbUJ/PxxEZ3ZZFpNpbyDH6cU9K79qj4PopluUFQ5F72RerZMh7Sck0
-	 9GdPif3rw5fpLR9J46CuyVom+rcs4ULm/Zu8qQhYBvSPs6w8/ZrMcrnBNkW3wa0h5m
-	 gtVh2lrD7JpO+RbveFr07IadQo8eC+JAvL0qTCIrQ8RIg4vQmVttURCVWFAHYUbxj1
-	 g7v+/KWLZkurg==
-Date: Fri, 22 Aug 2025 14:23:57 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org, 
-	kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V3 2/2] phy: qcom-qmp-ufs: Add regulator loads for SM8650
- and SM8750
-Message-ID: <xir3u3hlmcvfu6uasijz6g2oialoasmuu4bno6ctxpscqcebz6@6kw6xpm5bxbd>
-References: <20250819222832.8471-1-quic_nitirawa@quicinc.com>
- <20250819222832.8471-3-quic_nitirawa@quicinc.com>
- <ger4kizeltjwalfuwu4dpfjiskrv2okgo5c7d6n3pb24yaxgfo@nkcndblyx3il>
+	s=k20201202; t=1755854409;
+	bh=ZylEyDi98Z35TcvrppRd4qANA6h13aRuwFsZau22r7A=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=SA6SLlHcNUIkrOLR+vSz+x6rwispT/nvDcFcmOWrsy0n4DFLaQEhH2/Nl6l3qz3UR
+	 1Nal5Gli/ATgNv57N3bqRC/qQPdtxKMIzprJiiZmktnCXhrokfprIAp9nJFbBjc/2Y
+	 6groYqvkwsffDVhc/tQhq8SwSlQVgDXZzEoHJYYGfcVKcEa3Hzl/+55e5At6IMoe98
+	 TnslnoheTjRQe9kHgVR/OYFhDAiUG5wN1ufkW7s37mTKWtaLuO+tBc8ioiBeLxIZYM
+	 wamr4EI1hlv/t2h/ZJBhWc7200+J6JyxHAtAR4AVWVc92o5xsF1Tg8Y1DPT/H4eDQ+
+	 os/NjRNA21UxA==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1CA52CA0FE7;
+	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
+From: Maud Spierings via B4 Relay <devnull+maudspierings.gocontroll.com@kernel.org>
+Date: Fri, 22 Aug 2025 11:20:06 +0200
+Subject: [PATCH 2/2] arm64: dts: freescale: imx8mp-moduline-display-106:
+ Use phys to replace xceiver-supply
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ger4kizeltjwalfuwu4dpfjiskrv2okgo5c7d6n3pb24yaxgfo@nkcndblyx3il>
+Message-Id: <20250822-can_phy3-v1-2-73b3ba1690ee@gocontroll.com>
+References: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
+In-Reply-To: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
+To: Marc Kleine-Budde <mkl@pengutronix.de>, 
+ Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>, 
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ Maud Spierings <maudspierings@gocontroll.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1755854408; l=3211;
+ i=maudspierings@gocontroll.com; s=20250214; h=from:subject:message-id;
+ bh=3qC9ijohg7RvMYciIPYZcn8wTBRyjIFHSL6DEIr3OxU=;
+ b=etRLer/PNIwaB1X431+vRlpBjcg9LUm8EiVCrz7CK1y4hesXitJfyrd9pcRa7f5lbqI0qYT+E
+ c5x7VddteCgD6MmYywIbqzzkgLHv9mu28Lq9wywz0Jmsfk32wkWEmK9
+X-Developer-Key: i=maudspierings@gocontroll.com; a=ed25519;
+ pk=7chUb8XpaTQDvWhzTdHC0YPMkTDloELEC7q94tOUyPg=
+X-Endpoint-Received: by B4 Relay for maudspierings@gocontroll.com/20250214
+ with auth_id=341
+X-Original-From: Maud Spierings <maudspierings@gocontroll.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250822_015409_897408_D59EB45B 
-X-CRM114-Status: GOOD (  22.57  )
+X-CRM114-CacheID: sfid-20250822_022010_559140_5073F02B 
+X-CRM114-Status: GOOD (  10.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,64 +89,122 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: maudspierings@gocontroll.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBBdWcgMjAsIDIwMjUgYXQgMDM6NDk6MzFBTSBHTVQsIERtaXRyeSBCYXJ5c2hrb3Yg
-d3JvdGU6Cj4gT24gV2VkLCBBdWcgMjAsIDIwMjUgYXQgMDM6NTg6MjZBTSArMDUzMCwgTml0aW4g
-UmF3YXQgd3JvdGU6Cj4gPiBBZGQgcmVndWxhdG9yIGxvYWQgdm90aW5nIHN1cHBvcnQgZm9yIFNN
-ODY1MCBhbmQgU004NzUwIHBsYXRmb3JtcyBieQo+ID4gaW50cm9kdWNpbmcgZGVkaWNhdGVkIHJl
-Z3VsYXRvciBidWxrIGRhdGEgYXJyYXlzIHdpdGggdGhlaXIgbG9hZAo+ID4gdmFsdWVzLgo+ID4g
-Cj4gPiBUaGUgbG9hZCByZXF1aXJlbWVudHMgYXJlOgo+ID4gLSBTTTg2NTA6IHZkZGEtcGh5ICgy
-MDVtQSksIHZkZGEtcGxsICgxNy41bUEpCj4gPiAtIFNNODc1MDogdmRkYS1waHkgKDIxM21BKSwg
-dmRkYS1wbGwgKDE4LjNtQSkKPiA+IAo+ID4gVGhpcyBlbnN1cmVzIHN0YWJsZSBvcGVyYXRpb24g
-YW5kIHByb3BlciBwb3dlciBtYW5hZ2VtZW50IGZvciB0aGVzZQo+ID4gcGxhdGZvcm1zIHdoZXJl
-IHJlZ3VsYXRvcnMgYXJlIHNoYXJlZCBiZXR3ZWVuIHRoZSBRTVAgVVNCIFBIWSBhbmQKPiA+IG90
-aGVyIElQIGJsb2NrcyBieSBzZXR0aW5nIGFwcHJvcHJpYXRlIHJlZ3VsYXRvciBsb2FkIGN1cnJl
-bnRzIGR1cmluZyBQSFkKPiA+IG9wZXJhdGlvbnMuCj4gPiAKPiA+IENvbmZpZ3VyYXRpb25zIHdp
-dGhvdXQgc3BlY2lmaWMgbG9hZCByZXF1aXJlbWVudHMgd2lsbCBjb250aW51ZSB0byB3b3JrCj4g
-PiB1bmNoYW5nZWQsIGFzIGluaXRfbG9hZF91QSByZW1haW5zIHplcm8taW5pdGlhbGl6ZWQgd2hl
-biAuaW5pdF9sb2FkX3VBCj4gPiBpcyBub3QgcHJvdmlkZWQuCj4gCj4gQ2FuIHdlIHBsZWFzZSBn
-ZXQgY29uZmlndXJhdGlvbiBmb3IgdGhlIHJlc3Qgb2YgdGhlIHBsYXRmb3Jtcz8KPiAKCk9ubHkg
-aWYgdGhlIHJlc3Qgb2YgdGhlIHBsYXRmb3JtcyByZXF1aXJlIHNldHRpbmcgdGhlIGxvYWQuLi4g
-SXQgaXMgbm90IHZlcnkKY2xlYXIgaWYgdGhlIG9sZGVyIHBsYXRmb3JtcyBzaGFyZSB0aGUgcmVn
-dWxhdG9ycyB3aXRoIG90aGVyIElQcyBvciBub3QuCgotIE1hbmkKCj4gPiAKPiA+IFNpZ25lZC1v
-ZmYtYnk6IE5pdGluIFJhd2F0IDxxdWljX25pdGlyYXdhQHF1aWNpbmMuY29tPgo+ID4gLS0tCj4g
-PiAgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jIHwgMTkgKysrKysrKysr
-KysrKysrLS0tLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxNSBpbnNlcnRpb25zKCspLCA0IGRlbGV0
-aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
-b20tcW1wLXVmcy5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4g
-PiBpbmRleCBhYWE4OGNhMGVmMDcuLjFjM2NlMGZhNmFkZiAxMDA2NDQKPiA+IC0tLSBhL2RyaXZl
-cnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC11ZnMuYwo+ID4gKysrIGIvZHJpdmVycy9waHkv
-cXVhbGNvbW0vcGh5LXFjb20tcW1wLXVmcy5jCj4gPiBAQCAtMTE3MCw2ICsxMTcwLDE3IEBAIHN0
-YXRpYyBjb25zdCBzdHJ1Y3QgcmVndWxhdG9yX2J1bGtfZGF0YSBxbXBfcGh5X3ZyZWdfbFtdID0g
-ewo+ID4gIAl7IC5zdXBwbHkgPSAidmRkYS1wbGwiIH0sCj4gPiAgfTsKPiA+IAo+ID4gKy8qIFJl
-Z3VsYXRvciBidWxrIGRhdGEgd2l0aCBsb2FkIHZhbHVlcyBmb3Igc3BlY2lmaWMgY29uZmlndXJh
-dGlvbnMgKi8KPiA+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHJlZ3VsYXRvcl9idWxrX2RhdGEgc204
-NjUwX3Vmc3BoeV92cmVnX2xbXSA9IHsKPiA+ICsJeyAuc3VwcGx5ID0gInZkZGEtcGh5IiwgLmlu
-aXRfbG9hZF91QSA9IDIwNTAwMCB9LAo+ID4gKwl7IC5zdXBwbHkgPSAidmRkYS1wbGwiLCAuaW5p
-dF9sb2FkX3VBID0gMTc1MDAgfSwKPiA+ICt9Owo+ID4gKwo+ID4gK3N0YXRpYyBjb25zdCBzdHJ1
-Y3QgcmVndWxhdG9yX2J1bGtfZGF0YSBzbTg3NTBfdWZzcGh5X3ZyZWdfbFtdID0gewo+ID4gKwl7
-IC5zdXBwbHkgPSAidmRkYS1waHkiLCAuaW5pdF9sb2FkX3VBID0gMjEzMDAwIH0sCj4gPiArCXsg
-LnN1cHBseSA9ICJ2ZGRhLXBsbCIsIC5pbml0X2xvYWRfdUEgPSAxODMwMCB9LAo+ID4gK307Cj4g
-PiArCj4gPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfdWZzX29mZnNldHMgcW1wX3Vmc19vZmZz
-ZXRzID0gewo+ID4gIAkuc2VyZGVzCQk9IDAsCj4gPiAgCS5wY3MJCT0gMHhjMDAsCj4gPiBAQCAt
-MTYzOCw4ICsxNjQ5LDggQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2NmZyBzbTg2NTBf
-dWZzcGh5X2NmZyA9IHsKPiA+ICAJCS5tYXhfZ2Vhcgk9IFVGU19IU19HNSwKPiA+ICAJfSwKPiA+
-IAo+ID4gLQkudnJlZ19saXN0CQk9IHFtcF9waHlfdnJlZ19sLAo+ID4gLQkubnVtX3ZyZWdzCQk9
-IEFSUkFZX1NJWkUocW1wX3BoeV92cmVnX2wpLAo+ID4gKwkudnJlZ19saXN0CQk9IHNtODY1MF91
-ZnNwaHlfdnJlZ19sLAo+ID4gKwkubnVtX3ZyZWdzCQk9IEFSUkFZX1NJWkUoc204NjUwX3Vmc3Bo
-eV92cmVnX2wpLAo+ID4gIAkucmVncwkJCT0gdWZzcGh5X3Y2X3JlZ3NfbGF5b3V0LAo+ID4gIH07
-Cj4gPiAKPiA+IEBAIC0xNjc2LDggKzE2ODcsOCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9w
-aHlfY2ZnIHNtODc1MF91ZnNwaHlfY2ZnID0gewo+ID4gIAkJLm1heF9nZWFyCT0gVUZTX0hTX0c1
-LAo+ID4gIAl9LAo+ID4gCj4gPiAtCS52cmVnX2xpc3QJCT0gcW1wX3BoeV92cmVnX2wsCj4gPiAt
-CS5udW1fdnJlZ3MJCT0gQVJSQVlfU0laRShxbXBfcGh5X3ZyZWdfbCksCj4gPiArCS52cmVnX2xp
-c3QJCT0gc204NzUwX3Vmc3BoeV92cmVnX2wsCj4gPiArCS5udW1fdnJlZ3MJCT0gQVJSQVlfU0la
-RShzbTg3NTBfdWZzcGh5X3ZyZWdfbCksCj4gPiAgCS5yZWdzCQkJPSB1ZnNwaHlfdjZfcmVnc19s
-YXlvdXQsCj4gPiAKPiA+ICB9Owo+ID4gLS0KPiA+IDIuNDguMQo+ID4gCj4gCj4gLS0gCj4gV2l0
-aCBiZXN0IHdpc2hlcwo+IERtaXRyeQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDg
-rprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+From: Maud Spierings <maudspierings@gocontroll.com>
+
+Fix the can tranceivers to actually use the new phy description instead
+of the regulator tweak.
+
+Signed-off-by: Maud Spierings <maudspierings@gocontroll.com>
+---
+ .../imx8mp-tx8p-ml81-moduline-display-106.dts      | 46 +++++++++++-----------
+ 1 file changed, 22 insertions(+), 24 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-tx8p-ml81-moduline-display-106.dts b/arch/arm64/boot/dts/freescale/imx8mp-tx8p-ml81-moduline-display-106.dts
+index afd886dd590ff6f125d1d0e91aa71ae0063b5fd1..88ad422c27603b77c1099f2efe61953999c35f77 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-tx8p-ml81-moduline-display-106.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-tx8p-ml81-moduline-display-106.dts
+@@ -36,6 +36,24 @@ external-sensor-supply {
+ 		vout-supply = <&reg_5v0_sensor>;
+ 	};
+ 
++	flexcan1_phy: can-phy0 {
++		compatible = "ti,tcan1051", "ti,tcan1042";
++		#phy-cells = <0>;
++		pinctrl-0 = <&pinctrl_flexcan1_stby>;
++		pinctrl-names = "default";
++		max-bitrate = <5000000>;
++		standby-gpios = <&gpio4 3 GPIO_ACTIVE_HIGH>;
++	};
++
++	flexcan2_phy: can-phy1 {
++		compatible = "ti,tcan1051", "ti,tcan1042";
++		#phy-cells = <0>;
++		pinctrl-0 = <&pinctrl_flexcan2_stby>;
++		pinctrl-names = "default";
++		max-bitrate = <5000000>;
++		standby-gpios = <&gpio5 9 GPIO_ACTIVE_HIGH>;
++	};
++
+ 	reg_1v8_per: regulator-1v8-per {
+ 		compatible = "regulator-fixed";
+ 		pinctrl-0 = <&pinctrl_reg_1v8>;
+@@ -85,26 +103,6 @@ reg_6v4: regulator-6v4 {
+ 		regulator-name = "6v4";
+ 	};
+ 
+-	reg_can1_stby: regulator-can1-stby {
+-		compatible = "regulator-fixed";
+-		pinctrl-0 = <&pinctrl_flexcan1_reg>;
+-		pinctrl-names = "default";
+-		regulator-max-microvolt = <3300000>;
+-		regulator-min-microvolt = <3300000>;
+-		regulator-name = "can1-stby";
+-		gpio = <&gpio4 3 GPIO_ACTIVE_LOW>;
+-	};
+-
+-	reg_can2_stby: regulator-can2-stby {
+-		compatible = "regulator-fixed";
+-		pinctrl-0 = <&pinctrl_flexcan2_reg>;
+-		pinctrl-names = "default";
+-		regulator-max-microvolt = <3300000>;
+-		regulator-min-microvolt = <3300000>;
+-		regulator-name = "can2-stby";
+-		gpio = <&gpio5 9 GPIO_ACTIVE_LOW>;
+-	};
+-
+ 	sound {
+ 		compatible = "simple-audio-card";
+ 		simple-audio-card,bitclock-master = <&cpudai>;
+@@ -180,16 +178,16 @@ adc@2 {
+ };
+ 
+ &flexcan1 {
++	phys = <&flexcan1_phy>;
+ 	pinctrl-0 = <&pinctrl_flexcan1>;
+ 	pinctrl-names = "default";
+-	xceiver-supply = <&reg_can1_stby>;
+ 	status = "okay";
+ };
+ 
+ &flexcan2 {
++	phys = <&flexcan2_phy>;
+ 	pinctrl-0 = <&pinctrl_flexcan2>;
+ 	pinctrl-names = "default";
+-	xceiver-supply = <&reg_can2_stby>;
+ 	status = "okay";
+ };
+ 
+@@ -278,7 +276,7 @@ MX8MP_IOMUXC_SPDIF_TX__CAN1_TX
+ 		>;
+ 	};
+ 
+-	pinctrl_flexcan1_reg: flexcan1reggrp {
++	pinctrl_flexcan1_stby: flexcan1stbygrp {
+ 		fsl,pins = <
+ 			MX8MP_IOMUXC_SAI1_RXD1__GPIO4_IO03
+ 				(MX8MP_DSE_X2 | MX8MP_FSEL_FAST | MX8MP_PULL_UP | MX8MP_PULL_ENABLE)
+@@ -294,7 +292,7 @@ MX8MP_IOMUXC_UART3_RXD__CAN2_TX
+ 		>;
+ 	};
+ 
+-	pinctrl_flexcan2_reg: flexcan2reggrp {
++	pinctrl_flexcan2_stby: flexcan2stbygrp {
+ 		fsl,pins = <
+ 			MX8MP_IOMUXC_ECSPI1_SS0__GPIO5_IO09
+ 				(MX8MP_DSE_X2 | MX8MP_FSEL_FAST | MX8MP_PULL_UP | MX8MP_PULL_ENABLE)
+
+-- 
+2.50.1
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
