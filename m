@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50360CA0EED
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 21:48:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D2D2CA0FE8
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 21:48:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xLR7DjsdybydLyvtqzgIOigux0THUrr+QOw+r6RmrFI=; b=fFlvaGoFnpoQTC7JrHaUABllsG
-	b3EO59Lk5Wbg1qXHYdd+RMvdHzylEtLyibCRst4iDsxmlbZIVYpKG7zs2vMiMbUeGYd523MsMiF5J
-	YvLnzedMOXjO8W7Xmad7eHWaBfPmtvBgBxagiw6or+aMDszL42UglSUo4uqSeMomk8Myci73KIXYG
-	f2F8vPUNjZ2YTF/4Jt1uCF5PU4D/xkkJBXLvGZmTWdQWxlmllf4qRBzycx0QMhcSzsfAmSqkEPfPi
-	G1CvsA0q+LJZ7IX/CSbKiit++81sSXa83d7gpJWjSzlaACB6GDRu1uwhVKL6bvWSQixH3oj0Of+S0
-	Ou5ZTNZw==;
+	bh=oDI0oZ78CJWxcHYS14f7YBEYtbyJOayK1jhSgdcbY3I=; b=qgUYMLbRp6deGi/gVu3xb17Jz6
+	DEmp1RqWmGvdMX29x5W3VGfKisT5orAnLvdIjbRfgVYea8vdyKUPUXmstC5bptdWdsbcjeSXZjLgc
+	QccGQoVbaweTwOtkUdbQQt8r0xcvhYkfc7BP3SlwWfD5g1oqp2PCDDpOPSK+CxMH9Qpm4RJ7TmByZ
+	U0HUcdiAw7JsHSDAgrWOcIY4dWHdzylB1A8ORaWNaAV8/NMyMXFownaQ4lxrTsS/lK4ibwlpJefdL
+	gQE5HE6H5k2zKNWvgBzNH3y49soLd9DMJ4iBTKNx6PQUuOOcM/xuQ39Pq/68WwgBqvmkEKIqsfMRn
+	W4Jga91g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upZcZ-00000003Yvl-1xTH;
-	Fri, 22 Aug 2025 21:48:27 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1upZca-00000003Ywi-1qOx;
+	Fri, 22 Aug 2025 21:48:28 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upPXM-00000002GXf-2M8O
+	id 1upPXu-00000002Gb7-2aft
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Aug 2025 11:02:25 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-45b4a25ccceso11288495e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 04:02:24 -0700 (PDT)
+	Fri, 22 Aug 2025 11:02:59 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-45b4a25ccceso11291195e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 04:02:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1755860543; x=1756465343; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1755860577; x=1756465377; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=EURP07SdmZQW2KWbnKhFoZWKzJWus82bAXE5Cr6kqT8=;
-        b=Qpame0ejgthLaVRl8b5d4K1zAVuc/F1TujUf3IH7sWtinOoCvF0hlntgStFGnnIclT
-         dyA8DeVePHNAsmjzqjC9aC3aXc0BauV10H76f+V4uqTaJZbKXgjQP43RMRV0p1UbrsOv
-         +D9npA+xCAn9SpCRoDJG8WbeiCl2bgujDPbMPce79B4Sa6X3m3WGT2XVAqp5XCqzuu7L
-         uUsJJXfFUQBw/O+CL17twtR260pCFKO74SiFsI3/OX9fU3VmV4wiEa/hc6dQtJiMYaGY
-         bivWxbQIA/L8cVpWKSBJLJoafkseINHZdLrJVPIins4mM6J5HmX2E3KVdqgCqTXfWSTP
-         /V+Q==
+        bh=cSPNDRQEXSByP3k9ud61Mdrc8MbERDVLg0jj88ZjWgE=;
+        b=I+6yVlu8PjyAU2Gis7ek+Ug3Pa7YhL+JGhX7pGUT4xJ1hH6W9Oq37hh5tmkOoCmTOk
+         jERq9Q1GYUsHWtHuGWgcM3ddz2efvIyQhtYR86yaU6Gd9ng4FaxMCLBYMn2jdMVEkIVx
+         LGua7GC1wXnqOcZx+ysno0WU+1yeIUvGO6sf+SC5pCItYu7E0xcT5bA8PCDjKQSGHtM3
+         CEecY24aQiSN5crxSnsWyVBbEfaKL7MPnSQcBDbn71AqC+mTZE9BQ7YLUfFIDOno0qyb
+         5NlJmHBCEqY+udRxxUXqT2yHRah6WPt8NG/RZIb2REyjVqfGBB/tflIzWlFGZ0yqRZuG
+         anPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755860543; x=1756465343;
+        d=1e100.net; s=20230601; t=1755860577; x=1756465377;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=EURP07SdmZQW2KWbnKhFoZWKzJWus82bAXE5Cr6kqT8=;
-        b=h1uUAiiDe4bVG2XHjA0N2D+6Xp/6Pg1ccs4znlpT1J1AaA45ys2Ac0WHfQ2gCiqmcb
-         f0M6HTf0PwhYTjC0o2VM5PSOGHRuo7thCP1Rcx3ZPV3rVqC5uH7nWoMdZxcqkol4LZ5J
-         CywW8wBh/dnwE5A/GEAteiIE1JtW0RqcevPXN0RMARrM3U7fQaxSRPo4NnDFTNpsS8cw
-         yrfLdePmpCQCogAcwCO55bxaQ1wq1r7HvJy4V6PGoMx5KJbxg5gULpEd1JAqKQXwPUmN
-         MzjmYd7T77toE0aeXVMsb48/IxKBb96uwLp7upz5R+NjCzEyx/UhWD+HLW6ctyqNqHdz
-         0Mog==
-X-Forwarded-Encrypted: i=1; AJvYcCUQRCmymf9Cn6T7nkmsTC3mvvB0lu4i2BZT8PDamqu9vkMJwzMGTs4qNE9YYJsPrA+0IGbynHbZ8SU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwIJdGK+f2zGIAkHXPJk5lAWmyDWEbMAdbQ7Re4GG0WwotLrsH4
-	cJtP3QyxEzC0j7y1EhXhr1JVUPDL8fMmjZ8GqU6c1cZ8SJKFU0hrTOffxEahgnZyWlo=
-X-Gm-Gg: ASbGncu6SGXashLEAzVWlR9/p3YkmB7Kfd78lfVNBo4If8ChKSfvsROzcjBb6V4sIrW
-	1sZuBR0CSUqaNy4iixTn9Zh1SvXp1T8YLOcHojQtkBPpHpcLeWOIcO86Sy+U2ULf1hPesZgU2Xn
-	HqkcDPMG/jVNZWpzeR3Inv31ad6m3dJ3FchNgH8q3F4WMvMC+Pw38i9QQLsvzaKSKazERPZwVON
-	HGWRxOP8wFXp1N/UO2OhZwtGrn0PCbef3CqOD9QPd+mcdiUCsrZPSPUWO4RZ6wyJLT0sDFvLi0A
-	RRI8QaIk6yf6KcSS/9oPdtoUmsbxUlGudjGxgraUxRagMQlXdzlANsNjPLh0CkNxzQ/GmH2byY6
-	3RSUiuUmQxbUF8HMueFfCc1N0jK8lKaJmPUexuQmoEdMqVFzUHm6/br6FEayPcgpFxkyu8AUFRQ
-	o=
-X-Google-Smtp-Source: AGHT+IE0Dex+3o6InK/YXUiV3XUtariytJViHjAa7y8QjqFdVq4V1b34qxJ2Y7CfjNPPeV8UpIYoYQ==
-X-Received: by 2002:a05:600c:4fcd:b0:455:f187:6203 with SMTP id 5b1f17b1804b1-45b517d861fmr18589245e9.27.1755860542716;
-        Fri, 22 Aug 2025 04:02:22 -0700 (PDT)
+        bh=cSPNDRQEXSByP3k9ud61Mdrc8MbERDVLg0jj88ZjWgE=;
+        b=uGdgw7MHwjwA1yjjz8FBsT0w3uuu1GwnjpKxjuevM0Y6bhS3gCodB8MfUGYgrtgqD3
+         /DhMqZW6Zd0g5+IN7i1vy1Za5o+UJOhR4x6L/6UVLjB5QcCW469cGu++meRfwqUiTqlY
+         CZO9URQNVxDC6yi6n5ABFqUTgbrpxehcb/ueoOsAdv8w5SAyRhcveBdjApygyfeu9x3A
+         9xyxXJ6Ohh3I954rQKmod6UIUpoZ1pY2pqzizgcRQ61D6hsJdmBCZ6G1NeFLBQja89Nk
+         W7S06/a6MPXPWx8tBqrbTfOyounH1EiqTwV6UyjXByXlWpV0mbBWOQ5dXEkfdYryBN8h
+         zfBA==
+X-Forwarded-Encrypted: i=1; AJvYcCUiutBpeKwEhtwdQIGluQb2OqyxyS/g++oJXwL1F9UlYS9+fpGSW3ForYBaCTp8LvQaVHMNX0Uv2MQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz1PI+CD+HoRRZwnjSlAK8LGevWaMWhv1OPSr0C2q/+JmA/sFxF
+	vkt4EZNz9O9eXiDRop2zMHxiyUqrTogyE/Xr7t/C8TKq7qAs+svGHMKa2Xdi37DORj0=
+X-Gm-Gg: ASbGncuxbJhKFh/2OhX24EIlv0PqoNyJeL3ydsvOexhInwELfUk2tDoI4h8FWRSCWKC
+	62Aj54oOWccOMRtARJDjPaLZbhR9GhB7+GlTp8s8Hz7TRqHAYSwvkkRfzY5NlzKDPLjKeutt4rp
+	XpB7ttaInCd8dEF8L28+zkk3dD45xGJUW4C+AUC9GLSfbyn3i6wZF4ejJ+OUjhNUOsuuK+eJm5p
+	ez1HxGKNK/gEPo0NLY0HaTD38ajZsn3mOmvvtXDUl3JWFLjqpMroHio8+9HxD/9otQKQRg8E9WW
+	8c1BlWAfSJ8RkEpry3qY+upsozqmVSPI0a6XXc2Kufpi8BQo9M4yYQeWy7vYSfE7doFo9DQQhLR
+	RqdqtUp8vNjW/S8b+HtFxDrDFAHIazh+LaJ0QpARnmEjx+GnKNNBW0BNOc9W/Zok/Rvmr2QRThf
+	Q=
+X-Google-Smtp-Source: AGHT+IE9PTwlyQ2HBsXoeltYN2/3zplP7/7veKdqNUYfYAOzMFeQKW/6u0My0eAnWH9Eypu5kHR5qw==
+X-Received: by 2002:a05:600c:3b22:b0:458:c002:6888 with SMTP id 5b1f17b1804b1-45b517d9ef7mr18067295e9.32.1755860576998;
+        Fri, 22 Aug 2025 04:02:56 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:3dd7:7361:c101:6a77? ([2a01:e0a:3d9:2080:3dd7:7361:c101:6a77])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b50dd02ebsm33068145e9.9.2025.08.22.04.02.21
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b50e3a587sm35232305e9.18.2025.08.22.04.02.56
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 22 Aug 2025 04:02:22 -0700 (PDT)
-Message-ID: <018751b8-8b9c-4966-94e2-f3ec8625f87d@linaro.org>
-Date: Fri, 22 Aug 2025 13:02:21 +0200
+        Fri, 22 Aug 2025 04:02:56 -0700 (PDT)
+Message-ID: <431de5f8-2dca-4ec0-9b94-fcc12480e8c9@linaro.org>
+Date: Fri, 22 Aug 2025 13:02:56 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH RFC 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Document default phy mode
+Subject: Re: [PATCH RFC 3/3] arm64: dts: qcom: x1e78100-lenovo-thinkpad-t14s:
+ add HDMI nodes
 To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -88,8 +88,8 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
- <20250821-topic-x1e80100-hdmi-v1-1-f14ad9430e88@linaro.org>
- <yc7ceoq3bn3lkxdwkrk64ecubej64vblpwlwzyj5cuep2wmjui@nln2t2yicu7o>
+ <20250821-topic-x1e80100-hdmi-v1-3-f14ad9430e88@linaro.org>
+ <as7pbmhfgsg3ht3s5lu25pfjjamaxyonuohkuohono3kr2mxii@posspuko4vwa>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +116,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <yc7ceoq3bn3lkxdwkrk64ecubej64vblpwlwzyj5cuep2wmjui@nln2t2yicu7o>
+In-Reply-To: <as7pbmhfgsg3ht3s5lu25pfjjamaxyonuohkuohono3kr2mxii@posspuko4vwa>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250822_040224_731583_FDBEC10E 
-X-CRM114-Status: GOOD (  20.98  )
+X-CRM114-CacheID: sfid-20250822_040258_670777_AA4A3721 
+X-CRM114-Status: GOOD (  17.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,77 +137,109 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/08/2025 12:57, Dmitry Baryshkov wrote:
-> On Thu, Aug 21, 2025 at 03:53:26PM +0200, Neil Armstrong wrote:
->> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
->> of a combo glue to route either lanes to the 4 shared physical lanes.
+On 22/08/2025 13:01, Dmitry Baryshkov wrote:
+> On Thu, Aug 21, 2025 at 03:53:28PM +0200, Neil Armstrong wrote:
+>> The Thinkpad T14s embeds a transparent 4lanes DP->HDMI transceiver
+>> connected to the third QMP Combo PHY 4 lanes.
 >>
->> The routing of the lanes can be:
->> - 2 DP + 2 USB3
->> - 4 DP
->> - 2 USB3
->>
->> And the layout of the lanes can be swpped depending of an
->> eventual USB-C connector orientation.
->>
->> Nevertheless those QMP Comby PHY can be statically used to
->> drive a DisplayPort connector, DP->HDMI bridge, USB3 A Connector...
->>
->> But if a 4lanes DP->HDMI bridge is directly connected to the
->> QMP Comby PHY lanes, in the default routing 2 or the 4 lanes would
->> probbaly be USB3, making the DP->HDMI bridge non functional.
->>
->> Add a property to hint in which layout mode the QMP Comby PHY
->> should be as startup.
+>> Add all the data routing, disable mode switching and specify the
+>> QMP Combo PHY should be in DP-Only mode to route the 4 lanes to
+>> the underlying DP phy.
 >>
 >> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 >> ---
->>   .../bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 13 +++++++++++++
->>   1 file changed, 13 insertions(+)
+>>   .../dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi    | 44 ++++++++++++++++++++++
+>>   1 file changed, 44 insertions(+)
 >>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->> index c8bc512df08b5694c8599f475de78679a4438449..129475a1d9527733e43ded5a38aad766f9810fe7 100644
->> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->> @@ -76,6 +76,19 @@ properties:
->>     mode-switch: true
->>     orientation-switch: true
+>> diff --git a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+>> index 4cf61c2a34e31233b1adc93332bcabef22de3f86..5b62b8c3123633360f249e3ecdc8ea23f44e8e09 100644
+>> --- a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+>> @@ -62,6 +62,20 @@ switch-lid {
+>>   		};
+>>   	};
 >>   
->> +  qcom,combo-initial-mode:
->> +    description:
->> +      Describe the initial mode of the Combo PHY configuration.
->> +      The Combo PHY is a wrapper on top of a DP PHY and an USB3 PHY,
->> +      sharing the same SuperSpeed lanes with either DisplayPort over
->> +      the 4 lanes (dp), USB3 on a pair of lanes (usb3) or both
->> +      technologies in a 2+2 configuration (usb3+dp) as default.
+>> +
+>> +	hdmi-connector {
+>> +		compatible = "hdmi-connector";
+>> +		type = "a";
+>> +		pinctrl-0 = <&hdmi_hpd_default>;
+>> +		pinctrl-names = "default";
 > 
-> SPecifying this as an initial mode means that it can be switched later.
-> Should we generalize this and desribe it as bus-type (from
-> video-interfaces.yaml) and allow it to be present only if there is no
-> mode-switch property?
+> If this is a DP HPD signal, it should be a part of the DP device.
+> 
+>> +
+>> +		port {
+>> +			hdmi_con: endpoint {
+>> +				remote-endpoint = <&usb_1_ss2_qmpphy_out>;
+> 
+> Please describe the transparent bridge too. It can be covered by the
+> simple-bridge.yaml / simple-bridge.c
 
-I was not sure about that, and yes we should do that instead but I'm not
-sure about how.
-
-bus-type sounds great, but the numbering doesn't match so I was thinking instead
-something like phy-type with a string or use the numbers from include/dt-bindings/phy/phy.h
-
-The thing is, do we want to keep the dual dp+usb3 as static ? I think it's very possible
-a board would connect the combo phy to an USB3 A connector and a 2lanes DisplayPort connector.
+Ack, indeed it could take the pinctrl thing.
 
 Neil
 
 > 
 > 
->> +    default: usb3+dp
->> +    enum:
->> +      - usb3+dp
->> +      - usb3
->> +      - dp
+>> +			};
+>> +		};
+>> +	};
 >> +
->>     ports:
->>       $ref: /schemas/graph.yaml#/properties/ports
->>       properties:
+>>   	pmic-glink {
+>>   		compatible = "qcom,x1e80100-pmic-glink",
+>>   			     "qcom,sm8550-pmic-glink",
+>> @@ -1007,6 +1021,14 @@ &mdss_dp1_out {
+>>   	link-frequencies = /bits/ 64 <1620000000 2700000000 5400000000 8100000000>;
+>>   };
+>>   
+>> +&mdss_dp2 {
+>> +	status = "okay";
+>> +};
+>> +
+>> +&mdss_dp2_out {
+>> +	data-lanes = <0 1 2 3>;
+>> +};
+>> +
+>>   &mdss_dp3 {
+>>   	/delete-property/ #sound-dai-cells;
+>>   
+>> @@ -1263,6 +1285,12 @@ &tlmm {
+>>   			       <72 2>, /* Secure EC I2C connection (?) */
+>>   			       <238 1>; /* UFS Reset */
+>>   
+>> +	hdmi_hpd_default: hdmi-hpd-default-state {
+>> +		pins = "gpio126";
+>> +		function = "usb2_dp";
+>> +		bias-disable;
+>> +	};
+>> +
+>>   	eusb3_reset_n: eusb3-reset-n-state {
+>>   		pins = "gpio6";
+>>   		function = "gpio";
+>> @@ -1486,6 +1514,22 @@ &usb_1_ss0_qmpphy_out {
+>>   	remote-endpoint = <&retimer_ss0_ss_in>;
+>>   };
+>>   
+>> +&usb_1_ss2_qmpphy {
+>> +	vdda-phy-supply = <&vreg_l2j_1p2>;
+>> +	vdda-pll-supply = <&vreg_l2d_0p9>;
+>> +
+>> +	qcom,combo-initial-mode = "dp";
+>> +
+>> +	/delete-property/ mode-switch;
+>> +	/delete-property/ orientation-switch;
+>> +
+>> +	status = "okay";
+>> +};
+>> +
+>> +&usb_1_ss2_qmpphy_out {
+>> +	remote-endpoint = <&hdmi_con>;
+>> +};
+>> +
+>>   &usb_1_ss1_hsphy {
+>>   	vdd-supply = <&vreg_l3j_0p8>;
+>>   	vdda12-supply = <&vreg_l2j_1p2>;
 >>
 >> -- 
 >> 2.34.1
