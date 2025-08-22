@@ -4,56 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 579FBCA0FE8
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 21:46:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DCB1CCA0FE9
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 21:46:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gPe286hMPAQj6WXrXE/+7RYb7oytePjcKAI4arBm2J0=; b=JO/CGnvibTfEtS
-	iTBK1doVvvIdDvjTQPhmKacs8SQj/5j5WQtu2He90sU3SIV/4R60qfa+5/SkzCk32CKggKg/JXZCy
-	iV71zyZ0SW94FXGpu/LagqHYcRgBOGBDBg8h9OqfSqaC8kYD/2Rb41hRgJUKFzB1vcJUNUaZzCfX6
-	PjCvaFQ2/fZnzVLeI9KnEm4VO6rMf3AVH0lF3ix9N0Srvq18P/Hl9AeB35mO+TsHhbJ0BB+Hhug8z
-	msnsOFpDi8f75bqCUxgp9ywRBo20YZsxC82exPO9OgtqoQg3Zy/AntNWH57VEruqlMiYYHfC6Z8hR
-	xxIYRs0ie8ROBrpR9HfA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sdcLtTqwdUYy5+ApozHs+/IroD4yuql9dwCRZ7XebHw=; b=4CLVfnMulFnZ4j
+	to/wiD1UO0oRnngcmU/7E1ejfm9MtFwQ99PS7HhqVvfL1gsxYmmNrSe3TwuZq/GG5EjKOaYwGZrMr
+	i7JhquGTuDcwh8pL8NJuQZIBmFlEfVtD/nDI1hP5ANY8/lvhko5gptgaQNuGUrEnburDDS8znRXmw
+	kzn34Jbyys2bL8Vy5LITkcWX5lnVQKBccD4or2x3BtNVi+Q0/Cl2i3a/DCRkfeceywVQ+RV8Cnx9H
+	pWxsaL2WI4AmNrrZ3fCy0uW1L61H7Q58ZXKUnzqM+afFeIhz6PVEpBp2WCP/N0o7jnsXssh7K8FEf
+	kNnXLhyPdVed44X6ixdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upZb5-00000003X9k-0M6G;
-	Fri, 22 Aug 2025 21:46:55 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1upZb7-00000003XDQ-0nI1;
+	Fri, 22 Aug 2025 21:46:57 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upNwQ-000000021kb-1OTw;
+	id 1upNwQ-000000021ke-1ptg;
 	Fri, 22 Aug 2025 09:20:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2DAFC44DEE;
+	by dfw.source.kernel.org (Postfix) with ESMTP id 603E75C6DD9;
 	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 00678C4CEF1;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 1C35BC113D0;
 	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1755854409;
-	bh=pJwGTa7qHTBfaL9aAmiyFWO5jIhPuYuiPmJDsbad+Pk=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=ithyFqKzBpsqFCto1lla25dIcWrrpms+WcZ1ObPegaM+CFRAK84nk4Sd5sV5Xf7Q2
-	 TBnllAA+zXV7007H4f4Y64zvbMDXzLPRKXV08Ke2Plp6HSS28EZydNfLuPKb6TIoZR
-	 OGz5HECLHLEzX/yKeHvhM4PwovzDVWvrzTPxMRsU5aC4V2eH3dE1/ktNlB6zqR5E+9
-	 oYxZrq2GL2CgjPTzlCxrw2Gbx2i+UsDha+6UH/YqELRgdguxjInI7lNJUoNBfyXDY5
-	 jGcHp4BL0YcAOrB2IkxVlVKdpB+l2cRaQ21UBrn0qO+z/0DQmOG7eqDwFRykQqPvW7
-	 4lc9u6X/6xwRQ==
+	bh=lYXRPEF5xCv3IMvDjVWMR2FFCr2yw+pFku4jVaMdDP4=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=otG/bHA4jnzSNnTzI7gaK7VxUVOmCTXiFN0jC6puFqoXmqQSZIaEkh1NH/upAuDv9
+	 UM3blY6wVB/jAWT+VU51ViJJW509qNb0yaM4pls74pUjqCuMx0pJ1o+hyUGouWLbA9
+	 RKtXuobt0M7bx2a3fuCwA/0gAyhdZMIL5FiGWbre1WLcoudtuFbBOJ4cypOMnXM6iD
+	 IPtpTxFZxkzDpaHYUW9GHvTX+lwf2lKN5jxTgP0yZhL5blEmHmuz29Kv5n2T3ISRcu
+	 GfFy3q+Cqetow8jkTicqvCI2UspG29T3Ke9JdRNOfiC+1Kg3hAGRSaF1sH/dALiBtV
+	 akvzhyzwF03HA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E9F41CA0EEB;
-	Fri, 22 Aug 2025 09:20:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0B04DCA0EED;
+	Fri, 22 Aug 2025 09:20:09 +0000 (UTC)
 From: Maud Spierings via B4 Relay <devnull+maudspierings.gocontroll.com@kernel.org>
-Subject: [PATCH 0/2] dt-bindings: phy: ti,tcan104x-can: Document TI
+Date: Fri, 22 Aug 2025 11:20:05 +0200
+Subject: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document TI
  TCAN1051
-Date: Fri, 22 Aug 2025 11:20:04 +0200
-Message-Id: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAEQ2qGgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDI1MDCyMj3eTEvPiCjEpjXVMTozRTQxOTZMtUUyWg8oKi1LTMCrBR0bG1tQB
- jqt2YWgAAAA==
-X-Change-ID: 20250822-can_phy3-542f5144c9e5
+Message-Id: <20250822-can_phy3-v1-1-73b3ba1690ee@gocontroll.com>
+References: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
+In-Reply-To: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
 To: Marc Kleine-Budde <mkl@pengutronix.de>, 
  Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
@@ -67,19 +65,19 @@ Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
  imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
  Maud Spierings <maudspierings@gocontroll.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1755854408; l=796;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1755854408; l=925;
  i=maudspierings@gocontroll.com; s=20250214; h=from:subject:message-id;
- bh=pJwGTa7qHTBfaL9aAmiyFWO5jIhPuYuiPmJDsbad+Pk=;
- b=aHvGYtqv3q+QlxMdbuZHJYuNTM+a/CTkqkpJlO5kTKnARtfvn9Yn5wTvrT/45eBcUvBYDcmUg
- NFQXckPE6eAApx+Djex8Konhp03Twirzntgp3C5YrKWzmdCzfpbqyyN
+ bh=h5ZKsrw8gOWNFZ+LrIS6NAt/AwRMIdyfhSIwneUGyVY=;
+ b=yNhf/uwZ57jylj44lykbtsjIChzfx1egEmURElSzgQTHDMOtYe+40rbVS0HDW6jz5lQuk9Wrv
+ aW/WV+pyMbFDLZRhO0NC1y+NAc6wlOQ1EioJZsPHTHhDBYxzbBDgxh/
 X-Developer-Key: i=maudspierings@gocontroll.com; a=ed25519;
  pk=7chUb8XpaTQDvWhzTdHC0YPMkTDloELEC7q94tOUyPg=
 X-Endpoint-Received: by B4 Relay for maudspierings@gocontroll.com/20250214
  with auth_id=341
 X-Original-From: Maud Spierings <maudspierings@gocontroll.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250822_022010_398755_889BECF2 
-X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-CacheID: sfid-20250822_022010_531229_5B3F8D63 
+X-CRM114-Status: UNSURE (   7.94  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,27 +96,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Moduline Display mainboard contains 2 TI TCAN1051 CAN transceivers,
-properly document these and add them to the devicetree.
+From: Maud Spierings <maudspierings@gocontroll.com>
 
-Thank Peng Fan for inspiring this patch series.
+TCAN1051-Q1 Automotive Fault Protected CAN Transceiver with CAN FD
+
+It is pretty much identical to the TCAN1042, add the compatible with
+fallback on the TCAN1042.
 
 Signed-off-by: Maud Spierings <maudspierings@gocontroll.com>
 ---
-Maud Spierings (2):
-      dt-bindings: phy: ti,tcan104x-can: Document TI TCAN1051
-      arm64: dts: freescale: imx8mp-moduline-display-106: Use phys to replace xceiver-supply
+ Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
- .../devicetree/bindings/phy/ti,tcan104x-can.yaml   |  1 +
- .../imx8mp-tx8p-ml81-moduline-display-106.dts      | 46 +++++++++++-----------
- 2 files changed, 23 insertions(+), 24 deletions(-)
----
-base-commit: 0f4c93f7eb861acab537dbe94441817a270537bf
-change-id: 20250822-can_phy3-542f5144c9e5
+diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+index 4a8c3829d85d3c4a4963750d03567c1c345beb91..138923ffedfeeb6a0b391cae863723ec70bf2c88 100644
+--- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+@@ -18,6 +18,7 @@ properties:
+       - items:
+           - enum:
+               - microchip,ata6561
++              - ti,tcan1051
+           - const: ti,tcan1042
+       - enum:
+           - ti,tcan1042
 
-Best regards,
 -- 
-Maud Spierings <maudspierings@gocontroll.com>
+2.50.1
 
 
 
