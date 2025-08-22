@@ -4,78 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4D14CA0EFA
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:36:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F0E6CA0EFF
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:36:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KRXlnXp/F1ZPW3bhwKiaQxOfygeg/bbiVskfN97HUOQ=; b=kaPh5r7bTB+QtS
-	FzL2LEBh+hLt1LAcoEnjfae6eMBhI9Q7zGVLRBDTZsuhHnwVclSRGZkvAaDuBo/naLKLM7dWRDN+5
-	EuIIhaS92iNSo3NAxWHD2qod1hj9EDJOwVpSdS5vomGbwPaSdHdjAHUyVTyfqGvxEu6mmheADll1g
-	B9r5pKJHmc97rQPLHoXbOopRjYriqTMGlwgBFtTNvFsDr5plEJQkgnjh3SYRKeulxMipTPAiuFPQR
-	Z9GyC2jYznw2IP/wX56exXOb7Exyo6pozr3TSy4bA59qXmc7Pd9mwcdtXLvBXPGzns2+cdDsPgpkN
-	fdKuiWwfDRI0oxgi9nTQ==;
+	List-Owner; bh=J3jy5s1PtxJlXfSCn+nXDjFtPzU/q234gbbyttLUf3M=; b=BvKA3dOfxhnZnf
+	GzHRPXPsgmi5Hg486EjhhwKrI+QAJMR+qYpRvW7V2SFMvdhX4RfJdzPx2kuZhkz58RrL+oBcxChMc
+	FRgPTQ+rrHvsx6O5wUeMOJaQIsOR9vWHf/8WLX+GvZyU2hpYThvTyq6vUsIYd1hh/aN+foVAaph0C
+	xM95kWlPfcTV45SLZKWkGktMA/5YwgaP+CWCjtCf/hBocESEa+YV8txe5BfaFiVMwEUUF8raZTy48
+	6CZSml3pZ1pvXMmaMMvJ/bRkS1GvUhtpXHQgyymUat2XJKclRVxGNPAnFX00JjtiH5k6fi+Xx2GEC
+	Q1VL6K4EHKs49l1tHlKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upkff-00000004VA1-3uBn;
-	Sat, 23 Aug 2025 09:36:23 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1upkg1-00000004Vli-2VKC;
+	Sat, 23 Aug 2025 09:36:45 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upYAW-00000003QTt-3Vbv;
-	Fri, 22 Aug 2025 20:15:26 +0000
+	id 1upZBm-00000003UC2-1pDz
+	for linux-phy@lists.infradead.org;
+	Fri, 22 Aug 2025 21:20:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 0A5D5A58B90;
-	Fri, 22 Aug 2025 20:15:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D25AC4CEED;
-	Fri, 22 Aug 2025 20:15:23 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A021B60242;
+	Fri, 22 Aug 2025 21:20:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2ED3DC4CEED;
+	Fri, 22 Aug 2025 21:20:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755893723;
-	bh=1Wup3O/kJKm/ZC5Sk9t0n/JhaFTwNdq1SU4O8pcpU7I=;
+	s=k20201202; t=1755897644;
+	bh=vtsRBb4sPfT6W/YuCCdEbbOfe14BIwGnGP4Fd7ycMyo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=doumbUTkxdxy5qD8tSwxIqmCWw1C+OAOW3s5urGlMmsHQFd+NT7V0Djyj7t88RS7J
-	 /fK5Ozi66cGfCXt05DaxJ3UrKhkbTJ92GRoSXtV5Xzh5HpoLAHNXiSHAotKvIOx8n7
-	 jqnviij6a9RquHEFabBbkJ0Yvi7mmAoAGs6yy0fMPgn/ZKjKRU3aum2taviMFLGp3b
-	 xuq4wn7o8u7E9Q38ITLTbC08PV+4nKRH719kjfkoZKoIsUznx6sFt2ibOgCEO/L2+8
-	 86zkEIt0Imw3/BeEi1LR44g/IMP3C+cfYDhwSWS0oXCf24Aamo66sR8ZnhUdNJYHU/
-	 /vbUo5m8BJX+A==
-Date: Fri, 22 Aug 2025 15:15:22 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Fabio Estevam <festevam@gmail.com>,
+	b=o4gwtYPve2kzqW5VoEoRCbZfLcL2oSL+8xpjZXUzaw5f2WKCbpmr6f40mHE00Bqz4
+	 618bZC932KkR/cmbVhsqYsCLMlYSlutIfBYmCkHkucmfln+V10ch/D8D3XagzlpQTX
+	 JHRa1n9EvkxC3k6zkCV1gCZoviAiLRAo9ywDMGhaMiCfyhhtHZaVljD9MjFwJO0dm5
+	 /ElPtJfF1E715k/R/7Wb1fqRARAXlLj6VlsE1R64yrBOe8HNWtwTyQvjATNSnjc7Zt
+	 VqjuRqK8ZXk96UkWiK4MH1NQDJh/iDE4RQ1sNHga3E1TtyLLtyWrlywtDIKUWWlzIn
+	 cNXZHGODn6Xgw==
+Date: Fri, 22 Aug 2025 16:20:43 -0500
+From: Rob Herring <robh@kernel.org>
+To: Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>, Alice Yuan <alice.yuan@nxp.com>,
-	imx@lists.linux.dev, Martin Kepplinger <martink@posteo.de>,
-	Rui Miguel Silva <rmfrfs@gmail.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Purism Kernel Team <kernel@puri.sm>, linux-media@vger.kernel.org,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-staging@lists.linux.dev,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	linux-phy@lists.infradead.org,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	linux-kernel@vger.kernel.org, Luis Oliveira <lolivei@synopsys.com>,
-	devicetree@vger.kernel.org,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>
-Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
- support
-Message-ID: <175589372183.282948.13173863715963070537.robh@kernel.org>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v4 1/6] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp:
+ Reference usb-switch.yaml to allow mode-switch
+Message-ID: <20250822212043.GA475528-robh@kernel.org>
+References: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
+ <20250807-topic-4ln_dp_respin-v4-1-43272d6eca92@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250822_131524_938348_751074B6 
-X-CRM114-Status: GOOD (  10.78  )
+In-Reply-To: <20250807-topic-4ln_dp_respin-v4-1-43272d6eca92@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,34 +80,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 21 Aug 2025 16:15:36 -0400, Frank Li wrote:
-> From: Eugen Hristev <eugen.hristev@linaro.org>
+On Thu, Aug 07, 2025 at 06:33:19PM +0200, Konrad Dybcio wrote:
+> From: Neil Armstrong <neil.armstrong@linaro.org>
 > 
-> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
-> and i.MX95 platform.
+> The QMP USB3/DP Combo PHY can work in 3 modes:
+> - DisplayPort Only
+> - USB3 Only
+> - USB3 + DisplayPort Combo mode
 > 
-> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
-> Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> In order to switch between those modes, the PHY needs to receive
+> Type-C events, allow marking to the phy with the mode-switch
+> property in order to allow the PHY to Type-C events.
+> 
+> Reference usb-switch.yaml as a simpler way to allow the mode-switch
+> property instead of duplicating the property definition.
+> 
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > ---
-> Change in v3
-> - drop remote-endpoint: true
-> - drop clock-lanes
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml     | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
 > 
-> Change in v2
-> - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
-> - update ugen Hristev's s-o-b tag to align original author's email address
-> - remove single snps,dw-mipi-csi2-v150 compatible string
-> - move additionalProperties after required
-> ---
->  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
->  MAINTAINERS                                        |   1 +
->  2 files changed, 152 insertions(+)
-> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> index 38ce04c35d945d0d8d319191c241920810ee9005..c8bc512df08b5694c8599f475de78679a4438449 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> @@ -73,10 +73,8 @@ properties:
+>      description:
+>        See include/dt-bindings/phy/phy-qcom-qmp.h
+>  
+> -  orientation-switch:
+> -    description:
+> -      Flag the PHY as possible handler of USB Type-C orientation switching
+> -    type: boolean
+> +  mode-switch: true
+> +  orientation-switch: true
+>  
+>    ports:
+>      $ref: /schemas/graph.yaml#/properties/ports
+> @@ -106,6 +104,7 @@ required:
+>    - "#phy-cells"
+>  
+>  allOf:
+> +  - $ref: /schemas/usb/usb-switch.yaml#
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+As reported already in this thread, this adds a crap load of warnings as 
+it makes ports or port required. Sigh. Can QCom folks pay more attention 
+to this please. Every cycle the number goes up though that's often 
+temporary because there's no coordination of taking .dts files after 
+bindings. But generally, progress on QCom warnings has stalled.
 
+Here's the top (bottom?) platforms in arm64. The first number is 
+total warnings. The 2nd number is unique warnings (to remove inflated 
+numbers due to lots of boards per SoC).
+
+mediatek:785:166
+hisilicon:133:112
+qcom:362:104
+broadcom:286:104
+marvell:558:80
+apm:78:58
+rockchip:128:57
+nvidia:199:53
+sprd:30:29
+xilinx:94:22
+
+Congrats on 3rd place. There's a bunch of pending Mediatek fixes, so I 
+expect you all will move up to 2nd soon. 
+
+All this data is updated daily. There's some scripts to get and process 
+the logs here[1].
+
+Rob
+
+[1] https://gitlab.com/robherring/ci-jobs.git
 
 -- 
 linux-phy mailing list
