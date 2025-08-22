@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78823CA0FE1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0B19CA0EFC
 	for <linux-phy@archiver.kernel.org>; Fri, 22 Aug 2025 11:48:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,76 +12,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h62CL8dkXj8giI20pYEQaAelzzZFeqPNcbsMrhcfi20=; b=gFnHBtK283SD4o
-	VvOazOdUHw1pl6U1Fao3ND0adPitDhSt7aNq8DjdbEfqHSoBqURrKXp0JGveLsv19J0+iII95khZ5
-	a0Pkj6LueqnvRX941YxAHIJI6vBZ6YdxzHxKR9bst+IV2FZgKLhoalb6U6q3dyGP1ZHV8IuWtrI0d
-	vI5S/qcJGZecn3SfapjlJQl6MXkNKCANjcOhrd/aPqD/QUUxJ8KXY0UJvwmQvY7Qpe8fHihlCb+g4
-	h/DzLq/U2HCvC9OurzRIQFtYppbhbDmSNNUqijwSbwRqK8EvzsEteS15KD9RYHh4ARTYzmki4B9Gz
-	pWZG12vsNhUKThSA5DMg==;
+	List-Owner; bh=9ys+a9XvMYruAgYfq5mDuibcKjb4cZW8vlWfwQAozCw=; b=4KCZM3nZBvYTwX
+	nmO3pb/J+ECoqRmO6Oad+7m4ew4GwUKffb4uviM1KK1gj7CSIiv8cL8a55XyoIcRRUgbG3waFh03c
+	9gc0tq2YWqlb8O9i5ma18JBf+l3cOwKPxKgno8ZmTwbL+bShMh5XIVoaFgVC2ZQoPCoy+VCvML9Iy
+	89ML1G5cYsQhmUEwWjnfLogazh5o1l/t/LnK7xyGk2uTQ+VMGtQKixDQIZT2x3jvNQPej6YIPkM3E
+	FBAKNtp/+cPOm8W0eOpogBNXNfBJJ8AxUSg0VOcU0/ozebaw4ul0i2y+PBc6CPwBx/Qwe/ajDxlTY
+	mvz0aKCDhhnlXKUpVozA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upQGK-00000002NWq-0cOv;
+	id 1upQGK-00000002NXo-1pWl;
 	Fri, 22 Aug 2025 11:48:52 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upLZm-00000001jrp-2Cbq
+	id 1upLaW-00000001k0o-0OCJ
 	for linux-phy@lists.infradead.org;
-	Fri, 22 Aug 2025 06:48:39 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57M6GxEH005474
-	for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 06:48:38 GMT
+	Fri, 22 Aug 2025 06:49:25 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57M6H4xp022816
+	for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 06:49:23 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	wt7rxN5hrf2QPuy6mxcJXvWkksap7MeXMIyW8r0g2eE=; b=mKgQV9n1vTRZQ6/l
-	ZmTEHvaDDWuplAmg+x+xQzrZWj7Q23cyJFazU3pCcvmYGX3IWW6xyIVNx2OKHBGb
-	jWBWFhvfckHXnOrvurHn4GQ7DbqrMgwYADmJKhhAo+dvBvhD5tN6S5Dcme12cG1y
-	QADsZ0sb66OXBbG923zTVl10ni7Jx7Fb+S4J8ezHu0hPd9FY3gOGcOmWJDhAprrq
-	9WAY9zYCrTC8DPW2Pv7lLhDwEqVA7Mqj9nCcP/NmTZ1w9nr+rvyYO2r9dx4NeHzf
-	CLum0i0zw+iX+nSY99LC2lg/gYa+TSC+OrgR2xy0pqXn6Hd/cNP2UA0gGT1uNzn5
-	7w0iYQ==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48n52cr3wm-1
+	PAelQyATkPA6YSXiRQaF3kDsfrHXJ4J/shH4gx5CIb8=; b=XpypsNBcuyAp/E9l
+	cMSqL9doPX/KQeFqCC5fdM4wqiI1J54UThwJttpQCwPqaSWuP3Exn3DdAtl6z7nH
+	dxunfAwgv4QMLgEo2clVv8ZtS7Hl5FjHMy2ujAsTDUJYY0jt6qtfMKI1xgZMo7fr
+	K3O//G/YQBO0uqeuP83fdJl+g5dwuMzWisOt+OYY8y37rekTc1VPy0j5gp0cuBBE
+	G1Hse0gaaU4//wDwBnX7+uL17KX0/EKFzABR9OY79PS+8tKi+f++eLP3WmpwMSEv
+	1Gcl+sbQ4IP9+x+gdEHHa8m3Fc31y/QIxHm42aNykv4nJRwADxGei5WViPKfh+J2
+	5Aso1g==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48n52ag5fg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 06:48:38 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-244582b5f43so4787005ad.3
-        for <linux-phy@lists.infradead.org>; Thu, 21 Aug 2025 23:48:37 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 22 Aug 2025 06:49:23 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b471739121bso466600a12.1
+        for <linux-phy@lists.infradead.org>; Thu, 21 Aug 2025 23:49:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1755845317; x=1756450117;
+        d=1e100.net; s=20230601; t=1755845363; x=1756450163;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
          :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=wt7rxN5hrf2QPuy6mxcJXvWkksap7MeXMIyW8r0g2eE=;
-        b=md5zsOhS39T+VATm6gfkVxXYfIl0KANilWNFiRZDb6s7kk+uagdezEM29oCh2Ro326
-         XFgzh0uTgUp44bz6CkUyPJ2Jh+d41xyarWWxtdwnPDf6xj4eIqu4X1haHhtcYpNRY9nH
-         /ip1+zewLvXNFCUp9pIgj8lokFnO/nfrGdW7qsd12RpXS/SYuRy1U0JTYfWlLgOyavNj
-         ja6uqR9yA8+6C8/CpnlsbQ1yNKklUIEPhiqpMOFRoRdfIdgxSv2Njzd8+XhGCCa++4DG
-         MHielHC7tcV1+25K+4DARVBoKECI5lt9SZY26ujnMzR4YdgqBC3oXTDBVR9Ju7O0hjaX
-         6njA==
-X-Forwarded-Encrypted: i=1; AJvYcCUhQ37I7E2hu246c91TEidOXZlvpQXsP6vbZliQ9+zewpPPYfMUmia5G8vPy/jjQNwwczX7ApqDnRQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwKa1jfbkPZPrZYG4/Tb9k7OAyMEKB0tPH6mzcDK7n9HeI3iO0G
-	Kk5AY74J1kRDaNpfcDuzgDf6iAg4Lm0RqgG7TJzyjqVtw4LlN4zNQYTt6rpbMC65uNchpf2K2xe
-	9llTsO6sGKS/yU1hNpIPZrvop0fra1VPde6ukioCqqxW6rcLNKV/UbnvGfxxj6KYQm1jZ
-X-Gm-Gg: ASbGncu7akosL9yvgZrDBnon+TMuvoJkRQFQKTkblmQ7n+2XiWxrtKet8EsucO/R0Zk
-	kUUGp9nxGDicbbW1Sh5PVHTjN6LmkN6j0HHkLTV8A1/7bS9qJ4JiBWZnPSvR6K7erEFj7mQDsPN
-	wCV2b94awTmkx/xohHrGWnKuMGidhrRGX2minep90qh47/6wlrHTuBDgVWYqREj1vrM/zKh58mw
-	ZWNc0zJQIMBiRKcJHTv7TOjPdr84QS/4BURel2Ntxf2+X7EsYyddOAaFTijhCun2fRXL13J7MX2
-	hHDt8gpvm0GScAxMm19R4i7qCCEatILPCxibm5KkFFBnovAZ3N4qsRIntcOa9JbUBIsmgKb4Gj/
-	ZbDXiL864Y2JFbtF1S17oHhGefkM65Q==
-X-Received: by 2002:a17:903:189:b0:242:d237:e20b with SMTP id d9443c01a7336-2462ee3033amr16553785ad.4.1755845317136;
-        Thu, 21 Aug 2025 23:48:37 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH61Dg+R7H0dG6DmZ19hrTFC03VFv8xBO0r6XYbjTLMp1iwo0A+Wvhyyylwysjt+0wtsntd1w==
-X-Received: by 2002:a17:903:189:b0:242:d237:e20b with SMTP id d9443c01a7336-2462ee3033amr16553585ad.4.1755845316681;
-        Thu, 21 Aug 2025 23:48:36 -0700 (PDT)
+        bh=PAelQyATkPA6YSXiRQaF3kDsfrHXJ4J/shH4gx5CIb8=;
+        b=MXHDLVhEtd37zsA702Mwaww8nzyDA99OH+XVVtLlCEeTtig3A8fpYwAEjB90Rg53lD
+         lS9wErCCQ5YX8NL23Y5K7ym5Z9RAhxzBqrEUj5YoYSbRNffzYvYVqMfn/mubpsOoqrjr
+         p1hNu7jL3nJY/5rBx/V3mKXOF0/OMZIHht5PBPw/hFxsDmSdaRkkecIww3PAaoFV9orA
+         CjGtorWkWSt5XTWXZ1518GlNKZFDQUETUmEv1Dv2xeYzgNYsIdprutHw6JG+iZFA7yUk
+         MKudA2hfICiPWg656HweeoXXdCdCWWxQ1sOQYgAcbRPf4Nde29Jqo58ps25NqFAxYvL5
+         O48Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVvzoi6570fXEp9SpSM/2626m42EGT2udjifdl9QQvJkOJG0w41oeZWfY8AHmc5GW3IRL5q+Iu7yFw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyHA7tLWqjJn3JSaDzdFFkNqO7946YANsA5fGwIvUT6Bt3lUKZl
+	OGu9S30wFdSw/ZMQknyg9Rk7CMraL7K3uNL3g6YXUyKLO+zNvHNL0fQZBjSCZU6spc14osIra5d
+	kks/cME8n6VIu6VglbXiJI/NNE7VOFXdqF0wod9WMqcbfxmG28bPfejNFblI7OkqMAMxr
+X-Gm-Gg: ASbGncsKZ0GvGNccNWeLyFurp4nXUv1MyhMvc4CS02UEVhPJxMtfQxFHNHb6pqjg/X9
+	PpFUZru7Qsd1eXbzXKm7zqZkW9va4BYUcfgulVNgQp7QjTMOUjfLFJKApHywdkMdYVbIJ5HmX8B
+	lYxnBACUXjDiVdP2EEWuqV7UVwAbtLSgnHDM7B9uvm9oUNKW8ergLDGj9wZz0AIq5wj8hhAyrC4
+	U13Gw8NpqTfFoleVGPG4R5bRKZ6KeI7FBmqzjiAndjradVG0sho2hSjtJsso9CPd9q9YqPI6sXS
+	3FGg9lxnv4995FsYPK7UtdbhCQkfw8usYJ3x3MKtUZwJcZ2OgTylB97ahT2Ywt/ZWalFpHHIpOw
+	1vm3Gc1IL+8r81DY9ve9srdcLQdgwqw==
+X-Received: by 2002:a05:6a00:4b16:b0:748:f854:b76b with SMTP id d2e1a72fcca58-7702fc0b4b9mr1451086b3a.3.1755845362717;
+        Thu, 21 Aug 2025 23:49:22 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGw2XinJYhFdfeOr2DKaBI1LxvJNvXAx1nbOyA+a6mHNvNi1D2KrOEAJ42/+JTdElCmxHO/Qw==
+X-Received: by 2002:a05:6a00:4b16:b0:748:f854:b76b with SMTP id d2e1a72fcca58-7702fc0b4b9mr1451069b3a.3.1755845362261;
+        Thu, 21 Aug 2025 23:49:22 -0700 (PDT)
 Received: from [10.133.33.119] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-245ed51c027sm74231315ad.148.2025.08.21.23.48.29
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-76e7d10fdd6sm10099827b3a.29.2025.08.21.23.49.15
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 21 Aug 2025 23:48:36 -0700 (PDT)
-Message-ID: <dd3c9cc4-3b4a-4321-88ab-933909b6da87@oss.qualcomm.com>
-Date: Fri, 22 Aug 2025 14:48:28 +0800
+        Thu, 21 Aug 2025 23:49:21 -0700 (PDT)
+Message-ID: <d21c4c74-a36b-4f01-9c22-44bcec3c20eb@oss.qualcomm.com>
+Date: Fri, 22 Aug 2025 14:49:13 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 02/14] dt-bindings: phy: Add QMP USB3+DP PHY for QCS615
+Subject: Re: [PATCH v3 04/14] phy: qcom: qmp-usbc: Add USBC PHY type enum
 To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Cc: Rob Clark <robin.clark@oss.qualcomm.com>,
         Dmitry Baryshkov <lumag@kernel.org>,
@@ -107,35 +107,34 @@ Cc: Rob Clark <robin.clark@oss.qualcomm.com>,
         Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>
 References: <20250820-add-displayport-support-for-qcs615-platform-v3-0-a43bd25ec39c@oss.qualcomm.com>
- <20250820-add-displayport-support-for-qcs615-platform-v3-2-a43bd25ec39c@oss.qualcomm.com>
- <tlilctwavwqw6oy46l5fote2pa6f4hdy2im6meo56cjaawba3a@a42bwbbfnsuw>
+ <20250820-add-displayport-support-for-qcs615-platform-v3-4-a43bd25ec39c@oss.qualcomm.com>
+ <cueyo7huj2m2yt46sjk3atfktft6y5slhhtslwmi44r7h7lxbn@5zvwxtdmk34t>
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-In-Reply-To: <tlilctwavwqw6oy46l5fote2pa6f4hdy2im6meo56cjaawba3a@a42bwbbfnsuw>
-X-Proofpoint-GUID: __zdCOIOoPE-N9PpiZmdfiTg1bo-maLv
-X-Proofpoint-ORIG-GUID: __zdCOIOoPE-N9PpiZmdfiTg1bo-maLv
-X-Authority-Analysis: v=2.4 cv=Xpij+VF9 c=1 sm=1 tr=0 ts=68a812c6 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8
- a=VwQbUJbxAAAA:8 a=bGlgfQEnYdfhEoguRucA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22 a=sptkURWiP4Gy88Gu7hUp:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIwMDAxMyBTYWx0ZWRfX3+UsUAM7svKA
- tUOYBhi8I8Fv0RXaCtgFSQlIITUS1kxvG2DksTnzeML3HOm/Y1ZDEWfSPV2ubBRkOpzi1R2mqOv
- hnkqejD2JY3U6Kh+qe+ibA8Mp++FUn1wuhIS25wBNIEte3m+lRfMAQVUyd8S3OaGlOqp9EsuiaQ
- KtWxNR+Cl+TDr66XmvSQmyJThVdCPyjgCvS3rie4UMWGWmEMRED6jZw8g9knEXu080MQVsLLto8
- ZlcnTJeRsvoJBDrdS8StcWiyDp0qddGWm4gJYIQbuO1XX6SQ3zm59bQhM4O1eToGMtNKMVDD07U
- Q2WN0C0yiic7SoKUpzmosAfvYttK4SHNH4o+N9igZSL2cByWrTahO8mqwGEcDCHXpLptlB79/6z
- TNr3bVXXV/Sh/1SkEchzmy/ylzsIvQ==
+In-Reply-To: <cueyo7huj2m2yt46sjk3atfktft6y5slhhtslwmi44r7h7lxbn@5zvwxtdmk34t>
+X-Proofpoint-ORIG-GUID: LlnB0YgtFP88OpglyTZVfVazbF6lulT0
+X-Authority-Analysis: v=2.4 cv=B83gEOtM c=1 sm=1 tr=0 ts=68a812f3 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=LJgbN-Jd--P93uwsTkIA:9
+ a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-GUID: LlnB0YgtFP88OpglyTZVfVazbF6lulT0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIwMDAxMyBTYWx0ZWRfX/aXqy+gaLc7w
+ krYX+Qu/rZ6tQDo9uqwDSJOa7ZGHnEf9zwztb1iUEjNwnSaAMFJ86XPJtxSpMpqime9ReL65t8N
+ jIBvucbZU3pFw7FsAC+2UBW214C3BjR+Wxx0jI2krC+D3HlEDqVINKsuZ4tsA1RMo/dsbfKT+Eg
+ R9dK9Z6koA6qOuX4aX8PAytaQc/b1dZWMVmomnl833fExWF8CdL2TkNA5gSgQthV1JzGGHwgVf9
+ XCjq/Tq3Vt5e/LtIST0B/tv2PuYkEZQb8/GjPDNiF0wfSz2em8kkZIeaPJvqLaqOyJA0FtOpYC3
+ yoYlIXxyHyTNE+wUggkPXHXFkQrmW5NnOQUKSWoAgaYGarRrg8yyTNur/jDRkj8RYfCZATQK/qa
+ dz3NEnVWJdjO0zEtg1/gy/09nIAIJA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-22_02,2025-08-20_03,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0 impostorscore=0
- adultscore=0 spamscore=0 phishscore=0 malwarescore=0 priorityscore=1501
+ phishscore=0 bulkscore=0 priorityscore=1501 suspectscore=0 malwarescore=0
+ lowpriorityscore=0 adultscore=0 impostorscore=0 clxscore=1015 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.19.0-2508110000 definitions=main-2508200013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250821_234838_574066_F1510A50 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20250821_234924_147352_E074B90E 
+X-CRM114-Status: GOOD (  13.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,142 +152,39 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 8/20/2025 7:37 PM, Dmitry Baryshkov wrote:
-> On Wed, Aug 20, 2025 at 05:34:44PM +0800, Xiangxu Yin wrote:
->> Add device tree binding documentation for the Qualcomm QMP USB3+DP PHY
->> on QCS615 Platform. This PHY supports both USB3 and DP functionality
->> over USB-C, with PHY mode switching capability. It does not support
->> combo mode.
+On 8/20/2025 7:34 PM, Dmitry Baryshkov wrote:
+> On Wed, Aug 20, 2025 at 05:34:46PM +0800, Xiangxu Yin wrote:
+>> Introduce qmp_phy_usbc_type enum and a 'type' field in qmp_phy_cfg to
+>> differentiate between USB-only PHYs and USB/DP switchable PHYs.
 >>
 >> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 >> ---
->>  .../bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml   | 108 +++++++++++++++++++++
->>  1 file changed, 108 insertions(+)
+>>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 9 +++++++++
+>>  1 file changed, 9 insertions(+)
 >>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
->> new file mode 100644
->> index 0000000000000000000000000000000000000000..c2b1fbab2930f0653f4ddb95f7b54d8fe994f92d
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
->> @@ -0,0 +1,108 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/phy/qcom,qcs615-qmp-usb3dp-phy.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Qualcomm QMP USB3-DP PHY controller (DP, QCS615)
->> +
->> +maintainers:
->> +  - Vinod Koul <vkoul@kernel.org>
->> +
->> +description:
->> +  The QMP PHY controller supports physical layer functionality for both
->> +  USB3 and DisplayPort over USB-C. While it enables mode switching
->> +  between USB3 and DisplayPort, but does not support combo mode.
->> +
->> +properties:
->> +  compatible:
->> +    enum:
->> +      - qcom,qcs615-qmp-usb3-dp-phy
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    maxItems: 2
-> Missing GCC_USB2_SEC_PHY_AUX_CLK and GCC_USB2_SEC_PHY_PIPE_CLK
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+>> index e484caec2be20121cfe287c507b17af28fb9f211..5afe090b546977a11265bbffa7c355feb8c72dfa 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+>> @@ -284,6 +284,11 @@ static const struct qmp_phy_init_tbl qcm2290_usb3_pcs_tbl[] = {
+>>  	QMP_PHY_INIT_CFG(QPHY_V3_PCS_RX_SIGDET_LVL, 0x88),
+>>  };
+>>  
+>> +enum qmp_phy_usbc_type {
+>> +	QMP_PHY_USBC_USB3_ONLY,
+>> +	QMP_PHY_USBC_USB3_DP,
+> Drop, you can use presense of DP offsets in order to differentiate
+> between USB3 and USB3+DP.
 
 
-Ok, will fix in next patch.
+Ok, will drop.
 
 
+>> +};
 >> +
->> +  clock-names:
->> +    items:
->> +      - const: cfg_ahb
->> +      - const: ref
->> +
->> +  resets:
->> +    maxItems: 2
->> +
->> +  reset-names:
->> +    items:
->> +      - const: phy_phy
->> +      - const: dp_phy
->> +
->> +  vdda-phy-supply: true
->> +
->> +  vdda-pll-supply: true
->> +
->> +  "#clock-cells":
->> +    const: 1
->> +    description:
->> +      See include/dt-bindings/phy/phy-qcom-qmp.h
->> +
->> +  "#phy-cells":
->> +    const: 1
->> +    description:
->> +      See include/dt-bindings/phy/phy-qcom-qmp.h
->> +
->> +  qcom,tcsr-reg:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      - items:
->> +          - description: phandle to TCSR hardware block
->> +          - description: offset of the VLS CLAMP register
->> +      - items:
->> +          - description: phandle to TCSR hardware block
->> +          - description: offset of the DP PHY mode register
->> +    description: Clamp and PHY mode register present in the TCSR
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - clocks
->> +  - clock-names
->> +  - resets
->> +  - reset-names
->> +  - vdda-phy-supply
->> +  - vdda-pll-supply
->> +  - "#clock-cells"
->> +  - "#phy-cells"
->> +  - qcom,tcsr-reg
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/qcom,qcs615-gcc.h>
->> +    #include <dt-bindings/clock/qcom,rpmh.h>
->> +
->> +    phy@88e8000 {
->> +      compatible = "qcom,qcs615-qmp-usb3-dp-phy";
->> +      reg = <0x88e8000 0x2000>;
->> +
->> +      clocks = <&gcc GCC_AHB2PHY_WEST_CLK>,
->> +               <&gcc GCC_USB3_SEC_CLKREF_CLK>;
->> +      clock-names = "cfg_ahb",
->> +                    "ref";
->> +
->> +      resets = <&gcc GCC_USB3PHY_PHY_SEC_BCR >,
->> +               <&gcc GCC_USB3_DP_PHY_SEC_BCR>;
->> +      reset-names = "phy_phy",
->> +                    "dp_phy";
->> +
->> +      vdda-phy-supply = <&vreg_l11a>;
->> +      vdda-pll-supply = <&vreg_l5a>;
->> +
->> +      #clock-cells = <1>;
->> +      #phy-cells = <1>;
->> +
->> +      qcom,tcsr-reg = <&tcsr 0xbff0>,
->> +                      <&tcsr 0xb24c>;
->> +    };
->>
->> -- 
->> 2.34.1
->>
+>>  struct qmp_usbc_offsets {
+>>  	u16 serdes;
+>>  	u16 pcs;
 
 -- 
 linux-phy mailing list
