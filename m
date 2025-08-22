@@ -4,69 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93521CA0FE8
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:36:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4D14CA0EFA
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:36:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+c7skX/tnsaBfxiDqbFBdHwdVCxuFyPr1k+/AoQHLSw=; b=HaQom3xW3hVbWIstrPfDDojRDN
-	kCPozwPgGg9OQpu4qnwdjK+jzjZsGFO9iYf5ukGrHW4CtZumHAdZlKmZHnEZf0hiLAm7lRXsj8uTR
-	0gqSOjVK023CXozUQsRNyCtLlaIfPammuZf661DFDIvZGRc1R4BLO8qr6s1mzYY8MmagvLMk3SzXv
-	9+wYyhw0+WRvKkIjtsmSUZikyviOp3MdMa1iFZoXDcCTCdd3pq44TyC0ZBGbTs1et/yckMgsKagoI
-	33NEsM1jV64zZmvk9dd1q3OhNmQop7tTNVRcQsHSNDMWYCGgFfjoGl06FUfebWZBBUStbZaFSRrWZ
-	I1b1wGXg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KRXlnXp/F1ZPW3bhwKiaQxOfygeg/bbiVskfN97HUOQ=; b=kaPh5r7bTB+QtS
+	FzL2LEBh+hLt1LAcoEnjfae6eMBhI9Q7zGVLRBDTZsuhHnwVclSRGZkvAaDuBo/naLKLM7dWRDN+5
+	EuIIhaS92iNSo3NAxWHD2qod1hj9EDJOwVpSdS5vomGbwPaSdHdjAHUyVTyfqGvxEu6mmheADll1g
+	B9r5pKJHmc97rQPLHoXbOopRjYriqTMGlwgBFtTNvFsDr5plEJQkgnjh3SYRKeulxMipTPAiuFPQR
+	Z9GyC2jYznw2IP/wX56exXOb7Exyo6pozr3TSy4bA59qXmc7Pd9mwcdtXLvBXPGzns2+cdDsPgpkN
+	fdKuiWwfDRI0oxgi9nTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upkfT-00000004Uow-3OBy;
-	Sat, 23 Aug 2025 09:36:11 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1upkff-00000004VA1-3uBn;
+	Sat, 23 Aug 2025 09:36:23 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upV33-00000003CnN-2uTH;
-	Fri, 22 Aug 2025 16:55:29 +0000
+	id 1upYAW-00000003QTt-3Vbv;
+	Fri, 22 Aug 2025 20:15:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 216B260203;
-	Fri, 22 Aug 2025 16:55:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09B93C4CEED;
-	Fri, 22 Aug 2025 16:55:24 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0A5D5A58B90;
+	Fri, 22 Aug 2025 20:15:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D25AC4CEED;
+	Fri, 22 Aug 2025 20:15:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755881728;
-	bh=7g181+bcvmLk/IDiMD7z/zBWKVLYMZ0k6iVC20G+ROU=;
+	s=k20201202; t=1755893723;
+	bh=1Wup3O/kJKm/ZC5Sk9t0n/JhaFTwNdq1SU4O8pcpU7I=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ImHNmKrYF8feUzVfNj1IWZo1oWQKNNbn3adjTQoB1nDREjxrrJUwJELiMyBlaqIL/
-	 v6zubrgaab66AjgCvKChDKdkLevu7F63S9hi/fn/5N4SW4kw97wMMIfnzTss/54dmD
-	 xjJADDAz6ldRqQdkK9w39f6HrEhYsnfZpy6SuUkFSiYDibUg5w9/uy5EV4GQeoYx6y
-	 vDTphXQuMOR0x/TeuO5EmSio6vWckZDaZUieXz4d8Zxq93S/BXdGjHW800HeyDCcZv
-	 XY4iacRP9+leHrAcB0ZqwWEmQAPMvAr65AjNjx48yTytmQpfuX7uMBJuC7RcFKMzzH
-	 5PSKGfZAW8Bvw==
-Date: Fri, 22 Aug 2025 17:55:22 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
+	b=doumbUTkxdxy5qD8tSwxIqmCWw1C+OAOW3s5urGlMmsHQFd+NT7V0Djyj7t88RS7J
+	 /fK5Ozi66cGfCXt05DaxJ3UrKhkbTJ92GRoSXtV5Xzh5HpoLAHNXiSHAotKvIOx8n7
+	 jqnviij6a9RquHEFabBbkJ0Yvi7mmAoAGs6yy0fMPgn/ZKjKRU3aum2taviMFLGp3b
+	 xuq4wn7o8u7E9Q38ITLTbC08PV+4nKRH719kjfkoZKoIsUznx6sFt2ibOgCEO/L2+8
+	 86zkEIt0Imw3/BeEi1LR44g/IMP3C+cfYDhwSWS0oXCf24Aamo66sR8ZnhUdNJYHU/
+	 /vbUo5m8BJX+A==
+Date: Fri, 22 Aug 2025 15:15:22 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>, Alice Yuan <alice.yuan@nxp.com>,
+	imx@lists.linux.dev, Martin Kepplinger <martink@posteo.de>,
+	Rui Miguel Silva <rmfrfs@gmail.com>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
-	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
- TJA1051/1048
-Message-ID: <20250822-crop-ungreased-6494d68e388e@spud>
-References: <20250822-can-v1-0-c075f702adea@nxp.com>
- <20250822-can-v1-1-c075f702adea@nxp.com>
+	Purism Kernel Team <kernel@puri.sm>, linux-media@vger.kernel.org,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-staging@lists.linux.dev,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	linux-arm-kernel@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	linux-kernel@vger.kernel.org, Luis Oliveira <lolivei@synopsys.com>,
+	devicetree@vger.kernel.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>
+Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
+ support
+Message-ID: <175589372183.282948.13173863715963070537.robh@kernel.org>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20250822-can-v1-1-c075f702adea@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250822_131524_938348_751074B6 
+X-CRM114-Status: GOOD (  10.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,128 +87,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8949539035925162456=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8949539035925162456==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="LL4e6z1aL4fxQ/Er"
-Content-Disposition: inline
-
-
---LL4e6z1aL4fxQ/Er
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Aug 22, 2025 at 12:05:28PM +0800, Peng Fan wrote:
-> The TJA1051 is a high-speed CAN transceiver which is a pin-compatible
-> alternative for TI TCAN1043 with Sleep mode supported, and has a compatib=
-le
-> programming model, therefore use ti,tcan1043 as fallback compatible.
->=20
-> The TJA1048 is a dual high-speed CAN transceiver with Sleep mode supporte=
-d.
->=20
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+On Thu, 21 Aug 2025 16:15:36 -0400, Frank Li wrote:
+> From: Eugen Hristev <eugen.hristev@linaro.org>
+> 
+> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
+> and i.MX95 platform.
+> 
+> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
+> Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 > ---
->  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 29 ++++++++++++++++=
-+++---
->  1 file changed, 26 insertions(+), 3 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b=
-/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> index 4a8c3829d85d3c4a4963750d03567c1c345beb91..de4ab204ec86f91e84eba8f1a=
-6343ed137e5cd71 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -19,18 +19,21 @@ properties:
->            - enum:
->                - microchip,ata6561
->            - const: ti,tcan1042
-> +      - items:
-> +          - enum:
-> +              - nxp,tja1051
-> +          - const: ti,tcan1043
->        - enum:
->            - ti,tcan1042
->            - ti,tcan1043
-> +          - nxp,tja1048
->            - nxp,tjr1443
-> =20
-> -  '#phy-cells':
-> -    const: 0
-> +  '#phy-cells': true
-> =20
->    standby-gpios:
->      description:
->        gpio node to toggle standby signal on transceiver
-> -    maxItems: 1
+> Change in v3
+> - drop remote-endpoint: true
+> - drop clock-lanes
+> 
+> Change in v2
+> - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
+> - update ugen Hristev's s-o-b tag to align original author's email address
+> - remove single snps,dw-mipi-csi2-v150 compatible string
+> - move additionalProperties after required
+> ---
+>  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
+>  MAINTAINERS                                        |   1 +
+>  2 files changed, 152 insertions(+)
+> 
 
-Please put the outtermost constraints here and narrow it down in the
-else.
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-> =20
->    enable-gpios:
->      description:
-> @@ -53,6 +56,26 @@ required:
->    - compatible
->    - '#phy-cells'
-> =20
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: nxp,tja1048
-> +
-> +    then:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 1
-> +        standby-gpios:
-> +          maxItems: 2
-> +    else:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 0
-> +        standby-gpios:
-> +          maxItems: 1
-> +
->  additionalProperties: false
-> =20
->  examples:
->=20
-> --=20
-> 2.37.1
->=20
-
---LL4e6z1aL4fxQ/Er
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaKig+gAKCRB4tDGHoIJi
-0sReAP4445tmzdmWf3M79UC6PC+yh6cXgLj78yyz/06rdvDc2AEA1jcyL7+qJdVg
-IM3RILZrUyw345YkF5EtQPKxBWu8dQM=
-=tBaH
------END PGP SIGNATURE-----
-
---LL4e6z1aL4fxQ/Er--
-
-
---===============8949539035925162456==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8949539035925162456==--
-
