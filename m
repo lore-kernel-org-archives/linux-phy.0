@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 281AECA0EFA
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 06:33:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E93CA0EFA
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 06:40:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60h+zhfGtIqHNiFfegwtQAYthDFMHWtAebj5JXbV1pU=; b=sSzeQdPUCXjIDc
-	cUnL5BM4+NnJss+FGuVZsHqMomg8OjVrcnZbfxr1/4a6pQ08IGUjR9E3j+FYdhRHdR8Eiw6IQGxw8
-	e98UpW+fiiqFJY6rkHUBAtoNxiXNsLgJD9BlWtvMJ7JVRp77W+XVQO4Ssl2bmbkMLqvkodqh5BgWE
-	UydnVxLxhJEvzY5wLI3UFfeXzd24ERKIozU3urGA0uRd5tvo6f6xvdM4fX25WF6gVfo6XnRLaFWK6
-	fOOf0983VRyNdya/KADWH87EjEPIVDHYwf7OOn5jxJAxN44DOwdzdcP/A1nzEpC07lEb+W7lHt6jx
-	DEM4oPoHOW4fcGhWFENQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eWXc3ckplhzrv8wN6atOBbsd/v8slkS9acUlMW2VjRc=; b=LiG0n3wUKksP6dSTuCq/21Xueq
+	y+9N/mnqt0EFickbDgQZhO8yFmlVz9HQWyTO6aPOsEgJWdBdRypFcA4/eyUl3DMmoCTnubMVP7H9D
+	eX22qO0r4aI6dqhCcYrakU4VZw+q8/OsyuTKySCPxvGe332hBhMfBCkngXfntQHBJS213vb1vl/4j
+	Z9bn9K/bSpz0g79ZHdFjStAO/gCYyssumQFR0ktK4nvjj4dZJkbwa4rPlfbbDBrEagtj0jfDX0Gm+
+	ij4tOCEqAPiHDlgvqKrIuRFubwzyDf6QhE96C08bKQwdHJTidr+p2/ox5MMWTnF9RUmXVrT58K8bo
+	FJTE4ozg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uphoF-000000042Un-3ofy;
-	Sat, 23 Aug 2025 06:33:03 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1uphv0-00000004BT4-33cb;
+	Sat, 23 Aug 2025 06:40:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upTML-00000002woj-3JrY;
-	Fri, 22 Aug 2025 15:07:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Transfer-Encoding:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=ohAxfRMC3hfwx3bWNwqhsVIp9/GkRkVmDTq9tXa2hWo=; b=hXO651aHiuKcKK9LsfPxhe2tEp
-	/8OWWYskvDMRuZTlbG+4fOkc9r7tDDxYQ0QqX/7RRpFesk0ufQbFKGouuGM6nqhVi2yDJBf3rZ/aw
-	4FPAtzdypX427e2MTU678VK5lIBfIQmCAKbDrOc6E4MNirID2u/1RTotan2tqz2Ju8dyhS6LthjLL
-	43+yXto27VZDs845hMcae/pE0gIiCsLmOYKLC+82oXRzGQ/p5ZM1dHoaT55M122dhefJfWdcvM9fC
-	XevwYqlfLWY+mnN0oJzNkcj9ieqI9ZWjM7+7KCrwnpeV80xCvvwgCNA6xNl+wLL/DhNhjjq29AcRC
-	orFl6uaA==;
-Received: from i53875a83.versanet.de ([83.135.90.131] helo=phil..)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1upTM4-00016y-MI; Fri, 22 Aug 2025 17:07:00 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>,
+	id 1upV02-00000003CQl-222k;
+	Fri, 22 Aug 2025 16:52:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id EC92E5C710D;
+	Fri, 22 Aug 2025 16:52:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27602C4CEED;
+	Fri, 22 Aug 2025 16:52:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1755881541;
+	bh=yaK/J9Mq7TMSJEOF0Q/1YTVBPo06y0I9D1S4aI0nInk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=MTtKvyPnUlzqGaBwQRa4ApDd1eD78Vx/uDltIbOsZNeZ9FXqn6LgBoNYdVvzP+TLZ
+	 G6Hwwgw3IH6QrbydGfUJK4dMRu/KjXCWM/Wta1Xu/Qh5m6pzO9Xodry7FgmAgQ6IE5
+	 jfXRK1i9nIV6INAtYBguAK1DdUCfICmhNJ9q0eLH0D8hTMS34d1pXz1WZW1MwChISY
+	 k+xpxj061avk6wAg6MlLci7qBS03EzI6oo8vxoAFQo/1sxpv8Otf/cLiZKSDuNfZNm
+	 eoiKYpA4/RnHKr6ZVV2VELIfrwrqL/VJpgE5O5Zkarg6FdiWPBdoJUpiKj1vfs0SNb
+	 vuOwjd6H1Sf5A==
+Date: Fri, 22 Aug 2025 17:52:16 +0100
+From: Conor Dooley <conor@kernel.org>
+To: maudspierings@gocontroll.com
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
-	Detlev Casanova <detlev.casanova@collabora.com>,
-	Shresth Prasad <shresthprasad7@gmail.com>,
-	Chukun Pan <amadeus@jmu.edu.cn>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Yao Zi <ziyao@disroot.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH v5 0/6] Support RK3528 variant of Rockchip naneng-combphy
-Date: Fri, 22 Aug 2025 17:06:56 +0200
-Message-ID: <175587519618.3220879.13156903990488376391.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20250728102947.38984-2-ziyao@disroot.org>
-References: <20250728102947.38984-2-ziyao@disroot.org>
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document TI
+ TCAN1051
+Message-ID: <20250822-gout-denture-688eeb65b6e0@spud>
+References: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
+ <20250822-can_phy3-v1-1-73b3ba1690ee@gocontroll.com>
 MIME-Version: 1.0
+In-Reply-To: <20250822-can_phy3-v1-1-73b3ba1690ee@gocontroll.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250822_080717_853507_80A93D3F 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20250822_095222_555155_5B15A640 
+X-CRM114-Status: UNSURE (   6.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,32 +81,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7909548797006488105=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 28 Jul 2025 10:29:42 +0000, Yao Zi wrote:
-> Rockchip RK3528 ships a naneng-combphy that operates in either PCIe or
-> USB 3.0 mode. It has a similar control logic to previous generations of
-> naneng-combphy but an apparently different register layout.
-> 
-> This series prepares phy-rockchip-naneng-combphy.c for variants with a
-> different register layout and add RK3528 support.
-> 
-> [...]
+--===============7909548797006488105==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="417/6ibRk/SLnFGF"
+Content-Disposition: inline
 
-Applied, thanks!
 
-[6/6] arm64: dts: rockchip: Add naneng-combphy for RK3528
-      commit: 70bb21cbc8c704c664b5d3ea417f3e35376fc229
+--417/6ibRk/SLnFGF
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--417/6ibRk/SLnFGF
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaKigPwAKCRB4tDGHoIJi
+0pC3AQCDOtsgl3v4+3MpC8nave18XEmONgIFklHfXnBS5G3TwwEA0mnpdzGtsgfJ
+aa1SEma1o0J1HMb0GPVTGrRvFhFXVgI=
+=SrOb
+-----END PGP SIGNATURE-----
+
+--417/6ibRk/SLnFGF--
+
+
+--===============7909548797006488105==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7909548797006488105==--
+
