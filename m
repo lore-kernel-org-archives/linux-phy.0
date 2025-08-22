@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0FDDCA0EFA
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:35:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93521CA0FE8
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Aug 2025 09:36:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WFQq8fi3uOH+s6SPet8TSywFWXT7HhUPX3vegotiMag=; b=LC9q6woYMwyC4L
-	sHZMFHJo1p9YbZWI98tmT/kfmHY9TGQG/n1xD6JlN1Z9OGs5bLJcPoETkKaqtbus/Gk6VFZPPLJCm
-	XurLcQMvIkgy0xlsOeuChPMAtl1Ezo8Qjfan6ySMOUIIuhdG7oMfyHyR/dW/xnRuPIazGa602nKIB
-	R/2oSnNTBO672gbgZYdwQFNLUj/1jRVowAOYVTcivSSO6oMiIQ6BX+wox0vtyovKGx+h3l8FGS23M
-	2wPRSJH6ttbxUyF4P4E7j06RASHNOOIA0fImt1ZelIsrHUf5vlk1a9kJelLpNMr19f+itz8jHA6a4
-	rziGiVyVc6PhfiBLLPmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+c7skX/tnsaBfxiDqbFBdHwdVCxuFyPr1k+/AoQHLSw=; b=HaQom3xW3hVbWIstrPfDDojRDN
+	kCPozwPgGg9OQpu4qnwdjK+jzjZsGFO9iYf5ukGrHW4CtZumHAdZlKmZHnEZf0hiLAm7lRXsj8uTR
+	0gqSOjVK023CXozUQsRNyCtLlaIfPammuZf661DFDIvZGRc1R4BLO8qr6s1mzYY8MmagvLMk3SzXv
+	9+wYyhw0+WRvKkIjtsmSUZikyviOp3MdMa1iFZoXDcCTCdd3pq44TyC0ZBGbTs1et/yckMgsKagoI
+	33NEsM1jV64zZmvk9dd1q3OhNmQop7tTNVRcQsHSNDMWYCGgFfjoGl06FUfebWZBBUStbZaFSRrWZ
+	I1b1wGXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upkfB-00000004UOw-2aw0;
-	Sat, 23 Aug 2025 09:35:53 +0000
+	id 1upkfT-00000004Uow-3OBy;
+	Sat, 23 Aug 2025 09:36:11 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1upUTG-000000039lU-2uFl
-	for linux-phy@lists.infradead.org;
-	Fri, 22 Aug 2025 16:18:30 +0000
+	id 1upV33-00000003CnN-2uTH;
+	Fri, 22 Aug 2025 16:55:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C2849601E7;
-	Fri, 22 Aug 2025 16:18:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55908C4CEED;
-	Fri, 22 Aug 2025 16:18:29 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 216B260203;
+	Fri, 22 Aug 2025 16:55:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09B93C4CEED;
+	Fri, 22 Aug 2025 16:55:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1755879509;
-	bh=YHS/oTRhurrO0NtuvfArtyVRbEqEjh/ZB1xiPazD29Y=;
+	s=k20201202; t=1755881728;
+	bh=7g181+bcvmLk/IDiMD7z/zBWKVLYMZ0k6iVC20G+ROU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EDU2rvAmbrdsQmwDOOf46wZpKyL79qRomVIeWW1n6gS+yGd2aa3KJt0xVHllb94fb
-	 2/RJfy54Qd2giI2kVNErQ5hLopgJdVaiOBJPLcpVlhWZDKCN2qHxjj1F3p/6FzIuqD
-	 cCL0MFjAhJUrdB8XJWpraXU7FAvF3KAotwPbxoGwx+qAoWM+iepoHi5GQ1qdPm5ary
-	 4NQEekp8Ifz4NSKy7pPjz2ojCvad7wU0KHnFqMnEVC9Z8bnrkNmp5weCUQAnARUWEe
-	 7qqkU+kHH/Giaa0T7uEwdskfo/gTaGOeb0VtMfHIRGX26IBnMTzkhlBER0NTF6l/oi
-	 gUQm++Qs+Oi4Q==
-Date: Fri, 22 Aug 2025 11:18:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Biju Das <biju.das.jz@bp.renesas.com>
-Cc: Conor Dooley <conor@kernel.org>, "biju.das.au" <biju.das.au@gmail.com>,
+	b=ImHNmKrYF8feUzVfNj1IWZo1oWQKNNbn3adjTQoB1nDREjxrrJUwJELiMyBlaqIL/
+	 v6zubrgaab66AjgCvKChDKdkLevu7F63S9hi/fn/5N4SW4kw97wMMIfnzTss/54dmD
+	 xjJADDAz6ldRqQdkK9w39f6HrEhYsnfZpy6SuUkFSiYDibUg5w9/uy5EV4GQeoYx6y
+	 vDTphXQuMOR0x/TeuO5EmSio6vWckZDaZUieXz4d8Zxq93S/BXdGjHW800HeyDCcZv
+	 XY4iacRP9+leHrAcB0ZqwWEmQAPMvAr65AjNjx48yTytmQpfuX7uMBJuC7RcFKMzzH
+	 5PSKGfZAW8Bvw==
+Date: Fri, 22 Aug 2025 17:55:22 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	"magnus.damm" <magnus.damm@gmail.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH 03/11] dt-bindings: phy: renesas: Document Renesas RZ/G3E
- USB3.0 PHY
-Message-ID: <20250822161828.GA3905962-robh@kernel.org>
-References: <20250820171812.402519-1-biju.das.jz@bp.renesas.com>
- <20250820171812.402519-4-biju.das.jz@bp.renesas.com>
- <20250820-primer-shaded-66da9fa4bcae@spud>
- <20250820-commodity-curator-1f580789885b@spud>
- <TY3PR01MB113467039A598C0EDC284AE198632A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
+	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
+ TJA1051/1048
+Message-ID: <20250822-crop-ungreased-6494d68e388e@spud>
+References: <20250822-can-v1-0-c075f702adea@nxp.com>
+ <20250822-can-v1-1-c075f702adea@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <TY3PR01MB113467039A598C0EDC284AE198632A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+In-Reply-To: <20250822-can-v1-1-c075f702adea@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,38 +78,128 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8949539035925162456=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 21, 2025 at 07:18:59AM +0000, Biju Das wrote:
-> Hi Conor,
-> 
-> Thanks for the feedback.
-> 
-> > -----Original Message-----
-> > From: Conor Dooley <conor@kernel.org>
-> > Sent: 20 August 2025 21:13
-> > Subject: Re: [PATCH 03/11] dt-bindings: phy: renesas: Document Renesas RZ/G3E USB3.0 PHY
-> > 
-> > On Wed, Aug 20, 2025 at 09:10:07PM +0100, Conor Dooley wrote:
-> > > Acked-by: Conor Dooley <conor.dooley@microchip.com>
-> > 
-> > Now that I look again, same applies here with the different filename and compatible. Copypaste mistake?
-> > Or why does the compatible not match the filename?
-> > 
-> 
-> r9a09g047 is SoC part number which also known as RZ/G3E SoC.
-> 
-> I just followed the convention used in [1] and [2].
-> Please let me know, should I change rzg3e-usb3-phy.yaml.yaml-> r9a09g047-usb3-phy.yaml ?
 
-I think it is fine as-is.
+--===============8949539035925162456==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="LL4e6z1aL4fxQ/Er"
+Content-Disposition: inline
 
-Rob
+
+--LL4e6z1aL4fxQ/Er
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Aug 22, 2025 at 12:05:28PM +0800, Peng Fan wrote:
+> The TJA1051 is a high-speed CAN transceiver which is a pin-compatible
+> alternative for TI TCAN1043 with Sleep mode supported, and has a compatib=
+le
+> programming model, therefore use ti,tcan1043 as fallback compatible.
+>=20
+> The TJA1048 is a dual high-speed CAN transceiver with Sleep mode supporte=
+d.
+>=20
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 29 ++++++++++++++++=
++++---
+>  1 file changed, 26 insertions(+), 3 deletions(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b=
+/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> index 4a8c3829d85d3c4a4963750d03567c1c345beb91..de4ab204ec86f91e84eba8f1a=
+6343ed137e5cd71 100644
+> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> @@ -19,18 +19,21 @@ properties:
+>            - enum:
+>                - microchip,ata6561
+>            - const: ti,tcan1042
+> +      - items:
+> +          - enum:
+> +              - nxp,tja1051
+> +          - const: ti,tcan1043
+>        - enum:
+>            - ti,tcan1042
+>            - ti,tcan1043
+> +          - nxp,tja1048
+>            - nxp,tjr1443
+> =20
+> -  '#phy-cells':
+> -    const: 0
+> +  '#phy-cells': true
+> =20
+>    standby-gpios:
+>      description:
+>        gpio node to toggle standby signal on transceiver
+> -    maxItems: 1
+
+Please put the outtermost constraints here and narrow it down in the
+else.
+
+> =20
+>    enable-gpios:
+>      description:
+> @@ -53,6 +56,26 @@ required:
+>    - compatible
+>    - '#phy-cells'
+> =20
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: nxp,tja1048
+> +
+> +    then:
+> +      properties:
+> +        '#phy-cells':
+> +          const: 1
+> +        standby-gpios:
+> +          maxItems: 2
+> +    else:
+> +      properties:
+> +        '#phy-cells':
+> +          const: 0
+> +        standby-gpios:
+> +          maxItems: 1
+> +
+>  additionalProperties: false
+> =20
+>  examples:
+>=20
+> --=20
+> 2.37.1
+>=20
+
+--LL4e6z1aL4fxQ/Er
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaKig+gAKCRB4tDGHoIJi
+0sReAP4445tmzdmWf3M79UC6PC+yh6cXgLj78yyz/06rdvDc2AEA1jcyL7+qJdVg
+IM3RILZrUyw345YkF5EtQPKxBWu8dQM=
+=tBaH
+-----END PGP SIGNATURE-----
+
+--LL4e6z1aL4fxQ/Er--
+
+
+--===============8949539035925162456==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8949539035925162456==--
+
