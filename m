@@ -4,62 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E97CCA0EFC
-	for <linux-phy@archiver.kernel.org>; Sun, 24 Aug 2025 08:22:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADF4FCA0EFC
+	for <linux-phy@archiver.kernel.org>; Sun, 24 Aug 2025 08:34:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NA4L2PC3zvjr6fQYOebGIhPINedw7u0w6tZ/lnTL4E=; b=yDvHy54sRbq9c2
-	Ax0DrmYiOne+/QswLfAhQuqNIDllDCzFnwBw5oq0DyBgICxQl/t5D/C/BySqOn/G48hvT/gxJ3elR
-	sC2tYMhv+tDFA62RD5KiL6sMIa3FRyQ/Bfl2XkUNf/rD7OgLDD0BKEoMm42/dBQjXZ0jAkuMxLfli
-	VvQ5HXclZpRkKrDmWLq82dkTDHmjduYWKoNZG3U6L5Sp5YmpDgkWT5AJKufYFCHOJw/i971T4Ei8E
-	y1iSlZbm1zy+HNJah6Qm3n21b1CFD34VLRnvvjBLe8rKGM92+g1r+eLKqP60OnMIPluWGvmo/CZOv
-	S86/0Qk1hde173lSjs7w==;
+	List-Owner; bh=2A605tBMw5yuLuboWFy/11QXRcc+tWvGfd7hg6Cah3s=; b=mM6RB+SWsNOjF+
+	KYuA5/99Pm+Rj/ZH7USL1BkmzyTn1Nstre+JmbP35Xr6xFFwBf7+cN2Uv+8tOE3RP8+a2lR/RDilC
+	jGflB54fo/E/+fhk9s8FTdS1wASxDJP6DpKsk+VvCRF3IOs7ONLyODKWPU/pBOEY1Dp8LYIbu5K5X
+	kvcd774wd0oPtY5qVO5yMaQ39ciIb9CUQz72POzj7hJywOvEFptmf2WBMbV0byUekwygy2A/yohrN
+	686NPJNVyQZWqXMXqKy/k5J1c8JpwdijJV10wbjLFcakUwVnpubPZtpWJUNI3p79tVeza58YSZdSF
+	/9f8LNEyM3I+WH3iQyAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uq5zJ-00000005rkX-2hcf;
-	Sun, 24 Aug 2025 08:22:05 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uq6Bf-00000005s9e-1cvM;
+	Sun, 24 Aug 2025 08:34:51 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uq5vj-00000005rWl-1m6Y;
-	Sun, 24 Aug 2025 08:18:24 +0000
+	id 1uq691-00000005s39-3pc0;
+	Sun, 24 Aug 2025 08:32:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C63EE5C551B;
-	Sun, 24 Aug 2025 08:18:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1811EC116B1;
-	Sun, 24 Aug 2025 08:18:17 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D3F32601DD;
+	Sun, 24 Aug 2025 08:32:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1667C4CEEB;
+	Sun, 24 Aug 2025 08:32:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756023502;
-	bh=oHY8OrdokFhF9Tm6xfVR/OccCYS48FlYN6uDPMMED8s=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=jrhkJror9galOzDN74KNPV22Ga9RO2olY3QdhX8Y/R4P0zRnLS1pYUpiRnk9cltlo
-	 NOH6ApLq/11DjkKROJ0H0Y+c0NAgLJ89ytaiW1g+LDOeMYWsT710uOwODTR/Jrlu24
-	 g4L4ReLk7c2rrk4U/IQwyHd4bLE3o870TkH9UYRB2KKCT31SHvabBJ8DxXCTc5Jxs6
-	 syWxwtcePCTNqi+++6k1UcU8Qf2A+yIxZsMBAvwb8hjge3fBLdkBC3i0Pmi797Lc44
-	 W2693szUpkzwJqC7Vwlu1rky+HezAXiK93/sDN1oLi7a1PUiY4ZSKGR14DF38oywWq
-	 GVxW1PeQQyBOQ==
-Message-ID: <df9a09a5-15eb-4760-b312-d54e4e57283c@kernel.org>
-Date: Sun, 24 Aug 2025 10:18:16 +0200
+	s=k20201202; t=1756024326;
+	bh=riG39t2xdTtd/RF9lzly1W+o4O54tVxjLbjpDCJIcCM=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=VpuZHKG8B2zTAFdsRQok94hncp2cF1ytkHq/tEOICeEb0ZJQJAt+4ifwbX95eoHMX
+	 gEsJe9i/CAj8bqIz2tlxG2hiyur2drmdWn48x14H/hdRDXShShrrNRjBPI07b22dEA
+	 e0jWpZmfAGtuTp5ZpAB90So30YNhx4V0mBublUvm71jMMjb2aJAQQjoxSSmeLfElR+
+	 VKmVpILxXPt8V/8nmru6qZEkzQO11sZdSFw63kEwtbl2b4vTV8x5hzEkm7BTEB4DbI
+	 r/kY80PDdGhp51S6TgVmYXi/SmXM1gVapr+tUNHnUu3LfRmaebDjO2yRYKZu45OeFF
+	 aMLRdyyB/jBVg==
+Message-ID: <e4c730d2-6ee1-46d7-850b-8ebbe0a1bfcd@kernel.org>
+Date: Sun, 24 Aug 2025 10:31:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 1/2] dt-bindings: phy: mtk-tphy: add property for
- software role switch
-To: Arseniy Velikanov <me@adomerle.pw>
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht
-References: <20250814234825.810-1-me@adomerle.pw>
- <20250815-important-warm-dove-03dde5@kuoka>
- <ce4f990c-c336-4aa4-93b0-7b9f4d9663b4@adomerle.pw>
+Subject: Re: [PATCH RFC 01/22] dt-bindings: usb: snps,dwc3: Allow multiple
+ iommus
 From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+ Janne Grunau <j@jannau.net>, Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+ Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-usb@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
+ <20250821-atcphy-6-17-v1-1-172beda182b8@kernel.org>
+ <20250822-skinny-clay-harrier-64dc58@kuoka>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -104,10 +108,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <ce4f990c-c336-4aa4-93b0-7b9f4d9663b4@adomerle.pw>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250824_011823_548993_D6BE70B6 
-X-CRM114-Status: GOOD (  13.84  )
+In-Reply-To: <20250822-skinny-clay-harrier-64dc58@kuoka>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,48 +125,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/08/2025 08:25, Arseniy Velikanov wrote:
-> On 15.08.2025 10:28, Krzysztof Kozlowski wrote:
->> On Fri, Aug 15, 2025 at 03:48:24AM +0400, Arseniy Velikanov wrote:
->>> Add a boolean property to enable software control of the PHY mode
->>> switching.
->>>
->>> Signed-off-by: Arseniy Velikanov <me@adomerle.pw>
->>> ---
->>>   Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 6 ++++++
->>>   1 file changed, 6 insertions(+)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>> index b2218c151939..a90890d4a86f 100644
->>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>> @@ -255,6 +255,12 @@ patternProperties:
->>>             use the property "mediatek,syscon-type" for newer SoCs that support it.
->>>           type: boolean
->>>   
->>> +      mediatek,software-role-switch:
+On 22/08/2025 09:22, Krzysztof Kozlowski wrote:
+> On Thu, Aug 21, 2025 at 03:38:53PM +0000, Sven Peter wrote:
+>> Apple's dwc3 variant requires two iommus.
 >>
->> No, bindings do not describe software.
-> Sorry, I didn't quite understand you.
+>> Signed-off-by: Sven Peter <sven@kernel.org>
+>> ---
+>>  Documentation/devicetree/bindings/usb/snps,dwc3.yaml | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
+>> index 4380bb6fa2f08a475b557e80467abc2861f622e2..6d35dcc605c01977f4fc6fdb6f12976f1cef2b9e 100644
+>> --- a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
+>> +++ b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
+>> @@ -60,7 +60,7 @@ properties:
+>>    dma-coherent: true
+>>  
+>>    iommus:
+>> -    maxItems: 1
+>> +    maxItems: 2
 > 
-> With this property the driver changes phy mode manually using debug regs 
-
-
-Here is the problem:     ^^^^^^^^, driver.
-
-> instead of configuring hardware mode switching (because it's broken on 
-> some platforms). So every time the role in usb-role-switch changes, it 
-> has to switch phy mode. That's what I mean by "software".
-> 
-> I can rename this property to `mediatek,force-mode-switch` if that's a 
-> issue.
-
-
-Describe the hardware problem, characteristic, wiring or whatever else,
-but not the drivers and not software.
-
-force-media-switch is the same uninformative and same underlying
-instruction for the driver.
+> Never tested. You anyway need specific constraints.
+I realized that's pretty vague, so clarifying: you changed all bindings
+to have two iommus and that's unexpected. All other devices have only
+one IOMMU mapping here, so they need to stay like that. If these IOMMUs
+differ, you should also list them, but probably that's not the case here.
 
 Best regards,
 Krzysztof
