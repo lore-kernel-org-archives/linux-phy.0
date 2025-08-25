@@ -4,65 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E5BFCA0FE1
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:42:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08F79CA0FE1
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:50:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
-	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hTZr6eTDVm7yu5bnBUiAy08cRrAydeMjs3tOk5wpusA=; b=HjdkCGz+VM5tCh
-	oxnupYQAEFf9vWmInYGFNhAKbtHoH0754HwjBiBvjUwVMqtidiiKZuaRXDD574sh8hxboIqFMwtE6
-	J3aXd0mii8OrudAU2BwTXj+wWZHchVHlDQjHZJQeP/tax97jKpCAp/jeRCRWs4z34UBFXyLv55qg2
-	EjRqGq6UvD9wIrzU2MSGWefpwz8mkV7tjUgRONz5ItWMvgaDzbYuRdREImKnOBlf9CM7eSwN8daos
-	nE3y0PCtirVmAZus4xSr1x5aAULTntU8zdQnIibWyOjSUHAuhMJgVguw0gX2Z+jZo4q/MPK97grQg
-	4eKmIWBXhv8kj0fQgKjg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=woJOyeOmIYXARakmnvLj2eE3IgmeEi6EhCsE2c/npuo=; b=Ui93WCincq5uVV
+	BScSVb41+0UUmojUB1AtwH3D/U7bzYznFEKFqVSXM0SqaZ04Avw6pUQKEr5fii1vFcmNKx33Y60XP
+	UyqVjoMHzcUfcOINICNNq2zO0hbaGeaopHjrxWvEU/ZWbOMs35HytppfCCnQUjSDdcuwK0sW7tWu1
+	LXb38Djd7MQ2ihyinrTwgkrx1W/muaRLlVXZx9XgOalUf2K2pKHUTUp6HzATIOjaOLYyMCZXAXQdN
+	tWZzyCqDTaAtsR8GcF7s6Ac5lXe6MQgG0JvOYbGvEUKVtwvtpPlWJdKSgzw56PY154VXHQp6le9fL
+	qnmiVSFCYIbr89+y2BZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqSmh-00000007MXh-0AE9;
-	Mon, 25 Aug 2025 08:42:35 +0000
-Received: from sgoci-sdnproxy-4.icoremail.net ([129.150.39.64])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqSQj-00000007HTj-446W
-	for linux-phy@lists.infradead.org;
-	Mon, 25 Aug 2025 08:19:56 +0000
-Received: from luyulin$eswincomputing.com ( [10.12.96.77] ) by
- ajax-webmail-app2 (Coremail) ; Mon, 25 Aug 2025 16:19:44 +0800 (GMT+08:00)
-X-Originating-IP: [10.12.96.77]
-Date: Mon, 25 Aug 2025 16:19:44 +0800 (GMT+08:00)
-X-CM-HeaderCharset: UTF-8
-From: luyulin@eswincomputing.com
-To: "Rob Herring" <robh@kernel.org>
-Cc: dlemoal@kernel.org, cassel@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
-	ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com, lianghujun@eswincomputing.com
-Subject: Re: Re: [PATCH v2 1/3] dt-bindings: ata: eswin: Document for
- EIC7700 SoC ahci
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version 2024.2-cmXT6 build
- 20241203(6b039d88) Copyright (c) 2002-2025 www.mailtech.cn
- mispb-72143050-eaf5-4703-89e0-86624513b4ce-eswincomputing.com
-In-Reply-To: <CAL_JsqKFotNLZZXwiy7S6K8qXLdGRAnsa-1zvZRDQBE39Gf5kg@mail.gmail.com>
-References: <20250819134722.220-1-luyulin@eswincomputing.com>
- <20250819135413.386-1-luyulin@eswincomputing.com>
- <CAL_JsqKFotNLZZXwiy7S6K8qXLdGRAnsa-1zvZRDQBE39Gf5kg@mail.gmail.com>
+	id 1uqSuS-00000007Nxx-2XSf;
+	Mon, 25 Aug 2025 08:50:36 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uqSaU-00000007J0m-2Q7v;
+	Mon, 25 Aug 2025 08:29:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-Id:Date:Subject:From:Sender:Reply-To:
+	Content-ID:Content-Description:In-Reply-To:References;
+	bh=7Fvpfg+PNyagHR37TkE0ZPNG3x9nZudXe4XKD4LHhxs=; b=DfF85iI64qAwhESN0XSyPdjlYI
+	c1ODi2wSjfiIy5lL3gU5vJdEEH4K/oPj+wre3hqtDoIOSbmqJ+sBzt0qZdVMHpHazK7/5P5e1u3FX
+	qip46s6A+EQ0CSverdddYt7qNM1aJDxe2OozoWFOATcgpS8vflCo7Q5iHyJ0PNDPDxKTJZHZC2h2V
+	xSrT/nCbnJzlzj/oyhnoH0yUwffcK7dOEfMEMO+jlWIXqroT+BucT7MsEc2ZFTmpBS4Rl90LJVBgT
+	ZU3JIdnrEPSnsSDydLx1EsosnjELrL2sQmxBV5miPaHmBWPOSjQIW7DH1yVkdK6cDx5kp9hHlA/zA
+	Z46maooQ==;
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uqSaQ-00000001mlx-4ANr;
+	Mon, 25 Aug 2025 08:29:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1756110534; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=Kaj07l+KJHjwgrTN4ypGgxEUJROoxxzaBsZnD3OUf+5LDOOblsn6wic7dsefSAxyPDtLeAFyHyNj4MyNlFgYaJh6rL6EEaK2ap7IFl36mnCWMVIBkFIwFYhJKoaa1dFlSOgEBDriZ5ampiH3TQgtb0HWkQjW9DTEu6oqrrC9lIs=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1756110534; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=7Fvpfg+PNyagHR37TkE0ZPNG3x9nZudXe4XKD4LHhxs=; 
+	b=OISu4RIgKAxjJ6YaqWywRv+alPbF+6bm5tW49+Hu42Rhbr8YbkOc5FLr6ktF4nBc6maYTwTa467/RzI0MVPBzUdvNcuXS2f6ByaS7WlAi3XL7A2RO+sp5CwMO3m94KBZERAoNX8dZxeokAgVACKgBBlaZV3qMZ7UZnBdmJAim6U=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110534;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Subject:Subject:Date:Date:Message-Id:Message-Id:MIME-Version:Content-Type:Content-Transfer-Encoding:To:To:Cc:Cc:Reply-To;
+	bh=7Fvpfg+PNyagHR37TkE0ZPNG3x9nZudXe4XKD4LHhxs=;
+	b=XEZR1DZVfgAILwelSAZzqFJzCfY4YMXWOXBkoUa/GooArBWTMLDzJ2m7VYeOvBQT
+	itI76enUGOZQyHq6PoqNRc73MEwkuAtpxKglF/vgLCTyD92/uMzRh94Y+ih+OVxXidw
+	3qvKuI8g/IPc4ECDUqgjddCkbICkQkC3LnmOsoVU=
+Received: by mx.zohomail.com with SMTPS id 1756110531357309.34716059553057;
+	Mon, 25 Aug 2025 01:28:51 -0700 (PDT)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: [PATCH v3 00/20] BYEWORD_UPDATE: unifying (most) HIWORD_UPDATE
+ macros
+Date: Mon, 25 Aug 2025 10:28:20 +0200
+Message-Id: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 MIME-Version: 1.0
-Message-ID: <2cc9f2ff.6a2.198e04fd36e.Coremail.luyulin@eswincomputing.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: TQJkCgA31pSgHKxoBmbDAA--.22942W
-X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/1tbiAQEFA2irPnUklgAA
-	s8
-X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VW3Jw
-	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
-	daVFxhVjvjDU=
+X-B4-Tracking: v=1; b=H4sIAKQerGgC/2XOTQ6DIBAF4KsY1qUB/E1XvUfTBeJQSVQsINUY7
+ 16KXTR1+SZ535sVWTAKLLokKzLglVV6CCE9JUi0fHgAVk3IiBGWk4ISXC/w0qbB09hwBzjLckE
+ AeFnSBoXSaECqOYK3+54NPKfguv2Iam4BC933yl2SAWaHo12xHH0KrbJOmyU+5GlsfLfZ/7anm
+ GCZcVlXskhpKq9Cdx2vteHnMBA5z34Ilh4IFgghqRSk4gzogdi27Q2HCXpbJAEAAA==
+X-Change-ID: 20250610-byeword-update-445c0eea771d
+To: Yury Norov <yury.norov@gmail.com>, 
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Shreeya Patel <shreeya.patel@collabora.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
+ Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
+ linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250825_011954_364919_DCC4643A 
-X-CRM114-Status: GOOD (  21.37  )
+X-CRM114-CacheID: sfid-20250825_092955_540239_01EA22CE 
+X-CRM114-Status: GOOD (  30.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,83 +125,158 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksIFJvYgpUaGFuayB5b3UgdmVyeSBtdWNoIGZvciB5b3VyIHByb2Zlc3Npb25hbCByZXNwb25z
-ZSBhbmQgc3VnZ2VzdGlvbnMuCkFtb25nIHRoZSBzdWdnZXN0aW9ucyB5b3UgbWVudGlvbmVkLCAK
-b25lIHBvaW50IGlzIG5vdCBlbnRpcmVseSBjbGVhciwgYW5kIEkgd291bGQgbGlrZSB0byBzZWVr
-IHlvdXIgYWR2aWNlIG9uIGl0Lgo+IAo+IE9uIFR1ZSwgQXVnIDE5LCAyMDI1IGF0IDg6NTTigK9B
-TSBZdWxpbiBMdSA8bHV5dWxpbkBlc3dpbmNvbXB1dGluZy5jb20+IHdyb3RlOgo+ID4KPiA+IEZy
-b206IGx1eXVsaW4gPGx1eXVsaW5AZXN3aW5jb21wdXRpbmcuY29tPgo+IAo+IFBsZWFzZSBmaXgg
-eW91ciBuYW1lLgo+IAo+ID4KPiA+IEFkZCBkb2N1bWVudCBmb3IgdGhlIFNBVEEgQUhDSSBjb250
-cm9sbGVyIG9uIHRoZSBFSUM3NzAwIFNvQyBwbGF0Zm9ybSwKPiA+IGluY2x1ZGluZyBkZXNjcmlw
-dGlvbnMgb2YgaXRzIGhhcmR3YXJlIGNvbmZpZ3VyYXRpb25zLgo+ID4KPiA+IFNpZ25lZC1vZmYt
-Ynk6IGx1eXVsaW4gPGx1eXVsaW5AZXN3aW5jb21wdXRpbmcuY29tPgo+IAo+IEFuZCBoZXJlLgo+
-IAo+ID4gLS0tCj4gPiAgLi4uL2JpbmRpbmdzL2F0YS9lc3dpbixlaWM3NzAwLWFoY2kueWFtbCAg
-ICAgIHwgOTIgKysrKysrKysrKysrKysrKysrKwo+ID4gIDEgZmlsZSBjaGFuZ2VkLCA5MiBpbnNl
-cnRpb25zKCspCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9hdGEvZXN3aW4sZWljNzcwMC1haGNpLnlhbWwKPiA+Cj4gPiBkaWZmIC0tZ2l0
-IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2F0YS9lc3dpbixlaWM3NzAwLWFo
-Y2kueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hdGEvZXN3aW4sZWlj
-NzcwMC1haGNpLnlhbWwKPiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAw
-MDAwMDAuLjllZjU4YzljMmYyOAo+ID4gLS0tIC9kZXYvbnVsbAo+ID4gKysrIGIvRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2F0YS9lc3dpbixlaWM3NzAwLWFoY2kueWFtbAo+ID4g
-QEAgLTAsMCArMSw5MiBAQAo+ID4gKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4w
-LW9ubHkgT1IgQlNELTItQ2xhdXNlKQo+ID4gKyVZQU1MIDEuMgo+ID4gKy0tLQo+ID4gKyRpZDog
-aHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvYXRhL2Vzd2luLGVpYzc3MDAtYWhjaS55YW1s
-Iwo+ID4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29yZS55
-YW1sIwo+ID4gKwo+ID4gK3RpdGxlOiBFc3dpbiBFSUM3NzAwIFNvQyBTQVRBIENvbnRyb2xsZXIK
-PiA+ICsKPiA+ICttYWludGFpbmVyczoKPiA+ICsgIC0gWXVsaW4gTHUgPGx1eXVsaW5AZXN3aW5j
-b21wdXRpbmcuY29tPgo+ID4gKyAgLSBIdWFuIEhlIDxoZWh1YW4xQGVzd2luY29tcHV0aW5nLmNv
-bT4KPiA+ICsKPiA+ICtkZXNjcmlwdGlvbjoKPiA+ICsgIFRoaXMgZG9jdW1lbnQgZGVmaW5lcyBk
-ZXZpY2UgdHJlZSBiaW5kaW5ncyBmb3IgdGhlIFN5bm9wc3lzIERXQwo+ID4gKyAgaW1wbGVtZW50
-YXRpb24gb2YgdGhlIEFIQ0kgU0FUQSBjb250cm9sbGVyIGZvdW5kIGluIEVzd2luJ3MKPiA+ICsg
-IEVpYzc3MDAgU29DIHBsYXRmb3JtLgo+ID4gKwo+ID4gK3NlbGVjdDoKPiA+ICsgIHByb3BlcnRp
-ZXM6Cj4gPiArICAgIGNvbXBhdGlibGU6Cj4gPiArICAgICAgY29uc3Q6IGVzd2luLGVpYzc3MDAt
-YWhjaQo+ID4gKyAgcmVxdWlyZWQ6Cj4gPiArICAgIC0gY29tcGF0aWJsZQo+ID4gKwo+ID4gK2Fs
-bE9mOgo+ID4gKyAgLSAkcmVmOiBzbnBzLGR3Yy1haGNpLWNvbW1vbi55YW1sIwo+ID4gKwo+ID4g
-K3Byb3BlcnRpZXM6Cj4gPiArICBjb21wYXRpYmxlOgo+ID4gKyAgICBpdGVtczoKPiA+ICsgICAg
-ICAtIGNvbnN0OiBlc3dpbixlaWM3NzAwLWFoY2kKPiA+ICsgICAgICAtIGNvbnN0OiBzbnBzLGR3
-Yy1haGNpCj4gPiArCj4gPiArICByZWc6Cj4gPiArICAgIG1heEl0ZW1zOiAxCj4gCj4gRHJvcC4g
-c25wcyxkd2MtYWhjaS1jb21tb24ueWFtbCBhbHJlYWR5IGRlZmluZXMgdGhpcy4KPiAKPiA+ICsK
-PiA+ICsgIGludGVycnVwdHM6Cj4gPiArICAgIG1heEl0ZW1zOiAxCj4gCj4gRHJvcC4gc25wcyxk
-d2MtYWhjaS1jb21tb24ueWFtbCBhbHJlYWR5IGRlZmluZXMgdGhpcy4KPiAKPiA+ICsKPiA+ICsg
-IHBvcnRzLWltcGxlbWVudGVkOgo+ID4gKyAgICBjb25zdDogMQo+IAo+IFJlYWxseSwgeW91ciBm
-aXJtd2FyZSBzaG91bGQgaW5pdGlhbGl6ZSB0aGUgRFdDIHNwZWNpZmljIHJlZ2lzdGVyIHRoYXQK
-PiBzZXRzIHRoaXMgYW5kIGlzIGRpc2NvdmVyYWJsZSB2aWEgYSBzdGFuZGFyZCBBSENJIHJlZ2lz
-dGVyLgo+IApZZXMsIEkgaW5pdGlhbGl6ZWQgdGhlIHJlbGV2YW50IHJlZ2lzdGVycyBkdXJpbmcg
-dGhlIHVib290IHN0YWdlLAphbmQgdGhleSB3b3JrZWQgY29ycmVjdGx5IGFmdGVyIGVudGVyaW5n
-IHRoZSBMaW51eCBzeXN0ZW0uCkhvd2V2ZXIsIGFmdGVyIHVubG9hZGluZyBhbmQgdGhlbiByZWxv
-YWRpbmcgdGhlIGtvIGRyaXZlciwKYSByZXNldCBvcGVyYXRpb24gY2F1c2VzIHRoZXNlIHJlZ2lz
-dGVycyB0byBiZSBpbml0aWFsaXplZCB0byAwLApsZWFkaW5nIHRvIGluaXRpYWxpemF0aW9uIGVy
-cm9ycyB3aGVuIHJlbG9hZGluZyB0aGUga28gZHJpdmVyLgpJZiBJIHdhbnQgdG8gaW1wbGVtZW50
-IGl0IHRoaXMgd2F5LCBJIG5lZWQgdG8gbW9kaWZ5IHRoZSBhaGNpX2R3Yy5jIGRyaXZlcgphbmQg
-YWRkIHByb2dyYW0gaGFuZGxpbmcgdGFpbG9yZWQgdG8gb3VyIFNvQyBkZXNpZ24uCgpJIHNlYXJj
-aGVkIHRoZSBrZXJuZWwgZm9yICJzbnBzLGR3Yy1haGNpIiBhbmQgZm91bmQgdGhhdAppbiBtYW51
-ZmFjdHVyZXJzJyBkdHMgZmlsZXMsIHN1Y2ggYXMgcmszNTg4LWJhc2UuZHRzaSwgZHJhNy1sNC5k
-dHNpLApleHlub3M1MjUwLmR0c2ksIGV0Yy4sIGFsbCBpbmNsdWRlIHRoZSBwb3J0cy1pbXBsZW1l
-bnRlZCBmaWVsZCBpbiB0aGVpciBzYXRhIG5vZGVzLiAKb25seSB0aGUgc2F0YSBub2RlIGluIGFt
-ZC1zZWF0dGxlLXNvYy5kdHNpIGxhY2tzIHRoZSBwb3J0cy1pbXBsZW1lbnRlZCBmaWVsZAphbmQg
-ZG9lcyBub3QgaGF2ZSByZXNldCByZXNvdXJjZXMuCkFkZGl0aW9uYWxseSwgaW4gdGhlIFlBTUwg
-ZmlsZXMgdW5kZXIgdGhlwqAvRG9jdW1lbnRhdGlvbi9hdGHCoGRpcmVjdG9yeSB0aGF0CmludGVn
-cmF0ZSB0aGUgRFdDIEFIQ0kgY29udHJvbGxlciwgdGhlwqBwb3J0cy1pbXBsZW1lbnRlZMKgZmll
-bGQgaGFzIGJlZW4gaW1wbGVtZW50ZWQsCmFzIHNlZW4gaW4gZXhhbXBsZXMgc3VjaCBhc8Kgcm9j
-a2NoaXAsZHdjLWFoY2kueWFtbMKgYW5kwqBiYWlrYWwsYnQxLWFoY2kueWFtbC4KClRoZXJlZm9y
-ZSwgSSBoYXZlIHF1ZXN0aW9ucyBJIHdvdWxkIGxpa2UgdG8gY29uZmlybSB3aXRoIHlvdToKMS4g
-SW4geW91ciBwcmV2aW91cyBmZWVkYmFjaywgd2VyZSB5b3Ugc3VnZ2VzdGluZyB0aGF0IEkgcmVt
-b3ZlIHRoZcKgcG9ydHMtaW1wbGVtZW50ZWTCoGZpZWxkPwpBbmQgd2hhdCBpcyB0aGUgcmVhc29u
-IGZvciBkb2luZyBzbz8KQmFzZWQgb24geW91ciBwcm9mZXNzaW9uYWwgYWR2aWNlIGFuZCBjb25z
-aWRlcmluZyBvdXIgU29DIGRlc2lnbiwgZG8geW91IHRoaW5rCml0IGlzIGFjY2VwdGFibGUgdG8g
-cmV0YWluIHRoZcKgcG9ydHMtaW1wbGVtZW50ZWTCoGZpZWxkIGluIHRoZSBkdHMgaW5zdGVhZCBv
-ZgpyZW1vdmluZyBpdCBhbmQgbW9kaWZ5aW5nIHRoZcKgYWhjaV9kd2MuY8KgZHJpdmVyPwoyLiBJ
-IG5vdGljZWQgdGhhdCBpbiB0aGUgYXJjaC8gZGlyZWN0b3J5LCBjaGlwcyBsaWtlIGRyYTctbDQu
-ZHRzaSBhbmQKZXh5bm9zNTI1MC5kdHNpIGludGVncmF0ZSB0aGUgRFdDIEFIQ0kgY29udHJvbGxl
-ciBhbmQgaW5jbHVkZSBjb3JyZXNwb25kaW5nCmhhcmR3YXJlIHJlc291cmNlIGRlc2lnbnMgc3Vj
-aCBhcyBjbG9ja3MgYW5kIHJlc2V0cy4KV2h5IGRvIHRoZXkgbm90IGhhdmUgaW5kZXBlbmRlbnQg
-eWFtbCBmaWxlcyBpbXBsZW1lbnRlZCBpbiB0aGUga2VybmVsPwoKQmVzdCByZWdhcmRzLApZdWxp
-biBMdQotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+This series was spawned by [1], where I was asked to move every instance
+of HIWORD_UPDATE et al that I could find to a common macro in the same
+series that I am introducing said common macro.
+
+The first patch of the series introduces a new header file,
+hw_bitfield.h, which contains two new macros: FIELD_PREP_WM16 and
+FIELD_PREP_WM16_CONST. The latter can be used in initializers.
+
+I've cheekily added the hw_bitfield.h header to the BITMAP API section
+of the MAINTAINERS file.
+
+This macro definition checks that the mask fits, and that the value fits
+in the mask. Like FIELD_PREP, it also shifts the value up to the mask,
+so turning off a bit does not require using the mask as a value. Masks
+are also required to be contiguous, like with FIELD_PREP.
+
+For each definition of such a macro, the driver(s) that used it were
+evaluated for three different treatments:
+ - full conversion to the new macro, for cases where replacing the
+   implementation of the old macro wouldn't have worked, or where the
+   conversion was trivial. These are the most complex patches in this
+   series, as they sometimes have to pull apart definitions of masks
+   and values due to the new semantics, which require a contiguous
+   mask and shift the value for us.
+ - replacing the implementation of the old macro with an instance of the
+   new macro, done where I felt it made the patch much easier to review
+   because I didn't want to drop a big diff on people.
+ - skipping conversion entirely, usually because the mask is
+   non-constant and it's not trivial to make it constant. Sometimes an
+   added complication is that said non-constant mask is either used in a
+   path where runtime overhead may not be desirable, or in an
+   initializer.
+
+Left out of conversion:
+ - drivers/mmc/host/sdhci-of-arasan.c: mask is non-constant.
+ - drivers/phy/rockchip/phy-rockchip-inno-csidphy.c: mask is
+   non-constant likely by way of runtime pointer dereferencing, even if
+   struct and members are made const.
+ - drivers/clk/rockchip/clk.h: way too many clock drivers use non-const
+   masks in the context of an initializer.
+
+I will not be addressing these 3 remaining users in this series, as
+implementing a runtime checked version on top of this and verifying that
+it doesn't cause undue overhead just for 3 stragglers is a bit outside
+the scope of wanting to get my RK3576 PWM series unblocked. Please have
+mercy.
+
+In total, I count 19 different occurrences of such a macro fixed out of
+22 I found. The vast majority of these patches have either undergone
+static testing to ensure the values end up the same during development,
+or have been verified to not break the device the driver is for at
+runtime. Only a handful are just compile-tested, and the individual
+patches remark which ones those are.
+
+This took a lot of manual work as this wasn't really something that
+could be automated: code had to be refactored to ensure masks were
+contiguous, made sense to how the hardware actually works and to human
+readers, were constant, and that the code uses unshifted values.
+
+Please note that I will not be resending the whole series again for
+purely subjective cosmetic changes. This series touches a lot of
+subsystems, which means many clashing tastes. You've had a week's notice
+to get any low-effort naming nitpicks out of the way after v1. If you as
+a maintainer are unhappy with a commit prefix or such, then you have my
+express permission to modify it while applying the patch, so that I
+don't need to bombard everyone else's inboxes again.
+
+https://lore.kernel.org/all/aD8hB-qJ4Qm6IFuS@yury/ [1]
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+Changes in v3:
+- Rebased onto next-20250825
+- Link to v2: https://lore.kernel.org/r/20250623-byeword-update-v2-0-cf1fc08a2e1f@collabora.com
+
+Changes in v2:
+- rebase onto next-20250623. This involved solving two conflicts in
+  pcie-dw-rockchip.
+- move new macros to a new hw_bitfield.h, and rename them to
+  FIELD_PREP_WM16*. All patches in the series have been updated to use
+  the new names.
+- hw_bitfield.h: fix macro param re-use in FIELD_PREP_WM16. I don't know
+  if there's any way to do the same in FIELD_PREP_WM16_CONST, but the
+  bitfield.h FIELD_PREP functions don't do it for either, so I'm already
+  strictly better anyway.
+- hw_bitfield.h: remove whitespace after cast operators.
+- change newly introduced U literal suffixes to UL, as they are more
+  commonly used in the kernel.
+- pcie-dw-rockchip: remove the legacy mode flag, as it's unused.
+- Link to v1: https://lore.kernel.org/r/20250612-byeword-update-v1-0-f4afb8f6313f@collabora.com
+
+---
+Nicolas Frattaroli (20):
+      bitmap: introduce hardware-specific bitfield operations
+      mmc: dw_mmc-rockchip: switch to FIELD_PREP_WM16 macro
+      soc: rockchip: grf: switch to FIELD_PREP_WM16_CONST macro
+      media: synopsys: hdmirx: replace macros with bitfield variants
+      drm/rockchip: lvds: switch to FIELD_PREP_WM16 macro
+      phy: rockchip-emmc: switch to FIELD_PREP_WM16 macro
+      drm/rockchip: dsi: switch to FIELD_PREP_WM16* macros
+      drm/rockchip: vop2: switch to FIELD_PREP_WM16 macro
+      phy: rockchip-samsung-dcphy: switch to FIELD_PREP_WM16 macro
+      drm/rockchip: dw_hdmi_qp: switch to FIELD_PREP_WM16 macro
+      drm/rockchip: inno-hdmi: switch to FIELD_PREP_WM16 macro
+      phy: rockchip-usb: switch to FIELD_PREP_WM16 macro
+      drm/rockchip: dw_hdmi: switch to FIELD_PREP_WM16* macros
+      ASoC: rockchip: i2s-tdm: switch to FIELD_PREP_WM16_CONST macro
+      net: stmmac: dwmac-rk: switch to FIELD_PREP_WM16 macro
+      PCI: rockchip: Switch to FIELD_PREP_WM16* macros
+      PCI: dw-rockchip: Switch to FIELD_PREP_WM16 macro
+      PM / devfreq: rockchip-dfi: switch to FIELD_PREP_WM16 macro
+      clk: sp7021: switch to FIELD_PREP_WM16 macro
+      phy: rockchip-pcie: switch to FIELD_PREP_WM16 macro
+
+ MAINTAINERS                                        |   1 +
+ drivers/clk/clk-sp7021.c                           |  22 ++--
+ drivers/devfreq/event/rockchip-dfi.c               |  27 ++--
+ drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    | 142 ++++++++++-----------
+ drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        |  80 ++++++------
+ drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c     |  68 +++++-----
+ drivers/gpu/drm/rockchip/inno_hdmi.c               |  11 +-
+ drivers/gpu/drm/rockchip/rockchip_drm_vop2.h       |   1 -
+ drivers/gpu/drm/rockchip/rockchip_lvds.h           |  21 +--
+ drivers/gpu/drm/rockchip/rockchip_vop2_reg.c       |  15 ++-
+ .../media/platform/synopsys/hdmirx/snps_hdmirx.h   |   6 +-
+ drivers/mmc/host/dw_mmc-rockchip.c                 |   9 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c     |   3 +-
+ drivers/pci/controller/dwc/pcie-dw-rockchip.c      |  42 +++---
+ drivers/pci/controller/pcie-rockchip.h             |  35 ++---
+ drivers/phy/rockchip/phy-rockchip-emmc.c           |   3 +-
+ drivers/phy/rockchip/phy-rockchip-pcie.c           |  70 +++-------
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c  |  11 +-
+ drivers/phy/rockchip/phy-rockchip-usb.c            |  51 +++-----
+ drivers/soc/rockchip/grf.c                         |  35 +++--
+ include/linux/hw_bitfield.h                        |  62 +++++++++
+ sound/soc/rockchip/rockchip_i2s_tdm.h              |   4 +-
+ 22 files changed, 366 insertions(+), 353 deletions(-)
+---
+base-commit: 0c5416a62c0e4df1b3f79b5c74c03cd48df51357
+change-id: 20250610-byeword-update-445c0eea771d
+
+Best regards,
+-- 
+Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
