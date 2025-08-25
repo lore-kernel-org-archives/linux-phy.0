@@ -4,156 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 246FDCA0FF0
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 19:08:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1AABCCA0FE7
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 22:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ycknsX1ah4kWJmjVehIYn7BighzIg18lzouALpRwfKA=; b=Ht9I8G9a/CoJ0E
-	ysmgyOg7u81WYnDmS5F0rwUEPfRYqEl9n2bvVUBxnmdmITgKhq0F8FxUHpQMOnBwHp6Gek07shikd
-	KavmMuLrG09YpixxflBhFFWR+svrQNgjrax5w3v4CPmm2rEaEmvGoRlEeRTt/sXrFkqVavB0j8PEE
-	3XL6GaO5+WpnGh4mO1kPbZZq1D9K9iIKBfyS0i6E0E3FIwZpEPGu/UYPEsjqnz+w/qGBv7qKdQeZZ
-	9FU8ClNQqGkqWWGuTymfpMzv0wA1TBh2nTVtg5h+kfWUWr4/2L6Mb9qShFPXCxqyD9WrCWCqYKEaL
-	qIkA39v/yTOnqjGIylyA==;
+	List-Owner; bh=8jhYmuRXSTRpPoBLWaaT7/HAIE4uPVxOfGuVM827wWY=; b=ZDUlgKm44y2YYp
+	m4RzKhXFqdU+BxzFnmOivfJlHymYE9yia8jM06EPyMXMrXcQRnIGDNq1gTTxRv+f13nCE8IoYyFdA
+	Y+QSYMgCY53Im2JLiWYupsdq0/b3efG7L1aMWflGSW4eBzLjYwyfmVMAVQZN3ax9vp8ocsOe4u87y
+	dBWTwADUSqss/4Om9ijPGyKSilwKEh04/DyaBuy8eTmb2y3pESwTjTZdmzC1eGrOhHbm+0Se83IFq
+	lG2eRlfm7pusna4xk0HLj8xgCr3WmiNvjOIB91JfIUEFUJYSd5tLmlwQRgS0DWA5wpDvfP3NFuddY
+	RcrljiQb6o59U1NiXpVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqcY7-00000009AhB-3kN5;
-	Mon, 25 Aug 2025 19:08:11 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1uqfux-0000000A0oS-2ofG;
+	Mon, 25 Aug 2025 22:43:59 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqZW6-00000008ZYL-0zSz;
-	Mon, 25 Aug 2025 15:53:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CG7Z+ja4Acf8C1ukxlS4PfiGJ+WZVowHz09yiLc/Iaz5I77uSX5K0SHYlU7ro1kclIgXQy7pOf24F9GzcdpjI+xL/vxRXWNpsdT8upYmpOlJsTybVlbPCjOqHLqtuOeVTHJRXDGAkKaBottywwP2NQBtWZZFDgSaBnfQeIx/sulog8CIUojHrPzoakcWod6mT4BedZ/omMe+9vCSi3470UeuEoMwN74ZH3pfcbb5XvQBjsTvZa00M+0Hgg9uCO/aWByTHgunafOGWcg1fKqRO5O0DOXWOAFRcbFClvStni0oE+ZrG4o4EaMOUNeG89viyfR5bye26ibIGxS5X0hSGA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8vVlSV55pG6kwzqGYXdMSZJdmiHsquJ/TnqXl8lFzzM=;
- b=iynWIE9tCDbTcCnI3+OzP+BJQunbwXLn/jxyy3NxJxgNMFnCKfM226px+z8BtGWiCuwbYEzggAx+bfBNfqMKzNmUboSBXi1zTipbARcz7VNk8cuLZYExAlB7hPGRhFTm962KriOYhvKFMFppyOmyVi1B1nT1aBXcyHCSX8GVtz+S8EkPoyT5eMyPquhu0cgDWqnS9LB3HXLnE+9EkMZj4TrAIImXIS/phUH40j2JKCTPSC97Amsf9DRUmZ6KL4zYv0oRbwpaLeBwNkfVxxIrcQbHkZg4YHSuvJdF6ngLLiEGG03tdN3vqNV03TwsjBv4ld8Yt7JZv2rD0ognFlO1pA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8vVlSV55pG6kwzqGYXdMSZJdmiHsquJ/TnqXl8lFzzM=;
- b=eGG8BoYySF6lCkw37Xh0SxeBiQQcslxfhI16Bntzq5Siu6UCfKggGeNrdieKjP1R5EQqG9CchmZo8FcDoSxJe5JWBNoghYzivOMYvZIUWk6Gq2GhY50Vx37uG7ROCIqz4QplgUjTz+oHLFaDMMgFnCI+b3OuJR1iNdQGfh8/eveCoiCmrOj3dv0hAk/zrlNYrP+PxbVHA1m3dNARRb5wn3gcwocT6hbWnigzoKCGntDi2N0ShwokEQb9xs/fqEF1ag+ZzXIorjUm7arac1XJnRTS+/P2D/UmH3shmRkJ5Kx4qVv+G4FhRfz8l3MFrhcq6hqAYmX2rppcArw7A81ZQQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18)
- by AM0PR04MB7171.eurprd04.prod.outlook.com (2603:10a6:208:19c::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9073.13; Mon, 25 Aug
- 2025 15:53:48 +0000
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::e81:b393:ebc5:bc3d]) by DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::e81:b393:ebc5:bc3d%5]) with mapi id 15.20.9073.009; Mon, 25 Aug 2025
- 15:53:48 +0000
-Date: Mon, 25 Aug 2025 11:53:42 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	id 1uqfsE-0000000A09M-0Vop;
+	Mon, 25 Aug 2025 22:41:11 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7B3375C6563;
+	Mon, 25 Aug 2025 22:41:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1F71C4CEED;
+	Mon, 25 Aug 2025 22:41:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1756161669;
+	bh=hcgh5oqMsvEek9C9auiVRt+yT8DF3gRRdz8vIwAO460=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=TuzhpasJSKONwmodl29hxEeu1B+jNP9tEnNDVUu5J+c2hP06IPu8smtAiAy/paA5D
+	 nQ7OpGab4minbAOsbjXXcQSkH/TI61SiMOxo7linJiZDbP6Jo2Fh2gtIHiIiZjiP/N
+	 mf9A26nzWQ+DOGu7DynGHvPP7N0ZHQU2sT68opCJns/zJBs6HWbEVSHmxXzvpyh5pp
+	 xl3cWCdgAOSNlciX9GaNuWSCTfhoxsI0v3bx0ke0VA8L3vRNHy/ALm9wKcVRs/LBDI
+	 Jfa0gF4IsoAKqhjqPYzyz0kQSIj32X8rbLnBzfg2E6cmQXIvI3A4c5qKxfv4HGvFMC
+	 zijfQ4ECgtsWA==
+Date: Mon, 25 Aug 2025 17:41:08 -0500
+From: Rob Herring <robh@kernel.org>
+To: Michael Riesch <michael.riesch@collabora.com>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Haibo Chen <haibo.chen@nxp.com>,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v2 3/5] arm64: dts: imx95-15x15-evk: Use phys to replace
- xceiver-supply
-Message-ID: <aKyHBqT+VG2e7PNf@lizhi-Precision-Tower-5810>
-References: <20250825-can-v2-0-c461e9fcbc14@nxp.com>
- <20250825-can-v2-3-c461e9fcbc14@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20250825-can-v2-3-c461e9fcbc14@nxp.com>
-X-ClientProxiedBy: AS4P250CA0018.EURP250.PROD.OUTLOOK.COM
- (2603:10a6:20b:5e3::13) To DB9PR04MB9626.eurprd04.prod.outlook.com
- (2603:10a6:10:309::18)
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Kever Yang <kever.yang@rock-chips.com>,
+	Jagan Teki <jagan@amarulasolutions.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Collabora Kernel Team <kernel@collabora.com>,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 3/7] dt-bindings: phy: rockchip-inno-csi-dphy: add
+ rk3588 variant
+Message-ID: <20250825224108.GA766877-robh@kernel.org>
+References: <20250616-rk3588-csi-dphy-v2-0-7a94f079b712@collabora.com>
+ <20250616-rk3588-csi-dphy-v2-3-7a94f079b712@collabora.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR04MB9626:EE_|AM0PR04MB7171:EE_
-X-MS-Office365-Filtering-Correlation-Id: e5f047ef-4dec-4d3b-e55a-08dde3ef9494
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|1800799024|376014|52116014|7416014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?8YT1awrY7SU5oAxfHAXxSwED2P0cqsUY/4e5hjg8Ix+yeRyL3ph1o2G3V9y1?=
- =?us-ascii?Q?LU9K8jjGOMc2B8XIO9vXftiiptoAt9vMXUyd+NnrDrStlPJBOCO75b7VBtyG?=
- =?us-ascii?Q?b+9cs+S7syTcC1aWDY9q4BUTL3Gxu0s4D3B2bfGBfaXSnOtEBgKJvRsAe+N9?=
- =?us-ascii?Q?NV9JKR8NZzme/nuU6i66fqEzMTW4WJIPYty04fu1+rm6jY3RMHpq8fFc92Yc?=
- =?us-ascii?Q?IvyyB4J3eS+9KfiDRnlxCsYU+aI1PJjecJJ/8XJCk+p/mO2mJh5HMt5c5uEA?=
- =?us-ascii?Q?pNz48JJa0g/+rxG8+Ip5olO7/o+LWdh6ebckv3yIQpAkvGZdI0ZIh1/B1KEi?=
- =?us-ascii?Q?nf83ZGXVw0pwfKEcx4AvpqZom3vGVM4LhI8a0yuRQmrLe1im57v3EATh+kBE?=
- =?us-ascii?Q?X5vpt8S5b85bQFnPoxgPiovbdmcxkl3QQg1UiOUW9M+TVHrSExDvU3cf7mTg?=
- =?us-ascii?Q?2FAI9bOgM10ttDfeLx/ByiJ8NK5VL8d+hoeWxxyzOM4h2m5BGMwuSm21XSZo?=
- =?us-ascii?Q?1W3U6GTrcLIJCwpWJ6Syu5aGBNIUPVjoiJOCl0c6jf63qEg2vkW2S/qw1w1x?=
- =?us-ascii?Q?/van/xbYGKN84Gvt0Emr5aBS6eswGXoaXt4vfbfgZV63A2XLhnggOHopb+2+?=
- =?us-ascii?Q?8Kc/CEDAIPzOs29qHscDys11ORl4rcoXC7IE7VojNVI8GLbmeM7wZluvcYPo?=
- =?us-ascii?Q?wwbK5pHaXH3aDpTP/eI8wKVKkvBDkmN+GJPJh/ulu7CjEFajz99s481eeclD?=
- =?us-ascii?Q?Basnsyn96vpvKQbFKJZqa8Wzv9ILN5/BCoti1FnIyT+pzX4HnWXb5zcpDW4y?=
- =?us-ascii?Q?8C3F00AQf3/yQlI9pcpYDx13XqQE8eE2+M7UOATQUoSK1KFsN16LEVP7D7Pg?=
- =?us-ascii?Q?lF2iHN1zHRc13CtcYNuR9Y4uZKWVo0CGHgkjb97wXXru+vGX2Bth+R1VqS3e?=
- =?us-ascii?Q?g22epcpO52YAU2rzO3SjO7Qq2qxIvUIALyepdAxkkZmE7ZRK0y043zhphupx?=
- =?us-ascii?Q?tkfTvCYGQOACOfROBaOHrWVRCx3NwLLVa5vs4UNEQSrenEyd9C/OlGurUo/G?=
- =?us-ascii?Q?u6izHKkc0Beu432hVJrX1Nclls3aSHYEiTEIjRkeN5GzcK0gTzO/biEqsbM4?=
- =?us-ascii?Q?yd4Mle8EubfReKDUeNGy+S1lbJUOMk0bwBlapiOMBnCIqg0yfh3nM6EOs/+d?=
- =?us-ascii?Q?9smmVm4k80BAh5CtRZKpuB0Iq8nh+b8hXf1scviux2pom9p1+0ixnBmIalDF?=
- =?us-ascii?Q?EvIh3LuVkBVDHNO7aS8ElzSpUOMI/mdbj37JOjpBy+TWkR+E0FHVyquRR4Mo?=
- =?us-ascii?Q?+83EE19XhHX9p6aXPvdvDe3K4Hq0k98+z0OoEwAym3QtNG4oh0lQtox8/b0Y?=
- =?us-ascii?Q?3RO6WPPMsIOY9OJn1Lq+PnXI1J3bZJQZbzIz+KiHpJIFpTfYEmxslikV7emd?=
- =?us-ascii?Q?mTWJCCfd5u9NAoGbyenEGQ09YuSkR5CiF4DMc3B0W3r6RNVPsN5RlQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9626.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(1800799024)(376014)(52116014)(7416014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?t9r5qqqwKUqQLSXw1+led3divjbFjrYlT2HNzq+Zc4VpB/iA4QRIn3Mu2DNy?=
- =?us-ascii?Q?tqbRQPLbMLYxuS+dJMguW6ZnWVGxY1ymAqL1r/J5MdQ51yB1SIq/uQRoDauj?=
- =?us-ascii?Q?dF6auykgOper5/hGEQIii8uwWoDVTotujBzwwnnB+/Bl5CpAr1IlbOEJS0tQ?=
- =?us-ascii?Q?wKdGATQ+6MSp1pQoCsoGpHRnAukKcKn+XcI4bSEp4pV3g2WtPiQmWRw8kThz?=
- =?us-ascii?Q?yv81qyzWXyOXF73id1Uly6s0x+GN4rU5DnvfpAPMgAfRuObr8UVqDwNShecw?=
- =?us-ascii?Q?kcn8Y/XKMYgqHbglPEZqDNz0bGCDdYGh3mmb2K2YNUXEj3stjI+3gJbNE40V?=
- =?us-ascii?Q?Tp5cBzEEmAhvObWZhWbEsaPlQEmaK27hec3ZGi4Ea9Z5qGgSqVfklK5/ZdP6?=
- =?us-ascii?Q?RAKnyi37dSl4hx2E3fuzIJ9trbG3siC1nOuouwPMFX444H8BpjWTh3c90B1z?=
- =?us-ascii?Q?2dGSZIi+MihV6fP686cnhPcfumCgBhO2lWMZb9lJ5sfh1vP2kn5TBcBH4BcR?=
- =?us-ascii?Q?hP2BgndHFTcGL/3iMayk47OPwj7s8JA9A9EIEsjMwIn5CrXo3ufSRpJXSg9W?=
- =?us-ascii?Q?9hNSAzpF20c6pRQ/thbhPMnenkOlpka89PMyVkUwko/LMgop4J3c/V/3EqRk?=
- =?us-ascii?Q?Q9UBuNSNh7uGdVq70RfnwwazjtIHYboXpwCT8vG+PtrnIAV/N8TS7kIpiw/5?=
- =?us-ascii?Q?B57fNKVpYPYxQKrePB8EW9slKxefyeqd50XeIYD0IEbHuR15MN1T8BvDb1gE?=
- =?us-ascii?Q?5/68EhiUyLn9RXH7MneTFuiwv8djsHxa1Gu+Y+C5Ia7OatQYpPwUQYhF6wOJ?=
- =?us-ascii?Q?5fLXLWxhu4I56+xFD4yFioMcQ7jMAwjOKcsAZqn7ZjSsXi+OYVNbX+XCqcX2?=
- =?us-ascii?Q?Ne4U6gV54cM4apKn8rPcmrQ9N8NQI5miyc5i1yh7UfiDZ4lDLtmRdPB+M3CB?=
- =?us-ascii?Q?Xa724q/AFRPCOrtp9vLA20OfVi65yJ3pcPEGlyy10aE4k5ayecBu9zuoHD4l?=
- =?us-ascii?Q?YAc3c6gwjDLfdEpRF+Fbfl/DmcxEyy5JGeNSPDS+VIFQTFUZNVbG3NWFlSS7?=
- =?us-ascii?Q?iyn2XJYD8ZmLQuj/ut+XDuUJHaUfpJnGTVEWXQCevcRvPEXVE157VGNmAFOy?=
- =?us-ascii?Q?IVn4VCFerHWJfdakYGsgUYvvdK6+XCux5fwfrfjMJ1NS6Tz3k9rV/ykjkxzk?=
- =?us-ascii?Q?+LgnjfIsmempIF7M1CqHrVb69PV7/ks9j7PlDgdiMFPTWRuC3JS/HZRmN2wT?=
- =?us-ascii?Q?r/fT6LlA3HQ0/iKeXgonQfr/7tZ1H19/c1AOzSFer4woKFMYTePrtpP/OcEW?=
- =?us-ascii?Q?eA9Y5TzNDf5O4lb5SUmfv/UsExBgUj4Ra6Zrfgm9K+UY0AoiAQh9ALXUDyQs?=
- =?us-ascii?Q?HmoVDQEJ7zDm4CxZK3g3d2JvoX8qoYTMNzdOD8PtFkwjEXCn2XI8uYRM0IVo?=
- =?us-ascii?Q?xqt0XPn6n3snCA0C1ckwkq1oi8ub+SooqSv0aigxFNYAzPCx12os2Lp9X1Ry?=
- =?us-ascii?Q?LhiWqgRVW9B0/90guYobaTvTMV6DwvB3zLvi8utzff8gM/o3qhw7jhOJ5qrB?=
- =?us-ascii?Q?aJOdqMvkOgMvQ+qmxrGDBDAyfTcqfKMrZp49Qg27?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e5f047ef-4dec-4d3b-e55a-08dde3ef9494
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB9626.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Aug 2025 15:53:48.7307
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lfCR7DkwaNED+ixnnBCNrVKPHcUP7XXy3gRQ9LFbzjzj/ZJhb24OVhQ2lfxxH3txZXLoOPmpozs/+achnxSgbg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB7171
+Content-Disposition: inline
+In-Reply-To: <20250616-rk3588-csi-dphy-v2-3-7a94f079b712@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250825_085354_276560_E8AB9A49 
-X-CRM114-Status: GOOD (  16.58  )
+X-CRM114-CacheID: sfid-20250825_154110_249139_18B9AFA4 
+X-CRM114-Status: GOOD (  17.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,53 +85,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 25, 2025 at 04:36:44PM +0800, Peng Fan wrote:
-> The TJA1051T/3 used on i.MX95-15x15-EVK is actually high-speed CAN
-> transceiver, not a regulator supply. So use phys to reflect the truth.
->
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
+On Tue, Aug 19, 2025 at 01:00:37AM +0200, Michael Riesch wrote:
+> The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
+> Add the variant and allow for the additional reset.
+> 
+> Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
 > ---
->  arch/arm64/boot/dts/freescale/imx95-15x15-evk.dts | 13 ++++++-------
->  1 file changed, 6 insertions(+), 7 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/freescale/imx95-15x15-evk.dts b/arch/arm64/boot/dts/freescale/imx95-15x15-evk.dts
-> index 46f6e0fbf2b09106e6e726ff8b61522d1359cfa4..f6197ba356d49b97bf7287c3f0f86ef84f89bac9 100644
-> --- a/arch/arm64/boot/dts/freescale/imx95-15x15-evk.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx95-15x15-evk.dts
-> @@ -89,12 +89,11 @@ reg_audio_switch1: regulator-audio-switch1 {
->  		gpio = <&pcal6524 0 GPIO_ACTIVE_LOW>;
->  	};
->
-> -	reg_can2_stby: regulator-can2-stby {
-> -		compatible = "regulator-fixed";
-> -		regulator-max-microvolt = <3300000>;
-> -		regulator-min-microvolt = <3300000>;
-> -		regulator-name = "can2-stby";
-> -		gpio = <&pcal6524 14 GPIO_ACTIVE_LOW>;
-> +	flexcan2_phy: can-phy {
-> +		compatible = "nxp,tja1051", "ti,tcan1043";
-> +		#phy-cells = <0>;
-> +		max-bitrate = <1000000>;
-> +		standby-gpios = <&pcal6524 14 GPIO_ACTIVE_HIGH>;
->  	};
->
->  	reg_m2_pwr: regulator-m2-pwr {
-> @@ -300,7 +299,7 @@ &enetc_port1 {
->  &flexcan2 {
->  	pinctrl-0 = <&pinctrl_flexcan2>;
->  	pinctrl-names = "default";
-> -	xceiver-supply = <&reg_can2_stby>;
-> +	phys = <&flexcan2_phy>;
->  	status = "okay";
->  };
->
->
-> --
-> 2.37.1
->
+>  .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 60 ++++++++++++++++++++--
+>  1 file changed, 56 insertions(+), 4 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> index 42da616ae2e3..10197cc9dc47 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+> @@ -21,6 +21,7 @@ properties:
+>        - rockchip,rk3326-csi-dphy
+>        - rockchip,rk3368-csi-dphy
+>        - rockchip,rk3568-csi-dphy
+> +      - rockchip,rk3588-csi-dphy
+>  
+>    reg:
+>      maxItems: 1
+> @@ -39,18 +40,50 @@ properties:
+>      maxItems: 1
+>  
+>    resets:
+> -    items:
+> -      - description: exclusive PHY reset line
+> +    minItems: 1
+> +    maxItems: 2
+
+Add a description for the 2nd reset here.
+
+>  
+>    reset-names:
+> -    items:
+> -      - const: apb
+> +    minItems: 1
+> +    maxItems: 2
+
+Add 'phy' to the list here and just minItems.
+
+>  
+>    rockchip,grf:
+>      $ref: /schemas/types.yaml#/definitions/phandle
+>      description:
+>        Some additional phy settings are access through GRF regs.
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - rockchip,px30-csi-dphy
+> +              - rockchip,rk1808-csi-dphy
+> +              - rockchip,rk3326-csi-dphy
+> +              - rockchip,rk3368-csi-dphy
+> +              - rockchip,rk3568-csi-dphy
+> +    then:
+> +      properties:
+> +        resets:
+> +          items:
+> +            - description: exclusive PHY reset line
+> +
+> +        reset-names:
+> +          items:
+> +            - const: apb
+
+Then just 'maxItems: 1' here.
+
+> +    else:
+> +      properties:
+> +        resets:
+> +          items:
+> +            - description: APB reset line
+> +            - description: PHY reset line
+> +
+> +        reset-names:
+> +          items:
+> +            - const: apb
+> +            - const: phy
+
+And 'minItems: 2' here.
+
+> +
+>  required:
+>    - compatible
+>    - reg
+> @@ -77,3 +110,22 @@ examples:
+>          reset-names = "apb";
+>          rockchip,grf = <&grf>;
+>      };
+> +  - |
+> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
+> +
+> +    soc {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        phy@fedc0000 {
+> +            compatible = "rockchip,rk3588-csi-dphy";
+> +            reg = <0x0 0xfedc0000 0x0 0x8000>;
+> +            clocks = <&cru PCLK_CSIPHY0>;
+> +            clock-names = "pclk";
+> +            #phy-cells = <0>;
+> +            resets = <&cru SRST_P_CSIPHY0>, <&cru SRST_CSIPHY0>;
+> +            reset-names = "apb", "phy";
+> +            rockchip,grf = <&csidphy0_grf>;
+> +        };
+> +    };
+> 
+> -- 
+> 2.39.5
+> 
 
 -- 
 linux-phy mailing list
