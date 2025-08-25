@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04CF0CA0FF1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBA1BCA0FEE
 	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 17:00:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPACXvKc6peuGaf7V4ZNZ3B2dk9ixixaB5qGbC2966w=; b=Lv08Y2AqPmN0+8
-	GFHiqNp6jB4IopE8++iGnfvmdKjAhOk4G5uct6l2NzcnH9DtrYp1dp5r3ZkDLa8pMSz/DOVHWyyCf
-	0I/3uXhgYw0RPOJvD8/0lnntIpcQGEaExBeTcYGJUGLgfIu1JVmG08pNIXtJVZ1yX3yx56MIBgS0E
-	PJUnDtxIpjKjEFSJ9g5MC16RNJuGUxymYXJ2hnhTpCktJ5KTGxqSpguZO4kE8olAzLZkp5fXbWA6W
-	e9ZLn56cI4hZFzkv+kJ8L6yiDht+W2nUEc1yZ1TULANCyyrFpysPj4cAjjvguXVuudHCgEjZq8TOF
-	A/3NlXEsfj91J3zT+Fvg==;
+	List-Owner; bh=yVZvutXtTmcFVUDVHYnn1pT8exA+JOmFxRcfRSw9lSA=; b=Q3h/81+tg7x1dj
+	PLkHrIuQE2RNnNqbnDNfS4Rc1NHGrde5ARVZaxmWjS41StL71un07PjTvRmHfi7jp1sSjuSbIVgqT
+	JimEfxg5J1rn/ss7l+rSFGXtlZZiidFI0Gp7qoBxhkRp22dIjIdc/3dElH7yXgzt8T98icVyHa+CC
+	BMobPlst6FPUCz0/Puvlh3f0T5u1/hQzZT/O9cW0+l+xdwlG05QujKSlCQHYmM4Q8Tzm1gI1JWSKC
+	zt3l4p2acwnBkwcVXVcPKMnzW93C794+7doMNTqJRU35zhPrgM0pz4CazQEh0ha7+DJrwpCv4UGlt
+	iPqkeN6N0fAE4coveXzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqaYp-00000008kS8-2zjp;
-	Mon, 25 Aug 2025 17:00:47 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uqaYq-00000008kTR-2IX8;
+	Mon, 25 Aug 2025 17:00:48 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqZnO-00000008coI-1s1y;
-	Mon, 25 Aug 2025 16:11:46 +0000
+	id 1uqZnp-00000008crL-3PeM;
+	Mon, 25 Aug 2025 16:12:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 94CFA601F6;
-	Mon, 25 Aug 2025 16:11:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7597DC4CEED;
-	Mon, 25 Aug 2025 16:11:43 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 200436023C;
+	Mon, 25 Aug 2025 16:12:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68F2DC4CEED;
+	Mon, 25 Aug 2025 16:11:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756138305;
-	bh=aNQomJuptJF2BKrENvq9UPqvAr9yynnLcyovKghIDS4=;
+	s=k20201202; t=1756138321;
+	bh=lRmwIXXuuVxuUeGAauGH9Bx39v/B949+O0RVAstjSuk=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=qbdBBockwrqRSRbw1MmR0KGBgFfM9D+8u941MSUikW6NAWC90PRGbB0i6q8xVc7EB
-	 ITtR7PKuJRYXp473MCFXNHbrMeu1xzcPS8rvekbCjxur0Cgas0asZxh/sg5bPCJ4Yt
-	 ohpHqVkmF+hyu51Nre17dv6f2mgh2HiI8NuD9Xb3cR84DWnrVzbPaGSQrRHxnl1U6y
-	 2IyWulIJ6dZe/CXBxBaGj/+CWPuG78wYZ8PvwEfbFooB8+zBx4OPjXJ2w0JgYdY3gf
-	 xrAbQ/hJOPOYzKDzm6FFiiBBES+bP9TnqmD5pPqEw1PnWcfr1jdJhfYICS0XGjSeg3
-	 AmjAHniT18djA==
-Date: Mon, 25 Aug 2025 09:11:42 -0700
+	b=cQ7VlgxHju8BEVWwXx8S5s9QO0VAGvXQFLrv/Uk7vG//TkWLtQ958x6s8s27sBA9K
+	 ZcC+Vqlxi7SLRsijcAT4VR40IpnOE02lPJoJxRdH4JLlfsembYa20HUZxxM4Ykvuhd
+	 gR9Ewz0C17+TNmcjSvn8rsyUEZ3eHGOfihpu+yQUtN2eQgqTq4UevTo4hW53DjKucR
+	 RcfXKEtkDNMjSmnffIYVrTmNpy0yJ+On9axRFVmIFarvx0PpkxtcTqBkLOK2JQ/CFW
+	 UV/FEDmGacDp6s4U8xtBgsmf+FYq4bHcugm4JlhafhGE0dBr3Z/OCxvHsJZPXPRon0
+	 vH/QeTkJt0PjQ==
+Date: Mon, 25 Aug 2025 09:11:58 -0700
 From: Jakub Kicinski <kuba@kernel.org>
 To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 Cc: Yury Norov <yury.norov@gmail.com>, Rasmus Villemoes
@@ -76,12 +76,12 @@ Cc: Yury Norov <yury.norov@gmail.com>, Rasmus Villemoes
  linux-sound@vger.kernel.org, netdev@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev
-Subject: Re: [PATCH v3 01/20] bitmap: introduce hardware-specific bitfield
- operations
-Message-ID: <20250825091142.3735f1fe@kernel.org>
-In-Reply-To: <20250825-byeword-update-v3-1-947b841cdb29@collabora.com>
+Subject: Re: [PATCH v3 15/20] net: stmmac: dwmac-rk: switch to
+ FIELD_PREP_WM16 macro
+Message-ID: <20250825091158.07893b12@kernel.org>
+In-Reply-To: <20250825-byeword-update-v3-15-947b841cdb29@collabora.com>
 References: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
-	<20250825-byeword-update-v3-1-947b841cdb29@collabora.com>
+	<20250825-byeword-update-v3-15-947b841cdb29@collabora.com>
 MIME-Version: 1.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,10 +99,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 25 Aug 2025 10:28:21 +0200 Nicolas Frattaroli wrote:
-> Hardware of various vendors, but very notably Rockchip, often uses
-> 32-bit registers where the upper 16-bit half of the register is a
-> write-enable mask for the lower half.
+On Mon, 25 Aug 2025 10:28:35 +0200 Nicolas Frattaroli wrote:
+> The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
+> drivers that use constant masks.
+> 
+> Like many other Rockchip drivers, dwmac-rk has its own HIWORD_UPDATE
+> macro. Its semantics allow us to redefine it as a wrapper to the shared
+> hw_bitfield.h FIELD_PREP_WM16 macros though.
+> 
+> Replace the implementation of this driver's very own HIWORD_UPDATE macro
+> with an instance of FIELD_PREP_WM16 from hw_bitfield.h. This keeps the
+> diff easily reviewable, while giving us more compile-time error
+> checking.
+> 
+> The related GRF_BIT macro is left alone for now; any attempt to rework
+> the code to not use its own solution here would likely end up harder to
+> review and less pretty for the time being.
 
 Acked-by: Jakub Kicinski <kuba@kernel.org>
 
