@@ -4,99 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56C1DCA0FE1
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 11:28:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6218CA0FE1
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 11:41:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9rqY6S/CiKo8/BCxc+Mj0VzAIRyM5L8zKs6wcDYY2Q=; b=1OnCfXJrxi0u+y
-	tK2IS7lSEMnrdZkvc3mwBxnxnh1U3jf1FBIlyZgDgfSDejX77Hbdzxx5VjTWtohAYG7Yw34GtlZi6
-	JjW+KQBsALnKIHaWAcYlpbl2ZUJEMrtM2lGV81JnO+f5r29e0jIADJm1KmOHsQR9bpjm46zYaXCZk
-	me1RIzI/pDzOa/zk8/wpK+68haNrRxPmiDMATfUb6gZgDbN7pMncHAf2rP+BX2p7yYxDp/nSAMoVd
-	hL11R5Rrn/9oxDomNibves1Bx+DOfmfhLLzXjb78tU3pV85skqwPboHJviFmHWjfWgIVeDZ9SCFdI
-	LDQrnLqaVm/AB5V8W/jA==;
+	List-Owner; bh=TCEXZ42J0k4gyimhIrlIfcZFR2Cf9J2PsKGX6GdnugA=; b=l69S4/fXZpLyCA
+	5+2ZAHYSUqVO+zr0oE9k+aZtIipBKj3Hxhj/XphrvjawVWa6yBFit2OOGglTR5b+UGTUqlSwOxOHu
+	YnqLRca0iB6lV9Ka9tIQDmcy80+nJ9skSf2KUKbD8QpOZqmttZrYZvhFG6Jb1zI812fsx2fEtuImL
+	/JFrZBl6rVglBlfibtiVa7J8nFrQ+cA7/VYDD3wlwkYQfcJzgF0KBL+fCcFtzjHREg9vZZ0cppX8p
+	TtjurBNiU10kotijPjQY3H0AzlQeJGnYIG3cnq/LbOI/5C58mPlW1effZYqSxTOtwG8WlqKJWF48Q
+	nZpP9/UwuF33/GnWFl4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqVN1-00000007jlE-3TEj;
-	Mon, 25 Aug 2025 11:28:15 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1uqVaA-00000007n1u-2Gnm;
+	Mon, 25 Aug 2025 11:41:50 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqScY-00000007JZX-0kVd;
-	Mon, 25 Aug 2025 08:32:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1756110679; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=Vx6gp429tq1Ox0cbTujtGfi9Tra51BhIxPnE5/htlFd0KhozMjos52HzY2XBygs9usBMImQ8j4ZIlu+vqGci5x//RooCJ+/wt97WZQMsCKFhAdpKYvhT1f+9qvmtPUleDKyKzumzUVpe/TrJESM983lYmXUqntPlhgHnhUyTdfQ=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1756110679; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=DqxKvnqRhaZ5mQnV3ULLGjQxPfgB8cvi2k3VYfDnj1M=; 
-	b=M4WdU+gMawFwe3iLbMwc+uubuh6RVaty6WVBdK7WP/PHAS4NwEWHJq96jLnQgLjrbOF3L6BU9HVKzSX2DYZs1Xpw6KwPRYZrSKPwplgxqhXSvMegojLjIfKuqtl0vvYY3rw8md07WAR0fjW0WjH5zM18eBF015ptvRb84Ny9B4w=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110679;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=DqxKvnqRhaZ5mQnV3ULLGjQxPfgB8cvi2k3VYfDnj1M=;
-	b=EQrsdJhHMN/8J8QE7YiBwhjTVrouB33ojbM30iNrD5mD8NRXcJ42NKoR2YO2yNAr
-	/gXFOP69mJNeE7Qkd6ToYd8rULYiofY6XCSnO3S4aSVEUmUlB3lsYjw0B2ZuWHLElhe
-	qn5KOr1OerYMNGdItQwhV1UIiaoOWW6UuAdGH25g=
-Received: by mx.zohomail.com with SMTPS id 1756110677273496.9828117708694;
-	Mon, 25 Aug 2025 01:31:17 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 25 Aug 2025 10:28:30 +0200
-Subject: [PATCH v3 10/20] drm/rockchip: dw_hdmi_qp: switch to
- FIELD_PREP_WM16 macro
+	id 1uqTin-00000007XGj-0TSb
+	for linux-phy@lists.infradead.org;
+	Mon, 25 Aug 2025 09:42:38 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uqTiU-0002bt-GY; Mon, 25 Aug 2025 11:42:18 +0200
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uqTiS-0022ru-2W;
+	Mon, 25 Aug 2025 11:42:16 +0200
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uqTiS-000J5K-2C;
+	Mon, 25 Aug 2025 11:42:16 +0200
+Message-ID: <0501e21d1b6c99d18fe7e660f38b9bfafc76de53.camel@pengutronix.de>
+Subject: Re: [PATCH 4/7] phy: allwinner: a523: add USB3/PCIe PHY driver
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: iuncuim <iuncuim@gmail.com>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu
+ Tsai <wens@csie.org>,  Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel
+ Holland <samuel@sholland.org>, Andre Przywara <andre.przywara@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,  Stephen Boyd
+ <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+	linux-clk@vger.kernel.org, linux-sunxi@lists.linux.dev
+Date: Mon, 25 Aug 2025 11:42:16 +0200
+In-Reply-To: <20250816084700.569524-5-iuncuim@gmail.com>
+References: <20250816084700.569524-1-iuncuim@gmail.com>
+	 <20250816084700.569524-5-iuncuim@gmail.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-Message-Id: <20250825-byeword-update-v3-10-947b841cdb29@collabora.com>
-References: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
-In-Reply-To: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
-To: Yury Norov <yury.norov@gmail.com>, 
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, 
- Jaehoon Chung <jh80.chung@samsung.com>, 
- Ulf Hansson <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>, 
- Shreeya Patel <shreeya.patel@collabora.com>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, 
- Sandy Huang <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>, 
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- Shawn Lin <shawn.lin@rock-chips.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
- MyungJoo Ham <myungjoo.ham@samsung.com>, 
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>, 
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>, 
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
-Cc: kernel@collabora.com, linux-kernel@vger.kernel.org, 
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
- linux-sound@vger.kernel.org, netdev@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org, 
- linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-X-Mailer: b4 0.14.2
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250825_013206_274677_58336119 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20250825_024237_143161_263ABCA0 
+X-CRM114-Status: GOOD (  25.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,209 +84,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
-drivers that use constant masks.
+On Sa, 2025-08-16 at 16:46 +0800, iuncuim wrote:
+> From: Mikhail Kalashnikov <iuncuim@gmail.com>
+> 
+> The A523 family of processors features a combophy for USB 3.0 and PCIe,
+> developed by Innosilicon. Simultaneous operation of both interfaces is
+> not supported by design.
+> Currently, the driver only adds support for USB 3.0. PCIe support is
+> currently unavailable and will be added later.
+> All data on phy configuration is taken from the manufacturer's BSP driver.
+> 
+> Signed-off-by: Mikhail Kalashnikov <iuncuim@gmail.com>
+> ---
+>  drivers/phy/allwinner/Kconfig                |   9 +
+>  drivers/phy/allwinner/Makefile               |   1 +
+>  drivers/phy/allwinner/phy-sun55i-usb3-pcie.c | 267 +++++++++++++++++++
+>  3 files changed, 277 insertions(+)
+>  create mode 100644 drivers/phy/allwinner/phy-sun55i-usb3-pcie.c
+> 
+> diff --git a/drivers/phy/allwinner/Kconfig b/drivers/phy/allwinner/Kconfig
+> index fb584518b..af2a82e51 100644
+> --- a/drivers/phy/allwinner/Kconfig
+> +++ b/drivers/phy/allwinner/Kconfig
+> @@ -57,3 +57,12 @@ config PHY_SUN50I_USB3
+>  	  part of Allwinner H6 SoC.
+>  
+>  	  This driver controls each individual USB 2+3 host PHY combo.
+> +
+> +config PHY_SUN55I_USB3_PCIE
+> +	tristate "Allwinner A523 Innosilicon USB3/PCIe Combophy Driver"
+> +	depends on ARCH_SUNXI || COMPILE_TEST
+> +	depends on RESET_CONTROLLER
 
-Replace this driver's HIWORD_UPDATE with the FIELD_PREP_WM16 macro from
-hw_bitfield.h. While at it, disambiguate the GRF write to SOC_CON7 by
-splitting the definition into the individual bitflags. This is done
-because FIELD_PREP_WM16 shifts the value for us according to the mask,
-so writing the mask to itself to enable two bits is no longer something
-that can be done. It should also not be done anyway because it hides the
-true meaning of those two individual bit flags.
+This dependency is not necessary. The reset controller API is stubbed
+out in case  RESET_CONTROLLER is disabled.
 
-HDMI output with this patch has been tested on both RK3588 and RK3576.
-On the former, with both present HDMI connectors.
+ARCH_SUNXI selects ARCH_HAS_RESET_CONTROLLER, which default-enables
+RESET_CONTROLLER.
 
-Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Tested-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
----
- drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c | 68 +++++++++++++-------------
- 1 file changed, 33 insertions(+), 35 deletions(-)
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the Allwinner PCIe/USB3.0 combo PHY
+> +	  with Innosilicon IP block founded in A523/A527/H728/T527 SOC
+> diff --git a/drivers/phy/allwinner/Makefile b/drivers/phy/allwinner/Makefile
+> index bd74901a1..5948a27ef 100644
+> --- a/drivers/phy/allwinner/Makefile
+> +++ b/drivers/phy/allwinner/Makefile
+> @@ -3,3 +3,4 @@ obj-$(CONFIG_PHY_SUN4I_USB)		+= phy-sun4i-usb.o
+>  obj-$(CONFIG_PHY_SUN6I_MIPI_DPHY)	+= phy-sun6i-mipi-dphy.o
+>  obj-$(CONFIG_PHY_SUN9I_USB)		+= phy-sun9i-usb.o
+>  obj-$(CONFIG_PHY_SUN50I_USB3)		+= phy-sun50i-usb3.o
+> +obj-$(CONFIG_PHY_SUN55I_USB3_PCIE)		+= phy-sun55i-usb3-pcie.o
+> diff --git a/drivers/phy/allwinner/phy-sun55i-usb3-pcie.c b/drivers/phy/allwinner/phy-sun55i-usb3-pcie.c
+> new file mode 100644
+> index 000000000..905c54a67
+> --- /dev/null
+> +++ b/drivers/phy/allwinner/phy-sun55i-usb3-pcie.c
+> @@ -0,0 +1,267 @@
+[...]
+> +static int sun55i_usb3_pcie_phy_init(struct phy *_phy)
+> +{
+> +	struct sun55i_usb3_pcie_phy *phy = phy_get_drvdata(_phy);
+> +
+> +	sun55i_usb3_phy_open(phy);
 
-diff --git a/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
-index 7d531b6f4c098c6c548788dad487ce4613a2f32b..ed6e8f036f4b3d76425725c130394cedf039acd0 100644
---- a/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw_hdmi_qp-rockchip.c
-@@ -9,6 +9,7 @@
- 
- #include <linux/clk.h>
- #include <linux/gpio/consumer.h>
-+#include <linux/hw_bitfield.h>
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/platform_device.h>
-@@ -66,7 +67,8 @@
- #define RK3588_HDMI1_HPD_INT_MSK	BIT(15)
- #define RK3588_HDMI1_HPD_INT_CLR	BIT(14)
- #define RK3588_GRF_SOC_CON7		0x031c
--#define RK3588_SET_HPD_PATH_MASK	GENMASK(13, 12)
-+#define RK3588_HPD_HDMI0_IO_EN_MASK	BIT(12)
-+#define RK3588_HPD_HDMI1_IO_EN_MASK	BIT(13)
- #define RK3588_GRF_SOC_STATUS1		0x0384
- #define RK3588_HDMI0_LEVEL_INT		BIT(16)
- #define RK3588_HDMI1_LEVEL_INT		BIT(24)
-@@ -80,7 +82,6 @@
- #define RK3588_HDMI0_GRANT_SEL		BIT(10)
- #define RK3588_HDMI1_GRANT_SEL		BIT(12)
- 
--#define HIWORD_UPDATE(val, mask)	((val) | (mask) << 16)
- #define HOTPLUG_DEBOUNCE_MS		150
- #define MAX_HDMI_PORT_NUM		2
- 
-@@ -185,11 +186,11 @@ static void dw_hdmi_qp_rk3588_setup_hpd(struct dw_hdmi_qp *dw_hdmi, void *data)
- 	u32 val;
- 
- 	if (hdmi->port_id)
--		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR,
--				    RK3588_HDMI1_HPD_INT_CLR | RK3588_HDMI1_HPD_INT_MSK);
-+		val = (FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_CLR, 1) |
-+		       FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_MSK, 0));
- 	else
--		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR,
--				    RK3588_HDMI0_HPD_INT_CLR | RK3588_HDMI0_HPD_INT_MSK);
-+		val = (FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_CLR, 1) |
-+		       FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_MSK, 0));
- 
- 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
- }
-@@ -218,8 +219,8 @@ static void dw_hdmi_qp_rk3576_setup_hpd(struct dw_hdmi_qp *dw_hdmi, void *data)
- 	struct rockchip_hdmi_qp *hdmi = (struct rockchip_hdmi_qp *)data;
- 	u32 val;
- 
--	val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR,
--			    RK3576_HDMI_HPD_INT_CLR | RK3576_HDMI_HPD_INT_MSK);
-+	val = (FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_CLR, 1) |
-+	       FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_MSK, 0));
- 
- 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
- 	regmap_write(hdmi->regmap, 0xa404, 0xffff0102);
-@@ -254,7 +255,7 @@ static irqreturn_t dw_hdmi_qp_rk3576_hardirq(int irq, void *dev_id)
- 
- 	regmap_read(hdmi->regmap, RK3576_IOC_HDMI_HPD_STATUS, &intr_stat);
- 	if (intr_stat) {
--		val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_MSK, RK3576_HDMI_HPD_INT_MSK);
-+		val = FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_MSK, 1);
- 
- 		regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
- 		return IRQ_WAKE_THREAD;
-@@ -273,12 +274,12 @@ static irqreturn_t dw_hdmi_qp_rk3576_irq(int irq, void *dev_id)
- 	if (!intr_stat)
- 		return IRQ_NONE;
- 
--	val = HIWORD_UPDATE(RK3576_HDMI_HPD_INT_CLR, RK3576_HDMI_HPD_INT_CLR);
-+	val = FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_CLR, 1);
- 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
- 	mod_delayed_work(system_wq, &hdmi->hpd_work,
- 			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
- 
--	val = HIWORD_UPDATE(0, RK3576_HDMI_HPD_INT_MSK);
-+	val = FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_MSK, 0);
- 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
- 
- 	return IRQ_HANDLED;
-@@ -293,11 +294,9 @@ static irqreturn_t dw_hdmi_qp_rk3588_hardirq(int irq, void *dev_id)
- 
- 	if (intr_stat) {
- 		if (hdmi->port_id)
--			val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK,
--					    RK3588_HDMI1_HPD_INT_MSK);
-+			val = FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_MSK, 1);
- 		else
--			val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK,
--					    RK3588_HDMI0_HPD_INT_MSK);
-+			val = FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_MSK, 1);
- 		regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
- 		return IRQ_WAKE_THREAD;
- 	}
-@@ -315,20 +314,18 @@ static irqreturn_t dw_hdmi_qp_rk3588_irq(int irq, void *dev_id)
- 		return IRQ_NONE;
- 
- 	if (hdmi->port_id)
--		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_CLR,
--				    RK3588_HDMI1_HPD_INT_CLR);
-+		val = FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_CLR, 1);
- 	else
--		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_CLR,
--				    RK3588_HDMI0_HPD_INT_CLR);
-+		val = FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_CLR, 1);
- 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
- 
- 	mod_delayed_work(system_wq, &hdmi->hpd_work,
- 			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
- 
- 	if (hdmi->port_id)
--		val |= HIWORD_UPDATE(0, RK3588_HDMI1_HPD_INT_MSK);
-+		val |= FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_MSK, 0);
- 	else
--		val |= HIWORD_UPDATE(0, RK3588_HDMI0_HPD_INT_MSK);
-+		val |= FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_MSK, 0);
- 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
- 
- 	return IRQ_HANDLED;
-@@ -338,14 +335,14 @@ static void dw_hdmi_qp_rk3576_io_init(struct rockchip_hdmi_qp *hdmi)
- {
- 	u32 val;
- 
--	val = HIWORD_UPDATE(RK3576_SCLIN_MASK, RK3576_SCLIN_MASK) |
--	      HIWORD_UPDATE(RK3576_SDAIN_MASK, RK3576_SDAIN_MASK) |
--	      HIWORD_UPDATE(RK3576_HDMI_GRANT_SEL, RK3576_HDMI_GRANT_SEL) |
--	      HIWORD_UPDATE(RK3576_I2S_SEL_MASK, RK3576_I2S_SEL_MASK);
-+	val = FIELD_PREP_WM16(RK3576_SCLIN_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3576_SDAIN_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3576_HDMI_GRANT_SEL, 1) |
-+	      FIELD_PREP_WM16(RK3576_I2S_SEL_MASK, 1);
- 
- 	regmap_write(hdmi->vo_regmap, RK3576_VO0_GRF_SOC_CON14, val);
- 
--	val = HIWORD_UPDATE(0, RK3576_HDMI_HPD_INT_MSK);
-+	val = FIELD_PREP_WM16(RK3576_HDMI_HPD_INT_MSK, 0);
- 	regmap_write(hdmi->regmap, RK3576_IOC_MISC_CON0, val);
- }
- 
-@@ -353,27 +350,28 @@ static void dw_hdmi_qp_rk3588_io_init(struct rockchip_hdmi_qp *hdmi)
- {
- 	u32 val;
- 
--	val = HIWORD_UPDATE(RK3588_SCLIN_MASK, RK3588_SCLIN_MASK) |
--	      HIWORD_UPDATE(RK3588_SDAIN_MASK, RK3588_SDAIN_MASK) |
--	      HIWORD_UPDATE(RK3588_MODE_MASK, RK3588_MODE_MASK) |
--	      HIWORD_UPDATE(RK3588_I2S_SEL_MASK, RK3588_I2S_SEL_MASK);
-+	val = FIELD_PREP_WM16(RK3588_SCLIN_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3588_SDAIN_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3588_MODE_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3588_I2S_SEL_MASK, 1);
- 	regmap_write(hdmi->vo_regmap,
- 		     hdmi->port_id ? RK3588_GRF_VO1_CON6 : RK3588_GRF_VO1_CON3,
- 		     val);
- 
--	val = HIWORD_UPDATE(RK3588_SET_HPD_PATH_MASK, RK3588_SET_HPD_PATH_MASK);
-+	val = FIELD_PREP_WM16(RK3588_HPD_HDMI0_IO_EN_MASK, 1) |
-+	      FIELD_PREP_WM16(RK3588_HPD_HDMI1_IO_EN_MASK, 1);
- 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON7, val);
- 
- 	if (hdmi->port_id)
--		val = HIWORD_UPDATE(RK3588_HDMI1_GRANT_SEL, RK3588_HDMI1_GRANT_SEL);
-+		val = FIELD_PREP_WM16(RK3588_HDMI1_GRANT_SEL, 1);
- 	else
--		val = HIWORD_UPDATE(RK3588_HDMI0_GRANT_SEL, RK3588_HDMI0_GRANT_SEL);
-+		val = FIELD_PREP_WM16(RK3588_HDMI0_GRANT_SEL, 1);
- 	regmap_write(hdmi->vo_regmap, RK3588_GRF_VO1_CON9, val);
- 
- 	if (hdmi->port_id)
--		val = HIWORD_UPDATE(RK3588_HDMI1_HPD_INT_MSK, RK3588_HDMI1_HPD_INT_MSK);
-+		val = FIELD_PREP_WM16(RK3588_HDMI1_HPD_INT_MSK, 1);
- 	else
--		val = HIWORD_UPDATE(RK3588_HDMI0_HPD_INT_MSK, RK3588_HDMI0_HPD_INT_MSK);
-+		val = FIELD_PREP_WM16(RK3588_HDMI0_HPD_INT_MSK, 1);
- 	regmap_write(hdmi->regmap, RK3588_GRF_SOC_CON2, val);
- }
- 
+Given that sun55i_usb3_pcie_phy_exit() asserts the reset and disables
+the clock, why isn't the clock enabled and the reset deasserted here?
 
--- 
-2.51.0
+As is, it looks like the code in sun55i_usb3_phy_open() could be just
+folded into sun55i_usb3_pcie_phy_init().
 
+> +	return 0;
+> +}
+[...]
+> +static int sun55i_usb3_pcie_phy_probe(struct platform_device *pdev)
+> +{
+> +	struct sun55i_usb3_pcie_phy *phy;
+> +	struct device *dev = &pdev->dev;
+> +	struct phy_provider *phy_provider;
+> +	int ret;
+> +
+> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	phy->dev = dev;
+> +	phy->clk = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(phy->clk)) {
+> +		if (PTR_ERR(phy->clk) != -EPROBE_DEFER)
+> +			dev_err(dev, "failed to get phy clock\n");
+> +		return PTR_ERR(phy->clk);
+> +	}
+> +
+> +	phy->reset = devm_reset_control_get(dev, NULL);
+
+Please use devm_reset_control_get_exclusive() directly.
+
+> +	if (IS_ERR(phy->reset)) {
+> +		dev_err(dev, "failed to get reset control\n");
+
+Consider using dev_err_probe().
+
+regards
+Philipp
 
 -- 
 linux-phy mailing list
