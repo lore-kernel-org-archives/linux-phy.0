@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B2BECA0FEE
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:50:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DC67CA0FE1
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:53:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tZy7/ZhYyNx4hL8xkyrEAyZ7K5T9+01SqtC4G/U5ZcA=; b=ZbMNDLnIlBGSzt
-	oxmWyDMOOa03XBXqLs+uK0uUYedn4cOpl+cUpH5tKH89oKSpMhbS04hApEW3PYuLKdHsfiELKdl2w
-	vYZ5AE7qSNxqKPoemCHgKEb2z4Op+8K5xcgY7BKyaWfXgBIU905qWv5rq9alxly3z76Iaf6cjlWDE
-	mNoUKbzNeNv0o/feztsUUwfAVoF88mxllQ0vwI9neGbEwjzpWzuD/Ago+gvE1E90Y66TIu5xbjI77
-	5j/3XFE5tA+FfnFbw3+JqUe367PZHo546x94XN67B7ANyk6wEPXM30wTLQ88X0FNuC7s9Sv5pceIR
-	BxDBo0OwRaJBvDh69zAw==;
+	List-Owner; bh=EbsDI8YUIFKuUr+u7LM6rSWnbFPEHueUToqCwLn28sA=; b=KwCuxHWKIEvsY/
+	T+g28aG8q0zrqJTLzi+96cT5mLmABvmaDv1tJyrIeATle7pTXkPK21VVwdeMDjhUskqDeZbDYF7Np
+	a441UBXng883JxxNyKq9IH2C5w2/4Y9lheDnMfSrJQRZuFCk/YJVRofhxC9rndtdZkgJkxdgNpuXS
+	PNE8q0EeHAz0Lv8XNUBg/eCTh7/mYIBs3tf62trLasIDXQz+GVIknmVocOh99rJFqZyllPL2Viq8m
+	Pxa7L8HK98kXRY+rr29Dgqgux6yfu5kTMMLVUJ7c/Jijg31Oqwuen3d7hSMt7tnMw5xpgkADmirrM
+	kayMSAbcgZRxbB6y0/4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqSub-00000007O9o-0L3p;
-	Mon, 25 Aug 2025 08:50:45 +0000
+	id 1uqSxA-00000007Oth-1Q9X;
+	Mon, 25 Aug 2025 08:53:24 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqScH-00000007JT5-2sFG;
-	Mon, 25 Aug 2025 08:31:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1756110665; cv=none; 
+	id 1uqSch-00000007JdD-44MC;
+	Mon, 25 Aug 2025 08:32:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1756110693; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=jhiNG0lFtaTWQuU9JeWX1zIXjZ6RHIx1bvICoaRkHo1gwIpV2wpS8R8wzCRTjNWMCRijPkv0bVf5xRvBdiFG5HYFKGjysT1AmdrDywlID0aZrze9x1bz0dnrh4nm/F8JoNt/upjxPB04PEUuM1FvsKZi+NJqcf2GZndsRV3BNAk=
+	b=Jd1w6sqw0R1TRuKWh1uViAjTw7IzEcZH/oYyn1krdvVcd/SXIN4E1YKNEXddkWN8PEOXfYz4Z6JXOhcdOQcL/pGgi6Qen+lxDrA2Ggyrb1hxCDvcC2cCgGbCPmglTiIW2DQre22mVr36+jqr3adF6eRLOinr9CSxvJrHVoa2F44=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1756110665; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=oXdzLyDjy1en1noSqIeHf800Rfe5SrEuKJcIvmzNwtg=; 
-	b=H3g64UWR30We/tL1i7zs1vG+5eMKeZdySDgx3wak8vWVSxEkKhL8Zy9lBVHzYiQLraJSvcdjKHrNvfyBbda4aHfS/MW3d/Hr2Q2btlQpSXp75QXeHfKZUxJPbVkuT5/eqXHLPrX6NHWtVxAi5lJTi2qbrzWvpX3R55KeXc1TtBI=
+	t=1756110693; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=QJ81OadlW6/n80ucaDspSyRAxKN2nTg5hfW/ysJcYk4=; 
+	b=cxAmk4Wh85EicmaivmFPczStT53eHh6Au/I9cSrqlDUEfDCjuY4JrRsgrnIcgzUWjdW2XqcbOPGABPQDMi3YmK8h1rHZ1FaQGvyx20N1KQLvLp6oATxyUJK6VOCyjc3J0JC8fntK5Krw+U/cxSEZacbzex1dov+mytKCO+htl0E=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110665;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110693;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=oXdzLyDjy1en1noSqIeHf800Rfe5SrEuKJcIvmzNwtg=;
-	b=AUD3zR5a6iPxgl4dKh4u88Zi1MAzoglpkZplQ3LJNp7W0TbrAVG2KkNU+qtEON4Y
-	9LnHGc9bSYgon+ZN7ZQRqwYGBhDcpIwBhum32bzZasHL3ZXUdwZLnG1pen/c5YTI8NM
-	xu2xTZHsIKbj63Joe1E3NU1oOevn3xVN7w2PPLOo=
-Received: by mx.zohomail.com with SMTPS id 1756110662866130.9136658227335;
-	Mon, 25 Aug 2025 01:31:02 -0700 (PDT)
+	bh=QJ81OadlW6/n80ucaDspSyRAxKN2nTg5hfW/ysJcYk4=;
+	b=jFe5ti1ZvUhuN4fHDwws57F+0diMrXHnV8zJZbYEeXL/SGY9xqC+FWamZwASPuYz
+	iKyfT/oWUb8KgS6DnEBlPDZ3rSZm01nPEAMzjTEvgUAgLsHdoM7bUqoijut0FioHzhH
+	2cODy78CU0LNWjoRW7JIhF0j4yXAX8G0riXQ1ih8=
+Received: by mx.zohomail.com with SMTPS id 1756110691356312.5962688792472;
+	Mon, 25 Aug 2025 01:31:31 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 25 Aug 2025 10:28:29 +0200
-Subject: [PATCH v3 09/20] phy: rockchip-samsung-dcphy: switch to
+Date: Mon, 25 Aug 2025 10:28:31 +0200
+Subject: [PATCH v3 11/20] drm/rockchip: inno-hdmi: switch to
  FIELD_PREP_WM16 macro
 MIME-Version: 1.0
-Message-Id: <20250825-byeword-update-v3-9-947b841cdb29@collabora.com>
+Message-Id: <20250825-byeword-update-v3-11-947b841cdb29@collabora.com>
 References: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 In-Reply-To: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -94,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250825_013149_781300_3748169C 
-X-CRM114-Status: GOOD (  15.76  )
+X-CRM114-CacheID: sfid-20250825_013216_065163_F73A32FE 
+X-CRM114-Status: GOOD (  15.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,56 +115,58 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
 drivers that use constant masks.
 
-phy-rockchip-samsung-dcphy is actually an exemplary example, where the
-similarities to FIELD_PREP were spotted and the driver local macro has
-the same semantics as the new FIELD_PREP_WM16 hw_bitfield.h macro.
+The inno-hdmi driver's own HIWORD_UPDATE macro is instantiated only
+twice. Remove it, and replace its uses with FIELD_PREP_WM16. Since
+FIELD_PREP_WM16 shifts the value for us, we replace using the mask as
+the value by simply using 1 instead.
 
-Still, get rid of FIELD_PREP_HIWORD now that a shared implementation
-exists, replacing the two instances of it with FIELD_PREP_WM16. This
-gives us slightly better error checking; the value is now checked to fit
-in 16 bits.
+With the new FIELD_PREP_WM16 macro, we gain better error checking and a
+central shared definition.
+
+This has been compile-tested only as I lack hardware this old, but the
+change is trivial enough that I am fairly certain it's equivalent.
 
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 11 +++--------
- 1 file changed, 3 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/rockchip/inno_hdmi.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-index 28a052e17366516d5a99988bec9a52e3f0f09101..4508a314727232473e90fd1649ec0f2829b65c49 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-@@ -8,6 +8,7 @@
- #include <dt-bindings/phy/phy.h>
- #include <linux/bitfield.h>
- #include <linux/clk.h>
+diff --git a/drivers/gpu/drm/rockchip/inno_hdmi.c b/drivers/gpu/drm/rockchip/inno_hdmi.c
+index 1ab3ad4bde9ea7305021186ea221d2ff9057fdbb..f24827dc1421cf5e0c1be63a80da23d645cf3f24 100644
+--- a/drivers/gpu/drm/rockchip/inno_hdmi.c
++++ b/drivers/gpu/drm/rockchip/inno_hdmi.c
+@@ -10,6 +10,7 @@
+ #include <linux/delay.h>
+ #include <linux/err.h>
+ #include <linux/hdmi.h>
 +#include <linux/hw_bitfield.h>
- #include <linux/init.h>
- #include <linux/kernel.h>
  #include <linux/mfd/syscon.h>
-@@ -20,12 +21,6 @@
- #include <linux/regmap.h>
- #include <linux/reset.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/module.h>
+@@ -382,8 +383,6 @@ enum {
+ #define HDMI_CEC_BUSFREETIME_H		0xdd
+ #define HDMI_CEC_LOGICADDR		0xde
  
--#define FIELD_PREP_HIWORD(_mask, _val)		\
--	(					\
--		FIELD_PREP((_mask), (_val)) |	\
--		((_mask) << 16)			\
--	)
+-#define HIWORD_UPDATE(val, mask)	((val) | (mask) << 16)
 -
- #define BIAS_CON0		0x0000
- #define I_RES_CNTL_MASK		GENMASK(6, 4)
- #define I_RES_CNTL(x)		FIELD_PREP(I_RES_CNTL_MASK, x)
-@@ -252,8 +247,8 @@
+ #define RK3036_GRF_SOC_CON2	0x148
+ #define RK3036_HDMI_PHSYNC	BIT(4)
+ #define RK3036_HDMI_PVSYNC	BIT(5)
+@@ -756,10 +755,10 @@ static int inno_hdmi_config_video_timing(struct inno_hdmi *hdmi,
+ 	int value, psync;
  
- /* MIPI_CDPHY_GRF registers */
- #define MIPI_DCPHY_GRF_CON0		0x0000
--#define S_CPHY_MODE			FIELD_PREP_HIWORD(BIT(3), 1)
--#define M_CPHY_MODE			FIELD_PREP_HIWORD(BIT(0), 1)
-+#define S_CPHY_MODE			FIELD_PREP_WM16(BIT(3), 1)
-+#define M_CPHY_MODE			FIELD_PREP_WM16(BIT(0), 1)
+ 	if (hdmi->variant->dev_type == RK3036_HDMI) {
+-		psync = mode->flags & DRM_MODE_FLAG_PHSYNC ? RK3036_HDMI_PHSYNC : 0;
+-		value = HIWORD_UPDATE(psync, RK3036_HDMI_PHSYNC);
+-		psync = mode->flags & DRM_MODE_FLAG_PVSYNC ? RK3036_HDMI_PVSYNC : 0;
+-		value |= HIWORD_UPDATE(psync, RK3036_HDMI_PVSYNC);
++		psync = mode->flags & DRM_MODE_FLAG_PHSYNC ? 1 : 0;
++		value = FIELD_PREP_WM16(RK3036_HDMI_PHSYNC, psync);
++		psync = mode->flags & DRM_MODE_FLAG_PVSYNC ? 1 : 0;
++		value |= FIELD_PREP_WM16(RK3036_HDMI_PVSYNC, psync);
+ 		regmap_write(hdmi->grf, RK3036_GRF_SOC_CON2, value);
+ 	}
  
- enum hs_drv_res_ohm {
- 	STRENGTH_30_OHM = 0x8,
 
 -- 
 2.51.0
