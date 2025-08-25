@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83892CA0FE1
-	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:53:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 459FCCA0FEB
+	for <linux-phy@archiver.kernel.org>; Mon, 25 Aug 2025 08:53:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n83L1GBECTE2XDstTZsx+9yfaGINk+l1wAcRo9FjEUY=; b=vvK7PkBuhIccHK
-	Iu7TeXfBlD4uW3NNTnBoFJHg8HEMEwFo08g4lZIlsp41/APKGm92awET/QICT+ZIBy8TH8jHJQgHE
-	wEwmwDuZ8P8p53HvjKcxbDre9qgyEyrGH2sgxHpuS6lu7BJT12R7Nx1sLZrwUdB2PVaFNlSOEs8dp
-	BO3CTvAUW3LDr2YGxyH97edOzMb5fIa++E1VlVWdjHBDE6FzyttUKBbyKBrKMKZdbDPU7m5TD9kQG
-	ISlpEGTEwzCVlgglIvJTE3vkC14EPWBBzgnFWF/Bx0+HL6km9hf5ZeMyfa4BTxQI8H5ypUcoVawQH
-	Bsj6T23kvVvfz/Glq03A==;
+	List-Owner; bh=0770PueTgWMNI1H/owlEVFHVRjOHBNE/CLQiBksO6So=; b=oGKEpSCRLjyf48
+	oWb3qgy4RhGj6wheDkDkuTfLQ9qh13sM8xtJ/NQSLC81oALt7E/90aiaDtJOKiieeN+VXw8UOeiu0
+	0nPn4Tvpi3i4/kdOl5ugE3ehWfXyWVMYmumOjXxgkvwuiw+kxuiaqlROLITwqaGawCbPdfEz6YmcA
+	Zx3Wgs2csW7gEFMb7NzDeAuIvkiWcu4E8ZikMn64VIUhVOTGQlb3MfN/nmPjYMLcVb49qVY8sE4Az
+	QleiG4j7YbhSMT/sYYqEfkZ4vS6hXffBMap5p9FhNAJY4StSCF/7WOF6PIAGPGhfkT6TyXx/A9kBr
+	1JPQo+FCH85b4m036pnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqSxD-00000007Ox8-12b9;
+	id 1uqSxD-00000007Oy9-49NS;
 	Mon, 25 Aug 2025 08:53:27 +0000
 Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqSdN-00000007Jr2-2kCw;
-	Mon, 25 Aug 2025 08:32:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1756110735; cv=none; 
+	id 1uqSdf-00000007JwN-2l7Y;
+	Mon, 25 Aug 2025 08:33:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1756110750; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=nirw6HnPbWMaLjFjTLKAktwt+myX4S/gTpPs7t2VqUyNYsuV2W1NCJ0Y60gYJUjb6loIWS3SOt30uJFNuimN16MxgQG/lzguRRkrzPP3c93WwhsoaNntGjvTGg3flruyDCiwMMQdT9llWPM49Su2qX72qveTgesOI9evz+hWrnw=
+	b=CXyTKlt6pZ2nseKenhkB5b8hdvvwAae1SOMca72O66Q3cJj3T4OK/t0aR6s3qUHEXjgj4hKg4VhWTrUrP5nlT4nFr9DTFtA1AD6MO8FtYNmPq53M5UbXW/Wkif6IKyidBDi+kBMJChBM4WboMZRa7TeHNRdqwht/7MmliImVOD4=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1756110735; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=AMqnk8SndHwLzKZVWVbsYcdtLpb4Roz2oizYk5WSuo0=; 
-	b=JMC77CWm9ClrAbOkp/OP1WUAb4eRo3UAq3HoajZlrzgomqvDCQAexWSa2wSGtICDNxA0K4BhsNJmof3lCNoGjf717Z3M8CRkXkRtVWTTikQQGfwRiSmfUxgYW/843O9N36efzvDA6gzCI7YJ8D3ngwakwaea4v4aL7fMIBYHARk=
+	t=1756110750; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=YPAtusKlN6eqdYG3bgmczV1EypJC/IejzFNhAelA5Kk=; 
+	b=VwqPwxS5SV+h4mYyQqNi/XGd3oPOLDuceCJ5aydMVdtL5+99BJhNN7Sm88JDFJP1vBFL/PbPxR+eWwLALSr7vqZtKyJd5x9fRWA8NB58wncqazVekJ7wGHCooxUIJp7yFZjkaN6TV1wFlPtBuy1MkwK26/edC5yGpDUU8TezcTI=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110735;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756110750;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=AMqnk8SndHwLzKZVWVbsYcdtLpb4Roz2oizYk5WSuo0=;
-	b=dzsZvwiD77A5lVrfk1pDkLtu6hnTOrZ9UEnKjPuYZBJU6v1xoeLLFqPoFie91NFv
-	GlWS4rtNwwcXmtlwZF28OG2PCYZAg2OuchMwXi2y06jTI/le420dt4ikfWnezvS0prV
-	xp7G9dgYcL+nkd902oNGXhKfIHwdFjJgSciaimWU=
-Received: by mx.zohomail.com with SMTPS id 1756110734776695.4405993030838;
-	Mon, 25 Aug 2025 01:32:14 -0700 (PDT)
+	bh=YPAtusKlN6eqdYG3bgmczV1EypJC/IejzFNhAelA5Kk=;
+	b=P7TuEx/Uqi+3S53TlXs35nOePsIHr6ObIdXv5VmrVT7iOSW6Q/iJ7yll//p0oa7O
+	4DWqDcEfDPrlW9ldGpngBSWYHhDCimJiOB9DojHeJKUqberyBV26y48mjUO+Q8ipvQH
+	JF7Q7wXkkGMe1ryTxdqsKHe1SkWEpJRxkYbkqC/Q=
+Received: by mx.zohomail.com with SMTPS id 1756110748821283.62188569936666;
+	Mon, 25 Aug 2025 01:32:28 -0700 (PDT)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 25 Aug 2025 10:28:34 +0200
-Subject: [PATCH v3 14/20] ASoC: rockchip: i2s-tdm: switch to
- FIELD_PREP_WM16_CONST macro
+Date: Mon, 25 Aug 2025 10:28:35 +0200
+Subject: [PATCH v3 15/20] net: stmmac: dwmac-rk: switch to FIELD_PREP_WM16
+ macro
 MIME-Version: 1.0
-Message-Id: <20250825-byeword-update-v3-14-947b841cdb29@collabora.com>
+Message-Id: <20250825-byeword-update-v3-15-947b841cdb29@collabora.com>
 References: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 In-Reply-To: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 To: Yury Norov <yury.norov@gmail.com>, 
@@ -94,8 +94,8 @@ Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250825_013257_715051_CA149BD7 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20250825_013315_723234_9828443B 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,41 +115,45 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
 drivers that use constant masks.
 
-Replace the implementation of this driver's HIWORD_UPDATE macro with an
-instance of FIELD_PREP_WM16_CONST. The const variant is chosen here
-because some of the header defines are then used in initializers.
+Like many other Rockchip drivers, dwmac-rk has its own HIWORD_UPDATE
+macro. Its semantics allow us to redefine it as a wrapper to the shared
+hw_bitfield.h FIELD_PREP_WM16 macros though.
 
-This gives us some compile-time error checking, while keeping the diff
-very small and easy to review.
+Replace the implementation of this driver's very own HIWORD_UPDATE macro
+with an instance of FIELD_PREP_WM16 from hw_bitfield.h. This keeps the
+diff easily reviewable, while giving us more compile-time error
+checking.
 
-Acked-by: Mark Brown <broonie@kernel.org>
+The related GRF_BIT macro is left alone for now; any attempt to rework
+the code to not use its own solution here would likely end up harder to
+review and less pretty for the time being.
+
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- sound/soc/rockchip/rockchip_i2s_tdm.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/rockchip/rockchip_i2s_tdm.h b/sound/soc/rockchip/rockchip_i2s_tdm.h
-index 0aa1c6da1e2c0ebb70473b1bcd1f6e0c1fb90df3..0171e05ee886cdd35f8202db20a313f226958918 100644
---- a/sound/soc/rockchip/rockchip_i2s_tdm.h
-+++ b/sound/soc/rockchip/rockchip_i2s_tdm.h
-@@ -10,6 +10,8 @@
- #ifndef _ROCKCHIP_I2S_TDM_H
- #define _ROCKCHIP_I2S_TDM_H
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+index 9fc41207cc459313e575a2b00236b82611ad9603..c500194de3cc303f68fdd8a2466a81a63d4601d8 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-rk.c
+@@ -8,6 +8,7 @@
+  */
  
+ #include <linux/stmmac.h>
 +#include <linux/hw_bitfield.h>
-+
- /*
-  * TXCR
-  * transmit operation control register
-@@ -285,7 +287,7 @@ enum {
- #define I2S_TDM_RXCR	(0x0034)
- #define I2S_CLKDIV	(0x0038)
+ #include <linux/bitops.h>
+ #include <linux/clk.h>
+ #include <linux/phy.h>
+@@ -149,7 +150,7 @@ static int rk_set_clk_mac_speed(struct rk_priv_data *bsp_priv,
+ }
  
--#define HIWORD_UPDATE(v, h, l)	(((v) << (l)) | (GENMASK((h), (l)) << 16))
-+#define HIWORD_UPDATE(v, h, l)	(FIELD_PREP_WM16_CONST(GENMASK((h), (l)), (v)))
+ #define HIWORD_UPDATE(val, mask, shift) \
+-		((val) << (shift) | (mask) << ((shift) + 16))
++		(FIELD_PREP_WM16((mask) << (shift), (val)))
  
- /* PX30 GRF CONFIGS */
- #define PX30_I2S0_CLK_IN_SRC_FROM_TX		HIWORD_UPDATE(1, 13, 12)
+ #define GRF_BIT(nr)	(BIT(nr) | BIT(nr+16))
+ #define GRF_CLR_BIT(nr)	(BIT(nr+16))
 
 -- 
 2.51.0
