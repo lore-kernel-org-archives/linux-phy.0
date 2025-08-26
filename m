@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84CE6CA0FE9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBA1BCA0EFA
 	for <linux-phy@archiver.kernel.org>; Tue, 26 Aug 2025 08:31:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,55 +12,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKR4sRWv5RrzKIrQiBybh7Hsjqj/C2You4BNxS0CNqk=; b=pzZJH6AL/0MvqS
-	LGs42svIbaQ2QHOXG6nQJjb8v++Z5ee0OHtYEVIYh5Ml+KdHiLnskdkgacS+ggi3P3Vc1JSJ3A6Iq
-	tVEdHF6+hfoLMTUOXO4z7bk4Lej9HyD4BxSq885cz3P6ywsX4u/uULIWqrnGg4Voo2uEQtxpz3x0S
-	iYXGRW7o3Q633ozZdVMuufJ+HY9/AP2ImAtPkkF8yFd/d4wM8ZoMcEoKUddBAqImOw8DLff9GJ9Sg
-	MuNfeMENyRli2rtepOsrhTMkPamYtjKQL+MKf/XJcAg/8wAB3G8BeGvwNKfGv2Xw8FW+vtm2oMx0A
-	3lm4EJIGzQGWb8qu3lhg==;
+	List-Owner; bh=FOnAQ3VVZ9UCMiFVCH5vwVxJYBVY9Y4uI9cx3hJSNto=; b=Pqhm6Jai9O+Jx5
+	uTbz6XsivE+5fpoB+ooWzrr8M9RvNaYfkvIathK0f4mkX6VTxActTv+nyGufz75HaKH2RKzpZzE3G
+	KEsXPN1hotlMjX7zOnalrwbJP5jX8rKK+lAxp4mCI3Y8roT1q0Ia0pPh3Tlvdc8ife1FFpY+aada8
+	+w5Su6T9K0VtppnXR133g5/5tvhc8Lq9nh753CNuKhOp9/0Hc5iXlxma2RX5UmA7Sp0OP+2mDr0ep
+	HyFinw9b2hlcx7w106XFUgS5vp6VNem35AhoK3cWDAuzNcI6s0zI3z6qd2F7aWP4swaricBhwbnUV
+	c7bha/1QCVZcShCYgQbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqp5f-0000000B1Yo-12g8;
+	id 1uqp5f-0000000B1Yz-2BXl;
 	Tue, 26 Aug 2025 08:31:39 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqp26-0000000B0wX-0LJN
+	id 1uqp34-0000000B17W-0VOV
 	for linux-phy@lists.infradead.org;
-	Tue, 26 Aug 2025 08:27:58 +0000
+	Tue, 26 Aug 2025 08:28:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2D994601D7;
-	Tue, 26 Aug 2025 08:27:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C141C4CEF1;
-	Tue, 26 Aug 2025 08:27:52 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 810E25C5D78;
+	Tue, 26 Aug 2025 08:28:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5944AC4CEF1;
+	Tue, 26 Aug 2025 08:28:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756196876;
-	bh=Df79SYyilYgfJCuJfjIH+SawlVw49cwhznpS84lpqHI=;
+	s=k20201202; t=1756196937;
+	bh=H/+xOOPobOyisuzLpgDl2c4ijJlhDYN2Akg6+M82WQs=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Re+NBGxBNrKJekH7/r28bkfrdnu72yVBoXt8UzbGZuRjGUwqheZza32JvTo+Am1Te
-	 E6zy01ZGlo0kwoI7c1CJ2pFPiIzRGqjNVb1NjRqGy/YQqt0t2JPGqX30LT2RFTAKXn
-	 B4OAWaoneJlCAKFfb4YS0DxPWzXFjM6XVLvPizk+Xqoi5I5Yk/U3U9wJBLkJKAgWY7
-	 FjJV77CiN1nsJe+YU/Udl/MfYdzd2ZrrnCFsakhknKPAmPxCF4q+DlJKC+C9BLGjxj
-	 wB6XT2zqfVC7vmf+gjNQlKaVyGFlXH0aYuOFhm4p8KQctXye4PJxyMzEub8DE9o7ad
-	 FdR9aLzmIVr3Q==
-Message-ID: <4583bf66-737d-4029-8f14-ce6d6a75def6@kernel.org>
-Date: Tue, 26 Aug 2025 10:27:51 +0200
+	b=qw2OL372Ar4H4hS6V4uv8OGbcHMyllFs9gvEypuCAXgrMoOAPFtl4Oq7SFFgneLOl
+	 sBEfkvCDnpr+EXrRvTv5RuQuvoXt1UcK5Z7HWA0/kViqg9ZuHW9jLgcGTATiOnj9ro
+	 YdBPZR9yd1KPtrPwqhL4KKucthdGkk8GmZOsRYifA0FWTkerKw/H0djaT4rloriNKG
+	 Oo3np8l2p5CNJG8kbjj5GVGh/eyqPtUzAJvBVt5E364g+ZVABvhaMJXGwvrCUmf5ha
+	 wI+j9gPcixtZ4vQqpF0r1ybSn4ybQ/A3ZnaMunW7UQOlD6aCREjysjQIA330uXTfCK
+	 6IVdY5DCxnWQg==
+Message-ID: <b7529529-9677-4713-920f-bf36863459ca@kernel.org>
+Date: Tue, 26 Aug 2025 10:28:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 3/3] PCI: qcom: Restrict port parsing only to pci child
  nodes
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Lorenzo Pieralisi
- <lpieralisi@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
- <kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
+To: Manivannan Sadhasivam <mani@kernel.org>,
+ Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
  Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, quic_vbadigan@quicinc.com, quic_mrana@quicinc.com
+ Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ quic_vbadigan@quicinc.com, quic_mrana@quicinc.com
 References: <20250826-pakala-v2-0-74f1f60676c6@oss.qualcomm.com>
  <20250826-pakala-v2-3-74f1f60676c6@oss.qualcomm.com>
+ <rurdrz3buvb7paqgjjr7ethzvaeyvylezexcwshpj73xf7yeec@i52bla6r5tx7>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250826-pakala-v2-3-74f1f60676c6@oss.qualcomm.com>
+In-Reply-To: <rurdrz3buvb7paqgjjr7ethzvaeyvylezexcwshpj73xf7yeec@i52bla6r5tx7>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250826_012858_250344_CAC6F7C6 
+X-CRM114-Status: GOOD (  14.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,33 +128,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/08/2025 07:18, Krishna Chaitanya Chundru wrote:
-> The qcom_pcie_parse_ports() function currently iterates over all available
-> child nodes of the PCIe controller's device tree node. This can lead to
-> attempts to parse unrelated nodes like OPP nodes, resulting in unnecessary
-> errors or misconfiguration.
+On 26/08/2025 08:17, Manivannan Sadhasivam wrote:
+> On Tue, Aug 26, 2025 at 10:48:19AM GMT, Krishna Chaitanya Chundru wrote:
+>> The qcom_pcie_parse_ports() function currently iterates over all available
+>> child nodes of the PCIe controller's device tree node. This can lead to
+>> attempts to parse unrelated nodes like OPP nodes, resulting in unnecessary
+>> errors or misconfiguration.
+>>
 > 
-> Restrict the parsing logic to only consider child nodes named "pcie" or
-> "pci", which are the expected node names for PCIe ports.
+> What errors? Errors you are seeing on your setup or you envision?
 > 
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 2 ++
->  1 file changed, 2 insertions(+)
+>> Restrict the parsing logic to only consider child nodes named "pcie" or
+>> "pci", which are the expected node names for PCIe ports.
+>>
+>> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 > 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 294babe1816e4d0c2b2343fe22d89af72afcd6cd..5dbdb69fbdd1b9b78a3ebba3cd50d78168f2d595 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -1740,6 +1740,8 @@ static int qcom_pcie_parse_ports(struct qcom_pcie *pcie)
->  	int ret = -ENOENT;
->  
->  	for_each_available_child_of_node_scoped(dev->of_node, of_port) {
-> +		if (!(of_node_name_eq(of_port, "pcie") || of_node_name_eq(of_port, "pci")))
+> Since this is a fix, 'Fixes' tag is needed.
+> 
+>> ---
+>>  drivers/pci/controller/dwc/pcie-qcom.c | 2 ++
+>>  1 file changed, 2 insertions(+)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+>> index 294babe1816e4d0c2b2343fe22d89af72afcd6cd..5dbdb69fbdd1b9b78a3ebba3cd50d78168f2d595 100644
+>> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+>> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+>> @@ -1740,6 +1740,8 @@ static int qcom_pcie_parse_ports(struct qcom_pcie *pcie)
+>>  	int ret = -ENOENT;
+>>  
+>>  	for_each_available_child_of_node_scoped(dev->of_node, of_port) {
+>> +		if (!(of_node_name_eq(of_port, "pcie") || of_node_name_eq(of_port, "pci")))
+> 
+> May I know which platform has 'pci' as the node name for the bridge node? AFAIK,
+> all platforms defining bridge nodes have 'pcie' as the node name.
 
+It does not matter. If I name my node name as "pc" it stops working?
 
-Huh? Where is this ABI documented?
-
+No, Qualcomm cannot introduce such hidden ABI.
 Best regards,
 Krzysztof
 
