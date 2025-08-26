@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBA1BCA0EFA
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Aug 2025 08:31:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FF7ACA0EFA
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Aug 2025 08:37:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FOnAQ3VVZ9UCMiFVCH5vwVxJYBVY9Y4uI9cx3hJSNto=; b=Pqhm6Jai9O+Jx5
-	uTbz6XsivE+5fpoB+ooWzrr8M9RvNaYfkvIathK0f4mkX6VTxActTv+nyGufz75HaKH2RKzpZzE3G
-	KEsXPN1hotlMjX7zOnalrwbJP5jX8rKK+lAxp4mCI3Y8roT1q0Ia0pPh3Tlvdc8ife1FFpY+aada8
-	+w5Su6T9K0VtppnXR133g5/5tvhc8Lq9nh753CNuKhOp9/0Hc5iXlxma2RX5UmA7Sp0OP+2mDr0ep
-	HyFinw9b2hlcx7w106XFUgS5vp6VNem35AhoK3cWDAuzNcI6s0zI3z6qd2F7aWP4swaricBhwbnUV
-	c7bha/1QCVZcShCYgQbg==;
+	List-Owner; bh=OZlz2IcIC1VtuTONG4Djkwlm9KSZXtwdUVox7RWr72k=; b=QTeq2GKgDO0dfT
+	/d/VP+zTU3sw7AwGeUcFPWl0rFJzZKZPMwnwe2JcousRC+kRl9smRHn6O8QxvIsvVsNa4Nr3fFIgb
+	Sv1FNhz76IxkvlNIHdYRj95/g34W8bt3uHxaHPozNqVkiacQRjwWB6ToSUlwiyBTbL+VWFUzLVRpE
+	WS49S3sSKx7eb8WFlveLvC2vo1CVLiGVf/Ljtvw7zslkgG6855RsTsdZ0J+5ovTjgx9MpYsMtb1je
+	Y892mBVEVz9U/AfcMGHTBw07BXSpQE1+7lLWxXBu0LlPXNFcAnPaukxYEWifiPaDWP2is7T+ImywS
+	Gy1Z3wbiCYu0SeNkuAqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqp5f-0000000B1Yz-2BXl;
-	Tue, 26 Aug 2025 08:31:39 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uqpBE-0000000B2wl-4A2F;
+	Tue, 26 Aug 2025 08:37:25 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqp34-0000000B17W-0VOV
-	for linux-phy@lists.infradead.org;
-	Tue, 26 Aug 2025 08:28:59 +0000
+	id 1uqp9T-0000000B2TT-39bc;
+	Tue, 26 Aug 2025 08:35:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 810E25C5D78;
-	Tue, 26 Aug 2025 08:28:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5944AC4CEF1;
-	Tue, 26 Aug 2025 08:28:53 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 0524E601FC;
+	Tue, 26 Aug 2025 08:35:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93B0BC4CEF1;
+	Tue, 26 Aug 2025 08:35:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756196937;
-	bh=H/+xOOPobOyisuzLpgDl2c4ijJlhDYN2Akg6+M82WQs=;
+	s=k20201202; t=1756197325;
+	bh=nrG+katxORgoz1280zOJ1BjvEfsOXCrjgMG9haaiYo0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=qw2OL372Ar4H4hS6V4uv8OGbcHMyllFs9gvEypuCAXgrMoOAPFtl4Oq7SFFgneLOl
-	 sBEfkvCDnpr+EXrRvTv5RuQuvoXt1UcK5Z7HWA0/kViqg9ZuHW9jLgcGTATiOnj9ro
-	 YdBPZR9yd1KPtrPwqhL4KKucthdGkk8GmZOsRYifA0FWTkerKw/H0djaT4rloriNKG
-	 Oo3np8l2p5CNJG8kbjj5GVGh/eyqPtUzAJvBVt5E364g+ZVABvhaMJXGwvrCUmf5ha
-	 wI+j9gPcixtZ4vQqpF0r1ybSn4ybQ/A3ZnaMunW7UQOlD6aCREjysjQIA330uXTfCK
-	 6IVdY5DCxnWQg==
-Message-ID: <b7529529-9677-4713-920f-bf36863459ca@kernel.org>
-Date: Tue, 26 Aug 2025 10:28:51 +0200
+	b=G0Nlq2+oVHJ6Cf52NPgTzUWVPenNhKHurD15yUf5QZrP3Iy1T8Bm4cBGvZBMcpvp0
+	 3gE6tdomwYIrKJRtAUGcKHVG33jNRRBHUiPUW3Y+qlCj/Frvulqsw/0hd51qaijzsT
+	 UmVsNItVGO6wcuLWiaFnD/xHb59dW6e3jIqL7zyaZHzcmci3Y6CXCx6yuum3xUfagL
+	 JsZEU4AhbnD88yNuDQFeuqa+jUJj/ahsSjoqT0IVJAIiVGW0xoss9/XBGu2HC0j4Md
+	 WtyiotIFbY3eC4K9KpolS/G49BwNc1a8Cm0XHFQ14DeHgiUqoqII6wnuW0PBhsjAPw
+	 j1oEEKb9ie3UQ==
+Message-ID: <83dc9435-5850-425d-b345-52e84ef9262c@kernel.org>
+Date: Tue, 26 Aug 2025 10:35:19 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/3] PCI: qcom: Restrict port parsing only to pci child
- nodes
-To: Manivannan Sadhasivam <mani@kernel.org>,
- Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+Subject: Re: [PATCH v7 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo ssphy
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, alim.akhtar@samsung.com, andre.draszik@linaro.org,
+ peter.griffin@linaro.org, kauschluss@disroot.org,
+ ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org,
+ johan@kernel.org, m.szyprowski@samsung.com, s.nawrocki@samsung.com,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- quic_vbadigan@quicinc.com, quic_mrana@quicinc.com
-References: <20250826-pakala-v2-0-74f1f60676c6@oss.qualcomm.com>
- <20250826-pakala-v2-3-74f1f60676c6@oss.qualcomm.com>
- <rurdrz3buvb7paqgjjr7ethzvaeyvylezexcwshpj73xf7yeec@i52bla6r5tx7>
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+ dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+ selvarasu.g@samsung.com
+References: <20250822093845.1179395-1-pritam.sutar@samsung.com>
+ <CGME20250822093022epcas5p42d8c16c851769dab0e1da9d45743ab1f@epcas5p4.samsung.com>
+ <20250822093845.1179395-6-pritam.sutar@samsung.com>
+ <20250824-rough-fresh-orangutan-eecb2f@kuoka>
+ <007501dc1653$e36c3b50$aa44b1f0$@samsung.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,10 +108,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <rurdrz3buvb7paqgjjr7ethzvaeyvylezexcwshpj73xf7yeec@i52bla6r5tx7>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250826_012858_250344_CAC6F7C6 
-X-CRM114-Status: GOOD (  14.65  )
+In-Reply-To: <007501dc1653$e36c3b50$aa44b1f0$@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,43 +125,136 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/08/2025 08:17, Manivannan Sadhasivam wrote:
-> On Tue, Aug 26, 2025 at 10:48:19AM GMT, Krishna Chaitanya Chundru wrote:
->> The qcom_pcie_parse_ports() function currently iterates over all available
->> child nodes of the PCIe controller's device tree node. This can lead to
->> attempts to parse unrelated nodes like OPP nodes, resulting in unnecessary
->> errors or misconfiguration.
+On 26/08/2025 08:37, Pritam Manohar Sutar wrote:
+> Hi Krzysztof, 
+> 
+>> -----Original Message-----
+>> From: Krzysztof Kozlowski <krzk@kernel.org>
+>> Sent: 24 August 2025 02:26 PM
+>> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+>> andre.draszik@linaro.org; peter.griffin@linaro.org; kauschluss@disroot.org;
+>> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
+>> johan@kernel.org; m.szyprowski@samsung.com; s.nawrocki@samsung.com;
+>> linux-phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+>> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+>> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+>> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+>> selvarasu.g@samsung.com
+>> Subject: Re: [PATCH v7 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+>> ExynosAutov920 combo ssphy
 >>
-> 
-> What errors? Errors you are seeing on your setup or you envision?
-> 
->> Restrict the parsing logic to only consider child nodes named "pcie" or
->> "pci", which are the expected node names for PCIe ports.
+>> On Fri, Aug 22, 2025 at 03:08:44PM +0530, Pritam Manohar Sutar wrote:
+>>> This phy supports USB3.1 SSP+(10Gbps) protocol and is backwards
+>>> compatible to the USB3.0 SS(5Gbps). It requires two clocks, named
+>>> "phy" and "ref". The required supplies for USB3.1 are named as
+>>> vdd075_usb30(0.75v), vdd18_usb30(1.8v).
 >>
->> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+>> Please do not describe the schema, but hardware. This sentence does not help
+>> me in my question further.
 > 
-> Since this is a fix, 'Fixes' tag is needed.
-> 
->> ---
->>  drivers/pci/controller/dwc/pcie-qcom.c | 2 ++
->>  1 file changed, 2 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index 294babe1816e4d0c2b2343fe22d89af72afcd6cd..5dbdb69fbdd1b9b78a3ebba3cd50d78168f2d595 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -1740,6 +1740,8 @@ static int qcom_pcie_parse_ports(struct qcom_pcie *pcie)
->>  	int ret = -ENOENT;
->>  
->>  	for_each_available_child_of_node_scoped(dev->of_node, of_port) {
->> +		if (!(of_node_name_eq(of_port, "pcie") || of_node_name_eq(of_port, "pci")))
-> 
-> May I know which platform has 'pci' as the node name for the bridge node? AFAIK,
-> all platforms defining bridge nodes have 'pcie' as the node name.
+> This is a combo phy having Synopsys usb20 and usb30 phys (these 2 phys are totally different). 
+> One PHY only supports usb2.0 and data rates whereas another one does usb3.1 ssp+ and usb3.1 ssp
+> 	
+> This patch only explains about usb30 (since these are two different phys) phy and omitted inclusion of usb20 reference (added separate patch for this patch no 3). 
+> 	
+> Hope this is clear.
 
-It does not matter. If I name my node name as "pc" it stops working?
+No. That sentence still explains what schema is doing.
 
-No, Qualcomm cannot introduce such hidden ABI.
+BTW, wrap your email correctly.
+
+> 
+>>
+>>>
+>>> Add schemas for combo ssphy found on this SoC.
+>>>
+>>> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>>> ---
+>>>  .../bindings/phy/samsung,usb3-drd-phy.yaml    | 23 +++++++++++++++++++
+>>>  1 file changed, 23 insertions(+)
+>>>
+>>> diff --git
+>>> a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+>>> b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+>>> index f0cfca5736b8..96e5bbb2e42c 100644
+>>> --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+>>> +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+>>> @@ -34,6 +34,7 @@ properties:
+>>>        - samsung,exynos7870-usbdrd-phy
+>>>        - samsung,exynos850-usbdrd-phy
+>>>        - samsung,exynos990-usbdrd-phy
+>>> +      - samsung,exynosautov920-usb31drd-combo-ssphy
+>>>        - samsung,exynosautov920-usbdrd-combo-hsphy
+>>>        - samsung,exynosautov920-usbdrd-phy
+>>>
+>>> @@ -118,6 +119,12 @@ properties:
+>>>    vdd18-usb20-supply:
+>>>      description: 1.8V power supply for the USB 2.0 phy.
+>>>
+>>> +  dvdd075-usb30-supply:
+>>> +    description: 0.75V power supply for the USB 3.0 phy.
+>>> +
+>>> +  vdd18-usb30-supply:
+>>> +    description: 1.8V power supply for the USB 3.0 phy.
+>>> +
+>>>  required:
+>>>    - compatible
+>>>    - clocks
+>>> @@ -227,6 +234,7 @@ allOf:
+>>>                - samsung,exynos7870-usbdrd-phy
+>>>                - samsung,exynos850-usbdrd-phy
+>>>                - samsung,exynos990-usbdrd-phy
+>>> +              - samsung,exynosautov920-usb31drd-combo-ssphy
+>>>                - samsung,exynosautov920-usbdrd-combo-hsphy
+>>>                - samsung,exynosautov920-usbdrd-phy
+>>>      then:
+>>> @@ -262,6 +270,21 @@ allOf:
+>>>        properties:
+>>>          dvdd075-usb20-supply: false
+>>>          vdd18-usb20-supply: false
+>>> +  - if:
+>>> +      properties:
+>>> +        compatible:
+>>> +          contains:
+>>> +            enum:
+>>> +              - samsung,exynosautov920-usb31drd-combo-ssphy
+>>> +    then:
+>>> +      required:
+>>> +        - dvdd075-usb30-supply
+>>> +        - vdd18-usb30-supply
+>>
+>> Why are you adding usb20 and usb30 suffixes to the supplies? These are
+>> separate devices, so they do not have both variants at the same time.
+> 
+> This is a combo phy consisting of usb2 and usb3 phys combined. 
+> To drive these separate phys, added suffixes for these supplies respectively.
+
+But they are separate.
+
+> 
+> Moreover, gs101 is also using similar convention for its usb20 and dp supplies. 
+> Added suffix for usb2 and usb3 as per our last communication https://lore.kernel.org/linux-phy/6e1c67d2-9bfa-442a-9d53-8c5970a2a9ef@kernel.org/
+
+Then please review patches on the list and help to improve them BEFORE
+they got merged.
+
+I questioned the suffix there, so I really do not understand why did you
+added it.
+
+> 
+>>
+>> From this device point of view, the supply is called dvdd075 or vdd18.
+>> If you open device datasheet (not SoC datasheet), that's how it will be called,
+>> most likely.
+> 
+> Yes, Agree. In device datasheet, suffixes are not mentioned, but in our board schematic it is mentioned. 
+> Let me know your suggestion about adding suffixes?
+
+I already said, multiple times on various discussions. You name these
+based on how the inputs are called in this device.
+
 Best regards,
 Krzysztof
 
