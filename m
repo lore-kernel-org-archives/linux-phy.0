@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EDA6CA0FF6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAC6CCA0FF7
 	for <linux-phy@archiver.kernel.org>; Tue, 26 Aug 2025 09:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,53 +12,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SIUXaKNjrDGzqVwoSrT/WakEaN0MpLrQ8V8ZpG6EmWE=; b=t3tTX+x8/jHpR2
-	cEa1H5TygM6TiEeFRkdhHWZ2qKCCTuWNmiP+ZSEBXFpeSKK6NkeTHMRUMkuqGG7A4ao2cCn+gQGLj
-	uiUYBw5TVc2A6ViSkCjhhpDZoRrjw2nOBAmTF6nlgMw0/TpNZ4PNryxVYP/xG1FhI1lKBY4Znn88J
-	PT/l6DWg48hTIxyrlNrp3eszl7Hrni+nU9k9ZhkwVqE5pB/qUKYgOO1p5ECRevcJrPnWL21me4nI/
-	s3wkA1qtRJQSwmfQAniOjIJUqxRv77CiQYHWwcSwRlhi6m2YDZAjrtHH2YuHgVosqHZ6ypmOH+hu6
-	wBUPtB1a73EdKNdFQAfQ==;
+	List-Owner; bh=r5qBZEwWkNIqtkogGuz3QvJ9lFy3A/4281Qi4guCCgA=; b=GPgzHAhO2ELBHv
+	QXrKvREK7jIuIlLZrV2Km3RB8uDvkeOPDq21Bp60U4zztd/wLzOdAxHNmALsHI13FPrpqAdjA81en
+	EvlF416ESOzNisuoppj/MaJ/x27SU4frVdrkUweEBH8Wpq249O7gEgxmC7jzcUuiI6j716a0Gmxox
+	IrBl/qkMp/K7iFHNb34eR+rkN63coyZWF/POxi72U0k5ZzduYXHwUYaSbaqJyNhAK1YQw+vXVkTix
+	0gnH2LL2YJppkNZRtC+UBJ8ezwz7pmdZfMUa0cJPTFvB9R7yMU0RohavT9Ym8anT2KqonhvX+MY1Z
+	JEY2o82Uy1rDQ9BO2UaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqplP-0000000BIBU-176z;
+	id 1uqplP-0000000BIBu-2P0Q;
 	Tue, 26 Aug 2025 09:14:47 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uqpj5-0000000BGdJ-2nkN
+	id 1uqpj5-0000000BGdb-1Apo
 	for linux-phy@lists.infradead.org;
 	Tue, 26 Aug 2025 09:12:25 +0000
 Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57Q3atm7011679;
-	Tue, 26 Aug 2025 09:12:14 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57Q4lvoF007038;
+	Tue, 26 Aug 2025 09:12:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=uLpF9ytVcXx
-	hjFB/Ujb5mQmPYiUBsRhg52muTT1xZUU=; b=nI4COosvt5EPBBIBXbRuBNdH2ha
-	r33jGvkGB+z5dqdV+dOdNqkyXR6y67LIwzR/sJYrd7p7bbCLMBSmCCYO/lcI9tE+
-	1FT0L3yhesUMDVfjVFcIwzp3aDWgEKClcfJjiwDSmJeEPm/xG0ydGA1brhPbyiGj
-	+J01y7qssvtl3pU8Nu9Fo+cOR8r6NUZMEPhegDTNWPcbPwqrlHkN0Ww4+gp3ncae
-	INy44LXUOC/QZ4uH9Bvg+K6iUWg0RIzdsEcnqXpb81TlaTsFjKjd7rnI+RlVIUU3
-	E+MKaAHF2zs8QPbjON8U75lqeVfSBaSYR68E1ztxM01JZ87kmgC3JZIzS2w==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48q5um8a60-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=FjFWcJ+slIN
+	PLLLGM2/NXcjtvFX1V8uxVOqcuDTk8ZM=; b=OJzfI2ak2ovR47MTMgmzLDnc5hy
+	6cLmjBPJmZfTqX0R4kkfLhhPZnI9eqFdgbL90Z6ugZsWg9yVE2hgJV/MoJbu01Rv
+	ZoelEhLjwFDLS2Wq3tmwNa8cVZFPRLQv8reTLu/hc8qgQMy3vslkdkqcZwHEwvEh
+	pEG8Up8YnPDIegL4pCq72mP5hVXAIm+OzrU4nuCETGQqhqElMTsHocZcJqB2d8iQ
+	d3oTjnG43utByhgYNWgPds6iJWixy0HzFdfUxUPrmsV94cuah9rnFv3aOq5JJaYM
+	DW3+ljJCEOogPIrp5NcQ5EEuelQqOZNmhTz2JbgTN/H+bYWlGxTIX+Itixg==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48q5um8a65-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 26 Aug 2025 09:12:14 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57Q9CBgY017664;
-	Tue, 26 Aug 2025 09:12:11 GMT
+	Tue, 26 Aug 2025 09:12:15 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57Q9CDGw003427;
+	Tue, 26 Aug 2025 09:12:13 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 48q6qksts2-1
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 48q6qksr6c-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 26 Aug 2025 09:12:11 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57Q9CB6K017648;
-	Tue, 26 Aug 2025 09:12:11 GMT
+	Tue, 26 Aug 2025 09:12:13 +0000
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57Q99QTW031990;
+	Tue, 26 Aug 2025 09:12:13 GMT
 Received: from ziyuzhan-gv.ap.qualcomm.com (ziyuzhan-gv.qualcomm.com [10.64.66.102])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 57Q9CAk0017643
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 57Q9CCj2003413
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 26 Aug 2025 09:12:11 +0000
+	Tue, 26 Aug 2025 09:12:13 +0000
 Received: by ziyuzhan-gv.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 7EB76518; Tue, 26 Aug 2025 17:12:09 +0800 (CST)
+	id A0F0D528; Tue, 26 Aug 2025 17:12:09 +0800 (CST)
 From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
 To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
         krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
@@ -70,10 +70,11 @@ Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
         linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
         quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v11 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Update pcie phy bindings for qcs8300
-Date: Tue, 26 Aug 2025 17:12:01 +0800
-Message-ID: <20250826091205.3625138-2-ziyue.zhang@oss.qualcomm.com>
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: [PATCH v11 5/5] arm64: dts: qcom: qcs8300-ride: enable pcie1 interface
+Date: Tue, 26 Aug 2025 17:12:05 +0800
+Message-ID: <20250826091205.3625138-6-ziyue.zhang@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250826091205.3625138-1-ziyue.zhang@oss.qualcomm.com>
 References: <20250826091205.3625138-1-ziyue.zhang@oss.qualcomm.com>
@@ -82,18 +83,18 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=VtIjA/2n c=1 sm=1 tr=0 ts=68ad7a6e cx=c_pps
+X-Authority-Analysis: v=2.4 cv=VtIjA/2n c=1 sm=1 tr=0 ts=68ad7a6f cx=c_pps
  a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=YhLpWKUAjgHs1wdaIGUA:9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIzMDAzMiBTYWx0ZWRfX+RGCMa7nAv75
- R9MKYhCIaDQ7x6AALEqV3Nrcg/KUYfRoFLAybMXJRjugj3t+NO4xr6GOe0T5wFybs4dQDiJoleu
- OQeDIeK7dMazTmFHbLBHPJ41BjDvlLUY13GnvXrz6K92h88LrCARtU4THn0oxBgpMfsD8Pz7vQk
- pUS4XaOzWIO7og2jKWS8TaBFZOv92GAaiWEGFMcjGeG5n4jMD0VB1SWK0O+1DQcH8rVVP1k+J1V
- HE3yKJVKWWsZcGx7te38RhW2dmPGcQGuVqKIZZtyzXNw4tnT2EksxFABAkEHmvBV3ccLrdPgFxu
- C08eV3bZh0KUKR75P7PdOryA3bZ16MHPHj6MtJxRHzJDvGNo5PgSfI033IItINT/Y70RqkY20zP
- EZ8KBDbG
-X-Proofpoint-GUID: _h6OIL8IQzQWQi6dMm90_4-VBZaoFINo
-X-Proofpoint-ORIG-GUID: _h6OIL8IQzQWQi6dMm90_4-VBZaoFINo
+ a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=niF0sU1HcdIRAeZIowcA:9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODIzMDAzMiBTYWx0ZWRfX9B/w1eKMbiOj
+ wXcjrz38fZg5/3Dvu5ABn4EWi5S7R89GADbh/IZ4+7+wo+2OVrZO5cLrtDiKUovq20FRtcXndVZ
+ e7JHzZICUVCdzHaIm51NryLUrKycC7O05i/+a0QAp6ZZNk3IwitNNryU7WAojkDtFHFlFCkIfJb
+ F/7LgJprsbyKp818EJEBds1zS1xP2WFMrL17GM5wr+t1QgjufUlvYeRLoyj50UyHVEdxCXYJwHy
+ Q8+NTxfzDid/+o9++GxUR5C+0Uu/SoV6ngsS3SsE77hgib+GqpOhlQ8qmmwj9AKR+Nhcfbclcnn
+ iSsVdFe/43GGQrpUBaOdkWGNxe0QoP6qE8U559jU6nGktG1flw6z5LcUVqzruT8UvOdrc79LtzO
+ y7xH0XSU
+X-Proofpoint-GUID: 0G6wq43y0V2nbF-HnCVw_zN2tb8K4oO1
+X-Proofpoint-ORIG-GUID: 0G6wq43y0V2nbF-HnCVw_zN2tb8K4oO1
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-26_02,2025-08-26_01,2025-03-28_01
@@ -103,8 +104,9 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
  engine=8.19.0-2507300000 definitions=main-2508230032
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250826_021223_708032_5A08655A 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20250826_021223_380035_A9EBF602 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,71 +123,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
-specified in the device tree node. Hence, move the qcs8300 phy
-compatibility entry into the list of PHYs that require six clocks.
+Add configurations in devicetree for PCIe1, board related gpios,
+PMIC regulators, etc for qcs8300-ride platform.
 
-Removed the phy_aux clock from the PCIe PHY binding as it is no longer
-used by any instance.
-
-Fixes: e46e59b77a9e ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2")
-
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
-Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml         | 17 ++---------------
- 1 file changed, 2 insertions(+), 15 deletions(-)
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts | 42 +++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 119b4ff36dbd..d94d08752cec 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -55,7 +55,7 @@ properties:
+diff --git a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+index 9d2653007866..51f299fff910 100644
+--- a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
++++ b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+@@ -328,6 +328,25 @@ &pcie0_phy {
+ 	status = "okay";
+ };
  
-   clocks:
-     minItems: 5
--    maxItems: 7
-+    maxItems: 6
++&pcie1 {
++	pinctrl-0 = <&pcie1_default_state>;
++	pinctrl-names = "default";
++
++	status = "okay";
++};
++
++&pcieport1 {
++	reset-gpios = <&tlmm 23 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
++};
++
++&pcie1_phy {
++	vdda-phy-supply = <&vreg_l6a>;
++	vdda-pll-supply = <&vreg_l5a>;
++
++	status = "okay";
++};
++
+ &qupv3_id_0 {
+ 	status = "okay";
+ };
+@@ -411,6 +430,29 @@ perst-pins {
+ 			bias-pull-down;
+ 		};
+ 	};
++
++   pcie1_default_state: pcie1-default-state {
++		wake-pins {
++			pins = "gpio21";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		clkreq-pins {
++			pins = "gpio22";
++			function = "pcie1_clkreq";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		perst-pins {
++			pins = "gpio23";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-down;
++		};
++	};
+ };
  
-   clock-names:
-     minItems: 5
-@@ -66,7 +66,6 @@ properties:
-       - enum: [rchng, refgen]
-       - const: pipe
-       - const: pipediv2
--      - const: phy_aux
- 
-   power-domains:
-     maxItems: 1
-@@ -178,6 +177,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,qcs8300-qmp-gen4x2-pcie-phy
-               - qcom,sa8775p-qmp-gen4x2-pcie-phy
-               - qcom,sa8775p-qmp-gen4x4-pcie-phy
-               - qcom,sc8280xp-qmp-gen3x1-pcie-phy
-@@ -195,19 +195,6 @@ allOf:
-         clock-names:
-           minItems: 6
- 
--  - if:
--      properties:
--        compatible:
--          contains:
--            enum:
--              - qcom,qcs8300-qmp-gen4x2-pcie-phy
--    then:
--      properties:
--        clocks:
--          minItems: 7
--        clock-names:
--          minItems: 7
--
-   - if:
-       properties:
-         compatible:
+ &uart7 {
 -- 
 2.43.0
 
