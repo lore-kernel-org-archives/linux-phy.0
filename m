@@ -4,72 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17A03CA0EFF
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Aug 2025 17:57:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9F71CA0FFB
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Aug 2025 19:15:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zl1ExOZJWFHCeLASWnSNUPBLGrLV75ri3vrfAPY51uw=; b=wks3Kp8UqvClJJ
-	sAY7qJeUo/1/eNnATOQsq8DU8U/+MX3rb3OKXzWf0GxqtpjpjUsANqp/a6Dr7vWuEtqQlbmBGym6v
-	vcrDAH7U433JdTVN0Vp9Q81uOECRkPHsl2XM+StGO7ADYUEFNxrDTAgxS6eMHyQ/Z3jkG1i1SWfq2
-	U2NvoOrqkuEJTGz/aYd9BYUwRMwMx7sBeSXoox1ysIrPde8KRlJfcefe3GbZfShIX4fXDavH6EF6n
-	EvYurLHBY9YLDYZt134IO6qdJbYOxpM+4tNM+SoLY3I1Jz/nVliG9Rqg0JCoso2DovZtiq289KFch
-	VVdSrbIZLuwDWK0ggMnA==;
+	List-Owner; bh=Tz+PLKdNaDaY3dFwMNV22sBouJGlBzeQxVHr6GbsOcM=; b=uAzxEEXTKG9Hzp
+	eoHZbkQTmEWc009KDxSRIYXmLDvcost7wvBFn0Rgak1NGaG+64Vr7L9JCUveSe32Qr4uCCsOyGTKx
+	/fWBzAZ0UCkoBUe7nJMz1z9vzFnTr4pcs0VVcND2EWGc4fopsR7GFjUjYxNlptV7TWlEllkGiUkJJ
+	YEV/Lw2hhbnTY32prjGK7V8/R02c4nsGJOy6CKG8iFXttm7x6Np84daq6qAjR/WdfuB9U0DtVmC+i
+	03Bjm8JUVhV4syrBHMVtcEhB0+olsPRloGUqnHPYNszPkYCBXX/JBEvRdL6iiThQ3oCvIHJWtKpwq
+	V8etYAOmiUc3HWjAJDjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urKOt-0000000GOC0-3SRv;
-	Wed, 27 Aug 2025 17:57:35 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1urLbv-0000000GZFO-1pgw;
+	Wed, 27 Aug 2025 19:15:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urIg3-0000000G84y-0NpP;
-	Wed, 27 Aug 2025 16:07:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6AE8C43D3A;
-	Wed, 27 Aug 2025 16:07:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35D71C4CEEB;
-	Wed, 27 Aug 2025 16:07:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756310830;
-	bh=8/nHBBY+4VBhT+YC6UcqQvlwOolIbFpQ9L4LggP+E0w=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=X4QVOu/5Y1nL6frM1iU4gWhATYdfU0A2DDYCR/HCU+tNO4/rv0GSkcWe1bav1YKZS
-	 qQ9atRMkj6ljLH8X6u7yydleAg+yG4d+QuB4R9PB+FsmKZHxZWYZT5clhh/lDkLG5O
-	 6ypIT8ddQeiXDVgm1tRCXvHlGmz09/9B97PucyrKh+CY95TSCS3PyV+bs1LCKbtegx
-	 xCK8S/DKDtQ+GQvVGCdsQAmlNIqDcAHa9h3iYaW+VFn+19EiDRkU4WreLRRBGX3K78
-	 5OQgM0pEeYdx+hlyoKl4p9avrBArAhHYmoJqIXBj61VIx1Uzmy2MLjog6VVU9OZnmF
-	 I2IwA8MCBqDvQ==
-Message-ID: <a89ba427-b174-42c3-b3b4-5e4079942c3c@kernel.org>
-Date: Wed, 27 Aug 2025 18:07:04 +0200
+	id 1urIl0-0000000G9I8-2XCW
+	for linux-phy@lists.infradead.org;
+	Wed, 27 Aug 2025 16:12:19 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57REuAY9000418
+	for <linux-phy@lists.infradead.org>; Wed, 27 Aug 2025 16:12:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	UG7xbcS5Tii6txkMjvrtxmVb1b0CdEdYm68Ud4Hqmfw=; b=S2tooOSHVLC5jxH+
+	5USDj1+Mi/aN5PSszo1VkCxJsEZp/x2NNSseIlr8mFtMLZt2Z9bTIhx43UIJwMI8
+	XuSGehcUGTpAOnkZNGFpS7iyGXS8sDO0lS/DWDLX0Tn0fCOhNEzdbeFX/lvP0vh6
+	aRnaZg1Rrbby+gHpjcSypvx1yjLPXcrNCOOGhalKV+MKRAsoSICM4WC9Ka5aiWZS
+	ElUMcr2afmOO+pnp4wlqhwDeVQrUke27BL9fjUqiWiPlNML/Oda7a91QpfD1twCt
+	Atn0miSKh6FSqzz832FzCbmbnd1CyqRCosKWTC4SYhjU98z8E7SSeezbCp/lvdub
+	ZGo2Yg==
+Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48t47b88bn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 27 Aug 2025 16:12:17 +0000 (GMT)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-70d7c7e972eso1664526d6.3
+        for <linux-phy@lists.infradead.org>; Wed, 27 Aug 2025 09:12:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756311137; x=1756915937;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=UG7xbcS5Tii6txkMjvrtxmVb1b0CdEdYm68Ud4Hqmfw=;
+        b=Nloc2GE0oo/1T6FBVg7g+tl4db2FQnYhcn+wOYRstjAgfn3ikF79jBMRIjUWcN/m2m
+         acq5qLOjhiki4Q5f1Te8wYeq40LgUTVx5EAO/r55jhudeUMKhsM/7IYUNFzLn93nK9aK
+         VulEoR1LkfgaKiltAmor52k9kTK4+7ymbvTE5hn+RuQsjW5NjvIw1GIrAOhMItZgnzpE
+         fzESsNygEhhwiUOwC6oqDO6EtNE+RgHWt8rkxETDnebV790BDeBwDTE7Ygzbpo71Gh+1
+         O9/xgBtZtB3eIntt7J44SXAv+J4IZGOiKJe+BOQQ+7UfUuNYg5OsD39vzIdelna+TjxK
+         HLCA==
+X-Forwarded-Encrypted: i=1; AJvYcCUeI9uJv2QAQb5W0XG0NtTv0lv8CeslE4zLfrbgNwJsbV7Oamn0DPtuioWTjwXY4KKVKTqPfZ/xyxc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywxd9k9JJb6HvSGK84a96shE/D6Mc6hMSvC13SezEkADCGpCqp1
+	EvDM/7H8boXXr/6D/IvSfWx1o2Ju40RWCebMYw7lJ3izbsu0h8xwQSpb7PsDnyBowgfrACZJBTJ
+	bh9eLHom36PM/FBI4FwWiGW0V12KUxBJLPmIlBO3rzrYhCaxDS5jrZLgbJuh8WcAtknF0
+X-Gm-Gg: ASbGncv2vKLeUNQpsuBL+KzHqIEhtHjJel1o0Dho97Lt/EydrQrbFiDumQAOtZmb8+v
+	gvLKvwFu/CEFhXU9uFLrXm9kqK2NZXtGRQhlpG7t1EyxKhfaHqY13nS647dZkKqXPKTetevrgVB
+	nsMfho6oV42p9SfPuO56+fZYLw4zowzh3ZWaO28yhWdVfkMs162d+YgONXakZGFtxeAVoP2MnVT
+	/Ij9sDHMhb2ilJli4xALbrZ4Srrri8tm7OX9Dm1WmCNKvWRgxKj6W677ki4mU9tCf8H6lVamADj
+	bXrH94+OH4eFdnD7LTVFqIq0TMTeFZH2JnnVRYMNMAfkNyFB85Byo3b9O4vdvpBmsOz0Ff9mQLf
+	Azsl+4UMp2mT882nSjxB3HS30EbCOi/O7knPmKl9lt1f08bO3qSS+
+X-Received: by 2002:a05:6214:20e6:b0:70b:acef:3c85 with SMTP id 6a1803df08f44-70d970976d8mr247393316d6.4.1756311136363;
+        Wed, 27 Aug 2025 09:12:16 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGtHCsOyM9I3rbi3EujqFjTjTxiDfCaPiXddil+SIYuI0DqIfUpa9RqPP6k9YnaNKG73ul6bw==
+X-Received: by 2002:a05:6214:20e6:b0:70b:acef:3c85 with SMTP id 6a1803df08f44-70d970976d8mr247392546d6.4.1756311135723;
+        Wed, 27 Aug 2025 09:12:15 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-55f35ca7437sm2866204e87.146.2025.08.27.09.12.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 27 Aug 2025 09:12:14 -0700 (PDT)
+Date: Wed, 27 Aug 2025 19:12:11 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+Cc: Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, fange.zhang@oss.qualcomm.com,
+        yongxing.mou@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, quic_lliu6@quicinc.com
+Subject: Re: [PATCH v3 09/14] phy: qcom: qmp-usbc: Add DP PHY ops for USB/DP
+ switchable Type-C PHYs
+Message-ID: <hy66bjkygfz2qdhatdyxpw2cktaeohguwdg3ydowubarqebfzr@2rjjxghmhdya>
+References: <20250820-add-displayport-support-for-qcs615-platform-v3-0-a43bd25ec39c@oss.qualcomm.com>
+ <20250820-add-displayport-support-for-qcs615-platform-v3-9-a43bd25ec39c@oss.qualcomm.com>
+ <3pr7ninjxr4pgsz56dr6ojjmx27fzzszmtt6mx4r6qaqt25tnc@nrgx5qiqc7z4>
+ <9bf7f51b-dcfb-4ff8-848e-dcf144936f2e@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 01/22] dt-bindings: usb: snps,dwc3: Allow multiple
- iommus
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
- Janne Grunau <j@jannau.net>, Alyssa Rosenzweig <alyssa@rosenzweig.io>,
- Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org
-References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
- <20250821-atcphy-6-17-v1-1-172beda182b8@kernel.org>
- <20250822-skinny-clay-harrier-64dc58@kuoka>
- <e4c730d2-6ee1-46d7-850b-8ebbe0a1bfcd@kernel.org>
-Content-Language: en-US
-From: Sven Peter <sven@kernel.org>
-In-Reply-To: <e4c730d2-6ee1-46d7-850b-8ebbe0a1bfcd@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <9bf7f51b-dcfb-4ff8-848e-dcf144936f2e@oss.qualcomm.com>
+X-Proofpoint-GUID: pFhr2HFag8YiwkqWX9aVpNMx0nwap495
+X-Authority-Analysis: v=2.4 cv=CYoI5Krl c=1 sm=1 tr=0 ts=68af2e62 cx=c_pps
+ a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+ a=2OwXVqhp2XgA:10 a=EUspDBNiAAAA:8 a=D5wNQ9JKZfep0icmKmAA:9 a=3ZKOabzyN94A:10
+ a=wPNLvfGTeEIA:10 a=iYH6xdkBrDN1Jqds4HTS:22
+X-Proofpoint-ORIG-GUID: pFhr2HFag8YiwkqWX9aVpNMx0nwap495
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI3MDEyOCBTYWx0ZWRfX9ixrgyvWZLbr
+ 8Eik1Ssmqzowg/RgVF6VsME0st/PA6g0hFhmPmjZBAUvfE1zZNaTAAu3rxXYzSVfOF+YQkpTut7
+ uS2Do7f5KTZxFvy0Ikg5uo9p8tvfyDvZUb8Ro5U2C3Ho1xMda/pImHkhif3+c/7pyvChnmQW/ru
+ ziC8wmviNDynEnJ/P+XH9ArLhPCYsVYbyTQk/8tNVQleBeMtKS7HtaEx87i2gLwL8v7kAXMay7h
+ xt1yA/bcPJAGjSjfQOiP6kbtr6cjC1OXIHgk43V8h0dxCdNhdsTbvADeSLli/XXVKPwZYaj1di3
+ KI7DIiDujy/GRKDBUktamKGtod5z7/KzA02tPY+tz9OOWJ5Fx61SeNBAe/GDj8BFFO+85jtls0Q
+ TEob5Z4z
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-27_04,2025-08-26_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 bulkscore=0 adultscore=0 clxscore=1015 phishscore=0
+ priorityscore=1501 impostorscore=0 suspectscore=0 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508270128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250827_090711_156698_5BFD2139 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20250827_091218_648011_B0F0DD08 
+X-CRM114-Status: GOOD (  23.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,56 +147,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24.08.25 10:31, Krzysztof Kozlowski wrote:
-> On 22/08/2025 09:22, Krzysztof Kozlowski wrote:
->> On Thu, Aug 21, 2025 at 03:38:53PM +0000, Sven Peter wrote:
->>> Apple's dwc3 variant requires two iommus.
->>>
->>> Signed-off-by: Sven Peter <sven@kernel.org>
->>> ---
->>>   Documentation/devicetree/bindings/usb/snps,dwc3.yaml | 2 +-
->>>   1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
->>> index 4380bb6fa2f08a475b557e80467abc2861f622e2..6d35dcc605c01977f4fc6fdb6f12976f1cef2b9e 100644
->>> --- a/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
->>> +++ b/Documentation/devicetree/bindings/usb/snps,dwc3.yaml
->>> @@ -60,7 +60,7 @@ properties:
->>>     dma-coherent: true
->>>   
->>>     iommus:
->>> -    maxItems: 1
->>> +    maxItems: 2
->>
->> Never tested. You anyway need specific constraints.
-> I realized that's pretty vague, so clarifying: you changed all bindings
-> to have two iommus and that's unexpected. All other devices have only
-> one IOMMU mapping here, so they need to stay like that. If these IOMMUs
-> differ, you should also list them, but probably that's not the case here.
+On Wed, Aug 27, 2025 at 08:17:39PM +0800, Xiangxu Yin wrote:
+> =
 
-Makes sense, thanks for the detailed explanation.
+> On 8/20/2025 7:45 PM, Dmitry Baryshkov wrote:
+> > On Wed, Aug 20, 2025 at 05:34:51PM +0800, Xiangxu Yin wrote:
+> >> Define qmp_usbc_dp_phy_ops struct to support DP mode on USB/DP
+> >> switchable PHYs.
+> >>
+> >> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+> >> ---
+> >>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 163 ++++++++++++++++++++++=
++++++++++
+> >>  1 file changed, 163 insertions(+)
+> >>
+> >> @@ -1095,6 +1248,16 @@ static const struct phy_ops qmp_usbc_usb_phy_op=
+s =3D {
+> >>  	.owner		=3D THIS_MODULE,
+> >>  };
+> >>  =
 
-I don't quite understand why this controller needs two iommus but they 
-must essentially be programmed to the same mapping for xhci to work.
-All of device mode goes through one of them and xhci buffers are split 
-between the two iommus (iirc I saw the command ring using the first one 
-and the event ring the second one and then just decided to program them 
-the same since anything else would result in a big mess).
+> >> +static const struct phy_ops qmp_usbc_dp_phy_ops =3D {
+> > Please try restructuring your patches so that there are no unused
+> > warnings in the middle of the series. You can split the next patch into
+> > 'parse' and 'enable' parts, then squash this patch into the 'enable'
+> > one.
+> =
 
+> =
 
+> You mean it's better to define and register new functions in the same pat=
+ch=A0
+> =
 
-Thanks,
+> where they're first used, to avoid unused warnings?=A0And for things like=
+ parse_dt and phy_ops,
+> =
 
+> it's fine to split them into separate patches if each part is used right =
+away?
 
-Sven
+Yes.
 
+> =
 
--- 
+> =
+
+> >
+> >> +	.init		=3D qmp_usbc_dp_enable,
+> >> +	.exit		=3D qmp_usbc_dp_disable,
+> >> +	.configure	=3D qmp_usbc_dp_configure,
+> >> +	.calibrate	=3D qmp_usbc_dp_calibrate,
+> >> +	.power_on	=3D qmp_usbc_dp_power_on,
+> >> +	.power_off	=3D qmp_usbc_dp_power_off,
+> >> +	.owner		=3D THIS_MODULE,
+> >> +};
+> >> +
+> >>  static void qmp_usbc_enable_autonomous_mode(struct qmp_usbc *qmp)
+> >>  {
+> >>  	const struct qmp_phy_cfg *cfg =3D qmp->cfg;
+> >>
+> >> -- =
+
+> >> 2.34.1
+> >>
+
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
