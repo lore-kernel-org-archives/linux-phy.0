@@ -4,101 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B287CA0FF0
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Aug 2025 20:45:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E20BCA0FF9
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Aug 2025 01:10:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=48BwA4VG7sSTK5nCGrZby15ueYyhKwabYbYiTUYoxd8=; b=w2ORgpLhp10Mnh
-	LKxutWxwPSSGRctCBWFJAHstNo58LyLDYJhXFXDiAgpsh3NKE06dcRGKViDcqp6PYUkBuhEI1F1bj
-	JiM4C8ImnelLlBcQPJjfkJxH/Yjkp+oa5gwF/YwMuNAqPlfdaFhY6x3A3O4YhuDkWQB5RO1VUba9v
-	vd4X1SSXbBIZ0UMTnI3Xsdz29yOcWqYsRkzDMNysWpRxck54TZstsJxJz2Lzy12GiI1NWMD2AVrgY
-	67Q66X+UGyizvhDg3bH5cdtqc5cj0wdQp9OYgo+cTuH1RxJWuovxdhH9VnzpnoznttXTvpqIkNZJ9
-	kdchQw+J0W0WQN47m8QA==;
+	List-Owner; bh=UyaX5/mCkq3X7kd0HowaK5Hz9iSx//oGL0Ia5VMaCio=; b=4QvEMzx845dy+g
+	WmvhOj89PfM7FT/nj0AMZfisk6jU4r0Y5IdDc7YZJtaYWLFXQ1qfBO7zn68ICI+Z9o002DJza2puZ
+	9tfYlQmKgKjvG7dE3xblT6Iwn4CTyp5rDCD5OadcAYra9YSOZ5/8PoAG58X+Bq19DaEA5Sp6wMiCY
+	1y6IOBKHytmKhmXdAeHpUM+c4wYzNOtOfCJr+jDWwd/Fpo/NAMPX3l1TrKYsLpIW9RqgW/6pFwzrp
+	zbkfPmfS58QLaGlomqBZz8dJq7+wFLQdkUbRXyPYqDPAVJalqVFHo+VnUg2KBJjOFbJ6i3FKIer1e
+	XZ1veKWfdyKqWXuMw98w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ur0Xa-0000000D83m-0Iyv;
-	Tue, 26 Aug 2025 20:45:14 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1ur4gL-0000000DV7Q-08z9;
+	Wed, 27 Aug 2025 01:10:33 +0000
+Received: from mail-pf1-x430.google.com ([2607:f8b0:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ur0XX-0000000D834-41tX;
-	Tue, 26 Aug 2025 20:45:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1756241053; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=j2yVxPbvVmnkEx3m/dN6e1AnUw4nYDLYLrQh9jouqxO5BJjiiCr793G8HSPBwBdIjatD9NagViFauNjRfSXiN5OkOvRkuqJsv3BkMAKRRezf9KhkZ9qHONfzjNiYdn92suhyL8w0t2CahFZ6j03Kzk/PHMsJrm8p8efMx+NlI/M=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1756241053; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=h44Qfi5J3Y304gTJmb6TLXLe4gIhtF4d/gBhlL0gNV4=; 
-	b=N2xtWkuh45RuU2Vs8YqwfZJBv6pw4MgqWCT3y3wTsVdIc4i07F27CpHJTe6r0RHrYKECjA2mdKudHQ73mnL9z6hLRcvSqq2844PABhn+1mHxPbT5bMHwssg/rwWgr6mQ/zKgi0MKUL5PN5Wc1C2feJz+9yYB4bE83Epayd99uKE=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=dmitry.osipenko@collabora.com;
-	dmarc=pass header.from=<dmitry.osipenko@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1756241053;
-	s=zohomail; d=collabora.com; i=dmitry.osipenko@collabora.com;
-	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:References:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=h44Qfi5J3Y304gTJmb6TLXLe4gIhtF4d/gBhlL0gNV4=;
-	b=Ki9wPHONx+Kgfg+EjzLJhd6LwqGwWdyDua6+Z+EDmJEbzyVUdyErOswt5JJ7uGnV
-	yBZm/csgF+b9XzuM3ZCk9g4oG2mnCIHV2SY/tvJsxQ81i+wvrbET0R14VjHnkb41YXS
-	mDPO7PRK+qiv+NHwXJGh2VBPtPHhrJ7sOczkb5CI=
-Received: by mx.zohomail.com with SMTPS id 1756241051276539.1866484786493;
-	Tue, 26 Aug 2025 13:44:11 -0700 (PDT)
-Message-ID: <676d88d1-c15a-4648-a4c5-c668e40b12f0@collabora.com>
-Date: Tue, 26 Aug 2025 23:43:57 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 04/20] media: synopsys: hdmirx: replace macros with
- bitfield variants
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Yury Norov <yury.norov@gmail.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Jaehoon Chung <jh80.chung@samsung.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
- Shreeya Patel <shreeya.patel@collabora.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Sandy Huang
- <hjc@rock-chips.com>, Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Qin Jian <qinjian@cqplus1.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Nathan Chancellor <nathan@kernel.org>,
- Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
- Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>
-Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-clk@vger.kernel.org, llvm@lists.linux.dev
+	id 1ur4fK-0000000DUtR-1wQa;
+	Wed, 27 Aug 2025 01:09:31 +0000
+Received: by mail-pf1-x430.google.com with SMTP id d2e1a72fcca58-7718408baf7so3194118b3a.3;
+        Tue, 26 Aug 2025 18:09:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1756256969; x=1756861769; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=rYru9aDq9lQqkQVO+bwcYPZ+KioVEL3wdcshlzZLQl8=;
+        b=a4IOV2hr/yLXe1lhop0qz7YQkblAPpegPcwKA6Z/fyUR0KUbHBnb2RzW6WNq55qIVf
+         mWmDnyDlj0jgpURUn/JNOZu55FybD/eRoCv8e9aZlpoCh6bdvzoI8DEzHfcaRBM+uhkS
+         /a5zcEEy+lxNE9qhYisR/iDUtjpSOJBGxAWissbFttTcqp5hyIy54lMoXNCtSVNUQAxI
+         K+9rTDMztE51SURM4UWNLRXx6ljy/8UYJBWiTgGVJ097r1Oiddk/5neYO9PKedt/TvG1
+         9iHkFUMzOjTpR4KdhbgjFSS3kptDNYQM4rDv5vt2/s1vC7piC+AzyvFITwdXjr4YIpz4
+         mEqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756256969; x=1756861769;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=rYru9aDq9lQqkQVO+bwcYPZ+KioVEL3wdcshlzZLQl8=;
+        b=oI3GP0/S04g7YLzMkjToGAWH2CRUwpeAAi6kHizqOWUtdqHQk6KLrmZeAmvSlpyLgh
+         nTKneGt6TPLE952wraBbCvFTfg4QGuj7qkPY2QJ6sFU9HJzs3otgdPvY7ONssV+FbmgI
+         PVAFbJupESpeItcYFIMgKnq9k8ExY+k0UEx9mWSJp6KteY6n9nW68WOW+HkrgWEWij8C
+         0JoPXg0wsEHMTJtcpBxDJBI/jvcmmeMk4Vcv6TG/WcUhZ185g+WbAAF9WbOKZTV3V2Dn
+         HQgWK58Uuek1bS6YgDNifvpHgsqjAfOcU/rfbBYb4HJ8+0tVbsAuY8RmiLieHYrq6alW
+         yEAQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWUJsm8DWldHVOkWaKukqTQ6c3eXfwy45Ns5ZHZIPkHpQequAunEkmFFocAIs5S0g6N4lnNE4gY9GaBStIUH80=@lists.infradead.org, AJvYcCX+G4jJRvP5OnxyuZdhdXceNkePcGVBRpaUTzqsyrepshH6EnKuN4I3itnkb7m276sNHsMPRS0eKqshr5L0BIh3@lists.infradead.org, AJvYcCXxcVuvecKR2m+vXbhn/N4eFURb6zUqZN0NRvB6HDk28tWpFrqC9oilhT5EUk/ikO6jh87m6Yze623K@lists.infradead.org
+X-Gm-Message-State: AOJu0YzuuJS+hrEgj1/ltc/YDAjTIQWpZXks/KcJ6qco2X4QoEoa6maR
+	HA9F9LwU24jYUSWz1ra4pOMNWXoJ2BWe8yJNiEYc5yFDyKms4tKbwDtl
+X-Gm-Gg: ASbGncuvp44rQ/d3Ztf0bNaetEQVzQuh6ihizLokJCThF3CdWY33YQEwDH32TxM4Ukz
+	yxZ8QYoJqLUradMZA2UYOjBSwl/Ya+OAIThx99elY5vKzz3lk+ORqTDfFjwhVxFWFG1d7WGfAIm
+	jo2oZzoJPQngk5AytLPdfLeygWZmghblzR09BQOwcw/r9TUp5lNmiolhwdhvGjE+KeDqenk0GLX
+	C38uD73NBmbDYrA6ja7Xd21aJ5xb5eHcI7JW18O4u+oIK/3Dsan1Bq0u/WFmIqQjd5RFu3E1knL
+	m3o+SIv5+6+glbLSKVvEkXX3sDsCyIaA1ZqD7tsUo4aZMySRJx+dFBoUn6KQEb/5Q2/4LcKYnU9
+	w3yNu8dbmklxJVXTr08DfrQ7utxwRih0g
+X-Google-Smtp-Source: AGHT+IHkfsVuZ+4qDUB9kGWXKNs3ixhtdzwAG20w+Ik2IkMK7IqkqBUunACMn5yLzf65+cgJRTumCw==
+X-Received: by 2002:a05:6a20:7286:b0:240:d7a:9591 with SMTP id adf61e73a8af0-24340d1c50amr25873828637.46.1756256969084;
+        Tue, 26 Aug 2025 18:09:29 -0700 (PDT)
+Received: from localhost ([216.228.127.130])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b4a8b7b301csm6847632a12.35.2025.08.26.18.09.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 26 Aug 2025 18:09:28 -0700 (PDT)
+Date: Tue, 26 Aug 2025 21:09:26 -0400
+From: Yury Norov <yury.norov@gmail.com>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+	Jaehoon Chung <jh80.chung@samsung.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Shreeya Patel <shreeya.patel@collabora.com>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Nicolas Frattaroli <frattaroli.nicolas@gmail.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+	Takashi Iwai <tiwai@suse.com>, Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	MyungJoo Ham <myungjoo.ham@samsung.com>,
+	Kyungmin Park <kyungmin.park@samsung.com>,
+	Qin Jian <qinjian@cqplus1.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Nathan Chancellor <nathan@kernel.org>,
+	Nick Desaulniers <nick.desaulniers+lkml@gmail.com>,
+	Bill Wendling <morbo@google.com>,
+	Justin Stitt <justinstitt@google.com>, kernel@collabora.com,
+	linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
+	linux-sound@vger.kernel.org, netdev@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com, linux-pci@vger.kernel.org,
+	linux-pm@vger.kernel.org, linux-clk@vger.kernel.org,
+	llvm@lists.linux.dev,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Subject: Re: [PATCH v3 00/20] BYEWORD_UPDATE: unifying (most) HIWORD_UPDATE
+ macros
+Message-ID: <aK5aujavDc4PvvjO@yury>
 References: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
- <20250825-byeword-update-v3-4-947b841cdb29@collabora.com>
-From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Content-Language: en-US
-In-Reply-To: <20250825-byeword-update-v3-4-947b841cdb29@collabora.com>
-X-ZohoMailClient: External
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250825-byeword-update-v3-0-947b841cdb29@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250826_134512_058236_0765F162 
-X-CRM114-Status: GOOD (  17.88  )
+X-CRM114-CacheID: sfid-20250826_180930_506220_CD1092D0 
+X-CRM114-Status: GOOD (  32.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,50 +143,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/25/25 11:28, Nicolas Frattaroli wrote:
-> The era of hand-rolled HIWORD_UPDATE macros is over, at least for those
-> drivers that use constant masks.
-> 
-> Replace the UPDATE macro with bitfield.h's FIELD_PREP, to give us
-> additional error checking.
-> 
-> Also, replace the HIWORD_UPDATE macro at the same time with the new
-> FIELD_PREP_WM16 macro in hw_bitfield.h, which also gives us additional
-> error checking.
-> 
-> The UPDATE/HIWORD_UPDATE macros are left as wrappers around the
-> replacement macros, in order to not rock the boat too much, and keep the
-> changes easy to review.
-> 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
->  drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
-> index 220ab99ca61152b36b0a08b398ddefdb985709a5..b26668a98aafd1682b8342cc11f84666a13f07a3 100644
-> --- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
-> +++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
-> @@ -8,10 +8,12 @@
->  #ifndef DW_HDMIRX_H
->  #define DW_HDMIRX_H
->  
-> +#include <linux/bitfield.h>
->  #include <linux/bitops.h>
-> +#include <linux/hw_bitfield.h>
->  
-> -#define UPDATE(x, h, l)		(((x) << (l)) & GENMASK((h), (l)))
-> -#define HIWORD_UPDATE(v, h, l)	(((v) << (l)) | (GENMASK((h), (l)) << 16))
-> +#define UPDATE(x, h, l)		(FIELD_PREP(GENMASK((h), (l)), (x)))
-> +#define HIWORD_UPDATE(v, h, l)	(FIELD_PREP_WM16(GENMASK((h), (l)), (v)))
+Hi Nicolas,
 
-Nit: the extra parens around FIELD_PREP may be omitted
+Thanks for the work!
 
-Acked-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+On Mon, Aug 25, 2025 at 10:28:20AM +0200, Nicolas Frattaroli wrote:
+> This series was spawned by [1], where I was asked to move every instance
+> of HIWORD_UPDATE et al that I could find to a common macro in the same
+> series that I am introducing said common macro.
+> 
+> The first patch of the series introduces a new header file,
+> hw_bitfield.h, which contains two new macros: FIELD_PREP_WM16 and
+> FIELD_PREP_WM16_CONST. The latter can be used in initializers.
+> 
+> I've cheekily added the hw_bitfield.h header to the BITMAP API section
+> of the MAINTAINERS file.
+> 
+> This macro definition checks that the mask fits, and that the value fits
+> in the mask. Like FIELD_PREP, it also shifts the value up to the mask,
+> so turning off a bit does not require using the mask as a value. Masks
+> are also required to be contiguous, like with FIELD_PREP.
+> 
+> For each definition of such a macro, the driver(s) that used it were
+> evaluated for three different treatments:
+>  - full conversion to the new macro, for cases where replacing the
+>    implementation of the old macro wouldn't have worked, or where the
+>    conversion was trivial. These are the most complex patches in this
+>    series, as they sometimes have to pull apart definitions of masks
+>    and values due to the new semantics, which require a contiguous
+>    mask and shift the value for us.
+>  - replacing the implementation of the old macro with an instance of the
+>    new macro, done where I felt it made the patch much easier to review
+>    because I didn't want to drop a big diff on people.
+>  - skipping conversion entirely, usually because the mask is
+>    non-constant and it's not trivial to make it constant. Sometimes an
+>    added complication is that said non-constant mask is either used in a
+>    path where runtime overhead may not be desirable, or in an
+>    initializer.
+> 
+> Left out of conversion:
+>  - drivers/mmc/host/sdhci-of-arasan.c: mask is non-constant.
 
--- 
-Best regards,
-Dmitry
++ Michal Simek <michal.simek@amd.com>
+
+>  - drivers/phy/rockchip/phy-rockchip-inno-csidphy.c: mask is
+>    non-constant likely by way of runtime pointer dereferencing, even if
+>    struct and members are made const.
+
++ Vinod Koul <vkoul@kernel.org> (already in the list)
+
+>  - drivers/clk/rockchip/clk.h: way too many clock drivers use non-const
+>    masks in the context of an initializer.
+
++ Heiko Stuebner <heiko@sntech.de> (already in the list)
+
+Guys, can you please take a look? Would be nice to finish the
+consolidation.
+
+--
+
+I'll take #1 and the acknowledged (or at least reviewed) per-driver
+fixes in bitmap-for-next in 2-3 weeks before the end of cycle.
+Everyone, please send your tags!
+
+Nicolas, please ping me if I forget. For the rest of the series, in
+case of no feedback from maintainers, let's wait for one more merge
+window, and then move everything altogether.
+
+Thanks,
+Yury
 
 -- 
 linux-phy mailing list
