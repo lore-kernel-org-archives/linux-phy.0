@@ -4,95 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D6CCA0FF9
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Aug 2025 15:43:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B88CCA0FF9
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Aug 2025 16:25:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=achy4F6jKetFWaSqBKWvPS3LEsoAyDH/rFCcjAmpACo=; b=36suuhGQ3Z/XZ4
-	ce6ARaZZEHSQ9zo+59SUA7+2wsveAS+UxsT0TMpTdncJYjh3+ZgGf+boVlpgh1KsSEetaWS1Yowdx
-	w+RF2J/mWo9L2Azb5FOepwSCPCJBxJStlrQtCfbuL17jdOrQo1WY+3CMArn00y54hX19Jw49EFHyQ
-	7Xp51IopHcSse5pFVHTaVOmGYtNeB5cgyvCCd8yHsJqTZqVT+mSRLFQMWnJy41sfaY6z2Gum24oxv
-	uhc0svETOJqBRDwbQAtHKvC0djvN0owifxuZgCqcYm0+LuAp3jLBJCmGq0Fh8WVjrDaWK5svUdE8B
-	jUFObN3UcTn460xxja7A==;
+	List-Owner; bh=weR/LlY0+7FrIiAGsPFtIRQZLk2iLtuvv7rHmMzKuE8=; b=Uk9gD+2fzZNJ+Q
+	flSZbWrM5ebz0lkVyd1rDL5r3GOVLQO7DP0i2XuVqLkKlsoLfaZMgp7NVVMtPG24+iGLYxQsZRVnw
+	OYi+MtW2TA36m0UcBLIudGiJmONjx27jJ3zSFKSiGLAA9X20gLPgLMrEfVJwjpAiL+NqEgCzAV9f6
+	WGFbVN7VL3KoZGtswtI1xNfk3RCmt0vizA9VpbDioIVcRY84dX7UGEKtkqG7xsX5W9qXqzo7MROlF
+	uL/yqinJtSGvNYrbROZqIix0pClXtgIjyZIPjofmyZRJXo3YOZVzLBiVuZRP8JPFTaar76Z0Db7uX
+	9i78YgaKud3YoEprIIXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1us1GS-00000006FiH-1Vtn;
-	Fri, 29 Aug 2025 15:43:44 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1us1uj-00000006O8D-2ux7;
+	Fri, 29 Aug 2025 16:25:21 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ury2o-00000005cSz-3Bmk
+	id 1uryu6-00000005lmC-1Thh
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Aug 2025 12:17:28 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3ceb830dd58so733655f8f.0
-        for <linux-phy@lists.infradead.org>; Fri, 29 Aug 2025 05:17:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1756469845; x=1757074645; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ghujH3DI//37KbeCX3UN89JJVzHmH+z7daXWxEwMXg8=;
-        b=f0BNcrqjU5JEbj2nmZ8lMNoq+ualHtb5j0svEtrdjAgfYYf5CkEPTsHKj2EblmPqv8
-         K75umT1K7fEYp02Q1PDvjmNrqIOvgKu2O8Lgrk46RXKP8wQ/LJadE16NVo4BWvnaHfkO
-         aRzhbroKxbSdAGaEohje3uEDGfe+BMD5ofOlRGlMV8VaYNeaL2qgTJlD9KXGZ2PHXYIC
-         aHUMzslib/JRHJdAtGH8D8jb/4Vupl+NiycRCfAtSX1GmxWCiX3XHR2aS9EDPdJewui3
-         A54ytAhSQOaIQ+z/CcU5xndqQKAqoZMazpXsW+GLF9+GQitSQ0CT/5YSqX6NsbkHuz98
-         AYIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756469845; x=1757074645;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ghujH3DI//37KbeCX3UN89JJVzHmH+z7daXWxEwMXg8=;
-        b=mqmvpET5O89Pt2ssP1kqgwhQgHJX/dUYVjESfAmVse4au3LTOSGl5bsyCMziM4IFhB
-         N9+YWMaiBvNP09ctKXZvX6uyaI4+luNGgLER3d/3aOSu+qmxNuq1q39djQb+ZFkX5wvv
-         w0TJgaL2cRDlXAjv1o6g6M9aPnJ9Kxl+CXAUNknuyIw5UYxvXLkTSrf5frW/ik8GamDk
-         umigf/FVrpoNWodt/xpl34iy1b4M3aylrpjsT3HihiySgDP/HKPoDeKJP2nnnqVBo1Zs
-         dbfrjgtpM19TILnLhu30ev4aL4P4FH1FbZPpwpY82fwUVYz+f/bq5MlFMHd3nO9ClcMN
-         LKzA==
-X-Forwarded-Encrypted: i=1; AJvYcCUnfsiHis/p72gr7FjvislbjnHepKsn/Cb4oegg3NozT2APrH8Mudpoas6XjaeePLuCtjEMU9qg1hM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywolz4KSFCw0nAQxYZyyU5fdJYnXEQlzRVRgmiI7fFQExS9E4cP
-	fBTWldc1Llywlpsh4X1LFJJRSCH265NcAUAiWxnHfL6cpsNAVGkStKLON+pgnXeYHH8CMG9LK23
-	hPX+o
-X-Gm-Gg: ASbGncvQr+k7xzpeKg3tnfGvkUHNhtYuthNZG+BbqLEsSAoZjnTaomH60VfgA+s4xSY
-	RAXc9bT2qdLIuUVGSsiuAkL4gxF7QZiEPEMJtA2TPpWai53SZHyMJv7Vsn+MCekyID59NIIBRxJ
-	vpM7c8IH0ZZIcGH9v732VFYDE61U5/+J2BjyQcPqMVTAbYeSJguvYtFlh+3hMI92tG2VC84uIGV
-	y67v2zpdI0UwaVpsVydM3j6PJFQt7NyymvUkYWqAeI7t4Gwj6aepmUoZpt8fBZFH3/leogIOP0O
-	RFgs6U7mYOCH/cS6/4cZ2E9ow4eaCGwKRcRzNV/09Yc3sS4Ay8ucDbgWgxX2pRyGipdXTXhKh/C
-	s+6tEkyMDO37+4n4YEKoGEHGPDMm/Ha6E0g6CxhadDW9gm24P8+3aZl5na962uNXBdvZdQ+vSKb
-	g3Ly1oTfhDHdHqXr0sTe3hmmU=
-X-Google-Smtp-Source: AGHT+IFYqGiFK1t5MMe09IWoUP29WvEbo5vkf2CXXru7AwbPHex/5v7KOICQ+I5oFXhPL1c8vkkZ4A==
-X-Received: by 2002:a05:6000:220b:b0:3c5:921a:f440 with SMTP id ffacd0b85a97d-3cbb15ca670mr10835956f8f.12.1756469845102;
-        Fri, 29 Aug 2025 05:17:25 -0700 (PDT)
-Received: from ?IPV6:2a02:2f04:6202:f400:43c2:4394:d834:def5? ([2a02:2f04:6202:f400:43c2:4394:d834:def5])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3cf276c751esm3173107f8f.16.2025.08.29.05.17.23
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 29 Aug 2025 05:17:24 -0700 (PDT)
-Message-ID: <3731e13f-d601-4fe4-a3d2-6dd3289b6396@tuxon.dev>
-Date: Fri, 29 Aug 2025 15:17:22 +0300
+	Fri, 29 Aug 2025 13:12:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 11E33433C1;
+	Fri, 29 Aug 2025 13:12:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAE77C4CEF0;
+	Fri, 29 Aug 2025 13:12:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1756473149;
+	bh=3TUJX+rqDBPrvBV7yN+YCbV5OV8L2UUqc9CM4ISWeyk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=RSOaMp1xMOKHykvDIjlQ/kLEZzKmtSrODeMHyteCoUV2faerxBuJ7F8CmO8n6YLjK
+	 bJEquwspVaZOUzK3amnRWFY/Z9eXfk+SZaPipKDbZ956efuI/wZWCMXnsZ/l7db5bA
+	 R3ztFJpwBLqWo5garIf5NH2vrqipODyxhMpaKD1YUtp7Y/88IFalhvJ1P4WV4ZN+f8
+	 Au4ga+aEZT2nt2VR+KaSCdhe36+DJ21RFm8ECkD1Ju57MeSMTw36XgUqRm8AphLY4I
+	 Ar5yISeM2HEvcndido4Kxifi5D8gmfBQlYQIBqMdEukb2CimnZzGJMbdqv7Gi5yoiC
+	 lxoNacPHa9yLQ==
+Message-ID: <bf925270-5410-407c-a4e0-472a427e6ef6@kernel.org>
+Date: Fri, 29 Aug 2025 15:12:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 0/7] Add initial USB support for the Renesas RZ/G3S SoC
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
- magnus.damm@gmail.com, yoshihiro.shimoda.uh@renesas.com,
- biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org
-References: <20250819054212.486426-1-claudiu.beznea.uj@bp.renesas.com>
- <aLAZprjeKtk4pusw@shikoro> <ae53d367-2ee5-49aa-82ba-86f9e84d4d25@tuxon.dev>
- <aLGGmI8bpKNVaSAa@shikoro> <be706ee5-057c-4b0a-b0d3-54ca24087f3f@tuxon.dev>
- <aLGUJbA0szYQ_gN4@shikoro>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN
+ transceiver
+To: dimitri.fedrau@liebherr.com, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Dimitri Fedrau <dima.fedrau@gmail.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>, linux-can@vger.kernel.org
+References: <20250829-tja1145-support-v2-0-60997f328979@liebherr.com>
+ <20250829-tja1145-support-v2-1-60997f328979@liebherr.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: claudiu beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <aLGUJbA0szYQ_gN4@shikoro>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
+ QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
+ +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
+ ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
+ 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
+ hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
+ tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
+ 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
+ naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
+ hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
+ whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
+ qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
+ RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
+ Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
+ H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
+ dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
+ AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
+ jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
+ zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
+ XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
+In-Reply-To: <20250829-tja1145-support-v2-1-60997f328979@liebherr.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250829_051726_806767_88443392 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20250829_061230_432664_D4E40A93 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,34 +117,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 29/08/2025 11:19, Dimitri Fedrau via B4 Relay wrote:
+> From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> 
+> Adding documentation for NXPs TJA1145 CAN transceiver.
 
-
-On 8/29/25 14:51, Wolfram Sang wrote:
-> 
->>> Yes, I added it and it made the error go away, but still no USB. I
->>
->> The drivers are not probed or you see no activity when connecting USB devices?
-> 
-> Sigh, I was so sure to have checked OHCI/EHCI but only EHCI was enabled :(
-> 
-> Checking with the schematics, I get it that only the rightmost USB-A
-> connectors on the carrier board are routed. Those two work fine now.
-> 
-> If that is to be expected, then for the whole series:
-
-Yes, only those 2 are routed on RZ SMARC Carrier II + RZ/G3S SMARC Module.
+Pity you did not include resolution of discussions about directory and
+can phy bindings here. You have entire commit msg for that, but instead
+it is a copy paste of subject.
 
 > 
-> Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> ---
+>  .../devicetree/bindings/phy/nxp,tja1145-can.yaml   | 79 ++++++++++++++++++++++
+>  1 file changed, 79 insertions(+)
+
 > 
 
-Thank you for doing this,
-Claudiu
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
