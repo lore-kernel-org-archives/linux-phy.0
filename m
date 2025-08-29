@@ -4,81 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D31ECCA1000
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Aug 2025 10:26:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6E5DCA0FF9
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Aug 2025 11:26:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OTXUAWnkLOhTXYheLFD68myCROL8Hm/usNU0Ci6o0ms=; b=IdB4J7HKWW1mRU
-	Q1i5E/iDYVWBg5w+TaWIfAZlk7eQrrYwuFl7CJ/JfFNLXDE+i1GxGY62+kGN06sTjYH75+4FG0ofA
-	NPmZ4p9zdhawIBeahgb1jUpQ34qX9ISqdrna5EhF+de8mqnR8W2sd+OmdE3i0koV4iiY9pYxPVGlE
-	vP90lQmPTU2UKex12PdAi2Ghi+2i3FSR02iAg+QWdgkXucb/9VAS4NQtIB27HWp/JxMyoRMy9U4U9
-	TDCQ2fyUzcILr2AcHeXLbBmbzPvcQAyOKme36YVbQP0s+HzRWh8TFzd2knZ6sDsJm9ooHMaDKGfIY
-	9DxAd1NaeQwESMPtNuSQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hBIUiGFxiLtKR2xBrbtrJxvEm8SitRy+TFexDot2Ezs=; b=wZL3FE49ciGjX6
+	wNilhXE2PZr5KAYBbiup6YvDPdLFxgaglCzeYQOn1LPReiYNXfUmf69S8Vb4KiawA8PCSww0FbL9s
+	sjtMbd0iF5YadWYcjuSb0YJY+YSSLWq4+1qBLyXaQ8oAoXS0r6eWyUNq6CzsrPo+nGRdW3WBlZBp2
+	oX4ygnzxTOCWxNFaczyOZBVh6F40aCOP7GsbgOmTKtB5kQA69G0imApPbAwy5ymbR9WEsmOjXJ22U
+	Cu5qsnQIlF1WXU6mT3pEQV88MWhNzqpu9Hr2QGVHumRWWkuNsDRCKaYjTdcSsCGAAEV59VXRuOtM2
+	mjMvq8A+8VrcZbCY2cLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urwJT-00000005JgK-1nKG;
-	Fri, 29 Aug 2025 10:26:31 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1urxFZ-00000005Tzk-1av2;
+	Fri, 29 Aug 2025 11:26:33 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urvHF-000000057Ui-3YTm
-	for linux-phy@lists.infradead.org;
-	Fri, 29 Aug 2025 09:20:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 174A7453B5;
-	Fri, 29 Aug 2025 09:20:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id DFEC1C4CEF0;
-	Fri, 29 Aug 2025 09:20:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756459208;
-	bh=XKpDXSN+sByAS9cR9W+5ZzKQ3tc8PFlTmx1lTt++ZzA=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=GhJRQSm5FZkI67SZV5HCgiXYa0YHQKtFQebSIMUg5eqmjxC3zbp+GjLnNVxwkVrqX
-	 gbx3q5eb7qxHnoUYuVQq16oHGcpbTfkHAV1BlF5uErfbN+zgJwp4p0hN+OoEwMOge1
-	 7lSbhxfjK1Gj8yTLCeoFUKmQa7V8jJ6O2wW7MiysqEjxA5XYwABsXvLiUdtV6Q2CZ6
-	 qC0T+s4Yh/y5YgEZiZyWAKm0Gl78GNpDQERNZF+vUtRRuhqsbKAsXzrvSkUH6aZgEk
-	 U5qM6HA9nEeHEV/tuxPPm0wd4HB8RGotZBbIu+hbzvvLeDL0T7UhCfHAZZ9ht3uPHC
-	 n8RnCoiobwQzA==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D4D38CA0FF9;
-	Fri, 29 Aug 2025 09:20:08 +0000 (UTC)
-From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Subject: [PATCH v2 0/2] phy: add basic support for NXPs TJA1145 CAN
- transceiver
-Date: Fri, 29 Aug 2025 11:19:57 +0200
-Message-Id: <20250829-tja1145-support-v2-0-60997f328979@liebherr.com>
+	id 1urvY3-00000005B7X-48yj;
+	Fri, 29 Aug 2025 09:37:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1756460252; x=1787996252;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=Ap6TpSpSWfu+GxU/IBIYtbECJ/gJQjgTTVqFq2X5zn4=;
+  b=HArccxoMtF3UGFirNhnpXQz4D33g0ZIoAp8k78P5Ndvx6l0DWyFzVlz2
+   zSiUtK33awI8dz6MeLXxeR3gcLgLhpe5p+ofeddO+VzkZV7BVyR4+zFMs
+   nEJ72Fzwz67jDNUArNBFR+BtL0hJc5qsNuxRw28SMLN3aYtXDMssT4pMt
+   7AD7FWmtdFrxZHE3UXTAq+MFGjswjKpBBGpMYZKobiSxxd7JUAi+taKaU
+   XPXgWaFV4sgKhI5QLIhw6o4ibN75XH6rZ1m3eLG2Mju//RIdFjr/V6PUn
+   YuGsiRCsaJCH9ULgLqcuMpyfc4VNEofy66sL/tXeHyhMmVoyg62s+nB2I
+   g==;
+X-CSE-ConnectionGUID: EDfFoEI4TNawgzWqA6tKnw==
+X-CSE-MsgGUID: bJWjkg/lRgOEFUF4foWe6w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11536"; a="62389369"
+X-IronPort-AV: E=Sophos;i="6.18,221,1751266800"; 
+   d="scan'208";a="62389369"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Aug 2025 02:37:30 -0700
+X-CSE-ConnectionGUID: J7/Vuy9PRtaesA1hnRSVOQ==
+X-CSE-MsgGUID: BWMYcSp6RXqR0c2ViZZwaQ==
+X-ExtLoop1: 1
+Received: from kuha.fi.intel.com ([10.237.72.152])
+  by fmviesa003.fm.intel.com with SMTP; 29 Aug 2025 02:37:24 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Fri, 29 Aug 2025 12:37:23 +0300
+Date: Fri, 29 Aug 2025 12:37:23 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+	Janne Grunau <j@jannau.net>,
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, stable@kernel.org
+Subject: Re: [PATCH RFC 08/22] usb: typec: tipd: Clear interrupts first
+Message-ID: <aLF00zGWg2MPUlyJ@kuha.fi.intel.com>
+References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
+ <20250821-atcphy-6-17-v1-8-172beda182b8@kernel.org>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAL1wsWgC/2WNQQ6CMBBFr0JmbQ2tLaIr72FYQGeUMUrJtBIN4
- e5WElcu30v++zNEEqYIx2IGoYkjhyGD2RTg+3a4kmLMDKY0rtybSqVbq7V1Kj7HMUhSWHmP3qL
- Bdgd5NQpd+LUWz03mnmMK8l4PJv21v1b915q0KhV1WNuDRWedP92Zup5Etj48oFmW5QN8iP0Js
- QAAAA==
-X-Change-ID: 20250726-tja1145-support-d6ccdc4d2da3
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>, 
- Marc Kleine-Budde <mkl@pengutronix.de>, linux-can@vger.kernel.org
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1756459207; l=1179;
- i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=XKpDXSN+sByAS9cR9W+5ZzKQ3tc8PFlTmx1lTt++ZzA=;
- b=uF/G+Ymv8uMPZbfuVrFQ+2Se6z+fKUghr5aAI/7wQ2Jqvwy8CMPBxyHMXi7V8Ws6++kwLMbOL
- JyyXS6qtkYxBJMIeLmWXXO0RgsJxbDJeb2yhKs4Xvij1jn3UavaWpbM
-X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
- pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
-X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
- with auth_id=290
-X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+Content-Disposition: inline
+In-Reply-To: <20250821-atcphy-6-17-v1-8-172beda182b8@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250829_022009_927853_7E8E6985 
-X-CRM114-Status: UNSURE (   8.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250829_023732_116309_747008B8 
+X-CRM114-Status: GOOD (  22.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,43 +89,114 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dimitri.fedrau@liebherr.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
-PHY up/down by switching to normal/standby mode using SPI commands.
+On Thu, Aug 21, 2025 at 03:39:00PM +0000, Sven Peter wrote:
+> Right now the interrupt handler first reads all updated status registers
+> and only then clears the interrupts. It's possible that a duplicate
+> interrupt for a changed register or plug state comes in after the
+> interrupts have been processed but before they have been cleared:
+> 
+> * plug is inserted, TPS_REG_INT_PLUG_EVENT is set
+> * TPS_REG_INT_EVENT1 is read
+> * tps6598x_handle_plug_event() has run and registered the plug
+> * plug is removed again, TPS_REG_INT_PLUG_EVENT is set (again)
+> * TPS_REG_INT_CLEAR1 is written, TPS_REG_INT_PLUG_EVENT is cleared
+> 
+> We then have no plug connected and no pending interrupt but the tipd
+> core still thinks there is a plug. It's possible to trigger this with
+> e.g. a slightly broken Type-C to USB A converter.
+> 
+> Fix this by first clearing the interrupts and only then reading the
+> updated registers.
+> 
+> Fixes: 45188f27b3d0 ("usb: typec: tipd: Add support for Apple CD321X")
+> Fixes: 0a4c005bd171 ("usb: typec: driver for TI TPS6598x USB Power Delivery controllers")
+> Cc: stable@kernel.org
+> Signed-off-by: Sven Peter <sven@kernel.org>
 
-Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
----
-Changes in v2:
-- bindings: Change node name in example to can-phy
-- bindings: Fix order of properties, reg property is second
-- bindings: Change compatible to match filename
-- change compatible to nxp,tja1145-can
-- Link to v1: https://lore.kernel.org/r/20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com
+Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 
----
-Dimitri Fedrau (2):
-      dt-bindings: phy: add support for NXPs TJA1145 CAN transceiver
-      phy: add basic support for NXPs TJA1145 CAN transceiver
+> ---
+>  drivers/usb/typec/tipd/core.c | 24 +++++++++++-------------
+>  1 file changed, 11 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
+> index dcf141ada07812295a6f07e41d77f95f98116010..1c80296c3b273e24ceacb3feff432c4f6e6835cc 100644
+> --- a/drivers/usb/typec/tipd/core.c
+> +++ b/drivers/usb/typec/tipd/core.c
+> @@ -545,24 +545,23 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+>  	if (!event)
+>  		goto err_unlock;
+>  
+> +	tps6598x_write64(tps, TPS_REG_INT_CLEAR1, event);
+> +
+>  	if (!tps6598x_read_status(tps, &status))
+> -		goto err_clear_ints;
+> +		goto err_unlock;
+>  
+>  	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE)
+>  		if (!tps6598x_read_power_status(tps))
+> -			goto err_clear_ints;
+> +			goto err_unlock;
+>  
+>  	if (event & APPLE_CD_REG_INT_DATA_STATUS_UPDATE)
+>  		if (!tps6598x_read_data_status(tps))
+> -			goto err_clear_ints;
+> +			goto err_unlock;
+>  
+>  	/* Handle plug insert or removal */
+>  	if (event & APPLE_CD_REG_INT_PLUG_EVENT)
+>  		tps6598x_handle_plug_event(tps, status);
+>  
+> -err_clear_ints:
+> -	tps6598x_write64(tps, TPS_REG_INT_CLEAR1, event);
+> -
+>  err_unlock:
+>  	mutex_unlock(&tps->lock);
+>  
+> @@ -668,25 +667,24 @@ static irqreturn_t tps6598x_interrupt(int irq, void *data)
+>  	if (!(event1[0] | event1[1] | event2[0] | event2[1]))
+>  		goto err_unlock;
+>  
+> +	tps6598x_block_write(tps, TPS_REG_INT_CLEAR1, event1, intev_len);
+> +	tps6598x_block_write(tps, TPS_REG_INT_CLEAR2, event2, intev_len);
+> +
+>  	if (!tps6598x_read_status(tps, &status))
+> -		goto err_clear_ints;
+> +		goto err_unlock;
+>  
+>  	if ((event1[0] | event2[0]) & TPS_REG_INT_POWER_STATUS_UPDATE)
+>  		if (!tps6598x_read_power_status(tps))
+> -			goto err_clear_ints;
+> +			goto err_unlock;
+>  
+>  	if ((event1[0] | event2[0]) & TPS_REG_INT_DATA_STATUS_UPDATE)
+>  		if (!tps6598x_read_data_status(tps))
+> -			goto err_clear_ints;
+> +			goto err_unlock;
+>  
+>  	/* Handle plug insert or removal */
+>  	if ((event1[0] | event2[0]) & TPS_REG_INT_PLUG_EVENT)
+>  		tps6598x_handle_plug_event(tps, status);
+>  
+> -err_clear_ints:
+> -	tps6598x_block_write(tps, TPS_REG_INT_CLEAR1, event1, intev_len);
+> -	tps6598x_block_write(tps, TPS_REG_INT_CLEAR2, event2, intev_len);
+> -
+>  err_unlock:
+>  	mutex_unlock(&tps->lock);
+>  
+> 
+> -- 
+> 2.34.1
+> 
 
- .../devicetree/bindings/phy/nxp,tja1145-can.yaml   |  79 +++++++++
- drivers/phy/Kconfig                                |  10 ++
- drivers/phy/Makefile                               |   1 +
- drivers/phy/phy-nxp-tja1145.c                      | 185 +++++++++++++++++++++
- 4 files changed, 275 insertions(+)
----
-base-commit: e373c183bc8a4a421f14ea0dd1edf4f8fd79537f
-change-id: 20250726-tja1145-support-d6ccdc4d2da3
-
-Best regards,
 -- 
-Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-
-
+heikki
 
 -- 
 linux-phy mailing list
