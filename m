@@ -4,61 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0722FCA0FF9
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Aug 2025 04:01:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75E85CA0EFF
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Aug 2025 07:04:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gQn0EtObIxnH1Y/wDhSXo0RDW8D67UhiEm+SxNH/lAI=; b=0RYtq70y2bIYnj
-	RMqlNVzc7nnALUnuJ9KraqGX3TSjKiDaEmo6wS5Zf/z/mB0iKAeJEzf27MT5n1tozjWw6tC920lrr
-	3GX2v8tMfMA5T7/3S2RcW8ijKtqaP7n1X+opC9szlaETz6+QVzWEDMHR8VMapGaitEvgtxhdBV2Z7
-	3CJgCqneESVTq380cLZPYxe/Zlt24p2HJzL9IF0mQQkrbpqk8sh5WwYTHWzqXYZ2SiYk/49HGkK2I
-	EZFZ+OAI6KMPM32b/Decl2opFLdEIdkBHSs/Bmx8tvpq6zar1/o+NbSo+3PHg35JimQ/lYkmCvNG6
-	UwnFFoJdJ0gdJPG2QsrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iv8DXXZfjrHgAgwvFO9kRlym9kPo+JhGDDewJEIizRI=; b=k6EN1g+YZmS9F2
+	hc1pmHtLD1RIh6w9D6MBksTccKLw92wf7SxaXfTbNawUr+6golaFtCy4atk2m/8hdirWEhVeXOU7I
+	jInLQ9zTztPw59ET6g/snb8m6f2rz+Zb+yZEQe7j6z/d4LPTa8f7lmU81TU3rSn4vFMZXHTAsP44U
+	8GFUZ4ClcPDGc2yO99x+jMiT26h19OO9ALwl2e5qFyWC7cAv4DPFcHcxg2ZJ6e3kAbzyPwTKHsFTo
+	Ws4JOZPa3I8JzBOP/cigr60mxyn8I5QvSzYibXnLAcCqUuPGPPLex5QnpPF6BEbCes7EBWFchwJsc
+	39JoJ/bBQel3DfXGe/3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usCmg-00000007OxO-345W;
-	Sat, 30 Aug 2025 04:01:46 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1usFd9-00000007WYH-0ArS;
+	Sat, 30 Aug 2025 07:04:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usCjv-00000007OkP-0eVo;
-	Sat, 30 Aug 2025 03:58:55 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9155F60191;
-	Sat, 30 Aug 2025 03:58:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABF6EC4CEEB;
-	Sat, 30 Aug 2025 03:58:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756526334;
-	bh=VABUD4jO9Kymnm8cj7uMAQ8AvocLC42Iebzpv/8ohiw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=knb/vVYf4lzqy+199q3lrWFfPdLUs3K4k2ZKF73nP9OEKi7V13ySggZQiv2/QnjKn
-	 YATGK0Lmv/VQ9OpWMJLweUDUxXJrNz7qFfJMXHaKkNSVCB8SA5cbykG9MhYfHd4KBA
-	 MjjMQ0SfPFwcJoz4Kpx7ZcO5ma6EzP76t1UHW37Fq+w/aeq9ValcipbntIFij7dNE5
-	 K76xpi0EB9sVHWIiNteFgj6o55LbRmLuON7mGnck+00x2/Qp9qvuDEIY8mwPEk7jJR
-	 ww4rvZWGxCeyCpaiJvC17/LAn0NToem0XETjxU3QuukDR03GcyUTjOTgZJOD6CjU02
-	 wGM3SiHbl2QLw==
-Date: Sat, 30 Aug 2025 09:28:44 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Shradha Todi <shradha.t@samsung.com>
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, lpieralisi@kernel.org, kwilczynski@kernel.org, robh@kernel.org, 
-	bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	alim.akhtar@samsung.com, vkoul@kernel.org, kishon@kernel.org, arnd@arndb.de, 
-	m.szyprowski@samsung.com, jh80.chung@samsung.com, pankaj.dubey@samsung.com
-Subject: Re: [PATCH v3 12/12] arm64: dts: fsd: Add PCIe support for Tesla FSD
- SoC
-Message-ID: <dsa7u5pz7qmjaunzrqgpjkyv4xh427bbnpkdzvkpz3w6v6xf6v@5kxhihh4hw2j>
-References: <20250811154638.95732-1-shradha.t@samsung.com>
- <CGME20250811154746epcas5p261ba0c811f9dd8748f8f241b76be6525@epcas5p2.samsung.com>
- <20250811154638.95732-13-shradha.t@samsung.com>
+	id 1usFd7-00000007WXI-0QgE
+	for linux-phy@lists.infradead.org;
+	Sat, 30 Aug 2025 07:04:06 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57U2plxF008843;
+	Sat, 30 Aug 2025 07:03:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=KJRnB+sK0pG3qApXkBgH92
+	Qu4j4cAyXZMOLbTJDO9/A=; b=Dqz9yX6IBZZSfTWsyPyUcPYzR/oho5uvvIqdZ7
+	Hq+DAMPrkliCaZ9GBhFtUKKq/6t5Qn00kxYYR+EcMGkIlpewnyG6MoSCU/Oyrl9N
+	frBW5POQcRIuI2F1BzhcrhOzn7j8CG1kOeLBTU4M3QmOXhtv+POomhoAnLZ3808q
+	m1Uf1QrkXuwHq6qY+QiHcesr+s+5ypt+hrezUMlmC++PlOenIygN6Tb9xMxpFlEr
+	P3IxTej7gWlWSKniRYoxgCWD2p7NfhNpPRKgqewyQKOc91TNnfstTAKdZB2wdgvZ
+	F0r7YOZ0Ht7vBgMMaWRi4a/uTFGGl8SO1tngZaXM/j4LqEzw==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48urvyr9ec-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 30 Aug 2025 07:03:59 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 57U72QAK001004;
+	Sat, 30 Aug 2025 07:03:56 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 48utckgbyf-1;
+	Sat, 30 Aug 2025 07:03:56 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 57U73unI001747;
+	Sat, 30 Aug 2025 07:03:56 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 57U73t48001746;
+	Sat, 30 Aug 2025 07:03:56 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 399EA6009E0; Sat, 30 Aug 2025 12:33:55 +0530 (+0530)
+From: Nitin Rawat <nitin.rawat@oss.qualcomm.com>
+To: vkoul@kernel.org, kishon@kernel.org, mani@kernel.org,
+        neil.armstrong@linaro.org, dmitry.baryshkov@oss.qualcomm.com,
+        andersson@kernel.org, konradybcio@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Nitin Rawat <nitin.rawat@oss.qualcomm.com>
+Subject: [PATCH V4 0/2] Add regulator load support for QMP UFS PHY
+Date: Sat, 30 Aug 2025 12:33:51 +0530
+Message-ID: <20250830070353.2694-1-nitin.rawat@oss.qualcomm.com>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250811154638.95732-13-shradha.t@samsung.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: istb9w-ADsrhRLVmCWO8Te0L02FFWo6C
+X-Proofpoint-ORIG-GUID: istb9w-ADsrhRLVmCWO8Te0L02FFWo6C
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDAyNyBTYWx0ZWRfXy7s79QNcszw5
+ LI/hWcye6FEQ+USXgNFBNSmHGqzGmwT/dPjl+85InscSnLVDA4PuBWnbuaqmyfA5lwpZXnGxoV0
+ ZxWtvdTFxCOW3YqDN8BpTxCygOguN97G+ulr7ksQ3TzwQFXSefw5w6F041hzjvv8ni1X+Q++lFQ
+ 7onusYHzvDxi+mY3AUsChqHA72HPw7fbyjzCMhjEDTNT5peafMWgWKucvpaTBVVNAysQsDq71NN
+ BuRYl4YJ04mU94NB12sjZOroPjVey2dWmO6lJfRy1HJTIhRCQ0w6g2aKaPi63z6xUnF1xBZMnro
+ q0H2mEACcufF9uoua2qcKv8q1G1eu0eZIweZDzlBraR0RuJvdBRjkTRdOWU+Be4rka2rpdfAn5I
+ QGK3o6/F
+X-Authority-Analysis: v=2.4 cv=NrDRc9dJ c=1 sm=1 tr=0 ts=68b2a25f cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=zxPLyqCQwrrZPiHgX0UA:9
+ a=QEXdDO2ut3YA:10
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-08-30_02,2025-08-28_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1011 suspectscore=0 malwarescore=0 priorityscore=1501 phishscore=0
+ impostorscore=0 spamscore=0 bulkscore=0 adultscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508300027
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250830_000405_258826_20361E82 
+X-CRM114-Status: GOOD (  10.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,57 +108,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBBdWcgMTEsIDIwMjUgYXQgMDk6MTY6MzhQTSBHTVQsIFNocmFkaGEgVG9kaSB3cm90
-ZToKPiBBZGQgdGhlIHN1cHBvcnQgZm9yIFBDSWUgY29udHJvbGxlciBkcml2ZXIgYW5kIHBoeSBk
-cml2ZXIgZm9yIFRlc2xhIEZTRC4KPiBJdCBpbmNsdWRlcyBzdXBwb3J0IGZvciBib3RoIFJDIGFu
-ZCBFUC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBQYW5rYWogRHViZXkgPHBhbmthai5kdWJleUBzYW1z
-dW5nLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBTaHJhZGhhIFRvZGkgPHNocmFkaGEudEBzYW1zdW5n
-LmNvbT4KPiAtLS0KPiAgYXJjaC9hcm02NC9ib290L2R0cy90ZXNsYS9mc2QtZXZiLmR0cyAgICAg
-IHwgIDM0ICsrKysrCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvdGVzbGEvZnNkLXBpbmN0cmwuZHRz
-aSB8ICA2NSArKysrKysrKysKPiAgYXJjaC9hcm02NC9ib290L2R0cy90ZXNsYS9mc2QuZHRzaSAg
-ICAgICAgIHwgMTQ3ICsrKysrKysrKysrKysrKysrKysrKwo+ICAzIGZpbGVzIGNoYW5nZWQsIDI0
-NiBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvdGVz
-bGEvZnNkLWV2Yi5kdHMgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Rlc2xhL2ZzZC1ldmIuZHRzCj4g
-aW5kZXggOWZmMjJlMWM4NzIzLi4xYjYzYzVkNzJkMTkgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02
-NC9ib290L2R0cy90ZXNsYS9mc2QtZXZiLmR0cwo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-dGVzbGEvZnNkLWV2Yi5kdHMKPiBAQCAtMTMwLDMgKzEzMCwzNyBAQCAmc2VyaWFsXzAgewo+ICAm
-dWZzIHsKPiAgCXN0YXR1cyA9ICJva2F5IjsKPiAgfTsKPiArCj4gKyZwY2llcmMyIHsKCkl0J2Qg
-YmUgZ29vZCB0byB1c2UgdW5kZXJzY29yZSB0byBkaWZmZXJlbnRpYXRlIFJDIGFuZCBFUCBtb2Rl
-czoKCglwY2llX3JjMQoJcGNpZV9lcDEKCj4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+
-ICsJcGluY3RybC0wID0gPCZwY2llMV9jbGtyZXE+LCA8JnBjaWUxX3dha2U+LCA8JnBjaWUxX3By
-ZXNldD4sCj4gKwkJCTwmcGNpZTBfc2xvdDE+OwoKQ291bGQgeW91IHBsZWFzZSBleHBsYWluIHdo
-YXQgdGhlc2UgJ3ByZXNldCcgYW5kICdzbG90JyBwaW5zIGFyZT8KCj4gK307Cj4gKwo+ICsmcGNp
-ZWVwMiB7Cj4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+ICsJcGluY3RybC0wID0gPCZw
-Y2llMV9jbGtyZXE+LCA8JnBjaWUxX3dha2U+LCA8JnBjaWUxX3ByZXNldD4sCj4gKwkJCTwmcGNp
-ZTBfc2xvdDE+Owo+ICt9Owo+ICsKPiArJnBjaWVyYzAgewo+ICsJcGluY3RybC1uYW1lcyA9ICJk
-ZWZhdWx0IjsKPiArCXBpbmN0cmwtMCA9IDwmcGNpZTBfY2xrcmVxPiwgPCZwY2llMF93YWtlMD4s
-IDwmcGNpZTBfcHJlc2V0MD4sCj4gKwkJCSA8JnBjaWUwX3Nsb3QwPjsKPiArfTsKPiArCj4gKyZw
-Y2llZXAwIHsKPiArCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gKwlwaW5jdHJsLTAgPSA8
-JnBjaWUwX2Nsa3JlcT4sIDwmcGNpZTBfd2FrZTA+LCA8JnBjaWUwX3ByZXNldDA+LAo+ICsJCQkg
-PCZwY2llMF9zbG90MD47Cj4gK307Cj4gKwo+ICsmcGNpZXJjMSB7Cj4gKwlwaW5jdHJsLW5hbWVz
-ID0gImRlZmF1bHQiOwo+ICsJcGluY3RybC0wID0gPCZwY2llMF9jbGtyZXE+LCA8JnBjaWUwX3dh
-a2UxPiwgPCZwY2llMF9wcmVzZXQwPjsKPiArfTsKPiArCj4gKyZwY2llZXAxIHsKPiArCXBpbmN0
-cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gKwlwaW5jdHJsLTAgPSA8JnBjaWUwX2Nsa3JlcT4sIDwm
-cGNpZTBfd2FrZTE+LCA8JnBjaWUwX3ByZXNldDA+Owo+ICt9OwoKWy4uLl0KCj4gKwkJcGNpZWVw
-MjogcGNpZS1lcEAxNTQwMDAwMCB7Cj4gKwkJCWNvbXBhdGlibGUgPSAidGVzbGEsZnNkLXBjaWUt
-ZXAiOwo+ICsJCQlyZWcgPSA8MHgwIDB4MTUwOTAwMDAgMHgwIDB4MTAwMD4sCj4gKwkJCSAgICAg
-IDwweDAgMHgxNTQwMDAwMCAweDAgMHgyMDAwPiwKPiArCQkJICAgICAgPDB4MCAweDE1NDAyMDAw
-IDB4MCAweDgwPiwKPiArCQkJICAgICAgPDB4MCAweDE1ODAwMDAwIDB4MCAweGZmMDAwMD47Cj4g
-KwkJCXJlZy1uYW1lcyA9ICJlbGJpIiwgImRiaSIsICJkYmkyIiwgImFkZHJfc3BhY2UiOwo+ICsJ
-CQljbG9ja3MgPSA8JmNsb2NrX2ZzeXMwIFBDSUVfU1VCQ1RSTF9JTlNUMF9BVVhfQ0xLX1NPQz4s
-Cj4gKwkJCQkgPCZjbG9ja19mc3lzMCBQQ0lFX1NVQkNUUkxfSU5TVDBfREJJX0FDTEtfU09DPiwK
-PiArCQkJCSA8JmNsb2NrX2ZzeXMwIFBDSUVfU1VCQ1RSTF9JTlNUMF9NU1RSX0FDTEtfU09DPiwK
-PiArCQkJCSA8JmNsb2NrX2ZzeXMwIFBDSUVfU1VCQ1RSTF9JTlNUMF9TTFZfQUNMS19TT0M+Owo+
-ICsJCQljbG9jay1uYW1lcyA9ICJhdXgiLCAiZGJpIiwgIm1zdHIiLCAic2x2IjsKPiArCQkJbnVt
-LWxhbmVzID0gPDQ+Owo+ICsJCQlwaHlzID0gPCZwY2llcGh5MD47Cj4gKwkJCXNhbXN1bmcsc3lz
-Y29uLXBjaWUgPSA8JnN5c3JlZ19mc3lzMCAweDQzND47Cj4gKwkJCXN0YXR1cyA9ICJkaXNhYmxl
-ZCI7CgpTbyBvbmx5IGhvc3QgbW9kZSBETUEgaXMgY2FjaGUgY29oZXJlbnQgYW5kIG5vdCBlbmRw
-b2ludD8gV2VpcmQuCgotIE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a
-4K6k4K6+4K6a4K6/4K614K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+The series improves regulator handling in the QMP UFS PHY driver and
+adds load configuration support for all supported platforms.
+
+On some SoCs, regulators are shared between the UFS PHY and other IP
+blocks. To maintain stability and power efficiency, the regulator
+framework needs to know the UFS PHY's peak load, as it determines the
+regulator's operating mode.
+
+The first update replaces devm_regulator_bulk_get() with
+devm_regulator_bulk_get_const(), converts the regulator name array to
+a bulk data structure, and uses the init_load_uA field to automatically
+apply regulator_set_load() before the first enable.
+
+The second update adds platform-specific load settings for all supported
+platform to ensure proper power management where regulators are shared.
+
+Changes from V3:
+1. Addressed Mani and Dmitry comment to include phy and pll init_load_uA
+   for all platform.
+
+Changes from v2:
+1. Addressed Dmitry's comment to replace devm_regulator_bulk_get() with
+   devm_regulator_bulk_get_const.
+2. inline the qmp_ufs_vreg_init() function
+
+Changes from v1:
+1. Addressed comments to move load configuration from device tree to
+   hardcoded, per-compatible data within the driver.
+2. Accordingly updated commit text to reflect the same.
+3. Addressed Manivannan's comment to avoid initialization of load.
+
+Nitin Rawat (2):
+  phy: qcom-qmp-ufs: Add regulator load voting for UFS QMP PHY
+  phy: qcom-qmp-ufs: Add PHY and PLL regulator load
+
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 159 ++++++++++++++++--------
+ 1 file changed, 108 insertions(+), 51 deletions(-)
+
+--
+2.50.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
