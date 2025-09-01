@@ -4,57 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5093CA1007
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C8CACA1002
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9cFVGSZlM442BBdat3qwoAC+81id99+PFwJsY7Bkx+o=; b=KGM0RzvS0FEd6I
-	loq/f6jmamPrVaBH5+mxkG0D8N+cV4fK/RlDplpk94h72sAVfT7OYsGTM8Mvs64ZoXNZzhTj7xRzW
-	4qr09es9JDsvTuphVfB8ksZne1a6BtDmjmFIoM+1BHH4M7XPJdoGF7FiTi0zQz2/GW+dIXhwPaBMH
-	8fNHRbzgcQolc/9pSM/yvB77kW1E8H3TRwCs9wlsIoetb+o/LZ3yBKL8VD4Vt6tjHtm9kCMxp33KH
-	dPrFZQqSFwdNGxS/qOxkmpgquQFDpvfOGJwzEYGN/tQZ25YvOOvbIaTS1LP79QPIu6eBr4q04X694
-	GKLwcUVab7/lbLrjU83g==;
+	List-Owner; bh=LOXUt8VaM2Mdc6dkqvbU9gdWPXFa7cHeur/PFZ1rTW4=; b=SJEuBHLKGl+jDH
+	dbYi0FSwK335y8bcBGLAKv/SBMyV/3fjHXK67K+NtD3bdXRPc0P+Z+LKofKV6HeFKfCVdykliVf8L
+	lPrhHBT1uumEXdhvi39Hc7ETfFc3psO+gYU028zF0ymfCJE2bG/DN0uToka6OViiK1N2nvZYdZUtk
+	OGEo9fA1Ip0xoUu8v3yM/7JdbPynkYAXcqTJYruOKtDn3+y4hAwlN11K00/dfFjGx6OW0RiEOPlGy
+	+Zykj4M3WRoZzhlzYj3Zc7XQc3ig39C0HdZiOydmXjBRoXmJEdWHz8UMjKDcLXKJPk3fxvN8JVmXT
+	iGoEb1U/uM6jzDhdyoag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utDi7-0000000EFgA-0yea;
-	Mon, 01 Sep 2025 23:13:15 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1utDiC-0000000EFop-1mGi;
+	Mon, 01 Sep 2025 23:13:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut80n-0000000DPNV-06Ht
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Sep 2025 17:08:09 +0000
+	id 1ut80r-0000000DPP4-0JwJ;
+	Mon, 01 Sep 2025 17:08:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6E73F601E9;
+	by sea.source.kernel.org (Postfix) with ESMTP id B30784516A;
+	Mon,  1 Sep 2025 17:08:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD3B3C4AF09;
 	Mon,  1 Sep 2025 17:08:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B32E0C4CEF0;
-	Mon,  1 Sep 2025 17:08:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756746488;
-	bh=2yYH/cfpjLpeERChnwoG49UtSP4qJklF2fBBnkxU32o=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Ks9JmaEiZVOQXMVVTh13IA7jdlAJvQsTf23dO1/iOd8AqXykPBr/Yb8Wnu/HgkJXY
-	 aZfhz1qk+auJTxe0YNzGAHFPKta5Fc1ouhqd7u22iFqukxMUX3xZl2RKWq4k2GRc/w
-	 yBuJoXUGnsdCyk4tLuNQh3xZMLK2obL0lvQGShYUsEHWbCZjLKYbD+br/MJ8wgSw0I
-	 sUKK2uqE/1RmP0GQ8U2ZPQMailYEB8Wueqgung7Vsb2t2nGHEvuUbYk8PFpc6RZTIi
-	 w2drlZZrv0aIo9B7XAL0mYgR6QIPswTiEhrmN5LPkWbThaojZw36tsIpIBm5lFJlz/
-	 OntQImmwu5Szg==
+	s=k20201202; t=1756746492;
+	bh=Ja93BNF+w9Y+juSkpFLMtct5ihTyu7k3QSDMWQqxw+o=;
+	h=From:To:In-Reply-To:References:Subject:Date:From;
+	b=nqzJr3/kInRF4RAUv1LtECAn7lgX/SE7cXFYTn8hEw81z0y7CsnIczEVggZnPzrIg
+	 37dciELZGe6Jo1Io/agHNcO+ZIsQqH7N2FBabD2rxBOlbP+/LtwIie0cYj+PD0RFXg
+	 tjNgPwwiIITnzkTs8QcVWCdzLhW2Hg15Wk33FoXnY3a2ibPuhl7xnTWydblQ9zsrr0
+	 hg0fk2RIHmQD+qrfs3m/SOsYy+UVzScTbbhjG2434+KRG1hE9entEFp9868HTey0Cs
+	 DmAezIVP+DTrxT/HLiR8vNuIz3ov0xU267maYJL51Y2KvR1n3ISQjBqvKpJD4lNUK9
+	 9CzOfX1aW4XNA==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, mani@kernel.org, neil.armstrong@linaro.org, 
- dmitry.baryshkov@oss.qualcomm.com, andersson@kernel.org, 
- konradybcio@kernel.org, Nitin Rawat <nitin.rawat@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20250830070353.2694-1-nitin.rawat@oss.qualcomm.com>
-References: <20250830070353.2694-1-nitin.rawat@oss.qualcomm.com>
-Subject: Re: [PATCH V4 0/2] Add regulator load support for QMP UFS PHY
-Message-Id: <175674648426.186496.9175302825889906237.b4-ty@kernel.org>
-Date: Mon, 01 Sep 2025 22:38:04 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Magnus Damm <magnus.damm@gmail.com>, Heiko Stuebner <heiko@sntech.de>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-renesas-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, Liao Yuanhong <liaoyuanhong@vivo.com>
+In-Reply-To: <20250828122401.17441-1-liaoyuanhong@vivo.com>
+References: <20250828122401.17441-1-liaoyuanhong@vivo.com>
+Subject: Re: (subset) [PATCH 0/3] phy: Remove redundant ternary operators
+Message-Id: <175674648843.186496.241265078555502799.b4-ty@kernel.org>
+Date: Mon, 01 Sep 2025 22:38:08 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250901_100813_138360_DF98EDA4 
+X-CRM114-Status: UNSURE (   5.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,23 +77,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 30 Aug 2025 12:33:51 +0530, Nitin Rawat wrote:
-> The series improves regulator handling in the QMP UFS PHY driver and
-> adds load configuration support for all supported platforms.
+On Thu, 28 Aug 2025 20:23:54 +0800, Liao Yuanhong wrote:
+> For ternary operators in the form of "a ? true : false", if 'a' itself
+> returns a boolean result, the ternary operator can be omitted. Remove
+> redundant ternary operators to clean up the code.
 > 
-> On some SoCs, regulators are shared between the UFS PHY and other IP
-> blocks. To maintain stability and power efficiency, the regulator
-> framework needs to know the UFS PHY's peak load, as it determines the
-> regulator's operating mode.
+> Liao Yuanhong (3):
+>   phy: hisilicon: Remove redundant ternary operators
+>   phy: renesas: rcar-gen3-usb2: Remove redundant ternary operators
+>   phy: rockchip: usbdp: Remove redundant ternary operators
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] phy: qcom-qmp-ufs: Add regulator load voting for UFS QMP PHY
-      commit: 0c4916aadb8df892399eec99f775655c31049195
-[2/2] phy: qcom-qmp-ufs: Add PHY and PLL regulator load
-      commit: df4beac9da5f162770c8563d11cda327d748c20b
+[1/3] phy: hisilicon: Remove redundant ternary operators
+      commit: da938e39a81642748db3ec2385e8a53fe03d9bd1
+[3/3] phy: rockchip: usbdp: Remove redundant ternary operators
+      commit: 0c5375b06060fa40a8f8ce2e926bde125fdf6c3b
 
 Best regards,
 -- 
