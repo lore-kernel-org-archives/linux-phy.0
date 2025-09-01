@@ -4,69 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 629FECA100D
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:18:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08EAACA1002
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:26:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dSgwUQfprWSpBeVCnhoYGE6k4qNFzvpk2NihHl/m5I4=; b=MrXncmblVVwtE/T58w2KR6Uuo4
-	sm2UP2TfZ5qFvvjsJSMd6sirwwKUKFTGIAvXW/kpXBY6ifrOK6Z/VBMJFlBoPehja3gn5VPbDch3A
-	vqWel7LpC+C+0GkThOm2vJDTAdHZMaZWxe5tksPQZphNw+Qg+2lW2Q/zQqJSPfLuR72waNloznmtn
-	d+sGZefGUbraikogmZ8Fqq0ZZ1RzMwvvWYYSlbA6R5WOCYXEZIo//eHjo3Et/QOSL51nhre94ZFT1
-	HdjMvJcOEdu2oIXfSkLD3S8sJfoJg5Ygil6x70tshs0ljH2CtAWQxMi/X/OXvt79JiqC5dx6tYm5m
-	FMlRKnEA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IlLSHsAJu/h1tETYQg4QFigcRpmKgSJXnHVDSyQXLPQ=; b=q5Rna+WtiC+Dwq
+	WHThAV0M/Nvz3KYoKXV1cwD2jYYz5dHMTR43d703+r5/KasCa+wMlsM1yQ+2P1lkMnw+PsmOcWVni
+	vbM3RF1h2SY0UrzEQ8Wux5HUeg+U2jAIf8OO5cCkxV9UBd9VgYNU8pQ0ZnxS8FJtkDVOFw2REsq+F
+	G/CBEyodoqUpJRPXwzJwvYN7LsfO+HXg4iABfMG47TlSxrGQUMbLJs9mB432Ty2FeSNDGNyQKFxD0
+	Bcth7/3dGsE5tO5Qkrr9boY+EG49Uc3z87579YrOeNpIx5U8yeQFy7GzcOupySi+QXF66Dpr4xMMz
+	ec3aWuFGNfPOXVydV0NA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utDnC-0000000EI4i-0Xb6;
-	Mon, 01 Sep 2025 23:18:30 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1utDv5-0000000ELux-35b8;
+	Mon, 01 Sep 2025 23:26:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut9fN-0000000DcEu-0wT8;
-	Mon, 01 Sep 2025 18:54:09 +0000
+	id 1utBez-0000000Dtt7-3DHQ;
+	Mon, 01 Sep 2025 21:01:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 52D2260008;
-	Mon,  1 Sep 2025 18:54:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F084C4CEF0;
-	Mon,  1 Sep 2025 18:54:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id F1F76451C9;
+	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id C686CC4CEF5;
+	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756752847;
-	bh=Xi7uJgeT47v5WYcTiHi2K9OVW5hfR4RMt06x+KdFnog=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=e63V08Qnr70i/tV4xWOR8B5RSztHrVzdM3ydH2V1ggNY8gNaiGtWogePeB7RR0/0O
-	 MfrcDP3qJZLfXGA/6gJlHPTTm7CHEvCcMfFDIpFT7kqTFAaPHzDYKZHKEPvFzKYSlp
-	 2qhTimTNpTzgQB85Sr8wNXxOLfSaNVbktR+1QjNJe79YcsWIDIb2synEt2oplOtXvO
-	 Y6a9sDZ7n2tx3V+oNQaGcy3pimB8Swsudv97Hl+XW6djS3V/1ktd8NGgg6mi/IALSs
-	 RCRWQXuiAVOjZlE221VncgOw4grGKxGgpbsbhOmaWErFsJNWxZptPTGtTOadpmYpU6
-	 AkXRkQi7HjkZQ==
-Date: Mon, 1 Sep 2025 19:54:01 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
-	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v4 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
- TJA105X/1048
-Message-ID: <20250901-diligent-dreaded-59b9ad5c3976@spud>
-References: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
- <20250901-can-v4-1-e42b5fe2cf9e@nxp.com>
+	s=k20201202; t=1756760512;
+	bh=0i9GyZfKTp11tFuGLpcI9sqzS/VX2YxPG9sUde5/E2c=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=U8JzkuwM3u6Acs+qTZ2ZRmvDkbEjT8hT0ZFw4CN+RGn7kLikiUHFimzb6y5yW8YHQ
+	 gC3uzDQwaTiZxDBza8IOEkHw/ZJi60+198/pPLxrw/T+5hlPfh2OwbuaXnt/y2OE4p
+	 lcdxKeOeKGGDVvJ3DSXV+kXhqrr8uPBBn8zPCJndwLJv/xY7yT0k+2MC/RC0lGn8NK
+	 bnBYx0xGf/KjHaKP2NZWTUreZXgao73GleT6/bofQQTQ7GEUlMKMbsVDzqcr/pVjOE
+	 m9gkLX5+d5JERcomKVvcR9UEtEwFrlmYZDWqM7loLYlE6cFA9Kb4LJE17px8VNSloL
+	 yduUQwXmS1Hkw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B19BCCA1002;
+	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
+From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
+Date: Mon, 01 Sep 2025 22:47:44 +0200
+Subject: [PATCH v3 3/7] dt-bindings: phy: rockchip-inno-csi-dphy: add
+ rk3588 variant
 MIME-Version: 1.0
-In-Reply-To: <20250901-can-v4-1-e42b5fe2cf9e@nxp.com>
+Message-Id: <20250616-rk3588-csi-dphy-v3-3-a5ccd5f1f438@collabora.com>
+References: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
+In-Reply-To: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Jagan Teki <jagan@amarulasolutions.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Diederik de Haas <didi.debian@cknow.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Collabora Kernel Team <kernel@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, 
+ Michael Riesch <michael.riesch@collabora.com>
+X-Mailer: b4 0.12.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1756759662; l=2642;
+ i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
+ bh=BWFwRKFAbzrCTHgoNhrC2467CbLUxPGoZVsDuHv4H7c=;
+ b=0czArA1ITOmxFWBtw11FrbEGI1xv6KFhDnksdNLZ753DqIkLziGJrhhdwnO+Pi5szSnee6/M1
+ U6abVJH6hw+BdIljo8oHXnmvoHr6GhbsF3cF9KaV9J4tiTp23SdwzHc
+X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
+ pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
+X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
+ with auth_id=371
+X-Original-From: Michael Riesch <michael.riesch@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250901_140153_874689_7AAC1EA2 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,136 +92,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4277440542949459231=="
+Reply-To: michael.riesch@collabora.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Michael Riesch <michael.riesch@collabora.com>
 
---===============4277440542949459231==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="FeGVNRkXCgteXrc9"
-Content-Disposition: inline
+The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
+Add the variant and allow for the additional reset.
 
+Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+---
+ .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 50 +++++++++++++++++++++-
+ 1 file changed, 49 insertions(+), 1 deletion(-)
 
---FeGVNRkXCgteXrc9
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+index 9ad72518e6da..e37c9fd74788 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+@@ -21,6 +21,7 @@ properties:
+       - rockchip,rk3326-csi-dphy
+       - rockchip,rk3368-csi-dphy
+       - rockchip,rk3568-csi-dphy
++      - rockchip,rk3588-csi-dphy
+ 
+   reg:
+     maxItems: 1
+@@ -40,11 +41,15 @@ properties:
+ 
+   resets:
+     items:
+-      - description: exclusive PHY reset line
++      - description: APB reset line
++      - description: PHY reset line
++    minItems: 1
+ 
+   reset-names:
+     items:
+       - const: apb
++      - const: phy
++    minItems: 1
+ 
+   rockchip,grf:
+     $ref: /schemas/types.yaml#/definitions/phandle
+@@ -64,6 +69,30 @@ allOf:
+     then:
+       required:
+         - power-domains
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - rockchip,px30-csi-dphy
++              - rockchip,rk1808-csi-dphy
++              - rockchip,rk3326-csi-dphy
++              - rockchip,rk3368-csi-dphy
++              - rockchip,rk3568-csi-dphy
++    then:
++      properties:
++        resets:
++          maxItems: 1
++
++        reset-names:
++          maxItems: 1
++    else:
++      properties:
++        resets:
++          minItems: 2
++
++        reset-names:
++          minItems: 2
+ 
+ required:
+   - compatible
+@@ -91,3 +120,22 @@ examples:
+         reset-names = "apb";
+         rockchip,grf = <&grf>;
+     };
++  - |
++    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
++    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
++
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        phy@fedc0000 {
++            compatible = "rockchip,rk3588-csi-dphy";
++            reg = <0x0 0xfedc0000 0x0 0x8000>;
++            clocks = <&cru PCLK_CSIPHY0>;
++            clock-names = "pclk";
++            #phy-cells = <0>;
++            resets = <&cru SRST_P_CSIPHY0>, <&cru SRST_CSIPHY0>;
++            reset-names = "apb", "phy";
++            rockchip,grf = <&csidphy0_grf>;
++        };
++    };
 
-On Mon, Sep 01, 2025 at 11:18:11AM +0800, Peng Fan wrote:
-> The TJA105[1,7] is a high-speed CAN transceiver which is a pin-compatible
-> alternative for TI TCAN1043 with sleep mode supported, and has a compatib=
-le
-> programming model, therefore use ti,tcan1043 as fallback compatible.
->=20
-> The TJA1048 is a dual high-speed CAN transceiver with sleep mode supporte=
-d.
->=20
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 30 ++++++++++++++++=
-++++--
->  1 file changed, 28 insertions(+), 2 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b=
-/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> index 4a8c3829d85d3c4a4963750d03567c1c345beb91..f8e0c24856a2ba83b5c988b24=
-6464f47e11a032f 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -19,18 +19,25 @@ properties:
->            - enum:
->                - microchip,ata6561
->            - const: ti,tcan1042
-> +      - items:
-> +          - enum:
-> +              - nxp,tja1051
-> +              - nxp,tja1057
-> +          - const: ti,tcan1043
->        - enum:
->            - ti,tcan1042
->            - ti,tcan1043
-> +          - nxp,tja1048
->            - nxp,tjr1443
-> =20
->    '#phy-cells':
-> -    const: 0
-> +    enum: [0, 1]
-> =20
->    standby-gpios:
->      description:
->        gpio node to toggle standby signal on transceiver
-> -    maxItems: 1
-> +    minItems: 1
-> +    maxItems: 2
-
-You're adding a second standby gpio, which one is which?
-I assume you mean that item 1 is stbn1 and item 2 is stbn 2 for tja1048.
-Might be kinda obvious, but I think it should be mentioned.
-
-tja105{1,7} don't have a standby gpio, but they do have a silent mode.
-silent mode seems fundamentally different to standby, since the receiver
-still works. Seems like that should be handled differently, no?
-
-> =20
->    enable-gpios:
->      description:
-> @@ -53,6 +60,25 @@ required:
->    - compatible
->    - '#phy-cells'
-> =20
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: nxp,tja1048
-> +    then:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 1
-> +        standby-gpios:
-> +          minItems: 2
-> +    else:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 0
-> +        standby-gpios:
-> +          maxItems: 1
-> +
->  additionalProperties: false
-> =20
->  examples:
->=20
-> --=20
-> 2.37.1
->=20
-
---FeGVNRkXCgteXrc9
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaLXryQAKCRB4tDGHoIJi
-0udxAP9nOX9SHvGfe+kYTOpLO/W11mN1b3yO33WzvHLUTObYXQD/WIoItvlF1YeL
-S0+fgQThRA5/J2UGH/Qksz2gTzAzMQA=
-=FTGQ
------END PGP SIGNATURE-----
-
---FeGVNRkXCgteXrc9--
+-- 
+2.39.5
 
 
---===============4277440542949459231==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4277440542949459231==--
-
