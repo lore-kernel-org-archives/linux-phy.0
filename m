@@ -4,62 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C8CACA1002
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BE43CA1002
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LOXUt8VaM2Mdc6dkqvbU9gdWPXFa7cHeur/PFZ1rTW4=; b=SJEuBHLKGl+jDH
-	dbYi0FSwK335y8bcBGLAKv/SBMyV/3fjHXK67K+NtD3bdXRPc0P+Z+LKofKV6HeFKfCVdykliVf8L
-	lPrhHBT1uumEXdhvi39Hc7ETfFc3psO+gYU028zF0ymfCJE2bG/DN0uToka6OViiK1N2nvZYdZUtk
-	OGEo9fA1Ip0xoUu8v3yM/7JdbPynkYAXcqTJYruOKtDn3+y4hAwlN11K00/dfFjGx6OW0RiEOPlGy
-	+Zykj4M3WRoZzhlzYj3Zc7XQc3ig39C0HdZiOydmXjBRoXmJEdWHz8UMjKDcLXKJPk3fxvN8JVmXT
-	iGoEb1U/uM6jzDhdyoag==;
+	List-Owner; bh=9K2+2V4/iDsbWVsNQ991MTRPomQkqLvxe+vcxb+k9fQ=; b=1qmp05DWWhiwZS
+	FmnGChsOJ+hXXu/gtETjAXubB/Q2tI8SEb58btpRNPOn1uY/kW035NYwaPH54h4yiHuiwFEgflTw7
+	4wAZ17xFPJ+htZQn/n9Utl6SRUdHqfCNM55fHQGsZjaH+fnE0PfWi3lQAUAlqsdp9182b1mGX9lfX
+	OLLjSpuNlL48cFjvmRH59qlfvKSKrB2uKFeoVeBjkNQzqSrxyo8Y41eOn7onXC1kBK2HmdYk2V+Bq
+	tAlTq96nNUnx2qP/pTIGuiVpvovZwDovPNsw/NDoHLIKjHgeKR0L6r/dI+wm9tgaK4qmysZImJotm
+	BreuWBuy38kKJRtVbSug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utDiC-0000000EFop-1mGi;
-	Mon, 01 Sep 2025 23:13:20 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1utDiI-0000000EFyq-20TT;
+	Mon, 01 Sep 2025 23:13:26 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut80r-0000000DPP4-0JwJ;
-	Mon, 01 Sep 2025 17:08:14 +0000
+	id 1ut80u-0000000DPPt-049R
+	for linux-phy@lists.infradead.org;
+	Mon, 01 Sep 2025 17:08:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B30784516A;
-	Mon,  1 Sep 2025 17:08:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD3B3C4AF09;
-	Mon,  1 Sep 2025 17:08:08 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 72CD7601EC;
+	Mon,  1 Sep 2025 17:08:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5311AC4CEF1;
+	Mon,  1 Sep 2025 17:08:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756746492;
-	bh=Ja93BNF+w9Y+juSkpFLMtct5ihTyu7k3QSDMWQqxw+o=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=nqzJr3/kInRF4RAUv1LtECAn7lgX/SE7cXFYTn8hEw81z0y7CsnIczEVggZnPzrIg
-	 37dciELZGe6Jo1Io/agHNcO+ZIsQqH7N2FBabD2rxBOlbP+/LtwIie0cYj+PD0RFXg
-	 tjNgPwwiIITnzkTs8QcVWCdzLhW2Hg15Wk33FoXnY3a2ibPuhl7xnTWydblQ9zsrr0
-	 hg0fk2RIHmQD+qrfs3m/SOsYy+UVzScTbbhjG2434+KRG1hE9entEFp9868HTey0Cs
-	 DmAezIVP+DTrxT/HLiR8vNuIz3ov0xU267maYJL51Y2KvR1n3ISQjBqvKpJD4lNUK9
-	 9CzOfX1aW4XNA==
+	s=k20201202; t=1756746495;
+	bh=MiVG4h/2NVBHx9BEN5kPBdeZYBqJXTdPTqvwP13klQM=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=og6gHGt/xEbqzBNs1VQk1T42/jrGlpFRKMToGNkBgJp0YOxEsfs3nKjF8kCJ2npzT
+	 eie7izspfEMD3oQreiqFUfuyfpAoehlZF00kh+oH2gcM7UooMTuzPWF5VTLd2Bo7i8
+	 Oqm8+ChP576ayRF7I1t7uoLOvEQ7MVzAvi1JuT/xzYetD3nTafKSIDZuN0BCG38rJL
+	 kT4YVzsro5jkY0S6kjL1CsB0FGnDptlll6gkBAVnub+DUh+vxVbw+6BFYTWPKULd3F
+	 EEfZcYDaM0CQGWSJxQe3jRl1f9bjzNkg+jYiKRp+RLvVBo3m1W+V2KizILZ7CdSS8w
+	 5xMCFN7oKxBWQ==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Magnus Damm <magnus.damm@gmail.com>, Heiko Stuebner <heiko@sntech.de>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-renesas-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, Liao Yuanhong <liaoyuanhong@vivo.com>
-In-Reply-To: <20250828122401.17441-1-liaoyuanhong@vivo.com>
-References: <20250828122401.17441-1-liaoyuanhong@vivo.com>
-Subject: Re: (subset) [PATCH 0/3] phy: Remove redundant ternary operators
-Message-Id: <175674648843.186496.241265078555502799.b4-ty@kernel.org>
-Date: Mon, 01 Sep 2025 22:38:08 +0530
+ Prashanth K <prashanth.k@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20250826105254.3758803-1-prashanth.k@oss.qualcomm.com>
+References: <20250826105254.3758803-1-prashanth.k@oss.qualcomm.com>
+Subject: Re: [PATCH] phy: qcom: m31-eusb2: Fix the error log while enabling
+ clock
+Message-Id: <175674649286.186496.15257522918572986509.b4-ty@kernel.org>
+Date: Mon, 01 Sep 2025 22:38:12 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_100813_138360_DF98EDA4 
-X-CRM114-Status: UNSURE (   5.79  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,24 +72,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 28 Aug 2025 20:23:54 +0800, Liao Yuanhong wrote:
-> For ternary operators in the form of "a ? true : false", if 'a' itself
-> returns a boolean result, the ternary operator can be omitted. Remove
-> redundant ternary operators to clean up the code.
+On Tue, 26 Aug 2025 16:22:54 +0530, Prashanth K wrote:
+> While enabling clock, we incorrectly log 'ref clk' as 'cfg ahb clk'
+> Fix this since the devicetree bindings mentions it as ref clock.
 > 
-> Liao Yuanhong (3):
->   phy: hisilicon: Remove redundant ternary operators
->   phy: renesas: rcar-gen3-usb2: Remove redundant ternary operators
->   phy: rockchip: usbdp: Remove redundant ternary operators
 > 
-> [...]
 
 Applied, thanks!
 
-[1/3] phy: hisilicon: Remove redundant ternary operators
-      commit: da938e39a81642748db3ec2385e8a53fe03d9bd1
-[3/3] phy: rockchip: usbdp: Remove redundant ternary operators
-      commit: 0c5375b06060fa40a8f8ce2e926bde125fdf6c3b
+[1/1] phy: qcom: m31-eusb2: Fix the error log while enabling clock
+      commit: 616fe247bdce4e3a23e3ded4b3be951001ed8039
 
 Best regards,
 -- 
