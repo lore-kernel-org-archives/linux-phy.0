@@ -4,64 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D82FCA100C
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5093CA1007
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BUhaIqDtuX5IAnOBTPVFSnpAhpa+dIQ+yk/5c9399+s=; b=BWLDKeLrck4PZd
-	upqWfIL1cBMm3732T7QBs6FtDBV3c3SGqjXUZyUK+gvnq4yYV8xANLE52Nwet98l83uGJbSotQSMs
-	R9OL5YMrqsjIGjIYOuYaeNelfkRVcSs3LtnyL8n5bsw84lc7QG7upE6bScNxjkD3SWgeFLFbyxVC5
-	Nv/GQBPKfGmXyN38BXq7PwsnCS5v5icnjc1mudXu1CqkHJSkBmt9SZXzBcWiKFHRYz08rvU97C89M
-	CDijccM+pagjkqKrWLexvItOauaa4qgZZumr9ouU7LXuGwB8yosYIwIdWuWZay+9BwL7prmHXgHSx
-	O0VrrIstsOVVrQ9MP88A==;
+	List-Owner; bh=9cFVGSZlM442BBdat3qwoAC+81id99+PFwJsY7Bkx+o=; b=KGM0RzvS0FEd6I
+	loq/f6jmamPrVaBH5+mxkG0D8N+cV4fK/RlDplpk94h72sAVfT7OYsGTM8Mvs64ZoXNZzhTj7xRzW
+	4qr09es9JDsvTuphVfB8ksZne1a6BtDmjmFIoM+1BHH4M7XPJdoGF7FiTi0zQz2/GW+dIXhwPaBMH
+	8fNHRbzgcQolc/9pSM/yvB77kW1E8H3TRwCs9wlsIoetb+o/LZ3yBKL8VD4Vt6tjHtm9kCMxp33KH
+	dPrFZQqSFwdNGxS/qOxkmpgquQFDpvfOGJwzEYGN/tQZ25YvOOvbIaTS1LP79QPIu6eBr4q04X694
+	GKLwcUVab7/lbLrjU83g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utDhv-0000000EFLi-2IZT;
-	Mon, 01 Sep 2025 23:13:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1utDi7-0000000EFgA-0yea;
+	Mon, 01 Sep 2025 23:13:15 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut7wp-0000000DOEp-3NDF
+	id 1ut80n-0000000DPNV-06Ht
 	for linux-phy@lists.infradead.org;
-	Mon, 01 Sep 2025 17:04:04 +0000
+	Mon, 01 Sep 2025 17:08:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 853084516A;
-	Mon,  1 Sep 2025 17:04:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2CCEC4CEF1;
-	Mon,  1 Sep 2025 17:03:59 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6E73F601E9;
+	Mon,  1 Sep 2025 17:08:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B32E0C4CEF0;
+	Mon,  1 Sep 2025 17:08:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756746243;
-	bh=uznjV6GNtsUeaw8/qZ8vz+/Qm7K/KuRh7317nxeEPLU=;
+	s=k20201202; t=1756746488;
+	bh=2yYH/cfpjLpeERChnwoG49UtSP4qJklF2fBBnkxU32o=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=fFfWtwLzE3P+Mt49+YmZCC4AOAq9O2gFL5m3JARScjkvB1ukfrvR47IpCM+hADOqW
-	 fngm/6eVS8jp4T93IcSEF46eGhpWvx3CS5nq+Gr3CuTLczvlnn5kwpSjJuz0tcaQcO
-	 A8UKT8OjBwJaCxWXaHdG3gykZrx4Cu9vufEJe0t63g7+CBnhb/NEhGkrtuOFy+Wdhb
-	 IHujTtco+R/xtMgRvq4mw7kywIzqioxgZ/27AqWSsVz7zLA7p4nlXlxpvkWZ7q04U5
-	 mHEJXntqlNDt7X8t3XhaiLuOYZKXZcTUv3WTUzxEyAEwezXKM8yXcQrFsi/8TT+acd
-	 O/yLS65LONKew==
+	b=Ks9JmaEiZVOQXMVVTh13IA7jdlAJvQsTf23dO1/iOd8AqXykPBr/Yb8Wnu/HgkJXY
+	 aZfhz1qk+auJTxe0YNzGAHFPKta5Fc1ouhqd7u22iFqukxMUX3xZl2RKWq4k2GRc/w
+	 yBuJoXUGnsdCyk4tLuNQh3xZMLK2obL0lvQGShYUsEHWbCZjLKYbD+br/MJ8wgSw0I
+	 sUKK2uqE/1RmP0GQ8U2ZPQMailYEB8Wueqgung7Vsb2t2nGHEvuUbYk8PFpc6RZTIi
+	 w2drlZZrv0aIo9B7XAL0mYgR6QIPswTiEhrmN5LPkWbThaojZw36tsIpIBm5lFJlz/
+	 OntQImmwu5Szg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Stephan Gerhold <stephan.gerhold@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Wenbin Yao <quic_wenbyao@quicinc.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>
-In-Reply-To: <20250821-phy-qcom-qmp-pcie-nocsr-fix-v3-1-4898db0cc07c@linaro.org>
-References: <20250821-phy-qcom-qmp-pcie-nocsr-fix-v3-1-4898db0cc07c@linaro.org>
-Subject: Re: [PATCH v3] phy: qcom: qmp-pcie: Fix PHY initialization when
- powered down by firmware
-Message-Id: <175674623951.175374.7267419073491468594.b4-ty@kernel.org>
-Date: Mon, 01 Sep 2025 22:33:59 +0530
+To: kishon@kernel.org, mani@kernel.org, neil.armstrong@linaro.org, 
+ dmitry.baryshkov@oss.qualcomm.com, andersson@kernel.org, 
+ konradybcio@kernel.org, Nitin Rawat <nitin.rawat@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20250830070353.2694-1-nitin.rawat@oss.qualcomm.com>
+References: <20250830070353.2694-1-nitin.rawat@oss.qualcomm.com>
+Subject: Re: [PATCH V4 0/2] Add regulator load support for QMP UFS PHY
+Message-Id: <175674648426.186496.9175302825889906237.b4-ty@kernel.org>
+Date: Mon, 01 Sep 2025 22:38:04 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_100403_870856_915F6B7A 
-X-CRM114-Status: UNSURE (   6.99  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,20 +72,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 21 Aug 2025 10:01:47 +0200, Stephan Gerhold wrote:
-> Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
-> support") added support for using the "no_csr" reset to skip configuration
-> of the PHY if the init sequence was already applied by the boot firmware.
-> The expectation is that the PHY is only turned on/off by using the "no_csr"
-> reset, instead of powering it down and re-programming it after a full
-> reset.
+On Sat, 30 Aug 2025 12:33:51 +0530, Nitin Rawat wrote:
+> The series improves regulator handling in the QMP UFS PHY driver and
+> adds load configuration support for all supported platforms.
+> 
+> On some SoCs, regulators are shared between the UFS PHY and other IP
+> blocks. To maintain stability and power efficiency, the regulator
+> framework needs to know the UFS PHY's peak load, as it determines the
+> regulator's operating mode.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom: qmp-pcie: Fix PHY initialization when powered down by firmware
-      commit: 6cb8c1f957f674ca20b7d7c96b1f1bb11b83b679
+[1/2] phy: qcom-qmp-ufs: Add regulator load voting for UFS QMP PHY
+      commit: 0c4916aadb8df892399eec99f775655c31049195
+[2/2] phy: qcom-qmp-ufs: Add PHY and PLL regulator load
+      commit: df4beac9da5f162770c8563d11cda327d748c20b
 
 Best regards,
 -- 
