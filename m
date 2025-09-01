@@ -4,73 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C69CA1007
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCDA4CA1007
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pf387m8MKsf4IOf2hEbi8DlNUW4MPBfL6tV6aQduiZ0=; b=DUqXH+ViZ26dl/zi0zHD7Q/Lxi
-	vtPlXTnUUJnHa3fbB9EOqVuZLSuV43xoJnEZ8X+uxqD1TM/fVfOounqfpnKVbhbD/bT0HfA1jP+D2
-	HXDrhcDFuxnU6UYR4ITlSHrJRmbDJLbUjzNxU/VdcTzOcq6pIIVuChSVq4dIvkyDDsjxZKlGVIYNL
-	GrcnWY0VAYx6uJQ8Iw9lautiNonwSYaLkzti4ZyAoDs41iIw5tC2H2d135K+eM/+IkKE9zHY7Bp7P
-	Az6lnM5fgJqrLDifQhoBSquEhv+7TPOwQP7LmqMDLaIAZge+QgLQRKRhnYgMZwaWf3jq3VuRUFJPB
-	RbSQSctg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7xi/oU9K0Hc3y+nVPeQ5Qzn/xdUq+ZJdIKZN5fGMnoE=; b=mAYWDtHHe23Gx7
+	dHXo4RJ3XgjPrQP536XM3W6jAbgUYWpp+y+wz/cA6B6WS5aK0AvW+6UIbBxDlAwcwnJykoaicCXJQ
+	P7ILQAzyLp6Vb8Pym6BfynswcatIGYzeVUXA5sa0SdynOR7LzDlnPO14aaO6v7XkQ0V8z2/ATNYKf
+	WGj0DVRJfyUfzcLsP6ATp7H2UfPke4fCmWPrdo7qBuulaBQKkxIrg9y55nmesjbAB9PDia7kYEoMg
+	NVLy9TTpJtobbCH5sAJRoNj1mA8MvOBnsa3RteDXTEkbjvudHP2rPp3k7cPrUx/V0g0sUzkELui0/
+	v2RS9CakHWfaQQXivGEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utFFt-0000000EXyG-3Xx1;
-	Tue, 02 Sep 2025 00:52:13 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1utFFy-0000000EY3q-2FD4;
+	Tue, 02 Sep 2025 00:52:18 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut9lX-0000000Dckn-3pHp;
-	Mon, 01 Sep 2025 19:00:33 +0000
+	id 1utATt-0000000DfWK-2cLC
+	for linux-phy@lists.infradead.org;
+	Mon, 01 Sep 2025 19:46:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7ACCE44571;
-	Mon,  1 Sep 2025 19:00:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F547C4CEF1;
-	Mon,  1 Sep 2025 19:00:27 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 72339601DA;
+	Mon,  1 Sep 2025 19:46:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05CB6C4CEF1;
+	Mon,  1 Sep 2025 19:46:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756753231;
-	bh=LctdjUhGxf71qHtiYonh2qpbLAV3p/deNyRN07fjZos=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=A5UYpFbKND00c/aB/57avZ/pTSSw0GM987HdW/KZ2QHrq/x1ScaszBRAv8e2eecuj
-	 92YwLjPpWuTC2KTeKExOJdKfpqs3xKc4hgudiRj+2VkGIA3H5azimMH/QkP7c6SH9N
-	 ET9LA7wRZpS2GdgvuTmMwq0/anCo/hC47WO9jDoCTVnm+9GQ+SSqYKIqKyVkkmROSh
-	 HSloiWdyvTS7Z3COVahZZsBCJd8tIGT758/GF32UWyVh+iKqsnUM7dRptcen7+zLuC
-	 lBWwtunR1SUg3aazWx4bRgzUtP4DV514EtIFf94KZyzGjjpkOpBldRsPoTEYu7L8Hn
-	 MUeHcsiA6MWjA==
-Date: Mon, 1 Sep 2025 20:00:25 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
+	s=k20201202; t=1756755979;
+	bh=+I4dnJqvlWmEnld8ly88CK019g7EkC5BAmsD+fwdbg8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=dYlvnyTQopAPd39t04d8a2jmqH9NOmvdpZukytAS29riluseEYXDzcRgtuSf//7y0
+	 8a638A9xd1w1iDU1UUheub3P1WtB8UVd5tAzjb/BRiq+wsfW5R85RDJ6lbCtPWxrf0
+	 o9HzmRwaAlJuIuyAezg12BfTwhtQi5FHMQfxL0ZDekuwB2+WLSlCxrALYh/3hLqje5
+	 7EHS/pdoGvKrEAd0lwgNtlvuXOKOmMWmPwjchCXTwXXeFtzX8RQasw2qdDmsn6Ys3b
+	 PF3vJTsZUGlmmOgWRsX4Tcsg4S9DSzPD0NvnIt7uftiyDOMbML58w08KPhGKtpnODS
+	 EH0PaDZIUcgbQ==
+From: Bjorn Andersson <andersson@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
-	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v4 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
- TJA105X/1048
-Message-ID: <20250901-uproar-shrill-07d51ea21a29@spud>
-References: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
- <20250901-can-v4-1-e42b5fe2cf9e@nxp.com>
- <20250901-diligent-dreaded-59b9ad5c3976@spud>
+	Konrad Dybcio <konradybcio@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Dmitry Baryshkov <lumag@kernel.org>
+Subject: Re: (subset) [PATCH v4 0/6] arm64: qcom: allow up to 4 lanes for the Type-C DisplayPort Altmode
+Date: Mon,  1 Sep 2025 14:46:00 -0500
+Message-ID: <175675595931.1796591.1151712153506063234.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.49.0
+In-Reply-To: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
+References: <20250807-topic-4ln_dp_respin-v4-0-43272d6eca92@oss.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <20250901-diligent-dreaded-59b9ad5c3976@spud>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_120031_993204_AF84FE02 
-X-CRM114-Status: GOOD (  26.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,148 +77,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2366808591684955825=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2366808591684955825==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Fac7BrZqSni97b6k"
-Content-Disposition: inline
+On Thu, 07 Aug 2025 18:33:18 +0200, Konrad Dybcio wrote:
+> Register a typec mux in order to change the PHY mode on the Type-C
+> mux events depending on the mode and the svid when in Altmode setup.
+> 
+> The DisplayPort phy should be left enabled if is still powered on
+> by the DRM DisplayPort controller, so bail out until the DisplayPort
+> PHY is not powered off.
+> 
+> [...]
 
+Applied, thanks!
 
---Fac7BrZqSni97b6k
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+[6/6] arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: Set up 4-lane DP
+      commit: 7a6ad5dd551a20672edceed087408ea6bcbfe8f2
 
-On Mon, Sep 01, 2025 at 07:54:01PM +0100, Conor Dooley wrote:
-> On Mon, Sep 01, 2025 at 11:18:11AM +0800, Peng Fan wrote:
-> > The TJA105[1,7] is a high-speed CAN transceiver which is a pin-compatib=
-le
-> > alternative for TI TCAN1043 with sleep mode supported, and has a compat=
-ible
-> > programming model, therefore use ti,tcan1043 as fallback compatible.
-> >=20
-> > The TJA1048 is a dual high-speed CAN transceiver with sleep mode suppor=
-ted.
-> >=20
-> > Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 30 ++++++++++++++=
-++++++--
-> >  1 file changed, 28 insertions(+), 2 deletions(-)
-> >=20
-> > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml=
- b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > index 4a8c3829d85d3c4a4963750d03567c1c345beb91..f8e0c24856a2ba83b5c988b=
-246464f47e11a032f 100644
-> > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > @@ -19,18 +19,25 @@ properties:
-> >            - enum:
-> >                - microchip,ata6561
-> >            - const: ti,tcan1042
-> > +      - items:
-> > +          - enum:
-> > +              - nxp,tja1051
-> > +              - nxp,tja1057
-> > +          - const: ti,tcan1043
-> >        - enum:
-> >            - ti,tcan1042
-> >            - ti,tcan1043
-> > +          - nxp,tja1048
-> >            - nxp,tjr1443
-> > =20
-> >    '#phy-cells':
-> > -    const: 0
-> > +    enum: [0, 1]
-> > =20
-> >    standby-gpios:
-> >      description:
-> >        gpio node to toggle standby signal on transceiver
-> > -    maxItems: 1
-> > +    minItems: 1
-> > +    maxItems: 2
->=20
-> You're adding a second standby gpio, which one is which?
-> I assume you mean that item 1 is stbn1 and item 2 is stbn 2 for tja1048.
-> Might be kinda obvious, but I think it should be mentioned.
->=20
-> tja105{1,7} don't have a standby gpio, but they do have a silent mode.
-> silent mode seems fundamentally different to standby, since the receiver
-> still works. Seems like that should be handled differently, no?
-
-The docs for standby mode for the tcan1043 don't match with the tja1051,
-"Standby mode is a low power mode where the driver and receiver are
-disabled," so does the fallback compatible even make sense? Seems like a
-combination of enable and standby gpios are used to put the tcan device
-into silent mode but the tja1051 has a pin for that alone and seemingly
-does not support standby at all?
-
->=20
-> > =20
-> >    enable-gpios:
-> >      description:
-> > @@ -53,6 +60,25 @@ required:
-> >    - compatible
-> >    - '#phy-cells'
-> > =20
-> > +allOf:
-> > +  - if:
-> > +      properties:
-> > +        compatible:
-> > +          contains:
-> > +            const: nxp,tja1048
-> > +    then:
-> > +      properties:
-> > +        '#phy-cells':
-> > +          const: 1
-> > +        standby-gpios:
-> > +          minItems: 2
-> > +    else:
-> > +      properties:
-> > +        '#phy-cells':
-> > +          const: 0
-> > +        standby-gpios:
-> > +          maxItems: 1
-> > +
-> >  additionalProperties: false
-> > =20
-> >  examples:
-> >=20
-> > --=20
-> > 2.37.1
-> >=20
-
-
-
---Fac7BrZqSni97b6k
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaLXtSQAKCRB4tDGHoIJi
-0vFGAQCYNzumk6MUDIsHrTq+zb2rPK0wlmaEJB3AP3SpQVUxnAEAqIUZeoqA5+in
-UbteyD3yR0gqvOwaghcsU1k+0rcDpgs=
-=Zpms
------END PGP SIGNATURE-----
-
---Fac7BrZqSni97b6k--
-
-
---===============2366808591684955825==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2366808591684955825==--
-
