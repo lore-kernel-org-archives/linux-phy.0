@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADF7DCA0FF0
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 19:50:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D82FCA100C
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 23:13:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u/z3LABOsrvkF1+8BC/03Vxt/zM6iA5RplPf+icIoZI=; b=SpHrPSDR02B5zI
-	huefxFkBtM1Q+rBi9wYpttQk4PFco9WOtHgmapXF8dBMtsFneIlwvgUScsN2PFO/FXVeh3W4C+cl5
-	IHJL33HzVgr8pkeItRO5AnusYh78JilUUk6k6np5fbpxr5v0UsH7jNXQPQPvgEE0O31bI9kMgrLdm
-	SiBzCNvGo74+jnMGO47n0j8UZc1FWkZRsUiadDjwO7Fg9LPHTej70IURwiVRRJn5naooTJo8mgpyT
-	TVxxio55YeJ/j4/dZ3/9Iw0tHmBGuIn1WqDToGIrph2Zccv9EwTU6SKXtL9JCKb/eEq5dMPHk2yM5
-	kY9o0IFMLnUivWwF2Tfw==;
+	List-Owner; bh=BUhaIqDtuX5IAnOBTPVFSnpAhpa+dIQ+yk/5c9399+s=; b=BWLDKeLrck4PZd
+	upqWfIL1cBMm3732T7QBs6FtDBV3c3SGqjXUZyUK+gvnq4yYV8xANLE52Nwet98l83uGJbSotQSMs
+	R9OL5YMrqsjIGjIYOuYaeNelfkRVcSs3LtnyL8n5bsw84lc7QG7upE6bScNxjkD3SWgeFLFbyxVC5
+	Nv/GQBPKfGmXyN38BXq7PwsnCS5v5icnjc1mudXu1CqkHJSkBmt9SZXzBcWiKFHRYz08rvU97C89M
+	CDijccM+pagjkqKrWLexvItOauaa4qgZZumr9ouU7LXuGwB8yosYIwIdWuWZay+9BwL7prmHXgHSx
+	O0VrrIstsOVVrQ9MP88A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utAYE-0000000Dhkc-1PBY;
-	Mon, 01 Sep 2025 19:50:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1utDhv-0000000EFLi-2IZT;
+	Mon, 01 Sep 2025 23:13:03 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut7OL-0000000DG6J-0RST
+	id 1ut7wp-0000000DOEp-3NDF
 	for linux-phy@lists.infradead.org;
-	Mon, 01 Sep 2025 16:28:25 +0000
+	Mon, 01 Sep 2025 17:04:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 73169601E2;
-	Mon,  1 Sep 2025 16:28:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 414DEC4CEF0;
-	Mon,  1 Sep 2025 16:28:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 853084516A;
+	Mon,  1 Sep 2025 17:04:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2CCEC4CEF1;
+	Mon,  1 Sep 2025 17:03:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756744104;
-	bh=viw6wcLJ9dNt96CV0hewJVgxtXzq50eavaC2cG7cjho=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=erBBuXVgQZv37o75NFkFnzj1JNuHwmNa41C2tuunXJAqdAhWWn7gdM8xoRjhLtlbb
-	 l3Gt/sYbTdnD86ODgtofGn00enO0G/o935z81/DrlJ5Uu5GID0rTiTzlM3ybqAxLAK
-	 RwmRKVEGnqQqxUhLF0eELSiFKNoAtsarvrLAJgn01uBwV5aihRhNUHJYvt5L6XjpRP
-	 BYwsqsnVzA0Ay0a8kZxfNDiEhdHDxHBfhoCridA0acWUkU9jfuds893IYqv3islZ+7
-	 0XxVjRvVhzxjbiHM096hMIy3lm0D6+PXyn+tIs++d+MyTIC9fETjiwPCDpQEXgoSAQ
-	 uWNsyn1exfBlg==
-Date: Mon, 1 Sep 2025 21:58:19 +0530
+	s=k20201202; t=1756746243;
+	bh=uznjV6GNtsUeaw8/qZ8vz+/Qm7K/KuRh7317nxeEPLU=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=fFfWtwLzE3P+Mt49+YmZCC4AOAq9O2gFL5m3JARScjkvB1ukfrvR47IpCM+hADOqW
+	 fngm/6eVS8jp4T93IcSEF46eGhpWvx3CS5nq+Gr3CuTLczvlnn5kwpSjJuz0tcaQcO
+	 A8UKT8OjBwJaCxWXaHdG3gykZrx4Cu9vufEJe0t63g7+CBnhb/NEhGkrtuOFy+Wdhb
+	 IHujTtco+R/xtMgRvq4mw7kywIzqioxgZ/27AqWSsVz7zLA7p4nlXlxpvkWZ7q04U5
+	 mHEJXntqlNDt7X8t3XhaiLuOYZKXZcTUv3WTUzxEyAEwezXKM8yXcQrFsi/8TT+acd
+	 O/yLS65LONKew==
 From: Vinod Koul <vkoul@kernel.org>
-To: Biju <biju.das.au@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Biju Das <biju.das.jz@bp.renesas.com>, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
-	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
-Message-ID: <aLXJozzGsbIndK9P@vaman>
-References: <20250820171812.402519-1-biju.das.jz@bp.renesas.com>
- <20250820171812.402519-5-biju.das.jz@bp.renesas.com>
+To: Stephan Gerhold <stephan.gerhold@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Wenbin Yao <quic_wenbyao@quicinc.com>, Qiang Yu <qiang.yu@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>
+In-Reply-To: <20250821-phy-qcom-qmp-pcie-nocsr-fix-v3-1-4898db0cc07c@linaro.org>
+References: <20250821-phy-qcom-qmp-pcie-nocsr-fix-v3-1-4898db0cc07c@linaro.org>
+Subject: Re: [PATCH v3] phy: qcom: qmp-pcie: Fix PHY initialization when
+ powered down by firmware
+Message-Id: <175674623951.175374.7267419073491468594.b4-ty@kernel.org>
+Date: Mon, 01 Sep 2025 22:33:59 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250820171812.402519-5-biju.das.jz@bp.renesas.com>
+X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250901_100403_870856_915F6B7A 
+X-CRM114-Status: UNSURE (   6.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,25 +78,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20-08-25, 18:17, Biju wrote:
 
-> +static int rzg3e_phy_usb3test_phy_init(void __iomem *base)
-> +{
-> +	int ret;
-> +	u32 val;
-> +
-> +	writel(0x00000100, base + USB3_TEST_CREGCTRL);
-> +	writel(0x00000303, base + USB3_TEST_RSTCTRL);
-> +	fsleep(20);
-> +
-> +	writel(0x00000004, base + USB3_TEST_CLKCTRL);
-> +	writel(0x0000000d, base + USB3_TEST_LANECONFIG0);
-> +	writel(0x00000301, base + USB3_TEST_RSTCTRL);
+On Thu, 21 Aug 2025 10:01:47 +0200, Stephan Gerhold wrote:
+> Commit 0cc22f5a861c ("phy: qcom: qmp-pcie: Add PHY register retention
+> support") added support for using the "no_csr" reset to skip configuration
+> of the PHY if the init sequence was already applied by the boot firmware.
+> The expectation is that the PHY is only turned on/off by using the "no_csr"
+> reset, instead of powering it down and re-programming it after a full
+> reset.
+> 
+> [...]
 
-Magic numbers...?
+Applied, thanks!
 
+[1/1] phy: qcom: qmp-pcie: Fix PHY initialization when powered down by firmware
+      commit: 6cb8c1f957f674ca20b7d7c96b1f1bb11b83b679
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
