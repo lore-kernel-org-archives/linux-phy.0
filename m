@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4037CA1002
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01A32CA1007
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7YxdEzn4aMOxw4kQh2QEEu7SSoDTNtvbei4PE/VPR84=; b=Zo1xWs7NHxni92
-	XuHXVHdRwOf6zOylEzR5ewhKssSjk9tlEqVU4z/TgreplYqCwEJsxQEoStGn/MSEyp2ydUc7vBvqt
-	s9DzdZYvgN4MbUtGc8m+Sq3efBU6bMPRY3S3LPbUFscn4bDLeBtaY3mr/53fEnUABZGHuKM753Qx7
-	ekdYeF81vu4fgSQYGRRuxzMOVIPj/N8a95RnR++lDWejy7DyRd8FkHG82sD7kocdgZrNv0Wpts9xu
-	EuGAYqG9vYitDA7UNVHrNy38wfKG2+FRyGdJY29AnvwF8tFVQfb9vJNPXYmhYZR+UYLjHS3ZORLz8
-	ONMNc4II5v8WGNpRe2ow==;
+	List-Owner; bh=29+cjU2c9xHRZeVcCbDgxG/ZzKsEph/sP76tbtTxxDQ=; b=UiMuk+5MQQiUIt
+	zXq1zQTKU6Q8tfZQBIr3mm+pVVpKJDPd99Q/f6vhlOaXz0wvAvXzn9JQWi03xr3uJJNqaVmPidhK8
+	tBAbmDN2AoPVLUfIZlGEahO6c2t5kOn65NjsR+2pucvTiFxNS8F8gyfsvbgUJa/RuaGfYwRIjYYjr
+	TdNj8u7VD0PDOjribjULDCLPElc618pcZt1jcSipkznpTChmuoQTsD+zbSv0UcYxK/EL3MB5jwlOn
+	oobB9Ot6kURTEw6jx5XaCW7cjq+JujkBgJXZ3LW4jT6WVAgFC/nwWb+qSdk9KrDgFGO0dk01nGCDf
+	VoEDRL9D2TK/mvyGt1PQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utFGU-0000000EYpZ-08dw;
-	Tue, 02 Sep 2025 00:52:50 +0000
+	id 1utFGX-0000000EYug-1sOf;
+	Tue, 02 Sep 2025 00:52:53 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utBez-0000000Dtt8-2d1E;
+	id 1utBez-0000000DttF-3TMW;
 	Mon, 01 Sep 2025 21:01:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0E048601E9;
+	by tor.source.kernel.org (Postfix) with ESMTP id 1E791601EC;
 	Mon,  1 Sep 2025 21:01:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id A7BB4C4CEF7;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id B3C6AC4CEF8;
 	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1756760512;
-	bh=1sx3B1KICtDjf4DR2eWZu0vSeJzYHOxzQ4xJumzeAtc=;
+	bh=vBYv6MXUwCuhAbpabDwzBwOgMyTdiJM8q4aGv6VxvME=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=XkoWhKMjQB6gbvpKIp/AOEGBepJ0nRjMBF3GTFxzyUOGfcIFueD+Cc9AFgAsMhDeO
-	 0emRqz1xu2gN8aoMwgRDCKJGmI4nJgTCAoCnjH/K7fJ9TkRYOkSDawEaw2iFVu8ax6
-	 o04mXEEjcnW44L/02dN/pn8sWZdGD4puIFf3a0P0vIHyRghAyWztzMPHFsOGNEV3sD
-	 GHSJ2aF/+Vgwb8+7Suxz2QP9teYQpz7ckdr3DDXD6XSnNUlbKUCNQdb3zpN6QkXQGB
-	 cBuo5S/m79+QASQ+XTKHkgnMr53URgN6v5K2VtyNkrFnlLyvtuJPfujwM3tj2D5m9U
-	 HdgxhX9ek0Ipw==
+	b=aPdsJbkRjCQLOpTsKDW49YistbX/BPcUZoZ34Ki7srfAsN/FKLgFZ29duWyTr1F0H
+	 D5cwHWqPgq+u7gCmVOqyJc+jb55xtC3/H1B4Gc1sZhVH21FbotV9N03WCcFpt1yeKk
+	 ZgzKisZR+qSsl+wk7tkVcejOSOnC0NKUNoobCmJOTMO8Mnz8aiPqV3OhK4v3oMPxHc
+	 ynN4UVHMoMsaVKP6KdSZvqPXlRly6uwDVTL6oxJJ3r+5O7TUtnanI5K+TR7kscX2Y7
+	 Bp3axnfp8niaXYhVKdj3b/KiqxKJWarke0e7Q7lD+2ZkobtdGi6ac3XeshlNu6iYJQ
+	 zYUQa5DV6Xpqg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 8F57ACA1005;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A0D47CA100A;
 	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
 From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
-Date: Mon, 01 Sep 2025 22:47:42 +0200
-Subject: [PATCH v3 1/7] dt-bindings: soc: rockchip: add rk3588 csidphy grf
- syscon
+Date: Mon, 01 Sep 2025 22:47:43 +0200
+Subject: [PATCH v3 2/7] dt-bindings: phy: rockchip-inno-csi-dphy: make
+ power-domains non-required
 MIME-Version: 1.0
-Message-Id: <20250616-rk3588-csi-dphy-v3-1-a5ccd5f1f438@collabora.com>
+Message-Id: <20250616-rk3588-csi-dphy-v3-2-a5ccd5f1f438@collabora.com>
 References: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
 In-Reply-To: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -66,13 +66,13 @@ To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
  linux-phy@lists.infradead.org, 
- Michael Riesch <michael.riesch@collabora.com>
+ Michael Riesch <michael.riesch@collabora.com>, stable@kernel.org
 X-Mailer: b4 0.12.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1756759662; l=927;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1756759662; l=1532;
  i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
- bh=+caMXhRTVArPpx+x7pVyqXS9t7uDPpRu8sQdXP1mzpo=;
- b=GhQI9Eco07YwwzPj4YTacxR9ShNGnxBwmititeHbHW1kIAEG2Bw+zEuUCgD/mYM9Ly6AOr296
- l4E1Rg7ApYBDnXLv/WBlnyGdN7ZTjKeScLWhpLvyf0aUIDe7NY2fqHA
+ bh=GUfdT8g95f8R9qP58as/tdyx1X3jOtQiZxdNeML59g4=;
+ b=DuKH0e/OtkdKKwqW8M1VcwKl51XChDQIf7z5nZn4GekS4KRFKM7SBl7RIlzRLjARVw+cyOq7K
+ X77ZmFyW07WAXDc8vQbjEz4rupfXT9JoXWqtm7LZ3beawyE8IACb5Do
 X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
  pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
 X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
@@ -97,26 +97,51 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Michael Riesch <michael.riesch@collabora.com>
 
-Add CSIDPHY GRF syscon compatible for the Rockchip RK3588.
+There are variants of the Rockchip Innosilicon CSI DPHY (e.g., the RK3568
+variant) that are powered on by default as they are part of the ALIVE power
+domain.
+Remove 'power-domains' from the required properties in order to avoid false
+negatives.
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Fixes: 22c8e0a69b7f ("dt-bindings: phy: add compatible for rk356x to rockchip-inno-csi-dphy")
+Cc: stable@kernel.org
 Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
 ---
- Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ .../devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml   | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-index 1ab0b092e2a5..b6e04e6491e9 100644
---- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-+++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-@@ -47,6 +47,7 @@ properties:
-               - rockchip,rk3576-vop-grf
-               - rockchip,rk3588-bigcore0-grf
-               - rockchip,rk3588-bigcore1-grf
-+              - rockchip,rk3588-csidphy-grf
-               - rockchip,rk3588-dcphy-grf
-               - rockchip,rk3588-hdptxphy-grf
-               - rockchip,rk3588-ioc
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+index 5ac994b3c0aa..9ad72518e6da 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip-inno-csi-dphy.yaml
+@@ -51,13 +51,26 @@ properties:
+     description:
+       Some additional phy settings are access through GRF regs.
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - rockchip,px30-csi-dphy
++              - rockchip,rk1808-csi-dphy
++              - rockchip,rk3326-csi-dphy
++              - rockchip,rk3368-csi-dphy
++    then:
++      required:
++        - power-domains
++
+ required:
+   - compatible
+   - reg
+   - clocks
+   - clock-names
+   - '#phy-cells'
+-  - power-domains
+   - resets
+   - reset-names
+   - rockchip,grf
 
 -- 
 2.39.5
