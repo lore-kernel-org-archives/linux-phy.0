@@ -4,74 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16E8CCA100D
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4037CA1002
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EjRW3dLJwS5NPf/ZDahpCO0/8oGxRGVq8QwpJa51BlE=; b=kXjG4v/3KXxioA
-	6gWJGPSW/kvdS6p6zxRjlsOp+92dPYKKS7GwKLJAdqHKvA6ZCLZji0zLoqN+Eb2Ix+DpZePrJcDYM
-	FASfOYOLmVu6I48XsxoL+Q6WrMJ0WyhQ6MgRnAmdlIolq/+TeFNF+rDFd2uEY1BMvdDhAcGj5JLre
-	g34i/HZFf8BZ3Fkx4X4Jx40V3TOp0uNL+ricYmflQOj2V34rhoKoi3PIB5512vXa8r9nZzEX6kO/P
-	Bn+IFYHhBcqZrWVVH4HefWrSTsv9r6yRriUxgDQTyxE1iNk6uQyR7/Rzf8QBDlVS0es3EJ2c8X1Vr
-	r5vALZCAORY9Lq+jSMBA==;
+	List-Owner; bh=7YxdEzn4aMOxw4kQh2QEEu7SSoDTNtvbei4PE/VPR84=; b=Zo1xWs7NHxni92
+	XuHXVHdRwOf6zOylEzR5ewhKssSjk9tlEqVU4z/TgreplYqCwEJsxQEoStGn/MSEyp2ydUc7vBvqt
+	s9DzdZYvgN4MbUtGc8m+Sq3efBU6bMPRY3S3LPbUFscn4bDLeBtaY3mr/53fEnUABZGHuKM753Qx7
+	ekdYeF81vu4fgSQYGRRuxzMOVIPj/N8a95RnR++lDWejy7DyRd8FkHG82sD7kocdgZrNv0Wpts9xu
+	EuGAYqG9vYitDA7UNVHrNy38wfKG2+FRyGdJY29AnvwF8tFVQfb9vJNPXYmhYZR+UYLjHS3ZORLz8
+	ONMNc4II5v8WGNpRe2ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utFFy-0000000EY4D-3KPB;
-	Tue, 02 Sep 2025 00:52:18 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1utFGU-0000000EYpZ-08dw;
+	Tue, 02 Sep 2025 00:52:50 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utATt-0000000DfVv-1o6t
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Sep 2025 19:46:22 +0000
+	id 1utBez-0000000Dtt8-2d1E;
+	Mon, 01 Sep 2025 21:01:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B09A54485E;
-	Mon,  1 Sep 2025 19:46:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D9E3C4CEF0;
-	Mon,  1 Sep 2025 19:46:19 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 0E048601E9;
+	Mon,  1 Sep 2025 21:01:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id A7BB4C4CEF7;
+	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756755980;
-	bh=NhV9B8K4cZUejZjeirB3GBztoD5Bg3AS6ut3OfnT9AU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=W5wZJk/wzC+HRZv29+XrUPvxvKisuswlqs+QR1ZxWu0+64+KeAC1NDg/fdKeCfUqN
-	 qjOr+QIkUpNOF7aU3oCOaIHZpOtHwtd3UwWCdBDwyAICN2XZY1H38Ihqk93HLGc4Ao
-	 cDq3na0OwyyQq7xQi2uLu3DoiA81jmP3x4sjGqOW+AHLPsf9QZxH2hKlgGqWhmtBDL
-	 irE9U7+GbfbxX84+57i12kYQP54pKsVzCs1t9DILl/yoMSjbQRsXIGN8hbsKy4JzFH
-	 0KzZ6FPAiwOIjcH6T6WStFQgwq0MvecB1nTyNyRLMTCf6QDGPTh0X5F4PCc8j9CPO8
-	 aBcgV0E1cIW3Q==
-From: Bjorn Andersson <andersson@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	quic_vbadigan@quicinc.com,
-	quic_mrana@quicinc.com
-Subject: Re: (subset) [PATCH v3 0/3] arm64: dts: qcom: Add PCIe Support for sm8750
-Date: Mon,  1 Sep 2025 14:46:01 -0500
-Message-ID: <175675595917.1796591.7933074887018259640.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250826-pakala-v3-0-721627bd5bb0@oss.qualcomm.com>
-References: <20250826-pakala-v3-0-721627bd5bb0@oss.qualcomm.com>
+	s=k20201202; t=1756760512;
+	bh=1sx3B1KICtDjf4DR2eWZu0vSeJzYHOxzQ4xJumzeAtc=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=XkoWhKMjQB6gbvpKIp/AOEGBepJ0nRjMBF3GTFxzyUOGfcIFueD+Cc9AFgAsMhDeO
+	 0emRqz1xu2gN8aoMwgRDCKJGmI4nJgTCAoCnjH/K7fJ9TkRYOkSDawEaw2iFVu8ax6
+	 o04mXEEjcnW44L/02dN/pn8sWZdGD4puIFf3a0P0vIHyRghAyWztzMPHFsOGNEV3sD
+	 GHSJ2aF/+Vgwb8+7Suxz2QP9teYQpz7ckdr3DDXD6XSnNUlbKUCNQdb3zpN6QkXQGB
+	 cBuo5S/m79+QASQ+XTKHkgnMr53URgN6v5K2VtyNkrFnlLyvtuJPfujwM3tj2D5m9U
+	 HdgxhX9ek0Ipw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8F57ACA1005;
+	Mon,  1 Sep 2025 21:01:52 +0000 (UTC)
+From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
+Date: Mon, 01 Sep 2025 22:47:42 +0200
+Subject: [PATCH v3 1/7] dt-bindings: soc: rockchip: add rk3588 csidphy grf
+ syscon
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_124621_485279_71C3094B 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+Message-Id: <20250616-rk3588-csi-dphy-v3-1-a5ccd5f1f438@collabora.com>
+References: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
+In-Reply-To: <20250616-rk3588-csi-dphy-v3-0-a5ccd5f1f438@collabora.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kever Yang <kever.yang@rock-chips.com>, 
+ Jagan Teki <jagan@amarulasolutions.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Diederik de Haas <didi.debian@cknow.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Collabora Kernel Team <kernel@collabora.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, 
+ Michael Riesch <michael.riesch@collabora.com>
+X-Mailer: b4 0.12.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1756759662; l=927;
+ i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
+ bh=+caMXhRTVArPpx+x7pVyqXS9t7uDPpRu8sQdXP1mzpo=;
+ b=GhQI9Eco07YwwzPj4YTacxR9ShNGnxBwmititeHbHW1kIAEG2Bw+zEuUCgD/mYM9Ly6AOr296
+ l4E1Rg7ApYBDnXLv/WBlnyGdN7ZTjKeScLWhpLvyf0aUIDe7NY2fqHA
+X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
+ pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
+X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
+ with auth_id=371
+X-Original-From: Michael Riesch <michael.riesch@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,34 +89,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: michael.riesch@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Michael Riesch <michael.riesch@collabora.com>
 
-On Tue, 26 Aug 2025 16:32:52 +0530, Krishna Chaitanya Chundru wrote:
-> Describe PCIe controller and PHY. Also add required system resources like
-> regulators, clocks, interrupts and registers configuration for PCIe.
-> 
-> The qcom_pcie_parse_ports() function currently iterates over all available
-> child nodes of the PCIe controller's device tree node. This includes
-> unrelated nodes such as OPP (Operating Performance Points) nodes, which do
-> not contain the expected 'reset' and 'phy' properties. As a result, parsing
-> fails and the driver falls back to the legacy method of parsing the
-> controller node directly. However, this fallback also fails when properties
-> are shifted to the root port, leading to probe failure.
-> 
-> [...]
+Add CSIDPHY GRF syscon compatible for the Rockchip RK3588.
 
-Applied, thanks!
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+---
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-[2/3] arm64: dts: qcom: sm8750: Add PCIe PHY and controller node
-      commit: 19f1395333f80479a3a5fce29e4c7a8255322a9c
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 1ab0b092e2a5..b6e04e6491e9 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -47,6 +47,7 @@ properties:
+               - rockchip,rk3576-vop-grf
+               - rockchip,rk3588-bigcore0-grf
+               - rockchip,rk3588-bigcore1-grf
++              - rockchip,rk3588-csidphy-grf
+               - rockchip,rk3588-dcphy-grf
+               - rockchip,rk3588-hdptxphy-grf
+               - rockchip,rk3588-ioc
 
-Best regards,
 -- 
-Bjorn Andersson <andersson@kernel.org>
+2.39.5
+
+
 
 -- 
 linux-phy mailing list
