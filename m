@@ -4,67 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEE6CCA0FFF
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 14:47:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CA81CA0FFF
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 14:55:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZA3We/TQjE/l9m3VtMtqidGv9XklDX68iFYnx31MTY=; b=rka49UIi2vyqlz
-	MnxmKzIiNtzH0R6rBf1PRKKim3KxphO3G/mNaOLLfaxzzb5itj3mXID0rmblfzsNRH6l2MHiQRn+k
-	IbfGPyNPomheGGSKwsJVoiKAgM/Z3Z6OZvrLJff9bUoTKdFpswU7iOqpTYKPuetVSs/xAe5KL9R/J
-	JesiuvuEep6bk7Ojy+pPab3XNcIgBTtyStvHU2MLZr/TzG6sE9bZ39nWi8TOtHJ4IGp2HZFuY6US+
-	vmKHUjdCY7zLm5jJOTAxI3PRYawFyyrvmkCKdZPw8O3+wR0EfiQieSIDtr2iMVwLpaJeLk3lt/WXj
-	pP0/wBmi3X7aXvQOjbuA==;
+	List-Owner; bh=2SX24CZzPpzWpAf1KQTXCoZ7NqJTxXdQYHmxRAy/RlU=; b=tAaOws0zqip3nj
+	BOZ5FvDofW/BMqFv5WclHIG03T4JSttxh5tAZYTwFFe51yw6cnf597/S1xSI9T8gfdpOL3LYZkgw5
+	bPdxWu2wgBr18EY0gcDev4MBgv/WnfGU+yPX8IBzxqxUtWANqmU2zkHxN2LxdY3lusTPipvZUWuQp
+	Xeri10JmmJdHrKtGwS0JDcR4x/ioFr4Ll0xkzPRLAn5bGENGVqzqRC5zb6rXoNi70usznDnqdq6KO
+	stBMLNS0OXFS+sU8BxVNmQW29RF1F9GF/0+De1ZrnzlgAHzbJvQ60EsnfS8KAnwBcTjL+4+YmXlkJ
+	W0+eF2O9Xq7IbMA4dy1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut5of-0000000Cstv-28Bz;
-	Mon, 01 Sep 2025 14:47:29 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1ut5wL-0000000CwJG-1hTL;
+	Mon, 01 Sep 2025 14:55:25 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut3O8-0000000CFYN-1nbs;
-	Mon, 01 Sep 2025 12:11:57 +0000
+	id 1ut2yL-0000000C63P-10mx;
+	Mon, 01 Sep 2025 11:45:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 96F8D403B9;
-	Mon,  1 Sep 2025 12:11:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C32FC4CEF0;
-	Mon,  1 Sep 2025 12:11:54 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A448C601D7;
+	Mon,  1 Sep 2025 11:45:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D718CC4CEF0;
+	Mon,  1 Sep 2025 11:45:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756728715;
-	bh=qBCtOBJT2cV+mYRDVrXbHxe214BFli2AJqzlHAFeHmE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IgM4H5HrKPqzEWKaSZZ7G5TFgQ07XB5abKuclMAVTDyb72U8Mej25CusONsJTcqUA
-	 D8HD6YysFa4BLj7g866Hk/j8mfg7NLIcRq0I57I4DBx+xCOH4xiVd3hwq4Ken3omiY
-	 7P4hMwDYQ2lOEB7aFsWcQ+d7Sb82DMMfmmNCaffJJOTEepv71yzjo3FsRsD6TmfaQV
-	 cT0/PVLi/7Iqh5DsfIOmEYvalaeUnHIjpNQVefdV6+GUxOV/0QZkbt0TC2+34r0eMt
-	 u1fxeyrUs6OGR/HoSCu4I9xWptMRoncdQ2+GqxTpRL9Kx02riRJi1DhTi0bT0DQetk
-	 hxABn07H4QR+w==
-Date: Mon, 1 Sep 2025 17:41:50 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Shradha Todi <shradha.t@samsung.com>
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, mani@kernel.org,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, robh@kernel.org,
-	bhelgaas@google.com, jingoohan1@gmail.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, alim.akhtar@samsung.com, kishon@kernel.org,
-	arnd@arndb.de, m.szyprowski@samsung.com, jh80.chung@samsung.com,
-	pankaj.dubey@samsung.com
-Subject: Re: [PATCH v3 10/12] phy: exynos: Add PCIe PHY support for FSD SoC
-Message-ID: <aLWNhv0eLj7LRrvM@vaman>
-References: <20250811154638.95732-1-shradha.t@samsung.com>
- <CGME20250811154738epcas5p1d1202f799c4d950c5d5e7f45e39a51e7@epcas5p1.samsung.com>
- <20250811154638.95732-11-shradha.t@samsung.com>
+	s=k20201202; t=1756727116;
+	bh=bEIzW3/fXPb01KjYlShH/QlkM+z3ZeP3wwyYkd1vGKQ=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=DzLy0yZo0SFY5zVZxWNtmB9b9IdrZuqLdqwb4/lb1W3HOCEkNChfjFs2cVvVqWp8y
+	 LvvMJS0OhaExZHIrVBhiN+dm1u/hUE+hbKjgUv7II0SKoVjLBuaAuTArhPS2lWYh6D
+	 74mvwLq86sYnzKLiPXF6zIY5bjwQR3Gl2t4EFzWmLJrkfkeY8a+9HjHeWuLosa+cc3
+	 OoWx/GmhM+gXAOZ/lXbmrRg+nBqkjuvoSX8nLWP/tsn2lXc8i2mAVEVXj9KmfKFNRr
+	 w0egS63UTgrFo/ULS4ylFytpfLIzwc+rosXSTujDcerQH6GsCTvsdw4FCIQh+aJrq+
+	 E/ntz6i4X9YFQ==
+Message-ID: <451f147b-a193-44e3-b7ca-90136de31a17@kernel.org>
+Date: Mon, 1 Sep 2025 13:45:08 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250811154638.95732-11-shradha.t@samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_051156_515081_391DE00D 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 01/10] dt-bindings: soc: aspeed: Add ASPEED PCIe Config
+To: Jacky Chou <jacky_chou@aspeedtech.com>, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
+ mani@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
+ kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
+ linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
+ linux-gpio@vger.kernel.org
+References: <20250901055922.1553550-1-jacky_chou@aspeedtech.com>
+ <20250901055922.1553550-2-jacky_chou@aspeedtech.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20250901055922.1553550-2-jacky_chou@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,69 +119,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11-08-25, 21:16, Shradha Todi wrote:
-> Add PCIe PHY support for Tesla FSD SoC.
-
-Can you pls add a bit more description of what you are adding, helps to
-understand the change
-
-> +/* FSD: PCIe PCS registers */
-> +#define FSD_PCIE_PCS_BRF_0		0x0004
-> +#define FSD_PCIE_PCS_BRF_1		0x0804
-> +#define FSD_PCIE_PCS_CLK		0x0180
+On 01/09/2025 07:59, Jacky Chou wrote:
+> +description:
+> +  The ASPEED PCIe configuration syscon block provides a set of registers shared
+> +  by multiple PCIe-related devices within the SoC. This node represents the
+> +  common configuration space that allows these devices to coordinate and manage
+> +  shared PCIe settings, including address mapping, control, and status
+> +  registers. The syscon interface enables for various PCIe devices to access
+> +  and modify these shared registers in a consistent and centralized manner.
 > +
-> +/* FSD: PCIe SYSREG registers */
-> +#define FSD_PCIE_SYSREG_PHY_0_CON			0x042c
-> +#define FSD_PCIE_SYSREG_PHY_0_CON_MASK			0x03ff
-> +#define FSD_PCIE_SYSREG_PHY_0_REF_SEL			(0x2 << 0)
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - aspeed,ast2700-pcie-cfg
 
-Use GENMASK() please here and elsewhere
+Why this cannot be part of standard syscon binding file?
 
-> +static int fsd_pcie_phy0_reset(struct phy *phy)
-> +{
-> +	struct exynos_pcie_phy *phy_ctrl = phy_get_drvdata(phy);
+> +      - const: syscon
 > +
-> +	writel(0x1, phy_ctrl->pcs_base + FSD_PCIE_PCS_CLK);
+> +  reg:
+> +    maxItems: 1
 > +
-> +	regmap_update_bits(phy_ctrl->fsysreg, FSD_PCIE_SYSREG_PHY_0_CON,
-> +			FSD_PCIE_SYSREG_PHY_0_CON_MASK, 0x0);
-> +	regmap_update_bits(phy_ctrl->fsysreg, FSD_PCIE_SYSREG_PHY_0_CON,
-> +		FSD_PCIE_SYSREG_PHY_0_AUX_EN, FSD_PCIE_SYSREG_PHY_0_AUX_EN);
-> +	regmap_update_bits(phy_ctrl->fsysreg, FSD_PCIE_SYSREG_PHY_0_CON,
-> +		FSD_PCIE_SYSREG_PHY_0_REF_SEL_MASK, FSD_PCIE_SYSREG_PHY_0_REF_SEL);
-> +	regmap_update_bits(phy_ctrl->fsysreg, FSD_PCIE_SYSREG_PHY_0_CON,
-> +		FSD_PCIE_SYSREG_PHY_0_INIT_RSTN, FSD_PCIE_SYSREG_PHY_0_INIT_RSTN);
-
-pls conform to coding style for these
-
+> +required:
+> +  - compatible
+> +  - reg
 > +
-> +	return 0;
-
-why return a value when this wont ever return anything else than 0?
-
+> +additionalProperties: false
 > +
-> +	writel(0x2, pbase + FSD_PCIE_PHY_CMN_RESET);
-> +
-> +	writel(0x00, phy_ctrl->pcs_base + FSD_PCIE_PCS_BRF_0);
-> +	writel(0x00, phy_ctrl->pcs_base + FSD_PCIE_PCS_BRF_1);
-> +	writel(0x00, pbase + FSD_PCIE_PHY_AGG_BIF_RESET);
-> +	writel(0x00, pbase + FSD_PCIE_PHY_AGG_BIF_CLOCK);
-> +
-> +	fsd_pcie_phy_writel(phy_ctrl, FSD_PCIE_PHY_TRSV_REG07B_LN_N, 0x20);
-> +	fsd_pcie_phy_writel(phy_ctrl, FSD_PCIE_PHY_TRSV_REG052_LN_N, 0x00);
-> +	writel(0xaa, pbase + FSD_PCIE_PHY_TRSV_CMN_REG01E);
-> +	writel(0x28, pbase + FSD_PCIE_PHY_TRSV_CMN_REG02D);
-> +	writel(0x28, pbase + FSD_PCIE_PHY_TRSV_CMN_REG031);
-> +	writel(0x21, pbase + FSD_PCIE_PHY_TRSV_CMN_REG036);
-> +	writel(0x12, pbase + FSD_PCIE_PHY_TRSV_CMN_REG05F);
-> +	writel(0x23, pbase + FSD_PCIE_PHY_TRSV_CMN_REG060);
-> +	writel(0x0, pbase + FSD_PCIE_PHY_TRSV_CMN_REG061);
-> +	writel(0x0, pbase + FSD_PCIE_PHY_TRSV_CMN_REG062);
-> +	writel(0x15, pbase + FSD_PCIE_PHY_TRSV_CMN_REG03);
+> +examples:
+> +  - |
+> +    soc0 {
 
-Magic numbers?
--- 
-~Vinod
+soc {
+
+although why do you need it in the first place...
+
+> +      #address-cells = <2>;
+> +      #size-cells = <1>;
+> +
+> +      syscon@12c02a00 {
+> +        compatible = "aspeed,ast2700-pcie-cfg", "syscon";
+> +        reg = <0 0x12c02a00 0x80>;
+> +      };
+> +    };
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
