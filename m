@@ -4,64 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F494CA1007
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12C69CA1007
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 00:52:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ME05RlaPWKn4BMQiHljm780j4hinHAtBBdBZwnHSf+A=; b=iTg0AvtcGyFD88
-	lVktr1aUrcbTs1GXJsTodv5Fccy8lQsVXLTCc9ONTar2pjR5P0ZEqPqDhkYsFkUIVvD0QOqf5mloQ
-	AnG0EMzJQ006eKViMKP9lQe+JBK6QoFQY9IRMiBtSfthQV3sEFfhSoL3ZgOIpZvXaD4pKkGRaV/Xu
-	Z3UY8cFkHlOKU9btQxPRXZeKDQYioD9M/uVD4wndZCcbCJcPYhYh3l8/WxWFiDRsVdJhXvf9Z48g0
-	L1DpdhgCQ1lVyh/KWEmwzVPPtp3vth6ETpGxFTZnJuf23pwHPtLKKB9y2YM5/TTYK3/2qFhWuDHxP
-	2JI78ZWL1bxtvNBdSkqg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=pf387m8MKsf4IOf2hEbi8DlNUW4MPBfL6tV6aQduiZ0=; b=DUqXH+ViZ26dl/zi0zHD7Q/Lxi
+	vtPlXTnUUJnHa3fbB9EOqVuZLSuV43xoJnEZ8X+uxqD1TM/fVfOounqfpnKVbhbD/bT0HfA1jP+D2
+	HXDrhcDFuxnU6UYR4ITlSHrJRmbDJLbUjzNxU/VdcTzOcq6pIIVuChSVq4dIvkyDDsjxZKlGVIYNL
+	GrcnWY0VAYx6uJQ8Iw9lautiNonwSYaLkzti4ZyAoDs41iIw5tC2H2d135K+eM/+IkKE9zHY7Bp7P
+	Az6lnM5fgJqrLDifQhoBSquEhv+7TPOwQP7LmqMDLaIAZge+QgLQRKRhnYgMZwaWf3jq3VuRUFJPB
+	RbSQSctg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utFFr-0000000EXvC-0MyK;
-	Tue, 02 Sep 2025 00:52:11 +0000
+	id 1utFFt-0000000EXyG-3Xx1;
+	Tue, 02 Sep 2025 00:52:13 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ut7wm-0000000DODc-003O
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Sep 2025 17:04:01 +0000
+	id 1ut9lX-0000000Dckn-3pHp;
+	Mon, 01 Sep 2025 19:00:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5C2E643932;
-	Mon,  1 Sep 2025 17:03:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF61DC4CEF1;
-	Mon,  1 Sep 2025 17:03:55 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7ACCE44571;
+	Mon,  1 Sep 2025 19:00:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7F547C4CEF1;
+	Mon,  1 Sep 2025 19:00:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756746239;
-	bh=7vw7aKVwQgQZE75ooS+4W12By7oKTKW2QfDfvc/Gkqw=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Sshll6/zmnjzbzUim4kpGfSgkHwtQlOkFj8OZQZy0LyTJz9ILhAqeKvJJkrnb+jCk
-	 QgHSGHnzlTHrf8jaIUfBVty2hCMqm3mRdWOCD8zw10tjjYTclV0H6htcWuHfQCGB5q
-	 utea7N54QDxbVXZbRs9sxOjXJ0AXgQzF8WIXW4vBLIH4f57CAzaEaOFDi/1saFtkB6
-	 IxwkHWkVYf65d/Jsg2+hamOdQDFFU1VNCIgxZCA876FSLa6lG1gyz7TNFlupYyCPUI
-	 8TgjRWPXo0IqNZHqYLc17zc6ekF3SQHI3HUnknS7BHR7dlGt6iArJdrFB/2waOgqMU
-	 celef1YCYsCGA==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Michael Walle <mwalle@kernel.org>
-Cc: Siddharth Vadapalli <s-vadapalli@ti.com>, 
- Matthias Schiffer <matthias.schiffer@ew.tq-group.com>, 
- Andrew Lunn <andrew@lunn.ch>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, netdev@vger.kernel.org, nm@ti.com, 
- vigneshr@ti.com
-In-Reply-To: <20250819065622.1019537-1-mwalle@kernel.org>
-References: <20250819065622.1019537-1-mwalle@kernel.org>
-Subject: Re: [PATCH v3] phy: ti: gmii-sel: Always write the RGMII ID
- setting
-Message-Id: <175674623530.175374.344829536743551293.b4-ty@kernel.org>
-Date: Mon, 01 Sep 2025 22:33:55 +0530
+	s=k20201202; t=1756753231;
+	bh=LctdjUhGxf71qHtiYonh2qpbLAV3p/deNyRN07fjZos=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=A5UYpFbKND00c/aB/57avZ/pTSSw0GM987HdW/KZ2QHrq/x1ScaszBRAv8e2eecuj
+	 92YwLjPpWuTC2KTeKExOJdKfpqs3xKc4hgudiRj+2VkGIA3H5azimMH/QkP7c6SH9N
+	 ET9LA7wRZpS2GdgvuTmMwq0/anCo/hC47WO9jDoCTVnm+9GQ+SSqYKIqKyVkkmROSh
+	 HSloiWdyvTS7Z3COVahZZsBCJd8tIGT758/GF32UWyVh+iKqsnUM7dRptcen7+zLuC
+	 lBWwtunR1SUg3aazWx4bRgzUtP4DV514EtIFf94KZyzGjjpkOpBldRsPoTEYu7L8Hn
+	 MUeHcsiA6MWjA==
+Date: Mon, 1 Sep 2025 20:00:25 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
+	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v4 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
+ TJA105X/1048
+Message-ID: <20250901-uproar-shrill-07d51ea21a29@spud>
+References: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
+ <20250901-can-v4-1-e42b5fe2cf9e@nxp.com>
+ <20250901-diligent-dreaded-59b9ad5c3976@spud>
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+In-Reply-To: <20250901-diligent-dreaded-59b9ad5c3976@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250901_100400_069211_C971DC1B 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250901_120031_993204_AF84FE02 
+X-CRM114-Status: GOOD (  26.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,37 +82,148 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2366808591684955825=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 19 Aug 2025 08:56:22 +0200, Michael Walle wrote:
-> Some SoCs are just validated with the TX delay enabled. With commit
-> ca13b249f291 ("net: ethernet: ti: am65-cpsw: fixup PHY mode for fixed
-> RGMII TX delay"), the network driver will patch the delay setting on the
-> fly assuming that the TX delay setting is fixed. In reality, the TX
-> delay is configurable and just skipped in the documentation. There are
-> bootloaders, which will disable the TX delay and this will lead to a
-> transmit path which doesn't add any delays at all.
-> Fix that by always writing the RGMII_ID setting and report an error for
-> unsupported RGMII delay modes.
-> 
-> [...]
-
-Applied, thanks!
-
-[1/1] phy: ti: gmii-sel: Always write the RGMII ID setting
-      commit: a22d3b0d49d411e64ed07e30c2095035ecb30ed2
-
-Best regards,
--- 
-~Vinod
+--===============2366808591684955825==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Fac7BrZqSni97b6k"
+Content-Disposition: inline
 
 
+--Fac7BrZqSni97b6k
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Sep 01, 2025 at 07:54:01PM +0100, Conor Dooley wrote:
+> On Mon, Sep 01, 2025 at 11:18:11AM +0800, Peng Fan wrote:
+> > The TJA105[1,7] is a high-speed CAN transceiver which is a pin-compatib=
+le
+> > alternative for TI TCAN1043 with sleep mode supported, and has a compat=
+ible
+> > programming model, therefore use ti,tcan1043 as fallback compatible.
+> >=20
+> > The TJA1048 is a dual high-speed CAN transceiver with sleep mode suppor=
+ted.
+> >=20
+> > Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 30 ++++++++++++++=
+++++++--
+> >  1 file changed, 28 insertions(+), 2 deletions(-)
+> >=20
+> > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml=
+ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > index 4a8c3829d85d3c4a4963750d03567c1c345beb91..f8e0c24856a2ba83b5c988b=
+246464f47e11a032f 100644
+> > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > @@ -19,18 +19,25 @@ properties:
+> >            - enum:
+> >                - microchip,ata6561
+> >            - const: ti,tcan1042
+> > +      - items:
+> > +          - enum:
+> > +              - nxp,tja1051
+> > +              - nxp,tja1057
+> > +          - const: ti,tcan1043
+> >        - enum:
+> >            - ti,tcan1042
+> >            - ti,tcan1043
+> > +          - nxp,tja1048
+> >            - nxp,tjr1443
+> > =20
+> >    '#phy-cells':
+> > -    const: 0
+> > +    enum: [0, 1]
+> > =20
+> >    standby-gpios:
+> >      description:
+> >        gpio node to toggle standby signal on transceiver
+> > -    maxItems: 1
+> > +    minItems: 1
+> > +    maxItems: 2
+>=20
+> You're adding a second standby gpio, which one is which?
+> I assume you mean that item 1 is stbn1 and item 2 is stbn 2 for tja1048.
+> Might be kinda obvious, but I think it should be mentioned.
+>=20
+> tja105{1,7} don't have a standby gpio, but they do have a silent mode.
+> silent mode seems fundamentally different to standby, since the receiver
+> still works. Seems like that should be handled differently, no?
+
+The docs for standby mode for the tcan1043 don't match with the tja1051,
+"Standby mode is a low power mode where the driver and receiver are
+disabled," so does the fallback compatible even make sense? Seems like a
+combination of enable and standby gpios are used to put the tcan device
+into silent mode but the tja1051 has a pin for that alone and seemingly
+does not support standby at all?
+
+>=20
+> > =20
+> >    enable-gpios:
+> >      description:
+> > @@ -53,6 +60,25 @@ required:
+> >    - compatible
+> >    - '#phy-cells'
+> > =20
+> > +allOf:
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            const: nxp,tja1048
+> > +    then:
+> > +      properties:
+> > +        '#phy-cells':
+> > +          const: 1
+> > +        standby-gpios:
+> > +          minItems: 2
+> > +    else:
+> > +      properties:
+> > +        '#phy-cells':
+> > +          const: 0
+> > +        standby-gpios:
+> > +          maxItems: 1
+> > +
+> >  additionalProperties: false
+> > =20
+> >  examples:
+> >=20
+> > --=20
+> > 2.37.1
+> >=20
+
+
+
+--Fac7BrZqSni97b6k
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaLXtSQAKCRB4tDGHoIJi
+0vFGAQCYNzumk6MUDIsHrTq+zb2rPK0wlmaEJB3AP3SpQVUxnAEAqIUZeoqA5+in
+UbteyD3yR0gqvOwaghcsU1k+0rcDpgs=
+=Zpms
+-----END PGP SIGNATURE-----
+
+--Fac7BrZqSni97b6k--
+
+
+--===============2366808591684955825==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2366808591684955825==--
+
