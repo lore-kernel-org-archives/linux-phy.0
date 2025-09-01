@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A98D2CA0FFD
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 06:15:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E34A5CA0FF0
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 06:18:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UxC1unKIdUXcDZkpy1zlhh9JKs1hebrSvlKWGkqRdhk=; b=wwWtxzzwMI2I1S
-	Js56SKwZdfnrUVvcjwVzzl7nDhTqAv2vFZ3513Qjmm9hPLxM2AHq+s/kxV2ezNcfLhB5WiFEONiAg
-	Qxas0XzbeO2pYr2Ifif/+hJey5oIUWdZ/xehGLlA29DWVxyA5HGzhRs6+mw5qX8qLd4R8mpvX4nVw
-	gdljS7iq1qvPvNEBiVlQl64RjfCmlHqdatJkHEvKMChr24SstUDLS65dEiHcq357eZDDrE2eUgus1
-	oF9UyHSGM3ZWHMD6Hdw+3qY1sofDFGNDGGLxPYkwUpmV9SqeKe0G8QuujDDtl6/borVC/8Z0zlnzK
-	EN4hW9ULEVcUOq96nvWA==;
+	List-Owner; bh=SkvFlXY68huxiIkx0M0b8PpEN1gkvvntM6PquoDqkWk=; b=WZ2FbLRXDp8abf
+	CJoScPkRKQKIKIM7d/bwWY7hWwh63SQHTFxwMlQCMehx6wEtbmAlCcZGbSPdtmauBNRHy/SeW97lb
+	LHXDk+y0LL+5PnoeUgJwSxifgm8yyRAiiG77MmPxek0j5g77jBVVO2F/jBYSDqtN6ei8a/Yqi3LRC
+	jdQ06g2zK1kkLoQP5nXHwskazCOwq2YskPpl5e6lE/886FjEVJDqs+byFVGIa26oAwobijyeGJ2FI
+	87Rk0zUoB7Xw3+qdaSjUGU9Bw/lrPPJGew1Dtnu520M6dhh0VGnij2ESuHben4w//wnrl2JKX0v6n
+	Yj43Kuu7H6hBCSY15HSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usxpW-0000000BIyp-1qp9;
-	Mon, 01 Sep 2025 06:15:50 +0000
+	id 1usxsB-0000000BJIO-2CHr;
+	Mon, 01 Sep 2025 06:18:35 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usxZh-0000000BGBM-07ST;
-	Mon, 01 Sep 2025 05:59:30 +0000
+	id 1usxZi-0000000BGBM-2IfO;
+	Mon, 01 Sep 2025 05:59:31 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 1 Sep
@@ -44,16 +44,16 @@ To: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
 	<linux-phy@lists.infradead.org>, <openbmc@lists.ozlabs.org>,
 	<linux-gpio@vger.kernel.org>
 CC: <jacky_chou@aspeedtech.com>
-Subject: [PATCH v3 01/10] dt-bindings: soc: aspeed: Add ASPEED PCIe Config
-Date: Mon, 1 Sep 2025 13:59:13 +0800
-Message-ID: <20250901055922.1553550-2-jacky_chou@aspeedtech.com>
+Subject: [PATCH v3 02/10] dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
+Date: Mon, 1 Sep 2025 13:59:14 +0800
+Message-ID: <20250901055922.1553550-3-jacky_chou@aspeedtech.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250901055922.1553550-1-jacky_chou@aspeedtech.com>
 References: <20250901055922.1553550-1-jacky_chou@aspeedtech.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250831_225929_067467_2D5A2D31 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20250831_225930_584845_CBC417DC 
+X-CRM114-Status: GOOD (  10.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,68 +70,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the ASPEED PCIe configuration syscon block. This shared register
-space is used by multiple PCIe-related devices to coordinate and manage
-common PCIe settings. The binding describes the required compatible
-strings and register space for the configuration node.
+Introduce device-binding for ASPEED AST2600/2700 PCIe PHY.
+The PCIe PHY is used for PCIe RC to configure as RC mode.
 
 Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 ---
- .../soc/aspeed/aspeed,ast2700-pcie-cfg.yaml   | 46 +++++++++++++++++++
- 1 file changed, 46 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml
+ .../bindings/phy/aspeed,ast2600-pcie-phy.yaml | 42 +++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml b/Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml
+diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
 new file mode 100644
-index 000000000000..c1a90bb6a785
+index 000000000000..71a5cd91fb3f
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml
-@@ -0,0 +1,46 @@
++++ b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
+@@ -0,0 +1,42 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml#
++$id: http://devicetree.org/schemas/phy/aspeed,ast2600-pcie-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: ASPEED PCIe Configuration
++title: ASPEED PCIe PHY
 +
 +maintainers:
 +  - Jacky Chou <jacky_chou@aspeedtech.com>
 +
 +description:
-+  The ASPEED PCIe configuration syscon block provides a set of registers shared
-+  by multiple PCIe-related devices within the SoC. This node represents the
-+  common configuration space that allows these devices to coordinate and manage
-+  shared PCIe settings, including address mapping, control, and status
-+  registers. The syscon interface enables for various PCIe devices to access
-+  and modify these shared registers in a consistent and centralized manner.
++  The ASPEED PCIe PHY provides the physical layer functionality for PCIe
++  controllers in the SoC.
 +
 +properties:
 +  compatible:
 +    items:
 +      - enum:
-+          - aspeed,ast2700-pcie-cfg
-+      - const: syscon
++          - aspeed,ast2600-pcie-phy
++          - aspeed,ast2700-pcie-phy
 +
 +  reg:
 +    maxItems: 1
 +
++  "#phy-cells":
++    const: 0
++
 +required:
 +  - compatible
 +  - reg
++  - "#phy-cells"
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    soc0 {
-+      #address-cells = <2>;
-+      #size-cells = <1>;
-+
-+      syscon@12c02a00 {
-+        compatible = "aspeed,ast2700-pcie-cfg", "syscon";
-+        reg = <0 0x12c02a00 0x80>;
-+      };
++    phy@1e6ed200 {
++      compatible = "aspeed,ast2600-pcie-phy";
++      reg = <0x1e6ed200 0x100>;
++      #phy-cells = <0>;
 +    };
 -- 
 2.43.0
