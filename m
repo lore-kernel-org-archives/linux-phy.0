@@ -4,177 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16C78CA0FF0
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 03:54:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3A58CA0FFD
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Sep 2025 06:13:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
-	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Y8624/HsjUjkwjgc/AxjgUvBTT8eMKxX9VToRmyBzGk=; b=OQ8a2CmcPm4iGjkhSuc9UGDaFi
-	JgjVbwyTC7gyYsMACbsBViygPESz3/9eIc0msb2RdBQLpU7aupM+pWAFzE5kuUfcgXzj2qn3Cso/j
-	4EIV4P/bc58AgckuHks3HlMM/EmBrkgxsYC5ndbSeizp52vMIgd/8LMfF/C8/VEpasEsy42rdqPz9
-	+0ay3afEctbcOy8CYcLSY17wk99n4KXMu/tvodjux26TiQAMgl7dLGW6mZciC0j3lWaUXK23C9aK8
-	6DQb8AoTIlzhxo3HYBJ5JCYQekDaL8U2kzbhtYy0qGQDhSpbhTXAQGyZHvyzk7KVDSacqA7fUK8Ap
-	tn+JilFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tiYEo2MXLB+wfmLW7PA3T3M5SP+19s/NktrcR2TR2rs=; b=3me5cEwdz+g4kq
+	M+OLhfStiZkVQHir86PYFqu0YsZbtfjOhb2fH5OVuk2uKwLKUrsG61EN9ZgpprIi2AWk2bWHCQa6b
+	Stu2IboL7fitZfc7DKEZCnVnLyaqs4DQ6Knw0sS095fwwVkWUvIqenCDSprp0rm3+L+1cG80+gSM6
+	bWmAsqlzrX+OQ6tk1nf+QxXqUaObzhw/iPERvQukGiPJSGv6auIgbBMlbiSfHWmzeissLG5vAqag4
+	Uh4YUIPEiW69KQx1PsAz3Q/3OLHz4r2X1/bjfSZ+Kbeq0VWS+82UV1qL6/dwBy3/L4sGIWnzSCJH+
+	jrGlUJwj4Gs4jfyTpOUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usvcY-0000000B5kE-37BE;
-	Mon, 01 Sep 2025 03:54:18 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1usxmq-0000000BIM5-1YZn;
+	Mon, 01 Sep 2025 06:13:04 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1usv4e-0000000B1Ya-0QmO;
-	Mon, 01 Sep 2025 03:19:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=MiApILUMK/sj/gW2CLSdS1C1TcnNYpNj7fQ8VbNg5nT9v1c1REmOlqMKtbm/rV4d9hjrWLjJ+Uyv88BAUJyRqiaA7gOBseC7YspFGWtlqPGCOnmr7uWWw9R8jxwobpmYhD49q1k6o7E4t6IjZd7L2vZgwPYofsVqUYlw1CKYKmV4oEqAzcl2gLpJk4JJLYsdSUCuCqhNHqQkPxh5sMEk/xnGu+4moYyKjN4YntafsvY2p+369ptWDwWoyTNdV8FJWYFLDaSuWrqSSC7d+RkRTKSfhf0pAKe4j3L6yA4+elvHV3VPlA1hnhA9Vcv2jK3UXk1JrYIRLOb30qCe1H17bg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=JU8JlS3F6cLpGK9EiXcU8CnUhaAF39aTpWz4YEzyq68=;
- b=cokkA+xTZ8cZQIKPa6LWhWfxybu039zSWOMxjIn7618LI9eqIY5TpuO1ovMKUd5hUAPp0GEjkvKVe4NsKEol7e/ilXL1W6b6NL/Eq+4pK0701h0fTapLpQFrYLHEwlpDU72Worx5x7yzxoup5EufKBsXCbvBjsu+98ykfmKFgdcXe3P/+LiucyRseIlldXIk8qe75Shjvy6CFjjq3dcfPEfad+pfk+KkDwt4gVXXobIj/FbQudiqSAEJNnmGQhoFgQIkka1LRapeqTs7S5uQ7HOpT7HajaO45ExtjHaBQNHxyMsaCdMUS7HYGZyfNF6sXHvz2CffORy2WWG11fKjTQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JU8JlS3F6cLpGK9EiXcU8CnUhaAF39aTpWz4YEzyq68=;
- b=lcdyE+q/fJQJ4ikzVeq4DUtLVTEutTGqqY6v6p7pKrbpvpDCR7ONdq9mKMIjFvmMlRGs76uUZMGGjzOG/S0f1muKX4jBfRr3OvfIrBo/V5zKiIDT8IOT0G8gS9n8zOi5N/UJNHx12Jt/Xte5d67iC3gbDXvL4hPYUdTDeWb9u3j/NGFzdxP5HZjpXpgmBYxD5Uoo2P18PlvCA81jx53SlghGf7OKC000fnyyvHADBQbl6dUllKSv1bKh4YGb3Op7T2l4K2ylGrKwKgSRhBiEo/m+5RDpmjmX/QIUHVhPPevOeBZaj7gVwXxNptaibqJjSKPI6lx+cbivaQ/mBiAF7g==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB8459.eurprd04.prod.outlook.com (2603:10a6:102:1da::15)
- by PA1PR04MB10321.eurprd04.prod.outlook.com (2603:10a6:102:44f::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9073.21; Mon, 1 Sep
- 2025 03:19:14 +0000
-Received: from PAXPR04MB8459.eurprd04.prod.outlook.com
- ([fe80::165a:30a2:5835:9630]) by PAXPR04MB8459.eurprd04.prod.outlook.com
- ([fe80::165a:30a2:5835:9630%7]) with mapi id 15.20.9094.015; Mon, 1 Sep 2025
- 03:19:14 +0000
-From: Peng Fan <peng.fan@nxp.com>
-Date: Mon, 01 Sep 2025 11:18:16 +0800
-Subject: [PATCH v4 6/6] arm64: dts: imx93-11x11-evk: Use phys to replace
- xceiver-supply
-Message-Id: <20250901-can-v4-6-e42b5fe2cf9e@nxp.com>
-References: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
-In-Reply-To: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
-To: Marc Kleine-Budde <mkl@pengutronix.de>, 
- Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>, 
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>, 
- Haibo Chen <haibo.chen@nxp.com>
-Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
- Peng Fan <peng.fan@nxp.com>, Frank Li <Frank.Li@nxp.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1756696709; l=1711;
- i=peng.fan@nxp.com; s=20230812; h=from:subject:message-id;
- bh=FF/Sens3cc0PEVHdT/RCZs0cRXPdF6RnLl/3HCkZ4pI=;
- b=O/bdlPKEoEOwwklNwVQJcD1zsScUYYhujpH6OJp+kuysQCr3l16E619okfZLmj4iofZ9pyBlq
- Tzb32jjokU+BigMa5ZgYl0QaLlx8Y7OR58i7dpBTcxOFw9vV1+zWsT0
-X-Developer-Key: i=peng.fan@nxp.com; a=ed25519;
- pk=I4sJg7atIT1g63H7bb5lDRGR2gJW14RKDD0wFL8TT1g=
-X-ClientProxiedBy: SG3P274CA0012.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:be::24)
- To PAXPR04MB8459.eurprd04.prod.outlook.com (2603:10a6:102:1da::15)
+	id 1usxZf-0000000BGBM-1Ji4;
+	Mon, 01 Sep 2025 05:59:28 +0000
+Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 1 Sep
+ 2025 13:59:22 +0800
+Received: from mail.aspeedtech.com (192.168.10.13) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Mon, 1 Sep 2025 13:59:22 +0800
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <bhelgaas@google.com>,
+	<lpieralisi@kernel.org>, <kwilczynski@kernel.org>, <mani@kernel.org>,
+	<robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+	<joel@jms.id.au>, <andrew@codeconstruct.com.au>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <linus.walleij@linaro.org>, <p.zabel@pengutronix.de>,
+	<linux-aspeed@lists.ozlabs.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <openbmc@lists.ozlabs.org>,
+	<linux-gpio@vger.kernel.org>
+CC: <jacky_chou@aspeedtech.com>
+Subject: [PATCH v3 00/10] Add ASPEED PCIe Root Complex support
+Date: Mon, 1 Sep 2025 13:59:12 +0800
+Message-ID: <20250901055922.1553550-1-jacky_chou@aspeedtech.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8459:EE_|PA1PR04MB10321:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0dbd216c-33b9-4d37-4ab9-08dde9065391
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|19092799006|376014|7416014|52116014|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?L2lJcUs4ZWJXbWRmNnBkaHBpUldUWkRqemwxcXMvbUdQRWtsaFk4Z3Q5Mi9v?=
- =?utf-8?B?NmxpczJaYTdmQ1ozeGpGNTNoViswb2FqM3NnWTkvSTVzZGVHdUdGanY2OFlW?=
- =?utf-8?B?WkJhZVAxVDRUWHR4b0tDcFAzSlJlM3JrekpOOTVhWitRRk5RK3EvY2dtTXRZ?=
- =?utf-8?B?Y2FMZEZ1YmNjamEwenVSVWtIZkszR2xVWDhVNXVqNkpLZWxwTlFxWEVCaDBF?=
- =?utf-8?B?MGlVZ2VXc25oTC9TdFEzTjFrUHZSSzgvWWlpWXZ6dFNzY2JBMXFXWmNQbHRC?=
- =?utf-8?B?QVVUVCs4Z2Z4WWdrdUl2UVFJSUNPNG1NMzRReldzdm1reXdIMjlabXh3MmdO?=
- =?utf-8?B?M1pZeTVtSlRSVnRpRU5VbnIxVTN4aE5OQ3VUS0RpcXp5NVB1bks2SUtIK2NY?=
- =?utf-8?B?bmd3azNmQ1d6L0tmcnAvSGR5M3FGSEg3c2dsd3c5Y1dYTzVub3FoUUd4VVdF?=
- =?utf-8?B?ZW9KRVZ3RHpNZHJlSVp0cFhyWXpibW9US2V3b25nZ2p0NmlIN0NIV3RWL0V0?=
- =?utf-8?B?ZmYzRDMrT2FFdmxHekliTmdSOTBZL1Q3V1RJTnFQN0lJcSswLzZDMFZKSTlq?=
- =?utf-8?B?NW93Z0VEbjNKSWNianEwUXJZYzhlOS8vOFd0UllhcmlQU2lqaytzd0k5TW5i?=
- =?utf-8?B?UDZGNzliMUF4a1BuT2JFZGZ5YnJRbjV4cWk4VlEza1Z1R2tNYVYyNE5md2FX?=
- =?utf-8?B?a1k2clhNMnI3OWx4cHREZEtuZmI1WXBYWTRQTkVEMDVzblBQVER5RUFWVFYz?=
- =?utf-8?B?T05PcmxiSXN2clpFVlY2cTZ3MXdod3JrTzVJb3pjWmFGbDUyRjFrYTN0VHVY?=
- =?utf-8?B?eVhkWFVBMXljSXlZTG1qU0Q3MUJpVUxEUHlsNi96TnBTV2dkNGlvelhkLzV5?=
- =?utf-8?B?VGxXV3ZYNm5tU2xvUjhLeVR1VXoxalQrVVJYZDhJUmRKZWYwWk5adVhFM284?=
- =?utf-8?B?S3JEWXlyb29ReXpFWTBCbmkxbTdyN3c4bTFIL0l3Yjc5TmNMaUtQVDNTUDFC?=
- =?utf-8?B?cElSemN2a1BSV2taVHpTTzAybjJxSkh6aEpiMldYK2g1bm92cUtIRHNJdXFU?=
- =?utf-8?B?VXVpYlVnTGY5TVFRUVF2bXNPU0JLOUFEeDdIZ2xMbFBXbnQ1RmpORW9UL0tE?=
- =?utf-8?B?M3NpVUpPclBUM0kwN1JldzNsKzFzV0h0L2kxVEEyRVZWdzBiN3BXREw4c3Vj?=
- =?utf-8?B?aElqL1JwazVoN1p0b2djL2VJL0lEMHpoc0E3YkxRQnBwc01sUnVmdmdRRHRj?=
- =?utf-8?B?K2U5WkFKOXQxcWhuanoyWWxtWnNWOFJjbExSVTYvTGFGYkJJMDRua2FqOFND?=
- =?utf-8?B?a0I2VGk0c1FZTjFLODFzdFdaRjB1WmRSM2F6QXBXaExqUENoREV0bVc2K2pl?=
- =?utf-8?B?USs3bEVnSi9Oc015VitidGZhbnpVcmRvdUUySHQ4SzZ1ZHR6bzN5UXhOT1F3?=
- =?utf-8?B?RWNNSlpnbVluVm5XeWRpSkNIWmxUTUIvZVhJQXQ2d0w3R3FZL2lhMG9ZcGN2?=
- =?utf-8?B?WlMrMHJ0NXUrV3RMMjZsYzUxOVduN0hvK3YzOWdaUjBOQzZiR3gydkU1WjZS?=
- =?utf-8?B?U2JTRTRocUJMaEVLdlVVMERwdGJySnNsbVd5bU8xSVVhV2FRRGhSVW1wZGZY?=
- =?utf-8?B?VXlRcUdXSEhXb2dKNnNEcnFxN0JuWEdqSXBtK3psMnJiTDhuYmJpcEk1ZHY5?=
- =?utf-8?B?OVQwZElVeW5qVkNsTDB2anBzQlYrN3o5THRqZ28yUWtiYzRNbWcwWlBMeXFR?=
- =?utf-8?B?QXlWcmlyM2VuR2tuQlZBbGkwYXBwZHRsNi9VcUdRRGVSMS9sVmxLam05S1d5?=
- =?utf-8?B?Y3ZmM0lPZmVTNjJkVFVqZVloT0xuS3RYbWVZVjFkTkpvRFpIK0s3cFVCSG5l?=
- =?utf-8?B?OGxYQUs3aWxmQThtcDI4WGhkeFMyY0kzMkZXSCtjOHBrekE1eXpqM1A0Zm1a?=
- =?utf-8?B?ek9neHdNNEVqampKcDY1cEtIb1JvNXNTR1QwVkRncm91RStiaGJMT1phU0dn?=
- =?utf-8?Q?77VA0BINBaUWmf3FEafL2YMnD9K5Mk=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8459.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(19092799006)(376014)(7416014)(52116014)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OEt4OVRjTkNtcUJJRDVPTDI4TWZLSFJVdXRFUjcyeXVyL3RIY2d6cmxOdENE?=
- =?utf-8?B?NTgrMU8wNU1EWFVra0o4OVlxelRDbXFQOGJQUjdMTjcxRmtkbjk1NFRHTnNn?=
- =?utf-8?B?ZVRIV2dJTUxsWnBQV1JJUFJSdDRLVjllaC9heUdtZHpGbVhBWmg3Z09peU1X?=
- =?utf-8?B?S0JCcmtER1FGZWZMNUVZMHgwTW10dkhGTXBzdmZyQ2w3QnZMWE9mQnpzUjZw?=
- =?utf-8?B?dk9RV3RPK01MQUFlZ2doT21sSzV0RkVQS2pwbmMySzZZdEgvbnNwQ200akYv?=
- =?utf-8?B?Sjd4L3hJZkFEMGN1VGx3amR4ajFlL0VaYksvZFN2UUxWS2d1UnpXSzZ1OTZF?=
- =?utf-8?B?UkE1K1krVFo4Y1p1ZDZHSy9HSXk1WG9ETkFyTHYyeG9vckdQU2ZKYm9oOXRy?=
- =?utf-8?B?TC85d1BrYStTbC8wVWNneTZHZjFVVXJBTkFKQjArV1pmTGE2OXBna0p0N25B?=
- =?utf-8?B?L1JTRmRMckVWeU9kdzAybGZIeDJObHVNN2xmUGRCYUVqNkJtUXhrN3lqSDdm?=
- =?utf-8?B?VWgvNEVQQWdmUlFWdTZxcEhKcnVHN2Z4UHFsQVF1REpoOWVXUWRQZm8yQWN0?=
- =?utf-8?B?ditINWpKNEFNdnVQR2lnMnkxS0RUNGpkMHEwTXZmYjhlaHN0ZDBZSTRla2FI?=
- =?utf-8?B?OVNhdUx5SXNNZWR3ME1WSEZoTmtkTXg0bExqaCs5K0tDMXJhZFEyeENTc2pP?=
- =?utf-8?B?NkYwTmNGRGkxM2QrNStZeWVaV01vdDhzU2tMNUtaazQvc0hwbnlrbGkzcEtI?=
- =?utf-8?B?UmJxa3lTaTQwTlhDOGk3WjRwYlpsSU00RmlvTTE3VWVpUkdaaE9ZWlErVlVk?=
- =?utf-8?B?YzlkNzF3MGVDbDJRUDI3azdoNS9qbmtxdDFTUDhwRWkrM2c1U003Y3hsQ1Fi?=
- =?utf-8?B?c3QvVngvRVhuek1vOXRQTWRXMWhlVEo4eTNwZ0VrUmg4VGkzclVVZVhIK1JY?=
- =?utf-8?B?ZnNTL0hIbXpuaWRWVnJYR3FkeWFwUmNTL3dHVVBpM3g4c2dzaWVHVzFmOFBw?=
- =?utf-8?B?d1M3MmNlZ3pGN2NuNHoxNUVzUUJmQnFTYXQrc1IwYjc4VU9YY0xFenMzVUpL?=
- =?utf-8?B?ckdVYzZIOXR5NXRqMW8vdURhODZJOXdkbEp3S0x6dC8yYUtSK0dPRFJTRVg1?=
- =?utf-8?B?SU9DcmpHV3JWZmtHWURsc2RWUGpTeFZJVDVKNkFvbWpOMmsxcXR4VmhLbjVl?=
- =?utf-8?B?cHgyaGNwbFFuY0s3cDNOdTJhRTdFeWJyWG53aVk2WjB4Umx3TkcraU85R0la?=
- =?utf-8?B?ZHUzaTBSR0krNTNwc0pySVY1YXR2MUk3OTJnMDdvWmJzOXZJeDQyMS95b1lQ?=
- =?utf-8?B?SWk1SFpCdFFOTFk1cHhWejcydTdJOUF1dXpuYkNwbVd1NEFNa3BrVnhYeVVv?=
- =?utf-8?B?VnJuWWFGb1EyVDh2V3Q5em5XeWs1N3dTMldRbWJCb1FNUnRkYTd1S1VsZW84?=
- =?utf-8?B?c2JsYm9SanBHTHphZklacmhzQWdDLzVaa245V1FJRDM2UWlsSzFYMHM3K0ky?=
- =?utf-8?B?bCswUU9VQ28xQ3lPOGlzZld5WWFaeGRkWFpmOUJyUzZtK3hJYW1aa0N3RlZr?=
- =?utf-8?B?THh2SkxrVm0zd3FpeWJvbEExYU92VTBkTStyUEd6ekcxT0xaWEVsQ2pOcFFF?=
- =?utf-8?B?OVVaaVdDSmZpNU5lb3hjSFNEZ2VYM3laTUJJbDRSQ2pPaE82SGVuSzFJbk4w?=
- =?utf-8?B?NVlrODVXc1E2M0ZMNEl5MitQRGdQRzFJd1JFN2NuNW40dG1RVmtteHcrUTZv?=
- =?utf-8?B?S2FaUEhiQWpjRnIwSlFYM0tjbSsyNG5oQ0FrTHN1dFl0Z3BUNXJ1MmoxUWhl?=
- =?utf-8?B?akphL0VZSkVUemg0Y1pBNndDQ2FmVmdTTG1URTg3dWJHOUVjeUxNR1dMcjZ3?=
- =?utf-8?B?NHRpWHlCU1RkK2pQUFlBMTMvT1VaVDRWNm96TWVoeFM0S2g1RGpBd0k5YVVO?=
- =?utf-8?B?RmlLbUNtZXp6YlhWdzJQUkt1aTZLS3U3a1JLYmNqOFNOVFY4a3NPbVNRRWQ5?=
- =?utf-8?B?ZDBBU1VWT3RnVEdSdHdIaXhvcVV1U2toeEJjamNXUnBFckZmSkpFK0JnM1RZ?=
- =?utf-8?B?ZG5QMW5YZmYyRmI2SkwzZVh6VEw5N1k0cXdFTVNjejVhSFBqQTJMa3BHdkJK?=
- =?utf-8?Q?VyGZW6Tux/Odt2Lg+wKD6l4Qi?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0dbd216c-33b9-4d37-4ab9-08dde9065391
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8459.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Sep 2025 03:19:13.9179
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: nklWVw/RLeI2NNadGq3ANLPF8+tYT2Cyc3BKGzmaqvy4fXspdXsz3zF+m+s4skKZnQdSoUsNjP7cg4PKa11kMw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10321
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250831_201916_155237_97164D32 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20250831_225927_356674_469CCF38 
+X-CRM114-Status: GOOD (  15.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -191,60 +68,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The TJA1057 used on i.MX93 EVK is actually high-speed CAN
-transceiver, not a regulator supply. So use phys to reflect the truth.
+This patch series adds support for the ASPEED PCIe Root Complex,
+including device tree bindings, pinctrl support, and the PCIe host controller
+driver. The patches introduce the necessary device tree nodes, pinmux groups,
+and driver implementation to enable PCIe functionality on ASPEED platforms.
+Currently, the ASPEED PCIe Root Complex only supports a single port.
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Summary of changes:
+- Add device tree binding documents for ASPEED PCIe PHY, PCIe Config, and PCIe RC
+- Update MAINTAINERS for new bindings and driver
+- Add PCIe RC node and PERST control pin to aspeed-g6 device tree
+- Implement ASPEED PCIe PHY driver
+- Implement ASPEED PCIe Root Complex host controller driver
+
+This series has been tested on AST2600/AST2700 platforms and enables PCIe device
+enumeration and operation.
+
+Jacky Chou (10):
+  dt-bindings: soc: aspeed: Add ASPEED PCIe Config
+  dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
+  dt-bindings: PCI: Add ASPEED PCIe RC support
+  dt-bindings: pinctrl: aspeed,ast2600-pinctrl: Add PCIe RC PERST# group
+  ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST#
+  ARM: dts: aspeed-g6: Add PCIe RC and PCIe PHY node
+  PHY: aspeed: Add ASPEED PCIe PHY driver
+  PCI: Add FMT and TYPE definition for TLP header
+  PCI: aspeed: Add ASPEED PCIe RC driver
+  MAINTAINERS: Add ASPEED PCIe RC driver
+
+ .../bindings/pci/aspeed,ast2600-pcie.yaml     |  179 +++
+ .../bindings/phy/aspeed,ast2600-pcie-phy.yaml |   42 +
+ .../pinctrl/aspeed,ast2600-pinctrl.yaml       |    2 +
+ .../soc/aspeed/aspeed,ast2700-pcie-cfg.yaml   |   46 +
+ MAINTAINERS                                   |   11 +
+ .../boot/dts/aspeed/aspeed-g6-pinctrl.dtsi    |    5 +
+ arch/arm/boot/dts/aspeed/aspeed-g6.dtsi       |   56 +
+ drivers/pci/controller/Kconfig                |   16 +
+ drivers/pci/controller/Makefile               |    1 +
+ drivers/pci/controller/pcie-aspeed.c          | 1137 +++++++++++++++++
+ drivers/pci/pci.h                             |   12 +
+ drivers/phy/Kconfig                           |    1 +
+ drivers/phy/Makefile                          |    1 +
+ drivers/phy/aspeed/Kconfig                    |   15 +
+ drivers/phy/aspeed/Makefile                   |    2 +
+ drivers/phy/aspeed/phy-aspeed-pcie.c          |  209 +++
+ 16 files changed, 1735 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml
+ create mode 100644 drivers/pci/controller/pcie-aspeed.c
+ create mode 100644 drivers/phy/aspeed/Kconfig
+ create mode 100644 drivers/phy/aspeed/Makefile
+ create mode 100644 drivers/phy/aspeed/phy-aspeed-pcie.c
+
 ---
- arch/arm64/boot/dts/freescale/imx93-11x11-evk.dts | 17 ++++++++---------
- 1 file changed, 8 insertions(+), 9 deletions(-)
+v3:
+ - Add ASPEED PCIe PHY driver
+ - Remove the aspeed,pciecfg property from AST2600 RC node, merged into RC node
+ - Update the binding doc for aspeed,ast2700-pcie-cfg to reflect the changes
+ - Update the binding doc for aspeed,ast2600-pcie to reflect the changes
+ - Update the binding doc for aspeed,ast2600-pinctrl to reflect the changes
+ - Update the device tree source to reflect the changes
+ - Adjusted the use of mutex in RC drivers to use GRAND
+ - Updated from reviewer comments
 
-diff --git a/arch/arm64/boot/dts/freescale/imx93-11x11-evk.dts b/arch/arm64/boot/dts/freescale/imx93-11x11-evk.dts
-index e24e12f04526c3a08c0bdc6134297fb010e6e926..4c52f22bbfac99722184b4d8679f48c4396b557f 100644
---- a/arch/arm64/boot/dts/freescale/imx93-11x11-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx93-11x11-evk.dts
-@@ -62,6 +62,13 @@ vdevbuffer: vdevbuffer@a4020000 {
- 
- 	};
- 
-+	flexcan_phy: can-phy {
-+		compatible = "nxp,tja1057", "ti,tcan1043";
-+		#phy-cells = <0>;
-+		max-bitrate = <5000000>;
-+		standby-gpios = <&adp5585 6 GPIO_ACTIVE_HIGH>;
-+	};
-+
- 	reg_vdd_12v: regulator-vdd-12v {
- 		compatible = "regulator-fixed";
- 		regulator-name = "VDD_12V";
-@@ -87,14 +94,6 @@ reg_audio_pwr: regulator-audio-pwr {
- 		enable-active-high;
- 	};
- 
--	reg_can2_standby: regulator-can2-standby {
--		compatible = "regulator-fixed";
--		regulator-name = "can2-stby";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--		gpio = <&adp5585 6 GPIO_ACTIVE_LOW>;
--	};
--
- 	reg_m2_pwr: regulator-m2-pwr {
- 		compatible = "regulator-fixed";
- 		regulator-name = "M.2-power";
-@@ -284,7 +283,7 @@ ethphy2: ethernet-phy@2 {
- &flexcan2 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_flexcan2>;
--	xceiver-supply = <&reg_can2_standby>;
-+	phys = <&flexcan_phy>;
- 	status = "okay";
- };
- 
+v2:
+ - Moved ASPEED PCIe PHY yaml binding to `soc/aspeed` directory and
+   changed it as syscon
+ - Added `MAINTAINERS` entry for the new PCIe RC driver
+ - Updated device tree bindings to reflect the new structure
+ - Refactored configuration read and write functions to main bus and
+   child bus ops
+ - Refactored initialization to implement multiple ports support
+ - Added PCIe FMT and TYPE definitions for TLP header in
+   `include/uapi/linux/pci_regs.h`
+ - Updated from reviewer comments
+---
 
 -- 
-2.37.1
+2.43.0
 
 
 -- 
