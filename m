@@ -4,109 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8826DCA1007
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 21:42:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0FACCA1005
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 21:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3K5G7AaCuiMxlyODKDhxWyYqmRAjvEqxpLYXV+va7uM=; b=PdA+rKk1zfsv5W
-	TkDIgXje86vnXnB3XUMgxF+YIToO3vjg7gk6+ImSt7gd//elBdrtvDT9QlLxqZursr0a9An33C4aK
-	M7XzlMV21ycP6iMmHp0JOpMdZHvKgwQDph5cEv/3MCN72BmXoEgkni4vzabrkIWW3JJlDHMKEJ61a
-	EUg9GitqVtVySGdoUvF03siEZSTPnl7Qcv1hQm75hmv2niCd/uf+pp3/B9WfrpLTCf4zUr4kO9jkb
-	qY+Nka6tRRZQ4R/QrQLZArRoOhrmNPLmtnOnxkPOU0Ck4R8RPCPoUr7BmJfYFhupIocjGORNo+OBj
-	LdjuKNWevv5D0sPNJZKw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cOW0aQ3rwTAbhH55vwrxws/8qIonooIBIWbe3Jr18cM=; b=TTMmrv6OFFjX0n
+	S1X2WlVo4Oeq1ZzKQhtvBzX4I4yP+gb2COqDqprmVrFqYB6BMy4l1uztpHFfHpGsHQlBrjpVpTqMJ
+	NAsEdhzkaKX1WTuPlRtCQXxD+V1I1cbJ46SxgTcqotoYQTjEPaigGACx/YIkNy6LUqObdc2+L27+e
+	AhTqjftcSaIw4LkEQDtVgKQNTXkFJUs0nTY6R/MlyXlrLDwXiL5QY7TpcyjxYizFEy7R7FJTELL1a
+	Ulk9DB0AxYp1m1SFscJC4Jkzs8fOmiQShtTQUxE7/tWfKJWHoSQZKeFVRLvqBm85DV3GSr2cxiECR
+	kshcZKG0+4oy0oYeRJkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utYlp-00000002ABA-0bki;
-	Tue, 02 Sep 2025 21:42:29 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1utYoC-00000002DMw-2Y4U;
+	Tue, 02 Sep 2025 21:44:56 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utTaC-00000000sSj-3KxH
-	for linux-phy@lists.infradead.org;
-	Tue, 02 Sep 2025 16:10:10 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-45b84367affso30455865e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 09:10:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1756829407; x=1757434207; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=bfhmZPSi1KHWXKJTbzEPGUiLR9+Cog8BCQqxFPGA9f8=;
-        b=oqBQGO+BBNqqq9+M6320a4U/VgEgHlUepUYwoznRdRN5afWkSJu62yz5SMeYYbL9gp
-         XbK381K7kj2NSuaazloMRM/SfnAq8RLnUc3/Vtt5xHEhkrFNLg7WEZVj7CWZ8Qe4KFmY
-         S9gyOBvR7Ys3J+hepmqnl6JWzjDUf4T5yXnykOjwHG67KeyvcOp9U5x1wYCNK4jST1xM
-         R9LeLtfPnfOBNJBfCuKU5ohb33Jc7AXWoqjFT0KZyfYz3O/0/xv6qsOHXIn3fPIJQWBZ
-         quE4nOFP/ctEAd7rz+VJVkMNJ0B2FGaIgF2XwtW2IHzasxdiOMR7OIuxt+1RST0Z9ZQD
-         x12Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756829407; x=1757434207;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=bfhmZPSi1KHWXKJTbzEPGUiLR9+Cog8BCQqxFPGA9f8=;
-        b=tGDIn5xxHFhM0Mvn8gn5ulFCoOqg8DPAwS52t8gXz5EU2sNQ21oBl5PSMIeL4a8m/6
-         Nao0Spk1W8FP3xMyS0efL9yDP4qY3chvYslH45vrQM6cn/WNVt5zFQBZ4ZFD0vsRoWdD
-         g5JtE8voZ+MSTu5lCE+2d97HZ0oy5sxVsUomICH0lCm6qJrB6ggmx9H6RIqFFpYm8kG3
-         JIdsCjlwigDZkc3gSAu+jjBG+gmh0WlM5d1E844Oq79G86p49zxPfpGZkM4FftiDuWj+
-         Tq5VmipitbJy8OcQnXve9wyNs76VqPp7bt/BWObli785dBikJ4wGyAemzFrN3aYPiWqb
-         veyg==
-X-Forwarded-Encrypted: i=1; AJvYcCVMnol2adBmXL+PJU8fAwkIRAynFd4fw1cYXy74ecBRU3hCjsJE5BNMTUSIDrX1/VKavyyUNiJYV+U=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx91RzQaPXtalpHczIijBD025GjN/hj7tV0uLgEDn8oDWIV3jN8
-	50oL7OFRWZTq9Yt2TSH5voxa3HbctYr1pL1AggtiUD0ojBdVuogLemBTPL6rSVZCuXI=
-X-Gm-Gg: ASbGncu99LB+u25Ke3lKgS8YeBbrOW6nVLlgZCTmLNk/esFXcze4O3qLS6P6THuXXTg
-	ts8jYlDsmo3hP0Z72otnqlySaHoAGcbDoZSU+sF+NcBOKgk5DimeKphcSlCDYSgijHd4WLcdPVH
-	2RGuTiFslzpwrV+wLQmI9xTZzERFeCqwKP0L76zE+L3yBX4/ciUtrZ6ECDUfv0ExPBavX2k22fT
-	Yy5XAmCuK1OJQzR8wxR4MBKkBV6MTBaDbFIZNM9B3q+6cflKPdT7T+yP0RRz0iUF7IBg7JY0M4p
-	ODwKXGYxXGDBPWAUOlflnbQvAMBKKO2/VdIyBmVRHgGEluxSsWsP55hw1P/IWk9M7TgwgtzlTYp
-	qFWCjVTK64GE0McPoX8TyfP/AApZTAQJ8etkvC+28BC7dAIgcmbpohw==
-X-Google-Smtp-Source: AGHT+IGyVF7oEpXMquEUvaM+UpeKMTllrx2t6qEOJfRIe99zcju47Lbg52A1eC99wf5MacESo4LYUg==
-X-Received: by 2002:a05:600c:154a:b0:45b:8a20:5437 with SMTP id 5b1f17b1804b1-45b95fd646bmr34034435e9.31.1756829407005;
-        Tue, 02 Sep 2025 09:10:07 -0700 (PDT)
-Received: from arrakeen.starnux.net ([2a01:e0a:3d9:2080:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b9a6ecfafsm29858595e9.21.2025.09.02.09.10.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 02 Sep 2025 09:10:06 -0700 (PDT)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 02 Sep 2025 18:10:05 +0200
-Subject: [PATCH] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: do not
- reference whole usb-switch.yaml
+	id 1utUTY-000000017GC-0Lt1;
+	Tue, 02 Sep 2025 17:07:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1756832838;
+	bh=p9G1JdZNHBB20Qe5ZLlqmEbY+P1qY7hzK//FQaEBq4w=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=pHqNrY+N3mjBpHj7h9Np5BDPKapnNxYvnrQXzeOAGKI8HtnIFXX5EPfwWSkIz3i/y
+	 tUD/nEEExEbYIBUZPCdQyaez4Y4X01ZwJ8ScgRVjC+t3igaf6EFbByj7mm0GXLzaiE
+	 pAb50nhqMjAGswxxp2F8hRypBsluV8Yp3ZqBLxo8CDrbCFcJJGqYpADUIRbZtUUT0/
+	 1mcpsWqp5N+/zSBOMX5SAAb2FV6cA/Hiv7IltdnIJhBV7n/Nri7g0o5UgIQQsetcwm
+	 1sMIb2/CfTLu9tR9NSJQT0INuNpaNBeW9feFC3Hjn/Gn+RHmOQHtRliBRAkt6i1Evb
+	 mKJHf14x1V5kg==
+Received: from localhost (unknown [82.79.138.60])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 4D9F417E1301;
+	Tue,  2 Sep 2025 19:07:18 +0200 (CEST)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Date: Tue, 02 Sep 2025 20:06:59 +0300
+Subject: [PATCH 1/3] phy: rockchip: samsung-hdptx: Fix reported clock rate
+ in high bpc mode
 MIME-Version: 1.0
-Message-Id: <20250902-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-5b4a51c8c5a8@linaro.org>
-X-B4-Tracking: v=1; b=H4sIANwWt2gC/x2NQQqDMBBFryKz7kCaJlJ7leJCk1FnoaYZrYLk7
- oasHg8e/18gFJkEPtUFkf4svC5Zno8K3NQtIyH77KCVtqpRGrc1sEOZ36dVOPCJvzngLr15+UK
- Ugzc3ofVD7U1j+s46yGshUq7L07dN6QY4qj7GeQAAAA==
-X-Change-ID: 20250902-topic-sm8x50-fix-qmp-usb43dp-usb-switch-5df6d494ba5c
+Message-Id: <20250902-phy-hdptx-fixes-v1-1-e8d9ef9748d6@collabora.com>
+References: <20250902-phy-hdptx-fixes-v1-0-e8d9ef9748d6@collabora.com>
+In-Reply-To: <20250902-phy-hdptx-fixes-v1-0-e8d9ef9748d6@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Neil Armstrong <neil.armstrong@linaro.org>
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Dmitry Baryshkov <lumag@kernel.org>, 
+ Algea Cao <algea.cao@rock-chips.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Andy Yan <andy.yan@rock-chips.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1790;
- i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=f0aScQ/J03XLZhKUQrnrs4HuyH7xtridjeGuO9Do+Fk=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBotxbdyYMqAfs8JqgNnyDZEviHhnQMD+Wp6Rh2YYKi
- Y7dimPqJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCaLcW3QAKCRB33NvayMhJ0R/nD/
- 9V8ivt0sW9FlCcRXjqpYPaM5Gpt6cQXkgSVHSgAGLVjXCkyNCMac1qkhb0NbcxFopA4HLQFazMDNum
- OP+jYUdmi0xqgyCKVELcboDGB8QtPAXVpfzrBk6mAgmReJtIQwf7fAflwk9eLpKBz0fNKlv5HUnd4G
- CaxKP5T+cWFRGjaHVsJ3/00gWVaiPmeQFkCi2M5o1O+zZHBOHul+VELej+WZSFrm/NfAWcDnoUoFE/
- e3TYJY8ddMY6hJtpdCSdBxbVfFBWRwK8DDi89tQqAYJBX6WtKNsgJtwShnMgxxR1mv5QoLsZuBbRML
- eccsBbZEBQCd+Kxjj4mBQiE2skKcnotDtVSD3WbunVoV7hg9OjrGBfacsCRecbQDgoN4tOgerVkItw
- KMYPY8U3qaE00MXqO6/H8nXRDXdSyjCMapbpbfCS1rW78/jVqvbRNwoWQ+TK6amSqDMgUEP7o1NOMs
- w52lipoKuK+7NdhS3DuugIzhAHQVD09dAgUWJoW3VQ3ULxbV41eDGKEqFtFy4sh7fty5WSIxNiv9Vw
- ynGTZOQOcQmXHBNlArh9bkZHNz5c6AqzQcScJLjGOOMBwFe00TPz4kyZ6mNQV+QcZr0usUkBYge/C4
- DvQqapiH5EdUmhxb0TzOTEjZ5BSANqdwMVt6/vZddhDjom111mBiBDNzjlqA==
-X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
- fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250902_091008_841148_23260B65 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250902_100720_277504_8A0FF530 
+X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,52 +78,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Both bindings describe a different layout of the ports properties,
-leading to errors when validating DT using this PHY bindings as
-reported by Rob Herring.
+When making use of the clock provider functionality, the output clock
+does normally match the TMDS character rate, which is what the PHY PLL
+gets configured to.
 
-Reported-by: Rob Herring <robh@kernel.org>
-Closes: https://lore.kernel.org/all/175462129176.394940.16810637795278334342.robh@kernel.org/
-Fixes: 3bad7fe22796 ("dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch")
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+However, this is only applicable for default color depth of 8 bpc.  For
+higher depths, the output clock is further divided by the hardware
+according to the formula:
+
+  output_clock_rate = tmds_char_rate * 8 / bpc
+
+Since the existence of the clock divider wasn't taken into account when
+support for high bpc has been introduced, make the necessary adjustments
+to report the correct clock rate.
+
+Fixes: 9d0ec51d7c22 ("phy: rockchip: samsung-hdptx: Add high color depth management")
+Reported-by: Andy Yan <andy.yan@rock-chips.com>
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 ---
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-index c8bc512df08b5694c8599f475de78679a4438449..5005514d7c3a1e4a8893883497fd204bc04e12be 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-@@ -73,8 +73,11 @@ properties:
-     description:
-       See include/dt-bindings/phy/phy-qcom-qmp.h
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+index 01bbf668e05ef94e24a3fa11f96f219c4f942451..aee03e8655f66d4b25de39bd2b2bf49d7a8b5b86 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+@@ -1037,7 +1037,8 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
  
--  mode-switch: true
--  orientation-switch: true
-+  mode-switch:
-+    $ref: /schemas/usb/usb-switch.yaml#properties/mode-switch
-+
-+  orientation-switch:
-+    $ref: /schemas/usb/usb-switch.yaml#properties/orientation-switch
+ 	ret = rk_hdptx_post_enable_pll(hdptx);
+ 	if (!ret)
+-		hdptx->hw_rate = hdptx->hdmi_cfg.tmds_char_rate;
++		hdptx->hw_rate = DIV_ROUND_CLOSEST_ULL(hdptx->hdmi_cfg.tmds_char_rate * 8,
++						       hdptx->hdmi_cfg.bpc);
  
-   ports:
-     $ref: /schemas/graph.yaml#/properties/ports
-@@ -104,7 +107,6 @@ required:
-   - "#phy-cells"
+ 	return ret;
+ }
+@@ -1895,19 +1896,20 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
+ 	 * hence ensure rk_hdptx_phy_clk_set_rate() won't be invoked with
+ 	 * a different rate argument.
+ 	 */
+-	return hdptx->hdmi_cfg.tmds_char_rate;
++	return DIV_ROUND_CLOSEST_ULL(hdptx->hdmi_cfg.tmds_char_rate * 8, hdptx->hdmi_cfg.bpc);
+ }
  
- allOf:
--  - $ref: /schemas/usb/usb-switch.yaml#
-   - if:
-       properties:
-         compatible:
+ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
+ 				     unsigned long parent_rate)
+ {
+ 	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
++	unsigned long long tmds_rate = DIV_ROUND_CLOSEST_ULL(rate * hdptx->hdmi_cfg.bpc, 8);
+ 
+ 	/* Revert any unlikely TMDS char rate change since round_rate() */
+-	if (hdptx->hdmi_cfg.tmds_char_rate != rate) {
+-		dev_warn(hdptx->dev, "Reverting unexpected rate change from %lu to %llu\n",
+-			 rate, hdptx->hdmi_cfg.tmds_char_rate);
+-		hdptx->hdmi_cfg.tmds_char_rate = rate;
++	if (hdptx->hdmi_cfg.tmds_char_rate != tmds_rate) {
++		dev_warn(hdptx->dev, "Reverting unexpected rate change from %llu to %llu\n",
++			 tmds_rate, hdptx->hdmi_cfg.tmds_char_rate);
++		hdptx->hdmi_cfg.tmds_char_rate = tmds_rate;
+ 	}
+ 
+ 	/*
 
----
-base-commit: 3db46a82d467bd23d9ebc473d872a865785299d8
-change-id: 20250902-topic-sm8x50-fix-qmp-usb43dp-usb-switch-5df6d494ba5c
-
-Best regards,
 -- 
-Neil Armstrong <neil.armstrong@linaro.org>
+2.51.0
 
 
 -- 
