@@ -4,78 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6D39CA1007
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Sep 2025 00:44:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0F0FCA1007
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Sep 2025 00:45:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7qv0JUzqs4ttYvAUWP9FCPGVkZ3FnjnySNuHBDLtJw0=; b=SIXGxFuOwbIQo3noyz01DIUAl6
-	Js/ANGGfBv4gQiEfmZrXoFKREJ6k7sDHUDY7/ONbi9gf8bPB/KnqZuzfIkNXi5Qrmkr6mtcakqI7u
-	wPCSsdCWo2w6HK3q/rghm5hFhRFZCiv/ir7/T5WqgOBKa2uGKl+u3QWdlcq8sHW3/Xf0l2Jr1yiyi
-	seoOCt1ksQ/a5pleHDCD8xbtPCcYuydRDjwAHnw5OvF9gDr75ZYKNIn8CB3EV6uDWUJxJwNMJ5AIy
-	Ub5ZB54puGGHGIApzH2lw59aHiJnBAsFR+w0VqbEk44DrHGmyfkz0u3urRyrldfeKVk2ycYPSYkLZ
-	IK5cieKQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+1S7x2d8/CpcfbNHmBEgrNG+9ZaJJr6Y5mMyv0lllU4=; b=T6KJYccO6Jcdkm
+	rC7yhxETLR70Rh7udoxajXliESLQvhS/KkZdRsbo14yTQAjrhI4n3c6EmTXYNFoDYxb3dYFr3sqma
+	QCaJLNRYyGP9XL76jUDZFSG0KNR9ituF7tMRTaukCzROQYUfEv7xxNi9QEeWwsZ4yl/usI/vtddU0
+	ZGlXRDkfupF2siGMl7oIeK+B5fGyisJbyyuhwYJc1YsrfRoED7/ZHgPU0o0WfZxpd0VLYKsI+lthN
+	nfOFvm5hWVx4Xw9obnl0vplfSvhO37sThM10xAroryHeX1nejt60gIucVcs8wGIX5mYuXUmdFIDny
+	dEJ+RJwHEHM/OSRClcsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utbcH-00000002pOh-24NE;
-	Wed, 03 Sep 2025 00:44:49 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1utbcT-00000002pnQ-2cg2;
+	Wed, 03 Sep 2025 00:45:01 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utWj8-00000001jSX-3El1;
-	Tue, 02 Sep 2025 19:31:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 400AF444CD;
-	Tue,  2 Sep 2025 19:31:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4FDCDC4CEED;
-	Tue,  2 Sep 2025 19:31:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756841494;
-	bh=F14nPORs8JdgFQl33HfGRKc+FkO94g/5nNmkQ7R1MBg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iFs/A14ma2YVWf6Xfo5kNA4paBdeW7hQYYdbujdC/+mCv7+Q5Se86rzNwGS6MwaiD
-	 UVG3Q0qBHF38bpOg7jcYZRztAC2ZopUFHOVbZGmU0KSC8UUGldGv+XC0rsyc1UmsQ9
-	 p8/0tlsdKvL4rMgNass/Y3Sdo9/tIzN2+43azvH4Yl/1XqWOsrYbDRENCmAd5sl2ap
-	 1ERo9tzWZJzYwNgOpMfrlVq4zxtSNL6g6HGu7qv0L4+9/Sq/IpQ2c/tDAnBEF2hbtt
-	 9SsLq0fQZD/Yec0fwRiovHKo4WJhrIMhBVnwvLJ4ipIyndd7jV3lyFXDR2gRrCbdj2
-	 VTUYFM+98bPRA==
-Date: Tue, 2 Sep 2025 20:31:28 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
-	Bough Chen <haibo.chen@nxp.com>,
-	"linux-can@vger.kernel.org" <linux-can@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"imx@lists.linux.dev" <imx@lists.linux.dev>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v4 1/6] dt-bindings: phy: ti,tcan104x-can: Document NXP
- TJA105X/1048
-Message-ID: <20250902-dastardly-truth-fb2be9f68e4a@spud>
-References: <20250901-can-v4-0-e42b5fe2cf9e@nxp.com>
- <20250901-can-v4-1-e42b5fe2cf9e@nxp.com>
- <20250901-diligent-dreaded-59b9ad5c3976@spud>
- <20250901-uproar-shrill-07d51ea21a29@spud>
- <PAXPR04MB845991442136C0BEF0540D6A8806A@PAXPR04MB8459.eurprd04.prod.outlook.com>
+	id 1utXs6-00000001xj5-2Hk7;
+	Tue, 02 Sep 2025 20:44:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1756845892;
+	bh=ZypK9sMAZJbpWzGN+Hx+ArMc+6LRYinYdlHAozWT/T0=;
+	h=From:Subject:Date:To:Cc:From;
+	b=WiX8xbMS5sifpaf0AnuCiedgBGH7eFIJvGN9COeD5kgHEkmLZHobzCH0hTTAq3VhC
+	 Po3u7Qy5JcPDNq3jIvIVzc4WswryWZ+ashU6JFXuBpNDybQhnXp/v9KR70X/tF8Is4
+	 i9+99KHCN+bwy9EBBjpV8OdbLenvPuKJtYG0aqf8SlPxw6kniVf0GDdDm2S7rE7DZ3
+	 iFYmrvQs6r0yLN8Q4xF24kOL/t6nbAzTYn1oO/5Cppu5Z4y9Ji3zHC+fEFF6TvrDB4
+	 R4HPjp3RHpvGCZ+WixnLKc541fvy9DoyqDanXLUbOfkivTLgfaEgZLRofjnUXL7vS9
+	 qmnBTWHbSwuDA==
+Received: from localhost (unknown [82.79.138.60])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 430F817E0456;
+	Tue,  2 Sep 2025 22:44:52 +0200 (CEST)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Subject: [PATCH v4 00/11] Add HDMI 2.1 FRL support to
+ phy-rockchip-samsung-hdptx
+Date: Tue, 02 Sep 2025 23:44:35 +0300
+Message-Id: <20250902-phy-hdptx-frl-v4-0-7d69176373ce@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <PAXPR04MB845991442136C0BEF0540D6A8806A@PAXPR04MB8459.eurprd04.prod.outlook.com>
+X-B4-Tracking: v=1; b=H4sIADNXt2gC/3XQy27DIBAF0F+xWJeKV4zxqv9RdcFjqJEc4wC1H
+ EX592KnUqKmXV6kOczcC8qQAmTUNxeUYAk5xKkG8dIgO+jpE3BwNSNG2IFI0uF5OOPBzWXFPo3
+ YW86ldEZ5BqjOzAl8WHfv/aPmIeQS03nnF7q9/ictFBNsPRDVAmPCizcbx1GbmPSrjUe0aQu7C
+ x05/BZYFRylnXHCtEDMXwJ/EOjTDnzbQSqlpOuMYU/C9XZigtNXbarc7rwX1Tc7rAh7hLc+sOS
+ k8x60sK3uaxMVMjoDruwxlL6ZYC34Z5rWj67fiMLVuJoBAAA=
+X-Change-ID: 20250708-phy-hdptx-frl-fc3377db9f2e
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250902_123134_853794_675048F6 
-X-CRM114-Status: GOOD (  39.81  )
+X-CRM114-CacheID: sfid-20250902_134454_744789_9A077807 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,173 +77,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3676864599347943921=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The Samsung HDMI/eDP Transmitter Combo PHY is capable of handling four
+HDMI 2.1 Fixed Rate Link (FRL) lanes, while each lane can operate at
+3Gbps, 6Gbps, 8Gbps, 10Gbps or 12Gbps.
 
---===============3676864599347943921==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="emYz2NOh8U/FtcyF"
-Content-Disposition: inline
+This patchset extends the HDMI PHY configuration API to manage the FRL
+mode and provides all the required HDMI driver changes to enable FRL in
+addition to the already supported TMDS mode.
 
+Also note that since v4 the series depends on the fixes provided by [1].
+Please see the changelog below for more details.
 
---emYz2NOh8U/FtcyF
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+[1] https://lore.kernel.org/r/20250902-phy-hdptx-fixes-v1-0-e8d9ef9748d6@collabora.com
 
-On Tue, Sep 02, 2025 at 02:24:49AM +0000, Peng Fan wrote:
-> Hi Conor,
->=20
-> > Subject: Re: [PATCH v4 1/6] dt-bindings: phy: ti,tcan104x-can:
-> > Document NXP TJA105X/1048
-> >=20
-> > On Mon, Sep 01, 2025 at 07:54:01PM +0100, Conor Dooley wrote:
-> > > On Mon, Sep 01, 2025 at 11:18:11AM +0800, Peng Fan wrote:
-> > > > The TJA105[1,7] is a high-speed CAN transceiver which is a
-> > > > pin-compatible alternative for TI TCAN1043 with sleep mode
-> > > > supported, and has a compatible programming model, therefore
-> > use ti,tcan1043 as fallback compatible.
-> > > >
-> > > > The TJA1048 is a dual high-speed CAN transceiver with sleep mode
-> > supported.
-> > > >
-> > > > Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > > > ---
-> > > >  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 30
-> > ++++++++++++++++++++--
-> > > >  1 file changed, 28 insertions(+), 2 deletions(-)
-> > > >
-> > > > diff --git
-> > > > a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > index
-> > > >
-> > 4a8c3829d85d3c4a4963750d03567c1c345beb91..f8e0c24856a2ba83
-> > b5c988b246
-> > > > 464f47e11a032f 100644
-> > > > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-
-> > can.yaml
-> > > > @@ -19,18 +19,25 @@ properties:
-> > > >            - enum:
-> > > >                - microchip,ata6561
-> > > >            - const: ti,tcan1042
-> > > > +      - items:
-> > > > +          - enum:
-> > > > +              - nxp,tja1051
-> > > > +              - nxp,tja1057
-> > > > +          - const: ti,tcan1043
-> > > >        - enum:
-> > > >            - ti,tcan1042
-> > > >            - ti,tcan1043
-> > > > +          - nxp,tja1048
-> > > >            - nxp,tjr1443
-> > > >
-> > > >    '#phy-cells':
-> > > > -    const: 0
-> > > > +    enum: [0, 1]
-> > > >
-> > > >    standby-gpios:
-> > > >      description:
-> > > >        gpio node to toggle standby signal on transceiver
-> > > > -    maxItems: 1
-> > > > +    minItems: 1
-> > > > +    maxItems: 2
-> > >
-> > > You're adding a second standby gpio, which one is which?
-> > > I assume you mean that item 1 is stbn1 and item 2 is stbn 2 for
-> > tja1048.
->=20
-> Yes. There are two standby pins.
->=20
-> > > Might be kinda obvious, but I think it should be mentioned.
->=20
-> I could update description as below.
-> "
-> description:
->   gpio node to toggle standby signal on transceiver. For two Items,
->   item 1 is for stbn1, item 2 is for stbn2.
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+---
+Changes in v4:
+- Moved the following fixup patches into a separate series [1]:
+  * Fix reported clock rate in high bpc mode
+  * Reduce ROPLL loop bandwidth
+  * Prevent Inter-Pair Skew from exceeding the limits
+- Renamed enum phy_mode_hdmi to phy_hdmi_mode and
+  PHY_MODE_HDMI_{TMDS|FRL} to PHY_HDMI_MODE_{TMDS|FRL} (Dmitry)
+- Rebased remaining patches onto next-20250901
+- Link to v3: https://lore.kernel.org/r/20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com
 
-Sure.
+Changes in v3:
+- Reworked patch "phy: hdmi: Add HDMI 2.1 FRL configuration options"
+  according to Dmitry's feedback
+  * Updated commit message providing a brief description of FRL mode
+  * Kept PHY_MODE_HDMI in enum phy_mode and introduced enum
+    phy_mode_hdmi defining the TMDS and FRL submodes
+- Updated "phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL support"
+  * Implemented .set_mode() callback in rk_hdptx_phy_ops
+  * Introduced .mode member in struct rk_hdptx_hdmi_cfg and used it
+    instead of phy_get_mode() to verify PHY_MODE_HDMI_FRL
+- Rebased series onto next-20250818
+- Link to v2: https://lore.kernel.org/r/20250805-phy-hdptx-frl-v2-0-d118bd4b6e0b@collabora.com
 
->=20
-> > >
-> > > tja105{1,7} don't have a standby gpio, but they do have a silent
-> > mode.
->=20
-> Right. Tja105{1,7} has a pin S for silent mode.
->=20
-> > > silent mode seems fundamentally different to standby, since the
-> > > receiver still works. Seems like that should be handled differently, =
-no?
-> >=20
-> > The docs for standby mode for the tcan1043 don't match with the
-> > tja1051, "Standby mode is a low power mode where the driver and
-> > receiver are disabled," so does the fallback compatible even make
-> > sense? Seems like a combination of enable and standby gpios are used
-> > to put the tcan device into silent mode but the tja1051 has a pin for
-> > that alone and seemingly does not support standby at all?
->=20
-> Thanks for looking into the details. I also read more into the datasheet.
->=20
-> Tcan1043:
-> EN   nSTB
-> H       H    ---> normal mode
-> L        H   ---> slient mode
-> H       L    ---> standby mode
-> L        X    --->off mode
->=20
-> TJA1051
-> EN   S
-> H     L   --> normal mode
-> H     H  --> slient mode
-> L      X  --> off mode
->=20
-> Your analysis is correct. silent is different with standby,
-> but we only wanna to use normal and off mode
+Changes in v2:
+- Added a couple of new patches:
+  * Fix reported clock rate in high bpc mode
+  * Drop hw_rate driver data
+- Applied several tweaks to the following patches:
+  * Compute clk rate from PLL config
+  * Switch to driver specific HDMI config
+  * Add HDMI 2.1 FRL support
+- Rebased series onto next-20250804
+- Link to v1: https://lore.kernel.org/r/20250708-phy-hdptx-frl-v1-0-cfe096e224f4@collabora.com
 
-In addition, it looks like there are some tja1051 devices that don't
-even have the enable pin? Of the 4 SKUs, there are 2 that use pin5 as
-Vio and 1 that has it n/c. Only the T/E device has an enable there.
+---
+Cristian Ciocaltea (11):
+      phy: hdmi: Add HDMI 2.1 FRL configuration options
+      phy: rockchip: samsung-hdptx: Use usleep_range() instead of udelay()
+      phy: rockchip: samsung-hdptx: Fix coding style alignment
+      phy: rockchip: samsung-hdptx: Consistently use [rk_]hdptx_[tmds_] prefixes
+      phy: rockchip: samsung-hdptx: Enable lane output in common helper
+      phy: rockchip: samsung-hdptx: Cleanup *_cmn_init_seq lists
+      phy: rockchip: samsung-hdptx: Compute clk rate from PLL config
+      phy: rockchip: samsung-hdptx: Drop hw_rate driver data
+      phy: rockchip: samsung-hdptx: Switch to driver specific HDMI config
+      phy: rockchip: samsung-hdptx: Extend rk_hdptx_phy_verify_hdmi_config() helper
+      phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL support
 
-> If we need to handle differently, I need
-> to add a new optional property
->=20
-> silent-gpios:
->   description:
->     gpio node to toggle silent signal on transceiver
->   minItems: 1
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 684 ++++++++++++++++++----
+ include/linux/phy/phy-hdmi.h                      |  19 +-
+ 2 files changed, 603 insertions(+), 100 deletions(-)
+---
+base-commit: 58f59f0f890f0a80b28743261bd8800f5a1ed7fb
+change-id: 20250708-phy-hdptx-frl-fc3377db9f2e
+prerequisite-change-id: 20250902-phy-hdptx-fixes-7308ffea4c6a:v1
+prerequisite-patch-id: 777b4d364feed432f604f87d58a6474cf8457431
+prerequisite-patch-id: 7dafe85f5c9ac1291fd1b141a0e0fe68a4a837a9
+prerequisite-patch-id: f4446206cbc7ceb41315085322fec45c72ec734c
 
-Ye, I think so. And probably add some if/then to use it instead of
-standby on the relevant chips.
-
---emYz2NOh8U/FtcyF
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaLdGEAAKCRB4tDGHoIJi
-0mVdAQDC4R/uDobfYX0MlIc7P3VN7g19AM8wzxvWSJ27EwGhBgEA12JCMoHxPor9
-peA9L92m9adGEyaiB2fIMSJnYILwrQM=
-=7Ezu
------END PGP SIGNATURE-----
-
---emYz2NOh8U/FtcyF--
-
-
---===============3676864599347943921==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3676864599347943921==--
-
