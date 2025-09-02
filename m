@@ -4,119 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8C7ECA1005
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 12:29:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96F28CA0FFE
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 12:30:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HXLTzVDnTfkZkdxJS2PuY0ylU9mhTqIuzhEg4k74ql8=; b=uWK3jmc/ktatIR
-	aeRpqwvAwIqeqFtN4VaPsmnLFZk8uVnCpsTI/gw4oEWcgG56ZWuY/F+0YRv6/ZRlRWipIZTUGLtZr
-	ApBP47u4N8juq+J0t/aon3qSdjvi8eicay1y+/eSCw50UX5fsGC3fxPaSAsK+N9a3G+qyMij9fj89
-	cIZiDwpTq7QsbANrNz41wZwiXA00FzrOXtz8k5hPvNcywn1B8s7Fe9m0S21HFva70zNw5PndJl5ro
-	Uw8pjddo8S3WLW+ZQGX9l1ORYtbXxkiOt6Axt/Ax/lcaC7agvG2LKmz/GBh89v+JAO30Jw8w7FOS8
-	EvSk6eRnzLlKJ/gjcu3A==;
+	List-Owner; bh=Uo0ZZBhQPPU8hRddlsdjxVT7yATIrcWTFrimrrYzAV4=; b=ejXK/2ot08K9zS
+	cXDuovLUShTKkbt3sgc+CUsnUORZjiSRaeJRlB2jqIzTfRbU7TNEx6wUs1gbuM2XNV9DmBGeIbkV/
+	htWW7bBetZnuP8+mC42xXeRFmuZovfhybFLuG6hQ7B0Klwsx8IcNe2EB9A3lE4UG/DdKHu8Jpypma
+	E4MdLPZW4O5sLLDpARGSGSYfPiMSgSSVoQGjY8GRee8iqMFtwREz37/H0itZ5lFThV6EFyMeUNscC
+	uHebPgID9bp0yPqDOlkWkmW9toyltl6UCVq9aSdC4xxf+vEFbI45Bp0P+XEbUOgD9tk+yAm6MENsP
+	MzzYOkmUgMvHmYfSpRCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utQ8w-0000000HGut-1EhQ;
-	Tue, 02 Sep 2025 12:29:46 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1utQ9Q-0000000HHWn-3C1l;
+	Tue, 02 Sep 2025 12:30:18 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utNQy-0000000GQAq-0bgu
+	id 1utNaY-0000000GT0F-2akc
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Sep 2025 09:36:13 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5822RmdD009790
-	for <linux-phy@lists.infradead.org>; Tue, 2 Sep 2025 09:36:10 GMT
+	Tue, 02 Sep 2025 09:46:10 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5822RvAQ017489
+	for <linux-phy@lists.infradead.org>; Tue, 2 Sep 2025 09:46:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tl/lcg8Vvutgd2X0nRCKCHGLUZWnWVuMPA89h352iRk=; b=RoCTbPlWxVKYakv6
-	KKQaoyQRyVVuJWhXkduNvIRHO93U2I6kCQ5uw1pDJitUJCocwKELR6i+8TlT3SiU
-	jc+ePAQ61Y04brd7oqfkT9x69OQ7IHUi7FE/F9+uyhCfjqYLH5r0JZgaAoyTXAhY
-	dQj3LCNPECR+qkzrXxU/YqVSpCRekgtEn0v4dXi4fEwJEkkP3hhgheFjyznOAnrg
-	PlyPhf4USp9muDHJBif6yHt7WMCqvgLSGeTOYT78IQghhp3pluCf3uJT+O6g5C+0
-	8V1CDxLeOsKFQ+PdCRJL3h9wVD0rJ0lXq3F0d0sPpwv48sWhRYfvrrW/Y6Msu+55
-	njEhbQ==
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=kuvcx9dK+4uPO7PcKf2xDvCA
+	/wZvMuQBYtW1BRkUMHs=; b=bMAnIhXaL4tjXQoR242+kYg3wyyhu8xAaePglGcF
+	rX5tb9HzfAvjws3tmxb8bkdJ2TKxWrbU9xEj43O1eD+HVJjlOMgxj24sZL0ifFU+
+	JGPGBe0mkYm8Dsj+TkVgO7vcdqsX9MNKNYXdo3D5wMX1M9l2zdQIjVY4C0q88Xx7
+	lMzcCHo8Rmiz/CvGGDJPKCz2s5zlaiBsqoF3uoaaYnV8ss3UkYTgR7tyzqTA00mX
+	ub09LEkAnNUF4EsRb9ap87MR16rrRCcYmp8AcAGcvOoqT1mfVTvQl8WwUX5AgobT
+	OiQwK0kRTpVrWwJ+HjHHv/LHOz+Celi5n2TutAWVr1VMyA==
 Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48urmjfa7n-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48utk8y596-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 09:36:09 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4b33d08f681so3624721cf.1
-        for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 02:36:09 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 09:46:05 +0000 (GMT)
+Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4b32fe42b83so32230991cf.0
+        for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 02:46:05 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756805769; x=1757410569;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tl/lcg8Vvutgd2X0nRCKCHGLUZWnWVuMPA89h352iRk=;
-        b=N4g+m6cDgRya4C3NWiDuHWwplsWsA3qzmgszfACQ5XMZOKcKoVjaRRhIMuu51/jMK3
-         T+Tvucg2Nq4UDFHbwgeTB26nqECm3U/EW32dUrxvjA6PlKHxSgoII0WHLnUT5i2J64LB
-         QlCatHpsrxnTftPb8WCKMH0qvaNfNKs0h6axcj930Xnd4wIs3hqT+V+y8bQkTMUrGhod
-         UeZc4wVX3gV6aGv0t8rK9HoefS8bn9pgaD4bSV7UerQk9JV/z8s7MfFD7OXbYyLbjZa3
-         QDOXYRviibb9iRB7BQLud3jltQwvkf7fuQYlOFig43JWlEeLt+m1ky1D0s+64B8Ttikq
-         hw2g==
-X-Forwarded-Encrypted: i=1; AJvYcCU0zBEe0O38aPEuSBo644FrCNrK7ULL/N2hzBKvhIhiSoxDJitfogLBjrV4Ot7RfTJJgBaDoGk+xHU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxAhjR8kc0UiAsYHIMm5X2XQfXULfsRt6PN8ZcQExP5+7aPa51P
-	kk4o7Aa4k03jXhomjFtmDOiLUM8G99ImjDj1cg6Jwhcc0WIFwTZcd8vubzl/SLFujHvNgi/s1Yy
-	4VBWxF1C6eUf0yl4GTEgw8aDTFPmJJVD32BGDQOlDPFexAL/7xfwy07f9O0dJZctFyphy
-X-Gm-Gg: ASbGncvn5xL2XKVkii+HjRss2fB91LysYPnMYzfs8R+hoc8UmN4hVzkhMQG1vjwxMVq
-	Atziy0053I8OZJjw7AVSFo4LExBQsvReBogP2wW8vIaLamD4QBSP4oVIs5UpQrJo0aZVbefsDyp
-	sT4iyUDrJ/Lg/HxPXT5gSgG1gqUqx2UWI4LzXC9vxEZaFWt4tKWai+jL+WXILAcaHd0hZRy4poz
-	y27NB3zLPyj8qW24cBtBHbXspXjBmjzLhPXrTkPRXf/zufRuVtCV+/RTNZpon/5D4FN5ZjJoE8h
-	8rv+1RwfdtG/QVw6jycMK6Y5StXp2lcWoWH4HfWjXG7kIzHf/phf1DcYROQH0gfdzLxlFjrDlCP
-	2nQmMMWCtrvhICy2g9/4iOg==
-X-Received: by 2002:ac8:7e89:0:b0:4b1:1e8c:13af with SMTP id d75a77b69052e-4b313b8c812mr90242791cf.0.1756805768974;
-        Tue, 02 Sep 2025 02:36:08 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFl44Pco1b/qvJrJe/DJPXSQCR9wDNYF6uLVy6zduo7vkFZyrpgXm2kKC7QlUx4jo7DSH1DkA==
-X-Received: by 2002:ac8:7e89:0:b0:4b1:1e8c:13af with SMTP id d75a77b69052e-4b313b8c812mr90242631cf.0.1756805768360;
-        Tue, 02 Sep 2025 02:36:08 -0700 (PDT)
-Received: from [192.168.149.223] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b0421939da1sm527037866b.27.2025.09.02.02.36.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 02 Sep 2025 02:36:07 -0700 (PDT)
-Message-ID: <f9d6106a-d59a-4565-bc80-fa7816a1d6ac@oss.qualcomm.com>
-Date: Tue, 2 Sep 2025 11:36:06 +0200
+        d=1e100.net; s=20230601; t=1756806364; x=1757411164;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=kuvcx9dK+4uPO7PcKf2xDvCA/wZvMuQBYtW1BRkUMHs=;
+        b=qlJlENJ1NtuHIFh2bAqjaoWQZ0VO2gkCXw7L5hGutIAogcG8NsVhz1QdunlvEmqjyP
+         LPhFeFZCoD9qg4KCraX7WIS5KrkAizqkuOzRnNlBvtAKqxyDUG1V3Up2Jv9SaFShFXDO
+         /1j1Pdqx48j86jKIm1Z5Tb7HyLY9HwVRg3i4DL3i/sOKo7uuwQ3EHy9OFgbjdk84+ofb
+         ZJGVHHDd5kyCz6Ta6e3FDSNjHI+kgeASKwBO+JX65AiJHtyULtH6pt7PO1bWOygQxHa4
+         dHdLc5p3UHbPCfU8hfDDo4TJxL10bg5kHKy/KPTYTG8Fd/P+RCR/gCWlDKfc33O/hwNF
+         Xgvw==
+X-Forwarded-Encrypted: i=1; AJvYcCWA+evzHDEqvok7m+JekIf9SwjNgF1J8DfwRIdZo/IUIix/SUwpTtLSiq5wDLUZiFivY0FdBnjETMY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YziqXOjA7LxQSwP5pM3VzFbdqU3Zdu4xjjL6/2gDsKmBgSZ9b1W
+	GZg5qL35b+HPGmM/2tjSKjxpOMcEln4Z9Rn6HoaTI+t+Efe4JmtWJQVAzrCJu5c3DmKn/0jXG7s
+	bZGxehsQNKrBKajrZ0UgIhOfRXNDA1oMzjnQ8nK/LHSQ5EC2M80YEMY7FU1tGEZb+Ts4TnNOL8r
+	9W
+X-Gm-Gg: ASbGncuqxs4otSWXQV3M0lmOJvSvL12QGDfsYodhoTT5j+++JPoqojhdYmlBrVYXvc5
+	PLkTxrZXV9P5JX14l3T9bosjbQmmqNUcf5DCOV7tfr7iJPCl0fa6jvwnui21h6xg0VehkxvHcB0
+	N8PC7JacyzmO23Qkmo74KjcNbep/tLFh7omyH532Jl/Kx0ruvbU2ku+cFrj4ILB8925tXW0756m
+	/xNTxyUv+YP40KeIeQfFzINS7M5spdHGO3DIFYIZ5fKlnoiH9K0btcc6v3FEUicGnjyh17zG6SV
+	3DanVedZxD7a+DBRK+lO1roGo0UvVHQMSVbpn3O7w2bQxcllD8kZRTb8Vwo4yS6SGcK5WnOiix4
+	wfy88uGrp2NZcjUiWIFbXW6BmoV6+w4Vp7PRqjnPeB/B0dDgSdbFC
+X-Received: by 2002:a05:622a:1898:b0:4af:af49:977f with SMTP id d75a77b69052e-4b31d843106mr110963061cf.30.1756806364133;
+        Tue, 02 Sep 2025 02:46:04 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF6+NH9LnUGOobc8Z3ipkGt2tyqr1PSej/+J4YRMh0RhCCuZpIUdsEIhFAtonApsNUh/JxvIw==
+X-Received: by 2002:a05:622a:1898:b0:4af:af49:977f with SMTP id d75a77b69052e-4b31d843106mr110962671cf.30.1756806363442;
+        Tue, 02 Sep 2025 02:46:03 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-337f4c91d37sm3581281fa.19.2025.09.02.02.46.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 02 Sep 2025 02:46:02 -0700 (PDT)
+Date: Tue, 2 Sep 2025 12:46:00 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+        Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+        Jonas Karlman <jonas@kwiboo.se>,
+        Jernej Skrabec <jernej.skrabec@gmail.com>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 3/5] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Document static lanes mapping
+Message-ID: <tl4fskw6yq6rniwwqkrvnulfpgym3jswlt5bmulgquogv7xkct@6bl4boesilsw>
+References: <20250902-topic-x1e80100-hdmi-v2-0-f4ccf0ef79ab@linaro.org>
+ <20250902-topic-x1e80100-hdmi-v2-3-f4ccf0ef79ab@linaro.org>
+ <slgu2d4iv6ef76f43gvwaelcl5ymymsvhokyunalq7z3l2ht3j@t7pko4rtqvgm>
+ <bf772209-2420-4794-a52a-1d5932146307@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V2 2/2] phy: qcom-qmp-ufs: Add regulator loads for SM8550
- and SM8750
-To: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
-        kishon@kernel.org, mani@kernel.org, dmitry.baryshkov@oss.qualcomm.com,
-        andersson@kernel.org, konradybcio@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20250818124110.8136-1-quic_nitirawa@quicinc.com>
- <20250818124110.8136-3-quic_nitirawa@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250818124110.8136-3-quic_nitirawa@quicinc.com>
-X-Authority-Analysis: v=2.4 cv=OemYDgTY c=1 sm=1 tr=0 ts=68b6ba89 cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=COk6AnOGAAAA:8 a=FoF8l4-XPnHLV7uwFA0A:9
- a=QEXdDO2ut3YA:10 a=uxP6HrT_eTzRwkO_Te1X:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: 1qjdhegq8e9uTg7QyHbW-dUSgRsKxoIB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDAyNCBTYWx0ZWRfXyDYEaIcLacOP
- k2weHz/WL8kfKoMaO5xdB8G/TpWxYtFi3Y6V0OHVxQlDNgtlu/FqJM3FPEzWIbQTryXt7XfDieq
- hUB1ehzsW0zVatUfUIgEJlJzefBHbVIf8RpF0+g7rWXiLEWiiCiwbf6zwmhjLQddtNSkdDoGq4S
- mbsh8dw5pAQu1WMYkx+GPFJkCnHS/9YU9BMi0tIFCi3rIKWFPq+0u7Z6hzz+XcmLfKPIwuVCsbm
- bPZGqdWjudBQZ8Rw8sdnMFZDxBO+hKIJd0sq6rh95dK0qHOC0uJJ3ghvxo44W7EkWOpK3DwK1qH
- GoMX26sefwijn0FonP5fmUOBmclMLgcrjZpcG82QZB2h1V8+gP2CnEUo3cOTq6xDaG9Hf115oEZ
- piXV5WvB
-X-Proofpoint-ORIG-GUID: 1qjdhegq8e9uTg7QyHbW-dUSgRsKxoIB
+Content-Disposition: inline
+In-Reply-To: <bf772209-2420-4794-a52a-1d5932146307@linaro.org>
+X-Proofpoint-GUID: 166aPdl7YiAE-yzp-NCQcZaYZJlRyDEd
+X-Proofpoint-ORIG-GUID: 166aPdl7YiAE-yzp-NCQcZaYZJlRyDEd
+X-Authority-Analysis: v=2.4 cv=ccnSrmDM c=1 sm=1 tr=0 ts=68b6bcde cx=c_pps
+ a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=KKAkSRfTAAAA:8 a=SY17gm6z-Ks54HuadOoA:9 a=CjuIK1q_8ugA:10
+ a=uxP6HrT_eTzRwkO_Te1X:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDA0MiBTYWx0ZWRfX/sWOgpZKncG/
+ XpHuxHuZK2FoLnSNbMwTZ6ZzNlFZfGbR4EyrcVbW6GjDIFXUv6OBSD+0JH7NIniaUipVAHWkTRk
+ +L5kWB7Ej+V9Dbf/d+PQD34GrVLaVwXHCUTX94sx3XkZf+bA3nZijP3Zo1CcrQ325nWp8/Jn37h
+ 63Xr7knVUcIdDIL14aNbrMRAH64DFEeLc/WFNdVjMsvT+Ncct1OWOG9qHxEdsxY2JRAMeqvM3FI
+ E36zSFJRcGv6Y8+UXjTSnFTFRCjUU2XuM9iEmsXMx3QWBFwIUKj57cDhpWL01D2HNcRMUzhaCul
+ phz8Bb6isw3Q9gK7tV1JrUj8jq6gnO69c2qubIoglXZkjlwkTS++LKi1UwlV3BjNgjIwEsU5yVb
+ XPDCbCG9
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-02_03,2025-08-28_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 spamscore=0 bulkscore=0 priorityscore=1501
- adultscore=0 clxscore=1015 phishscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508300024
+ adultscore=0 phishscore=0 priorityscore=1501 impostorscore=0 malwarescore=0
+ clxscore=1015 suspectscore=0 spamscore=0 bulkscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508300042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250902_023612_305021_AD12A753 
-X-CRM114-Status: GOOD (  18.19  )
+X-CRM114-CacheID: sfid-20250902_024606_660949_0AB1FDD4 
+X-CRM114-Status: GOOD (  34.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,39 +147,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/18/25 2:41 PM, Nitin Rawat wrote:
-> Add regulator load configuration for SM8550 and SM8750 UFS PHY.
-> This ensure proper regulator load management and mode selection for
-> optimal power efficiency on these SoC platforms where regulators may
-> be shared with other IP blocks.
+On Tue, Sep 02, 2025 at 11:35:25AM +0200, Neil Armstrong wrote:
+> On 02/09/2025 11:30, Dmitry Baryshkov wrote:
+> > On Tue, Sep 02, 2025 at 11:00:30AM +0200, Neil Armstrong wrote:
+> > > The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+> > > of a combo glue to route either lanes to the 4 shared physical lanes.
+> > > 
+> > > The routing of the lanes can be:
+> > > - 2 DP + 2 USB3
+> > > - 4 DP
+> > > - 2 USB3
+> > > 
+> > > The layout of the lanes was designed to be mapped and swapped
+> > > related to the USB-C Power Delivery negociation, so it supports
+> > > a finite set of mappings inherited by the USB-C Altmode layouts.
+> > > 
+> > > Nevertheless those QMP Comby PHY can be statically used to
+> > > drive a DisplayPort connector, DP->HDMI bridge, USB3 A Connector,
+> > > etc... without an USB-C connector and no PD events.
+> > > 
+> > > Add a property that documents the static lanes mapping to
+> > > each underlying PHY to allow supporting boards directly
+> > > connecting USB3 and DisplayPort lanes to the QMP Combo
+> > > lanes.
+> > > 
+> > > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> > > ---
+> > >   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 29 ++++++++++++++++++++++
+> > >   1 file changed, 29 insertions(+)
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> > > index c8bc512df08b5694c8599f475de78679a4438449..12511a462bc6245e0b82726d053d8605148c5047 100644
+> > > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> > > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> > > @@ -76,6 +76,35 @@ properties:
+> > >     mode-switch: true
+> > >     orientation-switch: true
+> > > +  qcom,static-lanes-mapping:
+> > > +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> > > +    minItems: 4
+> > > +    items:
+> > > +      enum:
+> > > +        - 0 # Unconnected (PHY_NONE)
+> > > +        - 4 # USB3 (PHY_TYPE_USB3)
+> > > +        - 6 # DisplayPort (PHY_TYPE_DP)
+> > > +    description:
+> > > +      Describes the static mapping of the Combo PHY lanes, when not used
+> > > +      a in a Type-C dynamic setup using USB-C PD Events to change the mapping.
+> > > +      The 4 lanes can either routed to the underlying DP PHY or the USB3 PHY.
+> > > +      Only 2 of the lanes can be connected to the USB3 PHY, but the 4 lanes can
+> > > +      be connected to the DP PHY.
+> > 
+> > It feels like this significantly duplicates existing data-lanes
+> > definitions. Can we use that property to express the same semantics?
 > 
-> The load requirements are:
+> Well yes it has the same semantics, but not really the same meaning. data-lanes is designed
+> to describes the lanes layout/ordering, not the type/mapping.
 > 
-> - SM8550: vdda-phy=205000uA, vdda-pll=17500uA
-> - SM8750: vdda-phy=213000uA, vdda-pll=18300uA
+> Here, we do not describe the ordering, i.e which source lane is connected to which endpoint splot,
+> but which lane is supposed to connect to which internal PHY.
 > 
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index f7a4a8334026..50875d9609f6 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -1172,6 +1172,17 @@ static const char * const qmp_phy_vreg_l[] = {
->  	"vdda-phy", "vdda-pll",
->  };
-> 
-> +/* Regulator load arrays for specific configurations */
-> +static const int sm8650_vreg_load_ua[] = {
-> +	205000, /* vdda-phy */
-> +	17500,  /* vdda-pll */
+> Anyway, I'm open to suggestions.
 
-Is one really supposed to be 10x higher? I mean, it may be, but
-it looks odd..
+phy@abcdef {
+	ports {
+		port@1 {
+			endpoint {
+				remote-endpoint = <&&usb_1_dwc3_ss>;
+				data-lanes = <2 3>;
+			};
+		};
 
-Konrad
+		port@2 {
+			endpoint {
+				remote-endpoint = <&mdss_dp0_out>;
+				data-lanes = <1>;
+			};
+		};
+	};
+};
+
+phy@cafecafe {
+	ports {
+		port@1 {
+			endpoint {
+				remote-endpoint = <&&usb_1_dwc3_ss>;
+				status = "disabled";
+			};
+		};
+
+		port@2 {
+			endpoint {
+				remote-endpoint = <&mdss_dp0_out>;
+				data-lanes = <2 3 0 1>;
+			};
+		};
+	};
+};
+
+
+> 
+> Neil
+> 
+> > 
+> > 
+> > > +      The numbers corresponds to the PHY Type the lanes are connected to.
+> > > +      The possible combinations are
+> > > +        <0 0 0 0> when none are connected
+> > > +        <4 4 0 6> USB3 and DP single lane
+> > > +        <4 4 6 6> USB3 and DP
+> > > +        <6 6 4 4> DP and USB3
+> > > +        <6 0 4 4> DP and USB3 single lane
+> > > +        <4 4 0 0> USB3 Only
+> > > +        <0 0 4 4> USB3 Only
+> > > +        <6 0 0 0> DP single lane
+> > > +        <0 0 0 6> DP single lane
+> > > +        <6 6 0 0> DP 2 lanes
+> > > +        <0 0 6 6> DP 2 lanes
+> > > +        <6 6 6 6> DP 4 lanes
+> > > +
+> > >     ports:
+> > >       $ref: /schemas/graph.yaml#/properties/ports
+> > >       properties:
+> > > 
+> > > -- 
+> > > 2.34.1
+> > > 
+> > 
+> 
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
