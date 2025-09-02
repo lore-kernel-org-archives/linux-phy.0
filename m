@@ -4,80 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1E5CCA1005
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 12:32:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACDA1CA1009
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Sep 2025 13:40:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=moI7fCbL3nv+9qH5rKCzViH0Wy+VLeRHsUk3hjmyT2E=; b=WyGpmxI3XCflwC
-	640smEGYYctFQeeKeS+PrDDO7kScUzZLU7NN2jaFM1bY1cpDHXXhcPsg0E1g115lkl4632jl/BlRD
-	yXbrr6CZu/xUpXCfSrpy18W9jWzIYnMYskplZs8xbi5rbKjpVLHrhcvt+Vlp/qEIYoJikrPMD0/vO
-	I6OCtQzS7jqhRygEpEF1seWi/dqcRtibGKxZu6wAw+jp+mgzH+LGgcnubZDPAmkCSP0wz/CYs7ldT
-	R0aTiTLF34G8qLvO4FMZ4XGuRLR6qTnw7KmGrfCsxSecFo7LnoE07s7X+sxDNK9MZfaWaF4+vZ0Vs
-	9hrkaMSNhxGxcSFkE7CQ==;
+	List-Owner; bh=hrWU4iYC2mTvnA/cnBWSRU23OLF6xXZ7cLLSurgU2tw=; b=RdHJPazER+gb3K
+	QyAvo6vf+k3OUryUnoUwdiN75lerZpjuTTWMDv/4dTQGoSfKqx/bXUXqJnU4eQ+F5CMvMKbInhn7y
+	hlpGllAk7zMuoO/7V8XcLbcvcBpTnXzwGapZSQ5ey/aNU+RBmoVgwAcoerOKb3WLmFfRe8piiOzXm
+	PR2Tib6kZe2S2NyphfxjaRed40MxmPjbARp1B0GH8ySGbwwuuWrYajPe1A2eGsbTD1FBDV2Gnrjkb
+	LWdgnUTslRYQrSiRKu7kKuci3yUIt9gENAQkWbfjVNMLz0f4CNANNw/YF0a+gfbgxM/fOawRNR4k6
+	z0GkEimS8ATFu8troICg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utQBS-0000000HJml-3K91;
-	Tue, 02 Sep 2025 12:32:22 +0000
-Received: from mgamail.intel.com ([198.175.65.15])
+	id 1utRFb-000000006ic-1Acn;
+	Tue, 02 Sep 2025 13:40:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utOBQ-0000000Geuq-37Q3;
-	Tue, 02 Sep 2025 10:24:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1756808653; x=1788344653;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=v5NDjFO8lUrsXYBoNk20x/0jTMsSJewfLyzSWN2NvCQ=;
-  b=kB9mGtfcuA0QRGswH0l8MKRJysn3eD5noDeyI/wAzG86Y4zWE3tYwKvm
-   725NxrVwV7mLuKTNwcDh7kap5+IMVyRet/MAIL429UCLFP30H1d3BV0xI
-   r6h1D/XxqOY5EjWawVd0iFhN/dX7qZa8x6i0xic8Gh+dodxWXegOplvBK
-   BsYWaNOIJnzEby7NQQvIDEOId21CaGiU8sQ2YjHh2ty9khkf27NvKGrOF
-   0p/JcOvgt3E5JVIZmZZYTQILslfHp4zYnjCJ1qhqKd3e7Jshl9A+qj3V0
-   1WDkdk1vbOFGO3lBdlTz0Zxoeu+0h2GQJESmD0ixsrJ+umZG2IUcBj4vt
-   w==;
-X-CSE-ConnectionGUID: TpBDPYu+Q7W+RmgjhDpD7A==
-X-CSE-MsgGUID: f56TpsoqRmygT+wKzO8D4A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11540"; a="62719601"
-X-IronPort-AV: E=Sophos;i="6.18,230,1751266800"; 
-   d="scan'208";a="62719601"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Sep 2025 03:24:12 -0700
-X-CSE-ConnectionGUID: I6HlhqjdSHGTNm9QxC555Q==
-X-CSE-MsgGUID: qaZkQZ/4QvmaUvY93+nUTw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,230,1751266800"; 
-   d="scan'208";a="176556266"
-Received: from lkp-server02.sh.intel.com (HELO 06ba48ef64e9) ([10.239.97.151])
-  by orviesa005.jf.intel.com with ESMTP; 02 Sep 2025 03:24:06 -0700
-Received: from kbuild by 06ba48ef64e9 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1utOBI-0001pP-0p;
-	Tue, 02 Sep 2025 10:24:04 +0000
-Date: Tue, 2 Sep 2025 18:23:07 +0800
-From: kernel test robot <lkp@intel.com>
-To: Jacky Chou <jacky_chou@aspeedtech.com>, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	mani@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
-	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
-	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, jacky_chou@aspeedtech.com
-Subject: Re: [PATCH v3 07/10] PHY: aspeed: Add ASPEED PCIe PHY driver
-Message-ID: <202509021806.1NtrcLpF-lkp@intel.com>
-References: <20250901055922.1553550-8-jacky_chou@aspeedtech.com>
+	id 1utOTV-0000000GkDu-4242
+	for linux-phy@lists.infradead.org;
+	Tue, 02 Sep 2025 10:42:55 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5822XGlC031614
+	for <linux-phy@lists.infradead.org>; Tue, 2 Sep 2025 10:42:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	8HGSFKsLXaVM0YQCxvDcTSEB0RtFGcIdJeQwMuf7cA0=; b=k5FGj8BcmA1eiPhp
+	bQChXRO2Bur6Fh3Abwsc5WbKS43zZtdYjhR+gVXcxZ8iE6izst9b4mEIr4tocXqH
+	gpM64rn8Tk2zuPKnVTwj2T+KwYHN2nWSJWvVBjBXxJ7v16hMdMGDa0Iag5jZFcML
+	nWKtyXfjdbGGxEcxHVW5kkIMiVnJ86XEXqEO0z0ptexxMh0JMah1q0PFDaPzfGM0
+	RQhtKehrck1xSC95qAtKUxdiPuJUr5Pr1uf7K1Y4pZyGaEkPuQlemMsoFhhtIZmw
+	XhoULg+Uj0XEpri08k9zaukT3nCuBlgHzFsTzMFezCjVacu7UbRzYUDBXp364Y5e
+	atzo+g==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48wqvw97tg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 10:42:52 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4b109af71a5so20235791cf.1
+        for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 03:42:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756809771; x=1757414571;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=8HGSFKsLXaVM0YQCxvDcTSEB0RtFGcIdJeQwMuf7cA0=;
+        b=G2wClkgq5MxMU0ZvpLN4lkFi2KwUNJfug/gH5JsvfSOyqntDrNFc6w6AGRx6uJ7iV5
+         zkILvL25VRKyjSEs/Sgj1Z6uS2hfcxWt+QPI2nleY3RbzKXFRbyzXoaNFMVfs1liCPMZ
+         s0bGnNOU5GYyS+1PcYgnFocD40o/NK9ePflKMiGr1q40Yebm03Y5whJijydU7UbNZLrJ
+         TO6vXNyB7H5LFQ5WCw9c3clO64CmAo03W2j8fGcUFPM4cBIYcz81l9xN19KTMw/WFXjD
+         gzWKC1EMGXl7TRgoou3BHNNIi57HvbIWonizS+8vejMM9jh0CsukWpe2VTzEHXgNh9KK
+         MlQg==
+X-Forwarded-Encrypted: i=1; AJvYcCX2K++Rw4K8vDVREKt7UPyWT4q1fEGLgR9b30ceWsqOvTC8EkxmW7ryHuF1xcUIJ2okngMIvX4nDg4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzOhObq5jFIsTuv3MPxWRPE051utzBZFye0gtU8PrQDlgZyNfGI
+	+kDizTxRD/MLJk4GBPkFaStt2p/0sCMqtK+sTeNBJyV4sTA/LkiR3Z3HLDK+mpklGkiSQq5q91p
+	gfhC39qRQPNUNP57DjQAWEVg09oO8ke4TNwqep0rSR1+W9pK36hC+Gos9lnDnbnzIMIoX
+X-Gm-Gg: ASbGncvEfZ0HXxScdpiNpNkoTMXoy9MBQOpA+5LtB80RaoyU9slIX6ekn+JbOUbK6WU
+	Z9WWmcOr3leOy4dt35kdGPKYFITEbh16O/YCtoHn6dB1XLWZ/TcBXvsIot5cuVtdUguBZqPVKKh
+	eTaWwJP79hSeQIA1MM4H4MIFkT+0GPgcVO8N0fTkMaYdPtEJsshIdmgpnefpTyqKIlNAApjg5w/
+	wmP6rJZ49QQjwAQ7m4LAl5Q2r8GPVc0i/SJcinsGeVc/2ud23/MzR8hs02kRBVk+G9DeMWzHMzw
+	9nYoKl6sworUBBmTP4ThDTmg4W7EQeZSHVYPwJ5eqNdUsXtyW4WttE1qQvEwq3OVeKqdWOra7bu
+	QMlCAbrPq0jeAlgblan5Z9Q==
+X-Received: by 2002:ac8:58ca:0:b0:4ab:63f8:ef30 with SMTP id d75a77b69052e-4b30e90634emr127554401cf.3.1756809770632;
+        Tue, 02 Sep 2025 03:42:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEIa+zdu/DvCI2hhATthcW4/zvfigbUW8Sknvl3mmHIrbuZ2hMWV/w4jclDKRuy1HZUPW0xbA==
+X-Received: by 2002:ac8:58ca:0:b0:4ab:63f8:ef30 with SMTP id d75a77b69052e-4b30e90634emr127554151cf.3.1756809769909;
+        Tue, 02 Sep 2025 03:42:49 -0700 (PDT)
+Received: from [192.168.149.223] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-61cfc4bbc6bsm9385161a12.29.2025.09.02.03.42.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 02 Sep 2025 03:42:49 -0700 (PDT)
+Message-ID: <f49b34be-89d3-498d-8b85-ff6b0be01acf@oss.qualcomm.com>
+Date: Tue, 2 Sep 2025 12:42:44 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250901055922.1553550-8-jacky_chou@aspeedtech.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 01/14] dt-bindings: display/msm: dp-controller: Add
+ sm6150
+To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar
+ <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, fange.zhang@oss.qualcomm.com,
+        yongxing.mou@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, quic_lliu6@quicinc.com
+References: <20250820-add-displayport-support-for-qcs615-platform-v3-0-a43bd25ec39c@oss.qualcomm.com>
+ <20250820-add-displayport-support-for-qcs615-platform-v3-1-a43bd25ec39c@oss.qualcomm.com>
+ <75ra2ofecqu6tid6kr4hnyuztpl6jjaq2ksyquafyajhq2sa4d@4tkggrdqky7y>
+ <8918feef-219e-4e69-8901-367189f5066d@oss.qualcomm.com>
+ <28b33851-24eb-428f-b046-b145342fd982@oss.qualcomm.com>
+ <75f8789d-9d97-49d9-97b0-908a5692c325@oss.qualcomm.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <75f8789d-9d97-49d9-97b0-908a5692c325@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTAyMDAyNCBTYWx0ZWRfX12QHsKU+ch90
+ ENY0zg/1AC7xlqdV1rYI3rrjp6WvYNl8agPpxGEhB0hQqEKJSWPUfT6RrEC8IsVoq60xU8epXGi
+ zp7bvJbD1Y+v/xkOc9/gz8o6jqNXDEngX7jctgzuNa7PvoIQvCPZwbMnYUt9vGtT8YAchU3mZfJ
+ uchJv8FyDOx9abZpuevofU4yNuuRMjvDI7OaUrmah16dCY+Or8NUhANZVxZFg2butX2A0+O9EnO
+ EVXuPVrfwjMeY62ePbF5dzXU4xt6GkbeKMXJ4FRlOVUeHG+7YgkVwdLqfR4+5ueFw0FTaXLAe1f
+ qNZcfAHvz4AMLVQSfAdpsvk9kBdd1xKky0/Lo+QVNtmRgONpG07ho7U8Kef7wOzOTBTS9DvN0cU
+ RSzNRG4A
+X-Authority-Analysis: v=2.4 cv=WKh/XmsR c=1 sm=1 tr=0 ts=68b6ca2c cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=zKpf_v0BVtz8pCFJhw8A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=a_PwQJl-kcHnX1M80qC6:22
+X-Proofpoint-GUID: XMpUtwEHk1JVhZx0Lkqp2_yzUS1bx64x
+X-Proofpoint-ORIG-GUID: XMpUtwEHk1JVhZx0Lkqp2_yzUS1bx64x
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-02_03,2025-08-28_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 suspectscore=0 bulkscore=0 phishscore=0 adultscore=0
+ spamscore=0 malwarescore=0 impostorscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509020024
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250902_032412_841231_3F6C71DE 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20250902_034254_008275_3EEA47C7 
+X-CRM114-Status: GOOD (  21.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,88 +153,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Jacky,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on pci/for-linus]
-[also build test ERROR on robh/for-next linusw-pinctrl/devel linusw-pinctrl/for-next linus/master v6.17-rc4 next-20250902]
-[cannot apply to pci/next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Jacky-Chou/dt-bindings-soc-aspeed-Add-ASPEED-PCIe-Config/20250901-140231
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git for-linus
-patch link:    https://lore.kernel.org/r/20250901055922.1553550-8-jacky_chou%40aspeedtech.com
-patch subject: [PATCH v3 07/10] PHY: aspeed: Add ASPEED PCIe PHY driver
-config: arm-allmodconfig (https://download.01.org/0day-ci/archive/20250902/202509021806.1NtrcLpF-lkp@intel.com/config)
-compiler: arm-linux-gnueabi-gcc (GCC) 15.1.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250902/202509021806.1NtrcLpF-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202509021806.1NtrcLpF-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   In file included from drivers/phy/aspeed/phy-aspeed-pcie.c:14:
->> drivers/phy/aspeed/phy-aspeed-pcie.c:195:25: error: 'aspeed_pcie_of_match_table' undeclared here (not in a function); did you mean 'aspeed_pcie_phy_of_match_table'?
-     195 | MODULE_DEVICE_TABLE(of, aspeed_pcie_of_match_table);
-         |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/module.h:250:15: note: in definition of macro 'MODULE_DEVICE_TABLE'
-     250 | static typeof(name) __mod_device_table__##type##__##name                \
-         |               ^~~~
->> include/linux/module.h:250:21: error: '__mod_device_table__of__aspeed_pcie_of_match_table' aliased to undefined symbol 'aspeed_pcie_of_match_table'
-     250 | static typeof(name) __mod_device_table__##type##__##name                \
-         |                     ^~~~~~~~~~~~~~~~~~~~
-   drivers/phy/aspeed/phy-aspeed-pcie.c:195:1: note: in expansion of macro 'MODULE_DEVICE_TABLE'
-     195 | MODULE_DEVICE_TABLE(of, aspeed_pcie_of_match_table);
-         | ^~~~~~~~~~~~~~~~~~~
---
-   In file included from phy-aspeed-pcie.c:14:
-   phy-aspeed-pcie.c:195:25: error: 'aspeed_pcie_of_match_table' undeclared here (not in a function); did you mean 'aspeed_pcie_phy_of_match_table'?
-     195 | MODULE_DEVICE_TABLE(of, aspeed_pcie_of_match_table);
-         |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/module.h:250:15: note: in definition of macro 'MODULE_DEVICE_TABLE'
-     250 | static typeof(name) __mod_device_table__##type##__##name                \
-         |               ^~~~
->> include/linux/module.h:250:21: error: '__mod_device_table__of__aspeed_pcie_of_match_table' aliased to undefined symbol 'aspeed_pcie_of_match_table'
-     250 | static typeof(name) __mod_device_table__##type##__##name                \
-         |                     ^~~~~~~~~~~~~~~~~~~~
-   phy-aspeed-pcie.c:195:1: note: in expansion of macro 'MODULE_DEVICE_TABLE'
-     195 | MODULE_DEVICE_TABLE(of, aspeed_pcie_of_match_table);
-         | ^~~~~~~~~~~~~~~~~~~
-
-
-vim +195 drivers/phy/aspeed/phy-aspeed-pcie.c
-
-   183	
-   184	static const struct of_device_id aspeed_pcie_phy_of_match_table[] = {
-   185		{
-   186			.compatible = "aspeed,ast2600-pcie-phy",
-   187			.data = &pcie_phy_ast2600,
-   188		},
-   189		{
-   190			.compatible = "aspeed,ast2700-pcie-phy",
-   191			.data = &pcie_phy_ast2700,
-   192		},
-   193		{ },
-   194	};
- > 195	MODULE_DEVICE_TABLE(of, aspeed_pcie_of_match_table);
-   196	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gOS8xLzI1IDI6MzIgUE0sIFhpYW5neHUgWWluIHdyb3RlOgo+IAo+IE9uIDgvMjgvMjAyNSA3
+OjA1IFBNLCBEbWl0cnkgQmFyeXNoa292IHdyb3RlOgo+PiBPbiAyOC8wOC8yMDI1IDA3OjUxLCBY
+aWFuZ3h1IFlpbiB3cm90ZToKPj4+Cj4+PiBPbiA4LzIwLzIwMjUgNjoxOCBQTSwgRG1pdHJ5IEJh
+cnlzaGtvdiB3cm90ZToKPj4+PiBPbiBXZWQsIEF1ZyAyMCwgMjAyNSBhdCAwNTozNDo0M1BNICsw
+ODAwLCBYaWFuZ3h1IFlpbiB3cm90ZToKPj4+Pj4gQWRkIERpc3BsYXlQb3J0IGNvbnRyb2xsZXIg
+Zm9yIFF1YWxjb21tIFNNNjE1MCBTb0MuCj4+Pj4+IFdoaWxlIFNNNjE1MCBjdXJyZW50bHkgc2hh
+cmVzIHRoZSBzYW1lIGNvbmZpZ3VyYXRpb24gYXMgU0M3MTgwLAo+Pj4+PiBpdHMgaGFyZHdhcmUg
+Y2FwYWJpbGl0aWVzIGRpZmZlci4gRXhwbGljaXRseSBsaXN0aW5nIGl0IGVuc3VyZXMgY2xhcml0
+eQo+Pj4+PiBhbmQgYXZvaWRzIHBvdGVudGlhbCBpc3N1ZXMgaWYgU0M3MTgwIHN1cHBvcnQgZXZv
+bHZlcyBpbiB0aGUgZnV0dXJlLgo+Pj4+IEkgYXNzdW1lLCBpdCBoYXMgbm8gTVNUIHN1cHBvcnQu
+IEFtIEkgcmlnaHQ/Cj4+Pgo+Pj4KPj4+IMKgRnJvbSBzbTYxNTAgaXBjYXQsIEkgZm91bmQgTVNU
+LXJlbGF0ZWQgcmVnaXN0ZXJzIGFuZCBwaXhlbDEgY2xrwqBkZWZpbml0aW9uLgo+Pgo+PiBUaGVu
+IHBsZWFzZSBkZXNjcmliZSBNU1QgYXMgdGhlIG1haW4gZGlmZmVyZW5jZSBiZXR3ZWVuIFNNNjE1
+MCBhbmQgU0M3MTgwICh3aGljaCBkb2Vzbid0IGhhdmUgTVNUKS4KPj4KPj4gQWxzbyB0aGlzIG5l
+ZWRzIHRvIGJlIHJlYmFzZWQgb24gdG9wIG9mIHRoZSBNU1QgYmluZGluZ3MuIEkndmUgcGlja2Vk
+IHVwIHRoZSBsYXRlc3QgcG9zdGVkIHJldmlzaW9uLCBidXQgYmFzaW5nIG9uIHRoZSBvbi1saXN0
+IGRpc2N1c3Npb24gSSBtaWdodCBuZWVkIHRvIGRyb3AgaXQgYW5kIHBvc3QgYW5vdGhlciBpdGVy
+YXRpb24uwqAKPj4KPiAKPiBXb3VsZCB5b3UgcHJlZmVyIEkga2VlcCB0aGUgY3VycmVudCBwYXRj
+aCBhbmQgdXBkYXRlIHRoZSBkZXNjcmlwdGlvbiBvZiB0aGUKPiBNU1QgY2FwYWJpbGl0eSBkaWZm
+ZXJlbmNlIHdpdGggU0M3MTgwIGluIHRoZSBjb21taXQgbWVzc2FnZSwgb3IgcmViYXNlIG9uCj4g
+eW91ciBzZXJpZXMgYW5kIHVwZGF0ZSB0aGUgZHQtYmluZGluZyBhY2NvcmRpbmdseT8KPiBodHRw
+czovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNTA4MjktZHBfbXN0X2JpbmRpbmdzLXY3LTAtMmIy
+NjhhNDM5MTdiQG9zcy5xdWFsY29tbS5jb20KPiAKPiBTaW5jZSBNU1Qgc3VwcG9ydCBpcyBub3Qg
+eWV0IG1haW5saW5lZCBpbiB0aGUgRFAgZHJpdmVyLCBldmVuIGlmIEkgcmViYXNlCj4gbm93LCB0
+aGUgZmluYWwgaW1wbGVtZW50YXRpb24gbWF5IHJlcXVpcmUgcmVkZWZpbmluZyBtc21fZHBfZGVz
+YyBmb3IKPiBTTTYxNTAgaW4gYm90aCB0aGUgZHQtYmluZGluZyBhbmQgdGhlIGRyaXZlciBvbmNl
+IE1TVCBsYW5kcy4KCmR0LWJpbmRpbmdzIG11c3QgZGVzY3JpYmUgdGhlIGhhcmR3YXJlIHJlZ2Fy
+ZGxlc3Mgb2YgdGhlIGN1cnJlbnQgZHJpdmVyCmZ1bmN0aW9uYWxpdHkgKHdoaWNoIGlzIHVuZm9y
+dHVuYXRlbHkgc29tZXRoaW5nIHdlJ3ZlIG5vdCBwYWlkIHN1ZmZpY2llbnQKYXR0ZW50aW9uIHRv
+IGJlZm9yZSBhbmQgd2UncmUgbm93IHVudGFuZ2xpbmcgc29tZSBtZXNzeSBmaWxlcy4uKQoKS29u
+cmFkCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
+aHkK
