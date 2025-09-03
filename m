@@ -4,64 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15149CA1009
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Sep 2025 01:55:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEAE1CA1005
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Sep 2025 02:24:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oR69eL79lP5ytqFY0hmy1bz5Tn6zCJbr92Y4/gvXIWA=; b=4weTc0DFtw6ghC
-	nHJocUT8zzbQZi07H0M/uBPCtgvXppusQpc/pThEKYHPZSz+ee+QoOubu4nFIrD3sGP9HRVQyvQFb
-	pGvfdDTMpYXOWw4Lq5rRlIlBcT79qAi9CPjyHiwLItm9B6KcF7F0FN6DJAg0vi4x4HHu3pAjyLBLn
-	V5h8uEZxZMfe8iirOD1wjmdm0hM7kANxapWPq9/h1qWhMH1cV91EGMDncFi1hjOFIFloJ6jNCmAIJ
-	fGJJiQOaZ40idDX1eI5Zxqa6yRouzTch/vkuInn2z3DI4ovzElUPa+hJPp5dlxjfEmTKEXqJbNcrp
-	YNMTRO14Z5y53dfMtE1g==;
+	List-Owner; bh=m6pCgRnpN0AOZGv2ai1cQhO0vFoLfMBbBt+lOoFDZzs=; b=lBkXYSzEsiPe2o
+	9m5GGH+P+VPj9kiafa7yYjNAfqBcVRXps//SlL9vr7qYCgkOKWjGoHF1P3KnKPWDqKCXYFAPf2iTK
+	SVYWFq1t9da8JsHAovJPJm/QMaROX70fEra4AZIcE+UA6Gzeb0p3Hk/kJMTzOhFoWKfWMExEO6Ytu
+	8LFSsgrxCBwEgTv8AwOtTq5Zjq8onKKOhN1hkDTorvvmLt3Brs1dnvlCwRRTlNWztI9v1JPSkScen
+	dBtG3qXKas3H96PCE9ICa2H7TZvTBtGFyadKXauCQKEtmvDZJImEjTg36zYL6iULBhdX/if88LGOg
+	IyB6UwDO9shZNjvWuPCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utciv-000000038gv-3bgL;
-	Wed, 03 Sep 2025 01:55:45 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1utdAK-00000003Ert-1afl;
+	Wed, 03 Sep 2025 02:24:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utXsD-00000001xn1-1Pl4;
-	Tue, 02 Sep 2025 20:45:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1756845900;
-	bh=OnGaTNNIrYKdiTZa5++7KD4our7EsqapbDZunkTLn6o=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=QZ5V3WqrzS8+ZQPEPFD8NEHAD17+UGtQ0jq817JdxSTEnV5T5+GgwvzBCr/EpCh/X
-	 tUIkkBuf3I7V9Ce3DScA/2jtFNYmY3DajfX/DoFjsDCtsPI4eEgUbc2PyJnLYSpHew
-	 PDy5tNGwBgYl/7t0aKlriOz5njYSkbhCGy9AnPzNuTcE6RVPH04rSBxmdg7vedLdxl
-	 n0O1wDldiKyGRNPXA2wtPLfcby+ShqDK+Vdd/6yU6Sk7Oh+doks5+mSmdV4dsTcIsY
-	 dYB+fDUVeLsZ8Q/J7Np7BvmNl/5zxx/7xd6iwp1PsF0pfBI9Q8fhBhgmeWDbT4GaZv
-	 Jg9ksEIJGfU7A==
-Received: from localhost (unknown [82.79.138.60])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id DCA4A17E136C;
-	Tue,  2 Sep 2025 22:44:59 +0200 (CEST)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 02 Sep 2025 23:44:44 +0300
-Subject: [PATCH v4 09/11] phy: rockchip: samsung-hdptx: Switch to driver
- specific HDMI config
+	id 1utd37-00000003DXr-3YZD
+	for linux-phy@lists.infradead.org;
+	Wed, 03 Sep 2025 02:16:39 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58326AhN012688
+	for <linux-phy@lists.infradead.org>; Wed, 3 Sep 2025 02:16:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	v9zS6j9T98yNyfjNeGOWdW3vrw4eq89d9I5wRlLVeWM=; b=AgN98ydm4gYvt7nB
+	l9MYyadPaUTYUvFUVU9zZB0ns+g80ToOn8/+yPoceO9rYRbQ4DZuZCqe4KBmtP+E
+	yN7SRhYjyFYa078gPdpYmTs4q7Os4P1xBATPDLTOPaBDG29Q7dvmCQQSlFWdqOUQ
+	mUs8CCxq11+ML76qCOBaL09QYU0Rmsexa9b6mzeYBIiCxvpJ2Yd+8hl7ET4CQtLk
+	7Or06L9LYQbo8mFnG4gOZKygS+jmm0iTvsFzad5viwRcg861q3nXHXVYIvyyhm6p
+	gFe1w4eJYHWQNpByN1dMskGHMO8lnL7FbPea33tHY9g1oO5DPh+flFFrsI3hO3rb
+	w0MxIQ==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48utk91p9y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 03 Sep 2025 02:16:36 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-77243618babso3553801b3a.0
+        for <linux-phy@lists.infradead.org>; Tue, 02 Sep 2025 19:16:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756865796; x=1757470596;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=v9zS6j9T98yNyfjNeGOWdW3vrw4eq89d9I5wRlLVeWM=;
+        b=rYFh7rF+rOivik+oi1BRUSvu3DiX8XkB1tWrt5JILknIi1r8kisIIH6DDJ0OJRg2Mu
+         waxEcF/FBD8eq8igpcDwTR+y6q2O6r5TLV+wPRb4N8DnwoYMHSXsOXWXqvlSYM3esZBi
+         wQ2GZeZmYQg3aoQNUYqrSpTiJ3rra0jKbySfVAkEZLhx8ZS5kufeAQXMYZvyTZkBNU4k
+         S72r0LdexKIegwtsRYi1vv/4qqmRi5mM6MYLlAdsw5KLw37VTaoXYHIUGHh2ILLDOpCM
+         fZXRzz5LM5KJNibGnYOty6kb2zaQjlYAkmRJsP0n4EzBf5fRHNo2odbf605Z6NbBNLpx
+         UV5g==
+X-Forwarded-Encrypted: i=1; AJvYcCW9ZS75CToEX+oCwtykoTGzjQAfuiv4ihdAbpV34iXP0i7JX84LI18awwBmYIO5xPb8P+4wO+6hbLE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxnuIzWkklzj28074m/NGg92AVxEHE4qYR4Ob0l5H7BNrxnaraS
+	No5xnGRBBUK6VsQ7gfxsl5llDrtZov/YUH4FALEYFzkfBxhUtOg/w9Y7zm7EKSFygx7PFlSYhu5
+	Nk8mwP82dR44u1ayEatsRGjG7CQ+uNoq7Spc9gW4DABdTIhP1qbGVlC/wRbuzYDI5wihO
+X-Gm-Gg: ASbGnct65ZIptm9OPzPDzLY3uqrq0yHEfs9vMrnNYlcHxz9+GLL9bSszgu0TOqPpIYv
+	LPa4Gzyh89TCiR/Mn4wc9TnO/ev3qPYaqEsYc5NGbHKYVuT54ePCsZy2ZyCOlwQFLnRRwguIkrd
+	+Ywv80N2500gZ01dK+Ibfg8CwXemFkfQgoEbZIWEIVYTchAkmfPNmz6TDROaGfry1+hvBZFi++d
+	Vy4CI71zonmwf1bt4EDVAZeFBJpcOGiJUDBI+llqKpaOleq5naPTsHPvvNN8LPFgYaeY3yFaU2s
+	H1i1cXFDpZcY+tbkLOYeP9JD0ZPoJENLF5THD9eNFku2Ic6A24a6U1SqWGabc/6MnXV5KG7V4R3
+	/9S5Mt0DyZOlXArM=
+X-Received: by 2002:a05:6a20:5483:b0:238:f875:6261 with SMTP id adf61e73a8af0-243d6e0100amr17326312637.23.1756865795893;
+        Tue, 02 Sep 2025 19:16:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFn3oKdkiywXs7I27qdf2yUwn9EW1s0qdzWAjlJxUt+zYeJZsSbpJFkobFdywABWGuVgSjbzw==
+X-Received: by 2002:a05:6a20:5483:b0:238:f875:6261 with SMTP id adf61e73a8af0-243d6e0100amr17326268637.23.1756865795446;
+        Tue, 02 Sep 2025 19:16:35 -0700 (PDT)
+Received: from [10.110.3.132] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b4edf7ed519sm9565518a12.28.2025.09.02.19.16.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 02 Sep 2025 19:16:35 -0700 (PDT)
+Message-ID: <bec3a42d-317d-4758-924e-ac53f5dcfc10@oss.qualcomm.com>
+Date: Wed, 3 Sep 2025 10:16:25 +0800
 MIME-Version: 1.0
-Message-Id: <20250902-phy-hdptx-frl-v4-9-7d69176373ce@collabora.com>
-References: <20250902-phy-hdptx-frl-v4-0-7d69176373ce@collabora.com>
-In-Reply-To: <20250902-phy-hdptx-frl-v4-0-7d69176373ce@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
- Dmitry Baryshkov <lumag@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v11 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings for qcs8300
+To: Vinod Koul <vkoul@kernel.org>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, kishon@kernel.org,
+        neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+References: <20250826091205.3625138-1-ziyue.zhang@oss.qualcomm.com>
+ <20250826091205.3625138-2-ziyue.zhang@oss.qualcomm.com>
+ <aLWW-izvybTo52VN@vaman>
+Content-Language: en-US
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+In-Reply-To: <aLWW-izvybTo52VN@vaman>
+X-Proofpoint-GUID: 0m_Dts0i4FLFz0KCOnCC44Rdwf3hIjqS
+X-Proofpoint-ORIG-GUID: 0m_Dts0i4FLFz0KCOnCC44Rdwf3hIjqS
+X-Authority-Analysis: v=2.4 cv=ccnSrmDM c=1 sm=1 tr=0 ts=68b7a504 cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=buFmA9CyAF0SDTxNqVIA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=2VI0MkxyNR6bbpdq8BZq:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODMwMDA0MiBTYWx0ZWRfX3mdJe/sEYw0g
+ PLTTNvLJJQTVCZihe29eRQ5cVWlcUGEOPPAP6u0jaj0vcDiDnISU2zGXlSsALQhDm+XZ3EXavV7
+ A4z6piJCilmD/WCRazEJyI4ctHP6oUvGG0Qui+9N2iUHaCXekarrSOZpppvZtNVA27pO5otYdfH
+ lmDV51cKr4IWo3L0Y2yx+8nM0o+31tP689bGm5lyLa6oOPtrdoy+hnvWdsE61uDQ7mO2LGZLIZN
+ DS1ly2Pz8pDt78+e/DaYVgOIUI7PJAJxndjzamDDn+Lje8WjPqiqZAdy/sKVnC6sDMvtVShViUu
+ +nM9DMRGPRH3Ccms/pUeuws//N3TJ8WD0xjUPO+VlKtTQFjE+aymNifIqSaVutfbHm4DgU+zGnR
+ w+Z0864T
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-03_01,2025-08-28_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 phishscore=0 priorityscore=1501 impostorscore=0 malwarescore=0
+ clxscore=1015 suspectscore=0 spamscore=0 bulkscore=0 classifier=typeunknown
+ authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2507300000 definitions=main-2508300042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250902_134501_528111_B9187CCF 
-X-CRM114-Status: GOOD (  19.04  )
+X-CRM114-CacheID: sfid-20250902_191637_890502_6927DD19 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,179 +134,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In preparation to support the FRL operation mode which gets configured
-via the lanes and rate per lane tuple, switch to a driver specific
-struct for configuring the link rate and bpc.
-
-This simplifies and optimizes the implementation by allowing implicit
-switches between TMDS and FRL rates, without requiring additional checks
-of the active PHY mode followed by recalculations of the link rate when
-operating in FRL mode.
-
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 44 +++++++++++++----------
- 1 file changed, 25 insertions(+), 19 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 7b1526c1ea3dfc26323d7b90631dc9fd2e3a7266..358625790d5ee3e2a3971abe22cc98e8e73e1066 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -387,6 +387,11 @@ struct rk_hdptx_phy_cfg {
- 	unsigned int phy_ids[MAX_HDPTX_PHY_NUM];
- };
- 
-+struct rk_hdptx_hdmi_cfg {
-+	unsigned long long rate;
-+	unsigned int bpc;
-+};
-+
- struct rk_hdptx_phy {
- 	struct device *dev;
- 	struct regmap *regmap;
-@@ -394,7 +399,7 @@ struct rk_hdptx_phy {
- 
- 	int phy_id;
- 	struct phy *phy;
--	struct phy_configure_opts_hdmi hdmi_cfg;
-+	struct rk_hdptx_hdmi_cfg hdmi_cfg;
- 	struct clk_bulk_data *clks;
- 	int nr_clks;
- 	struct reset_control_bulk_data rsts[RST_MAX];
-@@ -964,19 +969,19 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 	struct ropll_config rc = {0};
- 	int i;
- 
--	if (!hdptx->hdmi_cfg.tmds_char_rate)
-+	if (!hdptx->hdmi_cfg.rate)
- 		return 0;
- 
- 	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
--		if (hdptx->hdmi_cfg.tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate) {
-+		if (hdptx->hdmi_cfg.rate == rk_hdptx_tmds_ropll_cfg[i].rate) {
- 			cfg = &rk_hdptx_tmds_ropll_cfg[i];
- 			break;
- 		}
- 
- 	if (!cfg) {
--		if (!rk_hdptx_phy_clk_pll_calc(hdptx->hdmi_cfg.tmds_char_rate, &rc)) {
-+		if (!rk_hdptx_phy_clk_pll_calc(hdptx->hdmi_cfg.rate, &rc)) {
- 			dev_err(hdptx->dev, "%s cannot find pll cfg for rate=%llu\n",
--				__func__, hdptx->hdmi_cfg.tmds_char_rate);
-+				__func__, hdptx->hdmi_cfg.rate);
- 			return -EINVAL;
- 		}
- 
-@@ -984,7 +989,7 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 	}
- 
- 	dev_dbg(hdptx->dev, "%s rate=%llu mdiv=%u sdiv=%u sdm_en=%u k_sign=%u k=%u lc=%u\n",
--		__func__, hdptx->hdmi_cfg.tmds_char_rate, cfg->pms_mdiv, cfg->pms_sdiv + 1,
-+		__func__, hdptx->hdmi_cfg.rate, cfg->pms_mdiv, cfg->pms_sdiv + 1,
- 		cfg->sdm_en, cfg->sdm_num_sign, cfg->sdm_num, cfg->sdm_deno);
- 
- 	rk_hdptx_pre_power_up(hdptx);
-@@ -1033,7 +1038,7 @@ static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
- 
- 	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
- 
--	if (hdptx->hdmi_cfg.tmds_char_rate > HDMI14_MAX_RATE) {
-+	if (hdptx->hdmi_cfg.rate > HDMI14_MAX_RATE) {
- 		/* For 1/40 bitrate clk */
- 		rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lntop_highbr_seq);
- 	} else {
-@@ -1404,19 +1409,19 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	int ret, lane;
- 
- 	if (mode != PHY_MODE_DP) {
--		if (!hdptx->hdmi_cfg.tmds_char_rate) {
-+		if (!hdptx->hdmi_cfg.rate) {
- 			/*
- 			 * FIXME: Temporary workaround to setup TMDS char rate
- 			 * from the RK DW HDMI QP bridge driver.
- 			 * Will be removed as soon the switch to the HDMI PHY
- 			 * configuration API has been completed on both ends.
- 			 */
--			hdptx->hdmi_cfg.tmds_char_rate = phy_get_bus_width(hdptx->phy) & 0xfffffff;
--			hdptx->hdmi_cfg.tmds_char_rate *= 100;
-+			hdptx->hdmi_cfg.rate = phy_get_bus_width(hdptx->phy) & 0xfffffff;
-+			hdptx->hdmi_cfg.rate *= 100;
- 		}
- 
- 		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
--			hdptx->hdmi_cfg.tmds_char_rate, hdptx->hdmi_cfg.bpc);
-+			hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
- 	}
- 
- 	ret = rk_hdptx_phy_consumer_get(hdptx);
-@@ -1763,12 +1768,13 @@ static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opt
- 		if (ret) {
- 			dev_err(hdptx->dev, "invalid hdmi params for phy configure\n");
- 		} else {
--			hdptx->hdmi_cfg = opts->hdmi;
-+			hdptx->hdmi_cfg.rate = opts->hdmi.tmds_char_rate;
-+			hdptx->hdmi_cfg.bpc = opts->hdmi.bpc;
- 			hdptx->restrict_rate_change = true;
- 		}
- 
- 		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
--			hdptx->hdmi_cfg.tmds_char_rate, hdptx->hdmi_cfg.bpc);
-+			hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
- 		return ret;
- 	}
- 
-@@ -1948,7 +1954,7 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
- 	 * To be dropped as soon as the RK DW HDMI QP bridge driver
- 	 * switches to make use of phy_configure().
- 	 */
--	if (!hdptx->restrict_rate_change && rate != hdptx->hdmi_cfg.tmds_char_rate) {
-+	if (!hdptx->restrict_rate_change && rate != hdptx->hdmi_cfg.rate) {
- 		struct phy_configure_opts_hdmi hdmi = {
- 			.tmds_char_rate = rate,
- 		};
-@@ -1957,7 +1963,7 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
- 		if (ret)
- 			return ret;
- 
--		hdptx->hdmi_cfg = hdmi;
-+		hdptx->hdmi_cfg.rate = rate;
- 	}
- 
- 	/*
-@@ -1965,7 +1971,7 @@ static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
- 	 * hence ensure rk_hdptx_phy_clk_set_rate() won't be invoked with
- 	 * a different rate argument.
- 	 */
--	return DIV_ROUND_CLOSEST_ULL(hdptx->hdmi_cfg.tmds_char_rate * 8, hdptx->hdmi_cfg.bpc);
-+	return DIV_ROUND_CLOSEST_ULL(hdptx->hdmi_cfg.rate * 8, hdptx->hdmi_cfg.bpc);
- }
- 
- static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
-@@ -1975,10 +1981,10 @@ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
- 	unsigned long long tmds_rate = DIV_ROUND_CLOSEST_ULL(rate * hdptx->hdmi_cfg.bpc, 8);
- 
- 	/* Revert any unlikely TMDS char rate change since round_rate() */
--	if (hdptx->hdmi_cfg.tmds_char_rate != tmds_rate) {
-+	if (hdptx->hdmi_cfg.rate != tmds_rate) {
- 		dev_warn(hdptx->dev, "Reverting unexpected rate change from %llu to %llu\n",
--			 tmds_rate, hdptx->hdmi_cfg.tmds_char_rate);
--		hdptx->hdmi_cfg.tmds_char_rate = tmds_rate;
-+			 tmds_rate, hdptx->hdmi_cfg.rate);
-+		hdptx->hdmi_cfg.rate = tmds_rate;
- 	}
- 
- 	/*
-
--- 
-2.51.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDkvMS8yMDI1IDg6NTIgUE0sIFZpbm9kIEtvdWwgd3JvdGU6Cj4gT24gMjYtMDgtMjUsIDE3
+OjEyLCBaaXl1ZSBaaGFuZyB3cm90ZToKPj4gVGhlIGdjY19hdXhfY2xrIGlzIG5vdCByZXF1aXJl
+ZCBieSB0aGUgUENJZSBQSFkgb24gcWNzODMwMCBhbmQgaXMgbm90Cj4+IHNwZWNpZmllZCBpbiB0
+aGUgZGV2aWNlIHRyZWUgbm9kZS4gSGVuY2UsIG1vdmUgdGhlIHFjczgzMDAgcGh5Cj4+IGNvbXBh
+dGliaWxpdHkgZW50cnkgaW50byB0aGUgbGlzdCBvZiBQSFlzIHRoYXQgcmVxdWlyZSBzaXggY2xv
+Y2tzLgo+Pgo+PiBSZW1vdmVkIHRoZSBwaHlfYXV4IGNsb2NrIGZyb20gdGhlIFBDSWUgUEhZIGJp
+bmRpbmcgYXMgaXQgaXMgbm8gbG9uZ2VyCj4+IHVzZWQgYnkgYW55IGluc3RhbmNlLgo+IFRoaXMg
+ZG9lcyBub3QgYXBwbHkgZm9yIG1lCj4KPj4gRml4ZXM6IGU0NmU1OWI3N2E5ZSAoImR0LWJpbmRp
+bmdzOiBwaHk6IHFjb20sc2M4MjgweHAtcW1wLXBjaWUtcGh5OiBEb2N1bWVudCB0aGUgUUNTODMw
+MCBRTVAgUENJZSBQSFkgR2VuNCB4MiIpCj4gTm90IHN1cmUgd2h5IGlzIHRoaXMgZGVlbWVkIGEg
+Zml4LCBhbHNvIG5vIGVtcHR5IGxpbmVzIGhlcmUKCkhpIFZpbm9kCgpBcyBwZXIgSm9oYW7igJlz
+IHN1Z2dlc3Rpb24gaW4gdjcsIGl0IG1pZ2h0IGJlIGdvb2QgdG8gaW5jbHVkZSBhIGZpeCB0YWcu
+CgpUaGlzIHBhdGNoIHJlc29sdmVzIHRoZSBpc3N1ZSB3aGVyZSB0aGUgUUNTODMwMCBQSFkgd2Fz
+IHByZXZpb3VzbHkKCmNvbmZpZ3VyZWQgdG8gcmVxdWlyZSBvbmx5IDYgY2xvY2tzIGluc3RlYWQg
+b2YgNy4KCkJScwoKWml5dWUKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1waHkK
