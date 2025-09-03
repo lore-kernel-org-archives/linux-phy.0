@@ -4,83 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9878DCA1012
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Sep 2025 21:18:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B3FCCA1016
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 02:10:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3bS5HCokEItYOjY4In6UhzqrVEsqBqLE4FdQet5eGmw=; b=J8SIPgLpoIcSEX
-	BsvRTRvgRVN8T53H2w7AjkzHxe2tJxZrkFZZLR7+AL+B1MO2RtScEOC1cCdTcKWkoeDquvMRBZZWW
-	V8E5aqhWigBevVhtqhmZxIAjPUipWq7KqtRKkEBniTgGbor9SlyoOjz+jE/1gxvHBkKkVfNyYDwaE
-	wDpw9NdISEAg/QcSD2RVuU678Gs3UKroEg15VJQnibOgVeU3W2osJWSxVxgOeOeoFFLUbqwhMttsG
-	XvxtY/tdLueFdXznTAJx+K9DDRKGtiiiFCHVUfv/YNk4pm9uOkTLVNeavxhLMC6+JqbiOut5CwHe6
-	BSPu9adp7qXWUJ4BpOlQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=HGg2x0kDQZVXQsl5VpW/H6GBm04HqrQLu1+xOqebnyU=; b=OSMeWQHTUF9DEL
+	qh7w03j7FFias8IialCRlPNlgZLXpOd98u/IzfR5vOPMHzkEva4TRStUZMMsVT71LhPCdnbgS3A5v
+	F2ik9Dy93sjCeH3YoYLXR7J9KBkfv0u/42LBK8SkOyeEJD7bW7V6ifVAPfyoSiTmx94N8UMpgATk1
+	RsdjzTlUMRtLnbYAbLmNUYxL72nr38IF4Qa+emerM9QCyWFLKZ2mqsMvvpKvl0U4FdZ3e28jBKH3S
+	8y2LCMklOyKNeYN/gLang5WyjDy8RMOu5n6lTrhq7RCLwm8PG8rs4Pt7X1VlMjR95pRYBKBRhtuwV
+	lmDoFVl0D/KcLkT70XNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utusK-00000007eOm-0mNz;
-	Wed, 03 Sep 2025 21:18:40 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1utzRD-00000008Fbp-0dOy;
+	Thu, 04 Sep 2025 02:10:59 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utr8c-00000007AfQ-46nw;
-	Wed, 03 Sep 2025 17:19:16 +0000
+	id 1utw1O-00000007nqT-2nO6;
+	Wed, 03 Sep 2025 22:32:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id DE99744C04;
-	Wed,  3 Sep 2025 17:19:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 91A0FC4CEF4;
-	Wed,  3 Sep 2025 17:19:13 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 568336024F;
+	Wed,  3 Sep 2025 22:32:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CEB75C4CEE7;
+	Wed,  3 Sep 2025 22:32:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756919953;
-	bh=U9NS79r/yfxF2enN0dgFxeqELCwhpIKV/1W2Bi08Osk=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=pn/VF9KVFLiDLBhawe3Y+3l7u0Yiz5xsrUleUdjmU1iwUAPwTBtAdS2LI2GflQNVa
-	 xt3pzz4Gbs7Rjz/dO6Hrm1pGMcNbU9u2A9uttux4dsn36KB0PEn8DYbMCjtsvoYgpc
-	 iC5Ac/GqPS/FnK0rmtz5CbrwQ8wFH4gqwDEGK4M75uFPfb0M7/Dp1hyJm0175DUZ57
-	 Bt8BZHkeCjUG0v7bi5NL+gyqkhU8F1uGlabhEEVVKzSOyUjPq/vgj337zgRRluNBcO
-	 H4hTSBvayqdHRl7e6pS9pITH0DWEBjydfQRdK0b2IDud/wPu1Zupydb+oWohtk6i8r
-	 xbgZCH1F4siZw==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 82D33CA0FF2;
-	Wed,  3 Sep 2025 17:19:13 +0000 (UTC)
-From: Michael Riesch via B4 Relay <devnull+michael.riesch.collabora.com@kernel.org>
-Date: Wed, 03 Sep 2025 19:04:53 +0200
-Subject: [PATCH v4 5/7] phy: rockchip: phy-rockchip-inno-csidphy: allow for
- different reset lines
+	s=k20201202; t=1756938724;
+	bh=0zNxbRiK/0aMy5wdBnW9WCgQpg46kf3uIF2gp8dwHmQ=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=Nrz9NKhMC5qUarkd7J+XDkSpZDWKsfS09dlIk7Cm6jJKudqb+qGchlrAH1B3u2qBH
+	 NxOy+gtbBuB6w0bqYYfEWi6QfniE4omkp5oXpUbC7VLbCjyLivl1eW2YWrxQSCgOQn
+	 VgGPsYF3+fxTUZ6f1T5fgq3F9L1J6DD5DIIzMXE1D8K+S5CpeYQAtX21OXz4pK8HK3
+	 ucbSC3pRXndnyQYZVRe5JXO5apjS3rw8iMp5mtKLM4kbwKatUSPZcMYOaY0aSJMEtt
+	 hOUFxBzIzmltmb5JpiQmUMLEbEuVkvToIWP1FFS3F4jtQfq9Hm+T16ydICw5SgYNLz
+	 oybtOg+x53FlA==
+Date: Wed, 3 Sep 2025 17:32:02 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
+	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
+	linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v3 08/10] PCI: Add FMT and TYPE definition for TLP header
+Message-ID: <20250903223202.GA1235935@bhelgaas>
 MIME-Version: 1.0
-Message-Id: <20250616-rk3588-csi-dphy-v4-5-a4f340a7f0cf@collabora.com>
-References: <20250616-rk3588-csi-dphy-v4-0-a4f340a7f0cf@collabora.com>
-In-Reply-To: <20250616-rk3588-csi-dphy-v4-0-a4f340a7f0cf@collabora.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Kever Yang <kever.yang@rock-chips.com>, 
- Jagan Teki <jagan@amarulasolutions.com>, 
- Sebastian Reichel <sebastian.reichel@collabora.com>, 
- Diederik de Haas <didi.debian@cknow.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, 
- Collabora Kernel Team <kernel@collabora.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, 
- Michael Riesch <michael.riesch@collabora.com>
-X-Mailer: b4 0.12.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1756919100; l=4524;
- i=michael.riesch@collabora.com; s=20250410; h=from:subject:message-id;
- bh=ouqlgbnwWSp9gE4kXLQdfgX4LelZawR0mUFaykrHL9U=;
- b=NRuarniyeddlvm8uHBr/1dfXaIebfkSTrMveSDbVes8hWlBDX9Cbj175m1OMiyAeFmHJLVISe
- gdtoUNWEX9MCU3fSObSPlZTSV4ciMzlw0cxfSAxYdndDufzBOAc8OYH
-X-Developer-Key: i=michael.riesch@collabora.com; a=ed25519;
- pk=+MWX1fffLFZtTPG/I6XdYm/+OSvpRE8D9evQaWbiN04=
-X-Endpoint-Received: by B4 Relay for michael.riesch@collabora.com/20250410
- with auth_id=371
-X-Original-From: Michael Riesch <michael.riesch@collabora.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_101915_073889_E8DC6192 
-X-CRM114-Status: GOOD (  19.21  )
+Content-Disposition: inline
+In-Reply-To: <20250901055922.1553550-9-jacky_chou@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,137 +69,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: michael.riesch@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Michael Riesch <michael.riesch@collabora.com>
+On Mon, Sep 01, 2025 at 01:59:20PM +0800, Jacky Chou wrote:
+> According to PCIe specification, add FMT and TYPE definition
+> for TLP header.
+> 
+> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+> ---
+>  drivers/pci/pci.h | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+> 
+> diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
+> index 34f65d69662e..45d47d6c4f53 100644
+> --- a/drivers/pci/pci.h
+> +++ b/drivers/pci/pci.h
+> @@ -81,6 +81,18 @@ struct pcie_tlp_log;
+>  #define PCIE_MSG_CODE_DEASSERT_INTC	0x26
+>  #define PCIE_MSG_CODE_DEASSERT_INTD	0x27
+>  
+> +/* Format of TLP; PCIe r5.0, sec 2.2.1 */
 
-The RK3588 MIPI CSI-2 DPHY variant requires two reset lines. Add support
-for different sets of reset lines to the phy-rockchip-inno-csidphy driver
-as preparation for the introduction of the RK3588 variant.
+Please update to PCIe r7.0.
 
-Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-csidphy.c | 34 +++++++++++++++++++++---
- 1 file changed, 30 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-index 75533d071025..6c4ddcd7e5de 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-csidphy.c
-@@ -67,6 +67,8 @@
- #define RK1808_CSIDPHY_CLK_CALIB_EN		0x168
- #define RK3568_CSIDPHY_CLK_CALIB_EN		0x168
- 
-+#define RESETS_MAX				2
-+
- /*
-  * The higher 16-bit of this register is used for write protection
-  * only if BIT(x + 16) set to 1 the BIT(x) can be written.
-@@ -127,6 +129,8 @@ struct dphy_drv_data {
- 	const struct hsfreq_range *hsfreq_ranges;
- 	int num_hsfreq_ranges;
- 	const struct dphy_reg *grf_regs;
-+	const char *const *resets;
-+	unsigned int resets_num;
- };
- 
- struct rockchip_inno_csidphy {
-@@ -134,7 +138,8 @@ struct rockchip_inno_csidphy {
- 	void __iomem *phy_base;
- 	struct clk *pclk;
- 	struct regmap *grf;
--	struct reset_control *rst;
-+	struct reset_control_bulk_data resets[RESETS_MAX];
-+	unsigned int resets_num;
- 	const struct dphy_drv_data *drv_data;
- 	struct phy_configure_opts_mipi_dphy config;
- 	u8 hsfreq;
-@@ -174,6 +179,10 @@ static const struct hsfreq_range rk3368_mipidphy_hsfreq_ranges[] = {
- 	{1249, 0x0c}, {1349, 0x0d}, {1500, 0x0e}
- };
- 
-+static const char *const rk3368_reset_names[] = {
-+	"apb"
-+};
-+
- static void rockchip_inno_csidphy_ths_settle(struct rockchip_inno_csidphy *priv,
- 					     int hsfreq, int offset)
- {
-@@ -344,6 +353,8 @@ static const struct dphy_drv_data rk1808_mipidphy_drv_data = {
- 	.hsfreq_ranges = rk1808_mipidphy_hsfreq_ranges,
- 	.num_hsfreq_ranges = ARRAY_SIZE(rk1808_mipidphy_hsfreq_ranges),
- 	.grf_regs = rk1808_grf_dphy_regs,
-+	.resets = rk3368_reset_names,
-+	.resets_num = ARRAY_SIZE(rk3368_reset_names),
- };
- 
- static const struct dphy_drv_data rk3326_mipidphy_drv_data = {
-@@ -353,6 +364,8 @@ static const struct dphy_drv_data rk3326_mipidphy_drv_data = {
- 	.hsfreq_ranges = rk3326_mipidphy_hsfreq_ranges,
- 	.num_hsfreq_ranges = ARRAY_SIZE(rk3326_mipidphy_hsfreq_ranges),
- 	.grf_regs = rk3326_grf_dphy_regs,
-+	.resets = rk3368_reset_names,
-+	.resets_num = ARRAY_SIZE(rk3368_reset_names),
- };
- 
- static const struct dphy_drv_data rk3368_mipidphy_drv_data = {
-@@ -362,6 +375,8 @@ static const struct dphy_drv_data rk3368_mipidphy_drv_data = {
- 	.hsfreq_ranges = rk3368_mipidphy_hsfreq_ranges,
- 	.num_hsfreq_ranges = ARRAY_SIZE(rk3368_mipidphy_hsfreq_ranges),
- 	.grf_regs = rk3368_grf_dphy_regs,
-+	.resets = rk3368_reset_names,
-+	.resets_num = ARRAY_SIZE(rk3368_reset_names),
- };
- 
- static const struct dphy_drv_data rk3568_mipidphy_drv_data = {
-@@ -371,6 +386,8 @@ static const struct dphy_drv_data rk3568_mipidphy_drv_data = {
- 	.hsfreq_ranges = rk1808_mipidphy_hsfreq_ranges,
- 	.num_hsfreq_ranges = ARRAY_SIZE(rk1808_mipidphy_hsfreq_ranges),
- 	.grf_regs = rk3568_grf_dphy_regs,
-+	.resets = rk3368_reset_names,
-+	.resets_num = ARRAY_SIZE(rk3368_reset_names),
- };
- 
- static const struct of_device_id rockchip_inno_csidphy_match_id[] = {
-@@ -404,6 +421,7 @@ static int rockchip_inno_csidphy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
- 	struct phy *phy;
-+	int ret;
- 
- 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
- 	if (!priv)
-@@ -435,10 +453,18 @@ static int rockchip_inno_csidphy_probe(struct platform_device *pdev)
- 		return PTR_ERR(priv->pclk);
- 	}
- 
--	priv->rst = devm_reset_control_get(dev, "apb");
--	if (IS_ERR(priv->rst)) {
-+	if (priv->drv_data->resets_num > RESETS_MAX) {
-+		dev_err(dev, "invalid number of resets\n");
-+		return -EINVAL;
-+	}
-+	priv->resets_num = priv->drv_data->resets_num;
-+	for (unsigned int i = 0; i < priv->resets_num; i++)
-+		priv->resets[i].id = priv->drv_data->resets[i];
-+	ret = devm_reset_control_bulk_get_exclusive(dev, priv->resets_num,
-+						    priv->resets);
-+	if (ret) {
- 		dev_err(dev, "failed to get system reset control\n");
--		return PTR_ERR(priv->rst);
-+		return ret;
- 	}
- 
- 	phy = devm_phy_create(dev, NULL, &rockchip_inno_csidphy_ops);
-
--- 
-2.39.5
-
-
+> +#define PCIE_TLP_FMT_3DW_NO_DATA	0x00 /* 3DW header, no data */
+> +#define PCIE_TLP_FMT_4DW_NO_DATA	0x01 /* 4DW header, no data */
+> +#define PCIE_TLP_FMT_3DW_DATA		0x02 /* 3DW header, with data */
+> +#define PCIE_TLP_FMT_4DW_DATA		0x03 /* 4DW header, with data */
+> +
+> +/* Type of TLP; PCIe r5.0, sec 2.2.1 */
+> +#define PCIE_TLP_TYPE_CFG0_RD		0x04 /* Config Type 0 Read Request */
+> +#define PCIE_TLP_TYPE_CFG0_WR		0x04 /* Config Type 0 Write Request */
+> +#define PCIE_TLP_TYPE_CFG1_RD		0x05 /* Config Type 1 Read Request */
+> +#define PCIE_TLP_TYPE_CFG1_WR		0x05 /* Config Type 1 Write Request */
+> +
+>  extern const unsigned char pcie_link_speed[];
+>  extern bool pci_early_dump;
+>  
+> -- 
+> 2.43.0
+> 
 
 -- 
 linux-phy mailing list
