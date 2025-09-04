@@ -4,89 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B19ECA1012
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 20:39:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC759CA1002
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 02:18:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ylAPo8kvcISabG09PlDuLhSoSio9gAU37THxp0KCIHY=; b=3rrUKGswqM0fg1
-	nM3/LS4rmuFPJEG9SuskXhga6t9zy0bCT/5IM+BKna8FwvdWLWl969RPzOiBHQg0mHhSPM2RZPdgX
-	75+m4QgQhZbyl90IH+uL8fTotFBp4uDIhaiIQbfRYg9ONKtVhIVJ1vI5+/++qbx7RQ1uBda8EmWEO
-	3GCr47pOKM+XJtTlPOm/1jtAV2x/7FOe+d806gmA7I90A5JxB7yA20xcgrLZlKhbH0m/ttbkTn66L
-	XbOJbQfI17JF9U/iSZX5dgPJh2CRGvBbD83VHcsgpCiwaa4G/5K4KeV5ERV8y+wcqoBOPCqCG+zh9
-	KNB+AA65VL/x65jBhjMw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=uhq/2AG2Xt7YVrg94apo4e1RlTeSEcrEHakMV83nhVY=; b=PtAEKrhR3QKo1V7IHuwnxXwcsS
+	60o+BycO+47nDxvDTIpmX+gq7PiexJQJKgs6dtrUt/D+gemiD8nA4ykvppsO8jfyREOdxCmkfz/iW
+	AnjMEXkolF9d1W7l7DYGu/F+HTC1kV4ND/DEHabVKu7Mc48HgqpLiG+hlTIDQGaOxF8Pr8yMx5AlV
+	eGJfw7+QPKiWFDbCBAgWrRMjPX+nCwFea1llpkK5qq0w+u/isaeJIO2Bimk9JS3Xlr2QwRceYttWf
+	cO9LQxk4aHRR6QvyU7C0Flv1fB9oNk449b1r9md8uqZglJiRgaEiyRwC5MTEcNUK1DNGdpPGXPXGj
+	2iICM9ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuGkC-0000000EKUH-1b1L;
-	Thu, 04 Sep 2025 20:39:44 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uuM22-0000000G08a-2wf9;
+	Fri, 05 Sep 2025 02:18:30 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuEey-0000000DYFG-3m0V;
-	Thu, 04 Sep 2025 18:26:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1757010370;
-	bh=ue2HZsrzJ48NxpTsNI06KWQFI1W2kpk23BnWEwgmOz4=;
-	h=From:Subject:Date:To:Cc:From;
-	b=KPJKlM5yFrpBwNgauz48FGg4mkpglun08kHm53tHHhLcD5IhmPPOLXCJiPWWgE6DK
-	 jTySAO1W2oL7BAEF4EwEGvUZJfzLFgTZj+7HBRphTO3XKjYUxurqd+GmI/YqtJkkb5
-	 AOumdPydE2igzGRmIQbCK1wwlveHdqWo+9EAwvHG30XvYpsag0awo9bjhfkjonz+Hz
-	 c8NvfqPIl41V6XD5F56jIWRs+LTOAvyz/htv4rsjWo+q0zFIzVEc+mSC3/IDURtk10
-	 +VGEde3PCx71d1JcdTXDj1L1tR1Wl+tZ9Kve5KxXFPg7IF1dBNXIahVYHGetaBKKp7
-	 5/LdPZJS5O60w==
-Received: from jupiter.universe (dyndsl-091-248-191-002.ewe-ip-backbone.de [91.248.191.2])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9346C17E07FB;
-	Thu,  4 Sep 2025 20:26:10 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 3D4CE480044; Thu, 04 Sep 2025 20:26:10 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Subject: [PATCH RFC 0/2] arm64: dts: rockchip: add USB-C DP AltMode for
- ROCK 5B family
-Date: Thu, 04 Sep 2025 20:26:01 +0200
-Message-Id: <20250904-rock5b-dp-alt-mode-v1-0-23df726b31ce@collabora.com>
+	id 1uuFXK-0000000Dsm7-3OWg
+	for linux-phy@lists.infradead.org;
+	Thu, 04 Sep 2025 19:22:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id E893560247;
+	Thu,  4 Sep 2025 19:22:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BE0DC4CEF0;
+	Thu,  4 Sep 2025 19:22:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757013741;
+	bh=Lq715o4AtQ1M/Ec2GCwC/M7b+u8Q7zWIeKZ45ythTf0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=i5/eO+uE82zes/6v7IZAQJPKG2GeaZ/MF1Rt05Y9wLk0c19z8DE5XaCYEN4cnKdQs
+	 3dDQyK0kGtyMOD3Ku47SRXl96mcD6UM4YLl/+EV4lts9r37S0ykCGM4UEcFNhjZ9ZQ
+	 9kVA3oGdsftwap540m5w/ouh/vhn9vgNOe7H8HHEoYIJZ1DpgnR6DZGkojuGcauj+l
+	 ZpwWAIkbz2EgC27gO8GDyEVSifAIwxGiVzsn2EStv/3vp+x6i86OCy3YI6vng5kT4w
+	 I4GgQik3IutMUowHBejzXAdOEsdzm5GpIVrNENzbLSXQgAs0iB9n3aYaj4K/HhXiOD
+	 fViK5ZX07sPyQ==
+Date: Thu, 4 Sep 2025 20:22:16 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-kernel@vger.kernel.org, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
+Subject: Re: [PATCH phy 13/14] dt-bindings: phy: lynx-28g: add compatible
+ strings per SerDes and instantiation
+Message-ID: <20250904-molar-prune-4d3420b1bcb4@spud>
+References: <20250904154402.300032-1-vladimir.oltean@nxp.com>
+ <20250904154402.300032-14-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIALnZuWgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDI1MDSwMT3aL85GzTJN2UAt3EnBLd3PyUVN2U5LQ0I4NUC4MkgxQloMaCotS
- 0zAqwodFKQW7OSrG1tQChbSTTaQAAAA==
-X-Change-ID: 20250904-rock5b-dp-alt-mode-dcff20e80b0d
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Frank Wang <frank.wang@rock-chips.com>, 
- Zhang Yubing <yubing.zhang@rock-chips.com>
-Cc: Andy Yan <andyshrk@163.com>, 
- Maud Spierings <maud_spierings@hotmail.com>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1363;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=ue2HZsrzJ48NxpTsNI06KWQFI1W2kpk23BnWEwgmOz4=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGi52cLKcwSgQR0lM413kTDNqbzI2wLxmMTyu
- SSSzVYhPb9qGYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJoudnCAAoJENju1/PI
- O/qaCC4P/14YdPKAJ87PxwrFQqDmQc2KpPGrS7UMcqZ/n0aURdjNKF6UVR/BmtP0sBtEmQG1YUg
- L5mES0CBAYF6Ruw/ZMrfy0Ac7AYcE0dn9HnlexyKVZG6sMLUa0sdK7r5X3+S7D310dfDUzZs7hW
- OAvIxjFmWEsLVcbTzNi2iiwvQrkPLSsHHpdzfMR6aQuzI80kwAWTHC3qbmnnd89W4WhEr2OyNuC
- ZDT76XrhV+z30mUJ186hcFB/cBgmyhhU710RcYa1HWLmnc+oen4JqFjz41NpFtwek40ryS1ClHM
- gNoTCnsALQxC1dNgWORUT8T8ZtEv1qce2d1xNPCm9EW6e7QfIswIe1PE/RWFfD6wW2jLwkTTlag
- nv0KgkLdUHWm9819r6nuKkShwpD2YjO7HrRYdGChIfsgwFzpEd3kRxzcuor8Av1VWOm14x1JXvP
- u0YOeKCZG7QMv4/ovJhrdzV9Fx+2hyePOgm6yJzKsuk4qeKTZLtdCPZQUwTFiSY8RqQ6jLgC7ZO
- bfy/7MtISegaQU+hYY5Sys7wmTbmmqUL0Fv44bj83oLeqoN+7BGy5IX2inmxjqdhaa4qN7jsHGV
- B/vSR+NVlor3DHZXrBr007kVoB/Am17HifsaGaRWY0vNd4TyH/nqRloPCsV3LeOy6fOQVL/i4M4
- aenlHftrfQWaCUsvK/F03OA==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_112613_117330_BCCE7057 
-X-CRM114-Status: GOOD (  12.31  )
+In-Reply-To: <20250904154402.300032-14-vladimir.oltean@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,45 +69,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2777902202785918582=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-People started to become impatient regarding USB-C DP AltMode support on
-the RK3588 platform now that the DP controller support has been merged.
 
-I'm sending this as RFC for now, because
+--===============2777902202785918582==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="RNJ48Z5sF50vbdIN"
+Content-Disposition: inline
 
-1. I'm not sure if the binding change for rockchip-usbdp is considered
-   an ABI break. As far as I can see the Linux drivers don't need any
-   changes and combinations of kernel and DT should work. At some point
-   the kernel might rely on the new binding for some features, though.
 
-2. I've noticed USB-C DP AltMode only seems to work when the cable is
-   plugged after the system has been booted. My guess is that there
-   are some issues with the Rockchip USBDP PHY driver, but I didn't
-   have the time to track this down properly.
+--RNJ48Z5sF50vbdIN
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
-Sebastian Reichel (2):
-      dt-bindings: phy: rockchip-usbdp: add improved ports scheme
-      arm64: dts: rockchip: add USB-C DP AltMode for ROCK 5B family
+On Thu, Sep 04, 2025 at 06:44:01PM +0300, Vladimir Oltean wrote:
+> Going by the generic "fsl,lynx-28g" compatible string and expecting all
+> SerDes instantiations on all SoCs to use it was a mistake.
+>=20
+> They all share the same register map, sure, but the number of protocol
+> converters and lanes which are instantiated differs in a way that isn't
+> detectable by software. So distinguish them by compatible strings.
+> At the same time, keep "fsl,lynx-28g" as backup.
 
- .../bindings/phy/phy-rockchip-usbdp.yaml           | 23 ++++++
- .../boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi   | 83 +++++++++++++++++++---
- 2 files changed, 95 insertions(+), 11 deletions(-)
----
-base-commit: 6cc18e940db6731556843b7fa2924eb2efcef53f
-change-id: 20250904-rock5b-dp-alt-mode-dcff20e80b0d
+Why keep the backup? Doesn't sound like you can use it for anything,
+unless there's some minimum set of capabilities that all devices
+support. If that's not the case, should it not just be marked deprecated
+or removed entirely?
 
-Best regards,
--- 
-Sebastian Reichel <sebastian.reichel@collabora.com>
+>=20
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> Cc: Conor Dooley <conor+dt@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+>  .../devicetree/bindings/phy/fsl,lynx-28g.yaml     | 15 ++++++++++++---
+>  1 file changed, 12 insertions(+), 3 deletions(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Do=
+cumentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> index ff9f9ca0f19c..55d773c8d0e4 100644
+> --- a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> @@ -11,8 +11,17 @@ maintainers:
+> =20
+>  properties:
+>    compatible:
+> -    enum:
+> -      - fsl,lynx-28g
+> +    oneOf:
+> +      - items:
+> +          - const: fsl,lynx-28g
+> +      - items:
+> +          - enum:
+> +              - fsl,lx2160a-serdes1
+> +              - fsl,lx2160a-serdes2
+> +              - fsl,lx2160a-serdes3
+> +              - fsl,lx2162a-serdes1
+> +              - fsl,lx2162a-serdes2
+> +          - const: fsl,lynx-28g
+> =20
+>    reg:
+>      maxItems: 1
+> @@ -33,7 +42,7 @@ examples:
+>        #address-cells =3D <2>;
+>        #size-cells =3D <2>;
+>        serdes_1: phy@1ea0000 {
+> -        compatible =3D "fsl,lynx-28g";
+> +        compatible =3D "fsl,lx2160a-serdes1", "fsl,lynx-28g";
+>          reg =3D <0x0 0x1ea0000 0x0 0x1e30>;
+>          #phy-cells =3D <1>;
+>        };
+> --=20
+> 2.34.1
+>=20
 
+--RNJ48Z5sF50vbdIN
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaLnm5wAKCRB4tDGHoIJi
+0pErAP9yvf3WBafNeMNSZ2REiiIYTnnAkYySqATqbln4O/ZYAgD/UvrGl28vLgSC
+Z1g1U1BnJkUXXdApv5dywfEXMFCl4gA=
+=dIYP
+-----END PGP SIGNATURE-----
+
+--RNJ48Z5sF50vbdIN--
+
+
+--===============2777902202785918582==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2777902202785918582==--
+
