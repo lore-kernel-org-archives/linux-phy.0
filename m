@@ -4,110 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7539FCA1012
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 07:29:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D996CCA1012
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 07:51:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uL1k+oG3C+dMgd4RghkIGnNgBDYTwV6284UU3FFJPSI=; b=xL2gHvnBs5FGmz
-	UONP9fwf7f8X29oR9rRPA3m17ybkSzdHqU+TnFkkcO+ctMqfSU5n+T906tTizfkUraBLLIhW9r+5U
-	LU+h08Q+sgu+WHY3KA/ajaxTR5DokVZ7AmXaDILb3zcKhSJ3SeS2vX8bY5eKgWY/fmKwzyIOqOxMT
-	QaaKYrnpnYGebyS8vIeztH/6ph+kWf9sBHWP58eorgmCcNNsf48PiM2Jzys2BDzsU0pQWOuhwYD7z
-	r2iBt4go4MqFpPVB4exH7YnzVWUMByFAMU/ik2kXVBx3+n6k+S/JrQsy6ELJ91dpSPKn2eNHpMuH6
-	DmpGCGSIrP1I8BDvdnuQ==;
+	List-Owner; bh=KdPohbQLevLWLH0o78zYsqHQolDPU33hJH7iH+5YrG0=; b=E2CUxYVVTQfa8D
+	X8Lq1+uOMX+CzyU0dBCo70e6KJl8BNJZLO7OeMCLVsfVbvQcrNeRYuuW3apKbWUQnigZqHZQkSUcG
+	WUkEtgzAvwZyCWCIPSRTdAEUHOm63KNOU7XFoTOWrsovHFm5T+bvnz7sPNzOEK66IXw2vtJPLynKQ
+	VGmwnnBeZ4A38YRcu33oew4ieWFSrA22hBQ5xMpFxCLvkljoB+tOI3qsPonzymhSdtyD+436dWEns
+	Y0uSC2M0JxJxnXAaX4whPsv530eHjTROdaxtiQJcRZGMlaNe2cKpVnCyVbJ9+SIqprS6o6QLdxA2L
+	7Uj3MkaHeeqnu+3MA+sQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu4PO-00000009rtJ-0Mv2;
-	Thu, 04 Sep 2025 07:29:26 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uu4l8-0000000A0Te-2KGW;
+	Thu, 04 Sep 2025 07:51:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu47F-00000009ln0-1k2O
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 07:10:42 +0000
+	id 1uu4Pq-00000009s45-35za;
+	Thu, 04 Sep 2025 07:29:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1A65443DB5;
-	Thu,  4 Sep 2025 07:10:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA66EC4CEF0;
-	Thu,  4 Sep 2025 07:10:36 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id EC0276026D;
+	Thu,  4 Sep 2025 07:29:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E5A1C4CEF0;
+	Thu,  4 Sep 2025 07:29:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756969841;
-	bh=aIoUIGaDJsZoyrXYOkLi6ZN2KP9FMUCrU0p7BNcXSr4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=An8Kl5acras9I4lHnUieoIBo+W50Qr/If6OPd0Ib49YaWAWCdqPfiHBPy1AEWd1rd
-	 asZisBtDZA5+cJD4lFQEL/oIW91ItPvW9pO5mf7wDGOW9C/kHwbJf26hnSvnU5TDdo
-	 UkcWZG1WJKzJ1MKOK7qu8xtvFnuI6EM+T5Xl7wUP16V1Wkp8pTbtpVVEBiyXBgnNpw
-	 UkwILvr/4rgZ2v71CtSqdOhM35vD1ZmOAgCN1qnSEikm3rYdHWMSeYP4EpGJPmaClD
-	 uIraTO9JlrfoYmE4+x3XCKm9M5eer1GkvagVtwlR4OQI3fS3pTaI4VMfPmjp6ChZGa
-	 6KYuCkzKqDo0w==
-Message-ID: <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
-Date: Thu, 4 Sep 2025 09:10:34 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
- ahci
-To: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
- cassel@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- linux-ide@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org,
- linux-phy@lists.infradead.org
-Cc: ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
- linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
- fenglin@eswincomputing.com, lianghujun@eswincomputing.com
-References: <20250904063427.1954-1-luyulin@eswincomputing.com>
- <20250904063718.421-1-luyulin@eswincomputing.com>
+	s=k20201202; t=1756970993;
+	bh=eH8cDvd3H9MNJ1WHvOF2gG+uBWrtr7bwcPe6463npC4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=mBzro54aaf5Bkj6Fbxh6cMvQqaTCuRaTOGYkgsZjs88yn5wB0CP/pUhDUewAQquvd
+	 uvzDDDTu5+jqiPTGMR/wCNUPGiE6s6Ej6SLK7DHuh1JRphufwJde9wvPtscdqRlesz
+	 XmwfWzkokpHts8S1ILk/97skW1ut5htRsl5FfL1O30ArsSzKgRsfS5HZjGkUfCDPy+
+	 XelhXSCb6vQXwcyLZR0PuscvNABDMUOJ5hyQDZXh50KU0vku4FSiOQo3FfBgjVNhoi
+	 TBtjXLVuN+ZZ4YUO/eW4DNYygkHgBlh2zwb+FwVnNgMRL5LGmdCG0SAycA8Dqldc8a
+	 ouwRBhY9WmHOg==
+Date: Thu, 4 Sep 2025 09:29:51 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250904063718.421-1-luyulin@eswincomputing.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_001041_501352_F2F071B8 
-X-CRM114-Status: UNSURE (   7.03  )
-X-CRM114-Notice: Please train this message.
+To: Michael Riesch <michael.riesch@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Kever Yang <kever.yang@rock-chips.com>, Jagan Teki <jagan@amarulasolutions.com>, 
+	Sebastian Reichel <sebastian.reichel@collabora.com>, Diederik de Haas <didi.debian@cknow.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Collabora Kernel Team <kernel@collabora.com>, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v4 3/7] dt-bindings: phy: rockchip-inno-csi-dphy: add
+ rk3588 variant
+Message-ID: <20250904-space-swift-of-acumen-2fa4dc@kuoka>
+References: <20250616-rk3588-csi-dphy-v4-0-a4f340a7f0cf@collabora.com>
+ <20250616-rk3588-csi-dphy-v4-3-a4f340a7f0cf@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250616-rk3588-csi-dphy-v4-3-a4f340a7f0cf@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,57 +77,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/09/2025 08:37, Yulin Lu wrote:
-> Add document for the SATA AHCI controller on the EIC7700 SoC platform,
-
-Subject: drop "for", wrong grammar. "Document" is a verb.
-
-> including descriptions of its hardware configurations.
+On Wed, Sep 03, 2025 at 07:04:51PM +0200, Michael Riesch wrote:
+> The Rockchip RK3588 variant of the CSI-2 DPHY features two reset lines.
+> Add the variant and allow for the additional reset.
 > 
-> Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
+> While at it, fix the description of the first reset in order to avoid
+> confusion.
+> 
+> Signed-off-by: Michael Riesch <michael.riesch@collabora.com>
+> ---
+>  .../bindings/phy/rockchip-inno-csi-dphy.yaml       | 50 +++++++++++++++++++++-
+>  1 file changed, 49 insertions(+), 1 deletion(-)
 
-
-...
-
-> +
-> +maintainers:
-> +  - Yulin Lu <luyulin@eswincomputing.com>
-> +  - Huan He <hehuan1@eswincomputing.com>
-> +
-> +description:
-> +  This document defines device tree bindings for the Synopsys DWC
-
-Describe the hardware, not the document. Entire line is completely
-redundant.
-
-> +  implementation of the AHCI SATA controller found in Eswin's
-> +  Eic7700 SoC platform.
-> +
-
-
-
-...
-
-> +  clock-names:
-> +    items:
-> +      - const: pclk
-> +      - const: aclk
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: arst
-> +
-> +  ports-implemented:
-> +    const: 1
-
-I do not see how you addressed request about firmware. Nothing changed
-here, no explanation in the commit msg.
-
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
+
 
 -- 
 linux-phy mailing list
