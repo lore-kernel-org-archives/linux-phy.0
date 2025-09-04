@@ -4,79 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51B5BCA1015
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:44:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE66BCA1015
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:51:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=siQFqNUBx3t0dIENAxdawkbkggDD9qLN8vs31AY2slU=; b=coBTBaNjQCdkxi
-	JXiwDKGO4l9LW6W7d1cDsIvSVwttc08TNTWYDxOgqRulgxdCrx/joYxDUwU9IlDwF97gvODwiEjf9
-	YtiauqFw4TX6u/IyPl9XsZZPnIbMYWhKfh9LzKlIkV37n6ClWGXSqvrQS9ZRjKJeJQmlAtSIkCgtW
-	/zy6y5wRFGNKfjwxwJ8ZUtK4hdKL4bGySgvWshHL/T081CH6YQGiUG4A0k1UyZ/dB3tie/mRz2Vop
-	wkohLOGyRh0TgdZxGYLNn5InV8pF0G6Dok3yraISSCUOYvcIYTi6HGD9esozkVfWmUaJmJzL2i5bL
-	PpwLP0sxhAvtU9BR6wbg==;
+	List-Owner; bh=LtNQc6XG0XoIv4x2WwZU20rssFvX7aG7pxu4sqBiWNU=; b=i7a6AzDeECq4ZX
+	ddu7j7ezAy3235T+YRB5Uz2Uh8STgLxLxuq4jUaI6fGsiY/ptMK3WVP+ZziPBajQhc2YlqcmELKzM
+	dri7X9zWJ2qQ0XxheE2Y2wLn36X5CxL+0uQuXmZqh8oHGPz6Jm1u9+EzXLPC+PO1OlpgaTXtMu+Gd
+	ACriCoxgW335oN3G5+KAMP0hzPyc+Atsxz5856rbb/smwgJ+x30D7arqyjRPfilltP5znLzhgLRzT
+	wj7on/MCqDGYsaH9gU7m3jOl0zECUUzqmtN0bbFQkOVoXlM9te7n95jfoDZTpLrkJhrLp5VOJev1q
+	mWLcJKcGKlvOAKlsY9Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3hc-00000009cP8-0H8L;
-	Thu, 04 Sep 2025 06:44:12 +0000
-Received: from azure-sdnproxy.icoremail.net ([13.75.44.102])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3cf-00000009aJz-24V5
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 06:39:06 +0000
-Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
-	by app2 (Coremail) with SMTP id TQJkCgCHJpUANLlocUvIAA--.53346S2;
-	Thu, 04 Sep 2025 14:38:59 +0800 (CST)
-From: Yulin Lu <luyulin@eswincomputing.com>
-To: dlemoal@kernel.org,
-	cassel@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	linux-phy@lists.infradead.org
-Cc: ningyu@eswincomputing.com,
-	zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com,
-	huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com,
-	lianghujun@eswincomputing.com,
-	Yulin Lu <luyulin@eswincomputing.com>
-Subject: [PATCH v3 3/3] phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
-Date: Thu,  4 Sep 2025 14:38:53 +0800
-Message-Id: <20250904063853.1546-1-luyulin@eswincomputing.com>
-X-Mailer: git-send-email 2.31.1.windows.1
-In-Reply-To: <20250904063427.1954-1-luyulin@eswincomputing.com>
-References: <20250904063427.1954-1-luyulin@eswincomputing.com>
+	id 1uu3oJ-00000009eNq-2FTH;
+	Thu, 04 Sep 2025 06:51:07 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uu3la-00000009djw-0Pix;
+	Thu, 04 Sep 2025 06:48:18 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id E8CE3601A4;
+	Thu,  4 Sep 2025 06:48:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 107DBC4CEF0;
+	Thu,  4 Sep 2025 06:48:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1756968496;
+	bh=WyIvrOVDNWf5X8qTZLswd5dlm0L7vHB640A5eFNHu8Y=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=VKF40z36T6RfMUh5C1AQd4nbgMrAgm0MeJh780thFPYJbKuSL0apzCOU7eP15cHUK
+	 kKm5/Dejsjsy6TfPgf0zobV/ssA91J8UYmFvtpaRcUAWot99NvbxHuzx1JQEGKFI58
+	 QiiL0ok7G5sQSlo8yvQkPEQuS88rzE1HcgPzWmNuI1Ito7lyj/jVpZ4v3jh3HHOZYA
+	 SbnveT0uf1mhQkjGNzzBPrZiVfd1dH5QTeAL8Sj8fmkJFB/mA1ig3njRVkWqUw2Xbg
+	 iEaN3gGOGDzF2JpzLMRwW1iT1xPXR8bgc1/8gSlkA+U/icaAippFP4/wLerAesmnDW
+	 GWNpLB3ZFLi5Q==
+Date: Thu, 4 Sep 2025 08:48:14 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, alim.akhtar@samsung.com, 
+	andre.draszik@linaro.org, peter.griffin@linaro.org, kauschluss@disroot.org, 
+	ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org, m.szyprowski@samsung.com, 
+	s.nawrocki@samsung.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com, dev.tailor@samsung.com, 
+	faraz.ata@samsung.com, muhammed.ali@samsung.com, selvarasu.g@samsung.com
+Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+Message-ID: <20250904-interesting-lovely-ringtail-38bbef@kuoka>
+References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
+ <CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
+ <20250903073827.3015662-2-pritam.sutar@samsung.com>
 MIME-Version: 1.0
-X-CM-TRANSID: TQJkCgCHJpUANLlocUvIAA--.53346S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxtF43tw4rZw4rGw1fAr45Awb_yoWfAry8pF
-	4DCFyUWrWktF47Ka93J3WqyF13GrnFqrya9FyDKasIvFW3Jr18Za9Iqa95tFn0vrn7X3yU
-	K3sYqFy7Ga15Aw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9C14x267AKxVW5JVWrJwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jrv_JF1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
-	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_GFv_Wrylc2xSY4AK6svPMxAIw28IcxkI7VAKI48JMx
-	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
-	wI0_JrI_JrWlx4CE17CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
-	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWxJVW8Jr1lIxAIcVCF04k26cxK
-	x2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI
-	0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0pRJPE-UUUUU=
-X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_233905_698676_04CE5CA0 
-X-CRM114-Status: GOOD (  22.15  )
+Content-Disposition: inline
+In-Reply-To: <20250903073827.3015662-2-pritam.sutar@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,286 +77,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Created the eswin phy driver directory and added support for
-the SATA phy driver on the EIC7700 SoC platform.
+On Wed, Sep 03, 2025 at 01:08:22PM +0530, Pritam Manohar Sutar wrote:
+> Document support for the USB20 phy found on the ExynosAutov920 SoC. The
+> USB20 phy is functionally identical to that on the Exynos850 SoC, so no
+> driver changes are needed to support this phy. However, add a dedicated
+> compatible string for USB20 phy found in this SoC.
+> 
+> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 
-Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
----
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/eswin/Kconfig            |  14 ++
- drivers/phy/eswin/Makefile           |   2 +
- drivers/phy/eswin/phy-eic7700-sata.c | 205 +++++++++++++++++++++++++++
- 5 files changed, 223 insertions(+)
- create mode 100644 drivers/phy/eswin/Kconfig
- create mode 100644 drivers/phy/eswin/Makefile
- create mode 100644 drivers/phy/eswin/phy-eic7700-sata.c
+You just dropped all tags without explaining why.
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 58c911e1b2d2..e82ebcfe534a 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -105,6 +105,7 @@ source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
-+source "drivers/phy/eswin/Kconfig"
- source "drivers/phy/freescale/Kconfig"
- source "drivers/phy/hisilicon/Kconfig"
- source "drivers/phy/ingenic/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index c670a8dac468..ed7444949259 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -17,6 +17,7 @@ obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
- 					   cadence/	\
-+					   eswin/	\
- 					   freescale/	\
- 					   hisilicon/	\
- 					   ingenic/	\
-diff --git a/drivers/phy/eswin/Kconfig b/drivers/phy/eswin/Kconfig
-new file mode 100644
-index 000000000000..3fcd76582c3b
---- /dev/null
-+++ b/drivers/phy/eswin/Kconfig
-@@ -0,0 +1,14 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+#
-+# Phy drivers for Eswin platforms
-+#
-+config PHY_EIC7700_SATA
-+	tristate "eic7700 Sata SerDes/PHY driver"
-+	depends on ARCH_ESWIN || COMPILE_TEST
-+	depends on HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support SerDes/Phy found on ESWIN's
-+	  EIC7700 SoC.This Phy supports SATA 1.5 Gb/s,
-+	  SATA 3.0 Gb/s, SATA 6.0 Gb/s speeds.
-+	  It supports one SATA host port to accept one SATA device.
-diff --git a/drivers/phy/eswin/Makefile b/drivers/phy/eswin/Makefile
-new file mode 100644
-index 000000000000..db08c66be812
---- /dev/null
-+++ b/drivers/phy/eswin/Makefile
-@@ -0,0 +1,2 @@
-+# SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_EIC7700_SATA)	+= phy-eic7700-sata.o
-diff --git a/drivers/phy/eswin/phy-eic7700-sata.c b/drivers/phy/eswin/phy-eic7700-sata.c
-new file mode 100644
-index 000000000000..cf97365bf841
---- /dev/null
-+++ b/drivers/phy/eswin/phy-eic7700-sata.c
-@@ -0,0 +1,205 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * ESWIN SATA PHY driver
-+ *
-+ * Copyright 2024, Beijing ESWIN Computing Technology Co., Ltd..
-+ * All rights reserved.
-+ *
-+ * Authors: Yulin Lu <luyulin@eswincomputing.com>
-+ */
-+
-+#include <linux/io.h>
-+#include <linux/bitfield.h>
-+#include <linux/delay.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+
-+#define SATA_CLK_CTRL				0x0
-+#define SATA_AXI_LP_CTRL			0x08
-+#define SATA_MPLL_CTRL				0x20
-+#define SATA_P0_PHY_STAT			0x24
-+#define SATA_PHY_CTRL0				0x28
-+#define SATA_PHY_CTRL1				0x2c
-+#define SATA_REG_CTRL				0x34
-+#define SATA_REF_CTRL1				0x38
-+#define SATA_LOS_IDEN				0x3c
-+#define SATA_RESET_CTRL				0x40
-+
-+#define SATA_SYS_CLK_EN				BIT(28)
-+#define SATA_PHY_RESET				BIT(0)
-+#define SATA_PORT_RESET				BIT(1)
-+#define SATA_CLK_RST_SOURCE_PHY			BIT(0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK	GENMASK(6, 0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK	GENMASK(14, 8)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK	GENMASK(22, 16)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN1_MASK	GENMASK(5, 0)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN2_MASK	GENMASK(13, 8)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN3_MASK	GENMASK(21, 16)
-+#define SATA_LOS_LEVEL_MASK			GENMASK(4, 0)
-+#define SATA_LOS_BIAS_MASK			GENMASK(18, 16)
-+#define SATA_M_CSYSREQ				BIT(0)
-+#define SATA_S_CSYSREQ				BIT(16)
-+#define SATA_REF_REPEATCLK_EN			BIT(0)
-+#define SATA_REF_USE_PAD			BIT(20)
-+#define SATA_MPLL_MULTIPLIER_MASK		GENMASK(22, 16)
-+#define SATA_P0_PHY_READY			BIT(0)
-+
-+#define PHY_READY_TIMEOUT			(usecs_to_jiffies(4000))
-+
-+struct eic7700_sata_phy {
-+	struct phy *phy;
-+	void __iomem *regs;
-+};
-+
-+static int wait_for_phy_ready(void __iomem *base, u32 reg, u32 checkbit,
-+			      u32 status)
-+{
-+	unsigned long start = jiffies;
-+	unsigned long timeout = start + PHY_READY_TIMEOUT;
-+
-+	while (time_before(start, timeout)) {
-+		if ((readl(base + reg) & checkbit) == status)
-+			return 0;
-+		usleep_range(50, 70);
-+	}
-+
-+	return -EFAULT;
-+}
-+
-+static int eic7700_sata_phy_init(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	/*
-+	 * The SATA_CLK_CTRL register offset controls the pmalive, rxoob,
-+	 * and rbc clocks gate provided by the PHY through the HSP bus,
-+	 * and it is not registered in the clock tree.
-+	 */
-+	val = readl(sata_phy->regs + SATA_CLK_CTRL);
-+	val |= SATA_SYS_CLK_EN;
-+	writel(val, sata_phy->regs + SATA_CLK_CTRL);
-+
-+	writel(SATA_CLK_RST_SOURCE_PHY, sata_phy->regs + SATA_REF_CTRL1);
-+	writel(FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK, 0x42) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK, 0x46) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK, 0x73),
-+	       sata_phy->regs + SATA_PHY_CTRL0);
-+	writel(FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN1_MASK, 0x5) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN2_MASK, 0x5) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN3_MASK, 0x8),
-+	       sata_phy->regs + SATA_PHY_CTRL1);
-+	writel(FIELD_PREP(SATA_LOS_LEVEL_MASK, 0x9) |
-+	       FIELD_PREP(SATA_LOS_BIAS_MASK, 0x2),
-+	       sata_phy->regs + SATA_LOS_IDEN);
-+	writel(SATA_M_CSYSREQ | SATA_S_CSYSREQ,
-+	       sata_phy->regs + SATA_AXI_LP_CTRL);
-+	writel(SATA_REF_REPEATCLK_EN | SATA_REF_USE_PAD,
-+	       sata_phy->regs + SATA_REG_CTRL);
-+	writel(FIELD_PREP(SATA_MPLL_MULTIPLIER_MASK, 0x3c),
-+	       sata_phy->regs + SATA_MPLL_CTRL);
-+	usleep_range(15, 20);
-+
-+	/*
-+	 * The SATA_RESET_CTRL register offset controls reset/deassert
-+	 * for both the port and the PHY through the HSP bus,
-+	 * and it is not registered in the reset tree.
-+	 */
-+	val = readl(sata_phy->regs + SATA_RESET_CTRL);
-+	val &= ~(SATA_PHY_RESET | SATA_PORT_RESET);
-+	writel(val, sata_phy->regs + SATA_RESET_CTRL);
-+
-+	ret = wait_for_phy_ready(sata_phy->regs, SATA_P0_PHY_STAT,
-+				 SATA_P0_PHY_READY, 1);
-+	if (ret < 0)
-+		dev_err(&sata_phy->phy->dev,
-+			"PHY READY check failed\n");
-+	return ret;
-+}
-+
-+static int eic7700_sata_phy_exit(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	u32 val;
-+
-+	val = readl(sata_phy->regs + SATA_RESET_CTRL);
-+	val |= SATA_PHY_RESET | SATA_PORT_RESET;
-+	writel(val, sata_phy->regs + SATA_RESET_CTRL);
-+
-+	val = readl(sata_phy->regs + SATA_CLK_CTRL);
-+	val &= ~SATA_SYS_CLK_EN;
-+	writel(val, sata_phy->regs + SATA_CLK_CTRL);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops eic7700_sata_phy_ops = {
-+	.init		= eic7700_sata_phy_init,
-+	.exit		= eic7700_sata_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int eic7700_sata_phy_probe(struct platform_device *pdev)
-+{
-+	struct eic7700_sata_phy *sata_phy;
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *phy_provider;
-+	u32 val;
-+	int ret;
-+
-+	sata_phy = devm_kzalloc(dev, sizeof(*sata_phy), GFP_KERNEL);
-+	if (!sata_phy)
-+		return -ENOMEM;
-+
-+	sata_phy->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(sata_phy->regs))
-+		return PTR_ERR(sata_phy->regs);
-+
-+	dev_set_drvdata(dev, sata_phy);
-+
-+	sata_phy->phy = devm_phy_create(dev, NULL, &eic7700_sata_phy_ops);
-+	if (IS_ERR(sata_phy->phy)) {
-+		dev_err(dev, "failed to create PHY\n");
-+		ret = PTR_ERR(sata_phy->phy);
-+		goto clk_disable;
-+	}
-+
-+	phy_set_drvdata(sata_phy->phy, sata_phy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider)) {
-+		ret = PTR_ERR(phy_provider);
-+		goto clk_disable;
-+	}
-+
-+	return 0;
-+
-+clk_disable:
-+	val = readl(sata_phy->regs + SATA_CLK_CTRL);
-+	val &= ~SATA_SYS_CLK_EN;
-+	writel(val, sata_phy->regs + SATA_CLK_CTRL);
-+
-+	return ret;
-+}
-+
-+static const struct of_device_id eic7700_sata_phy_of_match[] = {
-+	{ .compatible = "eswin,eic7700-sata-phy" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, eic7700_sata_phy_of_match);
-+
-+static struct platform_driver eic7700_sata_phy_driver = {
-+	.probe	= eic7700_sata_phy_probe,
-+	.driver = {
-+		.of_match_table	= eic7700_sata_phy_of_match,
-+		.name  = "eic7700-sata-phy",
-+	}
-+};
-+module_platform_driver(eic7700_sata_phy_driver);
-+
-+MODULE_DESCRIPTION("SATA PHY driver for the ESWIN EIC7700 SoC");
-+MODULE_AUTHOR("Yulin Lu <luyulin@eswincomputing.com>");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
+<form letter>
+This is a friendly reminder during the review process.
+
+It looks like you received a tag and forgot to add it.
+
+If you do not know the process, here is a short explanation:
+Please add Acked-by/Reviewed-by/Tested-by tags when posting new
+versions of patchset, under or above your Signed-off-by tag, unless
+patch changed significantly (e.g. new properties added to the DT
+bindings). Tag is "received", when provided in a message replied to you
+on the mailing list. Tools like b4 can help here. However, there's no
+need to repost patches *only* to add the tags. The upstream maintainer
+will do that for tags received on the version they apply.
+
+Please read:
+https://elixir.bootlin.com/linux/v6.12-rc3/source/Documentation/process/submitting-patches.rst#L577
+
+If a tag was not added on purpose, please state why and what changed.
+</form letter>
+
+Best regards,
+Krzysztof
 
 
 -- 
