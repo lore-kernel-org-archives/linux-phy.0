@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2EBECA1015
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:41:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A48CCA1012
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:44:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E3csS2KLkoPNVz+3J+p0/bqAlY5TjuRKH1mCdqwLsNc=; b=PVsEe1FkmPtAdr
-	4/2lJJbVV0tavGuB3RIL3qb7loWPqLjTc3zmnyOBU+rDt1FXZFbQ5jafbgZCGeEOxUQxqlR5UlawX
-	l7TpAUgE+7lGvbjGSlTFZodZGp1o7Qqs6mehbsnuQXb0MRu/5AUlQ+2tEi6mx77giqOhUtQStOeRT
-	bK6TNROu6+G9GJkaa+Yah9ZRuzEB5Zya6iDi2asgaLGHCbEExxK5oQLxr7j5oc5/H1SBZe03Ie2Fs
-	HRucirNppNyv6zeduE18rCdI7MrvCBQML2jXC0q/A7gXd2WGLCa82CQvnLYnE/L5kdRwMPqXoDJ2P
-	1a0gQ4n71/rBDLjTY9tA==;
+	List-Owner; bh=pxGOOspm1sTCbznzTg/dy+uco0/52/JJkRBGT2923Ic=; b=ajltCVa5YQKZdG
+	5ZhwmcjNvnl0rl6holNaI6mVrYJoocgEeRrZs3J028g1uhUTCVj8fqBCCmQdLMC5sTcnjCdhkUO+l
+	anQX/tCZ1ozsYO+p14qTaT56KNFYFgUSBMzaA57M9KD6i68MfMooy1FVwqp35WRaBnewMP+cHWIHu
+	pEDk8cTfxzstZdTWPBL2azV/u9Zhn7hDRQZyTXZxCUP4JhIFC1YuTMl+P5JoT+Pd6hLHZLQgOEZnN
+	LI26NZlbBRqOFFfR1GefeJ/bqykEyDUjDrsS/41WzYfQfcRz9sbPMhr1cav4yDauW1L+s19FtbTy2
+	2yIwqMkWewXLMPe1uKjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3es-00000009bQZ-39e2;
-	Thu, 04 Sep 2025 06:41:22 +0000
-Received: from l-sdnproxy.icoremail.net ([20.188.111.126] helo=azure-sdnproxy.icoremail.net)
+	id 1uu3hb-00000009cOt-3MIv;
+	Thu, 04 Sep 2025 06:44:11 +0000
+Received: from zg8tmja2lje4os43os4xodqa.icoremail.net ([206.189.79.184])
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3bA-00000009ZpM-2x7h
+	id 1uu3c2-00000009a2g-2wNX
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 06:37:34 +0000
+	Thu, 04 Sep 2025 06:38:28 +0000
 Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
-	by app2 (Coremail) with SMTP id TQJkCgCHJpWkM7loOUvIAA--.53344S2;
-	Thu, 04 Sep 2025 14:37:27 +0800 (CST)
+	by app1 (Coremail) with SMTP id TAJkCgDn_Q7ZM7loFFDIAA--.33248S2;
+	Thu, 04 Sep 2025 14:38:19 +0800 (CST)
 From: Yulin Lu <luyulin@eswincomputing.com>
 To: dlemoal@kernel.org,
 	cassel@kernel.org,
@@ -49,34 +49,34 @@ Cc: ningyu@eswincomputing.com,
 	fenglin@eswincomputing.com,
 	lianghujun@eswincomputing.com,
 	Yulin Lu <luyulin@eswincomputing.com>
-Subject: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC ahci
-Date: Thu,  4 Sep 2025 14:37:18 +0800
-Message-Id: <20250904063718.421-1-luyulin@eswincomputing.com>
+Subject: [PATCH v3 2/3] dt-bindings: phy: eswin: Document for EIC7700 SoC SATA PHY
+Date: Thu,  4 Sep 2025 14:38:15 +0800
+Message-Id: <20250904063815.1537-1-luyulin@eswincomputing.com>
 X-Mailer: git-send-email 2.31.1.windows.1
 In-Reply-To: <20250904063427.1954-1-luyulin@eswincomputing.com>
 References: <20250904063427.1954-1-luyulin@eswincomputing.com>
 MIME-Version: 1.0
-X-CM-TRANSID: TQJkCgCHJpWkM7loOUvIAA--.53344S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7Kr4UAw4rWw48JrW5Zw1DZFb_yoW8tFy3pF
-	s7GrZrJF4SgryxXay8GF10kF1ftws7CF1Ykr97J3WUKFWqgasYqrsIk3W5Aa47Jw1xXa43
-	XFyagw1ayw42vrJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9G14x267AKxVW5JVWrJwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+X-CM-TRANSID: TAJkCgDn_Q7ZM7loFFDIAA--.33248S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7ur15Ww4xXw1rWFyUXF4DCFg_yoW8GFy3pa
+	1kGrykWFnaqr1Ik39xJ3W0kF13Jws7uFWYvrs7K3WUtrn8J3Z5ta1ak3WYv3WUAF48Way5
+	XFZIga43Aw4UA3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUU9C14x267AKxVW5JVWrJwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
 	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
 	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
 	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
 	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_JrI_JrylYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
+	2Ix0cI8IcVAFwI0_Jrv_JF1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
 	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
 	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_GFv_Wrylc2xSY4AK6svPMxAIw28IcxkI7VAKI48JMx
 	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
 	wI0_JrI_JrWlx4CE17CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
-	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v2
-	0xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxV
-	W8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7sRRKZX5UUUUU==
+	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWxJVW8Jr1lIxAIcVCF04k26cxK
+	x2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI
+	0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0pRJPE-UUUUU=
 X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_233733_106138_A0C65BC0 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20250903_233826_780539_11A53D6B 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,100 +94,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add document for the SATA AHCI controller on the EIC7700 SoC platform,
-including descriptions of its hardware configurations.
+Add document for the SATA phy on the EIC7700 SoC platform,
+describing its usage.
 
 Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
 ---
- .../bindings/ata/eswin,eic7700-ahci.yaml      | 80 +++++++++++++++++++
- 1 file changed, 80 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/ata/eswin,eic7700-ahci.yaml
+ .../bindings/phy/eswin,eic7700-sata-phy.yaml  | 36 +++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/ata/eswin,eic7700-ahci.yaml b/Documentation/devicetree/bindings/ata/eswin,eic7700-ahci.yaml
+diff --git a/Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml b/Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
 new file mode 100644
-index 000000000000..9266f8f2543e
+index 000000000000..d914cb4402d8
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/ata/eswin,eic7700-ahci.yaml
-@@ -0,0 +1,80 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++++ b/Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
+@@ -0,0 +1,36 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/ata/eswin,eic7700-ahci.yaml#
++$id: http://devicetree.org/schemas/phy/eswin,eic7700-sata-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Eswin EIC7700 SoC SATA Controller
++title: Eswin EIC7700 SoC SATA PHY
 +
 +maintainers:
 +  - Yulin Lu <luyulin@eswincomputing.com>
 +  - Huan He <hehuan1@eswincomputing.com>
 +
-+description:
-+  This document defines device tree bindings for the Synopsys DWC
-+  implementation of the AHCI SATA controller found in Eswin's
-+  Eic7700 SoC platform.
-+
-+select:
-+  properties:
-+    compatible:
-+      const: eswin,eic7700-ahci
-+  required:
-+    - compatible
-+
-+allOf:
-+  - $ref: snps,dwc-ahci-common.yaml#
-+
 +properties:
 +  compatible:
-+    items:
-+      - const: eswin,eic7700-ahci
-+      - const: snps,dwc-ahci
++    const: eswin,eic7700-sata-phy
 +
-+  clocks:
-+    minItems: 2
-+    maxItems: 2
++  "#phy-cells":
++    const: 0
 +
-+  clock-names:
-+    items:
-+      - const: pclk
-+      - const: aclk
-+
-+  resets:
++  reg:
 +    maxItems: 1
-+
-+  reset-names:
-+    const: arst
-+
-+  ports-implemented:
-+    const: 1
 +
 +required:
 +  - compatible
++  - "#phy-cells"
 +  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - phys
-+  - phy-names
-+  - ports-implemented
 +
-+unevaluatedProperties: false
++additionalProperties: false
 +
 +examples:
 +  - |
-+    sata@50420000 {
-+        compatible = "eswin,eic7700-ahci", "snps,dwc-ahci";
-+        reg = <0x50420000 0x10000>;
-+        interrupt-parent = <&plic>;
-+        interrupts = <58>;
-+        clocks = <&clock 171>, <&clock 186>;
-+        clock-names = "pclk", "aclk";
-+        phys = <&sata_phy>;
-+        phy-names = "sata-phy";
-+        ports-implemented = <0x1>;
-+        resets = <&reset 96>;
-+        reset-names = "arst";
++    sata-phy@50440300 {
++        compatible = "eswin,eic7700-sata-phy";
++        reg = <0x50440300 0x40>;
++        #phy-cells = <0>;
 +    };
 -- 
 2.25.1
