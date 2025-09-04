@@ -4,106 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5AD8CA101C
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:52:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AF3ECA1015
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 06:56:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rNFO6cLOjSF27e6Ylj3Y1VhcGqSA5HWwRnJsqBG9JHQ=; b=BOOrFHLfBLiO91
-	CjGjyo4dixRaR0EVeOAnhXWTOxyi9EjWGED8hz04epsImtvNwWQE/qzBWi1pF3pC7INwTkuYfZHlh
-	K238kVWLi7rgM/z7zwRLQ1EOWuun7Ial9yBJKartAltUmD0WesoEbqUOGp83JYcVvWeACt5G1GtAd
-	Aoaw53PGI7k+PW1W/1NvSNpI+b3Vqt7X9rZ4ZJPQByjeX9dR6VnxLmz0J3jySoLQ1RqRuSh69bFw3
-	PwRIWE8VDcHLQeNSc/zl7t95eRgCSRvzDla/qPsq6oM0PkVBigDVe7dYMC8FaN1ElTMShHec644M+
-	QuuUOTBSSrw3SB4Psdcg==;
+	List-Owner; bh=4wIF8AzTO1UEYQv26Bnm4eFXxAhR1n8OVO/m66izlEg=; b=TNuYoOexfKAPU9
+	KnOmiVO3daeDIoNnhhM5IrXNa1DRZRrqM/mKoKY9G/E9+EUIokigM5jOuyYY3paufbhjezwd3zrBv
+	rYrKnlsHuGh43wDP/eL4GkiVs4M/vZUHtLbBEz4wzVprgVvzSioEq8n+d3dTb04cBEHb1VX3zrZhZ
+	uJgf+PVyw9WPnkEDXS209b/s9kgRZcAEQsoozWCgzZXuSQbWiOeEf9Pe3ooW9VRjczkNm4dGQuVIM
+	/mUEhggDWv1hFOYTR1MgzqYuiGgx4QzFX55PZUYhtH7v/fHGYf8mO/iktkbq4zfnROXjEAg241y3F
+	Wf21umL45s4j4SXCy/dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3py-00000009eqO-2JXR;
-	Thu, 04 Sep 2025 06:52:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uu3tQ-00000009gGY-1gCK;
+	Thu, 04 Sep 2025 06:56:24 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu3pu-00000009emr-1jPS
+	id 1uu3tO-00000009gEY-0agn
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 06:52:48 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5841ZnND017552;
-	Thu, 4 Sep 2025 06:52:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=ShvfqUKiwT9ZBAvm/aHo7/nEYaAn/E/Q0Vx
-	P5kLXaiw=; b=eKkByZlUwtyAPzIH0dHWq/jqdDHEp6kCBs53SRaKzirc9Vyq2J9
-	cxGZTTJGKsjulfAV1FGvcczxPThM6Bgox013pkx4irpA+WY6SXKpifp8ZWlZ5C4h
-	erV4mAtWNLClEmCj8zmLPqaW2mcFwCUZ/LJikJy+V7Tj6WFvcIk8r82dJO1MJrQO
-	qpa3fW7GLgBy1lAS2a19smnnFGwywbgYt8JYJaxiGrdRp3VIyeGGKJeWfDIXRwj0
-	xFrV0mByddjU3HNSEcJ6r8a5nAJkllWNwCNp8+bO+OeaxU7JUCCDlYArS2x8ImYh
-	i4mt7ADYyKTJ5bnrvtYEw4rnOWHosh7rFuw==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 48xmxj31s7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 Sep 2025 06:52:37 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 5846qZWV016337;
-	Thu, 4 Sep 2025 06:52:35 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 48utcmhjct-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 Sep 2025 06:52:35 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 5846qYQM016326;
-	Thu, 4 Sep 2025 06:52:35 GMT
-Received: from ziyuzhan-gv.ap.qualcomm.com (ziyuzhan-gv.qualcomm.com [10.64.66.102])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 5846qYEg016323
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 04 Sep 2025 06:52:34 +0000
-Received: by ziyuzhan-gv.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 187CA51C; Thu,  4 Sep 2025 14:52:33 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v6 0/3] Add Equalization Settings for 8.0 GT/s and 32.0 GT/s and Add PCIe Lane Equalization Preset Properties for 8.0 GT/s and 16.0 GT/s
-Date: Thu,  4 Sep 2025 14:52:22 +0800
-Message-ID: <20250904065225.1762793-1-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.43.0
+	Thu, 04 Sep 2025 06:56:23 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-3e07ffffb87so212230f8f.2
+        for <linux-phy@lists.infradead.org>; Wed, 03 Sep 2025 23:56:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1756968980; x=1757573780; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=A7W+MHt4m6RVZcMRRD040CxW9PQRGlDxO7dLPVoTn8U=;
+        b=U9tSVHKXePK67Wr04irkElX+4505JBHSZndUcgxnTurylAiLNGdTs/IZF45BOiScUC
+         1ywGu0Yhcg/txYt+dkys48iuMVQKLs6yNhHShAFVok4EnzH74qIgjaeR3ApbndcS9cL2
+         YxCSGlE0OEO/3S9cUqfugIEayBUH93L281X/EM4rf92bzv7eWJ6/wqigJYn8nUTlbqaP
+         xlegU2ulED8g3uBjWxpB2da9ccW8dJRJsZr0VSMm0f0azKkM6cqIaH+D8kX64i6381OL
+         Yc9eljnfXk38naZi0i2/LdatruwNAZqtOlyGyw1NkqMuSQrYO7jR0uXtaASch/Nqcf5r
+         R9lw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756968980; x=1757573780;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=A7W+MHt4m6RVZcMRRD040CxW9PQRGlDxO7dLPVoTn8U=;
+        b=fXyF1K0HY4y7ijow9CDrE+trLXXyygffv0WHS/8pEX6tVUr9FhoqV/092JwQNaw0gG
+         c7v+00JmAp5shJWYrSxD8ondzB4hMl7H76Lf3QwG9I5cENd6wD51PmFfdY2EbDUGvUGS
+         AJ/992OaCJx/BxbIHroW+99AtwthCqFhu2zmcl/jWdPPTB50IIIhnGpbQkwjDbc1ZSEY
+         pXGUvNYG3X8b2eJ3q47HNL9DvFxqwf1685jeacgs+Ax1NzoQ1tKPpj/+7lZ417eBb8f+
+         4YwJUPgKCVsKatR3vFsO/1ZWhsHRHyGTkJwKIZkRymVWae+JAxHXreNakpM3XXwLmPJj
+         waUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXMr3hRZcr99BUDkkj/q83ujM/Qt4hHuG3jKchEjRxj9I2+cU6vwMlB5XP96dIZaRCK1ihH7ulBO/4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzv3WQ40WKOiT8Eutx0eoY0ybuy7NMy8QiNWOFjixgw/mYvAS2g
+	uv6vlyfBd2CgnNSNZIlsXxGvVo0dyXKrK+zBj8onxzLzCziJwbRPjFATD5ADDPLzC1U=
+X-Gm-Gg: ASbGncvQv9ItxmUgtMHeHImyIE+QiW/LNMhIyxA+Rqf99JL2jU5DzF4nAb9uR+GU2Th
+	7UuUPmNQ66ZCDH+VDCdM2l04CwXqhaC6EWaTfRqef/HnvCzhFG1Ljy+TAELchyxWg/HqlhS2DA3
+	hC2Mz1Q99wPB8SX2YWYfXi9p1uL2R4coeXrUepkMrBI6ZFJdk/5SaF782NJmEWTMhU/ihueKc2A
+	MOsnhefuZdk+sG5MkqXhY/oNuYJGf/4iKaZXrwNPro7B+s1fArIoKsOj39NFw3/XUMUCgFsNV5i
+	bHgSLEJM/Jq03iOorx8HaggCo7xElttB2O3cSCUnZK/KzSYhpJfJsD2Ld1Vvni0UZpGzdA0Epqr
+	mTnsM47d9yfVhEqGyUeI5NBE=
+X-Google-Smtp-Source: AGHT+IHrlWEGIp2jfPvPNYCuVdAm78L04cC7Ows1hq2QFUYr3F3uBfqzroHI+RRBQ1DT0GzNgdWAmw==
+X-Received: by 2002:a05:6000:2410:b0:3d8:e1de:7e4f with SMTP id ffacd0b85a97d-3d8e1edc849mr7713856f8f.21.1756968980518;
+        Wed, 03 Sep 2025 23:56:20 -0700 (PDT)
+Received: from hackbox.lan ([86.121.170.194])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3d701622b92sm15256075f8f.58.2025.09.03.23.56.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 03 Sep 2025 23:56:19 -0700 (PDT)
+From: Abel Vesa <abel.vesa@linaro.org>
+Subject: [PATCH 0/3] phy: qcom: edp: Add support for Glymur platform
+Date: Thu, 04 Sep 2025 09:55:50 +0300
+Message-Id: <20250904-phy-qcom-edp-add-glymur-support-v1-0-e83c6b9a145b@linaro.org>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTAzMDExNyBTYWx0ZWRfXyfnAjN4vVhD9
- 9c7vMbN9u97VPReMY9o9nQoOh+pQmef+14Cm1FJWbLBuJembSN0L0jBq6l26d3z1IzAzCdTNvvB
- gImYulOYRKW2D4RJsSpZ4yDhZylMsBqBoSGZIywo19h94aIJ/ItSJb2hu00GztvqpogHfn8Ryff
- ChmEALK+CTYdmPVERHZ6AgklA+glXJaYTEGmQLUoCR69MEZIFdhS5ForiTBljkQIr0isLy7DJQU
- bqqsM+W06E4Y6HQtpdGinPr6ioS+xrm9p7PtzIni4z0JMt9UmR/zOmEKg/x/gFE6+/TIqr+UQN7
- ghx8nlT/6DNZwNciOUKLya+pV8WpKLYF8x4rBUpPREtnEDsf6xsJPGKfdQK6yXsm1t3tgjt0G0a
- EFZ7HPn6
-X-Authority-Analysis: v=2.4 cv=a5cw9VSF c=1 sm=1 tr=0 ts=68b93735 cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8
- a=86bffDG3X0gLe1KFPuUA:9 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: kVNBCdZ9dKbyxkZiL8WJT9dZNLzNT4d-
-X-Proofpoint-ORIG-GUID: kVNBCdZ9dKbyxkZiL8WJT9dZNLzNT4d-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-04_02,2025-08-28_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 clxscore=1015 bulkscore=0 priorityscore=1501
- phishscore=0 impostorscore=0 adultscore=0 spamscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2509030117
+X-B4-Tracking: v=1; b=H4sIAPY3uWgC/x3NwQ6CMAyA4VchPdtkmyEyX8V4mLRCE2G1EwMhv
+ LuLx+/y/zsUNuEC12YH468UyXOFPzXQj2keGIWqIbjQuujOqOOG7z5PyKSYiHB4bdNiWBbVbB8
+ MqfP+QjE8ugi1osZPWf+H2/04fqXvaLtxAAAA
+X-Change-ID: 20250903-phy-qcom-edp-add-glymur-support-2a8117d92b89
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.15-dev-dedf8
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1007; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=+jM2IX9YMvgKOzlDNA7D7HKUcXHwlAxrld3bjm7TAGs=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBouTgDQFMOO1/9mhrp0khsNUjrwKGAFRw3CHW07
+ Hih9CyAHpmJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaLk4AwAKCRAbX0TJAJUV
+ VmTXD/4zu1EOD49T4qwPcqvkip86WFCaFmszidMLCD93/3N4woAbLZB8JdxI9eARWU6Zem3C3lt
+ yfdiv9Q7HGdjWWfV/ODOm0t/jDeQGAAZeq8hr3Vd4g1gTu/bCN6Y5xceXFN03tQpWd3amXWoLOi
+ 3zd9kAZRHVbhWK9TKfuwZOT3YL7cru7WgYbiF/zgNU60V25aDradkYLqHr7mcWmn+w5opiawp8C
+ PcRNxTXFCUA6qhzChaxD681voDzUsJXUks4Eg78ii9z26niuCy1NCNYo2cukISD6x3Pv21I1Wg0
+ IpOhTWYt35FtvX/OsS9nwYlhw4cZsh5ALi+4xj4aC3/+sVZSlMCS9t5DjXG/dARqQ+S1cleu//P
+ JGWiZOeYNJ8/vqv0FkiVzucsQ1nF81BIX8tXw+fD9kykg7aA5ZvXhL/wUjb/9emetL/Tkuaibct
+ MPi+if842R8FDDfcW0yX5/mW3i3fWnQFq7T1Y5tMO3CtzheLdFcHiBLk0FtxtfhMs+gFL2IZ0Vu
+ z3ND2HzuA5Ud2B0dqBcME4QSCr/+1npIXHFIJDwklM9NALKGsxRT8xo3NE2qQDLMhFZwbxhSdgI
+ PL1FfUbrmF2GSGKUrg2YVFFzAN3q1LnyF7GviTDdpAbnLUUAMTHLb0S1l6+AbqUzgmG31GYnXAW
+ cjsoAyH2v97Y7sA==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_235246_452023_8625187F 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20250903_235622_190354_E95AD35B 
+X-CRM114-Status: UNSURE (   7.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,63 +123,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series adds add equalization settings for 8.0 GT/s and 32.0 GT/s,
-and add PCIe lane equalization preset properties for 8.0 GT/s and
-16.0 GT/s for sa8775p ride platform, which fix AER errors.
+The Glymur platform implements the eDP/DP PHY version 8.
+Add the necessary registers, rework the driver to accommodate
+this new version and add the Glymur specific configuration data.
 
-While equalization settings for 16 GT/s have already been set, this
-update adds the required equalization settings for PCIe operating at
-8.0 GT/s and 32.0 GT/s, including the configuration of shadow registers,
-ensuring optimal performance and stability.
+This patchset depends on:
+https://lore.kernel.org/all/20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org/
 
-The DT change for sa8775p add PCIe lane equalization preset properties
-for 8 GT/s and 16 GT/s data rates used in lane equalization procedure.
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+Abel Vesa (3):
+      dt-bindings: phy: Add DP PHY compatible for Glymur
+      phy: qcom-qmp: qserdes-com: Add some more v8 register offsets
+      phy: qcom: edp: Add Glymur platform support
 
-Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+ .../devicetree/bindings/phy/qcom,edp-phy.yaml      |   2 +
+ drivers/phy/qualcomm/phy-qcom-edp.c                | 239 ++++++++++++++++++++-
+ drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h |  12 ++
+ 3 files changed, 246 insertions(+), 7 deletions(-)
+---
+base-commit: ab918b506f0121423beef123577d5071eebf9218
+change-id: 20250903-phy-qcom-edp-add-glymur-support-2a8117d92b89
 
-Changes in v6:
-- Add Fix tag and format as Xmax order (Mani)
-- Delte the blank line (Neil)
-- Link to v5: https://lore.kernel.org/all/20250819071649.1531437-1-ziyue.zhang@oss.qualcomm.com/
-
-Changes in v5:
-- Add support for 32.0 GT/s
-- Add warning print for speed higher than 32.0 GT/s (Mani)
-- Link to v4: https://lore.kernel.org/all/20250714082110.3890821-1-ziyue.zhang@oss.qualcomm.com/
-
-Changes in v4:
-- Bail out early if the link speed > 16 GT/s and use pci->max_link_speed directly (Mani)
-- Fix the build warning. (Bjorn)
-- Link to v3: https://lore.kernel.org/all/8ccd3731-8dbc-4972-a79a-ba78e90ec4a8@quicinc.com/
-
-Changes in v3:
-- Delte TODO tag and warn print in pcie-qcom-common.c. (Bjorn)
-- Refined the commit message for better readability. (Bjorn)
-- Link to v2: https://lore.kernel.org/all/20250611100319.464803-1-quic_ziyuzhan@quicinc.com/
-
-Changes in v2:
-- Update code in pcie-qcom-common.c make it easier to read. (Neil)
-- Fix the compile error.
-- Link to v1: https://lore.kernel.org/all/20250604091946.1890602-1-quic_ziyuzhan@quicinc.com
-
-
-Ziyue Zhang (3):
-  PCI: qcom: Add equalization settings for 8.0 GT/s and 32.0 GT/s
-  PCI: qcom: fix macro typo for CURSOR
-  arm64: dts: qcom: lemans: Add PCIe lane equalization preset properties
-
- arch/arm64/boot/dts/qcom/lemans.dtsi          |  6 ++
- drivers/pci/controller/dwc/pcie-designware.h  |  5 +-
- drivers/pci/controller/dwc/pcie-qcom-common.c | 58 +++++++++++--------
- drivers/pci/controller/dwc/pcie-qcom-common.h |  2 +-
- drivers/pci/controller/dwc/pcie-qcom-ep.c     |  6 +-
- drivers/pci/controller/dwc/pcie-qcom.c        |  6 +-
- 6 files changed, 49 insertions(+), 34 deletions(-)
-
-
-base-commit: 3ac864c2d9bb8608ee236e89bf561811613abfce
+Best regards,
 -- 
-2.43.0
+Abel Vesa <abel.vesa@linaro.org>
 
 
 -- 
