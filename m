@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95C5ACA1017
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7539FCA1012
 	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 07:29:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,42 +12,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ibaH7cHsRC5KAKu5DaiaYwyC8kYozzODgLH/FF543jw=; b=VplRwhmSqsLgpx
-	eWxWRFOJV1wzqhLmrgwxEZVuD/9T8Fy0BmtGfm8OXNRqThC/Kb0k4zWhD59vtWkv8RC6DXauBdnsd
-	BOsLdg8+JMsozg5TAw+LAPDHVv9g+t1O/f1BPs0uFJ74OnYcL8RjugT8JM5O4e+1b/vLmOYY7mjOO
-	uomYKWlhaV3OegYk3g1Szr37iTm7isVHUK9inXe1QerGSdGaOjiJl/ZS14DM1Ypf4qE7KMgCMg+UW
-	QfM7z1tGu56f/KCa2/ZM+JLTjNNsif1PtL6Q72ICfHKRp9qYf6VpAYQd29WnykQRgd6k6hd34kKWw
-	QHs6dmUWPDWKcX2XgTTQ==;
+	List-Owner; bh=uL1k+oG3C+dMgd4RghkIGnNgBDYTwV6284UU3FFJPSI=; b=xL2gHvnBs5FGmz
+	UONP9fwf7f8X29oR9rRPA3m17ybkSzdHqU+TnFkkcO+ctMqfSU5n+T906tTizfkUraBLLIhW9r+5U
+	LU+h08Q+sgu+WHY3KA/ajaxTR5DokVZ7AmXaDILb3zcKhSJ3SeS2vX8bY5eKgWY/fmKwzyIOqOxMT
+	QaaKYrnpnYGebyS8vIeztH/6ph+kWf9sBHWP58eorgmCcNNsf48PiM2Jzys2BDzsU0pQWOuhwYD7z
+	r2iBt4go4MqFpPVB4exH7YnzVWUMByFAMU/ik2kXVBx3+n6k+S/JrQsy6ELJ91dpSPKn2eNHpMuH6
+	DmpGCGSIrP1I8BDvdnuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu4PO-00000009rtg-1WMn;
+	id 1uu4PO-00000009rtJ-0Mv2;
 	Thu, 04 Sep 2025 07:29:26 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu48R-00000009mFj-1DLn
+	id 1uu47F-00000009ln0-1k2O
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 07:11:55 +0000
+	Thu, 04 Sep 2025 07:10:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9945E60271;
-	Thu,  4 Sep 2025 07:11:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E74ABC4CEF0;
-	Thu,  4 Sep 2025 07:11:49 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1A65443DB5;
+	Thu,  4 Sep 2025 07:10:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA66EC4CEF0;
+	Thu,  4 Sep 2025 07:10:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756969914;
-	bh=cRvC6M+ufNY6r26zqikoS4WVEDwaWmn0AjAr8OnLI4k=;
+	s=k20201202; t=1756969841;
+	bh=aIoUIGaDJsZoyrXYOkLi6ZN2KP9FMUCrU0p7BNcXSr4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=BqEqGtsF3YW2YOFfk10VL0G7Hhqjip99SM1TUSlcCvHU13Ww36l13OUjYOcgo62RV
-	 7RXloS+7Ab+6nrfjiCQymgxPlUqmHCcr+OEsAeCtxkF+FC4czeeuJyAcg6xLlu0upU
-	 SwHuCH/CObB4ofmgu1S7ozxRu8b+QYHG66dj71FajkbD/yp/rRbxTJqQ5cZLed6d1u
-	 vsMB5btfyy6E6wkGOmZO6w5CVoff6CazwhEk75mHoouuKUTtTJ3yfCxyi531IVNghl
-	 xWDcHbasvCAeyJxkzBUCYF88iTdjN7Mqknvz07UqWhfMzPoki+kEhDC39wIHl6mT4P
-	 R63exVimaM/2A==
-Message-ID: <1f0400cb-ab46-4330-82b5-5f7ba502e32c@kernel.org>
-Date: Thu, 4 Sep 2025 09:11:48 +0200
+	b=An8Kl5acras9I4lHnUieoIBo+W50Qr/If6OPd0Ib49YaWAWCdqPfiHBPy1AEWd1rd
+	 asZisBtDZA5+cJD4lFQEL/oIW91ItPvW9pO5mf7wDGOW9C/kHwbJf26hnSvnU5TDdo
+	 UkcWZG1WJKzJ1MKOK7qu8xtvFnuI6EM+T5Xl7wUP16V1Wkp8pTbtpVVEBiyXBgnNpw
+	 UkwILvr/4rgZ2v71CtSqdOhM35vD1ZmOAgCN1qnSEikm3rYdHWMSeYP4EpGJPmaClD
+	 uIraTO9JlrfoYmE4+x3XCKm9M5eer1GkvagVtwlR4OQI3fS3pTaI4VMfPmjp6ChZGa
+	 6KYuCkzKqDo0w==
+Message-ID: <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
+Date: Thu, 4 Sep 2025 09:10:34 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/3] dt-bindings: phy: eswin: Document for EIC7700 SoC
- SATA PHY
+Subject: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
+ ahci
 To: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
  cassel@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  linux-ide@vger.kernel.org, devicetree@vger.kernel.org,
@@ -57,7 +57,7 @@ Cc: ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
  linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
  fenglin@eswincomputing.com, lianghujun@eswincomputing.com
 References: <20250904063427.1954-1-luyulin@eswincomputing.com>
- <20250904063815.1537-1-luyulin@eswincomputing.com>
+ <20250904063718.421-1-luyulin@eswincomputing.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,7 +103,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250904063815.1537-1-luyulin@eswincomputing.com>
+In-Reply-To: <20250904063718.421-1-luyulin@eswincomputing.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250904_001041_501352_F2F071B8 
+X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,32 +124,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/09/2025 08:38, Yulin Lu wrote:
+On 04/09/2025 08:37, Yulin Lu wrote:
+> Add document for the SATA AHCI controller on the EIC7700 SoC platform,
 
-Same comment about subject.
+Subject: drop "for", wrong grammar. "Document" is a verb.
 
-> +  compatible:
-> +    const: eswin,eic7700-sata-phy
+> including descriptions of its hardware configurations.
+> 
+> Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
+
+
+...
+
 > +
-> +  "#phy-cells":
-> +    const: 0
+> +maintainers:
+> +  - Yulin Lu <luyulin@eswincomputing.com>
+> +  - Huan He <hehuan1@eswincomputing.com>
 > +
-> +  reg:
+> +description:
+> +  This document defines device tree bindings for the Synopsys DWC
+
+Describe the hardware, not the document. Entire line is completely
+redundant.
+
+> +  implementation of the AHCI SATA controller found in Eswin's
+> +  Eic7700 SoC platform.
+> +
+
+
+
+...
+
+> +  clock-names:
+> +    items:
+> +      - const: pclk
+> +      - const: aclk
+> +
+> +  resets:
 > +    maxItems: 1
-
-
-reg is the second property.
-
 > +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-> +  - reg
+> +  reset-names:
+> +    const: arst
+> +
+> +  ports-implemented:
+> +    const: 1
 
+I do not see how you addressed request about firmware. Nothing changed
+here, no explanation in the commit msg.
 
-Same here
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
