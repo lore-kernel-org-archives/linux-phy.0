@@ -4,94 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA2F6CA1012
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:03:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38891CA1012
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:25:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hnauy6z3YnFZKZb0hjIn9M0Z/XWZmyQooL+Jnfs4A00=; b=Qw0LbC+hN+eqtm
-	QXMet5SFamX66fsXVHg1tW+E3UkZWzbbzMgl1WlYJxtldLVcpaemKDRSlj9Lg/hRdI+Hzjvhr7w8n
-	mKfv4FqenuYLJ1cxHq2l42QhlKMSbCHp5fMKU4IJiQrDr4zA5zqSNJVl5mwuSM0lJoDasroDYuNnr
-	MuYHvo2ibCA3Z9sbEhNF/IdWvYpwQrGkmuRfuKS7QPd+TsRX3K3N6bgIxntLYAk19Q3d+SUaIcF/Y
-	GJuJ0nN9R4yWQJRkBAfi2sKro0hmW1hc4FfzNapw/J7d0E12qfYT4WwIf26qVgiHZoThEUNDUfnHm
-	NibfH1WxhNI3tmATabPQ==;
+	List-Owner; bh=kV84/ncghVMBUSUxBtTVBgKex6JOz5FkvPPGhg3YuBU=; b=cAvs8Fw99DeZeq
+	FQ8UJjMQZLAifE2IzqB7Bzx9zzFY4HQHBbiXfNaQtZJgydmPptJ1yLJ9D/3QXFDMcysPm+i3bE0Gd
+	Y+6Q2FkaOwsOhV3cgTkXXNx978i6i641mdprY1O6eLRZm/rtuSDbnUDjbmAF6X6rnCZc8X+YBIN6Q
+	0oDDkeIz3/M/9MH3AIuVONOS88ovMfT2xIkCvsJZx5Kpl+Pd+JtCCyhzpCNjeVV74UZW0trqWHI2A
+	klRJW35LSRpeuuwAvCFlGYLJIpgjfcJgSJ/qeDstlsC2M4g0Ni11iHTiwsw/VdcwuBWSjwz0F5tRt
+	1gdgUAb5HGgT76XGQclA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu6oM-0000000AkCP-1sXN;
-	Thu, 04 Sep 2025 10:03:22 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1uu7A2-0000000AsjF-3GSj;
+	Thu, 04 Sep 2025 10:25:46 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu5hm-0000000AMml-2VQA
+	id 1uu63d-0000000AUhE-2HGG
 	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 08:52:31 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-45cb5492350so5063575e9.1
-        for <linux-phy@lists.infradead.org>; Thu, 04 Sep 2025 01:52:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1756975949; x=1757580749; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=7gK6n/g/HuSb43cbH0cdIC2KH3XWzF+uMZuIHFj3Zpo=;
-        b=EM/DIRGEBRQpFseTTDcGPlWdVz5UZfz2BzHBO718lqZgD2m/lgtaiNipqqqbGy0K4Z
-         CzLjQ8WkW9EzwGoZGUMoMiQqieH8snd4cV81idNoQQh5q/G9eiEIcg2jEHwBT9+q5hdb
-         RizLSHVi/nH2gbVcVPZR2+OYl+Ub9T01BHXq61GlGjzaoOjbEQa+ofGaQ0/mvNHLsToW
-         sYg+O5dUqSajHN3FNerEw4v44x/2YhHDMArBPJSp9rfN35O3GEnceBlIlI4Z6m8fCUtD
-         TSWDjRcNLY4Ejb/4C/MR4P0Mr8RiqrnkXQOHKWlhWAyWR3DvR6aVpSmJGQ+BnCcuDZSe
-         eS9w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756975949; x=1757580749;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7gK6n/g/HuSb43cbH0cdIC2KH3XWzF+uMZuIHFj3Zpo=;
-        b=SM1lvjR/skw3JFPb2M7FIOGu7XUBccm3qIzTpbLIHM4jg3BDx2ithq0fgiFixvgeNX
-         8ziwS8R76Y2BKdtffo5q9e3N4xwQj1Vj78Du3ikfM0I5A7XIdaVKHldIK9thNX+juCbc
-         WE5dEbk1zKK8fyJ673edz1phSHRx9CfKczgRCQHuLWDo1xTDSrvarHT5vPjvO+BWb+KF
-         ewLHHC2UMlMhGui2h1aq/9b+wLyZUeZiK68mk8A99gNwwe6cSu2D1BVu8jSPuVIXbEP2
-         ACIFjlu4gkOkATuinFhm3rpXvQJqJs2REZhJbc3ycFk/79DuFNBtdwKCM1BXJd26KfiW
-         6Tiw==
-X-Forwarded-Encrypted: i=1; AJvYcCXLO0jBJn9AgnV5GtyLMWedvrnQhKYFCtazsySVcP129OY3WnejJtGGj+Rh4ejJwtySXhpF4qyiIl8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyD/TxqimCOzRdyWfB/qfwTvACeP01Ax1VJi/Ls07a443z/RYBB
-	47lprAX6lvaPE9sQYTs0AbLH//tAlQ7ivyYyUjMrUylXX3Yo4m5l0gkG1TM3ZiKM7Uw=
-X-Gm-Gg: ASbGncue2VWMgazZjSJA+dUFzmb49eOnB2TtV/m+5qM2uxuG76jC0RsTUO2o87WzGTg
-	UGqdUVgRxc1bfwV5l/buJkpICdweCIXKAhpA0nS3VS28PY8DZXrREvbkHUZFGcQxseBBVLadK2z
-	/UpOB4tsblyVOnZuDizdfQ24YmUOZSLiaybhUh9WW2WiEfJTH3NiAwRN2mo88I2zCnszCMifavS
-	yA6hoO6ccuTOeDrncDAf7E1pjBELdP8rQiKT4CQJi5fQUmVnmm5/Ge4oBebcOboV7OyL9/zi39s
-	VPMapYkJE/zGsB+2oXgzF/Cd3ZHA6m62PiUoHjQ2Fv1GlXUWFYY87Ayurpb6LOJ53s0VwR/BG+D
-	Uy1AWHm2avc+cAp9AvTxGUVObwgA9XY4L
-X-Google-Smtp-Source: AGHT+IHtO9lhAj+5b+dFwSvHFWLll5r95zkvUmodvWJ+Fdu92nqESPLKzmEOTmjK13cRmo2Ta3LMHg==
-X-Received: by 2002:a05:600c:5253:b0:45d:98be:ee91 with SMTP id 5b1f17b1804b1-45d98bef030mr24615585e9.9.1756975949013;
-        Thu, 04 Sep 2025 01:52:29 -0700 (PDT)
-Received: from linaro.org ([86.121.170.194])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3d7ac825b88sm13968312f8f.7.2025.09.04.01.52.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Sep 2025 01:52:28 -0700 (PDT)
-Date: Thu, 4 Sep 2025 11:52:26 +0300
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Sibi Sankar <quic_sibis@quicinc.com>, 
-	Rajendra Nayak <quic_rjendra@quicinc.com>, Johan Hovold <johan@kernel.org>, 
-	Taniya Das <quic_tdas@quicinc.com>, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH v2 3/3] arm64: dts: qcom: Add missing TCSR refclk to the
- DP PHYs
-Message-ID: <qlqsefvnibw4esm5wz7khmyfdnszn5veinfb3k2w67f5v73kry@rzclmu57ybdh>
-References: <20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org>
- <20250903-phy-qcom-edp-add-missing-refclk-v2-3-d88c1b0cdc1b@linaro.org>
- <34d9e8eb-e0f4-47e9-a731-fe50e932fea1@oss.qualcomm.com>
+	Thu, 04 Sep 2025 09:15:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 9CF6B441F6;
+	Thu,  4 Sep 2025 09:15:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADADDC4CEF4;
+	Thu,  4 Sep 2025 09:14:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1756977303;
+	bh=oeux7o7S78ErMfdiBwTr9Z47gi/tPN3gufRN3obUJ5k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=EciXTXhZUtF8mge6/PbpxoVuK4dPyf++Vnq6PQszojXqCbddVQf/fkFE/KrXH/lL1
+	 En2/TPQY95uqPDF/+Pv0HdIbIMsMxnIJm4Eyadr9QJlC9Far6RVRRI2ve8s56TQ1yo
+	 0NUJbO2wJKueXjq8hXRhWqCy5Cesx4HpnGs1pXdZbAkKygsqrCRBnsLKtGzIcUpvtP
+	 LAQCjL8Nq8w+Ui7JXxiHHtH5Tbpcqlm/4WGkBlarSV5eWXqut2bxF1gWs4jw3sfe6/
+	 9Pvt/a8BaEtPkvnSo1bFjVUHWRzq9EVkLv8vKY/Nm0vJZb8X7QNFbGqDzEr3KbEgYC
+	 +bktODvqp/7Xg==
+Date: Thu, 4 Sep 2025 11:14:57 +0200
+From: Niklas Cassel <cassel@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	linux-ide@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	linux-phy@lists.infradead.org, ningyu@eswincomputing.com,
+	zhengyu@eswincomputing.com, linmin@eswincomputing.com,
+	huangyifeng@eswincomputing.com, fenglin@eswincomputing.com,
+	lianghujun@eswincomputing.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
+ ahci
+Message-ID: <aLlYkZWBaI5Yz6fo@ryzen>
+References: <20250904063427.1954-1-luyulin@eswincomputing.com>
+ <20250904063718.421-1-luyulin@eswincomputing.com>
+ <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <34d9e8eb-e0f4-47e9-a731-fe50e932fea1@oss.qualcomm.com>
+In-Reply-To: <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_015230_642725_D69CEEB6 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20250904_021505_600903_4EF676E6 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,36 +81,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-09-04 10:40:36, Konrad Dybcio wrote:
-> On 9/3/25 2:37 PM, Abel Vesa wrote:
-> > The DP PHYs on X1E80100 need the refclk which is provided
-> > by the TCSR CC. So add it to the PHYs.
-> > 
-> > Cc: stable@vger.kernel.org # v6.9
-> 
-> You want to backport this to 6.9, but you also want to backport
-> the driver patch to 6.10, "meh"
-> 
-> I'm not sure it makes sense to backport functionally, as this would
-> only exhibit issues if:
-> 
-> a) the UEFI did no work to enable the refclk
-> or:
-> b) unused cleanup would happen
-> 
-> but the board would not survive booting with b) in v6.9, at least
-> it wouldn't have display  - see Commit b60521eff227 ("clk: qcom:
-> gcc-x1e80100: Unregister GCC_GPU_CFG_AHB_CLK/GCC_DISP_XO_CLK")
-> 
-> and a) is not something we'd hit on any of the upstream-supported
-> targets
+Hello Krzysztof, Rob,
 
-You are correct.
+On Thu, Sep 04, 2025 at 09:10:34AM +0200, Krzysztof Kozlowski wrote:
+> > +
+> > +  ports-implemented:
+> > +    const: 1
+> 
+> I do not see how you addressed request about firmware. Nothing changed
+> here, no explanation in the commit msg.
 
-However, HW-wise, this clock is there and is needed, regardless
-if UEFI leaves it enabled or not. So it makes sense to go all the way
-back to 6.9 and fix it.
+In Yulin's defence, he did comment that when having the Ports Implemented
+register initialized by firmware, the Ports Implemented register apparently
+gets cleared to zero when rmmoding the driver (probably because it disables
+the clocks and regulators to the controller), thus this suggestion breaks
+the use case of being able to reload the driver (rmmod + insmod).
 
+He mentioned this, and asked for advice here:
+https://lore.kernel.org/linux-ide/2cc9f2ff.6a2.198e04fd36e.Coremail.luyulin@eswincomputing.com/
+
+After no reply he asked the same question again:
+https://lore.kernel.org/linux-ide/692e11ca.843.198f0337528.Coremail.luyulin@eswincomputing.com/
+
+I assume that Rob simply missed those messages.
+
+Anyway, I provided my 50 cents here:
+https://lore.kernel.org/linux-ide/aLBUC116MdJqDGIJ@flawful.org/
+
+(I would like to add that I think it is the disabling of clocks and
+regulators that causes the register to be cleared, since we do call
+ahci_platform_assert_rsts() during the first probe, so if it was the reset
+that cleared the register, the first probe should also not have worked.)
+
+
+Not sure if it relevant to mention this reply to Rob's review comment in the
+commit message, but perhaps it should have been mentioned in the change log.
+
+
+Kind regards,
+Niklas
 
 -- 
 linux-phy mailing list
