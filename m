@@ -4,67 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38891CA1012
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:25:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EE49CA1002
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:51:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kV84/ncghVMBUSUxBtTVBgKex6JOz5FkvPPGhg3YuBU=; b=cAvs8Fw99DeZeq
-	FQ8UJjMQZLAifE2IzqB7Bzx9zzFY4HQHBbiXfNaQtZJgydmPptJ1yLJ9D/3QXFDMcysPm+i3bE0Gd
-	Y+6Q2FkaOwsOhV3cgTkXXNx978i6i641mdprY1O6eLRZm/rtuSDbnUDjbmAF6X6rnCZc8X+YBIN6Q
-	0oDDkeIz3/M/9MH3AIuVONOS88ovMfT2xIkCvsJZx5Kpl+Pd+JtCCyhzpCNjeVV74UZW0trqWHI2A
-	klRJW35LSRpeuuwAvCFlGYLJIpgjfcJgSJ/qeDstlsC2M4g0Ni11iHTiwsw/VdcwuBWSjwz0F5tRt
-	1gdgUAb5HGgT76XGQclA==;
+	List-Owner; bh=1xWQIGDOzo1w7YwqS11QUZJ8atCMlFdw54GlycVaJjc=; b=G/koWN12QXP7bk
+	FRXRRR6+paLCVzM1gy53vx3FsdEBUFSsvDjCwmb5pVimd42q4hfWhqo1e5iAyAwCehwms+2GcmYsa
+	REaiYFxFFkxn80zdRsNmWDF10TgV6hyboU2p+iotrdb8BfgUgfYB3iR9zzfc3gnL4Nr+34RvOXOoT
+	u8ZVWsBE2aiDJSwCCCXBf5h5KW6DU4Hzz9ilp1Bobry2N1xtoQ5SqyYT0qplmo1uXNjc/HM2o93gz
+	88iQ5TfpFOCFw93CepkUwh47Y9QC8pcedNYfu8tk/Y8XOp/0qLBgBZUkqXa9dRU4r9qsvNd1XFiDU
+	CaSBq/KyiX/k3NplnWZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu7A2-0000000AsjF-3GSj;
-	Thu, 04 Sep 2025 10:25:46 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uu7YX-0000000B0zt-2hm6;
+	Thu, 04 Sep 2025 10:51:05 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu63d-0000000AUhE-2HGG
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 09:15:06 +0000
+	id 1uu6UD-0000000AdBr-009K;
+	Thu, 04 Sep 2025 09:42:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9CF6B441F6;
-	Thu,  4 Sep 2025 09:15:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADADDC4CEF4;
-	Thu,  4 Sep 2025 09:14:59 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6B25660210;
+	Thu,  4 Sep 2025 09:42:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9DDEC4CEF0;
+	Thu,  4 Sep 2025 09:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756977303;
-	bh=oeux7o7S78ErMfdiBwTr9Z47gi/tPN3gufRN3obUJ5k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EciXTXhZUtF8mge6/PbpxoVuK4dPyf++Vnq6PQszojXqCbddVQf/fkFE/KrXH/lL1
-	 En2/TPQY95uqPDF/+Pv0HdIbIMsMxnIJm4Eyadr9QJlC9Far6RVRRI2ve8s56TQ1yo
-	 0NUJbO2wJKueXjq8hXRhWqCy5Cesx4HpnGs1pXdZbAkKygsqrCRBnsLKtGzIcUpvtP
-	 LAQCjL8Nq8w+Ui7JXxiHHtH5Tbpcqlm/4WGkBlarSV5eWXqut2bxF1gWs4jw3sfe6/
-	 9Pvt/a8BaEtPkvnSo1bFjVUHWRzq9EVkLv8vKY/Nm0vJZb8X7QNFbGqDzEr3KbEgYC
-	 +bktODvqp/7Xg==
-Date: Thu, 4 Sep 2025 11:14:57 +0200
-From: Niklas Cassel <cassel@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-ide@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	linux-phy@lists.infradead.org, ningyu@eswincomputing.com,
-	zhengyu@eswincomputing.com, linmin@eswincomputing.com,
-	huangyifeng@eswincomputing.com, fenglin@eswincomputing.com,
-	lianghujun@eswincomputing.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
- ahci
-Message-ID: <aLlYkZWBaI5Yz6fo@ryzen>
-References: <20250904063427.1954-1-luyulin@eswincomputing.com>
- <20250904063718.421-1-luyulin@eswincomputing.com>
- <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
+	s=k20201202; t=1756978952;
+	bh=GkDnuWOdz/TX4GGvL75O/nvs+H4WJw80rQUSnb3ZIgM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dQyHvkBacLkDH1Jmn8PM9g+Tv3V/P1Gd4wmJ1Okge6yEDvFYhMU/s50kaNGEOp0Uy
+	 c1A7E9IQ1ReSXF2XxkG5vHKmYTCAJv8xPMdxaiAY13tfdhg+J7HnHbaj48a8akh++1
+	 px5Pex58MZFxeCz/PDWbWi7xPHzhBCSXmI7B9UjjmsBPRMwzCLJDjNtL7rNMgGSTFg
+	 1txx+tDSPMm652JYg2mxvVdyFBKz/SPwy4OiHmprJK+lJx/3eDQjllq0wuZxdjnXtP
+	 R9BLGhOAdnqCxRhd+kEZfX0ZuacsCrKRMph0YrvlBPEz2D0bLTv81wCvYxHNSV39oJ
+	 sNVQwo4FOHGTg==
+Message-ID: <87857202-b436-4476-9384-67566126d844@kernel.org>
+Date: Thu, 4 Sep 2025 11:42:25 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_021505_600903_4EF676E6 
-X-CRM114-Status: GOOD (  13.65  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, alim.akhtar@samsung.com, andre.draszik@linaro.org,
+ peter.griffin@linaro.org, kauschluss@disroot.org,
+ ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org,
+ m.szyprowski@samsung.com, s.nawrocki@samsung.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+ dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+ selvarasu.g@samsung.com
+References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
+ <CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
+ <20250903073827.3015662-2-pritam.sutar@samsung.com>
+ <20250904-interesting-lovely-ringtail-38bbef@kuoka>
+ <000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,45 +125,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Krzysztof, Rob,
-
-On Thu, Sep 04, 2025 at 09:10:34AM +0200, Krzysztof Kozlowski wrote:
-> > +
-> > +  ports-implemented:
-> > +    const: 1
+On 04/09/2025 09:51, Pritam Manohar Sutar wrote:
+> Hi Krzysztof,
 > 
-> I do not see how you addressed request about firmware. Nothing changed
-> here, no explanation in the commit msg.
+>> -----Original Message-----
+>> From: Krzysztof Kozlowski <krzk@kernel.org>
+>> Sent: 04 September 2025 12:18 PM
+>> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+>> andre.draszik@linaro.org; peter.griffin@linaro.org; kauschluss@disroot.org;
+>> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
+>> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+>> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+>> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+>> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+>> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+>> selvarasu.g@samsung.com
+>> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+>> ExynosAutov920 HS phy compatible
+>>
+>> On Wed, Sep 03, 2025 at 01:08:22PM +0530, Pritam Manohar Sutar wrote:
+>>> Document support for the USB20 phy found on the ExynosAutov920 SoC.
+>>> The
+>>> USB20 phy is functionally identical to that on the Exynos850 SoC, so
+>>> no driver changes are needed to support this phy. However, add a
+>>> dedicated compatible string for USB20 phy found in this SoC.
+>>>
+>>> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>>
+>> You just dropped all tags without explaining why.
+> 
+> Regretted inconvenience. 
+> 
+> There were significant changes in supplies' names in driver and schemas 
+> (patch-set v8). This led to make changes in patch no 5.  And review for 
+> these changes is needed.  Hence, removed RB tag in this patch-set. 
+> 
+> There was a ask for the same https://lore.kernel.org/linux-phy/000401dc18cd$ec02a1b0$c407e510$@samsung.com/#:~:text=Let%20me%20know%2C%20because%20of%20above%20changes%2C%20should%20be%20removing%20your%20%0A%27reviewed%2Dby%27%20tag%20from%20patch%201%20and%203.
+> 
 
-In Yulin's defence, he did comment that when having the Ports Implemented
-register initialized by firmware, the Ports Implemented register apparently
-gets cleared to zero when rmmoding the driver (probably because it disables
-the clocks and regulators to the controller), thus this suggestion breaks
-the use case of being able to reload the driver (rmmod + insmod).
 
-He mentioned this, and asked for advice here:
-https://lore.kernel.org/linux-ide/2cc9f2ff.6a2.198e04fd36e.Coremail.luyulin@eswincomputing.com/
+Where in the changelog you explained why you dropped the tags?
 
-After no reply he asked the same question again:
-https://lore.kernel.org/linux-ide/692e11ca.843.198f0337528.Coremail.luyulin@eswincomputing.com/
-
-I assume that Rob simply missed those messages.
-
-Anyway, I provided my 50 cents here:
-https://lore.kernel.org/linux-ide/aLBUC116MdJqDGIJ@flawful.org/
-
-(I would like to add that I think it is the disabling of clocks and
-regulators that causes the register to be cleared, since we do call
-ahci_platform_assert_rsts() during the first probe, so if it was the reset
-that cleared the register, the first probe should also not have worked.)
-
-
-Not sure if it relevant to mention this reply to Rob's review comment in the
-commit message, but perhaps it should have been mentioned in the change log.
-
-
-Kind regards,
-Niklas
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
