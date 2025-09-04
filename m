@@ -4,65 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC330CA1013
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 20:00:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9940CA1013
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 20:34:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1z9h+ZuBVYRu9UopgSgr2uC2KYWE+TUpCpdeRW+1TsQ=; b=C1SL/fnuxOQtFe
-	+Y2v3esjFZIl90tnX+QhwRZK7d+dISYXQkC09c0qDmaHBLYtJi1r86xRq5X+P621x/nDcOCfScW7G
-	VTJlTM/w6TmMctfeUZn/pwgDkCroEDEv0sWOqV+M4biXdG32cE2MxfTAWFgXE4iW84XaUQu37Aloo
-	mG7zHRn2hUiHL3d8KXEhUc7PzsyLaQecSe6bEk6Q9kPMcI4gB8ArZ7ZRSnaYCk5VUi+Y/nff/ZA/i
-	9cgfgxJFCR7bLIhaVD9H5jbr8NE0ajikVMKqE/U9UXMMxuEO1REw8OVQx+GWDsIBXqC1tWANydukG
-	qs8NUdXFOJJz8keYau2Q==;
+	List-Owner; bh=cv4QcRzJWdeuuyo0tYab1HoAC3WNunQj8Yefk6nRGMw=; b=KLevpFW11vzliY
+	rT+R3X/OApU3jL/CM9VwDtyue4uGpu1x/nnqEWTM6qwBMudT0RJLJMgkjnc0khXO5aEJIWQG/v2fO
+	gPsdD8TRP/Su6qJC21GcFN9ktxR50ceA2TnHUrBaFwXUIUAobqA9lTeH94eG3ukyKe6QqvfFpk5M3
+	iARlQSAvwTKNUW/l+Qx/Van/zsFq2IFdrQLiUaiZ7ahxGX4pKEMOlj6ptVRpRSwA74ab0O0vF4ORM
+	HV9ISTreUV10+BVFh5JwYqdwd/FtjU+vclZlAj2UsURyI8uMPWq0rSrtF9YKemGcKF/qI9AMmJuDc
+	NfkXbB6o+ezc0dWV2O0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuG86-0000000E7Uw-2VnO;
-	Thu, 04 Sep 2025 20:00:22 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uuGel-0000000EIDU-2KRp;
+	Thu, 04 Sep 2025 20:34:07 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuDGD-0000000D6d6-3G2E
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Sep 2025 16:56:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2F80460247;
-	Thu,  4 Sep 2025 16:56:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5F2BC4CEF0;
-	Thu,  4 Sep 2025 16:56:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757004992;
-	bh=ImW7nHIDuggd5SOCEFLJtg//+l9EU7YE2MdTLZBVX0U=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=MRds77gtY9/UIeTs6xJ1na4Y+fEwwHKz8RbrhEw05lVhJg2qjBU4jA/gd/Qt20PoL
-	 RQ8373z6Ew8Y8Ec9JEdo8yzm6XYY0LjgG82cnO22GjbgDKIgSoqQkkmhFDtO89odxl
-	 ArtVUrFmn3bXv1307ZupGQg9x2VOZWj2DEt6pxhJnIrQFX3KJVoIUtXs7c9kca/frT
-	 TqIFEa3XwwHkQem7GIEupiMkUEdS4EvBGTR3Mq0+nlqbcjDi/BY0K/D1FTumqTUprj
-	 fFKtAJTPeUSeUVhX0ltlGOIF8y6mkKPG3cq8rynmAq2E0MjQC7rLFu9QxLM+EKKSwd
-	 q2vYvZlEY+SZw==
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org, 
- krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com, 
- lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com, 
- johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
- neil.armstrong@linaro.org, abel.vesa@linaro.org, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
- linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com, 
- quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
-In-Reply-To: <20250904065225.1762793-1-ziyue.zhang@oss.qualcomm.com>
-References: <20250904065225.1762793-1-ziyue.zhang@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v6 0/3] Add Equalization Settings for 8.0 GT/s
- and 32.0 GT/s and Add PCIe Lane Equalization Preset Properties for 8.0
- GT/s and 16.0 GT/s
-Message-Id: <175700498544.244191.11713819385906991702.b4-ty@kernel.org>
-Date: Thu, 04 Sep 2025 22:26:25 +0530
+	id 1uuEey-0000000DYFF-3o7P;
+	Thu, 04 Sep 2025 18:26:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1757010370;
+	bh=ZVdFeXDHFTGKIbHi47qBjTijLaJeWpzS+AmwXx8Vgko=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=JIrxRGq3SWliP09Sjp2aJF+aVSU4eXyl5sFSGJpZ+LY1h4oR33D6cP15Hlf30yTju
+	 fcfimSXRPWisGH/8Saa8V3Y+wo1h5bZLrsUWgVyJp8u5u957qzsPJV12ocye3b+I3i
+	 ppDmLp32p5vdqyK2u4xuZS+lb1IjK0eYS2VvFm9UCRBwP75BGKm7p5VvgfNb16RBNP
+	 m2b9+SrHTYymy8qOqQMdm5ZkV/LXjWs55XWS0dIX5weiBzNZkgLhrwv2SGjI1AR4fD
+	 wY0HQVESiosKOK8/McwjxwxxCXyunCF1og6X3KCZIcKp+HJP6FKq/thEJjb2DZ2s7n
+	 rsONdHfyE5Z9g==
+Received: from jupiter.universe (dyndsl-091-248-191-002.ewe-ip-backbone.de [91.248.191.2])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sre)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7FEBD17E013C;
+	Thu,  4 Sep 2025 20:26:10 +0200 (CEST)
+Received: by jupiter.universe (Postfix, from userid 1000)
+	id 3F47E480048; Thu, 04 Sep 2025 20:26:10 +0200 (CEST)
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Thu, 04 Sep 2025 20:26:03 +0200
+Subject: [PATCH RFC 2/2] arm64: dts: rockchip: add USB-C DP AltMode for
+ ROCK 5B family
 MIME-Version: 1.0
+Message-Id: <20250904-rock5b-dp-alt-mode-v1-2-23df726b31ce@collabora.com>
+References: <20250904-rock5b-dp-alt-mode-v1-0-23df726b31ce@collabora.com>
+In-Reply-To: <20250904-rock5b-dp-alt-mode-v1-0-23df726b31ce@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Frank Wang <frank.wang@rock-chips.com>, 
+ Zhang Yubing <yubing.zhang@rock-chips.com>
+Cc: Andy Yan <andyshrk@163.com>, 
+ Maud Spierings <maud_spierings@hotmail.com>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3114;
+ i=sebastian.reichel@collabora.com; h=from:subject:message-id;
+ bh=ZVdFeXDHFTGKIbHi47qBjTijLaJeWpzS+AmwXx8Vgko=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGi52cIp7eVpQA0Sd4OgFJVSHe8qO0vCnXosU
+ qmEq3m50tCTH4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJoudnCAAoJENju1/PI
+ O/qay8wQAJH3PDFyf3UnbO0a1rGWzh1hcXe50Z/5Q1MxNcHheOwdmwHkWa70/uVf/bhf/mOicjJ
+ Yb2DRUJalYIkOrr8fwHXOwMTSZTnyrrukuxOlhgF0hjZuP0/CAFuyTyx8G0ji35rO7PeSSXxwI/
+ BY4F+r1+hBuzIcKOI+SkSYKLdYlGXdvtyzsqw3oAYbT8m+WLu4Tr00vMvm1QJ9swLh/WM4AjXMj
+ OYgySJ7dJ5Pe0fwernjaqEWWuBFDKuW98HRTuPOzXGz2RFBVyBzt6qXlrStDEWAivYHV7FwdN7S
+ t1y7YbS1KUMM09NTb3QY+ghMjs/5wy/swkSpBHSkimghnfvlXTpi/Di0zPOBDKVOI5oqz68c4cr
+ O/Z5RMikQ2cG1IH7OtIAeCXLNNb2U+B/EuXqLPHu95zesY+d1hitUTwVF8nNUVGO2rgqxky3Sq1
+ EXXpguMKIDUQdKLHYolIpUWj/CpRFwZV2qyIqAtvJiKjl7mD870NKvGgPPbBEBzNYWpfxVPS1a6
+ Vxomx6Oqk6pEKz0cp/ABN8JxICgmpehOKIHs3a+lZG5TZbkUfHJgJYUvHyamG3gk6WcD8B4prky
+ p1DOplrdMbLPaGmt8bYVlYETLJ+vncOcrVyMDrz2/ShMEqjkjjTfypZXpgMsjtieLG9IvbgWzLK
+ diBXhm+Yz/GW3rBTPE7Y3Dg==
+X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
+ fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250904_112613_118846_A6C9A7BF 
+X-CRM114-Status: GOOD (  10.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,29 +101,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Enable support for USB-C DP AltMode to the ROCK 5B/5B+/5T.
 
-On Thu, 04 Sep 2025 14:52:22 +0800, Ziyue Zhang wrote:
-> This series adds add equalization settings for 8.0 GT/s and 32.0 GT/s,
-> and add PCIe lane equalization preset properties for 8.0 GT/s and
-> 16.0 GT/s for sa8775p ride platform, which fix AER errors.
-> 
-> While equalization settings for 16 GT/s have already been set, this
-> update adds the required equalization settings for PCIe operating at
-> 8.0 GT/s and 32.0 GT/s, including the configuration of shadow registers,
-> ensuring optimal performance and stability.
-> 
-> [...]
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ .../boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi   | 83 +++++++++++++++++++---
+ 1 file changed, 72 insertions(+), 11 deletions(-)
 
-Applied, thanks!
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi
+index 3bbe78810ec6f279a36d51d2fcef4a0f3f53036b..1e284dc48bd3fc2009f5f261e116bf8dbb96d7bd 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b-5bp-5t.dtsi
+@@ -177,6 +177,22 @@ &cpu_l3 {
+ 	cpu-supply = <&vdd_cpu_lit_s0>;
+ };
+ 
++&dp0 {
++	status = "okay";
++};
++
++&dp0_in {
++	dp0_in_vp2: endpoint {
++		remote-endpoint = <&vp2_out_dp0>;
++	};
++};
++
++&dp0_out {
++	dp0_out_con: endpoint {
++		remote-endpoint = <&usbdp_phy0_dp_in>;
++	};
++};
++
+ &gpu {
+ 	mali-supply = <&vdd_gpu_s0>;
+ 	status = "okay";
+@@ -352,21 +368,21 @@ ports {
+ 				port@0 {
+ 					reg = <0>;
+ 					usbc0_hs: endpoint {
+-						remote-endpoint = <&usb_host0_xhci_to_usbc0>;
++						remote-endpoint = <&usb_host0_xhci_hs>;
+ 					};
+ 				};
+ 
+ 				port@1 {
+ 					reg = <1>;
+ 					usbc0_ss: endpoint {
+-						remote-endpoint = <&usbdp_phy0_ss>;
++						remote-endpoint = <&usbdp_phy0_ss_out>;
+ 					};
+ 				};
+ 
+ 				port@2 {
+ 					reg = <2>;
+ 					usbc0_sbu: endpoint {
+-						remote-endpoint = <&usbdp_phy0_sbu>;
++						remote-endpoint = <&usbdp_phy0_dp_out>;
+ 					};
+ 				};
+ 			};
+@@ -993,18 +1009,41 @@ &usbdp_phy0 {
+ 	orientation-switch;
+ 	status = "okay";
+ 
+-	port {
++	ports {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 
+-		usbdp_phy0_ss: endpoint@0 {
++
++		port@0 {
+ 			reg = <0>;
+-			remote-endpoint = <&usbc0_ss>;
++
++			usbdp_phy0_ss_out: endpoint {
++				remote-endpoint = <&usbc0_ss>;
++			};
+ 		};
+ 
+-		usbdp_phy0_sbu: endpoint@1 {
++		port@1 {
+ 			reg = <1>;
+-			remote-endpoint = <&usbc0_sbu>;
++
++			usbdp_phy0_ss_in: endpoint {
++				remote-endpoint = <&usb_host0_xhci_ss>;
++			};
++		};
++
++		port@2 {
++			reg = <2>;
++
++			usbdp_phy0_dp_in: endpoint {
++				remote-endpoint = <&dp0_out_con>;
++			};
++		};
++
++		port@3 {
++			reg = <3>;
++
++			usbdp_phy0_dp_out: endpoint {
++				remote-endpoint = <&usbc0_sbu>;
++			};
+ 		};
+ 	};
+ };
+@@ -1025,9 +1064,24 @@ &usb_host0_xhci {
+ 	usb-role-switch;
+ 	status = "okay";
+ 
+-	port {
+-		usb_host0_xhci_to_usbc0: endpoint {
+-			remote-endpoint = <&usbc0_hs>;
++	ports {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		port@0 {
++			reg = <0>;
++
++			usb_host0_xhci_hs: endpoint {
++				remote-endpoint = <&usbc0_hs>;
++			};
++		};
++
++		port@1 {
++			reg = <1>;
++
++			usb_host0_xhci_ss: endpoint {
++				remote-endpoint = <&usbdp_phy0_ss_in>;
++			};
+ 		};
+ 	};
+ };
+@@ -1066,3 +1120,10 @@ vp1_out_hdmi1: endpoint@ROCKCHIP_VOP2_EP_HDMI1 {
+ 		remote-endpoint = <&hdmi1_in_vp1>;
+ 	};
+ };
++
++&vp2 {
++	vp2_out_dp0: endpoint@a {
++		reg = <ROCKCHIP_VOP2_EP_DP0>;
++		remote-endpoint = <&dp0_in_vp2>;
++	};
++};
 
-[1/3] PCI: qcom: Add equalization settings for 8.0 GT/s and 32.0 GT/s
-      commit: 37bf0f4e39de9b53bc6f8d3702b021e2c6b5bae3
-[2/3] PCI: qcom: fix macro typo for CURSOR
-      commit: ea5fbbc15906abdef174c88cecfec4b2a0c748b9
-
-Best regards,
 -- 
-Manivannan Sadhasivam <mani@kernel.org>
+2.50.1
 
 
 -- 
