@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EE49CA1002
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:51:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A767CA1002
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Sep 2025 10:53:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1xWQIGDOzo1w7YwqS11QUZJ8atCMlFdw54GlycVaJjc=; b=G/koWN12QXP7bk
-	FRXRRR6+paLCVzM1gy53vx3FsdEBUFSsvDjCwmb5pVimd42q4hfWhqo1e5iAyAwCehwms+2GcmYsa
-	REaiYFxFFkxn80zdRsNmWDF10TgV6hyboU2p+iotrdb8BfgUgfYB3iR9zzfc3gnL4Nr+34RvOXOoT
-	u8ZVWsBE2aiDJSwCCCXBf5h5KW6DU4Hzz9ilp1Bobry2N1xtoQ5SqyYT0qplmo1uXNjc/HM2o93gz
-	88iQ5TfpFOCFw93CepkUwh47Y9QC8pcedNYfu8tk/Y8XOp/0qLBgBZUkqXa9dRU4r9qsvNd1XFiDU
-	CaSBq/KyiX/k3NplnWZw==;
+	List-Owner; bh=R/orMXvcJLHfBuSyYhA3swr0IYYEIMVHH0m8YGu+0YQ=; b=NL5x74KVeliMUW
+	FXxb8Tr72vsEidTkSiYIKD9zNfsF/k5QqU8X11/wYMsReXNhp3GiyyQO1ED9m2VReZCQPxhCzK/BE
+	2/ANrfg+jc5EgzI4CKldn42ri83v9U/VBNkSw46bTwkf3ipzYJXntLXomJTqZv2jGPSK/4E69oGaX
+	2woF8jian+bdSdKv2qXrjUtRnBtkxNhIoMTNhzKUeOUPhM6La0HG3KNHkXhT8LBiP44cGy7O4mtQl
+	rrFZI+N4WsA4NtJ5s6OQ0hRZ4fZSn8nCzIh3rFeyKhUFFgyI7YCAeoP/il0sAZoIGShawGvCUTUsa
+	zo4xnWKaFDumQM7MMmpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu7YX-0000000B0zt-2hm6;
-	Thu, 04 Sep 2025 10:51:05 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uu7bH-0000000B1rc-3AUP;
+	Thu, 04 Sep 2025 10:53:55 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu6UD-0000000AdBr-009K;
-	Thu, 04 Sep 2025 09:42:33 +0000
+	id 1uu6c9-0000000Afxp-0XFX
+	for linux-phy@lists.infradead.org;
+	Thu, 04 Sep 2025 09:50:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6B25660210;
-	Thu,  4 Sep 2025 09:42:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9DDEC4CEF0;
-	Thu,  4 Sep 2025 09:42:26 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7A6E8445B1;
+	Thu,  4 Sep 2025 09:50:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D95CBC4CEF0;
+	Thu,  4 Sep 2025 09:50:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756978952;
-	bh=GkDnuWOdz/TX4GGvL75O/nvs+H4WJw80rQUSnb3ZIgM=;
+	s=k20201202; t=1756979444;
+	bh=2MnOEkYSMvUjHgMQUXhttZOsid3FO5mXYEicZ6UDPo8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dQyHvkBacLkDH1Jmn8PM9g+Tv3V/P1Gd4wmJ1Okge6yEDvFYhMU/s50kaNGEOp0Uy
-	 c1A7E9IQ1ReSXF2XxkG5vHKmYTCAJv8xPMdxaiAY13tfdhg+J7HnHbaj48a8akh++1
-	 px5Pex58MZFxeCz/PDWbWi7xPHzhBCSXmI7B9UjjmsBPRMwzCLJDjNtL7rNMgGSTFg
-	 1txx+tDSPMm652JYg2mxvVdyFBKz/SPwy4OiHmprJK+lJx/3eDQjllq0wuZxdjnXtP
-	 R9BLGhOAdnqCxRhd+kEZfX0ZuacsCrKRMph0YrvlBPEz2D0bLTv81wCvYxHNSV39oJ
-	 sNVQwo4FOHGTg==
-Message-ID: <87857202-b436-4476-9384-67566126d844@kernel.org>
-Date: Thu, 4 Sep 2025 11:42:25 +0200
+	b=Dla9BiBAuAZcJvTOx2DgjwKjk+/LIri6OLDNundoy/17BZCXttpODfti03++6fSjo
+	 ItKWbjDG4ihJpTZ786TEyXlggLVlvZbRPMuVprYLXz2q9WpbORx7WZErJ7bQVmSzJL
+	 bYEvMY0Z3o+TL+BL3sGhGmkmmnVOaTtG9w7G0KTYWiBKDhlXz2zCthWYrGrmCV/P/n
+	 sIM7hfTX5s9+HzpV90zdNQUayUptPb+js7jMYhxUyUJp8k6Pn5LvPgx63x6lBRv0G+
+	 xMiaOAkyezvMJ+ANUBA8VLN9iX7i2L9JszyTs1VB6WAWbGoVo/gNHqLt7NOsfpU2fS
+	 Hvz6YilRhxnsw==
+Message-ID: <5f6bc8da-ac78-4f21-8f9f-c84f213f60a9@kernel.org>
+Date: Thu, 4 Sep 2025 11:50:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, alim.akhtar@samsung.com, andre.draszik@linaro.org,
- peter.griffin@linaro.org, kauschluss@disroot.org,
- ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org,
- m.szyprowski@samsung.com, s.nawrocki@samsung.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
- dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
- selvarasu.g@samsung.com
-References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
- <CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
- <20250903073827.3015662-2-pritam.sutar@samsung.com>
- <20250904-interesting-lovely-ringtail-38bbef@kuoka>
- <000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
+ ahci
+To: Niklas Cassel <cassel@kernel.org>
+Cc: Yulin Lu <luyulin@eswincomputing.com>, dlemoal@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ linux-ide@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ linux-phy@lists.infradead.org, ningyu@eswincomputing.com,
+ zhengyu@eswincomputing.com, linmin@eswincomputing.com,
+ huangyifeng@eswincomputing.com, fenglin@eswincomputing.com,
+ lianghujun@eswincomputing.com
+References: <20250904063427.1954-1-luyulin@eswincomputing.com>
+ <20250904063718.421-1-luyulin@eswincomputing.com>
+ <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org> <aLlYkZWBaI5Yz6fo@ryzen>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,7 +105,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
+In-Reply-To: <aLlYkZWBaI5Yz6fo@ryzen>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250904_025045_210245_3D949543 
+X-CRM114-Status: GOOD (  19.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,48 +125,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/09/2025 09:51, Pritam Manohar Sutar wrote:
-> Hi Krzysztof,
+On 04/09/2025 11:14, Niklas Cassel wrote:
+> Hello Krzysztof, Rob,
 > 
->> -----Original Message-----
->> From: Krzysztof Kozlowski <krzk@kernel.org>
->> Sent: 04 September 2025 12:18 PM
->> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
->> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
->> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
->> andre.draszik@linaro.org; peter.griffin@linaro.org; kauschluss@disroot.org;
->> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
->> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
->> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
->> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
->> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
->> faraz.ata@samsung.com; muhammed.ali@samsung.com;
->> selvarasu.g@samsung.com
->> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
->> ExynosAutov920 HS phy compatible
+> On Thu, Sep 04, 2025 at 09:10:34AM +0200, Krzysztof Kozlowski wrote:
+>>> +
+>>> +  ports-implemented:
+>>> +    const: 1
 >>
->> On Wed, Sep 03, 2025 at 01:08:22PM +0530, Pritam Manohar Sutar wrote:
->>> Document support for the USB20 phy found on the ExynosAutov920 SoC.
->>> The
->>> USB20 phy is functionally identical to that on the Exynos850 SoC, so
->>> no driver changes are needed to support this phy. However, add a
->>> dedicated compatible string for USB20 phy found in this SoC.
->>>
->>> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
->>
->> You just dropped all tags without explaining why.
+>> I do not see how you addressed request about firmware. Nothing changed
+>> here, no explanation in the commit msg.
 > 
-> Regretted inconvenience. 
+> In Yulin's defence, he did comment that when having the Ports Implemented
+> register initialized by firmware, the Ports Implemented register apparently
+> gets cleared to zero when rmmoding the driver (probably because it disables
+> the clocks and regulators to the controller), thus this suggestion breaks
+> the use case of being able to reload the driver (rmmod + insmod).
 > 
-> There were significant changes in supplies' names in driver and schemas 
-> (patch-set v8). This led to make changes in patch no 5.  And review for 
-> these changes is needed.  Hence, removed RB tag in this patch-set. 
+> He mentioned this, and asked for advice here:
+> https://lore.kernel.org/linux-ide/2cc9f2ff.6a2.198e04fd36e.Coremail.luyulin@eswincomputing.com/
 > 
-> There was a ask for the same https://lore.kernel.org/linux-phy/000401dc18cd$ec02a1b0$c407e510$@samsung.com/#:~:text=Let%20me%20know%2C%20because%20of%20above%20changes%2C%20should%20be%20removing%20your%20%0A%27reviewed%2Dby%27%20tag%20from%20patch%201%20and%203.
+> After no reply he asked the same question again:
+> https://lore.kernel.org/linux-ide/692e11ca.843.198f0337528.Coremail.luyulin@eswincomputing.com/
 > 
+> I assume that Rob simply missed those messages.
+> 
+> Anyway, I provided my 50 cents here:
+> https://lore.kernel.org/linux-ide/aLBUC116MdJqDGIJ@flawful.org/
+> 
+> (I would like to add that I think it is the disabling of clocks and
+> regulators that causes the register to be cleared, since we do call
+> ahci_platform_assert_rsts() during the first probe, so if it was the reset
+> that cleared the register, the first probe should also not have worked.)
+> 
+> 
+> Not sure if it relevant to mention this reply to Rob's review comment in the
+> commit message, but perhaps it should have been mentioned in the change log.
 
+Reviewer questions for more serious stuff happen for a reason, so when
+discussion is resolved somehow differently than reviewer suggested, it
+pretty often deserves explanation in commit msg.
 
-Where in the changelog you explained why you dropped the tags?
+Well, in changelog as absolute minimum. No explanation happened here in
+the changelog, nor in the commit msg.
 
 Best regards,
 Krzysztof
