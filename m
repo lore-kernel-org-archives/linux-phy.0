@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 385ACCA1010
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 15:41:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B74EBCA1016
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 15:41:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ENmjv122ai6kk2FbP2ZFmUaGHfAe+UeunnAzBe56TPA=; b=C6DEF0wtrjl+3r
-	//SnlHsgV6xKrap/RQaAzbwyFYBm42A7eGfPP98UlpJXuWs/yjXEFCgN+FykfNWriVV5eN7vkbnTP
-	CMfOoQGiTGKmQR7hsIVi+UboZmzaMx7AUcn1EvPxeXkFlgXfF93PHk90sUqtKdR9vAxAFS3aUn6te
-	D+3B3Btxb+m0JuU+grNVZU1LouewbowPEWAI5K82YBiJsml5lTsO9DvS2X7lcw4t4R5QO4sh1kRwx
-	n3eyZJYxRkox6FUlR6T1HQ8lmmtBidBofS9h9NSiFNIm83ncB9FVI2/sbU/I72vHVFsnIxEg26psw
-	drz66jXZBasgu4on5qug==;
+	List-Owner; bh=dictimeotS5HLNU3Bb0DBiJW/l4yT61Q+CkmkQIe2r8=; b=fY094PtjbBNfsj
+	PeWdzZXSDAo3dBzATDDUbZQqpEdoV45JXGDv3/ZO0kPwFCuPiO9TF/6yb1YGNgkHmwJYhBLixjFYz
+	ZyDVmmwDqRk0lLnuDX1xmzpslt0H1i1KBEbZccIci1EyODUE2JPgBpl7k86c+Zccmsw9/wdeFEmBE
+	GDCfJ9zZVIfq1y5A5UdPmnzM1rkL5D05QLIliuFOb+bFc0pCuO8n1SOIQ2hto3wjtUeLZOiTpabAz
+	dfszs1o1IQ+HGR0aAAlGXER1ABKg3Dae9mtLy7eP/kDjiTdKDjJCLEqIJultMtayWBbenbgvovOMt
+	EODX8Ey1RiomzVvyIuew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuYYt-00000002pLq-3zxJ;
-	Fri, 05 Sep 2025 15:41:15 +0000
-Received: from mgamail.intel.com ([192.198.163.19])
+	id 1uuYYx-00000002pQX-25q9;
+	Fri, 05 Sep 2025 15:41:19 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuUK5-00000001HUd-077f;
-	Fri, 05 Sep 2025 11:09:42 +0000
+	id 1uuUnZ-00000001RJ8-1aG6;
+	Fri, 05 Sep 2025 11:40:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1757070581; x=1788606581;
+  t=1757072409; x=1788608409;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=7m/86o3yQ77TEdGSH2MiSbmes09C1SQZCM+n87rz7fg=;
-  b=btMw55hjbBZs6N/QPh47X4FjGcefjA4z+UmuZG5jcrM9XXjd9jbsgQhg
-   Z4RnK8wP1i0w8bSypqZ/FNU45tFfqXIqPyeROlII+vrOiBUIrzSU+8Ihr
-   Tj4hDO+aiuRpI+AlazFkxh32nMHnegT9D4z7o+SKCbnAHpoqS5f9wILkO
-   J46UbmxS7BUcpZpPsw7drfPk3axRm3hKsL/zv/ETEAXUUDryykI07+rc8
-   Enpu91XHMzTdWk+WMYUjM2vYXXDbhB5baCAjBXjclz4COsZMff9B7514V
-   dZpvhJ9808hJAtpS/RDB92In2lZ49Sg8FC0kPZLnZ1XlM2js2Jh8EoBwo
-   g==;
-X-CSE-ConnectionGUID: EAgunRp4QZugi/uh/sisLA==
-X-CSE-MsgGUID: /rxvIjHPRc6SAJetvlog8A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11543"; a="58454998"
+  bh=sx2wz53gv4OIUWMCEXeNS8i0YplTPAB4OZ9qODA9qog=;
+  b=fRMXcTtJPiwsmWmgGpYLKGjNyC/2wv5qZE/3vl3u3zFqlvH5wvqo8nY7
+   YgnpmaFP484/TufyOOizdeVHkbZv5NZil89vcYE3hbpQEyf6jofQJX8sa
+   TGlwz5PTrh3snTIlCEfwbTFdFzbaNQ3NZtvzZZSMieLBwN2QAu5ZGqzbr
+   2emF/6J81ssYv7xYm9bCSZL8mysAnqsVJFByACRbS5vS3A6ltpqW/MrM3
+   MHxQZeU2yQnYC4oCgXLMyrMlyyRgxrP7DyNC/rhklTgY59X3pmxgxtpLB
+   xABRWl9kqqy4/drG664rdbgAjHyqklyClSJzxVsOtmFe64l+1hpYxS9GZ
+   Q==;
+X-CSE-ConnectionGUID: ArmKiuowRxCnJwfPabMeRw==
+X-CSE-MsgGUID: GpMWsEivRI+y3lxy2I02Tg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11543"; a="63064748"
 X-IronPort-AV: E=Sophos;i="6.18,241,1751266800"; 
-   d="scan'208";a="58454998"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Sep 2025 04:09:40 -0700
-X-CSE-ConnectionGUID: Q+k0m8w6TqGxOoJFGC8I5g==
-X-CSE-MsgGUID: NcHeEyL0SVK7RRDj8ZOf7g==
+   d="scan'208";a="63064748"
+Received: from fmviesa007.fm.intel.com ([10.60.135.147])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Sep 2025 04:40:06 -0700
+X-CSE-ConnectionGUID: 7ivWf5SiTburyJTsZYw9/Q==
+X-CSE-MsgGUID: Mm1LtjFKRfexLBEV4Qw4+w==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.18,241,1751266800"; 
-   d="scan'208";a="202960490"
+   d="scan'208";a="171710329"
 Received: from kuha.fi.intel.com ([10.237.72.152])
-  by orviesa002.jf.intel.com with SMTP; 05 Sep 2025 04:09:35 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Fri, 05 Sep 2025 14:09:34 +0300
-Date: Fri, 5 Sep 2025 14:09:34 +0300
+  by fmviesa007.fm.intel.com with SMTP; 05 Sep 2025 04:40:01 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Fri, 05 Sep 2025 14:40:00 +0300
+Date: Fri, 5 Sep 2025 14:40:00 +0300
 From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 To: Sven Peter <sven@kernel.org>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -69,18 +69,18 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>, linux-usb@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH RFC 10/22] usb: typec: tipd: Move switch_power_state to
- tipd_data
-Message-ID: <aLrE7uzHH-ZloOWS@kuha.fi.intel.com>
+	linux-phy@lists.infradead.org, Hector Martin <marcan@marcan.st>
+Subject: Re: [PATCH RFC 15/22] usb: typec: tipd: Update partner identity when
+ power status was updated
+Message-ID: <aLrMEL_St_0JlZYG@kuha.fi.intel.com>
 References: <20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org>
- <20250821-atcphy-6-17-v1-10-172beda182b8@kernel.org>
+ <20250821-atcphy-6-17-v1-15-172beda182b8@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250821-atcphy-6-17-v1-10-172beda182b8@kernel.org>
+In-Reply-To: <20250821-atcphy-6-17-v1-15-172beda182b8@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250905_040941_113025_CB228C7F 
-X-CRM114-Status: GOOD (  21.20  )
+X-CRM114-CacheID: sfid-20250905_044009_454614_6D33DE47 
+X-CRM114-Status: GOOD (  18.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,77 +97,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 21, 2025 at 03:39:02PM +0000, Sven Peter wrote:
-> When support for CD321x was originally added no other hardware variant
-> was supported and there was no need for struct tipd_data. Now that it
-> exists move the special case in there so that we can drop the
-> of_device_is_compatible_check entirely.
+Hi,
+
+On Thu, Aug 21, 2025 at 03:39:07PM +0000, Sven Peter wrote:
+> From: Hector Martin <marcan@marcan.st>
 > 
+> Whenever the power status is changed make sure to also update the
+> partner identity to be able to detect changes once de-bouncing and mode
+> changes arre added for CD321x.
+
+s/arre/are/
+
+> Signed-off-by: Hector Martin <marcan@marcan.st>
 > Signed-off-by: Sven Peter <sven@kernel.org>
-
-Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-
 > ---
->  drivers/usb/typec/tipd/core.c | 17 ++++++++---------
->  1 file changed, 8 insertions(+), 9 deletions(-)
+>  drivers/usb/typec/tipd/core.c | 9 ++++++++-
+>  1 file changed, 8 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
-> index 6d8bcbc9cad8a1394e066504d4c5ca570edd4e4f..4815c5c462837865a5f9d37bbc139249c82c2f75 100644
+> index e369897bfa017ca96e559a8bd70da11207d4513a..b0fdd4dddd3a490dbc2a8ced21ea0803658f36a7 100644
 > --- a/drivers/usb/typec/tipd/core.c
 > +++ b/drivers/usb/typec/tipd/core.c
-> @@ -118,6 +118,7 @@ struct tipd_data {
->  	void (*trace_status)(u32 status);
->  	int (*apply_patch)(struct tps6598x *tps);
->  	int (*init)(struct tps6598x *tps);
-> +	int (*switch_power_state)(struct tps6598x *tps, u8 target_state);
->  	int (*reset)(struct tps6598x *tps);
->  };
+> @@ -636,9 +636,16 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+>  	if (!tps6598x_read_status(tps, &status))
+>  		goto err_unlock;
 >  
-> @@ -1293,7 +1294,6 @@ tps25750_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
->  
->  static int tps6598x_probe(struct i2c_client *client)
->  {
-> -	struct device_node *np = client->dev.of_node;
->  	struct tps6598x *tps;
->  	struct fwnode_handle *fwnode;
->  	u32 status;
-> @@ -1331,18 +1331,16 @@ static int tps6598x_probe(struct i2c_client *client)
->  	if (i2c_check_functionality(client->adapter, I2C_FUNC_I2C))
->  		tps->i2c_protocol = true;
->  
-> -	if (np && of_device_is_compatible(np, "apple,cd321x")) {
-> -		/* Switch CD321X chips to the correct system power state */
-> -		ret = cd321x_switch_power_state(tps, TPS_SYSTEM_POWER_STATE_S0);
-> -		if (ret)
-> -			return ret;
-> -
-> -	}
-> -
->  	tps->data = i2c_get_match_data(client);
->  	if (!tps->data)
->  		return -EINVAL;
->  
-> +	if (tps->data->switch_power_state) {
-> +		ret = tps->data->switch_power_state(tps, TPS_SYSTEM_POWER_STATE_S0);
-> +		if (ret)
-> +			return ret;
+> -	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE)
+> +	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE) {
+>  		if (!tps6598x_read_power_status(tps))
+>  			goto err_unlock;
+> +		if (TPS_POWER_STATUS_PWROPMODE(tps->pwr_status) == TYPEC_PWR_MODE_PD) {
+> +			if (tps6598x_read_partner_identity(tps)) {
+> +				dev_err(tps->dev, "%s: failed to partner identity\n", __func__);
+
+				dev_err(tps->dev, "failed to read partner identity\n");
+
+> +				tps->partner_identity = (struct usb_pd_identity) {0};
+> +			}
+> +		}
 > +	}
-> +
->  	/* Make sure the controller has application firmware running */
->  	ret = tps6598x_check_mode(tps);
->  	if (ret < 0)
-> @@ -1525,6 +1523,7 @@ static const struct tipd_data cd321x_data = {
->  	.trace_status = trace_tps6598x_status,
->  	.init = cd321x_init,
->  	.reset = cd321x_reset,
-> +	.switch_power_state = cd321x_switch_power_state,
->  };
 >  
->  static const struct tipd_data tps6598x_data = {
-> 
-> -- 
-> 2.34.1
-> 
+>  	if (event & APPLE_CD_REG_INT_DATA_STATUS_UPDATE)
+>  		if (!tps->data->read_data_status(tps))
+
+thanks,
 
 -- 
 heikki
