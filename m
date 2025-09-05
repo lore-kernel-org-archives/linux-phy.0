@@ -4,67 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14F67CA0FED
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 08:48:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CD82CA0FED
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 09:12:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
-	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RDTS24jBpauvlkcNG8KfZY2zLxopJIDVf/OjvQtYGaw=; b=UF668xcsrzWjo0
-	ZhLtE3yZBTYpxHoSeKXaAcnOXssAWQH5Oo25xF97LqsG4bdACAEF7UZI4VbEfI1v0W0Eptzh8qMaf
-	0uhrB3/EmRB2ChbuCevmxDKi3U4vy/xWoJK/6jvYEN2jNUuUFxFRqRLAa6Gq63oUCMjb79vgajd57
-	xqKDC0PQ98nInNG0ttARal/N1T2e23QDGSUChuSetO4xCWPC4+Xm9luH7ZU4+wgIZBbOdUYpPDdpg
-	P9nlJYnCo0AMhFlgjDo1jnSVFJTBhqOqBjnCTPN4gW5Adg1rBRQoGFL/BJ3+QUNwMO5Yh55kVzNXp
-	HWV6HrzJYjsF1jOpY6AA==;
+	List-Owner; bh=h0NPOABaMI1rFRxY7s0E8VCWPoEbGyC1nYD6LqnL7Jg=; b=kARWlkc6AYfPf9
+	1sSY8edk2fYPesCNn9P2NwtqVb/tm8nQmX/GY5bqXvjvRK/WKYSVXnBIKE5AX7kZV0QCafeSLwgZ1
+	TI2jr28RaVmxH9fTiGTx4KsoIrEOp0cd8Ulu5Y0w7JSas1jXx9vUeV+Ct5Ap1CGRaeSoACcxdk15j
+	o3Wtgurd8iVsMWvz+6wRKBUf20l2dqhiyLIinRZaRr9EJQeZ+UqA1cf5Kp88IuAfJybpL9t9IQm6m
+	Sk56Z6e4qrbdVLi6fym0l/wvmpklo1SANk7hDXEAgo21ImAzJu7hq4A//ASp9Taa/EsM3mu4NKHm6
+	eSXmz0H86tmHPgXLmgdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuS70-00000000TjN-384p;
-	Fri, 05 Sep 2025 08:48:02 +0000
-Received: from azure-sdnproxy.icoremail.net ([52.229.205.26])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuQnD-0000000HaBE-3qbf
-	for linux-phy@lists.infradead.org;
-	Fri, 05 Sep 2025 07:23:34 +0000
-Received: from luyulin$eswincomputing.com ( [10.12.96.77] ) by
- ajax-webmail-app2 (Coremail) ; Fri, 5 Sep 2025 15:23:20 +0800 (GMT+08:00)
-X-Originating-IP: [10.12.96.77]
-Date: Fri, 5 Sep 2025 15:23:20 +0800 (GMT+08:00)
-X-CM-HeaderCharset: UTF-8
-From: luyulin@eswincomputing.com
-To: "Krzysztof Kozlowski" <krzk@kernel.org>, cassel@kernel.org,
-	robh@kernel.org
-Cc: "Niklas Cassel" <cassel@kernel.org>, dlemoal@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
-	ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com, lianghujun@eswincomputing.com
-Subject: Re: Re: [PATCH v3 1/3] dt-bindings: ata: eswin: Document for
- EIC7700 SoC ahci
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version 2024.2-cmXT6 build
- 20241203(6b039d88) Copyright (c) 2002-2025 www.mailtech.cn
- mispb-72143050-eaf5-4703-89e0-86624513b4ce-eswincomputing.com
-In-Reply-To: <5f6bc8da-ac78-4f21-8f9f-c84f213f60a9@kernel.org>
-References: <20250904063427.1954-1-luyulin@eswincomputing.com>
- <20250904063718.421-1-luyulin@eswincomputing.com>
- <8489c13b-6810-480c-9894-bb5c80cfbde0@kernel.org> <aLlYkZWBaI5Yz6fo@ryzen>
- <5f6bc8da-ac78-4f21-8f9f-c84f213f60a9@kernel.org>
+	id 1uuSUZ-00000000dpj-13re;
+	Fri, 05 Sep 2025 09:12:23 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uuRF8-000000009mw-3Lcr;
+	Fri, 05 Sep 2025 07:52:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 88E9540542;
+	Fri,  5 Sep 2025 07:52:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CED12C4CEF1;
+	Fri,  5 Sep 2025 07:52:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757058742;
+	bh=Wf9m/dqTEtlJyt6WAhKzaW88Y/FSRjgusk/yxfNl3ME=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PokDf1fI8lHcYnnnNnkfnD9eoHOYMme+d8PieowgfYCm9lyo9OhHIWdNyJE/kG3iS
+	 jBVU3qgdWWjJrfWp6A/rBLe/N7EtGRlFbCdnK/qWMgu/rRDnOY19eXHccJr3i5kzLF
+	 lImkVOyL9X26QNefgqUwFufn2m0NDqi3keOdQJHQRKzJ3328h4c7lXSvSFpfPxNjX1
+	 VFDJ4o0kaeVF6vk6ZD3voU2kPzrle/4E167LSxC4+gCH+xqIMKP3aOPkIc1XKkrwkH
+	 5JaDBIpSE2dS23NmcHzh1b0Heyb/86/ljIE2DHlsab2SRsq0O75Lqt5aq80KPT0l6d
+	 yZHerR9GLaj3Q==
+Date: Fri, 5 Sep 2025 09:52:19 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>, 
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Aswath Govindraju <a-govindraju@ti.com>, Shawn Guo <shawnguo@kernel.org>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>, Haibo Chen <haibo.chen@nxp.com>, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v5 1/9] dt-bindings: phy: ti,tcan104x-can: Document NXP
+ TJA105X/1048
+Message-ID: <20250905-elite-enthusiastic-zebu-fec55c@kuoka>
+References: <20250904-can-v5-0-23d8129b5e5d@nxp.com>
+ <20250904-can-v5-1-23d8129b5e5d@nxp.com>
 MIME-Version: 1.0
-Message-ID: <7206383a.d98.19918c22570.Coremail.luyulin@eswincomputing.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: TQJkCgAXt5Xoj7poDeXIAA--.24640W
-X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/1tbiAgEQA2i5v1ESawAB
-	sX
-X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VWxJw
-	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
-	daVFxhVjvjDU=
+Content-Disposition: inline
+In-Reply-To: <20250904-can-v5-1-23d8129b5e5d@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250905_002332_269415_C859B5E0 
-X-CRM114-Status: GOOD (  20.93  )
+X-CRM114-CacheID: sfid-20250905_005222_872724_1CE7B2C5 
+X-CRM114-Status: GOOD (  18.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,49 +75,137 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGVsbG8gS3J6eXN6dG9mLCBOaWtsYXMsIFJvYiwKClRoYW5rIHlvdSB2ZXJ5IG11Y2ggZm9yIHlv
-dXIgc3VnZ2VzdGlvbnMgYW5kIHJlcGx5LgoKPiAKPiBPbiAwNC8wOS8yMDI1IDExOjE0LCBOaWts
-YXMgQ2Fzc2VsIHdyb3RlOgo+ID4gSGVsbG8gS3J6eXN6dG9mLCBSb2IsCj4gPiAKPiA+IE9uIFRo
-dSwgU2VwIDA0LCAyMDI1IGF0IDA5OjEwOjM0QU0gKzAyMDAsIEtyenlzenRvZiBLb3psb3dza2kg
-d3JvdGU6Cj4gPj4+ICsKPiA+Pj4gKyAgcG9ydHMtaW1wbGVtZW50ZWQ6Cj4gPj4+ICsgICAgY29u
-c3Q6IDEKPiA+Pgo+ID4+IEkgZG8gbm90IHNlZSBob3cgeW91IGFkZHJlc3NlZCByZXF1ZXN0IGFi
-b3V0IGZpcm13YXJlLiBOb3RoaW5nIGNoYW5nZWQKPiA+PiBoZXJlLCBubyBleHBsYW5hdGlvbiBp
-biB0aGUgY29tbWl0IG1zZy4KPiA+IAoKLi4uCgo+ID4gCj4gPiBBbnl3YXksIEkgcHJvdmlkZWQg
-bXkgNTAgY2VudHMgaGVyZToKPiA+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWlkZS9h
-TEJVQzExNk1kSnFER0lKQGZsYXdmdWwub3JnLwo+ID4gCj4gPiAoSSB3b3VsZCBsaWtlIHRvIGFk
-ZCB0aGF0IEkgdGhpbmsgaXQgaXMgdGhlIGRpc2FibGluZyBvZiBjbG9ja3MgYW5kCj4gPiByZWd1
-bGF0b3JzIHRoYXQgY2F1c2VzIHRoZSByZWdpc3RlciB0byBiZSBjbGVhcmVkLCBzaW5jZSB3ZSBk
-byBjYWxsCj4gPiBhaGNpX3BsYXRmb3JtX2Fzc2VydF9yc3RzKCkgZHVyaW5nIHRoZSBmaXJzdCBw
-cm9iZSwgc28gaWYgaXQgd2FzIHRoZSByZXNldAo+ID4gdGhhdCBjbGVhcmVkIHRoZSByZWdpc3Rl
-ciwgdGhlIGZpcnN0IHByb2JlIHNob3VsZCBhbHNvIG5vdCBoYXZlIHdvcmtlZC4pCj4gPiAKClRo
-YW5rIHlvdSB2ZXJ5IG11Y2ggZm9yIHlvdXIgZXhwbGFuYXRpb24uIFRvIGFkZCBzb21lIGNvbnRl
-eHQ6CkluIG91ciBzeXN0ZW0sIHRoZcKgcG9ydHMtaW1wbGVtZW50ZWTCoHJlZ2lzdGVyIGhhcyBh
-bHJlYWR5IGJlZW4gY29uZmlndXJlZCBieSB0aGUgZmlybXdhcmUKKHdoaWNoIGlzIFUtQm9vdCBv
-biB0aGUgSGlGaXZlIFByZW1pZXIgUDU1MCBib2FyZCkuClRoZXJlZm9yZSwgd2hlbiBlbnRlcmlu
-Z8KgdGhlIGtlcm5lbCwgdGhlIHZhbHVlIG9mIHRoaXMgcmVnaXN0ZXIgaXMgY29ycmVjdGx5IHNl
-dCB0byAweDEuCgpEdXJpbmcgcHJvYmUswqBhaGNpX3BsYXRmb3JtX2VuYWJsZV9yZXNvdXJjZXPC
-oOKGksKgYWhjaV9wbGF0Zm9ybV9kZWFzc2VydF9yc3RzwqBpcyBjYWxsZWQuCkFuZCB3aGVuIHRo
-ZSBkcml2ZXIgaXMgcmVtb3ZlZCzCoGFoY2lfcGxhdGZvcm1fZGlzYWJsZV9yZXNvdXJjZXMK4oaS
-wqBhaGNpX3BsYXRmb3JtX2Fzc2VydF9yc3RzwqBpcyB0cmlnZ2VyZWQuClRoaXMgcmVzZXQgb3Bl
-cmF0aW9uIGNhdXNlcyB0aGUgcmVnaXN0ZXIgdG8gYmUgcmVzdG9yZWQgdG8gMC4KQWNjb3JkaW5n
-IHRvIHRoZSBJUCBkYXRhYm9vaywgdGhpcyByZWdpc3RlciBpcyBpbmRlZWQgc2V0IHRvIDAgYWZ0
-ZXIgcmVzZXQuCgpUaGlzIGlzIG15IHVuZGVyc3RhbmRpbmcuIEknZCBncmVhdGx5IGFwcHJlY2lh
-dGUgaXQgaWYgeW91IHBvaW50IG91dCBhbnkgaXNzdWVzLgoKPiA+IAo+ID4gTm90IHN1cmUgaWYg
-aXQgcmVsZXZhbnQgdG8gbWVudGlvbiB0aGlzIHJlcGx5IHRvIFJvYidzIHJldmlldyBjb21tZW50
-IGluIHRoZQo+ID4gY29tbWl0IG1lc3NhZ2UsIGJ1dCBwZXJoYXBzIGl0IHNob3VsZCBoYXZlIGJl
-ZW4gbWVudGlvbmVkIGluIHRoZSBjaGFuZ2UgbG9nLgo+IAo+IFJldmlld2VyIHF1ZXN0aW9ucyBm
-b3IgbW9yZSBzZXJpb3VzIHN0dWZmIGhhcHBlbiBmb3IgYSByZWFzb24sIHNvIHdoZW4KPiBkaXNj
-dXNzaW9uIGlzIHJlc29sdmVkIHNvbWVob3cgZGlmZmVyZW50bHkgdGhhbiByZXZpZXdlciBzdWdn
-ZXN0ZWQsIGl0Cj4gcHJldHR5IG9mdGVuIGRlc2VydmVzIGV4cGxhbmF0aW9uIGluIGNvbW1pdCBt
-c2cuCj4gCj4gV2VsbCwgaW4gY2hhbmdlbG9nIGFzIGFic29sdXRlIG1pbmltdW0uIE5vIGV4cGxh
-bmF0aW9uIGhhcHBlbmVkIGhlcmUgaW4KPiB0aGUgY2hhbmdlbG9nLCBub3IgaW4gdGhlIGNvbW1p
-dCBtc2cuCgpUaGFuayB5b3UgdmVyeSBtdWNoIGZvciB5b3VyIHN1Z2dlc3Rpb24uCkknbGwgYWRk
-IGV4cGxhbmF0aW9ucyBpbiB0aGUgY29tbWl0IG1lc3NhZ2UgYW5kIGNoYW5nZWxvZ3MgZm9yIHRo
-ZSBuZXh0IHBhdGNoLgoKQmVzdCByZWdhcmRzLApZdWxpbgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Thu, Sep 04, 2025 at 04:36:44PM +0800, Peng Fan wrote:
+> The TJA1048 is a dual high-speed CAN transceiver with sleep mode supported
+> and no EN pin.
+> 
+> The TJA1051 is a high-speed CAN transceiver with slient mode supported,
+> but only TJA1051T/E has EN pin. To make it simple, make enable-gpios as
+> optional for TJA1051.
+> 
+> The TJA1057 is a high-speed CAN transceiver with slient mode supported
+> and no EN pin.
+> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 69 +++++++++++++++++++++-
+>  1 file changed, 66 insertions(+), 3 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> index 4a8c3829d85d3c4a4963750d03567c1c345beb91..124493f360516eb203e8711cb96789258dd01119 100644
+> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> @@ -22,16 +22,26 @@ properties:
+>        - enum:
+>            - ti,tcan1042
+>            - ti,tcan1043
+> +          - nxp,tja1048
+> +          - nxp,tja1051
+> +          - nxp,tja1057
+>            - nxp,tjr1443
+>  
+>    '#phy-cells':
+> -    const: 0
+> +    enum: [0, 1]
+>  
+> -  standby-gpios:
+> +  silent-gpios:
+>      description:
+> -      gpio node to toggle standby signal on transceiver
+> +      gpio node to toggle silent signal on transceiver
+>      maxItems: 1
+>  
+> +  standby-gpios:
+> +    description:
+> +      gpio node to toggle standby signal on transceiver. For two Items, item 1
+> +      is for stbn1, item 2 is for stbn2.
+> +    minItems: 1
+> +    maxItems: 2
+> +
+>    enable-gpios:
+>      description:
+>        gpio node to toggle enable signal on transceiver
+> @@ -53,6 +63,59 @@ required:
+>    - compatible
+>    - '#phy-cells'
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: nxp,tja1048
+> +    then:
+> +      properties:
+> +        '#phy-cells':
+> +          const: 1
+> +        enable-gpios: false
+> +        silent-gpios: false
+> +        standby-gpios:
+> +          minItems: 2
+> +    else:
+> +      properties:
+> +        '#phy-cells':
+> +          const: 0
+> +        standby-gpios:
+> +          maxItems: 1
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - nxp,tja1051
+> +            - nxp,tja1057
+> +    then:
+> +      properties:
+> +        silent-gpios: true
+> +    else:
+> +      properties:
+> +        silent-gpios: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: nxp,tja1051
+
+This is here and in if earlier. Just keep in only one place. Also
+earlier else also touches standby-gpios, so you basically have it in
+multiple places.
+
+Just define if:then:, without any else:, for each variant.
+
+> +    then:
+> +      properties:
+> +        standby-gpios: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: nxp,tja1057
+
+This as well.
+
+> +    then:
+> +      properties:
+> +        enable-gpios: false
+> +        standby-gpios: false
+> +
+>  additionalProperties: false
+>  
+>  examples:
+> 
+> -- 
+> 2.37.1
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
