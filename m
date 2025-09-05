@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CD82CA0FED
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 09:12:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA731CA1013
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Sep 2025 09:54:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h0NPOABaMI1rFRxY7s0E8VCWPoEbGyC1nYD6LqnL7Jg=; b=kARWlkc6AYfPf9
-	1sSY8edk2fYPesCNn9P2NwtqVb/tm8nQmX/GY5bqXvjvRK/WKYSVXnBIKE5AX7kZV0QCafeSLwgZ1
-	TI2jr28RaVmxH9fTiGTx4KsoIrEOp0cd8Ulu5Y0w7JSas1jXx9vUeV+Ct5Ap1CGRaeSoACcxdk15j
-	o3Wtgurd8iVsMWvz+6wRKBUf20l2dqhiyLIinRZaRr9EJQeZ+UqA1cf5Kp88IuAfJybpL9t9IQm6m
-	Sk56Z6e4qrbdVLi6fym0l/wvmpklo1SANk7hDXEAgo21ImAzJu7hq4A//ASp9Taa/EsM3mu4NKHm6
-	eSXmz0H86tmHPgXLmgdQ==;
+	List-Owner; bh=Qdb9W540Nxq70bk7SQF/YkxfcrBKodg2ltV96L78LfY=; b=iEeJu7CQM6/ZB4
+	qN59IKg1vbxNfltFo9wnWPKRnd7NCJPSNZ1r1k9WCQYD8hGtVxkRPXe2YOhxYa/JdMI/GEnFc7gHU
+	YIXYfTlpaGuU9a3VeYVK6FLBAUed6SCYc07aTGKWQprvTSUGvnPVNgcx55CYHuZuX0pPZmu9QGaJ3
+	fJdsTDEaDBj49jzMXuGKKDg+NrveM37D+ljPQ8MYtxbno9tKk4dVB9XFbsg8YJzsaFpDCbgWhE3hl
+	tEHEMbby8GDgCX6xWkNg9pfTV7ur5DLlYiLKbHv2kNFyJ/kG2gh+wTnr52bgSiH95JwQwB/lKZvf4
+	NFaNiy/mo4WPLUJAYeEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuSUZ-00000000dpj-13re;
-	Fri, 05 Sep 2025 09:12:23 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uuT9D-00000000sAm-2Ht4;
+	Fri, 05 Sep 2025 09:54:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuRF8-000000009mw-3Lcr;
-	Fri, 05 Sep 2025 07:52:23 +0000
+	id 1uuRil-00000000KVB-1Sfc
+	for linux-phy@lists.infradead.org;
+	Fri, 05 Sep 2025 08:23:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 88E9540542;
-	Fri,  5 Sep 2025 07:52:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CED12C4CEF1;
-	Fri,  5 Sep 2025 07:52:21 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 46F7444867;
+	Fri,  5 Sep 2025 08:22:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8ED6BC4CEF1;
+	Fri,  5 Sep 2025 08:22:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757058742;
-	bh=Wf9m/dqTEtlJyt6WAhKzaW88Y/FSRjgusk/yxfNl3ME=;
+	s=k20201202; t=1757060578;
+	bh=ey/kShOzSS9LzBy1SpXYUKciwMlZQTcbrdVlmd2wvSA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=PokDf1fI8lHcYnnnNnkfnD9eoHOYMme+d8PieowgfYCm9lyo9OhHIWdNyJE/kG3iS
-	 jBVU3qgdWWjJrfWp6A/rBLe/N7EtGRlFbCdnK/qWMgu/rRDnOY19eXHccJr3i5kzLF
-	 lImkVOyL9X26QNefgqUwFufn2m0NDqi3keOdQJHQRKzJ3328h4c7lXSvSFpfPxNjX1
-	 VFDJ4o0kaeVF6vk6ZD3voU2kPzrle/4E167LSxC4+gCH+xqIMKP3aOPkIc1XKkrwkH
-	 5JaDBIpSE2dS23NmcHzh1b0Heyb/86/ljIE2DHlsab2SRsq0O75Lqt5aq80KPT0l6d
-	 yZHerR9GLaj3Q==
-Date: Fri, 5 Sep 2025 09:52:19 +0200
+	b=cdc9x6qRbgLD9mazhdyUs0XSsipHnza/HDk+e4+gfJ8l9fuJ3IrqGn3G4Jknqxnjp
+	 3/9SF5mYZsqHWzI79YA+W73qmJoq3ARERv4W+dGDDpOKeru+IsgM85LCq3c3JiAd/k
+	 njZXAR8Z4oTBvHZRrPDhEv+pu1z8K5xRmGTu/UiAlmo63O49nO4B25meUnWobCmHoS
+	 a2zIVZWcNG9D7xCgE5JfFt0cIJbxlUzIWsk76lT1wRAY/C01hbxUDdqQUd/7wX4iUU
+	 g6eWobUD57QzAwK+809jNntxFvFQbn82CO5O7VWXCUf1r22O5vY6cF72Sn7ixEYrhF
+	 g129HfS+cZfPw==
+Date: Fri, 5 Sep 2025 10:22:55 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>, 
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>, 
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
 	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Aswath Govindraju <a-govindraju@ti.com>, Shawn Guo <shawnguo@kernel.org>, 
-	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
-	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>, Haibo Chen <haibo.chen@nxp.com>, 
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v5 1/9] dt-bindings: phy: ti,tcan104x-can: Document NXP
- TJA105X/1048
-Message-ID: <20250905-elite-enthusiastic-zebu-fec55c@kuoka>
-References: <20250904-can-v5-0-23d8129b5e5d@nxp.com>
- <20250904-can-v5-1-23d8129b5e5d@nxp.com>
+	Bjorn Andersson <andersson@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/3] dt-bindings: phy: Add DP PHY compatible for Glymur
+Message-ID: <20250905-clay-falcon-of-anger-de5b5a@kuoka>
+References: <20250904-phy-qcom-edp-add-glymur-support-v1-0-e83c6b9a145b@linaro.org>
+ <20250904-phy-qcom-edp-add-glymur-support-v1-1-e83c6b9a145b@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250904-can-v5-1-23d8129b5e5d@nxp.com>
+In-Reply-To: <20250904-phy-qcom-edp-add-glymur-support-v1-1-e83c6b9a145b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250905_005222_872724_1CE7B2C5 
-X-CRM114-Status: GOOD (  18.09  )
+X-CRM114-CacheID: sfid-20250905_012259_404881_D89F2754 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,130 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 04, 2025 at 04:36:44PM +0800, Peng Fan wrote:
-> The TJA1048 is a dual high-speed CAN transceiver with sleep mode supported
-> and no EN pin.
+On Thu, Sep 04, 2025 at 09:55:51AM +0300, Abel Vesa wrote:
+> Document the compatible for the Glymur platform.
 > 
-> The TJA1051 is a high-speed CAN transceiver with slient mode supported,
-> but only TJA1051T/E has EN pin. To make it simple, make enable-gpios as
-> optional for TJA1051.
-> 
-> The TJA1057 is a high-speed CAN transceiver with slient mode supported
-> and no EN pin.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 > ---
->  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 69 +++++++++++++++++++++-
->  1 file changed, 66 insertions(+), 3 deletions(-)
+>  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> index 4a8c3829d85d3c4a4963750d03567c1c345beb91..124493f360516eb203e8711cb96789258dd01119 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> @@ -22,16 +22,26 @@ properties:
->        - enum:
->            - ti,tcan1042
->            - ti,tcan1043
-> +          - nxp,tja1048
-> +          - nxp,tja1051
-> +          - nxp,tja1057
->            - nxp,tjr1443
->  
->    '#phy-cells':
-> -    const: 0
-> +    enum: [0, 1]
->  
-> -  standby-gpios:
-> +  silent-gpios:
->      description:
-> -      gpio node to toggle standby signal on transceiver
-> +      gpio node to toggle silent signal on transceiver
->      maxItems: 1
->  
-> +  standby-gpios:
-> +    description:
-> +      gpio node to toggle standby signal on transceiver. For two Items, item 1
-> +      is for stbn1, item 2 is for stbn2.
-> +    minItems: 1
-> +    maxItems: 2
-> +
->    enable-gpios:
->      description:
->        gpio node to toggle enable signal on transceiver
-> @@ -53,6 +63,59 @@ required:
->    - compatible
->    - '#phy-cells'
->  
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: nxp,tja1048
-> +    then:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 1
-> +        enable-gpios: false
-> +        silent-gpios: false
-> +        standby-gpios:
-> +          minItems: 2
-> +    else:
-> +      properties:
-> +        '#phy-cells':
-> +          const: 0
-> +        standby-gpios:
-> +          maxItems: 1
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          enum:
-> +            - nxp,tja1051
-> +            - nxp,tja1057
-> +    then:
-> +      properties:
-> +        silent-gpios: true
-> +    else:
-> +      properties:
-> +        silent-gpios: false
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: nxp,tja1051
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> index a8ba0aa9ff9d83f317bd897a7d564f7e13f6a1e2..e572f6ea3523a483f701aedab383a63af7abe0e5 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> @@ -24,6 +24,7 @@ properties:
+>            - qcom,sc8280xp-dp-phy
+>            - qcom,sc8280xp-edp-phy
+>            - qcom,x1e80100-dp-phy
+> +          - qcom,glymur-dp-phy
 
-This is here and in if earlier. Just keep in only one place. Also
-earlier else also touches standby-gpios, so you basically have it in
-multiple places.
+Please keep alphabetical order. We never add things to the end of lists.
 
-Just define if:then:, without any else:, for each variant.
+Best regards,
+Krzysztof
 
-> +    then:
-> +      properties:
-> +        standby-gpios: false
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: nxp,tja1057
-
-This as well.
-
-> +    then:
-> +      properties:
-> +        enable-gpios: false
-> +        standby-gpios: false
-> +
->  additionalProperties: false
->  
->  examples:
-> 
-> -- 
-> 2.37.1
-> 
 
 -- 
 linux-phy mailing list
