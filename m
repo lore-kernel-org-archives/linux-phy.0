@@ -4,99 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80E6FCA1002
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 08:47:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA8CCCA1012
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 15:46:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Hiw8u2rDOd18s0Q6q9k20jxhYvkzViTrr9dFuecCt0=; b=PzoPA+E6g3xMFY
-	NXJnn1sS62+qzFY27Ts5wwI/Bv2UJARFKaNqrqLm1Ym7n9TOUMNArleVUgIVBClucgmeAhi2r0ZE5
-	46uG3JpabIciXU3t1isqyK8EizJpYeC/rc0cJo2xBkMYdCf2TMJBXfuWgjM/A5mji8Be0LWx0QxLd
-	aZyypw7SCwn24AIk55+J0DNJu+jbyDcn3hmqaGO6WWWL65z9RumfTkQTMrb+d+517k53/rrKw4F1n
-	yKEyM2KLN5h9D1ScsX8dQuVG5Q6Aa+4Po2w2iwQj0rb4WuHMVTzXp4ahNxh1qxvCpcu/H45DOh+T4
-	zWhunKMiO+btvOvOXlkg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rBOeoBX+aVqaN5F5ILfgcBl5ALW5fpsiJ8ilAnSFzpU=; b=rMaIchTzAP3DnO
+	1nFKwLnqPcC1lkRVsMviyrUuYz5LScEmFfEbqdaleQiAHU7Nw5fkOYH00FqTKhFPE7KJ6M/oyuKG1
+	GiFOHdb8q6yrSgoHHD07coQR16OPk/qM1XRzpoOYwCCiZCq47u0UAoZoeK4RYn99fkTzhn+2b9lD0
+	d+HB37SZZoO2D+qKj+eul76mr4JMiacKDvvO8ky+DPzj4oWd47VJKApG+Hg8rb4Xc6nIH7pG0XWNn
+	Nw5Ewl5pUktdsehdlQPIcllymMcoyStWWqAuUIb2+Drqxq/AiYQ+ETg6n/W6aZIVdp0luDS8Ir5eC
+	5KNqwBvSsA6BVSZ5cY5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuoZf-00000007Dog-0rQ4;
-	Sat, 06 Sep 2025 08:47:07 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1uuv7d-000000082Dz-1iIT;
+	Sat, 06 Sep 2025 15:46:37 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuoYF-00000007Dmu-1kBT
-	for linux-phy@lists.infradead.org;
-	Sat, 06 Sep 2025 08:45:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=oldschoolsolutions.biz; s=s1-ionos; t=1757148337; x=1757753137;
-	i=jens.glathe@oldschoolsolutions.biz;
-	bh=Qk0Ugz0RYhBkqBiOH6TLDHgmGaQbSmhEOLE0qSMFHWU=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:Subject:To:Cc:
-	 References:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:cc:content-transfer-encoding:
-	 content-type:date:from:message-id:mime-version:reply-to:subject:
-	 to;
-	b=auC24V81wx/DeDC7VMo7Trx6pqXlZaP9FvBKK3l8S6ZtrU7SrFu0CSpAMoTXRgmX
-	 /rG2Zjd79Uq21hZSixc3L0oByh+9AuQaBWJdotOsrYW3gSfflE/9apA/f1/eeWAym
-	 Hof7JQtr0va0QQbTjO85KwaWfeDvBqIEJ264Pbh1Lnq3AzlBnMc+NC+lnmnihEv1n
-	 2o6O2QJHp/zQe6GbwxMrUigBgKZLE2d6AviVY9U0mua0DNVGwCETIMIFarqwAStdx
-	 daQE2TUL7xZeQUD0RC/ER0l/0RULOqOo3MJaGX6fSk2vCnCKnNgs+PBBk0S0DzQlJ
-	 8Nh9phbSb1hLTwaU+A==
-X-UI-Sender-Class: 55c96926-9e95-11ee-ae09-1f7a4046a0f6
-Received: from [192.168.0.174] ([91.64.235.193]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MD9nd-1ulhrc1W2j-000Zxp; Sat, 06 Sep 2025 10:45:37 +0200
-Message-ID: <fe92c4e7-6a1d-4cec-a3d1-c50adff9f7f5@oldschoolsolutions.biz>
-Date: Sat, 6 Sep 2025 10:45:36 +0200
+	id 1uuv4m-000000081ew-1Zws;
+	Sat, 06 Sep 2025 15:43:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 9302F601D7;
+	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 2F90FC4CEE7;
+	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757173419;
+	bh=B2PmqO8jFsYcp9IfYjXmvUC+hdyx9Na0xGIpQfiCq3E=;
+	h=From:Subject:Date:To:Cc:From;
+	b=h6MZJCsO3bY+g0PaDB3Jo/YumM41bXU4GFkK8br8wcMHwX2ucGQMQ1teTnlpgK2Nx
+	 DtiHEndmhKIC5WkvLNktB/ngDwqwgemSW7mrVBCqLaLVZhEj8T3lYjuZxY/nWMu6b8
+	 HM2TRzxAhODw+oYIW4KbuepEjmmabms12hDkESOtG+4KGgPh+cQMLCuzh5oKqS2Utt
+	 LQy9MKm8Ffx/Rst4euC55clR10WEogAo1tje25DL9Rx77qAI+RlDN+BI0BbPPGBmHp
+	 Y/m2j0WZFe+0n2hSjcJCghGvX6Ew7nJww+w374mUQOras5mecxTfT5GdwvyIjiFUEK
+	 MP68H778hDStg==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 19EB6CA0FED;
+	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
+From: Sven Peter <sven@kernel.org>
+Subject: [PATCH v2 00/22] Apple Silicon USB3 support
+Date: Sat, 06 Sep 2025 15:43:13 +0000
+Message-Id: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird Beta
-Subject: Re: [PATCH RFC 0/3] phy: qcom: qmp-combo: set default qmpphy_mode
- from DT for Thinkpad HDMI support
-To: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
-Content-Language: en-US
-From: Jens Glathe <jens.glathe@oldschoolsolutions.biz>
-In-Reply-To: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
-X-Provags-ID: V03:K1:j0IpGjLN4L2a45GZ4Oi2D2xcseqh1/fdJ7qcBOxJv2vVMhM8MPI
- EpBO8SBj3tyAMK+Is+Pmtt8Wi5b4FUilaiJsANMJVvZuB57mS3JWHGFFRv5e70Uya3g37MS
- OA5C1q440a5BfTq60NUoE8HZ6yyV1nEYoU6REgra5z0kMyjyH6xm6+3uYuHX2kSpRhYEJjS
- S3Do19QuJsF+bEpCo05JA==
-UI-OutboundReport: notjunk:1;M01:P0:J3Mxi+OdKAw=;bULDV+kVaYYlFupnL9hhzhYlnhD
- FZ5Gh7uc9L+wUs8be4wLVvpyqtfcrrVFHTo+mRaTNDmwP1eTpbbxY9M4CTkGK0iiaP+8nRy+i
- For0NChJA+1MDi5ZTPphIscRIMc5SzL8ElAZWmgXgPA9JyrQ0ndBZENEL10qpDsZcfKEzvzSg
- dj6Edj81WkMsv9EZJOBcU3GJNO8KgRdeLlgEvGWPi5roTk9kqDG+IMMdGOihRDdAluJJpRzHI
- NbKXZ33SY6vHVFiSTGz6OJcz6gs8r1HuMbmzDz39ewR03jvgnv784qfh+2tHN2BmOPbZ/PvEr
- VignHhRMBWLBGaY6SvwNgpW41A9z13te+2sPfx46bLx6zeN8W/fYNkD0MDmwth2nEJObeTDoC
- 6sKc/kEcqQHzDIvMxBEuk9JCpKc1KmqsJ50AIhrczTvufnqzNnF240gkyqgPuKkPKQ08yEkvq
- yHOFTOyS7gRZoi7eZdE/+8neB8liFWBDVEQ0cei6PsasCRsUcslkd5BcRgttL/k+h55WcnDKQ
- H2hZYdnVFeLiJvIBar72m9BMetqSR8t+VFLjQ72gXuSaKeLLTVEoW/mBcfRZ5SjzMRplpblbk
- rt++K5ZpQ/L+JRwsXL+1tlthFTt0avcNpWnjwLW7XhHtFsICfY6XRq3g1K3IeW11pLZUCRsHE
- EbDT6VAggYGjXsV1TfAnXPBuFLEQN7JWgL1PMhpuqVzv9WgecYCsj50uOJx/Zm9ScLDi3VBxJ
- x5rg9sL0bkB1NohrFsI083f3gakzCdFB+5Gq8cfM7azIgc1S4YP8K6YzJHWS6RZMeX35VFagr
- beESYFtoeHPgmXdAp6K6MkTTrXWNWAg+Yl4cb4zHRGdUp78H8YJ2TsK7wV7kUB3HfybqeKJxD
- M8aQohWw6LEk0dplkHZCpObYv/toJYb2tOa5cHvCbkyqknPAyheAuuVbSmquFUnTldfVWTJ5V
- 6HcUKmpU+Gl+11LfCuLBHq6Xop0XutAnDGUTwxLyhvBDv0oOuOWqt8k501+W2SVeST4I6t778
- xVogIUoYkF2N2lYYBLIOOoeBrL0l47RaytdvOE3V+2DQW8IRmZovbgOqMNzZKfa50hDaigccs
- ZfzgJcTDIwAiKN0fr7wwm/NJBquhWXkrMbUR56Y26lth2xfAOXT8tSSDj1chIQVyDgqW5OFw1
- IqWY7d2ql1MRpKxtV0b7nAEvdiGy2DN4SD0E4osV+fB++pRZP5BiL6y3I/xjnNne5pQthb2qt
- nn5+eDPWw/93sARqWqCRbxtzQAkwVuZ8cLhIGBB27Mlme7kD1AONaBcUA9AjqD9Qs5/L1LrQO
- Zc9RJ+OaP6FoCY5C5z5nHMLBkHbjj6QD2pumxN4g8YSuNQotLzbxdmlJoHvbpupv1nwVfXmfh
- SOQmv7FHOiRw9PDRAKk+OLBgWmXn86uKXt8lE4JwFA9eQBYQeFCMew+PbpMvenDy/lJmHmy9K
- t2xChKLdhGYKhfHIP8X4C+heHBB41YJ9gm/DdfU8UAzILFCSdwaj0BTGoDPF2EOitjkoQ6DY9
- oRLsCXr1IBCyXgmTH7j8cBvpO9bFRsyYwBk5JKdheHKZO6kBSIIWEWp6totqJ3OygL6Ge4Ubv
- u8mZwspNp9Xhty7EiJfW1mKZK31CjTJD2mxmZsxHKCgW32eR9HwR0pQ0BvjA1ZwoPR93RjQos
- oeKLSsN3HHX7xVy1P3phSD8lAaQz7EYn8iuz+aqiHEddO9xdMIRYOXp8Z2o2U09cOdqlJzpNl
- k2WBVlv6GXfU8d+CZ6TfGsq75U6MGfONC9noZV7mPs2lHPKy+d0qil0Y=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250906_014539_751211_A407790D 
-X-CRM114-Status: UNSURE (   4.71  )
-X-CRM114-Notice: Please train this message.
+X-B4-Tracking: v=1; b=H4sIAJJWvGgC/1XMQQrDIBCF4auEWdeiU1qlq94jZKFmEqVFgwZpC
+ N69NtBFV8M/8L4dMiVPGe7dDomKzz6GFnjqwDodZmJ+bA3I8coVcqZXu7iN3ZiQzEjSE14MCWm
+ hLZZEk38fWj+0dj6vMW0HXsT3+3PEn1ME4+2ioVELhUY9npQCvc4xzTDUWj/mE1lwpwAAAA==
+X-Change-ID: 20250820-atcphy-6-17-b7eaf23be17c
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>, 
+ Janne Grunau <j@jannau.net>, Alyssa Rosenzweig <alyssa@rosenzweig.io>, 
+ Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>, 
+ Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>
+Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+ Sven Peter <sven@kernel.org>, stable@kernel.org, 
+ Hector Martin <marcan@marcan.st>, R <rqou@berkeley.edu>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=10497; i=sven@kernel.org;
+ h=from:subject:message-id;
+ bh=B2PmqO8jFsYcp9IfYjXmvUC+hdyx9Na0xGIpQfiCq3E=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8aesMlmluHV2zTUZB173myaePexf/uspYEqlw47XHrSw
+ vPrRlxYRykLgxgHg6yYIsv2/famTx6+EVy66dJ7mDmsTCBDGLg4BWAiCVwM/3OWcm7WeaoboSbN
+ OKvVIqXK+lNLnl6WXW/gfKs1EQeXXWb4w98TGXD49Mbirn5d2ecfD34x2D5z6zr52RvXl0qmxlo
+ kMwAA
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
+X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
+ auth_id=407
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,25 +91,220 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21.08.25 15:53, Neil Armstrong wrote:
-> The Thinkpad T14s embeds a transparent 4lanes DP->HDMI transceiver
-> connected to the third QMP Combo PHY 4 lanes.
+Hi,
 
-Hi Neil,
+With the dwc3 glue approach this is starting to look reasonable to me.
 
-thank you for the patch. Integrated it on my tree and tested on the 
-T14s, working very well. Also tested hotplug and suspend/resume.
+There's still one issue (SuperSpeed devices have a 5 second delay before
+they come up; This has been known for ages and we haven't been able to
+identify the root cause) but otherwise both host and device mode have
+been working quite well across a number of different devices (usb3 only,
+usb3+dp, dp-only, usb4, and the first two combined with a broken c-to-a
+adapter that can trigger a lot of quick plug/unplug events ;)) for me.
 
-Tested-by: Jens Glathe <jens.glathe@oldschoolsolutions.biz>
+With the dwc3 glue driver this series can now also be merged independently
+once it's ready: Patches 1-4 can go through the dwc3 tree, 5-15 through
+tipd, 16-18 should go together through the phy tree, and I'll take the
+DTS changes through my tree. If everyone's happy with the overall
+approach here I can also just send these as individual series.
 
-with best regards
+A tree for testing is again available as apple-usb3-v2 at [5]. 
 
-Jens
+Changes in v2:
+- Link to v1: https://lore.kernel.org/r/20250821-atcphy-6-17-v1-0-172beda182b8@kernel.org
+- Fixed dt-binding warnings
+- Extended the glue layer to allow control over mode switching
+- Removed quirks added to dwc3 and implemented them as a glue
+  driver instead as suggested by Thinh
+- Dropped snps,dwc3 fallback compatible since this is neither compatible
+  with the glue driver approach nor is this hardware truly compatible
+  with snps,dwc3 unless the bootloader did a lot of heavy-lifting and
+  left everything in just the right state
+- Dropped atcphy dp-only compatible since this can be detected in other
+  ways or just be driven from the dp controller once we upstream that
+- Fixed duplicate #define in TIPD
+- Use ioremap_np when required instead of just skipping
+  dwc3_power_off_all_roothub_ports
+- Dropped the change that added the USB role to typec_mux_state since
+  the new glue driver approach no longer requires this.
+- Cleaned up some leftover TODOs in atcphy and ran clang-format
+- Reworked tunables.c to use a variable sized member and alloc the
+  entire struct directly
+- Shortened debug messages in atcphy
+- Added DTS changes for t8112 and t600x
+- Call typec_unregister_altmode unconditionally as it's NULL-safe
+- Fixed arre -> arr typo in commit message
+- Drop __func__ from cd321x_interrupt debug print
+- Picked up Heikki's r-b tags
+
+Original cover letter:
+
+This series includes changes to dwc3, tipd and a new phy driver to enable
+USB3 on these machines. There's also some preparations to eventually enable
+DisplayPort AltMode and Thunderbolt but those need future work.
+Overall, this entire setup is quite a mess and we've tried to make it work
+for quite a while now and finally came up with this solution here.
+
+The USB3 controller is a very special kind of broken: It never sees any port
+plug/unplug events that should normally arrive directly at dwc3.
+Additionally, it needs to go through a full hard reset for every new connection
+and most mode change. Details on why this is required are in the commit
+description.
+
+On top of that we need to keep the Type-C PHY bringup and dwc3 bringup tightly
+synchronized. If there's a race between the two systems at best the port stops
+working until a system reboot and at worst there's a watchdog somewhere that
+forcefully resets the entire SoC after ~5 seconds. I've only seen the latter
+when bringing up thunderbolt so far but wouldn't be surprised if it happens
+with just usb3 as well.
+
+The entire bringup/bringup is orchestrated by a TIPD variant called CD321x
+found on these machines. Unlike the original chips we however get no control
+over which mode is negotiated or are even able to see the PDOs or VDOs. We only
+get to know once the mode has been negotiated and have to act accordingly. I
+even went as far as dumping the firmware from the chip to confirm this [1][2].
+
+Hector wrote another summary of this early in January as well [3] and this
+series is the only way we've been able to bring these ports up reliably.
+It's not pretty in some places but I have no other idea how to implement this,
+hence the RFC tag. Happy to discuss other approaches as well.
+
+Both the PHY and the TIPD driver already include changes for DisplayPort
+AltMode and USB4/Thunderbolt. These need additional work though but
+since we can't control the mode devices end up in we can already merge
+them now.
+
+I used phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml as a template for the dt-binding
+for atcphy (especially the ports). That was the most recent binding I found for
+a PHY with similar features.
+
+In order to test this you need to run the latest m1n1 master [4] because the
+1.5.0 release does not include the code that lifts the tunables from Apple's
+device tree. A kernel tree for testing is also tagged as apple-usb3-v1 at [5].
+
+If the overall approach here is fine and no one can think of a better way to
+support this SoC I'll drop the RFC and include the dts changes for the other
+M1 and M2 machines as well.
+
+Best,
+
+Sven
+
+[1] https://social.treehouse.systems/@sven/111092587315536174
+[2] https://social.treehouse.systems/@sven/111096589846468888
+[3] https://lore.kernel.org/all/fda8b831-1ffc-4087-8e7b-d97779b3ecc5@marcan.st/
+[4] https://github.com/AsahiLinux/m1n1
+[5] https://git.kernel.org/pub/scm/linux/kernel/git/sven/linux.git
+
+Signed-off-by: Sven Peter <sven@kernel.org>
+---
+To: Sven Peter <sven@kernel.org>
+To: Janne Grunau <j@jannau.net>
+To: Alyssa Rosenzweig <alyssa@rosenzweig.io>
+To: Neal Gompa <neal@gompa.dev>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Conor Dooley <conor+dt@kernel.org>
+To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+To: Frank Li <Frank.Li@nxp.com>
+To: Ran Wang <ran.wang_1@nxp.com>
+To: Peter Chen <peter.chen@nxp.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: asahi@lists.linux.dev
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-usb@vger.kernel.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+
+---
+Hector Martin (5):
+      usb: typec: tipd: Update partner identity when power status was updated
+      usb: typec: tipd: Use read_power_status function in probe
+      usb: typec: tipd: Read data status in probe and cache its value
+      usb: typec: tipd: Handle mode transitions for CD321x
+      arm64: dts: apple: t8103: Mark ATC USB AON domains as always-on
+
+Janne Grunau (2):
+      arm64: dts: apple: t8112: Add Apple Type-C PHY and dwc3 nodes
+      arm64: dts: apple: t600x: Add Apple Type-C PHY and dwc3 nodes
+
+Sven Peter (15):
+      dt-bindings: usb: Add Apple dwc3
+      usb: dwc3: dwc3_power_off_all_roothub_ports: Use ioremap_np when required
+      usb: dwc3: glue: Allow more fine grained control over mode switches
+      usb: dwc3: Add Apple Silicon DWC3 glue layer driver
+      usb: typec: tipd: Clear interrupts first
+      usb: typec: tipd: Move initial irq mask to tipd_data
+      usb: typec: tipd: Move switch_power_state to tipd_data
+      usb: typec: tipd: Trace data status for CD321x correctly
+      usb: typec: tipd: Add cd321x struct with separate size
+      usb: typec: tipd: Read USB4, Thunderbolt and DisplayPort status for cd321x
+      usb: typec: tipd: Register DisplayPort and Thunderbolt altmodes for cd321x
+      dt-bindings: phy: Add Apple Type-C PHY
+      soc: apple: Add hardware tunable support
+      phy: apple: Add Apple Type-C PHY
+      arm64: dts: apple: t8103: Add Apple Type-C PHY and dwc3 nodes
+
+ .../devicetree/bindings/phy/apple,atcphy.yaml      |  213 ++
+ .../devicetree/bindings/usb/apple,dwc3.yaml        |   80 +
+ MAINTAINERS                                        |    4 +
+ arch/arm64/boot/dts/apple/t6001.dtsi               |    1 +
+ arch/arm64/boot/dts/apple/t6002-j375d.dts          |  197 +-
+ arch/arm64/boot/dts/apple/t6002.dtsi               |    1 +
+ arch/arm64/boot/dts/apple/t600x-dieX.dtsi          |  212 ++
+ arch/arm64/boot/dts/apple/t600x-j314-j316.dtsi     |  236 +++
+ arch/arm64/boot/dts/apple/t600x-j375.dtsi          |  275 +++
+ arch/arm64/boot/dts/apple/t8103-j274.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j293.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j313.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j456.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-j457.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8103-jxxx.dtsi          |  137 ++
+ arch/arm64/boot/dts/apple/t8103-pmgr.dtsi          |    2 +
+ arch/arm64/boot/dts/apple/t8103.dtsi               |  105 +
+ arch/arm64/boot/dts/apple/t8112-j413.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8112-j473.dts           |   11 +
+ arch/arm64/boot/dts/apple/t8112-j493.dts           |   12 +
+ arch/arm64/boot/dts/apple/t8112-jxxx.dtsi          |  137 ++
+ arch/arm64/boot/dts/apple/t8112.dtsi               |  105 +
+ drivers/phy/Kconfig                                |    1 +
+ drivers/phy/Makefile                               |    1 +
+ drivers/phy/apple/Kconfig                          |   14 +
+ drivers/phy/apple/Makefile                         |    4 +
+ drivers/phy/apple/atc.c                            | 2214 ++++++++++++++++++++
+ drivers/soc/apple/Kconfig                          |    4 +
+ drivers/soc/apple/Makefile                         |    3 +
+ drivers/soc/apple/tunable.c                        |   71 +
+ drivers/usb/dwc3/Kconfig                           |   11 +
+ drivers/usb/dwc3/Makefile                          |    1 +
+ drivers/usb/dwc3/core.c                            |   16 +-
+ drivers/usb/dwc3/dwc3-apple.c                      |  425 ++++
+ drivers/usb/dwc3/gadget.c                          |    2 +
+ drivers/usb/dwc3/glue.h                            |   14 +
+ drivers/usb/dwc3/host.c                            |    7 +-
+ drivers/usb/typec/tipd/core.c                      |  564 ++++-
+ drivers/usb/typec/tipd/tps6598x.h                  |    5 +
+ drivers/usb/typec/tipd/trace.h                     |   39 +
+ include/linux/soc/apple/tunable.h                  |   60 +
+ 41 files changed, 5192 insertions(+), 64 deletions(-)
+---
+base-commit: 8f5ae30d69d7543eee0d70083daf4de8fe15d585
+change-id: 20250820-atcphy-6-17-b7eaf23be17c
+
+Best regards,
+-- 
+Sven Peter <sven@kernel.org>
+
 
 
 -- 
