@@ -4,52 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6822CA1002
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 16:15:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CFADCA1012
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 16:18:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wn98Sdb52nc9X4D6dDQV7a5yL1ZoXe+6+NOzw3ywu+8=; b=YcZdMPaEoAT3FC
-	meE/xCLLZrBxlkP91jhodEA1UPkvheI1rkw7Mpngb8Lcs64t6B2lYfuWgZMBlLLsOUMe6fY3xbqz0
-	/Ksl4papsVYAHRyid/gRKD6L5jZTiOHkjJbi1QvSgjBa75mAHSbC+rhiQ2kuMkLmC48LzV3YPKKCQ
-	UZ5reIDu/RrrSepXhtzxYiQeaW2JgyGRFMvDmbA8Yw+Wzecdqg9FKS6qMCCyp8UXWRKT/racQvwBU
-	UzRPAdL/qOq5igmMwalMm+ZDZClsT2Y1aRFUX6U63DVGG2Yag0aMNHKYb+17vxMr1OFvojeylVtdG
-	k1nIryMndUF/9pnzRZNw==;
+	List-Owner; bh=NBTSkWMQT6Ml9KS3VxmGNA6C6BemOFuN2HOFqEWMEpQ=; b=w2aiOYwOkU6zOL
+	6LgWGEkQ9vf/xb8cfpWsoeQ1XHxBpO3Ecn+O6ThFPaX52FtEVft0TdHdB6qM1gJ7jl/t7YQ+rjOYz
+	1xxRwQ/FDNDeV9IBrciWhwOqjkej1K/68TApCKM8bhjp+mafN+rUxuMKlZ0LwkWfvV9P8w1G4Zhbi
+	4zLZ41p+C6N6+Uu/xk82qpZwBvf2udbfva7oRK15gaXkWF6O+NJU3dRGfKDbJcz0NrNAjcMmCGVAV
+	SVV9V+exn4XmTSs3KJr2i+P4vJ8B9BKOmSL88BssCAfXUDYJ/+lydXzfLhR6Yoekh3mxDc9r/0cAa
+	BA6eI3UyulUeJY6vf24w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuvZn-0000000860r-1eLy;
-	Sat, 06 Sep 2025 16:15:43 +0000
+	id 1uuvcc-000000086DX-2qpP;
+	Sat, 06 Sep 2025 16:18:38 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuv4o-000000081hD-0KqK;
-	Sat, 06 Sep 2025 15:43:43 +0000
+	id 1uuv4o-000000081hs-3LRa;
+	Sat, 06 Sep 2025 15:43:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id EB5584519D;
-	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id C8EF1C19423;
+	by sea.source.kernel.org (Postfix) with ESMTP id 17108446F1;
+	Sat,  6 Sep 2025 15:43:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E8983C116C6;
 	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757173419;
-	bh=MXTlQV6o7leJfeFdeDCCrl77XRrADXKq1orvTlMWuSE=;
+	s=k20201202; t=1757173420;
+	bh=jQdetY7GRNst+fAdMazOXWq4v9pFdWCONcHGsoymkA0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=X8GCzBCYW4oU9ibDevb0oMcDM0BkNM32sjnjq7oLsuPtnMTQqUMnTwtu2JjHY1VYk
-	 pWhCje9yNi0ecX0KUtyZs5jqr4Yy27ujGMdh0vg5WDYgWYv0bEYmC2WEzFQYvIQeGK
-	 7oMZrKsT9uioFIAXjGZcimUOI1elnPldoUcrPa3cgan+pE+G2eXnqOAE+l2taoCkFR
-	 KfHo4hejVKWSEt49ooNMPngm1xHaGE/jnoDXuyXbBJkr/hvl9kCFNUbvNgkQ9eIGI8
-	 uenzVPOZEssQZ9Tnr/d0MD34GLIbCk7sIStLTLFnxMfQNzbrfScEtOxOZSdNJZciUM
-	 ertyBdrQ+sSoQ==
+	b=mWijnsA5JVbBpy0d9QBMQ9/UBtnQDmpAWh6oGiyY9FfhojNgqlmqOIycsiIgbSAKs
+	 5Ntt8lMAJRjUWPbXz0TJrvebmLuZNaicpiBxHgyqOgphUx1MZ1iTrg14KUxGbYI465
+	 mtiNcAOApb3OMh6d1kSqEnASIKU7P5ij/DOqmRQOjA2Ymwim/9IOQgA0qblZQchzDg
+	 N911DYDdIYW9cfKt4ddksMteuTXtqJs8pCGTcm+b1URs6AWEaQ8ufbNpIADyITINcD
+	 fSgt+Nt458I+lRLLEi0dV3Zh7URm37oLm2W6XPoxTvpmXIOlTQe32nBh9Tjal6Rtih
+	 2KaSVgebyUmIA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BF913CAC582;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DDCE4CA1002;
 	Sat,  6 Sep 2025 15:43:39 +0000 (UTC)
 From: Sven Peter <sven@kernel.org>
-Date: Sat, 06 Sep 2025 15:43:23 +0000
-Subject: [PATCH v2 10/22] usb: typec: tipd: Read USB4, Thunderbolt and
- DisplayPort status for cd321x
+Date: Sat, 06 Sep 2025 15:43:25 +0000
+Subject: [PATCH v2 12/22] usb: typec: tipd: Update partner identity when
+ power status was updated
 MIME-Version: 1.0
-Message-Id: <20250906-atcphy-6-17-v2-10-52c348623ef6@kernel.org>
+Message-Id: <20250906-atcphy-6-17-v2-12-52c348623ef6@kernel.org>
 References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
 In-Reply-To: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
@@ -65,22 +65,22 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
  linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- Sven Peter <sven@kernel.org>
+ Sven Peter <sven@kernel.org>, Hector Martin <marcan@marcan.st>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5684; i=sven@kernel.org;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1307; i=sven@kernel.org;
  h=from:subject:message-id;
- bh=MXTlQV6o7leJfeFdeDCCrl77XRrADXKq1orvTlMWuSE=;
- b=owGbwMvMwCHmIlirolUq95LxtFoSQ8aesAWNRvvnRCyI3bSDP+VTBPvSx5P+3tUWT5ZQMlmqs
- nx+2lPLjlIWBjEOBlkxRZbt++1Nnzx8I7h006X3MHNYmUCGMHBxCsBEdixgZPhen/Y5wM8itrAl
- m/Wr6Z8DfqbHlkoGfzLzCKkTMvwhk8nIcOfQHysL9aIFd9RZv0wRX+n/cQNX1RlLxnLVxR2JPrK
- WTAA=
+ bh=QDhuS+HKxdzHgchZ8cpnBXq7l32Qnci0SI3jtXHi3pQ=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8aesIUHfP/51Dx+HjI3fP1Hv+ZfgQwqE5nKfC9U7fw/e
+ arHnF/vO0pZGMQ4GGTFFFm277c3ffLwjeDSTZfew8xhZQIZwsDFKQAT0T/H8JNRIG1pgkTFy6vB
+ XlWOy2dUiNh+v/ZrXryi7/v1nHEstfMZ/hltPOX0rJLl0ONzDFv1f/kn9zfYOJj/l9N8LcircKb
+ nAzsA
 X-Developer-Key: i=sven@kernel.org; a=openpgp;
  fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
  auth_id=407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250906_084342_210320_17F4B870 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20250906_084342_941348_AB5A49DE 
+X-CRM114-Status: GOOD (  11.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,183 +97,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CD321x supports various alternate modes and stores information once
-these are entered into separate status registers. Read those when they
-are active when reading TPS_DATA_STATUS to prepare supporting these.
+From: Hector Martin <marcan@marcan.st>
 
+Whenever the power status is changed make sure to also update the
+partner identity to be able to detect changes once de-bouncing and mode
+changes are added for CD321x.
+
+Signed-off-by: Hector Martin <marcan@marcan.st>
 Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- drivers/usb/typec/tipd/core.c | 80 ++++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 76 insertions(+), 4 deletions(-)
+ drivers/usb/typec/tipd/core.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
-index 51b0f3be8b66a743ddc3ea96c1b25f597a1e8f6c..afd11b3e1ae596c7f3283e4336aaa57874c9378d 100644
+index c7cf936e5a61a331271c05b68ff1b77b89c0f643..cd427eecd8a594b7e609a20de27a9722055307d8 100644
 --- a/drivers/usb/typec/tipd/core.c
 +++ b/drivers/usb/typec/tipd/core.c
-@@ -35,14 +35,18 @@
- #define TPS_REG_INT_MASK2		0x17
- #define TPS_REG_INT_CLEAR1		0x18
- #define TPS_REG_INT_CLEAR2		0x19
--#define TPS_REG_SYSTEM_POWER_STATE	0x20
- #define TPS_REG_STATUS			0x1a
-+#define TPS_REG_SYSTEM_POWER_STATE	0x20
-+#define TPS_REG_USB4_STATUS		0x24
- #define TPS_REG_SYSTEM_CONF		0x28
- #define TPS_REG_CTRL_CONF		0x29
- #define TPS_REG_BOOT_STATUS		0x2D
- #define TPS_REG_POWER_STATUS		0x3f
- #define TPS_REG_PD_STATUS		0x40
- #define TPS_REG_RX_IDENTITY_SOP		0x48
-+#define TPS_REG_CF_VID_STATUS		0x5e
-+#define TPS_REG_DP_SID_STATUS		0x58
-+#define TPS_REG_INTEL_VID_STATUS	0x59
- #define TPS_REG_DATA_STATUS		0x5f
- #define TPS_REG_SLEEP_CONF		0x70
+@@ -635,9 +635,16 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+ 	if (!tps6598x_read_status(tps, &status))
+ 		goto err_unlock;
  
-@@ -85,6 +89,31 @@ struct tps6598x_rx_identity_reg {
- 	struct usb_pd_identity identity;
- } __packed;
- 
-+/* TPS_REG_USB4_STATUS */
-+struct tps6598x_usb4_status_reg {
-+	u8 mode_status;
-+	__le32 eudo;
-+	__le32 unknown;
-+} __packed;
-+
-+/* TPS_REG_DP_SID_STATUS */
-+struct tps6598x_dp_sid_status_reg {
-+	u8 mode_status;
-+	__le32 status_tx;
-+	__le32 status_rx;
-+	__le32 configure;
-+	__le32 mode_data;
-+} __packed;
-+
-+/* TPS_REG_INTEL_VID_STATUS */
-+struct tps6598x_intel_vid_status_reg {
-+	u8 mode_status;
-+	__le32 attention_vdo;
-+	__le16 enter_vdo;
-+	__le16 device_mode;
-+	__le16 cable_mode;
-+} __packed;
-+
- /* Standard Task return codes */
- #define TPS_TASK_TIMEOUT		1
- #define TPS_TASK_REJECTED		3
-@@ -121,6 +150,7 @@ struct tipd_data {
- 	int (*apply_patch)(struct tps6598x *tps);
- 	int (*init)(struct tps6598x *tps);
- 	int (*switch_power_state)(struct tps6598x *tps, u8 target_state);
-+	bool (*read_data_status)(struct tps6598x *tps);
- 	int (*reset)(struct tps6598x *tps);
- };
- 
-@@ -151,6 +181,10 @@ struct tps6598x {
- 
- struct cd321x {
- 	struct tps6598x tps;
-+
-+	struct tps6598x_dp_sid_status_reg dp_sid_status;
-+	struct tps6598x_intel_vid_status_reg intel_vid_status;
-+	struct tps6598x_usb4_status_reg usb4_status;
- };
- 
- static enum power_supply_property tps6598x_psy_props[] = {
-@@ -505,6 +539,41 @@ static bool tps6598x_read_data_status(struct tps6598x *tps)
- 	return true;
- }
- 
-+static bool cd321x_read_data_status(struct tps6598x *tps)
-+{
-+	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
-+	int ret;
-+
-+	ret = tps6598x_read_data_status(tps);
-+	if (ret < 0)
-+		return false;
-+
-+	if (tps->data_status & TPS_DATA_STATUS_DP_CONNECTION) {
-+		ret = tps6598x_block_read(tps, TPS_REG_DP_SID_STATUS,
-+				&cd321x->dp_sid_status, sizeof(cd321x->dp_sid_status));
-+		if (ret)
-+			dev_err(tps->dev, "Failed to read DP SID Status: %d\n",
-+				ret);
-+	}
-+
-+	if (tps->data_status & TPS_DATA_STATUS_TBT_CONNECTION) {
-+		ret = tps6598x_block_read(tps, TPS_REG_INTEL_VID_STATUS,
-+				&cd321x->intel_vid_status, sizeof(cd321x->intel_vid_status));
-+		if (ret)
-+			dev_err(tps->dev, "Failed to read Intel VID Status: %d\n", ret);
-+	}
-+
-+	if (tps->data_status & CD321X_DATA_STATUS_USB4_CONNECTION) {
-+		ret = tps6598x_block_read(tps, TPS_REG_USB4_STATUS,
-+				&cd321x->usb4_status, sizeof(cd321x->usb4_status));
-+		if (ret)
-+			dev_err(tps->dev,
-+				"Failed to read USB4 Status: %d\n", ret);
-+	}
-+
-+	return true;
-+}
-+
- static bool tps6598x_read_power_status(struct tps6598x *tps)
- {
- 	u16 pwr_status;
-@@ -565,7 +634,7 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+-	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE)
++	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE) {
+ 		if (!tps6598x_read_power_status(tps))
  			goto err_unlock;
++		if (TPS_POWER_STATUS_PWROPMODE(tps->pwr_status) == TYPEC_PWR_MODE_PD) {
++			if (tps6598x_read_partner_identity(tps)) {
++				dev_err(tps->dev, "failed to partner identity\n");
++				tps->partner_identity = (struct usb_pd_identity) {0};
++			}
++		}
++	}
  
  	if (event & APPLE_CD_REG_INT_DATA_STATUS_UPDATE)
--		if (!tps6598x_read_data_status(tps))
-+		if (!tps->data->read_data_status(tps))
- 			goto err_unlock;
- 
- 	/* Handle plug insert or removal */
-@@ -614,7 +683,7 @@ static irqreturn_t tps25750_interrupt(int irq, void *data)
- 			goto err_clear_ints;
- 
- 	if (event[0] & TPS_REG_INT_DATA_STATUS_UPDATE)
--		if (!tps6598x_read_data_status(tps))
-+		if (!tps->data->read_data_status(tps))
- 			goto err_clear_ints;
- 
- 	/*
-@@ -688,7 +757,7 @@ static irqreturn_t tps6598x_interrupt(int irq, void *data)
- 			goto err_unlock;
- 
- 	if ((event1[0] | event2[0]) & TPS_REG_INT_DATA_STATUS_UPDATE)
--		if (!tps6598x_read_data_status(tps))
-+		if (!tps->data->read_data_status(tps))
- 			goto err_unlock;
- 
- 	/* Handle plug insert or removal */
-@@ -1534,6 +1603,7 @@ static const struct tipd_data cd321x_data = {
- 	.trace_power_status = trace_tps6598x_power_status,
- 	.trace_status = trace_tps6598x_status,
- 	.init = cd321x_init,
-+	.read_data_status = cd321x_read_data_status,
- 	.reset = cd321x_reset,
- 	.switch_power_state = cd321x_switch_power_state,
- };
-@@ -1550,6 +1620,7 @@ static const struct tipd_data tps6598x_data = {
- 	.trace_status = trace_tps6598x_status,
- 	.apply_patch = tps6598x_apply_patch,
- 	.init = tps6598x_init,
-+	.read_data_status = tps6598x_read_data_status,
- 	.reset = tps6598x_reset,
- };
- 
-@@ -1565,6 +1636,7 @@ static const struct tipd_data tps25750_data = {
- 	.trace_status = trace_tps25750_status,
- 	.apply_patch = tps25750_apply_patch,
- 	.init = tps25750_init,
-+	.read_data_status = tps6598x_read_data_status,
- 	.reset = tps25750_reset,
- };
- 
+ 		if (!tps->data->read_data_status(tps))
 
 -- 
 2.34.1
