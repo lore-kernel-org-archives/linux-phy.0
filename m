@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52B72CA1002
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 20:45:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBB78CA1002
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 20:57:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O5OVlbm2SHZzEVDxUJbS71CnDNmhghfoE+p/My7CO3E=; b=ZdJ/mJWzBzhNqHq/Hmbh9SJYft
-	yQZ6zt/NoWrdlFzwLTCQFoaG6z/3id6X4cey/yX+T9qujTiGE4C0umnThfSq7KaK5d3KywrAj2gO7
-	dp7Gi6adMvxQSUcTfgSdjClrq/k/TJYQWelUr4Gpb6GX0WyFNQzHlrYfomPIRi5MO9sr3iCd0iWbD
-	XPnKRyZFmYg6J6Qz6zOeF1qSrw2svq/oRI7cbFfOPZ2cl9Tb7am6iwy22ezim6NlZ1TKdnjdfgxHd
-	Q8r2+/D2RSrqRsu1UXoCS26MN/iRdXQChkNAjf6YWyTfbdG4Hxuf9Y3o6W/EcnnEO2dD4fSY6r2QJ
-	GfwSNF2Q==;
+	bh=LWkv5p67zHmOBgue6eyAFQCgucrPpHFZUM6ZSRMwCCQ=; b=ZQlEQ/g6fV2lObLEU67yzGvN6k
+	W8/pdWNolvsev5qjfYXIX5eXlBMnoLKub5r4RVVatT+89Suzgw6OOkKMSgspoTjiXv+ItXew0kM/B
+	63cX6SkRhfAKmACzZRm+yhRsiS/lAkJ+010j3PUpd1hd87YHLQsXO4JBkeUeWXlCta2Y218W2F7Ro
+	IMyjgCXWQ5ILYrITpjRk2xMWF7KnMjUzNlWReqk1XFwLIo7KoG5GEyWaxQZcEo5hPU697RL+aaCni
+	cOiB5rmW4kaLTC6QY/65ItjdNQvMmU1fBU29pMFJ5TrpPYCM5zQyR/WnXulvzuDtUQzWuSso5ed2z
+	kbd/Cr1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuzn0-00000008RIv-3XoM;
-	Sat, 06 Sep 2025 20:45:38 +0000
+	id 1uuzyi-00000008Scr-1LxW;
+	Sat, 06 Sep 2025 20:57:44 +0000
 Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuzkB-00000008R9u-3Ipr;
-	Sat, 06 Sep 2025 20:42:44 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1757191350; cv=none; 
+	id 1uuzye-00000008ScR-3Jdb
+	for linux-phy@lists.infradead.org;
+	Sat, 06 Sep 2025 20:57:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1757192244; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=Zbd9iwG6mTUDZ3DTU84xNdmxTThRitQtbxALstaaBg9oV93fT7Wbj35qSpvN3g7f3jTbx23pXoVbQcM3VEzvEFD2EFHcj44DIH+DcIx2dzSkoHv2hbKKii3nLntmSZAsN+fT8sSpIG/FAW4K2LQe67t1EwTnL8IOuTt1S7BV5IE=
+	b=d7WqGtU8AB2aFF1H3hAlffH64U/3g0v0EhoVrsB1ufJhAL4NN2RgXtj6kiviuEYbMhLiTxe9fO0bM3iYIsjGwyg9Uodxr6z4iiCLDjb0J9pxg7AfKv+62yrvcZzxkNUR+Z5pxvKjb7wFL+6ufg3CDXsc2wofbn4scmRod33fVAI=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1757191350; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=+oFXcBgyosrk9K4YUWT5K05A3DKE5mpt+Bn52MygQGQ=; 
-	b=PIHCe1+nkF/XtzXqI4f8NjMdux9t/OE7taqDrSHGTaM6Ho2SUfVwUxIcoUzkkAiEMM+E1ETW1hg6XCeAVzInM8UpEBiF6NHtw/5NnEKSm5/CN3kIWJ/EG12a8OHA8ym/8R5eywXQvoNnH92Ndhc1MjAK1DInTMh4xyNrhrQWhXE=
+	t=1757192244; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=7PhY5ZGj8flLaH400r6U3+guFxADQWYwlTB4W8pYYuU=; 
+	b=LbdCuUfHI0dqciRzrjJylyiD9RA4eUF2e0zCs/Yx1GfIsPwbOmoJDheQnNVvPLau3odx92wqUQY1sE4dynj2wgMpAXNUGNW0NUPJWSbbtIBglBatizcBkt58bDaGryfa05qDQNye+66q26lXNhckI5fVnCB0ei1AWrAlCp9i55M=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
 	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1757191350;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1757192244;
 	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
 	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=+oFXcBgyosrk9K4YUWT5K05A3DKE5mpt+Bn52MygQGQ=;
-	b=CMcAQhBBoIxelRD/KecsQSv16a7q+RMB6cKDuICGl2QAYHiuboWYrY8tL6Xb6Zo0
-	CLMSevOne9pVsdB/wg4M0a0wlDwl5ElyMYXG4FCJ/bKU6lOKFrvmMn+7DwW0n6X8NGo
-	t9m6DzaOMf5fOtG3/BxNlDGPKh5uIHv5EmF4niF4=
-Received: by mx.zohomail.com with SMTPS id 1757191347397764.5469931961694;
-	Sat, 6 Sep 2025 13:42:27 -0700 (PDT)
+	bh=7PhY5ZGj8flLaH400r6U3+guFxADQWYwlTB4W8pYYuU=;
+	b=PJDWq/A/OPRZ12T4icOQoZJWK9bnpynRzPsE1Wfao+0OOm8diG+2H040H7JLlTpt
+	MUYZlfPcdWTTlXsDPLwxFPPp1fxRaOz1tU+pD/kEFGnKOx2TPJJ+V/uHlhVfqY9UBdi
+	w+SES3KHsg1LwZVV0/N5PGN6deGnM9gOb4M560G8=
+Received: by mx.zohomail.com with SMTPS id 1757192241714683.1408118822674;
+	Sat, 6 Sep 2025 13:57:21 -0700 (PDT)
 Received: by venus (Postfix, from userid 1000)
-	id 3B96E180B18; Sat, 06 Sep 2025 22:42:22 +0200 (CEST)
-Date: Sat, 6 Sep 2025 22:42:22 +0200
+	id 4A343180B18; Sat, 06 Sep 2025 22:57:15 +0200 (CEST)
+Date: Sat, 6 Sep 2025 22:57:15 +0200
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
-	Zhang Yubing <yubing.zhang@rock-chips.com>, Andy Yan <andyshrk@163.com>, 
-	Maud Spierings <maud_spierings@hotmail.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFC 1/2] dt-bindings: phy: rockchip-usbdp: add improved
- ports scheme
-Message-ID: <jzooq6qg3y7nee2nz6lujustdf4z7vtn6t2slikw43dann5sbk@2telraae26tl>
-References: <20250904-rock5b-dp-alt-mode-v1-0-23df726b31ce@collabora.com>
- <20250904-rock5b-dp-alt-mode-v1-1-23df726b31ce@collabora.com>
- <aLyKhngeksG2SKdq@umbar.lan>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com, 
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, 
+	srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
+	krzysztof.kozlowski@linaro.org, u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org, 
+	linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org, 
+	casey.connolly@linaro.org
+Subject: Re: [PATCH v3 3/7] power: reset: qcom-pon: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <j3hsfjkdfta5cheavnem5heaszuytm2zfhzm3y3udat3pjxnc5@vzymqkcdau7k>
+References: <20250730112645.542179-1-angelogioacchino.delregno@collabora.com>
+ <20250730112645.542179-4-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <aLyKhngeksG2SKdq@umbar.lan>
+In-Reply-To: <20250730112645.542179-4-angelogioacchino.delregno@collabora.com>
 X-Zoho-Virus-Status: 1
 X-Zoho-Virus-Status: 1
 X-Zoho-AV-Stamp: zmail-av-1.4.3/257.176.7
 X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250906_134243_897443_DC8CF310 
-X-CRM114-Status: GOOD (  33.03  )
+X-CRM114-CacheID: sfid-20250906_135740_901623_80102233 
+X-CRM114-Status: GOOD (  24.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,134 +84,175 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8426695227697471480=="
+Content-Type: multipart/mixed; boundary="===============1074674251923742136=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8426695227697471480==
+--===============1074674251923742136==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="bmdy2izrmfeuuc2r"
+	protocol="application/pgp-signature"; boundary="tehjknaqql6re6on"
 Content-Disposition: inline
 
 
---bmdy2izrmfeuuc2r
+--tehjknaqql6re6on
 Content-Type: text/plain; protected-headers=v1; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH RFC 1/2] dt-bindings: phy: rockchip-usbdp: add improved
- ports scheme
+Subject: Re: [PATCH v3 3/7] power: reset: qcom-pon: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
 MIME-Version: 1.0
 
 Hi,
 
-On Sat, Sep 06, 2025 at 10:24:54PM +0300, Dmitry Baryshkov wrote:
-> On Thu, Sep 04, 2025 at 08:26:02PM +0200, Sebastian Reichel wrote:
-> > Currently the Rockchip USBDP PHY as a very simply port scheme: It just
-> > offers a single port, which is supposed to point towards the connector.
-> > Usually with 2 endpoints, one for the USB-C superspeed port and one for
-> > the USB-C SBU port.
-> >=20
-> > This scheme is not good enough to properly handle DP AltMode, so add
-> > a new scheme, which has separate ports for everything. This has been
-> > modelled after the Qualcomm QMP USB4-USB3-DP PHY controller binding
-> > with a slight difference that there is an additional port for the
-> > USB-C SBU port as the Rockchip USB-DP PHY also contains the mux.
-> >=20
-> > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> > ---
-> >  .../bindings/phy/phy-rockchip-usbdp.yaml           | 23 ++++++++++++++=
-++++++++
-> >  1 file changed, 23 insertions(+)
-> >=20
-> > diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.y=
-aml b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > index 8b7059d5b1826fdec5170cf78d6e27f2bd6766bb..f728acf057e4046a4d254ee=
-687af3451f17bcd01 100644
-> > --- a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > @@ -114,6 +114,29 @@ properties:
-> >        A port node to link the PHY to a TypeC controller for the purpos=
-e of
-> >        handling orientation switching.
-> > =20
-> > +  ports:
-> > +    $ref: /schemas/graph.yaml#/properties/ports
-> > +    properties:
-> > +      port@0:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description:
-> > +          Output endpoint of the PHY for USB (or DP when configured in=
-to 4 lane
-> > +          mode), which should point to the superspeed port of a USB co=
-nnector.
+On Wed, Jul 30, 2025 at 01:26:41PM +0200, AngeloGioacchino Del Regno wrote:
+> Some Qualcomm PMICs integrates a Power On device supporting pwrkey
+> and resin along with the Android reboot reason action identifier.
 >=20
-> What abourt USB+DP mode, where each one gets 2 lanes?
-
-Right, I guess we would need one port more and have one port for
-lane 0 + 1 and one port for 1 + 2. For USB-C both ports are
-connected to the USB-C superspeed port. For DP 4-lane mode the
-same is done for the input port of the connector. Last but not
-least for 2 lanes USB + 2 lanes DP, one port can be connected
-to the USB connector and one port can be connected to the DP
-connector.
-
-> > +      port@1:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description: Incoming endpoint from the USB controller
-> > +
-> > +      port@2:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description: Incoming endpoint from the DisplayPort controller
-> > +
-> > +      port@3:
-> > +        $ref: /schemas/graph.yaml#/properties/port
-> > +        description:
-> > +          Output endpoint of the PHY for DP, which should either point=
- to the
-> > +          SBU port of a USB-C connector or a DisplayPort connector inp=
-ut port.
+> Instead of using the parent SPMI device (the main PMIC) as a kind
+> of syscon in this driver, register a new SPMI sub-device for PON
+> and initialize its own regmap with this sub-device's specific base
+> address, retrieved from the devicetree.
 >=20
-> I would suggest describing this port as 'DisplayPort AUX signals to be
-> connected to the SBU port of a USB-C connector (maybe through the
-> additinal mux, switch or retimer)'. It should not be confused with the
-> actual DisplayPort signals (as those go through the port@0).
+> This allows to stop manually adding the register base address to
+> every R/W call in this driver, as this can be, and is now, handled
+> by the regmap API instead.
 >=20
-> In the Qualcomm world we currently do not describe this link from the
-> PHY to the gpio-mux or retimer, but I think we will have to do that
-> soon.
+> Link: https://lore.kernel.org/r/20250722101317.76729-4-angelogioacchino.d=
+elregno@collabora.com
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@coll=
+abora.com>
+> ---
 
-It does looks like no upstream platform does a proper description of
-USB-C setups :(
+The patch looks good to me, but we need to check how to get it
+merged. Probably the best way is an immutable branch. As it looks
+like the series needs another respin:
 
-Thanks for having a look,
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+Greetings,
 
 -- Sebastian
 
---bmdy2izrmfeuuc2r
+>  drivers/power/reset/qcom-pon.c | 34 +++++++++++++++++++++++++---------
+>  1 file changed, 25 insertions(+), 9 deletions(-)
+>=20
+> diff --git a/drivers/power/reset/qcom-pon.c b/drivers/power/reset/qcom-po=
+n.c
+> index 7e108982a582..0e075a2e5e48 100644
+> --- a/drivers/power/reset/qcom-pon.c
+> +++ b/drivers/power/reset/qcom-pon.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/reboot.h>
+>  #include <linux/reboot-mode.h>
+>  #include <linux/regmap.h>
+> +#include <linux/spmi.h>
+> =20
+>  #define PON_SOFT_RB_SPARE		0x8f
+> =20
+> @@ -22,7 +23,6 @@
+>  struct qcom_pon {
+>  	struct device *dev;
+>  	struct regmap *regmap;
+> -	u32 baseaddr;
+>  	struct reboot_mode_driver reboot_mode;
+>  	long reason_shift;
+>  };
+> @@ -35,7 +35,7 @@ static int qcom_pon_reboot_mode_write(struct reboot_mod=
+e_driver *reboot,
+>  	int ret;
+> =20
+>  	ret =3D regmap_update_bits(pon->regmap,
+> -				 pon->baseaddr + PON_SOFT_RB_SPARE,
+> +				 PON_SOFT_RB_SPARE,
+>  				 GENMASK(7, pon->reason_shift),
+>  				 magic << pon->reason_shift);
+>  	if (ret < 0)
+> @@ -46,27 +46,42 @@ static int qcom_pon_reboot_mode_write(struct reboot_m=
+ode_driver *reboot,
+> =20
+>  static int qcom_pon_probe(struct platform_device *pdev)
+>  {
+> +	struct regmap_config qcom_pon_regmap_config =3D {
+> +		.reg_bits =3D 16,
+> +		.val_bits =3D 8,
+> +		.max_register =3D 0x100,
+> +		.fast_io =3D true,
+> +	};
+> +	struct device *dev =3D &pdev->dev;
+> +	struct spmi_subdevice *sub_sdev;
+> +	struct spmi_device *sparent;
+>  	struct qcom_pon *pon;
+>  	long reason_shift;
+>  	int error;
+> =20
+> +	if (!dev->parent)
+> +		return -ENODEV;
+> +
+>  	pon =3D devm_kzalloc(&pdev->dev, sizeof(*pon), GFP_KERNEL);
+>  	if (!pon)
+>  		return -ENOMEM;
+> =20
+>  	pon->dev =3D &pdev->dev;
+> =20
+> -	pon->regmap =3D dev_get_regmap(pdev->dev.parent, NULL);
+> -	if (!pon->regmap) {
+> -		dev_err(&pdev->dev, "failed to locate regmap\n");
+> -		return -ENODEV;
+> -	}
+> +	sparent =3D to_spmi_device(dev->parent);
+> +	sub_sdev =3D devm_spmi_subdevice_alloc_and_add(dev, sparent);
+> +	if (IS_ERR(sub_sdev))
+> +		return PTR_ERR(sub_sdev);
+> =20
+> -	error =3D of_property_read_u32(pdev->dev.of_node, "reg",
+> -				     &pon->baseaddr);
+> +	error =3D of_property_read_u32(dev->of_node, "reg",
+> +				     &qcom_pon_regmap_config.reg_base);
+>  	if (error)
+>  		return error;
+> =20
+> +	pon->regmap =3D devm_regmap_init_spmi_ext(&sub_sdev->sdev, &qcom_pon_re=
+gmap_config);
+> +	if (IS_ERR(pon->regmap))
+> +		return PTR_ERR(pon->regmap);
+> +
+>  	reason_shift =3D (long)of_device_get_match_data(&pdev->dev);
+> =20
+>  	if (reason_shift !=3D NO_REASON_SHIFT) {
+> @@ -106,3 +121,4 @@ module_platform_driver(qcom_pon_driver);
+> =20
+>  MODULE_DESCRIPTION("Qualcomm Power On driver");
+>  MODULE_LICENSE("GPL v2");
+> +MODULE_IMPORT_NS("SPMI");
+> --=20
+> 2.50.1
+>=20
+
+--tehjknaqql6re6on
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmi8nKMACgkQ2O7X88g7
-+ppvtBAAkju2QlVThUn/QreP/COXvVvECT9h6rv0jRB3ZdKfg79oPBzrQVuyCAxq
-f7M/ZeJcfD2ioqbs67rVJWB7Q5DRJxvoKjPqCoIW5Gc6yxxKdZ3OAe8b3u94Go48
-gBKVWjaeQtRspHln9v+ZEo5TFTl2QsKecOBh4cavkk6ZudydZfnm2vDD2FsFZU6Z
-PGFCm1XlDvuz09EVc9OqiLKQAgN7vyMctOelIC/euP5+7rITHP2Oc/toqjTZetCu
-hqdTs2Of5NxYF7kIlMxM0GKTQ9d2KEw0IrS2zq0fyNcxlIaRUzj72didiBONiVH7
-2JzMpqcua6OV2hpUWggNDpcV+OF3a/aHy2byoaN3KP2w4jXOIDNmpURjiOZy/juv
-iyWM0bJa/aows83PdjrRjyIg0/RnLPtqaknp9jYiVUIRN2lhJ+QSaLyY/azjLLhe
-av3RngWLeY2CNYZXRLGI52F/oKn1yScd+fw7oR+yUIEMEwOFgFom6w23BWFTcqIe
-V2M/FWe62ZzgMXrxt5ue7KH54WtuvQyHcdu7sMVZCbMAz+XIaskVWvGUhkVWi0/u
-3Hmw7n4GUEQQbJMn84IG2lXeHmAtkV9d7lmTTycQdCytwXRQRxrWMY16W0XLGBjM
-NTp/t4Ae4vNfEvSBXsaXlrT1VpSQYUHr3IqTpENU20LxnhDYEQ4=
-=gYv+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmi8oCQACgkQ2O7X88g7
++poX8g/8DFCdbsBCTzACdw4Hq7WasS27ARUDajPOcVExRwI6WTOyM7/9+zSXA99h
+MX25nKNB2amDOdtdiroWCrzJ5V4PoDAQzt+G3RWyDiQ84wqTozB6jTSPvXiojCNr
+zuYs5eU8fbXD30TvDYig/1KzxT2cOd3/bb2DOow9NHIYF6HzxjV4ddFwO6gxntpL
+Mtaqd8YY/2Bjj2MHSQroqSnAJKizeazMfJTc5zscorxgYri4vrCl0MghCX6rSIUE
+//2QFh3Ert3rBHYfs4OgNRTT4/0v3qBRnj7xyRKgQMC38Wy7a//ciHnaJ7q56Bd/
+6FX/qhw3nXnDUIsvu7cac1CJdNYg1QfaD9rGlIY7TNkMPuLJjjx5CntyoJx2UbC1
+spqRlRY9ND7ROSPRnNUYQlmMFqH+JDkiGWu2qyO3WZw2dNwUIkBME8GIwK9uOGuk
+LIFSlYccD0pAdR3O1hBSMACRuTs5jKK+YyiTH4XVaVFmf+zXqDqbg7o7IAZ/TFr6
+eDI2y/zfilbojn5apHPn7bZVOki8rXMdpXTBual+WwjBV71XUM9jus9fbHq7xYDA
++dWJoc5D3/yvsNV8Zsi7HHGyH8zCg/fuJq2wxpZ0qDNTLqysTkvVkNCrrTgOBKDo
+tYRqdDaQi/RkGmPLSl/PiM4vpgJvPeyeN+yXST6uDHJo3Ag1DY8=
+=XxRm
 -----END PGP SIGNATURE-----
 
---bmdy2izrmfeuuc2r--
+--tehjknaqql6re6on--
 
 
---===============8426695227697471480==
+--===============1074674251923742136==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -222,5 +263,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============8426695227697471480==--
+--===============1074674251923742136==--
 
