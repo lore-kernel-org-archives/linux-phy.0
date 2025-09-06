@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 877C5CA1012
-	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 08:42:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80E6FCA1002
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Sep 2025 08:47:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CvbfhxfxfyntrzLir4q2gYiYh18VGOqF7GqnJNx26IM=; b=e3l6Yo5kVQHklR
-	IPI1oI3WxhFNWGKGlZuLl1eatYGk9nw178CJzj4N1E2GyrUmNMWIZMkOgW3hA9HWI21R5gbHNU5+3
-	8QFodoE3KaNPiPK4sJ17XnFK9nYGAdW2CWu2QYwbIPwdLI/ro0ZW5Irc6ruwQ3TymmUH3L1fC8AxE
-	w+eKtRAHPImZJ3g0TI60dz3A/7tsuVN+zPbDlSW2k9wwV//D7Zkqu8e96qli2rXeTgBIifZxDZg71
-	w8Rijn+yicHqZERa1KFBGirtt+Qq2syFtM60dFCFpK2SO67To35YqhYEnquAcMbFCvwsRyK+n/gb8
-	E5gg5d1HqFpFjr+18U9Q==;
+	List-Owner; bh=3Hiw8u2rDOd18s0Q6q9k20jxhYvkzViTrr9dFuecCt0=; b=PzoPA+E6g3xMFY
+	NXJnn1sS62+qzFY27Ts5wwI/Bv2UJARFKaNqrqLm1Ym7n9TOUMNArleVUgIVBClucgmeAhi2r0ZE5
+	46uG3JpabIciXU3t1isqyK8EizJpYeC/rc0cJo2xBkMYdCf2TMJBXfuWgjM/A5mji8Be0LWx0QxLd
+	aZyypw7SCwn24AIk55+J0DNJu+jbyDcn3hmqaGO6WWWL65z9RumfTkQTMrb+d+517k53/rrKw4F1n
+	yKEyM2KLN5h9D1ScsX8dQuVG5Q6Aa+4Po2w2iwQj0rb4WuHMVTzXp4ahNxh1qxvCpcu/H45DOh+T4
+	zWhunKMiO+btvOvOXlkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuoUr-00000007Dcv-0D4x;
-	Sat, 06 Sep 2025 08:42:09 +0000
+	id 1uuoZf-00000007Dog-0rQ4;
+	Sat, 06 Sep 2025 08:47:07 +0000
 Received: from mout.kundenserver.de ([212.227.126.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuoUo-00000007Dcc-3Cx4
+	id 1uuoYF-00000007Dmu-1kBT
 	for linux-phy@lists.infradead.org;
-	Sat, 06 Sep 2025 08:42:08 +0000
+	Sat, 06 Sep 2025 08:45:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=oldschoolsolutions.biz; s=s1-ionos; t=1757148109; x=1757752909;
+	d=oldschoolsolutions.biz; s=s1-ionos; t=1757148337; x=1757753137;
 	i=jens.glathe@oldschoolsolutions.biz;
-	bh=Z5TpHw/1i9sizZL/L18DqQShuhFMIw2vWBeiWqXJusQ=;
+	bh=Qk0Ugz0RYhBkqBiOH6TLDHgmGaQbSmhEOLE0qSMFHWU=;
 	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:Subject:To:Cc:
 	 References:From:In-Reply-To:Content-Type:
 	 Content-Transfer-Encoding:cc:content-transfer-encoding:
 	 content-type:date:from:message-id:mime-version:reply-to:subject:
 	 to;
-	b=uL7itg8yZLbLk/XQaFUg6DZAN/Fibsukfi8+7Bg2JpXHWvmLVkAEVcdmAISJwkce
-	 cO5rg0Y2rYV6OOuB4T54aL0uOMphbyAyRUL0en5r2jDSDCOOZTpI+2w1laPOl1y3v
-	 mtydO4a5rF852VNjRN1P1JlWREW857aJYA6e6m98yqOYQbQtZpfN3kCMexITQqXhd
-	 xvObPh1z7vqdPhT3ttHM+vp1wzSBNYlNfVONa/b02KZglRHqe/0y7y9E6lUQ3cTKx
-	 QouLqFZcRD5Oj1arml/ZlQj3smWz1/YO1QJU+xxyBCSXlSLqUZps3ci/0G5bsDmBj
-	 v8cAadzp4WirYAjL+A==
+	b=auC24V81wx/DeDC7VMo7Trx6pqXlZaP9FvBKK3l8S6ZtrU7SrFu0CSpAMoTXRgmX
+	 /rG2Zjd79Uq21hZSixc3L0oByh+9AuQaBWJdotOsrYW3gSfflE/9apA/f1/eeWAym
+	 Hof7JQtr0va0QQbTjO85KwaWfeDvBqIEJ264Pbh1Lnq3AzlBnMc+NC+lnmnihEv1n
+	 2o6O2QJHp/zQe6GbwxMrUigBgKZLE2d6AviVY9U0mua0DNVGwCETIMIFarqwAStdx
+	 daQE2TUL7xZeQUD0RC/ER0l/0RULOqOo3MJaGX6fSk2vCnCKnNgs+PBBk0S0DzQlJ
+	 8Nh9phbSb1hLTwaU+A==
 X-UI-Sender-Class: 55c96926-9e95-11ee-ae09-1f7a4046a0f6
 Received: from [192.168.0.174] ([91.64.235.193]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MQy0N-1v8Cc612xD-00Ke4k; Sat, 06 Sep 2025 10:41:49 +0200
-Message-ID: <a38df652-54c0-4216-9aa5-c8d32599c8f7@oldschoolsolutions.biz>
-Date: Sat, 6 Sep 2025 10:41:48 +0200
+ (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MD9nd-1ulhrc1W2j-000Zxp; Sat, 06 Sep 2025 10:45:37 +0200
+Message-ID: <fe92c4e7-6a1d-4cec-a3d1-c50adff9f7f5@oldschoolsolutions.biz>
+Date: Sat, 6 Sep 2025 10:45:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird Beta
-Subject: Re: [PATCH RFC 3/3] arm64: dts: qcom: x1e78100-lenovo-thinkpad-t14s:
- add HDMI nodes
+Subject: Re: [PATCH RFC 0/3] phy: qcom: qmp-combo: set default qmpphy_mode
+ from DT for Thinkpad HDMI support
 To: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
  <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -60,43 +60,42 @@ To: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
- <20250821-topic-x1e80100-hdmi-v1-3-f14ad9430e88@linaro.org>
 Content-Language: en-US
 From: Jens Glathe <jens.glathe@oldschoolsolutions.biz>
-In-Reply-To: <20250821-topic-x1e80100-hdmi-v1-3-f14ad9430e88@linaro.org>
-X-Provags-ID: V03:K1:QhRL/UXwPaSPd3oTg60CCdzWtMxaB/XVwYUR/VGyFAk3GUisFgC
- cUIA1Xj9/0/C4ya1HbYVvFqOCVF0jbH2+pr0r0i8VxAOZI2va0JaT9Ei0YAoHCwxe+gjswQ
- /RvxsQzNKG1Xw9+jufRyWGxg2Y73AZeacgAdzzAnfDiZAhIuW60pP/8ICwwb5b5dG2ZFXmN
- wo8NcH57rkr0pGv6PdxuQ==
-UI-OutboundReport: notjunk:1;M01:P0:swNgBH3nyTE=;+rdig7xiljv9G21DwlVGUYlKt5O
- qi29g/l/w9NS70mv31f4fQBeGPYIPdSAgwP3c0gGEgFAsvSPEJ7xoxbvTc9QkLirqo5HwlyFk
- YaJ7E7rMiH4b0xNrYG9rohOHDGkANX2+N5V2FbSRyD056PAePNrfflcrGvlmUA8+i/r+ptExz
- p3WEJvc1My6CgCBnJPH/oEgGfN8siz6wbjUrNZPF2aTknaFCKAx48RJFpe/NNBuyicty1tXim
- 0GgoOKAhX95rS/L4o1UKHAVVgtvGuBYPGENb8FDvJhdrVrnvcI0dtgyWtRveDF8O7ahbfG9LH
- jDkpYw1H5q7QFW7KmbHaY81Ae7FdNnV2WXma6nkLQWgInD7ImHlNv4LHm6aGP/9Dvf2jBEZ7t
- iR0HmXa/+z5LzgFvCzz7inQdZffJRYSe9oDgolq4b9hEVAKUMZhPNsbqTWtUBVxyM1V9gUXeU
- 3FFWDuVHg5UIQxykQUA+9KanpPYrR2oma/pkCV+lMNeGw2/vLRmRjSFzEqMUKpKHLRniZhmnu
- UGxK2Da9urklDd05Dksh/5ykL9dKEHnOk27T1AHH+xS5On4KIKN0vnrHOKnshstJgk+0SOPy6
- TSlUvOZksaQDsPXuOjj8CznXRnUlHT8V3pfodz9KP6ME6QvVj3JWHezd79Eh9GdS0tNASXkns
- QtzVPQXtKDDgXDXfehtpGZoA7AvVpiVrQwxvhur8W/DGqGrzdH4ydJ0b6MCgdqdEk3ml4/Ec+
- 0/v4WkkSpiWKLssXJ3HQvinYHxqs859X8j5gUTE2FB8R69IBaSm1Ry3mIoHPBp8K0mlUShiGq
- LnvaLVRfKX4i64UAtIoRLAFBehk0B/wWUgR4rfuKiyTEJ357mvIpJBwPWtWLwGyRnJiLLFxVt
- 0qHZfBtkSwvmtYVRHFwRgJZ0IQAN3s5Xmc1vafJ00iEl2/UFXn7o/pHObngWyYFUHBo6ShKKy
- 3zDTQUfS315cWBkfkTbLAjXVP8Jm7QBx4r3C3FlKFi/WHLMieV00K136N7eaU3VeLL6LavWBG
- l9DPm3fkBrY1swpR1zol/CnsGzCSS07djy3k1Vh/3Qxqi14FgFhmvpae4dgFEcZwn46J/ieg6
- RtnxhkUBZyHYUBqcmQZnjoomGkp98BqeBjGg5ft8FyWgqFEMtBxKv4ksRUH2dYFuKvEC4huSP
- mu8djMyigSgtgOpnjEEUtmsS/9KDCcKk/LbMkdvRASpxfVJrhPLWSPHB7VtPNGMJ/MifyGPzS
- 5SVxVRTJAas0w5OMKjfh4wC6TAHFsq16iub3V+3jeBs2qsHx/WDw+9CvFIn2V3q5su3vt1JUu
- 33qqqgMKXIDDkBBniSVIPG/0ih0Dos6LzeIByfu4LOOVga1/dpvAsgkfXCvheNDKABiBMlJFm
- 13UTVzz7iPOXbCfOs4NIHOvWuCijRxYe55Mu3kEYgZmlvsZnQr674PfXTfxfA68V19byItkVv
- Iyd5YeIdDR+kauYTujoJMpj6WMBZ9hVg0QOvKJuISTphYv0NGGAB6wpNC09OO+3ckYfRQqzGK
- y5vqCvzKh0bCRFy3D9ReoiEugqvYvyu36cQfPvaOjxrWG+H6SlZLSB3bcOsgtBAjUhbn2PEdI
- WliLXsFUme//ofyNDX/IZfTHZ4AuefGHrGwQ4x5v1kQnauSm09u7P8XRCGnMwBciAFE+zX+X8
- H4WECAF+BBooxy8beOwkDKrRkkj2TMpsUV+HFYs2r57zGH+d6EDlmd2exMGZYsbjEVExD2jga
- UuTUzHKSjQFnR2fdGawShVMgBPm4UrMqyA7TrfKH+j5n6ZbKVb92kwIg=
+In-Reply-To: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
+X-Provags-ID: V03:K1:j0IpGjLN4L2a45GZ4Oi2D2xcseqh1/fdJ7qcBOxJv2vVMhM8MPI
+ EpBO8SBj3tyAMK+Is+Pmtt8Wi5b4FUilaiJsANMJVvZuB57mS3JWHGFFRv5e70Uya3g37MS
+ OA5C1q440a5BfTq60NUoE8HZ6yyV1nEYoU6REgra5z0kMyjyH6xm6+3uYuHX2kSpRhYEJjS
+ S3Do19QuJsF+bEpCo05JA==
+UI-OutboundReport: notjunk:1;M01:P0:J3Mxi+OdKAw=;bULDV+kVaYYlFupnL9hhzhYlnhD
+ FZ5Gh7uc9L+wUs8be4wLVvpyqtfcrrVFHTo+mRaTNDmwP1eTpbbxY9M4CTkGK0iiaP+8nRy+i
+ For0NChJA+1MDi5ZTPphIscRIMc5SzL8ElAZWmgXgPA9JyrQ0ndBZENEL10qpDsZcfKEzvzSg
+ dj6Edj81WkMsv9EZJOBcU3GJNO8KgRdeLlgEvGWPi5roTk9kqDG+IMMdGOihRDdAluJJpRzHI
+ NbKXZ33SY6vHVFiSTGz6OJcz6gs8r1HuMbmzDz39ewR03jvgnv784qfh+2tHN2BmOPbZ/PvEr
+ VignHhRMBWLBGaY6SvwNgpW41A9z13te+2sPfx46bLx6zeN8W/fYNkD0MDmwth2nEJObeTDoC
+ 6sKc/kEcqQHzDIvMxBEuk9JCpKc1KmqsJ50AIhrczTvufnqzNnF240gkyqgPuKkPKQ08yEkvq
+ yHOFTOyS7gRZoi7eZdE/+8neB8liFWBDVEQ0cei6PsasCRsUcslkd5BcRgttL/k+h55WcnDKQ
+ H2hZYdnVFeLiJvIBar72m9BMetqSR8t+VFLjQ72gXuSaKeLLTVEoW/mBcfRZ5SjzMRplpblbk
+ rt++K5ZpQ/L+JRwsXL+1tlthFTt0avcNpWnjwLW7XhHtFsICfY6XRq3g1K3IeW11pLZUCRsHE
+ EbDT6VAggYGjXsV1TfAnXPBuFLEQN7JWgL1PMhpuqVzv9WgecYCsj50uOJx/Zm9ScLDi3VBxJ
+ x5rg9sL0bkB1NohrFsI083f3gakzCdFB+5Gq8cfM7azIgc1S4YP8K6YzJHWS6RZMeX35VFagr
+ beESYFtoeHPgmXdAp6K6MkTTrXWNWAg+Yl4cb4zHRGdUp78H8YJ2TsK7wV7kUB3HfybqeKJxD
+ M8aQohWw6LEk0dplkHZCpObYv/toJYb2tOa5cHvCbkyqknPAyheAuuVbSmquFUnTldfVWTJ5V
+ 6HcUKmpU+Gl+11LfCuLBHq6Xop0XutAnDGUTwxLyhvBDv0oOuOWqt8k501+W2SVeST4I6t778
+ xVogIUoYkF2N2lYYBLIOOoeBrL0l47RaytdvOE3V+2DQW8IRmZovbgOqMNzZKfa50hDaigccs
+ ZfzgJcTDIwAiKN0fr7wwm/NJBquhWXkrMbUR56Y26lth2xfAOXT8tSSDj1chIQVyDgqW5OFw1
+ IqWY7d2ql1MRpKxtV0b7nAEvdiGy2DN4SD0E4osV+fB++pRZP5BiL6y3I/xjnNne5pQthb2qt
+ nn5+eDPWw/93sARqWqCRbxtzQAkwVuZ8cLhIGBB27Mlme7kD1AONaBcUA9AjqD9Qs5/L1LrQO
+ Zc9RJ+OaP6FoCY5C5z5nHMLBkHbjj6QD2pumxN4g8YSuNQotLzbxdmlJoHvbpupv1nwVfXmfh
+ SOQmv7FHOiRw9PDRAKk+OLBgWmXn86uKXt8lE4JwFA9eQBYQeFCMew+PbpMvenDy/lJmHmy9K
+ t2xChKLdhGYKhfHIP8X4C+heHBB41YJ9gm/DdfU8UAzILFCSdwaj0BTGoDPF2EOitjkoQ6DY9
+ oRLsCXr1IBCyXgmTH7j8cBvpO9bFRsyYwBk5JKdheHKZO6kBSIIWEWp6totqJ3OygL6Ge4Ubv
+ u8mZwspNp9Xhty7EiJfW1mKZK31CjTJD2mxmZsxHKCgW32eR9HwR0pQ0BvjA1ZwoPR93RjQos
+ oeKLSsN3HHX7xVy1P3phSD8lAaQz7EYn8iuz+aqiHEddO9xdMIRYOXp8Z2o2U09cOdqlJzpNl
+ k2WBVlv6GXfU8d+CZ6TfGsq75U6MGfONC9noZV7mPs2lHPKy+d0qil0Y=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250906_014207_249748_6F54DBB4 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20250906_014539_751211_A407790D 
+X-CRM114-Status: UNSURE (   4.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -109,28 +108,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjEuMDguMjUgMTU6NTMsIE5laWwgQXJtc3Ryb25nIHdyb3RlOgo+IFRoZSBUaGlua3BhZCBU
-MTRzIGVtYmVkcyBhIHRyYW5zcGFyZW50IDRsYW5lcyBEUC0+SERNSSB0cmFuc2NlaXZlcgo+IGNv
-bm5lY3RlZCB0byB0aGUgdGhpcmQgUU1QIENvbWJvIFBIWSA0IGxhbmVzLgo+ClsuLi5dCj4gICAu
-Li4vZHRzL3Fjb20veDFlNzgxMDAtbGVub3ZvLXRoaW5rcGFkLXQxNHMuZHRzaSAgICB8IDQ0ICsr
-KysrKysrKysrKysrKysrKysrKysKPiAgIDEgZmlsZSBjaGFuZ2VkLCA0NCBpbnNlcnRpb25zKCsp
-ClsuLi5dCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS94MWU3ODEwMC1s
-ZW5vdm8tdGhpbmtwYWQtdDE0cy5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3gxZTc4
-MTAwLWxlbm92by10aGlua3BhZC10MTRzLmR0c2kKPiBpbmRleCA0Y2Y2MWMyYTM0ZTMxMjMzYjFh
-ZGM5MzMzMmJjYWJlZjIyZGUzZjg2Li41YjYyYjhjMzEyMzYzMzM2MGYyNDllM2VjZGM4ZWEyM2Y0
-NGU4ZTA5IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS94MWU3ODEwMC1s
-ZW5vdm8tdGhpbmtwYWQtdDE0cy5kdHNpCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29t
-L3gxZTc4MTAwLWxlbm92by10aGlua3BhZC10MTRzLmR0c2kKWy4uLl0KPiArJm1kc3NfZHAyIHsK
-PiArCXN0YXR1cyA9ICJva2F5IjsKPiArfTsKPiArCj4gKyZtZHNzX2RwMl9vdXQgewo+ICsJZGF0
-YS1sYW5lcyA9IDwwIDEgMiAzPjsKPiArfTsKPiArCgpIaSBOZWlsLAoKc2hvdWxkbid0IG1kc3Nf
-ZHAyX291dCBhbHNvIGhhdmUgdGhlIGxpbmstZnJlcXVlbmNpZXMgcHJvcGVydHk/CgorwqAgwqAg
-bGluay1mcmVxdWVuY2llcyA9IC9iaXRzLyA2NCA8MTYyMDAwMDAwMCAyNzAwMDAwMDAwIDU0MDAw
-MDAwMDAgCjgxMDAwMDAwMDA+OwoKT3IgaXMgaXQgc29tZXRoaW5nIHRoZSBicmlkZ2UgYWxyZWFk
-eSBuZWdvdGlhdGVzPwoKd2l0aCBiZXN0IHJlZ2FyZHMKCkplbnMKCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 21.08.25 15:53, Neil Armstrong wrote:
+> The Thinkpad T14s embeds a transparent 4lanes DP->HDMI transceiver
+> connected to the third QMP Combo PHY 4 lanes.
+
+Hi Neil,
+
+thank you for the patch. Integrated it on my tree and tested on the 
+T14s, working very well. Also tested hotplug and suspend/resume.
+
+Tested-by: Jens Glathe <jens.glathe@oldschoolsolutions.biz>
+
+with best regards
+
+Jens
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
