@@ -4,44 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93016CAC581
-	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 12:54:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CAB3CAC581
+	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 13:15:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xSWl3Y6wMJoHb+54XRU4YmVPf176HeFLKH0XkHQSEhs=; b=yOEyPqJWe7kz8a
-	wrtVabD4ix4h4IdN+rYydp1wUThqREE7kF5c/y9XPZqlstIySOci4zsDO9gTtIs3qA0D3y0WvZsNo
-	TS7DZ9LvLM8C1vWOntDiDwqGQ5gyAYvSTKhs4+ISQjKnCPhZVfby7El70RkGfDJbNmhSrkXh3GMk4
-	ZpqFf0zkJ5KryTwVl8PdeP0895H3iuOQbYqmLNIxkEMFmK8n86UEn2i+einKUEbg5l2JVDuJBpeBG
-	Dxyd08lW8uBE7bIPkmBmwssEdQWPGwkWhQL2A9HQPvPEcT556i3sbehEVrOEn4j3SEDzGyptyCotc
-	sJyJNABe2/+8gqa7IkzQ==;
+	List-Owner; bh=cqkONUs0Gr2Xnf7N+kxdoh3AXYoBUP4FvdWF6fHmI+M=; b=OFqcf0FtRhJM/4
+	i/TOCVGo/rGFp8IcYUw5+CPhUspNvzNDzbxkrFC8lSAWTkwQwxBXZUFVmWheOIqED9TfkxdhL6P7S
+	D56MWtZ5h6/LtprwE5GRNniLubSqqWh9JE7l+1+lP1GWt3tGV9k1Zpcr7GFXk71FO5yr78NXQGc1T
+	s42aQpj2oRjLygmPVqUNJxxsSmc5O97d8Ia16oeb9seQumNAy0Yhzn5DQ1LyqN2caiJRYmVcbxbxt
+	GczvgxPAi/B+LaXd7+aq1rStrejRcsSlty0l62gwE6ZvxhWUx1wqm1JspKsKuoyJ3uzcx5oK+wyHa
+	nUJH/BkEilpA3XtHDoRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvEuL-0000000B9zn-1UaT;
-	Sun, 07 Sep 2025 12:54:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uvFF2-0000000BEA3-01tc;
+	Sun, 07 Sep 2025 13:15:36 +0000
+Received: from out-170.mta0.migadu.com ([2001:41d0:1004:224b::aa])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvErU-0000000B9Ff-3pBP;
-	Sun, 07 Sep 2025 12:51:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 749C840518;
-	Sun,  7 Sep 2025 12:51:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB9B1C4CEF0;
-	Sun,  7 Sep 2025 12:51:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1757249474;
-	bh=IWYocY3Q/qyYFd0mqeYzdKytf2h0IHxXtx9zAXWQ5sM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=d4kJMwi2GGoks7Kj/YqNlzkZ8fzdRPWDzA8Yye8QtWHeG0O4qtLYiLNvDGGw9/ETt
-	 hxpApDrcdwzYed/fwOJs1CKTfPyOtqsQcv0lY+HwPhbbmsS5JoC+iPcb2PrTS2Q24Q
-	 OLHeb2bfAj7QKuRymS01IPveabspeYWifp1uRcEA=
-Date: Sun, 7 Sep 2025 14:51:11 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Alyssa Anne Rosenzweig <alyssa@rosenzweig.io>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, Sven Peter <sven@kernel.org>,
+	id 1uvFCK-0000000BDd4-4Ajr
+	for linux-phy@lists.infradead.org;
+	Sun, 07 Sep 2025 13:12:50 +0000
+Date: Sun, 7 Sep 2025 09:12:29 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rosenzweig.io;
+	s=key1; t=1757250755;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=c6m2JvKKQLislbG/lLsCQpWLwDoRY8Pnbo43WEoeMe4=;
+	b=Xa1Qe31ib2MbCn8EA7bchWhfdlA69tFg5z35UwJQfmd/Y+tD/PnIaII2ok+/cGbmnaygXG
+	cnw0y5r7Lms2YbuHpkXTnZCsUwBRzmNUq0k2vkecwSzbffFAP5DJB/cgPz2kYUDhWVQydd
+	MxpBtCD9cBLbhBTqvlClPvOT+OV0rOM3rCofbu3hXvPlLJDNFiPdeWMyrU+CCuBkmMtoaw
+	Gtga+xNV4nk42xOEzsnqV6FeJAZ86ROd+Y12UL15xy8xQYr4FlA62dk47mPE1AdKArv3Ag
+	aSPKmGr8VWm5B50+e1c/3HddNFZeSixDBFM38iHoz+QSwegkhGRdJDD4gc2PDQ==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Alyssa Anne Rosenzweig <alyssa@rosenzweig.io>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
@@ -56,19 +57,18 @@ Cc: Krzysztof Kozlowski <krzk@kernel.org>, Sven Peter <sven@kernel.org>,
 	linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
 	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
 	Hector Martin <marcan@marcan.st>
-Subject: Re: [PATCH v2 20/22] arm64: dts: apple: t8103: Add Apple Type-C PHY
- and dwc3 nodes
-Message-ID: <2025090726-overcoat-unskilled-3228@gregkh>
+Subject: Re: [PATCH v2 18/22] phy: apple: Add Apple Type-C PHY
+Message-ID: <aL2EvQojjEv7z_y-@fedora>
 References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
- <20250906-atcphy-6-17-v2-20-52c348623ef6@kernel.org>
- <20250907-zippy-auburn-koel-d6da32@kuoka>
- <aL199DK3XfkaelgH@fedora>
+ <20250906-atcphy-6-17-v2-18-52c348623ef6@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aL199DK3XfkaelgH@fedora>
+In-Reply-To: <20250906-atcphy-6-17-v2-18-52c348623ef6@kernel.org>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250907_055117_350531_EB38386A 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20250907_061249_181607_0E3B356D 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,44 +85,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Sep 07, 2025 at 08:43:32AM -0400, Alyssa Anne Rosenzweig wrote:
-> > Please do not combine DTS patches in patchsets for Greg (e.g. USB). Greg
-> > expressed that many times, that he takes all or nothing, and DTS cannot
-> > go via driver branches/trees.
-> 
-> >From the cover letter, emphasis mine:
-> 
-> > With the dwc3 glue driver this series can now also be merged independently
-> > once it's ready: Patches 1-4 can go through the dwc3 tree, 5-15 through
-> > tipd, 16-18 should go together through the phy tree, and I'll take the
-> > DTS changes through my tree. **If everyone's happy with the overall
-> > approach here I can also just send these as individual series**
-> 
+Looks a lot nicer than the initial version I looked at a few months ago,
+nice work Sven :-)
 
-That's great, but a major pain in the butt for any maintainer.  It would
-require me to manually pick out the patches to be added to my tree and
-manually apply them?  We have good tools now, b4, that wants to take a
-whole patch series.
+If we're going to define all those mask32/clear32/etc convenience
+helpers, there are a couple more we should probably add and use too:
 
-And you want me to take a whole patch series, as I can now add the info
-that is in 00/XX to the "merge point" of a big patch series to preserve
-the information that is provided here.  So you loose out if you that is
-not preserved in the tree, and you make more work for maintainers to try
-to sift through just what should, and should not, be taken.
+1.
+    void cond_set32(void __iomem *reg, bool cond, u32 mask) {
+        if (cond) {
+            set32(reg, mask);
+        } else {
+            clear32(reg, mask);
+        }
+    }
 
-Remember, some of us maintainers get 1000+ emails a day to do something
-with.  Our development process is optimized for our most limited
-resource, maintainers, not developers, sorry.  Think about it if you
-were on the receiving end of this, what would you want to see present
-for you to be able to review and then apply this to your tree?
+Not sure on the name but this shows up a bunch of places and turns
+messy sequences into straight-line code at least.
 
-So please, split patches up into "one series per tree".  It's the only
-sane way for us to work.  Yes, it's a pain for platform/dts stuff at
-times, but for everything else, it works really well.
+2.
+   #define bit_to_OV(reg, bit) \
+        clear32(reg, bit); \
+        set32(reg, bit ## _OV); \
 
-thanks,
+Also not sure on the name, but this would make a bunch of sequences
+more compact. For example
 
-greg k-h
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_OV);
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_2R);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_2R_OV);
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_4R);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_4R_OV);
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_OV);
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_2R);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_2R_OV);
+> clear32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_4R);
+> set32(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_4R_OV);
+
+turns into
+
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST);
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_2R);
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_POST_4R);
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE);
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_2R);
+> bit_to_OV(tx_shm + LN_AUSPMA_TX_SHM_TXA_IMP_REG3, LN_TXA_MARGIN_PRE_4R);
+
+3. static inline const struct atcphy_mode_configuration
+*get_mode_cfg(struct apple_atcphy *atcphy, enum atcphy_mode) {
+	if (atcphy->swap_lanes)
+		return &atcphy_modes[mode].swapped;
+	else
+		return &atcphy_modes[mode].normal;
+   }
+
+This only shows up two places but both would be improved by its use.
+
+---
+
+With those cleanups (or an explanation why they're silly), ttbomk this
+is r-b me, thank you!
 
 -- 
 linux-phy mailing list
