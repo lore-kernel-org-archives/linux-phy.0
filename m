@@ -4,77 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5962CA101F
-	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 16:10:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3F7BCA101F
+	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 19:02:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=028Do/paLoqrIb7thzqiwPbMv1kO0XtLEs2HRjWEz2Q=; b=TIq3I0rGTR64CU
-	Rgvh1vyd37http3D24WoZeKkXnEEaQlUU7zWY7ejUmOhEc3Fr8/nU2kxN9HS5bXcvQCIGShfWDJGp
-	bR8UtzIBRFkqfpDQJuhIzfwJMpB7e8+8w9/D3A+9/DmqPEFhaJiDvUQKC60jTKGxpE/fRLC9+1o4e
-	7C4DJw44t0jERbEFg0D99bpWisvmypdzanGVpv69fSsoEzjQ110Ql0qC5Zo4LtNuHuX0WW85n0YuB
-	C8OXv5zAAe8xj3tFBc71ReBcnb+4hn8uXMAqH+iqe3JpI3TIOcoklUQ5JOws70EccRfsyuyH6vFaQ
-	yD89fKmjLaxC1qHcAnoA==;
+	List-Owner; bh=eN+lD/kRcEaA+ljnae7A8wkrR6uIOYnRKSA6SuVQ1mA=; b=tC5iMdqYXw0hgq
+	f0MbTrQMWPZ1ddyKjVhhOExdqjp17W4OELDtJGE+dNm+D3sUT7qwPcgdV8QwS2E/VQm/B0uESoYfm
+	0Jd8BrmfEDLfLiUpEshWSXcvt3VBDsCuILRquGNSbYeEM4zocYzNimw5yx8Q3uzyKZhZdck1Cdzia
+	ph2KVN1J9rZzfdBdisIaVtDDUwqMJrL8OrZlEQ2BJCJqBGMIWHKpT220IGXzQX+ATlFMCBA00gFUD
+	QneEmbygK9PiUNjOQDydoDzaQHHVkC1MxCejDpiaiPOhYz3DjRerLS4F+MY7w+0ktUv/nxMXi57rp
+	mESxd7uo4djLTb6PvI5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvHy9-0000000BpBI-000d;
-	Sun, 07 Sep 2025 16:10:21 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1uvKen-0000000CQPI-1FjG;
+	Sun, 07 Sep 2025 19:02:33 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvHy6-0000000BpAj-1ZT4;
-	Sun, 07 Sep 2025 16:10:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1757261418; x=1788797418;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=3Zl6AVEGt9WisPqSWtg4X6buSc0QYXVLZOjy94tByxw=;
-  b=VpezvTXOwZfHrgdKKP0duzQ+K42ExCN7x3L0Zpet9i/SkCL5GGYp2kxb
-   VZo6gu9IT003yltT3bEiKoZ7hXqugrAmGliFPJ5FS3skx3UyDAemJ+KIO
-   mekgvtUs0536mlDnH7dXCh/VJR+BmMd2m0WMM47rVPOoONfiwXxtaZUgw
-   4e7tys0bkUZAs4oskofm95diYPOcbgwI4sBps16GMVvPEQSiRaQ19M9dY
-   Q6lOT62EkJnBF9vAnzBVYKzBoCKkcmZRfn9MaUMYBnEnkKjxgN0Pc49st
-   P8vgRWwyf5lY80il/BWOUpTDO/SPGoESLot+/VQjtHQ8WbrfUDwtDZ2Aq
-   w==;
-X-CSE-ConnectionGUID: CYuEiBmxQziHoSr1aAN2pg==
-X-CSE-MsgGUID: yeBBlJuxRwuHs+KdUUuIqw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="59462262"
-X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
-   d="scan'208";a="59462262"
-Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Sep 2025 09:10:17 -0700
-X-CSE-ConnectionGUID: Wh9M8o7RQ9iMYMUnx7+mHg==
-X-CSE-MsgGUID: SztYKZBBSQ+peDyIbxLBCQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,246,1751266800"; 
-   d="scan'208";a="172951477"
-Received: from lkp-server01.sh.intel.com (HELO 114d98da2b6c) ([10.239.97.150])
-  by fmviesa008.fm.intel.com with ESMTP; 07 Sep 2025 09:10:14 -0700
-Received: from kbuild by 114d98da2b6c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uvHy0-0002MN-0C;
-	Sun, 07 Sep 2025 16:10:12 +0000
-Date: Mon, 8 Sep 2025 00:09:25 +0800
-From: kernel test robot <lkp@intel.com>
-To: WeiHao Li <cn.liweihao@gmail.com>, heiko@sntech.de, robh@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	WeiHao Li <cn.liweihao@gmail.com>
-Subject: Re: [PATCH v1 1/4] phy: rockchip: inno-usb2: Add usb2 phy support
- for RK3368
-Message-ID: <202509072227.wBI6dBl4-lkp@intel.com>
-References: <20250905125318.7956-2-cn.liweihao@gmail.com>
+	id 1uvKbx-0000000CPjX-1PYC;
+	Sun, 07 Sep 2025 18:59:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5B9CA43458;
+	Sun,  7 Sep 2025 18:59:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5DF0EC4CEF0;
+	Sun,  7 Sep 2025 18:59:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757271576;
+	bh=oSyvOvb8j8bP0Da0GGBZQb4BblALsQU6B8rsXjZ9ZOk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=fAwo5v06UzD/wkFaAA+sllvIyMHV8S3qNHNwdSeVpWHGfy2RpVm+6Kd9l6b6Q/dRS
+	 SF8X3894mISPfqI2DBYAIMmAevspWYGQb4CtZQ02x9zEYFfhulS/iyC/x3SejmHAfb
+	 v7SqEBug+4sD4BtzUZKV6uGEnb+CLZlqmT4LQfUKIg1KYv67YzUwasm51fE4fFTMJO
+	 xI7UKG3ZKvrpX3qTVcwbat6AtWWAmXO0iw4IQY35ZPI+zmIbcdOPHVwEoNPKd5eK+8
+	 iI0SUyyF8DiQs94voJ0N4XQi1wvtw1CAtv80NHi2d1UWkE/FVBtWYfUIwEJMmUjZVQ
+	 zFrEZh+o0uJUA==
+Message-ID: <e0659b64-eb6b-4990-b3c8-71195f143c85@kernel.org>
+Date: Sun, 7 Sep 2025 20:59:29 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250905125318.7956-2-cn.liweihao@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 12/22] usb: typec: tipd: Update partner identity when
+ power status was updated
+To: Sergey Shtylyov <sergei.shtylyov@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+ Janne Grunau <j@jannau.net>, Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+ Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
+ Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>
+Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ Hector Martin <marcan@marcan.st>
+References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+ <20250906-atcphy-6-17-v2-12-52c348623ef6@kernel.org>
+ <f09dedfc-1f1b-4416-b854-9c4059ba264a@gmail.com>
+Content-Language: en-US
+From: Sven Peter <sven@kernel.org>
+In-Reply-To: <f09dedfc-1f1b-4416-b854-9c4059ba264a@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250907_091018_491616_99A0A77D 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20250907_115937_401844_221350A6 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,93 +82,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi WeiHao,
+On 07.09.25 10:54, Sergey Shtylyov wrote:
+> On 9/6/25 6:43 PM, Sven Peter wrote:
+> 
+>> From: Hector Martin <marcan@marcan.st>
+>>
+>> Whenever the power status is changed make sure to also update the
+>> partner identity to be able to detect changes once de-bouncing and mode
+>> changes are added for CD321x.
+>>
+>> Signed-off-by: Hector Martin <marcan@marcan.st>
+>> Signed-off-by: Sven Peter <sven@kernel.org>
+>> ---
+>>   drivers/usb/typec/tipd/core.c | 9 ++++++++-
+>>   1 file changed, 8 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
+>> index c7cf936e5a61a331271c05b68ff1b77b89c0f643..cd427eecd8a594b7e609a20de27a9722055307d8 100644
+>> --- a/drivers/usb/typec/tipd/core.c
+>> +++ b/drivers/usb/typec/tipd/core.c
+>> @@ -635,9 +635,16 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+>>   	if (!tps6598x_read_status(tps, &status))
+>>   		goto err_unlock;
+>>   
+>> -	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE)
+>> +	if (event & APPLE_CD_REG_INT_POWER_STATUS_UPDATE) {
+>>   		if (!tps6598x_read_power_status(tps))
+>>   			goto err_unlock;
+>> +		if (TPS_POWER_STATUS_PWROPMODE(tps->pwr_status) == TYPEC_PWR_MODE_PD) {
+>> +			if (tps6598x_read_partner_identity(tps)) {
+>> +				dev_err(tps->dev, "failed to partner identity\n");
+> 
+>      Perhaps "failed to read partner identity\n"?
 
-kernel test robot noticed the following build warnings:
+Yup, good catch!
 
-[auto build test WARNING on rockchip/for-next]
-[also build test WARNING on robh/for-next arm/for-next arm/fixes arm64/for-next/core clk/clk-next kvmarm/next shawnguo/for-next soc/for-next linus/master v6.17-rc4 next-20250905]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/WeiHao-Li/phy-rockchip-inno-usb2-Add-usb2-phy-support-for-RK3368/20250905-205804
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git for-next
-patch link:    https://lore.kernel.org/r/20250905125318.7956-2-cn.liweihao%40gmail.com
-patch subject: [PATCH v1 1/4] phy: rockchip: inno-usb2: Add usb2 phy support for RK3368
-config: arc-randconfig-r132-20250907 (https://download.01.org/0day-ci/archive/20250907/202509072227.wBI6dBl4-lkp@intel.com/config)
-compiler: arc-linux-gcc (GCC) 15.1.0
-reproduce: (https://download.01.org/0day-ci/archive/20250907/202509072227.wBI6dBl4-lkp@intel.com/reproduce)
+Thanks,
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202509072227.wBI6dBl4-lkp@intel.com/
+Sven
 
-sparse warnings: (new ones prefixed by >>)
->> drivers/phy/rockchip/phy-rockchip-inno-usb2.c:1867:34: sparse: sparse: Initializer entry defined twice
-   drivers/phy/rockchip/phy-rockchip-inno-usb2.c:1873:34: sparse:   also defined here
-
-vim +1867 drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-
-  1849	
-  1850	static const struct rockchip_usb2phy_cfg rk3368_phy_cfgs[] = {
-  1851		{
-  1852			.reg = 0x700,
-  1853			.num_ports	= 2,
-  1854			.clkout_ctl	= { 0x0724, 15, 15, 1, 0 },
-  1855			.port_cfgs	= {
-  1856				[USB2PHY_PORT_OTG] = {
-  1857					.phy_sus	= { 0x0700, 8, 0, 0, 0x1d1 },
-  1858					.bvalid_det_en	= { 0x0680, 3, 3, 0, 1 },
-  1859					.bvalid_det_st	= { 0x0690, 3, 3, 0, 1 },
-  1860					.bvalid_det_clr = { 0x06a0, 3, 3, 0, 1 },
-  1861					.idfall_det_en	= { 0x0680, 6, 6, 0, 1 },
-  1862					.idfall_det_st	= { 0x0690, 6, 6, 0, 1 },
-  1863					.idfall_det_clr	= { 0x06a0, 6, 6, 0, 1 },
-  1864					.idrise_det_en	= { 0x0680, 5, 5, 0, 1 },
-  1865					.idrise_det_st	= { 0x0690, 5, 5, 0, 1 },
-  1866					.idrise_det_clr	= { 0x06a0, 5, 5, 0, 1 },
-> 1867					.ls_det_en	= { 0x0680, 2, 2, 0, 1 },
-  1868					.ls_det_st	= { 0x0690, 2, 2, 0, 1 },
-  1869					.ls_det_clr	= { 0x06a0, 2, 2, 0, 1 },
-  1870					.utmi_bvalid	= { 0x04bc, 23, 23, 0, 1 },
-  1871					.utmi_id	= { 0x04bc, 26, 26, 0, 1 },
-  1872					.utmi_ls	= { 0x04bc, 25, 24, 0, 1 },
-  1873					.ls_det_en	= { 0x079c, 15, 15, 1, 0 },
-  1874				},
-  1875				[USB2PHY_PORT_HOST] = {
-  1876					.phy_sus	= { 0x0728, 8, 0, 0, 0x1d1 },
-  1877					.ls_det_en	= { 0x0680, 4, 4, 0, 1 },
-  1878					.ls_det_st	= { 0x0690, 4, 4, 0, 1 },
-  1879					.ls_det_clr	= { 0x06a0, 4, 4, 0, 1 }
-  1880				}
-  1881			},
-  1882			.chg_det = {
-  1883				.opmode		= { 0x0700, 8, 0, 0, 0x1d7 },
-  1884				.cp_det		= { 0x04b8, 30, 30, 0, 1 },
-  1885				.dcp_det	= { 0x04b8, 29, 29, 0, 1 },
-  1886				.dp_det		= { 0x04b8, 31, 31, 0, 1 },
-  1887				.idm_sink_en	= { 0x0718, 8, 8, 0, 1 },
-  1888				.idp_sink_en	= { 0x0718, 7, 7, 0, 1 },
-  1889				.idp_src_en	= { 0x0718, 9, 9, 0, 1 },
-  1890				.rdm_pdwn_en	= { 0x0718, 10, 10, 0, 1 },
-  1891				.vdm_src_en	= { 0x0718, 12, 12, 0, 1 },
-  1892				.vdp_src_en	= { 0x0718, 11, 11, 0, 1 },
-  1893			},
-  1894		},
-  1895		{ /* sentinel */ }
-  1896	};
-  1897	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
