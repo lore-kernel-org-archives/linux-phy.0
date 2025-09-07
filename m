@@ -4,126 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAFABCA1017
-	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 14:52:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36398CAC581
+	for <linux-phy@archiver.kernel.org>; Sun,  7 Sep 2025 14:52:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N+34gwm2pzn/c4X6nJi+N4Dc1r8JpqFQjrs0DgXq+Bw=; b=i+Q626FKw0UWLc
-	pLw+pci2g/jjsdcZgmSIR5/4+w5q/mViVzLrRrexKfCqqHZPsZ4zv/B4UjMQmHAz9FMPgsrD7q0OE
-	ACXcByL+d1jr2ynS12fycP6VypU7AOQX5LeKAmwyJW2x2DYqVpvRj8txzG+zCEvF7ke56ue5aSloN
-	fag7X8N/Eu5M7msKITO2c+i04C0kFnY6adX2qiX+kiyPSwB19xuYrjfyV+QUUOtlpi2OSqUvITdzO
-	eubtColmATtt+ifZEYRIfH7j95YnbHlwII1WYjHdcC33gUNxIms/Q2i4BwvrYQbOE1LZygQ0qMWBL
-	HHHdg6Ek0nwYHMDCeSUw==;
+	List-Owner; bh=EJ0sqElauFZ85+ShSOALYpfNkJghrSS7rV6Z2rokBww=; b=gzLOB7lMN//81v
+	te/85G6QVLmf6khmOneVTJ3n5sKhXUHCZGmdMUZFboo1L+4hXS7QV2dqIzSjoipnxv2q5i0wu/yAr
+	EQUMjYrtn8mwOeaOltWtvYkXHGZeYPWlaJS2IpY1yJDX3ebU9JgFg5v+7OoWsxQg8rxpdsoAuAf0W
+	F2ES4X9HObYpHLoCSe+ituJ+CMDle7q7KaQM/mKUd3DEdFRiY0WHXvDxiobFoVJIxTeDz7ToWNR45
+	WRUsHOyJPdZ8FgmyxFGxxRV1AAxW9VKbB3eiyXYF3BYIpKn4bejuP7SJke3mlmeeLXch1MoZMfYSD
+	uVwrS5tp5LHVwsKgDMIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvGkk-0000000BYxP-1rJf;
-	Sun, 07 Sep 2025 14:52:26 +0000
+	id 1uvGkm-0000000BYzQ-41y3;
+	Sun, 07 Sep 2025 14:52:28 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvGkh-0000000BYvF-3kFx
+	id 1uvGkk-0000000BYx7-1HjI
 	for linux-phy@lists.infradead.org;
-	Sun, 07 Sep 2025 14:52:25 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 587CShsb024658
-	for <linux-phy@lists.infradead.org>; Sun, 7 Sep 2025 14:52:23 GMT
+	Sun, 07 Sep 2025 14:52:27 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 587EahvH022611
+	for <linux-phy@lists.infradead.org>; Sun, 7 Sep 2025 14:52:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/XIqAkAydaF2HysR2i0jalHW8uI70wZ4L0rHiq97FcI=; b=WQ0JhCdl+4P26S18
-	FL2Q3orsNqAvmDMv4MtfZYaeosQ+UqdW4pYqzlSLU25kqM1PNKUfaRWwx72VLMAg
-	xWQruyu+dHb4vyRuNcvxDMO1L6vn/poo7IrZT6FR7Y77RgyzKjj0tZP7w/Rvo3rt
-	Dp7NKsmarixj55fVIP9/PybRU4j7DUh83zxs1XngHT2Hp3qzGAPya45hyWYL+8St
-	3pvOktQ1hIKoSq2zH4lCRblivAoti5+Dp/qzuWOd4edx7gvKncVG+ilCiP1QwIaD
-	sV+aAuDRJSGqx9pDTtJpYf7lFN9zJAVefV8LldnAWCvRABtY/xVoa1AYOZeKMe64
-	wYHCRg==
+	Jp17008N9EcjHAl9t0HpxgMYKb1MSuNaJ/ECZEHaOsI=; b=dOR9vFVNUXkIvFLZ
+	MdOHB1REzE3CMiD4c6Es8COU9ElqQgJaBkKpUqdnSHLpmmQngdlAU+KamQXvf9TF
+	CAeHDZ8de6fS2s+6Qduo2fsHdYPLRqRYToHVLhfnm0GpzRtz8sWQkGFmpyTtWlM5
+	VvQd5l5gnfTiZakQLOaSk+H9QemqBu3FKM/h0detOWhf/0Z37FdFmcs0gkQDdpJX
+	gEwcYL04WXmAP5OyLhX0s+hVPKNvbSrGYoR2M7R/00d5Wuo9EB4dZ6AZLS3OKdfi
+	tSysHQkSfDBbiB0H1OHqnPx5rFYYxYHCuWxNLYWlAqAZGStFxuZIB+IIhgCaquEF
+	z0iZJA==
 Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490e8a23x8-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490e4kt4bq-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sun, 07 Sep 2025 14:52:23 +0000 (GMT)
-Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-7296c012ec9so36639006d6.2
-        for <linux-phy@lists.infradead.org>; Sun, 07 Sep 2025 07:52:23 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sun, 07 Sep 2025 14:52:25 +0000 (GMT)
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-72048b6e865so75967596d6.2
+        for <linux-phy@lists.infradead.org>; Sun, 07 Sep 2025 07:52:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757256741; x=1757861541;
+        d=1e100.net; s=20230601; t=1757256744; x=1757861544;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=/XIqAkAydaF2HysR2i0jalHW8uI70wZ4L0rHiq97FcI=;
-        b=NHGOhB9fqmYTbm1f7M7pQF4I6pUVFHBHh3zA/DDS29U9MXJNYvJAPhnrR7vLDBRb4V
-         yRhUlNJJyfH8JONM+TcugKn54ZrbC9umLMIbpzUOHNDQWaJk+0JHm2JL0DtL7KAkIBou
-         7p5pbeIAeoAmBV8r4DzweBsF9sz8RaHkcPS4F0a7e95kV36wy/7/PraPv4Ztpg+nIZ4i
-         0w0FjHrSQR0hID32Ec8sRNfg5Jhas6P/cxVv1m0sE9m5z2Kxu4HNS08ftrz2hxxpAdo7
-         2p6j+H906DvR+Rpk0BQz2vGLTzaxlkeSeOAqlx5OBT5Ed7T6xgKxQREKERNRhxjqRhsi
-         Ul4w==
-X-Forwarded-Encrypted: i=1; AJvYcCW+TmgPm6Y9Ki42bOxT1gn+lQYnc9x2w9M9XwR77UlgPVErPuQjw1vfp5CF7IPcrL+O+WdtDioGLQ0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwiTCDBuBZcLV/fEE1HXQGu/SKTSX5RrRbbb1UdbN4p5TCI2G/T
-	ovQQatLH5HzNpfo66mNWx7Qt8xRNoDeXCe/P0ixXxtvt6szb5AXuE4iZ2WGChPH3pDQ0xdYA7Sw
-	04NzfQW7OFPMVU+wpfJDRr5ofTiMCeAKEY6P1Sh2UE0qdsdwtVyZrJdZxIf3iWLXTfh79
-X-Gm-Gg: ASbGnctq85H52NhfRdhmzEHWkxSzZO9lYJ3/JELRO7nLflQwvC+D+DK1jUrxGKx56IA
-	4vwV6aDCPgRaOUgOzP7RNlCaJ1iTIdp7UvXWg3PatSlQzSulbUAy3Xm+tpMy5baEqwZdJB3FS5x
-	DQsSRN++40MXGIQ+q5LNhUJfb97OgmkyJxfBKD8TBaAjLjJ/V5WDmEoizA2u1bSoUxARkS8b9Z4
-	33psnlNsW1jVznEzokSflgXZ50e8ucHgghncIb5SgYvLqquSRHtgV51nNx0c5fKikv9zYrK87kF
-	VOS7wJmvgGZRot0rT4Krt4WqodnlSCiCGFYGI67qJWTwNmZ2J0tE+d0D4fP2ozFrnrobnTAlvpz
-	n1N12MxmIfTQ/oq/y6byj2IE6ZGxuLb5zf9+3a5l5wAOXeLBquXgY
-X-Received: by 2002:a05:6214:acf:b0:720:b2a:adf0 with SMTP id 6a1803df08f44-739336399cfmr57253526d6.30.1757256741015;
-        Sun, 07 Sep 2025 07:52:21 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGZ7BpzdmfRxSJ4iPWNPxFzR24KLl0eNrbDfQ7kNZIkt44v3QFEXN+68rqb20Oo4OxU0W8Rgw==
-X-Received: by 2002:a05:6214:acf:b0:720:b2a:adf0 with SMTP id 6a1803df08f44-739336399cfmr57253366d6.30.1757256740346;
-        Sun, 07 Sep 2025 07:52:20 -0700 (PDT)
+        bh=Jp17008N9EcjHAl9t0HpxgMYKb1MSuNaJ/ECZEHaOsI=;
+        b=LKFB8LNGafdxYb3xl9oeOAGg2U5ot96fnpUuDO3NQd0HZbPJnEMvpCG9P556V8pl5X
+         UrauHUgMooFB/EHQj7ja9IyByj0HwoGtLlin3y+WeTZuktD1zEEROxiflM1xjfzlkkqJ
+         BjCwEidLC8EsnKbuJlxAv1Y6g1ExvuC2rn+l1NjAi6y8nJNZQqCSiDPNCO+3dN6POmSq
+         ssHH6yPR5BSQ6fYgED25+5ayt2f0xrcdcBJfs1CUtRFrjRrw1DdgkFFqJDRbPQtnm8/8
+         1k3lOOOh8cP41o7MFJ0baOYqJT82YD+THjcO2EZu7NnxyPQKpp7UfpkVPPqDP6Dn94jL
+         P3OQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW/wlGBfjARfKmzaNCPTreiU2swSVv+iqbMEeprf4WR/B4bryeKmqLC17xuMXFwZc2rFFcfRUdIwUA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZihglbnFaQPUgA3Nn5CBLGfeHn45VOMagn81YLvd3+1t03mV0
+	3AiEc+TDMh3HlPK7KUprAxJcjRl4zJCbHk4D+6DLPwVkJVjJwDFdolSb4XVqTOglmfJE5MqAern
+	zZ6gXBHWn37+VS6QJVKfXv3ZE/Te4LXOah7XqL/8/RIcGTAn5xFPeZnzWo2g/RcPtN+FW
+X-Gm-Gg: ASbGncvtNJ5nPDR43bMExD0+jR2BGe9c8EdHbsRfRYPP6eoFVKOtQ7Q+wVpYICsyLwt
+	JsM8srj8Wa9qPrviCY6VJ75IjVc30wgNp1A+Z/mo93BYyjCoFH7nCLyuyrVbCHwtMYQHQgnX234
+	0oVXsEOuBXrRRTDN82U4HXUIbiqOUpmHGlmts5f8vSr/MXxxqc3GwTp6bPvnB6k4FDzcpTIKSqM
+	c75bH1z2CxWa7V79nmv4IpeaGijKTM5qqt7XVuLkp74W0CXTeiLSBHTCYwIkkKWCkI2IXhNUQpm
+	qidX5fopyf2SPmmcS61Ew1m3T/NuHF3sj4WYo11QYyBG59othyDxqJ/wyhn22r4CtRo3tZ/A9ty
+	QDVgoxQZWLnakPFxgEdUP2Vp6ywdeBXSTwwP5TnZZn/2+hG+6HtLf
+X-Received: by 2002:a05:6214:1256:b0:725:cd10:3d1d with SMTP id 6a1803df08f44-7391f9bb4bbmr54357336d6.16.1757256743873;
+        Sun, 07 Sep 2025 07:52:23 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEywULK/o5gerneWOtP1Ftmr2zD7HJNj5pRL52f8+t/P7CaGR9+Im7V1oAQiPv0G7huvf6Ujw==
+X-Received: by 2002:a05:6214:1256:b0:725:cd10:3d1d with SMTP id 6a1803df08f44-7391f9bb4bbmr54357116d6.16.1757256743245;
+        Sun, 07 Sep 2025 07:52:23 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5608ab939d5sm2936738e87.46.2025.09.07.07.52.18
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5608ab939d5sm2936738e87.46.2025.09.07.07.52.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 07 Sep 2025 07:52:18 -0700 (PDT)
+        Sun, 07 Sep 2025 07:52:21 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Date: Sun, 07 Sep 2025 17:52:11 +0300
-Subject: [PATCH 2/4] phy: qcom: qmp: extract common PIPE clock helpers
+Date: Sun, 07 Sep 2025 17:52:13 +0300
+Subject: [PATCH 4/4] phy: qcom: extract common code for DP clocks
 MIME-Version: 1.0
-Message-Id: <20250907-qcom-dp-phy-v1-2-46634a6a980b@oss.qualcomm.com>
+Message-Id: <20250907-qcom-dp-phy-v1-4-46634a6a980b@oss.qualcomm.com>
 References: <20250907-qcom-dp-phy-v1-0-46634a6a980b@oss.qualcomm.com>
 In-Reply-To: <20250907-qcom-dp-phy-v1-0-46634a6a980b@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=23326;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=29309;
  i=dmitry.baryshkov@oss.qualcomm.com; h=from:subject:message-id;
- bh=Nf1s/PhEXHXo8aFyYDttuLdpXnvksenJa+qmRK/vJes=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBovZwfCkHF28rSlsLQ9CGbnty7aFu3iBXCT7agh
- 5GE3rqn3y2JATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCaL2cHwAKCRCLPIo+Aiko
- 1S2YCACsds6BQnyNj7TiVUIHaLJTe9q9ddmYeb++/PKSAKx23+PgtgXweKl8wAmQFB4OO3GnWvq
- CTu/RTyKQ/+cc592NWgEGDff7a8GJItTr7XEwcRcT+0zFlT3R4pIB6ZRkQcb/ukqo0X3Rz++aOi
- Mo5R8h/OIJFD1j6k6lunEFmId5M9MUcXc8AKy9FktOHh+fUZYRTtA7awDcLG5M2ptqLfTMzD3+X
- 08YoUfYyoEGAE4U12Pwf3ehyomoIN1BCxA27hYUXmC6amd/bOnca+VLceqk4rG4xN7+EweAxInl
- QRTrsV6piFqWn2H80jWxszrjVvNYtWilYRRCanOU/39KYkeZ
+ bh=+lxZy5wSWHwn4dkXG8qEVFxp6y7sBJ88wefm48Ftm6A=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBovZwf/x9GbApPNr7nxVQY7pgb/vVpLaJ/mLIzf
+ PsvmV0CE5mJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCaL2cHwAKCRCLPIo+Aiko
+ 1WUACACzu3HvaSE30G/lbXlO/P7/gengB+spGgEV1FxAiky/nLWnUfwoIYw0HbmT93+LPa90ha4
+ 4DlUSLYRPaQseDYH/YMvkI+VmGy1iGXX9USQ/Rhlf2AG/L9yv51e5el377e+sRVAJDIW0l8hcHm
+ ifFPl9lPtn79QMzXpa3WHMypqzpG3pZ95LMq9KwUyZUG6tGGjTnvKbrjDDubmFzkp0kljYKQh2s
+ c0oZ+0a3kpxmalVsUS+KAYE9LCRG8vnd6pZoym6hQe5iLdkieMjMpeje+qMl66lqYBCK0xKQ6+I
+ 2TNhBl3EK8qsv0SzzjUePoqJ/wyxKqoioBraMWvWeOsE1Sq7
 X-Developer-Key: i=dmitry.baryshkov@oss.qualcomm.com; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
-X-Authority-Analysis: v=2.4 cv=H7Dbw/Yi c=1 sm=1 tr=0 ts=68bd9c27 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzOCBTYWx0ZWRfX9uN65QFKnyFZ
+ 9DuJC7jQ0n4OZNSM3d9Og3BuhwrpqrkUFPy6UM/B6K+1nX14SK7dI509P8ixN+7gE+5bMfovu/U
+ uz8wYXgBSBR6BpUTXKNfia5KwxTDps19q4gWUCpxomJw4MSdBCtp7wXfq1dNIaaqjJG0YTN/8yw
+ JnBDWEwYMY4ZfZeUn8yY0jz/OiGtHOyIk3xji8TGX+Cr8jxM+GIMKxeHrrEaBu+9kZ4iazloaXp
+ uvwh0bhMnwzjBGHZJs0yT7t+ptHTpWC1R1HyO/p5m7zvKzzRY1gGzQUBaT5Mm4ELmBK3J+UkBJR
+ HyUCI3q910qRl8oZYVlJyR/Xg/kxpjTioUsO7zrpWMKX40bTz5/nI0nqh4FVo2j0pz6kUPlt1IR
+ qmg6xh6a
+X-Authority-Analysis: v=2.4 cv=J66q7BnS c=1 sm=1 tr=0 ts=68bd9c29 cx=c_pps
  a=wEM5vcRIz55oU/E2lInRtA==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
- a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=o8b8T06iM2j7pLjo7BIA:9 a=QEXdDO2ut3YA:10
- a=OIgjcC2v60KrkQgK7BGD:22
-X-Proofpoint-GUID: 8qU-zaPRA-BjfaxSkd5HZKk46ShEjGwS
-X-Proofpoint-ORIG-GUID: 8qU-zaPRA-BjfaxSkd5HZKk46ShEjGwS
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzOSBTYWx0ZWRfX+CZWz7qTm7+c
- ABTqq4HEfNLpvkyz5bkzC3JTRuryiLRJK/3Z1zGcjncP8EO+mRKDPeXagimA05uwUOnJsW/6763
- vJ/gMUv7cDPIHIZe7W/2d67AVMBPurTA2caRnCrDK/G7rIpLNL5eTC+xwu7LTWRsZCYw4ls38l7
- kg1Z7wvrfG9CMxX2d0UJ4VF5r8XoteZYuAFTF26eFFnDXv/kLufhm1G9Qqhpolo3/ECGN4fYKG2
- 9xB8C/084mlljahDc1qbIQKmG2yxVmpL1BemtXJyx34sV/JcPWuqSNfFSx8zx7LsjpnyZe5vTi5
- 7QF3v1RW5hUt0WVvB6to2dI0tp1FXJ5S4jzVnkvX2gwvapWXskHK0BRVVVF+LQkh0t3Iv36lKJh
- NDA5DvRU
+ a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=nQ43Eca3DgWIm8wGIFMA:9
+ a=co8bklLMP2XZkljK:21 a=QEXdDO2ut3YA:10 a=OIgjcC2v60KrkQgK7BGD:22
+X-Proofpoint-GUID: DrcCyTrKkdG47Wj-bPA51hOFBNrtGeP3
+X-Proofpoint-ORIG-GUID: DrcCyTrKkdG47Wj-bPA51hOFBNrtGeP3
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-07_05,2025-09-04_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 bulkscore=0 impostorscore=0 adultscore=0 phishscore=0
- clxscore=1015 suspectscore=0 priorityscore=1501 spamscore=0
+ impostorscore=0 malwarescore=0 clxscore=1015 spamscore=0 phishscore=0
+ adultscore=0 priorityscore=1501 suspectscore=0 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060039
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250907_075223_959387_CBC6666C 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20250907_075226_386415_9C9B62A5 
+X-CRM114-Status: GOOD (  21.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,663 +140,845 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Extract the code common to (almost) all QMP PHY drivers, which handles
-the 125 MHz PIPE clock. Drop unused pipe_clk_fixed fields from the QMP
-PHY structures, using pipe_clk_hw instead (where required).
+The combo QMP PHY and eDP PHY share DP clocks implementation. With the
+USBC PHY gaining DP support it is going to get yet another copy of the
+same code.
+
+Extract common DP clock implementation to a separate module. In future
+we might want to extract more common functions.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c        | 56 +++-----------------
- drivers/phy/qualcomm/phy-qcom-qmp-common.h       | 67 ++++++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 62 +---------------------
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c         | 67 +++---------------------
- drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c   | 60 +--------------------
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c          | 60 +--------------------
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c         | 60 +--------------------
- 7 files changed, 87 insertions(+), 345 deletions(-)
+ drivers/phy/qualcomm/Kconfig              |   8 ++
+ drivers/phy/qualcomm/Makefile             |   1 +
+ drivers/phy/qualcomm/phy-qcom-dp-common.c | 164 ++++++++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-dp-common.h |  22 ++++
+ drivers/phy/qualcomm/phy-qcom-edp.c       | 181 ++++------------------------
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 188 +++---------------------------
+ 6 files changed, 234 insertions(+), 330 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7b5af30f1d028c592500e723ecd27b54ed554709..baf25ae442478ac01a5428fa4268470e6b5211e3 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1863,7 +1863,7 @@ struct qmp_combo {
- 	unsigned int dp_init_count;
- 	bool dp_powered_on;
+diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+index 60a0ead127fa9f08749e1bc686e15cc5eb341c28..a4da90124f57cf6260d24e1dd45033cfdfbeb087 100644
+--- a/drivers/phy/qualcomm/Kconfig
++++ b/drivers/phy/qualcomm/Kconfig
+@@ -18,12 +18,19 @@ config PHY_QCOM_APQ8064_SATA
+ 	depends on OF
+ 	select GENERIC_PHY
  
--	struct clk_fixed_rate pipe_clk_fixed;
-+	struct clk_hw *pipe_clk_hw;
- 	struct clk_hw dp_link_hw;
- 	struct clk_hw dp_pixel_hw;
- 
-@@ -3512,46 +3512,6 @@ static int qmp_combo_clk_init(struct qmp_combo *qmp)
- 	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
- }
- 
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
--/*
-- * Register a fixed rate pipe clock.
-- *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
-- *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
-- */
--static int phy_pipe_clk_register(struct qmp_combo *qmp, struct device_node *np)
--{
--	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
--	struct clk_init_data init = { };
--	char name[64];
--
--	snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(qmp->dev));
--	init.name = name;
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	return devm_clk_hw_register(qmp->dev, &fixed->hw);
--}
--
- /*
-  * Display Port PLL driver block diagram for branch clocks
-  *
-@@ -3724,7 +3684,7 @@ static struct clk_hw *qmp_combo_clk_hw_get(struct of_phandle_args *clkspec, void
- 
- 	switch (clkspec->args[0]) {
- 	case QMP_USB43DP_USB3_PIPE_CLK:
--		return &qmp->pipe_clk_fixed.hw;
-+		return qmp->pipe_clk_hw;
- 	case QMP_USB43DP_DP_LINK_CLK:
- 		return &qmp->dp_link_hw;
- 	case QMP_USB43DP_DP_VCO_DIV_CLK:
-@@ -3739,9 +3699,9 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- {
- 	int ret;
- 
--	ret = phy_pipe_clk_register(qmp, usb_np);
--	if (ret)
--		return ret;
-+	qmp->pipe_clk_hw = devm_qmp_register_pipe_clock(qmp->dev, usb_np);
-+	if (IS_ERR(qmp->pipe_clk_hw))
-+		return PTR_ERR(qmp->pipe_clk_hw);
- 
- 	ret = phy_dp_clks_register(qmp, dp_np);
- 	if (ret)
-@@ -3757,7 +3717,7 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- 	 * Register multiple providers for legacy bindings with child nodes.
- 	 */
- 	ret = of_clk_add_hw_provider(usb_np, of_clk_hw_simple_get,
--					&qmp->pipe_clk_fixed.hw);
-+				     qmp->pipe_clk_hw);
- 	if (ret)
- 		return ret;
- 
-@@ -3765,7 +3725,7 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- 	 * Roll a devm action because the clock provider is the child node, but
- 	 * the child node is not actually a device.
- 	 */
--	ret = devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, usb_np);
-+	ret = devm_add_action_or_reset(qmp->dev, qmp_clk_release_provider, usb_np);
- 	if (ret)
- 		return ret;
- 
-@@ -3773,7 +3733,7 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
- 	if (ret)
- 		return ret;
- 
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, dp_np);
-+	return devm_add_action_or_reset(qmp->dev, qmp_clk_release_provider, dp_np);
- }
- 
- #if IS_ENABLED(CONFIG_TYPEC)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-index b945fc14cecec4ef00143e144cea4e10225d5947..00041892d9ec7a45e21b0b15301ab65ed996bd45 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-@@ -6,6 +6,10 @@
- #ifndef QCOM_PHY_QMP_COMMON_H_
- #define QCOM_PHY_QMP_COMMON_H_
- 
++config PHY_QCOM_DP_COMMON
++	tristate
++	help
++	  A library implementation of DP / eDP functions common to all Qualcomm
++	  DisplayPort / eDP PHYs
++
+ config PHY_QCOM_EDP
+ 	tristate "Qualcomm eDP PHY driver"
+ 	depends on ARCH_QCOM || COMPILE_TEST
+ 	depends on OF
+ 	depends on COMMON_CLK
+ 	select GENERIC_PHY
++	select PHY_QCOM_DP_COMMON
+ 	help
+ 	  Enable this driver to support the Qualcomm eDP PHY found in various
+ 	  Qualcomm chipsets.
+@@ -64,6 +71,7 @@ config PHY_QCOM_QMP_COMBO
+ 	select GENERIC_PHY
+ 	select MFD_SYSCON
+ 	select DRM_AUX_BRIDGE if DRM_BRIDGE
++	select PHY_QCOM_DP_COMMON
+ 	help
+ 	  Enable this to support the QMP Combo PHY transceiver that is used
+ 	  with USB3 and DisplayPort controllers on Qualcomm chips.
+diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+index b71a6a0bed3f1489b1d07664ecd728f1db145986..1491348ed2139481634f8a540964194485126eb5 100644
+--- a/drivers/phy/qualcomm/Makefile
++++ b/drivers/phy/qualcomm/Makefile
+@@ -2,6 +2,7 @@
+ obj-$(CONFIG_PHY_ATH79_USB)		+= phy-ath79-usb.o
+ obj-$(CONFIG_PHY_QCOM_APQ8064_SATA)	+= phy-qcom-apq8064-sata.o
+ obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
++obj-$(CONFIG_PHY_QCOM_DP_COMMON)	+= phy-qcom-dp-common.o
+ obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
+ obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
+ obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
+diff --git a/drivers/phy/qualcomm/phy-qcom-dp-common.c b/drivers/phy/qualcomm/phy-qcom-dp-common.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..601f7bed956759367d1ebac8b24444f09b9e9e96
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-dp-common.c
+@@ -0,0 +1,164 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2017, 2020, The Linux Foundation. All rights reserved.
++ * Copyright (c) 2021, Linaro Ltd.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
++
 +#include <linux/clk-provider.h>
 +#include <linux/device.h>
-+#include <linux/of.h>
++#include <linux/module.h>
 +
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
-@@ -59,4 +63,67 @@ static inline void qmp_configure(struct device *dev, void __iomem *base,
- 	qmp_configure_lane(dev, base, tbl, num, 0xff);
- }
- 
++#include "phy-qcom-dp-common.h"
++
 +/*
-+ * Register a fixed rate pipe clock.
++ * Display Port PLL driver block diagram for branch clocks
 + *
-+ * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-+ * controls it. The <s>_pipe_clk coming out of the GCC is requested
-+ * by the PHY driver for its operations.
-+ * We register the <s>_pipe_clksrc here. The gcc driver takes care
-+ * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-+ * Below picture shows this relationship.
++ *              +------------------------------+
++ *              |         DP_VCO_CLK           |
++ *              |                              |
++ *              |    +-------------------+     |
++ *              |    |   (DP PLL/VCO)    |     |
++ *              |    +---------+---------+     |
++ *              |              v               |
++ *              |   +----------+-----------+   |
++ *              |   | hsclk_divsel_clk_src |   |
++ *              |   +----------+-----------+   |
++ *              +------------------------------+
++ *                              |
++ *          +---------<---------v------------>----------+
++ *          |                                           |
++ * +--------v----------------+                          |
++ * |    dp_phy_pll_link_clk  |                          |
++ * |     link_clk            |                          |
++ * +--------+----------------+                          |
++ *          |                                           |
++ *          |                                           |
++ *          v                                           v
++ * Input to DISPCC block                                |
++ * for link clk, crypto clk                             |
++ * and interface clock                                  |
++ *                                                      |
++ *                                                      |
++ *      +--------<------------+-----------------+---<---+
++ *      |                     |                 |
++ * +----v---------+  +--------v-----+  +--------v------+
++ * | vco_divided  |  | vco_divided  |  | vco_divided   |
++ * |    _clk_src  |  |    _clk_src  |  |    _clk_src   |
++ * |              |  |              |  |               |
++ * |divsel_six    |  |  divsel_two  |  |  divsel_four  |
++ * +-------+------+  +-----+--------+  +--------+------+
++ *         |                 |                  |
++ *         v---->----------v-------------<------v
++ *                         |
++ *              +----------+-----------------+
++ *              |   dp_phy_pll_vco_div_clk   |
++ *              +---------+------------------+
++ *                        |
++ *                        v
++ *              Input to DISPCC block
++ *              for DP pixel clock
 + *
-+ *         +---------------+
-+ *         |   PHY block   |<<---------------------------------------+
-+ *         |               |                                         |
-+ *         |   +-------+   |                   +-----+               |
-+ *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-+ *    clk  |   +-------+   |                   +-----+
-+ *         +---------------+
 + */
-+static inline struct clk_hw *devm_qmp_register_pipe_clock(struct device *dev,
-+							  struct device_node *np)
++static int qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
 +{
-+	const char *pname = NULL;
-+	char name[64];
-+
-+	/* ignore if the property is not present */
-+	if (np)
-+		of_property_read_string(np, "clock-output-names", &pname);
-+
-+	if (!pname) {
-+		snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(dev));
-+		pname = name;
++	switch (req->rate) {
++	case 1620000000UL / 2:
++	case 2700000000UL / 2:
++	/* 5.4 and 8.1 GHz are same link rate as 2.7GHz, i.e. div 4 and div 6 */
++		return 0;
++	default:
++		return -EINVAL;
 +	}
-+
-+	/* controllers using QMP phys use 125MHz pipe clock interface */
-+	return devm_clk_hw_register_fixed_rate(dev, pname, NULL, 0, 125000000);
 +}
 +
-+static inline void qmp_clk_release_provider(void *res)
++static unsigned long qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
 +{
-+	of_clk_del_provider(res);
++	const struct qcom_dp_common *common;
++	const struct phy_configure_opts_dp *dp_opts;
++
++	common = container_of(hw, struct qcom_dp_common, pixel_hw);
++	dp_opts = &common->dp_opts;
++
++	switch (dp_opts->link_rate) {
++	case 1620:
++		return 1620000000UL / 2;
++	case 2700:
++		return 2700000000UL / 2;
++	case 5400:
++		return 5400000000UL / 4;
++	case 8100:
++		return 8100000000UL / 6;
++	default:
++		return 0;
++	}
 +}
 +
-+static inline int devm_qmp_register_pipe_clock_provider(struct device *dev,
-+							struct device_node *np)
++static const struct clk_ops qmp_dp_pixel_clk_ops = {
++	.determine_rate	= qmp_dp_pixel_clk_determine_rate,
++	.recalc_rate	= qmp_dp_pixel_clk_recalc_rate,
++};
++
++static int qmp_dp_link_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
 +{
-+	struct clk_hw *fixed;
++	switch (req->rate) {
++	case 162000000:
++	case 270000000:
++	case 540000000:
++	case 810000000:
++		return 0;
++	default:
++		return -EINVAL;
++	}
++}
++
++static unsigned long qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
++{
++	const struct qcom_dp_common *common;
++	const struct phy_configure_opts_dp *dp_opts;
++
++	common = container_of(hw, struct qcom_dp_common, link_hw);
++	dp_opts = &common->dp_opts;
++
++	switch (dp_opts->link_rate) {
++	case 1620:
++	case 2700:
++	case 5400:
++	case 8100:
++		return dp_opts->link_rate * 100000;
++	default:
++		return 0;
++	}
++}
++
++static const struct clk_ops qmp_dp_link_clk_ops = {
++	.determine_rate	= qmp_dp_link_clk_determine_rate,
++	.recalc_rate	= qmp_dp_link_clk_recalc_rate,
++};
++
++int devm_qcom_dp_clks_register(struct device *dev,
++			       struct qcom_dp_common *dp)
++{
++	struct clk_init_data init = { };
++	char name[64];
 +	int ret;
 +
-+	fixed = devm_qmp_register_pipe_clock(dev, np);
-+	if (IS_ERR(fixed))
-+		return PTR_ERR(fixed);
-+
-+	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, fixed);
++	snprintf(name, sizeof(name), "%s::link_clk", dev_name(dev));
++	init.ops = &qmp_dp_link_clk_ops;
++	init.name = name;
++	dp->link_hw.init = &init;
++	ret = devm_clk_hw_register(dev, &dp->link_hw);
 +	if (ret)
 +		return ret;
 +
-+	/*
-+	 * Roll a devm action because the clock provider is the child node, but
-+	 * the child node is not actually a device.
-+	 */
-+	return devm_add_action_or_reset(dev, qmp_clk_release_provider, np);
-+}
++	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(dev));
++	init.ops = &qmp_dp_pixel_clk_ops;
++	init.name = name;
++	dp->pixel_hw.init = &init;
++	ret = devm_clk_hw_register(dev, &dp->pixel_hw);
++	if (ret)
++		return ret;
 +
- #endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index a7c65cfe31dfb80d8b1058d3c519a324a309d1c2..226d893c198bdce0ecd3d7d31ed65199fc360ecf 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -579,66 +579,6 @@ static int qmp_pcie_msm8996_clk_init(struct device *dev, const struct qmp_phy_cf
- 	return devm_clk_bulk_get(dev, num, qmp->clks);
++	return 0;
++}
++EXPORT_SYMBOL_GPL(devm_qcom_dp_clks_register);
+diff --git a/drivers/phy/qualcomm/phy-qcom-dp-common.h b/drivers/phy/qualcomm/phy-qcom-dp-common.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..3d176aafa243176b9f6f92c6e18519f53564efb2
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-dp-common.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
++
++#ifndef PHY_QCOM_QMP_DP_COMMON_H
++#define PHY_QCOM_QMP_DP_COMMON_H
++
++#include <linux/clk-provider.h>
++#include <linux/phy/phy-dp.h>
++
++struct qcom_dp_common {
++	struct phy_configure_opts_dp dp_opts;
++	struct clk_hw link_hw;
++	struct clk_hw pixel_hw;
++};
++
++int devm_qcom_dp_clks_register(struct device *dev,
++			       struct qcom_dp_common *dp);
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+index f1b51018683d51df064f60440864c6031638670c..bf456b45bf8608127c7e702ab70ee8312f296af4 100644
+--- a/drivers/phy/qualcomm/phy-qcom-edp.c
++++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+@@ -22,6 +22,8 @@
+ 
+ #include <dt-bindings/phy/phy.h>
+ 
++#include "phy-qcom-dp-common.h"
++
+ #include "phy-qcom-qmp-dp-phy.h"
+ #include "phy-qcom-qmp-qserdes-com-v4.h"
+ #include "phy-qcom-qmp-qserdes-com-v6.h"
+@@ -98,10 +100,7 @@ struct qcom_edp {
+ 	void __iomem *tx1;
+ 	void __iomem *pll;
+ 
+-	struct clk_hw dp_link_hw;
+-	struct clk_hw dp_pixel_hw;
+-
+-	struct phy_configure_opts_dp dp_opts;
++	struct qcom_dp_common dp_common;
+ 
+ 	struct clk_bulk_data clks[2];
+ 	struct regulator_bulk_data supplies[2];
+@@ -318,7 +317,7 @@ static int qcom_edp_phy_configure(struct phy *phy, union phy_configure_opts *opt
+ 	struct qcom_edp *edp = phy_get_drvdata(phy);
+ 	int ret = 0;
+ 
+-	memcpy(&edp->dp_opts, dp_opts, sizeof(*dp_opts));
++	memcpy(&edp->dp_common.dp_opts, dp_opts, sizeof(*dp_opts));
+ 
+ 	if (dp_opts->set_voltages)
+ 		ret = qcom_edp_set_voltages(edp, dp_opts);
+@@ -338,7 +337,7 @@ static int qcom_edp_configure_pll(const struct qcom_edp *edp)
+ 
+ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel_freq)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &edp->dp_common.dp_opts;
+ 	u32 vco_div;
+ 
+ 	switch (dp_opts->link_rate) {
+@@ -406,7 +405,7 @@ static int qcom_edp_com_bias_en_clkbuflr_v4(const struct qcom_edp *edp)
+ 
+ static int qcom_edp_com_configure_ssc_v4(const struct qcom_edp *edp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &edp->dp_common.dp_opts;
+ 	u32 step1;
+ 	u32 step2;
+ 
+@@ -440,7 +439,7 @@ static int qcom_edp_com_configure_ssc_v4(const struct qcom_edp *edp)
+ 
+ static int qcom_edp_com_configure_pll_v4(const struct qcom_edp *edp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &edp->dp_common.dp_opts;
+ 	u32 div_frac_start2_mode0;
+ 	u32 div_frac_start3_mode0;
+ 	u32 dec_start_mode0;
+@@ -591,7 +590,7 @@ static int qcom_edp_com_bias_en_clkbuflr_v6(const struct qcom_edp *edp)
+ 
+ static int qcom_edp_com_configure_ssc_v6(const struct qcom_edp *edp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &edp->dp_common.dp_opts;
+ 	u32 step1;
+ 	u32 step2;
+ 
+@@ -625,7 +624,7 @@ static int qcom_edp_com_configure_ssc_v6(const struct qcom_edp *edp)
+ 
+ static int qcom_edp_com_configure_pll_v6(const struct qcom_edp *edp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &edp->dp_common.dp_opts;
+ 	u32 div_frac_start2_mode0;
+ 	u32 div_frac_start3_mode0;
+ 	u32 dec_start_mode0;
+@@ -758,7 +757,7 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 	writel(0x00, edp->tx0 + TXn_LANE_MODE_1);
+ 	writel(0x00, edp->tx1 + TXn_LANE_MODE_1);
+ 
+-	if (edp->dp_opts.ssc) {
++	if (edp->dp_common.dp_opts.ssc) {
+ 		ret = qcom_edp_configure_ssc(edp);
+ 		if (ret)
+ 			return ret;
+@@ -818,13 +817,13 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 	writel(0x1f, edp->tx0 + TXn_TX_DRV_LVL);
+ 	writel(0x1f, edp->tx1 + TXn_TX_DRV_LVL);
+ 
+-	if (edp->dp_opts.lanes == 1) {
++	if (edp->dp_common.dp_opts.lanes == 1) {
+ 		bias0_en = 0x01;
+ 		bias1_en = 0x00;
+ 		drvr0_en = 0x06;
+ 		drvr1_en = 0x07;
+ 		cfg1 = 0x1;
+-	} else if (edp->dp_opts.lanes == 2) {
++	} else if (edp->dp_common.dp_opts.lanes == 2) {
+ 		bias0_en = 0x03;
+ 		bias1_en = 0x00;
+ 		drvr0_en = 0x04;
+@@ -854,8 +853,8 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+ 	if (ret)
+ 		return ret;
+ 
+-	clk_set_rate(edp->dp_link_hw.clk, edp->dp_opts.link_rate * 100000);
+-	clk_set_rate(edp->dp_pixel_hw.clk, pixel_freq);
++	clk_set_rate(edp->dp_common.link_hw.clk, edp->dp_common.dp_opts.link_rate * 100000);
++	clk_set_rate(edp->dp_common.pixel_hw.clk, pixel_freq);
+ 
+ 	return 0;
  }
- 
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
--/*
-- * Register a fixed rate pipe clock.
-- *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
-- *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
-- */
--static int phy_pipe_clk_register(struct qcom_qmp *qmp, struct device_node *np)
--{
--	struct clk_fixed_rate *fixed;
--	struct clk_init_data init = { };
--	int ret;
--
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
--	}
--
--	fixed = devm_kzalloc(qmp->dev, sizeof(*fixed), GFP_KERNEL);
--	if (!fixed)
--		return -ENOMEM;
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
--	if (ret)
--		return ret;
--
--	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
--	if (ret)
--		return ret;
--
--	/*
--	 * Roll a devm action because the clock provider is the child node, but
--	 * the child node is not actually a device.
--	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
--}
--
- static const struct phy_ops qmp_pcie_msm8996_ops = {
- 	.power_on	= qmp_pcie_msm8996_enable,
- 	.power_off	= qmp_pcie_msm8996_disable,
-@@ -785,7 +725,7 @@ static int qmp_pcie_msm8996_probe(struct platform_device *pdev)
- 		 * Register the pipe clock provided by phy.
- 		 * See function description to see details of this pipe clock.
- 		 */
--		ret = phy_pipe_clk_register(qmp, child);
-+		ret = devm_qmp_register_pipe_clock_provider(dev, child);
- 		if (ret) {
- 			dev_err(qmp->dev,
- 				"failed to register pipe clock source\n");
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 62b1c845b6275d924fa501ac64e69db5f58844aa..dad44cc0648355fc1533c9afd176b7d37cfa9018 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -3172,7 +3172,7 @@ struct qmp_pcie {
- 	struct phy *phy;
- 	int mode;
- 
--	struct clk_fixed_rate pipe_clk_fixed;
-+	struct clk_hw *pipe_clk_hw;
- 	struct clk_fixed_rate aux_clk_fixed;
+@@ -901,162 +900,22 @@ static const struct phy_ops qcom_edp_ops = {
+ 	.owner		= THIS_MODULE,
  };
  
-@@ -4789,57 +4789,6 @@ static int qmp_pcie_clk_init(struct qmp_pcie *qmp)
- 	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
- }
- 
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
 -/*
-- * Register a fixed rate pipe clock.
+- * Embedded Display Port PLL driver block diagram for branch clocks
 - *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
+- *              +------------------------------+
+- *              |        EDP_VCO_CLK           |
+- *              |                              |
+- *              |    +-------------------+     |
+- *              |    |  (EDP PLL/VCO)    |     |
+- *              |    +---------+---------+     |
+- *              |              v               |
+- *              |   +----------+-----------+   |
+- *              |   | hsclk_divsel_clk_src |   |
+- *              |   +----------+-----------+   |
+- *              +------------------------------+
+- *                              |
+- *          +---------<---------v------------>----------+
+- *          |                                           |
+- * +--------v----------------+                          |
+- * |   edp_phy_pll_link_clk  |                          |
+- * |     link_clk            |                          |
+- * +--------+----------------+                          |
+- *          |                                           |
+- *          |                                           |
+- *          v                                           v
+- * Input to DISPCC block                                |
+- * for link clk, crypto clk                             |
+- * and interface clock                                  |
+- *                                                      |
+- *                                                      |
+- *      +--------<------------+-----------------+---<---+
+- *      |                     |                 |
+- * +----v---------+  +--------v-----+  +--------v------+
+- * | vco_divided  |  | vco_divided  |  | vco_divided   |
+- * |    _clk_src  |  |    _clk_src  |  |    _clk_src   |
+- * |              |  |              |  |               |
+- * |divsel_six    |  |  divsel_two  |  |  divsel_four  |
+- * +-------+------+  +-----+--------+  +--------+------+
+- *         |                 |                  |
+- *         v---->----------v-------------<------v
+- *                         |
+- *              +----------+-----------------+
+- *              |   edp_phy_pll_vco_div_clk  |
+- *              +---------+------------------+
+- *                        |
+- *                        v
+- *              Input to DISPCC block
+- *              for EDP pixel clock
 - *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
 - */
--static int phy_pipe_clk_register(struct qmp_pcie *qmp, struct device_node *np)
+-static int qcom_edp_dp_pixel_clk_determine_rate(struct clk_hw *hw,
+-						struct clk_rate_request *req)
 -{
--	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
--	struct clk_init_data init = { };
--	int ret;
+-	switch (req->rate) {
+-	case 1620000000UL / 2:
+-	case 2700000000UL / 2:
+-	/* 5.4 and 8.1 GHz are same link rate as 2.7GHz, i.e. div 4 and div 6 */
+-		return 0;
 -
--	ret = of_property_read_string_index(np, "clock-output-names", 0, &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
+-	default:
+-		return -EINVAL;
 -	}
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/*
--	 * Controllers using QMP PHY-s use 125MHz pipe clock interface
--	 * unless other frequency is specified in the PHY config.
--	 */
--	if (qmp->cfg->pipe_clock_rate)
--		fixed->fixed_rate = qmp->cfg->pipe_clock_rate;
--	else
--		fixed->fixed_rate = 125000000;
--
--	fixed->hw.init = &init;
--
--	return devm_clk_hw_register(qmp->dev, &fixed->hw);
 -}
 -
- /*
-  * Register a fixed rate PHY aux clock.
-  *
-@@ -4881,11 +4830,11 @@ static struct clk_hw *qmp_pcie_clk_hw_get(struct of_phandle_args *clkspec, void
- 
- 	/* Support legacy bindings */
- 	if (!clkspec->args_count)
--		return &qmp->pipe_clk_fixed.hw;
-+		return qmp->pipe_clk_hw;
- 
- 	switch (clkspec->args[0]) {
- 	case QMP_PCIE_PIPE_CLK:
--		return &qmp->pipe_clk_fixed.hw;
-+		return qmp->pipe_clk_hw;
- 	case QMP_PCIE_PHY_AUX_CLK:
- 		return &qmp->aux_clk_fixed.hw;
- 	}
-@@ -4897,9 +4846,9 @@ static int qmp_pcie_register_clocks(struct qmp_pcie *qmp, struct device_node *np
+-static unsigned long
+-qcom_edp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
+-{
+-	const struct qcom_edp *edp = container_of(hw, struct qcom_edp, dp_pixel_hw);
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
+-
+-	switch (dp_opts->link_rate) {
+-	case 1620:
+-		return 1620000000UL / 2;
+-	case 2700:
+-		return 2700000000UL / 2;
+-	case 5400:
+-		return 5400000000UL / 4;
+-	case 8100:
+-		return 8100000000UL / 6;
+-	default:
+-		return 0;
+-	}
+-}
+-
+-static const struct clk_ops qcom_edp_dp_pixel_clk_ops = {
+-	.determine_rate = qcom_edp_dp_pixel_clk_determine_rate,
+-	.recalc_rate = qcom_edp_dp_pixel_clk_recalc_rate,
+-};
+-
+-static int qcom_edp_dp_link_clk_determine_rate(struct clk_hw *hw,
+-					       struct clk_rate_request *req)
+-{
+-	switch (req->rate) {
+-	case 162000000:
+-	case 270000000:
+-	case 540000000:
+-	case 810000000:
+-		return 0;
+-
+-	default:
+-		return -EINVAL;
+-	}
+-}
+-
+-static unsigned long
+-qcom_edp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
+-{
+-	const struct qcom_edp *edp = container_of(hw, struct qcom_edp, dp_link_hw);
+-	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
+-
+-	switch (dp_opts->link_rate) {
+-	case 1620:
+-	case 2700:
+-	case 5400:
+-	case 8100:
+-		return dp_opts->link_rate * 100000;
+-
+-	default:
+-		return 0;
+-	}
+-}
+-
+-static const struct clk_ops qcom_edp_dp_link_clk_ops = {
+-	.determine_rate = qcom_edp_dp_link_clk_determine_rate,
+-	.recalc_rate = qcom_edp_dp_link_clk_recalc_rate,
+-};
+-
+ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
  {
+ 	struct clk_hw_onecell_data *data;
+-	struct clk_init_data init = { };
+-	char name[64];
  	int ret;
  
--	ret = phy_pipe_clk_register(qmp, np);
++	ret = devm_qcom_dp_clks_register(edp->dev, &edp->dp_common);
++	if (ret)
++		return ret;
++
+ 	data = devm_kzalloc(edp->dev, struct_size(data, hws, 2), GFP_KERNEL);
+ 	if (!data)
+ 		return -ENOMEM;
+ 	data->num = 2;
+ 
+-	snprintf(name, sizeof(name), "%s::link_clk", dev_name(edp->dev));
+-	init.ops = &qcom_edp_dp_link_clk_ops;
+-	init.name = name;
+-	edp->dp_link_hw.init = &init;
+-	ret = devm_clk_hw_register(edp->dev, &edp->dp_link_hw);
 -	if (ret)
 -		return ret;
-+	qmp->pipe_clk_hw = devm_qmp_register_pipe_clock(qmp->dev, np);
-+	if (IS_ERR(qmp->pipe_clk_hw))
-+		return PTR_ERR(qmp->pipe_clk_hw);
+-
+-	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(edp->dev));
+-	init.ops = &qcom_edp_dp_pixel_clk_ops;
+-	init.name = name;
+-	edp->dp_pixel_hw.init = &init;
+-	ret = devm_clk_hw_register(edp->dev, &edp->dp_pixel_hw);
+-	if (ret)
+-		return ret;
+-
+-	data->hws[0] = &edp->dp_link_hw;
+-	data->hws[1] = &edp->dp_pixel_hw;
++	data->hws[0] = &edp->dp_common.link_hw;
++	data->hws[1] = &edp->dp_common.pixel_hw;
  
- 	if (qmp->cfg->aux_clock_rate) {
- 		ret = phy_aux_clk_register(qmp, np);
-@@ -4910,7 +4859,7 @@ static int qmp_pcie_register_clocks(struct qmp_pcie *qmp, struct device_node *np
- 		if (ret)
- 			return ret;
- 	} else {
--		ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &qmp->pipe_clk_fixed.hw);
-+		ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, qmp->pipe_clk_hw);
- 		if (ret)
- 			return ret;
- 	}
-@@ -4919,7 +4868,7 @@ static int qmp_pcie_register_clocks(struct qmp_pcie *qmp, struct device_node *np
- 	 * Roll a devm action because the clock provider is the child node, but
- 	 * the child node is not actually a device.
- 	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
-+	return devm_add_action_or_reset(qmp->dev, qmp_clk_release_provider, np);
+ 	return devm_of_clk_add_hw_provider(edp->dev, of_clk_hw_onecell_get, data);
  }
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index baf25ae442478ac01a5428fa4268470e6b5211e3..8b6a27464b3303eb0d66b97f7d7cfb10687821e4 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -26,6 +26,8 @@
  
- static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c
-index ddb52c1812dd02e15a840deee934c849405c2a98..0e775671054ed02024d01e3a11c6d3e2f973a097 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb-legacy.c
-@@ -521,8 +521,6 @@ struct qmp_usb {
- 	enum phy_mode mode;
+ #include <dt-bindings/phy/phy-qcom-qmp.h>
  
- 	struct phy *phy;
--
--	struct clk_fixed_rate pipe_clk_fixed;
- };
++#include "phy-qcom-dp-common.h"
++
+ #include "phy-qcom-qmp-common.h"
  
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -1043,62 +1041,6 @@ static int qmp_usb_legacy_clk_init(struct qmp_usb *qmp)
- 	return devm_clk_bulk_get(dev, num, qmp->clks);
- }
+ #include "phy-qcom-qmp.h"
+@@ -1859,13 +1861,11 @@ struct qmp_combo {
  
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
--/*
-- * Register a fixed rate pipe clock.
-- *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
-- *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
-- */
--static int phy_pipe_clk_register(struct qmp_usb *qmp, struct device_node *np)
--{
--	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
--	struct clk_init_data init = { };
--	int ret;
--
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
--	}
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
--	if (ret)
--		return ret;
--
--	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
--	if (ret)
--		return ret;
--
--	/*
--	 * Roll a devm action because the clock provider is the child node, but
--	 * the child node is not actually a device.
--	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
--}
--
- static int qmp_usb_legacy_parse_dt_legacy(struct qmp_usb *qmp, struct device_node *np)
- {
- 	struct platform_device *pdev = to_platform_device(qmp->dev);
-@@ -1239,7 +1181,7 @@ static int qmp_usb_legacy_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
+ 	struct phy *dp_phy;
+ 	unsigned int dp_aux_cfg;
+-	struct phy_configure_opts_dp dp_opts;
+ 	unsigned int dp_init_count;
+ 	bool dp_powered_on;
  
--	ret = phy_pipe_clk_register(qmp, np);
-+	ret = devm_qmp_register_pipe_clock_provider(dev, np);
- 	if (ret)
- 		goto err_node_put;
+ 	struct clk_hw *pipe_clk_hw;
+-	struct clk_hw dp_link_hw;
+-	struct clk_hw dp_pixel_hw;
++	struct qcom_dp_common dp_common;
  
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index ed646a7e705ba3259708775ed5fedbbbada13735..7040b53e482d667f90eef09e3c4a93cb6c01f934 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1301,8 +1301,6 @@ struct qmp_usb {
- 	enum phy_mode mode;
- 
- 	struct phy *phy;
--
--	struct clk_fixed_rate pipe_clk_fixed;
- };
- 
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
-@@ -2046,62 +2044,6 @@ static int qmp_usb_clk_init(struct qmp_usb *qmp)
- 	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
- }
- 
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
--/*
-- * Register a fixed rate pipe clock.
-- *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
-- *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
-- */
--static int phy_pipe_clk_register(struct qmp_usb *qmp, struct device_node *np)
--{
--	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
--	struct clk_init_data init = { };
--	int ret;
--
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
--	}
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
--	if (ret)
--		return ret;
--
--	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
--	if (ret)
--		return ret;
--
--	/*
--	 * Roll a devm action because the clock provider is the child node, but
--	 * the child node is not actually a device.
--	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
--}
--
- static void __iomem *qmp_usb_iomap(struct device *dev, struct device_node *np,
- 					int index, bool exclusive)
- {
-@@ -2276,7 +2218,7 @@ static int qmp_usb_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	ret = phy_pipe_clk_register(qmp, np);
-+	ret = devm_qmp_register_pipe_clock_provider(dev, np);
- 	if (ret)
- 		goto err_node_put;
- 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 5e7fcb26744a4401c3076960df9c0dcbec7fdef7..83f3011a93c0cd53f59a1a45406bf4d9107e7ea9 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -347,8 +347,6 @@ struct qmp_usbc {
- 
- 	struct phy *phy;
- 
--	struct clk_fixed_rate pipe_clk_fixed;
--
  	struct typec_switch_dev *sw;
  	enum typec_orientation orientation;
- };
-@@ -796,62 +794,6 @@ static int qmp_usbc_clk_init(struct qmp_usbc *qmp)
+@@ -2515,7 +2515,7 @@ static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	void __iomem *serdes = qmp->dp_serdes;
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 
+ 	qmp_configure(qmp->dev, serdes, cfg->dp_serdes_tbl,
+ 		      cfg->dp_serdes_tbl_num);
+@@ -2592,7 +2592,7 @@ static void qmp_v3_dp_aux_init(struct qmp_combo *qmp)
+ 
+ static int qmp_combo_configure_dp_swing(struct qmp_combo *qmp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	unsigned int v_level = 0, p_level = 0;
+ 	u8 voltage_swing_cfg, pre_emphasis_cfg;
+@@ -2629,7 +2629,7 @@ static int qmp_combo_configure_dp_swing(struct qmp_combo *qmp)
+ 
+ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 	u32 bias_en, drvr_en;
+ 
+ 	if (qmp_combo_configure_dp_swing(qmp) < 0)
+@@ -2652,7 +2652,7 @@ static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp)
+ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
+ {
+ 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 	u32 val;
+ 
+ 	val = DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
+@@ -2675,7 +2675,7 @@ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
+ 
+ static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
+ {
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 	u32 phy_vco_div;
+ 	unsigned long pixel_freq;
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2703,8 +2703,8 @@ static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
+ 	}
+ 	writel(phy_vco_div, qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_VCO_DIV]);
+ 
+-	clk_set_rate(qmp->dp_link_hw.clk, dp_opts->link_rate * 100000);
+-	clk_set_rate(qmp->dp_pixel_hw.clk, pixel_freq);
++	clk_set_rate(qmp->dp_common.link_hw.clk, dp_opts->link_rate * 100000);
++	clk_set_rate(qmp->dp_common.pixel_hw.clk, pixel_freq);
+ 
+ 	return 0;
+ }
+@@ -2891,7 +2891,7 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
+-	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_common.dp_opts;
+ 	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
+ 	u32 status;
+ 	int ret;
+@@ -2976,10 +2976,10 @@ static int qmp_combo_dp_configure(struct phy *phy, union phy_configure_opts *opt
+ 
+ 	mutex_lock(&qmp->phy_mutex);
+ 
+-	memcpy(&qmp->dp_opts, dp_opts, sizeof(*dp_opts));
+-	if (qmp->dp_opts.set_voltages) {
++	memcpy(&qmp->dp_common.dp_opts, dp_opts, sizeof(*dp_opts));
++	if (qmp->dp_common.dp_opts.set_voltages) {
+ 		cfg->configure_dp_tx(qmp);
+-		qmp->dp_opts.set_voltages = 0;
++		qmp->dp_common.dp_opts.set_voltages = 0;
+ 	}
+ 
+ 	mutex_unlock(&qmp->phy_mutex);
+@@ -3512,131 +3512,6 @@ static int qmp_combo_clk_init(struct qmp_combo *qmp)
  	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
  }
  
--static void phy_clk_release_provider(void *res)
--{
--	of_clk_del_provider(res);
--}
--
 -/*
-- * Register a fixed rate pipe clock.
+- * Display Port PLL driver block diagram for branch clocks
 - *
-- * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-- * controls it. The <s>_pipe_clk coming out of the GCC is requested
-- * by the PHY driver for its operations.
-- * We register the <s>_pipe_clksrc here. The gcc driver takes care
-- * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-- * Below picture shows this relationship.
+- *              +------------------------------+
+- *              |         DP_VCO_CLK           |
+- *              |                              |
+- *              |    +-------------------+     |
+- *              |    |   (DP PLL/VCO)    |     |
+- *              |    +---------+---------+     |
+- *              |              v               |
+- *              |   +----------+-----------+   |
+- *              |   | hsclk_divsel_clk_src |   |
+- *              |   +----------+-----------+   |
+- *              +------------------------------+
+- *                              |
+- *          +---------<---------v------------>----------+
+- *          |                                           |
+- * +--------v----------------+                          |
+- * |    dp_phy_pll_link_clk  |                          |
+- * |     link_clk            |                          |
+- * +--------+----------------+                          |
+- *          |                                           |
+- *          |                                           |
+- *          v                                           v
+- * Input to DISPCC block                                |
+- * for link clk, crypto clk                             |
+- * and interface clock                                  |
+- *                                                      |
+- *                                                      |
+- *      +--------<------------+-----------------+---<---+
+- *      |                     |                 |
+- * +----v---------+  +--------v-----+  +--------v------+
+- * | vco_divided  |  | vco_divided  |  | vco_divided   |
+- * |    _clk_src  |  |    _clk_src  |  |    _clk_src   |
+- * |              |  |              |  |               |
+- * |divsel_six    |  |  divsel_two  |  |  divsel_four  |
+- * +-------+------+  +-----+--------+  +--------+------+
+- *         |                 |                  |
+- *         v---->----------v-------------<------v
+- *                         |
+- *              +----------+-----------------+
+- *              |   dp_phy_pll_vco_div_clk   |
+- *              +---------+------------------+
+- *                        |
+- *                        v
+- *              Input to DISPCC block
+- *              for DP pixel clock
 - *
-- *         +---------------+
-- *         |   PHY block   |<<---------------------------------------+
-- *         |               |                                         |
-- *         |   +-------+   |                   +-----+               |
-- *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-- *    clk  |   +-------+   |                   +-----+
-- *         +---------------+
 - */
--static int phy_pipe_clk_register(struct qmp_usbc *qmp, struct device_node *np)
+-static int qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
 -{
--	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
--	struct clk_init_data init = { };
--	int ret;
--
--	ret = of_property_read_string(np, "clock-output-names", &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
--		return ret;
+-	switch (req->rate) {
+-	case 1620000000UL / 2:
+-	case 2700000000UL / 2:
+-	/* 5.4 and 8.1 GHz are same link rate as 2.7GHz, i.e. div 4 and div 6 */
+-		return 0;
+-	default:
+-		return -EINVAL;
 -	}
--
--	init.ops = &clk_fixed_rate_ops;
--
--	/* controllers using QMP phys use 125MHz pipe clock interface */
--	fixed->fixed_rate = 125000000;
--	fixed->hw.init = &init;
--
--	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
--	if (ret)
--		return ret;
--
--	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
--	if (ret)
--		return ret;
--
--	/*
--	 * Roll a devm action because the clock provider is the child node, but
--	 * the child node is not actually a device.
--	 */
--	return devm_add_action_or_reset(qmp->dev, phy_clk_release_provider, np);
 -}
 -
- #if IS_ENABLED(CONFIG_TYPEC)
- static int qmp_usbc_typec_switch_set(struct typec_switch_dev *sw,
- 				      enum typec_orientation orientation)
-@@ -1093,7 +1035,7 @@ static int qmp_usbc_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
+-static unsigned long qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
+-{
+-	const struct qmp_combo *qmp;
+-	const struct phy_configure_opts_dp *dp_opts;
+-
+-	qmp = container_of(hw, struct qmp_combo, dp_pixel_hw);
+-	dp_opts = &qmp->dp_opts;
+-
+-	switch (dp_opts->link_rate) {
+-	case 1620:
+-		return 1620000000UL / 2;
+-	case 2700:
+-		return 2700000000UL / 2;
+-	case 5400:
+-		return 5400000000UL / 4;
+-	case 8100:
+-		return 8100000000UL / 6;
+-	default:
+-		return 0;
+-	}
+-}
+-
+-static const struct clk_ops qmp_dp_pixel_clk_ops = {
+-	.determine_rate	= qmp_dp_pixel_clk_determine_rate,
+-	.recalc_rate	= qmp_dp_pixel_clk_recalc_rate,
+-};
+-
+-static int qmp_dp_link_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
+-{
+-	switch (req->rate) {
+-	case 162000000:
+-	case 270000000:
+-	case 540000000:
+-	case 810000000:
+-		return 0;
+-	default:
+-		return -EINVAL;
+-	}
+-}
+-
+-static unsigned long qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
+-{
+-	const struct qmp_combo *qmp;
+-	const struct phy_configure_opts_dp *dp_opts;
+-
+-	qmp = container_of(hw, struct qmp_combo, dp_link_hw);
+-	dp_opts = &qmp->dp_opts;
+-
+-	switch (dp_opts->link_rate) {
+-	case 1620:
+-	case 2700:
+-	case 5400:
+-	case 8100:
+-		return dp_opts->link_rate * 100000;
+-	default:
+-		return 0;
+-	}
+-}
+-
+-static const struct clk_ops qmp_dp_link_clk_ops = {
+-	.determine_rate	= qmp_dp_link_clk_determine_rate,
+-	.recalc_rate	= qmp_dp_link_clk_recalc_rate,
+-};
+-
+ static struct clk_hw *qmp_dp_clks_hw_get(struct of_phandle_args *clkspec, void *data)
+ {
+ 	struct qmp_combo *qmp = data;
+@@ -3648,34 +3523,9 @@ static struct clk_hw *qmp_dp_clks_hw_get(struct of_phandle_args *clkspec, void *
+ 	}
  
--	ret = phy_pipe_clk_register(qmp, np);
-+	ret = devm_qmp_register_pipe_clock_provider(dev, np);
+ 	if (idx == 0)
+-		return &qmp->dp_link_hw;
+-
+-	return &qmp->dp_pixel_hw;
+-}
+-
+-static int phy_dp_clks_register(struct qmp_combo *qmp, struct device_node *np)
+-{
+-	struct clk_init_data init = { };
+-	char name[64];
+-	int ret;
++		return &qmp->dp_common.link_hw;
+ 
+-	snprintf(name, sizeof(name), "%s::link_clk", dev_name(qmp->dev));
+-	init.ops = &qmp_dp_link_clk_ops;
+-	init.name = name;
+-	qmp->dp_link_hw.init = &init;
+-	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_link_hw);
+-	if (ret)
+-		return ret;
+-
+-	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(qmp->dev));
+-	init.ops = &qmp_dp_pixel_clk_ops;
+-	init.name = name;
+-	qmp->dp_pixel_hw.init = &init;
+-	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_pixel_hw);
+-	if (ret)
+-		return ret;
+-
+-	return 0;
++	return &qmp->dp_common.pixel_hw;
+ }
+ 
+ static struct clk_hw *qmp_combo_clk_hw_get(struct of_phandle_args *clkspec, void *data)
+@@ -3686,9 +3536,9 @@ static struct clk_hw *qmp_combo_clk_hw_get(struct of_phandle_args *clkspec, void
+ 	case QMP_USB43DP_USB3_PIPE_CLK:
+ 		return qmp->pipe_clk_hw;
+ 	case QMP_USB43DP_DP_LINK_CLK:
+-		return &qmp->dp_link_hw;
++		return &qmp->dp_common.link_hw;
+ 	case QMP_USB43DP_DP_VCO_DIV_CLK:
+-		return &qmp->dp_pixel_hw;
++		return &qmp->dp_common.pixel_hw;
+ 	}
+ 
+ 	return ERR_PTR(-EINVAL);
+@@ -3703,7 +3553,7 @@ static int qmp_combo_register_clocks(struct qmp_combo *qmp, struct device_node *
+ 	if (IS_ERR(qmp->pipe_clk_hw))
+ 		return PTR_ERR(qmp->pipe_clk_hw);
+ 
+-	ret = phy_dp_clks_register(qmp, dp_np);
++	ret = devm_qcom_dp_clks_register(qmp->dev, &qmp->dp_common);
  	if (ret)
- 		goto err_node_put;
+ 		return ret;
  
 
 -- 
