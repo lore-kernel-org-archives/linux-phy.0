@@ -4,154 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFD07CAC586
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Sep 2025 12:04:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6238ACAC581
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Sep 2025 12:04:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UcYbL+I8EY01xWHfo6urTsyqvLKpnaMQyfMamPDgJVI=; b=gGVY9SLudiPPx5
-	gHziXPTPV/mOHwDohd+9wiKBW80ySU9YyJI1u2jnEo8AtwCO4zzhmIMikH570EkHSsIr8hxKgz5Ll
-	HC1kR9M3CCpbPj8hk0JhFegfDR9RInINDxegs32pIwjNdt5XesIf+Nhy6/JWrT9/7fkpqrdDudBkv
-	cXUf8A2EJixONyPmFOuK5UpP+FMG4nhh50fAmK+6gv54XNxHc5CSSpJ2rWSy+7K+wGOL5iUayUuH3
-	xOenHP1KoDNtRqFbp3+3vdV453vLOfPH3s2a5Jy6fYANIP0ypyZC1tMk27GlDjY2srO8/tlvF5vvw
-	au3RX0mzrKnXgqu/16JQ==;
+	List-Owner; bh=4kV/Zm6b9QP8Jpzj4FM9vKykLogbvxkaUiO5RJuus1c=; b=xtCW9tk/bjR0tG
+	A56iiQGn8900VlrAznxHt875Xl+cDQTLZQuqEr5maQA/68v6bbBoi8X31GBrZciwADdtM+fwtcNDr
+	cQ1Ksh0cZvJFZ8cicLa1xO8AVM9MYfCZ0D/8/Xh8/2Tr2UYOW6rdTjHt+y5DpUCDeaFap60vDHOoB
+	MU1/EW+ahboC+KauYfkNFaIzpBb3EphVyb9xq3WeXQNJsogj5+WDMhSxp6WA9fF7uKopX1AcRANdB
+	pjbjjlvWyLy/RPrmgwQK3vXu6EG/rIYLmKIfneQsDxcBQYp1rXbNe/6H+RxJskg0AUeL/0XzcA4So
+	Iz7PmwAsb3dsRttzsKIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvabd-0000000Gq9s-1OXe;
-	Mon, 08 Sep 2025 12:04:21 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1uvabe-0000000GqAI-0UMc;
+	Mon, 08 Sep 2025 12:04:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvYJQ-0000000G5GQ-26uu
+	id 1uvYLp-0000000G5zu-3boE
 	for linux-phy@lists.infradead.org;
-	Mon, 08 Sep 2025 09:37:25 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Uz55L5DZRtDikbfUbKY/+Pf7fF7yKZ9Fl97T44lm9pkpjQq0cOwzh4Id22l2HDlGqf9Pq3UBws/RS1hBah13QIPD2abPZtOYT80iJJV2EbXyO4Ryeb3asg9bOSSW1OerqEZ9FQTeHl267MJpRA8pXj1qLEL6a2DE8H4E4iMyB+vZqg4GzFBx1M99QZzJyUxTffSvDftiLq7hIamYjsyMrWvHu82vCIblXpOj6ap30FnZSqaiUX1FWECa3SuAHmP2PZZ6YSUjrUGZi6a/bKWYYlRyvEToOeK2ROkdFgftZ8Atn1MPxg6ZnGjNWmiyc3JPXOUP7ttNskZ7/rwIAJVf4w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1jVuK9KEaBKp6DsdCm13/ScsTvPjwIJswsXYJ7ohA8c=;
- b=QqOdXqS3nZ+oGhc+r6XPXtVNjFpUK/AO4zKQoTR3PZeMmmSAAa+gyBn+pRbID2Tq91kIKxQ8yu7lIayINV/1gT+0uCiMR4aEsEOuuIHCw5Z0H0RgN1MQHDaDNQJn7oLL3sO9C18aaPbDi635JAPoCVNzRvZYl6rDLzfrs06iUwsPt1od9m5Stb3hdtftmEGCPPVaKCl0ODrDaS4Q84pcjxL0lvnAxUmZoKCLkC+/q5KvBbVke+yaPeKDmFg0xg92z4FU4rTPKs1nl0RFcH/gQHRSquDN4GWZQ+E/f1hlqHSv7IAoFHql6z5tL8DtSMZuXFcF6nIAbXEMzXEr1Wm37A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1jVuK9KEaBKp6DsdCm13/ScsTvPjwIJswsXYJ7ohA8c=;
- b=nOiS5qwaiUEy4HW3EogKEx0s8B0r9hAmkhybxWan+7ikS0QE4fffMnmc1T5jpj3Dze+BwUPjS2y35xBKKKmmmGCAHreqFyICiRaUuNiX28GMCAVIqAiP5DVZQPlfKZ95q122QN5U94kZ8x8ye6ocvEU7Xpdk0UrBt5uar16/Tt7Vg3pSMjgoNKW96KtEsQV3ovADCFjEXjwlrgVb1IKzrANKx2QMAOe+pBzJNhiGMazcCKxSWoGosuJFswp73WlO9PAJiB/uTshJxity50Rv3EMYT+ZtL9J/S52VYqO4+3qHfJDXU+irGX/R/dyI1kzDvX6MmUnRRQDL/OtJSPvN0Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
- by DU2PR04MB9052.eurprd04.prod.outlook.com (2603:10a6:10:2e7::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9115.12; Mon, 8 Sep
- 2025 09:37:12 +0000
-Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
- ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
- ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9115.007; Mon, 8 Sep 2025
- 09:37:12 +0000
-Date: Mon, 8 Sep 2025 12:37:09 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Conor Dooley <conor@kernel.org>, Josua Mayer <josua@solid-run.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, Rob Herring <robh@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-Subject: Re: [PATCH phy 13/14] dt-bindings: phy: lynx-28g: add compatible
- strings per SerDes and instantiation
-Message-ID: <20250908093709.owcha6ypm5lqqdwz@skbuf>
-References: <20250904154402.300032-1-vladimir.oltean@nxp.com>
- <20250904154402.300032-14-vladimir.oltean@nxp.com>
- <20250905-bulky-umber-jaguarundi-1bf81c@kuoka>
- <20250905154150.4tocaiqyumbiyxbh@skbuf>
- <20250905-pamperer-segment-ab89f0e9cdf8@spud>
-Content-Disposition: inline
-In-Reply-To: <20250905-pamperer-segment-ab89f0e9cdf8@spud>
-X-ClientProxiedBy: VI1PR09CA0132.eurprd09.prod.outlook.com
- (2603:10a6:803:12c::16) To AM8PR04MB7779.eurprd04.prod.outlook.com
- (2603:10a6:20b:24b::14)
+	Mon, 08 Sep 2025 09:39:55 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5886fcvC004866
+	for <linux-phy@lists.infradead.org>; Mon, 8 Sep 2025 09:39:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	veUZKzGV5RVIn21nOgmhArWZXfr3Vm5aURD7be3Q04k=; b=kcActATRy/YmG/oM
+	v41uIWypgasfnaH13qR1G2udWqNB/39HAwbTE1pvl/Lh+iVznXU0uGOo6qZAEU4m
+	E0sWsSA7qRgrihSPHidpjModRVRhpxkmY36jNEU11rJhUnL0Jo/djwyhIYg85IJs
+	jS01UNSQCSIIJH9mKL/11VIlBw5KbRA18+rer6KTBP8v5h0EAA9ILR3JJxPraHRR
+	p7Ddp88abc2LHNk0G6ErmFeKW+/azh77unHFx73z3KsmvAKyyjsvoMtiG6EOUb+t
+	3IxR5VwrjbETzT/GGhyrwrdUWV+aGW2IeQ4JYlCIFE8E5TpgIgnK5F7NXPsJJd3P
+	FfDDzQ==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 491t37rka4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 08 Sep 2025 09:39:52 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4b5fb1f057fso19076591cf.0
+        for <linux-phy@lists.infradead.org>; Mon, 08 Sep 2025 02:39:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1757324389; x=1757929189;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=veUZKzGV5RVIn21nOgmhArWZXfr3Vm5aURD7be3Q04k=;
+        b=EtGC5iBq81Qxsquy+gxrEaykgUz0ZoKxOxFv9UyAtj0KmTAuDtZTerAcNwfLnlCGpG
+         6nogRcFOr7Gmb0ekzPZK2iH8ikG3OCGFD7D7wb2UhuTBakvd7IwBAMZeNW6VV2ia4oeb
+         9ZkoBOMik/yb+iQJVcbavFTzVA/nswCbpe8h58KujX5ws0S+nsmr2LeH2wiKohHC8fkm
+         NQhriMJcq/VDh1MTIVWLF8g7vyOvKa6zRtXIopacp13p5ytmGUSAYa3ZNYbZwJtlmbmX
+         SZ4QSBhflV3yzCd/KXMYPGrRqGyyqhyObX0fI03/PROKFzQMD8V/9i7JqCTiaU3VzVaG
+         Qr+A==
+X-Forwarded-Encrypted: i=1; AJvYcCXL1UkeMRC3kT9LR9il38raBr0RudZ7JM1k3Ct+jJhUz+2AWjyLbiAt+oJSz6NKJCeXi1k8DU6m4CQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzXCkMFTSF8IAmrQ/B4a0OquDqhColr8XvEppNJ7SHkp5AFfg7Z
+	Pgq6+Aah1bnWKGolpUB9J6fF+Bz9HA7xXtvUnqRVqSVe9tJtn7cmXLh9dQJQxqUns22Dm6L0eyH
+	IQkjEd2h37I8o1DNPDYybqVQ39v/I4fV9j7XOyBux89kRE9TKZIDW9pgnAc50pPYpnQkd
+X-Gm-Gg: ASbGncvQbCovLul94pqZrYb6kjiVxwDVYyvgvYGrIhugW7kW3bZQKcDC2JD7hiXoxOe
+	YYe9YjfP+3Yob/HCs0pXZHEHJfleBR7cITtHKVPyW4JsIpn/vyALyPYHDq/56tqV8f7KSrw+rnD
+	QvXpG+8ZV6Fkik2BiKiRJ5LAeq33QY1L1hu3DsP+efGWEPHFWnd276BLRVtfeqoNbhlqc5jaBTj
+	i6qeuCZ+OSfKAMlNkUJaYLROsD4hHjWYHLZxoIeGFJa1TPhR49MRKSLE9GXki7/y4vSWeSFxmzr
+	2mP/fOFZdZovgwt+IUogYY0NG0vHSKjVJxZP1RDVMS4bLuYEjyGcan3uVjm6Ua+uJWWxhilxxzd
+	7wxIJUy6ADxWF29Io3WAxQrQbcIM36zN0kAjXQaSEaaMX8wdqSW4r
+X-Received: by 2002:a05:622a:24f:b0:4b5:e72d:dbc6 with SMTP id d75a77b69052e-4b5f846fc73mr78826121cf.72.1757324389114;
+        Mon, 08 Sep 2025 02:39:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFy1mrw36Xw8dyInvC+DMbqIM2PRIu/aziD0n/i6SMiCO8OR2jo73OLVrZzBTqj9rG+/JMhUw==
+X-Received: by 2002:a05:622a:24f:b0:4b5:e72d:dbc6 with SMTP id d75a77b69052e-4b5f846fc73mr78825941cf.72.1757324388614;
+        Mon, 08 Sep 2025 02:39:48 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5608abc1798sm3486986e87.57.2025.09.08.02.39.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 08 Sep 2025 02:39:47 -0700 (PDT)
+Date: Mon, 8 Sep 2025 12:39:45 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Jens Glathe <jens.glathe@oldschoolsolutions.biz>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH RFC 3/3] arm64: dts: qcom: x1e78100-lenovo-thinkpad-t14s:
+ add HDMI nodes
+Message-ID: <xzw26v6aqutgau3zwm3njblf2qw2em53n45ju2yhhfh7uhyxbz@6kqvink2chld>
+References: <20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org>
+ <20250821-topic-x1e80100-hdmi-v1-3-f14ad9430e88@linaro.org>
+ <a38df652-54c0-4216-9aa5-c8d32599c8f7@oldschoolsolutions.biz>
+ <c66fe361-74c9-4471-b371-353ca582bb3b@oss.qualcomm.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|DU2PR04MB9052:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8b582673-ebda-42d1-bc2d-08ddeebb49e0
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|10070799003|1800799024|19092799006|376014|7416014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?5DPXpHkxYlA1obHfJthCaNBGVymcjDkgcbIPyM3Ha9PSGn1lMAcuJarcFE6X?=
- =?us-ascii?Q?hd1pVQiMGR60fIoyMibO3L7bLQ5ZByul6mSAcBEf7z6qyZzRsAYrQRNJ3kHR?=
- =?us-ascii?Q?VLaJY3lzjh+Cn9QAGSXyeHwfHSfFprCjfu877zSRhFIanR96A5wthz8mSoHF?=
- =?us-ascii?Q?Iqmltq23a+0coczcpQ8VXpkvAbGT0fIvHPO5JYptITpsm64Cf4L6nNFwV+71?=
- =?us-ascii?Q?godMtfieom5gMoz722r0gz6PJCAjBbcNNGYqNcBUdtYBBeMNS87SNsrW9gzk?=
- =?us-ascii?Q?p+CVthPZcFwIgYRxFkuRZMURuRwucdOxtS4KAtivFzj6mA2ZGU22R7l8NVMt?=
- =?us-ascii?Q?Akngrm0kQzZMkE4WVdm9GyLLoJGuCbi1PwIVFjcP60pLeoSye2W9kJ9ByqXB?=
- =?us-ascii?Q?ak33wHClXH+rLjh/Vk1gPGWuq3EhsIT7x40OevKnwDSbgGFjlHnKCsuyJlW7?=
- =?us-ascii?Q?UwvHzYn/cBiBdKK2gpEo4OeMW0wOKmRH/00Jr75VQmbE0PDieuFZU22QTtda?=
- =?us-ascii?Q?73wNvaIMgpPFDSZHPp+fzJMtM1SY63kn0MIPxA38DYNNLonQe6/gHe1Qb4HM?=
- =?us-ascii?Q?KWX1OtTeykm+TSqU1SQ5YEucsRYxTAL6m6l2jN8iH03iUTp616Wp+wbq79Vm?=
- =?us-ascii?Q?sduEusxB5+jgRHU6Lhk9B120FIuZSu9ELJFid8cRZ7zftw6CZ97PhnOsJOoE?=
- =?us-ascii?Q?qrebQEscToSaR9TzX1MXXbwsBdCLagug7q5M5MIOn6BAdCojCC/3emBQ5hGf?=
- =?us-ascii?Q?A2GOarfZLQ7TOUkC5Pya3MSl8qWsMT2WPNiZjSo0rZuZBmKqjYuo6wjRpKCI?=
- =?us-ascii?Q?CZkWeUY+22Nq95zy8Y5O+a4ZdD3WlvV7jxM29yWZEQqfQuC8BiR+joohfMmV?=
- =?us-ascii?Q?Jy2cpePMILxyijjIUZSDv6NGCz8ajArysiBSNYK6adW4HVEX+qWtp+atzxSm?=
- =?us-ascii?Q?/haSVaWVma81MTvlS6F9NutmE28dz9+peNMl7AsRNa/A8zghQAL2NLbJ2sSh?=
- =?us-ascii?Q?1N4d6hSUndSYn1swiOulXzO5Xj/Z2y5++ZEU3GqN7QG/6ZW552j7qU7/3b8E?=
- =?us-ascii?Q?MA1Ea+ZehR4yODO8+ovePts9+73rkKs2+KuaWL58gemHmbfQNZPR/fGhWkEc?=
- =?us-ascii?Q?s4GXgdcpDsQxhEWO4OpPJdMPh00n4pSV1WZ2Q5EE+s2LqKg7jfvliGudX7Rk?=
- =?us-ascii?Q?+GsEg0Boy6Cz6lw8SWH3+lVuS7F7jnPANxLh6IUSLdmuCV02oxwCMgdy2w26?=
- =?us-ascii?Q?wCZng0lpYUbmEf05QyoCThnMoBljm/VbwPtuXA+h7Tj0xleXoI1k1ElZXqSq?=
- =?us-ascii?Q?a34/HkAXy32PPjPSbE2WARRfUg6/qIAhMAL9z9SRfnEn2zuhnKMKczP5RYDl?=
- =?us-ascii?Q?MPvg0FKoy7QHkPzUce9sVafl26BbPFBbEYl2TLY83oBC5Im27vH8c7HPFic2?=
- =?us-ascii?Q?wl/L2Mhgz2o=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(10070799003)(1800799024)(19092799006)(376014)(7416014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?rdhtU6JhF7w1KX31+eE50h7s6nE8V24z/gQqLKrTVSk8f885sW0co40P9ane?=
- =?us-ascii?Q?xST9mHuXiHl1Ss9O/QFaWHfh4oHnzARUcaaSnQjUT7C5cLno9GmxGEYiIq0l?=
- =?us-ascii?Q?tAMqrnH3QkAetYFVsIDsxCJdkqNo0vLgs/8a1CR6eEjkP/cqNPjZuw5VeE/E?=
- =?us-ascii?Q?d4wjJH55zAyoNm0i3BSWDJDFdzJRaFFy6gHAt43ugTtn0x68WfnkQ4rdQ4Bm?=
- =?us-ascii?Q?KMWeZ7hX71n8BNOhQjKIahaB34vUAioe0rRgHRYmkVr0WHcI8HZSHnigVfjU?=
- =?us-ascii?Q?TlMkVg5xwqSIq6TTVkhBCW0kFsl5EtZOPr6k0DbnGNEf6eBqrTHu5dGw66b3?=
- =?us-ascii?Q?LroHhnCQ9obJZTe9hybUHk8jV9qVuYRCoKpxFd7QM//JjYs92blv7qbtHnLv?=
- =?us-ascii?Q?tNF8CvA4qBfqwJ8WJhctJBFc4KXiisMf0gZ+wF2RhZUO/I6beN+RXiTU3vyO?=
- =?us-ascii?Q?VDBLYXfsLQJPfI03dTKG3MwJpXclNtxfAobS3b+o6fIfKyN12JOtoO1SIhYV?=
- =?us-ascii?Q?kvxRDYgBon9CQO2iGVcZY177vx67eaj9QUcX2jAoMJeiXzQTm0WDW9kJN4Tk?=
- =?us-ascii?Q?W8oV0sv7+YWggn7JwAREwoLEdqL1CE4i9CpVFvPJavDAPbD+RSxuXKS50F1o?=
- =?us-ascii?Q?tLYbR0B/HBEPZJszoX6zO/WrfykdxvYXZkh5zEHvhwzP7idIzY1+JGjOZn5I?=
- =?us-ascii?Q?j0pi3L0SQ2wZSx0ZH1FqJO95BytEssAjcILFE1+eX6TgvEm5WjIN4a/LXWcD?=
- =?us-ascii?Q?K3/kl9CIaJnL9/r3qgTLdZB6dzIU9wCcC9imGWn2VE8c1jeCKYyX0oZfQAiH?=
- =?us-ascii?Q?Z5mNRGZvR7MTE6lGAf+cZM00JXOxeTb2i/m+zqUtjMKDZp8BGaMzlrnPJqRH?=
- =?us-ascii?Q?x9EQFcE3n7514s1VkZfjwuEXvxLb+3XD89oVjj9NT3wctnAzHDlF+D0bwzYA?=
- =?us-ascii?Q?euDmcRBuq0kUSoIoxTIf+0atgxw1AryVjR55nCTJONiEe6ORPuVGsYUiXFHZ?=
- =?us-ascii?Q?tWDBE+zZmpu3ObOipzOO7GSIegMNG33HWv9MSISjTThr5HCWQD4DjJLfo5SZ?=
- =?us-ascii?Q?8Ica89BjJUfyKbAkMFngQAX0nPVfw4yc4NNjinUjk393sgFEm/MXtvwyz+LD?=
- =?us-ascii?Q?8dymKHRbQWsKl4ttJNIqt5gIjTcZ0bCHrqp8AgAX77kr7DOukeXY2knrgwhg?=
- =?us-ascii?Q?bNhxqx+eLjjriMnzu82MT40w5iFfPZLyHRWlOru3KhetG7Q9/7oX8e6akZhB?=
- =?us-ascii?Q?G+UxdgGKptX9ihPW7knOj/tXIEKSiTHVqNnmpOthU8yc14Tz6Vf7pHKVbyuM?=
- =?us-ascii?Q?oCofXMo+CChyxKKSlMDpJuqxz3nj/TUPNn10R258mH4Ues9cQDeGKRB7Br2i?=
- =?us-ascii?Q?z92pmAhOyGMsBoyA2CXH35N7Zd5/3xYBrJ3P0OfEHWhHu9zfdSBRR9ypKFlf?=
- =?us-ascii?Q?b7WxePXASgMsfk30+u1zqnLkVGaHjmQEzW9mkMmQYPgjgD6NyvixUeJUXbhd?=
- =?us-ascii?Q?bhl+tgi1RjFsR4805AOQWslcPBsUqhv8av9EnPyW9q4fSjX11UoMzy2nNrXE?=
- =?us-ascii?Q?YTkXRST+QidOBTbpIcHJ9z/ksWqf/HMfYkQ+qkR1/1WrGFL7L7YahF5FPXVY?=
- =?us-ascii?Q?do/4ux5nizJhnHuPjg4WnyTheKPTrOh9T4pk6BRf5Ou+Tre6jaVvMTLx0cK0?=
- =?us-ascii?Q?N2muAQ=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8b582673-ebda-42d1-bc2d-08ddeebb49e0
-X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2025 09:37:12.5077
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: RI85Cssbq1BQlSTZbygLXTpJiEiUeRTx8QWdjBeRfm+lgRn23FTFBDb1YKgEsrGwPzW5O1m8zTITDVcuPMAFeA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9052
+Content-Disposition: inline
+In-Reply-To: <c66fe361-74c9-4471-b371-353ca582bb3b@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: onW6Yvf8IgTzHL8lOQ9VWG5S-uuhL5HC
+X-Proofpoint-GUID: onW6Yvf8IgTzHL8lOQ9VWG5S-uuhL5HC
+X-Authority-Analysis: v=2.4 cv=NdLm13D4 c=1 sm=1 tr=0 ts=68bea468 cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+ a=yJojWOMRYYMA:10 a=COk6AnOGAAAA:8 a=4LzuJVVA2EB8z9vYX0EA:9 a=3ZKOabzyN94A:10
+ a=wPNLvfGTeEIA:10 a=kacYvNCVWA4VmyqE58fU:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA4MDA2NiBTYWx0ZWRfX8xZTFK7NCpm/
+ MNi0ANcGq4zCEx8H0V6NmwIjCe2PD5y6RkIw5CmEv9TyuoJumtDSM22JQkAOmNDZqDi69OOEcZU
+ 9CQQtcryrZWAMsiBoGSp+jhjc9CmDnWUJcfiWgWYO9dcHwOIoVQ7iQj84bCMW1mXVN6eS0zW9CB
+ VsWIwry+FsWIH90NjzeOoK5Ap+1gf/Zc31jlabiEn1jpuUW8Yg0YRayRrO5J3FxTLFUKZTaWBYv
+ ydpoGIvjPL4f4WwpK4e74AfvsbxI9IOtXCP4JsXCcdGSCXBs0VUG9FXQ/3FY29KM7BVv61Rc72x
+ nagqnt5R+P2BoT7EbkCsgfSQ8euE3KEzGF0cgf75Pu8yAIQc4hy3Rz/L/eQVKsuV/0WhIK9vV6E
+ /uYoBjlS
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-08_03,2025-09-08_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 bulkscore=0 adultscore=0 suspectscore=0 phishscore=0
+ clxscore=1015 impostorscore=0 spamscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509080066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250908_023724_721717_147557A1 
-X-CRM114-Status: GOOD (  30.04  )
+X-CRM114-CacheID: sfid-20250908_023953_899325_17D0E8D3 
+X-CRM114-Status: GOOD (  22.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,149 +136,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 05, 2025 at 08:02:59PM +0100, Conor Dooley wrote:
-> On Fri, Sep 05, 2025 at 06:41:50PM +0300, Vladimir Oltean wrote:
-> > On Fri, Sep 05, 2025 at 10:29:33AM +0200, Krzysztof Kozlowski wrote:
-> > > >  properties:
-> > > >    compatible:
-> > > > -    enum:
-> > > > -      - fsl,lynx-28g
-> > > > +    oneOf:
-> > > > +      - items:
-> > > > +          - const: fsl,lynx-28g
-> > > 
-> > > Don't change that part. Previous enum was correct. You want oneOf and
-> > > enum.
-> > 
-> > Combining the feedback from Conor and Josua, I should only be permitting
-> > the use of "fsl,lynx-28g" as a fallback to "fsl,lx216{0,2}a-serdes{1,2}",
-> > or standalone. The description below achieves just that. Does it look ok
-> > to you?
-> > 
-> > properties:
-> >   compatible:
-> >     oneOf:
-> >       - enum:
-> >           - fsl,lx2160a-serdes1
-> >           - fsl,lx2160a-serdes2
-> >           - fsl,lx2160a-serdes3
-> >           - fsl,lx2162a-serdes1
-> >           - fsl,lx2162a-serdes2
-> >       - const: fsl,lynx-28g
-> >         deprecated: true
-> 
-> >       - items:
-> >           - const: fsl,lx2160a-serdes1
-> >           - const: fsl,lynx-28g
-> >         deprecated: true
-> >       - items:
-> >           - const: fsl,lx2160a-serdes2
-> >           - const: fsl,lynx-28g
-> >         deprecated: true
-> >       - items:
-> >           - const: fsl,lx2162a-serdes1
-> >           - const: fsl,lynx-28g
-> >         deprecated: true
-> >       - items:
-> >           - const: fsl,lx2162a-serdes2
-> >           - const: fsl,lynx-28g
-> >         deprecated: true
-> 
-> This doesn't really make sense, none of these are currently in use
-> right? Everything is just using fsl,lynx-28g right?
-> Adding new stuff and immediately marking it deprecated is a
-> contradiction, just don't add it at all if you don't want people using
-> it. Any users of it would be something you're going to retrofit in now,
-> so you may as well just retrofit to use what you want people to use
-> going forward, which has no fallbacks.
+On Mon, Sep 08, 2025 at 09:16:29AM +0200, Konrad Dybcio wrote:
+> On 9/6/25 10:41 AM, Jens Glathe wrote:
+> > On 21.08.25 15:53, Neil Armstrong wrote:
+> >> The Thinkpad T14s embeds a transparent 4lanes DP->HDMI transceiver
+> >> connected to the third QMP Combo PHY 4 lanes.
+> >>
+> > [...]
+> >> =A0 .../dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi=A0=A0=A0 | 44 ++++=
+++++++++++++++++++
+> >> =A0 1 file changed, 44 insertions(+)
+> > [...]
+> >> diff --git a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dt=
+si b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+> >> index 4cf61c2a34e31233b1adc93332bcabef22de3f86..5b62b8c3123633360f249e=
+3ecdc8ea23f44e8e09 100644
+> >> --- a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+> >> +++ b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+> > [...]
+> >> +&mdss_dp2 {
+> >> +=A0=A0=A0 status =3D "okay";
+> >> +};
+> >> +
+> >> +&mdss_dp2_out {
+> >> +=A0=A0=A0 data-lanes =3D <0 1 2 3>;
+> >> +};
+> >> +
+> > =
 
-You're right that it doesn't make sense to deprecate a newly introduced
-compatible string pair - my mistake for misunderstanding "deprecated".
+> > Hi Neil,
+> > =
 
-> I didn't read the back and forth with Josua (sorry!) but is the fallback
-> even valid? Do those devices have a common minimum set of features that
-> they share?
+> > shouldn't mdss_dp2_out also have the link-frequencies property?
+> > =
 
-I'll try to make an argument based on the facts presented below.
+> > +=A0 =A0 link-frequencies =3D /bits/ 64 <1620000000 2700000000 54000000=
+00 8100000000>;
+> > =
 
-The current Linux driver, which recognizes only "fsl,lynx-28g", supports
-only 1GbE and 10GbE. There are other SerDes protocols supported by the
-SerDes, but they are irrelevant for the purpose of discussing
-compatibility. Also, LX2160A SerDes #3 is also irrelevant, because it is
-not currently described in the device tree.
+> > Or is it something the bridge already negotiates?
+> =
 
-1GbE compatibility table
+> No, it seems like our driver falls back to HBR2 (54xx) ever since the
+> driver has been made aware of this property:
+> =
 
-SerDes              Lane 0  Lane 1  Lane 2  Lane 3  Lane 4  Lane 5  Lane 6  Lane 7   Comments
-LX2160A SerDes #1   y       y       y       y       y       y       y       y
-LX2160A SerDes #2   y       y       y       y       y       y       y       y
-LX2162A SerDes #1   n/a     n/a     n/a     n/a     y       y       y       y        LX2162A currently uses lx2160a.dtsi
-LX2162A SerDes #2   y       y       y       y       y       y       y       y        LX2162A currently uses lx2160a.dtsi
+> commit 381518a1677c49742a85f51e8f0e89f4b9b7d297
+> Author: Kuogee Hsieh <quic_khsieh@quicinc.com>
+> Date:   Tue Dec 27 09:45:02 2022 -0800
+> =
 
-10GbE compatibility table
+>     drm/msm/dp: Add capability to parser and retrieve max DP link support=
+ed rate from link-frequencies property of dp_out endpoint
+> =
 
-SerDes              Lane 0  Lane 1  Lane 2  Lane 3  Lane 4  Lane 5  Lane 6  Lane 7   Comments
-LX2160A SerDes #1   y       y       y       y       y       y       y       y
-LX2160A SerDes #2   n       n       n       n       n       n       y       y
-LX2162A SerDes #1   n/a     n/a     n/a     n/a     y       y       y       y        LX2162A currently uses lx2160a.dtsi
-LX2162A SerDes #2   n       n       n       n       n       n       y       y        LX2162A currently uses lx2160a.dtsi
+> Dmitry, is there any reason not to allow HBR3 by default? Is our dp
+> controller/driver not smart enough not to advertise rates it can't
+> support, during negotiation?
 
-As LX2160A SerDes #2 is treated like #1, the device tree is telling the
-driver that all lanes support 10GbE (which is false for lanes 0-5).
+I don't remember the exact details. If I remmber correctly, there were
+cases where using HBR3 resulted in a less stable signal than falling
+back to HBR2.
 
-If one of the SerDes PLLs happens to be provisioned for the 10GbE clock
-net frequency, as for example with the RCW[SRDS_PRTCL_S2]=6 setting,
-this will make the driver think that it can reconfigure lanes 0-5 as
-10GbE.
+-- =
 
-This will directly affect upper layers (phylink), which will advertise
-10GbE modes to its link partner on ports which support only 1GbE, and
-the non-functional link mode might be resolved through negotiation, when
-a lower speed but functional link could have been established.
+With best wishes
+Dmitry
 
-You mention a common minimum feature set. That would be supporting 10GbE
-only on lanes 6-7, which would be disadvantageous to existing uses of
-10GbE on lanes 0-5 of SerDes #1. In some cases, the change might also be
-breaking - there might be a PHY attached to these lanes whose firmware
-is hardcoded to expect 10GbE, so there won't be a graceful degradation
-to 1GbE in all cases.
+-- =
 
-With Josua's permission, I would consider commit 2f2900176b44 ("arm64:
-dts: lx2160a: describe the SerDes block #2") as broken, for being an
-incorrect description of hardware - it is presented as identical to
-another device, which has a different supported feature set. I will not
-try to keep SerDes #2 compatible with "fsl,lynx-28g". This will remain
-synonymous only with SerDes #1. The users of the fsl-lx2162a-clearfog.dts
-will need updating if the "undetected lack of support for 10GbE" becomes
-an issue.
-
-My updated plan is to describe the schema rules for the compatible as
-follows. Is that ok with everyone?
-
-properties:
-  compatible:
-    oneOf:
-      - const: fsl,lynx-28g
-        deprecated: true
-      - items:
-          - const: fsl,lx2160a-serdes1
-          - const: fsl,lynx-28g
-      - enum:
-          - fsl,lx2160a-serdes2
-          - fsl,lx2160a-serdes3
-          - fsl,lx2162a-serdes1
-          - fsl,lx2162a-serdes2
-
-Also, I will limit the driver support for the "fsl,lynx-28g" compatible
-to just 1GbE and 10GbE. The 25GbE feature introduced by this series will
-require a more precise compatible string.
-
--- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
