@@ -4,107 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACCD5CAC58E
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:42:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6E0FCA0FED
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:42:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=conHZwW9hYlXfxRn2k7fesULedYL0B6N4ni1K2a10SY=; b=bfuREWie4fQZaR
-	CsmCFhMKai0eG05UjESU9Z1PVM5xjkAS6vk+VvlN2AYMVD9q81AOxfW6BfMuAuzH5q2Id6mFdyZ7L
-	iFkr/1+xHh9ISbv9WjIYNpXHYbAOoTnpdSd0YKICW+RId+tw5QUioKOcvRgAKhvXN5W/ykVJ1oj8Z
-	E9Tkwt4YN+vcFSDr7DnmKRyR87tdAmNWeYZVUarcxzCoRyPqeuPkFyA+yXlbQd03x1XrN0hnktXMJ
-	chgGYZH6CVje8hID9TRUS6DbORNIV8MavaXREPFTTRRCzOQGDREXcrJ+o0ke6uVHCoSNyIoJ3Lh+7
-	co+XfAZoInsDK7X9BZtw==;
+	List-Owner; bh=zGHDIWrvFyNZmk1N76sSs4wiKCMhEM7CFzXO5dBtmPs=; b=24Jho1GEcOs/Y0
+	UfjVJOUktJOwpKTUgfdJK78Nnji/o8e/3Bne/24GGpCWO8vZv1IBIVNyLVr4sxwCZWdCMmbDL4suT
+	pTXjPLcYiNsrh2zGKroMSOLfVWxSuWEoMYbuoIkAwmgCgE8cC0I76YZvuFZqwE9jjI1FwPaZHAGfS
+	KK432ptvEokzDMTvCZQKRHMJPmaoYF5n7EYhCK7e2WdlmQGmuxCfnunMA0DDiYVUTixgqsAZVz/hV
+	XbiPca31wPgFa0o+QpiDQ+Qcagh9IgsCRTjAoLvsmZld3WDI3/y6Onr+SZFXRelHc1bzI9sFQNVaB
+	bIPG8deemMgqpjzxckIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw1QK-00000008b7H-47vG;
-	Tue, 09 Sep 2025 16:42:29 +0000
-Received: from mail-ed1-f46.google.com ([209.85.208.46])
+	id 1uw1QR-00000008bHh-37OZ;
+	Tue, 09 Sep 2025 16:42:36 +0000
+Received: from mgamail.intel.com ([198.175.65.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvvGp-00000006Fuj-2xaU
-	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 10:08:16 +0000
-Received: by mail-ed1-f46.google.com with SMTP id 4fb4d7f45d1cf-6188b5b113eso2259834a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 03:08:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1757412494; x=1758017294; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=BMgOM8XJmNofFIO0mofCjvhzvtC1eaKXzphpuQlfZOg=;
-        b=Aajre/GaE2Ikb19wLfNWuUnSbkbT8QyPlHQOwfi8Jn6XbEJQc3wf5G0c+RqoUMILDL
-         hMB51Hhaq1dHuoHBb/xubQg/6VF0Tz98fBoYSse4XKC6gEWDsrUe7X0sQG2CBl73rIlz
-         9xqPZ1s0jTR0aK267jgXIIxLAr0JGbzVlkJp2N2A+U48F7a5tbSUID5oWOjLgEP/Yb05
-         vyCFSxrq/CHYxY/AAH6YiL4oQyHXdfuL7I8fs19lfW6NyznUbjFhZBnCf1jgari1+6nD
-         vMUlqUu2PFc6N8Fgn+QOzsjVzQa7cgr9S64inmIbd9/RMOdDJLCHhUAROpQbrLKAjc94
-         GwIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757412494; x=1758017294;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=BMgOM8XJmNofFIO0mofCjvhzvtC1eaKXzphpuQlfZOg=;
-        b=ghe6PFyPPpOCY0gxma8Gbj38KET4fDvgnd6RjYkOv/CvPjlXZ63K72yBz8lp/0PfQs
-         X+lu6bN+0qZnyCDaOeY/mFuxgOFwl3M4Ovr20GaM/MjO+8P5EjTsvbzfOY1hLARkEj72
-         Ubjp0axirha1MhPW1d9K63iNKHDljdl1u71rIc28UMkCQcB5fxSbOHtUPwbESuXx+Zpw
-         axSUa0hLVKlJeycm+41yTLGBkOlgwBi2mvMcUCfEiGU8KE28zS3qts27VMBDj7/HlXUq
-         E6XZXyqhMItIn3O7GQpwAlreVmR8cebjHuncKcdNBOPSGab6Vg+7G6Dl+xojQUkiPJoI
-         ZxJQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUDb8/1k3NW1YCP3fXOjs+Vn/+d96sDSgVqtE0ex6qwdLdDign0XmqG1urvVWLGvdWNeVPOvCNzsFM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzy90XVE6EdDqpdWrgElYu9xscouqFa4NtKHDziD/wHNXTbOkvq
-	dTnqN3wb5p07U6t1bBTvt6ys2Jg4woV4R1Or3ScMGVeaks7BYaMDSWAImVf2BBc0TZU=
-X-Gm-Gg: ASbGncsQ8J48Sc+znZWlFvOEhWUAAzHfMtu+r0WiwPAKaWz5Rx8W3Wc6YwTfSPxNdeO
-	yPColdho6ghmCiPh5UoyEMB9fHWbOuV+QX8czsAd1dgR3iH7sOjPiO3dqZ7QtK4UCOkf+eXVQW5
-	Fcw5Z359kl4D0/cmKgYuE1/f2ZIcHV3loFvrVy8PLHUmXdQPQlbn1Rf4Ujzi3A6IKatsY7U+Y3t
-	qlCmFJl5Wkr6R81R2eamLNqhO/Cmo1Fu1leZrAx4hmXgGBSqPL1zjks5oQmzNB0d+VqllbI8129
-	M6drVB6RVQHUrF7myIPlQq6sCp8w9ha3IXUyuJhrgXW/nPegOcwMqkrvI8tO7S2GMPKNb4XmRmR
-	FaF5Q3KqbUMTcytMx6Fjufqo=
-X-Google-Smtp-Source: AGHT+IEHEjj93B70Sinq3mgPm6043y97MubjmGfLtmUg5ZC6v+5s9f2g2Yddh5SofsbVGC9GTcJTQw==
-X-Received: by 2002:a05:6402:5241:b0:627:7d41:9f70 with SMTP id 4fb4d7f45d1cf-6277d41a12dmr7179736a12.36.1757412493732;
-        Tue, 09 Sep 2025 03:08:13 -0700 (PDT)
-Received: from hackbox.lan ([86.121.170.194])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-62c018f65afsm965379a12.41.2025.09.09.03.08.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 03:08:12 -0700 (PDT)
-From: Abel Vesa <abel.vesa@linaro.org>
-Date: Tue, 09 Sep 2025 13:07:28 +0300
-Subject: [PATCH v2 3/3] phy: qcom: edp: Add Glymur platform support
+	id 1uvvIy-00000006Gue-32yK;
+	Tue, 09 Sep 2025 10:10:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1757412629; x=1788948629;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=gMNjfjMRgGdXnedqzeagPwQAloyWCSOeznRWmXJbD5c=;
+  b=miO1SnoU/Bnyf+PszBtPyEKjJ6H5W77fTY8vujUZK0MMNs1rhJSmL9RX
+   EQXemSQUgsp7RDYZn4ez9Bvx8m/CYbtpk3KC4gyOhUuy9ZdT02zHbbHqq
+   ZE6sywm6Mik0kFwWTMEYMf2j3mFPhVJnfyPcmjyvvEM47C3g24XXxcNCq
+   5rlRZpbvNmNK79xhNRg1901xchuSLXjXZmHIJcKcMNnzWXXBeI1EiJicT
+   q4YYwyo5aef33bvUDFDDkLeOx0CFFsZvHvtBGNIMZKFoLb7KQIbJZ8VDU
+   Dr54VI5ZMsry3vv3Da+SbZHvmW1ePoMFINKiHR7msCTHHowjUfUGC2Rla
+   Q==;
+X-CSE-ConnectionGUID: hsWbRQxtS1OfDzctDg7spA==
+X-CSE-MsgGUID: V5xZb2TTQAaqRgOzlVpl0g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11547"; a="70790814"
+X-IronPort-AV: E=Sophos;i="6.18,251,1751266800"; 
+   d="scan'208";a="70790814"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Sep 2025 03:10:28 -0700
+X-CSE-ConnectionGUID: s0J5BQaFSXm+vy5L4YS1Fw==
+X-CSE-MsgGUID: yKHGTP2uTp2Gxeds2WxM2g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,251,1751266800"; 
+   d="scan'208";a="172314372"
+Received: from kuha.fi.intel.com ([10.237.72.152])
+  by orviesa010.jf.intel.com with SMTP; 09 Sep 2025 03:10:22 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Tue, 09 Sep 2025 13:10:21 +0300
+Date: Tue, 9 Sep 2025 13:10:21 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+	Janne Grunau <j@jannau.net>,
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	Hector Martin <marcan@marcan.st>
+Subject: Re: [PATCH v2 15/22] usb: typec: tipd: Handle mode transitions for
+ CD321x
+Message-ID: <aL_9DShYiN1GZKgm@kuha.fi.intel.com>
+References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+ <20250906-atcphy-6-17-v2-15-52c348623ef6@kernel.org>
 MIME-Version: 1.0
-Message-Id: <20250909-phy-qcom-edp-add-glymur-support-v2-3-02553381e47d@linaro.org>
-References: <20250909-phy-qcom-edp-add-glymur-support-v2-0-02553381e47d@linaro.org>
-In-Reply-To: <20250909-phy-qcom-edp-add-glymur-support-v2-0-02553381e47d@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>
-X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=13245; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=5ElapXOfP+u/jXp5/uqTMXZH3fUDf1qhEt+ARhwc2tc=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBov/yEw1yNm9J0JXOvGVdv/WPb1gdbtx7sP8bN+
- t26wA8QPGKJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaL/8hAAKCRAbX0TJAJUV
- VunmEADNy/8A+wZBX+yhav1Kdj4IcCA5wuBNbF1rpWoxdh+AKTTGrAFoEaHT3kMSpKfPf/80U4G
- rTtxAR40x9KNDu1rTcB9UemZZs+/4Wux1yQQIUxBZ5pltag63+warHZp7xkRsgRgRcny0jmV8ID
- QJZv+8LzXxc2+axzQCHLe9W//HTAbRn0UMNm4q9rJQi1Kz0hhSMl7Kp+gz3+oOQM8hxaj0HYaTc
- kpNrQwuG+gTGQ04yOrhT4KMxNuMYxMVNAYd4TzEUIiRLKNJtfkNrOUdlI7/qgA4vj6t28tsOAcW
- kT/WA7KbmZ86OXRhAc+laWykjxTOyPfdwBuZRqqXmdGwTdP1Hh4T0KwUnb9bciLlqJ7xruUJLFs
- +vDyiDTHA2QfJs/VH45y8iXiq6ZLtPmIEyrRHaMxhwVQeSbyPfBGYu2cn+954GItDV04IRUSJ8J
- lK7E2V7sTlrPRhufzH6q+H64WaVVVwOv0c8K6ZC/D+SssH66xbRyvivJdicR3ydqlRuMkgSEkOc
- 7QghSO1KduBqFnUPC9QQAgW8TsV7sgB4B0sH4TcO/J16OT4LCBxcihbw11mupCdyMe4pjmn4xbO
- EDV9Qnr5VGl9fFLfQvQO8mQfClRVYka/u+Yu9vj8sgCXWH3ziFJbDIq9d4uoi63kgqtjrXnD81d
- 3Agkpfgje2s125Q==
-X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
- fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
+Content-Disposition: inline
+In-Reply-To: <20250906-atcphy-6-17-v2-15-52c348623ef6@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_030815_779588_3B5B9092 
-X-CRM114-Status: GOOD (  18.79  )
+X-CRM114-CacheID: sfid-20250909_031028_842778_9578B203 
+X-CRM114-Status: GOOD (  40.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,396 +98,482 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Qualcomm Glymur platform has the new v8 version
-of the eDP/DP PHY. So rework the driver to support this
-new version and add the platform specific configuration data.
+On Sat, Sep 06, 2025 at 03:43:28PM +0000, Sven Peter wrote:
+> From: Hector Martin <marcan@marcan.st>
+> 
+> On Apple Silicon machines there is no control over which alt mode is
+> chosen. The CD321x' firmware negotiates the target mode on its own and
+> only lets the main CPU know after the mode has already been chosen.
+> Especially after plugging a new cable in this can result to quick mode
+> changes from e.g. power only -> USB3 only -> USB3+DisplayPort in a short
+> time. It is not possile to influence this in any way and we also do not
+> get direct access to the PDOs or VDOs exchanged via USB PD.
+> 
+> Additionally, mode changes must be tightly synchronized between DWC3 and
+> the Type C PHY and most mode changes require a full reset of DWC3 to
+> make the port work correctly.
+> On the machines the usb role change is used to reset the controller.
+> The role change is additionally done synchronously from the callback
+> instead of relying on a workqueue as usual in order to avoid any races
+> which can, in the worst case, result in resetting the entire SoC if
+> Type-C PHY and DWC3 are out of sync.
+> 
+> To be able to control all this we trigger the entire process in the
+> correct order directly from the TIPD driver and de-bounce any mode
+> changes to avoid tearing down and re-setting DWC3 back up multiple times
+> any time a new connection is made.
+> 
+> Signed-off-by: Hector Martin <marcan@marcan.st>
+> Co-developed-by: Sven Peter <sven@kernel.org>
+> Signed-off-by: Sven Peter <sven@kernel.org>
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 242 ++++++++++++++++++++++++++++++++++--
- 1 file changed, 235 insertions(+), 7 deletions(-)
+Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index ca9bb9d70e29e1a132bd499fb9f74b5837acf45b..b670cda0fa066d3ff45c66b73cc67e165e55b79a 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -26,13 +26,15 @@
- #include "phy-qcom-qmp-qserdes-com-v4.h"
- #include "phy-qcom-qmp-qserdes-com-v6.h"
- 
-+#include "phy-qcom-qmp-dp-qserdes-com-v8.h"
-+
- /* EDP_PHY registers */
- #define DP_PHY_CFG                              0x0010
- #define DP_PHY_CFG_1                            0x0014
- #define DP_PHY_PD_CTL                           0x001c
- #define DP_PHY_MODE                             0x0020
- 
--#define DP_AUX_CFG_SIZE                         10
-+#define DP_AUX_CFG_SIZE                         13
- #define DP_PHY_AUX_CFG(n)                       (0x24 + (0x04 * (n)))
- 
- #define DP_PHY_AUX_INTERRUPT_MASK		0x0058
-@@ -76,6 +78,7 @@ struct phy_ver_ops {
- 	int (*com_power_on)(const struct qcom_edp *edp);
- 	int (*com_resetsm_cntrl)(const struct qcom_edp *edp);
- 	int (*com_bias_en_clkbuflr)(const struct qcom_edp *edp);
-+	int (*com_clk_fwd_cfg)(const struct qcom_edp *edp);
- 	int (*com_configure_pll)(const struct qcom_edp *edp);
- 	int (*com_configure_ssc)(const struct qcom_edp *edp);
- };
-@@ -83,6 +86,8 @@ struct phy_ver_ops {
- struct qcom_edp_phy_cfg {
- 	bool is_edp;
- 	const u8 *aux_cfg;
-+	int aux_cfg_size;
-+	const u8 *vco_div_cfg;
- 	const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
- 	const struct phy_ver_ops *ver_ops;
- };
-@@ -185,6 +190,10 @@ static const u8 edp_phy_aux_cfg_v4[10] = {
- 	0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
- };
- 
-+static const u8 edp_phy_vco_div_cfg_v4[4] = {
-+	0x1, 0x1, 0x2, 0x0,
-+};
-+
- static const u8 edp_pre_emp_hbr_rbr_v5[4][4] = {
- 	{ 0x05, 0x11, 0x17, 0x1d },
- 	{ 0x05, 0x11, 0x18, 0xff },
-@@ -210,6 +219,14 @@ static const u8 edp_phy_aux_cfg_v5[10] = {
- 	0x00, 0x13, 0xa4, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
- };
- 
-+static const u8 edp_phy_aux_cfg_v8[13] = {
-+	0x00, 0x00, 0xa0, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03, 0x02, 0x02, 0x4,
-+};
-+
-+static const u8 edp_phy_vco_div_cfg_v8[4] = {
-+	0x1, 0x1, 0x1, 0x1,
-+};
-+
- static int qcom_edp_phy_init(struct phy *phy)
- {
- 	struct qcom_edp *edp = phy_get_drvdata(phy);
-@@ -224,7 +241,11 @@ static int qcom_edp_phy_init(struct phy *phy)
- 	if (ret)
- 		goto out_disable_supplies;
- 
--	memcpy(aux_cfg, edp->cfg->aux_cfg, sizeof(aux_cfg));
-+	memcpy(aux_cfg, edp->cfg->aux_cfg, edp->cfg->aux_cfg_size);
-+
-+	ret = edp->cfg->ver_ops->com_clk_fwd_cfg(edp);
-+	if (ret)
-+		return ret;
- 
- 	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
- 	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-@@ -252,7 +273,7 @@ static int qcom_edp_phy_init(struct phy *phy)
- 
- 	writel(0xfc, edp->edp + DP_PHY_MODE);
- 
--	for (int i = 0; i < DP_AUX_CFG_SIZE; i++)
-+	for (int i = 0; i < edp->cfg->aux_cfg_size; i++)
- 		writel(aux_cfg[i], edp->edp + DP_PHY_AUX_CFG(i));
- 
- 	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
-@@ -345,22 +366,22 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel
- 
- 	switch (dp_opts->link_rate) {
- 	case 1620:
--		vco_div = 0x1;
-+		vco_div = edp->cfg->vco_div_cfg[0];
- 		*pixel_freq = 1620000000UL / 2;
- 		break;
- 
- 	case 2700:
--		vco_div = 0x1;
-+		vco_div = edp->cfg->vco_div_cfg[1];
- 		*pixel_freq = 2700000000UL / 2;
- 		break;
- 
- 	case 5400:
--		vco_div = 0x2;
-+		vco_div = edp->cfg->vco_div_cfg[2];
- 		*pixel_freq = 5400000000UL / 4;
- 		break;
- 
- 	case 8100:
--		vco_div = 0x0;
-+		vco_div = edp->cfg->vco_div_cfg[3];
- 		*pixel_freq = 8100000000UL / 6;
- 		break;
- 
-@@ -398,6 +419,11 @@ static int qcom_edp_phy_com_resetsm_cntrl_v4(const struct qcom_edp *edp)
- 				     val, val & BIT(0), 500, 10000);
- }
- 
-+static int qcom_edp_com_clk_fwd_cfg_v4(const struct qcom_edp *edp)
-+{
-+	return 0;
-+}
-+
- static int qcom_edp_com_bias_en_clkbuflr_v4(const struct qcom_edp *edp)
- {
- 	/* Turn on BIAS current for PHY/PLL */
-@@ -530,6 +556,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- 	.com_power_on		= qcom_edp_phy_power_on_v4,
- 	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v4,
- 	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v4,
-+	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v4,
- 	.com_configure_pll	= qcom_edp_com_configure_pll_v4,
- 	.com_configure_ssc	= qcom_edp_com_configure_ssc_v4,
- };
-@@ -537,17 +564,23 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
- 	.is_edp = false,
- 	.aux_cfg = edp_phy_aux_cfg_v5,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v5),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
- 
- static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
- 
- static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
-@@ -555,6 +588,8 @@ static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
- static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
- 	.is_edp = true,
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
-@@ -734,10 +769,202 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
- 
- static struct qcom_edp_phy_cfg x1e80100_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v6,
- };
- 
-+static int qcom_edp_com_configure_ssc_v8(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 step1;
-+	u32 step2;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+	case 2700:
-+	case 8100:
-+		step1 = 0x5b;
-+		step2 = 0x02;
-+		break;
-+
-+	case 5400:
-+		step1 = 0x5b;
-+		step2 = 0x02;
-+		break;
-+
-+	default:
-+		/* Other link rates aren't supported */
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_SSC_EN_CENTER);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_SSC_ADJ_PER1);
-+	writel(0x6b, edp->pll + DP_QSERDES_V8_COM_SSC_PER1);
-+	writel(0x02, edp->pll + DP_QSERDES_V8_COM_SSC_PER2);
-+	writel(step1, edp->pll + DP_QSERDES_V8_COM_SSC_STEP_SIZE1_MODE0);
-+	writel(step2, edp->pll + DP_QSERDES_V8_COM_SSC_STEP_SIZE2_MODE0);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_com_configure_pll_v8(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 div_frac_start2_mode0;
-+	u32 div_frac_start3_mode0;
-+	u32 dec_start_mode0;
-+	u32 lock_cmp1_mode0;
-+	u32 lock_cmp2_mode0;
-+	u32 code1_mode0;
-+	u32 code2_mode0;
-+	u32 hsclk_sel;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+		hsclk_sel = 0x5;
-+		dec_start_mode0 = 0x34;
-+		div_frac_start2_mode0 = 0xc0;
-+		div_frac_start3_mode0 = 0x0b;
-+		lock_cmp1_mode0 = 0x37;
-+		lock_cmp2_mode0 = 0x04;
-+		code1_mode0 = 0x71;
-+		code2_mode0 = 0x0c;
-+		break;
-+
-+	case 2700:
-+		hsclk_sel = 0x3;
-+		dec_start_mode0 = 0x34;
-+		div_frac_start2_mode0 = 0xc0;
-+		div_frac_start3_mode0 = 0x0b;
-+		lock_cmp1_mode0 = 0x07;
-+		lock_cmp2_mode0 = 0x07;
-+		code1_mode0 = 0x71;
-+		code2_mode0 = 0x0c;
-+		break;
-+
-+	case 5400:
-+		hsclk_sel = 0x2;
-+		dec_start_mode0 = 0x4f;
-+		div_frac_start2_mode0 = 0xa0;
-+		div_frac_start3_mode0 = 0x01;
-+		lock_cmp1_mode0 = 0x18;
-+		lock_cmp2_mode0 = 0x15;
-+		code1_mode0 = 0x14;
-+		code2_mode0 = 0x25;
-+		break;
-+
-+	case 8100:
-+		hsclk_sel = 0x2;
-+		dec_start_mode0 = 0x4f;
-+		div_frac_start2_mode0 = 0xa0;
-+		div_frac_start3_mode0 = 0x01;
-+		lock_cmp1_mode0 = 0x18;
-+		lock_cmp2_mode0 = 0x15;
-+		code1_mode0 = 0x14;
-+		code2_mode0 = 0x25;
-+		break;
-+
-+	default:
-+		/* Other link rates aren't supported */
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_SVS_MODE_CLK_SEL);
-+	writel(0x3b, edp->pll + DP_QSERDES_V8_COM_SYSCLK_EN_SEL);
-+	writel(0x02, edp->pll + DP_QSERDES_V8_COM_SYS_CLK_CTRL);
-+	writel(0x0c, edp->pll + DP_QSERDES_V8_COM_CLK_ENABLE1);
-+	writel(0x06, edp->pll + DP_QSERDES_V8_COM_SYSCLK_BUF_ENABLE);
-+	writel(0x30, edp->pll + DP_QSERDES_V8_COM_CLK_SELECT);
-+	writel(hsclk_sel, edp->pll + DP_QSERDES_V8_COM_HSCLK_SEL_1);
-+	writel(0x07, edp->pll + DP_QSERDES_V8_COM_PLL_IVCO);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP_EN);
-+	writel(0x36, edp->pll + DP_QSERDES_V8_COM_PLL_CCTRL_MODE0);
-+	writel(0x16, edp->pll + DP_QSERDES_V8_COM_PLL_RCTRL_MODE0);
-+	writel(0x06, edp->pll + DP_QSERDES_V8_COM_CP_CTRL_MODE0);
-+	writel(dec_start_mode0, edp->pll + DP_QSERDES_V8_COM_DEC_START_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START1_MODE0);
-+	writel(div_frac_start2_mode0, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START2_MODE0);
-+	writel(div_frac_start3_mode0, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START3_MODE0);
-+	writel(0x96, edp->pll + DP_QSERDES_V8_COM_CMN_CONFIG_1);
-+	writel(0x3f, edp->pll + DP_QSERDES_V8_COM_INTEGLOOP_GAIN0_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_INTEGLOOP_GAIN1_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE_MAP);
-+	writel(lock_cmp1_mode0, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP1_MODE0);
-+	writel(lock_cmp2_mode0, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP2_MODE0);
-+
-+	writel(0x0a, edp->pll + DP_QSERDES_V8_COM_BG_TIMER);
-+	writel(0x0a, edp->pll + DP_QSERDES_V8_COM_CORECLK_DIV_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE_CTRL);
-+	writel(0x1f, edp->pll + DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_CORE_CLK_EN);
-+	writel(0xa0, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE1_MODE0);
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE2_MODE0);
-+
-+	writel(code1_mode0, edp->pll + DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE0);
-+	writel(code2_mode0, edp->pll + DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE0);
-+
-+	return 0;
-+}
-+
-+
-+static int qcom_edp_phy_com_resetsm_cntrl_v8(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(0x20, edp->pll + DP_QSERDES_V8_COM_RESETSM_CNTRL);
-+
-+	return readl_poll_timeout(edp->pll + DP_QSERDES_V8_COM_C_READY_STATUS,
-+				     val, val & BIT(0), 500, 10000);
-+}
-+
-+static int qcom_edp_com_clk_fwd_cfg_v8(const struct qcom_edp *edp)
-+{
-+	writel(0x3f, edp->pll + DP_QSERDES_V8_COM_CLK_FWD_CONFIG_1);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_com_bias_en_clkbuflr_v8(const struct qcom_edp *edp)
-+{
-+	/* Turn on BIAS current for PHY/PLL */
-+	writel(0x1f, edp->pll + DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_phy_power_on_v8(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
-+	       DP_PHY_PD_CTL_LANE_0_1_PWRDN | DP_PHY_PD_CTL_LANE_2_3_PWRDN |
-+	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-+	       edp->edp + DP_PHY_PD_CTL);
-+	writel(0xfc, edp->edp + DP_PHY_MODE);
-+
-+	return readl_poll_timeout(edp->pll + DP_QSERDES_V8_COM_CMN_STATUS,
-+				     val, val & BIT(7), 5, 200);
-+}
-+
-+static const struct phy_ver_ops qcom_edp_phy_ops_v8 = {
-+	.com_power_on		= qcom_edp_phy_power_on_v8,
-+	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v8,
-+	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v8,
-+	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v8,
-+	.com_configure_pll	= qcom_edp_com_configure_pll_v8,
-+	.com_configure_ssc	= qcom_edp_com_configure_ssc_v8,
-+};
-+
-+static struct qcom_edp_phy_cfg glymur_phy_cfg = {
-+	.aux_cfg = edp_phy_aux_cfg_v8,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v8),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v8,
-+	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
-+	.ver_ops = &qcom_edp_phy_ops_v8,
-+};
-+
- static int qcom_edp_phy_power_on(struct phy *phy)
- {
- 	const struct qcom_edp *edp = phy_get_drvdata(phy);
-@@ -1133,6 +1360,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id qcom_edp_phy_match_table[] = {
-+	{ .compatible = "qcom,glymur-dp-phy", .data = &glymur_phy_cfg, },
- 	{ .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc7280-edp-phy", .data = &sc7280_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
+> ---
+>  drivers/usb/typec/tipd/core.c | 297 +++++++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 293 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
+> index b558fc5ecbc35a9dabbf33c444f38173740af7c3..95218e8be65dbbb594465961b1fda76eed1e266c 100644
+> --- a/drivers/usb/typec/tipd/core.c
+> +++ b/drivers/usb/typec/tipd/core.c
+> @@ -17,6 +17,7 @@
+>  #include <linux/usb/typec.h>
+>  #include <linux/usb/typec_altmode.h>
+>  #include <linux/usb/typec_dp.h>
+> +#include <linux/usb/typec_mux.h>
+>  #include <linux/usb/typec_tbt.h>
+>  #include <linux/usb/role.h>
+>  #include <linux/workqueue.h>
+> @@ -120,6 +121,9 @@ struct tps6598x_intel_vid_status_reg {
+>  #define TPS_TASK_TIMEOUT		1
+>  #define TPS_TASK_REJECTED		3
+>  
+> +/* Debounce delay for mode changes, in milliseconds */
+> +#define CD321X_DEBOUNCE_DELAY_MS 500
+> +
+>  enum {
+>  	TPS_MODE_APP,
+>  	TPS_MODE_BOOT,
+> @@ -145,6 +149,7 @@ struct tipd_data {
+>  	irq_handler_t irq_handler;
+>  	u64 irq_mask1;
+>  	size_t tps_struct_size;
+> +	void (*remove)(struct tps6598x *tps);
+>  	int (*register_port)(struct tps6598x *tps, struct fwnode_handle *node);
+>  	void (*unregister_port)(struct tps6598x *tps);
+>  	void (*trace_data_status)(u32 status);
+> @@ -155,6 +160,7 @@ struct tipd_data {
+>  	int (*switch_power_state)(struct tps6598x *tps, u8 target_state);
+>  	bool (*read_data_status)(struct tps6598x *tps);
+>  	int (*reset)(struct tps6598x *tps);
+> +	int (*connect)(struct tps6598x *tps, u32 status);
+>  };
+>  
+>  struct tps6598x {
+> @@ -183,6 +189,17 @@ struct tps6598x {
+>  	const struct tipd_data *data;
+>  };
+>  
+> +struct cd321x_status {
+> +	u32 status;
+> +	u32 pwr_status;
+> +	u32 data_status;
+> +	u32 status_changed;
+> +	struct usb_pd_identity partner_identity;
+> +	struct tps6598x_dp_sid_status_reg dp_sid_status;
+> +	struct tps6598x_intel_vid_status_reg intel_vid_status;
+> +	struct tps6598x_usb4_status_reg usb4_status;
+> +};
+> +
+>  struct cd321x {
+>  	struct tps6598x tps;
+>  
+> @@ -192,6 +209,13 @@ struct cd321x {
+>  
+>  	struct typec_altmode *port_altmode_dp;
+>  	struct typec_altmode *port_altmode_tbt;
+> +
+> +	struct typec_mux *mux;
+> +	struct typec_mux_state state;
+> +
+> +	struct cd321x_status update_status;
+> +	struct delayed_work update_work;
+> +	struct usb_pd_identity cur_partner_identity;
+>  };
+>  
+>  static enum power_supply_property tps6598x_psy_props[] = {
+> @@ -613,9 +637,229 @@ static void tps6598x_handle_plug_event(struct tps6598x *tps, u32 status)
+>  	}
+>  }
+>  
+> +static void cd321x_typec_update_mode(struct tps6598x *tps, struct cd321x_status *st)
+> +{
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+> +
+> +	if (!(st->data_status & TPS_DATA_STATUS_DATA_CONNECTION)) {
+> +		if (cd321x->state.mode == TYPEC_STATE_SAFE)
+> +			return;
+> +		cd321x->state.alt = NULL;
+> +		cd321x->state.mode = TYPEC_STATE_SAFE;
+> +		cd321x->state.data = NULL;
+> +		typec_mux_set(cd321x->mux, &cd321x->state);
+> +	} else if (st->data_status & TPS_DATA_STATUS_DP_CONNECTION) {
+> +		struct typec_displayport_data dp_data;
+> +		unsigned long mode;
+> +
+> +		switch (TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT(st->data_status)) {
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_A:
+> +			mode = TYPEC_DP_STATE_A;
+> +			break;
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_B:
+> +			mode = TYPEC_DP_STATE_B;
+> +			break;
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_C:
+> +			mode = TYPEC_DP_STATE_C;
+> +			break;
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_D:
+> +			mode = TYPEC_DP_STATE_D;
+> +			break;
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_E:
+> +			mode = TYPEC_DP_STATE_E;
+> +			break;
+> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_F:
+> +			mode = TYPEC_DP_STATE_F;
+> +			break;
+> +		default:
+> +			dev_err(tps->dev, "Invalid DP pin assignment\n");
+> +			return;
+> +		}
+> +
+> +		if (cd321x->state.alt == cd321x->port_altmode_dp &&
+> +		   cd321x->state.mode == mode) {
+> +			return;
+> +		}
+> +
+> +		dp_data.status = le32_to_cpu(st->dp_sid_status.status_rx);
+> +		dp_data.conf = le32_to_cpu(st->dp_sid_status.configure);
+> +		cd321x->state.alt = cd321x->port_altmode_dp;
+> +		cd321x->state.data = &dp_data;
+> +		cd321x->state.mode = mode;
+> +		typec_mux_set(cd321x->mux, &cd321x->state);
+> +	} else if (st->data_status & TPS_DATA_STATUS_TBT_CONNECTION) {
+> +		struct typec_thunderbolt_data tbt_data;
+> +
+> +		if (cd321x->state.alt == cd321x->port_altmode_tbt &&
+> +		   cd321x->state.mode == TYPEC_TBT_MODE)
+> +			return;
+> +
+> +		tbt_data.cable_mode = le16_to_cpu(st->intel_vid_status.cable_mode);
+> +		tbt_data.device_mode = le16_to_cpu(st->intel_vid_status.device_mode);
+> +		tbt_data.enter_vdo = le16_to_cpu(st->intel_vid_status.enter_vdo);
+> +		cd321x->state.alt = cd321x->port_altmode_tbt;
+> +		cd321x->state.mode = TYPEC_TBT_MODE;
+> +		cd321x->state.data = &tbt_data;
+> +		typec_mux_set(cd321x->mux, &cd321x->state);
+> +	} else if (st->data_status & CD321X_DATA_STATUS_USB4_CONNECTION) {
+> +		struct enter_usb_data eusb_data;
+> +
+> +		if (cd321x->state.alt == NULL && cd321x->state.mode == TYPEC_MODE_USB4)
+> +			return;
+> +
+> +		eusb_data.eudo = le32_to_cpu(st->usb4_status.eudo);
+> +		eusb_data.active_link_training =
+> +			!!(st->data_status & TPS_DATA_STATUS_ACTIVE_LINK_TRAIN);
+> +
+> +		cd321x->state.alt = NULL;
+> +		cd321x->state.data = &eusb_data;
+> +		cd321x->state.mode = TYPEC_MODE_USB4;
+> +		typec_mux_set(cd321x->mux, &cd321x->state);
+> +	} else {
+> +		if (cd321x->state.alt == NULL && cd321x->state.mode == TYPEC_STATE_USB)
+> +			return;
+> +		cd321x->state.alt = NULL;
+> +		cd321x->state.mode = TYPEC_STATE_USB;
+> +		cd321x->state.data = NULL;
+> +		typec_mux_set(cd321x->mux, &cd321x->state);
+> +	}
+> +}
+> +
+> +static void cd321x_update_work(struct work_struct *work)
+> +{
+> +	struct cd321x *cd321x = container_of(to_delayed_work(work),
+> +					    struct cd321x, update_work);
+> +	struct tps6598x *tps = &cd321x->tps;
+> +	struct cd321x_status st;
+> +
+> +	guard(mutex)(&tps->lock);
+> +
+> +	st = cd321x->update_status;
+> +	cd321x->update_status.status_changed = 0;
+> +
+> +	bool old_connected = !!tps->partner;
+> +	bool new_connected = st.status & TPS_STATUS_PLUG_PRESENT;
+> +	bool was_disconnected = st.status_changed & TPS_STATUS_PLUG_PRESENT;
+> +
+> +	bool usb_connection = st.data_status &
+> +			      (TPS_DATA_STATUS_USB2_CONNECTION | TPS_DATA_STATUS_USB3_CONNECTION);
+> +
+> +	enum usb_role old_role = usb_role_switch_get_role(tps->role_sw);
+> +	enum usb_role new_role = USB_ROLE_NONE;
+> +	enum typec_pwr_opmode pwr_opmode = TYPEC_PWR_MODE_USB;
+> +	enum typec_orientation orientation = TYPEC_ORIENTATION_NONE;
+> +
+> +	if (usb_connection) {
+> +		if (tps->data_status & TPS_DATA_STATUS_USB_DATA_ROLE)
+> +			new_role = USB_ROLE_DEVICE;
+> +		else
+> +			new_role = USB_ROLE_HOST;
+> +	}
+> +
+> +	if (new_connected) {
+> +		pwr_opmode = TPS_POWER_STATUS_PWROPMODE(st.pwr_status);
+> +		orientation = TPS_STATUS_TO_UPSIDE_DOWN(st.status) ?
+> +			TYPEC_ORIENTATION_REVERSE : TYPEC_ORIENTATION_NORMAL;
+> +	}
+> +
+> +	bool is_pd = pwr_opmode == TYPEC_PWR_MODE_PD;
+> +	bool partner_changed = old_connected && new_connected &&
+> +		(was_disconnected ||
+> +		 (is_pd && memcmp(&st.partner_identity,
+> +				  &cd321x->cur_partner_identity, sizeof(struct usb_pd_identity))));
+> +
+> +	/* If we are switching from an active role, transition to USB_ROLE_NONE first */
+> +	if (old_role != USB_ROLE_NONE && (new_role != old_role || was_disconnected))
+> +		usb_role_switch_set_role(tps->role_sw, USB_ROLE_NONE);
+> +
+> +	/* Process partner disconnection or change */
+> +	if (!new_connected || partner_changed) {
+> +		if (!IS_ERR(tps->partner))
+> +			typec_unregister_partner(tps->partner);
+> +		tps->partner = NULL;
+> +	}
+> +
+> +	/* If there was a disconnection, set PHY to off */
+> +	if (!new_connected || was_disconnected) {
+> +		cd321x->state.alt = NULL;
+> +		cd321x->state.mode = TYPEC_STATE_SAFE;
+> +		cd321x->state.data = NULL;
+> +		typec_set_mode(tps->port, TYPEC_STATE_SAFE);
+> +	}
+> +
+> +	/* Update Type-C properties */
+> +	typec_set_pwr_opmode(tps->port, pwr_opmode);
+> +	typec_set_pwr_role(tps->port, TPS_STATUS_TO_TYPEC_PORTROLE(st.status));
+> +	typec_set_vconn_role(tps->port, TPS_STATUS_TO_TYPEC_VCONN(st.status));
+> +	typec_set_orientation(tps->port, orientation);
+> +	typec_set_data_role(tps->port, TPS_STATUS_TO_TYPEC_DATAROLE(st.status));
+> +	power_supply_changed(tps->psy);
+> +
+> +	/* If the plug is disconnected, we are done */
+> +	if (!new_connected)
+> +		return;
+> +
+> +	/* Set up partner if we were previously disconnected (or changed). */
+> +	if (!tps->partner) {
+> +		struct typec_partner_desc desc;
+> +
+> +		desc.usb_pd = is_pd;
+> +		desc.accessory = TYPEC_ACCESSORY_NONE; /* XXX: handle accessories */
+> +		desc.identity = NULL;
+> +
+> +		if (desc.usb_pd)
+> +			desc.identity = &st.partner_identity;
+> +
+> +		tps->partner = typec_register_partner(tps->port, &desc);
+> +		if (IS_ERR(tps->partner))
+> +			dev_warn(tps->dev, "%s: failed to register partnet\n", __func__);
+> +
+> +		if (desc.identity) {
+> +			typec_partner_set_identity(tps->partner);
+> +			cd321x->cur_partner_identity = st.partner_identity;
+> +		}
+> +	}
+> +
+> +	/* Update the TypeC MUX/PHY state */
+> +	cd321x_typec_update_mode(tps, &st);
+> +
+> +	/* Launch the USB role switch */
+> +	usb_role_switch_set_role(tps->role_sw, new_role);
+> +
+> +	power_supply_changed(tps->psy);
+> +}
+> +
+> +static void cd321x_queue_status(struct tps6598x *tps)
+> +{
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+> +
+> +	cd321x->update_status.status_changed |= cd321x->update_status.status ^ tps->status;
+> +
+> +	cd321x->update_status.status = tps->status;
+> +	cd321x->update_status.pwr_status = tps->pwr_status;
+> +	cd321x->update_status.data_status = tps->data_status;
+> +
+> +	cd321x->update_status.partner_identity = tps->partner_identity;
+> +	cd321x->update_status.dp_sid_status = cd321x->dp_sid_status;
+> +	cd321x->update_status.intel_vid_status = cd321x->intel_vid_status;
+> +	cd321x->update_status.usb4_status = cd321x->usb4_status;
+> +}
+> +
+> +static int cd321x_connect(struct tps6598x *tps, u32 status)
+> +{
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+> +
+> +	tps->status = status;
+> +	cd321x_queue_status(tps);
+> +	schedule_delayed_work(&cd321x->update_work, msecs_to_jiffies(CD321X_DEBOUNCE_DELAY_MS));
+> +
+> +	return 0;
+> +}
+> +
+>  static irqreturn_t cd321x_interrupt(int irq, void *data)
+>  {
+>  	struct tps6598x *tps = data;
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+>  	u64 event = 0;
+>  	u32 status;
+>  	int ret;
+> @@ -652,9 +896,15 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+>  		if (!tps->data->read_data_status(tps))
+>  			goto err_unlock;
+>  
+> -	/* Handle plug insert or removal */
+> -	if (event & APPLE_CD_REG_INT_PLUG_EVENT)
+> -		tps6598x_handle_plug_event(tps, status);
+> +	tps->status = status;
+> +	cd321x_queue_status(tps);
+> +
+> +	/*
+> +	 * Cancel pending work if not already running.
+> +	 * We will requeue the work after CD321X_DEBOUNCE_DELAY_MS regardless.
+> +	 */
+> +	cancel_delayed_work(&cd321x->update_work);
+> +	schedule_delayed_work(&cd321x->update_work, msecs_to_jiffies(CD321X_DEBOUNCE_DELAY_MS));
+>  
+>  err_unlock:
+>  	mutex_unlock(&tps->lock);
+> @@ -1014,6 +1264,13 @@ cd321x_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
+>  	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+>  	int ret;
+>  
+> +	/*
+> +	 * This is only called from _probe such that update_work can be
+> +	 * initialized and then scheduled for the first time to handle
+> +	 * plugs already connected at boot time.
+> +	 */
+> +	INIT_DELAYED_WORK(&cd321x->update_work, cd321x_update_work);
+> +
+>  	ret = tps6598x_register_port(tps, fwnode);
+>  	if (ret)
+>  		return ret;
+> @@ -1022,10 +1279,26 @@ cd321x_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
+>  	if (ret)
+>  		goto err_unregister_port;
+>  
+> +	cd321x->mux = fwnode_typec_mux_get(fwnode);
+> +	if (IS_ERR(cd321x->mux)) {
+> +		ret = PTR_ERR(cd321x->mux);
+> +		goto err_unregister_altmodes;
+> +	}
+> +
+> +	cd321x->state.alt = NULL;
+> +	cd321x->state.mode = TYPEC_STATE_SAFE;
+> +	cd321x->state.data = NULL;
+>  	typec_set_mode(tps->port, TYPEC_STATE_SAFE);
+>  
+>  	return 0;
+>  
+> +err_unregister_altmodes:
+> +	if (cd321x->port_altmode_dp)
+> +		typec_unregister_altmode(cd321x->port_altmode_dp);
+> +	if (cd321x->port_altmode_tbt)
+> +		typec_unregister_altmode(cd321x->port_altmode_tbt);
+> +	cd321x->port_altmode_dp = NULL;
+> +	cd321x->port_altmode_tbt = NULL;
+>  err_unregister_port:
+>  	typec_unregister_port(tps->port);
+>  	return ret;
+> @@ -1042,6 +1315,8 @@ cd321x_unregister_port(struct tps6598x *tps)
+>  {
+>  	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+>  
+> +	if (cd321x->mux)
+> +		typec_mux_put(cd321x->mux);
+>  	typec_unregister_altmode(cd321x->port_altmode_dp);
+>  	cd321x->port_altmode_dp = NULL;
+>  	typec_unregister_altmode(cd321x->port_altmode_tbt);
+> @@ -1454,6 +1729,13 @@ tps25750_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
+>  	return 0;
+>  }
+>  
+> +static void cd321x_remove(struct tps6598x *tps)
+> +{
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+> +
+> +	cancel_delayed_work_sync(&cd321x->update_work);
+> +}
+> +
+>  static int tps6598x_probe(struct i2c_client *client)
+>  {
+>  	const struct tipd_data *data;
+> @@ -1555,7 +1837,7 @@ static int tps6598x_probe(struct i2c_client *client)
+>  			goto err_unregister_port;
+>  		if (!tps->data->read_data_status(tps))
+>  			goto err_unregister_port;
+> -		ret = tps6598x_connect(tps, status);
+> +		ret = tps->data->connect(tps, status);
+>  		if (ret)
+>  			dev_err(&client->dev, "failed to register partner\n");
+>  	}
+> @@ -1612,6 +1894,9 @@ static void tps6598x_remove(struct i2c_client *client)
+>  	else
+>  		devm_free_irq(tps->dev, client->irq, tps);
+>  
+> +	if (tps->data->remove)
+> +		tps->data->remove(tps);
+> +
+>  	tps6598x_disconnect(tps, 0);
+>  	tps->data->unregister_port(tps);
+>  	usb_role_switch_put(tps->role_sw);
+> @@ -1682,6 +1967,7 @@ static const struct tipd_data cd321x_data = {
+>  		     APPLE_CD_REG_INT_DATA_STATUS_UPDATE |
+>  		     APPLE_CD_REG_INT_PLUG_EVENT,
+>  	.tps_struct_size = sizeof(struct cd321x),
+> +	.remove = cd321x_remove,
+>  	.register_port = cd321x_register_port,
+>  	.unregister_port = cd321x_unregister_port,
+>  	.trace_data_status = trace_cd321x_data_status,
+> @@ -1691,6 +1977,7 @@ static const struct tipd_data cd321x_data = {
+>  	.read_data_status = cd321x_read_data_status,
+>  	.reset = cd321x_reset,
+>  	.switch_power_state = cd321x_switch_power_state,
+> +	.connect = cd321x_connect,
+>  };
+>  
+>  static const struct tipd_data tps6598x_data = {
+> @@ -1708,6 +1995,7 @@ static const struct tipd_data tps6598x_data = {
+>  	.init = tps6598x_init,
+>  	.read_data_status = tps6598x_read_data_status,
+>  	.reset = tps6598x_reset,
+> +	.connect = tps6598x_connect,
+>  };
+>  
+>  static const struct tipd_data tps25750_data = {
+> @@ -1725,6 +2013,7 @@ static const struct tipd_data tps25750_data = {
+>  	.init = tps25750_init,
+>  	.read_data_status = tps6598x_read_data_status,
+>  	.reset = tps25750_reset,
+> +	.connect = tps6598x_connect,
+>  };
+>  
+>  static const struct of_device_id tps6598x_of_match[] = {
+> 
+> -- 
+> 2.34.1
+> 
 
 -- 
-2.45.2
-
+heikki
 
 -- 
 linux-phy mailing list
