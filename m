@@ -4,169 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2273CAC583
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 15:48:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42657CAC583
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:02:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HcFTQuGB75fvYvEZTovFNFAgsB+lICIfOriMibBMBRc=; b=liYHx3l3pf52rT
-	dSDsWSzhFg6V7dj3uViXXywmRBlH7ie2+sw+ZN7FENXkIgEDA4jM61QM62Lk89Dmja/1inOX9DNSb
-	/8iLi1jcTEi1Sak6skgSblKPDwznsivq8CeTd2sEB+OLsr70x/pLv05m7dNJfbuZbOzOHSpS+PPeX
-	y7dHsHYCHBBo8IyDWR2OL1LFt5ToHZb7CCiaYoOC+uVQa6T6n1ZQXFLBXRvWAgBwtkOI2jQAwXcd5
-	e/YGRx49Mu1agMzzjjk+ScWlujU7ly7vjOxTBj/vnGGonRQfVI03Wyxb8C51yNIJrYqCwt14CYavI
-	WbwaA8aMM3ORPut9zDpw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=IXDllI/nFAw/0msYdu916S9hmjk/XRtak5WPutOCigw=; b=gCZPC8706Cp1LwDSD9YQX8Q08d
+	Q5w8S6WxQdwZt4Z4x57+rcu2v9px0WxXhpXMpy0Cp7p++8kvo9iHi8v0VGz6in9VZUfLUTl9Kt3UM
+	6idD4Z+fnP3rIx14MnaErbgU78rJ+sFW/xSqE+nbt3vqJWO7t6EMQ/Ous4Sxc9FAHb9Wr/FXTAOTq
+	faNeyzLGswSHXpGRw+7aQNFraob7aicnnpQ4GXQffzcfoedHo84oU8IYKRJrFpW3Yeh+oyUv3XBka
+	v0QYtulqJOVcqlaebJWFylEbAWzgAXV9m3W+eejlkvmCanJnfEeqBTYS1zzNAqcBd/BCet8+d8X4b
+	Cebr2hLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw0aS-00000008Gqa-1n3U;
-	Tue, 09 Sep 2025 15:48:52 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uw0nL-00000008NPN-3MEE;
+	Tue, 09 Sep 2025 16:02:11 +0000
+Received: from mail-wr1-f42.google.com ([209.85.221.42])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvwu0-00000006t0G-11La
-	for linux-phy@bombadil.infradead.org;
-	Tue, 09 Sep 2025 11:52:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=; b=oEU0fSheogp9wlL2HXPfmP0qQm
-	p3ngfcU8OMeS5VeeH7idv2iLL8nigA1KEt8t139S2YOjSeSRbll+2dWyPvsi4POomv2P2Dyb2GlWw
-	TPE+PmHfM1vUyBBKuOmVqSliGpZnJVJLyhCZOVeqYURUjdXgqxRepC7oJuIRvf1xPcv9AQu3me4oE
-	pVcLL2F+pa5w2fAlaRhvuo20Yhge6/+1DF/gn8lA12vXOc9doJD5qHPuCTQpWTl1MhD1DwRUoY92d
-	TruqvkekZp/FlzbirJCZW1QC5wpFpk+tB3AzuRsB1jWEXLww3MdNb70/PtmvYvoF+b9g8fjVVEvOP
-	5uPwsStA==;
-Received: from mail-japanwestazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c407::1] helo=OS0P286CU010.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvwtu-00000005KzL-37l1
+	id 1uvxRf-000000073zE-3ugy
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 11:52:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dpcOLdavcKj5JcHB8CizCDU0H+JBfQrqFvJ0XELLYldfletUvmD19fJItix2kGOABtso9pWggnbua3rUT8V6c+0EGQbSHlN+WuNpFq6+HaPNnHkLf6oGlvTSzkxfFOipQ6e+fOLuNWfJGlbAUTjQ1gZMGDhMvMas6oVDxD6n8ciW2dRZV46fdqTGe1ozthauQBP2R+axXGB9/PXVBYcOHiYCEbagNjSqjKST5gTQmIZI5885M7pPseealwOOKfW5dwpAtEbmGp5KUFF4Hp/wiydUGQrBfJhyGX7REUlR8MJnYcWw1pyxpnp4yl/Y4g1ZtY0DFGL4uOsLWT/TJvaiFg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=;
- b=kaB143D6I/HWgBOhnkCrwNA7Z1CjlkuV74+vOy/nvxSU3IxAQshWqUQKC/ZNzJK+tlT+sf5V5/AZbAr4QBInbxOgbf+7tSLLI9CWIlSgAXlrG2bmyChSlEr7e5HO1pgrNCv9dolHfo/BuEJA06Rs5IZKOwnj+xVebvBrAJTRvmfY6ZrKL8irE87OGpv115otYtjcMxO5S2l9tfW50iqqSBecvyanNnlM2gQ4kjoyxexbAVlgFTN2I+ddBPhQ41YymZ/ugyKOMy8cbz4NdnsVmXsawJXfUivmb/gH9oeQgf9geRK0+8FhNwXOYjjHwZr/TGncOVFl0jDhyG6oQgWn5g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=;
- b=NUwiwYTZCEatfhihLpDgUH1oRCvsFtoEQNMOOHsxK0QKFX6GYbqnJ9Bl0rKBLpDE8R4YQp51Pp6xDtlEciemKwH95R+RTiQluLt7BwvElfUk9eG7wojcDzPdFFlOacu/PbESkkfOrcs1J0ND5VeB1wd2hQMl/veaDAeEvSr6Ass=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYYPR01MB8245.jpnprd01.prod.outlook.com (2603:1096:400:119::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Tue, 9 Sep
- 2025 11:52:29 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%3]) with mapi id 15.20.9094.021; Tue, 9 Sep 2025
- 11:52:25 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Vinod Koul <vkoul@kernel.org>, biju.das.au <biju.das.au@gmail.com>
-CC: Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
-	magnus.damm <magnus.damm@gmail.com>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>, Prabhakar Mahadev Lad
-	<prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: RE: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
-Thread-Topic: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
-Thread-Index: AQHcEfZv1w9Ut+eaXkKiVoFJ2qvdQLR+lu2AgAxFR0A=
-Date: Tue, 9 Sep 2025 11:52:24 +0000
-Message-ID: <TY3PR01MB1134620DEE9D31EB9C3AC05A9860FA@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20250820171812.402519-1-biju.das.jz@bp.renesas.com>
- <20250820171812.402519-5-biju.das.jz@bp.renesas.com> <aLXJozzGsbIndK9P@vaman>
-In-Reply-To: <aLXJozzGsbIndK9P@vaman>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYYPR01MB8245:EE_
-x-ms-office365-filtering-correlation-id: 17018431-52de-44f5-889f-08ddef9757eb
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|376014|38070700021;
-x-microsoft-antispam-message-info: =?us-ascii?Q?Kl4me3JLLrvvQqfKq9Tz990zjL6Hqu6lZ3PvapHS85DX4lJclO2l2OG2Ihtp?=
- =?us-ascii?Q?Sdj4qe60LB+yJIW5jrzepyyvFNsrE2U4CpzTJ5hkS9EZ1AiLFRYP1Qh3wmdc?=
- =?us-ascii?Q?yWVYaQZ/Fn01TF5h3kqs/S6gTJpQrumFi6j/XBeyDfB7Gl/lb4OPLXjUtLci?=
- =?us-ascii?Q?Z49050SdpA/CReC0JNVnu79cpgOYn8R3YynnzCY1pA1bStg8V1zJtGMob/Ha?=
- =?us-ascii?Q?J5nxhasCRjE3OW+pGK6HbgsoaEMPJLdiJ9rakbd0NmswOs+ui0SZcfYZ5k24?=
- =?us-ascii?Q?1pkEQhRBCs5ow+Jp8c20Zbl/it56KjmwpixFHQTY/xYdfi3QjMPiQjRcHIuA?=
- =?us-ascii?Q?c2VQGTu5asRBQzslfSu8A88RpS7HsbAjE0wRg0fvzb5WGBtBl+k2alDrwiOr?=
- =?us-ascii?Q?VvD1nINrXo2kUAnsUsFL6jFMZFC9b1AZ/D+TGhyk7+NiTQX7pa95Hc4iJJwX?=
- =?us-ascii?Q?A1kPWRJXO5Q0N8+vRDWHWPW7lNcZZEu0i9igGopWCOUHS5oijI0lCpnNeT+k?=
- =?us-ascii?Q?HLjwhgRx1MM9QHouzeUlpxy2TMA4kSF0AR7RsYErCWVi0TskAJwoZnpP3Nuf?=
- =?us-ascii?Q?YM3KVS1oAy137Oz85F94Crxgtj2GcUZN/kYIqA97SfxG0YvYPW8QOw54lwYc?=
- =?us-ascii?Q?DqGmshw2UgcNgYbDNlN4xwx34CPpSsaDwMQ8AzguN4047sgOURVz6Zf78nPZ?=
- =?us-ascii?Q?UfxQqMnAgNarpTHnTGQDcwpGLNdzmyeSXvAAKDM7GI7cjYMsJS/p+Qx+q7S3?=
- =?us-ascii?Q?i2uQgGhNKs4uTgGpy/l3XOeWpkNOUTyYZgOGcd8Lbks7RVubLg3em3a2gyJE?=
- =?us-ascii?Q?pj0KC0ClIWplqZe4Ftw7fT+GrbqAnM5WCEG1CYP54GyMUvLxzlRfoPJB5AOa?=
- =?us-ascii?Q?s0yf2D73VxoYoCtlsuV38Z/A031Yk7dUpLk55tsgiwIoQbCs7HSxnmh6MXVN?=
- =?us-ascii?Q?IEmSONB377/YyXkP0qxIWCSNINLMQYqrDGodH0RRyy4kMuhZYZqpgSgYOuq8?=
- =?us-ascii?Q?EeiBohiaQTWEiANGvEpS5wivIbkzXDYfLMaBeebWSanEX+IX+G7pWCNJcaRJ?=
- =?us-ascii?Q?KxWFs+chNYoElP4PAAcntG/P6dhFmG1/FICAMotpnV8/33wdJqMNOD5+w6vJ?=
- =?us-ascii?Q?bU0oietlfAuSbWMY567bjFKbZtuI7Dbj1zWhh2IObDDEEyYvT0D/oeGhNO38?=
- =?us-ascii?Q?w1Xb5WSwnyLTa5B0nTaEinFoViyR41HxrQ6L1J3h9qBfBRX9wIeKaAO6YZ+p?=
- =?us-ascii?Q?sJTPVfp5sHtWXFM/zgpPSpL48qG4yYnUfQydCYGTvYBidY+EgoVuDQWR5f4I?=
- =?us-ascii?Q?t9k5QXtEn0usNG0vRmCj5TPQtIzRRsflC90TsN810LJ9bn3YxLCZ14e3cOxs?=
- =?us-ascii?Q?kBpFTN5OyuqA2cZNCd42/ly5tjybIiww95mv2uDM1lJ18vfe5v7IrDhLi96u?=
- =?us-ascii?Q?mqrdzzjCsnph16U3clD3SwcSPGp5/5gKHcQct2F96CS/5fU+caXqAA=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?wfIsdgOZYjzH6UNRB7m7qvjgXp9nDtisByETpJLz5tG34hk95xZJxT51Fsj9?=
- =?us-ascii?Q?yxAKiy7SxBn0r11qwPeMshvRwWqK61Ihw2enK0SbRDMwmT7PtgnoFIJhswnF?=
- =?us-ascii?Q?Eko895GuIYhDMLGJEcWE5EsbsC7Vrd+uW1To5gOsiIEEY4O64PHFCrAmGmAU?=
- =?us-ascii?Q?LaO+tK7kaq3KtNjIydX3QX48O2xgpwaTZK8v1ylYOhZDfIxLBz5k7xBuG8qC?=
- =?us-ascii?Q?WIY5qZ251bkheXTkUdtHI9VHPTYFNFYJwgd6DM0ckc6bXtLeVjQ23hqVhB1a?=
- =?us-ascii?Q?SkWtgPIpOmsEosUpQ6LfR1Yf0Nv8Z6hUG1ho9Ztd14nfI/lc7NCCU2M/GYoe?=
- =?us-ascii?Q?jgjzKsYAdtiehrhu1v1qxkC0hJRkb/UYQ36AawMsgcjeXn/yGGVjHS9+/aGh?=
- =?us-ascii?Q?dubrx7qXgxsNRmH56jWuk/5yRu/A2nKGkS1HxKLjUNfAmQkLwI0Z5MEgW3TU?=
- =?us-ascii?Q?jrW32RWM/TNZPcG6pwdL+fWedvdiIbXmTJXtLCWFLwUW6GGMTXU+uZgvGpya?=
- =?us-ascii?Q?ExmZWWTpuTpjfSp6J6FgN//9HdKo/7jQOw4KdhkrFzAr8rqI+FLBbVUVwsY0?=
- =?us-ascii?Q?lkva9SpWdQrmW4m8l9LjkG9UmGCKzchIVysDFGFi2DglrSvuB14onl2Ayn51?=
- =?us-ascii?Q?2ThtwcJ7qnv0fDvsEx5/h+hYH3zD3hZdSYcVBjva47chSL1BFXIrgsF+qjzR?=
- =?us-ascii?Q?IfrIdYB8Z11Zr0UALET4hIiIJ34TkESfY9OOkj0fYFKAS6xN7kDP0dUvfeGU?=
- =?us-ascii?Q?5+RYi9NV2qjQedWF1+IUygGEEZeehHV9ZwCIBTO4R/PLDGpMd5nF40e1+eBs?=
- =?us-ascii?Q?aFpb79XCfaEIdcWw7AdYfEwnBiFY/rXnQu8z6Nh01jiiER71wnS8cO69T1o2?=
- =?us-ascii?Q?EwON09+oXEEVZ+5HA7x+PmOPo4M+SDVzeffJ4uDPChtKhaaTFKDm6ekNhCam?=
- =?us-ascii?Q?tzy4WvmtfXmeV2wxy+FF28H4mco8aNZK9IbIfHpeYbc72R+LkJWeS4VIG9LH?=
- =?us-ascii?Q?4NS5uGR2gbNt3sY7HQ4ivz6i6JfqIRAh8BEwD2bvUj4uAkphk458bCp0/a8A?=
- =?us-ascii?Q?lKFXvy/Paq0huOCK5O/fcCbu4r89NZL5WsrEUGm8VRKvuEb2PTxu7osm7qQ1?=
- =?us-ascii?Q?2PkNIYilQ1DunJ/cqD5Jxj3pd/luWy6P2gxsAXu5dy8H+R1CBTYkRwr/c2Gl?=
- =?us-ascii?Q?nLJSO551V14BNiUKI8snVxmJthxwZ+Pzf8gzjuAAEqgYlu4Yh4Q8tG1GotZ5?=
- =?us-ascii?Q?fQdNeQkrN8oe9GecPghCfjv4Ldgewu+0WeCgFdLZhbIIt3qWrxJ8TbMIZRNT?=
- =?us-ascii?Q?4rlP/PTi/l40ptBJtVYA71DZL47YlgD4AXheUMwu5vkQtwYYQV6P1av1a4aH?=
- =?us-ascii?Q?r4bUwBMUYDDJSjpZZJgNk9wDNY0oxC9RHYPFBPG4///4P7nJcWG8fyBb7ssD?=
- =?us-ascii?Q?zssoM/p7rfSuRfoAbw+nyhcId9sZr+KGgI3uoJRGmHv+aRtUKcIxchpLWENq?=
- =?us-ascii?Q?VU17TbQ7BKyWMKKU8/eFxMMIVpyKOMLPNfdcO2ywEJ2GHcq9OU+4TfGEA4K3?=
- =?us-ascii?Q?Ds0kxeVYf3VxFnXGYl0KLCwPAIxHxwV9E1b3zZ2pceMf5LT+V9usLYJ8TDv3?=
- =?us-ascii?Q?Ig=3D=3D?=
+	Tue, 09 Sep 2025 12:27:37 +0000
+Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-3dea538b826so4781437f8f.2
+        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 05:27:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1757420853; x=1758025653; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JMgQJrHR/R7kuH76u+Ory7LEmNQkrYiIPQJV3CNxb6g=;
+        b=cVtY2YO9Ab9lGES5ZoHqbqTP38BMFXUYlmKGsmKBwXfsNv41NuWU6m2D8mPDYaQMXn
+         3UFN87lc0xXgick9q8Yf4r5tzyZF6gJbeYw0VeAv2yeWcKNOEflsqR6+LsJk6WiNlGWK
+         Hm3ctMI/E5ZlYmnjAt7PfJQ5f/NEbzL69vUvfM1sk/y6v2CBi44AlkKY4plwqcr6s9KP
+         coim7pCRL6KcuEBHIOpCB9EkIoDoo0IqdtqeOY3Twx9XDqswazf2wm6rOimJBupgGEWm
+         VKQeIT2mnw86AaB8JpAt2LoS9W0dAJsQkOMiQrL7OMrSDcIRLdnPKA73gilfbtm525pZ
+         dNVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1757420853; x=1758025653;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=JMgQJrHR/R7kuH76u+Ory7LEmNQkrYiIPQJV3CNxb6g=;
+        b=R7U0hO1IaaF2QvLwO38DgWuAJbEhyH7yqHSZUYQxoA5EuioemTyDuBbAt9mUYlQcz9
+         f4z61n0erO3m1aHtFArbKFRmCJlAng3V/p+extH5QQdoZl/uwSZ2TmQn9i7kNt2Lf+ze
+         zJYhY8ivf7YRWW06TF/rx1166rfcSkNznXyjhoNoSDhYCQoj0wJZ6XuHTa6xoRcmS56R
+         eXRpaQitV/pmsv7Pn5P3mHmY45wDrc1AWhHY1VYYIYOt6UJwy1HjqOTcCJQkJUN3Qtug
+         31ZmANHynXGNr9S+ugPA4ctmQtom7NgO050/jRR23OMc4s1u1CJukJu/z2klp04qsp2P
+         z7qg==
+X-Forwarded-Encrypted: i=1; AJvYcCWwofRrK7dwa6MUL5ITa23AWSKUZIjkBARABma5HOU9dmUjenYRAljyTAiyDvj8/Gr73uBe0XJia5Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwCEHwLBGLiBa5v1KAnuKp9BRI491AQVBtJKLauGGuLXyOA1bPV
+	Mx/1pZnrlIt8U5E4pmDlNSBN9H0ntTMynoTHRT84cliwzx3QSuEW85kzb326cYoXzSY=
+X-Gm-Gg: ASbGnctw3Sv639SuxFDuzDLbVbd6MBddi8JSdkn2znuTnQfWhZVM1g5ThxYLmzBHOlm
+	FQYWIBx4KYbLJXUS2pp0Lm7YXclmbE04eheWlBJaczozKT8uhiFWPJkvMrPeWUh1x1oULC9rF3v
+	kmJ16udG7rFujvlGTov+IsCyg56SSMUrkMV7v+7UD4J0HJYhDyaQYWdSogdWrqHBJ/6gzWzq87s
+	UqqkR5sGjoffa+umzhCOAEK/TjskP4sl3Ob3aUdNMhNAqa5xBVus+mEYMPDwD5zNspiNaPGga+k
+	R3rTmQ7BJYauzD5zn3zxpyo2itvK1TixPNk7766mAq6C8KJvGELwQm72IQto/TIRV9yB+jcIC5N
+	fZXPefiids+xN73RiSCs6raJTDh/ErGQsjNlvFwt8zs0932Vj2yfoZ0VKEX+sudQACCGndodOXy
+	Yz0ctutYg=
+X-Google-Smtp-Source: AGHT+IEuiDiglPwmV1PehXcY70hodMwYIFyGOdsXoLipFNPjAGrinssVi1Zvi2KS3OSRzXamJ0+FXg==
+X-Received: by 2002:a05:6000:2f87:b0:3d4:eac4:9db2 with SMTP id ffacd0b85a97d-3e63736d7c8mr11407057f8f.5.1757420853362;
+        Tue, 09 Sep 2025 05:27:33 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:25ab:4e12:265b:4b6? ([2a01:e0a:3d9:2080:25ab:4e12:265b:4b6])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45dcff67787sm237340005e9.16.2025.09.09.05.27.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Sep 2025 05:27:33 -0700 (PDT)
+Message-ID: <cdcc80aa-45b0-436f-99f9-b3f09999a0fe@linaro.org>
+Date: Tue, 9 Sep 2025 14:27:31 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 17018431-52de-44f5-889f-08ddef9757eb
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2025 11:52:25.0084
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cWCS1lfXgDKuKJJW16HxTny15X+fisnKpG/dpAEUOc0Osx5Bq2SAqu342O+8nL+5rEOE2SHc5yvmfg8LGrGNMgRwcmnUNHdOIyLjQ8zYeaA=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB8245
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v3 3/5] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Document lanes mapping when not using in USB-C complex
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20250908-topic-x1e80100-hdmi-v3-0-c53b0f2bc2fb@linaro.org>
+ <20250908-topic-x1e80100-hdmi-v3-3-c53b0f2bc2fb@linaro.org>
+ <7dzfcuvr45h4iailtjutqjev7lofoqu7w6ob77gehgmy7mctpk@k7oob4wj3c7a>
+ <14d58c6d-ca20-4349-8031-9906a4539fef@linaro.org>
+ <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_125243_152087_A1EECAC7 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250909_052735_994607_A9EEBAB2 
+X-CRM114-Status: GOOD (  19.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -178,40 +139,140 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-Thanks for the feedback.
-
-> -----Original Message-----
-> From: Vinod Koul <vkoul@kernel.org>
-> Sent: 01 September 2025 17:28
-> Subject: Re: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
+On 09/09/2025 13:16, Dmitry Baryshkov wrote:
+> On Tue, Sep 09, 2025 at 09:14:49AM +0200, Neil Armstrong wrote:
+>> On 08/09/2025 23:14, Dmitry Baryshkov wrote:
+>>> On Mon, Sep 08, 2025 at 03:04:20PM +0200, Neil Armstrong wrote:
+>>>> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+>>>> of a combo glue to route either lanes to the 4 shared physical lanes.
+>>>>
+>>>> The routing of the lanes can be:
+>>>> - 2 DP + 2 USB3
+>>>> - 4 DP
+>>>> - 2 USB3
+>>>>
+>>>> The layout of the lanes was designed to be mapped and swapped
+>>>> related to the USB-C Power Delivery negociation, so it supports
+>>>> a finite set of mappings inherited by the USB-C Altmode layouts.
+>>>>
+>>>> Nevertheless those QMP Comby PHY can be used to drive a DisplayPort
+>>>> connector, DP->HDMI bridge, USB3 A Connector, etc... without
+>>>> an USB-C connector and no PD events.
+>>>>
+>>>> Document the data-lanes on numbered port@0 out endpoints,
+>>>> allowing us to document the lanes mapping to DisplayPort
+>>>> and/or USB3 connectors/peripherals.
+>>>>
+>>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>>>> ---
+>>>>    .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 59 +++++++++++++++++++++-
+>>>>    1 file changed, 58 insertions(+), 1 deletion(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>>> index 5005514d7c3a1e4a8893883497fd204bc04e12be..51e0d0983091af0b8a5170ac34a05ab0acc435a3 100644
+>>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>>> @@ -81,10 +81,67 @@ properties:
+>>>>      ports:
+>>>>        $ref: /schemas/graph.yaml#/properties/ports
+>>>> +
+>>>>        properties:
+>>>>          port@0:
+>>>> -        $ref: /schemas/graph.yaml#/properties/port
+>>>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>>>>            description: Output endpoint of the PHY
+>>>> +        unevaluatedProperties: false
+>>>> +
+>>>> +        properties:
+>>>> +          endpoint:
+>>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+>>>> +            unevaluatedProperties: false
+>>>> +
+>>>> +          endpoint@0:
+>>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+>>>> +            description: Display Port Output lanes of the PHY when used with static mapping
+>>>> +            unevaluatedProperties: false
+>>>> +
+>>>> +            properties:
+>>>> +              data-lanes:
+>>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
+>>>> +                minItems: 2
+>>>
+>>> Nit: DP can work in a 1-lane mode. Do we nned to support that in the PHY?
+>>
+>> So the PHY already supports 1-lane, but the QMP Combo only supports
+>> mapping 2+2 or 4, but nevetheless we can still decscribe 1 lane in DT
+>> int both in & out endpoint and still should work fine.
+>>
+>> Do you think this should be done now ?
 > 
-> On 20-08-25, 18:17, Biju wrote:
-> 
-> > +static int rzg3e_phy_usb3test_phy_init(void __iomem *base) {
-> > +	int ret;
-> > +	u32 val;
-> > +
-> > +	writel(0x00000100, base + USB3_TEST_CREGCTRL);
-> > +	writel(0x00000303, base + USB3_TEST_RSTCTRL);
-> > +	fsleep(20);
-> > +
-> > +	writel(0x00000004, base + USB3_TEST_CLKCTRL);
-> > +	writel(0x0000000d, base + USB3_TEST_LANECONFIG0);
-> > +	writel(0x00000301, base + USB3_TEST_RSTCTRL);
-> 
-> Magic numbers...?
+> Do we support it in the PHY hardware?
 
-OK will add macros to make it meaningful.
+The PHY definitely supports 1 lanes, in fact DP the code will cycle over 4, 2 and 1 lane.
 
-Cheers,
-Biju
+Neil
+
+> 
+>>
+>> Neil
+>>
+>>>
+>>>> +                maxItems: 4
+>>>> +                oneOf:
+>>>> +                  - items: # DisplayPort 2 lanes, normal orientation
+>>>> +                      - const: 0
+>>>> +                      - const: 1
+>>>> +                  - items: # DisplayPort 2 lanes, flipped orientation
+>>>> +                      - const: 3
+>>>> +                      - const: 2
+>>>> +                  - items: # DisplayPort 4 lanes, normal orientation
+>>>> +                      - const: 0
+>>>> +                      - const: 1
+>>>> +                      - const: 2
+>>>> +                      - const: 3
+>>>> +                  - items: # DisplayPort 4 lanes, flipped orientation
+>>>> +                      - const: 3
+>>>> +                      - const: 2
+>>>> +                      - const: 1
+>>>> +                      - const: 0
+>>>> +            required:
+>>>> +              - data-lanes
+>>>> +
+>>>> +          endpoint@1:
+>>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+>>>> +            description: USB Output lanes of the PHY when used with static mapping
+>>>> +            unevaluatedProperties: false
+>>>> +
+>>>> +            properties:
+>>>> +              data-lanes:
+>>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
+>>>> +                minItems: 2
+>>>> +                oneOf:
+>>>> +                  - items: # USB3, normal orientation
+>>>> +                      - const: 1
+>>>> +                      - const: 0
+>>>> +                  - items: # USB3, flipped orientation
+>>>> +                      - const: 2
+>>>> +                      - const: 3
+>>>> +
+>>>> +            required:
+>>>> +              - data-lanes
+>>>>          port@1:
+>>>>            $ref: /schemas/graph.yaml#/properties/port
+>>>>
+>>>> -- 
+>>>> 2.34.1
+>>>>
+>>>
+>>
+> 
+
 
 -- 
 linux-phy mailing list
