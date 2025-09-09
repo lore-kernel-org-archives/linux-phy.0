@@ -4,91 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6418CAC587
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:02:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F20DDCA0FED
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:42:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+dLqKgV2DxBUROuUlfKqJEkLTnrP2RII/o5w45OWLMM=; b=UewQq0pgj3k+BW
-	zUzOB7Zsne89luFFr1wIh5jUsTACBagGW4jxfeCN7D9wav7ehlJsPMJhUXMuNjLVne2fKvENQT59Y
-	srlokl/4Pl67EKnpVXF5WQUEHNlnjHMW62chNfoRuwFX7XTs4DmBGuYg3V7cX8VB+/MlU4rkAP6dV
-	2P91m4rJ2wW6naRhZ1o+gYM7AC/cJIDtq2KQt2FimjKhYvlvx2d1nIYqnvqPW2airfaG++dlHAw6s
-	W8c7YpXecJbNoU+4PTPHYKTif4s/e/L3Ri2aiXy+Fj9GH+3hk6bc+pQ37Ifythwz0ttCy/Apz/QSK
-	xIcrck656zeIcVB7Xhhg==;
+	List-Owner; bh=HeYPshskXUpcHofmy3vCFHshNVxBWqQftP3Mpa/QQw8=; b=dDXbBJjCrvRTsU
+	6CdN9ySDHsnLvXZeStEtA8s6Vp/P2TjeofJOcoHgW6hz5CT8fK0VGAZIW/ytOOFtEbtRGmUxcewUQ
+	Du2yhfw7EScdPtFMGt81x/8DXuAxnwUPKcoZYyh1nk7RXFHS6gtMmK59LxXM04N9qA1yC+OX0NoGK
+	C0LGpHrhKI7l/EtfAgk1i9Cb+KIPMujrXC+I7K1TAHqnadb3G2LlOmwEiYZ1RdcL9CeWZ/gJAvI2y
+	ZYW4fCtleO2882qo220wDx2QwuesK5QSewC+sqTZ/4pGthheg82fYmkzWjNbTYTv+Ed6SQJ/KoWxV
+	tHTCKlpRdNyx0JGGeJ7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw0no-00000008O7D-1J0t;
-	Tue, 09 Sep 2025 16:02:40 +0000
-Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
+	id 1uw1Q6-00000008abk-21ME;
+	Tue, 09 Sep 2025 16:42:14 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvyRY-00000007Ozs-2uwd;
-	Tue, 09 Sep 2025 13:31:33 +0000
-Received: by mail-pg1-x532.google.com with SMTP id 41be03b00d2f7-b49c1c130c9so3863095a12.0;
-        Tue, 09 Sep 2025 06:31:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757424692; x=1758029492; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vf227nmbBVr78eoCmY1YIfO+zmAzbc+5L95fUaWK5oM=;
-        b=kpJvaWbdDFf3Z+U9IITOZ6U4Y6taRpGrgnymRO2yuRo+ont1nG/fQV3LvV8bLT2I1Y
-         myhy7qK/AJRCk1CLhqYo6VI43zITTauzi+TkiECsXKFYgC+BTQ5PZxo5KclOHWsv2R3r
-         +KaC3MnlEhIb9CfK5Nst+wlQd+LQtEpuhKgramG/nceWUDbiybhmGvcLsEvBp8wZEBo1
-         O2lzQMk9bCbofoGAK1XKUmJk7MbbIwFWQrb3BzyCXtBH3pNeUrddg6GQPOtQ3GFKh5bw
-         IG/KJID+7ceFlRWAiXl+5EZ8nA4JHj1aEcIgx94bnQGrcwRychGlnbyLv4pZiG472wk1
-         /fTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757424692; x=1758029492;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=vf227nmbBVr78eoCmY1YIfO+zmAzbc+5L95fUaWK5oM=;
-        b=AKKQ9NpoxLE+VYy4jWd8Yi15HMK8aA+Cu41tF/jb/Y7wX49XElOYs/dFbMWmPd4kZ8
-         gP0U9GPvRCi1jUd+UEQbEIAhWCSGFMDhfn3ZmtK8M9iLxuhQf8ZDyuF5bbschDd3uwvf
-         TTmlcEx23+F89ugzB7hiRq2S4zRS3j07d/P2FB/3xG29cpBsVxmEa4dGSfEtRsYidG0c
-         7FYPWFRz0JeojrYbnKyJUGK5Bs6Gj9q9Ly21Y87+LOYy0RK0lUVtajmMmN4+B436/1cd
-         3FPLvz5pHG8askWqvRFoXoUTP92563NNp2XYOMyNyrtfWf18r5BRvSkk69/76nzRFxbg
-         wTjQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUlTAM+q8AyGqVpjpVUueUmiIEG5YJ2GKuV+Junmq4yZEuTDBPTpM/qYfwxBgc9yxum/gt2liURwZ7VoTJib24=@lists.infradead.org, AJvYcCWCz1nZPG63C6oQFRJiUYWWX7raHTetbyvly/CQ6NXCtrlmJidTk/8aUNV8uNIjoRXzaBfvRVlwwnpR@lists.infradead.org, AJvYcCWfvU9TY2fMp/xcmVIKE8RnyMpDkFfJTJmExLOQyZ8RWFA9nmzO9D8mMblelNRMQhe/CfreaXGf8Bw038WsDcaY@lists.infradead.org
-X-Gm-Message-State: AOJu0YyxLaNENJP9dVFVMHpPZ1Z9JsEbORgYto62q9YmMIOZ5acqH9CF
-	ut/W4cYQQNmpvPrfFDAinf06HsRXwrbWQsMQuQ+J1lrFXI63R9XEUSHT
-X-Gm-Gg: ASbGncvvcVM122jgJNYUn1/b4R81wUXkLzLqgOLU0iXxV8cozGxAJ18A7SsYPXq2Ns9
-	FSVL4IRyI6FJTHyUpEYhfqmUUJEi0Q4wp1DzF35+mpjoYganh1NVs0srFqArM7TPEbWplDw/1lx
-	M3b53i+Gu90QUnW9iP16RCvnUTwRQxDyhmEKZQijoSwvCu6XtToEVoX67sRwC4JkhROIIYcPJnv
-	nELHeWjtawZ/hw1YOQbwelbwTMul2BW/a2lloZVhtJcgDbVUk2FpNytKbpH8iTQYJjQZyXThmuh
-	8YvaFyC5ucVZAKiSonJUCCXxIIMhIm24PV0SkRiAkJRlNE0zUrv+GxNq+BXOgJezZvHrL6HG/aj
-	5K4frGzHK0KqDbdqrvJjG+Sk1CaLQWvF+K9ogbf5e5hB7qXvEMKA=
-X-Google-Smtp-Source: AGHT+IEthdGhsisvIyGN1Z48pv9jWv3jpKaTdVzpsB9Py8tu3c9ndMxLN9nH0PnL8uY/ax5mYMCrtQ==
-X-Received: by 2002:a17:90a:d403:b0:327:9345:7097 with SMTP id 98e67ed59e1d1-32d43f003bemr16178584a91.10.1757424690779;
-        Tue, 09 Sep 2025 06:31:30 -0700 (PDT)
-Received: from localhost.localdomain ([240e:3a6:1c4b:13c0:db95:4539:1490:64d2])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-32dab173060sm810778a91.5.2025.09.09.06.31.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 06:31:29 -0700 (PDT)
-From: WeiHao Li <cn.liweihao@gmail.com>
-To: heiko@sntech.de,
-	robh@kernel.org
-Cc: krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	WeiHao Li <cn.liweihao@gmail.com>
-Subject: [PATCH v2 4/4] arm64: dts: rockchip: Add phys attribute of USB host node for RK3368
-Date: Tue,  9 Sep 2025 21:29:58 +0800
-Message-ID: <20250909132958.26423-5-cn.liweihao@gmail.com>
-X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20250909132958.26423-1-cn.liweihao@gmail.com>
-References: <20250909132958.26423-1-cn.liweihao@gmail.com>
+	id 1uvuqz-000000064D0-0RVD;
+	Tue, 09 Sep 2025 09:41:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1757410893; x=1788946893;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=iDZvQAjGdFONOD0C7BJifOhr90vJwi4Gs1ZMg3jQOdU=;
+  b=RCmWOH5GBiouh61tzjqzaw0d8dPCL9TK6Tm97vP7dXKcXSU8NZuAKnjI
+   TW6PPATpgeLIFn7ELfvbzibmuFP5iN22jezwUOBRK9CN4UJ4tmU29f2je
+   99gTXjPD6PMHTAREaedVTk6gh92QZC4HTrvoleLsKgobhTpyCvwK2miN0
+   6O4v6yGUAwc5adcfVXzWVY7MmPZHb7rktCtOSzbkAIcMfLGY3MxUe6Tqo
+   rn462MfXh1KBcKkqG2ZAxSTPJITX2DBSIxOOMpT+eGWLJeTajJnv9mMV0
+   c7ADXt58MAPX5kazK5HB2/3zqkZ+fhV2x6gLxBk2dvVba2qDqN6rU4+J3
+   g==;
+X-CSE-ConnectionGUID: idXvpGQgTo2xB4pyQ5bF2g==
+X-CSE-MsgGUID: sllUGolUR6auNCGFG7LLXg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11547"; a="62315390"
+X-IronPort-AV: E=Sophos;i="6.18,251,1751266800"; 
+   d="scan'208";a="62315390"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Sep 2025 02:41:32 -0700
+X-CSE-ConnectionGUID: y4y1TQowQ3WfYBEL7QqmVw==
+X-CSE-MsgGUID: A6PAWP7WSNC5vsBA9uaY2Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,251,1751266800"; 
+   d="scan'208";a="173163265"
+Received: from kuha.fi.intel.com ([10.237.72.152])
+  by orviesa008.jf.intel.com with SMTP; 09 Sep 2025 02:41:25 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Tue, 09 Sep 2025 12:41:23 +0300
+Date: Tue, 9 Sep 2025 12:41:23 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+	Janne Grunau <j@jannau.net>,
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
+	Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>,
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 10/22] usb: typec: tipd: Read USB4, Thunderbolt and
+ DisplayPort status for cd321x
+Message-ID: <aL_2Q6obeQdYZuHE@kuha.fi.intel.com>
+References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+ <20250906-atcphy-6-17-v2-10-52c348623ef6@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250906-atcphy-6-17-v2-10-52c348623ef6@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_063132_732123_4C3BE326 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20250909_024133_166301_3FD9A8D8 
+X-CRM114-Status: GOOD (  23.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,54 +98,189 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RK3368 has a USB host controller and a OTG controller, both of them use
-a extra phy, this add missing ohci node and add phys attribute for them.
+On Sat, Sep 06, 2025 at 03:43:23PM +0000, Sven Peter wrote:
+> CD321x supports various alternate modes and stores information once
+> these are entered into separate status registers. Read those when they
+> are active when reading TPS_DATA_STATUS to prepare supporting these.
+> 
+> Signed-off-by: Sven Peter <sven@kernel.org>
 
-Signed-off-by: WeiHao Li <cn.liweihao@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3368.dtsi | 18 ++++++++++++++++--
- 1 file changed, 16 insertions(+), 2 deletions(-)
+Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-index b09e431a64..cdcbc0a944 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-@@ -503,9 +503,21 @@ gmac: ethernet@ff290000 {
- 
- 	usb_host0_ehci: usb@ff500000 {
- 		compatible = "generic-ehci";
--		reg = <0x0 0xff500000 0x0 0x100>;
-+		reg = <0x0 0xff500000 0x0 0x20000>;
- 		interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
--		clocks = <&cru HCLK_HOST0>;
-+		clocks = <&cru HCLK_HOST0>, <&u2phy>;
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
-+		status = "disabled";
-+	};
-+
-+	usb_host0_ohci: usb@ff520000 {
-+		compatible = "generic-ohci";
-+		reg = <0x0 0xff520000 0x0 0x20000>;
-+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_HOST0>, <&u2phy>;
-+		phys = <&u2phy_host>;
-+		phy-names = "usb";
- 		status = "disabled";
- 	};
- 
-@@ -520,6 +532,8 @@ usb_otg: usb@ff580000 {
- 		g-np-tx-fifo-size = <16>;
- 		g-rx-fifo-size = <275>;
- 		g-tx-fifo-size = <256 128 128 64 64 32>;
-+		phys = <&u2phy_otg>;
-+		phy-names = "usb2-phy";
- 		status = "disabled";
- 	};
- 
+> ---
+>  drivers/usb/typec/tipd/core.c | 80 ++++++++++++++++++++++++++++++++++++++++---
+>  1 file changed, 76 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
+> index 51b0f3be8b66a743ddc3ea96c1b25f597a1e8f6c..afd11b3e1ae596c7f3283e4336aaa57874c9378d 100644
+> --- a/drivers/usb/typec/tipd/core.c
+> +++ b/drivers/usb/typec/tipd/core.c
+> @@ -35,14 +35,18 @@
+>  #define TPS_REG_INT_MASK2		0x17
+>  #define TPS_REG_INT_CLEAR1		0x18
+>  #define TPS_REG_INT_CLEAR2		0x19
+> -#define TPS_REG_SYSTEM_POWER_STATE	0x20
+>  #define TPS_REG_STATUS			0x1a
+> +#define TPS_REG_SYSTEM_POWER_STATE	0x20
+> +#define TPS_REG_USB4_STATUS		0x24
+>  #define TPS_REG_SYSTEM_CONF		0x28
+>  #define TPS_REG_CTRL_CONF		0x29
+>  #define TPS_REG_BOOT_STATUS		0x2D
+>  #define TPS_REG_POWER_STATUS		0x3f
+>  #define TPS_REG_PD_STATUS		0x40
+>  #define TPS_REG_RX_IDENTITY_SOP		0x48
+> +#define TPS_REG_CF_VID_STATUS		0x5e
+> +#define TPS_REG_DP_SID_STATUS		0x58
+> +#define TPS_REG_INTEL_VID_STATUS	0x59
+>  #define TPS_REG_DATA_STATUS		0x5f
+>  #define TPS_REG_SLEEP_CONF		0x70
+>  
+> @@ -85,6 +89,31 @@ struct tps6598x_rx_identity_reg {
+>  	struct usb_pd_identity identity;
+>  } __packed;
+>  
+> +/* TPS_REG_USB4_STATUS */
+> +struct tps6598x_usb4_status_reg {
+> +	u8 mode_status;
+> +	__le32 eudo;
+> +	__le32 unknown;
+> +} __packed;
+> +
+> +/* TPS_REG_DP_SID_STATUS */
+> +struct tps6598x_dp_sid_status_reg {
+> +	u8 mode_status;
+> +	__le32 status_tx;
+> +	__le32 status_rx;
+> +	__le32 configure;
+> +	__le32 mode_data;
+> +} __packed;
+> +
+> +/* TPS_REG_INTEL_VID_STATUS */
+> +struct tps6598x_intel_vid_status_reg {
+> +	u8 mode_status;
+> +	__le32 attention_vdo;
+> +	__le16 enter_vdo;
+> +	__le16 device_mode;
+> +	__le16 cable_mode;
+> +} __packed;
+> +
+>  /* Standard Task return codes */
+>  #define TPS_TASK_TIMEOUT		1
+>  #define TPS_TASK_REJECTED		3
+> @@ -121,6 +150,7 @@ struct tipd_data {
+>  	int (*apply_patch)(struct tps6598x *tps);
+>  	int (*init)(struct tps6598x *tps);
+>  	int (*switch_power_state)(struct tps6598x *tps, u8 target_state);
+> +	bool (*read_data_status)(struct tps6598x *tps);
+>  	int (*reset)(struct tps6598x *tps);
+>  };
+>  
+> @@ -151,6 +181,10 @@ struct tps6598x {
+>  
+>  struct cd321x {
+>  	struct tps6598x tps;
+> +
+> +	struct tps6598x_dp_sid_status_reg dp_sid_status;
+> +	struct tps6598x_intel_vid_status_reg intel_vid_status;
+> +	struct tps6598x_usb4_status_reg usb4_status;
+>  };
+>  
+>  static enum power_supply_property tps6598x_psy_props[] = {
+> @@ -505,6 +539,41 @@ static bool tps6598x_read_data_status(struct tps6598x *tps)
+>  	return true;
+>  }
+>  
+> +static bool cd321x_read_data_status(struct tps6598x *tps)
+> +{
+> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
+> +	int ret;
+> +
+> +	ret = tps6598x_read_data_status(tps);
+> +	if (ret < 0)
+> +		return false;
+> +
+> +	if (tps->data_status & TPS_DATA_STATUS_DP_CONNECTION) {
+> +		ret = tps6598x_block_read(tps, TPS_REG_DP_SID_STATUS,
+> +				&cd321x->dp_sid_status, sizeof(cd321x->dp_sid_status));
+> +		if (ret)
+> +			dev_err(tps->dev, "Failed to read DP SID Status: %d\n",
+> +				ret);
+> +	}
+> +
+> +	if (tps->data_status & TPS_DATA_STATUS_TBT_CONNECTION) {
+> +		ret = tps6598x_block_read(tps, TPS_REG_INTEL_VID_STATUS,
+> +				&cd321x->intel_vid_status, sizeof(cd321x->intel_vid_status));
+> +		if (ret)
+> +			dev_err(tps->dev, "Failed to read Intel VID Status: %d\n", ret);
+> +	}
+> +
+> +	if (tps->data_status & CD321X_DATA_STATUS_USB4_CONNECTION) {
+> +		ret = tps6598x_block_read(tps, TPS_REG_USB4_STATUS,
+> +				&cd321x->usb4_status, sizeof(cd321x->usb4_status));
+> +		if (ret)
+> +			dev_err(tps->dev,
+> +				"Failed to read USB4 Status: %d\n", ret);
+> +	}
+> +
+> +	return true;
+> +}
+> +
+>  static bool tps6598x_read_power_status(struct tps6598x *tps)
+>  {
+>  	u16 pwr_status;
+> @@ -565,7 +634,7 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
+>  			goto err_unlock;
+>  
+>  	if (event & APPLE_CD_REG_INT_DATA_STATUS_UPDATE)
+> -		if (!tps6598x_read_data_status(tps))
+> +		if (!tps->data->read_data_status(tps))
+>  			goto err_unlock;
+>  
+>  	/* Handle plug insert or removal */
+> @@ -614,7 +683,7 @@ static irqreturn_t tps25750_interrupt(int irq, void *data)
+>  			goto err_clear_ints;
+>  
+>  	if (event[0] & TPS_REG_INT_DATA_STATUS_UPDATE)
+> -		if (!tps6598x_read_data_status(tps))
+> +		if (!tps->data->read_data_status(tps))
+>  			goto err_clear_ints;
+>  
+>  	/*
+> @@ -688,7 +757,7 @@ static irqreturn_t tps6598x_interrupt(int irq, void *data)
+>  			goto err_unlock;
+>  
+>  	if ((event1[0] | event2[0]) & TPS_REG_INT_DATA_STATUS_UPDATE)
+> -		if (!tps6598x_read_data_status(tps))
+> +		if (!tps->data->read_data_status(tps))
+>  			goto err_unlock;
+>  
+>  	/* Handle plug insert or removal */
+> @@ -1534,6 +1603,7 @@ static const struct tipd_data cd321x_data = {
+>  	.trace_power_status = trace_tps6598x_power_status,
+>  	.trace_status = trace_tps6598x_status,
+>  	.init = cd321x_init,
+> +	.read_data_status = cd321x_read_data_status,
+>  	.reset = cd321x_reset,
+>  	.switch_power_state = cd321x_switch_power_state,
+>  };
+> @@ -1550,6 +1620,7 @@ static const struct tipd_data tps6598x_data = {
+>  	.trace_status = trace_tps6598x_status,
+>  	.apply_patch = tps6598x_apply_patch,
+>  	.init = tps6598x_init,
+> +	.read_data_status = tps6598x_read_data_status,
+>  	.reset = tps6598x_reset,
+>  };
+>  
+> @@ -1565,6 +1636,7 @@ static const struct tipd_data tps25750_data = {
+>  	.trace_status = trace_tps25750_status,
+>  	.apply_patch = tps25750_apply_patch,
+>  	.init = tps25750_init,
+> +	.read_data_status = tps6598x_read_data_status,
+>  	.reset = tps25750_reset,
+>  };
+
 -- 
-2.47.2
-
+heikki
 
 -- 
 linux-phy mailing list
