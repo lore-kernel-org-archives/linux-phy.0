@@ -4,108 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2179ECA0FED
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 17:20:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ABDECAC58E
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 17:20:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+VCF8fAicIc6m2I26Cv1s1NRezia1EdVMMLHx74Y3Z8=; b=TGCBhbZ7Wb9DDD
-	DTAuNHsakfjl2VRzgKV+NQI5+eHY0abnWMT74HwwnC8HsPjVXTWZBngxTSFfkRaAkvHoOw9qZJenH
-	5oJndVR5/nmK/j6cIg1HnN+QFiL0kIR4jfo+Jw7nVvfWbktRxQcQOJMpp33sWXpkQ8ZVtnZfJqHi1
-	bCBHOfyM5Bi/Gq4Un3jN3Niu5PicwquJm/zHrASeYLlHW0/rIV4CjV6LeLjlVWd3ut4r2vmX1YA0m
-	Qn+a8QlyfnAe5M8aKOzWA7DbE1AcsF5rHwexNXczqebTE9jHo04FwYyvNib43TmG+QOI2/cQ2DYdD
-	OfIl3xp8YtNIynPEb8hQ==;
+	List-Owner; bh=Yk5nnukP0CEHursRJH3D4Ep7KPWkadHbLw1nQvSX7zc=; b=wiAZ1wmNV1alGL
+	FAoPGnwlEm/OXiEwKzjnfQyJM4fMLYAS74NwbWWTAY4jGQFOr4yhaJ35mX1TDPYfsU58Npv1pgQwJ
+	qNP33PhJJbRaFAvARkKwaSJFpdjQixiNjo3uIrNecWfBQIjL1WTx+opg8yQspGnu/NTxVyxQ5Fner
+	Wi1ZshjaYnT4X+0xcdB/nZQfzct8t+cYetJPy81XV2z9uCNcvWAJqdS5ZGURbfOySMzqM2qHoLRqj
+	xhdyJEwzo0nwjilAJ+ZMZqcFBXzqNJIlpFsEPQxZbkHjy7UJpyxvTnpWtJM2q5vkOXEk431mtzzBU
+	UAEuXUin6YXQGld6nSBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw20g-00000008vPM-26ff;
-	Tue, 09 Sep 2025 17:20:02 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1uw20x-00000008vxF-2wTR;
+	Tue, 09 Sep 2025 17:20:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvyfS-00000007UnI-0ych
+	id 1uvysB-00000007ZOe-1ts3
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 13:45:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1757425553;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=KuUSi/wMj/deuFTckhCe0po1wpou4UMuleZXZpAya2o=;
-	b=EMWKULF6g+7iuAinjy7TX4TVdqfppsvSymbPqseJztrPDdlzb69sChhXZqNdIyHHj1oxeP
-	YeTiXD+ZCyBMCap6NGb7nrRnVJucyGWw9NvvYVKmC7W5HDn2VDX+0hnIAmUaB0F+gofjV+
-	IoCF5gEEEbduak6PEk+vI9RNeSk/fAU=
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com
- [209.85.219.71]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-218-eiCQDB2jN2GkbDm82NbwfA-1; Tue, 09 Sep 2025 09:45:50 -0400
-X-MC-Unique: eiCQDB2jN2GkbDm82NbwfA-1
-X-Mimecast-MFC-AGG-ID: eiCQDB2jN2GkbDm82NbwfA_1757425550
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-7211f13bc24so118545016d6.1
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 06:45:50 -0700 (PDT)
+	Tue, 09 Sep 2025 13:59:04 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5899LZsa029320
+	for <linux-phy@lists.infradead.org>; Tue, 9 Sep 2025 13:59:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=+e+m2eXxsaETI5+DzIMa5RUB
+	HZ/+khiBv1BzAFhU+3c=; b=e3RVKHfIvyKU1oDik0Wo+ZvycmTxqZqJHGYPKKBY
+	v1JnjNrQVxXdzu7H8EJwamY+kGanlkNCRKdEik3p5xmIEa9//LUW2xvByoJbPLdp
+	rnVsrUMj4utvHOJUivDreQNssmyZ+itk0sIvg5WDL2+kwQYoC6uzhJcTF3AFuaVb
+	0E0t09mHBPZdH4weIT0+3iYnyJDO+rzv/Qmu0F4b/GE0ezdGX8/WzERGlUKNqRNB
+	5g9zeb/TimgZb0Q4KM2cParKdLhq4L7cj0UK0k5lmENxLF+m/cOVBSHWnG6K+9qn
+	b8kxuZzuRLUzlOUB6yfD5qWB2cSYNJlOLe+DVvwzE9wjBQ==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490db8ge77-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 13:59:01 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-7211f13bc24so118788306d6.1
+        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 06:59:01 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757425550; x=1758030350;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=KuUSi/wMj/deuFTckhCe0po1wpou4UMuleZXZpAya2o=;
-        b=BnDfzK+h45Qu5vk27cNhjDNw9C32iq/9DG/7oy7ZnEumUzqF9mG/grKGp9Wl6zSgla
-         iPBET7QOL5wSh5e7A+HPt8ife4KIJ6Qtu3Cst8IgR7kYswBuvtQlQ+WOlkWIf1QQXrX1
-         OtOdBoV9Nhq6QkauNlSQpRIWhxxrpSgTVCxTRe6om1cyd7Lv4KqphYy54+dEo75t0ckG
-         wCWVHz95N3HID/mSClnlAtO1NykfiOzVZ9DI3r/Zw72KId28djnqqOtibtLaShEV0hL1
-         5DfJgLpyOVSK2kkxn2sZEtYUTHbVWx/ZZlQLvqjvGNvWmVk2l6AlHs8o0R89qKZW2cQN
-         qZqA==
-X-Forwarded-Encrypted: i=1; AJvYcCXe01AoU2fMVY1SGC0ll4klbht0cAatXBK+2SGEGQKl/AprTQ08TAxMOaAqv3l6ze/I9k6GfSvwLLE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yynzo5aa4UetnYliL4uiBIzkKmvf7+eU9l31Iz/8/d+1FknASO9
-	iuKrWft3TakNAgwIVr+OtESd39JUAAqkKO3uIJLfaX2B+KsEBMxPX4v+N//TDEhDSNRsOxuc2dq
-	hZ755qIp2dJO/2mise0CdvpRe1XvEwvDzUvegXTQRjEgDNvOgeCL72Hi6sjVwEWPycq0=
-X-Gm-Gg: ASbGncvSf4Ehy4Dg6OnxY5eqtIqNiAFVSSwLWcZlMF4i0zQXnPKBwN2y2CtmJkrRbRq
-	UynkOkbxo4kfwFXe64RVltlSsLjxoKF+IkgX6qHlHUBzwkyV/uPG2qGIyRiAkOHdYEe9oYmU0kz
-	KRVoT2hlXYRTdPujg2/MuUrfWnUC1hXB4N7Eejuq9/Jq2oaccB9GZSlMR+mE94ROnbAtsdDx0OF
-	HmoWJfZa88Mn8x9F4YYh/ys8vpSKFYAToHQx8CwAYF6sJ9K2vRUrWRNwH0NSAyhZTgEPTbMd6QZ
-	Lytu0q+kNYa3JJPlaYDN/0RJrDNq0g5/MZlindtDi9DYBi3kAqRAHGSSKy4lEiq0x4dU2B4fVIk
-	KNWh0eocGIy9waGRj5M4=
-X-Received: by 2002:a05:6214:624:b0:70e:3e:6304 with SMTP id 6a1803df08f44-739435cc42bmr94854046d6.65.1757425549574;
-        Tue, 09 Sep 2025 06:45:49 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEmp4FTmcXOP7+RMzS1+U7HWsbh9sfiIsI3KOLWl/uwcWgSrIp6/82zb9nfnJx9VJ/Da/CuPA==
-X-Received: by 2002:a05:6214:624:b0:70e:3e:6304 with SMTP id 6a1803df08f44-739435cc42bmr94853596d6.65.1757425548985;
-        Tue, 09 Sep 2025 06:45:48 -0700 (PDT)
-Received: from x1 (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-720b4665fcbsm138866926d6.37.2025.09.09.06.45.47
+        d=1e100.net; s=20230601; t=1757426340; x=1758031140;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+e+m2eXxsaETI5+DzIMa5RUBHZ/+khiBv1BzAFhU+3c=;
+        b=aAJrEJVbuGf5E2FEUDoYdJSktt/1fUkP/T4YeoFlbI1UqRs/DifRcdnrnF65lPw0v1
+         C6Y2H6PziYPwiczNM9fut+2+dGGaZpLCpWQ0c8fgQ04xr7e2WabjUPuhypWAOrNCfbXJ
+         ZVMyvNotRFDh5mK8Z3P6OjKHiZ6hQa3g+iDB7lfHPXrev2ob9PPt0mLK/RI5tPc3zCTy
+         APoV3QryS0g0MjPQUvrRVoIfr4ifLoJ3lcF8vhTOFsSWIO1uml+SIFFkoOz/njFSaBr9
+         Z2mFlwQuOTV0UWQ+RWo+c0XDbG5diLajY8MsW8EBQujAS0GJ6+cvXTfToMDdaj6my32X
+         sK7Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVBk/P721oyWtx58UwwPPepgQBmdbivyIjo7IlHo3HbKXOYzsuqa0xvjbn3p+HlmftL72pHGY30mSg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwS3g6vbCDEV7kOJXpZIXAzk2g/o76p5w6igprqyM0Uj1JAOF5l
+	IKpGC2bYmeMXYTS6/6/R5lLA0muDCmuazFXJTWAQGPaTv3BpvPSQf1wRjkUOMfE7f1gyWbPAN+N
+	tjKfvkJyXR2qIzTULMrDcxF+XIJy0NtILpAx1tGcGeOADT/UBt5hp61LgUNnc6xkTszNG
+X-Gm-Gg: ASbGncu2gonTw+8EJ6Sol5M6EpqTcrL74Uokk2Lunv9jlFILv14SOV/LJ7vtH0cZsCe
+	vY4MLexqV6jsdSysQDWVwSLBcMXUv6+V6Pmb9Ymb9XCgZ0hCkJ+sTXIQ9XmNu45oBTDfMHX4s24
+	OYoQPisX0d2cwnA38a9jZL170XTE+r0Ekw14LLuqAwXFYoOfkt+5cF+3gWO09a6Sxn2tg6/I/4g
+	UPDF5B3TyTX9sjxLZa2K7ezJt25xBIpoxb8/4tyDDsI+mGT/Kw8YSIZ+SECEYHWLDRQBrLftmk0
+	AfObDM3pDZlfAUvXl75l5uatCa8MwHa1qJXjp97ki/jINUMKDek7JuqAF+baP27zGnLSyXjTAhO
+	GkdrhSEynALt8PB9T1RcvtYP/vAiCzZrXeswo0aK4Aq5nSxZeS1mX
+X-Received: by 2002:a05:6214:e6e:b0:72b:f322:6817 with SMTP id 6a1803df08f44-7391f30353dmr118891066d6.10.1757426340337;
+        Tue, 09 Sep 2025 06:59:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGx+dFgHWJPMSKPSEn7vDY6bmN0vj3HU50MJCOT7V8BOnFjo1dHoOhzTqahq+CmW1jyx6u1HA==
+X-Received: by 2002:a05:6214:e6e:b0:72b:f322:6817 with SMTP id 6a1803df08f44-7391f30353dmr118890216d6.10.1757426339166;
+        Tue, 09 Sep 2025 06:58:59 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5680c424fb2sm548560e87.11.2025.09.09.06.58.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 06:45:48 -0700 (PDT)
-Date: Tue, 9 Sep 2025 09:45:46 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v2 2/9] phy: mediatek: phy-mtk-hdmi-mt2701: convert from
- round_rate() to determine_rate()
-Message-ID: <aMAvinQ4nn38E7tx@x1>
-References: <20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com>
- <20250810-phy-clk-round-rate-v2-2-9162470bb9f2@redhat.com>
- <aKX35U4jX55W3W61@vaman>
- <aKYFh5YI9j-MHKH4@x1>
+        Tue, 09 Sep 2025 06:58:58 -0700 (PDT)
+Date: Tue, 9 Sep 2025 16:58:56 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+        Andrzej Hajda <andrzej.hajda@intel.com>,
+        Robert Foss <rfoss@kernel.org>,
+        Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+        Jonas Karlman <jonas@kwiboo.se>,
+        Jernej Skrabec <jernej.skrabec@gmail.com>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 3/5] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Document lanes mapping when not using in USB-C complex
+Message-ID: <dpidjyofawtrmci5lu72gdnwxxws57sw55cxxedkhsq2dryohm@cdxjwnros57y>
+References: <20250908-topic-x1e80100-hdmi-v3-0-c53b0f2bc2fb@linaro.org>
+ <20250908-topic-x1e80100-hdmi-v3-3-c53b0f2bc2fb@linaro.org>
+ <7dzfcuvr45h4iailtjutqjev7lofoqu7w6ob77gehgmy7mctpk@k7oob4wj3c7a>
+ <14d58c6d-ca20-4349-8031-9906a4539fef@linaro.org>
+ <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
+ <da984d8f-85ae-44cf-8de4-208bfc9e292d@oss.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <aKYFh5YI9j-MHKH4@x1>
-User-Agent: Mutt/2.2.14 (2025-02-20)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: 7WCZGRkDtRBENvvnabpvdkiTXgn735_Mq2yT0Q8rneA_1757425550
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <da984d8f-85ae-44cf-8de4-208bfc9e292d@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzMSBTYWx0ZWRfX1XnhHqCB7RYo
+ K/usN5/kq0obq7CKqswXVMbNXy3EprGFnK4w0wuvM1IoHvnOdzI/fa5hHjk2dG4ICnLQAa9pZiY
+ Q55XWS75FBWDUxtBpqunuzoxljYkNoJdNP18xz2Ug9p1zVSEAEiCV5fzO05TTjWqVoxJMNP/bZL
+ B0asN9jw2cxVMbqch05ad1YdoziZV+AN2wW4Tbynh4WRzxZk0VcxGuh4sJTScaJ38v8HnM9T4QE
+ C+/Q34VBHv2WgpSHuNZRYC3jWXabsU/VWUqgUTJOv+7EQYylmgOG9LSGbo3DTqifa2/Xo0pMsnC
+ yxuy+kwO235FW842YxoZFGrOwURBQZPfaNtUec2YwjhsC0NV16HiMNFUmpxaiy9PQFQHnhA+FYr
+ W83dgFk3
+X-Proofpoint-ORIG-GUID: wH3fEGFr5Ewg5Fz8bRtFGPFjACYzkQP0
+X-Proofpoint-GUID: wH3fEGFr5Ewg5Fz8bRtFGPFjACYzkQP0
+X-Authority-Analysis: v=2.4 cv=VIDdn8PX c=1 sm=1 tr=0 ts=68c032a5 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=KKAkSRfTAAAA:8 a=r0EWWIcaWpoI38bJcbMA:9 a=CjuIK1q_8ugA:10
+ a=1HOtulTD9v-eNWfpl4qZ:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-09_02,2025-09-08_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 malwarescore=0 spamscore=0 suspectscore=0 bulkscore=0
+ phishscore=0 adultscore=0 clxscore=1015 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060031
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_064554_339072_B91CAF3E 
-X-CRM114-Status: GOOD (  32.55  )
+X-CRM114-CacheID: sfid-20250909_065903_640365_4B420B3D 
+X-CRM114-Status: GOOD (  30.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,64 +150,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-On Wed, Aug 20, 2025 at 01:27:35PM -0400, Brian Masney wrote:
-> On Wed, Aug 20, 2025 at 09:59:25PM +0530, Vinod Koul wrote:
-> > On 10-08-25, 18:45, Brian Masney wrote:
-> > > The round_rate() clk ops is deprecated, so migrate this driver from
-> > > round_rate() to determine_rate() using the Coccinelle semantic patch
-> > > on the cover letter of this series.
-> > > 
-> > > Signed-off-by: Brian Masney <bmasney@redhat.com>
-> > > ---
-> > >  drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c | 8 ++++----
-> > >  1 file changed, 4 insertions(+), 4 deletions(-)
-> > > 
-> > > diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> > > index e51b2d13eab473dddace48c75c2a8d73c8c65635..b0b6497e7eedcb6867541b573d22156ded29a4d5 100644
-> > > --- a/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> > > +++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt2701.c
-> > > @@ -90,10 +90,10 @@ static void mtk_hdmi_pll_unprepare(struct clk_hw *hw)
-> > >  	usleep_range(80, 100);
-> > >  }
-> > >  
-> > > -static long mtk_hdmi_pll_round_rate(struct clk_hw *hw, unsigned long rate,
-> > > -				    unsigned long *parent_rate)
-> > > +static int mtk_hdmi_pll_determine_rate(struct clk_hw *hw,
-> > > +				       struct clk_rate_request *req)
-> > >  {
-> > > -	return rate;
-> > > +	return 0;
+On Tue, Sep 09, 2025 at 01:21:19PM +0200, Konrad Dybcio wrote:
+> On 9/9/25 1:16 PM, Dmitry Baryshkov wrote:
+> > On Tue, Sep 09, 2025 at 09:14:49AM +0200, Neil Armstrong wrote:
+> >> On 08/09/2025 23:14, Dmitry Baryshkov wrote:
+> >>> On Mon, Sep 08, 2025 at 03:04:20PM +0200, Neil Armstrong wrote:
+> >>>> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+> >>>> of a combo glue to route either lanes to the 4 shared physical lanes.
+> >>>>
+> >>>> The routing of the lanes can be:
+> >>>> - 2 DP + 2 USB3
+> >>>> - 4 DP
+> >>>> - 2 USB3
+> >>>>
+> >>>> The layout of the lanes was designed to be mapped and swapped
+> >>>> related to the USB-C Power Delivery negociation, so it supports
+> >>>> a finite set of mappings inherited by the USB-C Altmode layouts.
+> >>>>
+> >>>> Nevertheless those QMP Comby PHY can be used to drive a DisplayPort
+> >>>> connector, DP->HDMI bridge, USB3 A Connector, etc... without
+> >>>> an USB-C connector and no PD events.
+> >>>>
+> >>>> Document the data-lanes on numbered port@0 out endpoints,
+> >>>> allowing us to document the lanes mapping to DisplayPort
+> >>>> and/or USB3 connectors/peripherals.
+> >>>>
+> >>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> >>>> ---
+> >>>>   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 59 +++++++++++++++++++++-
+> >>>>   1 file changed, 58 insertions(+), 1 deletion(-)
+> >>>>
+> >>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> >>>> index 5005514d7c3a1e4a8893883497fd204bc04e12be..51e0d0983091af0b8a5170ac34a05ab0acc435a3 100644
+> >>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> >>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> >>>> @@ -81,10 +81,67 @@ properties:
+> >>>>     ports:
+> >>>>       $ref: /schemas/graph.yaml#/properties/ports
+> >>>> +
+> >>>>       properties:
+> >>>>         port@0:
+> >>>> -        $ref: /schemas/graph.yaml#/properties/port
+> >>>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> >>>>           description: Output endpoint of the PHY
+> >>>> +        unevaluatedProperties: false
+> >>>> +
+> >>>> +        properties:
+> >>>> +          endpoint:
+> >>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+> >>>> +            unevaluatedProperties: false
+> >>>> +
+> >>>> +          endpoint@0:
+> >>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+> >>>> +            description: Display Port Output lanes of the PHY when used with static mapping
+> >>>> +            unevaluatedProperties: false
+> >>>> +
+> >>>> +            properties:
+> >>>> +              data-lanes:
+> >>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
+> >>>> +                minItems: 2
+> >>>
+> >>> Nit: DP can work in a 1-lane mode. Do we nned to support that in the PHY?
+> >>
+> >> So the PHY already supports 1-lane, but the QMP Combo only supports
+> >> mapping 2+2 or 4, but nevetheless we can still decscribe 1 lane in DT
+> >> int both in & out endpoint and still should work fine.
+> >>
+> >> Do you think this should be done now ?
 > > 
-> > This does not sound correct to me? should this not check the requested
-> > rate?
+> > Do we support it in the PHY hardware?
 > 
-> I can't speak as to whether or not this specific driver should have a
-> rate check here. I've seen in some other drivers where the specific
-> frequencies are managed in firmware, and Linux just passes on the rate
-> request as is.
-> 
-> Some other phy drivers (most notably drivers/gpu/drm/msm/dsi/phy/) only
-> makes sure that the requested rate is within a min/max range. Assuming
-> I read this driver's set_rate() correctly, it looks like the min/max
-> range may be 64-192 MHz. I'm not sure to be honest.
-> 
-> This change keeps the existing behavior of the driver as it is today,
-> and just migrates off an old API.
+> I don't think the PHY cares if it's 1 or 2 lanes
 
-I'm just checking to see if you have any questions about this series,
-and plan to merge it for v6.18. I'm hoping that in v6.19 to remove this
-old API from the clk core once all of the other subsystems outside of
-drivers/clk/ have been updated.
+I think so too. So maybe we shouldn't list 1 lane separately here.
 
-As I mentioned previously: This change keeps the existing behavior of
-the driver as it is today, and just migrates off an old API. I don't
-have access to this hardware, or technical details about what should
-be here.
-
-Brian
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
