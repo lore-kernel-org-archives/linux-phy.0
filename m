@@ -4,130 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42657CAC583
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:02:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7591CA0FED
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 16:02:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=IXDllI/nFAw/0msYdu916S9hmjk/XRtak5WPutOCigw=; b=gCZPC8706Cp1LwDSD9YQX8Q08d
-	Q5w8S6WxQdwZt4Z4x57+rcu2v9px0WxXhpXMpy0Cp7p++8kvo9iHi8v0VGz6in9VZUfLUTl9Kt3UM
-	6idD4Z+fnP3rIx14MnaErbgU78rJ+sFW/xSqE+nbt3vqJWO7t6EMQ/Ous4Sxc9FAHb9Wr/FXTAOTq
-	faNeyzLGswSHXpGRw+7aQNFraob7aicnnpQ4GXQffzcfoedHo84oU8IYKRJrFpW3Yeh+oyUv3XBka
-	v0QYtulqJOVcqlaebJWFylEbAWzgAXV9m3W+eejlkvmCanJnfEeqBTYS1zzNAqcBd/BCet8+d8X4b
-	Cebr2hLQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xAsoA3klPTrdMNslB9blKpxfYfiURIFZXpg1K14gBB8=; b=zY5NnfC7h5Q49Y
+	ufsDhfPCDENnOOJLvzIM3ZnaFE2dbQyXH3IN/a2kor1wxOaQScvBpVAvEh0P7fp4hkuD1bndtak/T
+	XWS/+XkF79HxEze1rtqLeVuTLTVpvC+hsAyUhczvFSIUpLbtBEsTMocM2G5Pdf0395jpkb9X1843o
+	2q4RCCOxvlTku4c/xcfSHOC9BuCLUuXzPYb8naDX4A0SY5/FfCUKqQSfNM6SVE8Xq+QwKSkNHaDYM
+	3wV5TK0ynEzFtpQ8sGZt/dURKOV5vF45UtS2Ntk2ZxSsfrpPm9RxaL6LOPH+jfMNe1XGUF/sJgDK+
+	gkTUZlvAUJDEdLcy+QhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw0nL-00000008NPN-3MEE;
-	Tue, 09 Sep 2025 16:02:11 +0000
-Received: from mail-wr1-f42.google.com ([209.85.221.42])
+	id 1uw0nj-00000008Nxe-1RPs;
+	Tue, 09 Sep 2025 16:02:35 +0000
+Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvxRf-000000073zE-3ugy
-	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 12:27:37 +0000
-Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-3dea538b826so4781437f8f.2
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 05:27:35 -0700 (PDT)
+	id 1uvyR5-00000007Oo2-0DyZ;
+	Tue, 09 Sep 2025 13:31:05 +0000
+Received: by mail-pj1-x102d.google.com with SMTP id 98e67ed59e1d1-32d6c194134so3642087a91.0;
+        Tue, 09 Sep 2025 06:31:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1757420853; x=1758025653; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=JMgQJrHR/R7kuH76u+Ory7LEmNQkrYiIPQJV3CNxb6g=;
-        b=cVtY2YO9Ab9lGES5ZoHqbqTP38BMFXUYlmKGsmKBwXfsNv41NuWU6m2D8mPDYaQMXn
-         3UFN87lc0xXgick9q8Yf4r5tzyZF6gJbeYw0VeAv2yeWcKNOEflsqR6+LsJk6WiNlGWK
-         Hm3ctMI/E5ZlYmnjAt7PfJQ5f/NEbzL69vUvfM1sk/y6v2CBi44AlkKY4plwqcr6s9KP
-         coim7pCRL6KcuEBHIOpCB9EkIoDoo0IqdtqeOY3Twx9XDqswazf2wm6rOimJBupgGEWm
-         VKQeIT2mnw86AaB8JpAt2LoS9W0dAJsQkOMiQrL7OMrSDcIRLdnPKA73gilfbtm525pZ
-         dNVw==
+        d=gmail.com; s=20230601; t=1757424662; x=1758029462; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=dG6XF2PIOMDeR4MOZBWi65Kf7chBzQecby0CPXw5mi8=;
+        b=CAaQiHbMSnc3TCbXZ49Ym1f4J+UHBdWhQptMwyx/dSYOxRQrl0oR2zSnscKd8dqoXF
+         z6tjq9FEfkqfr2MslVFBdleqIHe8yA0MADD89uyleL7U2FD1mbPYW1WiPtrVi0V+lMCX
+         YGItp5knJWFSjhr6jDBKCODyz09/0gqINKYY2GKFdnFyooEGs4Vv4tB7HVeOgZYa7KO9
+         2mso8YLnG14pIwoap8/t97LK38TjRPyQUOr0STHOLYFvruyLg85MmcFskcpgy+KVWHfe
+         VkeZrNBlo9qN30GItm5TrqmU3XsI53oEEYPBteh2QTQqwZqO7Ls98Lw2ouiH50k+dT7/
+         7r4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757420853; x=1758025653;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=JMgQJrHR/R7kuH76u+Ory7LEmNQkrYiIPQJV3CNxb6g=;
-        b=R7U0hO1IaaF2QvLwO38DgWuAJbEhyH7yqHSZUYQxoA5EuioemTyDuBbAt9mUYlQcz9
-         f4z61n0erO3m1aHtFArbKFRmCJlAng3V/p+extH5QQdoZl/uwSZ2TmQn9i7kNt2Lf+ze
-         zJYhY8ivf7YRWW06TF/rx1166rfcSkNznXyjhoNoSDhYCQoj0wJZ6XuHTa6xoRcmS56R
-         eXRpaQitV/pmsv7Pn5P3mHmY45wDrc1AWhHY1VYYIYOt6UJwy1HjqOTcCJQkJUN3Qtug
-         31ZmANHynXGNr9S+ugPA4ctmQtom7NgO050/jRR23OMc4s1u1CJukJu/z2klp04qsp2P
-         z7qg==
-X-Forwarded-Encrypted: i=1; AJvYcCWwofRrK7dwa6MUL5ITa23AWSKUZIjkBARABma5HOU9dmUjenYRAljyTAiyDvj8/Gr73uBe0XJia5Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwCEHwLBGLiBa5v1KAnuKp9BRI491AQVBtJKLauGGuLXyOA1bPV
-	Mx/1pZnrlIt8U5E4pmDlNSBN9H0ntTMynoTHRT84cliwzx3QSuEW85kzb326cYoXzSY=
-X-Gm-Gg: ASbGnctw3Sv639SuxFDuzDLbVbd6MBddi8JSdkn2znuTnQfWhZVM1g5ThxYLmzBHOlm
-	FQYWIBx4KYbLJXUS2pp0Lm7YXclmbE04eheWlBJaczozKT8uhiFWPJkvMrPeWUh1x1oULC9rF3v
-	kmJ16udG7rFujvlGTov+IsCyg56SSMUrkMV7v+7UD4J0HJYhDyaQYWdSogdWrqHBJ/6gzWzq87s
-	UqqkR5sGjoffa+umzhCOAEK/TjskP4sl3Ob3aUdNMhNAqa5xBVus+mEYMPDwD5zNspiNaPGga+k
-	R3rTmQ7BJYauzD5zn3zxpyo2itvK1TixPNk7766mAq6C8KJvGELwQm72IQto/TIRV9yB+jcIC5N
-	fZXPefiids+xN73RiSCs6raJTDh/ErGQsjNlvFwt8zs0932Vj2yfoZ0VKEX+sudQACCGndodOXy
-	Yz0ctutYg=
-X-Google-Smtp-Source: AGHT+IEuiDiglPwmV1PehXcY70hodMwYIFyGOdsXoLipFNPjAGrinssVi1Zvi2KS3OSRzXamJ0+FXg==
-X-Received: by 2002:a05:6000:2f87:b0:3d4:eac4:9db2 with SMTP id ffacd0b85a97d-3e63736d7c8mr11407057f8f.5.1757420853362;
-        Tue, 09 Sep 2025 05:27:33 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:3d9:2080:25ab:4e12:265b:4b6? ([2a01:e0a:3d9:2080:25ab:4e12:265b:4b6])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45dcff67787sm237340005e9.16.2025.09.09.05.27.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 09 Sep 2025 05:27:33 -0700 (PDT)
-Message-ID: <cdcc80aa-45b0-436f-99f9-b3f09999a0fe@linaro.org>
-Date: Tue, 9 Sep 2025 14:27:31 +0200
+        d=1e100.net; s=20230601; t=1757424662; x=1758029462;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=dG6XF2PIOMDeR4MOZBWi65Kf7chBzQecby0CPXw5mi8=;
+        b=PXkYwom4z5LucpEv2k/13zJKdTZ3vxdFDODRIXn0S1dqv10TJtKgR/2Br+lyjte5Pb
+         Vfp62g319MjCWsHL1oSQTLBwGt7PETed22UFJy3tVW9HFtjN7m9v6v6y8Kcu2qLc8GtF
+         DImEfYvXcWNwvkjgU4FxSxQZa2+gPBUlQix/mBge2uUr0HbEHy1sBTIcW2FbQwffn/8a
+         whTQJS0aASuJfu9eQeLKjfE6bfI9WBD09NgJTORIxORmLtO7+OkRpu7aXvKGxFM45jEE
+         bypj0fSlbYEksDRG7khLhoCYApsQTv3SHlXlYk2ROFVIxgfmqyQEeHgu3KFywnLQA3ST
+         s8dg==
+X-Forwarded-Encrypted: i=1; AJvYcCVNIm0Za2zqWJXmNKCvh9iHBbF4BLw2yZOZg3kqJxNj/1GZ8vYOBnloe/ug8vtNGjsDtqgPido1jFmz@lists.infradead.org, AJvYcCVxOzb/zfnn9uW404CbCR+gHvl18AQMW7IhbwxvcHJu68iTiOB2hAk35eCt12EI0dIzBGONBpYpCskDh08YYyE=@lists.infradead.org, AJvYcCW26aN8Ufk6ZSFFeVLu/ycW8924aTXP/KvqJVdvDZpWtomXMzwITjBhxybIgdMkgG/X4qjnYGL6B6G/SO58ig3H@lists.infradead.org
+X-Gm-Message-State: AOJu0YyzzCzDqulQ2oEpb49UXOnDfKd9xNO8Pa/KaoMBEn0OZ4QX/syu
+	dBDy17A1TNzCYfHfQdwK8IPGnjiUZMHSVuBEjExfNq0m1DJqQ+SgiPDwvc9lljAeQ30=
+X-Gm-Gg: ASbGncunORUz1qkwIjvZmo/LtFcfr6LHOte0bnFXq+rOlxWCGJ4yruUWUCfdscaJA7V
+	1TICiMKZ/uBGelRJiWDs4ejiihffEDTvI28eHN1JGG7wmMX3IcUlcAr6nkN0l8de3g3OXw3phE7
+	w7tWqPLXxWyMaDz7TQySYtJtdpIyUKScDKd3Ns5zmJ9o0VPDlYstj3nlk4FM015ExWidHmER4ZX
+	EMcb02qhytSgjdfpslbsPLqnuPprutFSrReX3uFy8tFm0NhReHh1FjHc00qQClLLfZR8GLRutFd
+	68ECu9TBZXeuJj3die068Tubsvfe88SPGliQfLdF7wF1enR+mrpHF+v2QIG99DV7iVun5hq1Xb5
+	ngIfOvPPb+wkWy39Js/WYVTfxsBsP0kpvtjM+amIV
+X-Google-Smtp-Source: AGHT+IFvzCSi3Jx1813Qml8IRiQpzQZCTcshHHIDJ588+57HfZOE6WtTLDZVN3MrY4AiWuNHBrHx4Q==
+X-Received: by 2002:a17:90b:5584:b0:32b:cb05:849a with SMTP id 98e67ed59e1d1-32d43f936fbmr14109516a91.29.1757424661526;
+        Tue, 09 Sep 2025 06:31:01 -0700 (PDT)
+Received: from localhost.localdomain ([240e:3a6:1c4b:13c0:db95:4539:1490:64d2])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-32dab173060sm810778a91.5.2025.09.09.06.30.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 09 Sep 2025 06:31:00 -0700 (PDT)
+From: WeiHao Li <cn.liweihao@gmail.com>
+To: heiko@sntech.de,
+	robh@kernel.org
+Cc: krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	WeiHao Li <cn.liweihao@gmail.com>
+Subject: [PATCH v2 0/4] Fix USB controller support for RK3368
+Date: Tue,  9 Sep 2025 21:29:54 +0800
+Message-ID: <20250909132958.26423-1-cn.liweihao@gmail.com>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v3 3/5] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Document lanes mapping when not using in USB-C complex
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250908-topic-x1e80100-hdmi-v3-0-c53b0f2bc2fb@linaro.org>
- <20250908-topic-x1e80100-hdmi-v3-3-c53b0f2bc2fb@linaro.org>
- <7dzfcuvr45h4iailtjutqjev7lofoqu7w6ob77gehgmy7mctpk@k7oob4wj3c7a>
- <14d58c6d-ca20-4349-8031-9906a4539fef@linaro.org>
- <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_052735_994607_A9EEBAB2 
-X-CRM114-Status: GOOD (  19.76  )
+X-CRM114-CacheID: sfid-20250909_063103_089317_F08CC045 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,139 +97,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/09/2025 13:16, Dmitry Baryshkov wrote:
-> On Tue, Sep 09, 2025 at 09:14:49AM +0200, Neil Armstrong wrote:
->> On 08/09/2025 23:14, Dmitry Baryshkov wrote:
->>> On Mon, Sep 08, 2025 at 03:04:20PM +0200, Neil Armstrong wrote:
->>>> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
->>>> of a combo glue to route either lanes to the 4 shared physical lanes.
->>>>
->>>> The routing of the lanes can be:
->>>> - 2 DP + 2 USB3
->>>> - 4 DP
->>>> - 2 USB3
->>>>
->>>> The layout of the lanes was designed to be mapped and swapped
->>>> related to the USB-C Power Delivery negociation, so it supports
->>>> a finite set of mappings inherited by the USB-C Altmode layouts.
->>>>
->>>> Nevertheless those QMP Comby PHY can be used to drive a DisplayPort
->>>> connector, DP->HDMI bridge, USB3 A Connector, etc... without
->>>> an USB-C connector and no PD events.
->>>>
->>>> Document the data-lanes on numbered port@0 out endpoints,
->>>> allowing us to document the lanes mapping to DisplayPort
->>>> and/or USB3 connectors/peripherals.
->>>>
->>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->>>> ---
->>>>    .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 59 +++++++++++++++++++++-
->>>>    1 file changed, 58 insertions(+), 1 deletion(-)
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->>>> index 5005514d7c3a1e4a8893883497fd204bc04e12be..51e0d0983091af0b8a5170ac34a05ab0acc435a3 100644
->>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
->>>> @@ -81,10 +81,67 @@ properties:
->>>>      ports:
->>>>        $ref: /schemas/graph.yaml#/properties/ports
->>>> +
->>>>        properties:
->>>>          port@0:
->>>> -        $ref: /schemas/graph.yaml#/properties/port
->>>> +        $ref: /schemas/graph.yaml#/$defs/port-base
->>>>            description: Output endpoint of the PHY
->>>> +        unevaluatedProperties: false
->>>> +
->>>> +        properties:
->>>> +          endpoint:
->>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
->>>> +            unevaluatedProperties: false
->>>> +
->>>> +          endpoint@0:
->>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
->>>> +            description: Display Port Output lanes of the PHY when used with static mapping
->>>> +            unevaluatedProperties: false
->>>> +
->>>> +            properties:
->>>> +              data-lanes:
->>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
->>>> +                minItems: 2
->>>
->>> Nit: DP can work in a 1-lane mode. Do we nned to support that in the PHY?
->>
->> So the PHY already supports 1-lane, but the QMP Combo only supports
->> mapping 2+2 or 4, but nevetheless we can still decscribe 1 lane in DT
->> int both in & out endpoint and still should work fine.
->>
->> Do you think this should be done now ?
-> 
-> Do we support it in the PHY hardware?
+This series fixs USB controller support for the Rockchip RK3368 SoC.
 
-The PHY definitely supports 1 lanes, in fact DP the code will cycle over 4, 2 and 1 lane.
+Key changes:
+ - Update phy-rockchip-inno-usb2 driver to preperly handle RK3368 usb
+   phy initialization and configuration.
+ - Add usb PHY node to rk3368.dtsi with correct clocks and register
+   mapping.
+ - Add missing OHCI node, add missing attribute for usb host node.
+ - Add dt-bindings document.
 
-Neil
+The following changes since v1:
+ - Remove the duplicate structure member I accidentally added.
 
-> 
->>
->> Neil
->>
->>>
->>>> +                maxItems: 4
->>>> +                oneOf:
->>>> +                  - items: # DisplayPort 2 lanes, normal orientation
->>>> +                      - const: 0
->>>> +                      - const: 1
->>>> +                  - items: # DisplayPort 2 lanes, flipped orientation
->>>> +                      - const: 3
->>>> +                      - const: 2
->>>> +                  - items: # DisplayPort 4 lanes, normal orientation
->>>> +                      - const: 0
->>>> +                      - const: 1
->>>> +                      - const: 2
->>>> +                      - const: 3
->>>> +                  - items: # DisplayPort 4 lanes, flipped orientation
->>>> +                      - const: 3
->>>> +                      - const: 2
->>>> +                      - const: 1
->>>> +                      - const: 0
->>>> +            required:
->>>> +              - data-lanes
->>>> +
->>>> +          endpoint@1:
->>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
->>>> +            description: USB Output lanes of the PHY when used with static mapping
->>>> +            unevaluatedProperties: false
->>>> +
->>>> +            properties:
->>>> +              data-lanes:
->>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
->>>> +                minItems: 2
->>>> +                oneOf:
->>>> +                  - items: # USB3, normal orientation
->>>> +                      - const: 1
->>>> +                      - const: 0
->>>> +                  - items: # USB3, flipped orientation
->>>> +                      - const: 2
->>>> +                      - const: 3
->>>> +
->>>> +            required:
->>>> +              - data-lanes
->>>>          port@1:
->>>>            $ref: /schemas/graph.yaml#/properties/port
->>>>
->>>> -- 
->>>> 2.34.1
->>>>
->>>
->>
-> 
+These changes were tested on a RK3368-based board [1]. Both of USB ports
+can emumerate device (HID and mass storage).
+
+Main code changes come from the rockchip downstream source [2].
+
+[1] https://ieiao.github.io/wiki/embedded-dev/rockchip/rk3368
+[2] https://github.com/rockchip-linux/kernel
+
+Tested-by: WeiHao Li <cn.liweihao@gmail.com>
+Signed-off-by: WeiHao Li <cn.liweihao@gmail.com>
+
+WeiHao Li (4):
+  phy: rockchip: inno-usb2: Add usb2 phy support for RK3368
+  arm64: dts: rockchip: Add USB2.0 PHY for RK3368
+  dt-bindings: phy: rockchip,inno-usb2phy: Document rk3368 usb phy
+  arm64: dts: rockchip: Add phys attribute of USB host node for RK3368
+
+ .../bindings/phy/rockchip,inno-usb2phy.yaml   |  2 +
+ arch/arm64/boot/dts/rockchip/rk3368.dtsi      | 47 +++++++++++++++++-
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 48 +++++++++++++++++++
+ 3 files changed, 95 insertions(+), 2 deletions(-)
+
+-- 
+2.47.2
 
 
 -- 
