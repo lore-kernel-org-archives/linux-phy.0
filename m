@@ -4,136 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ABDECAC58E
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 17:20:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75BEBCAC583
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 17:27:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yk5nnukP0CEHursRJH3D4Ep7KPWkadHbLw1nQvSX7zc=; b=wiAZ1wmNV1alGL
-	FAoPGnwlEm/OXiEwKzjnfQyJM4fMLYAS74NwbWWTAY4jGQFOr4yhaJ35mX1TDPYfsU58Npv1pgQwJ
-	qNP33PhJJbRaFAvARkKwaSJFpdjQixiNjo3uIrNecWfBQIjL1WTx+opg8yQspGnu/NTxVyxQ5Fner
-	Wi1ZshjaYnT4X+0xcdB/nZQfzct8t+cYetJPy81XV2z9uCNcvWAJqdS5ZGURbfOySMzqM2qHoLRqj
-	xhdyJEwzo0nwjilAJ+ZMZqcFBXzqNJIlpFsEPQxZbkHjy7UJpyxvTnpWtJM2q5vkOXEk431mtzzBU
-	UAEuXUin6YXQGld6nSBA==;
+	List-Owner; bh=bey1VSc1auolOOifX5K152G5ckhVoDF94FIx7vcW8Ek=; b=GOL4I0tpp+HLpB
+	o3tNwza4fHwLOODZ06yBzx3dgyfShRiw8WnqAJREeSiayRYNAM+UwQL3d/Fn+aPKeMzLuGgmFyg2v
+	LkxrbVe1b2dfOQbdf5Sp7xYzxkUbjNZLYz/Dok9qsggskrdSDfDNtecpNpHndg/t3u7Y6QI51Fymf
+	UO+zERcyP8G9+korxyVEZekzOtCv/5nnWCa/wZ8Xiof+LJFTUeCAkCP0IVQD8nVZSAQf6MOv6EUko
+	/dTpnpzddj9UTLQMpsa/Mr6R+GIIU4oQzQC26APJ2woiJj8K5G+rObSXZOIi9s8sqkQos+ZwSjBll
+	Pp6GX9gCG9GgTQgp7SkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw20x-00000008vxF-2wTR;
-	Tue, 09 Sep 2025 17:20:19 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uw27Z-0000000972d-33gp;
+	Tue, 09 Sep 2025 17:27:09 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvysB-00000007ZOe-1ts3
-	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 13:59:04 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5899LZsa029320
-	for <linux-phy@lists.infradead.org>; Tue, 9 Sep 2025 13:59:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=+e+m2eXxsaETI5+DzIMa5RUB
-	HZ/+khiBv1BzAFhU+3c=; b=e3RVKHfIvyKU1oDik0Wo+ZvycmTxqZqJHGYPKKBY
-	v1JnjNrQVxXdzu7H8EJwamY+kGanlkNCRKdEik3p5xmIEa9//LUW2xvByoJbPLdp
-	rnVsrUMj4utvHOJUivDreQNssmyZ+itk0sIvg5WDL2+kwQYoC6uzhJcTF3AFuaVb
-	0E0t09mHBPZdH4weIT0+3iYnyJDO+rzv/Qmu0F4b/GE0ezdGX8/WzERGlUKNqRNB
-	5g9zeb/TimgZb0Q4KM2cParKdLhq4L7cj0UK0k5lmENxLF+m/cOVBSHWnG6K+9qn
-	b8kxuZzuRLUzlOUB6yfD5qWB2cSYNJlOLe+DVvwzE9wjBQ==
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490db8ge77-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 13:59:01 +0000 (GMT)
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-7211f13bc24so118788306d6.1
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 06:59:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757426340; x=1758031140;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=+e+m2eXxsaETI5+DzIMa5RUBHZ/+khiBv1BzAFhU+3c=;
-        b=aAJrEJVbuGf5E2FEUDoYdJSktt/1fUkP/T4YeoFlbI1UqRs/DifRcdnrnF65lPw0v1
-         C6Y2H6PziYPwiczNM9fut+2+dGGaZpLCpWQ0c8fgQ04xr7e2WabjUPuhypWAOrNCfbXJ
-         ZVMyvNotRFDh5mK8Z3P6OjKHiZ6hQa3g+iDB7lfHPXrev2ob9PPt0mLK/RI5tPc3zCTy
-         APoV3QryS0g0MjPQUvrRVoIfr4ifLoJ3lcF8vhTOFsSWIO1uml+SIFFkoOz/njFSaBr9
-         Z2mFlwQuOTV0UWQ+RWo+c0XDbG5diLajY8MsW8EBQujAS0GJ6+cvXTfToMDdaj6my32X
-         sK7Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVBk/P721oyWtx58UwwPPepgQBmdbivyIjo7IlHo3HbKXOYzsuqa0xvjbn3p+HlmftL72pHGY30mSg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwS3g6vbCDEV7kOJXpZIXAzk2g/o76p5w6igprqyM0Uj1JAOF5l
-	IKpGC2bYmeMXYTS6/6/R5lLA0muDCmuazFXJTWAQGPaTv3BpvPSQf1wRjkUOMfE7f1gyWbPAN+N
-	tjKfvkJyXR2qIzTULMrDcxF+XIJy0NtILpAx1tGcGeOADT/UBt5hp61LgUNnc6xkTszNG
-X-Gm-Gg: ASbGncu2gonTw+8EJ6Sol5M6EpqTcrL74Uokk2Lunv9jlFILv14SOV/LJ7vtH0cZsCe
-	vY4MLexqV6jsdSysQDWVwSLBcMXUv6+V6Pmb9Ymb9XCgZ0hCkJ+sTXIQ9XmNu45oBTDfMHX4s24
-	OYoQPisX0d2cwnA38a9jZL170XTE+r0Ekw14LLuqAwXFYoOfkt+5cF+3gWO09a6Sxn2tg6/I/4g
-	UPDF5B3TyTX9sjxLZa2K7ezJt25xBIpoxb8/4tyDDsI+mGT/Kw8YSIZ+SECEYHWLDRQBrLftmk0
-	AfObDM3pDZlfAUvXl75l5uatCa8MwHa1qJXjp97ki/jINUMKDek7JuqAF+baP27zGnLSyXjTAhO
-	GkdrhSEynALt8PB9T1RcvtYP/vAiCzZrXeswo0aK4Aq5nSxZeS1mX
-X-Received: by 2002:a05:6214:e6e:b0:72b:f322:6817 with SMTP id 6a1803df08f44-7391f30353dmr118891066d6.10.1757426340337;
-        Tue, 09 Sep 2025 06:59:00 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGx+dFgHWJPMSKPSEn7vDY6bmN0vj3HU50MJCOT7V8BOnFjo1dHoOhzTqahq+CmW1jyx6u1HA==
-X-Received: by 2002:a05:6214:e6e:b0:72b:f322:6817 with SMTP id 6a1803df08f44-7391f30353dmr118890216d6.10.1757426339166;
-        Tue, 09 Sep 2025 06:58:59 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5680c424fb2sm548560e87.11.2025.09.09.06.58.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 06:58:58 -0700 (PDT)
-Date: Tue, 9 Sep 2025 16:58:56 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-        Andrzej Hajda <andrzej.hajda@intel.com>,
-        Robert Foss <rfoss@kernel.org>,
-        Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-        Jonas Karlman <jonas@kwiboo.se>,
-        Jernej Skrabec <jernej.skrabec@gmail.com>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 3/5] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Document lanes mapping when not using in USB-C complex
-Message-ID: <dpidjyofawtrmci5lu72gdnwxxws57sw55cxxedkhsq2dryohm@cdxjwnros57y>
-References: <20250908-topic-x1e80100-hdmi-v3-0-c53b0f2bc2fb@linaro.org>
- <20250908-topic-x1e80100-hdmi-v3-3-c53b0f2bc2fb@linaro.org>
- <7dzfcuvr45h4iailtjutqjev7lofoqu7w6ob77gehgmy7mctpk@k7oob4wj3c7a>
- <14d58c6d-ca20-4349-8031-9906a4539fef@linaro.org>
- <c25kbb65aijgolxjzunydvhupt774pfmbcz5lvfvl5f74rrxtr@vboh347gdvdp>
- <da984d8f-85ae-44cf-8de4-208bfc9e292d@oss.qualcomm.com>
+	id 1uw1lq-00000008jZP-48VI;
+	Tue, 09 Sep 2025 17:04:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 684C760224;
+	Tue,  9 Sep 2025 17:04:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C53DEC4CEF4;
+	Tue,  9 Sep 2025 17:04:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757437482;
+	bh=1Rd9o6WpxdFjdYOqLhQLHzTPUyEZ/qZjJs+LfJAwKOQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=MUPs6TMATyIsWv6eZBfXU7qjW1nEZmICjT6oS3/xu7zFuKp8OcsoeErMoi07Z2RCI
+	 oPUCzCXj0E1rmAfcOUJX7Fhz3e18+/ouV0NrfSZFlClTWj92UxKW3sENkvB2epdKnu
+	 45nGcuV3mGiHPK0AdR72XnrIx4mEY2vQgTCtr0t6cq65oxgtYIjY75RRDQlQ3/paqt
+	 RXYCQ5jQ7MfQ65NIuO9EBiWi48jZCEQqF3CaBU3uBPGJJKeXEyVMUj7q/wIQk9vJcN
+	 kVcUJdgoenXFGcaqzIwqRXWHSlReJ4LTsEgzx1wcYQu38gC7zP975f1OtGsytT1WR5
+	 uJ5qWE2zpZsww==
+Date: Tue, 9 Sep 2025 12:04:40 -0500
+From: Rob Herring <robh@kernel.org>
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+	Janne Grunau <j@jannau.net>,
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
+	Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>,
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 16/22] dt-bindings: phy: Add Apple Type-C PHY
+Message-ID: <20250909170440.GA3343344-robh@kernel.org>
+References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+ <20250906-atcphy-6-17-v2-16-52c348623ef6@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <da984d8f-85ae-44cf-8de4-208bfc9e292d@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzMSBTYWx0ZWRfX1XnhHqCB7RYo
- K/usN5/kq0obq7CKqswXVMbNXy3EprGFnK4w0wuvM1IoHvnOdzI/fa5hHjk2dG4ICnLQAa9pZiY
- Q55XWS75FBWDUxtBpqunuzoxljYkNoJdNP18xz2Ug9p1zVSEAEiCV5fzO05TTjWqVoxJMNP/bZL
- B0asN9jw2cxVMbqch05ad1YdoziZV+AN2wW4Tbynh4WRzxZk0VcxGuh4sJTScaJ38v8HnM9T4QE
- C+/Q34VBHv2WgpSHuNZRYC3jWXabsU/VWUqgUTJOv+7EQYylmgOG9LSGbo3DTqifa2/Xo0pMsnC
- yxuy+kwO235FW842YxoZFGrOwURBQZPfaNtUec2YwjhsC0NV16HiMNFUmpxaiy9PQFQHnhA+FYr
- W83dgFk3
-X-Proofpoint-ORIG-GUID: wH3fEGFr5Ewg5Fz8bRtFGPFjACYzkQP0
-X-Proofpoint-GUID: wH3fEGFr5Ewg5Fz8bRtFGPFjACYzkQP0
-X-Authority-Analysis: v=2.4 cv=VIDdn8PX c=1 sm=1 tr=0 ts=68c032a5 cx=c_pps
- a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=yJojWOMRYYMA:10 a=KKAkSRfTAAAA:8 a=r0EWWIcaWpoI38bJcbMA:9 a=CjuIK1q_8ugA:10
- a=1HOtulTD9v-eNWfpl4qZ:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-09_02,2025-09-08_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 malwarescore=0 spamscore=0 suspectscore=0 bulkscore=0
- phishscore=0 adultscore=0 clxscore=1015 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060031
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_065903_640365_4B420B3D 
-X-CRM114-Status: GOOD (  30.09  )
+In-Reply-To: <20250906-atcphy-6-17-v2-16-52c348623ef6@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,83 +81,277 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 09, 2025 at 01:21:19PM +0200, Konrad Dybcio wrote:
-> On 9/9/25 1:16 PM, Dmitry Baryshkov wrote:
-> > On Tue, Sep 09, 2025 at 09:14:49AM +0200, Neil Armstrong wrote:
-> >> On 08/09/2025 23:14, Dmitry Baryshkov wrote:
-> >>> On Mon, Sep 08, 2025 at 03:04:20PM +0200, Neil Armstrong wrote:
-> >>>> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
-> >>>> of a combo glue to route either lanes to the 4 shared physical lanes.
-> >>>>
-> >>>> The routing of the lanes can be:
-> >>>> - 2 DP + 2 USB3
-> >>>> - 4 DP
-> >>>> - 2 USB3
-> >>>>
-> >>>> The layout of the lanes was designed to be mapped and swapped
-> >>>> related to the USB-C Power Delivery negociation, so it supports
-> >>>> a finite set of mappings inherited by the USB-C Altmode layouts.
-> >>>>
-> >>>> Nevertheless those QMP Comby PHY can be used to drive a DisplayPort
-> >>>> connector, DP->HDMI bridge, USB3 A Connector, etc... without
-> >>>> an USB-C connector and no PD events.
-> >>>>
-> >>>> Document the data-lanes on numbered port@0 out endpoints,
-> >>>> allowing us to document the lanes mapping to DisplayPort
-> >>>> and/or USB3 connectors/peripherals.
-> >>>>
-> >>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> >>>> ---
-> >>>>   .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 59 +++++++++++++++++++++-
-> >>>>   1 file changed, 58 insertions(+), 1 deletion(-)
-> >>>>
-> >>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> >>>> index 5005514d7c3a1e4a8893883497fd204bc04e12be..51e0d0983091af0b8a5170ac34a05ab0acc435a3 100644
-> >>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> >>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-> >>>> @@ -81,10 +81,67 @@ properties:
-> >>>>     ports:
-> >>>>       $ref: /schemas/graph.yaml#/properties/ports
-> >>>> +
-> >>>>       properties:
-> >>>>         port@0:
-> >>>> -        $ref: /schemas/graph.yaml#/properties/port
-> >>>> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> >>>>           description: Output endpoint of the PHY
-> >>>> +        unevaluatedProperties: false
-> >>>> +
-> >>>> +        properties:
-> >>>> +          endpoint:
-> >>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
-> >>>> +            unevaluatedProperties: false
-> >>>> +
-> >>>> +          endpoint@0:
-> >>>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
-> >>>> +            description: Display Port Output lanes of the PHY when used with static mapping
-> >>>> +            unevaluatedProperties: false
-> >>>> +
-> >>>> +            properties:
-> >>>> +              data-lanes:
-> >>>> +                $ref: /schemas/types.yaml#/definitions/uint32-array
-> >>>> +                minItems: 2
-> >>>
-> >>> Nit: DP can work in a 1-lane mode. Do we nned to support that in the PHY?
-> >>
-> >> So the PHY already supports 1-lane, but the QMP Combo only supports
-> >> mapping 2+2 or 4, but nevetheless we can still decscribe 1 lane in DT
-> >> int both in & out endpoint and still should work fine.
-> >>
-> >> Do you think this should be done now ?
-> > 
-> > Do we support it in the PHY hardware?
+On Sat, Sep 06, 2025 at 03:43:29PM +0000, Sven Peter wrote:
+> Apple's Type-C PHY (ATCPHY) is a PHY for USB 2.0, USB 3.x,
+> USB4/Thunderbolt, and DisplayPort connectivity found in Apple Silicon
+> SoCs.
 > 
-> I don't think the PHY cares if it's 1 or 2 lanes
+> The PHY handles muxing between these different protocols and also provides
+> the reset controller for the attached dwc3 USB controller.
+> 
+> Signed-off-by: Sven Peter <sven@kernel.org>
+> ---
+>  .../devicetree/bindings/phy/apple,atcphy.yaml      | 213 +++++++++++++++++++++
+>  MAINTAINERS                                        |   1 +
+>  2 files changed, 214 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/apple,atcphy.yaml b/Documentation/devicetree/bindings/phy/apple,atcphy.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..a863fe3a8f6d80a113e495e8425775c91e4cd10c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/apple,atcphy.yaml
+> @@ -0,0 +1,213 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/apple,atcphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Apple Type-C PHY (ATCPHY)
+> +
+> +maintainers:
+> +  - Sven Peter <sven@kernel.org>
+> +
+> +description:
 
-I think so too. So maybe we shouldn't list 1 lane separately here.
+Add '>' to to maintain paragraph formatting.
 
--- 
-With best wishes
-Dmitry
+> +  The Apple Type-C PHY (ATCPHY) is a PHY for USB 2.0, USB 3.x,
+> +  USB4/Thunderbolt, and DisplayPort connectivity found in Apple Silicon SoCs.
+> +
+> +  The PHY handles muxing between these different protocols and also provides the
+> +  reset controller for the attached DWC3 USB controller.
+> +
+> +  The PHY is designed for USB4 operation and does not handle individual
+> +  differential pairs as distinct DisplayPort lanes. Any reference to lane in
+> +  this binding hence refers to two differential pairs (RX and TX) as used in USB
+> +  terminology.
+> +
+> +allOf:
+> +  - $ref: /schemas/usb/usb-switch.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - apple,t6000-atcphy
+> +              - apple,t6020-atcphy
+> +              - apple,t8112-atcphy
+> +          - const: apple,t8103-atcphy
+> +      - const: apple,t8103-atcphy
+> +
+> +  reg:
+> +    items:
+> +      - description: Common controls for all PHYs (USB2/3/4, DisplayPort, Thunderbolt)
+> +      - description: DisplayPort Alternate Mode PHY specific controls
+> +      - description: AXI to Apple Fabric interconnect controls, only modified by tunables
+> +      - description: USB2 PHY specific controls
+> +      - description: USB3 PIPE interface controls
+> +
+> +  reg-names:
+> +    items:
+> +      - const: core
+> +      - const: lpdptx
+> +      - const: axi2af
+> +      - const: usb2phy
+> +      - const: pipehandler
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +
+> +  "#reset-cells":
+> +    const: 0
+> +
+> +  mode-switch: true
+> +  orientation-switch: true
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Output endpoint of the PHY to the Type-C connector
+
+SS port of the connector?
+
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Incoming endpoint from the USB3 controller
+> +
+> +      port@2:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Incoming endpoint from the DisplayPort controller
+> +
+> +      port@3:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description: Incoming endpoint from the USB4/Thunderbolt controller
+> +
+> +  apple,tunable-axi2af:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      AXI2AF tunables.
+> +
+> +      This array is filled with 3-tuples each containing three 32-bit values
+> +      <register offset>, <mask>, and <value> by the bootloader.
+
+That sounds like a 3xN matrix. Use uint32-matrix type.
+
+blank line between paragraphs and use '>' modifier.
+
+> +      The driver will use these to configure the PHY by reading from each
+> +      register, ANDing it with <mask>, ORing it with <value>, and storing the
+> +      result back to the register.
+> +      These values slightly differ even between different chips of the same
+> +      generation and are likely calibration values determined by Apple at
+> +      manufacturing time.
+
+This could be worded more simply. The first part sounds like fixed for a 
+given SoC, but from manufacturing time setting I gather these vary even 
+for a single product/device.
+
+I gather all this is being copied out of Apple FW?
+
+> +
+> +  apple,tunable-common:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      Common tunables required for all modes, see apple,tunable-axi2af for details.
+> +
+> +  apple,tunable-fuses:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      Fuse based tunables required for all modes, see apple,tunable-axi2af for details.
+> +
+> +  apple,tunable-lane0-usb:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      USB tunables on lane 0, see apple,tunable-axi2af for details.
+> +
+> +  apple,tunable-lane1-usb:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      USB tunables on lane 1, see apple,tunable-axi2af for details.
+> +
+> +  apple,tunable-lane0-cio:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      USB4/Thunderbolt ("converged IO") tunables on lane 0, see apple,tunable-axi2af for details.
+
+Wrap lines at 80 char.
+
+> +
+> +  apple,tunable-lane1-cio:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      USB4/Thunderbolt ("converged IO") tunables on lane 1, see apple,tunable-axi2af for details.
+> +
+> +  apple,tunable-lane0-dp:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      DisplayPort tunables on lane 0, see apple,tunable-axi2af for details.
+> +
+> +      Note that lane here refers to a USB RX and TX pair re-used for DisplayPort
+> +      and not to an individual DisplayPort differential lane.
+> +
+> +  apple,tunable-lane1-dp:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      DisplayPort tunables on lane 1, see apple,tunable-axi2af for details.
+> +
+> +      Note that lane here refers to a USB RX and TX pair re-used for DisplayPort
+> +      and not to an individual DisplayPort differential lane.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +  - "#reset-cells"
+> +  - orientation-switch
+> +  - mode-switch
+> +  - power-domains
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@83000000 {
+> +      compatible = "apple,t8103-atcphy";
+> +      reg = <0x83000000 0x4c000>,
+> +            <0x83050000 0x8000>,
+> +            <0x80000000 0x4000>,
+> +            <0x82a90000 0x4000>,
+> +            <0x82a84000 0x4000>;
+> +      reg-names = "core", "lpdptx", "axi2af", "usb2phy",
+> +                  "pipehandler";
+> +
+> +      #phy-cells = <1>;
+> +      #reset-cells = <0>;
+> +
+> +      orientation-switch;
+> +      mode-switch;
+> +      power-domains = <&ps_atc0_usb>;
+> +
+> +      ports {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +
+> +        port@0 {
+> +          reg = <0>;
+> +
+> +          endpoint {
+> +            remote-endpoint = <&typec_connector_ss>;
+> +          };
+> +        };
+> +
+> +        port@1 {
+> +          reg = <1>;
+> +
+> +          endpoint {
+> +            remote-endpoint = <&dwc3_ss_out>;
+> +          };
+> +        };
+> +
+> +        port@2 {
+> +          reg = <2>;
+> +
+> +          endpoint {
+> +            remote-endpoint = <&dcp_dp_out>;
+> +          };
+> +        };
+> +
+> +        port@3 {
+> +          reg = <3>;
+> +
+> +          endpoint {
+> +            remote-endpoint = <&acio_tbt_out>;
+> +          };
+> +        };
+> +      };
+> +    };
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index e147e1b919d5737a34e684ec587872ce591c641a..c4cbae63b0c0d42042e12d366e4a32d7ca3711ea 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -2393,6 +2393,7 @@ F:	Documentation/devicetree/bindings/nvme/apple,nvme-ans.yaml
+>  F:	Documentation/devicetree/bindings/nvmem/apple,efuses.yaml
+>  F:	Documentation/devicetree/bindings/nvmem/apple,spmi-nvmem.yaml
+>  F:	Documentation/devicetree/bindings/pci/apple,pcie.yaml
+> +F:	Documentation/devicetree/bindings/phy/apple,atcphy.yaml
+>  F:	Documentation/devicetree/bindings/pinctrl/apple,pinctrl.yaml
+>  F:	Documentation/devicetree/bindings/power/apple*
+>  F:	Documentation/devicetree/bindings/power/reset/apple,smc-reboot.yaml
+> 
+> -- 
+> 2.34.1
+> 
+> 
 
 -- 
 linux-phy mailing list
