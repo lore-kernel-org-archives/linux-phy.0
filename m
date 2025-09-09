@@ -4,103 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE61FCA0FED
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 18:08:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08DFACAC582
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 18:08:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XyHSXawiiCFefrSX2D6x8pz23F7pDT/zj8e+b9oB/l8=; b=Ir5V01DJe2IH6s
-	fu2lunBAnh9/FgVeD85BitKQmiFx9RDmGIr3XXLO+QAu/a3CmuOOtO2WHXPtucroHjCCRugeFucda
-	KCjcMBMe0XFyfjEUoOaugV316xMyZ/RL28JYM+9nUgFDZbE6b3atSA2e1pwi5NPqPp48zanX+U2uZ
-	d5JTdVNaK1Dog/iDHP/xLo1xeKLFT9colOVVVojD4lG8Jekr4VKh5/Hyk73G7NQhRGbNDil+MSdff
-	ivyoNh2HzB1jCuZ2nXwXkVPs9+vGao0JDILhmUVTT7KqrMsaNnlnqguXuXxklC3GfTzCauNi+cXST
-	VHEDA/0HagIr8XMcJc+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tooqg6XiwZl6nVnenO1VZhFZgSy9RANcUpttLoHEUes=; b=QX7qvPbaHtP1Mw
+	mqsE0cZ3R4Ea0Ew7SvCprC4xC0i3vwXaOFeQIx5hXHZecDVtOOcStbIWecO7tBbBtME+VuTLrPswN
+	ycxSGf7larLMWrlCOHjuQcEco4+FoJTmZHuVu/5wKDYX2w6YY0aVYmgqPvfTMGlpPzIcjlWk17YZZ
+	R+thGnpeElWkxZU3erbUKp6ZMnPufRoGLS49JzSZb7NWtm6d9CX4v2Y196Xwt+GiBXRV4oF4FoivH
+	/wW6GhARS6F3/fNCyBlufwPapdNopc8IqB6QzYOxid4+43m+dPoLF1Y231MvEVIfxo8yyVAyu1nJi
+	eHdLFS1rWsM4NQRlo01Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw2lF-00000009JhY-22rT;
-	Tue, 09 Sep 2025 18:08:09 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1uw2lI-00000009Jk5-32uo;
+	Tue, 09 Sep 2025 18:08:12 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw2lD-00000009Jgo-3qzv
+	id 1uw2lG-00000009JhO-05Rm
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 18:08:09 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-45b9a856dc2so37746535e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 11:08:07 -0700 (PDT)
+	Tue, 09 Sep 2025 18:08:11 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-45dec1ae562so15018975e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 11:08:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757441286; x=1758046086; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=pzISf5D7Sm/re0S/MlFezCf6LIeMNaY1mdeO+lXW9Lw=;
-        b=D+MXlt3rBcC6v3eiv/obAK6/j8vFQDqqhJ4B5YA0yiLVJSRKQoZyKYGPZezmndVnbB
-         j1RKtTaS2jRnmadyXb+jGtCOmxcMAq1Ks68sKuo3++zRMhMFJGyqs8xIdxXtM26pGLhT
-         edbFrjC8zjIrXW0+z/2VpACmF31VK+ow3K36q/OmB1b7UPkc4DVf79EJa91agg5UuBz/
-         4Fa+63ks9a+NqTu7q7ZyDkPcAE8U5tsutiNVpoaDH6khMGcQURGRgy2+/YoVbTY2Igtj
-         v0EA38XDQ9uyncyC7k1gGvfld02rbl4PnlKTTlpKvj8t1YxFbFEk6ZqVCmwnZrNPCv4l
-         sAvA==
+        d=gmail.com; s=20230601; t=1757441288; x=1758046088; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lN4DToaDlANZB4p+KEsGqlMY3d+oUTSup5pBeEXRT2o=;
+        b=go81XVJA43sUl13zvnzgb8kICcP+aZsJuCW2ZFyCxDSG/vKg16IkUeE56fYf2UrcO2
+         RCjDkHW1C1O68WVmzdDOdQmLz/LVPGSGFzuSne26++0ksulwRv2iLru1f2mtEQoqMzM+
+         3HiSYPe1JOlrp683scQMSMb/B3PrG5Nz00jntfAKFkmTpdkJS1OiYdvWUL0w93JuOEQe
+         xJab9mnKo3Rdsq9A1A+wpVtBFQxbQqiCPoTLHUx05NnJbWa9uVsg/5tE+R2uH+5tqcP9
+         qSaahfV/sBAMC1EwQ7LI6yVqbXWvw/yMar+qcheGEt+II9YD4k8oyPRONGOxuoTzf7zM
+         gNcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757441286; x=1758046086;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=pzISf5D7Sm/re0S/MlFezCf6LIeMNaY1mdeO+lXW9Lw=;
-        b=uEaWHPvBEkhXbiWrZfk2IVDBbO7D8fJV6Qg0pGUAHC+iVTHn6IBjflmXDxh+Z94pEE
-         wrFRgN+YoelKre0ud+QjdbiaIVB92UjrE0yaZQeAN8KOJ4EuTxCYLtuNzZL4r7NdNGXy
-         UVNBRYldqZ7qz5DVLzX9vzIoJTOIjAEFxYSvIwhIG7ntS67pBL8ILC0e71QD45tVou8A
-         NVvtyrZS6vJu/LKDjcQrx0tuh4fH73lgAjazZgofEFgM900O1+10Ygefy3j9JXbNm3eG
-         ARGntuRvvFCUKIVhPm8vBPf49SwM5gtoFfMTshAUyFEQ3U62RTfhr3t3Dos8SLs3XEX9
-         EZrg==
-X-Forwarded-Encrypted: i=1; AJvYcCXDD1MgfQCV8V/NEQRU30rUVT6pFNp4fVUv9ES0NPhyBRvtey282IgYWu14v1VleXdihDGnfs7Z5qc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyiL2SnGKXHRf9Qw0yCy0581hauEDPjkbQtqV5RnPhNaII8dfrh
-	KA2omr3MnS6JyQKFHmsoKpdho3iIMdB+PR2FThR6AUds3LIykXsxisvv
-X-Gm-Gg: ASbGnctkIclveT7jbuQjcrthLKaJscR4loEjdPb2LHnlY+oP4GYrwdFBovJsnhrnD2g
-	o+MCiXKXoC00dTPdX+VmBxySKPO4Vt5IMwgohlUuyMoktSptW/13uGT7yiCXcjLpKVYlXBDw6eX
-	ijfIcGjBg7q1c4bXItqJCjQ/L+IgWlrIc6bSlOdYm5IyKudDeHrgp+eS6gy/O0CGBm+iYqm9SKk
-	FCUMMHLO/hDqo4fNbjdMDr999QO/XfZkY9UBsxUtpSnx9cOf96uCS1aseYMp+L+gSbVrhViWQjt
-	74Ag1BB6hiiNyTi+01IPoMI+K3Spw9ogjejLxGN11lE8lIc6O6HCuZ/PeCH7rMT7ePwa1ZdCb1+
-	Sgb4IUDCRkhFmZa196x0mgLyWgdHLz0HQssH9e5p6QE3QrijXfmkXVNgW4jW+F3vSB6o1Vv7am5
-	wcZQnCd2TEBPPa
-X-Google-Smtp-Source: AGHT+IHU8RVQLjbJmIfVzd4tfEr5Aww1xmlwzaYanHEmYj2UDm4y3gZ47LxspBoB5NASAirXTwqtAA==
-X-Received: by 2002:a05:600c:3596:b0:45d:d6fc:2509 with SMTP id 5b1f17b1804b1-45dddeb00bfmr133247045e9.6.1757441285524;
-        Tue, 09 Sep 2025 11:08:05 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1757441288; x=1758046088;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=lN4DToaDlANZB4p+KEsGqlMY3d+oUTSup5pBeEXRT2o=;
+        b=ZxSMl9IkiCzQ/SxAwz9f70FTN3nKeTlDMFlmFcluSC8Ul9Hzjc2CIk3k5/BRGcp6iR
+         6y59DmhSgNzS2EAVJr3EjT3fsiOiF+LMYeJg1+8TrCpfuSB2NeLlcf9vQQlDDWsY/tbX
+         o/9Ig2qiSPhEDxq5D0JEsNhsQCjaxVPy+MTWdqwv2PVkIWKJbCmzaMh8a4wts0qzx8lb
+         sBx7ig1KOhxJSOMnfcuN7CddX7abjE8loP2uXzr247cydXxD/r5YPmDD44HPBSOetXVy
+         r1yGW4xMSqLbWs2GKmWcA3AXnfMBRNjs42os641lCJ6kHezPgi4uJkTY1ovHrG+U6Kl2
+         M4Vg==
+X-Forwarded-Encrypted: i=1; AJvYcCUaCdCHQOGdqqvyMmBTvM4mq9J1SFDQHjGwY5OxBISWKatQ3hMWgYMqwJFFN2RDhFGufAs1Vh7yF5w=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzMf04RJh5E81oWSsVIfxDemxUqABZou6H3T2XKVSvXvDp++LAW
+	lH7jNhsz1PtxDlEfbyvX5ZZGYzCA8Il/no1iX7pqsQzxlY5/srFyB+P10NdKL2krPTo=
+X-Gm-Gg: ASbGncuySvP82HVQik9Xc3AbazWfMKfuPQnNUQXJ7wWSfGeIno8JNYuhzhHVzbU7Gba
+	aNtlICQz5xyZ9AxPnQPUTM1rFeWzlullYXXpC/bobCTn8fRIUZFrHWc7QjNdAsebqGT49AIh9Cv
+	r6eTxCrg7LZ/roV8+IMdioka23hoAPX5vQIC1YXYWDboIubWH5GDUMFfC6sSHw2iV5zUqxn9pHw
+	5VinkuV+CqCvscfTLd1/6YNsn/6jVLto6iXiHjBXmqIpB2tkNJyc2gi374cExQsZ6ReQHZLqqq9
+	RLnN99DWaLXawpfhJ7+XrS1/kcoqFOep6pL4cwSE48Jf8se9EAQQnaeHTcr3XrAOiJcP2Ol3eB8
+	d1xaB3Vb63C+tyfYtzygn1ZJ5nx7rOrIXdj+8NK/lohodLDRTJCPmCT0GN8spN5WJ3GziU6ME7H
+	3vAmoEWm7ZsAh9
+X-Google-Smtp-Source: AGHT+IFOJ3S7z7BVPcwRlYAxLfjX01xLWVuU5j/vQzOH9gPBw/v5mV18PZ2b/6VxeAAxnmPJdSxIgQ==
+X-Received: by 2002:a05:600c:3583:b0:459:d3d0:650e with SMTP id 5b1f17b1804b1-45df6558689mr9373205e9.13.1757441287991;
+        Tue, 09 Sep 2025 11:08:07 -0700 (PDT)
 Received: from biju.lan (host86-139-30-37.range86-139.btcentralplus.com. [86.139.30.37])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45df679a4c9sm4174015e9.3.2025.09.09.11.08.04
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45df679a4c9sm4174015e9.3.2025.09.09.11.08.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 11:08:05 -0700 (PDT)
+        Tue, 09 Sep 2025 11:08:07 -0700 (PDT)
 From: Biju <biju.das.au@gmail.com>
 X-Google-Original-From: Biju <biju.das.jz@bp.renesas.com>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Mathias Nyman <mathias.nyman@intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
 	Geert Uytterhoeven <geert+renesas@glider.be>,
 	Magnus Damm <magnus.damm@gmail.com>
 Cc: Biju Das <biju.das.jz@bp.renesas.com>,
-	linux-clk@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
 	devicetree@vger.kernel.org,
-	Wesley Cheng <quic_wcheng@quicinc.com>,
 	linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Biju Das <biju.das.au@gmail.com>
-Subject: [PATCH v2 00/11] Add RZ/G3E USB3.2 Gen1 Host Controller support
-Date: Tue,  9 Sep 2025 19:07:45 +0100
-Message-ID: <20250909180803.140939-1-biju.das.jz@bp.renesas.com>
+	Biju Das <biju.das.au@gmail.com>,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH v2 03/11] dt-bindings: phy: renesas: Document Renesas RZ/G3E USB3.0 PHY
+Date: Tue,  9 Sep 2025 19:07:48 +0100
+Message-ID: <20250909180803.140939-4-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20250909180803.140939-1-biju.das.jz@bp.renesas.com>
+References: <20250909180803.140939-1-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_110807_998471_66ED898A 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20250909_110810_084122_1FF20372 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,127 +115,92 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Biju Das <biju.das.jz@bp.renesas.com>
 
-Add RZ/G3E USB3.2 Gen1 Host Controller and PHY support. The USB3HOST
-is compliant with the Universal Serial Bus 3.2 Specification Revision 1.0.
- - Supports 1 downstream USB receptacles
-     - Number of SSP Gen2 or SS ports: 1
-     - Number of HS or FS or LS ports: 1
- - Supports Super Speed Plus Gen2x1 (10 Gbps), Super Speed (5 Gbps),
-   High Speed (480 Mbps), Full Speed (12Mbps), and Low Speed (1.5 Mbps).
- - Supports all transfer-types: Control, Bulk, Interrupt, Isochronous, and
-   these split-transactions.
- - Supports Power Control and Over Current Detection.
+Document Renesas RZ/G3E USB3.0 PHY. This IP is connected between
+USB3HOST and PHY module. The main functions of the module are
+as follows:
+ - Reset control
+ - Control of PHY input pins
+ - Monitoring of PHY output pins
 
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+---
 v1->v2:
- * Collected tags.
- * Replaced usb30->usb3_0 for clocks and resets.
- * Replaced magic numbers with macros iphy driver.
- * Added ref to usb-xhci.yaml in USB3 binding patch.
- 
- Logs:
- root@smarc-rzg3e:/cip-test-scripts/py# cat /proc/interrupts | grep SLEEP
-133:          0          0          0          0 rzv2h-icu   0 Edge      SLEEP
-root@smarc-rzg3e:/cip-test-scripts/py# [  128.532806] PM: suspend entry (deep)
-[  128.536700] Filesystems sync: 0.000 seconds
-[  128.542466] Freezing user space processes
-[  128.548296] Freezing user space processes completed (elapsed 0.001 seconds)
-[  128.555283] OOM killer disabled.
-[  128.558531] Freezing remaining freezable tasks
-[  128.564240] Freezing remaining freezable tasks completed (elapsed 0.001 seconds)
-[  128.571649] printk: Suspending console(s) (use no_console_suspend to debug)
-NOTICE:  BL2: v2.10.5(release):2.10.5/rz_soc_dev-169-g1410189b0
-NOTICE:  BL2: Built : 12:53:12, Jul 15 2025
-NOTICE:  BL2: SYS_LSI_MODE: 0x13e06
-NOTICE:  BL2: SYS_LSI_DEVID: 0x8679447
-NOTICE:  BL2: SYS_LSI_PRR: 0x0
-NOTICE:  BL2: Booting BL31
-[  128.604363] sd 0:0:0:0: [sda] Synchronizing SCSI cache
-[  128.670116] renesas-gbeth 15c30000.ethernet end0: Link is Down
-[  128.683550] Disabling non-boot CPUs ...
-[  128.688394] psci: CPU3 killed (polled 4 ms)
-[  128.695415] psci: CPU2 killed (polled 0 ms)
-[  128.702070] psci: CPU1 killed (polled 0 ms)
-[  128.704897] Enabling non-boot CPUs ...
-[  128.705107] Detected VIPT I-cache on CPU1
-[  128.705157] GICv3: CPU1: found redistributor 100 region 0:0x0000000014960000
-[  128.705195] CPU1: Booted secondary processor 0x0000000100 [0x412fd050]
-[  128.706006] CPU1 is up
-[  128.706106] Detected VIPT I-cache on CPU2
-[  128.706128] GICv3: CPU2: found redistributor 200 region 0:0x0000000014980000
-[  128.706149] CPU2: Booted secondary processor 0x0000000200 [0x412fd050]
-[  128.706732] CPU2 is up
-[  128.706831] Detected VIPT I-cache on CPU3
-[  128.706854] GICv3: CPU3: found redistributor 300 region 0:0x00000000149a0000
-[  128.706876] CPU3: Booted secondary processor 0x0000000300 [0x412fd050]
-[  128.707557] CPU3 is up
-[  128.724000] dwmac4: Master AXI performs fixed burst length
-[  128.724900] renesas-gbeth 15c30000.ethernet end0: No Safety Features support found
-[  128.724920] renesas-gbeth 15c30000.ethernet end0: IEEE 1588-2008 Advanced Timestamp supported
-[  128.728436] renesas-gbeth 15c30000.ethernet end0: configuring for phy/rgmii-id link mode
-[  128.745766] dwmac4: Master AXI performs fixed burst length
-[  128.746653] renesas-gbeth 15c40000.ethernet end1: No Safety Features support found
-[  128.746668] renesas-gbeth 15c40000.ethernet end1: IEEE 1588-2008 Advanced Timestamp supported
-[  128.750222] renesas-gbeth 15c40000.ethernet end1: configuring for phy/rgmii-id link mode
-[  128.797030] usb usb1: root hub lost power or was reset
-[  128.797038] usb usb2: root hub lost power or was reset
-[  130.956146] usb 2-1: reset SuperSpeed Plus Gen 2x1 USB device number 2 using xhci-renesas-hcd
-[  131.143425] OOM killer enabled.
-[  131.146563] Restarting tasks: Starting
-[  131.151382] Restarting tasks: Done
-[  131.154877] random: crng reseeded on system resumption
-[  131.160209] PM: suspend exit
-[  131.494956] renesas-gbeth 15c30000.ethernet end0: Link is Up - 1Gbps/Full - flow control rx/tx
-
-root@smarc-rzg3e:/cip-test-scripts/py# ./run_pytests.sh tests/test_xhci.py -k test_xhci_005
-==================================================================== test session starts ====================================================================
-INFO     root:spl2_test_helpers.py:2059 DD performance with bs=32M count=32 is
-Write= 383 MB/s
-Read= 555 MB/s
-
-INFO     root:spl2_test_helpers.py:2099 fio performance with bs=32m for Sequential and bs=4m for random access are
-
-INFO     root:spl2_test_helpers.py:2104 b'   READ: bw=562MiB/s (590MB/s), 562MiB/s-562MiB/s (590MB/s-590MB/s), io=5024MiB (5268MB), run=8936-8936msec'
-INFO     root:spl2_test_helpers.py:2104 b'  WRITE: bw=555MiB/s (582MB/s), 555MiB/s-555MiB/s (582MB/s-582MB/s), io=5024MiB (5268MB), run=9058-9058msec'
-INFO     root:spl2_test_helpers.py:2104 b'   READ: bw=373MiB/s (391MB/s), 373MiB/s-373MiB/s (391MB/s-391MB/s), io=5000MiB (5243MB), run=13394-13394msec'
-INFO     root:spl2_test_helpers.py:2104 b'  WRITE: bw=387MiB/s (406MB/s), 387MiB/s-387MiB/s (406MB/s-406MB/s), io=5000MiB (5243MB), run=12920-12920msec'
-
-Biju Das (11):
-  dt-bindings: clock: renesas,r9a09g047-cpg: Add USB3.0 core clocks
-  clk: renesas: r9a09g047: Add USB3.0 clocks/resets
-  dt-bindings: phy: renesas: Document Renesas RZ/G3E USB3.0 PHY
-  phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
-  usb: host: xhci-rcar: Move R-Car reg definitions
-  dt-bindings: usb: Document Renesas RZ/G3E USB3HOST
-  usb: host: xhci-plat: Add .post_resume_quirk for struct xhci_plat_priv
-  usb: host: xhci-rcar: Add Renesas RZ/G3E USB3 Host driver support
-  arm64: dts: renesas: r9a09g047: Add USB3 PHY/Host nodes
-  arm64: dts: renesas: r9a09g047e57-smarc: Enable USB3HOST
-  arm64: defconfig: Enable RZ/G3E USB3 PHY driver
-
- .../bindings/phy/renesas,rzg3e-usb3-phy.yaml  |  63 ++++
- .../bindings/usb/renesas,rzg3e-xhci.yaml      |  87 ++++++
- arch/arm64/boot/dts/renesas/r9a09g047.dtsi    |  30 ++
- .../boot/dts/renesas/r9a09g047e57-smarc.dts   |  10 +
- .../boot/dts/renesas/renesas-smarc2.dtsi      |   8 +
- arch/arm64/configs/defconfig                  |   1 +
- drivers/clk/renesas/r9a09g047-cpg.c           |   9 +-
- drivers/phy/renesas/Kconfig                   |   7 +
- drivers/phy/renesas/Makefile                  |   1 +
- drivers/phy/renesas/phy-rzg3e-usb3.c          | 271 ++++++++++++++++++
- drivers/usb/host/Kconfig                      |   2 +-
- drivers/usb/host/xhci-plat.c                  |  14 +
- drivers/usb/host/xhci-plat.h                  |   1 +
- drivers/usb/host/xhci-rcar-regs.h             |  49 ++++
- drivers/usb/host/xhci-rcar.c                  | 100 ++++---
- drivers/usb/host/xhci-rzg3e-regs.h            |  12 +
- .../dt-bindings/clock/renesas,r9a09g047-cpg.h |   2 +
- 17 files changed, 621 insertions(+), 46 deletions(-)
+ * Collected tag.
+---
+ .../bindings/phy/renesas,rzg3e-usb3-phy.yaml  | 63 +++++++++++++++++++
+ 1 file changed, 63 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
- create mode 100644 Documentation/devicetree/bindings/usb/renesas,rzg3e-xhci.yaml
- create mode 100644 drivers/phy/renesas/phy-rzg3e-usb3.c
- create mode 100644 drivers/usb/host/xhci-rcar-regs.h
- create mode 100644 drivers/usb/host/xhci-rzg3e-regs.h
 
+diff --git a/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
+new file mode 100644
+index 000000000000..b86dc7a291a4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
+@@ -0,0 +1,63 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/renesas,rzg3e-usb3-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Renesas RZ/G3E USB 3.0 PHY
++
++maintainers:
++  - Biju Das <biju.das.jz@bp.renesas.com>
++
++properties:
++  compatible:
++    const: renesas,r9a09g047-usb3-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: APB bus clock
++      - description: USB 2.0 PHY reference clock
++      - description: USB 3.0 PHY reference clock
++
++  clock-names:
++    items:
++      - const: pclk
++      - const: core
++      - const: ref_alt_clk_p
++
++  power-domains:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - power-domains
++  - resets
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/renesas,r9a09g047-cpg.h>
++
++    usb-phy@15870000 {
++        compatible = "renesas,r9a09g047-usb3-phy";
++        reg = <0x15870000 0x10000>;
++        clocks = <&cpg CPG_MOD 0xb0>, <&cpg CPG_CORE 13>, <&cpg CPG_CORE 12>;
++        clock-names = "pclk", "core", "ref_alt_clk_p";
++        power-domains = <&cpg>;
++        resets = <&cpg 0xaa>;
++        #phy-cells = <0>;
++    };
 -- 
 2.43.0
 
