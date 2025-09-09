@@ -4,128 +4,169 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E429CAC583
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 15:47:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2273CAC583
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 15:48:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HlrFLFx8e7kzsEyOFextFwYBjvLxgQ+5PeYH6xkN5vg=; b=GAJayy22r9keyA
-	eux8zqpMC+IQMB8M5ifNf2+oP66OcUBuocpJNi0rG9n8c8oj06uFxBfGuW6eYpfcm0GOjn99JhI0D
-	Z8EkimVgmSNzJR7wksMPSroYit30qSPMLF9OEQP3lKXPIV46/H//WKEkhAZwtaePbsAkHba095u7k
-	oj55EiqxpPqMnE+2RpBUu23e4dQIhaVZxSr2p19y0Lt2Ex4zkCM1PTI4hBNthYgT4iwTrie0eDb5i
-	tBGeisXHESc0JaOSq9xUsrj1ZL5pmmkeya4V9Juxn9MYMPEfhtswMbVuUg1/bYIAlEEgsA91pKHhK
-	wEFNgWc/1KAwipWEwjkw==;
+	List-Owner; bh=HcFTQuGB75fvYvEZTovFNFAgsB+lICIfOriMibBMBRc=; b=liYHx3l3pf52rT
+	dSDsWSzhFg6V7dj3uViXXywmRBlH7ie2+sw+ZN7FENXkIgEDA4jM61QM62Lk89Dmja/1inOX9DNSb
+	/8iLi1jcTEi1Sak6skgSblKPDwznsivq8CeTd2sEB+OLsr70x/pLv05m7dNJfbuZbOzOHSpS+PPeX
+	y7dHsHYCHBBo8IyDWR2OL1LFt5ToHZb7CCiaYoOC+uVQa6T6n1ZQXFLBXRvWAgBwtkOI2jQAwXcd5
+	e/YGRx49Mu1agMzzjjk+ScWlujU7ly7vjOxTBj/vnGGonRQfVI03Wyxb8C51yNIJrYqCwt14CYavI
+	WbwaA8aMM3ORPut9zDpw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw0Yt-00000008GB9-1RSq;
-	Tue, 09 Sep 2025 15:47:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uw0aS-00000008Gqa-1n3U;
+	Tue, 09 Sep 2025 15:48:52 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvwi5-00000006nyF-2KnO
+	id 1uvwu0-00000006t0G-11La
+	for linux-phy@bombadil.infradead.org;
+	Tue, 09 Sep 2025 11:52:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
+	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=; b=oEU0fSheogp9wlL2HXPfmP0qQm
+	p3ngfcU8OMeS5VeeH7idv2iLL8nigA1KEt8t139S2YOjSeSRbll+2dWyPvsi4POomv2P2Dyb2GlWw
+	TPE+PmHfM1vUyBBKuOmVqSliGpZnJVJLyhCZOVeqYURUjdXgqxRepC7oJuIRvf1xPcv9AQu3me4oE
+	pVcLL2F+pa5w2fAlaRhvuo20Yhge6/+1DF/gn8lA12vXOc9doJD5qHPuCTQpWTl1MhD1DwRUoY92d
+	TruqvkekZp/FlzbirJCZW1QC5wpFpk+tB3AzuRsB1jWEXLww3MdNb70/PtmvYvoF+b9g8fjVVEvOP
+	5uPwsStA==;
+Received: from mail-japanwestazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c407::1] helo=OS0P286CU010.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uvwtu-00000005KzL-37l1
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Sep 2025 11:40:30 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5899LkhL032157
-	for <linux-phy@lists.infradead.org>; Tue, 9 Sep 2025 11:40:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=WkBZK4nX8r8AkRcyHEfLR0jL
-	z865vmuc1R3ut1MxHM0=; b=LcWLajU7pmng9f5CC2hU8jnbi4VfEWJPLitPJqRq
-	tVziE2UTN/VxVg5lJ0ZAtXP8Jf8K7mD34WvQcRwyxy/lCr/YKXaS449RDKOxhMoT
-	ZeLbpGk4rCwv+leG6flx5+K7DT8VbvZg5gg2sdnEpsdl69IgnsG7aQFTKuWHMWja
-	jqhy8pvG4MpwsjBkDQP5R98660muQp6JMZRy+1sowuJk/YOXYhMmHHuRFthLNMqP
-	4XaD9UaJDYGdVTn4c0AXPMt45rZe0XOURiTjN9nh79hrEMzEepz24Jdqo9Iuj0Kc
-	GHDXpdyjt/q5STE0wBgywjqv1KUuDjAbyUARZLPJLIye3w==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490bws85gq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 11:40:29 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-720408622c3so114894516d6.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Sep 2025 04:40:28 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757418027; x=1758022827;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WkBZK4nX8r8AkRcyHEfLR0jLz865vmuc1R3ut1MxHM0=;
-        b=jp9aB8sCQrtgN06v6h9/IgdSMJKvtobfITw7s9eJA1zd1q+NOHWlfO5GspvOZFBCSA
-         vAEZhEIGl1jxigwDz8VsR6rDoS0p/f+DV5kCQT8B9ic56Jdk6+rmECRFXN2IGSh+uDPf
-         ckklhGdMXxMRTHqzMqekrcmXjBCtUWX/XtKF448u+z7l8UqQGlIvXJvEdxrO/iV+lln/
-         xk4ytfRetK3vPfyfWuqbf1WsVAW75KDrIapa3FSResWPwLK10RV18yM50QnEoizvkZ5N
-         l/sG9i5vPzUt/f5AKrTbz39X7VR/yvVMhMkptA6qsKwX7liKvmjjye3HovkXfj64H0qv
-         SifQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV6rHbD56py82mgkKlSAVPAgm2kVP0JLKfYmctQ1awIVAFBS9copsJuQ6r61DZFkwni/5xE0QNoTbw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx/vy72Zfco2Ch+szMXVJRGWeNHAR7XQZW7LQU2OBxenz8ymW/i
-	Y0sNOSJs8ZhYha7zreN4KGGI3rxsIRHZz7pze9pZB/TtqCsb1bcVTIC9jdmufGIqqi7Mvs9X2cR
-	O3Vr2iVepOUIJNN8iFUQw/vTZGZiNSaOGp73dLfw5OQRH8DrwjDXJ2JBs4JCl5xcPBo/VfFA1ZU
-	QN
-X-Gm-Gg: ASbGncu3XYtFfRhDi+6ANZUdbAxRyPjQf7DPq4OQsXjf3UG3EpAtLodN8MdYqslHJ6X
-	w/OxOhM5jm4a+tJS9kwWR4cpxrhCbDlocbfLvVAcMzyZoziTYk+B3IRXMLstIS7qMgqiKqjjJkc
-	1p5fx0SV6P9uUbQBjfpCKFZ9TyJvVeoPIjmmrNpZnvz6DZbTzWniNVxjG1cHhYTe4PAupisaAl6
-	/jRMWTCa2BIfc5wp4S6ACtft2inw9BrsffX8XujZvq21Zya9P7IhR/6tIqTbW8H/1pyvg3ZfXrD
-	+igjp7MhwQvRp3jNmmUjH7yH3kESHgXhSyTrJrUWj8+kdPaQ2vs7DNpDbWgLc2yQrCI5sZfAs71
-	VLq37Eg+Ylm2BkKS4EwUbNkpLidlZzfcO5bdoEoL/ULAGMHFBx2RZ
-X-Received: by 2002:a05:6214:5287:b0:734:c868:fb4c with SMTP id 6a1803df08f44-73944249693mr115542016d6.62.1757418027256;
-        Tue, 09 Sep 2025 04:40:27 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF1x5yuvHnnOA+bErPR7PqGkCxp1J6nz/QL7NqI2NRrDi1/NlaUQaX5MIKLRDoOyGf3VbZlEA==
-X-Received: by 2002:a05:6214:5287:b0:734:c868:fb4c with SMTP id 6a1803df08f44-73944249693mr115541686d6.62.1757418026714;
-        Tue, 09 Sep 2025 04:40:26 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-568180679a6sm474574e87.105.2025.09.09.04.40.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Sep 2025 04:40:24 -0700 (PDT)
-Date: Tue, 9 Sep 2025 14:40:22 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/3] phy: qcom-qmp: qserdes-com: Add v8 DP-specific
- qserdes register offsets
-Message-ID: <dq6hg2l6mseov3koisg5vsrkhifiwutlfy2phwaehvwzxxfgug@vgtcptgcopmw>
-References: <20250909-phy-qcom-edp-add-glymur-support-v2-0-02553381e47d@linaro.org>
- <20250909-phy-qcom-edp-add-glymur-support-v2-2-02553381e47d@linaro.org>
- <3xw54kzk36u7zrfhgva4p577nzle3ctzi3lyhcxapczv2bhceo@23zcaylkqoff>
- <12ae186b-9816-4269-ab3a-7aacdc7cb954@oss.qualcomm.com>
+	Tue, 09 Sep 2025 11:52:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=dpcOLdavcKj5JcHB8CizCDU0H+JBfQrqFvJ0XELLYldfletUvmD19fJItix2kGOABtso9pWggnbua3rUT8V6c+0EGQbSHlN+WuNpFq6+HaPNnHkLf6oGlvTSzkxfFOipQ6e+fOLuNWfJGlbAUTjQ1gZMGDhMvMas6oVDxD6n8ciW2dRZV46fdqTGe1ozthauQBP2R+axXGB9/PXVBYcOHiYCEbagNjSqjKST5gTQmIZI5885M7pPseealwOOKfW5dwpAtEbmGp5KUFF4Hp/wiydUGQrBfJhyGX7REUlR8MJnYcWw1pyxpnp4yl/Y4g1ZtY0DFGL4uOsLWT/TJvaiFg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=;
+ b=kaB143D6I/HWgBOhnkCrwNA7Z1CjlkuV74+vOy/nvxSU3IxAQshWqUQKC/ZNzJK+tlT+sf5V5/AZbAr4QBInbxOgbf+7tSLLI9CWIlSgAXlrG2bmyChSlEr7e5HO1pgrNCv9dolHfo/BuEJA06Rs5IZKOwnj+xVebvBrAJTRvmfY6ZrKL8irE87OGpv115otYtjcMxO5S2l9tfW50iqqSBecvyanNnlM2gQ4kjoyxexbAVlgFTN2I+ddBPhQ41YymZ/ugyKOMy8cbz4NdnsVmXsawJXfUivmb/gH9oeQgf9geRK0+8FhNwXOYjjHwZr/TGncOVFl0jDhyG6oQgWn5g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=luG6vb6OqhkGy0cYTKSkZlcIkUi3k2l8vRl63TBxbWc=;
+ b=NUwiwYTZCEatfhihLpDgUH1oRCvsFtoEQNMOOHsxK0QKFX6GYbqnJ9Bl0rKBLpDE8R4YQp51Pp6xDtlEciemKwH95R+RTiQluLt7BwvElfUk9eG7wojcDzPdFFlOacu/PbESkkfOrcs1J0ND5VeB1wd2hQMl/veaDAeEvSr6Ass=
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
+ by TYYPR01MB8245.jpnprd01.prod.outlook.com (2603:1096:400:119::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Tue, 9 Sep
+ 2025 11:52:29 +0000
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1%3]) with mapi id 15.20.9094.021; Tue, 9 Sep 2025
+ 11:52:25 +0000
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Vinod Koul <vkoul@kernel.org>, biju.das.au <biju.das.au@gmail.com>
+CC: Kishon Vijay Abraham I <kishon@kernel.org>, Philipp Zabel
+	<p.zabel@pengutronix.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+	magnus.damm <magnus.damm@gmail.com>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-renesas-soc@vger.kernel.org"
+	<linux-renesas-soc@vger.kernel.org>, Prabhakar Mahadev Lad
+	<prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: RE: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
+Thread-Topic: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
+Thread-Index: AQHcEfZv1w9Ut+eaXkKiVoFJ2qvdQLR+lu2AgAxFR0A=
+Date: Tue, 9 Sep 2025 11:52:24 +0000
+Message-ID: <TY3PR01MB1134620DEE9D31EB9C3AC05A9860FA@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <20250820171812.402519-1-biju.das.jz@bp.renesas.com>
+ <20250820171812.402519-5-biju.das.jz@bp.renesas.com> <aLXJozzGsbIndK9P@vaman>
+In-Reply-To: <aLXJozzGsbIndK9P@vaman>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYYPR01MB8245:EE_
+x-ms-office365-filtering-correlation-id: 17018431-52de-44f5-889f-08ddef9757eb
+x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|376014|38070700021;
+x-microsoft-antispam-message-info: =?us-ascii?Q?Kl4me3JLLrvvQqfKq9Tz990zjL6Hqu6lZ3PvapHS85DX4lJclO2l2OG2Ihtp?=
+ =?us-ascii?Q?Sdj4qe60LB+yJIW5jrzepyyvFNsrE2U4CpzTJ5hkS9EZ1AiLFRYP1Qh3wmdc?=
+ =?us-ascii?Q?yWVYaQZ/Fn01TF5h3kqs/S6gTJpQrumFi6j/XBeyDfB7Gl/lb4OPLXjUtLci?=
+ =?us-ascii?Q?Z49050SdpA/CReC0JNVnu79cpgOYn8R3YynnzCY1pA1bStg8V1zJtGMob/Ha?=
+ =?us-ascii?Q?J5nxhasCRjE3OW+pGK6HbgsoaEMPJLdiJ9rakbd0NmswOs+ui0SZcfYZ5k24?=
+ =?us-ascii?Q?1pkEQhRBCs5ow+Jp8c20Zbl/it56KjmwpixFHQTY/xYdfi3QjMPiQjRcHIuA?=
+ =?us-ascii?Q?c2VQGTu5asRBQzslfSu8A88RpS7HsbAjE0wRg0fvzb5WGBtBl+k2alDrwiOr?=
+ =?us-ascii?Q?VvD1nINrXo2kUAnsUsFL6jFMZFC9b1AZ/D+TGhyk7+NiTQX7pa95Hc4iJJwX?=
+ =?us-ascii?Q?A1kPWRJXO5Q0N8+vRDWHWPW7lNcZZEu0i9igGopWCOUHS5oijI0lCpnNeT+k?=
+ =?us-ascii?Q?HLjwhgRx1MM9QHouzeUlpxy2TMA4kSF0AR7RsYErCWVi0TskAJwoZnpP3Nuf?=
+ =?us-ascii?Q?YM3KVS1oAy137Oz85F94Crxgtj2GcUZN/kYIqA97SfxG0YvYPW8QOw54lwYc?=
+ =?us-ascii?Q?DqGmshw2UgcNgYbDNlN4xwx34CPpSsaDwMQ8AzguN4047sgOURVz6Zf78nPZ?=
+ =?us-ascii?Q?UfxQqMnAgNarpTHnTGQDcwpGLNdzmyeSXvAAKDM7GI7cjYMsJS/p+Qx+q7S3?=
+ =?us-ascii?Q?i2uQgGhNKs4uTgGpy/l3XOeWpkNOUTyYZgOGcd8Lbks7RVubLg3em3a2gyJE?=
+ =?us-ascii?Q?pj0KC0ClIWplqZe4Ftw7fT+GrbqAnM5WCEG1CYP54GyMUvLxzlRfoPJB5AOa?=
+ =?us-ascii?Q?s0yf2D73VxoYoCtlsuV38Z/A031Yk7dUpLk55tsgiwIoQbCs7HSxnmh6MXVN?=
+ =?us-ascii?Q?IEmSONB377/YyXkP0qxIWCSNINLMQYqrDGodH0RRyy4kMuhZYZqpgSgYOuq8?=
+ =?us-ascii?Q?EeiBohiaQTWEiANGvEpS5wivIbkzXDYfLMaBeebWSanEX+IX+G7pWCNJcaRJ?=
+ =?us-ascii?Q?KxWFs+chNYoElP4PAAcntG/P6dhFmG1/FICAMotpnV8/33wdJqMNOD5+w6vJ?=
+ =?us-ascii?Q?bU0oietlfAuSbWMY567bjFKbZtuI7Dbj1zWhh2IObDDEEyYvT0D/oeGhNO38?=
+ =?us-ascii?Q?w1Xb5WSwnyLTa5B0nTaEinFoViyR41HxrQ6L1J3h9qBfBRX9wIeKaAO6YZ+p?=
+ =?us-ascii?Q?sJTPVfp5sHtWXFM/zgpPSpL48qG4yYnUfQydCYGTvYBidY+EgoVuDQWR5f4I?=
+ =?us-ascii?Q?t9k5QXtEn0usNG0vRmCj5TPQtIzRRsflC90TsN810LJ9bn3YxLCZ14e3cOxs?=
+ =?us-ascii?Q?kBpFTN5OyuqA2cZNCd42/ly5tjybIiww95mv2uDM1lJ18vfe5v7IrDhLi96u?=
+ =?us-ascii?Q?mqrdzzjCsnph16U3clD3SwcSPGp5/5gKHcQct2F96CS/5fU+caXqAA=3D=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700021);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?wfIsdgOZYjzH6UNRB7m7qvjgXp9nDtisByETpJLz5tG34hk95xZJxT51Fsj9?=
+ =?us-ascii?Q?yxAKiy7SxBn0r11qwPeMshvRwWqK61Ihw2enK0SbRDMwmT7PtgnoFIJhswnF?=
+ =?us-ascii?Q?Eko895GuIYhDMLGJEcWE5EsbsC7Vrd+uW1To5gOsiIEEY4O64PHFCrAmGmAU?=
+ =?us-ascii?Q?LaO+tK7kaq3KtNjIydX3QX48O2xgpwaTZK8v1ylYOhZDfIxLBz5k7xBuG8qC?=
+ =?us-ascii?Q?WIY5qZ251bkheXTkUdtHI9VHPTYFNFYJwgd6DM0ckc6bXtLeVjQ23hqVhB1a?=
+ =?us-ascii?Q?SkWtgPIpOmsEosUpQ6LfR1Yf0Nv8Z6hUG1ho9Ztd14nfI/lc7NCCU2M/GYoe?=
+ =?us-ascii?Q?jgjzKsYAdtiehrhu1v1qxkC0hJRkb/UYQ36AawMsgcjeXn/yGGVjHS9+/aGh?=
+ =?us-ascii?Q?dubrx7qXgxsNRmH56jWuk/5yRu/A2nKGkS1HxKLjUNfAmQkLwI0Z5MEgW3TU?=
+ =?us-ascii?Q?jrW32RWM/TNZPcG6pwdL+fWedvdiIbXmTJXtLCWFLwUW6GGMTXU+uZgvGpya?=
+ =?us-ascii?Q?ExmZWWTpuTpjfSp6J6FgN//9HdKo/7jQOw4KdhkrFzAr8rqI+FLBbVUVwsY0?=
+ =?us-ascii?Q?lkva9SpWdQrmW4m8l9LjkG9UmGCKzchIVysDFGFi2DglrSvuB14onl2Ayn51?=
+ =?us-ascii?Q?2ThtwcJ7qnv0fDvsEx5/h+hYH3zD3hZdSYcVBjva47chSL1BFXIrgsF+qjzR?=
+ =?us-ascii?Q?IfrIdYB8Z11Zr0UALET4hIiIJ34TkESfY9OOkj0fYFKAS6xN7kDP0dUvfeGU?=
+ =?us-ascii?Q?5+RYi9NV2qjQedWF1+IUygGEEZeehHV9ZwCIBTO4R/PLDGpMd5nF40e1+eBs?=
+ =?us-ascii?Q?aFpb79XCfaEIdcWw7AdYfEwnBiFY/rXnQu8z6Nh01jiiER71wnS8cO69T1o2?=
+ =?us-ascii?Q?EwON09+oXEEVZ+5HA7x+PmOPo4M+SDVzeffJ4uDPChtKhaaTFKDm6ekNhCam?=
+ =?us-ascii?Q?tzy4WvmtfXmeV2wxy+FF28H4mco8aNZK9IbIfHpeYbc72R+LkJWeS4VIG9LH?=
+ =?us-ascii?Q?4NS5uGR2gbNt3sY7HQ4ivz6i6JfqIRAh8BEwD2bvUj4uAkphk458bCp0/a8A?=
+ =?us-ascii?Q?lKFXvy/Paq0huOCK5O/fcCbu4r89NZL5WsrEUGm8VRKvuEb2PTxu7osm7qQ1?=
+ =?us-ascii?Q?2PkNIYilQ1DunJ/cqD5Jxj3pd/luWy6P2gxsAXu5dy8H+R1CBTYkRwr/c2Gl?=
+ =?us-ascii?Q?nLJSO551V14BNiUKI8snVxmJthxwZ+Pzf8gzjuAAEqgYlu4Yh4Q8tG1GotZ5?=
+ =?us-ascii?Q?fQdNeQkrN8oe9GecPghCfjv4Ldgewu+0WeCgFdLZhbIIt3qWrxJ8TbMIZRNT?=
+ =?us-ascii?Q?4rlP/PTi/l40ptBJtVYA71DZL47YlgD4AXheUMwu5vkQtwYYQV6P1av1a4aH?=
+ =?us-ascii?Q?r4bUwBMUYDDJSjpZZJgNk9wDNY0oxC9RHYPFBPG4///4P7nJcWG8fyBb7ssD?=
+ =?us-ascii?Q?zssoM/p7rfSuRfoAbw+nyhcId9sZr+KGgI3uoJRGmHv+aRtUKcIxchpLWENq?=
+ =?us-ascii?Q?VU17TbQ7BKyWMKKU8/eFxMMIVpyKOMLPNfdcO2ywEJ2GHcq9OU+4TfGEA4K3?=
+ =?us-ascii?Q?Ds0kxeVYf3VxFnXGYl0KLCwPAIxHxwV9E1b3zZ2pceMf5LT+V9usLYJ8TDv3?=
+ =?us-ascii?Q?Ig=3D=3D?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <12ae186b-9816-4269-ab3a-7aacdc7cb954@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: 25RkKsGKaC3Oyp3NC81DA7L5xfUOOKRi
-X-Proofpoint-GUID: 25RkKsGKaC3Oyp3NC81DA7L5xfUOOKRi
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAxOCBTYWx0ZWRfX/Kz8gVIDinWF
- qlzzQxIlFpVb3m0D+h/q+qaM54rLvC7xrv0+5KsT6usljiWzFANWLh1TQEF6a6VjpT8vlHwetIL
- LrSCeQxg8B5FCzkpIG79+6+QM9Wy2TbrEF8xIbKrfJZUEfyPNAz1yaeDj2Zz+gUuzLtsP4+qOA7
- jAfrhZo4gzAyM06DwYXK35IRCnayKrVFQwPbWzcJH/1JEccf6T+MFmCYyXuoNmurkCzoDX2+/4G
- Xv1TCNhZnrzNcVwCU6ljHPE2nCJhKD8v+05Ezabllxz/vwKoTc8V66PJ9PE3USj5hNnKCdmMgcI
- +zoyy4s/INY0fdkifQ2yudFjOuiZwuM7Twjos2OeGWtnlJP/9w9NP2hGqnTz9kQv/aDKaqZYub3
- OIRSg5Nl
-X-Authority-Analysis: v=2.4 cv=G4kcE8k5 c=1 sm=1 tr=0 ts=68c0122d cx=c_pps
- a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=yJojWOMRYYMA:10 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=pQyaD6lL6sn_3oYIr7sA:9
- a=CjuIK1q_8ugA:10 a=pJ04lnu7RYOZP9TFuWaZ:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-09_01,2025-09-08_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 clxscore=1015
- malwarescore=0 adultscore=0 impostorscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060018
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 17018431-52de-44f5-889f-08ddef9757eb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2025 11:52:25.0084
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cWCS1lfXgDKuKJJW16HxTny15X+fisnKpG/dpAEUOc0Osx5Bq2SAqu342O+8nL+5rEOE2SHc5yvmfg8LGrGNMgRwcmnUNHdOIyLjQ8zYeaA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB8245
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_044029_600945_468CC01B 
-X-CRM114-Status: GOOD (  27.21  )
+X-CRM114-CacheID: sfid-20250909_125243_152087_A1EECAC7 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,87 +183,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 09, 2025 at 01:24:02PM +0200, Konrad Dybcio wrote:
-> On 9/9/25 1:19 PM, Dmitry Baryshkov wrote:
-> > On Tue, Sep 09, 2025 at 01:07:27PM +0300, Abel Vesa wrote:
-> >> Starting with Glymur, the PCIe and DP PHYs qserdes register offsets differ
-> >> for the same version number. So in order to be able to differentiate
-> >> between them, add these ones with DP prefix.
-> >>
-> >> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> >> ---
-> >>  .../phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h  | 52 ++++++++++++++++++++++
-> >>  1 file changed, 52 insertions(+)
-> >>
-> >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h
-> >> new file mode 100644
-> >> index 0000000000000000000000000000000000000000..2bef1eecdc56a75e954ebdbcd168ab7306be1302
-> >> --- /dev/null
-> >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h
-> >> @@ -0,0 +1,52 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0 */
-> >> +/*
-> >> + * Copyright (C) 2025 Linaro Ltd.
-> >> + */
-> >> +
-> >> +#ifndef QCOM_PHY_QMP_DP_QSERDES_COM_V8_H_
-> >> +#define QCOM_PHY_QMP_DP_QSERDES_COM_V8_H_
-> >> +
-> >> +/* Only for DP QMP V8 PHY - QSERDES COM registers */
-> >> +#define DP_QSERDES_V8_COM_HSCLK_SEL_1			0x03c
-> >> +#define DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE0	0x058
-> >> +#define DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE0	0x05c
-> >> +#define DP_QSERDES_V8_COM_SSC_STEP_SIZE1_MODE0		0x060
-> >> +#define DP_QSERDES_V8_COM_SSC_STEP_SIZE2_MODE0		0x064
-> >> +#define DP_QSERDES_V8_COM_CP_CTRL_MODE0			0x070
-> >> +#define DP_QSERDES_V8_COM_PLL_RCTRL_MODE0		0x074
-> >> +#define DP_QSERDES_V8_COM_PLL_CCTRL_MODE0		0x078
-> >> +#define DP_QSERDES_V8_COM_CORECLK_DIV_MODE0		0x07c
-> >> +#define DP_QSERDES_V8_COM_LOCK_CMP1_MODE0		0x080
-> >> +#define DP_QSERDES_V8_COM_LOCK_CMP2_MODE0		0x084
-> >> +#define DP_QSERDES_V8_COM_DEC_START_MODE0		0x088
-> >> +#define DP_QSERDES_V8_COM_DIV_FRAC_START1_MODE0		0x090
-> >> +#define DP_QSERDES_V8_COM_DIV_FRAC_START2_MODE0		0x094
-> >> +#define DP_QSERDES_V8_COM_DIV_FRAC_START3_MODE0		0x098
-> >> +#define DP_QSERDES_V8_COM_INTEGLOOP_GAIN0_MODE0		0x0a0
-> >> +#define DP_QSERDES_V8_COM_VCO_TUNE1_MODE0		0x0a8
-> >> +#define DP_QSERDES_V8_COM_INTEGLOOP_GAIN1_MODE0		0x0a4
-> >> +#define DP_QSERDES_V8_COM_VCO_TUNE2_MODE0		0x0ac
-> >> +#define DP_QSERDES_V8_COM_BG_TIMER			0x0bc
-> >> +#define DP_QSERDES_V8_COM_SSC_EN_CENTER			0x0c0
-> >> +#define DP_QSERDES_V8_COM_SSC_ADJ_PER1			0x0c4
-> >> +#define DP_QSERDES_V8_COM_SSC_PER1			0x0cc
-> >> +#define DP_QSERDES_V8_COM_SSC_PER2			0x0d0
-> >> +#define DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN		0x0dc
-> >> +#define DP_QSERDES_V8_COM_CLK_ENABLE1			0x0e0
-> >> +#define DP_QSERDES_V8_COM_SYS_CLK_CTRL			0x0e4
-> >> +#define DP_QSERDES_V8_COM_SYSCLK_BUF_ENABLE		0x0e8
-> >> +#define DP_QSERDES_V8_COM_PLL_IVCO			0x0f4
-> >> +#define DP_QSERDES_V8_COM_SYSCLK_EN_SEL			0x110
-> >> +#define DP_QSERDES_V8_COM_RESETSM_CNTRL			0x118
-> >> +#define DP_QSERDES_V8_COM_LOCK_CMP_EN			0x120
-> >> +#define DP_QSERDES_V8_COM_VCO_TUNE_CTRL			0x13c
-> >> +#define DP_QSERDES_V8_COM_VCO_TUNE_MAP			0x140
-> >> +#define DP_QSERDES_V8_COM_CLK_SELECT			0x164
-> >> +#define DP_QSERDES_V8_COM_CORE_CLK_EN			0x170
-> >> +#define DP_QSERDES_V8_COM_CMN_CONFIG_1			0x174
-> > 
-> > The registers are the same at least up to this point. Would it make
-> > sense to keep common part in the same header and define only those bits
-> > that actually differ between DP and PCIe parts? (Is it really about PCIe
-> > or is it eDP vs everything else?)
+Hi Vinod,
+
+Thanks for the feedback.
+
+> -----Original Message-----
+> From: Vinod Koul <vkoul@kernel.org>
+> Sent: 01 September 2025 17:28
+> Subject: Re: [PATCH 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
 > 
-> No, there's a wild amount of variation between various "v8" PHYs and this
-> is impossible to catch by eye
+> On 20-08-25, 18:17, Biju wrote:
+> 
+> > +static int rzg3e_phy_usb3test_phy_init(void __iomem *base) {
+> > +	int ret;
+> > +	u32 val;
+> > +
+> > +	writel(0x00000100, base + USB3_TEST_CREGCTRL);
+> > +	writel(0x00000303, base + USB3_TEST_RSTCTRL);
+> > +	fsleep(20);
+> > +
+> > +	writel(0x00000004, base + USB3_TEST_CLKCTRL);
+> > +	writel(0x0000000d, base + USB3_TEST_LANECONFIG0);
+> > +	writel(0x00000301, base + USB3_TEST_RSTCTRL);
+> 
+> Magic numbers...?
 
-I see. Let's see how it will surface later. For now:
+OK will add macros to make it meaningful.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-
-
--- 
-With best wishes
-Dmitry
+Cheers,
+Biju
 
 -- 
 linux-phy mailing list
