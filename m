@@ -4,75 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FC71CA0FED
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Sep 2025 23:52:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89D22CAC582
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 02:34:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yJoLZtOJF9qJdBW7P9UV2jgSU88lw1VjFou4M8FW8cg=; b=asPy9WYvAZJlem
-	aTAhEgarDzE9C/P2voBwuuIfTsFo/JvD3P75WMkw4rVYQuhHkBCOkM0ePAmMQts/9RAvqHK43rbcJ
-	0d0OCmFKiH8gO6UmaNlnXlEBU8NJYH6TkaaA1w3QqnUM9d716ZqfgfLw37MKLSkfr6bCG63zQJmQK
-	1+MLKGm1YSpmQRCVQuW0EwNuLw3To+6DFx7t1KhrdiW/aI/XeNrrCvA0SS+bILT32wNWZ5chgMsau
-	2zXIqQT/25fCQj6IUPKcBxWRvqZbdOwTDdvVzPDGS9q/8OmCK/SvQZtp0U+q5BWwFUwYiXFKZtGYn
-	ofRgQFrSC/mL+jyDFfOw==;
+	List-Owner; bh=W3hr0GNiT/NCRmFREwgqufW58EjBQxS9UWdpXNf3hD0=; b=VbtgX0VZ//lxVI
+	HmhgEXmNIMA9y41+poKedTgmC6NRist1VP/DIuiaWW4eDptTOzRNhIN+nU4ShsTg8pEWgBxsHdduD
+	0m+mYuEiO2YMrBWw4/Q8OlqPm/knlzkqm3fdw6/Cj55NVMKLqbmpGrfamnIifBmSEo+mJ2QY7f0wk
+	9N9/w+o+duhP0pfYoTU9sd8ekGkvKwRWWPtwQzHHXd9CtcM6NaYC91JIVwM6gmHIgmV9UeOmq1Bhw
+	twA0ynABgz5katzGI1kKlyLWXYQEKDgeEYBKlmTEaYbnSlRFxKrPiQizLG1jNFiM8r+mdpGWqLrQS
+	79pXnfuZWlb1jkNig4CQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw88d-0000000B0CZ-1NkM;
-	Tue, 09 Sep 2025 23:52:39 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uwAem-0000000BgVE-0UU6;
+	Wed, 10 Sep 2025 02:34:00 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw88a-0000000B0BP-1FKT;
-	Tue, 09 Sep 2025 23:52:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1757461939; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=XG9o0VLGNJfUWI+6pEk36Bc8hw4exL79D4RsD2GisQ9/SrD8gWHRRSSFD3GNBE+x/GskFMGZ6aeSylumWUn/u/7hDU9IQhtREu7OXqIwCw7oYW9gh0rlhFA7+C+9WjLY8PqmSa9jgr3EpP+wNId651CtSCYz6Uyb8g/D7yUmkn4=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1757461939; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=MRosrKVQq7sn22Es6+VF8OMf7pwPJJ2RSe2u88w3Gr4=; 
-	b=BIad/jg0ogPaNYBam7CZq0O1RQPh40DoJSFI89lvlgVsk96NmZfgG9kmAFcnkvAvGs6z1vDLYMTIocOSU2IvDjv/xxdV5yo1vHifyUXCQe4Sv0Oq5m4sFVrUdpZ96aScM2CoE2HBajI+BLfIlRIBwHQyPVO+Tuf1Pt3zgyvrYK0=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1757461939;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=MRosrKVQq7sn22Es6+VF8OMf7pwPJJ2RSe2u88w3Gr4=;
-	b=JGoQv4PPa1GJOklEFDrtKWlq5uNnrhnjp8ZV50+7u9/R0qTCWZlE2liNFeCr+2YU
-	FKbzH+jcvuQshgrJUr4AaLqJSN6mSTL9zh2hbdQdGpXAX3tjKZVd+l7j57Xh9sxVNy8
-	4PNTyM2ycox2LM7a5xfw2BSZgO1fLx7LLY0uAgfI=
-Received: by mx.zohomail.com with SMTPS id 1757461937134492.1287969959642;
-	Tue, 9 Sep 2025 16:52:17 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 4D0E418031F; Wed, 10 Sep 2025 01:52:12 +0200 (CEST)
-Date: Wed, 10 Sep 2025 01:52:12 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
-	Zhang Yubing <yubing.zhang@rock-chips.com>, Andy Yan <andyshrk@163.com>, 
-	Maud Spierings <maud_spierings@hotmail.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFC 1/2] dt-bindings: phy: rockchip-usbdp: add improved
- ports scheme
-Message-ID: <xyya5zy52mx4o76s6rr5h7lrfkhbri6bvmp7a5mn7cifpbpqlc@ca3zhclu6u3y>
-References: <20250904-rock5b-dp-alt-mode-v1-0-23df726b31ce@collabora.com>
- <20250904-rock5b-dp-alt-mode-v1-1-23df726b31ce@collabora.com>
- <aLyKhngeksG2SKdq@umbar.lan>
- <jzooq6qg3y7nee2nz6lujustdf4z7vtn6t2slikw43dann5sbk@2telraae26tl>
- <aLyo4N59o4CIYm-6@umbar.lan>
+	id 1uwAek-0000000BgUL-0w4o;
+	Wed, 10 Sep 2025 02:33:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id C7C1944889;
+	Wed, 10 Sep 2025 02:33:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8169BC4CEF4;
+	Wed, 10 Sep 2025 02:33:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1757471637;
+	bh=NyQYty60WG79Ajy9YjwZu9E6f2nEyB4rPacOiU0exWE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=tL2iQTK7/qoJqZPfXtGtfD+boglUsVkU1PN/sLlQnbaC6+bBW2/XOzSmXAHKMmy1N
+	 Y17/ertrfN/z7mlVbt1yBWIKc28ZOv9g5Kt1rNcenjRau06OI3RtHZqhHJYJgsEHSx
+	 Cxw7YAeKNXA0bNFZZVQM8CypEwVDk34dSMqMT9hrNu5Cw/yJBzH28kkrAT9CLJqgM1
+	 vzOwTKZe1POUVmIkBZyxLYV7q+0TVGzT5E6uG7ttNCcP8Vwo5Zf+AWi2ehEWMwfiNf
+	 T5ofNzGCJViHFPzrfVVCYxgka3MYOXrFppQveQsgH0hCa1ytO31N5VE8dSp1DrxUfr
+	 U1K3jxqSEAfvw==
+Date: Tue, 9 Sep 2025 21:33:56 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	imx@lists.linux.dev, devicetree@vger.kernel.org,
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Haibo Chen <haibo.chen@nxp.com>
+Subject: Re: [PATCH v6 1/9] dt-bindings: phy: ti,tcan104x-can: Document NXP
+ TJA105X/1048
+Message-ID: <175747163614.3662311.16406999049647270497.robh@kernel.org>
+References: <20250909-can-v6-0-1cc30715224c@nxp.com>
+ <20250909-can-v6-1-1cc30715224c@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aLyo4N59o4CIYm-6@umbar.lan>
-X-ZohoMailClient: External
+In-Reply-To: <20250909-can-v6-1-1cc30715224c@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_165236_387244_CA0D1FFA 
-X-CRM114-Status: GOOD (  49.86  )
+X-CRM114-CacheID: sfid-20250909_193358_285786_CB274EF0 
+X-CRM114-Status: GOOD (  10.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,138 +86,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On Sun, Sep 07, 2025 at 12:34:24AM +0300, Dmitry Baryshkov wrote:
-> On Sat, Sep 06, 2025 at 10:42:22PM +0200, Sebastian Reichel wrote:
-> > On Sat, Sep 06, 2025 at 10:24:54PM +0300, Dmitry Baryshkov wrote:
-> > > On Thu, Sep 04, 2025 at 08:26:02PM +0200, Sebastian Reichel wrote:
-> > > > Currently the Rockchip USBDP PHY as a very simply port scheme: It just
-> > > > offers a single port, which is supposed to point towards the connector.
-> > > > Usually with 2 endpoints, one for the USB-C superspeed port and one for
-> > > > the USB-C SBU port.
-> > > > 
-> > > > This scheme is not good enough to properly handle DP AltMode, so add
-> > > > a new scheme, which has separate ports for everything. This has been
-> > > > modelled after the Qualcomm QMP USB4-USB3-DP PHY controller binding
-> > > > with a slight difference that there is an additional port for the
-> > > > USB-C SBU port as the Rockchip USB-DP PHY also contains the mux.
-> > > > 
-> > > > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-> > > > ---
-> > > >  .../bindings/phy/phy-rockchip-usbdp.yaml           | 23 ++++++++++++++++++++++
-> > > >  1 file changed, 23 insertions(+)
-> > > > 
-> > > > diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > > > index 8b7059d5b1826fdec5170cf78d6e27f2bd6766bb..f728acf057e4046a4d254ee687af3451f17bcd01 100644
-> > > > --- a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > > > +++ b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
-> > > > @@ -114,6 +114,29 @@ properties:
-> > > >        A port node to link the PHY to a TypeC controller for the purpose of
-> > > >        handling orientation switching.
-> > > >  
-> > > > +  ports:
-> > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > +    properties:
-> > > > +      port@0:
-> > > > +        $ref: /schemas/graph.yaml#/properties/port
-> > > > +        description:
-> > > > +          Output endpoint of the PHY for USB (or DP when configured into 4 lane
-> > > > +          mode), which should point to the superspeed port of a USB connector.
-> > > 
-> > > What abourt USB+DP mode, where each one gets 2 lanes?
-> > 
-> > Right, I guess we would need one port more and have one port for
-> > lane 0 + 1 and one port for 1 + 2. For USB-C both ports are
-> > connected to the USB-C superspeed port. For DP 4-lane mode the
-> > same is done for the input port of the connector. Last but not
-> > least for 2 lanes USB + 2 lanes DP, one port can be connected
-> > to the USB connector and one port can be connected to the DP
-> > connector.
+On Tue, 09 Sep 2025 13:40:11 +0800, Peng Fan wrote:
+> The TJA1048 is a dual high-speed CAN transceiver with sleep mode supported
+> and no EN pin.
 > 
-> Hmm. I'm not sure what do you mean here. Basically, it should be:
+> The TJA1051 is a high-speed CAN transceiver with slient mode supported,
+> but only TJA1051T/E has EN pin. To make it simple, make enable-gpios as
+> optional for TJA1051.
 > 
-> - Normal USB-C case with DP AltMode:
->   + port@0 routed to connector's port@1 (through mux or retimer if any)
->   + port@4 routed to connector's port@2 (through mux or retimer if any)
+> The TJA1057 is a high-speed CAN transceiver with slient mode supported
+> and no EN pin.
 > 
-> - Actual DP or mini-DP connector:
->   + port@0 routed to connector's sole port (most likely direcrly)
->   + port@4 most likely unconnected (at least for now, dp-connector
->     doesn't have AUX lines described)
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml   | 69 +++++++++++++++++++++-
+>  1 file changed, 66 insertions(+), 3 deletions(-)
 > 
-> - Weird mode of having both USB-A or -C and actual DisplayPort
->   + port@0 should get two endpoints, each having data-lines properties,
->     one endpoint being connected to the USB port, another endpoint being
->     connected to DP connector.
->   + port@4 unconnected (yep, we should extend DP properties, maybe I'll
->     send a patch)
 
-That's a bit different from what I described, but sounds more
-sensible. Effectively the Rockchip USBDP PHY binding would need
-to deprecate rockchip,dp-lane-mux and switch to using data-lines
-on the endpoint instead, just like it is currently proposed for
-Qualcomm (I follow the T14S HDMI thread).
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-AFAIK the Rockchip PHY hardware does not support 1-lane DP, so the
-binding will have to forbid that. Shouldn't be a problem, though :)
-
-> I'd say, the first two options are the most important ones. Unless you
-> have actual hardware that uses the USB + separate DP, I'd say, we can
-> ignore that part.
-
-The RK3588 evaluation board routes the first two lanes to a USB-A
-connector and the second two lanes + AUX to a RTD2166 bridge, which
-converts it to VGA and then terminates on a VGA connector. I have
-that on my desk and can do some tests. But I don't have enough time
-for preparing patches right now - especially since the RTD2166 is
-not yet supported upstream.
-
-Greetings,
-
--- Sebastian
-
-> > > > +      port@1:
-> > > > +        $ref: /schemas/graph.yaml#/properties/port
-> > > > +        description: Incoming endpoint from the USB controller
-> > > > +
-> > > > +      port@2:
-> > > > +        $ref: /schemas/graph.yaml#/properties/port
-> > > > +        description: Incoming endpoint from the DisplayPort controller
-> > > > +
-> > > > +      port@3:
-> > > > +        $ref: /schemas/graph.yaml#/properties/port
-> > > > +        description:
-> > > > +          Output endpoint of the PHY for DP, which should either point to the
-> > > > +          SBU port of a USB-C connector or a DisplayPort connector input port.
-> > > 
-> > > I would suggest describing this port as 'DisplayPort AUX signals to be
-> > > connected to the SBU port of a USB-C connector (maybe through the
-> > > additinal mux, switch or retimer)'. It should not be confused with the
-> > > actual DisplayPort signals (as those go through the port@0).
-> > > 
-> > > In the Qualcomm world we currently do not describe this link from the
-> > > PHY to the gpio-mux or retimer, but I think we will have to do that
-> > > soon.
-> > 
-> > It does looks like no upstream platform does a proper description of
-> > USB-C setups :(
-> > 
-> > Thanks for having a look,
-> > 
-> > -- Sebastian
-> 
-> 
-> 
-> > _______________________________________________
-> > Linux-rockchip mailing list
-> > Linux-rockchip@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
-> 
-> -- 
-> With best wishes
-> Dmitry
 
 -- 
 linux-phy mailing list
