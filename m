@@ -4,56 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38647CA101F
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 08:33:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7D7CCA101F
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 09:18:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sLsPPbT9A4PBPvZU3ZhYnFeH0v/++0u45/F3Yybm6oc=; b=umDXiyk4rnH8fk
-	7FbX5P7y7DQiwV3ETlXZYoX7Mcw0FgpSQWM+P84uQ1ooPoW/zlftlex0zzrZ7cRyenrhX7zy60/Tv
-	Wt4HKilPQreSkEUGEG4437KDbpAxy+d7AmGRfvLc3Ar4z6oKwymm6JT8RapSDBI4kklEIEOwznxa5
-	GYRPbHu34wHYBUQw1xCiW0uq/j7stqMvPxYQERVPccxrECx1s7nq5Ev4jVE6eRB37eZYcYBleghGc
-	gnE+tQyplHlIWkVdrudYefoaBM0iev6Q1NJQDDTq+yjSifuLR/1C6ZJ1Iciz3gt6RRIvYOSxAam9s
-	GE19pQgl0PjxXPoeqU6A==;
+	List-Owner; bh=A8B8Sanspw+RWuN6vVRbOUafPti0nSh33M1/H+V8MN0=; b=BJAJu5oz17XePk
+	NajakJ/+ZGRW3uQfcZNBQHXNwwHrcfeUlBDhrAUd6g7mRCdmU0XNQ9eNTRyykX/xysesQMPLlR4Pb
+	dIK8m27breRAdgWys1Z3bcLOoK7Pn47ju2I00ol6bK757p1R7xb/NUULPi3h5eDjWmfKufEYn1qXj
+	5+4C1lVWYJ3Ku3MQdHBxzdejbe7BROOVHxzTMT8NJ5C8MGbzp/jqsCGAN0ug2iraoFqgTRHfnADst
+	Q3UvAiLK4zAkH5gqP0SULW69QA5qR0LhXwVbvz9eKmvfr+IYZvoeDIqXy5WREzQNJoyAocn5Om2pJ
+	rDzpfo1Fwwb4v/5s9fNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwGGl-0000000Cx3y-3cdx;
-	Wed, 10 Sep 2025 08:33:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uwGxo-0000000DAja-1Ag8;
+	Wed, 10 Sep 2025 09:18:04 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwGGj-0000000Cx2j-1imT
+	id 1uwGxl-0000000DAga-2MJW
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Sep 2025 08:33:34 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C7DB643FCF;
-	Wed, 10 Sep 2025 08:33:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22C44C4CEF0;
-	Wed, 10 Sep 2025 08:33:31 +0000 (UTC)
-Date: Wed, 10 Sep 2025 10:33:30 +0200
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Sibi Sankar <quic_sibis@quicinc.com>, 
-	Rajendra Nayak <quic_rjendra@quicinc.com>, Johan Hovold <johan@kernel.org>, 
-	Taniya Das <quic_tdas@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom-edp: Add missing clock for
- X Elite
-Message-ID: <20250910-piquant-mellow-snake-7b62e1@kuoka>
-References: <20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org>
- <20250909-phy-qcom-edp-add-missing-refclk-v3-1-4ec55a0512ab@linaro.org>
+	Wed, 10 Sep 2025 09:18:03 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uwGxc-000560-GV; Wed, 10 Sep 2025 11:17:52 +0200
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uwGxb-000ZEw-2M;
+	Wed, 10 Sep 2025 11:17:51 +0200
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1uwGxb-0007LM-27;
+	Wed, 10 Sep 2025 11:17:51 +0200
+Message-ID: <94ce63da0edee178a49781b2c6ac9a863f13333f.camel@pengutronix.de>
+Subject: Re: [PATCH v2 04/11] phy: renesas: Add Renesas RZ/G3E USB3.0 PHY
+ driver
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Biju <biju.das.au@gmail.com>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, Geert Uytterhoeven
+ <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org, Prabhakar
+	Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Date: Wed, 10 Sep 2025 11:17:51 +0200
+In-Reply-To: <20250909180803.140939-5-biju.das.jz@bp.renesas.com>
+References: <20250909180803.140939-1-biju.das.jz@bp.renesas.com>
+	 <20250909180803.140939-5-biju.das.jz@bp.renesas.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250909-phy-qcom-edp-add-missing-refclk-v3-1-4ec55a0512ab@linaro.org>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_013333_465947_4BF9FE78 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20250910_021801_604004_035F2BAD 
+X-CRM114-Status: GOOD (  17.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,29 +81,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 09, 2025 at 10:33:33AM +0300, Abel Vesa wrote:
-> On X Elite platform, the eDP PHY uses one more clock called ref.
+On Di, 2025-09-09 at 19:07 +0100, Biju wrote:
+> From: Biju Das <biju.das.jz@bp.renesas.com>
 > 
-> The current X Elite devices supported upstream work fine without this
-> clock, because the boot firmware leaves this clock enabled. But we should
-> not rely on that. Also, even though this change breaks the ABI, it is
-> needed in order to make the driver disables this clock along with the
-> other ones, for a proper bring-down of the entire PHY.
+> Add Renesas RZ/G3E USB3.0 PHY driver. This module is connected
+> between USB3 Host and PHY module. The main functions of this
+> module are:
+>  1) Reset control
+>  2) Control of PHY input pins
+>  3) Monitoring of PHY output pins
 > 
-> So attach the this ref clock to the PHY.
-> 
-> Cc: stable@vger.kernel.org # v6.10
-> Fixes: 5d5607861350 ("dt-bindings: phy: qcom-edp: Add X1E80100 PHY compatibles")
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
 > ---
->  .../devicetree/bindings/phy/qcom,edp-phy.yaml      | 28 +++++++++++++++++++++-
->  1 file changed, 27 insertions(+), 1 deletion(-)
+> v1->v2:
+>  * Replaced magic numbers with macros.
+> ---
+>  drivers/phy/renesas/Kconfig          |   7 +
+>  drivers/phy/renesas/Makefile         |   1 +
+>  drivers/phy/renesas/phy-rzg3e-usb3.c | 271 +++++++++++++++++++++++++++
+>  3 files changed, 279 insertions(+)
+>  create mode 100644 drivers/phy/renesas/phy-rzg3e-usb3.c
+> 
+[...]
+> diff --git a/drivers/phy/renesas/phy-rzg3e-usb3.c b/drivers/phy/renesas/phy-rzg3e-usb3.c
+> new file mode 100644
+> index 000000000000..6463519b2c22
+> --- /dev/null
+> +++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
+> @@ -0,0 +1,271 @@
+[...]
+> +static int rzg3e_phy_usb3_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct phy_provider *provider;
+> +	struct rz_usb3 *r;
+> +	struct phy *phy;
+> +	int ret;
+> +
+> +	r = devm_kzalloc(dev, sizeof(*r), GFP_KERNEL);
+> +	if (!r)
+> +		return -ENOMEM;
+> +
+> +	r->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(r->base))
+> +		return PTR_ERR(r->base);
+> +
+> +	r->rstc = devm_reset_control_get_shared(dev, NULL);
+> +	if (IS_ERR(r->rstc))
+> +		return dev_err_probe(dev, PTR_ERR(r->rstc), "failed to get reset\n");
+> +
+> +	ret = reset_control_deassert(r->rstc);
+> +	if (ret)
+> +		return ret;
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+It looks like you should be able to use
+devm_reset_control_get_shared_deasserted() and let devres handle reset
+control assertion on error and driver removal.
 
-Best regards,
-Krzysztof
+As is, the driver is missing a reset_control_assert() in the probe
+error paths.
 
+
+regards
+Philipp
 
 -- 
 linux-phy mailing list
