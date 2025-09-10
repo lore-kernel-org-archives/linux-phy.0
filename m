@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E586ECA0FED
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 16:47:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2D03CA0FED
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 16:47:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9qd4QoQJk6OaGmd4cIWK9zZRnYPYewh0Gt14qQ6PIE4=; b=vG/hKtxN5QqBdd
-	RNoYdEAssMGYJ4QQlU7FpbDhB2uQ00POG4/t3pz/OB9HB0ex27ouRmEaNx+rZNUA5uNlyYhFPUhdu
-	eB9CnKSCIQU/jsoqe5ySIZlnSEEfak7a7/086b7rsUItPP4Qcj6OGsWxHx1so45lTX0FxZ5WX7OVe
-	xdr4U4tl8Wzg5MELNBhkvv+FxGBW25UbQ2takTmHygfPbHTRGtwLYDz8deuRSBeT8+I78cN3sosoe
-	X2c0TNdj5d2/GT+jrFz6NhFx9dB9GE6LMKuvPYuHjUDg5RcU20BpyztTDtOjGRbWy9kcoc1zPdOLy
-	M9FaZ6zKtupQal/QLBmw==;
+	List-Owner; bh=03j+kbEDsFGYVYk2/tZ9Y/i3HYoHaWdI1Pjj6Ft6GLs=; b=3LHhp0Ks+DsIX4
+	vEkb6XbRbLk/lidcY1uVNKXqXVKDX0ukIoKfEKYhOXNcIB29hbxtrUpd3rjIORHVO+wlf6h4KfN/d
+	HRjPDz1zJ0o9al+xIhKtlMa5qwRUKJOHXLqUj/+SE3fOZTh7lueE0nLfvpSK+sPH3R7JvqRj9PDhH
+	OioReYNw4IDRJFF9aOkBYTCOjJY7X1oWVLnlMHwvQo8Pnd6qPcfJLzAtciH9ttvUZdiiUk6H65Ign
+	YCDFRA8Oh7T4QOUM341Cvp10wU5kBqAguSVDSewIinPsNskrbCHmNypWuMrzThb6/BxqiN2t50Uhr
+	b1S/N9yEDWnYMFnz823A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwNyi-0000000FayV-2wKm;
-	Wed, 10 Sep 2025 16:47:28 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uwNyl-0000000Fb0m-21Pt;
+	Wed, 10 Sep 2025 16:47:31 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwNyg-0000000FawT-0JEd;
-	Wed, 10 Sep 2025 16:47:27 +0000
+	id 1uwNyj-0000000Fayn-0Km6
+	for linux-phy@lists.infradead.org;
+	Wed, 10 Sep 2025 16:47:30 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BDEA2418C7;
-	Wed, 10 Sep 2025 16:47:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7DFD1C4CEEB;
-	Wed, 10 Sep 2025 16:47:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id AC33E44ABA;
+	Wed, 10 Sep 2025 16:47:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4527FC4CEEB;
+	Wed, 10 Sep 2025 16:47:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757522845;
-	bh=62Kld7JTWpGcejeXzL2pSMaMWwHGWlpqGWR2nvOnp4Y=;
+	s=k20201202; t=1757522848;
+	bh=Vtn84X32CANz54Mc66T5jFTvifZ9RbwAhO8sHt69ICg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=FVnlEL1lDTV1YR+A8J7uibu4yWINGyomz3bF6CJfqS/UN6fvYIN6wqbHiIbf0/box
-	 3FAJG98TDCgaw7pzqq0BgmcM/FoWbrLw+G5U+VLpz/mr+Rr4jnzg7sdvgb2FBT7+Wl
-	 30Nf8QazzuJsL/Di9fq/ulNdZdZVvMLzdW2ChFJxZbmXrsuqfuePJ+KexOXmWXZSGQ
-	 BbXR7CxeJ+RNUDLHeSjnon1bu43HtBqIKX/9qeRiW0ET+RVUoykGvR5Uz9IXTZmm1M
-	 4/iFXIeDfd3wUmzFwNnZtNnBb+tJYHWrB4UjCIieOnj6zM1Q4CywaxKejr/vqOFWTu
-	 a7WHOQ/GLn2WQ==
+	b=vHrJMIQaabwbFB5pu8LdZTDT0UsQuGEQmMmfYAxaznBf1rkuUoF+bIGJqd+eWU5Uc
+	 l9imGigKjp2zRU6TdAdmqll2yEXJNfke7OboqxfH3mEEXwBMYJayalDObp4XAV0mPm
+	 +aDDfuJkczib07AdrDoaPfaa9ehgiFo3zcXFZ8K8nKcZaVE8wQ62G0a4HVoq0TLoPs
+	 orBOtlzDq0xdfq9+6JmWfqhN/BU2JsdBf+4fB3pYv4ajSipXfY/7BeEdejBgXcRsDj
+	 xZ9gM22RwMwkdYvxHi+DOuI25BaZdK2U29b6m9Yf2dIATY786S7Z88GOSjG+VlU8EV
+	 G4TSGFvnPKU6g==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Chen Wang <unicorn_wang@outlook.com>, 
- Paul Walmsley <paul.walmsley@sifive.com>, 
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
- Alexandre Ghiti <alex@ghiti.fr>, Inochi Amaoto <inochiama@gmail.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- sophgo@lists.linux.dev, linux-kernel@vger.kernel.org, 
- linux-riscv@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, 
- Longbin Li <looong.bin@gmail.com>
-In-Reply-To: <20250708063038.497473-1-inochiama@gmail.com>
-References: <20250708063038.497473-1-inochiama@gmail.com>
-Subject: Re: [PATCH v5 0/2] riscv: sophgo: add USB phy support for CV18XX
- series
-Message-Id: <175752284008.484319.10400801407053619384.b4-ty@kernel.org>
-Date: Wed, 10 Sep 2025 22:17:20 +0530
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+ Michael Dege <michael.dege@renesas.com>
+Cc: =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-renesas-soc@vger.kernel.org
+In-Reply-To: <20250703-renesas-serdes-update-v4-0-1db5629cac2b@renesas.com>
+References: <20250703-renesas-serdes-update-v4-0-1db5629cac2b@renesas.com>
+Subject: Re: [PATCH v4 0/2] phy: renesas: r8a779f0-ether-serdes: driver
+ enhancement
+Message-Id: <175752284587.484319.14293466138559863532.b4-ty@kernel.org>
+Date: Wed, 10 Sep 2025 22:17:25 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_094726_141524_4ED039D6 
-X-CRM114-Status: UNSURE (   6.40  )
+X-CRM114-CacheID: sfid-20250910_094729_142778_E724304D 
+X-CRM114-Status: UNSURE (   6.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,23 +78,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 08 Jul 2025 14:30:35 +0800, Inochi Amaoto wrote:
-> Add USB PHY support for CV18XX/SG200X series
+On Thu, 03 Jul 2025 13:07:22 +0200, Michael Dege wrote:
+> This patch set adds the following to the r8a779f0-ether-serdes driver:
 > 
-> Changed from v4:
-> - https://lore.kernel.org/all/20250611081804.1196397-1-inochiama@gmail.com
-> 1. patch 1: apply Conor's tag
-> 2. patch 2: remove dr_mode debugfs entry.
-> 3. patch 2: simplify the cv1800_usb_phy_set_clock function
+>  * USXGMII mode support for 2.5GBit/s ethernet Phys
+>  * A new configuration step suggested by the latest R-Car S4-8 users
+>    manual V. 1.20.
+> 
+> Changes in v4:
+> - Fixed email threading
+> - Link to v3: https://lore.kernel.org/r/20250528-renesas-serdes-update-v3-0-8413fcd70dba@renesas.com
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
-      commit: cdb2511bf3925ce095c31e1647c12086d34f9cc2
-[2/2] phy: sophgo: Add USB 2.0 PHY driver for Sophgo CV18XX/SG200X
-      commit: f0c6d776f74d1d8bda94f6f042b2919bcd615280
+[1/2] phy: renesas: r8a779f0-ether-serdes: add USXGMII mode
+      commit: d337c557581eeb008a06d66ad72152e871967fa5
+[2/2] phy: renesas: r8a779f0-ether-serdes: add new step added to latest datasheet
+      commit: e4a8db93b5ec9bca1cc66b295544899e3afd5e86
 
 Best regards,
 -- 
