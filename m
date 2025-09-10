@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B853CA101F
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 14:03:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 771D1CA0FED
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 14:03:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MplY/eZKJPAcCffDck6lw63kslNGqCdm+8GlgZGpbIw=; b=LyZ/Vbab6EXB4V
-	8JkqQwaJHQuhiXb6XvNJkihzivb6eoA69zQ59aK5slOjTRBaWuVR6Gma2PROuHYvo9Pv7zXZE1nR0
-	MERfg44hCPpWFad3x1kULt+tfQEzzEDfPa/3njU0xI9MrsLwWvYpUULv/p4Z0mOk0vJVhazVO+So4
-	vssc2FWFH0MPXNE+uR/8wloSZsU5fekyVpDmwp50X9rXFYzH1v7kitDODDtIyzm7vQK3Seh5Xh0Eg
-	cHV1gtE8Jc2Ic5snyb3hfmYoyZ+TrQ15l7BGXd+iJ/u5ruDwJTLHIxg5kGtCfDlzq6fUKCyQUPrBa
-	tmsVSkTfvGfofJ2HWSXA==;
+	List-Owner; bh=E+nNl8iDxk7Nl7E91gpe1ppffZYsVk22dv9HRe2kHXI=; b=wVVGJp4DzuFzdx
+	+tBqyQilQJ5FK37hADfkubkTSFV1wCwDYIwHdE1qLSBHWGJIdqfU1CKW2IFb5eYqNE0gVyptZhySL
+	9mnTVAaLOSNjDMcbh7PE9RqMoOfEBj4D+aXZQ9o55XG7GfQe45i/Jlpe6FmWUMZn6hhWk+2TGs3EA
+	RbK1FDMu8Ek0SNR7MOwQDcpPTYgZVIYPkDQdy60MvdySy6Mywnpin/AcjhIBo9DHkcoTQvG5Jyu3G
+	nj8hZe07plwFTKclaS7b1UrriNLJ4BgWBb83wckYMTKmrSB/ooItuU5uTYeL0JJ0+uR5NpM1Gt8pf
+	BHYzn4eywQKPGtOkGAtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwLQ9-0000000EZ3e-48FT;
-	Wed, 10 Sep 2025 14:03:37 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1uwLQB-0000000EZ4n-111c;
+	Wed, 10 Sep 2025 14:03:39 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwLQ6-0000000EZ0j-3TGz
+	id 1uwLQ8-0000000EZ2E-3pw5
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Sep 2025 14:03:36 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-45dda7d87faso37854275e9.2
-        for <linux-phy@lists.infradead.org>; Wed, 10 Sep 2025 07:03:34 -0700 (PDT)
+	Wed, 10 Sep 2025 14:03:38 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-45dec026c78so24510365e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 10 Sep 2025 07:03:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1757513013; x=1758117813; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1757513015; x=1758117815; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=E1/JpGQwXecoruLN45V+BbAr2VgKNoTTI3oUXs6eTYA=;
-        b=HhqgRPgPqg3Ns5iMThyW/h5IvSmD+yKYU+59ENqN5qwfK0PSdEgucnPNA/CPB22ifa
-         EnPaQ37T9+SmlzqN49GHqJCM23W2NaYnaXtWr8SK2UZK2nmNmOgsfmtYZywXL5tYziZ2
-         f7PW1Zv85VIoGfP53oo78e0jmS4w48DvkrSFotXeEPeF4bgYH/d2ba5kfRTSYOPXQ24O
-         Uc4bjr26OIRslGlhdOHe7qQwwm3wZx8qbZsGEdrMRo1l28TEC+riuX/BUFY+wiXF1BBk
-         nHvPbbRP5emY6GTL16ouwrC5VzUAI2R478tMfPButgfidhrsFQVd5hnjgxHIpzzNVfDn
-         HcSg==
+        bh=8Vgkpc23fN6nK/odOpcRYynIEnb9BnHAmEaecrAACIc=;
+        b=MK/zfMpX8PDuYkSWDTZKLNmHcOSu1C/LoK1WdY2zMeEdy3nK13vRnAmF12KWyePqFk
+         ly1OjVaIcQM0mpjD8sNNRchHqtRaaTdAzNTXgsxvI5JM+3Nmgi3C8QqN2OzBLj683J3Y
+         ugISR6kVBJcv5rcY7nY5kgIuMY35jb4z0vsPGl7H3ypv9Mh2bJrFhtzQwZj3Q3ipQLSH
+         qJfZ107fF0/gywcYlhfczQs40IjpRPh+2sir5WUNsBt28VbV50QjzKLOZpDqVM7FyLrs
+         ui/m13XjEBEhXRQEd/DqxukUZ71YXN5A7FJRFkAO3VJJebt3W/bkRrKa5Ix3qnIQspE1
+         DWig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757513013; x=1758117813;
+        d=1e100.net; s=20230601; t=1757513015; x=1758117815;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=E1/JpGQwXecoruLN45V+BbAr2VgKNoTTI3oUXs6eTYA=;
-        b=QGx8oxWLuFlBgRZkjisq48ZakSR3xsWl3O/38mA5AfwHGKVzUkNgqmsy50TkYQQZ1p
-         1LMtzC9p7cuoArJ3XgA/RUKigFVZj3QfqszY7gmuIifcxOjpTresgcQlrnRH7Kvp7dRm
-         +1VJqXwm2IMhfoKCHcKAfrtbIJbFd7wrO4J3SnZX6buF64uJyoNE1aS/XG+cz2qJ1aiK
-         sConLUtxo1W8sB5Q7hCa95ij4VI6DvzhLXSrqa+KmqIlJFN9j9+cHmVYiUDdAL9ENQBb
-         zu/p3W686VDP9uUyxEDY8l8YBs2rLkr/MXS+OO4inNr/DSwhC2x8AKamZT0/3HdnS8LL
-         m3ag==
-X-Forwarded-Encrypted: i=1; AJvYcCUHNGhnh1GpAWdRw6pM7TInD7p/hJIrYdrDLoA1Z875ttaHUzUW3HfZaScDx4rXORgj5CfC9ex4/2w=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywmj4G9ElaDleALgK0ndkBObs9FHtFJ73NbY/73U1CcSDAuSsb8
-	GfMQddZmfZwx8dHjkLCJd3eeLa0gsFfG88t/fjXpcSyftSncsUo2nGGPEWLm3iX7MvM=
-X-Gm-Gg: ASbGncvZwTims/Epy6zcfUKmHYg/8v1GXDbb6j4AnBZQwoJgDr48wNadn+Y4DNnZD5e
-	BXaFGT9gVK3dhc9SOR5oMJ2mzF2UudnrcPPptC/iAbRyEsVY6LRXwY76U4vQas3A/pcf4MPTKKH
-	2UMwBh9DqTdOSrcxhbqGqIPwFXPS6bP+774IKKADkM1Lk9HnZPr6Jw9XHt+KgLC3ygEnUI20K7n
-	9I+ez7Se+0ejVs/Z+Gefe5cTHJ/r6n22ea167a0+3UQiDfgDD0XMM4Mf+ALCIVd52gSe5IZFMEa
-	5bSTUtoQ7KzTIeQDCb7J6dlvVqwm6i+klFHF7VeSuVcLXtDOmssqjwfgFHC0Zf/+Wm7BmhynqK6
-	KyUrtY9dM+yqOnbLlZpe/SaYDJZgAoPYsDp2TeshmsQP7toZGAtPY
-X-Google-Smtp-Source: AGHT+IF3lASbsV3g5yPF2pXLV5y1xrAF29cKuuJJ6sLpr54JprJ+ha7jj8SX8fRl8dFxLSd5fVw+IA==
-X-Received: by 2002:a05:600c:c4ab:b0:45d:d505:a1c3 with SMTP id 5b1f17b1804b1-45dddef8c61mr132223995e9.37.1757513012584;
-        Wed, 10 Sep 2025 07:03:32 -0700 (PDT)
+        bh=8Vgkpc23fN6nK/odOpcRYynIEnb9BnHAmEaecrAACIc=;
+        b=OUvidbzD1OdGha9lLlfuoBr7rFkcpoulLriKlhPO7U5msmajevDinOy/LFx6khz8s2
+         ntYbNuN1w8F0hxa8vfVdc1UKHGIhTEwmjTQQyDTOEmuS1HCGYoutVhC2mHFby2bFTFeS
+         0Jljp7H8yf06C6l4Ug3agBdBtSF+UZ3rIyJv/SFMOcrNbaaux+vAJ1ORDzHJHDHlbGOX
+         dJGMS8dUY9zdd6qI/260BcqWIJhgazylXQ/+F1aEg109Mizchyt3RV9RzSHNBA6Bas/G
+         8NdObAbOpoao70lm3mPaJeKlRM3214J7R+XAeSuv3K2yQ7GhnimC7nM8uDFlLdYB2XxN
+         uCvg==
+X-Forwarded-Encrypted: i=1; AJvYcCWTYy1ZApf/TcieYCaOEJBhpv0zIprIzK4gHwVPAcM4Vl+XW8IwWwCbNwPZoGftB5+8WNdyrd7npsw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwEfWephmiqkSxSNoRukFPsFuf7lotD5ForzmguTQ7FJuE2vIVR
+	RykDd/g1gjqYiI9aEwYPrX0h7ktmkdxaGM35EhKJBtfzpulmvxYb61inWNqdYtVnEN4=
+X-Gm-Gg: ASbGncvUUCzo73C0D3yR5ixKPXckw74jGC+qKoWm7pgm09oZZNXyLY0xV8DOHGw3Qkc
+	Cv+Bfyc3qThouDT97pJg87vIwEIOPTWXevjaftrXKUQekB/uuhb9QlF1nvg192npQhYo/Os2AnU
+	uLJ2xxH/9MLLKUe6AGNqGDHHy6n5tuxYADj2W1nfDmEEhaNpgUCJd9z5u37aGF+4ClJ6cuKt91V
+	SPaKItJIyzYvoBZJKfj+4Fl77m45F/Zb72iM82zqDdhtaYUt2QRMlCKKbaXOlQxkDS3WBDVG5wc
+	nN+6OidEqpfEaNN1a0jOMelw5oWqkAW67rt3u1RwNou5e7emZIFhfpVrk+/g3U056VxovezC+S8
+	DSUqLBzx62h80sdguCTmsdrR3VZL5dTN6aVQU9p/qBguJuFuQjBba
+X-Google-Smtp-Source: AGHT+IHnE7nzywVvSHlmb2zbeRqa3AQllCmLxwfyN9Q2qj8wPtYZa4cnGeIFXnAXsV38qH1n0GUl8A==
+X-Received: by 2002:a05:600c:3ba0:b0:45b:8adf:cf2b with SMTP id 5b1f17b1804b1-45dfb641d03mr9711805e9.21.1757513015047;
+        Wed, 10 Sep 2025 07:03:35 -0700 (PDT)
 Received: from claudiu-X670E-Pro-RS.. ([82.78.167.139])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45df804bce3sm29523875e9.0.2025.09.10.07.03.31
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45df804bce3sm29523875e9.0.2025.09.10.07.03.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 10 Sep 2025 07:03:32 -0700 (PDT)
+        Wed, 10 Sep 2025 07:03:34 -0700 (PDT)
 From: Claudiu <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
 To: vkoul@kernel.org,
@@ -88,16 +88,16 @@ Cc: claudiu.beznea@tuxon.dev,
 	linux-renesas-soc@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>
-Subject: [PATCH v6 6/7] arm64: dts: renesas: r9a08g045: Add USB support
-Date: Wed, 10 Sep 2025 17:03:04 +0300
-Message-ID: <20250910140305.541961-7-claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v6 7/7] arm64: dts: renesas: rzg3s-smarc: Enable USB support
+Date: Wed, 10 Sep 2025 17:03:05 +0300
+Message-ID: <20250910140305.541961-8-claudiu.beznea.uj@bp.renesas.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250910140305.541961-1-claudiu.beznea.uj@bp.renesas.com>
 References: <20250910140305.541961-1-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_070334_901386_0E452488 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20250910_070336_967914_93F3DAE9 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,9 +116,9 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Add USB nodes for the Renesas RZ/G3S SoC. This consists of PHY reset,
-host and device support.
+Enable USB support (host, device, USB PHYs).
 
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
@@ -130,150 +130,104 @@ Changes in v5:
 - none
 
 Changes in v4:
-- dropped renesas,sysc-signals from usb2_phy0, usb2_phy1 nodes
-- s/renesas,sysc-signals/renesas,sysc-pwrrdy/g
+- none
 
 Changes in v3:
-- changed the nodes order to keep similar nodes toghether
+- collected tags
 
 Changes in v2:
-- this was patch 14/16 in v1
-- added renesas,sysc-signal properties to USB PHYs
-- collected tags
-- Geert: I kept your tag; please let me know if you consider otherwise 
+- this was patch 15/16 in v1:
+- dropped sysc enablement as it is now done in SoC dtsi file
 
- arch/arm64/boot/dts/renesas/r9a08g045.dtsi | 118 +++++++++++++++++++++
- 1 file changed, 118 insertions(+)
+ arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi | 57 ++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-index 16e6ac614417..ab29b8365e26 100644
---- a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-@@ -717,6 +717,124 @@ eth1: ethernet@11c40000 {
- 			status = "disabled";
- 		};
+diff --git a/arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi b/arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi
+index 5e044a4d0234..5586dd43c4d5 100644
+--- a/arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi
++++ b/arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi
+@@ -92,6 +92,20 @@ &audio_clk2 {
+ 	clock-frequency = <12288000>;
+ };
  
-+		phyrst: usbphy-ctrl@11e00000 {
-+			compatible = "renesas,r9a08g045-usbphy-ctrl";
-+			reg = <0 0x11e00000 0 0x10000>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>;
-+			resets = <&cpg R9A08G045_USB_PRESETN>;
-+			power-domains = <&cpg>;
-+			#reset-cells = <1>;
-+			renesas,sysc-pwrrdy = <&sysc 0xd70 0x1>;
-+			status = "disabled";
++&ehci0 {
++	dr_mode = "otg";
++	status = "okay";
++};
 +
-+			usb0_vbus_otg: regulator-vbus {
-+				regulator-name = "vbus";
-+			};
++&ehci1 {
++	status = "okay";
++};
++
++&hsusb {
++	dr_mode = "otg";
++	status = "okay";
++};
++
+ &i2c0 {
+ 	status = "okay";
+ 
+@@ -132,6 +146,15 @@ power-monitor@44 {
+ 	};
+ };
+ 
++&ohci0 {
++	dr_mode = "otg";
++	status = "okay";
++};
++
++&ohci1 {
++	status = "okay";
++};
++
+ &pinctrl {
+ 	audio_clock_pins: audio-clock {
+ 		pins = "AUDIO_CLK1", "AUDIO_CLK2";
+@@ -207,6 +230,27 @@ ssi3_pins: ssi3 {
+ 			 <RZG2L_PORT_PINMUX(18, 4, 8)>, /* TXD */
+ 			 <RZG2L_PORT_PINMUX(18, 5, 8)>; /* RXD */
+ 	};
++
++	usb0_pins: usb0 {
++		peri {
++			pinmux = <RZG2L_PORT_PINMUX(5, 0, 1)>, /* VBUS */
++				 <RZG2L_PORT_PINMUX(5, 2, 1)>; /* OVC */
 +		};
 +
-+		ohci0: usb@11e10000 {
-+			compatible = "generic-ohci";
-+			reg = <0 0x11e10000 0 0x100>;
-+			interrupts = <GIC_SPI 75 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			phys = <&usb2_phy0 1>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
++		otg {
++			pinmux = <RZG2L_PORT_PINMUX(5, 3, 1)>; /* OTG_ID */
++			bias-pull-up;
 +		};
++	};
 +
-+		ohci1: usb@11e30000 {
-+			compatible = "generic-ohci";
-+			reg = <0 0x11e30000 0 0x100>;
-+			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			phys = <&usb2_phy1 1>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
++	usb1_pins: usb1 {
++		pinmux = <RZG2L_PORT_PINMUX(5, 4, 5)>, /* OVC */
++			 <RZG2L_PORT_PINMUX(6, 0, 1)>; /* VBUS */
++	};
++};
 +
-+		ehci0: usb@11e10100 {
-+			compatible = "generic-ehci";
-+			reg = <0 0x11e10100 0 0x100>;
-+			interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			phys = <&usb2_phy0 2>;
-+			phy-names = "usb";
-+			companion = <&ohci0>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
++&phyrst {
++	status = "okay";
+ };
+ 
+ &scif0 {
+@@ -242,3 +286,16 @@ &ssi3 {
+ 	pinctrl-0 = <&ssi3_pins>, <&audio_clock_pins>;
+ 	status = "okay";
+ };
 +
-+		ehci1: usb@11e30100 {
-+			compatible = "generic-ehci";
-+			reg = <0 0x11e30100 0 0x100>;
-+			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			phys = <&usb2_phy1 2>;
-+			phy-names = "usb";
-+			companion = <&ohci1>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
++&usb2_phy0 {
++	pinctrl-0 = <&usb0_pins>;
++	pinctrl-names = "default";
++	vbus-supply = <&usb0_vbus_otg>;
++	status = "okay";
++};
 +
-+		usb2_phy0: usb-phy@11e10200 {
-+			compatible = "renesas,usb2-phy-r9a08g045";
-+			reg = <0 0x11e10200 0 0x700>;
-+			interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H0_HCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2H0_HRESETN>;
-+			#phy-cells = <1>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		usb2_phy1: usb-phy@11e30200 {
-+			compatible = "renesas,usb2-phy-r9a08g045";
-+			reg = <0 0x11e30200 0 0x700>;
-+			interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2H1_HCLK>;
-+			resets = <&phyrst 1>,
-+				 <&cpg R9A08G045_USB_U2H1_HRESETN>;
-+			#phy-cells = <1>;
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
-+		hsusb: usb@11e20000 {
-+			compatible = "renesas,usbhs-r9a08g045",
-+				     "renesas,rzg2l-usbhs";
-+			reg = <0 0x11e20000 0 0x10000>;
-+			interrupts = <GIC_SPI 85 IRQ_TYPE_EDGE_RISING>,
-+				     <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>,
-+				 <&cpg CPG_MOD R9A08G045_USB_U2P_EXR_CPUCLK>;
-+			resets = <&phyrst 0>,
-+				 <&cpg R9A08G045_USB_U2P_EXL_SYSRST>;
-+			renesas,buswait = <7>;
-+			phys = <&usb2_phy0 3>;
-+			phy-names = "usb";
-+			power-domains = <&cpg>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@12400000 {
- 			compatible = "arm,gic-v3";
- 			#interrupt-cells = <3>;
++&usb2_phy1 {
++	pinctrl-0 = <&usb1_pins>;
++	pinctrl-names = "default";
++	status = "okay";
++};
 -- 
 2.43.0
 
