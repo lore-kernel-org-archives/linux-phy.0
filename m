@@ -4,69 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5466ACAC58D
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Sep 2025 19:21:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD5DDCA101F
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Sep 2025 01:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fei7UqKNAD3ni4PdbDMdMQSl/aR0s69Rjy7bKSdCmL0=; b=fWjwL1M4im6hgp
-	0sAvbJfJoyuVBfFnRYEquOKEiFRCACmEGaTdILdj1HNEA50SBGnFIbh1WynFpEm4FaVBiR0VlPVRr
-	43DqgS5zcJbMuUXX0u2kCt+c4DRSSz4UJN/ja5fhixAECcnxOimdop6hxJOTF0IG6FTXS9R1SLmNj
-	ex73ZLI0wVPSxBwEemkiK0h9Z9GX2lqglqkNt/8/8oCFnoNXPotjvxYu3pjoqDdJdH9HvnzfoASTG
-	yGzB1uCJ65fWHcpEaorhp+I/Gqa9zhU9IhIXUGkHByphtOSrYiyowUWx35Wo+pQSaNzM+SWK4/f/6
-	Vq2SgGkJztr0kgrUsWAw==;
+	List-Owner; bh=KLCF7UUQJCZfFq9NtN6LTP3WaQBHe0+T3kGcRyDdJYQ=; b=s4vNh3+9jBuKq5
+	1de4wiAlhaUVjhCMpN23Seyc0l+f1bjsFDH5WnOueDC9l00+m74qil0jrLGDo+tLW0jtqFoLI0ake
+	yYCtkoKK73b7BgugRg3AEgb+ZUoU62ZlYPZFCV3gHwZwJWkNb62TDMysU5YQGMvOqYsmUXNa56sdA
+	8SbHRYPLnORLHSw4NO5cVpjbT8FsTVNKaMZGjkDkNE/p/KzCinycvLIm+NJuUkVnLzfW3btc7fblS
+	mbok7xlChgetVU6FzXo3HhplpX4iUj5pHvpkOdUw/JfMu3Oy+cboF4Mga5didapEtX1NMvMfh2mTK
+	WQOKRu3NjVTJzhZa+Ubw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwQNk-0000000GFSs-43BT;
-	Wed, 10 Sep 2025 19:21:28 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1uwVnl-000000004OJ-1kwD;
+	Thu, 11 Sep 2025 01:08:41 +0000
+Received: from mail-m16.yeah.net ([220.197.32.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwQNh-0000000GFQ3-0N9y;
-	Wed, 10 Sep 2025 19:21:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=uhFI9oI1xsX/5VketVeksgJo6o20zmCCJbkUrT20l+4=; b=Zg95o4qdhQ3n5T72uj5V2eaTxd
-	VbPPVM1DcFUw4tMgnKoPHVlb0k+AZnZmGRS51s0Wnh5SGPnQo5N8OZKxcMeK+ggYYA55asJBryyPA
-	LMTUVzjI7nOygkIJM6AHGAnADS8cbzoUK8SgKF3g6PM41ibsclMNJiFouUQaScYlVIou8iadwnEaB
-	oysIgeMbqjDsnStF/iIe/B/zaVxOeBi6O3YjSTAWHZhBck6On3L4zUooO0wUCUrMR5nG5ht9Yv7lE
-	orCYm7q2L5QFLHmHJhlOieOS4GXp3ZoMAlUvsVYhWL6nX7JOv0/fk3meEy9Ybv5hfsOy3kGawWqgL
-	ojyrPRKw==;
-Received: from i53875b8a.versanet.de ([83.135.91.138] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1uwQNM-0003mh-8i; Wed, 10 Sep 2025 21:21:04 +0200
-From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Kever Yang <kever.yang@rock-chips.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Diederik de Haas <didi.debian@cknow.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Collabora Kernel Team <kernel@collabora.com>,
- Michael Riesch <michael.riesch@collabora.com>, Vinod Koul <vkoul@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, stable@kernel.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: (subset) [PATCH v4 0/7] phy: rockchip: phy-rockchip-inno-csidphy: add
- support for rk3588 variant
-Date: Wed, 10 Sep 2025 21:21:03 +0200
-Message-ID: <2070639.PIDvDuAF1L@diego>
-In-Reply-To: <175752285211.484319.18097786132863236205.b4-ty@kernel.org>
-References: <20250616-rk3588-csi-dphy-v4-0-a4f340a7f0cf@collabora.com>
- <175752285211.484319.18097786132863236205.b4-ty@kernel.org>
+	id 1uwVni-000000004Ln-2N82;
+	Thu, 11 Sep 2025 01:08:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yeah.net;
+	s=s110527; h=Date:From:To:Subject:Message-ID:MIME-Version:
+	Content-Type; bh=CsNsiG3pc8pWG7MUbtRJFCqC5DA+Sce6zLpMwj1ZxEQ=;
+	b=hehXzZHcto3G4TRvJ+zg/nlos1kK4ej4LIxxm7qsKs1H3wmwWPA2uD8ONtASQ1
+	ZLIdo6sKL8mhnm0Rf0zMN+dd0euvQYtKTVrYttKUFtbh6Q+sXS3OeUn5PMnsumbt
+	mpDcZDF4Tkqq5GuWpFKB7foki46XqiU/pXFOrAvMOs9Hc=
+Received: from dragon (unknown [])
+	by gzsmtp2 (Coremail) with SMTP id Ms8vCgDnjyT9IMJo2QdfBA--.19610S3;
+	Thu, 11 Sep 2025 09:08:15 +0800 (CST)
+Date: Thu, 11 Sep 2025 09:08:12 +0800
+From: Shawn Guo <shawnguo2@yeah.net>
+To: maudspierings@gocontroll.com
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 2/2] arm64: dts: freescale: imx8mp-moduline-display-106:
+ Use phys to replace xceiver-supply
+Message-ID: <aMIg_PPSZehzEyJD@dragon>
+References: <20250822-can_phy3-v1-0-73b3ba1690ee@gocontroll.com>
+ <20250822-can_phy3-v1-2-73b3ba1690ee@gocontroll.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250822-can_phy3-v1-2-73b3ba1690ee@gocontroll.com>
+X-CM-TRANSID: Ms8vCgDnjyT9IMJo2QdfBA--.19610S3
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU5l1vUUUUU
+X-Originating-IP: [114.216.146.49]
+X-CM-SenderInfo: pvkd40hjxrjqh1hdxhhqhw/1tbiBAfFZWjCB7k19wAAs1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_122125_423532_DEB92157 
-X-CRM114-Status: GOOD (  16.04  )
+X-CRM114-CacheID: sfid-20250910_180838_956276_D315CD06 
+X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,34 +81,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVmlub2QsCgpBbSBNaXR0d29jaCwgMTAuIFNlcHRlbWJlciAyMDI1LCAxODo0NzozMiBNaXR0
-ZWxldXJvcMOkaXNjaGUgU29tbWVyemVpdCBzY2hyaWViIFZpbm9kIEtvdWw6Cj4gCj4gT24gV2Vk
-LCAwMyBTZXAgMjAyNSAxOTowNDo0OCArMDIwMCwgTWljaGFlbCBSaWVzY2ggd3JvdGU6Cj4gPiBI
-YWJpZGVyZSwKPiA+IAo+ID4gVGhlIFJvY2tjaGlwIFJLMzU4OCBmZWF0dXJlcyB0d28gTUlQSSBD
-U0ktMiBEUEhZcyAobm90IHRvIGJlIGNvbmZ1c2VkIHdpdGgKPiA+IHRoZSB0d28gY29tYm8gTUlQ
-SSBEU0kvQ1NJIENQSFkvRFBIWSBibG9ja3MpLiBUaGUgQ1NJLTIgRFBIWXMgY2FuIGJlCj4gPiBz
-dXBwb3J0ZWQgdXNpbmcgdGhlIGV4aXN0aW5nIHBoeS1yb2NrY2hpcC1pbm5vLWNzaWRwaHkgZHJp
-dmVyLCB0aGUgbm90YWJsZQo+ID4gZGlmZmVyZW5jZXMgYmVpbmcKPiA+ICAtIHRoZSBjb250cm9s
-IGJpdHMgaW4gdGhlIEdSRgo+ID4gIC0gdGhlIGFkZGl0aW9uYWwgcmVzZXQgbGluZQo+ID4gVGhp
-cyBwYXRjaCBzZXJpZXMgYWRkcyBzdXBwb3J0IGZvciB0aGlzIHZhcmlhbnQuCj4gPiAKPiA+IFsu
-Li5dCj4gCj4gQXBwbGllZCwgdGhhbmtzIQo+IAo+IFsyLzddIGR0LWJpbmRpbmdzOiBwaHk6IHJv
-Y2tjaGlwLWlubm8tY3NpLWRwaHk6IG1ha2UgcG93ZXItZG9tYWlucyBub24tcmVxdWlyZWQKPiAg
-ICAgICBjb21taXQ6IGMyNTQ4MTViMDI2NzNjYzc3YTg0MTAzYzRjMGQ2MTk3YmQ5MGMwZWYKPiBb
-My83XSBkdC1iaW5kaW5nczogcGh5OiByb2NrY2hpcC1pbm5vLWNzaS1kcGh5OiBhZGQgcmszNTg4
-IHZhcmlhbnQKPiAgICAgICBjb21taXQ6IDUwNzJiOGU5OGVlZjQ2ODVhNWE5YThiYWU1NjA3MmNi
-NjVhMmVmNjkKPiBbNC83XSBwaHk6IHJvY2tjaGlwOiBwaHktcm9ja2NoaXAtaW5uby1jc2lkcGh5
-OiBhbGxvdyB3cml0ZXMgdG8gZ3JmIHJlZ2lzdGVyIDAKPiAgICAgICBjb21taXQ6IDhjN2MxOTQ2
-NmM4NTRmYTg2YjgyZDIxNDhlYWE5YmYwZTY1MzE0MjMKPiBbNS83XSBwaHk6IHJvY2tjaGlwOiBw
-aHktcm9ja2NoaXAtaW5uby1jc2lkcGh5OiBhbGxvdyBmb3IgZGlmZmVyZW50IHJlc2V0IGxpbmVz
-Cj4gICAgICAgY29tbWl0OiAyNjA0MzUxNTNjOTBjOGU5MDU1M2U0NTZlYzQzNTc4ODM0YTE0YTcx
-CgpxdWVzdGlvbiwgd2hhdCBoYXBwZW5lZCB0byBwYXRjaCA2PwogIFtQQVRDSCB2NCA2LzddIHBo
-eTogcm9ja2NoaXA6IHBoeS1yb2NrY2hpcC1pbm5vLWNzaWRwaHk6IGFkZCBzdXBwb3J0IGZvciBy
-azM1ODggdmFyaWFudAoKb3IgaXMgaXQganVzdCBtaXNzaW5nIGZyb20gdGhpcyBtYWlsPwoKVGhh
-bmtzCkhlaWtvCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+On Fri, Aug 22, 2025 at 11:20:06AM +0200, Maud Spierings via B4 Relay wrote:
+> From: Maud Spierings <maudspierings@gocontroll.com>
+> 
+> Fix the can tranceivers to actually use the new phy description instead
+> of the regulator tweak.
+> 
+> Signed-off-by: Maud Spierings <maudspierings@gocontroll.com>
+
+Applied, thanks!
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
