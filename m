@@ -4,111 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48694CAC58D
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Sep 2025 09:26:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36D00CAC58D
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Sep 2025 10:11:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KzH38bDlHHKpmcghIeMpQS+WoKGEHW0ppHdTGXhJhnY=; b=UqwykBgIV6srMu
-	grabYfGI176O1PswG1cNZ8JpzDeY/nswwe00ljFimVFbmOK0d7SKfCc/RjDGUeBTzG0E5EqynTbus
-	e2UHsEu/uEJPBnJLVMsXcAMn9Rou6TuJ+s9j+YOpKr/HqiL698aZd3B78caE30S3a2nIagypITPmR
-	AsnUCU8wTG3XkKSVm+xmmhcvf3/vPfFdG2i2pOTNrwEKCQNZtw1ahrUyMx8lEZc9jHi9gjIQ/b7ki
-	Zo7TZTB2JYiX3Mb+XjtkKHLieX5ScKvTxaHspR4iBwuAPAhEz0JDfK16po3nHdOaD3VbKM1VAyIj4
-	EXQUmBnFeOLNIKa8345g==;
+	List-Owner; bh=eTRSgH5xttAzgzZLo0AHESNMykX4oT0EYx4yUqI9SN8=; b=gwlNszyE08HQID
+	iYMeCDcK74MyHXsEco+mA2G3JRG/vrbLcyACdNomsi3eehcIvczKCLCW4zSsr2l0jM/6TTSW550k7
+	34ky3+XOeRUPpriA8eewDeOOVYaZ+lUC33jybMd1hXDmg/ylWmhuiPjjLWbLyqdHxq3XPlPq0DRD+
+	cX9GmP0cUPXeEpBlo9D/iRHAzXPJfmbzHxGXgf1zoDF+n3ER/LL+ECJaVBK7DO6LZs2fjf+5Q+tPX
+	bhWNQEilL4Mf8Vm72FQ0BGpJcquH1nfRFhAYD48s6cz5rpjDBqeh8wGlK7CqRBryZH23YJZwloVnq
+	TK4QDiWEAVeVI99tuAoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwdZL-000000026zV-0ChP;
-	Thu, 11 Sep 2025 09:26:19 +0000
-Received: from fhigh-b3-smtp.messagingengine.com ([202.12.124.154])
+	id 1uweGh-00000002J3Z-3MIQ;
+	Thu, 11 Sep 2025 10:11:07 +0000
+Received: from mail-ed1-f41.google.com ([209.85.208.41])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwdZH-000000026x8-1Q2F;
-	Thu, 11 Sep 2025 09:26:17 +0000
-Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
-	by mailfhigh.stl.internal (Postfix) with ESMTP id F21047A001E;
-	Thu, 11 Sep 2025 05:26:10 -0400 (EDT)
-Received: from phl-mailfrontend-01 ([10.202.2.162])
-  by phl-compute-02.internal (MEProxy); Thu, 11 Sep 2025 05:26:11 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm3; t=1757582770; x=1757669170; bh=DJYzLFKfHM
-	lCWVvTixCw6+fqr/WXFMRu6AQWZTQqxwE=; b=ODKH0lVErnPnR7NxCH0avYOpFX
-	XjZqwPhUkBocQrc1HxqNvcoNPAsTg8DtQh4GaacvXRkk/SRAa73YGencoqxe+AzK
-	ftrytTCdEuTcyGZLf5T1lS0u4gSR8dRFWZ3PZL0Y1D0mpZwG1/7by1IR3L19IIAI
-	hpQTQzT630SA1617oPE9q2uvgqsArOBFAnrll1PHqON7Pp0RV/a5Wp1A/4wuIboj
-	M8zsubKpWK8TSS4Buc7cVQ3W/SeS+fJpk9us4Ep/3Kfl5yd8jTsBbFUndvPRFBZ5
-	17DT+KrsugGlh4P5Xs8BBzXlukEw5KzzC3/NluR8CytFaWUGNZDofvaTXH9w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
-	1757582770; x=1757669170; bh=DJYzLFKfHMlCWVvTixCw6+fqr/WXFMRu6AQ
-	WZTQqxwE=; b=LDduIdzN2x0ATkTOWVhzFHHnnu1DGjLVeUSBjrHTr2X4cepa6ga
-	m6CiLWjnUPGzd1ds0oCyahfjF3R4CK0fJKN7nIHT+K8VC3O93xz46rbNx2wg2+O6
-	h7JPmetptLzAUo6kdX1hdsgcBtwClh8KwQXMSYr/9DUOTgikfwR1YBfCrlO/VXMa
-	30JFCijJJLFS8gPoy0bR7KQ4q5OjhcZZtekLO9ps++1Ochu4rPyBTeNAz3oVkRhY
-	M4BVomw/jNMPNIEpCauaJa2o/paNDpbUQ6G6sKwpBmfiQs5ui9zcX1UWkQH4RmD1
-	ZMUQf1CYA3VANYvdBxmlw4YFlv0FgoSHYmw==
-X-ME-Sender: <xms:sJXCaPBIpXSGg7R6w11uO2HG6eahfRi3W9JhbfkC6n7LgFF0w9HOSA>
-    <xme:sJXCaAi_A_mnQkwJvcjEV_wv2ZXq4f20BMpx7-zE2QMGvyuUUtRYyeo3EvayPaY2B
-    8caGj3YykxUgiUwP8k>
-X-ME-Received: <xmr:sJXCaBPZYT6gtfGUfXeao4ajOuCaZoaymte7W4SZfaiEhO4l37m1KtrD9NWUJ7jBIiIDOuAL5_u1sU2tkONXEi_z_Sr2vwFNGTw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggddvheektdcutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
-    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
-    hrpeffhffvvefukfhfgggtuggjsehttdertddttdejnecuhfhrohhmpeflrghnnhgvucfi
-    rhhunhgruhcuoehjsehjrghnnhgruhdrnhgvtheqnecuggftrfgrthhtvghrnhepgfdvff
-    evleegudejfeefheehkeehleehfefgjefffeetudegtefhuedufeehfeetnecuvehluhhs
-    thgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepjhesjhgrnhhnrghurd
-    hnvghtpdhnsggprhgtphhtthhopedvfedpmhhouggvpehsmhhtphhouhhtpdhrtghpthht
-    ohepshhvvghnsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehgrhgvghhkhheslhhinh
-    hugihfohhunhgurghtihhonhdrohhrghdprhgtphhtthhopehrohgshheskhgvrhhnvghl
-    rdhorhhgpdhrtghpthhtohepkhhriihkodgutheskhgvrhhnvghlrdhorhhgpdhrtghpth
-    htoheptghonhhorhdoughtsehkvghrnhgvlhdrohhrghdprhgtphhtthhopegsrghlsghi
-    sehkvghrnhgvlhdrohhrghdprhgtphhtthhopegrlhihshhsrgesrhhoshgvnhiifigvih
-    hgrdhiohdprhgtphhtthhopehnvggrlhesghhomhhprgdruggvvhdprhgtphhtthhopehv
-    khhouhhlsehkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:sJXCaPaQfQ8LIBwoQzLV0ENwj57RQqX46GN6LRU9gxqJbnyZakHsAg>
-    <xmx:sJXCaO_ibK-UTeLxPNdkTc6n1iJpGfS7cngyXu2Ybo1KODSq-pficA>
-    <xmx:sJXCaK2INVTJ02ymTBE3OTB84K8_J-s6pG7-6VyYLz2LW830qeoEcw>
-    <xmx:sJXCaP3rXCENuJ2Ygf5nlFuDSFluL0nXCkl0tPzsTo6vVLWB6KYQbw>
-    <xmx:spXCaPjqXEXtRIcQAHJS4CSZnUrvzR5kUJZBHpsv538pyFYoaxMTSrkM>
-Feedback-ID: i47b949f6:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 11 Sep 2025 05:26:08 -0400 (EDT)
-Date: Thu, 11 Sep 2025 11:26:06 +0200
-From: Janne Grunau <j@jannau.net>
-To: Sven Peter <sven@kernel.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
-	Alyssa Rosenzweig <alyssa@rosenzweig.io>,
-	Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
-	Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>,
-	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, asahi@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	Hector Martin <marcan@marcan.st>
-Subject: Re: [PATCH v2 15/22] usb: typec: tipd: Handle mode transitions for
- CD321x
-Message-ID: <20250911092606.GE89417@robin.jannau.net>
-References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
- <20250906-atcphy-6-17-v2-15-52c348623ef6@kernel.org>
+	id 1uweGc-00000002J01-2bVp;
+	Thu, 11 Sep 2025 10:11:06 +0000
+Received: by mail-ed1-f41.google.com with SMTP id 4fb4d7f45d1cf-6188b72b7caso555553a12.2;
+        Thu, 11 Sep 2025 03:11:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1757585460; x=1758190260;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=S7ly2Efr3aD8QyxPSswHNwfdGEyG+Grnl+9kaAGf3Cs=;
+        b=GRHDPndFp87OiYjac2ajA/zJasPyKL/AQGf0YRIxP4f34GSq+QUlRJxssSRo73pk23
+         3t505Zb8kuQQSzmEUMH7YUVp/0Y9q2nwCOdchNxJrS6SELZyPeY19vdFlx0diLHYeiFk
+         s9vp+RyJheOi22eCUr3teDFo0SRtgHUfttEnOte8blotMxQRL5VqynPzsz7csQJv7huV
+         rB5NcKNiruF1bJzqt/8Yv5BYYiN0pMtocRseIMy+Ortsaf7srmjvOkXK/NbgWgyKmFUE
+         en891cci2etnRRILVf++OHNucsmndQiDcqVIHEVpKQEZK1ClbXslokPb7MXM27ZN99ut
+         uTPQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVk5BeqtYLXuygcRpOPVbPl6k1yEF5iT/NDc5zhgMqKg/+izOWi1eMNY8/QfpdSmAtTrNe53eLN2wsOa95p3iYG@lists.infradead.org, AJvYcCX4sdJNKkvWxG6j+ZLHXjq+tAHWmKkGFWBPMIHo7+VtrA1yF/qZUZFDy3VLlfVbngsoGmvLRuNcZzPn@lists.infradead.org
+X-Gm-Message-State: AOJu0YyK9VvO958GKewU2uP/cOcFVGmto+zVEwVhVlmZbjRbQDskRjXG
+	mTIUgl/Io82QQGlQpTUq48wbrqxUMiTBp0n0jWehxZ2BnLU498AwR0cFsvUsCEspHrnHvg==
+X-Gm-Gg: ASbGncswSXar3Aiw6kl8fEQzfrPBDXb/IJnKaDVvfp0haKNAocBptK8yZRCqKvm2wKh
+	mbe5JsUt5ia0QgY5BJZ1YWDW2m3ZY9Tp2vhCFLtL42FMMtE7DsA9dE8T+DPf4GO3ROnhLFZFUNV
+	rVCaAjhIDfWIq8z/PvhRmXQlvxNANJCJaa75qDa2E2tRBDEgU2y6/1h/1WCJk5Zo2eybedEnLNW
+	TYjXRCe2Kv/0ud/M4Z4ntGEcObRd8I6Cx6FPbhtqAjc1mv1ciSCiyZu+9nB12yQkAKuPp8QLIaA
+	37ZZjk9+G5kyXAVzOO1MsGNroxH7+0IWk4+EfE4aZdoicsW9uTtg7TaKhZJh6VspKrj5n7uvgv6
+	hoDHlNnV6DYjv4/CAGO0j9dk1TgRE7PWcdnOAM1ZSaHAv54kk/d8wJK2Ibgt7OBX+d7dIux9Xi4
+	1Lb45oUTZLb6R4Z0vjI9k=
+X-Google-Smtp-Source: AGHT+IHVw3JjiZ1di19qoyl8bKJJjwH/FJoGuNoM3sNGO4n9wkGofTzfJW77+MeHm1VK6kES0Oz7xA==
+X-Received: by 2002:a05:6402:3512:b0:627:d77e:c346 with SMTP id 4fb4d7f45d1cf-627d77ec6a1mr14076719a12.23.1757585459616;
+        Thu, 11 Sep 2025 03:10:59 -0700 (PDT)
+Received: from mail-ej1-f42.google.com (mail-ej1-f42.google.com. [209.85.218.42])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-62ec33ad242sm915577a12.17.2025.09.11.03.10.58
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 11 Sep 2025 03:10:58 -0700 (PDT)
+Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-afcb7ae6ed0so76493166b.3;
+        Thu, 11 Sep 2025 03:10:58 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCUkFkmHx4nUxb6m3tY++SwSBESkw6apIqwcnWd6ngfgWgtuCM5F2/Vlsho+eLPY1L+k3eRYkD94Adh2@lists.infradead.org, AJvYcCVXMU7oUWDNtaPzRMmOtN37rHH+7fm6CLENyrBkU/xVI7krt76sAruOKyg/AYFQczWoaceTdb8m7fLiFArMU4EA@lists.infradead.org
+X-Received: by 2002:a17:906:f8cf:b0:b04:bfda:e437 with SMTP id
+ a640c23a62f3a-b04bfdaf4d1mr1454520166b.32.1757585457836; Thu, 11 Sep 2025
+ 03:10:57 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250906-atcphy-6-17-v2-15-52c348623ef6@kernel.org>
+References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+In-Reply-To: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
+From: Neal Gompa <neal@gompa.dev>
+Date: Thu, 11 Sep 2025 12:10:21 +0200
+X-Gmail-Original-Message-ID: <CAEg-Je_=Jzp_Rb0DwSjQ4fzYHFtOecneN6JaWgGGv8BEBPnhhw@mail.gmail.com>
+X-Gm-Features: AS18NWC94YQ20cxcK-m9v2-A3V_x77Cw9qAo7tdpDB-LrH72BSxZ_dRe35VW7q8
+Message-ID: <CAEg-Je_=Jzp_Rb0DwSjQ4fzYHFtOecneN6JaWgGGv8BEBPnhhw@mail.gmail.com>
+Subject: Re: [PATCH v2 00/22] Apple Silicon USB3 support
+To: Sven Peter <sven@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Felipe Balbi <balbi@kernel.org>, Janne Grunau <j@jannau.net>, 
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Frank Li <Frank.Li@nxp.com>, Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>, 
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, asahi@lists.linux.dev, 
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+	stable@kernel.org, Hector Martin <marcan@marcan.st>, R <rqou@berkeley.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250911_022615_926360_D5D6AFB5 
-X-CRM114-Status: GOOD (  36.82  )
+X-CRM114-CacheID: sfid-20250911_031102_710759_A22BE096 
+X-CRM114-Status: GOOD (  47.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,442 +98,200 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 06, 2025 at 03:43:28PM +0000, Sven Peter wrote:
-> From: Hector Martin <marcan@marcan.st>
-> 
-> On Apple Silicon machines there is no control over which alt mode is
-> chosen. The CD321x' firmware negotiates the target mode on its own and
-> only lets the main CPU know after the mode has already been chosen.
-> Especially after plugging a new cable in this can result to quick mode
-> changes from e.g. power only -> USB3 only -> USB3+DisplayPort in a short
-> time. It is not possile to influence this in any way and we also do not
-> get direct access to the PDOs or VDOs exchanged via USB PD.
-> 
-> Additionally, mode changes must be tightly synchronized between DWC3 and
-> the Type C PHY and most mode changes require a full reset of DWC3 to
-> make the port work correctly.
-> On the machines the usb role change is used to reset the controller.
-> The role change is additionally done synchronously from the callback
-> instead of relying on a workqueue as usual in order to avoid any races
-> which can, in the worst case, result in resetting the entire SoC if
-> Type-C PHY and DWC3 are out of sync.
-
-This paragraph needs to be update considering the dwc3 apple glue
-driver.
-
-> To be able to control all this we trigger the entire process in the
-> correct order directly from the TIPD driver and de-bounce any mode
-> changes to avoid tearing down and re-setting DWC3 back up multiple times
-> any time a new connection is made.
-> 
-> Signed-off-by: Hector Martin <marcan@marcan.st>
-> Co-developed-by: Sven Peter <sven@kernel.org>
-> Signed-off-by: Sven Peter <sven@kernel.org>
-> ---
->  drivers/usb/typec/tipd/core.c | 297 +++++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 293 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/usb/typec/tipd/core.c b/drivers/usb/typec/tipd/core.c
-> index b558fc5ecbc35a9dabbf33c444f38173740af7c3..95218e8be65dbbb594465961b1fda76eed1e266c 100644
-> --- a/drivers/usb/typec/tipd/core.c
-> +++ b/drivers/usb/typec/tipd/core.c
-> @@ -17,6 +17,7 @@
->  #include <linux/usb/typec.h>
->  #include <linux/usb/typec_altmode.h>
->  #include <linux/usb/typec_dp.h>
-> +#include <linux/usb/typec_mux.h>
->  #include <linux/usb/typec_tbt.h>
->  #include <linux/usb/role.h>
->  #include <linux/workqueue.h>
-> @@ -120,6 +121,9 @@ struct tps6598x_intel_vid_status_reg {
->  #define TPS_TASK_TIMEOUT		1
->  #define TPS_TASK_REJECTED		3
->  
-> +/* Debounce delay for mode changes, in milliseconds */
-> +#define CD321X_DEBOUNCE_DELAY_MS 500
-> +
->  enum {
->  	TPS_MODE_APP,
->  	TPS_MODE_BOOT,
-> @@ -145,6 +149,7 @@ struct tipd_data {
->  	irq_handler_t irq_handler;
->  	u64 irq_mask1;
->  	size_t tps_struct_size;
-> +	void (*remove)(struct tps6598x *tps);
->  	int (*register_port)(struct tps6598x *tps, struct fwnode_handle *node);
->  	void (*unregister_port)(struct tps6598x *tps);
->  	void (*trace_data_status)(u32 status);
-> @@ -155,6 +160,7 @@ struct tipd_data {
->  	int (*switch_power_state)(struct tps6598x *tps, u8 target_state);
->  	bool (*read_data_status)(struct tps6598x *tps);
->  	int (*reset)(struct tps6598x *tps);
-> +	int (*connect)(struct tps6598x *tps, u32 status);
->  };
->  
->  struct tps6598x {
-> @@ -183,6 +189,17 @@ struct tps6598x {
->  	const struct tipd_data *data;
->  };
->  
-> +struct cd321x_status {
-> +	u32 status;
-> +	u32 pwr_status;
-> +	u32 data_status;
-> +	u32 status_changed;
-> +	struct usb_pd_identity partner_identity;
-> +	struct tps6598x_dp_sid_status_reg dp_sid_status;
-> +	struct tps6598x_intel_vid_status_reg intel_vid_status;
-> +	struct tps6598x_usb4_status_reg usb4_status;
-> +};
-> +
->  struct cd321x {
->  	struct tps6598x tps;
->  
-> @@ -192,6 +209,13 @@ struct cd321x {
->  
->  	struct typec_altmode *port_altmode_dp;
->  	struct typec_altmode *port_altmode_tbt;
-> +
-> +	struct typec_mux *mux;
-> +	struct typec_mux_state state;
-> +
-> +	struct cd321x_status update_status;
-> +	struct delayed_work update_work;
-> +	struct usb_pd_identity cur_partner_identity;
->  };
->  
->  static enum power_supply_property tps6598x_psy_props[] = {
-> @@ -613,9 +637,229 @@ static void tps6598x_handle_plug_event(struct tps6598x *tps, u32 status)
->  	}
->  }
->  
-> +static void cd321x_typec_update_mode(struct tps6598x *tps, struct cd321x_status *st)
-> +{
-> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
-> +
-> +	if (!(st->data_status & TPS_DATA_STATUS_DATA_CONNECTION)) {
-> +		if (cd321x->state.mode == TYPEC_STATE_SAFE)
-> +			return;
-> +		cd321x->state.alt = NULL;
-> +		cd321x->state.mode = TYPEC_STATE_SAFE;
-> +		cd321x->state.data = NULL;
-> +		typec_mux_set(cd321x->mux, &cd321x->state);
-> +	} else if (st->data_status & TPS_DATA_STATUS_DP_CONNECTION) {
-> +		struct typec_displayport_data dp_data;
-> +		unsigned long mode;
-> +
-> +		switch (TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT(st->data_status)) {
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_A:
-> +			mode = TYPEC_DP_STATE_A;
-> +			break;
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_B:
-> +			mode = TYPEC_DP_STATE_B;
-> +			break;
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_C:
-> +			mode = TYPEC_DP_STATE_C;
-> +			break;
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_D:
-> +			mode = TYPEC_DP_STATE_D;
-> +			break;
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_E:
-> +			mode = TYPEC_DP_STATE_E;
-> +			break;
-> +		case TPS_DATA_STATUS_DP_SPEC_PIN_ASSIGNMENT_F:
-> +			mode = TYPEC_DP_STATE_F;
-> +			break;
-> +		default:
-> +			dev_err(tps->dev, "Invalid DP pin assignment\n");
-> +			return;
-> +		}
-> +
-> +		if (cd321x->state.alt == cd321x->port_altmode_dp &&
-> +		   cd321x->state.mode == mode) {
-> +			return;
-> +		}
-> +
-> +		dp_data.status = le32_to_cpu(st->dp_sid_status.status_rx);
-> +		dp_data.conf = le32_to_cpu(st->dp_sid_status.configure);
-> +		cd321x->state.alt = cd321x->port_altmode_dp;
-> +		cd321x->state.data = &dp_data;
-
-&dp_data points to the stack. As it's no longer used after the
-typec_mux_set call set cd321x->state.data to NULL to clear the dangling
-pointer.
-
-> +		cd321x->state.mode = mode;
-> +		typec_mux_set(cd321x->mux, &cd321x->state);
-> +	} else if (st->data_status & TPS_DATA_STATUS_TBT_CONNECTION) {
-> +		struct typec_thunderbolt_data tbt_data;
-> +
-> +		if (cd321x->state.alt == cd321x->port_altmode_tbt &&
-> +		   cd321x->state.mode == TYPEC_TBT_MODE)
-> +			return;
-> +
-> +		tbt_data.cable_mode = le16_to_cpu(st->intel_vid_status.cable_mode);
-> +		tbt_data.device_mode = le16_to_cpu(st->intel_vid_status.device_mode);
-> +		tbt_data.enter_vdo = le16_to_cpu(st->intel_vid_status.enter_vdo);
-> +		cd321x->state.alt = cd321x->port_altmode_tbt;
-> +		cd321x->state.mode = TYPEC_TBT_MODE;
-> +		cd321x->state.data = &tbt_data;
-
-same issue as with dp_data
-
-> +		typec_mux_set(cd321x->mux, &cd321x->state);
-> +	} else if (st->data_status & CD321X_DATA_STATUS_USB4_CONNECTION) {
-> +		struct enter_usb_data eusb_data;
-> +
-> +		if (cd321x->state.alt == NULL && cd321x->state.mode == TYPEC_MODE_USB4)
-> +			return;
-> +
-> +		eusb_data.eudo = le32_to_cpu(st->usb4_status.eudo);
-> +		eusb_data.active_link_training =
-> +			!!(st->data_status & TPS_DATA_STATUS_ACTIVE_LINK_TRAIN);
-> +
-> +		cd321x->state.alt = NULL;
-> +		cd321x->state.data = &eusb_data;
-
-and again
-
-> +		cd321x->state.mode = TYPEC_MODE_USB4;
-> +		typec_mux_set(cd321x->mux, &cd321x->state);
-> +	} else {
-> +		if (cd321x->state.alt == NULL && cd321x->state.mode == TYPEC_STATE_USB)
-> +			return;
-> +		cd321x->state.alt = NULL;
-> +		cd321x->state.mode = TYPEC_STATE_USB;
-> +		cd321x->state.data = NULL;
-> +		typec_mux_set(cd321x->mux, &cd321x->state);
-> +	}
-> +}
-> +
-> +static void cd321x_update_work(struct work_struct *work)
-> +{
-> +	struct cd321x *cd321x = container_of(to_delayed_work(work),
-> +					    struct cd321x, update_work);
-> +	struct tps6598x *tps = &cd321x->tps;
-> +	struct cd321x_status st;
-> +
-> +	guard(mutex)(&tps->lock);
-> +
-> +	st = cd321x->update_status;
-> +	cd321x->update_status.status_changed = 0;
-> +
-> +	bool old_connected = !!tps->partner;
-> +	bool new_connected = st.status & TPS_STATUS_PLUG_PRESENT;
-> +	bool was_disconnected = st.status_changed & TPS_STATUS_PLUG_PRESENT;
-> +
-> +	bool usb_connection = st.data_status &
-> +			      (TPS_DATA_STATUS_USB2_CONNECTION | TPS_DATA_STATUS_USB3_CONNECTION);
-> +
-> +	enum usb_role old_role = usb_role_switch_get_role(tps->role_sw);
-> +	enum usb_role new_role = USB_ROLE_NONE;
-> +	enum typec_pwr_opmode pwr_opmode = TYPEC_PWR_MODE_USB;
-> +	enum typec_orientation orientation = TYPEC_ORIENTATION_NONE;
-> +
-> +	if (usb_connection) {
-> +		if (tps->data_status & TPS_DATA_STATUS_USB_DATA_ROLE)
-> +			new_role = USB_ROLE_DEVICE;
-> +		else
-> +			new_role = USB_ROLE_HOST;
-> +	}
-> +
-> +	if (new_connected) {
-> +		pwr_opmode = TPS_POWER_STATUS_PWROPMODE(st.pwr_status);
-> +		orientation = TPS_STATUS_TO_UPSIDE_DOWN(st.status) ?
-> +			TYPEC_ORIENTATION_REVERSE : TYPEC_ORIENTATION_NORMAL;
-> +	}
-> +
-> +	bool is_pd = pwr_opmode == TYPEC_PWR_MODE_PD;
-> +	bool partner_changed = old_connected && new_connected &&
-> +		(was_disconnected ||
-> +		 (is_pd && memcmp(&st.partner_identity,
-> +				  &cd321x->cur_partner_identity, sizeof(struct usb_pd_identity))));
-> +
-> +	/* If we are switching from an active role, transition to USB_ROLE_NONE first */
-> +	if (old_role != USB_ROLE_NONE && (new_role != old_role || was_disconnected))
-> +		usb_role_switch_set_role(tps->role_sw, USB_ROLE_NONE);
-> +
-> +	/* Process partner disconnection or change */
-> +	if (!new_connected || partner_changed) {
-> +		if (!IS_ERR(tps->partner))
-> +			typec_unregister_partner(tps->partner);
-> +		tps->partner = NULL;
-> +	}
-> +
-> +	/* If there was a disconnection, set PHY to off */
-> +	if (!new_connected || was_disconnected) {
-> +		cd321x->state.alt = NULL;
-> +		cd321x->state.mode = TYPEC_STATE_SAFE;
-> +		cd321x->state.data = NULL;
-> +		typec_set_mode(tps->port, TYPEC_STATE_SAFE);
-> +	}
-> +
-> +	/* Update Type-C properties */
-> +	typec_set_pwr_opmode(tps->port, pwr_opmode);
-> +	typec_set_pwr_role(tps->port, TPS_STATUS_TO_TYPEC_PORTROLE(st.status));
-> +	typec_set_vconn_role(tps->port, TPS_STATUS_TO_TYPEC_VCONN(st.status));
-> +	typec_set_orientation(tps->port, orientation);
-> +	typec_set_data_role(tps->port, TPS_STATUS_TO_TYPEC_DATAROLE(st.status));
-> +	power_supply_changed(tps->psy);
-> +
-> +	/* If the plug is disconnected, we are done */
-> +	if (!new_connected)
-> +		return;
-> +
-> +	/* Set up partner if we were previously disconnected (or changed). */
-> +	if (!tps->partner) {
-> +		struct typec_partner_desc desc;
-> +
-> +		desc.usb_pd = is_pd;
-> +		desc.accessory = TYPEC_ACCESSORY_NONE; /* XXX: handle accessories */
-> +		desc.identity = NULL;
-> +
-> +		if (desc.usb_pd)
-> +			desc.identity = &st.partner_identity;
-> +
-> +		tps->partner = typec_register_partner(tps->port, &desc);
-> +		if (IS_ERR(tps->partner))
-> +			dev_warn(tps->dev, "%s: failed to register partnet\n", __func__);
-> +
-> +		if (desc.identity) {
-> +			typec_partner_set_identity(tps->partner);
-> +			cd321x->cur_partner_identity = st.partner_identity;
-> +		}
-> +	}
-> +
-> +	/* Update the TypeC MUX/PHY state */
-> +	cd321x_typec_update_mode(tps, &st);
-> +
-> +	/* Launch the USB role switch */
-> +	usb_role_switch_set_role(tps->role_sw, new_role);
-> +
-> +	power_supply_changed(tps->psy);
-> +}
-> +
-> +static void cd321x_queue_status(struct tps6598x *tps)
-> +{
-> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
-> +
-> +	cd321x->update_status.status_changed |= cd321x->update_status.status ^ tps->status;
-> +
-> +	cd321x->update_status.status = tps->status;
-> +	cd321x->update_status.pwr_status = tps->pwr_status;
-> +	cd321x->update_status.data_status = tps->data_status;
-> +
-> +	cd321x->update_status.partner_identity = tps->partner_identity;
-> +	cd321x->update_status.dp_sid_status = cd321x->dp_sid_status;
-> +	cd321x->update_status.intel_vid_status = cd321x->intel_vid_status;
-> +	cd321x->update_status.usb4_status = cd321x->usb4_status;
-> +}
-> +
-> +static int cd321x_connect(struct tps6598x *tps, u32 status)
-> +{
-> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
-> +
-> +	tps->status = status;
-> +	cd321x_queue_status(tps);
-> +	schedule_delayed_work(&cd321x->update_work, msecs_to_jiffies(CD321X_DEBOUNCE_DELAY_MS));
-> +
-> +	return 0;
-> +}
-> +
->  static irqreturn_t cd321x_interrupt(int irq, void *data)
->  {
->  	struct tps6598x *tps = data;
-> +	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
->  	u64 event = 0;
->  	u32 status;
->  	int ret;
-> @@ -652,9 +896,15 @@ static irqreturn_t cd321x_interrupt(int irq, void *data)
->  		if (!tps->data->read_data_status(tps))
->  			goto err_unlock;
->  
-> -	/* Handle plug insert or removal */
-> -	if (event & APPLE_CD_REG_INT_PLUG_EVENT)
-> -		tps6598x_handle_plug_event(tps, status);
-> +	tps->status = status;
-> +	cd321x_queue_status(tps);
-> +
-> +	/*
-> +	 * Cancel pending work if not already running.
-> +	 * We will requeue the work after CD321X_DEBOUNCE_DELAY_MS regardless.
-> +	 */
-> +	cancel_delayed_work(&cd321x->update_work);
-
-Should the work be canceled before updating tps->status and calling
-cd321x_queue_status()? If so the status updates and rescheduling the
-work can be handled by calling cd321x_connect().
-
-> +	schedule_delayed_work(&cd321x->update_work, msecs_to_jiffies(CD321X_DEBOUNCE_DELAY_MS));
->  
->  err_unlock:
->  	mutex_unlock(&tps->lock);
-> @@ -1014,6 +1264,13 @@ cd321x_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
->  	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
->  	int ret;
->  
-> +	/*
-> +	 * This is only called from _probe such that update_work can be
-> +	 * initialized and then scheduled for the first time to handle
-> +	 * plugs already connected at boot time.
-> +	 */
-
-this comment seems to be outdated and at the wrong place
-
-> +	INIT_DELAYED_WORK(&cd321x->update_work, cd321x_update_work);
-> +
->  	ret = tps6598x_register_port(tps, fwnode);
->  	if (ret)
->  		return ret;
-> @@ -1022,10 +1279,26 @@ cd321x_register_port(struct tps6598x *tps, struct fwnode_handle *fwnode)
->  	if (ret)
->  		goto err_unregister_port;
->  
-> +	cd321x->mux = fwnode_typec_mux_get(fwnode);
-> +	if (IS_ERR(cd321x->mux)) {
-> +		ret = PTR_ERR(cd321x->mux);
-> +		goto err_unregister_altmodes;
-> +	}
-> +
-> +	cd321x->state.alt = NULL;
-> +	cd321x->state.mode = TYPEC_STATE_SAFE;
-> +	cd321x->state.data = NULL;
->  	typec_set_mode(tps->port, TYPEC_STATE_SAFE);
->  
->  	return 0;
->  
-> +err_unregister_altmodes:
-> +	if (cd321x->port_altmode_dp)
-> +		typec_unregister_altmode(cd321x->port_altmode_dp);
-
-typec_unregister_altmode() is ERR / NULL safe so the if is not needed
-
-> +	if (cd321x->port_altmode_tbt)
-> +		typec_unregister_altmode(cd321x->port_altmode_tbt);
-> +	cd321x->port_altmode_dp = NULL;
-> +	cd321x->port_altmode_tbt = NULL;
->  err_unregister_port:
->  	typec_unregister_port(tps->port);
->  	return ret;
-> @@ -1042,6 +1315,8 @@ cd321x_unregister_port(struct tps6598x *tps)
->  {
->  	struct cd321x *cd321x = container_of(tps, struct cd321x, tps);
->  
-> +	if (cd321x->mux)
-> +		typec_mux_put(cd321x->mux);
-
-typec_mux_put is ERR / NULL safe so the if is not needed
-for consistency with port_altmode_* the dangling pointer should be
-cleared to NULL
-
-Janne
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU2F0LCBTZXAgNiwgMjAyNSBhdCA1OjQz4oCvUE0gU3ZlbiBQZXRlciA8c3ZlbkBrZXJuZWwu
+b3JnPiB3cm90ZToKPgo+IEhpLAo+Cj4gV2l0aCB0aGUgZHdjMyBnbHVlIGFwcHJvYWNoIHRoaXMg
+aXMgc3RhcnRpbmcgdG8gbG9vayByZWFzb25hYmxlIHRvIG1lLgo+Cj4gVGhlcmUncyBzdGlsbCBv
+bmUgaXNzdWUgKFN1cGVyU3BlZWQgZGV2aWNlcyBoYXZlIGEgNSBzZWNvbmQgZGVsYXkgYmVmb3Jl
+Cj4gdGhleSBjb21lIHVwOyBUaGlzIGhhcyBiZWVuIGtub3duIGZvciBhZ2VzIGFuZCB3ZSBoYXZl
+bid0IGJlZW4gYWJsZSB0bwo+IGlkZW50aWZ5IHRoZSByb290IGNhdXNlKSBidXQgb3RoZXJ3aXNl
+IGJvdGggaG9zdCBhbmQgZGV2aWNlIG1vZGUgaGF2ZQo+IGJlZW4gd29ya2luZyBxdWl0ZSB3ZWxs
+IGFjcm9zcyBhIG51bWJlciBvZiBkaWZmZXJlbnQgZGV2aWNlcyAodXNiMyBvbmx5LAo+IHVzYjMr
+ZHAsIGRwLW9ubHksIHVzYjQsIGFuZCB0aGUgZmlyc3QgdHdvIGNvbWJpbmVkIHdpdGggYSBicm9r
+ZW4gYy10by1hCj4gYWRhcHRlciB0aGF0IGNhbiB0cmlnZ2VyIGEgbG90IG9mIHF1aWNrIHBsdWcv
+dW5wbHVnIGV2ZW50cyA7KSkgZm9yIG1lLgo+Cj4gV2l0aCB0aGUgZHdjMyBnbHVlIGRyaXZlciB0
+aGlzIHNlcmllcyBjYW4gbm93IGFsc28gYmUgbWVyZ2VkIGluZGVwZW5kZW50bHkKPiBvbmNlIGl0
+J3MgcmVhZHk6IFBhdGNoZXMgMS00IGNhbiBnbyB0aHJvdWdoIHRoZSBkd2MzIHRyZWUsIDUtMTUg
+dGhyb3VnaAo+IHRpcGQsIDE2LTE4IHNob3VsZCBnbyB0b2dldGhlciB0aHJvdWdoIHRoZSBwaHkg
+dHJlZSwgYW5kIEknbGwgdGFrZSB0aGUKPiBEVFMgY2hhbmdlcyB0aHJvdWdoIG15IHRyZWUuIElm
+IGV2ZXJ5b25lJ3MgaGFwcHkgd2l0aCB0aGUgb3ZlcmFsbAo+IGFwcHJvYWNoIGhlcmUgSSBjYW4g
+YWxzbyBqdXN0IHNlbmQgdGhlc2UgYXMgaW5kaXZpZHVhbCBzZXJpZXMuCj4KPiBBIHRyZWUgZm9y
+IHRlc3RpbmcgaXMgYWdhaW4gYXZhaWxhYmxlIGFzIGFwcGxlLXVzYjMtdjIgYXQgWzVdLgo+Cj4g
+Q2hhbmdlcyBpbiB2MjoKPiAtIExpbmsgdG8gdjE6IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3Iv
+MjAyNTA4MjEtYXRjcGh5LTYtMTctdjEtMC0xNzJiZWRhMTgyYjhAa2VybmVsLm9yZwo+IC0gRml4
+ZWQgZHQtYmluZGluZyB3YXJuaW5ncwo+IC0gRXh0ZW5kZWQgdGhlIGdsdWUgbGF5ZXIgdG8gYWxs
+b3cgY29udHJvbCBvdmVyIG1vZGUgc3dpdGNoaW5nCj4gLSBSZW1vdmVkIHF1aXJrcyBhZGRlZCB0
+byBkd2MzIGFuZCBpbXBsZW1lbnRlZCB0aGVtIGFzIGEgZ2x1ZQo+ICAgZHJpdmVyIGluc3RlYWQg
+YXMgc3VnZ2VzdGVkIGJ5IFRoaW5oCj4gLSBEcm9wcGVkIHNucHMsZHdjMyBmYWxsYmFjayBjb21w
+YXRpYmxlIHNpbmNlIHRoaXMgaXMgbmVpdGhlciBjb21wYXRpYmxlCj4gICB3aXRoIHRoZSBnbHVl
+IGRyaXZlciBhcHByb2FjaCBub3IgaXMgdGhpcyBoYXJkd2FyZSB0cnVseSBjb21wYXRpYmxlCj4g
+ICB3aXRoIHNucHMsZHdjMyB1bmxlc3MgdGhlIGJvb3Rsb2FkZXIgZGlkIGEgbG90IG9mIGhlYXZ5
+LWxpZnRpbmcgYW5kCj4gICBsZWZ0IGV2ZXJ5dGhpbmcgaW4ganVzdCB0aGUgcmlnaHQgc3RhdGUK
+PiAtIERyb3BwZWQgYXRjcGh5IGRwLW9ubHkgY29tcGF0aWJsZSBzaW5jZSB0aGlzIGNhbiBiZSBk
+ZXRlY3RlZCBpbiBvdGhlcgo+ICAgd2F5cyBvciBqdXN0IGJlIGRyaXZlbiBmcm9tIHRoZSBkcCBj
+b250cm9sbGVyIG9uY2Ugd2UgdXBzdHJlYW0gdGhhdAo+IC0gRml4ZWQgZHVwbGljYXRlICNkZWZp
+bmUgaW4gVElQRAo+IC0gVXNlIGlvcmVtYXBfbnAgd2hlbiByZXF1aXJlZCBpbnN0ZWFkIG9mIGp1
+c3Qgc2tpcHBpbmcKPiAgIGR3YzNfcG93ZXJfb2ZmX2FsbF9yb290aHViX3BvcnRzCj4gLSBEcm9w
+cGVkIHRoZSBjaGFuZ2UgdGhhdCBhZGRlZCB0aGUgVVNCIHJvbGUgdG8gdHlwZWNfbXV4X3N0YXRl
+IHNpbmNlCj4gICB0aGUgbmV3IGdsdWUgZHJpdmVyIGFwcHJvYWNoIG5vIGxvbmdlciByZXF1aXJl
+cyB0aGlzLgo+IC0gQ2xlYW5lZCB1cCBzb21lIGxlZnRvdmVyIFRPRE9zIGluIGF0Y3BoeSBhbmQg
+cmFuIGNsYW5nLWZvcm1hdAo+IC0gUmV3b3JrZWQgdHVuYWJsZXMuYyB0byB1c2UgYSB2YXJpYWJs
+ZSBzaXplZCBtZW1iZXIgYW5kIGFsbG9jIHRoZQo+ICAgZW50aXJlIHN0cnVjdCBkaXJlY3RseQo+
+IC0gU2hvcnRlbmVkIGRlYnVnIG1lc3NhZ2VzIGluIGF0Y3BoeQo+IC0gQWRkZWQgRFRTIGNoYW5n
+ZXMgZm9yIHQ4MTEyIGFuZCB0NjAweAo+IC0gQ2FsbCB0eXBlY191bnJlZ2lzdGVyX2FsdG1vZGUg
+dW5jb25kaXRpb25hbGx5IGFzIGl0J3MgTlVMTC1zYWZlCj4gLSBGaXhlZCBhcnJlIC0+IGFyciB0
+eXBvIGluIGNvbW1pdCBtZXNzYWdlCj4gLSBEcm9wIF9fZnVuY19fIGZyb20gY2QzMjF4X2ludGVy
+cnVwdCBkZWJ1ZyBwcmludAo+IC0gUGlja2VkIHVwIEhlaWtraSdzIHItYiB0YWdzCj4KPiBPcmln
+aW5hbCBjb3ZlciBsZXR0ZXI6Cj4KPiBUaGlzIHNlcmllcyBpbmNsdWRlcyBjaGFuZ2VzIHRvIGR3
+YzMsIHRpcGQgYW5kIGEgbmV3IHBoeSBkcml2ZXIgdG8gZW5hYmxlCj4gVVNCMyBvbiB0aGVzZSBt
+YWNoaW5lcy4gVGhlcmUncyBhbHNvIHNvbWUgcHJlcGFyYXRpb25zIHRvIGV2ZW50dWFsbHkgZW5h
+YmxlCj4gRGlzcGxheVBvcnQgQWx0TW9kZSBhbmQgVGh1bmRlcmJvbHQgYnV0IHRob3NlIG5lZWQg
+ZnV0dXJlIHdvcmsuCj4gT3ZlcmFsbCwgdGhpcyBlbnRpcmUgc2V0dXAgaXMgcXVpdGUgYSBtZXNz
+IGFuZCB3ZSd2ZSB0cmllZCB0byBtYWtlIGl0IHdvcmsKPiBmb3IgcXVpdGUgYSB3aGlsZSBub3cg
+YW5kIGZpbmFsbHkgY2FtZSB1cCB3aXRoIHRoaXMgc29sdXRpb24gaGVyZS4KPgo+IFRoZSBVU0Iz
+IGNvbnRyb2xsZXIgaXMgYSB2ZXJ5IHNwZWNpYWwga2luZCBvZiBicm9rZW46IEl0IG5ldmVyIHNl
+ZXMgYW55IHBvcnQKPiBwbHVnL3VucGx1ZyBldmVudHMgdGhhdCBzaG91bGQgbm9ybWFsbHkgYXJy
+aXZlIGRpcmVjdGx5IGF0IGR3YzMuCj4gQWRkaXRpb25hbGx5LCBpdCBuZWVkcyB0byBnbyB0aHJv
+dWdoIGEgZnVsbCBoYXJkIHJlc2V0IGZvciBldmVyeSBuZXcgY29ubmVjdGlvbgo+IGFuZCBtb3N0
+IG1vZGUgY2hhbmdlLiBEZXRhaWxzIG9uIHdoeSB0aGlzIGlzIHJlcXVpcmVkIGFyZSBpbiB0aGUg
+Y29tbWl0Cj4gZGVzY3JpcHRpb24uCj4KPiBPbiB0b3Agb2YgdGhhdCB3ZSBuZWVkIHRvIGtlZXAg
+dGhlIFR5cGUtQyBQSFkgYnJpbmd1cCBhbmQgZHdjMyBicmluZ3VwIHRpZ2h0bHkKPiBzeW5jaHJv
+bml6ZWQuIElmIHRoZXJlJ3MgYSByYWNlIGJldHdlZW4gdGhlIHR3byBzeXN0ZW1zIGF0IGJlc3Qg
+dGhlIHBvcnQgc3RvcHMKPiB3b3JraW5nIHVudGlsIGEgc3lzdGVtIHJlYm9vdCBhbmQgYXQgd29y
+c3QgdGhlcmUncyBhIHdhdGNoZG9nIHNvbWV3aGVyZSB0aGF0Cj4gZm9yY2VmdWxseSByZXNldHMg
+dGhlIGVudGlyZSBTb0MgYWZ0ZXIgfjUgc2Vjb25kcy4gSSd2ZSBvbmx5IHNlZW4gdGhlIGxhdHRl
+cgo+IHdoZW4gYnJpbmdpbmcgdXAgdGh1bmRlcmJvbHQgc28gZmFyIGJ1dCB3b3VsZG4ndCBiZSBz
+dXJwcmlzZWQgaWYgaXQgaGFwcGVucwo+IHdpdGgganVzdCB1c2IzIGFzIHdlbGwuCj4KPiBUaGUg
+ZW50aXJlIGJyaW5ndXAvYnJpbmd1cCBpcyBvcmNoZXN0cmF0ZWQgYnkgYSBUSVBEIHZhcmlhbnQg
+Y2FsbGVkIENEMzIxeAo+IGZvdW5kIG9uIHRoZXNlIG1hY2hpbmVzLiBVbmxpa2UgdGhlIG9yaWdp
+bmFsIGNoaXBzIHdlIGhvd2V2ZXIgZ2V0IG5vIGNvbnRyb2wKPiBvdmVyIHdoaWNoIG1vZGUgaXMg
+bmVnb3RpYXRlZCBvciBhcmUgZXZlbiBhYmxlIHRvIHNlZSB0aGUgUERPcyBvciBWRE9zLiBXZSBv
+bmx5Cj4gZ2V0IHRvIGtub3cgb25jZSB0aGUgbW9kZSBoYXMgYmVlbiBuZWdvdGlhdGVkIGFuZCBo
+YXZlIHRvIGFjdCBhY2NvcmRpbmdseS4gSQo+IGV2ZW4gd2VudCBhcyBmYXIgYXMgZHVtcGluZyB0
+aGUgZmlybXdhcmUgZnJvbSB0aGUgY2hpcCB0byBjb25maXJtIHRoaXMgWzFdWzJdLgo+Cj4gSGVj
+dG9yIHdyb3RlIGFub3RoZXIgc3VtbWFyeSBvZiB0aGlzIGVhcmx5IGluIEphbnVhcnkgYXMgd2Vs
+bCBbM10gYW5kIHRoaXMKPiBzZXJpZXMgaXMgdGhlIG9ubHkgd2F5IHdlJ3ZlIGJlZW4gYWJsZSB0
+byBicmluZyB0aGVzZSBwb3J0cyB1cCByZWxpYWJseS4KPiBJdCdzIG5vdCBwcmV0dHkgaW4gc29t
+ZSBwbGFjZXMgYnV0IEkgaGF2ZSBubyBvdGhlciBpZGVhIGhvdyB0byBpbXBsZW1lbnQgdGhpcywK
+PiBoZW5jZSB0aGUgUkZDIHRhZy4gSGFwcHkgdG8gZGlzY3VzcyBvdGhlciBhcHByb2FjaGVzIGFz
+IHdlbGwuCj4KPiBCb3RoIHRoZSBQSFkgYW5kIHRoZSBUSVBEIGRyaXZlciBhbHJlYWR5IGluY2x1
+ZGUgY2hhbmdlcyBmb3IgRGlzcGxheVBvcnQKPiBBbHRNb2RlIGFuZCBVU0I0L1RodW5kZXJib2x0
+LiBUaGVzZSBuZWVkIGFkZGl0aW9uYWwgd29yayB0aG91Z2ggYnV0Cj4gc2luY2Ugd2UgY2FuJ3Qg
+Y29udHJvbCB0aGUgbW9kZSBkZXZpY2VzIGVuZCB1cCBpbiB3ZSBjYW4gYWxyZWFkeSBtZXJnZQo+
+IHRoZW0gbm93Lgo+Cj4gSSB1c2VkIHBoeS9xY29tLHNjODI4MHhwLXFtcC11c2I0M2RwLXBoeS55
+YW1sIGFzIGEgdGVtcGxhdGUgZm9yIHRoZSBkdC1iaW5kaW5nCj4gZm9yIGF0Y3BoeSAoZXNwZWNp
+YWxseSB0aGUgcG9ydHMpLiBUaGF0IHdhcyB0aGUgbW9zdCByZWNlbnQgYmluZGluZyBJIGZvdW5k
+IGZvcgo+IGEgUEhZIHdpdGggc2ltaWxhciBmZWF0dXJlcy4KPgo+IEluIG9yZGVyIHRvIHRlc3Qg
+dGhpcyB5b3UgbmVlZCB0byBydW4gdGhlIGxhdGVzdCBtMW4xIG1hc3RlciBbNF0gYmVjYXVzZSB0
+aGUKPiAxLjUuMCByZWxlYXNlIGRvZXMgbm90IGluY2x1ZGUgdGhlIGNvZGUgdGhhdCBsaWZ0cyB0
+aGUgdHVuYWJsZXMgZnJvbSBBcHBsZSdzCj4gZGV2aWNlIHRyZWUuIEEga2VybmVsIHRyZWUgZm9y
+IHRlc3RpbmcgaXMgYWxzbyB0YWdnZWQgYXMgYXBwbGUtdXNiMy12MSBhdCBbNV0uCj4KPiBJZiB0
+aGUgb3ZlcmFsbCBhcHByb2FjaCBoZXJlIGlzIGZpbmUgYW5kIG5vIG9uZSBjYW4gdGhpbmsgb2Yg
+YSBiZXR0ZXIgd2F5IHRvCj4gc3VwcG9ydCB0aGlzIFNvQyBJJ2xsIGRyb3AgdGhlIFJGQyBhbmQg
+aW5jbHVkZSB0aGUgZHRzIGNoYW5nZXMgZm9yIHRoZSBvdGhlcgo+IE0xIGFuZCBNMiBtYWNoaW5l
+cyBhcyB3ZWxsLgo+Cj4gQmVzdCwKPgo+IFN2ZW4KPgo+IFsxXSBodHRwczovL3NvY2lhbC50cmVl
+aG91c2Uuc3lzdGVtcy9Ac3Zlbi8xMTEwOTI1ODczMTU1MzYxNzQKPiBbMl0gaHR0cHM6Ly9zb2Np
+YWwudHJlZWhvdXNlLnN5c3RlbXMvQHN2ZW4vMTExMDk2NTg5ODQ2NDY4ODg4Cj4gWzNdIGh0dHBz
+Oi8vbG9yZS5rZXJuZWwub3JnL2FsbC9mZGE4YjgzMS0xZmZjLTQwODctOGU3Yi1kOTc3NzliM2Vj
+YzVAbWFyY2FuLnN0Lwo+IFs0XSBodHRwczovL2dpdGh1Yi5jb20vQXNhaGlMaW51eC9tMW4xCj4g
+WzVdIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3N2ZW4v
+bGludXguZ2l0Cj4KPiBTaWduZWQtb2ZmLWJ5OiBTdmVuIFBldGVyIDxzdmVuQGtlcm5lbC5vcmc+
+Cj4gLS0tCj4gVG86IFN2ZW4gUGV0ZXIgPHN2ZW5Aa2VybmVsLm9yZz4KPiBUbzogSmFubmUgR3J1
+bmF1IDxqQGphbm5hdS5uZXQ+Cj4gVG86IEFseXNzYSBSb3Nlbnp3ZWlnIDxhbHlzc2FAcm9zZW56
+d2VpZy5pbz4KPiBUbzogTmVhbCBHb21wYSA8bmVhbEBnb21wYS5kZXY+Cj4gVG86IEdyZWcgS3Jv
+YWgtSGFydG1hbiA8Z3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+Cj4gVG86IFJvYiBIZXJyaW5n
+IDxyb2JoQGtlcm5lbC5vcmc+Cj4gVG86IEtyenlzenRvZiBLb3psb3dza2kgPGtyemsrZHRAa2Vy
+bmVsLm9yZz4KPiBUbzogQ29ub3IgRG9vbGV5IDxjb25vcitkdEBrZXJuZWwub3JnPgo+IFRvOiBU
+aGluaCBOZ3V5ZW4gPFRoaW5oLk5ndXllbkBzeW5vcHN5cy5jb20+Cj4gVG86IEZyYW5rIExpIDxG
+cmFuay5MaUBueHAuY29tPgo+IFRvOiBSYW4gV2FuZyA8cmFuLndhbmdfMUBueHAuY29tPgo+IFRv
+OiBQZXRlciBDaGVuIDxwZXRlci5jaGVuQG54cC5jb20+Cj4gVG86IFBoaWxpcHAgWmFiZWwgPHAu
+emFiZWxAcGVuZ3V0cm9uaXguZGU+Cj4gVG86IEhlaWtraSBLcm9nZXJ1cyA8aGVpa2tpLmtyb2dl
+cnVzQGxpbnV4LmludGVsLmNvbT4KPiBUbzogVmlub2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4K
+PiBUbzogS2lzaG9uIFZpamF5IEFicmFoYW0gSSA8a2lzaG9uQGtlcm5lbC5vcmc+Cj4gQ2M6IGFz
+YWhpQGxpc3RzLmxpbnV4LmRldgo+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKPiBDYzogbGludXgtdXNiQHZnZXIua2VybmVsLm9yZwo+IENjOiBkZXZpY2V0cmVlQHZn
+ZXIua2VybmVsLm9yZwo+IENjOiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnCj4gQ2M6IGxp
+bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCj4KPiAtLS0KPiBIZWN0b3IgTWFydGluICg1KToK
+PiAgICAgICB1c2I6IHR5cGVjOiB0aXBkOiBVcGRhdGUgcGFydG5lciBpZGVudGl0eSB3aGVuIHBv
+d2VyIHN0YXR1cyB3YXMgdXBkYXRlZAo+ICAgICAgIHVzYjogdHlwZWM6IHRpcGQ6IFVzZSByZWFk
+X3Bvd2VyX3N0YXR1cyBmdW5jdGlvbiBpbiBwcm9iZQo+ICAgICAgIHVzYjogdHlwZWM6IHRpcGQ6
+IFJlYWQgZGF0YSBzdGF0dXMgaW4gcHJvYmUgYW5kIGNhY2hlIGl0cyB2YWx1ZQo+ICAgICAgIHVz
+YjogdHlwZWM6IHRpcGQ6IEhhbmRsZSBtb2RlIHRyYW5zaXRpb25zIGZvciBDRDMyMXgKPiAgICAg
+ICBhcm02NDogZHRzOiBhcHBsZTogdDgxMDM6IE1hcmsgQVRDIFVTQiBBT04gZG9tYWlucyBhcyBh
+bHdheXMtb24KPgo+IEphbm5lIEdydW5hdSAoMik6Cj4gICAgICAgYXJtNjQ6IGR0czogYXBwbGU6
+IHQ4MTEyOiBBZGQgQXBwbGUgVHlwZS1DIFBIWSBhbmQgZHdjMyBub2Rlcwo+ICAgICAgIGFybTY0
+OiBkdHM6IGFwcGxlOiB0NjAweDogQWRkIEFwcGxlIFR5cGUtQyBQSFkgYW5kIGR3YzMgbm9kZXMK
+Pgo+IFN2ZW4gUGV0ZXIgKDE1KToKPiAgICAgICBkdC1iaW5kaW5nczogdXNiOiBBZGQgQXBwbGUg
+ZHdjMwo+ICAgICAgIHVzYjogZHdjMzogZHdjM19wb3dlcl9vZmZfYWxsX3Jvb3RodWJfcG9ydHM6
+IFVzZSBpb3JlbWFwX25wIHdoZW4gcmVxdWlyZWQKPiAgICAgICB1c2I6IGR3YzM6IGdsdWU6IEFs
+bG93IG1vcmUgZmluZSBncmFpbmVkIGNvbnRyb2wgb3ZlciBtb2RlIHN3aXRjaGVzCj4gICAgICAg
+dXNiOiBkd2MzOiBBZGQgQXBwbGUgU2lsaWNvbiBEV0MzIGdsdWUgbGF5ZXIgZHJpdmVyCj4gICAg
+ICAgdXNiOiB0eXBlYzogdGlwZDogQ2xlYXIgaW50ZXJydXB0cyBmaXJzdAo+ICAgICAgIHVzYjog
+dHlwZWM6IHRpcGQ6IE1vdmUgaW5pdGlhbCBpcnEgbWFzayB0byB0aXBkX2RhdGEKPiAgICAgICB1
+c2I6IHR5cGVjOiB0aXBkOiBNb3ZlIHN3aXRjaF9wb3dlcl9zdGF0ZSB0byB0aXBkX2RhdGEKPiAg
+ICAgICB1c2I6IHR5cGVjOiB0aXBkOiBUcmFjZSBkYXRhIHN0YXR1cyBmb3IgQ0QzMjF4IGNvcnJl
+Y3RseQo+ICAgICAgIHVzYjogdHlwZWM6IHRpcGQ6IEFkZCBjZDMyMXggc3RydWN0IHdpdGggc2Vw
+YXJhdGUgc2l6ZQo+ICAgICAgIHVzYjogdHlwZWM6IHRpcGQ6IFJlYWQgVVNCNCwgVGh1bmRlcmJv
+bHQgYW5kIERpc3BsYXlQb3J0IHN0YXR1cyBmb3IgY2QzMjF4Cj4gICAgICAgdXNiOiB0eXBlYzog
+dGlwZDogUmVnaXN0ZXIgRGlzcGxheVBvcnQgYW5kIFRodW5kZXJib2x0IGFsdG1vZGVzIGZvciBj
+ZDMyMXgKPiAgICAgICBkdC1iaW5kaW5nczogcGh5OiBBZGQgQXBwbGUgVHlwZS1DIFBIWQo+ICAg
+ICAgIHNvYzogYXBwbGU6IEFkZCBoYXJkd2FyZSB0dW5hYmxlIHN1cHBvcnQKPiAgICAgICBwaHk6
+IGFwcGxlOiBBZGQgQXBwbGUgVHlwZS1DIFBIWQo+ICAgICAgIGFybTY0OiBkdHM6IGFwcGxlOiB0
+ODEwMzogQWRkIEFwcGxlIFR5cGUtQyBQSFkgYW5kIGR3YzMgbm9kZXMKPgo+ICAuLi4vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9waHkvYXBwbGUsYXRjcGh5LnlhbWwgICAgICB8ICAyMTMgKysKPiAgLi4u
+L2RldmljZXRyZWUvYmluZGluZ3MvdXNiL2FwcGxlLGR3YzMueWFtbCAgICAgICAgfCAgIDgwICsK
+PiAgTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAg
+ICA0ICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90NjAwMS5kdHNpICAgICAgICAgICAg
+ICAgfCAgICAxICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90NjAwMi1qMzc1ZC5kdHMg
+ICAgICAgICAgfCAgMTk3ICstCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYXBwbGUvdDYwMDIuZHRz
+aSAgICAgICAgICAgICAgIHwgICAgMSArCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYXBwbGUvdDYw
+MHgtZGllWC5kdHNpICAgICAgICAgIHwgIDIxMiArKwo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL2Fw
+cGxlL3Q2MDB4LWozMTQtajMxNi5kdHNpICAgICB8ICAyMzYgKysrCj4gIGFyY2gvYXJtNjQvYm9v
+dC9kdHMvYXBwbGUvdDYwMHgtajM3NS5kdHNpICAgICAgICAgIHwgIDI3NSArKysKPiAgYXJjaC9h
+cm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1qMjc0LmR0cyAgICAgICAgICAgfCAgIDEyICsKPiAg
+YXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1qMjkzLmR0cyAgICAgICAgICAgfCAgIDEy
+ICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1qMzEzLmR0cyAgICAgICAgICAg
+fCAgIDEyICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1qNDU2LmR0cyAgICAg
+ICAgICAgfCAgIDEyICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1qNDU3LmR0
+cyAgICAgICAgICAgfCAgIDEyICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hcHBsZS90ODEwMy1q
+eHh4LmR0c2kgICAgICAgICAgfCAgMTM3ICsrCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYXBwbGUv
+dDgxMDMtcG1nci5kdHNpICAgICAgICAgIHwgICAgMiArCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMv
+YXBwbGUvdDgxMDMuZHRzaSAgICAgICAgICAgICAgIHwgIDEwNSArCj4gIGFyY2gvYXJtNjQvYm9v
+dC9kdHMvYXBwbGUvdDgxMTItajQxMy5kdHMgICAgICAgICAgIHwgICAxMiArCj4gIGFyY2gvYXJt
+NjQvYm9vdC9kdHMvYXBwbGUvdDgxMTItajQ3My5kdHMgICAgICAgICAgIHwgICAxMSArCj4gIGFy
+Y2gvYXJtNjQvYm9vdC9kdHMvYXBwbGUvdDgxMTItajQ5My5kdHMgICAgICAgICAgIHwgICAxMiAr
+Cj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYXBwbGUvdDgxMTItanh4eC5kdHNpICAgICAgICAgIHwg
+IDEzNyArKwo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FwcGxlL3Q4MTEyLmR0c2kgICAgICAgICAg
+ICAgICB8ICAxMDUgKwo+ICBkcml2ZXJzL3BoeS9LY29uZmlnICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICB8ICAgIDEgKwo+ICBkcml2ZXJzL3BoeS9NYWtlZmlsZSAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICB8ICAgIDEgKwo+ICBkcml2ZXJzL3BoeS9hcHBsZS9LY29uZmlnICAg
+ICAgICAgICAgICAgICAgICAgICAgICB8ICAgMTQgKwo+ICBkcml2ZXJzL3BoeS9hcHBsZS9NYWtl
+ZmlsZSAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDQgKwo+ICBkcml2ZXJzL3BoeS9hcHBs
+ZS9hdGMuYyAgICAgICAgICAgICAgICAgICAgICAgICAgICB8IDIyMTQgKysrKysrKysrKysrKysr
+KysrKysKPiAgZHJpdmVycy9zb2MvYXBwbGUvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAg
+ICAgfCAgICA0ICsKPiAgZHJpdmVycy9zb2MvYXBwbGUvTWFrZWZpbGUgICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAgICAzICsKPiAgZHJpdmVycy9zb2MvYXBwbGUvdHVuYWJsZS5jICAgICAgICAg
+ICAgICAgICAgICAgICAgfCAgIDcxICsKPiAgZHJpdmVycy91c2IvZHdjMy9LY29uZmlnICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgfCAgIDExICsKPiAgZHJpdmVycy91c2IvZHdjMy9NYWtlZmls
+ZSAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgICAxICsKPiAgZHJpdmVycy91c2IvZHdjMy9j
+b3JlLmMgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDE2ICstCj4gIGRyaXZlcnMvdXNi
+L2R3YzMvZHdjMy1hcHBsZS5jICAgICAgICAgICAgICAgICAgICAgIHwgIDQyNSArKysrCj4gIGRy
+aXZlcnMvdXNiL2R3YzMvZ2FkZ2V0LmMgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAgMiAr
+Cj4gIGRyaXZlcnMvdXNiL2R3YzMvZ2x1ZS5oICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwg
+ICAxNCArCj4gIGRyaXZlcnMvdXNiL2R3YzMvaG9zdC5jICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgIHwgICAgNyArLQo+ICBkcml2ZXJzL3VzYi90eXBlYy90aXBkL2NvcmUuYyAgICAgICAgICAg
+ICAgICAgICAgICB8ICA1NjQgKysrKy0KPiAgZHJpdmVycy91c2IvdHlwZWMvdGlwZC90cHM2NTk4
+eC5oICAgICAgICAgICAgICAgICAgfCAgICA1ICsKPiAgZHJpdmVycy91c2IvdHlwZWMvdGlwZC90
+cmFjZS5oICAgICAgICAgICAgICAgICAgICAgfCAgIDM5ICsKPiAgaW5jbHVkZS9saW51eC9zb2Mv
+YXBwbGUvdHVuYWJsZS5oICAgICAgICAgICAgICAgICAgfCAgIDYwICsKPiAgNDEgZmlsZXMgY2hh
+bmdlZCwgNTE5MiBpbnNlcnRpb25zKCspLCA2NCBkZWxldGlvbnMoLSkKPiAtLS0KPiBiYXNlLWNv
+bW1pdDogOGY1YWUzMGQ2OWQ3NTQzZWVlMGQ3MDA4M2RhZjRkZThmZTE1ZDU4NQo+IGNoYW5nZS1p
+ZDogMjAyNTA4MjAtYXRjcGh5LTYtMTctYjdlYWYyM2JlMTdjCgpTZXJpZXMgTEdUTS4KClJldmll
+d2VkLWJ5OiBOZWFsIEdvbXBhIDxuZWFsQGdvbXBhLmRldj4KCgotLSAK55yf5a6f44Gv44GE44Gk
+44KC5LiA44Gk77yBLyBBbHdheXMsIHRoZXJlJ3Mgb25seSBvbmUgdHJ1dGghCgotLSAKbGludXgt
+cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
