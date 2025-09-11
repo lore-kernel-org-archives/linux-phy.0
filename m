@@ -4,104 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7911ECA101F
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Sep 2025 01:38:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22DB3CAC58E
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Sep 2025 01:47:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a1IHVw+F1DiyPwmzeApSQuWZzcPMi8zMdMI1v+tmFMk=; b=ZdFMqJys/P37/v
-	lCgyRAEA/AEwN3qa56TGcy20sGUj86/WuV30G1Ll0CHqkJ7Qir+0UKWK7/lyvDka52oqKmj2dopTI
-	Rxqzhr+Q32sECuYIp5vIXWFlpHE3927XjUxBkgpeyoUj7K5lEM+XE2vg8dyXsU1Diqsr+s/tRkhH6
-	oN0cfvo85N4F9HfhF2OoGAokxdahpS5aXbbk8nueU2VHZ386/JcYyAT73PxlqoyxG0i09QaF8CqUh
-	sEYE9BWD5anhITAxni2l42jwGMltAvH8GSfuySEWSoOavbKbdtlSIjC3TOWrrnwe7lQSrbdm8oEuO
-	o/ArfG8vnU3vkCVRXRTw==;
+	List-Owner; bh=N+Akyj53nV8FPnSneGd3ZTDuI22rJPNxZ6fvHUr9AuU=; b=fYXugr483U6NPs
+	k2b0Th6779BH3QayU6oNv0oz4TWewZJjlChUTS5kvZAUK7wvLeX+I6qq4Rx75l6o+1ha/nc3QTgd9
+	rs1qMITdmZyGaTQkSZGOn6wKPLJYPjTQpMSj3j8VZlLqYjn4wyOBstjSjziPqDiNOAlbJNinGmwXF
+	Q0t6UsNZvQItZ1H+CGbIusm05WMvP7d+9gd+R5Ju3v1TIx9tH+H3Ar2vqdfII3s9x1Rj1obXkel7D
+	6aeJjhe78OE+m40A3zT1jRvkSLcp8Vd9VsIpMZ8GnF7FhwO6bbxzB3dfFVds0jQFAb5YOzioZh1cz
+	AFVsvIRXIeteWRBwHbfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwWGn-00000000Bf3-0ASD;
-	Thu, 11 Sep 2025 01:38:41 +0000
+	id 1uwWP8-00000000DkY-3XZT;
+	Thu, 11 Sep 2025 01:47:18 +0000
 Received: from mx0a-00230701.pphosted.com ([148.163.156.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uwWGk-00000000BdD-2iWH;
-	Thu, 11 Sep 2025 01:38:40 +0000
-Received: from pps.filterd (m0297266.ppops.net [127.0.0.1])
-	by mx0a-00230701.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58ALSelw013476;
-	Wed, 10 Sep 2025 18:37:53 -0700
+	id 1uwWP5-00000000DiA-1SFW;
+	Thu, 11 Sep 2025 01:47:17 +0000
+Received: from pps.filterd (m0098571.ppops.net [127.0.0.1])
+	by mx0a-00230701.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58ALSfIE023993;
+	Wed, 10 Sep 2025 18:46:59 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com; h=
 	cc:content-id:content-transfer-encoding:content-type:date:from
 	:in-reply-to:message-id:mime-version:references:subject:to; s=
-	pfptdkimsnps; bh=h9aIoO+RtaPzBp4LW57p+Vz0GloNtUpdjAPyw22Yp58=; b=
-	DsQ/LOaLCc+8fvJ/fGx2WA7hcqCyads9eJgsLLM0nIqDi16Ykblot8dGf9+EJyTS
-	BOdTmDDNvfurMN1dBT9tzZi7zgLi/TLhMbG+Bals5hVJe5LFeyPgacVlPeUfIQt4
-	QKhFsGHIPXcoEU3V5na7j0IfVwga0q1sbtIv9/Ur9/oRyYprDnIawHxes+IXDr6I
-	KoInrrsfJHfXwTGKdq9aCHH7V8cnqB3czqWSbnKm5ZZC/kG6XOkVQW9g3xzMPdYj
-	NVmFnPlfjQkTqMU7796A4LAX87tcLhtHLNyx6Fzf9E8CBH0bJ4Rt+7Oj4/WbQ60U
-	K7R+AllER7qZab3FeoOQUg==
-Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.73.133])
-	by mx0a-00230701.pphosted.com (PPS) with ESMTPS id 4932kaxdkq-1
+	pfptdkimsnps; bh=q+z3IGgIn6VBJlIP0+4Ne8sykSaLTcQ1jPk6GdSgJj4=; b=
+	LqFdw4lhVteZsDCYzimYZuxosJlItNqJEPWN4P8ze1/y4yhU1ks+BTgwe283JHML
+	201SnmC9MgIROj/SbXudKG2r7TzVCCrwuUG8Wyu+3zehCq8/fEpomFeyCat391N5
+	MNefOtRdTt9fqREcqIR/W5Bcw9w4Ff9+qZQrnsJR295dEKu6T2q8lX6vnUIZ03l3
+	x6EtQ2Qed6DGHPFLReR5gmHtthJnTrtcyIFQq6WmTJOnVLRM+AsL469Ep8MUdPeT
+	5jImg479MeHRijFKDNnFsnY0zkvTNTi80E3YOG3ofmTOz0WdsswY/t9dJy/y/L43
+	eNtHgvrbtXCC6h3eR0UN+A==
+Received: from smtprelay-out1.synopsys.com (smtprelay-out1.synopsys.com [149.117.87.133])
+	by mx0a-00230701.pphosted.com (PPS) with ESMTPS id 490kymycms-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Sep 2025 18:37:53 -0700 (PDT)
+	Wed, 10 Sep 2025 18:46:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
-	t=1757554673; bh=h9aIoO+RtaPzBp4LW57p+Vz0GloNtUpdjAPyw22Yp58=;
+	t=1757555218; bh=q+z3IGgIn6VBJlIP0+4Ne8sykSaLTcQ1jPk6GdSgJj4=;
 	h=From:To:CC:Subject:Date:References:In-Reply-To:From;
-	b=EMPjejJBmfMdNe0dBlqG/v8aOdNQpveCV0PV1MMyAHu8H5s5xoS/BNFvlx3hFgVSe
-	 KcwaqHOEzW0EfHCZFaYwciVvLB5IuMbt6dRR+1nFpLXcMaFgvNWKXmpbDFDisyCJhT
-	 X8Hb0GGRV2yE+nqjOuwGaCJPp7eXYh4TVL27cyz+/Vl/ewcoX25uReYyt/RMy0Y/SA
-	 0ZhSDSHjK7TADJM/UHwtj+hwtRt2lg0YbzaVKShQwuM54UK+D12rTQPGzTGFstp1MO
-	 9o4aM6rbLT8MWMRlWK53Ng+KnjL9xULknD/AL/9JJYy7yZSn6YG9OHAf6rdTY0z8LZ
-	 2N2dsSoYWFCRg==
-Received: from mailhost.synopsys.com (sv2-mailhost2.synopsys.com [10.205.2.134])
+	b=I5iElai8ELvpxTXDrAYxp4mjIDYYs0LmYBiNJzkWKRmbNuZuHIf92zJjjovcjlN2Z
+	 cj11qd5wBmtoUMj+eLAddBbxnTXN0AcFXmfxbiRpXiLvPjAMOh4WxhpZTn+9mBzIAg
+	 CZdI3Bjj2lfRxn32I9Urr6S7Y4ZRbpqH0LdTpRFJ19W56R6Y1JdPz93hvY2klpcmdW
+	 9ai5jNQ60LasrSLLab2uwZXVjFN700f2mhRSStjx6eEcpX0NweWty4c6ZYrqWRahBK
+	 TtJSXF5W1XDYrpnfE48hmJcvt9Mh+fPX6l04dEmXXPiGO6KteIIEBc1DD7dFJumanf
+	 ONb51OC+YGSnQ==
+Received: from mailhost.synopsys.com (sv1-mailhost1.synopsys.com [10.205.2.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
 	 client-signature RSA-PSS (2048 bits))
 	(Client CN "mailhost.synopsys.com", Issuer "SNPSica2" (verified OK))
-	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3B000405C6;
-	Thu, 11 Sep 2025 01:37:50 +0000 (UTC)
-Received: from o365relay-in.synopsys.com (us03-o365relay1.synopsys.com [10.4.161.137])
+	by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 709A24035D;
+	Thu, 11 Sep 2025 01:46:56 +0000 (UTC)
+Received: from o365relay-in.synopsys.com (sv2-o365relay3.synopsys.com [10.202.1.139])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
-	 client-signature RSA-PSS (2048 bits) client-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits)
+	 client-signature RSA-PSS (2048 bits))
 	(Client CN "o365relay-in.synopsys.com", Issuer "Entrust Certification Authority - L1K" (not verified))
-	by mailhost.synopsys.com (Postfix) with ESMTPS id 1D916A00E3;
-	Thu, 11 Sep 2025 01:37:49 +0000 (UTC)
+	by mailhost.synopsys.com (Postfix) with ESMTPS id 7CB94A0071;
+	Thu, 11 Sep 2025 01:46:54 +0000 (UTC)
 Authentication-Results: o365relay-in.synopsys.com; dmarc=pass (p=reject dis=none) header.from=synopsys.com
 Authentication-Results: o365relay-in.synopsys.com; spf=pass smtp.mailfrom=synopsys.com
 Authentication-Results: o365relay-in.synopsys.com;
-	dkim=pass (1024-bit key; unprotected) header.d=synopsys.com header.i=@synopsys.com header.a=rsa-sha256 header.s=selector1 header.b=KWq0yvJ2;
+	dkim=pass (1024-bit key; unprotected) header.d=synopsys.com header.i=@synopsys.com header.a=rsa-sha256 header.s=selector1 header.b=bT3Ksc9i;
 	dkim-atps=neutral
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (mail-mw2nam10lp2042.outbound.protection.outlook.com [104.47.55.42])
+Received: from NAM11-CO1-obe.outbound.protection.outlook.com (mail-co1nam11lp2170.outbound.protection.outlook.com [104.47.56.170])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits)
-	 client-signature RSA-PSS (2048 bits))
+	 key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest SHA256
+	 client-signature RSA-PSS (2048 bits) client-digest SHA256)
 	(Client CN "mail.protection.outlook.com", Issuer "DigiCert Cloud Services CA-1" (verified OK))
-	by o365relay-in.synopsys.com (Postfix) with ESMTPS id 1AE2740358;
-	Thu, 11 Sep 2025 01:37:46 +0000 (UTC)
+	by o365relay-in.synopsys.com (Postfix) with ESMTPS id 8C91840526;
+	Thu, 11 Sep 2025 01:46:51 +0000 (UTC)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=IQDxJlYR1D3LHW2Y3eYu4yFpky2jfubaurrKEZNo4RVAPY/FpJtg2x/vQnfu2g6/BEgEVLaSpskWAC/ZI0GIvcsjZYpaxOKL8Y2AGIz6GWDmbs1pZ5exmmJjxBSLN6XdFnM/kGkh5K37/E8dNemQMqvzZp+azDxSZ+JjrGXR0StAvO12Q4UlW9p4d9xK+pE+QRsVXTLFl6Er3UERsvgxpgd66pgD1rcp/VHSL5N96jF6CZ3wYhTJ2mhuB2P4B6CagjUwfuEJof70x0Vgh4N3pSZgl6+2nBvTodOCYx9g7GBgW11KSKmUZKSq6C57NpuN3ZYJwBltfUUc9eM9RkwMLQ==
+ b=aeiE8vtbwjjy+xLnZAuxURTgD7JLwmQzydZHvrI/ZPqB9aOkwbZgxrk/3Z1VsmHCM2gz1Xyva7eOvKOkRlzftBvGEhK2oeN8QdtOlcsydeWwS1Sa9KIw+C1nTb+cvA74dkuXeddQ5Z8/EBs0gNUvNxPlpW+EloucR0zPCk3FcY5CdqTOqScGXzKa7e3a2dHfxQoed7rb22fNjEb3U0us4lIASlnhLkHwFdCpSjrZqHYCjHd8AXN4AR3XY/OlcDgMyFCjcNAjQHE1UNdRgTlC1bLGhcsiJEofMR9KneSPYfpxNb5r6SMs0pH3urEu88zU4IOVdgKVeL0fwBaHtlaiaQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=h9aIoO+RtaPzBp4LW57p+Vz0GloNtUpdjAPyw22Yp58=;
- b=FD7YgWMivaTXIeqF8CMUv/FwFRI6DKXcl6qzSAb20lVMSeteIB0cEcbLI4wf1+WAaM5fdObNccnbvDt988T5zSKeNnvO/B9ANJat2BA42d8ZZHtqife2gShmBVMiDdO49p8Vw/NqyT7HBky5g40jQkmwnTtlVhhFqK9XHJ0J9GkCM0tPF0uCNmyPEiFKuJt3Xx8WQeIlVrAFK6Uc2m7IxVpAQNDaniyy5isPagYX8TDvS1534/14cBHDaNjo9iY24Djhv45JA8XxCN+jWyaA7KnVOE861vdZjEhergxIWNQowL5bOAzhE63vD1Gz5Zmav2va9wu7PhOhburHrBuH7Q==
+ bh=q+z3IGgIn6VBJlIP0+4Ne8sykSaLTcQ1jPk6GdSgJj4=;
+ b=oNiLxhfwXoVtbySTzVSAPYyoY6OjJgwD2Yld5JskQAUtUC1In5FhrWgwF2U9HQcpoWPsMATVRH01u/1X01JCjAzGyPxvL3hbK3A1QYBH3ANf9Aj9JQXXTFfqoSn3oiLjuubBGGCRcNp92JplUGOhDFqrRmKmV4cZ7HrSHisoaqCvkfa04KKjq2kUG9kosdsQMh2auqjeaMoV69/4gCE08I4Ivwl7RbCvm5zLyaoPS8IMGnf1rFuxijNJmq+ZX/ZTbhEc0HqyVvSoast5KdGGNxxgncxSaVTNMmrkX5M8LINpKIcD4bsznJxOqVM5RWtfGSeS3w/PE24PeTyhCEE29A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
  dkim=pass header.d=synopsys.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h9aIoO+RtaPzBp4LW57p+Vz0GloNtUpdjAPyw22Yp58=;
- b=KWq0yvJ2iTwbqU7q0RBemFQUpwKIkfP9AybzPtbTuSGSJ30S6PuCnZitK8KC33huvnVczBbiCQ1BCJNl7Szpf4hkdaXDaZm9hwxfGncKWrFUZ8JYclmjV6oJomhckjYXqpBydFmGP4IOQRy4HfSmQhQGbLXd94BzblgZTp2LI6E=
+ bh=q+z3IGgIn6VBJlIP0+4Ne8sykSaLTcQ1jPk6GdSgJj4=;
+ b=bT3Ksc9iqCWCB+0HLRICkMYmqzSFsLzuCgcMrAds0IiSuawFcp6vUzVCwPQxQPgmyecUWoVxE9nVHTBU4YgDRv98VDrLsrUKS2oZjO3xIJ2P9uGGdUIV0n7rN7BRbw5Ysg6EeVuG4p5Cg29xCQdN7OcGAce0fuuMtNL+W/IDlig=
 Received: from LV2PR12MB5990.namprd12.prod.outlook.com (2603:10b6:408:170::16)
- by CH2PR12MB9543.namprd12.prod.outlook.com (2603:10b6:610:27f::22) with
+ by BL3PR12MB6570.namprd12.prod.outlook.com (2603:10b6:208:38d::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Thu, 11 Sep
- 2025 01:37:43 +0000
+ 2025 01:46:46 +0000
 Received: from LV2PR12MB5990.namprd12.prod.outlook.com
  ([fe80::3d09:f15f:d888:33a8]) by LV2PR12MB5990.namprd12.prod.outlook.com
  ([fe80::3d09:f15f:d888:33a8%3]) with mapi id 15.20.9094.021; Thu, 11 Sep 2025
- 01:37:43 +0000
+ 01:46:46 +0000
 X-SNPS-Relay: synopsys.com
 From: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
 To: Sven Peter <sven@kernel.org>
@@ -121,143 +121,140 @@ CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
         "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
         "asahi@lists.linux.dev" <asahi@lists.linux.dev>,
         "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-        "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-        "stable@kernel.org" <stable@kernel.org>
-Subject: Re: [PATCH v2 02/22] usb: dwc3: dwc3_power_off_all_roothub_ports: Use
- ioremap_np when required
-Thread-Topic: [PATCH v2 02/22] usb: dwc3: dwc3_power_off_all_roothub_ports:
- Use ioremap_np when required
-Thread-Index: AQHcH0UH+sWw2onBu0G14qfW/cCqz7SNOsuA
-Date: Thu, 11 Sep 2025 01:37:43 +0000
-Message-ID: <20250911013743.gs4omfdlg2adzdhs@synopsys.com>
+        "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+Subject: Re: [PATCH v2 04/22] usb: dwc3: Add Apple Silicon DWC3 glue layer
+ driver
+Thread-Topic: [PATCH v2 04/22] usb: dwc3: Add Apple Silicon DWC3 glue layer
+ driver
+Thread-Index: AQHcH0UITP6vLUUNgkWBWYMDFAvIi7SNPVAA
+Date: Thu, 11 Sep 2025 01:46:46 +0000
+Message-ID: <20250911014644.33fjkq26ixykciys@synopsys.com>
 References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
- <20250906-atcphy-6-17-v2-2-52c348623ef6@kernel.org>
-In-Reply-To: <20250906-atcphy-6-17-v2-2-52c348623ef6@kernel.org>
+ <20250906-atcphy-6-17-v2-4-52c348623ef6@kernel.org>
+In-Reply-To: <20250906-atcphy-6-17-v2-4-52c348623ef6@kernel.org>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: LV2PR12MB5990:EE_|CH2PR12MB9543:EE_
-x-ms-office365-filtering-correlation-id: 53725251-f6ae-4481-8db9-08ddf0d3cddd
+x-ms-traffictypediagnostic: LV2PR12MB5990:EE_|BL3PR12MB6570:EE_
+x-ms-office365-filtering-correlation-id: 23d5f48e-fdba-469b-85b2-08ddf0d51125
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|376014|7416014|38070700021;
-x-microsoft-antispam-message-info: =?utf-8?B?MmtxTHZKNXp0NmVSMG1FNTJ1SWsxUzI4Sldoa1lmRmd3WTkxQUx6ZWw1Ymtw?=
- =?utf-8?B?Q0hoSm5PMWNybzhNc0R0c3FtUzhhUEhRUURnK3hJWHZEVldidjhsenhVZERn?=
- =?utf-8?B?S2pLQWhQZS9SU0JyRHdEbnc3ZXRQRzIvK0FJalZVWkNRbU9RUTJVTW4xYUsr?=
- =?utf-8?B?TVFQTUMyNldHZkl6Y1ZscUtWQStta21xL2wza2pySHNCYzRJczZtU1YxRXNV?=
- =?utf-8?B?NWhLb1pDZittNzk4UnpiQzhCejZ0RUVTTUJySHdtdzdhTXJUWmc2RlYvbmJJ?=
- =?utf-8?B?NjJ5QU9DYW5WRWI1ZngzUnNsdU5nN3Bzc2t5THNzUGVPMnBhelRIc2dkTUcz?=
- =?utf-8?B?aVNYNkIyenF6MThwOHAxNk51NU8xWUpEVGxVMU8yQ01GbFVNMWl3dTFIbjRG?=
- =?utf-8?B?MnBDUGpyYzFzcDlkSXJKNzN5dTBGbjFvV3R6eEZPYTNpNlV3NGVGSkQrRzhm?=
- =?utf-8?B?TzZTc1RzbFF4VHAxZGhGQnJ1cUVWZDVlbmlDdXdUQTdiS2wwL0I3WkNHWmxL?=
- =?utf-8?B?WkRZUVVnZHBjVDh1dFdJL3JCZll3ZkttRVdFdkUwcW5TVGNraEY5ckovR01F?=
- =?utf-8?B?OU1ZQTZORUh5eDRRNjdhVnd6bnk3ODV3cytNS1ZFczVrL0w5eDZMV3pEaC9l?=
- =?utf-8?B?K0hwejdFTGhQaDJWRzRpbkQ1dmFWcnRoMGRtdVhsSy8vTFVreFIwaTlQT1hk?=
- =?utf-8?B?Q0dNRXdVZGRLdFJkRmVSNzM3b0ZrVjdZQVZwVEFjUTFRYzNqSVBYaGU1aXhQ?=
- =?utf-8?B?OWlsMUpGU1gwOHF5Q3VKUlA2VUcwb3luTGpkZTJNYkp5eVpFRmp0RWRQekR6?=
- =?utf-8?B?dVdudHV4WXp3NG9kdWdvQkZaRHNvNVlrSnU5SVYrRkI4dXJyUkFVVmdhZXdk?=
- =?utf-8?B?SW5WOG1zSVE3ODlyYkhjZzlITVdrQ2dXRWF1QW83dWhsYW1oMlM3ZzRNczY1?=
- =?utf-8?B?U1RpSThaeWRkQS94QTQ0blQ5Tk0veldTWTQ4a2FJZlA2NzI0ejYzZ2xES2FK?=
- =?utf-8?B?blhKNXBkVWplQ0VEUEFWUGNmOGJZVTVwT2d6YUZFb2dNeDlsWWYzOVVnc1Rj?=
- =?utf-8?B?T24vWVRqK3FwR2tHcTJUSE1ZcjZrdnI4VTlPQkZXUlVNMjM1MGVYdGwrQ1Fo?=
- =?utf-8?B?SWlBaTh4ZUlxRUVwaU81UnZEbkdhRUxGb2NFc0FyNU5nTnpLWE9qN0duUEF3?=
- =?utf-8?B?aXNpeldKdVF6MUpSMVBPZXMyekRGcHZEdWlib0N5UDVaMEszclF1eFAzanlz?=
- =?utf-8?B?VmpqTG5pWCtzVlZtVnJjaWhXQTlJRjJSclZLUmlNTXE5K01aWHNYdTMyMVRm?=
- =?utf-8?B?YkxuQ0FJc1krd2ZzOVdta2hnWkFDbjZqaGEzNUI5NUdic29iMm5Ta1pVWE9X?=
- =?utf-8?B?TyttTStnWkZZY1ZxUEhyVWZ1amJXMEV2N2NpTDhqRkdLc011UTJ2Y1NLMGQ4?=
- =?utf-8?B?QTBNczFldnpBaW5RVzZMQ2NpdDk2OFFqd3hDdnJJdGp6RU5NWmJ0d24xZVFW?=
- =?utf-8?B?WC9USXFCdFl0WXZvcDdkUmsweEpOczNYcytmNVVwV0dhUGVXVDVJZlF4a1pL?=
- =?utf-8?B?UHVOOGFNZzc0WmRJNy9yQVhwcnloTlRTSXVVbTR3Z1VER05HY0tRcU82UWp2?=
- =?utf-8?B?RXZlWGpxaTRTUktxYU1pSXB2aG1hWnBsTDJpN0ZDYi9oQXVKRjhjMnhMcmNw?=
- =?utf-8?B?UW0ySm8vY21CR2JIZEo1MnkrMmVLNUdLZDlBTkRBZVJIbSsvWlA0SU9uVG4v?=
- =?utf-8?B?K2haci8xakNMU0svOFlPZXhIdnd3ekFwU0R3ZVZuU0xtNGhVYTdqMXByMzVI?=
- =?utf-8?B?aU1hSk9VcVFPdUtYS3NUVEdzS2plSW80SGJ6MXliQ0hneVFScXVJMkszTDNK?=
- =?utf-8?B?RnRTR043eGlwYVFzRmJValdYM3g5QkFscjJ3UkV1SkpybUU5eEtRRVNuMHU5?=
- =?utf-8?B?MnN0VEFPd0htczh1TkFWdUhDQUhQY00zYnUyL2o2c2c0WnBzWEVoaVZmam9V?=
- =?utf-8?Q?uKqs6PJkUASYbv2r0scfwOe1Asm6xo=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LV2PR12MB5990.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(7416014)(38070700021);DIR:OUT;SFP:1101;
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|38070700021;
+x-microsoft-antispam-message-info: =?utf-8?B?eFN0anh3bm9Cbzd1bno4ZWVIVnYrUyt4RnVESWVyaEc2RXh0OWpOM0RzUk1h?=
+ =?utf-8?B?WFc5MWdlY2VPWjMxczI5MXdpYTAxZktxdE5zdTBvWVV5M3BmWVZMbkw4Njdt?=
+ =?utf-8?B?U0hudnNadC9tY2Z5TXgxbkVVSk5QQU5SbHJPQW9oZjU2SDVUTWJFSGgrSHl5?=
+ =?utf-8?B?L3FYS3EzU3N1N0lENXhaMnRkSFRmZVQvWjdVaUl1SXM2RWVJcjdpUncrUHIv?=
+ =?utf-8?B?S01sQXNkbUFFRUhjN0xxZXBXbjhYZklmVEpjTG5OeGpCcEFsMTVMNFBydDVi?=
+ =?utf-8?B?eGlJb3NZUGRyZzZMelE2QWlmWTNpa3NOT2RrMVhMQ3MrQ2JDMkxtNWNWd2s4?=
+ =?utf-8?B?a3hQU0t0cTMrMkl5TUVSZlkvQ2w3TzBsekFkSGFVc2NkYjI5aVN4TTJsM3NJ?=
+ =?utf-8?B?V1pRRXQxUlUvQVJuV1VuaG5HU1NPV0ZWSHFKYndSekVMYnpJSmZoUFJBaW9G?=
+ =?utf-8?B?QnFmOVA5TjhGNWxnM0ZBclpMVW5ZWDF1VUwwT2dEZ1JJSUowMnc1R3gzOUFy?=
+ =?utf-8?B?cEE5cTJXdTVoMFJrNTJyUnlVL1ZqR1lqZEpDRWtZVldFdTMzTjVtOCtxeTZ2?=
+ =?utf-8?B?MmlMb2lVdnF2amJxUitXTThwamloQzhidURmWHFTU2Vyb2I5ajlhVC9CWjhi?=
+ =?utf-8?B?MGV3MUlXaDY5Qnl4WU1JWStyL21FNTd2bzFzT21YaTFaeW9xVE1GSUdYRUJ5?=
+ =?utf-8?B?SC9uQ013emlRc3J5aGFOYnBOYjUzc05MUzZtSVladnNUanJYUkFuSmZadERR?=
+ =?utf-8?B?VllsSGpobUhyT1BNOXBHc0ZpUTJlY09HRHU3L3ozWGVsTFp2NFp2VkE0Y01L?=
+ =?utf-8?B?ZEJmcG9naHNheTZTcTJqYU5acXdrSkpSSkFQZ0c0dTB1UjBQMVZ0MFN3SjA0?=
+ =?utf-8?B?Qk5ya2JOMEt4S1NoSXJralE2RC8vYjFMZG5Fem1FVDMxZE0zL0Y3eDk1Tk03?=
+ =?utf-8?B?bUpRV3lpYlRCazExa2NlRUx5QWRONjhianY3WS92VitCRHFPSXZkSFJxa1c0?=
+ =?utf-8?B?Z1I0eW1QYU15Vm5zUEQybmRkTTZ0aFgzaTlLYnNZVXY3eG0xN2VxLzVRSlJu?=
+ =?utf-8?B?WnVXT3VhOWF5WWFuUlJmbFVlYjdOdDVzbU1MRGc5VndSQUtPOUN4R1I3b0o5?=
+ =?utf-8?B?VHdQdzV4cWtLSlBTSnFUbDJsNlJBQkFLaGxpNjJ4cGpVUnZqcEJGYXBZRkdP?=
+ =?utf-8?B?c0hiZ0t3bU1hdDg3ZjhRLzZXTXhhU3piY2ZYR2RKYi9HRkt2dlBjZ0hISWdH?=
+ =?utf-8?B?R1FiZnhKNWF4Nkh5emhVQjBDNFFJZGxMRW9pQWRMNEJCeDJWUXI2eXZOeFYy?=
+ =?utf-8?B?cnBHcVFjaFRXbjBPWEpNbFRFTldRSFZjdzNySmtjVWNKcERZYVJhYmJEMktu?=
+ =?utf-8?B?d2g1VnNCa3MwNXBabERPSWNjVU5nYUZFaWZrd2JsWDZiYUVBUVVhYmhFUWh2?=
+ =?utf-8?B?WXEycUVhT21kTEo2N3BmWUxVWTVZT2VsekEzTDZUVTlYd3RnY05ReFcvaXRj?=
+ =?utf-8?B?dVNVcHlpMTFTNHJObW1Ea0lLSEJSR2FPZU01MXJ0SGRJQ2pPRWdvSWR2WjI3?=
+ =?utf-8?B?a1dNUmFkSWNscVhMemNTdUNHTURZUEZHRnA4TExJMVFGekJIWXIydUpmNW9h?=
+ =?utf-8?B?UUJ1UTNOaDBxeFRlU2VVUXZFa0x4bm1SM1FmUlZMRWdUZGtNK2Z4QXRydUlo?=
+ =?utf-8?B?SWNKeUlkVHI0UzNWdGduMUFsaGxISDQvUk5oQlZzWnBjaWNSVXlFMFdjY0hz?=
+ =?utf-8?B?SWE2Wi9VYmRybm1acHkyZVE4R3dMbHhSR3dHY1NuRlZRK01HY1ArYUJwaVMv?=
+ =?utf-8?B?YmV2UGdzbXI4cmFkdGxNSEUybkQyYVl5QXE4aDZuRmlTY1dZWXQrWDJMRlNy?=
+ =?utf-8?B?My9pMEozMTZ4elp3N1lnOEhKNUsyOTlHL0JOVFhUUmUxRWpWTFphK2xLS3Z6?=
+ =?utf-8?Q?YuAhBBOMGQE=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LV2PR12MB5990.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(38070700021);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?SHpITWdZOXdCU1JWY0piVkJoQWZEeUluM0NSWnN6bUhHWVUvL0RiYUNXVWJ2?=
- =?utf-8?B?VjhJQXdsaHR6WUJ3dFRhd1dEbzFQU3FtME1Gd1A4UDZaUGxCcjBnVWlJdjRR?=
- =?utf-8?B?K3NuN3NFY1YwaUExN2c2M3ZZKy9NUnJNbDh0eVdJcnBKNCtxdGZvVXoycnRM?=
- =?utf-8?B?bVBBbktxdUFDTE5HQ3YwZncxbzJZNnFZem9vVUZoS0FmaXVJd25ZQ3FxLzNR?=
- =?utf-8?B?UTIzUXAxRzd2VkdwL3loVlYzRHdHRTRUazYvSWRscVk5WVA5c2tMRy9BSkdU?=
- =?utf-8?B?Z0VPZmhVeTNFY1ZxTXp3WUtDaWh4TS9neU84OXVnTkNaVzkweHI2cFRMajhq?=
- =?utf-8?B?dDRMVE9TVjJQRDhjL1ZiQTlZcnR6bFY2OHJVZHR5a3FvbU16NUVPTnRYWEVK?=
- =?utf-8?B?elZQUmRxZ1NxTG83ZWhURVFPeW45SEorWWw0a0NFaUgwWSs5VlZjWGd3ejNq?=
- =?utf-8?B?eERnbzRUa2taUkpjTmhPQVg5Z1R6aGwrb3FCbndqV0ZSOGZyaDR3ZFNnNHpm?=
- =?utf-8?B?VG5tdkRodERIQTVjblFWbXRHdDBubmNlK2tUTlIyaVBLZkdzSTFNSHV1SVVn?=
- =?utf-8?B?YTlhUmhMbmNrZGlQd2YwZTNIdmEzT3N3aHozZXI2b0RZbkc5MlRFdkx1dE53?=
- =?utf-8?B?NEVzRjI1TmY4eTFnQ01qcFpYZit6dmVrK3FxUWNaRUszeVpkRGtDM3pjdTNt?=
- =?utf-8?B?cHZYcE03SGdMQXJmOHZBTVhtRmt5TStZcHhKYVVzRFBNUlk4NzBEcEc4ZHVN?=
- =?utf-8?B?OEZSOU5yK3NYTEhmZjNzWmk0RndTWnUySnEzbXo4Y0RzM1RMMHUxTGgyQVJs?=
- =?utf-8?B?VCtCbFBIZE44cHdSUHdBRkxqaWFLRmpnY2REUnU5RXE0Y1ZBdG5BbzBIMVNM?=
- =?utf-8?B?MUE2d3hPZGo3b1lNRVdxZGdqNnRLRWpaZzJxZlgwSFNPUWdxdkQ5MVNES3F1?=
- =?utf-8?B?QTlZRTJjNW1sa2t3WTZSTjNMWEVhRklWWlZwakUwSHZpZjFvVVVxWEdJRXNx?=
- =?utf-8?B?cUU3ZHFtSUtReVpqa0FiREtmZVREN0ZCbkc5ZjNSRVFzUzJ4cjIwY0hMQlA4?=
- =?utf-8?B?RTM1SUxQYWlSb29zWTVsUGhtL1oyYmw5MTJXV1pwalhrc3ZnT3RmRTZpQUNG?=
- =?utf-8?B?VHNyTmpmNHJ3UlRURCsvVVJRWU9EY1FqSWJIdW5QZm95WktyV0RGMlp3dnZU?=
- =?utf-8?B?SFVONS9mZFlqS2NCdzNMYTZhaFRJR3RCdW5ac2ZqRllOTFo2dzlMbmtvZjFT?=
- =?utf-8?B?NFVMYlNaUDQ1N0s0ejJCdE5uK1JpelRrbEdTUmFlbzFPYTZPUjJMZ3V2MVpj?=
- =?utf-8?B?anpJSzNsb1ZBV1d1dC9la2gvN1ZaNXNPZjhBeTEyQmdYT2lVVXMvRUEzeEt1?=
- =?utf-8?B?bHBqMTFTRDRzRjA1TWxlUlZWOFhXc1pILzJZZlhLMlhWTnpSMm4rYzFvcEw5?=
- =?utf-8?B?aVh5TXE0cGdETG9iMzJ2V1RRaGRJNUtRWWhBcjVKNzY2Q0pMdHRqakViN1pM?=
- =?utf-8?B?eXAzbDF5ZjY0OVRPNXpPWHpCQU5GYW9jMm1LU2xTb2h3WU1YK081a3BRVmt1?=
- =?utf-8?B?RExEWC8wTEU1NmVvcHBYQndvRk1FT20vWjZmb1hvcDgzM0RBZVJtMW9rZXE0?=
- =?utf-8?B?RHNIOGZhaWJmNVNlNm50aDVDblJBaGYvNnR2YmRPV2ozemdVVXVuSXE1RHlE?=
- =?utf-8?B?aTRqaEVacldpcGRieW5MbkxUd2puSVYvRytVd0VKVDZySWI1N1hRdlk0OVdO?=
- =?utf-8?B?eGVORDFtKzFIYlNBMWtCcm9PUXhNRnNZTmQvWUVJU3RSellHaUVLb2t0cWNG?=
- =?utf-8?B?cU44L2FmU3dNR2QzYm1yWmJ5U2tsa2NLVGF0ak43SmVxL25jckJTbTdzQVho?=
- =?utf-8?B?a252aGRCajdHenNIUWxDbWVabHVTcHQzdmQrUmVFOUxGaHU0TVFRTTMvdHNQ?=
- =?utf-8?B?elQ2eWZDNDNRbWxjOUhYbkFrQWVpNDAvK0pBYVQxWk9Pbytna3RmK2JEWjY0?=
- =?utf-8?B?TlcxalBFOW43bEl0aVJ2SkNvcTFPdWFmMi81OHd3YmZjMlBlVVRjT1VPaFJG?=
- =?utf-8?B?Tm5LdzRkSW1YWmhjK0tYczVsL2R1VWdMMXF2eUZRT09ROVJ2dTNxRU1PUGVn?=
- =?utf-8?Q?N++rtdLK8lP9K/DVCazXYK/6e?=
-Content-ID: <A2DE330A1DC9414BA327DE04A9106D14@namprd12.prod.outlook.com>
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?N3gxRTczY1BKUHFpZXpZM3NhU2ZpNk9Pazd4SFJkV0NrSGJZTUwyNXRGL0lK?=
+ =?utf-8?B?clhBUDliRmt0VzJERUJsTUNEVmx6YkYyU0pRSjhnTlk3MU9wNTZvaE5sSEZv?=
+ =?utf-8?B?MjJMTXBFWkR3NTBQRlU3Wm1QZ1Z3NVV3ek1NMHFEL3dCVjdUS0ZwZjlUaXpm?=
+ =?utf-8?B?eE9HSnZyaysvTHAyQmp6T1RodTkxRlNHVXRzM2FGY1huR0RQWlJNTFAybktp?=
+ =?utf-8?B?alZPdGY2cXM3VDViUHpXa09ya2I4VStmbzdtNFhEcWlRL3hQcWVTWDZOa3R5?=
+ =?utf-8?B?cjlnTTRaa2dQZGN6ejVNMmdtdkJEcC9lRmZjalNpd0lxcnZrdWY2Znk5VElS?=
+ =?utf-8?B?OXR5NjhEQmNoOWwzcVBzVUQrNzFvSGRsMnZXaUprUkVKVUx2eENkSWIxeFJR?=
+ =?utf-8?B?eG92a09VY3lLaUVGc3Bkb0xTZ0lhMkNDMlN6ZlBiL3pzRFNqUlo4UktJdkl3?=
+ =?utf-8?B?bG0zQ0IrSHJSVHhKTGhxeEpxeHpidklnVFVrdy92VHpMOUlBWGprV0Rsa1ow?=
+ =?utf-8?B?ZlBueWdDOWs0ZjloeDJBc2s3ODVJbmx3Z1lGTnNRMSt5RXczbm5lTkV6d3FR?=
+ =?utf-8?B?Nk9GS054c2J4aTBVZVdlOUVtNkdGMXlNb0ZlbVhuaDFCeXRlM0FMUVRYSUpR?=
+ =?utf-8?B?RlJsK2tDcXZEaG83Y2FOTHZCQWNiU2JhcHpVSVdyczRnbmR6RGRNMjJ5MmdN?=
+ =?utf-8?B?a2VhZkNwRGtadEpIajV0VExnSHd6NHNKUmYxY2x5T0tMcGV0MXA1L2E1eHMz?=
+ =?utf-8?B?QkVwMG5RM2FweEdMNW85ZkFhK1pBK3pac09tQzNWeDZDRk9wSWRMZnNEZ0tZ?=
+ =?utf-8?B?Tkh4cDQxNDBhcXpVcDIyUjA0WWIveVdZL2RWSDhpU1VzUXU4YkRQM0FwWW92?=
+ =?utf-8?B?aldFbHdrYnlpQXFEaWUxdnhRRDdnRUZkR2oveHp1S2RldG9yT0lHaFhyeHls?=
+ =?utf-8?B?ZCs5Sk1xVkd5RkR2OE91SkcvUTlaak4rd2NYc095UjJ6TlphV3kzSGRNU2Nq?=
+ =?utf-8?B?Y2JtcEFyL0VLYWRoQ0FxUzFZa3M3TlpXbVdvb0d3S2M0TE90N09qaFdVVkR4?=
+ =?utf-8?B?bHVTOEZsL2V2TXc2cGsvb1NUR1dyS1gwbUZRWElDN2g0ak9NcXh6Z2k5WU1a?=
+ =?utf-8?B?ZFlQNUp2dTdsdDdjVjcra24xTHcxd2VoV2NyK3FrTndTWENkRWhRbWx5Nlc4?=
+ =?utf-8?B?ZzNTbDkvTmR5NmNYejJkN25xc3dCTHV0eThYWjJVNkFyYjNoWElzRWkrQmt4?=
+ =?utf-8?B?Zndkb3Evdmw0RUlsM252c2ZodEFpaEcxVStkYmlNSXNsRjY0L092WFcwODFN?=
+ =?utf-8?B?eWFBTTZVNy96dmNFQkNUSXNNL1A3WEc4ajA4OGF6YnlEUDBpUVVLc0dHRUFI?=
+ =?utf-8?B?Q1g2S0c0OGNpL21yVFUyYytKYUw0U0FSdXdwQStrYUd5a2ZvQjQ5TW5NL29M?=
+ =?utf-8?B?V3BVUnByU3ZQdnJvanFDRlhTUDBlWWhUWjRIZk42YXdXRTBnRWpSeEppbEpG?=
+ =?utf-8?B?YlJUQWY5aVRDcUVJdWVHK3l3KzBUM3ZNWjc1VmtJZUVBK2Fvc21UNTV4cmdr?=
+ =?utf-8?B?K3hLcXRycVo5ZUFndnhtTnhJRjBtNVVnVHdEb2F6c3hjUVVSN0J0WFFJWW9r?=
+ =?utf-8?B?NXZkNVM4aUFGY3JlK08wMXlwSHVQT2ttQWNaV0YvUEIrejNYa0w1YlplbWww?=
+ =?utf-8?B?RktBZUludzB0NW9xT3VNUzQrb0hqZHJZZEtmNUdpdkFhS2ZtakV3VDJhVnl1?=
+ =?utf-8?B?OUMyWDJpMEphSTc5UEQ2aWFOSjlBVUtGSU05RWFlZXpPMG1nYnZYYW9uRlpR?=
+ =?utf-8?B?UnZaYk0rVFlEbkY4ZS9oUVRWclRCcjc1YTA1R3BEZE9mOTJxQmJDcjhSaXB0?=
+ =?utf-8?B?UkRWdU00Y1I4SkpYSEo5eGhHNUdMa1hwUG5NZ0d3bGUyUVA5QzVzOTU3VDZa?=
+ =?utf-8?B?NkF5KzFlMGFsbG5pZTU3SmRPaG1PbGZkRjBhdWUvaTBINmdHVW8xVUxadE9v?=
+ =?utf-8?B?a3l3TmZCMWxXcEY4dTBKYnlaaXBmTndxUmlDb0JydDI1WExRNXV2UWdiTkQx?=
+ =?utf-8?B?dFA5aFExYUVVNnljSEtGZGNoUWNIRWxKNmhzNmJuVTRmdUtsY3ZaMDcybkc1?=
+ =?utf-8?Q?ylMy6hKXmrkuVQQsEIP23IrkI?=
+Content-ID: <BDD1E75A8E2050408D201A0DC0E606BF@namprd12.prod.outlook.com>
 MIME-Version: 1.0
 X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: j2+584GozGZ3QgtQF3acI4/zgdsMPb0UwvI7z35oGj4kbLNjitYxwB6MC3oEPPP0bWi8TlHPOPs5cn0R2tuBdgN/WTd5C3Hr1dc4cXHgpk+VEOqivAjxI0RyT/jkVhc+QZ5bC7mhUi0Hf4E+oZOiMzIqDF06H0lB18EWClHYWWID+t5J80BylwOlYUkZm2oz29BtmVGTLfg35EGXmYrf6FgmeK31LeWQUq8nquWP9gRqID428BaOXvBdv0rjDBW2Qiqu7TdZ2LuZnRqPWeDQ2zYYC80aQWEFA4OoGeOOt9KgruIGC0cSpanWooBchhJs8Q+KXcNwpx8jvWDQGGWD6en8ehjfrIOp07IZ+/pBG3t8r3z7LbQYYawx9TjbL7I3Gg9vu0yZbcCpts+PfGmYM/dozij34PDdzC26tp4i2gAiJ3MHJHs3GMKfPfDvhirbBxdg7BXn+SiwPUkElYiZEnpRkWF28itHioYz5ljOQ550fdZPJ3qSt7wdYnM7ZfhVwbykyZUHVLTu4XlHId9BkYllFgveJya3PjTa2ZCPGUZSiEZgJY8Mds0YgNSoTzZfvr5bG7J5ON+BDQ2KtUc86NV8Z2RBjJuvLbpmzAQFDpORqekK+G6r2p9al5YHzvOuskrKD4Dy+kUBP9ShAcn0sw==
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: b4Hy4fUE1LXRs8Mev6Wirg7wQ/goOscWk5wEtQX603sVhFeYUg18G8pdEpOKjBGdq25wGRmifjoHN6Cu22pfNiH/NjhKzbJ+5mBtjF8Dla7F0yaPjh5rDCay5aRKyaY2q6dX9q3DAg4c4q8XqXVKU9rYSgchfmDXMlWXhOAnCEvGapercDG7W+euN8D7geyfZD5cZPrMseKZRy/HcuvkZv2yTW7Qw3nlb+OtkEDtwCyDAu9r6TiRDZ2bK5gw3V9nkBja+cvSHWH7BhDmm1kyreGp3rpFkVL3+ACeI7tVzNQ4NN+6yUTvI3/hhYSSA/pPM0SnNK98CRmcgGGijjVXEwwdbaTNWXOUSEHkCLvuWBOW1di74BjHgBATWGwvrBlR+6UzyWy805zI7FXvJi7lZesYUvL3jhC9bexS4iilfxWhYKJf0417xQh1vsnMZHRrj1Hl4pdAt/1OcFpVHBlOKjY/LnGiyEMB8xljk5gwNQgyRNrvE/zdmNm7RzXCawyF/mbbzq3YIJNRhRSi4wIT4QeUC/3ILn6G8hruZ7ghnLIek0RSDh9wrBYZVOeb+4+GY0boFCpIo5ErxAITbMiLGD0f4HkL8DGT9BgZlHsWSPCjdjxB1AMGpOFyk2A+FVU6eThyK21Vp4IWAJJNSsWBkw==
 X-OriginatorOrg: synopsys.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: LV2PR12MB5990.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 53725251-f6ae-4481-8db9-08ddf0d3cddd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2025 01:37:43.8225
+X-MS-Exchange-CrossTenant-Network-Message-Id: 23d5f48e-fdba-469b-85b2-08ddf0d51125
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2025 01:46:46.2327
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: kMvePIdYBN1SvqQTKQGDxZ0WqY9wyCSC75joUCybogIuRTlxK2b4DS6BncGOxVu4SYx01sm7a5zWGAuTzqI/gA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB9543
-X-Proofpoint-GUID: Ug2XKxHsnMSKoz48X1kre9ReqE6h_pZw
-X-Authority-Analysis: v=2.4 cv=Tc+WtQQh c=1 sm=1 tr=0 ts=68c227f1 cx=c_pps
- a=8EbXvwLXkpGsT4ql/pYRAw==:117 a=8EbXvwLXkpGsT4ql/pYRAw==:17
+X-MS-Exchange-CrossTenant-userprincipalname: pg1TbYDyIdOBmmV9DkyaL3mBz5HunQWdSITQJngb0gWq6RHFssqywkVopWgMopIDgtaNJTlMwR2tkMDM8d3rGg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL3PR12MB6570
+X-Proofpoint-GUID: tZdYPknNLB62dIDKVML30QGlXm4__F8x
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDEwOCBTYWx0ZWRfXzBCxjxd91Reg
+ MCGV+NlqEue6fzH0uUYmM/eTIuHHJyhxPSVYOiQ8mV45F1Bt1N56gPvWAUuaplTZt4T7k/IOe8d
+ rDblMfKP0kppltCvalJQ0qGF0aWAlGTdcB71CjCHxBOXx4GXu8TC9pSdwPeThyjaqgA3uFKcFMk
+ szpvO46fxJLFzVao04VVyOcNoWa5Hx1x2S0906ZdZ0G3TPcZ9ImROB21bD09yx/aPhVMtA29tWB
+ +KD9ohKaHnFXof0xtgW5m8I/gFxdKEEsuqHxmKeX59p+u1k0ethzHm1F0wt4lLsheo37DZAzMOR
+ 09b0dXCqhQLE2j/gqwoQTwZmX4reaEz4AeVnDncRcMwjn5M6zhxdcR/aR9pOkhwj63HUeIbQ1gg
+ jLrNMWwX
+X-Authority-Analysis: v=2.4 cv=JvrxrN4C c=1 sm=1 tr=0 ts=68c22a13 cx=c_pps
+ a=t4gDRyhI9k+KZ5gXRQysFQ==:117 a=t4gDRyhI9k+KZ5gXRQysFQ==:17
  a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
  a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
  a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=qPHU084jO2kA:10
- a=VwQbUJbxAAAA:8 a=jIQo8A4GAAAA:8 a=tCHIWAufYMr41Y9WVmAA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-ORIG-GUID: Ug2XKxHsnMSKoz48X1kre9ReqE6h_pZw
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTEwMDAzOSBTYWx0ZWRfX1vVxfuyYh4PM
- zNUJgtTqg2LjKwgO25z0t6q1MClAPlyHluUXOj4SN2s5cuBxn0FO3TZLrcDHhLEvt/Hu5h9v9TE
- jTWFeF2fxQS7SaonF4vMTu+LHwrzNMb8kP0ouzbHr0sUgpY1DwKKCpYw0mhqI+HjuEVt02QPgQG
- mpwPxlMWhCuVjU6Ke1NlcngRDQhE5L75EZof2v7h/nm4maTaVkXVytbSZFKLETtaN4w3UPH3Xof
- fDMoDKOvbxT4nAC5aZ5HM0TUj5RyKeDAQsBWH6BHwrLqAGe4ouPAuyXqgy54vDr4isT3HhGdwaV
- jp9TRUQI2lFYG3Ts3tRkgS776vIB53jSzjxdKcZ1i3ZnnpHxcxrKjZoMsmFPSXJ4BCe3qoIyEMK
- e3o7F0Y/
+ a=sozttTNsAAAA:8 a=VwQbUJbxAAAA:8 a=0wy3wyHj1jR8xozHiOYA:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-ORIG-GUID: tZdYPknNLB62dIDKVML30QGlXm4__F8x
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-10_04,2025-09-10_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_active_cloned_notspam
- policy=outbound_active_cloned score=0 priorityscore=1501 adultscore=0
- malwarescore=0 phishscore=0 suspectscore=0 spamscore=0 impostorscore=0
- bulkscore=0 clxscore=1011 classifier=typeunknown authscore=0 authtc= authcc=
+ policy=outbound_active_cloned score=0 bulkscore=0 phishscore=0 adultscore=0
+ suspectscore=0 priorityscore=1501 malwarescore=0 spamscore=0 clxscore=1015
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2507300000
- definitions=main-2509100039
+ definitions=main-2509060108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250910_183838_696271_EA7CC7D2 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250910_184715_438926_D14E7971 
+X-CRM114-Status: GOOD (  10.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -275,43 +272,536 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Sat, Sep 06, 2025, Sven Peter wrote:
-> On Apple Silicon machines we can't use ioremap() / Device-nGnRE to map most
-> regions but must use ioremap_np() / Device-nGnRnE whenever
-> IORESOURCE_MEM_NONPOSTED is set. Make sure this is also done inside
-> dwc3_power_off_all_roothub_ports to prevent SErrors.
+> As mad as it sounds, the dwc3 controller present on the Apple M1 must be
+> reset and reinitialized whenever a device is unplugged from the root
+> port or when the PHY mode is changed.
 > 
-> Fixes: 2d2a3349521d ("usb: dwc3: Add workaround for host mode VBUS glitch when boot")
-> Cc: stable@kernel.org
+> This is required for at least the following reasons:
+> 
+>   - The USB2 D+/D- lines are connected through a stateful eUSB2 repeater
+>     which in turn is controlled by a variant of the TI TPS6598x USB PD
+>     chip. When the USB PD controller detects a hotplug event it resets
+>     the eUSB2 repeater. Afterwards, no new device is recognized before
+>     the DWC3 core and PHY are reset as well because the eUSB2 repeater
+>     and the PHY/dwc3 block disagree about the current state.
+> 
+>   - It's possible to completely break the dwc3 controller by switching
+>     it to device mode and unplugging the cable at just the wrong time.
+>     If this happens dwc3 behaves as if no device is connected.
+>     CORESOFTRESET will also never clear after it has been set. The only
+>     workaround is to trigger a hard reset of the entire dwc3 core with
+>     its external reset line.
+> 
+>   - Whenever the PHY mode is changed (to e.g. transition to DisplayPort
+>     alternate mode or USB4) dwc3 has to be shutdown and reinitialized.
+>     Otherwise the Type-C port will not be usable until the entire SoC
+>     has been reset.
+> 
+> Additionally, these controllers have a Apple-specific MMIO region after
+> the common dwc3 region where some controls have to be updated. PHY
+> bringup and shutdown also requires SUSPHY to be enabled for the ports
+> to work correctly.
+> 
+> In the future, this driver will also gain support for USB3-via-USB4
+> tunneling which will require additional tweaks.
+> 
+> Add a glue driver that takes of all of these constraints.
+> 
 > Signed-off-by: Sven Peter <sven@kernel.org>
 > ---
->  drivers/usb/dwc3/host.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+>  MAINTAINERS                   |   1 +
+>  drivers/usb/dwc3/Kconfig      |  11 ++
+>  drivers/usb/dwc3/Makefile     |   1 +
+>  drivers/usb/dwc3/dwc3-apple.c | 425 ++++++++++++++++++++++++++++++++++++++++++
+>  4 files changed, 438 insertions(+)
 > 
-> diff --git a/drivers/usb/dwc3/host.c b/drivers/usb/dwc3/host.c
-> index 1c513bf8002ec9ec91b41bfd096cbd0da1dd2d2e..e77fd86d09cf0a36161c20ad3c83f10e67099775 100644
-> --- a/drivers/usb/dwc3/host.c
-> +++ b/drivers/usb/dwc3/host.c
-> @@ -37,7 +37,10 @@ static void dwc3_power_off_all_roothub_ports(struct dwc3 *dwc)
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 0e085cb0762f765958d67be61ae0d3d773503431..e147e1b919d5737a34e684ec587872ce591c641a 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -2424,6 +2424,7 @@ F:	drivers/pwm/pwm-apple.c
+>  F:	drivers/soc/apple/*
+>  F:	drivers/spi/spi-apple.c
+>  F:	drivers/spmi/spmi-apple-controller.c
+> +F:	drivers/usb/dwc3/dwc3-apple.c
+>  F:	drivers/video/backlight/apple_dwi_bl.c
+>  F:	drivers/watchdog/apple_wdt.c
+>  F:	include/dt-bindings/interrupt-controller/apple-aic.h
+> diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
+> index 310d182e10b50b253d7e5a51674806e6ec442a2a..8161cd8f5d0d82826262518a1aefa3096aae83a8 100644
+> --- a/drivers/usb/dwc3/Kconfig
+> +++ b/drivers/usb/dwc3/Kconfig
+> @@ -189,4 +189,15 @@ config USB_DWC3_RTK
+>  	  or dual-role mode.
+>  	  Say 'Y' or 'M' if you have such device.
 >  
->  	/* xhci regs are not mapped yet, do it temporarily here */
->  	if (dwc->xhci_resources[0].start) {
-> -		xhci_regs = ioremap(dwc->xhci_resources[0].start, DWC3_XHCI_REGS_END);
-> +		if (dwc->xhci_resources[0].flags & IORESOURCE_MEM_NONPOSTED)
-> +			xhci_regs = ioremap_np(dwc->xhci_resources[0].start, DWC3_XHCI_REGS_END);
-> +		else
-> +			xhci_regs = ioremap(dwc->xhci_resources[0].start, DWC3_XHCI_REGS_END);
->  		if (!xhci_regs) {
->  			dev_err(dwc->dev, "Failed to ioremap xhci_regs\n");
->  			return;
+> +config USB_DWC3_APPLE
+> +	tristate "Apple Silicon DWC3 Platform Driver"
+> +	depends on OF && ARCH_APPLE
+> +	default USB_DWC3
+> +	select USB_ROLE_SWITCH
+> +	help
+> +	  Support Apple Silicon SoCs with DesignWare Core USB3 IP.
+> +	  The DesignWare Core USB3 IP has to be used in dual-role
+> +	  mode on these machines.
+> +	  Say 'Y' or 'M' if you have such device.
+> +
+>  endif
+> diff --git a/drivers/usb/dwc3/Makefile b/drivers/usb/dwc3/Makefile
+> index 830e6c9e5fe073c1f662ce34b6a4a2da34c407a2..10b5e68cfd68d5ca9aa5a27b04f349f9bf58e65c 100644
+> --- a/drivers/usb/dwc3/Makefile
+> +++ b/drivers/usb/dwc3/Makefile
+> @@ -43,6 +43,7 @@ endif
+>  ##
+>  
+>  obj-$(CONFIG_USB_DWC3_AM62)		+= dwc3-am62.o
+> +obj-$(CONFIG_USB_DWC3_APPLE)		+= dwc3-apple.o
+>  obj-$(CONFIG_USB_DWC3_OMAP)		+= dwc3-omap.o
+>  obj-$(CONFIG_USB_DWC3_EXYNOS)		+= dwc3-exynos.o
+>  obj-$(CONFIG_USB_DWC3_PCI)		+= dwc3-pci.o
+> diff --git a/drivers/usb/dwc3/dwc3-apple.c b/drivers/usb/dwc3/dwc3-apple.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..27674f0c284104cbbe75f51cd55593a964c8c9d6
+> --- /dev/null
+> +++ b/drivers/usb/dwc3/dwc3-apple.c
+> @@ -0,0 +1,425 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Apple Silicon DWC3 Glue driver
+> + * Copyright (C) The Asahi Linux Contributors
+> + *
+> + * Based on:
+> + *  - dwc3-qcom.c Copyright (c) 2018, The Linux Foundation. All rights reserved.
+> + *  - dwc3-of-simple.c Copyright (c) 2015 Texas Instruments Incorporated - https://urldefense.com/v3/__https://www.ti.com__;!!A4F2R9G_pg!Y-C3WLMl9OBFefTLBP84UnZJKzMKYzc7ZrG_bwC4q1q3h0XeGx8NmqFr_-FDYmDtHq802yjIffmSdYRaKA$ 
+> + */
+> +
+> +#include <linux/of.h>
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +
+> +#include "glue.h"
+> +
+> +enum dwc3_apple_mode {
+> +	DWC3_APPLE_OFF,
+> +	DWC3_APPLE_HOST,
+> +	DWC3_APPLE_DEVICE,
+> +};
+> +
+> +/**
+> + * struct dwc3_apple - Apple-specific DWC3 USB controller
+> + * @dwc: Core DWC3 structure
+> + * @dev: Pointer to the device structure
+> + * @mmio_resource: Resource to be passed to dwc3_core_probe
+> + * @apple_regs: Apple-specific DWC3 registers
+> + * @resets: Reset control
+> + * @role_sw: USB role switch
+> + * @lock: Mutex for synchronizing access
+> + * @core_probe_done: True if dwc3_core_probe was already called after the first plug
+> + * @mode: Current mode of the controller (off/host/device)
+> + */
+> +struct dwc3_apple {
+> +	struct dwc3 dwc;
+> +
+> +	struct device *dev;
+> +	struct resource *mmio_resource;
+> +	void __iomem *apple_regs;
+> +
+> +	struct reset_control *resets;
+> +	struct usb_role_switch *role_sw;
+> +
+> +	struct mutex lock;
+> +
+> +	bool core_probe_done;
+> +	enum dwc3_apple_mode mode;
+> +};
+> +
+> +#define to_dwc3_apple(d) container_of((d), struct dwc3_apple, dwc)
+> +
+> +/*
+> + * Apple Silicon dwc3 vendor-specific registers
+> + *
+> + * These registers were identified by tracing XNU's memory access patterns
+> + * and correlating them with debug output over serial to determine their names.
+> + * We don't exactly know what these do but without these USB3 devices sometimes
+> + * don't work.
+> + */
+> +#define APPLE_DWC3_REGS_START 0xcd00
+> +#define APPLE_DWC3_REGS_END 0xcdff
+> +
+> +#define APPLE_DWC3_CIO_LFPS_OFFSET 0xcd38
+> +#define APPLE_DWC3_CIO_LFPS_OFFSET_VALUE 0xf800f80
+> +
+> +#define APPLE_DWC3_CIO_BW_NGT_OFFSET 0xcd3c
+> +#define APPLE_DWC3_CIO_BW_NGT_OFFSET_VALUE 0xfc00fc0
+> +
+> +#define APPLE_DWC3_CIO_LINK_TIMER 0xcd40
+> +#define APPLE_DWC3_CIO_PENDING_HP_TIMER GENMASK(23, 16)
+> +#define APPLE_DWC3_CIO_PENDING_HP_TIMER_VALUE 0x14
+> +#define APPLE_DWC3_CIO_PM_LC_TIMER GENMASK(15, 8)
+> +#define APPLE_DWC3_CIO_PM_LC_TIMER_VALUE 0xa
+> +#define APPLE_DWC3_CIO_PM_ENTRY_TIMER GENMASK(7, 0)
+> +#define APPLE_DWC3_CIO_PM_ENTRY_TIMER_VALUE 0x10
+> +
+> +static inline void dwc3_apple_writel(struct dwc3_apple *appledwc, u32 offset, u32 value)
+> +{
+> +	writel(value, appledwc->apple_regs + offset - APPLE_DWC3_REGS_START);
+> +}
+> +
+> +static inline u32 dwc3_apple_readl(struct dwc3_apple *appledwc, u32 offset)
+> +{
+> +	return readl(appledwc->apple_regs + offset - APPLE_DWC3_REGS_START);
+> +}
+> +
+> +static inline void dwc3_apple_mask(struct dwc3_apple *appledwc, u32 offset, u32 mask, u32 value)
+> +{
+> +	u32 reg;
+> +
+> +	reg = dwc3_apple_readl(appledwc, offset);
+> +	reg &= ~mask;
+> +	reg |= value;
+> +	dwc3_apple_writel(appledwc, offset, reg);
+> +}
+> +
+> +static void dwc3_apple_setup_cio(struct dwc3_apple *appledwc)
+> +{
+> +	dwc3_apple_writel(appledwc, APPLE_DWC3_CIO_LFPS_OFFSET, APPLE_DWC3_CIO_LFPS_OFFSET_VALUE);
+> +	dwc3_apple_writel(appledwc, APPLE_DWC3_CIO_BW_NGT_OFFSET,
+> +			  APPLE_DWC3_CIO_BW_NGT_OFFSET_VALUE);
+> +	dwc3_apple_mask(appledwc, APPLE_DWC3_CIO_LINK_TIMER, APPLE_DWC3_CIO_PENDING_HP_TIMER,
+> +			APPLE_DWC3_CIO_PENDING_HP_TIMER_VALUE);
+> +	dwc3_apple_mask(appledwc, APPLE_DWC3_CIO_LINK_TIMER, APPLE_DWC3_CIO_PM_LC_TIMER,
+> +			APPLE_DWC3_CIO_PM_LC_TIMER_VALUE);
+> +	dwc3_apple_mask(appledwc, APPLE_DWC3_CIO_LINK_TIMER, APPLE_DWC3_CIO_PM_ENTRY_TIMER,
+> +			APPLE_DWC3_CIO_PM_ENTRY_TIMER_VALUE);
+> +}
+> +
+> +static void dwc3_apple_set_ptrcap(struct dwc3_apple *appledwc, u32 mode)
+> +{
+> +	guard(spinlock_irqsave)(&appledwc->dwc.lock);
+> +	dwc3_set_prtcap(&appledwc->dwc, mode, false);
+> +}
+> +
+> +static int dwc3_apple_core_probe(struct dwc3_apple *appledwc)
+> +{
+> +	struct dwc3_probe_data probe_data = {};
+> +	int ret;
+> +
+> +	lockdep_assert_held(&appledwc->lock);
+> +	WARN_ON_ONCE(appledwc->core_probe_done);
+> +
+> +	appledwc->dwc.dev = appledwc->dev;
+> +	probe_data.dwc = &appledwc->dwc;
+> +	probe_data.res = appledwc->mmio_resource;
+> +	probe_data.ignore_clocks_and_resets = true;
+> +	probe_data.skip_core_init_mode = true;
+> +
+> +	ret = dwc3_core_probe(&probe_data);
+> +	if (ret)
+> +		return ret;
+> +
+> +	appledwc->core_probe_done = true;
+> +	return 0;
+> +}
+> +
+> +static int dwc3_apple_core_init(struct dwc3_apple *appledwc)
+> +{
+> +	int ret;
+> +
+> +	lockdep_assert_held(&appledwc->lock);
+> +
+> +	if (appledwc->core_probe_done) {
+> +		ret = dwc3_core_init(&appledwc->dwc);
+> +		if (ret)
+> +			dev_err(appledwc->dev, "Failed to initialize DWC3 Core, err=%d\n", ret);
+> +	} else {
+> +		ret = dwc3_apple_core_probe(appledwc);
+> +		if (ret)
+> +			dev_err(appledwc->dev, "Failed to probe DWC3 Core, err=%d\n", ret);
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +static void dwc3_apple_phy_set_mode(struct dwc3_apple *appledwc, enum phy_mode mode)
+> +{
+> +	lockdep_assert_held(&appledwc->lock);
+> +
+> +	/*
+> +	 * This platform requires SUSPHY to be enabled here already in order to properly
+> +	 * configure the PHY
+> +	 */
+> +	dwc3_enable_susphy(&appledwc->dwc, true);
+> +	phy_set_mode(appledwc->dwc.usb2_generic_phy[0], mode);
+> +	phy_set_mode(appledwc->dwc.usb3_generic_phy[0], mode);
+> +}
+> +
+> +static int dwc3_apple_init(struct dwc3_apple *appledwc, enum dwc3_apple_mode mode)
+> +{
+> +	int ret, ret_reset;
+> +
+> +	lockdep_assert_held(&appledwc->lock);
+> +
+> +	ret = reset_control_deassert(appledwc->resets);
+> +	if (ret) {
+> +		dev_err(appledwc->dev, "Failed to deassert resets, err=%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = dwc3_apple_core_init(appledwc);
+> +	if (ret)
+> +		goto reset_assert;
+> +
+> +	/*
+> +	 * Now that the core is initialized and already went through dwc3_core_soft_reset we can
+> +	 * configure some unknown Apple-specific settings.
+> +	 */
+> +	dwc3_apple_setup_cio(appledwc);
+> +
+> +	switch (mode) {
+> +	case DWC3_APPLE_HOST:
+> +		appledwc->dwc.dr_mode = USB_DR_MODE_HOST;
+> +		dwc3_apple_set_ptrcap(appledwc, DWC3_GCTL_PRTCAP_HOST);
+> +		dwc3_apple_phy_set_mode(appledwc, PHY_MODE_USB_HOST);
+> +		ret = dwc3_host_init(&appledwc->dwc);
+> +		if (ret) {
+> +			dev_err(appledwc->dev, "Failed to initialize host, ret=%d\n", ret);
+> +			goto core_exit;
+> +		}
+> +
+> +		break;
+> +	case DWC3_APPLE_DEVICE:
+> +		appledwc->dwc.dr_mode = USB_DR_MODE_PERIPHERAL;
+> +		dwc3_apple_set_ptrcap(appledwc, DWC3_GCTL_PRTCAP_DEVICE);
+> +		dwc3_apple_phy_set_mode(appledwc, PHY_MODE_USB_DEVICE);
+> +		ret = dwc3_gadget_init(&appledwc->dwc);
+> +		if (ret) {
+> +			dev_err(appledwc->dev, "Failed to initialize gadget, ret=%d\n", ret);
+> +			goto core_exit;
+> +		}
+> +		break;
+> +	default:
+> +		/* Unreachable unless there's a bug in this driver */
+> +		WARN_ON_ONCE(1);
+> +		ret = -EINVAL;
+> +		goto core_exit;
+> +	}
+> +
+> +	appledwc->mode = mode;
+> +	return 0;
+> +
+> +core_exit:
+> +	dwc3_core_exit(&appledwc->dwc);
+> +reset_assert:
+> +	ret_reset = reset_control_assert(appledwc->resets);
+> +	if (ret_reset)
+> +		dev_warn(appledwc->dev, "Failed to assert resets, err=%d\n", ret_reset);
+> +
+> +	return ret;
+> +}
+> +
+> +static int dwc3_apple_exit(struct dwc3_apple *appledwc)
+> +{
+> +	int ret = 0;
+> +
+> +	lockdep_assert_held(&appledwc->lock);
+> +
+> +	switch (appledwc->mode) {
+> +	case DWC3_APPLE_OFF:
+> +		/* Nothing to do if we're already off */
+> +		return 0;
+> +	case DWC3_APPLE_DEVICE:
+> +		dwc3_gadget_exit(&appledwc->dwc);
+> +		break;
+> +	case DWC3_APPLE_HOST:
+> +		dwc3_host_exit(&appledwc->dwc);
+> +		break;
+> +	}
+> +
+> +	/* This platform requires SUSPHY to be enabled in order to properly power down the PHY */
+> +	dwc3_enable_susphy(&appledwc->dwc, true);
+> +	dwc3_core_exit(&appledwc->dwc);
+> +	appledwc->mode = DWC3_APPLE_OFF;
+> +
+> +	ret = reset_control_assert(appledwc->resets);
+> +	if (ret) {
+> +		dev_err(appledwc->dev, "Failed to assert resets, err=%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int dwc3_usb_role_switch_set(struct usb_role_switch *sw, enum usb_role role)
+> +{
+> +	struct dwc3_apple *appledwc = usb_role_switch_get_drvdata(sw);
+> +	int ret;
+> +
+> +	guard(mutex)(&appledwc->lock);
+> +
+> +	/*
+> +	 * The USB2 D+/D- lines are connected through a stateful eUSB2 repeater which in turn is
+> +	 * controlled by a variant of the TI TPS6598x USB PD chip. When the USB PD controller
+> +	 * detects a hotplug event it resets the eUSB2 repeater. Afterwards, no new device is
+> +	 * recognized before the DWC3 core and PHY are reset as well because the eUSB2 repeater
+> +	 * and the PHY/dwc3 block disagree about the current state.
+> +	 * Additionally, the PHY is also incapable of switching between arbitrary modes when dwc3
+> +	 * is kept online. It's also possible to get dwc3 into a state where no new device is
+> +	 * recognized and even a soft reset is not enough to recover when unplugging a cable at the
+> +	 * wrong time while in gadget mode. Only a hard reset triggered via the external reset line
+> +	 * is able to recover from this state.
+> +	 * We thus tear all of dwc3 down here and re-initialize it every time we get a plug change
+> +	 * (or even mode change) event.
+> +	 */
+> +	ret = dwc3_apple_exit(appledwc);
+> +	if (ret)
+> +		return ret;
+> +
+> +	switch (role) {
+> +	case USB_ROLE_NONE:
+> +		/* Nothing to do if no cable is connected */
+> +		return 0;
+> +	case USB_ROLE_HOST:
+> +		return dwc3_apple_init(appledwc, DWC3_APPLE_HOST);
+> +	case USB_ROLE_DEVICE:
+> +		return dwc3_apple_init(appledwc, DWC3_APPLE_DEVICE);
+> +	default:
+> +		dev_err(appledwc->dev, "Invalid target role: %d\n", role);
+> +		return -EINVAL;
+> +	}
+> +}
+> +
+> +static enum usb_role dwc3_usb_role_switch_get(struct usb_role_switch *sw)
+> +{
+> +	struct dwc3_apple *appledwc = usb_role_switch_get_drvdata(sw);
+> +
+> +	guard(mutex)(&appledwc->lock);
+> +
+> +	switch (appledwc->mode) {
+> +	case DWC3_APPLE_HOST:
+> +		return USB_ROLE_HOST;
+> +	case DWC3_APPLE_DEVICE:
+> +		return USB_ROLE_DEVICE;
+> +	case DWC3_APPLE_OFF:
+> +		return USB_ROLE_NONE;
+> +	default:
+> +		/* Unreachable unless there's a bug in this driver */
+> +		WARN_ON_ONCE(1);
+> +		return USB_ROLE_NONE;
+> +	}
+> +}
+> +
+> +static int dwc3_apple_setup_role_switch(struct dwc3_apple *appledwc)
+> +{
+> +	struct usb_role_switch_desc dwc3_role_switch = { NULL };
+> +
+> +	dwc3_role_switch.fwnode = dev_fwnode(appledwc->dev);
+> +	dwc3_role_switch.set = dwc3_usb_role_switch_set;
+> +	dwc3_role_switch.get = dwc3_usb_role_switch_get;
+> +	dwc3_role_switch.driver_data = appledwc;
+> +	appledwc->role_sw = usb_role_switch_register(appledwc->dev, &dwc3_role_switch);
+> +	if (IS_ERR(appledwc->role_sw))
+> +		return PTR_ERR(appledwc->role_sw);
+> +
+> +	return 0;
+> +}
+> +
+> +static int dwc3_apple_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct dwc3_apple *appledwc;
+> +	int ret;
+> +
+> +	appledwc = devm_kzalloc(&pdev->dev, sizeof(*appledwc), GFP_KERNEL);
+> +	if (!appledwc)
+> +		return -ENOMEM;
+> +
+> +	appledwc->dev = &pdev->dev;
+> +	mutex_init(&appledwc->lock);
+> +
+> +	appledwc->resets = devm_reset_control_array_get_exclusive(dev);
+> +	if (IS_ERR(appledwc->resets))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(appledwc->resets),
+> +				     "Failed to get resets\n");
+> +
+> +	ret = reset_control_assert(appledwc->resets);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Failed to assert resets, err=%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	appledwc->mmio_resource = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dwc3-core");
+> +	if (!appledwc->mmio_resource) {
+> +		dev_err(dev, "Failed to get DWC3 MMIO\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	appledwc->apple_regs = devm_platform_ioremap_resource_byname(pdev, "dwc3-apple");
+> +	if (IS_ERR(appledwc->apple_regs))
+> +		return dev_err_probe(dev, PTR_ERR(appledwc->apple_regs),
+> +				     "Failed to map Apple-specific MMIO\n");
+> +
+> +	/*
+> +	 * Note that we only bring up dwc3 once the first device is attached because we need to know
+> +	 * the role (e.g. host), mode (e.g. USB3) and lane orientation to bring up the PHY which is
+> +	 * tightly coupled to dwc3.
+> +	 */
+> +	appledwc->mode = DWC3_APPLE_OFF;
+> +	appledwc->core_probe_done = false;
+> +	ret = dwc3_apple_setup_role_switch(appledwc);
+> +	if (ret)
+> +		return dev_err_probe(&pdev->dev, ret, "Failed to setup role switch\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static void dwc3_apple_remove(struct platform_device *pdev)
+> +{
+> +	struct dwc3 *dwc = platform_get_drvdata(pdev);
+> +	struct dwc3_apple *appledwc = to_dwc3_apple(dwc);
+> +
+> +	guard(mutex)(&appledwc->lock);
+> +
+> +	usb_role_switch_unregister(appledwc->role_sw);
+> +
+> +	dwc3_apple_exit(appledwc);
+> +	if (appledwc->core_probe_done)
+> +		dwc3_core_remove(&appledwc->dwc);
+> +}
+> +
+> +static const struct of_device_id dwc3_apple_of_match[] = {
+> +	{ .compatible = "apple,t8103-dwc3" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, dwc3_apple_of_match);
+> +
+> +static struct platform_driver dwc3_apple_driver = {
+> +	.probe		= dwc3_apple_probe,
+> +	.remove		= dwc3_apple_remove,
+> +	.driver		= {
+> +		.name	= "dwc3-apple",
+> +		.of_match_table	= dwc3_apple_of_match,
+> +	},
+> +};
+> +
+> +module_platform_driver(dwc3_apple_driver);
+> +
+> +MODULE_LICENSE("GPL");
+> +MODULE_AUTHOR("Sven Peter <sven@kernel.org>");
+> +MODULE_DESCRIPTION("DesignWare DWC3 Apple Silicon Glue Driver");
 > 
 > -- 
 > 2.34.1
 > 
 > 
 
-Acked-by: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
+I like these new changes! From the quick glance, this looks good to me.
 
-Thanks,
+Sorry for the delay, but I need get back to reviewing this in detail
+next week.
+
+BR,
 Thinh
 -- 
 linux-phy mailing list
