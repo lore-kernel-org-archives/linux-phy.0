@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4C3ECA101F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:04:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EA07CAC582
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:20:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7urWaEFhOc30Qm52o2ezXVH/SQy4k7Hn56chkdycKtA=; b=NV2yqx45dEo1y8
-	OcZeKaEKToqq+OQaDdswwUUKe0SK164ynmgIXSzedCGXss9M752sHePN7N4sU8b3kugIFlYqSASTP
-	iyp2wdXQhnYHT7QXax5oQq2l2aFuz9AJ1qB4/BTaZFr6Csp2Ic7Al8ShPLyQbgY3TINQj/byml8I1
-	rqJd46OJWAi/blo7p5cgr3Fp5TG4+ttv6mL6Z67c6KoDngSu8qwBp7Gf44TecCEiQ39aVo9Na9QOV
-	qLehIWbytlbtOSGSqVwBiYlf8+zM7WJi55XNe+s9z0Es8ur95v61HsowEa5bZK9B+zfM2pk6rPQ9Z
-	3ogovKLtI+jCT03hwfQA==;
+	List-Owner; bh=OYH37gn5sxL6oQMshkN+qFT6A9q4fAWcZXjGLU3fnPU=; b=2tHJt/JIWfN4DY
+	NuxievpTX6M2Sm/yrPy3oFAgcW3+NFKJB1q5Sf/f8zLHlUTQWOVJ82P4a64+LAn+9CuFyGPN2afTW
+	wYezXFW1pKV+fOfSxE+zZqE06lw/yhoKd5k9uku6wneTXR+NEd2mbcAqXvmVuTtqVszcGaQJ4fZLj
+	ioLfMGPhobSQoTybbfu3qIMuOxhbClfBbgBR8Oix8wu3KsubEBW/WCw/zKSWjAMQWJSQTKZ/nF8I2
+	SVySFrmGM1Z/wTl3Iw4VojmQV3sxF/ecR5U0N2jUZqgZrMjT9ljCkW+4W5YeCt7JBGhsLmASQqC2I
+	IM7jzsDNZbSIcITPAyrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4Nq-00000009jMU-2sho;
-	Fri, 12 Sep 2025 14:04:14 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1ux4dE-00000009p5T-3pf3;
+	Fri, 12 Sep 2025 14:20:08 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4Nn-00000009jIc-0ekq
+	id 1ux4dC-00000009p3P-49F6
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:04:13 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-45de60d39b7so14476505e9.0
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:04:10 -0700 (PDT)
+	Fri, 12 Sep 2025 14:20:08 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-45dfb6cadf3so17820365e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:20:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757685849; x=1758290649; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757686805; x=1758291605; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=APfeXdHVZlvAUzgVrSDnbec2WkFzD9WkVF8lv6dWx7A=;
-        b=HvNBanm6HrfjcOAift4+x8uRMpLzajeZTsFLKPpll52c2aCil0MJikNJ2CsXxSwmqf
-         xpnkafcVrzmuOGRgsJD9y/SdEEHs4//jRl8CB9vk++gyQbg0MGYBD2ZB08YnkKjfzfAF
-         tiJjiFxLtt4C3HNjk8r2SWtMlLyVO2bjf718bVbgjFYQxoSxTeUXdRl5P+3fAEo7IfPj
-         OOvkhBIDOt90TZZlEo/XTLJUsep6PghgQLAKy/NieWThnoDNIwiyGQW4iJDarTCf66c1
-         s+J0QP6KZEJo+uIRpERqTXSa+VHSP4c2fZANC0cHVaQZxQIr+oyLOCLTlwjBtdc7BH44
-         5hIw==
+        bh=SmChZKjhh7WfaCiO6qYrnubA4AUjkq4py7dLEKKsD0M=;
+        b=GuRk6XZDMncuKUn5Lx14Jrw9rEhk253Y7HpDmVjuee6VwsvtvVgh3tJ/9aPD91Vkz5
+         qYr06DkTVqzgy4maeVjay5e8ZFldNtEFiQINPSCRgp0H1730E7W6DHNbQhRwyeMWVd7y
+         tFcfAdv1BqJBCEVgGEmd4x2b6WCwBH8KFwX+uAHgzLrlnWl+YPN7dC926JyXTLXW7MvC
+         fSi8raCD/bio7DZ9u5dQFwoJEpQf4HbmRRZGVimjtUdsEyQ/4O3T4ZoSOUO8zVCR6X2E
+         t5RkCc5DALB9JAa5greE3oLitiZgtA9u4saGwnOsTVWHAI4jArtFhIuQe5lNVSjOgati
+         QbAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757685849; x=1758290649;
+        d=1e100.net; s=20230601; t=1757686805; x=1758291605;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=APfeXdHVZlvAUzgVrSDnbec2WkFzD9WkVF8lv6dWx7A=;
-        b=e9IbF130I99DRg0IRGmlmDlsHIZT/jE/g9pe+Mj+1y1hx/QYwmT4u/rChawiIw72ad
-         AuUR7p1zPFjEwYG6tj/tORvnzulzBfr+nksCwBPN9oLXdas/E9eIb6uguDGIlsgvS2EW
-         SzQJTOJpFKHzyARRsYJhHxL69Pn4ewj3gwV3PElpXUOAYYpOvCKBlfEnceQcgeITJQM0
-         K7+/+UjdeLWNtBSHoSFpY+wrNjwhyhGwCGwWJ5EFeJgiF9iQZsgVm22jTjTghabtqFtN
-         0IES1Z/FV58qGxIaggRLByLxkOyUVgYpZ8GNFPVxOrW+XfRM8zus2ihuLQWL2mVTkvUf
-         TA+Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXB7ueNTW4Qp7MgvLKT+lOxqIhqivbRpUjVMMUC2GNV6TVof2yrzwAP7g4iFD0FLPWPqCydnSzePNU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy3wFuPQmQMteHbEXdBLpeLJ0YeMFL1MImZTt8mdFsRNfJHflZj
-	J5WSpy3AtazHhHhRMlAUPKmQvD5DtVzAIR7a1MFeoHARNM3wUapHxH2q
-X-Gm-Gg: ASbGncv64G6+czVSeWJQK5GJetiJTR1/xYW8amFD6FdRv0ssr2/DF2yGUiZxETOv8gd
-	sC3egLkdqBfO8UPd2GIcFWkEHw4Ravfz2RGzVPPkU7PUy0rTdbPUO/N0c7KTiCDKm47VxYbIcRb
-	BkSPp94OZ2fviDDQuDXnm2Z0ky4yrZWBO1yPjEqlgZUb+WPSpfCu8A9o0ZhhK6krPfSvO9PYs15
-	aSk0bI+lMnPOa3dM54uo69gn96ykLc8kiOEJR2yQbcxWXbZa1gl29LQjWwwKWg+oS9rnaTZJvS8
-	vPN50ujWAHLKbI3aVhzygu00AwbjGbXq5xAxAD1y+VTxYZhWxAwZ1TEGDpX0F23odT2X/nOtnp0
-	K0tU05Y2QQmvZvAMdc1v9xyY7tmJqWgZ1J77oc7Vl+g==
-X-Google-Smtp-Source: AGHT+IGthAq77EqTSVIscxbyWVF+jFSi3b1ESxcW24z9DM4Tl2GZ2DYvuqU47ZXwpi1f2I9Iy1R0Ew==
-X-Received: by 2002:a05:6000:2012:b0:3e7:441e:c9e1 with SMTP id ffacd0b85a97d-3e765793127mr2867583f8f.18.1757685848735;
-        Fri, 12 Sep 2025 07:04:08 -0700 (PDT)
+        bh=SmChZKjhh7WfaCiO6qYrnubA4AUjkq4py7dLEKKsD0M=;
+        b=K2abpgTNE/V5g1LICtnL0mYJLkYq6KIV+LGcBYat8bqfDcH6+5oJwP0jc90kMWLbN4
+         AKcleQMyG14ag1jtyMMj/OqLFPm6g0KQIEV00LwyyTsORHMYJDkcXfnsPCDpU2w2Cw39
+         PzkEz78ttsrrqvnHsDexr7cXDCwDVwoF3qcDYE6vBrZz6UuhpnDNvna1YLnCO5VXxDfF
+         50IxLDVZKKw4N4kTtHD0zxiC5Q+kTi5dL2YSqr+2Nfz6BCR/3niQ0dWD4hwHl/9dEB8Q
+         tFQZsLSjSD17K1aoaP4kJ5feBM1/U8QlxWNW9b7fRjJjBlx/Dq9SGkYwvoR75p2w+tYg
+         l1GA==
+X-Forwarded-Encrypted: i=1; AJvYcCWosf/c1Ijpseb1hzmqdHdhmB1wzR6BTEtZGCqVXXid+zesoHcl/RWb9GlxQwCtHYAE01f6T8v2KAE=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzl0HAF6LUz0+MMKdwc6d8RtgAC7Gr110Aafpe6AHnbFwCgBcLZ
+	Ai5bmKXuLwDw31eLbRWxl7khpBGHGOc5Ro9WAzJqzUBg7AYgkhndKtFg
+X-Gm-Gg: ASbGncujhoIWfChPi03T7seHuqF5qlsht2foKcwdfTjYR8dWxZhMIr9vG9a1wsZsw16
+	6LXnyVDmccrCTSyRzXaMs0GnAOu/U2Zf+8NWZlQeHCfhenvEjTpjv1N1fd4luG+fwBIeDZYSYzw
+	aLgsXPOroH8W1/E+g/vxTFUyz2ozCJd7P3VyxMAsVA1MzKeDkoUhJreH8X6ohIGBbiKr3zcswU1
+	TbiCVc2kIsmSo+ZjNy7dTPU07MEbbxo1L4UOKIdDV1Lg9kbmboK6YrZXXoTi/e1EpSnhVqzAQp/
+	goNRhsJG6BmA1rQDRUIUJmNEFtV/u37qeQdyjFeqeR3bZYFzWtHGg/yKHi8eFM9D6P3sYqgo0ru
+	iTnv4WZN6/ytG0qCpDHzZV9Z8yUATeEp8UeRB+58S2w==
+X-Google-Smtp-Source: AGHT+IEKyinmwbN3yHvqC2TBvEPXOSoCWcr50U1b0sgHZon43u3EkY1RVzIl5661xTla3PsOT681zA==
+X-Received: by 2002:a05:600c:5254:b0:45d:f55d:3478 with SMTP id 5b1f17b1804b1-45f211e610fmr36884815e9.17.1757686804707;
+        Fri, 12 Sep 2025 07:20:04 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e760777a0bsm6704897f8f.13.2025.09.12.07.04.03
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e0372b983sm63475385e9.9.2025.09.12.07.20.00
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:04:07 -0700 (PDT)
-Message-ID: <03402a44-7025-4e31-9ead-a2ecbf63f325@gmail.com>
-Date: Fri, 12 Sep 2025 16:01:12 +0200
+        Fri, 12 Sep 2025 07:20:03 -0700 (PDT)
+Message-ID: <c3d9cdfb-6cfe-41ea-830b-3ab0f6ebcd5f@gmail.com>
+Date: Fri, 12 Sep 2025 16:08:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 18/38] arm64: dts: mediatek: mt6797: Remove bogus id
- property in i2c nodes
+Subject: Re: [PATCH 20/38] arm64: dts: mediatek: mt6795-xperia-m5: Fix mmc0
+ latch-ck value
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-19-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-21-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-19-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-21-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_070411_241753_01A8FE4B 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20250912_072007_048605_D2671854 
+X-CRM114-Status: GOOD (  13.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,104 +168,34 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
-> All of the I2C nodes in this devicetree has a bogus "id" property,
-> which was probably specifying the I2C bus number.
+> Change the latch-ck value from 0x14 to 4: as only bits [0-3] are
+> actually used, the final value that gets written to the register
+> field for DAT_LATCH_CK_SEL is just 0x4.
 > 
-> This property was never parsed and never used - and besides, it
-> also gives dtbs_check warnings: remove it from all i2c nodes.
+> This also fixes dtbs_check warnings.
 > 
+> Fixes: 5a65dcccf483 ("arm64: dts: mediatek: mt6795-xperia-m5: Add eMMC, MicroSD slot, SDIO")
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   arch/arm64/boot/dts/mediatek/mt6797.dtsi | 10 ----------
->   1 file changed, 10 deletions(-)
+>   arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt6797.dtsi b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
-> index be401617dfd8..f2d93bf6a055 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt6797.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
-> @@ -285,7 +285,6 @@ uart3: serial@11005000 {
->   	i2c0: i2c@11007000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <0>;
->   		reg = <0 0x11007000 0 0x1000>,
->   		      <0 0x11000100 0 0x80>;
->   		interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_LOW>;
-> @@ -301,7 +300,6 @@ i2c0: i2c@11007000 {
->   	i2c1: i2c@11008000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <1>;
->   		reg = <0 0x11008000 0 0x1000>,
->   		      <0 0x11000180 0 0x80>;
->   		interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_LOW>;
-> @@ -317,7 +315,6 @@ i2c1: i2c@11008000 {
->   	i2c8: i2c@11009000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <8>;
->   		reg = <0 0x11009000 0 0x1000>,
->   		      <0 0x11000200 0 0x80>;
->   		interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_LOW>;
-> @@ -334,7 +331,6 @@ i2c8: i2c@11009000 {
->   	i2c9: i2c@1100d000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <9>;
->   		reg = <0 0x1100d000 0 0x1000>,
->   		      <0 0x11000280 0 0x80>;
->   		interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_LOW>;
-> @@ -351,7 +347,6 @@ i2c9: i2c@1100d000 {
->   	i2c6: i2c@1100e000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <6>;
->   		reg = <0 0x1100e000 0 0x1000>,
->   		      <0 0x11000500 0 0x80>;
->   		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_LOW>;
-> @@ -367,7 +362,6 @@ i2c6: i2c@1100e000 {
->   	i2c7: i2c@11010000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <7>;
->   		reg = <0 0x11010000 0 0x1000>,
->   		      <0 0x11000580 0 0x80>;
->   		interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_LOW>;
-> @@ -383,7 +377,6 @@ i2c7: i2c@11010000 {
->   	i2c4: i2c@11011000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <4>;
->   		reg = <0 0x11011000 0 0x1000>,
->   		      <0 0x11000300 0 0x80>;
->   		interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_LOW>;
-> @@ -399,7 +392,6 @@ i2c4: i2c@11011000 {
->   	i2c2: i2c@11013000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <2>;
->   		reg = <0 0x11013000 0 0x1000>,
->   		      <0 0x11000400 0 0x80>;
->   		interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_LOW>;
-> @@ -416,7 +408,6 @@ i2c2: i2c@11013000 {
->   	i2c3: i2c@11014000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <3>;
->   		reg = <0 0x11014000 0 0x1000>,
->   		      <0 0x11000480 0 0x80>;
->   		interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_LOW>;
-> @@ -433,7 +424,6 @@ i2c3: i2c@11014000 {
->   	i2c5: i2c@1101c000 {
->   		compatible = "mediatek,mt6797-i2c",
->   			     "mediatek,mt6577-i2c";
-> -		id = <5>;
->   		reg = <0 0x1101c000 0 0x1000>,
->   		      <0 0x11000380 0 0x80>;
->   		interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_LOW>;
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> index 91de920c2245..03cc48321a3f 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> +++ b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
+> @@ -212,7 +212,7 @@ proximity@48 {
+>   
+>   &mmc0 {
+>   	/* eMMC controller */
+> -	mediatek,latch-ck = <0x14>; /* hs400 */
+> +	mediatek,latch-ck = <4>; /* hs400 */
+>   	mediatek,hs200-cmd-int-delay = <1>;
+>   	mediatek,hs400-cmd-int-delay = <1>;
+>   	mediatek,hs400-ds-dly3 = <0x1a>;
 
 
 -- 
