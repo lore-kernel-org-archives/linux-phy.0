@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27FE0CAC582
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:21:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A37DACA101F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:21:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+UNtcnc5e4Ep6fxJfIUNbDCUMFIR1mpziuHtZbxa7zU=; b=jjEr6Sy9Oq3thZ
-	PTrYt8/8r3vU4bmjcyF6iGJnO31t3Xx5jibGkZ22beFb7yWLsqUCo3+oDn1LZWCuo+dyW8DSGZAOL
-	pSNSKMri7b+qCNLeN5FlDRZzCM8PwuR3CZJdykgrKPHSo7pQC/m4lKKNZv8fhoEpuy0H6nL7sevZR
-	qsP0qBNMGt+s3KQrPAPy/ai9fIKUaYp3rs75Bmj6xn2yMCWSlezWIDB22Yo9RMPcL/UUQm7bcvpA6
-	Rbi7jg9KlF/9j4+71OhtSpm9p+7/5TwzZ3GSMLVjLBWvDrGRAeiKWIOCcVb0Gfl0pAztsYq51Z8//
-	QERNJ8MLO7flKVPGEkCA==;
+	List-Owner; bh=JPtwxOWUcU7fN7Uhpw2T2eQf7A2+F/V5wkLtFIehLJ0=; b=SRJUaUtGJzmxdu
+	/Jr8fFfzmXtZQXU2yMPtd4F9g0ZI2MqBlRcdsyyq8t2npvN5M4Z66HX/AJg5/lxOuvzeynWNf6r3S
+	dOb66TD7KBaPyDpwgES/UCxtwKxpaq79TnzHUgbrE7mB40VrDlEyFMNJ69Yu2YBsYfZ62z7b37keL
+	fuFtHd//hv4r94vHDtpjY98Nvj8ePXF0/1oXlqYlO1CbgW2JoEqk5fJ97tGKCcjlif4vbmrwo8N7H
+	+U2Q3d288z4yGNHmx+rwk+qNrDNY+WxdzCT7qIS9SMoirqfnR+UoYANbC2VzfN1Oi6crKufxDntC/
+	PXtIBKQFOQGPfoLzLZvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4ej-00000009q7k-3oX9;
-	Fri, 12 Sep 2025 14:21:41 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1ux4eu-00000009qGZ-1j31;
+	Fri, 12 Sep 2025 14:21:52 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4eh-00000009q4f-0Li4
+	id 1ux4er-00000009qDs-2CMb
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:21:40 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-45df0cde41bso15174025e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:21:38 -0700 (PDT)
+	Fri, 12 Sep 2025 14:21:50 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3df15fdf0caso1597864f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:21:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757686897; x=1758291697; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757686908; x=1758291708; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=YVQP7t1cLcCA6lBEVBFP9JUfq8lpy4ICoOinMrOslso=;
-        b=li0jOPQPIHQhrS1/hrSLa/Kq8sapuMfm/FFtTq5U183b3nce1Ck1fPJDmZC21v3WQo
-         Q/QGdT/oHsy9qY35BNtwFz6zQNrn46Rn1M06T+CyTQEbVXjirmzLlzZLQfAUGR+ik6KH
-         BsWmfES5aniN9LFpUGEtR0W4PjseTWCf7uDGC2EEvsM6QioUPtwFfyBv76WwbF8hPPDx
-         r91keFOX11dLx7TzgZJ3rb1kvROyQA5/80sD2HF+ewaXEpXJvnWNDNWVwsgHKWSV62O/
-         m1pZdCp+p2POjfbm1Jb82I6nVaSBPmNrNFbo/hDpPU5ifKarLV1lDULJgxDauoNmi2Ys
-         694w==
+        bh=+KppJeNuL2l4XFhCz5C6gp2p8nOC2OrHHCEgzAlkaVM=;
+        b=LVEsKusOGzNN7aziBjgqiURRLDIZOcS0/seFwhwLehNiOteObyegdCeH8B3wqNS5hc
+         0v6b5cSB8hBpC0So7vH5nAUmSZ9brkTZ7NmKHF1ROsOmSOpwJsCowYlrL60SPy5is2jS
+         ErsLmfgj+BIdQvVTddFcBtlejsBQo97GMp8SUe6fC1V/LlreWW3ARUD9aRYKbrAYHK3i
+         um9WjmZAUSWmx3FjRTjX+MMznnoBXhET5qi8xOKyVPaoiglD5MxPODzGOsYfBNfIBzlZ
+         6gthPEIjTvn34W+yXkwl9iCt8PY8N+bPJ+cGxEyhj5E8t+4QWeEBw5wnZuISE43vUJqx
+         I07g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757686897; x=1758291697;
+        d=1e100.net; s=20230601; t=1757686908; x=1758291708;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=YVQP7t1cLcCA6lBEVBFP9JUfq8lpy4ICoOinMrOslso=;
-        b=lgwu5/mY0/pWxGGYE4tIaVPhBWfDzo8PtacOMtGPwhb0KhCivqRcHLTmoUWt90ip4A
-         d0xgZzb4oWNZ1c+VVm7BkLaw+lX2dopNGd6lPhJKwdvTRIp7MRcMWzHr2CXxUWqF3Mji
-         vq8NNFeO2jb37KXJHKGArVhHMO2EB+OUZIH//FiYPxaCFK1JWPu6DuAsDbn2ZiRUIwzj
-         yDHAQFcLcDpGA33GD69AYk6fbr/UlrKB0RewFCwtN7PrQxCBUMfI7OAtd0Qnv4yfRdxA
-         1dYl0qfrdUBdyompXHCiT5POVF5+4mgzRAImLyIEj4HKY+//MRMNwC/sYe8brz1xHweI
-         7T2Q==
-X-Forwarded-Encrypted: i=1; AJvYcCWaA4CNnLF3Jb6eSQSKt14Vdmo1lHMWisPNrjWlL2NMVnDt3MAFLb1MW/CIwH2GnaLLOOPEdUeNITk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxO5bnSPopFAThBkew+SYwB4draYvIVxMomj7OwDSpyo6teTge0
-	NpJ2eRL+PrQyICHHCKJF5+uXqnJUhhllnn96NfsZCgRh7fHakXJGZlIw
-X-Gm-Gg: ASbGncs7yK+9OHdd+lFiQFNnObJcsbMQ3ON4P0wp8aBlQ8TSs/3xwuQtkVSzLX8SWBW
-	5TBfvIoFHARsgR+Vt23f2BncgG8Qc5lqVaMu370DYcwJKglX25c+MbpnYBhvcBL/p4biIzhVYlu
-	mioSOhTIOYTKIQYOC9Ai2t+YkyBTZ8d7AsmRIwgp+rZhTP56+2SrMbXm0Ec+Mw/JmFL7653dYQH
-	2Qi7guPz39XPk5v/0oVb1uxouAllumd1aHlv0HVlBddR/BU/epIaBpsMtNvd8kruMb0tJnDT6fD
-	kxPuPU3jKnjYvA/pCNd6itPx3hPbIvDuLHOMTwVd4HfAdypoyR/rOZpXE3DNUjhBosSs37Kygfa
-	P0yx8KcZx1+27HfD8byqV7bRM3qH3JKiULSuAWOQXow==
-X-Google-Smtp-Source: AGHT+IG+xDsxpXBLWFezvQTqJTVrSqvL47N9F5wGJK2iMq/HB1ui6QHRTpehxtgIBE7xqsz00wIiOg==
-X-Received: by 2002:a05:600c:6b06:b0:43c:ec4c:25b4 with SMTP id 5b1f17b1804b1-45f211d0795mr28862295e9.10.1757686897084;
-        Fri, 12 Sep 2025 07:21:37 -0700 (PDT)
+        bh=+KppJeNuL2l4XFhCz5C6gp2p8nOC2OrHHCEgzAlkaVM=;
+        b=et6dJZhlZcjHmK7TqrlO34BoET2bS5ejyRFyQddOSuDp/NFEGK1dWrRfSc1Fk6vkLv
+         U6Sa/81eOCAM/z/I2Hd0Q+Pl66qfO7Pcl78aQvmhhCjyIRS1ucBpO6bgDwnkmIzcb5aE
+         L+NicFdkDY4B+SpUJ+3fIZ4KlgyJ/TvwOImtlsaZH9J0jneeSTcalariYPMf5NMO1XS/
+         5zaqiZkU5Zt4M2H13RwgRSMFSAQmVzO/+x9dSEjwGry20bf7NJYVfoz10z3LPQoequDL
+         A91lPP6NStkxfJxyrrWNvJkIhbwvfSkI2uL6SKDudzvqzMbqmbsbX8NyUFpJT2tawNha
+         TMxw==
+X-Forwarded-Encrypted: i=1; AJvYcCUuv1+LimhYsRkafAtgIhXuBFOdjESvfF5kiogy0T9zFDBNPncYwKhjVU+2FMy5p9GsZ3rotGqe6Zc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw2HIJjwBhwcrCDdlMQJn392XvN8F/Q1PH+q7ih9J2cCEuZujJO
+	ueBH/IsLzuKfSOnsSLOPpGJLEySJZz+BLIgWvcfMZ8OniNtuWRUSjH8j
+X-Gm-Gg: ASbGncuqAjRoyh+rOHt3tOP8f3SIKliDDIPAOpRMuS4cxuu5wQNHb7XgxEFRjQxTHr6
+	4O7O4sBwZ/6ELfEPlSp1F+xxo34ktsB87Dh/uKzfrhWGn0/JXT67ncQ+UIC9oEW999tYSEdQFSo
+	ndF34pkAVLC4REHAB5C4unkE/E8EPuU7lmRWAnGqmF2aR3kD/wGTY8ubCi5GXcZYqJdoHfLexsn
+	dLWlhJKwElOgUJsNvzSm04GYLtSj0NLALavCbsx0FmzgeldVNkRcb3atSfFEJzJG+tO9CUhmlyt
+	pyQWnUskMJcB6ZZ5Q+ANAQOqx1CcwAZgMwqZ6ns2H44sxL/0tD7Ggx38w0qFybBge4huoGyFHdg
+	N8O1+qsJNllkzWUZsF8SaJFZe5J7dxd2Z7HwogZfdQQ==
+X-Google-Smtp-Source: AGHT+IHK+0hgrlM5khWk8t6nwTLMx7U+gfNVKxXIvA5zlpQsQiXJ7qzJDVelD4juWa0MBJUTJJKGyg==
+X-Received: by 2002:a05:6000:2910:b0:3e5:47a9:1c97 with SMTP id ffacd0b85a97d-3e7659fca68mr3020779f8f.43.1757686907585;
+        Fri, 12 Sep 2025 07:21:47 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e015784c3sm71413955e9.10.2025.09.12.07.21.33
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e7607878c9sm6750010f8f.26.2025.09.12.07.21.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:21:35 -0700 (PDT)
-Message-ID: <fb81c74a-d53d-4917-9516-9854e825913a@gmail.com>
-Date: Fri, 12 Sep 2025 16:19:06 +0200
+        Fri, 12 Sep 2025 07:21:46 -0700 (PDT)
+Message-ID: <8550b468-dca5-47f3-a608-a9b4b134131c@gmail.com>
+Date: Fri, 12 Sep 2025 16:19:19 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 32/38] arm64: dts: mediatek: mt8183: Migrate to display
- controller OF graph
+Subject: Re: [PATCH 33/38] arm64: dts: mediatek: mt8183-kukui: Move DSI panel
+ node to machine dtsis
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-33-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-34-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-33-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-34-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_072139_207059_6E768DA7 
-X-CRM114-Status: GOOD (  17.13  )
+X-CRM114-CacheID: sfid-20250912_072149_621171_FE0062A3 
+X-CRM114-Status: GOOD (  16.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,382 +168,194 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:39, AngeloGioacchino Del Regno wrote:
-> The display related IPs in MT8183 are flexible and support being
-> interconnected with different instances of DDP IPs forming a full
-> Display Data Path that ends with an actual display output, which
-> is board specific.
+> Not all of the kukui machines have got a real DSI panel, infact,
+> some of those have got a DSI to eDP bridge instead: this means
+> that the address and size cells are necessary in the first case
+> but unnecessary in the latter.
 > 
-> Add a common graph in the main mt8183.dtsi devicetree, which is
-> shared between all of the currently supported boards, and do it
-> such that only a very minimal amount of changes are needed to
-> each board - the only required change was done in mt8183-pumpkin,
-> using a phandle to assign the display to DPI0.
-> 
-> All boards featuring any display functionality will extend this
-> common graph to hook the display controller of the SoC to their
-> specific output port(s).
+> Instead of adding a bunch of /delete-node/ which would impact on
+> human readability, move the entire panel node declaration to each
+> of the relevant Kukui machine dtsi: even though this introduces
+> some duplication, the advantages in readability surclass that.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   .../boot/dts/mediatek/mt8183-pumpkin.dts      |   8 +-
->   arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 239 +++++++++++++++++-
->   2 files changed, 238 insertions(+), 9 deletions(-)
+>   .../dts/mediatek/mt8183-kukui-jacuzzi.dtsi    |  5 ----
+>   .../dts/mediatek/mt8183-kukui-kakadu.dtsi     | 27 ++++++++++++++++++
+>   .../dts/mediatek/mt8183-kukui-kodama.dtsi     | 28 +++++++++++++++++++
+>   .../boot/dts/mediatek/mt8183-kukui-krane.dtsi | 28 +++++++++++++++++++
+>   .../arm64/boot/dts/mediatek/mt8183-kukui.dtsi | 23 ---------------
+>   5 files changed, 83 insertions(+), 28 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dts b/arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dts
-> index d5fcb010e1ac..cf1d33384bf0 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183-pumpkin.dts
-> @@ -531,10 +531,8 @@ &dpi0 {
->   	pinctrl-0 = <&dpi_func_pins>;
->   	pinctrl-1 = <&dpi_idle_pins>;
->   	status = "okay";
-> +};
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi.dtsi
+> index f2afca63c75a..1b74ec171c10 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi.dtsi
+> @@ -93,11 +93,6 @@ cros_ec_pwm: pwm {
+>   	};
+>   };
 >   
-> -	port {
-> -		dpi_out: endpoint {
-> -			remote-endpoint = <&it66121_in>;
+> -&dsi0 {
+> -	status = "okay";
+> -	/delete-node/panel@0;
+> -};
+> -
+>   &dsi_out {
+>   	remote-endpoint = <&anx7625_in>;
+>   };
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
+> index 472d4987615a..d71972c94e42 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
+> @@ -61,6 +61,33 @@ &bluetooth {
+>   	firmware-name = "nvm_00440302_i2s_eu.bin";
+>   };
+>   
+> +&dsi0 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +
+> +	panel: panel@0 {
+> +		/* compatible will be set in board dts */
+> +		reg = <0>;
+> +		enable-gpios = <&pio 45 0>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&panel_pins_default>;
+> +		avdd-supply = <&ppvarn_lcd>;
+> +		avee-supply = <&ppvarp_lcd>;
+> +		pp1800-supply = <&pp1800_lcd>;
+> +		backlight = <&backlight_lcd0>;
+> +		rotation = <270>;
+> +		port {
+> +			panel_in: endpoint {
+> +				remote-endpoint = <&dsi_out>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&dsi_out {
+> +	remote-endpoint = <&panel_in>;
+> +};
+> +
+>   &i2c0 {
+>   	status = "okay";
+>   };
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
+> index 1b21e3958061..b702ff066636 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
+> @@ -42,6 +42,34 @@ pp1800_lcd: pp1800-lcd {
+>   	};
+>   };
+>   
+> +&dsi0 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	status = "okay";
+> +
+> +	panel: panel@0 {
+> +		/* compatible will be set in board dts */
+> +		reg = <0>;
+> +		enable-gpios = <&pio 45 0>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&panel_pins_default>;
+> +		avdd-supply = <&ppvarn_lcd>;
+> +		avee-supply = <&ppvarp_lcd>;
+> +		pp1800-supply = <&pp1800_lcd>;
+> +		backlight = <&backlight_lcd0>;
+> +		rotation = <270>;
+> +		port {
+> +			panel_in: endpoint {
+> +				remote-endpoint = <&dsi_out>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&dsi_out {
+> +	remote-endpoint = <&panel_in>;
+> +};
+> +
+>   &i2c0 {
+>   	status = "okay";
+>   
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
+> index a85c73b43195..b6cfcafd8b06 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
+> @@ -45,6 +45,34 @@ &bluetooth {
+>   	firmware-name = "nvm_00440302_i2s_eu.bin";
+>   };
+>   
+> +&dsi0 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	status = "okay";
+> +
+> +	panel: panel@0 {
+> +		/* compatible will be set in board dts */
+> +		reg = <0>;
+> +		enable-gpios = <&pio 45 0>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&panel_pins_default>;
+> +		avdd-supply = <&ppvarn_lcd>;
+> +		avee-supply = <&ppvarp_lcd>;
+> +		pp1800-supply = <&pp1800_lcd>;
+> +		backlight = <&backlight_lcd0>;
+> +		rotation = <270>;
+> +		port {
+> +			panel_in: endpoint {
+> +				remote-endpoint = <&dsi_out>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&dsi_out {
+> +	remote-endpoint = <&panel_in>;
+> +};
+> +
+>   &i2c0 {
+>   	status = "okay";
+>   
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
+> index 8f3a0e85b4ed..4ac0a60fdd24 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
+> @@ -252,29 +252,6 @@ &cpu7 {
+>   
+>   &dsi0 {
+>   	status = "okay";
+> -	#address-cells = <1>;
+> -	#size-cells = <0>;
+> -	panel: panel@0 {
+> -		/* compatible will be set in board dts */
+> -		reg = <0>;
+> -		enable-gpios = <&pio 45 0>;
+> -		pinctrl-names = "default";
+> -		pinctrl-0 = <&panel_pins_default>;
+> -		avdd-supply = <&ppvarn_lcd>;
+> -		avee-supply = <&ppvarp_lcd>;
+> -		pp1800-supply = <&pp1800_lcd>;
+> -		backlight = <&backlight_lcd0>;
+> -		rotation = <270>;
+> -		port {
+> -			panel_in: endpoint {
+> -				remote-endpoint = <&dsi_out>;
+> -			};
 > -		};
 > -	};
-> +&dpi_out {
-> +	remote-endpoint = <&it66121_in>;
+> -};
+> -
+> -&dsi_out {
+> -	remote-endpoint = <&panel_in>;
 >   };
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 3c1fe80e64b9..960d8955d018 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -1667,6 +1667,21 @@ mmsys: syscon@14000000 {
->   			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST>,
->   				 <&gce 1 CMDQ_THR_PRIO_HIGHEST>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
-> +
-> +			port {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				mmsys_ep_main: endpoint@0 {
-> +					reg = <0>;
-> +					remote-endpoint = <&ovl0_in>;
-> +				};
-> +
-> +				mmsys_ep_ext: endpoint@1 {
-> +					reg = <1>;
-> +					remote-endpoint = <&ovl_2l1_in>;
-> +				};
-> +			};
->   		};
 >   
->   		dma-controller0@14001000 {
-> @@ -1733,6 +1748,25 @@ ovl0: ovl@14008000 {
->   			clocks = <&mmsys CLK_MM_DISP_OVL0>;
->   			iommus = <&iommu M4U_PORT_DISP_OVL0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x8000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					ovl0_in: endpoint {
-> +						remote-endpoint = <&mmsys_ep_main>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					ovl0_out: endpoint {
-> +						remote-endpoint = <&ovl_2l0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		ovl_2l0: ovl@14009000 {
-> @@ -1743,6 +1777,25 @@ ovl_2l0: ovl@14009000 {
->   			clocks = <&mmsys CLK_MM_DISP_OVL0_2L>;
->   			iommus = <&iommu M4U_PORT_DISP_2L_OVL0_LARB0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x9000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					ovl_2l0_in: endpoint {
-> +						remote-endpoint = <&ovl0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					ovl_2l0_out: endpoint {
-> +						remote-endpoint = <&rdma0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		ovl_2l1: ovl@1400a000 {
-> @@ -1753,6 +1806,25 @@ ovl_2l1: ovl@1400a000 {
->   			clocks = <&mmsys CLK_MM_DISP_OVL1_2L>;
->   			iommus = <&iommu M4U_PORT_DISP_2L_OVL1_LARB0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xa000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					ovl_2l1_in: endpoint {
-> +						remote-endpoint = <&mmsys_ep_ext>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					ovl_2l1_out: endpoint {
-> +						remote-endpoint = <&rdma1_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		rdma0: rdma@1400b000 {
-> @@ -1764,6 +1836,25 @@ rdma0: rdma@1400b000 {
->   			iommus = <&iommu M4U_PORT_DISP_RDMA0>;
->   			mediatek,rdma-fifo-size = <5120>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xb000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					rdma0_in: endpoint {
-> +						remote-endpoint = <&ovl_2l0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					rdma0_out: endpoint {
-> +						remote-endpoint = <&color0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		rdma1: rdma@1400c000 {
-> @@ -1775,6 +1866,25 @@ rdma1: rdma@1400c000 {
->   			iommus = <&iommu M4U_PORT_DISP_RDMA1>;
->   			mediatek,rdma-fifo-size = <2048>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					rdma1_in: endpoint {
-> +						remote-endpoint = <&ovl_2l1_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					rdma1_out: endpoint {
-> +						remote-endpoint = <&dpi_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		color0: color@1400e000 {
-> @@ -1785,6 +1895,25 @@ color0: color@1400e000 {
->   			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
->   			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					color0_in: endpoint {
-> +						remote-endpoint = <&rdma0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					color0_out: endpoint {
-> +						remote-endpoint = <&ccorr0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		ccorr0: ccorr@1400f000 {
-> @@ -1794,6 +1923,25 @@ ccorr0: ccorr@1400f000 {
->   			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
->   			clocks = <&mmsys CLK_MM_DISP_CCORR0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					ccorr0_in: endpoint {
-> +						remote-endpoint = <&color0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					ccorr0_out: endpoint {
-> +						remote-endpoint = <&aal0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		aal0: aal@14010000 {
-> @@ -1803,6 +1951,25 @@ aal0: aal@14010000 {
->   			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
->   			clocks = <&mmsys CLK_MM_DISP_AAL0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					aal0_in: endpoint {
-> +						remote-endpoint = <&ccorr0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					aal0_out: endpoint {
-> +						remote-endpoint = <&gamma0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		gamma0: gamma@14011000 {
-> @@ -1812,6 +1979,25 @@ gamma0: gamma@14011000 {
->   			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
->   			clocks = <&mmsys CLK_MM_DISP_GAMMA0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					gamma0_in: endpoint {
-> +						remote-endpoint = <&aal0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					gamma0_out: endpoint {
-> +						remote-endpoint = <&dither0_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		dither0: dither@14012000 {
-> @@ -1821,6 +2007,25 @@ dither0: dither@14012000 {
->   			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
->   			clocks = <&mmsys CLK_MM_DISP_DITHER0>;
->   			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					dither0_in: endpoint {
-> +						remote-endpoint = <&gamma0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					dither0_out: endpoint {
-> +						remote-endpoint = <&dsi_in>;
-> +					};
-> +				};
-> +			};
->   		};
->   
->   		dsi0: dsi@14014000 {
-> @@ -1837,8 +2042,21 @@ dsi0: dsi@14014000 {
->   			phy-names = "dphy";
->   			status = "disabled";
->   
-> -			port {
-> -				dsi_out: endpoint { };
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					dsi_in: endpoint {
-> +						remote-endpoint = <&dither0_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					dsi_out: endpoint { };
-> +				};
->   			};
->   		};
->   
-> @@ -1853,8 +2071,21 @@ dpi0: dpi@14015000 {
->   			clock-names = "pixel", "engine", "pll";
->   			status = "disabled";
->   
-> -			port {
-> -				dpi_out: endpoint { };
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					reg = <0>;
-> +					dpi_in: endpoint {
-> +						remote-endpoint = <&rdma1_out>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					reg = <1>;
-> +					dpi_out: endpoint { };
-> +				};
->   			};
->   		};
->   
+>   &gic {
 
 
 -- 
