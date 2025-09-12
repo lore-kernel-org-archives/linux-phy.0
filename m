@@ -4,103 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31B72CAC582
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:03:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4C3ECA101F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:04:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IraflEkMim2XpgTPgFtMdCeMC4g0qADYBvmOxY+fKg8=; b=Fh/XKezLEfZN/t
-	J3nkE6/pkXIJWCAmVVqvdu3fnDBfkuduQft9uHit2/R5W5BOr+eAtWiFGz1Y1WPtLo9DcbNfl3bTy
-	jzAKIqYoxqMYA2fz6pC1ELP3mbm6+zTdVJZiqD6SjTBpx0r4Cg1Xbpnyhbt2sSx85cAhPEuWS+a9u
-	/QLYK4D63QfyhOtCw5Oj5otWOl5cIaUuD3M0ikeKmAxHgNqPaGAp3mAtPg3CI++PujfRvLkjcVQSd
-	Ovp9tbVmiDwHZj3YPaUHQFPPQu6krsZNM8E6EZ+Z6RpYclyCALbepToYcUcuTYLg28ewL94DM6BmQ
-	i5QL+DecwZu0PuTSGufw==;
+	List-Owner; bh=7urWaEFhOc30Qm52o2ezXVH/SQy4k7Hn56chkdycKtA=; b=NV2yqx45dEo1y8
+	OcZeKaEKToqq+OQaDdswwUUKe0SK164ynmgIXSzedCGXss9M752sHePN7N4sU8b3kugIFlYqSASTP
+	iyp2wdXQhnYHT7QXax5oQq2l2aFuz9AJ1qB4/BTaZFr6Csp2Ic7Al8ShPLyQbgY3TINQj/byml8I1
+	rqJd46OJWAi/blo7p5cgr3Fp5TG4+ttv6mL6Z67c6KoDngSu8qwBp7Gf44TecCEiQ39aVo9Na9QOV
+	qLehIWbytlbtOSGSqVwBiYlf8+zM7WJi55XNe+s9z0Es8ur95v61HsowEa5bZK9B+zfM2pk6rPQ9Z
+	3ogovKLtI+jCT03hwfQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4NI-00000009j5H-3uAK;
-	Fri, 12 Sep 2025 14:03:40 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1ux4Nq-00000009jMU-2sho;
+	Fri, 12 Sep 2025 14:04:14 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4NF-00000009j1h-2ghR
+	id 1ux4Nn-00000009jIc-0ekq
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:03:38 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-45dfb6cadf3so17659755e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:03:37 -0700 (PDT)
+	Fri, 12 Sep 2025 14:04:13 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-45de60d39b7so14476505e9.0
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:04:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757685816; x=1758290616; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757685849; x=1758290649; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=/awESVZkJ9K+JfRYd9Rjr/yLS5bHXWrAEyFkBSavtRk=;
-        b=HiMXrsGZX0kUTCU3ZX8C7n5w48Vcf+CNkkmOk9nEsPLk/LAmZCJEp3cHVfSreVDScI
-         JhRO0Obw2QPhJ0e8UkJYSHvdfh5KsxJDshLQB8GODTqOSGfm9ykpXAH9Nl0gRl3G5icL
-         vhu6eTeMP4ShBfXbV2cB/HgC1lmpx8C9vOn7/OtiiYorH5zZrmH14s2XYliqfD4YDuOU
-         O88wTSo8q/HyT99UUclN1n6TspJXJMymiaDO8N69oZBOx/PKhyv1MqFyI8raYwXxZVqf
-         GqRyyPabTYGfcehTcKDcTB5pGLd6sgCGQGjpuCwsCA3me70VdTohqyV+oAd7WXqfvTPB
-         06rA==
+        bh=APfeXdHVZlvAUzgVrSDnbec2WkFzD9WkVF8lv6dWx7A=;
+        b=HvNBanm6HrfjcOAift4+x8uRMpLzajeZTsFLKPpll52c2aCil0MJikNJ2CsXxSwmqf
+         xpnkafcVrzmuOGRgsJD9y/SdEEHs4//jRl8CB9vk++gyQbg0MGYBD2ZB08YnkKjfzfAF
+         tiJjiFxLtt4C3HNjk8r2SWtMlLyVO2bjf718bVbgjFYQxoSxTeUXdRl5P+3fAEo7IfPj
+         OOvkhBIDOt90TZZlEo/XTLJUsep6PghgQLAKy/NieWThnoDNIwiyGQW4iJDarTCf66c1
+         s+J0QP6KZEJo+uIRpERqTXSa+VHSP4c2fZANC0cHVaQZxQIr+oyLOCLTlwjBtdc7BH44
+         5hIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757685816; x=1758290616;
+        d=1e100.net; s=20230601; t=1757685849; x=1758290649;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=/awESVZkJ9K+JfRYd9Rjr/yLS5bHXWrAEyFkBSavtRk=;
-        b=DZ1Ojo6RHRU5e7O56gw6xknH18C1gaPjgiaDLqJoRtjc1zlEEFLPPZzRo7892jTjm2
-         dRCU5GgDe8ZMw/u8FxGJryc6C/rVShWc1T9sTcQ2DtQ3wnyFHV6v99jGgtwxCk+q+kdW
-         teHmRUVI9P0zrtZ/4EifMA6iOFmNRUF9fruCEetlU66kI6hA3dmPV5hEH3ka+QxLMAsf
-         yc1YdJBXgzq04vaEcg+QHqw5KySqd5uhXWOAEFdMp3JKtftrEE82cCxlmiUcj5PGG6Vm
-         7LZXCOAtq7Ik63wok6++T7+XWassnqMWVwkd08z0IwId5xn8PNy7p0e+iSo4wE3qdjjU
-         SQzw==
-X-Forwarded-Encrypted: i=1; AJvYcCUiqRGWvjExn2pJBCL/aWMUfYGpWWTsExgsP/5YTBjXDQVRwsVtnI+CQvYj8aCz7/o/OwQ30iMPtQo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0jBpEuCSkCLzR4xi1kn6Hd3wcgh9+/W55z7AxiHtUbiPZy12F
-	ZmD6m4Lqpo6X+gkyNCQ8GHv2MYjeAY9jRlM1xnTm0QdnULKGIwmRLbQV
-X-Gm-Gg: ASbGncv+4WuDHOGiJboeXIr35duL4aCm/Ad2bBUfTDHyqKUiBGSDCxH8TXneJl39w39
-	Rf3g3zVFW5gox1JGPr4GV8PZyuZr7UcZlrWO42+zq3Qn1mflq7eZ2SsIGWu8sbfN3ZcNd8kvbof
-	pFbOG75QHTUUndHwrwRePLRO72DQn0w9KTnK4AqBmSUIoh/9GLQAmFkk+zgW2MtPNpbR0BatJf4
-	NAYIEBIwhZXuzHkcwFMO0BcoDSmL8Zt7uoY48F9ETVOBRo0qKnUHphFJJv/TvlcZL2BbTW+96ru
-	51+3HvYJv6U26/7TJNanPVWkzD5NcTcDLKdTtrdRk7q2S0e+PsZC519gGi2LwWUzA7sxYRyIA6n
-	m50YuCe4v5fardK+tCe4LogKkdR2C/uBrYHNp2wZ6DA==
-X-Google-Smtp-Source: AGHT+IFrFziaROE6t7OvfnHw1fSxmStjyRsw0iDsiUclaiLc+LNP4gi88MN0nbdrnjXQvf8i78gTdw==
-X-Received: by 2002:a7b:cd0b:0:b0:45d:dbf4:8880 with SMTP id 5b1f17b1804b1-45f211efda6mr20357825e9.27.1757685815284;
-        Fri, 12 Sep 2025 07:03:35 -0700 (PDT)
+        bh=APfeXdHVZlvAUzgVrSDnbec2WkFzD9WkVF8lv6dWx7A=;
+        b=e9IbF130I99DRg0IRGmlmDlsHIZT/jE/g9pe+Mj+1y1hx/QYwmT4u/rChawiIw72ad
+         AuUR7p1zPFjEwYG6tj/tORvnzulzBfr+nksCwBPN9oLXdas/E9eIb6uguDGIlsgvS2EW
+         SzQJTOJpFKHzyARRsYJhHxL69Pn4ewj3gwV3PElpXUOAYYpOvCKBlfEnceQcgeITJQM0
+         K7+/+UjdeLWNtBSHoSFpY+wrNjwhyhGwCGwWJ5EFeJgiF9iQZsgVm22jTjTghabtqFtN
+         0IES1Z/FV58qGxIaggRLByLxkOyUVgYpZ8GNFPVxOrW+XfRM8zus2ihuLQWL2mVTkvUf
+         TA+Q==
+X-Forwarded-Encrypted: i=1; AJvYcCXB7ueNTW4Qp7MgvLKT+lOxqIhqivbRpUjVMMUC2GNV6TVof2yrzwAP7g4iFD0FLPWPqCydnSzePNU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy3wFuPQmQMteHbEXdBLpeLJ0YeMFL1MImZTt8mdFsRNfJHflZj
+	J5WSpy3AtazHhHhRMlAUPKmQvD5DtVzAIR7a1MFeoHARNM3wUapHxH2q
+X-Gm-Gg: ASbGncv64G6+czVSeWJQK5GJetiJTR1/xYW8amFD6FdRv0ssr2/DF2yGUiZxETOv8gd
+	sC3egLkdqBfO8UPd2GIcFWkEHw4Ravfz2RGzVPPkU7PUy0rTdbPUO/N0c7KTiCDKm47VxYbIcRb
+	BkSPp94OZ2fviDDQuDXnm2Z0ky4yrZWBO1yPjEqlgZUb+WPSpfCu8A9o0ZhhK6krPfSvO9PYs15
+	aSk0bI+lMnPOa3dM54uo69gn96ykLc8kiOEJR2yQbcxWXbZa1gl29LQjWwwKWg+oS9rnaTZJvS8
+	vPN50ujWAHLKbI3aVhzygu00AwbjGbXq5xAxAD1y+VTxYZhWxAwZ1TEGDpX0F23odT2X/nOtnp0
+	K0tU05Y2QQmvZvAMdc1v9xyY7tmJqWgZ1J77oc7Vl+g==
+X-Google-Smtp-Source: AGHT+IGthAq77EqTSVIscxbyWVF+jFSi3b1ESxcW24z9DM4Tl2GZ2DYvuqU47ZXwpi1f2I9Iy1R0Ew==
+X-Received: by 2002:a05:6000:2012:b0:3e7:441e:c9e1 with SMTP id ffacd0b85a97d-3e765793127mr2867583f8f.18.1757685848735;
+        Fri, 12 Sep 2025 07:04:08 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e01832af1sm35682985e9.3.2025.09.12.07.03.30
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e760777a0bsm6704897f8f.13.2025.09.12.07.04.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:03:34 -0700 (PDT)
-Message-ID: <0c088460-da7e-4443-92e3-23f160415ce8@gmail.com>
-Date: Fri, 12 Sep 2025 14:16:34 +0200
+        Fri, 12 Sep 2025 07:04:07 -0700 (PDT)
+Message-ID: <03402a44-7025-4e31-9ead-a2ecbf63f325@gmail.com>
+Date: Fri, 12 Sep 2025 16:01:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 17/38] arm64: dts: mediatek: mt6797: Fix pinctrl node
- names
-To: Fei Shao <fshao@chromium.org>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-mediatek@lists.infradead.org, robh@kernel.org,
- daniel.lezcano@linaro.org, mwalle@kernel.org, devicetree@vger.kernel.org,
- linus.walleij@linaro.org, linux-remoteproc@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- olivia.wen@mediatek.com, shane.chien@mediatek.com,
- linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
- airlied@gmail.com, simona@ffwll.ch, herbert@gondor.apana.org.au,
- jassisinghbrar@gmail.com, jiaxin.yu@mediatek.com, andy.teng@mediatek.com,
- chunfeng.yun@mediatek.com, jieyy.yang@mediatek.com, chunkuang.hu@kernel.org,
- conor+dt@kernel.org, jitao.shi@mediatek.com, p.zabel@pengutronix.de,
- arnd@arndb.de, kishon@kernel.org, kyrie.wu@mediatek.corp-partner.google.com,
- maarten.lankhorst@linux.intel.com, tinghan.shen@mediatek.com,
- mripard@kernel.org, ck.hu@mediatek.com, broonie@kernel.org,
- eugen.hristev@linaro.org, houlong.wei@mediatek.com, tglx@linutronix.de,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- granquet@baylibre.com, sam.shih@mediatek.com, mathieu.poirier@linaro.org,
- fparent@baylibre.com, andersson@kernel.org, sean.wang@kernel.org,
- linux-sound@vger.kernel.org, lgirdwood@gmail.com, vkoul@kernel.org,
- linux-crypto@vger.kernel.org, tzimmermann@suse.de, atenart@kernel.org,
- krzk+dt@kernel.org, linux-media@vger.kernel.org, davem@davemloft.net
+Subject: Re: [PATCH 18/38] arm64: dts: mediatek: mt6797: Remove bogus id
+ property in i2c nodes
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-mediatek@lists.infradead.org, robh@kernel.org
+Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
+ conor+dt@kernel.org, chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
+ airlied@gmail.com, simona@ffwll.ch, maarten.lankhorst@linux.intel.com,
+ mripard@kernel.org, tzimmermann@suse.de, jassisinghbrar@gmail.com,
+ mchehab@kernel.org, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, sean.wang@kernel.org, linus.walleij@linaro.org,
+ lgirdwood@gmail.com, broonie@kernel.org, andersson@kernel.org,
+ mathieu.poirier@linaro.org, daniel.lezcano@linaro.org, tglx@linutronix.de,
+ atenart@kernel.org, jitao.shi@mediatek.com, ck.hu@mediatek.com,
+ houlong.wei@mediatek.com, kyrie.wu@mediatek.corp-partner.google.com,
+ andy.teng@mediatek.com, tinghan.shen@mediatek.com, jiaxin.yu@mediatek.com,
+ shane.chien@mediatek.com, olivia.wen@mediatek.com, granquet@baylibre.com,
+ eugen.hristev@linaro.org, arnd@arndb.de, sam.shih@mediatek.com,
+ jieyy.yang@mediatek.com, frank-w@public-files.de, mwalle@kernel.org,
+ fparent@baylibre.com, linux-crypto@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-media@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-18-angelogioacchino.delregno@collabora.com>
- <CAC=S1nh5bF6kZe7TFA_EGPGt8Xp_rfuc-rkeXgjRCU=QEtZQiw@mail.gmail.com>
+ <20250724083914.61351-19-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -146,11 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <CAC=S1nh5bF6kZe7TFA_EGPGt8Xp_rfuc-rkeXgjRCU=QEtZQiw@mail.gmail.com>
+In-Reply-To: <20250724083914.61351-19-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_070337_733529_9685C062 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250912_070411_241753_01A8FE4B 
+X-CRM114-Status: GOOD (  12.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,91 +160,115 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAyNS8wNy8yMDI1IDEyOjU2LCBGZWkgU2hhbyB3cm90ZToKPiBPbiBUaHUsIEp1bCAyNCwg
-MjAyNSBhdCA1OjQ44oCvUE0gQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8KPiA8YW5nZWxvZ2lv
-YWNjaGluby5kZWxyZWdub0Bjb2xsYWJvcmEuY29tPiB3cm90ZToKPj4KPj4gQ2hhbmdlIHRoZSBw
-aW5jdHJsIG5vZGUgbmFtZXMgdG8gYWRoZXJlIHRvIHRoZSBiaW5kaW5nOiB0aGUgbWFpbgo+PiBu
-b2RlcyBhcmUgbm93IG5hbWVkIGxpa2UgInVhcnQwLXBpbnMiIGFuZCB0aGUgY2hpbGRyZW4gInBp
-bnMtYnVzIi4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVnbm8g
-PGFuZ2Vsb2dpb2FjY2hpbm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT4KPiAKPiBSZXZpZXdlZC1i
-eTogRmVpIFNoYW8gPGZzaGFvQGNocm9taXVtLm9yZz4KPiAKCkFwcGxpZWQsIHRoYW5rcwoKPj4g
-LS0tCj4+ICAgYXJjaC9hcm02NC9ib290L2R0cy9tZWRpYXRlay9tdDY3OTcuZHRzaSB8IDQwICsr
-KysrKysrKysrKy0tLS0tLS0tLS0tLQo+PiAgIDEgZmlsZSBjaGFuZ2VkLCAyMCBpbnNlcnRpb25z
-KCspLCAyMCBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvbWVkaWF0ZWsvbXQ2Nzk3LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL21lZGlhdGVrL210
-Njc5Ny5kdHNpCj4+IGluZGV4IDBlOWQxMWI0NTg1Yi4uYmU0MDE2MTdkZmQ4IDEwMDY0NAo+PiAt
-LS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL21lZGlhdGVrL210Njc5Ny5kdHNpCj4+ICsrKyBiL2Fy
-Y2gvYXJtNjQvYm9vdC9kdHMvbWVkaWF0ZWsvbXQ2Nzk3LmR0c2kKPj4gQEAgLTEzNSw3MSArMTM1
-LDcxIEBAIHBpbzogcGluY3RybEAxMDAwNTAwMCB7Cj4+ICAgICAgICAgICAgICAgICAgZ3Bpby1j
-b250cm9sbGVyOwo+PiAgICAgICAgICAgICAgICAgICNncGlvLWNlbGxzID0gPDI+Owo+Pgo+PiAt
-ICAgICAgICAgICAgICAgdWFydDBfcGluc19hOiB1YXJ0MCB7Cj4+IC0gICAgICAgICAgICAgICAg
-ICAgICAgIHBpbnMwIHsKPj4gKyAgICAgICAgICAgICAgIHVhcnQwX3BpbnNfYTogdWFydDAtcGlu
-cyB7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgIHBpbnMtYnVzIHsKPj4gICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgcGlubXV4ID0gPE1UNjc5N19HUElPMjM0X19GVU5DX1VUWEQw
-PiwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPE1UNjc5N19H
-UElPMjM1X19GVU5DX1VSWEQwPjsKPj4gICAgICAgICAgICAgICAgICAgICAgICAgIH07Cj4+ICAg
-ICAgICAgICAgICAgICAgfTsKPj4KPj4gLSAgICAgICAgICAgICAgIHVhcnQxX3BpbnNfYTogdWFy
-dDEgewo+PiAtICAgICAgICAgICAgICAgICAgICAgICBwaW5zMSB7Cj4+ICsgICAgICAgICAgICAg
-ICB1YXJ0MV9waW5zX2E6IHVhcnQxLXBpbnMgewo+PiArICAgICAgICAgICAgICAgICAgICAgICBw
-aW5zLWJ1cyB7Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBpbm11eCA9IDxN
-VDY3OTdfR1BJTzIzMl9fRlVOQ19VUlhEMT4sCj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIDxNVDY3OTdfR1BJTzIzM19fRlVOQ19VVFhEMT47Cj4+ICAgICAgICAg
-ICAgICAgICAgICAgICAgICB9Owo+PiAgICAgICAgICAgICAgICAgIH07Cj4+Cj4+IC0gICAgICAg
-ICAgICAgICBpMmMwX3BpbnNfYTogaTJjMCB7Cj4+IC0gICAgICAgICAgICAgICAgICAgICAgIHBp
-bnMwIHsKPj4gKyAgICAgICAgICAgICAgIGkyYzBfcGluc19hOiBpMmMwLXBpbnMgewo+PiArICAg
-ICAgICAgICAgICAgICAgICAgICBwaW5zLWJ1cyB7Cj4+ICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgIHBpbm11eCA9IDxNVDY3OTdfR1BJTzM3X19GVU5DX1NDTDBfMD4sCj4+ICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxNVDY3OTdfR1BJTzM4X19GVU5D
-X1NEQTBfMD47Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICB9Owo+PiAgICAgICAgICAgICAg
-ICAgIH07Cj4+Cj4+IC0gICAgICAgICAgICAgICBpMmMxX3BpbnNfYTogaTJjMSB7Cj4+IC0gICAg
-ICAgICAgICAgICAgICAgICAgIHBpbnMxIHsKPj4gKyAgICAgICAgICAgICAgIGkyYzFfcGluc19h
-OiBpMmMxLXBpbnMgewo+PiArICAgICAgICAgICAgICAgICAgICAgICBwaW5zLWJ1cyB7Cj4+ICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBpbm11eCA9IDxNVDY3OTdfR1BJTzU1X19G
-VU5DX1NDTDFfMD4sCj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IDxNVDY3OTdfR1BJTzU2X19GVU5DX1NEQTFfMD47Cj4+ICAgICAgICAgICAgICAgICAgICAgICAg
-ICB9Owo+PiAgICAgICAgICAgICAgICAgIH07Cj4+Cj4+IC0gICAgICAgICAgICAgICBpMmMyX3Bp
-bnNfYTogaTJjMiB7Cj4+IC0gICAgICAgICAgICAgICAgICAgICAgIHBpbnMyIHsKPj4gKyAgICAg
-ICAgICAgICAgIGkyYzJfcGluc19hOiBpMmMyLXBpbnMgewo+PiArICAgICAgICAgICAgICAgICAg
-ICAgICBwaW5zLWJ1cyB7Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBpbm11
-eCA9IDxNVDY3OTdfR1BJTzk2X19GVU5DX1NDTDJfMD4sCj4+ICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIDxNVDY3OTdfR1BJTzk1X19GVU5DX1NEQTJfMD47Cj4+ICAg
-ICAgICAgICAgICAgICAgICAgICAgICB9Owo+PiAgICAgICAgICAgICAgICAgIH07Cj4+Cj4+IC0g
-ICAgICAgICAgICAgICBpMmMzX3BpbnNfYTogaTJjMyB7Cj4+IC0gICAgICAgICAgICAgICAgICAg
-ICAgIHBpbnMzIHsKPj4gKyAgICAgICAgICAgICAgIGkyYzNfcGluc19hOiBpMmMzLXBpbnMgewo+
-PiArICAgICAgICAgICAgICAgICAgICAgICBwaW5zLWJ1cyB7Cj4+ICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIHBpbm11eCA9IDxNVDY3OTdfR1BJTzc1X19GVU5DX1NEQTNfMD4sCj4+
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxNVDY3OTdfR1BJTzc0
-X19GVU5DX1NDTDNfMD47Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICB9Owo+PiAgICAgICAg
-ICAgICAgICAgIH07Cj4+Cj4+IC0gICAgICAgICAgICAgICBpMmM0X3BpbnNfYTogaTJjNCB7Cj4+
-IC0gICAgICAgICAgICAgICAgICAgICAgIHBpbnM0IHsKPj4gKyAgICAgICAgICAgICAgIGkyYzRf
-cGluc19hOiBpMmM0LXBpbnMgewo+PiArICAgICAgICAgICAgICAgICAgICAgICBwaW5zLWJ1cyB7
-Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBpbm11eCA9IDxNVDY3OTdfR1BJ
-TzIzOF9fRlVOQ19TREE0XzA+LAo+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICA8TVQ2Nzk3X0dQSU8yMzlfX0ZVTkNfU0NMNF8wPjsKPj4gICAgICAgICAgICAgICAg
-ICAgICAgICAgIH07Cj4+ICAgICAgICAgICAgICAgICAgfTsKPj4KPj4gLSAgICAgICAgICAgICAg
-IGkyYzVfcGluc19hOiBpMmM1IHsKPj4gLSAgICAgICAgICAgICAgICAgICAgICAgcGluczUgewo+
-PiArICAgICAgICAgICAgICAgaTJjNV9waW5zX2E6IGkyYzUtcGlucyB7Cj4+ICsgICAgICAgICAg
-ICAgICAgICAgICAgIHBpbnMtYnVzIHsKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgcGlubXV4ID0gPE1UNjc5N19HUElPMjQwX19GVU5DX1NEQTVfMD4sCj4+ICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxNVDY3OTdfR1BJTzI0MV9fRlVOQ19TQ0w1
-XzA+Owo+PiAgICAgICAgICAgICAgICAgICAgICAgICAgfTsKPj4gICAgICAgICAgICAgICAgICB9
-Owo+Pgo+PiAtICAgICAgICAgICAgICAgaTJjNl9waW5zX2E6IGkyYzYgewo+PiAtICAgICAgICAg
-ICAgICAgICAgICAgICBwaW5zNiB7Cj4+ICsgICAgICAgICAgICAgICBpMmM2X3BpbnNfYTogaTJj
-Ni1waW5zIHsKPj4gKyAgICAgICAgICAgICAgICAgICAgICAgcGlucy1idXMgewo+PiAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICBwaW5tdXggPSA8TVQ2Nzk3X0dQSU8xNTJfX0ZVTkNf
-U0RBNl8wPiwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPE1U
-Njc5N19HUElPMTUxX19GVU5DX1NDTDZfMD47Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICB9
-Owo+PiAgICAgICAgICAgICAgICAgIH07Cj4+Cj4+IC0gICAgICAgICAgICAgICBpMmM3X3BpbnNf
-YTogaTJjNyB7Cj4+IC0gICAgICAgICAgICAgICAgICAgICAgIHBpbnM3IHsKPj4gKyAgICAgICAg
-ICAgICAgIGkyYzdfcGluc19hOiBpMmM3LXBpbnMgewo+PiArICAgICAgICAgICAgICAgICAgICAg
-ICBwaW5zLWJ1cyB7Cj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBpbm11eCA9
-IDxNVDY3OTdfR1BJTzE1NF9fRlVOQ19TREE3XzA+LAo+PiAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICA8TVQ2Nzk3X0dQSU8xNTNfX0ZVTkNfU0NMN18wPjsKPj4gICAg
-ICAgICAgICAgICAgICAgICAgICAgIH07Cj4+IC0tCj4+IDIuNTAuMQo+Pgo+PgoKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+
+On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
+> All of the I2C nodes in this devicetree has a bogus "id" property,
+> which was probably specifying the I2C bus number.
+> 
+> This property was never parsed and never used - and besides, it
+> also gives dtbs_check warnings: remove it from all i2c nodes.
+> 
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
+Applied, thanks
+
+> ---
+>   arch/arm64/boot/dts/mediatek/mt6797.dtsi | 10 ----------
+>   1 file changed, 10 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6797.dtsi b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> index be401617dfd8..f2d93bf6a055 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> @@ -285,7 +285,6 @@ uart3: serial@11005000 {
+>   	i2c0: i2c@11007000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <0>;
+>   		reg = <0 0x11007000 0 0x1000>,
+>   		      <0 0x11000100 0 0x80>;
+>   		interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_LOW>;
+> @@ -301,7 +300,6 @@ i2c0: i2c@11007000 {
+>   	i2c1: i2c@11008000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <1>;
+>   		reg = <0 0x11008000 0 0x1000>,
+>   		      <0 0x11000180 0 0x80>;
+>   		interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_LOW>;
+> @@ -317,7 +315,6 @@ i2c1: i2c@11008000 {
+>   	i2c8: i2c@11009000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <8>;
+>   		reg = <0 0x11009000 0 0x1000>,
+>   		      <0 0x11000200 0 0x80>;
+>   		interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_LOW>;
+> @@ -334,7 +331,6 @@ i2c8: i2c@11009000 {
+>   	i2c9: i2c@1100d000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <9>;
+>   		reg = <0 0x1100d000 0 0x1000>,
+>   		      <0 0x11000280 0 0x80>;
+>   		interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_LOW>;
+> @@ -351,7 +347,6 @@ i2c9: i2c@1100d000 {
+>   	i2c6: i2c@1100e000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <6>;
+>   		reg = <0 0x1100e000 0 0x1000>,
+>   		      <0 0x11000500 0 0x80>;
+>   		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_LOW>;
+> @@ -367,7 +362,6 @@ i2c6: i2c@1100e000 {
+>   	i2c7: i2c@11010000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <7>;
+>   		reg = <0 0x11010000 0 0x1000>,
+>   		      <0 0x11000580 0 0x80>;
+>   		interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_LOW>;
+> @@ -383,7 +377,6 @@ i2c7: i2c@11010000 {
+>   	i2c4: i2c@11011000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <4>;
+>   		reg = <0 0x11011000 0 0x1000>,
+>   		      <0 0x11000300 0 0x80>;
+>   		interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_LOW>;
+> @@ -399,7 +392,6 @@ i2c4: i2c@11011000 {
+>   	i2c2: i2c@11013000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <2>;
+>   		reg = <0 0x11013000 0 0x1000>,
+>   		      <0 0x11000400 0 0x80>;
+>   		interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_LOW>;
+> @@ -416,7 +408,6 @@ i2c2: i2c@11013000 {
+>   	i2c3: i2c@11014000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <3>;
+>   		reg = <0 0x11014000 0 0x1000>,
+>   		      <0 0x11000480 0 0x80>;
+>   		interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_LOW>;
+> @@ -433,7 +424,6 @@ i2c3: i2c@11014000 {
+>   	i2c5: i2c@1101c000 {
+>   		compatible = "mediatek,mt6797-i2c",
+>   			     "mediatek,mt6577-i2c";
+> -		id = <5>;
+>   		reg = <0 0x1101c000 0 0x1000>,
+>   		      <0 0x11000380 0 0x80>;
+>   		interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_LOW>;
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
