@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BA40CA101F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:23:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7CCDCAC58F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:28:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S3/JqsmYkYN15yGniFQ9RgfHMDDtPcH0EhQSWayBkhE=; b=Ih8f28Rx5KKpvb
-	SjipztQdMqFDg6uWGL84TPwFGcu9YDcZ+3RPcG7MPbBvLc48WBVnChqbEMGIajaQlZnTPkBzaKlX9
-	LbNuxrXP6spsbwrN3ivu+UgaEt7ICDW9IIT62YBAo2TtAUsVzjzE3sIm2w1KqIsu+tDadjgntjbfC
-	xmXobh/Vqzdtn6Wyph07HLeidZRrYML83I+gCA1f3qO5stHwScSO7at37EQrDvki1X+748BBR9WY2
-	CkGI+28NVxwjVOlza7fKAmeR6PoekxbADiixVshNWZm+YfnRYDyt7cpkzpZIYonTngE/hZb+WCkL9
-	PnmKU8AoaHYQqWPoXIyA==;
+	List-Owner; bh=htmx/KiLjxBetd4fJOfkudRFnd3MlqtQIRS7lTHaZ8Y=; b=h/3djhcM0aVRCn
+	5lBLiOtEWEqPwSGSisBAUpV3F8blwr3M3acCeA7gaTIWNAs/wp/vBHeGFvsdFsyvtBRIqE+/um03D
+	LRtzyNgTZve8D2r68sjjhbdTEiPDBoKcwieBYXj5P3x1t71Xa2oAem9VFaW+jYGK5FrwkLshGf9GM
+	z3LNafvFzSHq/X3qcG+Ve70yvD+f8vYcOBakFlnqdCTlW810QYYXAk2+w5dJHLGYMAg76syw4rUZm
+	WFZo/P5GPpyt0r6nCVXXCBFMi/ExLoyhzJFa8Bq71JEZ4H8Hsc9Na2Q/s4cwcJ0idWWzwbzg668Nr
+	E21k+Su4N/Rvt0bsEF8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4gh-00000009rEs-3ZIm;
-	Fri, 12 Sep 2025 14:23:43 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1ux4l3-00000009tSx-1yRt;
+	Fri, 12 Sep 2025 14:28:13 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4ge-00000009rCQ-1nYt
+	id 1ux4kz-00000009tNi-2xOV
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:23:42 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-45f2313dd86so6636385e9.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:23:39 -0700 (PDT)
+	Fri, 12 Sep 2025 14:28:11 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-45dd7b15a64so17804575e9.0
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:28:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757687019; x=1758291819; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757687288; x=1758292088; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=N4l5zcHW0vFYm8FJd3A+gQjJTt3Y7IkPRU+Kv8jpny4=;
-        b=MnwLYnikCDgFzRoW7oNwYh36VenZkzuHm5SSPi9z85xstr6/9o5+9RIKT7yMxGYKsU
-         wI/pOK75jWdUKpU6O3XnmOir8aqqUHiRDbSVjmM22IadWfa+RvLtYAwIQQu7hV5YA8+w
-         3ntwh/3FepYAuk+ELQh67M/7SXpouZnFxeI5nPav5LxI0FvHhCE+1yhTIBoAaJ3LkcaT
-         V31F9bsjE6bVL/leKc3ezF8h/7SGS8qIiEOKE+3cyPfV6FX9wnirAl36vPhVSbldKKbS
-         0AN2TQVRdJyoxHw5Mp34n7xANUcZlLi4reO3YObb0jOBfhhE66aiGObGjU9qNKFxi5N8
-         6tpg==
+        bh=jnkM+AnZyhps3qygpz2dIT80TKNeLfoU88kbfoaXJwA=;
+        b=S3eEC7zi/dNCc0gbLY4gk2k+ooWDrCW+vaDZWd0fMH9pSeqAX6TeQ/Gq0WxY0DzZ1o
+         aiAU3CDfckDZxr3v3ztayYf0/jQGUokcdOlaCf43kRVB12faw9qI7qRuCA4Ze/Gzyx+w
+         V1hE1BhYtW8NC5fb+nD0XzuN3d9EkiH8i+urUDcespooA4/04mNX7p1nRk36hTO6c+NF
+         0d7Jmg2TOh42t7H+MdwvDT6ur3BkjXLjsYXrBcQVkPLPRAyfrlcRDpUkW3K/K7D5TyeP
+         Skr884vwuynfa7kCqAUnA5TKdbxUCJkqOT1SVKv+2lK3BwuvEjn6DIajK1bqhrEOkGHu
+         1x+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757687019; x=1758291819;
+        d=1e100.net; s=20230601; t=1757687288; x=1758292088;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=N4l5zcHW0vFYm8FJd3A+gQjJTt3Y7IkPRU+Kv8jpny4=;
-        b=O8Rh1ThOEBcdISeEXcWPbM5L6brbUFZ017T7Vft5k6TkxdBTHJXjtlxW08nCYg5nnZ
-         R0GV3q59lhexPgU9v+bdjT9NTBDn1tz7qdWoaNelnxiWhcfD1eAfExqSYKsSVPHnC0zm
-         c+7QCifag1fmHLSV2Q5VapVTzPVaE9gF/LpKVEWFzetTUICO0WQpwKCH/9KlIERGaI6/
-         9Y4Uk9ivn4Amo3CIw2fI1e+pEF0pWXW7OwgZ4EaRUD+9YM7U9OmzZ7TgmNcZBnWgA/Y8
-         aDq6FXWVLD45Fg2m85kWoN49LEXvJ72qklA1DKWTzZQLG26cl4g1faTl4T04eh0Q3EmA
-         vMjg==
-X-Forwarded-Encrypted: i=1; AJvYcCWz4inQdNpC5TLMnyiIwoweps4CFcu3OBU36lW4N8LlJMnycR3q2eOgPywdGzKS99TcYf+yRZHxwwE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzIbZEyOUCGsCzRjM5gQmg662x7pOQAjGRKLrzpaJ67yNyxXlMZ
-	/FdyZlApBcmNEmv0p/dPc5JqV1ychgS4kSgsfAOna3cTA2UhvS3a/94J
-X-Gm-Gg: ASbGncsqPR+wRslgeAbbmJXjAqugBZz9C8u97IYSHcs7Vxkrk6gzNlvVDkpYz7oxZT1
-	xuEAj5LqsiAzHT5JZYj2H2TQ9M5X4VQmpKmoI1ED+hJ/7qWA0BTmQGgq2P2hEFDG+TFSu//9YO6
-	oPKRJb6vRTX7mqA184WJyuD0r9cxZcTOu4xr8pMIeCGBUhkgu77u6RAKW7VjHpcf6DTKSSTfOai
-	XzbtUKllRHT/Hols9wccstVHjSL0xTEz1QXp31cVYJgtiP+8ONT+vMVoC9apct4TGkdP9YhBI6U
-	5jECaQC54d5CI9j/6Xtq20w8dojQzTghXaGCaWdXHX98SqHKyI8GQ/Pn2vwwigZRcQGBuLTaRRc
-	fXJROnY3Hxdrb4NYL5C3f7zCPc2AZKcI=
-X-Google-Smtp-Source: AGHT+IEmlb8djEP9UynDPDjjLEk8BahcV4jQiKIO9mchkJOf8JIm0XRWhLHxnVD8kQdDLWFmpvT50A==
-X-Received: by 2002:a05:600c:1d2a:b0:45b:9c93:d21d with SMTP id 5b1f17b1804b1-45f24ef20d0mr17392095e9.8.1757687018297;
-        Fri, 12 Sep 2025 07:23:38 -0700 (PDT)
+        bh=jnkM+AnZyhps3qygpz2dIT80TKNeLfoU88kbfoaXJwA=;
+        b=jVRSwYVZMwfrfMlsfLpc9anY5EVpqh/Ky+MCvl5v4S7TsdfU8UyXeZmsKOkZcKiWls
+         yButmMhJXSRVG+9Dx30iQHoDHaUaW4dO4Ro494HhQGg5PJG+TanQSbc/n8rtB1P9jM82
+         fa7Ukw9lLX/FAo50IgeEZO853pLZxwYuTCATRNsXpyfNEZwLvIAzIfUDXYfuyzZQwe6d
+         F5MjkcQ1w7pN9DYe4L4MsYQut/U7CB1lpBfxWf4ziMntH2Q4ogPvziKfCwLMFyWWy+Z6
+         lQIbNLAj2jT8eJs70FD2WbjeWr9IWkve0hPunVACw3R4CfXGWS3abRrFSDeP9l8PN44J
+         0sYA==
+X-Forwarded-Encrypted: i=1; AJvYcCUbGfiiRDUbo03DPu1BHESG1jamyj6qKINHryxg8+m2KBvYM/DtqQOKimTvi1FeFlOCv9ZNN1uccmI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw5sRRxfxbgespKBKv7C8L/AwV20sopsd9wxQHfAum4Fb1hShDW
+	4gSfkw5IY1Q7UcIfG69tEBr+iy3zNxOlrdxSPyMs8kfkmb5SfQk03cdX
+X-Gm-Gg: ASbGncugT/QgyFGnA6maTxjya4HJxIWgVExP4ReMBJReOiBPzt+CSbr9TGXE2fs3SVU
+	U5TTR9vV1YEHLq8mYMriksqImOGe+4NWxwaE3OlXpsWTCbXYafi5+7Fv7L/+ri80rNpipDjunMk
+	8lTXRIYGqks1kv3lNjLqWJiNOat27NmA7alqo+2DqGM9a9/JOAUNuG0Zfn7IhODWLGrMnY6wmbm
+	F+hMMZOyIbX8oUw2++SIoPrD6LH65e4OR22P/RBq7AU5eMUcYKSBQoWcJAv9DfBSFC6KPAbuq0p
+	ex0EyRd3G1WpI/t+av/szllNzmmtuUM+K8DeskZR0NNF5x+7XxLVLYetZgyhzx6iySl9398DcGU
+	ZirA5+cYVc9w2jzCcy/7rv3cz6699c7E3wCF4giFW0g==
+X-Google-Smtp-Source: AGHT+IGDvV53/LNE/OpdCCjsAZPEbICrc+wJ2bgnqrFTzigP/wpDBOWh7QRU2BBuWo1pqbgZm/YfGQ==
+X-Received: by 2002:a05:600c:1c19:b0:45d:d259:9a48 with SMTP id 5b1f17b1804b1-45f2128cba7mr31759255e9.9.1757687287618;
+        Fri, 12 Sep 2025 07:28:07 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e037c9d91sm62800735e9.20.2025.09.12.07.23.33
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e017b27b6sm67769045e9.16.2025.09.12.07.27.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:23:36 -0700 (PDT)
-Message-ID: <6ae96168-7066-4881-a228-16e57d0f6e27@gmail.com>
-Date: Fri, 12 Sep 2025 16:23:32 +0200
+        Fri, 12 Sep 2025 07:28:06 -0700 (PDT)
+Message-ID: <3de4b03d-4940-4d96-bf20-5bb45f1cc5a5@gmail.com>
+Date: Fri, 12 Sep 2025 16:13:54 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 38/38] arm64: dts: mediatek: mt8516-pumpkin: Fix machine
- compatible
+Subject: Re: [PATCH 26/38] arm64: dts: mediatek: acelink-ew-7886cax: Remove
+ unnecessary cells in spi-nand
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-39-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-27-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-39-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-27-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_072340_487643_46668636 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20250912_072809_766017_A9CC0CA3 
+X-CRM114-Status: GOOD (  13.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,32 +168,34 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:39, AngeloGioacchino Del Regno wrote:
-> This devicetree contained only the SoC compatible but lacked the
-> machine specific one: add a "mediatek,mt8516-pumpkin" compatible
-> to the list to fix dtbs_check warnings.
+> There is no need to specify #address-cells and #size-cells in a
+> node that has only one non-addressable subnode, and this is the
+> case of the flash@0 node in this devicetree, as it has only one
+> "partitions" subnode.
 > 
-> Fixes: 9983822c8cf9 ("arm64: dts: mediatek: add pumpkin board dts")
+> Remove those to suppress an avoid_unnecessary_addr_size warning.
+> 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>   arch/arm64/boot/dts/mediatek/mt7986a-acelink-ew-7886cax.dts | 2 --
+>   1 file changed, 2 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
-> index cce642c53812..3d3db33a64dc 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
-> @@ -11,7 +11,7 @@
->   
->   / {
->   	model = "Pumpkin MT8516";
-> -	compatible = "mediatek,mt8516";
-> +	compatible = "mediatek,mt8516-pumpkin", "mediatek,mt8516";
->   
->   	memory@40000000 {
->   		device_type = "memory";
+> diff --git a/arch/arm64/boot/dts/mediatek/mt7986a-acelink-ew-7886cax.dts b/arch/arm64/boot/dts/mediatek/mt7986a-acelink-ew-7886cax.dts
+> index 08b3b0827436..30805a610262 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt7986a-acelink-ew-7886cax.dts
+> +++ b/arch/arm64/boot/dts/mediatek/mt7986a-acelink-ew-7886cax.dts
+> @@ -98,8 +98,6 @@ &spi0 {
+>   	flash@0 {
+>   		compatible = "spi-nand";
+>   		reg = <0>;
+> -		#address-cells = <1>;
+> -		#size-cells = <1>;
+>   		spi-max-frequency = <52000000>;
+>   		spi-rx-bus-width = <4>;
+>   		spi-tx-bus-width = <4>;
 
 
 -- 
