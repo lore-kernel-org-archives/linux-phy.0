@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19FECCA101F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:20:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C89BBCAC582
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:20:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9zcOunx3BNmSunrm1UucIRN3tdyrYYd83k7EhjW9LxY=; b=FXOnL3MUQngJnr
-	c0yb+r23DP/EYLlYWo1CiENYVJMAQI9/+TZL1Wz2qknD8IdVeC6puaOy5dquzVlfIfQD0Vf4xM+0W
-	Nbv2KWl2OxY+xGsM/1Jh41JLO92bE6A6VmiHn5gI8gufrIuGGHtj+VvMCy6JYwdmKj3U3KrDAFIMD
-	2wLJrNnAXpUqmfLmEF7BADYus0foXI/oSVSymrx8H88kaYz5ABFPd7qNFtjL74MSUQYd0Hd4OL1Js
-	YuZYRmJfVAIJCIWL3IX3Eamt81l5YhTOk+rNtQclSZATOLz4J/4uzDsnnXGY3kFYi13cJUZ50v+Tx
-	+syyV7AFyPLNJuyKaG8Q==;
+	List-Owner; bh=gWIWpk1W5bs9rPqIprPuBjo9oBsh9qpxexqIMDbUZBE=; b=lmHrquB0ZD2Jir
+	lJ/RA4l1AKG+Pt70k2NzMuNy7xjuxXrtX9/QEBYXsjBSHDfLKVsYUrEgAyvccdNwUU+e7udGLYi04
+	tWH1yPyGUmjm8I5dUt71PjKDSig1rob5kIa6bzVhsLyTqhx+GuJ1GwU8F8/EWGhu/hf8wyUBTzAdB
+	AF3boid1tcl9qMfKgStOoUTQaL6MOdL5aqEIYrG2vH0rSPzxPttfD1qfbpkgLhWmlQrwWAiQAi4D+
+	peQZyAt2A2uHEcVVbrGnqyNPDHH96iQ1OZpivWf59F8YjZ/+PW4DdSXe54OOAWANJ8vjtAkLNNjSQ
+	6r/vIiPYkper2ML8OH7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4dM-00000009pBM-3bJl;
-	Fri, 12 Sep 2025 14:20:16 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1ux4dY-00000009pKN-2PbA;
+	Fri, 12 Sep 2025 14:20:28 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4dL-00000009p9t-1fB4
+	id 1ux4dW-00000009pH9-0jfb
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:20:16 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-45df09c7128so16337145e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:20:14 -0700 (PDT)
+	Fri, 12 Sep 2025 14:20:27 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-45df656889cso13514905e9.1
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:20:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757686813; x=1758291613; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757686824; x=1758291624; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=Zo6qWVc0jZZmv8jDaeRnPGtja64w2ge7orZf47CFJn8=;
-        b=Jp5s3PJmwB30RutuoMXHfbRn3Nj/73yXGJEo99bQA05dcOqR/YiUMHiRTbAc89s/NF
-         +77pAwMAQkgnn6f0YH4JNitiOmYRpg2DyNck5hTP/SCbvhtD1NohwBpt/gGN556vAQKx
-         SZfBEnJBqOTG90Q0ieIlyZjffnULSeldm+xRYxsvwkmyl1GjtKKPSIfv4D7jcbDLR6Q8
-         eXWduJH1XyBxQO1ZPNZ/aukSpT2vqWkaTGWrHKEHLgSv+Duj/dyxeQW7pZ8M/YPKOCFC
-         aNbDUHFqosgpRNPWTRcpvW89rQ82BXCK6OeGBDY9sUDmcLZzEas7epvAdafTdSDNycJx
-         Bqgg==
+        bh=ehDN8c0/F5eZ831IVZll96+NWY7i1QcRKUtRMZjXuP0=;
+        b=hjRwr+qzMqmY4wGzy7aK21A8OffdPKy7QW6lnhR6O0VZhqeq2IzJKqFqwxFdUzLADF
+         jlAmRmeuoSxj5aUUBLdROQTGHTGvvdtk12aaNSdv7ag06Tjir1gAKf3oPlsbF00EBzug
+         yoiCLleIOZXM3ryvjqoHp12Stm68yKj647vpFSyAUGJi50oGpu8WhNbKb3mwMeAyGIPj
+         5c/LxPC5I2cIWJ7us15H1crSBBLkFDU1a8hyuWWPA/lS2da2xjd/PWE0mZn/AtSXUbYz
+         b8RLvPKstv1fpJQMesvSLxtifVHfRGBvlvP8gpcJCj0aVirPlHw3rXMWwt13j+7ZNdNh
+         rjoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757686813; x=1758291613;
+        d=1e100.net; s=20230601; t=1757686824; x=1758291624;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Zo6qWVc0jZZmv8jDaeRnPGtja64w2ge7orZf47CFJn8=;
-        b=eDQzgQhmrFEB+gbXWk3ozEtby3VDw0lw/gwdh7wyc3g0agpxWfg9TCDdrJj8edFSET
-         bNuxeem3qThNkZdmh8bP227LbFvY5e4fJNwCUBXXSzUUMjdaje4XWb5jod5DSNLsNPLR
-         JMLkyeqaLhlN2MC7HqPCjHnaLEdsFBVV0rjOrjbYP78ZwC3GN8U4v/+JzyYjZwNS7ON+
-         oegMxcpXLvY7Lryb/owIjVEUKF5j/w1IKu3NseEd+o1JArkK0Ie4Iq8VviuZHMZ1nG+G
-         XDjCG75zAtFkaZelYhhBi0Fko0rDOP5ryes0P+Y3kc7t0zQDvtEPwu5Kk65ncL3SRwi1
-         aRnA==
-X-Forwarded-Encrypted: i=1; AJvYcCXP5np0IexMr2FvfwQcC7Pw1WNlcT/NbNmgEOd03Y0zv3KPhCKkWYXfUVk0K+cogIhbKb36mzuT4ws=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxafKY/zm/7J6S94YNxAESqYk+dkv4R7P1WkZ4WXWvSkWA+u5/D
-	FS37UeF/6DscoAjoc2In4JS4X63+7ZqjQiWTbGPJK9GCCNoqpHEQiZnO
-X-Gm-Gg: ASbGncsElC9sbIuzDH4TDrEKKZ/MtA7UzYltsL8MktFWFn8Sun9BH4kvIHxDa+qg2jB
-	z5wsM82EHEYONGY1hpmNL+sZjIhgthWxyN/Qy+4dt+HEBvcbw2A8AntQlN+li3WNNrdi1PW1ssi
-	/w6Et5gul/xpqKbv6a4hvYV3Z1Q/AD9i6RlsisKVCurn7+xynXegO3LSsTDrzvQf4+thBj2Vh0F
-	GbkEKxmUHWG0Bjr8ZXETFIspWMohEzLOyCHe9SG9xzt1KzcV7n52uvm6ZQtrUa5xReCjGf41z1V
-	socAE0tHa53uyIqi2fubzcPwjqRDJl4A/fNTMIpw2ffkI158gVzlhavu8jMzSjki40PFj6ppMnv
-	7um87nb1rfCm+vUxuoyfgQBpKiwQHpFA=
-X-Google-Smtp-Source: AGHT+IEYiPOKWB+0nvhix6TOxrJpFoMyLdNoRjDPkAz1Qots2CwSj1hz+7mDLBhL/v2fign1H2JEQQ==
-X-Received: by 2002:a05:600c:6610:b0:45d:cfa4:ce10 with SMTP id 5b1f17b1804b1-45f2128d4c1mr29424165e9.10.1757686813242;
-        Fri, 12 Sep 2025 07:20:13 -0700 (PDT)
+        bh=ehDN8c0/F5eZ831IVZll96+NWY7i1QcRKUtRMZjXuP0=;
+        b=SLP6+q+PRj4UtE1uZhqVVMJW8GPuKPcfrHMcW7xWZC0YT0z/oFTgLFjd30J4Pyi+V+
+         ymy6wd9rJICDY3WUQgD4HkTX25A2jGKGynYIzXZ9bLm3Zt6EPxs5Uo7VQjJVdvJuWL+2
+         lwJ4int00uD/IHdfiUBz5AdvVDhCVeXzWCQTz7kskHCma8FP73Z9C/lN/sxb+siiHiv0
+         m2O81iyxWa9DNz5t9lC2g4c8d7h3rQmNH9Gyo6KeDZfVa+pARBJAY5roZ6EBXdswIEVE
+         /sB2JK6DJsL9Mf7/HxwPFDgjQOFPAzEQ+ho2E7nDy9v6f1wnkocx2ebcHVrCp40L1kVf
+         pk6A==
+X-Forwarded-Encrypted: i=1; AJvYcCWjWOOSDP7MiFj6x1a20Io+mVvJou0R40aKM7Mic/Kis1Wm9C9ZEDmG6ntFkSyP7maYwB2DVXkybbw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZdRvCp66yz3J9NTJTqJA7BJ1uKdqcm2YTMPAWG8M7/e2B+7Xa
+	TRgy7cl1DBHeQxpEj5ZBupyroyGJ2fAojGz9Xvl69TXZq75vPSQ1H/33
+X-Gm-Gg: ASbGnctSFOH/x02JWxJrmJAzTCmM9ft8Dt1mqlHr44lslxJJ/Yc8KVPzD6w66XavRZH
+	eSDLGMI1Le3PbyhfhvUCIBCd4pvwhkxwQeOjHVYT3uELwi2Oz5GoucJhMnujYq/3v64Fyngft9c
+	Q5NY1FJvDQpneKEWg7pWKeo0cxNDDsGeuVS0ghPA729JjSKfkI7TZmHf4faEXCpxQBj0V7OCNMJ
+	XQq3eS1xdlRJDT+bpBzXZAejbz+8zTP/soV6lOPhMVpOsI6rCXc1lOJ2WLPCIVtWPQdbDsQYQu3
+	KvwcN5E5INc534lnf2R60QQfm613cXL1lbgA8xbEyqrG+ZeGKIzNjoRN7ol2K/cj1G7bJ/wsbWu
+	A3Xep4jqitz2SIr89JBz71yTEvtUaP+o=
+X-Google-Smtp-Source: AGHT+IHtSSdiDkUB898paY6KoQvNDE3OgBxVTaH21P4AnZRGobWI8BJOt5uErOIC2i3WhKinxdthWA==
+X-Received: by 2002:a05:600c:4585:b0:45c:8e6d:a45f with SMTP id 5b1f17b1804b1-45f211caa28mr37824695e9.5.1757686823899;
+        Fri, 12 Sep 2025 07:20:23 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e0372b983sm63475385e9.9.2025.09.12.07.20.08
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e03729c76sm64384065e9.6.2025.09.12.07.20.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:20:12 -0700 (PDT)
-Message-ID: <bde30144-0c57-4d34-b6cd-2a53dc099bdf@gmail.com>
-Date: Fri, 12 Sep 2025 16:12:25 +0200
+        Fri, 12 Sep 2025 07:20:21 -0700 (PDT)
+Message-ID: <e06e9568-1129-4262-83a9-ab652101831a@gmail.com>
+Date: Fri, 12 Sep 2025 16:12:40 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 21/38] arm64: dts: mediatek: mt6795-sony-xperia-m5: Add
- pinctrl for mmc1/mmc2
+Subject: Re: [PATCH 22/38] arm64: dts: mediatek: Fix node name for SYSIRQ
+ controller on all SoCs
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-22-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-23-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-22-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-23-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_072015_483627_7AFA5E06 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20250912_072026_252935_3C092B2B 
+X-CRM114-Status: GOOD (  13.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,83 +168,76 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
-> Add pinctrl nodes for the MicroSD slot on mmc1 and SDIO Controller
-> on mmc2 and assign those to the respective controller nodes.
-> This makes sure that all of the pins are muxed in the right state
-> and with the right pullup/down(s) before trying to use the mmc
-> controllers.
+> The sysirq has "intpol-controller" as node name, but being this an
+> interrupt controller, it needs to be named "interrupt-controller"
+> as per what the bindings (correctly) expect.
+> 
+> This commit brings no functional changes, but fixes a dtbs_check
+> warning.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   .../dts/mediatek/mt6795-sony-xperia-m5.dts    | 38 +++++++++++++++++++
->   1 file changed, 38 insertions(+)
+>   arch/arm64/boot/dts/mediatek/mt6755.dtsi | 2 +-
+>   arch/arm64/boot/dts/mediatek/mt6779.dtsi | 2 +-
+>   arch/arm64/boot/dts/mediatek/mt6795.dtsi | 2 +-
+>   arch/arm64/boot/dts/mediatek/mt6797.dtsi | 2 +-
+>   4 files changed, 4 insertions(+), 4 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-> index 03cc48321a3f..fccb948cfa45 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt6795-sony-xperia-m5.dts
-> @@ -227,6 +227,8 @@ &mmc0 {
->   
->   &mmc1 {
->   	/* MicroSD card slot */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&mmc1_pins_default>;
->   	vmmc-supply = <&mt6331_vmc_reg>;
->   	vqmmc-supply = <&mt6331_vmch_reg>;
->   	status = "okay";
-> @@ -234,6 +236,8 @@ &mmc1 {
->   
->   &mmc2 {
->   	/* SDIO WiFi on MMC2 */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&mmc2_pins_default>;
->   	vmmc-supply = <&mt6331_vmc_reg>;
->   	vqmmc-supply = <&mt6331_vmch_reg>;
->   	status = "okay";
-> @@ -311,6 +315,40 @@ pins-ds {
->   		};
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6755.dtsi b/arch/arm64/boot/dts/mediatek/mt6755.dtsi
+> index b55d3fac9bd4..8da5c0a56a02 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6755.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt6755.dtsi
+> @@ -98,7 +98,7 @@ timer {
+>   			     (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
 >   	};
 >   
-> +	mmc1_pins_default: microsd-pins {
-> +		pins-cmd-dat {
-> +			pinmux = <PINMUX_GPIO171__FUNC_MSDC1_DAT0>,
-> +				 <PINMUX_GPIO172__FUNC_MSDC1_DAT1>,
-> +				 <PINMUX_GPIO173__FUNC_MSDC1_DAT2>,
-> +				 <PINMUX_GPIO174__FUNC_MSDC1_DAT3>,
-> +				 <PINMUX_GPIO170__FUNC_MSDC1_CMD>;
-> +			input-enable;
-> +			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
-> +		};
-> +
-> +		pins-clk {
-> +			pinmux = <PINMUX_GPIO175__FUNC_MSDC1_CLK>;
-> +			bias-pull-down = <MTK_PUPD_SET_R1R0_10>;
-> +		};
-> +	};
-> +
-> +	mmc2_pins_default: sdio-pins {
-> +		pins-cmd-dat {
-> +			pinmux = <PINMUX_GPIO100__FUNC_MSDC2_DAT0>,
-> +				 <PINMUX_GPIO101__FUNC_MSDC2_DAT1>,
-> +				 <PINMUX_GPIO102__FUNC_MSDC2_DAT2>,
-> +				 <PINMUX_GPIO103__FUNC_MSDC2_DAT3>,
-> +				 <PINMUX_GPIO105__FUNC_MSDC2_CMD>;
-> +			input-enable;
-> +			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
-> +		};
-> +
-> +		pins-clk {
-> +			pinmux = <PINMUX_GPIO104__FUNC_MSDC2_CLK>;
-> +			bias-pull-down = <MTK_PUPD_SET_R1R0_10>;
-> +		};
-> +	};
-> +
->   	nfc_pins: nfc-pins {
->   		pins-irq {
->   			pinmux = <PINMUX_GPIO3__FUNC_GPIO3>;
+> -	sysirq: intpol-controller@10200620 {
+> +	sysirq: interrupt-controller@10200620 {
+>   		compatible = "mediatek,mt6755-sysirq",
+>   			     "mediatek,mt6577-sysirq";
+>   		interrupt-controller;
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6779.dtsi b/arch/arm64/boot/dts/mediatek/mt6779.dtsi
+> index 5c579e88e749..70f3375916e8 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6779.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt6779.dtsi
+> @@ -138,7 +138,7 @@ ppi_cluster1: interrupt-partition-1 {
+>   
+>   		};
+>   
+> -		sysirq: intpol-controller@c53a650 {
+> +		sysirq: interrupt-controller@c53a650 {
+>   			compatible = "mediatek,mt6779-sysirq",
+>   				     "mediatek,mt6577-sysirq";
+>   			interrupt-controller;
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6795.dtsi b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
+> index 38f65aad2802..58833e5135c8 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6795.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt6795.dtsi
+> @@ -404,7 +404,7 @@ pwrap: pwrap@1000d000 {
+>   			clock-names = "spi", "wrap";
+>   		};
+>   
+> -		sysirq: intpol-controller@10200620 {
+> +		sysirq: interrupt-controller@10200620 {
+>   			compatible = "mediatek,mt6795-sysirq",
+>   				     "mediatek,mt6577-sysirq";
+>   			interrupt-controller;
+> diff --git a/arch/arm64/boot/dts/mediatek/mt6797.dtsi b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> index f2d93bf6a055..8ac98a378fd6 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt6797.dtsi
+> @@ -228,7 +228,7 @@ apmixedsys: apmixed@1000c000 {
+>   		#clock-cells = <1>;
+>   	};
+>   
+> -	sysirq: intpol-controller@10200620 {
+> +	sysirq: interrupt-controller@10200620 {
+>   		compatible = "mediatek,mt6797-sysirq",
+>   			     "mediatek,mt6577-sysirq";
+>   		interrupt-controller;
 
 
 -- 
