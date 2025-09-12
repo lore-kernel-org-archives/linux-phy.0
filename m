@@ -4,137 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5DFCAC582
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 12:03:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 754EBCAC582
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 12:07:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4tkhwClPpKA9EdT8hXtoPM7KMRYdCjmy+YbYPQoW1+M=; b=scdJp8UsUdvqoQ
-	lYoY5ZtM+zG5i3rRgjp+cBHBm9rDPeDm3vRM+6zOVGV/hqdH/+MVIZX4omnbdJuXaBlwDZEcmKirc
-	weHmZFS1b1C1zAFPNUtnAA28fSvu/H7BMVFkgfI9qX+NI6ROD6mJiTdMlGhmhY/WW4nfRm06lWLOQ
-	iTCkH7oehHw3FT8KiJqjMX/aNraooXdVeEOKoGcUXpkNwc47ZV+3Si5CMnR3MbOn4zo6HtyAarhWC
-	P/Wbt4opqrBwGzqQs81WcyqbtgM3IWDpNSv2yHpVFsHg5kkkCsBvB7W3E6+RRHMCrD4+KOwauYIE9
-	wn3dGksLsejfumHO9dFg==;
+	List-Owner; bh=610N4q39o84Wtjv6Wi9MRscsksWgaMu/WZ558Ua/aDc=; b=gXDpFS8moz51fD
+	bOKZjteD7t/n9JfXvrX8hOHx1oSWtddRvM+U1ATjokd96rM+oq9aiNCM+4DVjT118PWQGX5ufZ/DW
+	y7ANJmskDnQ1RSkkNM0M5kurU9IhyUpyHM+znqbIcSjMFLgDrj54Yv2H3VfaCHG8W2o411aALffsh
+	52P6vBz9hqrg8nWCjPx+XLmLuuEHc5/JiyusYH1noPJAlzzfnUAQ2JXDmhYj/LOhklYToFN7SEPo5
+	OUJeuFCXviRlQTtKucf34RHOkn/PLQe0nPBk7ThGXffKmVpp6PtBeIayN9mICPpLCv2WeDMH+eHgN
+	+fTu50Xtclv5CA+Ps1lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux2VB-000000094Nh-13B9;
-	Fri, 12 Sep 2025 12:03:41 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1ux2YP-000000096GF-0zes;
+	Fri, 12 Sep 2025 12:07:01 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux2V9-000000094M6-1IdO
+	id 1ux2YN-000000096EI-0aB1
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 12:03:40 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58C9fEWn018560
-	for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 12:03:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	OC306+JLRzCtQu+HZoUMCL3Oa/U1/T4cictyJ1c0fJU=; b=AlvPbLkwvvsKmqNm
-	f6Y2S2TTjOVpZGfIGtO8m6/ajO2w8M79nskwbh+1y6U1BmaWpYPIhsEplNPCUy/m
-	Y+qYCkgf/yRC0tNSp4uFEinRpX4c7Mna3R0cYelOJx16RnTOAUZV9++6zpfviV0H
-	12NNz+qZqZJGrNUzKpdgttXqJIp1TOrxaPCINyMRcNZrLXLTogG2WYJNt1W1i93P
-	iRQHAh25vUwksHjRX8E6DR42yQ+eROeGx9kNbYTua3AmD1S/pDcWJvSE7zxCaCSV
-	ekNLDJ5cxAfNgmw4fCn9hGw9yVu60KbDODPCM/1VTOcTW5SkiKFs0qUoRDDzJRsJ
-	+9D/5w==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 490e8akjcs-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 12:03:38 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-25171cba079so8215725ad.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 05:03:38 -0700 (PDT)
+	Fri, 12 Sep 2025 12:07:00 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-3e76766a172so521518f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 05:06:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1757678817; x=1758283617; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=CE95xq6ZgnpOLnyTR/eAjFT0tRmq5j5KNZb4KBSgErs=;
+        b=Ht53lIw5m2hhmKXqPSAT9knxrG5D6l65UYuQ6/BPWB45QxjXABNjZ6Ump07J4i7Uwo
+         oqsYVgKVZeNOsVxATVKZozLtTD6OzrEKhjfJ51opFbOtPFXStk81++4Dv9V3yzA0fCje
+         Om/9VpkJnkLQwZ3m2a7l2R7u45qDSbuDDM6uSt86LD1LJc9o1mX5Tsmd+8bF5Y8AuT/W
+         UD/qlpqJx21q/xaPXqQLuY5nub8e1bgRzr/qupJ24IDMB+DNWq4YVEWLdBjQXsLNewSa
+         xMRmyzxqqJW+loUGEz+ac8vSOmMqrrL6CUewuyBsq4L+bIda5x2M1WzaW57otagaDhM2
+         rQGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757678618; x=1758283418;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=OC306+JLRzCtQu+HZoUMCL3Oa/U1/T4cictyJ1c0fJU=;
-        b=ek5A1mo9Ni0fY5oFsxrQG7c1GoKp6FWSEfhCXPGd5k50LoDpOH6QGHA152TqfzUE7R
-         aYdacYfqCCARPE975fCJSrc0AYYqsaVCaZssXfj9hz+REmlUoUJE2tRsoZQh1WS57p4w
-         8vL3DgtzbdPc1mQDDB77LEZwqZ4DZz0SlP9SwWksH1e6lRTp3IWGhP1iKr8jJbir/fOp
-         ECyvxnl/GlBZbhvW6zzyLPix3Dojv6g60pmiB0iFyjV/gfztn9h79IJF6zEu3X9GDz6X
-         tKzsiwfRzQiANHNrPeeGk9iW3EhJBCyc3Hw0J4Ozmc+UslsDhaUQ07h+TkAA/S1K4aGd
-         8T9A==
-X-Forwarded-Encrypted: i=1; AJvYcCXnm8VBubmbBZa55gyg56LIDHiK4rhdy7t82ebC+v2IvNc3Ul2LBasQhcp+/f1bjOVtFcIMQScg2oU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwR6S0Eoc5FIB0lo/saa/2ouyCpoTDBcgD8mv+A6jdyBGsXt0Tt
-	WhBNGVK208YflDQWg/9B6sFxxDs/D6nkFcbSWOvMi+eE5IoSgsgjFBX4mhWAR81szT06E9oKGKD
-	akghF/phd9lpPAaGnlZd6oCCjHO8Hb2WPaBgv2e9nHWOvlYygkgFe0Abwh6b+/GplqTRa
-X-Gm-Gg: ASbGncuLnahPgTPNl3JYyx4SWXnvyoMMmx6yxRLL+2Y/RcCseh0Oudv4L++Z3GVm+QX
-	HHHb9C+is0sfl51Dp5RWLHKeqhNkXlocxMqvtSSCMJKFfyDVag5Ia6OEbXnAlXVC1MsUwMWcFmi
-	LLqqWVqWSNDKTzb3dhR5faeo+PI/HqzWtWreb2DLiGetzakwB5uXKj/womn87qu99JcXj4XCaK9
-	MO7/1EylJ8JP4sgyebWvzkAQoLyD7XlC4z+JJASaokDJGMZinqPexiX7XGst6zYxEQxYBnDQCOG
-	U6sUPeRbqmTL0BulKs9ky6hdvONxBBvhqlWJ+L3BF8XmdoLWMmrgq3wHkK/rXE1a4JtRFiRDwku
-	fm9Qfqat8NF/ZNPhybyQKNkGC5b2ExA==
-X-Received: by 2002:a17:903:1245:b0:248:dd61:46e8 with SMTP id d9443c01a7336-25d25a7294bmr16547765ad.5.1757678617840;
-        Fri, 12 Sep 2025 05:03:37 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF0bcpdWZ5JtOcYfmEEQBTJNc9tzJlPspC8jR11YZhBs8DDVX3VE8+HBzzj6SRFPVGJrjwKeg==
-X-Received: by 2002:a17:903:1245:b0:248:dd61:46e8 with SMTP id d9443c01a7336-25d25a7294bmr16547335ad.5.1757678617295;
-        Fri, 12 Sep 2025 05:03:37 -0700 (PDT)
-Received: from [10.133.33.174] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-25c3a84957bsm47241905ad.80.2025.09.12.05.03.30
+        d=1e100.net; s=20230601; t=1757678817; x=1758283617;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=CE95xq6ZgnpOLnyTR/eAjFT0tRmq5j5KNZb4KBSgErs=;
+        b=xCxtnzC+1TXQAfldjFS7LlT9y6OD2IxLADgh/uua68GOEmQbNx4EbrDydVLsK+thqg
+         g12HCjIaWtvxVhRfbzMRatO17f0pCcKVjzB8oPBA2GH4Ps5AqGMItMu3jlloMMpE9yS+
+         U7pf97Uy1FSHBuURNStwwIovq1WkIK9x9Ts38aEVEfvP8g2PjGFUhYN5nDZLBJAku5eD
+         Wp9PFtKOoEIwl0muWRbIpHC62JN1wGc7O/VIiHwQOYwmjU3gE9YQfKJrJYTtSAi27/eh
+         r1VO3vgdimFHcRgZ6CU+SCnB9ChfZPc7fFVRyvyd5ggQiljlHGolk7BSfLCBEXM06V0e
+         7LeA==
+X-Forwarded-Encrypted: i=1; AJvYcCWz1Vt42bZNeO7iAP9xcIrA/gT5ueEi5DyRG1ag1PCPfjU8VmtdxzxwC+VNx3OA3yMOtZJT9kNLdKg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy5wseaoB2mNC1KF1yTtazqytD3MsreCADzGp+Vv9PcFEGpGKhy
+	GGsLEBXVysjLyObKX5OcrrMLAlyEkIWn0LkQHzSlU7H14ZuvJZ5igmRe
+X-Gm-Gg: ASbGnctuweSDL2dX5nC8+5WpvovMsXamFMV0woGAqpySyUDpw6m9h1TqWJwGWCz4no/
+	CDPlDuOmGyR510lbC3i+3H5YSzyOaoGhfpjCvzvYu8cLbdxJfUXBqD+MHk7xgm7ntHZdb3V4JHh
+	MCxs3zzr6TIfiPGSGr88HCsq929Jk6K0/Is/vAr5BWRXjXPvAxFke+MBc/1OZnwI5NqSG14oRbA
+	hRMDGLhUGuBd8y5V7tt2iEQpYt+yapM9QufNBCJ6fbiouXQLuEVQtkNVfqAZo2VzyS4XcS7v+1f
+	b56FrTfztavOJbSrf+djFgyn/XgBqq6MkfVGpWCPOoVqrGam/AkVgbjA2KRwgRBvp1fMrfGWz1U
+	0eUMrSztyrwIEAAuzWcO5SICpsUwKQIo=
+X-Google-Smtp-Source: AGHT+IETh19o0d8FqUptONExUhi8XbDE/+I2zw2k77iRDOfZ4p95STnqI67o6JmXlfRcZZ+LQx9RNQ==
+X-Received: by 2002:a05:6000:2f87:b0:3e4:8163:b6f9 with SMTP id ffacd0b85a97d-3e765796c6bmr2563890f8f.14.1757678816740;
+        Fri, 12 Sep 2025 05:06:56 -0700 (PDT)
+Received: from [192.168.2.177] ([91.116.220.47])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e76078fe3bsm6411847f8f.28.2025.09.12.05.06.53
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 05:03:36 -0700 (PDT)
-Message-ID: <70e9d5a3-53b7-4e2a-9a2f-19e3be1e197d@oss.qualcomm.com>
-Date: Fri, 12 Sep 2025 20:03:29 +0800
+        Fri, 12 Sep 2025 05:06:55 -0700 (PDT)
+Message-ID: <cfc03953-7c00-4164-bf91-cab0c24f0fde@gmail.com>
+Date: Fri, 12 Sep 2025 14:06:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 12/13] drm/msm/dp: move link-specific parsing from
- dp_panel to dp_link
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov
- <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
-        li.liu@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-References: <20250911-add-displayport-support-for-qcs615-platform-v4-0-2702bdda14ed@oss.qualcomm.com>
- <20250911-add-displayport-support-for-qcs615-platform-v4-12-2702bdda14ed@oss.qualcomm.com>
- <4kajb4imv4mvpf4bdzoqfw7f4qoqxsu3ca4pbgsunhxnortfig@kmsqgsj547hi>
-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-In-Reply-To: <4kajb4imv4mvpf4bdzoqfw7f4qoqxsu3ca4pbgsunhxnortfig@kmsqgsj547hi>
-X-Authority-Analysis: v=2.4 cv=H7Dbw/Yi c=1 sm=1 tr=0 ts=68c40c1a cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=3J_imRUleR0CZ10obY8A:9
- a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: xtW11oHjh3QVTqEO5ga3w5AF3CMK-bKB
-X-Proofpoint-ORIG-GUID: xtW11oHjh3QVTqEO5ga3w5AF3CMK-bKB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTA2MDAzOSBTYWx0ZWRfX0gLRAnnQXf4q
- olUf7Sje5pt879VHZWO2hVa4SkElL97JpTAq7TD+m0h7TLY5aMYbd6MhHtQhF5DyAbMS7hQhIob
- Th2OTyNrin9bNrXzq57QA9XTJ4KD//baRX1O+J+1LT3O3KORWFnBEZo/prBma56tBgPMCT++KaN
- Hj+NQbS9ovZojxkkXygLEDVg1YBXv6GE5nmKApnsf1lYXyXzvjZH4D8jIDs5rnnCiKQCwGN1gM8
- 6SIl5pjj7A9HmxoCWPtHoKn52AZG7K6SK92X8KKDd1cCVaFfwWAX53jb5Jg/V586jb+28CTzktY
- 5+3QIDD7edSZB4dihLMIavCLkvqgvjHmb+pvSAT57T7zCDsMbAogrTEZ+G0xbP9gaG/NTcYNb1F
- CrKgrbc0
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-12_04,2025-09-11_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 bulkscore=0 impostorscore=0 adultscore=0 phishscore=0
- clxscore=1015 suspectscore=0 priorityscore=1501 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509060039
+Subject: Re: [PATCH 03/38] dt-bindings: mailbox: mediatek,gce-mailbox: Make
+ clock-names optional
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ linux-mediatek@lists.infradead.org, robh@kernel.org
+Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
+ conor+dt@kernel.org, chunkuang.hu@kernel.org, p.zabel@pengutronix.de,
+ airlied@gmail.com, simona@ffwll.ch, maarten.lankhorst@linux.intel.com,
+ mripard@kernel.org, tzimmermann@suse.de, jassisinghbrar@gmail.com,
+ mchehab@kernel.org, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, sean.wang@kernel.org, linus.walleij@linaro.org,
+ lgirdwood@gmail.com, broonie@kernel.org, andersson@kernel.org,
+ mathieu.poirier@linaro.org, daniel.lezcano@linaro.org, tglx@linutronix.de,
+ atenart@kernel.org, jitao.shi@mediatek.com, ck.hu@mediatek.com,
+ houlong.wei@mediatek.com, kyrie.wu@mediatek.corp-partner.google.com,
+ andy.teng@mediatek.com, tinghan.shen@mediatek.com, jiaxin.yu@mediatek.com,
+ shane.chien@mediatek.com, olivia.wen@mediatek.com, granquet@baylibre.com,
+ eugen.hristev@linaro.org, arnd@arndb.de, sam.shih@mediatek.com,
+ jieyy.yang@mediatek.com, frank-w@public-files.de, mwalle@kernel.org,
+ fparent@baylibre.com, linux-crypto@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-media@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-sound@vger.kernel.org
+References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-4-angelogioacchino.delregno@collabora.com>
+Content-Language: en-US, ca-ES, es-ES
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; keydata=
+ xsFNBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
+ fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
+ OhLZuSKB1F5JcvLbETRjNzNU7B3TdS2+zkgQQdEyt7Ij2HXGLJ2w+yG2GuR9/iyCJRf10Okq
+ gTh//XESJZ8S6KlOWbLXRE+yfkKDXQx2Jr1XuVvM3zPqH5FMg8reRVFsQ+vI0b+OlyekT/Xe
+ 0Hwvqkev95GG6x7yseJwI+2ydDH6M5O7fPKFW5mzAdDE2g/K9B4e2tYK6/rA7Fq4cqiAw1+u
+ EgO44+eFgv082xtBez5WNkGn18vtw0LW3ESmKh19u6kEGoi0WZwslCNaGFrS4M7OH+aOJeqK
+ fx5dIv2CEbxc6xnHY7dwkcHikTA4QdbdFeUSuj4YhIZ+0QlDVtS1QEXyvZbZky7ur9rHkZvP
+ ZqlUsLJ2nOqsmahMTIQ8Mgx9SLEShWqD4kOF4zNfPJsgEMB49KbS2o9jxbGB+JKupjNddfxZ
+ HlH1KF8QwCMZEYaTNogrVazuEJzx6JdRpR3sFda/0x5qjTadwIW6Cl9tkqe2h391dOGX1eOA
+ 1ntn9O/39KqSrWNGvm+1raHK+Ev1yPtn0Wxn+0oy1tl67TxUjQARAQABzSlNYXR0aGlhcyBC
+ cnVnZ2VyIDxtYXR0aGlhcy5iZ2dAZ21haWwuY29tPsLBkgQTAQIAPAIbAwYLCQgHAwIGFQgC
+ CQoLBBYCAwECHgECF4AWIQTmuZIYwPLDJRwsOhfZFAuyVhMC8QUCWt3scQIZAQAKCRDZFAuy
+ VhMC8WzRD/4onkC+gCxG+dvui5SXCJ7bGLCu0xVtiGC673Kz5Aq3heITsERHBV0BqqctOEBy
+ ZozQQe2Hindu9lasOmwfH8+vfTK+2teCgWesoE3g3XKbrOCB4RSrQmXGC3JYx6rcvMlLV/Ch
+ YMRR3qv04BOchnjkGtvm9aZWH52/6XfChyh7XYndTe5F2bqeTjt+kF/ql+xMc4E6pniqIfkv
+ c0wsH4CkBHqoZl9w5e/b9MspTqsU9NszTEOFhy7p2CYw6JEa/vmzR6YDzGs8AihieIXDOfpT
+ DUr0YUlDrwDSrlm/2MjNIPTmSGHH94ScOqu/XmGW/0q1iar/Yr0leomUOeeEzCqQtunqShtE
+ 4Mn2uEixFL+9jiVtMjujr6mphznwpEqObPCZ3IcWqOFEz77rSL+oqFiEA03A2WBDlMm++Sve
+ 9jpkJBLosJRhAYmQ6ey6MFO6Krylw1LXcq5z1XQQavtFRgZoruHZ3XlhT5wcfLJtAqrtfCe0
+ aQ0kJW+4zj9/So0uxJDAtGuOpDYnmK26dgFN0tAhVuNInEVhtErtLJHeJzFKJzNyQ4GlCaLw
+ jKcwWcqDJcrx9R7LsCu4l2XpKiyxY6fO4O8DnSleVll9NPfAZFZvf8AIy3EQ8BokUsiuUYHz
+ wUo6pclk55PZRaAsHDX/fNr24uC6Eh5oNQ+v4Pax/gtyyc7BTQRd1TlIARAAm78mTny44Hwd
+ IYNK4ZQH6U5pxcJtU45LLBmSr4DK/7er9chpvJ5pgzCGuI25ceNTEg5FChYcgfNMKqwCAekk
+ V9Iegzi6UK448W1eOp8QeQDS6sHpLSOe8np6/zvmUvhiLokk7tZBhGz+Xs5qQmJPXcag7AMi
+ fuEcf88ZSpChmUB3WflJV2DpxF3sSon5Ew2i53umXLqdRIJEw1Zs2puDJaMqwP3wIyMdrfdI
+ H1ZBBJDIWV/53P52mKtYQ0Khje+/AolpKl96opi6o9VLGeqkpeqrKM2cb1bjo5Zmn4lXl6Nv
+ JRH/ZT68zBtOKUtwhSlOB2bE8IDonQZCOYo2w0opiAgyfpbij8uiI7siBE6bWx2fQpsmi4Jr
+ ZBmhDT6n/uYleGW0DRcZmE2UjeekPWUumN13jaVZuhThV65SnhU05chZT8vU1nATAwirMVeX
+ geZGLwxhscduk3nNb5VSsV95EM/KOtilrH69ZL6Xrnw88f6xaaGPdVyUigBTWc/fcWuw1+nk
+ GJDNqjfSvB7ie114R08Q28aYt8LCJRXYM1WuYloTcIhRSXUohGgHmh7usl469/Ra5CFaMhT3
+ yCVciuHdZh3u+x+O1sRcOhaFW3BkxKEy+ntxw8J7ZzhgFOgi2HGkOGgM9R03A6ywc0sPwbgk
+ gF7HCLirshP2U/qxWy3C8DkAEQEAAcLBdgQYAQgAIBYhBOa5khjA8sMlHCw6F9kUC7JWEwLx
+ BQJd1TlIAhsMAAoJENkUC7JWEwLxtdcP/jHJ9vI8adFi1HQoWUKCQbZdZ5ZJHayFKIzU9kZE
+ /FHzzzMDZYFgcCTs2kmUVyGloStXpZ0WtdCMMB31jBoQe5x9LtICHEip0irNXm80WsyPCEHU
+ 3wx91QkOmDJftm6T8+F3lqhlc3CwJGpoPY7AVlevzXNJfATZR0+Yh9NhON5Ww4AjsZntqQKx
+ E8rrieLRd+he57ZdRKtRRNGKZOS4wetNhodjfnjhr4Z25BAssD5q+x4uaO8ofGxTjOdrSnRh
+ vhzPCgmP7BKRUZA0wNvFxjboIw8rbTiOFGb1Ebrzuqrrr3WFuK4C1YAF4CyXUBL6Z1Lto//i
+ 44ziQUK9diAgfE/8GhXP0JlMwRUBlXNtErJgItR/XAuFwfO6BOI43P19YwEsuyQq+rubW2Wv
+ rWY2Bj2dXDAKUxS4TuLUf2v/b9Rct36ljzbNxeEWt+Yq4IOY6QHnE+w4xVAkfwjT+Vup8sCp
+ +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
+ 7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
+ a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
+In-Reply-To: <20250724083914.61351-4-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_050339_359427_FDB3337B 
-X-CRM114-Status: GOOD (  17.28  )
+X-CRM114-CacheID: sfid-20250912_050659_209650_4785CDD3 
+X-CRM114-Status: GOOD (  11.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,53 +160,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 9/12/2025 6:39 PM, Dmitry Baryshkov wrote:
-> On Thu, Sep 11, 2025 at 10:55:09PM +0800, Xiangxu Yin wrote:
->> Since max_dp_lanes and max_dp_link_rate are link-specific parameters, move
->> their parsing from dp_panel to dp_link for better separation of concerns.
->>
->> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-> I thought that you've split all DP patches...
->
->> ---
->>  drivers/gpu/drm/msm/dp/dp_link.c  | 63 +++++++++++++++++++++++++++++++
->>  drivers/gpu/drm/msm/dp/dp_link.h  |  4 ++
->>  drivers/gpu/drm/msm/dp/dp_panel.c | 78 +++++----------------------------------
->>  drivers/gpu/drm/msm/dp/dp_panel.h |  3 --
->>  4 files changed, 76 insertions(+), 72 deletions(-)
->>
->> @@ -1225,9 +1283,14 @@ struct msm_dp_link *msm_dp_link_get(struct device *dev, struct drm_dp_aux *aux)
->>  		return ERR_PTR(-ENOMEM);
->>  
->>  	link->aux   = aux;
->> +	link->dev   = dev;
-> It is only used during parsing of DT data. There is no need to store it
-> inside the struct.
->
-> With that fixed:
->
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
->
 
-Ack.
+On 24/07/2025 10:38, AngeloGioacchino Del Regno wrote:
+> The GCE Mailbox needs only one clock and the clock-names can be
+> used only by the driver (which, for instance, does not use it),
+> and this is true for all of the currently supported MediaTek SoCs.
+> 
+> Stop requiring to specify clock-names on all non-MT8195 GCEs.
+> 
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
->>  
->>  	mutex_init(&link->psm_mutex);
->>  	msm_dp_link = &link->msm_dp_link;
->>  
->> +	ret = msm_dp_link_parse_dt(msm_dp_link);
->> +	if (ret)
->> +		return ERR_PTR(ret);
->> +
->>  	return msm_dp_link;
->>  }
+> ---
+>   .../bindings/mailbox/mediatek,gce-mailbox.yaml        | 11 -----------
+>   1 file changed, 11 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml b/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
+> index 73d6db34d64a..587126d03fc6 100644
+> --- a/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
+> +++ b/Documentation/devicetree/bindings/mailbox/mediatek,gce-mailbox.yaml
+> @@ -60,17 +60,6 @@ required:
+>     - interrupts
+>     - clocks
+>   
+> -allOf:
+> -  - if:
+> -      not:
+> -        properties:
+> -          compatible:
+> -            contains:
+> -              const: mediatek,mt8195-gce
+> -    then:
+> -      required:
+> -        - clock-names
+> -
+>   additionalProperties: false
+>   
+>   examples:
+
 
 -- 
 linux-phy mailing list
