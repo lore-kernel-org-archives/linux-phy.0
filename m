@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB083CA101F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:22:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AEFFCA101F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:23:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iRA+UOnvh2PsO6cXtCtSn7CWQDysV2yDuScHMswfuxY=; b=ZbBTj+xKc1m92t
-	+Nsw2oXjV6QrGti2Mj+8w/vR/raOaiT6IIYlwPU1VScQvUUbJzVcJRAaGC68xFa5PJxPqm8f/739u
-	yNlkRwUVOLe8XU97En27D/xjQ8oWK8UNFAilk+nhMZirjEluFVw4KIXS5TtFnnMrhrO9Zo/C0aNOL
-	E6FWGQwiyOZgsO1BZ5oM08jYkB7gfyQVW5q9KXJuXzqrvbLHRgM48ChNcXG/SUR6mxGp8y81v1eQa
-	X9QNcJs3dIIuySeehINdl4z+FgBN4htCrMoXhGdTkrQXSP29RaVbHujjCqzvwmkUmCxjpqrvvcukz
-	r3bdaCM6dIZyF0GC+foA==;
+	List-Owner; bh=+JnMU4uWZSuS3Bgx/zzE+dLEJxdKYMHvJRgD/UJmtr0=; b=m9/0j5V0wQoHJv
+	dFSU2N3lR+fvg2MNIq4XI1wbQaIjN7Ml/Swfw77sSpaT8eHksRjvvW9+bmEFFl2BJxwh2wkpDfjUm
+	uVtq2NkugWPnaThiGPt63BfY7M4yTPl2lPRgaoZOuLXs4HcQZgEkvmUXfLzotG67Rxk6vhibiOPL/
+	HdhXkq1LtVM5UdN+1SJxI2L6HjpGgcsu5/d+FfGPc35hlTmkp6+ERob5zJeKDAAVRhcY4Lq6bIVYT
+	f+nkpMFICibtgBkKKJm5BKohoHUExD93Rqv3xCcgtdOijRp+kk64pRTcCI4fa3xmGM7xB2biTOpqY
+	F2pJqWv/gbYyIIIz+NnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4fp-00000009qlr-1lWD;
-	Fri, 12 Sep 2025 14:22:49 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1ux4g4-00000009qwP-13V6;
+	Fri, 12 Sep 2025 14:23:04 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4fk-00000009qex-0gsQ
+	id 1ux4g1-00000009qtT-3YFZ
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:22:46 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-3e07ffffb87so1135439f8f.2
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:22:43 -0700 (PDT)
+	Fri, 12 Sep 2025 14:23:03 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-3e7643b0ab4so1094546f8f.2
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:23:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757686962; x=1758291762; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757686980; x=1758291780; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=VymCpN9fDyNm7QOg2yye26PyPlP5MnwUCjdKp/JISyg=;
-        b=GQQdH5IK8QM7zDcR3ka34kLFIAnFBLanG0Ii/zu6Hy87v1qV4VFUoOm4tSex69CUec
-         MQ7uCFGvowycdSqZ9RjVFNXG5et7nwUaJz5mFmz5DirloQMskWg2iMvQTb/X+q8SNx4j
-         sC0OuxdwJ7AEda5ChQcYIpp9wR5tK1Yx4PBfUCSohJq3mX1TPl01ejqYp2cDrXEuHLT9
-         eND1oilXUzsm8eoPaT2AyITAhVRNbbVaOUfP5f7TIzL0wopMxOF1J9uqudSMhBpzIlnu
-         5we6Z7Sg2fhGFp8ILeNvqBoAOCbZPJYK0hFsKhOx2WLekSK3evrO7rmzvNywBHfKVH2P
-         6u2A==
+        bh=ek0TO7GNCfMGdZrn2a6dssI2HabH0ybImb9FG8faTKA=;
+        b=QQjbE/DGIYYzCprAhVcqjEnsf0sccnusGJFLCO5YPWo3Ji0MuAJTg+7XF2s2ODSmuw
+         x7mi85VyDYSP532TQhANUiN8S/P8gDqUPUQgBi8BW/ewjvoKNQWST/UUasApB2TrOsYd
+         BUtZgjYRDpl1zMG+KCy7T2HC7+JQJgBvCzJbAmyalFW6bYuomd2DA5n4h8n9aQJXMUPG
+         irqdVYbZZ7/r4OaFWvFUETTCNrUXN/DH3vFLzh0zGXzwYy1imIK0G6+DwsNSlWENQ4Pl
+         ZATLnGIYmsZWh9/o5mq6LVIDHQj+Ix/hlVKqDTh7rLkRDibBH7Pzm3q1Ie2uV/HA1gGp
+         q1Iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757686962; x=1758291762;
+        d=1e100.net; s=20230601; t=1757686980; x=1758291780;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=VymCpN9fDyNm7QOg2yye26PyPlP5MnwUCjdKp/JISyg=;
-        b=HStuLF6BDoJJwbqSU7uNWQZzLvJL/DJYCLFOtUHdz/xr/JYGVanJNiBl5v/OCogvMy
-         RmpxBNj6TRrkBEQ/NJzqpKQnGI63Ct7+0j2+jtq7ldzbS777sN/4cmcciyDHGqUsWba5
-         x8P5Fjk2zzG3wYDBsZFozIsvC5sYl3NzqyTEdyJrih3AWDI+UaPvg1B/dukq5etYzILP
-         q1BcrtWo4kxcPRYbFiV696MFFxAhC8ebEuTjTzFuXGiJBHdaEXmPF1PwkthDHMsMBHn7
-         jzm23zacEaWnnNxIN1iJ+d+sP9xSyAJynNyJzNbpJ5pjmA0ckPOc+BxjVaSJorUka4/e
-         KdHA==
-X-Forwarded-Encrypted: i=1; AJvYcCX2+CJB4dFGM1nbfJQy/9z4Wg9O4pvL9bhJah5ka+BGJCM89m+/iOLgNLp3drZhjzPPK1cqGtSZWp0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxI51Tb0XZabboDnkLYnqcg95G7uY7U9dBUeozJkp82Qwyqsgq6
-	0KbXaHY0nYgt5lv6zvtQBh0cqWHSXY0sdS9oPViEOUS3+tz7OszEPKNE
-X-Gm-Gg: ASbGncvJIsZfe3ltsR5/MKcdbYYttOGyt0nmDRFnQqyARRBfDonidA048MDlPcnUp/y
-	Cmjpur4cdVYnxC6uOgpWxbuNt5z+WNZi/WAMMLkKUTNhu4vS1iZnjBClFTP8dXLhx1IObroNP61
-	fH9x/2bdLkvnq0fUVahklcWO4RC1g9t9GlyhtsFsLcz/qeqoqXna5x0Ohk3tlggkPlDwW3h9Dmz
-	rfI5C2y0lOu/mBsRfsiFqyQK/0mrMYQKbwRv0ftkvUqq2h21xvmKX+4PAWZeeK07TEjxa10kVF0
-	iqoV4NTP4HWsjkfBP7RcWM6zTqyFmDGED64hqkpOr+C6jUarvLVHzdod911jWHpc5idDVtCAcWI
-	pstvrwUJCUI3n6D+t1E4ep0R/RoYEnH4=
-X-Google-Smtp-Source: AGHT+IGS/ldf5VzaTVStAjlJrTC/ggG5z3uMdvDlNsP8I8AfAyjYBZwViC4ftI3Cml1zaAZD0YLmkg==
-X-Received: by 2002:a05:6000:2509:b0:3d9:70cc:6dd0 with SMTP id ffacd0b85a97d-3e765a05342mr3225811f8f.33.1757686962105;
-        Fri, 12 Sep 2025 07:22:42 -0700 (PDT)
+        bh=ek0TO7GNCfMGdZrn2a6dssI2HabH0ybImb9FG8faTKA=;
+        b=otw0jz9ZyhWusGTO/LYzVvljIP4xhPnQC9Ok21Jh6CE3AOo0eyq/GeJlUzin0yT7rz
+         zi1ThT4ASzKRbMvGqRAJuuO7d9xSx0JVMQqnIll8O8Pw44YEcX03QlZuO85qcEx2GyiM
+         UaXKLLRROQRW7r02vjIvdNNoONnakFVCTqcPoEYxUZY/XPXDklnULIGLAOuKif76JXv8
+         Xz/TiZ+KZb+7bVBlhqxc82p3QaBjcwTOjiUwan2SKl+CUMBHq4NGZVHkUZBLwlp8M3QI
+         suH1gvZ/efCEb2/Vcv7L9u3ftNkXD1VCWRuarbD43e8DIXQAO424EYTSM4Td0Hlgnu5b
+         wzHw==
+X-Forwarded-Encrypted: i=1; AJvYcCWVwLM7p9oFuVxnStpY4SUfQMYCPfY4HzyODlcLuklCQkcK5swGmlltc5bUiEsWs+MtAbUEcht9PFU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwinBnXxg7vJhAwb6afFPZUzN5GhDa3fnUM+h3omgHDdt2TgT8h
+	ExSiQVb4hHTl2a2tbeRfp8wba9ZS1Y9sXXxLFfTTrD1mI+/jZno0MqFV
+X-Gm-Gg: ASbGncvjnpx5gD3nb4NHZYUfKipi2ffPwaip0H1UDd3BEdF5JhNXM6esvKvfY9vfpma
+	2EVDl2hJYUnHtKvJgjdbpmzebG7lLuoERstFlTC0Go4Qoo2Rgyakf3423tLFZsGHWUE24km47MR
+	UA+bkGbhfMv874KlqV768xH7/k+Q8GJ3ed8SLbw4PwDGNfQkkcqUGBdlBHbxPE3M2BUhh/4TOMb
+	YGnaqh2qAY7S16Qekc3EhS5Upq3fgeZsDPE13EK1n3Bb1KI01NzPCC0+lI3K8xKk2upNbe7qiGS
+	w1VlbW33UYNPcCu5W8Llzwj/En4c8U1JWjNzYhYAtCg+kVT23ZkND5dUXwIEyEpbu4zNaFnw1YB
+	sHToHmWtQ+JpyIFHQaDJIPt8K3Vt2GIY=
+X-Google-Smtp-Source: AGHT+IEyMrgn2AGObMNXrXfOyNSBeXONFdMwd2oXsFxZJiErmFGwTSul75U9TPJBys255/fSCwqlMQ==
+X-Received: by 2002:a05:6000:26cc:b0:3e0:34f4:3225 with SMTP id ffacd0b85a97d-3e765a09238mr3563649f8f.45.1757686979724;
+        Fri, 12 Sep 2025 07:22:59 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e016b5a16sm67350635e9.12.2025.09.12.07.22.37
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e7607cd0a7sm6624214f8f.39.2025.09.12.07.22.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:22:40 -0700 (PDT)
-Message-ID: <b28210f7-8154-406e-b2c5-70de85deffb7@gmail.com>
-Date: Fri, 12 Sep 2025 16:22:36 +0200
+        Fri, 12 Sep 2025 07:22:58 -0700 (PDT)
+Message-ID: <2d711432-f6db-400d-b97c-135c839cf5f1@gmail.com>
+Date: Fri, 12 Sep 2025 16:22:53 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 35/38] arm64: dts: mediatek: mt8195-cherry: Move
- VBAT-supply to Tomato R1/R2
+Subject: Re: [PATCH 36/38] arm64: dts: mediatek: mt8195-cherry: Add missing
+ regulators to rt5682
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-36-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-37-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-36-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-37-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_072244_240067_820D0CF3 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20250912_072301_918112_E449851A 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,52 +168,32 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:39, AngeloGioacchino Del Regno wrote:
-> Move the VBAT supply to mt8195-cherry-tomato-{r1,r2} as this power
-> supply is named like that only for the Realtek RT5682i codec.
+> Add the missing DBVDD and LDO1-IN power supplies to the codec
+> node as both RT5682i and RT5682s require those.
+> 
+> This commit only fixes a dtbs_check warning but doesn't produce
+> any functional changes because the VIO18 LDO is already powered
+> on because it's assigned as AVDD supply anyway.
 > 
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r1.dts | 1 +
->   arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r2.dts | 1 +
->   arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi          | 1 -
->   3 files changed, 2 insertions(+), 1 deletion(-)
+>   arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi | 2 ++
+>   1 file changed, 2 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r1.dts b/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r1.dts
-> index a82d716f10d4..a50b4e8efaba 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r1.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r1.dts
-> @@ -13,6 +13,7 @@ / {
->   &audio_codec {
->   	compatible = "realtek,rt5682i";
->   	realtek,btndet-delay = <16>;
-> +	VBAT-supply = <&pp3300_z5>;
->   };
->   
->   &sound {
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r2.dts b/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r2.dts
-> index 2d6522c144b7..a8657c0068d5 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r2.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8195-cherry-tomato-r2.dts
-> @@ -13,6 +13,7 @@ / {
->   &audio_codec {
->   	compatible = "realtek,rt5682i";
->   	realtek,btndet-delay = <16>;
-> +	VBAT-supply = <&pp3300_z5>;
->   };
->   
->   &pio_default {
 > diff --git a/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi b/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
-> index e70599807bb1..d40f4c1b9766 100644
+> index d40f4c1b9766..b3761b80cac7 100644
 > --- a/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
 > +++ b/arch/arm64/boot/dts/mediatek/mt8195-cherry.dtsi
-> @@ -535,7 +535,6 @@ audio_codec: codec@1a {
+> @@ -534,7 +534,9 @@ audio_codec: codec@1a {
+>   		realtek,jd-src = <1>;
 >   
 >   		AVDD-supply = <&mt6359_vio18_ldo_reg>;
+> +		DBVDD-supply = <&mt6359_vio18_ldo_reg>;
 >   		MICVDD-supply = <&pp3300_z2>;
-> -		VBAT-supply = <&pp3300_z5>;
+> +		LDO1-IN-supply = <&mt6359_vio18_ldo_reg>;
 >   	};
 >   };
 >   
