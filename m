@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03E65CA101F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:23:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BA40CA101F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Sep 2025 14:23:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4LjDQCs/PO7ewxVYmJsL7eTf++cVRCAXP03rW80W0KQ=; b=3BM1VUus7tOoCd
-	pF+KIMPFw0CU5ZgtAHYE/3Ar1xwNxnI7LIbynZVXZL4uOtMecuXM9iqAFFlSAkgV98D2ZrMgel8+L
-	/gMBgJOVEQCDc5WosJveyK9uKccsKpDW2jLF9L4dINmkceeS4EZIaDbkBkVbDP5DuVYIgvX5SYIog
-	gJiim1NwVNK6Sx2JGqkdhDzEdIcOr1HdfEsJ+RBjexg+IfepTJG1dkrH2aNS6o0iA/i6fzj1tNlpr
-	OcAJLSCrCe7g6uFaLVh24eEMuXJEBX3dqpTZgaJSxzU9O33FeR5+IVROatAB1TKFlg4sBQZBcaOGK
-	Z8H466d4aN1JCzEQRRyQ==;
+	List-Owner; bh=S3/JqsmYkYN15yGniFQ9RgfHMDDtPcH0EhQSWayBkhE=; b=Ih8f28Rx5KKpvb
+	SjipztQdMqFDg6uWGL84TPwFGcu9YDcZ+3RPcG7MPbBvLc48WBVnChqbEMGIajaQlZnTPkBzaKlX9
+	LbNuxrXP6spsbwrN3ivu+UgaEt7ICDW9IIT62YBAo2TtAUsVzjzE3sIm2w1KqIsu+tDadjgntjbfC
+	xmXobh/Vqzdtn6Wyph07HLeidZRrYML83I+gCA1f3qO5stHwScSO7at37EQrDvki1X+748BBR9WY2
+	CkGI+28NVxwjVOlza7fKAmeR6PoekxbADiixVshNWZm+YfnRYDyt7cpkzpZIYonTngE/hZb+WCkL9
+	PnmKU8AoaHYQqWPoXIyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4gP-00000009r5N-2oaz;
-	Fri, 12 Sep 2025 14:23:25 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1ux4gh-00000009rEs-3ZIm;
+	Fri, 12 Sep 2025 14:23:43 +0000
+Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux4gM-00000009r2t-46On
+	id 1ux4ge-00000009rCQ-1nYt
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Sep 2025 14:23:24 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-45de287cc11so17011905e9.1
-        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:23:22 -0700 (PDT)
+	Fri, 12 Sep 2025 14:23:42 +0000
+Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-45f2313dd86so6636385e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 12 Sep 2025 07:23:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757687001; x=1758291801; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1757687019; x=1758291819; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=1Ug4rvDJVrD/KFt1LWLn8j4wXGstlIATd7OgVTytDCs=;
-        b=l/qs77zk4FcLgIouMzTacbxnaGGPZry7aRTZcw3n+h9wP5W1w2fSRHkganhTqRWayT
-         VjPGOuUDhhxjmLqHtBeyQobDyz/dGVgdoWgotKBOorRybqJWANfqoeaiIBeJhimfxdVF
-         5KwI9d8t+m6eH9PGDYvcU74hEgz4946Tb04Kljx6YrHtU4sC1jSNAuuq2WSP8Rj4AnH1
-         lDJNtp979lCEA8tGwBN8kNXFPBjRZDe3EtFqcN8clOd/q9GxqmQiASwyDHYQb4RRF23L
-         n4vyUSWHKT8nPs2iYPZ1Akj7ZCyNU7vdOiT+I2zVfkVOOBg+0kRHCN72yHTkvxZ+/bHa
-         kpaQ==
+        bh=N4l5zcHW0vFYm8FJd3A+gQjJTt3Y7IkPRU+Kv8jpny4=;
+        b=MnwLYnikCDgFzRoW7oNwYh36VenZkzuHm5SSPi9z85xstr6/9o5+9RIKT7yMxGYKsU
+         wI/pOK75jWdUKpU6O3XnmOir8aqqUHiRDbSVjmM22IadWfa+RvLtYAwIQQu7hV5YA8+w
+         3ntwh/3FepYAuk+ELQh67M/7SXpouZnFxeI5nPav5LxI0FvHhCE+1yhTIBoAaJ3LkcaT
+         V31F9bsjE6bVL/leKc3ezF8h/7SGS8qIiEOKE+3cyPfV6FX9wnirAl36vPhVSbldKKbS
+         0AN2TQVRdJyoxHw5Mp34n7xANUcZlLi4reO3YObb0jOBfhhE66aiGObGjU9qNKFxi5N8
+         6tpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757687001; x=1758291801;
+        d=1e100.net; s=20230601; t=1757687019; x=1758291819;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=1Ug4rvDJVrD/KFt1LWLn8j4wXGstlIATd7OgVTytDCs=;
-        b=F2SnQHDnUyxnEj00LLMNs+UtngO4y8sDlGPyVYWad2iWKCnrvvfaT2Yhkt3U0rdR4l
-         7zkQe7ITFd7GhXBoqKC5XsMPsY612bGcQzkjFOoFr6J4evjVi6fzCATyqRF9NOhnD87n
-         Zq0AOzkB2qoji6w9yFvz6sLnKjqHbO7mPHRY+nxP9W//UGqhRsaAuXS9lbIR5ijQviBP
-         N/mfQVVTfZoSi24EH9hMPNuX/7Sh/W74vyDLkKKcY3LI9oQBrRuHIwozZkNIq5UEDhkv
-         CUzsDVvw4AfAJP/jKeRZ7bNT9mqdLXf23353jvlCQx8TN59XFDDbAU1evTdi3ZRZ0Sv2
-         r4uA==
-X-Forwarded-Encrypted: i=1; AJvYcCXrmYyTWbbZx4TAVamFMyV1leFFcz9J233Vds0qHCoauF44Y+A7d7WagCZr5aT/F+tOdMs9DuDPpbM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyQJn6Tgpk6b8eLKRIbRQkkhv9GZZtzVIMP4VlBIGhq8N9Sy4FO
-	4w8y/GtTcPw+LbRDrVhCPeGIQjIQM4yXLEZJUkWh3OLZXzwUR+W7tmwJ
-X-Gm-Gg: ASbGncuecU9CbIlgoSt59qFHgpHmDCDXfrDxvorPg6h8J+feTZFXPo9yTTbGz8HG/oE
-	9bk87elovGRj8pR7Ijihw7vWpV97M4kelQFl5HQ12iThQ6EcA5OjLbyW85n5ezdkCFN3hovdLGZ
-	Eldk0VG+mGM2uHfRm0iMNdG7JByhV6UUN2KKbd8oh5azyp++0Tq2HwFNJL61vjTWr7iQ/S7e3K/
-	tTX43+KddcxD1c7+aZTp7IcJEiugv4bJtJELnitZYzR9+RTKJKsl2xLIMAK692UTx6VIZqRFxQd
-	DkvKkFE9QTeTeDPjNaSG6sjcPk5FBdFslJtXEtfF7c0GwoH0kZr/7hxyuAQIvS+AXJzJy0qwWC2
-	J/E7RqNo/3foABz547gTh2hgwScClae2FvV9vPmIL0A==
-X-Google-Smtp-Source: AGHT+IE5UXOItxjbn0zFICANNc5GuRpVNR7hiqiKPBU9+i1k2C8vaMc+CHm3lHcY/3oRsKpLL3Rr0Q==
-X-Received: by 2002:a05:600c:468a:b0:45d:5c71:769d with SMTP id 5b1f17b1804b1-45f2126253emr34464315e9.8.1757687000920;
-        Fri, 12 Sep 2025 07:23:20 -0700 (PDT)
+        bh=N4l5zcHW0vFYm8FJd3A+gQjJTt3Y7IkPRU+Kv8jpny4=;
+        b=O8Rh1ThOEBcdISeEXcWPbM5L6brbUFZ017T7Vft5k6TkxdBTHJXjtlxW08nCYg5nnZ
+         R0GV3q59lhexPgU9v+bdjT9NTBDn1tz7qdWoaNelnxiWhcfD1eAfExqSYKsSVPHnC0zm
+         c+7QCifag1fmHLSV2Q5VapVTzPVaE9gF/LpKVEWFzetTUICO0WQpwKCH/9KlIERGaI6/
+         9Y4Uk9ivn4Amo3CIw2fI1e+pEF0pWXW7OwgZ4EaRUD+9YM7U9OmzZ7TgmNcZBnWgA/Y8
+         aDq6FXWVLD45Fg2m85kWoN49LEXvJ72qklA1DKWTzZQLG26cl4g1faTl4T04eh0Q3EmA
+         vMjg==
+X-Forwarded-Encrypted: i=1; AJvYcCWz4inQdNpC5TLMnyiIwoweps4CFcu3OBU36lW4N8LlJMnycR3q2eOgPywdGzKS99TcYf+yRZHxwwE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzIbZEyOUCGsCzRjM5gQmg662x7pOQAjGRKLrzpaJ67yNyxXlMZ
+	/FdyZlApBcmNEmv0p/dPc5JqV1ychgS4kSgsfAOna3cTA2UhvS3a/94J
+X-Gm-Gg: ASbGncsqPR+wRslgeAbbmJXjAqugBZz9C8u97IYSHcs7Vxkrk6gzNlvVDkpYz7oxZT1
+	xuEAj5LqsiAzHT5JZYj2H2TQ9M5X4VQmpKmoI1ED+hJ/7qWA0BTmQGgq2P2hEFDG+TFSu//9YO6
+	oPKRJb6vRTX7mqA184WJyuD0r9cxZcTOu4xr8pMIeCGBUhkgu77u6RAKW7VjHpcf6DTKSSTfOai
+	XzbtUKllRHT/Hols9wccstVHjSL0xTEz1QXp31cVYJgtiP+8ONT+vMVoC9apct4TGkdP9YhBI6U
+	5jECaQC54d5CI9j/6Xtq20w8dojQzTghXaGCaWdXHX98SqHKyI8GQ/Pn2vwwigZRcQGBuLTaRRc
+	fXJROnY3Hxdrb4NYL5C3f7zCPc2AZKcI=
+X-Google-Smtp-Source: AGHT+IEmlb8djEP9UynDPDjjLEk8BahcV4jQiKIO9mchkJOf8JIm0XRWhLHxnVD8kQdDLWFmpvT50A==
+X-Received: by 2002:a05:600c:1d2a:b0:45b:9c93:d21d with SMTP id 5b1f17b1804b1-45f24ef20d0mr17392095e9.8.1757687018297;
+        Fri, 12 Sep 2025 07:23:38 -0700 (PDT)
 Received: from [192.168.2.177] ([91.116.220.47])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e016b5a2esm67200825e9.13.2025.09.12.07.23.13
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e037c9d91sm62800735e9.20.2025.09.12.07.23.33
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 12 Sep 2025 07:23:18 -0700 (PDT)
-Message-ID: <30468c15-16bf-4c20-bef3-35d58b9a31b1@gmail.com>
-Date: Fri, 12 Sep 2025 16:23:11 +0200
+        Fri, 12 Sep 2025 07:23:36 -0700 (PDT)
+Message-ID: <6ae96168-7066-4881-a228-16e57d0f6e27@gmail.com>
+Date: Fri, 12 Sep 2025 16:23:32 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 37/38] arm64: dts: mediatek: mt8395-kontron-i1200: Fix
- MT6360 regulator nodes
+Subject: Re: [PATCH 38/38] arm64: dts: mediatek: mt8516-pumpkin: Fix machine
+ compatible
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
  linux-mediatek@lists.infradead.org, robh@kernel.org
 Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
@@ -99,7 +99,7 @@ Cc: herbert@gondor.apana.org.au, davem@davemloft.net, krzk+dt@kernel.org,
  linux-gpio@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-sound@vger.kernel.org
 References: <20250724083914.61351-1-angelogioacchino.delregno@collabora.com>
- <20250724083914.61351-38-angelogioacchino.delregno@collabora.com>
+ <20250724083914.61351-39-angelogioacchino.delregno@collabora.com>
 Content-Language: en-US, ca-ES, es-ES
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; keydata=
@@ -145,10 +145,10 @@ Autocrypt: addr=matthias.bgg@gmail.com; keydata=
  +zFJv9fVUpo/bjePOL4PMP1y+PYrp4PmPmRwoklBpy1ep8m8XURv46fGUHUEIsTwPWs2Q87k
  7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprtJG8GNNzMOD4cQ82T
  a7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SPHxUCQ9Y1Y/Ct
-In-Reply-To: <20250724083914.61351-38-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250724083914.61351-39-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_072323_083933_90F8DFC7 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20250912_072340_487643_46668636 
+X-CRM114-Status: GOOD (  13.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,97 +168,32 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 On 24/07/2025 10:39, AngeloGioacchino Del Regno wrote:
-> All of the MT6360 regulator nodes were wrong and would not probe
-> because the regulator names are supposed to be lower case, but
-> they are upper case in this devicetree.
+> This devicetree contained only the SoC compatible but lacked the
+> machine specific one: add a "mediatek,mt8516-pumpkin" compatible
+> to the list to fix dtbs_check warnings.
 > 
-> Change all nodes to be lower case to get working regulators.
-> 
-> Fixes: 94aaf79a6af5 ("arm64: dts: mediatek: add Kontron 3.5"-SBC-i1200")
+> Fixes: 9983822c8cf9 ("arm64: dts: mediatek: add pumpkin board dts")
 > Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 Applied, thanks
 
 > ---
->   .../mediatek/mt8395-kontron-3-5-sbc-i1200.dts    | 16 ++++++++--------
->   1 file changed, 8 insertions(+), 8 deletions(-)
+>   arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8395-kontron-3-5-sbc-i1200.dts b/arch/arm64/boot/dts/mediatek/mt8395-kontron-3-5-sbc-i1200.dts
-> index 4985b65925a9..d16f545cbbb2 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8395-kontron-3-5-sbc-i1200.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8395-kontron-3-5-sbc-i1200.dts
-> @@ -352,7 +352,7 @@ regulator {
->   			LDO_VIN2-supply = <&vsys>;
->   			LDO_VIN3-supply = <&vsys>;
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
+> index cce642c53812..3d3db33a64dc 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
+> +++ b/arch/arm64/boot/dts/mediatek/mt8516-pumpkin.dts
+> @@ -11,7 +11,7 @@
 >   
-> -			mt6360_buck1: BUCK1 {
-> +			mt6360_buck1: buck1 {
->   				regulator-name = "emi_vdd2";
->   				regulator-min-microvolt = <600000>;
->   				regulator-max-microvolt = <1800000>;
-> @@ -362,7 +362,7 @@ MT6360_OPMODE_LP
->   				regulator-always-on;
->   			};
+>   / {
+>   	model = "Pumpkin MT8516";
+> -	compatible = "mediatek,mt8516";
+> +	compatible = "mediatek,mt8516-pumpkin", "mediatek,mt8516";
 >   
-> -			mt6360_buck2: BUCK2 {
-> +			mt6360_buck2: buck2 {
->   				regulator-name = "emi_vddq";
->   				regulator-min-microvolt = <300000>;
->   				regulator-max-microvolt = <1300000>;
-> @@ -372,7 +372,7 @@ MT6360_OPMODE_LP
->   				regulator-always-on;
->   			};
->   
-> -			mt6360_ldo1: LDO1 {
-> +			mt6360_ldo1: ldo1 {
->   				regulator-name = "mt6360_ldo1"; /* Test point */
->   				regulator-min-microvolt = <1200000>;
->   				regulator-max-microvolt = <3600000>;
-> @@ -380,7 +380,7 @@ mt6360_ldo1: LDO1 {
->   							   MT6360_OPMODE_LP>;
->   			};
->   
-> -			mt6360_ldo2: LDO2 {
-> +			mt6360_ldo2: ldo2 {
->   				regulator-name = "panel1_p1v8";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
-> @@ -388,7 +388,7 @@ mt6360_ldo2: LDO2 {
->   							   MT6360_OPMODE_LP>;
->   			};
->   
-> -			mt6360_ldo3: LDO3 {
-> +			mt6360_ldo3: ldo3 {
->   				regulator-name = "vmc_pmu";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <3300000>;
-> @@ -396,7 +396,7 @@ mt6360_ldo3: LDO3 {
->   							   MT6360_OPMODE_LP>;
->   			};
->   
-> -			mt6360_ldo5: LDO5 {
-> +			mt6360_ldo5: ldo5 {
->   				regulator-name = "vmch_pmu";
->   				regulator-min-microvolt = <3300000>;
->   				regulator-max-microvolt = <3300000>;
-> @@ -404,7 +404,7 @@ mt6360_ldo5: LDO5 {
->   							   MT6360_OPMODE_LP>;
->   			};
->   
-> -			mt6360_ldo6: LDO6 {
-> +			mt6360_ldo6: ldo6 {
->   				regulator-name = "mt6360_ldo6"; /* Test point */
->   				regulator-min-microvolt = <500000>;
->   				regulator-max-microvolt = <2100000>;
-> @@ -412,7 +412,7 @@ mt6360_ldo6: LDO6 {
->   							   MT6360_OPMODE_LP>;
->   			};
->   
-> -			mt6360_ldo7: LDO7 {
-> +			mt6360_ldo7: ldo7 {
->   				regulator-name = "emi_vmddr_en";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
+>   	memory@40000000 {
+>   		device_type = "memory";
 
 
 -- 
