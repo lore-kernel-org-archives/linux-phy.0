@@ -4,72 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4A5FCAC598
-	for <linux-phy@archiver.kernel.org>; Sun, 14 Sep 2025 14:18:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9DE3CA0EE8
+	for <linux-phy@archiver.kernel.org>; Sun, 14 Sep 2025 14:56:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/8fIJyB1Y2jScFThHM6YVmPKO53kRuPSknmzXMGXOP8=; b=Au9p5d5qc79TGK
-	YfQjFOY1EXU90hCTSatyW5nLXXXiOmkt+HMUgqjjQKAx/aRaXmK8WOojI9+oixR9rUoQuJRswpDNi
-	vXgDs+yS746LjiSXdK30zhGbFObXt/te2uj1pZePnHPLZwHEPiTSC+l8wqOfmf6Px/bV+/amX7c4U
-	ccE4e4IkMHQLaZsu0Vzn/X2po0TKIAARO1VhQARtVmG02m02/EMqwKZ1gmU9MFL6++TRRkB29wkGo
-	HQxd+xVoukwCWEGP9mvaFjr6CxDvq46yAZcGFWo6LnSluoAD0+N9hAeS6u8uvr0H6UP/Ca/bIIer+
-	ETLZFyBgtVkDqYnlqI9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qOzA1PsGC0787NYFAJoS1WcSH6xHIlxDIzgr6JlQwaw=; b=DdxdAJ+hxBydrP
+	e8aEjDCm8RqxAeJMA8akYfQtTJDW5I6f/wluHq1/Bx4QbAAK5dbCnzij3TApHz/9Ef1iOwZkcrESe
+	P0ViwXU+vRA5XNthCLgCEe6HVoO3mjj+QhOt4uqaJjYApIX8/TZcQV46w2UhMVATQa3XDnhh/RASl
+	+7/qbhdp8liLjZoDFeDrmQSvNVRxdYuG+uYqUo3a6fc/eBHngcO/YgYHYYBTUpAqluibsFFyEGOjb
+	L6plL8PyM9JQlcY5PRDLhEK5J7bG2zcIwHaxjpEo9wqxrEoJTwd2+rx2qiY0Ve2HKgxrsBk3h8Jui
+	dRoNeIVbarl+2Ns96EZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxnYM-00000001Tkz-2PDn;
-	Sun, 14 Sep 2025 14:18:06 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1uxo9C-00000001bBI-1oyk;
+	Sun, 14 Sep 2025 14:56:10 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxnYI-00000001Tee-2e9D
+	id 1uxo99-00000001b7t-1wfb
 	for linux-phy@lists.infradead.org;
-	Sun, 14 Sep 2025 14:18:04 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-45dd5e24d16so32038605e9.3
-        for <linux-phy@lists.infradead.org>; Sun, 14 Sep 2025 07:18:02 -0700 (PDT)
+	Sun, 14 Sep 2025 14:56:09 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-3e34dbc38easo1831797f8f.1
+        for <linux-phy@lists.infradead.org>; Sun, 14 Sep 2025 07:56:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1757859481; x=1758464281; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=yiOb+44+abYoeDQ7m5UxjJUCp2UOVKxX0zLt82/lfMA=;
-        b=K0qnCkjkgWVXslscy5wYUtLlCJq/6/jEc5jWPYFKAWQX7JlQDNhvpLO8OAyXUVWc57
-         70BIWfleBZbYbwPQvB6M1Sha/41iMltM8Yke9NtEfK0EDcNNtQVmmMJ6cYgFjmkSPQuV
-         o8cfTRw0JCkE1kbHxzspOyCQNFXb1FCQl6+Nikmva52wBfNPXJeTnBNpZMfwBdGNmXlm
-         uHHd/Os1PaxbPUDNxaMO8zRd4CxqJw3/iw4zp2OUeH9U2ZMCbKlZgdf0pd5BYs0g+q5n
-         2WLQjfvtBjzLInREbfImK5aYyuBVtVpWtUC/mgENoWkrkjCZh0r8s/k9zERbMfuFWs2x
-         nubA==
+        d=gmail.com; s=20230601; t=1757861765; x=1758466565; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=5qapOJtKxyY0MNaqH7qXtB8qqR3nlxKXEctWyb1YrfM=;
+        b=EIrtnopByv+ymYdxZ0/C1oxCkFO6NZcSYSjKNCamKRNioOVbT4Z8hXwy8iCKl+84A5
+         GKZXigoOXNtnUwWyzONyUtpVIP2C8GhWdC3avv77djfdDMcSzUBhtDmp/8btVpA/5CmE
+         zg6s5yB+nZsEsrtsUVze3Xe8G/S5URsp4XkwU47vbOYpdFUhKJmnomyG2QC8s3p9SWoc
+         GeN42HF6rbxD4ebGy+jvtJKyxkKHcZNij397UIcTgJ1sCKyW2nYTEg+RnljNxPpF/lOK
+         wqiZoL+iAbVIOeGgbh4YPEkA3+L7mEVy0bP86Hq4DoAaGinNlkI6V9NFK0oM4muXnXhb
+         3yPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757859481; x=1758464281;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=yiOb+44+abYoeDQ7m5UxjJUCp2UOVKxX0zLt82/lfMA=;
-        b=U286y8yIGQiuS5R3w98RC7Cp8UruS3QqKJfN1gYME7SAC2w2WwwDNPy7A4516o0GkJ
-         oK688CJSUkOuIO9VPXRXdpeN55pPN5scURdLVDe90R+SKo0F8x4KWgX4xQgDBJR4GbM2
-         D2rptU9D6J/XpfngPuAtw20WUXplh2vFfeYANuemzsbR1bdpF8VNhqkmbMELGhjrEEIa
-         B+/iXP4mcbwgOYCrvw47GMI9QiiuxdJ8okzXlGbLn1IFxrfbxtpn73l6uMABfKA9RefT
-         E+UpcKWd1bZIuHx6wKm1MMMVS3T4WM03t4zs8F9GLqNcj9NtLCevsgW57vEohjZWDRQb
-         Ojsw==
-X-Forwarded-Encrypted: i=1; AJvYcCVhXIcIbkJOe74JYzsd6ivi8km3IH50zGWjRHGK4KB5OxylnX5qjweCQLkDvnNEgePhP5UxHWFOyUk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwzCX7pVOGyOdhSZTE5kSB4K3gsYC6JhhGWjLKbTTAVngtZXp3P
-	5D0Yn/PIMZGkyLfAIpADgfu0Rlo3TBAMWhhpaq50fUKynyUfmhYuvNc9
-X-Gm-Gg: ASbGncu8N+BiFAEivm74Qn3O1jRTBuhcuC+N4qxRdtUv1ZBiLa5vKnMt7XEn1hK6Y9w
-	JxLecZDjCwvgQfKnZM9gjFBRdTy5PnkgPTfz+yIp/L4VAfwKER8LXaSBAD5i21+lp4mpGp4scqd
-	tfhjExlPOONVRGVpTofzm0EnLs7btxhX/KEtwy4N1oasxDuTYz9MB1rAIZ/sohIOtzGWmqH/iGF
-	wcibImMdpge0n5fWdBbSHn9FN7PUF3qDlORmfgxz2q6aNF2ms9Mw6Md0Jna8e/PBOcc9RfqoJIC
-	3vQhgAaGqOVCRR/mz0PL0gnHjVt5wJTtcNJCX0t34ozMG1N8dV6zJwd1Q+z2R3ydO54FJjp4YxZ
-	rIlCrpp0KG0Yi10rhk1SMuKR0EdTQ4fcf4cWBZ8jz+58pxzHGxCZDYkgUt+R974KTjehwqi2Edg
+        d=1e100.net; s=20230601; t=1757861765; x=1758466565;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=5qapOJtKxyY0MNaqH7qXtB8qqR3nlxKXEctWyb1YrfM=;
+        b=nop2oNzar0pH8iRZkQRQXrYzRpRlXuKewmC30kKQ1C0fgHbnPcc0BJxS4Y5rF/bcY4
+         4xfiGgM5KUM3hcHI5RYvahVk0QLNJreBr2uHUS6WSnfaL00yy40epicDT3v6X2Q95lHZ
+         H7SRvvdzvs0XC3ZGptNNpopMVQhYaaV72CQ63ERcDRtMRD14n9OHdJSDvaZPqshi0NQN
+         itjovmR0Sp/hKuAGJAob25vnwrBIXiYnNEMBpTah01zCGclFnc/1J1GM3Doh1rPLpY2M
+         nwjHeI505+TgybbjVNj1bvbhzpw0ULpX56JqWlorO4DVyylzjVHdHPMlQRX82EFFz03c
+         /9Pw==
+X-Forwarded-Encrypted: i=1; AJvYcCXynGxt6+QHif+VUAsAm6tn/qtfXnvGwCYZAPUmhYQ/BlFuuRKo8lMtZVn4xm6KCKgeb8e63n98ZtM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywgya4XdROGGw36tSSMNJ3P+VA5OsMQW6rJK6Y7fq5/oyzliYXx
+	J0wNrZh5C1duhtGskmg1/425iOE/szdWYjNmZge0EXApX+0kvD942E8O
+X-Gm-Gg: ASbGnctaXlmUqDosy7YIJnEUrGGSS68vJL7vgo8mETCxZbhmJm8CQKRgQob2dMGYs2E
+	5FpYCS+muiz54grxrDhbZx5LWHrCaxWmQvDpfOiN2OD8r3+HXJPAQFoWvSZHrLHkmJXYWMTWu1m
+	avcfpasibYaCIiAM5Ctqas7s8+rwUIWtuAV9kxOIUuaRCXUSvLZZSB3lXMKb7YHq1q3aSC/dk2N
+	Ays3XCtpvj4PanrWrOdUVagUc3diOHa5jYmF9e2shLsuv2+JG3xwRTa2oiG8I5Sis4f1LJ8nElY
+	6EaXcB6XRkBdGHfByDbaer3/XoYKku0cRHFBxY8gDjbJUB0DlNa+wgosC2ud541i42x1AP3gsXo
+	4/kBeEqXQZVGWokwkcux4AIWk6ZXitZg8S9Z5FX1cL3ObKQgrbA55DEAHYEdnn235xDUhJr/YLA
 	==
-X-Google-Smtp-Source: AGHT+IHcNtfp4F0gd8EyXRgkVvR2EHNAWoXevw2JJmW1HkNfx+wowWJuPHqwAwEdICB/zzepQga2OA==
-X-Received: by 2002:a05:600c:630e:b0:45d:d197:fecf with SMTP id 5b1f17b1804b1-45f2117b46cmr81883255e9.0.1757859480854;
-        Sun, 14 Sep 2025 07:18:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFV/3JZpFtVZv9IijfdfagkrdK3hCy/JcOZd8MWso5BvseWKVtiecc8/LFjzi/kNn1nTtuUIw==
+X-Received: by 2002:a05:6000:2486:b0:3e7:404f:685 with SMTP id ffacd0b85a97d-3e765a197ebmr8559306f8f.44.1757861765516;
+        Sun, 14 Sep 2025 07:56:05 -0700 (PDT)
 Received: from ivaylo-T580.. (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3e813eb46f3sm7319270f8f.23.2025.09.14.07.17.59
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45e037d62besm136303475e9.21.2025.09.14.07.56.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 14 Sep 2025 07:18:00 -0700 (PDT)
+        Sun, 14 Sep 2025 07:56:05 -0700 (PDT)
 From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 To: Krzysztof Kozlowski <krzk@kernel.org>,
 	Rob Herring <robh@kernel.org>,
@@ -84,16 +83,15 @@ Cc: linux-samsung-soc@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v1 2/2] phy: exynos5-usbdrd: support the exynos8890 USBDRD controller
-Date: Sun, 14 Sep 2025 17:17:45 +0300
-Message-ID: <20250914141745.2627756-5-ivo.ivanov.ivanov1@gmail.com>
+Subject: [PATCH v2 0/2] phy: exynos5-usbdrd: support the exynos8890 USBDRD
+Date: Sun, 14 Sep 2025 17:55:53 +0300
+Message-ID: <20250914145555.2631595-1-ivo.ivanov.ivanov1@gmail.com>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250914141745.2627756-1-ivo.ivanov.ivanov1@gmail.com>
-References: <20250914141745.2627756-1-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250914_071802_740739_32FB6756 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20250914_075607_519618_09FC0E54 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,265 +108,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The exynos8890 USBDRD controller integrates a combined usb phy that
-supports UTMI and PIPE3 interfaces. Add the required changes for USB HS
-to work. USB SS is out of the scope, as the Samsung Galaxy S7 only has
-a microusb 2.0 port.
+Hey folks,
 
-Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
----
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 210 +++++++++++++++++++++++
- 1 file changed, 210 insertions(+)
+This patchset adds support for the usbdrd phy for exynos8890. The SoC
+features 2 dwc3 controllers and 2 usb phy controllers. One of the USBs
+is used for DRD, whereas the second - for host. The host one seems to
+only be used on the MV8890 SBC, which... I don't think anyone has,
+really.
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index dd660ebe8..546c69442 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -145,6 +145,7 @@
- #define PHYUTMICLKSEL_UTMI_CLKSEL		BIT(2)
- 
- #define EXYNOS5_DRD_PHYRESUME			0x34
-+#define PHYRESUME_FORCE_QACT			BIT(9)
- 
- #define EXYNOS5_DRD_LINKPORT			0x44
- #define LINKPORT_HOST_U3_PORT_DISABLE		BIT(8)
-@@ -1302,6 +1303,158 @@ static const struct phy_ops exynos7870_usbdrd_phy_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static unsigned int
-+exynos8890_usbdrd_utmi_set_refclk(struct phy_usb_instance *inst)
-+{
-+	u32 reg;
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+
-+	/* restore any previous reference clock settings */
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+
-+	reg &= ~PHYCLKRST_REFCLKSEL;
-+	reg |= FIELD_PREP(PHYCLKRST_REFCLKSEL, PHYCLKRST_REFCLKSEL_PAD_REFCLK);
-+
-+	reg &= ~(PHYCLKRST_FSEL_UTMI |
-+		 PHYCLKRST_FSEL_PIPE |
-+		 PHYCLKRST_MPLL_MULTIPLIER |
-+		 PHYCLKRST_SSC_REFCLKSEL);
-+	reg |= FIELD_PREP(PHYCLKRST_FSEL_UTMI, phy_drd->extrefclk);
-+
-+	if (phy_drd->extrefclk == EXYNOS5_FSEL_26MHZ)
-+		reg |= FIELD_PREP(PHYCLKRST_MPLL_MULTIPLIER, 0x60);
-+
-+	return reg;
-+}
-+
-+static void exynos8890_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
-+{
-+	u32 reg;
-+
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+	reg |= PHYCLKRST_EN_UTMISUSPEND;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+
-+	/* UTMI Power Control */
-+	writel(PHYUTMI_OTGDISABLE, phy_drd->reg_phy + EXYNOS5_DRD_PHYUTMI);
-+
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+	reg &= ~PHYTEST_POWERDOWN_HSP;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+}
-+
-+static int exynos8890_usbdrd_phy_init(struct phy *phy)
-+{
-+	int ret;
-+	u32 reg;
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+
-+	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
-+	if (ret)
-+		return ret;
-+
-+	/* Reset USB 3.0 PHY */
-+	writel(0x0, phy_drd->reg_phy + EXYNOS5_DRD_PHYREG0);
-+	writel(0x0, phy_drd->reg_phy + EXYNOS5_DRD_PHYRESUME);
-+
-+	/*
-+	 * Setting the Frame length Adj value[6:1] to default 0x20
-+	 * See xHCI 1.0 spec, 5.2.4
-+	 */
-+	reg =	LINKSYSTEM_XHCI_VERSION_CONTROL |
-+		FIELD_PREP(LINKSYSTEM_FLADJ, 0x20);
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_LINKSYSTEM);
-+
-+	/*
-+	 * Disable HWACG (hardware auto clock gating control). This will force
-+	 * QACTIVE signal in Q-Channel interface to HIGH level, to make sure
-+	 * the PHY clock is not gated by the hardware.
-+	 */
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYRESUME);
-+	reg |= PHYRESUME_FORCE_QACT;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYRESUME);
-+
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
-+	/* Select PHY CLK source */
-+	reg &= ~PHYPARAM0_REF_USE_PAD;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
-+
-+	/* UTMI or PIPE3 specific init */
-+	inst->phy_cfg->phy_init(phy_drd);
-+
-+	/* reference clock settings */
-+	reg = inst->phy_cfg->set_refclk(inst);
-+
-+		/* Digital power supply in normal operating mode */
-+	reg |=	PHYCLKRST_RETENABLEN |
-+		/* Enable ref clock for SS function */
-+		PHYCLKRST_REF_SSP_EN |
-+		/* Enable spread spectrum */
-+		PHYCLKRST_SSC_EN |
-+		/* Power down HS Bias and PLL blocks in suspend mode */
-+		PHYCLKRST_COMMONONN |
-+		/* Reset the port */
-+		PHYCLKRST_PORTRESET;
-+
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+
-+	fsleep(10);
-+
-+	reg &= ~PHYCLKRST_PORTRESET;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+
-+	/* Configure OVC IO usage */
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_LINKPORT);
-+	reg |= LINKPORT_HOST_PORT_OVCR_U3_SEL | LINKPORT_HOST_PORT_OVCR_U2_SEL;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_LINKPORT);
-+
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
-+
-+	return 0;
-+}
-+
-+static int exynos8890_usbdrd_phy_exit(struct phy *phy)
-+{
-+	int ret;
-+	u32 reg;
-+	struct phy_usb_instance *inst = phy_get_drvdata(phy);
-+	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
-+
-+	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
-+	if (ret)
-+		return ret;
-+
-+	reg =	PHYUTMI_OTGDISABLE |
-+		PHYUTMI_FORCESUSPEND |
-+		PHYUTMI_FORCESLEEP;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYUTMI);
-+
-+	/* Resetting the PHYCLKRST enable bits to reduce leakage current */
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+	reg &= ~(PHYCLKRST_REF_SSP_EN |
-+		 PHYCLKRST_SSC_EN |
-+		 PHYCLKRST_COMMONONN);
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
-+
-+	/* Control PHYTEST to remove leakage current */
-+	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+	reg |= PHYTEST_POWERDOWN_SSP | PHYTEST_POWERDOWN_HSP;
-+	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-+
-+	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops exynos8890_usbdrd_phy_ops = {
-+	.init		= exynos8890_usbdrd_phy_init,
-+	.exit		= exynos8890_usbdrd_phy_exit,
-+	.power_on	= exynos5_usbdrd_phy_power_on,
-+	.power_off	= exynos5_usbdrd_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
- static void exynos2200_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	/* Configure non-Samsung IP PHY, responsible for UTMI */
-@@ -1897,6 +2050,15 @@ static const struct exynos5_usbdrd_phy_config phy_cfg_exynos850[] = {
- 	},
- };
- 
-+static const struct exynos5_usbdrd_phy_config phy_cfg_exynos8890[] = {
-+	{
-+		.id = EXYNOS5_DRDPHY_UTMI,
-+		.phy_isol = exynos5_usbdrd_phy_isol,
-+		.phy_init = exynos8890_usbdrd_utmi_init,
-+		.set_refclk = exynos8890_usbdrd_utmi_set_refclk,
-+	},
-+};
-+
- static
- const struct exynos5_usbdrd_phy_tuning exynos7870_tunes_utmi_postinit[] = {
- 	PHY_TUNING_ENTRY_PHY(EXYNOS5_DRD_PHYPARAM0,
-@@ -2025,6 +2187,51 @@ static const struct exynos5_usbdrd_phy_drvdata exynos850_usbdrd_phy = {
- 	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
- };
- 
-+static const char * const exynos8890_core_clk_names[] = {
-+	"ref",
-+};
-+
-+static const char * const exynos8890_clk_names[] = {
-+	"phy", "pipe",
-+};
-+
-+static
-+const struct exynos5_usbdrd_phy_tuning exynos8890_tunes_utmi_postinit[] = {
-+	PHY_TUNING_ENTRY_PHY(EXYNOS5_DRD_PHYPARAM0,
-+			     (PHYPARAM0_TXVREFTUNE | PHYPARAM0_TXRISETUNE |
-+			      PHYPARAM0_TXRESTUNE | PHYPARAM0_TXPREEMPPULSETUNE |
-+			      PHYPARAM0_TXPREEMPAMPTUNE | PHYPARAM0_TXHSXVTUNE |
-+			      PHYPARAM0_TXFSLSTUNE | PHYPARAM0_SQRXTUNE |
-+			      PHYPARAM0_OTGTUNE | PHYPARAM0_COMPDISTUNE),
-+			     (FIELD_PREP_CONST(PHYPARAM0_TXVREFTUNE, 11) |
-+			      FIELD_PREP_CONST(PHYPARAM0_TXRISETUNE, 3) |
-+			      FIELD_PREP_CONST(PHYPARAM0_TXRESTUNE, 2) |
-+			      FIELD_PREP_CONST(PHYPARAM0_TXPREEMPAMPTUNE, 3) |
-+			      FIELD_PREP_CONST(PHYPARAM0_TXHSXVTUNE, 0) |
-+			      FIELD_PREP_CONST(PHYPARAM0_TXFSLSTUNE, 3) |
-+			      FIELD_PREP_CONST(PHYPARAM0_SQRXTUNE, 7) |
-+			      FIELD_PREP_CONST(PHYPARAM0_OTGTUNE, 4) |
-+			      FIELD_PREP_CONST(PHYPARAM0_COMPDISTUNE, 0))),
-+	PHY_TUNING_ENTRY_LAST
-+};
-+
-+static const struct exynos5_usbdrd_phy_tuning *exynos8890_tunes[PTS_MAX] = {
-+	[PTS_UTMI_POSTINIT] = exynos8890_tunes_utmi_postinit,
-+};
-+
-+static const struct exynos5_usbdrd_phy_drvdata exynos8890_usbdrd_phy = {
-+	.phy_cfg		= phy_cfg_exynos8890,
-+	.phy_tunes		= exynos8890_tunes,
-+	.phy_ops		= &exynos8890_usbdrd_phy_ops,
-+	.pmu_offset_usbdrd0_phy	= EXYNOS5_USBDRD_PHY_CONTROL,
-+	.clk_names		= exynos8890_clk_names,
-+	.n_clks			= ARRAY_SIZE(exynos8890_clk_names),
-+	.core_clk_names		= exynos8890_core_clk_names,
-+	.n_core_clks		= ARRAY_SIZE(exynos8890_core_clk_names),
-+	.regulator_names	= exynos5_regulator_names,
-+	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
-+};
-+
- static const struct exynos5_usbdrd_phy_tuning exynos990_tunes_utmi_postinit[] = {
- 	PHY_TUNING_ENTRY_PHY(EXYNOS850_DRD_HSPPARACON,
- 			     (HSPPARACON_TXVREF |
-@@ -2257,6 +2464,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
- 	}, {
- 		.compatible = "samsung,exynos850-usbdrd-phy",
- 		.data = &exynos850_usbdrd_phy
-+	}, {
-+		.compatible = "samsung,exynos8890-usbdrd-phy",
-+		.data = &exynos8890_usbdrd_phy
- 	}, {
- 		.compatible = "samsung,exynos990-usbdrd-phy",
- 		.data = &exynos990_usbdrd_phy
+Code from this patchset can and will be reused for 8895 (I actually based
+it on my old 8895 work but decided to upstream it)
+
+Best regards,
+Ivaylo
+
+Changes in v2:
+- fix up the messed series (a patch from another subsystem was accidentally
+  sent)
+
+Ivaylo Ivanov (2):
+  dt-bindings: phy: samsung,usb3-drd-phy: add exynos8890 support
+  phy: exynos5-usbdrd: support the exynos8890 USBDRD controller
+
+ .../bindings/phy/samsung,usb3-drd-phy.yaml    |  25 +++
+ drivers/phy/samsung/phy-exynos5-usbdrd.c      | 210 ++++++++++++++++++
+ 2 files changed, 235 insertions(+)
+
 -- 
 2.43.0
 
