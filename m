@@ -4,150 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A154CAC597
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Sep 2025 12:02:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD822CAC592
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Sep 2025 13:00:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=seHAQI0JragcCHWHPPS7XQom22CIn4PaXlL+heDwa2U=; b=kY7xNxE5xAyP3j
-	37OnEv5ICkhvhY9hDRb3wbNZ6lTC6jeedj9q37+Zyp/fx4JQI6UVyvlhCBlaNLAJfrfGsuXF0nn1L
-	tCXGGEckeH78HJNohQBfdZBnSZZ+nwX9PgIcI5gLZRK0JRDZQXT3til43GmHMDVnr3KUv0CZozlP/
-	egsh+9SWMZqSnvpYHYrSSyM4w2orSljmkxADkZf8iyfEeBDFPS8tIFHmbP7J9T2o1mBc9Eo0aJAWM
-	fxEo3UsZm43IkkOS4/JFzsbfBO3RFm5cF6gHIP3XR28VlZBlpP4mfNoMYPzZJpRY6yN9uTwQeXY0A
-	cjJwyPYke1oqxGKRbYJw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MLS49okX4idfMGo5UcGh6XtkTgBV7LecUlHUgltXScA=; b=h8qRI1rfxVBh12
+	QfTMHBpYpa/J8R3yLvXMjfarlw2ZrO0Dfl+zL4NPP1m4v3Q6lMpqscEiLSrdtKUWcV6CdhzrJbZlI
+	8qM77LEv2xUBzTrOSGlWEVGZD1ZE1mRBdNHTZpLWvn4/ggd4LAooFJQlJCLF/0CL9UtSKFVkSLMT5
+	EBfWIJc2Oekz/Sb0VMRq1UtoFEqzswWgR8A49CZKPjai2Z/CmOSaoio1dZO2wp82IoGWFbtWy/gOu
+	RvuZH17UTEI6cK3oGH4b8tSrqutcdZafDazXdqhvcowbSWtgW32PjZbLudPn3X51c3BD7vkjok+DF
+	7OZp7SESb+RslVzauUnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uy7uf-000000043RL-0CE9;
-	Mon, 15 Sep 2025 12:02:29 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uy7ud-000000043R3-03YI
-	for linux-phy@bombadil.infradead.org;
-	Mon, 15 Sep 2025 12:02:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=IvAeXnBrUm3WtAxyNHUahdmztvfLEqQROq3blJbaPBE=; b=XLaW+2D/LuCyNW68rGxdkywB6+
-	3+ei3c1BttmvoUjN2STh2b+BdVWCD+UgtJj1N9WeSFJTCUj91IxwZd/EYfnFazFPqsixQheO5Qq08
-	Gae1IMv4X+jAGc0Ut0HfFb59BVH8/R+kh4Ef9ef+NqjXvYbLCHEdXrnoRpvlZdWdRW4Xh897HPVaS
-	2ulS8SsViKtDP/FgvDh0nc0I50bQFDyEofT4MPr+nBZajPzfdri8qCeBrB9ycXCMiz3hg8nNozOSl
-	ODHfsMCiSjNwpcqCEIKBAk24gGkgyoszUVhZ3deBMOmvkq2ll6LR+IMiPKAW23DyhjrL6mn/1BVzZ
-	e21MZbsg==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uy7uZ-00000006xxt-3VTU
+	id 1uy8oW-00000004EQI-2DYG;
+	Mon, 15 Sep 2025 13:00:12 +0000
+Received: from zg8tmja5ljk3lje4mi4ymjia.icoremail.net ([209.97.182.222])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uy8oT-00000004EOa-1qbj
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Sep 2025 12:02:25 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58F8FgkW020553
-	for <linux-phy@lists.infradead.org>; Mon, 15 Sep 2025 12:02:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IvAeXnBrUm3WtAxyNHUahdmztvfLEqQROq3blJbaPBE=; b=moxlKa93gMoU+EA+
-	pPc8xR2QA7jLN4py33tSgd6PAQWu3exrp2osAqFc4rJh4hH3YVUl7p8Kd/06k6yf
-	RUjEH/fMsY4C1A37rD4e8YJ/BfpqADJtaPT0wS2XQlvPp3yqLExlzDM/1lYUebxd
-	z3hgvQQCpvp8RoVhF8/pYmeXr9h4+TY0U2WYlHB1Gyrpmuo57xcKt5u7LW8Jxr89
-	1skN0wqWQkD8ydd0gnHU1xmQEW2V+K/ALZIdB4FleK/ZufdxfqIyeN6n779bczUT
-	ZSk/Rn3YXBCr2p0pCjPWect+5M7WedM4awVW6QV32zvoeMQGySTYzCAeKTtJuK5D
-	EXXoPw==
-Received: from mail-il1-f200.google.com (mail-il1-f200.google.com [209.85.166.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4950pv4trt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 15 Sep 2025 12:02:18 +0000 (GMT)
-Received: by mail-il1-f200.google.com with SMTP id e9e14a558f8ab-424019a3dfaso10080385ab.2
-        for <linux-phy@lists.infradead.org>; Mon, 15 Sep 2025 05:02:18 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1757937738; x=1758542538;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IvAeXnBrUm3WtAxyNHUahdmztvfLEqQROq3blJbaPBE=;
-        b=R6eW2OYWVWC92viGjY5f2UJdEzxgo3L9wGKgSfEjsNzgsM+Lmw1hjnm7BPIj0/o0SY
-         3ZOMd9UGzLamGcIhPsdIJM4WMSwKG6CphF0t802x/rlHdw+xxxNv7jQupeNXZrFUFVPa
-         MWvaVpz2H+/S4+aSQlkxGDmiWdtzH18n9tGE5AyRuQBXQpalnDEXOdu2GG/hr5uk/qG6
-         VaNLzBgM01vu7yoZHvTEvccHZPhd6Zq/XUZHCdnanefiIl0Ea98hFdQj7OJQkpbFm1HN
-         MVYRAr6q5GioEEY/nYDfSP98LlvJPQEmj/Yi7TJcv01mATFi65BKFQEncWSeY5csjf+k
-         nRqw==
-X-Forwarded-Encrypted: i=1; AJvYcCXr8dcC1fnIXrSsPXUi7hYZCKfDNfRFxoqa3+u1bbecs9Eq1ywzWdszUfhe3C+fMhGs1K6W8mOHE4s=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyleOXkuUM0HfvXm9ztuQ7jNYLXkgySZfemyJEHDkhoCUodXoMH
-	rKKsTdz582ll//6FH8YLPZwZ6fWdfFygkImujAHTFsRF3xN78xh8qGbjrWWRqDDj4d2pvlIyRX6
-	as5WVZ/U2a9T7pCE3rg9rrqlBkxB7OH6n2ZHkn+OzqbppI6g6K1K6VrX/rm7efwryNVmO
-X-Gm-Gg: ASbGnct0J7dL8wt00jVE/p4GyvyyDDgNSZi+ovuoOmG+D7ziUfQJCLVTuN0OP5Tlq53
-	yaodDujI5SPsrtYay5f5NWvio7C/Q0O8J4QF+M6CfVtOR7klFrUA28KqK78jBnGKFMhro4cycdw
-	2ywOWP+dY7zXdyzLuWjR3rAYT0OZemSd95hX0+hggx/e2iSFHQgW40gF1aq80pJ0WNsQbwiI9XZ
-	rF0jHpC4a/5YIIOB1H8MBI9PVfemCZYU+93uTYzEm9Xz8TLE3sug1r6ebqSSqo5nRJy8JEDP1Hm
-	s/O6swF2xMJ3k3AdcmOd6Aj4hnyz3tOSQnbo8bjb43vqgyIZ383qstQF3nRXNSTraXdBIbRh9sX
-	K1h5nFUp7AIrHCq8ghwLwA2pUliTRBCtmJyH7k0gXjGAvfHJs34Jm
-X-Received: by 2002:a05:6e02:3805:b0:424:db:3f52 with SMTP id e9e14a558f8ab-42400db43c7mr31984475ab.30.1757937737602;
-        Mon, 15 Sep 2025 05:02:17 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGwSFZp4+rn504zHIkvMkDte9o/xIPIokYa2nEOEEH2hcptgXuwuAlyF+4kk8sIPNl3j0f/aA==
-X-Received: by 2002:a05:6e02:3805:b0:424:db:3f52 with SMTP id e9e14a558f8ab-42400db43c7mr31983785ab.30.1757937736970;
-        Mon, 15 Sep 2025 05:02:16 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-353725e1bc6sm19307291fa.27.2025.09.15.05.02.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 Sep 2025 05:02:15 -0700 (PDT)
-Date: Mon, 15 Sep 2025 15:02:13 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
-        li.liu@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Subject: Re: [PATCH v4 07/13] phy: qcom: qmp-usbc: Add DP PHY configuration
- support for QCS615
-Message-ID: <yvhj3blwga7dkc2cr5prc7covfcw5lrg56fptynn2j3pbmtrk3@el4qlbecbg2o>
-References: <20250911-add-displayport-support-for-qcs615-platform-v4-0-2702bdda14ed@oss.qualcomm.com>
- <20250911-add-displayport-support-for-qcs615-platform-v4-7-2702bdda14ed@oss.qualcomm.com>
- <sy4kyh3kd6s4nr75unt5r6gxnyeqq6bfjj4tizwiw2fvbw4ala@i3theqmwiv3d>
- <1741620e-1f92-4db9-8135-965a96f12590@oss.qualcomm.com>
+	Mon, 15 Sep 2025 13:00:11 +0000
+Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
+	by app1 (Coremail) with SMTP id TAJkCgAHHxDLDchoKHHRAA--.49807S2;
+	Mon, 15 Sep 2025 20:59:57 +0800 (CST)
+From: Yulin Lu <luyulin@eswincomputing.com>
+To: dlemoal@kernel.org,
+	cassel@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	linux-ide@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	linux-phy@lists.infradead.org
+Cc: ningyu@eswincomputing.com,
+	zhengyu@eswincomputing.com,
+	linmin@eswincomputing.com,
+	huangyifeng@eswincomputing.com,
+	fenglin@eswincomputing.com,
+	lianghujun@eswincomputing.com,
+	Yulin Lu <luyulin@eswincomputing.com>
+Subject: [PATCH v4 0/3] Add driver support for Eswin EIC7700 SoC SATA Controller and PHY
+Date: Mon, 15 Sep 2025 20:59:02 +0800
+Message-Id: <20250915125902.375-1-luyulin@eswincomputing.com>
+X-Mailer: git-send-email 2.31.1.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1741620e-1f92-4db9-8135-965a96f12590@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: PaURu9VbH_Rhpy5p3bHMNc_E-6lk7C5d
-X-Authority-Analysis: v=2.4 cv=PsWTbxM3 c=1 sm=1 tr=0 ts=68c8004a cx=c_pps
- a=i7ujPs/ZFudY1OxzqguLDw==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
- a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=gzlAuExvAKsCTSaEeBUA:9 a=3ZKOabzyN94A:10
- a=wPNLvfGTeEIA:10 a=Ti5FldxQo0BAkOmdeC3H:22
-X-Proofpoint-GUID: PaURu9VbH_Rhpy5p3bHMNc_E-6lk7C5d
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTEzMDAyOSBTYWx0ZWRfX4c9DSl/ODsS3
- 6/ETPeKzkDFSsegwY6eORkgDymSOxAh5imvGYw7YNTSlgh9CEUmbJ8USQyiYZ3mj84ksQsBgTRe
- bg2FpQUbUuzUb0mhY8z4It/sXdpmbjJTJt7TGWZFWY6czaKsObY0Jf44C/yDO2fb9BZgEV1Lz1u
- l+og5s9XYO39eillk8mCiRqGt4IxSXY42ivWcZ60XQYjzPn8lOuVNWIjHoTW2Ms5WpYZ9FTDzpA
- BEI8gkRIBaJk6PoSzItl8zRoGB2Wi9aSJpyvHaI11qfSH1OZY6kHKAz4WDgKSKkFbyZtMBo64eh
- KbUGyb2Fkb+JhnHBm0HQgJTZPkxRQdrGfJe+b3+BI/w+CRv1K1SWpMW0XeSamtx7fFutcIXOG0z
- MZbvEKSA
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-15_05,2025-09-12_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 clxscore=1015 malwarescore=0 suspectscore=0
- spamscore=0 bulkscore=0 adultscore=0 impostorscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2509130029
+X-CM-TRANSID: TAJkCgAHHxDLDchoKHHRAA--.49807S2
+X-Coremail-Antispam: 1UD129KBjvJXoWxZF4DtF1ktFWfWryxCrykZrb_yoWrtw4kpa
+	ykCry2yrn5tryxta97Ja1I9a4Svan7GFW3urs3Jw1UZwsxXFyvvwsak3WYvFykCw4kKryY
+	qF4aqFy5CFyUAFJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUU9l14x267AKxVW5JVWrJwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4j
+	6r4UJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oV
+	Cq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0
+	I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r
+	4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628v
+	n2kIc2xKxwCY1x0262kKe7AKxVW8ZVWrXwCY02Avz4vE-syl42xK82IYc2Ij64vIr41l4I
+	8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AK
+	xVWUGVWUWwC2zVAF1VAY17CE14v26r4a6rW5MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcV
+	AFwI0_Jr0_JF4lIxAIcVC0I7IYx2IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8I
+	cIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r
+	4j6r4UJbIYCTnIWIevJa73UjIFyTuYvjTRNJ5oDUUUU
+X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250915_130224_172428_934AEC78 
-X-CRM114-Status: GOOD (  22.83  )
+X-CRM114-CacheID: sfid-20250915_060009_734240_D48C08F4 
+X-CRM114-Status: GOOD (  18.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,83 +86,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 15, 2025 at 07:29:08PM +0800, Xiangxu Yin wrote:
-> =
+This series depends on the config option patch [1].
 
-> On 9/12/2025 6:12 PM, Dmitry Baryshkov wrote:
-> > On Thu, Sep 11, 2025 at 10:55:04PM +0800, Xiangxu Yin wrote:
-> >> Introduce DisplayPort PHY configuration routines for QCS615, including
-> >> aux channel setup, lane control, voltage swing tuning, clock config and
-> >> calibration. These callbacks are registered via qmp_phy_cfg to enable =
-DP
-> >> mode on USB/DP switchable Type-C PHYs.
-> >>
-> >> Add register define for QMP_DP_PHY_V2 series.
-> >>
-> >> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-> >> ---
-> >>  drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h |  21 +++
-> >>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c      | 251 +++++++++++++++++=
-+++++++++
-> >>  2 files changed, 272 insertions(+)
-> >>
-> >> +static int qcs615_qmp_calibrate_dp_phy(struct qmp_usbc *qmp)
-> >> +{
-> >> +	static const u8 cfg1_settings[] =3D {0x13, 0x23, 0x1d};
-> > Are these the actual values or is it a C&P from the combo PHY?
-> =
+[1] https://lore.kernel.org/all/20250825132427.1618089-3-pinkesh.vaghela@einfochips.com/
 
-> =
+Updates:
+  v4 -> v3:
+    - eswin,eic7700-ahci.yaml
+      - Fix grammatical errors in patch subject and commit message
+      - Add an explanation in the commit message of patch 1 for retaining the
+        "ports-implemented" field, which Rob Herring suggested to remove
+        in the review comments on v2.
+        Link to Rob Herring's review:
+        https://lore.kernel.org/lkml/CAL_JsqKFotNLZZXwiy7S6K8qXLdGRAnsa-1zvZRDQBE39Gf5kg@mail.gmail.com/
+        Link to my question and Niklas Cassel's reply:
+        https://lore.kernel.org/lkml/aLBUC116MdJqDGIJ@flawful.org/
+        In this reply, Niklas Cassel mentioned his view:
+        If the ports-implemented register gets reset from
+        ahci_platform_assert_rsts(), then it seems acceptable to
+        retain the ports-implemented property in the device tree.
+        This aligns with our design.
+        Link to my reply:
+        https://lore.kernel.org/lkml/4ab70c6a.8be.198f47da494.Coremail.luyulin@eswincomputing.com/
+        Link to Niklas Cassel's question and my further explanation:
+        https://lore.kernel.org/lkml/aLlYkZWBaI5Yz6fo@ryzen/
+        https://lore.kernel.org/lkml/7206383a.d98.19918c22570.Coremail.luyulin@eswincomputing.com/
+    - eswin,eic7700-sata-phy.yaml
+      - Fix grammatical errors in patch subject and commit message
+      - Adjust the position of reg in the properties and required arrays
+      - Add reviewed-by tag of Krzysztof Kozlowski
+    - phy-eic7700-sata.c
+      - Correct the loop condition in wait_for_phy_ready() to use the current
+        jiffies instead of the fixed start time
+      - Change the return value from -EFAULT to -ETIMEDOUT to correctly
+        indicate a timeout condition
+      - Remove redundant clock disable handling in probe error path, as
+        SATA_SYS_CLK_EN is managed in phy_init() and phy_exit()
+      - Use dev_err_probe return in probe
+      - Reorder local variables to follow reverse Xmas tree order
+      - Wrap each line in the extended comments to 80 columns before splitting lines
+      - Adjust the position of `#include <linux/io.h>` for proper ordering
+    - Link to v3: https://lore.kernel.org/lkml/20250904063427.1954-1-luyulin@eswincomputing.com/
 
-> These configurations are the same as those in combo, and I have compared
-> that they match the downstream sm6150 project configuration.
+  v2 -> v3:
+    - Use full name in "From" and "Signed-off-by" fields information
+    - eswin,eic7700-ahci.yaml
+      - Remove the introduction to the reg, interrupts, phys, and phy-names fields
+      - Modify the usage of the clocks field in the examples
+      - Correct the order of dt properties
+    - phy-eic7700-sata.c
+      - Register operations use the GENMASK macro and FIELD_PREP instead of
+        the original bit offset method, and add "#include <linux/bitfield.h>"
+      - Modify some macro definition names.
+      - Remove the redundant initialization assignments for "ret" and "val"
+      - Delete ".suppress_bind_attrs = true"
+      - Modify the driver name
+      - Add "#include <linux/io.h>" to fix the robot test issue
+    - Link to v2: https://lore.kernel.org/lkml/20250819134722.220-1-luyulin@eswincomputing.com/
 
-Let's keep them as is, thanks for the confirmation that you checked it
-against the vendor kernel.
+  v2 -> v1:
+    - Delete the original controller driver and use ahci_dwc.c instead
+    - Add eswin,eic7700-ahci.yaml
+      - Correct the descriptions of reset, interrupt and other
+        hardware resources for the sata controller on EIC7700 SoC
+      - The clocks for both sata controller and sata PHY are controlled
+        via a register bit in the HSP bus and are not registered in the
+        clock tree. Clock are managed within the PHY driver, therefore
+        it is not described in this document
+      - Add $ref: snps,dwc-ahci-common.yaml#.
+    - Add eswin,eic7700-sata-phy.yaml
+      - Add this file to include the description of the PHY on EIC7700 SoC
+    - Add an eswin directory under the PHY driver path, and include the SATA
+      PHY driver code for EIC7700 SoC
+    - Link to v1: https://lore.kernel.org/all/20250515085114.1692-1-hehuan1@eswincomputing.com/
 
-> =
+Yulin Lu (3):
+  Document the EIC7700 SoC sata ahci
+  dt-bindings: phy: eswin: Document the EIC7700 SoC SATA PHY
+  phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
 
-> From hardware programing guide, only defined AUX sequance with=A0
-> DP_PHY_PD_CTL set to 0x3d and DP_PHY_AUX_CFG1 set to 0x13.
-> =
+ .../bindings/ata/eswin,eic7700-ahci.yaml      |  79 +++++++
+ .../bindings/phy/eswin,eic7700-sata-phy.yaml  |  36 ++++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/eswin/Kconfig                     |  14 ++
+ drivers/phy/eswin/Makefile                    |   2 +
+ drivers/phy/eswin/phy-eic7700-sata.c          | 192 ++++++++++++++++++
+ 7 files changed, 325 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/ata/eswin,eic7700-ahci.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
+ create mode 100644 drivers/phy/eswin/Kconfig
+ create mode 100644 drivers/phy/eswin/Makefile
+ create mode 100644 drivers/phy/eswin/phy-eic7700-sata.c
 
-> Shall I update table to {0x13} only?
-> =
+-- 
+2.25.1
 
-> =
 
-> >> +	u8 val;
-> >> +
-> >> +	qmp->dp_aux_cfg++;
-> >> +	qmp->dp_aux_cfg %=3D ARRAY_SIZE(cfg1_settings);
-> >> +	val =3D cfg1_settings[qmp->dp_aux_cfg];
-> >> +
-> >> +	writel(val, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG1);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >>  static int qmp_usbc_usb_power_on(struct phy *phy)
-> >>  {
-> >>  	struct qmp_usbc *qmp =3D phy_get_drvdata(phy);
-> >>
-> >> -- =
-
-> >> 2.34.1
-> >>
-
--- =
-
-With best wishes
-Dmitry
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
