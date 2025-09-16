@@ -4,81 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CA04CAC59A
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Sep 2025 08:45:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B233ECAC598
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Sep 2025 13:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3poDmfPzGA7vScleeCd0JngD2al6IM2mvkf8wcfxbB0=; b=weRuZep1TA+VFb
-	+v6B1KKeO9vahzWr/+/LL15sZL9sdo5bGOx3koJqqVwFtCZtWmNt21H7j0KRTo/JuCjfMy4eUVPBS
-	2+tm4TnCpspbMCQWiPknsCzJT7lz/sJdPuVALCmOA0W5vFrL8uKMnHHPPNA8KG5qGH4ke58JPBh63
-	s95acK3aPaaD52PkRyhV/vTUjigVTnFYRxvewS/VyvytfQWfspv0xxYLo+YXd5/JXV/Ow6VU1jo6X
-	SB9IBh7hcNOd16xzz6EhfO2O1lWG+9NiQnac45tFKEXfJyd8PHThxzaer+WSIyiSRS8nRG2M0BF1p
-	oqXURKZnfscQK22XI8EA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=7w3AB2KjI7cGNXDaDEhtfH5z0MFaY8hesADeUAzl9GY=; b=VocdjTdfsgtUldeXHm+cljT36L
+	OSf/fNN+hdWeW9tSb9uNWjT4LdJlUqBy4wAUSukfnR0rT7WopXeq5BKFvzH1+f0aRmoju8nKvTFf8
+	Luao/GhYJTlcQ5htBGSNA33jXuQ+LWvQItfR5QEcIsYwjP5jaKsBEGc63benuZNH0bb+4Gt+WaJxm
+	TyD5Yd5kkcWZJF4hNvVcIsXLTWIw8aqY+h1PBqTaQgUPFWDszasvuFGkqvbN1meTmmu/ZbB4u1Has
+	mGpmBJvroXWj4RCoy2EYXiveigVOZ753oSxWi8v+CTdo8Bm2AhsiCcfoU6v3he1Vy1PEw+sSos9F3
+	vwWYaEiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyRJH-00000007FGv-1M1L;
-	Tue, 16 Sep 2025 08:45:11 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1uyVg9-00000007vfO-21da;
+	Tue, 16 Sep 2025 13:25:05 +0000
+Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyRJD-00000007FDh-22XW
+	id 1uyVg4-00000007veA-1eaS
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Sep 2025 08:45:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1758012305;
-	bh=Rq6TkIkSBADfLR9b6wNlQvCvpbW72EiJCDthDlZDdos=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=de9h4BvvOg8Et+aLWhbScThBOg5X84zB5Ji32DBvAvKm6louVzaVkFIaVYEt9+T4f
-	 5mHzwOK8Wt70M3TTYgWoppC3lyN5JzBOWRyjGCGWWlfcnrYdCyGN2SbL+DgGhkw+kl
-	 GdAO1/ieyGMZqdaJ3KmzULJumWqz/i+/l7jSGu4Mcb4LsWEzefrb5FhzFtNq30YPio
-	 UcazwWEKLIx7aWMeIrcTKu4u7NWfS9cpqzlYHZND6waLZGrMB5U0sNZfhhHfxyfPo1
-	 Cwfaar54FJbxCBzcgeQHGW5mkzqXXJCqr6CySogEfjDUdT+Hs608tccIq2Apk7z3Ya
-	 kSYd8aaDHIWpQ==
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C23AD17E13B5;
-	Tue, 16 Sep 2025 10:45:04 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: sboyd@kernel.org
-Cc: jic23@kernel.org,
-	dlechner@baylibre.com,
-	nuno.sa@analog.com,
-	andy@kernel.org,
-	arnd@arndb.de,
-	gregkh@linuxfoundation.org,
-	srini@kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	sre@kernel.org,
-	krzysztof.kozlowski@linaro.org,
-	u.kleine-koenig@baylibre.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org,
-	kernel@collabora.com,
-	wenst@chromium.org,
-	casey.connolly@linaro.org,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v4 7/7] iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
-Date: Tue, 16 Sep 2025 10:44:45 +0200
-Message-ID: <20250916084445.96621-8-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
+	Tue, 16 Sep 2025 13:25:04 +0000
+Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-b042eb09948so1125865666b.3
+        for <linux-phy@lists.infradead.org>; Tue, 16 Sep 2025 06:24:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758029098; x=1758633898; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=gwfKh8YcNEbswE2yYv8jHBhvIioj0iL2kRQaWZR7TS4=;
+        b=DC5FgF90PsKrrrzp7fkHTsTWvnCTSg87bIySRmWRko8ecnPpMx+8jOc9WK3m7sFWHk
+         2J7SPMgKJ7z0/q0jwAWurb5T95FJv/17HDhUVfWlWgBLOdekjpBe+8rDN8ppYlv6ZaqV
+         DbwLSON6WPpV6gVt9hUQPtDgFrPknmELzSVE6mw0DWkpI4EW0XdDF9IPpzBKPMA2NGSV
+         9MrlJSM222JIUkm7O1+UojsFvVbi738qprYnlLlva4uA6W/YXXpaqqdCJsrcerw/v7Zh
+         j5L+WL1t5wgsqb+nsHvYD2Meg/4UKOWAquAor2g95UpZN23IXrMniNrHPY2mTmWzBrvF
+         iklw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758029098; x=1758633898;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gwfKh8YcNEbswE2yYv8jHBhvIioj0iL2kRQaWZR7TS4=;
+        b=wWw71VaK5i1OQiagXOp9slTr1bsPND1TjyyIakqm/QM87+TlypfwMxJUg9lwyxSeVA
+         /5VPs17DNF9yAGPv31r7/L7DRxLe2GVW3ydl+KyLfFeHuxcZ9DCE+IJsVtkIZWZwRKe9
+         EppmK9YR2pTQGBBmPYbSBCygLflh1mGA8z8UJe1UTwPV4Oq0HWFwOmIkduabgGc013bz
+         H2dh5if5n3UoQU3whZOswoo858S17liXlicJV62GiA71ZMd08IQzesoBaUhxcB49Wkmb
+         nM/hWVZixdmNO41GDxs6rHoBFhAXe6wF3nrQibPPptt0ICCWJvYGIVbeL/DnuSyecxIx
+         HN4A==
+X-Forwarded-Encrypted: i=1; AJvYcCWA0beuipSB1L3rpgsb995krWaOMHiyattU0nsBoIz/mZk+UnARBjmUMAmhg1evZu238+XMbzZpFC8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwAf4opaCvDcZGOHy6UvWTAyWP+iaxN7tufKAWtERQ17LQjduXV
+	yZxmuxVjxyp1qYgdj98FqN/tDvxxiCoH83RgvZcch3ogDCP9SyU16hVLc0ZMKF56MGM=
+X-Gm-Gg: ASbGncvfm8E2GczHqPGtfnLS2ntdkT9b01D/bMfq/wW7t0qhOYZVmyuRYANESLaSRz6
+	DTr8JVJH8NhjcbxiWyoNTT7LyUXLxGbLVCJ9KYMNdFftQaLqkBbGAPhBby2q5R7yDj82DQWfSgU
+	FMQx9y1FzWs9//Qmc1z0QS1Z7+bWwUy0lpOEqxJ9CVD53gpLooz+2xj4WxxvtgUc5EX2cGsdsbe
+	yvvM33JDu68t8ueM7K2XvWBr1guE/NBNom7L04zP+Ye2vWcEQjrxU92Y0NUuPhO9pB0ZzYY5nVx
+	+csB5LB8Cmr6KefvPFUzJb9jf8lw9Kc8kas5ewDAafFQ9GlEzvHZwk/ah5U4fadhZEw5h8pMtFz
+	xpbiAcr/FBUuL6fay2kH4YFCaz954+nEJLi0VRiUJOi5R6xnarpaGsSduYpSPiW6s
+X-Google-Smtp-Source: AGHT+IE9kjhldcCIBvjPr9jo7lRPPHVqNSYEJDmsT9jH1F0DRGqPEBku/9BloIv9jKtuTpavenfoLw==
+X-Received: by 2002:a17:907:d16:b0:afe:c6a0:d116 with SMTP id a640c23a62f3a-b07c3572d31mr1812203466b.18.1758029098143;
+        Tue, 16 Sep 2025 06:24:58 -0700 (PDT)
+Received: from localhost (p200300f65f06ab0400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f06:ab04::1b9])
+        by smtp.gmail.com with UTF8SMTPSA id a640c23a62f3a-b07b32f202dsm1164355266b.84.2025.09.16.06.24.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 16 Sep 2025 06:24:57 -0700 (PDT)
+Date: Tue, 16 Sep 2025 15:24:56 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com, 
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, 
+	srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org, 
+	krzysztof.kozlowski@linaro.org, linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
+	kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org, 
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
 References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
+ <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
+In-Reply-To: <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250916_014507_699452_E8825FEE 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20250916_062500_457271_AAFA16D1 
+X-CRM114-Status: GOOD (  15.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,264 +99,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5487830991542004745=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This driver doesn't need to add any register base address to any
-regmap call anymore since it was migrated to register as a SPMI
-subdevice with its own regmap reg_base, which makes the regmap
-API to automatically add such base address internally.
 
-Since the iadc_{read,write,read_result}() functions now only do
-call regmap_{read,write,bulk_read}() and nothing else, simplify
-the driver by removing them and by calling regmap APIs directly.
+--===============5487830991542004745==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="36zni4ukkwfibixi"
+Content-Disposition: inline
 
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-Link: https://lore.kernel.org/r/20250722101317.76729-8-angelogioacchino.delregno@collabora.com
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Link: https://lore.kernel.org/r/20250730112645.542179-8-angelogioacchino.delregno@collabora.com
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/iio/adc/qcom-spmi-iadc.c | 83 ++++++++++++--------------------
- 1 file changed, 30 insertions(+), 53 deletions(-)
 
-diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
-index 67096952b229..7d46ec2d1a30 100644
---- a/drivers/iio/adc/qcom-spmi-iadc.c
-+++ b/drivers/iio/adc/qcom-spmi-iadc.c
-@@ -113,77 +113,59 @@ struct iadc_chip {
- 	struct completion complete;
- };
- 
--static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
--{
--	unsigned int val;
--	int ret;
--
--	ret = regmap_read(iadc->regmap, offset, &val);
--	if (ret < 0)
--		return ret;
--
--	*data = val;
--	return 0;
--}
--
--static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
--{
--	return regmap_write(iadc->regmap, offset, data);
--}
--
- static int iadc_reset(struct iadc_chip *iadc)
- {
--	u8 data;
-+	u32 data;
- 	int ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_read(iadc, IADC_PERH_RESET_CTL3, &data);
-+	ret = regmap_read(iadc->regmap, IADC_PERH_RESET_CTL3, &data);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
- 	data |= IADC_FOLLOW_WARM_RB;
- 
--	return iadc_write(iadc, IADC_PERH_RESET_CTL3, data);
-+	return regmap_write(iadc->regmap, IADC_PERH_RESET_CTL3, data);
- }
- 
- static int iadc_set_state(struct iadc_chip *iadc, bool state)
- {
--	return iadc_write(iadc, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
-+	return regmap_write(iadc->regmap, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
- }
- 
- static void iadc_status_show(struct iadc_chip *iadc)
- {
--	u8 mode, sta1, chan, dig, en, req;
-+	u32 mode, sta1, chan, dig, en, req;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_MODE_CTL, &mode);
-+	ret = regmap_read(iadc->regmap, IADC_MODE_CTL, &mode);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_DIG_PARAM, &dig);
-+	ret = regmap_read(iadc->regmap, IADC_DIG_PARAM, &dig);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CH_SEL_CTL, &chan);
-+	ret = regmap_read(iadc->regmap, IADC_CH_SEL_CTL, &chan);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CONV_REQ, &req);
-+	ret = regmap_read(iadc->regmap, IADC_CONV_REQ, &req);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+	ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_EN_CTL1, &en);
-+	ret = regmap_read(iadc->regmap, IADC_EN_CTL1, &en);
- 	if (ret < 0)
- 		return;
- 
-@@ -199,34 +181,34 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 
- 	/* Mode selection */
- 	mode = (IADC_OP_MODE_NORMAL << IADC_OP_MODE_SHIFT) | IADC_TRIM_EN;
--	ret = iadc_write(iadc, IADC_MODE_CTL, mode);
-+	ret = regmap_write(iadc->regmap, IADC_MODE_CTL, mode);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Channel selection */
--	ret = iadc_write(iadc, IADC_CH_SEL_CTL, channel);
-+	ret = regmap_write(iadc->regmap, IADC_CH_SEL_CTL, channel);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Digital parameter setup */
- 	decim = IADC_DEF_DECIMATION << IADC_DIG_DEC_RATIO_SEL_SHIFT;
--	ret = iadc_write(iadc, IADC_DIG_PARAM, decim);
-+	ret = regmap_write(iadc->regmap, IADC_DIG_PARAM, decim);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* HW settle time delay */
--	ret = iadc_write(iadc, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
-+	ret = regmap_write(iadc->regmap, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
-+	ret = regmap_write(iadc->regmap, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (IADC_DEF_AVG_SAMPLES)
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
- 	else
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, 0);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, 0);
- 
- 	if (ret < 0)
- 		return ret;
-@@ -239,19 +221,19 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 		return ret;
- 
- 	/* Request conversion */
--	return iadc_write(iadc, IADC_CONV_REQ, IADC_CONV_REQ_SET);
-+	return regmap_write(iadc->regmap, IADC_CONV_REQ, IADC_CONV_REQ_SET);
- }
- 
- static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- {
- 	unsigned int count, retry;
- 	int ret;
--	u8 sta1;
-+	u32 sta1;
- 
- 	retry = interval_us / IADC_CONV_TIME_MIN_US;
- 
- 	for (count = 0; count < retry; count++) {
--		ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+		ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 		if (ret < 0)
- 			return ret;
- 
-@@ -267,11 +249,6 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- 	return -ETIMEDOUT;
- }
- 
--static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
--{
--	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
--}
--
- static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- {
- 	unsigned int wait;
-@@ -296,7 +273,7 @@ static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- 	}
- 
- 	if (!ret)
--		ret = iadc_read_result(iadc, data);
-+		ret = regmap_bulk_read(iadc->regmap, IADC_DATA, data, sizeof(*data));
- exit:
- 	iadc_set_state(iadc, false);
- 	if (ret < 0)
-@@ -392,10 +369,10 @@ static int iadc_update_offset(struct iadc_chip *iadc)
- 
- static int iadc_version_check(struct iadc_chip *iadc)
- {
--	u8 val;
-+	u32 val;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_PERPH_TYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_TYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -404,7 +381,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_PERPH_SUBTYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_SUBTYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -413,7 +390,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_REVISION2, &val);
-+	ret = regmap_read(iadc->regmap, IADC_REVISION2, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -428,7 +405,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- {
- 	int ret, sign, int_sense;
--	u8 deviation;
-+	u32 deviation;
- 
- 	ret = of_property_read_u32(node, "qcom,external-resistor-micro-ohms",
- 				   &iadc->rsense[IADC_EXT_RSENSE]);
-@@ -440,7 +417,7 @@ static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_NOMINAL_RSENSE, &deviation);
-+	ret = regmap_read(iadc->regmap, IADC_NOMINAL_RSENSE, &deviation);
- 	if (ret < 0)
- 		return ret;
- 
--- 
-2.51.0
+--36zni4ukkwfibixi
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+MIME-Version: 1.0
 
+Hello,
+
+On Tue, Sep 16, 2025 at 10:44:40AM +0200, AngeloGioacchino Del Regno wrote:
+> @@ -119,19 +128,24 @@ static int sdam_probe(struct platform_device *pdev)
+>  	if (!sdam)
+>  		return -ENOMEM;
+> =20
+> -	sdam->regmap =3D dev_get_regmap(pdev->dev.parent, NULL);
+> -	if (!sdam->regmap) {
+> -		dev_err(&pdev->dev, "Failed to get regmap handle\n");
+> -		return -ENXIO;
+> -	}
+> +	sparent =3D to_spmi_device(dev->parent);
+> +	sub_sdev =3D devm_spmi_subdevice_alloc_and_add(dev, sparent);
+> +	if (IS_ERR(sub_sdev))
+> +		return PTR_ERR(sub_sdev);
+> =20
+> -	rc =3D of_property_read_u32(pdev->dev.of_node, "reg", &sdam->base);
+> +	rc =3D of_property_read_u32(dev->of_node, "reg", &sdam_regmap_config.re=
+g_base);
+
+It's a bit ugly that you pass the address of an unsigned int as u32*.
+But this isn't new, so fine for me. (Also for all Linux archs we have
+sizeof(unsigned int) =3D=3D 4, so AFAICT it's safe anyhow.)
+
+>  	if (rc < 0) {
+>  		dev_err(&pdev->dev, "Failed to get SDAM base, rc=3D%d\n", rc);
+>  		return -EINVAL;
+>  	}
+> =20
+> -	rc =3D regmap_read(sdam->regmap, sdam->base + SDAM_SIZE, &val);
+> +	sdam->regmap =3D devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regma=
+p_config);
+> +	if (IS_ERR(sdam->regmap)) {
+> +		dev_err(&pdev->dev, "Failed to get regmap handle\n");
+
+dev_err_probe()
+
+> +		return PTR_ERR(sdam->regmap);
+> +	}
+> +
+> +	rc =3D regmap_read(sdam->regmap, SDAM_SIZE, &val);
+>  	if (rc < 0) {
+>  		dev_err(&pdev->dev, "Failed to read SDAM_SIZE rc=3D%d\n", rc);
+>  		return -EINVAL;
+> @@ -159,7 +173,7 @@ static int sdam_probe(struct platform_device *pdev)
+>  	}
+>  	dev_dbg(&pdev->dev,
+>  		"SDAM base=3D%#x size=3D%u registered successfully\n",
+> -		sdam->base, sdam->size);
+> +		sdam_regmap_config.reg_base, sdam->size);
+> =20
+>  	return 0;
+>  }
+> @@ -181,3 +195,4 @@ module_platform_driver(sdam_driver);
+> =20
+>  MODULE_DESCRIPTION("QCOM SPMI SDAM driver");
+>  MODULE_LICENSE("GPL v2");
+> +MODULE_IMPORT_NS("SPMI");
+
+If it's exactly the files that #include <linux/spmi.h> should have that
+namespace import, you can put the MODULE_IMPORT_NS into that header.
+
+Best regards
+Uwe
+
+--36zni4ukkwfibixi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjJZSUACgkQj4D7WH0S
+/k5X2gf8CPcy37sX+3TAvMselYC6a5KTw9qBUgRRRW2xU0jMLPVSugZd9i7RFBsX
+qcP6Xq/FcBLfEIdwT9uwud13CtVdV6qyNQaWgz+BnrTomiNrrr4wZTVrOOhNgSDi
+VElZSzvXwu+7EZQLmdGAwoXB3HnCHuShI5LiCUQ0zi4pYoMoAc4Tw6htJhjM7NJ2
+48eZomVZ2s+xwPA17EyHn9FaHiisgWV/tjxRtL9P5Kt79qZNel8MXHgWU4jFEUDm
+hqciH+VQhquuUhU/UfWhV0q4Q6aJ2acuI+AsHcWctTI1Whgdtm0Ddr8/iJmUjitw
+JNecAkD3czkJvfdQpE1uSbxMdDBrww==
+=Jcue
+-----END PGP SIGNATURE-----
+
+--36zni4ukkwfibixi--
+
+
+--===============5487830991542004745==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5487830991542004745==--
+
