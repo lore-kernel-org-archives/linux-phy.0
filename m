@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DE5BCAC598
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C35A6CAC59E
 	for <linux-phy@archiver.kernel.org>; Tue, 16 Sep 2025 08:45:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bdnNzKBKMO3CYG+sxmGPr5GWRAM230M8z+q0x3kw5T4=; b=nmt/mwGvVbsoJ0
-	kpJTeqqyPk8feTdUf+wxQvYYZ+vnAHdVs4ttCHf7Fe6CVnnOARZuJNu96tN2iGHt2J2411lCu65uj
-	XTN1bOzgo1vDbLj07SH1XDSa3hgt9bGcE31t0kBv4wxohHhvzLeyQBTyzk6Bv31bw6dY0XdbMsbS/
-	pDyfCJABQPNbG2IzYkZSRXU+VyAfrydr9X9ExSRbh4fm8R4rYiyuMXL3mpW19zGx3vZqKaMZ7+3jx
-	EmWUOzyPsIv9hj29ch7dSelxAI6+voAQWrdAaUTT4gGhjMbrTIx543ibP1Fw+fY6MsfZ6z2KShnT0
-	7eTHY0NPyn+Ju1ZoE2RA==;
+	List-Owner; bh=HVbbcuW2CAUMqyrg0M979yJr0x+w5KDsHuNTJe4CCZI=; b=397xJtN189GWg9
+	W0/7aaMIgvfXTURv6MxSPyTgktOopDflq22m8F/lE90mep6qaaqkAne50jfj5hzNKa7CFpbcmxsIs
+	sL60oVcJym1Jy+FDGO+lx12W7peD/z2SwTdyEsu3Oa8OF+aPWwyEU1hL+23EphuLXUuYYeCLrkoWM
+	5KOv2b8HkNjAr2PjXoxifr0LORKOYOggd/SoSFfPNbUHzoUmSO2FpyHnxLavRvdU6Lw2cOCLuD3a/
+	JGn2xl1R2KX8o1tLHika6Zj1mUQ3rr0bGJU9NYn8nYPsqOrEhg4nAo2EHOrZpNldU1b7yNWTkQej5
+	A0mnQX0Fwg9YuWDjcU4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyRJD-00000007FEz-3nyY;
-	Tue, 16 Sep 2025 08:45:07 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uyRJE-00000007FFk-230S;
+	Tue, 16 Sep 2025 08:45:08 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyRJA-00000007FBA-086C
+	id 1uyRJB-00000007FBt-13Sx
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Sep 2025 08:45:05 +0000
+	Tue, 16 Sep 2025 08:45:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1758012301;
-	bh=Kk7j4GIWRh5ThLyejnYoGMlCWxByBngYuJWN0RmpNb8=;
+	s=mail; t=1758012303;
+	bh=v51zz4Jv1mbYpBxEB5zBU7XOsgjUAXrR8IuArlSYLn8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QIyP+LDZvJcmZj1A8U2VLa+tx2ShBhVwOAt7Cp499OnBDsei4WqpPsM8429Vxim3c
-	 BeJiVjISHVa1B+9gt7dV3slN5Io6YZw+bdGv+MSQjHHJz/+JO5PLkWL/4dfBGdFPVo
-	 yPP4Ez6QqxdzZ38X4aKUhxpiSLWVZiVy955SdZnO577XOh0EfAsbdh/88kmyoSGTyJ
-	 UzOYU0RkEJ/zsq3UKnxPzQIHxLvDT6jAMewmViJay4ZFFdiFbvfAOsQWJ4YwTcTKnV
-	 1riJqTrzQMrhuuU+4I/vcm7WbMYGtbp/phQTTYfZZpxm0VHdoevmMDD32hzFAR9mlm
-	 banCoasBN06RA==
+	b=O7aQB+My51APmWdeJ8JYiLlp1O8g2Smg9q9rYH2kM0kckDCZQulpyYkoYE4Nl17h4
+	 wV5BVbSH0pE2liWPrvChDI/MTFtTCl0yGHZMYQSwUGGwixQB+ttHjYiVSN/k55N88/
+	 JyYO73q8fk7SGhDRm+Mr8IzkmowKygCaq09SGceEbULSaoyZOxKfReF3R6fJYxi+A4
+	 TyIwSVmkW6haaLhRsuwIY3h0D/ndYGBsZmILnTGzmDvixVwv0OYrW9gTY26rX4zIs+
+	 rAZWDNd9gwJQvXnBRUr5yX4j74HkV9YXPa5JCTi/SH2xSuquNEBW+AQlSA651OZPFt
+	 1lf82ObEEWp2g==
 Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5CB9A17E137B;
-	Tue, 16 Sep 2025 10:45:00 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9059B17E139F;
+	Tue, 16 Sep 2025 10:45:02 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: sboyd@kernel.org
 Cc: jic23@kernel.org,
@@ -67,18 +67,17 @@ Cc: jic23@kernel.org,
 	kernel@collabora.com,
 	wenst@chromium.org,
 	casey.connolly@linaro.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v4 3/7] power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Tue, 16 Sep 2025 10:44:41 +0200
-Message-ID: <20250916084445.96621-4-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v4 5/7] misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Tue, 16 Sep 2025 10:44:43 +0200
+Message-ID: <20250916084445.96621-6-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
 References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250916_014504_362456_93977C57 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20250916_014505_502121_2AB22AEA 
+X-CRM114-Status: GOOD (  18.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,109 +94,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrates a Power On device supporting pwrkey
-and resin along with the Android reboot reason action identifier.
+Some Qualcomm PMICs integrate a charger for coincells, usually
+powering an RTC when external (or main battery) power is missing.
 
 Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device for PON
-and initialize its own regmap with this sub-device's specific base
+of syscon in this driver, register a new SPMI sub-device and
+initialize its own regmap with this sub-device's specific base
 address, retrieved from the devicetree.
 
 This allows to stop manually adding the register base address to
 every R/W call in this driver, as this can be, and is now, handled
 by the regmap API instead.
 
-Link: https://lore.kernel.org/r/20250722101317.76729-4-angelogioacchino.delregno@collabora.com
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Link: https://lore.kernel.org/r/20250722101317.76729-6-angelogioacchino.delregno@collabora.com
 Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Link: https://lore.kernel.org/r/20250730112645.542179-4-angelogioacchino.delregno@collabora.com
+Link: https://lore.kernel.org/r/20250730112645.542179-6-angelogioacchino.delregno@collabora.com
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/power/reset/qcom-pon.c | 34 +++++++++++++++++++++++++---------
- 1 file changed, 25 insertions(+), 9 deletions(-)
+ drivers/misc/Kconfig         |  1 +
+ drivers/misc/qcom-coincell.c | 38 +++++++++++++++++++++++++-----------
+ 2 files changed, 28 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/power/reset/qcom-pon.c b/drivers/power/reset/qcom-pon.c
-index 7e108982a582..0e075a2e5e48 100644
---- a/drivers/power/reset/qcom-pon.c
-+++ b/drivers/power/reset/qcom-pon.c
-@@ -11,6 +11,7 @@
- #include <linux/reboot.h>
- #include <linux/reboot-mode.h>
+diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+index b9c11f67315f..6bc14ae52ecb 100644
+--- a/drivers/misc/Kconfig
++++ b/drivers/misc/Kconfig
+@@ -291,6 +291,7 @@ config HP_ILO
+ config QCOM_COINCELL
+ 	tristate "Qualcomm coincell charger support"
+ 	depends on MFD_SPMI_PMIC || COMPILE_TEST
++	select REGMAP_SPMI
+ 	help
+ 	  This driver supports the coincell block found inside of
+ 	  Qualcomm PMICs.  The coincell charger provides a means to
+diff --git a/drivers/misc/qcom-coincell.c b/drivers/misc/qcom-coincell.c
+index 3c57f7429147..49e38442b289 100644
+--- a/drivers/misc/qcom-coincell.c
++++ b/drivers/misc/qcom-coincell.c
+@@ -9,11 +9,11 @@
+ #include <linux/of.h>
  #include <linux/regmap.h>
+ #include <linux/platform_device.h>
 +#include <linux/spmi.h>
  
- #define PON_SOFT_RB_SPARE		0x8f
- 
-@@ -22,7 +23,6 @@
- struct qcom_pon {
- 	struct device *dev;
- 	struct regmap *regmap;
--	u32 baseaddr;
- 	struct reboot_mode_driver reboot_mode;
- 	long reason_shift;
+ struct qcom_coincell {
+ 	struct device	*dev;
+ 	struct regmap	*regmap;
+-	u32		base_addr;
  };
-@@ -35,7 +35,7 @@ static int qcom_pon_reboot_mode_write(struct reboot_mode_driver *reboot,
- 	int ret;
  
- 	ret = regmap_update_bits(pon->regmap,
--				 pon->baseaddr + PON_SOFT_RB_SPARE,
-+				 PON_SOFT_RB_SPARE,
- 				 GENMASK(7, pon->reason_shift),
- 				 magic << pon->reason_shift);
- 	if (ret < 0)
-@@ -46,27 +46,42 @@ static int qcom_pon_reboot_mode_write(struct reboot_mode_driver *reboot,
+ #define QCOM_COINCELL_REG_RSET		0x44
+@@ -35,7 +35,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	/* if disabling, just do that and skip other operations */
+ 	if (!enable)
+ 		return regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_ENABLE, 0);
++			  QCOM_COINCELL_REG_ENABLE, 0);
  
- static int qcom_pon_probe(struct platform_device *pdev)
+ 	/* find index for current-limiting resistor */
+ 	for (i = 0; i < ARRAY_SIZE(qcom_rset_map); i++)
+@@ -58,7 +58,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	}
+ 
+ 	rc = regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_RSET, i);
++			  QCOM_COINCELL_REG_RSET, i);
+ 	if (rc) {
+ 		/*
+ 		 * This is mainly to flag a bad base_addr (reg) from dts.
+@@ -71,19 +71,28 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	}
+ 
+ 	rc = regmap_write(chgr->regmap,
+-		chgr->base_addr + QCOM_COINCELL_REG_VSET, j);
++		QCOM_COINCELL_REG_VSET, j);
+ 	if (rc)
+ 		return rc;
+ 
+ 	/* set 'enable' register */
+ 	return regmap_write(chgr->regmap,
+-			    chgr->base_addr + QCOM_COINCELL_REG_ENABLE,
++			    QCOM_COINCELL_REG_ENABLE,
+ 			    QCOM_COINCELL_ENABLE);
+ }
+ 
+ static int qcom_coincell_probe(struct platform_device *pdev)
  {
-+	struct regmap_config qcom_pon_regmap_config = {
+-	struct device_node *node = pdev->dev.of_node;
++	struct regmap_config qcom_coincell_regmap_config = {
 +		.reg_bits = 16,
 +		.val_bits = 8,
 +		.max_register = 0x100,
 +		.fast_io = true,
 +	};
 +	struct device *dev = &pdev->dev;
++	struct device_node *node = dev->of_node;
 +	struct spmi_subdevice *sub_sdev;
 +	struct spmi_device *sparent;
- 	struct qcom_pon *pon;
- 	long reason_shift;
- 	int error;
+ 	struct qcom_coincell chgr;
+ 	u32 rset = 0;
+ 	u32 vset = 0;
+@@ -92,16 +101,22 @@ static int qcom_coincell_probe(struct platform_device *pdev)
  
-+	if (!dev->parent)
-+		return -ENODEV;
+ 	chgr.dev = &pdev->dev;
+ 
+-	chgr.regmap = dev_get_regmap(pdev->dev.parent, NULL);
++	rc = of_property_read_u32(node, "reg", &qcom_coincell_regmap_config.reg_base);
++	if (rc)
++		return rc;
 +
- 	pon = devm_kzalloc(&pdev->dev, sizeof(*pon), GFP_KERNEL);
- 	if (!pon)
- 		return -ENOMEM;
- 
- 	pon->dev = &pdev->dev;
- 
--	pon->regmap = dev_get_regmap(pdev->dev.parent, NULL);
--	if (!pon->regmap) {
--		dev_err(&pdev->dev, "failed to locate regmap\n");
--		return -ENODEV;
--	}
 +	sparent = to_spmi_device(dev->parent);
 +	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
 +	if (IS_ERR(sub_sdev))
 +		return PTR_ERR(sub_sdev);
- 
--	error = of_property_read_u32(pdev->dev.of_node, "reg",
--				     &pon->baseaddr);
-+	error = of_property_read_u32(dev->of_node, "reg",
-+				     &qcom_pon_regmap_config.reg_base);
- 	if (error)
- 		return error;
- 
-+	pon->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &qcom_pon_regmap_config);
-+	if (IS_ERR(pon->regmap))
-+		return PTR_ERR(pon->regmap);
 +
- 	reason_shift = (long)of_device_get_match_data(&pdev->dev);
++	chgr.regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev,
++						&qcom_coincell_regmap_config);
+ 	if (!chgr.regmap) {
+ 		dev_err(chgr.dev, "Unable to get regmap\n");
+ 		return -EINVAL;
+ 	}
  
- 	if (reason_shift != NO_REASON_SHIFT) {
-@@ -106,3 +121,4 @@ module_platform_driver(qcom_pon_driver);
+-	rc = of_property_read_u32(node, "reg", &chgr.base_addr);
+-	if (rc)
+-		return rc;
+-
+ 	enable = !of_property_read_bool(node, "qcom,charger-disable");
  
- MODULE_DESCRIPTION("Qualcomm Power On driver");
+ 	if (enable) {
+@@ -142,3 +157,4 @@ module_platform_driver(qcom_coincell_driver);
+ 
+ MODULE_DESCRIPTION("Qualcomm PMIC coincell charger driver");
  MODULE_LICENSE("GPL v2");
 +MODULE_IMPORT_NS("SPMI");
 -- 
