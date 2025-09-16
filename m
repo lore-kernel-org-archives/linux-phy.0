@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B233ECAC598
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Sep 2025 13:25:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3EF1CAC599
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Sep 2025 13:25:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7w3AB2KjI7cGNXDaDEhtfH5z0MFaY8hesADeUAzl9GY=; b=VocdjTdfsgtUldeXHm+cljT36L
-	OSf/fNN+hdWeW9tSb9uNWjT4LdJlUqBy4wAUSukfnR0rT7WopXeq5BKFvzH1+f0aRmoju8nKvTFf8
-	Luao/GhYJTlcQ5htBGSNA33jXuQ+LWvQItfR5QEcIsYwjP5jaKsBEGc63benuZNH0bb+4Gt+WaJxm
-	TyD5Yd5kkcWZJF4hNvVcIsXLTWIw8aqY+h1PBqTaQgUPFWDszasvuFGkqvbN1meTmmu/ZbB4u1Has
-	mGpmBJvroXWj4RCoy2EYXiveigVOZ753oSxWi8v+CTdo8Bm2AhsiCcfoU6v3he1Vy1PEw+sSos9F3
-	vwWYaEiw==;
+	bh=SfThcKMDVmgiOVlf4JWYk4cEBDJVmhLgfuwL2Y9xMv0=; b=OVPsIleJO/7A5GUzXl3BKPnIIW
+	5lXTSGW6h9P6y/rtEpstnqxHcUbzHLGE+w1SyNHXIDBvQOQNJkAX9JXT+/RqyAU+QOVns9dJU2JM6
+	GsNq9A8Q9Hcn2QA367gT8bCGCaZ6x6rKpH+4Pj+IoCgb6otHYB4aBwFL12QlBzyfG8QQqHcAJ1RVC
+	9uO7BCsr3DWJrfXd5TuJu8h3fxsAFyhVs8F6cQT8+MUlXN7pzEpjYHOfJ70HH8+zvYUbqM7y3CJDy
+	v5NWMNC3eC2LdI3as5cxoF+gUfn6MZq5LRrvT17PuemHP4umJXltax/dPzZdegW7GcdpHdbOWBWdk
+	9udgAtow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyVg9-00000007vfO-21da;
-	Tue, 16 Sep 2025 13:25:05 +0000
-Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
+	id 1uyVgO-00000007vii-3Bkb;
+	Tue, 16 Sep 2025 13:25:20 +0000
+Received: from mail-ej1-x62b.google.com ([2a00:1450:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyVg4-00000007veA-1eaS
+	id 1uyVgM-00000007vhc-0R81
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Sep 2025 13:25:04 +0000
-Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-b042eb09948so1125865666b.3
-        for <linux-phy@lists.infradead.org>; Tue, 16 Sep 2025 06:24:59 -0700 (PDT)
+	Tue, 16 Sep 2025 13:25:19 +0000
+Received: by mail-ej1-x62b.google.com with SMTP id a640c23a62f3a-afcb7ae6ed0so826488766b.3
+        for <linux-phy@lists.infradead.org>; Tue, 16 Sep 2025 06:25:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758029098; x=1758633898; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758029116; x=1758633916; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=gwfKh8YcNEbswE2yYv8jHBhvIioj0iL2kRQaWZR7TS4=;
-        b=DC5FgF90PsKrrrzp7fkHTsTWvnCTSg87bIySRmWRko8ecnPpMx+8jOc9WK3m7sFWHk
-         2J7SPMgKJ7z0/q0jwAWurb5T95FJv/17HDhUVfWlWgBLOdekjpBe+8rDN8ppYlv6ZaqV
-         DbwLSON6WPpV6gVt9hUQPtDgFrPknmELzSVE6mw0DWkpI4EW0XdDF9IPpzBKPMA2NGSV
-         9MrlJSM222JIUkm7O1+UojsFvVbi738qprYnlLlva4uA6W/YXXpaqqdCJsrcerw/v7Zh
-         j5L+WL1t5wgsqb+nsHvYD2Meg/4UKOWAquAor2g95UpZN23IXrMniNrHPY2mTmWzBrvF
-         iklw==
+        bh=cec1ryxoXhXjrqFSDj+/T+n/YhygzPX418Utr1UQ+9Q=;
+        b=Y6429xsigFUoxvCwY8FjF6GBf1eff8dBy5Px2Tn7GlUfzEMXDy7aQ8BUDGtpS832Li
+         3N27glZaLvfbJfJHuemz7YxaTiLV6NynmQbyjg6tjiLdpUMAXIB5WyZZGqwImq1ppKAw
+         Pjgg8VQPGR8PSXfUySjqWD4c+WExhgCksvNMlzTzyqHqY/6uOllBhU9lVyKNnwsUnayE
+         zGYsplkNZgDeKiVUcnS2BSTDAyQPe6eQVbJSYUVSqUQSlUGMv2+ULT7Ydh6nZbJ1rVa6
+         9zgCM5FPiqNT4G/oOCLmxHOlS52tSB8857B+y5JVMrj6RqWkoPOME2ShTmlgCvtch79J
+         P4KA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758029098; x=1758633898;
+        d=1e100.net; s=20230601; t=1758029116; x=1758633916;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=gwfKh8YcNEbswE2yYv8jHBhvIioj0iL2kRQaWZR7TS4=;
-        b=wWw71VaK5i1OQiagXOp9slTr1bsPND1TjyyIakqm/QM87+TlypfwMxJUg9lwyxSeVA
-         /5VPs17DNF9yAGPv31r7/L7DRxLe2GVW3ydl+KyLfFeHuxcZ9DCE+IJsVtkIZWZwRKe9
-         EppmK9YR2pTQGBBmPYbSBCygLflh1mGA8z8UJe1UTwPV4Oq0HWFwOmIkduabgGc013bz
-         H2dh5if5n3UoQU3whZOswoo858S17liXlicJV62GiA71ZMd08IQzesoBaUhxcB49Wkmb
-         nM/hWVZixdmNO41GDxs6rHoBFhAXe6wF3nrQibPPptt0ICCWJvYGIVbeL/DnuSyecxIx
-         HN4A==
-X-Forwarded-Encrypted: i=1; AJvYcCWA0beuipSB1L3rpgsb995krWaOMHiyattU0nsBoIz/mZk+UnARBjmUMAmhg1evZu238+XMbzZpFC8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwAf4opaCvDcZGOHy6UvWTAyWP+iaxN7tufKAWtERQ17LQjduXV
-	yZxmuxVjxyp1qYgdj98FqN/tDvxxiCoH83RgvZcch3ogDCP9SyU16hVLc0ZMKF56MGM=
-X-Gm-Gg: ASbGncvfm8E2GczHqPGtfnLS2ntdkT9b01D/bMfq/wW7t0qhOYZVmyuRYANESLaSRz6
-	DTr8JVJH8NhjcbxiWyoNTT7LyUXLxGbLVCJ9KYMNdFftQaLqkBbGAPhBby2q5R7yDj82DQWfSgU
-	FMQx9y1FzWs9//Qmc1z0QS1Z7+bWwUy0lpOEqxJ9CVD53gpLooz+2xj4WxxvtgUc5EX2cGsdsbe
-	yvvM33JDu68t8ueM7K2XvWBr1guE/NBNom7L04zP+Ye2vWcEQjrxU92Y0NUuPhO9pB0ZzYY5nVx
-	+csB5LB8Cmr6KefvPFUzJb9jf8lw9Kc8kas5ewDAafFQ9GlEzvHZwk/ah5U4fadhZEw5h8pMtFz
-	xpbiAcr/FBUuL6fay2kH4YFCaz954+nEJLi0VRiUJOi5R6xnarpaGsSduYpSPiW6s
-X-Google-Smtp-Source: AGHT+IE9kjhldcCIBvjPr9jo7lRPPHVqNSYEJDmsT9jH1F0DRGqPEBku/9BloIv9jKtuTpavenfoLw==
-X-Received: by 2002:a17:907:d16:b0:afe:c6a0:d116 with SMTP id a640c23a62f3a-b07c3572d31mr1812203466b.18.1758029098143;
-        Tue, 16 Sep 2025 06:24:58 -0700 (PDT)
+        bh=cec1ryxoXhXjrqFSDj+/T+n/YhygzPX418Utr1UQ+9Q=;
+        b=UrqY61HnYrKId9gPlW+lyQFzw/VxUnriAhs6wY1LkDAQI07b8mxTg1olKm282votIL
+         bfjqhJq9hZAqdawf8hCKjzec2ywdo3jRajSahx+NA5UASoQ1G/6ayjVmowDUpDpwUU92
+         D7ycHmUTZ8O8KV4fVyX+C0o0mgXoXX0nWeClv2hS6+sx0iarcby03Ksp/awJP5+BR5Jc
+         vpG7zNiYNHVImBQvmwnT+9LsNUukc6Be6/HB5seJkyy3bpAOVXWhrhevy9Dc7RSo6wPr
+         KnjijYTrNV85qZsTVVg/h3lpuXvYcHr2DL7RK9bqkCCD033BDPlQAuO3DNLGay2rFP3n
+         04fQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU4kzQ5Q8nJUQJ8KjWhayuKFNxrGkcrDiXJfoHcI3/jGWnLAaz+GtlyfMz6T5puZ3ubjMtNXDu4jns=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxgMXcX9TGNGlju3HAHFkT0wXFFpDtLAKJ6v8N+fZqpnl3m3owW
+	nqFe4JEfRhvZsNXE81QxjSmRkfqeRhZXw6FOWDNrlYDBY8xbqrBq7Bl8tWu8LHusbtg=
+X-Gm-Gg: ASbGncu6hPhMP7XERodlRLNSLsyeM+NylnMrx0Glj1HNF5asWPTa532qujAVS2mQVBZ
+	46T9Lzt8iliZkQ90mzZESeMBlcog2NX7bjAi+pYLyefDRGhDwB2kYDg/T/L/zHxiN+qn3Zr+oMN
+	sYOpCZN6yL53tEvtBoSDJQTtzA39jprcQIbIccmYf2nfrVW9kWLThACZ4mRwYkeXzdzKEPb4wPz
+	Q1QpxwNZRF+twSaqqobd8PfxI9GLCGgPkTYrE2qtBTJk+BVVWvRocma6bBF9aPA1/wakDT+LGPs
+	H6Y59w236SBhTUCXydOEqySnkz9vmXbhLSvltGgdSbKCi3qx+Mx6odTzZ2ptVp67ZXshgoI1k45
+	6FiavQcKUfoQIYm0F7SjH9mVe2zavzlh5/mNqxi7gSJpkzrsoyR8bwrfnqaQcpKPrFhZRfBfaf9
+	E=
+X-Google-Smtp-Source: AGHT+IHULzH6kKOXUPbwiu6vHARKbboHWXDMpcq23vOfkgCUTSIFoBy+/FHZDfo4eSTeHnxRnGrBPQ==
+X-Received: by 2002:a17:906:eca2:b0:b12:3f5f:603b with SMTP id a640c23a62f3a-b123f5f70c4mr542368966b.3.1758029116046;
+        Tue, 16 Sep 2025 06:25:16 -0700 (PDT)
 Received: from localhost (p200300f65f06ab0400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f06:ab04::1b9])
-        by smtp.gmail.com with UTF8SMTPSA id a640c23a62f3a-b07b32f202dsm1164355266b.84.2025.09.16.06.24.57
+        by smtp.gmail.com with UTF8SMTPSA id a640c23a62f3a-b07b32f35cdsm1135878466b.92.2025.09.16.06.25.15
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 16 Sep 2025 06:24:57 -0700 (PDT)
-Date: Tue, 16 Sep 2025 15:24:56 +0200
+        Tue, 16 Sep 2025 06:25:15 -0700 (PDT)
+Date: Tue, 16 Sep 2025 15:25:14 +0200
 From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com, 
@@ -77,17 +78,17 @@ Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
 	krzysztof.kozlowski@linaro.org, linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
 	kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org, 
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-Message-ID: <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
+	Jonathan Cameron <jonathan.cameron@huawei.com>, Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
+ and devm variant
+Message-ID: <mr7gqhvom5soofn2oujzxtsuczsnx2yizkushar64cojwnvhd6@dt64ojgjqdxw>
 References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
- <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
+ <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250916_062500_457271_AAFA16D1 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20250916_062518_168147_FF4676D3 
+X-CRM114-Status: GOOD (  15.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,110 +100,111 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5487830991542004745=="
+Content-Type: multipart/mixed; boundary="===============9062049062666392649=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5487830991542004745==
+--===============9062049062666392649==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="36zni4ukkwfibixi"
+	protocol="application/pgp-signature"; boundary="j6v4vfa6gjhs5clj"
 Content-Disposition: inline
 
 
---36zni4ukkwfibixi
+--j6v4vfa6gjhs5clj
 Content-Type: text/plain; protected-headers=v1; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
+Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
+ and devm variant
 MIME-Version: 1.0
 
-Hello,
+Hello AngeloGioacchino,
 
-On Tue, Sep 16, 2025 at 10:44:40AM +0200, AngeloGioacchino Del Regno wrote:
-> @@ -119,19 +128,24 @@ static int sdam_probe(struct platform_device *pdev)
->  	if (!sdam)
->  		return -ENOMEM;
-> =20
-> -	sdam->regmap =3D dev_get_regmap(pdev->dev.parent, NULL);
-> -	if (!sdam->regmap) {
-> -		dev_err(&pdev->dev, "Failed to get regmap handle\n");
-> -		return -ENXIO;
-> -	}
-> +	sparent =3D to_spmi_device(dev->parent);
-> +	sub_sdev =3D devm_spmi_subdevice_alloc_and_add(dev, sparent);
-> +	if (IS_ERR(sub_sdev))
-> +		return PTR_ERR(sub_sdev);
-> =20
-> -	rc =3D of_property_read_u32(pdev->dev.of_node, "reg", &sdam->base);
-> +	rc =3D of_property_read_u32(dev->of_node, "reg", &sdam_regmap_config.re=
-g_base);
-
-It's a bit ugly that you pass the address of an unsigned int as u32*.
-But this isn't new, so fine for me. (Also for all Linux archs we have
-sizeof(unsigned int) =3D=3D 4, so AFAICT it's safe anyhow.)
-
->  	if (rc < 0) {
->  		dev_err(&pdev->dev, "Failed to get SDAM base, rc=3D%d\n", rc);
->  		return -EINVAL;
->  	}
-> =20
-> -	rc =3D regmap_read(sdam->regmap, sdam->base + SDAM_SIZE, &val);
-> +	sdam->regmap =3D devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regma=
-p_config);
-> +	if (IS_ERR(sdam->regmap)) {
-> +		dev_err(&pdev->dev, "Failed to get regmap handle\n");
-
-dev_err_probe()
-
-> +		return PTR_ERR(sdam->regmap);
+On Tue, Sep 16, 2025 at 10:44:39AM +0200, AngeloGioacchino Del Regno wrote:
+> +/**
+> + * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
+> + * @sparent:	SPMI parent device with previously registered SPMI controller
+> + *
+> + * Returns:
+> + * Pointer to newly allocated SPMI sub-device for success or negative ERR_PTR.
+> + */
+> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
+> +{
+> +	struct spmi_subdevice *sub_sdev;
+> +	struct spmi_device *sdev;
+> +	int ret;
+> +
+> +	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
+> +	if (!sub_sdev)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
+> +	if (ret < 0) {
+> +		kfree(sub_sdev);
+> +		return ERR_PTR(ret);
 > +	}
 > +
-> +	rc =3D regmap_read(sdam->regmap, SDAM_SIZE, &val);
->  	if (rc < 0) {
->  		dev_err(&pdev->dev, "Failed to read SDAM_SIZE rc=3D%d\n", rc);
->  		return -EINVAL;
-> @@ -159,7 +173,7 @@ static int sdam_probe(struct platform_device *pdev)
->  	}
->  	dev_dbg(&pdev->dev,
->  		"SDAM base=3D%#x size=3D%u registered successfully\n",
-> -		sdam->base, sdam->size);
-> +		sdam_regmap_config.reg_base, sdam->size);
-> =20
->  	return 0;
->  }
-> @@ -181,3 +195,4 @@ module_platform_driver(sdam_driver);
-> =20
->  MODULE_DESCRIPTION("QCOM SPMI SDAM driver");
->  MODULE_LICENSE("GPL v2");
-> +MODULE_IMPORT_NS("SPMI");
+> +	sdev = &sub_sdev->sdev;
+> +	sdev->ctrl = sparent->ctrl;
+> +	device_initialize(&sdev->dev);
+> +	sdev->dev.parent = &sparent->dev;
+> +	sdev->dev.bus = &spmi_bus_type;
+> +	sdev->dev.type = &spmi_subdev_type;
+> +
+> +	sub_sdev->devid = ret;
+> +	sdev->usid = sparent->usid;
+> +
+> +	ret = dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
+> +			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
 
-If it's exactly the files that #include <linux/spmi.h> should have that
-namespace import, you can put the MODULE_IMPORT_NS into that header.
+If I understand correctly sub_sdev->devid is globally unique. I wonder
+if a namespace that is specific to the parent spmi device would be more
+sensible?!
+
+> +	if (ret)
+> +		goto err_put_dev;
+> +
+> +	ret = device_add(&sdev->dev);
+> +	if (ret) {
+> +		dev_err(&sdev->dev, "Can't add %s, status %d\n",
+
+I'd use %pe instead of %d here.
+
+> +			dev_name(&sdev->dev), ret);
+> +		goto err_put_dev;
+> +	}
+> +
+> +	return sub_sdev;
+> +
+> +err_put_dev:
+> +	put_device(&sdev->dev);
+> +	return ERR_PTR(ret);
+> +}
+> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
+> +
 
 Best regards
 Uwe
 
---36zni4ukkwfibixi
+--j6v4vfa6gjhs5clj
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjJZSUACgkQj4D7WH0S
-/k5X2gf8CPcy37sX+3TAvMselYC6a5KTw9qBUgRRRW2xU0jMLPVSugZd9i7RFBsX
-qcP6Xq/FcBLfEIdwT9uwud13CtVdV6qyNQaWgz+BnrTomiNrrr4wZTVrOOhNgSDi
-VElZSzvXwu+7EZQLmdGAwoXB3HnCHuShI5LiCUQ0zi4pYoMoAc4Tw6htJhjM7NJ2
-48eZomVZ2s+xwPA17EyHn9FaHiisgWV/tjxRtL9P5Kt79qZNel8MXHgWU4jFEUDm
-hqciH+VQhquuUhU/UfWhV0q4Q6aJ2acuI+AsHcWctTI1Whgdtm0Ddr8/iJmUjitw
-JNecAkD3czkJvfdQpE1uSbxMdDBrww==
-=Jcue
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjJZTcACgkQj4D7WH0S
+/k4DDQf9Fn1HPf8O4u3moGauabP4ZoOg+KJoOMMHiL4JAWvb+ihWLP7SpGDPBfiO
+DjMRfgEltRK7S1XHVZqjpkIAREqaRc6TQCYX7uafwyX9JXpUGPvjoVWeywhnWJU3
+5vE9b9lEeFfiRzBq8RQ0tr17GyPpmviyXdL6kimCDDWkKzCqU9mXskQiO/HYxzDV
+mJBLPPQQ6aRxVVBLLqdsggxptBQ+8BtkqUy9+yqjncsbYTwEgj4QY65d9yQXPTgL
+st+pYh7Ra8xceTMOExplwPHN/uSqPBTMTRomAsrtOz09tETIkR6mOuEOUO3fsy9q
+v/FjPX6SlBekOqw7TnPDq/t/204YwA==
+=j8SY
 -----END PGP SIGNATURE-----
 
---36zni4ukkwfibixi--
+--j6v4vfa6gjhs5clj--
 
 
---===============5487830991542004745==
+--===============9062049062666392649==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -213,5 +215,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5487830991542004745==--
+--===============9062049062666392649==--
 
