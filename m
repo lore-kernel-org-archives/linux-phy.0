@@ -4,71 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11CBCCA0EE8
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 11:41:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E6B1CAC599
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 12:47:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nSEr1JWTkFCdrT7z3aDO2/b4eZVxHczBgd2pjXa1YIU=; b=QPnJuZ690D/bjV
-	4qT6ifnQ5qfxEAM6FwOzUZJ54qmU/ZUaTBVjRRlQY4dodTetb2Kgx+9RXD/QwFBjy3+U29UMBBbV7
-	Cdboz/pc4g/mO3fiRAV5FHsDRz4bsf/2UN7ijt8Ys7zPYWliySxdiaAy2atR24o5qWIvrCgYD/Ooz
-	lJzSYCDnlki7kK3acRhwCtkrv+LvbU70MzkCQpFm4yrbvrb100N6S3dRW2fe7fblC1qiN9Ltzh/Sm
-	7ECZDe2kjtBXCXvR0LdT0OdUArYbRdcZjqYfCgtAYkwC5LBhZhxH+y9qLlXf8TuJoWXmEuWtyXjSN
-	EYTo7Ktw/NAGRKrZs8og==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=dZpXO8GH2xq8De7OS7ZRQqxPahuG8+C4dzCm5ryseCo=; b=lPK4VYYcy18AxtomBDVlPM/cIJ
+	C5zvbZDpQfK3JRCCtu1WrbFTYSvsOEVFPUUJS3VS1YHoa+KnoAOe9RSyLa9PUQsJUT8blObBx6a0j
+	YhAeW4Fka9dzmjm9sudYnjCJowzUGIzcU+jLgVh7kd4t3ECdVGhEC/yabnxFSw5vrCB51h7CVfdo+
+	sPX3OAuiqm9HlRxPyOTdz0A7tFeCIxj6C045YMo3KtKs1G4Dh/a6IfQspa+bBkatWzMkujCfg4yqP
+	qNO3K/lz0nBXq+LllBrtuL7cyRWkw8OtXPukQ9A1coS5+SJcc/Q9E5AdnHpAaF2cQFgRbk0l+NYmu
+	4VQxcudg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyqXk-0000000BA4T-2MwZ;
-	Wed, 17 Sep 2025 11:41:48 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uyrZL-0000000BPQH-0KYd;
+	Wed, 17 Sep 2025 12:47:31 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyqXg-0000000BA2o-35ED
+	id 1uyrZI-0000000BPOF-11c4
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Sep 2025 11:41:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1758109302;
-	bh=0OtD0Y91eraXp7qlae6rfKOz1LeKFfNmCmaZ1OElvSI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=OgsObV8YW7tOY5+PL28HwItU/FdPf6MHC4mP4i613Caz1L/lU2AKXzio9nx+qjykZ
-	 C3X7qT+n+A2gpIo6dPrCSdsecp6k4lbQyCGEUHpJnuup2V6zoK+atoFaY7bFvbm8FF
-	 /cwuWNvMSDp70uMeD1uiUA86GbGkwX9WC39Fqgw6z08vVFx0uowzHqMBJfSzyuqpH/
-	 Dwfvs2LGSvQM85kAQhlxrPFLvLXTkcHFxPp/a3IRM78Ev6WUgqpoLhoGb4BdiGWlCR
-	 vxXQch2XyjzydceRQfztY4bXwHNcq0iRCr/rlr0qTQjZiG7WqpKzbIF9Z/i9TpceB0
-	 S4vEPuGN/zcQA==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 49AA317E10F3;
-	Wed, 17 Sep 2025 13:41:41 +0200 (CEST)
-Message-ID: <a16cafd4-4d6c-45be-b241-45d2d6479bb1@collabora.com>
-Date: Wed, 17 Sep 2025 13:41:40 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and
- devm variant
-To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
- nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
- linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
- casey.connolly@linaro.org, Jonathan Cameron <jonathan.cameron@huawei.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
+	Wed, 17 Sep 2025 12:47:30 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-b07c081660aso972569466b.0
+        for <linux-phy@lists.infradead.org>; Wed, 17 Sep 2025 05:47:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758113246; x=1758718046; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=OpFjrz8zqyAOuDDEavL83RJ8Trpvvw84g1TSZSRsq/o=;
+        b=F+9yaZoOi+M8HeqkE09ttUx4RPkjVEHClBWqUsdA5hX0XSjGB9G+AfTsWihnZv0Oto
+         IVwqXJr7CUsekcsR4mxJD3MKrnPJQDS4aud+lzUC4ET23sdeENoc9K616PVOSOqmfLeN
+         TRBJk9eUmGcqT2q70zlxApO1jCGY53lL5eksFWhIUSsFB0iR7qIntdwzNGvdvZAv8pxj
+         GKYtUAze5L7FDbg0PhxTnE/MZnSDuckaa96/I/bL+Ar/ImRC1H4YNS4rmWCQ6u+KgJbk
+         wQnp30CQzB0l95/U1PJfNXTNoQpmtAoMclxjixvHUiPAbfMl7LjXSTg/QW2U1kA8ftY2
+         veoA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758113246; x=1758718046;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=OpFjrz8zqyAOuDDEavL83RJ8Trpvvw84g1TSZSRsq/o=;
+        b=LMEZWbZxAbZwiq6/p5y1QTNhJ+GIuGtf6DqMHghn0sjqaIlZHlqm15d4sOwaH/RWGx
+         RApaxCjLrjpzn4wF6N1+pGZPA1trVmIuG4rCwxuThkfEK+Fr3zaOOm+nWC25x2s5ebb7
+         J+FxGSCtGKdP0lw0+A2cLZSV43PW4B4RtlhinG5x19uqu+El24pOcGPDMI06Z7pXCRC1
+         e/cCy/bBtttriZPSB8LgbsNStsvl20AhlNyrS3WDMsS1arNKcreIvaZPg1aLvv4OKGy3
+         fXsWp+OMTLrE5qDSvt/e5FKVHAL2dBC6gb7b8jIDuuGovb8Dn+Lr5S/Y19fLwV8EM3d8
+         Jy5Q==
+X-Forwarded-Encrypted: i=1; AJvYcCU08Z+aIcnoTSKy4xycbEiLST21iNYKgQ5eoOUaX4ceC4oxPctk4Q64d6u+5eDQSmn42SVh07oJ2sg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyVJYACZZPChCXDDo48EUBzCHYx7Evaw4z+AEF0HiQK8P5He6h0
+	TOB4AeHAFx2I4qisFpr1/f2YmfkVvs6UqqOuMPoLr1oD2tYQSNDebRgdm8ycPmfZf+Q=
+X-Gm-Gg: ASbGncsmF6ulhTzvvKETPBqbIjl3PfU0NZJgrMTu6LjCFI3hOddiID7VtnqU3/39pe7
+	46Rj6HogqT0x+k5W/E1tBwGky/OBRnTIaKE7GmbgCdP5LNjg4WC8XpwCYSEKI59Nf0qTnZ8woOl
+	ia4z0MNznm5WtZdpjiR0TljoQUMylwFEdOwHz7spqyzvXKK0XpW54FbjhIyaBhPTTtsw9w4hR5F
+	82xoxVEjIWP2WJ6Ol3duX9JPG5958McL1Xg6LINWCPvb3HsT9zBUYFyyLh24IbiIuzcWZSdIyjx
+	7UsORtNgGX6WLpN7YXpI6/3voWbo/BhSOBuLP10J8EzdtgU5Ndv7Qv7athMcza1jy6YtjuadzYa
+	dCP2fP6Q4VUuSOxP/PMwm4fs7FjA=
+X-Google-Smtp-Source: AGHT+IHgG+feaLFS5lYK61xigE0As4f8SIEZukBQyUiZyyvMqVLGwJC7y1Bl5VWs3fMe9SZIDZZJTw==
+X-Received: by 2002:a17:906:f591:b0:b07:c905:af33 with SMTP id a640c23a62f3a-b1bc02f669dmr228527266b.65.1758113246285;
+        Wed, 17 Sep 2025 05:47:26 -0700 (PDT)
+Received: from localhost ([2a02:8071:b783:6940:36f3:9aff:fec2:7e46])
+        by smtp.gmail.com with UTF8SMTPSA id a640c23a62f3a-b07b30da289sm1339567666b.17.2025.09.17.05.47.25
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 17 Sep 2025 05:47:25 -0700 (PDT)
+Date: Wed, 17 Sep 2025 14:47:22 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Cc: Andy Shevchenko <andriy.shevchenko@intel.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com, 
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, 
+	srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org, 
+	krzysztof.kozlowski@linaro.org, linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
+	kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org, 
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <er7dkmzutsu3ooegeihjzngi6l3hol5iaohecr3n5bolfse3tj@xeedlx2utwym>
 References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
- <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
- <mr7gqhvom5soofn2oujzxtsuczsnx2yizkushar64cojwnvhd6@dt64ojgjqdxw>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <mr7gqhvom5soofn2oujzxtsuczsnx2yizkushar64cojwnvhd6@dt64ojgjqdxw>
+ <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
+ <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
+ <aMlnp4x-1MUoModr@smile.fi.intel.com>
+ <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
+ <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_044144_956685_CC3AF5F4 
-X-CRM114-Status: GOOD (  19.90  )
+X-CRM114-CacheID: sfid-20250917_054728_417616_8EAB1179 
+X-CRM114-Status: GOOD (  29.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,57 +104,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============9098559691020018698=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SWwgMTYvMDkvMjUgMTU6MjUsIFV3ZSBLbGVpbmUtS8O2bmlnIGhhIHNjcml0dG86Cj4gSGVsbG8g
-QW5nZWxvR2lvYWNjaGlubywKPiAKPiBPbiBUdWUsIFNlcCAxNiwgMjAyNSBhdCAxMDo0NDozOUFN
-ICswMjAwLCBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyB3cm90ZToKPj4gKy8qKgo+PiArICog
-c3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpOiBBbGxvY2F0ZSBhbmQgYWRkIGEgbmV3IFNQ
-TUkgc3ViLWRldmljZQo+PiArICogQHNwYXJlbnQ6CVNQTUkgcGFyZW50IGRldmljZSB3aXRoIHBy
-ZXZpb3VzbHkgcmVnaXN0ZXJlZCBTUE1JIGNvbnRyb2xsZXIKPj4gKyAqCj4+ICsgKiBSZXR1cm5z
-Ogo+PiArICogUG9pbnRlciB0byBuZXdseSBhbGxvY2F0ZWQgU1BNSSBzdWItZGV2aWNlIGZvciBz
-dWNjZXNzIG9yIG5lZ2F0aXZlIEVSUl9QVFIuCj4+ICsgKi8KPj4gK3N0cnVjdCBzcG1pX3N1YmRl
-dmljZSAqc3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZChzdHJ1Y3Qgc3BtaV9kZXZpY2UgKnNw
-YXJlbnQpCj4+ICt7Cj4+ICsJc3RydWN0IHNwbWlfc3ViZGV2aWNlICpzdWJfc2RldjsKPj4gKwlz
-dHJ1Y3Qgc3BtaV9kZXZpY2UgKnNkZXY7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiArCXN1Yl9zZGV2
-ID0ga3phbGxvYyhzaXplb2YoKnN1Yl9zZGV2KSwgR0ZQX0tFUk5FTCk7Cj4+ICsJaWYgKCFzdWJf
-c2RldikKPj4gKwkJcmV0dXJuIEVSUl9QVFIoLUVOT01FTSk7Cj4+ICsKPj4gKwlyZXQgPSBpZGFf
-YWxsb2MoJnNwbWlfc3ViZGV2aWNlX2lkYSwgR0ZQX0tFUk5FTCk7Cj4+ICsJaWYgKHJldCA8IDAp
-IHsKPj4gKwkJa2ZyZWUoc3ViX3NkZXYpOwo+PiArCQlyZXR1cm4gRVJSX1BUUihyZXQpOwo+PiAr
-CX0KPj4gKwo+PiArCXNkZXYgPSAmc3ViX3NkZXYtPnNkZXY7Cj4+ICsJc2Rldi0+Y3RybCA9IHNw
-YXJlbnQtPmN0cmw7Cj4+ICsJZGV2aWNlX2luaXRpYWxpemUoJnNkZXYtPmRldik7Cj4+ICsJc2Rl
-di0+ZGV2LnBhcmVudCA9ICZzcGFyZW50LT5kZXY7Cj4+ICsJc2Rldi0+ZGV2LmJ1cyA9ICZzcG1p
-X2J1c190eXBlOwo+PiArCXNkZXYtPmRldi50eXBlID0gJnNwbWlfc3ViZGV2X3R5cGU7Cj4+ICsK
-Pj4gKwlzdWJfc2Rldi0+ZGV2aWQgPSByZXQ7Cj4+ICsJc2Rldi0+dXNpZCA9IHNwYXJlbnQtPnVz
-aWQ7Cj4+ICsKPj4gKwlyZXQgPSBkZXZfc2V0X25hbWUoJnNkZXYtPmRldiwgIiVkLSUwMnguJWQu
-YXV0byIsCj4+ICsJCQkgICBzZGV2LT5jdHJsLT5uciwgc2Rldi0+dXNpZCwgc3ViX3NkZXYtPmRl
-dmlkKTsKPiAKPiBJZiBJIHVuZGVyc3RhbmQgY29ycmVjdGx5IHN1Yl9zZGV2LT5kZXZpZCBpcyBn
-bG9iYWxseSB1bmlxdWUuIEkgd29uZGVyCj4gaWYgYSBuYW1lc3BhY2UgdGhhdCBpcyBzcGVjaWZp
-YyB0byB0aGUgcGFyZW50IHNwbWkgZGV2aWNlIHdvdWxkIGJlIG1vcmUKPiBzZW5zaWJsZT8hCj4g
-CgpPbmx5IGluIHRoZSBjb250ZXh0IG9mIHRoZSBjaGlsZHJlbiBvZiBzZGV2LiBJJ20gbm90IHN1
-cmUgb2Ygd2hhdCB5b3UncmUgcHJvcG9zaW5nCmhlcmUsIGxvb2tzIGxpa2UgaXQgd291bGQgY29t
-cGxpY2F0ZSB0aGUgY29kZSBmb3Igbm8gYmlnIHJlYXNvbiAtIHVubGVzcyBJIGFtCm1pc3VuZGVy
-c3RhbmRpbmcgc29tZXRoaW5nIGhlcmUuCgo+PiArCWlmIChyZXQpCj4+ICsJCWdvdG8gZXJyX3B1
-dF9kZXY7Cj4+ICsKPj4gKwlyZXQgPSBkZXZpY2VfYWRkKCZzZGV2LT5kZXYpOwo+PiArCWlmIChy
-ZXQpIHsKPj4gKwkJZGV2X2Vycigmc2Rldi0+ZGV2LCAiQ2FuJ3QgYWRkICVzLCBzdGF0dXMgJWRc
-biIsCj4gCj4gSSdkIHVzZSAlcGUgaW5zdGVhZCBvZiAlZCBoZXJlLgo+IAoKVGhlIG9ubHkgcmVh
-c29uIHdoeSBJIGFtIHVzaW5nICVkIGlzIGZvciBjb25zaXN0ZW5jeSB3aXRoIHRoZSByZXN0IG9m
-IHRoZSBjb2RlIHRoYXQKaXMgaW4gU1BNSSAtIHRoZXJlIGlzIGFub3RoZXIgZGV2aWNlX2FkZCgp
-IGNhbGwgaW4gc3BtaV9kZXZpY2VfYWRkKCkgd2hpY2ggcHJpbnRzCnRoZSBzYW1lIGVycm9yIGlu
-IHRoZSB2ZXJ5IHNhbWUgd2F5IGFzIEknbSBkb2luZyBoZXJlLgoKSSBhZ3JlZSB0aGF0IHVzaW5n
-ICVwZSBtYWtlcyBlcnJvciBwcmludHMgbW9yZSByZWFkYWJsZSwgYnV0IHBlcmhhcHMgdGhhdCBz
-aG91bGQgYmUKZG9uZSBhcyBhIGxhdGVyIGNsZWFudXAgdG8ga2VlcCBwcmludHMgY29uc2lzdGVu
-dCAoYW5kIHBlcmhhcHMgdGhhdCBzaG91bGQgbm90IGJlCmRvbmUgb25seSBpbiBTUE1JIGFueXdh
-eSkuCgpJZiB5b3UgaGF2ZSByZWFsbHkgc3Ryb25nIG9waW5pb25zIGFib3V0IGRvaW5nIHRoYXQg
-cmlnaHQgbm93IEkgY2FuIGRvIGl0LCBidXQgSQphbnl3YXkgcHJlZmVyIHNlZWluZyB0aGF0IGFz
-IGEgbGF0ZXIgY29tbWl0IGRvaW5nIHRoYXQgaW4gdGhlIGVudGlyZSBTUE1JIGNvZGViYXNlLgoK
-Q2hlZXJzLApBbmdlbG8KCj4+ICsJCQlkZXZfbmFtZSgmc2Rldi0+ZGV2KSwgcmV0KTsKPj4gKwkJ
-Z290byBlcnJfcHV0X2RldjsKPj4gKwl9Cj4+ICsKPj4gKwlyZXR1cm4gc3ViX3NkZXY7Cj4+ICsK
-Pj4gK2Vycl9wdXRfZGV2Ogo+PiArCXB1dF9kZXZpY2UoJnNkZXYtPmRldik7Cj4+ICsJcmV0dXJu
-IEVSUl9QVFIocmV0KTsKPj4gK30KPj4gK0VYUE9SVF9TWU1CT0xfTlNfR1BMKHNwbWlfc3ViZGV2
-aWNlX2FsbG9jX2FuZF9hZGQsICJTUE1JIik7Cj4+ICsKPiAKPiBCZXN0IHJlZ2FyZHMKPiBVd2UK
-CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+--===============9098559691020018698==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ah6qgcyytq6i6rrs"
+Content-Disposition: inline
+
+
+--ah6qgcyytq6i6rrs
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+MIME-Version: 1.0
+
+Hello Andy,
+
+On Tue, Sep 16, 2025 at 07:20:20PM +0300, Andy Shevchenko wrote:
+> On Tue, Sep 16, 2025 at 6:11=E2=80=AFPM Uwe Kleine-K=C3=B6nig
+> <u.kleine-koenig@baylibre.com> wrote:
+> > On Tue, Sep 16, 2025 at 04:35:35PM +0300, Andy Shevchenko wrote:
+> > > On Tue, Sep 16, 2025 at 03:24:56PM +0200, Uwe Kleine-K=C3=B6nig wrote:
+> > > > On Tue, Sep 16, 2025 at 10:44:40AM +0200, AngeloGioacchino Del Regn=
+o wrote:
+>=20
+> ...
+>=20
+> > > > > +MODULE_IMPORT_NS("SPMI");
+> > > >
+> > > > If it's exactly the files that #include <linux/spmi.h> should have =
+that
+> > > > namespace import, you can put the MODULE_IMPORT_NS into that header.
+> > >
+> > > Which makes anyone to import namespace even if they just want to use =
+some types
+> > > out of the header.
+> >
+> > Notice that I carefully formulated my suggestion to cope for this case.
+>=20
+> And I carefully answered.
+
+I tend to disagree. If that anyone only wants some type from the header
+but not the namespace, the if part of my statement isn't given any more.
+Still your reply felt like objection while logically it's not.
+
+> Your proposal won't prevent _other_ files to
+> use the same header in the future without needing a namespace to be
+> imported.
+
+Oh yes. But that's true for every change: If you change it further you
+have to cope for what is already there.
+
+> > > This is not good solution generally speaking. Also this will
+> > > diminish one of the purposes of _NS variants of MODULE*/EXPORT*, i.e.=
+ make it
+> > > invisible that some of the code may become an abuser of the API just =
+by someone
+> > > include the header (for a reason or by a mistake).
+> >
+> > Yeah, opinions differ. In my eyes it's quite elegant.
+>=20
+> It's not a pure opinion,
+
+That's your opinion :-)
+
+> it has a technical background that I
+> explained. The explicit usage of MODULE_IMPORT_NS() is better than
+> some header somewhere that might even be included by another and be
+> proxied to the code that doesn't need / want to have this namespace to
+> be present. Puting MODULE_IMPORT_NS() into a _header_ is a minefield
+> for the future.
+
+Well, for a deliberate abuser the hurdle to have to add the explicit
+MODULE_IMPORT_NS() isn't that big. And a mistaken abuser won't explode,
+just generate a few bytes overhead that can be fixed when noticed.
+
+In my opinion that is an ok cost for the added elegance.
+
+Best regards
+Uwe
+
+--ah6qgcyytq6i6rrs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjKrdcACgkQj4D7WH0S
+/k5EEgf8CdFx6+6iEV1AE4GeSJAKaBL6T9A2o7N08nLq8lg9b0873yxBoHXcU5fC
+aJjF55sEwR98xGntE7kk39pH49RCG8ugwvBfJUnq75LJiKU4gyhg9P3OPFnLShiJ
+I6m5bqGNDlAwq3dSuYSiDSr/4wi/Rq4mPKqRZoCT0WHQz9CWes6CdQPuRMSKYeJF
+5VvswQqZGx5s73s0oi9UinWZ1/t/tX8KTjVeEgkmosNDtXb8rSwQbmfIUqnuCv0m
+ZjvuFwKtei8Q90Ro1LSW+QP0R1bN1ydWluw6cGH65qE7Yqpb/P49Yupan3C0YEsr
+nJJjRh4HIIADYdzeEZWvvrOcN8LC8Q==
+=NvWc
+-----END PGP SIGNATURE-----
+
+--ah6qgcyytq6i6rrs--
+
+
+--===============9098559691020018698==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============9098559691020018698==--
+
