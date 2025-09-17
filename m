@@ -4,89 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA357CAC598
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 10:55:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11CBCCA0EE8
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 11:41:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D2mRzi12YBNgKwoUhTx7X2cZEIA7bv3twk+WJrBBqSg=; b=DBWnCzgO/us4qV
-	sVhYZSxnWHC48Be1fO2SMPG2+2E5M5R7nLap/goCtLHdyqAKbYGhS4E4vK8/XgmVGpuU0LFwnT9tS
-	Dzo7R3ObA6xmjpwj7EDvEL1kwK/1/oLYGCWgWSdo2uEgdktdQmt6omyDQ5SZpoJ5BlzZaiiJe1/iJ
-	BboBm6182aY3HVGxOiT7T54g3mxKeXrnUarwAweaghdegCd6If8739+zFEmR3B8okUyFIAgIclfFV
-	H/CEY1DiAUYsAYB5zXn6zJuU96Jg6C2F1Kmw17s91E2vEWkiFhpz3MLMJGFyqA5tPrQ2XXjOnrOkM
-	ZEkrlcrkFgNwUAD8R5yA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nSEr1JWTkFCdrT7z3aDO2/b4eZVxHczBgd2pjXa1YIU=; b=QPnJuZ690D/bjV
+	4qT6ifnQ5qfxEAM6FwOzUZJ54qmU/ZUaTBVjRRlQY4dodTetb2Kgx+9RXD/QwFBjy3+U29UMBBbV7
+	Cdboz/pc4g/mO3fiRAV5FHsDRz4bsf/2UN7ijt8Ys7zPYWliySxdiaAy2atR24o5qWIvrCgYD/Ooz
+	lJzSYCDnlki7kK3acRhwCtkrv+LvbU70MzkCQpFm4yrbvrb100N6S3dRW2fe7fblC1qiN9Ltzh/Sm
+	7ECZDe2kjtBXCXvR0LdT0OdUArYbRdcZjqYfCgtAYkwC5LBhZhxH+y9qLlXf8TuJoWXmEuWtyXjSN
+	EYTo7Ktw/NAGRKrZs8og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyppM-0000000B3Df-1uBN;
-	Wed, 17 Sep 2025 10:55:56 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1uyqXk-0000000BA4T-2MwZ;
+	Wed, 17 Sep 2025 11:41:48 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyppK-0000000B3DB-0lmJ
+	id 1uyqXg-0000000BA2o-35ED
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Sep 2025 10:55:55 +0000
-Received: by mail-pf1-x431.google.com with SMTP id d2e1a72fcca58-772843b6057so5916235b3a.3
-        for <linux-phy@lists.infradead.org>; Wed, 17 Sep 2025 03:55:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=sartura.hr; s=sartura; t=1758106553; x=1758711353; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=adTihmHwzJbf+9dxqIDSLfiv88TU7A8gsjhgenPMslQ=;
-        b=sLWJcGPrHW4dpv3GhIcJ4dLQ92MqH8WpZ51n7Uty06PIlRYqlOLPXpl0+Yl7C87fzX
-         CjiVpWgPgJxKzf9YOCrHBk6pAuYTUT29+pRXj8vgHOEcheHaP7KDtsIKqZNz9zboNgmm
-         o0O8uasiVAHlD7KlICBSj/c5iCqWHYKqxk85t3GK1LVlgY9cjH5fgAEI3+WgxcYREwZB
-         MPhu60AMT3few2B6U112nnx0+GbPQIeIFE7KF3P1qhMvcZRm+DsgYH9uOQzSkYpOWFJC
-         s19gNBnfEY323SoIefaSDLTUjB5QX7c0k23CHnwt244Xe8ONMJMDW4XrVKXud8qnQIXq
-         deUQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758106553; x=1758711353;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=adTihmHwzJbf+9dxqIDSLfiv88TU7A8gsjhgenPMslQ=;
-        b=hlXROZi16cVqhi7hRLY03QN8+eufvCeX/dnw2oktHVpaJuIRXdhD52lf+oiVHq8CaP
-         IiZUx65gEy1tgatTI+AQhsKTfdaUfThERVvke9QTAHna6ZHoW1g5/es7h4UsbLX5aOLd
-         2ZPOuqlUs7X6PKVQeyjAoYFjh+qEmIVZSnW6pSY2uS3UDIAgthptinE0RS5+pGqJAZY/
-         cv2EHiwRvz6vGFdYBdiqxWknfYu7OlxBTQCiG6RE9nUzdZvutCcwTRNypVQniZdnwHuh
-         i3IplUInny/orZK5rin6GMRXP6GvcrcvNlY7nKY1TvSy8t5iA3+csRWp0Nz1+0EIPiKK
-         +Cpg==
-X-Forwarded-Encrypted: i=1; AJvYcCXUuE/zoG9o2Nqro0KhbM3wdrRhKqub8oamcyf7O3PF0CpiLoUadUiJu1NshZcxyXD9B5HmXJeplxk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyzUIh+JVUsBeX/URX33W+eAY0pqlXALj8ZuFEpjBPkRwqoexEg
-	gnVdE7xxKbKwCuZI7cOdehjEEzOLeZrMH6HSiVwNToFm2ibdC3HNIgo3c3JcOtlkhiE=
-X-Gm-Gg: ASbGnct+WqXY2NBiDjpH1MlHXke4wCHiuGfNMIOBRU48rYuXhYVfrvxtKJk3caeUvcm
-	vwadrihKJdKnNwGDe7Y+YSt5z7wYagYO4UDthEoOfU4fpR2hL4Y5W7PlmbhtvyXyZDF/wLRqy7S
-	taTvc1QpMXLTHvPykNaEHtWw7VTZmbav1i9AC8juY2N6sS1OVwQhvRSkR0GWQHg6AELDhTunffj
-	Czj6mqw1MfoybPXsv1Sr5KWV27zRlEnEkVjfWDQ6HNcrrkAgxUtYDktQiRSs2oxdZzXGJv1cniB
-	JEunoBMwdq9QjnXFUNZ5fir0hIsSEVH/EmFTW4/5AR2k8EZlCoi766qi4hDQQanPuYycISexOm/
-	0yYu9pFtpOplAiMcEOQtos2+ME+xy8FfukEFmEtV5bY42Yk+JLtQ/KFLx
-X-Google-Smtp-Source: AGHT+IHu7B8nUjAHLAKGXC+EcCyBnCKDdaHlbT5cM0DjbI9g+YR/BAYDE26XBq1QLYfijEOd/iwymg==
-X-Received: by 2002:a05:6a00:1994:b0:772:282d:5a68 with SMTP id d2e1a72fcca58-77bf9b5427bmr2020650b3a.29.1758106553021;
-        Wed, 17 Sep 2025 03:55:53 -0700 (PDT)
-Received: from fedora (cpezg-94-253-146-122-cbl.xnet.hr. [94.253.146.122])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-77618a7feefsm15249228b3a.58.2025.09.17.03.55.49
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 17 Sep 2025 03:55:52 -0700 (PDT)
-From: Robert Marko <robert.marko@sartura.hr>
-To: daniel.machon@microchip.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	herve.codina@bootlin.com
-Cc: luka.perkov@sartura.hr,
-	benjamin.ryzman@canonical.com,
-	Robert Marko <robert.marko@sartura.hr>
-Subject: [PATCH] phy: sparx5-serdes: make it selectable for ARCH_LAN969X
-Date: Wed, 17 Sep 2025 12:55:14 +0200
-Message-ID: <20250917105541.54033-1-robert.marko@sartura.hr>
-X-Mailer: git-send-email 2.51.0
+	Wed, 17 Sep 2025 11:41:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1758109302;
+	bh=0OtD0Y91eraXp7qlae6rfKOz1LeKFfNmCmaZ1OElvSI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=OgsObV8YW7tOY5+PL28HwItU/FdPf6MHC4mP4i613Caz1L/lU2AKXzio9nx+qjykZ
+	 C3X7qT+n+A2gpIo6dPrCSdsecp6k4lbQyCGEUHpJnuup2V6zoK+atoFaY7bFvbm8FF
+	 /cwuWNvMSDp70uMeD1uiUA86GbGkwX9WC39Fqgw6z08vVFx0uowzHqMBJfSzyuqpH/
+	 Dwfvs2LGSvQM85kAQhlxrPFLvLXTkcHFxPp/a3IRM78Ev6WUgqpoLhoGb4BdiGWlCR
+	 vxXQch2XyjzydceRQfztY4bXwHNcq0iRCr/rlr0qTQjZiG7WqpKzbIF9Z/i9TpceB0
+	 S4vEPuGN/zcQA==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 49AA317E10F3;
+	Wed, 17 Sep 2025 13:41:41 +0200 (CEST)
+Message-ID: <a16cafd4-4d6c-45be-b241-45d2d6479bb1@collabora.com>
+Date: Wed, 17 Sep 2025 13:41:40 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add() and
+ devm variant
+To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
+ nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+ linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+ casey.connolly@linaro.org, Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
+ <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
+ <mr7gqhvom5soofn2oujzxtsuczsnx2yizkushar64cojwnvhd6@dt64ojgjqdxw>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <mr7gqhvom5soofn2oujzxtsuczsnx2yizkushar64cojwnvhd6@dt64ojgjqdxw>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_035554_242772_AF6FCCFE 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250917_044144_956685_CC3AF5F4 
+X-CRM114-Status: GOOD (  19.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,37 +80,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-LAN969x uses the SparX-5 SERDES driver, so make it selectable for
-ARCH_LAN969X.
-
-Signed-off-by: Robert Marko <robert.marko@sartura.hr>
----
- drivers/phy/microchip/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/microchip/Kconfig b/drivers/phy/microchip/Kconfig
-index 2f0045e874ac..2e6d1224711e 100644
---- a/drivers/phy/microchip/Kconfig
-+++ b/drivers/phy/microchip/Kconfig
-@@ -6,7 +6,7 @@
- config PHY_SPARX5_SERDES
- 	tristate "Microchip Sparx5 SerDes PHY driver"
- 	select GENERIC_PHY
--	depends on ARCH_SPARX5 || COMPILE_TEST
-+	depends on ARCH_SPARX5 || ARCH_LAN969X || COMPILE_TEST
- 	depends on OF
- 	depends on HAS_IOMEM
- 	help
--- 
-2.51.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SWwgMTYvMDkvMjUgMTU6MjUsIFV3ZSBLbGVpbmUtS8O2bmlnIGhhIHNjcml0dG86Cj4gSGVsbG8g
+QW5nZWxvR2lvYWNjaGlubywKPiAKPiBPbiBUdWUsIFNlcCAxNiwgMjAyNSBhdCAxMDo0NDozOUFN
+ICswMjAwLCBBbmdlbG9HaW9hY2NoaW5vIERlbCBSZWdubyB3cm90ZToKPj4gKy8qKgo+PiArICog
+c3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpOiBBbGxvY2F0ZSBhbmQgYWRkIGEgbmV3IFNQ
+TUkgc3ViLWRldmljZQo+PiArICogQHNwYXJlbnQ6CVNQTUkgcGFyZW50IGRldmljZSB3aXRoIHBy
+ZXZpb3VzbHkgcmVnaXN0ZXJlZCBTUE1JIGNvbnRyb2xsZXIKPj4gKyAqCj4+ICsgKiBSZXR1cm5z
+Ogo+PiArICogUG9pbnRlciB0byBuZXdseSBhbGxvY2F0ZWQgU1BNSSBzdWItZGV2aWNlIGZvciBz
+dWNjZXNzIG9yIG5lZ2F0aXZlIEVSUl9QVFIuCj4+ICsgKi8KPj4gK3N0cnVjdCBzcG1pX3N1YmRl
+dmljZSAqc3BtaV9zdWJkZXZpY2VfYWxsb2NfYW5kX2FkZChzdHJ1Y3Qgc3BtaV9kZXZpY2UgKnNw
+YXJlbnQpCj4+ICt7Cj4+ICsJc3RydWN0IHNwbWlfc3ViZGV2aWNlICpzdWJfc2RldjsKPj4gKwlz
+dHJ1Y3Qgc3BtaV9kZXZpY2UgKnNkZXY7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiArCXN1Yl9zZGV2
+ID0ga3phbGxvYyhzaXplb2YoKnN1Yl9zZGV2KSwgR0ZQX0tFUk5FTCk7Cj4+ICsJaWYgKCFzdWJf
+c2RldikKPj4gKwkJcmV0dXJuIEVSUl9QVFIoLUVOT01FTSk7Cj4+ICsKPj4gKwlyZXQgPSBpZGFf
+YWxsb2MoJnNwbWlfc3ViZGV2aWNlX2lkYSwgR0ZQX0tFUk5FTCk7Cj4+ICsJaWYgKHJldCA8IDAp
+IHsKPj4gKwkJa2ZyZWUoc3ViX3NkZXYpOwo+PiArCQlyZXR1cm4gRVJSX1BUUihyZXQpOwo+PiAr
+CX0KPj4gKwo+PiArCXNkZXYgPSAmc3ViX3NkZXYtPnNkZXY7Cj4+ICsJc2Rldi0+Y3RybCA9IHNw
+YXJlbnQtPmN0cmw7Cj4+ICsJZGV2aWNlX2luaXRpYWxpemUoJnNkZXYtPmRldik7Cj4+ICsJc2Rl
+di0+ZGV2LnBhcmVudCA9ICZzcGFyZW50LT5kZXY7Cj4+ICsJc2Rldi0+ZGV2LmJ1cyA9ICZzcG1p
+X2J1c190eXBlOwo+PiArCXNkZXYtPmRldi50eXBlID0gJnNwbWlfc3ViZGV2X3R5cGU7Cj4+ICsK
+Pj4gKwlzdWJfc2Rldi0+ZGV2aWQgPSByZXQ7Cj4+ICsJc2Rldi0+dXNpZCA9IHNwYXJlbnQtPnVz
+aWQ7Cj4+ICsKPj4gKwlyZXQgPSBkZXZfc2V0X25hbWUoJnNkZXYtPmRldiwgIiVkLSUwMnguJWQu
+YXV0byIsCj4+ICsJCQkgICBzZGV2LT5jdHJsLT5uciwgc2Rldi0+dXNpZCwgc3ViX3NkZXYtPmRl
+dmlkKTsKPiAKPiBJZiBJIHVuZGVyc3RhbmQgY29ycmVjdGx5IHN1Yl9zZGV2LT5kZXZpZCBpcyBn
+bG9iYWxseSB1bmlxdWUuIEkgd29uZGVyCj4gaWYgYSBuYW1lc3BhY2UgdGhhdCBpcyBzcGVjaWZp
+YyB0byB0aGUgcGFyZW50IHNwbWkgZGV2aWNlIHdvdWxkIGJlIG1vcmUKPiBzZW5zaWJsZT8hCj4g
+CgpPbmx5IGluIHRoZSBjb250ZXh0IG9mIHRoZSBjaGlsZHJlbiBvZiBzZGV2LiBJJ20gbm90IHN1
+cmUgb2Ygd2hhdCB5b3UncmUgcHJvcG9zaW5nCmhlcmUsIGxvb2tzIGxpa2UgaXQgd291bGQgY29t
+cGxpY2F0ZSB0aGUgY29kZSBmb3Igbm8gYmlnIHJlYXNvbiAtIHVubGVzcyBJIGFtCm1pc3VuZGVy
+c3RhbmRpbmcgc29tZXRoaW5nIGhlcmUuCgo+PiArCWlmIChyZXQpCj4+ICsJCWdvdG8gZXJyX3B1
+dF9kZXY7Cj4+ICsKPj4gKwlyZXQgPSBkZXZpY2VfYWRkKCZzZGV2LT5kZXYpOwo+PiArCWlmIChy
+ZXQpIHsKPj4gKwkJZGV2X2Vycigmc2Rldi0+ZGV2LCAiQ2FuJ3QgYWRkICVzLCBzdGF0dXMgJWRc
+biIsCj4gCj4gSSdkIHVzZSAlcGUgaW5zdGVhZCBvZiAlZCBoZXJlLgo+IAoKVGhlIG9ubHkgcmVh
+c29uIHdoeSBJIGFtIHVzaW5nICVkIGlzIGZvciBjb25zaXN0ZW5jeSB3aXRoIHRoZSByZXN0IG9m
+IHRoZSBjb2RlIHRoYXQKaXMgaW4gU1BNSSAtIHRoZXJlIGlzIGFub3RoZXIgZGV2aWNlX2FkZCgp
+IGNhbGwgaW4gc3BtaV9kZXZpY2VfYWRkKCkgd2hpY2ggcHJpbnRzCnRoZSBzYW1lIGVycm9yIGlu
+IHRoZSB2ZXJ5IHNhbWUgd2F5IGFzIEknbSBkb2luZyBoZXJlLgoKSSBhZ3JlZSB0aGF0IHVzaW5n
+ICVwZSBtYWtlcyBlcnJvciBwcmludHMgbW9yZSByZWFkYWJsZSwgYnV0IHBlcmhhcHMgdGhhdCBz
+aG91bGQgYmUKZG9uZSBhcyBhIGxhdGVyIGNsZWFudXAgdG8ga2VlcCBwcmludHMgY29uc2lzdGVu
+dCAoYW5kIHBlcmhhcHMgdGhhdCBzaG91bGQgbm90IGJlCmRvbmUgb25seSBpbiBTUE1JIGFueXdh
+eSkuCgpJZiB5b3UgaGF2ZSByZWFsbHkgc3Ryb25nIG9waW5pb25zIGFib3V0IGRvaW5nIHRoYXQg
+cmlnaHQgbm93IEkgY2FuIGRvIGl0LCBidXQgSQphbnl3YXkgcHJlZmVyIHNlZWluZyB0aGF0IGFz
+IGEgbGF0ZXIgY29tbWl0IGRvaW5nIHRoYXQgaW4gdGhlIGVudGlyZSBTUE1JIGNvZGViYXNlLgoK
+Q2hlZXJzLApBbmdlbG8KCj4+ICsJCQlkZXZfbmFtZSgmc2Rldi0+ZGV2KSwgcmV0KTsKPj4gKwkJ
+Z290byBlcnJfcHV0X2RldjsKPj4gKwl9Cj4+ICsKPj4gKwlyZXR1cm4gc3ViX3NkZXY7Cj4+ICsK
+Pj4gK2Vycl9wdXRfZGV2Ogo+PiArCXB1dF9kZXZpY2UoJnNkZXYtPmRldik7Cj4+ICsJcmV0dXJu
+IEVSUl9QVFIocmV0KTsKPj4gK30KPj4gK0VYUE9SVF9TWU1CT0xfTlNfR1BMKHNwbWlfc3ViZGV2
+aWNlX2FsbG9jX2FuZF9hZGQsICJTUE1JIik7Cj4+ICsKPiAKPiBCZXN0IHJlZ2FyZHMKPiBVd2UK
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
