@@ -4,76 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD00CCA0EE8
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 09:15:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73BEDCAC598
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 09:31:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qbtPKfMPnw5sme7Gj1TGVwn8KBt9Y7v9750L/07aC4U=; b=V7RVjCrTCPTAcr
-	7dAlCMEWrYoJNzMrFm/LH2z2kbDD5c1lbPuUdUrpc3tORtiXYnfmDZmHBHNr1HbMf+J5siDzL6tC6
-	cIw1N/z6IahD/bzeG6n6AK3z5J0x/7KykdYiBkHffIEHzI0eFpGUR5YGjZjq+k6OePEil/ICXMu9F
-	BtxrALJFXGGWyNKO2iQ5uzPyRaWLB7i5rsqZ1Wy3Atg2pxnlF2VJwupq9J8/pfpiB7VGGB0tlF03w
-	7deFvB6Dami6B5OUSniEOMEtrRQtOTIgxUWdAi0VkyfNQ1gdbOZMq6u+/S1hTkaGVzpd472IfdWPM
-	Rfxvkffzy02ttCnoBAnA==;
+	List-Owner; bh=/rDq+py8X7ohhgT1z2AYZgfVBkL9umWukPJbdRV4oB4=; b=27BVupoEpIgllp
+	xZ8P+Q2QSo903aZZKzw1BJAkvfiIqgbU5wz6rPq4xSSJ04o9cmvtPaJKZHlpX9yiu1oHOXIYOa4IS
+	pJW8hRZlNRQa6XAGfSXDOACBthHG3QOTdYdBKDydHA6jZ+hiapyEp9ixe5lWzXGIIHO0ZkfIL+IVY
+	k0RNylQTG/UB05EUfwaWzvMnVLJBF5MJW2Qk+jPNQDlysZIIs60EmnOdewAXqzRu6FwDNE0KkU7eF
+	j2RGRXbChaVX1yvIY75kjg3eP+FZ5vGX0DcMsuWGimTZUVU5ErHQqKQGF3wUGgmmtUz9AlQdLUPo3
+	0iLUmD051Cj21uVd2EDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyoGN-0000000AlLE-2DGa;
-	Wed, 17 Sep 2025 09:15:43 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1uyoVb-0000000AnRU-0eV6;
+	Wed, 17 Sep 2025 09:31:27 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyoGL-0000000AlKZ-1XEP
+	id 1uyoVZ-0000000AnQn-0DKy
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Sep 2025 09:15:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1758100539;
-	bh=XXSmMhiIJwxEgzQuWSUYkqPOP5y8v9qGIfTlmLL2PFI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=L2Xmnn24q18lCp584jc3DJ3aArQTX0Q97EwLeCn3gjtunVHCT+VCz8J59OyoRJRXb
-	 J6E2VIIP+SpjyRvytPAkuXuBab8plMjreqyXG4r62yWvFYC/GgVKew8qFVTN8wqEi7
-	 cHLBtuaXLQ49gL79nfIC1DQSkd5BKuibCrHrBtIp1ozBC/55FV50OsL4lsJ/9d/G+R
-	 D+xinyMOJga2aTtZJrHpRahN2aHbzA5KD76lgmLrcSiwQOcG91iCfs3R06RXp/ujG/
-	 XOjr2a4cuI9zpH7lYnDdCoE40xrh9yjYtRCU50u0SAIN0qhgTGb4XYkT5eQm6kQCJ/
-	 0Q4fjPfECOKnQ==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8555E17E0109;
-	Wed, 17 Sep 2025 11:15:38 +0200 (CEST)
-Message-ID: <a10685e2-e4af-4097-b432-778e83e0b3bf@collabora.com>
-Date: Wed, 17 Sep 2025 11:15:37 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+	Wed, 17 Sep 2025 09:31:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1758101485; x=1789637485;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=4jpzCIoZu50VJNQx/tE5PCeb01WHwNr3Npziju95tg4=;
+  b=ce2zHK1pfYl9RuxXZ7x+RRanqYWbOL+orJN09IxVqrP8O7x6C51EegHF
+   Wbj/rRjGThrbZ1zZFPdyay1e79fUrBbFR8FuQsDHmgSEw6wzdhAxujccD
+   1OxJ+U055Nm8PYuMqoXsTb/7Xkrg40VJfx/roq6O+h6FBXx04zMV5O3pb
+   xByua520WklyfRrRdkCIR8n2knUqWo8CmDSOEp5qTidyw+RXykbZKgHI7
+   GqmDBwZpWsJuN8RY+b+Av4VA2RrwE4PiGnaT2ncISSdkfrKnqAGjIwg5u
+   kPand6CXbUT+43kxxX9WIQwZOBqoFjeExJ9jTuel/dXaHmjwrtSIfP7Ry
+   w==;
+X-CSE-ConnectionGUID: U0NEqzvmQpy/BL03igf4Ag==
+X-CSE-MsgGUID: YCjUhC0kRCGd6XWsTOMTWA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11555"; a="71028311"
+X-IronPort-AV: E=Sophos;i="6.18,271,1751266800"; 
+   d="scan'208";a="71028311"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Sep 2025 02:31:24 -0700
+X-CSE-ConnectionGUID: 5BIt0BKbRI6p0i6AjQZtBg==
+X-CSE-MsgGUID: Z8c/mGQ6T5WqQxDzRg37Tg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,271,1751266800"; 
+   d="scan'208";a="179201709"
+Received: from lkp-server01.sh.intel.com (HELO 84a20bd60769) ([10.239.97.150])
+  by orviesa003.jf.intel.com with ESMTP; 17 Sep 2025 02:31:19 -0700
+Received: from kbuild by 84a20bd60769 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uyoVP-0001JX-32;
+	Wed, 17 Sep 2025 09:31:15 +0000
+Date: Wed, 17 Sep 2025 17:30:26 +0800
+From: kernel test robot <lkp@intel.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	sboyd@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jic23@kernel.org, dlechner@baylibre.com,
+	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
+	gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+	casey.connolly@linaro.org,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 4/7] phy: qualcomm: eusb2-repeater: Migrate to
  devm_spmi_subdevice_alloc_and_add()
-To: Andy Shevchenko <andy.shevchenko@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-Cc: Andy Shevchenko <andriy.shevchenko@intel.com>, sboyd@kernel.org,
- jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
- andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
- srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org,
- krzysztof.kozlowski@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
-References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
- <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
- <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
- <aMlnp4x-1MUoModr@smile.fi.intel.com>
- <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
- <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
+Message-ID: <202509171640.JfR2hhcz-lkp@intel.com>
+References: <20250916084445.96621-5-angelogioacchino.delregno@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250916084445.96621-5-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_021541_560907_3F25FAA1 
-X-CRM114-Status: GOOD (  18.38  )
+X-CRM114-CacheID: sfid-20250917_023125_101163_1531C86D 
+X-CRM114-Status: GOOD (  10.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,42 +94,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SWwgMTYvMDkvMjUgMTg6MjAsIEFuZHkgU2hldmNoZW5rbyBoYSBzY3JpdHRvOgo+IE9uIFR1ZSwg
-U2VwIDE2LCAyMDI1IGF0IDY6MTHigK9QTSBVd2UgS2xlaW5lLUvDtm5pZwo+IDx1LmtsZWluZS1r
-b2VuaWdAYmF5bGlicmUuY29tPiB3cm90ZToKPj4gT24gVHVlLCBTZXAgMTYsIDIwMjUgYXQgMDQ6
-MzU6MzVQTSArMDMwMCwgQW5keSBTaGV2Y2hlbmtvIHdyb3RlOgo+Pj4gT24gVHVlLCBTZXAgMTYs
-IDIwMjUgYXQgMDM6MjQ6NTZQTSArMDIwMCwgVXdlIEtsZWluZS1Lw7ZuaWcgd3JvdGU6Cj4+Pj4g
-T24gVHVlLCBTZXAgMTYsIDIwMjUgYXQgMTA6NDQ6NDBBTSArMDIwMCwgQW5nZWxvR2lvYWNjaGlu
-byBEZWwgUmVnbm8gd3JvdGU6Cj4gCj4gLi4uCj4gCj4+Pj4+ICtNT0RVTEVfSU1QT1JUX05TKCJT
-UE1JIik7Cj4+Pj4KPj4+PiBJZiBpdCdzIGV4YWN0bHkgdGhlIGZpbGVzIHRoYXQgI2luY2x1ZGUg
-PGxpbnV4L3NwbWkuaD4gc2hvdWxkIGhhdmUgdGhhdAo+Pj4+IG5hbWVzcGFjZSBpbXBvcnQsIHlv
-dSBjYW4gcHV0IHRoZSBNT0RVTEVfSU1QT1JUX05TIGludG8gdGhhdCBoZWFkZXIuCj4+Pgo+Pj4g
-V2hpY2ggbWFrZXMgYW55b25lIHRvIGltcG9ydCBuYW1lc3BhY2UgZXZlbiBpZiB0aGV5IGp1c3Qg
-d2FudCB0byB1c2Ugc29tZSB0eXBlcwo+Pj4gb3V0IG9mIHRoZSBoZWFkZXIuCj4+Cj4+IE5vdGlj
-ZSB0aGF0IEkgY2FyZWZ1bGx5IGZvcm11bGF0ZWQgbXkgc3VnZ2VzdGlvbiB0byBjb3BlIGZvciB0
-aGlzIGNhc2UuCj4gCj4gQW5kIEkgY2FyZWZ1bGx5IGFuc3dlcmVkLiBZb3VyIHByb3Bvc2FsIHdv
-bid0IHByZXZlbnQgX290aGVyXyBmaWxlcyB0bwo+IHVzZSB0aGUgc2FtZSBoZWFkZXIgaW4gdGhl
-IGZ1dHVyZSB3aXRob3V0IG5lZWRpbmcgYSBuYW1lc3BhY2UgdG8gYmUKPiBpbXBvcnRlZC4KPiAK
-Pj4+IFRoaXMgaXMgbm90IGdvb2Qgc29sdXRpb24gZ2VuZXJhbGx5IHNwZWFraW5nLiBBbHNvIHRo
-aXMgd2lsbAo+Pj4gZGltaW5pc2ggb25lIG9mIHRoZSBwdXJwb3NlcyBvZiBfTlMgdmFyaWFudHMg
-b2YgTU9EVUxFKi9FWFBPUlQqLCBpLmUuIG1ha2UgaXQKPj4+IGludmlzaWJsZSB0aGF0IHNvbWUg
-b2YgdGhlIGNvZGUgbWF5IGJlY29tZSBhbiBhYnVzZXIgb2YgdGhlIEFQSSBqdXN0IGJ5IHNvbWVv
-bmUKPj4+IGluY2x1ZGUgdGhlIGhlYWRlciAoZm9yIGEgcmVhc29uIG9yIGJ5IGEgbWlzdGFrZSku
-Cj4+Cj4+IFllYWgsIG9waW5pb25zIGRpZmZlci4gSW4gbXkgZXllcyBpdCdzIHF1aXRlIGVsZWdh
-bnQuCj4gCj4gSXQncyBub3QgYSBwdXJlIG9waW5pb24sIGl0IGhhcyBhIHRlY2huaWNhbCBiYWNr
-Z3JvdW5kIHRoYXQgSQo+IGV4cGxhaW5lZC4gVGhlIGV4cGxpY2l0IHVzYWdlIG9mIE1PRFVMRV9J
-TVBPUlRfTlMoKSBpcyBiZXR0ZXIgdGhhbgo+IHNvbWUgaGVhZGVyIHNvbWV3aGVyZSB0aGF0IG1p
-Z2h0IGV2ZW4gYmUgaW5jbHVkZWQgYnkgYW5vdGhlciBhbmQgYmUKPiBwcm94aWVkIHRvIHRoZSBj
-b2RlIHRoYXQgZG9lc24ndCBuZWVkIC8gd2FudCB0byBoYXZlIHRoaXMgbmFtZXNwYWNlIHRvCj4g
-YmUgcHJlc2VudC4gUHV0aW5nIE1PRFVMRV9JTVBPUlRfTlMoKSBpbnRvIGEgX2hlYWRlcl8gaXMg
-YSBtaW5lZmllbGQKPiBmb3IgdGhlIGZ1dHVyZS4KPiAKClV3ZSwgdGhhbmtzIGZvciB5b3VyIHJl
-dmlldyAtIG11Y2ggYXBwcmVjaWF0ZWQuCgpFdmVuIHRob3VnaCBJIGdldCB5b3VyIHBvaW50Li4u
-IFNvcnJ5LCBidXQgaGVyZSBJIGRvIGFncmVlIHdpdGggQW5keSwgYW5kIEkgdGhpbmsKaGUgZXhw
-bGFpbmVkIHNvbWUgb2YgdGhlIHJlYXNvbnMgcHJldHR5IHdlbGwuCgpDaGVlcnMsCkFuZ2VsbwoK
-CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi AngeloGioacchino,
+
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on next-20250915]
+[cannot apply to jic23-iio/togreg char-misc/char-misc-testing char-misc/char-misc-next char-misc/char-misc-linus sre-power-supply/for-next linus/master v6.17-rc6 v6.17-rc5 v6.17-rc4 v6.17-rc6]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/AngeloGioacchino-Del-Regno/spmi-Implement-spmi_subdevice_alloc_and_add-and-devm-variant/20250916-164807
+base:   next-20250915
+patch link:    https://lore.kernel.org/r/20250916084445.96621-5-angelogioacchino.delregno%40collabora.com
+patch subject: [PATCH v4 4/7] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
+config: i386-buildonly-randconfig-001-20250917 (https://download.01.org/0day-ci/archive/20250917/202509171640.JfR2hhcz-lkp@intel.com/config)
+compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250917/202509171640.JfR2hhcz-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202509171640.JfR2hhcz-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   ld: drivers/phy/qualcomm/phy-qcom-eusb2-repeater.o: in function `eusb2_repeater_probe':
+   phy-qcom-eusb2-repeater.c:(.text+0x315): undefined reference to `devm_spmi_subdevice_alloc_and_add'
+   ld: drivers/base/regmap/regmap-spmi.o: in function `regmap_spmi_base_read':
+>> regmap-spmi.c:(.text+0x79): undefined reference to `spmi_register_read'
+   ld: drivers/base/regmap/regmap-spmi.o: in function `regmap_spmi_base_gather_write':
+>> regmap-spmi.c:(.text+0xbe): undefined reference to `spmi_register_zero_write'
+>> ld: regmap-spmi.c:(.text+0xe5): undefined reference to `spmi_register_write'
+   ld: drivers/base/regmap/regmap-spmi.o: in function `regmap_spmi_ext_read':
+>> regmap-spmi.c:(.text+0x1a0): undefined reference to `spmi_ext_register_read'
+>> ld: regmap-spmi.c:(.text+0x1c7): undefined reference to `spmi_ext_register_readl'
+   ld: drivers/base/regmap/regmap-spmi.o: in function `regmap_spmi_ext_gather_write':
+>> regmap-spmi.c:(.text+0x228): undefined reference to `spmi_ext_register_write'
+>> ld: regmap-spmi.c:(.text+0x24f): undefined reference to `spmi_ext_register_writel'
+
+Kconfig warnings: (for reference only)
+   WARNING: unmet direct dependencies detected for REGMAP_SPMI
+   Depends on [m]: SPMI [=m]
+   Selected by [y]:
+   - PHY_QCOM_EUSB2_REPEATER [=y] && OF [=y] && (ARCH_QCOM || COMPILE_TEST [=y])
+   Selected by [m]:
+   - HI6421V600_IRQ [=m] && OF [=y] && SPMI [=m] && HAS_IOMEM [=y]
+   - PINCTRL_QCOM_SPMI_PMIC [=m] && PINCTRL [=y] && (ARCH_QCOM || COMPILE_TEST [=y]) && OF [=y] && SPMI [=m]
+   - QCOM_SPMI_TEMP_ALARM [=m] && THERMAL [=y] && (ARCH_QCOM && OF [=y] || COMPILE_TEST [=y]) && OF [=y] && SPMI [=m] && IIO [=y]
+   - MFD_HI6421_SPMI [=m] && HAS_IOMEM [=y] && OF [=y] && SPMI [=m]
+   - REGULATOR_MT6315 [=m] && REGULATOR [=y] && SPMI [=m]
+   - QCOM_SPMI_ADC5 [=m] && IIO [=y] && SPMI [=m]
+   - NVMEM_APPLE_SPMI [=m] && NVMEM [=y] && (ARCH_APPLE || COMPILE_TEST [=y]) && SPMI [=m]
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
