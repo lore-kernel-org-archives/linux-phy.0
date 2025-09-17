@@ -4,91 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D01CCA0EE8
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 07:07:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD00CCA0EE8
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 09:15:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w4U3nrQK8bEw58jxCE9gwagbj+yNS/CglEroUAhJjco=; b=Scq5k3i4VzfHcW
-	tdz3T1fsZJuyHn6OCp/+bqlXvdlpXtWUxYjzX0h1+FmpxlmkRVl16/yLVOvB+odZTjFWfXtVh1nw2
-	A1OoJ3NrBqUSRiFSInt56hl0TDdfoPfKPaNISvZBlN3wo3pjHoqDYg/N9Pb15u/J8GZ8gDaqHZCtl
-	Rt2MtxLFb/1SMbNT4zoWumNWcJLTEpRuY6/hMlqP+NigDlLme7UOaRxnHy4ZnFkxLJ0f07fQ7qrF2
-	jstfz6MWEsvWbnTG49a+hwgAQj2VnUAwPb5oGRPa65VLIJprhZsRtYyMPNPU3AcEnayeECpNvtrPS
-	RBBM+jfiqC57RG85D4sg==;
+	List-Owner; bh=qbtPKfMPnw5sme7Gj1TGVwn8KBt9Y7v9750L/07aC4U=; b=V7RVjCrTCPTAcr
+	7dAlCMEWrYoJNzMrFm/LH2z2kbDD5c1lbPuUdUrpc3tORtiXYnfmDZmHBHNr1HbMf+J5siDzL6tC6
+	cIw1N/z6IahD/bzeG6n6AK3z5J0x/7KykdYiBkHffIEHzI0eFpGUR5YGjZjq+k6OePEil/ICXMu9F
+	BtxrALJFXGGWyNKO2iQ5uzPyRaWLB7i5rsqZ1Wy3Atg2pxnlF2VJwupq9J8/pfpiB7VGGB0tlF03w
+	7deFvB6Dami6B5OUSniEOMEtrRQtOTIgxUWdAi0VkyfNQ1gdbOZMq6u+/S1hTkaGVzpd472IfdWPM
+	Rfxvkffzy02ttCnoBAnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uymGg-0000000APo1-0rn7;
-	Wed, 17 Sep 2025 07:07:54 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1uyoGN-0000000AlLE-2DGa;
+	Wed, 17 Sep 2025 09:15:43 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uymGc-0000000APmY-2fCs
+	id 1uyoGL-0000000AlKZ-1XEP
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Sep 2025 07:07:53 +0000
-Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250917070744epoutp04bf21ce5edd3fddc496985786dd87c1e8~mACVJLgoA2865928659epoutp04N
-	for <linux-phy@lists.infradead.org>; Wed, 17 Sep 2025 07:07:44 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250917070744epoutp04bf21ce5edd3fddc496985786dd87c1e8~mACVJLgoA2865928659epoutp04N
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1758092864;
-	bh=p2X+j5SJAMEREJd1w3t8TYTfU2tuNXV8TS1mq8smvaI=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=RGWtcuUaLhY8WQoRtyFOqx/FJvfhMKjDYYPiIGcIN/rh/LOZiSE0ImM6Uz7pCYiSz
-	 7pwIjapvnQQrI1V11HFsyxt9lvlqFOgaXCJ6smnF/lygHilO0iyzaHcz3LyHrJEhPM
-	 ebnabodwTvetz6i9shXEWIpf0hNPG2O0ofuHlw/k=
-Received: from epsnrtp04.localdomain (unknown [182.195.42.156]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
-	20250917070743epcas5p21e3006ddc5adb45dae44c3ad85d064da~mACT3guNG0339903399epcas5p2Y;
-	Wed, 17 Sep 2025 07:07:43 +0000 (GMT)
-Received: from epcas5p2.samsung.com (unknown [182.195.38.92]) by
-	epsnrtp04.localdomain (Postfix) with ESMTP id 4cRVG61MTyz6B9m7; Wed, 17 Sep
-	2025 07:07:42 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250917070741epcas5p3f40ff9cf54757eef08a6faa7451f4e2b~mACSKitQP0859608596epcas5p3-;
-	Wed, 17 Sep 2025 07:07:41 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20250917070737epsmtip204cd5a53ee83aea2bc9f33c333939bdd~mACOpKYWk2897628976epsmtip24;
-	Wed, 17 Sep 2025 07:07:37 +0000 (GMT)
-From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
-Cc: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
-	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
-	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
-	<s.nawrocki@samsung.com>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
-	<rosa.pila@samsung.com>, <dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: 
-Subject: RE: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-Date: Wed, 17 Sep 2025 12:37:36 +0530
-Message-ID: <054e01dc27a1$c2011120$46033360$@samsung.com>
+	Wed, 17 Sep 2025 09:15:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1758100539;
+	bh=XXSmMhiIJwxEgzQuWSUYkqPOP5y8v9qGIfTlmLL2PFI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=L2Xmnn24q18lCp584jc3DJ3aArQTX0Q97EwLeCn3gjtunVHCT+VCz8J59OyoRJRXb
+	 J6E2VIIP+SpjyRvytPAkuXuBab8plMjreqyXG4r62yWvFYC/GgVKew8qFVTN8wqEi7
+	 cHLBtuaXLQ49gL79nfIC1DQSkd5BKuibCrHrBtIp1ozBC/55FV50OsL4lsJ/9d/G+R
+	 D+xinyMOJga2aTtZJrHpRahN2aHbzA5KD76lgmLrcSiwQOcG91iCfs3R06RXp/ujG/
+	 XOjr2a4cuI9zpH7lYnDdCoE40xrh9yjYtRCU50u0SAIN0qhgTGb4XYkT5eQm6kQCJ/
+	 0Q4fjPfECOKnQ==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8555E17E0109;
+	Wed, 17 Sep 2025 11:15:38 +0200 (CEST)
+Message-ID: <a10685e2-e4af-4097-b432-778e83e0b3bf@collabora.com>
+Date: Wed, 17 Sep 2025 11:15:37 +0200
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIRMOVGdWg5oRjNsRBgEjzIeIB8IgGabj6EAmTXuDcB8lF0oAGjtHpaA19Hw4WzwQPd4IAUON4A
-Content-Language: en-in
-X-CMS-MailID: 20250917070741epcas5p3f40ff9cf54757eef08a6faa7451f4e2b
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e
-References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
-	<CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
-	<20250903073827.3015662-2-pritam.sutar@samsung.com>
-	<20250904-interesting-lovely-ringtail-38bbef@kuoka>
-	<000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
-	<87857202-b436-4476-9384-67566126d844@kernel.org> 
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+To: Andy Shevchenko <andy.shevchenko@gmail.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+Cc: Andy Shevchenko <andriy.shevchenko@intel.com>, sboyd@kernel.org,
+ jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
+ andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
+ srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org,
+ krzysztof.kozlowski@linaro.org, linux-arm-msm@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+ kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
+ <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
+ <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
+ <aMlnp4x-1MUoModr@smile.fi.intel.com>
+ <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
+ <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_000751_318194_521D3ED5 
-X-CRM114-Status: GOOD (  24.95  )
+X-CRM114-CacheID: sfid-20250917_021541_560907_3F25FAA1 
+X-CRM114-Status: GOOD (  18.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,146 +85,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-
-> -----Original Message-----
-> From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> Sent: 04 September 2025 03:52 PM
-> To: 'Krzysztof Kozlowski' <krzk@kernel.org>
-> Cc: 'vkoul@kernel.org' <vkoul@kernel.org>; 'kishon@kernel.org'
-> <kishon@kernel.org>; 'robh@kernel.org' <robh@kernel.org>;
-> 'krzk+dt@kernel.org' <krzk+dt@kernel.org>; 'conor+dt@kernel.org'
-> <conor+dt@kernel.org>; 'alim.akhtar@samsung.com'
-> <alim.akhtar@samsung.com>; 'andre.draszik@linaro.org'
-> <andre.draszik@linaro.org>; 'peter.griffin@linaro.org'
-> <peter.griffin@linaro.org>; 'kauschluss@disroot.org' <kauschluss@disroot.org>;
-> 'ivo.ivanov.ivanov1@gmail.com' <ivo.ivanov.ivanov1@gmail.com>;
-> 'igor.belwon@mentallysanemainliners.org'
-> <igor.belwon@mentallysanemainliners.org>; 'm.szyprowski@samsung.com'
-> <m.szyprowski@samsung.com>; 's.nawrocki@samsung.com'
-> <s.nawrocki@samsung.com>; 'linux-phy@lists.infradead.org' <linux-
-> phy@lists.infradead.org>; 'devicetree@vger.kernel.org'
-> <devicetree@vger.kernel.org>; 'linux-kernel@vger.kernel.org' <linux-
-> kernel@vger.kernel.org>; 'linux-arm-kernel@lists.infradead.org' <linux-arm-
-> kernel@lists.infradead.org>; 'linux-samsung-soc@vger.kernel.org' <linux-
-> samsung-soc@vger.kernel.org>; 'rosa.pila@samsung.com'
-> <rosa.pila@samsung.com>; 'dev.tailor@samsung.com'
-> <dev.tailor@samsung.com>; 'faraz.ata@samsung.com'
-> <faraz.ata@samsung.com>; 'muhammed.ali@samsung.com'
-> <muhammed.ali@samsung.com>; 'selvarasu.g@samsung.com'
-> <selvarasu.g@samsung.com>
-> Subject: RE: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
-> ExynosAutov920 HS phy compatible
-> 
-> Hi Krzysztof,
-> 
-> > -----Original Message-----
-> > From: Krzysztof Kozlowski <krzk@kernel.org>
-> > Sent: 04 September 2025 03:12 PM
-> > To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
-> > krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
-> > andre.draszik@linaro.org; peter.griffin@linaro.org;
-> > kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
-> > igor.belwon@mentallysanemainliners.org;
-> > m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
-> > phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> > kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> > linux-samsung- soc@vger.kernel.org; rosa.pila@samsung.com;
-> > dev.tailor@samsung.com; faraz.ata@samsung.com;
-> > muhammed.ali@samsung.com; selvarasu.g@samsung.com
-> > Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy:
-> > add
-> > ExynosAutov920 HS phy compatible
-> >
-> > On 04/09/2025 09:51, Pritam Manohar Sutar wrote:
-> > > Hi Krzysztof,
-> > >
-> > >> -----Original Message-----
-> > >> From: Krzysztof Kozlowski <krzk@kernel.org>
-> > >> Sent: 04 September 2025 12:18 PM
-> > >> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > >> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
-> > >> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
-> > >> andre.draszik@linaro.org; peter.griffin@linaro.org;
-> > >> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
-> > >> igor.belwon@mentallysanemainliners.org;
-> > >> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
-> > >> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> > >> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> > >> linux-samsung- soc@vger.kernel.org; rosa.pila@samsung.com;
-> > >> dev.tailor@samsung.com; faraz.ata@samsung.com;
-> > >> muhammed.ali@samsung.com; selvarasu.g@samsung.com
-> > >> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy:
-> > >> add
-> > >> ExynosAutov920 HS phy compatible
-> > >>
-> > >> On Wed, Sep 03, 2025 at 01:08:22PM +0530, Pritam Manohar Sutar wrote:
-> > >>> Document support for the USB20 phy found on the ExynosAutov920 SoC.
-> > >>> The
-> > >>> USB20 phy is functionally identical to that on the Exynos850 SoC,
-> > >>> so no driver changes are needed to support this phy. However, add
-> > >>> a dedicated compatible string for USB20 phy found in this SoC.
-> > >>>
-> > >>> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > >>
-> > >> You just dropped all tags without explaining why.
-> > >
-> > > Regretted inconvenience.
-> > >
-> > > There were significant changes in supplies' names in driver and
-> > > schemas (patch-set v8). This led to make changes in patch no 5.  And
-> > > review for these changes is needed.  Hence, removed RB tag in this patch-
-> set.
-> > >
-> > > There was a ask for the same https://lore.kernel.org/linux-
-> >
-> phy/000401dc18cd$ec02a1b0$c407e510$@samsung.com/#:~:text=Let%20me%
-> >
-> 20know%2C%20because%20of%20above%20changes%2C%20should%20be%20
-> >
-> removing%20your%20%0A%27reviewed%2Dby%27%20tag%20from%20patch%
-> > 201%20and%203.
-> > >
-> >
-> >
-> > Where in the changelog you explained why you dropped the tags?
-> 
-> Along with supplies' names, there were similar commit messages for patch no 1,
-> 3 as patch no 5 (v7). (though, they were explaining schema more than h/w).
-> Changed commit messages of the patch no 1, 3, 5 (v7) as per reference commits
-> and would like to get them reviewed again, so did not add RB for patch 1 and 3,
-> which you had given RB (in v7).
-> 
-> Forgot to add these details for dropping the RB tags in changelog.
-> Do I need to send v9 by retaining RB for patch 1 and 3?
-> 
-
-Gentle Reminder. 
-
-> >
-> > Best regards,
-> > Krzysztof
-> 
-> 
-> Thank you.
-> 
-> Regards,
-> Pritam
-
-Thank you,
-
-Regards,
-Pritam
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SWwgMTYvMDkvMjUgMTg6MjAsIEFuZHkgU2hldmNoZW5rbyBoYSBzY3JpdHRvOgo+IE9uIFR1ZSwg
+U2VwIDE2LCAyMDI1IGF0IDY6MTHigK9QTSBVd2UgS2xlaW5lLUvDtm5pZwo+IDx1LmtsZWluZS1r
+b2VuaWdAYmF5bGlicmUuY29tPiB3cm90ZToKPj4gT24gVHVlLCBTZXAgMTYsIDIwMjUgYXQgMDQ6
+MzU6MzVQTSArMDMwMCwgQW5keSBTaGV2Y2hlbmtvIHdyb3RlOgo+Pj4gT24gVHVlLCBTZXAgMTYs
+IDIwMjUgYXQgMDM6MjQ6NTZQTSArMDIwMCwgVXdlIEtsZWluZS1Lw7ZuaWcgd3JvdGU6Cj4+Pj4g
+T24gVHVlLCBTZXAgMTYsIDIwMjUgYXQgMTA6NDQ6NDBBTSArMDIwMCwgQW5nZWxvR2lvYWNjaGlu
+byBEZWwgUmVnbm8gd3JvdGU6Cj4gCj4gLi4uCj4gCj4+Pj4+ICtNT0RVTEVfSU1QT1JUX05TKCJT
+UE1JIik7Cj4+Pj4KPj4+PiBJZiBpdCdzIGV4YWN0bHkgdGhlIGZpbGVzIHRoYXQgI2luY2x1ZGUg
+PGxpbnV4L3NwbWkuaD4gc2hvdWxkIGhhdmUgdGhhdAo+Pj4+IG5hbWVzcGFjZSBpbXBvcnQsIHlv
+dSBjYW4gcHV0IHRoZSBNT0RVTEVfSU1QT1JUX05TIGludG8gdGhhdCBoZWFkZXIuCj4+Pgo+Pj4g
+V2hpY2ggbWFrZXMgYW55b25lIHRvIGltcG9ydCBuYW1lc3BhY2UgZXZlbiBpZiB0aGV5IGp1c3Qg
+d2FudCB0byB1c2Ugc29tZSB0eXBlcwo+Pj4gb3V0IG9mIHRoZSBoZWFkZXIuCj4+Cj4+IE5vdGlj
+ZSB0aGF0IEkgY2FyZWZ1bGx5IGZvcm11bGF0ZWQgbXkgc3VnZ2VzdGlvbiB0byBjb3BlIGZvciB0
+aGlzIGNhc2UuCj4gCj4gQW5kIEkgY2FyZWZ1bGx5IGFuc3dlcmVkLiBZb3VyIHByb3Bvc2FsIHdv
+bid0IHByZXZlbnQgX290aGVyXyBmaWxlcyB0bwo+IHVzZSB0aGUgc2FtZSBoZWFkZXIgaW4gdGhl
+IGZ1dHVyZSB3aXRob3V0IG5lZWRpbmcgYSBuYW1lc3BhY2UgdG8gYmUKPiBpbXBvcnRlZC4KPiAK
+Pj4+IFRoaXMgaXMgbm90IGdvb2Qgc29sdXRpb24gZ2VuZXJhbGx5IHNwZWFraW5nLiBBbHNvIHRo
+aXMgd2lsbAo+Pj4gZGltaW5pc2ggb25lIG9mIHRoZSBwdXJwb3NlcyBvZiBfTlMgdmFyaWFudHMg
+b2YgTU9EVUxFKi9FWFBPUlQqLCBpLmUuIG1ha2UgaXQKPj4+IGludmlzaWJsZSB0aGF0IHNvbWUg
+b2YgdGhlIGNvZGUgbWF5IGJlY29tZSBhbiBhYnVzZXIgb2YgdGhlIEFQSSBqdXN0IGJ5IHNvbWVv
+bmUKPj4+IGluY2x1ZGUgdGhlIGhlYWRlciAoZm9yIGEgcmVhc29uIG9yIGJ5IGEgbWlzdGFrZSku
+Cj4+Cj4+IFllYWgsIG9waW5pb25zIGRpZmZlci4gSW4gbXkgZXllcyBpdCdzIHF1aXRlIGVsZWdh
+bnQuCj4gCj4gSXQncyBub3QgYSBwdXJlIG9waW5pb24sIGl0IGhhcyBhIHRlY2huaWNhbCBiYWNr
+Z3JvdW5kIHRoYXQgSQo+IGV4cGxhaW5lZC4gVGhlIGV4cGxpY2l0IHVzYWdlIG9mIE1PRFVMRV9J
+TVBPUlRfTlMoKSBpcyBiZXR0ZXIgdGhhbgo+IHNvbWUgaGVhZGVyIHNvbWV3aGVyZSB0aGF0IG1p
+Z2h0IGV2ZW4gYmUgaW5jbHVkZWQgYnkgYW5vdGhlciBhbmQgYmUKPiBwcm94aWVkIHRvIHRoZSBj
+b2RlIHRoYXQgZG9lc24ndCBuZWVkIC8gd2FudCB0byBoYXZlIHRoaXMgbmFtZXNwYWNlIHRvCj4g
+YmUgcHJlc2VudC4gUHV0aW5nIE1PRFVMRV9JTVBPUlRfTlMoKSBpbnRvIGEgX2hlYWRlcl8gaXMg
+YSBtaW5lZmllbGQKPiBmb3IgdGhlIGZ1dHVyZS4KPiAKClV3ZSwgdGhhbmtzIGZvciB5b3VyIHJl
+dmlldyAtIG11Y2ggYXBwcmVjaWF0ZWQuCgpFdmVuIHRob3VnaCBJIGdldCB5b3VyIHBvaW50Li4u
+IFNvcnJ5LCBidXQgaGVyZSBJIGRvIGFncmVlIHdpdGggQW5keSwgYW5kIEkgdGhpbmsKaGUgZXhw
+bGFpbmVkIHNvbWUgb2YgdGhlIHJlYXNvbnMgcHJldHR5IHdlbGwuCgpDaGVlcnMsCkFuZ2VsbwoK
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
