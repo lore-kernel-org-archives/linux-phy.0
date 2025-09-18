@@ -4,76 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1C95CAC59A
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Sep 2025 16:25:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6651ACAC59F
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Sep 2025 02:43:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9oJSSu1zEaPrrt5Y1kNwF49n4tMZWOa6fJqn0nCQY7M=; b=bdEpmjfy2zwt+BapcdhwkoY6Yj
-	G94P6gkH/ji/qagezriExB0cv3srl6j0A9Exw8OY5iRtqHndN8B6CKBcfE14fk9evC50z2FThX3yK
-	iADzwYWkAXj+PtuPSBH23VpjyKY80sif+X1OumuhV02Kft/qOQAOBbYJ/sL6DJ/Cn3C1AEuSIJnZN
-	duz8l06+N17ZSBJ6bOGk0kvT7UpNstJCFOMsAkfwn2+RLEH9lu7epuvewpvlF/aRH9pt61DCOO7EK
-	IQQfjmj7VEebyZfTMkqt8cvcXqN+3bScsHTLiJ/i/LwUiPuQ2xhrJeGLAndFZ99KQIOl7MvBkmDav
-	pW3TmSCw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ImWCOnrIJ9NDHntuep4oTD5S2IX5KlRTVFUUdsZwfuc=; b=ptFPY+1aqkmy85
+	Qp5VYAa8k08JaNfclqItxOCcYyLOTy5gnE5FBU+PyemqxfWb9pzg6i003lrjILtCBKx72Ry9ipfRn
+	0SlM500QePCFG9kqqTvwxFk0IcX84xjBS31c2Rce14gieTiDubp1qhkXiz4ozgRsOxHct83UF2rCi
+	lImFHKpVOMCATR0IvJjvxBjtqSDm4roOiyRZ40aGW+rag9B1sbcAamtGYdz4PPwpLN1jo3XiQM57F
+	HrKQn5vyNXN1fLCzAClxByvqIgOdf2qhKdMXT57booS+WIb/0F79st6KF0Npx0k00ywoLqtAwbLxj
+	2D1juoAIZve75e/JqLhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyuyA-0000000D8em-1Oha;
-	Wed, 17 Sep 2025 16:25:22 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1uz4cM-0000000G3XQ-45RL;
+	Thu, 18 Sep 2025 02:43:30 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyuy8-0000000D8d6-1Mpw
-	for linux-phy@lists.infradead.org;
-	Wed, 17 Sep 2025 16:25:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1758126283; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=UoUxm3TG+Xdqdt4n6U36BzI+ZArx0id4xIhPohYJk3DcYQKQ3gFw6Bm+XpQRDTul+ELzmkXOAwgOG8WJMQ2VP6txBjz7QSu79IYoaJBOCb8gtqfyzlYEtIDLEqQHjmEyRQhIUhE3LKHczAiNtmLZHMA+NHtnQMAIjLMRZckikOc=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1758126283; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=dUV4xEya8An9AsAZIkFaG1G41M6EhB9SXM95Zf2aVOs=; 
-	b=T5ygtmluYn6j1nGKR6dCuqGrwo8jgjwQ7HRQB1kFGDR3TV+ZbvUMPUXLreIpws72ahMaTDVRpM468xuR2abHclMk96T83OxFmhWZagKCIEXxY0Y5u6rKK5JZ6nACNBsBrS5rc4a4DcuA8sQhNGqkJVyS2tjCWSwQsJZkBMKk/a4=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1758126283;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=dUV4xEya8An9AsAZIkFaG1G41M6EhB9SXM95Zf2aVOs=;
-	b=B1+cRPXk0cJs3HmKjgPbf4rOEZkW5FzCMbo/y7pyOUdeGT0CNzMTg53IAdty9WTR
-	hkgBpU6u3XxrNpbfC9M+rPMZjNW+rjJ6GMIenoAQ6iP/OhbeJGjoGGkOLa6kO6KB/R5
-	PveNckwFRHSTIxxLF7cHSDs38Qchjg+1BPit9+sE=
-Received: by mx.zohomail.com with SMTPS id 1758126271855414.6769814303776;
-	Wed, 17 Sep 2025 09:24:31 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 0F592180265; Wed, 17 Sep 2025 18:24:26 +0200 (CEST)
-Date: Wed, 17 Sep 2025 18:24:26 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com, 
-	nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, 
-	srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	krzysztof.kozlowski@linaro.org, u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org, 
-	linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org, 
-	casey.connolly@linaro.org, Jonathan Cameron <jonathan.cameron@huawei.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
- and devm variant
-Message-ID: <zfe2q5sw5pphfyzidhe6d564j6yw32lnxzv4etxcr3hhi2ychy@34qka6dllzxe>
-References: <20250916084445.96621-1-angelogioacchino.delregno@collabora.com>
- <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
+	id 1uz4cK-0000000G3WP-226d;
+	Thu, 18 Sep 2025 02:43:29 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id C8B11406E6;
+	Thu, 18 Sep 2025 02:43:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29E0AC4CEE7;
+	Thu, 18 Sep 2025 02:43:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1758163407;
+	bh=FAcw+FQV7zWtN4dnW973kFvdMmlphcacFHp3l6fofq8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Gro7LzcJP00FzEQ8tzw4+teFGIHP0ik+ncwYjWtteoFULAqIyq7Xf6fs5MAf3eSMV
+	 wDeckgiCv+7C+oWGb5DFO4vCoHCGCaW/9lvDBXqDDU1rM65tUdySFgNUw+TNk/5UPA
+	 /KiNTep48aMsSnc2guGiygUNjORi018ZntdVr1Vtph8s3XRD9tKAVyRyw8o9viOo0n
+	 dpJ8TQzkktx1UV0I52j0KhCywed6WKRGcn6J83mnrzVNtS6WCC3TZ6LrMtMcKols5E
+	 kX6ThFTBrHcsv59RCv/5MwHZ+/VBYbs3aSUX+9wrvPsESZmmcr7ABDhssEupSJSrPP
+	 VZt5ehN1nynlg==
+Message-ID: <67c2b5c6-7559-4ae9-b2af-e839b6b8f4d5@kernel.org>
+Date: Thu, 18 Sep 2025 11:43:22 +0900
 MIME-Version: 1.0
-In-Reply-To: <20250916084445.96621-2-angelogioacchino.delregno@collabora.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.4.3/258.96.42
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, alim.akhtar@samsung.com, andre.draszik@linaro.org,
+ peter.griffin@linaro.org, kauschluss@disroot.org,
+ ivo.ivanov.ivanov1@gmail.com, igor.belwon@mentallysanemainliners.org,
+ m.szyprowski@samsung.com, s.nawrocki@samsung.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+ dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+ selvarasu.g@samsung.com
+References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
+ <CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
+ <20250903073827.3015662-2-pritam.sutar@samsung.com>
+ <20250904-interesting-lovely-ringtail-38bbef@kuoka>
+ <000001dc1d70$aebf7d80$0c3e7880$@samsung.com>
+ <87857202-b436-4476-9384-67566126d844@kernel.org>
+ <001001dc1d85$c0d56a60$42803f20$@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <001001dc1d85$c0d56a60$42803f20$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_092520_447033_88061E1E 
-X-CRM114-Status: GOOD (  32.15  )
+X-CRM114-CacheID: sfid-20250917_194328_571663_35AFC920 
+X-CRM114-Status: GOOD (  14.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,293 +125,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8867088237106673406=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 04/09/2025 19:21, Pritam Manohar Sutar wrote:
+> Hi Krzysztof,
+> 
+>> -----Original Message-----
+>> From: Krzysztof Kozlowski <krzk@kernel.org>
+>> Sent: 04 September 2025 03:12 PM
+>> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+>> andre.draszik@linaro.org; peter.griffin@linaro.org; kauschluss@disroot.org;
+>> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
+>> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+>> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+>> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+>> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+>> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+>> selvarasu.g@samsung.com
+>> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+>> ExynosAutov920 HS phy compatible
+>>
+>> On 04/09/2025 09:51, Pritam Manohar Sutar wrote:
+>>> Hi Krzysztof,
+>>>
+>>>> -----Original Message-----
+>>>> From: Krzysztof Kozlowski <krzk@kernel.org>
+>>>> Sent: 04 September 2025 12:18 PM
+>>>> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>>>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>>>> krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+>>>> andre.draszik@linaro.org; peter.griffin@linaro.org;
+>>>> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
+>>>> igor.belwon@mentallysanemainliners.org;
+>>>> m.szyprowski@samsung.com; s.nawrocki@samsung.com; linux-
+>>>> phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+>>>> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+>>>> linux-samsung- soc@vger.kernel.org; rosa.pila@samsung.com;
+>>>> dev.tailor@samsung.com; faraz.ata@samsung.com;
+>>>> muhammed.ali@samsung.com; selvarasu.g@samsung.com
+>>>> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy:
+>>>> add
+>>>> ExynosAutov920 HS phy compatible
+>>>>
+>>>> On Wed, Sep 03, 2025 at 01:08:22PM +0530, Pritam Manohar Sutar wrote:
+>>>>> Document support for the USB20 phy found on the ExynosAutov920 SoC.
+>>>>> The
+>>>>> USB20 phy is functionally identical to that on the Exynos850 SoC, so
+>>>>> no driver changes are needed to support this phy. However, add a
+>>>>> dedicated compatible string for USB20 phy found in this SoC.
+>>>>>
+>>>>> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+>>>>
+>>>> You just dropped all tags without explaining why.
+>>>
+>>> Regretted inconvenience.
+>>>
+>>> There were significant changes in supplies' names in driver and
+>>> schemas (patch-set v8). This led to make changes in patch no 5.  And
+>>> review for these changes is needed.  Hence, removed RB tag in this patch-set.
+>>>
+>>> There was a ask for the same https://lore.kernel.org/linux-
+>> phy/000401dc18cd$ec02a1b0$c407e510$@samsung.com/#:~:text=Let%20me%
+>> 20know%2C%20because%20of%20above%20changes%2C%20should%20be%20
+>> removing%20your%20%0A%27reviewed%2Dby%27%20tag%20from%20patch%
+>> 201%20and%203.
+>>>
+>>
+>>
+>> Where in the changelog you explained why you dropped the tags?
+> 
+> Along with supplies' names, there were similar commit messages 
+> for patch no 1, 3 as patch no 5 (v7). (though, they were explaining 
+> schema more than h/w). Changed commit messages of the 
+> patch no 1, 3, 5 (v7) as per reference commits and would like 
+> to get them reviewed again, so did not add RB for patch 1 and 3,
+> which you had given RB (in v7). 
 
---===============8867088237106673406==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="b73zeyu7mpwvdb3l"
-Content-Disposition: inline
-
-
---b73zeyu7mpwvdb3l
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v4 1/7] spmi: Implement spmi_subdevice_alloc_and_add()
- and devm variant
-MIME-Version: 1.0
-
-Hi,
-
-On Tue, Sep 16, 2025 at 10:44:39AM +0200, AngeloGioacchino Del Regno wrote:
-> Some devices connected over the SPMI bus may be big, in the sense
-> that those may be a complex of devices managed by a single chip
-> over the SPMI bus, reachable through a single SID.
->=20
-> Add new functions aimed at managing sub-devices of a SPMI device
-> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
-> for adding a new subdevice and removing it respectively, and also
-> add their devm_* variants.
->=20
-> The need for such functions comes from the existance of	those
-> complex Power Management ICs (PMICs), which feature one or many
-> sub-devices, in some cases with these being even addressable on
-> the chip in form of SPMI register ranges.
->=20
-> Examples of those devices can be found in both Qualcomm platforms
-> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
-> sub-devices, and in newer MediaTek platforms showing similar HW
-> features and a similar layout with those also having many subdevs.
->=20
-> Also, instead of generally exporting symbols, export them with a
-> new "SPMI" namespace: all users will have to import this namespace
-> to make use of the newly introduced exports.
->=20
-> Link: https://lore.kernel.org/r/20250722101317.76729-2-angelogioacchino.d=
-elregno@collabora.com
-> Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-> Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-> Link: https://lore.kernel.org/r/20250730112645.542179-2-angelogioacchino.=
-delregno@collabora.com
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@coll=
-abora.com>
-> ---
-
-It would be nice, if this patch lands in the 6.18 merge window. That
-way we don't need to do an immutable branch for the different involved
-subsystems.
-
-Greetings,
-
--- Sebastian
-
->  drivers/spmi/spmi-devres.c | 24 ++++++++++++
->  drivers/spmi/spmi.c        | 79 ++++++++++++++++++++++++++++++++++++++
->  include/linux/spmi.h       | 16 ++++++++
->  3 files changed, 119 insertions(+)
->=20
-> diff --git a/drivers/spmi/spmi-devres.c b/drivers/spmi/spmi-devres.c
-> index 62c4b3f24d06..8feebab0365b 100644
-> --- a/drivers/spmi/spmi-devres.c
-> +++ b/drivers/spmi/spmi-devres.c
-> @@ -60,5 +60,29 @@ int devm_spmi_controller_add(struct device *parent, st=
-ruct spmi_controller *ctrl
->  }
->  EXPORT_SYMBOL_GPL(devm_spmi_controller_add);
-> =20
-> +static void devm_spmi_subdevice_remove(void *res)
-> +{
-> +	spmi_subdevice_remove(res);
-> +}
-> +
-> +struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *=
-dev,
-> +							 struct spmi_device *sparent)
-> +{
-> +	struct spmi_subdevice *sub_sdev;
-> +	int ret;
-> +
-> +	sub_sdev =3D spmi_subdevice_alloc_and_add(sparent);
-> +	if (IS_ERR(sub_sdev))
-> +		return sub_sdev;
-> +
-> +	ret =3D devm_add_action_or_reset(dev, devm_spmi_subdevice_remove, sub_s=
-dev);
-> +	if (ret)
-> +		return ERR_PTR(ret);
-> +
-> +	return sub_sdev;
-> +}
-> +EXPORT_SYMBOL_NS_GPL(devm_spmi_subdevice_alloc_and_add, "SPMI");
-> +
->  MODULE_LICENSE("GPL");
->  MODULE_DESCRIPTION("SPMI devres helpers");
-> +MODULE_IMPORT_NS("SPMI");
-> diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
-> index 3cf8d9bd4566..e011876c3187 100644
-> --- a/drivers/spmi/spmi.c
-> +++ b/drivers/spmi/spmi.c
-> @@ -19,6 +19,7 @@
-> =20
->  static bool is_registered;
->  static DEFINE_IDA(ctrl_ida);
-> +static DEFINE_IDA(spmi_subdevice_ida);
-> =20
->  static void spmi_dev_release(struct device *dev)
->  {
-> @@ -31,6 +32,19 @@ static const struct device_type spmi_dev_type =3D {
->  	.release	=3D spmi_dev_release,
->  };
-> =20
-> +static void spmi_subdev_release(struct device *dev)
-> +{
-> +	struct spmi_device *sdev =3D to_spmi_device(dev);
-> +	struct spmi_subdevice *sub_sdev =3D container_of(sdev, struct spmi_subd=
-evice, sdev);
-> +
-> +	ida_free(&spmi_subdevice_ida, sub_sdev->devid);
-> +	kfree(sub_sdev);
-> +}
-> +
-> +static const struct device_type spmi_subdev_type =3D {
-> +	.release	=3D spmi_subdev_release,
-> +};
-> +
->  static void spmi_ctrl_release(struct device *dev)
->  {
->  	struct spmi_controller *ctrl =3D to_spmi_controller(dev);
-> @@ -90,6 +104,18 @@ void spmi_device_remove(struct spmi_device *sdev)
->  }
->  EXPORT_SYMBOL_GPL(spmi_device_remove);
-> =20
-> +/**
-> + * spmi_subdevice_remove() - Remove an SPMI subdevice
-> + * @sub_sdev:	spmi_device to be removed
-> + */
-> +void spmi_subdevice_remove(struct spmi_subdevice *sub_sdev)
-> +{
-> +	struct spmi_device *sdev =3D &sub_sdev->sdev;
-> +
-> +	device_unregister(&sdev->dev);
-> +}
-> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_remove, "SPMI");
-> +
->  static inline int
->  spmi_cmd(struct spmi_controller *ctrl, u8 opcode, u8 sid)
->  {
-> @@ -431,6 +457,59 @@ struct spmi_device *spmi_device_alloc(struct spmi_co=
-ntroller *ctrl)
->  }
->  EXPORT_SYMBOL_GPL(spmi_device_alloc);
-> =20
-> +/**
-> + * spmi_subdevice_alloc_and_add(): Allocate and add a new SPMI sub-device
-> + * @sparent:	SPMI parent device with previously registered SPMI controll=
-er
-> + *
-> + * Returns:
-> + * Pointer to newly allocated SPMI sub-device for success or negative ER=
-R_PTR.
-> + */
-> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *=
-sparent)
-> +{
-> +	struct spmi_subdevice *sub_sdev;
-> +	struct spmi_device *sdev;
-> +	int ret;
-> +
-> +	sub_sdev =3D kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
-> +	if (!sub_sdev)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	ret =3D ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-> +	if (ret < 0) {
-> +		kfree(sub_sdev);
-> +		return ERR_PTR(ret);
-> +	}
-> +
-> +	sdev =3D &sub_sdev->sdev;
-> +	sdev->ctrl =3D sparent->ctrl;
-> +	device_initialize(&sdev->dev);
-> +	sdev->dev.parent =3D &sparent->dev;
-> +	sdev->dev.bus =3D &spmi_bus_type;
-> +	sdev->dev.type =3D &spmi_subdev_type;
-> +
-> +	sub_sdev->devid =3D ret;
-> +	sdev->usid =3D sparent->usid;
-> +
-> +	ret =3D dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
-> +			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
-> +	if (ret)
-> +		goto err_put_dev;
-> +
-> +	ret =3D device_add(&sdev->dev);
-> +	if (ret) {
-> +		dev_err(&sdev->dev, "Can't add %s, status %d\n",
-> +			dev_name(&sdev->dev), ret);
-> +		goto err_put_dev;
-> +	}
-> +
-> +	return sub_sdev;
-> +
-> +err_put_dev:
-> +	put_device(&sdev->dev);
-> +	return ERR_PTR(ret);
-> +}
-> +EXPORT_SYMBOL_NS_GPL(spmi_subdevice_alloc_and_add, "SPMI");
-> +
->  /**
->   * spmi_controller_alloc() - Allocate a new SPMI controller
->   * @parent:	parent device
-> diff --git a/include/linux/spmi.h b/include/linux/spmi.h
-> index 28e8c8bd3944..7cea0a5b034b 100644
-> --- a/include/linux/spmi.h
-> +++ b/include/linux/spmi.h
-> @@ -69,6 +69,22 @@ int spmi_device_add(struct spmi_device *sdev);
-> =20
->  void spmi_device_remove(struct spmi_device *sdev);
-> =20
-> +/**
-> + * struct spmi_subdevice - Basic representation of an SPMI sub-device
-> + * @sdev:	Sub-device representation of an SPMI device
-> + * @devid:	Platform Device ID of an SPMI sub-device
-> + */
-> +struct spmi_subdevice {
-> +	struct spmi_device	sdev;
-> +	unsigned int		devid;
-> +};
-> +
-> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *=
-sparent);
-> +void spmi_subdevice_remove(struct spmi_subdevice *sdev);
-> +
-> +struct spmi_subdevice *devm_spmi_subdevice_alloc_and_add(struct device *=
-dev,
-> +							 struct spmi_device *sparent);
-> +
->  /**
->   * struct spmi_controller - interface to the SPMI master controller
->   * @dev:	Driver model representation of the device.
-> --=20
-> 2.51.0
->=20
-
---b73zeyu7mpwvdb3l
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmjK4LMACgkQ2O7X88g7
-+pquRQ//fllBLsQUj+gMWiKvHca0QRVBivSZq0aVidiaTPryqzJ/vEJWq/KjpSJP
-W8Kx9YHDiHh3cBqBQ+KW1EyQRmYhUmhGeuwVbYdjdtWpPKDcCcsPo1QqBFQL+Z0U
-V4Kd1WGg1Gwf5FEXAXFrsCKhdBasWoRlyMsyNUiwbEDi92hLq/t8dOdmyuQH+EcA
-a/KRM7YmIBIeej6E7lx3pdizHPBdVKijMK4pd8j+4fNOxUBpPi/7XT81K9X2Nzic
-lEyUcgsjpjTs2FJbFW8+EZODMLmgd6UGyA5Pv3jzHPgZBWZI6zZubgfFuVVCNttu
-qxXskmzHKyF9rman3tvWVbFL/CC/m5f11hxJstG1sBPmrrgOpsD5iN0XerOuta24
-tnxIQQMjrVG/1+1uMVRuBy2v7OqBnP7PBHkK1icudPB2zxTZN6XVaULOS+htaYJc
-jAPDSKS4wjOULAg4vLQORtXIBhN1lBBbgRNH+jXCtBA6W1HmWwI0NJ3MaippHMjw
-Nqeo50Tv7xEgIWn8ZiS+AP0+xBR1bBXqNaydZuf/plzklqFl/Sk9x1qGKCZZZOLW
-jufnq18D9wxl53JHztTwLIlNILdxwvIVDrkhbFgrHk/BaeXIT4txniES2lq0FLFf
-CeBsQeBJ3GHT+HaUQnOcRJwqfUZo7Y8mqMeImzZCnTAgL6NDvtI=
-=AZLG
------END PGP SIGNATURE-----
-
---b73zeyu7mpwvdb3l--
+I do not have time to review the same second time and I find such
+request quite a waste of my time. It's v8 so I am surprised to see it
+getting changed even after review.
 
 
---===============8867088237106673406==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8867088237106673406==--
-
