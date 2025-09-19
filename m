@@ -4,154 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3DC0CAC59A
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 15:58:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDC2DCAC59A
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 16:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=maM+lE9MYAKvg8wZqeJMX6ESl4Xz1Pn/a4TG1YkdR7w=; b=Qu7obbIrH8PmOH
-	VOScp79Tm+LqLSZDVeFOJVwKxGU65FgImFZNwvRhcXr/wSaoPMVCzxm/XAIhCG6I9YKhiF37n86EE
-	GBp/JFiZJO5v1yZJQ7AdCtBruIyefRnCGfgUBNB5UhbHOuWqn+P21q4nWkN48r3ebhTdG0uTpKDCV
-	NA7Lq+cNNtWi2bO1inyne4KgYbwZv/18CSO07Rc5YDPHgi5GwgZwwje3fRUQL1F900Gn9r1WIP9aS
-	CTAFZkA29osw/o/dCN0UrZOTBISaP2JwOSkDqx+mZllHQ6Znc5pThiBPelWh5d54TqnVxhaoZ5JaC
-	+sylpKYlT//Apvg5YVIQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2MKGL2kygm19C/WMRIO+i2MotTGoAGY7F9B1k7QqtRs=; b=vkapulOoXhfZ4gmtnXB4d+tA6r
+	emhvnlpVyd4WBanxfvdfXZRuxeTTbXz5rlD9QtYtOyFf3SKar106O07qf1zH8GhlzikJS5Qcpg9ek
+	ghbcnngSY5l8CpukcVkBJx2L5/QDV2/Ou4x1f89GMDjq4e0S11sWtPH/jPYzNxy7LEXJWCkxjaSW0
+	sl/CPsnGthF/lJsecsWIgM5z11oyrRN+8p7utCKfT1LL3lryjrBPG2qCGYl7eXUa+hbipbGBKiXsX
+	RKYl496OupIhKQgyVYvRI6DLRSaJvRp5qRd8gFwzgTrnD8E7+amyxaf55CcK4B84aIoC8dgtceaWK
+	70036Xvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdUx-00000003QjS-39id;
-	Fri, 19 Sep 2025 15:58:11 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1uzdoT-00000003Vfl-2Dau;
+	Fri, 19 Sep 2025 16:18:21 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdUv-00000003Qht-2FQf;
-	Fri, 19 Sep 2025 15:58:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=nIVu7/F5uTXbg9NN1LEgxkDCjM7jTqyc7GMZNd4GA3Xeb07BuZXVtvknws2CJHFjsWwq9/i+Pafio8IL4Jn9TJbOZHfsEDmYnF8yfOuv9UJgdnkFrfOVpo3yQS0KKrmaCUXsLIibOYNxR0cJPCQk/p12ulRrhfVdOvG63sk91vIPalp+MvV3B/54IUljwWVPczhRfzsko2W1aM0iFPkEsZY+julylTbParVqDBknuIO/5WJrqE217acUUIQiCrnVa0AZqkH8RP+Nx4bJ6VDUOK66g2WCeskOUJv0seaxGTWNxHlVkzaBAttn/YNQ4MMtu7Q/wb3Klruff/wHkiiDjA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0wjiyp5bEieA/sOGBjC9aS6+23pI8UuK+i5ChxB6XGE=;
- b=Xp0+C9UiyoFayJ6nkSUzBZsL44AmfGHkRbbrpoTS+N2G5sjHVp5KE9N/4q7guOpp1b1AtrCWvEqRHfnAs1Lu7I0jVQan8HdXXjN3gT2aGqtUSpalWQ090ij0w0Qydw/iiq0hMxYY2bxJoSRhfFUvyPib8GWM5UC4p+i61P8+Ufr2blTTTgAWVKbD+ZEU1VqSlHjWEXeoGQyDyXrd58P0x3LLs4YS5TAuwEv+D98L4XjHHa8fRaPVQGzhjHNvb2utrMaJT06H+5wGs6JI8FRG2a/TJpGSHWeiJjl2G/x+wDX6sHsw+TsvvQ1Mhlq2x3yLWMAoE3Jy6LjM5DMLhxhl0w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0wjiyp5bEieA/sOGBjC9aS6+23pI8UuK+i5ChxB6XGE=;
- b=a5RfiNjdum8x6MeugTMDad2Fbdt3VkskUJBfIywuoUEhWxsfGMtkIcs26OkIqAIg3+2q3glg5DRRqaEpejgtIe9B4X/AMKank4mVAfuPZExYV8pWtA2GS705XpGj7C6xuH8kDh9BLOhrlphfE9t8JZ3s5dNGjjt86CXbU3FsEr8whhWi1wi7/laKpCKpA/fb3BbI90+HyQLWnaLKO/McS694K3jMsTJvuoRDre+xl/mwXjrKNApv+eYoZFTSsXQNwY6YNMVdw3HqSwpbwPlp2fUgZJlcrh5tKOWfTono4dinC7oFmF2g8oawSUQSWhqCU9iyuBdMEy4VadAhjtF5ig==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by AM7PR04MB6872.eurprd04.prod.outlook.com (2603:10a6:20b:106::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.14; Fri, 19 Sep
- 2025 15:58:06 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9137.015; Fri, 19 Sep 2025
- 15:58:06 +0000
-Date: Fri, 19 Sep 2025 11:57:56 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>,
-	Abel Vesa <abelvesa@kernel.org>, Peng Fan <peng.fan@nxp.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org
-Subject: Re: [PATCH 3/4] phy: fsl-imx8mq-usb: support alternate reference
- clock
-Message-ID: <aM19hCiKrP/z/W1h@lizhi-Precision-Tower-5810>
-References: <20250919-usb-phy-alt-clk-support-v1-0-57c2a13eea1c@nxp.com>
- <20250919-usb-phy-alt-clk-support-v1-3-57c2a13eea1c@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20250919-usb-phy-alt-clk-support-v1-3-57c2a13eea1c@nxp.com>
-X-ClientProxiedBy: BYAPR01CA0021.prod.exchangelabs.com (2603:10b6:a02:80::34)
- To PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+	id 1uzdoQ-00000003VfM-1Pkn
+	for linux-phy@lists.infradead.org;
+	Fri, 19 Sep 2025 16:18:20 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3ecdf2b1751so1359538f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 09:18:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758298696; x=1758903496; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=rCMQiFsm4hsxlP+tNTYkhaVGT0aEA2D4RKsC3Gwmrs0=;
+        b=0fxl72hhv4f1PDHurstPXPJ/bZBzX29+3B38BSMO/pMcWC34vrD4NaqeM5tPj6x5ka
+         64Q3Ct8EnF0CWTKmeK+lr58qOsSvK7S5QBJpBkU8eB2qRWnoa/lFJUnocCagTsqQBxgD
+         UO6/2Tnw5/gzobXX6NFRVQvRbFdD48a00uX/o2r8z7MM0t7sN8z2JvB8I91PR8/S7+5E
+         SjUvQNEGzyDmhO+ZNsdRmFJbEE8MXxGenxnPXQPh2zFwMFfxUfq/8tb98YMnlRQnj1Jf
+         NCzN7PeAPZ8PPDplLbhNI7yzwd1grJlDxgXeXOFmwJQq2s4jm804Lc7xYGD7pP9scFZY
+         uYzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758298696; x=1758903496;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=rCMQiFsm4hsxlP+tNTYkhaVGT0aEA2D4RKsC3Gwmrs0=;
+        b=I9zgVF+GyL5YS6TEOWJDNOmqaDZjxAoqh2v6j94Ho0BUo6ie15j7sh4fe26gQGQH6U
+         FVNHpOJvLeaSmk11i3o7NuuRRRXQMEZW7W3c5m+2zAegUtuvawJZN4kRI6YGLw8OaPLH
+         ej2vOKzZMsqaD7FlOzpRiAStbKWUbZkI7U+whK6NvVwPstCQJ4OccwhRhBsov14IPZpa
+         y7RUAJ0Bk9eFIkAqWtBGrrbUJGvB1JxBwCAbVGI1dAsNihyfterK4/4SwyYcHXfkeLFO
+         bv0dBEXstULU0NeJ7nb8A0pqFEc5uSOHsai4AbtR05f4W7R3lv0Zwgw+X2gIBJ+tymk6
+         l/Dg==
+X-Forwarded-Encrypted: i=1; AJvYcCUflv0LkfyravcN4Ovydb8od2iM08mTNrXubFcJ0fJGyP5pNLe7NrdCVcA+toI7JjONI/TUtrm1ufQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyKLambTuA4Y4u0EEzGvr1fHYQNWqeFs0a+12ggCe/bUtgHFazh
+	Xx8YI3+nJiLijA0/7imfkLCKOb8D7ZGy+xS3+KIjx60kLrANvKmFMfKUp3kd05/W3QU=
+X-Gm-Gg: ASbGncuiLtAEE6DnIHNkISnQ+Jb80cXBPbJDryBey9cNkSV8Ihf7aya/96OQMFgoEpo
+	DcE3Aw1p0VQq8i0ngN7Ii0l86ZzqrROc1jamKXG6O/yJd+pSwdi/SfNBjIDazUokgXNL7QhQATl
+	Nyz1x/5V0eDckcsz76+Baq71zlurvFibV/u1we5sE68n0nrCTJEvMkh3xTH0zvyfsdpl9VZjNxz
+	Zc74M/VQ0ekw3uaZePVdrcl3qG4eRgCtTiQONaSuooC+oLLvvpA7JvdY4OnTOkAbyWVbhta6H+v
+	66eaIG/xazGBoC2eQ0EsODjMOKd6QqEs9moOXX6GWHNeSjf4T1ieyMjs54D5zmvq5XkOM0bu4gY
+	Zy6F2lWEQfQjpFaus4dAW7yHl5YDdHl9/s6+PHboGGruueDdaSkl9nNlx/dB3NFVp
+X-Google-Smtp-Source: AGHT+IHeDyqCwZEwmBRMLgDcVcjTaBDuQhje8qnjQHoNKHQszsQBAbYzFqO5E0qmktZp1YKSObnQbQ==
+X-Received: by 2002:a05:6000:248a:b0:3ec:b384:322b with SMTP id ffacd0b85a97d-3ee8585f513mr3310968f8f.46.1758298696034;
+        Fri, 19 Sep 2025 09:18:16 -0700 (PDT)
+Received: from localhost (p200300f65f06ab0400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f06:ab04::1b9])
+        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3ee07412111sm8325227f8f.28.2025.09.19.09.18.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 19 Sep 2025 09:18:15 -0700 (PDT)
+Date: Fri, 19 Sep 2025 18:18:14 +0200
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Cc: David Lechner <dlechner@baylibre.com>, 
+	Andy Shevchenko <andriy.shevchenko@intel.com>, Andy Shevchenko <andy.shevchenko@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, sboyd@kernel.org, jic23@kernel.org, nuno.sa@analog.com, 
+	andy@kernel.org, arnd@arndb.de, srini@kernel.org, vkoul@kernel.org, 
+	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org, 
+	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com, 
+	wenst@chromium.org, casey.connolly@linaro.org, 
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <lq4rgzue6uah67nc7lob7eexsquk7qhr22wr4xwymzrvvopgc4@mkzyvadgd3qs>
+References: <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
+ <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
+ <aMlnp4x-1MUoModr@smile.fi.intel.com>
+ <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
+ <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
+ <er7dkmzutsu3ooegeihjzngi6l3hol5iaohecr3n5bolfse3tj@xeedlx2utwym>
+ <aMxWzTxvMLsVWbDB@smile.fi.intel.com>
+ <2025091925-thirsting-underuse-14ab@gregkh>
+ <f16ea5eb-cbda-4788-956b-d41c2af51745@baylibre.com>
+ <2025091918-glancing-uptown-7d63@gregkh>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|AM7PR04MB6872:EE_
-X-MS-Office365-Filtering-Correlation-Id: e345c1d4-61ea-4fea-a6a9-08ddf7955272
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|1800799024|7416014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?GwlztPRng1IM8c7LC96rjMNehjjKT2UiE54fwXMsXWCUMu9Q2JjlrzsK8Far?=
- =?us-ascii?Q?0QQW6HxLNc05J9zFYcXRKWjDd+QUm5/s/MKjJ3ydNiQksMu9ork7a3pY0HB6?=
- =?us-ascii?Q?VT/X1wypmKNxKo4irLr7hWgz/OYaiD/WUnwQ4J67V2gs2p53aKXwmHsdJqRN?=
- =?us-ascii?Q?03RRabMkYbcGA7zUtNnV6hLcvpUi7wzfzeJBE0/JL3BXWsAsoS+14reSAuGO?=
- =?us-ascii?Q?NvmSczOFGVSEx5VfJcqqukxRRfn1RBT/F2SCno2fyZ+Ms72aHiigRYYqdzM7?=
- =?us-ascii?Q?/Ghm3yvWr+SE7sjqR7YGGT8HG8qoY8s/RhjYKS4gKbGmXaITdqG1vWZljqju?=
- =?us-ascii?Q?A1wSDbrMRuFAfBBb/QsYakIOuTceucVd2nt6XFI/BjdB8svIzoV9WIPFdgne?=
- =?us-ascii?Q?+RX4pVNqZqSXOm5MWo/fg+bxGs60yxb96COlKKBcOtdvaA43OgoTjHMOdXQv?=
- =?us-ascii?Q?VHdQetLims2P6wI+q8znaDcpcpAMMkxtymKynmnLvG5mOoLdoKJM7iBzgwcc?=
- =?us-ascii?Q?dzOPKgDfcw0gZ/8om3OOnQkXMEDW852QTIO3aK7WCUqLG8VI25ie4lguTa5B?=
- =?us-ascii?Q?xMmW5ICaRmNZzP5WCXz5Jn72u/gTjrq+FMTHqG7mOgDx2ANEHGZBIj8LXpmL?=
- =?us-ascii?Q?MsrUupBIP5GaEprl++rCxzCQRGcA6KOCtIAjIX+WBBhrJzoeBH5DDwzeWexW?=
- =?us-ascii?Q?CZ1ECSXlEaIz2SBOOqRCSF8ZptDAHhJP49wKtKKOvP8NA0RgSgYf04XUV0Kt?=
- =?us-ascii?Q?hotP0lyt5TpCSZZ5gEajw8DaUTstK1LZ23/dPIz0ov9eEpvS3BsnC9vmVLkT?=
- =?us-ascii?Q?qFDvQWnz9gchd13xj7ieNZJwYnyA89MQuuCzUw/b/V6kZYg3q7rIZ5BqbV73?=
- =?us-ascii?Q?dis9khJyNvmK3P892Q7fg2ImWWS6K7p58cDfakpVovixFeNvwLTZGoFijlg8?=
- =?us-ascii?Q?i0n01FSyEp+ueupBMVOxdfSZzw2pIubGY0Ib6hhPP2AxP5TwEwEPCsVLcmtD?=
- =?us-ascii?Q?6OB6IpRcr53m+rgKD9YXjJ3vhlOyT4yvcF0ULAp4lfT2n/dfNZdrDUenO9IS?=
- =?us-ascii?Q?WuVuCxbNBUQycFmE0Aufh4KdjPsImf4LBqrhHBGx/2f7Asi5MG2Zkz3kgwTc?=
- =?us-ascii?Q?OHFf7r/Nz92n9zQFg3vx2v4OO5bOuMag3BBvlcl23JnLO3cEg8Py953SgO8a?=
- =?us-ascii?Q?5PoUie6gH+7E6RSDWsNLrz0L93UpC8fElIhGtOecEptnav5TjPQ4sK8BGcXY?=
- =?us-ascii?Q?QwOhiUWPoe82Jf7Hvw332jNId8FQY0ZapXpaZSbnbKDWST3/1Q4UpZPQAyKQ?=
- =?us-ascii?Q?R3cCa/68P9xpoqDp1ZkyZg0Tc4NZTInKuxtvKgRvWgq0Iuye+T5pQBATAr27?=
- =?us-ascii?Q?7S0sNB+ZyvUNEfqHgOUqguYcsQbQ2eV9w8gvpH4XROHiaFKCK6OeWR6GGPMX?=
- =?us-ascii?Q?OXzYiSMiHsZ0JzOka980+csQiXICm+hqLhKmIC+83yn2vk965Zc3qw=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(1800799024)(7416014)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ZDAh9Z0FymFp91hd52DpuLRcXL6kGf3vTvbMc8wlJV0Mrd0nQNCqZ/R+cwzy?=
- =?us-ascii?Q?uJhx9IuQ4fLvBi7vYvtAvnmDEM4QF4jS3GRok9BtDmjk034FB5ZW/sOhYkBf?=
- =?us-ascii?Q?GpNWU1HXwJLHmw4RNcM9lZSxLnRQvCQr9ygAJ7kvuuYhBFlmTce5LUj4fT2Z?=
- =?us-ascii?Q?bHyKFFj/3EW4V8le2L8qSrxpoSkT361IWg40efKxMd/C4L3EpScI1yWYWNjs?=
- =?us-ascii?Q?/8YR/+jqnEG78i9hUtNarK0PH8L51o118VfgmpVAyZgwJPB1VAOCT0HYTlH/?=
- =?us-ascii?Q?XbCOP6Ftlj5NMoPYai2ReKf8DiN9gOXiLmN1oqRwo3LK8hwRGADGSwnt9sUf?=
- =?us-ascii?Q?HnfHQ2OCCyA5S1ky8clbBOddZsiqz9MRHQjdwEvtZ6dn8fEplt9wOBgix9ks?=
- =?us-ascii?Q?KCb5KEPug/f5wC8fvFZJjN5UWH8ZepyqpDdKHu4D1+J6ftCMLjXJDjvz7GIQ?=
- =?us-ascii?Q?laFECXwrAC8fY3o2F4UK2Lch1wQIQgWgVx0fZVzEx/hkRoHobgxwRXgiQF+S?=
- =?us-ascii?Q?gEWW1A8/cG3l9ZslP6jbPVPmm2t1d5sTxqKMup0egeeW7Eq1D2OorWnEmeux?=
- =?us-ascii?Q?EcNC44L+PxGnYO+3J88QWffPbm1PcTVYOW6uIzbBfEdLYfc4uXbyxikdRa+T?=
- =?us-ascii?Q?FYnyCOzFoLXNJ+rl/zbZpTHdGPUd0dgmHLWcJfhhMnOt6Tmjge6z9Y3Y1aKe?=
- =?us-ascii?Q?EnnVJEZVi63emCjinngo64dyX6hElLuO2LWAjjxfdVDbNVbMjJYSIs+5TIDz?=
- =?us-ascii?Q?tpsa2uUOFuRzE3cuyBCgDxx6Cbsnqg6fxAgAnuqTbBMhVSexT5Ffiqvm3C+O?=
- =?us-ascii?Q?fdj5hvCflvn95fMdgwAMn3/jEoSwMAFrsxM2c4mWzON4xixr0FRL6gxakrvP?=
- =?us-ascii?Q?2FhU84EBwr4PaluFfK69r6FJ15G+dmJE9YfKfQoRtlM0ml5aA/iEcGkOj5E+?=
- =?us-ascii?Q?3riETdOen2g9NlYHzv058IbNC70VTVpulrFGuKVcFV+oclJdrl+fAnL7Ez0t?=
- =?us-ascii?Q?eCLFEBwfoddADW5wgv3xnuv6wZpicbqlL25FQ6PN/JSVVJmw3RMa4chHA/B8?=
- =?us-ascii?Q?Qmi2KRvjTCGvAFJnRn0I9Bbfc4aOshTX6Gucft+kniw6h7HgVai7DbkT6mY2?=
- =?us-ascii?Q?ILofX9VSfi8R8hFznCLNdH55z2XYqrL3YhoeCbh5C4+x8Nd9pCLlsqGpLu/C?=
- =?us-ascii?Q?i+2qiZUxgFTeyn+a1s/aTbQaDDXNDH7cb6Mk7/StVr9QIZii1x9/bMNtPJHK?=
- =?us-ascii?Q?icR3qrWI256c4D+iZtGapG9ZKuTrZCo5YlcBVo3easVOx796GYJ41AQ8y3Op?=
- =?us-ascii?Q?ScVmV7TkEWX27YGuqFLBhu8eMbQ5jFBuXYW2/VBHk+E2kQszDiZ1eREfV/jm?=
- =?us-ascii?Q?cyEyIG+yToWYXkgX5L//Q5iGTzEacFzKBWf5L5lxJHkB3wtOjkltDJ2aB6U0?=
- =?us-ascii?Q?d8sHcjKXceoNBnp4VYSKRotXWrjXJyOU84iheGaHcQMGzNsLXKzIjORVjvQf?=
- =?us-ascii?Q?xheRsjuPYcs/Sp+nMYpdsQAdWiVuBxUZq/n9uHvIQER/pEtqYyltmS/fQr9Z?=
- =?us-ascii?Q?ebrvd5Mf67LCy+xgtTFG1eR/V3Nd9YbO6KsId+f5?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e345c1d4-61ea-4fea-a6a9-08ddf7955272
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Sep 2025 15:58:06.3460
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1uJ7MJYA5gm26DRJ0ftx4cQ8ILPv0ruTFkfgMoFmGfUKMSKWehTLn3CeRkH84VTe4jknXYk89JZBeuyy21qa5g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6872
+In-Reply-To: <2025091918-glancing-uptown-7d63@gregkh>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250919_085809_573480_FE1E712F 
-X-CRM114-Status: GOOD (  21.00  )
+X-CRM114-CacheID: sfid-20250919_091818_648899_16C8EF6A 
+X-CRM114-Status: GOOD (  38.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,99 +109,139 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0086976381389218755=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 19, 2025 at 03:02:59PM +0800, Xu Yang wrote:
-> This phy supports both 24MHz and 100MHz clock inputs. By default it's
-> using XTAL 24MHz and the 100MHz clock is a alternate reference clock.
-> Add supports to use alternate reference clock in case 24MHz clock
-> can't work well.
->
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+--===============0086976381389218755==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="enuyknrtw4cq5eeq"
+Content-Disposition: inline
 
-> ---
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 23 +++++++++++++++++++++--
->  1 file changed, 21 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index b94f242420fc733cd75abef8ba1cd4f59ac18eb5..ad8a55012e42f2c15496955d00c6d5fd85c5beb2 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -16,6 +16,7 @@
->  #define PHY_CTRL0_REF_SSP_EN		BIT(2)
->  #define PHY_CTRL0_FSEL_MASK		GENMASK(10, 5)
->  #define PHY_CTRL0_FSEL_24M		0x2a
-> +#define PHY_CTRL0_FSEL_100M		0x27
->
->  #define PHY_CTRL1			0x4
->  #define PHY_CTRL1_RESET			BIT(0)
-> @@ -108,6 +109,7 @@ struct tca_blk {
->  struct imx8mq_usb_phy {
->  	struct phy *phy;
->  	struct clk *clk;
-> +	struct clk *alt_clk;
->  	void __iomem *base;
->  	struct regulator *vbus;
->  	struct tca_blk *tca;
-> @@ -582,7 +584,8 @@ static int imx8mp_usb_phy_init(struct phy *phy)
->  	/* USB3.0 PHY signal fsel for 24M ref */
->  	value = readl(imx_phy->base + PHY_CTRL0);
->  	value &= ~PHY_CTRL0_FSEL_MASK;
-> -	value |= FIELD_PREP(PHY_CTRL0_FSEL_MASK, PHY_CTRL0_FSEL_24M);
-> +	value |= FIELD_PREP(PHY_CTRL0_FSEL_MASK, imx_phy->alt_clk ?
-> +			    PHY_CTRL0_FSEL_100M : PHY_CTRL0_FSEL_24M);
->  	writel(value, imx_phy->base + PHY_CTRL0);
->
->  	/* Disable alt_clk_en and use internal MPLL clocks */
-> @@ -626,13 +629,24 @@ static int imx8mq_phy_power_on(struct phy *phy)
->  	if (ret)
->  		return ret;
->
-> -	return clk_prepare_enable(imx_phy->clk);
-> +	ret = clk_prepare_enable(imx_phy->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(imx_phy->alt_clk);
-> +	if (ret) {
-> +		clk_disable_unprepare(imx_phy->clk);
-> +		return ret;
-> +	}
-> +
-> +	return ret;
->  }
->
->  static int imx8mq_phy_power_off(struct phy *phy)
->  {
->  	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
->
-> +	clk_disable_unprepare(imx_phy->alt_clk);
->  	clk_disable_unprepare(imx_phy->clk);
->  	regulator_disable(imx_phy->vbus);
->
-> @@ -681,6 +695,11 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
->  		return PTR_ERR(imx_phy->clk);
->  	}
->
-> +	imx_phy->alt_clk = devm_clk_get_optional(dev, "alt");
-> +	if (IS_ERR(imx_phy->alt_clk))
-> +		return dev_err_probe(dev, PTR_ERR(imx_phy->alt_clk),
-> +				    "Failed to get alt clk\n");
-> +
->  	imx_phy->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(imx_phy->base))
->  		return PTR_ERR(imx_phy->base);
->
-> --
-> 2.34.1
->
+
+--enuyknrtw4cq5eeq
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+MIME-Version: 1.0
+
+Hello Greg,
+
+On Fri, Sep 19, 2025 at 05:13:35PM +0200, Greg KH wrote:
+> On Fri, Sep 19, 2025 at 10:05:28AM -0500, David Lechner wrote:
+> > On 9/19/25 8:59 AM, Greg KH wrote:
+> > > On Thu, Sep 18, 2025 at 10:00:29PM +0300, Andy Shevchenko wrote:
+> > >> I,o.w. I principally disagree on putting MODULE_IMPORT_NS() into the=
+ header
+> > >> file.
+> > >=20
+> > > Yes, please never do that, it defeats the purpose of module namespaces
+> > > completly.  If you don't want to have module namespaces, don't use th=
+em
+> > > for your subsytem.  Don't use them and then make them moot by putting
+> > > MODULE_IMPORT_NS() in the .h file for the symbols as that's pointless.
+> > >=20
+> > > thanks,
+> > >=20
+> > > greg k-h
+> >=20
+> >=20
+> > Could someone suggest some additional explanation to add to
+> > Documentation/core-api/symbol-namespaces.rst to explain the
+> > reasoning behind this?
+> >=20
+> > Right now, the only part of that document that say _why_ we have
+> > module namespces says:
+> >=20
+> > 	That is useful for documentation purposes (think of the
+> > 	SUBSYSTEM_DEBUG namespace) as well as for limiting the
+> > 	availability of a set of symbols for use in other parts
+> > 	of the kernel.
+> >=20
+> > So I don't see the connection between this explanation and and:
+> >=20
+> > 	[Putting MODULE_IMPORT_NS() into the header] defeats
+> > 	the purpose of module namespaces completely.
+> >=20
+> > I am guilty of putting it in a header, so if I need to fix that
+> > I would like to actually understand why first. Andy has mentioned
+> > something about potential abuses, but without any example, I haven't
+> > been able to understand what this would actually actually look like.
+> > Or maybe there is some other reason that Greg is thinking of that
+> > hasn't been mentioned yet?
+>=20
+> Let me turn it around, _why_ would you want your exports in a namespace
+> at all if you just are putting a MODULE_IMPORT_NS() in the .h file at
+> the same time?  What is this giving you at all compared to just a normal
+> MODULE_EXPORT() marking for your exports?
+>=20
+> I know what it gives me when I don't put it in a .h file, but I think
+> that might be different from what you are thinking here :)
+
+For me (who still today thinks it's elegant to put the MODULE_IMPORT_NS
+in a header next to the declarations of the symbols in that namespace)
+it's the documentation thing quoted above (e.g. modinfo lists the used
+namespaces) and to unclutter the global namespace.
+
+The latter was essentially the motivation to introduce symbol
+namespaces, see the cover letter from back then[1].
+
+Personally I don't see the relevance of making it harder for abusers.
+
+A non-GPL module should be stopped by the symbol being exported using
+EXPORT_SYMBOL_GPL() with or without namespaces. And for a binary
+distribution of a module the need to add the MODULE_IMPORT_NS statement
+in the source code is a quite low barrier for the evil binary module
+distributor that IMHO doesn't justify to burden all regular users of a
+namespace to have to do two things (#include + MODULE_IMPORT_NS) instead
+of only one (include which implies the MODULE_IMPORT_NS) to make use of
+said namespace.
+
+And for GPL code: Who is actually an abuser of say devm_pwm_get()?
+In my eyes any module should be free to use that function. And if it's
+not sensible to do so, I would expect this to be discovered even without
+the needed MODULE_IMPORT_NS("PWM") in the code. And if it's not
+discovered that's fine for me, too. For me that's the spirit of Open
+Source: If someone finds devm_pwm_get() useful, let them use it. Please
+even tell me if you use it in a way I didn't expect, I'm glad to hear
+about it.
+
+I'm probably missing something.
+
+Best regards
+Uwe
+
+--enuyknrtw4cq5eeq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjNgkMACgkQj4D7WH0S
+/k50wggAm2DTHJtv28WePL2zBaXONs/0AtzDza8lXQgPQoUVHUJXsRVsYbdK+5Te
+R8MYd6+n8hqXv/pnvnZRwd81Wv0yFwJOJtUzAlqiXYr2tfvSfe785liM73qS3JNs
+MI5i+z0WoWyRTqGTmPxJjJ1r/SgcvGFl+CHm9j1vDehiPVRnPalOS+y1JzYBezf3
+CTfbDpMOfi4y6a9u/6GX+UrUMxe7arfGlBB7Sy3dOoxlXSWqoQ1hzjlTo4YrsYwU
+ulHe6jKB+OI6xyUPqM0xXCphVFUZFacH+RitcWEFsTWH6Dt2vv8muCeB8jzPFkYc
+QRkS8BwIA/n7bOdJgYaEtTcUyCIa4g==
+=568Y
+-----END PGP SIGNATURE-----
+
+--enuyknrtw4cq5eeq--
+
+
+--===============0086976381389218755==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0086976381389218755==--
+
