@@ -4,100 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDC2DCAC59A
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 16:18:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38C7DCAC5A8
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 16:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2MKGL2kygm19C/WMRIO+i2MotTGoAGY7F9B1k7QqtRs=; b=vkapulOoXhfZ4gmtnXB4d+tA6r
-	emhvnlpVyd4WBanxfvdfXZRuxeTTbXz5rlD9QtYtOyFf3SKar106O07qf1zH8GhlzikJS5Qcpg9ek
-	ghbcnngSY5l8CpukcVkBJx2L5/QDV2/Ou4x1f89GMDjq4e0S11sWtPH/jPYzNxy7LEXJWCkxjaSW0
-	sl/CPsnGthF/lJsecsWIgM5z11oyrRN+8p7utCKfT1LL3lryjrBPG2qCGYl7eXUa+hbipbGBKiXsX
-	RKYl496OupIhKQgyVYvRI6DLRSaJvRp5qRd8gFwzgTrnD8E7+amyxaf55CcK4B84aIoC8dgtceaWK
-	70036Xvw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JzCfcWbdWukZvvGfJZzcS4CJynfpBG3idxloN5CHIHA=; b=KrQvU9dhhVYR/t
+	TzTjZ3ILXVlFEhmvesvp8v9FRdRtIWhqMrMFpH58AtV+o40HDbwackRVWvn964RMrIchB+sKK/jqm
+	Ell1DKPs2D13YBoqma9stfoZiIAgV5h1aex3JYAOGO698maWwKDcb9aa9CLS/6Rq0x5AN9D1+ljp9
+	QdE6nvhfMH57Z+6XosgLyKZbJPnLFcy2/6XuHbPdphMjvKEeop5jVUHwMvJZ7LAGEp3XMeXmij0uk
+	IrW2KoAa07u6CsbWU3D1k0/H9iCrPJq4sspSD0CS2Tc6rrT8bzbmTckL82ixzkQD6XwvwqoE9e8XX
+	WA8vMfucj7q9IK9cUXJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdoT-00000003Vfl-2Dau;
-	Fri, 19 Sep 2025 16:18:21 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1uzeEq-00000003Zy0-3qj5;
+	Fri, 19 Sep 2025 16:45:36 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdoQ-00000003VfM-1Pkn
+	id 1uzeEo-00000003Zwj-1qye
 	for linux-phy@lists.infradead.org;
-	Fri, 19 Sep 2025 16:18:20 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3ecdf2b1751so1359538f8f.0
-        for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 09:18:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1758298696; x=1758903496; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=rCMQiFsm4hsxlP+tNTYkhaVGT0aEA2D4RKsC3Gwmrs0=;
-        b=0fxl72hhv4f1PDHurstPXPJ/bZBzX29+3B38BSMO/pMcWC34vrD4NaqeM5tPj6x5ka
-         64Q3Ct8EnF0CWTKmeK+lr58qOsSvK7S5QBJpBkU8eB2qRWnoa/lFJUnocCagTsqQBxgD
-         UO6/2Tnw5/gzobXX6NFRVQvRbFdD48a00uX/o2r8z7MM0t7sN8z2JvB8I91PR8/S7+5E
-         SjUvQNEGzyDmhO+ZNsdRmFJbEE8MXxGenxnPXQPh2zFwMFfxUfq/8tb98YMnlRQnj1Jf
-         NCzN7PeAPZ8PPDplLbhNI7yzwd1grJlDxgXeXOFmwJQq2s4jm804Lc7xYGD7pP9scFZY
-         uYzw==
+	Fri, 19 Sep 2025 16:45:35 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58J9BPZu027215
+	for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 16:45:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=C20ghaTYz2z07OewDUW3U9kP
+	PyChf5ZskPTDdANcg0M=; b=L+zIWkYX2CHEXD1IG7LIUWQjC0kQ25fACtMvwpbi
+	OZboAtLm0n3MKd/wqPAgbMCllkaBCywR/c1UNbx1+bk1upwTi5krAOiY71qoc0b2
+	mivrON5KmSG3KK97wOSVX03BecCOBLMcWCTd47sVdojrmDgixGdUsvzoIh5GLaDm
+	aJVclV883owgqTbbHMTb+uPs707N0k+5UoKpuhQr5EqDLQKjYj5jGRrfrQJsVsTx
+	ji7qbLbGiKr67yB3KEJIZgXwx0mG+6sRoNFTnbeB0NUw4vBVXA48aV6Hb2Gz35D+
+	RY8MC/gjrF7wxU3T1isgVegs5peQSApRmS6bTSj9bGegVw==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 497v1jh47w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 16:45:33 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4b5e178be7eso56180341cf.1
+        for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 09:45:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758298696; x=1758903496;
+        d=1e100.net; s=20230601; t=1758300332; x=1758905132;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=rCMQiFsm4hsxlP+tNTYkhaVGT0aEA2D4RKsC3Gwmrs0=;
-        b=I9zgVF+GyL5YS6TEOWJDNOmqaDZjxAoqh2v6j94Ho0BUo6ie15j7sh4fe26gQGQH6U
-         FVNHpOJvLeaSmk11i3o7NuuRRRXQMEZW7W3c5m+2zAegUtuvawJZN4kRI6YGLw8OaPLH
-         ej2vOKzZMsqaD7FlOzpRiAStbKWUbZkI7U+whK6NvVwPstCQJ4OccwhRhBsov14IPZpa
-         y7RUAJ0Bk9eFIkAqWtBGrrbUJGvB1JxBwCAbVGI1dAsNihyfterK4/4SwyYcHXfkeLFO
-         bv0dBEXstULU0NeJ7nb8A0pqFEc5uSOHsai4AbtR05f4W7R3lv0Zwgw+X2gIBJ+tymk6
-         l/Dg==
-X-Forwarded-Encrypted: i=1; AJvYcCUflv0LkfyravcN4Ovydb8od2iM08mTNrXubFcJ0fJGyP5pNLe7NrdCVcA+toI7JjONI/TUtrm1ufQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyKLambTuA4Y4u0EEzGvr1fHYQNWqeFs0a+12ggCe/bUtgHFazh
-	Xx8YI3+nJiLijA0/7imfkLCKOb8D7ZGy+xS3+KIjx60kLrANvKmFMfKUp3kd05/W3QU=
-X-Gm-Gg: ASbGncuiLtAEE6DnIHNkISnQ+Jb80cXBPbJDryBey9cNkSV8Ihf7aya/96OQMFgoEpo
-	DcE3Aw1p0VQq8i0ngN7Ii0l86ZzqrROc1jamKXG6O/yJd+pSwdi/SfNBjIDazUokgXNL7QhQATl
-	Nyz1x/5V0eDckcsz76+Baq71zlurvFibV/u1we5sE68n0nrCTJEvMkh3xTH0zvyfsdpl9VZjNxz
-	Zc74M/VQ0ekw3uaZePVdrcl3qG4eRgCtTiQONaSuooC+oLLvvpA7JvdY4OnTOkAbyWVbhta6H+v
-	66eaIG/xazGBoC2eQ0EsODjMOKd6QqEs9moOXX6GWHNeSjf4T1ieyMjs54D5zmvq5XkOM0bu4gY
-	Zy6F2lWEQfQjpFaus4dAW7yHl5YDdHl9/s6+PHboGGruueDdaSkl9nNlx/dB3NFVp
-X-Google-Smtp-Source: AGHT+IHeDyqCwZEwmBRMLgDcVcjTaBDuQhje8qnjQHoNKHQszsQBAbYzFqO5E0qmktZp1YKSObnQbQ==
-X-Received: by 2002:a05:6000:248a:b0:3ec:b384:322b with SMTP id ffacd0b85a97d-3ee8585f513mr3310968f8f.46.1758298696034;
-        Fri, 19 Sep 2025 09:18:16 -0700 (PDT)
-Received: from localhost (p200300f65f06ab0400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f06:ab04::1b9])
-        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3ee07412111sm8325227f8f.28.2025.09.19.09.18.15
+        bh=C20ghaTYz2z07OewDUW3U9kPPyChf5ZskPTDdANcg0M=;
+        b=LcCEwlUh7OUIfYaS7PrELFn5A4wvhmYXpcUzfaMFwtybcOooto3CgrOMieYy/RgcXE
+         yPzB55WNRexA2oD89MAw7hhyvlu5N2Xi4Lp+mdf1nnLBWN1PXt8pG+DLRL8Dhobt1qzA
+         9tcOq5SddaJwa2jZhluS+3Y30YOeQwcx4Cgws7BIqSfgOVh/bC1F5oGl7ohbdIfPfyx7
+         1rjROibG3acFxmoKEUMojs5sr2VEt3Dm+hHFp64xPXfpnQU5P1zBH1f0sXpdJJiV/IIE
+         tmgz8Pt02BD6Zy8Pbj/k3WmbGoNRk5at8pZ+B5GXfhlDUXgSzdYmXtmSKXJDyVIYQXCE
+         3GRQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXJDgx3aknQOPuJFz0RtMq5Bo50YTBFdjBwCIxQ30eAx/YUM5a38rgW8DuPsKN3GoP2CvrEhEp8kr0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwY8lBnD9kyMseYfciOEBuh+514PhXFl8rNCqVv198gXYDU2327
+	7FlDNuHrMG3Mh+2evsohW/bk+unb6RQy8NPEjgUZjXwsth0ylAMyMNcTRpRPHqRZf/D7dU2yOJa
+	xwwllsEUyHMf7Dp1Wq4xfaiKwvqNWV7EsHiVDEuWiymbcBIXeYXOhZh8fahUDPjVOOmAq
+X-Gm-Gg: ASbGncv7+11ToLYvMCTYEh0jryUDu+61kv8oTuYLUZv7wUvT9Ps6imUuYpxCVwIRoDN
+	7FbLVXQdWfvSX3OhhkAxCqD4mkFsxgnlGKXiaK+7gyGaFNgcWi3VfuHt48PZe1SFRIp3kJXv31A
+	/yGD4hECujcnaDz8YHkkBc6vPnNsZCiaYGVghSI7TKdzwgWKfNz7X6p43VKHCVsqPVFzTFZQZoY
+	lZBYdp8sWa5U5ub5GtRW40z3bqPj7MEXEKFf+UciSBCEjtWwGYj2d6zoX2kej6UgqEvWCHvlGOG
+	8ZxIBtGCxZHG4A7bVHd/9sx/Vg9R7gh89p41ig5GKTVMsWBXtS40RQWjrhJDgXVgCYTRmOAHqz3
+	5pJxJ71wKSFX3u4KxZFfGAW4wHGx2VMM9TLt4US4c43ysrt9cK+Yy
+X-Received: by 2002:ad4:5de6:0:b0:78d:72e5:4309 with SMTP id 6a1803df08f44-79913f8ccc3mr48541736d6.25.1758300331948;
+        Fri, 19 Sep 2025 09:45:31 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IENMkKKG2cQIkLe25WJp4a+nFBl5DjpFFzclGB37kCIW8D1f1msQ+H2z+bjyqDP10qr1zJDzA==
+X-Received: by 2002:ad4:5de6:0:b0:78d:72e5:4309 with SMTP id 6a1803df08f44-79913f8ccc3mr48541056d6.25.1758300331184;
+        Fri, 19 Sep 2025 09:45:31 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-361a26cbcffsm14030911fa.22.2025.09.19.09.45.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 19 Sep 2025 09:18:15 -0700 (PDT)
-Date: Fri, 19 Sep 2025 18:18:14 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: David Lechner <dlechner@baylibre.com>, 
-	Andy Shevchenko <andriy.shevchenko@intel.com>, Andy Shevchenko <andy.shevchenko@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, sboyd@kernel.org, jic23@kernel.org, nuno.sa@analog.com, 
-	andy@kernel.org, arnd@arndb.de, srini@kernel.org, vkoul@kernel.org, 
-	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org, 
-	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com, 
-	wenst@chromium.org, casey.connolly@linaro.org, 
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-Message-ID: <lq4rgzue6uah67nc7lob7eexsquk7qhr22wr4xwymzrvvopgc4@mkzyvadgd3qs>
-References: <20250916084445.96621-3-angelogioacchino.delregno@collabora.com>
- <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
- <aMlnp4x-1MUoModr@smile.fi.intel.com>
- <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
- <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
- <er7dkmzutsu3ooegeihjzngi6l3hol5iaohecr3n5bolfse3tj@xeedlx2utwym>
- <aMxWzTxvMLsVWbDB@smile.fi.intel.com>
- <2025091925-thirsting-underuse-14ab@gregkh>
- <f16ea5eb-cbda-4788-956b-d41c2af51745@baylibre.com>
- <2025091918-glancing-uptown-7d63@gregkh>
+        Fri, 19 Sep 2025 09:45:29 -0700 (PDT)
+Date: Fri, 19 Sep 2025 19:45:27 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
+        li.liu@oss.qualcomm.com, Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Subject: Re: [PATCH v5 05/14] phy: qcom: qmp-usbc: Move reset config into PHY
+ cfg
+Message-ID: <z3phuuokrhonbukct2siz3ujear5ymtnoviea2epxzvjdmsvkj@w4puf4c44tmk>
+References: <20250919-add-displayport-support-for-qcs615-platform-v5-0-eae6681f4002@oss.qualcomm.com>
+ <20250919-add-displayport-support-for-qcs615-platform-v5-5-eae6681f4002@oss.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <2025091918-glancing-uptown-7d63@gregkh>
+Content-Disposition: inline
+In-Reply-To: <20250919-add-displayport-support-for-qcs615-platform-v5-5-eae6681f4002@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: IKSLECS8D8x4b9qgf9gV1vENEU8dJRdK
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE3MDExMCBTYWx0ZWRfXzAQyLfLaHxCk
+ kXx0BaLmzKOA9Go1y9mA97Rk8A3mb3NwGbcJtrxiwn7Uju+p8ubBYu/GQLXytiBygctwIspFO6P
+ /sySeBicpw20SGMAw1JIAwEFy2GHGNqTypaMFnOgO969L1cUsxkl+bWmH0XDhisvLk/snGilbOT
+ qkSYx+Sw1iZdUqaTnbxLMhwdWMtd2LF4NVgXSHCFWnJwW/uh/Or+wUSIPHtX1cvm6+ZW77/P4Xw
+ S6hdksilA+f3a/vhlamryZjPnBxIddYjhXR7twZ65H+scqqMP5XD+LcimeEqfHftIspBTEDP1ZA
+ vQmmNs5x7E5BpD1mbtS0ymrEbOkLy8fwZNXhGdxb5IHRBD7I1NtDEDxQBSmvSERWGlRAjfSlJFE
+ wTGDKRur
+X-Authority-Analysis: v=2.4 cv=AeqxH2XG c=1 sm=1 tr=0 ts=68cd88ad cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=_hUenYmi4SsfCOKiixMA:9 a=CjuIK1q_8ugA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-GUID: IKSLECS8D8x4b9qgf9gV1vENEU8dJRdK
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-19_01,2025-09-19_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 spamscore=0 phishscore=0 suspectscore=0 adultscore=0
+ impostorscore=0 priorityscore=1501 bulkscore=0 clxscore=1015
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509170110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250919_091818_648899_16C8EF6A 
-X-CRM114-Status: GOOD (  38.90  )
+X-CRM114-CacheID: sfid-20250919_094534_599699_F93F8A1F 
+X-CRM114-Status: GOOD (  13.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,139 +139,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0086976381389218755=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, Sep 19, 2025 at 10:24:22PM +0800, Xiangxu Yin wrote:
+> Move resets to qmp_phy_cfg for per-PHY customization. Keep legacy DT
+> path on the old hardcoded list; non-legacy path uses cfg->reset_list.
 
---===============0086976381389218755==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="enuyknrtw4cq5eeq"
-Content-Disposition: inline
+Why? Start your commit messages with the description of the issue that
+you are trying to solve.
 
+> 
+> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 18 +++++++++++++++---
+>  1 file changed, 15 insertions(+), 3 deletions(-)
+> 
 
---enuyknrtw4cq5eeq
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-MIME-Version: 1.0
-
-Hello Greg,
-
-On Fri, Sep 19, 2025 at 05:13:35PM +0200, Greg KH wrote:
-> On Fri, Sep 19, 2025 at 10:05:28AM -0500, David Lechner wrote:
-> > On 9/19/25 8:59 AM, Greg KH wrote:
-> > > On Thu, Sep 18, 2025 at 10:00:29PM +0300, Andy Shevchenko wrote:
-> > >> I,o.w. I principally disagree on putting MODULE_IMPORT_NS() into the=
- header
-> > >> file.
-> > >=20
-> > > Yes, please never do that, it defeats the purpose of module namespaces
-> > > completly.  If you don't want to have module namespaces, don't use th=
-em
-> > > for your subsytem.  Don't use them and then make them moot by putting
-> > > MODULE_IMPORT_NS() in the .h file for the symbols as that's pointless.
-> > >=20
-> > > thanks,
-> > >=20
-> > > greg k-h
-> >=20
-> >=20
-> > Could someone suggest some additional explanation to add to
-> > Documentation/core-api/symbol-namespaces.rst to explain the
-> > reasoning behind this?
-> >=20
-> > Right now, the only part of that document that say _why_ we have
-> > module namespces says:
-> >=20
-> > 	That is useful for documentation purposes (think of the
-> > 	SUBSYSTEM_DEBUG namespace) as well as for limiting the
-> > 	availability of a set of symbols for use in other parts
-> > 	of the kernel.
-> >=20
-> > So I don't see the connection between this explanation and and:
-> >=20
-> > 	[Putting MODULE_IMPORT_NS() into the header] defeats
-> > 	the purpose of module namespaces completely.
-> >=20
-> > I am guilty of putting it in a header, so if I need to fix that
-> > I would like to actually understand why first. Andy has mentioned
-> > something about potential abuses, but without any example, I haven't
-> > been able to understand what this would actually actually look like.
-> > Or maybe there is some other reason that Greg is thinking of that
-> > hasn't been mentioned yet?
->=20
-> Let me turn it around, _why_ would you want your exports in a namespace
-> at all if you just are putting a MODULE_IMPORT_NS() in the .h file at
-> the same time?  What is this giving you at all compared to just a normal
-> MODULE_EXPORT() marking for your exports?
->=20
-> I know what it gives me when I don't put it in a .h file, but I think
-> that might be different from what you are thinking here :)
-
-For me (who still today thinks it's elegant to put the MODULE_IMPORT_NS
-in a header next to the declarations of the symbols in that namespace)
-it's the documentation thing quoted above (e.g. modinfo lists the used
-namespaces) and to unclutter the global namespace.
-
-The latter was essentially the motivation to introduce symbol
-namespaces, see the cover letter from back then[1].
-
-Personally I don't see the relevance of making it harder for abusers.
-
-A non-GPL module should be stopped by the symbol being exported using
-EXPORT_SYMBOL_GPL() with or without namespaces. And for a binary
-distribution of a module the need to add the MODULE_IMPORT_NS statement
-in the source code is a quite low barrier for the evil binary module
-distributor that IMHO doesn't justify to burden all regular users of a
-namespace to have to do two things (#include + MODULE_IMPORT_NS) instead
-of only one (include which implies the MODULE_IMPORT_NS) to make use of
-said namespace.
-
-And for GPL code: Who is actually an abuser of say devm_pwm_get()?
-In my eyes any module should be free to use that function. And if it's
-not sensible to do so, I would expect this to be discovered even without
-the needed MODULE_IMPORT_NS("PWM") in the code. And if it's not
-discovered that's fine for me, too. For me that's the spirit of Open
-Source: If someone finds devm_pwm_get() useful, let them use it. Please
-even tell me if you use it in a way I didn't expect, I'm glad to hear
-about it.
-
-I'm probably missing something.
-
-Best regards
-Uwe
-
---enuyknrtw4cq5eeq
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmjNgkMACgkQj4D7WH0S
-/k50wggAm2DTHJtv28WePL2zBaXONs/0AtzDza8lXQgPQoUVHUJXsRVsYbdK+5Te
-R8MYd6+n8hqXv/pnvnZRwd81Wv0yFwJOJtUzAlqiXYr2tfvSfe785liM73qS3JNs
-MI5i+z0WoWyRTqGTmPxJjJ1r/SgcvGFl+CHm9j1vDehiPVRnPalOS+y1JzYBezf3
-CTfbDpMOfi4y6a9u/6GX+UrUMxe7arfGlBB7Sy3dOoxlXSWqoQ1hzjlTo4YrsYwU
-ulHe6jKB+OI6xyUPqM0xXCphVFUZFacH+RitcWEFsTWH6Dt2vv8muCeB8jzPFkYc
-QRkS8BwIA/n7bOdJgYaEtTcUyCIa4g==
-=568Y
------END PGP SIGNATURE-----
-
---enuyknrtw4cq5eeq--
-
-
---===============0086976381389218755==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0086976381389218755==--
-
