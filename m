@@ -4,139 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A63BCAC59A
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 14:26:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 643FACAC59A
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 15:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SoFsJJAoH489Zg+sygaoaGOYRRbpRChD/wTfvK3zd3A=; b=thLPjZoE3FL/N9
-	8e2Mf+ozvpg6RUjO8PVUEwlqR19GucO9qJNl6i4YHmZ06vgDsQ5MesEcwtBOA2ND8SmTqFSjGBQDA
-	lBo0CA2Hf0RGdh8bpZTGgn/pm14ZornnZR9+UMGJ9HVbmGmnedNHdy3AFKzTiUZjUNDboQEUrq7Yw
-	lMSvR5rJH7E96VGmbTWsuJazh4o/WpY389rrx4Y2OSC/Ui9Gk1L0Yhfz+/2axDPLDZhBYJ26OLv6x
-	59hFEnmXiBx1j2oSmC1NCbUMp50QAvE2HamFFFa9v9Mewsca9J+N5CRZo+DWzu1wkOGSWG6kcIOhB
-	qdZAJ9revAG5o39Z1xng==;
+	List-Owner; bh=JwxaOTw6UEKLaD5D3vwWj8yPx7e0IvTyhGT1587SFOQ=; b=3oA3Y2FYMepZr3
+	xcrnjEkIO60TH0NI/v7m6bgy5yDCOd2LGWrQK4lfO9jDjWJpwLZecmcafTRwzTi7IXYLfnRkAKLRk
+	aSMvKfpYLLQlFPvkCUQaQF/LIQWcPKKp3MwQfXFM/vzRoqld6Pkc+14umdm3F2IDD6zP7KmoXvNRD
+	utoNvWoQ5T9WVWlQSevlyej3Otz/tjWwxLq+Bozbi4RMtZCI153ssUTn558GRNpqbz/fNlKQSvK9I
+	ThoMmEWz5DhurkEdV3hyiKMevApYvbBubH30NCHsDPJRT74P4h1jkWpmvIXKWm9hLSrMfrVzYKMDp
+	Iz2b9Vp91DhdnRVaR3DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzc4V-000000038gt-4C2p;
-	Fri, 19 Sep 2025 14:26:48 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1uzcda-00000003Fui-0BGw;
+	Fri, 19 Sep 2025 15:03:02 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzc4T-000000038g6-372G
+	id 1uzcdX-00000003Ftn-2pN8
 	for linux-phy@lists.infradead.org;
-	Fri, 19 Sep 2025 14:26:46 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58J9kClx007297
-	for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 14:26:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vWqKsvOTRWZThPxJdQQdJfugEpEjQHMoOZlOygwfbek=; b=JwVk29bsGltZb/yf
-	eH4N3Gi4iDZkzH5DnwzoSfX+/ij9/VaHPcWvQsPb0M6cS8LSwwKuEGMcWpTcqnQT
-	VM5RbwvAB2Zgz1NgQkK65cR616DvJqh32Pu3BkolcVTiBnwRkrEEg6ErG5vSps9o
-	U8651LcHfJ/n3qebFgom24wQE8+uxMzpsbR340OjZG/S86ceuRd+YRwyFiyL8Bkm
-	w6/hjFbf6pSmvAO+vkiL0MAI6ZT3rv/V5XMCUx5wPoykmxUtq7gaNUM26HB0Mp6S
-	SJYea3/vQt8QvsY/UB3ax9WJ6InI+OFjm9+Tx8ujHNPRchZiunEr2sVKTHhZ0xY6
-	cVhxMQ==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 498ebew6xs-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 14:26:45 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-25bcad10907so4571455ad.1
-        for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 07:26:45 -0700 (PDT)
+	Fri, 19 Sep 2025 15:03:01 +0000
+Received: by mail-ej1-x643.google.com with SMTP id a640c23a62f3a-afcb78ead12so327651266b.1
+        for <linux-phy@lists.infradead.org>; Fri, 19 Sep 2025 08:02:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1758294177; x=1758898977; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=RuhmeiLRDOZblDBgAns4hX7zt5ydWj4wdgPVrc0nj58=;
+        b=niuF5P7ovHD9DHCyGDELsBggkLhbe2Z40gORnViQ3i6NkygbdG6a5dwimDt9C6EWhO
+         tZq+E0ssgc4zcfvSR0BDeHimK8dj7BfQK3EixTO0F/dltDlmTCfgHgmqKUjgvEVzDK8v
+         XHNvmKysJBmjuc/1n8PlDZl5v1LQ4RZBL3mVPZ2mkEWQc1fcTyhwXBMyC5LAlxgn+osf
+         ltLTReauax+53iNljy9sCavS39cLtihHuifWYrddoo1QVtYdfbGnwYVXrltJiXOC84jh
+         nw+E+vy7wwwWMK4T6aZO7H+Wdt/x+IVGSZgdocfsIzW7Q2b6OsA8OfyoKAskpSCV2JzC
+         Wm4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758292004; x=1758896804;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=vWqKsvOTRWZThPxJdQQdJfugEpEjQHMoOZlOygwfbek=;
-        b=ekCVlhuLQnGQ7rG/I8dObNCSUFhPgqhd6v8deSPiBLNeqTdZVSYbVGewp/0d0X9+0Q
-         5qs2nzf56+Grg9LDbGd3hbBNdiKVMpmPM8Xub/2mboz/1CLuU5XtLcXy+pShyEALTMrI
-         Ncax9qv4cSCLTR1FDLffSpfUE0oZbIyL4MttMw8tzo9CbIHG3v2khbFf6yXsKKl/FURl
-         cjHM9su49qJUnDSbJW+zmllglK3DGWwI6XZI3LrQzJr+gN//P0Rzq6usfwZv6/zgH3Vk
-         FTJUvMw3LJFpggeN2utFec/HU2p1WPYG90md0+I5nNPRnkWs3G1yo7cMjhdl3ozbstCB
-         cWoQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVF6ad369cwQIwJj5e/LtCevOd3uLN9PfXrOYvcg2cYwuDEjfcVqUY/ApChCrL2cobzMGUgW8JJe7A=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxXvGC0SaceiTrdZg1B3Hrm2hUoRLhbLixmszrJdF9Rqba5MSKC
-	Xk8raYIxHJF3JTzP4ixeayTBPsa5i1foXWfqOoPOA8NONufXgJxBOlKpfzw128U26QNwB9dKNRK
-	JEmkSr85AFFFvAZ2boHQNkQYurzZz3lBFMuN3YcGISuxKaAUBE1/DWVfIGUUELyAF1N8N
-X-Gm-Gg: ASbGncvMUJYaFD/O0epGN/Me0P5k8Lf/8qTW3C4+UZ3JPiS0lwMz0t/ltVZfz8mvISE
-	7OQI5llx6trFVdiQm4G4r0/9WHNIbE1oIjJWv/u+O35ZmPjYUwHTaAnskpKsCxib8c+NRS+rC61
-	TNENdilvJY1WprmlgCKfPgHuX7FFuMaGEbEBO+LyIx8WMQQ0v8CWnfDX3yRkbNSmGk/Ksd7gz/+
-	URXF1/DUkhA9CjT7d0BbxJrDCXMHoV2ndVAmzWiDiu/t2FYfZs4wJx3Znk33ZNuznvBAfJmhmCl
-	YRskOPJuZkiUDo1Ga8P3teJGBjguNbPYJaAJdpzCYm2k337BKnMWRyLdqqqyxNqj7o1DWCV/YWx
-	Z6mvC9yNR5qprbA==
-X-Received: by 2002:a17:902:ea07:b0:268:140f:36ff with SMTP id d9443c01a7336-269ba54e851mr31024225ad.9.1758292004381;
-        Fri, 19 Sep 2025 07:26:44 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGBtw9O1YIv/IQj4a+YUdtcF7lbLdqW5i3TVkJdKbqiPJtUlq1ypRJ+GObJFqJNdPBxuhtZZQ==
-X-Received: by 2002:a17:902:ea07:b0:268:140f:36ff with SMTP id d9443c01a7336-269ba54e851mr31023785ad.9.1758292003880;
-        Fri, 19 Sep 2025 07:26:43 -0700 (PDT)
-Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com ([114.94.8.21])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-26e80409ee3sm2210035ad.80.2025.09.19.07.26.37
+        d=1e100.net; s=20230601; t=1758294177; x=1758898977;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=RuhmeiLRDOZblDBgAns4hX7zt5ydWj4wdgPVrc0nj58=;
+        b=gIIKkm8G/Cw/BLfQ7G6OhqmETpl2669Qk9MkEb1RQaVeiTnkD1HHfzQ33DO3s3syO+
+         x++yy4+WPsaT8YLYMRaSvQyrwM7ok02IGVLzsUquPrEbXtGPuFYLbnc6BeP0rU++rYRH
+         prymsz0KH8u+CIYabW+p0k3m7WRSppQvKRIkb3u/kBe7FPymBC23vgzBU3GcMOCOdffR
+         8lFZ7uIBUCTTmkFbDr93z72RG+PVXXtLIgQ3Ye7N0yTltOvAVK4Rs8l+wIsI6Me3tpsV
+         HkJjzdCKoHLN5yVVWHNUpqsT0j3GVpH9UozU9VNbjj3c5471P2epPt+PiPsphanFZfGo
+         Hn0Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVB3fB8/Gl+zPyAX7OAGQyKcfc8FB8YSC9QlDnqhTICHI9zCsa8Dec8TyQpDm9ttlxSKVn5DkHP6vA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHnvtatZJMRjge2KRCkmICfdPd4uGMFWe7p6G5laqCBMnaiNBR
+	2KjtbjESQNY7K+hm8steu3t7JDebFKLZLasElbRl0Wx8NOqynXCAbsJgtmL5V1FEETk=
+X-Gm-Gg: ASbGnculYA0vi/Kqi7luiPGLn03xS2adBowxmmjiodYtBBBdZbOq2e1+rBOcFNEgYUs
+	sKt3nLz+d2it6QiZFtg7aoU+RzsQswik1Itj220kYQX2TjFQAhqRy2w5/w9341U6xmWSpiQydRs
+	Xps9c3z6cCejI7TAku+miScT/t+QVmWZyqIIaOxqkXXeJo4M3Snn4AVrHE/uDDEPTNxAbn3SJOw
+	DfXMYnemdkWgM89ha43DZ+DIjlxDHdve/Yd3cOXa0k3A5dUL5xYYj9EQTnyph8HvHzht5PkppES
+	88+ANUc5V0iAEyC2FeO+W3e+1GNWxHm8k7ixKBVFpF5uYzag0Z2SYwLIIWWM7azSfqkzq2J3t35
+	SsI+ctuQkgYxoKSakZdEbXJ47jAl0HNQ+
+X-Google-Smtp-Source: AGHT+IFfO0W8JQzVl/Y/fMJyVo1TEp0T/8tQQYw78b9ni5HcTOJsYbcXUUCxll2lkB3I4VDq0l24kg==
+X-Received: by 2002:a17:906:bc94:b0:b04:7232:3ea9 with SMTP id a640c23a62f3a-b24f56858a3mr307356066b.50.1758294177283;
+        Fri, 19 Sep 2025 08:02:57 -0700 (PDT)
+Received: from linaro.org ([2a02:2454:ff21:30:b511:37d7:e73a:6aaa])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b1fd1102093sm458529066b.83.2025.09.19.08.02.56
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 19 Sep 2025 07:26:43 -0700 (PDT)
-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Date: Fri, 19 Sep 2025 22:24:31 +0800
-Subject: [PATCH v5 14/14] drm/msm/dp: Add support for lane mapping
- configuration
+        Fri, 19 Sep 2025 08:02:56 -0700 (PDT)
+Date: Fri, 19 Sep 2025 17:02:52 +0200
+From: Stephan Gerhold <stephan.gerhold@linaro.org>
+To: Xilin Wu <sophon@radxa.com>
+Cc: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Sibi Sankar <quic_sibis@quicinc.com>,
+	Rajendra Nayak <quic_rjendra@quicinc.com>,
+	Johan Hovold <johan@kernel.org>, Taniya Das <quic_tdas@quicinc.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: Re: [PATCH v3 0/3] phy: qcom: edp: Add missing ref clock to x1e80100
+Message-ID: <aM1wnAw0mA-iNgJy@linaro.org>
+References: <20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org>
+ <6A43111ED3D39760+a88e4a65-5da8-4d3b-b27e-fa19037462c8@radxa.com>
 MIME-Version: 1.0
-Message-Id: <20250919-add-displayport-support-for-qcs615-platform-v5-14-eae6681f4002@oss.qualcomm.com>
-References: <20250919-add-displayport-support-for-qcs615-platform-v5-0-eae6681f4002@oss.qualcomm.com>
-In-Reply-To: <20250919-add-displayport-support-for-qcs615-platform-v5-0-eae6681f4002@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
-        li.liu@oss.qualcomm.com,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758291895; l=4981;
- i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=P1sktCDicGuMGRykFaXjP7LWNk2asNLGxaF7CwSUW7U=;
- b=2X7CL7ayyMh68sKe13q6Fk6OrKKt3egHncSf6zVjxLpBP3vMLZKIQjDAXDXQQvUOdNilyehPA
- 9gmwCM/0MvqC1DxxzcHuX3wh3RsifuUj1Y35Nynd0oyrJDeBkuYOiTZ
-X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
- pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
-X-Proofpoint-ORIG-GUID: Jnf8yz9mn2Evord_J1Q2WLO8FhzKDA1H
-X-Authority-Analysis: v=2.4 cv=H6/bw/Yi c=1 sm=1 tr=0 ts=68cd6825 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=0KckjaIG8F4YdJ3EJ34A:9
- a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: Jnf8yz9mn2Evord_J1Q2WLO8FhzKDA1H
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTE4MDA3NCBTYWx0ZWRfX4ZfM0Wq7jjiY
- cdMHPSTvXTJlGLW0/yBzQVkU+Xm0k7bRoE1qIW3C2GpK5C/MSWN890zVvEhYHCrrrgc7iULDGlx
- Y1k2bmdWzt+bEEPZNpA0dGoekESSiLKWriFg2J5MoXDxajHvjiv1d9DqKqDP8O7KTT7LWPekkz4
- ibAU3IUvivQUReIZVh/OSjLRhun7ZJVKJG/KqVtFLs2PnR929UWzXYzUgwqlKfznthGtI2lQBBm
- V+zjF8sYDeACKxHTEHFLl6LRGZdkBBr33OTXxKz+DoPXr+hYBYbLOwbHUqaPmIChOcDYkQ4Yjzw
- 4JFWZNwt3CNZ1DPlYrkqMFhdWF+hAdyxUZTBNS9kcfNFGIfMPRXYwI5kUTEcWwyGOIfGXcVlMM1
- otfqCb+K
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-19_01,2025-09-19_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 adultscore=0 impostorscore=0 suspectscore=0
- malwarescore=0 priorityscore=1501 bulkscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509180074
+Content-Disposition: inline
+In-Reply-To: <6A43111ED3D39760+a88e4a65-5da8-4d3b-b27e-fa19037462c8@radxa.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250919_072645_794632_C763AE56 
-X-CRM114-Status: GOOD (  21.85  )
+X-CRM114-CacheID: sfid-20250919_080259_767951_13D3ABFB 
+X-CRM114-Status: GOOD (  35.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,139 +112,193 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QCS615 platform requires non-default logical-to-physical lane mapping due
-to its unique hardware routing. Unlike the standard mapping sequence
-<0 1 2 3>, QCS615 uses <3 2 0 1>, which necessitates explicit
-configuration via the data-lanes property in the device tree. This ensures
-correct signal routing between the DP controller and PHY.
+On Fri, Sep 19, 2025 at 07:06:36PM +0800, Xilin Wu wrote:
+> On 9/9/2025 3:33 PM, Abel Vesa wrote:
+> > According to documentation, the DP PHY on x1e80100 has another clock
+> > called ref.
+> > 
+> > The current X Elite devices supported upstream work fine without this
+> > clock, because the boot firmware leaves this clock enabled. But we should
+> > not rely on that. Also, when it comes to power management, this clock
+> > needs to be also disabled on suspend. So even though this change breaks
+> > the ABI, it is needed in order to make we disable this clock on runtime
+> > PM, when that is going to be enabled in the driver.
+> > 
+> > So rework the driver to allow different number of clocks, fix the
+> > dt-bindings schema and add the clock to the DT node as well.
+> > 
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> > Changes in v3:
+> > - Use dev_err_probe() on clocks parsing failure.
+> > - Explain why the ABI break is necessary.
+> > - Drop the extra 'clk' suffix from the clock name. So ref instead of
+> >    refclk.
+> > - Link to v2: https://lore.kernel.org/r/20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org
+> > 
+> > Changes in v2:
+> > - Fix schema by adding the minItems, as suggested by Krzysztof.
+> > - Use devm_clk_bulk_get_all, as suggested by Konrad.
+> > - Rephrase the commit messages to reflect the flexible number of clocks.
+> > - Link to v1: https://lore.kernel.org/r/20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org
+> > 
+> > ---
+> > Abel Vesa (3):
+> >        dt-bindings: phy: qcom-edp: Add missing clock for X Elite
+> >        phy: qcom: edp: Make the number of clocks flexible
+> >        arm64: dts: qcom: Add missing TCSR ref clock to the DP PHYs
+> > 
+> >   .../devicetree/bindings/phy/qcom,edp-phy.yaml      | 28 +++++++++++++++++++++-
+> >   arch/arm64/boot/dts/qcom/x1e80100.dtsi             | 12 ++++++----
+> >   drivers/phy/qualcomm/phy-qcom-edp.c                | 16 ++++++-------
+> >   3 files changed, 43 insertions(+), 13 deletions(-)
+> > ---
+> > base-commit: 65dd046ef55861190ecde44c6d9fcde54b9fb77d
+> > change-id: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
+> > 
+> > Best regards,
+> 
+> Hi,
+> 
+> I'm observing what looks like a related clock failure on sc8280xp when
+> booting without a monitor connected to a DP-to-HDMI bridge on mdss0_dp2.
+> 
+> Do you think sc8280xp might require a similar fix, or could this be a
+> different issue?
+> 
+> 
+> [    0.390390] ------------[ cut here ]------------
+> [    0.390398] disp0_cc_mdss_dptx2_link_clk_src: rcg didn't update its
+> configuration.
+> [    0.390419] WARNING: CPU: 0 PID: 63 at drivers/clk/qcom/clk-rcg2.c:136
+> update_config+0xa4/0xb0
+> [    0.390439] Modules linked in:
+> [    0.390448] CPU: 0 UID: 0 PID: 63 Comm: kworker/u32:1 Not tainted 6.16.3+
+> #45 PREEMPT(lazy)
+> [    0.390455] Hardware name: Qualcomm QRD, BIOS
+> 6.0.250905.BOOT.MXF.1.1.c1-00167-MAKENA-1 09/ 5/2025
+> [    0.390460] Workqueue: events_unbound deferred_probe_work_func
+> [    0.390476] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS
+> BTYPE=--)
+> [    0.390482] pc : update_config+0xa4/0xb0
+> [    0.390492] lr : update_config+0xa4/0xb0
+> [    0.390500] sp : ffff80008351b9e0
+> [    0.390504] x29: ffff80008351b9e0 x28: 0000000000000000 x27:
+> ffff0000850ec3c0
+> [    0.390515] x26: ffff800081205320 x25: 0000000000000002 x24:
+> 0000000000000000
+> [    0.390523] x23: ffff8000812052a0 x22: ffff000080467800 x21:
+> ffff800081207ef0
+> [    0.390531] x20: ffff8000822ad6f0 x19: 0000000000000000 x18:
+> ffffffffffc06b68
+> [    0.390539] x17: 616c707369642e30 x16: 3030313065613a6d x15:
+> ffff800081474230
+> [    0.390547] x14: ffffffffff806b67 x13: 2e6e6f6974617275 x12:
+> 6769666e6f632073
+> [    0.390556] x11: 0000000000000058 x10: 0000000000000018 x9 :
+> ffff8000814742b8
+> [    0.390565] x8 : 0000000000afffa8 x7 : 0000000000000179 x6 :
+> ffff800081f742b8
+> [    0.390574] x5 : ffff800081f742b8 x4 : 0000000000000178 x3 :
+> 00000000fffdffff
+> [    0.390582] x2 : ffff8000814741f8 x1 : ffff00008091cec0 x0 :
+> 0000000100000000
+> [    0.390591] Call trace:
+> [    0.390595]  update_config+0xa4/0xb0 (P)
+> [    0.390606]  clk_rcg2_set_parent+0x58/0x68
+> [    0.390617]  clk_core_set_parent_nolock+0xc4/0x1e0
+> [    0.390630]  clk_set_parent+0x40/0x144
+> [    0.390638]  of_clk_set_defaults+0x12c/0x520
+> [    0.390645]  platform_probe+0x38/0xdc
+> [    0.390652]  really_probe+0xc0/0x390
+> [    0.390657]  __driver_probe_device+0x7c/0x150
+> [    0.390663]  driver_probe_device+0x40/0x120
+> [    0.390667]  __device_attach_driver+0xbc/0x168
+> [    0.390673]  bus_for_each_drv+0x74/0xc0
+> [    0.390684]  __device_attach+0x9c/0x1ac
+> [    0.390688]  device_initial_probe+0x14/0x20
+> [    0.390694]  bus_probe_device+0x9c/0xa0
+> [    0.390703]  deferred_probe_work_func+0xa8/0xf8
+> [    0.390713]  process_one_work+0x150/0x2b0
+> [    0.390725]  worker_thread+0x2d0/0x3ec
+> [    0.390731]  kthread+0x118/0x1e0
+> [    0.390738]  ret_from_fork+0x10/0x20
+> [    0.390751] ---[ end trace 0000000000000000 ]---
+> [    0.390760] clk: failed to reparent disp0_cc_mdss_dptx2_link_clk_src to
+> aec2a00.phy::link_clk: -16
+> [    0.401093] ------------[ cut here ]------------
+> [    0.401096] disp0_cc_mdss_dptx2_pixel0_clk_src: rcg didn't update its
+> configuration.
+> [    0.401112] WARNING: CPU: 0 PID: 63 at drivers/clk/qcom/clk-rcg2.c:136
+> update_config+0xa4/0xb0
+> [    0.401126] Modules linked in:
+> [    0.401132] CPU: 0 UID: 0 PID: 63 Comm: kworker/u32:1 Tainted: G   W
+> 6.16.3+ #45 PREEMPT(lazy)
+> [    0.401141] Tainted: [W]=WARN
+> [    0.401144] Hardware name: Qualcomm QRD, BIOS
+> 6.0.250905.BOOT.MXF.1.1.c1-00167-MAKENA-1 09/ 5/2025
+> [    0.401147] Workqueue: events_unbound deferred_probe_work_func
+> [    0.401159] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS
+> BTYPE=--)
+> [    0.401164] pc : update_config+0xa4/0xb0
+> [    0.401174] lr : update_config+0xa4/0xb0
+> [    0.401182] sp : ffff80008351b9e0
+> [    0.401185] x29: ffff80008351b9e0 x28: 00000000fffffff0 x27:
+> ffff0000850ec3c0
+> [    0.401194] x26: ffff800081205320 x25: 0000000000000002 x24:
+> 0000000000000000
+> [    0.401203] x23: ffff8000812052a0 x22: ffff000080467800 x21:
+> ffff800081207ea0
+> [    0.401211] x20: ffff8000822ad640 x19: 0000000000000000 x18:
+> ffffffffffc07528
+> [    0.401219] x17: 32636561206f7420 x16: 0001020ef3c08cb3 x15:
+> ffff800081474230
+> [    0.401227] x14: ffffffffff807527 x13: 2e6e6f6974617275 x12:
+> 6769666e6f632073
+> [    0.401235] x11: 0000000000000058 x10: 0000000000000018 x9 :
+> ffff8000814742b8
+> [    0.401243] x8 : 0000000000afffa8 x7 : 00000000000001a4 x6 :
+> ffff800081f742b8
+> [    0.401252] x5 : ffff800081f742b8 x4 : 00000000000001a3 x3 :
+> 00000000fffdffff
+> [    0.401260] x2 : ffff8000814741f8 x1 : ffff00008091cec0 x0 :
+> 0000000100000000
+> [    0.401268] Call trace:
+> [    0.401271]  update_config+0xa4/0xb0 (P)
+> [    0.401281]  clk_rcg2_set_parent+0x58/0x68
+> [    0.401291]  clk_core_set_parent_nolock+0xc4/0x1e0
+> [    0.401299]  clk_set_parent+0x40/0x144
+> [    0.401308]  of_clk_set_defaults+0x12c/0x520
+> [    0.401314]  platform_probe+0x38/0xdc
+> [    0.401321]  really_probe+0xc0/0x390
+> [    0.401325]  __driver_probe_device+0x7c/0x150
+> [    0.401330]  driver_probe_device+0x40/0x120
+> [    0.401335]  __device_attach_driver+0xbc/0x168
+> [    0.401340]  bus_for_each_drv+0x74/0xc0
+> [    0.401349]  __device_attach+0x9c/0x1ac
+> [    0.401353]  device_initial_probe+0x14/0x20
+> [    0.401358]  bus_probe_device+0x9c/0xa0
+> [    0.401367]  deferred_probe_work_func+0xa8/0xf8
+> [    0.401377]  process_one_work+0x150/0x2b0
+> [    0.401384]  worker_thread+0x2d0/0x3ec
+> [    0.401390]  kthread+0x118/0x1e0
+> [    0.401395]  ret_from_fork+0x10/0x20
+> [    0.401405] ---[ end trace 0000000000000000 ]---
+> [    0.401412] clk: failed to reparent disp0_cc_mdss_dptx2_pixel0_clk_src to
+> aec2a00.phy::vco_div_clk: -16
+> 
 
-For partial definitions, fill remaining lanes with unused physical lanes
-in ascending order.
+The same happens on the X1E Devkit if there is nothing connected to the
+HDMI port. I believe you are looking for my patch series instead. :-)
 
-Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
----
- drivers/gpu/drm/msm/dp/dp_ctrl.c | 10 +++----
- drivers/gpu/drm/msm/dp/dp_link.c | 60 ++++++++++++++++++++++++++++++++++++++++
- drivers/gpu/drm/msm/dp/dp_link.h |  1 +
- 3 files changed, 66 insertions(+), 5 deletions(-)
+https://lore.kernel.org/r/20250814-platform-delay-clk-defaults-v1-0-4aae5b33512f@linaro.org/T/
 
-diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-index c42fd2c17a328f6deae211c9cd57cc7416a9365a..cbcc7c2f0ffc4696749b6c43818d20853ddec069 100644
---- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
-+++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-@@ -423,13 +423,13 @@ static void msm_dp_ctrl_config_ctrl(struct msm_dp_ctrl_private *ctrl)
- 
- static void msm_dp_ctrl_lane_mapping(struct msm_dp_ctrl_private *ctrl)
- {
--	u32 ln_0 = 0, ln_1 = 1, ln_2 = 2, ln_3 = 3; /* One-to-One mapping */
-+	u32 *lane_map = ctrl->link->lane_map;
- 	u32 ln_mapping;
- 
--	ln_mapping = ln_0 << LANE0_MAPPING_SHIFT;
--	ln_mapping |= ln_1 << LANE1_MAPPING_SHIFT;
--	ln_mapping |= ln_2 << LANE2_MAPPING_SHIFT;
--	ln_mapping |= ln_3 << LANE3_MAPPING_SHIFT;
-+	ln_mapping = lane_map[0] << LANE0_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[1] << LANE1_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[2] << LANE2_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[3] << LANE3_MAPPING_SHIFT;
- 
- 	msm_dp_write_link(ctrl, REG_DP_LOGICAL2PHYSICAL_LANE_MAPPING,
- 			ln_mapping);
-diff --git a/drivers/gpu/drm/msm/dp/dp_link.c b/drivers/gpu/drm/msm/dp/dp_link.c
-index 2aeb3ecf76fab2ee6a9512b785ca5dceebfc3964..34a91e194a124ef5372f13352f7b3513aa88da2a 100644
---- a/drivers/gpu/drm/msm/dp/dp_link.c
-+++ b/drivers/gpu/drm/msm/dp/dp_link.c
-@@ -1236,6 +1236,61 @@ static u32 msm_dp_link_link_frequencies(struct device_node *of_node)
- 	return frequency;
- }
- 
-+/*
-+ * Always populate msm_dp_link->lane_map with 4 lanes.
-+ * - Use DTS "data-lanes" if present; otherwise fall back to default mapping.
-+ * - For partial definitions, fill remaining entries with unused lanes in
-+ *   ascending order.
-+ */
-+static int msm_dp_link_lane_map(struct device *dev, struct msm_dp_link *msm_dp_link)
-+{
-+	struct device_node *of_node = dev->of_node;
-+	struct device_node *endpoint;
-+	int cnt = msm_dp_link->max_dp_lanes;
-+	u32 tmp[DP_MAX_NUM_DP_LANES];
-+	u32 map[DP_MAX_NUM_DP_LANES] = {0, 1, 2, 3}; /* default 1:1 mapping */
-+	bool used[DP_MAX_NUM_DP_LANES] = {false};
-+	int i, j = 0, ret = -EINVAL;
-+
-+	endpoint = of_graph_get_endpoint_by_regs(of_node, 1, -1);
-+	if (endpoint) {
-+		ret = of_property_read_u32_array(endpoint, "data-lanes", tmp, cnt);
-+		if (ret)
-+			dev_dbg(dev, "endpoint data-lanes read failed (ret=%d)\n", ret);
-+	}
-+
-+	if (ret) {
-+		ret = of_property_read_u32_array(of_node, "data-lanes", tmp, cnt);
-+		if (ret) {
-+			dev_info(dev, "data-lanes not defined, set to default\n");
-+			goto out;
-+		}
-+	}
-+
-+	for (i = 0; i < cnt; i++) {
-+		if (tmp[i] >= DP_MAX_NUM_DP_LANES) {
-+			dev_err(dev, "data-lanes[%d]=%u out of range\n", i, tmp[i]);
-+			return -EINVAL;
-+		}
-+		used[tmp[i]] = true;
-+		map[i] = tmp[i];
-+	}
-+
-+	/* Fill the remaining entries with unused physical lanes (ascending) */
-+	for (i = cnt; i < DP_MAX_NUM_DP_LANES && j < DP_MAX_NUM_DP_LANES; j++) {
-+		if (!used[j])
-+			map[i++] = j;
-+	}
-+
-+out:
-+	if (endpoint)
-+		of_node_put(endpoint);
-+
-+	dev_dbg(dev, "data-lanes count %d <%d %d %d %d>\n", cnt, map[0], map[1], map[2], map[3]);
-+	memcpy(msm_dp_link->lane_map, map, sizeof(map));
-+	return 0;
-+}
-+
- static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_link)
- {
- 	struct device_node *of_node = dev->of_node;
-@@ -1255,6 +1310,11 @@ static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_l
- 	else
- 		msm_dp_link->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
- 
-+	if (msm_dp_link_lane_map(dev, msm_dp_link)) {
-+		dev_err(dev, "failed to parse data-lanes\n");
-+		return -EINVAL;
-+	}
-+
- 	msm_dp_link->max_dp_link_rate = msm_dp_link_link_frequencies(of_node);
- 	if (!msm_dp_link->max_dp_link_rate)
- 		msm_dp_link->max_dp_link_rate = DP_LINK_RATE_HBR2;
-diff --git a/drivers/gpu/drm/msm/dp/dp_link.h b/drivers/gpu/drm/msm/dp/dp_link.h
-index 0684a962d4ec93f7da764c4af2e2154c7050329c..b1eb2de6d2a7693f17aa2f256657110af839533d 100644
---- a/drivers/gpu/drm/msm/dp/dp_link.h
-+++ b/drivers/gpu/drm/msm/dp/dp_link.h
-@@ -74,6 +74,7 @@ struct msm_dp_link {
- 	struct msm_dp_link_phy_params phy_params;
- 	struct msm_dp_link_info link_params;
- 
-+	u32 lane_map[DP_MAX_NUM_DP_LANES];
- 	u32 max_dp_lanes;
- 	u32 max_dp_link_rate;
- };
+If it works for you, replying with a Tested-by there would be much
+appreciated. I'm still trying to convince folks that the approach of the
+series is the best way to move forward with this issue. :-)
 
--- 
-2.34.1
-
+Thanks,
+Stephan
 
 -- 
 linux-phy mailing list
