@@ -4,65 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0704CCA1013
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Sep 2025 20:14:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 937B7CAC597
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 00:29:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=9T7nYXTpKdsMSvzxdNTyeIVYIyBhVk8NviQ1rTnWNyw=; b=eLenwJzpknWu6F
-	txtovO5JLtJyMAxlejrN2LAl3R5kQ6sU9vsAk0pkvCK9TdyiTgYGmfwFFve5IiqhWtMfkoJhR7rQX
-	/ypGoEBjvHb3CwGO77TQwVD4pYgqRSGYvNc/OAo2PuehrsjFbnoCP4XCNESvLcG3XyAtujbZ3mQdY
-	IBhvXcO852aO4Lt18311JglicoffboF913Q/44MkABPikeomCoWiIJ7C3yF0jwSVCtuzgaKIoPBqR
-	PrNIHdzSTNo1h6mI93YuF2FQUqJp4cbA6mVMSAd9EJ0CC5G9ZjW4dkqKXVVNCQWSNIGS53Sdszjhh
-	wp4uUTx67PC9Muy/zPkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ljwk/ivjXB8Rl4gM48K0g77CXAd56gcfwBGRt7d1mEY=; b=Bk/D79FYndXMU8
+	TGcVW9bkALoRind+4Rw/FrHfFgB4/ahFlsvwMPYsLIXwsGuuvZ3gNq3z2qQlZNXlsxDfEmHlJXjwa
+	a7KN3POnXSrbK9T7lsAz0vi8+1DkhDDjKriD/Kq65XpEFjfedgJhQWh8un27OIH9LzZ3PruMKKx32
+	HZfbIS2yEJHm9wBIClYmgSJ4y5q713uS1kW7fah7NHf8aNA7cQIfvocJ1U/zkW9Debo/q24kS93JQ
+	yQJCqJD8uyKqeQOkjxP+ocm5UP+RYZLFsbr+vrFiT1DOxrgRGcWTigZRyYSGmSnSTGqUMzKp1sQOP
+	1RMY/rCj+SMTYCEami6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzL1W-000000015Sp-2fmD;
-	Thu, 18 Sep 2025 20:14:34 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uzP06-00000001WPU-13gn;
+	Fri, 19 Sep 2025 00:29:22 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzL1U-000000015SE-0bd1
-	for linux-phy@lists.infradead.org;
-	Thu, 18 Sep 2025 20:14:33 +0000
+	id 1uzP04-00000001WP4-0m9C;
+	Fri, 19 Sep 2025 00:29:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C1EE644889;
-	Thu, 18 Sep 2025 20:14:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68955C4CEF0;
-	Thu, 18 Sep 2025 20:14:31 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 879D144B80;
+	Fri, 19 Sep 2025 00:29:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A4A8C4CEE7;
+	Fri, 19 Sep 2025 00:29:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758226471;
-	bh=O5wQLmWrqsWflWIq1hbTefCtmSzwhyOY86w/cK+ayWM=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=vLIp2JviNDdoeJs5bzgcw9toagt6JcspQdZSI2/VUGY4b2P2T/XPi7jNDi7Ob3ixu
-	 wtW5/TiXPX8Y6C4WgRQ/Ao7SZmG3oWkR0gzgrW5hq2+h9JX0h8BIjE/J8fWsEiVRGF
-	 9wZX3a1sZO6huUr8iHt4d5HpQbJTGMLS1fiBwekPSyD5705VQTDoIHPg7/clJ9mYaP
-	 QYuRQolbLD+8lRS19zwwMBN4CWd1nqIFzZxNNGQpDf6hy8zNmZ3D47gdJkgLo65yfe
-	 0SUA8ReXk1iO2pnIL1HeAqCnfBS44SpCxBZaJZcq3WQkeBshG0T9DdpT/UP2Uh+1NL
-	 SJfSIWqbQ/YNg==
-Date: Thu, 18 Sep 2025 15:14:30 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-	mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-	kw@linux.com, linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	qiang.yu@oss.qualcomm.com, quic_krichai@quicinc.com,
-	quic_vbadigan@quicinc.com, Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: Re: [PATCH v13 0/5] pci: qcom: Add QCS8300 PCIe support
-Message-ID: <20250918201430.GA1919478@bhelgaas>
+	s=k20201202; t=1758241759;
+	bh=rUZMRwKfJQIUT6+1NgJgtotbl/gzBIiQfywFOchXLW4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=DEkiIOLLA0RQTZ5hhIdQMlCD0lO3IRsf1YXx19L5OXy88YzR45VJuNTP2tGgzolCc
+	 QYqi2t+FfZ7c3+TjX9Rr3jI3HR79dVBG8bm+7T2QOoT1ClZgO5H8otYNlcKpoInwYn
+	 1F6Earh5v8Bc5WSG5s7sRIucxcn7Fyz2nwTEyJVpYKIDUMx+H5fdosoFxgnM6Zo/sY
+	 TCd+fvW9ciWxHtDPS27/oyVvrqp1htABi5SXwpakrbb+ycNB/StUoAKutBDVd4aZlQ
+	 nxSlKNglFxHatTPZPFgiHc0btJA0BfqAaoWyfuwIiv0Zb+moR+4pcU/q0xjO4Yl0JV
+	 fmO67ZYPai80g==
+Message-ID: <02ef5180-ad56-45f0-a56f-87f442bf6793@kernel.org>
+Date: Fri, 19 Sep 2025 09:29:13 +0900
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f16f14ab-ff11-42a2-b63b-ed28e85d620b@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ alim.akhtar@samsung.com, andre.draszik@linaro.org, peter.griffin@linaro.org,
+ kauschluss@disroot.org, ivo.ivanov.ivanov1@gmail.com,
+ igor.belwon@mentallysanemainliners.org, m.szyprowski@samsung.com,
+ s.nawrocki@samsung.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+ dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
+ selvarasu.g@samsung.com
+References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
+ <CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
+ <20250903073827.3015662-2-pritam.sutar@samsung.com>
+ <0df74c2b-31b9-4f29-97d3-b778c8e3eaf1@kernel.org>
+ <007801dc2893$18ed4a20$4ac7de60$@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <007801dc2893$18ed4a20$4ac7de60$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250918_131432_229061_46B6B302 
-X-CRM114-Status: GOOD (  26.66  )
+X-CRM114-CacheID: sfid-20250918_172920_269478_6BF182AD 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,126 +129,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 18, 2025 at 10:51:22AM +0800, Ziyue Zhang wrote:
-> On 9/8/2025 3:38 PM, Ziyue Zhang wrote:
-> > This series depend on this patch
-> > https://lore.kernel.org/all/20250826-pakala-v2-3-74f1f60676c6@oss.qualcomm.com/
-
-That patch ("PCI: qcom: Restrict port parsing only to pci child
-nodes") is currently in the pci/controller/qcom branch:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git/log/?h=controller/qcom
-
-and won't be merged upstream until the v6.18 merge window.  This will
-probably be between Sep 28 and Oct 12.
-
-I don't know what that means for the dt-binding and arm64 dts changes
-in this series, but typically changes like this series are merged via
-a different tree than the PCI changes, so the ordering isn't
-guaranteed until one of them is pulled by Linus.
-
-> > This series adds document, phy, configs support for PCIe in QCS8300.
-> > It also adds 'link_down' reset for sa8775p.
-> > 
-> > Have follwing changes:
-> > 	- Add dedicated schema for the PCIe controllers found on QCS8300.
-> > 	- Add compatible for qcs8300 platform.
-> > 	- Add configurations in devicetree for PCIe0, including registers, clocks, interrupts and phy setting sequence.
-> > 	- Add configurations in devicetree for PCIe1, including registers, clocks, interrupts and phy setting sequence.
-> > 
-> > Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
-> > Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-> > ---
-> > Changes in v13:
-> > - Fix dtb error
-> > - Link to v12: https://lore.kernel.org/all/20250905071448.2034594-1-ziyue.zhang@oss.qualcomm.com/
-> > 
-> > Changes in v12:
-> > - rebased pcie phy bindings
-> > - Link to v11: https://lore.kernel.org/all/20250826091205.3625138-1-ziyue.zhang@oss.qualcomm.com/
-> > 
-> > Changes in v11:
-> > - move phy/perst/wake to pcie bridge node (Mani)
-> > - Link to v10: https://lore.kernel.org/all/20250811071131.982983-1-ziyue.zhang@oss.qualcomm.com/
-> > 
-> > Changes in v10:
-> > - Update PHY max_items (Johan)
-> > - Link to v9: https://lore.kernel.org/all/20250725104037.4054070-1-ziyue.zhang@oss.qualcomm.com/
-> > 
-> > Changes in v9:
-> > - Fix DTB error (Vinod)
-> > - Link to v8: https://lore.kernel.org/all/20250714081529.3847385-1-ziyue.zhang@oss.qualcomm.com/
-> > 
-> > Changes in v8:
-> > - rebase sc8280xp-qmp-pcie-phy change to solve conflicts.
-> > - Add Fixes tag to phy change (Johan)
-> > - Link to v7: https://lore.kernel.org/all/20250625092539.762075-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Changes in v7:
-> > - rebase qcs8300-ride.dtsi change to solve conflicts.
-> > - Link to v6: https://lore.kernel.org/all/20250529035635.4162149-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Changes in v6:
-> > - move the qcs8300 and sa8775p phy compatibility entry into the list of PHYs that require six clocks
-> > - Update QCS8300 and sa8775p phy dt, remove aux clock.
-> > - Fixed compile error found by kernel test robot
-> > - Link to v5: https://lore.kernel.org/all/20250507031019.4080541-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Changes in v5:
-> > - Add QCOM PCIe controller version in commit msg (Mani)
-> > - Modify platform dts change subject (Dmitry)
-> > - Fixed compile error found by kernel test robot
-> > - Link to v4: https://lore.kernel.org/linux-phy/20241220055239.2744024-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Changes in v4:
-> > - Add received tag
-> > - Fixed compile error found by kernel test robot
-> > - Link to v3: https://lore.kernel.org/lkml/202412211301.bQO6vXpo-lkp@intel.com/T/#mdd63e5be39acbf879218aef91c87b12d4540e0f7
-> > 
-> > Changes in v3:
-> > - Add received tag(Rob & Dmitry)
-> > - Update pcie_phy in gcc node to soc dtsi(Dmitry & Konrad)
-> > - remove pcieprot0 node(Konrad & Mani)
-> > - Fix format comments(Konrad)
-> > - Update base-commit to tag: next-20241213(Bjorn)
-> > - Corrected of_device_id.data from 1.9.0 to 1.34.0.
-> > - Link to v2: https://lore.kernel.org/all/20241128081056.1361739-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Changes in v2:
-> > - Fix some format comments and match the style in x1e80100(Konrad)
-> > - Add global interrupt for PCIe0 and PCIe1(Konrad)
-> > - split the soc dtsi and the platform dts into two changes(Konrad)
-> > - Link to v1: https://lore.kernel.org/all/20241114095409.2682558-1-quic_ziyuzhan@quicinc.com/
-> > 
-> > Ziyue Zhang (5):
-> >    dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Update pcie phy bindings
-> >      for qcs8300
-> >    arm64: dts: qcom: qcs8300: enable pcie0
-> >    arm64: dts: qcom: qcs8300-ride: enable pcie0 interface
-> >    arm64: dts: qcom: qcs8300: enable pcie1
-> >    arm64: dts: qcom: qcs8300-ride: enable pcie1 interface
-> > 
-> >   .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  17 +-
-> >   arch/arm64/boot/dts/qcom/qcs8300-ride.dts     |  84 +++++
-> >   arch/arm64/boot/dts/qcom/qcs8300.dtsi         | 310 +++++++++++++++++-
-> >   3 files changed, 394 insertions(+), 17 deletions(-)
-> > 
-> > 
-> > base-commit: be5d4872e528796df9d7425f2bd9b3893eb3a42c
-> Hi Maintainers,
+On 18/09/2025 20:55, Pritam Manohar Sutar wrote:
 > 
-> It seems the patches get reviewed tag for a long time, can you give this
+> Yes, we have already discussed this and convergence was to use the 
+> conventions which are mentioned in the Data-book. So, I updated the 
+> supply names accordingly. 
 > 
-> series further comment or help me to merge them ?
-> Thanks very much.
+> Please see the below communications for the same. 
 > 
-> BRs
-> Ziyue
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+> https://lore.kernel.org/linux-phy/83dc9435-5850-425d-b345-52e84ef9262c@kernel.org/
+> https://lore.kernel.org/linux-phy/6e1c67d2-9bfa-442a-9d53-8c5970a2a9ef@kernel.org/
+Ah, ok, although next time I might ask the same, since commit msg does
+not explain that.
+
+I still cannot find constraints for the rest of properties, though.
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
