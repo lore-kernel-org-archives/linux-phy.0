@@ -4,73 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86458CAC592
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 15:37:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 045E6CAC592
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Sep 2025 15:54:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zkSFZ9xbpdxmS1a5N/WrPN9RVGPFeo81nZbHIG2zFWA=; b=LNgzv7NOKlubs+
-	aF9NDUxvXhXKFIBkF+dAbnfCJsl1bant6rfuUPL080oQFSogg0Vw/k8EtBYLkAFXc7vhSuoOq4Hph
-	PjeUbIpWlHEuoVN8gsDCig21CjeB1WjS29qVqaQOCkqLheElA82wLZ2en4+Toin91vNItyCFrRSLJ
-	n42QV1mbzK/7+JDDiTYnZqckwbL2rk/ktsHctN7uTyqBYBv0YZGGCcPIkj0R7RkTq3oHWIVjbAHUc
-	ClLJ6lUBKvQQhhcxYBPZ9EixCp7Kn8lyGmgC3ek0JaZfNmzYKoXoW1nbJRgYNsk/WjoOD0L0qERK9
-	5dZ0cp2sAesPixGfXZHQ==;
+	List-Owner; bh=hqEKyG/ylizZ56YZTnTFN8Bt8ZKpq9xX+xSQM/CsZZA=; b=yBp/4zSUOO+Bjf
+	B1uPhlnWXGjdU1ML76Bi+xQiYBxMp8Gu1tg80Fl1X/W32hwR4gwOk9tsV/s272Xs2Qqf8pK62OVTu
+	MnAZYLAO+jl3oUWK/Zux0gqbPfhtDx46j2DE/kww4DEum7sOrPUogtvfvvDVuja7WwwGEKblzyZAW
+	/LSZrPXL5MlvQ6m0umQ+VQ0fYLwzsm78ITnPYfv8LHddGIJnQIRzu/E0erdhsm/kuMDndNyHkZX3x
+	Jsafwzv0zEGjQWb82XkK1FjcBLPJKPikUfc/6TFR5ayY2FeXee1iR1BuT4GZCkDz7o1U0Xn3I11sy
+	79U+FpWOxJcHIfW1vXWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdAb-00000003MeV-0xuf;
-	Fri, 19 Sep 2025 15:37:09 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uzdRH-00000003Pyn-2vqu;
+	Fri, 19 Sep 2025 15:54:23 +0000
+Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzdAa-00000003Me4-0fmY
-	for linux-phy@lists.infradead.org;
-	Fri, 19 Sep 2025 15:37:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C37A36013A;
-	Fri, 19 Sep 2025 15:37:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2991C4CEF0;
-	Fri, 19 Sep 2025 15:37:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1758296226;
-	bh=xyJKsvc0j5co7gCX4zKZ8pNCOTw4jF2Tw20isUfWHrk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=UJi2x2Kz0tOs8xaJZPDz37rTz9jEt33mJvVtKKq7/cIMf6TjK3Jzn04Rzx8CQJ2CY
-	 UVmAeyhxs1yriV1zQ9rcOG3NmKPHZbNNhcwYdVnZoDo6zhMwRDqiDT/mhatajgNTiI
-	 HZU6XL8c4r85dNfL3Vg7KEFwCw03qtMMgB1D6LjI=
-Date: Fri, 19 Sep 2025 17:37:03 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: David Lechner <dlechner@baylibre.com>
-Cc: Andy Shevchenko <andriy.shevchenko@intel.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>,
-	Andy Shevchenko <andy.shevchenko@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	sboyd@kernel.org, jic23@kernel.org, nuno.sa@analog.com,
-	andy@kernel.org, arnd@arndb.de, srini@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
-	casey.connolly@linaro.org,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/7] nvmem: qcom-spmi-sdam: Migrate to
- devm_spmi_subdevice_alloc_and_add()
-Message-ID: <2025091902-dwelled-calculate-c755@gregkh>
-References: <t3uk3k4h3l53yajoe3xog2njmdn3jhkmdphv3c4wnpvcqniz4n@opgigzazycot>
- <aMlnp4x-1MUoModr@smile.fi.intel.com>
- <mknxgesog6aghc6cjzm63g63zqbqvysxf6ktmnbrbtafervveg@uoiohk3yclso>
- <CAHp75Vf7KrsN7Ec9zOvJoRuKvkbrJ5sMv7pVv6+88tPX-j_9ZA@mail.gmail.com>
- <er7dkmzutsu3ooegeihjzngi6l3hol5iaohecr3n5bolfse3tj@xeedlx2utwym>
- <aMxWzTxvMLsVWbDB@smile.fi.intel.com>
- <2025091925-thirsting-underuse-14ab@gregkh>
- <f16ea5eb-cbda-4788-956b-d41c2af51745@baylibre.com>
- <2025091918-glancing-uptown-7d63@gregkh>
- <8702fd35-945a-4d20-bc37-410c74c70da6@baylibre.com>
-MIME-Version: 1.0
+	id 1uzdRF-00000003Pxu-131M;
+	Fri, 19 Sep 2025 15:54:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=b9Th/eiCWOWt+8ktpYBScTZuFClPpP9jBcfcK3VgM/oXwgdpPXHj8A/kGBgJR32cdV+P+y++6Wo1LBcGicXSsxGjJJ6MPZPCEuhL+r7xx/z4+hE18xSME8Fn9rqoDiQ5BeMz4duCo+/KtbF7wyvLZHXR0necswZ7ayX4ETIVA0aaj+Zin/IBsb9f//v/gQuOlWeyFWBYxj0FBOskfNG/uVRK8vz+eLTPIYREXPp/njWqBFVgXmA/NSlUakCg6GXSujh+carDFLj1JYBN5Gd0yUXZix2R/i1GfMdtTYCqNHNwua34sm0jQ0oZMZimF1CsWdI3/9JUpvDyKQM/nV4H1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ygtKTxRCnJwuBIMZLqtDmxiGGGvbDaHDG5hKDmvdWo8=;
+ b=pUn2SmgXeQYv2RzkIE1WBOPl6SCtCk62AMwNS72WD3Z5nmXibCTefTaGx4TQA+kH/DENk+lkuba2MzfnT03KU9Hm790f7dZRv/N99RLCWx1YQPyFwvk6mz51a0b+/nzdpyA0kPMS4hR7lI6jFuHeba2bdXjS3YQRirzKiNoTNMziTYaVkPfE4P+wmtwpCOUxKmi13PJ/4vumioyTkrL7cdQcmfFfKkLtmXai+okBYxwqPaqgdh2hl7m/A5dOCE9/NVzJS9Ns8UyfJVlZ1va726RtwB6YwfDzFMXk/0Rivz8kPEB/0KWpIv3kMaRBQGQHZMfqXvgV2GYWPBd7nXFrqQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ygtKTxRCnJwuBIMZLqtDmxiGGGvbDaHDG5hKDmvdWo8=;
+ b=IrbYmxCKJet4ULcj5EwVrzaJgg2o+DmG33pnp43wT7cVkdPx2SC7R9C5E+CzOHCKHLBG1Kf3Amp+BohHbMNPAdj5h7IY9rGi8I+4fESDXlHj8ILatpQzhRZjC0LaNZpU/7khAtZ/PGH7fJA9swCLhJGb5x3jbxhy3X7crATKcEeSo0C0LGgn7ua6sRZT8hJb+TcmF0h+HWmo81inY8ZDRzfox4i3gId4EElMBlzLkt8s7R7x3f0wAqgHLypYiFhzMv3XH3yZIN59XJ73Dm9D3v+JuSxhtpf9bGxioM1d2/yBvjfZ26FLmmFqv1gNB8tZSVgs4OiGx1P1V0KSRyWU4w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+ by AM7PR04MB6872.eurprd04.prod.outlook.com (2603:10a6:20b:106::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.14; Fri, 19 Sep
+ 2025 15:54:15 +0000
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9137.015; Fri, 19 Sep 2025
+ 15:54:14 +0000
+Date: Fri, 19 Sep 2025 11:54:04 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>,
+	Abel Vesa <abelvesa@kernel.org>, Peng Fan <peng.fan@nxp.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: imx8mq-usb: add alternate
+ reference clock
+Message-ID: <aM18nN23fRwpI9DD@lizhi-Precision-Tower-5810>
+References: <20250919-usb-phy-alt-clk-support-v1-0-57c2a13eea1c@nxp.com>
+ <20250919-usb-phy-alt-clk-support-v1-1-57c2a13eea1c@nxp.com>
 Content-Disposition: inline
-In-Reply-To: <8702fd35-945a-4d20-bc37-410c74c70da6@baylibre.com>
+In-Reply-To: <20250919-usb-phy-alt-clk-support-v1-1-57c2a13eea1c@nxp.com>
+X-ClientProxiedBy: BY1P220CA0004.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:a03:59d::15) To PAXSPRMB0053.eurprd04.prod.outlook.com
+ (2603:10a6:102:23f::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|AM7PR04MB6872:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5f5af416-7f88-4d24-4755-08ddf794c877
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|1800799024|7416014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?iXRl2d+fqjIj6gBagU70K1kJwvO9Lab/NCTa2l62aeNfQif9byE+dYrX/tTq?=
+ =?us-ascii?Q?Hdlje6BZw//GCGynTgQr+YKW299oJjp2/gpApK2qPCKcGJNa7Ydir5pBWI/0?=
+ =?us-ascii?Q?xptw/i+EvQnNBSSkncLOX+g5tLXYs8Ie3z9rvFuSsU/aI4HCarT8CNz/vTU0?=
+ =?us-ascii?Q?vqcUZUHaSl/EBrPxRjzuv7RMu+5tM8xbHdZOoVjm+oMbHg6uJPbW4TxXWEv0?=
+ =?us-ascii?Q?7maLOXfSi7wQDDJYR0WsU8AlUpaEh2abGgcuuMDVIXRmBDOuoOh/0mGlhVYI?=
+ =?us-ascii?Q?yF8syE4ywoMCDtJ/+VRFDJe6ScRN0+tzX6VMrROD6e67qQiasuM8fX5yqzcW?=
+ =?us-ascii?Q?tWnulWVdtLaSYUqId+6kXkjlN7vE/ZXItvpsBwBK12PtgvTKCqEm+XifGXWQ?=
+ =?us-ascii?Q?EBN9eQJb25UISzHiat6+0Q3dEvzkskJEpVfPNWgFulEX0T9EvjjDTeYNIZCE?=
+ =?us-ascii?Q?EQqKaLha2bhrLaUlk1BjUnQVz9aAEp7sF4fuEc+MuEd8BBaF5ukUrDlqBfeC?=
+ =?us-ascii?Q?QHO5IwNHXYu/0+m9kDiUFzb1HfGtHqAQyxnjf6NWzwgC/y0kc2mg2vXTHoHO?=
+ =?us-ascii?Q?7PkmRBcQBs8Nhd/dTpMJ8Ty4u5JxPSVyystL+0/E81egRcrwvS1GWk7Cpg1M?=
+ =?us-ascii?Q?FOzYINTt4SnYOAvo2RAA+9g+Carzop6QixqomOaTikgdv77krWwGmbup05Wo?=
+ =?us-ascii?Q?oYKKRl3LcwWlZLd5TaVlWBt8LsimoLItwe54y1iqmm0jGiKHFmfyueFAwoxb?=
+ =?us-ascii?Q?T2aJRR+GzLiUPXqztH9UOQmiAelEnfn5kF6q3I3JflbQc8DiPAHLn8INtrHj?=
+ =?us-ascii?Q?xOyYHSFpfTymYJf2K9h3VVu970WpCFTGQCRIygmftsK96knCyZ/9hbaFZH4N?=
+ =?us-ascii?Q?/a0/s7ZUvws/Xc0Az5/CDVL0zVjHRNUBD4bedtuSVJ1VXCys8q4y8UUsoJ9W?=
+ =?us-ascii?Q?I5zOE5syfONfXOmtXCBP+oGHwlvX5nLodo4zrWOJZiM0ugxBkvNAV8BAvQlZ?=
+ =?us-ascii?Q?P2btDAtQP8XN9poiErLfSXpazjt2sTmxE6Lnqintf6nz0L7Ha5dztv3lk1fi?=
+ =?us-ascii?Q?QpIAAXv+GYKCep9Q+lf6ubBaLe51s/500e3XLVhlk1Nlv/tJaRiSzWWgvIlm?=
+ =?us-ascii?Q?EVYM5QuhdzPqvOqQXWQHKEHPv0ilDIjBkdFOKgJX3+cbdeMlJcj+Tg30a4cP?=
+ =?us-ascii?Q?+ZH+tRrY8kwN7KJWBKPYLBEGQ2fLiMPisnsNLb365/YleZP2Uk9xRPR0xKWa?=
+ =?us-ascii?Q?pzb/wsL95IJRsMSXNCeKsyeRBxXH+6oystvQmIIRhlrAhxp53dkQY024uNEy?=
+ =?us-ascii?Q?al4gWpB1Vq7mvyZNuOQEHLsu9SGpVGHhqq7jl6FWYpGu05H4k+iY6QGrtR09?=
+ =?us-ascii?Q?JC+YhxXtmf//2nBAmhs0iESG204BWGR9zCEgcmUZPCjDpt9j4AcZQXDSWUeg?=
+ =?us-ascii?Q?VJH577upu0PjGA42m5x9UXJNicBBe7m2MTfz42B6IfGpYuAG0/wAgw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(1800799024)(7416014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?JwkimTwzeyvqpWfrP4sU+s6uisDx7IH5WpYbwTMDEROyUkOS1xfnE2HRTcJ4?=
+ =?us-ascii?Q?fO72Bnf2oiKGyQJplm2MLKsp1mmf1+ju+P/tNlnB+SBS3RGsxaqu2HbI0l3J?=
+ =?us-ascii?Q?KLz87TVVYBZNeVZMoksra7Hqs2YOjPwSUwGHpoa+RhrIxrr83iv2KWMTnugI?=
+ =?us-ascii?Q?KcmI074A9lTtPvJb92Pb8syhMY9LKgOQHpyqgEASNswuz8FvYYisu56gjp9V?=
+ =?us-ascii?Q?BsJHcjZ0nZ+VAMzIvnCmwR+B7sT0SScD2YK0IrnbKPW+oJjZV+uxdJnUtush?=
+ =?us-ascii?Q?hNMkqt65WDEC8HfG0/aBdQscz1eXI9g2I4Nhsh847cnXl1wrE4GXa9i8j8Pw?=
+ =?us-ascii?Q?J11hnQfZhJQSmC8cknFeWR5YRT0TnyATdZsxMip63490WqpV1s3HrGQLvCi0?=
+ =?us-ascii?Q?DMEiYb+o0CZWxbVxt9P5BDqM3ePWCZMNkp0VabwKWOnmBi8LH2gl0GL76b6g?=
+ =?us-ascii?Q?FoDUxi+o0hb3/mmWkfsEbsd1kdPL0QMH7tdtlColBlgrcXaU3fWQd4WeiNbn?=
+ =?us-ascii?Q?ITVdczpZHk2YOgoTJ15z0Tb15nwoHuj7cgFJ8tTACS2mO9e7pFZNml8HTKed?=
+ =?us-ascii?Q?oz1/xle06E3EWwTFEtaCjtqR47wNsMYR/MQ6FzHZNb+8+iYPIEBZAOzin7zw?=
+ =?us-ascii?Q?gCSdNAS1QenSA/49TStsKI6/DqwdT2S14t+wEdu91Vu4CUMBZ6BIxNX+iDpr?=
+ =?us-ascii?Q?PUzgTCPL2ioWqRYiyFXO1gXCQqUvUAJ3J+iRxfyx7boml5EVpVkZQjw4QaGX?=
+ =?us-ascii?Q?w5v/b69chj7n/pDeDZkRldzbpSwGcHpsrFQuiEiiWPwDZNWzz4MZ2qmsQ5u3?=
+ =?us-ascii?Q?zTxgQ6zUDJBvKpeO8Oy6o5bWWSV0wmMqP+T1d5dwFFcvFJWKyTc4VS3NlEm3?=
+ =?us-ascii?Q?V3hHaimFxw5hTTvV0HmxttnHy3Xq4zfgUTgqqapJNeVQuVT3ZturBlCEctzO?=
+ =?us-ascii?Q?2Zk9mZq7NlrzpHXRAdOdpj8VgGHCgaEq7Om5pPZYT3yGkHNWdwwkWKVtuYAL?=
+ =?us-ascii?Q?kIOvjQ4QDRrbGlUddTJHAz1GmNHgm/c6ZfjKR6402wAsAEt086qbZr3r0Vc3?=
+ =?us-ascii?Q?ASZvvKXeOLzPo5kgdnXHHYoQHsQ9G5W5qMQC/rOUIieAXZzjb+TxhGXzRH7L?=
+ =?us-ascii?Q?ibeuAlBpNrtE4S4OBdcZHyiwiu1dEysuPMmd2nMIduV+TIr0GgpXKy8bnSYk?=
+ =?us-ascii?Q?W90z1MEA2eaJzAZBm3agS/z8JHUwcxhqd2DpBl8Br2N5BD5GaAquwzyWeFRd?=
+ =?us-ascii?Q?J2x7mu88R5rxJsEFRrCF1rmAGBWjtWwhTfDDhr1Ng3tgzi3tn0bkkQRu09jx?=
+ =?us-ascii?Q?VMcUL9PKnFwskGE8dmNobW/obKDw+pD8e929Wa7/NFvRv9wtdoQFDYuo4jFb?=
+ =?us-ascii?Q?JyuHVHSDl3AmKNBB2Ouia90AoUuFjBL2PT+cpqZmYA4uZ943vUc+KEd9J5Yy?=
+ =?us-ascii?Q?i9IAFnmLUH6TLVntfx6FtIYtc/na/EwyYn1e68T4Cq7Emsuy05m+vIBMMpw+?=
+ =?us-ascii?Q?xiLLSnNKK4c2enYs2K2HRnU/VxAFHEXDEFsQBfrODQyv9zXbDTjFuEaPiLkV?=
+ =?us-ascii?Q?TbgZyvrK0dhC6dWlykk=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5f5af416-7f88-4d24-4755-08ddf794c877
+X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Sep 2025 15:54:14.7999
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: S4ODGyOG5S10H9HjQgSjldMCjwQyRnwiebWOKrEl3n/7rg8WOGdtQnb4jRSEqTdBxbl0HcgWr9apRwxI2I75gw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6872
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250919_085421_304075_742F66A8 
+X-CRM114-Status: GOOD (  15.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,92 +169,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 19, 2025 at 10:20:29AM -0500, David Lechner wrote:
-> On 9/19/25 10:13 AM, Greg KH wrote:
-> > On Fri, Sep 19, 2025 at 10:05:28AM -0500, David Lechner wrote:
-> >> On 9/19/25 8:59 AM, Greg KH wrote:
-> >>> On Thu, Sep 18, 2025 at 10:00:29PM +0300, Andy Shevchenko wrote:
-> >>>> I,o.w. I principally disagree on putting MODULE_IMPORT_NS() into the header
-> >>>> file.
-> >>>
-> >>> Yes, please never do that, it defeats the purpose of module namespaces
-> >>> completly.  If you don't want to have module namespaces, don't use them
-> >>> for your subsytem.  Don't use them and then make them moot by putting
-> >>> MODULE_IMPORT_NS() in the .h file for the symbols as that's pointless.
-> >>>
-> >>> thanks,
-> >>>
-> >>> greg k-h
-> >>
-> >>
-> >> Could someone suggest some additional explanation to add to
-> >> Documentation/core-api/symbol-namespaces.rst to explain the
-> >> reasoning behind this?
-> >>
-> >> Right now, the only part of that document that say _why_ we have
-> >> module namespces says:
-> >>
-> >> 	That is useful for documentation purposes (think of the
-> >> 	SUBSYSTEM_DEBUG namespace) as well as for limiting the
-> >> 	availability of a set of symbols for use in other parts
-> >> 	of the kernel.
-> >>
-> >> So I don't see the connection between this explanation and and:
-> >>
-> >> 	[Putting MODULE_IMPORT_NS() into the header] defeats
-> >> 	the purpose of module namespaces completely.
-> >>
-> >> I am guilty of putting it in a header, so if I need to fix that
-> >> I would like to actually understand why first. Andy has mentioned
-> >> something about potential abuses, but without any example, I haven't
-> >> been able to understand what this would actually actually look like.
-> >> Or maybe there is some other reason that Greg is thinking of that
-> >> hasn't been mentioned yet?
-> > 
-> > Let me turn it around, _why_ would you want your exports in a namespace
-> > at all if you just are putting a MODULE_IMPORT_NS() in the .h file at
-> > the same time?  What is this giving you at all compared to just a normal
-> > MODULE_EXPORT() marking for your exports?
-> > 
-> > I know what it gives me when I don't put it in a .h file, but I think
-> > that might be different from what you are thinking here :)
-> > 
-> > thanks,
-> > 
-> > greg k-h
-> 
-> Up to now, my (naive) understanding was that the point module namespaces
-> is to reduce the number of symbols in the global namespace because having
-> too many symbols there was starting to cause problems. So moving symbols
-> to another namespace was a "good thing".
+On Fri, Sep 19, 2025 at 03:02:57PM +0800, Xu Yang wrote:
+> Except default 24MHz clock, alternate 100MHz reference clock can be used
+> as USB PHY reference clock too. Add "alt" clock and clock name.
 
-Yes, it is a "good thing" overall, but by just making all of your
-symbols in a namespace, and then including it in the .h file, that does
-the same exact thing as before (i.e. anyone that includes that .h file
-puts the symbols into the global namespace with that prefix.)
+Beside default 24MHz clock input, there is an optional additional 100Mhz
+clock input 'alt' for USB PHY reference clock.
 
-Ideally, the goal was to be able to easily see in a module, what symbol
-namespaces they depend on, which requires them to put MODULE_IMPORT_NS()
-in the module to get access to those symbols.  dmabuf has done this very
-well, making it obvious to the maintainers of that subsystem that they
-should be paying attention to those users.
+Frank
 
-For other "tiny" subsystems, it just slots away their symbols so that no
-one else should ever be using them, and it makes it blindingly obvious
-if they do.  For example, the usb-storage symbols, anyone that does:
-	MODULE_IMPORT_NS("USB_STORAGE");
-had better be living in drivers/usb/storage/ otherwise I need to have a
-word with those offenders :)
-
-So it's a way of "tidying" up things, and to make things more explicit
-than just having to rely on searching a tree and looking for .h include
-usage.  Right now, you are kind of defeating that by just allowing a .h
-to be included and you don't get any benifit of being able to watch out
-for who is actually using those symbols overall.
-
-Hope this helps,
-
-greg k-h
+"Need emphase two clk inputs for this IP".
+>
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml | 7 ++++++-
+>  1 file changed, 6 insertions(+), 1 deletion(-)
+>
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> index 22dd91591a09428214afaa4c9c8e37aae9bd8aba..268f86b04ce88cb81d2c06ee507fe0483d713f8f 100644
+> --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+> @@ -27,11 +27,16 @@ properties:
+>      const: 0
+>
+>    clocks:
+> -    maxItems: 1
+> +    minItems: 1
+> +    items:
+> +      - description: PHY configuration clock
+> +      - description: Alternate PHY reference clock
+>
+>    clock-names:
+> +    minItems: 1
+>      items:
+>        - const: phy
+> +      - const: alt
+>
+>    power-domains:
+>      maxItems: 1
+>
+> --
+> 2.34.1
+>
 
 -- 
 linux-phy mailing list
