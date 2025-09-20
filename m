@@ -4,72 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21E08CAC597
-	for <linux-phy@archiver.kernel.org>; Sat, 20 Sep 2025 11:48:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B13D6CAC5A7
+	for <linux-phy@archiver.kernel.org>; Sat, 20 Sep 2025 15:16:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O1M6zwLwDgVp85kmxS7exB5DtmQCYPSn4BPeDuF41mo=; b=2+nOT6deTqM8Qm
-	zth6SJa5ko2HVdJFHTjOrGT/esfeyT8sJhxURt6/awyKNiqCKzLgEyxOf+nfvInNwKU0Kyys2+9K/
-	B5QbZasMPtEvsgkrfmNRm9PLtxKWKDmT9Bq7Ma9HJzhUz2Ie41OaN921S14lGeKMaxZ27l5iMWj/a
-	ofU1zhSi9IurJ88JnCZ+6Yu5sb+mr+TN7q573xM8vzke8DatCjK1dPBBGRgUiPUlXxW5FQ1OLVHsp
-	1tXkok7K0nR3wK8GGJ6qYSs/+/ZhF1Q8s7zGhPE+tisS8WUwh1XLkfuIFAYnd5LalLJAEQQWvx3f0
-	TieuvkQ+8LqUDm/savOQ==;
+	List-Owner; bh=PJLJmK0nkhWzJpSEgNr3ONg9xQPZknfWu3z0FhHJMd8=; b=E71tEBH6X5ArOu
+	fcYac/6JcSZrs4sUocTToqFoF8CQXqjeNFQPtW1Yshk1ldjkVLeBMfacM2zhkoeZTqbmFMrit3K31
+	ED8CgxvmudyOuUyyVn9y3JpxYr+UGJbvgfhXY3O8USF3hgP1qUjASwJodeDL9E2TCMoolu18qWbGh
+	zBGj1lj/XyVSWKoQ+WSj87kZf8FAEKVPcwNet0iD9XWqXSAA2KSwGMgVVBghq1tjyhOZ4cOI5d8+p
+	ml1er1omFkx0X7Rbe2onHYOkXuBFU0dX0JcDOqlRqQmjnyfHtU7GoY3I/etvpW26I9h1xY7WlyMnz
+	JcwPw4RAGuUHamqiOR8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzw4m-00000005H5u-38IP;
-	Sat, 20 Sep 2025 11:48:24 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uzzKb-00000005WZ1-0AGL;
+	Sat, 20 Sep 2025 15:16:57 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzw4k-00000005H5I-3G9f;
-	Sat, 20 Sep 2025 11:48:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B200B6014D;
-	Sat, 20 Sep 2025 11:48:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E848FC4CEEB;
-	Sat, 20 Sep 2025 11:48:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758368899;
-	bh=S4lEmGoMz/EYlXIdqoTKwelfO4ALXROy7V1e0MeAQH0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=iaVGOGORuQwMrNSIa4PH+D4hqQ1EzqYfhpFDlKS6GxoHvE2G07cydmcNxbH7JiSaF
-	 VB//OvZ/NIyqtXTiQdgNIaJR1yOOt0GN5wvED71XbHWGfJQ8MXAbSmRKzOP0oGzxUo
-	 eI0dRZofOuo2tWVbhmOha+R9iPLZBhlAq6PxjOe1O36YWhAikhcfQDESIsNAQ7q3jU
-	 7Gd+ryQWi2LOvjIBn6+lHG+z8ITQPLWMenRTdeRpW6AWLUHFqDx4XBMKA2WVWqmMZP
-	 P+Fxg09E+3mx9SdSTdOU9opMn20sKOks4qBu7Z2VV23wsoQOCrm3HqCHZtnhcHSmN+
-	 St34XJ6vkjrEw==
-Message-ID: <5bae4ebe-dd42-4e84-9ee6-c9f6a88f7db5@kernel.org>
-Date: Sat, 20 Sep 2025 13:48:12 +0200
+	id 1uzzKX-00000005WYf-2dLf
+	for linux-phy@lists.infradead.org;
+	Sat, 20 Sep 2025 15:16:55 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58KDPQkd019437
+	for <linux-phy@lists.infradead.org>; Sat, 20 Sep 2025 15:16:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=+jyAldBzt3O+lpQDlvl0UcYG
+	go7Gu4oMJKsbVtP0MDg=; b=A6PnUeVTj7ZnjzVlvTD5fHTS1hZDMEWC/O4i6+ng
+	rf8ufIncul1Dg9Zi4jDcvu8j5Y/Fclmw9ooIssX8GxetaMbuA8ILhrOa7rukQG6Q
+	Pw8BTysufhYO5a8JVvDphR0n261nPTHP4cH426FN24l1kWeBD42YZSjkcNOYG6YR
+	uJi7hlsh8Moj7B2FawhFRvlS8oeOy5rsqDgLHjRQvkw2kTYUqnnbIZWEz2NA03RX
+	X/iK2Ix85fxI04suFZrQG1blLK43SCxjctCIXZ4VRc0c0+8KbvnxNsrYCBt4KU22
+	OSSX2zSOYe6wN+T0YPA8NVVQ+Y123cRUc5MhKa8hKwH08w==
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499mbv0vge-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 20 Sep 2025 15:16:52 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-82968fe9e8cso902470885a.0
+        for <linux-phy@lists.infradead.org>; Sat, 20 Sep 2025 08:16:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758381412; x=1758986212;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+jyAldBzt3O+lpQDlvl0UcYGgo7Gu4oMJKsbVtP0MDg=;
+        b=h41yG7hX/HOk6SHfVBgl1olW1J+sdrFaeV9qosl0Ma7w9B9REY7eu0mr2duc5VF3Hb
+         09ZoW9DLmgpQ42hK3x5+iOKq8Cm/dhk+uv0Bm3L0T0wM0jWlUzO85/ld2eEYvZRPYU2n
+         YAvXVffKgTjBXpvJOFsfHESEJE8hIVBpgy/DSst+abCl1OK/Y9Isb9Xm6A6TE6wUWlkZ
+         YQePfKzmO7N+G4H2dlORDc0/u0xj9jx7FmT6QAUZXn06hHZ3n4VZTGGmrdwpdfEQ+Twb
+         54IEaucN9xOaIeoO0HGRClYIfWcxIo25rtIFh++4y+Ts3YLTj4UOeWXuJw3Ldi4Nasvs
+         29zA==
+X-Forwarded-Encrypted: i=1; AJvYcCXngqxtpJRgET6231pMHum3wCKrc0HFHkgyXdT9DoUjou62LmGNLe+lD8RhXx+gYeapUWvCZDYa3KI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwPUclc4fuXcWk4VhZ5TBiyk47nOtst6LH9U4fbwOfYAneP3hdC
+	MCLrFm7CulLOgUGW/MPM+WLJJpE5PPWwihM79R99kBwzhslLFvV4DXwTVtz1+cDHQKJaDO5y5kS
+	5++brQ4yxOtO0c8dxLJWqIODd5mSx5Enf32MYBPh7sCnPneGJohHNVlU5+2rq8iqjgwO1
+X-Gm-Gg: ASbGncveItDu/HSywOVamcseqAnKqCX6Qz5LQpYuMRx3AmOsG2Sfo6tUzj3w7TR3NkF
+	rOmCPGYS9pFq3lcFuc7OEgnHzVgBCeNtIpeyfQb+vV9kFbWhtxDJwlMEN5jI906Rj+UMpKPxSiN
+	JkRQGCw/NRIC9kFunemencS5fWKdsGGysGozv0elbhrY7APnmm+plw2ebYr4ZR0UL9og8qqUbXu
+	8VKfMJOGJvMNs/wYAzNqJ5xoG2l0n1e6AyV46CGylKtMNH1LOyEZNpVdpDmgdfog/WMgV75gnhk
+	92DpyOrWJggPjPYSs3OoOMcJgqBK+9XLjteKWUW3dh8DJHN5riP/kGiZHAsbGxlk83lKDY+iA0n
+	T0ZXl0pSQSGSzXfrEIuf78x/JBToHizNsE7ouIIja0WJrNTwLtHhj
+X-Received: by 2002:a05:6214:aca:b0:740:f45c:5d49 with SMTP id 6a1803df08f44-79910ca7108mr77889886d6.1.1758381411542;
+        Sat, 20 Sep 2025 08:16:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEWdSx0mnQGk/Nq/NA5PY+5t7voihJHBZXCh93RSAaAbgvzjBcB3+3BAVhRHQ14TfWUTCc6KQ==
+X-Received: by 2002:a05:6214:aca:b0:740:f45c:5d49 with SMTP id 6a1803df08f44-79910ca7108mr77889436d6.1.1758381410917;
+        Sat, 20 Sep 2025 08:16:50 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-578a6508483sm1996183e87.49.2025.09.20.08.16.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 20 Sep 2025 08:16:50 -0700 (PDT)
+Date: Sat, 20 Sep 2025 18:16:48 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: kishon@kernel.org, vkoul@kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+Subject: Re: [PATCH] phy: qcom: m31-eusb2: Update init sequence to set
+ PHY_ENABLE
+Message-ID: <qpw26fqn322tprf7ci34sn66codluytg6rnkmppdr4jpjwp6ud@hbawghyesvdv>
+References: <20250920032158.242725-1-wesley.cheng@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 03/22] usb: dwc3: glue: Allow more fine grained control
- over mode switches
-To: Thinh Nguyen <Thinh.Nguyen@synopsys.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Felipe Balbi <balbi@kernel.org>,
- Janne Grunau <j@jannau.net>, Alyssa Rosenzweig <alyssa@rosenzweig.io>,
- Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
- Ran Wang <ran.wang_1@nxp.com>, Peter Chen <peter.chen@nxp.com>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "asahi@lists.linux.dev" <asahi@lists.linux.dev>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-References: <20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org>
- <20250906-atcphy-6-17-v2-3-52c348623ef6@kernel.org>
- <20250919214013.gtbaknjrgd375hm6@synopsys.com>
-Content-Language: en-US
-From: Sven Peter <sven@kernel.org>
-In-Reply-To: <20250919214013.gtbaknjrgd375hm6@synopsys.com>
+Content-Disposition: inline
+In-Reply-To: <20250920032158.242725-1-wesley.cheng@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=ZcAdNtVA c=1 sm=1 tr=0 ts=68cec564 cx=c_pps
+ a=qKBjSQ1v91RyAK45QCPf5w==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=UHvurfnqH0zupzNQNmAA:9 a=CjuIK1q_8ugA:10
+ a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-ORIG-GUID: K2Pwu5rD2K0Du3AL2sYQFlzbrvTIkVby
+X-Proofpoint-GUID: K2Pwu5rD2K0Du3AL2sYQFlzbrvTIkVby
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzMSBTYWx0ZWRfX41crhRkZCLUa
+ v2PI1te1r4+5Qem6UEeEwdir2ygq+IIWN8vPbGmAF6i3jbgceAJgMo47ivxCytdWtuL6daB9Ws/
+ 1uGKrfDxXGquJ5KICa8MPqQE5olBMj2HQqzP+IYyQAoW1gJgFw6KjTJZpo45XPszY7iIu2RFUsF
+ dyEJiov7hx6+jL6bq0E3ltZ6AiiKkCW1NsSiwetIYeKwo895c9end2jOQHk3bIMkRB3IufqGUc9
+ DB2bSQIjIsZqsG0Kga/EWvPk/wGpAm0hwhmmVYxXWbAA2E6gDLgNzaaf+r6BJB6HOarGtsQNgoL
+ xxHFjqwHWx1QxkUNVuATq/quw93iyA7tXDi8hm7KETfUTNjgkLa8nPJnOWr1JZVHSYg1P2OhK5f
+ Nc1boIVq
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-20_06,2025-09-19_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 adultscore=0 impostorscore=0 clxscore=1015 bulkscore=0
+ phishscore=0 malwarescore=0 priorityscore=1501 spamscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200031
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250920_081653_785827_7DDD34D5 
+X-CRM114-Status: GOOD (  14.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,115 +124,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 19.09.25 23:40, Thinh Nguyen wrote:
-> On Sat, Sep 06, 2025, Sven Peter wrote:
->> We need fine grained control over mode switched on the DWC3 controller
->> present on Apple Silicon. Export core, host and gadget init and exit,
->> ptrcap and susphy control functions. Also introduce an additional
->> parameter to probe_data that allows to skip the final initialization
->> step that would bring up host or gadget mode.
->>
->> Signed-off-by: Sven Peter <sven@kernel.org>
->> ---
->>   drivers/usb/dwc3/core.c   | 16 +++++++++++-----
->>   drivers/usb/dwc3/gadget.c |  2 ++
->>   drivers/usb/dwc3/glue.h   | 14 ++++++++++++++
->>   drivers/usb/dwc3/host.c   |  2 ++
->>   4 files changed, 29 insertions(+), 5 deletions(-)
->>
->> diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
->> index 8002c23a5a02acb8f3e87b2662a53998a4cf4f5c..18056fac44c8732278a650ac2be8b493892c92dd 100644
->> --- a/drivers/usb/dwc3/core.c
->> +++ b/drivers/usb/dwc3/core.c
->> @@ -132,6 +132,7 @@ void dwc3_enable_susphy(struct dwc3 *dwc, bool enable)
->>   		dwc3_writel(dwc->regs, DWC3_GUSB2PHYCFG(i), reg);
->>   	}
->>   }
->> +EXPORT_SYMBOL_GPL(dwc3_enable_susphy);
->>   
->>   void dwc3_set_prtcap(struct dwc3 *dwc, u32 mode, bool ignore_susphy)
->>   {
->> @@ -157,6 +158,7 @@ void dwc3_set_prtcap(struct dwc3 *dwc, u32 mode, bool ignore_susphy)
->>   
->>   	dwc->current_dr_role = mode;
->>   }
->> +EXPORT_SYMBOL_GPL(dwc3_set_prtcap);
+On Fri, Sep 19, 2025 at 08:21:58PM -0700, Wesley Cheng wrote:
+> From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 > 
-> I'm hesitant to export this as is. This function may change the susphy
-> bits and expect them to be restored later. It's not meant to be a
-> standalone use. At least, we should document how it should be used along
-> with the other newly added interfaces.
-
-
-Sure, I can otherwise also open-code the susphy change inside 
-dwc3_apple_phy_set_mode anyway if you prefer to keep this private to the 
-dwc3 core. I should restore it there to the original value anyway I 
-guess after phy_set_mode.
-
-
-
->>   
->>   static void __dwc3_set_mode(struct work_struct *work)
-
-[...]
-
->>   int dwc3_gadget_suspend(struct dwc3 *dwc)
->>   {
->> diff --git a/drivers/usb/dwc3/glue.h b/drivers/usb/dwc3/glue.h
->> index 2efd00e763be4fc51911f32d43054059e61fb43a..633268c76fe4c7fdc312c9705dfa7cf7ccf3544c 100644
->> --- a/drivers/usb/dwc3/glue.h
->> +++ b/drivers/usb/dwc3/glue.h
->> @@ -15,16 +15,30 @@
->>    * @res: resource for the DWC3 core mmio region
->>    * @ignore_clocks_and_resets: clocks and resets defined for the device should
->>    *		be ignored by the DWC3 core, as they are managed by the glue
->> + * @skip_core_init_mode: skip the finial initialization of the target mode, as
+> Certain platforms may not have the PHY_ENABLE bit set on power on reset.
+> Update the current sequence to explicitly write to enable the PHY_ENABLE
+> bit.  This ensures that regardless of the platform, the PHY is properly
+> enabled.
 > 
-> finial -> final?
-
-Whoops, yes, I thought I ran a spell checker over this because I usually 
-add a lot of typos but must've forgotten :-)
-
-
+> Signed-off-by: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
->> + *		it must be managed by the glue
->>    */
 
-[...]
-
->>   
->> +int dwc3_core_init(struct dwc3 *dwc);
->> +void dwc3_core_exit(struct dwc3 *dwc);
->> +
->> +int dwc3_host_init(struct dwc3 *dwc);
->> +void dwc3_host_exit(struct dwc3 *dwc);
->> +int dwc3_gadget_init(struct dwc3 *dwc);
->> +void dwc3_gadget_exit(struct dwc3 *dwc);
->> +
->> +void dwc3_enable_susphy(struct dwc3 *dwc, bool enable);
->> +void dwc3_set_prtcap(struct dwc3 *dwc, u32 mode, bool ignore_susphy);
->> +
-> 
-> We should document these interfaces. The dwc3_core_probe() does all of
-> the above in the proper order. It's not obvious why these are needed and
-> how they should be used.
-
-Very good point, I'll add documentation for all of these!
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
 
-Thanks for the review,
-
-
-Sven
-
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
