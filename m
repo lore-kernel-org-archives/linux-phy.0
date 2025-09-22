@@ -4,74 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8DE1CAC592
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 19:57:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DEE5CAC592
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 20:14:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ao0vMPbONAGoPpmADIKn5yoZQEuHIVWWxHMDn7qUyIc=; b=MosuUUMQXe1CUZ
-	qKOjSUuUTTPxlJe562WSJMiDrvi10sDCDKKzyLaT0BK3gkd2SAEzxZmp7h1abFGzd1siYAlf5IwPd
-	pdfgOh6jfT5/N/FUqMrXzkW7jaFUhZlrrDWy/svunKoZYQe+zgdXKTYHQnGvwZIo/00KfhhDzpRQb
-	tZsId2L9iZp0XPb2T9d3I4JuLk33Tskkeuw3sKzu/GXu/IrwGMd5e77OVqsOqnZgXkVDX2nWeQuQe
-	1VBSYvB6Dq+JXYlE1sD7u6wUkBXgu559G8UbVmWG0fqyMBv4qy/gd8m6lbu6wFZQx9Rr8noqy24Ee
-	oG39Nz0UyZkPvv2ipUpA==;
+	List-Owner; bh=28F3JF4F5ZIC4UTOXkxvLHlQRFnvn5NpxgXw6A0sjYk=; b=i2VrONSTy0HN3B
+	+jT+2MXD3QZ6pm+K5Fjt0TSNo7tgQOMCRVAMhmJwV7CoPjX5Y9UCop4LVR1GhtcWDRRSuNFMvLk7G
+	NPDPCMslgT1C+O5X5jPZShDEU70dvUN5uYhOw+cx5mIJ45l4qdde3+W+tHENVcqFDTcIWKNLZ13HR
+	qPYTDt4CCZyBDtpALx9ruqphl+YQG+ZpajuO8PP+u0tKENH1oKnjR+LdYK8WBC2YQcQMsVu/ozKwW
+	CD6ZRZ2KWb2m1e18dv8kPIbxKmrLbf2Sd/k7yK4Y4CySCnBeiNN0K/JaU5/LkJTxfFukifVyE+7YF
+	cRLGf+z/BqNIo7Qj8WCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0mf5-0000000BOVv-1bZc;
-	Mon, 22 Sep 2025 19:57:23 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1v0mw0-0000000BQTa-3zei;
+	Mon, 22 Sep 2025 20:14:52 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0mf2-0000000BOUt-0Rrn
+	id 1v0mvz-0000000BQTC-1QO4
 	for linux-phy@lists.infradead.org;
-	Mon, 22 Sep 2025 19:57:21 +0000
+	Mon, 22 Sep 2025 20:14:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 76B0F4353E;
-	Mon, 22 Sep 2025 19:57:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B255C4CEF0;
-	Mon, 22 Sep 2025 19:57:19 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C434760243;
+	Mon, 22 Sep 2025 20:14:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 53C36C4CEF0;
+	Mon, 22 Sep 2025 20:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758571039;
-	bh=ATU22+eW9PFL7VBw73VUAiKeeHjomxrpBheEOpZuqKI=;
+	s=k20201202; t=1758572090;
+	bh=n7onidEgsOlpaTA0bHqvezDw24pCCjyLfMiCT8xJbWo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TfFCwx/41/T+d747EWTvvLu2aZoute+nq5SSBDuu1Z5+wsdXJHVw5jDTw2A/Z4e80
-	 I0LXpr2oDOAIpU212nT/yGNimDke+sqOw6J71FLf5WcJOQlYX1Bo0xp/XsFdwVdFql
-	 kYwkJ0YToF7jjY0MHqBHiusRScdyC3HCNlGI7r9T3PoM5JuEYDOa5ERBKHiDd/y9OA
-	 PBDNaDN7NZxJ1uhUe9mVXNQgBxW9Vv6wzE1JDVEK6w8Kjrmdpz5VlrrinkxDCnrPvN
-	 nlfC0U+UOjs06oKrx/4oitsj6ApTafLlJkUt6bzNhmOxrfBx00Ji70geklaVlpiu10
-	 CodXdDEDHiv+g==
-Date: Mon, 22 Sep 2025 14:57:18 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Cc: Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-	Konrad Dybcio <konradybcio@kernel.org>, Sean Paul <sean@poorly.run>,
-	Rob Clark <robin.clark@oss.qualcomm.com>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	linux-arm-msm@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>, li.liu@oss.qualcomm.com,
-	fange.zhang@oss.qualcomm.com,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Abhinav Kumar <abhinav.kumar@linux.dev>,
-	Dmitry Baryshkov <lumag@kernel.org>, devicetree@vger.kernel.org,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	yongxing.mou@oss.qualcomm.com, Vinod Koul <vkoul@kernel.org>,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org
-Subject: Re: [PATCH v5 01/14] dt-bindings: phy: Add QMP USB3+DP PHY for QCS615
-Message-ID: <175857103795.1112931.5315462738627006781.robh@kernel.org>
-References: <20250919-add-displayport-support-for-qcs615-platform-v5-0-eae6681f4002@oss.qualcomm.com>
- <20250919-add-displayport-support-for-qcs615-platform-v5-1-eae6681f4002@oss.qualcomm.com>
+	b=mdQqbZfgkYFBXrVlz9w8YV7KeMdkJVHmaZi+yCE+ct1RDUWErD4fWAkOq468gUbzF
+	 kwuGtAghvJ1UKanzQkz0bBsDj9PbS0r7sUpYUN1YIXuG6TssUBEAnHB2oP+4Uxf1UM
+	 MuVUW9dbu4NXJO0E9eJpQBchM2rAYV0c7isLon4T2e8PEUl1Nea5KraVZtVRrRJNI+
+	 /Ta5aSQoxBG6YS8Bxfr/Mf0PkZ0EA1V8YlQA5f4QTFUb/VKq0ieUnoKhqfc0ZZThu4
+	 U5SiDwQzpAZDBK+7kEu2fSz6mai2vfOaF0pQYvC72vBhklIXZWhFggm79ga3m51zfd
+	 S+02KzwGccjfg==
+Date: Mon, 22 Sep 2025 15:14:49 -0500
+From: Rob Herring <robh@kernel.org>
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, kishon@kernel.org,
+	vkoul@kernel.org, gregkh@linuxfoundation.org,
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH 3/9] dt-bindings: phy: qcom-m31-eusb2: Add Glymur
+ compatible
+Message-ID: <20250922201449.GA1235521-robh@kernel.org>
+References: <20250920032108.242643-1-wesley.cheng@oss.qualcomm.com>
+ <20250920032108.242643-4-wesley.cheng@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250919-add-displayport-support-for-qcs615-platform-v5-1-eae6681f4002@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250922_125720_165034_289F047B 
-X-CRM114-Status: UNSURE (   8.79  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250920032108.242643-4-wesley.cheng@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,21 +74,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 19 Sep 2025 22:24:18 +0800, Xiangxu Yin wrote:
-> Add device tree binding documentation for the Qualcomm QMP USB3+DP PHY
-> on QCS615 Platform. This PHY supports both USB3 and DP functionality
-> over USB-C, with PHY mode switching capability. It does not support
-> combo mode.
+On Fri, Sep 19, 2025 at 08:21:02PM -0700, Wesley Cheng wrote:
+> Add the Glymur compatible to the M31 eUSB2 PHY, and use the SM8750 as
+> the fallback.
 > 
-> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->  .../bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml   | 111 +++++++++++++++++++++
->  1 file changed, 111 insertions(+)
+>  .../devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml   | 11 ++++++-----
+>  1 file changed, 6 insertions(+), 5 deletions(-)
 > 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
+> index c84c62d0e8cb..b96b1ee80257 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
+> @@ -15,9 +15,12 @@ description:
+>  
+>  properties:
+>    compatible:
+> -    items:
+> -      - enum:
+> -          - qcom,sm8750-m31-eusb2-phy
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - qcom,glymur-m31-eusb2-phy
+> +          - const: qcom,sm8750-m31-eusb2-phy
+> +      - const: qcom,sm8750-m31-eusb2-phy
+>  
+>    reg:
+>      maxItems: 1
+> @@ -53,8 +56,6 @@ required:
+>    - compatible
+>    - reg
+>    - "#phy-cells"
+> -  - clocks
+> -  - clock-names
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+How is it compatible if clocks aren't required now? And clocks are 
+suddenly no longer required on sm8750?
 
+>    - resets
+>    - vdd-supply
+>    - vdda12-supply
 
 -- 
 linux-phy mailing list
