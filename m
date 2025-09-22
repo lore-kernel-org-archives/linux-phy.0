@@ -4,107 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5A43CAC5A7
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 07:55:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14B5FCAC5A7
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 07:57:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gkDqwiWTxbYlX1AAtLC0mDoMYyly/GucvzBQqHzNxXw=; b=4LPHryn7PL7n3r
-	n/IkjaaIWESd2KyOwrEo0pgE3zpkGxoSwwn8ly/Cq4u8yaBOJHWVphBIdYReBsMYThUvicYUE9PD2
-	wFvtmaVmO2k0qUH7aBuoomCHBy4HGQN1qLeykDyk4htOj4vLCbuuhhlbRaf0xsrD5yPIOYINDurPx
-	WKUvGCu90fVfQvvVpWfj9405q6Saj/QIOOX81X8LhYN2XtQ2YUo6BzV3Io4Yv41PaofPmNqTmwrS5
-	w0KrPQ4p/aPnzGsBx/no6Ng9RCi1/u6CIeyAuUwHpL0CxABcNSc89KRFCoQMh75oEW1gnviwioQSa
-	AMKGHKZxM5ZQ1ysvC5oA==;
+	List-Owner; bh=b/Yl+9uGvqoBrwUQx5TdHPa9GKAGkkh8980tYlrUhSU=; b=aFRJ64gb9BTrgv
+	3Td7/zr7mLCHmzAwiROWm2ykbdxudzUaeid+xUeJ20kYSq75IFsRzPyrUe/xIBj3HjB7e/f2oq6zW
+	sp9aiFahPqV84cexGyzgTKVR7lsBv1QsY4fX+5Nm1EI0ZARzAReHcvERacjDJJldQE4UKnweLcdJK
+	midakDJQrd7PUykogtt0txEOr9M3Yd299ZGb85M16/BZpZbNMK5tCrpSsCWpIWmwEAvLGMSey/fvr
+	mrO7oQjKydjSv80Xogyr8rYZMUw0QHoRKK4BsSQavlmzfV/nsz+zao9CO0Ak+FU+h8lujJIkDGORI
+	OJougxYItlcAMNmESS9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0bOc-00000009YI7-1r7l;
-	Mon, 22 Sep 2025 07:55:38 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1v0bQX-00000009ZAY-3XVC;
+	Mon, 22 Sep 2025 07:57:37 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0bOa-00000009YGj-02m1
-	for linux-phy@lists.infradead.org;
-	Mon, 22 Sep 2025 07:55:37 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58M0PVwr002772;
-	Mon, 22 Sep 2025 07:55:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=rdJxzHfvzX5
-	WtcrI5o5fZy/SiE8TWllcqK31NirN9Y4=; b=B9LsRG9qFA/QLWzqnOJu3fa4irD
-	OMkzjv02FY+01FFnDEt6dFyXMyXCQrmyDjMk2DqL8GoearkvpJjOS/8pva0HHcMV
-	BwxyWF84DtGs3dw4WfVstEgB+PsIJILfUg8DHE7wwn20VPkLD+/XpSztpWcFwia6
-	U0ZBIPIwE2o23NkGPrtPfVKkCzmfO9I4pmYt1vwrWGuG52Mch+j4VWn98Ce0Hbxq
-	QExEnyBtwG8PGgrE/G+IkJiVnRvDxpDtlv8Gnsdj4hAfOeNyXfxUedLdWxK7aY9z
-	fNu0hYejBS/88JA2hWjRlON2J6HTD7CL8JfAH4EMzoB3Pq9aXSog58HKEIQ==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499k98bvrj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Sep 2025 07:55:22 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 58M7tG5F003013;
-	Mon, 22 Sep 2025 07:55:16 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 499nbkqvta-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Sep 2025 07:55:16 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 58M7tGib003003;
-	Mon, 22 Sep 2025 07:55:16 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 58M7tFpG002995
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 22 Sep 2025 07:55:16 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 8F0D8B68; Mon, 22 Sep 2025 15:55:14 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v1 3/4] arm64: dts: qcom: Add PCIe 3 support for HAMOA-IOT-SOM platform
-Date: Mon, 22 Sep 2025 15:55:08 +0800
-Message-Id: <20250922075509.3288419-4-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250922075509.3288419-1-ziyue.zhang@oss.qualcomm.com>
-References: <20250922075509.3288419-1-ziyue.zhang@oss.qualcomm.com>
+	id 1v0bQV-00000009Z9e-2JOH;
+	Mon, 22 Sep 2025 07:57:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1758527856; x=1790063856;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=8yVDHTkeERDKqGU8/+5de0a01zz7l/9JjTsXpfwJEqU=;
+  b=e7o+rY4T1VHqE26mQcKa2x12Q6FzgHU4JDyM74EmQQoqL2CDvx1YoqMm
+   wJeZ2safDzYNp2Azydf/5f8e8I214GAuPeVKZDIPdlJ9TX3JpCQ5nBHPy
+   uc0gA/TPXDVyfl+vF6xxAHfpMOb3qtPzSkkrP2EssP/3mmVP5jkqWgeb1
+   A8JF5IauBY8sM7AbuMlrCZhp15xqyMQgX+6UvZJ1xij2yz1mQTX1iIQ/p
+   o48ozUpRn3t/3DA4HTHXXExwKhZ/eR02m818S1I6MbCvLOiD+lpZ2NP9A
+   RVaDYMJKXgsadoIJjIrzYQsrYDymWAOW4lCMBZ0lk79GZmranwZd2+Afe
+   A==;
+X-CSE-ConnectionGUID: 1VtRRdsfTWGLr6QC7g/YVw==
+X-CSE-MsgGUID: LvucopA3Tq+8PaT63dJ37A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11560"; a="60901914"
+X-IronPort-AV: E=Sophos;i="6.18,284,1751266800"; 
+   d="scan'208";a="60901914"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Sep 2025 00:57:31 -0700
+X-CSE-ConnectionGUID: A37dvFYzS3yKNurn/d60PA==
+X-CSE-MsgGUID: JVijE6a3RaepPTic1nShNw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,284,1751266800"; 
+   d="scan'208";a="180675538"
+Received: from lkp-server02.sh.intel.com (HELO 84c55410ccf6) ([10.239.97.151])
+  by orviesa004.jf.intel.com with ESMTP; 22 Sep 2025 00:57:24 -0700
+Received: from kbuild by 84c55410ccf6 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1v0bQH-0001R3-1T;
+	Mon, 22 Sep 2025 07:57:21 +0000
+Date: Mon, 22 Sep 2025 15:56:35 +0800
+From: kernel test robot <lkp@intel.com>
+To: Chaoyi Chen <kernel@airkyi.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Dmitry Baryshkov <lumag@kernel.org>,
+	Peter Robinson <pbrobinson@gmail.com>
+Cc: oe-kbuild-all@lists.linux.dev, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH v4 1/7] usb: typec: Add default HPD device when register
+ DisplayPort altmode
+Message-ID: <202509221516.1umvcXG6-lkp@intel.com>
+References: <20250922012039.323-2-kernel@airkyi.com>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: G4fE2PZyZM60TZmKgkP_APl8-8-UTwbY
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAxOCBTYWx0ZWRfX6cba8rS3U2xA
- 92m3WBJFg7yVPyuK9E3dxO7YFcebdEI6/xO9kfR7IpkVKJaq/d0/zfyTMGGZJX9KpffquVeHZS/
- CDHhB+tqpVp1Rg4H6/zannHTPUwCrz2R7lyaCV+tatupRfAuvDpOzbf0x95ocjuolbBatcJ6nRL
- 8zQ8s5Av7UM2Glt645Xqvs3PVBaqg4w9O+gr6PscsWvhQoUilEE4rD45Q/Z6odZrMOZ4r/QRzXZ
- BsPXYrmeLVlyP5E0dGeAoZ+jlpYqDmEAdSyHPLN2y52Tn+cGZk/in98W13QqDAzf7f3yGL6H2Mt
- chI1mr0MTumg9uCIZWXyRJulShX2ha2xvMoski8t0bpvGwmfmDWjYOZ2tImdXVIMm9+ogeKoZ26
- 8vVTvneJ
-X-Proofpoint-ORIG-GUID: G4fE2PZyZM60TZmKgkP_APl8-8-UTwbY
-X-Authority-Analysis: v=2.4 cv=Dp1W+H/+ c=1 sm=1 tr=0 ts=68d100ea cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=wcWuBB4AhrRTeZBF1NMA:9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-22_01,2025-09-19_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 clxscore=1015 adultscore=0 bulkscore=0 impostorscore=0
- phishscore=0 spamscore=0 priorityscore=1501 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200018
+Content-Disposition: inline
+In-Reply-To: <20250922012039.323-2-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250922_005536_174205_F1CE83BC 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20250922_005735_602753_79307AE9 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,106 +109,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update the HAMOA-IOT-SOM device tree to enable PCIe 3 support. Add perst
-wake and clkreq sideband signals and required regulators in PCIe3
-controller and PHY device tree node.
+Hi Chaoyi,
 
-Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
----
- arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi | 70 +++++++++++++++++++++
- 1 file changed, 70 insertions(+)
+kernel test robot noticed the following build warnings:
 
-diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi b/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
-index 0c8ae34c1f37..7486204a4a46 100644
---- a/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
-+++ b/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
-@@ -390,6 +390,53 @@ &gpu_zap_shader {
- 	firmware-name = "qcom/x1e80100/gen70500_zap.mbn";
- };
- 
-+&pm8550ve_8_gpios {
-+	pcie_x8_12v: pcie-12v-default-state {
-+		pins = "gpio8";
-+		function = "normal";
-+		output-enable;
-+		output-high;
-+		bias-pull-down;
-+		power-source = <0>;
-+	};
-+};
-+
-+&pmc8380_3_gpios {
-+	pm_sde7_aux_3p3_en: pcie-aux-3p3-default-state {
-+		pins = "gpio8";
-+		function = "normal";
-+		output-enable;
-+		output-high;
-+		bias-pull-down;
-+		power-source = <0>;
-+	};
-+
-+	pm_sde7_main_3p3_en: pcie-main-3p3-default-state {
-+		pins = "gpio6";
-+		function = "normal";
-+		output-enable;
-+		output-high;
-+		bias-pull-down;
-+		power-source = <0>;
-+	};
-+};
-+
-+&pcie3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie3_default>;
-+	perst-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 145 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie3_phy {
-+	vdda-phy-supply = <&vreg_l3c_0p8>;
-+	vdda-pll-supply = <&vreg_l3e_1p2>;
-+
-+	status = "okay";
-+};
-+
- &pcie4 {
- 	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
- 	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-@@ -471,6 +518,29 @@ &tlmm {
- 	gpio-reserved-ranges = <34 2>, /* TPM LP & INT */
- 			       <44 4>; /* SPI (TPM) */
- 
-+	pcie3_default: pcie3-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio144";
-+			function = "pcie3_clk";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio143";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-down;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio145";
-+			function = "gpio";
-+			drive-strength = <2>;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	pcie4_default: pcie4-default-state {
- 		clkreq-n-pins {
- 			pins = "gpio147";
+[auto build test WARNING on usb/usb-testing]
+[also build test WARNING on usb/usb-next usb/usb-linus robh/for-next linus/master v6.17-rc7 next-20250919]
+[cannot apply to rockchip/for-next]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Chaoyi-Chen/usb-typec-Add-default-HPD-device-when-register-DisplayPort-altmode/20250922-092549
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git usb-testing
+patch link:    https://lore.kernel.org/r/20250922012039.323-2-kernel%40airkyi.com
+patch subject: [PATCH v4 1/7] usb: typec: Add default HPD device when register DisplayPort altmode
+config: i386-buildonly-randconfig-003-20250922 (https://download.01.org/0day-ci/archive/20250922/202509221516.1umvcXG6-lkp@intel.com/config)
+compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250922/202509221516.1umvcXG6-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202509221516.1umvcXG6-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+   In file included from drivers/usb/typec/class.c:18:
+>> drivers/usb/typec/altmodes/displayport.h:7:5: warning: no previous prototype for 'dp_altmode_probe' [-Wmissing-prototypes]
+       7 | int dp_altmode_probe(struct typec_altmode *alt) { return -ENOTSUPP; }
+         |     ^~~~~~~~~~~~~~~~
+>> drivers/usb/typec/altmodes/displayport.h:8:6: warning: no previous prototype for 'dp_altmode_remove' [-Wmissing-prototypes]
+       8 | void dp_altmode_remove(struct typec_altmode *alt) { }
+         |      ^~~~~~~~~~~~~~~~~
+>> drivers/usb/typec/altmodes/displayport.h:9:6: warning: no previous prototype for 'dp_altmode_hpd_device_register' [-Wmissing-prototypes]
+       9 | void dp_altmode_hpd_device_register(struct typec_altmode *alt) { }
+         |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+vim +/dp_altmode_probe +7 drivers/usb/typec/altmodes/displayport.h
+
+d266e96820cc36 Ajay Gupta  2019-04-23 @7  int dp_altmode_probe(struct typec_altmode *alt) { return -ENOTSUPP; }
+d266e96820cc36 Ajay Gupta  2019-04-23 @8  void dp_altmode_remove(struct typec_altmode *alt) { }
+50d2edccce6bf3 Chaoyi Chen 2025-09-22 @9  void dp_altmode_hpd_device_register(struct typec_altmode *alt) { }
+
 -- 
-2.34.1
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
