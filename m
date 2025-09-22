@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8A5CCAC5AC
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 11:24:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CA8FCAC592
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Sep 2025 11:28:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7X5/RGzDTCANmTi4rI8ObqImscFviQ3qiA8zB5ZhThI=; b=iEGCu1ht1JM0DM
-	KzCdusZzihXkdG9K6J0dLC3GLmEJFI5n/tnqRUwqTlf1G38wt1lCiVKkgP49Ov6oYHbuO2L82gf2/
-	kJl2Oh1bo5WWIy7a89QuA2n422MePQRLNx3sipuS4cO69j38tx58SET0KnFsONr+hTUjbwLjuMUUG
-	2xSfgboRqepbyXDghXU8lRraeByGMCmLX2oSID1V0d8aX5Ct9nJQdrsjSSJLVgD3T4oyKy7+nQkmT
-	3s+FTiDbx78kbZbRskPZ5I5Sw0L6Yw37bGxl8BWeGx6TTQbrnglX0TK4ZTj7EMMW2Fd46YxXC5uRd
-	SUtu4+IyZeczGlCsvvrA==;
+	List-Owner; bh=7X5/RGzDTCANmTi4rI8ObqImscFviQ3qiA8zB5ZhThI=; b=YJaS3vzwms6iYx
+	L05HarrGWEIzIMp2e1EP0hUhABAnnoEaAaDnNzSfNdAjGyN+dITCNkj5LA7gJVQdNYDuCokouI4Vo
+	1OcXGZkzKmFcWBJyp++QdZkVTibIb+8RsWw+muVXMQgoZXWgaXkg3ofZxZNza9uf88RQKHjs02VzJ
+	xFxy0demrIF+otyJvroTOAWr5d5/pmv1UJfKmSubbhy6qn+WDfIFMpEhkjmYURcGIJLNyFotbU8vN
+	/h2gjonLxJ0Cn7aU6AGdmQHeLNxMyu3iJagKvgeFZ3tQQWaPgv0YKY+kyB3gF4lMe977ce/n7e0J8
+	ttBOQH8gXsOT3puhWrtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0efD-0000000ABqM-23wv;
-	Mon, 22 Sep 2025 11:24:59 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v0eif-0000000ACNf-1KE4;
+	Mon, 22 Sep 2025 11:28:33 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0efA-0000000ABpb-3pEE
+	id 1v0eib-0000000ACLd-3Pn6
 	for linux-phy@lists.infradead.org;
-	Mon, 22 Sep 2025 11:24:58 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58M8xJrK003414
-	for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 11:24:56 GMT
+	Mon, 22 Sep 2025 11:28:31 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58M91dVl017962
+	for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 11:28:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vhPS2DpVO5rMmjT/67K3Kgtn22q0loN6kh/+0Y18da0=; b=QgGg0dC6cMzJyY5V
-	U4MIXE3SNPYSAo/GeX3s0AWO2iV/lZaMuwLV0Wp+fKBapBNp4ektQDDYmqerkttY
-	if8+54j9ruF+bdo6p1HGdUhq+2gUwpJx0/pf2/F2OIQso1V9BQf7rKJUjjZK8TBM
-	0VX71Cj4f2xbJSX9E1+Mli5BelOeuNLKtODYfkpmcoFGxuqHxnFkylKLSljR3CBN
-	dz42Io3C3ivdvjik6hVWpJIKVCKDzbz8K5HX6Ek3d+0jZByGjxTvk/o3/oin5EtJ
-	47qDlqVQ+pXDxj+FxFRrXJ29B3NrIF5dSBDPyxPem+71jcwg3T9suQ1knjYycfCA
-	eSa8zA==
+	vhPS2DpVO5rMmjT/67K3Kgtn22q0loN6kh/+0Y18da0=; b=n1nb9aYOq3EyHaOj
+	c4UBjNTgHUM9vgFrThXaqHS1hfPu1iMbOUHCh6iKl/L1F1Zcaea+R2gwTtejObuc
+	SOY3KNd1R+57NuGeHMOfpZ9wsghm0SlG05acoIW55/VOhHnL/SLGyOa4VOTv2/ac
+	7HBMVoFFCaO7kvHLd2mLRdLYF2AJbRlpUA5L9VYsKJD9Zk5dbm1ORIDPBah/zBZq
+	Dx6AJ3pO1SPme64NP9ZSHL9314yOKJW5pBmmiZuthVX6xzJRcTIorD9Z6uGcvH/t
+	zu9TTWsxcV33O4NULgx1A9R5fFDtfujo1aS6CsNhVnOYA5uo/Uyy9uMmRtM4pUxI
+	fM7q5w==
 Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499mg34hd5-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499kv0vj26-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 11:24:55 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2728a359f2aso6212965ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 04:24:55 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 11:28:28 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-245fbdc2546so9161105ad.0
+        for <linux-phy@lists.infradead.org>; Mon, 22 Sep 2025 04:28:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758540295; x=1759145095;
+        d=1e100.net; s=20230601; t=1758540507; x=1759145307;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
          :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
         bh=vhPS2DpVO5rMmjT/67K3Kgtn22q0loN6kh/+0Y18da0=;
-        b=t8zrMAII1HK6OnWjeLsnWBMxEdflPFXp+2/bug4G2Jq066po0bruVEXD0sQ1GUBNo8
-         ach4xHQRrik7Cp9DcmmXTT0rvEhbIcqzN069Hw7jjvpzdMrOPy9bbeoye3LovO+siVFK
-         rj/EO67g7fIqFS5NYg4VnMtr7zwjsvzvryt27wzr5iowFBwTKPwa6jstyyJkBFyD58LV
-         GG6XRuD4Byuxm74wuHJEtZflFOyEQhNWFynOAGmnDxp5JjqeUnqT8V+rGsl5XniKETgw
-         OAntFACtKcotAM9iX68v+az2zlf3xczdw1xHTgmfbuUQJS5Q30TyyjRU+xJe4H/GytiI
-         tu7A==
-X-Forwarded-Encrypted: i=1; AJvYcCU60jFVXrVk5r6WffFSkcOji4uP3mc6Uia7+dvbLVWS2+6wPJB4Hm3R8LmAP9e0hxIBYq/66o7Rl7M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxeXXqd0sf8XkleqrG0QQpsY4Y8O2gLz9lepwuxv6bUn13YmR3s
-	yv+UD4p43uhmnbFbwQhX5RLTvbq8UsRUJJpK1B3mXa2a7YNcksKv8JZ3MbaN+JROquG16eHIB4z
-	5SQjXzWP5aTdFoVr6wowI/MgdExgevuTLQas94t2wvThlHWU0nvidfmSH/gDsvZ+/Am/QJ304po
-	jU/78=
-X-Gm-Gg: ASbGncvcnRWcPPGQpu/ntgxER2BoQzRsx7cKt3JFH49YSdjeka4Ra1I2QVLmN+ql17k
-	nxBpo1MUdVOedIZmlIq6ugRuZUI08eMpNTMMU4wY3zdAj4SzzT/4iadsWASMBReQ/h4x/ygr7kR
-	ApUO8EZ2Gpex/JTIZOdvvkDOxAmhzeyh/fRzXMiGVXEypTyNzi8aZHzUEUVs77W7Ze3ZUsXl/OV
-	4WNy03jJYg+XQK/aHRFoWQ1knLp1lp9b1A2o/PMZNMUuHQ5RTp0Y5/Il4aTbzLs8+fe4BxhqEJY
-	wW8BkSzpuP74ovYgi0xiNL0ShGYao6vrtNLye/Pfigi4eHmG0lkdT6CUlcUq7x9lyQ==
-X-Received: by 2002:a17:902:d4c5:b0:267:c4fa:e269 with SMTP id d9443c01a7336-269ba40a079mr100698005ad.1.1758540294871;
-        Mon, 22 Sep 2025 04:24:54 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IG+c5b351K4AXCSVsRHuVDsbJ0ksLZK6y2QQ3N9fyfPYi1xv4nAje1JQyBpRpK9QX3Bk658FQ==
-X-Received: by 2002:a17:902:d4c5:b0:267:c4fa:e269 with SMTP id d9443c01a7336-269ba40a079mr100697835ad.1.1758540294349;
-        Mon, 22 Sep 2025 04:24:54 -0700 (PDT)
-Received: from [10.64.16.135] ([114.94.8.21])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-269803416a2sm127178725ad.134.2025.09.22.04.24.47
+        b=NKh9PqtdLp4nAt3h4RZfIwhTvkYWWZvM7Z8sZeu7FDpYF6tx9nJ2XFnv/md7sNK2Rp
+         ozMofo6GkkdWoSa4bcuNa1pmGvVkh8+0Z9zFqTlH1pEK9OmX1ljAshGCL0HKy6nQCIzQ
+         Xetb0LTECO8F2GIr44kMQE0RsuYdSsbOs10cqJG3dqdQ2kCYRSQug+z2OQBo+hNWmecN
+         zjT6DX3gBpXSqc5EwaxiubzNKKCz5HT+5PjTLvHgSdxVQdr2zsSGQC2qi021mdqnOjsU
+         aGf5SNyqaItdnBLWB83u6K1L8RLCWTATMUC27H1Qv9Iwp0hCKP0YymrSnpPaL1I/YGl4
+         U0Ig==
+X-Forwarded-Encrypted: i=1; AJvYcCUyMFJalCAbOB/JHaagL+2DREOI+isZsj5XQ+Hkrvqxvm2AnEZa4bB9Qr/PqNkgHuD6wavPMkOhx3A=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzWmEiSdm4jXXdUDnplZhagtiO0UNP+SHn9xRiook6rdAeRusFJ
+	nNEKGVCUmOsh85KUUs/oaKmpWe3oNqVec9pojIURQ3i1n5c70oo7MxQmeVieD7NhNu9ZGmoEYg6
+	2RTW/JyWdBFcs7YAbS1rNpYUYSGFbZRX7zVEPk97Xy5R1LczDWNk04p7vgDu1/pZTllf1
+X-Gm-Gg: ASbGncuCpYwA6FwrO+Z4dY3I9kAwKaeGB74IsIuW8/lzl9qjo2ueKH//Tu6nAPKVs+S
+	R2Hrkdsr+AEhORDMfpMcjbwgeQt4ItfgqUIxaSAvcHIkxA6dct+ojBeFKnZZrxCQLrPCjFXn5CH
+	LkvO1qOyOpy+JN67wfOnhTIHRdOVM6U0VDDtsjtk3jSPK5OoPxGmdG+Ta5YUxzuuwidrx1fO5K4
+	jfKggBPji9Ue0+xleUOkSmlX8KZsv0X+E+VC3TYdz1c76q9DkCLWYauOYRlDjnDWTrGKTA9gCty
+	/c0kjJ+9PgNBFxzuQzMWAe32iAbwQW8MOjGzT33qgA4Ta4OEp/Lvg+tiwr3QvowQv1FOE8JtVq2
+	E7bRiMMIi46qI7w/Na3ReOYiz0+t0W7KoLsg=
+X-Received: by 2002:a17:902:e751:b0:27a:186f:53ec with SMTP id d9443c01a7336-27a186f5486mr11582505ad.9.1758540506949;
+        Mon, 22 Sep 2025 04:28:26 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEbTTlEoreUEOX6AkaJ7bnWs6eRBLiaiABm7kGf/pBZ+bhPDPXyhXj4EX3Eva+nVibdWRmp5A==
+X-Received: by 2002:a17:902:e751:b0:27a:186f:53ec with SMTP id d9443c01a7336-27a186f5486mr11582105ad.9.1758540506290;
+        Mon, 22 Sep 2025 04:28:26 -0700 (PDT)
+Received: from [10.133.33.111] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3306061925esm13230568a91.2.2025.09.22.04.28.20
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 22 Sep 2025 04:24:53 -0700 (PDT)
-Message-ID: <f4a5ffad-ca5e-4a54-a39b-4ed69ab3a729@oss.qualcomm.com>
-Date: Mon, 22 Sep 2025 19:24:45 +0800
+        Mon, 22 Sep 2025 04:28:25 -0700 (PDT)
+Message-ID: <28eef277-c778-4ffe-94c6-2e90d58633de@oss.qualcomm.com>
+Date: Mon, 22 Sep 2025 19:28:17 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v5 12/14] phy: qcom: qmp-usbc: Add QCS615 USB/DP PHY
@@ -111,30 +111,30 @@ References: <20250919-add-displayport-support-for-qcs615-platform-v5-0-eae6681f4
  <2ewxoe76rrii4w3n5b6wl32vmatcp2boj75o65cuq5nx4f2a55@7cn6m7oxzu6c>
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 In-Reply-To: <2ewxoe76rrii4w3n5b6wl32vmatcp2boj75o65cuq5nx4f2a55@7cn6m7oxzu6c>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzMiBTYWx0ZWRfX1goh8cvZSUz2
- I3vLExIGpFZo/QVfgb8JztRj7hE9N5lmd9Iaf4lJKT28/KfbyaTq9JX1W0S1UQXh5ibRa6YmbZO
- qKWPhSJz+Yg4c4Dd+g6Nh1h7ZF8LyuY1PsoXxDmBzoU+VhMTVPVJe0wQhbV5ox5sMyiA/vg194I
- CpW7LK0R4MRNZ3KwlfnINn1TpvLYsL/TFVkFyZEOAAPOtEl5PI+uF1gHqsLD9H8CBAUlTW3ArxQ
- zkeDmBU55p95CPcqWBI2bP2VJjgJ5ue6AFPWVpyoAMRXtINe+ZDdWRl/sArfy80W/ETFBONj6V/
- /rxx1dDhAaFrHjz9wDtz5ozd8Gwi/AMn2SBqq8k5E5e+z7Vm/JfHngTxza2+BXqI0aPG0p7Vp8j
- 2kHn59U5
-X-Proofpoint-GUID: xWZSmrUQbUkBOmTj_dnf3sjcJq8hYZvI
-X-Authority-Analysis: v=2.4 cv=UvtjN/wB c=1 sm=1 tr=0 ts=68d13208 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Uz3yg00KUFJ2y2WijEJ4bw==:17
+X-Proofpoint-GUID: i5v0Y48NQz2dd_gHr5dOyKcCR3Mglr6e
+X-Authority-Analysis: v=2.4 cv=RO2zH5i+ c=1 sm=1 tr=0 ts=68d132dc cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=XVeZa78dugChcG7OFuEA:9
  a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-ORIG-GUID: xWZSmrUQbUkBOmTj_dnf3sjcJq8hYZvI
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAyNSBTYWx0ZWRfXyEMCSHx0x+s9
+ ddae7yAd+T0B+QDiTxExmiWuFpgQR9ZrhR0PPSuvzM1Kvi7iYDVhEQyn9ML26+gPIJCQ9dbZKWj
+ K8SEt//YE5RyLazk2MhXWI4libCrzUMX+kCS2gWMKSv2hUVWtdmyT2LFxpNrE51uJ/Gxn9bDbzz
+ ZRiFFK7Ictg/RWono/+xqyF2tCFpc3DKYovokXAAUrWbuAHzLkLHKOMW1Ogbnn93MYYaUzkS8D1
+ AWaSnsedWfBonhFV+kV97yXOBWm79caBBFICL9JcmRASYa5iqNTYTjWMNwby1/ko9Gs9mzp41TZ
+ bsVyCog42F8rRE/Hu29BwCU8xGunomXRabmQC9KStGEjVQ0uzQJLuADT9di71oi7VNzzBbuHKPh
+ Q8jHVv/Z
+X-Proofpoint-ORIG-GUID: i5v0Y48NQz2dd_gHr5dOyKcCR3Mglr6e
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-22_01,2025-09-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0 adultscore=0 impostorscore=0 bulkscore=0
- malwarescore=0 suspectscore=0 clxscore=1015 priorityscore=1501
+ malwarescore=0 clxscore=1015 suspectscore=0 priorityscore=1501
+ impostorscore=0 spamscore=0 adultscore=0 bulkscore=0 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200032
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250922_042456_981785_6B8D9ED5 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20250922_042829_964903_632C132B 
+X-CRM114-Status: GOOD (  25.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
