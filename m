@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E75F3CAC5AE
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Sep 2025 23:33:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33351CAC5A5
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Sep 2025 23:33:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f3aVwqYNuNXuOK7vnfuYLySbKWyf/djbCFZom0XMksI=; b=IlxbR4nB5mkgrE
-	V08t/Y0uAWt6eijerN4naLNpkhQcfU8I4b2wHLxuhGNO/vMj6QRcneNGTNi9SthLIGwA12v+Zy/2C
-	5Pj6AaWboM+8f6FIoMd3u6Jl85/YCAjzptQlPsWK9/wSDC3euPZJ47xLp/KED5WDv5Zou1Zo9xUVA
-	2StGlNGowPMeGfa6Nquxg/G/SmfICK+Gx82hOCvm/8KXyuUlFGng/tpUYbJoe4DYCDuGwp2eli0S8
-	0x7Zle2IS2dyzLk0rpWbYGlvhsuaA1uU84ywgHk6EOWl0oru1/nVwpiBiP2TvhqaerdQDl+nENs9k
-	c9XhPFC8hXWuPhB1Slew==;
+	List-Owner; bh=1u2tYBN+xunhrYl7etwQ8Xe1H7lpXSFM+YZRaHTpY3w=; b=P1KYEoh/NrKRgh
+	v6uzBCFNaxPPSDIbQkhg8QEmIqDp1vNBgYCwnjC3DKr43Go1EEgzUmD/LqOSPbvgZBg4L86Ez1r99
+	BGZ+CVrKwVpFlrAahAF/W9gPFEx+9CFNxU88g64/Li0kFXEUNhDV4Vl16nayd0Mh679uFndQCw85N
+	6pw501cCp+vQ/8t+Rh+YVyeaPyop4O7//gu9KgA5k+twWvxnra2fIUOLlS0tT9OJbiLHYVBCjeg+A
+	4G0RbJ4cvTZgRsJR83ZAoCP1MUhKrAdq07zf8tbWyMa5tzuyjSSnV6VNK/63Px5i8jX+zPam26238
+	gVWSzMXQmnzh6iSKG33g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1YzK-00000004iZy-301Q;
-	Wed, 24 Sep 2025 23:33:30 +0000
+	id 1v1YzM-00000004icA-442N;
+	Wed, 24 Sep 2025 23:33:32 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1YzH-00000004iYG-2xXn
+	id 1v1YzJ-00000004iYs-0Gpf
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Sep 2025 23:33:28 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58OCO0Q3021670
-	for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 23:33:27 GMT
+	Wed, 24 Sep 2025 23:33:30 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58OCj0lH018025
+	for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 23:33:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	HYqxOAoB8NF5YCaEisytDjENjTj6bZ2vC8xEsIsfn6I=; b=gShXKr9fxnexgZ1j
-	323gtm1ORSX+mhZIKqFiehvvOGitjdrSaJxVEyfWCun8U5yzn/5ANzYbiFoMh5W2
-	bSA7bcwlR4n6W4tOLUzhu4QUknygOkG6i07INivhWaitkJPaOo/zMiZTDB3KGWc0
-	B1xkQfOHnVgKzgy1VCj71NO8uch3toPozIbMSdnjdBwrpxmRhM+UkIqp90gSd6Ao
-	nKR8Gm/Q/J6hFH1jYlVt3jhfygZTSOJejaQjPdeCkoHARO9Wja8VqPR4IN52+X+6
-	Dpi/midkgzZo1MQnmveWd2n/qP6h/pXC2mWHM061LOkMm7FplSTjdWxd9cHwrdP9
-	HqSN2Q==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49budadkjf-1
+	gZ7mTakONhQ5MdNM3TgNyHD/Jxj33wLx1vuBQG2ozxs=; b=bRfSLRFd8+s0STCy
+	GHxlzxIuhN5Hogkfl/ff5dz9WBUwp3sv5lJ0isd72tyWT4nNOQ0Fog+0H4MZ+pyf
+	AZA8foW55TGdkucu4CmYwpK6O4mAxIhX0H7IHz9x/hbsLqJXPslkUl1p412efYz6
+	2z7y7Xjb5y9y0gzXZ7eqIspdri23Q5RELHJKT3FIPq31cHJ+xEyEMeRB7DGfktGo
+	FEjD6PgmrJadc78QQ6wTkmjFFy36c4dUf3xPTCNuwUbWETUPNOCZZ1NtyoSFPy2V
+	0ZoSmgFU848OReIA1TIHon6dBaPtpdevWLnTT0PCNSaFd7Wy74JRmK6Zmu9Uw4Qr
+	asaKLg==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49b3kka0f0-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 23:33:26 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b4c72281674so200129a12.3
-        for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 16:33:26 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 23:33:28 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b552f91033cso445788a12.1
+        for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 16:33:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758756805; x=1759361605;
+        d=1e100.net; s=20230601; t=1758756807; x=1759361607;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=HYqxOAoB8NF5YCaEisytDjENjTj6bZ2vC8xEsIsfn6I=;
-        b=tdbSaCFkTBzLNsLwwzk+LnulwYrz5f9GK0PQ99lhM6IPGpilLJndIQyQnQk67e6KQg
-         5sePQhtCq35IJ3RIHZLCaBw3Vr2uMT3EH9kkuKRphVHr8IBM8AqyrbiMPe2Z/oX0D6Q2
-         fOcAlYOHexN5Obc1d7GdhQ5nNTn0jNKK3OtWq18WBC8G2pblaj3pi3TBZq/CbK6C6Rhp
-         QIJqB8w9iwrvFW7RO1OnXQDhfOU2TON8zGOlkMz5O4XCcaxlKmvbc4cuxd8y1KgLj/Tg
-         zBLXbTtWZZ4wuXxoqWrDXgp325XdQu5Q4MCb+UpWU8Oo76NzGaqFbGarot9VkbiVHqiO
-         FQ3w==
-X-Forwarded-Encrypted: i=1; AJvYcCW4nMY9U8zL7wRAJnVEfEjC/LgsCHFnkknXnk72UUEbKyt0GAkRype1uVSm/P/ymqlRsuLJl6Uj3jA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwJSzkLuUsHTReUskRe2Qwxo27scliqvLTWP1ncuMxFhchzZWhO
-	5II5ZtsV9kSmRj6nMK0Px8SKoyJmwDx+ZSxtkkevkOCNtYFhQvJ0NR5T2bt810hjTxKipcRm2TQ
-	3VZYSJCcyGDdQZ2fYbKauGUB5O2dFiVuh9xzBK4wyfPa8QwmCUdLFR8gvtNwdMXAJEp2z
-X-Gm-Gg: ASbGncuOyd+lo7bl5LFqilPHlGK/LFrVawCVPjU8VzH72M8RGsbVhmRu4lki93M3lSN
-	xfg/MUtG2oxM+cqqsaCnMaCJ2ZAG2bzJgY79tFuaSbudOvyZbiFIRNeDoW5AUACfV37uhB7Hlg4
-	aNaAj8jH54p73W/QbK7aXDRKOySYSUVVJ7JILPaqR8JG5AmDPoGw3+OtI72vjEQaxS9ApsgKS8h
-	vCuwSeFVApFqBT2/K4KG7biaVzoAG34j7f8fSnzqBW4BwxzVE1EH10aHQ8+2Kw4OpP8vq08/Y13
-	NpWhmQMD3QB6Xpvop2YEZuFFmR0wcOJBYIeNKtIqW9VnldEAjZepL5xAq9Dl1k2EfoExWrgPpXC
-	ynUA/ZnYtk4LruYg=
-X-Received: by 2002:a05:6a20:729e:b0:24b:bae4:9c7f with SMTP id adf61e73a8af0-2e7cdda1335mr1610559637.39.1758756805452;
-        Wed, 24 Sep 2025 16:33:25 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IECoybaViLhCapWPusumzB49M2p2wmSBDVVWBFqtou9GiF67zRhFS+R8iX5/dihHSrDIMe7Dw==
-X-Received: by 2002:a05:6a20:729e:b0:24b:bae4:9c7f with SMTP id adf61e73a8af0-2e7cdda1335mr1610521637.39.1758756805012;
-        Wed, 24 Sep 2025 16:33:25 -0700 (PDT)
+        bh=gZ7mTakONhQ5MdNM3TgNyHD/Jxj33wLx1vuBQG2ozxs=;
+        b=BX7QYEqp8j9Oywkel/y1hGB4i6kTGbbbzldU7JECEAHVrl6EvK+mNMEujtsEOJZbh8
+         h5xpxbrPaaLlPRdGsi+Q4STck7+vp/AAypEtywylJ4TVoDtxeglEqUWN7MXYciiUrk7H
+         /zv+ZP1r9GzpGviVasEbJ9ZV1p/N2Xv0Ax66uw5ISBksOP7yvz8nOxzbiZlPPCbZ+FXm
+         x38fcLjdmVQ3rTlVxX6S/rOGxmSc2/K9jYhlU4Anh+3zXBNt05gHyjNf2pBWcSZdoYWv
+         mS+95EirRL3ds8aI2KJtDwz0rEpU1KJcMWTnE2iyI9FqOPFJeDYf4ji02rUQ7wpJ4FBj
+         PZwA==
+X-Forwarded-Encrypted: i=1; AJvYcCWSZJ+pN5y6ux+uGsqT2+UqlwNLPyr/9Q9AQuaVJykTJzqRuE8we4fKLsXcAjmI+MfeOrV/RXYFgwY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwodxkAJTduFxWv6+wI75VBm5jguchvTcjsH6Met71wwFwbdvH2
+	/emHewyR53/K7ylmTm38LLAuivpUqBTWpiLT+2HRGhR53fj2zjdVAAlcSaMO+bzATy4lmgzf5qJ
+	Zl21TyyfQUBEkxgJVbZpoGcKKECJGJXjcBxeYLVS3JqGUSv7EjpXz/tiut255TJ7l17XH
+X-Gm-Gg: ASbGncvxQMATRSq08Xx3Q5Q2pV4NOwP97Rezlzx1O8qnWNj9evI/S0iqqSmRPd7fsa+
+	/cJdLCbBQdMiYoAcQnswnylg4WZFusVspWETjNwJbMizleRfzujxHYCt+IOp82WvOH4kQi030tC
+	kFLGBU5qrWVG9ZJ8Gop/rPo8Q61bu28eQJu2neDKNWU1VL0j9sqiSDhBOFMEIWQ1cmyRdpLSFcD
+	y8CvYEkqBBWz7coHI/V5n48EGSDnmUTSuOwi87JgPGeovdRjdo6qIpIBnSjL6f6lP4jfwYcMSQY
+	TpAtZ42BH2xsjJp5jV8vjSiGjbXvY4G+U7ZONHVIhhtTF2PSXPjXzTlEKiAOSPnCYajyd5gHIx0
+	hNSKQcj4jpyxu7Eo=
+X-Received: by 2002:a05:6a20:244e:b0:24e:84c9:e986 with SMTP id adf61e73a8af0-2e7c79c5ac6mr1705018637.15.1758756806976;
+        Wed, 24 Sep 2025 16:33:26 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEShs+t11pe4EXtyJY7eq7SxJOc0SFTQM620l2aSx6ms55iEGfKttzOhfcvzJfsawotCzSxCw==
+X-Received: by 2002:a05:6a20:244e:b0:24e:84c9:e986 with SMTP id adf61e73a8af0-2e7c79c5ac6mr1704997637.15.1758756806571;
+        Wed, 24 Sep 2025 16:33:26 -0700 (PDT)
 Received: from hu-jingyw-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b57c53ca107sm392911a12.13.2025.09.24.16.33.23
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b57c53ca107sm392911a12.13.2025.09.24.16.33.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Sep 2025 16:33:24 -0700 (PDT)
+        Wed, 24 Sep 2025 16:33:26 -0700 (PDT)
 From: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-Date: Wed, 24 Sep 2025 16:33:17 -0700
-Subject: [PATCH 1/6] dt-bindings: PCI: qcom,pcie-sm8550: Add Kaanapali
- compatible
+Date: Wed, 24 Sep 2025 16:33:18 -0700
+Subject: [PATCH 2/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ Kaanapali compatible
 MIME-Version: 1.0
-Message-Id: <20250924-knp-pcie-v1-1-5fb59e398b83@oss.qualcomm.com>
+Message-Id: <20250924-knp-pcie-v1-2-5fb59e398b83@oss.qualcomm.com>
 References: <20250924-knp-pcie-v1-0-5fb59e398b83@oss.qualcomm.com>
 In-Reply-To: <20250924-knp-pcie-v1-0-5fb59e398b83@oss.qualcomm.com>
 To: Bjorn Helgaas <bhelgaas@google.com>,
@@ -100,37 +100,37 @@ Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
         tingwei.zhang@oss.qualcomm.com, trilok.soni@oss.qualcomm.com,
         yijie.yang@oss.qualcomm.com, Qiang Yu <qiang.yu@oss.qualcomm.com>
 X-Mailer: b4 0.15-dev-99b12
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758756801; l=916;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1758756801; l=1501;
  i=jingyi.wang@oss.qualcomm.com; s=20250911; h=from:subject:message-id;
- bh=f5d/tKNz4xRhH6PN5EHx3qLjVEk3ze6DJo2urPoB8ds=;
- b=w+hkMBPPUQq4P36jzBsLpA2YqJODM7WWQBRigQuS83N3PiZtdeKyxWT8T3hPfDuJWqcuIBS1G
- DlLzb4YfDctAqPe/xliHIj4V1ryO6sm0GGpHtZ65ZSTQ6pA8hho71Pb
+ bh=VBW0kDv69D5tBQeRfHdrmnRiouQM+MGW2Y5Yg0f+6nA=;
+ b=NL8BNAGHotEw5Z8jTwt29kGlC7TPmvyCyt7uA2v5QZBwSr1NNNbXHgBi0hJ1RrPRJppICeJ6H
+ tnVxRt4czLHAAovxAHOk2m22FOAjgZP97+p/XohA8ec3N6cNZtU7gUc
 X-Developer-Key: i=jingyi.wang@oss.qualcomm.com; a=ed25519;
  pk=PSoHZ6KbUss3IW8FPRVMHMK0Jkkr/jV347mBYJO3iLo=
-X-Proofpoint-GUID: MpXqcxJiqgfOm7mP4AtHxWIsX2IQ4QhI
-X-Proofpoint-ORIG-GUID: MpXqcxJiqgfOm7mP4AtHxWIsX2IQ4QhI
-X-Authority-Analysis: v=2.4 cv=Yaq95xRf c=1 sm=1 tr=0 ts=68d47fc6 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=cOhV6jHuZs2i7JAHTEIA:9
- a=QEXdDO2ut3YA:10 a=x9snwWr2DeNwDh03kgHS:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIzMDExMyBTYWx0ZWRfX0a4bSeSX1PuT
- W/MVG5MEyA5Sf73desmSr7uz+4dHQKdc67HXVijVrViOg+r3WcIzJj5MXdCgnSeyV5wJHobIhw+
- yCiapiKipbAr1bdIMQNUuDlumRDiywp5J4wcVk0sSfWdoE0XG44JyodFQDGc57vDugub6b4O4b4
- PBKDxTFLnYdYy3Oanro4i3V7Z4ijN0haaynC1QwFJ8HS8DSm5S9LQc/tRNr0SJgOu/LoLtkrJqE
- LntHTFcch3ybqKqP8agdHbI2WnrIg3Ma/l92ilRnC37xFWpffMRS8X+ohVdVYBa4XAF4YcaZnE0
- GPg1CoMz4dpqyEzMeXiKyv2c2m6N4CH5VHfEiCcnp4kKFjGWtzpsNmiSxBndLoKdDUibuA0HHTh
- DfEORO5V
+X-Proofpoint-GUID: 2e4xWjmfuV3ryeZUS6Xp4ZbyYWJmDGb0
+X-Proofpoint-ORIG-GUID: 2e4xWjmfuV3ryeZUS6Xp4ZbyYWJmDGb0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIyMDA4OSBTYWx0ZWRfXwTtIhEGHn5+c
+ lZyZPAozq7iOVZJ7nIyAZWTxSLLYtEEyAopH7ksXlzgXYir4XoJPE/ka4i/3A/hnEAZWrDkhY+u
+ 6oFaf7EcuYSD7rpUq5FylS6vznV9CebLm/9ICmKxiw0lvDIkEXTHsuzUNJjmngf8IU+MRSB81OW
+ Pmu8lSRZ1IEn67WB5w0eyeBMTg+4IHKfVog+aR3rbTJPO2b3LOwlW3aaVTNZ4VZ5mwKfeVCpTCK
+ UmI8wsmHaWceP9Rf6AuM4KgpKy0hWZCgb6u09f9b/FBfK6aEC/v2oJxcxYnZBsjyyd9e2fvIPpB
+ 46i0bn8KW/erpZdY+PnIyt1Mg8yS2JBTg436GzEBDssnWETWjMOnBBo2+V3vKkLFSVQ50a0i1Rw
+ 1TWT6dnP
+X-Authority-Analysis: v=2.4 cv=BabY0qt2 c=1 sm=1 tr=0 ts=68d47fc8 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=ZHoeG76OixanZ4sGZTsA:9
+ a=QEXdDO2ut3YA:10 a=bFCP_H2QrGi7Okbo017w:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-24_07,2025-09-24_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 clxscore=1015 suspectscore=0 priorityscore=1501 phishscore=0
- adultscore=0 malwarescore=0 impostorscore=0 bulkscore=0
+ suspectscore=0 clxscore=1011 phishscore=0 bulkscore=0 priorityscore=1501
+ adultscore=0 malwarescore=0 spamscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509230113
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509220089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250924_163327_865549_1116DD1B 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20250924_163329_231304_C540163E 
+X-CRM114-Status: GOOD (  11.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,27 +149,42 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
 
-On the Qualcomm Kaanapali platform the PCIe host is compatible with the
-DWC controller present on the SM8550 platform.
+Document compatible for the QMP PCIe PHY on Kaanapali platform.
 
 Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
 ---
- Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml
-index 38b561e23c1f..8f02a2fa6d6e 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie-sm8550.yaml
-@@ -20,6 +20,7 @@ properties:
-       - const: qcom,pcie-sm8550
-       - items:
-           - enum:
-+              - qcom,kaanapali-pcie
-               - qcom,sar2130p-pcie
-               - qcom,pcie-sm8650
-               - qcom,pcie-sm8750
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 119b4ff36dbd..9f7a276a84ad 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -16,6 +16,7 @@ description:
+ properties:
+   compatible:
+     enum:
++      - qcom,kaanapali-qmp-gen3x2-pcie-phy
+       - qcom,qcs615-qmp-gen3x1-pcie-phy
+       - qcom,qcs8300-qmp-gen4x2-pcie-phy
+       - qcom,sa8775p-qmp-gen4x2-pcie-phy
+@@ -146,6 +147,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,kaanapali-qmp-gen3x2-pcie-phy
+               - qcom,qcs615-qmp-gen3x1-pcie-phy
+               - qcom,sar2130p-qmp-gen3x2-pcie-phy
+               - qcom,sc8180x-qmp-pcie-phy
+@@ -213,6 +215,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,kaanapali-qmp-gen3x2-pcie-phy
+               - qcom,sm8550-qmp-gen4x2-pcie-phy
+               - qcom,sm8650-qmp-gen4x2-pcie-phy
+               - qcom,x1e80100-qmp-gen4x2-pcie-phy
 
 -- 
 2.25.1
