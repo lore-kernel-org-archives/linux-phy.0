@@ -4,61 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 300D9CAC5A5
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Sep 2025 13:54:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C60E2CAC5AE
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Sep 2025 13:58:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DdLYQWjC+9Zwn+keiRKRxR5Ior9P1zd7G0dkmoaAKKc=; b=f67l7E9DxKOYaz
-	PyYjU2P72J/tGpRg0SoiHzZmQVsHi8LWp0LTyc938bmxF6LsaJNrSsLQuLomXiiQZeS+2mp0PZ/K6
-	ueOy3PkBzYO3+Q1yfUJkBBc3acvPLz1k7AgkHxHun1gUfPnJWKkqN/9yU27vozCaOwCzjGB6rcgPP
-	YlMsgBzjnsQGDSXk2Y1snbRmuM7Vh5uFNTQks4qcPC2ru3aHTTux4SwIWT9iwmbYF/mq5WTM3Mk8r
-	xFDvgSTq1vZDGcZEXY+LKKU+xijHp2X8ouQmwrMM+8T9LRiDtt9S2iYPkHz8dy6DjmdS9l58C3HvH
-	JmD+6VDvOIKbTox3Cmjg==;
+	List-Owner; bh=uwsaV/w81CXYxetPtffCvZBAfzP78LSRhmYSz08p3fI=; b=B/9eQ+SWFXbLpv
+	2C6uUg51tL7Tv8wRDZ9hgdPJp1id4Wkq6IScY9xrekjwQ02iWcXO3DOMY3u8Id2aUZKj+jzKO5GnM
+	pP6Uag/cIsTDDTF2hcJpH/GmcH9iJBJGUUbrMZJSEr0QtL7BaVBqdJ43sUvaQV8pieL9czlaFEZ7t
+	EszRZqXIKxXZMDOmy6pTbdgAJXzMEIQER8ldqo8bs/ikP3ikMZ6L67BAWthaaxtDq3/kc9l31j231
+	MriIcBGsC1GA9yed86MOPQfZY5s/19x0NNUs87P7iyuIlpHHNt7oFZNNgBnnBfi0VkGsebnP6IYTq
+	xPlZ0+vnJtMOfuI/p79w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1Px4-00000000Or9-3YGE;
-	Wed, 24 Sep 2025 13:54:34 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1v1Q1C-00000000Qms-1rfr;
+	Wed, 24 Sep 2025 13:58:50 +0000
+Received: from mail-vs1-f46.google.com ([209.85.217.46])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1Px2-00000000OqO-3eWP
+	id 1v1Q1A-00000000QlG-2DXb
 	for linux-phy@lists.infradead.org;
-	Wed, 24 Sep 2025 13:54:32 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4F30860007;
-	Wed, 24 Sep 2025 13:54:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 737C5C4CEF0;
-	Wed, 24 Sep 2025 13:54:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758722072;
-	bh=6j/GHnmpQtuCepYBArXOo7hgJmy5OohdGzQ6jgGXn4o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=J9mgBRE7UXmgl8VoPmdEtdxCI1XFFC0a+EZLaHwyoRLORSQka9pzw0AnQzFhBlacG
-	 Z8Jfdf8uKmLpcHsCCiMRbWDmjklgA95/2MZlVxkUewWJBzRjx2HYqu7gUAv6efX7F5
-	 XOvDSZ9JsLbRwZkBOecWvSjcHC4ihlNkKqOw9zifSQJsiM/sfZWwUnHdo+NZJg4vtr
-	 lZN7PetOCuM/0BGXNST5GrJCimdU3hhfV103RcbXAmy4utiijFWsp+CK0HB6/w0M+4
-	 3By/cO2BHSS5ZOEVWfL86Sg5wTWxCkycpHcXC21yXZ90gj7RuFwRD0V+O5Y90Vi4ij
-	 SYVIB4Wa8ZJKA==
-Date: Wed, 24 Sep 2025 08:54:29 -0500
-From: Rob Herring <robh@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Josua Mayer <josua@solid-run.com>, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 phy 12/16] dt-bindings: phy: lynx-28g: add compatible
- strings per SerDes and instantiation
-Message-ID: <20250924135429.GA1523283-robh@kernel.org>
-References: <20250923194445.454442-1-vladimir.oltean@nxp.com>
- <20250923194445.454442-13-vladimir.oltean@nxp.com>
+	Wed, 24 Sep 2025 13:58:49 +0000
+Received: by mail-vs1-f46.google.com with SMTP id ada2fe7eead31-5a4c7410de9so1446134137.0
+        for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 06:58:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758722327; x=1759327127;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JsHa4BTdlxzG8oL6cTUTw8znwap/WVMmft0DoAQSEiM=;
+        b=OTY8K1ISHg3kHFGETiZPq8AZMEOfkM7zs7xO4Rd1sUFJM/5UzYSkBH6rCLgSU5aUgw
+         43xAgvfM6iF6EIyLSNKW1vWYPw8Hs8rDCYHdLtfxeOLCSky+YTzVoerje3p0jIiNaKHl
+         5FJlk7NesF+LAHWw4wceNRGqLezHKTLna7gjWwPWy7WfGD1tr80yKKs5gdFO7ULbj1kk
+         w5FmTf8VN7Qv8RQC+B+hWt00vD5R2ZGbjt8RXS1fWB60KTQPcEV+1hx0FM+ikCenj278
+         wfTHSejE8Zo0LT14rwT1C7L1iEX0Q2gOAuDgxMAd3wNcwFXf67Nb8MJTiSbmWQiGkq/Y
+         t99Q==
+X-Forwarded-Encrypted: i=1; AJvYcCWvaHmpV/smVT0z5+Rbs/tlbdY7c7kiaMQ+G5iW1SjhEY+xoDgTsscOeV5tw/scd63pISJSkZE6OAk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzofBjCmm/SNGqj7GRL79pn+sTD6nqyra/S0QoOa/BucCnKDgnY
+	WypKzGCON/CsCVL70HA0OfR9MV04dk8nxa57vSSaeiAeXMGAIfF6AtKptfte7/VG
+X-Gm-Gg: ASbGnctSYY72RyPsxmJ+PngA+1BVDBjXnomcRoprInfvZh1brvCGVMFEgAHDu6ix4UY
+	R3OeJQLr9UgET23J+TlWmIDLLZStR/SZhX9hYRXPTX8ug0KHBQPEqoDcUTEhnz1fld9+YQHlNCl
+	l5ATvwAGm9VOeCTauqWakApljcDGdWVd23jpadlmkXH+WgBnzuDb5hqM7r4FimWkGsprM9/ilOL
+	0c/Ty3ZjbAzLsfDgdf6dEKCeFz6IzBduuAR6+s9Y7YvDAfZfuDDMCWIAy/E4OzsZTFlCv8xu3Fw
+	p3kguOL6Fvzs0zjfNRbkvQahol9ZFtzT3Pq4mLSEZPgZdHhiSzjEQOtHP8MmhWYZlh0jyVSEZTa
+	4XThOa7Udl/YFaV8YI702BYGZkH/fNohulj8C2aYbAz943qqBqolM9lvol5iL2gtmLy/yeU9Z2o
+	g=
+X-Google-Smtp-Source: AGHT+IGcav+Z+7giYFEAJ01eGc1EByVqJbF8VCoNzow/242l6rDi9HdMQoIjxY+Y+/mm3WotwB2Yag==
+X-Received: by 2002:a05:6102:4489:b0:555:56e0:f357 with SMTP id ada2fe7eead31-5a5806da14amr2218340137.23.1758722326884;
+        Wed, 24 Sep 2025 06:58:46 -0700 (PDT)
+Received: from mail-vk1-f169.google.com (mail-vk1-f169.google.com. [209.85.221.169])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-579ed35f674sm4702029137.7.2025.09.24.06.58.46
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 24 Sep 2025 06:58:46 -0700 (PDT)
+Received: by mail-vk1-f169.google.com with SMTP id 71dfb90a1353d-54bc08ef45dso1017604e0c.1
+        for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 06:58:46 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCVJwfRGZNYI18iPlx1wO5KRxf8kVI5l/FPCa2e5ILq9oVtmKSeGyTdnzgGmEOgz7szWjgo9jVKM3qA=@lists.infradead.org
+X-Received: by 2002:a05:6122:3115:b0:54a:96ce:786e with SMTP id
+ 71dfb90a1353d-54bcb0b6125mr2198963e0c.8.1758722326099; Wed, 24 Sep 2025
+ 06:58:46 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250923194445.454442-13-vladimir.oltean@nxp.com>
+References: <20250910140305.541961-1-claudiu.beznea.uj@bp.renesas.com> <20250910140305.541961-7-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20250910140305.541961-7-claudiu.beznea.uj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 24 Sep 2025 15:58:34 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdVrGbRHXa+13nGTf-S_cgHvDASvDTUSqhiC8updddJUFA@mail.gmail.com>
+X-Gm-Features: AS18NWAg1I_dL3GYezwY1MvHo4wl2EuUyKfvLAv7l_tUzF74SJUhWeo0uWlshA8
+Message-ID: <CAMuHMdVrGbRHXa+13nGTf-S_cgHvDASvDTUSqhiC8updddJUFA@mail.gmail.com>
+Subject: Re: [PATCH v6 6/7] arm64: dts: renesas: r9a08g045: Add USB support
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, magnus.damm@gmail.com, 
+	yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250924_065848_573239_5F81FD3D 
+X-CRM114-Status: GOOD (  16.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,220 +101,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 23, 2025 at 10:44:41PM +0300, Vladimir Oltean wrote:
-> Going by the generic "fsl,lynx-28g" compatible string and expecting all
-> SerDes instantiations on all SoCs to use it was a mistake.
-> 
-> They all share the same register map, sure, but the number of protocol
-> converters and lanes which are instantiated differs in a way that isn't
-> detectable by the programming interface.
-> 
-> Using a separate compatible string per SerDes instantiation is
-> sufficient for any device driver to distinguish these features and/or
-> any instance-specific quirk. It also reflects how the SoC reference
-> manual provides different tables with protocol combinations for each
-> SerDes. NXP clearly documents these as not identical, and refers to them
-> as such (SerDes 1, 2, etc).
-> 
-> The other sufficient approach would be to list in the device tree all
-> protocols supported by each lane. That was attempted in this unmerged
-> patch set for the older Lynx 10G family:
-> https://lore.kernel.org/linux-phy/20230413160607.4128315-3-sean.anderson@seco.com/
-> 
-> but IMO that approach is more drawn-out and more prone to errors,
-> whereas this one is more succinct and obviously correct.
-> 
-> Since this compatible string change breaks forward compatibility of old
-> kernels with new device trees (which is OK with the known users), this
-> is a good time to fulfill another user request, which is that individual
-> SerDes lanes should have had their own OF nodes, so that we can
-> customize electrical parameters:
-> https://lore.kernel.org/lkml/02270f62-9334-400c-b7b9-7e6a44dbbfc9@solid-run.com/
-> 
-> This request requires #phy-cells = <0>, and because "fsl,lynx-28g"
-> requires #phy-cells = <1>, we obviously cannot have both at the same
-> time.
-> 
-> Change the expected name of the top-level node to "serdes", and update
-> the example too.
-> 
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: Conor Dooley <conor+dt@kernel.org>
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> ---
-> v1->v2:
-> - drop the usage of "fsl,lynx-28g" as a fallback compatible
-> - mark "fsl,lynx-28g" as deprecated
-> - implement Josua's request for per-lane OF nodes for the new compatible
->   strings
-> 
->  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 146 +++++++++++++++++-
->  1 file changed, 140 insertions(+), 6 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> index ff9f9ca0f19c..390c9ecd94cc 100644
-> --- a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> @@ -9,21 +9,113 @@ title: Freescale Lynx 28G SerDes PHY
->  maintainers:
->    - Ioana Ciornei <ioana.ciornei@nxp.com>
->  
-> +description: |
+On Wed, 10 Sept 2025 at 16:03, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>
+> Add USB nodes for the Renesas RZ/G3S SoC. This consists of PHY reset,
+> host and device support.
+>
+> Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Don't need '|' if no formatting to preserve.
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-> +  The Lynx 28G is a multi-lane, multi-protocol SerDes (PCIe, SATA, Ethernet)
-> +  present in multiple instances on NXP LX2160A and LX2162A SoCs. All instances
-> +  share a common register map and programming model, however they differ in
-> +  supported protocols per lane in a way that is not detectable by said
-> +  programming model without prior knowledge. The distinction is made through
-> +  the compatible string.
-> +
->  properties:
->    compatible:
-> -    enum:
-> -      - fsl,lynx-28g
-> +    oneOf:
-> +      - const: fsl,lynx-28g
-> +        deprecated: true
-> +        description: |
-> +          Legacy compatibility string for Lynx 28G SerDes. The capabilities
-> +          of managed lanes are limited to 1GbE and 10GbE (depending on the
-> +          availability of an adequate PLL clock net frequency). Deprecated, use
-> +          device-specific strings instead.
-> +      - enum:
-> +          - fsl,lx2160a-serdes1
-> +          - fsl,lx2160a-serdes2
-> +          - fsl,lx2160a-serdes3
-> +          - fsl,lx2162a-serdes1
-> +          - fsl,lx2162a-serdes2
->  
->    reg:
->      maxItems: 1
->  
-> +  "#address-cells":
-> +    const: 1
-> +    description: "Address cells for child lane nodes"
+Gr{oetje,eeting}s,
 
-You don't need generic descriptions of common properties.
+                        Geert
 
-> +
-> +  "#size-cells":
-> +    const: 0
-> +    description: "Size cells for child lane nodes"
-> +
->    "#phy-cells":
-> +    description: "Number of cells in PHY specifier (legacy binding only)"
->      const: 1
->  
-> +patternProperties:
-> +  "^phy@[0-9a-f]+$":
-> +    type: object
-> +    description: Individual SerDes lane acting as PHY provider
-> +
-> +    properties:
-> +      reg:
-> +        description: Lane number
-> +        maxItems: 1
-> +
-> +      "#phy-cells":
-> +        description: Number of cells in PHY specifier for this lane
-> +        const: 0
-> +
-> +    required:
-> +      - reg
-> +      - "#phy-cells"
-> +
-> +    additionalProperties: false
-> +
->  required:
->    - compatible
->    - reg
-> -  - "#phy-cells"
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          const: fsl,lynx-28g
-> +    then:
-> +      # Legacy case: parent is PHY provider
-> +      properties:
-> +        "#phy-cells":
-> +          const: 1
-> +        "#address-cells": false
-> +        "#size-cells": false
-> +      required:
-> +        - "#phy-cells"
-> +      patternProperties:
-> +        "^phy@[0-9a-f]+$": false
-> +    else:
-> +      # Modern case: children are PHY providers
-> +      properties:
-> +        "#phy-cells": false
-> +      required:
-> +        - "#address-cells"
-> +        - "#size-cells"
-> +
-> +  # LX2162A SerDes 1 has fewer lanes than the others
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          const: fsl,lx2162a-serdes1
-> +    then:
-> +      patternProperties:
-> +        "^phy@[0-9a-f]+$":
-> +          properties:
-> +            reg:
-> +              description: Lane number (lanes 4-7 only for LX2162A SerDes 1)
-> +              enum: [4, 5, 6, 7]
-> +    else:
-> +      patternProperties:
-> +        "^phy@[0-9a-f]+$":
-> +          properties:
-> +            reg:
-> +              description: Lane number (lanes 0-7)
-> +              enum: [0, 1, 2, 3, 4, 5, 6, 7]
->  
->  additionalProperties: false
->  
-> @@ -32,9 +124,51 @@ examples:
->      soc {
->        #address-cells = <2>;
->        #size-cells = <2>;
-> -      serdes_1: phy@1ea0000 {
-> -        compatible = "fsl,lynx-28g";
-> +
-> +      serdes_1: serdes@1ea0000 {
-> +        compatible = "fsl,lx2160a-serdes1";
->          reg = <0x0 0x1ea0000 0x0 0x1e30>;
-> -        #phy-cells = <1>;
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        phy@0 {
-> +          reg = <0>;
-> +          #phy-cells = <0>;
-> +        };
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-There's really no difference between having child nodes 0-7 and 8 phy 
-providers vs. putting 0-7 into a phy cell arg and 1 phy provider. 
-
-The only difference I see is it is more straight-forward to determine 
-what lanes are present in the phy driver if the driver needs to know 
-that. But you can also just read all 'phys' properties in the DT with a 
-&serdes_1 phandle and determine that. Is that efficient? No, but you 
-have to do that exactly once and probably has no measurable impact.
-
-With that, then can't you simply just add a more specific compatible:
-
-compatible = "fsl,lx2160a-serdes1", "fsl,lynx-28g";
-
-Then you maintain some compatibility.
-
-Rob
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
