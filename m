@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4703DCAC5A5
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:06:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDC35CAC5AA
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:07:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NdRbkhhErF4nTthj9wlFU2jCU6DZmVqBleRPGp4DgnQ=; b=mnqLjEOdbgZJrF
-	igGZzPNHOR265b+iyg9K68DcVv6ocFV+FTG+1neriUDTsC5dhpvtp0HGRt/763ZkdZ1DQz17dzy64
-	nuXaetN3P49PBqtbQyHpdusnz5QZ2iIhESok2gLrusHdM1/4dN+x2zOCt+joL3yLGT/rWbi+ZL2t+
-	knmP5XyfLOfJPgzyMJzxepUecN025zTx/xOvkod29fyd+bUGCHqb+Z210cORBx1tE75+ume1SV+T2
-	hwqo6giI/P9TayaZ1XHSwUgo2w7rdwaLrHqHi2/UAYwr3JjShz48/+5Js0sJBx3obv6kR1zRIfJ1b
-	SP6jKfu5hgB7/z68CfPg==;
+	List-Owner; bh=mTlyronGUk3JfOZWWr2CL+VHdExv50taWxROWN92PKQ=; b=RJGZ62vyr6NUUY
+	GjootXgGIrdfOo0yt6u3YAsE/C0JhOYHfuaXCzcfBflnvqDf5SH91r3JVLSj8clDvbjW37X+9ygkw
+	Mh2BXxG8+R1kjS0xEzP1TH4bctwulBGNgyBV0kijhq4bjKm0PwvQbyMtGBUWLJi9U8bPV89u1jNiP
+	0uDJE64OIi3/VGxhAsfuRbcl/fnQvJsdQP00ZP7gmcQBRNtORljLq3RAgP06Ubj/TTia3XdJ9KU0B
+	Rauzls7F3wtaMwVRg0Lfx7JC0Cq3KaTWil9tDy0EC9Ey6AcACL+6V4OKi8PoED6piZ2/RyFGOCGWi
+	p71isnp1fTT5aTsU+fLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g47-00000006Yfl-0D8I;
-	Thu, 25 Sep 2025 07:06:55 +0000
+	id 1v1g4C-00000006Yic-2DyL;
+	Thu, 25 Sep 2025 07:07:00 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g43-00000006YcB-3v5Y
+	id 1v1g4A-00000006YhW-1zg5
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Sep 2025 07:06:53 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P0XWj5025358
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:51 GMT
+	Thu, 25 Sep 2025 07:06:59 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P1SdG3030031
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uVEGKPfTK4CyG256nSXNU/ph37D4/Mz0PD52oseg3XA=; b=R90RukJMurm/8DDt
-	fm6xbAFVX6kPDru9vF0EWmggeyKf8uKWImL6+X//ylPxz2CGwEaN2KwqBq6kcCnP
-	itmNwiPpd5gn5O+ZylQdVeCwjZe0btqaef8sh1wI6FkAIc3/yvOK652zfVsxK2J5
-	K4Y6hIvKbnW5ySp6yh6x8cY4kZelP3DlmBEb+gzD76HkMn05Q0SvX0yOxSx8Z6/F
-	6/PC58IC1FfEon6tY1++J7e0t2qwM6cFF56CEooJSXwCjSlkeK5mOnlKzTaTpx8L
-	+T4Q/667N7nSWO9Xj+a2HKTZ6Zj/aVPmmadSvjrotlS9HdptkJeVjlGFHWk3nsEq
-	GaGOXw==
-Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499hyeyf5e-1
+	U/ewAsdzTC0PEPN+SodRZso/2oAjrX6us73TZlYVliA=; b=mMGpCaAJo7kAEKW3
+	4Rz1d3MIekz/Se5y7db3XavqVR6R8YnFUxdyAFBqP9qIkb6cREra3l6beejY9VRR
+	O2lbD6Uf3ybNancu3Bh4hgnhI8zX5X8P/0Lw6HxObKEzn8fVEZCdAJGn6o3D8uCv
+	ejUolD7VKIFOd45nHqqRYl2hfIMVoOHjJCfsWY30uU+3022qTY3ehFa8GU6LIvy/
+	ebZSIvA0JjW3FimFhZ9JXCComSx1wFvW7dLRCeQkyh2jzQjaP1WRezUpMQPtBYJf
+	tZ8CfWI757gNu9hP9qcXRbBH/h658H4CbLMIv1IyCWmRLfoSAHkY9ZWmv9Nw5L7J
+	BoZwOw==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499n1fq180-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:51 +0000 (GMT)
-Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-32eb3736080so159867a91.3
-        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:06:51 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:57 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-32eddb7bad7so188857a91.3
+        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:06:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758784010; x=1759388810;
+        d=1e100.net; s=20230601; t=1758784017; x=1759388817;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=uVEGKPfTK4CyG256nSXNU/ph37D4/Mz0PD52oseg3XA=;
-        b=RBvjavr/5ONZza0mmlHZJtsD2L54TC+sxOo/2iQ8kqaB6jEDN1PwbmWTMLMgS8Ngaj
-         DgBd8MrRlG03/iNv8/dh2p4YWWAznjgkfBYBdwjQ1kDBJpq1itFgoagnfrk+AoGlqHnC
-         v1j3vWrM29VEkBUdwP9JE8GBPfUChSC4iillHz/Zxz8V4okpwttyPTMa3X+ntBa4Chjp
-         Q4s6I+hDDSlAornTV+p0ZJqSmHAKeClgxRar5k7iQnId5L0VVUVs8YOcP9MfRQMxX0sC
-         YzUc4Sz1EJEkGJxyjw6x2VGXJ6MGOlfSFDGQLCVW2JNHeI12/OLT4/bEMfMINWqNwhs/
-         eSUw==
-X-Forwarded-Encrypted: i=1; AJvYcCU1YfLp9hqEiXHyV2aV7Nv30ix3BG//wr4Kt1ylSzyCiefXg8xgeEA0tJkTfaUohJAWWmzRn+0HLy8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxdgUbGdoHlS2RhYxWabQvYWhQDQpbXN7PvDj4hdIuDQNxsGw2B
-	3i9h4gZ7TBbTLgu8LaE5ApQLdI6y2zbYdeCuQwU6UeoeLdmfTLfAAt6hZZRolamH7fxurcQdtGl
-	KkyrywhDV93cVzKIJ+r7bSy2IDVtMIlvTX3gSZ6mRMRmsKRn5b1YeTvnV0EvFkMG/Cmqa
-X-Gm-Gg: ASbGncvmQFCNC+xGEPPKEu/q+TdM2/ifVBWPIHMZ7Wewx3DKsxQHWcdffydEwXgeCrD
-	6PWq9Ee3JANm6fzdjjodabcCWScV6vGVHJhBrFcSJ7lDL8v7V9PHiSx0gAxbj1jhuK9mI5JKrvD
-	LfyK0UC1n8ahR3xeN3oF7Oo+MRUMVOMnsOkcPTPhtGywrqLUGlUCgichgBW1PRFjLPsp48tN4Ev
-	pdj1pRlvcLzIM7oH32SPYBnRR8amnmfX1EU6dm8iw8g06ZuSwq/If0Bq0w+g0UmQQqwJ7+trFkM
-	3zV5dG4WBSPCWgSU68IROm2emVauahBaiJruRXLkE4C4sH7U1zrhTTolZ/XOA4/y00y4Iim0HU/
-	j1fTYzwveT/wMC7WZ6fs5QQOAMqv8is1DAUdY1pR/3+EMGGUhVYdDdvVK
-X-Received: by 2002:a17:90b:33c8:b0:330:7e89:7591 with SMTP id 98e67ed59e1d1-3342a229a36mr1377519a91.1.1758784010464;
-        Thu, 25 Sep 2025 00:06:50 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEbvCpZx8QiOBhJXtEEsCGi1+aNGaSk15wqL67X5vZuZ2CcpDayQxO9SadNeB5ia9c5NKeZkw==
-X-Received: by 2002:a17:90b:33c8:b0:330:7e89:7591 with SMTP id 98e67ed59e1d1-3342a229a36mr1377491a91.1.1758784009964;
-        Thu, 25 Sep 2025 00:06:49 -0700 (PDT)
+        bh=U/ewAsdzTC0PEPN+SodRZso/2oAjrX6us73TZlYVliA=;
+        b=FpPVeSWdq2KRwdXhDLa5+whD/H7e0KWG7fX7+8JrcTm9XF72YR0tnh+MAnEHIHW/Vw
+         hFr7AEwtV06F86Lkdtj7QTpB1b2M/8zul3yRww3+qxEwamRWjv3XeHTxp0SK2rbAUEp0
+         1lJ8l3+jg1VD2viWNuhDTc0Gv076wXvEzDtl/a2dWh7cE5R0VY3ye2D1fd00uyMcUeNR
+         iKNn1zz24CG96p/AMY2ActA+caVEcuW4GwDGp4AuQmouNtMvdZzp834yQN2cmEJYSbBM
+         EHHHaL2KQRna1mLCPbI9cqqNTCI6lagjzjeLeyJTNvSVql/N/NHTP1Zy6QfWIHMYpxxH
+         589g==
+X-Forwarded-Encrypted: i=1; AJvYcCVbDHsKPigwxzkQaaf+eGy3/yytD0ugmRlIVMcl2QG5qbUesn6nM7b/DkVHtgxOJ0xc28KKuVyyuZ0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy+pgbLs8DOSWi6X1RZweF1TAaWYPESo1/ZP4MdKJe0jc2zlUYk
+	GdN7G3wvaOY0zs+K303JSufFg/bc0o9JkP8roaIn9vXA8XtTDikonvro6wKK+7TAswPX7WvHqzC
+	glEjSj/eGzD2yUYm8KG0cgnIVoizc+it0olt9ATfQ0b/X5IZXhT1Rn2jOLjTI8Ap9NN8J
+X-Gm-Gg: ASbGnctvEE312iFs8TAvrlEEVc4zOX5s9gS7AyynFoA/ZtNTP/+gQftpF2MZ68uLCPX
+	e6ZYfXMRcWT3LGZoQaZNweX9g+J9rQ1h4xDSq8LE6CzHCYLtqYausVfH1zeF5ZPMepnbA1JE36+
+	75uF6Rx9hhkiVp3Zd5+n6dic5oiZSApBlb7Ey61GHTnZeeg/ghV3iTY0NttmhZCp7wute+s3RHz
+	OwaP/IfJYg2iY7aPr0p3V2n5zvb5ioHiZakxJDSJrXzsZaIIgp25ff6LktCXAH5xbBOaUGUkIlq
+	2RfUoctvnSglQ8GlcQ8Q4vrp2LTtr6IQ5rGnIZo+MqJchw4mbgUnq2bBr9aEQGXheO/OcaJ+mBA
+	hsuUyi/urh6uqUFz5ByEYTny4z4tOYHiXS19+iMvNBREWcMJf/bC1X/O9
+X-Received: by 2002:a17:90b:1d0d:b0:330:68e3:ce7e with SMTP id 98e67ed59e1d1-3342a230ddcmr1393209a91.2.1758784017013;
+        Thu, 25 Sep 2025 00:06:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEydyBxQvXFLvLbGCWUVusQvnXuEZsG7rVXNdU7irf5Kov39+iOrak8phy/uzwVcIMlnzogKQ==
+X-Received: by 2002:a17:90b:1d0d:b0:330:68e3:ce7e with SMTP id 98e67ed59e1d1-3342a230ddcmr1393166a91.2.1758784016593;
+        Thu, 25 Sep 2025 00:06:56 -0700 (PDT)
 Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.06.43
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.06.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Sep 2025 00:06:49 -0700 (PDT)
+        Thu, 25 Sep 2025 00:06:56 -0700 (PDT)
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Date: Thu, 25 Sep 2025 15:04:59 +0800
-Subject: [PATCH v6 13/14] drm/msm/dp: move link-specific parsing from
- dp_panel to dp_link
+Date: Thu, 25 Sep 2025 15:05:00 +0800
+Subject: [PATCH v6 14/14] drm/msm/dp: Add support for lane mapping
+ configuration
 MIME-Version: 1.0
-Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-13-419fe5963819@oss.qualcomm.com>
+Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-14-419fe5963819@oss.qualcomm.com>
 References: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
 In-Reply-To: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -106,37 +106,37 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Konrad Dybcio <konradybcio@kernel.org>,
         Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783911; l=9158;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783911; l=5055;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=UeZKmgHCN9l/z6woLU+dgaheHV7gZb8x1YpMg80h2Ho=;
- b=EW3/S3KyQaK+1tKvM6XjBWIMve55BhSet6Y5Gft/aUIvuaWmrKLSdH5Kaqk8ptrN08f08CBET
- 7yQrM28t9gyC9m77toRBCu6PIbtB/KBSfSvOyTS5J3pWGkTUDYQV7EW
+ bh=MBFao/DJ+AvQFYkIXOckenkzKbeQrB9uXWrKsMRXuzM=;
+ b=YZKXR2CUgP470JDI7PJrgUO29J0aV1Yic0DGd9ehh5weifTEt5JJWmf+3GOoo3E2tGiGMEgMj
+ 6544KOTHvvyBOCE2TTE4IquwBx+8p6+dceUEZ6AHk2AYuDxi5cPfytC
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
-X-Proofpoint-GUID: j3EXxtTRytUAnnrSI5z-Kr5EF6_hcrxX
-X-Authority-Analysis: v=2.4 cv=YMOfyQGx c=1 sm=1 tr=0 ts=68d4ea0b cx=c_pps
- a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=yj-bGh8x4a1trPqgwHkA:9
- a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAwNCBTYWx0ZWRfX3yTNKzVhfYbN
- g4D0rpzbJ9ihUBI9yBUqY69wqksK3dcX3I/HcfbkH8SPt7etIAV/F2dwTV3EcJgneUSUyJLxP9E
- W+y5UWSuE0V9aI/ZqzeigIZkzzo5nbV8NT8aZ0M16YUXPjnTVqB9dbtyL97rkv9kkIG36/r6M0L
- yc+kC9EjOp6plMedpSQBbXzfUQLeIkqqF2cyxeR1HmEvSRs9I7oI0skAfZcr6E01MdPlABIpVBM
- KeDMXy+Q5FLOM1l/0G5r12hTRPV0g8/8FvnDlUGuOJRyDcdqlR0GQ7M7LcH3E/TWClPM9SeZtX8
- e5C8v0ZeTfeTaLI1oDf1AkOqqY/PJfy2iYFh2BItHiHiymbsbnOVuL3YTCuy5cAJS3wnzx7+A3l
- QcimILrv
-X-Proofpoint-ORIG-GUID: j3EXxtTRytUAnnrSI5z-Kr5EF6_hcrxX
+X-Proofpoint-ORIG-GUID: ZdfiCiCw0AwZWryCh_N20Y5zvGIFGg3-
+X-Proofpoint-GUID: ZdfiCiCw0AwZWryCh_N20Y5zvGIFGg3-
+X-Authority-Analysis: v=2.4 cv=No/Rc9dJ c=1 sm=1 tr=0 ts=68d4ea12 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=TnvzUFuqcobRuy42eWwA:9
+ a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzNyBTYWx0ZWRfX8VuFzDvE+QJn
+ cV3g6Djs3jN/5TYGjHFN5oRx+Le0Y7lZ9v6UwHxOsQ/pUUI5az3SabQP+oFmRvg0eSsCtw6GdRi
+ fsGly1wccAwRkokwFkUje3ON0qry1N7ELbvCPrfqInftYUnu051zc8EzIOxjS47P8GeWkzI734V
+ ZcHpcIO357/RnJ7Y/GX0TJMaSDBXsoYbaK8HztUoRzGw2xcG9jmlxfnVn11CsNL/G2LzuR9RYR9
+ 9sStObXS/OHEJHft6/bYcqwS68hs0rjtlIUKa3puPFSyuzH74HfyKs1gSdktCLvk3ZMlLYQmW6u
+ dEBsDHOSCfg18l1+d6yiu/i8yEvuZBrUEmYLS9jxM7WbR382tE1D8p39sZzbF9k8fuMZXl7ggLw
+ nBPW6fDC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-24_07,2025-09-24_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 bulkscore=0 adultscore=0 priorityscore=1501 spamscore=0
- clxscore=1015 suspectscore=0 phishscore=0 malwarescore=0
+ clxscore=1015 spamscore=0 suspectscore=0 adultscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 priorityscore=1501 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200004
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_000651_989538_66C44766 
-X-CRM114-Status: GOOD (  22.90  )
+X-CRM114-CacheID: sfid-20250925_000658_526872_F115CF60 
+X-CRM114-Status: GOOD (  21.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,282 +153,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since max_dp_lanes and max_dp_link_rate are link-specific parameters, move
-their parsing from dp_panel to dp_link for better separation of concerns.
+QCS615 platform requires non-default logical-to-physical lane mapping due
+to its unique hardware routing. Unlike the standard mapping sequence
+<0 1 2 3>, QCS615 uses <3 2 0 1>, which necessitates explicit
+configuration via the data-lanes property in the device tree. This ensures
+correct signal routing between the DP controller and PHY.
+
+For partial definitions, fill remaining lanes with unused physical lanes
+in ascending order.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- drivers/gpu/drm/msm/dp/dp_link.c  | 57 ++++++++++++++++++++++++++++
- drivers/gpu/drm/msm/dp/dp_link.h  |  4 ++
- drivers/gpu/drm/msm/dp/dp_panel.c | 78 +++++----------------------------------
- drivers/gpu/drm/msm/dp/dp_panel.h |  3 --
- 4 files changed, 70 insertions(+), 72 deletions(-)
+ drivers/gpu/drm/msm/dp/dp_ctrl.c | 10 +++----
+ drivers/gpu/drm/msm/dp/dp_link.c | 61 ++++++++++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/msm/dp/dp_link.h |  1 +
+ 3 files changed, 67 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+index c42fd2c17a328f6deae211c9cd57cc7416a9365a..cbcc7c2f0ffc4696749b6c43818d20853ddec069 100644
+--- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
++++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+@@ -423,13 +423,13 @@ static void msm_dp_ctrl_config_ctrl(struct msm_dp_ctrl_private *ctrl)
+ 
+ static void msm_dp_ctrl_lane_mapping(struct msm_dp_ctrl_private *ctrl)
+ {
+-	u32 ln_0 = 0, ln_1 = 1, ln_2 = 2, ln_3 = 3; /* One-to-One mapping */
++	u32 *lane_map = ctrl->link->lane_map;
+ 	u32 ln_mapping;
+ 
+-	ln_mapping = ln_0 << LANE0_MAPPING_SHIFT;
+-	ln_mapping |= ln_1 << LANE1_MAPPING_SHIFT;
+-	ln_mapping |= ln_2 << LANE2_MAPPING_SHIFT;
+-	ln_mapping |= ln_3 << LANE3_MAPPING_SHIFT;
++	ln_mapping = lane_map[0] << LANE0_MAPPING_SHIFT;
++	ln_mapping |= lane_map[1] << LANE1_MAPPING_SHIFT;
++	ln_mapping |= lane_map[2] << LANE2_MAPPING_SHIFT;
++	ln_mapping |= lane_map[3] << LANE3_MAPPING_SHIFT;
+ 
+ 	msm_dp_write_link(ctrl, REG_DP_LOGICAL2PHYSICAL_LANE_MAPPING,
+ 			ln_mapping);
 diff --git a/drivers/gpu/drm/msm/dp/dp_link.c b/drivers/gpu/drm/msm/dp/dp_link.c
-index 66e1bbd80db3a28f5f16d083486752007ceaf3f7..2aeb3ecf76fab2ee6a9512b785ca5dceebfc3964 100644
+index 2aeb3ecf76fab2ee6a9512b785ca5dceebfc3964..2ae78d33fffd7c49190983952ee8f5a249f2b69d 100644
 --- a/drivers/gpu/drm/msm/dp/dp_link.c
 +++ b/drivers/gpu/drm/msm/dp/dp_link.c
-@@ -6,12 +6,14 @@
- #define pr_fmt(fmt)	"[drm-dp] %s: " fmt, __func__
- 
- #include <drm/drm_device.h>
-+#include <drm/drm_of.h>
- #include <drm/drm_print.h>
- 
- #include "dp_reg.h"
- #include "dp_link.h"
- #include "dp_panel.h"
- 
-+#define DP_LINK_RATE_HBR2      540000 /* kbytes */
- #define DP_TEST_REQUEST_MASK		0x7F
- 
- enum audio_sample_rate {
-@@ -1210,10 +1212,61 @@ u32 msm_dp_link_get_test_bits_depth(struct msm_dp_link *msm_dp_link, u32 bpp)
- 	return tbd;
+@@ -1236,6 +1236,62 @@ static u32 msm_dp_link_link_frequencies(struct device_node *of_node)
+ 	return frequency;
  }
  
-+static u32 msm_dp_link_link_frequencies(struct device_node *of_node)
-+{
-+	struct device_node *endpoint;
-+	u64 frequency = 0;
-+	int cnt;
-+
-+	endpoint = of_graph_get_endpoint_by_regs(of_node, 1, 0); /* port@1 */
-+	if (!endpoint)
-+		return 0;
-+
-+	cnt = of_property_count_u64_elems(endpoint, "link-frequencies");
-+
-+	if (cnt > 0)
-+		of_property_read_u64_index(endpoint, "link-frequencies",
-+					   cnt - 1, &frequency);
-+	of_node_put(endpoint);
-+
-+	do_div(frequency,
-+	       10 * /* from symbol rate to link rate */
-+	       1000); /* kbytes */
-+
-+	return frequency;
-+}
-+
-+static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_link)
++/*
++ * Always populate msm_dp_link->lane_map with 4 lanes.
++ * - Use DTS "data-lanes" if present; otherwise fall back to default mapping.
++ * - For partial definitions, fill remaining entries with unused lanes in
++ *   ascending order.
++ */
++static int msm_dp_link_lane_map(struct device *dev, struct msm_dp_link *msm_dp_link)
 +{
 +	struct device_node *of_node = dev->of_node;
-+	int cnt;
++	struct device_node *endpoint;
++	int cnt = msm_dp_link->max_dp_lanes;
++	u32 tmp[DP_MAX_NUM_DP_LANES];
++	u32 map[DP_MAX_NUM_DP_LANES] = {0, 1, 2, 3}; /* default 1:1 mapping */
++	bool used[DP_MAX_NUM_DP_LANES] = {false};
++	int i, ret = -EINVAL;
 +
-+	/*
-+	 * data-lanes is the property of msm_dp_out endpoint
-+	 */
-+	cnt = drm_of_get_data_lanes_count_ep(of_node, 1, 0, 1, DP_MAX_NUM_DP_LANES);
-+	if (cnt < 0) {
-+		/* legacy code, data-lanes is the property of mdss_dp node */
-+		cnt = drm_of_get_data_lanes_count(of_node, 1, DP_MAX_NUM_DP_LANES);
++	endpoint = of_graph_get_endpoint_by_regs(of_node, 1, -1);
++	if (endpoint) {
++		ret = of_property_read_u32_array(endpoint, "data-lanes", tmp, cnt);
++		if (ret)
++			dev_dbg(dev, "endpoint data-lanes read failed (ret=%d)\n", ret);
 +	}
 +
-+	if (cnt > 0)
-+		msm_dp_link->max_dp_lanes = cnt;
-+	else
-+		msm_dp_link->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
++	if (ret) {
++		ret = of_property_read_u32_array(of_node, "data-lanes", tmp, cnt);
++		if (ret) {
++			dev_info(dev, "data-lanes not defined, set to default\n");
++			goto out;
++		}
++	}
 +
-+	msm_dp_link->max_dp_link_rate = msm_dp_link_link_frequencies(of_node);
-+	if (!msm_dp_link->max_dp_link_rate)
-+		msm_dp_link->max_dp_link_rate = DP_LINK_RATE_HBR2;
++	for (i = 0; i < cnt; i++) {
++		if (tmp[i] >= DP_MAX_NUM_DP_LANES) {
++			dev_err(dev, "data-lanes[%d]=%u out of range\n", i, tmp[i]);
++			return -EINVAL;
++		}
++		used[tmp[i]] = true;
++		map[i] = tmp[i];
++	}
 +
++	/* Fill the remaining entries with unused physical lanes (ascending) */
++	i = cnt;
++	for (int j = 0; i < DP_MAX_NUM_DP_LANES && j < DP_MAX_NUM_DP_LANES; j++) {
++		if (!used[j])
++			map[i++] = j;
++	}
++
++out:
++	if (endpoint)
++		of_node_put(endpoint);
++
++	dev_dbg(dev, "data-lanes count %d <%d %d %d %d>\n", cnt, map[0], map[1], map[2], map[3]);
++	memcpy(msm_dp_link->lane_map, map, sizeof(map));
 +	return 0;
 +}
 +
- struct msm_dp_link *msm_dp_link_get(struct device *dev, struct drm_dp_aux *aux)
+ static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_link)
  {
- 	struct msm_dp_link_private *link;
- 	struct msm_dp_link *msm_dp_link;
-+	int ret;
+ 	struct device_node *of_node = dev->of_node;
+@@ -1255,6 +1311,11 @@ static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_l
+ 	else
+ 		msm_dp_link->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
  
- 	if (!dev || !aux) {
- 		DRM_ERROR("invalid input\n");
-@@ -1229,5 +1282,9 @@ struct msm_dp_link *msm_dp_link_get(struct device *dev, struct drm_dp_aux *aux)
- 	mutex_init(&link->psm_mutex);
- 	msm_dp_link = &link->msm_dp_link;
- 
-+	ret = msm_dp_link_parse_dt(dev, msm_dp_link);
-+	if (ret)
-+		return ERR_PTR(ret);
++	if (msm_dp_link_lane_map(dev, msm_dp_link)) {
++		dev_err(dev, "failed to parse data-lanes\n");
++		return -EINVAL;
++	}
 +
- 	return msm_dp_link;
- }
+ 	msm_dp_link->max_dp_link_rate = msm_dp_link_link_frequencies(of_node);
+ 	if (!msm_dp_link->max_dp_link_rate)
+ 		msm_dp_link->max_dp_link_rate = DP_LINK_RATE_HBR2;
 diff --git a/drivers/gpu/drm/msm/dp/dp_link.h b/drivers/gpu/drm/msm/dp/dp_link.h
-index ba47c6d19fbfacfc58031263e4a2f5a6d9c2c229..0684a962d4ec93f7da764c4af2e2154c7050329c 100644
+index 0684a962d4ec93f7da764c4af2e2154c7050329c..b1eb2de6d2a7693f17aa2f256657110af839533d 100644
 --- a/drivers/gpu/drm/msm/dp/dp_link.h
 +++ b/drivers/gpu/drm/msm/dp/dp_link.h
-@@ -12,6 +12,7 @@
- #define DS_PORT_STATUS_CHANGED 0x200
- #define DP_TEST_BIT_DEPTH_UNKNOWN 0xFFFFFFFF
- #define DP_LINK_CAP_ENHANCED_FRAMING (1 << 0)
-+#define DP_MAX_NUM_DP_LANES    4
- 
- struct msm_dp_link_info {
- 	unsigned char revision;
-@@ -72,6 +73,9 @@ struct msm_dp_link {
- 	struct msm_dp_link_test_audio test_audio;
+@@ -74,6 +74,7 @@ struct msm_dp_link {
  	struct msm_dp_link_phy_params phy_params;
  	struct msm_dp_link_info link_params;
-+
-+	u32 max_dp_lanes;
-+	u32 max_dp_link_rate;
+ 
++	u32 lane_map[DP_MAX_NUM_DP_LANES];
+ 	u32 max_dp_lanes;
+ 	u32 max_dp_link_rate;
  };
- 
- /**
-diff --git a/drivers/gpu/drm/msm/dp/dp_panel.c b/drivers/gpu/drm/msm/dp/dp_panel.c
-index 15b7f6c7146e1176a80b5c9d25896b1c8ede3aed..ad5d55bf009dbe60e61ca4f4c108116333129203 100644
---- a/drivers/gpu/drm/msm/dp/dp_panel.c
-+++ b/drivers/gpu/drm/msm/dp/dp_panel.c
-@@ -16,9 +16,6 @@
- 
- #define DP_INTF_CONFIG_DATABUS_WIDEN     BIT(4)
- 
--#define DP_MAX_NUM_DP_LANES	4
--#define DP_LINK_RATE_HBR2	540000 /* kbytes */
--
- struct msm_dp_panel_private {
- 	struct device *dev;
- 	struct drm_device *drm_dev;
-@@ -91,6 +88,7 @@ static int msm_dp_panel_read_dpcd(struct msm_dp_panel *msm_dp_panel)
- 	int rc, max_lttpr_lanes, max_lttpr_rate;
- 	struct msm_dp_panel_private *panel;
- 	struct msm_dp_link_info *link_info;
-+	struct msm_dp_link *link;
- 	u8 *dpcd, major, minor;
- 
- 	panel = container_of(msm_dp_panel, struct msm_dp_panel_private, msm_dp_panel);
-@@ -105,16 +103,20 @@ static int msm_dp_panel_read_dpcd(struct msm_dp_panel *msm_dp_panel)
- 	major = (link_info->revision >> 4) & 0x0f;
- 	minor = link_info->revision & 0x0f;
- 
-+	link = panel->link;
-+	drm_dbg_dp(panel->drm_dev, "max_lanes=%d max_link_rate=%d\n",
-+		   link->max_dp_lanes, link->max_dp_link_rate);
-+
- 	link_info->rate = drm_dp_max_link_rate(dpcd);
- 	link_info->num_lanes = drm_dp_max_lane_count(dpcd);
- 
- 	/* Limit data lanes from data-lanes of endpoint property of dtsi */
--	if (link_info->num_lanes > msm_dp_panel->max_dp_lanes)
--		link_info->num_lanes = msm_dp_panel->max_dp_lanes;
-+	if (link_info->num_lanes > link->max_dp_lanes)
-+		link_info->num_lanes = link->max_dp_lanes;
- 
- 	/* Limit link rate from link-frequencies of endpoint property of dtsi */
--	if (link_info->rate > msm_dp_panel->max_dp_link_rate)
--		link_info->rate = msm_dp_panel->max_dp_link_rate;
-+	if (link_info->rate > link->max_dp_link_rate)
-+		link_info->rate = link->max_dp_link_rate;
- 
- 	/* Limit data lanes from LTTPR capabilities, if any */
- 	max_lttpr_lanes = drm_dp_lttpr_max_lane_count(panel->link->lttpr_common_caps);
-@@ -173,9 +175,6 @@ int msm_dp_panel_read_sink_caps(struct msm_dp_panel *msm_dp_panel,
- 
- 	panel = container_of(msm_dp_panel, struct msm_dp_panel_private, msm_dp_panel);
- 
--	drm_dbg_dp(panel->drm_dev, "max_lanes=%d max_link_rate=%d\n",
--		msm_dp_panel->max_dp_lanes, msm_dp_panel->max_dp_link_rate);
--
- 	rc = msm_dp_panel_read_dpcd(msm_dp_panel);
- 	if (rc) {
- 		DRM_ERROR("read dpcd failed %d\n", rc);
-@@ -648,60 +647,6 @@ int msm_dp_panel_init_panel_info(struct msm_dp_panel *msm_dp_panel)
- 	return 0;
- }
- 
--static u32 msm_dp_panel_link_frequencies(struct device_node *of_node)
--{
--	struct device_node *endpoint;
--	u64 frequency = 0;
--	int cnt;
--
--	endpoint = of_graph_get_endpoint_by_regs(of_node, 1, 0); /* port@1 */
--	if (!endpoint)
--		return 0;
--
--	cnt = of_property_count_u64_elems(endpoint, "link-frequencies");
--
--	if (cnt > 0)
--		of_property_read_u64_index(endpoint, "link-frequencies",
--						cnt - 1, &frequency);
--	of_node_put(endpoint);
--
--	do_div(frequency,
--		10 * /* from symbol rate to link rate */
--		1000); /* kbytes */
--
--	return frequency;
--}
--
--static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
--{
--	struct msm_dp_panel_private *panel;
--	struct device_node *of_node;
--	int cnt;
--
--	panel = container_of(msm_dp_panel, struct msm_dp_panel_private, msm_dp_panel);
--	of_node = panel->dev->of_node;
--
--	/*
--	 * data-lanes is the property of msm_dp_out endpoint
--	 */
--	cnt = drm_of_get_data_lanes_count_ep(of_node, 1, 0, 1, DP_MAX_NUM_DP_LANES);
--	if (cnt < 0) {
--		/* legacy code, data-lanes is the property of mdss_dp node */
--		cnt = drm_of_get_data_lanes_count(of_node, 1, DP_MAX_NUM_DP_LANES);
--	}
--
--	if (cnt > 0)
--		msm_dp_panel->max_dp_lanes = cnt;
--	else
--		msm_dp_panel->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
--
--	msm_dp_panel->max_dp_link_rate = msm_dp_panel_link_frequencies(of_node);
--	if (!msm_dp_panel->max_dp_link_rate)
--		msm_dp_panel->max_dp_link_rate = DP_LINK_RATE_HBR2;
--
--	return 0;
--}
--
- struct msm_dp_panel *msm_dp_panel_get(struct device *dev, struct drm_dp_aux *aux,
- 			      struct msm_dp_link *link,
- 			      void __iomem *link_base,
-@@ -709,7 +654,6 @@ struct msm_dp_panel *msm_dp_panel_get(struct device *dev, struct drm_dp_aux *aux
- {
- 	struct msm_dp_panel_private *panel;
- 	struct msm_dp_panel *msm_dp_panel;
--	int ret;
- 
- 	if (!dev || !aux || !link) {
- 		DRM_ERROR("invalid input\n");
-@@ -729,10 +673,6 @@ struct msm_dp_panel *msm_dp_panel_get(struct device *dev, struct drm_dp_aux *aux
- 	msm_dp_panel = &panel->msm_dp_panel;
- 	msm_dp_panel->max_bw_code = DP_LINK_BW_8_1;
- 
--	ret = msm_dp_panel_parse_dt(msm_dp_panel);
--	if (ret)
--		return ERR_PTR(ret);
--
- 	return msm_dp_panel;
- }
- 
-diff --git a/drivers/gpu/drm/msm/dp/dp_panel.h b/drivers/gpu/drm/msm/dp/dp_panel.h
-index d2cf401506dcbaf553192d5e18c87207337664ab..921a296852d4df65f817665d3e1344f2f7c9ece7 100644
---- a/drivers/gpu/drm/msm/dp/dp_panel.h
-+++ b/drivers/gpu/drm/msm/dp/dp_panel.h
-@@ -41,9 +41,6 @@ struct msm_dp_panel {
- 	bool vsc_sdp_supported;
- 	u32 hw_revision;
- 
--	u32 max_dp_lanes;
--	u32 max_dp_link_rate;
--
- 	u32 max_bw_code;
- };
- 
 
 -- 
 2.34.1
