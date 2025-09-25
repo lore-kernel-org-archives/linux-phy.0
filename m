@@ -4,162 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A951CAC5A7
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 16:09:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D531CAC5B0
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 21:54:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C4zbJY2X/Fj365Eig7kWAyVarXY6C+FErohagcbTd/c=; b=XE4F1GJ2d0a6ae
-	onWFPkziAs+5fB3WHkXRfTto4bxBI+JthlBiJRvcu1Vp8sqPxkDK26lgksH8NXBP7yyF4dMBebSP3
-	Cvd1p3Tqsecac2FgNVM3Lp642EHN1JJYuAOkMvxbpAdWnnjZr7MkaBukrnhGY0t1PPXaZxOAKhroS
-	Q66axbWBAOm6hOBQ9TyzHyw4PCcndKA2A0fpDNhEGx0Mvf4dDzPmxygeQ/6OsZyUjuxgLAt7d1RQa
-	5skkL4MhkHsZPwyg/4v15pyAvW62RYLxjEiC4EIk28hDPiwB7UrcgRiAvG8f5UDbP/uPE3KeizcM8
-	G+G3SeqBjIX9F8N8wUgg==;
+	List-Owner; bh=brlqlP6xKHiiNZUTxW3gjeaeF0kGWqjOfw6SDfOkqEY=; b=DGrYGplXMpA0ZM
+	tATmNxW5upZxFTOPKRSRDHOCM6qOG2JT0KW9a4r+JhhcrWYUQL35vH5KyxudN18mHyWIyTVtmRGxk
+	KqaB84OM/RsWRftuGIrdNXwePjN7d+TkoH74jtQYuiOv4EGfX9ZfzH/wHklRhNxmrxUZgQEAILWwn
+	sI1q3Ttn8hx3YltNGaTh+CrB+cgIyAaErGpPOXLm3TlG3Vs4ycn3EZ5XYUUiBAmPLf/YMn35O+dt0
+	aN9fHmSJuArKJv5FBF4OzsZcDlVh88eb5Tx7C4CkuchGdApJfXwbkM0kPv0N0KK5H9z10vTWFjMtx
+	XVQkCgpTA6J36dat/SHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1oWv-0000000AzIZ-3zeW;
-	Thu, 25 Sep 2025 16:09:13 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1v1tut-0000000DLTm-0VAE;
+	Thu, 25 Sep 2025 21:54:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1oWs-0000000AzGH-2GYN;
-	Thu, 25 Sep 2025 16:09:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=hP6a+oWEcVfdPIsL0+J7VcXtMEG8SnSXFbRZtcX3Bdjr4rK9gtMNCRa85ciGl9HmZq0jE9Du5Sy6MeaPqI1X+XjlhhTOoaPTid4UeOXjA2NRR3SZZwKgBK7Dtzp2E7VEauIzH/d+rerBhpGigll9PH8+6OnnoUcpr9WWQtr3LNPv1q2NU5wwcgWutwNwaLLjLkeWOxpWef/TV8IH0w1y9iP8IKCOwMAfcnkISfVE5diHkf0AvObcdHD7Ut1Ev7NVYUrVYYOT2nTiMNjFVwH78HaJOuxe7GIQhsp25l/ZsONvagCcQR1KpMJkKjwzjFD0sTkvotVpAcQOMOUrHEszsg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=QQ2q15VpJLLjtHLdUl39VRiYwTQLeM4uOKWOiZeOGPU=;
- b=h+TW0ia5wBaIqR5I9GUqVP4+2gEAbpTtjAbYdEDhSkNubL7x9UIImTVcP7gwuDyEBYtYpx2ltNDxL8ZxVUsomP3O6YLOfJ+77t/y2YGofdwbTFgb70kAbcJez/0DoBIGkWmePYIvyfBiw2Cc3VNu94gu/JBrY4pmYJK45KnNqKZrxYBIVNZcq1eggRWvUfhiXr4/BXJyXNnxIWP4Lp+XvEmzcB86D0RtkX20WR0rxkz0ayTvVmp0uV+K5gcmQzAqVNk/NeVFSHdkZn4Ig4lH/IqTS17gURdu61Vv4ONwZX/KgiboX/1G0w+AI1DP4Ze/PeN60Eh5XTdcIs30S2jTQQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QQ2q15VpJLLjtHLdUl39VRiYwTQLeM4uOKWOiZeOGPU=;
- b=YXQT20cQqZeSiT4TIXnau8QuEvp/xh/PA8zKooVJ6gR01DEi98YBjhv9EgbYOgaTmQkX0nLt2d+copXZ05pcjsay/QL+8tzzv3Tn3cLx/urT8miPSDwv4UOkliZngOLGDVlqNfWw5VIMqT3U3U1x+dgbNvFvr8lb3SOyP1SQSDgiGlWTWcIrjAGlsjYMs6Pa0MdQRg7N/s5JsZvuTF49MwhZLk9pcWO7y45ep6xHUkwkS8kFkSSgcFMWciQMso8IP+KwFX2txhjJzUd7LYg7DQs0SWmb13mpRv2zffVqIasCz8q50E3/x08wTCtk8fwUvH8fjguqPAeVhWDL4K1VgQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by PAXPR04MB8490.eurprd04.prod.outlook.com (2603:10a6:102:1de::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.10; Thu, 25 Sep
- 2025 16:09:04 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
- 16:09:04 +0000
-Date: Thu, 25 Sep 2025 12:08:54 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Rui Miguel Silva <rmfrfs@gmail.com>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
-	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
-Subject: Re: [PATCH v3 00/31] media: add imx93 mipi/controller csi support
-Message-ID: <aNVpFuCAcr9CCPNU@lizhi-Precision-Tower-5810>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <aMLvhdJRGHM+8yIH@lizhi-Precision-Tower-5810>
-Content-Disposition: inline
-In-Reply-To: <aMLvhdJRGHM+8yIH@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: PH7PR02CA0012.namprd02.prod.outlook.com
- (2603:10b6:510:33d::12) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+	id 1v1tuq-0000000DLQt-1OMY
+	for linux-phy@lists.infradead.org;
+	Thu, 25 Sep 2025 21:54:17 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58PIQYit005417
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 21:54:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=V77Z5Ho34wRfniMvExHw0L93
+	ufuCYBEpuq3QobQDp/w=; b=lbaTtvraUQayXHdkdf/MuJVtN5609Gsu2GmI7Hb5
+	gcfmYkWM5XUxTaHzt5TGMeg62HIZfX/rsZsKHXsV+bvLp7/Lg1NzvLWH+A2qr5a3
+	Te/HCFlvsOOpdA17HBEgzTCWJs8/NVckMd0WiTCBqWQmt1KAbOgqMFik0OrlorwN
+	9JdyOiLjKtR6nuxbgY79eRKQcWfD4m1SPJSpAUT1xz+cRfWkhxo9Vds/RVO+cVkv
+	0Hac2LP0/f7c8CiSClOfSAPsGWkfn9/u9UEExcTMjLHFu4ooSlo3VQXYwQL4AAgf
+	kctlhSr8mP/DTa4Hhv14X6I99W9gLs451RIRgfumhDJ/7A==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49db0u0gu5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 21:54:15 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4b5ee6cd9a3so34699991cf.2
+        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 14:54:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758837254; x=1759442054;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=V77Z5Ho34wRfniMvExHw0L93ufuCYBEpuq3QobQDp/w=;
+        b=dRTclaP5R58NRP2f8IH3kg/HVTMHcMbqrJ85XDKVjMkXsBLDJ64jEMv+6IRTFTB0ir
+         qCKa1R2YyC+ea+pysL7DnXM1DvxlBdvyRD1J1BPdzGtZmMLUwLLg/Ug/fUeuO365l9/e
+         0PdgPKPCwzv9GbpBJAJTYINf8FS8fpfz78NcTtHxa8EvjQBcf3H40U3QRrx/EpHZp+hW
+         Z8WNIuQe5501e8kvcL9ATQjYxwc94uh4QY704J78yNj7PYHs8+ykPZDHG0agATP7nq6P
+         x88A7rkSz+2KaspLCN0JMwtEIgQw3dvcXuiz4yeJi64Qo3QeFn9pV7LfRuPCYcAytmfu
+         XO+w==
+X-Forwarded-Encrypted: i=1; AJvYcCWQ7rGt0CWGCA3ez2S6Z/QN3QzEDOFYxtUIbVvJv1KrnyDyBQWGR8q4BRQtS0xTeDVEE4YCxLfIgGk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyXVVS1jpqWhVzbCSn+1diGRINc32jeATbqThs2hpQ8MWsp3T4z
+	DnJ5MjQvs61ek2RiisJGz7ArbYfy/XPt+8Gv/U0G4rYIjoxD/6Y+sX+RTdxAOfQrxPPkBH+J+EP
+	Oq2DtKd/ai4sp/GKF4nwZI0LrLtFOoLD4G8/XW466aAJvtU6fFepcLX+ngqJx7t39ec/Y
+X-Gm-Gg: ASbGncvvVibPgJMkMAWWQrJze7mkVhu9E368NGCxUj2Gj2H/4+pf2e2UpxmtsLxBVL9
+	9vQcVgZF/eG/kXZYZ6nDycFpepnxrbWzZIWgkH6F7UP8GbVJ1lzAJ/PQwDOLHwVyjMV2Zbgs/gd
+	lC3xeyfm3EHlh+/Jj17z9m6jhZMsZmlRVrdLH+5xA4Fs/SBA/DnSsTO5ndtH6ac/wNADZYM20lF
+	Jp5myYSULd19weFAl9OISGtgApzNchsDAWvbKrbQ6Ro0DlNcfyM1d1YTG0xsf+dTl3Z7kn2c1jX
+	Co7fzkmcVfTR5F0R8nw2ogGnC0DGQzy2RAArzt4qly5e7crbPbNppGCK+144cLWCCrifQGS1+tR
+	ofxovx3l4rn81rAwfExZDt1g5+9jrOtJyYNrWxy14Z5Y2qFqbFOPh
+X-Received: by 2002:a05:622a:1a0f:b0:4b0:da90:d7d with SMTP id d75a77b69052e-4da47a1a220mr67870191cf.3.1758837254449;
+        Thu, 25 Sep 2025 14:54:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHyFRxoSrrZVyL5ZFN8zm6WyGWU2qPELuXqbOoO1z14tsOOdtn0pbtF7AxjejfvrN1FriBxtQ==
+X-Received: by 2002:a05:622a:1a0f:b0:4b0:da90:d7d with SMTP id d75a77b69052e-4da47a1a220mr67869871cf.3.1758837253974;
+        Thu, 25 Sep 2025 14:54:13 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-36fb4e38b04sm8222961fa.15.2025.09.25.14.54.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 25 Sep 2025 14:54:11 -0700 (PDT)
+Date: Fri, 26 Sep 2025 00:54:08 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
+        li.liu@oss.qualcomm.com, Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Subject: Re: [PATCH v6 05/14] phy: qcom: qmp-usbc: Move reset config into PHY
+ cfg
+Message-ID: <d72npzj56ng2lxsmbmu2l43ebag4cfyhou5322kbpsutn3nwwf@oi5ibgajlfos>
+References: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
+ <20250925-add-displayport-support-for-qcs615-platform-v6-5-419fe5963819@oss.qualcomm.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|PAXPR04MB8490:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5e32957f-dd95-4fc8-2a14-08ddfc4dd8db
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|19092799006|1800799024|366016|376014|38350700014|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?cSugv1w1FS2zck7NZV3/IiUVDVo+4i25iMWj6PQ25O04vcdr/cxg5lxE8dvy?=
- =?us-ascii?Q?OenKEHEGbjoMQGLSuND6Q4Hs7nCRXHmaYt5GmnejXCatE8fgVjiZZrIm4Vd9?=
- =?us-ascii?Q?DJTtTZNZbGK+LPsIBP0QHW2K7ww8lYpVrOxUnr5P+mVcSUQGCGu+YNlZ1eHP?=
- =?us-ascii?Q?Q7Gh8LziXcaUrgjcTlTbiYigLtzA6x9pWyq4FCMP7QcsP7dPMgrrz7KhU8RP?=
- =?us-ascii?Q?W0FjdBsiHZZq6Up6Cxm4cdLmNjO77YCazwDvPRiwgYT4ppwHrvlcxMqqGs/k?=
- =?us-ascii?Q?xAWByxaCpRvcBGXtiWIsIRbWVIJft+qQkPK7xVbGNks+igvnADek3+sHdyRj?=
- =?us-ascii?Q?JeSOkUiwHMOA25DIWTRFXgm/DssXy2RGMwkEFgVsYV5bk0UJGXSEyLzcmgBC?=
- =?us-ascii?Q?U2z4zmvngr3H5yni+UvXZ7KRntkVLmWC/Fccl16ennpGbCZoc+SSLQUWHcL8?=
- =?us-ascii?Q?69Rf8Yz+nHCr+8ZWLYkSLtZXCec2jR2C8G3UFkgkS4NLWjj/TvX52JKBRZcg?=
- =?us-ascii?Q?yFFq+HcxXQouk7CGWTnwDghPIhS/OA5ERliGXNDhg4oRSa37sva28Et8N4Ov?=
- =?us-ascii?Q?LFVM08aKOL+nHiUzG+OXAYkk3NZgS5P/Dh4gze9KOKQkeAWuQMIaw7GFHp5z?=
- =?us-ascii?Q?HyU7wtxsg45ntoXPOcjwLE2+qbz0u/Cbz4PyRK+xu1Y0Ym9JTMCuVISpAZv0?=
- =?us-ascii?Q?v7Q3x/SkpivoPkOivdWvT3ryfKQp7LAlGG50xLffXDfaa41sQu+XfBBORMze?=
- =?us-ascii?Q?fCdMO4cbNN23eKTCpG3Tx6WgzbioqzmjqjZQr4no/EyJJrH/63VvZOoQmP8p?=
- =?us-ascii?Q?5Ioyb2U/g96DnjsVkM92zA9zQ3SOTD+FzpmyPtaOiZ0BQ+Pl1BhRLzFXQvs/?=
- =?us-ascii?Q?TyHXSA49EpfB9YPAlxUpZzaYpuURTCU2ZJ53nt2JDHXO4y+Xl/Clksfj7+KQ?=
- =?us-ascii?Q?UdTtGVi+CVrcm1K4oXNA6+Tc52WXsLsVP+/MnCDmn+9EedEcYwf6rhEauEdf?=
- =?us-ascii?Q?hvs+QT9g5VtNNcJ6VzSR3TO198iarAXaSfLtUltE3t99UwdzynOrYcvy9UKi?=
- =?us-ascii?Q?BMX8FDbcGlFKR0jwfvaHR/+UtCRnOr3Z0h33H6XfKQCHCiH3NUtXu0JQySD7?=
- =?us-ascii?Q?gq7g3aHKTIj4ynWp2IfpOlcFO93sWdTeUqIu9WDzdSsG2MrT1jrJwiPqAiGo?=
- =?us-ascii?Q?IcZVXwuNpTBS4kTBa6SkSRpZrWnyIlufoVp8R5CHJaAhNSN/aKsSPr2Aen+e?=
- =?us-ascii?Q?FCoTB62QPEXAX3K2Qm9t97sfQCdN7o9mhSpyar6Vu4JPr13DXqlq9EbopZ2D?=
- =?us-ascii?Q?e25k4MndZh2QNR8O1o4nsliLFh8ltLbPUHmpi3cg86q+AlTe1AVZn48Htleq?=
- =?us-ascii?Q?oJN1RGv2bXg+b9dUolWmfDX4+NQLXa+FFA/I48tyFaByW1US7wxJ54Npjn0P?=
- =?us-ascii?Q?bVbVBeabgI2EH1GxRjpPAV3ruf0Jn3dD?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(19092799006)(1800799024)(366016)(376014)(38350700014)(921020);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?JqniFAIIde5OASFiCQ8PMD1HQDMC0lbKbvoOoHu1zJRmKgHrUQPFEADuPMbD?=
- =?us-ascii?Q?XqH+iKCMDbt/5Ztpb5cw3HUMvoVaTAO698y8+hm0zBFH4v5A2ZEHSZVWDdMV?=
- =?us-ascii?Q?jyDNRyxpT7eIqx94MuA1Hl3TcUum9s2z0bL7zVailBUIGawMty3KlVLJZNHN?=
- =?us-ascii?Q?v7FWrBQ9/z90bPhwUwexceLzDIunidqWrVseTM+J9bcaZFcLGe1Qv3NbWvYl?=
- =?us-ascii?Q?v7DlVN+0ew+FvL2qh/Dj0MjxsFAL02TxK1p5JISWy1iPbd2Jx8J3zue4gUk+?=
- =?us-ascii?Q?vX2iEr5alluq1EgRQfeT9m6DYLBYVvJoD20GrQDQW1Hg89tQbzyFt1rrPCvm?=
- =?us-ascii?Q?oEvf2tywIIq9S/zNJ7Xc/VF7mFLg/XVxI/fG/OJP3eRXO56If36OqvpTebvt?=
- =?us-ascii?Q?P/SuGcGPsuw+yZrm0gHRlebYc9Ye2z8jpqdAAxe7MYE1t1hVcCaDyAlhTWZ0?=
- =?us-ascii?Q?DKYifFx3UI+bwyHVJ83xqM4zAZV/HYzpII4mfWxIH1A+04pQlFLo7AXt1HRZ?=
- =?us-ascii?Q?LKFq+Cz4030w4PtUpWp7N99NnRWn9B5T66/v3GiYgDaMvOx19pm85VPoK9q5?=
- =?us-ascii?Q?va1Dv9Mb7uR1SL6kLtLXGEyP1btqG6SBQ6M6dmM79pH0Q5HGjunGlsWkgdQA?=
- =?us-ascii?Q?h2NsSP7u8v/xBNLTF6elwJCPadOMjb/Unz+R+gTCwmqUoO7wnESq+vMe7zaQ?=
- =?us-ascii?Q?7lx5RaktP6KouNs4TyS1sv5+BDvo4bkFrX6fD2xKN6/fr1ByknwKNJUmCka7?=
- =?us-ascii?Q?nMXMC+o+RRBlK1mFu9C8jZhiBVwTLR8JZGCck3hx63gIyzYTZjucm0V8vPL+?=
- =?us-ascii?Q?3SqkG4tMqgMTD0q9HxsiSjGvnxxEDxcH9k+0ygqaDj/BCXmCWerJprbOkRr4?=
- =?us-ascii?Q?veWD7paVxSThwZHF3rawGaKu22Twt/lQZg3xyczYo/DmIvc6pshLLpdvIJSf?=
- =?us-ascii?Q?7FOp8Jcyi7BZSCrV/frObLo+WZp6Gi/my65+h8l4u+DKdVJhoBaswOgAEZqt?=
- =?us-ascii?Q?GPFi23RVEdIP8ny1adhd6kDw3vAupId/SrcJ6cBT8a/qR3gXrWg1mMnbkbTb?=
- =?us-ascii?Q?hn9iRKTh3XSkM6IGylVjl6A0Nzg4M5vcHWxYYXGxcMAWB6dC8pa8xzfnl8RP?=
- =?us-ascii?Q?mXGCInvwo0PTTg09p5GK14EMH4xeBY2kjskWZ/bpLKcDbFwrYkzRCfSuaRkE?=
- =?us-ascii?Q?cfBaNT2eNlVzm7obJnsb37E6McQRICOi/VQ9NL3PxM44O+1qMmaSS9i8d7Ab?=
- =?us-ascii?Q?S+foA9GJypl/LBrPGg5PEJRwcwzyLP+jRGBtSL6SS8a0obTexlvgvUWhFgLp?=
- =?us-ascii?Q?TH6WmgCygjJJEbg5gMVe8djRhmCauB7oZNvutf3d3zYsQtjkCOxZQgO6/nda?=
- =?us-ascii?Q?9N0HSSVqEuXum5XTsPUABjU8xnfcgsndGtzOwcqGZuqTpVrNu/28+c4bw85U?=
- =?us-ascii?Q?eSi/Nq1Ruhm+SlR7ozRprVvqGklAUluzHO9wwqy+QRjWkyFc2t49WPk/5eFj?=
- =?us-ascii?Q?W323DpZdp7fzTsQ2KSWVpNc7JRWyk4OGX1pZtV2chPXBk0AGqWuBwXLoRfQ1?=
- =?us-ascii?Q?sp8u4Rash2P7gJmtnSBKwXXHH8eOucqqIs7/nLF5?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e32957f-dd95-4fc8-2a14-08ddfc4dd8db
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Sep 2025 16:09:04.1162
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2E6zN+toeu8gzbR3c6ORqdXqPytG5udOfAD2y962hc34iRhTRXYQehzacBBr+YjJx7XpmuygaOnm9yKagBQRgQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8490
+Content-Disposition: inline
+In-Reply-To: <20250925-add-displayport-support-for-qcs615-platform-v6-5-419fe5963819@oss.qualcomm.com>
+X-Proofpoint-GUID: OohdrqFhQORc6itxvQZ0tv0Sqhb_7_5j
+X-Authority-Analysis: v=2.4 cv=PYXyRyhd c=1 sm=1 tr=0 ts=68d5ba07 cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=VJ1vJixsNvIt-2Mg1ysA:9 a=CjuIK1q_8ugA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI1MDE3MSBTYWx0ZWRfX8O34UuuAKljp
+ rKKgL9WwQHhlvjtblPUDt04Ffua1u7iP/zgw0vBxlXNdiTsG2zXPOpGN7grlTse12DCMHcmG3FW
+ i38RqI4zoL/Jj5/NFwQMelRo3b9gFoXwC9IokrbRGZ4GjYXkjcKaoY4W4ZWsVhPlmvhTc5HNg7g
+ xUChY5TBma5K2ytolnyzyTz09s1cM1RM6yL/IqbFmwxfzumoPcP+/EAmAgfvk2XPLi2QCDHGrPn
+ Z/JFTbPdjPIjsduHBghXsBNK3a6u2vPW7O5Ul7hSGhS3hxCfkSZ3jpY2whUPRgBKxh/kZWFGHo9
+ K3sf48nClzZYC/l0uaVuCQnX75UJyiqA5v4PZkxkJRVyP0/6pV1dORTOl501U0wXQE4AUqM6P8g
+ ZmuT+SHZByIuOUfVBVUa9StPNjQQ2g==
+X-Proofpoint-ORIG-GUID: OohdrqFhQORc6itxvQZ0tv0Sqhb_7_5j
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-25_02,2025-09-25_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 priorityscore=1501 phishscore=0 adultscore=0 impostorscore=0
+ lowpriorityscore=0 malwarescore=0 bulkscore=0 suspectscore=0 clxscore=1015
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2509250171
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_090910_737601_2F3CD42B 
-X-CRM114-Status: GOOD (  26.42  )
+X-CRM114-CacheID: sfid-20250925_145416_487186_178E1429 
+X-CRM114-Status: GOOD (  14.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -176,135 +144,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 11, 2025 at 11:49:25AM -0400, Frank Li wrote:
-> On Thu, Aug 21, 2025 at 04:15:35PM -0400, Frank Li wrote:
-> > Totally rewrite CSI part driver compared to V1.
->
-> Laurent Pinchart:
->
-> 	can you help review these patches? especial first two patches
->
-> media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
-> media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
->
-> After that, I can start do more code clean up work.
->
-> 	all of "media: staging: media: imx6-mipi-csi2 *" are trivial cleanup
-> patches.
+On Thu, Sep 25, 2025 at 03:04:51PM +0800, Xiangxu Yin wrote:
+> The original reset list only works for USB-only PHYs. USB3DP PHYs require
+> different reset names such as "dp_phy", so they need a separate list.
+> 
+> Moving reset configuration into qmp_phy_cfg allows per-PHY customization
+> without adding special-case logic in DT parsing. The legacy DT path keeps
+> using the old hardcoded list, while non-legacy paths use cfg->reset_list.
+> 
+> Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 14 +++++++++++---
+>  1 file changed, 11 insertions(+), 3 deletions(-)
 
-Laurent Pinchart and Rui Miguel Silva
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-	Do you have chance check these? especially first two patches,
 
-media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
-media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
-
-	After that, I can start do more code clean up work.
-
-best regards
-Frank Li
-
->
-> Frank
->
-> >
-> > This only includes CSI related patches.
-> >
-> > DTS part: see https://lore.kernel.org/imx/20250701-95_cam-v1-6-c5172bab387b@nxp.com/
-> > PHY part: see https://lore.kernel.org/imx/20250701-95_cam-v1-4-c5172bab387b@nxp.com/
-> > AP1302 part: see https://lore.kernel.org/imx/20250701-95_cam-v1-7-c5172bab387b@nxp.com/
-> > 	upstream: https://lore.kernel.org/imx/20250623-ap1302-v3-0-c9ca5b791494@nxp.com/
-> >
-> > First 3 patches add some common helper function to simple code and remove
-> > duplicated code in difference CSI2 drivers.
-> >
-> > Clean up stage imx6 old version csi2 driver, and prepare create common
-> > dw csi2 library for difference IP version.
-> >
-> > Move stage driver under driver/media/synosis.
-> >
-> > Create simple platform driver for common dw csi2 use case.
-> >
-> > TODO:
-> > 	1. create bus, to probe phy driver under "test_if" interface for
-> > specific phys under CSI2.
-> > 	2. support to combine phy, (which connect to both dw CSI and DSI's
-> > test_if). Need use DSI's test_if to config combo phy to switch to RX mode.
-> > and also need config RX part's phy register by use CSI's testif.
-> > 	3. move other vendor's csi driver to use this common DWC CSI
-> > library.
-> >
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > ---
-> > Changes in v3:
-> > - update binding doc
-> > - combine two add helper function's patch to one. and use media_bus_fmt_info
-> > data structure.
-> > - Link to v2: https://lore.kernel.org/r/20250808-95_cam-v2-0-4b29fa6919a7@nxp.com
-> >
-> > Changes in v2:
-> > - totally rewrite, see above section
-> > - Link to v1: https://lore.kernel.org/r/20250701-95_cam-v1-0-c5172bab387b@nxp.com
-> >
-> > ---
-> > Eugen Hristev (1):
-> >       dt-bindings: media: add DW MIPI CSI-2 Host support
-> >
-> > Frank Li (30):
-> >       media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
-> >       media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
-> >       media: staging: media: imx6-mipi-csi2: replace space with tab for alignment
-> >       media: staging: media: imx6-mipi-csi2: use devm_add_action_or_reset() to simplify code
-> >       media: staging: media: imx6-mipi-csi2: use devm_clk_bulk_get_all() to fetch clocks
-> >       media: staging: media: imx6-mipi-csi2: use devm_mutex_init() to simplify code
-> >       media: staging: media: imx6-mipi-csi2: use guard() to simplify code
-> >       media: staging: media: imx6-mipi-csi2: use register structure to match hardware
-> >       media: staging: media: imx6-mipi-csi2: use devm_platform_ioremap_resource() simplify code
-> >       media: staging: media: imx6-mipi-csi2: move probe part to imx6-csi2.c
-> >       media: staging: media: imx6-mipi-csi2: move sd imx6's specific initialization into imx6-sci2.c
-> >       media: staging: media: imx6-mipi-csi2: move csi2ipu_gasket_init() to imx6-csi2.c
-> >       media: staging: media: imx6-mipi-csi2: move number pad macro define into imx6-csi2.c
-> >       media: staging: media: imx6-mipi-csi2: move dphy init part to imx6-csi2.c
-> >       media: staging: media: imx6-mipi-csi2: use runtime_pm frame to control clks
-> >       media: synopsys: move imx6-mipi-csi2.c to synopsys/mipi-csi2.c
-> >       media: synopsys: csi2: Remove deprecated s_stream and use v4l2_subdev_pad_ops
-> >       media: synopsys: csi2: Add phy interface support
-> >       media: synopsys: csi2: Add basic v150* version register
-> >       media: synopsys: csi2: Add irq support to record error count
-> >       media: synopsys: csi2: Handle alignment requirement for width
-> >       media: synopsys: csi2: Add register prefix to register field definitions
-> >       media: synopsys: csi2: Add need_dphy_reset in config
-> >       media: synopsys: csi2: Add default simple dw_csi2_subdev_init_state
-> >       media: synopsys: csi2: Add v150 lane stop state register bit define
-> >       media: synopsys: csi2: use standard v4l2_subdev_get_fmt() function
-> >       media: synopsys: csi2: Add customize get_frame_desc() callback
-> >       media: synopsys: csi2: Add Image Pixel Interface (IPI) support for v150
-> >       media: synopsys: csi2: Remove source pad connected check at dw_csi2_enable_streams()
-> >       media: synopsys: csi2: Add simple synopsys platform driver
-> >
-> >  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     |  151 +++
-> >  MAINTAINERS                                        |    1 +
-> >  drivers/media/platform/synopsys/Kconfig            |   20 +
-> >  drivers/media/platform/synopsys/Makefile           |    3 +
-> >  drivers/media/platform/synopsys/mipi-csi2-simple.c |   75 ++
-> >  drivers/media/platform/synopsys/mipi-csi2.c        | 1260 ++++++++++++++++++++
-> >  drivers/media/v4l2-core/v4l2-common.c              |  149 +++
-> >  drivers/staging/media/imx/Kconfig                  |    1 +
-> >  drivers/staging/media/imx/Makefile                 |    2 +-
-> >  drivers/staging/media/imx/imx6-csi2.c              |  181 +++
-> >  drivers/staging/media/imx/imx6-mipi-csi2.c         |  846 -------------
-> >  include/media/dw-mipi-csi2.h                       |  120 ++
-> >  include/media/mipi-csi2.h                          |   30 +
-> >  include/media/v4l2-common.h                        |   30 +
-> >  14 files changed, 2022 insertions(+), 847 deletions(-)
-> > ---
-> > base-commit: ad0a162e543964443feec3a6a9395a64fe6c35c9
-> > change-id: 20250606-95_cam-b74c094ad1fb
-> >
-> > Best regards,
-> > --
-> > Frank Li <Frank.Li@nxp.com>
-> >
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
