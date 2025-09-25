@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EB82CAC5A5
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:06:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A4D7CAC5B1
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:06:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LFPOgkLHSKe3QruWrNujnNDORwzLzt4BiMPGLaIAi38=; b=RdSH9gsBGL1LYi
-	Uei2x884QdQ/DAvHwyKa8l5/tRvOS4CQIuvPIEK3ETsCSINV1kMMI5JjD3mKFnRV4lHJuyabY0Cm1
-	+kccyvGNIoE2E2bB8yPzxsPtYZ+Sh+l9KhvxnbWDgK7I2KbcN+WvBAYGQ6nj7kuZIinQ+6Mleg9MD
-	YaoutPPXC7TRaKNbolJU/MjSU4OadyebqAW60r4kyObY2Dct3LrDjp2VedMOZgv3I0zK4xUOhA1/x
-	HXZGMLTL3uANmcYo+SRXitGPRYzhF/ZjhI0EIf1oAFW+eqaCrCsvRp0owttDUVTnsDe8uWYSB6vEL
-	GuGtILeHZ1GG0ytWvOog==;
+	List-Owner; bh=X48bU4+L1T3X6DeccMbBfNvRW3hue4KBO97RJgiFhWk=; b=ofGRywefMU8gJs
+	+/GnD1YGpCNAWvl0V8YQODGHLPNZapcvfr5owHVQqr/OlnlOBBgmBYnT2yXw8yMd1nObna/v1n00n
+	S0Mdr8YpTBw2QeqYFrkAYCaIViyj1+Tr+0Sc/wUkzEb8SzyBjsbPOjY7ngkOzKMSZiAxseOmKM5vb
+	I6wfKrl+vKNUPoQlVHsEKjPmeDbv6twhC2pEvfZJPki8II5IXbuNUZ4CmGx/rqGIAjeVP6zc6/Ozw
+	M3pzwkCd/B0lvm/Hwx60yUYxp20c0f+KyuENHgnM/izxKHyJajOC+zWyi59fDPlu6iyWucbQniQyy
+	e9RhPQ9QufF8LpM4I3tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g3Q-00000006YIt-0Bfe;
-	Thu, 25 Sep 2025 07:06:12 +0000
+	id 1v1g3W-00000006YLd-1KBb;
+	Thu, 25 Sep 2025 07:06:18 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g3N-00000006YHX-2b0U
+	id 1v1g3U-00000006YKW-2lYX
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Sep 2025 07:06:10 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P0mPkS029712
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:09 GMT
+	Thu, 25 Sep 2025 07:06:17 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P0Kf62003961
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IxgE0hKaY239kxGeqZ+8x/JCG89cRYkF0bkaQ2dVCzM=; b=mFrevY6ycobFm4F3
-	AKnprbvloiBNdlfGAw6CJph+D1IOBgdWLan8NptDUin9rEm6/9B6rry8SwlTPCKw
-	cpoBPbNO4ivPkKV2tvzoXs8n+reW8hA/FShtfkMTolDVB3K5xCOYbwOGu4YTDYxz
-	brwxOn/d0Kk351N7oMMKevVB1rS0eNJ3bJpLhMEX52Ah2nRRg69TGN8cuD3499Zc
-	kTcy3ybrwGLUMhLEVJlM/lG1ibDdYidh1jUeHLNs+kaBVZRhFmwz4CBfeahQf31V
-	oco0IEJc9Pd9STaD1vbJLK2ks2QuLxK6YTrP2FO35hJyh+0ZYvXNZ6fkhnxrLpr9
-	9gmjrA==
+	lBHyWqd8iRjW0Q2gzYVRQmCW7nBgory1hKdsYJUUAsI=; b=SS7SHXn1fvLzykEc
+	0Ap2j9m9oYum/DQncO9UNXAEJD+XnI8xthQmRUxhYA8MI/G1KRyT9T5yebI7Wkg9
+	+p+eu/Qy2UCSbsJa/wV1IPn3hTm1bWxGXtB6gds2zxxgOcfA+a0tZ61AW7/3C/3E
+	QDxGceboO6T0JtHL+vM3Nje/7xq0mnPXmTp4MIIbQf1EficzJXOaCNjRrXzN6uL8
+	ckR8qAZg4uY8F1W++kctB5BJA/vxN1LgMQuY5O2YvPsIwF26lH3INn6WW1TMc8/q
+	KHxZIXWyWx0hCkgKhdqabpgPeumN67GNOLLkeGvzDLYxIq5q6X7WCbEzeNp9UIHR
+	Pyx4Kg==
 Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499n1fq141-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49bajf1nvx-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:09 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3306bae2119so299961a91.0
-        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:06:09 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:16 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-32ed9dbba55so191492a91.2
+        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:06:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758783968; x=1759388768;
+        d=1e100.net; s=20230601; t=1758783975; x=1759388775;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=IxgE0hKaY239kxGeqZ+8x/JCG89cRYkF0bkaQ2dVCzM=;
-        b=cfYY37VivshEydN1og/6Wml7b9tn/iLJpkTet71horoMNxDCBN9VjXRhmXNswFuuxV
-         odhhJ1RhdNwxr385NgaYHlgbR3XyNLghtS4Xw+mZcuLh23ChKppRVOM0QxGsS2bkxjrW
-         qgv2gMZfZOeWqw3UnY9W7uc8wq3ibLPmKfYyPmpG6yLbKBcAipnZdmKeOyYNf58hX/gK
-         xjJpTEam0xFZPX5YyyEkDqE0jRMZVbcGab6GFas+b74BVdcoibZpkD46T4U0wOuPgfWS
-         lFX/bynfUX+QzZwgpqKwH2FyWc8vX43bz4mqnyvUIPqL5i1U0rlGcyAFBMDayhFn0ua5
-         HcPg==
-X-Forwarded-Encrypted: i=1; AJvYcCWsZjAnwao3gE3tqT1SMzNkJkWq2iTGmpx8Fb1K7iaia2VPKYfxG0sJpBwc2jYB2QJyOWaugj+d/mw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwQNoCa3OO/5F1j5hyWzn5gqwarB3z9oq7nT4jXxa6+dF2VyPOu
-	fdIbqSq+rFvHhHxphuObgWwRkTc7pg1XV/98crgjqDApaEfQQ74s9IgGAjNUhjZD4wKB2WRSrTS
-	fZ4EzKedTxNQHrJVkzvurEwwcwCQKOugRLt8kKHigfs/m88UpNKskpJF8hU2mRCoQJZ0C
-X-Gm-Gg: ASbGncttvQTJPUFQL4wkM0Wkc4rhrH7W9yNg9aLXMAnRIM5c2U5xDwEMIiyDKbt51Bj
-	s4tNnWwBqefZuzid/MSNBkLdFQ7kjnhJ+ff8lUCvtf/60WR1BZvJ8LyHCsuOqAnd1f9G3fi7f8Q
-	Tzcu/y8lOow9f5qBj1qHsPiFY9LQCSQeM5Ic5pH/Jd3RsxaH4kCEmVcYV28BgdautoHKlsM6IWu
-	YNNkmqIUD1aF+29WkgkHUqkqo0Kq+jYcnrVP/GamC51faNv9U1NSH4nSbGFQYpilZfp38mMLKW8
-	ex7OAeH8QCwfmFNgi2M/AH25Xdth2gbEWJX3ESzl+gIxNWKuMWOpUI1WbrnwZ6V3qvuQnwjnSL4
-	TTLB6gVoQfx8yaCARADERCY+FseLLtmKwnSHn6PJM3k9yOaucPAC1Qf3X
-X-Received: by 2002:a17:90b:1a81:b0:32e:1213:1ec1 with SMTP id 98e67ed59e1d1-3342a2c1012mr1392356a91.3.1758783968303;
-        Thu, 25 Sep 2025 00:06:08 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFqm4vqi9INx9yrFdrRGXI6EToe4coF15uJ9HBu3jvVIDzDTGN/9Crhz4syIBdRqrXfjzrKqg==
-X-Received: by 2002:a17:90b:1a81:b0:32e:1213:1ec1 with SMTP id 98e67ed59e1d1-3342a2c1012mr1392327a91.3.1758783967897;
-        Thu, 25 Sep 2025 00:06:07 -0700 (PDT)
+        bh=lBHyWqd8iRjW0Q2gzYVRQmCW7nBgory1hKdsYJUUAsI=;
+        b=r64BfhqEozt8XIcfhNcqgTogYSoxZCTztjQogpWQhYEsymikdujJpHRkm3Es0wa/LV
+         77eMoMBGssI+10P3yiD9r+I5greJIx3q5jXcKvOzIUIjeCPe3UMHFlmXwdn3M02pfXQC
+         mAFQ5PXDVrv9OcyjQVoG2xjV7mAjUHMcSSEd1xZ6ozeDdpoj/VpcgI2DuSyONuPhr9Gz
+         UeBvD9m2OiD1+Voe0AgPq21v/0KqdNu2Zw9+l7890v2WdJgFGuZWhfmNeZxtqhHjMWIl
+         lFt/0cv+WMQ9jBar9/n88SU61P2oiniUY6FclI/+75Ke/nLrpCJ0vcdJRIg8JZAaLU2v
+         f5lg==
+X-Forwarded-Encrypted: i=1; AJvYcCV8NtAzitM/oRqjBbCWvS0aWtchLMdI1D39l5TqRQeIey3PHTqYWuhekMdZZASCLAOJQiM+lZMSMrs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzdgT8WUXYxplqAt3wlqnmdw3tWUZMpzf6XVZBI0ZWlsJlswfgw
+	8sIMumRBeG64Cm+arhLwPUZGHYn/FfUF6Ie85Hw+jYDvOxnb9HXOJYuCqC4IcvfpGZ673TIh55K
+	Q1aO6vxYUkq54rBQfuDTUMtVTzngOThCFBBSiP0j/m0SRy+FGeW1afZ3VSIKv5nEgVrIH
+X-Gm-Gg: ASbGncswpWeQsSRImaW9tqOii/1f9QV4bzNk4E6RMa3ktZLueYfcruGbiwRnIMQMO+7
+	ZLWVoD9N5CiMvThKyfhWUqxlQ4Qwiix+v8eDSSjyD3kz9yQbqtH1G5vgTDE9KLL4HoRjlS7Q0BA
+	c1kzpPuzU9/kcdxfZFOvT060DWnsfgLPeGx+c27L7y6QuGRO9cKHmbyKsrvz5QqpPF9pv1ead6N
+	BaF98K0/rLWdI0zOiU0VU2lhABn7LXP3WXXFNYECEW9KfBmH4rDs0WMQNpUeH5Q77Uufgwtu6DL
+	rmQnkHI1YGxqCM0rLUnLlCefXt+Dm1PeQ76P1MuD3v5vEi8toZY6HmYRfPy5Y8sraaRQ4zEenzB
+	tse/uqdMLzEZHTS6ErhSPw7LvV3HO1osgy4dGoLd2LX4E0poypV8JAuV5
+X-Received: by 2002:a17:90b:3891:b0:32e:1c10:74b with SMTP id 98e67ed59e1d1-3342a2c1f8cmr1565056a91.4.1758783975059;
+        Thu, 25 Sep 2025 00:06:15 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG9PP9NRgLLd7lkeJWMJjxqz7UqXV5q8QhfzEDlDV91GJHtJb969F2hLbbATzfgyQE8+9DfTw==
+X-Received: by 2002:a17:90b:3891:b0:32e:1c10:74b with SMTP id 98e67ed59e1d1-3342a2c1f8cmr1565019a91.4.1758783974615;
+        Thu, 25 Sep 2025 00:06:14 -0700 (PDT)
 Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.06.01
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.06.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Sep 2025 00:06:07 -0700 (PDT)
+        Thu, 25 Sep 2025 00:06:14 -0700 (PDT)
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Date: Thu, 25 Sep 2025 15:04:53 +0800
-Subject: [PATCH v6 07/14] phy: qcom: qmp-usbc: Move USB-only init to
- usb_power_on
+Date: Thu, 25 Sep 2025 15:04:54 +0800
+Subject: [PATCH v6 08/14] phy: qcom: qmp-usbc: Add TCSR parsing and PHY
+ mode setting
 MIME-Version: 1.0
-Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-7-419fe5963819@oss.qualcomm.com>
+Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-8-419fe5963819@oss.qualcomm.com>
 References: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
 In-Reply-To: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -106,37 +106,37 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Konrad Dybcio <konradybcio@kernel.org>,
         Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783910; l=2424;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783910; l=2826;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=2OW0hX9TF4LQlObLysgxoFrzLXkqUgu/cavYoT3SHP8=;
- b=Zt3LO6ayN2gVmBZz9fMbnffGNND2tPNJsWMfyvfI7ZhWbNlv4laRaW2taqVXBUAQuoOOJ358i
- WNh/BeOChdWDMyylnbxEoajRmPXHQasqALO3KOps5erPlBA080l0SFx
+ bh=oQp9DwFQdYQWDdvU1iDKEeRn3mcSQ7RLuxSrcgehlKo=;
+ b=Rzq0VxNC+esKB+p27CQHdyn1Ug8EFPjuJyL9kqeUF17gLpHRcSFrh6YDcOvfKUy9wHgBIeChD
+ AxWN8YO+ZkFAygzyS7hlykxV3YItns9IThiwlgZGxMb1LAihWPB/rjt
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
-X-Proofpoint-ORIG-GUID: pB3CsF_3ODHvMMPcV1ZFIf07Qad3gAHo
-X-Proofpoint-GUID: pB3CsF_3ODHvMMPcV1ZFIf07Qad3gAHo
-X-Authority-Analysis: v=2.4 cv=No/Rc9dJ c=1 sm=1 tr=0 ts=68d4e9e1 cx=c_pps
+X-Proofpoint-GUID: LAQITPBcyYgv9F4k4vSsiD-nFTs-8Gn4
+X-Authority-Analysis: v=2.4 cv=fY2ty1QF c=1 sm=1 tr=0 ts=68d4e9e8 cx=c_pps
  a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=JIg05Gv9We-wtn8mShgA:9
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=NTL_5ILWjaOn02JYBUkA:9
  a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzNyBTYWx0ZWRfX4vEw6wB7VJpf
- chzOkjh4z9YztQtz8+eeSYIY9QxkYgFP4Pe4l2JZ1E6R8VD7pVSln7HIMiGRWTeO/iM+Fbzoi4U
- drtzRkGLFvf3ws3WnxRqrvD8Ww6r/lFTMSq4PCj0BE6ma7ErATbV9juPungzvmnWKpX4gdp94xI
- j/nZu/1YWX8p7PhBDah6FSYfDrLh7fHoMM4IQA9v+EG6lvbBrngR/UqGSEAclsiho2ztSsl11u2
- nC4XIC4mMbv40lH7B3puXKn14nTOPdXIOwcgXTMHJ9H1z/QwWxSNkA3x/kWS1fVCBYnX1ToVtSu
- /L65sXQOpDarNPafSYl3GvoQCSSG137Q30LEP68l42an7mwVG2wYkGu7T129NiPyRl8HFRSDvCu
- 2Za1vTNH
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIyMDE2OCBTYWx0ZWRfX5dm37kG99921
+ 6kMAiJmZGguJGx48/3TJjlbxuO13fSV7yAMqd3tWm/tpwz0/k7qDajDG6H2tKGnunJkriziS6Ar
+ ORWnLIbAzsW5MSqVLlD9jxNfFgKlA7h3SjAYB3IBbbmm+WFh7l4VqM/l07GocU0ANUUK1WMzw6G
+ N0VHSDPUCH/0nJD105J0qMo3/Tp9cJXy8lsLlRCZKz10Xzqilw/9vCLSI5RLHj5TesWWPbFjs8A
+ Kl/nH0rMqDEqDqlBlTJIjKJFIqauP5o3JG8iG03ZqRdXbZRdBynwILIcJ3DXL6ebgZSryvkYQds
+ MYIvSMNfijwP1CWcIFU2LfW7U8TqyC0o6q/V8cn5fjJ42aKJ1aVFtxdjG23PS5Qq+KrxRZvBl5y
+ Jmdz+xU2
+X-Proofpoint-ORIG-GUID: LAQITPBcyYgv9F4k4vSsiD-nFTs-8Gn4
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-24_07,2025-09-24_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 suspectscore=0 adultscore=0 malwarescore=0
- phishscore=0 bulkscore=0 priorityscore=1501 impostorscore=0
+ suspectscore=0 malwarescore=0 spamscore=0 adultscore=0 impostorscore=0
+ phishscore=0 bulkscore=0 priorityscore=1501 clxscore=1015
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200037
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509220168
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_000609_670534_4F85067F 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20250925_000616_709149_444829FA 
+X-CRM114-Status: GOOD (  19.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,72 +153,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The current implementation programs USB-specific registers in
-qmp_usbc_com_init(), which is shared by both USB and DP modes. This
-causes unnecessary configuration when the PHY is used for DP.
-
-Move USB-only register setup from com_init to qmp_usbc_usb_power_on,
-so it runs only for USB mode.
+Extend TCSR parsing to read optional dp_phy_mode_reg and add
+qmp_usbc_set_phy_mode() to switch between USB and DP modes when
+supported.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 22 ++++++++++------------
- 1 file changed, 10 insertions(+), 12 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 7139f4dab82fd7b0d1362dddefba178465e76fa4..a971bdc3e767727e69ea07b14d9a036347d365f4 100644
+index a971bdc3e767727e69ea07b14d9a036347d365f4..fab6ccc4a5f12a4096e9a71f066f8ccec73adad2 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -30,6 +30,8 @@
- #include "phy-qcom-qmp-pcs-misc-v3.h"
+@@ -529,6 +529,12 @@ static const struct qmp_phy_cfg qcs615_usb3phy_cfg = {
+ 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
+ };
  
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
-+#define SW_PORTSELECT_VAL			BIT(0)
-+#define SW_PORTSELECT_MUX			BIT(1)
- 
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
-@@ -531,8 +533,6 @@ static int qmp_usbc_com_init(struct phy *phy)
++static void qmp_usbc_set_phy_mode(struct qmp_usbc *qmp, bool is_dp)
++{
++	if (qmp->tcsr_map && qmp->dp_phy_mode_reg)
++		regmap_write(qmp->tcsr_map, qmp->dp_phy_mode_reg, is_dp);
++}
++
+ static int qmp_usbc_com_init(struct phy *phy)
  {
  	struct qmp_usbc *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
--	void __iomem *pcs = qmp->pcs;
--	u32 val = 0;
- 	int ret;
- 
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-@@ -557,16 +557,6 @@ static int qmp_usbc_com_init(struct phy *phy)
+@@ -669,6 +675,8 @@ static int qmp_usbc_usb_enable(struct phy *phy)
  	if (ret)
- 		goto err_assert_reset;
+ 		goto out_unlock;
  
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
--
--#define SW_PORTSELECT_VAL			BIT(0)
--#define SW_PORTSELECT_MUX			BIT(1)
--	/* Use software based port select and switch on typec orientation */
--	val = SW_PORTSELECT_MUX;
--	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
--		val |= SW_PORTSELECT_VAL;
--	writel(val, qmp->pcs_misc);
--
++	qmp_usbc_set_phy_mode(qmp, false);
++
+ 	ret = qmp_usbc_usb_power_on(phy);
+ 	if (ret) {
+ 		qmp_usbc_com_exit(phy);
+@@ -1113,6 +1121,7 @@ static int qmp_usbc_typec_switch_set(struct typec_switch_dev *sw,
+ 		qmp_usbc_com_exit(qmp->usb_phy);
+ 
+ 		qmp_usbc_com_init(qmp->usb_phy);
++		qmp_usbc_set_phy_mode(qmp, false);
+ 		qmp_usbc_usb_power_on(qmp->usb_phy);
+ 	}
+ 
+@@ -1263,15 +1272,16 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
  	return 0;
+ }
  
- err_assert_reset:
-@@ -599,6 +589,14 @@ static int qmp_usbc_usb_power_on(struct phy *phy)
- 	unsigned int val;
- 	int ret;
+-static int qmp_usbc_parse_vls_clamp(struct qmp_usbc *qmp)
++static int qmp_usbc_parse_tcsr(struct qmp_usbc *qmp)
+ {
+ 	struct of_phandle_args tcsr_args;
+ 	struct device *dev = qmp->dev;
+-	int ret;
++	int ret, args_count;
  
-+	qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
+-	/*  for backwards compatibility ignore if there is no property */
+-	ret = of_parse_phandle_with_fixed_args(dev->of_node, "qcom,tcsr-reg", 1, 0,
+-					       &tcsr_args);
++	args_count = of_property_count_u32_elems(dev->of_node, "qcom,tcsr-reg");
++	args_count = args_count - 1;
++	ret = of_parse_phandle_with_fixed_args(dev->of_node, "qcom,tcsr-reg",
++					       args_count, 0, &tcsr_args);
+ 	if (ret == -ENOENT)
+ 		return 0;
+ 	else if (ret < 0)
+@@ -1284,6 +1294,9 @@ static int qmp_usbc_parse_vls_clamp(struct qmp_usbc *qmp)
+ 
+ 	qmp->vls_clamp_reg = tcsr_args.args[0];
+ 
++	if (args_count > 1)
++		qmp->dp_phy_mode_reg = tcsr_args.args[1];
 +
-+	/* Use software based port select and switch on typec orientation */
-+	val = SW_PORTSELECT_MUX;
-+	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
-+		val |= SW_PORTSELECT_VAL;
-+	writel(val, qmp->pcs_misc);
-+
- 	qmp_configure(qmp->dev, qmp->serdes, cfg->serdes_tbl,
- 		      cfg->serdes_tbl_num);
+ 	return 0;
+ }
+ 
+@@ -1319,7 +1332,7 @@ static int qmp_usbc_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = qmp_usbc_parse_vls_clamp(qmp);
++	ret = qmp_usbc_parse_tcsr(qmp);
+ 	if (ret)
+ 		return ret;
  
 
 -- 
