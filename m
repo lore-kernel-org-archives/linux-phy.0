@@ -4,139 +4,157 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDC35CAC5AA
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:07:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67B8FCAC5A5
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 08:03:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTlyronGUk3JfOZWWr2CL+VHdExv50taWxROWN92PKQ=; b=RJGZ62vyr6NUUY
-	GjootXgGIrdfOo0yt6u3YAsE/C0JhOYHfuaXCzcfBflnvqDf5SH91r3JVLSj8clDvbjW37X+9ygkw
-	Mh2BXxG8+R1kjS0xEzP1TH4bctwulBGNgyBV0kijhq4bjKm0PwvQbyMtGBUWLJi9U8bPV89u1jNiP
-	0uDJE64OIi3/VGxhAsfuRbcl/fnQvJsdQP00ZP7gmcQBRNtORljLq3RAgP06Ubj/TTia3XdJ9KU0B
-	Rauzls7F3wtaMwVRg0Lfx7JC0Cq3KaTWil9tDy0EC9Ey6AcACL+6V4OKi8PoED6piZ2/RyFGOCGWi
-	p71isnp1fTT5aTsU+fLA==;
+	List-Owner; bh=y/lqRCkJCNMZDjqPQGEnRB4I1juxH5q6rfq8rqmtM18=; b=bdxhrPHuagO9Tp
+	/vd1udnrRUJXW83YwkSR2dvFAWLNUOQ1GemmmTLHLdTnFuyKuyzmOc8f2Fw1ZT1noYXqwhq6tfSoB
+	6naWHwhjE3+c9PQXvIPeVMEdUcPHpD6xXKc9QEPaII1q1KqlfEo90JRLlG6YuMFXmifrydo7xrZPC
+	0mzvi8X2ahqX1Rt88NomnpwSF4pB33rfJaYyQ3Phnsfe/SL4Nz9QbiYsYJjtJowg06HFFWwWr8E25
+	mw+KInrTP5DlPkUf3OzwKgiBXIAtEYE1JfnAyEeNtsW2gpTBnLrHyeE01g7Ya/CGwpG3yz7qhTE/y
+	zKWN+RMZi20MEC4YNFNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g4C-00000006Yic-2DyL;
-	Thu, 25 Sep 2025 07:07:00 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v1gx1-00000006xp4-0RT6;
+	Thu, 25 Sep 2025 08:03:39 +0000
+Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1g4A-00000006YhW-1zg5
+	id 1v1gwy-00000006xle-2Zp8
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Sep 2025 07:06:59 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P1SdG3030031
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	U/ewAsdzTC0PEPN+SodRZso/2oAjrX6us73TZlYVliA=; b=mMGpCaAJo7kAEKW3
-	4Rz1d3MIekz/Se5y7db3XavqVR6R8YnFUxdyAFBqP9qIkb6cREra3l6beejY9VRR
-	O2lbD6Uf3ybNancu3Bh4hgnhI8zX5X8P/0Lw6HxObKEzn8fVEZCdAJGn6o3D8uCv
-	ejUolD7VKIFOd45nHqqRYl2hfIMVoOHjJCfsWY30uU+3022qTY3ehFa8GU6LIvy/
-	ebZSIvA0JjW3FimFhZ9JXCComSx1wFvW7dLRCeQkyh2jzQjaP1WRezUpMQPtBYJf
-	tZ8CfWI757gNu9hP9qcXRbBH/h658H4CbLMIv1IyCWmRLfoSAHkY9ZWmv9Nw5L7J
-	BoZwOw==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499n1fq180-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:06:57 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-32eddb7bad7so188857a91.3
-        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:06:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758784017; x=1759388817;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=U/ewAsdzTC0PEPN+SodRZso/2oAjrX6us73TZlYVliA=;
-        b=FpPVeSWdq2KRwdXhDLa5+whD/H7e0KWG7fX7+8JrcTm9XF72YR0tnh+MAnEHIHW/Vw
-         hFr7AEwtV06F86Lkdtj7QTpB1b2M/8zul3yRww3+qxEwamRWjv3XeHTxp0SK2rbAUEp0
-         1lJ8l3+jg1VD2viWNuhDTc0Gv076wXvEzDtl/a2dWh7cE5R0VY3ye2D1fd00uyMcUeNR
-         iKNn1zz24CG96p/AMY2ActA+caVEcuW4GwDGp4AuQmouNtMvdZzp834yQN2cmEJYSbBM
-         EHHHaL2KQRna1mLCPbI9cqqNTCI6lagjzjeLeyJTNvSVql/N/NHTP1Zy6QfWIHMYpxxH
-         589g==
-X-Forwarded-Encrypted: i=1; AJvYcCVbDHsKPigwxzkQaaf+eGy3/yytD0ugmRlIVMcl2QG5qbUesn6nM7b/DkVHtgxOJ0xc28KKuVyyuZ0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy+pgbLs8DOSWi6X1RZweF1TAaWYPESo1/ZP4MdKJe0jc2zlUYk
-	GdN7G3wvaOY0zs+K303JSufFg/bc0o9JkP8roaIn9vXA8XtTDikonvro6wKK+7TAswPX7WvHqzC
-	glEjSj/eGzD2yUYm8KG0cgnIVoizc+it0olt9ATfQ0b/X5IZXhT1Rn2jOLjTI8Ap9NN8J
-X-Gm-Gg: ASbGnctvEE312iFs8TAvrlEEVc4zOX5s9gS7AyynFoA/ZtNTP/+gQftpF2MZ68uLCPX
-	e6ZYfXMRcWT3LGZoQaZNweX9g+J9rQ1h4xDSq8LE6CzHCYLtqYausVfH1zeF5ZPMepnbA1JE36+
-	75uF6Rx9hhkiVp3Zd5+n6dic5oiZSApBlb7Ey61GHTnZeeg/ghV3iTY0NttmhZCp7wute+s3RHz
-	OwaP/IfJYg2iY7aPr0p3V2n5zvb5ioHiZakxJDSJrXzsZaIIgp25ff6LktCXAH5xbBOaUGUkIlq
-	2RfUoctvnSglQ8GlcQ8Q4vrp2LTtr6IQ5rGnIZo+MqJchw4mbgUnq2bBr9aEQGXheO/OcaJ+mBA
-	hsuUyi/urh6uqUFz5ByEYTny4z4tOYHiXS19+iMvNBREWcMJf/bC1X/O9
-X-Received: by 2002:a17:90b:1d0d:b0:330:68e3:ce7e with SMTP id 98e67ed59e1d1-3342a230ddcmr1393209a91.2.1758784017013;
-        Thu, 25 Sep 2025 00:06:57 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEydyBxQvXFLvLbGCWUVusQvnXuEZsG7rVXNdU7irf5Kov39+iOrak8phy/uzwVcIMlnzogKQ==
-X-Received: by 2002:a17:90b:1d0d:b0:330:68e3:ce7e with SMTP id 98e67ed59e1d1-3342a230ddcmr1393166a91.2.1758784016593;
-        Thu, 25 Sep 2025 00:06:56 -0700 (PDT)
-Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.06.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Sep 2025 00:06:56 -0700 (PDT)
-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Date: Thu, 25 Sep 2025 15:05:00 +0800
-Subject: [PATCH v6 14/14] drm/msm/dp: Add support for lane mapping
- configuration
+	Thu, 25 Sep 2025 08:03:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=YHWsB8gmfE7qnNxMBa0KNyjuQyeg7GjYo3brbZ0A/Sp42RVbJ+s4U2zp+GpdKbgvO9CoohzbItHJYZdJF7b/k1mfw2K66lVqp86vCN6abdFrgl2SjBhVT7ZBZAMB4Ya/D5aeb36H30xIFvp1akwirPSJdbAzoq7vHwCGaeOhfs5weshjfvWvx9olQ2+LYq6sAVi/at05gVoHyIjL5zz6sHvbyl1+9PmhnAA3IUb3grguX+ZRX8m50aCXkke/Xl72V+xedYtJh1sv8dNM1asYDKb7dveJGAyXHbbZJoiid24Sdsk26eJvMYaHJDmxEpWFk6cIJOS39D+av6KGTIGjvA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=L+ibJYiSO+3dzYGHFtbVIytsobAQN9I4xVtAB34iH4w=;
+ b=Ki3xeaq7neYl2EBq6HLfgY9CedZjl8Iy36KhVHRQ3YhGCphsUZflZha56PiDqRpxcw3Aw9znc1kAlQS6FuUy9lcTPuamqy3WoYhzaAlodaVaIkolwU40Xs9JAO9GGOas8kI+kVjuxswqJCSDMoK4oRkv79GdttauwcPHolkeQOy05ZT0KO4MNZJW6YdKWdIU1a5D/njvQad1w21sLW1t0PRGh0oVLJxOuXBuug6uBzamRlMw+nnumBh5rDcziuQ9jYF1snX+Hrsd+iJ4vOLCF3mTOpQYykTQ86GyhOeAOWQvsF4+cpaR5o/02Hs4VQMzgWpf/WmBfGHVgHNNmSQFow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=L+ibJYiSO+3dzYGHFtbVIytsobAQN9I4xVtAB34iH4w=;
+ b=eoOnHwouV6oqiINEDY+Bh6MuQ2bbOPOqabSdU4kNJ+2paK6kHCQ3BbIFdzPOBwCNQevfjVgPqVohgML9KhbzkSEdwxpZcvbti6ufO6ne9900Gjw/SYKj/E9CvAe+ZesOZZBiLCcv7k0LpMAuSlwvaFc0TxgKONEUY9Y1xAF/2lVJA5Qng20NXQeF6qHCTuqt0n/iO0qsqCBHeNTnFA2ozOA7nDQCtXqqcdVmlNuswxkBsglGqc2kMYXrgB67UjSQbxlS6iX9LAUtQ9kiSoe1XoZmeF5KLs4XNiNX65nsz3PUNVBdCHDeEiIupa69JHA4L5EOKbBZEkx+TCD2CL9idw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
+ by PA1PR04MB10400.eurprd04.prod.outlook.com (2603:10a6:102:44b::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.9; Thu, 25 Sep
+ 2025 08:03:20 +0000
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
+ 08:03:20 +0000
+Date: Thu, 25 Sep 2025 11:03:17 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Josua Mayer <josua@solid-run.com>
+Cc: Rob Herring <robh@kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Subject: Re: [PATCH v2 phy 12/16] dt-bindings: phy: lynx-28g: add compatible
+ strings per SerDes and instantiation
+Message-ID: <20250925080317.2ocgybitliwddhcf@skbuf>
+References: <20250923194445.454442-1-vladimir.oltean@nxp.com>
+ <20250923194445.454442-13-vladimir.oltean@nxp.com>
+ <20250924135429.GA1523283-robh@kernel.org>
+ <20250924154534.cyyfi2aez46iu2sw@skbuf>
+ <b18dcd60-8e14-4328-82b1-f4e5c75cfe96@solid-run.com>
+Content-Disposition: inline
+In-Reply-To: <b18dcd60-8e14-4328-82b1-f4e5c75cfe96@solid-run.com>
+X-ClientProxiedBy: VI1PR07CA0285.eurprd07.prod.outlook.com
+ (2603:10a6:800:130::13) To AM8PR04MB7779.eurprd04.prod.outlook.com
+ (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
-Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-14-419fe5963819@oss.qualcomm.com>
-References: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
-In-Reply-To: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
-        li.liu@oss.qualcomm.com,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783911; l=5055;
- i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=MBFao/DJ+AvQFYkIXOckenkzKbeQrB9uXWrKsMRXuzM=;
- b=YZKXR2CUgP470JDI7PJrgUO29J0aV1Yic0DGd9ehh5weifTEt5JJWmf+3GOoo3E2tGiGMEgMj
- 6544KOTHvvyBOCE2TTE4IquwBx+8p6+dceUEZ6AHk2AYuDxi5cPfytC
-X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
- pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
-X-Proofpoint-ORIG-GUID: ZdfiCiCw0AwZWryCh_N20Y5zvGIFGg3-
-X-Proofpoint-GUID: ZdfiCiCw0AwZWryCh_N20Y5zvGIFGg3-
-X-Authority-Analysis: v=2.4 cv=No/Rc9dJ c=1 sm=1 tr=0 ts=68d4ea12 cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=TnvzUFuqcobRuy42eWwA:9
- a=QEXdDO2ut3YA:10 a=rl5im9kqc5Lf4LNbBjHf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzNyBTYWx0ZWRfX8VuFzDvE+QJn
- cV3g6Djs3jN/5TYGjHFN5oRx+Le0Y7lZ9v6UwHxOsQ/pUUI5az3SabQP+oFmRvg0eSsCtw6GdRi
- fsGly1wccAwRkokwFkUje3ON0qry1N7ELbvCPrfqInftYUnu051zc8EzIOxjS47P8GeWkzI734V
- ZcHpcIO357/RnJ7Y/GX0TJMaSDBXsoYbaK8HztUoRzGw2xcG9jmlxfnVn11CsNL/G2LzuR9RYR9
- 9sStObXS/OHEJHft6/bYcqwS68hs0rjtlIUKa3puPFSyuzH74HfyKs1gSdktCLvk3ZMlLYQmW6u
- dEBsDHOSCfg18l1+d6yiu/i8yEvuZBrUEmYLS9jxM7WbR382tE1D8p39sZzbF9k8fuMZXl7ggLw
- nBPW6fDC
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-09-24_07,2025-09-24_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 spamscore=0 suspectscore=0 adultscore=0 malwarescore=0
- phishscore=0 bulkscore=0 priorityscore=1501 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200037
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|PA1PR04MB10400:EE_
+X-MS-Office365-Filtering-Correlation-Id: d0ba9b3d-d8f3-4d0d-7ba8-08ddfc09fdfe
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|10070799003|376014|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?T+MigAYfAu/VlU8dLcYNT2nzrWrNT8qs+JVdAZTVZmixxSBRbwIEbyc/mM?=
+ =?iso-8859-1?Q?8WJSZdGijaQ6udNnvGt45EDP4I+TU8ZuR6QKcKmmSRhhdcp/x2lOzJ0DFs?=
+ =?iso-8859-1?Q?X0v8A35PGDeIZfSKOpLA/ja3fW415Wz4h5V2Redk+JEC9XI415e5Cz4JPr?=
+ =?iso-8859-1?Q?O7z5VKGxH4d053WyYvGAP43/O56bum9VYsAgaDUKXNWvLtzd7ZjuFoScXU?=
+ =?iso-8859-1?Q?O4WPeEKB7w8+MTbCF7mEAHJg4bBRV3893LE0X4G1q0DqfKJ8bbC1p8f/FT?=
+ =?iso-8859-1?Q?rflBUFVCDt3bhGhDAO52n+S43pAMbi6wM5vQV67c0N0olY+tCglVb8bWfG?=
+ =?iso-8859-1?Q?rv5frbbjRkahjlaINUXW4sUGOJglAiy23Mug+m0R5FKXFVrfjB4Gtszabo?=
+ =?iso-8859-1?Q?t1+znEHoU4MUYePxZR9wi9OB7D/z9RjzYmP3Q1zuFPwC2E7WhUY8O+Foro?=
+ =?iso-8859-1?Q?2yjUnB4Hl8rX1qaOqls9Y8NREkKA94BnfJdriOvzW6yj1Cbasra+9IrkwQ?=
+ =?iso-8859-1?Q?Vh8GxufCMdOBEu+byjpTWfbXBFw0yRCLGiBAkSjUwcPAgo3+1yJ4SSPkQA?=
+ =?iso-8859-1?Q?fD1y1Txd5laiuWpnQzAV2RbzXSK/QuvMMihPbNy6OCD342RA8wOYgwm9WO?=
+ =?iso-8859-1?Q?SkU3iQKesDx54sUr6RB7zxw8yTXCQfZ39gJsuSiyeMjfYBq8bNj9eddQze?=
+ =?iso-8859-1?Q?cIJJizoEVJvnwZyop32B1saQhWvHyPkub8eRuDhAebmrHlNI6qhlNd33HH?=
+ =?iso-8859-1?Q?K0DlK2Bw4iX2jIaG5DJWWvw6EeaZKHZY/Yu4QV35bAj6aHoTUJDE9pi6ir?=
+ =?iso-8859-1?Q?dr/FkODHnWQNeQKgTwCGj6lqc7fvXGd9OHmAnkASL9tEyCJhIdISSbS9Ig?=
+ =?iso-8859-1?Q?FN9HMjMhGqtSqIF23uK0eyPdqkoMJVp2XUPwRs0oXbLKUjziEQIf5/tsOE?=
+ =?iso-8859-1?Q?Sz4dLps0dcMt7kwoP9f5h9q+/pDFp4PNxgBVGalbizIif5D+XzSvzvYvKr?=
+ =?iso-8859-1?Q?4Rb1IVhn225nvqoSrw/oQfgblucW2BxThr5EiLbMhZ8MqthTEQ1KDVZgtT?=
+ =?iso-8859-1?Q?5lBDadkXVSk9WGpEGEVIAQ9IJv7baBl1quXB32pdQOq4Sg4Z1/AcYA7Hly?=
+ =?iso-8859-1?Q?NzUdIbc2TpSiixIFqvY49nzy1yXCGnXsP/dGSoHsYr3t57wyvDI4Q45fSD?=
+ =?iso-8859-1?Q?Hz9dlF1uSNhdkmww5VLsH+bHcoqYewd7QinVa22DxFcdhoyAfRTylPaUF6?=
+ =?iso-8859-1?Q?gk2MJCk0m+TW7PSKpKLWtzrXTkm6xTGdnKO1m2hyLFdIPK23EnNGH2XL7j?=
+ =?iso-8859-1?Q?3xsn09wqTzXIff0MnWA6a6XhTF6dBXXpzkZZHaT5sEhClAeQ0TPJ2CXYQP?=
+ =?iso-8859-1?Q?gJD7RV4ZsVu1/hZ4nZCFLXx4Vxcqa4U37JbPgwjqq51G5qK97fS+ESgocO?=
+ =?iso-8859-1?Q?+hHMNFF1rC2hAWv/?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(10070799003)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?A9kOB/4gUulCR134VR6gKJq68oNAc15wu2IU2wc89kMfvoI5UqFEpNJ/wT?=
+ =?iso-8859-1?Q?dsT1u0b49/lmSbgB8/NRxV/NdNVwMJilOgQKmV6ppbrHLifd0P6LpOVVkQ?=
+ =?iso-8859-1?Q?GXINW35S60cAUOhTNQaMf3LDNSztkIj06XHQdiJyuf8s10qfg8TFObD07I?=
+ =?iso-8859-1?Q?TR5rGjbeskYp0X5hfXFDG/50rLC4dl1cma73AykN5x5ov2aZIKNXz1t0sA?=
+ =?iso-8859-1?Q?uDTrId4xIWh1AmugdSMM3Zcrqtcq9wO85pYJn52YsV18yXWur1aqnK6E0q?=
+ =?iso-8859-1?Q?wnBxExm3PD4OX6tivjVSV3ifaySrwJ6kBIY00StgopxNIX+GedhcMP57fE?=
+ =?iso-8859-1?Q?f7VAxcFgOP86NiWprP8k0seLFKrwXcYs6qWLTifK5S5fLIcrGon7Au1u4G?=
+ =?iso-8859-1?Q?jC2WxrVQXJX10RJoM1nHLYYr6rINlByem4ACS/at3R5KsuECOzaIHWxlzC?=
+ =?iso-8859-1?Q?6rWGXNuSiVblQNhWhooZRMIQ1DGtld71O+Gqf102yy3rLECTn10vpnks8L?=
+ =?iso-8859-1?Q?R+nDzGAskz0+vMuIUJ1lxvGx3tVFcFfK8qe4Pmd8sdNiGwrn1ElutcikML?=
+ =?iso-8859-1?Q?ThBodaxaLPNBMeXc8nX280ABmJwSV0kyROho7lERgByhbTvbapHJ6xrAFd?=
+ =?iso-8859-1?Q?pzbfd9ZiUT5wouAst1A4FdgBLL0uvqN/Rx/iWZ9/5EW0WuRlfw10iRzmiC?=
+ =?iso-8859-1?Q?ythm1NZylucClE3JmBiTJaX9wV3wzSrmxL1w71dK7gjejftIQj5hvZMRug?=
+ =?iso-8859-1?Q?f9EBntjA7bboCpKGQxcrtSZdl/jzY6wxBrwW3kK93gxJh7VbkbuL9nhxxr?=
+ =?iso-8859-1?Q?Qgm97TWgfWTuSrAMkjD+caaNeF6gmDzjWc1kSoQf2h67Y37VLyVPFF4z+o?=
+ =?iso-8859-1?Q?y3j0/KovY1/AySQsQk4KiPiHf9TTFZD960t9zdWFxqFCqaUxDP34Vsnw66?=
+ =?iso-8859-1?Q?P3VwvuR94k/LlaVG0JLfLqVN45WEDyvS1BY7daPIoKF36Sja3mlq+19xWL?=
+ =?iso-8859-1?Q?jp/lLJt8S9ZFwb6eBUWmSE/LZRHEOsnzHenhSqmmOVrotNTXyHAaOsvQ2D?=
+ =?iso-8859-1?Q?1SVd5kkIIOZXpsVxyykaESL7cP+WVwyGzuhHI0PvoYJsHIM9WsVZwvyZ3e?=
+ =?iso-8859-1?Q?UHcKka1MSXd6uFFFgSjeZiHicZV/ZhM1p0WfzHjfznR0tJHNRdcl4F5vmA?=
+ =?iso-8859-1?Q?f/FfAVPxySuPxYij/Zp2HT4anVQcCcEc0pbEyJmRdlf9InMvyllSMqKWxu?=
+ =?iso-8859-1?Q?ILm9gGD8LoqNj3pBGP7j7zPub+zJSaxNkrNx9Mk/ukfSk4IK10D9RHu8sv?=
+ =?iso-8859-1?Q?A5dgQ7MOSpLxSC/vJngkZ/PTmnCZ0M74zgmAiEJxUbF6Gt9yW+tTSO+XA9?=
+ =?iso-8859-1?Q?axJdlKtXN+PYa9jJqWgUwnx94YiJLf7MRSNFz/eEw0OFxF49ya+bnu5UZ+?=
+ =?iso-8859-1?Q?KBS52z7QIY19a+VIO/FUs6hdVknP1gu2/NjOxiGuxCUToQDBV1YKKgOGB9?=
+ =?iso-8859-1?Q?xQPACFJyTSEjYwuldx8ZNhmuZNkYwFQR5ev8BXsT0PFeSED36qpUsE/l1j?=
+ =?iso-8859-1?Q?f2oHum/QVd3mEGKc1EpfNJdWguet7s+TMvhJSFANYKthnl/9QRGZ9fgGwY?=
+ =?iso-8859-1?Q?laJ/GsCBhcGclBOsGSKv5oeSQERwc3dqXJE5mTkPiB3QNprOUOK5a0L90A?=
+ =?iso-8859-1?Q?5EYS1Ce8/2D5q9GFWEr6SR9U+vU6LKZnO6OVbtkD+YSfxDLLhWs8aK/rmo?=
+ =?iso-8859-1?Q?JCqw=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d0ba9b3d-d8f3-4d0d-7ba8-08ddfc09fdfe
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Sep 2025 08:03:20.7123
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: AEmdEGfJuZSVSCLjeJc8NjZKQmcTNr2yIRQm0NlblmDwP4r42+eNlY9ul8ISeURp70NaOjozjhUeOeaQyzNoeg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10400
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_000658_526872_F115CF60 
-X-CRM114-Status: GOOD (  21.21  )
+X-CRM114-CacheID: sfid-20250925_010336_840944_58B42368 
+X-CRM114-Status: GOOD (  31.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,148 +166,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QCS615 platform requires non-default logical-to-physical lane mapping due
-to its unique hardware routing. Unlike the standard mapping sequence
-<0 1 2 3>, QCS615 uses <3 2 0 1>, which necessitates explicit
-configuration via the data-lanes property in the device tree. This ensures
-correct signal routing between the DP controller and PHY.
+On Wed, Sep 24, 2025 at 03:56:23PM +0000, Josua Mayer wrote:
+> >> There's really no difference between having child nodes 0-7 and 8 phy =
 
-For partial definitions, fill remaining lanes with unused physical lanes
-in ascending order.
+> >> providers vs. putting 0-7 into a phy cell arg and 1 phy provider. =
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
----
- drivers/gpu/drm/msm/dp/dp_ctrl.c | 10 +++----
- drivers/gpu/drm/msm/dp/dp_link.c | 61 ++++++++++++++++++++++++++++++++++++++++
- drivers/gpu/drm/msm/dp/dp_link.h |  1 +
- 3 files changed, 67 insertions(+), 5 deletions(-)
+> >>
+> >> The only difference I see is it is more straight-forward to determine =
 
-diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-index c42fd2c17a328f6deae211c9cd57cc7416a9365a..cbcc7c2f0ffc4696749b6c43818d20853ddec069 100644
---- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
-+++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
-@@ -423,13 +423,13 @@ static void msm_dp_ctrl_config_ctrl(struct msm_dp_ctrl_private *ctrl)
- 
- static void msm_dp_ctrl_lane_mapping(struct msm_dp_ctrl_private *ctrl)
- {
--	u32 ln_0 = 0, ln_1 = 1, ln_2 = 2, ln_3 = 3; /* One-to-One mapping */
-+	u32 *lane_map = ctrl->link->lane_map;
- 	u32 ln_mapping;
- 
--	ln_mapping = ln_0 << LANE0_MAPPING_SHIFT;
--	ln_mapping |= ln_1 << LANE1_MAPPING_SHIFT;
--	ln_mapping |= ln_2 << LANE2_MAPPING_SHIFT;
--	ln_mapping |= ln_3 << LANE3_MAPPING_SHIFT;
-+	ln_mapping = lane_map[0] << LANE0_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[1] << LANE1_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[2] << LANE2_MAPPING_SHIFT;
-+	ln_mapping |= lane_map[3] << LANE3_MAPPING_SHIFT;
- 
- 	msm_dp_write_link(ctrl, REG_DP_LOGICAL2PHYSICAL_LANE_MAPPING,
- 			ln_mapping);
-diff --git a/drivers/gpu/drm/msm/dp/dp_link.c b/drivers/gpu/drm/msm/dp/dp_link.c
-index 2aeb3ecf76fab2ee6a9512b785ca5dceebfc3964..2ae78d33fffd7c49190983952ee8f5a249f2b69d 100644
---- a/drivers/gpu/drm/msm/dp/dp_link.c
-+++ b/drivers/gpu/drm/msm/dp/dp_link.c
-@@ -1236,6 +1236,62 @@ static u32 msm_dp_link_link_frequencies(struct device_node *of_node)
- 	return frequency;
- }
- 
-+/*
-+ * Always populate msm_dp_link->lane_map with 4 lanes.
-+ * - Use DTS "data-lanes" if present; otherwise fall back to default mapping.
-+ * - For partial definitions, fill remaining entries with unused lanes in
-+ *   ascending order.
-+ */
-+static int msm_dp_link_lane_map(struct device *dev, struct msm_dp_link *msm_dp_link)
-+{
-+	struct device_node *of_node = dev->of_node;
-+	struct device_node *endpoint;
-+	int cnt = msm_dp_link->max_dp_lanes;
-+	u32 tmp[DP_MAX_NUM_DP_LANES];
-+	u32 map[DP_MAX_NUM_DP_LANES] = {0, 1, 2, 3}; /* default 1:1 mapping */
-+	bool used[DP_MAX_NUM_DP_LANES] = {false};
-+	int i, ret = -EINVAL;
-+
-+	endpoint = of_graph_get_endpoint_by_regs(of_node, 1, -1);
-+	if (endpoint) {
-+		ret = of_property_read_u32_array(endpoint, "data-lanes", tmp, cnt);
-+		if (ret)
-+			dev_dbg(dev, "endpoint data-lanes read failed (ret=%d)\n", ret);
-+	}
-+
-+	if (ret) {
-+		ret = of_property_read_u32_array(of_node, "data-lanes", tmp, cnt);
-+		if (ret) {
-+			dev_info(dev, "data-lanes not defined, set to default\n");
-+			goto out;
-+		}
-+	}
-+
-+	for (i = 0; i < cnt; i++) {
-+		if (tmp[i] >= DP_MAX_NUM_DP_LANES) {
-+			dev_err(dev, "data-lanes[%d]=%u out of range\n", i, tmp[i]);
-+			return -EINVAL;
-+		}
-+		used[tmp[i]] = true;
-+		map[i] = tmp[i];
-+	}
-+
-+	/* Fill the remaining entries with unused physical lanes (ascending) */
-+	i = cnt;
-+	for (int j = 0; i < DP_MAX_NUM_DP_LANES && j < DP_MAX_NUM_DP_LANES; j++) {
-+		if (!used[j])
-+			map[i++] = j;
-+	}
-+
-+out:
-+	if (endpoint)
-+		of_node_put(endpoint);
-+
-+	dev_dbg(dev, "data-lanes count %d <%d %d %d %d>\n", cnt, map[0], map[1], map[2], map[3]);
-+	memcpy(msm_dp_link->lane_map, map, sizeof(map));
-+	return 0;
-+}
-+
- static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_link)
- {
- 	struct device_node *of_node = dev->of_node;
-@@ -1255,6 +1311,11 @@ static int msm_dp_link_parse_dt(struct device *dev, struct msm_dp_link *msm_dp_l
- 	else
- 		msm_dp_link->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
- 
-+	if (msm_dp_link_lane_map(dev, msm_dp_link)) {
-+		dev_err(dev, "failed to parse data-lanes\n");
-+		return -EINVAL;
-+	}
-+
- 	msm_dp_link->max_dp_link_rate = msm_dp_link_link_frequencies(of_node);
- 	if (!msm_dp_link->max_dp_link_rate)
- 		msm_dp_link->max_dp_link_rate = DP_LINK_RATE_HBR2;
-diff --git a/drivers/gpu/drm/msm/dp/dp_link.h b/drivers/gpu/drm/msm/dp/dp_link.h
-index 0684a962d4ec93f7da764c4af2e2154c7050329c..b1eb2de6d2a7693f17aa2f256657110af839533d 100644
---- a/drivers/gpu/drm/msm/dp/dp_link.h
-+++ b/drivers/gpu/drm/msm/dp/dp_link.h
-@@ -74,6 +74,7 @@ struct msm_dp_link {
- 	struct msm_dp_link_phy_params phy_params;
- 	struct msm_dp_link_info link_params;
- 
-+	u32 lane_map[DP_MAX_NUM_DP_LANES];
- 	u32 max_dp_lanes;
- 	u32 max_dp_link_rate;
- };
+> >> what lanes are present in the phy driver if the driver needs to know =
 
--- 
-2.34.1
+> >> that. But you can also just read all 'phys' properties in the DT with =
+a =
 
+> >> &serdes_1 phandle and determine that. Is that efficient? No, but you =
 
--- 
+> >> have to do that exactly once and probably has no measurable impact.
+> >>
+> >> With that, then can't you simply just add a more specific compatible:
+> >>
+> >> compatible =3D "fsl,lx2160a-serdes1", "fsl,lynx-28g";
+> >>
+> >> Then you maintain some compatibility.
+> >>
+> >> Rob
+> > With the patches that have been presented to you thus far -- yes, this
+> > is the correct conclusion, there is not much of a difference. But this
+> > is not all.
+> >
+> > If I want in the future to apply the properties from
+> > Documentation/devicetree/bindings/phy/transmit-amplitude.yaml to just
+> > one of the lanes, how would I do that with just 1 phy provider?
+> I believe it is possible for a driver to create multiple phy objects
+> during probe, and for the xlate function to return the correct one.
+> =
+
+> Then, whether you follow a phandle to the parent with 1 argument,
+> or a=C2=A0 phandle to the phy child with 0 arguments provides same result=
+s.
+> =
+
+> The driver already creates a phy object for each lane with:
+> =
+
+> phy =3D devm_phy_create(&pdev->dev, NULL, &lynx_28g_ops);
+> =
+
+> Once the second argument is changed to a valid lane node,
+> it's properties will be accessible.
+> =
+
+> I prototyped this a while ago:
+> https://github.com/SolidRun/lx2160a_build/blob/develop-ls-5.15.71-2.2.0/p=
+atches/linux/0030-phy-lynx-28g-add-support-for-device-tree-per-lane-ph.patch
+
+Ok, so because I did not actually try to prototype this, it seems things
+got mixed up in my head and I did not realize it would be possible to
+keep forward compatibility of old kernels with new device trees as well.
+
+Essentially, because #phy-cells =3D <1> goes into the top-level "serdes"
+node, and #phy-cells =3D <0> goes into the child "phy" per-lane nodes, it
+becomes possible to superimpose the legacy and the modern bindings onto
+the same structure, and have compatible =3D "fsl,lx2160a-serdes1", "fsl,lyn=
+x-28g"
+so that each kernel revision picks its own format in a way that doesn't
+bother the other.
+
+Because I do care about use cases such as bisections with the same (latest)
+device tree blob, I can take this as an action item for v3 and keep bug
+compatibility with "fsl,lynx-28g". What I said here:
+https://lore.kernel.org/lkml/20250908093709.owcha6ypm5lqqdwz@skbuf/
+about "fsl,lynx-28g" being unable to reject unsupported protocols on
+SerDes #2 remains valid, but on the premise that it hasn't been a
+practical problem for the current mainline users, it seems to not matter
+regarding this decision.
+
+For the next revision I will allow "fsl,lynx-28g" as a fallback
+compatible for SerDes #1 and #2, but not #3 (i.e. the current mainline
+users, but not more), and #phy-cells =3D <1> will be allowed to be present
+in the top-level SerDes node only if "compatible" contains "fsl,lynx-28g".
+Otherwise, we need to have #phy-cells =3D <0> in child "phy" nodes.
+
+Is that ok with everyone?
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
