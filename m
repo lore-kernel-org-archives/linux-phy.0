@@ -4,63 +4,162 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFCAFCAC5A5
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 13:05:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A951CAC5A7
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 16:09:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dr5EKn0PQre8w1VvC+X49cfWgvVoc5PcW1O4kbtNdws=; b=Och0nIZSR0Uvuv
-	Q/AwfGCnv3PNCwEK71K7SUByGIs8+q/eG0UKKRhFRBGY5lOcX+vh0mkaiesIpAUVVDD7pBYhBl6YS
-	fNpHQmig81DdQtuq/IUBym1phwVpwWtkmZSw0h/xJ2pXi5tuTTgXnWUbfZUTsIN8ElJ1IPFX2dUBw
-	JPbVX2mbCPJpBmJ2mwwjrfqmFPMRflFbpPgmQsAhUBJq+C9MLi2H5Uw3d+7ca5roSArOjWRfkyJP+
-	Yugy9SaB1i81Jabzy1+fcFhJQqA5xcSUqXLk9NgOPGrkuGmodH5/sojHKQ0Peg6qZzxcYIpS59h6y
-	TncApVBB8JEp1Vvua+GA==;
+	List-Owner; bh=C4zbJY2X/Fj365Eig7kWAyVarXY6C+FErohagcbTd/c=; b=XE4F1GJ2d0a6ae
+	onWFPkziAs+5fB3WHkXRfTto4bxBI+JthlBiJRvcu1Vp8sqPxkDK26lgksH8NXBP7yyF4dMBebSP3
+	Cvd1p3Tqsecac2FgNVM3Lp642EHN1JJYuAOkMvxbpAdWnnjZr7MkaBukrnhGY0t1PPXaZxOAKhroS
+	Q66axbWBAOm6hOBQ9TyzHyw4PCcndKA2A0fpDNhEGx0Mvf4dDzPmxygeQ/6OsZyUjuxgLAt7d1RQa
+	5skkL4MhkHsZPwyg/4v15pyAvW62RYLxjEiC4EIk28hDPiwB7UrcgRiAvG8f5UDbP/uPE3KeizcM8
+	G+G3SeqBjIX9F8N8wUgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1les-00000009E9Q-1IxS;
-	Thu, 25 Sep 2025 13:05:14 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1v1oWv-0000000AzIZ-3zeW;
+	Thu, 25 Sep 2025 16:09:13 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1leq-00000009E8Y-2p8l
-	for linux-phy@lists.infradead.org;
-	Thu, 25 Sep 2025 13:05:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1E1C960387;
-	Thu, 25 Sep 2025 13:05:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A0075C4CEF0;
-	Thu, 25 Sep 2025 13:05:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758805511;
-	bh=tBH6b/012H4Tj3wKXmB4ra2XVLYC8PL8Cd50q+FllFY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lKgCikrbATt1bRGTTX39ZjdL0+5WywwS0FCeUS8sm1FJVn3Cbskm8B++rV/M8Uw+1
-	 cTB1mnZ9883WWFoU9+1KS2yRBMcfIANsnI331ZlHPxq+6eO48CbTPc2poK9h0fxxtG
-	 wamLElqify2KdQBYUTZIaJpdpgCXE3/VbAcDIyKVM3Ahs2+rdOfF0BfGjoA9SeE0uo
-	 SM6deBCAMmHDL28Kyt1e2cS4zoF87NT5iNMbU8wLwwW17xPgg4VPLSA5VvpGwXbx2M
-	 TliN8NPDOjStbnrovbqsATLb3U+TgGBodmTzBvVnaoC08AWaX/X6fn8Tot6RaoLNMJ
-	 aIyDXyZaHCO5g==
-Date: Thu, 25 Sep 2025 08:05:10 -0500
-From: Rob Herring <robh@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Josua Mayer <josua@solid-run.com>, linux-kernel@vger.kernel.org,
+	id 1v1oWs-0000000AzGH-2GYN;
+	Thu, 25 Sep 2025 16:09:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=hP6a+oWEcVfdPIsL0+J7VcXtMEG8SnSXFbRZtcX3Bdjr4rK9gtMNCRa85ciGl9HmZq0jE9Du5Sy6MeaPqI1X+XjlhhTOoaPTid4UeOXjA2NRR3SZZwKgBK7Dtzp2E7VEauIzH/d+rerBhpGigll9PH8+6OnnoUcpr9WWQtr3LNPv1q2NU5wwcgWutwNwaLLjLkeWOxpWef/TV8IH0w1y9iP8IKCOwMAfcnkISfVE5diHkf0AvObcdHD7Ut1Ev7NVYUrVYYOT2nTiMNjFVwH78HaJOuxe7GIQhsp25l/ZsONvagCcQR1KpMJkKjwzjFD0sTkvotVpAcQOMOUrHEszsg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QQ2q15VpJLLjtHLdUl39VRiYwTQLeM4uOKWOiZeOGPU=;
+ b=h+TW0ia5wBaIqR5I9GUqVP4+2gEAbpTtjAbYdEDhSkNubL7x9UIImTVcP7gwuDyEBYtYpx2ltNDxL8ZxVUsomP3O6YLOfJ+77t/y2YGofdwbTFgb70kAbcJez/0DoBIGkWmePYIvyfBiw2Cc3VNu94gu/JBrY4pmYJK45KnNqKZrxYBIVNZcq1eggRWvUfhiXr4/BXJyXNnxIWP4Lp+XvEmzcB86D0RtkX20WR0rxkz0ayTvVmp0uV+K5gcmQzAqVNk/NeVFSHdkZn4Ig4lH/IqTS17gURdu61Vv4ONwZX/KgiboX/1G0w+AI1DP4Ze/PeN60Eh5XTdcIs30S2jTQQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QQ2q15VpJLLjtHLdUl39VRiYwTQLeM4uOKWOiZeOGPU=;
+ b=YXQT20cQqZeSiT4TIXnau8QuEvp/xh/PA8zKooVJ6gR01DEi98YBjhv9EgbYOgaTmQkX0nLt2d+copXZ05pcjsay/QL+8tzzv3Tn3cLx/urT8miPSDwv4UOkliZngOLGDVlqNfWw5VIMqT3U3U1x+dgbNvFvr8lb3SOyP1SQSDgiGlWTWcIrjAGlsjYMs6Pa0MdQRg7N/s5JsZvuTF49MwhZLk9pcWO7y45ep6xHUkwkS8kFkSSgcFMWciQMso8IP+KwFX2txhjJzUd7LYg7DQs0SWmb13mpRv2zffVqIasCz8q50E3/x08wTCtk8fwUvH8fjguqPAeVhWDL4K1VgQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+ by PAXPR04MB8490.eurprd04.prod.outlook.com (2603:10a6:102:1de::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.10; Thu, 25 Sep
+ 2025 16:09:04 +0000
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
+ 16:09:04 +0000
+Date: Thu, 25 Sep 2025 12:08:54 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 phy 12/16] dt-bindings: phy: lynx-28g: add compatible
- strings per SerDes and instantiation
-Message-ID: <20250925130510.GA451343-robh@kernel.org>
-References: <20250923194445.454442-1-vladimir.oltean@nxp.com>
- <20250923194445.454442-13-vladimir.oltean@nxp.com>
- <20250924135429.GA1523283-robh@kernel.org>
- <20250924154534.cyyfi2aez46iu2sw@skbuf>
-MIME-Version: 1.0
+	Conor Dooley <conor+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
+Subject: Re: [PATCH v3 00/31] media: add imx93 mipi/controller csi support
+Message-ID: <aNVpFuCAcr9CCPNU@lizhi-Precision-Tower-5810>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <aMLvhdJRGHM+8yIH@lizhi-Precision-Tower-5810>
 Content-Disposition: inline
-In-Reply-To: <20250924154534.cyyfi2aez46iu2sw@skbuf>
+In-Reply-To: <aMLvhdJRGHM+8yIH@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: PH7PR02CA0012.namprd02.prod.outlook.com
+ (2603:10b6:510:33d::12) To PAXSPRMB0053.eurprd04.prod.outlook.com
+ (2603:10a6:102:23f::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|PAXPR04MB8490:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5e32957f-dd95-4fc8-2a14-08ddfc4dd8db
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|19092799006|1800799024|366016|376014|38350700014|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?cSugv1w1FS2zck7NZV3/IiUVDVo+4i25iMWj6PQ25O04vcdr/cxg5lxE8dvy?=
+ =?us-ascii?Q?OenKEHEGbjoMQGLSuND6Q4Hs7nCRXHmaYt5GmnejXCatE8fgVjiZZrIm4Vd9?=
+ =?us-ascii?Q?DJTtTZNZbGK+LPsIBP0QHW2K7ww8lYpVrOxUnr5P+mVcSUQGCGu+YNlZ1eHP?=
+ =?us-ascii?Q?Q7Gh8LziXcaUrgjcTlTbiYigLtzA6x9pWyq4FCMP7QcsP7dPMgrrz7KhU8RP?=
+ =?us-ascii?Q?W0FjdBsiHZZq6Up6Cxm4cdLmNjO77YCazwDvPRiwgYT4ppwHrvlcxMqqGs/k?=
+ =?us-ascii?Q?xAWByxaCpRvcBGXtiWIsIRbWVIJft+qQkPK7xVbGNks+igvnADek3+sHdyRj?=
+ =?us-ascii?Q?JeSOkUiwHMOA25DIWTRFXgm/DssXy2RGMwkEFgVsYV5bk0UJGXSEyLzcmgBC?=
+ =?us-ascii?Q?U2z4zmvngr3H5yni+UvXZ7KRntkVLmWC/Fccl16ennpGbCZoc+SSLQUWHcL8?=
+ =?us-ascii?Q?69Rf8Yz+nHCr+8ZWLYkSLtZXCec2jR2C8G3UFkgkS4NLWjj/TvX52JKBRZcg?=
+ =?us-ascii?Q?yFFq+HcxXQouk7CGWTnwDghPIhS/OA5ERliGXNDhg4oRSa37sva28Et8N4Ov?=
+ =?us-ascii?Q?LFVM08aKOL+nHiUzG+OXAYkk3NZgS5P/Dh4gze9KOKQkeAWuQMIaw7GFHp5z?=
+ =?us-ascii?Q?HyU7wtxsg45ntoXPOcjwLE2+qbz0u/Cbz4PyRK+xu1Y0Ym9JTMCuVISpAZv0?=
+ =?us-ascii?Q?v7Q3x/SkpivoPkOivdWvT3ryfKQp7LAlGG50xLffXDfaa41sQu+XfBBORMze?=
+ =?us-ascii?Q?fCdMO4cbNN23eKTCpG3Tx6WgzbioqzmjqjZQr4no/EyJJrH/63VvZOoQmP8p?=
+ =?us-ascii?Q?5Ioyb2U/g96DnjsVkM92zA9zQ3SOTD+FzpmyPtaOiZ0BQ+Pl1BhRLzFXQvs/?=
+ =?us-ascii?Q?TyHXSA49EpfB9YPAlxUpZzaYpuURTCU2ZJ53nt2JDHXO4y+Xl/Clksfj7+KQ?=
+ =?us-ascii?Q?UdTtGVi+CVrcm1K4oXNA6+Tc52WXsLsVP+/MnCDmn+9EedEcYwf6rhEauEdf?=
+ =?us-ascii?Q?hvs+QT9g5VtNNcJ6VzSR3TO198iarAXaSfLtUltE3t99UwdzynOrYcvy9UKi?=
+ =?us-ascii?Q?BMX8FDbcGlFKR0jwfvaHR/+UtCRnOr3Z0h33H6XfKQCHCiH3NUtXu0JQySD7?=
+ =?us-ascii?Q?gq7g3aHKTIj4ynWp2IfpOlcFO93sWdTeUqIu9WDzdSsG2MrT1jrJwiPqAiGo?=
+ =?us-ascii?Q?IcZVXwuNpTBS4kTBa6SkSRpZrWnyIlufoVp8R5CHJaAhNSN/aKsSPr2Aen+e?=
+ =?us-ascii?Q?FCoTB62QPEXAX3K2Qm9t97sfQCdN7o9mhSpyar6Vu4JPr13DXqlq9EbopZ2D?=
+ =?us-ascii?Q?e25k4MndZh2QNR8O1o4nsliLFh8ltLbPUHmpi3cg86q+AlTe1AVZn48Htleq?=
+ =?us-ascii?Q?oJN1RGv2bXg+b9dUolWmfDX4+NQLXa+FFA/I48tyFaByW1US7wxJ54Npjn0P?=
+ =?us-ascii?Q?bVbVBeabgI2EH1GxRjpPAV3ruf0Jn3dD?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(19092799006)(1800799024)(366016)(376014)(38350700014)(921020);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?JqniFAIIde5OASFiCQ8PMD1HQDMC0lbKbvoOoHu1zJRmKgHrUQPFEADuPMbD?=
+ =?us-ascii?Q?XqH+iKCMDbt/5Ztpb5cw3HUMvoVaTAO698y8+hm0zBFH4v5A2ZEHSZVWDdMV?=
+ =?us-ascii?Q?jyDNRyxpT7eIqx94MuA1Hl3TcUum9s2z0bL7zVailBUIGawMty3KlVLJZNHN?=
+ =?us-ascii?Q?v7FWrBQ9/z90bPhwUwexceLzDIunidqWrVseTM+J9bcaZFcLGe1Qv3NbWvYl?=
+ =?us-ascii?Q?v7DlVN+0ew+FvL2qh/Dj0MjxsFAL02TxK1p5JISWy1iPbd2Jx8J3zue4gUk+?=
+ =?us-ascii?Q?vX2iEr5alluq1EgRQfeT9m6DYLBYVvJoD20GrQDQW1Hg89tQbzyFt1rrPCvm?=
+ =?us-ascii?Q?oEvf2tywIIq9S/zNJ7Xc/VF7mFLg/XVxI/fG/OJP3eRXO56If36OqvpTebvt?=
+ =?us-ascii?Q?P/SuGcGPsuw+yZrm0gHRlebYc9Ye2z8jpqdAAxe7MYE1t1hVcCaDyAlhTWZ0?=
+ =?us-ascii?Q?DKYifFx3UI+bwyHVJ83xqM4zAZV/HYzpII4mfWxIH1A+04pQlFLo7AXt1HRZ?=
+ =?us-ascii?Q?LKFq+Cz4030w4PtUpWp7N99NnRWn9B5T66/v3GiYgDaMvOx19pm85VPoK9q5?=
+ =?us-ascii?Q?va1Dv9Mb7uR1SL6kLtLXGEyP1btqG6SBQ6M6dmM79pH0Q5HGjunGlsWkgdQA?=
+ =?us-ascii?Q?h2NsSP7u8v/xBNLTF6elwJCPadOMjb/Unz+R+gTCwmqUoO7wnESq+vMe7zaQ?=
+ =?us-ascii?Q?7lx5RaktP6KouNs4TyS1sv5+BDvo4bkFrX6fD2xKN6/fr1ByknwKNJUmCka7?=
+ =?us-ascii?Q?nMXMC+o+RRBlK1mFu9C8jZhiBVwTLR8JZGCck3hx63gIyzYTZjucm0V8vPL+?=
+ =?us-ascii?Q?3SqkG4tMqgMTD0q9HxsiSjGvnxxEDxcH9k+0ygqaDj/BCXmCWerJprbOkRr4?=
+ =?us-ascii?Q?veWD7paVxSThwZHF3rawGaKu22Twt/lQZg3xyczYo/DmIvc6pshLLpdvIJSf?=
+ =?us-ascii?Q?7FOp8Jcyi7BZSCrV/frObLo+WZp6Gi/my65+h8l4u+DKdVJhoBaswOgAEZqt?=
+ =?us-ascii?Q?GPFi23RVEdIP8ny1adhd6kDw3vAupId/SrcJ6cBT8a/qR3gXrWg1mMnbkbTb?=
+ =?us-ascii?Q?hn9iRKTh3XSkM6IGylVjl6A0Nzg4M5vcHWxYYXGxcMAWB6dC8pa8xzfnl8RP?=
+ =?us-ascii?Q?mXGCInvwo0PTTg09p5GK14EMH4xeBY2kjskWZ/bpLKcDbFwrYkzRCfSuaRkE?=
+ =?us-ascii?Q?cfBaNT2eNlVzm7obJnsb37E6McQRICOi/VQ9NL3PxM44O+1qMmaSS9i8d7Ab?=
+ =?us-ascii?Q?S+foA9GJypl/LBrPGg5PEJRwcwzyLP+jRGBtSL6SS8a0obTexlvgvUWhFgLp?=
+ =?us-ascii?Q?TH6WmgCygjJJEbg5gMVe8djRhmCauB7oZNvutf3d3zYsQtjkCOxZQgO6/nda?=
+ =?us-ascii?Q?9N0HSSVqEuXum5XTsPUABjU8xnfcgsndGtzOwcqGZuqTpVrNu/28+c4bw85U?=
+ =?us-ascii?Q?eSi/Nq1Ruhm+SlR7ozRprVvqGklAUluzHO9wwqy+QRjWkyFc2t49WPk/5eFj?=
+ =?us-ascii?Q?W323DpZdp7fzTsQ2KSWVpNc7JRWyk4OGX1pZtV2chPXBk0AGqWuBwXLoRfQ1?=
+ =?us-ascii?Q?sp8u4Rash2P7gJmtnSBKwXXHH8eOucqqIs7/nLF5?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e32957f-dd95-4fc8-2a14-08ddfc4dd8db
+X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Sep 2025 16:09:04.1162
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2E6zN+toeu8gzbR3c6ORqdXqPytG5udOfAD2y962hc34iRhTRXYQehzacBBr+YjJx7XpmuygaOnm9yKagBQRgQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8490
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250925_090910_737601_2F3CD42B 
+X-CRM114-Status: GOOD (  26.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,108 +176,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 24, 2025 at 06:45:34PM +0300, Vladimir Oltean wrote:
-> Hi Rob,
-> 
-> On Wed, Sep 24, 2025 at 08:54:29AM -0500, Rob Herring wrote:
-> > > +description: |
-> > 
-> > Don't need '|' if no formatting to preserve.
-> 
-> Thanks, will drop.
-> 
-> > > +  "#address-cells":
-> > > +    const: 1
-> > > +    description: "Address cells for child lane nodes"
-> > 
-> > You don't need generic descriptions of common properties.
-> 
-> Ok, I'll also drop the description from #size-cells but keep it in
-> #phy-cells (less obvious).
-> 
-> > > +
-> > > +  "#size-cells":
-> > > +    const: 0
-> > > +    description: "Size cells for child lane nodes"
-> > > +
-> > >    "#phy-cells":
-> > > +    description: "Number of cells in PHY specifier (legacy binding only)"
-> > >      const: 1
-> > >  
-> > > @@ -32,9 +124,51 @@ examples:
-> > >      soc {
-> > >        #address-cells = <2>;
-> > >        #size-cells = <2>;
-> > > -      serdes_1: phy@1ea0000 {
-> > > -        compatible = "fsl,lynx-28g";
-> > > +
-> > > +      serdes_1: serdes@1ea0000 {
-> > > +        compatible = "fsl,lx2160a-serdes1";
-> > >          reg = <0x0 0x1ea0000 0x0 0x1e30>;
-> > > -        #phy-cells = <1>;
-> > > +        #address-cells = <1>;
-> > > +        #size-cells = <0>;
-> > > +
-> > > +        phy@0 {
-> > > +          reg = <0>;
-> > > +          #phy-cells = <0>;
-> > > +        };
-> > 
-> > There's really no difference between having child nodes 0-7 and 8 phy 
-> > providers vs. putting 0-7 into a phy cell arg and 1 phy provider. 
-> > 
-> > The only difference I see is it is more straight-forward to determine 
-> > what lanes are present in the phy driver if the driver needs to know 
-> > that. But you can also just read all 'phys' properties in the DT with a 
-> > &serdes_1 phandle and determine that. Is that efficient? No, but you 
-> > have to do that exactly once and probably has no measurable impact.
-> > 
-> > With that, then can't you simply just add a more specific compatible:
-> > 
-> > compatible = "fsl,lx2160a-serdes1", "fsl,lynx-28g";
-> > 
-> > Then you maintain some compatibility.
-> > 
-> > Rob
-> 
-> With the patches that have been presented to you thus far -- yes, this
-> is the correct conclusion, there is not much of a difference. But this
-> is not all.
+On Thu, Sep 11, 2025 at 11:49:25AM -0400, Frank Li wrote:
+> On Thu, Aug 21, 2025 at 04:15:35PM -0400, Frank Li wrote:
+> > Totally rewrite CSI part driver compared to V1.
+>
+> Laurent Pinchart:
+>
+> 	can you help review these patches? especial first two patches
+>
+> media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
+> media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
+>
+> After that, I can start do more code clean up work.
+>
+> 	all of "media: staging: media: imx6-mipi-csi2 *" are trivial cleanup
+> patches.
 
-That's all I can base my conclusion on if you don't tell me more...
+Laurent Pinchart and Rui Miguel Silva
 
-> If I want in the future to apply the properties from
-> Documentation/devicetree/bindings/phy/transmit-amplitude.yaml to just
-> one of the lanes, how would I do that with just 1 phy provider? It's not
-> so clear. Compared to 8 phy providers, each with its OF node => much
-> easier to structure and to understand.
+	Do you have chance check these? especially first two patches,
 
-That's unfortunate that binding wasn't designed to support more than 
-1 instance. You could do:
+media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
+media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
 
-lane@0 {
-  reg = <0>;
-  tx-p2p-microvolt = <123>;
-};
+	After that, I can start do more code clean up work.
 
-lane@1 {
-  reg = <1>;
-  tx-p2p-microvolt = <123>;
-};
+best regards
+Frank Li
 
-Yeah, that's about what you had, but it avoids changing the cell size. 
-That should be a bit simpler to implement in the driver and to add to 
-existing DTs as a fixup (because you don't have to change 'phys' entries 
-everywhere).
-
-Another option is go to cell size of 2 and stick the voltage in a cell. 
-That approach doesn't work well if you have a 3rd, 4th, etc. cell to add 
-later for more properties.
-
-Your overlaying the old and new bindings approach works too. That 
-approach is fine with me.
-
-Rob
+>
+> Frank
+>
+> >
+> > This only includes CSI related patches.
+> >
+> > DTS part: see https://lore.kernel.org/imx/20250701-95_cam-v1-6-c5172bab387b@nxp.com/
+> > PHY part: see https://lore.kernel.org/imx/20250701-95_cam-v1-4-c5172bab387b@nxp.com/
+> > AP1302 part: see https://lore.kernel.org/imx/20250701-95_cam-v1-7-c5172bab387b@nxp.com/
+> > 	upstream: https://lore.kernel.org/imx/20250623-ap1302-v3-0-c9ca5b791494@nxp.com/
+> >
+> > First 3 patches add some common helper function to simple code and remove
+> > duplicated code in difference CSI2 drivers.
+> >
+> > Clean up stage imx6 old version csi2 driver, and prepare create common
+> > dw csi2 library for difference IP version.
+> >
+> > Move stage driver under driver/media/synosis.
+> >
+> > Create simple platform driver for common dw csi2 use case.
+> >
+> > TODO:
+> > 	1. create bus, to probe phy driver under "test_if" interface for
+> > specific phys under CSI2.
+> > 	2. support to combine phy, (which connect to both dw CSI and DSI's
+> > test_if). Need use DSI's test_if to config combo phy to switch to RX mode.
+> > and also need config RX part's phy register by use CSI's testif.
+> > 	3. move other vendor's csi driver to use this common DWC CSI
+> > library.
+> >
+> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > ---
+> > Changes in v3:
+> > - update binding doc
+> > - combine two add helper function's patch to one. and use media_bus_fmt_info
+> > data structure.
+> > - Link to v2: https://lore.kernel.org/r/20250808-95_cam-v2-0-4b29fa6919a7@nxp.com
+> >
+> > Changes in v2:
+> > - totally rewrite, see above section
+> > - Link to v1: https://lore.kernel.org/r/20250701-95_cam-v1-0-c5172bab387b@nxp.com
+> >
+> > ---
+> > Eugen Hristev (1):
+> >       dt-bindings: media: add DW MIPI CSI-2 Host support
+> >
+> > Frank Li (30):
+> >       media: v4l2-common: Add helper function v4l_get_required_align_by_bpp()
+> >       media: v4l2-common: Add helper function media_bus_fmt_to_csi2_(bpp|dt)()
+> >       media: staging: media: imx6-mipi-csi2: replace space with tab for alignment
+> >       media: staging: media: imx6-mipi-csi2: use devm_add_action_or_reset() to simplify code
+> >       media: staging: media: imx6-mipi-csi2: use devm_clk_bulk_get_all() to fetch clocks
+> >       media: staging: media: imx6-mipi-csi2: use devm_mutex_init() to simplify code
+> >       media: staging: media: imx6-mipi-csi2: use guard() to simplify code
+> >       media: staging: media: imx6-mipi-csi2: use register structure to match hardware
+> >       media: staging: media: imx6-mipi-csi2: use devm_platform_ioremap_resource() simplify code
+> >       media: staging: media: imx6-mipi-csi2: move probe part to imx6-csi2.c
+> >       media: staging: media: imx6-mipi-csi2: move sd imx6's specific initialization into imx6-sci2.c
+> >       media: staging: media: imx6-mipi-csi2: move csi2ipu_gasket_init() to imx6-csi2.c
+> >       media: staging: media: imx6-mipi-csi2: move number pad macro define into imx6-csi2.c
+> >       media: staging: media: imx6-mipi-csi2: move dphy init part to imx6-csi2.c
+> >       media: staging: media: imx6-mipi-csi2: use runtime_pm frame to control clks
+> >       media: synopsys: move imx6-mipi-csi2.c to synopsys/mipi-csi2.c
+> >       media: synopsys: csi2: Remove deprecated s_stream and use v4l2_subdev_pad_ops
+> >       media: synopsys: csi2: Add phy interface support
+> >       media: synopsys: csi2: Add basic v150* version register
+> >       media: synopsys: csi2: Add irq support to record error count
+> >       media: synopsys: csi2: Handle alignment requirement for width
+> >       media: synopsys: csi2: Add register prefix to register field definitions
+> >       media: synopsys: csi2: Add need_dphy_reset in config
+> >       media: synopsys: csi2: Add default simple dw_csi2_subdev_init_state
+> >       media: synopsys: csi2: Add v150 lane stop state register bit define
+> >       media: synopsys: csi2: use standard v4l2_subdev_get_fmt() function
+> >       media: synopsys: csi2: Add customize get_frame_desc() callback
+> >       media: synopsys: csi2: Add Image Pixel Interface (IPI) support for v150
+> >       media: synopsys: csi2: Remove source pad connected check at dw_csi2_enable_streams()
+> >       media: synopsys: csi2: Add simple synopsys platform driver
+> >
+> >  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     |  151 +++
+> >  MAINTAINERS                                        |    1 +
+> >  drivers/media/platform/synopsys/Kconfig            |   20 +
+> >  drivers/media/platform/synopsys/Makefile           |    3 +
+> >  drivers/media/platform/synopsys/mipi-csi2-simple.c |   75 ++
+> >  drivers/media/platform/synopsys/mipi-csi2.c        | 1260 ++++++++++++++++++++
+> >  drivers/media/v4l2-core/v4l2-common.c              |  149 +++
+> >  drivers/staging/media/imx/Kconfig                  |    1 +
+> >  drivers/staging/media/imx/Makefile                 |    2 +-
+> >  drivers/staging/media/imx/imx6-csi2.c              |  181 +++
+> >  drivers/staging/media/imx/imx6-mipi-csi2.c         |  846 -------------
+> >  include/media/dw-mipi-csi2.h                       |  120 ++
+> >  include/media/mipi-csi2.h                          |   30 +
+> >  include/media/v4l2-common.h                        |   30 +
+> >  14 files changed, 2022 insertions(+), 847 deletions(-)
+> > ---
+> > base-commit: ad0a162e543964443feec3a6a9395a64fe6c35c9
+> > change-id: 20250606-95_cam-b74c094ad1fb
+> >
+> > Best regards,
+> > --
+> > Frank Li <Frank.Li@nxp.com>
+> >
 
 -- 
 linux-phy mailing list
