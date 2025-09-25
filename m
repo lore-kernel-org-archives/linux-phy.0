@@ -4,157 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32E48CAC5AA
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 04:02:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8464CAC5AA
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Sep 2025 07:05:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FDB2mWdwJs6B/jNRcQZoolpd/yLz0MzsWkzS60LVlDE=; b=c+CcRZx9dZDHT0
-	fkqe3dSm+BsawPwpCWP+NArFQqml5J8GJQkuYxzTxS40JkA1YbdfFCZG4t9EKMY/jd1ftW3NFfh6u
-	AXyJvbkm7R8IxSiqERpr7gkddkm3or2ri/1ovrq5uyg/YW1lYlseHpLj3cBwkYkmnjARfjKaQUMog
-	Q7yo+wMEf9KwmANopHlxNKLTctSQqK+lFf0HpfHXZdmxXwKCSHnM6CLkOSzKoAllS5VwrVoNGI5Wm
-	fnruDXsmsewYqbYaoXEgaJINkQpyHT36+Rdm5SMI2vq5VWiBXjjyLVrCRiWPNtXbY0L9Dw+/MeAID
-	Nc7+ccKrpowVR3xhARlA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5ja2lKZJZpDACyGSALHhZ2UpRoL0FFXDiv6tpd/wZ8M=; b=JvBCYdb5ndYbh3
+	9ot5FYkT31ehiZxOga5DsZD52okRaUpxCUvoO3so8BRUg19ANT0x5+VSh0G+O4hpbWxLLIVYBkVse
+	mlc0aWAednQZrjl3yTIEnI1dn7eNtaaplA8LROAeGNI5o1WtdAdLFH8EvKGmQuHM5IiE83RT9XSqF
+	07+scyZnEtZq9KVfUv7IR2wKa4D44zZgM2nau8J85/YSy5d7maYhqNzGS5OwVJd7pahBC/eIrxErB
+	PGN388MU3TuHepLPbgRAE5KWjc4axKYlUEdDoZ81N/ABLtpci7Yccr5srPuDvLfFrNjw7CY+e0LnB
+	8KRjoagKGevR+5plZRAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dBg-00000005S1y-3xY5;
-	Thu, 25 Sep 2025 04:02:32 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dBf-00000005S1X-2tLh
-	for linux-phy@bombadil.infradead.org;
-	Thu, 25 Sep 2025 04:02:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=IVLoNqcHzjdHSJF0+cAjgbUnE3s1NqEYDp0FPp5OiX8=; b=QfVgACt1Wy/shdV7cyK8S/BdMN
-	pcONP8Nv9Go+uZtzHh0DbrwlMmsJooEXgi4CiwO+RmdLnLGQ/QJDaasnvL5mJzpG2xObrDct8e5ED
-	ASiugaIgjZPQts5LkInQcstPSQVhFKDmlWvTbM18a/kfy8Ixeuh3NOtD1WqUXVGUu7Ww3cME0BbG6
-	gpx3nYQKyau5j1IWszrBdtrjmqc6Wpwfu7HQ6CMsyup/5oTPu+/vl0nhumBsihjDb0xbl7cvvgWB+
-	AStPdpJKESJKvhxUISx5xK/RFfiiTo1O8qM4P30jUXGwxXbqSZLQnkSws9EheHUjCtQn1TspLMYeY
-	RS+d4j4Q==;
+	id 1v1g2d-00000006Xxr-2A4d;
+	Thu, 25 Sep 2025 07:05:23 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dAo-00000008uUs-08mC
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1v1g2a-00000006XwD-3zet
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Sep 2025 04:02:29 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P1Rxlx019931
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 04:01:33 GMT
+	Thu, 25 Sep 2025 07:05:22 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58P1WO8u029619
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:05:20 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IVLoNqcHzjdHSJF0+cAjgbUnE3s1NqEYDp0FPp5OiX8=; b=Pd3iiixgXSsj/gci
-	E3l4G7wAxQyNa42+rTKII4AMq+rUVNsGkBpa/g5SNNPnOf/hI1BhC7MX0Zm/dK0i
-	Xg5dPonGOJ2QBpcTTrHrbJGJRD2WQLjandGmfdUEONhh6bwc+9v9UGe+Dp2+w6Tt
-	tTY0XzEcYKzya1Ti8L21OaqMELHUkrzM95KGvQviKfIiSkXYXlGiPEb6XYa0ch5Q
-	YIs6a0SDge50q2pxK5cLXKYO9RV0x5C9FO8WTE5CpZbK92u4C5UOi7156BOgTBXz
-	oRaGhF4DEtw6Yu0ojWnFbXJYYKAWYu5IZ5Jc9px4mtpyWmwsZzVyU3bISfeVmtty
-	DE9e8g==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49bjpdyvy5-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=yZ+xuQsK8TPZF/qA5Y0n2S
+	yswG9xNhbXSlZdrQ5xB8w=; b=VwrchYiQ2Zg1sNSe93WIcnYH+sM91lNdzFPPdp
+	kVJxG7VeAfbzOmpWwaBRfJJMCwVJQnkUDPwDrdcOVIyw+dH7nC+Xh9BWQgrOPLr8
+	YaxmzGJPqaQarDjClmIHCpR39JQT3y2+LnXBN6ZlCVy6t8LGPaoejdca/oeFeT7Z
+	o+b4h5JTiflrMoFyb3ekJCCRQJX+YKJwEHs0HCMoaDD1UAhNsHMRPkEc24gsOCUw
+	RQFZ9EMA2TUOfTzh+j+RlLJajTgqRUwOxFObJEKf6vwFE3rkbjXRA2ndPdbaotHl
+	bYF1z71I9jNcT7jPrJ0TSyng3cre7Jl/nwzrs/IEksKKE/Zg==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 499n1fq0y9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 04:01:32 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4d374dd29d1so14292601cf.3
-        for <linux-phy@lists.infradead.org>; Wed, 24 Sep 2025 21:01:32 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 07:05:19 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-33085281806so200193a91.1
+        for <linux-phy@lists.infradead.org>; Thu, 25 Sep 2025 00:05:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758772891; x=1759377691;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IVLoNqcHzjdHSJF0+cAjgbUnE3s1NqEYDp0FPp5OiX8=;
-        b=JgLSUz9wwCmUozn4AbmTh3aai/GvX6gl9j3luWPvC1Y+PkS4tRs2AVzs7Ph7yr5e8A
-         Bxq7wd7HjNid9mqxKoVM7tp1p56ze/ox/hsPn2+ON3HX9eETcaJ6puYJSliyWYkk4hRx
-         Rbao8Y8830PkZYJPYsUyfhSNSSadvm9d06h3nsRSQkGb8ZrCKZUqHsdcQVyF9Mwt8kW4
-         FIWnB2evenHfkAUt8SQQS7Gvftt/WQHZ3q8f67u0c3haPX9jTomUtnOVPk/iRZ0wusj9
-         wucEfeOphs9jmKeo434umzoaRnw9QkfhXFzdzFjF9kXJ9Yqlck6tGlk0titgAsGsPvRq
-         P+QA==
-X-Forwarded-Encrypted: i=1; AJvYcCU5Mmdp73jhH7oFH5S/D7jqmrUvKgJaYsJZuH93Ck/Xn/I7uURMOh/cJTsHnc22Nq3txP1YBUDgn4o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywviym8CqeprsS3NQxxFqGSPqpIzyhKTHv6C4kdJ3izMNcfGgXj
-	O1UToTmn05XISaDPIWEkjVHK9qLOlzEh5kLUnI63AaeXFGT4hNyP1Sfm8SYzFlHA3e49/e4zCCS
-	JFBNVPpAhWQRwA1u82Y2svoJgm1usAmw8YA54z/Fwg6HnhwVic6+H/YisAzD2KLaap7Ld
-X-Gm-Gg: ASbGncu6vblAJf3ZfFLG/XGhQ/DNfv7m5WdO4xW3qKnPh+GaVg9v6I9JMzAyyVUGPnl
-	1N5/UjJqRy3DTCRWrThEaxrvhG/PASpcqV3xINw6qadJ7p3dLSryLsrfDddeJrBvl0NEd070D6B
-	TAAyvI4Qn39EAGkGt3LhkaZZg1jGgbfY2qAL7hrpHcLAAV7bXhMRRrF4HBHaLOHmelP4MZnD1Tr
-	5VG74uU/DHmijc4acD65Ad5B+ZPiohFlECudc33RAZdC8Hbc4z+3ehdowBkuPLMlHKNRFis4FJK
-	ZKiLNiH6oRVI20x20OsdIZa6YCk9+ga/0biIyDziAlZJRdJ2p9bDOykxkQvrGhORIxZfTbVu9Lp
-	/FMWJnnqs46IlaYt9qxDzXokLxOnTU1jgZ1IYQ64GbySjkpdIYyfG
-X-Received: by 2002:ac8:5949:0:b0:4d8:fb05:d12b with SMTP id d75a77b69052e-4da4744e2c2mr27729591cf.10.1758772890779;
-        Wed, 24 Sep 2025 21:01:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGZca+Iw2GZZsul8eiKgFQhtN//Wh11qIWaGFhGrwSz/NV22XiiNrfgNPym6U08AZdNqARbEg==
-X-Received: by 2002:ac8:5949:0:b0:4d8:fb05:d12b with SMTP id d75a77b69052e-4da4744e2c2mr27729001cf.10.1758772889959;
-        Wed, 24 Sep 2025 21:01:29 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-36fb4773b19sm2521751fa.13.2025.09.24.21.01.26
+        d=1e100.net; s=20230601; t=1758783919; x=1759388719;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=yZ+xuQsK8TPZF/qA5Y0n2SyswG9xNhbXSlZdrQ5xB8w=;
+        b=ZvoIiyxqxl9xTNTJ0MpEX7BwkPjY78Z7JK1w6xdzk27ovo0BT1p3ozKnz9Qx+/zVzh
+         Wcovx7x6X2g8gvPyb3BaDnUs0lKVSOMxAY5tqBWcVIlvo00KLxZssC+HdSorWTPY2IL+
+         7O0n11A9o4x/l/cGq7B7N09uPewE4DWhuFcldP6+9vs1C8Yb/rBYM6Yme7RvA17wOmLn
+         wejHPajDM8tsyIoEWTYXCnhx9G+cdO6zBLeUZxQg7xXMAtaqWsyCdW8gTRalnMz7OhfO
+         I69rSpgexIA47PxfocySo/jroW7DuxmXB8SKyD/7vZmwsDwOQUtMYnhm5f9aPEKXujWC
+         1oLQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVJFtbBql/9MYBkAgC8qtCrNYzFnMXi4e2Ko4zJI5BRW+CX6nmxRdRDvrCfUTYsT1WhZDa+HdC/VwM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyH+5BBmJDuxExprXDqFzmdPN7Xrp73syLX8wJH6JRhS07xFkSO
+	PJyzSgghlggrWjfU84QycYTDDmG1Jbq7Yg5Lyc//ulS0VOKYMZGOcKlAVwI8Bn0Z0yknC0L3o+H
+	XOZ1VrT1leRltyBChbeWjlEYwEq10UucyzIpqg1BQXSG85SPCc1xYnWTrs8ks1kNeJFQe
+X-Gm-Gg: ASbGncsRyZoAFGW0HUX71w0Srz6U+RoIyBY9h9ipdN6lsFLRt7YQT5uZccUxAkwRyvw
+	tXVMG7VmAH9Au0j4tqpA7naT7qJNS6LIuhoOxOv8dQmhLkPTaaKMo+PjSqmJiBMkneGTyyAVGBm
+	w6P/1hC7rnyqpt6pUm2BTWQdYbXvifSe8yKlRkcavmeAu5T2d3gmXqes4csu03hFUB2rapz2do9
+	GlaWK7tHPp1iMg7YqpPG0BK/GReAOPc2vbcST5uD1ikHRSWbRrivc1Qr7YzmHzdoTxWsTgl6U73
+	5GaPWHST+AWInOtXWdqV1kt7KBIa14aW5Lds7Y0XGTWlfRC9eqcLCO4YgLPrtTsZImUoEStpMRt
+	uCg5QMCNbOUZAVPY81gj0sL09dzTIYMdmscAs9GdZ+bFfQsc6JwUFriaS
+X-Received: by 2002:a17:90b:38c7:b0:32e:e18a:368d with SMTP id 98e67ed59e1d1-3342a332253mr1367420a91.8.1758783918956;
+        Thu, 25 Sep 2025 00:05:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFUbujVjnPE51nMK7rlaHLU2fKEdCZgVZSnTJAA3gW7yMsssg3WWsRWMJZqIVrdYskdNrhg0Q==
+X-Received: by 2002:a17:90b:38c7:b0:32e:e18a:368d with SMTP id 98e67ed59e1d1-3342a332253mr1367391a91.8.1758783918444;
+        Thu, 25 Sep 2025 00:05:18 -0700 (PDT)
+Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3342a2bd584sm914253a91.0.2025.09.25.00.05.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Sep 2025 21:01:27 -0700 (PDT)
-Date: Thu, 25 Sep 2025 07:01:24 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Chaoyi Chen <kernel@airkyi.com>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-        Andy Yan <andy.yan@rock-chips.com>,
-        Yubing Zhang <yubing.zhang@rock-chips.com>,
-        Frank Wang <frank.wang@rock-chips.com>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Amit Sunil Dhamne <amitsd@google.com>,
-        Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-        Diederik de Haas <didi.debian@cknow.org>,
-        Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-        linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v4 1/7] usb: typec: Add default HPD device when register
- DisplayPort altmode
-Message-ID: <6jlv47fgiq4anpflbs6agre4irf7grgvzorrk7roxwprtyuek6@edrya2syhchi>
-References: <20250922012039.323-1-kernel@airkyi.com>
- <20250922012039.323-2-kernel@airkyi.com>
- <mygbqhiom6pkwsadzz2bqf5bth3ogsbd6iku5a7r5swxrakein@fjhz7udnkcks>
- <e9cf0aa8-ed32-4ffb-a755-150742455808@rock-chips.com>
- <sgvrzhbhkzxbuybmws44kyenhfyppm3blijkarypcin4fiscvx@mnajrlmicyxi>
- <18f55fe7-7c68-4982-916d-11752325c667@rock-chips.com>
- <bh73nttewwhom2pqccfnapnfkrys3zljkykgqmh4hsdalqgyzi@gbl5oejxsp3z>
- <86753f21-1996-4b93-acca-575a193a5bb8@rock-chips.com>
+        Thu, 25 Sep 2025 00:05:18 -0700 (PDT)
+From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+Subject: [PATCH v6 00/14] Add DisplayPort support for QCS615 platform
+Date: Thu, 25 Sep 2025 15:04:46 +0800
+Message-Id: <20250925-add-displayport-support-for-qcs615-platform-v6-0-419fe5963819@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <86753f21-1996-4b93-acca-575a193a5bb8@rock-chips.com>
-X-Proofpoint-ORIG-GUID: TRaQhcAVSz15DE6DzhDnzN_X8Q52989e
-X-Authority-Analysis: v=2.4 cv=Pc//hjhd c=1 sm=1 tr=0 ts=68d4be9c cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
- a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=s8YR1HE3AAAA:8 a=nLKCdIsASqLPV_WZ6OsA:9
- a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10 a=uxP6HrT_eTzRwkO_Te1X:22
- a=jGH_LyMDp9YhSvY-UuyI:22
-X-Proofpoint-GUID: TRaQhcAVSz15DE6DzhDnzN_X8Q52989e
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIzMDAyMCBTYWx0ZWRfX8CnRSW8wPoGi
- m1na501m7biXMmC1SHjIK6DJ5kAFz0bgYh8riRLmtVOwZyvQrkAkFZdUyULGNiykrTxgQOFgH09
- 6yCGUYiDs+sM2J4XlsoD6tQh8qH+8EJ9QNpmq5aHsynToO2wgi3/grDMlPA1xS1Q2thsMlcdshm
- AKhle2Eu2LJYYne9pcdpkP7E7iOR2iXbuqlk5xvN3O/aqWI0kcxnFJvKRSD4xCmbGLwFDT9a/iZ
- 1AMgCE6a3HJmMG4E48ZerIFsRe1s1awB/dEIpUuiJ2f0WyaNf8/pymh4z2lmQhBNZDmgJugGH7i
- Np0SeC67tZgypwW1Dk4L+iuGP6bWo+yXGBZIQe/Cff0f2zhqUX7NKbQTvE9yZdqoMkpHlnEax1n
- MZksYnBk
+X-B4-Tracking: v=1; b=H4sIAJDp1GgC/5XRTW7DIBAF4KtErEsEAxjoKveousD8NEhxsMG2G
+ kW+e7Glyl00C6/QY6T3jTRPVHyOvqD30xNlP8cS072G5u2E7NXcvzyOrmYEBATRVGPjHHax9Df
+ z6FMecZn67Q0p48GWhgpcZ2ONHQ5KCaFly4RkqDb22Yf4vWkfnzVfYxlTfmz4TNff1eGUwjFnp
+ phgog1nTDnNfLgMU7Txbs82dWiVZvhtF0QCHGuH2s6h5YRJKmlQl1TKeZjMrbZ3O8F2QgE5RrB
+ K1PVbB8Jbpu0Lgu+EpvQYwSsBkkDrnKHcuxeE+EscPIOohDe+aRQNnBD4h1iW5QcZmX2OdAIAA
+ A==
+X-Change-ID: 20250919-add-displayport-support-for-qcs615-platform-f885597b3573
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        fange.zhang@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
+        li.liu@oss.qualcomm.com,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1758783908; l=5389;
+ i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
+ bh=BriQ9CGzQPqKZfWizw8gSbddYqDWtC7/j8W0uWp5qUM=;
+ b=/+juXQNfDmiteVOMuuSFk8BU/ejjFAKfyZOY1rODm2qSmgMfUlT38RitbEUoDhXbe9Ps5SJLU
+ OYw0Oe6PmpoB7t0FStYiiPmDd6G9osrC8ci0mRdv00fXYvytnIJH4Q/
+X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
+ pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
+X-Proofpoint-ORIG-GUID: 72Nj0Iwim0mHwuBk0s4xKtobtxk7pat5
+X-Proofpoint-GUID: 72Nj0Iwim0mHwuBk0s4xKtobtxk7pat5
+X-Authority-Analysis: v=2.4 cv=No/Rc9dJ c=1 sm=1 tr=0 ts=68d4e9af cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=COk6AnOGAAAA:8 a=-mfqEiHr7Cy1ujZptoQA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=rl5im9kqc5Lf4LNbBjHf:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIwMDAzNyBTYWx0ZWRfXwPb2qfeoeTsi
+ PUM0UyBINrMADupEtw6CNvfiBPYJqSJ2My7B5VAutDpN3szQKFuZo8Zo7Ht7lhmtl813pYluwVt
+ RU1+5GXppNrn17yXk2olNilGreyaOL6izO/b7/OqVlHqdOioo3LCsfe84KMEws1TW86HIifdLnM
+ 9liD/ZEdiuVt3eeN1UXr5MuPnvJp8r+udzNtuYv9m7Cc0OJpYBngh8gssqPO4kkarG0SfcFrUY2
+ 1PvzbphteHPFznrcFgtIxCgJvLXsjYsoN9WM376ohByM3ybpkRSvAvYh/M8gfqds3t4lGt56PaV
+ maH/yXEUAvuJsAi7iHaeqHWJDxMkBj8LFNTJQkrCp8VBJZdMZhXOvR0Hupx7AT1Z9wSk2lCwCm9
+ aGoEJaL6
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-24_07,2025-09-24_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 bulkscore=0 malwarescore=0 impostorscore=0
- spamscore=0 suspectscore=0 clxscore=1015 adultscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2509230020
+ clxscore=1015 spamscore=0 suspectscore=0 adultscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 priorityscore=1501 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509200037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_050157_799184_CC3AC15E 
-X-CRM114-Status: GOOD (  58.29  )
+X-CRM114-CacheID: sfid-20250925_000520_999583_B4A1CD99 
+X-CRM114-Status: GOOD (  16.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,238 +152,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 24, 2025 at 05:55:39PM +0800, Chaoyi Chen wrote:
-> On 9/23/2025 6:40 PM, Dmitry Baryshkov wrote:
-> =
-
-> > On Tue, Sep 23, 2025 at 05:07:25PM +0800, Chaoyi Chen wrote:
-> > > On 9/23/2025 11:11 AM, Dmitry Baryshkov wrote:
-> > > =
-
-> > > > On Tue, Sep 23, 2025 at 09:34:39AM +0800, Chaoyi Chen wrote:
-> > > > > On 9/23/2025 9:10 AM, Dmitry Baryshkov wrote:
-> > > > > =
-
-> > > > > > On Mon, Sep 22, 2025 at 09:20:33AM +0800, Chaoyi Chen wrote:
-> > > > > > > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > > > > > > =
-
-> > > > > > > Add default DRM AUX HPD bridge device when register DisplayPo=
-rt
-> > > > > > > altmode. That makes it redundant for each Type-C driver to im=
-plement
-> > > > > > > a similar registration process in embedded scenarios.
-> > > > > > > =
-
-> > > > > > > Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > > > > > > ---
-> > > > > > >     drivers/usb/typec/altmodes/displayport.c | 27 +++++++++++=
-+++++++++++++
-> > > > > > >     drivers/usb/typec/altmodes/displayport.h |  2 ++
-> > > > > > >     drivers/usb/typec/class.c                |  8 +++++++
-> > > > > > >     include/linux/usb/typec_altmode.h        |  2 ++
-> > > > > > >     4 files changed, 39 insertions(+)
-> > > > > > > =
-
-> > > > > > > diff --git a/drivers/usb/typec/altmodes/displayport.c b/drive=
-rs/usb/typec/altmodes/displayport.c
-> > > > > > > index 1dcb77faf85d..e026dc6e5430 100644
-> > > > > > > --- a/drivers/usb/typec/altmodes/displayport.c
-> > > > > > > +++ b/drivers/usb/typec/altmodes/displayport.c
-> > > > > > > @@ -14,6 +14,7 @@
-> > > > > > >     #include <linux/property.h>
-> > > > > > >     #include <linux/usb/pd_vdo.h>
-> > > > > > >     #include <linux/usb/typec_dp.h>
-> > > > > > > +#include <drm/bridge/aux-bridge.h>
-> > > > > > >     #include <drm/drm_connector.h>
-> > > > > > >     #include "displayport.h"
-> > > > > > > @@ -182,6 +183,10 @@ static int dp_altmode_status_update(stru=
-ct dp_altmode *dp)
-> > > > > > >     				dp->pending_irq_hpd =3D true;
-> > > > > > >     		}
-> > > > > > >     	} else {
-> > > > > > > +		if (dp->port->hpd_dev)
-> > > > > > > +			drm_aux_hpd_bridge_notify(dp->port->hpd_dev,
-> > > > > > > +						  hpd ? connector_status_connected :
-> > > > > > > +							connector_status_disconnected);
-> > > > > > There should be no need for these calls. Once the HPD bridge is=
- added to
-> > > > > > a correct fwnode, the drm_connector_oob_hotplug_event() calls s=
-hould
-> > > > > > deliver the signal as expected.
-> > > > > It seems that only drm_bridge_connector can do this. I'm not sure=
- if I remember correctly. I'll give it a try.
-> > > > Other connectors can implement the .oob_hotplug_event call. Calling
-> > > > drm_bridge_hpd_notify() also depends on the connector setting the
-> > > > callbacks via drm_bridge_hpd_enable(), a step which is done by only=
- a
-> > > > few drivers.
-> > > Hmm, let's go over this again. First, drm_connector_oob_hotplug_event=
-() requires a connector fwnode.
-> > > =
-
-> > > On the Qualcomm platforms, the fwnode corresponds to the USB-C contro=
-ller device node, so
-> > > =
-
-> > > drm_connector_oob_hotplug_event(dp->connector_fwnode, ..) can handle =
-them directly.
-> > > =
-
-> > > But our platform doesn't use the USB-C controller device node as drm =
-connector fwnode :(
-> > This sounds like an issue to be fixed. Alternative option would be make
-> > the AltMode code find your fwnode and report OOB events against it.
-> > But... I reallly think that using connector's fwnode is the cleanest
-> > solution. In the end, your final 'display' connector is the USB-C
-> > connector present on the board. If your display has a USB-C connector,
-> > that will be the socket that gets the cable from the display, etc.
-> > =
-
-> > > So I use drm_dp_hpd_bridge_register() and drm_aux_hpd_bridge_notify()=
- here, I think it just create a simple hpd bridge to bridge_list.
-> > > =
-
-> > > But drm_connector_oob_hotplug_event() use connector_list instead of b=
-ridge_list.
-> > The OOB interface was created by x86 people, but we successfully reused
-> > it. I think that addign drm_bridge_hpd_notify() calls just duplicates
-> > the effort unnecessarily.
-> =
-
-> Yes, that commit comment said,=A0 "It was proposed to add the displayport=
- OF property to the DT bindings, but it was rejected in favor of properly d=
-escribing the electrical signal path using of_graph."
-> =
-
-> But in the embedded case, we don't seem to have the opportunity to descri=
-be this kind of of_graph relationship between drm connector and usb connect=
-or in usb-connector.yaml. On the Qualcomm platform, the DRM connector fwnod=
-e to correspond to the USB-C controller, which is a clean solution.
-> =
-
-> However, on our platform we are using external USB-C controllers. In v4 a=
-nd the previous versions, I focused on directly linking the USB-C controlle=
-r with the DP controller. Referring to your suggest in [0], I think maybe t=
-his can be achieved with the help of the drm bridge chain. Assuming the bri=
-dge chain is like this:
-> =
-
-> =
-
-> Other birdges ... ->PHY drm aux hpd bridge -> CDN-DP bridge -> DP to HDMI=
- bridge or other bridge or nothing...
-
-Looks good to me.
-
-> We can use drm_bridge_chain_get_first_bridge() to get first bridge. In th=
-is case, that is drm aux hpd bridge from USB-C controller device. Next, we =
-can obtain the fwnode corresponding to this bridge, and once we have it, we=
- can set the connector's fwnode to it. In this way, drm_connector_oob_hotpl=
-ug_event() can take effect.
-
-drm_bridge_chain_get_last_bridge(), yes. That's what
-drm_bridge_connector is doing. You'd need to make sure that there is a
-drm_aux_hpd_bridge() registered for the USB-C connector node (from your
-Type-C controller driver or from the altmode driver as per your patch).
-
-> =
-
-> =
-
-> Would this be a good idea? Thanks.
-> =
-
-> =
-
-> [0] https://lore.kernel.org/all/p3kgqn3euumhysckh4yyqavqv5y6any5zcrgkrcg3=
-j5a7z7cyw@lfpkla5p3put/
-> =
-
-> =
-
-> > =
-
-> > > =
-
-> > > =
-
-> > > > > > >     		drm_connector_oob_hotplug_event(dp->connector_fwnode,
-> > > > > > >     						hpd ? connector_status_connected :
-> > > > > > >     						      connector_status_disconnected);
-> > > > > > > @@ -206,6 +211,9 @@ static int dp_altmode_configured(struct d=
-p_altmode *dp)
-> > > > > > >     	 * configuration is complete to signal HPD.
-> > > > > > >     	 */
-> > > > > > >     	if (dp->pending_hpd) {
-> > > > > > > +		if (dp->port->hpd_dev)
-> > > > > > > +			drm_aux_hpd_bridge_notify(dp->port->hpd_dev,
-> > > > > > > +						  connector_status_connected);
-> > > > > > >     		drm_connector_oob_hotplug_event(dp->connector_fwnode,
-> > > > > > >     						connector_status_connected);
-> > > > > > >     		sysfs_notify(&dp->alt->dev.kobj, "displayport", "hpd");
-> > > > > > > @@ -391,6 +399,9 @@ static int dp_altmode_vdm(struct typec_al=
-tmode *alt,
-> > > > > > >     			dp->data.status =3D 0;
-> > > > > > >     			dp->data.conf =3D 0;
-> > > > > > >     			if (dp->hpd) {
-> > > > > > > +				if (dp->port->hpd_dev)
-> > > > > > > +					drm_aux_hpd_bridge_notify(dp->port->hpd_dev,
-> > > > > > > +								  connector_status_disconnected);
-> > > > > > >     				drm_connector_oob_hotplug_event(dp->connector_fwnode,
-> > > > > > >     								connector_status_disconnected);
-> > > > > > >     				dp->hpd =3D false;
-> > > > > > > @@ -751,6 +762,18 @@ static const struct attribute_group *dis=
-playport_groups[] =3D {
-> > > > > > >     	NULL,
-> > > > > > >     };
-> > > > > > > +void dp_altmode_hpd_device_register(struct typec_altmode *al=
-t)
-> > > > > > > +{
-> > > > > > > +	if (alt->svid !=3D USB_TYPEC_DP_SID)
-> > > > > > > +		return;
-> > > > > > > +
-> > > > > > > +	alt->hpd_dev =3D drm_dp_hpd_bridge_register(alt->dev.parent=
-->parent,
-> > > > > > > +						  dev_of_node(alt->dev.parent->parent));
-> > > > > > This needs at least a comment, what is dev.parent->parent. Also=
-, the
-> > > > > > of_node is not correct here. It should be a node of the connect=
-or,
-> > > > > > rather than the device itself. Consider USB-C controllers which=
- handle
-> > > > > > several USB-C connectors (e.g. UCSI). The DRM core won't be abl=
-e to
-> > > > > > identify the correct bridge.
-> > > > > I think=A0 alt.dev->parent->parent is the connector device. Am I =
-missing something?
-> > > > As I wrote, it needs a comment (in the source file). No, it's not a
-> > > > connector device, it's a USB-C controller device. There is no guara=
-ntee
-> > > > that there is a separate struct device for the USB-C connector. On
-> > > > Qualcomm platforms, the device will point to the USB-C controller (=
-TCPM
-> > > > or UCSI), which contain usb-c-connector(s) as child node(s) in DT.
-> > > Thanks for the clarification.
-> > I think it should be fine to pass the fwnode of the usb-c connector that
-> > is outside of the USB-C controller device (if that's what your platform
-> > uses). But I think this should be:
-> > - the usb-c-connector node
-> > - it should be coming from the Type-C controller driver, you can't guess
-> >    it here.
-
--- =
-
-With best wishes
-Dmitry
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhpcyBzZXJpZXMgYWltcyB0byBleHRlbmQgdGhlIFVTQi1DIFBIWSB0byBzdXBwb3J0IERQIG1v
+ZGUgYW5kIGVuYWJsZQpEaXNwbGF5UG9ydCBvbiB0aGUgUXVhbGNvbW0gUUNTNjE1IHBsYXRmb3Jt
+LgoKVGhlIGRldmljZXRyZWUgbW9kaWZpY2F0aW9uIGZvciBEaXNwbGF5UG9ydCBvbiBRQ1M2MTUg
+d2lsbCBiZSBwcm92aWRlZAppbiBhIGZ1dHVyZSBwYXRjaC4KClNpZ25lZC1vZmYtYnk6IFhpYW5n
+eHUgWWluIDx4aWFuZ3h1LnlpbkBvc3MucXVhbGNvbW0uY29tPgotLS0KQ2hhbmdlcyBpbiB2NjoK
+LSBNb3ZlIHVzYjNkcHBoeV9yZXNldF9sIGRlZmluaXRpb24gdG8gdGhlIHBhdGNoIGFkZGluZyBj
+b21wYXRpYmxlIGFuZCByZWxhdGVkIGNvbmZpZyBkYXRhLiBbRG1pdHJ5XQotIEFkZCBOT1RFIGFi
+b3V0IFNXX1BPUlRTRUxFQ1Qvb3JpZW50YXRpb24gaGFuZGxpbmcuIFtEbWl0cnldCi0gVXNlIEM5
+OS1zdHlsZSBsb29wIHZhcmlhYmxlIGRlY2xhcmF0aW9uIGluIG1zbV9kcF9saW5rX2xhbmVfbWFw
+LiBbUm9iXQotIFVwZGF0ZSBjb21taXQgbXNnIHdpdGggaXNzdWUgZGVzY3JpcHRpb24gZm9yIFsw
+NS8xNCwgMDYvMTQsIDA3LzE077yMMTIvMTRdLgotIExpbmsgdG8gdjU6IGh0dHBzOi8vbG9yZS5r
+ZXJuZWwub3JnL3IvMjAyNTA5MTktYWRkLWRpc3BsYXlwb3J0LXN1cHBvcnQtZm9yLXFjczYxNS1w
+bGF0Zm9ybS12NS0wLWVhZTY2ODFmNDAwMkBvc3MucXVhbGNvbW0uY29tCgpDaGFuZ2VzIGluIHY1
+OgotIEFkZCBuZXcgcGF0Y2ggdG8gaW50cm9kdWNlIFFTRVJERVMgdjIgQ09NL1RYUlggcmVnaXN0
+ZXIgaGVhZGVycy4KLSBSZXN0b3JlIGxlZ2FjeSByZXNldCAmIGNsb2NrIHJlZ2lzdGVyIGxvZ2lj
+LiBbRG1pdHJ5XQotIFVwZGF0ZSBwaHlfeGxhdGUoKSB0byByZXR1cm4gRVJSX1BUUigtRU5PREVW
+KSB3aGVuIGRwX3BoeSBpcyBOVUxMLiBbRG1pdHJ5XQotIFJlbmFtZSBoZWxwZXIgZnJvbSBxbXBf
+Y2hlY2tfbXV0ZXhfcGh5KCkgdG8gcW1wX3VzYmNfY2hlY2tfcGh5X3N0YXR1cygpLiBbRG1pdHJ5
+XQotIERyb3Agc3RvcmluZyBzdHJ1Y3QgZGV2aWNlICpkZXYgaW4gZHBfbGluayBhcyBpdCBpcyBv
+bmx5IHVzZWQgb25jZS4gW0RtaXRyeV0KLSBBZGQgcm9idXN0IGxhbmUgbWFwcGluZzogZGVmYXVs
+dCAxOjEsIGNvbXBsZXRlIHBhcnRpYWwgY29uZmlncy4gW0RtaXRyeV0KLSBSZW9yZ2FuaXplIHN1
+Yi1wYXRjaGVzIHY1WzA3LzE077yMIDA4LzE0LCAxMS8xNO+8jCAxMi8xNF0gYXMgc3VnZ2VzdGVk
+LgotIExpbmsgdG8gdjQ6IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI1MDkxMS1hZGQt
+ZGlzcGxheXBvcnQtc3VwcG9ydC1mb3ItcWNzNjE1LXBsYXRmb3JtLXY0LTAtMjcwMmJkZGExNGVk
+QG9zcy5xdWFsY29tbS5jb20vCgpDaGFuZ2VzIGluIHY0OgotIERyb3AgcGF0Y2ggdjNbMDEvMTQg
+JiAxMy8xNF0sIHdpbGwgc3V0Ym1pdCBuZXcgcGF0Y2hzZXRzIGJhc2VkIG1zdCBkdCBiaW5kaW5n
+IHNlcmllcy4KLSBVcGRhdGUgbWFpbnRhaW5lciBvZiBxY29tLHFjczYxNS1xbXAtdXNiM2RwLXBo
+eS55YW1sIHRvIG15c2VsZi4KLSBBZGQgbWlzc2luZyBhdXggYW5kIHBpcGUgY2xvY2tzLiBbRG1p
+dHJ5XQotIERyb3Agc2Vjb25kIFRDU1IgcGhhbmRsZTsgcmVnaXN0ZXIgb2Zmc2V0cyBhcmUgZGVz
+Y3JpYmVkIGRpcmVjdGx5LiBbRG1pdHJ5XQotIEFkZCBVU0JDIFBIWSBzZXJpZXMgcmVsYXRlZCBp
+bml0X2xvYWRfdUEgY29uZmlncy4gW0RtaXRyeV0KLSBEcm9wIHYzWzA0LzE0XSBxbXBfcGh5X3Vz
+YmNfdHlwZSBkZWZpbmUgYW5kIHVzZSBkcF9zZXJkZXMgb2Zmc2V0cyB0byBjb25maXJtIERQIGNh
+cGFiaWxpdHkgW0RtaXRyeV0KLSBSZW9yZ2FuaXplIHN1Yi1wYXRjaGVzIGFzIHN1Z2dlc3RlZC4K
+LSBMaW5rIHRvIHYzOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNTA4MjAtYWRkLWRp
+c3BsYXlwb3J0LXN1cHBvcnQtZm9yLXFjczYxNS1wbGF0Zm9ybS12My0wLWE0M2JkMjVlYzM5Y0Bv
+c3MucXVhbGNvbW0uY29tLwoKQ2hhbmdlcyBpbiB2MzoKLSBSZW5hbWVkIHFjb20scWNzNjE1LXFt
+cC1kcC1waHkueWFtbCBpbiB2MiB0byBxY29tLHFjczYxNS1xbXAtZHAtcGh5LnlhbWwgaW4gdjMg
+Zm9yIFFDUzYxNSBVU0IzK0RQIFBIWS4KLSBVcGRhdGVkIHBhdGNoIHYzWzAyLzE0XSB0byByZXZp
+c2UgYmluZGluZyB0aXRsZSwgZGVzY3JpcHRpb24sIGFuZCBwcm9wZXJ0eSBvcmRlci4gW0tyenlz
+enRvZl0KLSBVcGRhdGVkIGNvbW1pdCBtZXNzYWdlcyBpbiBwYXRjaCB2M1swMS8xNF0gYW5kIFsx
+My8xNF0gdG8gcmVmbGVjdCB0aGUgRFRTSSByZW5hbWUgYW5kIGNsYXJpZnkgY29tcGF0aWJpbGl0
+eS4gW0tyenlzenRvZl0KLSBBZGRlZCBVU0IzK0RQIG1vZGUgaW1wbGVtZW50YXRpb24gaW4gcGF0
+Y2hlcyB2MyBbMDAz4oCTMDEyXSwgb3JnYW5pemVkIGluIGxvZ2ljYWwgY2h1bmtzLiBbRG1pdHJ5
+XQotIERyb3BwZWQgcGF0Y2ggdjJbMDMvMTNdIHRvIG1haW50YWluIGZ1bGwgYmFja3dhcmQgY29t
+cGF0aWJpbGl0eSB3aXRoIFVTQkMuCi0gTGluayB0byB2MjogaHR0cHM6Ly9sb3JlLmtlcm5lbC5v
+cmcvYWxsLzIwMjUwNzIyLWFkZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2MTUtcGxhdGZv
+cm0tdjItMC00MmI0MDM3MTcxZjhAb3NzLnF1YWxjb21tLmNvbS8KCkNoYW5nZXMgaW4gdjI6Ci0g
+QWRkIG5ldyBiaW5kaW5nIHFjb20scWNzNjE1LXFtcC1kcC1waHkueWFtbCBmb3IgUUNTNjE1IHN0
+YW5kYWxvbmUgRFAKLSBTcGxpdCBEUCBQSFkgZHJpdmVyIGludG8gcGF0Y2hlcyA0LTExIGJ5IGxv
+Z2ljYWwgY2h1bmtzIFtEbWl0cnldCi0gVXBkYXRlIERQIFBIWSBjb25maWd1cmF0aW9uIGZsb3cg
+dG8gYWxpZ24gd2l0aCBRTVAgQ29tYm8gUEhZIGltcGxlbWVudGF0aW9uIFtEbWl0cnldCi0gVXBk
+YXRlIGFsbCBoZXggdmFsdWVzIHRvIGxvd2VyY2FzZSBbRG1pdHJ5XQotIFJlbW92ZSByZWR1bmRh
+bnQgY29tbWVudHMgaW4gRFAgUEhZIGRyaXZlciBbS3J6eXN6dG9mXQotIFJlbW92ZSBpbnZhbGlk
+IFVTQkMgdHlwZSBkZWZpbmUgW0RtaXRyeV0KLSBNb3ZlIGxhbmVfbWFw77yMIG1heF9kcF9sYW5l
+c++8jCBtYXhfZHBfbGlua19yYXRlIHBhcnNpbmcgbG9naWMgdG8gZHBfbGluayBbRG1pdHJ5XQot
+IEFkZCBUQ1NSLWJhc2VkIG11dGV4IGxvZ2ljIGZvciBEUCBhbmQgVVNCIFBIWSBjb2V4aXN0ZW5j
+ZSBbRG1pdHJ5XQotIERyb3AgcGF0Y2hlcyA24oCTOCBhbmQgcmVtb3ZlIHJlbGF0ZWQgYmluZGlu
+ZyBwcm9wZXJ0aWVzIGFzIHJlamVjdGVkIHVwc3RyZWFtCi0gTGluayB0byB2MTogaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvYWxsLzIwMjQxMTI5LWFkZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1x
+Y3M2MTUtcGxhdGZvcm0tdjEtMC0wOWE0MzM4ZDkzZWZAcXVpY2luYy5jb20vCgotLS0KWGlhbmd4
+dSBZaW4gKDE0KToKICAgICAgZHQtYmluZGluZ3M6IHBoeTogQWRkIFFNUCBVU0IzK0RQIFBIWSBm
+b3IgUUNTNjE1CiAgICAgIHBoeTogcWNvbTogcW1wLXVzYmM6IFJlbmFtZSBVU0Itc3BlY2lmaWMg
+b3BzIHRvIHByZXBhcmUgZm9yIERQIHN1cHBvcnQKICAgICAgcGh5OiBxY29tOiBxbXAtdXNiYzog
+QWRkIERQLXJlbGF0ZWQgZmllbGRzIGZvciBVU0IvRFAgc3dpdGNoYWJsZSBQSFkKICAgICAgcGh5
+OiBxY29tOiBxbXAtdXNiYzogQWRkIHJlZ3VsYXRvciBpbml0X2xvYWQgc3VwcG9ydAogICAgICBw
+aHk6IHFjb206IHFtcC11c2JjOiBNb3ZlIHJlc2V0IGNvbmZpZyBpbnRvIFBIWSBjZmcKICAgICAg
+cGh5OiBxY29tOiBxbXAtdXNiYzogYWRkIERQIGxpbmsgYW5kIHZjb19kaXYgY2xvY2tzIGZvciBE
+UCBQSFkKICAgICAgcGh5OiBxY29tOiBxbXAtdXNiYzogTW92ZSBVU0Itb25seSBpbml0IHRvIHVz
+Yl9wb3dlcl9vbgogICAgICBwaHk6IHFjb206IHFtcC11c2JjOiBBZGQgVENTUiBwYXJzaW5nIGFu
+ZCBQSFkgbW9kZSBzZXR0aW5nCiAgICAgIHBoeTogcWNvbTogcW1wLXVzYmM6IEFkZCBEUCBQSFkg
+b3BzIGZvciBVU0IvRFAgc3dpdGNoYWJsZSBUeXBlLUMgUEhZcwogICAgICBwaHk6IHFjb206IHFt
+cC11c2JjOiBBZGQgVVNCL0RQIGV4Y2x1ZGUgaGFuZGxpbmcKICAgICAgcGh5OiBxY29tOiBxbXA6
+IEFkZCBEUCB2MiBQSFkgcmVnaXN0ZXIgZGVmaW5pdGlvbnMKICAgICAgcGh5OiBxY29tOiBxbXAt
+dXNiYzogQWRkIFFDUzYxNSBVU0IvRFAgUEhZIGNvbmZpZyBhbmQgRFAgbW9kZSBzdXBwb3J0CiAg
+ICAgIGRybS9tc20vZHA6IG1vdmUgbGluay1zcGVjaWZpYyBwYXJzaW5nIGZyb20gZHBfcGFuZWwg
+dG8gZHBfbGluawogICAgICBkcm0vbXNtL2RwOiBBZGQgc3VwcG9ydCBmb3IgbGFuZSBtYXBwaW5n
+IGNvbmZpZ3VyYXRpb24KCiAuLi4vYmluZGluZ3MvcGh5L3Fjb20scWNzNjE1LXFtcC11c2IzZHAt
+cGh5LnlhbWwgICB8ICAxMTEgKysKIGRyaXZlcnMvZ3B1L2RybS9tc20vZHAvZHBfY3RybC5jICAg
+ICAgICAgICAgICAgICAgIHwgICAxMCArLQogZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9saW5r
+LmMgICAgICAgICAgICAgICAgICAgfCAgMTE4ICsrKwogZHJpdmVycy9ncHUvZHJtL21zbS9kcC9k
+cF9saW5rLmggICAgICAgICAgICAgICAgICAgfCAgICA1ICsKIGRyaXZlcnMvZ3B1L2RybS9tc20v
+ZHAvZHBfcGFuZWwuYyAgICAgICAgICAgICAgICAgIHwgICA3OCArLQogZHJpdmVycy9ncHUvZHJt
+L21zbS9kcC9kcF9wYW5lbC5oICAgICAgICAgICAgICAgICAgfCAgICAzIC0KIGRyaXZlcnMvcGh5
+L3F1YWxjb21tL3BoeS1xY29tLXFtcC1kcC1waHktdjIuaCAgICAgIHwgICAyMSArCiBkcml2ZXJz
+L3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy1jb20tdjIuaCB8ICAxMDYgKysKIC4u
+Li9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXFzZXJkZXMtdHhyeC12Mi5oICAgIHwgICA2OCAr
+KwogZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVzYmMuYyAgICAgICAgICAgfCAx
+MDY2ICsrKysrKysrKysrKysrKysrKy0tCiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1x
+bXAuaCAgICAgICAgICAgICAgICB8ICAgIDMgKwogMTEgZmlsZXMgY2hhbmdlZCwgMTQyMSBpbnNl
+cnRpb25zKCspLCAxNjggZGVsZXRpb25zKC0pCi0tLQpiYXNlLWNvbW1pdDogYjVhNGRhMmM0NTlm
+NzlhMmM4N2M4NjczOThmMWMwYzMxNTc3OTc4MQpjaGFuZ2UtaWQ6IDIwMjUwOTE5LWFkZC1kaXNw
+bGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2MTUtcGxhdGZvcm0tZjg4NTU5N2IzNTczCgpCZXN0IHJl
+Z2FyZHMsCi0tIApYaWFuZ3h1IFlpbiA8eGlhbmd4dS55aW5Ab3NzLnF1YWxjb21tLmNvbT4KCgot
+LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
