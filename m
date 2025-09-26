@@ -4,84 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0204CAC5AE
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 07:27:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28655CAC5AE
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 07:27:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yIq1lefnerwtUgByIDqo7WVD0cN5H53T1voSj3isAME=; b=IRxQolGURJ2wmX
-	/AnXVRcMV+lpancP+xLNIO15+tXHtXavhHgxSWoK/FDrNd6IXfDa3rnUZaytDUnIF7fKwxrbXVk6L
-	wmp1qmT3vQcWwrtIROhI2559dF67dog/Kn4Gr4ulmjhJXua0sBdTcbXHt7mg7fYInZJojHvN0qbcH
-	G/98+FzDOPZ1FlVNi0OaaKwIrBk/WP6jYi40VIqpZDieQSqW2oTwg/7PiweUmz6C4xHm8tlE2k9/l
-	BOlUZCiQYFraULkgQBRH5womRAsF/zXS5Cru23sTzYNBLqc1nHP4xgod1bIowAJhIX+fhXOpA23im
-	09wexSFkqEe+771jLbIw==;
+	List-Owner; bh=rN4G5wfGN390n+YSZlNoL2wuGDi3cUO5ewrt1ABHZO8=; b=h6IxedCubB9o3S
+	QFk//XluLruVtGfYe5saC3V08aFyqzE9l5ojG/s+8r6arRU2+pD+jgTehSHpiKyVhlgDOXbRZmZTL
+	wuatabdCcxI4Bnwk5PU4sFwd1jpjrINDxhEqJOZ03iQu0Jyb/kFXmaE6OiNi+9duUoP9AEFz2FLBN
+	P60A9DznShQX+KfvgUM/tZ2zqbCOtHA/ewyVdNbHlb1RlqOrp/IioamRpaaR83frcMaCtYmhEX1nw
+	+DonfPNTabbTYVP47hkqp7yYXO9e7LpD92uAIVqiXX58UTT9Z4YMjaMNm5OLTIfWodM1dL7PSasKG
+	YG5H5RW0CtyQymmbaTEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v22rX-0000000Glku-2pDS;
-	Fri, 26 Sep 2025 07:27:27 +0000
+	id 1v22re-0000000Glrq-3sJI;
+	Fri, 26 Sep 2025 07:27:34 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v22rV-0000000GliU-0woa
+	id 1v22rc-0000000GlpC-1VKG
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Sep 2025 07:27:26 +0000
+	Fri, 26 Sep 2025 07:27:33 +0000
 Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58Q6mnUb007845
-	for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 07:27:24 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58Q6iR3S008118
+	for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 07:27:31 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BBnKAQHtJIUzOuuf/k4xFN6GQiHRN0JpTaejw5fAgk8=; b=MZrHsPoMJRf4Qv7t
-	g/gyESw15cUBoBQ0NM7U0rvmGcaabIU1i9HsyOExSPgwZ1Y0OFNx93A0GNbAvuaR
-	C7ahVwfEwmv2FxHxBhTza2NEKZ3uHzYqJbf5qOdFRcvu/q2y1nvr3qI6sf4T8paD
-	JbYZyLtyU2abpbrfU292PyoBMkzcplJedsbXatYBZYPWY0qpN6CG8DuPmfJ60YNR
-	ZybP9POnattamOTLDX53KBNx5nOEz6POTf2oG9L4xDuBoBiLkOv3RQt8OsAi9/N3
-	KL/OyY1vw9KzgcIJrDLIOltl5Ksz5Yj6fThvRDApV3cfj20RFODrTIDLe9EjJLVL
-	FFx2NA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49db0vsw36-1
+	MQywDDAcWYT+0RdvqyfNhFfl3UTIYdzSA7Mm529kFnI=; b=KhtRuJcvPu2sWGeG
+	W/x9o1nTXsayfxdMsuPkT2+JC+lW73yB1WOL4aKQExniQXRuGmfc/jiyJwlgUicv
+	LddNSTufEPYv4By28XuHTi/IiRX26hU3dvRwAoPNX6kzKwHfFEDi6N6o7mJPEdGB
+	6OdK6WeYDZloE/WpidqRH57WqOfjj9KIG6RmHOyONrhk2OHoj8ry3/mBs6o9ZuxI
+	pqKQ+trhATW9mNrXICg0S0aL6eu9y/Zpp/aWt3Ksq21yaMlmiMjQFtRT1Cv8jbb+
+	fCKr+5Z7Yu6OxfTxU1HiHrLM92XFsxUK5sUl+9gycrUrc3PmyfAICZt3w9f6pJQB
+	Cg8xIA==
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49db0vsw47-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 07:27:24 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2696ab1bc16so4925885ad.2
-        for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 00:27:24 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 07:27:31 +0000 (GMT)
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-269b2d8af0cso4286555ad.2
+        for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 00:27:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758871643; x=1759476443;
+        d=1e100.net; s=20230601; t=1758871650; x=1759476450;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=BBnKAQHtJIUzOuuf/k4xFN6GQiHRN0JpTaejw5fAgk8=;
-        b=A5J0xFI0B/PFo6u8R983JUUGExgVdfFqg0W/d/R0xKT0EawlOenk/HV36zlOJ/lnlH
-         ynESF8r++t0RHVyC/XJJ082YYZkjXCKE5i/SQTd1N9gCE8nzdM36zDWVK485u+5wjtq1
-         HhLV1w/3cmTwbbnMpeMAOJb0Ya/30YBxFxDaJaqXZQV2mztna0T3tsdxxUbpOl3oxpI8
-         hSIfKf9/Tos2joJT0OVfwag1+sMba9nopGqjofIWqyWHtF8UGmgW3QQypazQqWqcmB6T
-         Z/DA+fV0nzNJTn4c2oOTRTlCZorH8wxVPSjqltiFNphLLNXpMdI7o5PqnAHIUsFHeGJg
-         7pVQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXvXR32qPLRJhUh/9KrSEBcR9r21o0vf32EUfXjAXiRlgTH8kUcJgA0m0h0B1JibbjQs9bEXXkt7aA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzxlcuFy9kTUSM/w/x8+ExS562qSYpch1TxOXj99XdF89DNjqUV
-	Rq7oXOTOky20VDdiwYzrieB0UKz60SuuwOKIB6+PeX2o8OQZfbuU3HAse/hXyBYPw2P0JGbI/Cg
-	xeE5n9xE8h/iVtu0nPOIaQXQzpviYnfTwXR09Ne3wnOLNbtUuR33USD8eBiQK9e1n5H8M
-X-Gm-Gg: ASbGncumCkWzfWG4dR8gx/BUjf6nWsN8RfYvF9+8COw6cyz7MhG6l0xiNWNJPwuY8VW
-	RpYJhaw+RiFNFqytQX7uFEaGR2g8v/89yUmBoQ8osjlAvG8iAthpseS+rj0f8HN8FlqKigVVK7o
-	9Dp7dwgQU80ICyOL//gIaxdBriApKsPymEj5cuqxF7RF3zPVuG4rR4c2qlVvVfzcHAtFcxjpTYQ
-	AwmDH3K/gNDnrDJBveaTN+vjq+0/oaubqDai7YKqKjVEmuzunQK6G7fvVWmbT5JmXjeDv1kHfq/
-	lXOYW24dD1THGsoqY+GfGyIZEaylf339IbaRiSYzUyjMoGtnZSNtbwewqB9TlOcbWpwJvrCyP8m
-	Ycx9f5/x/AvZgSKpdky8PPIQstjSwfnQpZxxDq5VKG1pA/fcZc2jihil1
-X-Received: by 2002:a17:902:db11:b0:26b:1871:1f70 with SMTP id d9443c01a7336-27ed49df69fmr43571275ad.5.1758871642877;
-        Fri, 26 Sep 2025 00:27:22 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHTX2igDAbPEs0gasTbZkRY3PEKRg6iD3OO1BbSDu+8oSgdmgCgwl1nIHEcronmpOxG6BZOag==
-X-Received: by 2002:a17:902:db11:b0:26b:1871:1f70 with SMTP id d9443c01a7336-27ed49df69fmr43571025ad.5.1758871642379;
-        Fri, 26 Sep 2025 00:27:22 -0700 (PDT)
+        bh=MQywDDAcWYT+0RdvqyfNhFfl3UTIYdzSA7Mm529kFnI=;
+        b=F772yB5Ql0uCAR708pKwEyyyo9s+ZUftivfHHudgBaDTC3PD224oWljcM8wg8USYN2
+         odvSmQIc+IQnX+dm/L3MR1yJhU2xKlJYp0F1SQAk+YAFUNurVwiaZlNeTxeZu2hkkiuh
+         51k0zvvO6/2BNSg+5+pCphc4ljq/e2gKnckDJmVFEsp51Is/NvM/9QpJ1EjVlUpjLHP9
+         f13UYBPrJPZBl/FijfqhBG0TMTQnjg0ggMtP8kzM7Bqni9qRSuz1d1vHLua3yy5mBHnF
+         r3YSwTNMkV3MIRqKhYk+j6Vd3ADRQLgbm3B7835Y4V+8veeAe1GX0U5ESv9hcZSkD6Ez
+         +ZUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVsIXnjsXQ+gT16YVrVmy0q5bZ2A7Y1AW9ECRo2MFC2R+L5u1UwnqaDffx+fSZphOKjaCw2tUNy0yU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyGRmwDyAhvOS3t4xG1HuGzkMiFCFCNmmbJaJ6ZKxePhFwyN8A0
+	jdpLNHmDp+K2bKSywK9NPNq129DIgA7pcFd1NVShpvDPdFm5zPOYSguHAkl3ylrmFHQ/+iHB6sj
+	CgX45NWQCa2UOMGFbnAwkAYjAKcA3s4wDJUFOJHDkV5SckQrr61DP3fvS5LNh1jxjhanA
+X-Gm-Gg: ASbGnct1bI4WVonlnW4EjCfWvZbme4WhvkCL9x1ZIMApE3U7/bqPrgNBiWqCLmqFIrF
+	jC+DpOVV+lRyLfgecuUfBMTcFuIb77FUKH6nwOOLac+8x/l+KX5FaqGzEkfTfzB/EB2mjTXrbTF
+	YcXf5UTFu9box6Cki6Km89y3pE6UWBAe1uU5ES1NHZHwwyv6LYqARbN2Kzov8hd/5lcpSGgffCR
+	CMfrspJ7ejYVK7nfJS0urRdWD5Ir/7PMjVGWdC1dj/soVJWmvsarpyfb2L8D4YwKcOEFevF+Ny0
+	7saNjlKOH5yAbADpYfc6RN3IyD4z27Ejeczl9IExsvHbqaDAO41GY7ViWNz5a10zPKjIC8el5go
+	eVRAaoNGsCPXC/AJTtT7VxakxWLpfbY+I6VSc68kp+GgRcZHMC2loFwRm
+X-Received: by 2002:a17:902:e812:b0:266:914a:2e7a with SMTP id d9443c01a7336-27ed4a7e84amr39541675ad.6.1758871649891;
+        Fri, 26 Sep 2025 00:27:29 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHGeihG3SZx7aSMWPcADuq74URnH7VI514dOIMBXDrqShDi7JTOZBn+M6jC2FHBu/HAXAys3Q==
+X-Received: by 2002:a17:902:e812:b0:266:914a:2e7a with SMTP id d9443c01a7336-27ed4a7e84amr39541355ad.6.1758871649315;
+        Fri, 26 Sep 2025 00:27:29 -0700 (PDT)
 Received: from sziotdisp01-gv.qualcomm.com.ap.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-27ed671d8a2sm45117985ad.55.2025.09.26.00.27.15
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-27ed671d8a2sm45117985ad.55.2025.09.26.00.27.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 26 Sep 2025 00:27:21 -0700 (PDT)
+        Fri, 26 Sep 2025 00:27:29 -0700 (PDT)
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-Date: Fri, 26 Sep 2025 15:25:46 +0800
-Subject: [PATCH v7 10/14] phy: qcom: qmp-usbc: Add USB/DP exclude handling
+Date: Fri, 26 Sep 2025 15:25:47 +0800
+Subject: [PATCH v7 11/14] phy: qcom: qmp: Add DP v2 PHY register
+ definitions
 MIME-Version: 1.0
-Message-Id: <20250926-add-displayport-support-for-qcs615-platform-v7-10-dc5edaac6c2b@oss.qualcomm.com>
+Message-Id: <20250926-add-displayport-support-for-qcs615-platform-v7-11-dc5edaac6c2b@oss.qualcomm.com>
 References: <20250926-add-displayport-support-for-qcs615-platform-v7-0-dc5edaac6c2b@oss.qualcomm.com>
 In-Reply-To: <20250926-add-displayport-support-for-qcs615-platform-v7-0-dc5edaac6c2b@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -105,26 +106,26 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Konrad Dybcio <konradybcio@kernel.org>,
         Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1758871564; l=1933;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1758871564; l=10561;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=DPKLxEacqPPVPld/3Cw3ossBUvxFPG/ElRs6jI9aG+g=;
- b=LKwRqi1oGH1DuHLM7E16LiWfNw5DOeR+8o8s9eF6SZvkMm3iSdaWji+J524cD6f83xQZU7P4x
- jx9iHVmnqEvCOsMZMAFLUJLwoQrBPzoPBnQelsJeE52ZLRbP7VKfXfm
+ bh=wRcG6hvTUjOLE7118EUHmvDQXHvLMsHays/1bOGOLyY=;
+ b=FPxuz4rURJ6NnLqrrlTRqMBMa7ZFv4jrZJDloo8Mx3tNZkgPnYVfrVLUoU7GcSlfK3LvH5dTA
+ AFTTl+Q6a4NCAvEtHEwUlwcSh+IjzXar5jNa3ggvbQNzzS4l6PfMHaH
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
-X-Proofpoint-ORIG-GUID: Z0ZYzWRejWnVpSqVEBcrEd4ghEZY06we
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI1MDE3MSBTYWx0ZWRfX81eiEaCvtDoP
- chAsyYxjbuPKwEeq2RTgFW7rWCrBiZ0RQb+3bkI4O24E4tXZkwNYYPPH6V7348LcfrkgbTr/gWw
- Et2ZhONNmE83UZrzpcdYAv3/OzbsLvEUELC9N78bq3cRpApWMEKiKGX5bxGBAJl4NAeTc92XLkw
- qyPNYPH3+cMMnLyxtrk/+CFb6gqr+x998BGYF595KjX7URyazVHT59EdDt2RbJ72pTO+TwC6U6e
- w/yJv1exUVKjOODCsXTBTumofDzJbm7be0AkmqzGYL2xVHpZ7iB0kPipJ0ZcJo+dIEZzPl0HTqG
- HHOU2Q3jU+ybaWRPQu4fYQj8uZZaP5VidgUxo0WqnTvFRAJxzwFHtjAli0S7aEs6zVrgp/FCI8G
- TVhkKwV7ndSXYRY0nb/6LjMU9V+FeQ==
-X-Authority-Analysis: v=2.4 cv=OstCCi/t c=1 sm=1 tr=0 ts=68d6405c cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=RloG_8Ug8mropJZ47ewA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: Z0ZYzWRejWnVpSqVEBcrEd4ghEZY06we
+X-Proofpoint-ORIG-GUID: f7dlfA38P6MDE_r9F_PlBCtqraFjpVrU
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI1MDE3MSBTYWx0ZWRfX2jMaEE2eCpGk
+ fiJzzXgT7WUzEJ7X8cjwVG5bNEMxdp1u+gxw2v8IU9LECFwkDuM4l78ZxOr8m/SjuWwa6enORwJ
+ gxAx6mtv2OLAKpUuKneB4fI/vOdlRveMf1AzNigAfPmMFln46XUC6v+X8qrKLnEX+KaPkyPn3ZD
+ x7kv3fFpa8ac+Tp1e0arm5CxFZrwu4heEpKgi+VsEXIz/XqZEoSvDjQt73NNG58OqxjATgPWrcE
+ 7iOWfxkNd1Bhbsn6j76dfL4SpfjvqVVuWROs1m5+tSthGiLjB2JL3ER8gT0oPyjLHziNGNTIdQP
+ 2Oc6UAexAmjAZSQUZmpjrHzempx2j/UsnuEYIb2KzNgECIDBk3xs8FAuSv5eboN3f9pCvkDyUG8
+ gRwhAAnQyvnksgZ++CQjri+nmTSU/g==
+X-Authority-Analysis: v=2.4 cv=OstCCi/t c=1 sm=1 tr=0 ts=68d64063 cx=c_pps
+ a=cmESyDAEBpBGqyK7t0alAg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=EUspDBNiAAAA:8 a=7JoLr56Aoq0vruZkpkIA:9
+ a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
+X-Proofpoint-GUID: f7dlfA38P6MDE_r9F_PlBCtqraFjpVrU
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-09-26_02,2025-09-26_01,2025-03-28_01
@@ -135,8 +136,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
  definitions=main-2509250171
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_002725_400497_83D41554 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20250926_002732_523586_2BE327A6 
+X-CRM114-Status: GOOD (  13.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,66 +154,245 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When both USB and DP PHY modes are enabled simultaneously on the same
-QMP USBC PHY, it can lead to hardware misconfiguration and undefined
-behavior. This happens because the PHY resources are not designed to
-operate in both modes at the same time.
-
-To prevent this, introduce a mutual exclusion check between USB and DP
-PHY modes.
+Add dedicated headers for DP v2 PHY, including QSERDES COM and TX/RX
+register definitions.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h      |  21 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h | 106 +++++++++++++++++++++
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h    |  68 +++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h                |   3 +
+ 4 files changed, 198 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 3580c19fd62e02aa373cec42e9f53143f39214df..d84bf68940043bce13565503bb34796e653adbb7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -666,6 +666,19 @@ static int qmp_usbc_usb_power_off(struct phy *phy)
- 	return 0;
- }
- 
-+static int qmp_usbc_check_phy_status(struct qmp_usbc *qmp, bool is_dp)
-+{
-+	if ((is_dp && qmp->usb_init_count) ||
-+	    (!is_dp && qmp->dp_init_count)) {
-+		dev_err(qmp->dev,
-+			"PHY is configured for %s, can not enable %s\n",
-+			is_dp ? "USB" : "DP", is_dp ? "DP" : "USB");
-+		return -EBUSY;
-+	}
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..8b9572d3cdebb70a0f3811f129a40aa78e184638
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
 +
-+	return 0;
-+}
++#ifndef QCOM_PHY_QMP_DP_PHY_V2_H_
++#define QCOM_PHY_QMP_DP_PHY_V2_H_
 +
- static int qmp_usbc_usb_enable(struct phy *phy)
- {
- 	struct qmp_usbc *qmp = phy_get_drvdata(phy);
-@@ -673,6 +686,10 @@ static int qmp_usbc_usb_enable(struct phy *phy)
- 
- 	mutex_lock(&qmp->phy_mutex);
- 
-+	ret = qmp_usbc_check_phy_status(qmp, false);
-+	if (ret)
-+		goto out_unlock;
++// /* Only for QMP V2 PHY - DP PHY registers */
++#define QSERDES_V2_DP_PHY_AUX_INTERRUPT_MASK		0x048
++#define QSERDES_V2_DP_PHY_AUX_INTERRUPT_CLEAR		0x04c
++#define QSERDES_V2_DP_PHY_AUX_BIST_CFG			0x050
 +
- 	ret = qmp_usbc_com_init(phy);
- 	if (ret)
- 		goto out_unlock;
-@@ -726,6 +743,10 @@ static int qmp_usbc_dp_enable(struct phy *phy)
- 
- 	mutex_lock(&qmp->phy_mutex);
- 
-+	ret = qmp_usbc_check_phy_status(qmp, true);
-+	if (ret)
-+		goto dp_init_unlock;
++#define QSERDES_V2_DP_PHY_VCO_DIV			0x068
++#define QSERDES_V2_DP_PHY_TX0_TX1_LANE_CTL		0x06c
++#define QSERDES_V2_DP_PHY_TX2_TX3_LANE_CTL		0x088
 +
- 	ret = qmp_usbc_com_init(phy);
- 	if (ret)
- 		goto dp_init_unlock;
++#define QSERDES_V2_DP_PHY_SPARE0			0x0ac
++#define QSERDES_V2_DP_PHY_STATUS			0x0c0
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..3ea1884f35dd50a0bde9b213f193ac8ac6b77612
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h
+@@ -0,0 +1,106 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_COM_V2_H_
++#define QCOM_PHY_QMP_QSERDES_COM_V2_H_
++
++/* Only for QMP V2 PHY - QSERDES COM registers */
++#define QSERDES_V2_COM_ATB_SEL1				0x000
++#define QSERDES_V2_COM_ATB_SEL2				0x004
++#define QSERDES_V2_COM_FREQ_UPDATE			0x008
++#define QSERDES_V2_COM_BG_TIMER				0x00c
++#define QSERDES_V2_COM_SSC_EN_CENTER			0x010
++#define QSERDES_V2_COM_SSC_ADJ_PER1			0x014
++#define QSERDES_V2_COM_SSC_ADJ_PER2			0x018
++#define QSERDES_V2_COM_SSC_PER1				0x01c
++#define QSERDES_V2_COM_SSC_PER2				0x020
++#define QSERDES_V2_COM_SSC_STEP_SIZE1			0x024
++#define QSERDES_V2_COM_SSC_STEP_SIZE2			0x028
++#define QSERDES_V2_COM_POST_DIV				0x02c
++#define QSERDES_V2_COM_POST_DIV_MUX			0x030
++#define QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN		0x034
++#define QSERDES_V2_COM_CLK_ENABLE1			0x038
++#define QSERDES_V2_COM_SYS_CLK_CTRL			0x03c
++#define QSERDES_V2_COM_SYSCLK_BUF_ENABLE		0x040
++#define QSERDES_V2_COM_PLL_EN				0x044
++#define QSERDES_V2_COM_PLL_IVCO				0x048
++#define QSERDES_V2_COM_LOCK_CMP1_MODE0			0x04c
++#define QSERDES_V2_COM_LOCK_CMP2_MODE0			0x050
++#define QSERDES_V2_COM_LOCK_CMP3_MODE0			0x054
++#define QSERDES_V2_COM_LOCK_CMP1_MODE1			0x058
++#define QSERDES_V2_COM_LOCK_CMP2_MODE1			0x05c
++#define QSERDES_V2_COM_LOCK_CMP3_MODE1			0x060
++#define QSERDES_V2_COM_EP_CLOCK_DETECT_CTR		0x068
++#define QSERDES_V2_COM_SYSCLK_DET_COMP_STATUS		0x06c
++#define QSERDES_V2_COM_CLK_EP_DIV			0x074
++#define QSERDES_V2_COM_CP_CTRL_MODE0			0x078
++#define QSERDES_V2_COM_CP_CTRL_MODE1			0x07c
++#define QSERDES_V2_COM_PLL_RCTRL_MODE0			0x084
++#define QSERDES_V2_COM_PLL_RCTRL_MODE1			0x088
++#define QSERDES_V2_COM_PLL_CCTRL_MODE0			0x090
++#define QSERDES_V2_COM_PLL_CCTRL_MODE1			0x094
++#define QSERDES_V2_COM_PLL_CNTRL			0x09c
++#define QSERDES_V2_COM_BIAS_EN_CTRL_BY_PSM		0x0a8
++#define QSERDES_V2_COM_SYSCLK_EN_SEL			0x0ac
++#define QSERDES_V2_COM_CML_SYSCLK_SEL			0x0b0
++#define QSERDES_V2_COM_RESETSM_CNTRL			0x0b4
++#define QSERDES_V2_COM_RESETSM_CNTRL2			0x0b8
++#define QSERDES_V2_COM_LOCK_CMP_EN			0x0c8
++#define QSERDES_V2_COM_LOCK_CMP_CFG			0x0cc
++#define QSERDES_V2_COM_DEC_START_MODE0			0x0d0
++#define QSERDES_V2_COM_DEC_START_MODE1			0x0d4
++#define QSERDES_V2_COM_VCOCAL_DEADMAN_CTRL		0x0d8
++#define QSERDES_V2_COM_DIV_FRAC_START1_MODE0		0x0dc
++#define QSERDES_V2_COM_DIV_FRAC_START2_MODE0		0x0e0
++#define QSERDES_V2_COM_DIV_FRAC_START3_MODE0		0x0e4
++#define QSERDES_V2_COM_DIV_FRAC_START1_MODE1		0x0e8
++#define QSERDES_V2_COM_DIV_FRAC_START2_MODE1		0x0ec
++#define QSERDES_V2_COM_DIV_FRAC_START3_MODE1		0x0f0
++#define QSERDES_V2_COM_VCO_TUNE_MINVAL1			0x0f4
++#define QSERDES_V2_COM_VCO_TUNE_MINVAL2			0x0f8
++#define QSERDES_V2_COM_INTEGLOOP_INITVAL		0x100
++#define QSERDES_V2_COM_INTEGLOOP_EN			0x104
++#define QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0		0x108
++#define QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0		0x10c
++#define QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE1		0x110
++#define QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE1		0x114
++#define QSERDES_V2_COM_VCO_TUNE_MAXVAL1			0x118
++#define QSERDES_V2_COM_VCO_TUNE_MAXVAL2			0x11c
++#define QSERDES_V2_COM_VCO_TUNE_CTRL			0x124
++#define QSERDES_V2_COM_VCO_TUNE_MAP			0x128
++#define QSERDES_V2_COM_VCO_TUNE1_MODE0			0x12c
++#define QSERDES_V2_COM_VCO_TUNE2_MODE0			0x130
++#define QSERDES_V2_COM_VCO_TUNE1_MODE1			0x134
++#define QSERDES_V2_COM_VCO_TUNE2_MODE1			0x138
++#define QSERDES_V2_COM_VCO_TUNE_INITVAL1		0x13c
++#define QSERDES_V2_COM_VCO_TUNE_INITVAL2		0x140
++#define QSERDES_V2_COM_VCO_TUNE_TIMER1			0x144
++#define QSERDES_V2_COM_VCO_TUNE_TIMER2			0x148
++#define QSERDES_V2_COM_CMN_STATUS			0x15c
++#define QSERDES_V2_COM_RESET_SM_STATUS			0x160
++#define QSERDES_V2_COM_RESTRIM_CODE_STATUS		0x164
++#define QSERDES_V2_COM_PLLCAL_CODE1_STATUS		0x168
++#define QSERDES_V2_COM_PLLCAL_CODE2_STATUS		0x16c
++#define QSERDES_V2_COM_CLK_SELECT			0x174
++#define QSERDES_V2_COM_HSCLK_SEL			0x178
++#define QSERDES_V2_COM_INTEGLOOP_BINCODE_STATUS		0x17c
++#define QSERDES_V2_COM_PLL_ANALOG			0x180
++#define QSERDES_V2_COM_CORECLK_DIV			0x184
++#define QSERDES_V2_COM_SW_RESET				0x188
++#define QSERDES_V2_COM_CORE_CLK_EN			0x18c
++#define QSERDES_V2_COM_C_READY_STATUS			0x190
++#define QSERDES_V2_COM_CMN_CONFIG			0x194
++#define QSERDES_V2_COM_CMN_RATE_OVERRIDE		0x198
++#define QSERDES_V2_COM_SVS_MODE_CLK_SEL			0x19c
++#define QSERDES_V2_COM_DEBUG_BUS0			0x1a0
++#define QSERDES_V2_COM_DEBUG_BUS1			0x1a4
++#define QSERDES_V2_COM_DEBUG_BUS2			0x1a8
++#define QSERDES_V2_COM_DEBUG_BUS3			0x1ac
++#define QSERDES_V2_COM_DEBUG_BUS_SEL			0x1b0
++#define QSERDES_V2_COM_CMN_MISC1			0x1b4
++#define QSERDES_V2_COM_CMN_MISC2			0x1b8
++#define QSERDES_V2_COM_CORECLK_DIV_MODE1		0x1bc
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..34919720b7bc457ae9549e7c53864be01a27a9b3
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
+@@ -0,0 +1,68 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
++#define QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
++
++/* Only for QMP V2 PHY - TX registers */
++#define QSERDES_V2_TX_BIST_MODE_LANENO			0x000
++#define QSERDES_V2_TX_CLKBUF_ENABLE			0x008
++#define QSERDES_V2_TX_TX_EMP_POST1_LVL			0x00c
++#define QSERDES_V2_TX_TX_DRV_LVL			0x01c
++#define QSERDES_V2_TX_RESET_TSYNC_EN			0x024
++#define QSERDES_V2_TX_PRE_STALL_LDO_BOOST_EN		0x028
++#define QSERDES_V2_TX_TX_BAND				0x02c
++#define QSERDES_V2_TX_SLEW_CNTL				0x030
++#define QSERDES_V2_TX_INTERFACE_SELECT			0x034
++#define QSERDES_V2_TX_RES_CODE_LANE_TX			0x03c
++#define QSERDES_V2_TX_RES_CODE_LANE_RX			0x040
++#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_TX		0x044
++#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_RX		0x048
++#define QSERDES_V2_TX_DEBUG_BUS_SEL			0x058
++#define QSERDES_V2_TX_TRANSCEIVER_BIAS_EN		0x05c
++#define QSERDES_V2_TX_HIGHZ_DRVR_EN			0x060
++#define QSERDES_V2_TX_TX_POL_INV			0x064
++#define QSERDES_V2_TX_PARRATE_REC_DETECT_IDLE_EN	0x068
++#define QSERDES_V2_TX_LANE_MODE_1			0x08c
++#define QSERDES_V2_TX_LANE_MODE_2			0x090
++#define QSERDES_V2_TX_LANE_MODE_3			0x094
++#define QSERDES_V2_TX_RCV_DETECT_LVL_2			0x0a4
++#define QSERDES_V2_TX_TRAN_DRVR_EMP_EN			0x0c0
++#define QSERDES_V2_TX_TX_INTERFACE_MODE			0x0c4
++#define QSERDES_V2_TX_VMODE_CTRL1			0x0f0
++
++/* Only for QMP V2 PHY - RX registers */
++#define QSERDES_V2_RX_UCDR_FO_GAIN			0x008
++#define QSERDES_V2_RX_UCDR_SO_GAIN_HALF			0x00c
++#define QSERDES_V2_RX_UCDR_SO_GAIN			0x014
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_HALF		0x024
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_QUARTER		0x028
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN			0x02c
++#define QSERDES_V2_RX_UCDR_FASTLOCK_FO_GAIN		0x030
++#define QSERDES_V2_RX_UCDR_SO_SATURATION_AND_ENABLE	0x034
++#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_LOW		0x03c
++#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_HIGH		0x040
++#define QSERDES_V2_RX_UCDR_PI_CONTROLS			0x044
++#define QSERDES_V2_RX_RX_TERM_BW			0x07c
++#define QSERDES_V2_RX_VGA_CAL_CNTRL1			0x0bc
++#define QSERDES_V2_RX_VGA_CAL_CNTRL2			0x0c0
++#define QSERDES_V2_RX_RX_EQ_GAIN2_LSB			0x0c8
++#define QSERDES_V2_RX_RX_EQ_GAIN2_MSB			0x0cc
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL1		0x0d0
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL2		0x0d4
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL3		0x0d8
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL4		0x0dc
++#define QSERDES_V2_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1	0x0f8
++#define QSERDES_V2_RX_RX_OFFSET_ADAPTOR_CNTRL2		0x0fc
++#define QSERDES_V2_RX_SIGDET_ENABLES			0x100
++#define QSERDES_V2_RX_SIGDET_CNTRL			0x104
++#define QSERDES_V2_RX_SIGDET_LVL			0x108
++#define QSERDES_V2_RX_SIGDET_DEGLITCH_CNTRL		0x10c
++#define QSERDES_V2_RX_RX_BAND				0x110
++#define QSERDES_V2_RX_RX_INTERFACE_MODE			0x11c
++#define QSERDES_V2_RX_RX_MODE_00			0x164
++#define QSERDES_V2_RX_RX_MODE_01			0x168
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index f58c82b2dd23e1bda616d67ab7993794b997063b..1a9e4cc5aa11d6e18d97ce93d0e44c9a5afa3fbf 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -9,6 +9,9 @@
+ #include "phy-qcom-qmp-qserdes-com.h"
+ #include "phy-qcom-qmp-qserdes-txrx.h"
+ 
++#include "phy-qcom-qmp-qserdes-com-v2.h"
++#include "phy-qcom-qmp-qserdes-txrx-v2.h"
++
+ #include "phy-qcom-qmp-qserdes-com-v3.h"
+ #include "phy-qcom-qmp-qserdes-txrx-v3.h"
+ 
 
 -- 
 2.34.1
