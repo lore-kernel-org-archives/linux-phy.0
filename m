@@ -4,82 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43757CAC5AC
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 07:40:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 229FDCAC5B8
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 18:05:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H6i5p+dYjYh5PR/gK9nmsNi8J1kvBTSl32EdoqYChNo=; b=EyuvLGS1t/gq3g
-	pQdtdj2FzQlfpWq8Bhf/pSX5zjKvaV6yXWIWSbzsOPG45L5QafOPhUJ0qaMvXiU3KgJjWtWQofU2T
-	Kv3wuDGBt3+85pcHOzrLuOfAGOkeeTPCFsYcOBBnDQTugw2iihJ3EEmo/6yhWufdt2F/5cbhkNm6t
-	AYITLCw/FBn5scWojw0rHP3fgrIpu+YkulzTGo0K+dP3h5lVID8UgV4hAdxq3iGyF562ViWGmKoUZ
-	4S7N36ipZGAuqLNPhq8zLIFxZKZcq34seH8Tywwu/1ocZRgZyiRycoGcH4z+WcSCwzJiw9JX9bP6C
-	MSoCGuRmoTPofZt2sKTg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DbNWXn4NRjimQlFPrXtbLFOTjSnjUduMD8j6KCA76zc=; b=UV8F91TC83CQlV
+	rO9qBwSVYdv4D24eHEsPrClx6x0swvJUB/yuUUI2BvwD9p1gkQ0amOZFgw9+jNLOpIcfF61x1nqAw
+	Et0ETtkfWg9Kn/l3UrfAMFEGloUu3f5fqcJxJDU2Gmfvh9ctVqd2f3cso11y7Zr0VaB9llG7eKs3X
+	hdeY4reOPgPknUqxUUFjnUzsFuQvzN6UeSj/Abq/MHLgu1bZq/Q+BvPgsRa44qrSajpgVIE56moEe
+	4CUkQXNO7gzKTEb8JRbMglfQia9TdIWmF01uLgv3jgHUhxkAs1UoG2mD2jmvYqHgfUYORXPUJQsyh
+	67MSKeiYiZH+vvNFgb0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v234K-0000000GsAl-492a;
-	Fri, 26 Sep 2025 07:40:40 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1v2Cp4-00000003RjJ-3Dkw;
+	Fri, 26 Sep 2025 18:05:34 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2347-0000000GrsT-3Ng2
+	id 1v2Cp2-00000003Rfe-14LN
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Sep 2025 07:40:29 +0000
-Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20250926074024epoutp02b286b5725d4fb2304542a40758f788af~oxSazsCg91900519005epoutp02R
-	for <linux-phy@lists.infradead.org>; Fri, 26 Sep 2025 07:40:24 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20250926074024epoutp02b286b5725d4fb2304542a40758f788af~oxSazsCg91900519005epoutp02R
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1758872424;
-	bh=qhX1MQVp2llautb0DmRTSASiQwh70/qTePQeQGepbgs=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=G1Mvp0kM32Z+tMvBfXiDvk5BS4VFFZa6niYY4UCn47dpHtxFaKhelkAQlrn5bPFxC
-	 IkyaV0bzPol+oMfyIp9FuN06QBh0HZ82oD6FABoakTyJt8vro5vl8LpkS4F5lg2XUQ
-	 5Uyd4Y6R0A9gZkZOUe4RKrt+42nZkMk/+2yQMflM=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas2p2.samsung.com (KnoxPortal) with ESMTPS id
-	20250926074023epcas2p22563ba73fbe48ebf01f75ffac03cd49d~oxSaQwfAt3019630196epcas2p2D;
-	Fri, 26 Sep 2025 07:40:23 +0000 (GMT)
-Received: from epcas2p4.samsung.com (unknown [182.195.36.91]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4cY2Yg09Qyz3hhTQ; Fri, 26 Sep
-	2025 07:40:23 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
-	20250926074022epcas2p3aa1179b587beac076ef5942004c7d099~oxSY5eD7k2057720577epcas2p3g;
-	Fri, 26 Sep 2025 07:40:22 +0000 (GMT)
-Received: from asswp146.dsn.sec.samsung.com (unknown [10.229.19.146]) by
-	epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20250926074022epsmtip2570a9e2d16c5857aa194b0b3c2963907~oxSYzvL2p1189511895epsmtip2W;
-	Fri, 26 Sep 2025 07:40:22 +0000 (GMT)
-From: Sanghoon Bae <sh86.bae@samsung.com>
-To: robh@kernel.org, krzk@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
-	alim.akhtar@samsung.com, kishon@kernel.org, m.szyprowski@samsung.com,
-	jh80.chung@samsung.com, shradha.t@samsung.com
-Cc: krzk+dt@kernel.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	sh86.bae@samsung.com
-Subject: [PATCH 4/4] phy: exynos: Add PCIe PHY support for ExynosAutov920
- SoC
-Date: Fri, 26 Sep 2025 16:39:19 +0900
-Message-ID: <20250926073921.1000866-5-sh86.bae@samsung.com>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <20250926073921.1000866-1-sh86.bae@samsung.com>
+	Fri, 26 Sep 2025 18:05:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=WpRSLGbeHjRasxWscmRCw8YFBzu7iqTCu78AxApq9QqhzcMQOL8gi3vrG1nhOkdB0HeOcJKdM0Cya4d6Clvzl5w+8AzPOX+1hOYucTHd1z4BJGFXUrqjZdJAgREY+g4z5+vF62jWuoNc3Nnp45SIDg/Cmrqec4rQ+Xv8NeN5n1ZMejxdp+tyMiied1fQxjOf47+1Q5J5z6SuhWY/3KulXWRzxpJmSaZdPgZUpWUBSg1fGTiPZYYdw3gTH3jMFkyaG03lCE8NlC/CZWI6y7Tj09ApzPUqK3spbfkuDxN+piDsG2HVlrJWhBA+hMeZ9WDI8ZuKXPJMmgT8jIhaBmMzzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ShfFnIqh56q5Hb05cW93dAWrSQkMhKdiQGFGPIxNdFU=;
+ b=UG7tvWesigGBJl5KaBITQe1mo1gg7DBJ2p+hSTIF6RBBlLovx5VmEWOvcej1UMZxv1RzY83QjEa0eod2/wgWsajo7HFDjdvJ3U/FbzTAHJiRtvgYiDGrBHq7/MdB/JmLPWxi/lvN4qVNLk0VZQHpawnVwb3FZdkrdYAmu8X8Lzeuh0tma3WQm1iXuiI5eRwbviw1qPYHPb3C3/Cw+Ecw7tEAy98w9UINd33Bqr+f4OLXUTaNZQ7QjDJVRNI6JW/8EyWs4xVZbD2W0033qerSItF4eQiZaLxRVmEjpD7iJwpX3J3uDTf+MNzwKsKPwmKbPl9Ojkl9ebz+E4h0JeH8KQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ShfFnIqh56q5Hb05cW93dAWrSQkMhKdiQGFGPIxNdFU=;
+ b=E2xUjZCfIZqSc6KiERrJeFpDe2NLLt1h3o0/ROMPFh9olNI9B8D/KIXvgQ4adK70TgPT8mYyEWGx2ynpEI5ko2Z2aAs3dcY2Yk2MqDVpFZbPzHClnvEvbvx9iW86sIcpUdk5QlomfiI96hF98xVEWjI/2IkoerUJ2h4VLDvlXMJksrN5Kkbt/i+fKSeyaN48WLxBXQycFGTL3T/4Zb/XOw+2hmDAh81kcl5+RfdDw/Qt9zC766D0hmvrQ2o+ldyhX9LgCZ+8LS6S05ZebToKVUHtdLf7dDz5XVa8ybPcY1mG2uuxAKfNirzx5ZwXTqrryIh/s2X2vEzIHC+68DM6Aw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
+ by AS8PR04MB7878.eurprd04.prod.outlook.com (2603:10a6:20b:2af::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.9; Fri, 26 Sep
+ 2025 18:05:21 +0000
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9160.010; Fri, 26 Sep 2025
+ 18:05:21 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Josua Mayer <josua@solid-run.com>,
+	linux-kernel@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	devicetree@vger.kernel.org
+Subject: [PATCH v3 phy 00/17] Lynx 28G improvements part 1
+Date: Fri, 26 Sep 2025 21:04:48 +0300
+Message-Id: <20250926180505.760089-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AS4P250CA0008.EURP250.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5df::9) To AM8PR04MB7779.eurprd04.prod.outlook.com
+ (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
-X-CMS-MailID: 20250926074022epcas2p3aa1179b587beac076ef5942004c7d099
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-cpgsPolicy: CPGSC10-234,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250926074022epcas2p3aa1179b587beac076ef5942004c7d099
-References: <20250926073921.1000866-1-sh86.bae@samsung.com>
-	<CGME20250926074022epcas2p3aa1179b587beac076ef5942004c7d099@epcas2p3.samsung.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|AS8PR04MB7878:EE_
+X-MS-Office365-Filtering-Correlation-Id: e6fa1e6c-ffd2-434b-e19e-08ddfd274218
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|52116014|376014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?UqfXqVrSBW64QQ9CugbYNf1XZ0V00ZROWXie6+NvLYAJNKD2zD8KNlBvwKAL?=
+ =?us-ascii?Q?V/arCa/6BmycSTE25QvPHfWgFJSOuveUwvA2ovU2G2WIJhbPOZXhBdmWv3B2?=
+ =?us-ascii?Q?k38TypB0EOldPYk2xDNFVsNQivnMzYjvcs3OG21pIoLEACxfYKwenO4tCuwC?=
+ =?us-ascii?Q?RCGDRvLtgoWCaddZADAfpzZlM5XlLL44FEygrMhHoGnt0A0ZOiAdW8uS2nEn?=
+ =?us-ascii?Q?BJcIZqXfUycAIHHRc0VkQJEkDYi79yiKQb3Y5zfHyBrG8BReZYxSdpAyPB26?=
+ =?us-ascii?Q?ZrErscc0UJLcxTxxti9mIEEhXGO1gpHh2wZ4t+8rRRah1di83QnpqRkzCGVg?=
+ =?us-ascii?Q?exrUwg3RbdZ/TQGj3HOUKac6zSzCVpOzLaIshwtqnO1CKIQl+kTDyMhL3N8S?=
+ =?us-ascii?Q?k+jBt5B8LITRLfHZaYdmF4IzSN5eNLyMgouOVVTYnl54yN5hSbeiKr4S6pwU?=
+ =?us-ascii?Q?wDvyxpPfh/nTM0UD2iMb//0fNeCGyQyzQPLMwLerOtapjYx7+sQbUoepRFzv?=
+ =?us-ascii?Q?30N57LjfCYlSucNVzzSolESqL+tac5rwYCBx66TgtWzVFxn9gF6WZieuLWsm?=
+ =?us-ascii?Q?CyF8+ehi9xkPn7Uw3wvonEQKhrg4pWZ1slD4tybPJPBt99CGNC1Yz8GM5dbk?=
+ =?us-ascii?Q?Mn6oWEKJzWhNEdm0vfWOWJD7YLKrxnj7VqfvGk/JSmCswOJAwLmdxR9ZvvKy?=
+ =?us-ascii?Q?HrJc1P8Iflvb5VHom0v0oQKZnR8WY7CO8O/Eq2l0lwiYTTA9edZJWKdvRyWM?=
+ =?us-ascii?Q?3pFVTuhHG86wdwSoW1pqakZkRRODhmGjlLNkIn0q3yb3OPqx+1Yjq7PkBJBN?=
+ =?us-ascii?Q?CuwALMO3vi++gIEo3INZ08vIoiOMmpkyzS+HxBkvEOVbYs904NPTO7rGBJpq?=
+ =?us-ascii?Q?elMAkkgOVXiSJ/Yh/oWv/dPcuxIRRkm0aGwgiY0cINUmhcCr7UCA9AjthQGD?=
+ =?us-ascii?Q?2GcLljCm6QbY/mYi/SrxmdvMn/+PcvVaoMZf6XUdsta7JcomJN0yUDcEnRlp?=
+ =?us-ascii?Q?/FZSLgkJDssqBX4uR2xlyGFFuuBwlc4HyMgJDMKyc16qG77GCGxqupyRdH3W?=
+ =?us-ascii?Q?eO84mxbYaay/2C4w1NYqFHhiG28f21py4hFA4qwc+bobEl19CHOsc+/8HRFJ?=
+ =?us-ascii?Q?ItXcMYiw9JMm+9v7qrsu2oEBe3YGeebUrH1B9xssqmb1CgPT1L7uCBRxl1Dg?=
+ =?us-ascii?Q?FHXbe7NEdZ0I0BtUfai8PVtTBim7JC51ebhpSRujsBC3rdRzYX8sUpR461Dv?=
+ =?us-ascii?Q?oGjQ0SHuyIOx4sjG1tXYXaKsEq8xSVXBCOtSqA2QPDbgOJEtZBuWqm/QMkxP?=
+ =?us-ascii?Q?MOShAntFX20L1Yw3/Xy1PDgEtTQj25X4HdP8I3RaehzPwdfqP7xyw8inzV8o?=
+ =?us-ascii?Q?wF7rv2wY0IOu4CEYJisZxm+Imo+nDKy+uZcFXTmniMh3sTrCCuMjsiiPJKFX?=
+ =?us-ascii?Q?OOC7mNOEums6jDe0/t43bW7vymOnT0Xk/18tvFlyFEe9qYRBwJ1jvA=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(52116014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Zoy5CTQc5f2n69yDMOBEdP6i1tarH+5ZRZJyqaI376z2/DCP2D9vJdx/Pypo?=
+ =?us-ascii?Q?52UEfGqDS2cg65T0uaonMjcls/XtKiZ3hdhoYJr4zKa3jyk/yWypS6yNw2TW?=
+ =?us-ascii?Q?xsP0i2KluUPgRnsnerfN8pzkxFAdD4aoCD0ORQweQFCfGMb7O8sx5kzQHW/5?=
+ =?us-ascii?Q?Gpto3tk/glntiIRzphnGv9KQL94ErLMqf3R/2BjaqL4RqL5LLI+4uNPTwuEI?=
+ =?us-ascii?Q?bC463ox28XMsetQKtiq4CSZDQ449aKaUe62XU12dMvQVNEVftKusufVHyAzo?=
+ =?us-ascii?Q?OtLNUmJtQ1x6FpZPK29CIczSZz44dpSJBQp9PK8kMraPYOW0SCUJJ73EwJ0D?=
+ =?us-ascii?Q?6quMfD/F83qqWh5DtL0j6wGG+zoQLpAJjPPoL8Mk6uOueiXND6M0NJnP2iTk?=
+ =?us-ascii?Q?7WXczqnVS0VA9kWI0vqnyj4/xUXPj2emVHdRvsBXFSVIPRYrpvO4IE2DfJR6?=
+ =?us-ascii?Q?DPI4MkCruaGAJXpnLADym8oelm+9OMT9t1/3FGjN5wE66kMbTod6aDgsqM1k?=
+ =?us-ascii?Q?rt8HxzSHN4AwnxrNUDmaFmCacfUjIaQJbRGmlXhhUdFR52pFKsUYPYs3q8p2?=
+ =?us-ascii?Q?OHgmy2U40rJcTwknOBjb9amcPjROoNcMUc0g6KCEOpQQXfCVSovxyONlFMFW?=
+ =?us-ascii?Q?9nX4Y4D7Ses6J0adT/qjyjk05P3y3+8H1J+xLmfkdmkVdkWEhpOazVL2uNCP?=
+ =?us-ascii?Q?PoUIUnqI1AZGWw5Lr+ycKh9KP0NnqXlOaLiJ2vZu/G6owmHocF6OnK/7IQqz?=
+ =?us-ascii?Q?fJQDaboA4H6OnQMC4tuTWiJlluLQJ3aJ5Y5UeXpPfFUJbHFoGE3MuS3UFTZC?=
+ =?us-ascii?Q?58eh4yAH3ZA9wZb15q9+7utqP8p+2ZsWgeiYHNfihNT+ctxJhZ5AYgoxndHU?=
+ =?us-ascii?Q?qbmvm6/wRWEAKkTDm6/A7pMFeYX52IGUra3gAwTRf8r1kFrE7e6oqsnm6R8l?=
+ =?us-ascii?Q?Ql/GIfgvtMBW+Ha8EOlQmvFfbXtA/WCgNCaci9obntuXXzrL/RT6ImlZcURU?=
+ =?us-ascii?Q?R3mWQTxofZF06cGsht+l0i+kNXT0Qoq91BcPHwre6YVNq7cORZHlm/qppqTX?=
+ =?us-ascii?Q?ytNL3EfzNQdYPHfZRIlp/DmKRwX2lPazVqV729NFjHuir8i2aclKFlD2ZPza?=
+ =?us-ascii?Q?v3FlFEczoyJNmsN/ZvkRJ5VXhZmGiCpCq2/+sxnLXEPuX5qs79lmiYxgP0Qa?=
+ =?us-ascii?Q?yzS3AJV5NVyey7wLkWllHZ9GCqDZ1Wb09tzgMnhVl/OHUtqmGw3Y4AjQh/5M?=
+ =?us-ascii?Q?+jqXOMs6zaq2gkuVHamkp5r4dQrACgcuLrutpza27tlvTBRaZggiqo3abMXZ?=
+ =?us-ascii?Q?rkpT1pRXpynexnSeWlI+EjPN0kngzbdHaVNkVoWFBcceFTUkwOYera2CbUZU?=
+ =?us-ascii?Q?Fub0VmS9XGmNsta/yz8k9vtMJ+HjQppK0duZkB913xZ4P+KxItwiNeYt3UBd?=
+ =?us-ascii?Q?X7OPSKr1JL6rZ1aGjY7WLFIs1vqSUhQ24VQGAdLEDksIK8Yl4N4mNQEbTRnT?=
+ =?us-ascii?Q?/bWUgQvxaoNFJ9Lkd3j+wtJV9fQ3HC/sTp5b73+QLsYngyeeLZow9cy/vSRw?=
+ =?us-ascii?Q?HtM6zY1hUlKio8X4Xl1AG8NRCO0a5yHrhj0VQSLH5GbDJgfYGuboiRG0RwW7?=
+ =?us-ascii?Q?2w=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e6fa1e6c-ffd2-434b-e19e-08ddfd274218
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 18:05:21.4721
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fx69rj+fGT0FDDuxZNo4A24F0O/e3ZTXHbn7hweBEnF5V9F+KxvA1lq1fFiO0hnsgmTP7sGmH1fsStbIybUdzg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7878
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_004028_158735_67755834 
-X-CRM114-Status: GOOD (  18.44  )
+X-CRM114-CacheID: sfid-20250926_110532_299132_7EE64F42 
+X-CRM114-Status: GOOD (  14.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,293 +162,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PCIe PHY support for ExynosAutov920 SoC
+This is the first part in upstreaming a set of around 100 patches that
+were developed in NXP's vendor Linux Factory kernel over the course of
+several years.
 
-Signed-off-by: Sanghoon Bae <sh86.bae@samsung.com>
----
- drivers/phy/samsung/phy-exynos-pcie.c | 231 ++++++++++++++++++++++++++
- 1 file changed, 231 insertions(+)
+This part is mainly concerned with correcting some historical mistakes
+which make extending the driver more difficult:
+- the register naming scheme forces us to modify a single register field
+  per lynx_28g_lane_rmw() call - leads to inefficient code
+- lynx_28g_lane_set_sgmii(), lynx_28g_lane_set_10gbaser() are unfit for
+  their required roles when the current SerDes protocol is 25GBase-R.
+  They are replaced with a better structured approach.
+- USXGMII and 10GBase-R have different protocol converters, and should
+  be treated separately by the SerDes driver.
+- Lane power management does not really power down the lanes.
+- Consumer drivers using phy_exit() would cause the kernel to hang.
+- The 3 instances of this SerDes block, as seen on NXP LX2160A, need to
+  be differentiated somehow, because otherwise, the driver cannot reject
+  a configuration which is unsupported by the hardware. The proposal is
+  to do that based on compatible string.
 
-diff --git a/drivers/phy/samsung/phy-exynos-pcie.c b/drivers/phy/samsung/phy-exynos-pcie.c
-index 5a55a22f9661..5b9d65f8f6c7 100644
---- a/drivers/phy/samsung/phy-exynos-pcie.c
-+++ b/drivers/phy/samsung/phy-exynos-pcie.c
-@@ -129,14 +129,87 @@
- #define FSD_PCIE_SYSREG_PHY_1_CMN_RSTN			BIT(1)
- #define FSD_PCIE_SYSREG_PHY_1_INIT_RSTN			BIT(3)
- 
-+/* Exynosautov920 register offsets and bits */
-+/* EA920: PHY registers */
-+#define EA920_PCIE_PHY0_COMMON_CTRL			0x1000
-+#define EA920_PCIE_PHY_RTUNE_REQ			0x10000001
-+#define EA920_PCIE_PHY0_GEN_CTRL_1			0x1010
-+#define EA920_PCIE_PHY0_REFA_CLK_SEL_MASK		GENMASK(17, 16)
-+#define EA920_PCIE_PHY0_REFB_CLK_SEL_MASK		GENMASK(19, 18)
-+#define EA920_PCIE_PHY0_PHY0_SRAM_BYPASS		BIT(10)
-+#define EA920_PCIE_PHY0_PHY0_SRAM_EXT_LD_DONE		BIT(11)
-+#define EA920_PCIE_PHY0_REFA_B_ALT1			0x061a0060
-+#define EA920_PCIE_PHY0_REFA_B_ALT0			0x06100060
-+#define EA920_PCIE_PHY0_REFA_B_PAD			0x06150060
-+#define EA920_PCIE_PHY0_SRAM_INIT_DONE			31
-+#define EA920_PCIE_PHY_EXT_TX_ROPLL_POSTDIV_CTRL	0x11a8
-+#define EA920_PCIE_PHY_ROPLL_POSTDIV_VAL		0x1249
-+#define EA920_PCIE_PHY_EXT_TX_OVRD_EN_CTRL		0x11c4
-+#define EA920_PCIE_PHY_ROPLL_POSTDIV_OVRD_EN_VAL	(0xf << 0)
-+#define EA920_PCIE_PIPE_LANEX_LANEPLL_BYPASS		0x1384
-+#define EA920_PCIE_PIPE_BYPASS_MODE_CTRL_VAL1		0x0
-+#define EA920_PCIE_PIPE_BYPASS_MODE_CTRL_VAL2		0x0
-+/* EA920: SOC CTRL registers */
-+#define EA920_PCIE_REFCLK_CTRL_SOC_OPTION_0		0xa200
-+#define EA920_PCIE_REFCLK_OPTION0_RC			0x103f5
-+#define EA920_PCIE_REFCLK_CTRL_SOC_OPTION_1		0xa204
-+#define EA920_PCIE_REFCLK_OPTION1_RC			0x30c00
-+/* EA920: PMU registers */
-+#define EA920_PCIE_PHY_4L_CONFIGURATION			0x700
-+#define EA920_PCIE_PHY_2L_CONFIGURATION			0x704
-+#define EA920_PCIE_PHY_CFG_EN_PHY			(0x1 << 0)
-+/* EA920: GEN SYS registers */
-+#define EA920_GENERAL_SS_RST_CTRL_1			0x48
-+#define EA920_GENERAL_RST_PE0_SOFT_WARM_PHY_RESET	GENMASK(2, 1)
-+#define EA920_GENERAL_RST_PE1_SOFT_COLD_RESET		(0x1 << 8)
-+#define EA920_GENERAL_RST_PE1_SOFT_WARM_PHY_RESET	(0x3 << 9)
-+#define EA920_GENERAL_RST_PE0_SOFT_WARM_RESET		(0x1 << 1)
-+#define EA920_GENERAL_RST_PE1_SOFT_WARM_RESET		(0x1 << 9)
-+#define EA920_GENERAL_RST_PE0_1_PHY_EN			0x808
-+#define EA920_PHY_TIMEOUT				2000
-+/* EA920: SYSREG registers */
-+#define EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_4L		0x670
-+#define EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_2L		0x4
-+#define EA920_HSI0_PCIE_PHY_TEST_PWRDWN_MSK		BIT(0)
-+#define EA920_HSI0_PCIE_PHY_TEST_PWRDUP			0x0
-+#define EA920_HSI0_PCIE_PHY_TEST_PWRDWN			0x1
-+#define EA920_HSI0_PCIE_GEN5_4LA_PHY_CTRL		0x828
-+#define EA920_HSI0_PCIE_GEN5_2LA_PHY_CTRL		0x868
-+#define EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_MSK		GENMASK(27, 24)
-+#define EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_RC_A		0x4
-+#define EA920_HSI0_PLL_REG0				0x600
-+#define EA920_HSI0_PLL_FOUTEN_MSK			BIT(8)
-+#define EA920_HSI0_PLL_FOUTEN				0x1
-+#define EA920_HSI0_PLL_REG1				0x604
-+#define EA920_HSI0_PLL_FOUTPOSTDIVEN_MSK		BIT(0)
-+#define EA920_HSI0_PLL_FOUTPOSTDIVEN			0x1
-+#define EA920_HSI0_PLL_REG2				0x608
-+#define EA920_HSI0_PLL_PLLEN_MSK			BIT(24)
-+#define EA920_HSI0_PLL_PLLEN				0x1
-+#define EA920_HSI0_CLKBUF0_REG0				0x620
-+#define EA920_HSI0_CLKBUF1_REG0				0x630
-+#define EA920_HSI0_CLKBUF2_REG0				0x640
-+#define EA920_HSI0_CLKBUF3_REG0				0x650
-+#define EA920_HSI0_CLKBUF_IMP_CTRL_MSK			BIT(0)
-+#define EA920_HSI0_CLKBUF_IMP_CTRL			0x1
-+
- /* For Exynos pcie phy */
- struct exynos_pcie_phy {
- 	void __iomem *base;
- 	void __iomem *pcs_base;
- 	struct regmap *pmureg;
- 	struct regmap *fsysreg;
-+	int num_lanes;
- };
- 
-+static u32 exynos_pcie_phy_readl(void __iomem *base, u32 offset)
-+{
-+	u32 data = 0;
-+
-+	data = readl(base + offset);
-+	return data;
-+}
-+
- static void exynos_pcie_phy_writel(void __iomem *base, u32 val, u32 offset)
- {
- 	writel(val, base + offset);
-@@ -398,6 +471,152 @@ static int fsd_pcie_phy1_init(struct phy *phy)
- 	return 0;
- }
- 
-+static int exynosautov920_pcie_phy_init(struct phy *phy)
-+{
-+	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
-+	u32 val;
-+	int timeout;
-+
-+	/* PHY on */
-+	if (ep->num_lanes == 4) {
-+		regmap_update_bits(ep->pmureg,
-+				   EA920_PCIE_PHY_4L_CONFIGURATION,
-+				   BIT(0), EA920_PCIE_PHY_CFG_EN_PHY);
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_4L,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN_MSK,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDUP);
-+
-+		/* SYSREG set to RC */
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_4LA_PHY_CTRL,
-+				   EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_MSK,
-+				   EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_RC_A);
-+	} else if (ep->num_lanes == 2) {
-+		/* In 2L phy, 4L phy pmu should isolation off first */
-+		regmap_update_bits(ep->pmureg,
-+				   EA920_PCIE_PHY_4L_CONFIGURATION,
-+				   BIT(0), EA920_PCIE_PHY_CFG_EN_PHY);
-+		regmap_update_bits(ep->pmureg,
-+				   EA920_PCIE_PHY_2L_CONFIGURATION,
-+				   BIT(0), EA920_PCIE_PHY_CFG_EN_PHY);
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_2L,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN_MSK,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDUP);
-+		/* SYSREG set to RC */
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_2LA_PHY_CTRL,
-+				   EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_MSK,
-+				   EA920_HSI0_PCIE_IP_CTRL_DEV_TYPE_RC_A);
-+	}
-+
-+	/* SOC control */
-+	exynos_pcie_phy_writel(ep->pcs_base, EA920_PCIE_REFCLK_OPTION0_RC,
-+			       EA920_PCIE_REFCLK_CTRL_SOC_OPTION_0);
-+	exynos_pcie_phy_writel(ep->pcs_base, EA920_PCIE_REFCLK_OPTION1_RC,
-+			       EA920_PCIE_REFCLK_CTRL_SOC_OPTION_1);
-+
-+	/* PLL setting */
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_PLL_REG0,
-+			   EA920_HSI0_PLL_FOUTEN_MSK, EA920_HSI0_PLL_FOUTEN);
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_PLL_REG1,
-+			   EA920_HSI0_PLL_FOUTPOSTDIVEN_MSK,
-+			   EA920_HSI0_PLL_FOUTPOSTDIVEN);
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_PLL_REG2,
-+			   EA920_HSI0_PLL_PLLEN_MSK, EA920_HSI0_PLL_PLLEN);
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_CLKBUF0_REG0,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL_MSK,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL);
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_CLKBUF1_REG0,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL_MSK,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL);
-+	regmap_update_bits(ep->fsysreg, EA920_HSI0_CLKBUF2_REG0,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL_MSK,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL);
-+	regmap_update_bits(ep->fsysreg,	EA920_HSI0_CLKBUF3_REG0,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL_MSK,
-+			   EA920_HSI0_CLKBUF_IMP_CTRL);
-+
-+	/* REFCLK setting */
-+	val = exynos_pcie_phy_readl(ep->base, EA920_PCIE_PHY0_GEN_CTRL_1);
-+	exynos_pcie_phy_writel(ep->base, val &
-+			       ~EA920_PCIE_PHY0_REFA_CLK_SEL_MASK,
-+			       EA920_PCIE_PHY0_GEN_CTRL_1);
-+	exynos_pcie_phy_writel(ep->base,
-+			       val & ~EA920_PCIE_PHY0_REFB_CLK_SEL_MASK,
-+			       EA920_PCIE_PHY0_GEN_CTRL_1);
-+	/* wait for REF CLK source change */
-+	usleep_range(100, 110);
-+	exynos_pcie_phy_writel(ep->base, EA920_PCIE_PHY_RTUNE_REQ,
-+			       EA920_PCIE_PHY0_COMMON_CTRL);
-+	exynos_pcie_phy_writel(ep->base, EA920_PCIE_PHY_ROPLL_POSTDIV_VAL,
-+			       EA920_PCIE_PHY_EXT_TX_ROPLL_POSTDIV_CTRL);
-+	exynos_pcie_phy_writel(ep->base,
-+			       EA920_PCIE_PHY_ROPLL_POSTDIV_OVRD_EN_VAL,
-+			       EA920_PCIE_PHY_EXT_TX_OVRD_EN_CTRL);
-+	exynos_pcie_phy_writel(ep->base, EA920_PCIE_PIPE_BYPASS_MODE_CTRL_VAL1,
-+			       EA920_PCIE_PIPE_LANEX_LANEPLL_BYPASS);
-+	exynos_pcie_phy_writel(ep->base, EA920_PCIE_PIPE_BYPASS_MODE_CTRL_VAL2,
-+			       EA920_PCIE_PIPE_LANEX_LANEPLL_BYPASS);
-+	exynos_pcie_phy_writel(ep->base, EA920_PCIE_PHY0_REFA_B_ALT0,
-+			       EA920_PCIE_PHY0_GEN_CTRL_1);
-+
-+	/* PHY warm reset */
-+	val = exynos_pcie_phy_readl(ep->base, EA920_GENERAL_SS_RST_CTRL_1);
-+	exynos_pcie_phy_writel(ep->base, val |
-+			       EA920_GENERAL_RST_PE0_SOFT_WARM_PHY_RESET,
-+			       EA920_GENERAL_SS_RST_CTRL_1);
-+	usleep_range(10, 12);
-+	exynos_pcie_phy_writel(ep->base, val &
-+			       ~EA920_GENERAL_RST_PE0_SOFT_WARM_PHY_RESET,
-+			       EA920_GENERAL_SS_RST_CTRL_1);
-+
-+	/* Set SRAM bypass */
-+	val = exynos_pcie_phy_readl(ep->base, EA920_PCIE_PHY0_GEN_CTRL_1);
-+	exynos_pcie_phy_writel(ep->base, val | EA920_PCIE_PHY0_PHY0_SRAM_BYPASS,
-+			       EA920_PCIE_PHY0_GEN_CTRL_1);
-+
-+	/* Wait SRAM init */
-+	timeout = 0;
-+	do {
-+		udelay(1);
-+		timeout++;
-+		if (timeout >= EA920_PHY_TIMEOUT)
-+			return -ETIME;
-+	} while (!(exynos_pcie_phy_readl(ep->base,
-+					 EA920_PCIE_PHY0_GEN_CTRL_1) >>
-+					 EA920_PCIE_PHY0_SRAM_INIT_DONE));
-+
-+	timeout = 0;
-+	val = exynos_pcie_phy_readl(ep->base, EA920_PCIE_PHY0_GEN_CTRL_1);
-+	exynos_pcie_phy_writel(ep->base, val |
-+			       EA920_PCIE_PHY0_PHY0_SRAM_EXT_LD_DONE,
-+			       EA920_PCIE_PHY0_GEN_CTRL_1);
-+	/* wait for PHY init done */
-+	mdelay(100);
-+
-+	return 0;
-+}
-+
-+static int exynosautov920_pcie_phy_exit(struct phy *phy)
-+{
-+	struct exynos_pcie_phy *ep = phy_get_drvdata(phy);
-+
-+	if (ep->num_lanes == 4)
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_4L,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN_MSK,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN);
-+	else if (ep->num_lanes == 2)
-+		regmap_update_bits(ep->fsysreg,
-+				   EA920_HSI0_PCIE_GEN5_PHY_PWRDWN_2L,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN_MSK,
-+				   EA920_HSI0_PCIE_PHY_TEST_PWRDWN);
-+
-+	return 0;
-+}
-+
- static const struct phy_ops fsd_phy0_ops = {
- 	.init		= fsd_pcie_phy0_init,
- 	.reset		= fsd_pcie_phy0_reset,
-@@ -410,6 +629,12 @@ static const struct phy_ops fsd_phy1_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static const struct phy_ops exynosautov920_phy_ops = {
-+	.init		= exynosautov920_pcie_phy_init,
-+	.exit		= exynosautov920_pcie_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
- static const struct of_device_id exynos_pcie_phy_match[] = {
- 	{
- 		.compatible = "samsung,exynos5433-pcie-phy",
-@@ -423,6 +648,10 @@ static const struct of_device_id exynos_pcie_phy_match[] = {
- 		.compatible = "tesla,fsd-pcie-phy1",
- 		.data = &fsd_phy1_ops,
- 	},
-+	{
-+		.compatible = "samsung,exynosautov920-pcie-phy",
-+		.data = &exynosautov920_phy_ops,
-+	},
- 	{},
- };
- 
-@@ -468,6 +697,8 @@ static int exynos_pcie_phy_probe(struct platform_device *pdev)
- 
- 	exynos_phy->pcs_base = devm_platform_ioremap_resource(pdev, 1);
- 
-+	of_property_read_u32(dev->of_node, "num-lanes", &exynos_phy->num_lanes);
-+
- 	phy_set_drvdata(generic_phy, exynos_phy);
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
+In addition to the above, a new feature is also added in patch 14/17:
+25GBase-R. Code allowing this mode to be used is also necessary in the
+Ethernet MAC and PCS drivers - not present here.
+
+The set grew in size (sorry!) from v1 here:
+https://lore.kernel.org/lkml/20250904154402.300032-1-vladimir.oltean@nxp.com/
+due to Josua's request for a device tree binding where individual lanes
+have their own OF nodes. This seems to be the right moment to make that
+change.
+
+It also grew in size from v2 due to Josua's request to avoid unbounded
+loops waiting for lane resets/halts/stops to complete:
+https://lore.kernel.org/lkml/d0c8bbf8-a0c5-469f-a148-de2235948c0f@solid-run.com/
+
+Detailed change log in individual patches. Thanks to Josua, Rob, Conor,
+Krzysztof, Ioana who provided feedback on the previous version, and I
+hope it has all been addressed.
+
+Cc: Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: devicetree@vger.kernel.org
+
+Ioana Ciornei (2):
+  phy: lynx-28g: configure more equalization params for 1GbE and 10GbE
+  phy: lynx-28g: add support for 25GBASER
+
+Vladimir Oltean (15):
+  phy: lynx-28g: remove LYNX_28G_ prefix from register names
+  phy: lynx-28g: don't concatenate lynx_28g_lane_rmw() argument "reg"
+    with "val" and "mask"
+  phy: lynx-28g: use FIELD_GET() and FIELD_PREP()
+  phy: lynx-28g: convert iowrite32() calls with magic values to macros
+  phy: lynx-28g: restructure protocol configuration register accesses
+  phy: lynx-28g: make lynx_28g_set_lane_mode() more systematic
+  phy: lynx-28g: refactor lane->interface to lane->mode
+  phy: lynx-28g: distinguish between 10GBASE-R and USXGMII
+  phy: lynx-28g: use "dev" argument more in lynx_28g_probe()
+  phy: lynx-28g: improve lynx_28g_probe() sequence
+  dt-bindings: phy: lynx-28g: add compatible strings per SerDes and
+    instantiation
+  phy: lynx-28g: probe on per-SoC and per-instance compatible strings
+  phy: lynx-28g: use timeouts when waiting for lane halt and reset
+  phy: lynx-28g: truly power the lanes up or down
+  phy: lynx-28g: implement phy_exit() operation
+
+ .../devicetree/bindings/phy/fsl,lynx-28g.yaml |  159 +-
+ drivers/phy/freescale/phy-fsl-lynx-28g.c      | 1505 +++++++++++++----
+ 2 files changed, 1366 insertions(+), 298 deletions(-)
+
 -- 
-2.45.2
+2.34.1
 
 
 -- 
