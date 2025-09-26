@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 263DCCAC5AE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C38ABCAC5BB
 	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 18:05:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BeNxkQzhE4izwx+ChUn4B+bz/W7B4uuPLtJrmQmF/Q=; b=zu6s4RV/m+3RxS
-	r/NiurYbxtGZScwsEvzeynB72k5VyWsMz1Bo4t3KQVo9qeuTQMjREQuSoDzVrSPAu9vrF3YuBFygM
-	zeoCPyFUlnXL+tEJc3YeJsuq7bx5Eaj2dc7t2yWiLD5ORAz0Iyq5hdk//np0K/CRSTpiTr43d6myh
-	cujWn+CMxKVFjgHr63hWNWnHxjFRHcoOQ9F8qeIT8Sa3cdGRBAR22K+PU48C7teFu7QbWp2hOTmok
-	09YgTaB7qehawJj1Zwu3noGpdvaJykJOckKGPrczMvPAWbqGcIB048FqTSizgiKvryTKM/lHdBWRp
-	u40YqFxLGc4EA+HMWiyg==;
+	List-Owner; bh=fOYVm5TPnnjYCE/C+Uuelyqyu6xCFCoApKyV6akT/JI=; b=IYKo41+H+QG69H
+	Q3hIm7t88LJmsa5Wu5vAl3lNMY450koknAdVxtYDgof2wOzhWY/7SQOrMQnN04A80TbLZ+REo/Ita
+	a2HUdaVdwb3IyvequcF4X9kkkKFyvpYM76UR3Pdlk/vZXFlKdEmg7b66xCi9TGMHt+QXzbgA4Aub+
+	05nYahOOUGHVkd4BTwg+AUXPufrdnsnc1TlO/msxi9TgU5r5uiW33D9Lno9COerIlauR8M+mtodcO
+	LuncaWfs6k9OuiaQaWagfeNaIw4uTZ45AQApgYg30Y81cakGxpxkN194QeoxbmFQ7axGMeTXxlYk4
+	SEPQM/NCuxT2h9iRy3+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2Cp9-00000003Rq7-3Ssi;
-	Fri, 26 Sep 2025 18:05:39 +0000
+	id 1v2CpA-00000003Rro-1yc3;
+	Fri, 26 Sep 2025 18:05:40 +0000
 Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2Cp5-00000003Rfe-3RFk
+	id 1v2Cp7-00000003Rfe-1XJB
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Sep 2025 18:05:36 +0000
+	Fri, 26 Sep 2025 18:05:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=v0orrBYwd/KgrFBcOPXFTAL+Xw/7pLBbLuvZW/AaB8FAyUb8k4HStPEGemoxjIDxK4WXYOMc77oEAHwqjzyufWntsJZ49PUjw0Y06OEHRiFt1jBPkP6RyagdbO4WVfWbLhT/30WCmuG7L6Ceaq8CPDFYoHAZpVVecrlDh/N6Z3yp5U2SrY1U4oA6Rl2dqwvqdOdwrPcShotkk5YvNga4gu894grUNetj0a1hDAVe7MOLN+dXI7vosx6CS5Tz7Li3pPNGoNDrurO0eyidp3kQNguLFRVEt0F9kQhc5EcK9yKse3IjYkC9aQH5lb07W1ot4T4lE9XxjjHe2u2fm74dHQ==
+ b=O+DOKB/joPI0YKxVyFlGZaZveBYGSv6uojABM4LTGKoTQQ9pZ0C7xf/bX+kNz7xGgMMAd/HfQJU44H4Qfyb8xjdovlpKVCMIJ9y84iY5hHKmTol6sn7BHYEYdWmKThV7MC/1e1QvnDUVwAcKA2cZqN0G2nZolZfqEAkwMV5SHnGxRCyvcHpIyhBm/sf5y3y00ZyiOFUIa8EdAbbnrqP7dFT5QokM4gqwrfHoPl2L9HJrEETSNzc8czjO40VvWQTe46W0obJkqT3O737srRFJtN+U6c3yDi3V5298xbbfgtuz8IsE9pZgH5UsZt+vzFetEInkA/kw27RXzk+HY9v0BA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BcvrIjVSKEghfI0txyJwFSvI9VmHOQhBmH9oOu2xXqc=;
- b=TVmnbyIozLz5WSXLQmCW0yqsXXguuOIUXBWhqe70c/0SvfLxAlxiviKltU5+p16rNTjPO13NwF8bG372muI6EL2bRhUhGfgkA9QTbeJIrgkziEu02zBdGhgFUvR21ig2x3Lo/SomQcK0XW6PdAWmdSF7NgltQ8uQyeJBOzcGYJCZ7rWdYjay+vMvV6EO+HpqI+OprsgEdKS5HZyLCl+ngkT7jxoNByZTDhzb95NMM7eqcrfwjDIGqG8HVHoEWFaVnSczoSj+1tgqT1Xy3G4uTcrQIDZ+Sln85vDOxgx3XkW17m5ho4F5eZtsYor3fApUTjR2ziLA7Dqy5BbTP09RwQ==
+ bh=EIQibI1krwWFMFGMBFJ7EukFGFRmO9tY7jKH6ZzeSKI=;
+ b=dTImpSct2yLtuvA6cdn90iAC+UXDCZf2G94Dvxq3y4rTCquotVRUxAJ3x05yAFJiMOVz2Qv3x2Bye/BViC6eZefUXaHLFO94jk6Ngad2mKPYRaEeIBzgKpaSiV3yrba3Fz6twAoiXH8ItLoiYt8Zx1s3m4Mbbj6+cfjim/oxgbMhfe8x1C/C6mejBqG6yikp6h4olwmTVBC0doCDvQ/X6bqYQMBsIFMhFxyADP4J71s6yQ05uMOJ/x+8NRI2yqMjFeBXIO5qnOHAZmwVBVPrVNOt99pOuvWweBK8io2Gd6ofYuZzr2F3wllsGuzrJevfjtUEmPFDgoHM4eKrS6bszA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BcvrIjVSKEghfI0txyJwFSvI9VmHOQhBmH9oOu2xXqc=;
- b=i38tYidmZJ0CK1v+Q1TBKw+pLaNoihPelG7itmbB9EmGvI+ZfLiXXE6SOoMuIrc2vBc6v/vCd6ZUB5UFM7ZNXbnXOVEDAzdSGvUluZXnZfpBGOV6N7S2BLmo4/qJao9m1j5sHri1RSdxzZwQ3TznAFsvd+iCT44iHo1a9eJ39tp6sG6VJLpx4ffvF2xt54dn3uwEiYby/xX2iQQBHlRLDL+KYKny6OwLfVQRnb2bYaKvXiIAcdcEogXX1SvE2Lh6Qi4flP/cTSYvyTNFwfJN9zVa41Y+oQX8AV66A7FUyOJMNAuXskDm567RpZbxBvOkTse3JsyI+TsFoNZfKagA0g==
+ bh=EIQibI1krwWFMFGMBFJ7EukFGFRmO9tY7jKH6ZzeSKI=;
+ b=CXv6B1tI8duLgA0b6ixSpnJsjoOUVxWKiHYS2KCBTToECwCQMvrk8J0Cn06Y65bct3gTILkJC5N+phRmpS1ZaUbf6GpssWkZ58Ws/d5txeOSnxmhai9XOxkdovOjs2ClsBNAy17e58NLLjATc1KbibtpJUuU4bTuSUZ7jzfSmm1wf0JJZQqXKJLMOJqk4HrGCpCbKg/HxXxXE3u90yRfAMIVkS4Pf9CSbsB+YFU31PqYb9APc40Q/Ep+O+xt3NS1dRDGnvehAyEuGTUo0YfQCM4WXTuM1bzLsaHTrJGp1TKE2j/4LqYBFdlwTzVV70yTkyH2/ZKqe/hHv//WUpUuPg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
  by AS8PR04MB7878.eurprd04.prod.outlook.com (2603:10a6:20b:2af::24) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.9; Fri, 26 Sep
- 2025 18:05:24 +0000
+ 2025 18:05:27 +0000
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9160.010; Fri, 26 Sep 2025
- 18:05:24 +0000
+ 18:05:27 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
@@ -59,9 +59,9 @@ Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Josua Mayer <josua@solid-run.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 phy 03/17] phy: lynx-28g: use FIELD_GET() and FIELD_PREP()
-Date: Fri, 26 Sep 2025 21:04:51 +0300
-Message-Id: <20250926180505.760089-4-vladimir.oltean@nxp.com>
+Subject: [PATCH v3 phy 05/17] phy: lynx-28g: restructure protocol configuration register accesses
+Date: Fri, 26 Sep 2025 21:04:53 +0300
+Message-Id: <20250926180505.760089-6-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250926180505.760089-1-vladimir.oltean@nxp.com>
 References: <20250926180505.760089-1-vladimir.oltean@nxp.com>
@@ -71,80 +71,80 @@ X-ClientProxiedBy: AS4P250CA0008.EURP250.PROD.OUTLOOK.COM
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|AS8PR04MB7878:EE_
-X-MS-Office365-Filtering-Correlation-Id: 625ee4fc-0468-4a3f-4ca0-08ddfd2743f1
+X-MS-Office365-Filtering-Correlation-Id: ebacb857-eed8-465b-b3f7-08ddfd2744d5
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|52116014|376014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?MOFnS/M7JO8m0UmndnKiEch62OCMhNWaiWLuAn38pFprbvn+2Jc4s2e1DkmJ?=
- =?us-ascii?Q?BDpTinO9IiVa0F9B7sP4qsbiabqbI63lA4FjkuTDO5+ThGyAwOLqBvbkLcOe?=
- =?us-ascii?Q?7qbXKzVJZId2Jw8VfAw4bByn6777wlDyywcDhtHNxvbgt2CXcTwqsy3zKXld?=
- =?us-ascii?Q?jtpSjbT+uijtIOPUaaROjq9e7J24AUl6KwPIf9L6/bcS2P3+KiZ18zogYXn0?=
- =?us-ascii?Q?We9AGTbseCEXCtkNy+C7B/QlQz3sQMFV1t9wJdknt5In1hWp6ZjZ8FaxMEfn?=
- =?us-ascii?Q?wFKRY2c6psZG5CqkLhqo58VrAkalz8/a+c194LCjC7XO4m5xCluxqrQv6fSk?=
- =?us-ascii?Q?ZXQsiH2X/frx8qGIaqHhpm5NvT6cPpSVXCi3RGQBByl3R7XXF8R7ibdph0Ns?=
- =?us-ascii?Q?rR3OEuE9b7S+CT3K5vQ8IvJgNJZikesTJuOyhlBPIBHCUYy4uz8h59VZvF89?=
- =?us-ascii?Q?1tbYXGqxWfltFuiFxFz/hHOM3K43m2WWtQyimN2Si2SsloO51YJw/N4g36gG?=
- =?us-ascii?Q?py9kPxb2T/xQiFwrBJ7+1xKC1L/FBWSMrrui/2H8l+fSONTGS6pt4Xexqw30?=
- =?us-ascii?Q?g45JaIk4I1UeFb40HZZzXXLs8wYOg80e5QB78oG3MnA/311xjP62NR5xIBEs?=
- =?us-ascii?Q?olRBKSaehXn3T7fq8we/aamoq/mA+Ue8lU4GVEKxDHZfV3eVDenDRQdq7Neg?=
- =?us-ascii?Q?Nalzh3CWKUzMWF+SEn2UHtomMyrZvqBCCClxpAuDSj3XyIIx/UZMFWkDVjr0?=
- =?us-ascii?Q?o0hvEBTkCcwFSlptBK2hd9C0flm1HZpMC69FCqyp3m0SMWJBiqxBskgNfgOO?=
- =?us-ascii?Q?+ZOY7WvR1fpFa99v1zwlRODEK9M6lQG3VTSynXie7gseZqAeaJVFH0IdkiRU?=
- =?us-ascii?Q?ftxiY9zSjeEuV99IPTYkO0LlA+oREbAjujLNukjuvP48BoukYZKQCePicGX/?=
- =?us-ascii?Q?QufLY28u6O6Nn50C0pm5gcd+aYEvlmN2+A04tRCKF+yhq+83CXB55Zhc1sSr?=
- =?us-ascii?Q?EAG/BDHLgthXr7Er+2vIuECcR4ubLPB/iT4pLePcT+UbpHx4cpnL72O1GNQ2?=
- =?us-ascii?Q?WElSdzjulSHnUGzfkJS7aJxu3HAQ+hd6sr19Puq2BNvyWBk9GnbSFjb5Upfl?=
- =?us-ascii?Q?j2bn0PiLnvCl4jyNBs/94SsEQ9VaVeu/pPZ3O71lriZGocCbh5xMQIeGuGpo?=
- =?us-ascii?Q?HaoY/BOI28Cd3Ol7Foi8A8Z1OZmpwU6FvHGMrrkgmaACrx28O1N8ZsFZ9+05?=
- =?us-ascii?Q?ruQFg3IzF1vNM2P6NW4tZ4Ip+x1e5vLjsbwhB7sRhzPNBMVgKKGzRRjiBaDG?=
- =?us-ascii?Q?YKy0r0ZvLYL/y26v0vjk2Qfo7BsKaBeczBzXanmdPPjCzMaHQ+K8kn1T9C7R?=
- =?us-ascii?Q?JpZII0VBXupp0NXBNm5W3Zo7fU8QpoSGvMvs/B8PxBh8SF9n+neSqfcrYapS?=
- =?us-ascii?Q?EDnPIHYUxvBg3QQ1iS3FZt28EaMl0jhOC0djMW8GS3niZQgZlt2DgB+ovyTa?=
- =?us-ascii?Q?3rD/0HgpfPa75NnzTWJSS/ZPYSCVuiIyYh4O?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?uEeUZS6qbfsq+qqbFdLjUUi1Il/IqBF8tf/4hmj9oAaAxPdmTntuvvreTEbM?=
+ =?us-ascii?Q?FF3QPf+++1JMsEAE3OhMPH0RkyIceaxyox+bA9R5EaMudHX3O9xD7Ze21NQ8?=
+ =?us-ascii?Q?6SfwSYDlTb5+CROuEF1+Loh+qrpLOaTCSdPp1RKRg7qw7TaECw1q5XtEtjMk?=
+ =?us-ascii?Q?7kksXZK/p0hkokSK0+FI98uGXbQAkwzCguGnV1o7PTfHrItkIFKLIqqbkgIt?=
+ =?us-ascii?Q?Fr6utK5tr5T2/gz+yeSFJkOBJHfXTnKvQXeJ3h207Wumyts3FYWomppCIU+E?=
+ =?us-ascii?Q?Qkk2TKeAa9SA/2Cz39xTBwWYDZ8iV1t1hZHsQWpAv2uNqBDtBKZeHIerHE/m?=
+ =?us-ascii?Q?J615RU+Qu9Z/lfbc0T50hUxaM3WM9UKazDFuNV1VpXJQHUcCJNnGgmQwjqZQ?=
+ =?us-ascii?Q?oYkzTLDXOIoKB1Pok5YipRo7IQo/JEcBDMJY6VPLw1PvSQhcYajUTv0vlZBc?=
+ =?us-ascii?Q?GcarEvoQbyTJGJr3Y3fC9UYJx90t2XAsJIucCaVW3qxxYLi0v+nCuhkEbCaO?=
+ =?us-ascii?Q?k5KDIwrQLkSAudXHNqnXJWwQH3Ga/X1FuG+1TetROL52IKAw6ml1MQ1g9fu5?=
+ =?us-ascii?Q?a6Yzzo7jLT2uX0eQipmFlByPTJxCvJws7fi+OVtqQ63uASAVf6QZjnbFao89?=
+ =?us-ascii?Q?LnSeS7ccZS4TuVhaUmG9nSl8d5joTdPlPzR5s5W5P16DsLGEB0uw9boTwdQf?=
+ =?us-ascii?Q?227oHSTz4j630hllughQ2WljTR/mpcqvTRe8XpfaCuw1r9Io8pGjfxZV3oa5?=
+ =?us-ascii?Q?GaZ1xoMNVVulcMhL24juvpNHe3Dri6/ZuMdEM4Cue/6rUso2I9OMzE7CXnTu?=
+ =?us-ascii?Q?8qShU7Atyhsj9FtZVWkaa20S1dJgQeL7gJQfji7LIUkXBnumEUBhVe6Y0N+9?=
+ =?us-ascii?Q?xVfZbV/MQkNqbSuReMg18eXd+zlEyj5KU4CaRwjzs9mP0zuCwOZFuXGmOYvG?=
+ =?us-ascii?Q?BVUfrOZqKbD1cYTaxefYqZBO2nOHxUaxLPQmrW4HXrRTsTJfrpOWIwJDI6Fq?=
+ =?us-ascii?Q?f+entKdRxT+5mh6/KZ98Ta1jpe0kgZddTfcaxgqLgjDYP3JbkFSg4Bx/Y/mP?=
+ =?us-ascii?Q?bICnI1i/G9JEsATukXUMDGodonk/uzqyx9R4Tw/gSm3z7VZhIUOTpmMlt3eU?=
+ =?us-ascii?Q?f1OMmS8yKtzsg5lEX/YSvflvvDbXBFWjf0d/I4xdtAesNz+JKiB3xDQVjK6R?=
+ =?us-ascii?Q?bTSwCRV/2pnurOZdNS1bh4eT3aoIDxTPGS3x64e8jmiwnCutJiiGofCydB2D?=
+ =?us-ascii?Q?+Lu76rvsrJJQxGtxueoW/NkFQUwU8jYpiWoDajPZY1smXfm896/XoJg8/4H+?=
+ =?us-ascii?Q?EOODJ1W72mvnBhVn+nCcPfgjN6i9bA7sizMCOqmUxjmvLvBo6r3nZqiaQ6dM?=
+ =?us-ascii?Q?Em5sjg/Ig4G/iT9srerZF9JmlcwJ8c0Th8DlT0ojP7lq9MMjwvhfS826vWPC?=
+ =?us-ascii?Q?7RTldBL2XuFW00UYrYhy3dwGL7mZwVepS35cWRleGFcz9l8l/YioJycDp/yE?=
+ =?us-ascii?Q?OyJntUay6xB3lb+Eh4U8gjcyWfvJgSxx22YT?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(52116014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zhDU+Oe76r0+BYP7BD7Ukw9zsHacRWBOZo4jCJhLd43gsFu4SLGfNQpTCII6?=
- =?us-ascii?Q?bWc9VK60Csc0vzo56h9HGo0nVWbFyhGS8CXf9pYo1iY/z+ruuio1e4eL6QYa?=
- =?us-ascii?Q?cod6ly0pFL3fgo2wx8CpEkVNJx0CeBuB7Mg/JQ83OnxDX01kRwaupQA9HlDe?=
- =?us-ascii?Q?zmvqedhKa9MqbikhAYxk/xHI3KR4ULDsijXVyJ+uAOt/MjXTDpktuDNaLKrV?=
- =?us-ascii?Q?RnrjFre9JtX/D4rut2lo7+TM2rnoQQddppgoIqnE8wZOLV23JU4Ol9DUkfBM?=
- =?us-ascii?Q?AXfV6tNdPe5kVgyHd8RMnv/Z8x/DxIbeZurrBMNOd+5PpswofZ+00TDYR42q?=
- =?us-ascii?Q?m4m2w2h7NmPbjkR8ciUUKgpdoH1ghv8faTcxbrqZWMTAKZIIzEDdsqOg02C4?=
- =?us-ascii?Q?uGpYhwbrFqtRLUIM5HSZLjkykPByethVp68GEi27XOVF1OdqBIU/3E5McZoM?=
- =?us-ascii?Q?ty/lGTW00zKjo7/c0O1aycbtg8Y4SV9qa19TDMUQkTKnau1zrw6AEiUQIkXD?=
- =?us-ascii?Q?CEQ4aigdN1i5U+vbQUVxQTkQ/O4PFsSXctf43v473eksdYrycVDbbUvU4O9u?=
- =?us-ascii?Q?dhzZ/1YL/gakYoTZXjE4Jx0DDKfnRL7nTsP1Q2qBQfvjgbP7S+7v3xvunnTg?=
- =?us-ascii?Q?yWmFvfKD2ktDQN0wMNfD1NNqewhTmfTHkQ5VapCsnc8TFJa0EeRvgbgoAjUP?=
- =?us-ascii?Q?/BAh2PVMWJExytsT4SUiGejAunfgfAH8Oz8N3lEO3LcDUX9jfZEwwTEWvNRX?=
- =?us-ascii?Q?yAO4viRE1kdM9g/PsD6VSsVuMhNQlO8l9FnH7KQmErxFdhRggpl9TmsAg1W5?=
- =?us-ascii?Q?dqf2rtyRLY2cfGiUq4H9UMq3icE4lIu3enFISP0Dk0jvsBnw4TuU0msZP0ia?=
- =?us-ascii?Q?LYaMrIPoeGKqQW/wsxfhBFPhv2N+d0iRs0Wq1t8Stb4g5FBaQlJD2pWxvFHS?=
- =?us-ascii?Q?VYUJ19GdKLXUhsLyl/+gom29uoogc+GwY4q8/AX4+d0KK5ZGvIe+R9d0z+PE?=
- =?us-ascii?Q?7Q6s5LDTXu2XuCWwGfMoh+SrwibKh3+4i6ZuJ8iyzYt31ohtEEa2A9aR9ar0?=
- =?us-ascii?Q?2Re362z83L8oKiF9Oame5si0i8GuE71u45gRaI9uc/3ewCstqA5hUk/ACE/a?=
- =?us-ascii?Q?Mb6WGtC8EFiTy3o5qS3jlAV62VnI/ntNNsZhWo1g+z+eBuhuM1K1DGFOgLkx?=
- =?us-ascii?Q?VuXx58OPIBBZ3q8A86iVC1SHWysizps7eLHqfy8BAhOuOuFgUA9atqw8rZi3?=
- =?us-ascii?Q?crQ+mJwFNC+d++PdO43wLvBXNXefYA7ngs20isqpIsg09hjt/qCwm/3t26pl?=
- =?us-ascii?Q?VW4idX7uC8B4QTi2fvrRMBX0KOVIgtBC4AzcijElHZbgDljEQVKUSEZedQUC?=
- =?us-ascii?Q?EPlF/Bbek3+n3ZksSpFUlC6iL3J1F6IhN95IUgl0GdwlBtnsgEGWTKSnp2nm?=
- =?us-ascii?Q?XN2B+o4OVflASKuwnPeqxtJ31Z+wKN/7chVr7fb6nqnjYdC3HvGpWgc5wZzJ?=
- =?us-ascii?Q?FQRVR8nDZkpgHHqeMf5xjYDouZatm7fmydephJdWdKkZYRFFpI1E7CSkWHTC?=
- =?us-ascii?Q?ZUf/1bqU7hXAORfBZYF2nccLx2cTr0UNTfaEWOhhm3VVB5Z4AN80nh9Rfz9b?=
- =?us-ascii?Q?BA=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dTiWW0MeXN3Eu+FQSjvXYO0ZA5wkiQJmlp3uCDmaOke81y+fLWLmCxRRwvZa?=
+ =?us-ascii?Q?2X7O9/nkZep5wExGRLc9x5aroEWEzWNde1sReT5fP/b440taSs8D3zTt3sLo?=
+ =?us-ascii?Q?K8ZlUGXECodOAbqMvrP/PYggkZQ5pt7b9oSBCfT8Qa6aLcgIR8KsMhP+Zrfq?=
+ =?us-ascii?Q?rWxnYqNk2rJoOvkO6miT6Y7uhRtGicqyEJTjeqg+tXIhpGSj2AwyioGYsYDK?=
+ =?us-ascii?Q?k9VZCyX3O7g80I8N1grIaoz14OccyfiVStydAaNywbYnIRGNZO8RjASUrpzF?=
+ =?us-ascii?Q?Fbo5O/2IKo7cu8jJgaL9Qxhc+qExNG9Nff9ZL4cRTOAfSKDxkqMFX0/LOotY?=
+ =?us-ascii?Q?NjcvcLAH7MmBXoJBELTKzGNGRgaq1FyjtYL2sffUX0AgM1a3JSPdRvRx+yZa?=
+ =?us-ascii?Q?8NapfCAqafr4y7pAeRSXgL8LdnIe6ohSIZLQhyY6xcPzQsB3MMaVhS8qVYmD?=
+ =?us-ascii?Q?9KUWxfk3azUnH+S7oMK7b9wyDGbt4f80TDkKRHYX4DJ6ph7wGEsg8jZJnAOi?=
+ =?us-ascii?Q?BDhwkawoQKOiANbYfEQtPUgFB8Nbh6DIV/oPf+LaAAucD/YvbYxSWJT5cdrH?=
+ =?us-ascii?Q?vEmKmJmlRZh+R9eP5OCEz27lyOdFBK2z9z9LU3ge9AZezKgfBc470tq/77/U?=
+ =?us-ascii?Q?f7bE4Byr1X0mBDW7ZLiPZYE2jXWTDwEZb2b8ldehzhsPWUznNPAP6aw1QwcB?=
+ =?us-ascii?Q?ftB8xsBuU7y64VtyAPFpjWrOqWqpPTA28ROxHPjpQTZqGa5aQl4iwiBL5mJj?=
+ =?us-ascii?Q?9X4e5e0vJMFzdSnnsUPfK1YRrLe+nzNZyRtkyoVbI4PFH9NFN2qbLYisRzFY?=
+ =?us-ascii?Q?HtB9LXQFhKEP8STDKj5Y7vg8YU3zT1KiNBi4u3B6iYgHrq6kpE2MQhxz9qmv?=
+ =?us-ascii?Q?+b8PTJws5qYWeHfoSLInm4oNohqfL/8aTPrKUrKAUWVFQmzvBYMaz8/aXaua?=
+ =?us-ascii?Q?lG27TWr+f0+2vlTSWJ+1geJOmZdzfBUDOwNfgJjeiYTUUVnY5HpDTWBoSgJZ?=
+ =?us-ascii?Q?i0TVSRfJLIlRJFNUgT2QaQEJRZkA555rvE5JEsgk82pemdubV3Kqz8j8qHO+?=
+ =?us-ascii?Q?yp176ZDwqZuJWDiIhLLkg4Kx6sgYYRHZNinWwBAh8andNaklgYeFUXJMPMjg?=
+ =?us-ascii?Q?MPvdCgBFKguycI2ipNWRoxyWsXxREyHdml1TbrPEegx92WFPlgs+jz1Ze9tF?=
+ =?us-ascii?Q?pl7KlAr+S0a2+eZvxc8uQ9mUFlPAraIqcnPXnWyHkGlccE2w1RYL/O4hJKUF?=
+ =?us-ascii?Q?6i2oolTjGSxrSMecIHLofCDtyKApUmnKajOitsOqpsHAb/deWPMxl58hwfzN?=
+ =?us-ascii?Q?7g2QrVziQ53Ct1f9abzvkd8ICZAZ5iuBv5n/uRVjQFYGqSexG9DdWMCxAMF5?=
+ =?us-ascii?Q?ZB+fDLPOI+vSh5BG5+aA4jiecd0efbc8hGTv4nUoTkYBAwPl8OTc0bpHtQ5c?=
+ =?us-ascii?Q?UdCKiHrj9fI0TDSGxMPffi8FVuasSRZr0NV/2yIAK837CIrNMLyrkBGlIOpc?=
+ =?us-ascii?Q?oEKsAJHfLwDFUYQSYgOqebZUKsgENPJ/okvsAp8N86+TLyTwstNUEYDJbFgj?=
+ =?us-ascii?Q?Ud8TbYhA5wCMon/TSO/RgtvXymGhyKT2PwfqWBBtXC+pv+bMWRsLpjGmTxt4?=
+ =?us-ascii?Q?QA=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 625ee4fc-0468-4a3f-4ca0-08ddfd2743f1
+X-MS-Exchange-CrossTenant-Network-Message-Id: ebacb857-eed8-465b-b3f7-08ddfd2744d5
 X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 18:05:24.3679
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 18:05:25.9204
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ZurRFVSoBkqLvlcXWBG+rggjlhWf5OA2FHYMeEZ3DsEdze6HEv3Vvcis8Bus7aJutSusPP26Ifu9ylJgGmLJzw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: Avq7NesldR1RIRmAmlWY0OSGQs6T6NNnKdEpYcDVKb2jStNugKkxkMkkBByPDhB+e6sbAjj2IACV5D24emkryA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7878
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_110535_862280_24BD77BB 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20250926_110537_414775_E58B64F4 
+X-CRM114-Status: GOOD (  12.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,252 +161,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reduce the number of bit field definitions required in this driver (in
-the worst case, a read form and a write form), by defining just the
-mask, and using the FIELD_GET() and FIELD_PREP() API from
-<linux/bitfield.h> with that.
+Eliminate the need to calculate a lane_offset manually, and generate
+some macros which access the protocol converter corresponding to the
+correct lane in the PCC* registers.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
 v1->v3: none
 
- drivers/phy/freescale/phy-fsl-lynx-28g.c | 107 ++++++++++++-----------
- 1 file changed, 57 insertions(+), 50 deletions(-)
+ drivers/phy/freescale/phy-fsl-lynx-28g.c | 55 ++++++++++++++----------
+ 1 file changed, 33 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-index 732ba65950f3..414d9a4bcbb7 100644
+index 684cafb3d3e1..41a346ac38e2 100644
 --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
 +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0+
- /* Copyright (c) 2021-2022 NXP. */
+@@ -12,17 +12,32 @@
+ #define LYNX_28G_NUM_LANE			8
+ #define LYNX_28G_NUM_PLL			2
  
-+#include <linux/bitfield.h>
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/phy.h>
-@@ -29,26 +30,26 @@
- #define PLLnRSTCTL_LOCK(rstctl)			(((rstctl) & BIT(23)) >> 23)
++#define LNa_PCC_OFFSET(lane)			(4 * (LYNX_28G_NUM_LANE - (lane->id) - 1))
++
+ /* General registers per SerDes block */
+ #define PCC8					0x10a0
+-#define PCC8_SGMII				0x1
+-#define PCC8_SGMII_DIS				0x0
++#define PCC8_SGMIInCFG(lane, x)			(((x) & GENMASK(2, 0)) << LNa_PCC_OFFSET(lane))
++#define PCC8_SGMIInCFG_EN(lane)			PCC8_SGMIInCFG(lane, 1)
++#define PCC8_SGMIInCFG_MSK(lane)		PCC8_SGMIInCFG(lane, GENMASK(2, 0))
++#define PCC8_SGMIIn_KX(lane, x)			((((x) << 3) & BIT(3)) << LNa_PCC_OFFSET(lane))
++#define PCC8_SGMIIn_KX_MSK(lane)		PCC8_SGMIIn_KX(lane, 1)
++#define PCC8_MSK(lane)				PCC8_SGMIInCFG_MSK(lane) | \
++						PCC8_SGMIIn_KX_MSK(lane)
  
- #define PLLnCR0(pll)				(0x400 + (pll) * 0x100 + 0x4)
--#define PLLnCR0_REFCLK_SEL(cr0)			(((cr0) & GENMASK(20, 16)))
-+#define PLLnCR0_REFCLK_SEL			GENMASK(20, 16)
- #define PLLnCR0_REFCLK_SEL_100MHZ		0x0
--#define PLLnCR0_REFCLK_SEL_125MHZ		0x10000
--#define PLLnCR0_REFCLK_SEL_156MHZ		0x20000
--#define PLLnCR0_REFCLK_SEL_150MHZ		0x30000
--#define PLLnCR0_REFCLK_SEL_161MHZ		0x40000
-+#define PLLnCR0_REFCLK_SEL_125MHZ		0x1
-+#define PLLnCR0_REFCLK_SEL_156MHZ		0x2
-+#define PLLnCR0_REFCLK_SEL_150MHZ		0x3
-+#define PLLnCR0_REFCLK_SEL_161MHZ		0x4
+ #define PCCC					0x10b0
+-#define PCCC_10GBASER				0x9
+-#define PCCC_USXGMII				0x1
+-#define PCCC_SXGMII_DIS				0x0
+-
+-#define LNa_PCC_OFFSET(lane)			(4 * (LYNX_28G_NUM_LANE - (lane->id) - 1))
++#define PCCC_SXGMIInCFG(lane, x)		(((x) & GENMASK(2, 0)) << LNa_PCC_OFFSET(lane))
++#define PCCC_SXGMIInCFG_EN(lane)		PCCC_SXGMIInCFG(lane, 1)
++#define PCCC_SXGMIInCFG_MSK(lane)		PCCC_SXGMIInCFG(lane, GENMASK(2, 0))
++#define PCCC_SXGMIInCFG_XFI(lane, x)		((((x) << 3) & BIT(3)) << LNa_PCC_OFFSET(lane))
++#define PCCC_SXGMIInCFG_XFI_MSK(lane)		PCCC_SXGMIInCFG_XFI(lane, 1)
++#define PCCC_MSK(lane)				PCCC_SXGMIInCFG_MSK(lane) | \
++						PCCC_SXGMIInCFG_XFI_MSK(lane)
++
++#define PCCD					0x10b4
++#define PCCD_E25GnCFG(lane, x)			(((x) & GENMASK(2, 0)) << LNa_PCCD_OFFSET(lane))
++#define PCCD_E25GnCFG_EN(lane)			PCCD_E25GnCFG(lane, 1)
++#define PCCD_E25GnCFG_MSK(lane)			PCCD_E25GnCFG(lane, GENMASK(2, 0))
++#define PCCD_MSK(lane)				PCCD_E25GnCFG_MSK(lane)
  
- #define PLLnCR1(pll)				(0x400 + (pll) * 0x100 + 0x8)
--#define PLLnCR1_FRATE_SEL(cr1)			(((cr1) & GENMASK(28, 24)))
-+#define PLLnCR1_FRATE_SEL			GENMASK(28, 24)
- #define PLLnCR1_FRATE_5G_10GVCO			0x0
--#define PLLnCR1_FRATE_5G_25GVCO			0x10000000
--#define PLLnCR1_FRATE_10G_20GVCO		0x6000000
-+#define PLLnCR1_FRATE_5G_25GVCO			0x10
-+#define PLLnCR1_FRATE_10G_20GVCO		0x6
- 
- /* Per SerDes lane registers */
- /* Lane a General Control Register */
- #define LNaGCR0(lane)				(0x800 + (lane) * 0x100 + 0x0)
--#define LNaGCR0_PROTO_SEL_MSK			GENMASK(7, 3)
--#define LNaGCR0_PROTO_SEL_SGMII			0x8
--#define LNaGCR0_PROTO_SEL_XFI			0x50
--#define LNaGCR0_IF_WIDTH_MSK			GENMASK(2, 0)
-+#define LNaGCR0_PROTO_SEL			GENMASK(7, 3)
-+#define LNaGCR0_PROTO_SEL_SGMII			0x1
-+#define LNaGCR0_PROTO_SEL_XFI			0xa
-+#define LNaGCR0_IF_WIDTH			GENMASK(2, 0)
- #define LNaGCR0_IF_WIDTH_10_BIT			0x0
- #define LNaGCR0_IF_WIDTH_20_BIT			0x2
- 
-@@ -60,13 +61,13 @@
- 
- /* Lane a Tx General Control Register */
- #define LNaTGCR0(lane)				(0x800 + (lane) * 0x100 + 0x24)
-+#define LNaTGCR0_USE_PLL			BIT(28)
- #define LNaTGCR0_USE_PLLF			0x0
--#define LNaTGCR0_USE_PLLS			BIT(28)
--#define LNaTGCR0_USE_PLL_MSK			BIT(28)
-+#define LNaTGCR0_USE_PLLS			0x1
-+#define LNaTGCR0_N_RATE				GENMASK(26, 24)
- #define LNaTGCR0_N_RATE_FULL			0x0
--#define LNaTGCR0_N_RATE_HALF			0x1000000
--#define LNaTGCR0_N_RATE_QUARTER			0x2000000
--#define LNaTGCR0_N_RATE_MSK			GENMASK(26, 24)
-+#define LNaTGCR0_N_RATE_HALF			0x1
-+#define LNaTGCR0_N_RATE_QUARTER			0x2
- 
- #define LNaTECR0(lane)				(0x800 + (lane) * 0x100 + 0x30)
- 
-@@ -79,14 +80,13 @@
- 
- /* Lane a Rx General Control Register */
- #define LNaRGCR0(lane)				(0x800 + (lane) * 0x100 + 0x44)
-+#define LNaRGCR0_USE_PLL			BIT(28)
- #define LNaRGCR0_USE_PLLF			0x0
--#define LNaRGCR0_USE_PLLS			BIT(28)
--#define LNaRGCR0_USE_PLL_MSK			BIT(28)
--#define LNaRGCR0_N_RATE_MSK			GENMASK(26, 24)
-+#define LNaRGCR0_USE_PLLS			0x1
-+#define LNaRGCR0_N_RATE				GENMASK(26, 24)
- #define LNaRGCR0_N_RATE_FULL			0x0
--#define LNaRGCR0_N_RATE_HALF			0x1000000
--#define LNaRGCR0_N_RATE_QUARTER			0x2000000
--#define LNaRGCR0_N_RATE_MSK			GENMASK(26, 24)
-+#define LNaRGCR0_N_RATE_HALF			0x1
-+#define LNaRGCR0_N_RATE_QUARTER			0x2
- 
- #define LNaRGCR1(lane)				(0x800 + (lane) * 0x100 + 0x48)
- 
-@@ -97,13 +97,12 @@
- #define LNaRSCCR0(lane)				(0x800 + (lane) * 0x100 + 0x74)
- 
- #define LNaPSS(lane)				(0x1000 + (lane) * 0x4)
--#define LNaPSS_TYPE(pss)			(((pss) & GENMASK(30, 24)) >> 24)
-+#define LNaPSS_TYPE				GENMASK(30, 24)
- #define LNaPSS_TYPE_SGMII			0x4
- #define LNaPSS_TYPE_XFI				0x28
- 
- #define SGMIIaCR1(lane)				(0x1804 + (lane) * 0x10)
- #define SGMIIaCR1_SGPCS_EN			BIT(11)
--#define SGMIIaCR1_SGPCS_MSK			BIT(11)
- 
- struct lynx_28g_priv;
- 
-@@ -197,18 +196,18 @@ static void lynx_28g_lane_set_nrate(struct lynx_28g_lane *lane,
- 				    struct lynx_28g_pll *pll,
- 				    phy_interface_t intf)
+ /* Per PLL registers */
+ #define PLLnRSTCTL(pll)				(0x400 + (pll) * 0x100 + 0x0)
+@@ -314,20 +329,21 @@ static void lynx_28g_lane_set_pll(struct lynx_28g_lane *lane,
+ static void lynx_28g_cleanup_lane(struct lynx_28g_lane *lane)
  {
--	switch (PLLnCR1_FRATE_SEL(pll->cr1)) {
-+	switch (FIELD_GET(PLLnCR1_FRATE_SEL, pll->cr1)) {
- 	case PLLnCR1_FRATE_5G_10GVCO:
- 	case PLLnCR1_FRATE_5G_25GVCO:
- 		switch (intf) {
- 		case PHY_INTERFACE_MODE_SGMII:
- 		case PHY_INTERFACE_MODE_1000BASEX:
- 			lynx_28g_lane_rmw(lane, LNaTGCR0,
--					  LNaTGCR0_N_RATE_QUARTER,
--					  LNaTGCR0_N_RATE_MSK);
-+					  FIELD_PREP(LNaTGCR0_N_RATE, LNaTGCR0_N_RATE_QUARTER),
-+					  LNaTGCR0_N_RATE);
- 			lynx_28g_lane_rmw(lane, LNaRGCR0,
--					  LNaRGCR0_N_RATE_QUARTER,
--					  LNaRGCR0_N_RATE_MSK);
-+					  FIELD_PREP(LNaRGCR0_N_RATE, LNaRGCR0_N_RATE_QUARTER),
-+					  LNaRGCR0_N_RATE);
- 			break;
- 		default:
- 			break;
-@@ -218,10 +217,12 @@ static void lynx_28g_lane_set_nrate(struct lynx_28g_lane *lane,
- 		switch (intf) {
- 		case PHY_INTERFACE_MODE_10GBASER:
- 		case PHY_INTERFACE_MODE_USXGMII:
--			lynx_28g_lane_rmw(lane, LNaTGCR0, LNaTGCR0_N_RATE_FULL,
--					  LNaTGCR0_N_RATE_MSK);
--			lynx_28g_lane_rmw(lane, LNaRGCR0, LNaRGCR0_N_RATE_FULL,
--					  LNaRGCR0_N_RATE_MSK);
-+			lynx_28g_lane_rmw(lane, LNaTGCR0,
-+					  FIELD_PREP(LNaTGCR0_N_RATE, LNaTGCR0_N_RATE_FULL),
-+					  LNaTGCR0_N_RATE);
-+			lynx_28g_lane_rmw(lane, LNaRGCR0,
-+					  FIELD_PREP(LNaRGCR0_N_RATE, LNaRGCR0_N_RATE_FULL),
-+					  LNaRGCR0_N_RATE);
- 			break;
- 		default:
- 			break;
-@@ -236,15 +237,19 @@ static void lynx_28g_lane_set_pll(struct lynx_28g_lane *lane,
- 				  struct lynx_28g_pll *pll)
- {
- 	if (pll->id == 0) {
--		lynx_28g_lane_rmw(lane, LNaTGCR0, LNaTGCR0_USE_PLLF,
--				  LNaTGCR0_USE_PLL_MSK);
--		lynx_28g_lane_rmw(lane, LNaRGCR0, LNaRGCR0_USE_PLLF,
--				  LNaRGCR0_USE_PLL_MSK);
-+		lynx_28g_lane_rmw(lane, LNaTGCR0,
-+				  FIELD_PREP(LNaTGCR0_USE_PLL, LNaTGCR0_USE_PLLF),
-+				  LNaTGCR0_USE_PLL);
-+		lynx_28g_lane_rmw(lane, LNaRGCR0,
-+				  FIELD_PREP(LNaRGCR0_USE_PLL, LNaRGCR0_USE_PLLF),
-+				  LNaRGCR0_USE_PLL);
- 	} else {
--		lynx_28g_lane_rmw(lane, LNaTGCR0, LNaTGCR0_USE_PLLS,
--				  LNaTGCR0_USE_PLL_MSK);
--		lynx_28g_lane_rmw(lane, LNaRGCR0, LNaRGCR0_USE_PLLS,
--				  LNaRGCR0_USE_PLL_MSK);
-+		lynx_28g_lane_rmw(lane, LNaTGCR0,
-+				  FIELD_PREP(LNaTGCR0_USE_PLL, LNaTGCR0_USE_PLLS),
-+				  LNaTGCR0_USE_PLL);
-+		lynx_28g_lane_rmw(lane, LNaRGCR0,
-+				  FIELD_PREP(LNaRGCR0_USE_PLL, LNaRGCR0_USE_PLLS),
-+				  LNaRGCR0_USE_PLL);
- 	}
- }
+ 	struct lynx_28g_priv *priv = lane->priv;
+-	u32 lane_offset = LNa_PCC_OFFSET(lane);
  
-@@ -286,8 +291,9 @@ static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
+ 	/* Cleanup the protocol configuration registers of the current protocol */
+ 	switch (lane->interface) {
+ 	case PHY_INTERFACE_MODE_10GBASER:
+-		lynx_28g_rmw(priv, PCCC,
+-			     PCCC_SXGMII_DIS << lane_offset,
+-			     GENMASK(3, 0) << lane_offset);
++		/* Cleanup the protocol configuration registers */
++		lynx_28g_rmw(priv, PCCC, 0, PCCC_MSK(lane));
+ 		break;
+ 	case PHY_INTERFACE_MODE_SGMII:
+ 	case PHY_INTERFACE_MODE_1000BASEX:
+-		lynx_28g_rmw(priv, PCC8,
+-			     PCC8_SGMII_DIS << lane_offset,
+-			     GENMASK(3, 0) << lane_offset);
++		/* Cleanup the protocol configuration registers */
++		lynx_28g_rmw(priv, PCC8, 0, PCC8_MSK(lane));
++
++		/* Disable the SGMII PCS */
++		lynx_28g_lane_rmw(lane, SGMIIaCR1, 0, SGMIIaCR1_SGPCS_EN);
++
+ 		break;
+ 	default:
+ 		break;
+@@ -336,16 +352,13 @@ static void lynx_28g_cleanup_lane(struct lynx_28g_lane *lane)
+ 
+ static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
+ {
+-	u32 lane_offset = LNa_PCC_OFFSET(lane);
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	struct lynx_28g_pll *pll;
+ 
+ 	lynx_28g_cleanup_lane(lane);
+ 
+ 	/* Setup the lane to run in SGMII */
+-	lynx_28g_rmw(priv, PCC8,
+-		     PCC8_SGMII << lane_offset,
+-		     GENMASK(3, 0) << lane_offset);
++	lynx_28g_rmw(priv, PCC8, PCC8_SGMIInCFG_EN(lane), PCC8_MSK(lane));
  
  	/* Setup the protocol select and SerDes parallel interface width */
  	lynx_28g_lane_rmw(lane, LNaGCR0,
--			  LNaGCR0_PROTO_SEL_SGMII | LNaGCR0_IF_WIDTH_10_BIT,
--			  LNaGCR0_PROTO_SEL_MSK | LNaGCR0_IF_WIDTH_MSK);
-+			  FIELD_PREP(LNaGCR0_PROTO_SEL, LNaGCR0_PROTO_SEL_SGMII) |
-+			  FIELD_PREP(LNaGCR0_IF_WIDTH, LNaGCR0_IF_WIDTH_10_BIT),
-+			  LNaGCR0_PROTO_SEL | LNaGCR0_IF_WIDTH);
+@@ -390,15 +403,13 @@ static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
+ static void lynx_28g_lane_set_10gbaser(struct lynx_28g_lane *lane)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+-	u32 lane_offset = LNa_PCC_OFFSET(lane);
+ 	struct lynx_28g_pll *pll;
  
- 	/* Find the PLL that works with this interface type */
- 	pll = lynx_28g_pll_get(priv, PHY_INTERFACE_MODE_SGMII);
-@@ -302,7 +308,7 @@ static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
+ 	lynx_28g_cleanup_lane(lane);
  
- 	/* Enable the SGMII PCS */
- 	lynx_28g_lane_rmw(lane, SGMIIaCR1, SGMIIaCR1_SGPCS_EN,
--			  SGMIIaCR1_SGPCS_MSK);
-+			  SGMIIaCR1_SGPCS_EN);
- 
- 	/* Configure the appropriate equalization parameters for the protocol */
- 	iowrite32(0x00808006, priv->base + LNaTECR0(lane->id));
-@@ -328,8 +334,9 @@ static void lynx_28g_lane_set_10gbaser(struct lynx_28g_lane *lane)
+ 	/* Enable the SXGMII lane */
+-	lynx_28g_rmw(priv, PCCC,
+-		     PCCC_10GBASER << lane_offset,
+-		     GENMASK(3, 0) << lane_offset);
++	lynx_28g_rmw(priv, PCCC, PCCC_SXGMIInCFG_EN(lane) |
++		     PCCC_SXGMIInCFG_XFI(lane, 1), PCCC_MSK(lane));
  
  	/* Setup the protocol select and SerDes parallel interface width */
  	lynx_28g_lane_rmw(lane, LNaGCR0,
--			  LNaGCR0_PROTO_SEL_XFI | LNaGCR0_IF_WIDTH_20_BIT,
--			  LNaGCR0_PROTO_SEL_MSK | LNaGCR0_IF_WIDTH_MSK);
-+			  FIELD_PREP(LNaGCR0_PROTO_SEL, LNaGCR0_PROTO_SEL_XFI) |
-+			  FIELD_PREP(LNaGCR0_IF_WIDTH, LNaGCR0_IF_WIDTH_20_BIT),
-+			  LNaGCR0_PROTO_SEL | LNaGCR0_IF_WIDTH);
- 
- 	/* Find the PLL that works with this interface type */
- 	pll = lynx_28g_pll_get(priv, PHY_INTERFACE_MODE_10GBASER);
-@@ -343,7 +350,7 @@ static void lynx_28g_lane_set_10gbaser(struct lynx_28g_lane *lane)
- 	lynx_28g_lane_set_nrate(lane, pll, PHY_INTERFACE_MODE_10GBASER);
- 
- 	/* Disable the SGMII PCS */
--	lynx_28g_lane_rmw(lane, SGMIIaCR1, 0, SGMIIaCR1_SGPCS_MSK);
-+	lynx_28g_lane_rmw(lane, SGMIIaCR1, 0, SGMIIaCR1_SGPCS_EN);
- 
- 	/* Configure the appropriate equalization parameters for the protocol */
- 	iowrite32(0x10808307, priv->base + LNaTECR0(lane->id));
-@@ -513,7 +520,7 @@ static void lynx_28g_pll_read_configuration(struct lynx_28g_priv *priv)
- 		if (PLLnRSTCTL_DIS(pll->rstctl))
- 			continue;
- 
--		switch (PLLnCR1_FRATE_SEL(pll->cr1)) {
-+		switch (FIELD_GET(PLLnCR1_FRATE_SEL, pll->cr1)) {
- 		case PLLnCR1_FRATE_5G_10GVCO:
- 		case PLLnCR1_FRATE_5G_25GVCO:
- 			/* 5GHz clock net */
-@@ -570,7 +577,7 @@ static void lynx_28g_lane_read_configuration(struct lynx_28g_lane *lane)
- 	u32 pss, protocol;
- 
- 	pss = lynx_28g_lane_read(lane, LNaPSS);
--	protocol = LNaPSS_TYPE(pss);
-+	protocol = FIELD_GET(LNaPSS_TYPE, pss);
- 	switch (protocol) {
- 	case LNaPSS_TYPE_SGMII:
- 		lane->interface = PHY_INTERFACE_MODE_SGMII;
 -- 
 2.34.1
 
