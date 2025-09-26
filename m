@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4C2FCAC5AE
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 18:05:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D801CAC5B9
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Sep 2025 18:05:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dV3od+mQ9tcZQKnmHPoqkfrupRIeM0ri/pdA5YFaHGM=; b=MIcXC5AYurDBlf
-	k9Bsnlo1gM79zSGXC6auLylbvccIH+5gnSjnqDaCmV68bRCsyQYExxvVFJwwTXnpJQ4l0//hiFuPj
-	yECfv62rPD3CD9VDJ3MkAgz00Ze1E9LVUOsiJ6HZjUwIK032mIwAtMFBgxsS5ZVLh2ZAzEytthr82
-	GcSOyl4hGc+0IU4OERgDc0NomrSm0hmu5uzLn3lVXC23Pf92fXczf64CTeaKASlfNwbPM29YEP75l
-	m5DTpk9hFTAe9GsQdw83OBYWonoc1pIKmyMelMGg7xbmG8mAdan4mygDuWQoL/7h2Tdtm6LA7VJHI
-	dhsFnGDIPuEw3rjwA2Sw==;
+	List-Owner; bh=XTVwGylWsVB0sKwWZyOYynaJ3065NlYvkL/4z5Ax49g=; b=edwSB47O5ebEIv
+	FiEO0rJ96xKMMPy3rErDxU+p8zmIZzvytUJ4BJ0zOBqoflQYc3geEcDMMr9O3vyY5Ast50mkNP3fJ
+	uGakiOWgI2YpBxJdrzennvFyWsjiRLyMX/aj1vPXaa2RmkIfsz+FzcPiAAgk/2zn7C81FbL2h+SKf
+	g5j3GeLRTz4jZralhVa6IvV4DbMUQuU7+jcBiofQIvRTaxGM6QN3fTfZEvRA8QwYwPu+Z3DOrqLGd
+	dehR1b5vTxFC/Par11ehOzdd3gX+41ce0hS1ch4FnNzctaUSubSTGTwskbk626xfhgyJ+VEBBHtBv
+	S5UUwha5Y9oG1OSXisAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2CpI-00000003S29-1doW;
-	Fri, 26 Sep 2025 18:05:48 +0000
+	id 1v2CpH-00000003S0o-1fLK;
+	Fri, 26 Sep 2025 18:05:47 +0000
 Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2CpD-00000003Rfe-18cH
+	id 1v2CpB-00000003Rl4-229v
 	for linux-phy@lists.infradead.org;
-	Fri, 26 Sep 2025 18:05:44 +0000
+	Fri, 26 Sep 2025 18:05:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GKreju6AUlqpd3IVgoXFgbzCDFKvs2C1p1U5xlvjsr8k+TUtg1zQOguz9jM31p5mplHzvjE1rY67yV1DQxYtOuqOlSjFIiQObMY4wi7HSB7rj4CZvBNhVLtUnJRHVXBqvGcdeYJAJ5wwIoRQ+kmcwaF6fdsqqhzE1KWghNGdtTHccg/P3wvQflV9Y/qrPE7sXaWzz1bcP/8k5aEjKTVWhoms2a93U566Yfbp+KEwe2aXYK7hPRryPiySn9JewgIl8+/TrQe4DZrfl+sJthj4T8jOr1IPQtdtv0vbZfDW5VLoPRgoFpfF63+lRe2xWHXW9OeLkYiDDitKfLJRR6ZYJA==
+ b=urA2aBL4sKNHXz5ntxdLK9Tsn+o7bzI4YbIzO43MVgi6XoZQ4V4hkT0+UY+Dc8f5LX1HreqosjPMXCBVQo++/VKnX9R1hRGAtSPkpuUFNr32ijb9vsxdylxs00DaWRT5Lc9lcXtiOVYBJwmbasNaD1Ykud5pmFAzzzKgqm32uulTMmXkG9FDOGJWaYmQvrS3ralbOQxxIK4/Vx7oZIu1w+P/IG13HPeA2f7bs0J3/duzyKfmLCiXRtS4FZfZLPHX6cNxVijDgEMOcGwR6nyVRIywJlbAvTIReVVGirCCVobTPe9i9sNXtVVnYQ7rh5qjt5LGmty2X5Y/BEnoc0jJPw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Qo77O7dZ2l1AkADr/gcZjZBAbBvU4GMGlhfoJNZmgGE=;
- b=SNZlIOgw8IqS3Ff9Rvz3b/R7/SN9STN7toiqrg2mz048jTeKjmXruXst9fB2nker3ukcLtQCOM5cMbbYASowcnh8zIdtYwKSZJGWjpSUUV1zu/ZecKXfNP3NI3wtwN9sho8ShziB08t+cufFk2LpTGPns4AbKPD9LP0U/WMtfqTbTpYV0bB+Pe3wk6s+f1HKFtwspY8NKrGTGNxd/KDdK1kR0TGPpSDG45HB7+K08OgRXQiK6rdAR0VgqL6oW5PiyfLGdPW9FGUyLZWpHpNnVAZuLNQJz9ECDr/I9rVxe+j4eYDdvUEyPORs3LhyUItUWiNwSw1+mP3/zu/8BEdsfw==
+ bh=jpm5PhLO/JfnIQI6/my72jyY+2fdfduUGEhn2eU9Tco=;
+ b=Fgcg5TkppjLZtcjUB1DcMVgCO2rHvhscjuo2SzH2EsmNtbK9dRe31dXL0oVGI2o8uKZPyAjlu4vGyAoFz380DlrEyog3UNjsBmOw+10Jr2JiYrSp9IBa7OKKBwLdZqhQKaeCU9jlw9PgPjV0kQeR900L5B0FJyhm2SPg+cbg3XXfOy7zv6jz8riloI1i8gy/Qo8rhdMNJPvlEDZGiHiNpNS4n78jYc37FC30bV6k6dS+Odng6huFa05ZNvPMcLgVUPCsfRcWGdDjZuuZG5J38NKjXWMSUcCLJyKqMH6suvKPJV/00OaHmCIKWLqFo/e2stphbDoVjI9f35IHAPiWUw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qo77O7dZ2l1AkADr/gcZjZBAbBvU4GMGlhfoJNZmgGE=;
- b=C88dEybLc0KgkdOs3OheaSqfvlUCjnOh+sTg+YVUPd0FzkBTjIizLQXRBR5G8+EIG8csYu0td8p3lg0xDK7J6Ng5C6WoxeS191Vq9s4GWdobxtC1Sdsio/GCBK5KSQagFWyVDSd21WiPu/nLYks9v+KGEfJNJNXNX+V7U56tAUTJ5LiBm+JZHG9Ve60x4oEcL2utppPco/Fyic/DZBfxXAjikU4EBFRNeCNX0HBiuDEpuBMk4DN6Z/2Gr7Wak9SbZpbsyfs3KmA83WYRdxRj6UgZDkOF+pH20FHmR6+c4jPc8rTVUzyqkk1sRTadDInbsqv2G0dwHVIHPNyHW3QUeg==
+ bh=jpm5PhLO/JfnIQI6/my72jyY+2fdfduUGEhn2eU9Tco=;
+ b=TDH2e2DQMV7L3h1o/YD5Nb7qWZ0cG8yQ1DOLD7OTAYtjG0+YyIIhMWHXZ7bWjG7zyqjQMefv3qNLFdjTRr1IOwluX20G1gxvWk0Ec+LNIKHiBwd0tVAQFSDlX8FIamUA5j3X52+FTXS+zQZUYGuvXu0Qkyzwza+hlJJiHmxvTXcYu9myhSftWe07VGwgR8rY6ZExw3izRz81Cp+eAgx5xD0nGI3IdqXw5anFDzrI2EjnCPgPsxinF0kdHUyg0vvbY5PWOukixglPW25clhLcy52G7mk8jkVJpYN6wBfaO4ZUDH52nvhMUWkQOovDFVv74T9UD2YzmEPJDNvMq+LF5g==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
- by AS8PR04MB7878.eurprd04.prod.outlook.com (2603:10a6:20b:2af::24) with
+ by PA4PR04MB7823.eurprd04.prod.outlook.com (2603:10a6:102:c1::14) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.9; Fri, 26 Sep
- 2025 18:05:31 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.14; Fri, 26 Sep
+ 2025 18:05:34 +0000
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9160.010; Fri, 26 Sep 2025
- 18:05:31 +0000
+ 18:05:34 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
@@ -59,9 +59,9 @@ Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Josua Mayer <josua@solid-run.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 phy 11/17] phy: lynx-28g: improve lynx_28g_probe() sequence
-Date: Fri, 26 Sep 2025 21:04:59 +0300
-Message-Id: <20250926180505.760089-12-vladimir.oltean@nxp.com>
+Subject: [PATCH v3 phy 15/17] phy: lynx-28g: use timeouts when waiting for lane halt and reset
+Date: Fri, 26 Sep 2025 21:05:03 +0300
+Message-Id: <20250926180505.760089-16-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250926180505.760089-1-vladimir.oltean@nxp.com>
 References: <20250926180505.760089-1-vladimir.oltean@nxp.com>
@@ -70,81 +70,80 @@ X-ClientProxiedBy: AS4P250CA0008.EURP250.PROD.OUTLOOK.COM
  (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|AS8PR04MB7878:EE_
-X-MS-Office365-Filtering-Correlation-Id: 02ade4ef-ebf7-46c2-a0c9-08ddfd2747ce
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|PA4PR04MB7823:EE_
+X-MS-Office365-Filtering-Correlation-Id: 232e29d0-24e5-466e-2c6b-08ddfd2749f1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|52116014|376014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?dA9ZE6IvpWiU0oRP6RT+TOkEstHcXy1qmuzJbRxq9atrMdkHdYqKZEz9m43C?=
- =?us-ascii?Q?msyFnU1ycWy3nHph4NA/twN8IvqgIgu8PFfAm1F7kuXyZPaBjl6FTmfhZp3f?=
- =?us-ascii?Q?awsH0oU4KrO5ub+X0+6e7SjQJA7ATcnxMI7hSKpMHwXR8jn0k0P2F/rkE1s5?=
- =?us-ascii?Q?85UuoihjZpxtqP5a3hV9oYgaEPy5rEL29Jpw3MVDtKql9MbkyzH22El4quBO?=
- =?us-ascii?Q?K3FgGAOcsOx98SnZszODA1j6or7WAWblxwTKRe0LHPNm7UxKkbTMsm9tyYRA?=
- =?us-ascii?Q?wlIDEA5wBG7PBHQRNlkVTxdlsvJjMIlQv4Wj0aY+h92D76/1AKA0CnpFuxGe?=
- =?us-ascii?Q?n4NO5hLjntR9+sIOhWrmHVTVIOx5xCCAVEbu9wVDiR+J4qv8hIxKqmt/+Ohi?=
- =?us-ascii?Q?DTTAAMOSLg069WFdLiK492eKaOiz9R3omh9QotTE9jgij8nB6kWVQ5LIvh/c?=
- =?us-ascii?Q?UNPl29YRFmWn3flxcIhjjeL1Fuv8SwET6raG2YhnuTMqqGV5XdAlYkRxtLWS?=
- =?us-ascii?Q?zkiBLVL+jlqtqPWmpoAZs/AhrmaX2NV+zHPZbP9a1jUQXlsxxwTedKG+pl7m?=
- =?us-ascii?Q?Q1j7P1nprhTqEel8DV4mmz6Z/RVguUu1fZFqkgGK16rbEO5tvX2kDcRdz7l3?=
- =?us-ascii?Q?GrZBDrV/2AJxUZAijLOHbWUasY1TafSHlXPsWiGuTBhMobbCLiGf4YjEZcu6?=
- =?us-ascii?Q?TsF48ZomqMm8t5cWTSoOL7lFph+iBzsWVsH7hDTtO0SDd2EctVR2QJTVb/hq?=
- =?us-ascii?Q?BdCsCPPjDVXE1zkM1TnxengpaaCbMjszd4/ixZUwABd/W8jzoZyCq7nxgnWk?=
- =?us-ascii?Q?BQxK4umpflhIRbb5GH4RixVUg+Zyp578KwRPW2okUAjWbDiZyRkcry/hyRRS?=
- =?us-ascii?Q?n/LjX5kW07GuEJJM4HSaNc8XRICG8I6lmD8M5FFLpfFUKiST+wgePeOmQE60?=
- =?us-ascii?Q?YSX01ic5NxbnmY4ZicJeSd5a5F3EyyjJuBxX9sNIuPNPXSlDs9qWKPM661Xr?=
- =?us-ascii?Q?eFQbDrotB0b/ZJo/FrIDvUIpYN2khf9fj9xjjA9EDEuRYod04b2KHAJcLVdO?=
- =?us-ascii?Q?ndEjmqJ3KQLbeY4knuY2HKLpqfUuMqFKDvZawj+jVZXk7KOU33bSu/zl3VMd?=
- =?us-ascii?Q?2dmUR3EQVpMX96kOx/4xP2otAb8diKB1zMBEKO7HMHY2SQ6izUTOIT8nwwgv?=
- =?us-ascii?Q?2VOOkO+E/BQ5croEH3wwTCuhJXC/BoQ+M0OSWnWMb0OsmSntKoFPP6ApCeuD?=
- =?us-ascii?Q?jdqj+G0xRjh8pIV9xIbjyiS/2GFlvbbcbEMYifTxrROOXHtNtN/lZinAm45G?=
- =?us-ascii?Q?+5Q+Ks4GVUpNt7ugii877BjwNadon1G1wgJpJ5GIa4FPAz8IXupRuIi6hwQx?=
- =?us-ascii?Q?RTEY/fB8s8SQedVgy5CGs6Kg+ikADq9awe29NsVP4SJLOkJlN1WDsbteWKPJ?=
- =?us-ascii?Q?LhAY2ols6XznPfDaw3XPxHwxpB+IfFa7ScQzyGxHmr8+ipQP+sexFu7f/MrM?=
- =?us-ascii?Q?/bKmQil2kFqpJP/vuPXB5Vo2IwFuksdKNLVs?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(52116014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|52116014|366016|19092799006|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?HwVAuH5pTEqA8voBFg/BNWHa2uXKGFYBDZffaZywYUeUlMNQJL85wGZv7sPZ?=
+ =?us-ascii?Q?Q8Tn6RGlpbOb2BMXPrfuen7Zcr/uSV2fsRXmpZm650YvFc3Bw8i7gnjFyEGy?=
+ =?us-ascii?Q?b9D4bgnU3BuMbtceo0glKEAofZ2f+j9zHkGpsOksoaUvFb7+VkpE4HoNKadx?=
+ =?us-ascii?Q?QcQhYIG9+sny0BjwOcGWu51SAyMRPxZwsI47CLAlVjKJaP7m5CK2Clu78K5R?=
+ =?us-ascii?Q?p5zsdXQO8W5nRRJsNdI/B8M9AlvxPZj9KFF0+BopXza6Wjz1yDxz9pnpbnSM?=
+ =?us-ascii?Q?idkAA05l10kuzHEjYov1PEJJA0hN7PvnGnvzhwSKF9/J7qZucAKf5zBpdaqM?=
+ =?us-ascii?Q?KGRB/Inhd37Xpq/D8UMjoospUHjJa9o3X1/R94ZbVjN3yKtFQhplLl5Fd90m?=
+ =?us-ascii?Q?m1wZCOUb25j5U7hKHMCq4jgXfnJ1zpNYGlm60bFvaM7LmV85RIAvCuLguvo6?=
+ =?us-ascii?Q?LAs5tKK9we4YGh2XqAsTjFo9xtYskw1O0Fg1kfmVAZ8nUDKlfoq9N6jJWeev?=
+ =?us-ascii?Q?3u1T8dLsl9q0muE0peUN/CahWK7Q3H3CT1X54YTZnbzNTJAADZ8KAseozM9b?=
+ =?us-ascii?Q?kRINWiSrD5nGxDuKl88pQj1UuPuKQEPHAC6zMeMpO5c7QSEquqy60T4q6Lov?=
+ =?us-ascii?Q?AimVeM9lDzXal2iCRqW/SwI5iH6bzRdNh+v5JbiZ0ev7eiJUViX6syRZbao8?=
+ =?us-ascii?Q?NpbG1VouJrEXt60TH+JNMTkROIk27sQO++11vX2OMIzkTn7xNnO57SrblITP?=
+ =?us-ascii?Q?FgD6wikEgyxGaZn0Acdm2bxlvX2JODtqHxwH18EP7HEtjDkc0TJB9FM6oL2B?=
+ =?us-ascii?Q?JdHo2/XpBi5vTCX/+GgibMPXegFhNb6qRDesyzQ57Kx8488oQe50QghkHT86?=
+ =?us-ascii?Q?KP613Yijno+WZIXr9kZ+bbPaeGTugppDjIfCG5KFhSKb90pOfnC2o6tIDGBu?=
+ =?us-ascii?Q?8Xmq3kWonTsZp42qx+urVmJ3fS9EqPJ78xLBP/PC95tagAyKxiAxLsqKphVW?=
+ =?us-ascii?Q?Mrj2En7c7Ei4gN0dsjq3bko7NFYilrpu9ZdgR2IksQRCGwgmHS3nXFiKVkCB?=
+ =?us-ascii?Q?ikWWj8cQKz6NgMkURB8MEdNCm846soaqDfNGDaDUHEE9rARD5yDEj8F15qpk?=
+ =?us-ascii?Q?Hlwl0L3zbD0QwUuUExZkargxjmwMPNHSIaHxHk+QULTneBzzPveQ2X++K/FT?=
+ =?us-ascii?Q?R42L06Zhlq1GWe6uCSHRiugK/ur7tkItx0RU394qVTfPbZwfDwVYfq87FYhm?=
+ =?us-ascii?Q?9JRJoYsI9bszzvdpYiImQSKI9kJ2V1Z5Sw7c4Nw9s2g+OTfIXv9+qANQKuIL?=
+ =?us-ascii?Q?zhyUYIiyEk8scX3JabFUMaBb2xpXUDJXFCmZXvbpWnW957yb6l69vQLgE/c9?=
+ =?us-ascii?Q?l6/OYMJdzEI17hN1N3zOmp5aNlsTfswFMY+uzxN7A+6c0lKcJFU6/M1IrIVz?=
+ =?us-ascii?Q?ZoTHZkWlTahAjEYSM14z06NhXtDudAsKJg/qnDlORHhHMfEQym8WDQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(52116014)(366016)(19092799006)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?hf1wok+2bCIoF7W9E2dvskKkmjS66/k0DWccr7BI/DQKFSk0cc6Fo8PsJppj?=
- =?us-ascii?Q?PClnglSljFqAEt4bXBdaAFGn4wuN5XTlrptd61yj0luwFjbhYivYOKKg3zCo?=
- =?us-ascii?Q?zmiF+KfAbnX6ZncjIYcB4Ls1PXp4MBfJYhQQ4HK90bV4/43Mf2IjCBvr14ds?=
- =?us-ascii?Q?lT5QqPqhZcuUao/EGZ2FeJ0q9K/sZDSWDniru7YL8DbKLRDwT7FJAvUUZBh3?=
- =?us-ascii?Q?NTgjGD8VpcerYkpxOACAIHPyqheZlkK2aMih6Ff4/avXiBjBBwQIW1fCwVAC?=
- =?us-ascii?Q?uawlxZEsOK7zlOcScTubm2dJNB93rV8bwM0cy98OpLQ02NPn6zEm6tA2DNnh?=
- =?us-ascii?Q?HY3sITjEe4pS7e//b1IN7vnPiMUX18t9gZs6F27lwGRrDE9SM7z50Mo5wR0p?=
- =?us-ascii?Q?wIV0Bp/yiW0ILhjEdeDw58PRc+lh2HKnFV6+bwmvc9y9rupOEhIIyicwBn37?=
- =?us-ascii?Q?qROSiEW7MRL8uEudtedimczdw1gXoV1xEugR9yRZ1WV2GDFA7EFngzlWFase?=
- =?us-ascii?Q?Sr2vCyZar6mnpeO/J26wBlcNH3ah44PhwIEfhAn+o08OQ8wv8zTcH+goMis8?=
- =?us-ascii?Q?3yaoSyZaCvI2MaWwQgjFoqqdK3WzrXq9YtlOyg+w/0Q49KdgQw7RLdiYvvUK?=
- =?us-ascii?Q?rWYRMlMNMHYISKyIzbgu+0sM3qabygG5JwAVc2BegHiSTqGf9y5Hc6iqLv/h?=
- =?us-ascii?Q?e4LjlYlnMaLmyJgYA81VPorweUC5VFXIzC0Y6SI7XVmc+8jrTIEU31XaVZAU?=
- =?us-ascii?Q?ea1MqQ4YCm89gT0zc7tOpWG/5ZrCwPXP7tbqFqQtAxwS+SuASD8siiT/8iI9?=
- =?us-ascii?Q?VH64b7vgHxTl5Hchl3P4sxlleQkNNsL2p2vNVtPaq/5LxavlN2mTMIPqRsXB?=
- =?us-ascii?Q?XByLCxjCyoarZai79gYgiSaZnjbT9NZq1V1uWVgvPLf3P79tLWbVDBdVUTQ7?=
- =?us-ascii?Q?GKoBDWqmn1nTANAgxUJuHBC34XXXv25hO5KQQ+KcHNhoRgwYOqvI/grN/XUp?=
- =?us-ascii?Q?Ic/Cy8gjAErQdZvZofaeKZ2jUhk+TxaXcCWuAS0o6w5xz8XYDIpMan+ZLoLZ?=
- =?us-ascii?Q?TAuI+HojxwAuOxt64Nkq8ZdOYGg+4FNYTTwsg8v4Vwj7TVhErvSeyL0A5cOe?=
- =?us-ascii?Q?3a0exMx0tAQ5V977kSnikLH1v2LQIUo8fj7aBDExvyrNYyg4duf7f4extoNt?=
- =?us-ascii?Q?/S4CPSnC4mJg+gcdbfH17gV0MSW2FoIoOaTBJsdeeoRzC8k+M5a7CDp5mRB1?=
- =?us-ascii?Q?ex1CaZNjjN9WDlvgJM3vriPy9rXwKzjj42ahjxkKuXLiWghQsO8QtNkgNeZB?=
- =?us-ascii?Q?fstqcSKTqrh+mTFE35v/aEuYTYKIMU0A27OZW2Z2htBAK7RX76IPj14fHQfO?=
- =?us-ascii?Q?G3Cp/GfjG3VwlN8/SV1E+N6yqkoosOwvjmmQO0gF9Qbzy0oYVDIvtsdgW8IB?=
- =?us-ascii?Q?qaFUg5kG01wlLA5Rn9+usDf9oDP4HW3fqelbgC2EB4RiTzEBy5q7OXT/iAQW?=
- =?us-ascii?Q?59Pf4rN5esEDktw9B6EPfl6AB4xBKl+hc+OAvPPG5p6JxPFLaVcgztaFjPOu?=
- =?us-ascii?Q?HkrZSVspm3qNpEFTcBVuvBPYrqVuoCr/K+1w8iHis1KXBXVtiHgpkD+QyJuq?=
- =?us-ascii?Q?ww=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mnegZZys/8JKrxCfZyoaP1i9Fq4IrNmgKyQA1pylBRDEy2JbVBTuWIh05jYr?=
+ =?us-ascii?Q?bE7UJX2cShdS1s68q9r37sej7UxNn+ZKkXiRwYUyAmXet/PNTzfexwbQPmqt?=
+ =?us-ascii?Q?cukVNOrGIQITV1hS6zV5xEOeMB5Cbv29R5f+W9LQfHZzD6mfaUcrSxyKhjTc?=
+ =?us-ascii?Q?F7s1H9KdgyLt4Vd17XICKmnMZ4B3TVdScF80sI3kHnUUfd2Ygk0ElAMlgYR1?=
+ =?us-ascii?Q?APLYHEe3JYmQ5+E3hHy1/2olWDmnr1EjwDXwFpG9oFgVB9It4RPWv040wwFp?=
+ =?us-ascii?Q?6yjgMnx9RTKuHJPVDsFgUBhZOpb9UktrvUaTzzSu+7tqExFVkHSkY1AfV6s+?=
+ =?us-ascii?Q?/jXjDifIXqYz99QYDERKDJGSkDsA4BRB4dWRhMn3j5kDganYrf4YrQMbc2CV?=
+ =?us-ascii?Q?JDGHpjm03itFMA6HqWtGsHlQlboGtxm5U58YFCx85EHbCiaTMYLRz7cMN66G?=
+ =?us-ascii?Q?n7xs9zUbLy65cNOx6HBsa/72mXQyLycltl2nwHrkjjLJriqM89np6ZDP0QN6?=
+ =?us-ascii?Q?0bFyVe/CczIHesEf+Orf9vq6DkOAGnyY5vZpF18V8eUdGIN7WWsLAy60W36P?=
+ =?us-ascii?Q?3PYksHxMeU/ApUxGZ4770YHJ2gCdertIgKchgQbMe+ZPKRMARgQ5cqOU8CmN?=
+ =?us-ascii?Q?zhROUhkM/mM8CrrhZ1BdVFBV8egYP/MFkf2Kf8aNBbB4OvU0O4QRzANF2Tyj?=
+ =?us-ascii?Q?jECcc31l7zLCaXfPnAkyb42xN4qlMGK6PnV0y62BOqg6Wkt1SzI3Ty9w3O7r?=
+ =?us-ascii?Q?AC7LPajQRA4qb+uieWZRiiXkGtCXEtz78n3n2SikxHS+C8NQIDoBMPUekmGy?=
+ =?us-ascii?Q?rZVfFRyPTznlsf+LtR0n4DRLAlDWz+veXTRIIAr0s3BAY7MGZIHaqG5Le56m?=
+ =?us-ascii?Q?axlDCllfFPb4K7oubq/hmaWU010NT+1j1Ifd9K3no0iwrgSu6oQlU6wO7Sz6?=
+ =?us-ascii?Q?Q0CYa6m2m7QWA9RJwwbriD7r3SG6fgEAPR47pupHJKseDE9uA1w5SwwrHpFP?=
+ =?us-ascii?Q?T2i+Z1akvvN1PDXmvnL3jawwGcgT2pVicuO8DncWsx9L8EbIGomSRrinBXtg?=
+ =?us-ascii?Q?d06UBXza7DhDfLiodlSzJuXaYW8YrLqSJ2HKAe87NUNdCw4JA1dNpso9KGVy?=
+ =?us-ascii?Q?X99xGZ5fg+OzYk54eG6OmhWnDp+//0qq++KGA+hWBvqt85v1LL8djEUIG9aA?=
+ =?us-ascii?Q?nydIzM/42Z0/Ao5LDdeusnDVDPskDN6zbzvjtIIwPdaXiYiwDBI7V6v8hQJN?=
+ =?us-ascii?Q?kQU3zBKvz2WvqmPqiHN6eNbBoiYimLHLl9o7BcyZmU6tVgBqSJ5tBzOChbY2?=
+ =?us-ascii?Q?Bf4fDUBzuhFNIt8Ji5j6sPWX8M4DSstScqMUcnwOJJC2kQNHk6/JFB342ETF?=
+ =?us-ascii?Q?+1c12BhIMFSHa7rj2cdoFZy3u7zE+mvUe4etrpDbEV43/Wsc8FvTIjle+3yc?=
+ =?us-ascii?Q?kHP6z/B/9/CzEQ15vKIqdoutfKh3kjgsa6v9FGNUOxvsqSO+a3SbTGwqRgLc?=
+ =?us-ascii?Q?Anw3XTOYYF+m0W5KHnN6vxYVK+EtxC3DRjuD1oo86kFPaGBOqTE7uBDGkZo2?=
+ =?us-ascii?Q?2GFVwU0aVz1xG9N2MRUc1XzbZyNi6Bvf1TQ3pFUFUcK9CLQ99rBMZ6EoFkhO?=
+ =?us-ascii?Q?GQ=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02ade4ef-ebf7-46c2-a0c9-08ddfd2747ce
+X-MS-Exchange-CrossTenant-Network-Message-Id: 232e29d0-24e5-466e-2c6b-08ddfd2749f1
 X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 18:05:30.9206
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 18:05:34.4413
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: OSWoM+Ivp55/Lb2+d3Ulj+jQYS2Uesb+z6JVsN9YgLyOZKnmKwSW/jf0as4LDRD+F79+5gCsXBrnVrsKyUqixw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7878
+X-MS-Exchange-CrossTenant-UserPrincipalName: 3cVcX1lqn3TR9FxOF4QSSaZAwFhVc3kuFsmh+DIQJL2HKJQp/v6oBQHxgiU4ankBX/rKO9uwOUoOIetzTCLKyw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7823
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_110543_355125_06AC2DC0 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20250926_110541_542205_E0B00324 
+X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,64 +160,205 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-dev_set_drvdata() is called twice, it is sufficient to do it only once.
+There are various circumstances in which a lane halt, or a lane reset,
+will fail to complete. If this happens, it will hang the kernel, which
+only implements a busy loop with no timeout.
 
-devm_of_phy_provider_register() can fail, and if it does, the
-&priv->cdr_check work item is queued, but not cancelled, and the device
-probing failed, so it will trigger use after free. This is a minor risk
-though.
+The circumstances in which this will happen are all bugs in nature:
+- if we try to power off a powered off lane
+- if we try to power off a lane that uses a PLL locked onto the wrong
+  refclk frequency
 
-Resource initialization should be done a little earlier, in case we need
-to dereference dev_get_drvdata() in lynx_28g_pll_read_configuration() or
-in lynx_28g_lane_read_configuration().
+Actually, unbounded loops in the kernel are a bad practice, so let's use
+read_poll_timeout() with a custom function that reads both LNaTRSTCTL
+(lane transmit control register) and LNaRRSTCTL (lane receive control
+register) and returns true when the request is done in both directions.
 
+The HLT_REQ bit has to clear, whereas the RST_DONE bit has to get set.
+
+Suggested-by: Josua Mayer <josua@solid-run.com>
+Link: https://lore.kernel.org/lkml/d0c8bbf8-a0c5-469f-a148-de2235948c0f@solid-run.com/
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
-v2->v3: none
-v1->v2: patch is new
+v2->v3: patch is new
 
- drivers/phy/freescale/phy-fsl-lynx-28g.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/phy/freescale/phy-fsl-lynx-28g.c | 96 ++++++++++++++++++------
+ 1 file changed, 74 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-index 7800f57413ee..453e76e0a6b7 100644
+index aaec680e813f..4e3ff7ef47e4 100644
 --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
 +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-@@ -1136,7 +1136,11 @@ static int lynx_28g_probe(struct platform_device *pdev)
- 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
- 	if (!priv)
- 		return -ENOMEM;
+@@ -254,6 +254,12 @@
+ 
+ #define CR(x)					((x) * 4)
+ 
++#define LYNX_28G_LANE_HALT_SLEEP_US		100
++#define LYNX_28G_LANE_HALT_TIMEOUT_US		1000000
 +
- 	priv->dev = dev;
-+	dev_set_drvdata(dev, priv);
-+	spin_lock_init(&priv->pcc_lock);
-+	INIT_DELAYED_WORK(&priv->cdr_check, lynx_28g_cdr_lock_check);
- 
- 	priv->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(priv->base))
-@@ -1161,18 +1165,14 @@ static int lynx_28g_probe(struct platform_device *pdev)
- 		lynx_28g_lane_read_configuration(lane);
++#define LYNX_28G_LANE_RESET_SLEEP_US		100
++#define LYNX_28G_LANE_RESET_TIMEOUT_US		1000000
++
+ enum lynx_28g_eq_type {
+ 	EQ_TYPE_NO_EQ = 0,
+ 	EQ_TYPE_2TAP = 1,
+@@ -672,10 +678,29 @@ static void lynx_28g_lane_set_pll(struct lynx_28g_lane *lane,
  	}
- 
--	dev_set_drvdata(dev, priv);
--
--	spin_lock_init(&priv->pcc_lock);
--	INIT_DELAYED_WORK(&priv->cdr_check, lynx_28g_cdr_lock_check);
-+	provider = devm_of_phy_provider_register(dev, lynx_28g_xlate);
-+	if (IS_ERR(provider))
-+		return PTR_ERR(provider);
- 
- 	queue_delayed_work(system_power_efficient_wq, &priv->cdr_check,
- 			   msecs_to_jiffies(1000));
- 
--	dev_set_drvdata(dev, priv);
--	provider = devm_of_phy_provider_register(dev, lynx_28g_xlate);
--
--	return PTR_ERR_OR_ZERO(provider);
-+	return 0;
  }
  
- static void lynx_28g_remove(struct platform_device *pdev)
++static bool lynx_28g_lane_halt_done(struct lynx_28g_lane *lane)
++{
++	u32 trstctl = lynx_28g_lane_read(lane, LNaTRSTCTL);
++	u32 rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
++
++	return !(trstctl & LNaTRSTCTL_HLT_REQ) &&
++	       !(rrstctl & LNaRRSTCTL_HLT_REQ);
++}
++
++static bool lynx_28g_lane_reset_done(struct lynx_28g_lane *lane)
++{
++	u32 trstctl = lynx_28g_lane_read(lane, LNaTRSTCTL);
++	u32 rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
++
++	return (trstctl & LNaTRSTCTL_RST_DONE) &&
++	       (rrstctl & LNaRRSTCTL_RST_DONE);
++}
++
+ static int lynx_28g_power_off(struct phy *phy)
+ {
+ 	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
+-	u32 trstctl, rrstctl;
++	bool done;
++	int err;
+ 
+ 	if (!lane->powered_up)
+ 		return 0;
+@@ -687,11 +712,15 @@ static int lynx_28g_power_off(struct phy *phy)
+ 			  LNaRRSTCTL_HLT_REQ);
+ 
+ 	/* Wait until the halting process is complete */
+-	do {
+-		trstctl = lynx_28g_lane_read(lane, LNaTRSTCTL);
+-		rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
+-	} while ((trstctl & LNaTRSTCTL_HLT_REQ) ||
+-		 (rrstctl & LNaRRSTCTL_HLT_REQ));
++	err = read_poll_timeout(lynx_28g_lane_halt_done, done, done,
++				LYNX_28G_LANE_HALT_SLEEP_US,
++				LYNX_28G_LANE_HALT_TIMEOUT_US,
++				false, lane);
++	if (err) {
++		dev_err(&phy->dev, "Lane %c halt failed: %pe\n",
++			'A' + lane->id, ERR_PTR(err));
++		return err;
++	}
+ 
+ 	lane->powered_up = false;
+ 
+@@ -701,7 +730,8 @@ static int lynx_28g_power_off(struct phy *phy)
+ static int lynx_28g_power_on(struct phy *phy)
+ {
+ 	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
+-	u32 trstctl, rrstctl;
++	bool done;
++	int err;
+ 
+ 	if (lane->powered_up)
+ 		return 0;
+@@ -713,11 +743,15 @@ static int lynx_28g_power_on(struct phy *phy)
+ 			  LNaRRSTCTL_RST_REQ);
+ 
+ 	/* Wait until the reset sequence is completed */
+-	do {
+-		trstctl = lynx_28g_lane_read(lane, LNaTRSTCTL);
+-		rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
+-	} while (!(trstctl & LNaTRSTCTL_RST_DONE) ||
+-		 !(rrstctl & LNaRRSTCTL_RST_DONE));
++	err = read_poll_timeout(lynx_28g_lane_reset_done, done, done,
++				LYNX_28G_LANE_RESET_SLEEP_US,
++				LYNX_28G_LANE_RESET_TIMEOUT_US,
++				false, lane);
++	if (err) {
++		dev_err(&phy->dev, "Lane %c reset failed: %pe\n",
++			'A' + lane->id, ERR_PTR(err));
++		return err;
++	}
+ 
+ 	lane->powered_up = true;
+ 
+@@ -1131,8 +1165,11 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	/* If the lane is powered up, put the lane into the halt state while
+ 	 * the reconfiguration is being done.
+ 	 */
+-	if (powered_up)
+-		lynx_28g_power_off(phy);
++	if (powered_up) {
++		err = lynx_28g_power_off(phy);
++		if (err)
++			return err;
++	}
+ 
+ 	err = lynx_28g_lane_disable_pcvt(lane, lane->mode);
+ 	if (err)
+@@ -1145,8 +1182,16 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	lane->mode = lane_mode;
+ 
+ out:
+-	if (powered_up)
+-		lynx_28g_power_on(phy);
++	if (powered_up) {
++		int err2 = lynx_28g_power_on(phy);
++		/*
++		 * Don't overwrite a failed protocol converter disable error
++		 * code with a successful lane power on error code, but
++		 * propagate a failed lane power on error.
++		 */
++		if (!err)
++			err = err2;
++	}
+ 
+ 	return err;
+ }
+@@ -1179,9 +1224,8 @@ static int lynx_28g_init(struct phy *phy)
+ 	 * probe time.
+ 	 */
+ 	lane->powered_up = true;
+-	lynx_28g_power_off(phy);
+ 
+-	return 0;
++	return lynx_28g_power_off(phy);
+ }
+ 
+ static const struct phy_ops lynx_28g_ops = {
+@@ -1239,7 +1283,7 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
+ 	struct lynx_28g_priv *priv = work_to_lynx(work);
+ 	struct lynx_28g_lane *lane;
+ 	u32 rrstctl;
+-	int i;
++	int err, i;
+ 
+ 	for (i = priv->info->first_lane; i < LYNX_28G_NUM_LANE; i++) {
+ 		lane = &priv->lane[i];
+@@ -1257,9 +1301,17 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
+ 		if (!(rrstctl & LNaRRSTCTL_CDR_LOCK)) {
+ 			lynx_28g_lane_rmw(lane, LNaRRSTCTL, LNaRRSTCTL_RST_REQ,
+ 					  LNaRRSTCTL_RST_REQ);
+-			do {
+-				rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
+-			} while (!(rrstctl & LNaRRSTCTL_RST_DONE));
++
++			err = read_poll_timeout(lynx_28g_lane_read, rrstctl,
++						!!(rrstctl & LNaRRSTCTL_RST_DONE),
++						LYNX_28G_LANE_RESET_SLEEP_US,
++						LYNX_28G_LANE_RESET_TIMEOUT_US,
++						false, lane, LNaRRSTCTL);
++			if (err) {
++				dev_warn_once(&lane->phy->dev,
++					      "Lane %c receiver reset failed: %pe\n",
++					      'A' + lane->id, ERR_PTR(err));
++			}
+ 		}
+ 
+ 		mutex_unlock(&lane->phy->mutex);
 -- 
 2.34.1
 
