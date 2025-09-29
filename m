@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17383CAC5B5
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Sep 2025 06:46:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B53C3CAC5B5
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Sep 2025 06:47:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
 	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0m785+2vjmDsNtCJwck67QNCvXpIS75xlokfErkY8wU=; b=wVmcXC0V2yka0I
-	cj3tID330rnvlHSb1iFNotatqArk5wiUT0Iic1jzjvu34L04jI3UAvJfw5uk5a+vvNEx/ofHeucaS
-	7WLjWmfQQk8xXgrQoD9EaHc4JzLnF9IR8IvTvB7nXxHOULrdD6qpwkyGjCsZPfU/p5VRGmwM5XN2L
-	OIq1qS/YmGmXA3ubns5Epkt75iFpfCRps27kfPe8nx1jZ93S1aUv1clspwxZczvWqypJwHJOX9gZX
-	8PBFJ7a51+vRKIRgF2AUf8nEKA/Anj2uC+xUW9PZd4jB/5FNNyAygBXAdCBavgIk/99LMWTnMAstz
-	kXdOnJsD0pdk1T2ptWBQ==;
+	List-Owner; bh=RuUpKfIY/Ag7s9DUR+E3omsBhe6ukk5fsnjIolT2KYI=; b=wRKj4iUqWsiy9Y
+	RautDp0lxfEGVw2lU/fPkuRdHSd+HPDn8wDr7A6nwVsgiry9e2UyyI3nzhEJJeJ1ovhFa812CHTC2
+	reVhr+I7/1p4u6Vcb9CtD4wibx0KiMDTfUg366jUmP6EgBsNi/gp9frMh7Fp1pB7BDH+AAySMbod+
+	rHYlFJXBrfBvLKDtTPdBILI3MpaicnB5TDyyJf607w+ekq0yEQUnoHUWohYctQ9e4+K72FGEdXvRC
+	xAGoWFZHV6ye1mt/NnI1fps3ZsKJiVEJiwdhZeXyYU659S4tA+dnBL7sL8S00X/ONT4k+vVZBhN4H
+	/GlM8mG+W0GxEtEtCukw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v37en-00000001W1r-3Mge;
-	Mon, 29 Sep 2025 06:46:45 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1v37fI-00000001WBe-1o8t;
+	Mon, 29 Sep 2025 06:47:16 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v37ej-00000001Vy7-0ch2
+	id 1v37fG-00000001W7m-0a9p
 	for linux-phy@lists.infradead.org;
-	Mon, 29 Sep 2025 06:46:44 +0000
+	Mon, 29 Sep 2025 06:47:15 +0000
 Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout3.samsung.com (KnoxPortal) with ESMTP id 20250929064633epoutp031ecafd84fd692d9906a3b74ef2b1d44f~prfQ0Kv6J1909219092epoutp03b
-	for <linux-phy@lists.infradead.org>; Mon, 29 Sep 2025 06:46:33 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com 20250929064633epoutp031ecafd84fd692d9906a3b74ef2b1d44f~prfQ0Kv6J1909219092epoutp03b
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20250929064707epoutp04e8d72eeae49ad80f8805d69c56cc6b6c~prfwQNyIF0938809388epoutp04i
+	for <linux-phy@lists.infradead.org>; Mon, 29 Sep 2025 06:47:07 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20250929064707epoutp04e8d72eeae49ad80f8805d69c56cc6b6c~prfwQNyIF0938809388epoutp04i
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1759128393;
-	bh=FfZBLJLuc+uuntD1S7nxM2h+LKVCtE+y0dCkxRqcjtE=;
+	s=mail20170921; t=1759128427;
+	bh=rlD+Oa758snTIeLWIc2UCK6i1q2QhpKw3wxOF2sifOI=;
 	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=HNVWJqCHjtOX4H+DJfZ6FrHgojQmY86b8uryxjqMb5WAIUNZpmbTE68r21/TAq0ww
-	 YzEvdW8e80wxSvxhQA15Jdy/JJoY3Fpq+2FA0H3d4JfVQmN9FCszI+swlu7IC4OIrn
-	 5sTMOM9+0TMQgRwdO/dLzGr8bkCFIox6tJmU7xU4=
-Received: from epsnrtp02.localdomain (unknown [182.195.42.154]) by
-	epcas5p3.samsung.com (KnoxPortal) with ESMTPS id
-	20250929064633epcas5p3f9bb11016d7a35cd65b5e5228d9e07b6~prfQPnHzg2175121751epcas5p3F;
-	Mon, 29 Sep 2025 06:46:33 +0000 (GMT)
-Received: from epcas5p2.samsung.com (unknown [182.195.38.91]) by
-	epsnrtp02.localdomain (Postfix) with ESMTP id 4cZsD811vkz2SSKf; Mon, 29 Sep
-	2025 06:46:32 +0000 (GMT)
+	b=aBg3H/6VmTNiLUkV2VTTS3hxnFVduv5g/xJsDfljmOWJGC1Ap2KvsQL8cvl6RkPFo
+	 bEmrkzXV7YkIU8iERRiGCsr7wM6wzeMzBTmoMqgLHUomM41CoPWwILzpwjSXCuF915
+	 qmM659j/KaH6KbhEmnXKIx7UiCS3T73wNZVTyl7M=
+Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
+	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
+	20250929064706epcas5p25fbef3d266435f18a5a7d550bd7fb1d9~prfvr9wQe3152631526epcas5p2C;
+	Mon, 29 Sep 2025 06:47:06 +0000 (GMT)
+Received: from epcas5p3.samsung.com (unknown [182.195.38.88]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4cZsDn5g4tz3hhTC; Mon, 29 Sep
+	2025 06:47:05 +0000 (GMT)
 Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
 	epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
-	20250929064631epcas5p2226adbf90c50ec59281f56d85d664bdd~prfOjiy3R0521705217epcas5p2e;
-	Mon, 29 Sep 2025 06:46:31 +0000 (GMT)
+	20250929064705epcas5p28b43638ca8368376aaa55a652e2c097b~prfuB7tJr3152631526epcas5p29;
+	Mon, 29 Sep 2025 06:47:05 +0000 (GMT)
 Received: from INBRO002756 (unknown [107.122.3.168]) by epsmtip1.samsung.com
 	(KnoxPortal) with ESMTPA id
-	20250929064627epsmtip1e18cd0b249e2fc57699cfa1204c7b11a~prfK0LkG31254112541epsmtip1d;
-	Mon, 29 Sep 2025 06:46:27 +0000 (GMT)
+	20250929064700epsmtip1803678f881cc80bb889cc76568fbd6c2~prfp-PR7e1213412134epsmtip1f;
+	Mon, 29 Sep 2025 06:47:00 +0000 (GMT)
 From: "Alim Akhtar" <alim.akhtar@samsung.com>
 To: "'Pritam Manohar Sutar'" <pritam.sutar@samsung.com>, <vkoul@kernel.org>,
 	<kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
@@ -65,27 +65,27 @@ Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-samsung-soc@vger.kernel.org>, <rosa.pila@samsung.com>,
 	<dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
 	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <20250903073827.3015662-3-pritam.sutar@samsung.com>
-Subject: RE: [PATCH v8 2/6] phy: exynos5-usbdrd: support HS phy for
- ExynosAutov920
-Date: Mon, 29 Sep 2025 12:16:26 +0530
-Message-ID: <001401dc310c$c9f18710$5dd49530$@samsung.com>
+In-Reply-To: <20250903073827.3015662-4-pritam.sutar@samsung.com>
+Subject: RE: [PATCH v8 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 combo hsphy
+Date: Mon, 29 Sep 2025 12:16:57 +0530
+Message-ID: <001501dc310c$de18fb60$9a4af220$@samsung.com>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIRMOVGdWg5oRjNsRBgEjzIeIB8IgG7M6EYAY8VKj20JWVfgA==
+Thread-Index: AQIRMOVGdWg5oRjNsRBgEjzIeIB8IgI+elV9AgkpZOa0HXqrMA==
 Content-Language: en-us
-X-CMS-MailID: 20250929064631epcas5p2226adbf90c50ec59281f56d85d664bdd
+X-CMS-MailID: 20250929064705epcas5p28b43638ca8368376aaa55a652e2c097b
 X-Msg-Generator: CA
 CMS-TYPE: 105P
 cpgsPolicy: CPGSC10-542,Y
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250903072939epcas5p4b36818cd2e2b5c59fdd4a1b90579eb47
+X-CMS-RootMailID: 20250903072942epcas5p2154a85b45152af50e2714248c38c5adc
 References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
-	<CGME20250903072939epcas5p4b36818cd2e2b5c59fdd4a1b90579eb47@epcas5p4.samsung.com>
-	<20250903073827.3015662-3-pritam.sutar@samsung.com>
+	<CGME20250903072942epcas5p2154a85b45152af50e2714248c38c5adc@epcas5p2.samsung.com>
+	<20250903073827.3015662-4-pritam.sutar@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250928_234641_497844_44E4EF39 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20250928_234714_494118_5004C01E 
+X-CRM114-Status: GOOD (  10.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,13 +118,13 @@ Hi Pritam
 > samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
 > dev.tailor@samsung.com; faraz.ata@samsung.com;
 > muhammed.ali@samsung.com; selvarasu.g@samsung.com
-> Subject: [PATCH v8 2/6] phy: exynos5-usbdrd: support HS phy for
-> ExynosAutov920
+> Subject: [PATCH v8 3/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+> ExynosAutov920 combo hsphy
 > 
-> Enable UTMI+ phy support for this SoC which is very similar to what the
-> existing Exynos850 supports.
-> 
-> Add required change in phy driver to support HS phy for this SoC.
+> The USBDRD31 5nm controller consists of Synopsys USB2.0 femptophy and
+> USBSS combophy. Add-on USB20 femptophy is required to support USB20
+> data rates along with USBSS phy. Document support for the USB2.0
+> femptophy found on combophy of the this SoC.
 > 
 > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
 > ---
