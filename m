@@ -4,79 +4,149 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6073DCAC5B9
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 08:46:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CD48CCA470
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 14:07:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=axWOSWgM2DmSlifkpaC7WMXKJIw0USu2s3A3SnSYzuU=; b=03OXLYaDTyweQQ
-	0QT/FrTiBKBqyOBRAYBHENDmqPIAOvoLPkt45dRdLrANOZtW3v1ZwlklvuXwPzGSkTHceSIFf5S/Z
-	tMShFalU/FfpidwpFu1lAwyB5MPDwHu+2Tj3+bwKAdfPZu9PPi7T/mF0rl+J+tb/1Nffsh1MVLVPj
-	NUORPqvOmCBy90LuFAhp+dLgekE/UlyHE7Q9BliL2gh//rnwTheYMQ4M/s2q40uLv8gqQkO2R24d2
-	jklBxYHI7QDwsgV3iHxZvdLnUq9T/jW/H4iKAJTj6x+ik6ftzhCiNNE0zQR3S7w2Khc+wObAaEBJb
-	n0T+5DePU2Vyo/k97ilg==;
+	List-Owner; bh=geSJB/VrQs+ioz0i5UGNtJqXaeBBSyl/fC469W577OE=; b=vqulBjfyPQV8A7
+	PyPP59FyF7RSS63ms/z2yLw92hqITV1Nr32IzUWM/pXrIjrCgXFtYaaESXy8IeBZNs11YRN8GBKuc
+	E6V+xXHCe8gH79+1RBsCMZvQ5IZNyqSXqHfzVq+wzXWlAZLTXyFLjwz1WqrSWqJyGEKzti/xrg4NA
+	S2As5F/5AzKY0roImQgFGwnor274peuWV4NxIg8Par0AwhSk+7Rvz2bwb2yfzpXP+dt0MjZA5piTG
+	ai1sLULSjSqf3ZtOwtU058EA+XLZB/Ts2lc4t3UaslAb5B/zvCdkZdZLRAOMKRN1GVaJKsjyVU8Qy
+	LTGLOLhQPJgMkaF3LpQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3W0S-00000004gjW-01nV;
-	Tue, 30 Sep 2025 08:46:44 +0000
-Received: from azure-sdnproxy.icoremail.net ([52.229.205.26])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3W0P-00000004gi0-1amM
+	id 1v3b1F-00000005SkA-26It;
+	Tue, 30 Sep 2025 14:07:53 +0000
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1v3b1C-00000005SjT-1l0y
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Sep 2025 08:46:42 +0000
-Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
-	by app2 (Coremail) with SMTP id TQJkCgD3iJLomNto0KbuAA--.14033S2;
-	Tue, 30 Sep 2025 16:46:37 +0800 (CST)
-From: Yulin Lu <luyulin@eswincomputing.com>
-To: dlemoal@kernel.org,
-	cassel@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org,
+	Tue, 30 Sep 2025 14:07:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=nJ8aC5jeXFI6r+S07GpFPp0gysFZ0jJONmntIgaeesxX9GYAoQegQVdA+8BjCqtlFMjjp4V6UYtdlaV6NbwSUseQmZAnTFjv94l82hEQSVwjvc+Mu6dFSsVT0qiiovuLtpx7DQSRVqQLG2pNDr6o/3Gj0+2bXVgvo76gr+GERtLhtnN22gbTlZsSqczO+C3uyZanSEMhEGp3q4jZnZXayta6/a4WbalzRwk+TikA3Qc39xo9JcU+V+aMYdJ176wYI+oYvJI7eYyyrTx3sVRDe2AI+PsyX9MNmVK0y+jFPlZgB3xgb3M9VnZXJ44WXL7PBPfRs/05EdQjK2XevfoUAQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=j2RsAQRiUMDaHJ/A9DUuz7zhFiPq2NftzdtOaXSdkC4=;
+ b=xF6uHsoisAsHEDmnN0fWhn2mRY5zX1g5M2SmaG/w2yl+kBVCHVviWQlSqPOMJBUCx9uWFYCScCPAm5Cyv5WQn0tk3fdAsafAy8k4Ptj+kl0adZMkHGuj5U8kPJp4LgWU3zKSDPTp0eK0w1Wkk7UL6ubObKQCV5AhB2VGlXnsf0K/2KmH6JfxgzMKU752Wa6A3ElvT20X9M2tPajWU9t8GrQRAE27wSKy1SnLMF6qxnlw/5WCnB+bjtjQgHwoKB7Ld35EFTbcAqjM/bTNIrNksXQP/9fOto1BkxJfS3khMTDUJ5sr6t3LnnoP1dr6RqV+lHoJOt3BPhHpOTXPVpFtzg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j2RsAQRiUMDaHJ/A9DUuz7zhFiPq2NftzdtOaXSdkC4=;
+ b=dg2wD+QhKfFRP7oIlmMFql/Uet/aEhF1Ld23NPttPEDnY7zo7NKDxP2zG/RqBfogYCeKfG7s3ZxYKs+Kr+qRyY62j1KkW0yrvGAyD503pjlJl6iyUF+qA1624wu8setIdugReRLlDOvbevyv1XbbmGNjM07K+VmiobPyfIsuSKVC2BpJnD4zmhvHIFjK+tgaSqfDIFMqCWo6CrMNExCUehCFoW7RVWthXjxkD7yOiICcGmrCY1+LoczAeuixoev5Z1BjihuVCu0TVRNX/mUV97ojSuv10jJAlbKwtmk8RYGkGD2GHrsyznfWuBbPaYyz7Owt+eIpv3sATcL7ReUjZA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
+ by PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.16; Tue, 30 Sep
+ 2025 14:07:39 +0000
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9160.015; Tue, 30 Sep 2025
+ 14:07:38 +0000
+Date: Tue, 30 Sep 2025 17:07:35 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Rob Herring <robh@kernel.org>, Josua Mayer <josua@solid-run.com>
+Cc: Ioana Ciornei <ioana.ciornei@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-kernel@vger.kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Cc: ningyu@eswincomputing.com,
-	zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com,
-	huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com,
-	lianghujun@eswincomputing.com,
-	Yulin Lu <luyulin@eswincomputing.com>
-Subject: [PATCH v5 3/3] phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
-Date: Tue, 30 Sep 2025 16:46:28 +0800
-Message-Id: <20250930084628.1151-1-luyulin@eswincomputing.com>
-X-Mailer: git-send-email 2.31.1.windows.1
-In-Reply-To: <20250930083754.15-1-luyulin@eswincomputing.com>
-References: <20250930083754.15-1-luyulin@eswincomputing.com>
+Subject: Re: [PATCH v3 phy 12/17] dt-bindings: phy: lynx-28g: add compatible
+ strings per SerDes and instantiation
+Message-ID: <20250930140735.mvo3jii7wgmzh2bs@skbuf>
+References: <20250926180505.760089-1-vladimir.oltean@nxp.com>
+ <20250926180505.760089-13-vladimir.oltean@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20250926180505.760089-13-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: VI1PR09CA0169.eurprd09.prod.outlook.com
+ (2603:10a6:800:120::23) To AM8PR04MB7779.eurprd04.prod.outlook.com
+ (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
-X-CM-TRANSID: TQJkCgD3iJLomNto0KbuAA--.14033S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxtF43tw4rZw4rGw1fAr45Awb_yoWfXFWxpF
-	4DCFyUWrWktF47Ka93J3WqyF13GrnFqrya9FyDKasIvFW3Jr18Za9Iqa95trn0vrn7X3yU
-	K3sYqa47Ga15Aw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9C14x267AKxVW5JVWrJwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jrv_JF1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
-	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_GFv_Wrylc2xSY4AK6svPMxAIw28IcxkI7VAKI48JMx
-	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
-	wI0_JrI_JrWlx4CE17CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
-	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWxJVW8Jr1lIxAIcVCF04k26cxK
-	x2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI
-	0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0pRJPE-UUUUU=
-X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|PA4PR04MB9366:EE_
+X-MS-Office365-Filtering-Correlation-Id: eca95225-8bc8-4b11-480e-08de002ab652
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|10070799003|366016|19092799006|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?GfIAYD7R/sm09+RBAmshwagCI/a7nEdr3qFyUhVH8YD9gTg/tA7Nq5EpQN60?=
+ =?us-ascii?Q?AjeN7U8U/DMXS5EU+p65FCRZda6oY8KKi1OkBhcnTvAfhfzeyl0uy0P+D0yC?=
+ =?us-ascii?Q?2W2H2ru+Xt361U5GRbEtXCnnAHqJ0SE8QfNwhHN5HkgwbBplgYYb5no0vwDa?=
+ =?us-ascii?Q?pqr3w561rd1nk8GOtW4xD5S+xbq+4Qs/9gOQTClrUXTGS3NLIA8cjkDPI5j8?=
+ =?us-ascii?Q?BdBTmAhCibTN2BBPQxoG4s8h/uMBNABu8HZrdDs3KVt/VM36E2T+2sjtlHcP?=
+ =?us-ascii?Q?o+dW1antBA6QwllCfeZ7AoYkrPYB9BV2wD/xMMMmidjv1AEoGSFld1l1JnQU?=
+ =?us-ascii?Q?SY0zanTLFF+Ly+PUSFxlgB2Q94kYHxNXmswSde5FUDQK630eY0ibMxVR+EHn?=
+ =?us-ascii?Q?OIptBjVadDnh+cbkmazwq9PW7pMmgKorrLZ8rBOz6WfevbSXp+N3x7xqIW7h?=
+ =?us-ascii?Q?PlXCXVakv+Xk6uv8e/3yiVvDR9jaX+Vh8BEzworUBN6ZgXy/t8zPvqK+ljUm?=
+ =?us-ascii?Q?jq0Ia8BeJCu1x7KIIPs12Av9He+oIyNejoOQUV6mYBxiRMvY3Bo6psmSxeDF?=
+ =?us-ascii?Q?P/j0hox7c0jM8lMNJaGuQrzkfYpKwufJMYJdnKbjnL1C7vLgWKqr36GiG7FG?=
+ =?us-ascii?Q?AHsFfcCTq2XufUeMzpur+epTSj2NeCWuFZr3qNtomfs92BGU1lvwegT4tBKx?=
+ =?us-ascii?Q?q7sCUPxwrbu4B2nOHYsqZMbJin0PBhAM1w5PrH+rxl/evgt0poOpUpX4cUtd?=
+ =?us-ascii?Q?W8l8Ijf/27fG52uOU8ilXSW/vd1XNoTc05Mye9xydhdnz0fYyJ5AXQ41Rcgm?=
+ =?us-ascii?Q?/Z8+Jv35+unZ5ADlyGi5CC/iv91xA0IcLIFQ0wASpoXwa/i4fIrIHgcVPD82?=
+ =?us-ascii?Q?7JTL+WfKLKdAjazAAMOKRvkfLe5VZC0ub/UV/siXS2WWvrCjJ1j+XJuz3//Z?=
+ =?us-ascii?Q?lAQZ1aWfaWxrr7WvBCKiXczvHyeai9QPzpvY9onWIHxRjBIX7jZ+DtOAFrcm?=
+ =?us-ascii?Q?0XdRPrhOzMo+zV8D3d5PDos/Wubs18eYTHpNj3G2FxEgQPyYtTtpA02SFHOQ?=
+ =?us-ascii?Q?OU1JDdDig7I2NfullKetyvmSorROD3JHQSUon+E+ueAP9mDppsp1IIwWr2qj?=
+ =?us-ascii?Q?SG2yZTi4mFilqj0XREG88W6vFYn2IF0m8FWiRMnDNi3wfYUfzcGt7bvWlUSh?=
+ =?us-ascii?Q?r4TD40f/eydfULDRqrmOO6PnS5qQvZG7uUZ/1c93/jgQiBMjBfnebvLaja66?=
+ =?us-ascii?Q?HC71EdgDUMFRIK92HgJTxEwB0v88xBAHIEq7r3O52OPwOgDlhKHjz99mcbVw?=
+ =?us-ascii?Q?novpB+gn1VqFimYT4PONnzm9nL46csA8+6Sviod6SrGxcKtUmTgkXcxtw8Av?=
+ =?us-ascii?Q?VC9UA62z8rNUiZZ/aYAeiHEdSRBvkuIPnsLRMriE9m7NAIK5fQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(10070799003)(366016)(19092799006)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?3gQB5laOnTacML6xnC2uDFetafANwC5ekyEaxkomdR7Zab29OiQ8Igz6Ef4t?=
+ =?us-ascii?Q?eCHl5UHD/yetC4tIAlr2m2h0X/kV3fWO3ztJ5m3ejV4Z5IcgyZKHAUZn6orz?=
+ =?us-ascii?Q?RVuKrZNkmW5kR9gz07NJSLzNdxCYbuIK06inmvFcovEU/QGksyVJx8jMqd81?=
+ =?us-ascii?Q?m4GhO/FjbFok0Feom1tuWD6JpIZDhCAt7oygBv4dxb9hcjAkMvgQk1k0WwWz?=
+ =?us-ascii?Q?m5tN6UZ3nHd1Roct20obzmdTU+Na6AGmgAaz63gg8Nt+m4ZZz5BUPG2ZxWOs?=
+ =?us-ascii?Q?KK2nFtpFDjgcPMEXYebDQ++nwzmgmeMQG7qsr9FshoE0IgWEjNi0Vsf8vyLU?=
+ =?us-ascii?Q?Cxt6PUWqoF4NA8CO9j5JEwREJF8uXDppPR59KGqu3pK4bo3WB7OhP08uUIS2?=
+ =?us-ascii?Q?l3wH9LZmvevvdgr/XeFymbSu5biaVNx5n+pID36ucak3utZ7dJWf3YnBuzUK?=
+ =?us-ascii?Q?lCMLt/ji219z50KU0qDTj/Qd+uSl4zFKNYV+/7Axcvnmk4/zJfH0mc5J/dAl?=
+ =?us-ascii?Q?Med/acZWPHeJW10QLl98ReKPTPeubdQapoXKgrcihnyInc8gu3HwpUfdT60C?=
+ =?us-ascii?Q?rKOkwXWgqLuAi/8tDrTJVJ43MoE5tIKfnuWykQ+qPKbFBP9zoAW6vTDb+PSS?=
+ =?us-ascii?Q?qUPpkIJfUpOjTxXG9e6BeEla8Jeo67G34CwExdYcHRcCc/bl10I7A8K3gMUO?=
+ =?us-ascii?Q?0l6GGSBlXPxYFLitKv9vLCwoRj59hhLEESdbpAcVR1sVdSGHCjPQDECXZLN1?=
+ =?us-ascii?Q?FebUMU7P5/+s7fxirbHvRLjIEY5WEzlgBXEi7+TBjxeEnYOBXqz+iVJJHCqa?=
+ =?us-ascii?Q?Zf7DjODE40nMdmsWuNzH0oC9cjyw6FIzv1X4XR3wY36gqEsWxydUy11tTGDU?=
+ =?us-ascii?Q?4OoiQXayvzipFs/LYtjOZsU5Z0Cg99kgq3Zuo3jWGPOYM+jdYysbMxUR9IJV?=
+ =?us-ascii?Q?6J6sAt8ebFz0nrzArUrzaDcmwboG46/W+5/XlPC0ljc9YxTVBKUfJ6mGIuKL?=
+ =?us-ascii?Q?KnPrs4x5K1zSo8i3UF8Y/XxPN629cI81/phsq5+Sx65glBG8pZqcvB+lyE4q?=
+ =?us-ascii?Q?R+kH2OndTJ6eSAInGIdpjrXNTo5eSBzs0FJeAWVKFzfVe0Vie9ySkbzHi+Wc?=
+ =?us-ascii?Q?wmO9c/uFpgAtuJHv669yDA87KmcEr135mKzLzRgHwcVFpIT1As5amUgDQ4sd?=
+ =?us-ascii?Q?nztrUr2tRzpjPiKGuu0z2fJjjKMLhk26KPjYp1Cl0dWNANkR+2DC7HrwSMeM?=
+ =?us-ascii?Q?hdFXrIeMM3f/OT/ew9ooNzE26c4ROIPb5/qLjmaJuyu8jXDltzuZlyBS8/Sd?=
+ =?us-ascii?Q?kUBYwc8XISRS7i+6rK7qcWpS60clO0EIAWyn06GY58c4FLkVMItTA1/4OMC5?=
+ =?us-ascii?Q?wIS8VUQ56mlVlkN/wkLNQjajnj9KMvt8mFDjneA1rB22WfPLVK31VWOupt2e?=
+ =?us-ascii?Q?s9YrtPdjuTA72iMjYL4O0GFIP19oI2Ymro0tPIw3ofzUgx3dxMdzgqQ+KUW2?=
+ =?us-ascii?Q?skPJleeCdKjWb5T04aqcLmoOiRz01oLrRVOlFtoXnMtIjGr/EJ30AoAfwn0x?=
+ =?us-ascii?Q?bC6NiPZajgeHhc0HctqX6TQi5spQYtXpEQch98Exb0KBY37jERf1sqKh42H7?=
+ =?us-ascii?Q?C3YrfqoldVqB9wOcsnHfuRH+J8zWTa8KlcpE63tQoYw03VkNIAwyd4cYzf3M?=
+ =?us-ascii?Q?4hR6lw=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: eca95225-8bc8-4b11-480e-08de002ab652
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Sep 2025 14:07:38.6320
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 5Z45mLAhG2aw1jGbVUY02brX6/ls8QdKF8/HZ/HUhOsOm5HwufBr9Dnt3+EMAsBe3JGeLiMmR3K/1Ty9E5KewA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9366
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_014641_607021_FB235175 
-X-CRM114-Status: GOOD (  21.74  )
+X-CRM114-CacheID: sfid-20250930_070750_640360_2E09F5E7 
+X-CRM114-Status: GOOD (  35.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,274 +163,338 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Created the eswin phy driver directory and added support for
-the SATA phy driver on the EIC7700 SoC platform.
+On Fri, Sep 26, 2025 at 09:05:00PM +0300, Vladimir Oltean wrote:
+> Going by the generic "fsl,lynx-28g" compatible string and expecting all
+> SerDes instantiations on all SoCs to use it was a mistake.
+> 
+> They all share the same register map, sure, but the number of protocol
+> converters and lanes which are instantiated differs in a way that isn't
+> detectable by the programming interface.
+> 
+> Using a separate compatible string per SerDes instantiation is
+> sufficient for any device driver to distinguish these features and/or
+> any instance-specific quirk. It also reflects how the SoC reference
+> manual provides different tables with protocol combinations for each
+> SerDes. NXP clearly documents these as not identical, and refers to them
+> as such (SerDes 1, 2, etc).
+> 
+> The other sufficient approach for Lynx 28G would be to list in the
+> device tree all protocols supported by each lane. That would be
+> insufficient for the very similar Lynx 10G SerDes however, for which
+> there exists a higher degree of variability in the PCCR register values
+> that need to be written per protocol. This attempt can be seen in this
+> unmerged patch set for Lynx 10G:
+> https://lore.kernel.org/linux-phy/20230413160607.4128315-3-sean.anderson@seco.com/
+> 
+> but that approach is more drawn-out and more prone to errors, whereas
+> this one is more succinct and obviously correct.
+> 
+> One aspect which is different with the per-SoC compatible strings is
+> that they have one PHY provider for each lane (and #phy-cells = <0> in
+> lane sub-nodes), rather than "fsl,lynx-28g" which has a single PHY
+> provider for all lanes (and #phy-cells = <1> in the top-level node).
+> 
+> This is done to fulfill Josua Mayer's request:
+> https://lore.kernel.org/lkml/02270f62-9334-400c-b7b9-7e6a44dbbfc9@solid-run.com/
+> to have OF nodes for each lane, so that we can further apply schemas
+> such as Documentation/devicetree/bindings/phy/transmit-amplitude.yaml
+> individually.
+> 
+> This is the easiest and most intuitive way to describe that. The above
+> is not the only electrical tuning that needs to be done, but rather the
+> only one currently standardized in a schema. TX equalization parameters
+> are TBD, but we need to not limit ourselves to just what currently exists.
+> 
+> Luckily, we can overlap the modern binding format over the legacy one
+> and they can coexist without interfering. Old kernels use compatible =
+> "fsl,lynx-28g" and the top-level PHY provider, whereas new kernels probe
+> on e.g. compatible = "fsl,lx2160a-serdes1" and use the per-lane PHY
+> providers.
+> 
+> Overlaying modern on top of legacy is only necessary for SerDes 1 and 2.
+> LX2160A SerDes #3 (a non-networking SerDes) is not yet present in any
+> device trees in circulation, and will only have the device-specific
+> compatible (even though it shares the Lynx 28G programming model,
+> specifying the "fsl,lynx-28g" compatible string for it provides no
+> benefit that I can see).
+> 
+> Change the expected name of the top-level node to "serdes", and update
+> the example too.
+> 
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> Cc: Conor Dooley <conor+dt@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+> v2->v3:
+> - re-add "fsl,lynx-28g" as fallback compatible, and #phy-cells = <1> in
+>   top-level "serdes" node
+> - drop useless description texts
+> - fix text formatting
+> - schema is more lax to allow overlaying old and new required properties
+> v1->v2:
+> - drop the usage of "fsl,lynx-28g" as a fallback compatible
+> - mark "fsl,lynx-28g" as deprecated
+> - implement Josua's request for per-lane OF nodes for the new compatible
+>   strings
+> 
+>  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 159 +++++++++++++++++-
+>  1 file changed, 152 insertions(+), 7 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> index ff9f9ca0f19c..e8b3a48b9515 100644
+> --- a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
+> @@ -9,21 +9,123 @@ title: Freescale Lynx 28G SerDes PHY
+>  maintainers:
+>    - Ioana Ciornei <ioana.ciornei@nxp.com>
+>  
+> +description:
+> +  The Lynx 28G is a multi-lane, multi-protocol SerDes (PCIe, SATA, Ethernet)
+> +  present in multiple instances on NXP LX2160A and LX2162A SoCs. All instances
+> +  share a common register map and programming model, however they differ in
+> +  supported protocols per lane in a way that is not detectable by said
+> +  programming model without prior knowledge. The distinction is made through
+> +  the compatible string.
+> +
+>  properties:
+>    compatible:
+> -    enum:
+> -      - fsl,lynx-28g
+> +    oneOf:
+> +      - const: fsl,lynx-28g
+> +        deprecated: true
+> +        description:
+> +          Legacy compatibility string for Lynx 28G SerDes. Any assumption
+> +          regarding whether a certain lane supports a certain protocol may
+> +          be incorrect. Deprecated except when used as a fallback. Use
+> +          device-specific strings instead.
+> +      - items:
+> +          - const: fsl,lx2160a-serdes1
+> +          - const: fsl,lynx-28g
+> +      - items:
+> +          - const: fsl,lx2160a-serdes2
+> +          - const: fsl,lynx-28g
+> +      - items:
+> +          - const: fsl,lx2162a-serdes1
+> +          - const: fsl,lynx-28g
+> +      - items:
+> +          - const: fsl,lx2162a-serdes2
+> +          - const: fsl,lynx-28g
+> +      - const: fsl,lx2160a-serdes3
+>  
+>    reg:
+>      maxItems: 1
+>  
+> -  "#phy-cells":
+> -    const: 1
+> +  "#address-cells": true
+> +
+> +  "#size-cells": true
+> +
+> +  "#phy-cells": true
+> +
+> +patternProperties:
+> +  "^phy@[0-9a-f]+$":
+> +    type: object
+> +    description: Individual SerDes lane acting as PHY provider
+> +
+> +    properties:
+> +      reg:
+> +        description: Lane index as seen in register map
+> +        maxItems: 1
+> +
+> +      "#phy-cells":
+> +        const: 0
+> +
+> +    required:
+> +      - reg
+> +      - "#phy-cells"
+> +
+> +    additionalProperties: false
+>  
+>  required:
+>    - compatible
+>    - reg
+> -  - "#phy-cells"
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: fsl,lynx-28g
+> +    then:
+> +      # Legacy case: parent is the PHY provider, cell encodes lane index
+> +      properties:
+> +        "#phy-cells":
+> +          const: 1
+> +      required:
+> +        - "#phy-cells"
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,lx2160a-serdes1
+> +              - fsl,lx2160a-serdes2
+> +              - fsl,lx2160a-serdes3
+> +              - fsl,lx2162a-serdes1
+> +              - fsl,lx2162a-serdes2
+> +    then:
+> +      # Modern binding: lanes must have their own nodes
+> +      properties:
+> +        "#address-cells":
+> +          const: 1
+> +        "#size-cells":
+> +          const: 0
+> +      required:
+> +        - "#address-cells"
+> +        - "#size-cells"
+> +
+> +  # LX2162A SerDes 1 has fewer lanes than the others
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: fsl,lx2162a-serdes1
+> +    then:
+> +      patternProperties:
+> +        "^phy@[0-9a-f]+$":
+> +          properties:
+> +            reg:
+> +              enum: [4, 5, 6, 7]
+> +    else:
+> +      patternProperties:
+> +        "^phy@[0-9a-f]+$":
+> +          properties:
+> +            reg:
+> +              enum: [0, 1, 2, 3, 4, 5, 6, 7]
+>  
+>  additionalProperties: false
+>  
+> @@ -32,9 +134,52 @@ examples:
+>      soc {
+>        #address-cells = <2>;
+>        #size-cells = <2>;
+> -      serdes_1: phy@1ea0000 {
+> -        compatible = "fsl,lynx-28g";
+> +
+> +      serdes_1: serdes@1ea0000 {
+> +        compatible = "fsl,lx2160a-serdes1", "fsl,lynx-28g";
+>          reg = <0x0 0x1ea0000 0x0 0x1e30>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+>          #phy-cells = <1>;
+> +
+> +        phy@0 {
+> +          reg = <0>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@1 {
+> +          reg = <1>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@2 {
+> +          reg = <2>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@3 {
+> +          reg = <3>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@4 {
+> +          reg = <4>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@5 {
+> +          reg = <5>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@6 {
+> +          reg = <6>;
+> +          #phy-cells = <0>;
+> +        };
+> +
+> +        phy@7 {
+> +          reg = <7>;
+> +          #phy-cells = <0>;
+> +        };
+>        };
+>      };
+> -- 
+> 2.34.1
+>
 
-Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
----
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/eswin/Kconfig            |  14 ++
- drivers/phy/eswin/Makefile           |   2 +
- drivers/phy/eswin/phy-eic7700-sata.c | 192 +++++++++++++++++++++++++++
- 5 files changed, 210 insertions(+)
- create mode 100644 drivers/phy/eswin/Kconfig
- create mode 100644 drivers/phy/eswin/Makefile
- create mode 100644 drivers/phy/eswin/phy-eic7700-sata.c
+I should have realized sooner when Rob/Josua requested the changes for
+backwards schema compatibility in v2:
+https://lore.kernel.org/lkml/20250925080317.2ocgybitliwddhcf@skbuf/
+that despite our attempts to preserve compatibility with old kernels,
+we actually fail to do that. Actually I should have documented my
+earlier thought process better, where I already came to that conclusion,
+but which I had forgotten when told that this could work...
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 678dd0452f0a..6d50704917f0 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -105,6 +105,7 @@ source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
-+source "drivers/phy/eswin/Kconfig"
- source "drivers/phy/freescale/Kconfig"
- source "drivers/phy/hisilicon/Kconfig"
- source "drivers/phy/ingenic/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index bfb27fb5a494..482a143d3417 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -17,6 +17,7 @@ obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
- 					   cadence/	\
-+					   eswin/	\
- 					   freescale/	\
- 					   hisilicon/	\
- 					   ingenic/	\
-diff --git a/drivers/phy/eswin/Kconfig b/drivers/phy/eswin/Kconfig
-new file mode 100644
-index 000000000000..3fcd76582c3b
---- /dev/null
-+++ b/drivers/phy/eswin/Kconfig
-@@ -0,0 +1,14 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+#
-+# Phy drivers for Eswin platforms
-+#
-+config PHY_EIC7700_SATA
-+	tristate "eic7700 Sata SerDes/PHY driver"
-+	depends on ARCH_ESWIN || COMPILE_TEST
-+	depends on HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support SerDes/Phy found on ESWIN's
-+	  EIC7700 SoC.This Phy supports SATA 1.5 Gb/s,
-+	  SATA 3.0 Gb/s, SATA 6.0 Gb/s speeds.
-+	  It supports one SATA host port to accept one SATA device.
-diff --git a/drivers/phy/eswin/Makefile b/drivers/phy/eswin/Makefile
-new file mode 100644
-index 000000000000..db08c66be812
---- /dev/null
-+++ b/drivers/phy/eswin/Makefile
-@@ -0,0 +1,2 @@
-+# SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_EIC7700_SATA)	+= phy-eic7700-sata.o
-diff --git a/drivers/phy/eswin/phy-eic7700-sata.c b/drivers/phy/eswin/phy-eic7700-sata.c
-new file mode 100644
-index 000000000000..19b7ddf2583f
---- /dev/null
-+++ b/drivers/phy/eswin/phy-eic7700-sata.c
-@@ -0,0 +1,192 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * ESWIN SATA PHY driver
-+ *
-+ * Copyright 2024, Beijing ESWIN Computing Technology Co., Ltd..
-+ * All rights reserved.
-+ *
-+ * Authors: Yulin Lu <luyulin@eswincomputing.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+
-+#define SATA_CLK_CTRL				0x0
-+#define SATA_AXI_LP_CTRL			0x08
-+#define SATA_MPLL_CTRL				0x20
-+#define SATA_P0_PHY_STAT			0x24
-+#define SATA_PHY_CTRL0				0x28
-+#define SATA_PHY_CTRL1				0x2c
-+#define SATA_REG_CTRL				0x34
-+#define SATA_REF_CTRL1				0x38
-+#define SATA_LOS_IDEN				0x3c
-+#define SATA_RESET_CTRL				0x40
-+
-+#define SATA_SYS_CLK_EN				BIT(28)
-+#define SATA_PHY_RESET				BIT(0)
-+#define SATA_PORT_RESET				BIT(1)
-+#define SATA_CLK_RST_SOURCE_PHY			BIT(0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK	GENMASK(6, 0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK	GENMASK(14, 8)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK	GENMASK(22, 16)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN1_MASK	GENMASK(5, 0)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN2_MASK	GENMASK(13, 8)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN3_MASK	GENMASK(21, 16)
-+#define SATA_LOS_LEVEL_MASK			GENMASK(4, 0)
-+#define SATA_LOS_BIAS_MASK			GENMASK(18, 16)
-+#define SATA_M_CSYSREQ				BIT(0)
-+#define SATA_S_CSYSREQ				BIT(16)
-+#define SATA_REF_REPEATCLK_EN			BIT(0)
-+#define SATA_REF_USE_PAD			BIT(20)
-+#define SATA_MPLL_MULTIPLIER_MASK		GENMASK(22, 16)
-+#define SATA_P0_PHY_READY			BIT(0)
-+
-+#define PHY_READY_TIMEOUT			(usecs_to_jiffies(4000))
-+
-+struct eic7700_sata_phy {
-+	void __iomem *regs;
-+	struct phy *phy;
-+};
-+
-+static int wait_for_phy_ready(void __iomem *base, u32 reg, u32 checkbit,
-+			      u32 status)
-+{
-+	unsigned long timeout = jiffies + PHY_READY_TIMEOUT;
-+
-+	while (time_before(jiffies, timeout)) {
-+		if ((readl(base + reg) & checkbit) == status)
-+			return 0;
-+		usleep_range(50, 70);
-+	}
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static int eic7700_sata_phy_init(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	/*
-+	 * The SATA_CLK_CTRL register offset controls the pmalive, rxoob, and
-+	 * rbc clocks gate provided by the PHY through the HSP bus, and it is
-+	 * not registered in the clock tree.
-+	 */
-+	val = readl(sata_phy->regs + SATA_CLK_CTRL);
-+	val |= SATA_SYS_CLK_EN;
-+	writel(val, sata_phy->regs + SATA_CLK_CTRL);
-+
-+	writel(SATA_CLK_RST_SOURCE_PHY, sata_phy->regs + SATA_REF_CTRL1);
-+	writel(FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK, 0x42) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK, 0x46) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK, 0x73),
-+	       sata_phy->regs + SATA_PHY_CTRL0);
-+	writel(FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN1_MASK, 0x5) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN2_MASK, 0x5) |
-+	       FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN3_MASK, 0x8),
-+	       sata_phy->regs + SATA_PHY_CTRL1);
-+	writel(FIELD_PREP(SATA_LOS_LEVEL_MASK, 0x9) |
-+	       FIELD_PREP(SATA_LOS_BIAS_MASK, 0x2),
-+	       sata_phy->regs + SATA_LOS_IDEN);
-+	writel(SATA_M_CSYSREQ | SATA_S_CSYSREQ,
-+	       sata_phy->regs + SATA_AXI_LP_CTRL);
-+	writel(SATA_REF_REPEATCLK_EN | SATA_REF_USE_PAD,
-+	       sata_phy->regs + SATA_REG_CTRL);
-+	writel(FIELD_PREP(SATA_MPLL_MULTIPLIER_MASK, 0x3c),
-+	       sata_phy->regs + SATA_MPLL_CTRL);
-+	usleep_range(15, 20);
-+
-+	/*
-+	 * The SATA_RESET_CTRL register offset controls reset/deassert for both
-+	 * the port and the PHY through the HSP bus, and it is not registered
-+	 * in the reset tree.
-+	 */
-+	val = readl(sata_phy->regs + SATA_RESET_CTRL);
-+	val &= ~(SATA_PHY_RESET | SATA_PORT_RESET);
-+	writel(val, sata_phy->regs + SATA_RESET_CTRL);
-+
-+	ret = wait_for_phy_ready(sata_phy->regs, SATA_P0_PHY_STAT,
-+				 SATA_P0_PHY_READY, 1);
-+	if (ret < 0)
-+		dev_err(&sata_phy->phy->dev,
-+			"PHY READY check failed\n");
-+	return ret;
-+}
-+
-+static int eic7700_sata_phy_exit(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	u32 val;
-+
-+	val = readl(sata_phy->regs + SATA_RESET_CTRL);
-+	val |= SATA_PHY_RESET | SATA_PORT_RESET;
-+	writel(val, sata_phy->regs + SATA_RESET_CTRL);
-+
-+	val = readl(sata_phy->regs + SATA_CLK_CTRL);
-+	val &= ~SATA_SYS_CLK_EN;
-+	writel(val, sata_phy->regs + SATA_CLK_CTRL);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops eic7700_sata_phy_ops = {
-+	.init		= eic7700_sata_phy_init,
-+	.exit		= eic7700_sata_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int eic7700_sata_phy_probe(struct platform_device *pdev)
-+{
-+	struct eic7700_sata_phy *sata_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+
-+	sata_phy = devm_kzalloc(dev, sizeof(*sata_phy), GFP_KERNEL);
-+	if (!sata_phy)
-+		return -ENOMEM;
-+
-+	sata_phy->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(sata_phy->regs))
-+		return PTR_ERR(sata_phy->regs);
-+
-+	dev_set_drvdata(dev, sata_phy);
-+
-+	sata_phy->phy = devm_phy_create(dev, NULL, &eic7700_sata_phy_ops);
-+	if (IS_ERR(sata_phy->phy))
-+		return dev_err_probe(dev, PTR_ERR(sata_phy->phy),
-+				     "failed to create PHY\n");
-+
-+	phy_set_drvdata(sata_phy->phy, sata_phy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return dev_err_probe(dev, PTR_ERR(phy_provider),
-+				     "failed to register PHY provider\n");
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id eic7700_sata_phy_of_match[] = {
-+	{ .compatible = "eswin,eic7700-sata-phy" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, eic7700_sata_phy_of_match);
-+
-+static struct platform_driver eic7700_sata_phy_driver = {
-+	.probe	= eic7700_sata_phy_probe,
-+	.driver = {
-+		.of_match_table	= eic7700_sata_phy_of_match,
-+		.name  = "eic7700-sata-phy",
-+	}
-+};
-+module_platform_driver(eic7700_sata_phy_driver);
-+
-+MODULE_DESCRIPTION("SATA PHY driver for the ESWIN EIC7700 SoC");
-+MODULE_AUTHOR("Yulin Lu <luyulin@eswincomputing.com>");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
+The SerDes schema itself is technically backwards-compatible, but the
+problem is with consumers, which aren't. In old device trees, they have:
 
+	phys = <&serdes_1 0>;
+
+and in new ones, they have:
+
+	phys = <&serdes_1_lane_a>;
+
+Because the consumer has a single "phys" phandle to the PHY provider, it
+either has to point to one, or to the other. But on old kernels, we do
+not register PHY providers per lane, so "phys = <&serdes_1_lane_a>"
+results in a broken reference.
+
+There are 2 directions to go from here:
+1. Have optional per-lane "phy" OF node children, which exist solely for
+   tuning electrical parameters. We need to keep the top-level SerDes as
+   the only PHY provider, with #phy-cells = <1> denoting the lane.
+
+2. Accept that keeping "fsl,lynx-28g" and overlaid properties has
+   absolutely no practical benefit, and drop them (effectively returning
+   to Conor's suggestion, as implemented in v2)
+
+3. Extend the schema and the driver support for it as a backportable bug
+   fix, to allow registering PHY providers for lanes with OF nodes in
+   stable kernels. This avoids regressing when the device trees are
+   updated, assuming the stable kernel is also updated.
+
+It's not that I particularly like #2, but going with #1 would imply that
+lane OF nodes exist, but the "phys" phandles do not point to them.
+
+Combine that with the fact that anything we do with the 28G Lynx
+bindings will have to be replicated, for uniformity's sake, with the
+upcoming 10G Lynx SerDes binding (very similar hardware IP), and #1 is
+suddenly not looking so pretty at all. I.e. introducing the 10G Lynx
+bindings like the 28G Lynx ones would mean deviating from the widely
+established norm, and introducing them like the widely established norm
+would mean deviating from the 28G Lynx. I can easily see how someone
+might look at them one day and think "hmm, can't we make them more
+uniform?"
+
+OTOH, the fact that device tree updates require kernel updates (as
+implied by #2) is acceptably by everyone in this thread who expressed an
+opinion on this topic.
+
+As for option #3, while IMO it would be a justified "new feature as
+bug fix", it sounds a bit counterintuitive and I'm afraid I won't manage
+to convince all maintainers along the way that this is the way forward.
+
+I'll wait for the merge window to close before reposting anything, but
+I'd like an explicit ack from Rob and Josua in the meantime, whose
+change request I'd be effectively reverting, to make sure that this
+topic is closed.
 
 -- 
 linux-phy mailing list
