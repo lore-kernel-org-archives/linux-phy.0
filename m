@@ -4,64 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11055CCA468
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 14:39:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FD09CAC5B8
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 17:17:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=z5LqYLQtS8DWIoTT2fosk+DN4SfPO6TMbWDmAyTMOl0=; b=sBQDunYlgKW9ZpnTTGVzViUn25
-	As6voGnjwLxBTSyYAb9/beOzLLUHBLjsIwh71UrV2XW3MPcLYk08uLShm1UfNL3j3VYmNL0XmD0Xi
-	Y8J8J7Y4QSoSAehdEJWgaHyjJ1V9BbdXgaeZrpUuY8o8xg2tZucOPisV+Zb+ol96pCtwHjz+qJt2l
-	DwNO9kF28xIQM+rrYxPAcUFiLhRGajz57gaaVd/yrpXDxl+GG4MGYktHF7l49PrNvICz1/kGxglq2
-	DDDGYXEYSm8c7Aj7T9LIyABpRzA2XR3aJoS5OEDnaOxZM1miYBn/gfYfTpqS0jxGXFXBuatYLUtMv
-	Xwk4+y8w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8yU1269YSE6WkrunvL6ILh6O6IvzPdWAJNW9dNk4J0E=; b=OaNU521jO+XXYq
+	7oobPABnOdJ3/OI9Oee21mxEDwOqNsDEfZ3LqnBmCW8qLvsGqPOVV+F9N5abviwNdi/X8Q/B/1v3c
+	S5JkxRQYygbzIn4FjtAo0Pdk5BJk8s9ycdOYFu2stk/Evn/P+d0F9aads0XejbX9bCEiztj/1zjgR
+	29OP0p6c8G9um34gpBNq/FW9qHF4AkES/yHdqBkjoEdG5I1EY9GZa6omiUXaaYnvyLYPl/YbTjmpj
+	joM/caW5IsV5gJEFyy3BhENc5wyREHE+jMvBxZ8ctMuTYZZ32Hk3L1G95QEZx6LUZZfnScRjD+ozS
+	McXbArtT8KnzrBvOqV4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3bWI-00000005WRZ-2pam;
-	Tue, 30 Sep 2025 14:39:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1v3dyi-00000005rU9-3cQF;
+	Tue, 30 Sep 2025 17:17:28 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3bWF-00000005WQp-32Kh
+	id 1v3dyg-00000005rSy-0IUq
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Sep 2025 14:39:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 627A843BAD;
-	Tue, 30 Sep 2025 14:39:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1685EC4CEF0;
-	Tue, 30 Sep 2025 14:39:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759243195;
-	bh=l45BtsyJKOD0lBkLJnhS7wBvc+VDTM+3H1xN6KRb5nY=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=riRM2w/NT7e2FCDWoxPo+nYpEEmRQkDlx4LY2xBE6BBxxxY/S29TvMA4NGHCq3ZVk
-	 qOSPb+zhd2uifbFQOoJ0oTEop42EuyBwHC+gGZk3mAYXPv1BAZXa9SIg6frr1WWiRK
-	 9k9KyuCBRw0CfyIV0Ubvs5o9JDyUujJysycrca/QiBsXydRiIF6of749qpCI6YL+LE
-	 1L/NiR/b5LevIuGDyBIscF8SvPS4nakhBOhzxhMviyQlBhbv0h0zw/dhCpe/UYFBIF
-	 7mUYuDG4foH9xBXEuqu7sCfxJ/H0ibuAdMKxkelgdZqBwoMx/nuQj93ClZP5Uvl5Ub
-	 Jr42/fylI6GrA==
-Date: Tue, 30 Sep 2025 09:39:53 -0500
+	Tue, 30 Sep 2025 17:17:27 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-46e29d65728so42121235e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 10:17:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1759252644; x=1759857444; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=RNePBLAvYV3wK8ibZpgmHCPCbmbpde/eqvSInVk0KIc=;
+        b=U2hunbkDzNFeDgQqXkR7XpG5Ug5OW6dzb8HXwM2uiBd1lhjdlw/83/LyXdhL5u3ci0
+         EIAiit5i6nuMe7eSjTgMm7EAvAphV/cGwM1qFYYIROFsqlM9pPrFxdTOGznZH0V2yTDG
+         MMm5qsfwB9pYGBoUSpmu9ujqCm4WBi7/YXY1W1zMKHuLQEx0oech8xJZbMWFsK18fa3Z
+         i7qih5wkEyeVJNzHc7hiGsJ5bIWwZXYkJIEFs+5e0LcIPTx2IizdlpUDtAGA2FU4oHIX
+         fAxwk8yECkJJ3V0zltn5uNDp74BRmpz10BlrAQmzE1HpQ5XvQhJyxRuFRUfEAzUXYDiI
+         LHww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759252644; x=1759857444;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=RNePBLAvYV3wK8ibZpgmHCPCbmbpde/eqvSInVk0KIc=;
+        b=DZvpM735ideCyoqVzMNT1q7+N3jBaN9SznFIfrkXOHAQ1IzK6p6xaIdUkXWZ4ec9WL
+         e14t/eBVZ6E2WfHhn0itWBsYYpZfmtm4OsK1lWOJFh9thY+XJTzXUyqFgcxcL6+0JWq+
+         CIrZhjjESu0OFulW6788YdAtjyMpdvfwonB+iQNk3MAv27RQt/DKDMyQ/U/o4+cldCzM
+         um1u7aaLnmkE929CKsKYAQKhxVnybnmo2i7SdTOdZHgTur0q0vWKYo1Oew73j3FW2LYz
+         wr6TIKAxnbMLRF4qGzCymelSM1SPV6UFZzk/oKjcapsdK4297Owm2KPy0yYES+63KewO
+         w9bQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXpBeh/mgTOuIbQqt2Oe/BaZ5JjdtBouRIex8rdLl3Jotudqol5v8CL7iogEp7b8HPh/0LkjB5P7AI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzJhnC1hFaJ2QCGQ9SQ2Ucn3Aua43M+GkGi1K/uwd7O/SA17Ai4
+	agcOSHUA7BeBxDutr8yTDjXKhAEcs3b+TunKclxpzhEGZ00uMJm/2h93OePSVaIucac=
+X-Gm-Gg: ASbGncs6k+OrVfL/Gz387i+OiUG9iVN3IKh2fadWlP+nCfzE1yFj73HCM4IMnhrEB2A
+	4GDo9eEt8cZTEAP16f257vdwTznQio+Z/JJ2Od2H7LweD5xzgV4MlgbWbwiZyIOMmyMpMmed0gx
+	RyMUQHXYmu/QJS+QH9takwBc1k9nizl3AC2ZAcaPO3HGM2rAhg+1LyidZjhNpa0DbdExR/x0EZF
+	16ssIG4voZLKr/4s1a4Xbh+jD4FbW0XJ2kreTBmHtmPaCqtmqH29xi3uREk8+F5kMzKskRg2+1N
+	Ki1LMPlmFKJn1/wzSnhIxrwkdSxwE0I1BJLtHl1vuCsR9FIZdHduF/bCgWX5k1JA2CQtRocMLUs
+	/8Ty2/GaZJtr1gUy4vkJlEVxs5YGIVRLmcN7jLCtx7S2n0RS74NbRY4mtNlJ757x8ono=
+X-Google-Smtp-Source: AGHT+IElfAfSUmqbhDMTil+yEDuc0QOUeaDmYZur34EATX4bKiElLsQT72CWpqSOwiVb4bZzmxTvtQ==
+X-Received: by 2002:a05:600c:8b18:b0:46e:4a13:e6c6 with SMTP id 5b1f17b1804b1-46e612bfe6fmr4845315e9.19.1759252643701;
+        Tue, 30 Sep 2025 10:17:23 -0700 (PDT)
+Received: from arrakeen.starnux.net ([2a01:e0a:3d9:2080:52eb:f6ff:feb3:451a])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-40fb72fb017sm23443480f8f.3.2025.09.30.10.17.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 30 Sep 2025 10:17:23 -0700 (PDT)
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Date: Tue, 30 Sep 2025 19:17:21 +0200
+Subject: [PATCH] dt-bindings: usb: switch: split out ports definition
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, Xilin Wu <sophon@radxa.com>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+Message-Id: <20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-060568de9538@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAKAQ3GgC/x2NQQqDMBBFryKz7sBoTLG9SnGhcdRZqGnGViHk7
+ gZXjweP/yMoB2GFdxEh8F9UtjVL+SjAzd06McqQHSqqLL0M4b55cahLc1rCUU78Lh5/2tdmuIl
+ 6yO5mJNfUTL0dzbOEvOYD5/p++rQpXbUAOVp5AAAA
+X-Change-ID: 20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-0c84e0b5f361
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, linux-kernel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, 
- linux-phy@lists.infradead.org
-To: Neil Armstrong <neil.armstrong@linaro.org>
-In-Reply-To: <20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org>
-References: <20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org>
-Message-Id: <175924309302.2874001.421334027462702971.robh@kernel.org>
-Subject: Re: [PATCH v4 0/3] arm64: qcom: x1e78100-lenovo-thinkpad-t14s: add
- support for HDMI output
+ Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Romain Gantois <romain.gantois@bootlin.com>, Li Jun <jun.li@nxp.com>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Luca Weiss <luca.weiss@fairphone.com>, Abel Vesa <abel.vesa@linaro.org>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=11052;
+ i=neil.armstrong@linaro.org; h=from:subject:message-id;
+ bh=+dDf6+3YhN4vz3PDVIAYw6UpFs5vKV8CVEAHEvVlH40=;
+ b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBo3BCihvjWzPnZJlhuvLZ6p0GUKsLhNQeMd0D0Boz9
+ 8oDpIKmJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCaNwQogAKCRB33NvayMhJ0cCnD/
+ 4sX406R2aFjpxvYRVXxdYNHyWS+bQ0NWwtfX7a9BcMA2e/NxnIRA2upqPHp8CbtZUUdLxnqUkMwvic
+ ZfWZLurSh3Zul3FvrDx77K5j6N+CCwx0VAwqb0B9dR7n4oSa0e+nnnYNTvZxaPMbIUHdmW9jSZvTWe
+ sdiA6qZ2NdWWGyfPqNgbprHsJ9GulUpGM9Xf9ye4gMKcCUebeh46ztBXFuw2TyArwv5BboZRlEU8AT
+ L5N+PgzSc+GBPFr5kJe0ENIAfwsX0YWZd9bLgDqtB25SJo9Au5qAi7AvSXLALF6IheULmjPlRp0cG8
+ 1rmQFE9OAXtVWOxjVh+Dk1Sol1IYqhO4l8Am2AlscIefWGo53l2HD2VPaWVUhpMQVMElX203eoqImR
+ ALTvtipR5YQxqS2X9YSelreAAqYXhUO2wRwO6kCo+0YvC1rPRM6WdyY1A90WA2NXVVTlI82fK14d5q
+ xm2GFOQOYqgA1ZSJpDzGhoR/52iP4KGPLkxTYEi910T3qUrcy2LxFOO5C5ub4FW+CS7+roF/o6hJFg
+ 396De3BB76e2uzLq/mJPxiu9xWL+zSRGa0DHxKiC6lJVNOsANguPUXa66G1OFllKVaydZNZKqQuBm0
+ AwjcM/W3kSVdHdLFUUEwobhDutHxehRMz8PwFyh5SllOkzKHRBc5d09UMrWQ==
+X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
+ fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_073955_810858_BEEC73B0 
-X-CRM114-Status: GOOD (  25.58  )
+X-CRM114-CacheID: sfid-20250930_101726_359437_D713044F 
+X-CRM114-Status: GOOD (  13.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,311 +132,293 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The ports definition currently defined in the usb-switch.yaml
+fits standards devices which are either recipient of altmode
+muxing and orientation switching events or an element of the
+USB Super Speed data lanes.
 
-On Tue, 30 Sep 2025 09:39:46 +0200, Neil Armstrong wrote:
-> The Thinkpad T14s embeds a transparent 4lanes DP->HDMI transceiver
-> connected to the third QMP Combo PHY 4 lanes.
-> 
-> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
-> of a combo glue to route either lanes to the 4 shared physical lanes.
-> 
-> The routing of the lanes can be:
-> - 1/2 DP + 2 USB3
-> - 1/2/4 DP
-> - 2 USB3
-> 
-> We need be able to specify the lanes mapping to DisplayPort
-> and/or USB3 peripherals when not connected to a Type-C complex.
-> 
-> Add the documentation for data-lanes in the out endpoints amd
-> use those in the driver to setup the right PHY mode and
-> orientation.
-> 
-> Finally Add all the data routing in DT, disable mode switching and specify
-> the QMP Combo PHY should be in DP-Only mode to route the 4 lanes to
-> the underlying DP phy.
-> 
-> Depends on:
-> - [1] https://lore.kernel.org/all/20250902-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-5b4a51c8c5a8@linaro.org/
-> 
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> ---
-> Changes in v4:
-> - Add definition for single lane DP
-> - Fix lanes mapping for DP in bindings and driver
-> - Add documentation on how to interpret the data-lanes numbers
-> - Rewrite driver support for be simpler and split into helpers
-> - Rebase DT on next and drop phy.h include, and use proper mapping
-> - Link to v3: https://lore.kernel.org/r/20250908-topic-x1e80100-hdmi-v3-0-c53b0f2bc2fb@linaro.org
-> 
-> Changes in v3:
-> - Move the static lanes mapping in data-lanes in the out endpoints
-> 	- new bindings
-> 	- new drivewr implementation
-> 	- new DT layout
-> - rebased on next, fixed simple bridge rebase
-> - added link frequencies for dp2
-> - Link to v2: https://lore.kernel.org/r/20250902-topic-x1e80100-hdmi-v2-0-f4ccf0ef79ab@linaro.org
-> 
-> Changes in v2:
-> - Model the HDMI transceiver as a simple bridge
-> - Switch to a static lanes mapping property
-> - Link to v1: https://lore.kernel.org/r/20250821-topic-x1e80100-hdmi-v1-0-f14ad9430e88@linaro.org
-> 
-> ---
-> Neil Armstrong (3):
->       dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Document lanes mapping when not using in USB-C complex
->       phy: qcom: qmp-combo: get the USB3 & DisplayPort lanes mapping from DT
->       arm64: dts: qcom: x1e78100-lenovo-thinkpad-t14s: add HDMI nodes
-> 
->  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |  67 +++++++++-
->  .../dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi    |  81 ++++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 145 +++++++++++++++++++--
->  3 files changed, 284 insertions(+), 9 deletions(-)
-> ---
-> base-commit: 4513b3b1a91546d0dd02c5c0eb507933b328021c
-> change-id: 20250821-topic-x1e80100-hdmi-3bd5b5bd2d96
-> 
-> Best regards,
-> --
-> Neil Armstrong <neil.armstrong@linaro.org>
-> 
-> 
-> 
+This doesn't necessarely fit combo PHYs like the Qualcomm
+USB3/DP Combo which has a different ports representation.
 
+Move the ports definition to a separate usb-switch-ports.yaml
+and reference it next to the usb-switch.yaml, except for
+the Qualcomm USB3/DP Combo PHY bindings.
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+Reported-by: Rob Herring <robh@kernel.org>
+Closes: https://lore.kernel.org/all/175462129176.394940.16810637795278334342.robh@kernel.org/
+Fixes: 3bad7fe22796 ("dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch")
+Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+---
+ .../bindings/phy/fsl,imx8mq-usb-phy.yaml           |  4 +-
+ .../bindings/phy/samsung,usb3-drd-phy.yaml         |  4 +-
+ .../devicetree/bindings/usb/fcs,fsa4480.yaml       |  1 +
+ .../devicetree/bindings/usb/gpio-sbu-mux.yaml      |  1 +
+ .../devicetree/bindings/usb/nxp,ptn36502.yaml      |  1 +
+ .../devicetree/bindings/usb/onnn,nb7vpq904m.yaml   |  1 +
+ .../devicetree/bindings/usb/parade,ps8830.yaml     |  1 +
+ .../bindings/usb/qcom,wcd939x-usbss.yaml           |  1 +
+ .../devicetree/bindings/usb/ti,tusb1046.yaml       |  1 +
+ .../devicetree/bindings/usb/usb-switch-ports.yaml  | 68 ++++++++++++++++++++++
+ .../devicetree/bindings/usb/usb-switch.yaml        | 52 -----------------
+ 11 files changed, 81 insertions(+), 54 deletions(-)
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+index 6a47e08e0e97b286538798190225ca2966a7ab34..f9cffbb2df07d6fa352a844071af7cc894652d0c 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+@@ -142,7 +142,9 @@ allOf:
+       required:
+         - orientation-switch
+     then:
+-      $ref: /schemas/usb/usb-switch.yaml#
++      allOf:
++        - $ref: /schemas/usb/usb-switch.yaml#
++        - $ref: /schemas/usb/usb-switch-ports.yaml#
+ 
+ unevaluatedProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+index e906403208c02951ff2bf5ed8420d53ad70eb29c..ea1135c91fb74c01ba860b9588ca89e611701359 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+@@ -125,7 +125,9 @@ allOf:
+           contains:
+             const: google,gs101-usb31drd-phy
+     then:
+-      $ref: /schemas/usb/usb-switch.yaml#
++      allOf:
++        - $ref: /schemas/usb/usb-switch.yaml#
++        - $ref: /schemas/usb/usb-switch-ports.yaml#
+ 
+       properties:
+         clocks:
+diff --git a/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml b/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
+index e3a7df91f7f15e9a6d8eb4971bc2b9646bdad0c6..89b1fb90aeebc0ccfc50ea52b67015034294e1a8 100644
+--- a/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
++++ b/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
+@@ -76,6 +76,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ additionalProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml b/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
+index e588514fab2d8c9d0d3717865fe2e733664fc28b..793662f6f3bff4a4b4b73b38983abca12e1e61d2 100644
+--- a/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
++++ b/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
+@@ -52,6 +52,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+   - if:
+       required:
+         - mode-switch
+diff --git a/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml b/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
+index d805dde80796f31a066cf52ba2f226ce2e9e9cc2..4d2fcaa718708fe5d0a05ebce211f0a729d6c617 100644
+--- a/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
++++ b/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
+@@ -46,6 +46,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ additionalProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml b/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
+index 589914d22bf250ff94c98ed22b32616d2c0cca1c..25fab5fdc2cd712a8075c2ee20bdc80829c3b043 100644
+--- a/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
++++ b/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
+@@ -91,6 +91,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ additionalProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/usb/parade,ps8830.yaml b/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
+index aeb33667818eb0d116a3467d30220002a3b5df73..eaeab1c01a594e05666d01cf6b82a6d7127ae075 100644
+--- a/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
++++ b/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
+@@ -81,6 +81,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ additionalProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml b/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
+index 96346723f3e9c92c32325c7395eff49336cbcaf8..96dcec9b76204606397cc1e31338832e518816f3 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
+@@ -60,6 +60,7 @@ required:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ additionalProperties: false
+ 
+diff --git a/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml b/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
+index f713cac4a8ac8e89c017999bc11e4b3a38d3ac2e..e1501ea6b50bf76e4bac6cbc2a3243f7107029d0 100644
+--- a/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
++++ b/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
+@@ -11,6 +11,7 @@ maintainers:
+ 
+ allOf:
+   - $ref: usb-switch.yaml#
++  - $ref: usb-switch-ports.yaml#
+ 
+ properties:
+   compatible:
+diff --git a/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml b/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml
+new file mode 100644
+index 0000000000000000000000000000000000000000..6bf0c97e30ae7069481e41ef8745804e5efde974
+--- /dev/null
++++ b/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml
+@@ -0,0 +1,68 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/usb/usb-switch-ports.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: USB Orientation and Mode Switches Ports Graph Properties
++
++maintainers:
++  - Greg Kroah-Hartman <gregkh@linuxfoundation.org>
++
++description:
++  Ports Graph properties for devices handling USB mode and orientation switching.
++
++properties:
++  port:
++    $ref: /schemas/graph.yaml#/$defs/port-base
++    description:
++      A port node to link the device to a TypeC controller for the purpose of
++      handling altmode muxing and orientation switching.
++
++    properties:
++      endpoint:
++        $ref: /schemas/graph.yaml#/$defs/endpoint-base
++        unevaluatedProperties: false
++        properties:
++          data-lanes:
++            $ref: /schemas/types.yaml#/definitions/uint32-array
++            minItems: 1
++            maxItems: 8
++            uniqueItems: true
++            items:
++              maximum: 8
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++    properties:
++      port@0:
++        $ref: /schemas/graph.yaml#/properties/port
++        description:
++          Super Speed (SS) Output endpoint to the Type-C connector
++
++      port@1:
++        $ref: /schemas/graph.yaml#/$defs/port-base
++        description:
++          Super Speed (SS) Input endpoint from the Super-Speed PHY
++        unevaluatedProperties: false
++
++        properties:
++          endpoint:
++            $ref: /schemas/graph.yaml#/$defs/endpoint-base
++            unevaluatedProperties: false
++            properties:
++              data-lanes:
++                $ref: /schemas/types.yaml#/definitions/uint32-array
++                minItems: 1
++                maxItems: 8
++                uniqueItems: true
++                items:
++                  maximum: 8
++
++oneOf:
++  - required:
++      - port
++  - required:
++      - ports
++
++additionalProperties: true
+diff --git a/Documentation/devicetree/bindings/usb/usb-switch.yaml b/Documentation/devicetree/bindings/usb/usb-switch.yaml
+index 89620191263023bec800dec114c0017c41b7c056..f77731493dc4901d0e95746b0cf1ffa3ee7ddfd0 100644
+--- a/Documentation/devicetree/bindings/usb/usb-switch.yaml
++++ b/Documentation/devicetree/bindings/usb/usb-switch.yaml
+@@ -25,56 +25,4 @@ properties:
+     description: Possible handler of SuperSpeed signals retiming
+     type: boolean
+ 
+-  port:
+-    $ref: /schemas/graph.yaml#/$defs/port-base
+-    description:
+-      A port node to link the device to a TypeC controller for the purpose of
+-      handling altmode muxing and orientation switching.
+-
+-    properties:
+-      endpoint:
+-        $ref: /schemas/graph.yaml#/$defs/endpoint-base
+-        unevaluatedProperties: false
+-        properties:
+-          data-lanes:
+-            $ref: /schemas/types.yaml#/definitions/uint32-array
+-            minItems: 1
+-            maxItems: 8
+-            uniqueItems: true
+-            items:
+-              maximum: 8
+-
+-  ports:
+-    $ref: /schemas/graph.yaml#/properties/ports
+-    properties:
+-      port@0:
+-        $ref: /schemas/graph.yaml#/properties/port
+-        description:
+-          Super Speed (SS) Output endpoint to the Type-C connector
+-
+-      port@1:
+-        $ref: /schemas/graph.yaml#/$defs/port-base
+-        description:
+-          Super Speed (SS) Input endpoint from the Super-Speed PHY
+-        unevaluatedProperties: false
+-
+-        properties:
+-          endpoint:
+-            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+-            unevaluatedProperties: false
+-            properties:
+-              data-lanes:
+-                $ref: /schemas/types.yaml#/definitions/uint32-array
+-                minItems: 1
+-                maxItems: 8
+-                uniqueItems: true
+-                items:
+-                  maximum: 8
+-
+-oneOf:
+-  - required:
+-      - port
+-  - required:
+-      - ports
+-
+ additionalProperties: true
 
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
+---
+base-commit: 262858079afde6d367ce3db183c74d8a43a0e83f
+change-id: 20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-0c84e0b5f361
 
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: base-commit 4513b3b1a91546d0dd02c5c0eb507933b328021c not known, ignoring
- Base: attempting to guess base-commit...
- Base: tags/next-20250929 (best guess, 2/3 blobs matched)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org:
-
-arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sm7325-nothing-spacewar.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r4.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s-oled.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s-oled.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s-oled.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-crd-pro.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-wifi.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-latitude-7455.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-latitude-7455.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-latitude-7455.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-lg-judyp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qrb5165-rb5.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8550-sony-xperia-yodo-pdx234.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-microsoft-arcata.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-microsoft-arcata.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-oneplus-fajita.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r4.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8350-microsoft-surface-duo2.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcm6490-idp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8550-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-samsung-x1q.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-sony-xperia-tama-akari.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-crd.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-crd.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-crd.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r9.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-xiaomi-elish-csot.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcs8550-aim300-aiot.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcm6490-particle-tachyon.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-xiaomi-elish-boe.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e001de-devkit.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e001de-devkit.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e001de-devkit.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8150-sony-xperia-kumano-griffin.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-crd.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc8180x-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dtb: /soc@0/phy@88ee000: failed to match any schema with compatible: ['qcom,sc8180x-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-lg-judyln.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-oneplus-enchilada.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-kb.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-idp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-evoker-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r4.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-samsung-r8q.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-idp2.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8150-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-sony-xperia-tama-apollo.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-acer-aspire1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-hp-omnibook-x14.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-hp-omnibook-x14.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-hp-omnibook-x14.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-evoker.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-kingoftown.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-omnibook-x14.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-omnibook-x14.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-omnibook-x14.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-shift-axolotl.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sar2130p-qar2130p.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sar2130p-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8650-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8650-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r9.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8450-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8450-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-herobrine-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8350-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8450-qrd.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8450-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-sony-xperia-edo-pdx203.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm7225-fairphone-fp4.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm6350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sa8155p-adp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-kb.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-sony-xperia-edo-pdx206.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r3.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-nvme-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8150-microsoft-surface-duo.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8180x-primus.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc8180x-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8180x-primus.dtb: /soc@0/phy@88ee000: failed to match any schema with compatible: ['qcom,sc8180x-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8150-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-idp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-elitebook-ultra-g1q.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-elitebook-ultra-g1q.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-hp-elitebook-ultra-g1q.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus15.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus15.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus15.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-nvme.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r10.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-parade.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe-rt5682s.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-kb.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-crd-r3.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8450-samsung-r0q.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8450-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-ti.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcm6490-shift-otter.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/hamoa-iot-evk.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/hamoa-iot-evk.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/hamoa-iot-evk.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-samsung-starqltechn.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-inspiron-14-plus-7441.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-inspiron-14-plus-7441.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-dell-inspiron-14-plus-7441.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-r1-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-crd.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-crd.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-crd.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-sony-xperia-tama-akatsuki.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-lenovo-thinkbook-16.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-lenovo-thinkbook-16.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1p42100-lenovo-thinkbook-16.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-ti.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sa8295p-adp.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sa8295p-adp.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-xiaomi-beryllium-ebbg.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8650-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8650-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus13.dtb: /soc@0/phy@fd5000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus13.dtb: /soc@0/phy@fda000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus13.dtb: /soc@0/phy@fdf000: failed to match any schema with compatible: ['qcom,x1e80100-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8550-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-huawei-gaokun3.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-huawei-gaokun3.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm6350-sony-xperia-lena-pdx213.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm6350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx-rt5682s.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8150-sony-xperia-kumano-bahamut.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8150-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-parade.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r2.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8250-hdk.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8250-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-microsoft-blackrock.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-microsoft-blackrock.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sm8650-qrd.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8650-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-crd.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc8280xp-crd.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r5.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm850-samsung-w737.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-kb.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r1-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx214.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sa8540p-ride.dtb: /soc@0/phy@88eb000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-db845c.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sa8540p-ride.dtb: /soc@0/phy@8903000: failed to match any schema with compatible: ['qcom,sc8280xp-qmp-usb43dp-phy']
-arch/arm64/boot/dts/qcom/sm8550-samsung-q5q.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8550-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8350-mtp.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8350-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r0.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7280-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-xiaomi-beryllium-tianma.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sdm845-xiaomi-polaris.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sdm845-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8450-sony-xperia-nagara-pdx224.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8450-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm7125-xiaomi-joyeuse.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sm8450-sony-xperia-nagara-pdx223.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sm8450-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r10.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0-lte.dtb: /soc@0/phy@88e8000: failed to match any schema with compatible: ['qcom,sc7180-qmp-usb3-dp-phy']
-
-
-
-
+Best regards,
+-- 
+Neil Armstrong <neil.armstrong@linaro.org>
 
 
 -- 
