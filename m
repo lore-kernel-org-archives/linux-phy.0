@@ -4,118 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FD09CAC5B8
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 17:17:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB054CAC5B8
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Sep 2025 18:43:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8yU1269YSE6WkrunvL6ILh6O6IvzPdWAJNW9dNk4J0E=; b=OaNU521jO+XXYq
-	7oobPABnOdJ3/OI9Oee21mxEDwOqNsDEfZ3LqnBmCW8qLvsGqPOVV+F9N5abviwNdi/X8Q/B/1v3c
-	S5JkxRQYygbzIn4FjtAo0Pdk5BJk8s9ycdOYFu2stk/Evn/P+d0F9aads0XejbX9bCEiztj/1zjgR
-	29OP0p6c8G9um34gpBNq/FW9qHF4AkES/yHdqBkjoEdG5I1EY9GZa6omiUXaaYnvyLYPl/YbTjmpj
-	joM/caW5IsV5gJEFyy3BhENc5wyREHE+jMvBxZ8ctMuTYZZ32Hk3L1G95QEZx6LUZZfnScRjD+ozS
-	McXbArtT8KnzrBvOqV4g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tQqvnw8R6TyA44MzZHX903x9zzPhCNOIVtjdrZOU5GM=; b=u9DCol3uz2ekeu
+	l9AbWqK6TCHr1yJGI/bYUCugjTfT8LBQVuQe2NCOgHqxqhJgoh956Hy7yIKfAUuixtoiRNLs53PC5
+	3WQuqzqHtJH5sRt43dFo3yRwBTMYsJMR2x+hyQTfwdVo7sVMYUYUfdqYkK2RsSKt3Pzqx7trIJdw0
+	dmfxEiwQVt/mJVCqjkBwaZgRWzkkAp/Z3gikLjEk/1MdyGNUi4vHX/TL8Ge7gRiTYDA7kskETcDRY
+	DXx+gbFyhx/XflOZgPn3wAAIGTES3VaIuAvEowOUrCWxOfdA6y2scF2iL704+GrXH6m123glq72yc
+	LRfKLZKbXV+Vqu3RRkbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3dyi-00000005rU9-3cQF;
-	Tue, 30 Sep 2025 17:17:28 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1v3fKE-00000005zhp-13g2;
+	Tue, 30 Sep 2025 18:43:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3dyg-00000005rSy-0IUq
+	id 1v3fKC-00000005zgm-0z0F
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Sep 2025 17:17:27 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-46e29d65728so42121235e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 10:17:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1759252644; x=1759857444; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=RNePBLAvYV3wK8ibZpgmHCPCbmbpde/eqvSInVk0KIc=;
-        b=U2hunbkDzNFeDgQqXkR7XpG5Ug5OW6dzb8HXwM2uiBd1lhjdlw/83/LyXdhL5u3ci0
-         EIAiit5i6nuMe7eSjTgMm7EAvAphV/cGwM1qFYYIROFsqlM9pPrFxdTOGznZH0V2yTDG
-         MMm5qsfwB9pYGBoUSpmu9ujqCm4WBi7/YXY1W1zMKHuLQEx0oech8xJZbMWFsK18fa3Z
-         i7qih5wkEyeVJNzHc7hiGsJ5bIWwZXYkJIEFs+5e0LcIPTx2IizdlpUDtAGA2FU4oHIX
-         fAxwk8yECkJJ3V0zltn5uNDp74BRmpz10BlrAQmzE1HpQ5XvQhJyxRuFRUfEAzUXYDiI
-         LHww==
+	Tue, 30 Sep 2025 18:43:45 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58UBcv5l011599
+	for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 18:43:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=yGmiFBtk8zoxCM+T4HUw6+ZD
+	+jra215LvynAxpP5vgk=; b=bfTmvrZJra+/oQZi7uhdBmbERNSFcTLqisqpazM1
+	wiudlbDafBQKYQ6pepOJctTKpmrQZLScq2Ie2N7USskXBRMWD61lwlErIgXOMJN1
+	qmq79ohKTxUDoPGobDLWT5bGi+/L34X/W9bxBGDsNwKUp93UaBDrvGqMjJxwddVv
+	twZAAp/AyQzDTi9fCjHWxV2d2jpJzcZmPHSum5dzsj1p5zNaGphdjbtvdj3uGbsl
+	syJVbQRAxIaMzySx/jd27fn8v+vpXiG3HM7OTe6rWRUwrdTQbojn/tGpr7OocZTK
+	QsbqQ25r2ltFmYQHFm4C318tKfN+YNZeJSWJg4psEJRt3A==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e5mctfc5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 18:43:43 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4df10fb4a4cso131402071cf.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 11:43:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759252644; x=1759857444;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=RNePBLAvYV3wK8ibZpgmHCPCbmbpde/eqvSInVk0KIc=;
-        b=DZvpM735ideCyoqVzMNT1q7+N3jBaN9SznFIfrkXOHAQ1IzK6p6xaIdUkXWZ4ec9WL
-         e14t/eBVZ6E2WfHhn0itWBsYYpZfmtm4OsK1lWOJFh9thY+XJTzXUyqFgcxcL6+0JWq+
-         CIrZhjjESu0OFulW6788YdAtjyMpdvfwonB+iQNk3MAv27RQt/DKDMyQ/U/o4+cldCzM
-         um1u7aaLnmkE929CKsKYAQKhxVnybnmo2i7SdTOdZHgTur0q0vWKYo1Oew73j3FW2LYz
-         wr6TIKAxnbMLRF4qGzCymelSM1SPV6UFZzk/oKjcapsdK4297Owm2KPy0yYES+63KewO
-         w9bQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXpBeh/mgTOuIbQqt2Oe/BaZ5JjdtBouRIex8rdLl3Jotudqol5v8CL7iogEp7b8HPh/0LkjB5P7AI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzJhnC1hFaJ2QCGQ9SQ2Ucn3Aua43M+GkGi1K/uwd7O/SA17Ai4
-	agcOSHUA7BeBxDutr8yTDjXKhAEcs3b+TunKclxpzhEGZ00uMJm/2h93OePSVaIucac=
-X-Gm-Gg: ASbGncs6k+OrVfL/Gz387i+OiUG9iVN3IKh2fadWlP+nCfzE1yFj73HCM4IMnhrEB2A
-	4GDo9eEt8cZTEAP16f257vdwTznQio+Z/JJ2Od2H7LweD5xzgV4MlgbWbwiZyIOMmyMpMmed0gx
-	RyMUQHXYmu/QJS+QH9takwBc1k9nizl3AC2ZAcaPO3HGM2rAhg+1LyidZjhNpa0DbdExR/x0EZF
-	16ssIG4voZLKr/4s1a4Xbh+jD4FbW0XJ2kreTBmHtmPaCqtmqH29xi3uREk8+F5kMzKskRg2+1N
-	Ki1LMPlmFKJn1/wzSnhIxrwkdSxwE0I1BJLtHl1vuCsR9FIZdHduF/bCgWX5k1JA2CQtRocMLUs
-	/8Ty2/GaZJtr1gUy4vkJlEVxs5YGIVRLmcN7jLCtx7S2n0RS74NbRY4mtNlJ757x8ono=
-X-Google-Smtp-Source: AGHT+IElfAfSUmqbhDMTil+yEDuc0QOUeaDmYZur34EATX4bKiElLsQT72CWpqSOwiVb4bZzmxTvtQ==
-X-Received: by 2002:a05:600c:8b18:b0:46e:4a13:e6c6 with SMTP id 5b1f17b1804b1-46e612bfe6fmr4845315e9.19.1759252643701;
-        Tue, 30 Sep 2025 10:17:23 -0700 (PDT)
-Received: from arrakeen.starnux.net ([2a01:e0a:3d9:2080:52eb:f6ff:feb3:451a])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-40fb72fb017sm23443480f8f.3.2025.09.30.10.17.22
+        d=1e100.net; s=20230601; t=1759257822; x=1759862622;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=yGmiFBtk8zoxCM+T4HUw6+ZD+jra215LvynAxpP5vgk=;
+        b=UBfeIKdxk/S/x7voan+3MvvEWmqAMxpASLX7u1AwpvIGHL/wnAV/FzTYLMgwjvUwHb
+         BIy4BWMHQfItaPsOMfXCM3h30kfnAbnK8LqYpj7TEylokcoIjHs7ylGszNxeNFyriMVw
+         bOw++lZN0bOz8Zcf7WN5n1VzQo/MXzpEcFicn23ezZlrbK/f2q+OD/pApiPeqQ+y8j41
+         73BmGfdgbqrOuLdo1I4pXSbKdhpxIk5asfk0b6c6wnozwNwAiBddn9A4UXieIkFbyjwM
+         4jtooIMwzWd10vk0Q10J5n5CgD3SUrUyAzinzy9P51wejOu6z7WO3ocpABXyXkohddSb
+         /bMQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXWfWGggVX4XzbUzlnAqZxGyyPiObm021n2cruARHPrmmHp2BHO+b7pR8N/7RixFPmcGNTAtAih4L4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyrE+7VB/CqBUbQtbgjU5Zm84OzO7MRBoVn9Lv3RbtiWa2U17V6
+	oaDZVEaToN9h04pXcCi6PDuBuAmpN8S2AyyV6uczvFGExOzg0u9sMmmfPBZy24ejUOY6tlmwtUY
+	Nc27s42i/2vF452snR79Oub0DO/T3/MWLsVAuVgrg3smdhV25PYkOW/30A1KmM9lmM5WM
+X-Gm-Gg: ASbGncucfc+Nb6SfsS+7YU3gK1R6muDnXUahoEOo75HzMzKX5kkR0ITKM9tfyRsCatd
+	GJUwPo5CVFoIQ9/kSrj4ilSsIDPLzkSSW0Wl6P/rcwdc2qLaQjkpDKOQAOQe7rQgXeR3oi5kdV3
+	jwSx0qvEBo13lHyevAj67tHI5GCS2159Q/6Dh766yftr6TZc8aR3PGoW8Kb6MAQe568Cu2GYSgj
+	nJOEvNgS15D9G3FqVlEuebJen9T/kbQqn0HBWff3PKyux+yoRVlhkcFrJCiXMW9plqwcMlq8FAZ
+	QMj8EM68SORXhfXof2W9C/of5RLfv9WPH3lszJBhssAOeVZGSYRnUI1JS7HUK/rT3MUmX/xF7zJ
+	wMqkpedufiziwfhuRh/HmulV17xhl9n3edCyzTqjG2MgjVBRyi7Arlomd8A==
+X-Received: by 2002:a05:622a:2c9:b0:4b6:38f8:4edf with SMTP id d75a77b69052e-4e41ca1b2d1mr8343151cf.29.1759257821837;
+        Tue, 30 Sep 2025 11:43:41 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEVoTpyYZEYD5BDhL/ibzffyH63whEH/5BJy4dUuRPx4WpG/DtAm/AZa0wD/E68tizX2uBZjA==
+X-Received: by 2002:a05:622a:2c9:b0:4b6:38f8:4edf with SMTP id d75a77b69052e-4e41ca1b2d1mr8342591cf.29.1759257821234;
+        Tue, 30 Sep 2025 11:43:41 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5831665791esm5232132e87.82.2025.09.30.11.43.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 30 Sep 2025 10:17:23 -0700 (PDT)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Tue, 30 Sep 2025 19:17:21 +0200
-Subject: [PATCH] dt-bindings: usb: switch: split out ports definition
+        Tue, 30 Sep 2025 11:43:39 -0700 (PDT)
+Date: Tue, 30 Sep 2025 21:43:37 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+        Sascha Hauer <s.hauer@pengutronix.de>,
+        Pengutronix Kernel Team <kernel@pengutronix.de>,
+        Fabio Estevam <festevam@gmail.com>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Romain Gantois <romain.gantois@bootlin.com>, Li Jun <jun.li@nxp.com>,
+        Marek Szyprowski <m.szyprowski@samsung.com>,
+        Sylwester Nawrocki <s.nawrocki@samsung.com>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Luca Weiss <luca.weiss@fairphone.com>,
+        Abel Vesa <abel.vesa@linaro.org>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, imx@lists.linux.dev,
+        linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-usb@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: usb: switch: split out ports definition
+Message-ID: <vwlshz5li23xlthn5delxwxdsdci5nc22iey3xih4qf5uhbory@clskdsy64xpx>
+References: <20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-060568de9538@linaro.org>
 MIME-Version: 1.0
-Message-Id: <20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-060568de9538@linaro.org>
-X-B4-Tracking: v=1; b=H4sIAKAQ3GgC/x2NQQqDMBBFryKz7sBoTLG9SnGhcdRZqGnGViHk7
- gZXjweP/yMoB2GFdxEh8F9UtjVL+SjAzd06McqQHSqqLL0M4b55cahLc1rCUU78Lh5/2tdmuIl
- 6yO5mJNfUTL0dzbOEvOYD5/p++rQpXbUAOVp5AAAA
-X-Change-ID: 20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-0c84e0b5f361
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Romain Gantois <romain.gantois@bootlin.com>, Li Jun <jun.li@nxp.com>, 
- Marek Szyprowski <m.szyprowski@samsung.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Luca Weiss <luca.weiss@fairphone.com>, Abel Vesa <abel.vesa@linaro.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- Neil Armstrong <neil.armstrong@linaro.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=11052;
- i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=+dDf6+3YhN4vz3PDVIAYw6UpFs5vKV8CVEAHEvVlH40=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBo3BCihvjWzPnZJlhuvLZ6p0GUKsLhNQeMd0D0Boz9
- 8oDpIKmJAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCaNwQogAKCRB33NvayMhJ0cCnD/
- 4sX406R2aFjpxvYRVXxdYNHyWS+bQ0NWwtfX7a9BcMA2e/NxnIRA2upqPHp8CbtZUUdLxnqUkMwvic
- ZfWZLurSh3Zul3FvrDx77K5j6N+CCwx0VAwqb0B9dR7n4oSa0e+nnnYNTvZxaPMbIUHdmW9jSZvTWe
- sdiA6qZ2NdWWGyfPqNgbprHsJ9GulUpGM9Xf9ye4gMKcCUebeh46ztBXFuw2TyArwv5BboZRlEU8AT
- L5N+PgzSc+GBPFr5kJe0ENIAfwsX0YWZd9bLgDqtB25SJo9Au5qAi7AvSXLALF6IheULmjPlRp0cG8
- 1rmQFE9OAXtVWOxjVh+Dk1Sol1IYqhO4l8Am2AlscIefWGo53l2HD2VPaWVUhpMQVMElX203eoqImR
- ALTvtipR5YQxqS2X9YSelreAAqYXhUO2wRwO6kCo+0YvC1rPRM6WdyY1A90WA2NXVVTlI82fK14d5q
- xm2GFOQOYqgA1ZSJpDzGhoR/52iP4KGPLkxTYEi910T3qUrcy2LxFOO5C5ub4FW+CS7+roF/o6hJFg
- 396De3BB76e2uzLq/mJPxiu9xWL+zSRGa0DHxKiC6lJVNOsANguPUXa66G1OFllKVaydZNZKqQuBm0
- AwjcM/W3kSVdHdLFUUEwobhDutHxehRMz8PwFyh5SllOkzKHRBc5d09UMrWQ==
-X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
- fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
+Content-Disposition: inline
+In-Reply-To: <20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-060568de9538@linaro.org>
+X-Authority-Analysis: v=2.4 cv=RMC+3oi+ c=1 sm=1 tr=0 ts=68dc24df cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=yJojWOMRYYMA:10 a=VwQbUJbxAAAA:8 a=KKAkSRfTAAAA:8 a=OOCT3r6X_P3o6Jl0E7UA:9
+ a=CjuIK1q_8ugA:10 a=a_PwQJl-kcHnX1M80qC6:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-ORIG-GUID: PIL07ZvMy0U7eZW8Yp9PygVdAyKHnMrU
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAwNCBTYWx0ZWRfXwiX/JKSVQ9dd
+ HFyyJq5kfyKTDSv7ivXW56uvmqh0Zih4HaT5rtrEf4fwjt2LF6+xqo+wedp9g3GehFqjAMKUFCO
+ EIdgUYFsc/PgC51LFjIcS7gnWNf5OsGBa92WUfxxoPgVschpULTFkzOFg03GsKqnZGs9XyWPDdT
+ kT6YpEUAC6Ut96pp31q6aXpGaIxtuAJBJJnBnBw0vzki5YrDPBZtCwrImq9/Y1KytXvvgJN56NY
+ rig8cpaBS2KcHksI2XRe6+/9whlhvIoXiz583epkqRwUxFK/WAHZU57pbHiq0sKwbKclEoXyb6J
+ OcNR7/SRbULG6ZBiSAKo3BFTrn6JVQ0Fd4uRZFvfYCoXjc45Tj/hqH49g1ZG/uFezgluML1dDfF
+ D9R2cw99edrQ+WnV6d936mHNQwF8ww==
+X-Proofpoint-GUID: PIL07ZvMy0U7eZW8Yp9PygVdAyKHnMrU
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-30_03,2025-09-29_04,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 priorityscore=1501 suspectscore=0 impostorscore=0 spamscore=0
+ adultscore=0 bulkscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2509270004
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_101726_359437_D713044F 
-X-CRM114-Status: GOOD (  13.53  )
+X-CRM114-CacheID: sfid-20250930_114344_278326_140EB29C 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,294 +144,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The ports definition currently defined in the usb-switch.yaml
-fits standards devices which are either recipient of altmode
-muxing and orientation switching events or an element of the
-USB Super Speed data lanes.
+On Tue, Sep 30, 2025 at 07:17:21PM +0200, Neil Armstrong wrote:
+> The ports definition currently defined in the usb-switch.yaml
+> fits standards devices which are either recipient of altmode
+> muxing and orientation switching events or an element of the
+> USB Super Speed data lanes.
+> 
+> This doesn't necessarely fit combo PHYs like the Qualcomm
+> USB3/DP Combo which has a different ports representation.
+> 
+> Move the ports definition to a separate usb-switch-ports.yaml
+> and reference it next to the usb-switch.yaml, except for
+> the Qualcomm USB3/DP Combo PHY bindings.
 
-This doesn't necessarely fit combo PHYs like the Qualcomm
-USB3/DP Combo which has a different ports representation.
+Isn't it easier to make QMP PHY use $ref for port nodes instead of allOf
+and keep ports definitions inside the usb-switch schema?
 
-Move the ports definition to a separate usb-switch-ports.yaml
-and reference it next to the usb-switch.yaml, except for
-the Qualcomm USB3/DP Combo PHY bindings.
+> 
+> Reported-by: Rob Herring <robh@kernel.org>
+> Closes: https://lore.kernel.org/all/175462129176.394940.16810637795278334342.robh@kernel.org/
+> Fixes: 3bad7fe22796 ("dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch")
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+>  .../bindings/phy/fsl,imx8mq-usb-phy.yaml           |  4 +-
+>  .../bindings/phy/samsung,usb3-drd-phy.yaml         |  4 +-
+>  .../devicetree/bindings/usb/fcs,fsa4480.yaml       |  1 +
+>  .../devicetree/bindings/usb/gpio-sbu-mux.yaml      |  1 +
+>  .../devicetree/bindings/usb/nxp,ptn36502.yaml      |  1 +
+>  .../devicetree/bindings/usb/onnn,nb7vpq904m.yaml   |  1 +
+>  .../devicetree/bindings/usb/parade,ps8830.yaml     |  1 +
+>  .../bindings/usb/qcom,wcd939x-usbss.yaml           |  1 +
+>  .../devicetree/bindings/usb/ti,tusb1046.yaml       |  1 +
+>  .../devicetree/bindings/usb/usb-switch-ports.yaml  | 68 ++++++++++++++++++++++
+>  .../devicetree/bindings/usb/usb-switch.yaml        | 52 -----------------
+>  11 files changed, 81 insertions(+), 54 deletions(-)
+> 
 
-Reported-by: Rob Herring <robh@kernel.org>
-Closes: https://lore.kernel.org/all/175462129176.394940.16810637795278334342.robh@kernel.org/
-Fixes: 3bad7fe22796 ("dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch")
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
----
- .../bindings/phy/fsl,imx8mq-usb-phy.yaml           |  4 +-
- .../bindings/phy/samsung,usb3-drd-phy.yaml         |  4 +-
- .../devicetree/bindings/usb/fcs,fsa4480.yaml       |  1 +
- .../devicetree/bindings/usb/gpio-sbu-mux.yaml      |  1 +
- .../devicetree/bindings/usb/nxp,ptn36502.yaml      |  1 +
- .../devicetree/bindings/usb/onnn,nb7vpq904m.yaml   |  1 +
- .../devicetree/bindings/usb/parade,ps8830.yaml     |  1 +
- .../bindings/usb/qcom,wcd939x-usbss.yaml           |  1 +
- .../devicetree/bindings/usb/ti,tusb1046.yaml       |  1 +
- .../devicetree/bindings/usb/usb-switch-ports.yaml  | 68 ++++++++++++++++++++++
- .../devicetree/bindings/usb/usb-switch.yaml        | 52 -----------------
- 11 files changed, 81 insertions(+), 54 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-index 6a47e08e0e97b286538798190225ca2966a7ab34..f9cffbb2df07d6fa352a844071af7cc894652d0c 100644
---- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-@@ -142,7 +142,9 @@ allOf:
-       required:
-         - orientation-switch
-     then:
--      $ref: /schemas/usb/usb-switch.yaml#
-+      allOf:
-+        - $ref: /schemas/usb/usb-switch.yaml#
-+        - $ref: /schemas/usb/usb-switch-ports.yaml#
- 
- unevaluatedProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-index e906403208c02951ff2bf5ed8420d53ad70eb29c..ea1135c91fb74c01ba860b9588ca89e611701359 100644
---- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-@@ -125,7 +125,9 @@ allOf:
-           contains:
-             const: google,gs101-usb31drd-phy
-     then:
--      $ref: /schemas/usb/usb-switch.yaml#
-+      allOf:
-+        - $ref: /schemas/usb/usb-switch.yaml#
-+        - $ref: /schemas/usb/usb-switch-ports.yaml#
- 
-       properties:
-         clocks:
-diff --git a/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml b/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
-index e3a7df91f7f15e9a6d8eb4971bc2b9646bdad0c6..89b1fb90aeebc0ccfc50ea52b67015034294e1a8 100644
---- a/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
-+++ b/Documentation/devicetree/bindings/usb/fcs,fsa4480.yaml
-@@ -76,6 +76,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml b/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
-index e588514fab2d8c9d0d3717865fe2e733664fc28b..793662f6f3bff4a4b4b73b38983abca12e1e61d2 100644
---- a/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
-+++ b/Documentation/devicetree/bindings/usb/gpio-sbu-mux.yaml
-@@ -52,6 +52,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
-   - if:
-       required:
-         - mode-switch
-diff --git a/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml b/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
-index d805dde80796f31a066cf52ba2f226ce2e9e9cc2..4d2fcaa718708fe5d0a05ebce211f0a729d6c617 100644
---- a/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
-+++ b/Documentation/devicetree/bindings/usb/nxp,ptn36502.yaml
-@@ -46,6 +46,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml b/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
-index 589914d22bf250ff94c98ed22b32616d2c0cca1c..25fab5fdc2cd712a8075c2ee20bdc80829c3b043 100644
---- a/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
-+++ b/Documentation/devicetree/bindings/usb/onnn,nb7vpq904m.yaml
-@@ -91,6 +91,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/usb/parade,ps8830.yaml b/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
-index aeb33667818eb0d116a3467d30220002a3b5df73..eaeab1c01a594e05666d01cf6b82a6d7127ae075 100644
---- a/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
-+++ b/Documentation/devicetree/bindings/usb/parade,ps8830.yaml
-@@ -81,6 +81,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml b/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
-index 96346723f3e9c92c32325c7395eff49336cbcaf8..96dcec9b76204606397cc1e31338832e518816f3 100644
---- a/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,wcd939x-usbss.yaml
-@@ -60,6 +60,7 @@ required:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- additionalProperties: false
- 
-diff --git a/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml b/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
-index f713cac4a8ac8e89c017999bc11e4b3a38d3ac2e..e1501ea6b50bf76e4bac6cbc2a3243f7107029d0 100644
---- a/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
-+++ b/Documentation/devicetree/bindings/usb/ti,tusb1046.yaml
-@@ -11,6 +11,7 @@ maintainers:
- 
- allOf:
-   - $ref: usb-switch.yaml#
-+  - $ref: usb-switch-ports.yaml#
- 
- properties:
-   compatible:
-diff --git a/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml b/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml
-new file mode 100644
-index 0000000000000000000000000000000000000000..6bf0c97e30ae7069481e41ef8745804e5efde974
---- /dev/null
-+++ b/Documentation/devicetree/bindings/usb/usb-switch-ports.yaml
-@@ -0,0 +1,68 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/usb/usb-switch-ports.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: USB Orientation and Mode Switches Ports Graph Properties
-+
-+maintainers:
-+  - Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-+
-+description:
-+  Ports Graph properties for devices handling USB mode and orientation switching.
-+
-+properties:
-+  port:
-+    $ref: /schemas/graph.yaml#/$defs/port-base
-+    description:
-+      A port node to link the device to a TypeC controller for the purpose of
-+      handling altmode muxing and orientation switching.
-+
-+    properties:
-+      endpoint:
-+        $ref: /schemas/graph.yaml#/$defs/endpoint-base
-+        unevaluatedProperties: false
-+        properties:
-+          data-lanes:
-+            $ref: /schemas/types.yaml#/definitions/uint32-array
-+            minItems: 1
-+            maxItems: 8
-+            uniqueItems: true
-+            items:
-+              maximum: 8
-+
-+  ports:
-+    $ref: /schemas/graph.yaml#/properties/ports
-+    properties:
-+      port@0:
-+        $ref: /schemas/graph.yaml#/properties/port
-+        description:
-+          Super Speed (SS) Output endpoint to the Type-C connector
-+
-+      port@1:
-+        $ref: /schemas/graph.yaml#/$defs/port-base
-+        description:
-+          Super Speed (SS) Input endpoint from the Super-Speed PHY
-+        unevaluatedProperties: false
-+
-+        properties:
-+          endpoint:
-+            $ref: /schemas/graph.yaml#/$defs/endpoint-base
-+            unevaluatedProperties: false
-+            properties:
-+              data-lanes:
-+                $ref: /schemas/types.yaml#/definitions/uint32-array
-+                minItems: 1
-+                maxItems: 8
-+                uniqueItems: true
-+                items:
-+                  maximum: 8
-+
-+oneOf:
-+  - required:
-+      - port
-+  - required:
-+      - ports
-+
-+additionalProperties: true
-diff --git a/Documentation/devicetree/bindings/usb/usb-switch.yaml b/Documentation/devicetree/bindings/usb/usb-switch.yaml
-index 89620191263023bec800dec114c0017c41b7c056..f77731493dc4901d0e95746b0cf1ffa3ee7ddfd0 100644
---- a/Documentation/devicetree/bindings/usb/usb-switch.yaml
-+++ b/Documentation/devicetree/bindings/usb/usb-switch.yaml
-@@ -25,56 +25,4 @@ properties:
-     description: Possible handler of SuperSpeed signals retiming
-     type: boolean
- 
--  port:
--    $ref: /schemas/graph.yaml#/$defs/port-base
--    description:
--      A port node to link the device to a TypeC controller for the purpose of
--      handling altmode muxing and orientation switching.
--
--    properties:
--      endpoint:
--        $ref: /schemas/graph.yaml#/$defs/endpoint-base
--        unevaluatedProperties: false
--        properties:
--          data-lanes:
--            $ref: /schemas/types.yaml#/definitions/uint32-array
--            minItems: 1
--            maxItems: 8
--            uniqueItems: true
--            items:
--              maximum: 8
--
--  ports:
--    $ref: /schemas/graph.yaml#/properties/ports
--    properties:
--      port@0:
--        $ref: /schemas/graph.yaml#/properties/port
--        description:
--          Super Speed (SS) Output endpoint to the Type-C connector
--
--      port@1:
--        $ref: /schemas/graph.yaml#/$defs/port-base
--        description:
--          Super Speed (SS) Input endpoint from the Super-Speed PHY
--        unevaluatedProperties: false
--
--        properties:
--          endpoint:
--            $ref: /schemas/graph.yaml#/$defs/endpoint-base
--            unevaluatedProperties: false
--            properties:
--              data-lanes:
--                $ref: /schemas/types.yaml#/definitions/uint32-array
--                minItems: 1
--                maxItems: 8
--                uniqueItems: true
--                items:
--                  maximum: 8
--
--oneOf:
--  - required:
--      - port
--  - required:
--      - ports
--
- additionalProperties: true
-
----
-base-commit: 262858079afde6d367ce3db183c74d8a43a0e83f
-change-id: 20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-0c84e0b5f361
-
-Best regards,
 -- 
-Neil Armstrong <neil.armstrong@linaro.org>
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
