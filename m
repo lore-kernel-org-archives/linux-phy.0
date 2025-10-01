@@ -4,101 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FAEBCCA470
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Oct 2025 02:40:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73185CAC5BB
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Oct 2025 07:06:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtLPeyXhhS/ULBv04r0V6wOx4H8151K9kaJ3P61XsvY=; b=G0gHdf7NAlsv9w
-	xE99GH27HE2avu3k1OPbpjicqVovOH+TAC8FXn/5FmJ62fetHer3CmSrZgpAXRRza/HB/ak6dlgem
-	jfCZ+IOtwXqerUVG88n7oVLUTZmCLLPdVRJDZAVAuJTFLzLDx7mqm3Ap3ryleF3vZnUxiELDu4B7l
-	tq8MXGD30tdtaQBb97mLyFCeVTrlF232vnY88op4sCxOCk/rmTlMSS+Hv+KSbqp5jJoc+WjtEt/xi
-	66qH4bjrcocdYBoD5rt8r7enMKz0o7mNzQCkKBxBoMMnZfiSCodmqrHcR7X6omOjl71K3Lu7h/KKH
-	/+YTZHDfdhe1dCGhopzA==;
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=/X5mGL/bp2BlUQHstN0x3z7+6+dDaSpA2UuYmBWl430=; b=b0fVqR6FS+X1mlzbOuyti8SZOm
+	ToOuubEXTBEJto74FKNjNCk5NeFd45SgsF1vAh4ikLWiRMYLeJ5iObZGpLROL/vTHw/jgP1+ZPQBa
+	6+cOY3P4mr6yEUWgAJDrQRovILWQd64HgcSGUqYbhkLDvrblDleaf+boQrgH1T3Rb+5UNDXRWfdK4
+	x53SAwKkZATqvMubIDWl4M0k0aPDJ6FjheO4ckyfZlXLEAYtxnNd8oHNf2WTYlaUgQ1mGNjPD8Ip0
+	sQH/xeOfnAcA3sPmiqfC2HS9fY57705gbX8ygOT37rEBQJzx3blZi+VxOEf6CiYh7kcis99CysVED
+	RRnxIgBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3mlR-00000006aTU-0P5a;
-	Wed, 01 Oct 2025 02:40:21 +0000
-Received: from mail-io1-xd2c.google.com ([2607:f8b0:4864:20::d2c])
+	id 1v3qum-00000006sCS-3uB2;
+	Wed, 01 Oct 2025 07:06:16 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3mlN-00000006aS4-1LOJ
+	id 1v3quk-00000006sC3-2Gqi
 	for linux-phy@lists.infradead.org;
-	Wed, 01 Oct 2025 02:40:19 +0000
-Received: by mail-io1-xd2c.google.com with SMTP id ca18e2360f4ac-91524f5e6a8so410684139f.0
-        for <linux-phy@lists.infradead.org>; Tue, 30 Sep 2025 19:40:16 -0700 (PDT)
+	Wed, 01 Oct 2025 07:06:15 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-46b303f7469so46809005e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 00:06:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1759286416; x=1759891216; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=zxQ2zgdrHb7uD7qDfrNlnD3XXSfWmfO7hzlzDTfXqcQ=;
-        b=FFQH8J/UlNjPxw60QtQPIjFDHxtka7fJ9+TidNPmpe7kUNi/HgkdX9nhcK+w06Kymn
-         538kzej6Bk8tjX9VdhpK4kKGehyxrMhbTyBYdAtWTz/0bVVE4eWakgeb0zIh7A/IPu2U
-         Dm+Mt9+OYaikSv1EXxvA+dEVVxNWT5P1ruW93Plr/naulJkyPrERgzDm2YfB2OxW9vtf
-         mo6w/EUxv26vQTLcMZqpZUq/s6PGBfhDcQn33b1BeWFocNpXxCF2yJthPItqmjDtid5J
-         3zYYADfMLjjHr36iunmyhMFcwqATw5MIcw72wGcqP0HxFPga1XSwmY4n/AV4X6t1IxWP
-         b5OA==
+        d=linaro.org; s=google; t=1759302372; x=1759907172; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=AvARg4BtLyjXBG/oyTU38XVRM3fscS0RfPUj5chkaa0=;
+        b=IlW58kBp7Hmhiub8A1bfvyjf9wxpytCiPRhIpo0BeQ+bpodvpWVJGfFxkZmXMh9OyB
+         08N9qLcMp6qVH/S04N0kSW5JoW4OGvuvoC3A9VOKzXP0+LqluNgDI8Enn6iCDKgINYp/
+         5iegxWEzHUpXn2K5jxFfv5PC7HiRD+gEZYKwEicvka7PVL/JGh97IK1HI2eyYqnQlKYm
+         gPfyuk/7NDKu/8DMHXm7PgnYXMfUIkoGhdFQQ5pM43YgN/h65hz0UJU/VB+alfwxSscc
+         l4LRbVrAH47darygdv7wd2Ngz//kyQWKRgRvaxx5JBnETDhw57T4YKRPV5c0GtsJ2uUw
+         xUhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759286416; x=1759891216;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=zxQ2zgdrHb7uD7qDfrNlnD3XXSfWmfO7hzlzDTfXqcQ=;
-        b=MsfyI9Z5qoI6OKED/JDWQJDEOuswzZpT+3aYgfo1RBCTUGdn3m9Ud1y/9x//M5K5cf
-         m5N3+SXFA0sOIf2XB8/eb48uFCWvuUo+zNnNQb9quEmXvQUKAiUWH+l49X/+vgf3igks
-         ovvMRafVWcWsZBPDcIRyqHSuL1AKoyKl11xE4/fYRNP4N8CpuRZhP4iZCNENQ1nlnV8c
-         H3lDKifBmbyB0YrBunhh1KmUWctnRumsrtx4PRNVIfuT0fTEVaVkgpHdyITgtawzCXVi
-         1Ms8b8NMnsQ9vxykCqu2jjN7LrwWqoB/IdehhSqizDXLsB9lZ5Q9P0yCIW8A1ZFeyjfP
-         WEKA==
-X-Forwarded-Encrypted: i=1; AJvYcCX11AuNOZg0LpKhh0ph7DmZzzYRtpLHdG9jVJrZGm30p59ZtZAwH3K4MVn3+u8/Z1fNZgTCxDjC2No=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxA6tgMyUsuOeOog6zp4ePlvc/eiT3K62Vt5V9+okGFgZlb+A6y
-	opJHBWzijS9DJseaPrSB+eiNsIetKj/WasnmnJnE3vwWongTGCKBBdo5MdKJAJBMPVk=
-X-Gm-Gg: ASbGncszeSY+CJRiQS66VAV2nQyJLF/3eAxRxuamlkJUfZ6swSc7cCRGEv8trT4Z3XS
-	o4lU0vsByIlJG6aSkvIJDaMHQ2dsy3Z4+SeQ2t5ohpyvIYcPG6QTi3fGtyM/FyCeMoEPJKdMG1N
-	bOBzJkgXo52PXO+Ge4n+RVkAsOxv+06kBlznRvfwK1q0osOJ/2DDiAaZGZabiH1lc7WtpBh3dUI
-	D0t6ghfDoFB2XgWT6p/c3625Ye/n7BmU5AMOlEQhUPlJwk7oVqaNfAAtPsaGyCQ3aolnx8SLX9f
-	BmawAUwCgp3GFGtFmeWoF+zm61eUkWrTnf9Be0qVMVCcdGOge7UcU3j3Eei5LbkkiqNtKn7PYuO
-	3TncOoj0aQEoPj71z260c+QAkspuZjCd4+JJIZBa5DnqmBQ972AmXEEOEtE3XAOKXZO2jjtAXPk
-	wzcrDw1EkM30+wjEZMnQ3j
-X-Google-Smtp-Source: AGHT+IFQFvztbn8UfbzR8C12GJuYMM6yN5QwMW7n9lxY6XdpjQ/LdhbflFmYGAY5ytHhPYAVoI2Qfg==
-X-Received: by 2002:a05:6602:2c08:b0:935:90f6:892e with SMTP id ca18e2360f4ac-937aebad412mr291037439f.17.1759286415752;
-        Tue, 30 Sep 2025 19:40:15 -0700 (PDT)
-Received: from [172.22.22.28] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.gmail.com with ESMTPSA id ca18e2360f4ac-92d06cc3b9esm184392139f.12.2025.09.30.19.40.13
+        d=1e100.net; s=20230601; t=1759302372; x=1759907172;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=AvARg4BtLyjXBG/oyTU38XVRM3fscS0RfPUj5chkaa0=;
+        b=PKYv1WUKu3W78X7aQvfIpqcxUjBn+1OcuY05O6TYNWh31C/1maOrYfRGAYQlIHFa84
+         lD+VC6TwUBbD/n1KH7zy5fXrrNFLYLajl1pNqm9SPxJQz6pARIjMIz38Gnk52qxLakIf
+         GQeyOPLmaCrN7uNWjGIpdoRqBDCN5iZBiFjlFz0NPs7bGJYDOUkfQciebotgjQqoBqAv
+         TC9l8+djQrbeYsjkIbfhSTHYnFxjeHKwXA+qKo262uhxHxMcyIWi35Jdb1gAcszPCWK5
+         RfMiX88Ol2W0s2QUdnLdzPO1Cba+/0WkNBvYDuBezkg3F1coSXvBVYqwEvtRuzmuWRlG
+         2H/g==
+X-Forwarded-Encrypted: i=1; AJvYcCXdY1xf6AkLQgy5KqIVX6kp5+qNmvBuMFDm6/ZPZkXnEdoJs+HfSdO3+koONDAM8zstD/LK0uEeBPY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxwaKs7mPGtA71axKhquSwcAj7NBL6bDZ/SnXSeqLjnljTD9OJV
+	HnCrLvZe23Ly7nx7dj9JD+K6F8weKun6u/OYJ02JoCFkLTIwcS7YvsqR2KHNwirWhr8=
+X-Gm-Gg: ASbGnctE9EOw+iKkPbTiLEdj6nDR6yeNpaLHIMrV7ICkSB4W6ocB4Ipl5N5A6wIG7JS
+	Bj2sXfavv/bgVNOEvwfwYWX4Tbqq81++5uIONrtj9b2qCFoyp77lajVgKQ0AjFsJ+WBF6oouCaF
+	g3b5DrYeYuwkrITo1bzwXqziAlgbHPVENzNsRpEkWIhwF2nH3tUnYM7DNyxV2M5Atihkh7kRJEb
+	mVPwAGE9Z/SQ6Plj0xYj4HX5Kp7oebaDX0Dir0b6oOJXw4eQOCQ6buae5sMCatuYlWeXXNORigN
+	lPnv6OTazyp7TA2/rpDJd7YXTtQX+PIn8gXcnaUvyxkieoNc3w77Dar1qme4IsDMpk031Vrn5ve
+	3O4nIeUyJCQ/hzpNKg62cBvdsFpWrOlnKRqgzA4MZtdnLtR7Sh1YOxr+hIS1hAFrs7W2bX/JwWM
+	4LtCVFA/YuAWVNBtL5/c70BBI=
+X-Google-Smtp-Source: AGHT+IHBO9Z+Uh3slszHAPZuX3C+R/wZHwWLiDZirHkPHFUmv4L7FdIGetheWaVB+ku2T1GmiYZmxA==
+X-Received: by 2002:a05:600c:83ca:b0:46e:42cb:d93f with SMTP id 5b1f17b1804b1-46e61279f57mr18248825e9.15.1759302372335;
+        Wed, 01 Oct 2025 00:06:12 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:3d9:2080:f45f:c590:9006:d394? ([2a01:e0a:3d9:2080:f45f:c590:9006:d394])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46e5c3cad50sm28924565e9.3.2025.10.01.00.06.11
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Sep 2025 19:40:15 -0700 (PDT)
-Message-ID: <365ade7c-bb2c-42ff-a2e7-9a291b1faab7@riscstar.com>
-Date: Tue, 30 Sep 2025 21:40:12 -0500
+        Wed, 01 Oct 2025 00:06:11 -0700 (PDT)
+Message-ID: <9d020a8e-22d8-4f1f-803c-d00bb912f699@linaro.org>
+Date: Wed, 1 Oct 2025 09:06:10 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/6] dt-bindings: phy: spacemit: introduce PCIe root
- complex
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- lpieralisi@kernel.org, kwilczynski@kernel.org, bhelgaas@google.com,
- vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
- paul.walmsley@sifive.com, palmer@dabbelt.com, aou@eecs.berkeley.edu,
- alex@ghiti.fr, p.zabel@pengutronix.de, tglx@linutronix.de,
- johan+linaro@kernel.org, thippeswamy.havalige@amd.com, namcao@linutronix.de,
- mayank.rana@oss.qualcomm.com, shradha.t@samsung.com, inochiama@gmail.com,
- quic_schintav@quicinc.com, fan.ni@samsung.com, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pci@vger.kernel.org,
- spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250813184701.2444372-1-elder@riscstar.com>
- <20250813184701.2444372-4-elder@riscstar.com>
- <tmdq6iut5z2bzemduovvyarya6ho2lwlxvvqqhazw6dnnyjpq3@72xrd2pij42h>
- <804ea57f-699f-41cc-a27c-844f107e627f@riscstar.com>
- <kam6fgc7ykxwnksu562etrib2z4w3sucvr27ojxq62iwyrdai3@i76ygp2anscy>
-Content-Language: en-US
-From: Alex Elder <elder@riscstar.com>
-In-Reply-To: <kam6fgc7ykxwnksu562etrib2z4w3sucvr27ojxq62iwyrdai3@i76ygp2anscy>
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 2/3] phy: qcom: qmp-combo: get the USB3 & DisplayPort
+ lanes mapping from DT
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Xilin Wu <sophon@radxa.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org>
+ <20250930-topic-x1e80100-hdmi-v4-2-86a14e8a34ac@linaro.org>
+ <uozgwot7yuwmaiwmqoo6ickblpqe52tnj44tnxcorygqxwou52@hksvktgq5zp7>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <uozgwot7yuwmaiwmqoo6ickblpqe52tnj44tnxcorygqxwou52@hksvktgq5zp7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_194017_619325_E996080D 
-X-CRM114-Status: GOOD (  36.75  )
+X-CRM114-CacheID: sfid-20251001_000614_621358_0E051CFF 
+X-CRM114-Status: GOOD (  20.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,175 +131,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/20/25 12:55 AM, Manivannan Sadhasivam wrote:
-> On Fri, Sep 19, 2025 at 03:14:05PM -0500, Alex Elder wrote:
->> On 9/15/25 3:14 AM, Manivannan Sadhasivam wrote:
->>> On Wed, Aug 13, 2025 at 01:46:57PM GMT, Alex Elder wrote:
->>>
->>> Subject should have 'pci' prefix, not 'phy'.
+On 9/30/25 20:56, Dmitry Baryshkov wrote:
+> On Tue, Sep 30, 2025 at 09:39:48AM +0200, Neil Armstrong wrote:
+>> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+>> of a combo glue to route either lanes to the 4 shared physical lanes.
 >>
->> OK I'll update that in the next version.
-
-I have a new version of this code ready, but I'll delay sending
-it until the end of the merge window.
-
->>>> Add the Device Tree binding for the PCIe root complex found on the
->>>> SpacemiT K1 SoC.  This device is derived from the Synopsys Designware
->>>> PCIe IP.  It supports up to three PCIe ports operating at PCIe gen 2
->>>> link speeds (5 GT/sec).  One of the ports uses a combo PHY, which is
->>>> typically used to support a USB 3 port.
->>>>
->>>> Signed-off-by: Alex Elder <elder@riscstar.com>
->>>> ---
->>>>    .../bindings/pci/spacemit,k1-pcie-rc.yaml     | 141 ++++++++++++++++++
->>>>    1 file changed, 141 insertions(+)
->>>>    create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-rc.yaml
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-rc.yaml b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-rc.yaml
->>>> new file mode 100644
->>>> index 0000000000000..6bcca2f91a6fd
->>>> --- /dev/null
->>>> +++ b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-rc.yaml
->>>> @@ -0,0 +1,141 @@
-
-. . .
-
->>>> +  interrupts-extended:
->>>> +    maxItems: 1
->>>
->>> What is the purpose of this property? Is it for MSI or INTx?
+>> The routing of the lanes can be:
+>> - 2 DP + 2 USB3
+>> - 4 DP
+>> - 2 USB3
 >>
->> It is for MSIs, which are translated into this interrupt.
->> I'll add a short description indicating this.
+>> Get the lanes mapping from DT and stop registering the USB-C
+>> muxes in favor of a static mode and orientation detemined
+>> by the lanes mapping.
 >>
->> Is there a better way to represent this?
+>> This allows supporting boards with direct connection of USB3 and
+>> DisplayPort lanes to the QMP Combo PHY lanes, not using the
+>> USB-C Altmode feature.
+>>
+>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 145 ++++++++++++++++++++++++++++--
+>>   1 file changed, 137 insertions(+), 8 deletions(-)
+>>
+>> @@ -4167,9 +4269,41 @@ static int qmp_combo_probe(struct platform_device *pdev)
+>>   	if (ret)
+>>   		goto err_node_put;
+>>   
+>> -	ret = qmp_combo_typec_register(qmp);
+>> -	if (ret)
+>> -		goto err_node_put;
+>> +	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
+>> +
+>> +	if (of_find_property(dev->of_node, "mode-switch", NULL) ||
+>> +	    of_find_property(dev->of_node, "orientation-switch", NULL)) {
+>> +		ret = qmp_combo_typec_register(qmp);
+>> +		if (ret)
+>> +			goto err_node_put;
+>> +	} else {
+>> +		enum typec_orientation dp_orientation = TYPEC_ORIENTATION_NONE;
+>> +		enum typec_orientation usb3_orientation = TYPEC_ORIENTATION_NONE;
+>> +
+>> +		ret = qmp_combo_get_dt_dp_orientation(dev, &dp_orientation);
+>> +		if (ret)
+>> +			goto err_node_put;
+>> +
+>> +		ret = qmp_combo_get_dt_usb3_orientation(dev, &usb3_orientation);
+>> +		if (ret)
+>> +			goto err_node_put;
+>> +
+>> +		if (dp_orientation == TYPEC_ORIENTATION_NONE &&
+>> +		    usb3_orientation != TYPEC_ORIENTATION_NONE) {
+>> +			qmp->qmpphy_mode = QMPPHY_MODE_USB3_ONLY;
+>> +			qmp->orientation = usb3_orientation;
+>> +		} else if (usb3_orientation == TYPEC_ORIENTATION_NONE &&
+>> +			 dp_orientation != TYPEC_ORIENTATION_NONE) {
+>> +			qmp->qmpphy_mode = QMPPHY_MODE_DP_ONLY;
+>> +			qmp->orientation = dp_orientation;
+>> +		} else if (dp_orientation != TYPEC_ORIENTATION_NONE &&
+>> +			 dp_orientation == usb3_orientation) {
+>> +			qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
+>> +			qmp->orientation = dp_orientation;
+>> +		} else {
+>> +			dev_warn(dev, "unable to determine orientation & mode from data-lanes");
+>> +		}
+>> +	}
+>>   
+>>   	ret = drm_aux_bridge_register(dev);
+>>   	if (ret)
+>> @@ -4189,11 +4323,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+>>   	if (ret)
+>>   		goto err_node_put;
+>>   
+>> -	/*
+>> -	 * The hw default is USB3_ONLY, but USB3+DP mode lets us more easily
+>> -	 * check both sub-blocks' init tables for blunders at probe time.
+>> -	 */
+>> -	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
+> 
+> SHouldn't this still be a default in the 'normal' USB-C case?
+
+It is, I just moved it before the added logic, but the comment doesn't really
+apply anymore
+
+Neil
+
+> 
+>>   
+>>   	qmp->usb_phy = devm_phy_create(dev, usb_np, &qmp_combo_usb_phy_ops);
+>>   	if (IS_ERR(qmp->usb_phy)) {
+>>
+>> -- 
+>> 2.34.1
 >>
 > 
-> For external MSI controllers, it is recommended to use 'msi-map' property as the
-> client often need to pass RID, RID length and other sideband data to the MSI
-> controller.
 
-This implementation is using the DWC built-in MSI controller, not an
-external controller.  It implements 256 MSIs, and they're handled by
-dw_handle_msi_irq().  The interrupt will be given name "msi" in the
-next version and I hope that at least helps clarify things.
-
-> 
->>>> +
->>>> +  spacemit,syscon-pmu:
->>>> +    description:
->>>> +      PHandle that refers to the APMU system controller, whose
->>>> +      regmap is used in managing resets and link state.
->>>> +    $ref: /schemas/types.yaml#/definitions/phandle
->>>> +
->>>> +  device_type:
->>>> +    const: pci
->>>> +
->>>> +  max-link-speed:
->>>> +    const: 2
->>>
->>> Why do you need to limit it to 5 GT/s always?
->>
->> It's what the hardware overview says is the speed
->> of the ports.
->>      PCIE PortA Gen2x1
->>      PCIE PortB Gen2x2
->>      PCIE PortC Gen2x2
->>
->> But I think what you're asking might be "why do you
->> need to specify in DT that the link speed is limited".
->> And in that case, I realize now that it is not needed.
->> I will specify dw_pcie->max_link_speed to 2 before
->> calling dw_pcie_host_init().
->>
-> 
-> You only need to specify this property if you want to limit the link speed to a
-> certain data rate by the controller driver than what is supported by the
-> hardware.
-
-Yes, this makes sense.
-
-> Looks like your hardware supports 5 GT/s by default for all ports. So you can
-> omit this property and also no need to set 'dw_pcie->max_link_speed'. In the
-> absence of this property, 'dw_pcie->max_link_speed' will be populated with the
-> hardware default value, which will be 2 in your case.
-
-You are correct, and I verified this.  I won't specify the link
-speed "manually," and the hardware default (which is 2) will be
-used.
-
->> If that's not what you meant, please let me know.
->>
->>>> +  num-viewport:
->>>> +    const: 8
->>>> +
->>>> +required:
->>>> +  - compatible
->>>> +  - reg
->>>> +  - clocks
->>>> +  - clock-names
->>>> +  - resets
->>>> +  - reset-names
->>>> +  - spacemit,syscon-pmu
->>>> +  - "#address-cells"
->>>> +  - "#size-cells"
->>>> +  - device_type
->>>> +  - max-link-speed
->>>
->>> Same comment as above.
->>>
->>>> +  - bus-range
->>>> +  - num-viewport
->>>> +
->>>> +additionalProperties: false
->>>> +
->>>> +examples:
->>>> +  - |
->>>> +    #include <dt-bindings/clock/spacemit,k1-syscon.h>
->>>> +    pcie0: pcie@ca000000 {
->>>> +        compatible = "spacemit,k1-pcie-rc";
->>>> +        reg = <0x0 0xca000000 0x0 0x00001000>,
->>>> +              <0x0 0xca300000 0x0 0x0001ff24>,
->>>> +              <0x0 0x8f000000 0x0 0x00002000>,
->>>> +              <0x0 0xc0b20000 0x0 0x00001000>;
->>>> +        reg-names = "dbi",
->>>> +                    "atu",
->>>> +                    "config",
->>>> +                    "link";
->>>> +
->>>> +        ranges = <0x01000000 0x8f002000 0x0 0x8f002000 0x0 0x100000>,
->>>
->>> I/O port CPU address starts from 0.
->>
->> First, I'm not sure what this comment means.
->>
-> 
-> Sorry, I meant to say 'PCI address' not 'CPU address'. The second element in
-> your 'ranges' example corresponds to the PCI start address of the I/O port and
-> it should always start from 0. Also, the encoding for both tuples are wrong. It
-> should be:
-> 
-> 	ranges = <0x01000000 0x0 0x00000000 0x8f002000 0x0 0x100000>,
-> 		 <0x02000000 0x0 0x80000000 0x80000000 0x0 0x0f000000>;
-
-Simply switching to what you show works just fine.  PCI
-addresses show up being zero-based, as they should be.
-What I don't fully understand is why it worked before.
-Maybe because this is simply defining bounds in the
-mapping?
-
-In any case, I am using ranges properties like what you show.
-
-Thanks Mani.
-
-					-Alex
-
-> - Mani
 
 -- 
 linux-phy mailing list
