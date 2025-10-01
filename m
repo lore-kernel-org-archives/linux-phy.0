@@ -4,92 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73185CAC5BB
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Oct 2025 07:06:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B0A7CAC5BB
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Oct 2025 07:07:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/X5mGL/bp2BlUQHstN0x3z7+6+dDaSpA2UuYmBWl430=; b=b0fVqR6FS+X1mlzbOuyti8SZOm
-	ToOuubEXTBEJto74FKNjNCk5NeFd45SgsF1vAh4ikLWiRMYLeJ5iObZGpLROL/vTHw/jgP1+ZPQBa
-	6+cOY3P4mr6yEUWgAJDrQRovILWQd64HgcSGUqYbhkLDvrblDleaf+boQrgH1T3Rb+5UNDXRWfdK4
-	x53SAwKkZATqvMubIDWl4M0k0aPDJ6FjheO4ckyfZlXLEAYtxnNd8oHNf2WTYlaUgQ1mGNjPD8Ip0
-	sQH/xeOfnAcA3sPmiqfC2HS9fY57705gbX8ygOT37rEBQJzx3blZi+VxOEf6CiYh7kcis99CysVED
-	RRnxIgBA==;
+	bh=YWcwfxk6HLV0OP7D1ncizsrFK0fXoNHHDyJ96R9sUnM=; b=y/kUi28JcRBDfwpD1aHMT131Hz
+	Pvb2tA+lhs8hPqUyDsxcTsHHTZjJMlAK5zRR666MsX+7bSKHeWdp63JZp8adzcLjwLH2nU1Wc5YTy
+	G8V6ahjlnaivuzCokOge3aE3oLzKMgV7I1NUeQ2X0uVMiqhajOS8FL0Wo5Ta7h5bulzTbElnq9+bI
+	AfyJm6O0Ueh39D4DvjT8yHib/S6vmrVO69t/pmxOaniIMlkB4uPLsldC0+BiE9zL91WeaOAAz8uiK
+	87DimtkIH6u6Qe7xESz+fsTl+UgfmUJ0fcp07Kat8+vGszs1CZGOrLHklJxp5P6XT9QlCbJYQDvFw
+	aKLWqzZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3qum-00000006sCS-3uB2;
-	Wed, 01 Oct 2025 07:06:16 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1v3qvw-00000006sHt-11Ky;
+	Wed, 01 Oct 2025 07:07:28 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3quk-00000006sC3-2Gqi
+	id 1v3qvu-00000006sHT-1isb
 	for linux-phy@lists.infradead.org;
-	Wed, 01 Oct 2025 07:06:15 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-46b303f7469so46809005e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 00:06:13 -0700 (PDT)
+	Wed, 01 Oct 2025 07:07:27 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-46e47cca387so49850605e9.3
+        for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 00:07:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1759302372; x=1759907172; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1759302444; x=1759907244; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=AvARg4BtLyjXBG/oyTU38XVRM3fscS0RfPUj5chkaa0=;
-        b=IlW58kBp7Hmhiub8A1bfvyjf9wxpytCiPRhIpo0BeQ+bpodvpWVJGfFxkZmXMh9OyB
-         08N9qLcMp6qVH/S04N0kSW5JoW4OGvuvoC3A9VOKzXP0+LqluNgDI8Enn6iCDKgINYp/
-         5iegxWEzHUpXn2K5jxFfv5PC7HiRD+gEZYKwEicvka7PVL/JGh97IK1HI2eyYqnQlKYm
-         gPfyuk/7NDKu/8DMHXm7PgnYXMfUIkoGhdFQQ5pM43YgN/h65hz0UJU/VB+alfwxSscc
-         l4LRbVrAH47darygdv7wd2Ngz//kyQWKRgRvaxx5JBnETDhw57T4YKRPV5c0GtsJ2uUw
-         xUhg==
+        bh=6903O+T5kzlWuzZHa7QhKxp3lHsZbgO6JKoHA8UWXyk=;
+        b=JxZrZrsG2BxhJ91i0JWGD+SjlwhGbaWwMYx/3iACxVev/g4x7nWgR7fQZ6tR1KOyVP
+         ho05CwkfUDn+Z26I0iim7iSpIt7xLS2JCa9v+ziYSrpctJM/Nyc6nynezsYC79NJwqV0
+         t6emR0XdUlNgcRh0tEWSFGrp+DUFenoBzboZot9pdb+jfh4TNhwm+P+4aw8+92myaXBi
+         rAODit3Vdbw01hJv6dJCpm0RPHxIkfm+kEhrkaLnRnl36K1YabvkbxLgVvGvVPL8MHNW
+         KEipqcFe847uV/31rlosY3ph01asodENd/EsumUVOxvdeGSGfZeDc2VC03eUPdQMhpgn
+         oc4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759302372; x=1759907172;
+        d=1e100.net; s=20230601; t=1759302444; x=1759907244;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=AvARg4BtLyjXBG/oyTU38XVRM3fscS0RfPUj5chkaa0=;
-        b=PKYv1WUKu3W78X7aQvfIpqcxUjBn+1OcuY05O6TYNWh31C/1maOrYfRGAYQlIHFa84
-         lD+VC6TwUBbD/n1KH7zy5fXrrNFLYLajl1pNqm9SPxJQz6pARIjMIz38Gnk52qxLakIf
-         GQeyOPLmaCrN7uNWjGIpdoRqBDCN5iZBiFjlFz0NPs7bGJYDOUkfQciebotgjQqoBqAv
-         TC9l8+djQrbeYsjkIbfhSTHYnFxjeHKwXA+qKo262uhxHxMcyIWi35Jdb1gAcszPCWK5
-         RfMiX88Ol2W0s2QUdnLdzPO1Cba+/0WkNBvYDuBezkg3F1coSXvBVYqwEvtRuzmuWRlG
-         2H/g==
-X-Forwarded-Encrypted: i=1; AJvYcCXdY1xf6AkLQgy5KqIVX6kp5+qNmvBuMFDm6/ZPZkXnEdoJs+HfSdO3+koONDAM8zstD/LK0uEeBPY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxwaKs7mPGtA71axKhquSwcAj7NBL6bDZ/SnXSeqLjnljTD9OJV
-	HnCrLvZe23Ly7nx7dj9JD+K6F8weKun6u/OYJ02JoCFkLTIwcS7YvsqR2KHNwirWhr8=
-X-Gm-Gg: ASbGnctE9EOw+iKkPbTiLEdj6nDR6yeNpaLHIMrV7ICkSB4W6ocB4Ipl5N5A6wIG7JS
-	Bj2sXfavv/bgVNOEvwfwYWX4Tbqq81++5uIONrtj9b2qCFoyp77lajVgKQ0AjFsJ+WBF6oouCaF
-	g3b5DrYeYuwkrITo1bzwXqziAlgbHPVENzNsRpEkWIhwF2nH3tUnYM7DNyxV2M5Atihkh7kRJEb
-	mVPwAGE9Z/SQ6Plj0xYj4HX5Kp7oebaDX0Dir0b6oOJXw4eQOCQ6buae5sMCatuYlWeXXNORigN
-	lPnv6OTazyp7TA2/rpDJd7YXTtQX+PIn8gXcnaUvyxkieoNc3w77Dar1qme4IsDMpk031Vrn5ve
-	3O4nIeUyJCQ/hzpNKg62cBvdsFpWrOlnKRqgzA4MZtdnLtR7Sh1YOxr+hIS1hAFrs7W2bX/JwWM
-	4LtCVFA/YuAWVNBtL5/c70BBI=
-X-Google-Smtp-Source: AGHT+IHBO9Z+Uh3slszHAPZuX3C+R/wZHwWLiDZirHkPHFUmv4L7FdIGetheWaVB+ku2T1GmiYZmxA==
-X-Received: by 2002:a05:600c:83ca:b0:46e:42cb:d93f with SMTP id 5b1f17b1804b1-46e61279f57mr18248825e9.15.1759302372335;
-        Wed, 01 Oct 2025 00:06:12 -0700 (PDT)
+        bh=6903O+T5kzlWuzZHa7QhKxp3lHsZbgO6JKoHA8UWXyk=;
+        b=hnsCnwLCc88b4sjANxXrb+R30inCoXRMXS3KXEl7cM9K6NiWoydw408vDE/d99VlLa
+         aVaOIYVZnN9blsr/SNpOrE70xdCSdiP3KO+ez78azL/hkb6aFG5ifwKIWs0c+EMTRbhB
+         r7utaKT6mXZTD50jjinNOzQJjQOs5RwkXFQkEszaxo7+2eNlGb/TpGcURYuuUKPkJFh1
+         Ie5BvqD5wG1N+k2M7gMQUQmUlY7OaL+lHocERkrV9rf2kqLTvXJbqdrtyhlBX60lSDqn
+         DpeHNlvJ/6MiAd1UvAggwxu63JF6KbM79Q5sBY1tFw7zOs/U+hzHRyovDRN3R1rMP3AT
+         h4qg==
+X-Forwarded-Encrypted: i=1; AJvYcCVxIVWq5WcmMMfaChLifo30SOXDWdOw0PQfLsGDwWEr3nSX8X9+D68LVwuRcywaj3/eVBnimcCuRVQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyNzOHKQRzWtL/VdYO9AjSikhWxTllUVjIYt/MDZN3DCyTlFv6G
+	6LIY1Wo9ZZIHvfJrQsvOrECJmJVq6HqaGs/Bg2vsKfdV8Ow9L3/poVPaPak0k4bFzcI=
+X-Gm-Gg: ASbGncuSr8LG/h1N/ty3FHSq8ZnqvAjKFa/dHyhc1i5ikWrdVJY3aPe1WbHOH8+VxOE
+	PIciiC4I0tP9N4Dy3Afc5Erj+GYZwXOXDC+lM/WMTnIu40etSB3MROn2+oReMkWfhJENuJuMPis
+	QPtK/MDxESKkEPUTo/7CP7YKhw9uhIoDkZG2GC+Bm2WUjWFu+nnk6eiwWNlcOFf/kH6UfDAoBbR
+	QmwIbIuMmX5S1oh9CBglZ9tK0PCa4NWL1aldVdRvFstkd9Z3DX3eP+MDQZUc14ulFX8wia1xj0x
+	fA5kEEHxq1nCx0W3m2HCv4L9eXgba/uiSVgOSwgPeoJGq+wCTSaBJaDrhiu4PALtSKwPrbxu2aa
+	y8ShQkeLpmptEGtRoW6n0MX3WCExdGjbnNge69ZfSyjs+QNLUd7FsOjJNZRxfkw1OMGIjbsXyu/
+	jriy61ySLiAKBxWbwkCQnYZMk=
+X-Google-Smtp-Source: AGHT+IGBw7CxJ7qDcqycnbC3TnzJ/BlwqGMYHQoYN72vdTSBaOUGSkrrJvxGgqOYBs6co2ci25rVDw==
+X-Received: by 2002:a05:600c:3b13:b0:46e:448a:1235 with SMTP id 5b1f17b1804b1-46e612861fcmr23527745e9.16.1759302444501;
+        Wed, 01 Oct 2025 00:07:24 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:f45f:c590:9006:d394? ([2a01:e0a:3d9:2080:f45f:c590:9006:d394])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46e5c3cad50sm28924565e9.3.2025.10.01.00.06.11
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46e6199193dsm25464495e9.1.2025.10.01.00.07.23
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 Oct 2025 00:06:11 -0700 (PDT)
-Message-ID: <9d020a8e-22d8-4f1f-803c-d00bb912f699@linaro.org>
-Date: Wed, 1 Oct 2025 09:06:10 +0200
+        Wed, 01 Oct 2025 00:07:24 -0700 (PDT)
+Message-ID: <99eae1be-3067-4698-aa3f-a0ff565cb62e@linaro.org>
+Date: Wed, 1 Oct 2025 09:07:23 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/3] phy: qcom: qmp-combo: get the USB3 & DisplayPort
- lanes mapping from DT
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: Re: [PATCH] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: do not
+ reference whole usb-switch.yaml
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Rob Herring <robh@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Xilin Wu <sophon@radxa.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org>
- <20250930-topic-x1e80100-hdmi-v4-2-86a14e8a34ac@linaro.org>
- <uozgwot7yuwmaiwmqoo6ickblpqe52tnj44tnxcorygqxwou52@hksvktgq5zp7>
+ <kishon@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250902-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-5b4a51c8c5a8@linaro.org>
+ <20250905175533.GA1000951-robh@kernel.org>
+ <nwtt76n4t7tlf26ex47wrot7g7nldtmavbzgwmluls3egamjsi@mkomopb6fjh6>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <uozgwot7yuwmaiwmqoo6ickblpqe52tnj44tnxcorygqxwou52@hksvktgq5zp7>
+In-Reply-To: <nwtt76n4t7tlf26ex47wrot7g7nldtmavbzgwmluls3egamjsi@mkomopb6fjh6>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251001_000614_621358_0E051CFF 
-X-CRM114-Status: GOOD (  20.05  )
+X-CRM114-CacheID: sfid-20251001_000726_487641_57EB3155 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,101 +138,50 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/30/25 20:56, Dmitry Baryshkov wrote:
-> On Tue, Sep 30, 2025 at 09:39:48AM +0200, Neil Armstrong wrote:
->> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
->> of a combo glue to route either lanes to the 4 shared physical lanes.
+On 9/30/25 21:10, Dmitry Baryshkov wrote:
+> On Fri, Sep 05, 2025 at 12:55:33PM -0500, Rob Herring wrote:
+>> On Tue, Sep 02, 2025 at 06:10:05PM +0200, Neil Armstrong wrote:
+>>> Both bindings describe a different layout of the ports properties,
+>>> leading to errors when validating DT using this PHY bindings as
+>>> reported by Rob Herring.
+>>>
+>>> Reported-by: Rob Herring <robh@kernel.org>
+>>> Closes: https://lore.kernel.org/all/175462129176.394940.16810637795278334342.robh@kernel.org/
+>>> Fixes: 3bad7fe22796 ("dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch")
+>>> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+>>> ---
+>>>   .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 8 +++++---
+>>>   1 file changed, 5 insertions(+), 3 deletions(-)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>> index c8bc512df08b5694c8599f475de78679a4438449..5005514d7c3a1e4a8893883497fd204bc04e12be 100644
+>>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+>>> @@ -73,8 +73,11 @@ properties:
+>>>       description:
+>>>         See include/dt-bindings/phy/phy-qcom-qmp.h
+>>>   
+>>> -  mode-switch: true
+>>> -  orientation-switch: true
+>>> +  mode-switch:
+>>> +    $ref: /schemas/usb/usb-switch.yaml#properties/mode-switch
+>>> +
+>>> +  orientation-switch:
+>>> +    $ref: /schemas/usb/usb-switch.yaml#properties/orientation-switch
 >>
->> The routing of the lanes can be:
->> - 2 DP + 2 USB3
->> - 4 DP
->> - 2 USB3
->>
->> Get the lanes mapping from DT and stop registering the USB-C
->> muxes in favor of a static mode and orientation detemined
->> by the lanes mapping.
->>
->> This allows supporting boards with direct connection of USB3 and
->> DisplayPort lanes to the QMP Combo PHY lanes, not using the
->> USB-C Altmode feature.
->>
->> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 145 ++++++++++++++++++++++++++++--
->>   1 file changed, 137 insertions(+), 8 deletions(-)
->>
->> @@ -4167,9 +4269,41 @@ static int qmp_combo_probe(struct platform_device *pdev)
->>   	if (ret)
->>   		goto err_node_put;
->>   
->> -	ret = qmp_combo_typec_register(qmp);
->> -	if (ret)
->> -		goto err_node_put;
->> +	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
->> +
->> +	if (of_find_property(dev->of_node, "mode-switch", NULL) ||
->> +	    of_find_property(dev->of_node, "orientation-switch", NULL)) {
->> +		ret = qmp_combo_typec_register(qmp);
->> +		if (ret)
->> +			goto err_node_put;
->> +	} else {
->> +		enum typec_orientation dp_orientation = TYPEC_ORIENTATION_NONE;
->> +		enum typec_orientation usb3_orientation = TYPEC_ORIENTATION_NONE;
->> +
->> +		ret = qmp_combo_get_dt_dp_orientation(dev, &dp_orientation);
->> +		if (ret)
->> +			goto err_node_put;
->> +
->> +		ret = qmp_combo_get_dt_usb3_orientation(dev, &usb3_orientation);
->> +		if (ret)
->> +			goto err_node_put;
->> +
->> +		if (dp_orientation == TYPEC_ORIENTATION_NONE &&
->> +		    usb3_orientation != TYPEC_ORIENTATION_NONE) {
->> +			qmp->qmpphy_mode = QMPPHY_MODE_USB3_ONLY;
->> +			qmp->orientation = usb3_orientation;
->> +		} else if (usb3_orientation == TYPEC_ORIENTATION_NONE &&
->> +			 dp_orientation != TYPEC_ORIENTATION_NONE) {
->> +			qmp->qmpphy_mode = QMPPHY_MODE_DP_ONLY;
->> +			qmp->orientation = dp_orientation;
->> +		} else if (dp_orientation != TYPEC_ORIENTATION_NONE &&
->> +			 dp_orientation == usb3_orientation) {
->> +			qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
->> +			qmp->orientation = dp_orientation;
->> +		} else {
->> +			dev_warn(dev, "unable to determine orientation & mode from data-lanes");
->> +		}
->> +	}
->>   
->>   	ret = drm_aux_bridge_register(dev);
->>   	if (ret)
->> @@ -4189,11 +4323,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
->>   	if (ret)
->>   		goto err_node_put;
->>   
->> -	/*
->> -	 * The hw default is USB3_ONLY, but USB3+DP mode lets us more easily
->> -	 * check both sub-blocks' init tables for blunders at probe time.
->> -	 */
->> -	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
+>> This is a pattern we try to avoid with references at a property level. I
+>> prefer you make port and ports not required in usb-switch.yaml.
 > 
-> SHouldn't this still be a default in the 'normal' USB-C case?
+> But this solution is also not perfect. E.g.
+> Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml should
+> only allow the orienttion-switch property, while using
+> allOf:$ref:usb-switch.yaml allows all three (orientation-switch,
+> mode-switch, retimer-switch).
+> 
 
-It is, I just moved it before the added logic, but the comment doesn't really
-apply anymore
+I agree, but I'm not the original author of this change.
 
 Neil
-
-> 
->>   
->>   	qmp->usb_phy = devm_phy_create(dev, usb_np, &qmp_combo_usb_phy_ops);
->>   	if (IS_ERR(qmp->usb_phy)) {
->>
->> -- 
->> 2.34.1
->>
-> 
-
 
 -- 
 linux-phy mailing list
