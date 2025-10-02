@@ -4,127 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47A40CAC5BB
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Oct 2025 23:37:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE735CAC5BB
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Oct 2025 00:56:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wxhQQFT8MBaNg6PVOyAGF1rfdmYNGaRUOIp8kHJ3JhQ=; b=e30/SXcKuTwZ3L
-	cysJmbHNjcOPJQTLzoXZY8pyUzaEpUMJATzqj8Ez8MB9Zi2puZ5LtYO7P5NvMomJXSldlkZA5Cx10
-	jNXyQFYZ7SiErvDZCYF9hvUd3RvHfv2lHrkLV9kWNdi4J3g66T81Z6rMLIwdQv3dUcWiPsEfnEqfM
-	gOpFQ1w/wObgFrB29s9BUyzxQnkzCCsNXsy6C4bwloOSZWiLk22jA1tlOpvxGwm/VtPGQb3YAb1lY
-	XrYObb/1c4aBTUDBcDXJxF4qS8wj7yWnJCmrTp7eQQj8MCcfRoL0VutmsafaZERGhzqtFOOWJfER4
-	Qg0IqbCohpWttdMwEGDg==;
+	List-Owner; bh=1SVT+8qThLft2h7mNw40T5PtJBXMhiGV6lEzFVHgDCQ=; b=EXhVoj/zNPHoWN
+	5X1oB5k3w0tMcLHoBJR2CcM3j+xyXbeH51iwDiBOC9chHW4TgVxi9rFoS7mGF6KpoVd233StI3z5/
+	qNQTLvMWw9D/2Ada6R3qbT5IVIECk/sbGLpUi5B+C5zzboQoTUist/NzIcKQBsxyEDSEE2rxDVacr
+	iY1V+8pJYLFnq/Cuk9PPYuDukfcUO7Uk+PGOVDmQIh8hHqwnKNadYc3cbZkb8wP0HMbWq8HK45DTf
+	x5GDPwbqXPgtLW/xCAyxIkYDXZRvVpw6KcbctBXrKbuXXp/ZZX61Ngyv5yx7ahnfqZKdOROe6tkM8
+	iERUdDpUyZJE8uLv0/Sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v46Ni-00000009FiK-3Dha;
-	Wed, 01 Oct 2025 23:37:10 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v47c5-00000009LKk-0vP4;
+	Thu, 02 Oct 2025 00:56:05 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v46Ng-00000009Fhu-02wj
+	id 1v47c2-00000009LKO-2F78
 	for linux-phy@lists.infradead.org;
-	Wed, 01 Oct 2025 23:37:09 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 591Ibs64018665
-	for <linux-phy@lists.infradead.org>; Wed, 1 Oct 2025 23:37:07 GMT
+	Thu, 02 Oct 2025 00:56:03 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 591IcSqn024148
+	for <linux-phy@lists.infradead.org>; Thu, 2 Oct 2025 00:56:01 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=kUhpV5L9OVSY0jP0UCvDdukq
-	clE+5qyGR802XH0NEj0=; b=MzATrGwFoZwGj85rvlhUJAGeRvpuIBuJ1gw4quo6
-	eeAENKlTkHIoSvkMnAmdtv6gU8EvGkUNeA+Q1JmwuLfQEKa/63Dy+wlXj6AtI2IE
-	FcrsyyPRTBzt4k0zfTDHGYe3Gey2jUQXlOA5QgiO8sh9GIGVxpCAYH+oG76jaK+w
-	5+NRyvV3cDcnb+/YiLnZFEFp9mwyelq6FRaJe+O734QdjPXF1Pm06P7dAVxLowFz
-	KI0Swx/Aygd7llojuoqLvCVZLyf0csBAnWk/sejEPJaPlHCZ86iMyEerIr+0qi9y
-	cffKt8abX5ZD7ddiWeF8L+SwRoyhu7nmHQNVaomHWx9oMw==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49gyu1af57-1
+	:references:subject:to; s=qcppdkim1; bh=8PzQc+BmJiwVOLFHqrykB34m
+	n5pDbaOYFIBrZaxzwsU=; b=I2tOQqxHbLH3mAXAEts/d7DiOVYDuGA82QegSdLf
+	vAZ4A+rYVfab/A9wCZ8Dv/yYgp7fkMtxOBmJMzEhTw+qrNjG35UVaL9oEWe6wLHT
+	G2VXD8qx8L6vRfY9iz1q7/XtJvNN34W5yJUBsgpjcFX6uNVUc01lWv5SU6EhZM4H
+	4NpqV4smMyCJdmLWwo0lwzTajvaonYJ4psS7gc1DXzFE+SlN9ZXGP9Y6ngM/eGME
+	2fSZGnXo6BgR2I2QgBZsXkqR2I5x7Q70cxb8Wi5LgcxbUNaxwM8GdL2MdQdBd5EL
+	LDGaWXTHQEO0JS8sB2jbzDP63Xin008qIii2EfXZ/v1R4A==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e8a66agn-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 23:37:06 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-277f0ea6fc6so7000755ad.2
-        for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 16:37:06 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 02 Oct 2025 00:56:00 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4d77ae03937so13227581cf.3
+        for <linux-phy@lists.infradead.org>; Wed, 01 Oct 2025 17:56:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759361825; x=1759966625;
+        d=1e100.net; s=20230601; t=1759366560; x=1759971360;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=kUhpV5L9OVSY0jP0UCvDdukqclE+5qyGR802XH0NEj0=;
-        b=w+rb5kKhR5w1QGqW0MAZeEP6bkK+x17GHzN1SLa2ZjUdHsLgkPjvkIqy1UE8qBFhuy
-         2zTzQwM0f8yYxO0XlbjkbaMRSuTh07EElBljsmk5Ss4nNRCicyy6eecICCfkp5Vvj/yF
-         G7f1sl26cy12IlLmFJsk2rs72Pp1wgfkBc99KPFzBFZW7/arUu6UGfVABKZqAmFNq0f+
-         BctC6mGhi/jACYTxmoPKS4zZJlMis6SejsPNqHyyaZeSQjYLcKlq2wtB4Lg7OmSFLkco
-         tRL04sjThSTzg3NITZufQCTyB3c73jdLDNgoWqlPOw3RXgD3TGP1WmvdSHXOR446UFVy
-         IDRw==
-X-Forwarded-Encrypted: i=1; AJvYcCUuEQ/FkavKFRvPs+rY3el2km4UP4G5bWWRypnnza00fX4Hwnrz6r6ol/5hswtUILvu16etrKIjhqk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyMGcK4iiZhPx7S/mS9JRCRnvjf0RA4He4X2JNuJBsejgg89Rxs
-	2w1GS+wuZk8aiGSoBE5bqS/fWMPAIF6YEsquAPxHCd8VBwRXViPbpROUDnxjJwTGddtvfYXC8ut
-	/pVtVWviWYiIwPYmmQIdz3NOfo6qJEp421TmeVERm7pIsVqNklHMKVDCI3xWCqTLX1Z93
-X-Gm-Gg: ASbGncvbaP9SXtSlbFBSjoSwTA1roFSciw/qeGn4u1GuvTMiwAS+jmCK+38j52mf7ef
-	q6mOeGsr7C3PcUElP/yDvoenUR8D/Ccig1aAsUUzvle5E21SuiJrCYH1FWwqcnLso45FN61hhhx
-	7mk1gcWcpJaSbTICF9ykNwwXFJskPEAifkhvoBtN+e11GbvkX+KltHE/Uz7ZL9iJB9arTd2vSEc
-	W1G+fFhQfpo/eN5OODZRnI+HejeCf/QH9BFhsv/TLOkRXt7vStQrRe0h9NEKhqeVdybxswI6nrD
-	fuHDXyJkSYYy1IyL9J6OzKx4lvQsyheYcoEJSarnNnE8QgazRtwgoUeduD/lfjUAFpzmPXQTdNG
-	kOM6iFjLCO12PmTMU4N0ODnnNUQ2o
-X-Received: by 2002:a17:902:82c6:b0:269:a8a8:4029 with SMTP id d9443c01a7336-28e7f16792bmr52107335ad.5.1759361824788;
-        Wed, 01 Oct 2025 16:37:04 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGhsy+qF/B38JhyqIfiaawE+CjEz1XsZfy+/GEYo2B04BMyD9Lk33BJRu/DQ31TIUc3DOq43A==
-X-Received: by 2002:a17:902:82c6:b0:269:a8a8:4029 with SMTP id d9443c01a7336-28e7f16792bmr52107025ad.5.1759361824293;
-        Wed, 01 Oct 2025 16:37:04 -0700 (PDT)
-Received: from hu-bjorande-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-28e8d1280a1sm7543645ad.51.2025.10.01.16.37.03
+        bh=8PzQc+BmJiwVOLFHqrykB34mn5pDbaOYFIBrZaxzwsU=;
+        b=B4xUg4ygQFvYGDmKbGcc4wEmoFoKhabil+iI9FrGGiu8XiwKoYvZOciIqoXoTO5JUN
+         g3gWp/kbIHRMgxJSDU0Wv0SkT1YXoti6L8AULXqovRZJshWHZp7zx1rrkIXIZ/HWEHAd
+         4phoksYUaxWUDB7G84WQrEOyTZUTEtkPmtMgn7wOaiCidQ6TFOFVAr8ZKWfstNy8OPaL
+         s4VM8xghEz9llv7+Oli9uXkUtEycLHXymndIiFT6A1Ze1QALzulbnQ2RmovdbfuDyA1v
+         RZJnTcrDLreQBf84OqZ0IxKvksCOfbU1wBGMyjml+9E1DWLXfrDQ5xRa0QSRYfyWd2y6
+         na3g==
+X-Forwarded-Encrypted: i=1; AJvYcCWwybjDiYNi4n5G0igZT0L0rf20hEaeFmi6bRakVuUG5o5oI3i3039RT79CxEddSairg5AHg87WSFk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwMFGp41QoIDTAIUwOZl7B6uqAw9E5UkFnTQ8HOAY0f9h7rz0yF
+	MXXgOihi25RUZob90eYpWtKDIxKI9jTsTRmc/0FWCJMfB+hF0+nFO5u/9IzRLoQCOEkFyK0rvRZ
+	/HtDdl6D7FdlCYMfHgr5IsGLZBrrmq0SGxKROcmw+b01Whtp3XxCe463yLUL00a8F1IvK
+X-Gm-Gg: ASbGncsBSSJgj7yhet9afIKVxDuZtzssqhw4D9KM8qSTWQzK+YULBtgYu8uSxmLpm5c
+	LeAaKgfII+7clgtAdcVWrKuq2982MUNf29NfdCSHi3UKp6QzYT1XW2cAucjmqjt3FxOmauLw5Go
+	I7V/d8FGJn5CkTWpkkkkvqKWh+0sfT70w3jhWt4ljtF93Eu7PBPhXP5Y682e7cEi2MlDma1zhQc
+	lt6AK123kj2e20HjmUNnMBtoP0DWCSdi4TjzWmjmbFCHfv9kpB1uysx/rLZfBl+eKwBhZiftsSb
+	/S1Cqqx20F0ZMIKfRBbij1Jf+4dXbiD3yKXHef3CTSUmwgLG0UNCKRQoH+rPe2/nOD7vqzPrTx5
+	R1EddVc2LmS9sjoX1BGmseFG17PKscldjGhX9e7r1TQQb2/IQdfme4EimIA==
+X-Received: by 2002:a05:622a:5518:b0:4dc:4828:b7a6 with SMTP id d75a77b69052e-4e41e5416famr78963271cf.59.1759366560006;
+        Wed, 01 Oct 2025 17:56:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGtplyOrthJ4uP+eWCWIt60T2cvFyskp9IejhadjkX5IEu1X/U3y4cM2LWQ0k7UzPqTkzQ8qg==
+X-Received: by 2002:a05:622a:5518:b0:4dc:4828:b7a6 with SMTP id d75a77b69052e-4e41e5416famr78962981cf.59.1759366559465;
+        Wed, 01 Oct 2025 17:55:59 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-373ba4a6015sm2742211fa.45.2025.10.01.17.55.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 01 Oct 2025 16:37:03 -0700 (PDT)
-Date: Wed, 1 Oct 2025 16:37:01 -0700
-From: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        quic_vbadigan@quicinc.com, quic_mrana@quicinc.com
-Subject: Re: [PATCH v3 2/3] arm64: dts: qcom: sm8750: Add PCIe PHY and
- controller node
-Message-ID: <aN22lamy86iesAJj@hu-bjorande-lv.qualcomm.com>
-References: <20250826-pakala-v3-0-721627bd5bb0@oss.qualcomm.com>
- <20250826-pakala-v3-2-721627bd5bb0@oss.qualcomm.com>
+        Wed, 01 Oct 2025 17:55:57 -0700 (PDT)
+Date: Thu, 2 Oct 2025 03:55:56 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
+        kishon@kernel.org, vkoul@kernel.org, gregkh@linuxfoundation.org,
+        robh@kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 01/10] dt-bindings: phy:
+ qcom,sc8280xp-qmp-usb43dp-phy: Add Glymur compatible
+Message-ID: <tblxljq2wmbbb3cpzv3xd7koc6j224ts3kd5mhx7hgpatenond@dqu3gunfocu2>
+References: <20251001220534.3166401-1-wesley.cheng@oss.qualcomm.com>
+ <20251001220534.3166401-2-wesley.cheng@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250826-pakala-v3-2-721627bd5bb0@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=RfGdyltv c=1 sm=1 tr=0 ts=68ddbb22 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=x6icFKpwvdMA:10 a=EUspDBNiAAAA:8 a=yW6qr2ef8xeCN_ra_UgA:9
- a=xF2dmcnjyTH3buFl:21 a=CjuIK1q_8ugA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-ORIG-GUID: fJUnzRWrYsLeNpZ95upSLaTGj8-_aKyx
-X-Proofpoint-GUID: fJUnzRWrYsLeNpZ95upSLaTGj8-_aKyx
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDAxMDA1OCBTYWx0ZWRfX3nFpbCI4g5oQ
- ysEnG6I5+HWXbYyxqUH2MfRDSDGqpmpiUwOHI/vrC2djiSfAIYlIwu5+hns+yRO82FE6r+3whjE
- SWYNmD0EttJAOotSxUf4Q0WZ3ml/i6W9q2c3mN1R7oq42nrvSZkxzPCDywb92CQGZYiUOLLJ1Bv
- mvXIjO9H6D+AS/4JH9EuwOKgC6zm/aJS4qHFGxr60LuVuEa1Z7DW3ECt/LMwjIfGI2q7KLJ9adr
- WTsgmx9PxPVZr2ndSVYDfZMMZ/12qQOfvwADW8R1BVRUf3A0Os46wEtym7cg69vD5vBEoy0my5t
- EtHm2e7EhiP2QWZBGqLijFf8NEgWDFCnvqrHPU1HbJ6ctW5z9ghiRLnFP/hRL8IbZHKy+CnEpgY
- NFw4fkxHn1iCVx/iSskKLswYa927Rg==
+In-Reply-To: <20251001220534.3166401-2-wesley.cheng@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=RZKdyltv c=1 sm=1 tr=0 ts=68ddcda0 cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=x6icFKpwvdMA:10 a=JfrnYn6hAAAA:8 a=EUspDBNiAAAA:8 a=poLWbaA-Eiv7kSeqQ60A:9
+ a=CjuIK1q_8ugA:10 a=kacYvNCVWA4VmyqE58fU:22 a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-GUID: r85g0ghUSGcI9h-ROhKGaPcvD-HlZcwV
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAzMyBTYWx0ZWRfX2qo4JHwloKWM
+ raXrclHt55opQq8H+9W+4JWxXmCdfcWmSM0wmjk0EmjDA3S0D5R+iQYmC82zeYs4e4i4e/UZozb
+ Bbkw/QzJJUAFPBAbhRuEZrAQWsnwQ4936X7MXRa9DyFW7fjrxGAdLcKpT1wsg6ctKM87nR3BH0M
+ Y04GZUuPaeXBHTna4vyWkSAn8DSDEUChc06YnaVionwMb3an3SEFzn4Wnf7XAGsVXX2V/oJm91m
+ MSp2/Jr3Gn3jsrNyGe1RMuyLRpQR5YuN3nj4p4QM9QQFYZBB8V9sDTrLAtvPjR5vhToFndtdFiu
+ EL9TgK96GTT24DcZPLlDHI60IRtjUw5ad2yN2gSF1JGrKCcJUcTtrlgeO+oVRVqgTepDFOflbIr
+ yWb5azs2xnONgGufv22zj99roZsIGw==
+X-Proofpoint-ORIG-GUID: r85g0ghUSGcI9h-ROhKGaPcvD-HlZcwV
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-01_07,2025-09-29_04,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 lowpriorityscore=0 malwarescore=0 adultscore=0
- priorityscore=1501 suspectscore=0 phishscore=0 bulkscore=0 clxscore=1011
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
- definitions=main-2510010058
+ clxscore=1015 malwarescore=0 priorityscore=1501 adultscore=0 phishscore=0
+ impostorscore=0 spamscore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2509270033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251001_163708_060499_39593002 
-X-CRM114-Status: GOOD (  23.00  )
+X-CRM114-CacheID: sfid-20251001_175602_695237_06EBCEEE 
+X-CRM114-Status: GOOD (  18.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,228 +132,165 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Aug 26, 2025 at 04:32:54PM +0530, Krishna Chaitanya Chundru wrote:
-> Add PCIe controller and PHY nodes which supports data rates of 8GT/s
-> and x2 lane.
+On Wed, Oct 01, 2025 at 03:05:25PM -0700, Wesley Cheng wrote:
+> Define a Glymur compatible string for the QMP PHY combo driver, along with
+> resource requirements.  This adds a new requirement for a clkref clock-name
+> for each QMP PHY.
 > 
-
-I tried to boot the upstream kernel (next-20250925 defconfig) on my
-Pakala MTP with latest LA1.0 META and unless I disable &pcie0 the device
-is crashing during boot as PCIe is being probed.
-
-Is this a known problem? Is there any workaround/changes in flight that
-I'm missing?
-
-Regards,
-Bjorn
-
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->  arch/arm64/boot/dts/qcom/sm8750.dtsi | 180 ++++++++++++++++++++++++++++++++++-
->  1 file changed, 179 insertions(+), 1 deletion(-)
+>  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml    | 76 +++++++++++++++----
+>  1 file changed, 63 insertions(+), 13 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> index 4643705021c6ca095a16d8d7cc3adac920b21e82..b47668a64bcead3e48f58eeb2e41c04660493cb7 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> @@ -631,7 +631,7 @@ gcc: clock-controller@100000 {
->  			clocks = <&bi_tcxo_div2>,
->  				 <0>,
->  				 <&sleep_clk>,
-> -				 <0>,
-> +				 <&pcie0_phy>,
->  				 <0>,
->  				 <0>,
->  				 <0>,
-> @@ -3304,6 +3304,184 @@ gic_its: msi-controller@16040000 {
->  			};
->  		};
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> index c8bc512df08b..377d830f0855 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+> @@ -16,6 +16,7 @@ description:
+>  properties:
+>    compatible:
+>      enum:
+> +      - qcom,glymur-qmp-usb3-dp-phy
+>        - qcom,sar2130p-qmp-usb3-dp-phy
+>        - qcom,sc7180-qmp-usb3-dp-phy
+>        - qcom,sc7280-qmp-usb3-dp-phy
+> @@ -41,12 +42,7 @@ properties:
 >  
-> +		pcie0: pcie@1c00000 {
-> +			device_type = "pci";
-> +			compatible = "qcom,pcie-sm8750", "qcom,pcie-sm8550";
-> +			reg = <0x0 0x01c00000 0x0 0x3000>,
-> +			      <0x0 0x40000000 0x0 0xf1d>,
-> +			      <0x0 0x40000f20 0x0 0xa8>,
-> +			      <0x0 0x40001000 0x0 0x1000>,
-> +			      <0x0 0x40100000 0x0 0x100000>,
-> +			      <0x0 0x01C03000 0x0 0x1000>;
-> +			reg-names = "parf",
-> +				    "dbi",
-> +				    "elbi",
-> +				    "atu",
-> +				    "config",
-> +				    "mhi";
+>    clock-names:
+>      minItems: 4
+> -    items:
+> -      - const: aux
+> -      - const: ref
+> -      - const: com_aux
+> -      - const: usb3_pipe
+> -      - const: cfg_ahb
+> +    maxItems: 5
+>  
+>    power-domains:
+>      maxItems: 1
+> @@ -63,6 +59,8 @@ properties:
+>  
+>    vdda-pll-supply: true
+>  
+> +  refgen-supply: true
 > +
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			ranges = <0x01000000 0x0 0x00000000 0x0 0x40200000 0x0 0x100000>,
-> +				 <0x02000000 0x0 0x40300000 0x0 0x40300000 0x0 0x23d00000>,
-> +				 <0x03000000 0x4 0x00000000 0x4 0x00000000 0x3 0x00000000>;
-> +			bus-range = <0x00 0xff>;
+>    "#clock-cells":
+>      const: 1
+>      description:
+> @@ -105,6 +103,22 @@ required:
+>  
+>  allOf:
+>    - $ref: /schemas/usb/usb-switch.yaml#
 > +
-> +			dma-coherent;
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - qcom,glymur-qmp-usb3-dp-phy
+> +    then:
+> +      properties:
+
+Missing constraint for clocks.
+
+> +        clock-names:
+> +          items:
+> +            - const: aux
+> +            - const: ref
+> +            - const: com_aux
+> +            - const: usb3_pipe
+> +            - const: clkref
 > +
-> +			linux,pci-domain = <0>;
+>    - if:
+>        properties:
+>          compatible:
+> @@ -113,21 +127,45 @@ allOf:
+>              - qcom,sdm845-qmp-usb3-dp-phy
+>      then:
+>        properties:
+> -        clocks:
+> -          maxItems: 5
+
+No, you can't remove this. clock-names doens't provide constraints (or
+description) of the clocks property.
+
+>          clock-names:
+> -          maxItems: 5
+> -    else:
+> +          items:
+> +            - const: aux
+> +            - const: ref
+> +            - const: com_aux
+> +            - const: usb3_pipe
+> +            - const: cfg_ahb
 > +
-> +			msi-map = <0x0 &gic_its 0x1400 0x1>,
-> +				  <0x100 &gic_its 0x1401 0x1>;
-> +			msi-map-mask = <0xff00>;
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - qcom,sar2130p-qmp-usb3-dp-phy
+> +            - qcom,sc7280-qmp-usb3-dp-phy
+> +            - qcom,sc8180x-qmp-usb3-dp-phy
+> +            - qcom,sc8280xp-qmp-usb43dp-phy
+> +            - qcom,sm6350-qmp-usb3-dp-phy
+> +            - qcom,sm8150-qmp-usb3-dp-phy
+> +            - qcom,sm8250-qmp-usb3-dp-phy
+> +            - qcom,sm8350-qmp-usb3-dp-phy
+> +            - qcom,sm8450-qmp-usb3-dp-phy
+> +            - qcom,sm8550-qmp-usb3-dp-phy
+> +            - qcom,sm8650-qmp-usb3-dp-phy
+> +            - qcom,sm8750-qmp-usb3-dp-phy
+> +            - qcom,x1e80100-qmp-usb3-dp-phy
+> +    then:
+>        properties:
+> -        clocks:
+> -          maxItems: 4
+
+Same here.
+
+>          clock-names:
+> -          maxItems: 4
+> +          items:
+> +            - const: aux
+> +            - const: ref
+> +            - const: com_aux
+> +            - const: usb3_pipe
+>  
+>    - if:
+>        properties:
+>          compatible:
+>            enum:
+> +            - qcom,glymur-qmp-usb3-dp-phy
+>              - qcom,sar2130p-qmp-usb3-dp-phy
+>              - qcom,sc8280xp-qmp-usb43dp-phy
+>              - qcom,sm6350-qmp-usb3-dp-phy
+> @@ -142,6 +180,18 @@ allOf:
+>        properties:
+>          power-domains: false
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - qcom,glymur-qmp-usb3-dp-phy
+> +    then:
+> +      required:
+> +        - refgen-supply
+> +    else:
+> +      properties:
+> +        refgen-supply: false
 > +
-> +			num-lanes = <2>;
-> +
-> +			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "msi0",
-> +					  "msi1",
-> +					  "msi2",
-> +					  "msi3",
-> +					  "msi4",
-> +					  "msi5",
-> +					  "msi6",
-> +					  "msi7",
-> +					  "global";
-> +
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 0x7>;
-> +			interrupt-map = <0 0 0 1 &intc 0 0 0 149 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 2 &intc 0 0 0 150 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 3 &intc 0 0 0 151 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0 0 0 4 &intc 0 0 0 152 IRQ_TYPE_LEVEL_HIGH>;
-> +
-> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> +				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-> +				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
-> +				 <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
-> +				 <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>,
-> +				 <&gcc GCC_CNOC_PCIE_SF_AXI_CLK>;
-> +			clock-names = "aux",
-> +				      "cfg",
-> +				      "bus_master",
-> +				      "bus_slave",
-> +				      "slave_q2a",
-> +				      "ddrss_sf_tbu",
-> +				      "noc_aggr",
-> +				      "cnoc_sf_axi";
-> +
-> +			interconnects = <&pcie_noc MASTER_PCIE_0 QCOM_ICC_TAG_ALWAYS
-> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
-> +					 &cnoc_main SLAVE_PCIE_0 QCOM_ICC_TAG_ALWAYS>;
-> +			interconnect-names = "pcie-mem",
-> +					     "cpu-pcie";
-> +
-> +			iommu-map = <0x0   &apps_smmu 0x1400 0x1>,
-> +				    <0x100 &apps_smmu 0x1401 0x1>;
-> +
-> +			resets = <&gcc GCC_PCIE_0_BCR>;
-> +			reset-names = "pci";
-> +
-> +			power-domains = <&gcc GCC_PCIE_0_GDSC>;
-> +
-> +			operating-points-v2 = <&pcie0_opp_table>;
-> +
-> +			status = "disabled";
-> +
-> +			pcie0_opp_table: opp-table {
-> +				compatible = "operating-points-v2";
-> +
-> +				/* GEN 1 x1 */
-> +				opp-2500000 {
-> +					opp-hz = /bits/ 64 <2500000>;
-> +					required-opps = <&rpmhpd_opp_low_svs>;
-> +					opp-peak-kBps = <250000 1>;
-> +				};
-> +
-> +				/* GEN 1 x2 and GEN 2 x1 */
-> +				opp-5000000 {
-> +					opp-hz = /bits/ 64 <5000000>;
-> +					required-opps = <&rpmhpd_opp_low_svs>;
-> +					opp-peak-kBps = <500000 1>;
-> +				};
-> +
-> +				/* GEN 2 x2 */
-> +				opp-10000000 {
-> +					opp-hz = /bits/ 64 <10000000>;
-> +					required-opps = <&rpmhpd_opp_low_svs>;
-> +					opp-peak-kBps = <1000000 1>;
-> +				};
-> +
-> +				/* GEN 3 x1 */
-> +				opp-8000000 {
-> +					opp-hz = /bits/ 64 <8000000>;
-> +					required-opps = <&rpmhpd_opp_nom>;
-> +					opp-peak-kBps = <984500 1>;
-> +				};
-> +
-> +				/* GEN 3 x2 */
-> +				opp-16000000 {
-> +					opp-hz = /bits/ 64 <16000000>;
-> +					required-opps = <&rpmhpd_opp_nom>;
-> +					opp-peak-kBps = <1969000 1>;
-> +				};
-> +
-> +			};
-> +
-> +			pcieport0: pcie@0 {
-> +				device_type = "pci";
-> +				reg = <0x0 0x0 0x0 0x0 0x0>;
-> +				bus-range = <0x01 0xff>;
-> +
-> +				#address-cells = <3>;
-> +				#size-cells = <2>;
-> +				ranges;
-> +				phys = <&pcie0_phy>;
-> +			};
-> +		};
-> +
-> +		pcie0_phy: phy@1c06000 {
-> +			compatible = "qcom,sm8750-qmp-gen3x2-pcie-phy";
-> +			reg = <0 0x01c06000 0 0x2000>;
-> +
-> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
-> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
-> +				 <&tcsrcc TCSR_PCIE_0_CLKREF_EN>,
-> +				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
-> +				 <&gcc GCC_PCIE_0_PIPE_CLK>;
-> +			clock-names = "aux",
-> +				      "cfg_ahb",
-> +				      "ref",
-> +				      "rchng",
-> +				      "pipe";
-> +
-> +			assigned-clocks = <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>;
-> +			assigned-clock-rates = <100000000>;
-> +
-> +			resets = <&gcc GCC_PCIE_0_PHY_BCR>;
-> +			reset-names = "phy";
-> +
-> +			power-domains = <&gcc GCC_PCIE_0_PHY_GDSC>;
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "pcie0_pipe_clk";
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
->  		ufs_mem_phy: phy@1d80000 {
->  			compatible = "qcom,sm8750-qmp-ufs-phy";
->  			reg = <0x0 0x01d80000 0x0 0x2000>;
+>  additionalProperties: false
+>  
+>  examples:
 > 
 > -- 
-> 2.34.1
-> 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
