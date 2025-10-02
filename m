@@ -4,121 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39605CAC5B0
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Oct 2025 09:11:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9275CCAC5B8
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Oct 2025 09:37:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OcQ5/kSFNvquzm/WHlFej4Ou3G3bRV5X+m3sX/ji5jU=; b=Ob6CxOcO3IUiFG
-	H3sS/7s1qoUfgqw3C46NFCdoi2YQVvA8zsVSJbFqcVQSlktxEVn6RsjLztLh6pVbCWMuJIqgTIwoY
-	QM61J3K5urlCNu/NOVs3YG6hZcrV2uNtxCByvQHazvhN9ox12ZEyaPyKs3teOJrn7ZN6O+15k+5NW
-	jeDz9NSjiUlHZfE+9JvWj7ZVuhV68aQ851ZjJIv0Ntqy55Tv1V8R+BSe6fvOV5binrbyXwGzs1sTJ
-	zQ2/Oy5b7qrWAHMURxGjw9BUTJXRD+EzN1Cy8Fq8GZiPj81Hev24cTjkc6aYBiigAI9IbftyhkgiI
-	bWYsrRe8NJCVUxwvl3zw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Tr8b6HpFoxWqyUYFf7lMKOJSVm/1K9aISeGbyeLK4fo=; b=pZCHt6Zz1BFqJD
+	RSNMBVsGy/U8N+p75LpdFDnBY8wGNs6G2s+f1226fnwXOvUjfC3xToKutdt04a04uWtSIkn5Iqd5t
+	fjWjZvtUoUbL4RYkxgVhshtRE66cITqiqWZX0bkB3ccjro0z+JqxG5Jkn+tvPGSovOM4pCyPbvTQw
+	sjrEqe7tV+UL7GXAUC3c0+zY6HNeCilOUsPtFTWSbetZw01YjiLt3NL/aveBHtKdnN3gTQwK4kJUl
+	LHNMKGOsTMKzHwKHTdDb/QC2pzqGbirxcv8H0hWZ1Rzc5KT1AFB0a309vay5EQ6rEHgww6+tv/EIU
+	jQHO0hYMpOTIBmOYgrcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4FLK-0000000A7Cg-3Ypm;
-	Thu, 02 Oct 2025 09:11:18 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1v4FkM-0000000A9ws-0dlL;
+	Thu, 02 Oct 2025 09:37:10 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4FLH-0000000A7BX-2k5A
+	id 1v4FkJ-0000000A9ve-3YbY
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Oct 2025 09:11:17 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59299Jmi012289
-	for <linux-phy@lists.infradead.org>; Thu, 2 Oct 2025 09:11:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=BbZ0kpARpq5woqsrxuG2UwFJ
-	0a+vlIFaF0Nv54X+o7c=; b=U6KLbjbUhNdyAMwZlM9FfmOs7mP6N91HXfXmvS20
-	HOY7tlkNP4E5ChWQ6zvumsiQe3TSDvfEw1pYWCzZ7IM+rJQsF2EhcuRN78886gyo
-	dK6qAHYQv9bIjmcjnYc2yZktC0bbd7OmjDJPqxpNHwbUZwRcYC6ghzGc3EkfvmHa
-	wVZMTEaXljI+0cVji10NPLiskdByedzL+Acdxo/A8OFEGeYUT6bmfofax9deONEu
-	n7B4AacZoziPWKS8a0EiVpCJ3fopaUufVOZZKw35hvagNippiQqciX5eBMuXnYk2
-	FaPitlgvFxF+12EUtCNe/CCzpbCMd7FrC88IMC9HeT9ykw==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49e80tyfrb-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 02 Oct 2025 09:11:14 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4e1015c48c8so37061161cf.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 Oct 2025 02:11:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759396274; x=1760001074;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=BbZ0kpARpq5woqsrxuG2UwFJ0a+vlIFaF0Nv54X+o7c=;
-        b=QEK9dHVreIXunj4VsaChwhLEHjyZcDYOc14PZlYw0HIILFein/J8bV3OToVIYvjx+G
-         VPWNkpWgkGZOE6f1KpGsOL+dCOGMD5TW9g57mfXKZjggR7SVxTjcrGzim3iYdzK62KAz
-         UfI3dBODOlasvB9jOSKx0u6415r1U9cZgWg6UvBYMyv6Il9Pqr8Q4dFQm2SCYnGiE+a6
-         XoCFax5CW8R0QfzwACK2O089tblpa+2HqMW8WjjTtUMFCTtX0Yw/Vd5CRhOIThuLd1sm
-         7DzNnB0Y8hChp8lIyZg0/UnKmOhfpzZQ5vOteP8b1peofsEuk014PZxHpluESR2w2xhq
-         5tqw==
-X-Forwarded-Encrypted: i=1; AJvYcCUjkk7e4pjrqrxe0SwCP5xZ+iuVk99O1Yqz72ShCGrntXoPf4X/o0KBucD1epflzomqMZqdfiuCTlw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyrYLX5kYNbD7Vk72rxlPf7vgUSUgxUmaEWKPhp4SinBN00Niic
-	pWeov+sdBlWCbOvsi8PAKGTcg1wqtr1oHWqricPb3aUg6URVkaGgUqXkviES7/MknK/Z436Cm2t
-	tqF2PzBHFPFKnkS0JqUS1nppa2v3ySK9yLMdZsLLrpLVZztocpzTdQwBmYb7YiygjVaTl
-X-Gm-Gg: ASbGncvf7RKm93o9wuUlVHhsvAeL/vYzKIdxYHtj8HEOQ48g0lgTJEuZydr0X+WBrn+
-	U3r9Qa++Ld3l0rR+XAxod9F64ncIycjKCECrkSxmlCZ65UfQCY9j3c8YdXF9gu6P20ufzJszG0G
-	H4y0xiOlzkaio9sW5iSmJmteadMWnPCAP/14lJ33XiZMQc/guNdIzx+PWfOp57IsK9pG7QPSi9b
-	wDr7oP9Q9aUL9+ZdtgdG8v9ktxqb3Jl/8cgFrkjXYWkyvHqTK8ojYo8rt/hB9TMr44OfCY6N1w/
-	5+XjoYPvhxzaL+PC3mjS9BD1xJburcAKy78m2F+17AQYKrMT2BpfkLUxhCu+ShuojuWqSoXKck8
-	vpTBvIrmAsdAIy+GY14AuAjlGWrw+bAgbLeQ9HVLGhsNOa0b1+bkIY56P8w==
-X-Received: by 2002:a05:622a:154:b0:4d2:ba6f:28fa with SMTP id d75a77b69052e-4e56385c6e9mr37200981cf.34.1759396273305;
-        Thu, 02 Oct 2025 02:11:13 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IENSBLEIgOelziMM7PRs4E2JbckXE3QLoNPec5Ivqk6TxCyEXfAzasrbhxr75kMJnXNT42dCg==
-X-Received: by 2002:a05:622a:154:b0:4d2:ba6f:28fa with SMTP id d75a77b69052e-4e56385c6e9mr37200711cf.34.1759396272754;
-        Thu, 02 Oct 2025 02:11:12 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-373ba2e1445sm5565831fa.21.2025.10.02.02.11.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Oct 2025 02:11:11 -0700 (PDT)
-Date: Thu, 2 Oct 2025 12:11:09 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Cc: krzk+dt@kernel.org, conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
-        kishon@kernel.org, vkoul@kernel.org, gregkh@linuxfoundation.org,
-        robh@kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 07/10] phy: qualcomm: qmp-combo: Update QMP PHY with
- Glymur settings
-Message-ID: <f4qarbagzswtfb3cozmdp2bul4dpd5jbouce36xgr3mzdsn53x@e26kiedxsxtg>
-References: <20251001220534.3166401-1-wesley.cheng@oss.qualcomm.com>
- <20251001220534.3166401-8-wesley.cheng@oss.qualcomm.com>
- <ra3bq7guxunk2n7mbrjlefxvxu45clmwzp74vq7bqd2xvp2fv5@z5skxjxs4yxp>
- <8996bd96-0660-70ba-63f4-51111219d146@oss.qualcomm.com>
+	Thu, 02 Oct 2025 09:37:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1759397825;
+	bh=pvPudess2AabFQ8lphtvYYh8pAOCEVIGlOU+P+KJ0tE=;
+	h=From:To:Cc:Subject:Date:From;
+	b=KQHAAV3cCUvVT5an/RpuE5eXUsWrLxOoFT5HjwPeVN+2nWQij5ZKgdfy29kD8jwoD
+	 119Q6ydah+IcnJOoJEQjzGw+HsIhMA7L0hv06wa3k2cDmTmOenfWvJ79vDR2NVQxUB
+	 7ekuF8ze39Ysbf6a7J5jPepv1LXMOQBCPDasoXJoHQu1fsRl6jE8i8ttzfIIaUlj/G
+	 SNtmXd24mUsSsjKnMkVm1wmS56xS18TqU+EUCcpmEo2WKCDDioAIB0m71TQKoNJ66k
+	 3s/PTTkPYs+TAoT/J9x+PEcEIYbSoSmw9ZhVa4BSON5GgL9FU9+v5XqTd17TuZTWaY
+	 LI/1hFAMMdC8A==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id CAB2117E129E;
+	Thu,  2 Oct 2025 11:37:04 +0200 (CEST)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: sboyd@kernel.org
+Cc: jic23@kernel.org,
+	dlechner@baylibre.com,
+	nuno.sa@analog.com,
+	andy@kernel.org,
+	arnd@arndb.de,
+	gregkh@linuxfoundation.org,
+	srini@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	sre@kernel.org,
+	krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org,
+	kernel@collabora.com,
+	wenst@chromium.org,
+	casey.connolly@linaro.org
+Subject: [PATCH v5 0/7] SPMI: Implement sub-devices and migrate drivers
+Date: Thu,  2 Oct 2025 11:36:50 +0200
+Message-ID: <20251002093657.2055332-1-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8996bd96-0660-70ba-63f4-51111219d146@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTI3MDAyOSBTYWx0ZWRfXxrm1Wfq+NjfA
- EgcfqKNbvHOQd5mREeHQNHnt49LsGiGtWc0Bhe4Gbyk26Gss8XiIbJciGaHlzqyKi3qbLpk4Ihp
- OFGHn0AqIiK9ux8Ij3lEAWoEToAp13QAreep+mw97VTWPv4yWfHi5bKxPUPMGdRCO+bibKMa7ki
- XGOQjB+Jjcw6wERCMuz01FSYsGElBsv/lwnAseeD6mpXHXgqs7w73zYgSBSA4+mvsUDURv1vBFE
- 5PPnH+ZGE6QU/7jY8umz4qcW1Uo9o9woVhD8AidQ79nN9N4rNP1EuniaEf0PzlOIHPSA41HQZTM
- bhbwlRQ8ausxX+KoiijsPxxPLoTu1UoF6MFxmr7YVcCa0DHWr57FGi0XmWKqGBjtcQHqfNl9fCy
- fBZCVsD+QcIeczzoK2zw8wuROXk4nQ==
-X-Proofpoint-GUID: mdLt9ZCM8XIWcpbqmj5zi01s7-om5BIP
-X-Authority-Analysis: v=2.4 cv=OMkqHCaB c=1 sm=1 tr=0 ts=68de41b2 cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=JfrnYn6hAAAA:8 a=EUspDBNiAAAA:8 a=97tA0vavRIenci2OwCMA:9
- a=CjuIK1q_8ugA:10 a=uxP6HrT_eTzRwkO_Te1X:22 a=1CNFftbPRP8L7MoqJWF3:22
-X-Proofpoint-ORIG-GUID: mdLt9ZCM8XIWcpbqmj5zi01s7-om5BIP
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-02_03,2025-10-02_02,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 bulkscore=0 phishscore=0 adultscore=0
- priorityscore=1501 lowpriorityscore=0 clxscore=1015 spamscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
- definitions=main-2509270029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251002_021115_809712_E761D403 
-X-CRM114-Status: GOOD (  36.48  )
+X-CRM114-CacheID: sfid-20251002_023708_245219_A6A9C340 
+X-CRM114-Status: GOOD (  18.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,93 +91,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 02, 2025 at 12:14:37AM -0700, Wesley Cheng wrote:
-> 
-> 
-> On 10/1/2025 5:58 PM, Dmitry Baryshkov wrote:
-> > On Wed, Oct 01, 2025 at 03:05:31PM -0700, Wesley Cheng wrote:
-> > > For SuperSpeed USB to work properly, there is a set of HW settings that
-> > > need to be programmed into the USB blocks within the QMP PHY.  Ensure that
-> > > these settings follow the latest settings mentioned in the HW programming
-> > > guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
-> > > new ways to define certain registers, such as the replacement of TXA/RXA
-> > > and TXB/RXB register sets.  This was replaced with the LALB register set.
-> > > 
-> > > There are also some PHY init updates to modify the PCS MISC register space.
-> > > Without these, the QMP PHY PLL locking fails.
-> > > 
-> > > Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> > > ---
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 312 ++++++++-
-> > >   .../phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h    |  17 +
-> > >   .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h   |  12 +
-> > >   .../qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h   | 639 ++++++++++++++++++
-> > >   .../phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h  |  33 +
-> > >   .../phy-qcom-qmp-usb43-qserdes-com-v8.h       | 224 ++++++
-> > >   drivers/phy/qualcomm/phy-qcom-qmp.h           |   4 +
-> > >   7 files changed, 1240 insertions(+), 1 deletion(-)
-> > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
-> > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
-> > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
-> > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
-> > >   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-> > > index da2a7ad2cdcc..7211c71fe68c 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-> > > @@ -32,7 +32,9 @@
-> > >   #include "phy-qcom-qmp-qserdes-txrx-v7.h"
-> > >   #include "phy-qcom-qmp-qserdes-com-v8.h"
-> > > +#include "phy-qcom-qmp-usb43-qserdes-com-v8.h"
-> > >   #include "phy-qcom-qmp-qserdes-txrx-v8.h"
-> > > +#include "phy-qcom-qmp-qserdes-lalb-v8.h"
-> > >   #include "phy-qcom-qmp-qserdes-pll.h"
-> > > @@ -60,6 +62,8 @@
-> > >   #include "phy-qcom-qmp-pcs-v8_50.h"
-> > > +#include "phy-qcom-qmp-usb43-pcs-v8.h"
-> > 
-> > Let's not include USB-specific header into the generic header.
-> 
-> Hi Dmitry,
-> 
-> This is actually referring to the QMP PCS register set for the USB43 based
-> PHYs.  Even though it is a QMP PHY v8 (ie phy-qcom-qmp-pcs-v8), there are
-> some offset differences between the existing one and the one being added.
-> In that case, should we still have it in the USB specific QMP combo driver?
-> I guess it might make sense to have it there, as technically the usb43 based
-> phy is only really going to be there for USB4 capable cores, and I don't
-> think there's much that is common between usb43 and other HW that
-> utilize/share the QMP PHY.
+Changes in v5:
+ - Changed dev_err to dev_err_probe in qcom-spmi-sdam (and done
+   that even though I disagree - because I wanted this series to
+   *exclusively* introduce the minimum required changes to
+   migrate to the new API, but okay, whatever....!);
+ - Added missing REGMAP dependency in Kconfig for qcom-spmi-sdam,
+   phy-qcom-eusb2-repeater and qcom-coincell to resolve build
+   issues when the already allowed COMPILE_TEST is enabled
+   as pointed out by the test robot's randconfig builds.
 
-Yes, please.
+Changes in v4:
+ - Added selection of REGMAP_SPMI in Kconfig for qcom-coincell and
+   for phy-qcom-eusb2-repeater to resolve undefined references when
+   compiled with some randconfig
 
-> 
-> Thanks
-> Wesley Cheng
-> 
-> > 
-> > With that fixed:
-> > 
-> > 
-> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> > 
-> > 
-> > 
-> > > +
-> > >   /* QPHY_SW_RESET bit */
-> > >   #define SW_RESET				BIT(0)
-> > >   /* QPHY_POWER_DOWN_CONTROL */
-> > > 
-> > > -- 
-> > > linux-phy mailing list
-> > > linux-phy@lists.infradead.org
-> > > https://lists.infradead.org/mailman/listinfo/linux-phy
-> > 
+Changes in v3:
+ - Fixed importing "SPMI" namespace in spmi-devres.c
+ - Removed all instances of defensive programming, as pointed out by
+   jic23 and Sebastian
+ - Removed explicit casting as pointed out by jic23
+ - Moved ida_free call to spmi_subdev_release() and simplified error
+   handling in spmi_subdevice_alloc_and_add() as pointed out by jic23
+
+Changes in v2:
+ - Fixed missing `sparent` initialization in phy-qcom-eusb2-repeater
+ - Changed val_bits to 8 in all Qualcomm drivers to ensure
+   compatibility as suggested by Casey
+ - Added struct device pointer in all conversion commits as suggested
+   by Andy
+ - Exported newly introduced functions with a new "SPMI" namespace
+   and imported the same in all converted drivers as suggested by Andy
+ - Added missing error checking for dev_set_name() call in spmi.c
+   as suggested by Andy
+ - Added comma to last entry of regmap_config as suggested by Andy
+
+While adding support for newer MediaTek platforms, featuring complex
+SPMI PMICs, I've seen that those SPMI-connected chips are internally
+divided in various IP blocks, reachable in specific contiguous address
+ranges... more or less like a MMIO, but over a slow SPMI bus instead.
+
+I recalled that Qualcomm had something similar... and upon checking a
+couple of devicetrees, yeah - indeed it's the same over there.
+
+What I've seen then is a common pattern of reading the "reg" property
+from devicetree in a struct member and then either
+ A. Wrapping regmap_{read/write/etc}() calls in a function that adds
+    the register base with "base + ..register", like it's done with
+    writel()/readl() calls; or
+ B. Doing the same as A. but without wrapper functions.
+
+Even though that works just fine, in my opinion it's wrong.
+
+The regmap API is way more complex than MMIO-only readl()/writel()
+functions for multiple reasons (including supporting multiple busses
+like SPMI, of course) - but everyone seemed to forget that regmap
+can manage register base offsets transparently and automatically in
+its API functions by simply adding a `reg_base` to the regmap_config
+structure, which is used for initializing a `struct regmap`.
+
+So, here we go: this series implements the software concept of an SPMI
+Sub-Device (which, well, also reflects how Qualcomm and MediaTek's
+actual hardware is laid out anyway).
+
+               SPMI Controller
+                     |                ______
+                     |               /       Sub-Device 1
+                     V              /
+              SPMI Device (PMIC) ----------- Sub-Device 2
+                                    \
+                                     \______ Sub-Device 3
+
+As per this implementation, an SPMI Sub-Device can be allocated/created
+and added in any driver that implements a... well.. subdevice (!) with
+an SPMI "main" device as its parent: this allows to create and finally
+to correctly configure a regmap that is specific to the sub-device,
+operating on its specific address range and reading, and writing, to
+its registers with the regmap API taking care of adding the base address
+of a sub-device's registers as per regmap API design.
+
+All of the SPMI Sub-Devices are therefore added as children of the SPMI
+Device (usually a PMIC), as communication depends on the PMIC's SPMI bus
+to be available (and the PMIC to be up and running, of course).
+
+Summarizing the dependency chain (which is obvious to whoever knows what
+is going on with Qualcomm and/or MediaTek SPMI PMICs):
+    "SPMI Sub-Device x...N" are children "SPMI Device"
+    "SPMI Device" is a child of "SPMI Controller"
+
+(that was just another way to say the same thing as the graph above anyway).
+
+Along with the new SPMI Sub-Device registration functions, I have also
+performed a conversion of some Qualcomm SPMI drivers and only where the
+actual conversion was trivial.
+
+I haven't included any conversion of more complex Qualcomm SPMI drivers
+because I don't have the required bandwidth to do so (and besides, I think,
+but haven't exactly verified, that some of those require SoCs that I don't
+have for testing anyway).
+
+
+AngeloGioacchino Del Regno (7):
+  spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
+  nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
+  power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
+  phy: qualcomm: eusb2-repeater: Migrate to
+    devm_spmi_subdevice_alloc_and_add()
+  misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+  iio: adc: qcom-spmi-iadc: Migrate to
+    devm_spmi_subdevice_alloc_and_add()
+  iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
+
+ drivers/iio/adc/qcom-spmi-iadc.c              | 109 ++++++++----------
+ drivers/misc/Kconfig                          |   2 +
+ drivers/misc/qcom-coincell.c                  |  38 ++++--
+ drivers/nvmem/Kconfig                         |   1 +
+ drivers/nvmem/qcom-spmi-sdam.c                |  36 ++++--
+ drivers/phy/qualcomm/Kconfig                  |   2 +
+ .../phy/qualcomm/phy-qcom-eusb2-repeater.c    |  53 ++++++---
+ drivers/power/reset/qcom-pon.c                |  34 ++++--
+ drivers/spmi/spmi-devres.c                    |  24 ++++
+ drivers/spmi/spmi.c                           |  79 +++++++++++++
+ include/linux/spmi.h                          |  16 +++
+ 11 files changed, 283 insertions(+), 111 deletions(-)
 
 -- 
-With best wishes
-Dmitry
+2.51.0
+
 
 -- 
 linux-phy mailing list
