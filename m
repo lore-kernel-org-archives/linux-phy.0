@@ -4,67 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98140CAC5BB
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Oct 2025 03:03:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86BE9CAC5B0
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Oct 2025 07:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULXPiudGRMOoyTEad3zxqA0280BzO4YlZJQA1sivaDM=; b=ahZ7gndBRNbZJn
-	ExBZRDdMQ1Wn0XLBChvWBVYirgREdhO+ELJqlUPGbqrcZOapI4h4HQuwmpBdhB7+bppiD72Sg9a3g
-	ox4ocSB0AVZ3Rm8eXpA6kY48zfrXIDaFXl908nHi1yhdIFaqIUdyDBWr/houl4WiqPblHntT6gw18
-	ZWtm5XPKXFQRz8VuJTi84MneVR0HO7EAQSs6bvSBrqzhO0a/VXaUR1C6tWT6hwxipazTj5QR1WR4i
-	EGFGsThXqEwdGbe+QvijfgQVsO2bFDp8r9BlfrIYgZ1rF15lX3DxZIdvATlLHLEN8YhH/2g+892Tq
-	aFmrrfQQbCiaqwnfkQxg==;
+	List-Owner; bh=qb+SyvEwNSV/r05j/PurzKa6i3q4b43vY8jfojiEoaY=; b=L9OrXorqlU7a7T
+	haociiUCky250qusYmnhStUFjKWdDhBRq4xcfb5CNrinW0fkCSflJ/zNfsQHIqAYrm4aOtFLCK/je
+	PVJL8UDRbrW4Dqvy4IgWCnP+mYePKxZS6AB5zQssTBZ73HYhVH/aBlLLDyOXJCJ0S/yafr/Do8qVz
+	GmCmzBGBCjV3s2AxDbgf+74uiQkPC4j0BJ8DnDwuAZV8NOoLjPmNt7QJLvWPQFLzdEfqdHM5EXdf3
+	a3r+wU+gklBCf8CijHi3hlfLaB+C9ryHnAwjjX0o86T/cjjjBxTHONo0e8G1m0kJC6rNy8yXBxQaR
+	rER1RDRHFjWfldfrn8xA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v49bT-00000009Vh8-0Flf;
-	Thu, 02 Oct 2025 03:03:35 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1v4DWZ-00000009mAU-0299;
+	Thu, 02 Oct 2025 07:14:47 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v49bQ-00000009VgV-35pb
+	id 1v4DWV-00000009m9e-2vqd
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Oct 2025 03:03:34 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9B5AC481F1;
-	Thu,  2 Oct 2025 03:03:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AE6FC4CEF1;
-	Thu,  2 Oct 2025 03:03:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759374211;
-	bh=WvyBzuDaQ3blWA584dKJhZFO1Jq9yacx6hg9HYvyumU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=caTPnGOS+3sOts5DOMdVl+rCnhoiB0MlbofT5EwdNb2BXp2hzCek3hhT18JybYd+N
-	 EJy2GlrLW48LivFXMfkpVhd0K7THzQ8/Vfkem/51bJ58rb81zYlm6a6EU6TYjGov3u
-	 bs5gYfrrjLwa4F48Tp+m6HqOSWRV4Hqa6D/+ExHYaIkw1WHvusEebrZ8SnvmBt9HXe
-	 qZ4gFTx2jrJjBCJU/PmPVRCZyPtKBsJiNXfh8TafFpEcDGOYSEPUQ+hd70BMe8aeJN
-	 3zCc4gV6hGx1Cnbfwlj5l4J6zqj0AqnyxSFlUrbc9yPv5kpMh5D3cIVq+2IL5Col1D
-	 U7X7lYNmX465g==
-Date: Wed, 1 Oct 2025 22:03:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Josua Mayer <josua@solid-run.com>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 phy 12/17] dt-bindings: phy: lynx-28g: add compatible
- strings per SerDes and instantiation
-Message-ID: <20251002030330.GA2964719-robh@kernel.org>
-References: <20250926180505.760089-1-vladimir.oltean@nxp.com>
- <20250926180505.760089-13-vladimir.oltean@nxp.com>
- <20250930140735.mvo3jii7wgmzh2bs@skbuf>
+	Thu, 02 Oct 2025 07:14:45 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5925kDb5007785
+	for <linux-phy@lists.infradead.org>; Thu, 2 Oct 2025 07:14:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	wsrDpj5hUw4YEIy6N4WOTSRjb0/flPiO/cgRAbN+m0U=; b=T0cTGpVkUSK/3Zx/
+	w+TJQr4hv4y+243iJyTp4LqSp2ohJ/i4HGZVrMXTEP+nYl3jvG027aNh7YBHzGsb
+	/SXP5cyk6AnZ+12zvbXidUjOgNif0mSMtDgKmWJ/zYUpzGrZw9eTdQBmyigv6c0V
+	pRhRk7aLnwYa3whwOSvviELvLkdNn0917Rzb/O9HRvm/A42k4kVG3oItY3EeMu3p
+	CQmjPiA3weTgP9MsTSNDvRti4254wuTxREynUHA1bht8XaxYZLB9lItZXchoDnGi
+	3RInFliwhqgU5Mauu+i9VCWwQJ2avP1jMkJgptqHzFR44TsI6FaxwojynxRyHFNr
+	Ct9G0Q==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49hkhh069m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 02 Oct 2025 07:14:42 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-27356178876so4681075ad.1
+        for <linux-phy@lists.infradead.org>; Thu, 02 Oct 2025 00:14:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759389281; x=1759994081;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wsrDpj5hUw4YEIy6N4WOTSRjb0/flPiO/cgRAbN+m0U=;
+        b=tvNoKSrYvpWDAuUL22uKbhQVxMT2RKDZxZkU6Eh3zZrWNXRBvBxsDZV9aSW/8276vW
+         C08iWoxMAnJaKAWTGI96GLuW4rrWleZWP0HN2Ue2zu5lcjALnmSdg+IGme2r5XnPJ0Be
+         Xptbk/0UuR6jjDgF9NOZlg0tSzVhvNxKwroKl9x7VYd5KbjYw9aTb5NRWdLbZXhzeIl+
+         +8SUAyqd6hH6kbP/tRu8Gj3ET7x/025zBMFcCbgWvfIEaXfMBaVVa/IZp2xK2jS1Zeuy
+         4OGHM5smPWQ09kMBk42+Mf1S+cgmtwhQI1+IIlbBP/1tYiWoBB22kX3AnfAjz7KU9k9n
+         S8nQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUUYe6/QEGqk8ABchZRJyB/HXLIALIomjM34ddmW8SugzpcyMSRYwzwqIGNJjU30eaDD3hXYUOiXgg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz2p/K/e7ICdv6xnmnPNkSmldZzNrFznwSE/OPTTQxHZAVECTzn
+	8FYjBSqW4X7+1gg0d38X6fJHd4gGIQuRugZuV7/oWxsxYd/NV7SJc4OFfTpIx7ipW85o4CrzYwY
+	VN1eZZjQDsYrmHCXglRj/cuTAc+/ZVMITjsvl7jp8eU4Od2Fr0GPHhJS9DaNsI9CiZlGY
+X-Gm-Gg: ASbGnctNXcs+KwdljDVjSUP4Xnr+k6sNU4NV4APeyVfhS9CNqMoArkmSG6JTeIKonsC
+	kLL40pj23kLIiXsQRlThDcHB4MdQ65NeG0snp1T2cQ2YtUHr5LUf2zOnp1zL0JY5YIBVpCX6YZ1
+	DY3tMWVowVmDtqwTvSXPYqtlbFxtOb94tmqIyTyCQhGgx1Z9I5YjpxegAr3HZe9JjsihV81K7/B
+	BW9wjDaMhxqOd0XtzoV879uLI7wm+KHXRU60V+8ufkxxwIj0EVXE84Uh+TUsiSSajuXK/WVhOZo
+	qhf+DuedKciHvjyI+hlNNlO8iR+HH2eTRXDjO6tBXIemEEr40veLp0sRWW6bPbkV/+ie7ATJS/Y
+	2qrbAA4dy/LKaKPAjZIpi2Y5sj37OURwtEKpc
+X-Received: by 2002:a17:902:ce0f:b0:27e:f16f:618b with SMTP id d9443c01a7336-28e7f2a6437mr75646255ad.24.1759389280947;
+        Thu, 02 Oct 2025 00:14:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFBqcQoIzfkxTOkZwP9SZ5axnu1siGWGEzipZSpgfQ+MGK5IUYqzt2bTf5JM9Q+kuHEuFeBsQ==
+X-Received: by 2002:a17:902:ce0f:b0:27e:f16f:618b with SMTP id d9443c01a7336-28e7f2a6437mr75645935ad.24.1759389280423;
+        Thu, 02 Oct 2025 00:14:40 -0700 (PDT)
+Received: from [192.168.1.239] (syn-075-080-180-230.res.spectrum.com. [75.80.180.230])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-28e8d1d5680sm15167845ad.96.2025.10.02.00.14.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 02 Oct 2025 00:14:39 -0700 (PDT)
+Message-ID: <8996bd96-0660-70ba-63f4-51111219d146@oss.qualcomm.com>
+Date: Thu, 2 Oct 2025 00:14:37 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250930140735.mvo3jii7wgmzh2bs@skbuf>
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v4 07/10] phy: qualcomm: qmp-combo: Update QMP PHY with
+ Glymur settings
+Content-Language: en-US
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
+        kishon@kernel.org, vkoul@kernel.org, gregkh@linuxfoundation.org,
+        robh@kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20251001220534.3166401-1-wesley.cheng@oss.qualcomm.com>
+ <20251001220534.3166401-8-wesley.cheng@oss.qualcomm.com>
+ <ra3bq7guxunk2n7mbrjlefxvxu45clmwzp74vq7bqd2xvp2fv5@z5skxjxs4yxp>
+From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+In-Reply-To: <ra3bq7guxunk2n7mbrjlefxvxu45clmwzp74vq7bqd2xvp2fv5@z5skxjxs4yxp>
+X-Proofpoint-GUID: 9pYNW_GtGak7H2vWGtRFgFeeKlrmtfrJ
+X-Authority-Analysis: v=2.4 cv=cILtc1eN c=1 sm=1 tr=0 ts=68de2662 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=agQD+r7xwyS+FYqxhQjztw==:17
+ a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=JfrnYn6hAAAA:8 a=EUspDBNiAAAA:8
+ a=INxguLwuHvTa_v7rZvUA:9 a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDAyMDA0NyBTYWx0ZWRfX7uFC/uh1+vL/
+ 9ZtO4NscBLSJtctZ2Kei2uaWvFK4sxyVArRh2h1dgpERu+ohHyc/AefYhdPC+Kfo/ot9YgIjsb5
+ +vJRn/5JcgqVlw9qWgoiyZCUrg22ww5aL5rnUGkRyYcEfy4Op+Tt6uD41mJ0zcEd72yTlJfSOyy
+ PWmxOAq0znHBh8SkpCdcaerFhl9yChVNxuXiYMdB+anl+stk42tcbj2IFFJpro2EMMh29+ApeR3
+ NoeiQLZy8kyIFUKX3lxXPcmiQfObUT2AgL+lNSSf4r0oQULJ7f/qyy6g3AiCnxiHt0w30LdjhFO
+ MlRxfxVVerLBvNwrQZJc6o7wKOnXbtNuNA6zym4aD5p3d+ZkrYWPwsrwH7fMqhNsR0d1HVZlEXy
+ ljZCD2axTfovSZx4jT5aVnnC2iLiAw==
+X-Proofpoint-ORIG-GUID: 9pYNW_GtGak7H2vWGtRFgFeeKlrmtfrJ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-02_03,2025-09-29_04,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 phishscore=0 lowpriorityscore=0 priorityscore=1501
+ impostorscore=0 bulkscore=0 clxscore=1015 malwarescore=0 adultscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2509150000
+ definitions=main-2510020047
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251001_200332_826762_9CA056B5 
-X-CRM114-Status: GOOD (  56.20  )
+X-CRM114-CacheID: sfid-20251002_001443_865471_1267E0A7 
+X-CRM114-Status: GOOD (  24.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,349 +133,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 30, 2025 at 05:07:35PM +0300, Vladimir Oltean wrote:
-> On Fri, Sep 26, 2025 at 09:05:00PM +0300, Vladimir Oltean wrote:
-> > Going by the generic "fsl,lynx-28g" compatible string and expecting all
-> > SerDes instantiations on all SoCs to use it was a mistake.
-> > 
-> > They all share the same register map, sure, but the number of protocol
-> > converters and lanes which are instantiated differs in a way that isn't
-> > detectable by the programming interface.
-> > 
-> > Using a separate compatible string per SerDes instantiation is
-> > sufficient for any device driver to distinguish these features and/or
-> > any instance-specific quirk. It also reflects how the SoC reference
-> > manual provides different tables with protocol combinations for each
-> > SerDes. NXP clearly documents these as not identical, and refers to them
-> > as such (SerDes 1, 2, etc).
-> > 
-> > The other sufficient approach for Lynx 28G would be to list in the
-> > device tree all protocols supported by each lane. That would be
-> > insufficient for the very similar Lynx 10G SerDes however, for which
-> > there exists a higher degree of variability in the PCCR register values
-> > that need to be written per protocol. This attempt can be seen in this
-> > unmerged patch set for Lynx 10G:
-> > https://lore.kernel.org/linux-phy/20230413160607.4128315-3-sean.anderson@seco.com/
-> > 
-> > but that approach is more drawn-out and more prone to errors, whereas
-> > this one is more succinct and obviously correct.
-> > 
-> > One aspect which is different with the per-SoC compatible strings is
-> > that they have one PHY provider for each lane (and #phy-cells = <0> in
-> > lane sub-nodes), rather than "fsl,lynx-28g" which has a single PHY
-> > provider for all lanes (and #phy-cells = <1> in the top-level node).
-> > 
-> > This is done to fulfill Josua Mayer's request:
-> > https://lore.kernel.org/lkml/02270f62-9334-400c-b7b9-7e6a44dbbfc9@solid-run.com/
-> > to have OF nodes for each lane, so that we can further apply schemas
-> > such as Documentation/devicetree/bindings/phy/transmit-amplitude.yaml
-> > individually.
-> > 
-> > This is the easiest and most intuitive way to describe that. The above
-> > is not the only electrical tuning that needs to be done, but rather the
-> > only one currently standardized in a schema. TX equalization parameters
-> > are TBD, but we need to not limit ourselves to just what currently exists.
-> > 
-> > Luckily, we can overlap the modern binding format over the legacy one
-> > and they can coexist without interfering. Old kernels use compatible =
-> > "fsl,lynx-28g" and the top-level PHY provider, whereas new kernels probe
-> > on e.g. compatible = "fsl,lx2160a-serdes1" and use the per-lane PHY
-> > providers.
-> > 
-> > Overlaying modern on top of legacy is only necessary for SerDes 1 and 2.
-> > LX2160A SerDes #3 (a non-networking SerDes) is not yet present in any
-> > device trees in circulation, and will only have the device-specific
-> > compatible (even though it shares the Lynx 28G programming model,
-> > specifying the "fsl,lynx-28g" compatible string for it provides no
-> > benefit that I can see).
-> > 
-> > Change the expected name of the top-level node to "serdes", and update
-> > the example too.
-> > 
-> > Cc: Rob Herring <robh@kernel.org>
-> > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > Cc: Conor Dooley <conor+dt@kernel.org>
-> > Cc: devicetree@vger.kernel.org
-> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> > ---
-> > v2->v3:
-> > - re-add "fsl,lynx-28g" as fallback compatible, and #phy-cells = <1> in
-> >   top-level "serdes" node
-> > - drop useless description texts
-> > - fix text formatting
-> > - schema is more lax to allow overlaying old and new required properties
-> > v1->v2:
-> > - drop the usage of "fsl,lynx-28g" as a fallback compatible
-> > - mark "fsl,lynx-28g" as deprecated
-> > - implement Josua's request for per-lane OF nodes for the new compatible
-> >   strings
-> > 
-> >  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 159 +++++++++++++++++-
-> >  1 file changed, 152 insertions(+), 7 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> > index ff9f9ca0f19c..e8b3a48b9515 100644
-> > --- a/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-28g.yaml
-> > @@ -9,21 +9,123 @@ title: Freescale Lynx 28G SerDes PHY
-> >  maintainers:
-> >    - Ioana Ciornei <ioana.ciornei@nxp.com>
-> >  
-> > +description:
-> > +  The Lynx 28G is a multi-lane, multi-protocol SerDes (PCIe, SATA, Ethernet)
-> > +  present in multiple instances on NXP LX2160A and LX2162A SoCs. All instances
-> > +  share a common register map and programming model, however they differ in
-> > +  supported protocols per lane in a way that is not detectable by said
-> > +  programming model without prior knowledge. The distinction is made through
-> > +  the compatible string.
-> > +
-> >  properties:
-> >    compatible:
-> > -    enum:
-> > -      - fsl,lynx-28g
-> > +    oneOf:
-> > +      - const: fsl,lynx-28g
-> > +        deprecated: true
-> > +        description:
-> > +          Legacy compatibility string for Lynx 28G SerDes. Any assumption
-> > +          regarding whether a certain lane supports a certain protocol may
-> > +          be incorrect. Deprecated except when used as a fallback. Use
-> > +          device-specific strings instead.
-> > +      - items:
-> > +          - const: fsl,lx2160a-serdes1
-> > +          - const: fsl,lynx-28g
-> > +      - items:
-> > +          - const: fsl,lx2160a-serdes2
-> > +          - const: fsl,lynx-28g
-> > +      - items:
-> > +          - const: fsl,lx2162a-serdes1
-> > +          - const: fsl,lynx-28g
-> > +      - items:
-> > +          - const: fsl,lx2162a-serdes2
-> > +          - const: fsl,lynx-28g
-> > +      - const: fsl,lx2160a-serdes3
-> >  
-> >    reg:
-> >      maxItems: 1
-> >  
-> > -  "#phy-cells":
-> > -    const: 1
-> > +  "#address-cells": true
-> > +
-> > +  "#size-cells": true
-> > +
-> > +  "#phy-cells": true
-> > +
-> > +patternProperties:
-> > +  "^phy@[0-9a-f]+$":
-> > +    type: object
-> > +    description: Individual SerDes lane acting as PHY provider
-> > +
-> > +    properties:
-> > +      reg:
-> > +        description: Lane index as seen in register map
-> > +        maxItems: 1
-> > +
-> > +      "#phy-cells":
-> > +        const: 0
-> > +
-> > +    required:
-> > +      - reg
-> > +      - "#phy-cells"
-> > +
-> > +    additionalProperties: false
-> >  
-> >  required:
-> >    - compatible
-> >    - reg
-> > -  - "#phy-cells"
-> > +
-> > +allOf:
-> > +  - if:
-> > +      properties:
-> > +        compatible:
-> > +          contains:
-> > +            const: fsl,lynx-28g
-> > +    then:
-> > +      # Legacy case: parent is the PHY provider, cell encodes lane index
-> > +      properties:
-> > +        "#phy-cells":
-> > +          const: 1
-> > +      required:
-> > +        - "#phy-cells"
-> > +
-> > +  - if:
-> > +      properties:
-> > +        compatible:
-> > +          contains:
-> > +            enum:
-> > +              - fsl,lx2160a-serdes1
-> > +              - fsl,lx2160a-serdes2
-> > +              - fsl,lx2160a-serdes3
-> > +              - fsl,lx2162a-serdes1
-> > +              - fsl,lx2162a-serdes2
-> > +    then:
-> > +      # Modern binding: lanes must have their own nodes
-> > +      properties:
-> > +        "#address-cells":
-> > +          const: 1
-> > +        "#size-cells":
-> > +          const: 0
-> > +      required:
-> > +        - "#address-cells"
-> > +        - "#size-cells"
-> > +
-> > +  # LX2162A SerDes 1 has fewer lanes than the others
-> > +  - if:
-> > +      properties:
-> > +        compatible:
-> > +          contains:
-> > +            const: fsl,lx2162a-serdes1
-> > +    then:
-> > +      patternProperties:
-> > +        "^phy@[0-9a-f]+$":
-> > +          properties:
-> > +            reg:
-> > +              enum: [4, 5, 6, 7]
-> > +    else:
-> > +      patternProperties:
-> > +        "^phy@[0-9a-f]+$":
-> > +          properties:
-> > +            reg:
-> > +              enum: [0, 1, 2, 3, 4, 5, 6, 7]
-> >  
-> >  additionalProperties: false
-> >  
-> > @@ -32,9 +134,52 @@ examples:
-> >      soc {
-> >        #address-cells = <2>;
-> >        #size-cells = <2>;
-> > -      serdes_1: phy@1ea0000 {
-> > -        compatible = "fsl,lynx-28g";
-> > +
-> > +      serdes_1: serdes@1ea0000 {
-> > +        compatible = "fsl,lx2160a-serdes1", "fsl,lynx-28g";
-> >          reg = <0x0 0x1ea0000 0x0 0x1e30>;
-> > +        #address-cells = <1>;
-> > +        #size-cells = <0>;
-> >          #phy-cells = <1>;
-> > +
-> > +        phy@0 {
-> > +          reg = <0>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@1 {
-> > +          reg = <1>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@2 {
-> > +          reg = <2>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@3 {
-> > +          reg = <3>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@4 {
-> > +          reg = <4>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@5 {
-> > +          reg = <5>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@6 {
-> > +          reg = <6>;
-> > +          #phy-cells = <0>;
-> > +        };
-> > +
-> > +        phy@7 {
-> > +          reg = <7>;
-> > +          #phy-cells = <0>;
-> > +        };
-> >        };
-> >      };
-> > -- 
-> > 2.34.1
-> >
-> 
-> I should have realized sooner when Rob/Josua requested the changes for
-> backwards schema compatibility in v2:
-> https://lore.kernel.org/lkml/20250925080317.2ocgybitliwddhcf@skbuf/
-> that despite our attempts to preserve compatibility with old kernels,
-> we actually fail to do that. Actually I should have documented my
-> earlier thought process better, where I already came to that conclusion,
-> but which I had forgotten when told that this could work...
-> 
-> The SerDes schema itself is technically backwards-compatible, but the
-> problem is with consumers, which aren't. In old device trees, they have:
-> 
-> 	phys = <&serdes_1 0>;
-> 
-> and in new ones, they have:
-> 
-> 	phys = <&serdes_1_lane_a>;
-> 
-> Because the consumer has a single "phys" phandle to the PHY provider, it
-> either has to point to one, or to the other. But on old kernels, we do
-> not register PHY providers per lane, so "phys = <&serdes_1_lane_a>"
-> results in a broken reference.
-> 
-> There are 2 directions to go from here:
-> 1. Have optional per-lane "phy" OF node children, which exist solely for
->    tuning electrical parameters. We need to keep the top-level SerDes as
->    the only PHY provider, with #phy-cells = <1> denoting the lane.
-> 
-> 2. Accept that keeping "fsl,lynx-28g" and overlaid properties has
->    absolutely no practical benefit, and drop them (effectively returning
->    to Conor's suggestion, as implemented in v2)
-> 
-> 3. Extend the schema and the driver support for it as a backportable bug
->    fix, to allow registering PHY providers for lanes with OF nodes in
->    stable kernels. This avoids regressing when the device trees are
->    updated, assuming the stable kernel is also updated.
-> 
-> It's not that I particularly like #2, but going with #1 would imply that
-> lane OF nodes exist, but the "phys" phandles do not point to them.
-> 
-> Combine that with the fact that anything we do with the 28G Lynx
-> bindings will have to be replicated, for uniformity's sake, with the
-> upcoming 10G Lynx SerDes binding (very similar hardware IP), and #1 is
-> suddenly not looking so pretty at all. I.e. introducing the 10G Lynx
-> bindings like the 28G Lynx ones would mean deviating from the widely
-> established norm, and introducing them like the widely established norm
-> would mean deviating from the 28G Lynx. I can easily see how someone
-> might look at them one day and think "hmm, can't we make them more
-> uniform?"
-> 
-> OTOH, the fact that device tree updates require kernel updates (as
-> implied by #2) is acceptably by everyone in this thread who expressed an
-> opinion on this topic.
-> 
-> As for option #3, while IMO it would be a justified "new feature as
-> bug fix", it sounds a bit counterintuitive and I'm afraid I won't manage
-> to convince all maintainers along the way that this is the way forward.
-> 
-> I'll wait for the merge window to close before reposting anything, but
-> I'd like an explicit ack from Rob and Josua in the meantime, whose
-> change request I'd be effectively reverting, to make sure that this
-> topic is closed.
 
-If #2 is not going to upset anyone (that their device stopped working), 
-then that route is fine.
 
-Rob
+On 10/1/2025 5:58 PM, Dmitry Baryshkov wrote:
+> On Wed, Oct 01, 2025 at 03:05:31PM -0700, Wesley Cheng wrote:
+>> For SuperSpeed USB to work properly, there is a set of HW settings that
+>> need to be programmed into the USB blocks within the QMP PHY.  Ensure that
+>> these settings follow the latest settings mentioned in the HW programming
+>> guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
+>> new ways to define certain registers, such as the replacement of TXA/RXA
+>> and TXB/RXB register sets.  This was replaced with the LALB register set.
+>>
+>> There are also some PHY init updates to modify the PCS MISC register space.
+>> Without these, the QMP PHY PLL locking fails.
+>>
+>> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 312 ++++++++-
+>>   .../phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h    |  17 +
+>>   .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h   |  12 +
+>>   .../qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h   | 639 ++++++++++++++++++
+>>   .../phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h  |  33 +
+>>   .../phy-qcom-qmp-usb43-qserdes-com-v8.h       | 224 ++++++
+>>   drivers/phy/qualcomm/phy-qcom-qmp.h           |   4 +
+>>   7 files changed, 1240 insertions(+), 1 deletion(-)
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+>> index da2a7ad2cdcc..7211c71fe68c 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp.h
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+>> @@ -32,7 +32,9 @@
+>>   #include "phy-qcom-qmp-qserdes-txrx-v7.h"
+>>   
+>>   #include "phy-qcom-qmp-qserdes-com-v8.h"
+>> +#include "phy-qcom-qmp-usb43-qserdes-com-v8.h"
+>>   #include "phy-qcom-qmp-qserdes-txrx-v8.h"
+>> +#include "phy-qcom-qmp-qserdes-lalb-v8.h"
+>>   
+>>   #include "phy-qcom-qmp-qserdes-pll.h"
+>>   
+>> @@ -60,6 +62,8 @@
+>>   
+>>   #include "phy-qcom-qmp-pcs-v8_50.h"
+>>   
+>> +#include "phy-qcom-qmp-usb43-pcs-v8.h"
+> 
+> Let's not include USB-specific header into the generic header.
+
+Hi Dmitry,
+
+This is actually referring to the QMP PCS register set for the USB43 
+based PHYs.  Even though it is a QMP PHY v8 (ie phy-qcom-qmp-pcs-v8), 
+there are some offset differences between the existing one and the one 
+being added.  In that case, should we still have it in the USB specific 
+QMP combo driver?  I guess it might make sense to have it there, as 
+technically the usb43 based phy is only really going to be there for 
+USB4 capable cores, and I don't think there's much that is common 
+between usb43 and other HW that utilize/share the QMP PHY.
+
+Thanks
+Wesley Cheng
+
+> 
+> With that fixed:
+> 
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> 
+> 
+> 
+>> +
+>>   /* QPHY_SW_RESET bit */
+>>   #define SW_RESET				BIT(0)
+>>   /* QPHY_POWER_DOWN_CONTROL */
+>>
+>> -- 
+>> linux-phy mailing list
+>> linux-phy@lists.infradead.org
+>> https://lists.infradead.org/mailman/listinfo/linux-phy
+> 
 
 -- 
 linux-phy mailing list
