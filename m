@@ -4,123 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC7E9CAC5BB
-	for <linux-phy@archiver.kernel.org>; Sat,  4 Oct 2025 06:46:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0F5CCCA471
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Oct 2025 07:56:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xFolf2etjyoI6DGd7Z7uIRNrJ/caAJZkkfffwDGwZow=; b=yBoTuctcLsgHEm
-	KgVlOh0ttpiMqxboQzv3m2Dbi4uIP6zJAsBTrp99fiFOxWBVghRE1r4OXT0kUpQwBgGL8kJtHyzpr
-	nMyxri0dMGiI0uH8Ba97M60a/oLQgVuzq1gDnrlbXeX/9F0WLBQtBnFMh5IxWhPmrMKjCoNyJhENx
-	6ktkymio1RIS5y7D7v7DSVdsfc7JpEHcboaAWVwkgbI05YGuevZm5bDVE3vGdrL4agKRfRc5vtmiX
-	WATZtDx+zbcJB9iebQNr+0nLq47IqwKf6ThK8GIBzBt7Rgou41Ty3ghSzGmki9OIwSSVQSrB9bApZ
-	bo7tQ7xoNxyrnOwb1e2g==;
+	List-Owner; bh=r83x+D3tGGZMOcOrelnJ7yLwVz0zGZPpR2YyLADWGu0=; b=vw4VGtmKxodoJ9
+	KIlAq9AmLnrqdcFfXYtNRLxcaTA9KNVpDmUYc1MHVy0YpMDwUclB2JVIpW9hwbB7roLPJo9L7EX7u
+	Inm8vOQZkgtdWdwkLtTsMpfHMr3S2wlWnnd5IkqsDq7lhEHOqSGK7RSCoNoJUcglVZXFU9oDYEOIp
+	7suaFlJY6w6ZLil2wGazzWsP383ZLwI3k8kr9gp0mDiEvjZK8tZJzVfkRX9TI3hmdZxwY9jAy3N4L
+	5ep+TSivGnT7NPijgjwT8F69RMQp5m4lrNM9UYNA0SJK2EqS9DziSCw6/1YjtYv3r9v4zhp/p2QwQ
+	hRE0Pjt+joaDNG97wZ4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4w2V-0000000DVri-0s15;
-	Sat, 04 Oct 2025 06:46:43 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1v5g4w-0000000H9AT-1DMT;
+	Mon, 06 Oct 2025 07:56:18 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v4w2S-0000000DVrL-3Rwh
+	id 1v5g4q-0000000H98y-3SdU
 	for linux-phy@lists.infradead.org;
-	Sat, 04 Oct 2025 06:46:42 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5940Jktf023385
-	for <linux-phy@lists.infradead.org>; Sat, 4 Oct 2025 06:46:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=SxgQPHjjkx8c1JmVgGvAmy4X
-	988IpWVIdlbWqL8CFH0=; b=jRDARAtjbq1gFjlUyxD12R0QuUfkOgrk6+KqdLVf
-	+fWmZWHod+zsco+B/5ABnyRJ/ITSHHBm7Zk7yrJiD81xjkkNd8ls5vT5DOQcxdWc
-	uu0f+iDA94oeWUjj+2fRV+ht4luJSUjrN/7n9zM8vlDeYr3G9S2H1BcnWHtx9XC+
-	l5sOEEoKO8c4CeCjPblMezVV1CPAsX1MaDv6GDIfP6I8JjdUSeKlXK8LYM/qeuIn
-	73HJ/VlSyT3sPX5kbmSuR5ALzJ+YVwI+xcicBd/AwHts8p7Voo3oZEJCzD64PjYr
-	tGTdnEef4yFfu9YJObPWZSuurQUdXZb1ZkDDVxMvBX//pw==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49jrxn0gmp-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 04 Oct 2025 06:46:39 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4d91b91b6f8so37637931cf.3
-        for <linux-phy@lists.infradead.org>; Fri, 03 Oct 2025 23:46:39 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759560398; x=1760165198;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SxgQPHjjkx8c1JmVgGvAmy4X988IpWVIdlbWqL8CFH0=;
-        b=r+DV0TZjJj3nz4GHaRFhWtNVnPceidSLxjwTIvc0ajRy9NNyt57/fIe3eWR/AhxuPE
-         EwZWp2ITe5En7uGCZW0DYmjIavC4XSri8Mp0Vb2fYomREdvk74s99HqNYysijKT9Lljo
-         sDthjOpJt6QWJf/Upar6BuGH6euiASYwhkD4oXRTwBet6jM+yIY93gPYS8ciBBfgYLd7
-         DAKL/nRlwJDdZ5YvM9uDXePiNL5/R/GCU/MQGB+6mGaIjvoW8UihjcH1zFEiCG5dAgjC
-         akOTENKcAcw0KshJ25N5o+H971KyoXWhNzmnSYou/fA5Dp77b1yUxOul6pU6zpn6Fo2U
-         LLXw==
-X-Forwarded-Encrypted: i=1; AJvYcCVUMbd8X0SPNWNEgGQhJtHr0DHxcX+jKgvDW0gOotNYoDZOlhtBbhqSG2wbrqoJgeOwWsTcCNjH4Yc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwzqypHjP11+kuy0sEVAwQyjA1PE7Z1O6MNZ5pvcmF37wivfMNa
-	VKM1Qa3DS9MT1+AEJfGQah+fhZs6z+DDohuWlWydQoEGhCA7MBq8HiRrx5FCAnAPI/6Tv8mAORe
-	GGvl4iSI2TsBa9kIJOn6ceHqWNOV0DflrpvmBQhKq7/LTEVaqN0ehNeC/ub0PsViC3zFc
-X-Gm-Gg: ASbGncskSoRHG3VFdhavjaDUC2+MdP64vm6evs1gTa4TeuzyRZCQ9OPMqKTr+JBCQKw
-	i5GpP+EJHllkT4Zfi18S0A8+/8cblGWgbmi8NOdbC22QCwVtGLtPhyhM3wkjt6G3sygejW6yTNp
-	JR/WiQASyMdSrfQdsDCHTrnDCGw1epLtLqlbocG+pi/pn0E6QOiZxFm3g0jrnQVKWj83Zv/SvRr
-	00q4CNeaBcDTOtmDJvR/sZ81u9IGEHwvYXRk3VQZVtZAtCLMjNbYwVAiCBrUDRKd028ESqyzHX1
-	mMS8GdpHdZ7Xtt0St0rTofidc8Q/DrQTxuXs25wsff+dBOohNsjbP+eM3r+jfbRhWs+D2Yahyxe
-	QU0eKgSgahEv/1a8hMIGOx2f1cKLF45m2ytAFNebkBZNcbKaJiUu51ci/1w==
-X-Received: by 2002:a05:622a:1445:b0:4d0:7158:b18f with SMTP id d75a77b69052e-4e576b1372dmr72499371cf.63.1759560398175;
-        Fri, 03 Oct 2025 23:46:38 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGQvslGGL2S9yvJwcUTY/EvgxyUZIovyV0WIRAR6wT5X3G5XXzp9YE1BKwE2cINLOH+uPi89w==
-X-Received: by 2002:a05:622a:1445:b0:4d0:7158:b18f with SMTP id d75a77b69052e-4e576b1372dmr72499151cf.63.1759560397681;
-        Fri, 03 Oct 2025 23:46:37 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-58b01134eeasm2555271e87.34.2025.10.03.23.46.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 03 Oct 2025 23:46:36 -0700 (PDT)
-Date: Sat, 4 Oct 2025 09:46:33 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Xilin Wu <sophon@radxa.com>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 2/3] phy: qcom: qmp-combo: get the USB3 & DisplayPort
- lanes mapping from DT
-Message-ID: <3i3euwqqvtqgyqgxbylbrj3dk2cyyavinb5v7ocevi4x6o25y5@66fodqy736kq>
-References: <20250930-topic-x1e80100-hdmi-v4-0-86a14e8a34ac@linaro.org>
- <20250930-topic-x1e80100-hdmi-v4-2-86a14e8a34ac@linaro.org>
- <uozgwot7yuwmaiwmqoo6ickblpqe52tnj44tnxcorygqxwou52@hksvktgq5zp7>
- <9d020a8e-22d8-4f1f-803c-d00bb912f699@linaro.org>
+	Mon, 06 Oct 2025 07:56:17 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20251006075605epoutp013304f2d0203160359ed4d83fb88c128a~r189tTiS50503805038epoutp018
+	for <linux-phy@lists.infradead.org>; Mon,  6 Oct 2025 07:56:05 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20251006075605epoutp013304f2d0203160359ed4d83fb88c128a~r189tTiS50503805038epoutp018
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1759737365;
+	bh=y3jKOu9b+P0Ih93AICIcneY/oMkTMn7T+Krlp2E8KKA=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=F4D8FWIXj/ijjKU7Fj+GximToN7e4DiY0q0oKVkmyNh3sFfuzgBLg+3Fwv+21A/8g
+	 l3QSx0pmM3KxioyAccJ3TErPRfOO98ZbHkYNsdQP+2SSnkZNlnjjfqFwc9jMx9W2b/
+	 JWACmnEZu08FxzRSomen6pSfhzB+UlIKrNMSy6as=
+Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
+	epcas5p2.samsung.com (KnoxPortal) with ESMTPS id
+	20251006075604epcas5p2340605e3e9393140844ab163feb26c00~r189NvSTp1431114311epcas5p24;
+	Mon,  6 Oct 2025 07:56:04 +0000 (GMT)
+Received: from epcas5p4.samsung.com (unknown [182.195.38.94]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4cgBR75fF4z3hhT3; Mon,  6 Oct
+	2025 07:56:03 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+	20251006075603epcas5p1b56873cad2f305bcdee52ea7c550529f~r187tLzhK0791807918epcas5p1R;
+	Mon,  6 Oct 2025 07:56:03 +0000 (GMT)
+Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20251006075600epsmtip20e24c5f8001f5c1fad71053ea9c0d0e8~r1842CSE20799907999epsmtip2K;
+	Mon,  6 Oct 2025 07:55:59 +0000 (GMT)
+From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
+To: "'Alim Akhtar'" <alim.akhtar@samsung.com>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <andre.draszik@linaro.org>,
+	<peter.griffin@linaro.org>, <kauschluss@disroot.org>,
+	<ivo.ivanov.ivanov1@gmail.com>, <igor.belwon@mentallysanemainliners.org>,
+	<m.szyprowski@samsung.com>, <s.nawrocki@samsung.com>
+Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-samsung-soc@vger.kernel.org>, <rosa.pila@samsung.com>,
+	<dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
+	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
+In-Reply-To: <001301dc310c$b7a78550$26f68ff0$@samsung.com>
+Subject: RE: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+ ExynosAutov920 HS phy compatible
+Date: Mon, 6 Oct 2025 13:25:58 +0530
+Message-ID: <000001dc3696$a97bcf10$fc736d30$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9d020a8e-22d8-4f1f-803c-d00bb912f699@linaro.org>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA0MDAwMSBTYWx0ZWRfX+2E3JmI2zWXC
- Qci7UcMEZpuzqLOvEPQqsnObnpNFGqiMJr//dIRnPftTQyn/q/CTA9cdBYCfSM2LV7qnbpKrdbs
- 3/+lOPWeGZFNB5hBwEwtBe4g6KghY2pmJV86ly44z5J9BuV5hoY71sA2CORvumMATsyRq/z/Mwg
- FpjLi6Ycqf8u4LG9ztUCiDeMh8HAB82GqzWWY3HLZMEnhp0hzBt+FtYcH8+3qj/8YNwW5pHmQ2T
- kGwyaZbEvFeUtqoVYLBjG2p7YmbFcyIRUhdOestAxrQf+wri4hV/7YhvmMv9LA1xWlyc/7ymZx5
- 3THjzqxYp5jEvVQ7jFaDmLDbyT0Fp88bQEaKK3Cutgls262CXMD0TK/LG4ol4j8IGWKv8xXoeN6
- HbjfmigQ8oZ6x8HSi1HzVQQepMbBHg==
-X-Proofpoint-GUID: FnARaDppWTiUbDXM0DJbWEO2VlC5eT8k
-X-Proofpoint-ORIG-GUID: FnARaDppWTiUbDXM0DJbWEO2VlC5eT8k
-X-Authority-Analysis: v=2.4 cv=EqnfbCcA c=1 sm=1 tr=0 ts=68e0c2cf cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=KKAkSRfTAAAA:8 a=EUspDBNiAAAA:8 a=P-s5V6jcMkwkI3aNiSkA:9
- a=CjuIK1q_8ugA:10 a=dawVfQjAaf238kedN5IG:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-03_07,2025-10-02_03,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 spamscore=0 lowpriorityscore=0 malwarescore=0
- adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510040001
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQIRMOVGdWg5oRjNsRBgEjzIeIB8IgGabj6EAmTXuDcDLshEdrQRTsmg
+Content-Language: en-in
+X-CMS-MailID: 20251006075603epcas5p1b56873cad2f305bcdee52ea7c550529f
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+cpgsPolicy: CPGSC10-542,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e
+References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
+	<CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
+	<20250903073827.3015662-2-pritam.sutar@samsung.com>
+	<001301dc310c$b7a78550$26f68ff0$@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251003_234640_976401_A190468C 
-X-CRM114-Status: GOOD (  29.44  )
+X-CRM114-CacheID: sfid-20251006_005615_113206_702FF03E 
+X-CRM114-Status: GOOD (  16.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,93 +103,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 01, 2025 at 09:06:10AM +0200, Neil Armstrong wrote:
-> On 9/30/25 20:56, Dmitry Baryshkov wrote:
-> > On Tue, Sep 30, 2025 at 09:39:48AM +0200, Neil Armstrong wrote:
-> > > The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
-> > > of a combo glue to route either lanes to the 4 shared physical lanes.
-> > > 
-> > > The routing of the lanes can be:
-> > > - 2 DP + 2 USB3
-> > > - 4 DP
-> > > - 2 USB3
-> > > 
-> > > Get the lanes mapping from DT and stop registering the USB-C
-> > > muxes in favor of a static mode and orientation detemined
-> > > by the lanes mapping.
-> > > 
-> > > This allows supporting boards with direct connection of USB3 and
-> > > DisplayPort lanes to the QMP Combo PHY lanes, not using the
-> > > USB-C Altmode feature.
-> > > 
-> > > Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
-> > > ---
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 145 ++++++++++++++++++++++++++++--
-> > >   1 file changed, 137 insertions(+), 8 deletions(-)
-> > > 
-> > > @@ -4167,9 +4269,41 @@ static int qmp_combo_probe(struct platform_device *pdev)
-> > >   	if (ret)
-> > >   		goto err_node_put;
-> > > -	ret = qmp_combo_typec_register(qmp);
-> > > -	if (ret)
-> > > -		goto err_node_put;
-> > > +	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
-> > > +
-> > > +	if (of_find_property(dev->of_node, "mode-switch", NULL) ||
-> > > +	    of_find_property(dev->of_node, "orientation-switch", NULL)) {
-> > > +		ret = qmp_combo_typec_register(qmp);
-> > > +		if (ret)
-> > > +			goto err_node_put;
-> > > +	} else {
-> > > +		enum typec_orientation dp_orientation = TYPEC_ORIENTATION_NONE;
-> > > +		enum typec_orientation usb3_orientation = TYPEC_ORIENTATION_NONE;
-> > > +
-> > > +		ret = qmp_combo_get_dt_dp_orientation(dev, &dp_orientation);
-> > > +		if (ret)
-> > > +			goto err_node_put;
-> > > +
-> > > +		ret = qmp_combo_get_dt_usb3_orientation(dev, &usb3_orientation);
-> > > +		if (ret)
-> > > +			goto err_node_put;
-> > > +
-> > > +		if (dp_orientation == TYPEC_ORIENTATION_NONE &&
-> > > +		    usb3_orientation != TYPEC_ORIENTATION_NONE) {
-> > > +			qmp->qmpphy_mode = QMPPHY_MODE_USB3_ONLY;
-> > > +			qmp->orientation = usb3_orientation;
-> > > +		} else if (usb3_orientation == TYPEC_ORIENTATION_NONE &&
-> > > +			 dp_orientation != TYPEC_ORIENTATION_NONE) {
-> > > +			qmp->qmpphy_mode = QMPPHY_MODE_DP_ONLY;
-> > > +			qmp->orientation = dp_orientation;
-> > > +		} else if (dp_orientation != TYPEC_ORIENTATION_NONE &&
-> > > +			 dp_orientation == usb3_orientation) {
-> > > +			qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
-> > > +			qmp->orientation = dp_orientation;
-> > > +		} else {
-> > > +			dev_warn(dev, "unable to determine orientation & mode from data-lanes");
-> > > +		}
-> > > +	}
-> > >   	ret = drm_aux_bridge_register(dev);
-> > >   	if (ret)
-> > > @@ -4189,11 +4323,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
-> > >   	if (ret)
-> > >   		goto err_node_put;
-> > > -	/*
-> > > -	 * The hw default is USB3_ONLY, but USB3+DP mode lets us more easily
-> > > -	 * check both sub-blocks' init tables for blunders at probe time.
-> > > -	 */
-> > > -	qmp->qmpphy_mode = QMPPHY_MODE_USB3DP;
-> > 
-> > SHouldn't this still be a default in the 'normal' USB-C case?
+
+ 
+> -----Original Message-----
+> From: Alim Akhtar <alim.akhtar@samsung.com>
+> Sent: 29 September 2025 12:16 PM
+> To: 'Pritam Manohar Sutar' <pritam.sutar@samsung.com>; vkoul@kernel.org;
+> kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
+> conor+dt@kernel.org; andre.draszik@linaro.org; peter.griffin@linaro.org;
+> kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
+> igor.belwon@mentallysanemainliners.org; m.szyprowski@samsung.com;
+> s.nawrocki@samsung.com
+> Cc: linux-phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
+> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
+> faraz.ata@samsung.com; muhammed.ali@samsung.com;
+> selvarasu.g@samsung.com
+> Subject: RE: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+> ExynosAutov920 HS phy compatible
 > 
-> It is, I just moved it before the added logic, but the comment doesn't really
-> apply anymore
+> Hi Pritam
+> 
+> > -----Original Message-----
+> > From: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> > Sent: Wednesday, September 3, 2025 1:08 PM
+> > To: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+> > krzk+dt@kernel.org; conor+dt@kernel.org; alim.akhtar@samsung.com;
+> > andre.draszik@linaro.org; peter.griffin@linaro.org;
+> > kauschluss@disroot.org; ivo.ivanov.ivanov1@gmail.com;
+> > igor.belwon@mentallysanemainliners.org;
+> > m.szyprowski@samsung.com; s.nawrocki@samsung.com;
+> > pritam.sutar@samsung.com
+> > Cc: linux-phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> > kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> > samsung-soc@vger.kernel.org; rosa.pila@samsung.com;
+> > dev.tailor@samsung.com; faraz.ata@samsung.com;
+> > muhammed.ali@samsung.com; selvarasu.g@samsung.com
+> > Subject: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
+> > ExynosAutov920 HS phy compatible
+> >
+> > Document support for the USB20 phy found on the ExynosAutov920 SoC.
+> > The
+> > USB20 phy is functionally identical to that on the Exynos850 SoC, so
+> > no driver changes are needed to support this phy. However, add a
+> > dedicated compatible string for USB20 phy found in this SoC.
+> >
+> > Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> > ---
+> Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Hi Alim,
+Thank you for RB tag.
 
+Hi Vinod, 
+Addressed comments on phy drivers those were given in patch-set v5. 
+Can you please check and let me know if any other comments? 
 
--- 
-With best wishes
-Dmitry
+Hi Krzysztof, 
+Please let me know if you want me send v9 by retaining  your RB on 
+patch1 and patch3? Also do let me know if any other concerns need 
+to be addressed?
+
+Regards,
+Pritam
+
 
 -- 
 linux-phy mailing list
