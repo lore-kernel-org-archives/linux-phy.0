@@ -4,76 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F3DECCA470
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 14:13:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1C40CCA476
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 14:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PBO9wARxZIyv3cFXIDDJiwOIdGKA6s3/K/M1rGegQOU=; b=mDsEhKlPj1NrN0
-	A0dTjWCNiKtm1ddnKp4likOwPeVraPaKIYb7grV9Hnp5KmTINL8ApluZ+V+a7OiqfkuNsE1ESOFTz
-	qBY7q1jdl91hCksw+rF1oGFHc5nWikCmvvzqFxth6mVj7SBais3SacxE1+eKXMotv71Kah+7qelOj
-	R/+nv/8dll3GRiPhpt9jl6LehSdoKDPAhsKtewZ1yEdOZKpaZnorzs+v+2bRhfBaqwubj2VMe+UoM
-	wgSeHokRJSijeHH6X9TIpuIvD9QOYL+Nd0Lpru2D7M6lrKtJO0BfKRZftnpqhUfiezvh2lRxUXlJh
-	CZBo42Y/q1Zajs/ROlqA==;
+	List-Owner; bh=XOhmO+QG7yT7E5C1xJMfvj5B2KlyYIMaIQx0oearwGs=; b=E4s0KXmvb+SmQF
+	yQRYUNOyVaTHwafj6Xv6XbVM8O7G7acNP1HJz4SF6vHw2na5g0esXgZlDUUtKEMnaejOhajG+4XfX
+	21GQeuRixqiiVVBHLW+ynvmkVViV0p8wABelroak2zUG8/yPaHn30gZRnVi9VoMusT1wzWtfCFPgg
+	J+RVOsBq+TvVMeFFIaXZYsUrKUE/gHSfj4m2Ld643Y6O/G1Qy0SvC1jPabO07QbVrygTtHTPUcH0U
+	Rnq2jR1uDivwZuNpd11RtcHNEGXVZviUwdXjDFJ6Tr7s5ryDS0jhVNtB/kM9Xgc3VYfe+Lt8/f03O
+	SDhv1oQYWwS70vUJ3BTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v68Rd-000000029hL-3JO3;
-	Tue, 07 Oct 2025 14:13:37 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1v68WB-000000029yo-2xP0;
+	Tue, 07 Oct 2025 14:18:19 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v68Rb-000000029gd-3hzp
-	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 14:13:37 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v68R6-0000Tf-32; Tue, 07 Oct 2025 16:13:04 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v68R4-002Phx-33;
-	Tue, 07 Oct 2025 16:13:02 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v68R4-000000004MN-3brl;
-	Tue, 07 Oct 2025 16:13:02 +0200
-Message-ID: <988658d3485232a0bb6c433b6533ebf0ae41226a.camel@pengutronix.de>
-Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for
- OTG mode
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Biju Das <biju.das.jz@bp.renesas.com>, Tommaso Merciai	
- <tommaso.merciai.xr@bp.renesas.com>, Tommaso Merciai
- <tomm.merciai@gmail.com>
-Cc: "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I	 <kishon@kernel.org>, Geert
- Uytterhoeven <geert+renesas@glider.be>,  "magnus.damm"
- <magnus.damm@gmail.com>, Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-phy@lists.infradead.org"	 <linux-phy@lists.infradead.org>,
- "linux-kernel@vger.kernel.org"	 <linux-kernel@vger.kernel.org>
-Date: Tue, 07 Oct 2025 16:13:02 +0200
-In-Reply-To: <TY3PR01MB1134623A14F4F313986F631ED86E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20251001212709.579080-1-tommaso.merciai.xr@bp.renesas.com>
-			 <20251001212709.579080-5-tommaso.merciai.xr@bp.renesas.com>
-		 <593eb851ae6ce0ec03ddeacf436180b6538fdd1e.camel@pengutronix.de>
-		 <TY3PR01MB1134635745721CC005B35702286E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-	 <01fc3101ab2e3898932afeaaaf060a6676cdf323.camel@pengutronix.de>
-	 <TY3PR01MB1134623A14F4F313986F631ED86E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-User-Agent: Evolution 3.56.1-1 
+	id 1v68W8-000000029y9-2Yum;
+	Tue, 07 Oct 2025 14:18:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1EFE6437FF;
+	Tue,  7 Oct 2025 14:18:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FCD1C4CEF9;
+	Tue,  7 Oct 2025 14:18:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1759846696;
+	bh=G/NshkMJ1GZbtO3UIa9SqYi+nufWNB4mZlO3zufyam0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=VLEBgkluXeahLBiq1Q8q74aSbv9sUk8S4cduCCxdRDeAUEmAGnpgT2dd+ksDo9KZp
+	 TPcksti+HsUH8pFCU61wkEbT/aYAaPpHRA+y6NTCHqP4xPH9SG397h9kS32wIqs24s
+	 h44CpSGxzl9ePGWUWhOWW0kb3oAphuENyakg/QfeoPzuPIGh/Mzf9mUhmNsfi58zNj
+	 Be3k2bbXybJQvjBHxrSobLIrxkG3l+2U+rKsvU0OWna64yWtAl8pECHgqRcOo8fBc4
+	 MtJ1mNa8tuXV+8tIXqt8l2v/2d8Sc5OUh3ac4tc1vGBQ5kXqT4AZQ5EiAf//4c1t+e
+	 YJ8MxK/7lqJ/w==
+Message-ID: <d592eb91-84e9-4bdc-8363-1d0bfd47c17c@kernel.org>
+Date: Tue, 7 Oct 2025 23:18:04 +0900
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1 2/4] dt-bindings: usb: dwc3: Add Google SoC DWC3 USB
+To: Peter Griffin <peter.griffin@linaro.org>
+Cc: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>,
+ Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+References: <20251006232125.1833979-1-royluo@google.com>
+ <20251006232125.1833979-3-royluo@google.com>
+ <8ca61364-df47-41f2-b0d1-f2a8a74ec728@kernel.org>
+ <CADrjBPr7Jp_ZyGv2Krv6iLG0avgFWpcWJEO-Z=cEkhwEY-+z5Q@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <CADrjBPr7Jp_ZyGv2Krv6iLG0avgFWpcWJEO-Z=cEkhwEY-+z5Q@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_071335_922857_2675FF11 
-X-CRM114-Status: GOOD (  32.80  )
+X-CRM114-CacheID: sfid-20251007_071816_700266_A895087F 
+X-CRM114-Status: GOOD (  22.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,119 +128,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Biju,
-
-On Di, 2025-10-07 at 11:04 +0000, Biju Das wrote:
-> Hi Philipp,
+On 07/10/2025 18:09, Peter Griffin wrote:
+> Hi Krzysztof & Roy,
 > 
-> > -----Original Message-----
-> > From: Philipp Zabel <p.zabel@pengutronix.de>
-> > Sent: 07 October 2025 10:44
-> > Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for OTG mode
-> > 
-> > Hi Biju,
-> > 
-> > On Di, 2025-10-07 at 04:02 +0000, Biju Das wrote:
-> > > Hi Philipp,
-> > > 
-> > > Thanks for the feedback.
-> > > 
-> > > > -----Original Message-----
-> > > > From: Philipp Zabel <p.zabel@pengutronix.de>
-> > > > Sent: 06 October 2025 17:32
-> > > > Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL
-> > > > register for OTG mode
-> > > > 
-> > > > On Mi, 2025-10-01 at 23:26 +0200, Tommaso Merciai wrote:
-> > > > > Add logic to set the VBENCTL register when the USB controller
-> > > > > operates in OTG mode. This is required to ensure proper USB
-> > > > > transceiver behavior when the device is configured as OTG.
-> > > > > 
-> > > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> > > > 
-> > > > I had reservations about this driver before, because of the opaque
-> > > > register initialization sequence, and I was told that no, this is a reset driver alright [1].
-> > > 
-> > > The latest hardware manual document about VBENCTRL register which sets source for VBUS selection.
-> > > s
-> > 
-> > I still can't look at this, right? The USB2PHY control register space appears to be documented in
-> > the "RZ/V2H Group User's Manual: Hardware (Additional document)" (under NDA).	
+> Firstly thanks Roy for your patches, it's great to see more Tensor
+> support being posted upstream!
 > 
-> It is documented here[1], Page 2177, USB2PHY Control Register (USB2m_PHY_VBENCTL)
+> On Tue, 7 Oct 2025 at 01:44, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>>
+>> On 07/10/2025 08:21, Roy Luo wrote:
+>>> Document the DWC3 USB bindings for Google Tensor SoCs.
+>>>
+>>> Signed-off-by: Roy Luo <royluo@google.com>
+>>> ---
+>>>  .../bindings/usb/google,snps-dwc3.yaml        | 144 ++++++++++++++++++
+>>>  1 file changed, 144 insertions(+)
+>>>  create mode 100644 Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml b/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+>>> new file mode 100644
+>>> index 000000000000..3e8bcc0c2cef
+>>> --- /dev/null
+>>> +++ b/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+>>> @@ -0,0 +1,144 @@
+>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>>> +# Copyright (c) 2025, Google LLC
+>>> +%YAML 1.2
+>>> +---
+>>> +$id: http://devicetree.org/schemas/usb/google,snps-dwc3.yaml#
+>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>>> +
+>>> +title: Google DWC3 USB SoC Controller
+>>> +
+>>> +maintainers:
+>>> +  - Roy Luo <royluo@google.com>
+>>> +
+>>> +description:
+>>> +  Describes the Google DWC3 USB block, based on Synopsys DWC3 IP.
+>>> +
+>>> +properties:
+>>> +  compatible:
+>>> +    items:
+>>> +      - enum:
+>>> +          - google,lga-dwc3
+>>> +      - const: google,snps-dwc3
+>>
+>>
+>> There is no such soc as snps, so you grossly misuse other company name
+>> as name of SoC. Neither lga. Otherwise please point me to the top-level
+>> bindings describing that SoC.
+>>
+>> You need to better describe the hardware here - why this is something
+>> completely different than GS which. Or switch to existing bindings and
+>> existing drivers. Did you align this with Peter Griffin?
 > 
-> [1]
-> https://www.renesas.com/en/document/mah/rzg3e-group-users-manual-hardware?r=25574493
+> I think (from what I've seen at least) this is the first submission
+> for drivers in the Tensor G5 SoC used in Pixel 10 devices (which as I
+> understand it isn't based on any Samsung IP). Hence the new drivers,
+> bindings etc.
 
-For me, that link points to a document without the USB2m_PHY_* register
-definitions. Page 2177 is unrelated (documenting PCI_EP_HLOG2_Fn,
-somewhere in the PCIe interface chapter).
 
-> > > > Can you please try to find a proper abstraction for this, because
-> > > > drivers/reset is not the correct place for USB OTG mode handling.
-> > > 
-> > > Sorry for the confusion. This driver is not handling USB OTG mode. It
-> > > just configures VBENCTRL(one time setting) that selects the source for
-> > > VBUS_SEL. Actual USB OTG mode handling is done USB PHY driver which sets host/device mode based on
-> > ID detection.
-> > 
-> > So this is a mux for the VBUS_SEL signal?
+That could explain a lot. I would be happy to see background of hardware
+in the bindings commit msg and the cover letter.
+
 > 
-> Yes, Please find the bit definition.
-> 
-> 0 VBUS_SEL 0h RW Select VBUSEN control
-> 0b: Output PP controlled by PORTSC1 register of the Host Controller as VBUSEN.
-> 1b: Output VBOUT controlled by VBCTRL register of the Host Controller as VBUSEN.
-> 
-> We have USB PHY control driver(This driver)-> USB PHY driver->| USB HOST(Generic ehci/ohci)
->                                                        	  | USB function (renesas usbhs)
-> 
-> We plan to set 1b for this IP in this driver for OTG channel during probe.
-> After that using VBOUT register the PHY driver can switch between Host and device.
+> However the issue is that none of the other base SoC drivers on which
+> this driver depends currently exist upstream (like clocks, reset
+> driver, power domains, pinctrl etc). So it's very hard to reason about
+> the correctness or otherwise of this submission. It is also likely
+> that when those drivers are upstreamed things could change in the
+> review process, to how it looks today in the downstream kernel.
 
-Thank you for the explanation.
 
-> > Why don't the USB host controller drivers parse their "dr_mode"
-> > property themselves and control USB2PHY VBENCTRL via the mux API, for example?
-> 
-> Currently for OTG channel, based ID detection IRQ, the USB PHY driver switches between host
-> and device. We use method2 below for the host operation.
-> 
-> For Host operation:
-> Method1: USB2m_PHY_VBENCTL.VBUS_SEL=0
-> or
-> method2: USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 1
-> 
-> For device operation:
-> USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 0
-> 
-> Are you suggesting to use method1(mux) for host operation?
+Bindings and drivers can be contributed without core SoC support, but
+then please describe the hardware (SoC) here. Having core support posted
+earlier is of course preferred, but I think not a requirement.
 
-No, not necessarily. I was thinking of letting the PHY driver, before
-registering the VBOUT controlled VBUS regulator in its probe function,
-call into the mux API to set VBENCTL.VBUS_SEL=1 and thus make the VBOUT
-bit functional.
+Anyway, compatibles and all commit messages in this patchset are too
+generic and need to reflect this actual SoC, not "Tensor" because we
+already have a Tensor with USB. So basically based on existing support
+all this patchset would be redundant, right? :)
 
-> Currently this is one time configuration. If we plan to
-> use mux, then it becomes dynamic.
->
-> How we can we make use of PHY driver using mux API to select the mux register(VBUS_SEL)
-> in USB PHY control Driver?
-
-For example, this driver could spawn an auxiliary mux device with a
-driver in drivers/mux that registers a mux for VBENCTL.VBUS_SEL on the
-&usb20phyrst node.
-
-The phy could then get a "mux-states = <&usb20phyrst 1>;" property in
-its device tree node and call the equivalent of:
-
-  mux_state = devm_mux_state_get_optional(dev, NULL);
-  mux_state_select(mux_state);
-
-to switch to VBOUT controlled VBUSEN.
-
-regards
-Philipp
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
