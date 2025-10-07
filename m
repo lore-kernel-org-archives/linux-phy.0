@@ -4,121 +4,178 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5F7DCCA476
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 10:31:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD5C4CCA470
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 11:04:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T78/i8X43LP6hvXfF2AeeIS6ba9Msf53VIaXDY4w/sg=; b=URJo95hArmULg/
-	Mp++LF0omgYexQe4SchQ++lwiHPn7/LE8+DlrLGSvoY2vacxLLvmMDb6lGhaziCt62/WQDP2lmSIU
-	hKuf2KxoAkg4hvmbk8pe+1Jbz8QjEwTLsL2k1j5ojVp+wbM9s7oyUax8yTyCk4+e4DtMtuaXLUg1R
-	6TiZZ14yNMBW4iYBSIkignIXCK4EFHQfskMW5bIKOHiBzRcFjhjzWfHODSCbw6Ox4zqOvtoUno0nt
-	aKm9htVFT4gpjZXqHlUI0yQ8L8tRD+C+B3AbIqRnnWdNFhX1D3iw928qhYBgUCCNMUpRo0pHhADy3
-	jc63zQphTq6QBlwtZ+sA==;
+	List-Owner; bh=3Q9Q+SLkGAt8agL8Z86RKlDZkCqy6kAnqHlfBEN8HlM=; b=eq1NHo4mR42AF7
+	zjJBEHJd8/i5CKHsr5faaECETigMWC1BLcs4xjV0SI/dJaDEtMCE7MaimHgybMNniHzqzECF9dJSw
+	+gkCCBob1l3RLz8zoT8Od/ur5BLWkxa4tAIzXF+CNSldm66tUI8B4HE8UNt4/9zFfgYgO62j7RrAT
+	7dBDAcZpTt1qeYPF/M3ts95f9Hbalb0WkMBYtf+kL3NRDtGZhIY1U0WsXPReFarnpnJ5v9IL/VYJO
+	q/aEZ/iA7ipL7A3fybXcrfemSAS7bNgzFzVvIkEGNfE6/BDcdeN7MmUxDU+iQg1w4Aji/hGzCpQlw
+	7+jq3Y+zR5Bbh/kadwWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v64z7-00000001nxj-1u8Q;
-	Tue, 07 Oct 2025 10:31:57 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v65UZ-00000001pt2-1oYn;
+	Tue, 07 Oct 2025 11:04:27 +0000
+Received: from mail-japaneastazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c405::] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v64z4-00000001nwo-0R1g
+	id 1v65UV-00000001pqr-1SZ4
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 10:31:55 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59723sEv024045
-	for <linux-phy@lists.infradead.org>; Tue, 7 Oct 2025 10:31:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6pMruL4RrOD8Ab3ncsU6klJP2YjjkGCkq0lz1ZS5k+o=; b=feEnouAMg6bHP8eH
-	NEPUNji/ZPht1l93C6vEPCNXhEgScd+hLzrG1RZannJfhEPkrDy9cH477OUSLpMl
-	5MCSG8f6W5RV86VQ5nhwPsnc3W8EAmm5Isu+vEHkeFYEswyNQGVuV3y4r7wtIVqy
-	odBfM06KeA6/icfOQJwQVZEx1szCcEIAOYkI29v34wRiC8WsC4P4QZ4AqPHGUYAS
-	cj2hEgiUr+5kjlGxZfMOlRQRpxCfecMNoqSy0yCys7KNp4vw9A+HZCDXae0isZXA
-	8p5eAyHIUoPNph5khyDmdfq+HJNefSHwFKim5qZWSmKxHqNT0D5aIZA1ow/7yzmi
-	4vJYqA==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49jvrhpr2a-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 10:31:53 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4e015898547so11156491cf.3
-        for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 03:31:53 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759833112; x=1760437912;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6pMruL4RrOD8Ab3ncsU6klJP2YjjkGCkq0lz1ZS5k+o=;
-        b=EiH7mDoBVG1E8L8oB4B5oaPG4DQ1nQd2BxxarRsRynUYjNHLIfXcc16ozlaOp+BLy/
-         7OudBovVa6vms8WEMSSIHp1O3W1RPkOVKhhHXL/u56cMREx9MDPKfMUzsPwOa/anCu7G
-         W6K7yMgBMkBmgl91HsYMOuZW9LHKwKBqzs1BfBjeiaFFGz+j5p4ig1F8SZ5xCwXsmeet
-         ZSaLhiSUTjekC7kNTAc76/3UDRZpfavaF7/E+A6jJtJeyQ9DUedzECzmQV+EgcB0AyTE
-         T29SLnpch7ipOQiQJLb/+b55jBE2k0oBG6sc2cHuITTlggPz/HJgL6f/cN//FB0FZU/2
-         Ee7g==
-X-Forwarded-Encrypted: i=1; AJvYcCWNAvJFCpRoxC7VqPTsoolbMWBilMqYZwEw6TReAH5rXYp2Oc7kWPSJ7iAN9djnI73Ao8onS82Fmmk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YylO07M8JfJBgj7204mwTOb2d/2x/tkThgn1caeILlzLRovyLJU
-	r29iXAly/WsyXhRO6KvUvX6vVllIGjnY1cPP04PP6c6GRvK3UCiI558q7/NoPQvHBXtNi5/wD2S
-	gkAyNamUj8K2JzrdN1w5YYGUnYPP0KICt8hxEYEgMBAWx7Sl+24GRUPMObRDFOVwfczUD
-X-Gm-Gg: ASbGncsXYCoOlQXJSJC0WOaWqIxPMiYNyTjOmAEdtbAL/diXj2xtGVPKyk9V2YWqLCr
-	1CvP67/woN3QWU4cNRSjNR8sDE5HJznJu30W9+q/YgmIwRFETNCbUNTbY9GjIAhTaillPdRKde+
-	E9ONYTkQBPhi/KXpiK913CXwwUH2bSrtpLZT6sMA05cunX3ADH8Z4x7AgDkacc0GGi3RVyDDF+d
-	PlEmGb1MSTwsBuija/ihV6Hpx4h3rC3PJ6MlUEACl7gsdB5P9x3Jg9T+JoIu0oAFu/XY1NwGVjf
-	SWqOWaXBiRIkwdTX19gK63AMi4l2n5mW1bPnLZl/I9b83Ol15rqJDKb6qfbEpwSa4G9uTGQ5Bzm
-	uUU7yKDRVh94mhZHNjkksF7tKX2w=
-X-Received: by 2002:ac8:5890:0:b0:4d7:e0ed:421f with SMTP id d75a77b69052e-4e576a2e554mr139971221cf.3.1759833112023;
-        Tue, 07 Oct 2025 03:31:52 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF49wJdpC9RNWjrZh/mjq2BnFEU9JH6SZhV7KcMqbJZ1IBEcWUiuSsdgRT5R07pr15Mpi9GiQ==
-X-Received: by 2002:ac8:5890:0:b0:4d7:e0ed:421f with SMTP id d75a77b69052e-4e576a2e554mr139970751cf.3.1759833111321;
-        Tue, 07 Oct 2025 03:31:51 -0700 (PDT)
-Received: from [192.168.149.223] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b503c779df2sm33444766b.34.2025.10.07.03.31.49
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 07 Oct 2025 03:31:50 -0700 (PDT)
-Message-ID: <085dbb83-d805-45c7-962c-2cf40a93a31a@oss.qualcomm.com>
-Date: Tue, 7 Oct 2025 12:31:48 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Move pipe_clk on/off to common
-To: Val Packett <val@packett.cool>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20250927093915.45124-2-val@packett.cool>
- <e6754738-76c9-4080-bbed-17f02e6535bf@oss.qualcomm.com>
- <2564cdec-9726-4efa-ba07-a2f2646168c6@packett.cool>
+	Tue, 07 Oct 2025 11:04:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=fPpCaWdS9BfgGwqDVyjB68zdcbGcvE2/5B/vSrHTFfZUnt5rt6Y8MgGmGA7TTI/vYIxmDrrRfnNNS54dAheM25OAzjt2bTinDKR34CIDMtN5o3N9uhULv4aPs4KDa6YekRzRWL4ExW2V+PIM/i8pgAg0xiBO4yPuYjIs4RsErtsvy5WYpq7a3tnugkH1E3HrtAlJROrJciN0SHAVIKKWTxNWQSPDZLTpIUSh7d5SdWUD1QjvUQq+iLypSxytlgB37DiVHQviEieoEoN7mkETa/bmxKISNtWeP+8sZTRnX2zYKkCM1Rn99rg4oDttS2irUIbiTNkZHSuqJGdPmgPkgA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=gU+t33jiy/7KajsdaxofgF79KZ+ZreZZICwAIt3pkV0=;
+ b=sAVeMwzulGjIVXzcvnfo9kxfn29NvCDb4b4ghg/z9+QJV8WqX6Gkft/5X4Kd23Z1OQ19squ4cYopS8mfdYMQeFl6djOh+l0WTr3aMapPbTYXaA1lPkOoofCi+P5nDcK0srLrVW09wN6/yhJuTKrEcIv0gb4H+gYshfUYIf7wKCRZcjszp/GcJpysa41JxM5ofr6q1EchQMVrsGgmMaLuTnxWAkMyUrJQcUXoUJU7h+lEKq0BPsINz7M22XPw+FcbrQSvUJZSkkJLF4mXoYXAe7CBJj29bmQLsVLgy/xD4pgHGrJkUoHz7OlKzyKZfl6F5ECQYKe6Rc/oBFR82+WqDA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gU+t33jiy/7KajsdaxofgF79KZ+ZreZZICwAIt3pkV0=;
+ b=PiUQOwXdPkOvbxNtuZpeydL4Ez4zoePFXMoDIi5zmjEYx8iyW/EEoyN07Uorx4wUNFGNuj2zERFrvEqciF/Ig8EB5sUfgNpqOkLDuzwMm+Cb4rXCZNjEJkdFK/SVSu/TkfGs+FSP51OkffAiEIhM9qmgoyzrAYzoKE5AcAqmsmM=
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
+ by TYRPR01MB15695.jpnprd01.prod.outlook.com (2603:1096:405:2d7::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.9; Tue, 7 Oct
+ 2025 11:04:04 +0000
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1%4]) with mapi id 15.20.9203.007; Tue, 7 Oct 2025
+ 11:04:04 +0000
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>, Tommaso Merciai
+	<tommaso.merciai.xr@bp.renesas.com>, Tommaso Merciai <tomm.merciai@gmail.com>
+CC: "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul
+	<vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Geert
+ Uytterhoeven <geert+renesas@glider.be>, magnus.damm <magnus.damm@gmail.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, Prabhakar Mahadev Lad
+	<prabhakar.mahadev-lad.rj@bp.renesas.com>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for OTG
+ mode
+Thread-Topic: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for OTG
+ mode
+Thread-Index: AQHcNt66G8TP9Ee94kC0LXwMMOw9YrS2DljwgABhwgCAAAaEkA==
+Date: Tue, 7 Oct 2025 11:04:04 +0000
+Message-ID: <TY3PR01MB1134623A14F4F313986F631ED86E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <20251001212709.579080-1-tommaso.merciai.xr@bp.renesas.com>
+		 <20251001212709.579080-5-tommaso.merciai.xr@bp.renesas.com>
+	 <593eb851ae6ce0ec03ddeacf436180b6538fdd1e.camel@pengutronix.de>
+	 <TY3PR01MB1134635745721CC005B35702286E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <01fc3101ab2e3898932afeaaaf060a6676cdf323.camel@pengutronix.de>
+In-Reply-To: <01fc3101ab2e3898932afeaaaf060a6676cdf323.camel@pengutronix.de>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <2564cdec-9726-4efa-ba07-a2f2646168c6@packett.cool>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA0MDAzNiBTYWx0ZWRfXzA3F+CJY2zS0
- /xlsKbj365DLm6RZ/Q4kzGriX5gHXaU82LduDEtLzdGpj5frr4TDYDpbQGLQ6rgqntG1fuYH/MI
- savL8L64lleFTLLKGfTe0OfosG1AbbYlq5/v6WI9U3B3DkXsAi0LqaGA36i3G23UfnOsdArA9ht
- QYPAWSAIgnsvepyl5U8OGCIrw0J9hHNbgF3o0Xe4MkPbfuI9OZDuFDYHnHJOATfBNUWklVzZ2lX
- g/baUfBmmMhFoZSL/e3FcXH1QbrkT/YiOWdAP15azrCr+D64+smeHXj9zU+1LLpOVCdEpLtt/Q6
- b0vlpTqP7fBzlKmzNKu7H8+RK407NoM7CLM5++5dsBkXxF/rArm+M1kz6QXL0ogyyvaCFXOUeuo
- nIdfjuUVdsl6yxYyv/aRSLJBXDWMIA==
-X-Proofpoint-GUID: QNZWR82RhERp-iA_lUG-Qdrek-xGRZby
-X-Authority-Analysis: v=2.4 cv=XIQ9iAhE c=1 sm=1 tr=0 ts=68e4ec19 cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=p0WdMEafAAAA:8 a=IIrk0cfXZlyaRavtHIIA:9
- a=QEXdDO2ut3YA:10 a=dawVfQjAaf238kedN5IG:22 a=poXaRoVlC6wW9_mwW8W4:22
- a=pHzHmUro8NiASowvMSCR:22 a=n87TN5wuljxrRezIQYnT:22
-X-Proofpoint-ORIG-GUID: QNZWR82RhERp-iA_lUG-Qdrek-xGRZby
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-06_07,2025-10-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0 phishscore=0
- clxscore=1015 adultscore=0 spamscore=0 priorityscore=1501 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510040036
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYRPR01MB15695:EE_
+x-ms-office365-filtering-correlation-id: 493cb019-9b2f-42cd-ac24-08de05913a8d
+x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|1800799024|366016|38070700021;
+x-microsoft-antispam-message-info: =?utf-8?B?enJOWWxZa3VudG1UMVJwWmdwc0NBb1A3eVFxQVkzY0FKSGdVbWRlWDVYU0dv?=
+ =?utf-8?B?bnVRczlTTlhwRk9qNTRxZVJieVZOVmE3dGJiVnlIdEVIZGtMY1B0UzBHa042?=
+ =?utf-8?B?dVd5eU9jeVZZajNFdEdvYXd0TzAyTm8wclpxYWpVaHNzVWhTTkFtbGNlNVow?=
+ =?utf-8?B?RVlyaFpuNTdEV2wyN2hjWE5DUlJEcm9yTHFyT0lTUHNrZy9pVXQ4b3lkakQy?=
+ =?utf-8?B?R2pkMVZ5WXhqS3VEYmh1TTVDS1hReVNRenN0L0FtUXFyNmxoMlpEMEdFa3Fu?=
+ =?utf-8?B?NHlrVGNTQVlmajllL3ZhVWxlRjkyMkF0UmVGYUtyMUd2NStTTGhDVmdxaTJ4?=
+ =?utf-8?B?QndGZlgrbnVGcVFrSlhwelJRdjY4Z1pBQVI0emt5OFFqRlZ1anM0RjZvdG5M?=
+ =?utf-8?B?N1FFUXdmaTh1YTVDUG1uU2JndUdNc1hPeENWWjJYL0dmeFFyMHQ1RzBWZGw2?=
+ =?utf-8?B?b1Vpc09aWkUxcXlZVXZqbVJJbURXMElvWW1kcWxxS2ZmT3FNODIxVm55aEgy?=
+ =?utf-8?B?Zlp4ZFFCcncxWFlNUXE2cm90aisxb2NwV0FhT0NKTnB4V3h0Q2QrTWpnUCtQ?=
+ =?utf-8?B?YXZsaFlQS1REYmpiUkxyYkd2STFYZDRTTi9ScEUzeUIvclFTRnREdzhqZ080?=
+ =?utf-8?B?VXprYzZxTWxBNThES2MxTCtYeTVWZ3ZvOWo2MlRGbXQxRUtrVTV0azdJSytL?=
+ =?utf-8?B?UWYyU0tPY3Q1ejdoTHhrRmhuYW9LakREcVVBMFVaWkpzejllZUt0ZzYxWWQ4?=
+ =?utf-8?B?VjBJMGUvSXR6L1hZNVFVaThVdCt6SExmOGcvekFFNVRLTmNQdVhRN1lEMHZS?=
+ =?utf-8?B?WEZUNW02cC9vRUZaTm8xak5rOGx2VDFsMVFXK3BaWnJjMXg4ZHBaSTROQ1pt?=
+ =?utf-8?B?QVlKTEdLU2dCeWNCTG0yMHNoZHBvRTU4YWtOaWZuN01XMHlnbnlGSjFyZDdV?=
+ =?utf-8?B?b0xpeTI5UEtwcTlzeUprb0xKR3FTa2tza2lsa09wekhKdWlscndsb29zUkk5?=
+ =?utf-8?B?WWN3ZVdaT1JxQWMxZ3o3ay9iYWlFU21OY1RrZVN5amg1SW1pVTIxSWlXSVUr?=
+ =?utf-8?B?eS9pSWQ3YmVOWUtidUVDSUxyNzE1dW1iMERnODdkZDJYRnVjVTV2QTEwUGR0?=
+ =?utf-8?B?Uk1ibG95OEJ1QURtVTFnTTI2TkM2Nk40V1FsVU9lRkhvTS8zRkptelpkMkJ6?=
+ =?utf-8?B?VmMvaEFCZVZWYWJxb28yc0VCcEJSWS9BaGs5VDF0Um1pejJPa0lma1BScVlN?=
+ =?utf-8?B?cUl0dkNoOWJtbWVLRkxaRTgrWnhOYXRieVFERlZzNGJoMkI3TjNIakJoRVhu?=
+ =?utf-8?B?SlZQL0RDdWd6WkFlOWlZMTJiNXJmYmNTZURaclZGSXpVWnRhdXdZdzNkTUJZ?=
+ =?utf-8?B?RDIrK1BoMklhVmNLL0UzbFE3eGtNOFVQc0d6ekNTaG5tdGd1YmZRTXRiSWNU?=
+ =?utf-8?B?TG1NSGF0Nm5HZTZNVUErSnQvZXdlY2ljZmJIazI4V3daTm1pZG1YUlJtWDFO?=
+ =?utf-8?B?Szg1OXF5SDk0UE1wdHhScG5mYnNhRFk3UTJWMkJ2UkVDcmdNbG5LV0xtUk5T?=
+ =?utf-8?B?eXREUnV2N0NVKzN6NkY1VEFOMFlMcXpGdmdhVzVSTHhCbDNhQ2tDSzdzdzFn?=
+ =?utf-8?B?OTdZMzcvRHlMQzBCQVRoRG1xV2FzNkxCQTFBNytOTW5EWGZ3dkl6bTRuMzB1?=
+ =?utf-8?B?cjBNRXBEaXM1d0hwQnVMUjRuMnJEWldBL2l2L3owbEYybjAwSGRTWmdtNzMz?=
+ =?utf-8?B?WmFOUWdTWi82MFIzc2xZNnpRNlFTQ29GYU9HekExejQya1Rmc05rN0Vxdmtp?=
+ =?utf-8?B?a3RRUUhLUTdMamRJS2JUSjIzdDYrSFVOSjJMUnB2MzVWTjVUSjBwSUh0Uzdj?=
+ =?utf-8?B?MUw2RGxNb2wwQ25ReFN3emd5RDFxSnBoekp2VGhWMlowQk9IOW1GTjRRNTRV?=
+ =?utf-8?B?VDI4MnVoV2N0d1NvSnN0djFhSnB2VndtR0FHSTdKdnBuSTZieWtYYktQSU9R?=
+ =?utf-8?B?YURrMjE4U1ZEZHVwY0t2cXFRSDR6b2V1R1ljUFJwVWw5cUxzdk52U1VXRUgr?=
+ =?utf-8?Q?4RTQCl?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(38070700021);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?eVFqWnAzcXZPdmVmZlErOURDbjdlN1hvaFl4a3lnOGVMVlI1cWJtUk94VVBZ?=
+ =?utf-8?B?czJLWkdSRG1GTU9KaXFIZU5lVWxYN0tocUhuTXhseVFsU2ZSM2xpcndCNGxU?=
+ =?utf-8?B?N1EyOGJjVklON3YwZXczVDU4Z2plSnRzaHlhTUk0VGdLc2FVNVRNMitXQ3NS?=
+ =?utf-8?B?VlFKMkRJSkgvbkJ2NWpqQjRkV29RRGZxOXBiQ1kwcHZUSk9uaTRMcWlMQ1Bo?=
+ =?utf-8?B?bE1NUzVqVXZUd3VyaVJ3UWNEV1NMRHR0R2hzci9xeE9wZCttdVMvOUJQVTNp?=
+ =?utf-8?B?Zm80WFZqUXg4N2F2U1RtclNWYjZGd29pSDBOSXBodjgrZVVHU05ic3Jma1Vs?=
+ =?utf-8?B?dTNFT0xEU1ArYm5vNzdvYXpITktVRTlORWI2RDNaaTJzTVVlSFhDZzNYNFVx?=
+ =?utf-8?B?V3FDRGNOSUhTcjNweXdkdkpyaUpWczE2YUl3SlBVZjhGRjdRWkVtMVYveWxU?=
+ =?utf-8?B?Vng4Y1FtNGJVVFJVTnFlRjZacHJhdzVJQTArVFk2YmlsWlBlRWVGSkdOK3ll?=
+ =?utf-8?B?Q3JYalJ1eDdYRGI1Z1h5ZFFXUDQySUN3MWNWelc1NmVVOTczUXBPeDRiMTkz?=
+ =?utf-8?B?c3dKWGpEZWhOREl0eGN0VThRVVYyUHhEZHRuVm1FcVIyMTJpWnNRenFKMExF?=
+ =?utf-8?B?dEt5a3VmUFgxRTFJc0xxUVdRYmZXQ0UzZUxRZERsdlRjajZLVmEyeENRd2hl?=
+ =?utf-8?B?QWIxUGdGZGYvRWFZaURHMXZCaEU5OVZBVkZyWDgyejFMUWpiTW9hdUNuZWVu?=
+ =?utf-8?B?SlNzbElaWWRYdUdUa0huSHV4YW41cVlQUHN3bk91b2NqbnlSTlA4SWpGTW1m?=
+ =?utf-8?B?N1RQanN1VE9aRzNjR05TTGxSSDlpNTZYalJrN3NrbXluTFdJZmFwT3lMWVZ5?=
+ =?utf-8?B?RlZKckt6cHRjQVJvUDlIbHBmVlRGOEZubTF1aWExTmJjYW1zRFpkcGlyOG9H?=
+ =?utf-8?B?SEdyNG1ob2RPQ0NsSnJEbDJaNGlEVDRSREtkU28zMTg0aGpoSjd2c0M3UkdD?=
+ =?utf-8?B?RGc4QTRxYkFDSWt6YVdQYjBBblFJRjYrS05qVFZkTlZKc0toTUxDd0lYdk5X?=
+ =?utf-8?B?YTBBT2ViakRrNW1KTmUrekkxeGRlWTdXYW82ZFJHZjJWck1LUnZ5RWE5YmVt?=
+ =?utf-8?B?ck1sTmlHMUZteWJNYWl2OW1DbnVvak11cVpWT0pOeEZOREFJbmJEcTl5MWsy?=
+ =?utf-8?B?b3N4U21kOWlKc3ZybThVcEpMSktyeTVHY0V1K2YxbmtESVBxY25pc2Rld3ZP?=
+ =?utf-8?B?cGNMakM3Z1QreWhYeWhydnlHMlV1bnFldHh4REZEdWxVR3VDTnZ0YTVheUhl?=
+ =?utf-8?B?K05meVhkZGNINitHSVc4bW5WNEJZdnphWi9keHc4WDNNVlRJTkxqZmFTM0Fp?=
+ =?utf-8?B?eTI1SDVIbjIycHhUNUtyNHNRTGVUOGZHZEhTd1FCQVRFRDhqN21RSXh6Uk1L?=
+ =?utf-8?B?TVk3M2QwN2Q4Qjd1NVpOQ3FPdWYwWGRUcVE4a1JJa0ZqaE9saEtsLy9reURU?=
+ =?utf-8?B?SEJqVFE2ZkE4R0tnNnJKRUNLckUzWi9GakNZWXJOSHJ2Tzk4Ny9rcHBWb3lP?=
+ =?utf-8?B?TFNmc1M0VjlvY3Q4TGpuZnppVTNyMjJLU0tsSlZMb01IQU8vd1J3eEVkcGk1?=
+ =?utf-8?B?MGhOVHhVRUE2Sm1ZMWRUWGhPN0taWUpOcEdkWmYvVk82T1J3SE1sZng1MnRK?=
+ =?utf-8?B?RTd0RHovVWNHNjVjbEM1eTdaNm04VTVyQzNKaFRiMHZRL2hyQ2w3ckpTaU9J?=
+ =?utf-8?B?ZlZZY2VBc0VKUjlmcWF6QW1qM3M4Wk11bXN6L2FadGhPZzBPdVZKNnRDcmQx?=
+ =?utf-8?B?cjdPU2Y0WDdXMFFrYUJwd0QwWTAyRmo1WlFyTlphUHVjM1hNNUpKTWRjNGU2?=
+ =?utf-8?B?cjg0S1pZeEdsZ3ZGdVFpOTNibzZoR0owa2RLdTExVk54KzFlck1kNzU4WjJx?=
+ =?utf-8?B?b3lPWXcweGUvYmQ4eTg0Q0lEZVo4WXRWS3JpZW9tRi9oMG1lMGNaWUJ2WkdY?=
+ =?utf-8?B?T0NPSmlUNDFzUGxtd0tpUThuQTZ5dGxJSDlaOFMrdGw2OFRGdjhiLy83WWpr?=
+ =?utf-8?B?NFpTUTRadmxqbGJOSjUzUFBESS8vVmNmNnAxVUVzaDBqNFo5UHJnRDVLcnpa?=
+ =?utf-8?Q?tcIlKyvrJoOB0q4t0luXEyJuj?=
+MIME-Version: 1.0
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 493cb019-9b2f-42cd-ac24-08de05913a8d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Oct 2025 11:04:04.3592
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wdYyyBNk7AymHyoOA/ieZNBhhJY78ONFe+ERp4x2uBfVzh7xF3NrurXyEuLuCOGczhjjOCq9eMQ/0rtjMY5JgCQ9eNNsXs68XZ0089dOQzk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRPR01MB15695
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_033154_153661_9FBA26D2 
-X-CRM114-Status: GOOD (  29.50  )
+X-CRM114-CacheID: sfid-20251007_040423_577779_1AA17676 
+X-CRM114-Status: GOOD (  26.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,75 +192,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/6/25 6:13 PM, Val Packett wrote:
+Hi Philipp,
+
+> -----Original Message-----
+> From: Philipp Zabel <p.zabel@pengutronix.de>
+> Sent: 07 October 2025 10:44
+> Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for OTG mode
 > 
-> On 10/6/25 11:44 AM, Konrad Dybcio wrote:
->> On 9/27/25 11:17 AM, Val Packett wrote:
->>> Keep the USB pipe clock working when the phy is in DP-only mode, because
->>> the dwc controller still needs it for USB 2.0 over the same Type-C port.
->>> [..]
->>>
->>> In [1] Konrad mentioned that "the hardware disagrees" with keeping the USB
->>> PLL always on. I'm not sure what exactly was meant by disagreement there,
->>> and I didn't find any specific code that touches that PLL in the driver,
->>> so I decided to just try it anyway.
->> So what I did was playing around with the RESET_OVRD settings, which
->> dictate what parts of the PHY (and their associated PLLs) are kept online..
->> but I totally forgot that there is a branch/gate clock in GCC that sits
->> inbetween!
->>
->>> [..]
->>> I'm sure it might not be that simple but from my limited and uninformed
->>> understanding without any internal knowledge, the "sneaky workaround"
->>> might actually be the intended way to do things?
->> Normally the clock which you're enabling is sourced from the QMPPHY.
->> The other option (bar some debug outputs) is for it to be driven by
->> the 19.2 MHz always-on crystal (instead of $lots_of_mhz from the PHY).
->>
->> For USB hosts without a USB3 phy connected to them, there's an option
->> to mux the controller's PIPE clock to be sourced from the UTMI clock
->> input. In those cases, the UTMI (and therefore PIPE) clock runs at..
->> well, 19.2 MHz!
->>
->> (you can actually do that on USB3-phy-connected hosts too, at the cost
->> of.. USB3, probably)
->>
->> So I'm not sure how much of that is well thought-out design and how
->> much is luck, but this ends up working for us anyway, with seemingly
->> no downsides.
->>
->> At least that's my understanding of the situation.
+> Hi Biju,
 > 
-> I wonder how Windows drivers handle this.
+> On Di, 2025-10-07 at 04:02 +0000, Biju Das wrote:
+> > Hi Philipp,
+> >
+> > Thanks for the feedback.
+> >
+> > > -----Original Message-----
+> > > From: Philipp Zabel <p.zabel@pengutronix.de>
+> > > Sent: 06 October 2025 17:32
+> > > Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL
+> > > register for OTG mode
+> > >
+> > > On Mi, 2025-10-01 at 23:26 +0200, Tommaso Merciai wrote:
+> > > > Add logic to set the VBENCTL register when the USB controller
+> > > > operates in OTG mode. This is required to ensure proper USB
+> > > > transceiver behavior when the device is configured as OTG.
+> > > >
+> > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> > >
+> > > I had reservations about this driver before, because of the opaque
+> > > register initialization sequence, and I was told that no, this is a reset driver alright [1].
+> >
+> > The latest hardware manual document about VBENCTRL register which sets source for VBUS selection.
+> > s
 > 
-> The ability to use the UTMI clock sounds more appropriate for when only a legacy USB2 device is plugged in and the entirety of QMPPHY is unnecessary and can be shut down to save power.
+> I still can't look at this, right? The USB2PHY control register space appears to be documented in
+> the "RZ/V2H Group User's Manual: Hardware (Additional document)" (under NDA).	
 
-How would you hotplug a USB3 device then?
+It is documented here[1], Page 2177, USB2PHY Control Register (USB2m_PHY_VBENCTL)
 
-> BTW I'm still seeing USB2 functionality die if I boot with the monitor cable *already* plugged in, but that sounds like a very different issue (the host controller starting to touch the bus before the PIPE clock is up? something something probe order?)
+[1]
+https://www.renesas.com/en/document/mah/rzg3e-group-users-manual-hardware?r=25574493
 
-Unclocked accesses would result in immediate restarts
 
-We've had some coldplug woes in the past due to the ADSP Type-C handling..
-does replugging (maybe more than once, maybe in a different orientation)
-fix it for you?
-
->> The suspend logic is broken and unused anyway, but that's a nice catch,
->> the PIPE clock in question is even conveniently called "usb3_pipe" in DT
 > 
-> Hmm. Is it unused? Oh, you mean the pm_runtime_forbid(), right.
+> > > Can you please try to find a proper abstraction for this, because
+> > > drivers/reset is not the correct place for USB OTG mode handling.
+> >
+> > Sorry for the confusion. This driver is not handling USB OTG mode. It
+> > just configures VBENCTRL(one time setting) that selects the source for
+> > VBUS_SEL. Actual USB OTG mode handling is done USB PHY driver which sets host/device mode based on
+> ID detection.
 > 
-> Do you have any pointers about what exactly is broken there? I've been poking at the runtime PM stuff too (https://gitlab.com/Linaro/arm64-laptops/linux/-/issues/14 for USB), the PHYs are the biggest missing piece there overall..
+> So this is a mux for the VBUS_SEL signal?
 
-The PHYs likely sip power compared to other things.. (but of course fixing
-this would be welcome as every drop counts)
+Yes, Please find the bit definition.
 
-I am not sure what needs fixing, but there exists a chance that because
-of the relationship that we're talking about in this thread, the xhci
-suspend could use some love first.. I think there was some work on that,
-somewhere?
+0 VBUS_SEL 0h RW Select VBUSEN control
+0b: Output PP controlled by PORTSC1 register of the Host Controller as VBUSEN.
+1b: Output VBOUT controlled by VBCTRL register of the Host Controller as VBUSEN.
 
-Konrad
+We have USB PHY control driver(This driver)-> USB PHY driver->| USB HOST(Generic ehci/ohci)
+                                                       	  | USB function (renesas usbhs)
+
+We plan to set 1b for this IP in this driver for OTG channel during probe.
+After that using VBOUT register the PHY driver can switch between Host and device.
+
+> 
+> Why don't the USB host controller drivers parse their "dr_mode"
+> property themselves and control USB2PHY VBENCTRL via the mux API, for example?
+
+Currently for OTG channel, based ID detection IRQ, the USB PHY driver switches between host
+and device. We use method2 below for the host operation.
+
+For Host operation:
+Method1: USB2m_PHY_VBENCTL.VBUS_SEL=0
+or
+method2: USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 1
+
+For device operation:
+USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 0
+
+Are you suggesting to use method1(mux) for host operation?
+
+Currently this is one time configuration. If we plan to
+use mux, then it becomes dynamic.
+
+How we can we make use of PHY driver using mux API to select the mux register(VBUS_SEL)
+in USB PHY control Driver?
+
+Cheers,
+Biju
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 -- 
 linux-phy mailing list
