@@ -4,121 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD980CCA471
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 01:05:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66FACCAC5B8
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 01:06:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUJBy15yAr0SUMI6jC8CEPrIUzzkDQsMQPlRMdndw9A=; b=SwEcrrYaCQAFWn
-	7GS7i3uhLghUvZsWI+NBsIUtR1Kq7U78LzdL8oYrge6K3Gifoou7vcCMnFHxxgHynOa1PCKFiiUZu
-	Yy8uy2+LToJynlTpDg1MjN6XHJugIrIIK6wTZ4ndnqJcuA+Nbe4s616aEHV1R8alZJJI/HAnsSHkb
-	l7sHyekUJWbcHZom9NHPwn39ib+SVArlHxLyi0uATCsBDd2NvvknNL50hRGi1Q79F/L9VXourtdfq
-	v9E/3wcZ6Oyxa3rZ3BRPGNFSurH+/LEBAA6SVN6YXBqnwGFz2KD4tM8lSVJPfXPd55Ewzg3YQiWkd
-	zZumc5NfQCa1neCHiH6w==;
+	List-Owner; bh=PT+BTBI+wv5cX3IA6Y8j1c/Br8noDAqLFWESw0fFIKA=; b=oEu1hGiCskz4a+
+	14YW0io8DVmz+bM6bqZZ/erMGl1ku6G/EAkTaeTxh+2uGi/u4PF1OsLrHADuxD/hpIG59DVk4gL1S
+	4wlaAkEidZ1hDs1oZgn7KVncnRsZ4wtnHyIxG3hLPm3v0leyNYaWIdQ/WFBMyZoT4vsSDmYMAjhQL
+	MdX3bN95kJOGWRc1/os2zVdkD8Gsct7XXBaItJVcRT6beYTog5TT1WlYTwYYKHyr1EBWFOvEV/5Yi
+	z6v/xq0/aY4/GmH4bjdOic87ueI2AxnUg3SBIq+e/eB61ZA9jjt8LorPylEOu7ayIMOR61xwrxJ4X
+	DyjESXnm4ruEdkr6wMLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v5w8r-000000015uO-2DAd;
-	Tue, 07 Oct 2025 01:05:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v5wA0-000000015zM-0gvo;
+	Tue, 07 Oct 2025 01:06:36 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v5w8o-000000015u0-2toZ
-	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 01:05:24 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 596LKhxb017905
-	for <linux-phy@lists.infradead.org>; Tue, 7 Oct 2025 01:05:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	ahrNSeb0NQWhBk3m/lb45NZJspf2/oAz6SdApzCbmB4=; b=NbRT3MvCpVXIy1/j
-	yBsNPUnV+xpirXET0ZtQucBsmSEZN4tVhOuo63z61mDu4kqH+cS6kuXYd/c8LrhW
-	wFIOpeowFn+oAGZS/C5hLi1zSd/ZXVWgcVUEyyY+ZoEcxgluOirk5YVimKmYiotb
-	sHyoP65AvirMhuAHnD2DZTXNoKUGRW2cuh0IB2K+2F2SIKnwDYpBb72+wawiOhOr
-	qhjdUHKuE5m1pbo0vLNzWdoOubSVjh7UkWp3oa/h9UJobxYRfT0mcXlw/mRcHP8T
-	+7oSz/p0ss8iyKem9W6AKcW9aFQYSBshVXvFuTZ0kuhqVOvFNko2x13KhtiZtcVw
-	SfoPgA==
-Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49mnkprdqv-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 01:05:22 +0000 (GMT)
-Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-28c58e009d1so95536495ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 06 Oct 2025 18:05:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759799121; x=1760403921;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ahrNSeb0NQWhBk3m/lb45NZJspf2/oAz6SdApzCbmB4=;
-        b=phkOa6EOLbvt2PINm1Jl5EjLjcFjKTfuavVxbV/DyzwV1hpTlTUs0CLhwcjtH9rWJJ
-         2MNU0hp1zB1TiJrpZEiflrZa2EqJtvv1Ds6DOKMmtmIcM7HdNndZaCDygmAmGiF6UMUA
-         kgkC3v6IbKW4orYH1o9g++q/g9oYfMUREso/QhKJSoz08P40X7n4mJF2DF7//sp37bQ+
-         swWpieowKZ/3mGB8fCH7zq4/HlmJdsRo1rlsiSlTpnEoVD1tghww4+CX0aA0AID4jb8G
-         u3IzfX1ezcHbxjI++1OGq2lL5GIigQ/PP8QcCDCUNdH02ENSc2TpiOHUyCb7slrWCten
-         j/Tw==
-X-Forwarded-Encrypted: i=1; AJvYcCW/QGwbmVp2u++kaiuTjt3OkpCh2eOdsxEJqEWgEVGbYe6SxiV/B5BHcV0zHG3xnTITOV6VpWFKO1U=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx6FNtT8/GraMu1D3oEuv0e41E2tVKRe0JsFjSEohKykoeMrK9J
-	+lNftxQBSAw2COJIxefGDBmpgw8n5IeJCJuytebkxSylzBKPO1ABFo0IOs96GxqSl4ZiLWwEOEG
-	19pQchnQS3sZFOJEPZoYvObeA4pqem+DLz+e+SEyxsqJppHU6Tq49Kd/yxhf6WJzC+sy6
-X-Gm-Gg: ASbGncvMVMxyAPH4M6eI28IrPy1dW2UCauTctJDvmGApVON5ZDPiX4NynTI7iW/mLmh
-	ySnPTsVMobs3Q9aJQ75i8ya2DS1BnvE+LWz16caVGTHA6hux3D/5/546Gma3TMfRXzV5KgfeAYY
-	2FmczLdm3x/beGnLSUhzisvsnMB4aPMzn7BeFBaRLcPKk4uCsbAfNnoH37HNL0xMLWH/ifi2iEM
-	TUUx75q+VvmlqJy5kW5FqSsRQM1Z4De5TIXwg9/6oV1SPyPcTvpA6X1cIcsqA1G94zpZbb1wbgN
-	9DHloaVbw3ovzwC28NwoYa3UDwpAxilVm4LFIGi/zIw4r9nWYy6A/Jkj0Mjlr5g+k/kjXDzwadm
-	RmMSDscXc479r
-X-Received: by 2002:a17:903:1b46:b0:26a:23c7:68da with SMTP id d9443c01a7336-28e9a5bf107mr191525465ad.25.1759799121209;
-        Mon, 06 Oct 2025 18:05:21 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHK5FlqZZWAVLLYWf7xgsddH7C7vi1Z0PSmlxL52MRXH9QOeZfRWq6du/B1w3IP8YVFcHH7cQ==
-X-Received: by 2002:a17:903:1b46:b0:26a:23c7:68da with SMTP id d9443c01a7336-28e9a5bf107mr191524955ad.25.1759799120730;
-        Mon, 06 Oct 2025 18:05:20 -0700 (PDT)
-Received: from [10.73.54.138] (pat_11.qualcomm.com. [192.35.156.11])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b6099af3cf6sm13327205a12.13.2025.10.06.18.05.18
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 06 Oct 2025 18:05:20 -0700 (PDT)
-Message-ID: <6ed9bd6b-37a3-36a8-a347-85429670837f@oss.qualcomm.com>
-Date: Mon, 6 Oct 2025 18:05:18 -0700
+	id 1v5w9x-000000015yj-4BnG;
+	Tue, 07 Oct 2025 01:06:35 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6C630454C7;
+	Tue,  7 Oct 2025 01:06:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 24489C4CEF5;
+	Tue,  7 Oct 2025 01:06:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1759799193;
+	bh=7oQcilkprt+ujFKdnktKU9R8kCtmHAjQf/bDn+u5dho=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=FjrZxTwHmZpAxFmzGfPrpPMlq5p3lgmUUrlTQsrhabqgXg8nwqqBflXepSrsxG+1w
+	 riumzumvEsfza7Yi6rrMrts8Wh7IwRN1g+k41O4GdMiF3qlIh18USq89wUUKpXDJPh
+	 Z7xUWg2eo4m4VMIElTfEcdITLQFe4zQCCQny1ZmM+Y9Pe548u/aYnjLVT+KQ7DTktU
+	 GKrjKmlXLAkZGAuIVy2aQ3RuIpUVfs21FrjorHNFBHtheevK14Yo4d3BW+2uSx94kU
+	 f1x3kKBbc6qtfaGpl51S7WD/95nCKQuhyNUZCuxJE0P0ADxPP1Ry0m2CiZA8Xj1pko
+	 y4QcUR+qGi76g==
+Message-ID: <36068ca3-912e-4e71-b688-8689ead8194b@kernel.org>
+Date: Tue, 7 Oct 2025 10:06:22 +0900
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v5 00/10] Introduce Glymur USB support
-To: Krzysztof Kozlowski <krzk@kernel.org>, krzk+dt@kernel.org,
-        conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
-        dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
-        gregkh@linuxfoundation.org, robh@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
- <a6690fbc-0b86-4725-99ca-6b4cc477b4ec@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1 0/4] Add Google Tensor SoC USB support
+To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Peter Griffin <peter.griffin@linaro.org>,
+ =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>
+Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+References: <20251006232125.1833979-1-royluo@google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-In-Reply-To: <a6690fbc-0b86-4725-99ca-6b4cc477b4ec@kernel.org>
-X-Proofpoint-GUID: DrdJ2d0g0ldFWBGUeJsc3hWZuQ3BJmDD
-X-Proofpoint-ORIG-GUID: DrdJ2d0g0ldFWBGUeJsc3hWZuQ3BJmDD
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA2MDE2OCBTYWx0ZWRfXzhq7tHHnyEFL
- 9x9J3gRVrhk5OkVjIXOETV/7S6Po2e8WTtU2Q+1Y6FPCB+kM6VvvPwdsUfEZtkzvsvO7RlHd68l
- PGm8rEJiP3tdKWhZvA1dNu2UPC9U94OEbFjRAHMuJ52I7NxaYHEs39bcCbLJ7o0xOoNDluRXulm
- lqntO0E/f+IRoYaNI5B/LcZa/PzL0Du65M7ZRx3RlAEmHFAHf6MDXaJKAWdZEnmFfssOpmvCIDg
- qca0f8mh21sR0LkEADH9hD+W+WSZSaTLRxm25sxaI/Hdz50/xlQSOz58WfLLBSjRFJejV1SUDB8
- 3FrMYiuMo/lqx+3+U9djLozY4meOjKao6GuUKXtasL33+b6/MphGZ3ZvUPkkuzEQuHV2/CvOK6N
- mF85KadNeW80/msh0IeuBrfFrw5+mg==
-X-Authority-Analysis: v=2.4 cv=BuCQAIX5 c=1 sm=1 tr=0 ts=68e46752 cx=c_pps
- a=cmESyDAEBpBGqyK7t0alAg==:117 a=ZdW6uxA9NKXbfdqeeS2OGA==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=Zu9LzCyC9gr4H2Ik_2AA:9
- a=QEXdDO2ut3YA:10 a=1OuFwYUASf3TG4hYMiVC:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-06_07,2025-10-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 bulkscore=0 adultscore=0 priorityscore=1501 phishscore=0
- lowpriorityscore=0 clxscore=1015 spamscore=0 suspectscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510060168
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20251006232125.1833979-1-royluo@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251006_180522_744163_1CF404D9 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20251006_180634_082515_8E93DBFB 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,36 +121,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 10/6/2025 6:02 PM, Krzysztof Kozlowski wrote:
-> On 07/10/2025 07:19, Wesley Cheng wrote:
->> This series enables the PHY level changes that are required to support
->> the type C based controllers and the multiport controller.  The typeC
->> ports utilize a usb43dp based QMP PHY for the SSUSB path, while using
->> the M31 eUSB2 PHY for the HSUSB path.  For the multiport controller,
->> it will utilize two QMP UNI PHYs for the SSUSB path, and two M31 eUSB2
->> PHYs for the HSUSB path.
->>
->> -----
->> Changes in v5:
->> - Moved phy-qcom-qmp-usb43-pcs-v8.h into USB specific QMP driver
->> - Fixed DT bindings for clock properties for QMP combo PHY
->>
+On 07/10/2025 08:21, Roy Luo wrote:
+> This series introduces support for the USB controller and PHY found on
+> Google Tensor SoCs (G5 and newer). This includes:
 > 
-> Where are lore links? Why aren't you using b4?
-> 
+> 1.  DWC3 Glue Driver: A new glue layer for the Synopsys DesignWare USB 3.0
+>     controller (DWC3) as integrated into Google Tensor SoCs, including
+>     hibernation support.
+> 2.  DWC3 DT Bindings: Device Tree binding documentation for the Google
+>     Tensor SoC DWC3 controller.
+> 3.  USB PHY Driver: A new driver for the Google Tensor SoC USB PHY,
+>     initially supporting high-speed operations.
+> 4.  USB PHY DT Bindings: Device Tree binding documentation for the Google
+>     Tensor SoC USB PHY.
 
-Sorry, I'm confused?  Lore links to what exactly?  There aren't any 
-dependencies here, in case you mixed up this series with the DT one.
+This is useless message in the cover letter. We see what patches do from
+the patches.
 
-Thanks
-Wesley Cheng
+What you are supposed to explain here and in the bindings patches, is
+why we want this driver and what is Tensor SoC, considering we already
+have one Tensor SoC... IOW, explain everything which is not obvious -
+and duplicating SoCs with some generic name is for sure not obvious.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
