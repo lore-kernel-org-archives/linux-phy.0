@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90452CCA476
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 07:45:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D770BCCD184
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 07:47:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2KyAushwPkq8Cf/fox3eE6rE50Dy4+yqz+/U3v9Dwt0=; b=I+895MpEMdEfv2
-	u5S5JTP8KPKU+MqmlrHxJRZD4bFYjnkmUv4CN7vb5frc8WxPS5Kq2x3HIaMRgsz2XnRUB8iX1hIHj
-	dhzmPYoTxlt296m+RE6Wxo5Go/t/LonMhibeFg5sXQabr7BPbVezUAjN+ep7sHhli2OhqTXjHj58j
-	Nr2kXbdN+EtubMTGudm70SxsRNVSK7Wab6NTNrCGpePCWy5oINp0OVIoODIUsc0l6U+8QC1tCUGdk
-	8GCy/hlsPtZnngTZt6VbvVW5/GapE3SnkLBGWpVKEAqRjp/LDf5qo2s8+lRuNEelX+57z7qSocXoO
-	9pIU6j5gMx2Po02rNKtA==;
+	List-Owner; bh=h+SJqIi/cvEDz8DdfBriuhxQPMguemt/R+Dsz1uttKU=; b=WzJJuKiFc8nPR3
+	qxRlIDEojyrBo36BJp+EpEOQrLaJ+D5jTME8fK9eh/Fltx4oeYJCh6zvl09t+aF2vmWfctR8/sKoN
+	HT8v3gDb5VAqZdMn6muTAinPIkmXaLguew3ADgowrba94ek5/V980Q0UETIvsI4ES1X8JMfJ+uu7F
+	vdz+fv2Fuq6wzzgqyBZK6vcAnyiw/r29RjM2RXTjADcEfxQm3ec1e8v3IvNAxtTvYJJVOz2rGNPpX
+	YV1j7v1qu2XKQV5+KD5j29w/2DNknh+K/aifBXQGrNp+5RcBx1aCbgp7iJZcKi1xItx/VEUbwQ+bf
+	nil4fNaMLUY4Sy0j1fqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v62OQ-00000001SjB-17NH;
-	Tue, 07 Oct 2025 07:45:54 +0000
+	id 1v62QO-00000001Spr-2erk;
+	Tue, 07 Oct 2025 07:47:56 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v62OO-00000001Sj2-3Xlm
+	id 1v62QN-00000001Spd-2d4u
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 07:45:53 +0000
+	Tue, 07 Oct 2025 07:47:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id EF0AB61240;
-	Tue,  7 Oct 2025 07:45:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48E8AC4CEF1;
-	Tue,  7 Oct 2025 07:45:46 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 15E0561240;
+	Tue,  7 Oct 2025 07:47:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CDE6C4CEF7;
+	Tue,  7 Oct 2025 07:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759823151;
-	bh=WW37QoiuPeVTNYm+fnuzB34sOIgaIHg7JBkPF8kCec4=;
+	s=k20201202; t=1759823274;
+	bh=zmqBzj3LPmSqHnqZiKVDPRCtmZ+jWgYnBi48LNxsxbg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Jy/Nx5ecV9Q730xltkiFVLdtvF0ooRmJV/LKDp4YIjnDBEsi+/h0DcOQF2ionVJds
-	 Tj7/eW7qmoJisSc/m0uU9eG1cZ5JnaG+8tsH4eOemWnMXrKXzR+7usKRqF+f473f4e
-	 AST5Ercm5nN0ZJ/clmb0mEvhG6OqRk8Oa+it4K8JhcxW4xDKlhnTPRKQQy7I1BXskp
-	 670rEHDeyogkCKArVdFbt9ilQs/bC8CU5FJf/kkkTiY2hN2bDIw6fi38MJGiOZdiCG
-	 Qz8+egU7EO6oxlGICaV8ohUUMuCqjyAMZ5q9JzA/R/oCqWw/sex7rBhVHyslDbWiM5
-	 Y/3zWYarRv7Ow==
-Message-ID: <4c646887-094a-4399-9911-042e168b39a2@kernel.org>
-Date: Tue, 7 Oct 2025 16:45:44 +0900
+	b=T5mrgbSkQf0mVJYyTEVzW4lKUq5OijayYPZdN8KBGFp9BsOI0igUttwKk+8jg4Lu6
+	 2itiZZloDwmKtV6viojmhJLEI8S57+dfJqxtU+XRIMf16YIWXvDZnkvtavgegT5Ij6
+	 IFshU+EqV3md/PzXYqRTXKLzGOlFM2euT3qMaxgxL0wu8IIR2bQKq8V4v04oRP/Guw
+	 bKiWsRKAzh1VXHFQxc5wAVfZ/Jwpx7YvAxnjf1MiZYV2fpdBeAKcxnm89BjcM9p639
+	 63n2R4ScBfYz4iQCitketEr1ogBmowgk7mEfUU50YGBYa6/Y8FCnWZKt8tD5n6jhFk
+	 noiSdxfyJWwxQ==
+Message-ID: <60a2e050-d1ea-4090-99de-e35117d832f8@kernel.org>
+Date: Tue, 7 Oct 2025 16:47:46 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 05/10] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
- SMB2370 compatible
+Subject: Re: [PATCH v5 04/10] dt-bindings: usb: qcom,snps-dwc3: Add Glymur
+ compatible
 To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, krzk+dt@kernel.org,
  conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
  dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
@@ -56,7 +56,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
- <20251006222002.2182777-6-wesley.cheng@oss.qualcomm.com>
+ <20251006222002.2182777-5-wesley.cheng@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,7 +102,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251006222002.2182777-6-wesley.cheng@oss.qualcomm.com>
+In-Reply-To: <20251006222002.2182777-5-wesley.cheng@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,15 +120,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/10/2025 07:19, Wesley Cheng wrote:
-> Add the compatible string for identifying a SMB2370 USB repeater device.
+> Introduce the compatible definition for Glymur QCOM SNPS DWC3.
+
+Please describe what is "mp".
+
 > 
 > Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->  .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml        | 1 +
->  1 file changed, 1 insertion(+)
-> 
+>  .../bindings/usb/qcom,snps-dwc3.yaml          | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+
+
+With above improved:
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
 
 Best regards,
 Krzysztof
