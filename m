@@ -4,105 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D770BCCD184
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 07:47:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03F60CCD185
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 09:09:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h+SJqIi/cvEDz8DdfBriuhxQPMguemt/R+Dsz1uttKU=; b=WzJJuKiFc8nPR3
-	qxRlIDEojyrBo36BJp+EpEOQrLaJ+D5jTME8fK9eh/Fltx4oeYJCh6zvl09t+aF2vmWfctR8/sKoN
-	HT8v3gDb5VAqZdMn6muTAinPIkmXaLguew3ADgowrba94ek5/V980Q0UETIvsI4ES1X8JMfJ+uu7F
-	vdz+fv2Fuq6wzzgqyBZK6vcAnyiw/r29RjM2RXTjADcEfxQm3ec1e8v3IvNAxtTvYJJVOz2rGNPpX
-	YV1j7v1qu2XKQV5+KD5j29w/2DNknh+K/aifBXQGrNp+5RcBx1aCbgp7iJZcKi1xItx/VEUbwQ+bf
-	nil4fNaMLUY4Sy0j1fqA==;
+	List-Owner; bh=LujDLqrmZFDDiKj/iKonN0UHun/gAbaBHzvAb8Ipj+c=; b=KoYJYIzaIOBfrp
+	ByA5CdnEVYg+rje+cQuFytP0Cp+S7bRvEjJfnvU38kgQSO4Mj1UGtRONS7FK3dB5rscLGICZApFTQ
+	DG/GbplsbthMxz4U/hRzx3pCJKgGcXoUS9KIpn2yisecjxwnokZ1qi6nKNAldQ5j5QImUIYaHcr78
+	LfKlirU8IEmH14Rpmk04JJdvXoKTwDFoCmuGKDZpFViBI8TiOZdUjw7CnSXdv2jaNBTrinVn4Awby
+	ROjjJvmp4V7hFg55RwZF+mcbzi/ZwOrH9Upn4nGX3DSEJN9ErjfO7jztoAy6uML3kph0FWcNUlsrk
+	eNOEqcSGeNfjK0YkiVnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v62QO-00000001Spr-2erk;
-	Tue, 07 Oct 2025 07:47:56 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1v63hb-00000001fqT-3FVa;
+	Tue, 07 Oct 2025 09:09:47 +0000
+Received: from mail-ot1-x32e.google.com ([2607:f8b0:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v62QN-00000001Spd-2d4u
+	id 1v63hY-00000001fpA-2m0x
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 07:47:55 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 15E0561240;
-	Tue,  7 Oct 2025 07:47:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CDE6C4CEF7;
-	Tue,  7 Oct 2025 07:47:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759823274;
-	bh=zmqBzj3LPmSqHnqZiKVDPRCtmZ+jWgYnBi48LNxsxbg=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=T5mrgbSkQf0mVJYyTEVzW4lKUq5OijayYPZdN8KBGFp9BsOI0igUttwKk+8jg4Lu6
-	 2itiZZloDwmKtV6viojmhJLEI8S57+dfJqxtU+XRIMf16YIWXvDZnkvtavgegT5Ij6
-	 IFshU+EqV3md/PzXYqRTXKLzGOlFM2euT3qMaxgxL0wu8IIR2bQKq8V4v04oRP/Guw
-	 bKiWsRKAzh1VXHFQxc5wAVfZ/Jwpx7YvAxnjf1MiZYV2fpdBeAKcxnm89BjcM9p639
-	 63n2R4ScBfYz4iQCitketEr1ogBmowgk7mEfUU50YGBYa6/Y8FCnWZKt8tD5n6jhFk
-	 noiSdxfyJWwxQ==
-Message-ID: <60a2e050-d1ea-4090-99de-e35117d832f8@kernel.org>
-Date: Tue, 7 Oct 2025 16:47:46 +0900
+	Tue, 07 Oct 2025 09:09:46 +0000
+Received: by mail-ot1-x32e.google.com with SMTP id 46e09a7af769-7b97ce4fc60so1810544a34.0
+        for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 02:09:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1759828183; x=1760432983; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=k5Gn50jfOxZiiSgXxR/gre/tjvhockNBFkRAG2DI30U=;
+        b=Ahbn+AC9A7qC6Jb+7SqDTXMs17YRFJHPw5+1C5Vo5YhAOvOGeYwvfQFiYq+RHiln+u
+         mea3ZcVI9VaF6OGV2A+mGw30IAGgdFHQ/mR0LAnRGSDChjqNMxQYhNIy8IzYzCwqy6Zi
+         88ykp/FtEvBFGg6gANvHwlKkKORZBkqqJNAnit9Y6of+9cfPQwb06ApcbiJEIAwGjNc8
+         xA+/FbdKaD7ofGSoeGLdNBDyLm9Mb0hw0lcxwZP+ffCjmpwAqBvpvadFNQ9OA4KGW0xj
+         yvYHHr+7VQT2nEmzNpQtqPduvPHGoyncn4Sv85Y6P4YTRC1iwyLihUQa/Ro2YUGS/+tQ
+         mBzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759828183; x=1760432983;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=k5Gn50jfOxZiiSgXxR/gre/tjvhockNBFkRAG2DI30U=;
+        b=ZuQ9x8gIxuH4y7s8QflJXXGVQ4lLUyDZYXH38llKTws7WSlaMHaQvlbg+hnjP9mXif
+         koXD42XANDV24WTJ1cwkj0TOocnWxqb/LMNBBf9ah+x8e2BeHzjJmKxqX1XiCq5Ux9Fh
+         dSw7ImmXp61ZXreFmRyQa1Tn3jX9pLXV0CpIIQLnAp4sC7BVm8dtcRbptsJidKnvtmZF
+         xPZJ2IurZpdIreNwsDw8LRXItNgXVeWmQjSI2MF7g6o7+peC1gx9mig0B/GRtd8Pyl3O
+         mz9k5ITfk69e9Anqsh5s8ee58j9/zfAFSg/NE0CdQSaUQauH4nRs6zRfneMMuvubq6+W
+         HdyA==
+X-Forwarded-Encrypted: i=1; AJvYcCVXPtumNIHxxlfiMwiin1U9KsMIl7h+whnYsUYS64knzn9Wi9RsYeYEwOEawjmLDGgcNkRJYWNHZNM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxJ66UWqMaAs7pmbeAbWX80BIA54thUG2O8G8xFvS4MyB8fJnnS
+	WJOXsDdY+SJoOackATGqX2ua293FxgiZdoY5k87gdZ6oySTws8yNVt+WZYTwL0kiujCF6qapedc
+	y1WubOWi2mfeD8+NsZ+UTTCml039P5chjY4O+x6PVBw==
+X-Gm-Gg: ASbGnctIHVkuiizHK2f0WM2xa1EcAdLvxwYBu8zAdR1smXL3l01hH4p7uQwwg3pOerA
+	2j4Lh6sJV4p0vTF7ufTWYYx4BrkdPEP/swb22gi+aGtp+2bbwlwBTcaTBMQ5z8arTpAnmF4IBKZ
+	ufNbApRS/MjPWG8USFIM7mvPitYtPLKMxEdxYbUcKsiHKNqB0yXMsNhKb1VfzuNA7oW1QGjIz+H
+	S2jVDHQIDcdQerKkLOQkmTH9yBfpu+f8Oq9DA==
+X-Google-Smtp-Source: AGHT+IFtOrLlwJK0/TEgM+f2IS4t9o4gV7fAIVv15sfMLe5yqLK9nGKna5+x4B1VTMirLjZ+oFvqM3iKI6ns6JfL4hs=
+X-Received: by 2002:a05:6808:3096:b0:438:2907:2ead with SMTP id
+ 5614622812f47-43fc18a2091mr6585032b6e.50.1759828182026; Tue, 07 Oct 2025
+ 02:09:42 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 04/10] dt-bindings: usb: qcom,snps-dwc3: Add Glymur
- compatible
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, krzk+dt@kernel.org,
- conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
- dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
- gregkh@linuxfoundation.org, robh@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
- <20251006222002.2182777-5-wesley.cheng@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20251006222002.2182777-5-wesley.cheng@oss.qualcomm.com>
+References: <20251006232125.1833979-1-royluo@google.com> <20251006232125.1833979-3-royluo@google.com>
+ <8ca61364-df47-41f2-b0d1-f2a8a74ec728@kernel.org>
+In-Reply-To: <8ca61364-df47-41f2-b0d1-f2a8a74ec728@kernel.org>
+From: Peter Griffin <peter.griffin@linaro.org>
+Date: Tue, 7 Oct 2025 10:09:31 +0100
+X-Gm-Features: AS18NWD7ktu7qt-H0DxecJcoZK61ZH3ap7EbdS2ccz0Z-j7ffn7elGuijfKqbpQ
+Message-ID: <CADrjBPr7Jp_ZyGv2Krv6iLG0avgFWpcWJEO-Z=cEkhwEY-+z5Q@mail.gmail.com>
+Subject: Re: [PATCH v1 2/4] dt-bindings: usb: dwc3: Add Google SoC DWC3 USB
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
+	Tudor Ambarus <tudor.ambarus@linaro.org>, Joy Chakraborty <joychakr@google.com>, 
+	Naveen Kumar <mnkumar@google.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251007_020944_867120_2B7CF503 
+X-CRM114-Status: GOOD (  24.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,25 +103,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/10/2025 07:19, Wesley Cheng wrote:
-> Introduce the compatible definition for Glymur QCOM SNPS DWC3.
+Hi Krzysztof & Roy,
 
-Please describe what is "mp".
+Firstly thanks Roy for your patches, it's great to see more Tensor
+support being posted upstream!
 
-> 
-> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> ---
->  .../bindings/usb/qcom,snps-dwc3.yaml          | 26 +++++++++++++++++++
->  1 file changed, 26 insertions(+)
+On Tue, 7 Oct 2025 at 01:44, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On 07/10/2025 08:21, Roy Luo wrote:
+> > Document the DWC3 USB bindings for Google Tensor SoCs.
+> >
+> > Signed-off-by: Roy Luo <royluo@google.com>
+> > ---
+> >  .../bindings/usb/google,snps-dwc3.yaml        | 144 ++++++++++++++++++
+> >  1 file changed, 144 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml b/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+> > new file mode 100644
+> > index 000000000000..3e8bcc0c2cef
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/usb/google,snps-dwc3.yaml
+> > @@ -0,0 +1,144 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +# Copyright (c) 2025, Google LLC
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/usb/google,snps-dwc3.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Google DWC3 USB SoC Controller
+> > +
+> > +maintainers:
+> > +  - Roy Luo <royluo@google.com>
+> > +
+> > +description:
+> > +  Describes the Google DWC3 USB block, based on Synopsys DWC3 IP.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    items:
+> > +      - enum:
+> > +          - google,lga-dwc3
+> > +      - const: google,snps-dwc3
+>
+>
+> There is no such soc as snps, so you grossly misuse other company name
+> as name of SoC. Neither lga. Otherwise please point me to the top-level
+> bindings describing that SoC.
+>
+> You need to better describe the hardware here - why this is something
+> completely different than GS which. Or switch to existing bindings and
+> existing drivers. Did you align this with Peter Griffin?
 
+I think (from what I've seen at least) this is the first submission
+for drivers in the Tensor G5 SoC used in Pixel 10 devices (which as I
+understand it isn't based on any Samsung IP). Hence the new drivers,
+bindings etc.
 
-With above improved:
+However the issue is that none of the other base SoC drivers on which
+this driver depends currently exist upstream (like clocks, reset
+driver, power domains, pinctrl etc). So it's very hard to reason about
+the correctness or otherwise of this submission. It is also likely
+that when those drivers are upstreamed things could change in the
+review process, to how it looks today in the downstream kernel.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+So in summary I think to progress with this we need to get the base
+Tensor G5 SoC drivers merged first (e.g. boot to console with pinctrl,
+basic clock support, reset driver etc). Then we can start adding in
+some of the other peripherals like i2c/spi/usb etc and build up the
+mainline support from there.
 
+Thanks,
 
-Best regards,
-Krzysztof
+Peter.
 
 -- 
 linux-phy mailing list
