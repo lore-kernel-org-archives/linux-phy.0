@@ -4,66 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ECF3CCA472
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 12:06:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F3DECCA470
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Oct 2025 14:13:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ub8aNbMrIQO8rmKAXAmrrgU3MAOwSgl0dIkskefJWUE=; b=uf5tykDFJtm3km
-	M6Hnz6wHqlQxTSt8zpG6EE1Yjz3x3ckYo1T6uOzJ5STXDUUZLxuRxGfcoBGxdMCKRsjJzStX0HO16
-	CeCKZCCb3E+DP6NT9yTgOOB2ojgPBYpUXtYhkDNR3pS9rfkZHAdr2N5Ka71m9O1G4ToJBzoKkHl/T
-	CiNY/rQowJlnwRcEzOpDd55DjuFhqxfLbsBPwO1gFHgcn98pkTRrGIn/znnqS0pbVnl8RIVAxd0wT
-	Z0SSe9uRyQ/CsdP6XfrYVTf6sN/dafEwQKR6dNDV5Zh00GhyTdhIRd5tiFqUhuq+toelmuFjuvZ/O
-	DpZvrhgycN5uS2ZPKiYQ==;
+	List-Owner; bh=PBO9wARxZIyv3cFXIDDJiwOIdGKA6s3/K/M1rGegQOU=; b=mDsEhKlPj1NrN0
+	A0dTjWCNiKtm1ddnKp4likOwPeVraPaKIYb7grV9Hnp5KmTINL8ApluZ+V+a7OiqfkuNsE1ESOFTz
+	qBY7q1jdl91hCksw+rF1oGFHc5nWikCmvvzqFxth6mVj7SBais3SacxE1+eKXMotv71Kah+7qelOj
+	R/+nv/8dll3GRiPhpt9jl6LehSdoKDPAhsKtewZ1yEdOZKpaZnorzs+v+2bRhfBaqwubj2VMe+UoM
+	wgSeHokRJSijeHH6X9TIpuIvD9QOYL+Nd0Lpru2D7M6lrKtJO0BfKRZftnpqhUfiezvh2lRxUXlJh
+	CZBo42Y/q1Zajs/ROlqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v66Sz-00000001xEn-1BJk;
-	Tue, 07 Oct 2025 12:06:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1v68Rd-000000029hL-3JO3;
+	Tue, 07 Oct 2025 14:13:37 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v66Sx-00000001xEV-0n5Q
+	id 1v68Rb-000000029gd-3hzp
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Oct 2025 12:06:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 23F4145134;
-	Tue,  7 Oct 2025 12:06:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 32F3DC4CEF1;
-	Tue,  7 Oct 2025 12:06:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759838810;
-	bh=HK8+YNzdJqtVk+JdmSNsEKCE8a3KoVYY3eqqBNJgtTo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=l9HnFugsgsjSf3qUmvnoQj2IC9dFLMdTNCyuLC/hdH0xpOMu58PGWx4xwGWlkafFD
-	 et07c9zU6eADVC8Cm0zTzOVhnljLuj3BUKBQ+9knTULdrEdRgKvwT5RFMpSjzuL7HE
-	 PZ8F9oBjuRAsQZgk1FwlJOEJ1PM2cEhYr2THdDsZwW0HLwfDWb1I+MckT1xFwDfkPo
-	 zanwSU8mnynqbvZcfsprdkiuEhF0HHIZePnHCbgt9cmaWv+Lzako025zNankT3Vd2n
-	 pY8csCg0sQ2wt+QOFwAUU0yHL0qexRPtlKo7CWExFnxLc8j03cm4vxrqDiay2cx3aO
-	 SMsLFZwvlMr6A==
-Date: Tue, 7 Oct 2025 14:06:43 +0200
-From: Niklas Cassel <cassel@kernel.org>
-To: Yulin Lu <luyulin@eswincomputing.com>
-Cc: dlemoal@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, linux-ide@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org,
-	ningyu@eswincomputing.com, zhengyu@eswincomputing.com,
-	linmin@eswincomputing.com, huangyifeng@eswincomputing.com,
-	fenglin@eswincomputing.com, lianghujun@eswincomputing.com
-Subject: Re: [PATCH v5 1/3] dt-bindings: ata: eswin: Document for EIC7700 SoC
- ahci
-Message-ID: <aOUCU28Jjfnk2bYm@ryzen>
-References: <20250930083754.15-1-luyulin@eswincomputing.com>
- <20250930084348.100-1-luyulin@eswincomputing.com>
+	Tue, 07 Oct 2025 14:13:37 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1v68R6-0000Tf-32; Tue, 07 Oct 2025 16:13:04 +0200
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1v68R4-002Phx-33;
+	Tue, 07 Oct 2025 16:13:02 +0200
+Received: from pza by lupine with local (Exim 4.98.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1v68R4-000000004MN-3brl;
+	Tue, 07 Oct 2025 16:13:02 +0200
+Message-ID: <988658d3485232a0bb6c433b6533ebf0ae41226a.camel@pengutronix.de>
+Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for
+ OTG mode
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Biju Das <biju.das.jz@bp.renesas.com>, Tommaso Merciai	
+ <tommaso.merciai.xr@bp.renesas.com>, Tommaso Merciai
+ <tomm.merciai@gmail.com>
+Cc: "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I	 <kishon@kernel.org>, Geert
+ Uytterhoeven <geert+renesas@glider.be>,  "magnus.damm"
+ <magnus.damm@gmail.com>, Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ "linux-phy@lists.infradead.org"	 <linux-phy@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org"	 <linux-kernel@vger.kernel.org>
+Date: Tue, 07 Oct 2025 16:13:02 +0200
+In-Reply-To: <TY3PR01MB1134623A14F4F313986F631ED86E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <20251001212709.579080-1-tommaso.merciai.xr@bp.renesas.com>
+			 <20251001212709.579080-5-tommaso.merciai.xr@bp.renesas.com>
+		 <593eb851ae6ce0ec03ddeacf436180b6538fdd1e.camel@pengutronix.de>
+		 <TY3PR01MB1134635745721CC005B35702286E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+	 <01fc3101ab2e3898932afeaaaf060a6676cdf323.camel@pengutronix.de>
+	 <TY3PR01MB1134623A14F4F313986F631ED86E0A@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+User-Agent: Evolution 3.56.1-1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250930084348.100-1-luyulin@eswincomputing.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_050651_254948_D54A11A2 
-X-CRM114-Status: UNSURE (   6.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251007_071335_922857_2675FF11 
+X-CRM114-Status: GOOD (  32.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,19 +90,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 30, 2025 at 04:43:48PM +0800, Yulin Lu wrote:
-> Document the SATA AHCI controller on the EIC7700 SoC platform,
-> including descriptions of its hardware configurations.
+Hi Biju,
+
+On Di, 2025-10-07 at 11:04 +0000, Biju Das wrote:
+> Hi Philipp,
 > 
-> Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
+> > -----Original Message-----
+> > From: Philipp Zabel <p.zabel@pengutronix.de>
+> > Sent: 07 October 2025 10:44
+> > Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL register for OTG mode
+> > 
+> > Hi Biju,
+> > 
+> > On Di, 2025-10-07 at 04:02 +0000, Biju Das wrote:
+> > > Hi Philipp,
+> > > 
+> > > Thanks for the feedback.
+> > > 
+> > > > -----Original Message-----
+> > > > From: Philipp Zabel <p.zabel@pengutronix.de>
+> > > > Sent: 06 October 2025 17:32
+> > > > Subject: Re: [PATCH 04/18] reset: rzv2h-usb2phy: Set VBENCTL
+> > > > register for OTG mode
+> > > > 
+> > > > On Mi, 2025-10-01 at 23:26 +0200, Tommaso Merciai wrote:
+> > > > > Add logic to set the VBENCTL register when the USB controller
+> > > > > operates in OTG mode. This is required to ensure proper USB
+> > > > > transceiver behavior when the device is configured as OTG.
+> > > > > 
+> > > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> > > > 
+> > > > I had reservations about this driver before, because of the opaque
+> > > > register initialization sequence, and I was told that no, this is a reset driver alright [1].
+> > > 
+> > > The latest hardware manual document about VBENCTRL register which sets source for VBUS selection.
+> > > s
+> > 
+> > I still can't look at this, right? The USB2PHY control register space appears to be documented in
+> > the "RZ/V2H Group User's Manual: Hardware (Additional document)" (under NDA).	
+> 
+> It is documented here[1], Page 2177, USB2PHY Control Register (USB2m_PHY_VBENCTL)
+> 
+> [1]
+> https://www.renesas.com/en/document/mah/rzg3e-group-users-manual-hardware?r=25574493
 
-I will queue up patch 1/3 once v6.18-rc1 is out.
+For me, that link points to a document without the USB2m_PHY_* register
+definitions. Page 2177 is unrelated (documenting PCI_EP_HLOG2_Fn,
+somewhere in the PCIe interface chapter).
 
-I expect patch 2/3 and patch 3/3 to go via the phy tree.
+> > > > Can you please try to find a proper abstraction for this, because
+> > > > drivers/reset is not the correct place for USB OTG mode handling.
+> > > 
+> > > Sorry for the confusion. This driver is not handling USB OTG mode. It
+> > > just configures VBENCTRL(one time setting) that selects the source for
+> > > VBUS_SEL. Actual USB OTG mode handling is done USB PHY driver which sets host/device mode based on
+> > ID detection.
+> > 
+> > So this is a mux for the VBUS_SEL signal?
+> 
+> Yes, Please find the bit definition.
+> 
+> 0 VBUS_SEL 0h RW Select VBUSEN control
+> 0b: Output PP controlled by PORTSC1 register of the Host Controller as VBUSEN.
+> 1b: Output VBOUT controlled by VBCTRL register of the Host Controller as VBUSEN.
+> 
+> We have USB PHY control driver(This driver)-> USB PHY driver->| USB HOST(Generic ehci/ohci)
+>                                                        	  | USB function (renesas usbhs)
+> 
+> We plan to set 1b for this IP in this driver for OTG channel during probe.
+> After that using VBOUT register the PHY driver can switch between Host and device.
 
+Thank you for the explanation.
 
-Kind regards,
-Niklas
+> > Why don't the USB host controller drivers parse their "dr_mode"
+> > property themselves and control USB2PHY VBENCTRL via the mux API, for example?
+> 
+> Currently for OTG channel, based ID detection IRQ, the USB PHY driver switches between host
+> and device. We use method2 below for the host operation.
+> 
+> For Host operation:
+> Method1: USB2m_PHY_VBENCTL.VBUS_SEL=0
+> or
+> method2: USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 1
+> 
+> For device operation:
+> USB2m_PHY_VBENCTL.VBUS_SEL=1 and USB_HOST_VBCTRL.VBOUT = 0
+> 
+> Are you suggesting to use method1(mux) for host operation?
+
+No, not necessarily. I was thinking of letting the PHY driver, before
+registering the VBOUT controlled VBUS regulator in its probe function,
+call into the mux API to set VBENCTL.VBUS_SEL=1 and thus make the VBOUT
+bit functional.
+
+> Currently this is one time configuration. If we plan to
+> use mux, then it becomes dynamic.
+>
+> How we can we make use of PHY driver using mux API to select the mux register(VBUS_SEL)
+> in USB PHY control Driver?
+
+For example, this driver could spawn an auxiliary mux device with a
+driver in drivers/mux that registers a mux for VBENCTL.VBUS_SEL on the
+&usb20phyrst node.
+
+The phy could then get a "mux-states = <&usb20phyrst 1>;" property in
+its device tree node and call the equivalent of:
+
+  mux_state = devm_mux_state_get_optional(dev, NULL);
+  mux_state_select(mux_state);
+
+to switch to VBOUT controlled VBUSEN.
+
+regards
+Philipp
 
 -- 
 linux-phy mailing list
