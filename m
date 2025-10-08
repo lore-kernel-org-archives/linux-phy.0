@@ -4,133 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67E31CAC5BB
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 19:08:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77A47CCA470
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 20:58:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=27Gqtocs6V8LCT+tfCQLiJ3a2fWh3S0BagvtLlM64Tk=; b=BSN0JbF5zvWgIv
-	xFzPHzHR93nzXU/0PPRdcH1fgtujma6fEFSyiRDeVBD1wH55Wqec2A2fvpv5bh8eZe9NCL1VgV5yv
-	vRcxl+dpvaxPFi61fkXE2Q9q4u80EEs5H4HA1mWVIH3tyMwxHvl8vp7zcCA/zoTqH6bVb/E6TeQN0
-	yWX5+IbdotMA/uhmpgiyPHczSMANdmp/eDsnMwWWtJtONs5TS46TD+qCd0/9iDxsPCdDjKIHUS6dr
-	C2DJ9vDWTWBW97W7YM805wEPkpAWFO/hLhQO1omVud0I4fOfy9zRoSvISMbAOOosUJY2BvQWV8w1u
-	IvCXn1aX5g+eFwbQVdIw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+X92cwFBz2FiNTY8f1LSLwFTBMdwg7qQVNmPn5h6cew=; b=OxvI+mdfzbRUT/vhZBRHxRFAiG
+	4PU0FsZXbEH7prZx6MFrPbdmu8ztU3SkI8sEa/kxnAuILd6HDjtD127QrpHM+lecrQktJ+ShHe83P
+	hEDYfibJmhAB8s6kvkjw6NN16C1uxY3Bc4usKIcVvhTKCf6VC39ZTw0Qds1U11sfps4FV+tqfZx32
+	6ZXufcC/Ez73efUN6gqkvnn3W6/pZUVK5Wkx8yhLobOwTfo5CacK3UDkll8XOoyHFJVgKI6WbTB7x
+	RxoQL5wtiP4Zf0gSe+GXbHBQE4u+tUzHg7xo3FldqPHvhom0Lqd3XYIrzuO5xRL+f/xhjOvtYINer
+	jzi5+wiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6ZWi-00000004X2O-0NnC;
-	Wed, 08 Oct 2025 19:08:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v6bFI-00000004fl3-0rp3;
+	Wed, 08 Oct 2025 20:58:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6ZWe-00000004X1Z-3nyA
-	for linux-phy@lists.infradead.org;
-	Wed, 08 Oct 2025 19:08:38 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 598I5dGe003321
-	for <linux-phy@lists.infradead.org>; Wed, 8 Oct 2025 19:08:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=Rw+KzFLht2yFEyIY3QTrtR4U
-	azMsrTevmU+uxmGDP9w=; b=PSdS5V7S4B5LBHn/bBi7uCxcLnpqO98yWb2aZxkL
-	lHs5i9bU4aIKC039KmHUdulwm0yCEhO4dWty9V8u9aY5N4T/vnWejxXYq64f/OZ7
-	S63MguaLUpJpbI968PxkYiryqfI1Z8c6uhPzDa2WjBu9GrRcv0HB9ABQ5qlvLTAN
-	la5vrp2lBgE1afSvxkRgwqZXXfwxNDosmbqLLrDPJAzNStM+qH3o4D+S/3f2DZdD
-	oQjt3tOvTfi0Yxzq3l9gWBAOkmsA1gINUmpL9RpSm/0e/AJZ+GKQFaMotmfLl8NJ
-	/JIn/yFtiD8sY+9NwjFQ6JPr1mQaZuQnKyaCF07D5mLYSQ==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49nv4m0bk6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 08 Oct 2025 19:08:36 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4deb67c61caso5788281cf.2
-        for <linux-phy@lists.infradead.org>; Wed, 08 Oct 2025 12:08:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759950515; x=1760555315;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Rw+KzFLht2yFEyIY3QTrtR4UazMsrTevmU+uxmGDP9w=;
-        b=Vr3aRBxm5vkL+9bsQ+37A68ZEKtYkhOblU2RTub7Q3K9orz57oYyO8gJfqppjyktP6
-         pKTYhRNsFfmTFNrYA8WTdXVCd6SgAqONfN+Z21uf4D2tCj6vpy15qY9JGhYXrNHPsktg
-         GCn/46Vwtcfpznf+scOT9ucXVabQFNulnx0Jnc9RnQZpRRc+zv1lxvV/4CwmQot6Q3DJ
-         xLLRR9fYNQ0vdc2IFfXoRO3EzXk+FpCyRNM2AhwpVDB3VeAdd+VCBDzyvJzFCtxal6YN
-         baoId6+teGLRgd5jCP19IUG2M1cqqKYIYA99LjrH322dMrc5i5/coagY3LRwDe+F+39b
-         JYfA==
-X-Forwarded-Encrypted: i=1; AJvYcCVrMb2dQ+kJRYO+f3Ucx/FIzAjMhYozm1+A7eh1QI8Rx3O/4FJJPtWBPaHtAXdQjSGr/7qYpay7kGs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxj0Yda1Oscx3CyBFrhzXWfUv5fWNuwIRgaTrFLyTXUUOJRagd8
-	A1YprVxC3T6aSULSqc6p5Jth9X7eX+KTah3RHQ01rEwdIYWcwvLo/RKIYPn6bAsFTUsF/fu0TWg
-	/Ulr3/OeN6zMrHAv5qO9zpMpzixVEOqop3mi+WvCpmFGjLLFUQcF6Wm8ZZ34Kqf7ezo1m
-X-Gm-Gg: ASbGncs+UCoVXcYHFLGDkqNa0jbJEcjf3zMgPG8pnJb1QA9uMLK5AKuTCI0ZO1BusmC
-	OBTALswAc4W/rp5HNB2aJ7oqRIeeg9A9nm4N6SFIE36rngmo0Ux0nNWQDyd5PmMUUTrtAP20z4x
-	4IhOMD7SfA7SQYg6KVbdKvIdv/hcJD5SXqCEkEzLzeU73LPqdAELsBYpsn+K2dO3hhxbUmU9n03
-	hURHfcAcPHS7PN08T9kGCQ2+wn4oGR8tYTMxGcpE4yu6kFlhKygwt/46qQ/eAh9ATMB75oQXCXA
-	VebbqdPoQEFiV2ieYB57Rugl2xr5t/8Z+MwoHbzpvEqURoQNpBtOPlxI8pnRu/UTj1B5dss7tXp
-	VDJFrE5jOfwChYPV0RqyS5U4F96P0sQiFG1zrqOa8KcC7BqjHxWeoof5Aow==
-X-Received: by 2002:a05:622a:4206:b0:4dd:e207:fce with SMTP id d75a77b69052e-4e6ead64a22mr57960251cf.70.1759950514866;
-        Wed, 08 Oct 2025 12:08:34 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IE9dfHI26F6tmDQPEhiuoqrcfAbe3ngcx7SImkYRwO78fn/4c/EYGv3VDRX+xMY9m3o8N3kCw==
-X-Received: by 2002:a05:622a:4206:b0:4dd:e207:fce with SMTP id d75a77b69052e-4e6ead64a22mr57959571cf.70.1759950514231;
-        Wed, 08 Oct 2025 12:08:34 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-375f39fdbc4sm22092051fa.17.2025.10.08.12.08.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 08 Oct 2025 12:08:33 -0700 (PDT)
-Date: Wed, 8 Oct 2025 22:08:31 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        quic_vbadigan@quicinc.com, quic_mrana@quicinc.com
-Subject: Re: [PATCH v3 2/3] arm64: dts: qcom: sm8750: Add PCIe PHY and
- controller node
-Message-ID: <qref5ooh6pl2sznf7iifrbric7hsap63ffbytkizdyrzt6mtqz@q5r27ho2sbq3>
-References: <20250826-pakala-v3-0-721627bd5bb0@oss.qualcomm.com>
- <20250826-pakala-v3-2-721627bd5bb0@oss.qualcomm.com>
- <aN22lamy86iesAJj@hu-bjorande-lv.qualcomm.com>
- <4d586f0f-c336-4bf6-81cb-c7c7b07fb3c5@oss.qualcomm.com>
- <73e72e48-bc8e-4f92-b486-43a5f1f4afb0@oss.qualcomm.com>
- <8f2e0631-6c59-4298-b36e-060708970ced@oss.qualcomm.com>
+	id 1v6bFF-00000004fkY-1FkK;
+	Wed, 08 Oct 2025 20:58:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id A13D1402B9;
+	Wed,  8 Oct 2025 20:58:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE588C4CEE7;
+	Wed,  8 Oct 2025 20:58:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1759957124;
+	bh=u+7t08X/+SbXaDtAVRzGtlvNbiihuB51BPXTkQ6Q1NQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=CYiBhD9nU7UHGrRGOhKpxtOeu42UNvpeEXnvJKO1AnKCri3uTHSCori2F/6oV6Ao/
+	 uuJokJ8HQ08GhcO0eTjQALWfr1p6RAayHNshP7rPXMZGXaJPYImHTQVl9jLOpFgYOh
+	 FA94dHDio0zVtvWA55xRllxDJKRTjgnx6lZKjicRCev47oZHY6UsXym1Tg2qO2y02R
+	 7N5TFRQk4qL72c3x0zMX3G/Nqr0xQP09nlSvOIXT8uMWF91fMJukIu0h0FIMjlPTzq
+	 hHHkTXlTOVVOOzW5mY7EOaTpZGvjM0M0+a1RftrIMGUKeTkxcSUlAyY60AejzPWlrt
+	 RbDZyraGvszpA==
+Date: Wed, 8 Oct 2025 21:58:38 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Roy Luo <royluo@google.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
+	Tudor Ambarus <tudor.ambarus@linaro.org>,
+	Joy Chakraborty <joychakr@google.com>,
+	Naveen Kumar <mnkumar@google.com>,
+	Badhri Jagan Sridharan <badhri@google.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v2 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
+Message-ID: <20251008-slider-uncombed-66790ea92ea0@spud>
+References: <20251008060000.3136021-1-royluo@google.com>
+ <20251008060000.3136021-2-royluo@google.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8f2e0631-6c59-4298-b36e-060708970ced@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA4MDEyMSBTYWx0ZWRfX6DVdLCnd6UyH
- 2gE844qink+kyxHTINvXKK6ajFVbIxGf7d20VEI1eTs41kwtpivG+gCyk26bycik3keQv0XsJrS
- hzFm1O/MydZaCvA89rEfG1dK4ghf4f7tvduryfOziLxCCbnd0GRybcB2OwDqGYMI6vEM6GHpNCR
- Fw/nqf74Wfes1JhKeypiIqq6bVryms8EjeVeKB5BrRzzPyy9jhBUYrFznCa6nyJHs1FFIOqdO7n
- 1Eokn0lYdfkEy3P8558R71IFevINRM2sDh/S9/vZKuqvfdaCKcYxhmFcQBxoFsyv8Kc3Sxjs+Qx
- gH2X8vxcF17uMMUdCahr5r0T44XnTawT2wkatgTBfCmd0rV22fY+tcrl4qKaGPbCo0NeRsKI5Va
- ahnCjW0YXZYbwaP9PvTyB4K6FSSW1w==
-X-Authority-Analysis: v=2.4 cv=B6G0EetM c=1 sm=1 tr=0 ts=68e6b6b4 cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=8Rp3m3j2afKyq596a-UA:9
- a=CjuIK1q_8ugA:10 a=a_PwQJl-kcHnX1M80qC6:22
-X-Proofpoint-GUID: jd7hO-8Z3dU_-3EkYUH56IB2l1ChCG5d
-X-Proofpoint-ORIG-GUID: jd7hO-8Z3dU_-3EkYUH56IB2l1ChCG5d
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-08_05,2025-10-06_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 lowpriorityscore=0 bulkscore=0 clxscore=1015 suspectscore=0
- malwarescore=0 adultscore=0 priorityscore=1501 phishscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510080121
+In-Reply-To: <20251008060000.3136021-2-royluo@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251008_120836_948144_BAA108DC 
-X-CRM114-Status: GOOD (  23.92  )
+X-CRM114-CacheID: sfid-20251008_135845_405540_2C2869F7 
+X-CRM114-Status: GOOD (  24.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,59 +82,264 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4908228301968621796=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 08, 2025 at 11:11:43AM +0200, Konrad Dybcio wrote:
-> On 10/8/25 10:00 AM, Konrad Dybcio wrote:
-> > On 10/8/25 6:41 AM, Krishna Chaitanya Chundru wrote:
-> >>
-> >>
-> >> On 10/2/2025 5:07 AM, Bjorn Andersson wrote:
-> >>> On Tue, Aug 26, 2025 at 04:32:54PM +0530, Krishna Chaitanya Chundru wrote:
-> >>>> Add PCIe controller and PHY nodes which supports data rates of 8GT/s
-> >>>> and x2 lane.
-> >>>>
-> >>>
-> >>> I tried to boot the upstream kernel (next-20250925 defconfig) on my
-> >>> Pakala MTP with latest LA1.0 META and unless I disable &pcie0 the device
-> >>> is crashing during boot as PCIe is being probed.
-> >>>
-> >>> Is this a known problem? Is there any workaround/changes in flight that
-> >>> I'm missing?
-> >>>
-> >> Hi Bjorn,
-> >>
-> >> we need this fix for the PCIe to work properly. Please try it once.
-> >> https://lore.kernel.org/all/20251008-sm8750-v1-1-daeadfcae980@oss.qualcomm.com/
-> > 
-> > This surely shouldn't cause/fix any issues, no?
-> 
-> Apparently this is a real fix, because sm8750.dtsi defines the PCIe
-> PHY under a port node, while the MTP DT assigns perst-gpios to the RC
-> node, which the legacy binding ("everything under the RC node") parsing
-> code can't cope with (please mention that in the commit message, Krishna)
-> 
-> And I couldn't come up with a way to describe "either both are required
-> if any is present under the RC node or none are allowed" in yaml
 
-What about:
+--===============4908228301968621796==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="H4E5skbR47wtHuC7"
+Content-Disposition: inline
 
-oneOf:
-  - required:
-     - foo
-     - bar
-  - properties:
-     foo: false
-     bar: false
 
--- 
-With best wishes
-Dmitry
+--H4E5skbR47wtHuC7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Oct 08, 2025 at 05:59:57AM +0000, Roy Luo wrote:
+> Document the device tree bindings for the DWC3 USB controller found in
+> Google Tensor SoCs, starting with the G5 generation.
+>=20
+> The Tensor G5 silicon represents a complete architectural departure from
+> previous generations (like gs101), including entirely new clock/reset
+> schemes, top-level wrapper and register interface. Consequently,
+> existing Samsung/Exynos DWC3 USB bindings and drivers are incompatible,
+> necessitating this new device tree binding.
+>=20
+> The USB controller on Tensor G5 is based on Synopsys DWC3 IP and features
+> Dual-Role Device single port with hibernation support.
+>=20
+> Signed-off-by: Roy Luo <royluo@google.com>
+> ---
+>  .../bindings/usb/google,gs-dwc3.yaml          | 145 ++++++++++++++++++
+>  1 file changed, 145 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/google,gs-dwc3.=
+yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml b/=
+Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
+> new file mode 100644
+> index 000000000000..9eb0bf726e8d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
+
+filename matching the compatible please.
+
+> @@ -0,0 +1,145 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright (c) 2025, Google LLC
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/usb/google,gs-dwc3.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Google Tensor Series (G5+) DWC3 USB SoC Controller
+> +
+> +maintainers:
+> +  - Roy Luo <royluo@google.com>
+> +
+> +description: |
+> +  Describes the DWC3 USB controller block implemented on Google Tensor S=
+oCs,
+> +  starting with the G5 generation. Based on Synopsys DWC3 IP, the contro=
+ller
+> +  features Dual-Role Device single port with hibernation add-on.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - google,gs5-dwc3
+
+items is redundant here.
+
+> +
+> +  reg:
+> +    minItems: 3
+> +    maxItems: 3
+> +
+> +  reg-names:
+> +    description: |
+> +      The following memory regions must present:
+> +        - dwc3_core: Core DWC3 IP registers.
+> +        - host_cfg_csr: Hibernation control registers.
+> +        - usbint_csr: Hibernation interrupt registers.
+
+Put this into reg as an items list, and you can drop the min/max items
+=66rom there.
+Same applies to interrupts and power-domains.
+
+> +    items:
+> +      - const: dwc3_core
+> +      - const: host_cfg_csr
+> +      - const: usbint_csr
+> +
+> +  interrupts:
+> +    minItems: 3
+> +    maxItems: 3
+> +
+> +  interrupt-names:
+> +    description: |
+> +      The following interrupts must present:
+> +        - dwc_usb3: Core DWC3 interrupt.
+> +        - hs_pme_irq: High speed remote wakeup interrupt for hibernation.
+> +        - ss_pme_irq: Super speed remote wakeup interrupt for hibernatio=
+n.
+> +    items:
+> +      - const: dwc_usb3
+> +      - const: hs_pme_irq
+> +      - const: ss_pme_irq
+
+s/_irq//
+
+> +
+> +  clocks:
+> +    minItems: 3
+> +    maxItems: 3
+> +
+> +  clock-names:
+> +    minItems: 3
+> +    maxItems: 3
+> +
+> +  resets:
+> +    minItems: 5
+> +    maxItems: 5
+
+For clocks and resets, please provide descriptions. For clock-names, you
+provided no names and therefore cannot use the property since anything
+is valid!
+
+> +
+> +  reset-names:
+> +    items:
+> +      - const: usbc_non_sticky
+> +      - const: usbc_sticky
+> +      - const: usb_drd_bus
+> +      - const: u2phy_apb
+> +      - const: usb_top_csr
+
+"csr" is an odd thing to have in a reset name, since it usually means
+"control and status register". Why is it here.
+
+> +
+> +  power-domains:
+> +    minItems: 2
+> +    maxItems: 2
+> +
+> +  power-domain-names:
+> +    description: |
+> +      The following power domain must present:
+> +          - usb_psw_pd: The child power domain of usb_top_pd. Turning it=
+ on puts the controller
+> +                         into full power state, turning it off puts the =
+controller into power
+> +                         gated state.
+> +          - usb_top_pd: The parent power domain of usb_psw_pd. Turning i=
+t on puts the controller
+> +                         into power gated state, turning it off complete=
+ly shuts off the
+> +                         controller.
+> +    items:
+> +      - const: usb_psw_pd
+> +      - const: usb_top_pd
+
+s/_pd// at the very least, but I would question the need to put "usb" in
+any of the names given that this is a usb device.
+
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - clocks
+> +  - resets
+> +  - reset-names
+> +  - power-domains
+> +  - power-domain-names
+> +
+> +allOf:
+> +  - $ref: snps,dwc3-common.yaml#
+> +
+> +unevaluatedProperties: false
+
+So every property from snps,dwc3-common.yaml is valid here, with any of
+the permitted values?
+
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    soc {
+> +        #address-cells =3D <2>;
+> +        #size-cells =3D <2>;
+> +
+> +        usb@c400000 {
+> +            compatible =3D "google,gs5-dwc3";
+> +            reg =3D <0 0x0c400000  0 0xd060>, <0 0x0c450000 0 0x14>, <0 =
+0x0c450020 0 0x8>;
+> +            reg-names =3D "dwc3_core", "host_cfg_csr", "usbint_csr";
+> +            interrupts =3D <GIC_SPI 580 IRQ_TYPE_LEVEL_HIGH 0>,
+> +                         <GIC_SPI 597 IRQ_TYPE_LEVEL_HIGH 0>,
+> +                         <GIC_SPI 598 IRQ_TYPE_LEVEL_HIGH 0>;
+> +            interrupt-names =3D "dwc_usb3", "hs_pme_irq", "ss_pme_irq";
+> +            clocks =3D <&hsion_usbc_non_sticky_clk>,  <&hsion_usbc_stick=
+y_clk>,
+> +                     <&hsion_u2phy_apb_clk>;
+> +            clock-names =3D "usbc_non_sticky", "usbc_sticky", "u2phy_apb=
+";
+> +            resets =3D <&hsion_resets_usbc_non_sticky>, <&hsion_resets_u=
+sbc_sticky>,
+> +                     <&hsion_resets_usb_drd_bus>, <&hsion_resets_u2phy_a=
+pb>,
+> +                     <&hsion_resets_usb_top_csr>;
+> +            reset-names =3D "usbc_non_sticky", "usbc_sticky",
+> +                     "usb_drd_bus", "u2phy_apb",
+> +                     "usb_top_csr";
+> +            power-domains =3D <&hsio_n_usb_psw_pd>, <&hsio_n_usb_pd>;
+> +            power-domain-names =3D "usb_psw_pd", "usb_top_pd";
+> +            phys =3D <&usb_phy 0>;
+> +            phy-names =3D "usb2-phy";
+> +            snps,quirk-frame-length-adjustment =3D <0x20>;
+> +            snps,gfladj-refclk-lpm-sel-quirk;
+> +            snps,incr-burst-type-adjustment =3D <4>;
+> +        };
+> +    };
+> +...
+
+pw-bot: cr
+
+--H4E5skbR47wtHuC7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaObQfgAKCRB4tDGHoIJi
+0oWjAP9YqWk7a/FyW8foR/yT+VNOq+XI66exHNNQBPvOdVgC9AEArKBNkcUi0g8z
+w38R4cEA+3VrU78OnQDQNAfK5wcUdg8=
+=Lg9K
+-----END PGP SIGNATURE-----
+
+--H4E5skbR47wtHuC7--
+
+
+--===============4908228301968621796==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4908228301968621796==--
+
