@@ -4,94 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B808CAC5BB
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 04:45:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50FC9CCA470
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 06:00:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HzgIU9ICxfff1h7SvrUg7iQ0UpqtKU9aBG1JonEGu2o=; b=qM+wkggDBiP8Ec
-	faTeFDfofKMUo1VjNB+EMr+RW0kxdtn5SVxj1MRQK1aZFFW9LpdMvQRhEnV7OgQ+ew8eCDZ6bvlpL
-	FTFc25KilHw5qRWPRWMQH3BNl2Oee3PHwQbYPxU3S25NMMxixYZDbuIX0apvqixRPhDdjfHfTIL+J
-	UTLiDHOwfvSwdzKQehA83Anc5pEU8ZgBpjpXHxJfnkvqxnwvv4/KxHgZlXixothwaY+ZNfwa49G/S
-	A8K9+Gpftd2+VVTa1FSfByR8zXrYftjwV6I15d/OZ4zHs3KTGvHMH1BExPtexFWIkqJAXPIRJ4jly
-	GBIWmB3tpNujUTgq/ehQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ImbLrc93aT8JZSFUSuzIE85T+hZuEPMnkn8GTJu7OJo=; b=omU
+	VJW/fjqnzYcFf9pMlAf4MJ6uoVgveCqH6QtgcKR8RgpUsbf19x3hRUd18Hvp/UnUgUiS/bc++fmnL
+	HfmLC14lRG9LeRGBmc1zjsItghsQDgw0HdY+2oU7HwZjGHSP5iijPgEiTeKgTO0dl2zs4hdW0jZ0/
+	9zR8UXrbM6ABu6FQYdYQl1WZhpVKeuUSzwQ/IBqmbZFpSDYd4MPBNfKdaCDgpJWk+Bk4DBYvll8CQ
+	st1wcYUUvzfjQImoVRlMKJm1flXML3J2jXmrwWlqSTGbF7N91WguE03qt5sW6b3eZ80iK8Xs7QFaJ
+	3+xvbIT6IkMGgMt+TW4Ov0Y9Jm5bqiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6M3j-00000003Bl1-3mTK;
-	Wed, 08 Oct 2025 04:45:52 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1v6NDj-00000003FDI-0Ghq;
+	Wed, 08 Oct 2025 06:00:15 +0000
+Received: from mail-oo1-xc49.google.com ([2607:f8b0:4864:20::c49])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6M3Z-00000003Bib-1l3g
+	id 1v6NDg-00000003FBu-37gM
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Oct 2025 04:45:43 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
-	by mailout2.samsung.com (KnoxPortal) with ESMTP id 20251008044535epoutp025923e9becb1fbeaf908925949f05a2e3~sapM-24tr2901829018epoutp02Z
-	for <linux-phy@lists.infradead.org>; Wed,  8 Oct 2025 04:45:35 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com 20251008044535epoutp025923e9becb1fbeaf908925949f05a2e3~sapM-24tr2901829018epoutp02Z
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1759898735;
-	bh=vROKexdVYNHAhyF4ES21jI5cobDDrJlr4MDKl+4gj3Y=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=b9YTkETDxlWM1AzKrBj0MZRefGT60KTRTCdJ8B8NmeUYvo9o2Uk//mWjkEVLKYKnc
-	 bu26mJik2ZFvgzNbQYwmUx1NKQuXCZHBbpApGHJSsJWEairfzIiU9MoCFumdmzHp6B
-	 nAfDNOdaPeFyUYztbf/67tMAHdrygsvNoabziGHc=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas5p1.samsung.com (KnoxPortal) with ESMTPS id
-	20251008044534epcas5p1270379e0d1536e8cda6567d9be45df5d~sapMfio3Y1099610996epcas5p14;
-	Wed,  8 Oct 2025 04:45:34 +0000 (GMT)
-Received: from epcas5p2.samsung.com (unknown [182.195.38.93]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4chL6P3rz1z3hhT8; Wed,  8 Oct
-	2025 04:45:33 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas5p2.samsung.com (KnoxPortal) with ESMTPA id
-	20251008044532epcas5p23af935589ba8975d38fc28b5df113e5d~sapK1yD-m2794127941epcas5p29;
-	Wed,  8 Oct 2025 04:45:32 +0000 (GMT)
-Received: from INBRO001840 (unknown [107.122.3.105]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20251008044529epsmtip1f98e9c929be1697bcf28a33dba660d45~sapHeFoD12062920629epsmtip1I;
-	Wed,  8 Oct 2025 04:45:28 +0000 (GMT)
-From: "Pritam Manohar Sutar" <pritam.sutar@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, <vkoul@kernel.org>,
-	<kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <alim.akhtar@samsung.com>,
-	<andre.draszik@linaro.org>, <peter.griffin@linaro.org>,
-	<kauschluss@disroot.org>, <ivo.ivanov.ivanov1@gmail.com>,
-	<igor.belwon@mentallysanemainliners.org>, <m.szyprowski@samsung.com>,
-	<s.nawrocki@samsung.com>
-Cc: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-samsung-soc@vger.kernel.org>, <rosa.pila@samsung.com>,
-	<dev.tailor@samsung.com>, <faraz.ata@samsung.com>,
-	<muhammed.ali@samsung.com>, <selvarasu.g@samsung.com>
-In-Reply-To: <808d166a-b615-49c6-b0f5-bf5101721381@kernel.org>
-Subject: RE: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 HS phy compatible
-Date: Wed, 8 Oct 2025 10:15:27 +0530
-Message-ID: <000001dc380e$612b5680$23820380$@samsung.com>
-MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQIRMOVGdWg5oRjNsRBgEjzIeIB8IgGabj6EAmTXuDcA7fJUJgHIrfZJAofpNyABqVtXsAE6XDP/s+yr4PA=
-Content-Language: en-in
-X-CMS-MailID: 20251008044532epcas5p23af935589ba8975d38fc28b5df113e5d
-X-Msg-Generator: CA
-CMS-TYPE: 105P
-cpgsPolicy: CPGSC10-542,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e
-References: <20250903073827.3015662-1-pritam.sutar@samsung.com>
-	<CGME20250903072936epcas5p4a28d0e63c7f0792b516b0cbc68bf3a8e@epcas5p4.samsung.com>
-	<20250903073827.3015662-2-pritam.sutar@samsung.com>
-	<0df74c2b-31b9-4f29-97d3-b778c8e3eaf1@kernel.org>
-	<007801dc2893$18ed4a20$4ac7de60$@samsung.com>
-	<02ef5180-ad56-45f0-a56f-87f442bf6793@kernel.org>
-	<007f01dc2b81$84ef19b0$8ecd4d10$@samsung.com>
-	<808d166a-b615-49c6-b0f5-bf5101721381@kernel.org>
+	Wed, 08 Oct 2025 06:00:13 +0000
+Received: by mail-oo1-xc49.google.com with SMTP id 006d021491bc7-64a207e24e8so860769eaf.2
+        for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 23:00:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1759903210; x=1760508010; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=AP6DiX2vSgFvsuE3fKRpRDJbOdj4dqy4q7VW/8dnF2Y=;
+        b=zhX/m/vJWQ52fRtz6IzAuK4Z3RmOukki4xdfFRr4cM6DB0wuDymZrOpjTN1y75i6oB
+         zrjwRUwTpx2UnXFSxGw+knSZiKjzF3k4ehhsYsTb5LSaLspGNgSujTf2GzgQ54VON1O0
+         AJPEmqC3WG1ReqpuNMgN1PHxVgD7DWvfcsbbrHAfS4hHZaewohMYgWJKL5vpNkkS4CZa
+         OAPQcxTJ6pccxr1BrzvctRIu6kI3dzb96IxsupG1JaNw1Pho0n/cqd7iiksHlR7nZ02v
+         2DMHvl1QrtcsmZBRYo+h3VMh/PNXVvco7QBjh+BGoPXTAX7szzyJu83xINeCtTONi3UC
+         0xzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759903210; x=1760508010;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=AP6DiX2vSgFvsuE3fKRpRDJbOdj4dqy4q7VW/8dnF2Y=;
+        b=G431DOw0GBaRph5r21hsMx3sman9vbX3AgAylFcKSQUvLJzQMxuX3O5g7EEqWngFNi
+         DMO/MKZRvqXYEiLYsMAk88kuIZ1S5QdYnyxiGxyoBrsio+5mLff65oMIuK32Lwl38VEM
+         IuA4HNhRxEclGkHyipreMCRmKWwMg5nYYDzZ57JKUJNzXnBj3AJPB8fndhHZl5U9vyaL
+         OA5Gz2V7pZsQxSGRDS6UODjLIrZDyXQ0Z66GIoXFzR3C4MHpo/Z662pt+MMArCel3lL/
+         1VJW26g0n8Xr2DH4YTYdNTUvTAXwRZmvnu/fWPNgop/5f9IhOizGHH2Ja1CRaEpjk6vz
+         NNYA==
+X-Forwarded-Encrypted: i=1; AJvYcCXia3eM7u0nbrHBA8uNIzBNlpDPoTRzH5PK/sgxls0lmCeKgMnoF3dUVPwT/JbA2jquY9m6GgtTQzQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy6+RyFTbQmVOCvlO0z+pxDxZLh/iYUUsQHzZ251CD41kpx3TZf
+	CScSdGppyJ/6bp8w+Pp3C9dyxRv7qb+HEDU/24YZ/XAsEPnQNiiQsG7V0bcmMZOY6Es9nzygU5+
+	BqHIDDg==
+X-Google-Smtp-Source: AGHT+IExUaS0sEpy2tAXscJ/2X+pom3EjFHo1AYYt3+9hKmXEYWCEaP2JPhBawFpp4MTEQMwGSBBqKvOJGE=
+X-Received: from oacoo38.prod.google.com ([2002:a05:6871:4526:b0:331:9a49:4dbe])
+ (user=royluo job=prod-delivery.src-stubby-dispatcher) by 2002:a05:6871:2b25:b0:36d:287c:694f
+ with SMTP id 586e51a60fabf-3c0f80edcd7mr1302345fac.30.1759903210532; Tue, 07
+ Oct 2025 23:00:10 -0700 (PDT)
+Date: Wed,  8 Oct 2025 05:59:56 +0000
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.51.0.710.ga91ca5db03-goog
+Message-ID: <20251008060000.3136021-1-royluo@google.com>
+Subject: [PATCH v2 0/4] Add Google Tensor SoC USB support
+From: Roy Luo <royluo@google.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
+	"=?UTF-8?q?Andr=C3=A9=20Draszik?=" <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>
+Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>, Roy Luo <royluo@google.com>, 
+	Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_214542_106450_8E9299FB 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20251007_230012_784318_49840A05 
+X-CRM114-Status: GOOD (  12.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,67 +95,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
+This series introduces USB controller and PHY support for the Google
+Tensor G5 SoC (codename: Laguna), a new generation of Google silicon
+first launched with Pixel 10 devices.
 
-> -----Original Message-----
-> From: Krzysztof Kozlowski <krzk@kernel.org>
-> Sent: 07 October 2025 11:54 AM
-> To: Pritam Manohar Sutar <pritam.sutar@samsung.com>; vkoul@kernel.org;
-> kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
-> peter.griffin@linaro.org; kauschluss@disroot.org;
-> ivo.ivanov.ivanov1@gmail.com; igor.belwon@mentallysanemainliners.org;
-> m.szyprowski@samsung.com; s.nawrocki@samsung.com
-> Cc: linux-phy@lists.infradead.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-samsung-
-> soc@vger.kernel.org; rosa.pila@samsung.com; dev.tailor@samsung.com;
-> faraz.ata@samsung.com; muhammed.ali@samsung.com;
-> selvarasu.g@samsung.com
-> Subject: Re: [PATCH v8 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add
-> ExynosAutov920 HS phy compatible
-> 
-> On 22/09/2025 14:26, Pritam Manohar Sutar wrote:
-> > This phy needs 0.75v, 0.18v and 3.3v supplies for its internal
-> > functionally. Power Supply's names are as per phy's User Data-Book.
-> > These names, (dvdd, vdd18 and vdd33), are considered  for 0.75v, 1.8v
-> > and 3.3v respectively.
-> > "
-> >
-> >>
-> >> I still cannot find constraints for the rest of properties, though.
-> >
-> > Sorry I didn't get it completely. Can you please elaborate on the same?
-> 
-> 
-> Writing bindings and introductory talks elaborate on that. You add properties
-> without constraints. That's not what we want. We want constraints.
-> 
+The Tensor G5 represents a significant architectural overhaul compared
+to previous Tensor generations (e.g., gs101), which were based on Samsung
+Exynos IP. Although the G5 still utilizes Synopsys IP for the USB
+components, the custom top-level integration introduces a completely new
+design for clock, reset scheme, register interfaces and programming
+sequence, necessitating new drivers and device tree bindings.
 
-Have added only supplies in this patch-set. However, was going 
-through schema example and it says nothing is needed to define
-in terms of supply. 
+The USB subsystem on Tensor G5 integrates a Synopsys DWC3 USB 3.1
+DRD-Single Port controller with hibernation support, and a custom PHY
+block comprising Synopsys eUSB2 and USB 3.2/DP combo PHYs.
 
-ref: 
-1. Documentation/devicetree/bindings/writing-schema.rst +151
+Co-developed-by: Joy Chakraborty <joychakr@google.com>
+Signed-off-by: Joy Chakraborty <joychakr@google.com>
+Co-developed-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Roy Luo <royluo@google.com>
+---
+Changes in v2:
+- Reorder patches to present bindings first.
+- Update dt binding compatible strings to be SoC-specific (google,gs5-*).
+- Better describe the hardware in dt binding commit messages and
+  descriptions.
+- Adjust PHY driver commit subjects to use correct prefixes ("phy:").
+- Move PHY driver from a subdirectory to drivers/phy/.
+Link to v1: https://lore.kernel.org/linux-usb/20251006232125.1833979-1-royluo@google.com/
+---
+Roy Luo (4):
+  dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
+  usb: dwc3: Add Google Tensor SoC DWC3 glue driver
+  dt-bindings: phy: google: Add Google Tensor G5 USB PHY
+  phy: Add Google Tensor SoC USB PHY driver
 
-... A "description" property is always required.
+ .../bindings/phy/google,gs-usb-phy.yaml       |  96 +++
+ .../bindings/usb/google,gs-dwc3.yaml          | 145 +++++
+ drivers/phy/Kconfig                           |  14 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-google-usb.c                  | 286 +++++++++
+ drivers/usb/dwc3/Kconfig                      |  10 +
+ drivers/usb/dwc3/Makefile                     |   1 +
+ drivers/usb/dwc3/dwc3-google.c                | 597 ++++++++++++++++++
+ 8 files changed, 1150 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/google,gs-usb-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
+ create mode 100644 drivers/phy/phy-google-usb.c
+ create mode 100644 drivers/usb/dwc3/dwc3-google.c
 
-2. Documentation/devicetree/bindings/example-schema.yaml +135
 
-# *-supply is always a single phandle, so nothing more to define.
-foo-supply: true
-
-Please confirm and let me know if your expectations are something 
-else in terms of constraints of the properties.
-
-> 
-> Best regards,
-> Krzysztof
-
-Thank you,
-
-Regards,
-Pritam
+base-commit: e5f0a698b34ed76002dc5cff3804a61c80233a7a
+-- 
+2.51.0.710.ga91ca5db03-goog
 
 
 -- 
