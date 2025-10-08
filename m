@@ -4,111 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D51B8CCA470
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 02:15:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B395DCCA470
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 03:31:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BevgzVT4R6dOBXx/FSexRxxEwjAa7qLybNgGtXS1l5s=; b=hCptQNqlK5DxR5
-	OA89t02PdH/PLQuUyG7l3k1DiRKNEkv+0Z9G6zEJTcXZM9pBm/s6LuqBfq7m8q7GGu1pKbtqGrYEf
-	DwO2uyZ4TuXw0+tvzAj0AxRT5aIzPuQ07Tk0ukixfNoMV+6DmRP1k0QMQRA9xo6Y1qrbCrvu0YSyr
-	pM6cEccYxDNXBlpuGZjrIJJY5Ha+0AsBgnNyRquGZYyXoJRndMtsCbz+wVFVT1zwpuagaf81EbCZV
-	1ZKf96TRK2cLQhPk2ns5dXK8gnG3P3s+PQc5t7nCFJpgHSNdWaBYeZvafhaMbZ9u4vEi9UrU/IHjx
-	5BP8DHHkwvi1V5uOwRKA==;
+	List-Owner; bh=o2lQasL1JpM4nV2UjMqJRB9CfRwL6FalpP47uzNzPgI=; b=JeSARdD2ex8Umz
+	FhSpKuDKWsnEFwGcslJGi8Y44cdKjidctyI0sc7qZsL9uTWJpfOvj9XrA2avkiCWJb/Mf3ixUjZl5
+	5fCoDOw+seQ0j9Mb6AarXhTJ4Yt6ttXO5rXM4bx+dudUczAogrDqf9GkqMQBB7SsfJDdiRfSbzZ+X
+	fJ5bY1yc9GIaZ9xL7v1rR9s1dTSHUVKkD1IEwBboaIBmUl12t9vzH6nwqExUIYjFXcmItWVR4sN0a
+	DjeTZdDrEGVAUVYGcX9F8Yl5gOPL8L8BxT6xpqvnLgNzrwi3DOje/B+HIBFYB5B63DMYftAU11/uU
+	/iZbRTXuvYHi6UOL5MQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6JiT-000000034OS-2coE;
-	Wed, 08 Oct 2025 02:15:45 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1v6KtY-000000037kP-1duJ;
+	Wed, 08 Oct 2025 03:31:16 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6JiR-000000034NW-1Jw5
+	id 1v6KtV-000000037jX-1pIR
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Oct 2025 02:15:44 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9E49D488E4;
-	Wed,  8 Oct 2025 02:15:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F07E6C4CEF1;
-	Wed,  8 Oct 2025 02:15:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759889742;
-	bh=UqdLv5dDvw/u9UwlLkqWtifSnPQdBr+bKwXEvuTHVoM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=h0WG2A+y1Obvn+P0gb5MW8ZcDg5MVnVxd891CrynfsCxzHqXlMeMwu9uKRSkkdTp6
-	 zjBJJkMnFY75Zt4T1uwoZbuLQ+iC1x+lRbk6ZYofEZR2MjKHQx4+0uGkkgbxeYdC2R
-	 3kK8iBdOuWWwKOd8vzWzwaHtIPs9tbbZbcsJDRNuK6/qy/EzXsZ+Y0jIUydQmK+xHM
-	 9NclCKwYAXrmOIQyWxe3vXAGG4w/Qwza+nE6kshVtorz4YkndF+pA0Xk6yU2rbggPu
-	 MehmJqeFf5OwCY9jmcb7ALd4AqRAoWBouu/wyjLyalalLUON9Xon+78ZHbA2Rxk9E5
-	 mUUMd/hAONKbg==
-Message-ID: <d53e69bb-4c21-48b9-a50c-c7409eba7d98@kernel.org>
-Date: Wed, 8 Oct 2025 11:15:33 +0900
+	Wed, 08 Oct 2025 03:31:14 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59803mBB018493
+	for <linux-phy@lists.infradead.org>; Wed, 8 Oct 2025 03:31:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=WWL+oxTaknWPjEJ9W43cr4xK
+	NIzu1kCbsEoFeNIlit0=; b=dUMcassVp3gMljPZyMDp1hQaii9A5T70+AeLfRZp
+	oHAi5RF9lsSo+5SRAGRXA38s0UjlaJHa6uVD0bYcRV1rPMOqq31eCi0MW8VUMVJr
+	5+L81wNwxLn4+ub7dk4O6tEwCAR+W7V270Y6G46xuT/9Sv56LvwwVqVSS5DsgLJr
+	Ay+yCN+ZaSh52FUIpvJzmAqQmIqGUVmDNYWAmBi7Dd/OagOepNA7QytESBy2w6mf
+	feLaGvZ5sv63G83b7UMlPqUOuT6uPJm0NtP//duPyap3E3eY43habQBBm9a8m/qR
+	hR9pjcMcgEKNvixJwt2gYHUpJRR6X19zRQpJv4pe7p6yyg==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49mgd0my4y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 08 Oct 2025 03:31:11 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4deb67c61caso197284781cf.2
+        for <linux-phy@lists.infradead.org>; Tue, 07 Oct 2025 20:31:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759894271; x=1760499071;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WWL+oxTaknWPjEJ9W43cr4xKNIzu1kCbsEoFeNIlit0=;
+        b=CNB23LDjPxL/YPOr4/LOcKH03EVQxoibtYsyOaF7HQb2Ze8zlHQZI8jiDtC12zsQ6E
+         S9Ky+l7xbWIqD+AnkiK6Tk11GJeMhttWcDNXUvsVBijBluDPTHRHl/FSVOUxF/svVhHn
+         AQDJ7TtlJzgUaq198EA07Wz6tKVPI+qu0ONyuRTUn/t8UKxPxshl+dvKuiJM0ux8fRb6
+         uUK0S54nV66461kQ9q04bQf9lomaCbFe+fX8YJ1KjcE95gSNnfqK6I9EwIUH4uI+jmn3
+         5fYp9XvgZJWAEdSTv/V6PyBw0fI5TftFv6DCkyXlb1YApF8wEC+KIh63hcj2J88amZ/P
+         NSog==
+X-Forwarded-Encrypted: i=1; AJvYcCVsObWWmgUnPfbExj/6Mcq5O6kqTXZlWCQY3/pTaWYiwoY8L7ujdDS9GNUPYtjK7vbdlPD1KwM0b2M=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyAk91Hgxq9eCg2x1A/+qRmqLwwHN5GJhpDJ2lI5pDxxir7uHgo
+	Bmx1387Pr9ZmOaQcfkpyrZ5OCN4uoNyH7oDPRBzOcSBunZ7SaFllK8Mk/RQCvXUVRIxUxUaFnfe
+	gpaC/x08BC2G3OH4bps+0HXyHsiq7xesoAGQzS6Vvl75bP4DadppJyFzBg5q3ErNJJlOf
+X-Gm-Gg: ASbGncu4YieXtup3RD/5vVVMa/qYjEnq8jGOajBbyiWctKxjNT8zjwr4iAOw/V0zgJk
+	6i483K2BMYkzgb8s0ubyTx0krjgXuxdDnJjs0PQvj27pYLn/fU9o4w5m007XdjDA1xH5RSuu5FJ
+	Get42EWO6sIwAIm3OeTiMBqoUlEOwJYGLyDlgLG6x04G15mPc9wXvq5c91QQj9dapU6G3cCJHFF
+	svFgBJDt2w1R/JYWs8roe7VoyMCPxGKKgBrA9ArqmBiUAWqB/J0DrH+91QVBuulqZnHEjFrLNXc
+	K4R7xsq7j7VVitJSVSiRjTn74tx7RorJNpFQtvFCuJU0fpPygpUiuDU4C1+FdYIHEDO2ZD4FCdO
+	f7hgrnhk7tww+ZUw+OnHsd/eKTxEnFpvVyfAiGRyqqHPq1s/ek6o42oVp4w==
+X-Received: by 2002:ac8:5d05:0:b0:4de:9f9a:b8e1 with SMTP id d75a77b69052e-4e6eacd1632mr28143181cf.18.1759894270940;
+        Tue, 07 Oct 2025 20:31:10 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGpJi9YDeXIx8aKnVS2WDaUwvZAKAbXdQcjcWyTLCETRGIS0rZ8bznBq56g1sVuq6qO6sT9iw==
+X-Received: by 2002:ac8:5d05:0:b0:4de:9f9a:b8e1 with SMTP id d75a77b69052e-4e6eacd1632mr28142891cf.18.1759894270521;
+        Tue, 07 Oct 2025 20:31:10 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5906775d5desm979249e87.72.2025.10.07.20.31.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Oct 2025 20:31:09 -0700 (PDT)
+Date: Wed, 8 Oct 2025 06:31:06 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, krzk+dt@kernel.org,
+        conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com, kishon@kernel.org,
+        vkoul@kernel.org, gregkh@linuxfoundation.org, robh@kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 00/10] Introduce Glymur USB support
+Message-ID: <llyanh7h7xbojo5n5npglokotkuqagbkqdgcquj6aagu6u7zal@wazru6ihqamp>
+References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
+ <a6690fbc-0b86-4725-99ca-6b4cc477b4ec@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] dt-bindings: phy: samsung,usb3-drd-phy: add power-domains
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>
-Cc: Peter Griffin <peter.griffin@linaro.org>,
- Tudor Ambarus <tudor.ambarus@linaro.org>,
- Will McVicker <willmcvicker@google.com>, kernel-team@android.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20251007-power-domains-phy-samsung-usb3-drd-phy-v1-1-3cb5f80a72ef@linaro.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20251007-power-domains-phy-samsung-usb3-drd-phy-v1-1-3cb5f80a72ef@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <a6690fbc-0b86-4725-99ca-6b4cc477b4ec@kernel.org>
+X-Proofpoint-GUID: 7HkADGeQhT4bk51KGTkmzAjCOU-IoDbM
+X-Authority-Analysis: v=2.4 cv=T8aBjvKQ c=1 sm=1 tr=0 ts=68e5daff cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=x6icFKpwvdMA:10 a=ukQvhT9bAo9IVCr4j54A:9 a=CjuIK1q_8ugA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-ORIG-GUID: 7HkADGeQhT4bk51KGTkmzAjCOU-IoDbM
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDA2MDEyMyBTYWx0ZWRfXxrXCQScEaTSs
+ eFmtaGi2m36eOj4+MvMtuSDl/ZDSvW/tloPU8xntiH+zCU+IdSDiYGSio3Zom0aq3C78zVZE/+9
+ JpbDlJ957yqs/xqBzoliZR2eG6TTtVSLvofuN6RgiJwsfqOTki9hr/hB628/h7oN2pip2Y4fnFX
+ KQiO7RGKzu85pFSIcJ8mOt2f/ajh+gCOGgxgt2FVdQ8AyaHjnZQO6uuZDN+WYJwe7LT52RWYjtm
+ 9PUvmkl835iSZa6ObGAoU6lH6NET4LxrANXlPIHA+OXA8J6BnPBDJGF5zOENU4CuIJXPPeKXc90
+ kvYWeSL2MVDRJN6abbW73v7GlZZ0KjQsQ4eIoHSzdHD9Jzpf01Wp1xJCtMHVXryora4V0l8ImTV
+ pKay5NkFljNt0r+7nVyCQXDOGtiqYg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-07_02,2025-10-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 adultscore=0 phishscore=0 clxscore=1015 priorityscore=1501
+ impostorscore=0 lowpriorityscore=0 suspectscore=0 bulkscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2509150000 definitions=main-2510060123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251007_191543_394022_ABECE929 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251007_203113_588751_1AFF5FD2 
+X-CRM114-Status: GOOD (  18.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,20 +127,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDgvMTAvMjAyNSAwMTowMCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gVGhlIFVTQiBwaHkg
-Y2FuIGJlIHBhcnQgb2YgYSBwb3dlciBkb21haW4sIHNvIHdlIG5lZWQgdG8gYWxsb3cgdGhlCj4g
-cmVsZXZhbnQgcHJvcGVydHkgJ3Bvd2VyLWRvbWFpbnMnLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFu
-ZHLDqSBEcmFzemlrIDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+Cj4gLS0tCj4gIERvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc2Ftc3VuZyx1c2IzLWRyZC1waHkueWFtbCB8
-IDMgKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKCllvdSBzZW50IGFub3Ro
-ZXIgcGh5IHBhdGNoLCBzbyB0aGUgYmVzdCBpZiB5b3UgY29tYmluZSB0aGVtIGludG8KcGF0Y2hz
-ZXQgLSBpdCdzIHN0aWxsIHRoZSBzYW1lIHN1YnN5c3RlbSwgcGh5LiBObyBuZWVkIHRvIHJlc2Vu
-ZCBqdXN0CmZvciB0aGF0LgoKClJldmlld2VkLWJ5OiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnp5
-c3p0b2Yua296bG93c2tpQGxpbmFyby5vcmc+CgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Tue, Oct 07, 2025 at 10:02:11AM +0900, Krzysztof Kozlowski wrote:
+> On 07/10/2025 07:19, Wesley Cheng wrote:
+> > This series enables the PHY level changes that are required to support
+> > the type C based controllers and the multiport controller.  The typeC
+> > ports utilize a usb43dp based QMP PHY for the SSUSB path, while using
+> > the M31 eUSB2 PHY for the HSUSB path.  For the multiport controller,
+> > it will utilize two QMP UNI PHYs for the SSUSB path, and two M31 eUSB2
+> > PHYs for the HSUSB path.
+> > 
+> > -----
+> > Changes in v5:
+> > - Moved phy-qcom-qmp-usb43-pcs-v8.h into USB specific QMP driver
+> > - Fixed DT bindings for clock properties for QMP combo PHY
+> > 
+> 
+> Where are lore links? Why aren't you using b4?
+
+Using b4 is the best current practice and it is strongly recommended,
+but I don't think that it is a requirement for contributing to Linux
+kernel.
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
