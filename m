@@ -4,48 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3B2DCAC5BB
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 23:56:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63BAFCAC5BB
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Oct 2025 23:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q98XVkwBD0vHGTbVdnIogL/WA2DxBQoS/9yV5pqiqwQ=; b=Gt3DOJqjYTKp6g
-	Wfe9/hB+2Q9AF/c59bi4NWVgLwqmUaWD1tRs11Jt/uWGGL/ECK+Bghw5yKMNBDZDss9B0/LnYSLCz
-	TyBs3YWTnvr4SwgvV5hZlMjjiiMUeFwtl7MaYYkh2argiPZng1weSenFNjpZJvmRvIqiNLezDASA/
-	b988fZLalj4QuQO4+O9sSMknupBQLLxqRLzEtKqeiQ7B/D70KF+3eN48GaCARQhoFnMmQztXp8X5w
-	c2qDg5JAbzSoZWwSsPxDqx/FjisFsT7YlksiAYjgWpJAWD7jFjHUmyuGs8B0R3PbNNnV9+EHiVNut
-	qUCS5g9MfUDyK+OaquCA==;
+	List-Owner; bh=Ab/L0z0RsIoTqlU3jUThKBfRX8kokSF42aWtZitnMGo=; b=H6sXIIF4DsVGSa
+	w2cMs/6cEMITZftrfSnUy1dgzwpQq6T3I7/92+ylwqEMaTeJxVNKpiMbeaScJZW5ul0nu9VFUBBOr
+	iDJzAc6cPzxUkluuhrS9JlOtypjuPXWP1+Uk9Gm4ZX1sSUdspF3abu0nc9CmsBWEqW5npHQ/1ScV8
+	2XQGt9yRW+x/yeWK8DcAqiFXhroSXDfTC8gZ92OVdvfQAO9VcQgedwKeT1E/TCAYc/EsqNqK4rQzv
+	pT5Q+bCqGGABFbRBwsfs+TZp8OnZX2Qk0DRX/xmWSwKWGg9/zhvmcpqJCgNey3b3rjciv9UXG4Izw
+	aaVAtkR4YFZOmudpABJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6e1Q-00000004qPe-1rl6;
-	Wed, 08 Oct 2025 23:56:40 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1v6e3M-00000004qfu-0blO;
+	Wed, 08 Oct 2025 23:58:40 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6e1P-00000004qPQ-08dd;
-	Wed, 08 Oct 2025 23:56:39 +0000
+	id 1v6e3I-00000004qf0-3H3g;
+	Wed, 08 Oct 2025 23:58:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 353D1603CF;
-	Wed,  8 Oct 2025 23:56:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DEB9C4CEE7;
-	Wed,  8 Oct 2025 23:56:28 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 2F91D44BCD;
+	Wed,  8 Oct 2025 23:58:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4393C4CEF5;
+	Wed,  8 Oct 2025 23:58:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759967797;
-	bh=gfm6M2tF1gf+jvegzebAVXKYeH2HyBSskMG0yM3A/54=;
+	s=k20201202; t=1759967916;
+	bh=yOETAJ8eUiVZRfemtfdBWg3YPDkDwGKicuMdNzZFk3o=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UA4mfs1JJD6ewAp+USdjMUhIuzr4XJ23pisGajJVXqvBD7RgI8a6yu0W0jW6dKjNt
-	 YGIwi91/QPquvZs8LHga2eSZv2qjmGph+amPuaScNhraiq5qnknbYNhmm8TdHBN4Aw
-	 PANy69N4MCnUDeR5TZ2MrIh8biwgJYdg/X3IoOgoWuDw71PUspwUjqkP6hEFeFK3wB
-	 xgk40KaiaifdMW+XoMt2kwfe9Y6OrF8gntBHuLHX2abOiZgk4HACzN49Y6PNleQ17r
-	 zheb2XYra0mFw8CU1eScKVmZnYRREDvWlyU1WoY77XyJHvLpGHtPJU76ijTJaNw20J
-	 enNuPKKtKgAjw==
-Message-ID: <8966b6a9-ff70-4833-a5c7-c6d6c13c6c8b@kernel.org>
-Date: Thu, 9 Oct 2025 08:56:26 +0900
+	b=JM97szmqUfVhrnUyTFjgJfh1DPUIAa4clCKPXsmOjY5/pIkGqIiIquGdtmh3q4JRR
+	 GHsghCXyqDTrT2TV1ieAU9+/m1IIMpojrrCGaOGayZprHS9unp4D2HoPqCNpnhbYBw
+	 PW0spLDk1A2vHjOG+ri1+oRxDJPBPBXyzH5X+SYzQCDmVPvIc05kLMwk7OB69LBaEn
+	 OJSkLLHXhxJpR9JRmIVxoPvjuueKldWVH0e6Gu07EgEynDOob4fdMRNrUton7QRV0S
+	 2CzLq5c4ZVzsgQB0UmM2t4QEq5npbZhhTKl44fLCvocJxEcul9vgJxY2YxVOeDPvNi
+	 B/qHWy6iVhHXQ==
+Message-ID: <fa743412-d9f1-43fd-95e8-3b2a58cd6c25@kernel.org>
+Date: Thu, 9 Oct 2025 08:58:24 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
+Subject: Re: [PATCH v2 3/4] dt-bindings: phy: google: Add Google Tensor G5 USB
+ PHY
 To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -61,7 +62,7 @@ Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
  linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org
 References: <20251008060000.3136021-1-royluo@google.com>
- <20251008060000.3136021-2-royluo@google.com>
+ <20251008060000.3136021-4-royluo@google.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,7 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251008060000.3136021-2-royluo@google.com>
+In-Reply-To: <20251008060000.3136021-4-royluo@google.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251008_165836_869657_6F074D02 
+X-CRM114-Status: GOOD (  17.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,154 +129,122 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 08/10/2025 14:59, Roy Luo wrote:
-> Document the device tree bindings for the DWC3 USB controller found in
-> Google Tensor SoCs, starting with the G5 generation.
+> Document the device tree bindings for the USB PHY interfaces integrated
+> with the DWC3 controller on Google Tensor SoCs, starting with G5
+> generation.
 > 
-> The Tensor G5 silicon represents a complete architectural departure from
-
-
-G5 does not have a model number like G1-G4?
-
-> previous generations (like gs101), including entirely new clock/reset
-> schemes, top-level wrapper and register interface. Consequently,
-> existing Samsung/Exynos DWC3 USB bindings and drivers are incompatible,
-
-Do not reference drivers. Explain the hardware.
-
-> necessitating this new device tree binding.
+> Due to a complete architectural overhaul in the Google Tensor G5, the
+> existing Samsung/Exynos USB PHY driver and binding for older generations
+> of Google silicons such as gs101 are no longer compatible.
 > 
-> The USB controller on Tensor G5 is based on Synopsys DWC3 IP and features
-> Dual-Role Device single port with hibernation support.
+> The USB PHY on Tensor G5 includes two integrated Synopsys PHY IPs: the
+> eUSB 2.0 PHY IP and the USB 3.2/DisplayPort combo PHY IP. Currently only
+> USB high-speed is described and supported.
 > 
 > Signed-off-by: Roy Luo <royluo@google.com>
 > ---
->  .../bindings/usb/google,gs-dwc3.yaml          | 145 ++++++++++++++++++
->  1 file changed, 145 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
+>  .../bindings/phy/google,gs-usb-phy.yaml       | 96 +++++++++++++++++++
+>  1 file changed, 96 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/google,gs-usb-phy.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml b/Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
+> diff --git a/Documentation/devicetree/bindings/phy/google,gs-usb-phy.yaml b/Documentation/devicetree/bindings/phy/google,gs-usb-phy.yaml
 > new file mode 100644
-> index 000000000000..9eb0bf726e8d
+> index 000000000000..22961e2da6ef
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/usb/google,gs-dwc3.yaml
-> @@ -0,0 +1,145 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (c) 2025, Google LLC
+> +++ b/Documentation/devicetree/bindings/phy/google,gs-usb-phy.yaml
+> @@ -0,0 +1,96 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2025, Google LLC
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/usb/google,gs-dwc3.yaml#
+> +$id: http://devicetree.org/schemas/phy/google,gs-usb-phy.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Google Tensor Series (G5+) DWC3 USB SoC Controller
+> +title: Google Tensor Series (G5+) USB PHY
 > +
 > +maintainers:
 > +  - Roy Luo <royluo@google.com>
 > +
 > +description: |
+> +  Describes the USB PHY interfaces integrated with the DWC3 USB controller on
+> +  Google Tensor SoCs, starting with the G5 generation.
+> +  Two specific PHY IPs from Synopsys are integrated, including eUSB 2.0 PHY IP
+> +  and USB 3.2/DisplayPort combo PHY IP.
+> +  The first phandle argument within the PHY specifier is used to identify the
+> +  desired PHY. The currently supported value is::
 
+Currently supported as hardware will change? You describe here hardware
+ONLY.
 
-Do not need '|' unless you need to preserve formatting.
-
-> +  Describes the DWC3 USB controller block implemented on Google Tensor SoCs,
-> +  starting with the G5 generation. Based on Synopsys DWC3 IP, the controller
-> +  features Dual-Role Device single port with hibernation add-on.
+> +    0 - USB high-speed.
 > +
 > +properties:
 > +  compatible:
 > +    items:
 > +      - enum:
-> +          - google,gs5-dwc3
+> +          - google,gs5-usb-phy
 > +
 > +  reg:
 > +    minItems: 3
-
-Drop
-
 > +    maxItems: 3
 > +
 > +  reg-names:
-> +    description: |
-> +      The following memory regions must present:
-> +        - dwc3_core: Core DWC3 IP registers.
-> +        - host_cfg_csr: Hibernation control registers.
-> +        - usbint_csr: Hibernation interrupt registers.
-
-Drop description or move it to items in reg. See other bindings.
-
 > +    items:
-> +      - const: dwc3_core
-> +      - const: host_cfg_csr
-> +      - const: usbint_csr
+> +      - const: usb2_cfg_csr
+> +      - const: dp_top_csr
+> +      - const: usb_top_cfg_csr
+
+Drop csr
+
 > +
-> +  interrupts:
-> +    minItems: 3
-
-Drop
-
-> +    maxItems: 3
-> +
-> +  interrupt-names:
-> +    description: |
-> +      The following interrupts must present:
-> +        - dwc_usb3: Core DWC3 interrupt.
-> +        - hs_pme_irq: High speed remote wakeup interrupt for hibernation.
-> +        - ss_pme_irq: Super speed remote wakeup interrupt for hibernation.
-
-From where did you get this style? Don't write bindings with chat gpt or
-whatever other tool. it is a waste of our time.
-
-> +    items:
-> +      - const: dwc_usb3
-> +      - const: hs_pme_irq
-> +      - const: ss_pme_irq
+> +  "#phy-cells":
+> +    const: 1
 > +
 > +  clocks:
-> +    minItems: 3
-> +    maxItems: 3
+> +    maxItems: 1
 > +
 > +  clock-names:
-> +    minItems: 3
-> +    maxItems: 3
+> +    items:
+> +      - const: usb2_phy_clk
 
-From where did you get such syntax?
+Drop names, pointless for one entry.
 
 > +
 > +  resets:
-> +    minItems: 5
-> +    maxItems: 5
+> +    maxItems: 1
 > +
 > +  reset-names:
 > +    items:
-> +      - const: usbc_non_sticky
-> +      - const: usbc_sticky
-> +      - const: usb_drd_bus
-> +      - const: u2phy_apb
-> +      - const: usb_top_csr
+> +      - const: usb2_phy_reset
+
+Drop names, pointless for one entry.
+
 > +
 > +  power-domains:
-> +    minItems: 2
-> +    maxItems: 2
-> +
-> +  power-domain-names:
-> +    description: |
-> +      The following power domain must present:
-> +          - usb_psw_pd: The child power domain of usb_top_pd. Turning it on puts the controller
-> +                         into full power state, turning it off puts the controller into power
-> +                         gated state.
-> +          - usb_top_pd: The parent power domain of usb_psw_pd. Turning it on puts the controller
-> +                         into power gated state, turning it off completely shuts off the
-> +                         controller.
-
-Same comments.
-
-
-> +    items:
-> +      - const: usb_psw_pd
-> +      - const: usb_top_pd
-> +
-> +  iommus:
 > +    maxItems: 1
 > +
+> +  orientation-switch:
+> +    type: boolean
+> +    description:
+> +      Indicates the PHY as a handler of USB Type-C orientation changes
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +
+> +unevaluatedProperties: false
+> +
+
+
+additionalProps instead. Read writing schema or example schema.
+
+
 Best regards,
 Krzysztof
 
