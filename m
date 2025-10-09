@@ -4,72 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 488EBCCD184
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 17:13:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D357CCD183
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 20:19:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=L0OFvKl9YpB6nnwHfoSVAZiu7apBNVy/0UpN2qAbKJc=; b=MsRBEGUkH2FtrwVd8EGsgn+MJK
-	oelu1hy/PggSu/aOfAc4UREW0aSZIRMVS86pf4O+vFWSClBC1O1fp3pCdE8jlO5yQxS70ka0r+ZZm
-	TCnHAhBUqKuYkv1kqfxvUD3afYmXmLO5q2J2arylW/h14YYbUpzIUXC3VHkB1/Ye/axXmmkZm/+4M
-	8b5Q4VjIlqY8iHyPe4EvNRKe8ec5nyFFO0J5g/Qs/zfHqE4gUk05MQhOVCN7Btbc0/Ap4txWk4FwM
-	TPX7sJ6lhhlIci9K/UpZxUxVMXcD6CsO3zDoRM0aYK4TbHAq+LM7snymS7adgbDQlXWKbG8orQ+wF
-	weX6Hnaw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6J1oyjfYnYLmvgAadzI7Pm+hl2LFz6oL/nHZYAQi4DM=; b=Hpq51yys6y2/Rw
+	fj6v3rEIBdPsGMiR0XC+rUvcLgQamWmB1RpfPwAGcTfs8w93z4yBCt36aTT+IsQzDe5tEVvd2slzE
+	idsD42zwaWPHKQOYI8jQ7QajyFo3NcnNiXlERmDo6mu8rw2BpO/7p5+0DPNU1lP1ggS9SOEO8Meak
+	QfSohnOvoD9YZm/SKwmIxmsx1V44pIds1EX+lpRO3mfER+4cnkQYASkB6C6wohfBDtuV7nID0EMRp
+	Bvm/C5rfycuMQ6p8PCuKzs/WPwKcKBlOh3g+kepiPgK5L15LkV7RmtZfTB1tke/+RCa6O7VWC8BnL
+	Oero4DL4KvpPDroo3G0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6uD3-00000006nUF-0CHA;
-	Thu, 09 Oct 2025 17:13:45 +0000
+	id 1v6x70-000000074J1-3olp;
+	Thu, 09 Oct 2025 20:19:42 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6uD1-00000006nTy-0ha9;
-	Thu, 09 Oct 2025 17:13:43 +0000
+	id 1v6x6z-000000074Ia-2P4Y
+	for linux-phy@lists.infradead.org;
+	Thu, 09 Oct 2025 20:19:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 875CA623C8;
-	Thu,  9 Oct 2025 17:13:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6127AC4CEE7;
-	Thu,  9 Oct 2025 17:13:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id F0D9D60211;
+	Thu,  9 Oct 2025 20:19:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DFA0C4CEE7;
+	Thu,  9 Oct 2025 20:19:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760030022;
-	bh=4m/b40Q8HlHAkCFpCXHLrFt6Ce02CTpjazD5P0VykkE=;
+	s=k20201202; t=1760041180;
+	bh=Walqh5a8kXanT1LhuuUh7J1+eh9oalVte1fOpfe1J5M=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=sQ3mn/VDly7N6oRo4YHgs3kB4pz8mCUs06Vf6MTzzHsGNRnR0UrMzRMakSX0IlDsO
-	 IDxfG4ti/zNQx92aK8O4FkV8izUQ88X1aD3M1R6rccbNrgaqDOqVUmw+wKTHXmvXyZ
-	 9gd7gPJF59QtGz5Gd++meMjtLhkcbufX0B2FzNwP1FJti+ONeTDDUvY5usngDNLJkM
-	 qzqMhuAFuIU8gNzmjiEWgHMP2w8VIIFi99yzpAR5rR09uEEQLHTUhbUAd2ZNqTCFkY
-	 1H/WAapbKklLusROb8CPfopsy7NKxeDDGtgzpxKWwV6PJtV1Gmv/+VXRK6gduHYyZS
-	 pJ9R2ZuMWH5vw==
-Date: Thu, 9 Oct 2025 18:13:36 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Roy Luo <royluo@google.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
+	b=X/F6qN7g58WK+WrVTXd2fgPq8Iaj0rj6WipTL30vjmo6h3MgqoiLwCLPCTBeHGnU4
+	 fYd54h3WUmdRpikfX3gNK5vNrFdqb9Vw3bSQ3dhQoXyg2wQP8lOHgPfLQRE4u2hf9O
+	 X0+gPuxe8jwwWbzKb8lSxBAhur4H/2YX8lEsQx6s+RHuDhgB7WEIDjnqwOyhltrhHb
+	 VNuxCTgh8MaxzgvLFhYoaOjbndFaR4jxN20HLgLrrdmapR81SVgxhvVI27CwYDbuM/
+	 YUhDsLhJhxu9dAg/z81L40e6PFkzB0PsOV6qaZQb0i0UFg8oRn0MKP8CyzJ3BWZE5y
+	 mY1UdRw34JQHw==
+Date: Thu, 9 Oct 2025 15:19:39 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: devicetree@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-arm-msm@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Joy Chakraborty <joychakr@google.com>,
-	Naveen Kumar <mnkumar@google.com>,
-	Badhri Jagan Sridharan <badhri@google.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v2 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
-Message-ID: <20251009-lizard-slapstick-4de7dfe2322d@spud>
-References: <20251008060000.3136021-1-royluo@google.com>
- <20251008060000.3136021-2-royluo@google.com>
- <20251008-slider-uncombed-66790ea92ea0@spud>
- <CA+zupgxnBK_k2X0_KKX9pUMMTwY4VhsyTEEVz6v+__u=2xR8Ow@mail.gmail.com>
+	linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] Revert "dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp:
+ Reference usb-switch.yaml to allow mode-switch"
+Message-ID: <176004117839.3288724.61530273334679572.robh@kernel.org>
+References: <20251006-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v2-1-3249e511013b@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <CA+zupgxnBK_k2X0_KKX9pUMMTwY4VhsyTEEVz6v+__u=2xR8Ow@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20251006-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v2-1-3249e511013b@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,82 +68,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5149223986039730574=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5149223986039730574==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="V8Kj8DQ2DFM161Td"
-Content-Disposition: inline
+On Mon, 06 Oct 2025 10:49:04 +0200, Neil Armstrong wrote:
+> This reverts commit 3bad7fe22796a420c6e16b591c37ed1bd6cc2a30.
+> 
+> Referencing the usb-switch.yaml also imports the ports definition which
+> collides with the definition in the qcom,sc8280xp-qmp-usb43dp bindings
+> and also enforces ports as required which breaks DT bidnings check on
+> a lot of boards DT.
+> 
+> Until the granularity of the usb-switch.yaml bindings allows us to
+> only reference the mode-switch & orientation-switch, it's simpler to
+> revert the change and start again.
+> 
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+> Changes in v2:
+> - Instead of splitting or loosely referencing usb-switch, just revert and start again
+> - Link to v1: https://lore.kernel.org/r/20250930-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v1-1-060568de9538@linaro.org
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml     | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+> 
 
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
---V8Kj8DQ2DFM161Td
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Oct 08, 2025 at 09:40:57PM -0700, Roy Luo wrote:
-> On Wed, Oct 8, 2025 at 1:58=E2=80=AFPM Conor Dooley <conor@kernel.org> wr=
-ote:
-> >
-> > On Wed, Oct 08, 2025 at 05:59:57AM +0000, Roy Luo wrote:
-
-> > > +allOf:
-> > > +  - $ref: snps,dwc3-common.yaml#
-> > > +
-> > > +unevaluatedProperties: false
-> >
-> > So every property from snps,dwc3-common.yaml is valid here, with any of
-> > the permitted values?
->=20
-> Conor,
->=20
-> Appreciate the review.
-> Ack to all the comments, will fix them in the next patch.
-> And yes, every property from snps,dwc3-common.yaml is valid here.
-> You can find more context here [1], essentially the dwc3 glue would be
-> operating on the same platform device as the dwc3 core, hence all
-> properties are allowed.
->=20
-> [1] https://lore.kernel.org/all/20250414-dwc3-refactor-v7-0-f015b358722d@=
-oss.qualcomm.com/
-
-I find it exceedingly hard to believe that every property from that
-file, with every permitted value, is possible. AFAIU, the tensor g5 is a
-phone chip that's only used in pixel devices, not something that people
-can just buy and integrate into whatever device they feel like. There
-should be a vanishingly small number of possible configurations,
-possibly exactly one configuration. There are dozens of properties in
-the dwc3 common binding, of which at least 10 are for "quirks" or other
-sorts of hardware errata that are not going to be variable from one
-phone to another.
-
---V8Kj8DQ2DFM161Td
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaOftPwAKCRB4tDGHoIJi
-0orZAQDVQounnZp8XW0MZDnLxiorx4hG4jOujXdg9qHFe7k1qgD/eJp5UpO9UKjh
-jvA+gND8RxLGnuG3C6H3uJAs4WuugQw=
-=JWpo
------END PGP SIGNATURE-----
-
---V8Kj8DQ2DFM161Td--
-
-
---===============5149223986039730574==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5149223986039730574==--
-
