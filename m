@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40CBACCD187
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 09:27:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8EBDCCA470
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 09:28:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3YeJYyIFryoB24Wj8+x4XqIePwEw8tlHcAqPjz6mNsk=; b=FNZDHIXvSalUEL
-	Hp6OokbAjP8nFMo9/4Ci7p3qQ23P3Jz/KPfL6umk920louMT6QfNIP90+H8eEAf+OKaZW2hKrCTBa
-	vNw6agJ8ULDSZ5bcMHy4wg1Qdj5Xy5yuIoRMgdLd1GYeBLdM1JSrpJ/96MyUmkEZLXy4RE1sCDqtu
-	KUPltBveJlDoWxy3SMASL8OzX2GVS97O2/oUahNyMM85uM1YXrueADfHp9MuURDaiBvzifs1Ry5Vy
-	ECqV/RwNrGhY0zCULYSqIi6Mzws8I4bUcM8pnZPVovTkjIcfpc+YaZH/rOAjo+xtShQS8SgLpQ5SV
-	IJVLQ4RvjJoehBTH2Anw==;
+	List-Owner; bh=iNegAeHLi6jDYvwH18JEF7CQajEk1HFzrHc0dDhWPwU=; b=rr/MTRAPBI7Chm
+	4i+3eui6K7OM5YlCpWTf4M2HosELONyz8IvpvRvVR2R2xrZOyuRjCB1zUOFE2rruGYq9gtbgahBBw
+	oNfn/TZ2/X7WkHGMdNv2Keup4aSAKFh90qBKSlfFlOWdtiPVHUhpAKhqw+/a8COFz//vCUm8uMApQ
+	KWECBV7RbPh8XgAgdO9YomkAM/EOerL0yJV1YTfuoxj7kFzMYhRvpWyjKDINhb4osVhgkWUZJpVVI
+	1rrGqJB2Qzyvaj/9W3xOvII4r/pOY13sRrsj4r6tl2c3+oZnZIEBq2KBPvP9r1H9wK+tXLbUTme6e
+	k/MZ5Bd9V9fHwN7OfbaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6mw1-00000005eXr-04u3;
-	Thu, 09 Oct 2025 09:27:41 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1v6mwZ-00000005ecc-1Ev0;
+	Thu, 09 Oct 2025 09:28:15 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6mvy-00000005eXZ-2K3a
+	id 1v6mwX-00000005ecU-2R4I
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Oct 2025 09:27:39 +0000
+	Thu, 09 Oct 2025 09:28:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 38E30408A6;
-	Thu,  9 Oct 2025 09:27:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 60378C4CEE7;
-	Thu,  9 Oct 2025 09:27:26 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D8D506220E;
+	Thu,  9 Oct 2025 09:28:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2795BC4CEE7;
+	Thu,  9 Oct 2025 09:28:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760002058;
-	bh=I3sLHxzMovxpwAghE20DGfe7zKwDb4xETeSgGQyYhbE=;
+	s=k20201202; t=1760002092;
+	bh=hdLBw2ulLgxAHyUrxIG7+MSZxPrW8MEg1/GNmkw7i/c=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=RUkrNBoB6EvLP+UzqqjZmimBX3vW87XFTci6v2eBxGdoFbdVnkSokTuIvDUgQbFKp
-	 e9MRGvWWtP1PhbyAGRxlEKCSEzuTzrv40elvf+2pgEOZTQlMLddAqlbhpmLEqYYtbw
-	 WspmVVeA5WHdF/jRX+LmVdGWI6m51pRBrDkvO+07A52eafJuFCZa+3wTpD5ame5wKz
-	 vmIHgi9RqCALqr6PaUv/8qFJxWsY/da1vCeZPW5LVLTf67PkZyAX0+utVVFcwZXu0I
-	 dRNxjS6MUgJ4EHxAyw+Turp1iHmcdOwta+5ETqQd7iT/MkMbTA4nU3y69gAHrT9a9c
-	 n9jUqGtbUKtKQ==
-Message-ID: <24dd250e-f2a3-47ea-af21-b0e418ed8028@kernel.org>
-Date: Thu, 9 Oct 2025 18:27:24 +0900
+	b=fwqfoC174X/fAI8pnVKV3Q64VB006eaadal5kr7vjoC9Pp5mTZ0YzYFoysAViBxgw
+	 b3hnPk61o+DPVGdHEt7nGvtZvaM+TCqGK70y2oS5IMTyjNPGVBGwSzrodps5UyFPL+
+	 hvkKCS5JWXe2E4QmdGxyofF5f9PTuPtbql+H7lhV5sXjucSAAuFDK2Lq72qJXkjssk
+	 W7MKVSPf5RFi/mHj0w/zcfqrQQpUj9qupaXwQ4TnUG+X/7fjqEvZY9nvKWuDwhcYbL
+	 VB5AfHpynakIZqIP8YniVBcwuzmeTp1dL07gU3O/IoBqwFGHr4c++6L3BX5XSn9yw3
+	 pl60zDWyKFP3Q==
+Message-ID: <0f487d25-b05a-48dd-9d37-00262a742010@kernel.org>
+Date: Thu, 9 Oct 2025 18:28:00 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/5] dt-bindings: phy: Add edp reference clock for
- qcom,edp-phy
+Subject: Re: [PATCH 3/5] phy: qcom: edp: Add support for edp reference clock
+ vote
 To: Ritesh Kumar <quic_riteshk@quicinc.com>, robin.clark@oss.qualcomm.com,
  lumag@kernel.org, abhinav.kumar@linux.dev, jessica.zhang@oss.qualcomm.com,
  sean@poorly.run, marijn.suijten@somainline.org,
@@ -62,7 +62,7 @@ Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
 References: <20251009071127.26026-1-quic_riteshk@quicinc.com>
- <20251009071127.26026-2-quic_riteshk@quicinc.com>
+ <20251009071127.26026-4-quic_riteshk@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,11 +108,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251009071127.26026-2-quic_riteshk@quicinc.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251009_022738_635288_DEA6F41A 
-X-CRM114-Status: UNSURE (   4.63  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251009071127.26026-4-quic_riteshk@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,13 +126,12 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 09/10/2025 16:11, Ritesh Kumar wrote:
-> Add edp reference clock for qcom,edp-phy which is required
-> to be enabled before eDP PHY initialization.
+> Commit 77d2fa54a9457 ("scsi: ufs: qcom : Refactor phy_power_on/off
+> calls") lead to edp reference clock to be turned off, leading to
+> below phy poweron failure on lemans edp phy.
 > 
 
-No, you need to first look what is happening in community.
-
-https://lore.kernel.org/all/20250909-phy-qcom-edp-add-missing-refclk-v3-1-4ec55a0512ab@linaro.org/
+Also NAK, duplicated work.
 
 Best regards,
 Krzysztof
