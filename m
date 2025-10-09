@@ -4,60 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98FDECCD183
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 20:20:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2B4ACCD183
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 20:21:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pds1R7soGHAb1M9jOgiazt4d4yegzVizyn1gtfJQc5s=; b=1gcbs9OQwUC1Oc
-	7fNXHsprbVU4t2naSU/ttzAMJSCTaoQFKqiofDiudNig1kqj8dw7r3zKXB05zYkAzemreRvB0l8lm
-	/1SD8T9fv3C8ByILqaPgJuF3f95akxC0KOBRN99pZoiMxNYbkO4x/DHfmhtffliJ7Orb5dFxCbk9V
-	8UHzDPBhuz+LgrMY/L1WtG6tgSyMFfTEUq3g11CA9DpL8lBe7IYkphq62fkTJl6GyTRAf2KKYD0Wd
-	whEmCGRNxaRWddAhCje2KxKCTSkM4x3vEo+W01fhl3w29ZEpZjn143fsWkPTzzb8mVYVJ/ygc5O7a
-	elwXMs5GcxKFA0pqUA2w==;
+	List-Owner; bh=ZQZgxjfCnq9MdvfFAc24SoBGn/Klo5kGjI8Gpm8A5T0=; b=d3c5/Z8fclJ3+k
+	abzgJofIW8vX8qgI+TjK/jT42K2I7jARYVqD7RuQnANfRXKIqPue2r4p7PE974Lvo6qlnSqjaOmTf
+	/oesNgxNPElcvvtGwLYJpeSRfd9eH/u6yqwbjAxbTlwzZ7Aq8qB4dANhojqHqqBZmfRdxQHxrZ54a
+	pXQPIF+Cc3vPYlZ20wjakatUu/nO0Jm7y+MfAs6ZJ8SRlqEnBLBt10fmjt+VFSwfgnSkPAaB35fqY
+	F75JOsm57WqAFBEDCdLxb3vp2aV8ZASRHc4ZsIFnifBJr7YlIzF4hwpi9ASQJmypCBes1EjVy2VB7
+	ZVt93tBWbDWzPsMQBEbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6x8C-000000074Qp-110E;
-	Thu, 09 Oct 2025 20:20:56 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1v6x8K-000000074T9-214J;
+	Thu, 09 Oct 2025 20:21:04 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6x8B-000000074Qh-1s9V
+	id 1v6x8H-000000074S3-479f
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Oct 2025 20:20:55 +0000
+	Thu, 09 Oct 2025 20:21:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D844461FA7;
-	Thu,  9 Oct 2025 20:20:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E163C4CEE7;
-	Thu,  9 Oct 2025 20:20:54 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 818AA4325E;
+	Thu,  9 Oct 2025 20:21:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20D65C4CEE7;
+	Thu,  9 Oct 2025 20:21:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760041254;
-	bh=oA2uaCZRnNGs1M5Uw0XEpZ5pPtd9ck21xoINfY+pXQc=;
+	s=k20201202; t=1760041261;
+	bh=aGXv2Pk1gOljG1ekFh588VDqSTo56s2dZdKfJW6cPzQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=eX6SLVRqrZ3oxHM/cbevFHH5RfW2ewBDheS3mCX1fM+xaCN/e7Z7vvWSb5Gu3Qtun
-	 2K9TflgQzlrE+i38oZ8sR1hw0pIeBSH6Liq64Q8qPlAtIcqyx39YT3oVkwHjEgWi1R
-	 0dsQ2EhDurCJolfI0jVOZXkaGViTDMK53rdc5/TdFIDEqMeQoQa6oxnc4VCZJ0S635
-	 dXJucQ+eo6hKkfQh6YVBQUMSCesCnj6X+dOnI9VN5W00R8XvgWKlF7HZMoUAR97IG+
-	 Vq24cBlt6anuhdLLt4V869XCLoWvEhL772J8AbUjinWmQWzjcQGciA1Cjd9tmlkADe
-	 yYeJYb7mO00pg==
-Date: Thu, 9 Oct 2025 15:20:53 -0500
-From: Rob Herring <robh@kernel.org>
+	b=orz/AtsGM6gEQLKwHfX7n60y9MSGapSc45ur62ZtGrZGEq9iATmok6hqinw33rPER
+	 KzCFSX8p0uMsP6AP4XaT6JmfxdOvwNLAC+18qsJXqAKr0jLU4I4J8rWa7zQ2OuFVWS
+	 N9MxhXC+aHPI01Zsy47EyXyIecCP7FVvYybMPPdYvnhrs5a8A7YPL16KgVXVJ9ogDP
+	 ltM1yqLBKLoDbvHJc18WhUg2HiU3PsnlY6cT0xnqs1wg8RRJQkDJKKO584KCJIB5xd
+	 PwrBS/sg0ylF2vrPxuNQ/vNretFKYnjN+YebTr5aaeuW3bUratIC4DmQPPATNrxO3C
+	 /TD7E8U9212VA==
+Date: Thu, 9 Oct 2025 15:21:00 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+	Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>
 Subject: Re: [PATCH] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Add
  mode-switch
-Message-ID: <20251009202053.GA3288920-robh@kernel.org>
+Message-ID: <176004125928.3290331.16433221750974859532.robh@kernel.org>
 References: <20251006-topic-sm8x50-qmp-combo-allow-mode-switch-v1-1-3d79e7ea6824@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20251006-topic-sm8x50-qmp-combo-allow-mode-switch-v1-1-3d79e7ea6824@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251009_132102_041716_BBAA4C61 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,7 +76,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 06, 2025 at 03:51:53PM +0200, Neil Armstrong wrote:
+
+On Mon, 06 Oct 2025 15:51:53 +0200, Neil Armstrong wrote:
 > The QMP USB3/DP Combo PHY can work in 3 modes:
 > - DisplayPort Only
 > - USB3 Only
@@ -92,8 +95,13 @@ On Mon, Oct 06, 2025 at 03:51:53PM +0200, Neil Armstrong wrote:
 > ---
 > Depends on:
 > [1] https://lore.kernel.org/all/20251006-topic-sm8x50-fix-qmp-usb43dp-usb-switch-v2-1-3249e511013b@linaro.org/
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml       | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
 
-That's a series then...
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+
 
 -- 
 linux-phy mailing list
