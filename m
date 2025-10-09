@@ -4,87 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDDF7CCD184
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 13:49:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D78F1CCD184
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Oct 2025 14:52:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BScTj+QHdFj+KLrbZGDVEcjgu6F0zKdEdkEbID9B9EQ=; b=NjjIXOel4s/uHj
-	rUEcLT57ht/y+9JvSoS9VWDnFfGu8rRb403RC9eTq7MMsXoYdDL/IZl4s1pqOhk8SplZNvXKwIQh+
-	mqCagRfJOWwCz1gmax0B88u9XLGZbhoeh0Zv4ykMT3cHIJ3sJk9mTe1QNK8fcm9376heOe/qGyQoh
-	mQx5ZRuuuNTsjE/IvROWRGW/nGFLOX9J6qPS68scUASqjZegkXNJViIphZggxV1IsmoQtfospDkFA
-	xcdEfqwudsxHhDwYMOUOeyCmSUpFAJ85oaKM9sUU5+QG1H3WEgP0efDFYFuT0zrVr17/m974D0i/j
-	xhDw5/Yp1ABUlR4MZyzA==;
+	List-Owner; bh=WGpRGEQsU2zwXwx/nwBszuZUpdtLPYYcVjCbE2OeOsE=; b=hj4IwCXj5Fet20
+	S6rOSfdlSyipNc9dQQzR7lg1shF4H8GOjIwobKsgV0emHftHMXVxjBZqhtTKqV5yfCbiVEAnMWRyv
+	4YpLznRjbjd0ReBpYSYga9nNqq7RiCJp3X8+3hJHIBs2u1Yv55KoUkbg713lXXsUr5IjR/V4Ju6zT
+	y4T396KxXiQK4iqY4Y6mILHLnJH0tsLK0XbpBMYxphvkqAuHRd12e/XyA/WMihm7XywYuDwFTzQ49
+	4kScJb68O8ISes7iohi3v1NaPOaU4nI4odwGcqQ+UzI0v5mhwVLktxzobKOH0c1urlvT2liWBRdzu
+	/8d15h0Fi386tWwMbFrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6r1C-00000006Ga8-2NJh;
-	Thu, 09 Oct 2025 13:49:18 +0000
-Received: from mail-vk1-f172.google.com ([209.85.221.172])
+	id 1v6s0m-00000006Onb-2eFo;
+	Thu, 09 Oct 2025 14:52:56 +0000
+Received: from smtpbgeu2.qq.com ([18.194.254.142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6r1A-00000006GZX-15qQ
+	id 1v6s0g-00000006OdJ-3A9f
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Oct 2025 13:49:17 +0000
-Received: by mail-vk1-f172.google.com with SMTP id 71dfb90a1353d-54aa30f4093so296111e0c.3
-        for <linux-phy@lists.infradead.org>; Thu, 09 Oct 2025 06:49:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760017755; x=1760622555;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=rG+VBn74V/FeJGvzOBH4i7MNFu3atTCKtUYOgAi8OVI=;
-        b=ZDNAoSzK7AzeqbjJbO5s6rfxDi5wbU2hMB7YOv5rEKsvaOT8sVjpyy4QAEKalJN476
-         lOSweca24CrFsJSNVZfmZE6GWd86q68t1wSgegdLQ2ouK7YaVmNim7POYtq/+q6qg9nB
-         rFJYTR/leThkeB0bFKQx1d/4lVf0+AO3N6zFguLbTivoWzRqcs26ppW/eDX59qBrlavp
-         SwD+dxbtnzqFENs7o+byTn23WqmPlytNq7wbY7+2sEEiQ707pY9lPmHlmtO3DqY9hhpc
-         dqcAUNPVlz1qrnVAUSNByPdYl4W1R0mmoVipjav55RdZSuNQZ6CWJTboimVtLS7HXhhI
-         1TZQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVzcSK+mL1wM9HxH3T1cqkPL1VtNT+0I+weRDWlgIrD3HcwaVbd5Y5ga3OO5ni9lUhGO5N/5OE/v9E=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwmKL7jOhAKfEZ9IE7yHP1TdgivR+2RMsqzjP75vE+D9424SkgK
-	9M6ROr8sB1gnlV/fW+JK/8cp/6dUm2RB0smVoZ7W4Zsre0xrl3JWldE5oOs//E2J
-X-Gm-Gg: ASbGnctiPvnWxiTh2bXRZFic3ztosCJUdia4G5++CGEUFWLHlu/m/GvM/7tj3cD/MV/
-	KEH8m9y2TYq4vC7V+euzOBD9LyHdCQmA/Q4nhMnrOsWf4dDop/0l8YSvSkKNRFGBwyZLc6dcZts
-	4SAoBlWJAZ1o3NiOpyaaOguZO3Ygy0IggjW+XvdBFfq9mMKaDrVv6TDe5n6cg3NOGPnraRfVlv4
-	2qcV3du7XPtD3dmA9xwYO2Mc0ops60lWSrDN0yQ6cAFUp8YoUOOeFAt/q3jnb6vwYgg5p+wZut2
-	k2MmKP9cQPAHGXPOwwjmplB0hwt4pfvbJKfaUlIKBUPmXw3MWPOmcX15VWYlSOp7pYmKlHPozZf
-	RKWFtHr7xyH+TJvtFrw5wV37jlAVor7jOafrV9pmKrevIpncHM/YGq++H4XMTB6jwtLIxltjTsm
-	SWc3F2deaBIYY3qLFBFuc=
-X-Google-Smtp-Source: AGHT+IG7foBXSO48ViVZAMKOAiY6z05NTujrMsyL1LgQ4QbNqojVc7Litl2qoVgbwrRprObU7WLr6A==
-X-Received: by 2002:a05:6122:3c92:b0:551:c3d0:acb2 with SMTP id 71dfb90a1353d-554b8c1b0d7mr3106123e0c.16.1760017754618;
-        Thu, 09 Oct 2025 06:49:14 -0700 (PDT)
-Received: from mail-vs1-f52.google.com (mail-vs1-f52.google.com. [209.85.217.52])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5523ce202bbsm5344203e0c.4.2025.10.09.06.49.14
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 09 Oct 2025 06:49:14 -0700 (PDT)
-Received: by mail-vs1-f52.google.com with SMTP id ada2fe7eead31-5c72dce3201so358047137.3
-        for <linux-phy@lists.infradead.org>; Thu, 09 Oct 2025 06:49:14 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCWllu0ns9bPUuby8suhV7O8+aMIASfnb+xdBYPN9VR727UESs7VKDpZuH2K6ILivXGFu6ter9rd/bI=@lists.infradead.org
-X-Received: by 2002:a05:6102:b0f:b0:520:a44f:3ddf with SMTP id
- ada2fe7eead31-5d5e224f3f9mr2430732137.10.1760017754092; Thu, 09 Oct 2025
- 06:49:14 -0700 (PDT)
+	Thu, 09 Oct 2025 14:52:56 +0000
+X-QQ-mid: zesmtpip4t1760021508teed882b4
+X-QQ-Originating-IP: H3oCVwaNOoE4vRYRwZpNRzAtVOKNTGpl6VBf5QRc/60=
+Received: from [127.0.0.1] ( [localhost])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Thu, 09 Oct 2025 22:51:46 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 7343424782769660848
+Message-ID: <60E11B9D37CEE163+8cf864e4-579f-432a-a507-9711d03776ed@radxa.com>
+Date: Thu, 9 Oct 2025 22:51:45 +0800
 MIME-Version: 1.0
-References: <20251001212709.579080-1-tommaso.merciai.xr@bp.renesas.com> <20251001212709.579080-10-tommaso.merciai.xr@bp.renesas.com>
-In-Reply-To: <20251001212709.579080-10-tommaso.merciai.xr@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 9 Oct 2025 15:49:02 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdV0k0k4EQhQ9C_oPUPno7BsgN3tW3ydLrvzD783SgULyw@mail.gmail.com>
-X-Gm-Features: AS18NWBiuLuEjgmzyDSlSzZ5zrYLpzbrdlxBs-yvgfRSKSU9hkobcBub0EljavI
-Message-ID: <CAMuHMdV0k0k4EQhQ9C_oPUPno7BsgN3tW3ydLrvzD783SgULyw@mail.gmail.com>
-Subject: Re: [PATCH 09/18] clk: renesas: r9a09g047: Add clock and reset
- entries for USB2
-To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org, 
-	biju.das.jz@bp.renesas.com, Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Magnus Damm <magnus.damm@gmail.com>, linux-clk@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 2/3] phy: qcom: qmp-combo: get the USB3 & DisplayPort
+ lanes mapping from DT
+To: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+References: <20251006-topic-x1e80100-hdmi-v5-0-c006311d59d7@linaro.org>
+ <20251006-topic-x1e80100-hdmi-v5-2-c006311d59d7@linaro.org>
+Content-Language: en-US
+From: Xilin Wu <sophon@radxa.com>
+In-Reply-To: <20251006-topic-x1e80100-hdmi-v5-2-c006311d59d7@linaro.org>
+X-QQ-SENDSIZE: 520
+Feedback-ID: zesmtpip:radxa.com:qybglogicsvrgz:qybglogicsvrgz8a-1
+X-QQ-XMAILINFO: MX+1SEN3H+wA6UlqDjtZJApuYTPvpgj5kdSD6aPJiGGrrWxNsC0wzLTw
+	3rRU1E3OHDeIbY5cli82fza/uDqlqvDeHm7PrnmsoGRCmXTi0kgRtuHVhWoH8eyq04AQSCZ
+	KA1uuVolz1IOSL9Q3AV+pTPmBOkETJOPjpRWxRiOnEKkBEIeCL/p86K9T54p9gAAOKM1NtC
+	z/Um2rn4sI6pKOdjQzcD90HVTCmOGzdsesInxJH9kclfDuVZ/qFb+mLdsdriLxJYpwzmEF4
+	Epf602CNef0x0vVcfVUqsoG2Et08fZ84omMh1XLvEdKP2ZKyVcVcD0YDTXllb+6uvvcBdju
+	iHDl3MJ+zAUgnTqcTOwNCoI0RB0iwYb7YFVvzsnQO3BIz3Lcw0tElg8DWrWJxiyZ3WDARlm
+	2cVxi67XIOo7uK6JUV6F/rfVqO5c0/2gTruwetT0tEmvahzUiOA/Le/5WBrD3wlD2ZZ1pl0
+	PW7zWjGvBuIS9SzNYUpjm+tVKU4pbiv/as52wP+He+6QKG3VoWZpZmgLXjIfFH+UkltBswu
+	eSECty6zBPzJJyxZnwCb6+e9P2pl6z5kZCFAaIav0r/xDxDr3ONWEMPAIPxpFhjNfcsdimD
+	Sy+aZdn3bfkfYrHwbMwwymPaaIOeRiqqcfkgvgT0HUU1rS4VI5ddy2Ix3oUlO0hJIvyjclK
+	wttJtkMt/BE0Jiuet4/SdfDK0nsnsdQxUTBY/jU3+d20pbrAVE5biHMxwW2LtXOo6gkfZqF
+	jT5GTiqh6tEOFA3tSiymbbXc6uxu035xL+41LDMPkTy7EWcRoHqza8StNErX+fYvizmnZk3
+	dXMBiGESwrhh7juh3U/jmA4BZudjBDxOmDZqE9OByx4wUz4cuXWEWI8Ji92k5iPBtme3ZuD
+	UsT4BfoL/qlWjhCts6EyIh26o5LtN2swVYATwbXcg4kfUCN4z+yKrFwd6XMi6ojDw5EzFkm
+	memUskgP3NegysnyfWrbYEGdp0Ro8yXGrAbTEnobyas1TOMlnH4BvjAjHFyhWmjWia3Ei28
+	OZhAEr5gyrgAJX29BT
+X-QQ-XMRINFO: NS+P29fieYNw95Bth2bWPxk=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251009_064916_302045_200ED876 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20251009_075251_257552_BCC0E1AF 
+X-CRM114-Status: GOOD (  12.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,32 +88,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 1 Oct 2025 at 23:28, Tommaso Merciai
-<tommaso.merciai.xr@bp.renesas.com> wrote:
-> Add clock and reset entries for USB2.
->
-> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+On 10/6/2025 9:55 PM, Neil Armstrong wrote:
+> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+> of a combo glue to route either lanes to the 4 shared physical lanes.
+> 
+> The routing of the lanes can be:
+> - 2 DP + 2 USB3
+> - 4 DP
+> - 2 USB3
+> 
+> Get the lanes mapping from DT and stop registering the USB-C
+> muxes in favor of a static mode and orientation detemined
+> by the lanes mapping.
+> 
+> This allows supporting boards with direct connection of USB3 and
+> DisplayPort lanes to the QMP Combo PHY lanes, not using the
+> USB-C Altmode feature.
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
 
-I couldn't verify all details, due to the lack of the Additional Manual,
-but the rest LGTM, so
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-i.e. will queue in renesas-clk for v6.19.
+[...]
+> +static int qmp_combo_get_dt_lanes_mapping(struct device *dev, unsigned int endpoint,
+> +					  u32 *data_lanes, unsigned int max,
+> +					  unsigned int *count)
+> +{
+> +	struct device_node *ep;
+> +	int ret;
+> +
+> +	ep = of_graph_get_endpoint_by_regs(dev->of_node, 0, endpoint);
+> +	if (!ep)
+> +		return -EINVAL;
+> +
+> +	ret = of_property_count_u32_elems(ep, "data-lanes");
+> +	if (ret < 0)
+> +		goto err_node_put;
+> +
+> +	*count = ret;
+> +
+> +	ret = of_property_read_u32_array(ep, "data-lanes", data_lanes,
+> +					 max_t(unsigned int, *count, max));
 
-Gr{oetje,eeting}s,
+I think this should be min_t instead of max_t.
 
-                        Geert
+With this fixed,
+
+Tested-by: Xilin Wu <sophon@radxa.com> # qcs6490-radxa-dragon-q6a
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Best regards,
+Xilin Wu <sophon@radxa.com>
 
 -- 
 linux-phy mailing list
