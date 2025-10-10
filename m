@@ -4,96 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14FF0CCD185
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Oct 2025 11:26:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 997A6CCA476
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Oct 2025 13:39:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=juXkWGdJVnglwJSuUo7VKwHuXlDmsM9P9RyuUDcwurY=; b=K0Vnz6MbjPayCT
-	URngPP7Df6z8ayITBCy6rt/5R6tenExuR+3eqNW1Js94HHnVXsTnmZ3QZ7ywcRgrSxrAV26QbPcmS
-	7yah/+9CkZDENq5ReDZLJ7vs29f50ji+H5Y8qBKixK87TDrTx65TNa1HlM+w20BukbLD9Au7HJJNu
-	oRsYq1GqO+kTRZ2hVcIK/i0wlAb9Ee5NggDACpHDQvmTmXOZFM5vz71ll5DNWjh5tuYhOgbGBG303
-	/A+wMaq0zeSGWxe0c4PE0vanqoyKCleWPikRS1u1ShcPIwtZ8hDrfhccwUq4cMbUOfBIb+7fO3+Oy
-	4nfJJTwcq7gNX4u3/RqA==;
+	List-Owner; bh=JNCFvYQhNlawYU+sNFn9JlW/tuNW3jNGcHQuq+LC5tM=; b=Bt3Flrc0rdaa7e
+	Ktmd/KaYPgphs5X0Y39VRQSaFIOfJp+hRZl+OzfWJn40Ni5C++4H0OWb+8oarKZED+gNMZrboRrkv
+	O7Ty9A1PuE4KCX0VL8RfGQtFcgDWH/Sw8pcsJXLF939D45oCrsdT54L4N2vuy5rPWoo+616YC8GYW
+	647Jdsc7AT5b0UL7uVdqMNZt2r28IErmnDwjl1ebep0zSj44K8CoGdKV7TW+7egPOOLGFZZBs6bga
+	YLokUxnUvVicuUjojj/aDZn9y2nNcWLeLgaf8MtzbIS0F4AQr+1Gp1YUXm8oRP1Z2BM4HPclkBHd2
+	0GwQQcxhDv/cx5XsCDzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7BGa-00000008Ld4-3CcC;
-	Fri, 10 Oct 2025 11:26:32 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1v7DLP-00000008aIf-1NV0;
+	Fri, 10 Oct 2025 13:39:39 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7BGY-00000008Lc9-0Zh6
-	for linux-phy@lists.infradead.org;
-	Fri, 10 Oct 2025 11:26:31 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-46e6c8bc46eso11732545e9.3
-        for <linux-phy@lists.infradead.org>; Fri, 10 Oct 2025 04:26:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1760095588; x=1760700388; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:from:subject:user-agent:mime-version:date:message-id:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=MJYv7wcTmHOu13aBWc1M6LrX7Yag7J9oLnKL5BHIPTg=;
-        b=XkzdtBPYHhae+NQVwaspeKZoEbVgCwPDPKzURB6+Jr1iB6euKFfgLZ3C+JG9/JBOqQ
-         wrxNJj/C3HZBRBUkBR+3I2/AZ/zqvyhHbIfUF5AejsyFphKB7zxsyAhD21Qzq5OLC343
-         Ia0o3rNrMbC57vnZRKhjp+Q8R6wShZHCK/2Ix75b7Lq7cBC43bvYkWw07BSu4qithK+9
-         AwgnzF6G4Kar1wfdUJ/Te3oBd0jX3eC0fLk3aFTYrXEHmLtkVmJxDOwvFq03YlntqWQF
-         hHKbzvQYWoy5l1hjGWorXja2hGtDTAVkYyGZZVhBN89WJQvFgR5ie504YHEMu8ds6gRJ
-         YQHg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760095588; x=1760700388;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:from:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MJYv7wcTmHOu13aBWc1M6LrX7Yag7J9oLnKL5BHIPTg=;
-        b=muPqlOu4ZrBkbZ4l1aZ4CED+sxuRdUoW+U0re78oFrHp1gKRrkgsKQ6RJLSduVXI7F
-         ThvHACYaxRNwwudFkdFRUFB/su8CpXlt4Bmb+/57VQztN89Infut1k4xGzNDpZgSNKBx
-         qr1oi28UaHOCcjTrztOCu4B1SctfF4vp759V3NRw2Rp/cld/xRirAjP4+ZSsTOpAWcW9
-         f7EUnXZI9WbSXUYPEHxVLe0JwPzTn4/M4U0xqUIGu4LdXlTBGiF/eZv1hZM+Mp61lliW
-         1zpSrQ2MgkU/NVpKdeLa92uKj+Udo4bI09Nldg6v6SbuZc3Mve2ku1mbwyuG4zeT4d+y
-         16/g==
-X-Gm-Message-State: AOJu0Yz/OMHkTDK8zXmHdkx410yoeRYPYX503FMosdkV/DYyavdfdvO/
-	+8p29SQ6SNMX45j+f5BHESOJCWhyqOfLE2zLJc13aj35AqEsMD5Yp4WQFHUEp8s7g/k=
-X-Gm-Gg: ASbGncs2weokXi99fYFPtu9TKmsHV5SJMn+do4KVWIeppyK2u/voo3fJQw90XZcKR1C
-	Pn4dhypCV9ah/T/wsDns8ySAnWA1oSkSbjFfuRQshLSw2Ofx8igFHyVSZBNJgdxDdf8qLGpLYEE
-	OtJ4b5QiEP4TX7s2q8/JsMppHvV7hC2GomN3idXPZGwU1sL0M4UYXv6OcoAWNfh4KaRjRexMhze
-	0pozo5uJ3eKuN0uT+UI+DRtC1D25JJUEje2C6MVlNYxovpajUIKCxD6WErvOpUJoHQYHFMAqwd/
-	oi5Ji2HOuzlQiQsxeUyMe6CMksD4dzVUWfYH52g8vZ0TuioEihUP0nOtaO+W0n0UkMwFMFzdhIl
-	TzwjBoOwTCZSj+U1bOCEeJIOMRj4xcCGdo7a96HoEnITBBnHOu/lcPzgyE68=
-X-Google-Smtp-Source: AGHT+IGqto8DzzsUkr3m2rhrXEeJ8gdggFLEt9ehxmvIAsPFVSe6T8rsRQ8HQwfhX/mMuR4S29coxQ==
-X-Received: by 2002:a05:600c:19c6:b0:46e:3d17:b614 with SMTP id 5b1f17b1804b1-46fa9a9440emr89600325e9.6.1760095587252;
-        Fri, 10 Oct 2025 04:26:27 -0700 (PDT)
-Received: from [192.168.50.4] ([82.78.167.59])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489af92sm48160085e9.17.2025.10.10.04.26.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 10 Oct 2025 04:26:26 -0700 (PDT)
-Message-ID: <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
-Date: Fri, 10 Oct 2025 14:26:25 +0300
+	id 1v7DLL-00000008aHg-3dHH;
+	Fri, 10 Oct 2025 13:39:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=MopOl4Zm5EAmSH2Y95YlF13RjLFncPFtRj380UBUPIBqeCBL0PPV168Sakciy4JZzL4emONOoyC6aStUgvTL5I5SzimxpRvuhG1ABt50ZXeDaR8l25sD2VwJPDVhhPOoLUyUrjVDeJ4N9rsKc1pLkm1pOD0pAHjRzyP229y3yk/1LgUgC4mxOSibpES/E4DwKSny5zBJlIiooCfVaSWvM6zPWtqb0Mhko2BcJUzgYefMTpu+vvHCuK71zC5DjATftdJ2R5Dfo4AKsZIiXHW63u2C6O5G3AX5krUIF2PMETuO94IowyCiS01cp7vEt61Y3raPvSLoivCHISXoBj2SFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OM/Z/Db4w2vZA4wn/pSiwNdowgqblpIpBYy9aTQN5jU=;
+ b=A85AUyo3B1faar7EFBTpjZ9fzO7acXEqVggSNfJm/GX9DgXX15Ac9qDIU700u2tbjMXBiQcUV6D9aC2HLXfW4b7oANQMdcbu6mRfsMnhjJbPDgN2czvUMPJ/65oZJAH/pnEjt+mjaWXe+Y5EoK9lA9guKXJqPR3Da2EevQJKl7AvvJLppNILaRF9b9oH3fPFPTnSR5WLj2ZDGE5rpSc4QcZRe759dekhofk5Bsc31wnz+u9jt+ISwMmASEcz9maH2OWe06AokxE1upbFINyHyQm6tgS6mw6TAK0ityJrRtr9Mkumts4CPuJ84Z8iIzPxyATDHNO8bsbw1r5Qobbx/g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 195.60.68.100) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=axis.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=axis.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axis.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OM/Z/Db4w2vZA4wn/pSiwNdowgqblpIpBYy9aTQN5jU=;
+ b=SepOnIEeM+0M1HH6p3v6xyrDN60mEnyGtLOXfjSwsQV99/sES/M1G7xlMiYLeZ3gXreavAkPzeb4Pr2QRNZvv6AI+r47sxwzopsnQ4y+ByqrCSi0OZo4ToI1DKANk3Z7IBG2jmyMrhzocfQs26rpPMesx/hSxMN8ebIluv8U0z0=
+Received: from DB7PR05CA0023.eurprd05.prod.outlook.com (2603:10a6:10:36::36)
+ by GVXPR02MB11133.eurprd02.prod.outlook.com (2603:10a6:150:1f7::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.10; Fri, 10 Oct
+ 2025 13:39:22 +0000
+Received: from DU6PEPF0000B61C.eurprd02.prod.outlook.com
+ (2603:10a6:10:36:cafe::c9) by DB7PR05CA0023.outlook.office365.com
+ (2603:10a6:10:36::36) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9203.10 via Frontend Transport; Fri,
+ 10 Oct 2025 13:39:22 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 195.60.68.100)
+ smtp.mailfrom=axis.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=axis.com;
+Received-SPF: Pass (protection.outlook.com: domain of axis.com designates
+ 195.60.68.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=195.60.68.100; helo=mail.axis.com; pr=C
+Received: from mail.axis.com (195.60.68.100) by
+ DU6PEPF0000B61C.mail.protection.outlook.com (10.167.8.135) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.9203.9 via Frontend Transport; Fri, 10 Oct 2025 13:39:22 +0000
+Received: from pc52311-2249 (10.4.0.13) by se-mail01w.axis.com (10.20.40.7)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.58; Fri, 10 Oct
+ 2025 15:39:21 +0200
+From: Waqar Hameed <waqar.hameed@axis.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>
+CC: <kernel@axis.com>, <linux-phy@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2] phy: exynos5-usbdrd: Remove error print for
+ devm_add_action_or_reset()
+In-Reply-To: <pnd34a6m7tc.a.out@axis.com> (Waqar Hameed's message of "Tue, 5
+	Aug 2025 11:33:35 +0200")
+References: <pnd34a6m7tc.a.out@axis.com>
+User-Agent: a.out
+Date: Fri, 10 Oct 2025 15:39:21 +0200
+Message-ID: <pnd7bx2j2pi.a.out@axis.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
- PWRRDY
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-To: Philipp Zabel <p.zabel@pengutronix.de>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- geert+renesas@glider.be, magnus.damm@gmail.com,
- yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>
-References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
- <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
- <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
- <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
- <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
- <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
-Content-Language: en-US
-In-Reply-To: <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
+X-Originating-IP: [10.4.0.13]
+X-ClientProxiedBy: se-mail02w.axis.com (10.20.40.8) To se-mail01w.axis.com
+ (10.20.40.7)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU6PEPF0000B61C:EE_|GVXPR02MB11133:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7a48c1fa-e92d-42fb-ad9a-08de08026bee
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|82310400026|1800799024|36860700013;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?5g/58upOCZQxAZSgXlg4IcdSa3eTbnjf8fgeUgLBKOy1KT5qfL/uVYa8Ab7d?=
+ =?us-ascii?Q?J9fAq/7QphZC/SKToJxkeIFG90LR2x4BaxyH1CxCDzJKtlMAmiVmgS15+Vat?=
+ =?us-ascii?Q?s6c93uSesDngDYfdr5wIR/PY2Ji3V3cRZMu8eEK5c0WLBa/ma4sWaiftLAa7?=
+ =?us-ascii?Q?7JvMZavkpddq5H5M5KxNBt86Lbw6eoffTRWoYT05Gho4PtZBJN7zBEJbJ3R3?=
+ =?us-ascii?Q?VvK2Zuc/ideVdQTkf+5SrlM+SEabbc8lE5iRzBX4I0wRxLm+/SnKAj1jD9Mc?=
+ =?us-ascii?Q?+L0meOZq+jKAe5cIkvm1z2ryPMWYcldDQM8VID5F+Kr3HVuaUez9Rzgiqpjc?=
+ =?us-ascii?Q?uFqnCLxsEDDZ9ZTONUiu1Sct25oNZvWQCLsMhAnraYQRDDgGrDlulpZT0y9O?=
+ =?us-ascii?Q?GqV25DGa9zozLjRmvyDvnOHSY1bTHcsrGHpP7UTpH0BSiJNPy1/UJD2ZW0Pa?=
+ =?us-ascii?Q?gBrsuuConI2Li6BOtdE35iQPVhjqnRk6AEy82ncvG4YWnfryb7XtIiIezEmn?=
+ =?us-ascii?Q?BGNrBnoZJY9ndqMgJs0JshGsjJpg2rExetshR5OA2pNHvT19RH0vZM7Rd1ys?=
+ =?us-ascii?Q?9i6OcCDDw0M9mbbx8/UW8GSfTNC19JSAkAn4OLpzxOV5tD47lFWFZ2cGkf3f?=
+ =?us-ascii?Q?+a6AqDpxteW0QkRqpNZWzz0tCkrhXRx44bwazawoq+5mDTICtCv1TvAXrQ2I?=
+ =?us-ascii?Q?n3eZvU+Q2OlK3uk5eiKmf3YInkYQrUe4970veX/PvtgXoMY0Yg+HRyTfDtNM?=
+ =?us-ascii?Q?EYoe32JhDc4Y26mmwfF5cGsRJjVgOcCHxcIQf9cSFaW12W6sAgMZQWmbxSZF?=
+ =?us-ascii?Q?IaDaUxybLqsq84196aK32I3hdnIeMlugEJLE+Elo/CKrdxNX/0rWnmBj5hum?=
+ =?us-ascii?Q?3/2kSrIR/xknWZQsX7gOvkQoYQUYR+TMkpL+ZLgIYa9+IxCBAtYfqKYkZTCl?=
+ =?us-ascii?Q?fau3z0X3LzUWQx6ngQgiNqhQVXnm3M92bvYQnRdrHIY/gR4TMfZIBFddoleZ?=
+ =?us-ascii?Q?py0MkVbHAM4nNVndbB/+snfZI3uXeLeK5dexiRA7BGaB9XUCnVJMlUT4q0NS?=
+ =?us-ascii?Q?5Ev92sOghmYTx/8CAN0BFVlGtvwi9f6nExiTH+VvonE+HMctvBJpQAwItmuX?=
+ =?us-ascii?Q?pLU5rMaVA6hVjefaSXhp3rek8lXs11xPX7Q9H7xMWlwesYnqRGvBou7I9PzA?=
+ =?us-ascii?Q?2JHpmlo4NqB0WUi/tQeNCNnhRV2upQPZZ1/F9dhPWZzpgIvfrzABv2ZeT8TX?=
+ =?us-ascii?Q?VtRdznXcRUcIrTnjL6AeW5v9Z31Dgeaw367OVbSn+hlZK3YEYuc2c6roqdNi?=
+ =?us-ascii?Q?XeBr8u2t9qH/sIdc8q3yqwoXN9U62nJmnaxNwGDF72/ZNNtyi5C8QCZ8OB4o?=
+ =?us-ascii?Q?2rYsdQLnM9Yb2ROwGrbtar8wWqjBgXZHb5sMQkhfLL5fV+0ZD5tDBx2yjhlZ?=
+ =?us-ascii?Q?gN89ABq0PVfJEBUUKQo2+bL+3htDC/Jjo3uizp0HAzDhDBjeCDXGfxnV+tRW?=
+ =?us-ascii?Q?01gr1VZ/IDKqgyU6cvqYinSNw6zC+DdZV6QKdnb6nHlEmoL1TV6WslO/TV3c?=
+ =?us-ascii?Q?KzyLR6ZSDur4r/tVTIs=3D?=
+X-Forefront-Antispam-Report: CIP:195.60.68.100;CTRY:SE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.axis.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(82310400026)(1800799024)(36860700013);DIR:OUT;SFP:1101;
+X-OriginatorOrg: axis.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Oct 2025 13:39:22.6440
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7a48c1fa-e92d-42fb-ad9a-08de08026bee
+X-MS-Exchange-CrossTenant-Id: 78703d3c-b907-432f-b066-88f7af9ca3af
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=78703d3c-b907-432f-b066-88f7af9ca3af;Ip=[195.60.68.100];Helo=[mail.axis.com]
+X-MS-Exchange-CrossTenant-AuthSource: DU6PEPF0000B61C.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR02MB11133
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251010_042630_196664_018D2ADB 
-X-CRM114-Status: GOOD (  20.04  )
+X-CRM114-CacheID: sfid-20251010_063935_903647_6D707511 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,73 +148,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Philipp,
+On Tue, Aug 05, 2025 at 11:33 +0200 Waqar Hameed <waqar.hameed@axis.com> wrote:
 
-On 10/8/25 15:16, Claudiu Beznea wrote:
-> Hi, Philipp,
-> 
-> On 10/8/25 13:23, Philipp Zabel wrote:
->> Hi Claudiu,
->>
->> On Mi, 2025-10-08 at 12:29 +0300, Claudiu Beznea wrote:
->>> Hi, Philipp,
->>>
->>> On 10/8/25 11:34, Philipp Zabel wrote:
->>>> Hi Claudiu,
->>>>
->>>> On Do, 2025-09-25 at 13:02 +0300, Claudiu wrote:
->>>>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>>>>
->>>>> On the Renesas RZ/G3S SoC, the USB PHY block has an input signal called
->>>>> PWRRDY. This signal is managed by the system controller and must be
->>>>> de-asserted after powering on the area where USB PHY resides and asserted
->>>>> before powering it off.
->>>>>
->>>>> On power-on the USB PWRRDY signal need to be de-asserted before enabling
->>>>> clock and switching the module to normal state (through MSTOP support). The
->>>>> power-on configuration sequence
->>>> The wording makes me wonder, have you considered implementing this as a
->>>> power sequencing driver?
->>> No, haven't tried as power sequencing. At the moment this was started I
->>> think the power sequencing support wasn't merged.
->>>
->>> The approaches considered were:
->>> a/ power domain
->> Letting a power domain control a corresponding power ready signal would
->> have been my first instinct as well.
->>
->>> b/ regulator
->>> c/ as a reference counted bit done through regmap read/writes APIs
->>>
->>> a and b failed as a result of discussions in the previous posted versions.
->> Could you point me to the discussion related to a?
-> It's this one
-> https://lore.kernel.org/all/
-> CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com/
-> 
-> 
->> I see v2 and v3 tried to control the bit from the PHY drivers, and in
->> v4 we were are already back to the reset driver.
-> v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
-> renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
-> bit was referenced counted in the SYSC driver though regmap APIs.
-> 
-> v3 used the approach from v2 but passed the renesas,sysc-signals to all the
-> USB related drivers.
-> 
-> Then, in v4, the PWRRDY refcounting was dropped and passed
-> renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
-> is the node that will always be probed first as all the other USB blocks
-> need it and request resets from it.
-> 
-> v5 and v6 kept the approach from v4 and only addressed misc comments or
-> things that I noticed.
+> When `devm_add_action_or_reset()` fails, it is due to a failed memory
+> allocation and will thus return `-ENOMEM`. `dev_err_probe()` doesn't do
+> anything when error is `-ENOMEM`. Therefore, remove the useless call to
+> `dev_err_probe()` when `devm_add_action_or_reset()` fails, and just
+> return the value instead.
 
-Could you please let me know if you are OK with the approach proposed in
-v7, so that I can start preparing a new version addressing your comments?
-
-Thank you,
-Claudiu
+Friendly ping incoming!
 
 -- 
 linux-phy mailing list
