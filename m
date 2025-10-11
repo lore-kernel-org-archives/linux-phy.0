@@ -4,112 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7CC5CCD185
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 00:19:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A02ACCD18D
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 03:33:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a1V+5iN+Son6+rG6YU0oRccsVg0QBiTr5ts/c5tg/I8=; b=SBGua/ylNG2AwP
-	mFro1/iPZ343ypRNXG0Vlh0PvlICRF8k/JmD6UmlXOp0nNb4npspnjt6BtTlvcWdVJqYsGKYSgkoD
-	OJL9Xu56guiWFVUFGHlzQLv5xbg5swDoZAAsyaJ9p65cDJpHk99fLiJoQt3XjKg4OXS+f14hfGcfB
-	upGqYj4JrPlnZfJvBC92c0HrDjO0nu4xIiiS3pw6P0ujVHUWu9z9EoPG9nbknXagJuxnYe42JcmvV
-	eV8i2yx15pLzXd81ZG9TRcZfY8mth45+lMYZuZ0X1Dz/oEg+hmcc9b0fZZW1Ped74V+znw8QpmuuX
-	85brLFKz9oTz4MsxLz5Q==;
+	List-Owner; bh=I1prOygViQtH/rvNvY9mCeuIX3y7r4LbryYWF0nWwBI=; b=mjjbChm3HZUdMX
+	q1OstLS5CJSH0ykJii4s8S80/r93q9+0YIF0WMTnD/Y6PqLgsMJEHQ0YH34uFpJbb4P/+vpLKl6By
+	aACCk+VxP+spZCouK82Sw/kEu/tKoQdozebvf3gRX/YVt2J/uu8XC8ew+HN8NKS0Fin43/+2O8ijF
+	T6R46Q9IYHfHoY8SpCZ5ADzScQv6DJr2vsluK2dOmdzQg392ZndXjKCvrxEpW6Us0+q+puLEYRlZj
+	35933qEK0CyAG02kvp7guqQXjqVInGWvobCA64rTyMe5Iugu89z6S7ur7sIaa0KuZPAYzlcWafyMv
+	fFxfKCuulXceryQj7DwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7NKs-00000009ZsU-1nBM;
-	Sat, 11 Oct 2025 00:19:46 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1v7QMi-00000009jsR-1AOv;
+	Sat, 11 Oct 2025 03:33:52 +0000
+Received: from smtpbguseast3.qq.com ([54.243.244.52])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7NKq-00000009Zs4-03WS;
-	Sat, 11 Oct 2025 00:19:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5F861433D7;
-	Sat, 11 Oct 2025 00:19:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE6A5C4CEF1;
-	Sat, 11 Oct 2025 00:19:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760141983;
-	bh=OpLhmXy9ETBYlkFfaP2AkWUxtrwDNjuuRfMcM0Wl5M0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ndy49n1fTS5dtLS6EQkGfiWA0cKIoAxNnLQuyZKXxd6/zrblB2ErzzpjGenCvpOmJ
-	 DPZPzkGcPeaBA8rmhN1ZEjXeO43rL6B6g4NQnr4FI+MmegC/uBM9Nd70ttRolF01c6
-	 NiFyo/DBD4rkygjx8fCia1w36/oB6HIuDjvRdCXC9cLMGJk7v7cjdgYTBTybBeowVp
-	 Ub32rx77O5S4H04IsKsYlp1R2LPO22SF1VihXUtjZ+jNaaCgLfiNS/+09PsPukchUO
-	 V7vpvIfH955isAx6Bzm3EVpsMMIkb9Sv4Y8P1SG32Z3JIVBsXFH3HZ9ruumSGvTT6D
-	 z1ZwDA5jqOtKA==
-Message-ID: <d99d7b54-88af-4649-84c2-02027b4d9655@kernel.org>
-Date: Sat, 11 Oct 2025 02:19:30 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 5/6] dt-bindings: phy: samsung,usb3-drd-phy: add
- ExynosAutov920 combo ssphy
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- alim.akhtar@samsung.com, andre.draszik@linaro.org, peter.griffin@linaro.org,
- kauschluss@disroot.org, johan@kernel.org, ivo.ivanov.ivanov1@gmail.com,
- m.szyprowski@samsung.com, s.nawrocki@samsung.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
- dev.tailor@samsung.com, faraz.ata@samsung.com, muhammed.ali@samsung.com,
- selvarasu.g@samsung.com
-References: <20251010070912.3758334-1-pritam.sutar@samsung.com>
- <CGME20251010070101epcas5p1be06087e5511f4a3fc387b232e0353b5@epcas5p1.samsung.com>
- <20251010070912.3758334-6-pritam.sutar@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20251010070912.3758334-6-pritam.sutar@samsung.com>
+	id 1v7QMe-00000009jlz-1OV2;
+	Sat, 11 Oct 2025 03:33:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1760153569;
+	bh=FwncydjEpKrZABF7OX/m91T9YSWh4FrlMTek2hhLtmc=;
+	h=From:To:Subject:Date:Message-Id;
+	b=JkeTkQVJfWRMCN73FLwmBC71qF57zgcovHWz7tmQD8MJdTPuiD89psIkiyqqvQVgO
+	 gqaUCWpbD175zvwlidJVU9JND3aUbrqZzkSiaGGWSxTOAVsUe0/GPJGk0Zii8OVeo3
+	 m/nvYm3YBdFzwK77PgXTZgGL/0P+8UYAcLo4wfOo=
+X-QQ-mid: zesmtpgz4t1760153567t933226b5
+X-QQ-Originating-IP: pzI+jTj2UtCmWD2N0Oeh+IAPExt3pVROubErMs+KBy4=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Sat, 11 Oct 2025 11:32:45 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 8809100551469140614
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>,
+	Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Robinson <pbrobinson@gmail.com>
+Cc: linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH v5 1/8] usb: typec: Add default HPD device when register DisplayPort altmode
+Date: Sat, 11 Oct 2025 11:32:26 +0800
+Message-Id: <20251011033233.97-2-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20251011033233.97-1-kernel@airkyi.com>
+References: <20251011033233.97-1-kernel@airkyi.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: zesmtpgz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
+X-QQ-XMAILINFO: OKKvvo6f47/bSIfBKw0PRfi64vrIs77dEVCmCp+x9wHp/6XpIojwCkJn
+	lpn39sS8P3cXB8f4BOsnqcHdsk+ukyltOD+grxVGqUy/B0ejK3ORKQavB5odAmI/ycvZaXE
+	rTrGJrvra3lIGNsvEXyX1dhWGpw1SPFpbR+pwLsQxKoCJdQx8KOb7jTH2iOK1TEkAaDUGRr
+	KVQvuQs/Dz181T5mVqkmGUiQAzOnl2YPtufq8kF4QDLZbEf0S/0Hs68tM3VQ699oOPsK7Xn
+	YiK3XuUbpVBCYKbuJdaHP7UDo6A9C6MLAyFnwANgkI41e5Sbd2QAuVbyCa9olEMjusoRgJO
+	nKCq3iNgHpgXPB1nKXx+KcJEGD2y3i8aq/LGf2MCbSo3H/wEgpHl/DCb9HurbsvZjmVE0xK
+	K5OPq/cvp/HCVKcSsxKq/u4GZHkBWor9U9f7W0qiu6N0sy5TyCA/P0VxKS0GDgBbmPvvegE
+	/ZGYNSgrJbqQ9rO1eHJvURp3wDKO3wW2txoNVSmt49i/FPdCm2fd4BhM9uO+FtLFCIGvXB4
+	OR1mhdAW+XVYQjS6sGThnRKpLxeVKx9ZiSS6ZdKv0rjV5ucTK94iXaIwdRpzSgvCD8Q4Msa
+	7Cl/Cpwwg4MY99r8zy2GU4MOuZjVRm7yJXcJBiDlp2wF0zY1CzeRoB3YQ9DbxRMb7yITVqI
+	8JTut0t8dWKM/eSxfZ46sct8oqx/3N5lj3WPqKSyqdjGDzg/QC+FiVuPjgBODmdqRZv2WIU
+	uHKZS9FsYj4bOkteaaGu0I8p6v4Qanf6GcvHUIr/gHYoz7ax6jBEfBJGwZxdVt/pRCp83ps
+	4BoiJcplkXZdBhNEfvW7bcJT9GKfb9VR0CTtZ56u7Noa5DhR0JUfuw/iCVIeO/s9cVCBcqF
+	nROzIPsI/DHYsVYK35nPH7GWpeF+FEOIvdbRgjTpa7MH5UZ9qFCS83gRmK3HxDQaNY0v8Bo
+	ZxMJPHedSkaxCtHI+RQ1VKGraxWSJTv79TzPfuCak+X7/2g==
+X-QQ-XMRINFO: MSVp+SPm3vtS1Vd6Y4Mggwc=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251010_171944_115860_1D295C4A 
-X-CRM114-Status: UNSURE (   4.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251010_203348_859988_14238A3D 
+X-CRM114-Status: GOOD (  14.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,24 +112,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/10/2025 09:09, Pritam Manohar Sutar wrote:
-> The USBDRD31 5nm controller consists of Synopsys USB20 femptoPhy and
-> USB31 SSP+ combophy. Document support for the USB31 SSP+ phy found on
-> combophy of the ExynosAutov920 SoC.
-> 
-> Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> ---
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Add default DRM AUX HPD bridge device when register DisplayPort
+altmode. That makes it redundant for each Type-C driver to implement
+a similar registration process in embedded scenarios.
 
-Best regards,
-Krzysztof
+Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+---
+
+Changes in v5:
+- Remove the calls related to `drm_aux_hpd_bridge_notify()`.
+- Place the helper functions in the same compilation unit.
+- Add more comments about parent device.
+
+ drivers/usb/typec/class.c         | 26 ++++++++++++++++++++++++++
+ include/linux/usb/typec_altmode.h |  2 ++
+ 2 files changed, 28 insertions(+)
+
+diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+index 67a533e35150..e9d7772d1a8f 100644
+--- a/drivers/usb/typec/class.c
++++ b/drivers/usb/typec/class.c
+@@ -8,14 +8,18 @@
+ 
+ #include <linux/module.h>
+ #include <linux/mutex.h>
++#include <linux/of.h>
+ #include <linux/property.h>
+ #include <linux/slab.h>
+ #include <linux/string_choices.h>
+ #include <linux/usb/pd_vdo.h>
++#include <linux/usb/typec_dp.h>
+ #include <linux/usb/typec_mux.h>
+ #include <linux/usb/typec_retimer.h>
+ #include <linux/usb.h>
+ 
++#include <drm/bridge/aux-bridge.h>
++
+ #include "bus.h"
+ #include "class.h"
+ #include "pd.h"
+@@ -538,6 +542,21 @@ const struct device_type typec_altmode_dev_type = {
+ 	.release = typec_altmode_release,
+ };
+ 
++static void dp_altmode_hpd_device_register(struct typec_altmode *alt)
++{
++	if (alt->svid != USB_TYPEC_DP_SID)
++		return;
++
++	/*
++	 * alt->dev.parent->parent : USB-C controller device
++	 * alt->dev.parent         : USB-C connector device
++	 */
++	alt->hpd_dev = drm_dp_hpd_bridge_register(alt->dev.parent->parent,
++						  to_of_node(alt->dev.parent->fwnode));
++	if (IS_ERR(alt->hpd_dev))
++		alt->hpd_dev = NULL;
++}
++
+ static struct typec_altmode *
+ typec_register_altmode(struct device *parent,
+ 		       const struct typec_altmode_desc *desc)
+@@ -600,6 +619,13 @@ typec_register_altmode(struct device *parent,
+ 		return ERR_PTR(ret);
+ 	}
+ 
++	/*
++	 * It is too late to register the HPD device when the DisplayPort
++	 * altmode device becomes ready. If the current altmode is DP,
++	 * register a static HPD device.
++	 */
++	dp_altmode_hpd_device_register(&alt->adev);
++
+ 	return &alt->adev;
+ }
+ 
+diff --git a/include/linux/usb/typec_altmode.h b/include/linux/usb/typec_altmode.h
+index b3c0866ea70f..acb0af1b9d5d 100644
+--- a/include/linux/usb/typec_altmode.h
++++ b/include/linux/usb/typec_altmode.h
+@@ -21,6 +21,7 @@ struct typec_altmode_ops;
+  * @desc: Optional human readable description of the mode
+  * @ops: Operations vector from the driver
+  * @cable_ops: Cable operations vector from the driver.
++ * @hpd_dev: HPD device for DisplayPort
+  */
+ struct typec_altmode {
+ 	struct device			dev;
+@@ -32,6 +33,7 @@ struct typec_altmode {
+ 	char				*desc;
+ 	const struct typec_altmode_ops	*ops;
+ 	const struct typec_cable_ops	*cable_ops;
++	struct device			*hpd_dev;
+ };
+ 
+ #define to_typec_altmode(d) container_of(d, struct typec_altmode, dev)
+-- 
+2.49.0
+
 
 -- 
 linux-phy mailing list
