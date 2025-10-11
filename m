@@ -4,48 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19B86CCD187
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 00:09:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F575CCD187
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 00:11:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U1nrtD2BSLV77wn2/dEOf43Sj6UwOFp/EbdGCl/qrE0=; b=XfCqkI75VAu9S2
-	p+b+64tRMTtyt1k/TE3b1us3yqhyH0NOSWNVbM74DvzBkuVSqhBXa5DAE1tTkk2snIm0+czf3LVfy
-	V1ebSTzmBPvlXZah4FA/utiaFVLIZgfo2RFp5aBATTf4tOZrz83VEgBUczjc1HeAW6E9/b+WgEPro
-	FyzBFMjEaPLFq+ttW1x17znnfDR++CwtPn+2s3Jw0gb1StBhvktofh5b2i4C5/O2w/SG1UBnjCXpC
-	Z+T9u7uA3y1/I29DckuPkqCKDuFmBe5RJY9G8KK5DAF0bhImipOpsg5zVvUborMIkAoDBqh7/U0TN
-	Sz3wVsnl+tjHjNnuKsRg==;
+	List-Owner; bh=X7H7FrzgIyHo2aYkJva16EWHkdgcF8kULm9MFPvEC2g=; b=PxgZMPH6k9iCEb
+	gaZcK4UFCjRPo01NWpMROAsr6j1LGSMDMA47nv10ZJMm5v3EzeRBw9JYzoB7X9rpxGOAkrK3d5rnW
+	/z+JtmrKP7lR3Ie/v/iBPHmFDEKBbqH0ar6wP70GZU2nWfRl/mrg5Ur4d9r8wpMsIcCe7ojZ5nWXD
+	n5DsDRASgLNqV6+6JGZRu6KQMxXXUp6cgbSDzP0xy/Sv3clV8f77sQt9GOkGJOhZXVGkVmFkDy3jR
+	AR5qVOsq7Tlm968gEweC2VHFfh+SrGTOfO05LIafp3jZEy//kXDk8dZIQY5ARTF9Y/4OtcW+UeVgm
+	DLdw31xV/sXT3Fd8Cwxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7NAU-00000009ZAQ-3XI5;
-	Sat, 11 Oct 2025 00:09:02 +0000
+	id 1v7NCZ-00000009ZQ2-4BqO;
+	Sat, 11 Oct 2025 00:11:12 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7NAS-00000009Z9v-1iFB;
-	Sat, 11 Oct 2025 00:09:01 +0000
+	id 1v7NCW-00000009ZPO-2BKK;
+	Sat, 11 Oct 2025 00:11:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9AFF845315;
-	Sat, 11 Oct 2025 00:08:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9E01FC4CEF1;
-	Sat, 11 Oct 2025 00:08:52 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 3268D48FDF;
+	Sat, 11 Oct 2025 00:11:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E3FF8C4CEF1;
+	Sat, 11 Oct 2025 00:11:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760141339;
-	bh=vVjv/jkicIgDmt3y7lRnnSSaepw4Ybyi1G9k7ei9veA=;
+	s=k20201202; t=1760141468;
+	bh=PTZ7z5rFBEl2/QXVABRVVG+x/hnQk/3BWqNmlYNQWU0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=G3up2+qx9y2G3wkWHB1NdGx1RVFwoeM8rBaVOD+ERCM94xt9KZkJo4zsqvAUcrhu/
-	 z2jAG5PrSDjQKMW0Fat8WDvUZ/AFXzHSUrxOlK3zHswrlSk12pY1+vcz+mUgc0hxY/
-	 Vfnwhug2ar83M+h+j5byUex/Y7676kzze0Z0m+UaWl4JtUCIvaQFiE9A9CxaMTLT3W
-	 I/ZB4GvG5qPDfrUkreGnCAN4B/YtdsYnejogva+04eYSux8k5RnLgSiq01C9xA4XMM
-	 KAM12MZlrEHqhUSHyFOzUm1+jNEVhld48VB5I9cGvBOEBXaOiRzqG46c/KDHyNbTVH
-	 kPqD2gjcYNgCA==
-Message-ID: <066a9598-ad30-4327-be68-87299bba6fda@kernel.org>
-Date: Sat, 11 Oct 2025 02:08:49 +0200
+	b=CxfNSz1Mwm/dDZDOCfVVLjauOb3Kpa+ysqqhFneuLCIs6lx5Ysi9Z0+J5Yt/vuY/V
+	 r8ZRdwOrYEHn1vv5tbyVIepu8G2WVtr/3qjgxq5Ftl6nip1elpALDf/91Wzsz+tIUt
+	 xul5p6wiPpPH93mBd5sy8Ni817ogzglw4/iP0NUZt+XB8ZhwPkupo0Vinn73p7QE8f
+	 3TkCAhuCwWRMfdqYUyC5XTzVrwn2jAIELx4OV4x+Z6tSxObbj6FwQ7sUGKTK9N3Vsd
+	 mRtWtwuGvfJPO3WJGJLStnlRw3Myo+3o+e3INWD2gEcwnWQEkSHGvhGSSn1OV0Ue19
+	 UQut4jnbu8KGw==
+Message-ID: <75756635-b374-4441-8526-175210e01163@kernel.org>
+Date: Sat, 11 Oct 2025 02:10:58 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
+Subject: Re: [PATCH v3 3/4] dt-bindings: phy: google: Add Google Tensor G5 USB
+ PHY
 To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -61,7 +62,7 @@ Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
  linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org
 References: <20251010201607.1190967-1-royluo@google.com>
- <20251010201607.1190967-2-royluo@google.com>
+ <20251010201607.1190967-4-royluo@google.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,10 +108,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251010201607.1190967-2-royluo@google.com>
+In-Reply-To: <20251010201607.1190967-4-royluo@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251010_170900_517337_8C0BDBD1 
-X-CRM114-Status: GOOD (  18.13  )
+X-CRM114-CacheID: sfid-20251010_171108_633636_F4CF6907 
+X-CRM114-Status: UNSURE (   7.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,121 +130,74 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 10/10/2025 22:16, Roy Luo wrote:
-> Document the device tree bindings for the DWC3 USB controller found in
-> Google Tensor SoCs, starting with the G5 generation.
-> 
-> The Tensor G5 silicon represents a complete architectural departure from
-> previous generations (like gs101), including entirely new clock/reset
-> schemes, top-level wrapper and register interface. Consequently,
-> existing Samsung/Exynos DWC3 USB bindings are incompatible, necessitating
-> this new device tree binding.
-> 
-> The USB controller on Tensor G5 is based on Synopsys DWC3 IP and features
-> Dual-Role Device single port with hibernation support.
-
-You still mix, completely unnecessarily, subsystems. For Greg this is
-actually even undesired, but regardless don't do this for any cases
-because it just makes everything slower or more difficult to apply.
-
-Really, think how maintainers should deal with your patches.
-
-> 
-> Signed-off-by: Roy Luo <royluo@google.com>
-> ---
->  .../bindings/usb/google,gs5-dwc3.yaml         | 141 ++++++++++++++++++
->  1 file changed, 141 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
-> new file mode 100644
-> index 000000000000..6fadea7f41e8
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
-> @@ -0,0 +1,141 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (c) 2025, Google LLC
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/usb/google,gs5-dwc3.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Google Tensor Series (G5+) DWC3 USB SoC Controller
-> +
-> +maintainers:
-> +  - Roy Luo <royluo@google.com>
-> +
-> +description:
-> +  Describes the DWC3 USB controller block implemented on Google Tensor SoCs,
-> +  starting with the G5 generation. Based on Synopsys DWC3 IP, the controller
-> +  features Dual-Role Device single port with hibernation add-on.
-> +
-> +properties:
-> +  compatible:
-> +    const: google,gs5-dwc3
-> +
 > +  reg:
 > +    items:
-> +      - description: Core DWC3 IP registers.
-> +      - description: USB host controller configuration registers.
-> +      - description: USB custom interrrupts control registers.
+> +      - description: USB2 PHY configuration registers.
+> +      - description: DisplayPort top-level registers.
+> +      - description: USB top-level configuration registers.
 > +
 > +  reg-names:
 > +    items:
-> +      - const: dwc3_core
-> +      - const: host_cfg
-> +      - const: usbint_cfg
+> +      - const: u2phy_cfg
+> +      - const: dp_top
+> +      - const: usb_top_cfg
 > +
-> +  interrupts:
-> +    items:
-> +      - description: Core DWC3 interrupt.
-> +      - description: High speed power management event for remote wakeup from hibernation.
-> +      - description: Super speed power management event for remote wakeup from hibernation.
-
-Wrap at 80 (see coding style) or just shorten these.
-
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: dwc_usb3
-
-So just "core"?
-
-> +      - const: hs_pme
-> +      - const: ss_pme
+> +  "#phy-cells":
+> +    const: 1
 > +
 > +  clocks:
-> +    items:
-> +      - description: Non-sticky module clock.
-> +      - description: Sticky module clock.
-> +      - description: USB2 PHY APB clock.
-
-This looks wrong. This is not the USB2 phy, so how can it consume APB clock?
-
-> +
-> +  clock-names:
-> +    items:
-> +      - const: non_sticky
-> +      - const: sticky
-> +      - const: u2phy_apb
+> +    maxItems: 1
 > +
 > +  resets:
-> +    items:
-> +      - description: Non-sticky module reset.
-> +      - description: Sticky module reset.
-> +      - description: USB2 PHY APB reset.
-
-This as well.
-
-> +      - description: DRD bus reset.
-> +      - description: Top-level reset.
+> +    maxItems: 1
 > +
-> +  reset-names:
-> +    items:
-> +      - const: non_sticky
-> +      - const: sticky
-> +      - const: u2phy_apb
-> +      - const: drd_bus
-> +      - const: top
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  orientation-switch:
+> +    type: boolean
+> +    description:
+> +      Indicates the PHY as a handler of USB Type-C orientation changes
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +  - clocks
+> +  - resets
+> +  - power-domains
+> +  - orientation-switch
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    soc {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        usb_phy: usb_phy@c410000 {
+> +            compatible = "google,gs5-usb-phy";
+> +            reg = <0 0x0c450014 0 0xc>,
+> +                  <0 0x0c637000 0 0xa0>,
+
+You probably miss DP support and this does not belong here.
+
+> +                  <0 0x0c45002c 0 0x4>;
+
+That's not a separate address space. I really, really doubt that
+hardware engineers came with address spaces of one word long.
+
+> +            reg-names = "u2phy_cfg", "dp_top", "usb_top_cfg";
+> +            #phy-cells = <1>;
+> +            clocks = <&hsion_usb2_phy_reset_clk>;
+> +            resets = <&hsion_resets_usb2_phy>;
+> +            power-domains = <&hsio_n_usb_pd>;
+> +            orientation-switch;
+> +        };
+> +    };
+> +...
 
 
 Best regards,
