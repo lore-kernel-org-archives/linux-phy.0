@@ -4,74 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D4F1CCD185
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 00:04:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19B86CCD187
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Oct 2025 00:09:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B3eXFwag4l2hG3x2IAVk1qkjU4FuGiQamERhOa/fIs4=; b=ILNQeziQcUJha4
-	30yOTLNL1qs0SY88H3bT+nbHij7fW1t4EplLJYrJ6Beflvr5Kjos53IFeIb2tXWsF/LGbhnXeHVQE
-	4JdbTiyehtWvxy3JB2Tyiv5IOp1RhjK/n/U1DuU7dvKW4cFEpt9WHYxeOPnN4PuB3dBrrZ+TER1Jo
-	T+UrITzRkTpJcd5LWd/l3r17gRrlWV925fq48KRkl/LFgfypL9+/mt2ROi0Xl5SBpU94kqfVuJuLB
-	BMvZXMnx2BcU92nOCvP+ilQOrRNG1Xm/4v7MaAxJ94l0qZGtyp8nPzhEymJ3dDRkHl+RqYMYpru4r
-	HfMY4Yv3MY8bk1AOA+Iw==;
+	List-Owner; bh=U1nrtD2BSLV77wn2/dEOf43Sj6UwOFp/EbdGCl/qrE0=; b=XfCqkI75VAu9S2
+	p+b+64tRMTtyt1k/TE3b1us3yqhyH0NOSWNVbM74DvzBkuVSqhBXa5DAE1tTkk2snIm0+czf3LVfy
+	V1ebSTzmBPvlXZah4FA/utiaFVLIZgfo2RFp5aBATTf4tOZrz83VEgBUczjc1HeAW6E9/b+WgEPro
+	FyzBFMjEaPLFq+ttW1x17znnfDR++CwtPn+2s3Jw0gb1StBhvktofh5b2i4C5/O2w/SG1UBnjCXpC
+	Z+T9u7uA3y1/I29DckuPkqCKDuFmBe5RJY9G8KK5DAF0bhImipOpsg5zVvUborMIkAoDBqh7/U0TN
+	Sz3wVsnl+tjHjNnuKsRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7N6G-00000009Yzn-2bf3;
-	Sat, 11 Oct 2025 00:04:40 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7N6F-00000009Yyy-04V2
-	for linux-phy@bombadil.infradead.org;
-	Sat, 11 Oct 2025 00:04:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=O4TYVmOx6smHJNDvnMNcrT+NHmIioEFjXZss11YQCPU=; b=m5tRLWMCYPWDWzm34ZR4sri8mQ
-	PEoQ9L6GVpXQRyLsjekLoNoI85zeVhm2CPjBk6/N2v8reIUKDj+fIinYX1sHy9peu+okl5waozzRD
-	DPLOPL9el21ZlMEUoUM8X/SffnGRADixm17A/ZdLDSkLhZuVxCT9WawFBon4X54m60QldbQKrH/51
-	9KID1s/VtU5sEc6m/CROQSVPHxG/5Q4+xGXW6V/w6yjyVnhL7kabe8bZ3bFLgbZTCmOb5tU8+F+Zb
-	KcZlDTOGiNlAqQi1UslhbJ3b+WwPcMeUq6/DYUWxjz+YLBuCeZs0HajC1MNS5qsmrfmDE1pCWkvZ8
-	5qNZGrKQ==;
+	id 1v7NAU-00000009ZAQ-3XI5;
+	Sat, 11 Oct 2025 00:09:02 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7N64-00000002Xxa-3TMa
-	for linux-phy@lists.infradead.org;
-	Sat, 11 Oct 2025 00:04:37 +0000
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1v7NAS-00000009Z9v-1iFB;
+	Sat, 11 Oct 2025 00:09:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0445D403CF;
-	Sat, 11 Oct 2025 00:04:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E871C4CEF1;
-	Sat, 11 Oct 2025 00:04:17 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9AFF845315;
+	Sat, 11 Oct 2025 00:08:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9E01FC4CEF1;
+	Sat, 11 Oct 2025 00:08:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760141064;
-	bh=mJ41Y5fDZZ97ISik92YPqXu65NYHcU13ShVWUzupqf8=;
+	s=k20201202; t=1760141339;
+	bh=vVjv/jkicIgDmt3y7lRnnSSaepw4Ybyi1G9k7ei9veA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=cyjm9Lz+tXpB1GzWxuW4NUzWPia+m1E+4W3SYUO3/Xu3Cv8yy8NWvHmFeJCYTjMQn
-	 2oz7byruuC/Qlo5wtiqTG4nN5o2/kUwTLTw9OR0M4EkqtbR1aWku3RkgBnE1L1nwX9
-	 h0gJAXEy+Su+pKul0MtqhJINt1/7ftjobYvHwmHytGCfPhB1BUDTJo6ajojg1+vP9r
-	 PE0isLHPkGb1co8YT3kB2rYF97F+F59g+IdCID4XNrgUCZsdz2825tFbuy3RZAoGP9
-	 6QvY3cgKG+67Arg/BfbwxlrgmTuTByY57VOYXq38/tQBC+anwCSbNDw3j5nw1m460F
-	 zx/+fZ4fu7JUg==
-Message-ID: <f5e4ae02-b8fa-4406-b2e0-3602b07b7e23@kernel.org>
-Date: Sat, 11 Oct 2025 02:04:15 +0200
+	b=G3up2+qx9y2G3wkWHB1NdGx1RVFwoeM8rBaVOD+ERCM94xt9KZkJo4zsqvAUcrhu/
+	 z2jAG5PrSDjQKMW0Fat8WDvUZ/AFXzHSUrxOlK3zHswrlSk12pY1+vcz+mUgc0hxY/
+	 Vfnwhug2ar83M+h+j5byUex/Y7676kzze0Z0m+UaWl4JtUCIvaQFiE9A9CxaMTLT3W
+	 I/ZB4GvG5qPDfrUkreGnCAN4B/YtdsYnejogva+04eYSux8k5RnLgSiq01C9xA4XMM
+	 KAM12MZlrEHqhUSHyFOzUm1+jNEVhld48VB5I9cGvBOEBXaOiRzqG46c/KDHyNbTVH
+	 kPqD2gjcYNgCA==
+Message-ID: <066a9598-ad30-4327-be68-87299bba6fda@kernel.org>
+Date: Sat, 11 Oct 2025 02:08:49 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 02/10] dt-bindings: phy: qcom,qmp-usb: Add Glymur USB
- UNI PHY compatible
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, krzk+dt@kernel.org,
- conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
- dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
- gregkh@linuxfoundation.org, robh@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
- <20251006222002.2182777-3-wesley.cheng@oss.qualcomm.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
+To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Peter Griffin <peter.griffin@linaro.org>,
+ =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>
+Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
+ Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+References: <20251010201607.1190967-1-royluo@google.com>
+ <20251010201607.1190967-2-royluo@google.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -117,10 +107,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251006222002.2182777-3-wesley.cheng@oss.qualcomm.com>
+In-Reply-To: <20251010201607.1190967-2-royluo@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251011_010429_438126_34FCDD08 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20251010_170900_517337_8C0BDBD1 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,62 +127,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/10/2025 00:19, Wesley Cheng wrote:
-> The Glymur USB subsystem contains a multiport controller, which utilizes
-> two QMP UNI PHYs.  Add the proper compatible string for the Glymur SoC, and
-> the required clkref clock name.
+On 10/10/2025 22:16, Roy Luo wrote:
+> Document the device tree bindings for the DWC3 USB controller found in
+> Google Tensor SoCs, starting with the G5 generation.
 > 
-> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+> The Tensor G5 silicon represents a complete architectural departure from
+> previous generations (like gs101), including entirely new clock/reset
+> schemes, top-level wrapper and register interface. Consequently,
+> existing Samsung/Exynos DWC3 USB bindings are incompatible, necessitating
+> this new device tree binding.
+> 
+> The USB controller on Tensor G5 is based on Synopsys DWC3 IP and features
+> Dual-Role Device single port with hibernation support.
+
+You still mix, completely unnecessarily, subsystems. For Greg this is
+actually even undesired, but regardless don't do this for any cases
+because it just makes everything slower or more difficult to apply.
+
+Really, think how maintainers should deal with your patches.
+
+> 
+> Signed-off-by: Roy Luo <royluo@google.com>
 > ---
->  .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 35 +++++++++++++++++++
->  1 file changed, 35 insertions(+)
+>  .../bindings/usb/google,gs5-dwc3.yaml         | 141 ++++++++++++++++++
+>  1 file changed, 141 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> index a1b55168e050..b0ce803d2b49 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
-> @@ -16,6 +16,7 @@ description:
->  properties:
->    compatible:
->      enum:
-> +      - qcom,glymur-qmp-usb3-uni-phy
->        - qcom,ipq5424-qmp-usb3-phy
->        - qcom,ipq6018-qmp-usb3-phy
->        - qcom,ipq8074-qmp-usb3-phy
-> @@ -62,6 +63,8 @@ properties:
->  
->    vdda-pll-supply: true
->  
-> +  refgen-supply: true
+> diff --git a/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
+> new file mode 100644
+> index 000000000000..6fadea7f41e8
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
+> @@ -0,0 +1,141 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright (c) 2025, Google LLC
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/usb/google,gs5-dwc3.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->    "#clock-cells":
->      const: 0
->  
-> @@ -157,6 +160,25 @@ allOf:
->          compatible:
->            contains:
->              enum:
-> +              - qcom,glymur-qmp-usb3-uni-phy
-> +    then:
-> +      properties:
-> +        clocks:
-
-Missing minItems.
-
-> +          maxItems: 5
-> +        clock-names:
-> +          items:
-> +            - const: aux
-> +            - const: clkref
-> +            - const: ref
-
-What is the difference between these two? Which block INPUTs
-(important!) they represent?
-
-> +            - const: com_aux
-> +            - const: pipe
+> +title: Google Tensor Series (G5+) DWC3 USB SoC Controller
 > +
-> +  - if:
+> +maintainers:
+> +  - Roy Luo <royluo@google.com>
+> +
+> +description:
+> +  Describes the DWC3 USB controller block implemented on Google Tensor SoCs,
+> +  starting with the G5 generation. Based on Synopsys DWC3 IP, the controller
+> +  features Dual-Role Device single port with hibernation add-on.
+> +
+> +properties:
+> +  compatible:
+> +    const: google,gs5-dwc3
+> +
+> +  reg:
+> +    items:
+> +      - description: Core DWC3 IP registers.
+> +      - description: USB host controller configuration registers.
+> +      - description: USB custom interrrupts control registers.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: dwc3_core
+> +      - const: host_cfg
+> +      - const: usbint_cfg
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Core DWC3 interrupt.
+> +      - description: High speed power management event for remote wakeup from hibernation.
+> +      - description: Super speed power management event for remote wakeup from hibernation.
+
+Wrap at 80 (see coding style) or just shorten these.
+
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: dwc_usb3
+
+So just "core"?
+
+> +      - const: hs_pme
+> +      - const: ss_pme
+> +
+> +  clocks:
+> +    items:
+> +      - description: Non-sticky module clock.
+> +      - description: Sticky module clock.
+> +      - description: USB2 PHY APB clock.
+
+This looks wrong. This is not the USB2 phy, so how can it consume APB clock?
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: non_sticky
+> +      - const: sticky
+> +      - const: u2phy_apb
+> +
+> +  resets:
+> +    items:
+> +      - description: Non-sticky module reset.
+> +      - description: Sticky module reset.
+> +      - description: USB2 PHY APB reset.
+
+This as well.
+
+> +      - description: DRD bus reset.
+> +      - description: Top-level reset.
+> +
+> +  reset-names:
+> +    items:
+> +      - const: non_sticky
+> +      - const: sticky
+> +      - const: u2phy_apb
+> +      - const: drd_bus
+> +      - const: top
 
 
 Best regards,
