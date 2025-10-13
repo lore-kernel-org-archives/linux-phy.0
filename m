@@ -4,74 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60846CCD18D
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Oct 2025 14:57:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7B86CCD18D
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Oct 2025 15:35:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mDZIChiekePPC//6UQm/IOgmSoQG2ShaIB/uNXY4z0E=; b=pb24drzRxmB7St
-	y4wI+Tms5281xAYfM9rm+z4bvF6mAVcXZKO8f+ldeGyyjuYRyOJC/PJBQ07Goz40RZR+jX6UlNM/G
-	75SggAG3GYGyJwRFNzkJI5hGxUnf6EhuL9f0W+8f7iLNE/R2Dz7LQuUaysiE/N8+aC49jHuMql1cd
-	PUokjwouWIt7O6uBb5kMuTFoSU+8wk9Xs6yTe7nBgOC0+v7efbbWXQGPg7w45VdIgNT3XhwABjlQm
-	die7TbmMQAKUA+T4sItFp+AQfAIeKko3F3EFODifzzgERZ8ZYvFKx+qDzyLyw+j0BrkFcIJFvy4xg
-	+DnzyQkWsQcS84l3DmdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WdXS+VGntuswP2E9RijVXsGmmyNw09MR9bgwu/dMQMs=; b=sxL1EqvoQ4FB4A
+	0bot0lJzt6+4XfQ3JaDRXrw3LL47N75PwPZ/AcNaJ48HztTNQqxK5zLYHzUkpV02xEJLJnL/P6Jo/
+	WaACvChvoJk3GA1Z9jcjkB9UOxK7nXA9DJ80rfadhmInCUhd9TN9L4YBN3n6PasS1DKiwr18ows4y
+	02KlIcJlNH74hS1prnzmf5Lu5cAHARAj3ELMEVqNLcTvo45vVRILdkpVYubfb2Kt+tr3dwy13FZEj
+	akC1ODW6ttJ4pmjFZ21sQsqGO6yFJrvD5Ve1JAGevmDL3eJkKQq3QyUp3Y0tU97zKp7habKR9A05t
+	PfnhXN25yMotDBlgdluA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8Jzm-0000000DXBy-0eum;
-	Mon, 13 Oct 2025 14:57:54 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1v8KaF-0000000Di3g-28Ay;
+	Mon, 13 Oct 2025 15:35:35 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8Jzj-0000000DX9s-2QmW
+	id 1v8KaB-0000000DhzK-2usL
 	for linux-phy@lists.infradead.org;
-	Mon, 13 Oct 2025 14:57:53 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v8JzO-0003Bb-Ux; Mon, 13 Oct 2025 16:57:30 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v8JzN-003Ovy-2v;
-	Mon, 13 Oct 2025 16:57:29 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v8JzN-00000000CO2-3Ql5;
-	Mon, 13 Oct 2025 16:57:29 +0200
-Message-ID: <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
-Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
- PWRRDY
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Claudiu Beznea <claudiu.beznea@tuxon.dev>, vkoul@kernel.org, 
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, 	geert+renesas@glider.be, magnus.damm@gmail.com,
- yoshihiro.shimoda.uh@renesas.com, 	biju.das.jz@bp.renesas.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, Claudiu
- Beznea	 <claudiu.beznea.uj@bp.renesas.com>, Wolfram Sang	
- <wsa+renesas@sang-engineering.com>
-Date: Mon, 13 Oct 2025 16:57:29 +0200
-In-Reply-To: <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
-References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
-	 <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
-	 <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
-	 <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
-	 <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
-	 <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
-	 <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
-User-Agent: Evolution 3.56.1-1 
+	Mon, 13 Oct 2025 15:35:34 +0000
+Received: by mail-io1-xd43.google.com with SMTP id ca18e2360f4ac-92c781fd73aso420809739f.1
+        for <linux-phy@lists.infradead.org>; Mon, 13 Oct 2025 08:35:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1760369731; x=1760974531; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=nbeq8htIVJsgPcvnZy6FQgEdm/DTZPuXtXg2N0Ndwqo=;
+        b=1rw/BDVb1dSzyg03tqzARqKwDwIMXElDvsL0JVZffH9R4RlruKWQvgEAvTbGLFbZcK
+         XWrfxqng7rpA/NB0UXeQLUbO2WXmBn+1mBPlwUicE/o7KycPfy+HDXEfkVUtJ+Dsvzww
+         J9Fks8kkvGThSJF9aL/VUKxAUuKfrrGX4DV9SbSE3a7F/PzvNVvy1mzZNCLYMC6iRBG6
+         PICTd+40sf00xUisGWGA4PeGe20OdPhbYetIO39dGQ+itDfA6nYZTTuvU7eC7K2mY42y
+         uQTAHhxk5GiJppDQdi2umUiHFGaW4BB3Kv8mTtpqtcMT+tVleF2o2/79eC2S3Pv4UyAc
+         k/rw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760369731; x=1760974531;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=nbeq8htIVJsgPcvnZy6FQgEdm/DTZPuXtXg2N0Ndwqo=;
+        b=tjtT8uZ8+KtBFGqfyX2AKc6/kVO6z+FhbPsKvzCjdCvSXUq1gGfCWLtXYdQvskkFp/
+         xxbdUtyzUudL2++N9EZctXxLJ2ILJQ9edWkmo4sUlxGbUgfqyv7v3UhW/Xaxgl6mXk1v
+         fPB6abX6PJX/2sDJk4SfE5uRrl7KSnOANUOi7JschkaGAhHxIZhjTCf7kBj3AxdByOuy
+         KsgkCvYds4g1224/MlcPG+t0FjO0akFidvYC8JtIaRTU9fsvQIj1Jyju+dMqDoy5JGSC
+         ZuYBTak+LKQ5ISUQsI23F6YXp102pjRt6gnKheZ/iEnXBIuPFkNxKO+wueinx3SsOr12
+         mOOw==
+X-Forwarded-Encrypted: i=1; AJvYcCUNoUtWpMWaVNPmlrWYkysjOEl3gfIOvIKmuHZf+5Co0VjQVA3Puu9e0rkcbGwuV9P9fSFyzbw2Zcc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwNC/aztiQeM8S4I4SvBqcKL5a2HZkzXMvoXykmrKFLY1qjs6L7
+	CZaXhHUIWf27xLT6RQ9+BMvg+cmyKHX5h4UzShPlOhFN11/Ltbq5fJaRpbur0eRenGs=
+X-Gm-Gg: ASbGnct+UZq4G0x2TVAid8aA2U1JGBx4ou6TberbLwFbpP6SlaJMFAxqoykQaNlX+Lg
+	mAyHcCFObPmaJ9GfPtYjpO81GIcYjyKCGST1pdPXAqK8cCq1Ly2SdTKecc+U5S4Vb44bGe3KLEY
+	4rClGuduVwzcinIF7zGphmLp5XUSzRXUet7THRTzflDQrkNZHAUvq0GOZqccA5CXI8QQdzthziF
+	51e9lJiXJUJFt3hzUr1bs7XZoyuR+YkwX0sweVm+CSwWQPqDdBfrNv/KlGUt7jguXLL7KHVKBW2
+	CKYzq9b/48Mi4wMgZ7rT6D3/DLACj65cFBjKl5fiSlgtmTCkj8GUXIcW8YAX2e9Nk7c4vJJaqnA
+	nNz6rKGIg47RnW1zZ8kX7VdcKmy0FE+UeFyDDkzVUq0MdSKwBbNyJCAjmYC3IW61A3VdGHoAjvx
+	is93YGk7Sa
+X-Google-Smtp-Source: AGHT+IGwhDgY1adEE+rYfro+kFlaDS5/FvDMA4RAEoQjxWvr5pWNWNsa0mX7bl3S4p/in4/RNtqUig==
+X-Received: by 2002:a05:6e02:1608:b0:42e:7a5d:d7d6 with SMTP id e9e14a558f8ab-42f87346ffcmr235225235ab.2.1760369730674;
+        Mon, 13 Oct 2025 08:35:30 -0700 (PDT)
+Received: from zippy.localdomain (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
+        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-58f6c49b522sm3910266173.1.2025.10.13.08.35.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Oct 2025 08:35:30 -0700 (PDT)
+From: Alex Elder <elder@riscstar.com>
+To: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	bhelgaas@google.com,
+	lpieralisi@kernel.org,
+	kwilczynski@kernel.org,
+	mani@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org
+Cc: dlan@gentoo.org,
+	guodong@riscstar.com,
+	pjw@kernel.org,
+	palmer@dabbelt.com,
+	aou@eecs.berkeley.edu,
+	alex@ghiti.fr,
+	p.zabel@pengutronix.de,
+	christian.bruel@foss.st.com,
+	shradha.t@samsung.com,
+	krishna.chundru@oss.qualcomm.com,
+	qiang.yu@oss.qualcomm.com,
+	namcao@linutronix.de,
+	thippeswamy.havalige@amd.com,
+	inochiama@gmail.com,
+	devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	spacemit@lists.linux.dev,
+	linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
+Date: Mon, 13 Oct 2025 10:35:17 -0500
+Message-ID: <20251013153526.2276556-1-elder@riscstar.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251013_075751_620459_E620A616 
-X-CRM114-Status: GOOD (  35.73  )
+X-CRM114-CacheID: sfid-20251013_083531_843900_B4573796 
+X-CRM114-Status: GOOD (  20.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,99 +123,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Claudiu,
+This series introduces a PHY driver and a PCIe driver to support PCIe
+on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
+Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
+PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
+one PCIe lane, and the other two ports each have two lanes.  All PCIe
+ports operate at 5 GT/second.
 
-On Fr, 2025-10-10 at 14:26 +0300, Claudiu Beznea wrote:
-> Hi, Philipp,
-> 
-> On 10/8/25 15:16, Claudiu Beznea wrote:
-> > Hi, Philipp,
-> > 
-> > On 10/8/25 13:23, Philipp Zabel wrote:
-> > > Hi Claudiu,
-> > > 
-> > > On Mi, 2025-10-08 at 12:29 +0300, Claudiu Beznea wrote:
-> > > > Hi, Philipp,
-> > > > 
-> > > > On 10/8/25 11:34, Philipp Zabel wrote:
-> > > > > Hi Claudiu,
-> > > > > 
-> > > > > On Do, 2025-09-25 at 13:02 +0300, Claudiu wrote:
-> > > > > > From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> > > > > > 
-> > > > > > On the Renesas RZ/G3S SoC, the USB PHY block has an input signal called
-> > > > > > PWRRDY. This signal is managed by the system controller and must be
-> > > > > > de-asserted after powering on the area where USB PHY resides and asserted
-> > > > > > before powering it off.
-> > > > > > 
-> > > > > > On power-on the USB PWRRDY signal need to be de-asserted before enabling
-> > > > > > clock and switching the module to normal state (through MSTOP support). The
-> > > > > > power-on configuration sequence
-> > > > > The wording makes me wonder, have you considered implementing this as a
-> > > > > power sequencing driver?
-> > > > No, haven't tried as power sequencing. At the moment this was started I
-> > > > think the power sequencing support wasn't merged.
-> > > > 
-> > > > The approaches considered were:
-> > > > a/ power domain
-> > > Letting a power domain control a corresponding power ready signal would
-> > > have been my first instinct as well.
-> > > 
-> > > > b/ regulator
-> > > > c/ as a reference counted bit done through regmap read/writes APIs
-> > > > 
-> > > > a and b failed as a result of discussions in the previous posted versions.
-> > > Could you point me to the discussion related to a?
-> > It's this one
-> > https://lore.kernel.org/all/
-> > CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com/
+The PCIe PHYs must be configured using a value that can only be
+determined using the combo PHY, operating in PCIe mode.  To allow
+that PHY to be used for USB, the calibration step is performed by
+the PHY driver automatically at probe time.  Once this step is done,
+the PHY can be used for either PCIe or USB.
 
-Thank you! From this discussion it still isn't clear to me whether
-Ulf's suggestion of using genpd on/off notifiers was considered and why
-it was dismissed.
+Version 2 of this series incorporates suggestions made during the
+review of version 1.  Specific highlights are detailed below.
 
-From the DT patches it looks like there is no actual separate power
-domain for USB, just the single always-on CPG power domain (in rzg2l-
-cpg.c). Is that correct? In the thread it sounded like there were
-multiple domains.
+					-Alex
 
-Is the issue that you need the PWRRDY signal to be (de)asserted
-independently from the CPG power domain enable/disable? (Why?)
+This series is available here:
+  https://github.com/riscstar/linux/tree/outgoing/pcie-v2
 
-Why can't the power domain provider (cpg) have the renesas,sysc-pwrrdy
-property and set the signal together with the power domain?
+Between version 1 and version 2:
+  - General
+    - VENDOR ID 0x201f is now registered with PCI SIG: "SpacemiT
+      (Hangzhou) Technology Co. Ltd"
+        https://pcisig.com/membership/member-companies?combine=201f
+    - The PCIe host compatible string is now "spacemit,k1-pcie"
+    - Reimplemented the PHY PLL as a clock registered with the
+      common clock framework, driven by an external oscillator
+    - Added the external oscillator clock to the PHY binding
+    - Renamed the PCIe driver source file "pcie-spacemit-k1.c"
+  - Kconfig
+    - Renamed the PCIe driver Kconfig option PCIE_SPACEMIT_K1
+    - The PCIe driver is now defined as tristate, not Boolean
+    - Updated the PCIe host Kconfig based on Bjorn H's feedback
+  - DT Bindings
+    - Corrected PCIe node ranges properties
+    - Replaced "interrupts-extended" property with just "interrupts"
+      in the PCIe host binding
+    - Named the single PCIe interrupt "msi" to clarify its purpose
+    - Added a new vpcie3v3-supply property for PCIe ports
+    - Renamed a syscon property to align with other SpacemiT bindings
+    - Removed labels and status properties in DT binding examples
+    - Added a '>' to DT binding descriptions to preserve formatting
+    - Consistently ended DT binding descriptions with no period
+    - Dropped ".yaml" from the PCIe host compatible string
+    - Dropped unneeded max-link-speed property from PCIe binding,
+      relying on the hardware default value instead
+    - No longer require the bus-ranges PCIe property; if not
+      provided, the default value used is exactly what's desired
+  - Code
+    - Renamed the symbols representing the PCI vendor and device IDs
+      to align with <linux/pci_ids.h>
+    - Use PCIE_T_PVPERL_MS rather than 100 to represent a standard
+      delay period.
+    - Use platform (not dev) driver-data access functions; assignment
+      is done only after the private structure is initialized
+    - Deleted some unneeded includes in the PCIe driver.
+    - Dropped error checking when operating on MMIO-backed regmaps
+    - Added a regmap_read() call in two places, to ensure a specified
+      delay occurs *after* the a MMIO write has reached its target.
+    - Used ARRAY_SIZE() (not a local variable value) in a few spots
+    - Now use readl_relaxed()/writel_relaxed() when operating on
+      the "link" I/O memory space in the PCIe driver
+    - Updated a few error messages for consistency
+    - No longer specify suppress_bind_attrs in the PCIe driver
+    - Now specify PCIe driver probe type as PROBE_PREFER_ASYNCHRONOUS
+  - Miscellany
+    - Subject on the PCIe host binding includes "pci", not "phy"
+    - Clarified that the DesignWare built-in MSI controller is used
+    - Use "PCIe gen2" terminology (rather than "PCIe v2")
+    - No longer use (void) cast to indicate ignored return values
 
-> > > I see v2 and v3 tried to control the bit from the PHY drivers, and in
-> > > v4 we were are already back to the reset driver.
-> > v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
-> > renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
-> > bit was referenced counted in the SYSC driver though regmap APIs.
-> > 
-> > v3 used the approach from v2 but passed the renesas,sysc-signals to all the
-> > USB related drivers.
-> > 
-> > Then, in v4, the PWRRDY refcounting was dropped and passed
-> > renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
-> > is the node that will always be probed first as all the other USB blocks
-> > need it and request resets from it.
-> > 
-> > v5 and v6 kept the approach from v4 and only addressed misc comments or
-> > things that I noticed.
-> 
-> Could you please let me know if you are OK with the approach proposed in
-> v7, so that I can start preparing a new version addressing your comments?
+Here is version 1 of this series:
+  https://lore.kernel.org/lkml/20250813184701.2444372-1-elder@riscstar.com/
 
-If the PWRRDY signal is an input to the USB2PHY control block, and not
-only to the PHY blocks, I have no issue with this being handled in the
-usb2phy reset driver - iff it is not sensible to just control the
-signal from the power domain driver.
 
-If we have to handle it in the reset driver, I'd prefer to see this
-controlled with a dev_pm_genpd_add_notifier(). If that is not possible,
-I'd like to understand why.
+Alex Elder (7):
+  dt-bindings: phy: spacemit: add SpacemiT PCIe/combo PHY
+  dt-bindings: phy: spacemit: introduce PCIe PHY
+  dt-bindings: pci: spacemit: introduce PCIe host controller
+  phy: spacemit: introduce PCIe/combo PHY
+  PCI: spacemit: introduce SpacemiT PCIe host driver
+  riscv: dts: spacemit: add a PCIe regulator
+  riscv: dts: spacemit: PCIe and PHY-related updates
 
-regards
-Philipp
+ .../bindings/pci/spacemit,k1-pcie-host.yaml   | 156 ++++
+ .../bindings/phy/spacemit,k1-combo-phy.yaml   | 114 +++
+ .../bindings/phy/spacemit,k1-pcie-phy.yaml    |  59 ++
+ .../boot/dts/spacemit/k1-bananapi-f3.dts      |  38 +
+ arch/riscv/boot/dts/spacemit/k1-pinctrl.dtsi  |  33 +
+ arch/riscv/boot/dts/spacemit/k1.dtsi          | 151 ++++
+ drivers/pci/controller/dwc/Kconfig            |  10 +
+ drivers/pci/controller/dwc/Makefile           |   1 +
+ drivers/pci/controller/dwc/pcie-spacemit-k1.c | 319 +++++++++
+ drivers/phy/Kconfig                           |  11 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-spacemit-k1-pcie.c            | 672 ++++++++++++++++++
+ 12 files changed, 1565 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-pcie-phy.yaml
+ create mode 100644 drivers/pci/controller/dwc/pcie-spacemit-k1.c
+ create mode 100644 drivers/phy/phy-spacemit-k1-pcie.c
+
+
+base-commit: 3a8660878839faadb4f1a6dd72c3179c1df56787
+-- 
+2.48.1
+
 
 -- 
 linux-phy mailing list
