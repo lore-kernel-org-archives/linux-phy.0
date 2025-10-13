@@ -4,111 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B23D9CCD184
-	for <linux-phy@archiver.kernel.org>; Sun, 12 Oct 2025 03:02:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0334CCD187
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Oct 2025 01:15:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbX6iRDgK2yxQarT4UDtn+MPaQYxSZTN7+ywpQ4xNTU=; b=VSAqySl7bZ0+cl
-	DCa5g7z00KZK+EGF7HVxfRqPx/acfh7iFHM+EcX7/OzSWCQrjTBpZgUi46Dol3Sornv8dB3jVpUIa
-	362H3FOjNN/vwp+5ZiXTa9WhZooX+1ZYpZtp4Z0I/i2kEwz+6chT3P62ML/kLBwMoCfoUsNN+4WqJ
-	/UyGdXkMsyXGEXpz6gvww7G5jMhwkaBBLc+kAamctkW0wirgWvIWiN13ao2PpBDlp/bGkzenJNljr
-	wE652H0hvysxAUSiloDbF29DMmBRQ53nXeEMpIuthktPo2DF++1YMYemdd/or11fWXU3F+3bpZcGd
-	ZyJgbM1hy9DrMm+Lc0gA==;
+	List-Owner; bh=Nx4lQKU1KBQycK4ty4MGRD1k3jzAA72QmPf0TUPZQXs=; b=BQ8lSuIlFsdiRo
+	FDrwkFK61grfDHhrCSD00U9Y1mb1l7nOmiDTjEHxaHCLevXn4ucmgvcF85zUL7fsFT/GHNS+BQ6n6
+	RrNDx9SciYsKB9QaQliwh2COp7fYVphOOwsqdA/TW8/OPVr4Ekppsd4UKeFg7Fx75KJzCaQPqF32r
+	LMGnDTYArBKQPOMi2EErWSOLXBg5t9K36Agi0X56D3AQI5/qTwACL7oua6/hRXnLvxTJQrVs6iNeb
+	w2xxnmgWHujS1YtzIPfIC00SXK9pLpxc1st785KWz2H9buw/mtJrlLZKFdkD/MSZ5gk0eI4mG6P6G
+	OcHcvzxOBg9bClJlReJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7mLR-0000000B1hY-1r4K;
-	Sun, 12 Oct 2025 03:02:01 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1v879w-0000000C2cV-2fN5;
+	Mon, 13 Oct 2025 01:15:32 +0000
+Received: from mail-m49205.qiye.163.com ([45.254.49.205])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v7mLQ-0000000B1hS-0ytL
-	for linux-phy@lists.infradead.org;
-	Sun, 12 Oct 2025 03:02:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CCA94602BF;
-	Sun, 12 Oct 2025 03:01:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D420C4CEF9;
-	Sun, 12 Oct 2025 03:01:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760238117;
-	bh=7uGW8tZKzB3sWjg7FgYq8BRxUDuNHFhXJDVn7AAo0zg=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=uUqmgb7SRsNizNab/qtPW4WAqIMthIHa6AX1U52JzPxoLrnRhMyiqzxzVjVZbo37p
-	 bhQt7ktpHOs4MvZB8Xuva5fir2ldRVTnGsnhpjfD7SgYBL+cCJQoxZ/xMYoEHG9IqK
-	 2kPD87Eq8FzZ6Hz7U9NW+GvUUfuVG8dFAlWDvxquqrN9epkFu5TejdVc0JqXzbkd4H
-	 JZEPgvbPNFAjpNqlJ3CoB05/VCKYl9zyXusZRZBHHSyhKYMBMBnM6HQwjLkSs0OUMy
-	 N5enJODK8DY0gdDP9/srAJg42gQsFNIzNXbKhvGGPu7fAVjP2ksesqTVlYuwxG39O9
-	 CXPAsvqYki2GA==
-Message-ID: <7dadc4bb-43a1-4d53-bd6a-68ff76f06555@kernel.org>
-Date: Sun, 12 Oct 2025 05:01:45 +0200
+	id 1v879t-0000000C2bb-3jhj;
+	Mon, 13 Oct 2025 01:15:31 +0000
+Received: from [127.0.0.1] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 25a39ad8a;
+	Mon, 13 Oct 2025 09:15:19 +0800 (GMT+08:00)
+Message-ID: <83281501-8957-4ca1-8e0e-0b72ddd74b43@rock-chips.com>
+Date: Mon, 13 Oct 2025 09:15:13 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/4] dt-bindings: PCI: qcom: Document the Glymur PCIe
- Controller
-To: Abel Vesa <abel.vesa@linaro.org>, Wenbin Yao <wenbin.yao@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas
- <bhelgaas@google.com>, Bjorn Andersson <andersson@kernel.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+Subject: Re: [PATCH v5 3/8] phy: rockchip: phy-rockchip-typec: Add
+ typec_mux/typec_switch support
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Chaoyi Chen <kernel@airkyi.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+ Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, konrad.dybcio@oss.qualcomm.com,
- qiang.yu@oss.qualcomm.com, Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
-References: <20250903-glymur_pcie5-v4-0-c187c2d9d3bd@oss.qualcomm.com>
- <20250903-glymur_pcie5-v4-2-c187c2d9d3bd@oss.qualcomm.com>
- <w2r4yh2mgdjytteawyyh6h3kyxy36bnbfbfw4wir7jju7grldx@rypy6qjjy3a3>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+References: <20251011033233.97-1-kernel@airkyi.com>
+ <20251011033233.97-4-kernel@airkyi.com>
+ <xbblw4jfte7re2pyroanvzqv4ddwhxbgcui5ubpnw7rwuo4s4d@gkph7jqzf33o>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <w2r4yh2mgdjytteawyyh6h3kyxy36bnbfbfw4wir7jju7grldx@rypy6qjjy3a3>
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <xbblw4jfte7re2pyroanvzqv4ddwhxbgcui5ubpnw7rwuo4s4d@gkph7jqzf33o>
+X-HM-Tid: 0a99db22dcf303abkunm0713f548f8facb
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGU0dQ1YaGklOTEIaHR4YH0xWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
+	xVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=Bxg8VLDz1S1QU32Fy2HDcfvislNrJJ0uqNay+meHZQFma6Tad3Sto7NFGOCh3TqmeUBj54gnStcWhE8/KozzYBg4GvmPcV4rMFPnEgs/h30WSTTKCT8WXZx4iN3GJGmO7W3qhPHRjXv3jiF2QOrzKOBxLX8bcko/TH9ZA5Yh5p8=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=cvq/ACMwX3OnpD71UH1+PwfyZlhDdznUFw1/2vndRWE=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251012_181530_476638_94380E3D 
+X-CRM114-Status: GOOD (  21.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,43 +86,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/10/2025 14:15, Abel Vesa wrote:
->>  
->>  properties:
->>    compatible:
->> -    const: qcom,pcie-x1e80100
->> +    oneOf:
->> +      - const: qcom,pcie-x1e80100
->> +      - items:
->> +          - enum:
->> +              - qcom,glymur-pcie
->> +          - const: qcom,pcie-x1e80100
->>  
-> 
-> The cnoc_sf_axi clock is not found on Glymur, at least according to this:
-> 
-> https://lore.kernel.org/all/20250925-v3_glymur_introduction-v1-19-24b601bbecc0@oss.qualcomm.com/
-> 
-> And dtbs_check reports the following:
-> 
-> arch/arm64/boot/dts/qcom/glymur-crd.dtb: pci@1b40000 (qcom,glymur-pcie): clock-names: ['aux', 'cfg', 'bus_master', 'bus_slave', 'slave_q2a', 'noc_aggr'] is too short
->         from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
-> 
-> One more thing:
-> 
-> arch/arm64/boot/dts/qcom/glymur-crd.dtb: pci@1b40000 (qcom,glymur-pcie): max-link-speed: 5 is not one of [1, 2, 3, 4]
->         from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
-> 
+On 10/12/2025 12:57 AM, Dmitry Baryshkov wrote:
 
-So that's another Glymur patch which wasn't ever tested?
+> On Sat, Oct 11, 2025 at 11:32:28AM +0800, Chaoyi Chen wrote:
+>> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>>
+>> This patch add support for Type-C Port Controller Manager. Each PHY
+>> will register typec_mux and typec_switch when external Type-C
+>> controller is present. Type-C events are handled by TCPM without
+>> extcon.
+>>
+>> The extcon device should still be supported.
+>>
+>> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>> ---
+>>
+>> (no changes since v5)
+>>
+>> Changes in v4:
+>> - Remove notify DP HPD state by USB/DP PHY.
+>>
+>> (no changes since v3)
+>>
+>> Changes in v2:
+>> - Fix compile error when CONFIG_TYPEC is not enabled.
+>> - Notify DP HPD state by USB/DP PHY.
+>>
+>>   drivers/phy/rockchip/phy-rockchip-typec.c | 365 +++++++++++++++++++++-
+>>   1 file changed, 349 insertions(+), 16 deletions(-)
+>>
+>> @@ -850,6 +998,72 @@ static int tcphy_get_mode(struct rockchip_typec_phy *tcphy)
+>>   	return mode;
+>>   }
+>>   
+>> +#if IS_ENABLED(CONFIG_TYPEC)
+>> +static int tcphy_orien_sw_set(struct typec_switch_dev *sw,
+>> +			      enum typec_orientation orien)
+>> +{
+>> +	struct rockchip_typec_phy *tcphy = typec_switch_get_drvdata(sw);
+>> +
+>> +	mutex_lock(&tcphy->lock);
+>> +
+>> +	if (orien == TYPEC_ORIENTATION_NONE) {
+>> +		tcphy->new_mode = MODE_DISCONNECT;
+>> +		goto unlock_ret;
+>> +	}
+>> +
+>> +	tcphy->flip = (orien == TYPEC_ORIENTATION_REVERSE) ? true : false;
+>> +	tcphy->new_mode = MODE_DFP_USB;
+> Carrying over unanswered(!) comment from the previous series:
+>
+> I don't think it is correct. Orientation defines only the cable (plug)
+> orientation. You should be getting the mux events for the mode
+> selection.
 
-Best regards,
-Krzysztof
+Sorry for that, I forgot to modify this part. Will fix in v6.
+
+
+>
+>> +
+>> +unlock_ret:
+>> +	mutex_unlock(&tcphy->lock);
+>> +	return 0;
+>> +}
+>> +
+>> +static void udphy_orien_switch_unregister(void *data)
+>> +{
+>> +	struct rockchip_typec_phy *tcphy = data;
+>> +
+>> +	typec_switch_unregister(tcphy->sw);
+>> +}
+>> +
+>> @@ -1037,6 +1251,89 @@ static const struct phy_ops rockchip_dp_phy_ops = {
+>>   	.owner		= THIS_MODULE,
+>>   };
+>>   
+>> +#if IS_ENABLED(CONFIG_TYPEC)
+>> +static int tcphy_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_state *state)
+>> +{
+>> +	struct rockchip_typec_phy *tcphy = typec_mux_get_drvdata(mux);
+>> +	struct typec_displayport_data *data;
+>> +	int hpd = 0;
+>> +
+>> +	mutex_lock(&tcphy->lock);
+>> +
+>> +	switch (state->mode) {
+>> +	case TYPEC_STATE_SAFE:
+>> +		fallthrough;
+>> +	case TYPEC_STATE_USB:
+>> +		tcphy->new_mode = MODE_DFP_USB;
+>> +		phy_set_bus_width(tcphy->phys[TYPEC_PHY_DP], 0);
+>> +		break;
+>> +	case TYPEC_DP_STATE_C:
+>> +	case TYPEC_DP_STATE_E:
+> You need to check that altmode->svid is DP before checking for these
+> modes.
+
+Okay, will fix in v6.
+
+
+>
+>> +		tcphy->new_mode = MODE_DFP_DP;
+>> +		data = state->data;
+>> +		hpd = !!(data->status & DP_STATUS_HPD_STATE);
+>> +		phy_set_bus_width(tcphy->phys[TYPEC_PHY_DP], hpd ? 4 : 0);
+>> +		break;
+>> +	case TYPEC_DP_STATE_D:
+>> +		tcphy->new_mode = MODE_DFP_DP | MODE_DFP_USB;
+>> +		data = state->data;
+>> +		hpd = !!(data->status & DP_STATUS_HPD_STATE);
+>> +		phy_set_bus_width(tcphy->phys[TYPEC_PHY_DP], hpd ? 2 : 0);
+>> +		break;
+>> +	default:
+>> +		break;
+>> +	}
+>> +
+>> +	mutex_unlock(&tcphy->lock);
+>> +
+>> +	return 0;
+>> +}
+>> +
+
+-- 
+Best,
+Chaoyi
+
 
 -- 
 linux-phy mailing list
