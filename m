@@ -4,95 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 277DCCCD18D
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Oct 2025 16:08:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84997CCD183
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Oct 2025 19:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rDOMK3DzOePvDfnFhwIcMOnSTsE/3NiMpJw8aD6+yX4=; b=nz9L8Gffk7rpXr
-	HU4doY63wNcns5duZuSxHCxhlwHf8k8DbDC3NiM2A4F+iCKvPt15Q1CONY23GeMhgiNDidfivKK5v
-	dkEAySFYFe0S5dsyoPNVm8pMQ9uCN5AxEXIOSwRyGOOgJjCgpLFLOcF5kA0aoQAtng5IU+oRAxajX
-	g8s01ESKwCRFoiqr3/9/KEI7AMQFMdx1RzEd6Vpn2guRetRWDcrBZrs7014ywjuKUTCph1zoGlqot
-	w4lcZ2mZy172Na5CRsoyBIP2n7teTToGfIwpWN1aiVA3fAjfRBnA1h0x4AfPkbydNqGdxCM+HCMkb
-	asNz05j76Z1vZW/rdc6w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=KLh4s1ltF6eX9f7QJG3SnAxBf9E65W8Az8CebmfdAC4=; b=oWjn0p13sKG6QC+pR4l7wHETwL
+	Mea2prI6RJ3o2Bnpej9B4RxrTTEoY5jPtiJGN+7LRBDAJmYbw4nZglBAGVTdGykfJ7wx58F2fNoA6
+	TBPaIBVhdnqemw06unlbQnSrz+js+sHQ7HygZC5suzruzygJhJl+4iyjGTUFfftN0eET1yrEe95o9
+	C1BPTSU0UZKDRbT2O1cHXm8kT2iuRAJbAzV1tgwaqmtQcEpGZggqzewdGcS8HaWnAsdN5lDhZ9GwO
+	7koUXjZqrkgc4gVWXkvpA3f4la4cbK5NcJAcd+zMIS3O3TW/opwPDBemnwoYsaPWDr5iL2SOxPC7M
+	kO5jP+Lg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8L6R-0000000Dok7-3Zv5;
-	Mon, 13 Oct 2025 16:08:51 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1v8OQf-0000000EJOB-0Gvh;
+	Mon, 13 Oct 2025 19:41:57 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8L6N-0000000DojI-3n5o;
-	Mon, 13 Oct 2025 16:08:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1760371728; x=1791907728;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=Cx2ySqwhiSWfKIHSd5QaOPvH3hIGJdxoGvQgZVmjeec=;
-  b=RDoq9TU9/NXIHupMu934BdArYrd0unvxElOhN3FekHKHm44BXPWnUvEg
-   2Ptt/z/zX6Psb4rHchbn7DkJPhe2iGIhaNKml/J24Nd07FXEEpTukAnLe
-   0OVcuoyug5smWV8MAYsCs1Gf+AgfA7sCSLSO6yq0R3Mm0uRKPk7nASeku
-   A/mb4cht4KGcpEGj1AHS5yetIQv8EbECOc7mHCVTD3qmDk0/UOMozgWDj
-   I31ZQUDuLPN7DREtnG2+SM0iPAXKXjDeE1qBTPIFaAosiptHb90/29tIN
-   R3OvQ2MY8OEt0PBrxPKFGeO6Vor1EiXDOmAXXTgGSIIbt6ylXWkQ3RMPu
-   A==;
-X-CSE-ConnectionGUID: k9FP8fFnRSObGj95ppVxXQ==
-X-CSE-MsgGUID: HTML07jFQDS4Krcmi4/uUA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11581"; a="73859893"
-X-IronPort-AV: E=Sophos;i="6.19,225,1754982000"; 
-   d="scan'208";a="73859893"
-Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Oct 2025 09:08:47 -0700
-X-CSE-ConnectionGUID: CQePt4twSyu0zXP/jxJ66A==
-X-CSE-MsgGUID: bixiefRXQ1G8y6nrbKNFjQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,225,1754982000"; 
-   d="scan'208";a="182396858"
-Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
-  by fmviesa010.fm.intel.com with ESMTP; 13 Oct 2025 09:08:37 -0700
-Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1v8L3S-0001b8-2e;
-	Mon, 13 Oct 2025 16:07:07 +0000
-Date: Tue, 14 Oct 2025 00:00:56 +0800
-From: kernel test robot <lkp@intel.com>
-To: Chaoyi Chen <kernel@airkyi.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	id 1v8OQc-0000000EJNq-10jo
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Oct 2025 19:41:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id BA90A41923;
+	Mon, 13 Oct 2025 19:41:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4B55AC4CEE7;
+	Mon, 13 Oct 2025 19:41:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1760384513;
+	bh=TN4iB2CJGrf00fYoivIs8F3mcv13g9G1yoNmREgyI0U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=GdGJrebmezTWKGSpgumj7LiBG9RZrMcJlphUgq6ShxzzH8Wcdd4IVA+ZISQJkCofy
+	 f0lHmzx9WsKVJrSMAX37Bw+O0ZyaDj+zCAJwT5TIqmn0bfI3ef3KSAfmnrlkMlXHK3
+	 w5srV80rWymr9pr0Er+zXtUlIu5KWpax8LmkN+GYBxsTvojJudop+mXd0wtq71oT7C
+	 tT66J0zzxPRlBln3a2hNMdGLuh9UjcYrt+fGnok7CuTLCQ9vGXKpjuR8lDwi+l7scs
+	 4rCL2gFUDSFe1qV2DasKvIhzy3lQQ9Gyx3CFbXPfMKYF8MrcvS7WQscWQHCoBmJY6k
+	 fJVQVSdpaXhFg==
+Date: Mon, 13 Oct 2025 20:41:49 +0100
+From: Conor Dooley <conor@kernel.org>
+To: dimitri.fedrau@liebherr.com
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	Peter Robinson <pbrobinson@gmail.com>
-Cc: oe-kbuild-all@lists.linux.dev, linux-usb@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v5 4/8] phy: rockchip: phy-rockchip-typec: Add DRM AUX
- bridge
-Message-ID: <202510132306.TKsFxaNn-lkp@intel.com>
-References: <20251011033233.97-5-kernel@airkyi.com>
+	Dimitri Fedrau <dima.fedrau@gmail.com>,
+	Marc Kleine-Budde <mkl@pengutronix.de>, linux-can@vger.kernel.org
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add support for NXPs TJA1145
+ CAN transceiver
+Message-ID: <20251013-supplier-edition-0ffc88286b5d@spud>
+References: <20251013-tja1145-support-v3-0-4a9d245fe067@liebherr.com>
+ <20251013-tja1145-support-v3-1-4a9d245fe067@liebherr.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251011033233.97-5-kernel@airkyi.com>
+In-Reply-To: <20251013-tja1145-support-v3-1-4a9d245fe067@liebherr.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251013_090847_951271_2208F51D 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20251013_124154_342341_EBE0870F 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,56 +74,172 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3715888316882745453=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Chaoyi,
 
-kernel test robot noticed the following build errors:
+--===============3715888316882745453==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="gDq1zSAoM2zKWAOI"
+Content-Disposition: inline
 
-[auto build test ERROR on usb/usb-testing]
-[also build test ERROR on usb/usb-next usb/usb-linus linus/master v6.18-rc1 next-20251013]
-[cannot apply to rockchip/for-next robh/for-next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Chaoyi-Chen/usb-typec-Add-default-HPD-device-when-register-DisplayPort-altmode/20251011-113608
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git usb-testing
-patch link:    https://lore.kernel.org/r/20251011033233.97-5-kernel%40airkyi.com
-patch subject: [PATCH v5 4/8] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
-config: i386-buildonly-randconfig-003-20251011 (https://download.01.org/0day-ci/archive/20251013/202510132306.TKsFxaNn-lkp@intel.com/config)
-compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251013/202510132306.TKsFxaNn-lkp@intel.com/reproduce)
+--gDq1zSAoM2zKWAOI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202510132306.TKsFxaNn-lkp@intel.com/
+On Mon, Oct 13, 2025 at 11:19:18AM +0200, Dimitri Fedrau via B4 Relay wrote:
+> From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+>=20
+> Adding documentation for NXPs TJA1145 CAN transceiver, which resides like
+> the ti,tcan104x-can.yaml in the same directory as other generic PHY
+> subsystem bindings. At the moment there is only support for simple PHYs
+> by using regulator bindings in combination with can-transceiver.yaml or
+> PHYs that implement the generic PHY subsystem like the NXP TJA1145.
+>=20
+> Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> ---
+>  .../devicetree/bindings/phy/nxp,tja1145-can.yaml   | 79 ++++++++++++++++=
+++++++
+>  1 file changed, 79 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml b=
+/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..3b81a2e1ead8452ed5fcf2021=
+f33d628d4e12346
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/nxp,tja1145-can.yaml
+> @@ -0,0 +1,79 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/nxp,tja1145-can.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: TJA1145 CAN transceiver
+> +
+> +maintainers:
+> +  - Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> +
+> +allOf:
+> +  - $ref: /schemas/spi/spi-peripheral-props.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    const: nxp,tja1145-can
 
-All errors (new ones prefixed by >>):
+I'd drop the -can here, since I don't think the device can be anything
+else?
 
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `udphy_orien_switch_unregister':
-   phy-rockchip-typec.c:(.text+0x89a): undefined reference to `typec_switch_unregister'
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `tcphy_orien_sw_set':
-   phy-rockchip-typec.c:(.text+0x8b9): undefined reference to `typec_switch_get_drvdata'
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `tcphy_typec_mux_unregister':
-   phy-rockchip-typec.c:(.text+0x93a): undefined reference to `typec_mux_unregister'
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `tcphy_typec_mux_set':
-   phy-rockchip-typec.c:(.text+0x959): undefined reference to `typec_mux_get_drvdata'
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `tcphy_setup_typec_mux':
->> phy-rockchip-typec.c:(.text+0xac3): undefined reference to `drm_aux_bridge_register'
-   ld: phy-rockchip-typec.c:(.text+0xae6): undefined reference to `typec_mux_register'
-   ld: drivers/phy/rockchip/phy-rockchip-typec.o: in function `rockchip_typec_phy_probe':
-   phy-rockchip-typec.c:(.text+0xf3f): undefined reference to `typec_switch_register'
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  spi-max-frequency:
+> +    maximum: 4000000
+> +
+> +  spi-cpha: true
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Is this optionally cpha or always? I'd mark it required if it is always
+needed for the device to function.
+
+> +
+> +  spi-cs-setup-delay-ns:
+> +    minimum: 50
+> +    default: 50
+> +
+> +  spi-cs-hold-delay-ns:
+> +    minimum: 50
+> +    default: 50
+> +
+> +  spi-cs-inactive-delay-ns:
+> +    minimum: 250
+> +    default: 250
+> +
+> +  vcc-supply:
+> +    description:
+> +      CAN transceiver supply voltage
+> +
+> +  vio-supply:
+> +    description:
+> +      Supply voltage for I/O level adaptor
+> +
+> +  vbat-supply:
+> +    description:
+> +      Battery supply voltage
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +
+> +unevaluatedProperties: false
+
+If the properties you've listed above from spi-peripheral-props are the
+only ones suitable for the device, I think additionalProperties: false
+is sufficient here.
+
+Cheers,
+Conor.
+
+pw-bot: changes-requested
+
+> +
+> +examples:
+> +  - |
+> +    spi {
+> +        #address-cells =3D <1>;
+> +        #size-cells =3D <0>;
+> +        can-phy@0 {
+> +            compatible =3D "nxp,tja1145-can";
+> +            reg =3D <0>;
+> +            #phy-cells =3D <0>;
+> +            spi-max-frequency =3D <4000000>;
+> +            spi-cpha;
+> +            spi-cs-setup-delay-ns =3D <50>;
+> +            spi-cs-hold-delay-ns =3D <50>;
+> +            spi-cs-inactive-delay-ns =3D <250>;
+> +            vcc-supply =3D <&reg_5v0>;
+> +            vio-supply =3D <&reg_3v3>;
+> +            vbat-supply =3D <&reg_24v0>;
+> +        };
+> +    };
+>=20
+> --=20
+> 2.39.5
+>=20
+>=20
+
+--gDq1zSAoM2zKWAOI
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaO1V/QAKCRB4tDGHoIJi
+0h2TAPoCuPTog2pckMDH53JpNnuwMSfjkLpKZLkadls23rdiuwEAjRbEuCE6RjC1
+aOal4qmhslM7N0QDXfw58Aq3RHwJ7QA=
+=cLzX
+-----END PGP SIGNATURE-----
+
+--gDq1zSAoM2zKWAOI--
+
+
+--===============3715888316882745453==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3715888316882745453==--
+
