@@ -4,98 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4B75CCD18E
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 08:36:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 241F7CCD18E
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 09:46:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85S98jAKqPQkzFUcG3nWM+yh2lGDDaVXLEoy49KATjo=; b=mqgtFn5bFGoQRy
-	PlVRjgzPuVoymEGTmi+5BCzsUWp5/B0k3ODhwdfIUimfoWRe9+Il67zQnOqnUM+pCLzOwlh3mVWbB
-	mS13B7yWxO6fuH/DHBEUkBQyXCw4eQ7m5NFrbOw9agURyA2Ze+UdN8MJipCn47wNw8h/FLcImnmLQ
-	C0UohYEDmrumN08UfS7HjfTXVJ21t/58rYhDe1I5oWUfn/QZd2qkzq1d2vlnPX0MP6RXe36oMTZzg
-	V7bYkCWsurSmDk7FmHcGnzWJFPX6JvW9bF7TGTAsZsFcpM5EgpnMe+fk+F4Nh/FKwPt08JkuqGJ1Z
-	4slIN8SxhwpHrPZrQywQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7XnadRSIEhytPsDGRdqPBqRh07bWFE4UCE+LBtG6ndk=; b=DA7KwcQUB9VELj
+	9nfVYn513aUhj7gOnB48sASL7XQ8MumBLDhoheTquMVtw73w2GMLeqS7dtYkVNr4vuaHwxRl+KBu4
+	u/zV0IPKsDOPDxtFArTpZC0HyhVNJLWy04CgFWFn0mROKbx+FB5PmZRMjy7x8GeO8U0pgPny780vP
+	Tn5g57vHo5W/HrCsJlebq7g6Qis1G0RjyS1zLtx3+tB1PtptWE9WEpcyGzLs0A6o+31NM6DMt/0kA
+	yUHyrmFgbpX47OkeH1/k5TTqpYS7OH8m/QsBlvFIvrPtuctaqBiXG6mjbAZ8dFjw76lsxNb4w8dnl
+	gl9jS4frYr63BAX554Iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8aWJ-0000000FdbA-2KZK;
-	Tue, 14 Oct 2025 08:36:35 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1v8bbw-0000000FoCy-3GMz;
+	Tue, 14 Oct 2025 09:46:29 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8aWH-0000000FdaH-04uv
+	id 1v8bbt-0000000FoAQ-3fsq
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Oct 2025 08:36:34 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-46e5980471eso27081525e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 01:36:32 -0700 (PDT)
+	Tue, 14 Oct 2025 09:46:27 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-421b93ee372so2743215f8f.2
+        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 02:46:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1760430990; x=1761035790; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=PlCr4KtCOqjtwAQHsCr8GzfdPPkJghN91drUl4fH4VI=;
-        b=C1NlwP6XID+eEhaYs/ZGIy8/rkMkC6EV6jpx5ighZ3IsYYS79+mTvqCSf+r9A0ZMRN
-         yVhyfxwkBB+7zOUrXdueprZh3K7ASNgLaI01Avy45aUJ6uK35DfGj+Z+ova/qESKcTEO
-         9bKQR102smTJaY0hCys9+w0Eu+kPr2Ig3/sHsfTCUlQeCmX63vhRiJWhQixuA5mq70eF
-         +Gma+HBI/wSrBrAv5/tcwPYQq62bSZFqJjP/IxZLkYpHpKdvEuuZ+JCJsBnG5w5PbExN
-         YEeMGcWobxG8YEBehIUPZaVPYCK9dTvP2km3kFLIY0LwvPeDuXvBuhgrFTghnJaNp9i+
-         c9nA==
+        d=linaro.org; s=google; t=1760435183; x=1761039983; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=2bKZTYq6/6Otgm4/JoAPAscRI3Nhvh8qLkW+Q3h459I=;
+        b=AagW8BZBTZOKvQqP8e+Cxs0aJ4TOupu7fgm+2XlDzb9YujUjLeRHEtOPsqrnD1P+7Y
+         Asn2ZXiPiqf/mMnuwKmXDxbhK1WUcya/ZL3sR12pGdmg2s6if4jLytJDuIAIXa5xK9bG
+         ldfTd0AM6QDozG3azLy7bXbQcuIacSMcPFBTc4ggQ98+734ZhSSYlAE3gRVfzl18G4xW
+         Zn4PYvAFseYG/8mkDjUmQCRRp3hBH2yT0b9o0cY1ur7nMYIP7U6YzMe1sDtpV+uwFbVM
+         TSO5qNyEyX6w/RDtqUdufy8yW0HacMo7vljrOPP7cn1dEy7i6f12n1keK/la/VZGTcZ1
+         wOnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760430990; x=1761035790;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PlCr4KtCOqjtwAQHsCr8GzfdPPkJghN91drUl4fH4VI=;
-        b=aK88kIhDXPGt/McO0E85V5m9pflDc+Ha6DJKsSmUh3HkiHxcV3L4T4Y0TiXcGnC0sy
-         5i2cG5hHg3dimYpOpVQMgh8ZCMofRPkiamP+AP0OE6JNyHFayDfbwwynkIXlk6WoEPGE
-         GBubSmFkametzdzzMARqlcnuSLAVA/cEuUKDORgO+ROQjIrYGqvIAn9Da0hAGQBrnPGz
-         GNPUTZ+Ksjdo/5VNpkxHEPhVoCNO7/chdEYL8RCjAzGkVJEWUtntfxW/SQngV9UdmMt9
-         ej1AvMAen6Rjag4v4jxf8FmLkomOJpaInDymOpFx0wrggFn8GH93ro4rcYTpbt/QIkuE
-         8Fwg==
-X-Gm-Message-State: AOJu0Yy2RZNUBSEKCcjVMmMbG/w5KsY1g/kvuNx8U+yT8DitZEUWf/vW
-	UEThDkqgi9sBgZ4BuMEdr2cG+WlWDPyq38dOhmNfIMtVK3+2Z3wTyR4COHz5w4v2AkY=
-X-Gm-Gg: ASbGncvUYXGKtALX5bcUyrZIK0nbzS3yriadsru2TEcRu1vsyDeRoSfYak6XAzFmFze
-	wHHkyNaQwMA9IPoDVWw3VELwqTLzHMDv9qrergCmLPOH7F7EODdPzlIXtNYHD6fz+wkrCOLA8tr
-	05hyYuHIBTAz2MT8qI71Y+PvBKC94JVcGs6gcP7mvkJwhZW7VxsLld4+gCPTN2Gzdmkq5s9b9mf
-	8Y/evFbI/uoEJb0RT6XotS9r3oM1kbz/fCkyQFkV3xtygNYBAbeGFZwpNZtj8sCsYUnbO9cwuf6
-	quwZ742PIW/bZOziaL976fB+xLklPJljOQLKn9UUu3jvQbKeaJ9LulYuWZsh3PfQkdio4OTL8IL
-	M4xqQIcxsBcRjbfaaAwmUoxzjaWVRHLu1Ik/fx9H6KL9DRCIHQcO6kA5eUJY=
-X-Google-Smtp-Source: AGHT+IHvca3H/eoAiSfXW7AaqB6vZ9CVuxlAXPqbLcEH7dPAWw/TAns0mWyDT3g0uw99AA+D6AEn0w==
-X-Received: by 2002:a05:600c:8206:b0:46e:19f8:88d3 with SMTP id 5b1f17b1804b1-46fa9af313bmr162991485e9.22.1760430989453;
-        Tue, 14 Oct 2025 01:36:29 -0700 (PDT)
-Received: from [192.168.50.4] ([82.78.167.40])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-426ce5e8b31sm22554601f8f.54.2025.10.14.01.36.27
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 14 Oct 2025 01:36:28 -0700 (PDT)
-Message-ID: <77678dd6-071b-4911-a5c5-f1519c92e91a@tuxon.dev>
-Date: Tue, 14 Oct 2025 11:36:27 +0300
+        d=1e100.net; s=20230601; t=1760435183; x=1761039983;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=2bKZTYq6/6Otgm4/JoAPAscRI3Nhvh8qLkW+Q3h459I=;
+        b=F3M0x/nxeGw/t17Xu/miv38QrPotqm6J+oa4yB7s+5SOKLVhd4H2wXBp2AMJEwXyBk
+         KGKDHAnAsWaZPHGTyjz4yWTJq5OzSIe055N0+M5lkI57Z0kvg/kfPYkdmShyRQDMEP33
+         jHsgNoOp183TJ1qgbW20kI6SPFvokzTjP35P0fn6tr1D2Bf7c3OkeejfHstsXntb0pdq
+         aXT7D/oQgdPcL6K1xbANjuponQd5tRLRDZ+QgrirOCTzD4m5wiiITnyTqFCJ6aI40Gqo
+         g3451miZ7FWEqHZlhsYY0J96Ug/enzeP5eyOKXp+mxcvKEJ76/UKFNSQXoRDVOld8a2/
+         9ehA==
+X-Forwarded-Encrypted: i=1; AJvYcCWwdAf4+rI8a4QBrPeOgFI/8yshMAWVSL7Pq3bsapNjc/HscAmB94OiBr7IuXwTIYc3A5hZZV0irEg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxy5+WeqmIioIulTBXFAon2hKBp+rEXDnS+B5RdGCfLMW9ONudD
+	YcwdUpOoyUODKngFsnXH2wsJx2fqhfWphCh/Ai6TwahnyEzGceVsOdxajv5JRaOeI30=
+X-Gm-Gg: ASbGncsg5COojbq1WKk2wDfFQABcJxE3WDWBFwO+IGzT6bCMgTgT4SfXy+ULA7emPRT
+	DEzQ8WQsAyiZeFtsjSOHX8Ga4hqcHe0/SQCjxgABToJvcI5AK2kjZJodhNL/6R3/DOIVMLMzpsm
+	P1WMIVvwdIRSkFbeeOJogyYQrlGnKRkY4EalGZ5hExo9fkeXb72gmtl1JpCZa0GgoFUfsSPKbFV
+	tecYH4Sb/r69p6w6Yuf9+NzGFUcCYJGU7nUftFuQ7S4q3ykes1E4yJZ2BvsG2+xs4+U1Wha+jGd
+	GFJhCChXj/Ag8kfL7kRx+4BKICtM7JLdzqO/kE0VFWKE0KDzOcKorFRnlvdyP+IMWMXQQhwzlpI
+	pgqql98XzK8HxowtiUQBWlqRaw4NniWewRJIIUUx513KgnHSIogRLJg==
+X-Google-Smtp-Source: AGHT+IEUB3DwM5KbLo0YAJy95OK5FzaMYTEWXQtizciZwE/s3oqnbKLTxn0r/kkXbHky5tXVsGFBvg==
+X-Received: by 2002:a05:6000:2305:b0:3ea:c360:ff88 with SMTP id ffacd0b85a97d-4266e7dffe5mr15539748f8f.31.1760435183185;
+        Tue, 14 Oct 2025 02:46:23 -0700 (PDT)
+Received: from hackbox.lan ([86.121.7.169])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-426ce5e8b31sm22866442f8f.54.2025.10.14.02.46.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 14 Oct 2025 02:46:20 -0700 (PDT)
+From: Abel Vesa <abel.vesa@linaro.org>
+Subject: [PATCH RESEND v3 0/3] phy: qcom: edp: Add missing ref clock to
+ x1e80100
+Date: Tue, 14 Oct 2025 12:46:02 +0300
+Message-Id: <20251014-phy-qcom-edp-add-missing-refclk-v3-0-078be041d06f@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
- PWRRDY
-To: Philipp Zabel <p.zabel@pengutronix.de>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- geert+renesas@glider.be, magnus.damm@gmail.com,
- yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>
-References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
- <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
- <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
- <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
- <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
- <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
- <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
- <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-Content-Language: en-US
-In-Reply-To: <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
+X-B4-Tracking: v=1; b=H4sIANob7mgC/42NPQvCMBRF/4pk9kmaUhudHOzqoKM4pPloH7ZJT
+ aRYSv+7IYs4KQ8e3HvhnJkE7VEHsl/NxOsRAzobQ75eEdkK22hAFTNhlBW0zCkM7QQP6XrQagC
+ hFPQYAtoGvDayu0Mhas7iGa5LEilD7PGVDFdyri7V6UhusW8xPJ2fknjM0vq3Y8yAwtaUXBgtV
+ C3NoUMrvNs43yT4yD7AHc1/A1kEKs5lVlOp4v8CLsvyBsfdUy0oAQAA
+X-Change-ID: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+ Sibi Sankar <sibi.sankar@oss.qualcomm.com>, 
+ Rajendra Nayak <quic_rjendra@quicinc.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
+ stable@vger.kernel.org
+X-Mailer: b4 0.15-dev-dedf8
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2061; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=l3LysOIyApMjrPfw785wmo0UxKg51Ii7YvKFAglf7l4=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7hvgVAHgN7NhN1/gnFmV/M7oRWvD9UaYEhDcp
+ EFbt/WOLzOJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4b4AAKCRAbX0TJAJUV
+ VjPUD/4vUoPpHoZQWjDPWDIax0TPyCIZXxnvSmDbXKi4MhCqrcHcqwDOearqPMQ8sxSM7QmlQ2b
+ KGS0+yeAvLVpGGIfMzL8PbjdspuFBqqa7HRvq26iaynnnb3XzBwtY82XMW05SAVh1mA8c3frW+v
+ TyrcvmlnC9nUqZlQPiaheoyJ3+KPOKIL/IHSBSonTKoWTEhFTIzQT08A+MlJKAEatGZ8Rw1j6O5
+ bT0eISB85t7O7wRCXnUsvw+3dVF5dCQA/EW7KR4XnYcAAikYMTTi2F+QM7hPnP36UWs44pSaq/u
+ CiLbgozuozyDaM8SZwSEyiPC/mbRyIuOpWYeyeAj7zE9b9QE4wtFZYqUiXLFpkcTu+vTjuHKx/J
+ 9Cx8cSdYudTX3X2dT3KQgvqPuM1+mFkpeYnibSDgQqLYs4cC2/NyoqabG5B0Ba60cWZjoaWLw+Q
+ qOnjtM5NFKVKHHsFOP9hUOYgBI7CkHoQRG47iXJ50lmvCUqR31nrSRkYGPOwAZ5AqsFUlDZG4K6
+ pWnso6ZqhODJmEFSympcsTLFII5/A+1PMhzlDp4v++C2h/kbeks3HH0UfGyTSPcWQ0goKvw2Dpa
+ B8lZPdjzvzgIKMyx8lnE6jsr7wqd60+pO+J9TJpzPASUa52RGX7eDdrtisyyrZ8hW5qDG7+2EFB
+ CTJZTSy9WL91a8w==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251014_013633_254483_CA1E1C7A 
-X-CRM114-Status: GOOD (  35.73  )
+X-CRM114-CacheID: sfid-20251014_024625_969179_71D08D28 
+X-CRM114-Status: GOOD (  12.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,178 +127,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Philipp,
+According to documentation, the DP PHY on x1e80100 has another clock
+called ref.
 
-On 10/13/25 17:57, Philipp Zabel wrote:
-> Hi Claudiu,
-> 
-> On Fr, 2025-10-10 at 14:26 +0300, Claudiu Beznea wrote:
->> Hi, Philipp,
->>
->> On 10/8/25 15:16, Claudiu Beznea wrote:
->>> Hi, Philipp,
->>>
->>> On 10/8/25 13:23, Philipp Zabel wrote:
->>>> Hi Claudiu,
->>>>
->>>> On Mi, 2025-10-08 at 12:29 +0300, Claudiu Beznea wrote:
->>>>> Hi, Philipp,
->>>>>
->>>>> On 10/8/25 11:34, Philipp Zabel wrote:
->>>>>> Hi Claudiu,
->>>>>>
->>>>>> On Do, 2025-09-25 at 13:02 +0300, Claudiu wrote:
->>>>>>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>>>>>>
->>>>>>> On the Renesas RZ/G3S SoC, the USB PHY block has an input signal called
->>>>>>> PWRRDY. This signal is managed by the system controller and must be
->>>>>>> de-asserted after powering on the area where USB PHY resides and asserted
->>>>>>> before powering it off.
->>>>>>>
->>>>>>> On power-on the USB PWRRDY signal need to be de-asserted before enabling
->>>>>>> clock and switching the module to normal state (through MSTOP support). The
->>>>>>> power-on configuration sequence
->>>>>> The wording makes me wonder, have you considered implementing this as a
->>>>>> power sequencing driver?
->>>>> No, haven't tried as power sequencing. At the moment this was started I
->>>>> think the power sequencing support wasn't merged.
->>>>>
->>>>> The approaches considered were:
->>>>> a/ power domain
->>>> Letting a power domain control a corresponding power ready signal would
->>>> have been my first instinct as well.
->>>>
->>>>> b/ regulator
->>>>> c/ as a reference counted bit done through regmap read/writes APIs
->>>>>
->>>>> a and b failed as a result of discussions in the previous posted versions.
->>>> Could you point me to the discussion related to a?
->>> It's this one
->>> https://lore.kernel.org/all/
->>> CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com/
-> 
-> Thank you! From this discussion it still isn't clear to me whether
-> Ulf's suggestion of using genpd on/off notifiers was considered and why
+The current X Elite devices supported upstream work fine without this
+clock, because the boot firmware leaves this clock enabled. But we should
+not rely on that. Also, when it comes to power management, this clock
+needs to be also disabled on suspend. So even though this change breaks
+the ABI, it is needed in order to make we disable this clock on runtime
+PM, when that is going to be enabled in the driver.
 
-The genpd on/off notifier suggestion wasn't tried, but only the
-implementation of PWRRDY handling through the power domain (what Ulf
-suggested though "Move the entire reset handling into the PM domain
-provider, as it obviously knows when the domain is getting turned on/off"
-in
-https://lore.kernel.org/all/fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev/).
-Sorry if I mislead you.
+So rework the driver to allow different number of clocks, fix the
+dt-bindings schema and add the clock to the DT node as well.
 
-Ulf suggested then here
-https://lore.kernel.org/all/CAPDyKFpLnREr4C=wZ7o8Lb-CZbQa4Nr2VTuYdZHZ26Rcb1Masg@mail.gmail.com/
-that he is not agreeing anymore with having it as power domain due to the
-discussion in thread
-https://lore.kernel.org/all/TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com/
-(I can't remember what made him taking back is ack on this solution and I
-can't find something in the thread either).
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+Changes in v3 (resend)
+- picked-up Krzysztof's R-b tag for bindings patch
 
-If I'm not wrong, with the information that we have at the moment, the best
-for the notifier would have to register it (before runtime resume) and
-implement it in this driver (reset-rzg2l-usbphy-ctrl) so that, when the
-pm_runtime_resume_and_get()/pm_runtime_put() in
-rzg2l_usbphy_ctrl_probe()/rzg2l_usbphy_ctrl_remove() will be called (or
-suspend/resume) the notifier will be called and set the PWRRDY bit. Please
-let me know if you see it otherwise.
+Changes in v3:
+- Use dev_err_probe() on clocks parsing failure.
+- Explain why the ABI break is necessary.
+- Drop the extra 'clk' suffix from the clock name. So ref instead of
+  refclk.
+- Link to v2: https://lore.kernel.org/r/20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org
 
-> it was dismissed.
+Changes in v2:
+- Fix schema by adding the minItems, as suggested by Krzysztof.
+- Use devm_clk_bulk_get_all, as suggested by Konrad.
+- Rephrase the commit messages to reflect the flexible number of clocks.
+- Link to v1: https://lore.kernel.org/r/20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org
 
-The power domain approach was dismissed as a result of discussion from this
-thread:
-https://lore.kernel.org/all/TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com/
+---
+Abel Vesa (3):
+      dt-bindings: phy: qcom-edp: Add missing clock for X Elite
+      phy: qcom: edp: Make the number of clocks flexible
+      arm64: dts: qcom: Add missing TCSR ref clock to the DP PHYs
 
-I don't remember exactly what triggered it and can't find it as well, sorry.
+ .../devicetree/bindings/phy/qcom,edp-phy.yaml      | 28 +++++++++++++++++++++-
+ arch/arm64/boot/dts/qcom/x1e80100.dtsi             | 12 ++++++----
+ drivers/phy/qualcomm/phy-qcom-edp.c                | 16 ++++++-------
+ 3 files changed, 43 insertions(+), 13 deletions(-)
+---
+base-commit: 52ba76324a9d7c39830c850999210a36ef023cde
+change-id: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
 
-> 
-> From the DT patches it looks like there is no actual separate power
-> domain for USB, just the single always-on CPG power domain (in rzg2l-
-> cpg.c). Is that correct?
+Best regards,
+-- 
+Abel Vesa <abel.vesa@linaro.org>
 
-That is correct, the CPG is a clock power domain. All the clocks that CPG
-can be provided (including USB clocks) are part of CPG clock power domain.
-
-> In the thread it sounded like there were
-> multiple domains.
-
-You probably refer to this:
-https://lore.kernel.org/all/fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev/
-
-In there, I was trying to present to Ulf how I did implement (locally,
-nothing posted) the handling of PWRRDY though power domains. In that case
-the SYSC (System Controller), where the PWRRDY resides, was modeled as a
-power domain, I passed to the reset-rzg2l-usbphy-ctrl DT node the phandle
-to sysc USB power domain as:
-
-power-domains = <&cpg R9A08G045_PD_USB_PHY>, <&sysc R9A08G045_SYSC_PD_USB>;
-
-along with the cpg, and handled it in the reset-rzg2l-usbphy-ctrl probe().
-
-> 
-> Is the issue that you need the PWRRDY signal to be (de)asserted
-> independently from the CPG power domain enable/disable?
-
-Yes. I need to de-assert it before clocks, MSTOP on probe/resume and assert
-it back after clocks, MSTOP, on remove/suspend.
-
-> (Why?)
-
-Due to hardware constraints. This is how Renesas HW team recommended.
-
-> 
-> Why can't the power domain provider (cpg) have the renesas,sysc-pwrrdy
-> property and set the signal together with the power domain?
-
-That can be done but, passing a SYSC phandle to the CPG DT node will not be
-valid from the HW description point of view.
-
-> 
->>>> I see v2 and v3 tried to control the bit from the PHY drivers, and in
->>>> v4 we were are already back to the reset driver.
->>> v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
->>> renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
->>> bit was referenced counted in the SYSC driver though regmap APIs.
->>>
->>> v3 used the approach from v2 but passed the renesas,sysc-signals to all the
->>> USB related drivers.
->>>
->>> Then, in v4, the PWRRDY refcounting was dropped and passed
->>> renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
->>> is the node that will always be probed first as all the other USB blocks
->>> need it and request resets from it.
->>>
->>> v5 and v6 kept the approach from v4 and only addressed misc comments or
->>> things that I noticed.
->>
->> Could you please let me know if you are OK with the approach proposed in
->> v7, so that I can start preparing a new version addressing your comments?
-> 
-> If the PWRRDY signal is an input to the USB2PHY control block, and not
-> only to the PHY blocks, I have no issue with this being handled in the
-> usb2phy reset driver -
-
-Yes, this is how the Renesas HW team confirmed they are related.
-
-> iff it is not sensible to just control the
-> signal from the power domain driver.
-
-As mentioned above, that can be done as well but, passing a SYSC phandle to
-the CPG DT node will not be valid from the HW description point of view.
-
-> 
-> If we have to handle it in the reset driver, I'd prefer to see this
-> controlled with a dev_pm_genpd_add_notifier(). If that is not possible,
-> I'd like to understand why.
-
-From the code inspection I did, that can be done. From what I can tell at
-the moment, I'll have to register a gepnd notifier from
-reset-rzg2l-usbphy-ctrl, before runtime resuming the device and control the
-SYSC PWRRDY from it.
-
-Thank you,
-Claudiu
 
 -- 
 linux-phy mailing list
