@@ -4,80 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F042CCD187
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:02:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62538CCD187
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:02:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nKixcIZVUT7s6/U/VA6H9lc3EFnq/mDB3aehyOzeSJg=; b=ykSasAKze9WLGO
-	oPjLErJv49yAzj+nHdjgHrC5OP5HdIZATUANc/CDmKJN+kG/zom/fgW3jJUDlPyNgicngxfjQcWjc
-	fXQ8/FKoy5bmDrBdygNXEeZhx1znEKTxvPepWB5wlU4oooLtqujM2Mjg/tuXPVDCpOJUzHxbEb+F4
-	vv6AbSeBt0Y/2dhyjtHeLDQ7gg3pbwM7STQM3uqkdb3Vo/eXLwOhd587hVAVnhVUOuXvRgfZRsloV
-	T/M98ZY7cDFVCtfG63OKHXmEX/SZla9Jht79apKiRq0SDBZShNJjluTSy9xCeH6tIR9mBcVOhzIoL
-	Ka6Nd3o6XLE8lc/GuiKA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gWzjF4ruUY31csMX5i6IqrjZ/xf+jmInefamXVFr8Ao=; b=rY80au/dG0cgeG
+	vExlvycBoIyFKjRuGC9N6gkXLqhs9Nm2ygrqyg9VEePHD8aYl2yhkMCIVJDHgXnma+Vie0V4Z0LiF
+	DRrxlF/a4x6qc7tBG01Cb2S0BOPl39eLDWIrI3yi1cmzL8FaGpfLl1rxooJxFr4F0K8UeZOhXuqzx
+	wV85yd/pnU2pNeNMa7VVH7gH91FiS3OxXsNOsW7Oc5nI+CdQIp0TYBgSHDukBJW8/70Cu7lw0gkvK
+	LWJTcIeidkmIv63JWiM7QMXeiV2xLnHhWCFAAQW0ZrBeVjHAcz1nNOZaRslXNL70FVd4fKWQEAv/i
+	P1V6rm3EuxJLGX99oKsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8brs-0000000Fro5-2uWD;
-	Tue, 14 Oct 2025 10:02:56 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1v8brv-0000000Frp7-0eQO;
+	Tue, 14 Oct 2025 10:02:59 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8brq-0000000FrnU-3ZlM
+	id 1v8brt-0000000Frnz-0njA
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Oct 2025 10:02:56 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-46e2c3b6d4cso38477615e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:02:54 -0700 (PDT)
+	Tue, 14 Oct 2025 10:02:58 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-46e2c3b6d4cso38477955e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:02:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1760436173; x=1761040973; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=1c6b+GqeawN6AugUtZw8SvN92PfqxV890zC2ujYfseM=;
-        b=AGI3zUP5Q83p5RpuoSg9QfqYCcSbstZF0k87czt+30IQrLjLnbPFJF9i6+pHa/Zh1v
-         mmW93ePpZz/R66StIERMfugw3dPl4wp4aClMX4Imz+bueRq6wjo/7Y5TZvpxFHBRW+XW
-         jqN5Vc/u3GUfNM6T+IPl+WYf/vZ9ICO6m3h/VihkV4CNZ1uQVIV+hEDNgZFb1cFDWcMq
-         a3xFZfLTtnb1evTkUhgCAglhrPmVut4f+uZv62UcdShHf6XlgGck3aNe65yYQhV33yXC
-         juOZlXDVBJkfxADwfTS1rFe86pH0KD5nnrFuV7mnkUOgaXB2Rv6pDLT+5BmBSywPxYVX
-         hXRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760436173; x=1761040973;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1760436175; x=1761040975; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=1c6b+GqeawN6AugUtZw8SvN92PfqxV890zC2ujYfseM=;
-        b=LHtl7UiprENeB94xzR6N7679i+qudf9T3SMZpuLunuV8KGSgGQjCqz8DTJSCt33JHn
-         9AFBsvacVDq/JL2Iwqsy38IJJODRXYpoIjHgDntDCWLqY1GGI/VKN1baOMQuxFRRGxQg
-         Kr4Vmn9vKwoeuUSdr9NsOCgNMAhDEmyhPRCCT8H1r4/T9awIJFwrPfuiJ59VG52nYu1L
-         OvtaDGWbQyaSlFwysiULaFeyPG43sWooB6SeoHsVSM4VtSzaiNpAWFeZojYj75HKvDnl
-         LO1NJmi4+Zzk7lfhOFX9Hdt+Rs85JTauKsSb2597b9HqcY7Jrh3ERaLNUjyp/VkhIkjB
-         M84w==
-X-Forwarded-Encrypted: i=1; AJvYcCVREP1GbMCVqCp4t6Axc6hqryuGPUakPIYZnDCl0o2p912NYK8gqHnwGGx3n2qcHYEut2Lg8RCpwzo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw2ZSoRlK+MNIHiZ0JqzwiG2H1/Lv7xNImf4U3Dkdpxogo0diXJ
-	nIMzNgFmXZAfzF+Wmq5tLYbYwW1r8eyUib5lJwDYk/pjOyTCraVDg6CqZEqEEEMdN0A=
-X-Gm-Gg: ASbGncufEtdLvh1UOKYla5ELeYAPMW6UZAhf2gBNVbxTNE7kH7ASKk+9OMhWe4oEfiZ
-	vmp8ExCDYpzpg+g1wGNO0olzver3wpDsfXkRb7iNZXNq+NoxIfIvo8o219Kf3Ra2yBk41VFPbga
-	0KjpzYZK2hklO5aBKmcidcix2LQ0LCgwkvPrOOCX2dQd6Vxi++oetPxu++TK5rLeTYnfhABM/Rb
-	NWeGfTmsvq7leHpNIO/Cd4Y2qcHhqAvWLAwF+qVvYVAC8MCQ6EYrMNLiPqki7zbhmM7GG73fogG
-	Y5E0ioL9NtCZJqdTws1icIkq/0QNHUxKTLGm4jsQhJWgb/e04VcUamcvMgj/1v/WN3Ch6Aczcek
-	Q+S9czLXoA2aimN+9CeHptJn6AskS9XKWK/mgdn74HZY+QDdYkEgJMQ==
-X-Google-Smtp-Source: AGHT+IFeF879+ZVKEsJpJII/6YXJBFFuE25hKrVz1ilfZmhvgCYyYIsyl9axbuskS/eO0lovEnBZtQ==
-X-Received: by 2002:a05:600c:502c:b0:46e:1f86:aeba with SMTP id 5b1f17b1804b1-46fa9af014cmr155783425e9.17.1760436172814;
-        Tue, 14 Oct 2025 03:02:52 -0700 (PDT)
+        bh=cVJfqn+CURZR5kgzfDjtV++23e8mA5V4+ieWpLbcMzI=;
+        b=ZeMCaNaZehqdZLHnfd1koLtWMx9Oy+QEOOh3xB8dyelvX0/OVbyC5PHfDzGs9cD1pK
+         E/ah4eXEjive1jSMkGOId5mQz/rCfehjRE2dsJB4W4pfzm36F4Hv5RAm4gEnG2g/DONO
+         l8PC/ta87P1jHKkG0aNWym6CROys1dNo0Zlzwn57wEXdtV4xzFCyuQMvh3vi65Hz6s/F
+         46ozp5Z7yYDcA5bIi65unsamHbP7laEcsIMcHfdF/qkiu2opSrE+NMJrgmleTdnvdeLO
+         9cO5nByceWpxfu31RwsiCZSb5mthk7nEt9zCFiCDN5ipEtKkdQB0yEY36duGJJWWN3UB
+         rKJQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760436175; x=1761040975;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cVJfqn+CURZR5kgzfDjtV++23e8mA5V4+ieWpLbcMzI=;
+        b=wnNYCKnQByd2ISWCSqrTF/gMSKL1MFuNghPUOmUwprEg8EvS7HntaFRLJk1u/laqMv
+         DPam9FVnwjQmYB4cnPzmS9V3bzNOkmi81RyeNC3telqq+P0WEXX2NpOJLRHa/8iau9Zz
+         zgHWjnTSNWwAC0oTSHbQmoSKzZ7OdvbRx74DSuz/8PvkzqG+qroHqDRVmsho9vkbE9Za
+         YkcU96p0UMwRqIgY6N/kvz4oRmqdyUdrPd96MXF8P5FyqZipNnT7ia2/r2uzGsZMYzrX
+         HCyFCVnXbk5OmWKZaCC8t1M1ZSv2NpXZ8EpDRxruCQ1M38fxxaXJu3H93oppw9MZD+k5
+         4qTQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVrkJaHvQVoMThB0MNggBj3K/y0DSCPFoWACs/zNE+b9wHKoPGn4ggAJT/Kw1jynWKke+pCjhb6xaA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxKHTbjS6Yy0aSj+JVsolrPARsGLCjyYlhgCu54OoulKLq91jD1
+	4QfmZ66e6g9IfGfBpC3dW5LwIyLuQC5Mp0slskfwCsemkwVpeqzeuglpq59/BNP94/Y=
+X-Gm-Gg: ASbGncv+ycEp+iZxZW42OBu0Twha4SnLFsB23Ltp2nPDC4DB1GveEOqVK9EdFr9QIWt
+	l9uD5G0Qwp2cbfweOTT5WUvt12Xx95buQyjABOBX4wUAIb1WFVxiO1JyZBZ9lkNY7WVINL+oNl4
+	LboMpYKh2wAUWBsMC+6eMCMzQAeVBvgsIQfsCZ9RVwQCfCzbzXP20HYxRN0TVM330L+BAaiwAHJ
+	0xkXv0DJdXgmHlXDbdYkmGqhcEuD37HQlTvyn/jhtBt5Hiu86EGNr83hV4es9JOqbN8XiB+92lK
+	g5VgNeNOE9uKsjZ5HoWaPgKZmCGIyOzlKbEmTgQ7Ha3XUaIyt0iVwZCcPmrnGE9w5apeiR8HQBU
+	zAEKL8vaj6MG1YUNfQjwj3mcgdYT2twq5K1QQgA7Ut+c=
+X-Google-Smtp-Source: AGHT+IHn1J3P6w0TT3kflXZRWIHbxv02CVqgaJ7Zj1UOEcse11mXhprORjqLY8jjisVskI0JowAdcg==
+X-Received: by 2002:a05:600c:1e86:b0:46e:4581:6634 with SMTP id 5b1f17b1804b1-46fa9b018e1mr176937295e9.29.1760436175311;
+        Tue, 14 Oct 2025 03:02:55 -0700 (PDT)
 Received: from hackbox.lan ([86.121.7.169])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489197dsm239615305e9.10.2025.10.14.03.02.50
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489197dsm239615305e9.10.2025.10.14.03.02.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Oct 2025 03:02:51 -0700 (PDT)
+        Tue, 14 Oct 2025 03:02:53 -0700 (PDT)
 From: Abel Vesa <abel.vesa@linaro.org>
-Subject: [PATCH v3 0/4] phy: qcom: edp: Add support for Glymur platform
-Date: Tue, 14 Oct 2025 13:02:26 +0300
-Message-Id: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
+Date: Tue, 14 Oct 2025 13:02:27 +0300
+Subject: [PATCH v3 1/4] dt-bindings: phy: Add DP PHY compatible for Glymur
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIALIf7mgC/4XNTQ6CMBCG4auQrh3TH5DWlfcwLgqt0ARobaGRE
- O5uITHRFct3Mnm+BQXtjQ7omi3I62iCsUMKdspQ3cqh0WBUakQxLbDADFw7w6u2PWjlQCoFTTf
- 3k4cwOWf9CFRyQkolaMUFSorz+mne+8L9kbo1YbR+3gcj2a5fOz+0IwEMmrP6UglJ8qK6dWaQ3
- p6tb9CGR/oLimOQJjA9F4xxovNS/YHrun4AN9TtnSABAAA=
-X-Change-ID: 20250903-phy-qcom-edp-add-glymur-support-2a8117d92b89
+Message-Id: <20251014-phy-qcom-edp-add-glymur-support-v3-1-2772837032ef@linaro.org>
+References: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
+In-Reply-To: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -86,29 +84,27 @@ Cc: Dmitry Baryshkov <lumag@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>
 X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1831; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=SVtMO7VUBLSAh8tqnEqoTPss3ef9mx54zpbAairZ8UQ=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7h+83gSTsRn9fQ8mn3dvjXIkW9tI8b06P5FCJ
- a90fnDYkB6JAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4fvAAKCRAbX0TJAJUV
- VoTyD/wLoSKlk6qM/kYRJn3q2sUnNKCGjNvMO4l1wD77dL6VELuCYerCQ1iqRE9M2vqXsmHU0Kb
- 9LYILHrsywic2wK1SZvJ1FKfGx7dvreGXljDLjqx34ANm5bwu1ZforYQonfw7ngEkThuGQl0T1V
- XyVcqDy/zkAvoJ0nU0PCaH3DlWj3H81shqWEwiJtQIPLaO5xrmbrW75yC/v78cNjKIVR8HC9xFf
- EjbPbCXZY1n9UIuewFuQbK+dYTOxeA3Ze0V6BWWeRYiFWdbXfH1grqXzrBiiMcaSxer6z/ZL6P0
- UJWSSCFqNbA96c0scoRuM0fjDNhLnsilrYuBYEfBkaSNczAOWTzU0Lb5o0I0OyrCmwU4/k2t/Ff
- Uj4dnrYYXRDVmt2Sse97ZJLLvijcmC0v7avLMCOxJQBQIQ2V/4qg/I6QP/tONMHYn1Qs8qBwkuS
- ryIsn7/Hzg0AwloJLq+dxZhPAI6fyqOX7TmFTQSFxs2w0PCu6lPfMo/W+WYMOHFaxI3pGh4PV0Z
- hdct7EEVRw3ivOwmPqvL7y6FeZT9UJqflZitZB75V2vWl6AjUyVbg5kPSkpP/SeRzYttUL2jJqR
- KULGBIJMsm7fxfe5SKeaJrcapOFh41xwHdTne44Ylb1Kk8NRmcOde4Zk3ciYoG2Ncn7X9Z9iJpB
- c5ZZQjFbfS1j2Qg==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1167; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=SjQNMcKFiFxf1UzqcFbV5V5FIrz1nf5P1xbHJ87t43c=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7h+/P9kfefQL9Xhu238N4OW/+ki3a8ZQcLA+5
+ /LnZTJxNsaJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4fvwAKCRAbX0TJAJUV
+ Vg0BD/0TH9WNgHrWjeqkeEuXihRVj7jKEy9+iMDKrSQ8/rwR7ChvS6cRGpe+u/O4DAzGomvgO8Q
+ lx7b2fwpoWlEowETy6PImWEB2TmpNXUBdD4zo/BDHLaoISEcdcHToJpihgWYI5rMnQ9zhRIKshe
+ q9ufkvxu3L/+/u+FG9LCc7sES2xB8WjJFaoPQpROLNfaNB+9455YfeteCb3SvePUAzbtO3qJavG
+ P4igEdfz7GaknEHv9wlIiYb08v5jJJKCc+PROmlHQfojvQvbED6Rn9+YuymS57MnV0bhTRt8Mb9
+ QVXW6+6YpfLU3eTjLBgPlrGF4wjF0kuAl766P+FjYwDscU0MUaTXk3FVehoO2uLB3KXmXJpvpQT
+ zTlh2jLKjy/lJk9aHxChoS/hVQk3Ac+U6LPqYcfEplRrKF9nXeBWYoRbQ4+olOltcY01+QnIeKx
+ 1Pp/9Wx2UxS4HDM3pFw8g3MvCkA8FRpo5kcQXqDBFVt1+kFy0vUhmlD3SIzpzohIgWX4m1+tx3X
+ WsPCgPkRq9UoKN9VSpzP1urz1ueT52u2OrGpa1X0AbIvOCaE+eBdacV669Tgx/F1mk6nR5OynX7
+ lar0vq/2GI9bGPxHKSu0ZAvctRDk2YWF6csnxydqF1krfDNbM0Gh7dxwEVGM05IFMnpuhpkrJLX
+ dxT0tKQyUxjylrQ==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251014_030255_069974_FF7F3203 
-X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-CacheID: sfid-20251014_030257_249422_E909A19A 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,50 +122,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Glymur platform implements the eDP/DP PHY version 8.
-Add the necessary registers, rework the driver to accommodate
-this new version and add the Glymur specific configuration data.
+The Glymur platform is the first one to use the eDP PHY version 8.
+This makes it incompatible with any of the earlier platforms and therefore
+requires a dedicated compatible. So document it.
 
-This patchset depends on:
-https://lore.kernel.org/all/20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org/
-
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
-Changes in v4:
-- Force fallthrough for 5400 and 8100 link rates in qcom_edp_com_configure_pll_v8,
-  as they use the same values.
-- Picked up Rob's and Konrad's R-b tags.
+ Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Changes in v3:
-- Split the DP_AUX_CFG_SIZE change into as separate patch, as per
-  Konrad's request.
-- Re-worded the dt-bindings commit, as per Krzysztof's request.
-- Link to v2: https://lore.kernel.org/r/20250909-phy-qcom-edp-add-glymur-support-v2-0-02553381e47d@linaro.org
+diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+index bfc4d75f50ff9e31981fe602478f28320545e52b..4a1daae3d8d47ca5f08d97a1864cfd615dcf108d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+   compatible:
+     oneOf:
+       - enum:
++          - qcom,glymur-dp-phy
+           - qcom,sa8775p-edp-phy
+           - qcom,sc7280-edp-phy
+           - qcom,sc8180x-edp-phy
+@@ -72,6 +73,7 @@ allOf:
+       properties:
+         compatible:
+           enum:
++            - qcom,glymur-dp-phy
+             - qcom,x1e80100-dp-phy
+     then:
+       properties:
 
-Changes in v2:
-- Sorted alphabetically the both the compatible and v8 specific
-  configuration.
-- Prefixed the new offsets with DP in order differentiate from PCIe ones
-- Link to v1: https://lore.kernel.org/r/20250904-phy-qcom-edp-add-glymur-support-v1-0-e83c6b9a145b@linaro.org
-
----
-Abel Vesa (4):
-      dt-bindings: phy: Add DP PHY compatible for Glymur
-      phy: qcom: edp: Fix the DP_PHY_AUX_CFG registers count
-      phy: qcom-qmp: qserdes-com: Add v8 DP-specific qserdes register offsets
-      phy: qcom: edp: Add Glymur platform support
-
- .../devicetree/bindings/phy/qcom,edp-phy.yaml      |   2 +
- drivers/phy/qualcomm/phy-qcom-edp.c                | 232 ++++++++++++++++++++-
- .../phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h  |  52 +++++
- 3 files changed, 279 insertions(+), 7 deletions(-)
----
-base-commit: b529e9498b7948df2be579282cbf0d5a9a3b7f9a
-change-id: 20250903-phy-qcom-edp-add-glymur-support-2a8117d92b89
-
-Best regards,
 -- 
-Abel Vesa <abel.vesa@linaro.org>
+2.48.1
 
 
 -- 
