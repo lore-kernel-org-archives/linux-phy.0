@@ -4,81 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 241F7CCD18E
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 09:46:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3673CCD187
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 09:46:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7XnadRSIEhytPsDGRdqPBqRh07bWFE4UCE+LBtG6ndk=; b=DA7KwcQUB9VELj
-	9nfVYn513aUhj7gOnB48sASL7XQ8MumBLDhoheTquMVtw73w2GMLeqS7dtYkVNr4vuaHwxRl+KBu4
-	u/zV0IPKsDOPDxtFArTpZC0HyhVNJLWy04CgFWFn0mROKbx+FB5PmZRMjy7x8GeO8U0pgPny780vP
-	Tn5g57vHo5W/HrCsJlebq7g6Qis1G0RjyS1zLtx3+tB1PtptWE9WEpcyGzLs0A6o+31NM6DMt/0kA
-	yUHyrmFgbpX47OkeH1/k5TTqpYS7OH8m/QsBlvFIvrPtuctaqBiXG6mjbAZ8dFjw76lsxNb4w8dnl
-	gl9jS4frYr63BAX554Iw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r26K8WDIRH2IbO1BtL/kZu++nVjNxRCxpixT4P4FNEY=; b=Fpc14cn3/87+Nn
+	9z9nU/Ou6ujrFZHYO20DbGb+T5kMeJO8TQhKp+fLTKcI0E4jLa6IATr41akJqfMzov2JFpP3yMLeE
+	tlYxPc3TWl3e4iXCiCgZOGs9TDgO1klN2cwoj2/FVpJWtkhwFoKX/RKbN9f4ErQYubwMeCjTm0NPR
+	Xq+py47izYCBopDzV7FCDDoKiBp6uTrAUgFQbkvTRQ0I6jyLXxkb23fkiek7FMB15/zt2TB2jYsOk
+	FxogUvUsnGmmr0aUVdvgZa1eoztQ6uIhXQwLYRyMtu3Slh0o4YLcOJj461HfJs6avml6No1+ILA4n
+	Lo0P9uTM+mRPAInZc63w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8bbw-0000000FoCy-3GMz;
-	Tue, 14 Oct 2025 09:46:29 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1v8bc1-0000000FoFu-1yuC;
+	Tue, 14 Oct 2025 09:46:33 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8bbt-0000000FoAQ-3fsq
+	id 1v8bby-0000000FoD0-1XAb
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Oct 2025 09:46:27 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-421b93ee372so2743215f8f.2
-        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 02:46:24 -0700 (PDT)
+	Tue, 14 Oct 2025 09:46:31 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-3f0ae439b56so3032132f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 02:46:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1760435183; x=1761039983; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=2bKZTYq6/6Otgm4/JoAPAscRI3Nhvh8qLkW+Q3h459I=;
-        b=AagW8BZBTZOKvQqP8e+Cxs0aJ4TOupu7fgm+2XlDzb9YujUjLeRHEtOPsqrnD1P+7Y
-         Asn2ZXiPiqf/mMnuwKmXDxbhK1WUcya/ZL3sR12pGdmg2s6if4jLytJDuIAIXa5xK9bG
-         ldfTd0AM6QDozG3azLy7bXbQcuIacSMcPFBTc4ggQ98+734ZhSSYlAE3gRVfzl18G4xW
-         Zn4PYvAFseYG/8mkDjUmQCRRp3hBH2yT0b9o0cY1ur7nMYIP7U6YzMe1sDtpV+uwFbVM
-         TSO5qNyEyX6w/RDtqUdufy8yW0HacMo7vljrOPP7cn1dEy7i6f12n1keK/la/VZGTcZ1
-         wOnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760435183; x=1761039983;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1760435188; x=1761039988; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=2bKZTYq6/6Otgm4/JoAPAscRI3Nhvh8qLkW+Q3h459I=;
-        b=F3M0x/nxeGw/t17Xu/miv38QrPotqm6J+oa4yB7s+5SOKLVhd4H2wXBp2AMJEwXyBk
-         KGKDHAnAsWaZPHGTyjz4yWTJq5OzSIe055N0+M5lkI57Z0kvg/kfPYkdmShyRQDMEP33
-         jHsgNoOp183TJ1qgbW20kI6SPFvokzTjP35P0fn6tr1D2Bf7c3OkeejfHstsXntb0pdq
-         aXT7D/oQgdPcL6K1xbANjuponQd5tRLRDZ+QgrirOCTzD4m5wiiITnyTqFCJ6aI40Gqo
-         g3451miZ7FWEqHZlhsYY0J96Ug/enzeP5eyOKXp+mxcvKEJ76/UKFNSQXoRDVOld8a2/
-         9ehA==
-X-Forwarded-Encrypted: i=1; AJvYcCWwdAf4+rI8a4QBrPeOgFI/8yshMAWVSL7Pq3bsapNjc/HscAmB94OiBr7IuXwTIYc3A5hZZV0irEg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxy5+WeqmIioIulTBXFAon2hKBp+rEXDnS+B5RdGCfLMW9ONudD
-	YcwdUpOoyUODKngFsnXH2wsJx2fqhfWphCh/Ai6TwahnyEzGceVsOdxajv5JRaOeI30=
-X-Gm-Gg: ASbGncsg5COojbq1WKk2wDfFQABcJxE3WDWBFwO+IGzT6bCMgTgT4SfXy+ULA7emPRT
-	DEzQ8WQsAyiZeFtsjSOHX8Ga4hqcHe0/SQCjxgABToJvcI5AK2kjZJodhNL/6R3/DOIVMLMzpsm
-	P1WMIVvwdIRSkFbeeOJogyYQrlGnKRkY4EalGZ5hExo9fkeXb72gmtl1JpCZa0GgoFUfsSPKbFV
-	tecYH4Sb/r69p6w6Yuf9+NzGFUcCYJGU7nUftFuQ7S4q3ykes1E4yJZ2BvsG2+xs4+U1Wha+jGd
-	GFJhCChXj/Ag8kfL7kRx+4BKICtM7JLdzqO/kE0VFWKE0KDzOcKorFRnlvdyP+IMWMXQQhwzlpI
-	pgqql98XzK8HxowtiUQBWlqRaw4NniWewRJIIUUx513KgnHSIogRLJg==
-X-Google-Smtp-Source: AGHT+IEUB3DwM5KbLo0YAJy95OK5FzaMYTEWXQtizciZwE/s3oqnbKLTxn0r/kkXbHky5tXVsGFBvg==
-X-Received: by 2002:a05:6000:2305:b0:3ea:c360:ff88 with SMTP id ffacd0b85a97d-4266e7dffe5mr15539748f8f.31.1760435183185;
-        Tue, 14 Oct 2025 02:46:23 -0700 (PDT)
+        bh=KnhRFLfQaO8pIowD5rNcrWOdNtst07qFW/F+KRDikEA=;
+        b=mzBLOpQQR6CqzRK/5gXeDCKdbNOB7NlEz9vitvVmflicg4o+N04ceFFm70HDSGEWLm
+         +mK4pET/25pzL2fd/VyqyKdAB94udNxAssmdupfw8QdW7orDsjjY7agbuIuHplEAOk3m
+         rEQPrThhlZfihjPgpcEibkLcMJYaCuHq1kOCIb2Ax2bkISiydcEBvcRO/jhoB+n3Gary
+         3MjKllFHCrm/P3Z2YD5oBH+iHLspuzHLLHHs7unKI2FKUR3w4eT4u7vlUedyAp6AzNAi
+         KPNgEs+C0v6MqkK1ZQcBXt+OM+pH4e4lmrDNPZDvWN6kUP6Of5UC0Z/yLt8ReiPEyFLF
+         wO2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760435188; x=1761039988;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=KnhRFLfQaO8pIowD5rNcrWOdNtst07qFW/F+KRDikEA=;
+        b=evKcTCusYwrULLo5NAjrbRf0K0XeL3/Qt8+tewEwKGGWiRew/ojVoto8NzxQW2zCym
+         bHPWkRb4thSNmH+5ePr126Trbulklr0ddGjbRtokEi5o2qgHnzGvBkENSDJKdxm2MpHt
+         KN9uhZY2hQdbkHQjq/gPvDw7cAFiVpEwhJJvFnc8Vefifa8j2msO1acZLXXeooL05F5d
+         bZyhYIAXZc5PiKlIp8dfGEszAeRUO6WP/rIoFUb0xvVX74IH/eT011Y8mDmvcZP0/NkP
+         js/18AY+nK+arv9Y9gqgM+/KN/7Fb9+X/4hwVvpfnw5hBEmVm/QVP6f+P3LLwEmK54an
+         nT4Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVUtaWbG2v4e9Fa/dqG8VQf8KZq1zLl5SJgaxzlyo93UHvt2TOIP2H1DNrPu7XRBVMlU32ARAR0aFM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxNjgWFTJ/PB37Lt/qrSsuRvDpwcnf3x74POpBNtB8Tw/54MxL7
+	OLTSunnd8ttuiwvtXGtPH16/diVkSb/3AkM2lEzgMLoTmwGbo/5JiKP2SNuEjHV7I6A=
+X-Gm-Gg: ASbGncvaIjIxJ3UzVgt6pvHPfDLZWnH5ngeaVES9SP5OYQbNbOxljtk6VA6/XKVfkW6
+	H8ZBspJuJjzUoA++Zbc/HGQc6m0tJ/h0uoWw5b3IMNy93MQgBw7pQLLiWYrUBZpO36OzkGJpkaN
+	qwcvCSaYwGuk4uQSDHHvqAgPLDy1EcRLRatGUOckcyOCJtX+14Ru5agXNG59M1yKn9weGDZ88nL
+	TthRdaNRVxCl9HDyDPt8s4/waBemcZ6RGJ7wjSW8AkEcAQFhbIMwC88dwJ2QyLHLz3BZM1IgVn2
+	QedRgQTZyURKUEFTiOZ3qB5vXa/5kvu/0tWHnWVwkdEZmE5zpX73iRNDJuuBOSp5xHIeMO/vjHP
+	PlFMpdw1FihC+OvKEbe9IuPkjr/Xkuk0Q6ZkpefK49ik=
+X-Google-Smtp-Source: AGHT+IFXhmtv8zqtFThQ4wP4GXOnS4SW/hYu7K5sk0wtbU92NOb2q+yfXz84YaQJJ4YvyUnKm5VinA==
+X-Received: by 2002:a05:6000:40da:b0:3ee:15c6:9a55 with SMTP id ffacd0b85a97d-4266e7e00b8mr13699381f8f.34.1760435188415;
+        Tue, 14 Oct 2025 02:46:28 -0700 (PDT)
 Received: from hackbox.lan ([86.121.7.169])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-426ce5e8b31sm22866442f8f.54.2025.10.14.02.46.19
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-426ce5e8b31sm22866442f8f.54.2025.10.14.02.46.23
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Oct 2025 02:46:20 -0700 (PDT)
+        Tue, 14 Oct 2025 02:46:25 -0700 (PDT)
 From: Abel Vesa <abel.vesa@linaro.org>
-Subject: [PATCH RESEND v3 0/3] phy: qcom: edp: Add missing ref clock to
- x1e80100
-Date: Tue, 14 Oct 2025 12:46:02 +0300
-Message-Id: <20251014-phy-qcom-edp-add-missing-refclk-v3-0-078be041d06f@linaro.org>
+Date: Tue, 14 Oct 2025 12:46:03 +0300
+Subject: [PATCH RESEND v3 1/3] dt-bindings: phy: qcom-edp: Add missing
+ clock for X Elite
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIANob7mgC/42NPQvCMBRF/4pk9kmaUhudHOzqoKM4pPloH7ZJT
- aRYSv+7IYs4KQ8e3HvhnJkE7VEHsl/NxOsRAzobQ75eEdkK22hAFTNhlBW0zCkM7QQP6XrQagC
- hFPQYAtoGvDayu0Mhas7iGa5LEilD7PGVDFdyri7V6UhusW8xPJ2fknjM0vq3Y8yAwtaUXBgtV
- C3NoUMrvNs43yT4yD7AHc1/A1kEKs5lVlOp4v8CLsvyBsfdUy0oAQAA
-X-Change-ID: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
+Message-Id: <20251014-phy-qcom-edp-add-missing-refclk-v3-1-078be041d06f@linaro.org>
+References: <20251014-phy-qcom-edp-add-missing-refclk-v3-0-078be041d06f@linaro.org>
+In-Reply-To: <20251014-phy-qcom-edp-add-missing-refclk-v3-0-078be041d06f@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -92,25 +90,25 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
  stable@vger.kernel.org
 X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2061; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=l3LysOIyApMjrPfw785wmo0UxKg51Ii7YvKFAglf7l4=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7hvgVAHgN7NhN1/gnFmV/M7oRWvD9UaYEhDcp
- EFbt/WOLzOJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4b4AAKCRAbX0TJAJUV
- VjPUD/4vUoPpHoZQWjDPWDIax0TPyCIZXxnvSmDbXKi4MhCqrcHcqwDOearqPMQ8sxSM7QmlQ2b
- KGS0+yeAvLVpGGIfMzL8PbjdspuFBqqa7HRvq26iaynnnb3XzBwtY82XMW05SAVh1mA8c3frW+v
- TyrcvmlnC9nUqZlQPiaheoyJ3+KPOKIL/IHSBSonTKoWTEhFTIzQT08A+MlJKAEatGZ8Rw1j6O5
- bT0eISB85t7O7wRCXnUsvw+3dVF5dCQA/EW7KR4XnYcAAikYMTTi2F+QM7hPnP36UWs44pSaq/u
- CiLbgozuozyDaM8SZwSEyiPC/mbRyIuOpWYeyeAj7zE9b9QE4wtFZYqUiXLFpkcTu+vTjuHKx/J
- 9Cx8cSdYudTX3X2dT3KQgvqPuM1+mFkpeYnibSDgQqLYs4cC2/NyoqabG5B0Ba60cWZjoaWLw+Q
- qOnjtM5NFKVKHHsFOP9hUOYgBI7CkHoQRG47iXJ50lmvCUqR31nrSRkYGPOwAZ5AqsFUlDZG4K6
- pWnso6ZqhODJmEFSympcsTLFII5/A+1PMhzlDp4v++C2h/kbeks3HH0UfGyTSPcWQ0goKvw2Dpa
- B8lZPdjzvzgIKMyx8lnE6jsr7wqd60+pO+J9TJpzPASUa52RGX7eDdrtisyyrZ8hW5qDG7+2EFB
- CTJZTSy9WL91a8w==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2071; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=OaVD3kgCGNuvepXOAnIi/Jmw2IJiuqOadOslMs/qPqM=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7hvjUncltiOMHWO3SuDDxpda2OpYU2rLNm6C7
+ uQpVNVVCjKJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4b4wAKCRAbX0TJAJUV
+ Vk96D/4w36skQobp628M9KrofHekiWoDIJ3lHS3GsMM2ZGVAg0RbtIH4G+JPIFjFQSL5mfBssp2
+ I/DDwKegs3A8WsG2e1cTvD+2I7KDzoVFdeI6t0C0VpXkWzfXjqjdC7CFyAb5TeWgIFAJSyR6JY0
+ hRXgOFWOHetXfZlKd8raA21/+EGY1nd2D2KMI7rmTahpy5cTzoVPJUSf4hk67w+0orv6WEv0PBH
+ RlKfyQiQ3CBKvGYqqe9DB5VrK7RxDDKn6/GxL2U1pR0SLCXhJJt4/Bcj123zYRt2jWTSPFiPsPh
+ TlTVBnPBfQ4DUmidUafFXLDsg/ykx/txAxTef0OFwzGAkhksy0icxt1E9nX++LvTJuwo+BW9AF/
+ 0qckAxKWfFl+UnMBqs22oCpEWXQbRvuRuQ6mweO/1p1N7X592GMY1ybd7kvcatW467+LNnXaQym
+ gnxxlJc0JNKNq0RpcEwpccV16S4MCC2XPtnnk48qXU38JaYl2ArAL0pNscuiV00SQEUtJO9OTAl
+ 1reMU7ez1xyomjSLc476wrlXd7f1MnxpZ4zrg4ykRWgVHM05jQ9il+B7Oy5inWz66Xo1bjmUF81
+ 5+TJb+lPkgmnLbtfulUc1GOY5mdni5JIPpIssrBWxB2BaIMP2XwToyWBrs9OWQWnKubzbQ/kIky
+ mMFV+QUqAhamXQw==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251014_024625_969179_71D08D28 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20251014_024630_456958_9FDBC8DC 
+X-CRM114-Status: GOOD (  10.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,54 +125,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to documentation, the DP PHY on x1e80100 has another clock
-called ref.
+On X Elite platform, the eDP PHY uses one more clock called ref.
 
 The current X Elite devices supported upstream work fine without this
 clock, because the boot firmware leaves this clock enabled. But we should
-not rely on that. Also, when it comes to power management, this clock
-needs to be also disabled on suspend. So even though this change breaks
-the ABI, it is needed in order to make we disable this clock on runtime
-PM, when that is going to be enabled in the driver.
+not rely on that. Also, even though this change breaks the ABI, it is
+needed in order to make the driver disables this clock along with the
+other ones, for a proper bring-down of the entire PHY.
 
-So rework the driver to allow different number of clocks, fix the
-dt-bindings schema and add the clock to the DT node as well.
+So attach the this ref clock to the PHY.
 
+Cc: stable@vger.kernel.org # v6.10
+Fixes: 5d5607861350 ("dt-bindings: phy: qcom-edp: Add X1E80100 PHY compatibles")
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
-Changes in v3 (resend)
-- picked-up Krzysztof's R-b tag for bindings patch
-
-Changes in v3:
-- Use dev_err_probe() on clocks parsing failure.
-- Explain why the ABI break is necessary.
-- Drop the extra 'clk' suffix from the clock name. So ref instead of
-  refclk.
-- Link to v2: https://lore.kernel.org/r/20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org
-
-Changes in v2:
-- Fix schema by adding the minItems, as suggested by Krzysztof.
-- Use devm_clk_bulk_get_all, as suggested by Konrad.
-- Rephrase the commit messages to reflect the flexible number of clocks.
-- Link to v1: https://lore.kernel.org/r/20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org
-
----
-Abel Vesa (3):
-      dt-bindings: phy: qcom-edp: Add missing clock for X Elite
-      phy: qcom: edp: Make the number of clocks flexible
-      arm64: dts: qcom: Add missing TCSR ref clock to the DP PHYs
-
  .../devicetree/bindings/phy/qcom,edp-phy.yaml      | 28 +++++++++++++++++++++-
- arch/arm64/boot/dts/qcom/x1e80100.dtsi             | 12 ++++++----
- drivers/phy/qualcomm/phy-qcom-edp.c                | 16 ++++++-------
- 3 files changed, 43 insertions(+), 13 deletions(-)
----
-base-commit: 52ba76324a9d7c39830c850999210a36ef023cde
-change-id: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
+ 1 file changed, 27 insertions(+), 1 deletion(-)
 
-Best regards,
+diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+index eb97181cbb9579893b4ee26a39c3559ad87b2fba..bfc4d75f50ff9e31981fe602478f28320545e52b 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+@@ -37,12 +37,15 @@ properties:
+       - description: PLL register block
+ 
+   clocks:
+-    maxItems: 2
++    minItems: 2
++    maxItems: 3
+ 
+   clock-names:
++    minItems: 2
+     items:
+       - const: aux
+       - const: cfg_ahb
++      - const: ref
+ 
+   "#clock-cells":
+     const: 1
+@@ -64,6 +67,29 @@ required:
+   - "#clock-cells"
+   - "#phy-cells"
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          enum:
++            - qcom,x1e80100-dp-phy
++    then:
++      properties:
++        clocks:
++          minItems: 3
++          maxItems: 3
++        clock-names:
++          minItems: 3
++          maxItems: 3
++    else:
++      properties:
++        clocks:
++          minItems: 2
++          maxItems: 2
++        clock-names:
++          minItems: 2
++          maxItems: 2
++
+ additionalProperties: false
+ 
+ examples:
+
 -- 
-Abel Vesa <abel.vesa@linaro.org>
+2.48.1
 
 
 -- 
