@@ -4,70 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAC9ECCD185
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 01:56:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BC51CCD183
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 01:57:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HG99V3VzJz3EZQcR6/LHF2azpyzmLdiwAAiXgij9UK4=; b=Rj4Vt+GAiuvc2Z
-	susAZ6CdGmqxmBqjR+g504oghmRRiMZzyrHuFB2lduD3CBgg4j7c2KCHtOw6o86SmFuIuNSMxHFky
-	dN8j2jOKUu2RevxQqqErtvCADZHUEpgi1OfFbk5bTK2AIefz612N0DxNlhUCUDAIabGmLMKDAiCOf
-	7pHpVGsClQOGTbfdUqlvW8rXBgLj6NvdHmHQ0b3Zs80TPUS0j0En/iZndMFBR/cGXpZBEeHtq5n0P
-	UEDrWmmPtu76QiM7EVnujNwMQ8e570PQH8KEJ5G2YpRl+JpSOjOew1oH539r2ETyaR8w2Lj7gwK34
-	WS86WxPN5JKG5eBK1KdQ==;
+	List-Owner; bh=MHjxDTFlz3pC3xXYl6ZOX28R1psMF3OoJp6UMhsxjqA=; b=mlmjqNyRSTG/8U
+	LCdvu1wFQu2C3SZE1OOxL8cSkoQ+KpXZMPzpic/BLYs6zkYkEb2viqQBs4E3g5Fl/90GQDkG/riX7
+	RqHjYFQE+/IXNboPsamLNnF0LuSpCTMRnyeZhM0eYCCWkXA13VujQcxz3kORrskLqZ/H3stTMcrzf
+	E8QGJTK6TzmnyCRpcFy/c+N6PLkwa8ZsBseew2PVScQg7aEwcwlVMFLcvBlxOp3gHnpwhvouOjwfB
+	r8JISlUrCiJwZ8dTrp73p1/gqrrYY9UK4sm49o0L5jdchkhF/r3Ndo/tPzyXkbA7X8sk7wl0/x+Lk
+	1Svy/E5T4wIRCOQ+blgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8UGf-0000000EvdM-15A2;
-	Tue, 14 Oct 2025 01:56:01 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1v8UHw-0000000Evq3-3uRu;
+	Tue, 14 Oct 2025 01:57:20 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8UGc-0000000Evcl-1sM3;
-	Tue, 14 Oct 2025 01:56:00 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 2318725CB6;
-	Tue, 14 Oct 2025 03:55:54 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id AkLoRsdbueVj; Tue, 14 Oct 2025 03:55:53 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1760406953; bh=0mh4xG7+M6ggnaXpSXp8eTqz5OBYvKU3WBQiQrvVGBc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=iFXrCGwe3S+r7Iu59V4RRMK+8KqNdYf0Y1nCPBYRaS1Uxs9cSz65LUhlVF+z7jlNf
-	 anxe9TPPc16H06SRqR/iygEsRqJ2nrCteSSXVgVQ47fvwY9JTogktvvpOFWMxcyljr
-	 J1OB1TRF6C0XRqrh5PMijvbKMuX9oD/Ha6BfleDrn9qD6diUFHkA8gRmWsXR0MFD0l
-	 NtafMOB9EPDHsxkgxWZD5JOKVvEnO/4Qk2LqdMmSwCw2Wu330kDf4pV22+jEco4hAL
-	 RZtHkuSBQ7p+VPvG3ksOXSpCJp+x8Z8u1WreE/R42/3sQO1T/f8yB2VpEvsuBtNuLV
-	 IlHR9m6sjEGKw==
-Date: Tue, 14 Oct 2025 01:55:28 +0000
-From: Yao Zi <ziyao@disroot.org>
-To: Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, bhelgaas@google.com, lpieralisi@kernel.org,
-	kwilczynski@kernel.org, mani@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org
-Cc: dlan@gentoo.org, guodong@riscstar.com, pjw@kernel.org,
-	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
-	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
-	shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com,
-	qiang.yu@oss.qualcomm.com, namcao@linutronix.de,
-	thippeswamy.havalige@amd.com, inochiama@gmail.com,
-	devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+	id 1v8UHu-0000000Evou-00HQ
+	for linux-phy@lists.infradead.org;
+	Tue, 14 Oct 2025 01:57:19 +0000
+Received: by mail-io1-xd41.google.com with SMTP id ca18e2360f4ac-91179e3fe34so254359739f.1
+        for <linux-phy@lists.infradead.org>; Mon, 13 Oct 2025 18:57:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1760407037; x=1761011837; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DRqpVkhMILdGgOXoNXOKPLRF82QFKKsH1zKrfan+k9o=;
+        b=BVEBbaetHPEjkykMcMt+bmOVcP1OgaHkpjcKVM6Deq0Rfc5f6ivQ9Yghn4PKjvhz68
+         okYZ0EM+ib2EP0hRtlJfXX0KAFBcJPH2RHqBqOerbVbRsgLI2ZTmaNA+1fPiLUSMBBo4
+         Ei5Hv1ZmS3GhKdLVtNypI2gYi2l8Zgmza/BYSWWXYiTuskmB4DIqq02/7z6ssuUDxbGi
+         7wVJOeyhrjGvKH/KHLoQ6yoPbbVMUr+AusnsTZ3u2GNo7woKZy0q8QfbonR0fK7r37oT
+         espO8vjn4Ovvxexnf5H4a2ekNJeihluOkzm//JW6xszZAUmOuY66joVYzWMbba4+4zvv
+         P+Ww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760407037; x=1761011837;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=DRqpVkhMILdGgOXoNXOKPLRF82QFKKsH1zKrfan+k9o=;
+        b=MMpgKIC9FJaw5l4X8HFo71+EJyaJrzi+uH/boKrs6AJqnVGgx2nENQdoEnQAIDb0rw
+         lmBQH9CG4kJL+HScbwvYe34eFiduGupa2IDwxrT4yoz+mszsIPchnbaUHdJlRfCx304R
+         cNF+b9nr+IB/WIBgoRq2jhobUQt18qVZSJbwEo5Xsv/4oJbRR4QBo2c3eqKya9p1V3P0
+         IoTkRmDfMqUwl5gALcYwqKollDeQRmFBaEHGJwtiGznbvgqlBzy3JXffM1EzzZfb++M3
+         9bIh8L7zfSCte1LqVQDZhme/SEAAVobcn7yd6wnfw7lfuJY92yEA3x9/s1F/kwV8cJE8
+         ExWA==
+X-Forwarded-Encrypted: i=1; AJvYcCWCSwctUVFzGbBy6p5n+qAHbQ4bODri7W86pPJe9/matUxCi5qx5gslhkRvwyJh3D+ucHoedsgaArs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwS+tkOWNzHiisNe8fAGwwc6pmCGP6yvslMiOCiBfO48FkmqysX
+	yvhjnZ6TPZTBSs7viVADnz7Ai1F4FW6+vyDLqkvKKW9lT97GgtjDUdETt7rz0eNq+Z4=
+X-Gm-Gg: ASbGnctsHyX41muSk7LYGvrT/QzfKYYPBasKlW+MIb/qLX8cznGZAVAB0o1db6/cBPB
+	9LXORzH1y8KXK8hCJuKNmCk2ib/dgEWx87tYzxP+D9C0L2RiWhp2yOEuzfxg6YsTdU6Y4zRvITi
+	RDLv4QImy7Yta/XL/XsX8qmxXF5WHjmF1uOtrRGL5E6eGSKGqH1ZaNEJYH830W9pURVY1zwe8Gp
+	kVnJnlIdA74gCGI2CtZQ28MA2uWerllZgkwi9JRUUtm5MKNaqNO4aiPKDDbFFC2ApSJ+KC4zmxN
+	2NINGUteZPyrASdsuTFzrfEcxwmXKrEb5CMu+g2G6dxj2bngb+xihkx6eOcJQHU6xGvF0x6fGb5
+	lMHfySeHh1hViP6bYPKkv0d9MjmrQCeHPcvDQZZ3BK9wDUWwv8BcuXuOe6I+CMUtcwdBSQQz/F+
+	nXEHZj90R+Zay+Kw==
+X-Google-Smtp-Source: AGHT+IFz+6u4FT7mXO0HjOe5eXpI34wWI1ZFKrY/cjEseejOQH/7Ctss1Fp2rB13acyyKvsMsu5OOA==
+X-Received: by 2002:a05:6602:811:b0:87c:2a76:4cf9 with SMTP id ca18e2360f4ac-93bc4074509mr2599466339f.1.1760407037052;
+        Mon, 13 Oct 2025 18:57:17 -0700 (PDT)
+Received: from [10.211.55.5] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
+        by smtp.gmail.com with ESMTPSA id ca18e2360f4ac-93e25a659a0sm455091539f.17.2025.10.13.18.57.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 13 Oct 2025 18:57:16 -0700 (PDT)
+Message-ID: <860df9d7-9791-40de-903d-0f62d34533e7@riscstar.com>
+Date: Mon, 13 Oct 2025 20:57:14 -0500
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 3/7] dt-bindings: pci: spacemit: introduce PCIe host
  controller
-Message-ID: <aO2tkGSUTYssSaVf@pie>
+To: Yao Zi <ziyao@disroot.org>, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, bhelgaas@google.com, lpieralisi@kernel.org,
+ kwilczynski@kernel.org, mani@kernel.org, vkoul@kernel.org, kishon@kernel.org
+Cc: dlan@gentoo.org, guodong@riscstar.com, pjw@kernel.org,
+ palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+ p.zabel@pengutronix.de, christian.bruel@foss.st.com, shradha.t@samsung.com,
+ krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+ namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20251013153526.2276556-1-elder@riscstar.com>
- <20251013153526.2276556-4-elder@riscstar.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251013153526.2276556-4-elder@riscstar.com>
+ <20251013153526.2276556-4-elder@riscstar.com> <aO2tkGSUTYssSaVf@pie>
+Content-Language: en-US
+From: Alex Elder <elder@riscstar.com>
+In-Reply-To: <aO2tkGSUTYssSaVf@pie>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251013_185558_925293_F126458E 
-X-CRM114-Status: GOOD (  19.17  )
+X-CRM114-CacheID: sfid-20251013_185718_282771_225A36BE 
+X-CRM114-Status: GOOD (  19.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,77 +106,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 13, 2025 at 10:35:20AM -0500, Alex Elder wrote:
-> Add the Device Tree binding for the PCIe root complex found on the
-> SpacemiT K1 SoC.  This device is derived from the Synopsys Designware
-> PCIe IP.  It supports up to three PCIe ports operating at PCIe gen 2
-> link speeds (5 GT/sec).  One of the ports uses a combo PHY, which is
-> typically used to support a USB 3 port.
+On 10/13/25 8:55 PM, Yao Zi wrote:
+> On Mon, Oct 13, 2025 at 10:35:20AM -0500, Alex Elder wrote:
+>> Add the Device Tree binding for the PCIe root complex found on the
+>> SpacemiT K1 SoC.  This device is derived from the Synopsys Designware
+>> PCIe IP.  It supports up to three PCIe ports operating at PCIe gen 2
+>> link speeds (5 GT/sec).  One of the ports uses a combo PHY, which is
+>> typically used to support a USB 3 port.
+>>
+>> Signed-off-by: Alex Elder <elder@riscstar.com>
+>> ---
+>> v2: - Renamed the binding, using "host controller"
+>>      - Added '>' to the description, and reworded it a bit
+>>      - Added reference to /schemas/pci/snps,dw-pcie.yaml
+>>      - Fixed and renamed the compatible string
+>>      - Renamed the PMU property, and fixed its description
+>>      - Consistently omit the period at the end of descriptions
+>>      - Renamed the "global" clock to be "phy"
+>>      - Use interrupts rather than interrupts-extended, and name the
+>>        one interrupt "msi" to make clear its purpose
+>>      - Added a vpcie3v3-supply property
+>>      - Dropped the max-link-speed property
+>>      - Changed additionalProperties to unevaluatedProperties
+>>      - Dropped the label and status property from the example
+>>
+>>   .../bindings/pci/spacemit,k1-pcie-host.yaml   | 156 ++++++++++++++++++
+>>   1 file changed, 156 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> new file mode 100644
+>> index 0000000000000..87745d49c53a1
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> @@ -0,0 +1,156 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/pci/spacemit,k1-pcie-host.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: SpacemiT K1 PCI Express Host Controller
+>> +
+>> +maintainers:
+>> +  - Alex Elder <elder@riscstar.com>
+>> +
+>> +description: >
+>> +  The SpacemiT K1 SoC PCIe host controller is based on the Synopsys
+>> +  DesignWare PCIe IP.  The controller uses the DesignWare built-in
+>> +  MSI interrupt controller, and supports 256 MSIs.
+>> +
+>> +allOf:
+>> +  - $ref: /schemas/pci/snps,dw-pcie.yaml#
+>> +
+>> +properties:
 > 
-> Signed-off-by: Alex Elder <elder@riscstar.com>
-> ---
-> v2: - Renamed the binding, using "host controller"
->     - Added '>' to the description, and reworded it a bit
->     - Added reference to /schemas/pci/snps,dw-pcie.yaml
->     - Fixed and renamed the compatible string
->     - Renamed the PMU property, and fixed its description
->     - Consistently omit the period at the end of descriptions
->     - Renamed the "global" clock to be "phy"
->     - Use interrupts rather than interrupts-extended, and name the
->       one interrupt "msi" to make clear its purpose
->     - Added a vpcie3v3-supply property
->     - Dropped the max-link-speed property
->     - Changed additionalProperties to unevaluatedProperties
->     - Dropped the label and status property from the example
+> ...
 > 
->  .../bindings/pci/spacemit,k1-pcie-host.yaml   | 156 ++++++++++++++++++
->  1 file changed, 156 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> +  num-viewport:
+>> +    const: 8
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
-> new file mode 100644
-> index 0000000000000..87745d49c53a1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
-> @@ -0,0 +1,156 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/spacemit,k1-pcie-host.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: SpacemiT K1 PCI Express Host Controller
-> +
-> +maintainers:
-> +  - Alex Elder <elder@riscstar.com>
-> +
-> +description: >
-> +  The SpacemiT K1 SoC PCIe host controller is based on the Synopsys
-> +  DesignWare PCIe IP.  The controller uses the DesignWare built-in
-> +  MSI interrupt controller, and supports 256 MSIs.
-> +
-> +allOf:
-> +  - $ref: /schemas/pci/snps,dw-pcie.yaml#
-> +
-> +properties:
+> This property has been deprecated for a long time, and the driver now
+> detects viewports at runtime since commit 281f1f99cf3a (PCI: dwc: Detect
+> number of iATU windows, 2020-11-05), IOW, it makes no effect with the
+> current mainline DWC PCIe driver. Is it really necessary?
 
-...
+Based on what you say, the answer is "no" and I'll gladly remove it.
 
-> +  num-viewport:
-> +    const: 8
+Thanks.
 
-This property has been deprecated for a long time, and the driver now
-detects viewports at runtime since commit 281f1f99cf3a (PCI: dwc: Detect
-number of iATU windows, 2020-11-05), IOW, it makes no effect with the
-current mainline DWC PCIe driver. Is it really necessary?
+					-Alex
 
-Best regards,
-Yao Zi
+> Best regards,
+> Yao Zi
+
 
 -- 
 linux-phy mailing list
