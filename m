@@ -4,76 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62538CCD187
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:02:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A407FCCD187
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gWzjF4ruUY31csMX5i6IqrjZ/xf+jmInefamXVFr8Ao=; b=rY80au/dG0cgeG
-	vExlvycBoIyFKjRuGC9N6gkXLqhs9Nm2ygrqyg9VEePHD8aYl2yhkMCIVJDHgXnma+Vie0V4Z0LiF
-	DRrxlF/a4x6qc7tBG01Cb2S0BOPl39eLDWIrI3yi1cmzL8FaGpfLl1rxooJxFr4F0K8UeZOhXuqzx
-	wV85yd/pnU2pNeNMa7VVH7gH91FiS3OxXsNOsW7Oc5nI+CdQIp0TYBgSHDukBJW8/70Cu7lw0gkvK
-	LWJTcIeidkmIv63JWiM7QMXeiV2xLnHhWCFAAQW0ZrBeVjHAcz1nNOZaRslXNL70FVd4fKWQEAv/i
-	P1V6rm3EuxJLGX99oKsg==;
+	List-Owner; bh=J6v0YE/jwseYN+ZssiQdWuafjTYVT2T8SSxXLQGbugQ=; b=Ua3lv53qmD5MvC
+	r2S5ZOQE6BaSJeISyW0hKso/fEI2q4778CqGY8qIljDD1wvzhoKlp/AJPzPE6WlaRhr5Qxj1B2Ayw
+	zgTiDhV3Fysz42uGZQi9pwfBRPnOgS9ZXgViBdjJNlO4bbhahnaDm9VX1TiSjRG/09honONpDDAeB
+	lc4BaQx1GKTKb+jPkNzoa3jWkm/SiQLYOMrNM+e3YYdHhE3lZpi+1BmbartOsASy6LyD/+lauTCNB
+	IX0T3WO0wgukmWfCE0ZkSxVrmCrhm7paAuiVHtxanxsCR45+nhf7RiN/TiW/Ad2ae9RgKjxrP5w6j
+	+N6OhQZtE2cNqyFYOmpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8brv-0000000Frp7-0eQO;
-	Tue, 14 Oct 2025 10:02:59 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1v8bry-0000000Frs1-1iNI;
+	Tue, 14 Oct 2025 10:03:02 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8brt-0000000Frnz-0njA
+	id 1v8brv-0000000Frov-1tHm
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Oct 2025 10:02:58 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-46e2c3b6d4cso38477955e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:02:56 -0700 (PDT)
+	Tue, 14 Oct 2025 10:03:00 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-46b303f755aso44617355e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:02:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1760436175; x=1761040975; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1760436177; x=1761040977; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=cVJfqn+CURZR5kgzfDjtV++23e8mA5V4+ieWpLbcMzI=;
-        b=ZeMCaNaZehqdZLHnfd1koLtWMx9Oy+QEOOh3xB8dyelvX0/OVbyC5PHfDzGs9cD1pK
-         E/ah4eXEjive1jSMkGOId5mQz/rCfehjRE2dsJB4W4pfzm36F4Hv5RAm4gEnG2g/DONO
-         l8PC/ta87P1jHKkG0aNWym6CROys1dNo0Zlzwn57wEXdtV4xzFCyuQMvh3vi65Hz6s/F
-         46ozp5Z7yYDcA5bIi65unsamHbP7laEcsIMcHfdF/qkiu2opSrE+NMJrgmleTdnvdeLO
-         9cO5nByceWpxfu31RwsiCZSb5mthk7nEt9zCFiCDN5ipEtKkdQB0yEY36duGJJWWN3UB
-         rKJQ==
+        bh=vaS07fRAp2KaqILcMQz5dgQ+s6oWbriezT3s15GrHVk=;
+        b=KZjECUKuhjrUGezFnBX6XLBI8UmwubG6d+69GTYQUP1lgicvmvz/X2qrwXdixO88GR
+         9Y74lCDaD2K3s7fdc+Huj3Z+HUelF5V+CF9N/N5BciKBDW9LnqyBIwR3Ptt0+GTiTWdg
+         K1eDZeH+L1DlBPCS9jvbY0kwX/2OnRtlJ0IQZfsoSmHkDOeJrB+3TjP0F+6y1de1cyeq
+         NchJ+mpqnaYOZIIIezyQBwyr7vFPwD7IbcD7XJ/OR6VSnfFdd4NXjQN5/0xIOY1yvIjD
+         b2MOrPUCT9yQtluJsZbBlOuQom5wCdiSkC+3243QjecZtbEKCJsfByHlydfQ2CGQUSj9
+         bUOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760436175; x=1761040975;
+        d=1e100.net; s=20230601; t=1760436177; x=1761040977;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=cVJfqn+CURZR5kgzfDjtV++23e8mA5V4+ieWpLbcMzI=;
-        b=wnNYCKnQByd2ISWCSqrTF/gMSKL1MFuNghPUOmUwprEg8EvS7HntaFRLJk1u/laqMv
-         DPam9FVnwjQmYB4cnPzmS9V3bzNOkmi81RyeNC3telqq+P0WEXX2NpOJLRHa/8iau9Zz
-         zgHWjnTSNWwAC0oTSHbQmoSKzZ7OdvbRx74DSuz/8PvkzqG+qroHqDRVmsho9vkbE9Za
-         YkcU96p0UMwRqIgY6N/kvz4oRmqdyUdrPd96MXF8P5FyqZipNnT7ia2/r2uzGsZMYzrX
-         HCyFCVnXbk5OmWKZaCC8t1M1ZSv2NpXZ8EpDRxruCQ1M38fxxaXJu3H93oppw9MZD+k5
-         4qTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVrkJaHvQVoMThB0MNggBj3K/y0DSCPFoWACs/zNE+b9wHKoPGn4ggAJT/Kw1jynWKke+pCjhb6xaA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxKHTbjS6Yy0aSj+JVsolrPARsGLCjyYlhgCu54OoulKLq91jD1
-	4QfmZ66e6g9IfGfBpC3dW5LwIyLuQC5Mp0slskfwCsemkwVpeqzeuglpq59/BNP94/Y=
-X-Gm-Gg: ASbGncv+ycEp+iZxZW42OBu0Twha4SnLFsB23Ltp2nPDC4DB1GveEOqVK9EdFr9QIWt
-	l9uD5G0Qwp2cbfweOTT5WUvt12Xx95buQyjABOBX4wUAIb1WFVxiO1JyZBZ9lkNY7WVINL+oNl4
-	LboMpYKh2wAUWBsMC+6eMCMzQAeVBvgsIQfsCZ9RVwQCfCzbzXP20HYxRN0TVM330L+BAaiwAHJ
-	0xkXv0DJdXgmHlXDbdYkmGqhcEuD37HQlTvyn/jhtBt5Hiu86EGNr83hV4es9JOqbN8XiB+92lK
-	g5VgNeNOE9uKsjZ5HoWaPgKZmCGIyOzlKbEmTgQ7Ha3XUaIyt0iVwZCcPmrnGE9w5apeiR8HQBU
-	zAEKL8vaj6MG1YUNfQjwj3mcgdYT2twq5K1QQgA7Ut+c=
-X-Google-Smtp-Source: AGHT+IHn1J3P6w0TT3kflXZRWIHbxv02CVqgaJ7Zj1UOEcse11mXhprORjqLY8jjisVskI0JowAdcg==
-X-Received: by 2002:a05:600c:1e86:b0:46e:4581:6634 with SMTP id 5b1f17b1804b1-46fa9b018e1mr176937295e9.29.1760436175311;
-        Tue, 14 Oct 2025 03:02:55 -0700 (PDT)
+        bh=vaS07fRAp2KaqILcMQz5dgQ+s6oWbriezT3s15GrHVk=;
+        b=ecNKQwirg7eNvjsjEYFGf6825M/Rcp3/VdBCkRIYJwRGkBgmtQJfF+r8FnPGIXUOv9
+         YKGrT42DVDoxQKRAmu2pGqNEtPA4Qm15IDy6ZSoDQlb4c0TDeiFy4eb+qXIcD5YplzoP
+         kXudiDNVordI4tudCEv86vmOMweqIe4KpI/aB+3M1HAlbbi1w05OpEcUPJSxLWX3KuEy
+         wAi6hl93w/sE6deMF5oqqRGA6LtV3W83jW8b8nonDDwOUHs5d7xQ95mBbKWhGyMRv8SC
+         iJgDIZPwiJLCK/OYgDQ1NjZOgG6/8Vw1ficMdOTl60QHOKMXQ8d4hn86W+VK6Sobe5oP
+         nlAQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXGvqP4MwjLmpjKz6dWnfbmrKwmz6RhQsIyhAn8U2fYpfD6QnyARQh3pnU9ropIr85VsoAoe58yNAA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyalebULieqYCUqjPc7pCJc/rKAy0SyckPnEcJawC+kY7dlEiq3
+	O1YL8cAYKsqN84cO7taQSGo0c7OPLFCtUyTHTLgWBT7iFUbTpaxuVrSxupJegwBoZRE=
+X-Gm-Gg: ASbGnctgAz5OkU7/Rwq9lxhh2pYAVKQCcmC82N7sm2PVcZjj8NeAw8YU7IQt7+DldkN
+	exAa8gTZWgb7McSDEc/C/OuudqiCA18UQia9hZTxE5liuUv/hx114wKiaXtfUtA7yEMi+E7LLrW
+	wbs2zsME5CaMzfL1dDLBAvXEWcdUTH+yHhqbqS4SHOUm2uYBI0pJFaVi3naS3KUNOYQdO108NEy
+	KjFd5CDKCGmoZ0TzDIJoRHxL870qAIi15CxS01MGK32HNSI8qQB5VZ4MKB/nlmQgUQdNDmF1Mgo
+	Yl+4RKfGstoV8T1rRf5wbJtA8tsbuI1K+TdImUFqP/6te5gVtAMj2QgNy7zGQba8aHUNo9n3kLc
+	+ta4Na1kQUm4cxrUU+OuEDPnG+gfNTBjwoGpfIj2Dz6/TtMl/OSNRMw==
+X-Google-Smtp-Source: AGHT+IFl2VtEUnOc7K7cnKyCXWZQmxxjgC+HM/RYs8PRHoUIntYpayCUFq/QGa3L5ZN0P6heHafASA==
+X-Received: by 2002:a05:600c:1d1a:b0:46e:4a78:dea9 with SMTP id 5b1f17b1804b1-46fa9af17d4mr168450155e9.17.1760436177412;
+        Tue, 14 Oct 2025 03:02:57 -0700 (PDT)
 Received: from hackbox.lan ([86.121.7.169])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489197dsm239615305e9.10.2025.10.14.03.02.52
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489197dsm239615305e9.10.2025.10.14.03.02.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Oct 2025 03:02:53 -0700 (PDT)
+        Tue, 14 Oct 2025 03:02:56 -0700 (PDT)
 From: Abel Vesa <abel.vesa@linaro.org>
-Date: Tue, 14 Oct 2025 13:02:27 +0300
-Subject: [PATCH v3 1/4] dt-bindings: phy: Add DP PHY compatible for Glymur
+Date: Tue, 14 Oct 2025 13:02:28 +0300
+Subject: [PATCH v3 2/4] phy: qcom: edp: Fix the DP_PHY_AUX_CFG registers
+ count
 MIME-Version: 1.0
-Message-Id: <20251014-phy-qcom-edp-add-glymur-support-v3-1-2772837032ef@linaro.org>
+Message-Id: <20251014-phy-qcom-edp-add-glymur-support-v3-2-2772837032ef@linaro.org>
 References: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
 In-Reply-To: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -84,28 +85,28 @@ Cc: Dmitry Baryshkov <lumag@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1167; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=SjQNMcKFiFxf1UzqcFbV5V5FIrz1nf5P1xbHJ87t43c=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7h+/P9kfefQL9Xhu238N4OW/+ki3a8ZQcLA+5
- /LnZTJxNsaJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4fvwAKCRAbX0TJAJUV
- Vg0BD/0TH9WNgHrWjeqkeEuXihRVj7jKEy9+iMDKrSQ8/rwR7ChvS6cRGpe+u/O4DAzGomvgO8Q
- lx7b2fwpoWlEowETy6PImWEB2TmpNXUBdD4zo/BDHLaoISEcdcHToJpihgWYI5rMnQ9zhRIKshe
- q9ufkvxu3L/+/u+FG9LCc7sES2xB8WjJFaoPQpROLNfaNB+9455YfeteCb3SvePUAzbtO3qJavG
- P4igEdfz7GaknEHv9wlIiYb08v5jJJKCc+PROmlHQfojvQvbED6Rn9+YuymS57MnV0bhTRt8Mb9
- QVXW6+6YpfLU3eTjLBgPlrGF4wjF0kuAl766P+FjYwDscU0MUaTXk3FVehoO2uLB3KXmXJpvpQT
- zTlh2jLKjy/lJk9aHxChoS/hVQk3Ac+U6LPqYcfEplRrKF9nXeBWYoRbQ4+olOltcY01+QnIeKx
- 1Pp/9Wx2UxS4HDM3pFw8g3MvCkA8FRpo5kcQXqDBFVt1+kFy0vUhmlD3SIzpzohIgWX4m1+tx3X
- WsPCgPkRq9UoKN9VSpzP1urz1ueT52u2OrGpa1X0AbIvOCaE+eBdacV669Tgx/F1mk6nR5OynX7
- lar0vq/2GI9bGPxHKSu0ZAvctRDk2YWF6csnxydqF1krfDNbM0Gh7dxwEVGM05IFMnpuhpkrJLX
- dxT0tKQyUxjylrQ==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1247; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=S/KD30P8NP0mNcehUP8pNGC81/R9glKXIgh5wrx2AKc=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7h/Chm3XpAOoZ+7P1ptsAjAqkDalQY4X3MdGn
+ QpOsnA+z8iJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4fwgAKCRAbX0TJAJUV
+ Vt/EEADIKuOmzt2Kab1SDBpuRUMisq3zDdHGoozaSKWUjDdjzmyUsli4WK+J726o7f+wz/nl35c
+ p/kuytzWM6WmVhNy2uKr3bTBevx3TTZ/khpJOTvjXJD88U0nkiJKFKSw7OtjbRDsPfHNVMRckEI
+ XmOO5XxbfoXMDIA9zzEL85yyhcVCvSwMxm4Jl90kloBBBIQxQbfQoeSQtvSVtGxSAE6LW30lW3+
+ K59yh/TgbMvl6RCnVS6DJPdiHMvJAk0Zt3fW73KrH1m34+c06n0M0495ABtxd9noT7yP5milXcb
+ GP6dGequX+u4P/yA3tM9vyd6GgTPHb3TBnQQ7bDQkIPyEe1F4o/vcW9q2q4G1bmFVNKKw+pnvqp
+ DSOPcGQ9W/P8RpEoBDU7b4hrVm4LjeNT2IQvjjH8OVXQPzaMDJ3zvAWvYJsJbiXLSak1LyfIXxi
+ ryttjR+DDMutxAj5gh/8PLigLof3N8WYn5Caauk361g5UyeS1y1xRkL9QQyeB+/TrRPuXnqy5DH
+ 6O1uIIO6JmbCQEqTMEaZ7lSouhkkmKaS5QFZQgo8rT7UqNQGenxFOkqEUc5tvnDup5hsF3YGDoM
+ DWtAWrgFO65A/6Guiq6jnkc+Y5YXtji5LchjQCmvHYyCQXiCTCL+11Q+GG6JEJeiTg5ITXHTkSb
+ sYesTJCzcqS3h9A==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251014_030257_249422_E909A19A 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251014_030259_512071_92D1F791 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,36 +123,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Glymur platform is the first one to use the eDP PHY version 8.
-This makes it incompatible with any of the earlier platforms and therefore
-requires a dedicated compatible. So document it.
+On all platforms supported by this driver, there are 13 DP_PHY_AUX_CFGx
+registers. This hasn't been an issue so far on currently supported
+platforms, because the init sequence never spanned beyond DP_PHY_AUX_CFG9.
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
+However, on the new upcoming Glymur platform, these are updated along
+with the rest of the init sequence.
+
+So update the size of the array holding the config to 13.
+
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-edp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-index bfc4d75f50ff9e31981fe602478f28320545e52b..4a1daae3d8d47ca5f08d97a1864cfd615dcf108d 100644
---- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-@@ -18,6 +18,7 @@ properties:
-   compatible:
-     oneOf:
-       - enum:
-+          - qcom,glymur-dp-phy
-           - qcom,sa8775p-edp-phy
-           - qcom,sc7280-edp-phy
-           - qcom,sc8180x-edp-phy
-@@ -72,6 +73,7 @@ allOf:
-       properties:
-         compatible:
-           enum:
-+            - qcom,glymur-dp-phy
-             - qcom,x1e80100-dp-phy
-     then:
-       properties:
+diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+index ca9bb9d70e29e1a132bd499fb9f74b5837acf45b..7b642742412e63149442e4befeb095307ec38173 100644
+--- a/drivers/phy/qualcomm/phy-qcom-edp.c
++++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+@@ -32,7 +32,7 @@
+ #define DP_PHY_PD_CTL                           0x001c
+ #define DP_PHY_MODE                             0x0020
+ 
+-#define DP_AUX_CFG_SIZE                         10
++#define DP_AUX_CFG_SIZE                         13
+ #define DP_PHY_AUX_CFG(n)                       (0x24 + (0x04 * (n)))
+ 
+ #define DP_PHY_AUX_INTERRUPT_MASK		0x0058
 
 -- 
 2.48.1
