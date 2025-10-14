@@ -4,107 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29471CCD184
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:03:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD15CCCD187
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Oct 2025 10:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6aeKt0blbG1sJbD1V1sJj/3X6XZ0B1JWOM2S+Q3MNzI=; b=W7Y1b8XMTclGIH
-	2xV/NzWb4KoKtvpCa3H4nWjviuqKPINgMSkGalFqONkzF5cdtiAcJlf92twA2f/dcbPwtH9+1p2nA
-	ySpxxyGR+bOIrWlufzwrt88QGybtN+r41e6nXIkm2D5MAZgAmKRRBXBA3fn9PqcodHjb7VPMIV0di
-	yOD5l+Zh77AXOaOzcuxBT/wQzLW6LgeHGQFzT+IyUWIhDq1RKPIMujf1Il89Vy8l4+NHChX5Tny7Q
-	gd/Y8AuJig/iEjzl3yRpBsNRp8uWzL/qsnkH0+8kIc65gYyreWpw5NG9RXGltMR72NIbLig8si0c0
-	iuWGN2zIYaSsdGV0m3JA==;
+	List-Owner; bh=f+Hg6mlRc8UD70oj1v0rE/kBpD+jXVFD+4jTqOK9w6g=; b=pjNBaueuy3Hf+n
+	QbfwkGYaxHy28uh2m67cBQ+VoffzL+EzOhIqDO9hJ/igD4Gu+9wX+SFql24uM3MjqcwRlaHN+i+Rm
+	W0zHiIGcxaBrW7wgED2Q7lrtnWG+bFRznCR7+wh8UtvlwXeLYE+2YWYDWWLDucU6VRa0xdKtDpl74
+	/YXt1D4mHShAIf0oJj8sQpHr4ZvgbfGlRw20tUaceuv0ntx5QL5DtdHdlghfsQYcf2QU7rG0dQq3u
+	KmJ5Q6h6XsLQiQaPlk16T8XI4VLu02kbJtSh6dZ1uhGbUhQYxE7xBGTxF+k0zuY7yjYIcw6gNAl7v
+	TEFIYWGaZTI8+X7CV1wQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8bs2-0000000Frth-3pnh;
-	Tue, 14 Oct 2025 10:03:06 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1v8by9-0000000Fso4-1sec;
+	Tue, 14 Oct 2025 10:09:25 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8bs0-0000000FrsU-0q64
+	id 1v8by6-0000000Fsn2-1zYt
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Oct 2025 10:03:06 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-46e3cdc1a6aso38456275e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:03:03 -0700 (PDT)
+	Tue, 14 Oct 2025 10:09:24 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-46e47cca387so51130365e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 14 Oct 2025 03:09:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1760436182; x=1761040982; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=MV02rGTUDlT1ggqlYQ8IxMHF6US9L5gi+se7+XP/fhQ=;
-        b=v7OtCPz00XQIOQlJ8joxcsl4IoBtK7s4xj+cRyWk+hVNQ63RqtiziA0EFnR0oF+L7F
-         q6MmqbKr0BzlqQpG+G43dK00BG5Z2wGWU/Ma/nRXvXFG6YrHmQP6aaG4/1/hu0IzHwYw
-         izupeaNb2upURXA2aJOCOuYPicoGxKocHhwUCnOdJ6HYQYgKC9SfYfGthho25bGPm9bd
-         TMIzZoifCVmAL9yWg82gXgAghAQyMOEWhXyK6RBgWNs1i+RVn9ydnxCljhnYEi2utZCQ
-         d5gl+q1IBwo1gLBKnIAr1tJLwiiDfLbQbgAsI3Nf1ZAqKtUmZy7d6PPYn0dddKvqqdGN
-         qZEw==
+        d=linaro.org; s=google; t=1760436561; x=1761041361; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=d/ttxF/dZw7J4JSYZeZOo0fN3D/uqFn7kWok+tyJugc=;
+        b=UzXq6xsKVjgrSCYY1ZcBLSyADxnrVFkYEtvygkvt2T5WoaqLkBi3rBXq4vZVBy00+q
+         +8HlmksECOWoX5PPTuoyzMA2F3Fsoyj77fbaJ9LGFbQADmD+pU/kX9cdFmVKf2gl1Ysa
+         5j+qHnh8TZELjUzGhdR3qN1JG+x8yFS3XX+d7iQ2S0kAFhCTkqjJB0Asz0j7OCjelY9w
+         tH2iU+Pq6cLPuO1bvCEfuGkoztf5Dm8Jx/Ab13aCk7DcT0MC2XyMPM1mR0+Gra1AdqAX
+         yWHO7yXShBXL1s7Cf3uPqJyUoCsLLflf904WgHefPoSrvyodVqYWsVMOCCu3jA+qgJDK
+         kQNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760436182; x=1761040982;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MV02rGTUDlT1ggqlYQ8IxMHF6US9L5gi+se7+XP/fhQ=;
-        b=fDB0mx4xLYs6Gjz0IC1bfEUWAYGYaZy1+Oeg1o1CbtRuX9uwIBqf02Mkvy+cQr+Pea
-         wDgLOZ5rMplTVXQfBz78cCcl8rXDjQVfEcVCBFPE/ZXxuH3G8uUsovN6c0ZqDJeGdi4k
-         Pyyt3sNfV4VDP72zgigMCYutaoKZxRnQNVYW3PRY4T/2wPD2QaegntDyJoiCWs7jJcUQ
-         PejYFMCCC8CFowfpmqT12Xks75yjJMCv/kYb8TOQPyisQZ+qcaYB42Puwk24szcUCAzD
-         brGzkYwI9WqZp6mNCDnfDcT3WPY4QdDisKpqA3uBBVVE0gG5Gtq04R7Yuu/piSUTCSNp
-         d3WA==
-X-Forwarded-Encrypted: i=1; AJvYcCWPzi0bHHmnY53vLuOmyAbbmZD7lc6CgZUy0fZumJIM0nqisAIbddF7m7ZkUlblItegr7mUBOq64EU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzxxuU6iK1H9Qil/Kg8zhvrSpv+hhe/zOVcaAVp7xtRJm41nEua
-	BcLvIk3zopIv4POsMKKcx+pqQZM4SXZubJgRLpw/L3zIQADysn9+ZUPa38I6Om4pANY=
-X-Gm-Gg: ASbGncssW2qWgQlBgfCv5FIEla6iiaEitIr4A5h4AMgiS4FIMGF4yZAM9VXJi/DonMC
-	Cn+9tWRnQ75YgN7c39rUNk2KAgyn8YWNIwpj9NlBWLz7D7m+empKyGm0sPL0paQGs4cFSyr5igJ
-	shMUPntpp2BRlg1kfl3DwD+EBG+MEYGIBlPliSEW7MfcG9fVUvVA8o46a6hQd87XI0z6y3kiqZg
-	mZ1NazZDpiEDrk/5g66pktKXCobnWSvJHzQzSHbyEWMVvZYi1kQocKdD2ml4lrMixeL34ahAXwr
-	5sMYI0hysYZuMWmF5D+PCvBj8IgUZnAG34gPBG/CsP3KZMAV1cNs4wb3Q907weLxVFDJSS55YWq
-	a6aTb4Ks5wLowuW31h9L5b7SIUHF8nzueRejfJzC2dd8=
-X-Google-Smtp-Source: AGHT+IHeguv07zn7PopxqLwKtI4bjCY6HilLCIVsEeepBICMgZEldOzEBMuM0jpND7zvDyOaAtxwEQ==
-X-Received: by 2002:a05:600d:4270:b0:46f:b42e:e38f with SMTP id 5b1f17b1804b1-46fb42ee4a2mr103687425e9.19.1760436181915;
-        Tue, 14 Oct 2025 03:03:01 -0700 (PDT)
-Received: from hackbox.lan ([86.121.7.169])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fb489197dsm239615305e9.10.2025.10.14.03.02.59
+        d=1e100.net; s=20230601; t=1760436561; x=1761041361;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=d/ttxF/dZw7J4JSYZeZOo0fN3D/uqFn7kWok+tyJugc=;
+        b=CPKD07LKfZG5VI4V3lKbAJSY/Cz/XvvbPm3z/CqSUjg56FYcfyS/KFny035f7Q8s0G
+         EznSuOhHeNC0FJl3ZvxXwVlR5ACOFaRfkRXBNW2KzWC1zabwlL6uWwXAf8REe/hd6X/b
+         dNDnRxIZKsW7nUgjnsA9ow4TpA0KbEK5SIEsgZ9h4rg/Q4OFfpBpKPMrAVYcGemLobTE
+         S8Fw4ndtoArjIrhLuRd4e1/5RCY1lFxN943kWA2YDMQLxW6GE5pwaBDUOw1yRB3ADrJz
+         ymttH4lpB/7tqHmMcjfM7lwcrgRbdDsMo0FcvxhKhVQdJqRyhDWVmhbQ1SJKiWtOIZHG
+         MjjQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWs4OsADIcXKWhHI6o3u2/e5RNfCtoz0RWPM/zlauXc3bth5epvdUD4T90iygC2vAeygcTm+WtMot4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyB3V840iuVQRFiqUzsWXTxsCW8hp2Xs0DJL+5dKNKK2tDTkPY6
+	Y2bd3QdsSsFcblBSfuqxWp59BQXbPYbR3vejaNzpYl9/PoTO3MppTjSsyiOsjkPZqVo=
+X-Gm-Gg: ASbGncuuGbsUCkPIztA0p26Z17gSRTEZqiuTWl67pcf8IQWiCRzw2EUY0QVbqeiPDxz
+	w7g2ITxkdPBApE0rootR40FvQm8RFl0wWFv+TqJoj8y8RDBHe1Xtfraa5YA8FQI48wQEPXhiFqd
+	qrq7gjoQbMzNexdPuPh/VA3L/lz5cAJWQ982W+fzYjLBbJMQdMokjiev+eO3FQezTpfmQRmTpgJ
+	TfA7IX/96vs/hypFffCGjT1+57v3+XB4v0VazVApVwmKk8YXzYLYBBEpGRWon/T0HD7rPUlRhXq
+	y8mssc/jeVIy/cXSA73zuxHTYd//kFJqALjHfwlP/sm2C3QuNbswBYYyAURzydJMUUQ1jN4lGaa
+	cRmQVlZIK/ohT3ZYc8gxrry9UgeNGJ4yrQL+cW+kPcg==
+X-Google-Smtp-Source: AGHT+IGhYcM1EjuHseqFI8tRZvchmyS35I7xUk/4EU6AC6XLlnEooj6iq3rh59ZcN+RWuk1UNgay5A==
+X-Received: by 2002:a05:600c:a341:b0:46e:74bb:6bc with SMTP id 5b1f17b1804b1-46fa9a8932cmr155892235e9.5.1760436560606;
+        Tue, 14 Oct 2025 03:09:20 -0700 (PDT)
+Received: from linaro.org ([86.121.7.169])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46fab3d2c1asm149604235e9.1.2025.10.14.03.09.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Oct 2025 03:03:00 -0700 (PDT)
+        Tue, 14 Oct 2025 03:09:19 -0700 (PDT)
+Date: Tue, 14 Oct 2025 13:09:17 +0300
 From: Abel Vesa <abel.vesa@linaro.org>
-Date: Tue, 14 Oct 2025 13:02:30 +0300
-Subject: [PATCH v3 4/4] phy: qcom: edp: Add Glymur platform support
-MIME-Version: 1.0
-Message-Id: <20251014-phy-qcom-edp-add-glymur-support-v3-4-2772837032ef@linaro.org>
-References: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
-In-Reply-To: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>
 Cc: Dmitry Baryshkov <lumag@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>
-X-Mailer: b4 0.15-dev-dedf8
-X-Developer-Signature: v=1; a=openpgp-sha256; l=12666; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=YCJPvHG7Gmp3ymjunk6DqHGq3+Tdfwwne9NOLTKD9es=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBo7h/JjjIjaHSwGKSgmflocKTmwjb/ohy4+po2G
- U9kVJUG8l2JAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCaO4fyQAKCRAbX0TJAJUV
- Vg2cD/9V/u7etH9Mbh1CPU1z6p+HzaNu2/UDHWCtwEHB7/3FsOYYGmKeUVbi0/ouwPYuKqWs82X
- smRwLhhox/ppQflraWunMREb4V5XkUe06+9NqLj8maE/C1Tom20iX6rT8Xx9uIpiRSLsXanFgFY
- h3oc1O9dft1fyKBm9JjyCEU8QoGHW3tSamLVFid7zj/v+W9xl9RGE8MD0KxUCpHHRcW2g4wd/4C
- zosxKvPfzBMz9nTU1PElxII6dm0kvkJDlKWc0yF+XQC9XDQelYxRpmu1cRpRb1AYTwwuclmACKS
- xj4f3g8v3XxjhVlgIKSFfPLwhvUC5Aj+2OuO+rHghoT8YO2GOEl+q5JbHGphxmgrWpe3pvdz9To
- p2a3nOGd7pPLQs0jZPOxb/zMEdLvUrX+VOcU7Zg5gx0e+DrgTLuwR+1q6cRWGRj2HHU2nqwerql
- s8wtn7heWSR3lUseppxCWhpwJWRh9KpqYAtSv6Cc4DTXhcTPMljAiUh7oFB+sz1zK6DYu0zyIgc
- ohmNgNOxiD7fpzIsMwWIXu/FGN3KGDMKeK5mryipXEM0KRvCTVl5tnu7MAaa8YzUQEn61ARMSJD
- b4cLADxiz1o54xqVfp39vMD9X1XvYaJJoUMWaJAswqxsk67dz2wGgsiIE6E0ghcpaP4up/4vA+b
- 6rSO0zwg353/okA==
-X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
- fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
+	Konrad Dybcio <konradybcio@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/4] phy: qcom: edp: Add support for Glymur platform
+Message-ID: <c6w5wqjqdimn3cfex3n6aynol4hfqejct23ziq4wcwj2svuk5g@tzfi6fnbpc4k>
+References: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251014-phy-qcom-edp-add-glymur-support-v3-0-2772837032ef@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251014_030304_338089_36A81A0B 
-X-CRM114-Status: GOOD (  18.76  )
+X-CRM114-CacheID: sfid-20251014_030922_526073_916B3B58 
+X-CRM114-Status: GOOD (  17.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,378 +104,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Qualcomm Glymur platform has the new v8 version
-of the eDP/DP PHY. So rework the driver to support this
-new version and add the platform specific configuration data.
+On 25-10-14 13:02:26, Abel Vesa wrote:
+> The Glymur platform implements the eDP/DP PHY version 8.
+> Add the necessary registers, rework the driver to accommodate
+> this new version and add the Glymur specific configuration data.
+> 
+> This patchset depends on:
+> https://lore.kernel.org/all/20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org/
+> 
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
 
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 230 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 224 insertions(+), 6 deletions(-)
+Urgh, for some reason, b4 re-enrolled (lost old branch) this one as v3 instead.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 7b642742412e63149442e4befeb095307ec38173..53872d1a2965ad014e6eae309cf93dde815e394a 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -26,6 +26,8 @@
- #include "phy-qcom-qmp-qserdes-com-v4.h"
- #include "phy-qcom-qmp-qserdes-com-v6.h"
- 
-+#include "phy-qcom-qmp-dp-qserdes-com-v8.h"
-+
- /* EDP_PHY registers */
- #define DP_PHY_CFG                              0x0010
- #define DP_PHY_CFG_1                            0x0014
-@@ -76,6 +78,7 @@ struct phy_ver_ops {
- 	int (*com_power_on)(const struct qcom_edp *edp);
- 	int (*com_resetsm_cntrl)(const struct qcom_edp *edp);
- 	int (*com_bias_en_clkbuflr)(const struct qcom_edp *edp);
-+	int (*com_clk_fwd_cfg)(const struct qcom_edp *edp);
- 	int (*com_configure_pll)(const struct qcom_edp *edp);
- 	int (*com_configure_ssc)(const struct qcom_edp *edp);
- };
-@@ -83,6 +86,8 @@ struct phy_ver_ops {
- struct qcom_edp_phy_cfg {
- 	bool is_edp;
- 	const u8 *aux_cfg;
-+	int aux_cfg_size;
-+	const u8 *vco_div_cfg;
- 	const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
- 	const struct phy_ver_ops *ver_ops;
- };
-@@ -185,6 +190,10 @@ static const u8 edp_phy_aux_cfg_v4[10] = {
- 	0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
- };
- 
-+static const u8 edp_phy_vco_div_cfg_v4[4] = {
-+	0x1, 0x1, 0x2, 0x0,
-+};
-+
- static const u8 edp_pre_emp_hbr_rbr_v5[4][4] = {
- 	{ 0x05, 0x11, 0x17, 0x1d },
- 	{ 0x05, 0x11, 0x18, 0xff },
-@@ -210,6 +219,14 @@ static const u8 edp_phy_aux_cfg_v5[10] = {
- 	0x00, 0x13, 0xa4, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
- };
- 
-+static const u8 edp_phy_aux_cfg_v8[13] = {
-+	0x00, 0x00, 0xa0, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03, 0x02, 0x02, 0x4,
-+};
-+
-+static const u8 edp_phy_vco_div_cfg_v8[4] = {
-+	0x1, 0x1, 0x1, 0x1,
-+};
-+
- static int qcom_edp_phy_init(struct phy *phy)
- {
- 	struct qcom_edp *edp = phy_get_drvdata(phy);
-@@ -224,7 +241,11 @@ static int qcom_edp_phy_init(struct phy *phy)
- 	if (ret)
- 		goto out_disable_supplies;
- 
--	memcpy(aux_cfg, edp->cfg->aux_cfg, sizeof(aux_cfg));
-+	memcpy(aux_cfg, edp->cfg->aux_cfg, edp->cfg->aux_cfg_size);
-+
-+	ret = edp->cfg->ver_ops->com_clk_fwd_cfg(edp);
-+	if (ret)
-+		return ret;
- 
- 	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
- 	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-@@ -252,7 +273,7 @@ static int qcom_edp_phy_init(struct phy *phy)
- 
- 	writel(0xfc, edp->edp + DP_PHY_MODE);
- 
--	for (int i = 0; i < DP_AUX_CFG_SIZE; i++)
-+	for (int i = 0; i < edp->cfg->aux_cfg_size; i++)
- 		writel(aux_cfg[i], edp->edp + DP_PHY_AUX_CFG(i));
- 
- 	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
-@@ -345,22 +366,22 @@ static int qcom_edp_set_vco_div(const struct qcom_edp *edp, unsigned long *pixel
- 
- 	switch (dp_opts->link_rate) {
- 	case 1620:
--		vco_div = 0x1;
-+		vco_div = edp->cfg->vco_div_cfg[0];
- 		*pixel_freq = 1620000000UL / 2;
- 		break;
- 
- 	case 2700:
--		vco_div = 0x1;
-+		vco_div = edp->cfg->vco_div_cfg[1];
- 		*pixel_freq = 2700000000UL / 2;
- 		break;
- 
- 	case 5400:
--		vco_div = 0x2;
-+		vco_div = edp->cfg->vco_div_cfg[2];
- 		*pixel_freq = 5400000000UL / 4;
- 		break;
- 
- 	case 8100:
--		vco_div = 0x0;
-+		vco_div = edp->cfg->vco_div_cfg[3];
- 		*pixel_freq = 8100000000UL / 6;
- 		break;
- 
-@@ -398,6 +419,11 @@ static int qcom_edp_phy_com_resetsm_cntrl_v4(const struct qcom_edp *edp)
- 				     val, val & BIT(0), 500, 10000);
- }
- 
-+static int qcom_edp_com_clk_fwd_cfg_v4(const struct qcom_edp *edp)
-+{
-+	return 0;
-+}
-+
- static int qcom_edp_com_bias_en_clkbuflr_v4(const struct qcom_edp *edp)
- {
- 	/* Turn on BIAS current for PHY/PLL */
-@@ -530,6 +556,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- 	.com_power_on		= qcom_edp_phy_power_on_v4,
- 	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v4,
- 	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v4,
-+	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v4,
- 	.com_configure_pll	= qcom_edp_com_configure_pll_v4,
- 	.com_configure_ssc	= qcom_edp_com_configure_ssc_v4,
- };
-@@ -537,17 +564,23 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
- 	.is_edp = false,
- 	.aux_cfg = edp_phy_aux_cfg_v5,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v5),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
- 
- static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
- 
- static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
-@@ -555,6 +588,8 @@ static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
- static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
- 	.is_edp = true,
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
- };
-@@ -734,10 +769,192 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
- 
- static struct qcom_edp_phy_cfg x1e80100_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v4),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v4,
- 	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
- 	.ver_ops = &qcom_edp_phy_ops_v6,
- };
- 
-+static int qcom_edp_com_configure_ssc_v8(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 step1;
-+	u32 step2;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+	case 2700:
-+	case 8100:
-+		step1 = 0x5b;
-+		step2 = 0x02;
-+		break;
-+
-+	case 5400:
-+		step1 = 0x5b;
-+		step2 = 0x02;
-+		break;
-+
-+	default:
-+		/* Other link rates aren't supported */
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_SSC_EN_CENTER);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_SSC_ADJ_PER1);
-+	writel(0x6b, edp->pll + DP_QSERDES_V8_COM_SSC_PER1);
-+	writel(0x02, edp->pll + DP_QSERDES_V8_COM_SSC_PER2);
-+	writel(step1, edp->pll + DP_QSERDES_V8_COM_SSC_STEP_SIZE1_MODE0);
-+	writel(step2, edp->pll + DP_QSERDES_V8_COM_SSC_STEP_SIZE2_MODE0);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_com_configure_pll_v8(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 div_frac_start2_mode0;
-+	u32 div_frac_start3_mode0;
-+	u32 dec_start_mode0;
-+	u32 lock_cmp1_mode0;
-+	u32 lock_cmp2_mode0;
-+	u32 code1_mode0;
-+	u32 code2_mode0;
-+	u32 hsclk_sel;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+		hsclk_sel = 0x5;
-+		dec_start_mode0 = 0x34;
-+		div_frac_start2_mode0 = 0xc0;
-+		div_frac_start3_mode0 = 0x0b;
-+		lock_cmp1_mode0 = 0x37;
-+		lock_cmp2_mode0 = 0x04;
-+		code1_mode0 = 0x71;
-+		code2_mode0 = 0x0c;
-+		break;
-+
-+	case 2700:
-+		hsclk_sel = 0x3;
-+		dec_start_mode0 = 0x34;
-+		div_frac_start2_mode0 = 0xc0;
-+		div_frac_start3_mode0 = 0x0b;
-+		lock_cmp1_mode0 = 0x07;
-+		lock_cmp2_mode0 = 0x07;
-+		code1_mode0 = 0x71;
-+		code2_mode0 = 0x0c;
-+		break;
-+
-+	case 5400:
-+	case 8100:
-+		hsclk_sel = 0x2;
-+		dec_start_mode0 = 0x4f;
-+		div_frac_start2_mode0 = 0xa0;
-+		div_frac_start3_mode0 = 0x01;
-+		lock_cmp1_mode0 = 0x18;
-+		lock_cmp2_mode0 = 0x15;
-+		code1_mode0 = 0x14;
-+		code2_mode0 = 0x25;
-+		break;
-+
-+	default:
-+		/* Other link rates aren't supported */
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_SVS_MODE_CLK_SEL);
-+	writel(0x3b, edp->pll + DP_QSERDES_V8_COM_SYSCLK_EN_SEL);
-+	writel(0x02, edp->pll + DP_QSERDES_V8_COM_SYS_CLK_CTRL);
-+	writel(0x0c, edp->pll + DP_QSERDES_V8_COM_CLK_ENABLE1);
-+	writel(0x06, edp->pll + DP_QSERDES_V8_COM_SYSCLK_BUF_ENABLE);
-+	writel(0x30, edp->pll + DP_QSERDES_V8_COM_CLK_SELECT);
-+	writel(hsclk_sel, edp->pll + DP_QSERDES_V8_COM_HSCLK_SEL_1);
-+	writel(0x07, edp->pll + DP_QSERDES_V8_COM_PLL_IVCO);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP_EN);
-+	writel(0x36, edp->pll + DP_QSERDES_V8_COM_PLL_CCTRL_MODE0);
-+	writel(0x16, edp->pll + DP_QSERDES_V8_COM_PLL_RCTRL_MODE0);
-+	writel(0x06, edp->pll + DP_QSERDES_V8_COM_CP_CTRL_MODE0);
-+	writel(dec_start_mode0, edp->pll + DP_QSERDES_V8_COM_DEC_START_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START1_MODE0);
-+	writel(div_frac_start2_mode0, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START2_MODE0);
-+	writel(div_frac_start3_mode0, edp->pll + DP_QSERDES_V8_COM_DIV_FRAC_START3_MODE0);
-+	writel(0x96, edp->pll + DP_QSERDES_V8_COM_CMN_CONFIG_1);
-+	writel(0x3f, edp->pll + DP_QSERDES_V8_COM_INTEGLOOP_GAIN0_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_INTEGLOOP_GAIN1_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE_MAP);
-+	writel(lock_cmp1_mode0, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP1_MODE0);
-+	writel(lock_cmp2_mode0, edp->pll + DP_QSERDES_V8_COM_LOCK_CMP2_MODE0);
-+
-+	writel(0x0a, edp->pll + DP_QSERDES_V8_COM_BG_TIMER);
-+	writel(0x0a, edp->pll + DP_QSERDES_V8_COM_CORECLK_DIV_MODE0);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE_CTRL);
-+	writel(0x1f, edp->pll + DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN);
-+	writel(0x00, edp->pll + DP_QSERDES_V8_COM_CORE_CLK_EN);
-+	writel(0xa0, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE1_MODE0);
-+	writel(0x01, edp->pll + DP_QSERDES_V8_COM_VCO_TUNE2_MODE0);
-+
-+	writel(code1_mode0, edp->pll + DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE0);
-+	writel(code2_mode0, edp->pll + DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE0);
-+
-+	return 0;
-+}
-+
-+
-+static int qcom_edp_phy_com_resetsm_cntrl_v8(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(0x20, edp->pll + DP_QSERDES_V8_COM_RESETSM_CNTRL);
-+
-+	return readl_poll_timeout(edp->pll + DP_QSERDES_V8_COM_C_READY_STATUS,
-+				     val, val & BIT(0), 500, 10000);
-+}
-+
-+static int qcom_edp_com_clk_fwd_cfg_v8(const struct qcom_edp *edp)
-+{
-+	writel(0x3f, edp->pll + DP_QSERDES_V8_COM_CLK_FWD_CONFIG_1);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_com_bias_en_clkbuflr_v8(const struct qcom_edp *edp)
-+{
-+	/* Turn on BIAS current for PHY/PLL */
-+	writel(0x1f, edp->pll + DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_phy_power_on_v8(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
-+	       DP_PHY_PD_CTL_LANE_0_1_PWRDN | DP_PHY_PD_CTL_LANE_2_3_PWRDN |
-+	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-+	       edp->edp + DP_PHY_PD_CTL);
-+	writel(0xfc, edp->edp + DP_PHY_MODE);
-+
-+	return readl_poll_timeout(edp->pll + DP_QSERDES_V8_COM_CMN_STATUS,
-+				     val, val & BIT(7), 5, 200);
-+}
-+
-+static const struct phy_ver_ops qcom_edp_phy_ops_v8 = {
-+	.com_power_on		= qcom_edp_phy_power_on_v8,
-+	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v8,
-+	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v8,
-+	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v8,
-+	.com_configure_pll	= qcom_edp_com_configure_pll_v8,
-+	.com_configure_ssc	= qcom_edp_com_configure_ssc_v8,
-+};
-+
-+static struct qcom_edp_phy_cfg glymur_phy_cfg = {
-+	.aux_cfg = edp_phy_aux_cfg_v8,
-+	.aux_cfg_size = ARRAY_SIZE(edp_phy_aux_cfg_v8),
-+	.vco_div_cfg = edp_phy_vco_div_cfg_v8,
-+	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
-+	.ver_ops = &qcom_edp_phy_ops_v8,
-+};
-+
- static int qcom_edp_phy_power_on(struct phy *phy)
- {
- 	const struct qcom_edp *edp = phy_get_drvdata(phy);
-@@ -1133,6 +1350,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id qcom_edp_phy_match_table[] = {
-+	{ .compatible = "qcom,glymur-dp-phy", .data = &glymur_phy_cfg, },
- 	{ .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc7280-edp-phy", .data = &sc7280_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
+This is actually v4. Hopefully, v4 will know to pick this one up when applying.
 
--- 
-2.48.1
+Sorry about the mess.
 
+> Changes in v4:
+> - Force fallthrough for 5400 and 8100 link rates in qcom_edp_com_configure_pll_v8,
+>   as they use the same values.
+> - Picked up Rob's and Konrad's R-b tags.
+> 
+> Changes in v3:
+> - Split the DP_AUX_CFG_SIZE change into as separate patch, as per
+>   Konrad's request.
+> - Re-worded the dt-bindings commit, as per Krzysztof's request.
+> - Link to v2: https://lore.kernel.org/r/20250909-phy-qcom-edp-add-glymur-support-v2-0-02553381e47d@linaro.org
+> 
+> Changes in v2:
+> - Sorted alphabetically the both the compatible and v8 specific
+>   configuration.
+> - Prefixed the new offsets with DP in order differentiate from PCIe ones
+> - Link to v1: https://lore.kernel.org/r/20250904-phy-qcom-edp-add-glymur-support-v1-0-e83c6b9a145b@linaro.org
+> 
+> ---
+> Abel Vesa (4):
+>       dt-bindings: phy: Add DP PHY compatible for Glymur
+>       phy: qcom: edp: Fix the DP_PHY_AUX_CFG registers count
+>       phy: qcom-qmp: qserdes-com: Add v8 DP-specific qserdes register offsets
+>       phy: qcom: edp: Add Glymur platform support
+> 
+>  .../devicetree/bindings/phy/qcom,edp-phy.yaml      |   2 +
+>  drivers/phy/qualcomm/phy-qcom-edp.c                | 232 ++++++++++++++++++++-
+>  .../phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h  |  52 +++++
+>  3 files changed, 279 insertions(+), 7 deletions(-)
+> ---
+> base-commit: b529e9498b7948df2be579282cbf0d5a9a3b7f9a
+> change-id: 20250903-phy-qcom-edp-add-glymur-support-2a8117d92b89
+> 
+> Best regards,
+> -- 
+> Abel Vesa <abel.vesa@linaro.org>
+> 
 
 -- 
 linux-phy mailing list
