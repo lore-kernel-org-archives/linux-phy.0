@@ -4,75 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44DE1CCD18E
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 14:43:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA0BACCD192
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 14:52:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yKTY/Aknhr8SJCEWj9V5Fuu84/inaNpLOFOoY6mvGOY=; b=dkMBLGxKrhUO9F
-	YLxzYDa+rLdKVTIH+TZKRlcxKOaY161awCcoULp08HrMASE8WTI20PSGNzg23k9g6BqsHNQB7dNM5
-	+2ztpgIvU6FGD6TRJE3gD2c5EgKXqSPi+OYo1awzUmzfU2Kk5KknIePzWbmeKsPUIIlPGdQxf6z1C
-	3dG5k3Aj6XqSSpJJ5m8362330lHP9EArqLDXow+blK/q0J3e5pMbu+kn66ZOryB4OOh6B5medah0+
-	APGn4k9Fl9rcvw0vebbXrOzSV5zGJ4ORXuOcA6+AJBPUxMpVU6D4maS4BzJ/HUcZTL10OLf8FZJLG
-	5w67zp6I66uw3+6AroWw==;
+	List-Owner; bh=BYUYUXWRBTevdRU892369eqd/T7vy5TWCWvWS7BWQyY=; b=kF8UPmR9wD0s2U
+	9TRlc3VdxP23+2mOazV1/Mp7WWtPOKL1qj3h0Km0geOZhgLkubKW/MjZfPkkJnXXF/EEhVMaoFeqV
+	CrpvdVcnFyBXCU8HPcNIkQrZcJDdKFEsw8A986RCYV5kFVzT6OonClwZ8hN/nKZy1Y4jFiOin51cl
+	XJF0QtPlwaeAgaxzF+CswNQDDj2986yB2wFGUwNaQzjzFNMPb31rW/sFZhJW3xGQfK/ONwMs0heft
+	aCDoLFjPdnpsezvFYup4F1qSnIJ/Vf1G2/OgGjvwv0bPkMG1g6cRB05C3MOUy2q5MG7co6eNC1BP9
+	6X0oP92diR1tT5Iv2zig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v92jK-00000001wt9-1p3k;
-	Wed, 15 Oct 2025 14:43:54 +0000
+	id 1v92rW-00000001xpK-2zld;
+	Wed, 15 Oct 2025 14:52:22 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v92jH-00000001ws8-3jV5
-	for linux-phy@lists.infradead.org;
-	Wed, 15 Oct 2025 14:43:53 +0000
+	id 1v92rT-00000001xob-34fZ;
+	Wed, 15 Oct 2025 14:52:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8744B40510;
-	Wed, 15 Oct 2025 14:43:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 33AFDC4CEF8;
-	Wed, 15 Oct 2025 14:43:51 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6B14443689;
+	Wed, 15 Oct 2025 14:52:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F48AC4CEF8;
+	Wed, 15 Oct 2025 14:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760539431;
-	bh=BdVewfzADni3rA+uLXMhw0FIoVYxSlv8WO8HdhDGEeg=;
+	s=k20201202; t=1760539939;
+	bh=ADw0XbUINFXw+99thMlJyEEKMXz1G33Y6Fyz/udOs7A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RnSAVYbX0pa/TbdwnqgAHLNi46jSc10fCqckm8meRRNlXCmzpes/MSgltOMJe09Ug
-	 JxdyInJGKhLHxSlIgFJYP5d1DMa/AN+TmOb6ZU2mngBuBTa4kiL0a7IlbiS/i8S+En
-	 /g4iXr3ZZjsFXgBInBqjDkI8vQ+S34EDoT113jIB013olFZ4zSjfvHAcPKJhj9WFs4
-	 m4yFWLccda0qiXQeUmNJq6scITEXvAsc57cu+xGApgTtwsq6T+ZXd60XHE0JrriWE+
-	 DDvL41D7J1pPoPbzucyHLUzWqhosGqSBeUrK2nvYQ0B3z5PDNtoU2YzTocZjSKawIk
-	 hvNZK+1DARCAA==
-Date: Wed, 15 Oct 2025 09:43:49 -0500
+	b=riF91sarHuoK7t4am2+p5dxxUbrgULuYBx2SVwAhxTpeD1NYtB46wNTalCGGwGWtq
+	 iHehp0VZnF2Ufr7jLAGIAUtAvlIFvJJa/4tuGo91bGJW4oYsm3B2uy8XWD+244DvCH
+	 k0ST8OCUPYfPGyFRe5boeRN1qFELPWzIXSWbsA+dRgf5o3t/9hB635UTAwt2RbPioF
+	 yZXJqHqdBaB4x2KSdwbzTH21133KVuVRbeGdsKpqMDdF4RO+5OJZgSzFl2+CZthuXX
+	 Caal7DGqDslWIEWXwJSuXV+kntKZi8z5IYayeXfNHvp6JjWA/6kA9jvXUqY7qVvzsN
+	 iFttDi/Vu7gGA==
+Date: Wed, 15 Oct 2025 09:52:17 -0500
 From: Rob Herring <robh@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Ritesh Kumar <quic_riteshk@quicinc.com>, robin.clark@oss.qualcomm.com,
-	lumag@kernel.org, abhinav.kumar@linux.dev,
-	jessica.zhang@oss.qualcomm.com, sean@poorly.run,
-	marijn.suijten@somainline.org, maarten.lankhorst@linux.intel.com,
-	mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com,
-	simona@ffwll.ch, krzk+dt@kernel.org, conor+dt@kernel.org,
-	quic_mahap@quicinc.com, andersson@kernel.org,
-	konradybcio@kernel.org, mani@kernel.org,
-	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com,
-	vkoul@kernel.org, kishon@kernel.org,
-	cros-qcom-dts-watchers@chromium.org, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-	quic_vproddut@quicinc.com
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: qcom-edp: Add edp ref clk for
- sa8775p
-Message-ID: <20251015144349.GA3302193-robh@kernel.org>
-References: <20251013104806.6599-1-quic_riteshk@quicinc.com>
- <20251013104806.6599-2-quic_riteshk@quicinc.com>
- <xofvrsdi2s37qefp2fr6av67c5nokvlw3jm6w3nznphm3x223f@yyatwo5cur6u>
+To: Alex Elder <elder@riscstar.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
+	guodong@riscstar.com, pjw@kernel.org, palmer@dabbelt.com,
+	aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
+	christian.bruel@foss.st.com, shradha.t@samsung.com,
+	krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+	namcao@linutronix.de, thippeswamy.havalige@amd.com,
+	inochiama@gmail.com, devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/7] dt-bindings: phy: spacemit: add SpacemiT
+ PCIe/combo PHY
+Message-ID: <20251015145217.GA3554740-robh@kernel.org>
+References: <20251013153526.2276556-1-elder@riscstar.com>
+ <20251013153526.2276556-2-elder@riscstar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <xofvrsdi2s37qefp2fr6av67c5nokvlw3jm6w3nznphm3x223f@yyatwo5cur6u>
+In-Reply-To: <20251013153526.2276556-2-elder@riscstar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_074351_965259_C85B3F7E 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251015_075219_814997_45F5D94B 
+X-CRM114-Status: GOOD (  26.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,21 +83,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 13, 2025 at 03:37:47PM +0300, Dmitry Baryshkov wrote:
-> On Mon, Oct 13, 2025 at 04:18:04PM +0530, Ritesh Kumar wrote:
-> > Add edp reference clock for sa8775p edp phy.
+On Mon, Oct 13, 2025 at 10:35:18AM -0500, Alex Elder wrote:
+> Add the Device Tree binding for the PCIe/USB 3.0 combo PHY found in
+> the SpacemiT K1 SoC.  This is one of three PCIe PHYs, and is unusual
+> in that only the combo PHY can perform a calibration step needed to
+> determine settings used by the other two PCIe PHYs.
 > 
-> eDP, PHY.
+> Calibration must be done with the combo PHY in PCIe mode, and to allow
+> this to occur independent of the eventual use for the PHY (PCIe or USB)
+> some PCIe-related properties must be supplied: clocks; resets; and a
+> syscon phandle.
 > 
-> I'd probably ask to squash both DT binding patches together, but this
-> might cause cross-subsystem merge issues. I'll leave this to DT
-> maintainers discretion, whether to require a non-warning-adding patch or
-> two patches with warnings in the middle of the series.
+> Signed-off-by: Alex Elder <elder@riscstar.com>
+> ---
+> v2: - Added '>' to the description, and reworded it a bit
+>     - Added an external oscillator clock, "refclk"
+>     - Renamed the "global" reset to be "phy"
+>     - Renamed a phandle property to be "spacemit,apmu"
+>     - Dropped the label and status property from the example
+> 
+>  .../bindings/phy/spacemit,k1-combo-phy.yaml   | 114 ++++++++++++++++++
+>  1 file changed, 114 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+> new file mode 100644
+> index 0000000000000..6e2f401b0ac27
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/spacemit,k1-combo-phy.yaml
+> @@ -0,0 +1,114 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/spacemit,k1-combo-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: SpacemiT K1 PCIe/USB3 Combo PHY
+> +
+> +maintainers:
+> +  - Alex Elder <elder@riscstar.com>
+> +
+> +description: >
+> +  Of the three PHYs on the SpacemiT K1 SoC capable of being used for
+> +  PCIe, one is a combo PHY that can also be configured for use by a
+> +  USB 3 controller.  Using PCIe or USB 3 is a board design decision.
+> +
+> +  The combo PHY is also the only PCIe PHY that is able to determine
+> +  PCIe calibration values to use, and this must be determined before
+> +  the other two PCIe PHYs can be used.  This calibration must be
+> +  performed with the combo PHY in PCIe mode, and is this is done
+> +  when the combo PHY is probed.
+> +
+> +  The combo PHY uses an external oscillator as a reference clock.
+> +  During normal operation, the PCIe or USB port driver is responsible
+> +  for ensuring all other clocks needed by a PHY are enabled, and all
+> +  resets affecting the PHY are deasserted.  However, for the combo
+> +  PHY to perform calibration independent of whether it's later used
+> +  for PCIe or USB, all PCIe mode clocks and resets must be defined.
+> +
+> +properties:
+> +  compatible:
+> +    const: spacemit,k1-combo-phy
+> +
+> +  reg:
+> +    items:
+> +      - description: PHY control registers
+> +
+> +  clocks:
+> +    items:
+> +      - description: External oscillator used by the PHY PLL
+> +      - description: DWC PCIe Data Bus Interface (DBI) clock
+> +      - description: DWC PCIe application AXI-bus Master interface clock
+> +      - description: DWC PCIe application AXI-bus slave interface clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: refclk
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +
+> +  resets:
+> +    items:
+> +      - description: DWC PCIe Data Bus Interface (DBI) reset
+> +      - description: DWC PCIe application AXI-bus Master interface reset
+> +      - description: DWC PCIe application AXI-bus slave interface reset
+> +      - description: PHY reset; must be deasserted for PHY to function
+> +
+> +  reset-names:
+> +    items:
+> +      - const: dbi
+> +      - const: mstr
+> +      - const: slv
+> +      - const: phy
 
-One patch.
+I think phy should be first as that's the main one to the phy and the 
+others are somewhat questionable. Otherwise,
 
-Rob
-
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 -- 
 linux-phy mailing list
