@@ -4,77 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEC40CCD193
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 08:59:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D42DCCD193
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 09:18:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/IPmbA6gk3rPTDLhdgFvyPqZNMALwmEhJe7ay790BqE=; b=RuNpjs8vkJqj5UFxZHUCjkGGTE
-	Dalx76mXFeh3jP8Ujj/+53gmfZ1YjQFz9ivWB7GH2jJ+MQ6zdioUT8bhr8vj12zMd9Hw0ft598/iV
-	g/3AEcSseL2EGUW93ljELTQf/s4k6TzAejkTZTX2OyN3p8LYiPYIM1ZMb3re7vAcqpBAYuTIP+Q/s
-	ACdSMpX+41DF7yIKuXIn6WVuGAz865jwIXPs7q0oylGfgekmgQqC0EkCb+Vv5+mk+NoB00/TccLWy
-	E2ZxVPwpL0VfbursIHaCjFQ0ZJWZyAZpD1d520RRGgOHpyVyaz1chCJAWntaxRZVVTwTyejuuVV1B
-	YJtRxw/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u09HodduwDdcUILlg9zH09riIUdp2rVSFcvpPNN60TM=; b=dxMU4yzS2JPfEv
+	nw0WwRC5mB/nG3EzNUMeno+BbQHl7GUeKZD9UWDhDb8lForUYwh9aCUASJYE8H91D3xugQ1XOoDu9
+	1e39p8uKuZrW8LeYVLDn33kHxiHEA5ZyO2GzrA9c45h7al3d0sn5lPgQ39FoMauyP9nIZ4UT4SRF5
+	l2c2PEhjdBc0SqSvh9ToGTT2WQ/yAZJncrW2CaOgf4og+5u9LxRSmzyrVJ25HgDv5HtJ6j7+wOH2d
+	/+CGmnctDqp0RGXAC0drC5A2g710Hlt7+qDRHOtI8eX5cHaZrlpzCaz3P99yAFtRmji79/q+6G5bR
+	lrl5VRUR75ifVFR7RAtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8xMN-0000000124A-2i6d;
-	Wed, 15 Oct 2025 08:59:51 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1v8xeh-000000017GV-1eaU;
+	Wed, 15 Oct 2025 09:18:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8xMK-0000000122E-3o4A;
-	Wed, 15 Oct 2025 08:59:50 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8E21143560;
-	Wed, 15 Oct 2025 08:59:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76509C4CEF8;
-	Wed, 15 Oct 2025 08:59:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760518788;
-	bh=b72yY1PK+jIL1N/cKVYxRui1EV7j6kK8mEYVXgh6uVw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TjjiJX898s20GcskSIqZJfXo95ZoDiXORjsJRp4b2UqJKaNt6jPmyVFCWZS0d6hF6
-	 msHBUbbO6aJvxjUvCHYBOGy1JYPT39S51lFIozEWtGRKONLjj9dOnUglWZX9rfUFqi
-	 //1OdMoA+rKOQkFnAfPtBvSkCqXS0Tfr0L2mqrtmZAujWpOQkHuWd78SjQCRVh2f81
-	 wQuEr+dU9M33ddnZVtrV4CIANa189VxaTvxC8/dlPV4uFQrAB/cyaz1A5Ye0YLDOZd
-	 YDZh6FlAQ/EzCS/lv8dSQanRNVphn4i6CPNpuxcCxXM1fkuoX7cFlLhdI959KmjN9T
-	 SOLvLrKGNTDNg==
-Date: Wed, 15 Oct 2025 09:59:42 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Roy Luo <royluo@google.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Joy Chakraborty <joychakr@google.com>,
-	Naveen Kumar <mnkumar@google.com>,
-	Badhri Jagan Sridharan <badhri@google.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v3 1/4] dt-bindings: usb: dwc3: Add Google Tensor G5 DWC3
-Message-ID: <20251015-backlash-overtime-4c636f12b165@spud>
-References: <20251010201607.1190967-1-royluo@google.com>
- <20251010201607.1190967-2-royluo@google.com>
- <066a9598-ad30-4327-be68-87299bba6fda@kernel.org>
- <CA+zupgwc7b51pNRLWRy2CX=n4=FTm=AP7J0dRP2RLjyK5LxGtw@mail.gmail.com>
- <b7b3de64-c656-4a84-8ba4-2d5c7eda9783@kernel.org>
- <CA+zupgzo9zRO2GHR2Np0Tm4M5_h8y0GF2JGGqE_S0BxSR_ZbqQ@mail.gmail.com>
+	id 1v8xee-000000017Du-3rlI
+	for linux-phy@lists.infradead.org;
+	Wed, 15 Oct 2025 09:18:46 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59F2s7XT024777
+	for <linux-phy@lists.infradead.org>; Wed, 15 Oct 2025 09:18:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=bS1E+4mwLwBFxlFV6Y8vnGID
+	Eaq0IJ1+mTWNPvPN/ow=; b=pHKb+eE7EYO3K0e1ksvCiWA39iLCSJMsj+XM1ksK
+	4S36D/sLeMMDMQehEZXKtspD1kktRrZO3Dlq7DoNX/eV0sfC/1Dc8OfSatgYNDyQ
+	QN6Yg2Pp4Hykgt2jOj+AaTTMA5jeFfO4NaSjuWVHFpSgbHACBlR9wb/q06SQsqo9
+	Ty7Bm1djb6BatJ6dqk2tJcDOOSBm4yU5y3H9OcENfgaeX9cMHf+vo/CYEwogapeZ
+	xMKsIiOBQSKpnqxUfIOT52/5uD0dTVQu3EawLIxL/jAbjRviygrp/h1lVR79LBAm
+	mupIk6btIy3iV4jCQ+DAbEvK2XIVc2uRHW41nIgPV7KQqg==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49qff0uthg-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 15 Oct 2025 09:18:44 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-32ec67fcb88so9455115a91.3
+        for <linux-phy@lists.infradead.org>; Wed, 15 Oct 2025 02:18:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760519924; x=1761124724;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=bS1E+4mwLwBFxlFV6Y8vnGIDEaq0IJ1+mTWNPvPN/ow=;
+        b=d9g6Ln6EhPE9lMyAVXprlr5dO/pdV8Z6iLgSjC+ju7+MbVf9W6tfC7UOYgKbowib4D
+         SxY6S2YtOo3jbkyb15D7ZOx+T8QyJOPAPoSl4rzkrwXYWSpkcPQii1k/E+OqlU79b8+I
+         tOnkP4se+Ajpcby1db6eNkZ35p96y8AZCNU45hOpZDiWJJL/p0B9fdmC2sL5KAwUT3Im
+         YvaHdWkCsLfcP9roEdkNsDZh4oZ14zTO55JD9pdSwzapUJotGhbJEhH7d9pPuyi3wrxh
+         YgP57v2jZs8H+jbI7kUJ0VmG8/h0jPBUNNQFaGyNkjj+/yP8E9v+39yxwu54Ut0qXuuP
+         6tyg==
+X-Forwarded-Encrypted: i=1; AJvYcCUXej5oxUVNuAmY1V3JhM9xffblqbCsKZ4eO38wbF3Of2qc11kZgHs1Lh+zcSLxgPLOnx1KhMlkueY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzq8mLdnHHr14zGhPGoVx54R9jyRy6mPkrBQw0yztd416eU3zPa
+	Xowawzw7AvmUHpDSkNRuzd4JynNdVfxSUsNDGUljJxZEcaIsKPu+CXqjdbgHUu2xIHan0mMSOfR
+	uSSo4WI646Oxf4uUfJJQIVE1u81+jqIUL9DzA/3XNojceYqq6s14pkMQ+gLz1Ca+iHG2E
+X-Gm-Gg: ASbGncs0/aZ/pyzAQtdayvQw6WvZ0JatabTIrIllHuvM3gX4NZXxyoKJ1cCWEFagZj/
+	I3JPsLdhzMk/MmpZ1N1OCwVORM51YC2Yw3kImIDfdBoQ1ce4aWClXuCwVWYL8omcqx6HmZB/NNL
+	Mfd2ZCqYGMtSv1dVv8z77Z0ct+CO5TSPk8zL+lg2GS7VQUPIwAuRlg5ZzBKN500ZZjxw7JrfC7F
+	LLXSy0JddOhsePhWKyqVlQWIkI36+iTQXZG+LHL/X8xDzGiascOqm1mmcdQAUv85UsFs18xcGQI
+	FvYG43bFCBjaOZcp0XPVmLD68/fOMEpxDBGFD/1gH7EJljDSKlrUQbiQcrpV6wgPBoqvnQbKoy4
+	+VVpPJXHG5mY=
+X-Received: by 2002:a17:90b:33c1:b0:32e:dd8c:dd18 with SMTP id 98e67ed59e1d1-33b51386478mr42150813a91.17.1760519923661;
+        Wed, 15 Oct 2025 02:18:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHMgnMO7HLRZxNRp6JE2WyjZvNwxMd4B9BWG+xm9wiLFSOLNzWFuvmVaLsS63QDbhtbP/hrPg==
+X-Received: by 2002:a17:90b:33c1:b0:32e:dd8c:dd18 with SMTP id 98e67ed59e1d1-33b51386478mr42150785a91.17.1760519923204;
+        Wed, 15 Oct 2025 02:18:43 -0700 (PDT)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33b9786084fsm1727013a91.10.2025.10.15.02.18.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 15 Oct 2025 02:18:42 -0700 (PDT)
+Date: Wed, 15 Oct 2025 02:18:40 -0700
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Jingyi Wang <jingyi.wang@oss.qualcomm.com>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, aiqun.yu@oss.qualcomm.com,
+        tingwei.zhang@oss.qualcomm.com, trilok.soni@oss.qualcomm.com,
+        yijie.yang@oss.qualcomm.com
+Subject: Re: [PATCH 3/6] phy: qcom-qmp: qserdes-txrx: Add QMP PCIe PHY
+ v8-specific register offsets
+Message-ID: <aO9m8PA5QMb5JDgz@hu-qianyu-lv.qualcomm.com>
+References: <20250924-knp-pcie-v1-0-5fb59e398b83@oss.qualcomm.com>
+ <20250924-knp-pcie-v1-3-5fb59e398b83@oss.qualcomm.com>
+ <fw5hf4p2mjybvfo756dhdm6wwlgnkzks4uwgo7k3dy7hyjhzyr@bv4p7msxapcb>
+ <aOzSnxuuAb4gFCkk@hu-qianyu-lv.qualcomm.com>
+ <x2443gg3bj37j7qxjk3ocol4xzcly2vandob5j46bp5c6akqb3@zgwrl7qhl2y6>
 MIME-Version: 1.0
-In-Reply-To: <CA+zupgzo9zRO2GHR2Np0Tm4M5_h8y0GF2JGGqE_S0BxSR_ZbqQ@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <x2443gg3bj37j7qxjk3ocol4xzcly2vandob5j46bp5c6akqb3@zgwrl7qhl2y6>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDExMDAxOCBTYWx0ZWRfXy1w5Gns/mF3s
+ 5IuzBhnUncG0DLzXRcfi7L1kUlMQMDTQUUjFtDTkZDPPLd3IUuqFooWnXyfOrRKoUDpdemdGV0H
+ 15+fxgO5LySL40WR6WJhO51CaYPbB6OCsD8tyj8PG1vaEeMPCaK05c1c8iBFiztbu1Eq4k6nPj9
+ JKZpwiDoO9XdzESYFwE08E+grmXtahMK8ZPIuhvar4mc+4MXf+j5an0EmMaf2+coxIPX4m8V10i
+ 1/q9hljuCR5PiTCVItEeyPWrYfDbwZdWSZ+99Ufvrmb1/rrvup1c5xhX51260T1d8/locvEzm16
+ 8upZbx4O5c+WRfOH9wLgUMrMI6+B+FBBY+Ezh9THg==
+X-Proofpoint-GUID: n9UrTXAraXaajXHCCEZitaYoKNCUn-i3
+X-Authority-Analysis: v=2.4 cv=PriergM3 c=1 sm=1 tr=0 ts=68ef66f4 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=EUspDBNiAAAA:8 a=naz9k7CIUQbskZorHm4A:9 a=CjuIK1q_8ugA:10
+ a=rl5im9kqc5Lf4LNbBjHf:22
+X-Proofpoint-ORIG-GUID: n9UrTXAraXaajXHCCEZitaYoKNCUn-i3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-15_04,2025-10-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ spamscore=0 suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
+ definitions=main-2510110018
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_015948_993148_26B98F1B 
-X-CRM114-Status: GOOD (  49.04  )
+X-CRM114-CacheID: sfid-20251015_021845_076024_51180C38 
+X-CRM114-Status: GOOD (  23.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,256 +139,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7998244411896396857=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Mon, Oct 13, 2025 at 03:40:32PM +0300, Dmitry Baryshkov wrote:
+> On Mon, Oct 13, 2025 at 03:21:19AM -0700, Qiang Yu wrote:
+> > On Thu, Sep 25, 2025 at 05:28:15AM +0300, Dmitry Baryshkov wrote:
+> > > On Wed, Sep 24, 2025 at 04:33:19PM -0700, Jingyi Wang wrote:
+> > > > From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > > > 
+> > > > Kaanapali SoC uses QMP PHY with version v8 for PCIe Gen3 x2, but its
+> > > > qserdes-txrx register offsets differ from the existing v8 offsets. To
+> > > > accommodate these differences, add the qserdes-txrx specific offsets in
+> > > > a dedicated header file.
+> > > 
+> > > With this approach it's not obvious, which register names are shared
+> > > with the existing header and which fields are unique. Please provide a
+> > > full set of defines in this header.
+> > 
+> > Sorry, I didn't get you. Do you mean we need to add defines for all PCIe
+> > qserdes-txrx registers? I don't understand how this makes which register
+> > names are shared and which fields are unique more obvious.
+> 
+> From your commit message it feels like
+> phy-qcom-qmp-qserdes-txrx-pcie-v8.h is an extension over some other
+> "base" header file (likely phy-qcom-qmp-qserdes-txrx-v8.h. It makes it
+> harder to follow the logic and harder to compare the values. Please
+> define all used register names inside the new header.
 
---===============7998244411896396857==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GW92FK5a5G6ntc0U"
-Content-Disposition: inline
+No, the new header file is not an extension. It's a full set of
+qserdes-txrx register definitions required for Kaanapali PCIe PHY.
 
+Let me rewrite my commit msg.
 
---GW92FK5a5G6ntc0U
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Oct 14, 2025 at 05:50:17PM -0700, Roy Luo wrote:
-> On Tue, Oct 14, 2025 at 1:22=E2=80=AFAM Krzysztof Kozlowski <krzk@kernel.=
-org> wrote:
-> >
-> > On 14/10/2025 03:40, Roy Luo wrote:
-> > > On Fri, Oct 10, 2025 at 5:09=E2=80=AFPM Krzysztof Kozlowski <krzk@ker=
-nel.org> wrote:
-> > >>
-> > >> On 10/10/2025 22:16, Roy Luo wrote:
-> > >>> Document the device tree bindings for the DWC3 USB controller found=
- in
-> > >>> Google Tensor SoCs, starting with the G5 generation.
-> > >>>
-> > >>> The Tensor G5 silicon represents a complete architectural departure=
- from
-> > >>> previous generations (like gs101), including entirely new clock/res=
-et
-> > >>> schemes, top-level wrapper and register interface. Consequently,
-> > >>> existing Samsung/Exynos DWC3 USB bindings are incompatible, necessi=
-tating
-> > >>> this new device tree binding.
-> > >>>
-> > >>> The USB controller on Tensor G5 is based on Synopsys DWC3 IP and fe=
-atures
-> > >>> Dual-Role Device single port with hibernation support.
-> > >>
-> > >> You still mix, completely unnecessarily, subsystems. For Greg this is
-> > >> actually even undesired, but regardless don't do this for any cases
-> > >> because it just makes everything slower or more difficult to apply.
-> > >>
-> > >> Really, think how maintainers should deal with your patches.
-> > >>
-> > >
-> > > Understood, I will separate the patches into two distinct series: one=
- for
-> > > the controller and one for the PHY.
-> > > Appreciate the feedback and the explanation.
-> > >
-> > >>>
-> > >>> Signed-off-by: Roy Luo <royluo@google.com>
-> > >>> ---
-> > >>>  .../bindings/usb/google,gs5-dwc3.yaml         | 141 ++++++++++++++=
-++++
-> > >>>  1 file changed, 141 insertions(+)
-> > >>>  create mode 100644 Documentation/devicetree/bindings/usb/google,gs=
-5-dwc3.yaml
-> > >>>
-> > >>> diff --git a/Documentation/devicetree/bindings/usb/google,gs5-dwc3.=
-yaml b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
-> > >>> new file mode 100644
-> > >>> index 000000000000..6fadea7f41e8
-> > >>> --- /dev/null
-> > >>> +++ b/Documentation/devicetree/bindings/usb/google,gs5-dwc3.yaml
-> > >>> @@ -0,0 +1,141 @@
-> > >>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > >>> +# Copyright (c) 2025, Google LLC
-> > >>> +%YAML 1.2
-> > >>> +---
-> > >>> +$id: http://devicetree.org/schemas/usb/google,gs5-dwc3.yaml#
-> > >>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > >>> +
-> > >>> +title: Google Tensor Series (G5+) DWC3 USB SoC Controller
-> > >>> +
-> > >>> +maintainers:
-> > >>> +  - Roy Luo <royluo@google.com>
-> > >>> +
-> > >>> +description:
-> > >>> +  Describes the DWC3 USB controller block implemented on Google Te=
-nsor SoCs,
-> > >>> +  starting with the G5 generation. Based on Synopsys DWC3 IP, the =
-controller
-> > >>> +  features Dual-Role Device single port with hibernation add-on.
-> > >>> +
-> > >>> +properties:
-> > >>> +  compatible:
-> > >>> +    const: google,gs5-dwc3
-> > >>> +
-> > >>> +  reg:
-> > >>> +    items:
-> > >>> +      - description: Core DWC3 IP registers.
-> > >>> +      - description: USB host controller configuration registers.
-> > >>> +      - description: USB custom interrrupts control registers.
-> > >>> +
-> > >>> +  reg-names:
-> > >>> +    items:
-> > >>> +      - const: dwc3_core
-> > >>> +      - const: host_cfg
-> > >>> +      - const: usbint_cfg
-> > >>> +
-> > >>> +  interrupts:
-> > >>> +    items:
-> > >>> +      - description: Core DWC3 interrupt.
-> > >>> +      - description: High speed power management event for remote =
-wakeup from hibernation.
-> > >>> +      - description: Super speed power management event for remote=
- wakeup from hibernation.
-> > >>
-> > >> Wrap at 80 (see coding style) or just shorten these.
-> > >
-> > > Ack, will fix it in the next patch.
-> > >
-> > >>
-> > >>> +
-> > >>> +  interrupt-names:
-> > >>> +    items:
-> > >>> +      - const: dwc_usb3
-> > >>
-> > >> So just "core"?
-> > >
-> > > I'd prefer to stick to "dwc_usb3" as that's
-> > > 1. more expressive by referring to the underlying IP name,
-> >
-> >
-> > But that's completely redundant name.
-> >
-> > > 2. consistent with established dwc3 bindings such as
-> > >     Documentation/devicetree/bindings/usb/snps,dwc3.yaml,
-> >
-> > If you use only one interrupt. You don't use one interrupt here.
->=20
-> After looking into it further, I found that the interrupt name "dwc_usb3"
-> must be used here to adhere to the interrupt naming defined in
-> "snps,dwc3.yaml".
-
-Did you just chose to not read what Krzysztof said here? It must be used
-only when that's the sole interrupt, which he stated is not the case for
-your platform.
-
-> This requirement stems from the device's corresponding glue driver
-> utilizing a so-called "flattened" model (see [1] for context). This model
-> causes the glue driver to probe an underlying "snps,dwc3" device.
-> Consequently, the core DWC3 interrupt defined here is consumed by
-> the driver handling the "snps,dwc3" device, making it mandatory to
-> follow the interrupt naming established in "snps,dwc3.yaml".
-
-I look at the binding and noticed that interrupt-names isn't even a
-required property by snps,dwc3.yaml, and this comment about driver
-behaviour likely isn't accurate given that the code in for host mode
-(and the others are identical) is written so that it will grab the first
-interrupt if the specific names it looks for are absent:
-| static int dwc3_host_get_irq(struct dwc3 *dwc)
-| {
-| 	struct platform_device	*dwc3_pdev =3D to_platform_device(dwc->dev);
-| 	int irq;
-|=20
-| 	irq =3D platform_get_irq_byname_optional(dwc3_pdev, "host");
-| 	if (irq > 0) {
-| 		dwc3_host_fill_xhci_irq_res(dwc, irq, "host");
-| 		goto out;
-| 	}
-|=20
-| 	if (irq =3D=3D -EPROBE_DEFER)
-| 		goto out;
-|=20
-| 	irq =3D platform_get_irq_byname_optional(dwc3_pdev, "dwc_usb3");
-| 	if (irq > 0) {
-| 		dwc3_host_fill_xhci_irq_res(dwc, irq, "dwc_usb3");
-| 		goto out;
-| 	}
-|=20
-| 	if (irq =3D=3D -EPROBE_DEFER)
-| 		goto out;
-|=20
-| 	irq =3D platform_get_irq(dwc3_pdev, 0);
-| 	if (irq > 0)
-| 		dwc3_host_fill_xhci_irq_res(dwc, irq, NULL);
-|=20
-| out:
-| 	return irq;
-| }
-
-Since it grabs the first interrupt, as a fallback, in order to support
-not having the interrupt-names property, the name of the first interrupt
-ultimately doesn't matter at all to this driver (and likely any other
-driver written in compliance with the bindings for the dwc3 core).
-
-I'm not here to argue about what the name for the single interrupt
-should be (keeping consistency with other devices might actually be
-good), but ignoring what a maintainer says and the seemingly providing
-an incorrect analysis is annoying. Did you perform the analysis on this
-yourself, or did it perhaps come from Gemini?
-
-Thanks,
-Conor.
-
-> Essentially, the interrupts defined here are a mix of vendor specific
-> implementation (like "hs_pme", "ss_pme") and the DWC3 core in
-> "snps,dwc3.yaml" ("dwc_usb3").
->=20
-> I don't know if there's a better way to express this implicit dependency
-> of the core DWC3 interrupt except for documenting it in the binding
-> description. Any advice would be welcome.
->=20
-> [1] https://lore.kernel.org/all/20250414-dwc3-refactor-v7-0-f015b358722d@=
-oss.qualcomm.com/
->=20
-> Thanks,
-> Roy Luo
->=20
-> >
-> > >     Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml,
-> > > unless you have a strong preference for the alternative naming.
-> >
-> > Such namings are discouraged, because they tell absolutely nothing.
-> > Also, schematics or datasheets usually do not use them, either.
-> >
-> >
-> > Best regards,
-> > Krzysztof
-
---GW92FK5a5G6ntc0U
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaO9ifQAKCRB4tDGHoIJi
-0i2hAP0TeU5yK0ZKtGdyM4A4+ajUuovxmP76kUHcH5gsiw86HgD9F18E184P1/vt
-6JU4iU71rnWcvBNCCfV+EKIyRKVw9wM=
-=0mtw
------END PGP SIGNATURE-----
-
---GW92FK5a5G6ntc0U--
-
-
---===============7998244411896396857==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+- Qiang Yu
+> 
+> 
+> -- 
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7998244411896396857==--
-
