@@ -4,92 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B915DCCD190
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 07:37:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BB7CCD193
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Oct 2025 08:19:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=93Cu8S2jZZ5QiXpA+RoghNjSE+D7hFLGGJzF12N8054=; b=XHA4ylkUtwTZWn
-	EEhrf7FNGb+t/AoEpthgZ15nFZR03MV04tMKNrU0xTTuL8rkKb0/1Sn4kLrVBrVI+P1MRShPdyyQf
-	ColAcg4AVOpuw0ASnggf8MrnvKZegVsbu2YHRUdWrZAx3lqjMKh2Uocl4TV6gxQyBw8JnFntq/8Ma
-	E7TqZrq7R+p+oM0k4J6QSoOTypPBaDp1GV+okFDJgLmqikE6YAq6qHDg4RNf0UBvJgxPVoxKjW55k
-	QC0FtvtiXGMB3LL+mzCOsZAJs5Ru3gfdMjZWhF3G5dN1sCyMIfovAAd5LxGFQ5jKgri1sfGJAzetp
-	DQO0Be9Py/+Dcor6kdpA==;
+	List-Owner; bh=9KGK/SCSnaAKCQDm+fxAeiKTEM1VlJ13fDYrtZ0en34=; b=IDWq1mt8XqZHCn
+	SOC19CnwCfwTpHWajHmroMQfKOjx+6nI+UBJGL0SX4l+YiVEvE+HLvUPh0wisaLaIDZE8e4CoGlCd
+	dH3iMVVWApwOLQiIUhJs+lghz7pHSZ+LdR5gvriOVjZtOVUtoo00JDY7t8wDJPuh+eSXnjBcSl9Wk
+	tQiTqE7aUbuNORt29ZgOJDdghEyEICu9lDL13jPY6o2YLgQTB7LqsZqqzoD/3eB9gYH1s1m53Zpiz
+	igrMJYTJPL68xtiSiWCO2+YnZSXdbOF1+waAD3viFOKr59a2gjVQQS1tCId9LU1nxcFKnIOqkWHbg
+	NMZrg5dsnr/QW2wdUp5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8w4r-00000000mHo-28UT;
-	Wed, 15 Oct 2025 07:37:41 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1v8wjW-00000000sxa-2aAi;
+	Wed, 15 Oct 2025 08:19:42 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8w4q-00000000mGY-03Nv
-	for linux-phy@bombadil.infradead.org;
-	Wed, 15 Oct 2025 07:37:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Reply-To:Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Content-ID:Content-Description;
-	bh=/ENdemGirG006n4JlkDedKYfynM0bdpeP1b+huUC2rE=; b=fAaQ+N6HQyojzqkAvEBb871zh/
-	/YNMx2UKcUTz/iC2ck20HV2dVysCQHnaBc+BNZDQ7o9j2xDoHU4qqqB0NsKtzWYoDnMtUwrtdB3tx
-	DfbaYETtrJFG0r4sz5ctGP2UNTrRV+3KkVNF0A9/42ibYTkSGZq3wrCONgALQgZsNlAW4CoUpDgIA
-	RG+z3f8IXIQlB6hvo6ERtSnh6W/EuH8KnUjMuA5VLHgaH3i1zNvs1/JPAnWRxwib0zRy8UXnskOHi
-	B5KDdKxoPUfZDeSyNVIhenoF4Vop6U4Q5CrF1OAWHPhxWpSyedHU01W/cIAQNW18rRSmHqutfpdzm
-	4rKqInHg==;
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8w4j-00000005mE3-3imp
+	id 1v8wjT-00000000swc-3n2N
 	for linux-phy@lists.infradead.org;
-	Wed, 15 Oct 2025 07:37:37 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 217BB45B06;
-	Wed, 15 Oct 2025 07:37:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id BB2D3C4CEFE;
-	Wed, 15 Oct 2025 07:37:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760513845;
-	bh=ZTuP9QU0WJoXWqeUWoKhaTW20o0NRkC+02dyA9zGxCs=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=YQ3GyDR2X7GoR1IZI8QKYzGuiD6DeOx12rRBCF8Q6/wOZ7igOlXOptAirCxsTaGK7
-	 rdKSmVAi7LttChMgB8ia3Dgf/xmNNSHeYcq2w/oJGUlR1hej5r8+0MG3DvArZvzSOv
-	 NIGqsdEx38NkFL+PmLgKDQKBjjrV58y2pkcxneEV18uyLzgcRqAA9QBRwb/Z8Ek1xG
-	 mknRFLQigmY2z/MpmgYOOoYIMNkh5peVcjn3nX9lAt5lHfypJNT0nAhxTwmqHUXQw8
-	 WBzJgM2lvgQDlTnkyLeQFgyA/32OTMx4v9bZGGRbXATWSG+vV5J3qkn79/dsC94FFP
-	 /ZK03cQ9n1hng==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A9F89CCD190;
-	Wed, 15 Oct 2025 07:37:25 +0000 (UTC)
-From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Date: Wed, 15 Oct 2025 09:37:08 +0200
-Subject: [PATCH v4 1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN
- transceiver
+	Wed, 15 Oct 2025 08:19:41 +0000
+Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-b48d8deaef9so1123601366b.2
+        for <linux-phy@lists.infradead.org>; Wed, 15 Oct 2025 01:19:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1760516378; x=1761121178; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=8KneEMScoa9FWAqTtx3ph1+7zePLdAas+6JTV1uYXUY=;
+        b=Ic8m/Job8QlVFwRmHERM1WeWhV9DlXrjHYThA2YVTchcgpmzc+Y+Mt08+A9Ogp5fro
+         WZt0t6Jelx2QtmTo6oJZPYsCiUywwG9glzRgqo72gHF3b412IMMTJ4YHjNdK3QNE/j0T
+         NKTxcSvYeGB+pq+Mezo9wvFBQB6brfHNLV3iB68rbRC7gx13N55OuMWcnb04UbhVdar+
+         SN6NVIJVBApHb7a0V1745qu4L2wSAqXqxroa3MMhYTr9NTUiRhmxT9ulmzFw9xal/XjM
+         cI6l1E6fd54Gd435I1evjIxNMEJSXIfVIG8w+JqjUNtJDypmE+d8Tza6jHAPEpzoJ0Qi
+         9ZIA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760516378; x=1761121178;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=8KneEMScoa9FWAqTtx3ph1+7zePLdAas+6JTV1uYXUY=;
+        b=YnCG4E75IcHbeKHl9JAaAMldygTQGlvN2jm29L/gfLdiErGTsXxqwkd9rkEXcaw9XF
+         pshcNK9cbe9IizZMRN7V96TqNW2fZM3mmUdGQHHVf7362LSfRiKBtn4IbJjzLUvqJhCn
+         ctkh4qRaYqWrusVORtHV33k/8MfbV9YBEvSUg1yFguSJb5Ii5Jb55Sx7ON0J3S8rFpkH
+         RsES6qYv6WCWGdua0BA+xKCK2kbCdPqAVIwnetwk8SVBsj0tvmRRbtKf2jxQDBMYOpLW
+         8jK3QKL/lmyll9+H0ly5/Mk4btOREBF0c6NPyNtS/bkc0accby/6ZEguYw+hRU8/2Ehv
+         21MA==
+X-Gm-Message-State: AOJu0Yw7kB15DUb3WuJWdLROWcjjKw2GZF9q/oQR/OTEYBZlrgJZnDux
+	bOZnWh3ZfP26Tcj+mbeTS/Ic+Z79IgW7Lekv9nenWQNECTfviwjVP04NJXoUQ4zZzLw=
+X-Gm-Gg: ASbGncs4uq1fAFklTT5oLcdYJz22v0fY7O7XALvudQws2Pp9h3/vlqu76lU2IzdY1Fs
+	54p1HpomqiMfls7foD2M44Js2qn43HLDvz2Bn1jiFzgdAGd8YXUG9mGiDTK8ZKUlqUWejAGBvKg
+	wujcQcUE4RpIE5TOkZRHjrbB78uoN8OuVuvhw+E5IUb6mrV8CxmzzNVLMwCCeM7Srm4MH9R9ihN
+	hD+KZiP912WrU6RPHjb9SAHII9BVuIeiJQxUnpQT6E1G89UHe3cymMP6OCfMyA0CAxSxCikIgIM
+	W0pkEc37w8e38d3JLX++YQ8lRfeh4bvS9oPQeWagUEDBK5lpiad1FvugL88f1nBvCU1h9rNoMJn
+	t5nfj7LyKYJjQbKwXe6o5xUXSYVHehkWPoQI70xL5fLNAcm1apA==
+X-Google-Smtp-Source: AGHT+IEVkjo7z+13pgEMw8ki/r0mUSZhrjZCaI1xrW40+u9DWDfR3ebpJtSBjpXr8BzCEh4v3qtFoA==
+X-Received: by 2002:a17:907:72cf:b0:b04:61aa:6adc with SMTP id a640c23a62f3a-b50aa69e311mr2948870066b.7.1760516377814;
+        Wed, 15 Oct 2025 01:19:37 -0700 (PDT)
+Received: from [10.95.0.194] ([213.233.104.39])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b5ccd39b7d8sm166061566b.69.2025.10.15.01.19.35
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 15 Oct 2025 01:19:37 -0700 (PDT)
+Message-ID: <19746f65-bf10-4687-9e2b-b259220a9ea8@tuxon.dev>
+Date: Wed, 15 Oct 2025 11:19:34 +0300
 MIME-Version: 1.0
-Message-Id: <20251015-tja1145-support-v4-1-4d3ca13c8881@liebherr.com>
-References: <20251015-tja1145-support-v4-0-4d3ca13c8881@liebherr.com>
-In-Reply-To: <20251015-tja1145-support-v4-0-4d3ca13c8881@liebherr.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>, 
- Marc Kleine-Budde <mkl@pengutronix.de>, linux-can@vger.kernel.org
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1760513844; l=2552;
- i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=N0KzjNPFJNuxY7dRpWRnyrKjsm8oH6XH9DGqpdXPz6A=;
- b=shMhHNBfa3n4bIcy9zTgO0dwYLSfZ6R04Y3JSzeIucuOXfEd2vm7ELMygtwaDiKpeBjSKM4hb
- 0zAchT9cgQoBovQzrOMnE6JilUvYrZUqeinMcIsKKRIxLYvMt/svJnT
-X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
- pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
-X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
- with auth_id=290
-X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
+ PWRRDY
+To: Philipp Zabel <p.zabel@pengutronix.de>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ geert+renesas@glider.be, magnus.damm@gmail.com,
+ yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>
+References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
+ <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
+ <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
+ <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
+ <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
+ <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
+ <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
+ <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
+ <77678dd6-071b-4911-a5c5-f1519c92e91a@tuxon.dev>
+ <6ba1fd1f07753c9b98a57c87bffbbee16971da7a.camel@pengutronix.de>
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+Content-Language: en-US
+In-Reply-To: <6ba1fd1f07753c9b98a57c87bffbbee16971da7a.camel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_083735_628676_FF6970D4 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20251015_011940_183949_BB2A0454 
+X-CRM114-Status: GOOD (  50.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,116 +109,254 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dimitri.fedrau@liebherr.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+Hi, Philipp,
 
-Adding documentation for NXPs TJA1145 CAN transceiver, which resides like
-the ti,tcan104x-can.yaml in the same directory as other generic PHY
-subsystem bindings. At the moment there is only support for simple PHYs
-by using regulator bindings in combination with can-transceiver.yaml or
-PHYs that implement the generic PHY subsystem like the NXP TJA1145.
+On 10/14/25 19:42, Philipp Zabel wrote:
+> Hi Claudiu,
+> 
+> On Di, 2025-10-14 at 11:36 +0300, Claudiu Beznea wrote:
+>> On 10/13/25 17:57, Philipp Zabel wrote:
+> [...]
+>>>>> On 10/8/25 13:23, Philipp Zabel wrote:
+>>>>>> On Mi, 2025-10-08 at 12:29 +0300, Claudiu Beznea wrote:
+> [...]
+>>>>>>> The approaches considered were:
+>>>>>>> a/ power domain
+> [...]
+>>>>>> Could you point me to the discussion related to a?
+> [...]
+>>> Thank you! From this discussion it still isn't clear to me whether
+>>> Ulf's suggestion of using genpd on/off notifiers was considered and why
+>>
+>> The genpd on/off notifier suggestion wasn't tried, but only the
+>> implementation of PWRRDY handling through the power domain (what Ulf
+>> suggested though "Move the entire reset handling into the PM domain
+>> provider, as it obviously knows when the domain is getting turned on/off"
+>> in
+>> https://lore.kernel.org/all/fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev/).
+>> Sorry if I mislead you.
+> 
+> No worries, misunderstandings happen. Here I assumed the "power domain
+> approach" meant letting the PWRRDY signal be controlled by power domain
+> state, not specifically all code in the power domain driver.
 
-Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
----
- .../devicetree/bindings/phy/nxp,tja1145.yaml       | 80 ++++++++++++++++++++++
- 1 file changed, 80 insertions(+)
+I had a power domain driver implemented with its own genpd::power_{on,
+off}, where the PWRRDY bit was set. I just pushed a branch here [1] with my
+trials if you would like to check.
 
-diff --git a/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml b/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml
-new file mode 100644
-index 0000000000000000000000000000000000000000..46de6d0f2dd9b9fd41c97eb4c9340e3ac36090a3
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml
-@@ -0,0 +1,80 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/nxp,tja1145.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: TJA1145 CAN transceiver
-+
-+maintainers:
-+  - Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-+
-+allOf:
-+  - $ref: /schemas/spi/spi-peripheral-props.yaml#
-+
-+properties:
-+  compatible:
-+    const: nxp,tja1145
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  spi-cpha: true
-+
-+  spi-max-frequency:
-+    maximum: 4000000
-+
-+  spi-cs-setup-delay-ns:
-+    minimum: 50
-+    default: 50
-+
-+  spi-cs-hold-delay-ns:
-+    minimum: 50
-+    default: 50
-+
-+  spi-cs-inactive-delay-ns:
-+    minimum: 250
-+    default: 250
-+
-+  vcc-supply:
-+    description:
-+      CAN transceiver supply voltage
-+
-+  vio-supply:
-+    description:
-+      Supply voltage for I/O level adaptor
-+
-+  vbat-supply:
-+    description:
-+      Battery supply voltage
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+  - spi-cpha
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        can-phy@0 {
-+            compatible = "nxp,tja1145";
-+            reg = <0>;
-+            #phy-cells = <0>;
-+            spi-cpha;
-+            spi-max-frequency = <4000000>;
-+            spi-cs-setup-delay-ns = <50>;
-+            spi-cs-hold-delay-ns = <50>;
-+            spi-cs-inactive-delay-ns = <250>;
-+            vcc-supply = <&reg_5v0>;
-+            vio-supply = <&reg_3v3>;
-+            vbat-supply = <&reg_24v0>;
-+        };
-+    };
+[1] https://github.com/claudiubeznea/linux/tree/usb-bringup%2Bpm-domain-v0
 
--- 
-2.39.5
+> And I only
+> learned about the genpd notifier suggestion after reading the thread.
+> 
+>> Ulf suggested then here
+>> https://lore.kernel.org/all/CAPDyKFpLnREr4C=wZ7o8Lb-CZbQa4Nr2VTuYdZHZ26Rcb1Masg@mail.gmail.com/
+>> that he is not agreeing anymore with having it as power domain due to the
+>> discussion in thread
+>> https://lore.kernel.org/all/TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com/
+>> (I can't remember what made him taking back is ack on this solution and I
+>> can't find something in the thread either).
+>>
+>> If I'm not wrong, with the information that we have at the moment, the best
+>> for the notifier would have to register it (before runtime resume) and
+>> implement it in this driver (reset-rzg2l-usbphy-ctrl) so that, when the
+>> pm_runtime_resume_and_get()/pm_runtime_put() in
+>> rzg2l_usbphy_ctrl_probe()/rzg2l_usbphy_ctrl_remove() will be called (or
+>> suspend/resume) the notifier will be called and set the PWRRDY bit. Please
+>> let me know if you see it otherwise.
+> 
+> That sounds like a clean abstraction to me.
+> 
+>>> it was dismissed.
+>>
+>> The power domain approach was dismissed as a result of discussion from this
+>> thread:
+>> https://lore.kernel.org/all/TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com/
+>>
+>> I don't remember exactly what triggered it and can't find it as well, sorry.
+> 
+> Ok.
+> 
+>>> From the DT patches it looks like there is no actual separate power
+>>> domain for USB, just the single always-on CPG power domain (in rzg2l-
+>>> cpg.c). Is that correct?
+>>
+>> That is correct, the CPG is a clock power domain. All the clocks that CPG
+>> can be provided (including USB clocks) are part of CPG clock power domain.
+>>
+>>> In the thread it sounded like there were
+>>> multiple domains.
+>>
+>> You probably refer to this:
+>> https://lore.kernel.org/all/fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev/
+> 
+> Yes, I was confused by this sentence near the end: "And the USB SYSC PM
+> domain is parent for all USB PM domains provided by CPG (3 in this
+> case)."
 
+There were 2 approaches that I've tried with power domain:
 
+1/ to provide both (cpg and PWRRDY) power domains phandle to the
+   reset-rzg2l-usbphy-ctrl DT node as:
+
+power-domains = <&cpg R9A08G045_PD_USB_PHY>, <&sysc R9A08G045_SYSC_PD_USB>;
+
+   branch at [1] is for this approach (except, in there the cpg was used as
+   an always on power domain, not providing individual controls for each
+   IP, due to early implementation of MSTOP (please see above))
+
+2/ to provide a single power domain phandle to the reset-rzg2l-usbphy-ctrl
+   DT node, that being the power domain that handled the PWRRDY, and to
+   model the PWRRDY-CPG power domains parent-child relation in the driver
+   code (as can be seen in commit 7788bcbc3ebe ("initial") from [2], files:
+   - arch/arm64/boot/dts/renesas/r9a08g045.dtsi
+   - drivers/clk/renesas/r9a08g045-cpg.c, diff:
+
++       DEF_PD("usb",           RZG3S_PD_USB,
++                               DEF_REG_CONF_COOKIE(SYS_USB_PWRRDY, BIT(0),
+RZG3S_FW_SIP_ID),
++                               RZG2L_PD_PARENT_DEFAULT, RZG2L_PD_F_NONE),
++       DEF_PD("usb0",          R9A08G045_PD_USB0,
++                               DEF_REG_CONF(CPG_BUS_PERI_COM_MSTOP,
+GENMASK(6, 5)),
++                               RZG2L_PD_PARENT_USB, RZG2L_PD_F_NONE),
++       DEF_PD("usb1",          R9A08G045_PD_USB1,
++                               DEF_REG_CONF(CPG_BUS_PERI_COM_MSTOP, BIT(7)),
++                               RZG2L_PD_PARENT_USB, RZG2L_PD_F_NONE),
++       DEF_PD("usb-phy",       R9A08G045_PD_USB_PHY,
++                               DEF_REG_CONF(CPG_BUS_PERI_COM_MSTOP, BIT(4)),
++                               RZG2L_PD_PARENT_USB, RZG2L_PD_F_NONE),
+
+   - drivers/clk/renesas/rzg2l-cpg.c
+
+Please note that code in [2] is ugly.
+
+By "And the USB SYSC PM domain is parent for all USB PM domains provided by
+CPG (3 in this case)." I was referring to the solution 2/, implemented in
+branch at [2]
+
+Also, few other aspects that I missed to mention in this discussion, which
+are important for the genpd notifier approach:
+
+a/ by the time v1 was posted the MSTOP for each IP was abstracted as a
+   power domain; at that time the MSTOP was implemented as power domain
+   only in the drivers but it wasn't enabled in device tree due to some
+   bugs in the watchdog driver
+
+b/ as a result of discussions with Renesas HW team on the USB PWRRDY it was
+   revealed that MSTOP must be strictly configured after/before clocks
+   enable/disable. Due to this, the MSTOP power domain abstraction was
+   dropped from the drivers code and now we are with a always on power
+   domain (CPG) for all the IPs, that is actually a clock power domain.
+   Today the MSTOP is set in the clock enable/disable APIs.
+
+[2] https://github.com/claudiubeznea/linux/tree/usb-pwrrdy-parent-of-cpg-usb
+
+> 
+>> In there, I was trying to present to Ulf how I did implement (locally,
+>> nothing posted) the handling of PWRRDY though power domains. In that case
+>> the SYSC (System Controller), where the PWRRDY resides, was modeled as a
+>> power domain, I passed to the reset-rzg2l-usbphy-ctrl DT node the phandle
+>> to sysc USB power domain as:
+>>
+>> power-domains = <&cpg R9A08G045_PD_USB_PHY>, <&sysc R9A08G045_SYSC_PD_USB>;
+>>
+>> along with the cpg, and handled it in the reset-rzg2l-usbphy-ctrl probe().
+> 
+> Ok, thank you for the clarification.
+> 
+>>> Is the issue that you need the PWRRDY signal to be (de)asserted
+>>> independently from the CPG power domain enable/disable?
+>>
+>> Yes. I need to de-assert it before clocks, MSTOP on probe/resume and assert
+>> it back after clocks, MSTOP, on remove/suspend.
+>>
+>>> (Why?)
+>>
+>> Due to hardware constraints. This is how Renesas HW team recommended.
+> 
+> I still haven't understood this part. Isn't CPG the power domain
+> enabled "before clocks, MSTOP on probe resume" and disabled "after
+> clocks, MSTOP, on remove/suspend"? So PWRRDY could be toggled from
+> genpd notifications. If it needs to be (de)asserted independently,
+> wouldn't that mean the genpd notifier approach can not be used?
+
+I did tried on my side yesterday evening to prototype the genpd notifier
+solution and, yes, you are right.
+
+Because CPG is an always on clock power domain, shared by all it's clocks,
+the _genpd_power_on(), where the notifier are invoked, is called only when
+the 1st clock in the system is enabled, as there is genpd_status_on() check
+in genpd_power_on(), which I missed when I inspected the code yesterday,
+when replying to your email.
+
+Because of this, you're right, we can't use the genpd notifier for this,
+either.
+
+> The notifiers are called from genpd_power_on/off(), after all.
+> 
+>>> Why can't the power domain provider (cpg) have the renesas,sysc-pwrrdy
+>>> property and set the signal together with the power domain?
+>>
+>> That can be done but, passing a SYSC phandle to the CPG DT node will not be
+>> valid from the HW description point of view.
+>>
+>>>>>> I see v2 and v3 tried to control the bit from the PHY drivers, and in
+>>>>>> v4 we were are already back to the reset driver.
+>>>>> v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
+>>>>> renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
+>>>>> bit was referenced counted in the SYSC driver though regmap APIs.
+>>>>>
+>>>>> v3 used the approach from v2 but passed the renesas,sysc-signals to all the
+>>>>> USB related drivers.
+>>>>>
+>>>>> Then, in v4, the PWRRDY refcounting was dropped and passed
+>>>>> renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
+>>>>> is the node that will always be probed first as all the other USB blocks
+>>>>> need it and request resets from it.
+>>>>>
+>>>>> v5 and v6 kept the approach from v4 and only addressed misc comments or
+>>>>> things that I noticed.
+>>>>
+>>>> Could you please let me know if you are OK with the approach proposed in
+>>>> v7, so that I can start preparing a new version addressing your comments?
+>>>
+>>> If the PWRRDY signal is an input to the USB2PHY control block, and not
+>>> only to the PHY blocks, I have no issue with this being handled in the
+>>> usb2phy reset driver -
+>>
+>> Yes, this is how the Renesas HW team confirmed they are related.
+> 
+> Ok, understood. I concur that usb2phy-ctrl is the right place for the
+> sysc property then.
+> 
+>>> iff it is not sensible to just control the
+>>> signal from the power domain driver.
+>>
+>> As mentioned above, that can be done as well but, passing a SYSC phandle to
+>> the CPG DT node will not be valid from the HW description point of view.
+>>
+>>> If we have to handle it in the reset driver, I'd prefer to see this
+>>> controlled with a dev_pm_genpd_add_notifier(). If that is not possible,
+>>> I'd like to understand why.
+>>
+>> From the code inspection I did, that can be done. From what I can tell at
+>> the moment, I'll have to register a gepnd notifier from
+>> reset-rzg2l-usbphy-ctrl, before runtime resuming the device and control the
+>> SYSC PWRRDY from it.
+> 
+> I'd like that.
+
+Now, that we found the genpd notifier is not a solution, could you please
+let me know how would you like me to proceed?
+
+Thank you,
+Claudiu
 
 -- 
 linux-phy mailing list
