@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEDEECCD194
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 11:29:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CEEACCD194
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 11:29:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6U2I7AjjkPRLlFtMh4UmffPYaJpinZMUtbXBJujYAAE=; b=zkogWUEkflmv8T
-	xhattRhz32sm3+BnFLIf26TX+VmckGGQyl/AtCggcT0Q2T0qU8vj9l6A5PdoJVcqHOfauheUVRRyc
-	ZcBJ4fSmRDmDXW6HsX3IyvvADYBt3KTqSOhiCaxaEAmmyESuJAiRFzbybUqoG2J4SKql4a03c5adO
-	8tS+MA4RhhHj0tlzeWLOAIp5pBp6zS+G70xxeW51s9gZn6OOh0DhFMg+UDAvaJZSENCo6VsKs4mvD
-	exmq6gh77cv3bShHQ6KSr4UtrqRVjyEziv2CeCHWbGjFHffpvObYBz2JRa4DUPPIXWKmKmTLC/SEw
-	Osgchs0pyJeiBfECwgEg==;
+	List-Owner; bh=f8/SCUJZyiJ5GhXPGS2U2nQzwTQTDJlUQfh8r3kvMK0=; b=HE6egoHzso63Kk
+	qvNqCKLkHCjGfv2mTI5X2eEB9HkI0TWhVcbOT4c1GLCEbCa1MQgKOxhhAzPL5lexOeBmwGC7QmqGN
+	T9t2SJ9MtznocRKAz8qZOT3A0ug6m2iuw6AIk7xh3SMct+BvLWtWUlBRfSN/LuVIqKeBXX9Gd+J+g
+	r6Onk7tgZpQ83ahAOZFjlJ+T/JYA8m2AMYZHvosax4Prwn2o3gEjM5A4w9dPPt4t1gr4R9LFapLbR
+	5dxx2ImN4hQwoL0u9vlKns3957FCJ/9ePdZrytt4uHKM6FoK1qaBiFEGE84qI/bLSXUg/Z4UNScRZ
+	QSf6iMPqXMpaw+mB/kBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9MAi-00000004Z29-2BFj;
-	Thu, 16 Oct 2025 11:29:28 +0000
+	id 1v9MAl-00000004Z6l-26j0;
+	Thu, 16 Oct 2025 11:29:31 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9MAZ-00000004YnV-0uj5;
-	Thu, 16 Oct 2025 11:29:20 +0000
+	id 1v9MAd-00000004Ys1-0hj3;
+	Thu, 16 Oct 2025 11:29:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1760614156;
-	bh=vYSjHgZ25Soj7KisfSjiupf26WUOJnIPXofKFhHkHg0=;
+	s=mail; t=1760614160;
+	bh=L5eCza82ytFr8BVqmkmTv1s+8qWAjleYWe5VZvel0wc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=p7y7p9OirtI4fNHdrp6+jlGQwEKwaR2L/RStB7/wHf03kCWiGds1junUfNeEnZchm
-	 902OSjGoqwqTVymS54fHWelA+YV144OQH1h4z2Hub9Ulq3PdFCOZdqFEzxtqLqAqrm
-	 HtVP2kO6uhU2XrKnqPDqOcufaNLDawVqY1493TgKrR9rCkTxvD01s4cxVCUoCUIjsM
-	 Bs7h8ICVcBA52CYs2mA3oTwn3Q6nNqjT61LIuqqpBXPSktKwpFS6tQBp3vGkXyobjq
-	 tDCUnw7b2COF0EQmaoUtOkm2WPjG1sml1FIANGDHKXHHkqTGB8OfI0ggC0E0U2X+Mv
-	 84AAnAqOfcEnQ==
+	b=JCQ167QBhQIRODWZKKIxlfh6W4KgHrm0lN24lSsjGWAM/Ixkmq6dMcdn3BS2AHXN5
+	 qNs9a19o2/vMIqaAT3HHlZOYyXbu9Jv0ztTr5iinHBp9Oq1q4MM2+1JMHfwd/wlTCR
+	 3jevnQr9/eHORuUzSQBIM1W0j3LV74fIJKeFKRy1lgH2d21fhAKjyvc14LKa6VUxTb
+	 l/IPM4qvirw6rsoNJKEYAxj+iJYJGoW3r5bFfxChz14P8daP6kpKOyE3ap53x2JHRB
+	 9jVawUNle5c8C+/aX0z1qxFN2EKlphBLcbGNnentpmgcqDrkdZtfNzeaGCytm3rIam
+	 jE6de30OQpJWw==
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id AB85917E15C7;
-	Thu, 16 Oct 2025 13:29:15 +0200 (CEST)
-Message-ID: <ee5c232c-55b8-4ba7-bca6-639f8de76898@collabora.com>
-Date: Thu, 16 Oct 2025 13:29:15 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C721B17E15DB;
+	Thu, 16 Oct 2025 13:29:19 +0200 (CEST)
+Message-ID: <a5f19be8-d063-49bf-951d-cc7f14b64987@collabora.com>
+Date: Thu, 16 Oct 2025 13:29:19 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/15] arm64: dts: mediatek: mt7981b-openwrt-one:
- Configure UART0 pinmux
+Subject: Re: [PATCH 07/15] arm64: dts: mediatek: mt7981b: Add PCIe and USB
+ support
 To: Sjoerd Simons <sjoerd@collabora.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
@@ -69,14 +69,13 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, netdev@vger.kernel.org,
  Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
 References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
- <20251016-openwrt-one-network-v1-2-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-7-de259719b6f2@collabora.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20251016-openwrt-one-network-v1-2-de259719b6f2@collabora.com>
+In-Reply-To: <20251016-openwrt-one-network-v1-7-de259719b6f2@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_042919_472023_48D7A2A6 
-X-CRM114-Status: UNSURE (   5.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251016_042923_434712_90E9FEAE 
+X-CRM114-Status: GOOD (  14.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,9 +93,59 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 16/10/25 12:08, Sjoerd Simons ha scritto:
-> Add explicit pinctrl configuration for UART0 on the OpenWrt One board,
+> Add device tree nodes for PCIe controller and USB3 XHCI host
+> controller on MT7981B SoC. Both controllers share the USB3 PHY
+> which can be configured for either USB3 or PCIe operation.
+> 
+> The USB3 XHCI controller supports USB 2.0 and USB 3.0 SuperSpeed
+> operation. The PCIe controller is compatible with PCIe Gen2
+> specifications.
+> 
+> Also add the topmisc syscon node required for USB/PCIe PHY
+> multiplexing.
 > 
 > Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+> ---
+>   arch/arm64/boot/dts/mediatek/mt7981b.dtsi | 82 +++++++++++++++++++++++++++++++
+>   1 file changed, 82 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+> index b477375078ccd..13950fe6e8766 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+> @@ -2,6 +2,7 @@
+>   
+>   #include <dt-bindings/clock/mediatek,mt7981-clk.h>
+>   #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/phy/phy.h>
+>   #include <dt-bindings/reset/mt7986-resets.h>
+>   
+>   / {
+> @@ -221,6 +222,57 @@ auxadc: adc@1100d000 {
+>   			status = "disabled";
+>   		};
+>   
+> +		xhci: usb@11200000 {
+> +			compatible = "mediatek,mt7986-xhci", "mediatek,mtk-xhci";
+> +			reg = <0 0x11200000 0 0x2e00>,
+> +			      <0 0x11203e00 0 0x0100>;
+
+reg fits in one line.
+
+> +			reg-names = "mac", "ippc";
+> +			clocks = <&infracfg CLK_INFRA_IUSB_SYS_CK>,
+> +				 <&infracfg CLK_INFRA_IUSB_CK>,
+> +				 <&infracfg CLK_INFRA_IUSB_133_CK>,
+> +				 <&infracfg CLK_INFRA_IUSB_66M_CK>,
+> +				 <&topckgen CLK_TOP_U2U3_XHCI_SEL>;
+> +			clock-names = "sys_ck", "ref_ck", "mcu_ck", "dma_ck", "xhci_ck";
+> +			interrupts = <GIC_SPI 173 IRQ_TYPE_LEVEL_HIGH>;
+> +			phys = <&u2port0 PHY_TYPE_USB2>,
+> +			       <&u3port0 PHY_TYPE_USB3>;
+
+phys fits in one line.
+
+Other than that, looks good; after applying the proposed changes:
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
