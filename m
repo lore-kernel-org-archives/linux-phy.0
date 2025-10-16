@@ -4,127 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84BD3CCD193
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 00:05:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA52ACCD185
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 00:26:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uYPCHFKD78V8z9eSno3tiA4RLWqx0MU7TcIlIcD1MAk=; b=0OYMbMwNtaoh6c
-	XiLDgmVP63X6eySnD8adf9eu7WET+gkYpmNaSMYI0SqzuRr7TQWcDPuRDB7YSBOAhk2zdXwe7DVsz
-	LUZvA8TMpd6eTzcVrDg4K/bqOpyDyfspZ4fgUEnp8bAcBO+L5xniONnhBP/5aYjklLugsLXLyD6+4
-	y6mIMjWBP1TwIr7P5HDiyXQVbhASe22itqbgmeRVsr9tCLRy6CZu1zLejdgOYx1l/T86GuiCFgcnk
-	u5a+EQvArcBBdgd1FSVR4bBWMSSlUY3+YVNZqmX71n4pjNNEcpPA8eihWpNvcqyHJMQYxjSuLn6IX
-	zN7PNfCZFRC1xgp55ZJw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=k4CB0bmsrCwfkPh+Bu+FT4jExsTqjc2Zp8wzTN2Zt2o=; b=KVUxnBadZGuXD8QLL1GEWxiLvM
+	HHxXbqDewg2Ua5q2E4Ih8hJP1B14W/scEOT9EJ2CDvbJ17n+Ldw6jp96/WA9MN5T1rmd2T5C4PYuH
+	dEyDBIBMqr5F9p++YH5Qh2JjGg2OYlR7kT8DNiONM0XTvjjkPMqL3ZKNVUpgTV5HfQTQZEuOjd5fa
+	4PmZ2K3y1q2QtqKOtwROmE5jD1z7zSAijTm5r3p0XO+R/mowsF/DMnAIuULs9SsFvssEyCXSBOQUT
+	KFoKtFcjMEjqc2A0D7mQNiuGgXiCLxQkNoAZIh+ER5EFJcRbiELhrrO47aNMkDIJlkRkJPM8raEKX
+	lIUZ+hJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9BUj-000000037Rx-0K1D;
-	Thu, 16 Oct 2025 00:05:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v9BpL-000000038wo-1QFb;
+	Thu, 16 Oct 2025 00:26:43 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9BUg-000000037RM-1Z8b
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Oct 2025 00:05:23 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59FJuWJU002556
-	for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 00:05:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=ttH9o+JKFt12U4z1bUTlIexU
-	G6jcvhEibO1N+cM/DzM=; b=mVbD4ji1HvPHj0I8MTQbn2quhJKosorfDjRHqDmi
-	vz7qiYp3yhclG7K3UIUh4Jw4sDqUokOwqsDjDWcDCeDD4YhEAT73v8Zq5orGwd8g
-	nvUyuhS2+KgTbIlQvVPGQYw2goRA42L+yqGvFAx2GsHcvqcMuqpXpHgPWKcfEsvK
-	nv1VgxufuYnUf0ZT9RzQdR8R93HsRcEzWNSoUdg/I/cfoINn9Cl7ZaEWXYsHvLcb
-	UrJCahJKXyz5H2SfvcsZycMe7f/HNu4MtEt9Cw8fpLRPrrZotGb2Fq3t120/f3X9
-	MmTkszG2aaxB9kSeU4VwnaZyXoGCa6YvhlOvOOxfURpYhw==
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49qfd96e0x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 00:05:21 +0000 (GMT)
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-87c1115d604so6683896d6.1
-        for <linux-phy@lists.infradead.org>; Wed, 15 Oct 2025 17:05:21 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760573120; x=1761177920;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ttH9o+JKFt12U4z1bUTlIexUG6jcvhEibO1N+cM/DzM=;
-        b=qD3R/gzx6RX0rfC364FmUizqrGAHlOqVAW6pukUt+LKu6Sgfcu5Z+1MX155U32nBDd
-         sONyz5wK8o1HjOa3C+UWAdYzeAcw0+rlaP4iXvnSHnD26odsAZ6Zd30IMKn7qrNrczQ8
-         CrKrMw8uG1HdFpK2365fyKoNolGz3qWRl6r/Z1QjWWJ2iuZh1RyskusKCTiUi6Xi9dZb
-         mQmtPLxc+AsxK3wELg2o8MiuORBWAbc3J0Tl/2nFb5zsbfrUjknG4QaaVSYxET7FIM4Y
-         qdCn2Xz2yNCNh3vWC6zhJa2qy59d+pV4d9pOE2RqlAgHt/hrkp2yIIIan6PDY3HF/hBf
-         /LuA==
-X-Forwarded-Encrypted: i=1; AJvYcCWFvfdk5j/muvmEHwdJxIfNi4sp8PQPxNF0swMakynB3j/XhzMyeihWV3CoJZKSjionMXdjWcBu8dk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxy5D/JdDG7O0zs7CNGp1Wk3tNZ84IpvHMQRR3VF/krFQ6Or29i
-	/7LdLVKAtyTZtkCAfedG4Xb3QQpNumIW+SsFcaKNwdXtwS4Gurg0Cm012HElSkRBsDHaEJBjiIt
-	fO/aHF93RWKmPT7zNXt+6ijA9qZbVZYa6tRuPdb/6nkvoe+lNbkDCPVn9H50SY8A+TjoQ
-X-Gm-Gg: ASbGnct5kFe8h3n0Q4l9v2dOo6fREq74Dxw6SKISOu/qiIMAFOOhM1ZmrbqmWONPiZK
-	SoYx8jw+Lcr0nC/yYe36LJsedbppS26EQxh0v0NS9g0aUqTgVRRsYi0vhRpWONhYFklF8myiK9j
-	1gGYv2u+IMmpan3JRuXv6kT3nFrYrNfRbOwRrKK2Uf0lYkO7a+CePDgQKZ9xOVw9dvC9ByAAEj2
-	7HwAvI2tuWSIFbQwKaEdt3m1LLSJ7Hdxw1Nq3N0aNCw4X26O1heEyxbKygN4EyFQQBPS7+aQmaD
-	JTBSQIZYsQcu0MrZO0GkABTjl2rdnFGnaVwxQaGahqo+3WvNqQVaAzjaBLdyuOTWXbDqzJmyYds
-	DsaplX17QK7oNRWns5FPN40eDR9mCedkKpqNpm1dAvX91EWGxD6sH1GIBC1sHnaXgsCAVG/9eRi
-	oP8Omz2al1zHI=
-X-Received: by 2002:a05:622a:4890:b0:4b5:dada:9132 with SMTP id d75a77b69052e-4e6ead709f2mr460284901cf.75.1760573120304;
-        Wed, 15 Oct 2025 17:05:20 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGPHSdX8RqUU8RAtgjSgrc5QwEf9TAs3cpNtbgxxS9fE9uOnZFE46JhxPCkQd6l+F9bJayOlQ==
-X-Received: by 2002:a05:622a:4890:b0:4b5:dada:9132 with SMTP id d75a77b69052e-4e6ead709f2mr460284401cf.75.1760573119860;
-        Wed, 15 Oct 2025 17:05:19 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-590881f8c79sm6592635e87.34.2025.10.15.17.05.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 15 Oct 2025 17:05:17 -0700 (PDT)
-Date: Thu, 16 Oct 2025 03:05:15 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Bjorn Helgaas <bhelgaas@google.com>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org,
-        Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-Subject: Re: [PATCH v2 6/6] phy: qcom: qmp-pcie: add QMP PCIe PHY tables for
- Kaanapali
-Message-ID: <k7xjihanbqelhm6pytrugv73pc6bmspn75vy5a2thcqnxkzwhd@bsyp2nqkl5rf>
-References: <20251015-kaanapali-pcie-upstream-v2-0-84fa7ea638a1@oss.qualcomm.com>
- <20251015-kaanapali-pcie-upstream-v2-6-84fa7ea638a1@oss.qualcomm.com>
+	id 1v9BpJ-000000038w4-0Y0y;
+	Thu, 16 Oct 2025 00:26:42 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id E9D13490C1;
+	Thu, 16 Oct 2025 00:26:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 90F7CC4CEF8;
+	Thu, 16 Oct 2025 00:26:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1760574399;
+	bh=U28sDA1Foqogqj0EpzymayQ1wgUPbptp/B4nVYhh2VQ=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=Dj94XWJV8URBCP7eHQRkGso8jdIVf4yq32iKR936m+qK40hXECoK27b6FucGkMto0
+	 xKqWpYkuWx4UHz/896XaCHoBe6Q1JiK0Kxc00rN7K8h+LuhdBPw9dxd2mNpLuJ/PYx
+	 tzubS/ZUMVIURtzvMmnHMgnXnGMfdlqmgRAfFKecvQdGrHV4o08O4AeT2FvZxs8MR3
+	 S2oBcLETPjUKZ1Z7T+ECLUUDZZ7/de+DlhSPpNl+CJxTWzsD31NPwc+R9Fx7aH5B6+
+	 JSbYHle1X/IxBGUx/oiSimthNjSWELBTTa2mpPBZ3gOWs/hRRYtOhh7vtqt1X+IZ/X
+	 O62U8DSbcPnEw==
+Date: Wed, 15 Oct 2025 19:26:36 -0500
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251015-kaanapali-pcie-upstream-v2-6-84fa7ea638a1@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: UjjHDJyARObRbQT1SuNKjQv6yn6YylvP
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDExMDAxOCBTYWx0ZWRfX8U3ZqpNRBwJR
- MI+dHjgFKISHo4L5WMm48qoAckeDMgvrDDQsZ3sIC1Fjww91PSpL2N80ZcVDnH83BPNtNUn0zL9
- GzpdulwHoYhbrlxNC7v9ffnVppkr/KA3bX7jh72g5j83aFOPzDJeD3gN2Ig/rtQ0STXP9KlaMh6
- 2rmKY0MyCbdz9R7GPR+7S8eOJC7jf4J930j190gZoboC+1UyVSb27eVsNDjb+CT1xbGlo35vvCh
- ey7qy6jB6HHi6U4U/kxZUevDs8GeraweNO1GEDLDSb2M1XXqvD+yvqELAxZ4gWHrufin+G9tFov
- tIztdaviGEsAXpWGDRBa1i4A2kiG6aoxCwBiAqX2oHbGGsblnv5yTWHlkoScxE5cPAGgx5lIyG6
- 0RxBH5WvHVGw6r/gETPwacfwF8z3pQ==
-X-Proofpoint-GUID: UjjHDJyARObRbQT1SuNKjQv6yn6YylvP
-X-Authority-Analysis: v=2.4 cv=PdTyRyhd c=1 sm=1 tr=0 ts=68f036c1 cx=c_pps
- a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=tdoatHydnEAQPWUjzvIA:9 a=CjuIK1q_8ugA:10 a=iYH6xdkBrDN1Jqds4HTS:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-15_07,2025-10-13_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 phishscore=0 bulkscore=0 clxscore=1015 adultscore=0
- lowpriorityscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
- definitions=main-2510110018
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Vladimir Oltean <olteanv@gmail.com>, 
+ Nicolas Ferre <nicolas.ferre@microchip.com>, devicetree@vger.kernel.org, 
+ Jakub Kicinski <kuba@kernel.org>, Andy Shevchenko <andy@kernel.org>, 
+ Joel Stanley <joel@jms.id.au>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Andrew Jeffery <andrew@codeconstruct.com.au>, Lee Jones <lee@kernel.org>, 
+ Daire McNamara <daire.mcnamara@microchip.com>, 
+ Mauro Carvalho Chehab <mchehab@kernel.org>, 
+ Eric Dumazet <edumazet@google.com>, linux-iio@vger.kernel.org, 
+ Manivannan Sadhasivam <mani@kernel.org>, Andrew Lunn <andrew@lunn.ch>, 
+ Michael Hennerich <Michael.Hennerich@analog.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ Jonathan Cameron <jic23@kernel.org>, linux-phy@lists.infradead.org, 
+ Florian Fainelli <f.fainelli@gmail.com>, netdev@vger.kernel.org, 
+ Paolo Abeni <pabeni@redhat.com>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Stephen Boyd <sboyd@kernel.org>, Jassi Brar <jassisinghbrar@gmail.com>, 
+ linux-gpio@vger.kernel.org, Bartosz Golaszewski <brgl@bgdev.pl>, 
+ linux-media@vger.kernel.org, "David S. Miller" <davem@davemloft.net>, 
+ Lars-Peter Clausen <lars@metafoo.de>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ linux-clk@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, 
+ linux-pci@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>, 
+ Claudiu Beznea <claudiu.beznea@tuxon.dev>, linux-kernel@vger.kernel.org, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Thierry Reding <thierry.reding@gmail.com>, 
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org, 
+ Linus Walleij <linus.walleij@linaro.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Tony Lindgren <tony@atomide.com>
+To: "Rob Herring (Arm)" <robh@kernel.org>
+In-Reply-To: <20251015232015.846282-1-robh@kernel.org>
+References: <20251015232015.846282-1-robh@kernel.org>
+Message-Id: <176057439666.933167.2958808777480882513.robh@kernel.org>
+Subject: Re: [PATCH] dt-bindings: Fix inconsistent quoting
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_170522_412989_309C16C2 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20251015_172641_205613_C23E63AA 
+X-CRM114-Status: GOOD (  14.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,23 +100,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 15, 2025 at 03:27:36AM -0700, Qiang Yu wrote:
-> Add QMP PCIe PHY support for the Kaanapali platform.
+
+On Wed, 15 Oct 2025 18:16:24 -0500, Rob Herring (Arm) wrote:
+> yamllint has gained a new check which checks for inconsistent quoting
+> (mixed " and ' quotes within a file). Fix all the cases yamllint found
+> so we can enable the check (once the check is in a release). Use
+> whichever quoting is dominate in the file.
 > 
-> Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-
-Who is the actual author of the patch? Do you miss the Co-developed-by
-tag?
-
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 194 +++++++++++++++++++++++++++++++
->  1 file changed, 194 insertions(+)
+>  .../arm/altera/socfpga-clk-manager.yaml       |  4 ++--
+>  .../bindings/clock/nvidia,tegra124-car.yaml   |  8 ++++----
+>  .../bindings/clock/nvidia,tegra20-car.yaml    |  6 +++---
+>  .../devicetree/bindings/gpio/gpio-mxs.yaml    |  9 +++++----
+>  .../bindings/gpio/snps,dw-apb-gpio.yaml       |  4 ++--
+>  .../bindings/iio/temperature/adi,ltc2983.yaml | 20 +++++++++----------
+>  .../mailbox/qcom,apcs-kpss-global.yaml        | 16 +++++++--------
+>  .../mailbox/xlnx,zynqmp-ipi-mailbox.yaml      |  2 +-
+>  .../bindings/media/fsl,imx6q-vdoa.yaml        |  2 +-
+>  .../devicetree/bindings/mfd/aspeed-lpc.yaml   |  4 ++--
+>  .../devicetree/bindings/mfd/ti,twl.yaml       |  4 ++--
+>  .../bindings/net/ethernet-switch.yaml         |  2 +-
+>  .../pci/plda,xpressrich3-axi-common.yaml      |  2 +-
+>  .../bindings/phy/motorola,cpcap-usb-phy.yaml  |  4 ++--
+>  .../pinctrl/microchip,sparx5-sgpio.yaml       | 12 +++++------
+>  .../bindings/pinctrl/qcom,pmic-gpio.yaml      | 10 +++++-----
+>  .../bindings/pinctrl/qcom,pmic-mpp.yaml       |  6 +++---
+>  .../bindings/pinctrl/renesas,pfc.yaml         |  4 ++--
+>  .../bindings/pinctrl/renesas,rza1-ports.yaml  |  2 +-
+>  .../pinctrl/renesas,rzg2l-pinctrl.yaml        |  2 +-
+>  .../pinctrl/renesas,rzv2m-pinctrl.yaml        |  2 +-
+>  .../bindings/power/renesas,sysc-rmobile.yaml  |  4 ++--
+>  .../soc/microchip/atmel,at91rm9200-tcb.yaml   |  8 ++++----
+>  .../soc/tegra/nvidia,tegra20-pmc.yaml         | 12 +++++------
+>  24 files changed, 75 insertions(+), 74 deletions(-)
 > 
 
--- 
-With best wishes
-Dmitry
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+Error: Documentation/devicetree/bindings/pinctrl/renesas,pfc.example.dts:90.36-37 syntax error
+FATAL ERROR: Unable to parse input tree
+make[2]: *** [scripts/Makefile.dtbs:132: Documentation/devicetree/bindings/pinctrl/renesas,pfc.example.dtb] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [/builds/robherring/dt-review-ci/linux/Makefile:1525: dt_binding_check] Error 2
+make: *** [Makefile:248: __sub-make] Error 2
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251015232015.846282-1-robh@kernel.org
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-phy mailing list
