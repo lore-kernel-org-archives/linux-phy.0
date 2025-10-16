@@ -4,132 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F36C3CCD194
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 06:57:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54617CCD183
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 07:24:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/YTZSviTcO1F4wRmxyTTBFrfR7iRUFLN3QRhZi62FqI=; b=0bGbYCVuSZIkT5
-	S82xLPPxotpleiQHbRQOD51Pwu3ixypqKRVpsXwN6pu7tT58h+qHnpAcaN8sl14IQGwc+wHmRwBVA
-	ujSE9yi8q6Snaor+snAu+XQOI8rBC4pXZTkzY8iEZhftOLT9mBgAShiKXj2Sq3pF3Pp36txegaVLK
-	e7yYpGGZ89N2YYdk80bbJk7JwlaGrrcJFTuAOKbf2Xv0DEgLczLgR6a/RktFa6Cdq1RAz1Kn92n6+
-	bADlNkLFetFQuryPAVG9bS6idjlL8kOQuNuOEKB6BLn70vurQ0B+WKjuu1Sb2wf8K4ya0zdn53JjG
-	XY+xt/+RHov+SlHGD3dQ==;
+	List-Owner; bh=V2c0PijABUFx3w7BZhKMab6Xv4knc1a28wThQIjhV9s=; b=SiRNNVKolA/Ew+
+	nIYSeV1WI0sVv3I9ZFNhWY/l7RGfDbT4Z2NsRld6ef3gliL6ywRqI+3MtZEs1vEeDWqNvUsH0Py0s
+	giiXbdbo3zlDy/0CN+Ryx7gFzFow3icvitoYFlcADYVnFeIiyELpR0f5nFGDMSyZ8pf3L4TOwYsd1
+	mQ8stwRPLmlH5A/0UDy1xmJUqw4FVelw08urRojJj16ZBXXIw6D5L/WTTPRUKh/k87pLMzKypvumE
+	Qrwk9As4l6JPWC7WMSW5PpMHFXFDo1zWygTku+44BRJNpFpJpa7LAsgs3S7M7fAhCAwMhYJsDT52G
+	LZ/USfYKkYBI/QaE+1Sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Hvu-00000003hen-2YlV;
-	Thu, 16 Oct 2025 06:57:54 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1v9ILC-00000003kTC-3xPi;
+	Thu, 16 Oct 2025 07:24:02 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Hvr-00000003hdr-1A1d;
-	Thu, 16 Oct 2025 06:57:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C347A4023C;
-	Thu, 16 Oct 2025 06:57:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E808C4CEFB;
-	Thu, 16 Oct 2025 06:57:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760597870;
-	bh=PVIGP3Mk4x0juJB1vGos8zMhjY0qV8iKWIM/SK3yIuU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=g9VRK7cJPnLoUtostILIrziJBq3RCLYCfeXbGrYQGxKTB5jmb0yB7ihlFWw6HdcDG
-	 dwyYLGl3uobdbICzJuwaO4AbS1Sx4aV35LuiuMTXPJA8eKnHZUqr+rp1y+qPP7gsr3
-	 OUaLXPb7JfdPiIMtwH/x71sAde2yScjjs/Uc17UpeD0cZx8nkO5SQdaRHBwwSxmCbz
-	 wBIb5f9zBhdWGcLNjdW8IFfRqH3XRewvQoVyJQUIE6HA5MafWWUZf2OSb4OgG384Dz
-	 K7rLB9jY0ijTCmVrXFq+5iL2iGlV6IgbDzCVzBcYG/pv7kLyxsWsTx6kF0bmQmCGIJ
-	 yC2R65Az7VGwg==
-Message-ID: <de3bab41-0ea6-4c1d-9350-2c73ba464b10@kernel.org>
-Date: Thu, 16 Oct 2025 08:57:38 +0200
+	id 1v9IL7-00000003kSd-1dEH
+	for linux-phy@lists.infradead.org;
+	Thu, 16 Oct 2025 07:24:01 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59G6VpHt003418
+	for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 07:23:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=HNGoDb+vaeJYhaVScXJVKuKu
+	/Vv4DWy6iQO7I53RXv0=; b=lcehCPxdI3Y3P4qM+yY4UhPyGsxAao5Pp/qdcZiG
+	OsMZzCfojghPy6kLmWAQuHukdmPKI5dtOZlrv9CZmxrYxZw3ADW99vJTtiqw7uce
+	1W44E0QRpEFdP8Xt7Ni1hOZTPYs+S9bKymX1SOX8a53k2jHcTGXeFn1dCi9FprYG
+	5PQ+D5Vpx+HOi4rGzhpdM8oY8w7+dIcLYDyv1McaTcRTL8QuOthKT0qUn2BD7onW
+	r2z4no7LHMbWIvn6qzyAiEJjYnv6jEHkWsXoxwOoXwPdhlRP8AXRe5Dmy2mx6dKM
+	FhCpW+uv2KioBWzyoLNYccyX7+jb30gQRDNOIx3WR+3p0A==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49sua8p0yq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 07:23:55 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-b5529da7771so292426a12.0
+        for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 00:23:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760599435; x=1761204235;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=HNGoDb+vaeJYhaVScXJVKuKu/Vv4DWy6iQO7I53RXv0=;
+        b=la/WN66ZxRKD9oqE3d5J3s1FgGnJLk7kiHJjbd/aj5axI640ZtcpESH0yuRxAOzBaC
+         zh2JmzGw1MLNS/TuMWHONYkgX2t3HP5weJOF7CKigg1V5/Cr8cpzh+2kJvdDYI5arQTV
+         TINg4/aJLtL8iUIlB5qcDJqItHLeBLMaP63sjpriyihhmPOPsOxSarLhDkvd5Z+6ckmj
+         oHNZ13EnyGTNIYlYLb5xYdfHL5BoDghVBAvk+DR+MfcKJ4lnCbZynWIDe97e8Pc9IAH5
+         tw1V4Zo7oJRu1gNQA0mXn8p/34pA9l3FFTQpk7T8czUVB2JJk5BK1VbsO94CixINbJ9V
+         x2dQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUAt78B8KShSDtxFtPs0cjo0R6r4/qWosTqufD5Z1fzHNVj1HpX40b9e+4aMlp+/cbVbhDoY/DBEVM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyOnP9mD4YLgFhG38CVOF/5RESuq0EVrEzFn6652/ApgXRK9Sqf
+	YcbrH1brsszZ+ggtECeAhGFcOY6JTutpnonn5HUPvaTtuUGsig0SYWRvu63tTFLY50WK945Zm7o
+	L8hFSJ6Lu0M4ViI6cefm7XJYgyQqQxTGUJ1E0/jE4DKKgivJBn7VLkz2Rr2FbJYfFLOqa
+X-Gm-Gg: ASbGncvrLdHF/lsR49P2Wrbzoz44TZondwXL3KzaGdso6eIChAl+5z/9yqABUmUD67N
+	LQIBMDj1flLrD41eC3IEzu1NnSXfaQw7do99iN/XEJhRppl/rs+EUwG9HtbWVTeABLcmVLSPRX9
+	hZheVvlHdnCm2HNjnzbrrCZJR4lWrJPJyc3xyj0zUEIyK0kgIF6il24u+SfiB91LRdjkYTu0ds0
+	Gpr9NNwLJMHZbeWLcm2uMZ5qmSDMimMyz9zFFv0OI8NQlXDJ+Btd9aZQ0opHDiOhwNEPkA37nQF
+	WcBoM3Q8VUEislgGgFcSPKbD3W8DjZhWUm78VUWiQnONgsrUPi0fc5sgouUzoamdrMQcGDNGigl
+	jolY4uJxkQboTc4iLxr9cJH70ijtFf4LFj6pm72Nsh83AIA==
+X-Received: by 2002:a05:6a20:9147:b0:334:8d0b:6640 with SMTP id adf61e73a8af0-3348d0b695bmr6237494637.8.1760599434708;
+        Thu, 16 Oct 2025 00:23:54 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGwrFPYz5L+0gDGKdDM3zwqmU9HSI97jDmKx2e+L9OE61zcHAbhnCy3ioFU+PCD6S5glLBXkw==
+X-Received: by 2002:a05:6a20:9147:b0:334:8d0b:6640 with SMTP id adf61e73a8af0-3348d0b695bmr6237464637.8.1760599434258;
+        Thu, 16 Oct 2025 00:23:54 -0700 (PDT)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7992bb116basm21248313b3a.30.2025.10.16.00.23.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 16 Oct 2025 00:23:53 -0700 (PDT)
+Date: Thu, 16 Oct 2025 00:23:51 -0700
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>,
+        Wenbin Yao <wenbin.yao@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        konrad.dybcio@oss.qualcomm.com,
+        Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
+Subject: Re: [PATCH v4 2/4] dt-bindings: PCI: qcom: Document the Glymur PCIe
+ Controller
+Message-ID: <aPCdhz+kr/Hghol/@hu-qianyu-lv.qualcomm.com>
+References: <20250903-glymur_pcie5-v4-0-c187c2d9d3bd@oss.qualcomm.com>
+ <20250903-glymur_pcie5-v4-2-c187c2d9d3bd@oss.qualcomm.com>
+ <w2r4yh2mgdjytteawyyh6h3kyxy36bnbfbfw4wir7jju7grldx@rypy6qjjy3a3>
+ <7dadc4bb-43a1-4d53-bd6a-68ff76f06555@kernel.org>
+ <aO797ZyWIrm0jx2y@hu-qianyu-lv.qualcomm.com>
+ <w4kphey3icpiln2sd5ucmxgo7yp72twwtnloi5z7a3r3a63fri@fbebffeibb7p>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] dt-bindings: Fix inconsistent quoting
-To: "Rob Herring (Arm)" <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
- <brgl@bgdev.pl>, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
- <nuno.sa@analog.com>, Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Jonathan Cameron <jic23@kernel.org>, Andy Shevchenko <andy@kernel.org>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Lee Jones <lee@kernel.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>,
- Andrew Lunn <andrew@lunn.ch>, Vladimir Oltean <olteanv@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Daire McNamara <daire.mcnamara@microchip.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas
- <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu Beznea <claudiu.beznea@tuxon.dev>,
- Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-iio@vger.kernel.org,
- linux-media@vger.kernel.org, netdev@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20251015232015.846282-1-robh@kernel.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20251015232015.846282-1-robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <w4kphey3icpiln2sd5ucmxgo7yp72twwtnloi5z7a3r3a63fri@fbebffeibb7p>
+X-Proofpoint-GUID: 2BPlgNpvISb-LM3IEQGLjZckPjIhyKA2
+X-Authority-Analysis: v=2.4 cv=e5MLiKp/ c=1 sm=1 tr=0 ts=68f09d8b cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=gEfo2CItAAAA:8 a=AS9496Lnv1pbona6PS0A:9
+ a=CjuIK1q_8ugA:10 a=bFCP_H2QrGi7Okbo017w:22 a=sptkURWiP4Gy88Gu7hUp:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE0MDEzNCBTYWx0ZWRfX5PNcptQxi/x7
+ PjdgmYlaQ8K3crZWIfDX1ycCeczhs7uf6jeEAIXfIl4mIWBYQ3ECoaW5edssxbsHMYQLRzHL7LY
+ uism80ZIr8UsFMgIP9M4/Bocc/HPMtX2uYUWboPh17T3fN1uWg6ELvAnM3DmnOLU1SdEJWwPGir
+ A/ETS2wA4a4k1vmDVt60aS6Dvyb0mkUa4VhnT+cFqD+u6Qw6BU1towbFvQfVFhh7AUuo/VixQiz
+ 6sAEcL5ALPQ1tGMbs/KHCquyIda628HQUgEBOHPw8MFztgY8D1LW0tjjYMDk35GzBzyCum9hp77
+ mhoKALGkfnwmct/RlIS5JbJjoxCHoYv/DKdAIejomGYTjYo64X7N5i663ld47gp5p8C0RxSQECk
+ cWCdvxIq6dnuS3jEG2Zyo2efKTBTng==
+X-Proofpoint-ORIG-GUID: 2BPlgNpvISb-LM3IEQGLjZckPjIhyKA2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-16_01,2025-10-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 suspectscore=0 spamscore=0 adultscore=0 clxscore=1015
+ priorityscore=1501 impostorscore=0 malwarescore=0 bulkscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
+ definitions=main-2510140134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_235751_357343_8D48DB87 
-X-CRM114-Status: UNSURE (   8.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251016_002357_545982_8A4CEFDE 
+X-CRM114-Status: GOOD (  22.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,19 +149,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/10/2025 01:16, Rob Herring (Arm) wrote:
-> yamllint has gained a new check which checks for inconsistent quoting
-> (mixed " and ' quotes within a file). Fix all the cases yamllint found
-> so we can enable the check (once the check is in a release). Use
-> whichever quoting is dominate in the file.
+On Wed, Oct 15, 2025 at 09:58:31AM +0300, Abel Vesa wrote:
+> On 25-10-14 18:50:37, Qiang Yu wrote:
+> > On Sun, Oct 12, 2025 at 05:01:45AM +0200, Krzysztof Kozlowski wrote:
+> > > On 11/10/2025 14:15, Abel Vesa wrote:
+> > > >>  
+> > > >>  properties:
+> > > >>    compatible:
+> > > >> -    const: qcom,pcie-x1e80100
+> > > >> +    oneOf:
+> > > >> +      - const: qcom,pcie-x1e80100
+> > > >> +      - items:
+> > > >> +          - enum:
+> > > >> +              - qcom,glymur-pcie
+> > > >> +          - const: qcom,pcie-x1e80100
+> > > >>  
+> > > > 
+> > > > The cnoc_sf_axi clock is not found on Glymur, at least according to this:
+> > > > 
+> > > > https://lore.kernel.org/all/20250925-v3_glymur_introduction-v1-19-24b601bbecc0@oss.qualcomm.com/
+> > > > 
+> > > > And dtbs_check reports the following:
+> > > > 
+> > > > arch/arm64/boot/dts/qcom/glymur-crd.dtb: pci@1b40000 (qcom,glymur-pcie): clock-names: ['aux', 'cfg', 'bus_master', 'bus_slave', 'slave_q2a', 'noc_aggr'] is too short
+> > > >         from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+> > > > 
+> > > > One more thing:
+> > > > 
+> > > > arch/arm64/boot/dts/qcom/glymur-crd.dtb: pci@1b40000 (qcom,glymur-pcie): max-link-speed: 5 is not one of [1, 2, 3, 4]
+> > > >         from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+> > > > 
+> > > 
+> > > So that's another Glymur patch which wasn't ever tested?
+> > 
+> > I tested all of these patch and also did dtb checks. That's how I found
+> > cnoc_sf_axi clock is not required. There was a discussion about whether we
+> > need to limit max speed to 16 GT and I limited it. I may forget to do dtb
+> > checks again after changing it to 32 GT. Let me push another patch to fix
+> > this.
 > 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
-> ---
+> Still, you need to add glymur specific clocks entry then, to fix the schema
+> w.r.t cnoc_sf_axi not being needed.
+>
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+I think the clock-names too short (cnoc_sf_axi not needed) issue has been
+fixed by below change.
+https://lore.kernel.org/all/20250919142325.1090059-1-pankaj.patil@oss.qualcomm.com/
 
-Best regards,
-Krzysztof
+About the max-link-speed issue, we will remove max-link-speed = <5> in dts
+as max-link-speed is used to limit speed but I'm not limiting it.
+
+- Qiang Yu
+> 
+> Best regards,
+> Abel
 
 -- 
 linux-phy mailing list
