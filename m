@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8174BCCD19A
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:09:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FD02CCD1A1
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:09:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JoN63ge8RhSeZ+jTBTqCvFB3wKFj21YMA5ckzyLWEXs=; b=OiwiAlxDmnDY0X
-	IPg4v+CZhM+KfDwfqTi4uB/woBL3VOAFJWuvsm/aIyBHIhJmoKmd8+QFMONFrg5vzLL8xFt8UlF0y
-	4Afi4Tr/hHh3RwOBuGZi7LDWKSQlwp5XQWnE1lyO0Vzmf9qvzZ+xilWpL0wrZi02CUMlAiMyqMBMG
-	PRpK1Uvi8Fwbi5NTG7xeiIrzQ3FDSL9EGvIPXptsAWa5kRS+cGyq3IAFZWzx+dYg7tbm8va8CKvUJ
-	M/C0PzxAohuLWeK90SSQMJHfy0AU2HFxu1cSXCnen/+OdWwwdhfVV1rNEJhi5x2xzYUPG7ggy3Ofa
-	89DJ8iRhfI5NQqlOMLaw==;
+	List-Owner; bh=lNSg1nVTbDnNYgBuQh5F+7/ajSr3Ft8x8PykcPGPYoQ=; b=pObL2oEWrDjNtb
+	ssbZpp6lbpsEWgj4dww112WjTHNL2xKlgyesGW2X5GVX616VReiMhuOXxdBL7+OA38ILa3xEPaVjZ
+	4FF/mcT94NQqrc1cdSHNgT8n8uqqFyEUkCDIi/XjJqRt+uo4fI1DDZ6bo3eWJ2QvzkSxcUDIhrmVZ
+	SbYdSaw7fSRbr/NEhl8ek4BfnDQRXdJrFAOGKcDkKbCwx2vHneopN1Bw4+pPe7TIwWVUSYM0EzJTR
+	EnoFFfWmnlGcePrwkwu0k/FUNCPs/RKTvU7kpGNKcZLSS9U6d1kiRAAkv1ulzYi/AxAcr5TQCkCS2
+	SHZcbriGrdzWoV9h4BBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9KvU-00000004Ln4-10Pa;
-	Thu, 16 Oct 2025 10:09:40 +0000
+	id 1v9Kvb-00000004Lx5-1H8s;
+	Thu, 16 Oct 2025 10:09:47 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Kut-00000004KyC-2syt;
-	Thu, 16 Oct 2025 10:09:07 +0000
+	id 1v9Kus-00000004Kwo-3fsZ;
+	Thu, 16 Oct 2025 10:09:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1760609335;
-	bh=BEI3WpfnV3DAkVHimDT1eTbeDPtH/m3RFZodb7kY6GE=;
+	bh=UGU216bzWdi/xPxp07gdtNKrrz/AaYQxRBv23FP8Dhc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=RG/uzljEhnsovHfCnnmMPnrK+pJoTTc9sB78CLw2Vj9lG57oHc7ALzqY+ktq056uN
-	 VOlsSzgEjMzGiGA+wk1YjxxZu5+Hv/opM5ZFiPm4ZTbdmDPPIhIAx7EQBiT692b3sk
-	 XF1MceFhO/I0CZIbriX8Myg7N4+ivQaTFzOgFUL/5doMrk7bP9kqf8AYfv3qISOkea
-	 QA6aBcTay1fhDJCx1GP9Nf0bloPaiEc2C1p1wkN7dt/F6pecVs1pggxSQvHlXjCqvY
-	 QZy5zkb23m11x/27NX865Ay+VIEx839Pzdm8OXvY9go3Clv6orpFqkC3lRqFHTnxLc
-	 dqkaLzHP3QF/w==
+	b=g3jThabVnbKEswmG8jUG6jHBK5NrGZmgTT1Ptq31SygSJjC6iq+YVqKGP5FiqgTD0
+	 52Fm3l4c9TOJmMpwdmQvwUZGHwTlI3MAfFmcJScDC80nseHasED02f62nlIEDSNBPJ
+	 Ld/l+nzFrC+sV07Ox8pHbYEOl/5Pd029C19BTVClH2phRMzAug/NapUTkcYTuKNEN9
+	 P6XmgqcIqODT9RhUPK/f5ZG25JsLWAUU/MwCbqrBnwu4j4oT+ACj7KS3lFLYtryF5r
+	 TzYuI0KreYB3htZ70xwIrPNd4QwuxWXVFEQo96FzNVgNMuLxYPJIhjhmGU9S60H84n
+	 EMCU7yZ8cEakg==
 Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 893B417E156C;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5C4A817E1562;
 	Thu, 16 Oct 2025 12:08:55 +0200 (CEST)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id B432E10C9C792; Thu, 16 Oct 2025 12:08:53 +0200 (CEST)
+	id D28A310C9C79C; Thu, 16 Oct 2025 12:08:53 +0200 (CEST)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Thu, 16 Oct 2025 12:08:45 +0200
-Subject: [PATCH 09/15] dt-bindings: net: mediatek,net: Correct bindings for
- MT7981
+Date: Thu, 16 Oct 2025 12:08:50 +0200
+Subject: [PATCH 14/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ wifi
 MIME-Version: 1.0
-Message-Id: <20251016-openwrt-one-network-v1-9-de259719b6f2@collabora.com>
+Message-Id: <20251016-openwrt-one-network-v1-14-de259719b6f2@collabora.com>
 References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
 In-Reply-To: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -77,9 +77,8 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  Sjoerd Simons <sjoerd@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_030905_677537_AE9A09A8 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251016_030905_704935_32E3CFD9 
+X-CRM114-Status: GOOD (  10.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,72 +95,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Different SoCs have different numbers of Wireless Ethernet
-Dispatch (WED) units:
-- MT7981: Has 1 WED unit
-- MT7986: Has 2 WED units
-- MT7988: Has 2 WED units
-
-Update the binding to reflect these hardware differences. The MT7981
-also uses infracfg for PHY switching, so allow that property.
+Enable Dual-band WiFI 6 functionality on the Openwrt One
 
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
- Documentation/devicetree/bindings/net/mediatek,net.yaml | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+ .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/net/mediatek,net.yaml b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-index b45f67f92e80d..453e6bb34094a 100644
---- a/Documentation/devicetree/bindings/net/mediatek,net.yaml
-+++ b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-@@ -112,7 +112,7 @@ properties:
- 
-   mediatek,wed:
-     $ref: /schemas/types.yaml#/definitions/phandle-array
--    minItems: 2
-+    minItems: 1
-     maxItems: 2
-     items:
-       maxItems: 1
-@@ -338,12 +338,14 @@ allOf:
-             - const: netsys0
-             - const: netsys1
- 
--        mediatek,infracfg: false
--
-         mediatek,sgmiisys:
-           minItems: 2
-           maxItems: 2
- 
-+        mediatek,wed:
-+          minItems: 1
-+          maxItems: 1
+diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+index 6e6e4f1515f67..4d1653c336e71 100644
+--- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
++++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+@@ -134,6 +134,22 @@ mux {
+ 			groups = "uart0";
+ 		};
+ 	};
 +
-   - if:
-       properties:
-         compatible:
-@@ -385,6 +387,10 @@ allOf:
-           minItems: 2
-           maxItems: 2
- 
-+        mediatek,wed:
-+          minItems: 2
-+          maxItems: 2
++	wifi_dbdc_pins: wifi-dbdc-pins {
++		mux {
++			function = "eth";
++			groups = "wf0_mode1";
++		};
 +
-   - if:
-       properties:
-         compatible:
-@@ -429,6 +435,10 @@ allOf:
-             - const: xgp2
-             - const: xgp3
++		conf {
++			pins = "WF_HB1", "WF_HB2", "WF_HB3", "WF_HB4",
++			       "WF_HB0", "WF_HB0_B", "WF_HB5", "WF_HB6",
++			       "WF_HB7", "WF_HB8", "WF_HB9", "WF_HB10",
++			       "WF_TOP_CLK", "WF_TOP_DATA", "WF_XO_REQ",
++			       "WF_CBA_RESETB", "WF_DIG_RESETB";
++			drive-strength = <MTK_DRIVE_4mA>;
++		};
++	};
+ };
  
-+        mediatek,wed:
-+          minItems: 2
-+          maxItems: 2
+ &spi2 {
+@@ -213,6 +229,14 @@ &usb_phy {
+ 	status = "okay";
+ };
+ 
++&wifi {
++	nvmem-cells = <&eeprom_factory_0>;
++	nvmem-cell-names = "eeprom";
++	pinctrl-names = "dbdc";
++	pinctrl-0 = <&wifi_dbdc_pins>;
++	status = "okay";
++};
 +
- patternProperties:
-   "^mac@[0-2]$":
-     type: object
+ &xhci {
+ 	phys = <&u2port0 PHY_TYPE_USB2>;
+ 	vusb33-supply = <&reg_3p3v>;
 
 -- 
 2.51.0
