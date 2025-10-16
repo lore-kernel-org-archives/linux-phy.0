@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34FECCCD183
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92D48CCD194
 	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:09:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=trb/l24TQTU1/eLRv+ljKH9+UauBHWcZOeKXvwGeSlY=; b=Cvy0hR0xnfagVa
-	BjymageuWpQ3E8SlI6sIb+jGDfelD04OUYGGOijYFAwJ1lrNxBgjdUaxg63ZfbKvOIHV1yTSKexpm
-	yVcLZgZDFFxQT8UkxQuHlEGlu/fPeukmxXXduruqRgnBO04hf1lWJkC7DSboOxp86A80SFAYHIotR
-	qntwNmRYC3dMQ1+4Ts6KF/ysRbc2fsPNSF5e3/8FdH9g93loSRcFyuoSdDIsT2ZpcPhJskBDhdRg3
-	JMEh1XUm+zzZldfQMf9A+nGswYzdRgyjPU+V0qTOvIi0jjYuyi2qjhmOgbibYhwfLp5Ui2VrDd0gb
-	cCcVlJPjzstjQdn6C4SQ==;
+	List-Owner; bh=gQcS9DORnnXBS7chmfh5sPZ1dk6MZDjzM8Q9onIJuEA=; b=39laQs9AGc5icm
+	KnGV0OUpeNHkS+TcqQxSFk/6Jw1qGMxdJoXe+mMAbBnzsQukliKONufRzNMHBAgWRRHwqJk7tDi+r
+	/xhvliwyCgRl+XO0huXUAAwgLnsobIU0AULanMt4ypjLhJdcdcy3yHAXGaqtOTNdz/8hIJ6xtKu6+
+	OEpYeS5nrFHOflzPK1oNYYzYu7FEeySGZBGtuJGrcoH5R+gqDYtMZvgh2Ljk4l1M0DQWz9N963ILH
+	GfeJoRqvpn6MzqrrrTx5rbiiTuv3O88sDhxIDOEVs+2V7ZSDv8R/PI4E67og6FpS2bxOI3gDYkDI6
+	Rks0McXh6dKAYi4tKwPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Kuq-00000004KwI-3mRV;
-	Thu, 16 Oct 2025 10:09:00 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1v9Kur-00000004Kwk-0h91;
+	Thu, 16 Oct 2025 10:09:01 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Kum-00000004Ks4-30lc;
+	id 1v9Kum-00000004Ks1-3MKk;
 	Thu, 16 Oct 2025 10:08:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1760609334;
-	bh=hIWnvBUyNgSj6OMVE9lF3kFgGrlwr44/+QcM5a5I2Ts=;
+	bh=DPOaRFuwOoLbPy5eXYRvHIT1zjRLOstWIzlStDl1Vtc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=TyhoBd+/lCA1upSmzbzSIKuO82jmtslA7gXRNAB1KqHz99Q3InVHROXppEZRITG7c
-	 38cmyuRLAE3tpF+JozH/4+wXi7T4vb/ReWWBw+W+uGgA5Amn1KkFrFhjndiU9R0XFW
-	 x3cpWjLCUYrU8X/D55BjzK2kOHntakmIKXHa4dPm/qiU7tq7sjyOq0NhK4n4Insq0H
-	 +1bXLBnK6gz1Vu8fp9krrl5EOwqZ5gdT3z/RpxIRL8Sy0ocx9X1KTD1P2/9g/03I32
-	 7ybsEbNzKDjgkQJI+fk0dnYRN3JQBqbByIK3g7wNdIt/fQAaJdAXpinTTsBAOpC7xS
-	 W77WcN9hM+fYg==
+	b=ERa9DvmB5rzvKYvlPsAxSeYaGbRiOabDCdvgj1ncj1WLtXJfHBZAfJ+ZHTQ3PRww0
+	 yHMfZHOss5K9qJ4O9THXNVdsm2S+Oal4JoAZx735VtCJ1M1kz4CikSm3YcJT1ZXkvi
+	 U7k2rtzw7mg+pSjAkXL30AdDsk4oOso9/soVGIBNik/Fap97Ou2+MhVmioLlaNM1sr
+	 pljrRdxgroc1HrqHC48RrmN0etZTS3NX+CjoS1G/8Sun7MdBrtgUyAW/jISLjSQ1qB
+	 obH56TA1sedFHMiNmbtQSBMBgEWFjEOqEJ6oBD7zPVoPkgEVl5SQBP2h3ViecDVnkf
+	 uQR0lk4sGRLeg==
 Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5476817E12DF;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0B51117E12BA;
 	Thu, 16 Oct 2025 12:08:54 +0200 (CEST)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id 9FECD10C9C78A; Thu, 16 Oct 2025 12:08:53 +0200 (CEST)
+	id 9A80610C9C788; Thu, 16 Oct 2025 12:08:53 +0200 (CEST)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Thu, 16 Oct 2025 12:08:41 +0200
-Subject: [PATCH 05/15] dt-bindings: pci: mediatek-pcie-gen3: Add MT7981
- PCIe compatible
+Date: Thu, 16 Oct 2025 12:08:40 +0200
+Subject: [PATCH 04/15] dt-bindings: mfd: syscon: Add mt7981-topmisc
 MIME-Version: 1.0
-Message-Id: <20251016-openwrt-one-network-v1-5-de259719b6f2@collabora.com>
+Message-Id: <20251016-openwrt-one-network-v1-4-de259719b6f2@collabora.com>
 References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
 In-Reply-To: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -77,8 +76,8 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  Sjoerd Simons <sjoerd@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_030856_909415_510DFF1A 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20251016_030856_994886_AE4BA86E 
+X-CRM114-Status: UNSURE (   8.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,27 +95,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add compatible string for MediaTek MT7981 PCIe Gen3 controller.
-The MT7981 PCIe controller is compatible with the MT8192 PCIe
-controller.
+This hardware block amongst other things includes a multiplexer for a
+high-speed Combo-Phy. This binding allows exposing the multiplexer
 
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
- Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml | 1 +
+ Documentation/devicetree/bindings/mfd/syscon.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
-index 0278845701ce8..4db700fc36ba7 100644
---- a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
-+++ b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
-@@ -48,6 +48,7 @@ properties:
-     oneOf:
-       - items:
-           - enum:
-+              - mediatek,mt7981-pcie
-               - mediatek,mt7986-pcie
-               - mediatek,mt8188-pcie
-               - mediatek,mt8195-pcie
+diff --git a/Documentation/devicetree/bindings/mfd/syscon.yaml b/Documentation/devicetree/bindings/mfd/syscon.yaml
+index 657c38175fba2..51511078c4c3b 100644
+--- a/Documentation/devicetree/bindings/mfd/syscon.yaml
++++ b/Documentation/devicetree/bindings/mfd/syscon.yaml
+@@ -193,6 +193,7 @@ properties:
+           - mediatek,mt2701-pctl-a-syscfg
+           - mediatek,mt2712-pctl-a-syscfg
+           - mediatek,mt6397-pctl-pmic-syscfg
++          - mediatek,mt7981-topmisc
+           - mediatek,mt7988-topmisc
+           - mediatek,mt8135-pctl-a-syscfg
+           - mediatek,mt8135-pctl-b-syscfg
 
 -- 
 2.51.0
