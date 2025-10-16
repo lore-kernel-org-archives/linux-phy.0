@@ -4,104 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9006CCD183
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 07:57:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34FECCCD183
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:09:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3IdnwwSfjF0inVJW4tt68iUpeqHy3jOoxgCXZaqVP/c=; b=mQ8MaElOJl0Zic
-	p1QLIKFBLJo1qXKKXQf6jFOcNRgb4IhxpOgrO+Cxb+PfXTp6DXgo29lEUSOT9Rc+43r0xOU6nXTVe
-	CldN4iIjmQ5wvuYpze8oNcGcr1H7gYvAIenmVY25ID+cmXBKhkENJMedY2dY4GWq22uPiB4eeqP1P
-	opgqUbyxRgoWe/r6iCcFtC//OkAakAbmzzVJ8J8vIuUGxInJ41y3SJ/AUSYwnx1Y8KLH9N17pOmGp
-	CbGC062h+PG29vWNV+9XflmkDVFqv7KqKSGWPqcMGQitBFEVEvv2OZoCaCE2T6fVNJww9a2gcDw47
-	9aG33u+W+63PSj7v7tXQ==;
+	List-Owner; bh=trb/l24TQTU1/eLRv+ljKH9+UauBHWcZOeKXvwGeSlY=; b=Cvy0hR0xnfagVa
+	BjymageuWpQ3E8SlI6sIb+jGDfelD04OUYGGOijYFAwJ1lrNxBgjdUaxg63ZfbKvOIHV1yTSKexpm
+	yVcLZgZDFFxQT8UkxQuHlEGlu/fPeukmxXXduruqRgnBO04hf1lWJkC7DSboOxp86A80SFAYHIotR
+	qntwNmRYC3dMQ1+4Ts6KF/ysRbc2fsPNSF5e3/8FdH9g93loSRcFyuoSdDIsT2ZpcPhJskBDhdRg3
+	JMEh1XUm+zzZldfQMf9A+nGswYzdRgyjPU+V0qTOvIi0jjYuyi2qjhmOgbibYhwfLp5Ui2VrDd0gb
+	cCcVlJPjzstjQdn6C4SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9IrL-00000003pME-0lC2;
-	Thu, 16 Oct 2025 07:57:15 +0000
-Received: from mail-ua1-f46.google.com ([209.85.222.46])
+	id 1v9Kuq-00000004KwI-3mRV;
+	Thu, 16 Oct 2025 10:09:00 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9IrJ-00000003pLg-3ERz
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Oct 2025 07:57:14 +0000
-Received: by mail-ua1-f46.google.com with SMTP id a1e0cc1a2514c-8e261568020so154583241.1
-        for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 00:57:13 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760601432; x=1761206232;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Kd9DhXGFTz7VluvF3CXaOYryMfT47ujx56ubcyYXsIw=;
-        b=a12+/1nXIkmpJmRbk7tL8eVRn9w9b/DINNpTfSAH+5yEmOwS+p/m/EuGzRdwqF7N2/
-         tS3h3FZfxSIE7jYrlfaRvdumkZeA65Bfu+KFGXuWhjdWA3RghZvUq5vglCxR1+rDvwGK
-         ZVvnjBv3m93jt7OrI1EZfoaI5aCgomuld9QXRfrVbgkqdQZnmambV2dEKtLleeedazZY
-         Zr44WTw2AASpgR1zWRpRhih7YjQrUY6PZMJsh5HLwaAFTFmvlUTHCCkUkElBLrdD7Ujp
-         G11GHFyA/djDqYDv7fSFrRJfzEPw/EPpF8rs+dNVAu5wskaub28fAcMl8DZJmEQ9RiOX
-         5Fbw==
-X-Forwarded-Encrypted: i=1; AJvYcCWE9AtJ8WnRcCyoJJdKCQ9M1L09uR4zvc48eLYOWPlQUY5KHYvlsMqSwLF0gjmJFCLMgKZdqkL74Rk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyYZngTAjo+Z1plIH7evUY0gHymtiltNqFRTwpO2mpX4V60c2mI
-	s8bQ7I/4S80EnqGdQKbLmBM71SUGp7wENRvN1Mt5/01ORpQElsYdgKvMni50iQgr
-X-Gm-Gg: ASbGncut7VdbGKKRyhmKMo5/QX8VGtCtODK/gnGOtNA0d+MkUtVOModr0AClYeUptv/
-	on/ch4KYgADMjSEneSS917ETkReYlEMRTbbc043KQx/bqPlK2Eki/KFTqCjlZ5ZRYnDJRyl2RT3
-	mSb3sCYY0NoWjFoFRDI/+sCYvp0h+P9dUYDMoICodJaikgVV6uAsog7Yduh2WmJOU/0607Ad8qs
-	9+5vghMXf/ZXdcNlGbANhNd1oXkLHRzxmfJftc4jgpuD6PBkR/eyvAVq8a3wKTTqXorpm9oAeya
-	PN8KAx0EltRgMJG5EsQYSMVhOM1jLENE6pe2TiS8Jh47cx+++7dSRR2KDaeyMPOg9WIeJqyhimz
-	CQ/xu+Pq6AiA7bX5eljL4ezq1KtIFkU2c79b6/1gvIEigUfvwCNY4RYq82mCQlNHdeeD1waz0ks
-	OU+d4mKgAceQhtQa3kwmzNgZV5UXKtlsPjkJaqUKfUPs/UhyApojX3i41FQSw=
-X-Google-Smtp-Source: AGHT+IEn1swwQnOdVFf769tAUFlBWl1JNk8s61+/wn45UonqFMdqx8GSAAmmS/ExIeyghnHnpZIK7g==
-X-Received: by 2002:a05:6102:c92:b0:5d6:a83:a990 with SMTP id ada2fe7eead31-5d60a83ad14mr6225319137.37.1760601432054;
-        Thu, 16 Oct 2025 00:57:12 -0700 (PDT)
-Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com. [209.85.217.46])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-554d80fdbd5sm5795703e0c.22.2025.10.16.00.57.11
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 16 Oct 2025 00:57:11 -0700 (PDT)
-Received: by mail-vs1-f46.google.com with SMTP id ada2fe7eead31-5ccccc1f7caso204336137.1
-        for <linux-phy@lists.infradead.org>; Thu, 16 Oct 2025 00:57:11 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVGOqbc6Q/bG5pbh/NEOXllKOdVPh0vv1FOkAhpC3cppHe7W8z1JAEh6xwqAS8XmTMjnFT0k9ca8Mw=@lists.infradead.org
-X-Received: by 2002:a05:6102:512a:b0:519:534a:6c20 with SMTP id
- ada2fe7eead31-5d5e23afcd1mr10705349137.30.1760601430958; Thu, 16 Oct 2025
- 00:57:10 -0700 (PDT)
+	id 1v9Kum-00000004Ks4-30lc;
+	Thu, 16 Oct 2025 10:08:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1760609334;
+	bh=hIWnvBUyNgSj6OMVE9lF3kFgGrlwr44/+QcM5a5I2Ts=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=TyhoBd+/lCA1upSmzbzSIKuO82jmtslA7gXRNAB1KqHz99Q3InVHROXppEZRITG7c
+	 38cmyuRLAE3tpF+JozH/4+wXi7T4vb/ReWWBw+W+uGgA5Amn1KkFrFhjndiU9R0XFW
+	 x3cpWjLCUYrU8X/D55BjzK2kOHntakmIKXHa4dPm/qiU7tq7sjyOq0NhK4n4Insq0H
+	 +1bXLBnK6gz1Vu8fp9krrl5EOwqZ5gdT3z/RpxIRL8Sy0ocx9X1KTD1P2/9g/03I32
+	 7ybsEbNzKDjgkQJI+fk0dnYRN3JQBqbByIK3g7wNdIt/fQAaJdAXpinTTsBAOpC7xS
+	 W77WcN9hM+fYg==
+Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: sjoerd)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5476817E12DF;
+	Thu, 16 Oct 2025 12:08:54 +0200 (CEST)
+Received: by beast.luon.net (Postfix, from userid 1000)
+	id 9FECD10C9C78A; Thu, 16 Oct 2025 12:08:53 +0200 (CEST)
+From: Sjoerd Simons <sjoerd@collabora.com>
+Date: Thu, 16 Oct 2025 12:08:41 +0200
+Subject: [PATCH 05/15] dt-bindings: pci: mediatek-pcie-gen3: Add MT7981
+ PCIe compatible
 MIME-Version: 1.0
-References: <20251015232015.846282-1-robh@kernel.org>
-In-Reply-To: <20251015232015.846282-1-robh@kernel.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 16 Oct 2025 09:56:59 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdVBDN8-gWVs1f=1E2NgD6Dp4=ZFUnyzqHaQj9JWPpZepw@mail.gmail.com>
-X-Gm-Features: AS18NWDjBoTWi0arzS-uHQaIyzTZ8PYUb4ECqZaEUF0sSO-4JEe-m7M7qjhxsvY
-Message-ID: <CAMuHMdVBDN8-gWVs1f=1E2NgD6Dp4=ZFUnyzqHaQj9JWPpZepw@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: Fix inconsistent quoting
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Stephen Boyd <sboyd@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, 
-	Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
-	Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
-	=?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
-	Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>, 
-	Jonathan Cameron <jic23@kernel.org>, Andy Shevchenko <andy@kernel.org>, 
-	Jassi Brar <jassisinghbrar@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
-	Lee Jones <lee@kernel.org>, Joel Stanley <joel@jms.id.au>, 
-	Andrew Jeffery <andrew@codeconstruct.com.au>, Andrew Lunn <andrew@lunn.ch>, 
-	Vladimir Oltean <olteanv@gmail.com>, "David S. Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Daire McNamara <daire.mcnamara@microchip.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>, 
-	=?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
-	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Claudiu Beznea <claudiu.beznea@tuxon.dev>, 
-	Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-iio@vger.kernel.org, linux-media@vger.kernel.org, 
-	netdev@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+Message-Id: <20251016-openwrt-one-network-v1-5-de259719b6f2@collabora.com>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+In-Reply-To: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Ryder Lee <ryder.lee@mediatek.com>, 
+ Jianjun Wang <jianjun.wang@mediatek.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>
+Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
+ Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
+ Sjoerd Simons <sjoerd@collabora.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_005713_813742_55332E73 
-X-CRM114-Status: GOOD (  22.24  )
+X-CRM114-CacheID: sfid-20251016_030856_909415_510DFF1A 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,55 +96,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rob,
+Add compatible string for MediaTek MT7981 PCIe Gen3 controller.
+The MT7981 PCIe controller is compatible with the MT8192 PCIe
+controller.
 
-On Thu, 16 Oct 2025 at 01:20, Rob Herring (Arm) <robh@kernel.org> wrote:
-> yamllint has gained a new check which checks for inconsistent quoting
-> (mixed " and ' quotes within a file). Fix all the cases yamllint found
-> so we can enable the check (once the check is in a release). Use
-> whichever quoting is dominate in the file.
->
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+---
+ Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Thanks for your patch!
-
-Since you are mentioning mixed quotes, is one or the other preferred?
-Shouldn't we try to be consistent across all files?
-
-> --- a/Documentation/devicetree/bindings/pinctrl/renesas,pfc.yaml
-> +++ b/Documentation/devicetree/bindings/pinctrl/renesas,pfc.yaml
-> @@ -129,7 +129,7 @@ additionalProperties:
->
->      - type: object
->        additionalProperties:
-> -        $ref: "#/additionalProperties/anyOf/0"
-> +        $ref: '#/additionalProperties/anyOf/0'
->
->  examples:
->    - |
-> @@ -190,7 +190,7 @@ examples:
->
->              sdhi0_pins: sd0 {
->                      groups = "sdhi0_data4", "sdhi0_ctrl";
-> -                    function = "sdhi0";
-> +                    function = "sdhi0';
-
-Huh?
-
->                      power-source = <3300>;
->              };
->      };
-
-Gr{oetje,eeting}s,
-
-                        Geert
+diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
+index 0278845701ce8..4db700fc36ba7 100644
+--- a/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
++++ b/Documentation/devicetree/bindings/pci/mediatek-pcie-gen3.yaml
+@@ -48,6 +48,7 @@ properties:
+     oneOf:
+       - items:
+           - enum:
++              - mediatek,mt7981-pcie
+               - mediatek,mt7986-pcie
+               - mediatek,mt8188-pcie
+               - mediatek,mt8195-pcie
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.51.0
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
