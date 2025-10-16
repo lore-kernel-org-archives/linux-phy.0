@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63D97CCD183
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:44:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFBECCD183
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:53:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YYsdernHUlZzV72x88CsemireyhVCYOfNWhnnZ2ZqwU=; b=e3kUDMj/OhyvRC
-	nm6KofDu3BFLiXQLts2vFvwIE1+xKA6D+hhINMLCnX/4cPWwxQMoVyUDafgjMPVgM4eCAMUi4C/1+
-	KmcEn88kxU52DEQUhiwnHT3rcTbyeke9yEu1qoPJWMgjbE+MOzu6QjVyhwQB+NeCyXYHvSvL9nb0T
-	gRmo7q/Jo7M0J4cJjAGOI3U/OT4sLuFJDrj81PZ7rV5XFF+pvzCgtZV4PqqscsSKLUeN1d0UOepOR
-	HaMLhdy++UTxR4yTYePq07NneuHiGutCpB8Nlp/qniXNzmwyTvx/Cr8nIex7DA1LX1VKtCj3t0Jip
-	53XC0a7w6w0yZw2lz2CQ==;
+	List-Owner; bh=BAEM+I663FX66ZKJdjqB5W5shXZEU+yCqq4Ttsqbi2g=; b=J+Z7i7u6ORKiWB
+	Er3n1Qt0UMhgIVxgTbHBo3kZrOz5bCbiIcV3Jn9aLBSh3M5P9XVfiIdp0/6+IKd2Q1xHtP4OqS7ct
+	3x/K4pqeUj8DRubRh5guvmqhJwAyWRTS40ryhBcX/R36CnZWDzmQogZy5v8UNJtMP7ft69zWrEU52
+	4IAx2LN7DS4bwhvj0m15KlaNiFsyLZ1vseHKCChhPjjXJ5jJ/c8rG08PgW36yrBzl59lZZp2uKa8z
+	F37BrSufctYcZ0kXQHGMjSt6/Qi7gdGlAQlJlEMKiOV4nL0qniQqIgOjBKW0xyZjzAKiNoSPX0TJh
+	ANs5X9uj1BbMfKye5QYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9LTA-00000004TTm-0e4t;
-	Thu, 16 Oct 2025 10:44:28 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1v9LcL-00000004Ux1-2KTh;
+	Thu, 16 Oct 2025 10:53:57 +0000
+Received: from frasgout.his.huawei.com ([185.176.79.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9LT7-00000004TQQ-012H
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Oct 2025 10:44:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1760611463;
-	bh=lw6I7CSBu6LrNrtzqq8Kzhj1MMC2oe1O5zTWUZoMZ7c=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZCIyiIa0uaaxWcMbZh7mhc3fyWOCp+PtMzfjkYRs1xBPWM9fYsPdmZ1QyHpVfhVop
-	 m08bGTGxNN+RdjLN3k/H0jB45abyWzgStAe4V6SgovZGGo6lrqmsJe6x0/a4KfqINR
-	 nVrq32YaAyA0UTtR7eOPYAP8hQmP2Nkz1bTJnaoELdx5TwwJYwLL+n+SZRfq13jEPl
-	 CEyVtlqbj4jD+iFwZi4RnHyvgDKf2+Vs3MKuovsW6X8bM1z5L7aa+0JOD3Ahb7hwhv
-	 cDOmSKjHBNhL2MnZNjyJ7m2frTNOxAEEWLBe3O8Wi8YrLvGB+V+YmMwqEI3AtsLAqL
-	 agiOyetjoVaVg==
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 428C317E10C8;
-	Thu, 16 Oct 2025 12:44:22 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: sboyd@kernel.org
-Cc: jic23@kernel.org,
-	dlechner@baylibre.com,
-	nuno.sa@analog.com,
-	andy@kernel.org,
-	arnd@arndb.de,
-	gregkh@linuxfoundation.org,
-	srini@kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	sre@kernel.org,
-	krzysztof.kozlowski@linaro.org,
-	u.kleine-koenig@baylibre.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org,
-	kernel@collabora.com,
-	wenst@chromium.org,
-	casey.connolly@linaro.org,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v6 7/8] iio: adc: qcom-spmi-iadc: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Thu, 16 Oct 2025 12:44:01 +0200
-Message-ID: <20251016104402.338246-8-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20251016104402.338246-1-angelogioacchino.delregno@collabora.com>
-References: <20251016104402.338246-1-angelogioacchino.delregno@collabora.com>
+	id 1v9LcI-00000004Uug-3uRj;
+	Thu, 16 Oct 2025 10:53:56 +0000
+Received: from mail.maildlp.com (unknown [172.18.186.31])
+	by frasgout.his.huawei.com (SkyGuard) with ESMTP id 4cnPtG3GQNz6L4xg;
+	Thu, 16 Oct 2025 18:52:38 +0800 (CST)
+Received: from dubpeml100005.china.huawei.com (unknown [7.214.146.113])
+	by mail.maildlp.com (Postfix) with ESMTPS id 0C2D81402A5;
+	Thu, 16 Oct 2025 18:53:43 +0800 (CST)
+Received: from localhost (10.203.177.15) by dubpeml100005.china.huawei.com
+ (7.214.146.113) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.11; Thu, 16 Oct
+ 2025 11:53:40 +0100
+Date: Thu, 16 Oct 2025 11:53:39 +0100
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: "Rob Herring (Arm)" <robh@kernel.org>
+CC: Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+	<conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>, Thierry Reding
+	<thierry.reding@gmail.com>, Linus Walleij <linus.walleij@linaro.org>, Bartosz
+ Golaszewski <brgl@bgdev.pl>, Shawn Guo <shawnguo@kernel.org>, "Fabio Estevam"
+	<festevam@gmail.com>, Nuno =?UTF-8?Q?S=C3=A1?= <nuno.sa@analog.com>,
+	Lars-Peter Clausen <lars@metafoo.de>, "Michael Hennerich"
+	<Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, Andy
+ Shevchenko <andy@kernel.org>, Jassi Brar <jassisinghbrar@gmail.com>, Mauro
+ Carvalho Chehab <mchehab@kernel.org>, "Lee Jones" <lee@kernel.org>, Joel
+ Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>,
+	Andrew Lunn <andrew@lunn.ch>, "Vladimir Oltean" <olteanv@gmail.com>, "David
+ S. Miller" <davem@davemloft.net>, "Eric Dumazet" <edumazet@google.com>, Jakub
+ Kicinski <kuba@kernel.org>, "Paolo Abeni" <pabeni@redhat.com>, Daire McNamara
+	<daire.mcnamara@microchip.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?UTF-8?Q?Wilczy?= =?UTF-8?Q?=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	"Bjorn Andersson" <andersson@kernel.org>, Geert Uytterhoeven
+	<geert+renesas@glider.be>, Nicolas Ferre <nicolas.ferre@microchip.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Claudiu Beznea
+	<claudiu.beznea@tuxon.dev>, Florian Fainelli <f.fainelli@gmail.com>, "Tony
+ Lindgren" <tony@atomide.com>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-clk@vger.kernel.org>,
+	<linux-gpio@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-iio@vger.kernel.org>, <linux-media@vger.kernel.org>,
+	<netdev@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>
+Subject: Re: [PATCH] dt-bindings: Fix inconsistent quoting
+Message-ID: <20251016115339.000047f7@huawei.com>
+In-Reply-To: <20251015232015.846282-1-robh@kernel.org>
+References: <20251015232015.846282-1-robh@kernel.org>
+X-Mailer: Claws Mail 4.3.0 (GTK 3.24.42; x86_64-w64-mingw32)
 MIME-Version: 1.0
+X-Originating-IP: [10.203.177.15]
+X-ClientProxiedBy: lhrpeml100009.china.huawei.com (7.191.174.83) To
+ dubpeml100005.china.huawei.com (7.214.146.113)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_034425_371839_9DA772ED 
-X-CRM114-Status: GOOD (  16.81  )
+X-CRM114-CacheID: sfid-20251016_035355_108650_C7789234 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,135 +95,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrate an Current ADC device, reachable
-in a specific address range over SPMI.
+On Wed, 15 Oct 2025 18:16:24 -0500
+"Rob Herring (Arm)" <robh@kernel.org> wrote:
 
-Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device and
-initialize its own regmap with this sub-device's specific base
-address, retrieved from the devicetree.
-
-This allows to stop manually adding the register base address to
-every R/W call in this driver, as this can be, and is now, handled
-by the regmap API instead.
-
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/iio/adc/qcom-spmi-iadc.c | 32 +++++++++++++++++++++-----------
- 1 file changed, 21 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
-index b64a8a407168..67096952b229 100644
---- a/drivers/iio/adc/qcom-spmi-iadc.c
-+++ b/drivers/iio/adc/qcom-spmi-iadc.c
-@@ -16,6 +16,7 @@
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <linux/slab.h>
-+#include <linux/spmi.h>
- 
- /* IADC register and bit definition */
- #define IADC_REVISION2				0x1
-@@ -94,7 +95,6 @@
-  * struct iadc_chip - IADC Current ADC device structure.
-  * @regmap: regmap for register read/write.
-  * @dev: This device pointer.
-- * @base: base offset for the ADC peripheral.
-  * @rsense: Values of the internal and external sense resister in micro Ohms.
-  * @poll_eoc: Poll for end of conversion instead of waiting for IRQ.
-  * @offset: Raw offset values for the internal and external channels.
-@@ -105,7 +105,6 @@
- struct iadc_chip {
- 	struct regmap	*regmap;
- 	struct device	*dev;
--	u16		base;
- 	bool		poll_eoc;
- 	u32		rsense[2];
- 	u16		offset[2];
-@@ -119,7 +118,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
- 	unsigned int val;
- 	int ret;
- 
--	ret = regmap_read(iadc->regmap, iadc->base + offset, &val);
-+	ret = regmap_read(iadc->regmap, offset, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -129,7 +128,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
- 
- static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
- {
--	return regmap_write(iadc->regmap, iadc->base + offset, data);
-+	return regmap_write(iadc->regmap, offset, data);
- }
- 
- static int iadc_reset(struct iadc_chip *iadc)
-@@ -270,7 +269,7 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- 
- static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
- {
--	return regmap_bulk_read(iadc->regmap, iadc->base + IADC_DATA, data, 2);
-+	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
- }
- 
- static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
-@@ -483,12 +482,19 @@ static const struct iio_chan_spec iadc_channels[] = {
- 
- static int iadc_probe(struct platform_device *pdev)
- {
-+	struct regmap_config iadc_regmap_config = {
-+		.reg_bits = 16,
-+		.val_bits = 8,
-+		.max_register = 0x100,
-+		.fast_io = true,
-+	};
- 	struct device_node *node = pdev->dev.of_node;
- 	struct device *dev = &pdev->dev;
-+	struct spmi_subdevice *sub_sdev;
-+	struct spmi_device *sparent;
- 	struct iio_dev *indio_dev;
- 	struct iadc_chip *iadc;
- 	int ret, irq_eoc;
--	u32 res;
- 
- 	indio_dev = devm_iio_device_alloc(dev, sizeof(*iadc));
- 	if (!indio_dev)
-@@ -497,18 +503,21 @@ static int iadc_probe(struct platform_device *pdev)
- 	iadc = iio_priv(indio_dev);
- 	iadc->dev = dev;
- 
--	iadc->regmap = dev_get_regmap(dev->parent, NULL);
--	if (!iadc->regmap)
--		return -ENODEV;
-+	sparent = to_spmi_device(dev->parent);
-+	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
-+	if (IS_ERR(sub_sdev))
-+		return PTR_ERR(sub_sdev);
- 
- 	init_completion(&iadc->complete);
- 	mutex_init(&iadc->lock);
- 
--	ret = of_property_read_u32(node, "reg", &res);
-+	ret = of_property_read_u32(node, "reg", &iadc_regmap_config.reg_base);
- 	if (ret < 0)
- 		return -ENODEV;
- 
--	iadc->base = res;
-+	iadc->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &iadc_regmap_config);
-+	if (IS_ERR(iadc->regmap))
-+		return PTR_ERR(iadc->regmap);
- 
- 	ret = iadc_version_check(iadc);
- 	if (ret < 0)
-@@ -584,3 +593,4 @@ MODULE_ALIAS("platform:qcom-spmi-iadc");
- MODULE_DESCRIPTION("Qualcomm SPMI PMIC current ADC driver");
- MODULE_LICENSE("GPL v2");
- MODULE_AUTHOR("Ivan T. Ivanov <iivanov@mm-sol.com>");
-+MODULE_IMPORT_NS("SPMI");
--- 
-2.51.0
+> yamllint has gained a new check which checks for inconsistent quoting
+> (mixed " and ' quotes within a file). Fix all the cases yamllint found
+> so we can enable the check (once the check is in a release). Use
+> whichever quoting is dominate in the file.
+> 
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+>  .../arm/altera/socfpga-clk-manager.yaml       |  4 ++--
+>  .../bindings/clock/nvidia,tegra124-car.yaml   |  8 ++++----
+>  .../bindings/clock/nvidia,tegra20-car.yaml    |  6 +++---
+>  .../devicetree/bindings/gpio/gpio-mxs.yaml    |  9 +++++----
+>  .../bindings/gpio/snps,dw-apb-gpio.yaml       |  4 ++--
+>  .../bindings/iio/temperature/adi,ltc2983.yaml | 20 +++++++++----------
+For this one
+Acked-by: Jonathan Cameron <jonathan.cameron@huawei.com>
 
 
 -- 
