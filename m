@@ -4,81 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFBECCD183
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 10:53:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B9C3CCD183
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 11:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BAEM+I663FX66ZKJdjqB5W5shXZEU+yCqq4Ttsqbi2g=; b=J+Z7i7u6ORKiWB
-	Er3n1Qt0UMhgIVxgTbHBo3kZrOz5bCbiIcV3Jn9aLBSh3M5P9XVfiIdp0/6+IKd2Q1xHtP4OqS7ct
-	3x/K4pqeUj8DRubRh5guvmqhJwAyWRTS40ryhBcX/R36CnZWDzmQogZy5v8UNJtMP7ft69zWrEU52
-	4IAx2LN7DS4bwhvj0m15KlaNiFsyLZ1vseHKCChhPjjXJ5jJ/c8rG08PgW36yrBzl59lZZp2uKa8z
-	F37BrSufctYcZ0kXQHGMjSt6/Qi7gdGlAQlJlEMKiOV4nL0qniQqIgOjBKW0xyZjzAKiNoSPX0TJh
-	ANs5X9uj1BbMfKye5QYA==;
+	List-Owner; bh=NlKJjdHpti3UB7gOawHYhP0voiQMLSusq2rGe4zOhJE=; b=wpRbhoaChuwhTs
+	TbFJVCX36XHv1ntId9riLYPOVpZc0iIZgKtQLNolj08d8sQPD1ynKNvVRk66sdYD941Wx51u67dgJ
+	GC2sBHHuQ1LAbozvIYHJj+MLvI0ccJZwu6EMuVdrIOjX5tCcw2jWq8V/CVcgMRMNIAsV7p9ArWcLS
+	YYR/4FhvqAdmCQxuUMTbC9cdWEUYq34y/Ei9EwMlny4h3Gcw2sijeKK8BnSQVvUeOWFtXibtezfoo
+	8lKcUZX4cH01j4YbAbEKABqWjqasfvLgAPAnEDkBUToodZ9dP+qLcGYsyQyeSCFT8VPqwOTDkAj7H
+	phV6zZWVF0jh7pOel1Ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9LcL-00000004Ux1-2KTh;
-	Thu, 16 Oct 2025 10:53:57 +0000
-Received: from frasgout.his.huawei.com ([185.176.79.56])
+	id 1v9MAD-00000004YNg-27Uq;
+	Thu, 16 Oct 2025 11:28:57 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9LcI-00000004Uug-3uRj;
-	Thu, 16 Oct 2025 10:53:56 +0000
-Received: from mail.maildlp.com (unknown [172.18.186.31])
-	by frasgout.his.huawei.com (SkyGuard) with ESMTP id 4cnPtG3GQNz6L4xg;
-	Thu, 16 Oct 2025 18:52:38 +0800 (CST)
-Received: from dubpeml100005.china.huawei.com (unknown [7.214.146.113])
-	by mail.maildlp.com (Postfix) with ESMTPS id 0C2D81402A5;
-	Thu, 16 Oct 2025 18:53:43 +0800 (CST)
-Received: from localhost (10.203.177.15) by dubpeml100005.china.huawei.com
- (7.214.146.113) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.11; Thu, 16 Oct
- 2025 11:53:40 +0100
-Date: Thu, 16 Oct 2025 11:53:39 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: "Rob Herring (Arm)" <robh@kernel.org>
-CC: Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>, Thierry Reding
-	<thierry.reding@gmail.com>, Linus Walleij <linus.walleij@linaro.org>, Bartosz
- Golaszewski <brgl@bgdev.pl>, Shawn Guo <shawnguo@kernel.org>, "Fabio Estevam"
-	<festevam@gmail.com>, Nuno =?UTF-8?Q?S=C3=A1?= <nuno.sa@analog.com>,
-	Lars-Peter Clausen <lars@metafoo.de>, "Michael Hennerich"
-	<Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, Andy
- Shevchenko <andy@kernel.org>, Jassi Brar <jassisinghbrar@gmail.com>, Mauro
- Carvalho Chehab <mchehab@kernel.org>, "Lee Jones" <lee@kernel.org>, Joel
- Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Andrew Lunn <andrew@lunn.ch>, "Vladimir Oltean" <olteanv@gmail.com>, "David
- S. Miller" <davem@davemloft.net>, "Eric Dumazet" <edumazet@google.com>, Jakub
- Kicinski <kuba@kernel.org>, "Paolo Abeni" <pabeni@redhat.com>, Daire McNamara
-	<daire.mcnamara@microchip.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?UTF-8?Q?Wilczy?= =?UTF-8?Q?=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	"Bjorn Andersson" <andersson@kernel.org>, Geert Uytterhoeven
-	<geert+renesas@glider.be>, Nicolas Ferre <nicolas.ferre@microchip.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Claudiu Beznea
-	<claudiu.beznea@tuxon.dev>, Florian Fainelli <f.fainelli@gmail.com>, "Tony
- Lindgren" <tony@atomide.com>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-clk@vger.kernel.org>,
-	<linux-gpio@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-iio@vger.kernel.org>, <linux-media@vger.kernel.org>,
-	<netdev@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>
-Subject: Re: [PATCH] dt-bindings: Fix inconsistent quoting
-Message-ID: <20251016115339.000047f7@huawei.com>
-In-Reply-To: <20251015232015.846282-1-robh@kernel.org>
-References: <20251015232015.846282-1-robh@kernel.org>
-X-Mailer: Claws Mail 4.3.0 (GTK 3.24.42; x86_64-w64-mingw32)
+	id 1v9MA9-00000004YMU-2PyU;
+	Thu, 16 Oct 2025 11:28:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1760614131;
+	bh=+wVRuiQnZqQTQ83N4gc5pdZaUVwxqdGkvElu0H8WEmQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=DRqiCVfGvV57D50LE8su2GRqaZLq3rrABrFVgonzCYXAgI/VwlNkQ/zATG7M7A9p+
+	 OfBTDu2enhUjXetbR+bDKGwhTMXFe5LrnNN/lO7lOjrQQEDT09nb5gU6WMmlgliWNE
+	 K63Q50Mz2OLlil5SmFgu88kZuUqYKJtCTQKPOoI8qzoC6PHm5b7JIrWsiChKes2yvG
+	 VcKcmzDmtRqTsxRAKW4PGntbW2jRn6W7QzKLBNiP3cSDm2Zv6BPI/lV0DuvDP5N09k
+	 qRm/xBKDUb7UFXvLgZBdvF4zQ+904CjlQCwmHcZkS8H+QfLJHFXUYy+5QSN4DCY/Gb
+	 DjyeePEguMP7w==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5184A17E05FE;
+	Thu, 16 Oct 2025 13:28:50 +0200 (CEST)
+Message-ID: <7333fc2b-bc30-41bf-be09-2b9ff7c3599f@collabora.com>
+Date: Thu, 16 Oct 2025 13:28:49 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.203.177.15]
-X-ClientProxiedBy: lhrpeml100009.china.huawei.com (7.191.174.83) To
- dubpeml100005.china.huawei.com (7.214.146.113)
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 15/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ leds
+To: Sjoerd Simons <sjoerd@collabora.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang
+ <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>
+Cc: kernel@collabora.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+ Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-15-de259719b6f2@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20251016-openwrt-one-network-v1-15-de259719b6f2@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_035355_108650_C7789234 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251016_042853_789787_4753EC03 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,29 +87,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 15 Oct 2025 18:16:24 -0500
-"Rob Herring (Arm)" <robh@kernel.org> wrote:
-
-> yamllint has gained a new check which checks for inconsistent quoting
-> (mixed " and ' quotes within a file). Fix all the cases yamllint found
-> so we can enable the check (once the check is in a release). Use
-> whichever quoting is dominate in the file.
+Il 16/10/25 12:08, Sjoerd Simons ha scritto:
+> The Openwrt One has 3 status leds at the front (red, white, green) as
+> well as 2 software controlled leds for the LAN jack (amber, green).
 > 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 > ---
->  .../arm/altera/socfpga-clk-manager.yaml       |  4 ++--
->  .../bindings/clock/nvidia,tegra124-car.yaml   |  8 ++++----
->  .../bindings/clock/nvidia,tegra20-car.yaml    |  6 +++---
->  .../devicetree/bindings/gpio/gpio-mxs.yaml    |  9 +++++----
->  .../bindings/gpio/snps,dw-apb-gpio.yaml       |  4 ++--
->  .../bindings/iio/temperature/adi,ltc2983.yaml | 20 +++++++++----------
-For this one
-Acked-by: Jonathan Cameron <jonathan.cameron@huawei.com>
+>   .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 57 ++++++++++++++++++++++
+>   1 file changed, 57 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+> index 4d1653c336e71..0c0878488ae98 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+> +++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+> @@ -43,6 +43,50 @@ reg_5v: regulator-5v {
+>   		regulator-boot-on;
+>   		regulator-always-on;
+>   	};
+> +
+> +	pwm-leds {
+
+Please keep the nodes ordered by name.
+
+Cheers,
+Angelo
+
+> +		compatible = "pwm-leds";
+> +
+> +		led-0 {
+> +			color = <LED_COLOR_ID_WHITE>;
+> +			default-brightness = <0>;
+> +			function = LED_FUNCTION_STATUS;
+> +			max-brightness = <255>;
+> +			pwms = <&pwm 0 10000>;
+> +		};
+> +
+> +		led-1 {
+> +			color = <LED_COLOR_ID_GREEN>;
+> +			default-brightness = <0>;
+> +			function = LED_FUNCTION_STATUS;
+> +			max-brightness = <255>;
+> +			pwms = <&pwm 1 10000>;
+> +		};
+> +	};
+> +
+> +	gpio-leds {
+> +		compatible = "gpio-leds";
+> +
+> +		led-0 {
+> +			color = <LED_COLOR_ID_RED>;
+> +			function = LED_FUNCTION_STATUS;
+> +			gpios = <&pio 9 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		led-1 {
+> +			color = <LED_COLOR_ID_AMBER>;
+> +			function = LED_FUNCTION_LAN;
+> +			gpios = <&pio 34 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger = "netdev";
+> +		};
+> +
+> +		led-2 {
+> +			color = <LED_COLOR_ID_GREEN>;
+> +			function = LED_FUNCTION_LAN;
+> +			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger = "netdev";
+> +		};
+> +	};
+>   };
+>   
+>   &eth {
+> @@ -109,6 +153,13 @@ mux {
+>   		};
+>   	};
+>   
+> +	pwm_pins: pwm-pins {
+> +		mux {
+> +			function = "pwm";
+> +			groups = "pwm0_0", "pwm1_1";
+> +		};
+> +	};
+> +
+>   	spi2_flash_pins: spi2-pins {
+>   		mux {
+>   			function = "spi";
+> @@ -152,6 +203,12 @@ conf {
+>   	};
+>   };
+>   
+> +&pwm {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pwm_pins>;
+> +	status = "okay";
+> +};
+> +
+>   &spi2 {
+>   	pinctrl-names = "default";
+>   	pinctrl-0 = <&spi2_flash_pins>;
+> 
+
 
 
 -- 
