@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA0A9CCD194
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 11:29:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42685CCD19A
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 11:29:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PFUPXcqTRMt8MSMyRWP8RlqPC8UmoWevJYWup6osKNY=; b=wpU2E+THUA+xbP
-	CjJbJ6biplmA1Q19mna2BL6phYuLXCGU/OCyH6/qFx03HCDenMwGA0awe9GYXbcmZcaY9y8RSXEsp
-	7rTr7SglgupeEyDnQil7g3mxaNKSb+sNE5ahvZ5CMjqmnLyRzWhbMelSiOotZEvxXbPd/CB2YKDq9
-	Wvv1gQ+Yei/KII0qIIXkaG7BsJC7J7rLSXSN9WQua3deVJwMlDhbrLHWllNXTcnisyuGefpbACW8P
-	8MuJmFMoCwL7R8Nn4eyXZlv9pFRlViinDstA14thn3WR22u7KiCGL689A7ZYvIjRxeOQsXCVrpHkt
-	sXxcGQoQO4zCh2nsro/A==;
+	List-Owner; bh=8fo/935Dl1255zcU4JpIIYtlm01nDkovdSJ/BaIj6nc=; b=Fy3a5x3l08vIje
+	8Vl8M0g8dnQxoui6YICyP6Yohj4A4ci67OQVv8oeR0LOKr50FrV9JJvUk2ZWctc/m9kyEBz4E9W0+
+	DEPu2TuyhF3vN7ez9aVJuhsmvFXmHbIVb/rlLXlbhhWrvLi3pRnY0lbAgXD4BA2VzVIIARDQpJFDE
+	P9oPDqYNkHz4runpfZ5iwFvj5Uh8SdUZ7Yb2fsoDaSwknhNbCFzDIMsnWAb5ZTC/XMFXTDn0zdPAd
+	LyTpCeXPtP0G7KMF3qhGqPV3Ydz4VRRmp8wklseSKd5pw1MwzTF6I/R61s5thPocIapMQBfkBfpf5
+	UFsVzgEKMlnKidgq9QjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9MAQ-00000004YeH-1ZXg;
-	Thu, 16 Oct 2025 11:29:10 +0000
+	id 1v9MAW-00000004YmQ-2CPm;
+	Thu, 16 Oct 2025 11:29:16 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9MAL-00000004YUg-0UIp;
-	Thu, 16 Oct 2025 11:29:06 +0000
+	id 1v9MAN-00000004YWT-2ncj;
+	Thu, 16 Oct 2025 11:29:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1760614143;
-	bh=BPA7Ao4Fqy8fEZQZyIBHfPwMiJe3jfH+OsQSSw5hw/8=;
+	s=mail; t=1760614145;
+	bh=meVRoYG3UJ+J+KN+THmukSY1/VzvJKSdiKKCyC9znBc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=e6LvruAJ9tFLUmLLRK0OTnqCIn9iRTA/tk9844dbLHGo023FqNfdQ7u4uWJ5VR7zb
-	 xh8wvG0/aWCfKVhLV68YXX8o9v7Rfe1i2YqrXK2gBaW/IRU/BOyREu/uL1l+Yh0vcH
-	 hcVR24QYEhVTKXFqifnbFs4a/ZaR7msGw3N7B/3mHbzZra1yexJbu/rJVfjcIk0iaF
-	 OAqMi0dss1MNyf6aGxMcTffSfR0lEXwdzq5Gttvrv4F6xl4neer7i4z53MCqrOryyl
-	 3Wi3a3O1tU+t00sZNmz5O8eKd+f2UUoYOvdqRPelxqbPCSHbIC7UDFYbdSE6aZ/N3Q
-	 BxJZSGGRtLKIA==
+	b=K99N/Og5QhBDWgg2VgfBxPzGJjO8s22ZGanF4mZaOA3rCWpVWM+ZWV03dcCpcqf30
+	 SYvRPNeLvEWBMRtvxPld55n3MSG/H+3GFTXnvZZMNLjKprXy/W3lu4x1Ddqjlv/OIs
+	 k4bKh0qDQDtM6+KplNYYOgU63uJkm4moekdmpdjpuu5MEE3BwQKxhv3f6qQ5ZdPfYq
+	 kVsg4i/zsDgr27QvYSlFrXDipcYb7xBYM97xyE1IgyRfYOKTIBdU7L1GJAnLx8fg2+
+	 iOdw7ASfapEdBNIyLmqVDndjnfVEMYC6jSXDzhM6XSEOsKa1v6a3D83lWCDE/zCxLP
+	 ISFTneqLneLrQ==
 Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id EB39817E153A;
-	Thu, 16 Oct 2025 13:29:01 +0200 (CEST)
-Message-ID: <a3d6b229-8f33-4e88-8a55-6c5640f688e1@collabora.com>
-Date: Thu, 16 Oct 2025 13:29:01 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DEFD617E156C;
+	Thu, 16 Oct 2025 13:29:03 +0200 (CEST)
+Message-ID: <e377ea24-b4af-4481-aea7-335808e5e375@collabora.com>
+Date: Thu, 16 Oct 2025 13:29:03 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 09/15] dt-bindings: net: mediatek,net: Correct bindings
- for MT7981
+Subject: Re: [PATCH 05/15] dt-bindings: pci: mediatek-pcie-gen3: Add MT7981
+ PCIe compatible
 To: Sjoerd Simons <sjoerd@collabora.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
@@ -69,13 +69,14 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, netdev@vger.kernel.org,
  Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
 References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
- <20251016-openwrt-one-network-v1-9-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-5-de259719b6f2@collabora.com>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20251016-openwrt-one-network-v1-9-de259719b6f2@collabora.com>
+In-Reply-To: <20251016-openwrt-one-network-v1-5-de259719b6f2@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_042905_316257_A9EB10A6 
-X-CRM114-Status: GOOD (  13.53  )
+X-CRM114-CacheID: sfid-20251016_042907_918432_BC21DE64 
+X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,85 +94,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Il 16/10/25 12:08, Sjoerd Simons ha scritto:
-> Different SoCs have different numbers of Wireless Ethernet
-> Dispatch (WED) units:
-> - MT7981: Has 1 WED unit
-> - MT7986: Has 2 WED units
-> - MT7988: Has 2 WED units
-> 
-> Update the binding to reflect these hardware differences. The MT7981
-> also uses infracfg for PHY switching, so allow that property.
+> Add compatible string for MediaTek MT7981 PCIe Gen3 controller.
+> The MT7981 PCIe controller is compatible with the MT8192 PCIe
+> controller.
 > 
 > Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
-> ---
->   Documentation/devicetree/bindings/net/mediatek,net.yaml | 16 +++++++++++++---
->   1 file changed, 13 insertions(+), 3 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/net/mediatek,net.yaml b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> index b45f67f92e80d..453e6bb34094a 100644
-> --- a/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> +++ b/Documentation/devicetree/bindings/net/mediatek,net.yaml
-> @@ -112,7 +112,7 @@ properties:
->   
->     mediatek,wed:
->       $ref: /schemas/types.yaml#/definitions/phandle-array
-> -    minItems: 2
-> +    minItems: 1
 
-If minItems is 1 here
-
->       maxItems: 2
->       items:
->         maxItems: 1
-> @@ -338,12 +338,14 @@ allOf:
->               - const: netsys0
->               - const: netsys1
->   
-> -        mediatek,infracfg: false
-> -
->           mediatek,sgmiisys:
->             minItems: 2
->             maxItems: 2
->   
-> +        mediatek,wed:
-> +          minItems: 1
-
-You just need maxItems here.
-
-> +          maxItems: 1
-> +
->     - if:
->         properties:
->           compatible:
-> @@ -385,6 +387,10 @@ allOf:
->             minItems: 2
->             maxItems: 2
->   
-> +        mediatek,wed:
-> +          minItems: 2
-> +          maxItems: 2
-> +
->     - if:
->         properties:
->           compatible:
-> @@ -429,6 +435,10 @@ allOf:
->               - const: xgp2
->               - const: xgp3
->   
-> +        mediatek,wed:
-> +          minItems: 2
-> +          maxItems: 2
-
-Analogously, you should be needing just minItems here if I'm not wrong.
-
-Cheers,
-Angelo
-
-> +
->   patternProperties:
->     "^mac@[0-2]$":
->       type: object
-> 
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 
 
 
