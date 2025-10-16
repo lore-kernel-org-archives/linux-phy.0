@@ -4,77 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF014CCD199
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 13:07:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F10F0CCD199
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Oct 2025 14:29:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gvD4qCVHxIOJ34XjBAo1SFP6CVWx+iNIb/b0tTPkHZU=; b=lSYMeIGhH1hSh3
-	aUrhGzLVBgtFhwwb6Q59mE+9WlxEXPo24xKwaQNkVYb6p4v1XlHrg8EorMrwMpDbdxCSgBxBJCy8/
-	+8W5djO965FDKKfvg/+4HOnMLb0fT/7hA41jo1OXzuMpAgy5dwFdf2EEEgr8c1ZwZFuAN0hLLqkuA
-	2nJZp8cinCOw8LuVuTEBxUlMZh1sCJ7BhHfbedXBZmBG6obz2yRJ0A8wrFbbtmDtuSaZF44+d3zE1
-	vIzYllO81OklBP8x1uyXvYlWFi0ZJN1ShYerKu1TcznEanlCv9+dGeo5a24ogC72r0l7pn9IrLEA3
-	Ehnbl2J8A6LGe3Bz5sqg==;
+	List-Owner; bh=MD1NwVMqPquTHkAQUip9j+QwYezQwsJOVDZ9kEeKyzA=; b=mqL6/G2QaWmdLP
+	wGgItn8k6il64w+2nDS9UEDwMBCcwxttimvBHdG1vn+9/SmH/TpSbPo6yaYt9e6lOBxKF01WvKLaE
+	bT1rYjLBToEOHO95Hgxdd6NKS+V+pqWHHCvBVSS9yqGXOvd/GD2/2+g6zUO0gxBXRbJ8lksKn46HW
+	nUzKwdnqazgHPrDQnbhIpnde11eymV2UUwZ9EC/yDUIpMwukHJHr/+BIyxfZgU7x6mk0LncRT5BiB
+	Idtmp8HS2kTYbCX9zox+3u0GG0j9tQEbr4jSQIRUm6eGtE9IBNQupnGIjTQSZ3ZxpJGj3nwPT13bE
+	nAZMx8vPlZ/cghOOdDKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9NhY-00000004pee-1P7w;
-	Thu, 16 Oct 2025 13:07:28 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1v9Oyp-000000050Co-2QNa;
+	Thu, 16 Oct 2025 14:29:23 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9NhV-00000004pcf-3hmr
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Oct 2025 13:07:26 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v9Nge-0006uW-N8; Thu, 16 Oct 2025 15:06:32 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v9Ngb-003tYQ-0H;
-	Thu, 16 Oct 2025 15:06:29 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1v9Nga-000000009Lu-47nD;
-	Thu, 16 Oct 2025 15:06:28 +0200
-Message-ID: <410ea7ea7980b751289bd603ffab5bf3ee114084.camel@pengutronix.de>
-Subject: Re: [PATCH v2 5/5] scsi: ufs: mediatek: Rework resets
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, Alim Akhtar	
- <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, Bart Van
- Assche	 <bvanassche@acm.org>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski	 <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Matthias Brugger	 <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno	
- <angelogioacchino.delregno@collabora.com>, Chunfeng Yun	
- <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Peter Wang <peter.wang@mediatek.com>,
- Stanley Jhu <chu.stanley@gmail.com>,  "James E.J. Bottomley"
- <James.Bottomley@HansenPartnership.com>, "Martin K. Petersen"
- <martin.petersen@oracle.com>
-Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, 
-	kernel@collabora.com, linux-scsi@vger.kernel.org,
- devicetree@vger.kernel.org, 	linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, 	linux-mediatek@lists.infradead.org,
- linux-phy@lists.infradead.org
-Date: Thu, 16 Oct 2025 15:06:28 +0200
-In-Reply-To: <20251016-mt8196-ufs-v2-5-c373834c4e7a@collabora.com>
-References: <20251016-mt8196-ufs-v2-0-c373834c4e7a@collabora.com>
-	 <20251016-mt8196-ufs-v2-5-c373834c4e7a@collabora.com>
-User-Agent: Evolution 3.56.1-1 
+	id 1v9Oym-000000050BD-2DH7;
+	Thu, 16 Oct 2025 14:29:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1760624956;
+	bh=/ogrshpBMHpUYx7hds/fD1WgLsoTS+62iSlrqAObxms=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=SXqJvaEeN6DpDXxKAJ2nZHAdiOodqfTfzvKAlonZfsIL8ee+R2Jj9dwe4gQG1/8UT
+	 ikbDgKu56YCB82nhg8NnwreSXKB/uSxqzstktVanLw+HYEWmpyhhF4IN5iJR8XYk7q
+	 yw+2zrYQbGhkyneR7LvmjtU/tXFnjTlororY9q8M0Bnt7ufMdcclUwHujGfpx52hEX
+	 Jt/CYp4aWZeHLgd04du5mXg9WrqSRzEky39IAlZ8Zffdf33kq3S347zBoJBlQKrzo4
+	 6MeTDZnuykjPgjSBXEN37VJblWROrGp7oN5suST7x0Ikj708rJ923s8OEOFXcyAWpE
+	 4XY5LVyF0CVtg==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id D939117E0125;
+	Thu, 16 Oct 2025 16:29:14 +0200 (CEST)
+Message-ID: <5f430ff9-d701-426a-bf93-5290e6912eb4@collabora.com>
+Date: Thu, 16 Oct 2025 16:29:14 +0200
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 02/15] arm64: dts: mediatek: mt7981b-openwrt-one:
+ Configure UART0 pinmux
+To: Daniel Golle <daniel@makrotopia.org>, Sjoerd Simons <sjoerd@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Ryder Lee <ryder.lee@mediatek.com>,
+ Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn Helgaas
+ <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+ kernel@collabora.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+ Bryan Hinton <bryan@bryanhinton.com>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-2-de259719b6f2@collabora.com>
+ <aPDnT4tuSzNDzyAE@makrotopia.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <aPDnT4tuSzNDzyAE@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_060725_913272_7439CC3E 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251016_072920_727005_959AAA18 
+X-CRM114-Status: GOOD (  14.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,27 +88,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Do, 2025-10-16 at 14:06 +0200, Nicolas Frattaroli wrote:
-> Rework the reset control getting in the driver's probe function to use
-> the bulk reset APIs. Use the optional variant instead of defaulting to
-> NULL if the resets fail, so that absent resets can be distinguished from
-> erroneous resets.
+Il 16/10/25 14:38, Daniel Golle ha scritto:
+> On Thu, Oct 16, 2025 at 12:08:38PM +0200, Sjoerd Simons wrote:
+>> Add explicit pinctrl configuration for UART0 on the OpenWrt One board,
+>>
+>> Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+>> ---
+>>   arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts | 11 +++++++++++
+>>   1 file changed, 11 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+>> index 968b91f55bb27..f836059d7f475 100644
+>> --- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+>> +++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+>> @@ -22,6 +22,17 @@ memory@40000000 {
+>>   	};
+>>   };
+>>   
+>> +&pio {
+>> +	uart0_pins: uart0-pins {
+>> +		mux {
+>> +			function = "uart";
+>> +			groups = "uart0";
+>> +		};
+>> +	};
+>> +};
+>> +
+>>   &uart0 {
+>> +	pinctrl-names = "default";
+>> +	pinctrl-0 = <&uart0_pins>;
+>>   	status = "okay";
+>>   };
 > 
-> Also move all remnants of the MPHY reset ever having lived in this
-> driver.
-> 
-> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> As there is only a single possible pinctrl configuration for uart0,
+> both the pinmux definition as well as the pinctrl properties should go
+> into mt7981b.dtsi rather than in the board's dts.
 
-Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+If there's really one single possible pin configuration for the UART0 pins,
+as in, those pins *do not* have a GPIO mode, then yes I agree.
 
-regards
-Philipp
+If those pins can be as well configured as GPIOs, this goes to board DTS.
+
+Cheers,
+Angelo
 
 -- 
 linux-phy mailing list
