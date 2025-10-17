@@ -4,48 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20169CCD199
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 14:50:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34FF0CCD195
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 14:50:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fc+P/eCtPoWlRllANu4uT8FmPrQkPYGn9PhaEU1LpME=; b=BrKmKQh7CoxWKd
-	ibtNqgv93LC3NG+8x72P5z24uhlt1jUTz1HZOKLh7ZDoDlaOQ1OGBH7stxvJE/GQ03CpGv5GYWsXt
-	/GLET22/PRL3l64Khcd60W0si0q9WcJ/AlYN1Dm3fGi38ISZKJgp8BdWL4OpgW6aEkooRD7V6ePlQ
-	yA0TzywQZrWoJLiaL6iGEb4EDdL7iQ7F8rzJ724fpNP3RYLz4rhphHzlc+DcTFLcpporiP/VMFFj3
-	kzF3Tun3Wb82DnyC+6EkL1N2fN1T5vqkxR92fiXVRME+U+iFbrRpE+vrcwgWf2TJ4cwo5l1EOh/pX
-	qWQpwcbm1FE7jQTetz6A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YX3l8IOQwJtgwzWWwpF0NnbGU6ZohX4+hYWDWyC30aw=; b=syDpM3kHz2jIkk
+	H8qz4lSDFwL52hgrl81raoVwgPTQgNonQvGvDztUz5l/DVA1iLvVa3rV2ROhr3bkaKiYf2UiiS3+w
+	xgTP2+hVakNJMwQK3+ACF0cEPep6LpFu1hIs5/O+xrmVnZSWgNttpCFoa1NYN8v58dn7kLl14a+Z3
+	YTIJV3vb/3na0xhuPsRHI2pxF3rgau4q18YyHPZYKzJ6zBlpVOLVXocSi/Yaxpt6LpPRYENnkiO/o
+	QpP7Z60FpGkcVcHiIUYah1sn8fsZWDh5va5o71tFGHMFhylbeEiJih2tc8QWinIscAfSc5oDAxr6x
+	DxJxjUXov2wHQpf6gCnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9lmk-0000000898W-2vhx;
-	Fri, 17 Oct 2025 14:50:26 +0000
-Received: from out-178.mta0.migadu.com ([2001:41d0:1004:224b::b2])
+	id 1v9lmm-00000008998-3zVY;
+	Fri, 17 Oct 2025 14:50:28 +0000
+Received: from out-171.mta0.migadu.com ([91.218.175.171])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9lmh-0000000896n-2De8
+	id 1v9lmj-0000000897d-3uk9
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Oct 2025 14:50:26 +0000
+	Fri, 17 Oct 2025 14:50:27 +0000
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1760712616;
+	t=1760712623;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=g8VnFRXvUE1a7WW0NcsEXBWswsB1Ob1B+aHFeZOT43Q=;
-	b=A9KtzhW8vX/snE9om2bhA6I1L5Htv3q8dEoRCpGTh3TjR/edET9V4ijT8DMLP35QMBErwe
-	T9VnEGVGriuBveX6GfdUL+WR8c676ogFXfwq+lPg71K9t7UIKJZhnQcQvHtCCnfKnBd9jh
-	gBnOGaS6xshy9Xt3f+s2SxOnNH1cO10=
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=O16vK/VHkqg7/QCOruoqlgzueSxhXKWOlNBJuxSfE5c=;
+	b=d4Te4amsd1c9e88q5m/2fV+sud/YEiJlkx2xmoaAA3pytgNHvQpRLw+45Kouy2VEIU9mkr
+	WkR0KdLQoenPJ2vHObpy+kLLjIEKGoVrpmyJu0vXCzNRFD1Cv1MaiVv4pru9v3s3jcUorb
+	P9rs8slO78QPEDOJqcDlRgaBKSrk7qg=
 From: Ze Huang <huang.ze@linux.dev>
-Subject: [PATCH v6 0/2] Add USB2.0 PHY support for SpacemiT K1
-Date: Fri, 17 Oct 2025 22:49:51 +0800
-Message-Id: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
+Date: Fri, 17 Oct 2025 22:49:52 +0800
+Subject: [PATCH v6 1/2] dt-bindings: phy: spacemit: add K1 USB2 PHY
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAI9X8mgC/yXMyw6CMBCF4VdpZu2YTqVoeBXDoi2jTAy3FoiG8
- O40svxOcv4NEkfhBJXaIPIqSYY+o7woCK3r34zSZIPRxpKmO34Il+TN2P7Q2Rs3BTtLXkM+jJF
- f8v3HnvXpyNOSm/M5gneJMQxdJ3Ol1vJKD4yBoN73A+qT6peJAAAA
-X-Change-ID: 20251017-k1-usb2phy-a53ed4ea51b0
+Message-Id: <20251017-k1-usb2phy-v6-1-7cf9ea2477a1@linux.dev>
+References: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
+In-Reply-To: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -54,17 +53,18 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
  linux-riscv@lists.infradead.org, spacemit@lists.linux.dev, 
  linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1760712608; l=2988;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1760712608; l=1362;
  i=huang.ze@linux.dev; s=20250705; h=from:subject:message-id;
- bh=xYFfzWZY7PNIWVX+rajaH6POYLCZB9C77midjP4KBqU=;
- b=R4jbqMiXxfoldJxe/h7zcsqp7UagTAXHs+vpcLA/FcP/NhTgQMJ4npqDGP1SeRp0KejyrQgwY
- Yg4aLPHxTgHC0UdhIlBHslzcV5One7kCDUKIwXCj5SiGvZUUi+I2bLd
+ bh=QaF1KmAvkgTx8GRFlS00uZ3xWQHECjSqx1iwWdJGuFY=;
+ b=i0RY7Jh3VwMSAi2s0DN34uEHzrLrLfQG7SZHg27/0ezqCPa2EgzbenWEuSX6xOXX9Wn15+Gve
+ NBibTeBTig6AGOWAy+YBJ5sppuEKU38s1SK4Ercs0MICN/QRvYEiVwQ
 X-Developer-Key: i=huang.ze@linux.dev; a=ed25519;
  pk=Kzc4PMu5PTo8eZZQ5xmTNL9jeXcQ9Wml0cs+vlQpBkg=
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251017_075024_597578_33F1CC70 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20251017_075026_412712_D62EA7B8 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,83 +81,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series introduces support for the USB2.0 PHY on the SpacemiT
-K1 SoC. The implementation has been tested on the Milk-V Jupiter and
-BananaPi-f3.
+Add support for USB2 PHY found on SpacemiT K1 SoC.
 
-K1 includes three USB ports as follows[1]:
-- A USB2.0 OTG Port
-- A USB2.0 Host Only Port
-- A USB3.0 Port with a USB2.0 DRD interface
-
-Each of these ports is connected to a USB2.0 PHY responsible for USB2
-transmission.
-
-This series is based on 6.18-rc1.
-
-Link: https://developer.spacemit.com/documentation?token=AjHDwrW78igAAEkiHracBI9HnTb#part5 [1]
-
-Signed-off-by: Ze Huang <huangze@whut.edu.cn>
----
-Changes in v6:
-- phy: spacemit: k1-usb2-phy:
-  - Fix clock API usage and ensure proper clock disabling in error paths.
-  - Refactor Register Definitions: Replace address/number-based macros with
-    feature-based names
-- Link to v5: https://lore.kernel.org/all/20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn
-
-Changes in v5:
-- phy driver for usb2:
-  - convert readl/writel to regmap
-  - fix typo: sentinal -> sentinel
-- Link to v4: https://lore.kernel.org/r/20250526-b4-k1-usb3-phy-v2-v4-0-eca668fc16a2@whut.edu.cn
-
-Changes in v4:
-- combphy driver:
-  - add in-code comments to indicate that PCIe mode is not yet supported.
-  - replace custom spacemit_reg_update() with standard regmap API.
-  - drop spacemit_combphy_wait_ready helper function as only used once.
-  - Fix PHY init timeout handling: ensure proper error reporting when PLL
-    lock fails during USB3 PHY initialization
-- Link to v3: https://lore.kernel.org/r/20250517-b4-k1-usb3-phy-v2-v3-0-e0655613a163@whut.edu.cn
-
-Changes in v3:
-- improve commit message, provide more info about phy hardware
-- drop superfluous local variable in `spacemit_combphy_wait_ready`
-- replace devm_reset_control_get with devm_reset_control_get_exclusive
-- Link to v2: https://lore.kernel.org/r/20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn
-
-Changes in v2:
-- combphy dt-bindings:
-  - fix reg-names
-  - describe reg
-  - describe #phy-cells argument
-- drop stale ".owner" in driver struct
-- add support for usb lfps_thres in combphy
-- fix Kconfig depends on
-- Link to v1: https://lore.kernel.org/all/20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn
-
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: Ze Huang <huang.ze@linux.dev>
-
 ---
-Ze Huang (2):
-      dt-bindings: phy: spacemit: add K1 USB2 PHY
-      phy: spacemit: support K1 USB2.0 PHY controller
+ .../devicetree/bindings/phy/spacemit,usb2-phy.yaml | 40 ++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
- .../devicetree/bindings/phy/spacemit,usb2-phy.yaml |  40 +++++
- drivers/phy/Kconfig                                |   1 +
- drivers/phy/Makefile                               |   1 +
- drivers/phy/spacemit/Kconfig                       |  13 ++
- drivers/phy/spacemit/Makefile                      |   2 +
- drivers/phy/spacemit/phy-k1-usb2.c                 | 200 +++++++++++++++++++++
- 6 files changed, 257 insertions(+)
----
-base-commit: cb6649f6217c0331b885cf787f1d175963e2a1d2
-change-id: 20251017-k1-usb2phy-a53ed4ea51b0
+diff --git a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
+new file mode 100644
+index 000000000000..43eaca90d88c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
+@@ -0,0 +1,40 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/spacemit,usb2-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: SpacemiT K1 SoC USB 2.0 PHY
++
++maintainers:
++  - Ze Huang <huang.ze@linux.dev>
++
++properties:
++  compatible:
++    const: spacemit,k1-usb2-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    usb-phy@c09c0000 {
++        compatible = "spacemit,k1-usb2-phy";
++        reg = <0xc09c0000 0x200>;
++        clocks = <&syscon_apmu 15>;
++        #phy-cells = <0>;
++    };
 
-Best regards,
 -- 
-Ze Huang <huang.ze@linux.dev>
+2.51.1.dirty
 
 
 -- 
