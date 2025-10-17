@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F657CCD19E
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 04:46:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 236B5CCD184
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 04:47:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hCujNj2yLt6nv6osxlG/Owkjw1TuzkDBv9fILfHN16A=; b=kST3iorG3p6D7F
-	aGuN8gr9luSIG3yX5oEM4HdtkFzcEoELil+Oy7LvF5YS8TL+Fivdjyh5tJ3EeE7wvazIelU9+Ptox
-	ehmseKqDGdq2bXhOGQdEtg3/HSEdyiMtibWqon8QI4QFiP3wIx7mBgVPiotoYXAMeRZaOf6jz+JHI
-	LKtYidk+WRXAK4ReYURKNR6zNKyHy3CYENC8NVgOBHz5Kt+RimRlLwGZiLHYIzrhEyjiOgQn9c+dk
-	1y3rFEUGcYYQOh4L9Fq/Vzw7tdz1MV2agSGwtoXRxkvS/aU1imbIKYexiRz+SO1OSADOlKw6HLf9N
-	QMpb6d++09prNoK16spA==;
+	List-Owner; bh=SqO7AVVvTRnkLJjeuldJCkxBl8OuHb98ddRKeyClbJQ=; b=sl6SIOJ0I33PUE
+	2aDJfWG/96DrYN7ad9YNC7/pbeoX2ZOywLwOyTOCsWzIUblUOO4KkYpdb29vBKxSSsEiObLQf9KMy
+	m78Rq8Gr5YGfbTLy1Re7H88ApziCRHlsm++0eKCs4JMpa75eBXjxAA8ZRPzNkA0hgPTV5X3bONG/u
+	NbUMIjAe+Q33UA0YsfSjFafWx2fjF+Gx9OcYPNpn4voHWq6f2UshQAJLKFqZD0JCsB7BvQx+Nxgoz
+	xOvpV8un86roOQ7JptnZ5wmLGskS4WtGQ8ciBKCreexc++LXAVMEqjgio6tqtGHZQTE8mjhcHHzxJ
+	aAbCVWZ4yfqQTi7VO6oA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9cM1-00000006Ywa-1mlY;
-	Fri, 17 Oct 2025 04:46:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1v9cNe-00000006Z4N-3DxP;
+	Fri, 17 Oct 2025 04:47:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9cLy-00000006Yvv-3gZu
+	id 1v9cNe-00000006Z4H-03xZ
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Oct 2025 04:46:12 +0000
+	Fri, 17 Oct 2025 04:47:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0DE1A41792;
-	Fri, 17 Oct 2025 04:46:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AB03C4CEE7;
-	Fri, 17 Oct 2025 04:46:04 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 79075641C6;
+	Fri, 17 Oct 2025 04:47:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D642C4CEE7;
+	Fri, 17 Oct 2025 04:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760676368;
-	bh=MIF8uQjD6xOBCpoIO6NDT758UQrT+Sn42yH6L3Es73A=;
+	s=k20201202; t=1760676472;
+	bh=fFBUVrLXLmK+7dkfnlQFimDw5NCqhbq3Uzb47zqYK7I=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=BVRSV0PNJIAOQAo7vWbfR1iPpHUOAaQjluWHCv/3+VSvuafzMs12kiUf/MqYd6uCq
-	 95vPhhztXtYmXVaf0YJXwKqoQyrYtCkYw8IxObAV7bYritZr/DnM56xFizivJptBzd
-	 4IPSJNM6purJ3GqhGNXdQo//9xR9OvaTVututDXNmWmD3jt0xWvJOUfeVBv0ZfjA3B
-	 /2KNnmqJrcvxt95Z6gy+fjXedwJ7drWEq54ynNNZc5sbHLEkN1T68MISKqF+HjOM0+
-	 FAHEWFvPP1DZFdcm+BSkRIHU08vvdTbNOLtg2IXZA0bWTBrBmyaWLLguT0BTEERdB9
-	 UMnSHy9M10NAQ==
-Message-ID: <56c23e19-90c6-4e2f-afe9-ae7a83d15390@kernel.org>
-Date: Fri, 17 Oct 2025 06:46:02 +0200
+	b=jH54JWc9ydk4nEXraailgIY0KL9F+Q+8HbHnHEhDyo9PLPLwlFMVF5hkYUXoSG31z
+	 eTtIEsVrikb+QU1GvbaTpkTzFE2HzaWgKk0t/m0YB8jCgWgVFwXcuuWTrbkV2qMrxl
+	 /AVKw+gqRmvnN+FULA4Zahbsby3jrJEzV+VmFAlYCvvGvUT+JL6NPNbahxil8HGEUo
+	 +Oo4eKSphGpak77CX57SkZGhzw9qJGCQwRK1t0FiLmxsuSbucmtWLxvLlurMyDPv/1
+	 TXW8/T3+54FjtPHbcA/Kryt9x8gF0wZW5as8UBTockSFkwco5l3YVPNa3jejT00+Zm
+	 HG9Yq0gutXJIQ==
+Message-ID: <32a14a2e-f61e-422a-ae77-f60ea44581eb@kernel.org>
+Date: Fri, 17 Oct 2025 06:47:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/6] dt-bindings: PCI: qcom,pcie-sm8550: Add Kaanapali
- compatible
+Subject: Re: [PATCH v2 2/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ Kaanapali compatible
 To: Qiang Yu <qiang.yu@oss.qualcomm.com>,
  Lorenzo Pieralisi <lpieralisi@kernel.org>,
  =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
@@ -60,7 +60,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, Jingyi Wang <jingyi.wang@oss.qualcomm.com>
 References: <20251015-kaanapali-pcie-upstream-v2-0-84fa7ea638a1@oss.qualcomm.com>
- <20251015-kaanapali-pcie-upstream-v2-1-84fa7ea638a1@oss.qualcomm.com>
+ <20251015-kaanapali-pcie-upstream-v2-2-84fa7ea638a1@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,11 +106,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251015-kaanapali-pcie-upstream-v2-1-84fa7ea638a1@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_214610_959621_9F9992BE 
-X-CRM114-Status: UNSURE (   5.70  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251015-kaanapali-pcie-upstream-v2-2-84fa7ea638a1@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,12 +124,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 15/10/2025 12:27, Qiang Yu wrote:
-> On the Qualcomm Kaanapali platform the PCIe host is compatible with the
-> DWC controller present on the SM8550 platform.
+> Document compatible for the QMP PCIe PHY on Kaanapali platform.
 > 
 > Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
 > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> ---
+
+
+Don't mix independent patches from different subsystems into one
+patchset. You only make it difficult for the maintainers.
+
+Really, really pay attention how your work should present itself to the
+maintainers.
+
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
