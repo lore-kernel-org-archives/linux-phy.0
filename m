@@ -4,113 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDFB7CCD199
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 16:20:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BA5ACCD195
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 16:21:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tt8thAilTzb8MLYQouTJlEiEtfQdH7D+oh0VuVXhT3Y=; b=0vUPFTTwAiyOKG
-	qSNxMcrpptGe7IpCSFiq/26IdtjkUm+XPST/PoWdlKkYw+Z5sBujRbGjmUu0i50qkYLmmJNIeNM/w
-	k+sYmB37ryHh3i7rKkq1pLddIVPOUcQkMNBxmjmrxSXb5wKbExUHmSad9Va4cLcr8V5rpzHKhohCI
-	9DZe1P8bPPccU+xDSaSlrUeNcTer1ed1MjCPAYP1NL9/X4A+LwhTJEIAwNQwU0vz+yRn7jg0MKIPd
-	EhVo5DXG0WXYlxuFJJRRhf0ltvGeev+GmGbUr2uXP7RhHEZUHBbDt7DaNgybCWkFPIYqpCsVLSROD
-	2JgODc8VrcYU4o8SJN8A==;
+	List-Owner; bh=f6GIl/nnKLmM58ZBZ/XtOClupxBDPqDKCVFCaAptt2g=; b=WzLFPA+007BwhV
+	ZhW6ge8fyRZwdMyutCWbGoOevhFr0riuUVMOWdF8GRbldzUs/LvtM1zHh7wmEDiinXfopvQCtK3LS
+	vVMM1wFiCofZmgGI/SEWcE436GiYPbw6MWj4dR6SsdR75kmZqMZTgVdRGRXXRx/xFGgeoZA40xnv2
+	krYxCRW3UeeExsVNve8Fvlm72aTE+7B1BdKXlXs7qCS1UjrUDD1PBPd9OF0Vn0W58cEmyZdOt5OHs
+	ux3seAvWm83SUpOsg45cgGFNg5zmw9Q7yRgoLuKeKAHNi2akyaq2M0YE8rw619qnsfFoCdMfAF1HL
+	zhb7bmcqz0RqiQ1s95zA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9nCN-00000008Q5M-2XQv;
-	Fri, 17 Oct 2025 16:20:59 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1v9nCO-00000008Q6G-0kiq;
+	Fri, 17 Oct 2025 16:21:00 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9nCL-00000008Q3b-3TE4
-	for linux-phy@bombadil.infradead.org;
-	Fri, 17 Oct 2025 16:20:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=lrl9ZQZl0dfsXGeKo4b0s0yUNEi86+tLTNDIOrpaa44=; b=V7lYXAx/TJxh4HRl+noNNxM+Rg
-	evNoHhUOZuMgDvBV9mVv1Qb/j0OWVRTO3IrWK9IZC7rYcvboiLpVzaEmnLveg8lp16uRV1ynqSvXy
-	DPxziqwD5o0ieda3UTarQ6cMlojzvkFAEwbTfwK7Qymh49SSSJ0crlzOoIIgLYUqBqvbisKBB7slH
-	Q7u2rkAFkpG99o2kKCNQDVhz7qYMoGMd3nYe7a2f1wHvYPg9HL+wILFnapfGHHC9utm3m14NMFjIQ
-	IcCOmOT/EMAGiO4olNT4dQp/caYl1yKBWJbxOioT+IU/Sn4/xtdx9/abJim6bBBs5MASj5xpzSkMT
-	8eLSJo4Q==;
-Received: from mail-il1-x12a.google.com ([2607:f8b0:4864:20::12a])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9nCE-00000007kAq-2teZ
+	id 1v9nCK-00000008Q2v-3TzR
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Oct 2025 16:20:53 +0000
-Received: by mail-il1-x12a.google.com with SMTP id e9e14a558f8ab-42d857dcf92so9096855ab.1
-        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 09:20:46 -0700 (PDT)
+	Fri, 17 Oct 2025 16:20:58 +0000
+Received: by mail-il1-x143.google.com with SMTP id e9e14a558f8ab-42d857dcf92so9097955ab.1
+        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 09:20:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1760718045; x=1761322845; darn=lists.infradead.org;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1760718056; x=1761322856; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=lrl9ZQZl0dfsXGeKo4b0s0yUNEi86+tLTNDIOrpaa44=;
-        b=QLABskNxpvz8opdxiCkgV+6C2KnWk10ssR0rRcuG6tFajbpFJFQG2cwzjIRcHVcgc5
-         z1ysNhyKwLflmfxcJwHA8h7codgMRuI6XTEa0itGuB1EzU+ryx8sRcZvSR2MKvyWQ6S+
-         gN+U6OHn8PWDh+gWnwpEEQGvZ1ASpiTXpvruahyz24m7itdqkvKbeztb7qr/IfCwuTWk
-         Rf5rZ2tXK06hU8gwhjBOrr22OnW2SbLWzyMQ1C7AF7vpcpidmB3iZbGbEgufiimmZ1Vh
-         L0v6RzJ71tNA9GS/jlG8XQbS7Ynxj0+KTJhk61ZU10PqY7ODOJyrex5/UCZeF4co6X6m
-         k3nA==
+        bh=kq4xC/ePley+c3+EpvbCqMrUnY6wr0uXkN8/DbkCipg=;
+        b=KoYpgYqE953gb8DPiKOKRJLbSY+dCJX/Cla59VYaLw6ELIXZNbZNKFJEOzPogKZrhf
+         O//GphM1t0CvPXOUao6bjgAMPHBHIe9NJWIWeiL4uVxMoNaKgg0bYWUw26woeYlVClb3
+         1qZo3heCVx+FOgdjJP8AGtC+xeeHZXiLT+XYFF//oziV3MUWFOER74bYr9xGXWiTK1F3
+         giRRDwXiC6Ur7Fjkat4V1Lldll631BtOTPVJlio02AQh4Jqe3nT4OKLnFWZBKr9zoyhI
+         0HRVn3Y29452PNJ78jUAcwjGhHQXECmAkyTsP87SLSIU5tz1GJtegDHwyS5T6qMeawz6
+         JXdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760718045; x=1761322845;
+        d=1e100.net; s=20230601; t=1760718056; x=1761322856;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=lrl9ZQZl0dfsXGeKo4b0s0yUNEi86+tLTNDIOrpaa44=;
-        b=vS28MRsY0zggGjb9QgtIvFNKIQaEDlvWhMsaTivGf75cPEAm1yxta+nUB6XHA9XmoO
-         019XYtsahRsXOObfjY0HCzIvZoEC3WC7vDMt0oYJXVD+ghkYDrIv/9m1p8qUW+N6hUEK
-         vYQTNz9YZMhkAimpXIWdloSoOyPVHDJJxJNEfWGE0DjeHNFG/eoGtx6baCYTOuFdxaya
-         ACOT76IezDuetKcu5xmv+uxUwmCSIbBvTQsXmlsMjO3Q/I/7MI49k7XMX2Y/BpWHii3X
-         pMuC+hKUIUheMqBv3eCk2uxCphIbJGZPmbV5INz/LtW7wxQ1kNB4Vq+kqUTK+yXH1A/n
-         G4Bg==
-X-Forwarded-Encrypted: i=1; AJvYcCUJ0Lq4/QTNPFDdwvpCtOBt2mdqH67NPK8oafBIR5KY8qOus6noslz2cG1InYJ3sqcmwWv5GwxOQyE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwVPDkBhJaX6s3FPI7X3pYiJlOaMXgFjnAtfPZAfNsn3iCPtHwM
-	+OTlAkCgh4NWEkrBDNzASrqLVgjANg62+GxQDOUcbPZnZO1YbsUxeD1vGHLkfE4UUiE=
-X-Gm-Gg: ASbGnct4nvs9K/EBdhbay77pq25qxgAlPeQZ38TrwfopKtDeMNsWe0s6gep16+/DFhK
-	7PT6Qcn1hy+RHhdSSxj6HW6aei24PYb5Fl8yzzRD+fQgM/lVIat0nfsMfmHG41sb1Vh5tcOBYll
-	xSMaE5Co+2co/jS3HBjUjlyGnDdPoc1EzGE5IWWCNjTmQlvc2Ir4TT0VQ59j1ZoqDsmnHWsT8nC
-	K5DGkWnWsjyx2AKcdBd++OHKj9k+q9d6RyIAYjkh1Mz9i0GCpE6o5xmWESTxce0j9/+/vcR7ZqQ
-	ytuNXYWEZlfVGXnOQ0+I8XZheGyJOeQy31x7CgMIJhSQxopGPNwcN2NRr57TVaBIRSB0qRYCr+2
-	ycg0ApWSUw/6CbmnoRnFPcGMyIr1Em9r59pDAzPdD521WlHix+YFtgXY6+jJb94RkPkMYkP9PDy
-	yqUxvum9MSGeHluVLRpwVClkQAy9FH55/MTtSbHu8=
-X-Google-Smtp-Source: AGHT+IF6pUvJ0SrEEfDoT+rWcs5Ssj/49Pi6P7PUBjepw0T+yRtjC6wHKw2821+rzZKRbVJoL68B5Q==
-X-Received: by 2002:a05:6e02:19ce:b0:430:bee3:34a with SMTP id e9e14a558f8ab-430c52b5b09mr52484505ab.20.1760718045271;
-        Fri, 17 Oct 2025 09:20:45 -0700 (PDT)
+        bh=kq4xC/ePley+c3+EpvbCqMrUnY6wr0uXkN8/DbkCipg=;
+        b=vjosbrDVshUloHmHDRe/iUJCNoPxsvtOQmUmhG6MfL4cv2iNCEi5BiTMhksFz8UvuB
+         KnvgD+4ZUj+lSRWYuYCMFm1IsDvwliVxGI5ye2i+4cO9uiGFp+UcmntYDcyPmrn1mZJo
+         7b3ZuKYvzltLlw4BRGnOLF9ChmsJRQ+ZbMJ3Mv9nacxWlfq/OFe7aVYvubpAK5XG6stY
+         2nm4/gAbRCOgvZfLjSWtMlBV/6Krt7R4SCslQDgZNB0RwZOlJPtMEqEsM/9+YbXEb2Fo
+         DEuiAQFxe0rG27KeB0nHt7CUb+GZtQLxXMMTVZfTVQtaJwwnGKZHkpzBXxwDItIcTk9k
+         dSrw==
+X-Forwarded-Encrypted: i=1; AJvYcCXYnF6C+gj3+fN67B1ywKmCMsPB4kJqlhgXJlPjn2PSAtDi4lhjnFG5V+EznvKbOtvzNjadc4sAUbM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yydh6Ap+EjKSHlyqK+Ep/LUeJlM6MLvtF63oUYMTydV5jZ8c4iJ
+	5SQmu6uqa+H6RL41k+xaNJMFNwd1/W4qliBpsQVizkmuiY4sBZgqkkkKIKopU7Szqn4=
+X-Gm-Gg: ASbGncuuc7QO1/TEsjGPCMvITp5HC7ZBbik2BHLSCB+JUXFx2sc4n75oJayHZTuPtAm
+	9niQAkRb+hD/ReroAbuST4q2wMlGI1x+fYMF0saPof3eyLrr+VSwturroKm7XZ7MtANV2TDvlDa
+	aXCq28vDy1m8+l6JV6CuCYlKi2ZE+LUCKKlcbhfarER4Od44Rzbgo2PmKTlNFarAir8+LF+CaLu
+	ury6WqWa7HmPPCSlehLz13R4nYXNJpkpfcBXralAqGyQXdThDghTd/8n2EIhDq0rhK4vOjje1Ov
+	z5S9nWeo5edVBGafyj9Lftw8D9UXkZY4JuwIKVoRkbanOAEPZP0MgqvGZ4CvjKfw1zgD38veb/t
+	QIkBDtCH4qvKfaGACqTWAGfi3SWH/28XLC5x6nhNtCRjKKpscHUQrl4tp/qAir+M8MKwte/sQav
+	c7oSQAI/UPERv87deKypVOO5R0zR/NlVc3K/iXe5zljyT11swmdw==
+X-Google-Smtp-Source: AGHT+IFTra9R68sarPEZ7JGiGUxqA+JBh5gKP1pY4jtUAbRv4g02dpfpSvuUEN/4DBcwJsgAfUmRPw==
+X-Received: by 2002:a05:6e02:2307:b0:42f:a60a:8538 with SMTP id e9e14a558f8ab-430c52b5afemr49210015ab.16.1760718055789;
+        Fri, 17 Oct 2025 09:20:55 -0700 (PDT)
 Received: from [172.22.22.28] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-5a8a97689basm12877173.49.2025.10.17.09.20.43
+        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-5a8a962f04fsm22836173.21.2025.10.17.09.20.53
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 17 Oct 2025 09:20:44 -0700 (PDT)
-Message-ID: <e7bbbc92-871e-4155-a1b4-96929199a1dd@riscstar.com>
-Date: Fri, 17 Oct 2025 11:20:43 -0500
+        Fri, 17 Oct 2025 09:20:55 -0700 (PDT)
+Message-ID: <72e30269-a7e1-4f34-81ad-9026ef95ddd4@riscstar.com>
+Date: Fri, 17 Oct 2025 11:20:53 -0500
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/7] dt-bindings: phy: spacemit: introduce PCIe PHY
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: guodong@riscstar.com, bhelgaas@google.com, christian.bruel@foss.st.com,
- krzk+dt@kernel.org, namcao@linutronix.de, aou@eecs.berkeley.edu,
- shradha.t@samsung.com, vkoul@kernel.org, linux-pci@vger.kernel.org,
- dlan@gentoo.org, pjw@kernel.org, linux-phy@lists.infradead.org,
- qiang.yu@oss.qualcomm.com, p.zabel@pengutronix.de,
- linux-riscv@lists.infradead.org, mani@kernel.org, palmer@dabbelt.com,
- kishon@kernel.org, kwilczynski@kernel.org, linux-kernel@vger.kernel.org,
- inochiama@gmail.com, devicetree@vger.kernel.org, spacemit@lists.linux.dev,
- alex@ghiti.fr, krishna.chundru@oss.qualcomm.com, lpieralisi@kernel.org,
- conor+dt@kernel.org, thippeswamy.havalige@amd.com
+Subject: Re: [PATCH v2 3/7] dt-bindings: pci: spacemit: introduce PCIe host
+ controller
+To: Rob Herring <robh@kernel.org>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+ lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com,
+ pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+ p.zabel@pengutronix.de, christian.bruel@foss.st.com, shradha.t@samsung.com,
+ krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+ namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20251013153526.2276556-1-elder@riscstar.com>
- <20251013153526.2276556-3-elder@riscstar.com>
- <176054651498.4032617.11231316454316691309.robh@kernel.org>
+ <20251013153526.2276556-4-elder@riscstar.com>
+ <20251015164730.GA4032812-robh@kernel.org>
 Content-Language: en-US
 From: Alex Elder <elder@riscstar.com>
-In-Reply-To: <176054651498.4032617.11231316454316691309.robh@kernel.org>
+In-Reply-To: <20251015164730.GA4032812-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251017_172051_798592_113D4C0E 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251017_092056_882670_EDB0C214 
+X-CRM114-Status: GOOD (  24.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,28 +112,141 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/15/25 11:41 AM, Rob Herring (Arm) wrote:
-> 
-> On Mon, 13 Oct 2025 10:35:19 -0500, Alex Elder wrote:
->> Add the Device Tree binding for two PCIe PHYs present on the SpacemiT
->> K1 SoC.  These PHYs are dependent on a separate combo PHY, which
->> determines at probe time the calibration values used by the PCIe-only
->> PHYs.
+On 10/15/25 11:47 AM, Rob Herring wrote:
+> On Mon, Oct 13, 2025 at 10:35:20AM -0500, Alex Elder wrote:
+>> Add the Device Tree binding for the PCIe root complex found on the
+>> SpacemiT K1 SoC.  This device is derived from the Synopsys Designware
+>> PCIe IP.  It supports up to three PCIe ports operating at PCIe gen 2
+>> link speeds (5 GT/sec).  One of the ports uses a combo PHY, which is
+>> typically used to support a USB 3 port.
 >>
 >> Signed-off-by: Alex Elder <elder@riscstar.com>
 >> ---
->> v2: - Added '>' to the description, and reworded it a bit
->>      - Added clocks and clock-names properties
+>> v2: - Renamed the binding, using "host controller"
+>>      - Added '>' to the description, and reworded it a bit
+>>      - Added reference to /schemas/pci/snps,dw-pcie.yaml
+>>      - Fixed and renamed the compatible string
+>>      - Renamed the PMU property, and fixed its description
+>>      - Consistently omit the period at the end of descriptions
+>>      - Renamed the "global" clock to be "phy"
+>>      - Use interrupts rather than interrupts-extended, and name the
+>>        one interrupt "msi" to make clear its purpose
+>>      - Added a vpcie3v3-supply property
+>>      - Dropped the max-link-speed property
+>>      - Changed additionalProperties to unevaluatedProperties
 >>      - Dropped the label and status property from the example
 >>
->>   .../bindings/phy/spacemit,k1-pcie-phy.yaml    | 59 +++++++++++++++++++
->>   1 file changed, 59 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/phy/spacemit,k1-pcie-phy.yaml
+>>   .../bindings/pci/spacemit,k1-pcie-host.yaml   | 156 ++++++++++++++++++
+>>   1 file changed, 156 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
 >>
+>> diff --git a/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> new file mode 100644
+>> index 0000000000000..87745d49c53a1
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> @@ -0,0 +1,156 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/pci/spacemit,k1-pcie-host.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: SpacemiT K1 PCI Express Host Controller
+>> +
+>> +maintainers:
+>> +  - Alex Elder <elder@riscstar.com>
+>> +
+>> +description: >
+>> +  The SpacemiT K1 SoC PCIe host controller is based on the Synopsys
+>> +  DesignWare PCIe IP.  The controller uses the DesignWare built-in
+>> +  MSI interrupt controller, and supports 256 MSIs.
+>> +
+>> +allOf:
+>> +  - $ref: /schemas/pci/snps,dw-pcie.yaml#
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: spacemit,k1-pcie
+>> +
+>> +  reg:
+>> +    items:
+>> +      - description: DesignWare PCIe registers
+>> +      - description: ATU address space
+>> +      - description: PCIe configuration space
+>> +      - description: Link control registers
+>> +
+>> +  reg-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: atu
+>> +      - const: config
+>> +      - const: link
+>> +
+>> +  spacemit,apmu:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      A phandle that refers to the APMU system controller, whose
+>> +      regmap is used in managing resets and link state, along with
+>> +      and offset of its reset control register.
+>> +    items:
+>> +      - items:
+>> +          - description: phandle to APMU system controller
+>> +          - description: register offset
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: DWC PCIe Data Bus Interface (DBI) clock
+>> +      - description: DWC PCIe application AXI-bus master interface clock
+>> +      - description: DWC PCIe application AXI-bus slave interface clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: mstr
+>> +      - const: slv
+>> +
+>> +  resets:
+>> +    items:
+>> +      - description: DWC PCIe Data Bus Interface (DBI) reset
+>> +      - description: DWC PCIe application AXI-bus master interface reset
+>> +      - description: DWC PCIe application AXI-bus slave interface reset
+>> +      - description: Global reset; must be deasserted for PHY to function
+>> +
+>> +  reset-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: mstr
+>> +      - const: slv
+>> +      - const: phy
 > 
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> You expect/need the phy driver and PCIe driver to both reset the PHY?
+> You should do that indirectly with the PHY API when you reset the
+> controller.
+This was previously called the "global" reset, and I renamed it
+to align with one of the existing DWC "app" resets.
 
-Thanks.	-Alex
+I put it here because I had the impression that it was required
+to be deasserted for both PCIe and the PHY to function.  Currently
+only the combo PHY gets and deasserts the PHY reset (for the
+benefit of USB).
+
+Instead, I'll require this global/phy reset for both the combo
+PHY and the PCIe PHYs.  I will get it (deasserted) during probe
+for all of them.  Then I'll remove it from the list of resets
+required/managed for PCIe ports.
+
+I'm going to keep your Reviewed-by on patch 2, even though I'll
+be adding "reset" and "reset-names" as required properties.
+
+Please tell me if you'd like me not to do that.
+
+Thanks for the review.
+
+					-Alex
+
+> Rob
+
 
 -- 
 linux-phy mailing list
