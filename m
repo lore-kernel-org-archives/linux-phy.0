@@ -4,120 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70A6CCCD199
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 20:55:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1B22CCD184
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 23:52:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=at2xl29zUsbuK+cepdcrA6IW6skGuAE4LJkuZ06Lo7U=; b=emG/JpsboEresR
-	HdZD86mnSpbJkTBOLShc/VClDyoG9DRK/lC3XLGltmjaJJwY5Qt5VuHiWOM1W6ThpLRsQjP+KdDJT
-	kUcQX37m3LI2rzQXkoNrbWF9KqyliW5/1+GLCr8E9rsK1nrdcjt+04NWLk02V6rXWh06BTQZ15slb
-	0L2MJ6G5S8XsxnvWtbqtSq3/oBI5fRUyjkQv1LSRwcLTFptlDSugKPKlR4GcA5504Uzr/D+DzN64v
-	WPRdiJ87G4IYBQL83r+NdHuw4FydVPCfSZMYdnSRHzklb05g0ntr4aDwtDlob36r1c6q0rAIPzM+i
-	c7WLCbgfxd6+rP+On47Q==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=iF44j0GitNpWFiIq+OJ3uMsNtZ6f6bNfRt4osR3eEs4=; b=oe9
+	Iu3D5NOYSyaSaaOA7mmIt+7Ph+lTfuEG97HJW1Ibgkl7CvKA9Cr1Iy1uMiZIp95yNQXiZlSntyJkW
+	VT4AqRQRR0YSZE+HwNyAJrPOf2kxUvv239QwT0a4exd+ZI0xN2IMkS3tMcL/q3ltesHPENtm5u1Uy
+	eZqYKNtSHjfNczq21l70QZNXYdOAnN4YpzNL0rhkiSSPfYbo1jTSHdOMrNqnoEg8UTjYTjly2XZpP
+	G/LVM3WrlCvq40sq5Jl2hjcYtK7TNoXuzC+9DOg6LP/GXV7ZDMbm/RFTaeMU2Tmj3PkxUaDyvbuYr
+	1t9Se8KBElZQhPcINId32P7HudQ0a8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9rUC-000000090Mc-3vXo;
-	Fri, 17 Oct 2025 20:55:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1v9uF5-00000009D9d-0tWH;
+	Fri, 17 Oct 2025 23:52:15 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9rUB-000000090MH-084C
+	id 1v9uF2-00000009D8q-0iqh
 	for linux-phy@lists.infradead.org;
-	Fri, 17 Oct 2025 20:55:40 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59HJGYC1003686
-	for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 20:55:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=tBUBJv7YgdO5vYO/psTXoU3h
-	cD8pEsOW1XkvnkBW7ww=; b=jHTgols0xXkD6A0AgZxtB+JghLy7pFoXfy/jSFFI
-	XWl1v3vCgq6f6Xz0a/RulCIyirvF2UxjtB1ehociEHTu6hp2g5KgJxmmrss7pgp1
-	ag2yz1fTFfIoZB9sFFKiVNN4KxOMDz3aiCnp/kDjZ+wy+cPOkeZGrPCWFMic7fzR
-	3m0cufGnl1uz4I+WsOU351f4/SVzsN3Z/M1UfRU+RUFkcLaxn9Vf4/Ry4WxNvej+
-	sZSKb97Vsf9YVulhZMYtMavWbW3xsuXLg/bo8o1i5DtmRoKBN9QCWLxze5woMbh0
-	4eK69us1fMv9mNYPGe3PGyuIO1eH394YUVpJnyBvHZ6Tng==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49rw1aswm9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 20:55:37 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-88e7bfe5ba7so867288485a.2
-        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 13:55:37 -0700 (PDT)
+	Fri, 17 Oct 2025 23:52:13 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id 41be03b00d2f7-b5533921eb2so1620232a12.0
+        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 16:52:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1760745131; x=1761349931; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=epoAusswG5dO23h2QFaAnAg30xN4jI6h3Smw2Tdo/d0=;
+        b=WiOPrSGpT6Cuy85E177C/YxJ0HQnLl5p8vWa9HWGvrsEJQ0AjEi/aEh0ImA7sVYaLk
+         kNsqQW+NyJrcpld2LRuqAV+24f+zMxLL45r/fN0gjPiOJHtXW7ZlLe/WSCtqPn0Pcqeq
+         TNFBVfdJDkWZqVZI++7gTCyhmuCA4Vyvy8X8/2DVeD6FSEV6RgHv8wgXhZrF0wfLTBg+
+         sPD9+WPdd+msdDdNt+V3hIL7TsuL4QtxoqgyQzgmTfMryZon37cr2rIltwCY0vMdizcL
+         mWWFDguFeg/iGEoATXMbQJxEF2DdhyMOjnsqHbhzl9G3TcHKeDK4WA1eA4hxxX2g4LCK
+         DcFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760734536; x=1761339336;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=tBUBJv7YgdO5vYO/psTXoU3hcD8pEsOW1XkvnkBW7ww=;
-        b=MvT07cBBVi7ku1NBzIwOeKf1GegyUU2sKLTZwRCZXftj9HOh0RluElQPFDVwNbCjZA
-         +AIAQHl20u2XMI4gx7Ar1FalKteRODW2SbNahItUpiIq6jFp/3eHVASxbm0g6CZFNQue
-         0eu63lmv8PwmBdAjZ9rSqOuTrbOBoPT7Z6hYS9e2hMg3OYM7LG1KW9we/xAZB8JVDlJE
-         /iaPmxSn7SpJs2I4QlmhmRVFivdX4x4rfTnYGj691i6rlsMyz0WsWXrKaXuxpMFXNUNg
-         wny9kHejVtkCyzpXKh8zmOhrCZmYTqpXM3qs5rORruWyfqeY17imITJx8BLvXRR4Oeq8
-         Rd7A==
-X-Forwarded-Encrypted: i=1; AJvYcCWOKFnKzT5Bi4uIvCTKqx/mDNFdQiVjmmCQ2IswHPw3A7iGlZ74v/2Qe7Le5Qk2CHQe8Kutppj/mn8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YycNHKkLj2m061rM6QU9Cv9uDKcgwF8JQCFXPqC82uxO1LWs1BC
-	blo2eBVJlwrjdgLHVdmS/lLhRCQJC55bcUfCtazjKcQwt2zDJpRQ5avh+WbgU4lFgz/s7oqM1u4
-	LxjZ/DD/UweDC2c2MCiwg3whp+5VDA3Y/FjYJ7LpPo5m9A8csCoVrQIxsHPfIUq4G0GJL
-X-Gm-Gg: ASbGncv8QVC22AzBIJM3Y+q+Ffgo6BQj8GRdbkpiPzQ1AUry+8tBeqjTJSgddEEwu5E
-	4RdBCpxQJ8YIo8IkBS0p/MUa1P9pH7AO4mrsSpj8Zef2rpKZ++s+mRsx9OYZkrmXAwkP5Bn2cXP
-	S4QS0fDYKM3jg94VEa2jiPE/zHX6nM9ySeJ/iv/hOQJv+CjIvV+qRaVoMbyKDJVD/xFRey7nyDu
-	EFPEEih9llEo7Ho7n2a2wTdmWfrcKoG5URfiQwLfthXV15AMLqoH5MfGd7uMK2FTEPt8f9YQ3jV
-	EY+xHu4RvkwhbqtCQqI5374D6vvGIzXs2QDBQXhDvsnqnpqogPJRDCu2w4zOcHD3mktmZsepwZd
-	DBmU9ma25c4t9aZFWuwBilxb4zaNQ3BW73iRwgdwUzYENhlgRJse5A6jvz5JfAtVPrXi8C23Smy
-	rKQTpRXGIIVgU=
-X-Received: by 2002:ac8:5f91:0:b0:4e8:91bb:2636 with SMTP id d75a77b69052e-4e89d3712cfmr69650091cf.52.1760734536016;
-        Fri, 17 Oct 2025 13:55:36 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHWIYr4LhZulc9IbG/CVqJdzUA3qxE7l19KYbIdEcG//A7H2l6zjHkzk29nEiAzo0m1WKreKg==
-X-Received: by 2002:ac8:5f91:0:b0:4e8:91bb:2636 with SMTP id d75a77b69052e-4e89d3712cfmr69649761cf.52.1760734535547;
-        Fri, 17 Oct 2025 13:55:35 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-377a966e379sm1750451fa.55.2025.10.17.13.55.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Oct 2025 13:55:34 -0700 (PDT)
-Date: Fri, 17 Oct 2025 23:55:31 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Add polarity inversion support for
- SAR2130P
-Message-ID: <ywovlyojskgv7hbkr5tjtmsiwkf7tmgzw4puy7zb54kvmt3mzw@zq5etee6pjwf>
-References: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=K88v3iWI c=1 sm=1 tr=0 ts=68f2ad49 cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=gZxxQWLh4rD7iasbu2EA:9 a=CjuIK1q_8ugA:10 a=NFOGd7dJGGMPyQGDc5-O:22
-X-Proofpoint-GUID: GXXyKzA1fA2xCmEsej685HTu0d0aJiSR
-X-Proofpoint-ORIG-GUID: GXXyKzA1fA2xCmEsej685HTu0d0aJiSR
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDEzMDAzNSBTYWx0ZWRfX195dCVTn/+DI
- sPw2wzwHnKKCpfNms/UeOES5rNxZEbvGPIwpn8WiYkcZ20THpst0kB/mCr3xqidlkm3cZJ0Oudn
- DgtYBIKh/uqdtW8GTLJmPDTeRr0rm7v8RVrgcpQko7wnUMzIprSG1T8MCScNqCdDTUqQ5GdYD/F
- uPYDq0rQWA7DygVfTyeKW2su2vShCRRahZlkkYwc+k8MWw+t11w2ls25/RUxoBGMuGmKRuk6R9T
- Kbw+17s7ZCYoRsZ14N7aGqTWXkRrq/+zansCdEQywZkTMUeSzjTxnTjzyScFPFK4CuTV7g26h0s
- 8862qMTho8rY4dR391bAHXyIZU+7Zp33gjTnK69bWW4YAFg/86KZzHP1K69iT+4OG4IJ1NCmxyf
- WvsZ5N0WnT0SIc0wIdkFC5f4VoWoyQ==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-17_07,2025-10-13_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0 impostorscore=0 priorityscore=1501 phishscore=0
- adultscore=0 clxscore=1015 bulkscore=0 suspectscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510130035
+        d=1e100.net; s=20230601; t=1760745131; x=1761349931;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=epoAusswG5dO23h2QFaAnAg30xN4jI6h3Smw2Tdo/d0=;
+        b=rdtSiO7bpPq9Ao16ok2HMHiPvKruUzHbkvoJn8Wf3sVWj1h0hIZa6UtSKEnZXHKPjl
+         f8Or3g9DOwnK0iHi+gObQbJdxqChcbHTgnOS+GPvhkl8Zm0iSsUAzp3ufGmOSqUC/LOu
+         TGPb5KolI6GKaRsklJwgD/FtXDBXgPDNywpjs9Sq3KDBIuZ4z+XfZbXYXEQiqADBKTzH
+         2HjwPscxn3/HBML2ZWl5hP/nsp9QCy+ZipADvPyJVR52VyFqFjPZ3sjuwI1ASa6R1xKN
+         3OVQ9DcrfMMzcgNwp2DJvFvSGNdfSlvk1e+2AjLKEnYuzU3dafvrFzc9BYS7JqRfFHv/
+         2Cyw==
+X-Forwarded-Encrypted: i=1; AJvYcCVkCxwf0wHGN3EF9H53wvWCiSl0AD18OuyMkGZryI1lOk73+4E96Es6u9D6B5MpVRgnvBfPDjmLh1g=@lists.infradead.org
+X-Gm-Message-State: AOJu0YykNW3SlH6O9vQEM1hopi94T4W5U1v0wCyCYE5j/tkfQJ5g7Tjh
+	BtH1fsd4VCBNQnAYmdlVYXM3tsE3Q+bH12NHH2cndmHBJOkjh5I6/ydN/Pkibgj5hrW1rEBgdBl
+	oVstBYA==
+X-Google-Smtp-Source: AGHT+IFpvneIuRadcbPDmZxphSwx/I7IpPbqWA7MW5ybUCSkZbjENPhFaSSItQAT3k9kMr4I9sKjw9HCWMA=
+X-Received: from pjbds19.prod.google.com ([2002:a17:90b:8d3:b0:33b:51fe:1a84])
+ (user=royluo job=prod-delivery.src-stubby-dispatcher) by 2002:a17:902:ea03:b0:26c:3e5d:43b6
+ with SMTP id d9443c01a7336-290ca217ac9mr72880525ad.32.1760745131078; Fri, 17
+ Oct 2025 16:52:11 -0700 (PDT)
+Date: Fri, 17 Oct 2025 23:51:57 +0000
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.51.0.858.gf9c4a03a3a-goog
+Message-ID: <20251017235159.2417576-1-royluo@google.com>
+Subject: [PATCH v4 0/2] Add Google Tensor SoC USB PHY support
+From: Roy Luo <royluo@google.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
+	"=?UTF-8?q?Andr=C3=A9=20Draszik?=" <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>
+Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>, Roy Luo <royluo@google.com>, 
+	Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251017_135539_076049_8DD18550 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20251017_165212_241775_E408D344 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,27 +93,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Oct 18, 2025 at 02:04:38AM +0530, Krishna Kurapati wrote:
-> On SAR2130P QXR Platform, the CC Lines are inverted and the lane
-> programming is to be done reverse compared to other targets.
-> 
-> As per the HW specifics, Bit-2 of TYPEC_CTRL register indicates
-> port select polarity. This bit is to be set for SAR2130P.
-> 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
+This series introduces USB PHY support for the Google Tensor G5
+SoC (codename: Laguna), a new generation of Google silicon first
+launched with Pixel 10 devices.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+The Tensor G5 represents a significant architectural overhaul compared
+to previous Tensor generations (e.g., gs101), which were based on Samsung
+Exynos IP. Although the G5 still utilizes Synopsys IP for the USB
+components, the custom top-level integration introduces a completely new
+design for clock, reset scheme, register interfaces and programming
+sequence, necessitating new drivers and device tree bindings.
 
-I wasn't able to test USB 3 while I had the device, but this seems to be
-correct.
+The USB subsystem on Tensor G5 integrates a Synopsys DWC3 USB 3.1
+DRD-Single Port controller with hibernation support, and a custom PHY
+block comprising Synopsys eUSB2 and USB 3.2/DP combo PHYs. The controller
+support is sent as a separate patch series.
 
+Co-developed-by: Joy Chakraborty <joychakr@google.com>
+Signed-off-by: Joy Chakraborty <joychakr@google.com>
+Co-developed-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Roy Luo <royluo@google.com>
+---
+Changes in v4:
+- Separate controller and phy changes into two distinct patch series.
+- Remove usb2only mode configuration and the corresponding usb_top_cfg
+  reg (moved to controller)
+- Add more descriptions to dp_top reg to indicate it's not DP specific.
+- Add u2phy_apb clk/reset
+Link to v3: https://lore.kernel.org/linux-usb/20251010201607.1190967-1-royluo@google.com
+
+Changes in v3:
+- Align binding file name with the compatible string
+- Simplify the compatible property in binding to a single const value.
+- Add descriptive comments and use item list in binding.
+- Rename binding entries for clarity and brevity.
+Link to v2: https://lore.kernel.org/linux-usb/20251008060000.3136021-1-royluo@google.com
+
+Changes in v2:
+- Reorder patches to present bindings first.
+- Update dt binding compatible strings to be SoC-specific (google,gs5-*).
+- Better describe the hardware in dt binding commit messages and
+  descriptions.
+- Adjust PHY driver commit subjects to use correct prefixes ("phy:").
+- Move PHY driver from a subdirectory to drivers/phy/.
+Link to v1: https://lore.kernel.org/linux-usb/20251006232125.1833979-1-royluo@google.com/
+---
+Roy Luo (2):
+  dt-bindings: phy: google: Add Google Tensor G5 USB PHY
+  phy: Add Google Tensor SoC USB PHY driver
+
+ .../bindings/phy/google,gs5-usb-phy.yaml      | 104 +++++++
+ drivers/phy/Kconfig                           |  13 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-google-usb.c                  | 271 ++++++++++++++++++
+ 4 files changed, 389 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
+ create mode 100644 drivers/phy/phy-google-usb.c
+
+
+base-commit: e5f0a698b34ed76002dc5cff3804a61c80233a7a
 -- 
-With best wishes
-Dmitry
+2.51.0.858.gf9c4a03a3a-goog
+
 
 -- 
 linux-phy mailing list
