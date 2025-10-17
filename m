@@ -4,73 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9863CCD199
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 15:42:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 777BCCCD195
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Oct 2025 16:04:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yCWxBecvLUGPL48EQk+qY+KJs2hZ7xAhwbqJpX3MJ/g=; b=xFAKowO8VZTAR8haE+szf+2yr7
-	uAvzIPgjKBydY6GOlh5gvdMCguWHbzumxA9m/JSGAodrKGU3/nZjnZ/Atz/hxKQSFGBdj37fUZJFD
-	Am83U3ShkZOQUrfTlwri7LPjSx4nDc/sRTXEv5FkyMDcFBeu0rKhBV4iF9iREJNgc9Yt5aJodWBpL
-	XNGzX1QpkrppEItycXkzgqXbFN5nBhjEPv7UxrLg9v0v9fX4EXD2GN78boRVa86KGGW3rdjNWNw0/
-	Pke1jFtTY8jACrAp1amj8KijtgXKKqKrAhWiu2W5mZjAX4n3cvBjhBgxg3W4V8r5e6jMBLDBLnBS0
-	iKXedLQA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AhjItZioLYkMWjSzF5Oq+L5fzfPxpvOXoZAaSCOd1mY=; b=1Wxew4mEtbmZ75
+	x1MzX4rWaoq2TPzq/0c+zlJxzsS6zk2mksYgxVOz8LwTmM0hSdvMOG1vY+ww4NHYJcrtEFaedFaOp
+	VljTRwV2/CAxBdYBNdV9DK0BVK4I/URaS7NaiFstcyvgrM9cs9g/IvQTbg1fzLYYkoSObzz3fMOtp
+	QTyIwZPgpuWJHHcbWC3tkYDP1N/KyQkllsDlkvu/JBSvj2Xqcro5YiusKioEVHMFORb2C5xMKwNdO
+	0r2n0dcgvl7LSB5rMB9SJOYre3bBdQmLFs9jaN10ylcZ8sXqAVRb4/8KbvV9Gne5SVcMZ8YLQ0Xna
+	T3q3p4yBim3PxLNxdi6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9may-00000008J3G-1Vf8;
-	Fri, 17 Oct 2025 15:42:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1v9mwT-00000008MuO-0H5t;
+	Fri, 17 Oct 2025 16:04:33 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9maw-00000008J2g-1jwL;
-	Fri, 17 Oct 2025 15:42:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D18AA64622;
-	Fri, 17 Oct 2025 15:42:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1137CC113D0;
-	Fri, 17 Oct 2025 15:42:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1760715737;
-	bh=hH7dF9cQAKchmw5u3mniBQjr14Sz8+exCeFEIusrxh4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KMluMiL5QoCe7NxG9pTDm3lGLS/3U5xqQFUCnxWm0DoLLTuuUJadY6q0V3lhTUjsO
-	 gPBwjhIfAHmmhqf4CHufb+JXCBYBAmyym6CFW6SRyBDtiWwqU07+r3jWcY+Xt/tUhd
-	 YOdzbe45XsTy7ei8kWhzxU4stCxVOpssx9WHvH1veZoMjle8Ay3qD23l3qd7N/d7jf
-	 prACDTrxQAOnWMfoiDNG1gFHA1a7RzyCsz/zqzyA2tczpnjOQRqOJqEemnL1vOrcpF
-	 NL1ADDkF/ZRQsFuYew43aqmuVAM80DDEEmzBwfZUuTL+Ujniwg5GqEtdP+mVDWT/IO
-	 R3Y1XtUbvlHTA==
-Date: Fri, 17 Oct 2025 16:42:10 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Peter Wang <peter.wang@mediatek.com>,
-	Stanley Jhu <chu.stanley@gmail.com>,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
-	kernel@collabora.com, linux-scsi@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 1/5] dt-bindings: ufs: mediatek,ufs: Add mt8196-ufshci
- variant
-Message-ID: <20251017-remnant-spud-a2a21c2385e6@spud>
-References: <20251016-mt8196-ufs-v2-0-c373834c4e7a@collabora.com>
- <20251016-mt8196-ufs-v2-1-c373834c4e7a@collabora.com>
+	id 1v9mwQ-00000008Mtw-1Tqv
+	for linux-phy@lists.infradead.org;
+	Fri, 17 Oct 2025 16:04:31 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-3ecdf2b1751so1219864f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 09:04:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1760717068; x=1761321868; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=1XA1CkPbtaxpNOtSPg4ZNDO0+nr3/dCGqWcDsk880cQ=;
+        b=EXu9nUlSB9arf1kYg60iLzT6Xezcu0EoBHV+nfFEHUjlIKR+MjaYoBJcfDMLp5j4Lv
+         zzT4c/h6xegeXTBVJpj1EBJZQTHIp3nmmR4Jk0vZ7r23UoWQkB8KVdXyvvwbnsZ/sPdE
+         SHQ+tjGxd/TVgeS9l86xGZAs6FqPdqY2JlWyQsyam+FA/B5/C1WTAfs7yK2K6+DwwOkJ
+         rPWkymFU7riMWGpWskU5+GBjedPgutgnXys9iE4lQh4gGwYAw+ls/D8WCWysOk7JkbPp
+         UcdiFis8JRhMzdT5l9t8pLxQYGfPxuL9vblQgMOCMhhZ3wSg/dFeIvc1Dg31Vh9m/MrM
+         6S7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760717068; x=1761321868;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1XA1CkPbtaxpNOtSPg4ZNDO0+nr3/dCGqWcDsk880cQ=;
+        b=a6K3oeZAT8WjBpQOKWiOvqIkkYckuwwAqniOhYV2J3Ed1F3IraXuNBUBQ29G7Q8tvs
+         ihBZaK3EGrEu7oyZZep0ZvtPDF3dMOhX8BELjNsZtOYUFuIxFH+irXcREAiS2ONX9GHg
+         VOs5mJUmdVuha6pOUlWBwDiY9bKIay20qwPQbshJ1JG5SIvL/9FM2DGUkyefBiFpJC7l
+         kwsnD3bBsLBsBT5Zqpx+NhZ9QVs+p+0JC6v01ryDtibdYJNF2cQ7szAjPPXWFVzcFb0C
+         fNTVZYeGtkV+sfGbyrWDvS8jV0TzjSRz9c9n1W6bOrActbl9nCYQSl4/J7IOd4Wc8NyZ
+         oKQA==
+X-Forwarded-Encrypted: i=1; AJvYcCU0Orzwym0jOrsUl7yc8sw1W1T+RCDyOJzUgXdosx9NLgYR975Q2ipJ3gpewAj1a9ZLDTQn+qb7W4Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy1xgUmtMJTSkcyla1TDfb9RLgf94zcpjQuocvnNeEY68ZnN3d8
+	dREx8tQWhQpsXOcR7sdlJsE696HawDT0/BU+toGYtqZ1Sb3IIxuUlqckMk3yRLrZ3Ak=
+X-Gm-Gg: ASbGnctzX+c2q5GNyVKzzAbFUFPJEbwwKaR+saSCXzsDze+cPsOOTm4uJB4sDiFIlbg
+	ZZlkjPNaIguDcU0pjgE64fNHmtwnWdctnvN+G4ySGsRwDTmpFatafyoNnIjWrUmV/BLYaYAUAZE
+	5FClyip6efuNPJ9ixkfoIy6prb/KAn0/u5TjOLsPferM+kgDrs7upAIGOVKQXPW4mnsAiMurxA3
+	Gg6r+F8IrAdSERVat3qZmgNVXYYNaGfuOLOiQOaPdIZEkthbYx1CzHA1QaPpn40lvxSi1B6nfKY
+	3KByqTIMMg0JVTU+ZvUBmwiFzycdgq3+TSBTRVKZNOCJHInfMlbZkffnr58dHaUWCIZEgYORzqL
+	B9lbvHHX5SC/sbXL8Ye8EyhvQHc0kTlDmz5rlC50esUwfCq9t82ocigAQqJAFMDsk6QEi2c/ysR
+	hxwlc0vMMrir1B/crp
+X-Google-Smtp-Source: AGHT+IG35xafSuQ5BPv2Fera9k8oHJR8EziSTLu7op3KCmIHoxM7gv1y6xtU5v4UpxQZ0+clT41dcQ==
+X-Received: by 2002:a05:6000:4604:b0:427:6eb:8499 with SMTP id ffacd0b85a97d-42706eb84acmr1802064f8f.24.1760717068025;
+        Fri, 17 Oct 2025 09:04:28 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-426ce5e8141sm40851309f8f.48.2025.10.17.09.04.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 17 Oct 2025 09:04:27 -0700 (PDT)
+Date: Fri, 17 Oct 2025 19:04:23 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Michael Walle <mwalle@kernel.org>, Andrew Davis <afd@ti.com>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org
+Subject: [PATCH] phy: ti: gmii-sel: Add a sanity check on the phy_id
+Message-ID: <aPJpB-QI8FMpFGOk@stanley.mountain>
 MIME-Version: 1.0
-In-Reply-To: <20251016-mt8196-ufs-v2-1-c373834c4e7a@collabora.com>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251017_090430_394031_01AB9AAD 
+X-CRM114-Status: GOOD (  12.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,69 +95,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6441364087474155065=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The "phy_id" comes from the device tree so it's going to be correct.
+But static checkers sometimes complain when we have an upper bounds
+check with no lower bounds check.  Also it's a bit unusual that the
+lowest valid number is 1 instead of 0 so adding a check could
+potentially help someone.
 
---===============6441364087474155065==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GINMMiGuzGFK5NYP"
-Content-Disposition: inline
+Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index 50adabb867cb..6cfe2538d15b 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -341,7 +341,7 @@ static struct phy *phy_gmii_sel_of_xlate(struct device *dev,
+ 	if (priv->soc_data->features & BIT(PHY_GMII_SEL_RMII_IO_CLK_EN) &&
+ 	    args->args_count < 2)
+ 		return ERR_PTR(-EINVAL);
+-	if (phy_id > priv->num_ports)
++	if (phy_id < 1 || phy_id > priv->num_ports)
+ 		return ERR_PTR(-EINVAL);
+ 	if (phy_id != priv->if_phys[phy_id - 1].id)
+ 		return ERR_PTR(-EINVAL);
+-- 
+2.51.0
 
---GINMMiGuzGFK5NYP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Oct 16, 2025 at 02:06:43PM +0200, Nicolas Frattaroli wrote:
-> The MediaTek MT8196 SoC contains the same UFS host controller interface
-> hardware as the MT8195 SoC. Add it as a variant of MT8195, and extend
-> its list of allowed clocks, as well as give it the previously absent
-> resets property.
->=20
-> Also add examples for both MT8195 and the new MT8196, so that the
-> binding can be verified against examples for these two variants.
->=20
-> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collab=
-ora.com>
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-
-I provided a review on v1 of this series yesterday, although I think
-after this v2 was posted.
-https://lore.kernel.org/all/20251016-kettle-clobber-2558d9c709de@spud/
-I believe all of my comments still apply.
-
-pw-bot: changes-requested
-
-Thanks,
-Conor.
-
---GINMMiGuzGFK5NYP
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaPJjzwAKCRB4tDGHoIJi
-0nLnAQCslCfZeTa+X+DOAoIqdM8SHSTrhRFTAANagkMF0n4O0wD9GLihTxkbKovz
-a0mrB8+Q494nk9NX6yCVg7GZYid3yQE=
-=FIdn
------END PGP SIGNATURE-----
-
---GINMMiGuzGFK5NYP--
-
-
---===============6441364087474155065==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6441364087474155065==--
-
