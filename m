@@ -4,85 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E1BCCD199
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Oct 2025 01:33:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1C6FCCD199
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Oct 2025 01:33:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p5btJaSoY4+xSJtzvy3BX+243FMb73MeKjf8pcNwR8w=; b=rwjD6ES/J6QbmD
-	MRT38rTZ05J3S44jRwiSp8javV59byc/TSczRVmTIzjMA05+PxSQ1F+xQu46zjFHMv7jt6gs9qt8p
-	+Ti3bF+wRpnipBu1tahmmi2xXc8CP/MlYDo4E8KX7RTXggTBNL8Sdjw1EknhbIaGhmaDhju2RhU3Q
-	wRfvBjC6vVstty505ZI6bCImu0SLxcMbJxywjSqqr5KVPaYABKUZIFK3YGlu00xDuvUAY+SQo9qNC
-	+5pXlXzXb9ydBviNSrm1rS5s02URrWsvELAsiRKEqGPKStfjenM9fSV+pQuk1menEmQoH7lWIPTAS
-	Pu4Fru5iJMvB6cr5b4wQ==;
+	List-Owner; bh=5Z+krdDFvE/aVbOyFei8vC2mkn7O0RzrQebyOIZOi34=; b=HwM3jIwv41S8tO
+	fFehxH5yuqvd893BJIJ8OjNRYU/YagaaSXi7aEAYE0tQm67e4cgWEx7IvuV99tQLuzvbgnDt1YNkR
+	hakrr4E/r21UIwJ05eeIHmmakBW9wjaFfDpInAXwpd4/OmTZOQ0Zvuky9oIbipuM/qAVvr/UfqluJ
+	zsx0/ZuksJxfFx4Oy5xPf4xDx4ILr3G0836CCgPQ5sZPXD0uY2yMhZpSWRc5E7DvMcWDpZ7XiZeTQ
+	TtzEm3gf+KPW9z1gtKF/oPh5NcyHhq4lMctTNEOH3nVo0hL096Co/WThfvbvEM4VX9P+XNUB0i9GK
+	Td8JZDtjJ3Wc+OKJMqDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9vpT-00000009KHZ-1W3g;
-	Sat, 18 Oct 2025 01:33:55 +0000
+	id 1v9vpW-00000009KJa-2W9Q;
+	Sat, 18 Oct 2025 01:33:58 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9vpQ-00000009KFW-3ySj
+	id 1v9vpS-00000009KGe-2EW2
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Oct 2025 01:33:54 +0000
+	Sat, 18 Oct 2025 01:33:55 +0000
 Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59HJH533016333
-	for <linux-phy@lists.infradead.org>; Sat, 18 Oct 2025 01:33:52 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59HJGGSV015777
+	for <linux-phy@lists.infradead.org>; Sat, 18 Oct 2025 01:33:53 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LnqwEheiYw4eMqGgagIbYYTEmFr59FG4+mnaf+XhjEI=; b=It2rF1oX3BLd+TU8
-	kyLXZGWIHND7ASt9uuxNpKpZ8T1giFdsKSRKC8aurqKTNe7rwKvPZsKYi4RXVJCg
-	LscNR5QKdkAq5lzGhXmy+rrKfPexXmdwuSbIIBJJwq0+0L7J+BuI53MOrsgv/+vF
-	y3zHJukGY2LaAwRUxd2fBofswTT0Q+6bi4rxWqfExG0DbjoWDiJZZiD0dNWS9fhK
-	pBII8wo4S4wrc4ECnmJyobe109ARn4sWQDX/927a0RXQebgzvB2ceTzDQDb+HLXl
-	C+Jmff8EO/Rms7QUv5uLQv+fM2WMnDxzE2RZnnCmvMl00WG4CIW9UL3Jktgn+mpG
-	TPl6ZA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49sua8vwyk-1
+	36rRRJsb8die6TTtLLHxpI3oG8UeacOGLRFgDPbnS9E=; b=QSsKepWYbMMQ6FAi
+	g7yl1X2c65Ec5QzyGBxMjSuwnc0ZRNY0y7wcNIL9IPQxNEG2sP8jpqECljDqWvZh
+	V3lTFP7a0rGBdTpuS1hfre8xYjxJUThid9TE+I7Y0MrGxAbN9GErY7NnLS/lTWGm
+	LgslG9XjABVRng26uDsB/ShpXgEIxpf6629ivvfL/BOElmvxDlvwat3aVoXpMrEE
+	nhpJ5EhKxH93NidQgSXON5Vx1kRaOkHYAUwSuQxHkrrW+yewo1jibH5EojICGmbG
+	LhpcxwB5O/+iMV6V1yVkjY7GnBFN8pKp9KtoNL7pZ8GWD1wJHmaGTU3GjxEC9AAF
+	Wq3mGw==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49sua8vwys-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 18 Oct 2025 01:33:52 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2904e9e0ef9so46436035ad.3
-        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 18:33:51 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sat, 18 Oct 2025 01:33:53 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-33baf262850so2553558a91.0
+        for <linux-phy@lists.infradead.org>; Fri, 17 Oct 2025 18:33:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760751230; x=1761356030;
+        d=1e100.net; s=20230601; t=1760751232; x=1761356032;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=LnqwEheiYw4eMqGgagIbYYTEmFr59FG4+mnaf+XhjEI=;
-        b=AUoH9Orq1pnl36kilNOgut+AHlCwa38c26G7ENqlI3HIZT+m/aZhukt7ZY/cQM1RHc
-         gC0D+k5x4jfCJRHY0hlr2PCXJAIilXGzYmBcnRFnwT8NY22Of8PZAn7M94mSXhEIvobe
-         EAHEbaaFWsjtVcTF099yMhvQNaNTI88sOQAduAgpv2qN2ZztOlKbmnTdQVhmrlGjrVTx
-         qch7chLlfCwIrJC0eJiAXW3Y8nSswglroWD1sKhVsYeAa6u/b0t3+HFanZffnEAYwDa2
-         H5MROV0qdnRA7FzNcRIN26vGkBo5GSMFNcW3fHx5nD8bIWJvtRBofMm3NL8dwVE7z+K8
-         VQEQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUyumaFpDUJfDoQbv8AMUJpj+5Bl+vXb5bjLt0wvHDFSdm9YbCE1XE/3aw+G9EN8SBjMyAtKaowSU8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyi+d5yKnNkWgGAP1RD1UvGvnMVHLWV+4/if4SHZ7FbGUQOW9PA
-	iM0QBL9E1VlZR2Fo2FCPAYFVLe6anYHgRC0PH3ZnUNsO7+uebTeZUXoSYJuhfCRS4NXrpacLKsS
-	vAtHVeoJkJQWvHfa+w8G3ApN76cHmrhqZRntIv6vNdq2bDSpPvch8JQE/orKBEuROMyrWVLL6kf
-	V/bs7pig==
-X-Gm-Gg: ASbGnctdkD46b7LjO38O9dH0NNRt5vCrtsVJVRJ6CHfRNbxXizZt6xIqFaM4oQLpRWE
-	yUB0zaNLXCmQ99VtyT6iUJuTpejUJ4x1f4sJf4GgsFEtNrKHftzS+q/56Qfdh1pk++JDCrC+9c+
-	+yLHG6ml2oq9f1PkoD+/Ft3bxJGVTJywpCc/dYUUrxyRLT4enhvobc9Ff08iKS+GWrGEOZc5lfG
-	uqxdFYFRcOpzJZdIUMAbzPvMZkRg0LP/q5vaqDmakt4ifpibisKfXrFIB7RveZFqW/dOmH0Kp2K
-	Qkk9cGprK0t+xSbcTMf6ERk8+OdNFVYeUJLtu/86kci7sbCSOLSRC7gnPxeP2xovtaJzCRfOHRE
-	8m8BkWZYI7nIE1rKrX42OMZcVTq+EXF8I5sgO0ykE/jXfag==
-X-Received: by 2002:a17:902:ce12:b0:26b:da03:60db with SMTP id d9443c01a7336-290c9ca6b1cmr72784765ad.13.1760751230576;
-        Fri, 17 Oct 2025 18:33:50 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEyqTnRrVLfri2rPa2KLlfbixfUhrUK3J0pAbGviBCAqZVoD1KHQxtnhlTVe79JwMAh+DNsIQ==
-X-Received: by 2002:a17:902:ce12:b0:26b:da03:60db with SMTP id d9443c01a7336-290c9ca6b1cmr72784485ad.13.1760751230159;
-        Fri, 17 Oct 2025 18:33:50 -0700 (PDT)
+        bh=36rRRJsb8die6TTtLLHxpI3oG8UeacOGLRFgDPbnS9E=;
+        b=YiSli1XFfOfOQuq6kagd3dwUDJi2/qUjWpwHwItCwf3s1EgxAYmlzix8jstLRa0Bcd
+         jM5GfpKoUV1rthOgwxvBvL1nU3jqF/mxASNcehYDB+hGOaF3j1em9YhnSAqw7ous/h4b
+         Dp2Gnmj1sIl0ifgAhVYoap4C+22NFc1DYxvJy1SYYuXw+okqLLJ1SnKx5Y3IoA/U9fKz
+         HOYYj2Sg9/NeGggVjp1Dyoy0afyGPbOqwp2fJqfGomCzf/gJdJZFIx/erRocktSLbTXL
+         ZOUFmySvlFfX3Xq2nHG9rNsQAlvZybelmVCxtKnHtFqsOGR3NuzoYPVH7oiuCW2UGrzU
+         tUjg==
+X-Forwarded-Encrypted: i=1; AJvYcCXCIL/n6Lq6V47+KoDng3Rmkb831l+2pvhSCxcPtZsQHYbNgQus+bj2cgvraCuWIcLaoGm5TAOmHe4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YykCRG5ZlGnBvTR4SVEGkRzO/JSGAWvacatDePfiQCUH265GwXK
+	/pPPtLRpwhWoini7E6hUD/6j1ZfPOhNOMmy5Ic65XSxThixAEePD+DGLiKyUw+RpS2xsG+qipIr
+	ZYHcMzg013oB/g1ukNlLxsP+EW5WEmFApscFDKetWRU9LfLWMRyD7s6x/yBKCdsHJKUUlDy1PGJ
+	+EvNLPlw==
+X-Gm-Gg: ASbGncsDmBlcijVyhjzGIbX7Ix34xD1Bt2gydxKHFp3coYe+ZcGa1/DD5NT1Vf+6ZCR
+	h2bKoGVoisUGh3FVW7cr2V1RRZi5ji0mi8/IgD3nLWuZRBqC+JbQ44Sox9003b+ps1TckUxoYzG
+	LWB1FyNTDRWkbodMZnTfz3XgC9hl51xskkXs0lwH8mOEMXGuvzt6Wza22dTPAgo1E1jeOEv/sAr
+	nFBkcB/pG/SBDLxhdN0faWX9PzN+kmOT97k/qiPY22OWOpdTUtq0kSfxxWhN/12CcjMkdIllO1K
+	O8M9XsOL3tUL58Mf/AziKMNrlGHKTVuD/syWpxnS8sRgHUlsDcqwdAHUf59DjVfv+rAMMc3WKoC
+	YGeM9p+BVfV2w3IsjKnBRGiFd0JJqwWdbTEHIQOZBEkj4iQ==
+X-Received: by 2002:a17:90b:2686:b0:32e:e18a:3691 with SMTP id 98e67ed59e1d1-33bcf919f1fmr7485202a91.35.1760751232064;
+        Fri, 17 Oct 2025 18:33:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH2fgPD60Q0LounxiHKhoACGn2+QP/TkZujlOtJ/Rvipc7SJrKdnnGI+eNz+ntqIEijuewJXQ==
+X-Received: by 2002:a17:90b:2686:b0:32e:e18a:3691 with SMTP id 98e67ed59e1d1-33bcf919f1fmr7485161a91.35.1760751231575;
+        Fri, 17 Oct 2025 18:33:51 -0700 (PDT)
 Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33d5ddf16bcsm791695a91.4.2025.10.17.18.33.47
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33d5ddf16bcsm791695a91.4.2025.10.17.18.33.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Oct 2025 18:33:48 -0700 (PDT)
+        Fri, 17 Oct 2025 18:33:51 -0700 (PDT)
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Date: Fri, 17 Oct 2025 18:33:41 -0700
-Subject: [PATCH v5 4/6] phy: qcom-qmp: pcs: Add v8.50 register offsets
+Date: Fri, 17 Oct 2025 18:33:42 -0700
+Subject: [PATCH v5 5/6] phy: qcom: qmp-pcie: Add support for Glymur PCIe
+ Gen5x4 PHY
 MIME-Version: 1.0
-Message-Id: <20251017-glymur_pcie-v5-4-82d0c4bd402b@oss.qualcomm.com>
+Message-Id: <20251017-glymur_pcie-v5-5-82d0c4bd402b@oss.qualcomm.com>
 References: <20251017-glymur_pcie-v5-0-82d0c4bd402b@oss.qualcomm.com>
 In-Reply-To: <20251017-glymur_pcie-v5-0-82d0c4bd402b@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -101,27 +102,27 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Wenbin Yao <wenbin.yao@oss.qualcomm.com>,
         Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1760751221; l=1673;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1760751221; l=2929;
  i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
- bh=229Z+uA9EBUjxLvNJs5f/sN8K/iZsIa19KeM+KZknsc=;
- b=FMk3XJnpt5L5oYFyTSeIgwj4netRzGwWjSHT7VYRPORe2EsVKTIv45z1fdtp+YHxJZXiYEfIt
- o7Izq7Q8MQVA3O4tO25fm5D025He4SOrT2R0UiSf7mQ4ss04x+4OsSF
+ bh=3I4+Hh02UK/6hCXFAJiGGjbIJsRvaSQpVywV9Q7zV1c=;
+ b=dKOgcVx4w6ztqfdIQRHnQOd2o6aFzRsanH60UTNwCy92Yge+jRnAAJ0SEKuR8G3sBjmBVOMKr
+ rZ9zpNrUYtpD1fRGewkb2hmXQyRE7yq4vYg0tLfkiQp72LU7mZfM/u3
 X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
  pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
-X-Proofpoint-GUID: oxsB2JjpZCZDtv2iJdXLUpy02CHOVQ2R
-X-Authority-Analysis: v=2.4 cv=e5MLiKp/ c=1 sm=1 tr=0 ts=68f2ee80 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-GUID: JQcS2tpwPiclR56H3S062YUEj9uGZYou
+X-Authority-Analysis: v=2.4 cv=e5MLiKp/ c=1 sm=1 tr=0 ts=68f2ee81 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=MyfKwbsdfMS_-thd9JUA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE0MDEzNCBTYWx0ZWRfX3HKCK/CoDeDT
- UH1xNIodruHaJAGrGHF5N5FA6ZWPmUZaTNLEIdNCpzWnuKXhrFLZ2XOkcSLMXL1puqisSKy6K1O
- q/uaoW42PaAcNYhQDiouihSO0S8lwS4yPFRMDSllUMR5wcr9EJwHtGQejP8KAYsyhc4gcv5ATaI
- gWgxzjmziyBI1SweOYjQSrxipgzo0VdaO8j4uz1Vdgkx8O2EPAIlX4/FBZMc5t5KLimlgAD8cN6
- YGqsg3qMz2FsYzQISjRfsZgtqNSW9duHCgPYtqAM/LC19Q3yRACcJ/8UjrvZCIwGR0x8ZRCtaQf
- pFnRb9gJiO3m4kvd2xpWljwmlKZDlOtnqeiMBFR97DHrHosTEetGx9RYBxhfVm3fhxw5Mu0qiC8
- OudGktwW52PqX7lDfxCMv/wZDng3zA==
-X-Proofpoint-ORIG-GUID: oxsB2JjpZCZDtv2iJdXLUpy02CHOVQ2R
+ a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=cXB1dxBGfnZZ65A63A0A:9
+ a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE0MDEzNCBTYWx0ZWRfX5CIGUR2BzltV
+ 5DWgkt15A2Y9wj5Q5qi73Ghqwq/keieucEyBjs+DBawH/YhPaksBEtO/7s9NXolZlyC7/pmU6oU
+ 6cxubMZ1mg4SdLr9vBblKndHT6WvWdVAFpDiyvu24LyJZu9v7KyzxWcnQHbXwiXxDEQXMaVKcPe
+ bLABpNvfUpFAyFaViA+zzFNXvw/Xa+lzI/3wP8MiDlzeifIGIbH9jvL/cg81Ocfz8SD+KeT4+Qk
+ sq6gQAvhgiuKhSbK6znDxfKL03UGDl+i53Qne3QZkSUhY6mvTEnLyIpur5T4UMXAvCxzpYxHAXJ
+ iPk00iXNxI9sED3AywTIhSlxDrtIqt93Dfa1LyTex+0D4w1oXj09NmsdPOYAGNcY2siHEfshATL
+ +rQhLF0t5R29/TLd4znOR7uN7CInLg==
+X-Proofpoint-ORIG-GUID: JQcS2tpwPiclR56H3S062YUEj9uGZYou
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-18_01,2025-10-13_01,2025-03-28_01
@@ -132,8 +133,8 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
  definitions=main-2510140134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251017_183353_116002_A20317BD 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20251017_183354_690621_D2E8BD21 
+X-CRM114-Status: GOOD (  13.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,50 +153,88 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
 
-The new Glymur SoC bumps up the HW version of QMP phy to v8.50 for PCIE
-g5x4. Add the new PCS offsets in a dedicated header file.
+Add support for Gen5 x4 PCIe QMP PHY found on Glymur platform.
 
 Signed-off-by: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
 Signed-off-by: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Acked-by: Manivannan Sadhasivam <mani@kernel.org>
 Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8_50.h | 13 +++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h           |  2 ++
- 2 files changed, 15 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8_50.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8_50.h
-new file mode 100644
-index 0000000000000000000000000000000000000000..325c127e8eb7ad842018dce51d09a6ee54ed86ff
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8_50.h
-@@ -0,0 +1,13 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_V8_50_H_
-+#define QCOM_PHY_QMP_PCS_V8_50_H_
-+
-+#define QPHY_V8_50_PCS_STATUS1			0x010
-+#define QPHY_V8_50_PCS_START_CONTROL			0x05c
-+#define QPHY_V8_50_PCS_POWER_DOWN_CONTROL			0x64
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index f58c82b2dd23e1bda616d67ab7993794b997063b..da2a7ad2cdccef1308a2b7aa71a2e5cf8bd7c1d7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -58,6 +58,8 @@
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 62b1c845b6275d924fa501ac64e69db5f58844aa..86b1b7e2da86a8675e3e48e90b782afb21cafd77 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -100,6 +100,12 @@ static const unsigned int pciephy_v7_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V7_PCS_POWER_DOWN_CONTROL,
+ };
  
- #include "phy-qcom-qmp-pcs-v8.h"
- 
-+#include "phy-qcom-qmp-pcs-v8_50.h"
++static const unsigned int pciephy_v8_50_regs_layout[QPHY_LAYOUT_SIZE] = {
++	[QPHY_START_CTRL]		= QPHY_V8_50_PCS_START_CONTROL,
++	[QPHY_PCS_STATUS]		= QPHY_V8_50_PCS_STATUS1,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V8_50_PCS_POWER_DOWN_CONTROL,
++};
 +
- /* QPHY_SW_RESET bit */
- #define SW_RESET				BIT(0)
- /* QPHY_POWER_DOWN_CONTROL */
+ static const struct qmp_phy_init_tbl msm8998_pcie_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_CLK_SELECT, 0x30),
+@@ -3072,6 +3078,7 @@ struct qmp_pcie_offsets {
+ 	u16 rx2;
+ 	u16 txz;
+ 	u16 rxz;
++	u16 txrxz;
+ 	u16 ln_shrd;
+ };
+ 
+@@ -3356,6 +3363,12 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_30 = {
+ 	.ln_shrd	= 0x8000,
+ };
+ 
++static const struct qmp_pcie_offsets qmp_pcie_offsets_v8_50 = {
++	.serdes     = 0x8000,
++	.pcs        = 0x9000,
++	.txrxz      = 0xd000,
++};
++
+ static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
+ 	.lanes			= 1,
+ 
+@@ -4412,6 +4425,22 @@ static const struct qmp_phy_cfg qmp_v6_gen4x4_pciephy_cfg = {
+ 	.phy_status             = PHYSTATUS_4_20,
+ };
+ 
++static const struct qmp_phy_cfg glymur_qmp_gen5x4_pciephy_cfg = {
++	.lanes = 4,
++
++	.offsets		= &qmp_pcie_offsets_v8_50,
++
++	.reset_list		= sdm845_pciephy_reset_l,
++	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++
++	.regs			= pciephy_v8_50_regs_layout,
++
++	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status		= PHYSTATUS_4_20,
++};
++
+ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -5163,6 +5192,9 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+ 
+ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	{
++		.compatible = "qcom,glymur-qmp-gen5x4-pcie-phy",
++		.data = &glymur_qmp_gen5x4_pciephy_cfg,
++	}, {
+ 		.compatible = "qcom,ipq6018-qmp-pcie-phy",
+ 		.data = &ipq6018_pciephy_cfg,
+ 	}, {
 
 -- 
 2.34.1
