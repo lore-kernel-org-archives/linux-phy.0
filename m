@@ -4,96 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F3CACCD193
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Oct 2025 08:13:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BD9ACCD193
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Oct 2025 15:39:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+tOprN/IIq65rb7+c4PevkeZ/VFtH0e4J7PSwmhiTEQ=; b=SvA4Smk8pRUPBw
-	1sVpZskW5LiBvqpdA51Dj6yaokPGud5Um4FRU271rQlSJloOK6o0WGQbN5iHjk8PjwmIFKeSaiMx4
-	QoKEXlnJGrPfsvh4FEPVG8OpHMt40I/VKCm44EIWNBgbtFZcil0fWjE92wIbfEXWYRBBYhH0d+YZd
-	P5gopWaBkOk78aA5ttQS7DNl41djW96WbWAT+ckC2UxHGCadvvKLIYm5h3REeDLHMllrXz1a40NTa
-	UjeYALy3uH+uot0TtuReAYFlBlkbFxsCaoBaSi2ZMlOhP8H6JlzqJAETUx8Y5WMPdW7D7KEvOpLE1
-	cg6oZCgT31bZZk8K5R5w==;
+	List-Owner; bh=sF85J3vMNrKyhq0KgoDKyWj9N4L4+gZwFNUZf4Xl6no=; b=xnwGh6/5m+eQJz
+	kkUCj283t7bqV1YFXJ8S0xkUXy5Zvzl1hWRoqTjLQxkyPRy3X3BAJyF4GJMbgZ4vpbJAE8zAJfxHr
+	IA5jf15UwknmqCs+3nck2p6Ef1C1JYsfdpC16G/EEIWXHlVlqWQOXMCv8zMhJQR0BRLbvPAJL8AKa
+	kzOUNS9fZeL77LTZULNV2eaiTN2MS2KwVDwpJNhDPJBsHqFpW6TOFg5DtCNHBMQvWI7+UwIPFSnGV
+	HcbviBIr5KbKYbJbPto+37W1+9H2YIDnBFO9TuFbDx+NfaUVknMfgSckAwMWyo2TLqt0q36sKmBBj
+	Vux/QJZ8LnM5uZq/7pjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vA24a-00000009fg1-2fiG;
-	Sat, 18 Oct 2025 08:13:56 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1vA927-0000000A5yf-05Ay;
+	Sat, 18 Oct 2025 15:39:51 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vA24X-00000009ffL-38CO
+	id 1vA925-0000000A5yY-2ltA
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Oct 2025 08:13:54 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-b3b3a6f4dd4so494294666b.0
-        for <linux-phy@lists.infradead.org>; Sat, 18 Oct 2025 01:13:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1760775232; x=1761380032; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=6BWm2fVryTSX7TLsnuCucMdyctrF8pcZJHdFO1Qboag=;
-        b=hLuEzg1aGV3FWKdO6mPN++xjgWT47j+j8wTAEsPejMhubQcj26eASapJKPmgVauHy8
-         xnJUJAuJF3YWFvxL0iFQKp3VLJmR3bADIEW4AO5smEbQWH4we2kC2YRQgTNaa/y7XXsW
-         DowowoFIrRE3xwccSmRAttnudUHRgW0d1EFLq6hkQCliZqL4gbkDhZBUQVu7OgEz3rXb
-         VM9+uSRX202OlYsDGeYxhofvqUBjsT6ho+XAd+e2OXtg2zG25XsZk3gcYDH582C9jA7X
-         LW8X1hh/NrQy03gaDRqFkYHidEUs3bvrnmMVhc0nhM04d9X40sP1i0+s2Sn1ZGkD2p+a
-         uBaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760775232; x=1761380032;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=6BWm2fVryTSX7TLsnuCucMdyctrF8pcZJHdFO1Qboag=;
-        b=rXTFWmmO/9hTaPmxpBrmlJ4KS6QnvLtdy1/s8irnnlkzC52pmbc5Sol1ClAV9b3Kgz
-         Lvd4Zwtqj27Z9qJt8jNHeTymPls9M13ToSXXzetrXKCYv0azISJAYurzwV0McckAX7IZ
-         r0nEeVCLNj5+INSOteWK9iCP6eTLCLvmmwE7UeTyeGf+Vl4/N66gzFCQrNRN26/7khg5
-         M7+1zGNupc7Yyhutydt63if56pyP5PHPrH36rVr18w/5ZgVeZkxCoWgbsLlkoR0Mx20x
-         i9JiLUExER25l74EdEJ5IdN/z8taesuCk3UZ8iUYjOk8JgrnI+goQTuxqD6t+IszL2OS
-         0B1w==
-X-Forwarded-Encrypted: i=1; AJvYcCWyFqO9W/MP2tVJdaw9rkRchFSyCDrOPm5IfaLMcmpD9OU/N2CooH9dHurVq6e3ZjzbvCPtMLpXEHI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzEk1A/8Cd24OrFsrvkoLl9xrfX1OTsCVUmxZ8I6q5JCIlARbgN
-	pTYW2q7DaVk4v1PKhuHlEKCJ6KMylgdZZkyQdrPN16eBDc/j0bJIHuj2
-X-Gm-Gg: ASbGncuJ+DQ1zNUMALbZtcmZdb+8oXLskt4THq8shFOgAyj+qTtJy9ZaI7m/p5oENRZ
-	7y5a0NI1El6aYgXhZYFstIFcmqN1UWrcAULexOKxms38bmfqfVJ8GwjeXR1/xOk4MITFhjLuZnF
-	4bUIzMrrSNY0sZff4y/Rm1q0Un0jZk+vZ71EDcyDVKJhoPqrmNENaUniLjbNc8YzWVqSecBG1u2
-	SVTg2/m9zgMvPJVyePWwatyMONMWxEAeEmd4VblWnjJiA/lZ1XtE+9HL7oRurw68Y9AT8+ILh9C
-	tIXLv7lAVFxl/r+pUH7z8rUzGQcCUSI2jWAI//qispyuLtZV4AI1Ohi/d/romjkaIOYUvkRQNAs
-	/S+RI/KBAs0/wc2hOfjeb8iQcW4baNETsyD5zyBSXb9dYv9gxCmpYMBJyPOltALY18mYs+HQTpN
-	yHzZB+9l8PmdMFmsbpuzGskI+QTnBgYGdAZzeUBvi54IHnhNJsO2zOJw==
-X-Google-Smtp-Source: AGHT+IGNDixJtPAW8Oef1zChTYomkbozhZ1mWKG9sYnl651V3ZzOLY2THmU+caOxpLoTq8ZVNQRwBQ==
-X-Received: by 2002:a17:906:f58b:b0:b49:2021:793f with SMTP id a640c23a62f3a-b64764e4b0amr723616466b.53.1760775231364;
-        Sat, 18 Oct 2025 01:13:51 -0700 (PDT)
-Received: from [192.168.1.103] (79-100-18-255.ip.btc-net.bg. [79.100.18.255])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b65eb035b81sm182545366b.51.2025.10.18.01.13.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 18 Oct 2025 01:13:50 -0700 (PDT)
-Message-ID: <37daba64-5233-4573-95de-38612c2358f2@gmail.com>
-Date: Sat, 18 Oct 2025 11:13:49 +0300
+	Sat, 18 Oct 2025 15:39:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1A7B36112C;
+	Sat, 18 Oct 2025 15:39:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 781D4C116B1;
+	Sat, 18 Oct 2025 15:39:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1760801988;
+	bh=uPs/OpEf+XULCClITk1PlNX/3UzNgoknxybf2RIh+N0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=p885U9JyuAkB8hB1yBq/H3SQ5c888kfz+QnPugX0oDzFBWUQFEK3wqCQN+abJ28LX
+	 d3Pyolqqjvd00QvVHsfEtGvgAmO6qPMgRHvdE8ObjybIA0pWcy56vS+Qi3Cq+CLVXB
+	 jWFs/owiDqnbJoONpNo8AZCCWehWY5evFdE02s/eY2dbxNm4ZuVKPYIANcMzhNogfB
+	 B1kmNbO1vly2AI2TidbMsyiglMxI9YPfW2j10we5utTH8/094UqzrkffKTIwpm1vyI
+	 7hqooVSBOJ4dUuVHs4r7km87Q1/NCoIwxbqzHOckzUML9qz3YVRk7NjSkdeLcDV6hW
+	 5KnyxGZaxm4fg==
+Message-ID: <78445973-6a5e-4dd8-a661-4e784af49b4e@kernel.org>
+Date: Sat, 18 Oct 2025 17:39:43 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: Add Google Tensor SoC USB PHY driver
-To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Peter Griffin <peter.griffin@linaro.org>,
- =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
- Tudor Ambarus <tudor.ambarus@linaro.org>
-Cc: Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>,
- Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-References: <20251017235159.2417576-1-royluo@google.com>
- <20251017235159.2417576-3-royluo@google.com>
+Subject: Re: [PATCH v5 02/10] dt-bindings: phy: qcom,qmp-usb: Add Glymur USB
+ UNI PHY compatible
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, krzk+dt@kernel.org,
+ conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
+ dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
+ gregkh@linuxfoundation.org, robh@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
+ <20251006222002.2182777-3-wesley.cheng@oss.qualcomm.com>
+ <f5e4ae02-b8fa-4406-b2e0-3602b07b7e23@kernel.org>
+ <00408896-2e25-2dd1-6e6e-2195317ee7fb@oss.qualcomm.com>
+ <14bc2a85-0f1d-3834-9b9c-32654348603a@oss.qualcomm.com>
+ <387c707e-613d-433b-a76d-16ef10dabc59@kernel.org>
+ <2a70f878-269c-1b40-2e8c-77b5851de9a1@oss.qualcomm.com>
+ <99ab26d3-eb44-401d-8a7c-1d9efd2a1a10@kernel.org>
+ <b2b68430-5127-5eca-6bd8-4af31eb9fbed@oss.qualcomm.com>
+ <bb299df0-58b9-4a6e-9625-305785d38eb4@kernel.org>
+ <da34ecf0-c2eb-2afa-bd4d-9dc30fbe5cf5@oss.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-In-Reply-To: <20251017235159.2417576-3-royluo@google.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251018_011353_850060_DF8080F2 
-X-CRM114-Status: GOOD (  29.88  )
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <da34ecf0-c2eb-2afa-bd4d-9dc30fbe5cf5@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,236 +128,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/18/25 02:51, Roy Luo wrote:
-> Support the USB PHY found on Google Tensor G5. This particular USB PHY
-> supports both high-speed and super-speed operations, and is integrated
-> with the SNPS DWC3 controller that's also on the SoC.
-> This initial patch specifically adds functionality for high-speed.
->
-> Co-developed-by: Joy Chakraborty <joychakr@google.com>
-> Signed-off-by: Joy Chakraborty <joychakr@google.com>
-> Co-developed-by: Naveen Kumar <mnkumar@google.com>
-> Signed-off-by: Naveen Kumar <mnkumar@google.com>
-> Signed-off-by: Roy Luo <royluo@google.com>
-> ---
->  drivers/phy/Kconfig          |  13 ++
->  drivers/phy/Makefile         |   1 +
->  drivers/phy/phy-google-usb.c | 271 +++++++++++++++++++++++++++++++++++
->  3 files changed, 285 insertions(+)
->  create mode 100644 drivers/phy/phy-google-usb.c
->
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 58c911e1b2d2..fe32d1356002 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -101,6 +101,19 @@ config PHY_NXP_PTN3222
->  	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
->  	  Speed and High Speed.
->  
-> +config PHY_GOOGLE_USB
-> +	tristate "Google Tensor SoC USB PHY driver"
-> +	depends on HAS_IOMEM
-> +	depends on OF
-> +	depends on TYPEC
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable support for the USB PHY on Google Tensor SoCs, starting with
-> +	  the G5 generation. This driver provides the PHY interfaces to
-> +	  interact with the SNPS eUSB2 and USB 3.2/DisplayPort Combo PHY, both
-> +	  of which are integrated with the DWC3 USB controller.
+On 18/10/2025 02:20, Wesley Cheng wrote:
+> 
+> 
+> On 10/16/2025 9:41 PM, Krzysztof Kozlowski wrote:
+>> On 17/10/2025 02:15, Wesley Cheng wrote:
+>>>>> Technically its all handling the same clock branch (CXO), we have the
+>>>>> TCSR clkref register that allows us to gate the CXO to the USB PHY, as
+>>>>
+>>>>
+>>>> Ah, exactly. Then clkref is not a clock. You need rather proper clock
+>>>> hierarchy.
+>>>>
+>>>>> CXO is shared across several HW blocks, so it allows us to properly
+>>>>> powerdown the PHY even though other clients are voting for CXO on.  Then
+>>>>> we obviously have to remove our vote to the overall CXO, so that it can
+>>>>> potentially be shutdown.
+>>>>>
+>>>>> Maybe we can rename it to "clkref" for the CXO handle and
+>>>>> "clkref_switch" for the TCSRCC handle?
+>>>>
+>>>> Naming is better, but it is still not correct. This is not independent
+>>>> clock signal. It is the same clock.
+>>>>
+>>>
+>>> Hmmm... I guess that's why I kept the same clkref tag, to denote that
+>>> its the same clock, but one is a switch/gate for it.  Would you happen
+>>> to have any suggestions you might have that makes it clearer for
+>>> everyone to understand?
+>> To me it looks like:
+>>
+>> |-----|            |-----------|           |------------------|
+>> |clock|------------|TCSRCC gate|-----------|clkref to this dev|
+>> |-----|            |-----------|           |------------------|
+>>
+>> So you need proper clock controller for TCSR (TCSR Clock Controller, in
+>> short TCSRCC, what a surprise!) which will take input, add gate and
+>> produce clock for this device.
+>>
+>> Nothing non-standard, all Qualcomm SoCs have it, every other platform
+>> has it in some way.
+>>
+> 
+> Hi Krzystof,
+> 
+> Yes, the design is exactly how you outlined it above.  How about clkref 
 
-So it's more like a DRD controller, since it encapsulates multiple phys?
+Hm? There is no connection between the clock and the device. Do you see
+any line going there?
 
-> +	  This driver currently supports USB high-speed.
-> +
->  source "drivers/phy/allwinner/Kconfig"
->  source "drivers/phy/amlogic/Kconfig"
->  source "drivers/phy/broadcom/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index c670a8dac468..1d7a1331bd19 100644
-...
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/mutex.h>
-> +#include <linux/cleanup.h>
-> +#include <linux/usb/typec_mux.h>
-> +
-> +#define USBCS_USB2PHY_CFG19_OFFSET 0x0
-> +#define USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV GENMASK(19, 8)
+> for the clock and tcsrcc_switch for the clkref switch?  That removes any 
+> notation that the gate/switch is an actual clock...
 
-I'd suggest implementing the eUSB support in the existing snps-eusb2
-driver for the sake of clarity. That way, you can pass it as a phandle
-to this driver and probe it when drd is probing.
+You really did not get the point of this entire discussion.
 
-> +
-> +#define USBCS_USB2PHY_CFG21_OFFSET 0x8
-> +#define USBCS_USB2PHY_CFG21_PHY_ENABLE BIT(12)
-> +#define USBCS_USB2PHY_CFG21_REF_FREQ_SEL GENMASK(15, 13)
-> +#define USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL BIT(19)
-> +
-> +#define USBCS_PHY_CFG1_OFFSET 0x28
-> +#define USBCS_PHY_CFG1_SYS_VBUSVALID BIT(17)
-> +
-> +enum google_usb_phy_id {
-> +	GOOGLE_USB2_PHY,
-> +	GOOGLE_USB_PHY_NUM,
-> +};
-> +
-> +struct google_usb_phy_instance {
-> +	int index;
-> +	struct phy *phy;
-> +	int num_clks;
-> +	struct clk_bulk_data *clks;
-> +	struct reset_control *rsts;
-> +};
-> +
-> +struct google_usb_phy {
-> +	struct device *dev;
-> +	void __iomem *u2phy_cfg_base;
-> +	void __iomem *dp_top_base;
-> +	struct google_usb_phy_instance insts[GOOGLE_USB_PHY_NUM];
-> +	/* serialize phy access */
-> +	struct mutex phy_mutex;
-> +	struct typec_switch_dev *sw;
-> +	enum typec_orientation orientation;
-> +};
-> +
-> +static inline struct google_usb_phy *to_google_usb_phy(struct google_usb_phy_instance *inst)
-> +{
-> +	return container_of(inst, struct google_usb_phy, insts[inst->index]);
-> +}
-> +
-> +static void set_vbus_valid(struct google_usb_phy *gphy)
-> +{
-> +	u32 reg;
-> +
-> +	if (gphy->orientation == TYPEC_ORIENTATION_NONE) {
-> +		reg = readl(gphy->dp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +		reg &= ~USBCS_PHY_CFG1_SYS_VBUSVALID;
-> +		writel(reg, gphy->dp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +	} else {
-> +		reg = readl(gphy->dp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +		reg |= USBCS_PHY_CFG1_SYS_VBUSVALID;
-> +		writel(reg, gphy->dp_top_base + USBCS_PHY_CFG1_OFFSET);
-> +	}
-> +}
-> +
-> +static int google_usb_set_orientation(struct typec_switch_dev *sw,
-> +				      enum typec_orientation orientation)
-> +{
-> +	struct google_usb_phy *gphy = typec_switch_get_drvdata(sw);
-> +
-> +	dev_dbg(gphy->dev, "set orientation %d\n", orientation);
-> +
-> +	gphy->orientation = orientation;
-> +
-> +	if (pm_runtime_suspended(gphy->dev))
-> +		return 0;
-> +
-> +	guard(mutex)(&gphy->phy_mutex);
-> +
-> +	set_vbus_valid(gphy);
-> +
-> +	return 0;
-> +}
-> +
-> +static int google_usb2_phy_init(struct phy *_phy)
-> +{
-> +	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-> +	struct google_usb_phy *gphy = to_google_usb_phy(inst);
-> +	u32 reg;
-> +	int ret = 0;
-> +
-> +	dev_dbg(gphy->dev, "initializing usb2 phy\n");
-> +
-> +	guard(mutex)(&gphy->phy_mutex);
-> +
-> +	reg = readl(gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-> +	reg &= ~USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL;
-> +	reg &= ~USBCS_USB2PHY_CFG21_REF_FREQ_SEL;
-> +	reg |= FIELD_PREP(USBCS_USB2PHY_CFG21_REF_FREQ_SEL, 0);
-> +	writel(reg, gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-> +
-> +	reg = readl(gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG19_OFFSET);
-> +	reg &= ~USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV;
-> +	reg |= FIELD_PREP(USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV, 368);
-
-Yeah, it's definitely the eUSB IP, but wired differently.
-
-phy-snps-eusb2.c:
-#define EXYNOS_USB_PHY_CFG_PLLCFG0 (0x8)
-#define PHY_CFG_PLL_FB_DIV_19_8_MASK GENMASK(19, 8)
-#define DIV_19_8_19_2_MHZ_VAL (0x170)
-
-> +	writel(reg, gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG19_OFFSET);
-> +
-> +	set_vbus_valid(gphy);
-> +
-> +	ret = clk_bulk_prepare_enable(inst->num_clks, inst->clks);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = reset_control_deassert(inst->rsts);
-> +	if (ret) {
-> +		clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-> +		return ret;
-> +	}
-> +
-> +	reg = readl(gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-> +	reg |= USBCS_USB2PHY_CFG21_PHY_ENABLE;
-> +	writel(reg, gphy->u2phy_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-> +
-> +	return ret;
-> +}
-> +
-...
-> +
-> +	gphy->sw = typec_switch_register(dev, &sw_desc);
-> +	if (IS_ERR(gphy->sw))
-> +		return dev_err_probe(dev, PTR_ERR(gphy->sw),
-> +				     "failed to register typec switch\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static void google_usb_phy_remove(struct platform_device *pdev)
-> +{
-> +	struct google_usb_phy *gphy = dev_get_drvdata(&pdev->dev);
-> +
-> +	typec_switch_unregister(gphy->sw);
-> +	pm_runtime_disable(&pdev->dev);
-> +}
-> +
-> +static const struct of_device_id google_usb_phy_of_match[] = {
-> +	{
-> +		.compatible = "google,gs5-usb-phy",
-
-Did the naming scheme also change from gs{N}01 to gsN?
-
-> +	},
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, google_usb_phy_of_match);
-> +
-> +static struct platform_driver google_usb_phy = {
-> +	.probe	= google_usb_phy_probe,
-> +	.remove = google_usb_phy_remove,
-> +	.driver = {
-> +		.name		= "google-usb-phy",
-> +		.of_match_table	= google_usb_phy_of_match,
-> +	}
-> +};
-> +
-> +module_platform_driver(google_usb_phy);
-> +MODULE_LICENSE("GPL");
-> +MODULE_DESCRIPTION("Google USB phy driver");
-
-Great work!
 
 Best regards,
-Ivaylo
+Krzysztof
 
 -- 
 linux-phy mailing list
