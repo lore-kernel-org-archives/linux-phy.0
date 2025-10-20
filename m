@@ -4,122 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C36DCCD193
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Oct 2025 07:54:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7206CCD193
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Oct 2025 10:02:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8uW0JK8VGzzJhAAR1LBgctdP5h0QiH8ss06WJ2jA1Ks=; b=2DQKgBjS4TcUT6
-	bKmZndhbaRvIARG/topQtfLAZd5vyrEy2bNrNV0cKro3fwK2sR66mPenl/f2hxILT+Y/iiXOWv++S
-	ZWVoYeDbhGBijZtjHBPYoHDYJFgHGZSG5pAUo+BxQbvXMjKKGzNnhxCnI6zQ4P167OoQ9iCEHOLgH
-	Bb1bD/TzVUUq0iz/czL7mr2Z2EOhGwMawGWRlC9BOjLYhJ5T6T6NhVixUPdad4ANzlry/hvAUUug5
-	QBRmCAcXbAdqqdvwQsGniHOXZdAasbqdzDoNvx0CioKtM5CIenrjoPYBt7Z8HAnskX+9d6hm7IyCG
-	gEf6BLyQqdCv1dD/glUg==;
+	List-Owner; bh=lVT/IQRTR4SJD5RzUPXRrg/fC7tKtx85BnhYCJmER+o=; b=bfc/R6H9EVz7e2
+	kXCN5aCnNTrJ7E0ff4Mwvhkmwc1ul5BEz15Ja2cIp2sdujVXQky/QnvhwOlnqg6HXjVtiRY4dTjzN
+	ma6jRp9WC60yaozgfnvArdi8+61kWz3hkOndWT9PPvxtAksk2uAVARaMSoD90eR3p0OIDeU352/zO
+	DSWwz7ycQRjPqQ7PTdwn86l0altHoSmSt9c/uNvxd0CH4OF16hhZngKMDWbMBzT9wLnXU1VjokqQX
+	8yTnC93ytpWfucYJp9aLDSaIkJZny+g6H4+JdMg8HSoMkjTp3v/ReiXjbEahpAyF0FSVizLS/+qdB
+	427BAjiLb/0wkL+r9GPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAkiS-0000000CH7a-2bSa;
-	Mon, 20 Oct 2025 07:54:04 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vAmib-0000000ChoQ-1yeu;
+	Mon, 20 Oct 2025 10:02:21 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAkiQ-0000000CH5u-0yFi
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Oct 2025 07:54:03 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59JNst0v007555
-	for <linux-phy@lists.infradead.org>; Mon, 20 Oct 2025 07:54:00 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LM8Wb4xKnXMWYUb3EVKiXBuMBJRUWQkyl4ilJog4k/4=; b=iyjpDBVcH7Je4rLp
-	cYkGTjynusYe4ujH/nbc88urUNJGZqocwL+V5VkVIkzwOMAqDlx676bhMLz3I2Zp
-	GUZgzqTEwU583drosSwQZfmc1Tt0LgXwc5g/z+dow2CZjpsWkHmphGmBLcp8cOp+
-	KgkmRGQYAyUbAD2ujideYQyyh7x3w4zJrub6jzBgg633MLNmda25muXmeEAO4mXE
-	ndid3/A6UzjNBr8QWigJxPjn8wKaWXJVPSTt3oAOKvG+E+W0uy2kBqG1W4YZEqf8
-	P0A/1XaL9UzABAkikKu4NqazPWiAtNxQz2deqkaearQUUy9gz5uPg5BqfAOhpac+
-	XKovmQ==
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49v0kfc96h-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 20 Oct 2025 07:54:00 +0000 (GMT)
-Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-890c743a001so113242685a.1
-        for <linux-phy@lists.infradead.org>; Mon, 20 Oct 2025 00:54:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1760946839; x=1761551639;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=LM8Wb4xKnXMWYUb3EVKiXBuMBJRUWQkyl4ilJog4k/4=;
-        b=vkVLu3nWXn9MSJCU3Py2Didpvx/OjCUKRgG8/R7VuVtX/bJaKIaFKPvdpXm+fzBBbd
-         1tdpgBTi7BC5FHf45egozfn4t+8hMtyvS/nbjZrZ5b1wLFhwohl8cYttUSwgVUVqrr60
-         qAPuw+nMPY0VAF5WiYiSPU7PyXFYt3Mcll+KzfSc71KhU5v8qhIjEB9spJRXJ1PnVVas
-         lxkgBvhPyQ8xonVXags5+mB356C8ifeo9N14E61gAYjMkhqE8N0DumH85WR9G5+t8KCL
-         AQibLnbmEwyR/0fniKS0Y9/wb9YPkQNY9trbuzdDotlRJkoi/99Kvnc1WG9NSERCmIRj
-         k7jQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVLusvr+F0SzZtRh3n0SNAWjZVjK21uFApXcj1C+gu35bC+DI4JD96rs+qv4OfLFLxVMzl9oFyIfWU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzakqR/YQn1tpzuVwdxqUvN2mUbuWrLJbqQkiOoYDov/z2mXpcS
-	IwQJBflVgdfkn70eCelNUYI0ZnjGHsDKac/ySGPsySSOQYcxf4JQGeO88B5H5t4fG06/mddDi5E
-	7MOzrM+6Pg8Xm54R8N70/p1Hy2/aBWoX9vvd6p4FwBlir/Y1xuiavKHaOd/cj2UGlonot
-X-Gm-Gg: ASbGnctf9AYIAaF7WWhTLloP2I8gKP2KXkA3VlZqae58Wh7fTHV+lEjAkISzSWTfBdY
-	L/XFcg/bQj/XbVNrdPJZak7URVDuukzs3gONKdHtAcxJETur41VkPO/IfiP9bt3iUEa8xyKGlfY
-	/nwoU6jS4qwSGlAuMiuVfPTgaHbRrtBMYxayVrj5Wp4KjZA9/zRiRCf+b7gN+duegKctOtjxjiz
-	9jGbn1YsIpZAZ0yc5v49mWeL5WMWfOHBT2R2VpgcgtE78RqcI4+Y0ofS573dpmix5C7QluweNMT
-	ZUDawwTWFMytkgb1JeQGEocQZGahrtA8jiQNj8LPO0jUIGiIhd+knhX46L0NFI4Qias6+CEqjd6
-	uOHkkspHUxyX6mdTVnIbrXz1WfWIn5EdfJWHpRJ26S1qNHwOf9ZsZAad0
-X-Received: by 2002:a05:620a:199d:b0:864:a09a:e860 with SMTP id af79cd13be357-890707f70e0mr918099685a.10.1760946839343;
-        Mon, 20 Oct 2025 00:53:59 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEMZp+OC5Adsa0c1sBHHpTL1fc8+Qf9FzzDHNItwHbY6gNDY4TIc/2bJJHggDLAKLYsjXguHw==
-X-Received: by 2002:a05:620a:199d:b0:864:a09a:e860 with SMTP id af79cd13be357-890707f70e0mr918098685a.10.1760946838910;
-        Mon, 20 Oct 2025 00:53:58 -0700 (PDT)
-Received: from [192.168.119.202] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b65e8393778sm708060266b.24.2025.10.20.00.53.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 20 Oct 2025 00:53:58 -0700 (PDT)
-Message-ID: <e51e8665-0245-4ea6-8c09-c73004a34a3d@oss.qualcomm.com>
-Date: Mon, 20 Oct 2025 09:53:56 +0200
+	id 1vAmia-0000000Chnl-1WOr;
+	Mon, 20 Oct 2025 10:02:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=NjxjvFyOg2tWh/C3nfIMlYEII+n9xlkCC1lcSDNijvs=; b=StwXwUw49X2L6/ib4+ipXcl8pl
+	gBETBpp4HhDXI5ytV3XGbisxI9wgplLdeqM2Uuhi4QGN7W4Ywh+Qwc7NrfpyPd2dgYRV7+tnMQvPy
+	zhOHGhTCMHIZExJRbtwBGBVPF/tMuULrL8oipRFWu4aH2sFis0RmD/oDi1xzTEjorD3efpE5kCzl6
+	1BfIeGP580f8f+zd2MMDFd1jp1sUKS0Uwd9R9ncMKR5waKUASm7mTkzBr7PL3VKz0TgeJoegEZ5FY
+	xKkP0JbNOa0HyVBPH86hw7K0jxUjnrA4GxeiWPAtB7dDeKhWzdOx++UZIMEGhA5JGLJ/4F1EU6Gxo
+	lG4+eQuA==;
+Received: from mgamail.intel.com ([198.175.65.19])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vAmiW-00000009hMp-1gOQ;
+	Mon, 20 Oct 2025 10:02:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1760954537; x=1792490537;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=7OgHgc7V9jCA/aH/wZmpPfoG6Zo6Xb08lXUbbydETp4=;
+  b=E6mcU9EvtsaQGGqOhJEusBBiyHTO73dRTlOZVdtoNK1kUzjdWVLCsDG7
+   ZUdCvjJuJvxRgcjXQ7nmZItJCXakJ7V8hhNkO9QVdM4PhN+xDmHLmLVYz
+   HYXuQZNp9JidMI2y9fOw5SwFQm+7KCgAaErdWQllqEjQxocrIHsldcovl
+   r6Phbx4izlfWY7+bplkzxfr9+j6RraiDrf9t/3/XlrWkOksR7B/WBhqgD
+   g6ic5JxvumQqWHARtpzsQXXjs8Gf/A0e2kFrsCfTxUqcv1nKnGjAjHAft
+   S0kQNikSD3gBNWPtqtjApoeyYAxp29TfPtrjUwllqhun1Syp4EOFmpKIf
+   g==;
+X-CSE-ConnectionGUID: S5c27wnUQ8KD3BuEs4fCMQ==
+X-CSE-MsgGUID: DQk9SL6BSTScfhGgm1roJQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11587"; a="62962755"
+X-IronPort-AV: E=Sophos;i="6.19,242,1754982000"; 
+   d="scan'208";a="62962755"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Oct 2025 03:02:10 -0700
+X-CSE-ConnectionGUID: Rbwng+eMQgabSBT8iqlHxg==
+X-CSE-MsgGUID: 5PEY46adTHK0yIfKFWIaWg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,242,1754982000"; 
+   d="scan'208";a="183308787"
+Received: from aschofie-mobl2.amr.corp.intel.com (HELO kuha.fi.intel.com) ([10.124.220.112])
+  by orviesa008.jf.intel.com with SMTP; 20 Oct 2025 03:02:01 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Mon, 20 Oct 2025 13:02:00 +0300
+Date: Mon, 20 Oct 2025 13:02:00 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v6 1/8] usb: typec: Add default HPD device when register
+ DisplayPort altmode
+Message-ID: <aPYImGmesrZWwyqh@kuha.fi.intel.com>
+References: <20251016022741.91-1-kernel@airkyi.com>
+ <20251016022741.91-2-kernel@airkyi.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Add polarity inversion support for
- SAR2130P
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=E6LAZKdl c=1 sm=1 tr=0 ts=68f5ea98 cx=c_pps
- a=HLyN3IcIa5EE8TELMZ618Q==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=BrIiScFafQzKgqpYfbkA:9 a=QEXdDO2ut3YA:10
- a=bTQJ7kPSJx9SKPbeHEYW:22
-X-Proofpoint-ORIG-GUID: MS4WA_94wirC-gpr46m0CSY6d8hBETCw
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE4MDAwMiBTYWx0ZWRfXxMH7/2mi5qOP
- RiU16YIDxRY/9RfKNOy62e409JP2YvpD0lM3uIZY87spRnd7phKEW+LYR1SJvUBh/sf2fcDOkdV
- em2BARoVPJON7Z5h4YVhkCwGzREkPqFEFyxBYVq3VkjpnDF2YvOLUff1L+sQGfSpbAoePSjq8LC
- V3/+nwDbSYO5oS1lZyHtwinOsZQ6norei0FF7Xm13wnqAPKdnbZr7rY3SpyDCFtTWkKEmHHaPrN
- C1aV/HexZu4mZ8goVwof/Im6YxNivzIapr1EuzW4sviWimd/vurLNDRT5FdRyfn/rAkER91KQZi
- eaXl0ZrCC/p5axJ5pjOT8ghWzECoS5y2wr8ma+zBjCU/LkhYKesHStoiU4B9XwqCuRzPiV9WvR7
- K0LLyhCqYsnNQlmlFFi+JpX2u0jcFQ==
-X-Proofpoint-GUID: MS4WA_94wirC-gpr46m0CSY6d8hBETCw
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-20_02,2025-10-13_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 bulkscore=0 priorityscore=1501 spamscore=0
- phishscore=0 impostorscore=0 malwarescore=0 adultscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510180002
+Content-Disposition: inline
+In-Reply-To: <20251016022741.91-2-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251020_005402_280875_6EBE15CC 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20251020_110217_080944_479A4148 
+X-CRM114-Status: GOOD (  29.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,21 +119,136 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/17/25 10:34 PM, Krishna Kurapati wrote:
-> On SAR2130P QXR Platform, the CC Lines are inverted and the lane
-> programming is to be done reverse compared to other targets.
+On Thu, Oct 16, 2025 at 10:27:34AM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > 
-> As per the HW specifics, Bit-2 of TYPEC_CTRL register indicates
-> port select polarity. This bit is to be set for SAR2130P.
+> Add default DRM AUX HPD bridge device when register DisplayPort
+> altmode. That makes it redundant for each Type-C driver to implement
+> a similar registration process in embedded scenarios.
 > 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > ---
+> 
+> Changes in v6:
+> - Fix depend in Kconfig.
+> 
+> Changes in v5:
+> - Remove the calls related to `drm_aux_hpd_bridge_notify()`.
+> - Place the helper functions in the same compilation unit.
+> - Add more comments about parent device.
+> 
+>  drivers/usb/typec/Kconfig         |  2 ++
+>  drivers/usb/typec/class.c         | 26 ++++++++++++++++++++++++++
+>  include/linux/usb/typec_altmode.h |  2 ++
+>  3 files changed, 30 insertions(+)
+> 
+> diff --git a/drivers/usb/typec/Kconfig b/drivers/usb/typec/Kconfig
+> index 2f80c2792dbd..a6730fbb576b 100644
+> --- a/drivers/usb/typec/Kconfig
+> +++ b/drivers/usb/typec/Kconfig
+> @@ -2,6 +2,8 @@
+>  
+>  menuconfig TYPEC
+>  	tristate "USB Type-C Support"
+> +	depends on DRM || DRM=n
+> +	select DRM_AUX_HPD_BRIDGE if DRM_BRIDGE && OF
 
-The downstream kernel for this platform corrobates this
+This is wrong. DRM should not dictate how this entire subsystem core
+is configured. The dependency needs to be on the DRM bridge side.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+You can for example use the bus notification there to see when a new
+alternate mode is being registered, or use some other notification
+mechanism.
 
-Konrad
+thanks,
+
+>  	help
+>  	  USB Type-C Specification defines a cable and connector for USB where
+>  	  only one type of plug is supported on both ends, i.e. there will not
+> diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+> index 67a533e35150..e9d7772d1a8f 100644
+> --- a/drivers/usb/typec/class.c
+> +++ b/drivers/usb/typec/class.c
+> @@ -8,14 +8,18 @@
+>  
+>  #include <linux/module.h>
+>  #include <linux/mutex.h>
+> +#include <linux/of.h>
+>  #include <linux/property.h>
+>  #include <linux/slab.h>
+>  #include <linux/string_choices.h>
+>  #include <linux/usb/pd_vdo.h>
+> +#include <linux/usb/typec_dp.h>
+>  #include <linux/usb/typec_mux.h>
+>  #include <linux/usb/typec_retimer.h>
+>  #include <linux/usb.h>
+>  
+> +#include <drm/bridge/aux-bridge.h>
+> +
+>  #include "bus.h"
+>  #include "class.h"
+>  #include "pd.h"
+> @@ -538,6 +542,21 @@ const struct device_type typec_altmode_dev_type = {
+>  	.release = typec_altmode_release,
+>  };
+>  
+> +static void dp_altmode_hpd_device_register(struct typec_altmode *alt)
+> +{
+> +	if (alt->svid != USB_TYPEC_DP_SID)
+> +		return;
+> +
+> +	/*
+> +	 * alt->dev.parent->parent : USB-C controller device
+> +	 * alt->dev.parent         : USB-C connector device
+> +	 */
+> +	alt->hpd_dev = drm_dp_hpd_bridge_register(alt->dev.parent->parent,
+> +						  to_of_node(alt->dev.parent->fwnode));
+> +	if (IS_ERR(alt->hpd_dev))
+> +		alt->hpd_dev = NULL;
+> +}
+> +
+>  static struct typec_altmode *
+>  typec_register_altmode(struct device *parent,
+>  		       const struct typec_altmode_desc *desc)
+> @@ -600,6 +619,13 @@ typec_register_altmode(struct device *parent,
+>  		return ERR_PTR(ret);
+>  	}
+>  
+> +	/*
+> +	 * It is too late to register the HPD device when the DisplayPort
+> +	 * altmode device becomes ready. If the current altmode is DP,
+> +	 * register a static HPD device.
+> +	 */
+> +	dp_altmode_hpd_device_register(&alt->adev);
+> +
+>  	return &alt->adev;
+>  }
+>  
+> diff --git a/include/linux/usb/typec_altmode.h b/include/linux/usb/typec_altmode.h
+> index b3c0866ea70f..acb0af1b9d5d 100644
+> --- a/include/linux/usb/typec_altmode.h
+> +++ b/include/linux/usb/typec_altmode.h
+> @@ -21,6 +21,7 @@ struct typec_altmode_ops;
+>   * @desc: Optional human readable description of the mode
+>   * @ops: Operations vector from the driver
+>   * @cable_ops: Cable operations vector from the driver.
+> + * @hpd_dev: HPD device for DisplayPort
+>   */
+>  struct typec_altmode {
+>  	struct device			dev;
+> @@ -32,6 +33,7 @@ struct typec_altmode {
+>  	char				*desc;
+>  	const struct typec_altmode_ops	*ops;
+>  	const struct typec_cable_ops	*cable_ops;
+> +	struct device			*hpd_dev;
+>  };
+>  
+>  #define to_typec_altmode(d) container_of(d, struct typec_altmode, dev)
+> -- 
+> 2.49.0
+
+-- 
+heikki
 
 -- 
 linux-phy mailing list
