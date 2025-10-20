@@ -4,77 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE400CCD19F
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Oct 2025 17:05:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B490CCD1A5
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Oct 2025 19:56:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OSpDdd+gHINXZ82IvvdZDfDwwj02Z3VODfKnt5xCT0w=; b=DIMHTHJyocDYkE
-	ICbynPTbTI4tI5B4EcB5o4oxKzQAnx8AKeBjABUw1pXp7uGNMu+cT8FUdsWJgW9F+CQupccWQN4r2
-	z13a7uXYm+6+XcsAJZydZbIycigaFwNBI9R1vzkURo/n7aTbAYO0miEGP0ZD8AoT58I1VQzOVl0uo
-	dWvgwVko6Mb1qOZTe41WET5S/2eVFarV8AOBG1Rv4J5DBJr09M+z1ya5eSMKf6QbLu7GTBe/LBGVo
-	jRrusmPtRgn9uotzSq5EgyhhPXEXaqssD7mdz7hM8uF+2hHpkGaTyUYfkJPlyBI6llnyb/OgYHt2J
-	MaBr7YKFPD0cApUvNBBQ==;
+	List-Owner; bh=qN6/XzDQKmIT3f7u9bwvPnxEyYLjJCa5W9uZKj3kdMk=; b=3socJ6LRNXVsHQ
+	FairSaaaV6m2zf+ePNHdR+EPcyxRFxF8tT3w585kR9AE4czU7+DLWBnTT5sxbvQTY5S0u7NRmpb0P
+	H+yG2preLQylWsDtPG4vLmJt+N6s+2bJKkYk9CtrtQ0rEsmWF5lvXzmqEeVvVabSFLhy1iwIhgVcY
+	z9Ra9QNqp+ZZX3aagz8RWRHoaoOgupiqTMoDIjHMZYRflsK17dqPRUz3mEGm127j1H1vw/Y0axTjp
+	FEsEn/U0dia6P3l8FuAytrxNzGYRW3PEUHhyVD5kjfyZ2V92f7xgdtT+to/R68DHv1sMTAfF/B9S0
+	BXSRoRSXKGafeWnOLi2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAtKW-0000000EPtR-20w6;
-	Mon, 20 Oct 2025 17:05:56 +0000
-Received: from pidgin.makrotopia.org ([2a07:2ec0:3002::65])
+	id 1vAvzN-0000000Eq6F-0FhY;
+	Mon, 20 Oct 2025 19:56:17 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAtKT-0000000EPrf-1wil;
-	Mon, 20 Oct 2025 17:05:54 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.98.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1vAtKD-000000005HU-0nRf;
-	Mon, 20 Oct 2025 17:05:37 +0000
-Date: Mon, 20 Oct 2025 18:05:33 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Sjoerd Simons <sjoerd@collabora.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	Ryder Lee <ryder.lee@mediatek.com>,
-	Jianjun Wang <jianjun.wang@mediatek.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
-	kernel@collabora.com, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	Bryan Hinton <bryan@bryanhinton.com>
-Subject: Re: [PATCH 02/15] arm64: dts: mediatek: mt7981b-openwrt-one:
- Configure UART0 pinmux
-Message-ID: <aPZr3WMybjTWnn9E@makrotopia.org>
-References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
- <20251016-openwrt-one-network-v1-2-de259719b6f2@collabora.com>
- <aPDnT4tuSzNDzyAE@makrotopia.org>
- <5f430ff9-d701-426a-bf93-5290e6912eb4@collabora.com>
- <aPEfUBl6fMe6QYdY@makrotopia.org>
- <82594ce7-f093-4753-b808-cd234845aed8@collabora.com>
- <aPYq4cnaAHu5ags5@makrotopia.org>
- <8453efd3-630e-4f2c-950d-88a73927cc54@collabora.com>
+	id 1vAvzL-0000000Eq5s-1e4q
+	for linux-phy@bombadil.infradead.org;
+	Mon, 20 Oct 2025 19:56:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=rGDb4j5YD7gzcoOdyZ8DfUuxVA6AmwZO6D17kiLjgUk=; b=O1cxrV40oO3NufFirXdJMJWM5V
+	7XVIRB4EBwK5NEsZhFCFcCChPbOJbCZ6gwVp+qlAgP7463rgZdJL/O+W10Zez06iSmW6upbCAH1w5
+	6MDX5I9a5CdcxFwGqYAF4/dnChTldxrohvpVdvZRCnJGezUQgAsW4Dcm00ePIWA8LWnWQf8DI8cSY
+	sIuCnE0MCUofwc13C9oYXao+BiMI7Mi/DVcs5QrHvEBlmn01EjoDKZVkG6i/LAG4e+G0MdQK6/yIR
+	OjJlEd5M1CE9H3YM9oqcFgzs2TO9I+Y+9ntJxKxtwmqyj/U88O7TXpYYtO+hZH/q51EmpFRzvYef+
+	kz39MssA==;
+Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vAv7Q-00000000BY5-13fL
+	for linux-phy@lists.infradead.org;
+	Mon, 20 Oct 2025 19:00:41 +0000
+Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-290d14e5c9aso42586255ad.3
+        for <linux-phy@lists.infradead.org>; Mon, 20 Oct 2025 12:55:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1760990155; x=1761594955; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=rGDb4j5YD7gzcoOdyZ8DfUuxVA6AmwZO6D17kiLjgUk=;
+        b=Ki1iKWBqVbMIPfjQr/3xMEU6Gv/Ak7xI4oGYqTQ/7sUTDpT8CS3sIHHkg8aq2oaB12
+         HLnAX+f3Z/sfDn/2rTF9FKaOwe0dugzB0yuNgHG9qB0qOnfxbNsba0746JgOweYk+N7T
+         a9qE0EdiZ/XoO4t/+kOXafPW6N9KVO46jawE2HvWnxyEkAtu/zRUsPs4Uk2mvl/PCQSI
+         qt5KWF1zsQfSrUO1w2gL8yHTxAQctgM/vHUeWQnskqRTe2l3cfGbkmFwev3PAXx/UQ4L
+         HVjMRSx56iw1YfWMDuLSFiXuR/dDKvNmr/Nlp26upinRemd5au/CkCXqDbppBabxlD6t
+         4Xvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760990155; x=1761594955;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=rGDb4j5YD7gzcoOdyZ8DfUuxVA6AmwZO6D17kiLjgUk=;
+        b=IhJdLTeiqKgEmJaw+653CQ0hGatRohDMUScQaWWIWTSCPOpmqkjRGyWWKgi7qswCZB
+         EkbxmGSonwlZz7CJycqmLGKdZu8L/corpm9tJVFpJ5Ged6FroNk/DawTrjI3MCtjnJTJ
+         5+0XTKQ5MCRsKNSHeRniCGbWZJJ5ETTkmuzJfrK5rhq+w3F8O9cKchQvb0Y9V3OlmZZR
+         /h5LDbA94XkJBRKrZ0VXiJahhmzHK+qWO64EwV7LUN0EJUQboZMIHgLTZ2xdJedy+gdf
+         zEoiOgkjARsRdRP3v/PQ5PQ8Eyct+LCSTD9MOxASTpcYcOSagugmxrGsZMM416Kvkpm5
+         znGg==
+X-Forwarded-Encrypted: i=1; AJvYcCVWZ2tonW3erUqNdHGAhSVhBuK9RXBWQbHhDlaTl/sskdr204Y2IK6qpq1nLb9yZ1P6qRGsJ2x1jnY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyAedmc0W+wqV/a71D3V6fqOVvuDMtNZ58pQvCM4l7jAUlGOSMd
+	Krg7Oi849FShoUptOYtJfPXIjh/pMRWjduM+8/LsMqlR4n5DLkmrtnIhUUCB97EBwwQ7ugusybz
+	EXk0NlN0eEHoV5ONPlm1WfVUhQBXjNPoEI93p7x6O
+X-Gm-Gg: ASbGncuXxKSPTM8rBdqpaQhxvbsXyt7Utqa3kuUnSRIVpSvOTiEwJQfKi/z3YUK5PGy
+	/1G7TgEt3QJyhdEFklxbmJ3HJSvFgJWnTtkknpvz2CUTZcioq52l3ujTLM0jZVJ+emfeGzaVSW8
+	rPjCmIL37L3FfOP7bct99mFy9m08oT1UaV8m/8KttuOvM67mMfhB7hKFcBE0EJhS0u5FeUyEqVb
+	hC4pQfxQaKznBs95SNIopQ/AiWm33gTbVlDh94u1ADw1l6L68YcdDTgMzIaJVdhN8bPTI1odYXx
+	Pl4yRmf5ocPO0LQweg==
+X-Google-Smtp-Source: AGHT+IFy7RPLrTjaJAmRvl/up+5yT0Xi35K2QAP5mH7buXJTH15rh6ZR8w+Jx06TkvEyKKVVV9FaRQNwaH2E98irt9s=
+X-Received: by 2002:a17:903:1746:b0:24e:95bb:88b1 with SMTP id
+ d9443c01a7336-290caf8510cmr156895345ad.34.1760990154949; Mon, 20 Oct 2025
+ 12:55:54 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8453efd3-630e-4f2c-950d-88a73927cc54@collabora.com>
+References: <20251017235159.2417576-1-royluo@google.com> <20251017235159.2417576-3-royluo@google.com>
+ <37daba64-5233-4573-95de-38612c2358f2@gmail.com>
+In-Reply-To: <37daba64-5233-4573-95de-38612c2358f2@gmail.com>
+From: Roy Luo <royluo@google.com>
+Date: Mon, 20 Oct 2025 12:55:18 -0700
+X-Gm-Features: AS18NWCgbE77LSFDkUG8Ht5NtPdNWshuYiiufgQjSFfeg5-XcBLfdhlCz7phu9U
+Message-ID: <CA+zupgwbmKt8BhHEM-76CLLH_dE_vmyHvKwqpC2WzwED9irEVw@mail.gmail.com>
+Subject: Re: [PATCH v4 2/2] phy: Add Google Tensor SoC USB PHY driver
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
+	=?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
+	Tudor Ambarus <tudor.ambarus@linaro.org>, Joy Chakraborty <joychakr@google.com>, 
+	Naveen Kumar <mnkumar@google.com>, Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251020_100553_649546_D1A1A0CE 
-X-CRM114-Status: GOOD (  69.63  )
+X-CRM114-CacheID: sfid-20251020_200037_759725_D47DF965 
+X-CRM114-Status: GOOD (  42.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,196 +113,180 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 20, 2025 at 04:02:58PM +0200, AngeloGioacchino Del Regno wrote:
-> Il 20/10/25 14:28, Daniel Golle ha scritto:
-> > On Mon, Oct 20, 2025 at 12:23:14PM +0200, AngeloGioacchino Del Regno wrote:
-> > > Il 16/10/25 18:37, Daniel Golle ha scritto:
-> > > > On Thu, Oct 16, 2025 at 04:29:14PM +0200, AngeloGioacchino Del Regno wrote:
-> > > > > Il 16/10/25 14:38, Daniel Golle ha scritto:
-> > > > > > On Thu, Oct 16, 2025 at 12:08:38PM +0200, Sjoerd Simons wrote:
-> > > > > > > Add explicit pinctrl configuration for UART0 on the OpenWrt One board,
-> > > > > > > 
-> > > > > > > Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
-> > > > > > > ---
-> > > > > > >     arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts | 11 +++++++++++
-> > > > > > >     1 file changed, 11 insertions(+)
-> > > > > > > 
-> > > > > > > diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-> > > > > > > index 968b91f55bb27..f836059d7f475 100644
-> > > > > > > --- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-> > > > > > > +++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-> > > > > > > @@ -22,6 +22,17 @@ memory@40000000 {
-> > > > > > >     	};
-> > > > > > >     };
-> > > > > > > +&pio {
-> > > > > > > +	uart0_pins: uart0-pins {
-> > > > > > > +		mux {
-> > > > > > > +			function = "uart";
-> > > > > > > +			groups = "uart0";
-> > > > > > > +		};
-> > > > > > > +	};
-> > > > > > > +};
-> > > > > > > +
-> > > > > > >     &uart0 {
-> > > > > > > +	pinctrl-names = "default";
-> > > > > > > +	pinctrl-0 = <&uart0_pins>;
-> > > > > > >     	status = "okay";
-> > > > > > >     };
-> > > > > > 
-> > > > > > As there is only a single possible pinctrl configuration for uart0,
-> > > > > > both the pinmux definition as well as the pinctrl properties should go
-> > > > > > into mt7981b.dtsi rather than in the board's dts.
-> > > > > 
-> > > > > If there's really one single possible pin configuration for the UART0 pins,
-> > > > > as in, those pins *do not* have a GPIO mode, then yes I agree.
-> > > > > 
-> > > > > If those pins can be as well configured as GPIOs, this goes to board DTS.
-> > > > 
-> > > > I respectfully disagree and will explain below.
-> > > > 
-> > > 
-> > > Thanks a lot for taking the time to write all this - explains everything,
-> > > and even too much :) :)
-> > > 
-> > > Though, there's something funny here! The following snippet of "main" text
-> > > does explain stuff that is interesting, but that I (not other people, so
-> > > thanks again for saying all this) know already, but.....
-> > > 
-> > > > All pinmux pins on the MediaTek platform also allow being configured as
-> > > > GPIOs. However, if you configure those as GPIOs the consequence is that
-> > > > you cannot use UART0 any more at all. So using UART0 at all always
-> > > > implies using exactly those pins, there is no alternative to that.
-> > > > 
-> > > > Hence every board with every possible uses of pins 32 and 33 (there is
-> > > > only RX and TX for UART0, RTS/CTS flow-control is not possible) can be
-> > > > represented without needing to configure the pinctrl for uart0 on the
-> > > > board level. There isn't going to be any variation on the board-level
-> > > > when it comes to uart0. Either it is enabled (status = "okay";), and
-> > > > that will always imply using the 'uart0' group in mode 'uart', or, in
-> > > > case any of the two pins of uart0 is used for something else that means
-> > > > uart0 cannot be enabled. Simple as that.
-> > > > 
-> > > > Hence there is no need to duplicate that pinctrl settings on each and
-> > > > every board, as controlling the 'status' property on the board-level
-> > > > already gives 100% freedom.
-> > > > 
-> > > 
-> > > ...all of this is not justifying your point.
-> > 
-> > So what is the rule then? I understand the logic of describing the
-> > pins eg. for uart1 only on board-level as there are actual alternatives
-> > regarding the pins to be used, and if also including RTS/CTS pins.
-> > Hence, for uart1, there are several possible pingroups which can be
-> > used. What would be the argument to keep a pinctrl description for
-> > which the SoC doesn't offer any alternatives to be on the board-level?
-> > There is nothing to be decided by the board, literally 0 freedom.
-> > 
-> 
-> As you described - the BootROM is using those two pins as UART0.
-> 
-> Should you want those pins to be used as GPIOs, you'd at least get HW glitches in
-> early boot phases, or you'd render emergency download mode unusable - which is not
-> a good idea, not practical, and also, well, almost a stupid thing to do from the
-> hardware perspective.
-
-No, that's not a problem. During reset the pinctrl/gpio controller is always
-reset to the default and no matter how the pins were used in Linux before the
-reset. Hence debug output and also emrgency download mode always works.
-The only disadvantage of use the pins differently is that the bootrom output
-on one of them cannot be prevented -- but in case that's not a problem (eg.
-because the pin is later used as an input rather than output) it can totally
-be done, though it would be stupid as it would render the debug UART unusable.
-Yet, I'd consider it a possible choice of a board designer.
-
-> 
-> This means that it is very, very, very unlikely (to the point that it's practically
-> impossible) that those pins can ever be used for anything else that is not *the*
-> one of the two functions that are supported for them (which is UART0 in this case).
-> 
-> In this case, adding the pins at the board level would only create unnecessary
-> duplication and nothing else, because, well, noone could possibly ever use those
-> for anything else, again.
-> 
-> That's the criteria.
-
-So this criteria, avoiding unnecessary duplication, is also what I thought and
-is very true for the argument I presented before which somehow wasn't what has
-convinced you: That using uart0 in any possible way **always** implied using
-the uart0 pingroup in uart mode, because there aren't any other pins which can
-be used for uart0. In this sense, if uart0 is used at all, it is **not** the
-choice of the board designer which pins to use for that -- there simply is only
-that one single option.
-
-> 
-> If the BootROM didn't use those pins, and those could support both GPIO mode and
-> HW function mode (any: uart0, 1, 2...n, spi, i2c, whatever else), even though it
-> is likely for boards to use them for one specific function, there is nothing that
-> stops a HW engineer to decide to route those elsewhere and use them as a GPIO
-> instead, so that's not a SoC configuration, but rather a HW implementation decision
-> at the PCB level.
-
-That's exactly my point: There isn't any other option to route uart0 to. Only
-those two pins. The other alternative functions of those pins (apart from GPIO)
-are rather esoteric debugging features (I2C access to SoC internals).
-
-> 
-> See it like this (although this is an oversimplified view):
->  - SoC DT describes the SoC (the chip) - in this case the MT7981B chip
->  - Board DT describes decisions that were taken by the HW engineer that developed
->    the PCB on which the MT7981B was placed.
-
-So the choice of a HW engineer regarding uart0 is simply whether uart0
-is used or not. If uart0 is used, the HW engineer doesn't have any choice
-regarding which pins they would like to use for the uart0 RX and TX lines,
-the SoC design dictates exactly one option for that.
-
-> 
-> Clearly, if there's a board design (usually, a "base project") that has derivatives
-> (for example, a device with eMMC, one with UFS, one with both, one with two SFP,
-> one with one SFP and one soldered ethernet chip on a non-exposed SFP interface,
-> etc) it is ok to have a "board-common" dtsi and specific board variants on top,
-> like it is done with some bananapi and some genio boards.
-> 
-> Lots of text here - yet oversimplified. There is much more to say, but I think
-> (and hope) that this is enough to make you understand the main point (of course
-> feel free to throw more questions if what I wrote doesn't fully satisfy you).
-> 
-> > > 
-> > > > (Sidenote: As even the BootROM already uses those two pins as UART for
-> > > > debug output,
-> > > 
-> > > Funny thing is, your side note is what *fully* justifies your disagreement
-> > > and it's also what triggers me to say that you're right, lol :)
-> > > 
-> > > Okay then, I am fine with this commit now and I can renew my
-> > > 
-> > > Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> > 
-> > Note that the patch you have just added your Reviewed-by:-tag to does
-> > *not* add the uart0 pinctrl on SoC-level but board-level, so different
-> > from what I argued for above.
-> 
-> Ewwww I'm doing too may things at once. Pretty crazy days around here :)))
-> 
-> >> Did you mean to add Reviewed-by: for that
-> > (which contraticts what you just wrote) or rather to the to-be-submitted
-> > v2 of this series which includes the change to move the uart0 pinctrl
-> > to mt7981b.dtsi?
-> 
-> Yeah. Sorry.
-> 
-> I repeat then, so that this is clear: you are right, the pinctrl for UART0 on the
-> MT7981B SoC must go to mt7981b.dtsi and *not* to mt7981b-openwrt-one.
-
-Thank you, that should make it clear to Sjoerd as well (who may skip and ignore
-all of our debating :).
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU2F0LCBPY3QgMTgsIDIwMjUgYXQgMToxM+KAr0FNIEl2YXlsbyBJdmFub3YKPGl2by5pdmFu
+b3YuaXZhbm92MUBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gT24gMTAvMTgvMjUgMDI6NTEsIFJveSBM
+dW8gd3JvdGU6Cj4gPiBTdXBwb3J0IHRoZSBVU0IgUEhZIGZvdW5kIG9uIEdvb2dsZSBUZW5zb3Ig
+RzUuIFRoaXMgcGFydGljdWxhciBVU0IgUEhZCj4gPiBzdXBwb3J0cyBib3RoIGhpZ2gtc3BlZWQg
+YW5kIHN1cGVyLXNwZWVkIG9wZXJhdGlvbnMsIGFuZCBpcyBpbnRlZ3JhdGVkCj4gPiB3aXRoIHRo
+ZSBTTlBTIERXQzMgY29udHJvbGxlciB0aGF0J3MgYWxzbyBvbiB0aGUgU29DLgo+ID4gVGhpcyBp
+bml0aWFsIHBhdGNoIHNwZWNpZmljYWxseSBhZGRzIGZ1bmN0aW9uYWxpdHkgZm9yIGhpZ2gtc3Bl
+ZWQuCj4gPgo+ID4gQ28tZGV2ZWxvcGVkLWJ5OiBKb3kgQ2hha3JhYm9ydHkgPGpveWNoYWtyQGdv
+b2dsZS5jb20+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBKb3kgQ2hha3JhYm9ydHkgPGpveWNoYWtyQGdv
+b2dsZS5jb20+Cj4gPiBDby1kZXZlbG9wZWQtYnk6IE5hdmVlbiBLdW1hciA8bW5rdW1hckBnb29n
+bGUuY29tPgo+ID4gU2lnbmVkLW9mZi1ieTogTmF2ZWVuIEt1bWFyIDxtbmt1bWFyQGdvb2dsZS5j
+b20+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBSb3kgTHVvIDxyb3lsdW9AZ29vZ2xlLmNvbT4KPiA+IC0t
+LQo+ID4gIGRyaXZlcnMvcGh5L0tjb25maWcgICAgICAgICAgfCAgMTMgKysKPiA+ICBkcml2ZXJz
+L3BoeS9NYWtlZmlsZSAgICAgICAgIHwgICAxICsKPiA+ICBkcml2ZXJzL3BoeS9waHktZ29vZ2xl
+LXVzYi5jIHwgMjcxICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gPiAgMyBm
+aWxlcyBjaGFuZ2VkLCAyODUgaW5zZXJ0aW9ucygrKQo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBk
+cml2ZXJzL3BoeS9waHktZ29vZ2xlLXVzYi5jCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+cGh5L0tjb25maWcgYi9kcml2ZXJzL3BoeS9LY29uZmlnCj4gPiBpbmRleCA1OGM5MTFlMWIyZDIu
+LmZlMzJkMTM1NjAwMiAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvcGh5L0tjb25maWcKPiA+ICsr
+KyBiL2RyaXZlcnMvcGh5L0tjb25maWcKPiA+IEBAIC0xMDEsNiArMTAxLDE5IEBAIGNvbmZpZyBQ
+SFlfTlhQX1BUTjMyMjIKPiA+ICAgICAgICAgc2NoZW1lcy4gSXQgc3VwcG9ydHMgYWxsIHRocmVl
+IFVTQiAyLjAgZGF0YSByYXRlczogTG93IFNwZWVkLCBGdWxsCj4gPiAgICAgICAgIFNwZWVkIGFu
+ZCBIaWdoIFNwZWVkLgo+ID4KPiA+ICtjb25maWcgUEhZX0dPT0dMRV9VU0IKPiA+ICsgICAgIHRy
+aXN0YXRlICJHb29nbGUgVGVuc29yIFNvQyBVU0IgUEhZIGRyaXZlciIKPiA+ICsgICAgIGRlcGVu
+ZHMgb24gSEFTX0lPTUVNCj4gPiArICAgICBkZXBlbmRzIG9uIE9GCj4gPiArICAgICBkZXBlbmRz
+IG9uIFRZUEVDCj4gPiArICAgICBzZWxlY3QgR0VORVJJQ19QSFkKPiA+ICsgICAgIGhlbHAKPiA+
+ICsgICAgICAgRW5hYmxlIHN1cHBvcnQgZm9yIHRoZSBVU0IgUEhZIG9uIEdvb2dsZSBUZW5zb3Ig
+U29Dcywgc3RhcnRpbmcgd2l0aAo+ID4gKyAgICAgICB0aGUgRzUgZ2VuZXJhdGlvbi4gVGhpcyBk
+cml2ZXIgcHJvdmlkZXMgdGhlIFBIWSBpbnRlcmZhY2VzIHRvCj4gPiArICAgICAgIGludGVyYWN0
+IHdpdGggdGhlIFNOUFMgZVVTQjIgYW5kIFVTQiAzLjIvRGlzcGxheVBvcnQgQ29tYm8gUEhZLCBi
+b3RoCj4gPiArICAgICAgIG9mIHdoaWNoIGFyZSBpbnRlZ3JhdGVkIHdpdGggdGhlIERXQzMgVVNC
+IGNvbnRyb2xsZXIuCj4KPiBTbyBpdCdzIG1vcmUgbGlrZSBhIERSRCBjb250cm9sbGVyLCBzaW5j
+ZSBpdCBlbmNhcHN1bGF0ZXMgbXVsdGlwbGUgcGh5cz8KClllcywgaXQncyBhIERSRCBjb250cm9s
+bGVyLCBJIHdpbGwgbWFrZSBpdCBjbGVhciBpbiB0aGUgbmV4dCB2ZXJzaW9uLgoKPgo+ID4gKyAg
+ICAgICBUaGlzIGRyaXZlciBjdXJyZW50bHkgc3VwcG9ydHMgVVNCIGhpZ2gtc3BlZWQuCj4gPiAr
+Cj4gPiAgc291cmNlICJkcml2ZXJzL3BoeS9hbGx3aW5uZXIvS2NvbmZpZyIKPiA+ICBzb3VyY2Ug
+ImRyaXZlcnMvcGh5L2FtbG9naWMvS2NvbmZpZyIKPiA+ICBzb3VyY2UgImRyaXZlcnMvcGh5L2Jy
+b2FkY29tL0tjb25maWciCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvTWFrZWZpbGUgYi9k
+cml2ZXJzL3BoeS9NYWtlZmlsZQo+ID4gaW5kZXggYzY3MGE4ZGFjNDY4Li4xZDdhMTMzMWJkMTkg
+MTAwNjQ0Cj4gLi4uCj4gPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ID4gKyNpbmNsdWRl
+IDxsaW51eC9vZi5oPgo+ID4gKyNpbmNsdWRlIDxsaW51eC9waHkvcGh5Lmg+Cj4gPiArI2luY2x1
+ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4gKyNpbmNsdWRlIDxsaW51eC9tdXRleC5o
+Pgo+ID4gKyNpbmNsdWRlIDxsaW51eC9jbGVhbnVwLmg+Cj4gPiArI2luY2x1ZGUgPGxpbnV4L3Vz
+Yi90eXBlY19tdXguaD4KPiA+ICsKPiA+ICsjZGVmaW5lIFVTQkNTX1VTQjJQSFlfQ0ZHMTlfT0ZG
+U0VUIDB4MAo+ID4gKyNkZWZpbmUgVVNCQ1NfVVNCMlBIWV9DRkcxOV9QSFlfQ0ZHX1BMTF9GQl9E
+SVYgR0VOTUFTSygxOSwgOCkKPgo+IEknZCBzdWdnZXN0IGltcGxlbWVudGluZyB0aGUgZVVTQiBz
+dXBwb3J0IGluIHRoZSBleGlzdGluZyBzbnBzLWV1c2IyCj4gZHJpdmVyIGZvciB0aGUgc2FrZSBv
+ZiBjbGFyaXR5LiBUaGF0IHdheSwgeW91IGNhbiBwYXNzIGl0IGFzIGEgcGhhbmRsZQo+IHRvIHRo
+aXMgZHJpdmVyIGFuZCBwcm9iZSBpdCB3aGVuIGRyZCBpcyBwcm9iaW5nLgoKSWYgSSB1bmRlcnN0
+YW5kIGl0IGNvcnJlY3RseSwgeW91J3JlIHJlZmVycmluZyB0byB0aGUgcGF0dGVybiB1c2VkIGlu
+CkRvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc2Ftc3VuZyxleHlub3MyMjAw
+LWV1c2IyLXBoeS55YW1sIGFuZApEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5
+L3NhbXN1bmcsdXNiMy1kcmQtcGh5LnlhbWwuClBsZWFzZSBjb3JyZWN0IG1lIGlmIEknbSB3cm9u
+Zy4KCkF0IGZpcnN0IGdsYW5jZSwgdGhpcyBhcHByb2FjaCBzZWVtcyBmZWFzaWJsZS4gQ3VzdG9t
+IGxvZ2ljLCBzdWNoCmFzIHZidXMgdmFsaWQgaGFuZGxpbmcsIHdvdWxkIG5lZWQgdG8gc3RheSB3
+aXRoaW4gdGhpcyBkcml2ZXIuIE1vc3QKb2YgdGhlIGVVU0IgYmxvY2sgY29uZmlndXJhdGlvbiBp
+biBnb29nbGVfdXNiMl9waHlfaW5pdCgpIGNvdWxkCmJlIG1vdmVkIHRvIHRoZSBzbnBzLWV1c2Iy
+IGRyaXZlciBieSBhZGRpbmcgb25lIG1vcmUgY29tcGF0aWJsZQpmb3IgR29vZ2xlJ3MgdmVyc2lv
+biBvZiB0aGUgU05TUCBlVVNCIElQLiBIb3dldmVyLCBJJ2QgYXJndWUKMS4gVGhpcyBhcHByb2Fj
+aCB3b3VsZCBpbnRyb2R1Y2UgYW4gZXh0cmEgbGF5ZXIgb2YgUEhZIGludGVyZmFjZSwKICAgIHdo
+aWNoIGFkZHMgdW5uZWNlc3NhcnkgY29tcGxleGl0eS4KMi4gTm90IG11Y2ggb2YgdGhlIGNvZGUg
+aXMgcmV1c2VkIGluIHNucHMtZXVzYjIgZHJpdmVyOiB0aGUgcmVnaXN0ZXIKICAgIGRlZmluaXRp
+b24gYW5kIHByb2dyYW1taW5nIHNlcXVlbmNlIGFyZSBzcGVjaWZpYyB0byBHb29nbGUsCiAgICBo
+ZW5jZSB0aGUgbG9naWMgaW4gZ29vZ2xlX3VzYjJfcGh5X2luaXQoKSB3b3VsZCBoYXZlIHRvIGJl
+CiAgICBtb3ZlZCB0byBzbnBzLWV1c2IyIGRyaXZlciBhbG1vc3Qgd29yZC1ieS13b3JkLgoKSSB1
+bmRlcnN0YW5kIHRoaXMgYXBwcm9hY2ggd2FzIHN1Z2dlc3RlZCBmb3IgdGhlIHNha2Ugb2YgY2xh
+cml0eSwKYnV0IEknbSBub3Qgc3VyZSB3aGV0aGVyIHRoYXQgbWFrZXMgZm9yIHRoZSBiZXN0IHRy
+YWRlLW9mZi4gU2luY2UKdGhlcmUgaXMgYSBwcmVjZWRlbnQgZm9yIHRoaXMgYXBwcm9hY2gsIEkg
+ZG8gbm90IGhhdmUgYSBzdHJvbmcKb2JqZWN0aW9uLiBJdCB3b3VsZCBiZSBoZWxwZnVsIGlmIHRo
+ZSBtYWludGFpbmVycyBjb3VsZCBhbHNvIHByb3ZpZGUKdGhlaXIgaW5wdXQgb24gdGhpcyBzcGVj
+aWZpYyBwb2ludC4KCj4KPiA+ICsKPiA+ICsjZGVmaW5lIFVTQkNTX1VTQjJQSFlfQ0ZHMjFfT0ZG
+U0VUIDB4OAo+ID4gKyNkZWZpbmUgVVNCQ1NfVVNCMlBIWV9DRkcyMV9QSFlfRU5BQkxFIEJJVCgx
+MikKPiA+ICsjZGVmaW5lIFVTQkNTX1VTQjJQSFlfQ0ZHMjFfUkVGX0ZSRVFfU0VMIEdFTk1BU0so
+MTUsIDEzKQo+ID4gKyNkZWZpbmUgVVNCQ1NfVVNCMlBIWV9DRkcyMV9QSFlfVFhfRElHX0JZUEFT
+U19TRUwgQklUKDE5KQo+ID4gKwo+ID4gKyNkZWZpbmUgVVNCQ1NfUEhZX0NGRzFfT0ZGU0VUIDB4
+MjgKPiA+ICsjZGVmaW5lIFVTQkNTX1BIWV9DRkcxX1NZU19WQlVTVkFMSUQgQklUKDE3KQo+ID4g
+Kwo+ID4gK2VudW0gZ29vZ2xlX3VzYl9waHlfaWQgewo+ID4gKyAgICAgR09PR0xFX1VTQjJfUEhZ
+LAo+ID4gKyAgICAgR09PR0xFX1VTQl9QSFlfTlVNLAo+ID4gK307Cj4gPiArCj4gPiArc3RydWN0
+IGdvb2dsZV91c2JfcGh5X2luc3RhbmNlIHsKPiA+ICsgICAgIGludCBpbmRleDsKPiA+ICsgICAg
+IHN0cnVjdCBwaHkgKnBoeTsKPiA+ICsgICAgIGludCBudW1fY2xrczsKPiA+ICsgICAgIHN0cnVj
+dCBjbGtfYnVsa19kYXRhICpjbGtzOwo+ID4gKyAgICAgc3RydWN0IHJlc2V0X2NvbnRyb2wgKnJz
+dHM7Cj4gPiArfTsKPiA+ICsKPiA+ICtzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgewo+ID4gKyAgICAg
+c3RydWN0IGRldmljZSAqZGV2Owo+ID4gKyAgICAgdm9pZCBfX2lvbWVtICp1MnBoeV9jZmdfYmFz
+ZTsKPiA+ICsgICAgIHZvaWQgX19pb21lbSAqZHBfdG9wX2Jhc2U7Cj4gPiArICAgICBzdHJ1Y3Qg
+Z29vZ2xlX3VzYl9waHlfaW5zdGFuY2UgaW5zdHNbR09PR0xFX1VTQl9QSFlfTlVNXTsKPiA+ICsg
+ICAgIC8qIHNlcmlhbGl6ZSBwaHkgYWNjZXNzICovCj4gPiArICAgICBzdHJ1Y3QgbXV0ZXggcGh5
+X211dGV4Owo+ID4gKyAgICAgc3RydWN0IHR5cGVjX3N3aXRjaF9kZXYgKnN3Owo+ID4gKyAgICAg
+ZW51bSB0eXBlY19vcmllbnRhdGlvbiBvcmllbnRhdGlvbjsKPiA+ICt9Owo+ID4gKwo+ID4gK3N0
+YXRpYyBpbmxpbmUgc3RydWN0IGdvb2dsZV91c2JfcGh5ICp0b19nb29nbGVfdXNiX3BoeShzdHJ1
+Y3QgZ29vZ2xlX3VzYl9waHlfaW5zdGFuY2UgKmluc3QpCj4gPiArewo+ID4gKyAgICAgcmV0dXJu
+IGNvbnRhaW5lcl9vZihpbnN0LCBzdHJ1Y3QgZ29vZ2xlX3VzYl9waHksIGluc3RzW2luc3QtPmlu
+ZGV4XSk7Cj4gPiArfQo+ID4gKwo+ID4gK3N0YXRpYyB2b2lkIHNldF92YnVzX3ZhbGlkKHN0cnVj
+dCBnb29nbGVfdXNiX3BoeSAqZ3BoeSkKPiA+ICt7Cj4gPiArICAgICB1MzIgcmVnOwo+ID4gKwo+
+ID4gKyAgICAgaWYgKGdwaHktPm9yaWVudGF0aW9uID09IFRZUEVDX09SSUVOVEFUSU9OX05PTkUp
+IHsKPiA+ICsgICAgICAgICAgICAgcmVnID0gcmVhZGwoZ3BoeS0+ZHBfdG9wX2Jhc2UgKyBVU0JD
+U19QSFlfQ0ZHMV9PRkZTRVQpOwo+ID4gKyAgICAgICAgICAgICByZWcgJj0gflVTQkNTX1BIWV9D
+RkcxX1NZU19WQlVTVkFMSUQ7Cj4gPiArICAgICAgICAgICAgIHdyaXRlbChyZWcsIGdwaHktPmRw
+X3RvcF9iYXNlICsgVVNCQ1NfUEhZX0NGRzFfT0ZGU0VUKTsKPiA+ICsgICAgIH0gZWxzZSB7Cj4g
+PiArICAgICAgICAgICAgIHJlZyA9IHJlYWRsKGdwaHktPmRwX3RvcF9iYXNlICsgVVNCQ1NfUEhZ
+X0NGRzFfT0ZGU0VUKTsKPiA+ICsgICAgICAgICAgICAgcmVnIHw9IFVTQkNTX1BIWV9DRkcxX1NZ
+U19WQlVTVkFMSUQ7Cj4gPiArICAgICAgICAgICAgIHdyaXRlbChyZWcsIGdwaHktPmRwX3RvcF9i
+YXNlICsgVVNCQ1NfUEhZX0NGRzFfT0ZGU0VUKTsKPiA+ICsgICAgIH0KPiA+ICt9Cj4gPiArCj4g
+PiArc3RhdGljIGludCBnb29nbGVfdXNiX3NldF9vcmllbnRhdGlvbihzdHJ1Y3QgdHlwZWNfc3dp
+dGNoX2RldiAqc3csCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbnVt
+IHR5cGVjX29yaWVudGF0aW9uIG9yaWVudGF0aW9uKQo+ID4gK3sKPiA+ICsgICAgIHN0cnVjdCBn
+b29nbGVfdXNiX3BoeSAqZ3BoeSA9IHR5cGVjX3N3aXRjaF9nZXRfZHJ2ZGF0YShzdyk7Cj4gPiAr
+Cj4gPiArICAgICBkZXZfZGJnKGdwaHktPmRldiwgInNldCBvcmllbnRhdGlvbiAlZFxuIiwgb3Jp
+ZW50YXRpb24pOwo+ID4gKwo+ID4gKyAgICAgZ3BoeS0+b3JpZW50YXRpb24gPSBvcmllbnRhdGlv
+bjsKPiA+ICsKPiA+ICsgICAgIGlmIChwbV9ydW50aW1lX3N1c3BlbmRlZChncGh5LT5kZXYpKQo+
+ID4gKyAgICAgICAgICAgICByZXR1cm4gMDsKPiA+ICsKPiA+ICsgICAgIGd1YXJkKG11dGV4KSgm
+Z3BoeS0+cGh5X211dGV4KTsKPiA+ICsKPiA+ICsgICAgIHNldF92YnVzX3ZhbGlkKGdwaHkpOwo+
+ID4gKwo+ID4gKyAgICAgcmV0dXJuIDA7Cj4gPiArfQo+ID4gKwo+ID4gK3N0YXRpYyBpbnQgZ29v
+Z2xlX3VzYjJfcGh5X2luaXQoc3RydWN0IHBoeSAqX3BoeSkKPiA+ICt7Cj4gPiArICAgICBzdHJ1
+Y3QgZ29vZ2xlX3VzYl9waHlfaW5zdGFuY2UgKmluc3QgPSBwaHlfZ2V0X2RydmRhdGEoX3BoeSk7
+Cj4gPiArICAgICBzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgKmdwaHkgPSB0b19nb29nbGVfdXNiX3Bo
+eShpbnN0KTsKPiA+ICsgICAgIHUzMiByZWc7Cj4gPiArICAgICBpbnQgcmV0ID0gMDsKPiA+ICsK
+PiA+ICsgICAgIGRldl9kYmcoZ3BoeS0+ZGV2LCAiaW5pdGlhbGl6aW5nIHVzYjIgcGh5XG4iKTsK
+PiA+ICsKPiA+ICsgICAgIGd1YXJkKG11dGV4KSgmZ3BoeS0+cGh5X211dGV4KTsKPiA+ICsKPiA+
+ICsgICAgIHJlZyA9IHJlYWRsKGdwaHktPnUycGh5X2NmZ19iYXNlICsgVVNCQ1NfVVNCMlBIWV9D
+RkcyMV9PRkZTRVQpOwo+ID4gKyAgICAgcmVnICY9IH5VU0JDU19VU0IyUEhZX0NGRzIxX1BIWV9U
+WF9ESUdfQllQQVNTX1NFTDsKPiA+ICsgICAgIHJlZyAmPSB+VVNCQ1NfVVNCMlBIWV9DRkcyMV9S
+RUZfRlJFUV9TRUw7Cj4gPiArICAgICByZWcgfD0gRklFTERfUFJFUChVU0JDU19VU0IyUEhZX0NG
+RzIxX1JFRl9GUkVRX1NFTCwgMCk7Cj4gPiArICAgICB3cml0ZWwocmVnLCBncGh5LT51MnBoeV9j
+ZmdfYmFzZSArIFVTQkNTX1VTQjJQSFlfQ0ZHMjFfT0ZGU0VUKTsKPiA+ICsKPiA+ICsgICAgIHJl
+ZyA9IHJlYWRsKGdwaHktPnUycGh5X2NmZ19iYXNlICsgVVNCQ1NfVVNCMlBIWV9DRkcxOV9PRkZT
+RVQpOwo+ID4gKyAgICAgcmVnICY9IH5VU0JDU19VU0IyUEhZX0NGRzE5X1BIWV9DRkdfUExMX0ZC
+X0RJVjsKPiA+ICsgICAgIHJlZyB8PSBGSUVMRF9QUkVQKFVTQkNTX1VTQjJQSFlfQ0ZHMTlfUEhZ
+X0NGR19QTExfRkJfRElWLCAzNjgpOwo+Cj4gWWVhaCwgaXQncyBkZWZpbml0ZWx5IHRoZSBlVVNC
+IElQLCBidXQgd2lyZWQgZGlmZmVyZW50bHkuCj4KPiBwaHktc25wcy1ldXNiMi5jOgo+ICNkZWZp
+bmUgRVhZTk9TX1VTQl9QSFlfQ0ZHX1BMTENGRzAgKDB4OCkKPiAjZGVmaW5lIFBIWV9DRkdfUExM
+X0ZCX0RJVl8xOV84X01BU0sgR0VOTUFTSygxOSwgOCkKPiAjZGVmaW5lIERJVl8xOV84XzE5XzJf
+TUhaX1ZBTCAoMHgxNzApCj4KPiA+ICsgICAgIHdyaXRlbChyZWcsIGdwaHktPnUycGh5X2NmZ19i
+YXNlICsgVVNCQ1NfVVNCMlBIWV9DRkcxOV9PRkZTRVQpOwo+ID4gKwo+ID4gKyAgICAgc2V0X3Zi
+dXNfdmFsaWQoZ3BoeSk7Cj4gPiArCj4gPiArICAgICByZXQgPSBjbGtfYnVsa19wcmVwYXJlX2Vu
+YWJsZShpbnN0LT5udW1fY2xrcywgaW5zdC0+Y2xrcyk7Cj4gPiArICAgICBpZiAocmV0KQo+ID4g
+KyAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4gKwo+ID4gKyAgICAgcmV0ID0gcmVzZXRfY29u
+dHJvbF9kZWFzc2VydChpbnN0LT5yc3RzKTsKPiA+ICsgICAgIGlmIChyZXQpIHsKPiA+ICsgICAg
+ICAgICAgICAgY2xrX2J1bGtfZGlzYWJsZV91bnByZXBhcmUoaW5zdC0+bnVtX2Nsa3MsIGluc3Qt
+PmNsa3MpOwo+ID4gKyAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4gKyAgICAgfQo+ID4gKwo+
+ID4gKyAgICAgcmVnID0gcmVhZGwoZ3BoeS0+dTJwaHlfY2ZnX2Jhc2UgKyBVU0JDU19VU0IyUEhZ
+X0NGRzIxX09GRlNFVCk7Cj4gPiArICAgICByZWcgfD0gVVNCQ1NfVVNCMlBIWV9DRkcyMV9QSFlf
+RU5BQkxFOwo+ID4gKyAgICAgd3JpdGVsKHJlZywgZ3BoeS0+dTJwaHlfY2ZnX2Jhc2UgKyBVU0JD
+U19VU0IyUEhZX0NGRzIxX09GRlNFVCk7Cj4gPiArCj4gPiArICAgICByZXR1cm4gcmV0Owo+ID4g
+K30KPiA+ICsKPiAuLi4KPiA+ICsKPiA+ICsgICAgIGdwaHktPnN3ID0gdHlwZWNfc3dpdGNoX3Jl
+Z2lzdGVyKGRldiwgJnN3X2Rlc2MpOwo+ID4gKyAgICAgaWYgKElTX0VSUihncGh5LT5zdykpCj4g
+PiArICAgICAgICAgICAgIHJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihncGh5LT5z
+dyksCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJmYWlsZWQgdG8gcmVn
+aXN0ZXIgdHlwZWMgc3dpdGNoXG4iKTsKPiA+ICsKPiA+ICsgICAgIHJldHVybiAwOwo+ID4gK30K
+PiA+ICsKPiA+ICtzdGF0aWMgdm9pZCBnb29nbGVfdXNiX3BoeV9yZW1vdmUoc3RydWN0IHBsYXRm
+b3JtX2RldmljZSAqcGRldikKPiA+ICt7Cj4gPiArICAgICBzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkg
+KmdwaHkgPSBkZXZfZ2V0X2RydmRhdGEoJnBkZXYtPmRldik7Cj4gPiArCj4gPiArICAgICB0eXBl
+Y19zd2l0Y2hfdW5yZWdpc3RlcihncGh5LT5zdyk7Cj4gPiArICAgICBwbV9ydW50aW1lX2Rpc2Fi
+bGUoJnBkZXYtPmRldik7Cj4gPiArfQo+ID4gKwo+ID4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qgb2Zf
+ZGV2aWNlX2lkIGdvb2dsZV91c2JfcGh5X29mX21hdGNoW10gPSB7Cj4gPiArICAgICB7Cj4gPiAr
+ICAgICAgICAgICAgIC5jb21wYXRpYmxlID0gImdvb2dsZSxnczUtdXNiLXBoeSIsCj4KPiBEaWQg
+dGhlIG5hbWluZyBzY2hlbWUgYWxzbyBjaGFuZ2UgZnJvbSBnc3tOfTAxIHRvIGdzTj8KClN0YXJ0
+aW5nIGZyb20gVGVuc29yIEc1LCB0aGVyZSdzIG5vIG1vZGVsIG51bWJlciBbMV0sIGhlbmNlCnRo
+ZSBjaGFuZ2UuIFRoZSBwcmVmaXggImdzIiBpcyBrZXB0IGFzIHRoZWlyIGZhbWlseSBuYW1lLgoK
+WzFdIGh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL0dvb2dsZV9UZW5zb3IKCj4KPiA+ICsg
+ICAgIH0sCj4gPiArICAgICB7IH0KPiA+ICt9Owo+ID4gK01PRFVMRV9ERVZJQ0VfVEFCTEUob2Ys
+IGdvb2dsZV91c2JfcGh5X29mX21hdGNoKTsKPiA+ICsKPiA+ICtzdGF0aWMgc3RydWN0IHBsYXRm
+b3JtX2RyaXZlciBnb29nbGVfdXNiX3BoeSA9IHsKPiA+ICsgICAgIC5wcm9iZSAgPSBnb29nbGVf
+dXNiX3BoeV9wcm9iZSwKPiA+ICsgICAgIC5yZW1vdmUgPSBnb29nbGVfdXNiX3BoeV9yZW1vdmUs
+Cj4gPiArICAgICAuZHJpdmVyID0gewo+ID4gKyAgICAgICAgICAgICAubmFtZSAgICAgICAgICAg
+PSAiZ29vZ2xlLXVzYi1waHkiLAo+ID4gKyAgICAgICAgICAgICAub2ZfbWF0Y2hfdGFibGUgPSBn
+b29nbGVfdXNiX3BoeV9vZl9tYXRjaCwKPiA+ICsgICAgIH0KPiA+ICt9Owo+ID4gKwo+ID4gK21v
+ZHVsZV9wbGF0Zm9ybV9kcml2ZXIoZ29vZ2xlX3VzYl9waHkpOwo+ID4gK01PRFVMRV9MSUNFTlNF
+KCJHUEwiKTsKPiA+ICtNT0RVTEVfREVTQ1JJUFRJT04oIkdvb2dsZSBVU0IgcGh5IGRyaXZlciIp
+Owo+Cj4gR3JlYXQgd29yayEKPgo+IEJlc3QgcmVnYXJkcywKPiBJdmF5bG8KClRoYW5rIHlvdSBm
+b3IgdGhlIHJldmlldyEKClJlZ2FyZHMsClJveSBMdW8KCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
