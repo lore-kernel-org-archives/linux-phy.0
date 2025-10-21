@@ -4,81 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0708ECCD1B3
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Oct 2025 08:32:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C931CCD184
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Oct 2025 08:48:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tNISt85y1Nvz51OsaCe/ghrHBvE3wLgmm9szIIbsTg8=; b=zY/Zh4X1wXqlx3
-	VkS49g9TiEi1OAynjCh766kevMaJR604LdBxUjWSm4MSdAYWbxedD+qAJJ6yZyIFi1CVL7bJMAwJ7
-	m1Wk5dVdWHaHVI+iGntiro/1caXXiQcoQeIbCOf5rR+FiZ4tDPrGzyKFd3OSc1I7paCh6WTxfbXJw
-	8CpNXjvlE5j3imHY8qfC1+dsR1gzOGpZFXMykqhUNoX3w5PAiI3ubkGUxqmzq/fx4dC874OSYtvzK
-	iZLpoF1v9FHnt5JEd1VBu0uWrw9O51YYOwX1VlZATHrhdmgojDvdkqnnchXQJ8afksXXzIHuKb4wK
-	qvftOgdvhmGtlhue4Hdw==;
+	List-Owner; bh=IclE3cInQ4OSRZDtWfw3+z52EqI1qf+wVkC5g3gP+Ac=; b=cvAdfWUgR/NBTN
+	n39Fy8iuA85kiWqh1P7R0dX9AyA7aRGpLP0F5YtK6g5/NDv1LK3IXDGgkNTk3mCUlvydoR+Ffnz3T
+	6aL0WyXTaGPLlsl7bx3B06NwJ1iuty4YA8Lx84N1wGPd/+HJ2QKj/p6cqPk5TkVM0y6cnnok/7A/W
+	PBCaYSxq7gj0ra/hTB3CzmxRuSceqdhj0TrwkCfAXSDhpiCsrjFUtcL5vpxi4Mk2YI19ClmrgJ7ON
+	sjiLe6NmBtfvp2reOHIfu9ba/oFC/vJiXVSMXXEinC/L3mL9yDPvvZj7NC6CyX/LZPNFlIyjeaUae
+	J6Xu7jkLxLwyGDeszh1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vB7nI-0000000GHlL-35wI;
-	Tue, 21 Oct 2025 08:32:36 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vB82e-0000000GLGZ-1fM6;
+	Tue, 21 Oct 2025 08:48:28 +0000
+Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vB7nF-0000000GHhq-2BtR
+	id 1vB82b-0000000GLG1-1dMX
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Oct 2025 08:32:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1761035551;
-	bh=xPjuPvMuBs/dTwTRMKPWsPhe1oH9dEsXoBgprJB6V/c=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=Iaxq4PRTjSGBGhAOJjIntP+bdE5gWdK5Rntx2ISDQkFmgTeq2aaMKb/UQ1lklTq58
-	 I4oPCk5f14MfAqtyN7szoEu9nzLtRjv9GO99G4X+6Dn+BD9spiZ8oWDfmlN4nnsHMs
-	 rharWbRE8iGrGsvLTcinJ9rSfD6lLCU42wAgrrJRBO0JIHRanYREEQOlhtkNvWxjiR
-	 r8feBKxIez6cnavfphnRbxkIYFshSkBOOh4EKLU6jjZqTNpaxpzcffmwwN1sQOhCL5
-	 6ufQQgRyB/F3sxLbBtmxN2exKotmoCh5l9byVKHqjbjHJ5zSGmJOb6e7tFptYyoqsi
-	 Y/45OF7fnz6zA==
-Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0B86717E1305;
-	Tue, 21 Oct 2025 10:32:31 +0200 (CEST)
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-To: sboyd@kernel.org
-Cc: jic23@kernel.org,
-	dlechner@baylibre.com,
-	nuno.sa@analog.com,
-	andy@kernel.org,
-	arnd@arndb.de,
-	gregkh@linuxfoundation.org,
-	srini@kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	sre@kernel.org,
-	krzysztof.kozlowski@linaro.org,
-	u.kleine-koenig@baylibre.com,
-	angelogioacchino.delregno@collabora.com,
-	linux-arm-msm@vger.kernel.org,
-	linux-iio@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org,
-	kernel@collabora.com,
-	wenst@chromium.org,
-	casey.connolly@linaro.org,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Subject: [PATCH v7 10/10] iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
-Date: Tue, 21 Oct 2025 10:32:19 +0200
-Message-ID: <20251021083219.17382-11-angelogioacchino.delregno@collabora.com>
-X-Mailer: git-send-email 2.51.1
-In-Reply-To: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
-References: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
+	Tue, 21 Oct 2025 08:48:26 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-b50645ecfbbso1048143866b.1
+        for <linux-phy@lists.infradead.org>; Tue, 21 Oct 2025 01:48:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1761036503; x=1761641303; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:from:subject:user-agent:mime-version:date:message-id:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=GMptF+S5n4kiasdmKEC8kIdkkuMH6YPuyPq0nTtQcdY=;
+        b=Lt+a5pCdOlhKaggPveM3MASxvigiZ288lYnFbYOLeR7Mygeq1fmwPpMoiNa9vIcBh4
+         19QIBOxQ9IMRrOp8Tuf0+VP4v25cKr5+RONn3m+BNPuMQQ6Y8z/cI63+zmzEz9Brt/xi
+         5w9CJG00TnxS/7wG0r9PDxMA45XQXoNaFKkdyd1QM5AUAXXR66S45B1a1xziBQpnA8WT
+         oeZ8zixLZVzKUPfVfYDJECnn62xyu+GkwotjC5oey+0479rtl2vg3mlI4uk/2rnPfm6X
+         igViqgircqNrVRP9bdJfdGqTWqOpbjROkoztKXtmIZx8i1gCgtdfZrOQyiQ6DItZc8it
+         N0uA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761036503; x=1761641303;
+        h=content-transfer-encoding:in-reply-to:content-language:references
+         :cc:to:from:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=GMptF+S5n4kiasdmKEC8kIdkkuMH6YPuyPq0nTtQcdY=;
+        b=czRfiSXMOYrbYDtSSkTtrtCtentDE2RC+RCiYCVpa2D6aMPwrO41Gsu22RJ7hflnc7
+         S7o6ddLYkmXySj30FEURobhJpWgCB75yHFKxK8CD+4NUfnw6mYPJIc9jSx9DaZxaXzBI
+         SEmBXtWaW7yc3nbvWp2gpkcAIQAEl4a+Ahz6klbEvPeFVOkMjI1qynnaJ9Gh68t+ZhnL
+         KGqAOyHi06fGa7kiGoOAglnCRjpI0PF5ldd8KTaBhNz371acyqT9s4g92szi3uXS6ZbJ
+         bFnUsfwP9jqBL0UnzXlvLuCrSXj+qxwORKUzGlb1kSI10UP1AwJrrMInQ02HqF6SrGOL
+         +eWA==
+X-Gm-Message-State: AOJu0Yw6jNcLhc2yWBAt8bNDESbc0LpuFZjigq+6oYEuJiKtZ9sSZdr3
+	LAAogIz15SoaLpn1ZIXlgOmbvHv54WSaZw4LoHfl3tHuKRgJMwlwgLi6WSofwKxgY4s=
+X-Gm-Gg: ASbGncuVbiba4Yh4co3jAoAW382c75xT+rQjwhTsq2F45EeuJ/XuxKX2ctF2S9RF0NC
+	SK2igeBuuS/o25Lq0w38kkkS0ftGgnTIFGMC2TeJF4WNU1ykWP67NI1pwtWIj3YpBQOzpVuJIZ6
+	Q9UBA5XspQMMFKp1sSooAgkR2dULCNqocXpKITRHAVJPbMR5RBoij6xzk2kymw4+oANSgH+nrJd
+	yhBI/k0Ib8YJ5t4ca94Gf5ofUi1rCAz5G2nS/XsDTzFaO4eC4OSiLPmxrZtFRU416fcL5mi1/tR
+	0NKj2y6YtHclHmdhJDDRzgbAwdvTkay3Ur2pI5rINSVBVSpC6+YDhPCmTcLEFdqZ6YUNaZ4XeIf
+	5hQFNx32/47e/egcOw6XVOlk78Ml5gGfNeF86jFOcvmBx0sjA+frdyL+68GdAjjf++qxp8yQQrr
+	xdzQLXdYkL
+X-Google-Smtp-Source: AGHT+IH3muwvgQ58m7ty39MBJBhT3+RPeMROjQFDi1D9gzlnGyA7jawb6s+g2ZtLjD3cP/PD/Xl8sQ==
+X-Received: by 2002:a17:907:7f88:b0:b07:e3a8:5194 with SMTP id a640c23a62f3a-b6473144281mr1821120566b.22.1761036503084;
+        Tue, 21 Oct 2025 01:48:23 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.151])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b65eb52603fsm1033527266b.57.2025.10.21.01.48.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 21 Oct 2025 01:48:22 -0700 (PDT)
+Message-ID: <dc27ae49-d60b-447e-971c-6b5b51ab9f29@tuxon.dev>
+Date: Tue, 21 Oct 2025 11:48:20 +0300
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
+ PWRRDY
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+To: Philipp Zabel <p.zabel@pengutronix.de>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ geert+renesas@glider.be, magnus.damm@gmail.com,
+ yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>
+References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
+ <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
+ <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
+ <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
+ <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
+ <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
+ <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
+ <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
+ <77678dd6-071b-4911-a5c5-f1519c92e91a@tuxon.dev>
+ <6ba1fd1f07753c9b98a57c87bffbbee16971da7a.camel@pengutronix.de>
+ <19746f65-bf10-4687-9e2b-b259220a9ea8@tuxon.dev>
+Content-Language: en-US
+In-Reply-To: <19746f65-bf10-4687-9e2b-b259220a9ea8@tuxon.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251021_013233_718170_53B69106 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20251021_014825_560847_24FE8798 
+X-CRM114-Status: GOOD (  15.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,255 +116,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This driver doesn't need to add any register base address to any
-regmap call anymore since it was migrated to register as a SPMI
-subdevice with its own regmap reg_base, which makes the regmap
-API to automatically add such base address internally.
+Hi, Philipp,
 
-Since the iadc_{read,write,read_result}() functions now only do
-call regmap_{read,write,bulk_read}() and nothing else, simplify
-the driver by removing them and by calling regmap APIs directly.
+On 10/15/25 11:19, Claudiu Beznea wrote:
+>>>>>>> I see v2 and v3 tried to control the bit from the PHY drivers, and in
+>>>>>>> v4 we were are already back to the reset driver.
+>>>>>> v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
+>>>>>> renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
+>>>>>> bit was referenced counted in the SYSC driver though regmap APIs.
+>>>>>>
+>>>>>> v3 used the approach from v2 but passed the renesas,sysc-signals to all the
+>>>>>> USB related drivers.
+>>>>>>
+>>>>>> Then, in v4, the PWRRDY refcounting was dropped and passed
+>>>>>> renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
+>>>>>> is the node that will always be probed first as all the other USB blocks
+>>>>>> need it and request resets from it.
+>>>>>>
+>>>>>> v5 and v6 kept the approach from v4 and only addressed misc comments or
+>>>>>> things that I noticed.
+>>>>> Could you please let me know if you are OK with the approach proposed in
+>>>>> v7, so that I can start preparing a new version addressing your comments?
+>>>> If the PWRRDY signal is an input to the USB2PHY control block, and not
+>>>> only to the PHY blocks, I have no issue with this being handled in the
+>>>> usb2phy reset driver -
+>>> Yes, this is how the Renesas HW team confirmed they are related.
+>> Ok, understood. I concur that usb2phy-ctrl is the right place for the
+>> sysc property then.
+>>
+>>>> iff it is not sensible to just control the
+>>>> signal from the power domain driver.
+>>> As mentioned above, that can be done as well but, passing a SYSC phandle to
+>>> the CPG DT node will not be valid from the HW description point of view.
+>>>
+>>>> If we have to handle it in the reset driver, I'd prefer to see this
+>>>> controlled with a dev_pm_genpd_add_notifier(). If that is not possible,
+>>>> I'd like to understand why.
+>>> From the code inspection I did, that can be done. From what I can tell at
+>>> the moment, I'll have to register a gepnd notifier from
+>>> reset-rzg2l-usbphy-ctrl, before runtime resuming the device and control the
+>>> SYSC PWRRDY from it.
+>> I'd like that.
+> Now, that we found the genpd notifier is not a solution, could you please
+> let me know how would you like me to proceed?
 
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
----
- drivers/iio/adc/qcom-spmi-iadc.c | 83 ++++++++++++--------------------
- 1 file changed, 30 insertions(+), 53 deletions(-)
+After discussing all the possible (known) solutions, could you please let
+me know if you are OK with the approach in this series?
 
-diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
-index 67096952b229..7d46ec2d1a30 100644
---- a/drivers/iio/adc/qcom-spmi-iadc.c
-+++ b/drivers/iio/adc/qcom-spmi-iadc.c
-@@ -113,77 +113,59 @@ struct iadc_chip {
- 	struct completion complete;
- };
- 
--static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
--{
--	unsigned int val;
--	int ret;
--
--	ret = regmap_read(iadc->regmap, offset, &val);
--	if (ret < 0)
--		return ret;
--
--	*data = val;
--	return 0;
--}
--
--static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
--{
--	return regmap_write(iadc->regmap, offset, data);
--}
--
- static int iadc_reset(struct iadc_chip *iadc)
- {
--	u8 data;
-+	u32 data;
- 	int ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_read(iadc, IADC_PERH_RESET_CTL3, &data);
-+	ret = regmap_read(iadc->regmap, IADC_PERH_RESET_CTL3, &data);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
-+	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
- 	if (ret < 0)
- 		return ret;
- 
- 	data |= IADC_FOLLOW_WARM_RB;
- 
--	return iadc_write(iadc, IADC_PERH_RESET_CTL3, data);
-+	return regmap_write(iadc->regmap, IADC_PERH_RESET_CTL3, data);
- }
- 
- static int iadc_set_state(struct iadc_chip *iadc, bool state)
- {
--	return iadc_write(iadc, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
-+	return regmap_write(iadc->regmap, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
- }
- 
- static void iadc_status_show(struct iadc_chip *iadc)
- {
--	u8 mode, sta1, chan, dig, en, req;
-+	u32 mode, sta1, chan, dig, en, req;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_MODE_CTL, &mode);
-+	ret = regmap_read(iadc->regmap, IADC_MODE_CTL, &mode);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_DIG_PARAM, &dig);
-+	ret = regmap_read(iadc->regmap, IADC_DIG_PARAM, &dig);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CH_SEL_CTL, &chan);
-+	ret = regmap_read(iadc->regmap, IADC_CH_SEL_CTL, &chan);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_CONV_REQ, &req);
-+	ret = regmap_read(iadc->regmap, IADC_CONV_REQ, &req);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+	ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 	if (ret < 0)
- 		return;
- 
--	ret = iadc_read(iadc, IADC_EN_CTL1, &en);
-+	ret = regmap_read(iadc->regmap, IADC_EN_CTL1, &en);
- 	if (ret < 0)
- 		return;
- 
-@@ -199,34 +181,34 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 
- 	/* Mode selection */
- 	mode = (IADC_OP_MODE_NORMAL << IADC_OP_MODE_SHIFT) | IADC_TRIM_EN;
--	ret = iadc_write(iadc, IADC_MODE_CTL, mode);
-+	ret = regmap_write(iadc->regmap, IADC_MODE_CTL, mode);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Channel selection */
--	ret = iadc_write(iadc, IADC_CH_SEL_CTL, channel);
-+	ret = regmap_write(iadc->regmap, IADC_CH_SEL_CTL, channel);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* Digital parameter setup */
- 	decim = IADC_DEF_DECIMATION << IADC_DIG_DEC_RATIO_SEL_SHIFT;
--	ret = iadc_write(iadc, IADC_DIG_PARAM, decim);
-+	ret = regmap_write(iadc->regmap, IADC_DIG_PARAM, decim);
- 	if (ret < 0)
- 		return ret;
- 
- 	/* HW settle time delay */
--	ret = iadc_write(iadc, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
-+	ret = regmap_write(iadc->regmap, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = iadc_write(iadc, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
-+	ret = regmap_write(iadc->regmap, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
- 	if (ret < 0)
- 		return ret;
- 
- 	if (IADC_DEF_AVG_SAMPLES)
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
- 	else
--		ret = iadc_write(iadc, IADC_FAST_AVG_EN, 0);
-+		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, 0);
- 
- 	if (ret < 0)
- 		return ret;
-@@ -239,19 +221,19 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
- 		return ret;
- 
- 	/* Request conversion */
--	return iadc_write(iadc, IADC_CONV_REQ, IADC_CONV_REQ_SET);
-+	return regmap_write(iadc->regmap, IADC_CONV_REQ, IADC_CONV_REQ_SET);
- }
- 
- static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- {
- 	unsigned int count, retry;
- 	int ret;
--	u8 sta1;
-+	u32 sta1;
- 
- 	retry = interval_us / IADC_CONV_TIME_MIN_US;
- 
- 	for (count = 0; count < retry; count++) {
--		ret = iadc_read(iadc, IADC_STATUS1, &sta1);
-+		ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
- 		if (ret < 0)
- 			return ret;
- 
-@@ -267,11 +249,6 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- 	return -ETIMEDOUT;
- }
- 
--static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
--{
--	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
--}
--
- static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- {
- 	unsigned int wait;
-@@ -296,7 +273,7 @@ static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
- 	}
- 
- 	if (!ret)
--		ret = iadc_read_result(iadc, data);
-+		ret = regmap_bulk_read(iadc->regmap, IADC_DATA, data, sizeof(*data));
- exit:
- 	iadc_set_state(iadc, false);
- 	if (ret < 0)
-@@ -392,10 +369,10 @@ static int iadc_update_offset(struct iadc_chip *iadc)
- 
- static int iadc_version_check(struct iadc_chip *iadc)
- {
--	u8 val;
-+	u32 val;
- 	int ret;
- 
--	ret = iadc_read(iadc, IADC_PERPH_TYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_TYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -404,7 +381,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_PERPH_SUBTYPE, &val);
-+	ret = regmap_read(iadc->regmap, IADC_PERPH_SUBTYPE, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -413,7 +390,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_REVISION2, &val);
-+	ret = regmap_read(iadc->regmap, IADC_REVISION2, &val);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -428,7 +405,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
- static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- {
- 	int ret, sign, int_sense;
--	u8 deviation;
-+	u32 deviation;
- 
- 	ret = of_property_read_u32(node, "qcom,external-resistor-micro-ohms",
- 				   &iadc->rsense[IADC_EXT_RSENSE]);
-@@ -440,7 +417,7 @@ static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
- 		return -EINVAL;
- 	}
- 
--	ret = iadc_read(iadc, IADC_NOMINAL_RSENSE, &deviation);
-+	ret = regmap_read(iadc->regmap, IADC_NOMINAL_RSENSE, &deviation);
- 	if (ret < 0)
- 		return ret;
- 
--- 
-2.51.1
-
+Thank you,
+Claudiu
 
 -- 
 linux-phy mailing list
