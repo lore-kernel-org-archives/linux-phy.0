@@ -4,70 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E5A1CCD184
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Oct 2025 08:07:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E499ACCD1A5
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Oct 2025 08:32:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pomfZfgqLwc3MVoV6TI5PEOgeMyeHTAI37xJQuYvikA=; b=mhWFSxNF8mrcj7
-	RUIjImlqsbvyNejvVD0H/JUBs1YUqMGtehAYTX4uV5yAAqZeaDgBT9wTq7ROOuv5OI7oTyuXos2qh
-	NsdvAvLVwSt7RafB4icNyWi8ioMnrf/8rPDsXYTzvN+b6shpBi3zC2FtPM3/mRei4VVgIuuvwVvpe
-	AyNstgRmAyJkuR8u0f4vuGR3x6CIq5PLPIUGQ04WprdbbShYAJnm0/tc9ZT+JE7be/Qel4vL+Be1b
-	6hK8XLvDW82W+XvpQW0x1yfii3bDlbASOX5ziNQLeyYdESPWrlHxyxCZCVsykYhQdcVkHaYYPJavn
-	tiFaojikgnuK7tcTUrZQ==;
+	List-Owner; bh=Pjcg86eXXsNAeOjHxAsflZgoSoWWg3/UjCQZLbk2RfQ=; b=TPETyyH5Bwur+3
+	joevgyZDGBnZ8wOfHqFY/uyQixn9mdLJj266Mavo662454djDtYT75xF7zeg+mlzF7XiJlb1yMtli
+	Ieo6tQ1/5XhjPVxsyJGCdYnDiJcFAa33O7xReja/UEBM+9cC2YNTUHqcfiqwKGMX0Xkk7fr2hPjjj
+	qCF1MWQCQxybtTljMcMBIJXenXYJphGlO0StYjt91yNmqfYZwRWfDSCbHUOvykOjOzRhAqDA8Rizs
+	/nkQPbChSnIdT5rEzo6tAv6fV39vzL8++FABQUHDKrxMJKHzZZiqrhSgK6MKjsUACBt/p2tGy6RrO
+	AAV2GWZwq+lBDcgUGocg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vB7Od-0000000GDq1-3X2U;
-	Tue, 21 Oct 2025 08:07:07 +0000
+	id 1vB7nA-0000000GHe6-2Xrf;
+	Tue, 21 Oct 2025 08:32:28 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vB7Ob-0000000GDpX-3mOD
+	id 1vB7n7-0000000GHcX-2m24
 	for linux-phy@lists.infradead.org;
-	Tue, 21 Oct 2025 08:07:07 +0000
+	Tue, 21 Oct 2025 08:32:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1761034023;
-	bh=Rehk/1A9fRtUYg+F9et0A0RhHwPHQZv605r7G7w8Cx8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=QA2jFApgIehSOhr+h6MU72RM5sk8wy+gDqp4D4uIO82/Yr/3kBj51T+4Oha1Cc0p9
-	 kjxb7ouJev91hZ81J4yCDLPdur+TjgIiDT1Pq4PjfomHCYmmQ+elrkVe/7KzjK4sH+
-	 XPmyDcRL2w7eU5MFAdG2GmD9bqqEeBZEDEUa5X0m/IGmnMwlPtnxLBEWfeYDyxo0Eh
-	 VpgR0Dl1vcoOHNLU0xJNFAWm1lm+71bOIdhQnfKYA5klxWxhZDiNxVUKeJAsTyda8/
-	 T1FPwtnAJ/YQabb+3XUSL29xzHoz8TAQMyES7vlDWJjT96rA9wQFUzAa8kWByhQ513
-	 cRY+m5/uwPLmw==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	s=mail; t=1761035543;
+	bh=9WiKUoDPbDTG0YYpcvJsCalGKUIGyxlOLCHKpumDdn4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=JvJVtvLPPMigCExZuf8LlO7aIDbIx0fYth5gxxVqBYEeqBwwF+Z+wX54csrpsbiBw
+	 FD1ESVsUjd1zGmqQFlwTLYSm0ejrBy43x5SM4ymI03rlAlIMEO5t+ZTdeAkaoXMcZ0
+	 KnpmcvpVWw6f/yNugAg/W2165V/XwZFsoSlF+oSNYEjGRpQ2YVpkBQk+dbGG4N6tpR
+	 jlhq1Hiw8RCx26eS3A6Zlb3OHGB73W+2dajWAEwAnoOajv0ddcInyYwy+zj2/uG3/Q
+	 9FEOK2q5qyR3G83VUo+aKtZl34tCbQKkGnqOQwhs8sPvkxWQwuWXCXyMkANpZD4AkI
+	 JF7YJdr118MAQ==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id AE38E17E0CA3;
-	Tue, 21 Oct 2025 10:07:02 +0200 (CEST)
-Message-ID: <1a5f4081-191f-49a5-b3a0-419656b04bf4@collabora.com>
-Date: Tue, 21 Oct 2025 10:07:02 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 1/8] spmi: Print error status with %pe format
-To: Andy Shevchenko <andriy.shevchenko@intel.com>
-Cc: sboyd@kernel.org, jic23@kernel.org, dlechner@baylibre.com,
- nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, sre@kernel.org, krzysztof.kozlowski@linaro.org,
- u.kleine-koenig@baylibre.com, linux-arm-msm@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- kernel@collabora.com, wenst@chromium.org, casey.connolly@linaro.org,
- AngeloGioacchino Del Regno <angleogioacchino.delregno@collabora.com>
-References: <20251016104402.338246-1-angelogioacchino.delregno@collabora.com>
- <20251016104402.338246-2-angelogioacchino.delregno@collabora.com>
- <aPPmsBHnmKQ1sa3O@ashevche-desk.local>
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DB51617E0456;
+	Tue, 21 Oct 2025 10:32:22 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <aPPmsBHnmKQ1sa3O@ashevche-desk.local>
+To: sboyd@kernel.org
+Cc: jic23@kernel.org,
+	dlechner@baylibre.com,
+	nuno.sa@analog.com,
+	andy@kernel.org,
+	arnd@arndb.de,
+	gregkh@linuxfoundation.org,
+	srini@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	sre@kernel.org,
+	krzysztof.kozlowski@linaro.org,
+	u.kleine-koenig@baylibre.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-iio@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-pm@vger.kernel.org,
+	kernel@collabora.com,
+	wenst@chromium.org,
+	casey.connolly@linaro.org
+Subject: [PATCH v7 01/10] spmi: Print error status with %pe format
+Date: Tue, 21 Oct 2025 10:32:10 +0200
+Message-ID: <20251021083219.17382-2-angelogioacchino.delregno@collabora.com>
+X-Mailer: git-send-email 2.51.1
+In-Reply-To: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
+References: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251021_010706_129113_11EB48CF 
-X-CRM114-Status: GOOD (  12.82  )
+X-CRM114-CacheID: sfid-20251021_013225_855463_8DB82B08 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,42 +89,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 18/10/25 21:12, Andy Shevchenko ha scritto:
-> On Thu, Oct 16, 2025 at 12:43:55PM +0200, AngeloGioacchino Del Regno wrote:
->> Instead of printing just a number, use the %pe format for error
->> status, increasing readability of error prints.
-> 
-> ...
-> 
->>   	err = device_add(&sdev->dev);
->>   	if (err < 0) {
->> -		dev_err(&sdev->dev, "Can't add %s, status %d\n",
->> -			dev_name(&sdev->dev), err);
->> +		dev_err(&sdev->dev, "Can't add %s, status %pe\n",
->> +			dev_name(&sdev->dev), ERR_PTR(err));
-> 
-> LOL, I only now noticed that the parameter to dev_err() and dev_name() is the
-> same. For christ's sake, why do we need dev_name()?
-> 
+Instead of printing just a number, use the %pe format for error
+status, increasing readability of error prints.
 
-Just only for consistency and having the exact same message as function
-spmi_device_add() and nothing else.
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ drivers/spmi/spmi.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-I agree that it's not really needed; if you want I can just change the
-error message in both spmi_device_add() and in the new function that I
-am introducing here.
-
-Cheers,
-Angelo
-
->>   		goto err_device_add;
->>   	}
-> 
+diff --git a/drivers/spmi/spmi.c b/drivers/spmi/spmi.c
+index 3cf8d9bd4566..bcb71f25194f 100644
+--- a/drivers/spmi/spmi.c
++++ b/drivers/spmi/spmi.c
+@@ -68,8 +68,8 @@ int spmi_device_add(struct spmi_device *sdev)
+ 
+ 	err = device_add(&sdev->dev);
+ 	if (err < 0) {
+-		dev_err(&sdev->dev, "Can't add %s, status %d\n",
+-			dev_name(&sdev->dev), err);
++		dev_err(&sdev->dev, "Can't add %s, status %pe\n",
++			dev_name(&sdev->dev), ERR_PTR(err));
+ 		goto err_device_add;
+ 	}
+ 
+@@ -494,8 +494,8 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		err = of_property_read_u32_array(node, "reg", reg, 2);
+ 		if (err) {
+ 			dev_err(&ctrl->dev,
+-				"node %pOF err (%d) does not have 'reg' property\n",
+-				node, err);
++				"node %pOF err (%pe) does not have 'reg' property\n",
++				node, ERR_PTR(err));
+ 			continue;
+ 		}
+ 
+@@ -523,7 +523,7 @@ static void of_spmi_register_devices(struct spmi_controller *ctrl)
+ 		err = spmi_device_add(sdev);
+ 		if (err) {
+ 			dev_err(&sdev->dev,
+-				"failure adding device. status %d\n", err);
++				"failure adding device. status %pe\n", ERR_PTR(err));
+ 			spmi_device_put(sdev);
+ 		}
+ 	}
+-- 
+2.51.1
 
 
 -- 
