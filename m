@@ -4,83 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 901D5CCD1AB
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Oct 2025 07:26:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C11ACCD195
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Oct 2025 07:41:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:To:Cc:
+	Subject:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=guMwcoH/KrBQdPKJIf6t9Kyfl+R3RaVO4b2Q0KhUG04=; b=YFuGWxAjkmUu11
-	r8kNUJUcE1Dhue66pC3FD7pAgJ6jZptQ7CZEHQE8SF2waWq3O+aj9n3hV2mjKTNB8w45I6DvN+yOb
-	XSDxQul3v1/0fBOTVx5j9yRjRzZS3djRWaGa3qUYOAoXUZWthnePjRa56oxUNiTiUkOZSHKGVfppc
-	SaUMK+yUAfZTGKgxsIlUGX2KMR38Ojx6lYEjb7NhqNzmnT/YfsrxS0UvZ+ZweUnUB1OozA35uB+Bw
-	FJZJFJAImX07KXqNHuAObJizEgd/1V2rxArlp6lOtoPkYB2CtE5GtqFZ8Z/7iJzryprYq84hX/dpL
-	PfexV7w9UU2aEbFQPnfA==;
+	List-Owner; bh=Kcv/YVDyq/iATAPXUYR8snhJo6fEy4ii14J5NIhFq5A=; b=1h5zrXy0wbh0+Q
+	ylG0FyWszwc6ufIpmxnmTcKgy0STho2cx+t0rjgvB+SiywNLIv7QBFObVzh0FbS623sg82IQD/jFo
+	hWNyyoHhNgth/8gB2cbe0fnbpYEcTv1+nH2QO8KrpWxqa/lLQKQFx3XG8a9IvxAOqnVm2gENIlLhp
+	BS2anl2/2RDsbxhDOSadUK+AnTlT6yRFmdBTUFVr6eMkV+CJ+t9WCZ74rdVlWEHwBZZyFEhOw/zSU
+	55vqMgWL6peY+/T8kQOLJVmjTqWTSr0w4E4vYq7HV42+D9AwcpInOZCVtEIkfF5Um8NM5bDNppsnl
+	4tTJevT6iNHvEVHO0EEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBTFB-00000001s8M-0p6i;
-	Wed, 22 Oct 2025 07:26:49 +0000
-Received: from sender4-op-o15.zoho.com ([136.143.188.15])
+	id 1vBTTZ-00000001uzU-0Q7M;
+	Wed, 22 Oct 2025 07:41:41 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBTF7-00000001s5x-1lqP;
-	Wed, 22 Oct 2025 07:26:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1761117986; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=GWdWVJIci83v/eS69HecZIVsU2dKjax3EaKZENbtz8G9fVU3kFO9nY0W8fbL857a5mW3ciUZqRmPGiAn2qFYSRfUsXikN42get9YJK0XRoxavO8HtvhmmTrh6sXVgQ091coljHNh/p5NRqUQXn8vNn0LieCpkgF8NE75OevzYL8=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1761117986; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Ne+Pmve/YJpQYWLxsEpgG2oak24NJMv5+UeWTnSp+5I=; 
-	b=ZFwP3ceil6N4YJkKFYDLfc3uNtz7sFBZZs9URI8eHspzPQ9RO5mfmYIwTuRp/Pt0BgCsLXgGGmuDL0oIbK3wlG8wJHJesye68F3WBpKfNl3nVdW2Waqixq2ZVPbPC8gOtczfnFApIzT0yRx1/5t9XZJUMQlDgLGmCtf2orhIpWw=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sjoerd@collabora.com;
-	dmarc=pass header.from=<sjoerd@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1761117986;
-	s=zohomail; d=collabora.com; i=sjoerd@collabora.com;
-	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
-	bh=Ne+Pmve/YJpQYWLxsEpgG2oak24NJMv5+UeWTnSp+5I=;
-	b=WS0HFeV7KBFtIbds/DTNEOfzlWHiuEhf7zgrHzyBNXymtekgif2dvr8//CXl1Eja
-	5o0inS7TmzZMLQ8iQ3Ei7kl5nEinVZYEVFx7L46Nzx0eWtQ5TQX0iSAx2IQCmJK8X72
-	FD3DTFDuVjIDxFN5LhSIHklpFieoF/gr9TrumGso=
-Received: by mx.zohomail.com with SMTPS id 1761117982200158.6072297880238;
-	Wed, 22 Oct 2025 00:26:22 -0700 (PDT)
-Message-ID: <79d4a7379bce245d22b56c677fd7b3a263836239.camel@collabora.com>
-Subject: Re: [PATCH 15/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- leds
-From: Sjoerd Simons <sjoerd@collabora.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-  Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno	
- <angelogioacchino.delregno@collabora.com>, Ryder Lee
- <ryder.lee@mediatek.com>,  Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn
- Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi	 <lpieralisi@kernel.org>,
- Krzysztof =?UTF-8?Q?Wilczy=C5=84ski?=	 <kwilczynski@kernel.org>, Manivannan
- Sadhasivam <mani@kernel.org>, Chunfeng Yun	 <chunfeng.yun@mediatek.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,  "David S.
- Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub
- Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Lorenzo
- Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
-	kernel@collabora.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, 	linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, 	linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, netdev@vger.kernel.org,  Daniel Golle
- <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
-Date: Wed, 22 Oct 2025 09:26:11 +0200
-In-Reply-To: <d8077ee4-21c2-43c5-b130-7ff270b09791@lunn.ch>
-References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
-	 <20251016-openwrt-one-network-v1-15-de259719b6f2@collabora.com>
-	 <d8077ee4-21c2-43c5-b130-7ff270b09791@lunn.ch>
-Organization: Collabora
-User-Agent: Evolution 3.56.2-5 
-MIME-Version: 1.0
-X-ZohoMailClient: External
+	id 1vBTTW-00000001uz2-04Wh
+	for linux-phy@lists.infradead.org;
+	Wed, 22 Oct 2025 07:41:40 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 39B4F4E41278;
+	Wed, 22 Oct 2025 07:41:34 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 0A58E606DC;
+	Wed, 22 Oct 2025 07:41:34 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 68B39102F241B;
+	Wed, 22 Oct 2025 09:41:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1761118892; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=w6Pk318+uWlJig7kSmhciOgwzKqt9hCCrIYqqL4yqNY=;
+	b=PkTnWtr1jkPN412arglI0mz2NhL3TRAuP2uayrqji+VoDe4d/FIjOWZ1cc63SLUc2Lo+Jd
+	FIt6sYzMUROvjKK/8SgV+CUFUlBPL8rb9ABg11NRZs/srHm3UId29ZEnEIgtzwZi7hu8Bk
+	kMs8qKh0az23BYaou/Ar5XWg2AlYUT9Siy4Oo04ojU8ZXk4QSchJV9XKZvEZQhXNDpszvs
+	oAABVn1+T2IIXdMSECtUVh5yyhkYANZOUz39ovz7lY/SSCagG40w0uUti1Mtx1aEyaKc5L
+	g+6yf9EKsEizPO15T9Qt6fJBKtKZp2axtAOPGBbrxKquY0a8h1C/XZ9rgavKgA==
+Mime-Version: 1.0
+Date: Wed, 22 Oct 2025 09:41:24 +0200
+Message-Id: <DDOOJIQS8DK2.1QUEWN5FYYQ32@bootlin.com>
+Subject: Re: [PATCH net-next 00/12] net: macb: EyeQ5 support (alongside
+ generic PHY driver in syscon)
+Cc: "Andrew Lunn" <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, "Eric Dumazet" <edumazet@google.com>, "Paolo Abeni"
+ <pabeni@redhat.com>, "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
+ <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>, "Nicolas Ferre"
+ <nicolas.ferre@microchip.com>, "Claudiu Beznea" <claudiu.beznea@tuxon.dev>,
+ "Vladimir Kondratiev" <vladimir.kondratiev@mobileye.com>,
+ =?utf-8?q?Gr=C3=A9gory_Clement?= <gregory.clement@bootlin.com>, "Russell
+ King" <linux@armlinux.org.uk>, "Vinod Koul" <vkoul@kernel.org>, "Kishon
+ Vijay Abraham I" <kishon@kernel.org>, "Michael Turquette"
+ <mturquette@baylibre.com>, "Stephen Boyd" <sboyd@kernel.org>, "Thomas
+ Bogendoerfer" <tsbogend@alpha.franken.de>, "Philipp Zabel"
+ <p.zabel@pengutronix.de>, <netdev@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-mips@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-clk@vger.kernel.org>, "Tawfik Bayouk" <tawfik.bayouk@mobileye.com>,
+ "Thomas Petazzoni" <thomas.petazzoni@bootlin.com>,
+ =?utf-8?q?Beno=C3=AEt_Monin?= <benoit.monin@bootlin.com>, "Maxime
+ Chevallier" <maxime.chevallier@bootlin.com>, "Andrew Lunn"
+ <andrew@lunn.ch>, "Jerome Brunet" <jbrunet@baylibre.com>
+To: "Jakub Kicinski" <kuba@kernel.org>, =?utf-8?q?Th=C3=A9o_Lebrun?=
+ <theo.lebrun@bootlin.com>
+From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
+X-Mailer: aerc 0.21.0-0-g5549850facc2
+References: <20251021-macb-eyeq5-v1-0-3b0b5a9d2f85@bootlin.com>
+ <20251021171430.579211b2@kernel.org>
+In-Reply-To: <20251021171430.579211b2@kernel.org>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251022_002645_513101_098627D2 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20251022_004138_234104_1A155E9F 
+X-CRM114-Status: UNSURE (   6.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,50 +91,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hey,
-
-On Fri, 2025-10-17 at 19:35 +0200, Andrew Lunn wrote:
-> On Thu, Oct 16, 2025 at 12:08:51PM +0200, Sjoerd Simons wrote:
-> > The Openwrt One has 3 status leds at the front (red, white, green) as
-> > well as 2 software controlled leds for the LAN jack (amber, green).
-> 
-> A previous patch in this series added 2 PHY LEDs. Are they connected
-> to a LAN jack? Are there multiple RJ45 connectors? Is it clear from
-> /sys/class/leds what LED is what?
-
-Yeah there are two RJ45 jacks. One referred to as WAN in the openwrt one
-documentation (2.5G), which uses phy integrated leds. One referred to as LAN,
-which for some reason is using software controlled leds rather then the phy's
-led controller, which this patch adds support for.
-
-When applying this set you'll get:
-```
-root@openwrt-debian:/sys/class/leds# ls -1                                     
-amber:lan                                                                      
-green:lan                                                                      
-green:status                                                                   
-mdio-bus:0f:amber:wan                                                          
-mdio-bus:0f:green:wan                                                          
-mt76-phy0                                                                      
-mt76-phy1                                                                      
-red:status                                                                     
-white:status                       
-```
-
-Which is hopefully clear enough
-
-
-
--- 
-Sjoerd Simons <sjoerd@collabora.com>
-Collabora
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkIE9jdCAyMiwgMjAyNSBhdCAyOjE0IEFNIENFU1QsIEpha3ViIEtpY2luc2tpIHdyb3Rl
+Ogo+IE9uIFR1ZSwgMjEgT2N0IDIwMjUgMTg6MzI6NDEgKzAyMDAgVGjDqW8gTGVicnVuIHdyb3Rl
+Ogo+PiBNZXJnaW5nIGFsbCB0aGlzIHdvbid0IGJlIGVhc3ksIHNvcnJ5LiBJcyB0aGlzIHNwbGl0
+IGFjcm9zcyB0cmVlcyBPSz8KPj4gVGhlIG5ldC1uZXh0IHBhcnQgaXMgcHJldHR5IGV2aWRlbnQs
+IGl0IGlzIHRoZSByZXN0IHRoYXQgYXBwZWFycwo+PiBjb21wbGV4IHRvIG1lcmdlIHRvIG1lLiBJ
+IGNhbiByZXNlbmQgdGhlIHNlcmllcyBleHBsb2RlZCBpZiB1c2VmdWwKPj4gKG9yIGF0IGxlYXN0
+IHNwbGl0IG5ldC1uZXh0IHZlcnN1cyB0aGUgcmVzdCkuCj4KPiBZZXMsIHBsZWFzZSByZXNwaW4g
+anVzdCB0aGUgcGF0Y2hlcyB0aGF0IG5lZWQgdG8gZ28gdmlhIG5ldC1uZXh0Cj4gZm9yIHVzICgx
+LDMtNj8pLiBUaGUgcmVzdCBJIGRvbid0IGNhcl5XIGtub3cgOikKClN1cmUgdGhpbmchIE9ubHkg
+bmV0IGJlYXV0eSBpcyBwcmVzZW50IGluIFYyLgoKaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGtt
+bC8yMDI1MTAyMi1tYWNiLWV5ZXE1LXYyLTAtN2MxNDBhYmIwNTgxQGJvb3RsaW4uY29tLwoKVGhh
+bmtzLAoKLS0KVGjDqW8gTGVicnVuLCBCb290bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwg
+ZW5naW5lZXJpbmcKaHR0cHM6Ly9ib290bGluLmNvbQoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
