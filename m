@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4EAFCCD195
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Oct 2025 09:38:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D892CCF9E0
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Oct 2025 12:35:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TIK/10c6l9l2XCyZKu7fQ/6gDn+YK0QIIeMNIVj0gWg=; b=GOy3l0gTGKp0bQ
-	nsW9B0K4edHqRcr+6pvv506sg1FzbllukFBNL8c3TRzX9sXjt9rkZFqP1llvwoiXBxGBwuOzd/OaJ
-	/yl+6429H/AunxVbAiek0XTAXuVVM6Ee/yTCgQ1gS0LSy4siC+vg57zFLFsNQUti9R6Zi4DUOZPiO
-	annI1t1emxxhTogwJ49LI4WTqVvXgVKmGmyS8SI46Ir1hnsXWtfoySqRtEc+cHpy9jNHnNqjA8S0H
-	DYg1WiUnqY8n3FAyAOD1mY0S1wM1ezpSfMvKTX7L12xQ4VhLsosohLxwjT2Lv1fJO1jP2Wns97aK+
-	z8FRZV0SIbFMvpaiOv3Q==;
+	List-Owner; bh=U4vGvJ4X4sJdNQ3IsV13F3KgU4AYLZ+zDa7z1IwJaq4=; b=dtmkrzG/rcu1tL
+	21h+bq0DoQZ7JSpdl7xAGou/1hl8G4xl/7/ifnaQ5+DlQ9bdZ60tnsiZrpfEp675uL0tQkZu7IS2M
+	0D1P/W6Jr3WpO2eR/aOI5+jivHcrvHt//bp9zSOandCuMbCMTRx3wUSEaj/qw2ITIX+lvhsuGGGx7
+	yhN311FXMs/LudY+cWgEzwgFRAtVFKO1fAm4wJIUZMLHdSUUafNxhIZ4ZMX9aa/RZFmzY7cUtbAQw
+	u9e1SSy/1la6HzkH2a1mam5YYERUNDkx++VHpxW5uqsRViuvx5frXb4dW3jbjObYHaYR6q8hrRnTb
+	SPjHNTIflR1lIHrEwKsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBVIm-00000002I3d-1PMb;
-	Wed, 22 Oct 2025 09:38:40 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1vBY4L-00000002os7-0Fo8;
+	Wed, 22 Oct 2025 12:35:57 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBVIk-00000002I26-00dB
-	for linux-phy@lists.infradead.org;
-	Wed, 22 Oct 2025 09:38:39 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vBVIQ-00004t-1Z; Wed, 22 Oct 2025 11:38:18 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vBVIO-004rvs-3B;
-	Wed, 22 Oct 2025 11:38:17 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vBVIO-000000004t5-3n5a;
-	Wed, 22 Oct 2025 11:38:16 +0200
-Message-ID: <08fbb2fc1a2e581010b6b28cd1a544053a4f1fb0.camel@pengutronix.de>
-Subject: Re: [PATCH v7 4/7] reset: rzg2l-usbphy-ctrl: Add support for USB
- PWRRDY
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Claudiu Beznea <claudiu.beznea@tuxon.dev>, vkoul@kernel.org, 
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, 	geert+renesas@glider.be, magnus.damm@gmail.com,
- yoshihiro.shimoda.uh@renesas.com, 	biju.das.jz@bp.renesas.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, Claudiu
- Beznea	 <claudiu.beznea.uj@bp.renesas.com>, Wolfram Sang	
- <wsa+renesas@sang-engineering.com>
-Date: Wed, 22 Oct 2025 11:38:16 +0200
-In-Reply-To: <dc27ae49-d60b-447e-971c-6b5b51ab9f29@tuxon.dev>
-References: <20250925100302.3508038-1-claudiu.beznea.uj@bp.renesas.com>
-	 <20250925100302.3508038-5-claudiu.beznea.uj@bp.renesas.com>
-	 <c7fc31f1247332196516394a22f6feef9733a0b4.camel@pengutronix.de>
-	 <66d85e70-efb8-4a45-9164-55b123691b70@tuxon.dev>
-	 <bcf6113b0025777db1cb2ace1618fed8fac2dfc6.camel@pengutronix.de>
-	 <cca1061e-df67-4b5b-99bd-9721c72a0f88@tuxon.dev>
-	 <6d4bc69c-1571-4d98-b0d4-214c68be118e@tuxon.dev>
-	 <c1099a8e422abbc5d12bf3f325cb9f2140c8c006.camel@pengutronix.de>
-	 <77678dd6-071b-4911-a5c5-f1519c92e91a@tuxon.dev>
-	 <6ba1fd1f07753c9b98a57c87bffbbee16971da7a.camel@pengutronix.de>
-	 <19746f65-bf10-4687-9e2b-b259220a9ea8@tuxon.dev>
-	 <dc27ae49-d60b-447e-971c-6b5b51ab9f29@tuxon.dev>
-User-Agent: Evolution 3.56.1-1 
+	id 1vBY4H-00000002oqu-2aKb;
+	Wed, 22 Oct 2025 12:35:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=R95DGcQ4LYALHG8T4SNxi7BAAXg7er7ggzkRbLh42No=; b=QSk6D6ZIL39KWQjpQVXzyu/daU
+	CkHCg8qd7kd0YqSVIzxh2OYFZ1Gtf6Zy1PMvilS2ibzw5vrduZP1N74w4P6Tj1JfPOXck0ka2IkIN
+	G3R9KHuq/zrSWxPK36Hjw1+QvspeXZMa8vN0KtQZWpHSk2jPm3N1Cw59r3FE3Ov57v3Y=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1vBY3w-00Bkxo-MY; Wed, 22 Oct 2025 14:35:32 +0200
+Date: Wed, 22 Oct 2025 14:35:32 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Sjoerd Simons <sjoerd@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Jianjun Wang <jianjun.wang@mediatek.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+	kernel@collabora.com, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Bryan Hinton <bryan@bryanhinton.com>
+Subject: Re: [PATCH 15/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ leds
+Message-ID: <9ecffb7f-839c-4e4d-bef1-f59747d020b2@lunn.ch>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-15-de259719b6f2@collabora.com>
+ <d8077ee4-21c2-43c5-b130-7ff270b09791@lunn.ch>
+ <79d4a7379bce245d22b56c677fd7b3a263836239.camel@collabora.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <79d4a7379bce245d22b56c677fd7b3a263836239.camel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251022_023838_089926_35474A16 
-X-CRM114-Status: GOOD (  33.74  )
+X-CRM114-CacheID: sfid-20251022_053553_653835_19EA5E2D 
+X-CRM114-Status: GOOD (  18.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,61 +93,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Claudiu,
-
-On Di, 2025-10-21 at 11:48 +0300, Claudiu Beznea wrote:
-> Hi, Philipp,
+On Wed, Oct 22, 2025 at 09:26:11AM +0200, Sjoerd Simons wrote:
+> Hey,
 > 
-> On 10/15/25 11:19, Claudiu Beznea wrote:
-> > > > > > > > I see v2 and v3 tried to control the bit from the PHY drivers, and in
-> > > > > > > > v4 we were are already back to the reset driver.
-> > > > > > > v2 passed the system controller (SYSC) phandle to the USB PHYs only (though
-> > > > > > > renesas,sysc-signals DT property) where the PWRRDY bit was set. The PWRRDY
-> > > > > > > bit was referenced counted in the SYSC driver though regmap APIs.
-> > > > > > > 
-> > > > > > > v3 used the approach from v2 but passed the renesas,sysc-signals to all the
-> > > > > > > USB related drivers.
-> > > > > > > 
-> > > > > > > Then, in v4, the PWRRDY refcounting was dropped and passed
-> > > > > > > renesas,sysc-signals only to the USB PHY CTRL DT node in the idea that this
-> > > > > > > is the node that will always be probed first as all the other USB blocks
-> > > > > > > need it and request resets from it.
-> > > > > > > 
-> > > > > > > v5 and v6 kept the approach from v4 and only addressed misc comments or
-> > > > > > > things that I noticed.
-> > > > > > Could you please let me know if you are OK with the approach proposed in
-> > > > > > v7, so that I can start preparing a new version addressing your comments?
-> > > > > If the PWRRDY signal is an input to the USB2PHY control block, and not
-> > > > > only to the PHY blocks, I have no issue with this being handled in the
-> > > > > usb2phy reset driver -
-> > > > Yes, this is how the Renesas HW team confirmed they are related.
-> > > Ok, understood. I concur that usb2phy-ctrl is the right place for the
-> > > sysc property then.
-> > > 
-> > > > > iff it is not sensible to just control the
-> > > > > signal from the power domain driver.
-> > > > As mentioned above, that can be done as well but, passing a SYSC phandle to
-> > > > the CPG DT node will not be valid from the HW description point of view.
-> > > > 
-> > > > > If we have to handle it in the reset driver, I'd prefer to see this
-> > > > > controlled with a dev_pm_genpd_add_notifier(). If that is not possible,
-> > > > > I'd like to understand why.
-> > > > From the code inspection I did, that can be done. From what I can tell at
-> > > > the moment, I'll have to register a gepnd notifier from
-> > > > reset-rzg2l-usbphy-ctrl, before runtime resuming the device and control the
-> > > > SYSC PWRRDY from it.
-> > > I'd like that.
-> > Now, that we found the genpd notifier is not a solution, could you please
-> > let me know how would you like me to proceed?
+> On Fri, 2025-10-17 at 19:35 +0200, Andrew Lunn wrote:
+> > On Thu, Oct 16, 2025 at 12:08:51PM +0200, Sjoerd Simons wrote:
+> > > The Openwrt One has 3 status leds at the front (red, white, green) as
+> > > well as 2 software controlled leds for the LAN jack (amber, green).
+> > 
+> > A previous patch in this series added 2 PHY LEDs. Are they connected
+> > to a LAN jack? Are there multiple RJ45 connectors? Is it clear from
+> > /sys/class/leds what LED is what?
 > 
-> After discussing all the possible (known) solutions, could you please let
-> me know if you are OK with the approach in this series?
+> Yeah there are two RJ45 jacks. One referred to as WAN in the openwrt one
+> documentation (2.5G), which uses phy integrated leds. One referred to as LAN,
+> which for some reason is using software controlled leds rather then the phy's
+> led controller, which this patch adds support for.
+> 
+> When applying this set you'll get:
+> ```
+> root@openwrt-debian:/sys/class/leds# ls -1                                     
+> amber:lan                                                                      
+> green:lan                                                                      
+> green:status                                                                   
+> mdio-bus:0f:amber:wan                                                          
+> mdio-bus:0f:green:wan                                                          
+> mt76-phy0                                                                      
+> mt76-phy1                                                                      
+> red:status                                                                     
+> white:status                       
+> ```
+> 
+> Which is hopefully clear enough
 
-Yes, I don't have a better idea. Let's revisit the issue of ordering
-guarantees when suspend/resume is implemented.
+You can also get to the LEDs associated to a MAC via
+/sys/class/net/eth42/leds, or a subdirectory.
 
-regards
-Philipp
+Please could you expand the commit message with more details of the
+different RJ45 connectors, and how the different LEDs map to them.
+
+Thanks
+
+	Andrew
 
 -- 
 linux-phy mailing list
