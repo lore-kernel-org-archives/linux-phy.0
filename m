@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FB42CCD1BC
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 08:11:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 985C6CCD193
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 08:45:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s3fSUAOa+s/sP34Oxbc9KxPbS6y1Cxs6k5UPesgb/qU=; b=gf/a/7WmtjfMKq
-	JU2xadn+4wamHu21pQhpr1rhBL96rO3Wj7uUSTbijrsMYHI2zOMYIXm/DvU5T6+eXT2Mnd+UGSwoh
-	p5mMswy7JW7CVx4WdwaIILtdE/inRK/X9iJvMgX3pcWf0QRCF91gEgnam3hGrTk8ZhvIHxy7DBHVY
-	k6v+wWV/5EmzbvBxxl6VL1QrPfBxkbQHrttVBWjTHlp/nkwN2Yv9Wj71a9oH+6LhlVyeC6jRpVkj4
-	wzdjOhZbDxh1bRkzboM97lj/JWzeu4uTdcS441lekohEdaduNIJ3boTq8z6W9qm9l9x6RZGZK01AX
-	Fl+oW2y8NAtD9TXs1wzg==;
+	List-Owner; bh=RZ7Pv9V1anz7lPcu3pBwmd3dLytB46fh9Fn0iGncozw=; b=XBPwP/l19zfTMe
+	rTik56pQdzqs/EiEjRlDGNdCjqzeOzE3/Q5RfvUd1V73kKrbsI1GA7h2hGhOpSLq9kJ5Dx9VJuqSY
+	HhpAcF5m7ZaTgeuO8gaqg64miOvdBHgCd/SqmKPFDw7IbQ+vYwDxEDoPHlcLaJhgRHhwvRgxtg5ON
+	fgdsEjHLpMyuau8haG1KSAjNgyU7lmD37t8o5TnJwwdt3WXnUDQ6UOPXescXG4ARnr9CNCndpTMZM
+	3f3Gll6GKaYn6DEYF2G9cKjxzwIKBYMHy4xkwMxFfzX926R2Q6326162enzpqPfq3nAYdf+5fRVtO
+	oqf5amdospN9w2Hf0Nhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBqPj-00000005UBK-3v7L;
-	Thu, 23 Oct 2025 08:11:15 +0000
-Received: from mgamail.intel.com ([198.175.65.16])
+	id 1vBqx5-00000005amn-1Y3r;
+	Thu, 23 Oct 2025 08:45:43 +0000
+Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBqPV-00000005U5E-21oc;
-	Thu, 23 Oct 2025 08:11:02 +0000
+	id 1vBqx2-00000005alZ-3MPo;
+	Thu, 23 Oct 2025 08:45:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761207062; x=1792743062;
+  t=1761209141; x=1792745141;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=X9A+e5HX8/DxioXkaxwvZdY29MB1MDYbmVYOX4ols5k=;
-  b=bjROa49mGgRUUM0p1GdTNUjPW3HtEPMv1M23t5/RAeB4sYgBcpmaO7gm
-   A4h6RrD6+dFCWlDnY5m3RJj0AIRvX2RPXwm6LUsdwuUVzuySpQ9Kig5be
-   +P7V3mzZW5F/+s2/UU2iCUmGBoUfVPx9/3w4p1WPitf6faFJ3o6jGqyGe
-   tBciPz7NYjQV52yWeixqBN7lOWefYEsObCm6y2zMJk2xKg6dF/m9QHMRD
-   4DQ071cqcHV50NXEERc/e+ZycyWP65MVSbSuEna9STWqELDVc3c5a6Eec
-   xgGrWECf8ltjsA+jt+K6FaLNQRBOG2DNReet5mh5UYzDyZUNJlD1ygxys
+  bh=mska27xKT3EyztX10JDYKLSZS1LLb/NIROqYMNvXfP4=;
+  b=fx/E6O7DwTsa7kkOQKUHkKZYcmfeyB4u9tqVRoLZUSFdokAb+RvsjAfA
+   n1UPtnQ82PLf2WFeKyqKFpMfC0uYrjzZkMfMPY8UTRRePMadUzEbWsdUK
+   bPX2YDV009lXLLT1Fdyxwzpmci/5ikoiezi/P4l7lEOBu6rvKhuXx1YC8
+   ZNaH5Ta1vlvUygboqFZY8z2Clgiq3OylYm43AHtEbLPmJN5OAAhEx641K
+   kk0MD4FFqkv2RVLNhMJ+l92NjDx2DMbCfpkz4Wh++uGJSThLXWyWiG8tG
+   vO6Muf6mrIpUx+Pcdh+Yh1D5doDU0T86EqAEzJgljZniSjU1rNIsnX68h
    Q==;
-X-CSE-ConnectionGUID: TQABKgwDQOu1SnDePqoU9g==
-X-CSE-MsgGUID: WyM/x89tRuuB6f5KTVmCgw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="63518391"
-X-IronPort-AV: E=Sophos;i="6.19,249,1754982000"; 
-   d="scan'208";a="63518391"
+X-CSE-ConnectionGUID: YlgD533LTeic30tncBzGyg==
+X-CSE-MsgGUID: PFq+OF2HSK+uOUBgkHMXHQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="63276404"
+X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
+   d="scan'208";a="63276404"
 Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 01:10:21 -0700
-X-CSE-ConnectionGUID: U/yJ+8RYQ+2huY61DLG6tw==
-X-CSE-MsgGUID: qjW+PJi/SHi+vFM/FDi4jw==
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 01:45:40 -0700
+X-CSE-ConnectionGUID: Ucc0EPCqSiCBkTSZJ6NNCw==
+X-CSE-MsgGUID: M6DulzDDRF26JDQ0xCqgcQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.19,249,1754982000"; 
-   d="scan'208";a="183988336"
+   d="scan'208";a="183995303"
 Received: from bkammerd-mobl.amr.corp.intel.com (HELO kuha.fi.intel.com) ([10.124.221.165])
-  by orviesa007.jf.intel.com with SMTP; 23 Oct 2025 01:10:09 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Thu, 23 Oct 2025 11:10:08 +0300
-Date: Thu, 23 Oct 2025 11:10:08 +0300
+  by orviesa007.jf.intel.com with SMTP; 23 Oct 2025 01:45:30 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Thu, 23 Oct 2025 11:45:29 +0300
+Date: Thu, 23 Oct 2025 11:45:28 +0300
 From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 To: Chaoyi Chen <kernel@airkyi.com>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -85,16 +85,17 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v7 1/9] usb: typec: Add notifier functions
-Message-ID: <aPni4AeDaem_rfZH@kuha.fi.intel.com>
+Subject: Re: [PATCH v7 2/9] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+Message-ID: <aPnrKFWTvpuRTyhI@kuha.fi.intel.com>
 References: <20251023033009.90-1-kernel@airkyi.com>
- <20251023033009.90-2-kernel@airkyi.com>
+ <20251023033009.90-3-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251023033009.90-2-kernel@airkyi.com>
+In-Reply-To: <20251023033009.90-3-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251023_011101_585280_E2348839 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20251023_014540_875361_F257F666 
+X-CRM114-Status: GOOD (  22.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,34 +112,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Thu, Oct 23, 2025 at 11:30:02AM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> 
+> Several USB-C controller drivers have already implemented the DP HPD
+> bridge function provided by aux-hpd-bridge.c, but there are still
+> some USB-C controller driver that have not yet implemented it.
+> 
+> This patch implements a generic DP HPD bridge based on aux-hpd-bridge.c,
+> so that other USB-C controller drivers don't need to implement it again.
+> 
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+>  drivers/gpu/drm/bridge/Kconfig                | 11 ++++
+>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 51 +++++++++++++++++++
+>  3 files changed, 63 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+> 
+> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+> index b9e0ca85226a..9f31540d3ad8 100644
+> --- a/drivers/gpu/drm/bridge/Kconfig
+> +++ b/drivers/gpu/drm/bridge/Kconfig
+> @@ -33,6 +33,17 @@ config DRM_AUX_HPD_BRIDGE
+>  menu "Display Interface Bridges"
+>  	depends on DRM && DRM_BRIDGE
+>  
+> +config DRM_AUX_TYPEC_DP_HPD_BRIDGE
+> +	tristate "TypeC DP HPD bridge"
+> +	depends on DRM_BRIDGE && OF && TYPEC
+> +	select DRM_AUX_HPD_BRIDGE
+> +	help
+> +	  Simple USB Type-C DP bridge that terminates the bridge chain and
+> +	  provides HPD support.
+> +
+> +	  If the USB-C controller driver has not implemented this and you need
+> +	  the DP HPD support, say "Y" or "m" here.
 
-> diff --git a/include/linux/usb/typec_notify.h b/include/linux/usb/typec_notify.h
-> new file mode 100644
-> index 000000000000..a3f1f3b3ae47
-> --- /dev/null
-> +++ b/include/linux/usb/typec_notify.h
-> @@ -0,0 +1,17 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +
-> +#ifndef __USB_TYPEC_NOTIFY
-> +#define __USB_TYPEC_NOTIFY
-> +
-> +#include <linux/notifier.h>
-> +
-> +enum usb_typec_event {
-> +	TYPEC_ALTMODE_REGISTERED
-> +};
+You don't need to depend on DRM_BRIDGE separately, but do you really
+need a separate module for this in the first place?
 
-Don't you need to know when the altmode is removed?
+>  config DRM_CHIPONE_ICN6211
+>  	tristate "Chipone ICN6211 MIPI-DSI/RGB Converter bridge"
+>  	depends on OF
+> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+> index 245e8a27e3fc..e91736829167 100644
+> --- a/drivers/gpu/drm/bridge/Makefile
+> +++ b/drivers/gpu/drm/bridge/Makefile
+> @@ -1,6 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
+>  obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
+> +obj-$(CONFIG_DRM_AUX_TYPEC_DP_HPD_BRIDGE) += aux-hpd-typec-dp-bridge.o
 
-> +
-> +int typec_register_notify(struct notifier_block *nb);
-> +int typec_unregister_notify(struct notifier_block *nb);
-> +
-> +void typec_notify_event(unsigned long event, void *data);
+Instead, why not just make that a part of aux-hpd-bridge
+conditionally:
 
-Declare typec_notify_event() in drivers/usb/typec/bus.h
+ifneq ($(CONFIG_TYPEC),)
+        aux-hpd-bridge-y        += aux-hpd-typec-dp-bridge.o
+endif
+
 
 thanks,
 
