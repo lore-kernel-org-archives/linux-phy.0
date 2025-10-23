@@ -4,110 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EC79CCD1AB
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 03:32:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C28CCCD193
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 06:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKR7WH7HVRM7I4QNrGpBZ8XBUJTtZLq0dSb5PE11q48=; b=xjjZ87MBALYC7w
-	j/H7vXJb3YmYDbvfvFir5pUS99rNuF7LHStpZfuetE72WDKeMldTj328guggWDjY689u9Mb4HFRur
-	oLcdMpIoNoRn9aA3zFUDxSU/J9NdsGeM+mncwa5zXuD5lzjWV3kG23DLkloomyLhzwcHWqbfq9gU9
-	Z3PV7pOHm6SK1gSTpgPPqeBGHVBz98i3W81uHTM+p0RbTrG11m3ltuXWt9C3rPhDakPQ6EukrxIqb
-	L5VCG7jdwbMBRkzAVv6Qg95lyAaxa83uujQea2zpf+hxd0W9ruoLUHt7gSObVmNSK0D2DiDJKKXxR
-	qZ3I2cqpuZpUqcfgmOqQ==;
+	List-Owner; bh=4oEUgG2b4MCS4AlDtN+TuWBk/Sf9xyISJECbXHM6K5o=; b=CZMKIv7K3vTGHk
+	mDhjAefQGkcxByvQl2eNvsAZ5wAMB9yZpeffm2YBf0bl+eoVF+3AEg1HV10qJFEEY6QX7b7rNPShH
+	WyhV8aK5INwE5jDCRuFHx99RvMqnojN4Tl5Wfl7i69fKL1VbXBa10buUXFBokpqLxSNWi8LMACr8l
+	LxXncbLVrGdKl8KXPH2ti1wyqKD9I9qlyoMWby08DoGkSWKthKSNvIWOqhYne9FhNc0/IMkRVJnE/
+	wNBowThCXq1DuC693FC6AQZ4PPJeuD/k8u+7bVawSFk93/NaXUqVe7XtxDbyu1z4SM0CquldOrlrd
+	AhGlt6JPAnydlDc8iqjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBm3U-00000004wjs-06II;
-	Thu, 23 Oct 2025 03:32:00 +0000
-Received: from smtpbgeu2.qq.com ([18.194.254.142])
+	id 1vBp3H-00000005Ehn-2paz;
+	Thu, 23 Oct 2025 06:43:59 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBm3L-00000004w7N-0DNr;
-	Thu, 23 Oct 2025 03:31:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1761190268;
-	bh=1RfAR5qe3fDpGYWfe4IMPee9wlWopj1wjBrVtJQSHJQ=;
-	h=From:To:Subject:Date:Message-Id;
-	b=QGcMjIbAOrhi7siyAK0cs+JmzOc7o/pDAVv5Ys8MMHuuHSD9jG5bOdMioiH6YhLUN
-	 lEw3UDV/Q825nB5fHeoGiLJ5qUEw9nIyB4Bu8Zmbt/my4TpNg20+Ror4K0zKeGaeRV
-	 svRKLXjGbCIJ8HFnzPgT4CGvaYuFKQmSrMm9yYS8=
-X-QQ-mid: esmtpsz16t1761190266t43abe1df
-X-QQ-Originating-IP: 0d5iSVWuoMY/pzXTcvdmH8vOvSaqskohuXcY4gRyoIQ=
-Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Thu, 23 Oct 2025 11:31:03 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 14524474531760413252
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>,
-	Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>
-Cc: linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	dri-devel@lists.freedesktop.org
-Subject: [PATCH v7 9/9] arm64: dts: rockchip: rk3399-evb-ind: Add support for DisplayPort
-Date: Thu, 23 Oct 2025 11:30:09 +0800
-Message-Id: <20251023033009.90-10-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20251023033009.90-1-kernel@airkyi.com>
-References: <20251023033009.90-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: esmtpsz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
-X-QQ-XMAILINFO: OE3tIrIEWSq4dvSAti+YxEXfy0MmWUDFapUQ60ZDGd9sngP6WSFoYF5n
-	VZHjz92kd/WEOhR8O8/gE7v/OStY7NtIWCgQnT3FgcHGWMKoIe+IJr30LbONPgwz9YMTWMq
-	sDbBm++/oB9MnaQ/73nsFTM/RE1WtMT1SSziLehG467cB2kXN8NiOgxGEe40+Bf1ejOxxxZ
-	UaCRGAxzNSdQGEcIy6T8JGoeQ5WVZ8ieOD88tSjCbb3ncJ/jt8HmFdXwKvd7vY1vPp9C800
-	cIvME+sx0HFb6Hr7HfjMy4W6ILJSb6Asfi2F3CeYSNtsVWoDGG15m/5ycLdH/sB9fwG/L/s
-	HY3ZN+aLkeX4EDyKUpRI2o4vxKMmP/XfVn6AW5ozful80y99ipmxCc2xFXWQ9plpAmOPt9R
-	6QtlGflQxH7kPC32A5Oje/rqtQBGs5Aaj6c0Wv5TR0arLDcrJkbtX1ADz41TQ/rWu2VVfRU
-	BfmUzyTcURen0EscCGaUvvE8KZvvGvbkX+ps3X4dhiEDzTPKggMIDziBSVvuIhe14qbaYr1
-	WvISUknJzN5LXSrqJNRndAL2iD4GIcpl+zUafhSPCg3twg/meGNfLh7dpmaG67qNW6/xi0Q
-	AEV9q21pe2kcVJ2GqLi+1JeGN45DqwBK5EXQDJmuaKUWriEwYBy9UtZzTMi0gvROSrA7Nli
-	M0kBRBq1tVhJ2yQ4DPwn3IrlEVcA7UVxxEivUL6yIWWe4PVOhzomiJhVPQemX4AiLlDeVcw
-	Vu6z0WcrcmNsEJZExNxaklUHa8GQNSM6TMawP7PmDEEy9QZTzHR2zPIAa9I8p62BF/ESJ6n
-	fBT6NL4Yu3xMXglKzcvyRXPLJSCmroxSbhQeuuPc6yjOXih8907XvdH4mf/r9a1QZalj5ym
-	pVYbbYPcKK0B1aj/DneF6kTMWiQNA0wf5wFusIGhTMOCHgXq96LUfiL3/Zqi0ZgttHElrUo
-	XhWGrrTZqlegREj6WjnE4ubwnTv5TN563Gep/FB9vam+jNRQH9S0f7YqFZKFGrNbET443KL
-	JQt+29MQ==
-X-QQ-XMRINFO: NS+P29fieYNw95Bth2bWPxk=
-X-QQ-RECHKSPAM: 0
+	id 1vBp3E-00000005Eh0-2WcV;
+	Thu, 23 Oct 2025 06:43:57 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id D31C548C52;
+	Thu, 23 Oct 2025 06:43:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1EC70C4CEE7;
+	Thu, 23 Oct 2025 06:43:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1761201835;
+	bh=wq+PR3JQ5rz4ZSLM4QLGVeX/gN+W7vLpvlbttzeFtxQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UOGZ6THX+KPz+fnPS5IScnjRV0adu4aQoy6YNzJ+hZrkQ7aeE9Ms19UvzFAVImC1E
+	 6QlKvIyK47+4zHYNw+rZnANKkid7mEn6aX/h9hIf3MrFgTLAk/MIcfagQD5MyuFijV
+	 vSlQyyDsYGYBK0zsR6y4yjEcbe7gpgbWSd2benJxLYFlPAx19knlG7j1f3PXB5oAeu
+	 oYKjMgn018VPkjFeAV3D5wAf2RW+LQFZF1dBZ1HMR3KVANuH6n/2BE5B3zFYBilpNq
+	 wGlsZXsShmlWcPwcWUF5QHN6WgdJSwBxGCo45QA1rBJtO8h6sqdCvM7lFtzSW8hj5m
+	 R+ZAR0vgmbEjA==
+Date: Thu, 23 Oct 2025 08:43:53 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Roy Luo <royluo@google.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
+	=?utf-8?B?QW5kcsOp?= Draszik <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, 
+	Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>, 
+	Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: google: Add Google Tensor G5
+ USB PHY
+Message-ID: <20251023-collie-of-impossible-plenty-fc9382@kuoka>
+References: <20251017235159.2417576-1-royluo@google.com>
+ <20251017235159.2417576-2-royluo@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251017235159.2417576-2-royluo@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251022_203151_682869_97619FBD 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20251022_234356_703335_AE4DFCB9 
+X-CRM114-Status: GOOD (  18.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,247 +75,114 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+On Fri, Oct 17, 2025 at 11:51:58PM +0000, Roy Luo wrote:
+> Document the device tree bindings for the USB PHY interfaces integrated
+> with the DWC3 controller on Google Tensor SoCs, starting with G5
+> generation. The USB PHY on Tensor G5 includes two integrated Synopsys
+> PHY IPs: the eUSB 2.0 PHY IP and the USB 3.2/DisplayPort combo PHY IP.
+> 
+> Due to a complete architectural overhaul in the Google Tensor G5, the
+> existing Samsung/Exynos USB PHY binding for older generations of Google
+> silicons such as gs101 are no longer compatible, necessitating this new
+> device tree binding.
+> 
+> Signed-off-by: Roy Luo <royluo@google.com>
+> ---
+>  .../bindings/phy/google,gs5-usb-phy.yaml      | 104 ++++++++++++++++++
+>  1 file changed, 104 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml b/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..c92c20eba1ea
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
+> @@ -0,0 +1,104 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright (C) 2025, Google LLC
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/google,gs5-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Google Tensor Series (G5+) USB PHY
+> +
+> +maintainers:
+> +  - Roy Luo <royluo@google.com>
+> +
+> +description: |
+> +  Describes the USB PHY interfaces integrated with the DWC3 USB controller on
+> +  Google Tensor SoCs, starting with the G5 generation.
+> +  Two specific PHY IPs from Synopsys are integrated, including eUSB 2.0 PHY IP
+> +  and USB 3.2/DisplayPort combo PHY IP.
+> +  The hardware can support three PHY interfaces, which are selected using the
+> +  first phandle argument in the PHY specifier::
 
-The RK3399 EVB IND board has a Type-C interface DisplayPort.
-It use fusb302 chip as Type-C controller.
+Just one ':', anyway this sentence and below does not belong to
+description but to phy-cells. You describe the cells.
 
-fusb302 chip ---> USB/DP PHY0 <----> CDN-DP controller
+Or just mention the header with IDs - here or in phy-cells.
 
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
----
+> +    0 - USB high-speed.
+> +    1 - USB super-speed.
+> +    2 - DisplayPort
+> +
+> +properties:
+> +  compatible:
+> +    const: google,gs5-usb-phy
+> +
+> +  reg:
+> +    items:
+> +      - description: USB2 PHY configuration registers.
+> +      - description: USB 3.2/DisplayPort combo PHY top-level registers.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: u2phy_cfg
+> +      - const: dp_top
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: USB2 PHY clock.
+> +      - description: USB2 PHY APB clock.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: usb2_phy
 
-(no changes since v4)
+core
 
-Changes in v3:
-- Fix wrong vdo value.
-- Fix port node in usb-c-connector.
+> +      - const: u2phy_apb
 
-Changes in v2:
-- Add endpoint to link DP PHY and DP controller.
-- Fix devicetree coding style.
+apb
 
- .../boot/dts/rockchip/rk3399-evb-ind.dts      | 146 ++++++++++++++++++
- 1 file changed, 146 insertions(+)
+> +
+> +  resets:
+> +    items:
+> +      - description: USB2 PHY reset.
+> +      - description: USB2 PHY APB reset.
+> +
+> +  reset-names:
+> +    items:
+> +      - const: usb2_phy
+> +      - const: u2phy_apb
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-index 70aee1ab904c..aeeee6bd2973 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-@@ -4,6 +4,7 @@
-  */
- 
- /dts-v1/;
-+#include <dt-bindings/usb/pd.h>
- #include "rk3399.dtsi"
- 
- / {
-@@ -19,6 +20,21 @@ chosen {
- 		stdout-path = "serial2:1500000n8";
- 	};
- 
-+	sound: sound {
-+		compatible = "rockchip,rk3399-gru-sound";
-+		rockchip,cpu = <&i2s0 &spdif>;
-+	};
-+
-+	vbus_typec: regulator-vbus-typec {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc5v0_typec0_en>;
-+		regulator-name = "vbus_typec";
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
- 	vcc5v0_sys: regulator-vcc5v0-sys {
- 		compatible = "regulator-fixed";
- 		enable-active-high;
-@@ -31,6 +47,11 @@ vcc5v0_sys: regulator-vcc5v0-sys {
- 	};
- };
- 
-+&cdn_dp {
-+	phys = <&tcphy0_dp>;
-+	status = "okay";
-+};
-+
- &cpu_b0 {
- 	cpu-supply = <&vdd_cpu_b>;
- };
-@@ -55,6 +76,12 @@ &cpu_l3 {
- 	cpu-supply = <&vdd_cpu_l>;
- };
- 
-+&dp_out {
-+	dp_controller_output: endpoint {
-+		remote-endpoint = <&dp_phy_in>;
-+	};
-+};
-+
- &emmc_phy {
- 	status = "okay";
- };
-@@ -341,6 +368,71 @@ regulator-state-mem {
- 	};
- };
- 
-+&i2c4 {
-+	i2c-scl-rising-time-ns = <475>;
-+	i2c-scl-falling-time-ns = <26>;
-+	status = "okay";
-+
-+	usbc0: typec-portc@22 {
-+		compatible = "fcs,fusb302";
-+		reg = <0x22>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usbc0_int>;
-+		vbus-supply = <&vbus_typec>;
-+
-+		usb_con: connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			data-role = "dual";
-+			power-role = "dual";
-+			try-power-role = "sink";
-+			op-sink-microwatt = <1000000>;
-+			sink-pdos =
-+				<PDO_FIXED(5000, 2500, PDO_FIXED_USB_COMM)>;
-+			source-pdos =
-+				<PDO_FIXED(5000, 1500, PDO_FIXED_USB_COMM)>;
-+
-+			altmodes {
-+				displayport {
-+					svid = /bits/ 16 <0xff01>;
-+					vdo = <0x00001c46>;
-+				};
-+			};
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					usbc_hs: endpoint {
-+						remote-endpoint = <&u2phy0_typec_hs>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					usbc_ss: endpoint {
-+						remote-endpoint = <&tcphy0_typec_ss>;
-+					};
-+				};
-+
-+				port@2 {
-+					reg = <2>;
-+
-+					usbc_dp: endpoint {
-+						remote-endpoint = <&tcphy0_typec_dp>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+};
-+
- &i2s2 {
- 	status = "okay";
- };
-@@ -354,6 +446,16 @@ &io_domains {
- };
- 
- &pinctrl {
-+	usb-typec {
-+		usbc0_int: usbc0-int {
-+			rockchip,pins = <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+
-+		vcc5v0_typec0_en: vcc5v0-typec0-en {
-+			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
- 	pmic {
- 		pmic_int_l: pmic-int-l {
- 			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-@@ -400,10 +502,48 @@ &sdmmc {
- 	status = "okay";
- };
- 
-+&sound {
-+	rockchip,codec = <&cdn_dp>;
-+	status = "okay";
-+};
-+
-+&spdif {
-+	status = "okay";
-+};
-+
- &tcphy0 {
- 	status = "okay";
- };
- 
-+&tcphy0_dp {
-+	mode-switch;
-+
-+	port {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		tcphy0_typec_dp: endpoint@0 {
-+			reg = <0>;
-+			remote-endpoint = <&usbc_dp>;
-+		};
-+
-+		dp_phy_in: endpoint@1 {
-+			reg = <1>;
-+			remote-endpoint = <&dp_controller_output>;
-+		};
-+	};
-+};
-+
-+&tcphy0_usb3 {
-+	orientation-switch;
-+
-+	port {
-+		tcphy0_typec_ss: endpoint {
-+			remote-endpoint = <&usbc_ss>;
-+		};
-+	};
-+};
-+
- &tcphy1 {
- 	status = "okay";
- };
-@@ -418,6 +558,12 @@ &tsadc {
- 
- &u2phy0 {
- 	status = "okay";
-+
-+	port {
-+		u2phy0_typec_hs: endpoint {
-+			remote-endpoint = <&usbc_hs>;
-+		};
-+	};
- };
- 
- &u2phy0_host {
--- 
-2.49.0
+Same here
+
+> +
+> +  power-domains:
+> +    maxItems: 1
+
+Best regards,
+Krzysztof
 
 
 -- 
