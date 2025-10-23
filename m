@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 982EECCD1BE
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 15:39:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B616ACCD1BE
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Oct 2025 15:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9qr0Wp/N4R2exLIQ4HUvZvhthnTgX7T3y0qlaWnTtMk=; b=qTw+tR6+mOA8ZW
-	GS5Hv27TVKj1V/sZgBhAU/YPXq2Gx0r0xHuHa/kaEzVhjD9KmbinM/aA6hqDSKBdqi4kS0RDKzYrP
-	FiYKRj9EMWIQX/ia+FgUeQogv/ytO9qpd7rOwqJk27thRgu526GHUGBEPmFN8MRt6jfDsTJ1uHgK1
-	HgjIX7rn6Dv9/3f695HQBh+4oIsaxd32zHakrK/pUBAwuCYyKDRWhc1OG9gw+xs6DBNh2CBCpn0iT
-	gErpuVimO5weckUk6sY+EmyzGbSbJNeALbB2H34L/YtTHwRt6J1h8sQ4HMzIdsW9ze/SMrmK0bYzD
-	uTzytohzHUkEmclY4MJQ==;
+	List-Owner; bh=QuACLUPeogTPMwJdt/yMmAlPdNayXFBBXBchBDuVr9I=; b=ax/M35gp2aXyFk
+	AVbW9RX0t5xUnwx5lvAzO/U9UjPUeOWXxqRqCLs1g37nkyD27XDKf8uLWHsb+Pd1QZ8RBbGORuRLZ
+	1Smb6xOwrgnL6zndRd00ZtdzHDywgngHje9VzV5skUHjss+yQmIXqsT9O8OgVn8TKsQ6rhEiwGcCd
+	e+R7nZli9xazmzkIuKc7DLvHiLjMQ/Mrt5fkkgGYhLi9F7nG6OGlkoF7DROB5owe60acZLm6W7ZYv
+	vmfxIpLqvOfisFxJZ30/S4e5c/1qryfCHBLesFrVLnrFObNahw2j4JOiF6DXyaw/GphR6es/hnSAM
+	aPTZ1rF7jEvpNtntlYOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBxPA-00000006md5-0cJk;
-	Thu, 23 Oct 2025 15:39:08 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vBxPk-00000006mhk-1sir;
+	Thu, 23 Oct 2025 15:39:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBxP7-00000006mck-2JUy
+	id 1vBxPj-00000006mhb-3opi
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Oct 2025 15:39:06 +0000
+	Thu, 23 Oct 2025 15:39:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3BF86490B3;
-	Thu, 23 Oct 2025 15:39:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0EE3BC4CEE7;
-	Thu, 23 Oct 2025 15:39:00 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3A1C46026D;
+	Thu, 23 Oct 2025 15:39:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D970FC4CEE7;
+	Thu, 23 Oct 2025 15:39:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761233945;
-	bh=0PfGVFLSwAdtpJraASf2Vn9Px0DJm3s79Tpdl3v9jAI=;
+	s=k20201202; t=1761233982;
+	bh=LvPUGi16Gy0nsHxxec88t/Hv+x84xawp9WZKYnGhvtQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=B+9SCqj2SSqdHloiLkw+HF2Sx5pnRwPA3/FtB+nCYKHHzPI/3wjPkELJx7olhiaeE
-	 g3MPCMgEqjG24cZt0upltSjwu4z+44N3+H3wCsgbbpj+9SoY7R+g8P7213lG4yFb6d
-	 stoe+C80EpXukDWcRtOjA5NXFZjgBUKPOdeALpuavO2kjKZ+flOi55QULmqLf9ty1X
-	 Wg8PSy7vHf9MV5Eqsr5iQHS6uzrT7NL3SLGLZ49IfUpuk/aKBqT48y4fUs08sbLJZC
-	 IXfU4Bm36rJIf71F382hY4R1QJnS9GHr7YjWwpLGLdznzrrgjay4qZ+M/SHmq5/GHw
-	 45vgqh6Ud4i0w==
-Message-ID: <9931c958-d353-4e37-ad2e-f6854c968af1@kernel.org>
-Date: Thu, 23 Oct 2025 17:38:59 +0200
+	b=NATJjNvN9Ym7X99EphjUXlaMWAafDXK9A7JafJTGNv28TMIdJ5Yx5UkFPNAe7SXyZ
+	 ZShrx8iPKShXzO4fgbCgwLKSkHKBNciT2IiERxw6u47LLxBTW+DqvVkxMSCJUECHIU
+	 5iLxbQjY7gEugV6QdK5P41ESsf/Nrdn5XUgYxUmTOeUt5PJgZ+U0COf0issozW9j8r
+	 O8NMjKMqXnS5W6cTrTbD26gPqB1hqDIZ6DUmcGDrl+M13vWaZ8bgz7UJMB9hH7qpUt
+	 +5AjqE11JLOp5eRfKAUevyQuROhu7t1Bj7IXUcrMz3fKHsIe800HbuEPGe0LLs63c/
+	 xQd05hvo3+J3Q==
+Message-ID: <41f71be9-595f-4a81-b089-27bdcc778c8a@kernel.org>
+Date: Thu, 23 Oct 2025 17:39:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/4] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Add Kaanapali QMP PHY
+Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,m31-eusb2-phy: Document M31
+ eUSB2 PHY for Kaanapali
 To: Jingyi Wang <jingyi.wang@oss.qualcomm.com>, Vinod Koul
  <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -59,7 +59,7 @@ Cc: aiqun.yu@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-usb@vger.kernel.org, Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 References: <20251021-knp-usb-v2-0-a2809fffcfab@oss.qualcomm.com>
- <20251021-knp-usb-v2-1-a2809fffcfab@oss.qualcomm.com>
+ <20251021-knp-usb-v2-2-a2809fffcfab@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,11 +105,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251021-knp-usb-v2-1-a2809fffcfab@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251023_083905_635179_8839F354 
-X-CRM114-Status: UNSURE (   5.63  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251021-knp-usb-v2-2-a2809fffcfab@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,8 +125,9 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 22/10/2025 08:50, Jingyi Wang wrote:
 > From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 > 
-> Document QMP combo PHY for Kaanapali. Use fallback to indicate the
-> compatibility of the QMP PHY on the Kaanapali with that on the SM8750.
+> Document M31 eUSB2 PHY for Kaanapali which handles the USB2 path. Use
+> fallback to indicate the compatibility of the M31 eUSB2 PHY on the
+> Kaanapali with that on the SM8750.
 > 
 > Signed-off-by: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 > Co-developed-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
