@@ -4,107 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BC37CCF9EA
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 14:11:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4733CCCF9E3
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 14:59:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WYhB/dnxGt6ZPv+khXQ+tkAXRYAw7qhGBjvr7uleX0=; b=EOt3q8vbMrSFax
-	ASoqe86ic7Y0CO853EzCiUkMWAYgljvISaS1q3nu08T3M1XVJEzW2BbccjXEK87qem9dnvuzqvTOk
-	LSwiEyx7tznwmvPLdtabB2fvcP8XjVbtU5qTVdYcK3/APJihLSlNAhUZGvNYesLq1tk3lYEujVHXR
-	80wLbatQjK64pHgLsqHL8MsOOF+f1hu9U1z5V+01NS5F2wifst/bdlLlp17DLSFRwGhGaITmV8Dyj
-	vTOabzmO80TpdN9UkOaG1bSr2TRI8/rb77gA9/l3PsyShRVnVI5x2KrWawCHnIl0Kvps6JXOfCxwy
-	zZrYLkGlL+ltiSI6uTLw==;
+	List-Owner; bh=LFPgFgRRown7/DR/LVkOoD7rEGTafbJHOVW3r+azSyg=; b=j+AU995IGBf21t
+	m/DoBotZE8V1infrmLfgxuucU5uStof1nG2MZuSVy0LDsUwNu0QPArG0v8sMuZ2qXs5wbc5w0+lW5
+	gYCgX8a+EpBvLXbwvKJVRRneI6tSy7e76X+IsPV1hOyZlawdMhcr7v1BIac6dtXG4BbeNStUtfxNd
+	ur7QbpH6Xwcydq+Pq20d61SDCXTemXY8QUy7093QlyVI8fLCj8trdf+3R7O5K/8OspB2T2lSBhD5E
+	fqjGZUfObWS1JCB5bEtvFKjtV3hxElgoZVgqYIVZmrYn7cMFmutvlioOfnIdgKhin2LsdlUYfIRl5
+	bhiBcsPIaoPyHLTPeZGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCIWC-00000009csV-0GYO;
-	Fri, 24 Oct 2025 14:11:48 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vCJGR-00000009k9X-3oAM;
+	Fri, 24 Oct 2025 14:59:35 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCIWA-00000009crN-0vlY;
-	Fri, 24 Oct 2025 14:11:47 +0000
+	id 1vCJGP-00000009k8o-3ZKE;
+	Fri, 24 Oct 2025 14:59:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 148CC40553;
-	Fri, 24 Oct 2025 14:11:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1996AC4CEF1;
-	Fri, 24 Oct 2025 14:11:44 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D7187455AD;
+	Fri, 24 Oct 2025 14:59:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AB6A2C4CEF1;
+	Fri, 24 Oct 2025 14:59:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761315104;
-	bh=A2ibR8D3vX5O91d0A6dlXuJ33auKQkMfaPv3Zg/W9+8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BBL/0gMFAB6iXWn/03INztg9bjGFUFVZB5eEkShmlnZW6695iBe3ceBH7QqlkxLDu
-	 nF6DS3kY/hsSXGtbh3Nxk7Co4cRPzlPx//JB5m+xT2RmdIBEeH4YhCnuBClgHEkxOF
-	 TzjCuo9FD2PPHxhnIOKKdCZU0iw6F2v5AkruSO1vsmyNPpZgNlb1gVWIotAWmdcL7J
-	 nL2MB7mV5ifb7Y7EkH9R/jEE5kV0lq28zC2GmIJIniekDVOQ5pHjfExxhIYDXkYi3C
-	 5YSx+ApTyOqtJhIHDgos29oXb9L0QedvgUuT2eYn42m4MNZNdNZMbKC3GqbYlOaYK4
-	 dqC39Qu5dgZDA==
-Date: Fri, 24 Oct 2025 19:41:40 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>, Moritz Fischer <mdf@kernel.org>,
-	Xu Yilun <yilun.xu@intel.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Georgi Djakov <djakov@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Joerg Roedel <joro@8bytes.org>,
-	Jassi Brar <jassisinghbrar@gmail.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Richard Weinberger <richard@nod.at>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sebastian Reichel <sre@kernel.org>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>,
-	Mark Brown <broonie@kernel.org>,
-	Mathieu Poirier <mathieu.poirier@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Olivia Mackall <olivia@selenic.com>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-fbdev@vger.kernel.org, dmaengine@vger.kernel.org,
-	linux-fpga@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
-	linux-pm@vger.kernel.org, iommu@lists.linux.dev,
-	linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
-	linux-crypto@vger.kernel.org, linux-sound@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
-Message-ID: <aPuJHM6SRbMpAZ8t@vaman>
-References: <20251023143957.2899600-1-robh@kernel.org>
+	s=k20201202; t=1761317972;
+	bh=YlGEYTT5nrHovfloLOOpUQRYN+fXsCYG2LixOaa5378=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=I/4F9kA1e7P2p4l5Kvey8Q2WS1TGvL+gAQgqglnM7cmRBIbBVx1y0KF3FxqlHN3hw
+	 DgUerun10okT687v2FNFL1mveKVGAuMBci/DNS7IeNQx4dHxCN0LMvEmYDSzUSJTwu
+	 gUY+8uEjZe4tu24kb84PL0W6wXuKbAvKH4nxG++v9LyeMh0H4C3ueJByez8hbGKbS6
+	 xqXi3KAU0karokUs3nlG9tBvMchWD6lkMGi3JAGU/AYT1rog8Vem1Xs7Tu1xe8NjIV
+	 loFh9k/M45Xg8oOhyvuELi7rogTRTE+/JFOTfxl9M529IWpSCrO4/yVB5ofkwHPO1f
+	 K+WsCVS+PAmZQ==
+Message-ID: <d87ac82b-0ca9-417d-a239-c68cfdfa4c78@kernel.org>
+Date: Fri, 24 Oct 2025 17:59:06 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
+To: "Rob Herring (Arm)" <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Moritz Fischer <mdf@kernel.org>,
+ Xu Yilun <yilun.xu@intel.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Guenter Roeck <linux@roeck-us.net>, Andi Shyti <andi.shyti@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Joerg Roedel <joro@8bytes.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Lee Jones <lee@kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas
+ <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+ <ukleinek@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Olivia Mackall <olivia@selenic.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-fbdev@vger.kernel.org, dmaengine@vger.kernel.org,
+ linux-fpga@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-pm@vger.kernel.org, iommu@lists.linux.dev,
+ linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-sound@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20251023143957.2899600-1-robh@kernel.org>
+From: Georgi Djakov <djakov@kernel.org>
+Content-Language: en-US
 In-Reply-To: <20251023143957.2899600-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_071146_303539_75A3881B 
-X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-CacheID: sfid-20251024_075933_929765_666976D7 
+X-CRM114-Status: UNSURE (   7.79  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -117,22 +109,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-10-25, 09:37, Rob Herring (Arm) wrote:
+On 10/23/25 5:37 PM, Rob Herring (Arm) wrote:
 > Generally at most 1 blank line is the standard style for DT schema
 > files. Remove the few cases with more than 1 so that the yamllint check
 > for this can be enabled.
 > 
 > Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+[..]>   .../devicetree/bindings/interconnect/qcom,rpmh.yaml          | 1 -
+Acked-by: Georgi Djakov <djakov@kernel.org>
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
-
--- 
-~Vinod
 
 -- 
 linux-phy mailing list
