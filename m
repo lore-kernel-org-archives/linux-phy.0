@@ -4,69 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8910ACCD1A5
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 09:30:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4E90CCD1A5
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 09:35:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o1dh6NRd2a7vAZhdV+P7xHGWiLxKq7GC92GUSaRbFH4=; b=lhN1SIncht79WH
-	zpb1SNr3VTqCUT5LC5QXFCV4V+f9OjK79NlMVBtf9LNPk32wXCvPYffwskjrBEFv9dHfi/z8ARb7f
-	1CqWtwfmWhtwHa1z4vdBzfvAGpGOm1hYUu5F01uZQPQp6BtzCPcHkexDXWF+zBDshHStADGPuMMsC
-	mOLDV2WVHzlKEcp4KNQLgap5kS6p4RY70f16OjKnvffp8HDP5wyHibsr0AAl0W3u+VHyCACd3eosi
-	RQ6hzije1zg/CGdtsmg9EY46M9ngagb7yGRek3jiBov05T9tYC1Drn4PGoEs5Q5YaksaLx6ORjn1Z
-	yPsH6EJrWGzZQIDJCulw==;
+	List-Owner; bh=4F8jVEY2YsDYCXQptUhxOqb46od4KmSdxAKxXL/sHzk=; b=L6gF20Upu1PB+z
+	vvIa0n0ko0ixEKfjER7806rQ57hBXm5a1JXWgqhBudWhWi5WZY0Og6HUeMxlRbkzSQnXQIjEtDdt3
+	3GlXZ7m+4b0pT//QjgCLFTEQgilw8Sp2PFgUW2D1hJJVwbSaPnPCOLWLEMT3PppkB4wm33g1FuVwz
+	wiPn+ifCEhglEquG2+7ZDuih7/e58RZTse2LT+v3lbzGH4w7tfEiSK1JAvQcGV5BDIT+RnEPMIscO
+	6CvDLOy1Nb3BKe2x9gZcXXytX4IcemBlYPbYYmNcd9rMFSvNSyfa+8aPm3e3KwvGmc/GHueSFvyv4
+	5xr8OS/sJqVuF8EE8Mgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCE7r-00000008ssv-1L90;
-	Fri, 24 Oct 2025 09:30:23 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1vCED6-00000008tfr-1mdN;
+	Fri, 24 Oct 2025 09:35:48 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCE7p-00000008ss6-0qMb
+	id 1vCED4-00000008tfX-1PoX
 	for linux-phy@lists.infradead.org;
-	Fri, 24 Oct 2025 09:30:22 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vCE7g-0004Lw-Bd; Fri, 24 Oct 2025 11:30:12 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vCE7g-005CdF-0U;
-	Fri, 24 Oct 2025 11:30:12 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vCE7g-000000004y2-0IVk;
-	Fri, 24 Oct 2025 11:30:12 +0200
-Message-ID: <80bce917a7bddf79d25fcf3c7497756fd6035a35.camel@pengutronix.de>
-Subject: Re: [PATCH v8 5/7] reset: rzg2l-usbphy-ctrl: Add support for RZ/G3S
- SoC
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Claudiu <claudiu.beznea@tuxon.dev>, vkoul@kernel.org, kishon@kernel.org,
- 	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- geert+renesas@glider.be, 	magnus.damm@gmail.com,
- yoshihiro.shimoda.uh@renesas.com, 	biju.das.jz@bp.renesas.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, Claudiu
- Beznea	 <claudiu.beznea.uj@bp.renesas.com>, Wolfram Sang	
- <wsa+renesas@sang-engineering.com>
-Date: Fri, 24 Oct 2025 11:30:11 +0200
-In-Reply-To: <20251023135810.1688415-6-claudiu.beznea.uj@bp.renesas.com>
-References: <20251023135810.1688415-1-claudiu.beznea.uj@bp.renesas.com>
-	 <20251023135810.1688415-6-claudiu.beznea.uj@bp.renesas.com>
-User-Agent: Evolution 3.56.1-1 
+	Fri, 24 Oct 2025 09:35:47 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-47118259fd8so12266055e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 24 Oct 2025 02:35:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1761298544; x=1761903344; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=AB/k9qen5oHRYzxzAm46DDJjbnbfjworTJj23CLgdeo=;
+        b=npBufCdMvlXJyfXR2FU2gqCfWaHrYjUM3vQVZzAUDvp5mgx/TgX/qumt7S3NG/HgQQ
+         XDCyXwaWCyZygiRCqdf8PpDRoyFTvMpMtDSEaA5zO2V21Y5pQCpEyBJxSH/sQgRYoUGF
+         YrnANYmDR1/oNpfj6fRsHNGGKbB9pk7XoDeZtAod9U6qy7UrSL67c5rvLbs9rfCS66Mq
+         Vl/iyAbsGkuPRbogw0Qj2YN/X9YQuc/TPESdbti3IkxRJyOxaB4h/we1mdBA6JorgvXr
+         sg8UdTGzaaF6EJtaM4lIU/tv4y+XvXDaHYoB6bJIldM+MzLhazoH/66pwOVDTorDaHHE
+         rtgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761298544; x=1761903344;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=AB/k9qen5oHRYzxzAm46DDJjbnbfjworTJj23CLgdeo=;
+        b=WZjHhe5hkNnU/73TbrLaFV5oWKktBtNbVXNAR+jZ5v/PE8ecI5TBPoOIVusWXnx041
+         czqYcXn7cNg1IW6PaE428PH0kvrqzSKtJuIXUoFdAyeRNIHKRsKMSoC0ktzvV5t6PaNc
+         Hjtsk544nk1nrrzIBjqYXd6mjCPdI3S9mYRqP6s3U6nZCR3K+4MLFumKyuqH8WuAkv1W
+         mre63VKNp21LBHdP1mKHAxpvtpz3259CZa9yvcb/iBfmX0VJwgnQ25/QTO/BaBNpAprR
+         QjWuI06FT0yMpFLX4zrZ/VUqLjLd6VviQh7wzxcoMBtMslymnqipmgYs/mSpvMLfv0AQ
+         BnDA==
+X-Forwarded-Encrypted: i=1; AJvYcCVgZdfzjkUxrtt+TjAaA5Bgjl1eIrvlfoRqHClX8ybeijTEd06knTqMOl67owHm3LngFKpHo1sQgH0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzIBRBpqFU4BxhkOit1dszieOgnP3vRk6WeUIxGGAxYFMMRdR2h
+	aiNu5HtfD9F7fNu68VMY0frHGVIGAjMOR4bJn0wXqOTMv7aMpPSRIgj9TTmsvZOntSE=
+X-Gm-Gg: ASbGncuX849WijRaaerH+OxhNW1Sz7KMVABe1e/WsyZZC4DyFBPv0At2OgCw1C0p4az
+	yMvf5LOjiOPDB/7TA2YcxJo8Jp4rx/JQ+DqMJVNXgPc7iikf07lILpKJ7RF0IzFBxdKUB9iOamU
+	ZiPEXejx0AGTMAbAetTuzABzHwQP80lk/NM3B+cbw8fqpbTiaRwS9jMK/TNaTciWiVKqmhFdr6I
+	ZBnk4jY31eA2wVDTB7fUxZwU672Pq9LlzgKrKH/1M0ayEgRGAS4oyhDmL1l5po0KIXgEnZRrNTS
+	BHlYU11CO72Fh+PhayMHGn/0HhyOmRL6c9Imo+AvDwWDOmqctUOjVFlBN366jaHhgJGfsecfTpJ
+	RnlUj5kQbDV9b8gqBPcfzAttHexMbPJBJtsmvuRUjyl53Rz57Mp2KB91ApVbi7Vem7+38bUH7JL
+	QlagqXsho=
+X-Google-Smtp-Source: AGHT+IHRT52qQLwpA4jCp3MR4MfEo1yVX3RPrxX/jF6DxckTinvzFxcrMGMBTx8wXfnTIC9O4HZnjA==
+X-Received: by 2002:a05:600c:820f:b0:46f:b42e:e365 with SMTP id 5b1f17b1804b1-4711791dce8mr207186725e9.39.1761298544170;
+        Fri, 24 Oct 2025 02:35:44 -0700 (PDT)
+Received: from linaro.org ([86.121.7.169])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47496afd459sm84581855e9.1.2025.10.24.02.35.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 24 Oct 2025 02:35:42 -0700 (PDT)
+Date: Fri, 24 Oct 2025 12:35:40 +0300
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Xilin Wu <sophon@radxa.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: Re: [PATCH v6 2/3] phy: qcom: qmp-combo: get the USB3 & DisplayPort
+ lanes mapping from DT
+Message-ID: <urc62zk2xlr2rka2nyyjsovql734kuzzphyh3hjnssivgswgbh@sjt4u7wumwlo>
+References: <20251013-topic-x1e80100-hdmi-v6-0-3a9c8f7506d6@linaro.org>
+ <20251013-topic-x1e80100-hdmi-v6-2-3a9c8f7506d6@linaro.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20251013-topic-x1e80100-hdmi-v6-2-3a9c8f7506d6@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_023021_238048_756589C6 
-X-CRM114-Status: UNSURE (   5.07  )
+X-CRM114-CacheID: sfid-20251024_023546_401944_7707E347 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,19 +107,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Do, 2025-10-23 at 16:58 +0300, Claudiu wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On 25-10-13 10:55:45, Neil Armstrong wrote:
+> The QMP USB3/DP Combo PHY hosts an USB3 phy and a DP PHY on top
+> of a combo glue to route either lanes to the 4 shared physical lanes.
 > 
-> The Renesas RZ/G3S SoC USB PHY HW block receives as input the USB PWRRDY
-> signal from the system controller. Add support for the Renesas RZ/G3S SoC.
+> The routing of the lanes can be:
+> - 2 DP + 2 USB3
+> - 4 DP
+> - 2 USB3
 > 
-> Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> Get the lanes mapping from DT and stop registering the USB-C
+> muxes in favor of a static mode and orientation detemined
+> by the lanes mapping.
+> 
+> This allows supporting boards with direct connection of USB3 and
+> DisplayPort lanes to the QMP Combo PHY lanes, not using the
+> USB-C Altmode feature.
+> 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> Tested-by: Xilin Wu <sophon@radxa.com> # qcs6490-radxa-dragon-q6a
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 
-Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
-
-regards
-Philipp
+Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
 
 -- 
 linux-phy mailing list
