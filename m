@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27BD0CCF9E0
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 17:22:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 133D0CCF9E0
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 17:25:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X8jbLN4ia54b/wK819OmUmVTJoZQYww555k1jMn8Gv4=; b=W8xcq0sGDCiHGrqbtN1m0C3WMN
-	QXWRLdxuIumFADfQOxruB0tfda0Bs/+ngoGv+87VIQQdCD9JmdZXDbv/vj7EiUPeICG0x/5rmTYyO
-	AsxY3nSk6BTBsDSMx/7xR5RhEHgNoPNOVOPb10fUexTk6avi7qwdJ8KW/RxO8BJe9kV+7EbD8ESdM
-	LZc32kbCxe39MxK8YdgMAXMRd8cL94LWC77yB918QJTAdoGMO3yOg9SECxTpdEBkTapzToaQPJZar
-	5xqjDaALFLOSb+YAt34n5BvPYQ3WrFsd0Li4rKcdIkUxtm218qiK+Z7GtDkAKPRUsTraGEAYmT+Yi
-	L4fmWvKQ==;
+	bh=rPaCRSkPWsW8AFom/XeNdQiTPtjx9Xkx5yCxIkiQXOU=; b=vLC+m8Hwq04MsZHelBCDZa4djU
+	CpYoPH3DpwsDWNEvZb598aMSwDiraq1BqFEgsTsxXQ7muXay4FCEjdGfzPnCrKtUTvDMp++Un21z7
+	d+esWZKhIggeQOb1LJLXyXXwZK7qAzn46lRyjY/xBGh8kyI0iB5V3/tMAtuxZzpoinwZfhByo7yRk
+	qb0V4tWMv2hzBX9SlNQxWhGbprOWyuRKqubEpNbXv7CHOj8QZR/sIHAi9+onok9taXrz7s62jGJgi
+	qHlzOVzk0NhmGxMmLgsnK6qJwv5u42Pe47daehbm5AcQm8ZhrLw/nt3imZWkzyqOc/7yMLOWqbXP4
+	J0qSdh0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCLUY-0000000A6jv-3Dd0;
-	Fri, 24 Oct 2025 17:22:18 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vCLXY-0000000A73L-27T9;
+	Fri, 24 Oct 2025 17:25:24 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCLUV-0000000A6j7-3wIG;
-	Fri, 24 Oct 2025 17:22:17 +0000
+	id 1vCLXW-0000000A72j-2I1q;
+	Fri, 24 Oct 2025 17:25:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 92CA5450CB;
-	Fri, 24 Oct 2025 17:22:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4763C4CEF1;
-	Fri, 24 Oct 2025 17:22:10 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 80D116023A;
+	Fri, 24 Oct 2025 17:25:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B243C4CEF1;
+	Fri, 24 Oct 2025 17:25:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761326535;
-	bh=I28tj+5p1lYh91jL3bRG2Q0tjvvTsVTFnIaEJgJIkyo=;
+	s=k20201202; t=1761326721;
+	bh=STF0BVLwmmf2zdCzGMSd1qWpVlVaamPq3/R/Tnll1sQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KUa1CnrtPNrwbyc9xwjIax/HdQ2x3NsIhO7pb6nClIhH1HYrZm/pecefHnbdI/AFE
-	 XKmg9qW7lAVps/bhq52idx/TMs+BGBtjNRp6IxGiDR2JyfhTvs/gNQAnq+LFXHzg5J
-	 kEp2wtLF0ScSk5v1GHouz8Y3snLJ3eGlWDChCPUPr3e3ESzAattpK7p3g0QhxZ80z7
-	 Agsmaq/4rxfXSUymVOSxXkXtki/JOutcZ773KHCWNQX5b6CbgtNRN3McR2floLh3Uh
-	 LPSgSMrnxFvHSlnIFQKmaKJkYXHYPUjxif1yqFkNNsLgw99QoZTbDDOAtFDLtBQzik
-	 0/d9q29YuIRoQ==
-Date: Fri, 24 Oct 2025 18:22:08 +0100
+	b=Szb7hdPf01uCg3+8lRVJjUaLS94amyMOEba4c6fbtsuZ+Lswn4FxBwm3IPNgOPnxh
+	 Sw0uAuH0hcFCwSglKvLZEu6h37x64j209uSByxGjLrNalULmeoVVrraTI0WOfeF3li
+	 ldKSQ53t5hEcDwLl7lvSnXAV5uF111Yk4n4cbaqplJ/vIKecMW+G9Ck8yBxPdA1WTz
+	 vK+vFPESLgp7O4C6fQD7Poo3x/g2jxiI5580vQxrW4BUHh+Blpm3e6H8Qjac9qOWV1
+	 Vqc7lE7BM1rDwwwHFt2e+McnG6opy7mLntTuqQ8VHDVtXuZjiKfwQNOCC/c0SROlWX
+	 KhjE1ESUF77Dw==
+Date: Fri, 24 Oct 2025 18:25:14 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 Cc: Alim Akhtar <alim.akhtar@samsung.com>,
@@ -66,14 +66,13 @@ Cc: Alim Akhtar <alim.akhtar@samsung.com>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 00/24] MediaTek UFS Cleanup and MT8196 Enablement
-Message-ID: <20251024-startup-glimmer-64480e02bd26@spud>
+Subject: Re: [PATCH v3 02/24] dt-bindings: ufs: mediatek,ufs: Complete the
+ binding
+Message-ID: <20251024-excavate-reprint-a9eb3cbb061f@spud>
 References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
+ <20251023-mt8196-ufs-v3-2-0f04b4a795ff@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_102216_035820_73882B09 
-X-CRM114-Status: GOOD (  23.15  )
+In-Reply-To: <20251023-mt8196-ufs-v3-2-0f04b4a795ff@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,83 +84,93 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4843159843485175309=="
+Content-Type: multipart/mixed; boundary="===============5704582734606493035=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4843159843485175309==
+--===============5704582734606493035==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="neMgzJxl9Udqmnxf"
+	protocol="application/pgp-signature"; boundary="V451Z6sNr8QduRRg"
 Content-Disposition: inline
 
 
---neMgzJxl9Udqmnxf
+--V451Z6sNr8QduRRg
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Oct 23, 2025 at 09:49:18PM +0200, Nicolas Frattaroli wrote:
-> In this series, the existing MediaTek UFS binding is expanded and
-> completed to correctly describe not just the existing compatibles, but
-> also to introduce a new compatible in the from of the MT8196 SoC.
+On Thu, Oct 23, 2025 at 09:49:20PM +0200, Nicolas Frattaroli wrote:
+> As it stands, the mediatek,ufs.yaml binding is startlingly incomplete.
+> Its one example, which is the only real "user" of this binding in
+> mainline, uses the deprecated freq-table-hz property.
 >=20
-> The resets, which until now were completely absent from both the UFS
-> host controller binding and the UFS PHY binding, are introduced to both.
-> This also means the driver's undocumented and, in mainline, unused reset
-> logic is reworked. In particular, the PHY reset is no longer a reset of
-> the host controller node, but of the PHY node.
+> The resets, of which there are three optional ones, are completely
+> absent.
 >=20
-> This means the host controller can reset the PHY through the common PHY
-> framework.
+> The clock description for MT8195 is incomplete, as is the one for
+> MT8192. It's not known if the one clock binding for MT8183 is even
+> correct, but I do not have access to the necessary code and
+> documentation to find this out myself.
 >=20
-> The resets remain optional.
+> The power supply situation is not much better; the binding describes one
+> required power supply, but uses a supply property from ufs-common.yaml
+> that can be either 1.8V or 3.3V.
 >=20
-> Additionally, a massive number of driver cleanups are introduced. These
-> were prompted by me inspecting the driver more closely as I was
-> adjusting it to correspond to the binding.
+> No second example is present in the binding, making verification
+> difficult.
 >=20
-> The driver still implements vendor properties that are undocumented in
-> the binding. I did not touch most of those, as I neither want to
-> convince the bindings maintainers that they are needed without knowing
-> precisely what they're for, nor do I want to argue with the driver
-> authors when removing them.
-
-Some of these are pretty recent too, it would be /wonderful/ if the ufs
-maintainers would do what everyone else does and require that these new
-devicetree properties come with binding changes.
-
-I had a skim of them, and on the surface at least some of them some
-reasonable, but it is difficult to ascertain whether the information
-could be gathered from another source. Others though (the supply stuff)
-seem bogus at first glance.
-
+> Disallow freq-table-hz and move to operating-points-v2. It's fine to
+> break compatibility here, as the binding is currently unused and would
+> be impossible to correctly use in its current state.
 >=20
-> Due to the "Marie Kondo with a chainsaw" nature of the driver cleanup
-> patches, I humbly request that reviewers do not comment on displeasing
-> code they see in the context portion of a patch before they've read the
-> whole patch series, as that displeasing code may in fact be reworked in
-> a subsequent patch of this series. Please keep comments focused on the
-> changed lines of the diff; I know there's more that can be done, but it
-> doesn't necessarily need to be part of this series.
+> Add the three resets and the corresponding reset-names property. These
+> resets appear to be optional, i.e. not required for the functioning of
+> the device.
+>=20
+> Move the list of clock names out of the if condition, and expand it for
+> the confirmed clocks I could find by cross-referencing several clock
+> drivers. For MT8195, increase the minimum number of clocks to include
+> the crypt and rx_symbol ones, as they're internal to the SoC and should
+> always be present, and should therefore not be omitted.
+>=20
+> MT8192 gets to have at least 3 clocks, as these were the ones I could
+> quickly confirm from a glance at various trees. I can't say this was an
+> exhaustive search though, but it's better than the current situation.
+>=20
+> Properly document all supplies, with which pin name on the SoCs they
+> supply, and what voltage we understand them as. Mandate vcc-supply-1p8,
+> as vcc-supply appears to always be describing a 1.8V supply. The
+> ufs-common.yaml vccq/vccq2 supplies are used for this purpose, so that
+> common UFS implementations which do power management for these don't
+> have to treat MediaTek's 1.2V supplies in a special way.
+>=20
+> Add the missing avdd09-supply, which so far only mt8183 uses.
+>=20
+> Also add a MT8195 example to the binding, using supply labels that I am
+> pretty sure would be the right ones for e.g. the Radxa NIO 12L.
 >=20
 > Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
---neMgzJxl9Udqmnxf
+Thanks for doing this.
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+pw-bot: not-applicable
+
+--V451Z6sNr8QduRRg
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaPu1wAAKCRB4tDGHoIJi
-0vj7AQD/qMUfkmvkG5iyPjCXcZDX8DMNZCwnz8m5hn6oc9PBqgEAn3C/Eixdj5+2
-V5Ordm3MjSUlMvxa4MDfaFftrECzpwE=
-=dTaQ
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaPu2egAKCRB4tDGHoIJi
+0lNNAP0VC19k2rBRz7i8IHf9X3g1JTxqMMzVR3u32lMao5ckHwEAhMXWoRLsRBM+
+T4cDM7d9lAcfhdyafCjXMKxMlrhkNws=
+=fNHc
 -----END PGP SIGNATURE-----
 
---neMgzJxl9Udqmnxf--
+--V451Z6sNr8QduRRg--
 
 
---===============4843159843485175309==
+--===============5704582734606493035==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -172,5 +181,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4843159843485175309==--
+--===============5704582734606493035==--
 
