@@ -4,122 +4,238 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D60DCCD1BF
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Oct 2025 00:48:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D06ECCD1BF
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Oct 2025 14:21:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K1iWTTBYHgnMrp0riaoVVn4G1MG26CgZPLMHyL4UrFg=; b=LdX/L1fKgq2Mlq
-	d8oBKlz9jUUtEgE92sgNv1T77I7sRC5mpL0M8EDnEtROxMMczKO/GsLK2lyZhyNyVtNgx/kO+gbVp
-	37jgwHvDl1dw7sdenXDNuSBRGcVAvtVw4r/rDGlBw07kZTvIzx2wxl8H4ZvPKhp048lIrjyLyBdiD
-	FLTd5Wsx6iYCbIf/+w2OSwXxnkO/kNKgk8l8t6umI7XVJbOnujdjmoQggFGTKL5DJ+tmfyJ2KKNbO
-	8NDtOA9TvOhQXPw4Qb2m6ELA4ullLxHzFYKEoLYxbW9iowWla4tK7Gl9lavcoY1CIJyFJIz92yCy4
-	5nrO0V1JclkyI9hVKxRA==;
+	List-Owner; bh=3+OMmCuMQpH/muVVrzMxnZ88dS+vuAd3R78j+JuA1bo=; b=eGM4pukMzr8Vwi
+	qru8SJq6udX9qFzd2TZjToKsjT07XXVmIrGEPCu1hVbmRD/YLTVj7pNdhEDnKggPgCUJNU0xVZC2U
+	EBx8ffR1MOjyqVvkGq75ri2WBmi2ETzr4rmyDwDGGN+Tj83rtnaDQAT106KH6+mKjPcOzx12gp9qh
+	FTHafOcP14Lj1yA57hF4cJ38iFxWFEB+eLZjqhobrfYlb/h6HhTiaZ4wJfJJncBCD9CFamDf7NXAb
+	uXYO+fEIZ/dTtYldfwINUNRkFwMAZ9p4/n1y9Uk9aOVzvVQ08Ri3ca7wOUSICvdMkmIjmZrTGud7Z
+	eq0mz8rPV+/RPb42ZGxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCSS3-0000000AlGG-0nIZ;
-	Sat, 25 Oct 2025 00:48:11 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vCf9L-0000000BLcd-0BxP;
+	Sat, 25 Oct 2025 14:21:43 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCSRy-0000000AlCG-2OqO
+	id 1vCf9H-0000000BLcG-3MHj
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Oct 2025 00:48:09 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59OI9H03023483
-	for <linux-phy@lists.infradead.org>; Sat, 25 Oct 2025 00:48:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	w54MP6DWU2D29M3PSjuDo2rHQWTbHhKIJuDpTNCMzws=; b=jjsThEkwnwcqrnsf
-	fH1aMlvnWW+W2TMc9k5bkS90QI0HbUIxDeWuafKaI/X1T6Xkm6yxOLKXycACVyRK
-	s0PI4C8ZAs9Sy/ZF/kSVsrdef3uCH+Okydu9nmVRbVnxaRD2vuoifkCeCg7WMOE3
-	YJ9t83d0YKcyFNrPHLIYKL+4Vtc/bRLO4Ym9c07hEyhVwS3DuF+sHFBdrIAEnfT7
-	8nlMEp2ewzALhYVnCkpKhEQyWjgfvIZo0Sqwas5LcagqYJ6sz8F3q/Uuq0jiyuTT
-	BYmT8jGkHXwuvcYKM5mssGZr6mrZUajFaYCode9/BwehguUVarzLkKsfwNbs/6rn
-	peZniQ==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49y5x8que5-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 25 Oct 2025 00:48:05 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-33d8970ae47so2390941a91.1
-        for <linux-phy@lists.infradead.org>; Fri, 24 Oct 2025 17:48:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761353284; x=1761958084;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=w54MP6DWU2D29M3PSjuDo2rHQWTbHhKIJuDpTNCMzws=;
-        b=RpOrDRZZUoAbE6Z66BIduD8s3Nx4hLBmXshJLu2PysqHjHe05Idj3JJP/36u9rjkd6
-         xNdXadNs4dWwQZXZPDkQ18Hz3J0q+2WXa5dyGPfGT8er6skhz+t4zSmZ3CnNFsdElJ62
-         ObcNf5UOfWjVTX3QJ7cQpK7TzWz1ydIwWSBBYO10NO/pXXa53VZZ8SPh9hM6P7zgvSTi
-         5wbAAjGZ8sr02rR7daoEKdZcq4s9NBHDpcHtKDkFQtXQJugfwyWZSgB5VSqdPn5dOodJ
-         fJePNQJWqEWXNm7Hp9gdiSbBHhboZ+luH2m3CbnPXwddflG/YLK5yMEBl3AdfBL4FLW+
-         JQ4A==
-X-Forwarded-Encrypted: i=1; AJvYcCUNlhSrTWEERrMuNi33plj2CvDnfA3U1s+UNM/8epNAyXRtBN+TPJQxek9DXQ0LJqmOO5cZQM4I22I=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyavh+Q8LwPFgOZiu/NA7Tc/EpIfa3RKN9QvRoFOsvfycDu6sxD
-	eWMtitVDgxxX5vmP2WkS8mcsqw70rlBATsPeP+/8p52iWgrmGAkxsoL3lFtXt0MqtJ231YcVkg9
-	nvmcxLvlVwXig7S5PCICRQlRDSVGpEFmsWFMKP+vSgnkPOhW9Gv7uYwsMzne9tV4xY+sI
-X-Gm-Gg: ASbGncub7MdZSPxFoT1z3sLQpACD04/RPmneorSz3Tm3kPFnVhKCi4y05u+x6udL3EV
-	fogyIocSzUgmcjARD9gTW30Cgmr6teWEQw/cKCUa+9jfJjYYae/jmZn5IszkIClztfQsc2V53KS
-	4ykL59Uw7TMyhZt5tcvCrCOWYP/RMGQb/qjRuYS6uYOv3JClWUC0W5z1eXc7nthOrRKxUmv+9Fp
-	OrH/1K6qDmB4w20FU51GpI7x6pY/UXKpZ+oZeJyRrcGewIg4rSEn4WjfRLpUxX1x1PSHDpOvYME
-	CYLZVKtxTQt2fLZOAF6puQXUz3HzRooMbDyNzF1yb0rtxLAQo3aiPJUshb10CjQQfp3Tkgyt5BT
-	HesUMRaBxBs+WWQ+2fGVaVnopd7jwpY4Q+k+lUjJNhK0BRIhVVyY=
-X-Received: by 2002:a17:90b:5111:b0:33b:c5ce:3cb0 with SMTP id 98e67ed59e1d1-33bcf8e4560mr41039679a91.20.1761353283026;
-        Fri, 24 Oct 2025 17:48:03 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFGF47Gr3fo7bLLUfPl6vLVJ8f4+2rBe2suDFpfdnjUwfWYzQux5joKSrdlExQjiQ1mIUyspg==
-X-Received: by 2002:a17:90b:5111:b0:33b:c5ce:3cb0 with SMTP id 98e67ed59e1d1-33bcf8e4560mr41039631a91.20.1761353282093;
-        Fri, 24 Oct 2025 17:48:02 -0700 (PDT)
-Received: from hu-wcheng-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33fed3eca8dsm167352a91.0.2025.10.24.17.48.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 24 Oct 2025 17:48:01 -0700 (PDT)
-From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Date: Fri, 24 Oct 2025 17:47:44 -0700
-Subject: [PATCH v6 6/8] phy: qualcomm: qmp-combo: Update QMP PHY with
- Glymur settings
+	Sat, 25 Oct 2025 14:21:41 +0000
+ARC-Seal: i=3; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=YJ6CPk3TTXDTkOwqKNEO31VooeqR+9gKU9UYxal8gUl1Yh6Hj6RUEwb85rmEnDdojVwe2A8qtyQvg4Zbkgq+YNjhW4bKxNejtX1kSJwCX8HmtRANk6+KRC1SuM/2o3eKYiOaYSlpaJxqY5mYENAislxlgD8iXXo1k+Aqw3fT/RiRoKxgjNfuebaZ5hm101OAmHYX+XmolfrW7KpzCT46AGa77AgBn6z8gTJ6WR+a0qecgd139IcHajmwVOcKXtneEhGsHFOArjUsT8Q1WcZL1NhZ8asFeRZXirq7ZV4r3bbewukWu2ZX3dTCGbG5Bv4LcJPTVJVedEAM7edkzpFHQA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=XWnWBS6OEE4Og5RBbhYx7ABheOkTG30WMy3sgxHzy4U=;
+ b=zLzyziu7VvZwX+HDqb+sywikt+yaV3mXCa36oPlyQnS1kDf7eCFNd5vaYcTGNOwdmRT5hBd69LPXQeqtYaze7ITWYJqpHmYweJbNP/3uw4ull7hcRECr90CUpl/5J+udi3FLlmh43sGb8QeuLvEPn44AOuJALgUv5JHELYI7aqSiuQODH7HG0GPcAbNCEvBmNwKA8g7kx56UdP+y78AeB5zQ8DyjaJadjAw7BWEdDLWN8BXsucN1vDkxmmSgyN8nsSZP+fBboKbVdV9EHPtTm+UoXWIIVvtWy84rf5ytIoG1WShbOdZeVf2vIiOFrvIPFZZZBz6y6eWfnsSaYgkQ5g==
+ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=fail (sender ip is
+ 52.17.62.50) smtp.rcpttodomain=baylibre.com smtp.mailfrom=solid-run.com;
+ dmarc=fail (p=none sp=none pct=100) action=none header.from=solid-run.com;
+ dkim=pass (signature was verified) header.d=solidrn.onmicrosoft.com; arc=pass
+ (0 oda=1 ltdi=1 spf=[1,1,smtp.mailfrom=solid-run.com]
+ dkim=[1,1,header.d=solid-run.com] dmarc=[1,1,header.from=solid-run.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XWnWBS6OEE4Og5RBbhYx7ABheOkTG30WMy3sgxHzy4U=;
+ b=Q62JfdUtkiHj2J52rWDK872gqdDPloiuRQBTQDXFsMTha9pjUvunTCX7fBmVa8hmy8NMp0nxgPXVJ0aa8ODRMWkGenGnKQTYPAZb7QkrbvPa/gBJk8sq6/6zEXJMh0/PFAOxTb8jDtfON/QtkYObuxZ3ALYDX8lP5/obfr4zaok=
+Received: from DUZPR01CA0314.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4ba::21) by DU4PR04MB11815.eurprd04.prod.outlook.com
+ (2603:10a6:10:622::6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.15; Sat, 25 Oct
+ 2025 14:21:34 +0000
+Received: from DU6PEPF0000B61C.eurprd02.prod.outlook.com
+ (2603:10a6:10:4ba:cafe::a3) by DUZPR01CA0314.outlook.office365.com
+ (2603:10a6:10:4ba::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9253.16 via Frontend Transport; Sat,
+ 25 Oct 2025 14:22:07 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 52.17.62.50)
+ smtp.mailfrom=solid-run.com; dkim=pass (signature was verified)
+ header.d=solidrn.onmicrosoft.com;dmarc=fail action=none
+ header.from=solid-run.com;
+Received-SPF: Fail (protection.outlook.com: domain of solid-run.com does not
+ designate 52.17.62.50 as permitted sender) receiver=protection.outlook.com;
+ client-ip=52.17.62.50; helo=eu-dlp.cloud-sec-av.com;
+Received: from eu-dlp.cloud-sec-av.com (52.17.62.50) by
+ DU6PEPF0000B61C.mail.protection.outlook.com (10.167.8.135) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.10
+ via Frontend Transport; Sat, 25 Oct 2025 14:21:32 +0000
+Received: from emails-3291087-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-5-94.eu-west-1.compute.internal [10.20.5.94])
+	by mta-outgoing-dlp-862-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id C9C407FF73;
+	Sat, 25 Oct 2025 14:21:32 +0000 (UTC)
+ARC-Authentication-Results: i=2; mx.checkpointcloudsec.com; arc=pass;
+  dkim=none header.d=none
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed;
+ d=checkpointcloudsec.com; s=arcselector01; t=1761402092; h=from : to :
+ subject : date : message-id : content-type : mime-version;
+ bh=XWnWBS6OEE4Og5RBbhYx7ABheOkTG30WMy3sgxHzy4U=;
+ b=fqwcC9qOxNVMwhwJBxMbH/dU6D96gLnNXpMu4SlmAXKiIqVzmVubeUwYFzUYz85hZJCtB
+ jELovNPCjDbLfpMgTgKjOGMSGxvwRs0AXvBgvf6sSpfSDnkuaZlph+uObigKX6HEXeKazki
+ AVsOehKCXTdnD4rKCevURlnRMuNXPwk=
+ARC-Seal: i=2; cv=pass; a=rsa-sha256; d=checkpointcloudsec.com;
+ s=arcselector01; t=1761402092;
+ b=UoT8BV9iu8tfCNGFVYz/EjYKyXBzSC2j9y+xPgGzCAYjqa/H1tGIQFKyehYN5toSP/MfH
+ VxZxGJ4YEBZiHCeykoE/7p/EsEzjP63zgEFTYMNNAnTqBG+F83+/7tUGN2sYdQUQnHAMGnI
+ RnCOOIZslvOZBs/mHuzt7FMPPufqykQ=
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=dm5I/aN79tNIAM7216EcDel5SLA6bBrUsBXKPOQhdrXq3gs/ASz1svBVoT9erQ3pztXCoZeUNhJMA/GsXyJ7C4P+bQjxb6G+kS7xeWOcMDTvJYrD4DGZFetVT3IVISmZuST126UOyf59FgD6ZpxGiUlkd1OAJuJpVFKYQme9w5fK4JnjfW/veEQBBYpTjeoCNU5deAIMZfcP2I75ROrz7y/BnR4qwDmr9yA4SkV79hy1tnyCBCKVppGJU3XAPI+/K6VxURSIZrCb4q5UbwxdrOdCuTHUu6FxJo9NDAThFy7a4XGA0sfcNCVoxKTwB6N/1HLke/7zh96hV8pwftLvFg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=XWnWBS6OEE4Og5RBbhYx7ABheOkTG30WMy3sgxHzy4U=;
+ b=UtO7wf5gAxrF44gxqDC9YRjsPJ5XSTpfGeAqevsOBpOmNDtk7h2wjN1VoDg3Q75R+udCUMcOKWioOqm94KkWTPGrpvMO0uznLhirkd2/MGK34760Mzkm6DbanPc1LzDcqHE0nMVkgWYW/xivxmU0xm/R8/RwyLVZPeHzcXnnwqQr4rrSH9AqsQYpB56uMT+bR+CgFSdIqObtruHTApDADCJ+kkOYyb5pUECmlOWIb/1pu2rVB4nErtiJyXG9vU12zfRZYWp80K1Uc5QbYDgv3kwCJJJ6h5aYf2D6lt/9kR7FLoZgpvW0tGr9V3OJEUG5WVNY6pYOu+HzsFgkYGe6Tg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=solid-run.com; dmarc=pass action=none
+ header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XWnWBS6OEE4Og5RBbhYx7ABheOkTG30WMy3sgxHzy4U=;
+ b=Q62JfdUtkiHj2J52rWDK872gqdDPloiuRQBTQDXFsMTha9pjUvunTCX7fBmVa8hmy8NMp0nxgPXVJ0aa8ODRMWkGenGnKQTYPAZb7QkrbvPa/gBJk8sq6/6zEXJMh0/PFAOxTb8jDtfON/QtkYObuxZ3ALYDX8lP5/obfr4zaok=
+Received: from PAXPR04MB8749.eurprd04.prod.outlook.com (2603:10a6:102:21f::22)
+ by AS1PR04MB9405.eurprd04.prod.outlook.com (2603:10a6:20b:4db::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.15; Sat, 25 Oct
+ 2025 14:21:18 +0000
+Received: from PAXPR04MB8749.eurprd04.prod.outlook.com
+ ([fe80::aa83:81a0:a276:51f6]) by PAXPR04MB8749.eurprd04.prod.outlook.com
+ ([fe80::aa83:81a0:a276:51f6%4]) with mapi id 15.20.9253.013; Sat, 25 Oct 2025
+ 14:21:18 +0000
+From: Josua Mayer <josua@solid-run.com>
+To: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"advaitdhamorikar@gmail.com" <advaitdhamorikar@gmail.com>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, Andrew Lunn
+	<andrew@lunn.ch>, Gregory Clement <gregory.clement@bootlin.com>, Sebastian
+ Hesselbarth <sebastian.hesselbarth@gmail.com>, Michael Turquette
+	<mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
+	"linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>
+CC: Andrew Lunn <andrew@lunn.ch>, Rabeeh Khoury <rabeeh@solid-run.com>, Yazan
+ Shhady <yazan.shhady@solid-run.com>, Mikhail Anikin
+	<mikhail.anikin@solid-run.com>, Jon Nettleton <jon@solid-run.com>
+Subject: Re: phy: marvell: phy-mvebu-cp110-comphy: link failure and lockup
+ built as module (=M)
+Thread-Topic: phy: marvell: phy-mvebu-cp110-comphy: link failure and lockup
+ built as module (=M)
+Thread-Index: AQHcRa1Mq/U8rZIbYUir4sNYTmDR2bTS6eaA
+Date: Sat, 25 Oct 2025 14:21:17 +0000
+Message-ID: <b71596c7-461b-44b6-89ab-3cfbd492639f@solid-run.com>
+References: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
+In-Reply-To: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-traffictypediagnostic: PAXPR04MB8749:EE_|AS1PR04MB9405:EE_|DU6PEPF0000B61C:EE_|DU4PR04MB11815:EE_
+X-MS-Office365-Filtering-Correlation-Id: 434b86aa-39b0-45c2-4816-08de13d1cc4e
+x-cloud-sec-av-info: solidrun,office365_emails,sent,inline
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|921020|38070700021;
+X-Microsoft-Antispam-Message-Info-Original: =?utf-8?B?ekl1dFdFVFVzNkttYU44SE1IMDQ0RzFEcFlWZkxHcS9hVzlBS1M5bk9xVldr?=
+ =?utf-8?B?RGFPeW9aN1FxNHZWSnp4SWhHRGlYaTRjNTFpTnh0RkZZVDdmUHVSVWEyMDcy?=
+ =?utf-8?B?T2JZcmtqcFZadUc0MEkzNnN1TXBqdWNtYkwwclNOZnJDek5sbHp6TkVXRmxE?=
+ =?utf-8?B?SGRVRG8rT090QXlnMXdnaWNaK09lVkVVUE5sMEc3UmVydjV0ZmFLZFdSeDB5?=
+ =?utf-8?B?cEs2ZkVUcXlXMVpUbXVidkVmZU9rVnNWWlFnNFdUMmJIVDlHSFJDUGtRNmhQ?=
+ =?utf-8?B?WkZDdy9URWNYVURtaG9Sd3hlc0oraDlUWU5RZXJURmNTODVrWjhXWE12TE1H?=
+ =?utf-8?B?Qjd4WWhsSnM2OUdlNTk2enhzMFRMTFN4cGk1NHFSYklxbWZ0V2p4SkJ3ZmRE?=
+ =?utf-8?B?WS81SS94b0xob1RSVUtEUnFyTmwxaDB2UUZIM2laS2pBVnUzTXpBN2tEblda?=
+ =?utf-8?B?c3o3SUkveEQ1bjlpN1lobURqK0FCcDJLMHd6YjhjMmh6Vy9VQ21NcjVlM3Rh?=
+ =?utf-8?B?VFNsSS9KeThpMlNwc0pPQ0xzWlgzSzBNZUVHTGZvSE5qUmxRV0c4M3ZmcVg4?=
+ =?utf-8?B?amRyZkRaQWdZZEl4Tmxjc1Q1enZqZU4vTittNXFNUS9XUjdZUnY4VTlWOFYr?=
+ =?utf-8?B?TWNPcFdkcG1OVm83c0I2U3dWNFk5c2QrMzVFRzUvbTlybnZ4STZxTEw0aHlh?=
+ =?utf-8?B?aGw1VHVKeEQ4eU53dFlKYkhleEw1dmRHVGVwb29TMWlWMVlOUzMrOU1DNURQ?=
+ =?utf-8?B?SzFuL0V6SXlmMWRRSVNhVnBzTkltQks4N2ZmcEtsL2RaQ1lTcnNkbnljTUw5?=
+ =?utf-8?B?ZmRBaWFKVm5LWTU4NjBPS2lnaFRBZmg5YjQ1OEdvbld5NmJZK1hxbVVvOVhB?=
+ =?utf-8?B?K2xrR2dzTnl3MGozRGpUMEhoMmU5WjJKVjBtUDlieGZvVnFDVVJnRUJlekJq?=
+ =?utf-8?B?S0Z5d2xnRWthODdCcm03RTV1amxxSXRCM1hTRHY4cG5tQndwc1ZuT21MV3BH?=
+ =?utf-8?B?cENHVVBuYjVLYVVPbXNFeDRHVU9DTlhnNGc4aVZ4ZFBla3dwYnVDZDB4MHZO?=
+ =?utf-8?B?U3h5djR5ek1hb1VUeno5bkZ6dHgwa1NyV3hhUHkzS0o0SEpMeHc3S1VXV0Rz?=
+ =?utf-8?B?bTJIVG1LamFyT0FxMnBUR3ZMTVNqaUZ6bDBQbENkZ3ZYaHplaS85amwwQmxO?=
+ =?utf-8?B?SHpDYmdMTFd1YjBvYkF5bUNieEdoZE9KNWhSSXFkUVAyTTlpLytKNStIVUoz?=
+ =?utf-8?B?TFlNWEllTDEwWjE4S0tWMnNzRUVQQkdLUVF4dVB1cU5kbkQyZ01MMGt3NVNN?=
+ =?utf-8?B?VU1CbElJZXlPNUw0bGZpT0sxNFJQbUV6a1BwTVdCU25ueXdrL1UrZEJBVVA5?=
+ =?utf-8?B?TWhYNmhIS0JKako2dnJFekRuMUlqZjRMZE1lUG1EL3JFeDRkUVhPUEtlbFJ0?=
+ =?utf-8?B?SlR2dnRXelhOZ2F3K0lZaXk5Tm1NT0ZaQWlyWDliZ1Q0N3BMc29rc1FRSVJk?=
+ =?utf-8?B?Y3RJSGs1a0ZXYVZocFhjZFY2bkg0d3Jkb3FhN1EzRENhYlRmMGNhK2p4YTZB?=
+ =?utf-8?B?cFhydUJDSUlaTmE2dEcwSFRuZm9ZM2k1K0FwUDVFbFcvTmlBV2lsWnFHNGN5?=
+ =?utf-8?B?N29sRU9RRmVmbmYxYXdBZFpqQTZ1dDNUMkpKNEVhUUF0SUU3ZDgzYXB0WUhM?=
+ =?utf-8?B?cjZ2UnFSUXVab0NSa25qZDY5OGFpbXhhbTZHUzR3SmZWS0RzNFQrUU1uam5M?=
+ =?utf-8?B?ZUFJcjI1VUcrRzZZOXMrRGpsQUlkRm54bGEvOTMwRHBXMkYrcmh4ZnFHckRj?=
+ =?utf-8?B?OTI1Y21wN29COUc1cWtGRTRGck5wM2VpcVY3MElLYjd1NHB1TzZTeXhiVUYw?=
+ =?utf-8?B?UmtDcCtlYitjU1loV1ZGdFdlbWNmbHJ4NEsvTzlLaDVFZWpBcytjUUlmaTBm?=
+ =?utf-8?B?c2MrSTJMQTdORU9KMk43RktRbHg3SFRWVzBvTWJla3A2K3I2Q25KMXFNQyty?=
+ =?utf-8?B?VzQ5SXZWZHBrdlJDdjVjM0pJU0tuR1llNzZraHpaWXUzayswekdjY201WGoz?=
+ =?utf-8?B?MGFaNUhVOFJkMndjNkYwcXU1QmY2NG5XUGNldz09?=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(921020)(38070700021);DIR:OUT;SFP:1102;
+Content-ID: <7997FF1B99313541B0F1F60E5C271236@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Message-Id: <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
-References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
-In-Reply-To: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-X-Mailer: b4 0.14.3
-X-Proofpoint-ORIG-GUID: m0-ZHvhSwsXd8OXyTMN1FTV3ob46kQpY
-X-Proofpoint-GUID: m0-ZHvhSwsXd8OXyTMN1FTV3ob46kQpY
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDIyMDE2NCBTYWx0ZWRfX0hgsqK5EVDNA
- 8I34Me4qjePM82XupwWYLyqAchcG9C/ViSKp6n4hCnzzXCbloOIFTSbd5YVKBngVw2hjd7HkRm+
- jZ5eqyH43TksWpFAGcgyX6VcZJ2y+02npraR5ybURfVFnmfKERZ1UXVLc7KoXFLTNjpSLWX+uwd
- 30x8KkEaeXF20mryN7n3RzuTSTzDmK7i7JwoLekWeF0qBZ4+rD1RXHsT6LpA9ZSqn9XH+XWbR41
- BwSG1ZKqnl3sCoX0m407SC3it7oFykYMa7fa1k7lSPCldgpCXVis7fTJ0x2slhSsXe4aNrGzIqo
- PGPqHFkAaP3XD/0mWKjR2g7UcElC31DhuKwdzDfYLw8p1M4bnu3dseL9uLKnAi+FbkzFsUvJVtS
- sQLB8uT3bJwidZgnfPMbpmvOH4ubrw==
-X-Authority-Analysis: v=2.4 cv=UOTQ3Sfy c=1 sm=1 tr=0 ts=68fc1e45 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=nE-6qLORNptjhdMLsvQA:9 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-24_05,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 suspectscore=0 adultscore=0 clxscore=1015 phishscore=0
- bulkscore=0 malwarescore=0 impostorscore=0 priorityscore=1501 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2510020000 definitions=main-2510220164
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9405
+X-CLOUD-SEC-AV-INT-Relay: sent<mta-outgoing-dlp-mt-prod-cp-eu-2.checkpointcloudsec.com>
+X-CLOUD-SEC-AV-UUID: c855525dc1414779a22e228ce8b66683:solidrun,office365_emails,sent,inline:23e050c8d254d26bfeac187348cb1d68
+Authentication-Results-Original: mx.checkpointcloudsec.com; arc=pass;
+ dkim=none header.d=none
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: DU6PEPF0000B61C.eurprd02.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 23c3a7c1-804f-488b-3d8d-08de13d1c34c
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|36860700013|35042699022|14060799003|1800799024|82310400026|921020;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?MGVBNHpXMUF3dmdCMCtXVXRMSSs4OTlzTUZLRHZhb1ZmUWZXS2JRRGJuWkk3?=
+ =?utf-8?B?TFV1Zng1dUlmVWx1V1ZNdFJ0NVd5NVFzUzNkMVVVcFFuTlIzK3ZnViszSUVG?=
+ =?utf-8?B?cFFnUzBITHFaYmEwek80Z1lyYVVmcFhsNEc4MVlJZVRmMFI5Y3d5RVEwWmVo?=
+ =?utf-8?B?REdtaGVZQUNDT2tSZytUZWQySEZobWtoNkU1TThrdDh4dUFOYkJnMVVidnhY?=
+ =?utf-8?B?TVJSRHJVQUNyeS90S01wV2FOYnpBVlBHa3Z6QlV2Q2RNM0srczgwMStNV1Rw?=
+ =?utf-8?B?aGkxZm91NktvaFNWd2dUVEU2MjdOSDhTSzZDeldkQU5RUWp1TSt3RXNja1hp?=
+ =?utf-8?B?SVROaVdLL3RrcEZ1dVF5TC9wSTZ4OHFmdDcvRGFkbCtqWmxnQzVBZEhadm9m?=
+ =?utf-8?B?YlhpTzJHa1dQNkVMUDZvclhKV2dWS05uZlJrem8vdFZmZjZrczJRZ2lNbEov?=
+ =?utf-8?B?aEc2cmdRRDRxMklTeE5KWEJvbEhoRGwvUGNJSmZPdEVKNUI3TlkrQzNhUVBy?=
+ =?utf-8?B?bkVpcU8vWit6bzdmZDB0YldCdE5jZitjSzAvYUM3NjVhWVdFUW1VakxaOTBr?=
+ =?utf-8?B?YmRuMFYweERZR3Q4UTlhdlcrcUZsS2Y2SXZ1dE0xWW5zQTdqNUcweXkxbVdK?=
+ =?utf-8?B?ZUc4R1pWYWtua2JSandJV1U5N051YkkyR2JJZEdHWmk3S2kxb003dXpNVkxX?=
+ =?utf-8?B?alN2TDhQMDNINUJvZ3RIcTJzbm5NblVUVk1DclBnLy9uQ1pFWFR4R0hVMlhL?=
+ =?utf-8?B?alpGN0gwNUVCRC9rUUZER3MwRG1MOTkzZ2FHendRdUxscXA3MHFkUGUzSkdG?=
+ =?utf-8?B?aG82MU9PMU1PbmxscWd0b1FEcURWQ1ZxK09zVERPRzVtcTg1czNtd0ZtZDN2?=
+ =?utf-8?B?czBJZi9XdVMwYzRablUzK2dGK0U0ZzJRcFpTVlNXbVdhdHd0Z3ovYk5xbUpR?=
+ =?utf-8?B?ZTNWSWEvKzFRVXI0V2hnTnk2ZDJaSzhyK1FGdjJKVCtzQytMYjl0NXpnZlZi?=
+ =?utf-8?B?VW5YdmFNVThsSnR6WDRrRFY4aFhqYW16OEFRcDVxdy93d3dwOWxtdEp3SzVs?=
+ =?utf-8?B?cjRJckFsWGdhQllRUUQzak5EbkdtMVZRUVorSVlSU3hiUmxSMWNLaW42ZmJs?=
+ =?utf-8?B?cXZGaW5RYzlzeUtraVlVUk5EYWFpazBqRnpuTTlvVFc4dkxpcW5vWkM2R043?=
+ =?utf-8?B?T1VvNHVuemkwZTdnNFI4MlhvQUhzdzIrSEk5N29LZnZJaHhFYlJ5Nm9BYWps?=
+ =?utf-8?B?aFVlSUJxUFZRdFRRQjZHcHlXS2JVRnhnRWNlaXBqMWJMSHN1R21BZGVXNDk3?=
+ =?utf-8?B?eXpwbnRXTzNzRFByaGNxSzQ1L24zOHVMdU9Qd3REMEg2QU1zRnN0TU1aclZi?=
+ =?utf-8?B?UmxKQ1dXNjZGcks3QTFyQ04yOGw5Q0dNZS9nSlVNYzE3Rk1lRG44ZXFmZ1k2?=
+ =?utf-8?B?Y0IwSE9oTmVJSnVGeE91TUUvMEl0Nmg4cGNENXltRW95bzd0ZTJUVC9keWpS?=
+ =?utf-8?B?Qkw4QjUwQjZCdjl5a3daVDdqcm9paHNmaFhQVy9lN0czTkp6cVhpdU5qbkZt?=
+ =?utf-8?B?SHBJWGk1QzhWdnNaN1pyZVlmY2cxMElTVGZDMVlVNkhMY1BtOVRYdnFJazQ0?=
+ =?utf-8?B?eWM5WWtNL1hRbjBIT3pzMFdPL2NkRVNrSldpM1VwNkZhYXJSUXRMWkw5TktC?=
+ =?utf-8?B?S04yeS94Z1FoV3luWlJuMXdLYU5wOWpSWlFCSWhwOU96NVhNV1ozdjllaGxs?=
+ =?utf-8?B?V0p0STFVN0FmbjBVQnB0amg4MVZQbHJVNkdnUEJGSlpJZDBoUGpYU0ZIbDJW?=
+ =?utf-8?B?cHZHaHBHMFJmZ1UxeGVDT25PeHFteVIvL1ZiRlgwQlVFekwveW5nMkQ5eUJo?=
+ =?utf-8?B?bzNxcHNJdDVSRGRRbEx0Q004Vm00UVhUYmZtTkRiYkxPRkFOTGVJK2dlZTR5?=
+ =?utf-8?B?RmpCK2dhL1J3elZhWnk5OUdjMzd5ZlFjVjhZQ0Zqek1HT1VUWlJFNjljQU9E?=
+ =?utf-8?B?MzRmVGZna1orSmxLMXZZaWRHcWZteWhVQ0poUTBSNUI0UnZFOTBpTnN1RC8y?=
+ =?utf-8?B?SGY2bkc2b3dqbVZDb1JzTDhOc08xYk1iM0ZLZUJNWi9oT3F3M1Y5b2RZaUxq?=
+ =?utf-8?Q?rSmrh31uXlJjTti7jhQKmTuI7?=
+X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(376014)(7416014)(36860700013)(35042699022)(14060799003)(1800799024)(82310400026)(921020);DIR:OUT;SFP:1102;
+X-OriginatorOrg: solid-run.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Oct 2025 14:21:32.9524
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 434b86aa-39b0-45c2-4816-08de13d1cc4e
+X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a4a8aaf3-fd27-4e27-add2-604707ce5b82;Ip=[52.17.62.50];Helo=[eu-dlp.cloud-sec-av.com]
+X-MS-Exchange-CrossTenant-AuthSource: DU6PEPF0000B61C.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11815
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_174806_818213_195E234E 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20251025_072140_002346_4A270F57 
+X-CRM114-Status: UNSURE (   5.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,1386 +247,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For SuperSpeed USB to work properly, there is a set of HW settings that
-need to be programmed into the USB blocks within the QMP PHY.  Ensure that
-these settings follow the latest settings mentioned in the HW programming
-guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
-new ways to define certain registers, such as the replacement of TXA/RXA
-and TXB/RXB register sets.  This was replaced with the LALB register set.
-
-There are also some PHY init updates to modify the PCS MISC register space.
-Without these, the QMP PHY PLL locking fails.
-
-Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 288 ++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h     |  17 +
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h    |  12 +
- .../phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h    | 639 +++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h   |  33 ++
- .../qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h   | 224 ++++++++
- drivers/phy/qualcomm/phy-qcom-qmp.h                |   2 +
- 7 files changed, 1215 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 1caa1fb6a8c7..d1534ed7200b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -30,9 +30,11 @@
- 
- #include "phy-qcom-qmp.h"
- #include "phy-qcom-qmp-pcs-aon-v6.h"
-+#include "phy-qcom-qmp-pcs-aon-v8.h"
- #include "phy-qcom-qmp-pcs-misc-v3.h"
- #include "phy-qcom-qmp-pcs-misc-v4.h"
- #include "phy-qcom-qmp-pcs-misc-v5.h"
-+#include "phy-qcom-qmp-pcs-misc-v8.h"
- #include "phy-qcom-qmp-pcs-usb-v4.h"
- #include "phy-qcom-qmp-pcs-usb-v5.h"
- #include "phy-qcom-qmp-pcs-usb-v6.h"
-@@ -46,6 +48,8 @@
- #include "phy-qcom-qmp-dp-phy-v5.h"
- #include "phy-qcom-qmp-dp-phy-v6.h"
- 
-+#include "phy-qcom-qmp-usb43-pcs-v8.h"
-+
- /* QPHY_V3_DP_COM_RESET_OVRD_CTRL register bits */
- /* DP PHY soft reset */
- #define SW_DPPHY_RESET				BIT(0)
-@@ -97,6 +101,7 @@ enum qphy_reg_layout {
- 	QPHY_TX_HIGHZ_DRVR_EN,
- 	QPHY_TX_TRANSCEIVER_BIAS_EN,
- 
-+	QPHY_AON_TOGGLE_ENABLE,
- 	/* Keep last to ensure regs_layout arrays are properly initialized */
- 	QPHY_LAYOUT_SIZE
- };
-@@ -259,6 +264,236 @@ static const unsigned int qmp_v8_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V8_TX_TRANSCEIVER_BIAS_EN,
- };
- 
-+static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-+	[QPHY_SW_RESET]			= QPHY_V6_N4_PCS_SW_RESET,
-+	[QPHY_START_CTRL]			= QPHY_V6_N4_PCS_START_CONTROL,
-+	[QPHY_PCS_STATUS]			= QPHY_V6_N4_PCS_PCS_STATUS1,
-+	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_N4_PCS_POWER_DOWN_CONTROL,
-+
-+	/* In PCS_USB */
-+	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-+	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]	= QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-+
-+	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
-+
-+	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V6_COM_RESETSM_CNTRL,
-+	[QPHY_COM_C_READY_STATUS]		= QSERDES_V6_COM_C_READY_STATUS,
-+	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
-+	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
-+
-+	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
-+	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V6_DP_PHY_VCO_DIV,
-+
-+	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_N4_TX_TX_POL_INV,
-+	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_N4_TX_TX_DRV_LVL,
-+	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V6_N4_TX_TX_EMP_POST1_LVL,
-+	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V6_N4_TX_HIGHZ_DRVR_EN,
-+	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V6_N4_TX_TRANSCEIVER_BIAS_EN,
-+};
-+
-+static const struct qmp_phy_init_tbl glymur_usb43dp_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE1, 0xe1),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE1, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE1, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE1, 0x41),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE1, 0x41),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MSB_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE1, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE1, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x13),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE1, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE1, 0x4d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x95),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x1e),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x4b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0xe1),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x41),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MSB_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0x4d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_EN_CENTER, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER1, 0x62),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER2, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO_MODE1, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_EN_SEL, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP_EN, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP_CFG, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_MAP, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORE_CLK_EN, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_CONFIG_1, 0x76),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_1, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_3, 0x60),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PSM_CAL_EN, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x33),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0xaf),
-+};
-+
-+static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_misc_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V8_PCS_MISC_PCS_MISC_CONFIG1, 0x01),
-+};
-+
-+static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG1, 0xc4),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG2, 0x89),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG3, 0x20),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG6, 0x13),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_REFGEN_REQ_CONFIG1, 0x21),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RX_SIGDET_LVL, 0x55),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_TSYNC_RSYNC_TIME, 0xa4),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RX_CONFIG, 0x0a),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_TSYNC_DLY_TIME, 0x04),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG1, 0xd4),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG2, 0x30),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_PCS_TX_RX_CONFIG, 0x0c),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_EQ_CONFIG1, 0x4b),
-+	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_EQ_CONFIG5, 0x10),
-+};
-+
-+static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_usb_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_V8_PCS_USB_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
-+	QMP_PHY_INIT_CFG(QPHY_V8_PCS_USB_RXEQTRAINING_DFE_TIME_S2, 0x07),
-+};
-+
-+static const struct qmp_phy_init_tbl glymur_usb43dp_lalb_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CLKBUF_ENABLE, 0x81),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_LVL_UPDATE_CTRL, 0x0d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL3, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL4, 0x8D),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TRANSMITTER_EN_CTRL, 0x13),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_1, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_3, 0x11),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_4, 0x11),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_CAL_CTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_CAL_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_POST_CAL_OFFSET, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_VREF_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_VREF_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_ANA_INTERFACE_SELECT2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCS_INTERFACE_SELECT1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B0, 0xa4),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B1, 0xa2),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B2, 0x6e),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B3, 0x51),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B4, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B5, 0x26),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B6, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B7, 0x2a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B0, 0x4c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B1, 0xc4),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B2, 0x38),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B3, 0x64),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B4, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B5, 0x4b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B6, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B7, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_DCC_ANA_CTRL2, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE1, 0x26),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE1, 0x26),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE2, 0x26),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE2, 0x26),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_INIT_RATE_0_1, 0x11),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_INIT_RATE_2_3, 0x11),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE2, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE1, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE2, 0x22),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CODE_OVRD_RATE_2_3, 0x22),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE2, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE1, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE2, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_0123, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CTRL2, 0x85),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CTRL3, 0x45),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_ENABLES, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CNTRL, 0xa3),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_LVL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_DEGLITCH_CNTRL, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_CTRL1, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_TRIM, 0x66),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE2, 0x32),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE1, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE2, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE2, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_01, 0x76),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_23, 0x67),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_0_1, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_2_3, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_0_1, 0x33),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_2_3, 0x43),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_0_1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_2_3, 0x51),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE_0123, 0xe5),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE_0123, 0xf5),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_TYPE_CONFIG, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_EN_LOWFREQ, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_FUNC_CTRL, 0xd0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_EN, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_RES_RATE0_1, 0x88),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_RES_RATE2_3, 0x88),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_AUX_CLK_CTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_EOM_CTRL1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL2, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL3, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL4, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_0_1_2, 0x77),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_CNTRL1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE0_1, 0xdd),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE2_3, 0xd8),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP1_DAC_ENABLE, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP2_DAC_ENABLE, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP345_DAC_ENABLE, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP67_DAC_ENABLE, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_MAN_INDEX, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE0123, 0x1C),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CAP_CODE_OVRD_MUXES, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DIG_BKUP_CTRL16, 0x37),
-+};
-+
- static const struct qmp_phy_init_tbl qmp_v3_usb3_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_PLL_IVCO, 0x07),
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_SYSCLK_EN_SEL, 0x14),
-@@ -1667,6 +1902,12 @@ static struct qmp_regulator_data qmp_phy_vreg_l[] = {
- 	{ .name = "vdda-pll", .enable_load = 36000 },
- };
- 
-+static struct qmp_regulator_data qmp_phy_vreg_refgen[] = {
-+	{ .name = "vdda-phy", .enable_load = 21800 },
-+	{ .name = "vdda-pll", .enable_load = 36000 },
-+	{ .name = "refgen", .enable_load = 3270 },
-+};
-+
- static const u8 qmp_dp_v3_pre_emphasis_hbr3_hbr2[4][4] = {
- 	{ 0x00, 0x0c, 0x15, 0x1a },
- 	{ 0x02, 0x0e, 0x16, 0xff },
-@@ -1791,6 +2032,8 @@ struct qmp_phy_cfg {
- 	int pcs_tbl_num;
- 	const struct qmp_phy_init_tbl *pcs_usb_tbl;
- 	int pcs_usb_tbl_num;
-+	const struct qmp_phy_init_tbl *pcs_misc_tbl;
-+	int pcs_misc_tbl_num;
- 
- 	const struct qmp_phy_init_tbl *dp_serdes_tbl;
- 	int dp_serdes_tbl_num;
-@@ -1984,6 +2227,19 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v8 = {
- 	.dp_dp_phy	= 0x3c00,
- };
- 
-+static const struct qmp_combo_offsets qmp_combo_usb43dp_offsets_v8 = {
-+	.com		= 0x0000,
-+	.usb3_pcs_aon	= 0x0100,
-+	.usb3_serdes	= 0x1000,
-+	.usb3_pcs_misc	= 0x1400,
-+	.usb3_pcs	= 0x1600,
-+	.usb3_pcs_usb	= 0x1900,
-+	.dp_serdes	= 0x2000,
-+	.dp_dp_phy	= 0x2400,
-+	.txa		= 0x4000,
-+	.txb		= 0x5000,
-+};
-+
- static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
- 	.offsets		= &qmp_combo_offsets_v3,
- 
-@@ -2528,6 +2784,27 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
- 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
- };
- 
-+static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
-+	.offsets		= &qmp_combo_usb43dp_offsets_v8,
-+
-+	.serdes_tbl		= glymur_usb43dp_serdes_tbl,
-+	.serdes_tbl_num		= ARRAY_SIZE(glymur_usb43dp_serdes_tbl),
-+	.tx_tbl			= glymur_usb43dp_lalb_tbl,
-+	.tx_tbl_num		= ARRAY_SIZE(glymur_usb43dp_lalb_tbl),
-+	.pcs_tbl		= glymur_usb43dp_pcs_tbl,
-+	.pcs_tbl_num		= ARRAY_SIZE(glymur_usb43dp_pcs_tbl),
-+	.pcs_usb_tbl		= glymur_usb43dp_pcs_usb_tbl,
-+	.pcs_usb_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_usb_tbl),
-+	.pcs_misc_tbl		= glymur_usb43dp_pcs_misc_tbl,
-+	.pcs_misc_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_misc_tbl),
-+
-+	.regs			= qmp_v8_n3_usb43dpphy_regs_layout,
-+	.reset_list		= msm8996_usb3phy_reset_l,
-+	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_refgen,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_refgen),
-+};
-+
- static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -3024,6 +3301,7 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 	void __iomem *com = qmp->com;
-+	void __iomem *pcs_aon = qmp->pcs_aon;
- 	int ret;
- 	u32 val;
- 
-@@ -3059,6 +3337,10 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
- 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
- 			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
- 
-+	/* override hardware control for reset of qmp phy */
-+	if (pcs_aon && cfg->regs[QPHY_AON_TOGGLE_ENABLE])
-+		qphy_clrbits(pcs_aon, cfg->regs[QPHY_AON_TOGGLE_ENABLE], 0x1);
-+
- 	/* Use software based port select and switch on typec orientation */
- 	val = SW_PORTSELECT_MUX;
- 	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
-@@ -3236,6 +3518,8 @@ static int qmp_combo_usb_power_on(struct phy *phy)
- 	qmp_configure_lane(qmp->dev, rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
- 	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(qmp->dev, qmp->pcs_misc, cfg->pcs_misc_tbl, cfg->pcs_misc_tbl_num);
-+
- 
- 	if (pcs_usb)
- 		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl,
-@@ -4258,6 +4542,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id qmp_combo_of_match_table[] = {
-+	{
-+		.compatible = "qcom,glymur-qmp-usb3-dp-phy",
-+		.data = &glymur_usb3dpphy_cfg,
-+	},
- 	{
- 		.compatible = "qcom,sar2130p-qmp-usb3-dp-phy",
- 		.data = &sar2130p_usb3dpphy_cfg,
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
-new file mode 100644
-index 000000000000..f6a275c0938f
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
-@@ -0,0 +1,17 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2025, Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_AON_V8_H_
-+#define QCOM_PHY_QMP_PCS_AON_V8_H_
-+
-+/* Only for QMP V8 PHY - PCS_AON registers */
-+#define QPHY_V8_PCS_AON_USB3_AON_CLAMP_ENABLE     0x00
-+#define QPHY_V8_PCS_AON_USB4_AON_CLAMP_ENABLE     0x04
-+#define QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE    0x08
-+#define QPHY_V8_PCS_AON_USB4_AON_TOGGLE_ENABLE    0x0c
-+#define QPHY_V8_PCS_AON_DP_AON_TOGGLE_ENABLE      0x10
-+#define QPHY_V8_PCS_AON_DUMMY_STATUS              0x14
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
-new file mode 100644
-index 000000000000..a93ef2faa894
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
-@@ -0,0 +1,12 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_MISC_V8_H_
-+#define QCOM_PHY_QMP_PCS_MISC_V8_H_
-+
-+/* Only for QMP V8 PHY - PCS_MISC registers */
-+#define QPHY_V8_PCS_MISC_PCS_MISC_CONFIG1		0x08
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
-new file mode 100644
-index 000000000000..60ba730620f8
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
-@@ -0,0 +1,639 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_QSERDES_V8_LALBH_
-+#define QCOM_PHY_QMP_QSERDES_V8_LALBH_
-+
-+#define QSERDES_V8_LALB_BIST_MODE_LANENO	0x0
-+#define QSERDES_V8_LALB_BIST_INVERT	0x4
-+#define QSERDES_V8_LALB_PERL_LENGTH1	0x8
-+#define QSERDES_V8_LALB_PERL_LENGTH2	0xc
-+#define QSERDES_V8_LALB_BIST_PATTERN1	0x10
-+#define QSERDES_V8_LALB_BIST_PATTERN2	0x14
-+#define QSERDES_V8_LALB_BIST_PATTERN3	0x18
-+#define QSERDES_V8_LALB_BIST_PATTERN4	0x1c
-+#define QSERDES_V8_LALB_BIST_PATTERN5	0x20
-+#define QSERDES_V8_LALB_BIST_PATTERN6	0x24
-+#define QSERDES_V8_LALB_BIST_PATTERN7	0x28
-+#define QSERDES_V8_LALB_BIST_PATTERN8	0x2c
-+#define QSERDES_V8_LALB_PRBS_SEED1	0x30
-+#define QSERDES_V8_LALB_PRBS_SEED2	0x34
-+#define QSERDES_V8_LALB_PRBS_SEED3	0x38
-+#define QSERDES_V8_LALB_PRBS_SEED4	0x3c
-+#define QSERDES_V8_LALB_PRBS_SEED5	0x40
-+#define QSERDES_V8_LALB_PRBS_SEED6	0x44
-+#define QSERDES_V8_LALB_PRBS_SEED7	0x48
-+#define QSERDES_V8_LALB_SW_RESET_PWRDNB	0x4c
-+#define QSERDES_V8_LALB_RESET_GEN	0x50
-+#define QSERDES_V8_LALB_RESET_TSYNC_EN_CTRL	0x54
-+#define QSERDES_V8_LALB_CDR_EN_RXEQ_RESET	0x58
-+#define QSERDES_V8_LALB_CLKBUF_ENABLE	0x5c
-+#define QSERDES_V8_LALB_TX0_EMP_POST1_LVL	0x60
-+#define QSERDES_V8_LALB_TX1_EMP_POST1_LVL	0x64
-+#define QSERDES_V8_LALB_TX0_IDLE_CTRL	0x68
-+#define QSERDES_V8_LALB_TX1_IDLE_CTRL	0x6c
-+#define QSERDES_V8_LALB_TX0_DRV_LVL	0x70
-+#define QSERDES_V8_LALB_TX0_DRV_LVL_OFFSET	0x74
-+#define QSERDES_V8_LALB_TX1_DRV_LVL	0x78
-+#define QSERDES_V8_LALB_TX1_DRV_LVL_OFFSET	0x7c
-+#define QSERDES_V8_LALB_TRAN_DRVR_EMP_EN	0x80
-+#define QSERDES_V8_LALB_TX_LVL_UPDATE_CTRL	0x84
-+#define QSERDES_V8_LALB_TX0_PRE1_EMPH	0x88
-+#define QSERDES_V8_LALB_TX1_PRE1_EMPH	0x8c
-+#define QSERDES_V8_LALB_TX0_PRE2_EMPH	0x90
-+#define QSERDES_V8_LALB_TX1_PRE2_EMPH	0x94
-+#define QSERDES_V8_LALB_STALL_LDO_BOOST_EN	0x98
-+#define QSERDES_V8_LALB_PRE_EMPH_EN_CTRL	0x9c
-+#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL1	0xa0
-+#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL2	0xa4
-+#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL3	0xa8
-+#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL4	0xac
-+#define QSERDES_V8_LALB_TRANSMITTER_EN_CTRL	0xb0
-+#define QSERDES_V8_LALB_HIGHZ_DRVR_EN	0xb4
-+#define QSERDES_V8_LALB_TX_MISC_CTRL1	0xb8
-+#define QSERDES_V8_LALB_LPB_EN_CTRL1	0xbc
-+#define QSERDES_V8_LALB_LBP_EN_CTRL2	0xc0
-+#define QSERDES_V8_LALB_TX0_SERDES_BYP_CTRL	0xc4
-+#define QSERDES_V8_LALB_TX1_SERDES_BYP_CTRL	0xc8
-+#define QSERDES_V8_LALB_LANE_MODE_1	0xcc
-+#define QSERDES_V8_LALB_LANE_MODE_2	0xd0
-+#define QSERDES_V8_LALB_LANE_MODE_3	0xd4
-+#define QSERDES_V8_LALB_LANE_MODE_4	0xd8
-+#define QSERDES_V8_LALB_ATB_SEL1	0xdc
-+#define QSERDES_V8_LALB_ATB_SEL2	0xe0
-+#define QSERDES_V8_LALB_TX0_RES_CODE_LANE	0xe4
-+#define QSERDES_V8_LALB_TX0_RESTRIM_ICAL_OVRD	0xe8
-+#define QSERDES_V8_LALB_TX0_RESTRIM_CAL_CTRL	0xec
-+#define QSERDES_V8_LALB_TX0_RESTRIM_INIT_CODE	0xf0
-+#define QSERDES_V8_LALB_TX0_RESTRIM_POST_CAL_OFFSET	0xf4
-+#define QSERDES_V8_LALB_TX1_RES_CODE_LANE	0xf8
-+#define QSERDES_V8_LALB_TX1_RESTRIM_ICAL_OVRD	0xfc
-+#define QSERDES_V8_LALB_TX1_RESTRIM_CAL_CTRL	0x100
-+#define QSERDES_V8_LALB_TX1_RESTRIM_INIT_CODE	0x104
-+#define QSERDES_V8_LALB_TX1_RESTRIM_POST_CAL_OFFSET	0x108
-+#define QSERDES_V8_LALB_TX0_RESTRIM_VREF_SEL	0x10c
-+#define QSERDES_V8_LALB_TX1_RESTRIM_VREF_SEL	0x110
-+#define QSERDES_V8_LALB_VMODE_CTRL1	0x114
-+#define QSERDES_V8_LALB_SLEW_CNTL_RATE01	0x118
-+#define QSERDES_V8_LALB_SLEW_CNTL_RATE23	0x11c
-+#define QSERDES_V8_LALB_SLEW_CNTL_RATE4	0x120
-+#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT1	0x124
-+#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT2	0x128
-+#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT3	0x12c
-+#define QSERDES_V8_LALB_PCS_INTERFACE_SELECT1	0x130
-+#define QSERDES_V8_LALB_PCS_INTERFACE_SELECT2	0x134
-+#define QSERDES_V8_LALB_LDO_TIMER_CTRL	0x138
-+#define QSERDES_V8_LALB_AC_JTAG_ENABLE	0x13c
-+#define QSERDES_V8_LALB_AC_JTAG_INITP	0x140
-+#define QSERDES_V8_LALB_AC_JTAG_INITN	0x144
-+#define QSERDES_V8_LALB_AC_JTAG_LVL	0x148
-+#define QSERDES_V8_LALB_AC_JTAG_MODE	0x14c
-+#define QSERDES_V8_LALB_AC_JTAG_RESET	0x150
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B0	0x154
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B1	0x158
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B2	0x15c
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B3	0x160
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B4	0x164
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B5	0x168
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B6	0x16c
-+#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B7	0x170
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B0	0x174
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B1	0x178
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B2	0x17c
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B3	0x180
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B4	0x184
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B5	0x188
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B6	0x18c
-+#define QSERDES_V8_LALB_RX_MODE_RATE2_B7	0x190
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B0	0x194
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B1	0x198
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B2	0x19c
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B3	0x1a0
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B4	0x1a4
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B5	0x1a8
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B6	0x1ac
-+#define QSERDES_V8_LALB_RX_MODE_RATE3_B7	0x1b0
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B0	0x1b4
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B1	0x1b8
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B2	0x1bc
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B3	0x1c0
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B4	0x1c4
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B5	0x1c8
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B6	0x1cc
-+#define QSERDES_V8_LALB_RX_MODE_RATE4_B7	0x1d0
-+#define QSERDES_V8_LALB_TX_DCC_ANA_CTRL1	0x1d4
-+#define QSERDES_V8_LALB_TX_DCC_ANA_CTRL2	0x1d8
-+#define QSERDES_V8_LALB_CMUX_DCC_CTRL1	0x1dc
-+#define QSERDES_V8_LALB_CMUX_DCC_POSTCAL_OFFSET	0x1e0
-+#define QSERDES_V8_LALB_CMUX_DCC_OVRD	0x1e4
-+#define QSERDES_V8_LALB_TX_DCC_CTRL	0x1e8
-+#define QSERDES_V8_LALB_TX0_CTUNE_DCC_CONFIG	0x1ec
-+#define QSERDES_V8_LALB_TX0_CTUNE_DCC_POSTCAL_OFFSET	0x1f0
-+#define QSERDES_V8_LALB_TX0_CTUNE_DCC_OVRD	0x1f4
-+#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_CONFIG	0x1f8
-+#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_OFFSET_AND_OVRD	0x1fc
-+#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_CONFIG	0x200
-+#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_OFFSET_AND_OVRD	0x204
-+#define QSERDES_V8_LALB_TX1_CTUNE_DCC_CONFIG	0x208
-+#define QSERDES_V8_LALB_TX1_CTUNE_DCC_POSTCAL_OFFSET	0x20c
-+#define QSERDES_V8_LALB_TX1_CTUNE_DCC_OVRD	0x210
-+#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_CONFIG	0x214
-+#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_OFFSET_AND_OVRD	0x218
-+#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_CONFIG	0x21c
-+#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_OFFSET_AND_OVRD	0x220
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CTRL	0x224
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE0	0x228
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE1	0x22c
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE2	0x230
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE3	0x234
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE4	0x238
-+#define QSERDES_V8_LALB_CDR_VCO_CAL_CTRL	0x23c
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE0	0x240
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE0	0x244
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE1	0x248
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE1	0x24c
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE2	0x250
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE2	0x254
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE3	0x258
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE3	0x25c
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE4	0x260
-+#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE4	0x264
-+#define QSERDES_V8_LALB_CDR_VCTRL_RATE_0_1	0x268
-+#define QSERDES_V8_LALB_CDR_VCTRL_RATE_2_3	0x26c
-+#define QSERDES_V8_LALB_CDR_VCTRL_RATE_4	0x270
-+#define QSERDES_V8_LALB_KVCO_INIT_RATE_0_1	0x274
-+#define QSERDES_V8_LALB_KVCO_INIT_RATE_2_3	0x278
-+#define QSERDES_V8_LALB_KVCO_INIT_RATE_4	0x27c
-+#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE0	0x280
-+#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE1	0x284
-+#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE2	0x288
-+#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE3	0x28c
-+#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE4	0x290
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_0_1	0x294
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_2_3	0x298
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_4	0x29c
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_0_1	0x2a0
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_2_3	0x2a4
-+#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_4	0x2a8
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE0	0x2ac
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE0	0x2b0
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE1	0x2b4
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE1	0x2b8
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE2	0x2bc
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE2	0x2c0
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE3	0x2c4
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE3	0x2c8
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE4	0x2cc
-+#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE4	0x2d0
-+#define QSERDES_V8_LALB_KP_CDR_UP_DN	0x2d4
-+#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE_0_1	0x2d8
-+#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE_2_3	0x2dc
-+#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE4	0x2e0
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE0	0x2e4
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE0	0x2e8
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE1	0x2ec
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE1	0x2f0
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE2	0x2f4
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE2	0x2f8
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE3	0x2fc
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE3	0x300
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE4	0x304
-+#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE4	0x308
-+#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE0	0x30c
-+#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE1	0x310
-+#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE2	0x314
-+#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE3	0x318
-+#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE4	0x31c
-+#define QSERDES_V8_LALB_CDR_KVCO_KP_CAL_FREQ_MEAS_CTRL	0x320
-+#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CTRL	0x324
-+#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT1	0x328
-+#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT2	0x32c
-+#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT3	0x330
-+#define QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_0123	0x334
-+#define QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_4	0x338
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE0	0x33c
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE1	0x340
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE2	0x344
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE3	0x348
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE4	0x34c
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL1	0x350
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL2	0x354
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL3	0x358
-+#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL4	0x35c
-+#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE0	0x360
-+#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE1	0x364
-+#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE2	0x368
-+#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE3	0x36c
-+#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE4	0x370
-+#define QSERDES_V8_LALB_RX_IDAC_I0_DC_OFFSETS	0x374
-+#define QSERDES_V8_LALB_RX_IDAC_I0BAR_DC_OFFSETS	0x378
-+#define QSERDES_V8_LALB_RX_IDAC_I1_DC_OFFSETS	0x37c
-+#define QSERDES_V8_LALB_RX_IDAC_I1BAR_DC_OFFSETS	0x380
-+#define QSERDES_V8_LALB_RX_IDAC_Q_DC_OFFSETS	0x384
-+#define QSERDES_V8_LALB_RX_IDAC_QBAR_DC_OFFSETS	0x388
-+#define QSERDES_V8_LALB_RX_IDAC_A_DC_OFFSETS	0x38c
-+#define QSERDES_V8_LALB_RX_IDAC_ABAR_DC_OFFSETS	0x390
-+#define QSERDES_V8_LALB_RX_IDAC_EN	0x394
-+#define QSERDES_V8_LALB_DATA_SLICER_INIT_TIMER_CTRL	0x398
-+#define QSERDES_V8_LALB_RX_IDAC_ENABLES	0x39c
-+#define QSERDES_V8_LALB_RX_IDAC_SIGN	0x3a0
-+#define QSERDES_V8_LALB_RX_IDAC_TSETTLE	0x3a4
-+#define QSERDES_V8_LALB_SIGDET_ENABLES	0x3a8
-+#define QSERDES_V8_LALB_SIGDET_CNTRL	0x3ac
-+#define QSERDES_V8_LALB_SIGDET_LVL	0x3b0
-+#define QSERDES_V8_LALB_SIGDET_DEGLITCH_CNTRL	0x3b4
-+#define QSERDES_V8_LALB_SIGDET_CAL_CTRL1	0x3b8
-+#define QSERDES_V8_LALB_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE	0x3bc
-+#define QSERDES_V8_LALB_SIGDET_CAL_TRIM	0x3c0
-+#define QSERDES_V8_LALB_IA_OFFSET_CENTER_CAL_CTRL	0x3c4
-+#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE0	0x3c8
-+#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE1	0x3cc
-+#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE2	0x3d0
-+#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE3	0x3d4
-+#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE4	0x3d8
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE0	0x3dc
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE1	0x3e0
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE2	0x3e4
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE3	0x3e8
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE4	0x3ec
-+#define QSERDES_V8_LALB_CDR_LOCK_CTRL	0x3f0
-+#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE0	0x3f4
-+#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE1	0x3f8
-+#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE2	0x3fc
-+#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE3	0x400
-+#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE4	0x404
-+#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE0	0x408
-+#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE1	0x40c
-+#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE2	0x410
-+#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE3	0x414
-+#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE4	0x418
-+#define QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE_0123	0x41c
-+#define QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE4	0x420
-+#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_01	0x424
-+#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_23	0x428
-+#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE4	0x42c
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_0_1	0x430
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_2_3	0x434
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE4	0x438
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_0_1	0x43c
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_2_3	0x440
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE4	0x444
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_0_1	0x448
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_2_3	0x44c
-+#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE4	0x450
-+#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE_0123	0x454
-+#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE4	0x458
-+#define QSERDES_V8_LALB_CDR_VCO_TYPE_CONFIG	0x45c
-+#define QSERDES_V8_LALB_CDR_VCO_EN_LOWFREQ	0x460
-+#define QSERDES_V8_LALB_CDR_FAST_SLOW_VCO_OVRD	0x464
-+#define QSERDES_V8_LALB_CDR_LOOP_FUNC_CTRL	0x468
-+#define QSERDES_V8_LALB_CDR_FAST_LOCK_EN_CTRL	0x46c
-+#define QSERDES_V8_LALB_RX_RCVR_EN	0x470
-+#define QSERDES_V8_LALB_LANE_RATE_CTRL	0x474
-+#define QSERDES_V8_LALB_RX_TERM_RCVR_CTRL	0x478
-+#define QSERDES_V8_LALB_REC_DETECT_CTRL	0x47c
-+#define QSERDES_V8_LALB_RCV_DETECT_LVL	0x480
-+#define QSERDES_V8_LALB_GM_CAL_EN	0x484
-+#define QSERDES_V8_LALB_GM_CAL_RES_RATE0_1	0x488
-+#define QSERDES_V8_LALB_GM_CAL_RES_RATE2_3	0x48c
-+#define QSERDES_V8_LALB_GM_CAL_RES_RATE4	0x490
-+#define QSERDES_V8_LALB_RX_TERM_BW_RATE_0123	0x494
-+#define QSERDES_V8_LALB_RX_TERM_BW_RATE4	0x498
-+#define QSERDES_V8_LALB_AUX_CLK_CTRL	0x49c
-+#define QSERDES_V8_LALB_AUX_OFFSET_CONTROL	0x4a0
-+#define QSERDES_V8_LALB_AUXDATA_TB	0x4a4
-+#define QSERDES_V8_LALB_EOM_CTRL1	0x4a8
-+#define QSERDES_V8_LALB_EOM_CTRL2	0x4ac
-+#define QSERDES_V8_LALB_EOM_CTRL3	0x4b0
-+#define QSERDES_V8_LALB_EOM_CTRL4	0x4b4
-+#define QSERDES_V8_LALB_DFE_EN_TIMER	0x4b8
-+#define QSERDES_V8_LALB_RX_EQ_OFFSET_LSB	0x4bc
-+#define QSERDES_V8_LALB_RX_EQ_OFFSET_MSB	0x4c0
-+#define QSERDES_V8_LALB_RX_EQ_OFFSET_ADAPTOR_CNTRL1	0x4c4
-+#define QSERDES_V8_LALB_RX_OFFSET_ADAPTOR_CNTRL2	0x4c8
-+#define QSERDES_V8_LALB_RX_OFFSET_ADAPTOR_CNTRL3	0x4cc
-+#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL1	0x4d0
-+#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL2	0x4d4
-+#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL3	0x4d8
-+#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL4	0x4dc
-+#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL5	0x4e0
-+#define QSERDES_V8_LALB_RX_EQU_KEQ_UP_LSB	0x4e4
-+#define QSERDES_V8_LALB_RX_EQU_KEQ_UP_MSB	0x4e8
-+#define QSERDES_V8_LALB_RX_EQU_KEQ_DN_LSB	0x4ec
-+#define QSERDES_V8_LALB_RX_EQU_KEQ_DN_MSB	0x4f0
-+#define QSERDES_V8_LALB_CTLE_ADP_RESET_INIT_CODE_RATE_0_1_2	0x4f4
-+#define QSERDES_V8_LALB_CTLE_ADP_RESET_INIT_CODE_RATE_3_4	0x4f8
-+#define QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_0_1_2	0x4fc
-+#define QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_3_4	0x500
-+#define QSERDES_V8_LALB_RX_VGA_GAIN2_BLK1	0x504
-+#define QSERDES_V8_LALB_RX_VGA_GAIN2_BLK2	0x508
-+#define QSERDES_V8_LALB_VGA_CAL_CNTRL1	0x50c
-+#define QSERDES_V8_LALB_VGA_CAL_CNTRL2	0x510
-+#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE0_1	0x514
-+#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE2_3	0x518
-+#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE4	0x51c
-+#define QSERDES_V8_LALB_KVGA_CTRL1	0x520
-+#define QSERDES_V8_LALB_KVGA_CTRL2	0x524
-+#define QSERDES_V8_LALB_VTHRESH_CAL_CNTRL1	0x528
-+#define QSERDES_V8_LALB_VTHRESH_CAL_CNTRL2	0x52c
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE0	0x530
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE1	0x534
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE2	0x538
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE3	0x53c
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE4	0x540
-+#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_CAL_PAM3	0x544
-+#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE_0_1	0x548
-+#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE_2_3	0x54c
-+#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE4	0x550
-+#define QSERDES_V8_LALB_DFE_TAP1_CTRL	0x554
-+#define QSERDES_V8_LALB_DFE_TAP1_MANVAL_KTAP	0x558
-+#define QSERDES_V8_LALB_DFE_TAP1_POST_CAL_OFFSET_RATE_0_1_2	0x55c
-+#define QSERDES_V8_LALB_DFE_TAP1_POST_CAL_OFFSET_RATE_3_4	0x560
-+#define QSERDES_V8_LALB_DFE_TAP2_CTRL	0x564
-+#define QSERDES_V8_LALB_DFE_TAP2_MANVAL_KTAP	0x568
-+#define QSERDES_V8_LALB_DFE_TAP3_CTRL	0x56c
-+#define QSERDES_V8_LALB_DFE_TAP3_MANVAL_KTAP	0x570
-+#define QSERDES_V8_LALB_DFE_TAP4_CTRL	0x574
-+#define QSERDES_V8_LALB_DFE_TAP4_MANVAL_KTAP	0x578
-+#define QSERDES_V8_LALB_DFE_TAP5_CTRL	0x57c
-+#define QSERDES_V8_LALB_DFE_TAP5_MANVAL_KTAP	0x580
-+#define QSERDES_V8_LALB_DFE_TAP6_CTRL	0x584
-+#define QSERDES_V8_LALB_DFE_TAP6_MANVAL_KTAP	0x588
-+#define QSERDES_V8_LALB_DFE_TAP7_CTRL	0x58c
-+#define QSERDES_V8_LALB_DFE_TAP7_MANVAL_KTAP	0x590
-+#define QSERDES_V8_LALB_DFE_TAP1_DAC_ENABLE	0x594
-+#define QSERDES_V8_LALB_DFE_TAP2_DAC_ENABLE	0x598
-+#define QSERDES_V8_LALB_DFE_TAP345_DAC_ENABLE	0x59c
-+#define QSERDES_V8_LALB_DFE_TAP67_DAC_ENABLE	0x5a0
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CTRL	0x5a4
-+#define QSERDES_V8_LALB_CDR_IQTUNE_GAIN	0x5a8
-+#define QSERDES_V8_LALB_CDR_IQTUNE_MAN_INDEX	0x5ac
-+#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CAL_CTRL1	0x5b0
-+#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CAL_CTRL2	0x5b4
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE0	0x5b8
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE1	0x5bc
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE2	0x5c0
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE3	0x5c4
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE4	0x5c8
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE0	0x5cc
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE1	0x5d0
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE2	0x5d4
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE3	0x5d8
-+#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE4	0x5dc
-+#define QSERDES_V8_LALB_CDR_IQTUNE_ANA_CTRL	0x5e0
-+#define QSERDES_V8_LALB_CDR_IQTUNE_VDCC_CTRL	0x5e4
-+#define QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE0123	0x5e8
-+#define QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE4	0x5ec
-+#define QSERDES_V8_LALB_BLW_CTRL	0x5f0
-+#define QSERDES_V8_LALB_BLW_ANA_VER_CTRL	0x5f4
-+#define QSERDES_V8_LALB_BLW_GAIN_CAL_CTRL	0x5f8
-+#define QSERDES_V8_LALB_BLW_GAIN_FORCE_CODE	0x5fc
-+#define QSERDES_V8_LALB_BLW_MAN_VAL_RATE3	0x600
-+#define QSERDES_V8_LALB_BLW_MAN_VAL_RATE4	0x604
-+#define QSERDES_V8_LALB_IVTH_CAL_CTRL1	0x608
-+#define QSERDES_V8_LALB_IVTH_CAL_CTRL2	0x60c
-+#define QSERDES_V8_LALB_IVTH_CAL_CTRL3	0x610
-+#define QSERDES_V8_LALB_VTH_I_UP_CNTRL_VAL	0x614
-+#define QSERDES_V8_LALB_VTH_I_DN_CNTRL_VAL	0x618
-+#define QSERDES_V8_LALB_NRZ_EYE_HEIGHT_SEL_VAL	0x61c
-+#define QSERDES_V8_LALB_IVTH_CAL_VAL_OVRD_MUX	0x620
-+#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_OVRD_MUXES	0x624
-+#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE0	0x628
-+#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE1	0x62c
-+#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE2	0x630
-+#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE3	0x634
-+#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE4	0x638
-+#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE0	0x63c
-+#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE1	0x640
-+#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE2	0x644
-+#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE3	0x648
-+#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE4	0x64c
-+#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE0	0x650
-+#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE1	0x654
-+#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE2	0x658
-+#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE3	0x65c
-+#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE4	0x660
-+#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE0	0x664
-+#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE1	0x668
-+#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE2	0x66c
-+#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE3	0x670
-+#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE4	0x674
-+#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE0	0x678
-+#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE1	0x67c
-+#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE2	0x680
-+#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE3	0x684
-+#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE4	0x688
-+#define QSERDES_V8_LALB_DEBUG_BUS_SEL	0x68c
-+#define QSERDES_V8_LALB_BIST_STATUS	0x690
-+#define QSERDES_V8_LALB_BIST_ERROR_COUNT1	0x694
-+#define QSERDES_V8_LALB_BIST_ERROR_COUNT2	0x698
-+#define QSERDES_V8_LALB_AC_JTAG_OUTP	0x69c
-+#define QSERDES_V8_LALB_AC_JTAG_OUTN	0x6a0
-+#define QSERDES_V8_LALB_DATA_SLICER_DEBUG_STATUS	0x6a4
-+#define QSERDES_V8_LALB_DATA_SLICER_TIMER1_STATUS	0x6a8
-+#define QSERDES_V8_LALB_DATA_SLICER_TIMER2_STATUS	0x6ac
-+#define QSERDES_V8_LALB_TX0_RESTRIM_CODE_STATUS	0x6b0
-+#define QSERDES_V8_LALB_TX0_RESTRIM_ICAL_CODE_STATUS	0x6b4
-+#define QSERDES_V8_LALB_TX0_RESTRIM_CAL_STATUS	0x6b8
-+#define QSERDES_V8_LALB_TX1_RESTRIM_CODE_STATUS	0x6bc
-+#define QSERDES_V8_LALB_TX1_RESTRIM_ICAL_CODE_STATUS	0x6c0
-+#define QSERDES_V8_LALB_TX1_RESTRIM_CAL_STATUS	0x6c4
-+#define QSERDES_V8_LALB_CMUX_DCC_CAL_FSM_STATUS	0x6c8
-+#define QSERDES_V8_LALB_CMUX_DCC_READCODE_STATUS	0x6cc
-+#define QSERDES_V8_LALB_TX_DCC_CAL_ANA_STATUS	0x6d0
-+#define QSERDES_V8_LALB_TX0_CTUNE_DCC_FSM_DEBUG_STATUS	0x6d4
-+#define QSERDES_V8_LALB_TX0_COARSE_DCC_READCODE_STATUS	0x6d8
-+#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_FSM_DEBUG_STATUS	0x6dc
-+#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_FSM_DEBUG_STATUS	0x6e0
-+#define QSERDES_V8_LALB_TX0_FINE_DCC_READCODE_STATUS	0x6e4
-+#define QSERDES_V8_LALB_TX1_CTUNE_DCC_FSM_DEBUG_STATUS	0x6e8
-+#define QSERDES_V8_LALB_TX1_COARSE_DCC_READCODE_STATUS	0x6ec
-+#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_FSM_DEBUG_STATUS	0x6f0
-+#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_FSM_DEBUG_STATUS	0x6f4
-+#define QSERDES_V8_LALB_TX1_FINE_DCC_READCODE_STATUS	0x6f8
-+#define QSERDES_V8_LALB_CDR_VCO_CAL_STATUS	0x6fc
-+#define QSERDES_V8_LALB_CDR_VCTRL_STATUS	0x700
-+#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_STATUS	0x704
-+#define QSERDES_V8_LALB_KVCO_CAL_DEBUG1_STATUS	0x708
-+#define QSERDES_V8_LALB_KVCO_CAL_DEBUG2_STATUS	0x70c
-+#define QSERDES_V8_LALB_KP_CAL_DEBUG1_STATUS	0x710
-+#define QSERDES_V8_LALB_KP_CAL_DEBUG2_STATUS	0x714
-+#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG1_STATUS	0x718
-+#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG2_STATUS	0x71c
-+#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG3_STATUS	0x720
-+#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG4_STATUS	0x724
-+#define QSERDES_V8_LALB_IVCM_CAL_STATUS	0x728
-+#define QSERDES_V8_LALB_IVCM_CAL_DEBUG_STATUS	0x72c
-+#define QSERDES_V8_LALB_IDAC_STATUS_I0	0x730
-+#define QSERDES_V8_LALB_IDAC_STATUS_I0BAR	0x734
-+#define QSERDES_V8_LALB_IDAC_STATUS_I1	0x738
-+#define QSERDES_V8_LALB_IDAC_STATUS_I1BAR	0x73c
-+#define QSERDES_V8_LALB_IDAC_STATUS_Q	0x740
-+#define QSERDES_V8_LALB_IDAC_STATUS_QBAR	0x744
-+#define QSERDES_V8_LALB_IDAC_STATUS_A	0x748
-+#define QSERDES_V8_LALB_IDAC_STATUS_ABAR	0x74c
-+#define QSERDES_V8_LALB_IDAC_STATUS_SM_ON	0x750
-+#define QSERDES_V8_LALB_IDAC_STATUS_SIGNERROR	0x754
-+#define QSERDES_V8_LALB_RX_SIGDET_STATUS	0x758
-+#define QSERDES_V8_LALB_SIGDET_CAL_CODE_STATUS	0x75c
-+#define QSERDES_V8_LALB_SIGDET_CAL_FSM_DEBUG_STATUS	0x760
-+#define QSERDES_V8_LALB_CDR_FREQ_LOCK_CNT_STATUS	0x764
-+#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_STATUS	0x768
-+#define QSERDES_V8_LALB_CDR_LOCK_DEBUG_STATUS	0x76c
-+#define QSERDES_V8_LALB_IDATA_HIGH_STATUS1	0x770
-+#define QSERDES_V8_LALB_IDATA_HIGH_STATUS2	0x774
-+#define QSERDES_V8_LALB_IDATA_HIGH_STATUS3	0x778
-+#define QSERDES_V8_LALB_IDATA_HIGH_STATUS4	0x77c
-+#define QSERDES_V8_LALB_IDATA_LOW_STATUS1	0x780
-+#define QSERDES_V8_LALB_IDATA_LOW_STATUS2	0x784
-+#define QSERDES_V8_LALB_IDATA_LOW_STATUS3	0x788
-+#define QSERDES_V8_LALB_IDATA_LOW_STATUS4	0x78c
-+#define QSERDES_V8_LALB_QDATA_STATUS1	0x790
-+#define QSERDES_V8_LALB_QDATA_STATUS2	0x794
-+#define QSERDES_V8_LALB_QDATA_STATUS3	0x798
-+#define QSERDES_V8_LALB_QDATA_STATUS4	0x79c
-+#define QSERDES_V8_LALB_IA_ERROR_COUNTER_LOW	0x7a0
-+#define QSERDES_V8_LALB_IA_ERROR_COUNTER_HIGH	0x7a4
-+#define QSERDES_V8_LALB_EOM_ERR_CNT_LSB_STATUS	0x7a8
-+#define QSERDES_V8_LALB_EOM_ERR_CNT_MSB_STATUS	0x7ac
-+#define QSERDES_V8_LALB_EOM_OP_STATUS	0x7b0
-+#define QSERDES_V8_LALB_AUX_MIXER_INDEX_STATUS	0x7b4
-+#define QSERDES_V8_LALB_AUX_OFFSET_STATUS	0x7b8
-+#define QSERDES_V8_LALB_AUXDATA_TB_STATUS	0x7bc
-+#define QSERDES_V8_LALB_AUX_MIXER_CTRL_0_STATUS	0x7c0
-+#define QSERDES_V8_LALB_AUX_MIXER_CTRL_90_STATUS	0x7c4
-+#define QSERDES_V8_LALB_AUX_MIXER_CTRL_180_STATUS	0x7c8
-+#define QSERDES_V8_LALB_IQ_MIXER_INDEX_STATUS	0x7cc
-+#define QSERDES_V8_LALB_IQTUNE_FLTR_INDEX_STATUS	0x7d0
-+#define QSERDES_V8_LALB_IQ_MIXER_CTRL_0_STATUS	0x7d4
-+#define QSERDES_V8_LALB_IQ_MIXER_CTRL_90_STATUS	0x7d8
-+#define QSERDES_V8_LALB_IQ_MIXER_CTRL_180_STATUS	0x7dc
-+#define QSERDES_V8_LALB_READ_EQCODE	0x7e0
-+#define QSERDES_V8_LALB_READ_OFFSETCODE	0x7e4
-+#define QSERDES_V8_LALB_VGA_READ_CODE	0x7e8
-+#define QSERDES_V8_LALB_VTHRESH_READ_CODE	0x7ec
-+#define QSERDES_V8_LALB_DFE_TAP1_READ_CODE	0x7f0
-+#define QSERDES_V8_LALB_DFE_TAP2_READ_CODE	0x7f4
-+#define QSERDES_V8_LALB_DFE_TAP3_READ_CODE	0x7f8
-+#define QSERDES_V8_LALB_DFE_TAP4_READ_CODE	0x7fc
-+#define QSERDES_V8_LALB_DFE_TAP5_READ_CODE	0x800
-+#define QSERDES_V8_LALB_DFE_TAP6_READ_CODE	0x804
-+#define QSERDES_V8_LALB_DFE_TAP7_READ_CODE	0x808
-+#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_BIN_CODE	0x80c
-+#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CLK0_CODE	0x810
-+#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CLK90_CODE	0x814
-+#define QSERDES_V8_LALB_BLW_READ_CODE	0x818
-+#define QSERDES_V8_LALB_IA_OFFSET_CAL_DEBUG_STATUS	0x81c
-+#define QSERDES_V8_LALB_IA_OFFSET_CAL_STATUS	0x820
-+#define QSERDES_V8_LALB_IVTH_CAL_STATUS	0x824
-+#define QSERDES_V8_LALB_IVTH_NRZ_EYE_HEIGHT_STATUS	0x828
-+#define QSERDES_V8_LALB_IVTH_UPPER_EYE_MAX_STATUS	0x82c
-+#define QSERDES_V8_LALB_IVTH_UPPER_EYE_MIN_STATUS	0x830
-+#define QSERDES_V8_LALB_IVTH_LOWER_EYE_MAX_STATUS	0x834
-+#define QSERDES_V8_LALB_IVTH_LOWER_EYE_MIN_STATUS	0x838
-+#define QSERDES_V8_LALB_IVTH_UP_INIT_CTR_STATUS	0x83c
-+#define QSERDES_V8_LALB_VTH_I_UP_CNTRL_STATUS	0x840
-+#define QSERDES_V8_LALB_VTH_I_DN_CNTRL_STATUS	0x844
-+#define QSERDES_V8_LALB_NRZ_EYE_HEIGHT_SEL_STATUS	0x848
-+#define QSERDES_V8_LALB_DEBUG_BUS0	0x84c
-+#define QSERDES_V8_LALB_DEBUG_BUS1	0x850
-+#define QSERDES_V8_LALB_DEBUG_BUS2	0x854
-+#define QSERDES_V8_LALB_DEBUG_BUS3	0x858
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL1	0x85c
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL2	0x860
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL3	0x864
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL4	0x868
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL5	0x86c
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL6	0x870
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL7	0x874
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL8	0x878
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL9	0x87c
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL10	0x880
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL11	0x884
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL12	0x888
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL13	0x88c
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL14	0x890
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL15	0x894
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL16	0x898
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL17	0x89c
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL18	0x8a0
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL19	0x8a4
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL20	0x8a8
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL21	0x8ac
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL22	0x8b0
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL23	0x8b4
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL24	0x8b8
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL25	0x8bc
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL26	0x8c0
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL27	0x8c4
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL28	0x8c8
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL29	0x8cc
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL30	0x8d0
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL31	0x8d4
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL32	0x8d8
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_1	0x8dc
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_2	0x8e0
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_3	0x8e4
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_4	0x8e8
-+#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_5	0x8ec
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS1	0x8f0
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS2	0x8f4
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS3	0x8f8
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS4	0x8fc
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS5	0x900
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS6	0x904
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS7	0x908
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS8	0x90c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS9	0x910
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS10	0x914
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS11	0x918
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS12	0x91c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS13	0x920
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS14	0x924
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS15	0x928
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS16	0x92c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS17	0x930
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS18	0x934
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS19	0x938
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS20	0x93c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS21	0x940
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS22	0x944
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS23	0x948
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS24	0x94c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS25	0x950
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS26	0x954
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS27	0x958
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS28	0x95c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS29	0x960
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS30	0x964
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS31	0x968
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS32	0x96c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS1	0x970
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS2	0x974
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS3	0x978
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS4	0x97c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS5	0x980
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS6	0x984
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS7	0x988
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS8	0x98c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS9	0x990
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS10	0x994
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS11	0x998
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS12	0x99c
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS13	0x9a0
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS14	0x9a4
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS15	0x9a8
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS16	0x9ac
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS17	0x9b0
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS18	0x9b4
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS19	0x9b8
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS20	0x9bc
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS21	0x9c0
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS22	0x9c4
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS23	0x9c8
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS24	0x9cc
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS25	0x9d0
-+#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS26	0x9d4
-+#endif /* QCOM_PHY_QMP_QSERDES_V8_LALBH_ */
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
-new file mode 100644
-index 000000000000..4f387c8ed9e5
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
-@@ -0,0 +1,33 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_USB43_PCS_V8_H_
-+#define QCOM_PHY_QMP_USB43_PCS_V8_H_
-+
-+#define QPHY_V8_USB43_PCS_SW_RESET				0x000
-+#define QPHY_V8_USB43_PCS_PCS_STATUS1				0x014
-+#define QPHY_V8_USB43_PCS_POWER_DOWN_CONTROL			0x040
-+#define QPHY_V8_USB43_PCS_START_CONTROL				0x044
-+#define QPHY_V8_USB43_PCS_POWER_STATE_CONFIG1			0x090
-+#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG1			0x0c4
-+#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG2			0x0c8
-+#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG3			0x0cc
-+#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG6			0x0d8
-+#define QPHY_V8_USB43_PCS_REFGEN_REQ_CONFIG1			0x0dc
-+#define QPHY_V8_USB43_PCS_RX_SIGDET_LVL				0x188
-+#define QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_L			0x190
-+#define QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_H			0x194
-+#define QPHY_V8_USB43_PCS_RATE_SLEW_CNTRL1			0x198
-+#define QPHY_V8_USB43_PCS_TSYNC_RSYNC_TIME			0x1ac
-+#define QPHY_V8_USB43_PCS_RX_CONFIG				0x1b0
-+#define QPHY_V8_USB43_PCS_TSYNC_DLY_TIME			0x1b4
-+#define QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG1			0x1c0
-+#define QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG2			0x1c4
-+#define QPHY_V8_USB43_PCS_PCS_TX_RX_CONFIG			0x1d0
-+#define QPHY_V8_USB43_PCS_EQ_CONFIG1				0x1dc
-+#define QPHY_V8_USB43_PCS_EQ_CONFIG2				0x1e0
-+#define QPHY_V8_USB43_PCS_EQ_CONFIG5				0x1ec
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
-new file mode 100644
-index 000000000000..e9c743fce9d1
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
-@@ -0,0 +1,224 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#ifndef QCOM_PHY_QMP_USB43_QSERDES_COM_V8_H_
-+#define QCOM_PHY_QMP_USB43_QSERDES_COM_V8_H_
-+
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE1		0x000
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE1		0x004
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE1		0x008
-+#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE1			0x00c
-+#define QSERDES_V8_USB43_COM_CP_CTRL_MODE1			0x010
-+#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE1			0x014
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE1			0x018
-+#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE1			0x01c
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE1			0x020
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE1			0x024
-+#define QSERDES_V8_USB43_COM_DEC_START_MODE1			0x028
-+#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE1		0x02c
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE1		0x030
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE1		0x034
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE1		0x038
-+#define QSERDES_V8_USB43_COM_HSCLK_SEL_1			0x03c
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE1		0x040
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE1		0x044
-+#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE1			0x048
-+#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE1			0x04c
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE1		0x050
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE1		0x054
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0		0x058
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0		0x05c
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0		0x060
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0		0x064
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE0		0x068
-+#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE0			0x06c
-+#define QSERDES_V8_USB43_COM_CP_CTRL_MODE0			0x070
-+#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0			0x074
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0			0x078
-+#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0			0x07c
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0			0x080
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0			0x084
-+#define QSERDES_V8_USB43_COM_DEC_START_MODE0			0x088
-+#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE0		0x08c
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0		0x090
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0		0x094
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0		0x098
-+#define QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_1		0x09c
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0		0x0a0
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE0		0x0a4
-+#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0			0x0a8
-+#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0			0x0ac
-+#define QSERDES_V8_USB43_COM_ATB_SEL1				0x0b0
-+#define QSERDES_V8_USB43_COM_ATB_SEL2				0x0b4
-+#define QSERDES_V8_USB43_COM_FREQ_UPDATE			0x0b8
-+#define QSERDES_V8_USB43_COM_BG_TIMER				0x0bc
-+#define QSERDES_V8_USB43_COM_SSC_EN_CENTER			0x0c0
-+#define QSERDES_V8_USB43_COM_SSC_ADJ_PER1			0x0c4
-+#define QSERDES_V8_USB43_COM_SSC_ADJ_PER2			0x0c8
-+#define QSERDES_V8_USB43_COM_SSC_PER1				0x0cc
-+#define QSERDES_V8_USB43_COM_SSC_PER2				0x0d0
-+#define QSERDES_V8_USB43_COM_POST_DIV				0x0d4
-+#define QSERDES_V8_USB43_COM_POST_DIV_MUX			0x0d8
-+#define QSERDES_V8_USB43_COM_BIAS_EN_CLKBUFLR_EN		0x0dc
-+#define QSERDES_V8_USB43_COM_CLK_ENABLE1			0x0e0
-+#define QSERDES_V8_USB43_COM_SYS_CLK_CTRL			0x0e4
-+#define QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE			0x0e8
-+#define QSERDES_V8_USB43_COM_PLL_EN				0x0ec
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS_OVRD			0x0f0
-+#define QSERDES_V8_USB43_COM_PLL_IVCO				0x0f4
-+#define QSERDES_V8_USB43_COM_PLL_IVCO_MODE1			0x0f8
-+#define QSERDES_V8_USB43_COM_CMN_IETRIM				0x0fc
-+#define QSERDES_V8_USB43_COM_CMN_IPTRIM				0x100
-+#define QSERDES_V8_USB43_COM_EP_CLOCK_DETECT_CTRL		0x104
-+#define QSERDES_V8_USB43_COM_PLL_CNTRL				0x108
-+#define QSERDES_V8_USB43_COM_BIAS_EN_CTRL_BY_PSM		0x10c
-+#define QSERDES_V8_USB43_COM_SYSCLK_EN_SEL			0x110
-+#define QSERDES_V8_USB43_COM_CML_SYSCLK_SEL			0x114
-+#define QSERDES_V8_USB43_COM_RESETSM_CNTRL			0x118
-+#define QSERDES_V8_USB43_COM_RESETSM_CNTRL2			0x11c
-+#define QSERDES_V8_USB43_COM_LOCK_CMP_EN			0x120
-+#define QSERDES_V8_USB43_COM_LOCK_CMP_CFG			0x124
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_INITVAL			0x128
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_EN			0x12c
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_P_PATH_GAIN0		0x130
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_P_PATH_GAIN1		0x134
-+#define QSERDES_V8_USB43_COM_VCOCAL_DEADMAN_CTRL		0x138
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_CTRL			0x13c
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_MAP			0x140
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_INITVAL1			0x144
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_INITVAL2			0x148
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_MINVAL1			0x14c
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_MINVAL2			0x150
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_MAXVAL1			0x154
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_MAXVAL2			0x158
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_TIMER1			0x15c
-+#define QSERDES_V8_USB43_COM_VCO_TUNE_TIMER2			0x160
-+#define QSERDES_V8_USB43_COM_CLK_SELECT				0x164
-+#define QSERDES_V8_USB43_COM_PLL_ANALOG				0x168
-+#define QSERDES_V8_USB43_COM_SW_RESET				0x16c
-+#define QSERDES_V8_USB43_COM_CORE_CLK_EN			0x170
-+#define QSERDES_V8_USB43_COM_CMN_CONFIG_1			0x174
-+#define QSERDES_V8_USB43_COM_CMN_CONFIG_3			0x178
-+#define QSERDES_V8_USB43_COM_CMN_RATE_OVERRIDE			0x17c
-+#define QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL			0x180
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS_SEL			0x184
-+#define QSERDES_V8_USB43_COM_CMN_MISC1				0x188
-+#define QSERDES_V8_USB43_COM_CMN_MODE				0x18c
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD			0x190
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD1			0x194
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD2			0x198
-+#define QSERDES_V8_USB43_COM_VCO_DC_LEVEL_CTRL			0x19c
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1		0x1a0
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_CTRL_1			0x1a4
-+#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_1		0x1a8
-+#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_2		0x1ac
-+#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_3		0x1b0
-+#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_4		0x1b4
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC			0x1b8
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_2			0x1bc
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_3			0x1c0
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_4			0x1c4
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_5			0x1c8
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE2		0x1cc
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE2		0x1d0
-+#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE2		0x1d4
-+#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE2			0x1d8
-+#define QSERDES_V8_USB43_COM_CP_CTRL_MODE2			0x1dc
-+#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE2			0x1e0
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE2			0x1e4
-+#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE2			0x1e8
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE2			0x1ec
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE2			0x1f0
-+#define QSERDES_V8_USB43_COM_DEC_START_MODE2			0x1f4
-+#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE2		0x1f8
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE2		0x1fc
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE2		0x200
-+#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE2		0x204
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE2		0x208
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE2		0x20c
-+#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE2			0x210
-+#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE2			0x214
-+#define QSERDES_V8_USB43_COM_PLL_IVCO_MODE2			0x218
-+#define QSERDES_V8_USB43_COM_HSCLK_SEL_2			0x21c
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE2		0x220
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE2		0x224
-+#define QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_2		0x228
-+#define QSERDES_V8_USB43_COM_CMN_CONFIG_2			0x22c
-+#define QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_2		0x230
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_0			0x234
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_1			0x238
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_2			0x23c
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_3			0x240
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_4			0x244
-+#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_5			0x248
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE0		0x24c
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE0		0x250
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE1		0x254
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE1		0x258
-+#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE2		0x25c
-+#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE2		0x260
-+#define QSERDES_V8_USB43_COM_EARLY_LOCK_CONFIG_0		0x264
-+#define QSERDES_V8_USB43_COM_EARLY_LOCK_CONFIG_1		0x268
-+#define QSERDES_V8_USB43_COM_ADAPTIVE_ANALOG_CONFIG		0x26c
-+#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE0		0x270
-+#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE0		0x274
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE0		0x278
-+#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE1		0x27c
-+#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE1		0x280
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE1		0x284
-+#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE2		0x288
-+#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE2		0x28c
-+#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE2		0x290
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD3			0x294
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD4			0x298
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD5			0x29c
-+#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD6			0x2a0
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_6			0x2a4
-+#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_7			0x2a8
-+#define QSERDES_V8_USB43_COM_VCO_WAIT_CYCLES			0x2ac
-+#define QSERDES_V8_USB43_COM_BIAS_WAIT_CYCLES			0x2b0
-+#define QSERDES_V8_USB43_COM_AUX_CLK_PSM_ENABLE			0x2b4
-+#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO			0x2b8
-+#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO_1		0x2bc
-+#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO_2		0x2c0
-+#define QSERDES_V8_USB43_COM_LDO_CAL_1				0x2c4
-+#define QSERDES_V8_USB43_COM_LDO_CAL_2				0x2c8
-+#define QSERDES_V8_USB43_COM_LDO_CAL_3				0x2cc
-+#define QSERDES_V8_USB43_COM_LDO_CAL_4				0x2d0
-+#define QSERDES_V8_USB43_COM_LDO_CAL_5				0x2d4
-+#define QSERDES_V8_USB43_COM_DCC_CAL_1				0x2d8
-+#define QSERDES_V8_USB43_COM_DCC_CAL_2				0x2dc
-+#define QSERDES_V8_USB43_COM_DCC_CAL_3				0x2e0
-+#define QSERDES_V8_USB43_COM_DCC_CAL_4				0x2e4
-+#define QSERDES_V8_USB43_COM_DCC_CAL_5				0x2e8
-+#define QSERDES_V8_USB43_COM_DCC_CAL_6				0x2ec
-+#define QSERDES_V8_USB43_COM_PSM_CAL_EN				0x2f0
-+#define QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1			0x2f4
-+#define QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_2			0x2f8
-+#define QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL			0x2fc
-+#define QSERDES_V8_USB43_COM_DCC_CAL_7				0x300
-+#define QSERDES_V8_USB43_COM_DCC_CAL_8				0x304
-+#define QSERDES_V8_USB43_COM_DCC_CAL_9				0x308
-+#define QSERDES_V8_USB43_COM_MODE_OPERATION_STATUS		0x30c
-+#define QSERDES_V8_USB43_COM_SYSCLK_DET_COMP_STATUS		0x310
-+#define QSERDES_V8_USB43_COM_CMN_STATUS				0x314
-+#define QSERDES_V8_USB43_COM_RESET_SM_STATUS			0x318
-+#define QSERDES_V8_USB43_COM_RESTRIM_CODE_STATUS		0x31c
-+#define QSERDES_V8_USB43_COM_PLLCAL_CODE1_STATUS		0x320
-+#define QSERDES_V8_USB43_COM_PLLCAL_CODE2_STATUS		0x324
-+#define QSERDES_V8_USB43_COM_INTEGLOOP_BINCODE_STATUS		0x328
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS0				0x32c
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS1				0x330
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS2				0x334
-+#define QSERDES_V8_USB43_COM_DEBUG_BUS3				0x338
-+#define QSERDES_V8_USB43_COM_C_READY_STATUS			0x33c
-+#define QSERDES_V8_USB43_COM_READ_DUMMY_1			0x340
-+#define QSERDES_V8_USB43_COM_READ_DUMMY_2			0x344
-+#define QSERDES_V8_USB43_COM_READ_DUMMY_3			0x348
-+#define QSERDES_V8_USB43_COM_IVCO_CAL_CODE_STATUS		0x34c
-+#define QSERDES_V8_USB43_COM_PLL_LDO_CAL_STATUS_2		0x350
-+#define QSERDES_V8_USB43_COM_PLL_LDO_CAL_STATUS_3		0x354
-+
-+#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
-index da2a7ad2cdcc..e4060edc8138 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
-@@ -32,7 +32,9 @@
- #include "phy-qcom-qmp-qserdes-txrx-v7.h"
- 
- #include "phy-qcom-qmp-qserdes-com-v8.h"
-+#include "phy-qcom-qmp-usb43-qserdes-com-v8.h"
- #include "phy-qcom-qmp-qserdes-txrx-v8.h"
-+#include "phy-qcom-qmp-qserdes-lalb-v8.h"
- 
- #include "phy-qcom-qmp-qserdes-pll.h"
- 
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgYWxsLCBwbGVhc2UgZXhjdXNlIG15IGNyb3NzLXBvc3RpbmcgcGh5IHRvcGljIHRvIGNsayBs
+aXN0LCBhZnRlciBkZWJ1Z2dpbmcNCml0IHNlZW1zIHRoZSBtb3JlIGFwcHJvcHJpYXRlIHBsYWNl
+Lg0KVGhlIHN1YmplY3QgaXMgZHJpdmVycy9jbGsvbXZlYnUvY3AxMTAtc3lzdGVtLWNvbnRyb2xs
+ZXIuYzoNCg0KSSBuZWVkIHNvbWUgYWR2aWNlIGhvdyB0byBkZWFsIHdpdGggYmVsb3cgcmVxdWly
+ZW1lbnQ6DQpJRiBhIHBjaSBjb250cm9sbGVyIGNsb2NrIHdhcyBhY3RpdmUgYXQgdGhlIHRpbWUg
+b2YgYm9vdGxvYWRlciB0byBMaW51eCBoYW5kb3ZlciwNCnRoZW4gdGhlIGNsb2NrIG11c3Qgbm90
+IGJlIHN0b3BwZWQgYmVmb3JlIHRoZSBwY2kgZHJpdmVyIGhhcyBjb21wbGV0ZWQgcHJvYmUuDQpJ
+biBwYXJ0aWN1bGFyIGRlZmVycmVkIHByb2JlIG11c3Qgbm90IGFsbG93IHRoZSBjbG9jayB0byBz
+dG9wIGludGVybWl0dGVudGx5Lg0KDQpNb3RpdmF0aW9uOg0KVGhlcmUgYXBwZWFycyB0byBiZSBh
+IHNpdHVhdGlvbiBvbiBDTjkxMzAgU29DIChhbmQgbGlrZWx5IEFybWFkYSA4MDQwLCB0b28pDQp3
+aGVyZSBjbG9jayBmcmFtZXdvcmsgc3RvcHBpbmcgdGhlIHBjaSBjbG9jayBiZWZvcmUgdGhlIHBj
+aSBkcml2ZXIgaGFzIGJvdW5kIHRvIGl0DQpjYXVzZXMgcGNpIHRvIG1hbGZ1bmN0aW9uLCBhbmQg
+dGhlIHN5c3RlbSB0byBsb2NrIHVwLg0KTm90ZSB0aGlzIGlzIGRlc3BpdGUgdGhlIHBjaSBkcml2
+ZXIgc3RhcnRpbmcgdGhlIGNsb2NrIGFnYWluIQ0KDQpPbiBBcm1hZGEgODA0MC9DTjkxMzAgdGhl
+IGJvb3Rsb2FkZXIgaGFuZGxlcyBwY2kgY29uZmlndXJhdGlvbiBhbmQgbGluay11cC4NCkxhdGVy
+IExpbnV4IHBjaWUtYXJtYWRhOGsgZHJpdmVyIGp1c3QgdGFrZXMgb3ZlciB0aGUgZXhpc3Rpbmcg
+bGluay4NCg0KT24gc3lzdGVtcyB3aXRoIGFsbCBkcml2ZXJzIGJ1aWx0aW4gdGhlIHBjaSBkcml2
+ZXIgcHJvYmVkIGVhcmx5IGVub3VnaCB0byB0YWtlIG93bmVyc2hpcA0Kb2YgdGhlIHJlbGV2YW50
+IGNsb2NrIGJlZm9yZSBpdCBjb3VsZCBiZSB0dXJuZWQgb2ZmIGR1ZSB0byBsYWNrIG9mIHVzZXJz
+Lg0KDQpIb3dldmVyIG9uY2UgdGhlIGNvbXBoeSBkcml2ZXIgaXMgc2V0IGFzIG1vZHVsZSwgd2hp
+Y2ggY2F1c2VzIHBjaSBwcm9iZSBkZWxheSB0aWxsIGFmdGVyDQpyb290ZnMgaXMgbW91bnRlZCwg
+dGhlIHBjaSBjbG9ja3MgYXJlIHN0b3BwZWQgLSBhbmQgdGhlbiBsYXRlciBzdGFydGVkIGFnYWlu
+IG9uIHBjaSBwcm9iZS4NCg0KQW0gMjUuMTAuMjUgdW0gMTQ6NDUgc2NocmllYiBKb3N1YSBNYXll
+cjoNCj4gRGVhciBNYWludGFpbmVycywNCj4NCj4gSSBjYW1lIGFjcm9zcyBhIGJ1ZyBzcmVsYXRp
+bmcgdG8gY3AxMTAgY29tcGh5IGRyaXZlci4NCj4NCj4gT24gYSBib2FyZCB3aXRoIENOOTEzMCBT
+b0MgKyAyIGV4dGVybmFsIENQcyBEZWJpYW4gMTMgZnJlZXplcyBkdXJpbmcgYm9vdCwNCj4gYXQg
+c29tZSBwb2ludCBhZnRlciBpbml0cmFtZnMgYW5kIGtlcm5lbCBtb2R1bGUgbG9hZGluZyBoYXMg
+c3RhcnRlZC4NCj4NCj4gVGhpcyBvY2N1cnMgb25seSB3aGVuIGEgcGNpIGNhcmQgaXMgcHJlc2Vu
+dCBhbmQgaGFkIGxpbmstdXAgZnJvbSB1LWJvb3QsIGUuZy46DQo+DQo+IFBDSUUtMDogTGluayB1
+cCAoR2VuMy14NCwgQnVzMCkNCj4gUENJRS0xMjogTGluayB1cCAoR2VuMy14MSwgQnVzMTIpDQo+
+DQo+IFRoZSBpc3N1ZSBpcyByZXByb2R1Y2libGUgd2l0aCBhIGdlbmVyaWMgcm9vdGZzLCBrZXJu
+ZWwgYnVpbHQgd2l0aCBhcm02NCBkZWZjb25maWcsDQo+IG5vIGluaXRyYW1mcywgYnV0IGEgc2lu
+Z2xlIGtlcm5lbCBjb25maWd1cmF0aW9uIGNoYW5nZToNCj4NCj4gQ09ORklHX1BIWV9NVkVCVV9D
+UDExMF9DT01QSFk9eSAtPiBtDQo+DQo+IGkuZS4gYnVpbGRpbmcgdGhlIGNvbXBoeSBkcml2ZXIg
+YXMgYSBtb2R1bGUuDQo+DQo+IFRoZSBwcm9ibGVtIHNob3dzIHVwIHVzdWFsbHkgYnkgdGhlIGNv
+bnNvbGUgZnJlZXppbmcgZHVyaW5nIGJvb3QsDQo+IGJlZm9yZSBldmVudHVhbGx5IHRoZSBzeXN0
+ZW0gd2F0Y2hkb2cgaGFyZCByZXNldHMgU29DLg0KPg0KPiBbMV0gYmVsb3cgc2hvd3MgdGhlIHBj
+aSBrZXJuZWwgbWVzc2FnZXMgZHVyaW5nIHByb2JlIG9mIHRoZSB4NCBwb3J0IG9uIG15IGJvYXJk
+LA0KPiB3aXRoIHRoZSBjb21waHkgZHJpdmVyIGJ1aWx0aW4uIEFmdGVyIHRoaXMgbG9nIEkgcmVh
+Y2ggbG9naW4gcHJvbXB0IGFuZCB0aGUgc3lzdGVtDQo+IHdvcmtzIGFzIGludGVuZGVkLg0KPiBb
+Ml0gc2hvd3MgdGhlIHBjaSBtZXNzYWdlcyBmb3Igc2FtZSBwb3J0IHdpdGggY29tcGh5IGFzIGEg
+bW9kdWxlLiBBZnRlciB0aGUgZmluYWwNCj4gbGluZSB0aGUgc3lzdGVtZCBoYXJkIHJlc2V0IG9u
+Y2Ugd2F0Y2hkb2cgZXhwaXJlZC4NCj4gQm90aCBsb2dzIHdlcmUgY2FwdHVyZWQgb24gdjYuMTIu
+NDgsIGJ1dCBJIGRpZCByZXByb2R1Y2UgdGhlIHByb2JsZW0gd2l0aCB2Ni4xOC1yYzEgdG9vLg0K
+PiBGb3IgcmVmZXJlbmNlIEkgYW0gYXR0YWNoaW5nIGZ1bGwgY29uc29sZSBsb2dzIGFzIGZpbGVz
+IHRvIHRoaXMgbWFpbC4NCj4NCj4gTW9zdCBub3RhYmx5IGluIHRoZSBlcnJvciBjYXNlIHdlIGdl
+dCAiUGh5IGxpbmsgbmV2ZXIgY2FtZSB1cCIuDQo+IFBlcmhhcHMgd2hlbiBjb21waHkgaXMgYSBt
+b2R1bGUgc29tZSBjbG9jayBpcyBzdG9wcGVkIGJlZm9yZSBwY2kgcHJvYmUgc3RhcnRzIC4uLg0K
+SSBhZGRlZCBwcmludGsgdG8gZHJpdmVycy9jbGsvbXZlYnUvY3AxMTAtc3lzdGVtLWNvbnRyb2xs
+ZXIuYyBvbiBzcGVjaWZpY2FsbHkNCmRpc2FibGluZyBhbiBlbmFibGVkIGNsb2NrIC0gYW5kIGNv
+bXBhcmVkIHJlc3VsdHMgYmV0d2VlbiBnb29kIGFuZCBiYWQgY2FzZS4NCg0KV2hlbiBjb21waHkg
+d2FzIGEgbW9kdWxlLCB0aGUgZm9sbG93aW5nIGNsb2NrIGRpc2FibGUgZXZlbnRzIHdlcmUgbG9n
+Z2VkLA0KdGhhdCBkbyBub3Qgb2NjdXIgd2l0aCBjb21waHkgYnVpbHRpbiAobmV0d29yayBjbG9j
+a3MgZmlsdGVyZWQgb3V0KToNCg0KW8KgIMKgIDIuOTgxMjkyXSBjcDExMC1jbGs6IGRpc2FibGlu
+ZyBlbmFibGVkIGNsb2NrICJmNjQ0MDAwMC1wY2llX3g0Ig0KW8KgIMKgIDMuMDE0Mjg4XSBjcDEx
+MC1jbGs6IGRpc2FibGluZyBlbmFibGVkIGNsb2NrICJmNjQ0MDAwMC1zYXRhLXVzYiINClvCoCDC
+oCAzLjAyMDUwMl0gY3AxMTAtY2xrOiBkaXNhYmxpbmcgZW5hYmxlZCBjbG9jayAiZjY0NDAwMDAt
+c2F0YSINClvCoCDCoCAzLjAyNjM2NF0gY3AxMTAtY2xrOiBkaXNhYmxpbmcgZW5hYmxlZCBjbG9j
+ayAiZjY0NDAwMDAtcGNpZV94MTEiDQpbwqAgwqAgMy4wMzI1NzZdIGNwMTEwLWNsazogZGlzYWJs
+aW5nIGVuYWJsZWQgY2xvY2sgImY2NDQwMDAwLXBjaWVfeDEwIg0KW8KgIMKgIDMuMTQxNjQwXSBj
+cDExMC1jbGs6IGRpc2FibGluZyBlbmFibGVkIGNsb2NrICJmMjQ0MDAwMC1wY2llX3g0Ig0KDQpU
+aGUgbGFzdCBsaW5lIHdpdGjCoCJmMjQ0MDAwMC1wY2llX3g0IiBhZmZlY3RzIHRoZSB4NCBwb3J0
+IG9uIENQMCB0aGF0IEkgaGF2ZSBhIGNhcmQgY29ubmVjdGVkLg0KDQpMYXRlciBqdXN0IGJlZm9y
+ZSBwY2kgY29udHJvbGxlciBwcm9iZSB0aGUgcmVzcGVjdGl2ZSBpcyByZS1lbmFibGVkOg0KDQpb
+wqAgwqAgNy44MzAyODZdIGNwMTEwLWNsazogZW5hYmxpbmcgZGlzYWJsZWQgY2xvY2sgImYyNDQw
+MDAwLXBjaWVfeDQiDQoNCmJ1dCBubyBsaW5rIGRldGVjdGVkIC0gYW5kIHNob3J0bHkgYWZ0ZXIs
+IHRoZSBzeXN0ZW0gZnJlZXplcy4NCg0KSW5zcGlyZWQgYnkgdGhpcyBJIGhhY2tlZCB0aGUgY2xv
+Y2sgZHJpdmVyIGZ1cnRoZXIsIHRvIGRpc2FybSBkaXNhYmxlIGZ1bmN0aW9uDQpmb3IgcGNpIGNs
+b2NrcyBvbmx5Lg0KDQpBbmQgLSB0aGUgc3lzdGVtIHdvcmtzIHBlcmZlY3RseSBhZ2FpbiB3aXRo
+IGNvbXBoeSBkcml2ZXIgYXMgYSBtb2R1bGUgKHY2LjE4LXJjMSkuDQoNCkFkZGluZyBpbiBDQyBt
+YWludGFpbmVycyBvZiBjcDExMCBjbG9jayBkcml2ZXIgZm9yIGZ1cnRoZXIgYWR2aWNlIC4uLiAo
+aG9wZSB0aGF0IGlzIG9rYXkpLg0KDQo+IGFuZCBhZnRlciBwY2kgcHJvYmUgZnVuY3Rpb24gY29t
+cGxldGVzIGl0IGxvY2tzIHVwIHRoZSBjb250cm9sbGVyIHRoYXQgYWN0dWFsbHkgaGFkIGEgbGlu
+aywNCj4gZXZlbiB0aG91Z2gga2VybmVsIGRyaXZlciBkaWQgbm90IGRldGVjdC4NCj4NCj4gWzFd
+DQo+IFvCoCDCoCAxLjk5NTQ3N10gYXJtYWRhOGstcGNpZSBmMjYwMDAwMC5wY2llOiBhcm1hZGE4
+a19wY2llX3Byb2JlIHN0YXJ0DQo+IFvCoCDCoCAyLjEwNDk0MV0gYXJtYWRhOGstcGNpZSBmMjYw
+MDAwMC5wY2llOiBob3N0IGJyaWRnZSAvY3AwL3BjaWVAZjI2MDAwMDAgcmFuZ2VzOg0KPiBbwqAg
+wqAgMi4xMTIzMTldIGFybWFkYThrLXBjaWUgZjI2MDAwMDAucGNpZTrCoCDCoCDCoCBNRU0gMHgw
+MGMwMDAwMDAwLi4weDAwZGZlZmZmZmYgLT4gMHgwMGMwMDAwMDAwDQo+IFvCoCDCoCAyLjEyMDg0
+MV0gYXJtYWRhOGstcGNpZSBmMjYwMDAwMC5wY2llOiBpQVRVOiB1bnJvbGwgRiwgOCBvYiwgOCBp
+YiwgYWxpZ24gNjRLLCBsaW1pdCA0Rw0KPiBbwqAgwqAgMi4yMzIwNTVdIGFybWFkYThrLXBjaWUg
+ZjI2MDAwMDAucGNpZTogUENJZSBHZW4uMyB4NCBsaW5rIHVwDQo+IFvCoCDCoCAyLjIzODEwM10g
+YXJtYWRhOGstcGNpZSBmMjYwMDAwMC5wY2llOiBQQ0kgaG9zdCBicmlkZ2UgdG8gYnVzIDAwMDA6
+MDANCj4gW8KgIMKgIDIuMjQ0NzYwXSBwY2lfYnVzIDAwMDA6MDA6IHJvb3QgYnVzIHJlc291cmNl
+IFtidXMgMDAtZmZdDQo+IFvCoCDCoCAyLjI1MDI4Ml0gcGNpX2J1cyAwMDAwOjAwOiByb290IGJ1
+cyByZXNvdXJjZSBbbWVtIDB4YzAwMDAwMDAtMHhkZmVmZmZmZl0NCj4gW8KgIMKgIDIuMjU3MjEz
+XSBwY2kgMDAwMDowMDowMC4wOiBbMTFhYjowMTEwXSB0eXBlIDAxIGNsYXNzIDB4MDYwNDAwIFBD
+SWUgUm9vdCBQb3J0DQo+IFvCoCDCoCAyLjI2NDU1OV0gcGNpIDAwMDA6MDA6MDAuMDogQkFSIDAg
+W21lbSAweDAwMDAwMDAwLTB4MDAwZmZmZmZdDQo+IFvCoCDCoCAyLjI3MDUxNl0gcGNpIDAwMDA6
+MDA6MDAuMDogUENJIGJyaWRnZSB0byBbYnVzIDAxLWZmXQ0KPiBbwqAgwqAgMi4yNzU3NzNdIHBj
+aSAwMDAwOjAwOjAwLjA6wqAgwqBicmlkZ2Ugd2luZG93IFttZW0gMHhjMDAwMDAwMC0weGMwMGZm
+ZmZmXQ0KPiBbwqAgwqAgMi4yODI2NDNdIHBjaSAwMDAwOjAwOjAwLjA6IHN1cHBvcnRzIEQxIEQy
+DQo+IFvCoCDCoCAyLjI4NjkzN10gcGNpIDAwMDA6MDA6MDAuMDogUE1FIyBzdXBwb3J0ZWQgZnJv
+bSBEMCBEMSBEM2hvdA0KPiBbwqAgwqAgMi4yOTQyOTJdIHBjaSAwMDAwOjAxOjAwLjA6IFsxNDRk
+OmE4MDRdIHR5cGUgMDAgY2xhc3MgMHgwMTA4MDIgUENJZSBFbmRwb2ludA0KPiBbwqAgwqAgMi4z
+MDE2NjldIHBjaSAwMDAwOjAxOjAwLjA6IEJBUiAwIFttZW0gMHhjMDAwMDAwMC0weGMwMDAzZmZm
+IDY0Yml0XQ0KPiBbwqAgwqAgMi4zMTYxNDNdIHBjaSAwMDAwOjAwOjAwLjA6IEJBUiAwIFttZW0g
+MHhjMDAwMDAwMC0weGMwMGZmZmZmXTogYXNzaWduZWQNCj4gW8KgIMKgIDIuMzIyOTcyXSBwY2kg
+MDAwMDowMDowMC4wOiBicmlkZ2Ugd2luZG93IFttZW0gMHhjMDEwMDAwMC0weGMwMWZmZmZmXTog
+YXNzaWduZWQNCj4gW8KgIMKgIDIuMzMwNDk1XSBwY2kgMDAwMDowMTowMC4wOiBCQVIgMCBbbWVt
+IDB4YzAxMDAwMDAtMHhjMDEwM2ZmZiA2NGJpdF06IGFzc2lnbmVkDQo+IFvCoCDCoCAyLjMzNzg4
+N10gcGNpIDAwMDA6MDA6MDAuMDogUENJIGJyaWRnZSB0byBbYnVzIDAxLWZmXQ0KPiBbwqAgwqAg
+Mi4zNDMxNDJdIHBjaSAwMDAwOjAwOjAwLjA6wqAgwqBicmlkZ2Ugd2luZG93IFttZW0gMHhjMDEw
+MDAwMC0weGMwMWZmZmZmXQ0KPiBbwqAgwqAgMi4zNDk5NjhdIHBjaV9idXMgMDAwMDowMDogcmVz
+b3VyY2UgNCBbbWVtIDB4YzAwMDAwMDAtMHhkZmVmZmZmZl0NCj4gW8KgIMKgIDIuMzU2MjY3XSBw
+Y2lfYnVzIDAwMDA6MDE6IHJlc291cmNlIDEgW21lbSAweGMwMTAwMDAwLTB4YzAxZmZmZmZdDQo+
+IFvCoCDCoCAyLjM2Mjc3OF0gcGNpZXBvcnQgMDAwMDowMDowMC4wOiBQTUU6IFNpZ25hbGluZyB3
+aXRoIElSUSA2Mg0KPiBbwqAgwqAgMi4zNjg3NDVdIHBjaWVwb3J0IDAwMDA6MDA6MDAuMDogQUVS
+OiBlbmFibGVkIHdpdGggSVJRIDYyDQo+IFvCoCDCoCAyLjM3NDQ0N10gYXJtYWRhOGstcGNpZSBm
+MjYwMDAwMC5wY2llOiBhcm1hZGE4a19wY2llX3Byb2JlIGVuZA0KPg0KPiBbMl0NCj4gW8KgIMKg
+MTcuMzU2NDY5XSBhcm1hZGE4ay1wY2llIGYyNjAwMDAwLnBjaWU6IGFybWFkYThrX3BjaWVfcHJv
+YmUgc3RhcnQNCj4gW8KgIMKgMTcuNDQ0NjU2XSBhcm1hZGE4ay1wY2llIGYyNjAwMDAwLnBjaWU6
+IGhvc3QgYnJpZGdlIC9jcDAvcGNpZUBmMjYwMDAwMCByYW5nZXM6DQo+IFvCoCDCoDE3LjQ1MjA0
+Ml0gYXJtYWRhOGstcGNpZSBmMjYwMDAwMC5wY2llOsKgIMKgIMKgIE1FTSAweDAwYzAwMDAwMDAu
+LjB4MDBkZmVmZmZmZiAtPiAweDAwYzAwMDAwMDANCj4gW8KgIMKgMTcuNDYwNTcyXSBhcm1hZGE4
+ay1wY2llIGYyNjAwMDAwLnBjaWU6IGlBVFU6IHVucm9sbCBGLCA4IG9iLCA4IGliLCBhbGlnbiA2
+NEssIGxpbWl0IDRHDQo+IFvCoCDCoDE4LjQyNzcxOF0gYXJtYWRhOGstcGNpZSBmMjYwMDAwMC5w
+Y2llOiBQaHkgbGluayBuZXZlciBjYW1lIHVwDQo+IFvCoCDCoDE4LjQzMzc3Nl0gYXJtYWRhOGst
+cGNpZSBmMjYwMDAwMC5wY2llOiBQQ0kgaG9zdCBicmlkZ2UgdG8gYnVzIDAwMDY6MDANCj4gW8Kg
+IMKgMTguNDQwNDQ1XSBwY2lfYnVzIDAwMDY6MDA6IHJvb3QgYnVzIHJlc291cmNlIFtidXMgMDAt
+ZmZdDQo+IFvCoCDCoDE4LjQ0NTk2OF0gcGNpX2J1cyAwMDA2OjAwOiByb290IGJ1cyByZXNvdXJj
+ZSBbbWVtIDB4YzAwMDAwMDAtMHhkZmVmZmZmZl0NCj4NCj4gSSBhbSBhIGJpdCBsb3N0IGhlcmUg
+aW4gaG93IHRvIGZ1cnRoZXIgZGVidWcgdGhpcyAtIGtpbmRseSBzaGFyZSBzb21lIGlkZWFzIGlm
+IHlvdSBoYXZlIGFueS4NCj4NCj4gc2luY2VyZWx5DQo+IEpvc3VhIE1heWVyDQotLSAKbGludXgt
+cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
