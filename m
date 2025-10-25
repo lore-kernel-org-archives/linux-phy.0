@@ -4,96 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E82CDCCD1BF
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Oct 2025 23:26:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE8E1CCF9E0
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Oct 2025 00:02:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O9vpdRcsE2N4z3ujBgY/5VyneBDfKIJkfD5Zv+E/Luc=; b=gfgY9tYIc/77tH7aIqdd21+skt
-	kON0UcYJ6OU5M3Bd27aN7eBI8pSlC64xTdhlVccnRrDhzHuodq7IqcyALu9CXU85VhRGaIsUZcGd3
-	Tx7EYPOTbbjMNnMaQLlHo0qgcwZi2XTeIM0A/Qac4VbPQqM+xzvkHFfaO3+YJXBkYE5kxSmZDSwKl
-	YwbxHC2IDiOU0mPmIFAf5DixsqqK2o6snyhqvak5qEnABRO9+8PwkuYMlnO44lO7rvZfTETd4ag/s
-	4vhkuVF+lPCnJJC8iYqSwAj15IeM69HyalkYjm0vSCeOzjbCTVNzozwRMcog2HophXG1t47MElkNW
-	DAm0X5/g==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uXJBPz4Rul+ZNwDj6B48eJ/GsoSilDUH8ZfY3DCL0k4=; b=Kq3K06fsZ+UE2i
+	j2BfgRY0tH2hF1UgL+l4yv02OxAB4OT0eNXHuMqo2tMpZHBdQNi5RZ4iLqKvq6dXgfnUugFznXjP7
+	vxrFCHfM10gCFvJuZAg0Y+gpOpBGzotFlynNbk0gCvMf7nFhlOpjzjdCKTQSq1St38Or10E81Jmt4
+	NHzljF/PdMIVKNezZXzAQSVDMPh4mq+iQMrPhCVQcUcW0ltb/2anit/SxLz+/FLLQvsH69q4EMp1p
+	JUL0r2yVubV1cUyCSI44EwWmNmASD/XUD1S9ZcqHfd0xgMkY0j3yIslRoFrqlAXuP0u+SuHx7qMvb
+	5iMmpA5zchg6j7x4/1wQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCRAZ-0000000Aees-1k38;
-	Fri, 24 Oct 2025 23:26:03 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1vCRjm-0000000Ah5P-1CGn;
+	Sat, 25 Oct 2025 00:02:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCRAW-0000000AeeE-41Xo;
-	Fri, 24 Oct 2025 23:26:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1761348284; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=nUSq+eGpPsWaOR2huttk+9os9TV0P/OuWHFU6NnStHxF37O90E8m9egYW7m1k9Jw1NDIuz920n2tYs6WsuQCY/FCbIy00JDocA5vgUkzeHx04qDvThfwm7StoW5jgEQv+/v+lzoSjZEOm6vdG7tZnK+ELXs4V+k/MdWn1mB2XKw=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1761348284; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=TolhaGIsyaj1gVoV8dHb9QimZIX1Tzw1zXYiEcETqjM=; 
-	b=A0dwAGofwe57t5FVZfHNsR7hNx84shoXZdrMW+KqP5m6oqZVC/8lLB1VIQXdxKVfuw165b/NdIOMZprW781T0fm1CLLhZzq9+XgJc70yZ+Id+45Bb1dioiPOt9j1MeAJe4g90yq6L9nEWurG4zqI4WaQtSbzMASjQyorgDXu2bw=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1761348284;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=TolhaGIsyaj1gVoV8dHb9QimZIX1Tzw1zXYiEcETqjM=;
-	b=ht97i7wAjMxWf17LAhpwrdlIDowY69CmFDI+cWK1dCeICyT7kM2V2Nfzc0bUF3IT
-	cx7FDF0TNsOaG1Zy3zhRAk9YI53YYXgS12j/In+L0DpM82WJJfQx9v3atR58D4QsPB+
-	X9mS+B6EX81ORNLumUxqPRhox7C2rKGQrWzj3yhc=
-Received: by mx.zohomail.com with SMTPS id 1761348279897500.52128589096606;
-	Fri, 24 Oct 2025 16:24:39 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id 476FE181935; Sat, 25 Oct 2025 01:24:06 +0200 (CEST)
-Date: Sat, 25 Oct 2025 01:24:06 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>, 
-	Bartosz Golaszewski <brgl@bgdev.pl>, Guenter Roeck <linux@roeck-us.net>, 
-	Andi Shyti <andi.shyti@kernel.org>, Jonathan Cameron <jic23@kernel.org>, 
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>, Georgi Djakov <djakov@kernel.org>, 
-	Thomas Gleixner <tglx@linutronix.de>, Joerg Roedel <joro@8bytes.org>, 
-	Jassi Brar <jassisinghbrar@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
-	Lee Jones <lee@kernel.org>, Miquel Raynal <miquel.raynal@bootlin.com>, 
-	Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>, 
-	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
-	Paolo Abeni <pabeni@redhat.com>, Johannes Berg <johannes@sipsolutions.net>, 
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>, Mark Brown <broonie@kernel.org>, 
-	Mathieu Poirier <mathieu.poirier@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Olivia Mackall <olivia@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Daniel Lezcano <daniel.lezcano@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-fbdev@vger.kernel.org, dmaengine@vger.kernel.org, 
-	linux-fpga@vger.kernel.org, linux-gpio@vger.kernel.org, linux-hwmon@vger.kernel.org, 
-	linux-i2c@vger.kernel.org, linux-iio@vger.kernel.org, linux-input@vger.kernel.org, 
-	linux-pm@vger.kernel.org, iommu@lists.linux.dev, linux-media@vger.kernel.org, 
-	linux-mtd@lists.infradead.org, netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, linux-pwm@vger.kernel.org, 
-	linux-remoteproc@vger.kernel.org, linux-crypto@vger.kernel.org, linux-sound@vger.kernel.org, 
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
-Message-ID: <god73pukywwznfyym7tym6m5k6fn3u7hwzj5gwhrxytt7oinfv@pokb4aos7pp6>
-References: <20251023143957.2899600-1-robh@kernel.org>
+	id 1vCRjj-0000000Ah52-3JZZ
+	for linux-phy@lists.infradead.org;
+	Sat, 25 Oct 2025 00:02:25 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 59ONqw3b011616
+	for <linux-phy@lists.infradead.org>; Sat, 25 Oct 2025 00:02:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	fc56pL8berOUmLto0AR19Euk08KtluvdaeNgGMdpvTE=; b=XGM/74FOGdNx4bPt
+	V2fYvREFPHifpId8zU2Ui2yQVcAFg4vl3fBm1nXlYcoeDfHYVXKzMnCXVKFwH9NV
+	ziNbdw9OozywFuMK9R+KP8Mmy9KWf+6igzG7Di5mhjv/NgAHH2XnP8ljF+k4x+HQ
+	TLX3TVACSX4kY/NvUVAJkHPpGvmT8RXfArjyAXrezz3uCta5/LfvRMuwfiMwYAHI
+	YCo3G4yPBh4AJE/eqLXCWLepxGpXYLzhT4JBWnr0xLI0TKfGPsMWgG/KLx8r9/dK
+	AalJYizIUkOpmENTDJ/1dYL2T6hOT+ni8NXATzK1GBwWSYJOs3Stqe3Mja39E0q0
+	xWn5Zw==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49xhe0uh8q-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 25 Oct 2025 00:02:20 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-7a267606fe8so2113145b3a.0
+        for <linux-phy@lists.infradead.org>; Fri, 24 Oct 2025 17:02:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761350539; x=1761955339;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=fc56pL8berOUmLto0AR19Euk08KtluvdaeNgGMdpvTE=;
+        b=KSYLNoBdYzqmbwl5svLNYt3xtDSMvdIbQU47MZ91qxn9SzO1nOPsxKF7ovIdoa8tNC
+         IFYvJI603ts8K38fN8jI+/7ZlcbQKiQSzqjyu/zKyDLlauq+JgToRJLZp6xrb9NlRqvw
+         jFQzpzfNWGrJrKEHvqvPYLQ0JirUJHmDrw478DCG6Njj7aX4syitALTdGKIRTtQyD0yX
+         So/0nRbaShXC0Zctu4Knh2PtqPmsb1Z29Ftx8+c4yHxtH2OAPOlLYSq2+v/qKzW4wVe9
+         +MdihQJqqBJap/KG2gtuBt4xKuccTPIYYpA+wPJ8IPI099tvlO9eI2Skuk1rk1raOecu
+         7BPg==
+X-Forwarded-Encrypted: i=1; AJvYcCXpyBwiD+lA5KGqgzhroO4OT921QKCI6H+jM+C9Ekoou+v85Cvgaj/5xN/ZDJX3vBUmxuHkyRuQAzw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzB/6/shWbOZFv0miVasc2sKN5GuhHdJM+cT0xOOl5hOdMsrI9/
+	7fzy7c0clgcerY3mWNtsjLLIITB48O1Za/9eNBiJl/5J8SBVzwenuAHn5HeHVRYyPDAnbQqPRTE
+	tjKNgWNdLvvmSkr6jxwdIQVq3XG9OxJaDVoaSF8bdQzrUc4s9TKbLVsH7CIh8keMVdP/f
+X-Gm-Gg: ASbGncvPGaTlhnWxbApaCkD4G7UMU7jGTfyoA+GDa4bzCAinTlbTDCDCk0YyGx6+hL2
+	rVvluXotTfYGjnSk6L03rq1MPrgmj9oACancCTKLgi4SHT2zOTSdj8xqmF3ajvV18S5H+8RXjuQ
+	aFStsNn4m9q4ewk6KLND0Xye8t3YcBljGHteDfNy7prP53qBbmiY3kKwrkXFj+0NEmSGpAO5y1G
+	iembuKIJMvS4Abtem5mw+NgVHpDVnOsdMpgP1xwihya8NgGR7pR38TsdSnYQ7cB1ph/OoeULu8F
+	oz7ojCwbQuYvlfl3oIiH5W6b2nETQ4RWERRTwDLHznV3iRF1Mbg8CgvYagcFUN/EAJjvI02oU6L
+	dWbJX7qguFzMxXnck+viag+dSzq3pjA/vunzDUft4
+X-Received: by 2002:a05:6a20:e291:b0:341:3b91:69d1 with SMTP id adf61e73a8af0-3413b916bfemr325141637.5.1761350539001;
+        Fri, 24 Oct 2025 17:02:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHx6iqMO7Mnjaq8k2ZFocktbexyApACGzLDJtVcDcWlYMjTJ7zTgXxvx6wLi2N8LqDG0LX5kw==
+X-Received: by 2002:a05:6a20:e291:b0:341:3b91:69d1 with SMTP id adf61e73a8af0-3413b916bfemr325102637.5.1761350538483;
+        Fri, 24 Oct 2025 17:02:18 -0700 (PDT)
+Received: from [10.73.53.19] (pat_11.qualcomm.com. [192.35.156.11])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b712d024aaasm382952a12.26.2025.10.24.17.02.16
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 24 Oct 2025 17:02:17 -0700 (PDT)
+Message-ID: <9d3dd1cf-4969-3dcb-18dc-59cfb68033f7@oss.qualcomm.com>
+Date: Fri, 24 Oct 2025 17:02:15 -0700
 MIME-Version: 1.0
-In-Reply-To: <20251023143957.2899600-1-robh@kernel.org>
-X-Zoho-Virus-Status: 1
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.4.3/261.330.82
-X-ZohoMailClient: External
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v5 07/10] phy: qualcomm: qmp-combo: Update QMP PHY with
+ Glymur settings
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, konrad.dybcio@oss.qualcomm.com,
+        dmitry.baryshkov@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
+        gregkh@linuxfoundation.org, robh@kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
+ <20251006222002.2182777-8-wesley.cheng@oss.qualcomm.com>
+ <zaotrz6upmpwv2w65633rlflubmykzn5dqiydl66y7rdalld4l@bo4oto5iynor>
+Content-Language: en-US
+From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+In-Reply-To: <zaotrz6upmpwv2w65633rlflubmykzn5dqiydl66y7rdalld4l@bo4oto5iynor>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDIxMDE2NyBTYWx0ZWRfX1USGlf8wWtdS
+ +DjynhfyMdOohVm+UYOn9bej6TOHr+w4NLme+E84P8FpKgSyKFh2jDId0QDr0bivnioIHQlSDF3
+ UkOmSk1j/WCUEpwLzbsV8r/gqyuE/kTigD4v0nKW9fW6XxG0/Ha/M2ngiOKIBVAanWmT2v8D2GL
+ z5jFrpOAVd37Ah5uarVco/3afssptls5nxr3rDOqRXDGY9Ie/9HHxr9Q8mGlvWZWtS1K0nwA8Hz
+ Ack6ae2t9pOUs6mCH5hdF3iS9k3q3ukVpM/0VzWDRase7xy8oGG6lHDsB65w1wbdCRmB5YQjn0e
+ PZ1EIw9CvEzPy72ILPCfMkf8qcUYNW348vijRCZS4IodiNAZW/q2pDmExz2DS3jMpyyV9nbN6ND
+ H6kzJN9IcSDjC1e0FQXT4To5iD8w0A==
+X-Proofpoint-ORIG-GUID: bmsgCzULd-Db5xowid_JPBnJ9YNwUhyQ
+X-Authority-Analysis: v=2.4 cv=WYUBqkhX c=1 sm=1 tr=0 ts=68fc138c cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=ZdW6uxA9NKXbfdqeeS2OGA==:17
+ a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=EUspDBNiAAAA:8 a=iT4AbuSYlod7UvTVlOgA:9 a=QEXdDO2ut3YA:10
+ a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-GUID: bmsgCzULd-Db5xowid_JPBnJ9YNwUhyQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-24_05,2025-10-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 adultscore=0 bulkscore=0 impostorscore=0 spamscore=0
+ priorityscore=1501 clxscore=1015 malwarescore=0 lowpriorityscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510020000
+ definitions=main-2510210167
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_162601_037896_27C7A043 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20251024_170224_002452_6083128A 
+X-CRM114-Status: GOOD (  24.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,73 +134,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1822299787538074915=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============1822299787538074915==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="4uianbie6i5kbvu2"
-Content-Disposition: inline
 
+On 10/24/2025 3:04 AM, Abel Vesa wrote:
+> On 25-10-06 15:19:59, Wesley Cheng wrote:
+>> For SuperSpeed USB to work properly, there is a set of HW settings that
+>> need to be programmed into the USB blocks within the QMP PHY.  Ensure that
+>> these settings follow the latest settings mentioned in the HW programming
+>> guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
+>> new ways to define certain registers, such as the replacement of TXA/RXA
+>> and TXB/RXB register sets.  This was replaced with the LALB register set.
+>>
+>> There are also some PHY init updates to modify the PCS MISC register space.
+>> Without these, the QMP PHY PLL locking fails.
+>>
+>> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+>> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 314 ++++++++-
+>>   .../phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h    |  17 +
+>>   .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h   |  12 +
+>>   .../qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h   | 639 ++++++++++++++++++
+>>   .../phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h  |  33 +
+>>   .../phy-qcom-qmp-usb43-qserdes-com-v8.h       | 224 ++++++
+>>   drivers/phy/qualcomm/phy-qcom-qmp.h           |   2 +
+>>   7 files changed, 1240 insertions(+), 1 deletion(-)
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
+>>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+>> index 1caa1fb6a8c7..8216820e388f 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> 
+> [...]
+> 
+>> +static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
+>> +	.offsets		= &qmp_combo_usb43dp_offsets_v8,
+>> +
+>> +	.serdes_tbl		= glymur_usb43dp_serdes_tbl,
+>> +	.serdes_tbl_num		= ARRAY_SIZE(glymur_usb43dp_serdes_tbl),
+>> +	.tx_tbl			= glymur_usb43dp_lalb_tbl,
+>> +	.tx_tbl_num		= ARRAY_SIZE(glymur_usb43dp_lalb_tbl),
+>> +	.pcs_tbl		= glymur_usb43dp_pcs_tbl,
+>> +	.pcs_tbl_num		= ARRAY_SIZE(glymur_usb43dp_pcs_tbl),
+>> +	.pcs_usb_tbl		= glymur_usb43dp_pcs_usb_tbl,
+>> +	.pcs_usb_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_usb_tbl),
+>> +	.pcs_misc_tbl		= glymur_usb43dp_pcs_misc_tbl,
+>> +	.pcs_misc_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_misc_tbl),
+>> +
+>> +	.dp_serdes_tbl		= qmp_v6_n4_dp_serdes_tbl,
+>> +	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v6_n4_dp_serdes_tbl),
+>> +	.dp_tx_tbl		= qmp_v6_n4_dp_tx_tbl,
+>> +	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v6_n4_dp_tx_tbl),
+>> +
+>> +	.serdes_tbl_rbr		= qmp_v6_n4_dp_serdes_tbl_rbr,
+>> +	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v6_n4_dp_serdes_tbl_rbr),
+>> +	.serdes_tbl_hbr		= qmp_v6_n4_dp_serdes_tbl_hbr,
+>> +	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v6_n4_dp_serdes_tbl_hbr),
+>> +	.serdes_tbl_hbr2	= qmp_v6_n4_dp_serdes_tbl_hbr2,
+>> +	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v6_n4_dp_serdes_tbl_hbr2),
+>> +	.serdes_tbl_hbr3	= qmp_v6_n4_dp_serdes_tbl_hbr3,
+>> +	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v6_n4_dp_serdes_tbl_hbr3),
+>> +
+>> +	.swing_hbr_rbr		= &qmp_dp_v6_voltage_swing_hbr_rbr,
+>> +	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
+>> +	.swing_hbr3_hbr2	= &qmp_dp_v5_voltage_swing_hbr3_hbr2,
+>> +	.pre_emphasis_hbr3_hbr2	= &qmp_dp_v5_pre_emphasis_hbr3_hbr2,
+>> +
+>> +	.dp_aux_init		= qmp_v4_dp_aux_init,
+>> +	.configure_dp_tx	= qmp_v4_configure_dp_tx,
+>> +	.configure_dp_phy	= qmp_v4_configure_dp_phy,
+>> +	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
+> 
+> So I see you are adding the DP related config here as well, but it is
+> definitely not compatible with v6 N4. I'm assyuming you picked v6 N4 as a default
+> just to allow the USB part work for now, right ?
+> 
+> I don't suppose we can drop the DP related config from this patch and
+> still have the USB part working, right?
+> 
+> Otherwise, we need to mention the fact that even though the DP part
+> is also being added, it is broken.
 
---4uianbie6i5kbvu2
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
-MIME-Version: 1.0
+Hi Abel,
 
-Hi,
+That is correct.  Without these defined, the USB path won't work, and 
+we'll need to supplement this if we wanted to add DP support.  Hence, 
+why I didn't add any mention of DP altmode in the commit text.  I can 
+clarify that we added DP placeholders if that makes it more clear in the 
+commit text.
 
-On Thu, Oct 23, 2025 at 09:37:56AM -0500, Rob Herring (Arm) wrote:
-> Generally at most 1 blank line is the standard style for DT schema
-> files. Remove the few cases with more than 1 so that the yamllint check
-> for this can be enabled.
->=20
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
-> ---
->  .../devicetree/bindings/power/supply/mt6360_charger.yaml     | 1 -
->  .../bindings/power/supply/stericsson,ab8500-charger.yaml     | 1 -
-
-Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
--- Sebastian
-
---4uianbie6i5kbvu2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmj8CpEACgkQ2O7X88g7
-+pqEIQ//WxlORWTU9xe37JxSV9323KQXYJPU3wtmtK4U8OlNGoVKu9XeR3w5pitG
-uy2cIzo80EdVMKsq5GKcONqwht31w9+RJaWZmytnll9Wbe3eiW3Lu6Ymx2zopgcW
-OoRuaiPPQUqGdgt7+VKgNt+4kH1sX/ur8z/Zd1rUrK9Xkks09pdqcZ/wpjm6KlQw
-e7x03OaDQ5h17Cg56SgH7NwoYjoUXDuSEKoZDx4wv5DQWh171Ez0/tWvYwYxM7+a
-Pxqt+zTDC1hdh6j1CaiOuwNb7pbdfcOWS7WZC8BPHNYW3eqFk5OQg+tZwEgoK9zV
-GLO0FrPPimJLgL2mfnq5FP0SzYU7FNgJD6gD/qKPzjsQlFLnwn69QCH/nTA9J/ZT
-ajcxgv6FLs3R3CGRptDBEUPOXez3dJeMeaN7hNeoswZNAe9uw1irXmedEzxLDO7S
-8WDVz6MvUAXOdXEcI+pUvuYfGWPwuJHspOgPuOwzO2sqg212V3sScOGcATq2BTDD
-mpc8LtRdKoZ3vUS9cVLRxtqLo8YB5roCBg0HEOexrwJayA074TSteqXhF2LH7LOW
-IcSZ37y+8QgWjTO2aXsiLJjoK2PsOLnvKzBRD5aeLhMd4H1Lw1xCxi75ut/fJPUY
-MLaS7WMtq7TVMRxBrjz8kaiR4opj84mVIXbVgoiISYooEKbbdic=
-=pPcb
------END PGP SIGNATURE-----
-
---4uianbie6i5kbvu2--
-
-
---===============1822299787538074915==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
+Wesley CHeng
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1822299787538074915==--
-
