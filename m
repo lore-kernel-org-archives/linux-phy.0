@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D095CCD193
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 08:59:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D726CCF9E5
+	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 09:01:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t5TZ90tXAqQWQYyqvcLHBGajW2ArrpXIuoLxz6O5OhY=; b=HssTlPlHkCd8Gq
-	79FCzRrMu8/txu9PD/JGC0b7w5qFLjicO/rtIZI0XHvAnYtrn5c0AzNSW4MJdwjaKBYqqPHZic36x
-	JZSupJyvH1YbQQdb+gqa37qBYUEoagnF/sseFf8QrEaf64Zz1iv/e4pzXBAsOpgNtJVCWnS8E++uG
-	ICE9+lX7yte0jtWD+XfVCx5yGA1WLoYeqAkxjRWmSlCg9xwgNK7oFabZIF0fOzPHBjlg0n1pLR4ZO
-	s32UK3CU0Go4X1VYI8Tk4lWH0z3SwASnnEpyhKDS7frCuaBs4lVEoJm9NlvNjTVQuzYQl0cAAW/n8
-	cs1jlseODMn7/aQDaXsA==;
+	List-Owner; bh=lvJ5DBZ8u7KK76kDCGWm9XIRN9gneYkh59GbnpsERqQ=; b=frHd1oxRvYyh/E
+	5cZ43f12niDDuVlapAmwibBxp/UdBM9jJmQA/aU03+xnCPai53rSJgjzgwoll1iv4cjCzExwoAzyi
+	h/p9mgwHf1OsOEiCfYtkE0WZlst7wrDsuB392eCAZwSYN6vrEnZYpKTXQi/RWq04eSU58yFVcGzaN
+	flNOUTQ1VtBk7tSAWHVf4sukNZ3GFiCQaYvftC41umj6qfa6KcyB93NkubPe7Tx9joityWEDgbQUM
+	d7RNXntgJ+uS9mJ4nICNtmY6aduFM/J2u6IeRTR3ulm+TnQmqbBXniNBjpHDOj8ptMPlLYDCp3ciU
+	2iFMJxO6EmeW/IidoUWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwap-0000000CC8H-3LHJ;
-	Sun, 26 Oct 2025 08:59:15 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vCwcW-0000000CCCM-0rvK;
+	Sun, 26 Oct 2025 09:01:00 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwan-0000000CC7y-0Wdo
+	id 1vCwcV-0000000CCCC-0yJU
 	for linux-phy@lists.infradead.org;
-	Sun, 26 Oct 2025 08:59:14 +0000
+	Sun, 26 Oct 2025 09:00:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 74ACA43C06;
-	Sun, 26 Oct 2025 08:59:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA371C4CEE7;
-	Sun, 26 Oct 2025 08:59:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7E5AE60259;
+	Sun, 26 Oct 2025 09:00:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C05FC4CEE7;
+	Sun, 26 Oct 2025 09:00:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761469152;
-	bh=+NLdj7+MCeZ+zV2z6gQfnlmhyU7KIWfk6aOvvgBgryg=;
+	s=k20201202; t=1761469258;
+	bh=Z71V+IflA+1QIYvB78gXEjtvWZVDY+fxoMPkw5MVsEU=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=QGD6COkcQUdDFnh2CVeKMXOOhu3oMfg1JZ/6Hno5SxL9LMnR62RqGPk4czwTZOUAR
-	 pKyJLjDxdpMSaI4O6Y5M6HaWjQx7vSTV7g8VTlR29U3Vu/twGq7Wu060usH/+uUqHo
-	 aripfue1T4XQ2GwHl+JgBhWQUsM35Pvm9kdauWrYf29ZIcNi0M/Bw7LxM1Ks3nW1NR
-	 M5HDIZmOsTdDmQIUYW2pdvU8vkBM0psDhrlYC6ymt1rv1bTMqZS9PZgVKne6GImTwo
-	 0jsdqW/BH8+gICJ3+yFUPj0L33ABE/JxLObD5XVkxjkKF9TMDVnAOhOsShJ+WYDEXX
-	 3mPRUfzleny9Q==
-Message-ID: <c0a58766-ed04-4fbf-a821-5b912233b26b@kernel.org>
-Date: Sun, 26 Oct 2025 09:59:07 +0100
+	b=q3JOHsO2ROcTX0FUPMsd3zQNjY4q3f92TSDuUzFnOCs4xDyb3H+hR+tjAwCmSXQG7
+	 nNhcwiI5bkiDAqhS/Iz4gfiKAa3HYQ4OrHZ1WoPeIAupxq7Ri04nERoScjPiBRJBP5
+	 frRf2C4OmHfQh87CZOL5kTUsZkojQIfoP0Gc5uXCkOSf2GwjXWGgIfscj9a1NaSFor
+	 oXwQkVNkssatw0bH40z1Fbk0BM9IfSkRdqx2W7htTPI+fMuI93XEyOjOlXy0P6Ehi5
+	 Qf5FgByu48MmBd3RDudvtv0NgseDbGV/rUw0bVxHSiA60l3y9uB+Yf7kodLzc1931b
+	 7q2NRoGQdVhGw==
+Message-ID: <e1c5ef06-f1a0-47e7-8fbb-8cc51ce25491@kernel.org>
+Date: Sun, 26 Oct 2025 10:00:53 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 2/8] dt-bindings: phy: qcom,qmp-usb: Add Glymur USB UNI
- PHY compatible
+Subject: Re: [PATCH v6 3/8] dt-bindings: phy: qcom-m31-eusb2: Add Glymur
+ compatible
 To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -56,7 +56,7 @@ To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
- <20251024-glymur_usb-v6-2-471fa39ff857@oss.qualcomm.com>
+ <20251024-glymur_usb-v6-3-471fa39ff857@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,11 +102,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251024-glymur_usb-v6-2-471fa39ff857@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_015913_212413_C386E309 
-X-CRM114-Status: UNSURE (   6.12  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251024-glymur_usb-v6-3-471fa39ff857@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,33 +120,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 25/10/2025 02:47, Wesley Cheng wrote:
->  
->    vdda-pll-supply: true
->  
-> +  refgen-supply: true
-> +
->    "#clock-cells":
->      const: 0
->  
-> @@ -114,6 +117,7 @@ allOf:
->          compatible:
->            contains:
->              enum:
-> +              - qcom,glymur-qmp-usb3-uni-phy
->                - qcom,qcs8300-qmp-usb3-uni-phy
->                - qcom,qdu1000-qmp-usb3-uni-phy
->                - qcom,sa8775p-qmp-usb3-uni-phy
-> @@ -126,6 +130,7 @@ allOf:
->      then:
->        properties:
->          clocks:
-> +          minItems: 4
+> Add the Glymur compatible to the M31 eUSB2 PHY, and use the SM8750 as
+> the fallback.
+> 
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+> ---
 
-Why? Does not look related to this patch.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
->            maxItems: 4
-
->          clock-names:
 Best regards,
 Krzysztof
 
