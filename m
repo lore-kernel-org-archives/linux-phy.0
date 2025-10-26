@@ -4,105 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D726CCF9E5
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 09:01:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6844CCD1A5
+	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 13:52:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lvJ5DBZ8u7KK76kDCGWm9XIRN9gneYkh59GbnpsERqQ=; b=frHd1oxRvYyh/E
-	5cZ43f12niDDuVlapAmwibBxp/UdBM9jJmQA/aU03+xnCPai53rSJgjzgwoll1iv4cjCzExwoAzyi
-	h/p9mgwHf1OsOEiCfYtkE0WZlst7wrDsuB392eCAZwSYN6vrEnZYpKTXQi/RWq04eSU58yFVcGzaN
-	flNOUTQ1VtBk7tSAWHVf4sukNZ3GFiCQaYvftC41umj6qfa6KcyB93NkubPe7Tx9joityWEDgbQUM
-	d7RNXntgJ+uS9mJ4nICNtmY6aduFM/J2u6IeRTR3ulm+TnQmqbBXniNBjpHDOj8ptMPlLYDCp3ciU
-	2iFMJxO6EmeW/IidoUWw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fH81+qdeCPwTMJ4qKxMFdZUzbl0Nl+/FxxCUOrPQKxE=; b=ZqJVmKXrM9fGG6
+	WGXzXTX2jZmb1GzkVjW5/jk8DdA42Y8X3rUFFQ55wsM1OyARI4aJ5j8QNmxkh6l2QqDz3BFa6Ry/R
+	CJjx/qYU5lHQkXPi7oyvdcVLdahJJ0XuKGjcylQc484TtUviyhxT7i2i1harCf/iDV7fJ+XjjUajl
+	460emqh+6nWtEPa004am8qK9xB+WtvnDBOywG82/QBDY3bzm5kxvsG7VZJFKZrvr5vgkyCQ70XCQO
+	gRnTqXuLBQe3C4PUr9SOssVOUavQeW4BkCsCnzBIFBoTkwB04lEOiRtSzTno2w9YssADCnJscj8rN
+	VxWN6qphT8L/TIgFj0nw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwcW-0000000CCCM-0rvK;
-	Sun, 26 Oct 2025 09:01:00 +0000
+	id 1vD1AL-0000000CNb0-1CMS;
+	Sun, 26 Oct 2025 13:52:13 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwcV-0000000CCCC-0yJU
-	for linux-phy@lists.infradead.org;
-	Sun, 26 Oct 2025 09:00:59 +0000
+	id 1vD1AJ-0000000CNZo-1Y9D;
+	Sun, 26 Oct 2025 13:52:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7E5AE60259;
-	Sun, 26 Oct 2025 09:00:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C05FC4CEE7;
-	Sun, 26 Oct 2025 09:00:55 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 87E5660347;
+	Sun, 26 Oct 2025 13:52:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 01868C4CEE7;
+	Sun, 26 Oct 2025 13:52:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761469258;
-	bh=Z71V+IflA+1QIYvB78gXEjtvWZVDY+fxoMPkw5MVsEU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=q3JOHsO2ROcTX0FUPMsd3zQNjY4q3f92TSDuUzFnOCs4xDyb3H+hR+tjAwCmSXQG7
-	 nNhcwiI5bkiDAqhS/Iz4gfiKAa3HYQ4OrHZ1WoPeIAupxq7Ri04nERoScjPiBRJBP5
-	 frRf2C4OmHfQh87CZOL5kTUsZkojQIfoP0Gc5uXCkOSf2GwjXWGgIfscj9a1NaSFor
-	 oXwQkVNkssatw0bH40z1Fbk0BM9IfSkRdqx2W7htTPI+fMuI93XEyOjOlXy0P6Ehi5
-	 Qf5FgByu48MmBd3RDudvtv0NgseDbGV/rUw0bVxHSiA60l3y9uB+Yf7kodLzc1931b
-	 7q2NRoGQdVhGw==
-Message-ID: <e1c5ef06-f1a0-47e7-8fbb-8cc51ce25491@kernel.org>
-Date: Sun, 26 Oct 2025 10:00:53 +0100
+	s=k20201202; t=1761486730;
+	bh=Qn6+VQWRGWVLcW0LssIvm+mf9owqObJv5nvDTG7kjhs=;
+	h=From:Subject:Date:To:Cc:From;
+	b=aKxdhNuQdMAqLyJJpBm1CJlbszRqcjpNKtSxr6zksUikCgbt5Gqcdd3feAIzOcdd+
+	 67NNPc+n8P57QeLa/uAtcPSxUV93nIPJOQxA8N/+W994+hyc5o7Zo4HUTY/+Fc9ZHv
+	 sdLlxk3YCeiqIqtPVI5NnXtKtdqtJebXCDZXb3zeuu1OLze9tuy2/WkgYfHpVH0kB2
+	 cUF2yP4ges7dI6Wy7xRg6S3rgQX70rRhZzt8rrBTiWwKIjPRHEuhdh19wmEby1JP3V
+	 P/KSDFjrg6SWyCx2zoNGLY0kV1jP5khuX+tEpsw0WgnG7+CQngVdMGLUAEOirrf4RC
+	 0qSn51nTX8FSg==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E2449CCD193;
+	Sun, 26 Oct 2025 13:52:09 +0000 (UTC)
+From: Sven Peter <sven@kernel.org>
+Subject: [PATCH 0/3] Apple Silicon Type-C PHY
+Date: Sun, 26 Oct 2025 13:52:00 +0000
+Message-Id: <20251026-b4-atcphy-v1-0-f81b1225f9c6@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 3/8] dt-bindings: phy: qcom-m31-eusb2: Add Glymur
- compatible
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>,
- Abel Vesa <abel.vesa@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
- <20251024-glymur_usb-v6-3-471fa39ff857@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20251024-glymur_usb-v6-3-471fa39ff857@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAIAn/mgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1NDA0Nj3SQT3cSS5IKMSt0Us0TzZEtjyxQTQ3MloPqCotS0zAqwWdGxtbU
+ Ao+uRLFsAAAA=
+X-Change-ID: 20251013-b4-atcphy-d6a7c939d417
+To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Sven Peter <sven@kernel.org>, 
+ Alyssa Rosenzweig <alyssa@rosenzweig.io>, Hector Martin <marcan@marcan.st>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2495; i=sven@kernel.org;
+ h=from:subject:message-id;
+ bh=Qn6+VQWRGWVLcW0LssIvm+mf9owqObJv5nvDTG7kjhs=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ8Y/9cbCqdWGKQsYCn5d2ifVsPLRfIcvzk98G7jLLzGrz
+ ffxu7mto5SFQYyDQVZMkWX7fnvTJw/fCC7ddOk9zBxWJpAhDFycAjCRxeGMDFue8sr92Bp8TmvR
+ s5BvQt92xoscVm+tFb+Y2ui6Isr0719Ghn1tK9uWvH/mJMu/873vC277Ntm3b1Z3VllJ55ly7n2
+ Zxw8A
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
+X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
+ auth_id=407
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,17 +89,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/10/2025 02:47, Wesley Cheng wrote:
-> Add the Glymur compatible to the M31 eUSB2 PHY, and use the SM8750 as
-> the fallback.
-> 
-> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> ---
+Hi,
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+As requested in the previous version of the Apple Silicon USB3 support
+series this one only contains the changes required for the Type-C PHY.
+
+The generic tunable support inside driver/soc/apple will also be re-used
+for Thunderbolt later. I may submit a RFC for that this cycle but I
+don't expect that to land before the next one so it should be fine to
+just take that commit through the phy tree as well.
+
+Changes since v2 of the combined series:
+- Link to v2: https://lore.kernel.org/asahi/20250906-atcphy-6-17-v2-0-52c348623ef6@kernel.org/
+- atc.c:
+  - Removed a bunch of outdated safety checks from atc.c that were only
+    required in a previous version that did not rely on the dwc3-glue
+    driver
+  - Addressed Philipp's review comments:
+    - Added documentation for struct apple_atcphy (and a bunch of other
+      things while I was at it)
+    - Moved the mutex guard from atcphy_dpphy_configure to atcphy_dp_configure
+      since the first one doesn't touch any shared structures or MMIO
+- apple,atcphy.yaml:
+  - Added a generic apple,tunable definition that uses uint32-matrix
+    and refer to that one from the individual tunable properties
+  - Adjust the tunable description to make it easier to understand
+  - Limited all lines to 80 chars
+  - Used > for longer descriptions
+  - Fixed some typos
+- Picked up r-b tags (thanks!)
+
+Best,
+
+Sven
+
+Signed-off-by: Sven Peter <sven@kernel.org>
+---
+Sven Peter (3):
+      soc: apple: Add hardware tunable support
+      dt-bindings: phy: Add Apple Type-C PHY
+      phy: apple: Add Apple Type-C PHY
+
+ .../devicetree/bindings/phy/apple,atcphy.yaml      |  222 ++
+ MAINTAINERS                                        |    2 +
+ drivers/phy/Kconfig                                |    1 +
+ drivers/phy/Makefile                               |    1 +
+ drivers/phy/apple/Kconfig                          |   14 +
+ drivers/phy/apple/Makefile                         |    4 +
+ drivers/phy/apple/atc.c                            | 2279 ++++++++++++++++++++
+ drivers/soc/apple/Kconfig                          |    4 +
+ drivers/soc/apple/Makefile                         |    3 +
+ drivers/soc/apple/tunable.c                        |   71 +
+ include/linux/soc/apple/tunable.h                  |   60 +
+ 11 files changed, 2661 insertions(+)
+---
+base-commit: 3a8660878839faadb4f1a6dd72c3179c1df56787
+change-id: 20251013-b4-atcphy-d6a7c939d417
 
 Best regards,
-Krzysztof
+-- 
+Sven Peter <sven@kernel.org>
+
+
 
 -- 
 linux-phy mailing list
