@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2836CCD193
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 08:58:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D095CCD193
+	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 08:59:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V42F+4KqdiINcgVPhoZzKlHXaMLrEBw0izl/V00DOEA=; b=xgYfJs77MRmz5X
-	2g0ESYxbmiKQMIIegSSgkz54yDz3K3XqyGJTfa3SFd/BoTrBnZmvoK1/UQHojxQugGOdJYHC5Y+ZZ
-	ghlqD8n5BABD26xJ3hBFEBbGdDRRZHy6GSyjXsnqo/bvNyqTeu/t8lYIajvaRBeWQVhLTUU8jmSCE
-	DeL0BO9jLWkEqmdl8onVcNAv97dgiDGEBkQyn6NK3R43jzW676NTb5RUBqF9f0dEytu8NYRJqt/a8
-	mKMsZA/R6i2AtXDWo9F2h/isy9OGWMbFx5ZoaKadrIy7HfRcqWxj4UnoHluK83oqc3r/JBe3tZe4d
-	2IWY4kkSxoiA5IHCCGng==;
+	List-Owner; bh=t5TZ90tXAqQWQYyqvcLHBGajW2ArrpXIuoLxz6O5OhY=; b=HssTlPlHkCd8Gq
+	79FCzRrMu8/txu9PD/JGC0b7w5qFLjicO/rtIZI0XHvAnYtrn5c0AzNSW4MJdwjaKBYqqPHZic36x
+	JZSupJyvH1YbQQdb+gqa37qBYUEoagnF/sseFf8QrEaf64Zz1iv/e4pzXBAsOpgNtJVCWnS8E++uG
+	ICE9+lX7yte0jtWD+XfVCx5yGA1WLoYeqAkxjRWmSlCg9xwgNK7oFabZIF0fOzPHBjlg0n1pLR4ZO
+	s32UK3CU0Go4X1VYI8Tk4lWH0z3SwASnnEpyhKDS7frCuaBs4lVEoJm9NlvNjTVQuzYQl0cAAW/n8
+	cs1jlseODMn7/aQDaXsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwZf-0000000CC5e-1uKb;
-	Sun, 26 Oct 2025 08:58:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vCwap-0000000CC8H-3LHJ;
+	Sun, 26 Oct 2025 08:59:15 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCwZd-0000000CC5Y-2lZz
+	id 1vCwan-0000000CC7y-0Wdo
 	for linux-phy@lists.infradead.org;
-	Sun, 26 Oct 2025 08:58:01 +0000
+	Sun, 26 Oct 2025 08:59:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id ED25F60259;
-	Sun, 26 Oct 2025 08:58:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C2F47C4CEE7;
-	Sun, 26 Oct 2025 08:57:57 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 74ACA43C06;
+	Sun, 26 Oct 2025 08:59:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA371C4CEE7;
+	Sun, 26 Oct 2025 08:59:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761469080;
-	bh=3iawiwdyl6YkqwgoT3jaWO1ZcL+rxdAJv50E5bPZZps=;
+	s=k20201202; t=1761469152;
+	bh=+NLdj7+MCeZ+zV2z6gQfnlmhyU7KIWfk6aOvvgBgryg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=MddvoryIKXSC+00ow4/Mj5ZMva5KkF5PPTRsIODKM1+8ev+HGWdBm+lYq0QxPDOWZ
-	 a2/rXK3Z0PFLJtPhQ2KrTssD+sCMGtwmeR7x0qhfEv1lo55R2STCx8u2rNPYSt6pVx
-	 iVPJ/aMH0YoeZKXlnjCg7u438TCis9cOavXLgh9ddUNYmyGB5Gq5bzC9HOcJMbztxd
-	 2XCm/4PQyA/M8OTYgHGHxJkATGo8564oyrr/ZVYf8vkTFE3Qbo6uay7d12x/ImcpA/
-	 cRhZ9VDe7rzTBSFAsbUVIw0r2cTclxXpXar1x801xNaDMChj0S5t03a75O/kRA8AsV
-	 l7t6n/UTzRR9g==
-Message-ID: <68033c02-7860-420d-9fa7-29b844631bce@kernel.org>
-Date: Sun, 26 Oct 2025 09:57:56 +0100
+	b=QGD6COkcQUdDFnh2CVeKMXOOhu3oMfg1JZ/6Hno5SxL9LMnR62RqGPk4czwTZOUAR
+	 pKyJLjDxdpMSaI4O6Y5M6HaWjQx7vSTV7g8VTlR29U3Vu/twGq7Wu060usH/+uUqHo
+	 aripfue1T4XQ2GwHl+JgBhWQUsM35Pvm9kdauWrYf29ZIcNi0M/Bw7LxM1Ks3nW1NR
+	 M5HDIZmOsTdDmQIUYW2pdvU8vkBM0psDhrlYC6ymt1rv1bTMqZS9PZgVKne6GImTwo
+	 0jsdqW/BH8+gICJ3+yFUPj0L33ABE/JxLObD5XVkxjkKF9TMDVnAOhOsShJ+WYDEXX
+	 3mPRUfzleny9Q==
+Message-ID: <c0a58766-ed04-4fbf-a821-5b912233b26b@kernel.org>
+Date: Sun, 26 Oct 2025 09:59:07 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 1/8] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Add Glymur compatible
+Subject: Re: [PATCH v6 2/8] dt-bindings: phy: qcom,qmp-usb: Add Glymur USB UNI
+ PHY compatible
 To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -56,7 +56,7 @@ To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
- <20251024-glymur_usb-v6-1-471fa39ff857@oss.qualcomm.com>
+ <20251024-glymur_usb-v6-2-471fa39ff857@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,7 +102,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251024-glymur_usb-v6-1-471fa39ff857@oss.qualcomm.com>
+In-Reply-To: <20251024-glymur_usb-v6-2-471fa39ff857@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251026_015913_212413_C386E309 
+X-CRM114-Status: UNSURE (   6.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,20 +124,33 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 25/10/2025 02:47, Wesley Cheng wrote:
-> Define a Glymur compatible string for the QMP PHY combo driver, along with
+>  
+>    vdda-pll-supply: true
+>  
+> +  refgen-supply: true
+> +
+>    "#clock-cells":
+>      const: 0
+>  
+> @@ -114,6 +117,7 @@ allOf:
+>          compatible:
+>            contains:
+>              enum:
+> +              - qcom,glymur-qmp-usb3-uni-phy
+>                - qcom,qcs8300-qmp-usb3-uni-phy
+>                - qcom,qdu1000-qmp-usb3-uni-phy
+>                - qcom,sa8775p-qmp-usb3-uni-phy
+> @@ -126,6 +130,7 @@ allOf:
+>      then:
+>        properties:
+>          clocks:
+> +          minItems: 4
 
-Bindings are for hardware, not driver.
+Why? Does not look related to this patch.
 
-> resource requirements.  Add a different identifier for the primary QMP PHY
+>            maxItems: 4
 
-What is an "identifier"?
-
-> instance as it does not require a clkref entry.
-
-I do not see how this is related or relevant. You add some identifier
-because clkref is not needed? And if clkref was needed you would not add
-that identifier?
-
+>          clock-names:
 Best regards,
 Krzysztof
 
