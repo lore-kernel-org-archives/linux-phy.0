@@ -4,63 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAA0BCCF9E9
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 21:17:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7571CCF9E5
+	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 22:25:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M5bx9Ud7s7UG3qzs0k4IDEYvFKbXeWjr+TMb/Qr+iiU=; b=VgezG3KQT6VbqS
-	IqwP17I21syLiQD5CgFMQvYrZZKta3s++nmtiScSXQBOERGDbZBYEZkECwRyixB2QsRBeaQJxAuZG
-	jDNzR2SOBFjvuh2PHesjylI1BFHI14qACWM/9BkO2UmeZfFOhXVKjkukymhEKOH3Z3Cf231TpxiRR
-	9cbB7LkQ0UUHu5BptxbwHkdDWRx3o2HdVpvz2Nz2y2QbfAMW7rft6THzu19hOhJMfyb/JKsfv8NRa
-	7UKeThLSotz9qwGHr017BD/PBmF87AbxEbRVUDSTQ2223+SGniQ04sfzINaaSD3Xv4CtNjikADvWS
-	Syx+a/G9Rk3RRlrvtmVg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=F2C5GR6EiR8mAZ1tJQGER6FYVFspmF6ekhj9xn3eDqY=; b=NNODIpo03J0J1zNGEB5irKezW3
+	IcIC0EhSIDl9q34Vj4zlVm4iNgcsZUajG2scdXwWgQVXx4ZrTThrZj9iKfr67+QTtwEgn+bLnajXo
+	zqpreQJ7c5osF/4uSOwqk54ZBtTA3y39ECnJTogbOyXcIIx3e2ZDy8zQcVMFfZa8CvuioR1fZ2Hr/
+	9B9jmx3u2e1xj3Ep9zZEeZWkMsOEoNkS6KhtYXn4kowXH9m1ahxG8sBAQa9kKJlMGsuh41G/59gqw
+	iCF9WNK6VAM4eiWUEB9olIpW8Bsnzv05nR3vYlq+BcAqjhS2lgeTT91HAB5PJCtaldol7U/2qrTvn
+	2TwnVmAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vD878-0000000Cktd-1bHQ;
-	Sun, 26 Oct 2025 21:17:22 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vD9BT-0000000CoUr-28SN;
+	Sun, 26 Oct 2025 22:25:55 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vD876-0000000Cksj-1kbr
-	for linux-phy@lists.infradead.org;
-	Sun, 26 Oct 2025 21:17:21 +0000
+	id 1vD9BR-0000000CoTx-1LyE;
+	Sun, 26 Oct 2025 22:25:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 60BFD40358;
-	Sun, 26 Oct 2025 21:17:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F542C4CEE7;
-	Sun, 26 Oct 2025 21:17:18 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6B0DA60330;
+	Sun, 26 Oct 2025 22:25:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49624C4CEE7;
+	Sun, 26 Oct 2025 22:25:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761513439;
-	bh=nVTMFH3So27LyHQuXMPPHtrd7ND7ymeCK1tF644Emr0=;
+	s=k20201202; t=1761517552;
+	bh=YcfVCtLK/W1LvoMvGvygXNzNh0vRWUm1hNpESZXkvZk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EfvI2uaWg0oFtOyOp9EHzv19qKi5Bdo4XPoLVZcsEMcNvyV+gnReiAbGIOWTIFgQZ
-	 zz8Wc75t0gIVEAe0slC5iTe59xyJFdEIcsd3HzCwvOdnkknVF/elduigL6VBWxkwuD
-	 wpiHMFe+8CuelQkJDjdutxAo5LYqa/SIw4imxsC9adg0MsoW8qqJZqmaaw9EgXGh/k
-	 cXSV5leN3urw27mGAhHgptJjvR7+vHLW6rP+Ckdxt44r+0MKf6LY2aQgvRYJt9HZ9X
-	 iGINGrAEL7WO9a00ihuUtkI6NTTjah3rSHHUHAnEemv736TgSYV+vLk+198LM89Fi/
-	 wwlOHB5L208EA==
-Date: Sun, 26 Oct 2025 16:17:17 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, devicetree@vger.kernel.org,
-	linux-arm-msm@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	b=X55sznBAWggJ/HDGIZ6dcBSXLmlm8wZtp4v11We2/RanthjNuuSqrLXxB3D6+dJjG
+	 KWLdA/u217zShuCi99Na37WPbV+mGEk3vLOm7l2lwkobjD01Ue0VTeVaSkehFWCkFY
+	 VIsVUB+J5nn8qynVBOGW4T94+24+ocYVV67OfpVpp8MZvBE9yBuq90LCEBwr8dCLPS
+	 54mHUndnVBWYO4DsnbhAUNwGBuMydDoQLLoD/wxo//W+p4+51f+YoNswBdb0VumVAz
+	 faYPxFUmixtcIAAjpcJMrs7xJr5oYeDft/J4naku8wTQTYHiSwYYy3gBXnRTXFElR6
+	 3f/UL93sKp2tQ==
+Date: Sun, 26 Oct 2025 22:25:44 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Cc: Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Restrict
- resets per each device
-Message-ID: <176151343423.2959050.2808385809411398103.robh@kernel.org>
-References: <20251017045919.34599-2-krzysztof.kozlowski@linaro.org>
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Peter Wang <peter.wang@mediatek.com>,
+	Stanley Jhu <chu.stanley@gmail.com>,
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+	"Martin K. Petersen" <martin.petersen@oracle.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+	kernel@collabora.com, linux-scsi@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 03/24] dt-bindings: ufs: mediatek,ufs: Add mt8196
+ variant
+Message-ID: <20251026-these-wise-9b5e63c78907@spud>
+References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
+ <20251023-mt8196-ufs-v3-3-0f04b4a795ff@collabora.com>
+ <20251024-thrash-amid-d5af186c4319@spud>
+ <5617400.31r3eYUQgx@workhorse>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251017045919.34599-2-krzysztof.kozlowski@linaro.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_141720_503634_88DCD70C 
-X-CRM114-Status: UNSURE (   8.28  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <5617400.31r3eYUQgx@workhorse>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,27 +86,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0673911706870751440=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 17 Oct 2025 06:59:20 +0200, Krzysztof Kozlowski wrote:
-> Bindings should be complete, thus complete the constraints for the
-> resets by adding missing compatibles for devices with two resets and
-> "else:" clause narrowing them for all other devices.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml          | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
+--===============0673911706870751440==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="LhPY1uIXOXYzwQC0"
+Content-Disposition: inline
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
+--LhPY1uIXOXYzwQC0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Oct 24, 2025 at 07:51:11PM +0200, Nicolas Frattaroli wrote:
+> On Friday, 24 October 2025 19:13:36 Central European Summer Time Conor Do=
+oley wrote:
+> > On Thu, Oct 23, 2025 at 09:49:21PM +0200, Nicolas Frattaroli wrote:
+> >=20
+> > >      };
+> > > +  - |
+> > > +    #include <dt-bindings/reset/mediatek,mt8196-resets.h>
+> > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > > +
+> > > +    ufshci@16810000 {
+> > > +        compatible =3D "mediatek,mt8196-ufshci";
+> > > +        reg =3D <0x16810000 0x2a00>;
+> > > +        interrupts =3D <GIC_SPI 320 IRQ_TYPE_LEVEL_HIGH>;
+> > > +
+> > > +        clocks =3D <&ufs_ao_clk 6>,
+> > > +                 <&ufs_ao_clk 7>,
+> > > +                 <&clk26m>,
+> > > +                 <&ufs_ao_clk 3>,
+> > > +                 <&clk26m>,
+> > > +                 <&ufs_ao_clk 4>,
+> > > +                 <&ufs_ao_clk 0>,
+> > > +                 <&topckgen 7>,
+> > > +                 <&topckgen 41>,
+> > > +                 <&topckgen 105>,
+> > > +                 <&topckgen 83>,
+> > > +                 <&ufs_ao_clk 1>,
+> > > +                 <&ufs_ao_clk 2>,
+> > > +                 <&topckgen 42>,
+> > > +                 <&topckgen 84>,
+> > > +                 <&topckgen 102>;
+> >=20
+> > This is absolutely a nitpick thing, but if you end up resubmitting, can
+> > you pick a consistent format between the two examples your series adds
+> > for the clocks/clock names?
+>=20
+> No problem, will do. IIRC I kept them as a list like this so I could
+> easily reorder things, but now that I'm fairly sure this order is the
+> correct one, it's probably best to make this more compact.
+>=20
+> Also sorry for the numbers as clock IDs, but MediaTek clock headers
+> have conflicting symbols and the dt schema example extractor dumps
+> all examples into one dts file. :(
+
+Numbers is fine, dw about that.
+
+> Since this has bugged me in the past, and many schemas may rely on
+> the concat behaviour now: would a patch in the distant future that
+> prefixes all MediaTek clock binding headers with the SoC name be
+> acceptable if it keeps the old names intact as aliases to them with
+> a #ifndef guard?
+
+Honestly, I don't think it's that big of a deal to use the numbers,
+they're only examples after all (even if for soc-peripherals they're
+almost always exactly what is used in reality).
+
+What you do with aliases is really up to the mediatek platform
+maintainers, but I think if it were my platform I would just not bother.
+
+> I should also think about some way we can avoid similar bindings
+> symbol naming mishaps in the future.
+>=20
+> Thank you for pointing me in the right direction with regards to
+> the binding!
+>=20
+> Kind regards,
+> Nicolas Frattaroli
+>=20
+> > Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+> > pw-bot: not-applicable
+
+--LhPY1uIXOXYzwQC0
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaP6f6AAKCRB4tDGHoIJi
+0lVoAQDVEcmFlZDGe0sLSSI/vhJc1fCDdip8vWj9q3rZ4BUI+gEAyI4wOcjukunf
+BlHSEe6kYAuozj/qCFBWrR+C47CjOwk=
+=xrOe
+-----END PGP SIGNATURE-----
+
+--LhPY1uIXOXYzwQC0--
+
+
+--===============0673911706870751440==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0673911706870751440==--
+
