@@ -4,68 +4,165 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48EF7CCF9EB
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 17:02:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BE59CCF9E0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 17:10:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2VOdUOoTctwLTcC5K2C2VqXRzHrE/ZPst4lIzDM9v2k=; b=BviwTELMGfheOx
-	0C2RPq1vkAeo/GiBCqem44IT9TjQ1jAAXEeIavfFcq35LQ+U/AJGQk1ngVS9dK4z7D7NSRdsRxKR5
-	TQN6Xqi+CveAkiUXxNnFi+HLpc8GLU2r8PZsp9LqcovtdlzIUqubY1ZbFRsFRzZrormRB1i5UFp3s
-	ywISsavGnkLkS+X4KG8/H0dL82souwD2PUQOGwmeYMMp7R8/O06sROtD1HhVhXro7gFjgbXcS2K/1
-	iHm/Opkg/I3SSzZH9bCEsUf+2Mj/9aMYpK5KH/edJ/aghNGau7pxVcioDOnDqvpfuK9RcESwjbH0X
-	2GvNzq75vZG+O0uT1Pgg==;
+	List-Owner; bh=WzSrYKeVsi91x9uHi5yfNNafkiSz13cJ2+ICipjALI8=; b=UOkGDe6mgX0mY3
+	NReK91iBQHew3RYy5I+i0QZuKey4i8ygRUQPJCbsmDYrl8NS1X++1VTinY9o70/tCFIU/9MwZzBwr
+	FAxLEoPlnTi4AJc31bSPfc1ptYK0kaxnfreAcJIBh8fPF9GukjAP/japAqCPYKLjA/hnIv9fCJQs1
+	djzRibPcYBZbpqPmq5sB22o19ucsPw/ZNUPeQWQ0kC6r8zh8k4PCARE8LD/ZiOx2iVUsNjuyWoTTd
+	X+e967D16DeRS0obbVymClOOAb4PiCtaXgIjE53DDG5gOLrITF8ndC7MtbAkW1VLQV7wxaZpLSSKA
+	OZeC6k2bjzyzO0/vX91Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDQbl-0000000EOG6-3l5A;
-	Mon, 27 Oct 2025 17:02:13 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vDQk0-0000000EP2U-0TFk;
+	Mon, 27 Oct 2025 17:10:44 +0000
+Received: from mail-westeuropeazon11013008.outbound.protection.outlook.com ([52.101.72.8] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDQbj-0000000EOFl-1ACU
-	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 17:02:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9124640C58;
-	Mon, 27 Oct 2025 17:02:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F54EC4CEF1;
-	Mon, 27 Oct 2025 17:02:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761584530;
-	bh=aH66x+qi6wkGS5vlWmcbx+X2SNlXqg5IctaXAlPdLV0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=sROLKMoC+Cbth9uUgf8fowYWiC9iEhAnTvvWbcCBA35ZofYUNrFH/umMZ+XEsL74i
-	 yz2dSHQ7rHFb7P8HwAvMpdwmq0AuJHLdmddOyC2cQy3TRJ8BNgtYHs+vMXFFUnPiul
-	 UMJkDjOjmuMtTKIvNKAR82PKp2z6mzKeL/p5brB61B3+qI5Z+punIJQIoKIRm1QHms
-	 6K21l7qbO2zwDmwKhLHh3DKCwRqzauqUH6sfOWTDxMiaZ7D+U/tuu8uUFv73i9I7LB
-	 JFmK2fvPdGrA7Azj5MMKTqRhU4vOEIbCMd52eRd+BX687XqITCvDPxuMpNNjChv8pp
-	 f9tbifVHBK9lw==
-Date: Mon, 27 Oct 2025 12:05:02 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Ritesh Kumar <quic_riteshk@quicinc.com>
-Cc: robin.clark@oss.qualcomm.com, lumag@kernel.org, 
-	abhinav.kumar@linux.dev, jessica.zhang@oss.qualcomm.com, sean@poorly.run, 
-	marijn.suijten@somainline.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org, 
-	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, quic_mahap@quicinc.com, 
-	konradybcio@kernel.org, mani@kernel.org, James.Bottomley@hansenpartnership.com, 
-	martin.petersen@oracle.com, vkoul@kernel.org, kishon@kernel.org, 
-	cros-qcom-dts-watchers@chromium.org, linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: qcom-edp: Add edp ref clk for
- sa8775p
-Message-ID: <wai7uqe6bn6kcfp3gmgqvc7sfrs37vmpqh6cucc7mopwf5x76j@vkxbwvqiqlyz>
-References: <20251013104806.6599-1-quic_riteshk@quicinc.com>
- <20251013104806.6599-2-quic_riteshk@quicinc.com>
-MIME-Version: 1.0
+	id 1vDQjx-0000000EP1C-1N6A;
+	Mon, 27 Oct 2025 17:10:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=mZLuzk8xMy0bez18bCWkp+j4GX4SLad30kVe2x+p8oGcOKohi2KGTaBafsnmrJkqQxL3T1qLQWVa66uk8pkCydkjB0AuZ9b/76R7pv603rtrAERsG01y2Td8xelvfjAdI/HQ3WWEldxpP2e1yG47bjMMGrPVKsjl6S7cwA4rkj2fP3gKkwlniAWqJUf68PoHFbhIazxq/5idXb/1qhJVREuC+DTGZ9wEQ8Pw7NO8c5BtxpfVTiqNWSDTRhLpCj9H94FN+OM5YbF1x97RF1uUyc+IGsFy5OJ3cNRACiRtOe83L/084pdHreAJShBrB+O0PoAAIgtP3JEaYzLq03xWJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OmY3Y63ygZbKYxN8hDvRmfLLfX1KiCJc9JiOCWlEe0w=;
+ b=OWOLZ9vENiVc9Tphkgkq83cx1l5o3OexfbFzIrCe0KZb2xjtqtwt7fe9Ne0sYWtt3K+bZZaDlBpsyFvTDKGbjjtF15Bje4tFSoWV8T9jidAUXT6A2sGIbOEzfwX2MwZUiOjGH5MrBgDJn9AOnb0Yn75lWeJlSAFof1H0jp0qx5R2MeIrWNFXowL3g0Te86wWXsfXRx7j6gnrtiZLnJ8Gdlx/pDtemPQ/JR1ptHRNTzBA6TpHSTKZgaZuN2vph3I12HH0+QDZjxu2W6XjyXHuAzhYHNoQN1sPghfWkiYR1+0Dt7+/2JkPR7N2EK8ESe8fd5ZGv5kY7Pzjgrb1mMRJjA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OmY3Y63ygZbKYxN8hDvRmfLLfX1KiCJc9JiOCWlEe0w=;
+ b=X4J5JQJXweMSa2Xu2cqRqESmyTEi0+LMTb8oxGB1BFKmB2j4EiT3Z8pNIQX11eFVxUpntcAVxdlWB4kXCwZV/6H1HVDIhQLh1dQBQwQbXTg3Ghbb3ZZDWrh+QWQCIMBccZSb7ere0zXYkUOlhrg9OZIHLKzf5gNZgsN0RMqWF+fn5vOCtRRparHEjjRT1kCXzvvty7mjA29koO/SAVdZLbJOyG3XYJa7QYkQa3mouygxzT4HwdGpQ1FUXN7EXuHr3AQ8VYrGmXjPrnFmvUQhk6pm/Ek7STiHmvzCzlKldYhrALEa+xHyDo5PEVPNAyyuqpy9EJujwdxnejwxn4ANEA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
+ by FRWPR04MB11272.eurprd04.prod.outlook.com (2603:10a6:d10:19c::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.13; Mon, 27 Oct
+ 2025 17:10:35 +0000
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9253.017; Mon, 27 Oct 2025
+ 17:10:35 +0000
+Date: Mon, 27 Oct 2025 13:10:23 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev
+Subject: Re: [PATCH v3 02/31] media: v4l2-common: Add helper function
+ v4l_get_required_align_by_bpp()
+Message-ID: <aP+nf1hpvkafxHrF@lizhi-Precision-Tower-5810>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-2-c9286fbb34b9@nxp.com>
+ <20251027011927.GS13023@pendragon.ideasonboard.com>
 Content-Disposition: inline
-In-Reply-To: <20251013104806.6599-2-quic_riteshk@quicinc.com>
+In-Reply-To: <20251027011927.GS13023@pendragon.ideasonboard.com>
+X-ClientProxiedBy: BY1P220CA0025.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:a03:5c3::12) To AS4PR04MB9621.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4ff::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|FRWPR04MB11272:EE_
+X-MS-Office365-Filtering-Correlation-Id: 501169b8-b6cb-4e01-c8b9-08de157bbe5e
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|19092799006|52116014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?5jB5BbNH2UY+wtiyoCZ/jl4eJYkUfsTWK5LSoPMEDMCSf/4X90zEnw4HGTl0?=
+ =?us-ascii?Q?mT2G+Wvcvbc34HGztjQ1NtyuTXNgxC7V2rh7s5t3gO2eqaOb3DNzjZ++X2oP?=
+ =?us-ascii?Q?NETan8QtPR25uHPvBcbm4oByXDvIxuLFqfr2rMHz4CoUwklZtkL4UXIJvRPs?=
+ =?us-ascii?Q?EZZGXzDNHl5waKS3G6/IYodKEzHTZLWathweotArRWw9nquOvCZkBfxdk2Rf?=
+ =?us-ascii?Q?ufnOZm9+dGYhwFK7NquY3Y8TlGn7dlI9Dh53gBT3zBrfjCsqxnJL9hP6/mFX?=
+ =?us-ascii?Q?vClUf/NnQbe4xvWNP5EhHzTFrYtNwrNFmxInCSZ00k/xUtSNZVVZA5YMGY3r?=
+ =?us-ascii?Q?jIL8FZnjZIz8MtMGFME0GBRVyLypIQRzfPLRCgTlvkXc1b7EM2s4wRG7WW0E?=
+ =?us-ascii?Q?R+xL6LbW5Fpe8tMQ7frpvxk4/8xyHJlJSGAsJ8Vs1/uBRGP3HMZk5VhoiGci?=
+ =?us-ascii?Q?r/mKQHnQYvaiJqc1tB00ePjRKDd1JUgVFF82HxmHOS8d+ldASTPzsDRPQMU9?=
+ =?us-ascii?Q?x7WZAhJT0pU7gwNgZ2vbRcWQpjxqf8Rjy+R4yErCAFbjgJ/B1a5KKQoJLp12?=
+ =?us-ascii?Q?bEflGU90FxggZUBcumG5Eg9aG73HxIxYXcvU1ShWDMYleH3TnIOMp988LjGZ?=
+ =?us-ascii?Q?Wehlbl4rLzrwzaSkr3Sx3Man15ru2jtUT71FwUwClmQ4Rw+MIB9V97Jpdr0b?=
+ =?us-ascii?Q?QSJG2mPGXo7UtVZuw9GVr3dZfe/HNngcXNSJhdChDT4qpcR2NiIR77C3M+2U?=
+ =?us-ascii?Q?j3DHQhWUr2hbjvCH4Lj4dBxT4lMehCofCDRWMtj7KzCgbvMNFLsNujP33kIb?=
+ =?us-ascii?Q?mZHjgKjzWKuAqlUC2nCBrGp4HI3+Sf/CSyuu+pnJd0sdzON2V4+5tgvLhhVH?=
+ =?us-ascii?Q?9zo4h80CTnBE8PQavJzO2xeeTiE9dwyI44U9qyKRRlWWkHHLa/1sDTfFLa9q?=
+ =?us-ascii?Q?fNGkke9E34PjjJQ4+IiJjAzJrCqrjqmtVTYg4lswIrGidinUKI8nNnHiNcIq?=
+ =?us-ascii?Q?z7g1zEpC/+uK9qeP8o2jAMXy4oXXCjQxtC0iMhwWAOlGoPSl4nOnDYC2Gt1i?=
+ =?us-ascii?Q?jDueYik8tslI+nrJW/jEcXDPa/8hVGNBhLSEgh+kfiaQrRln11QFzKgEIy1b?=
+ =?us-ascii?Q?OImLBK5j0mD04J4wlaehgWZlCqDDGDmLoBudiWVyYS7ji3hSywPMjzM2+cgf?=
+ =?us-ascii?Q?OSna7jN8vTDkJDb5mR2nE95nxLsEOXD1BtTtc04eq7VlU52gnPN+o1IaIXjL?=
+ =?us-ascii?Q?kQ4Un/U3vLqUQHdak5Woaj+QZ54VbuvqemR0KDe/g+DZMqH2ZP2hnTa01Pfy?=
+ =?us-ascii?Q?XH17q8FLaWxkP0ARKA80h0cNSh3lgHxibhGFzUPHxTUBe1ACJh3FfGarUNcA?=
+ =?us-ascii?Q?b34UtuqOXiC6xuj4dfZYF6OBJvGhZ31F9/B45WuAjtxlvkzw5Q6zlFgvU4vT?=
+ =?us-ascii?Q?hIj/aYjkUmzhc625xaFm/B769IAiHTIHMECz7Yis+KGgrzUb7eXVc3ZLQQDw?=
+ =?us-ascii?Q?aEZUxUNBXrWgaifBrLLB4qgKPtkP9LlS5I3Q?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(19092799006)(52116014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?bacKZ7FGru35UXdDO4LU0o20zjdghaje+z72IP21qfKLt9NxB9YilErB2z/O?=
+ =?us-ascii?Q?TK8cNz4w8NTjshTaeTksnN8/f4TJtXr51SPCRqrVrYDuK6TuCIRirUBCV7H1?=
+ =?us-ascii?Q?J73XopqyYqUwUefja+i5ZnEneCmvDnpeyzsHWGpc/LbaVWXDAfQ/KbSu6ZVz?=
+ =?us-ascii?Q?m2yt6pA/4YG+iTeIlcuJ9XcIIlIHwgi02mDfrjoOqVDDLwDqFn/1/AlQgewE?=
+ =?us-ascii?Q?7j2im0qkJ9m3WDzrYG6WTqPl3KweuMkXhZoyis+ZhSjV9I3hvI0+/jPxkaL3?=
+ =?us-ascii?Q?qM5i4tvoixlOR4Iz7W2SRzK2TbCL1EVnJU1KX8goTt0eA7DeNK2zCpj+c49D?=
+ =?us-ascii?Q?Zg819hgxO2mz4dtVd8de2lzoI4mJmVJTHeu02zJgd3X1tPjV00OookSkPk+S?=
+ =?us-ascii?Q?0Uy53CtDfhUh6WBhk+G6ir/HVCNDbnPa4qKc+Ivuu10pBxwEkg6lkHPjgzEX?=
+ =?us-ascii?Q?iTuMIKztaSt8MHQltm9L/wuhGHBKaHWGCv5LmxNv9MdjEyWur3YUGdFLcfwQ?=
+ =?us-ascii?Q?PadYmS+eHzvedZZgYddlbA0QOxTLqHVJO3nf/DONQ/CoJDxGRrBLNQ/TCjMW?=
+ =?us-ascii?Q?hec2mxqaABoxkqminxQNeEjqm5swMeCpvbBsaxlPI3J0JXdmEMMQjlEVyp61?=
+ =?us-ascii?Q?8CyMRtXYIP45AQpfnuZt8BAEJ73cJptk4L/Cnvaj9WpRxYPNDBPs6JcjI+M4?=
+ =?us-ascii?Q?C89IUyTlb1IgiiVsQ4L9KIw2zBFkezDJKm1F1xfLSPIhPc8/h66+UdRwVh/M?=
+ =?us-ascii?Q?EVeQp4qkB78GmGwk7UUnXIY/bPMd7APS0xMI4B5zbwKXnesH3om5YPXdpCwG?=
+ =?us-ascii?Q?Un5Vr5sXg2itG4gNiZk4sOqXrFXjjCnkcZXgOEoWDoh3S3D+8YsfeSMl3lfO?=
+ =?us-ascii?Q?896vYCF5RXZ/vrVi2a4sLDTEjK3yi9ht1cqXwzaqNwnny45qxgoLZ5qu2eLN?=
+ =?us-ascii?Q?Nkdp2rH/rcV5Emq+LGesu46BpT2DoxOL1Ti7YO7xSglPNaIN9E9YrbtnJ9Sm?=
+ =?us-ascii?Q?IIFuie51IlfiICEWfStXwDgyViWcq2hcRArgFyKs0QUjR6co7+zbAF3UQ2ew?=
+ =?us-ascii?Q?GrF0qwa28/ZDcDFQgbmMki2tLRLPxGhSrxPg+eHAGR9+Yt/1q95CkRKTx0mR?=
+ =?us-ascii?Q?jMsvdlOtoUb2vTlHDP9Yv4BHAB1oKM3nL0Ly6HfVmPT8UhZb/Zp2ynH/IzFv?=
+ =?us-ascii?Q?OeHpvwtZaUBBSVwyXdCHwuPWP7aLwvFz1ZmeKDvkiAqnC3JjwZOuFoJkzWHB?=
+ =?us-ascii?Q?xul7h5GJg7cv4lLfBNZeHUdPIr8v3hWCjlCXiJbulOzqORD8ISy3ItNA28WS?=
+ =?us-ascii?Q?Z2Pl1bFjUSn6Tf02wQFi8wdRYNE4tQkR+GwSn3rfTqgpd+TA+UFUF6IazZIi?=
+ =?us-ascii?Q?Y7Z/kleXGe2SbEKmBTy9o87bGcG4YofQNViySSAnKxHYM188pE7BSMbKl1wQ?=
+ =?us-ascii?Q?tk99lNcV0jXar5L5ntcnZ3NDNHo5UgPOeSfmMZTqZsrDuzval3lfPsVgnpVL?=
+ =?us-ascii?Q?MnLmQmkUgIZcSJY1CJfslTE6DHcF4ivfqpS92pR9CUdZXExtncHT7cpAVcla?=
+ =?us-ascii?Q?s2uifa4JxRmoxK42uLQ0Q+NgkrHDd/LyY6CZ8cM0?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 501169b8-b6cb-4e01-c8b9-08de157bbe5e
+X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2025 17:10:35.4975
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: SMwr15IL4Tsv4CXYPERhySiEvw9SJWUc1p2+fFpn32FSsAKiKl9z6KnJ+LA5bIM9gULdlNDGrT4WBaRYelCSqA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: FRWPR04MB11272
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_100211_333069_B66EFFB4 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20251027_101041_370668_DEF90D3D 
+X-CRM114-Status: GOOD (  30.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,45 +179,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 13, 2025 at 04:18:04PM +0530, Ritesh Kumar wrote:
-> Add edp reference clock for sa8775p edp phy.
+On Mon, Oct 27, 2025 at 03:19:27AM +0200, Laurent Pinchart wrote:
+> On Thu, Aug 21, 2025 at 04:15:37PM -0400, Frank Li wrote:
+> > Add helper v4l_get_required_align_by_bpp() to help get width alignment
+> > requirement. Basic replace below logic and enhance to any 2^[0..31] in
+> > drivers/media/platform/nxp/imx-mipi-csis.c
+> >
+> > mipi_csis_set_fmt(
+> > {
+> >         ...
+> >
+> >         switch (csis_fmt->width % 8) {
+> >         case 0:
+> >                 align = 0;
+> >                 break;
+> >         case 4:
+> >                 align = 1;
+> >                 break;
+> >         case 2:
+> >         case 6:
+> >                 align = 2;
+> >                 break;
+> >         default:
+> >                 /* 1, 3, 5, 7 */
+> >                 align = 3;
+> >                 break;
+> >         }
+> > 	...
+> > }
+> >
+> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > ---
+> > The same patch will be see at https://lore.kernel.org/imx/20250729-imx8qxp_pcam-v4-2-4dfca4ed2f87@nxp.com/
+> > dw csi2 patch also this
+> > ---
+> >  include/media/v4l2-common.h | 30 ++++++++++++++++++++++++++++++
+> >  1 file changed, 30 insertions(+)
+> >
+> > diff --git a/include/media/v4l2-common.h b/include/media/v4l2-common.h
+> > index 39dd0c78d70f7b935c2e10f9767646d2cedd3079..0a9da5e8daaddf26903d9ff4bed08b283dcd38b2 100644
+> > --- a/include/media/v4l2-common.h
+> > +++ b/include/media/v4l2-common.h
+> > @@ -704,4 +704,34 @@ static inline bool v4l2_is_quant_valid(__u8 quantization)
+> >  	       quantization == V4L2_QUANTIZATION_LIM_RANGE;
+> >  }
+> >
+> > +/**
+> > + * v4l_get_required_align_by_bpp - get align requirement for
+> > + *	v4l_bound_align_image(). (bpp * width) % (1 << align) have to be 0.
+> > + *	given number bpp, get width's alignment requirement. For example,
+> > + *	if align is 3, means require bpp * width must be multiples of 8.
+> > + *	    bpp     return  width's requirememnt
+> > + *	    0       0       none
+> > + *	    1       3       8 (need 3 zero bits)
+> > + *	    2       2       4
+> > + *	    3       3       8
+> > + *	    4       1       2
+> > + *	    5       3       8
+> > + *	    6       2       4
+> > + *	    7       3       8
+>
+> This is supposed to be a brief one-line description. The rest of the
+> documentation goes after the argument.
+>
+> Also, have checked the formatting of the generated documentation ?
+>
+> > + * @bpp: input bpp
+>
+> I have no idea if this is a bits per pixel or bytes per pixel value. I'm
+> actually not sure what the function is even supposed to do. It feels
+> it's really a ad-hoc helper, I would like to see it being used in
+> multiple drivers to see if it makes sense.
 
-Perhaps the eDP ref clock was missed in the initial contribution,
-perhaps it wasn't supposed to be described at the time, perhaps the
-hardware changed...we can only speculate on the purpose of this patch...
+drivers/media/platform/nxp/imx-mipi-csis.c
+imx_cpi_set_fmt() in
+https://lore.kernel.org/imx/20250729-imx8qxp_pcam-v4-3-4dfca4ed2f87@nxp.com/
 
-You could change this however, by following
-https://docs.kernel.org/process/submitting-patches.html#describe-your-changes
-and start your commit message with an explanation of the problem you're
-trying to solve...
+I am not sure if userspace to pass down a old width to driver, like 1033.
 
-> 
-> Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
+Frank
 
-Please start using your oss.qualcomm.com 
-
-Regards,
-Bjorn
-
-> ---
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> index bfc4d75f50ff..b0e4015596de 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> @@ -73,6 +73,7 @@ allOf:
->          compatible:
->            enum:
->              - qcom,x1e80100-dp-phy
-> +            - qcom,sa8775p-edp-phy
->      then:
->        properties:
->          clocks:
-> -- 
-> 2.17.1
-> 
+>
+> > + * @align: expected alignment, 2^(align).
+> > + *
+> > + * return: required alignment.
+> > + */
+> > +static inline u32 v4l_get_required_align_by_bpp(u32 bpp, u32 align)
+> > +{
+> > +	int pos;
+> > +
+> > +	if (bpp == 0)
+> > +		return 0;
+> > +
+> > +	pos = ffs(bpp) - 1;
+> > +	return pos > align ? 0 : align - pos;
+> > +}
+> > +
+> >  #endif /* V4L2_COMMON_H_ */
+> >
+>
+> --
+> Regards,
+>
+> Laurent Pinchart
 
 -- 
 linux-phy mailing list
