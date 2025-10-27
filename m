@@ -4,102 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63825CCF9E0
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:10:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30898CCF9EA
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:14:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wBYoWba9+JRkLwRf5/9sr1horpDxu1tqI+gTE3DvY64=; b=CGbe3ECvXJ1GCS
-	7WFZ4Y56rVzIqKlVXxfoBK5dBlmbteuwmWXlWkBcbDNEVfMjnnw9GCfXl+zGZRsBC+2tMtyKpD6SL
-	TjYp0AAqRb57mGHoJAfYWnnoeEMPiRmJk2Z90cdej5QHQDGT65SsOcUw0iUhRQg4pj9zrEXVY1EIO
-	585YlRLP1WjI5bjBIQ1uRHh5GOlHbJjam/lkfaonYVstkURY0G4buiDEKOkcTOrNdabQaOBydVIGT
-	qCk+NK4+34SP8CpXpqQP5yJFMOxRyNsc/DpE+zf9JJyB5RTqugcUcWGSMmIjujTasb7J4lauayRqM
-	CzrjZ3ySMj9Kqp5fOVLQ==;
+	List-Owner; bh=nVmLeQVm8IYuUBc2dYOp7UQYteyX+LPr/uMxKusCeM8=; b=WTjMhd/lbu86d8
+	PsLKik9mJG2iggJCX05D+T6VH1Zb5KSqOTrUzGBoviJYp56ThoCG9K7wMzYdJKLJncz6gXc3ZYzFA
+	MMhCIp8VAAGhgxXC3S/O2Y4z4YD0EmWfAdQRzdYw2LGo7M0kG+zh6Hk9iFL4lBMqIOrl0zZluYHdg
+	HE/hZqh5HQiNxWjq+5mBwCAFlZl2qBdY8eYVagn08OmhTiAIOJylzVHvKRTHYqKDvSzaGz0RbCEDP
+	CeipWpjep5+69ww9aZWheSXGBQqNNYhXHm4xyURvureWpVZIFBvPiNv6YD7FUvCiqDQJ1qfApiZKu
+	7di5AXGAitXCZiWc7+qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDJFV-0000000DUmV-0iDF;
-	Mon, 27 Oct 2025 09:10:45 +0000
-Received: from meesny.iki.fi ([2001:67c:2b0:1c1::201])
+	id 1vDJIy-0000000DVDX-2LCt;
+	Mon, 27 Oct 2025 09:14:20 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDJFS-0000000DUlj-2WUb;
-	Mon, 27 Oct 2025 09:10:43 +0000
-Received: from hillosipuli.retiisi.eu (91-158-51-183.elisa-laajakaista.fi [91.158.51.183])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: sailus)
-	by meesny.iki.fi (Postfix) with ESMTPSA id 4cw75W5p7qzyT0;
-	Mon, 27 Oct 2025 11:10:39 +0200 (EET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
-	t=1761556239;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=FgI6V23Ri1vReEoNo6plAZiLdf2JKlAnRf/2oXQccV8=;
-	b=YwnyYSc8oChOBrSUdHjqrf2iSqRRIRfeZQDbYFQ2wNsdKyyA/dxdu1vNyPVQRMTC8tweqJ
-	3M8C4h/oU+HsvnnRph7lR51dZJeoh1ICc+yqNlzALf1jJ3JCxFeycpTsh9hc3fkCO3FGFd
-	Xja1pavEtX7bHfj81eGBJWXbmVjDvZA=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
-	s=meesny; t=1761556239;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=FgI6V23Ri1vReEoNo6plAZiLdf2JKlAnRf/2oXQccV8=;
-	b=Re120l8vm66ZP8IRQddsokS4lEtpxb66A7cj4WH2b1H9bqLGfwFs9izE7Ip+7s2AJK+jDq
-	Yb9pRqGBeg59xuIhvy1JRFEKmxNkjudSyl4OwMrAvlr92ZxYgwBa+sk6zMi+7cHuGTxoi9
-	Ofg9T1iUWpW+YT7mwp8Ut/D2r7O1WPU=
-ARC-Authentication-Results: i=1;
-	ORIGINATING;
-	auth=pass smtp.auth=sailus smtp.mailfrom=sakari.ailus@iki.fi
-ARC-Seal: i=1; s=meesny; d=iki.fi; t=1761556239; a=rsa-sha256; cv=none;
-	b=ujjWn5pbp4xouvvewe+keUfMTohYr/knkyTAzdh/fLzBo3WpXgnjDI8fPm/IoT5K83b4uj
-	1e6LMx+lWX9nHzNGfBLPjfNfFRsOlgs1RHEI2r7RbpBQKDtIH9VjgELxl6GxZxD7RT1Sk6
-	R5C/bNWIxd7seTnqDbtDJLXrjypXIQ4=
-Received: from valkosipuli.retiisi.eu (valkosipuli.local [192.168.4.2])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange secp256r1 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by hillosipuli.retiisi.eu (Postfix) with ESMTPS id A00FC634C5B;
-	Mon, 27 Oct 2025 11:10:39 +0200 (EET)
-Date: Mon, 27 Oct 2025 11:10:39 +0200
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
-	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-staging@lists.linux.dev
-Subject: Re: [PATCH v3 17/31] media: synopsys: move imx6-mipi-csi2.c to
- synopsys/mipi-csi2.c
-Message-ID: <aP83D-ndmlv5Jns8@valkosipuli.retiisi.eu>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <20250821-95_cam-v3-17-c9286fbb34b9@nxp.com>
+	id 1vDJIw-0000000DVD6-1Mml
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Oct 2025 09:14:19 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-46fcf9f63b6so26148235e9.2
+        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 02:14:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1761556456; x=1762161256; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=zMfASScf5ZTOmAyQbAWxr3O4HT4xPAALH5kjKVs+B5Y=;
+        b=CEs9K7YaPvaHQEA/oSDta2Gjm/GhQ0V4RARSA6m/6qvc1FUjpTKeeZRjqZwiHdaLi8
+         //LDAbxSyHWIRiT2zlLFP99hLbk6upLAc0tuT+tN+guATBBpZzay3JBT+3Dh67bNyX/z
+         DcyuGtpP1GKxizb4Nm+t0ZfTgY9EGOIaFz0xsM4NYhPRl7OuQqvIUGgQOeReP84llb4f
+         OA5XCRli7IuixZlTXbQ6vQwaqhlv6cJQ31jq/Hji4cYhNZ8kFO5TnQM8Ti5rR+OrphJm
+         IdCdUOsh0r685Mpej7fRSKGw2O9gfWqXimB5GUjZws9dE/q3Ah1fujlHyU7ZD4dRgGfZ
+         1S1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761556456; x=1762161256;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=zMfASScf5ZTOmAyQbAWxr3O4HT4xPAALH5kjKVs+B5Y=;
+        b=WgLQdkH1LkPumnOA6rSSqrbuZYvbCj4BzonxxunZhkNDYNlSVr/0DUIlHCGklq7qtW
+         d4eFrOn8KxQYpaDRVnQ9DkzQbqY2Cud1MdDX8x4E2TLjf65j5qMxpZEsed1JPhaOAunV
+         b55p+rnhc5fxadKNQnkA7+g9+qLyV2Dl9gRE256gmhfE0A8+DGlcjwxrHRZGdVnspqsC
+         THvpdqKqxcwsMj3TGS4P8WlJF7ulIeyhRmVTMeb0d768tnmTzbr62+/uiVX1Vvf11o5C
+         0mxT3Gnp/5IFR/AMgh97h7I3JGYvg0lvEXgYoFgw7/TspN1+TfRGmb0kAaSD/LZPhIKK
+         OjBA==
+X-Forwarded-Encrypted: i=1; AJvYcCUKrK0Sx+k9c4w/POuzg1wz0WkRHQj3rqkBVm6rEhC8t7HJ6GQtOy+4+n6kdvRW05ZwIHd1RUJsnUQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyswWngtfPfbL0ZUzdar3P+NphRUPPDGJoy7eWbZtLP0olEhaX7
+	NYuxyKTNSyjaL0Nn6E2SUYn4tRZX+wUCspOD9+pPQ1zR1ORDZ0jfnliRLG4+zff7dzo=
+X-Gm-Gg: ASbGnct9I+3WPWZwComxnvUgkGVfOqDrSDO6Md/HEmMemH1SdWLl2lx5xfoAnGG38t0
+	VX9Q+HDIJ78oRkAGZoLHAlfg9M0IEr2ExBtHHaIUrUl2OUCAYReM4KydtoCUO9GF6c+mrQIbw9f
+	dCb6Ahk0ivogfmOyKhrvj1Os+2aQB7fTT627Wq2fF49r/qRXn+b8XzmBIWYA8VYOpovjLiqdY8g
+	gG2LK1B5gf40xcZYdv0fxzXoDvSpNzNc+J4EFZk5yT2IZJT+n9X5FTkD4UojhpcI13jbG5zDNAT
+	yQtbyV2OZbA3unC/WIXp8gFwsVQqnK/ec6tqnCmilbutrhc/0Nad9gJGBiKQwKuZ6IaKcBqhpgG
+	jgNWaynb74QMPaO5EZApya5lNiCq7RW0qldrF9N9gf597v/u4iWcXONcXu8oxzlvz/vddRxXlvw
+	NpyfKMEHY=
+X-Google-Smtp-Source: AGHT+IF01498un0tSWAnn1Di9SQ50IOxjN2AyB2jrpc+3JXFxPl0fMSWvNz6Z5oCVFiz8j55+fzQuw==
+X-Received: by 2002:a05:600d:438f:b0:476:84e9:b55d with SMTP id 5b1f17b1804b1-47684e9bedbmr28893255e9.3.1761556456359;
+        Mon, 27 Oct 2025 02:14:16 -0700 (PDT)
+Received: from linaro.org ([86.121.7.169])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-475ddae2309sm60319575e9.12.2025.10.27.02.14.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 27 Oct 2025 02:14:15 -0700 (PDT)
+Date: Mon, 27 Oct 2025 11:14:14 +0200
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 6/8] phy: qualcomm: qmp-combo: Update QMP PHY with
+ Glymur settings
+Message-ID: <j4it7mdacjnx3gocmak5nxx7bqmtxmikum7kn7qr5dh7jac7ok@oiqkbnil6lfd>
+References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
+ <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250821-95_cam-v3-17-c9286fbb34b9@nxp.com>
+In-Reply-To: <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_021042_827496_025E95A7 
-X-CRM114-Status: GOOD (  18.85  )
+X-CRM114-CacheID: sfid-20251027_021418_403011_05B99F92 
+X-CRM114-Status: GOOD (  21.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,85 +104,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
-
-On Thu, Aug 21, 2025 at 04:15:52PM -0400, Frank Li wrote:
-> Move dw MIPI CSI2 common part drivers/staging/media/imx/imx6-mipi-csi2.c
-> under synopsys to let more SoC can reuse it.
+On 25-10-24 17:47:44, Wesley Cheng wrote:
+> For SuperSpeed USB to work properly, there is a set of HW settings that
+> need to be programmed into the USB blocks within the QMP PHY.  Ensure that
+> these settings follow the latest settings mentioned in the HW programming
+> guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
+> new ways to define certain registers, such as the replacement of TXA/RXA
+> and TXB/RXB register sets.  This was replaced with the LALB register set.
 > 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> There are also some PHY init updates to modify the PCS MISC register space.
+> Without these, the QMP PHY PLL locking fails.
+> 
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->  drivers/media/platform/synopsys/Kconfig                      | 12 ++++++++++++
->  drivers/media/platform/synopsys/Makefile                     |  2 ++
->  .../imx6-mipi-csi2.c => media/platform/synopsys/mipi-csi2.c} |  0
->  drivers/staging/media/imx/Kconfig                            |  1 +
->  drivers/staging/media/imx/Makefile                           |  2 +-
->  5 files changed, 16 insertions(+), 1 deletion(-)
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 288 ++++++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h     |  17 +
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h    |  12 +
+>  .../phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h    | 639 +++++++++++++++++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h   |  33 ++
+>  .../qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h   | 224 ++++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp.h                |   2 +
+>  7 files changed, 1215 insertions(+)
 > 
-> diff --git a/drivers/media/platform/synopsys/Kconfig b/drivers/media/platform/synopsys/Kconfig
-> index 4fd521f78425a96985fa3b6b017deef36631d1a9..e54dad835349d420dead6d5313c0623567c28c0b 100644
-> --- a/drivers/media/platform/synopsys/Kconfig
-> +++ b/drivers/media/platform/synopsys/Kconfig
-> @@ -1,3 +1,15 @@
->  # SPDX-License-Identifier: GPL-2.0-only
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 1caa1fb6a8c7..d1534ed7200b 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+
+[...]
+
 >  
-> +config VIDEO_SYNOPSYS_MIPI_CSI2
-> +        tristate "Synopsys DesignWare MIPI CSI2 Receiver common library"
-> +        depends on VIDEO_DEV
-> +        select MEDIA_CONTROLLER
-> +        select VIDEO_V4L2_SUBDEV_API
-> +        select VIDEOBUF2_DMA_CONTIG
-> +        help
-> +          Common library for MIPI CSI2 Controller.
+> +static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
+> +	[QPHY_SW_RESET]			= QPHY_V6_N4_PCS_SW_RESET,
+> +	[QPHY_START_CTRL]			= QPHY_V6_N4_PCS_START_CONTROL,
+> +	[QPHY_PCS_STATUS]			= QPHY_V6_N4_PCS_PCS_STATUS1,
+> +	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_N4_PCS_POWER_DOWN_CONTROL,
+
+The patches I have for DP fixes these by adding the V8_N3E and using those instead.
+
+The reason this hasn't created any issues is because, at least for these 4, the offsets
+are the same.
+
+You can use my patch so you don't have to add those reg offsets yourself, if you want.
+
 > +
-> +          To compile this driver as a module, choose M here. The module
-> +          will be called synopsys_hdmirx
+> +	/* In PCS_USB */
+> +	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
+> +	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]	= QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
 > +
->  source "drivers/media/platform/synopsys/hdmirx/Kconfig"
-> diff --git a/drivers/media/platform/synopsys/Makefile b/drivers/media/platform/synopsys/Makefile
-> index 3b12c574dd67c072901108d88cad64ca3a723938..045ed3177738e6d28aa223804b79e6774e141dc8 100644
-> --- a/drivers/media/platform/synopsys/Makefile
-> +++ b/drivers/media/platform/synopsys/Makefile
-> @@ -1,2 +1,4 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  obj-y += hdmirx/
+> +	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
 > +
-> +obj-$(CONFIG_VIDEO_SYNOPSYS_MIPI_CSI2) += mipi-csi2.o
+> +	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V6_COM_RESETSM_CNTRL,
+> +	[QPHY_COM_C_READY_STATUS]		= QSERDES_V6_COM_C_READY_STATUS,
+> +	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
+> +	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
+> +
+> +	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
+> +	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V6_DP_PHY_VCO_DIV,
+> +
+> +	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_N4_TX_TX_POL_INV,
+> +	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_N4_TX_TX_DRV_LVL,
+> +	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V6_N4_TX_TX_EMP_POST1_LVL,
+> +	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V6_N4_TX_HIGHZ_DRVR_EN,
+> +	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V6_N4_TX_TRANSCEIVER_BIAS_EN,
+> +};
 
-Please give the module a more specific name.
-
-> diff --git a/drivers/staging/media/imx/imx6-mipi-csi2.c b/drivers/media/platform/synopsys/mipi-csi2.c
-> similarity index 100%
-> rename from drivers/staging/media/imx/imx6-mipi-csi2.c
-> rename to drivers/media/platform/synopsys/mipi-csi2.c
-> diff --git a/drivers/staging/media/imx/Kconfig b/drivers/staging/media/imx/Kconfig
-> index 1cd48028b6416ae16ed69c68186281b6c6bcbec8..53e5c1546ac53e4942974a9acdcf078de1cb6073 100644
-> --- a/drivers/staging/media/imx/Kconfig
-> +++ b/drivers/staging/media/imx/Kconfig
-> @@ -10,6 +10,7 @@ config VIDEO_IMX_MEDIA
->  	select V4L2_MEM2MEM_DEV
->  	select VIDEOBUF2_DMA_CONTIG
->  	select VIDEO_V4L2_SUBDEV_API
-> +	select VIDEO_SYNOPSYS_MIPI_CSI2
->  	help
->  	  Say yes here to enable support for video4linux media controller
->  	  drivers for the i.MX5/6 SOC.
-> diff --git a/drivers/staging/media/imx/Makefile b/drivers/staging/media/imx/Makefile
-> index 064a6c6c069aa440c72a483080cbedf89d370193..1978b82fd1876566acbb952a4d14cf9aca35e996 100644
-> --- a/drivers/staging/media/imx/Makefile
-> +++ b/drivers/staging/media/imx/Makefile
-> @@ -11,4 +11,4 @@ imx6-media-csi-objs := imx-media-csi.o imx-media-fim.o
->  obj-$(CONFIG_VIDEO_IMX_MEDIA) += imx-media-common.o
->  obj-$(CONFIG_VIDEO_IMX_MEDIA) += imx6-media.o
->  obj-$(CONFIG_VIDEO_IMX_MEDIA) += imx6-media-csi.o
-> -obj-$(CONFIG_VIDEO_IMX_MEDIA) += imx6-mipi-csi2.o imx6-csi2.o
-> +obj-$(CONFIG_VIDEO_IMX_MEDIA) += imx6-csi2.o
-> 
-
--- 
-Regards,
-
-Sakari Ailus
+I'm pretty sure this is wrong. You are using the V8_LALB offsets below, which
+is correct, but here you are using V6_N4. At first glance, these are quite
+different.
 
 -- 
 linux-phy mailing list
