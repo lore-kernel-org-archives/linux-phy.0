@@ -4,77 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45EDCCCF9EA
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 22:17:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87EB7CCF9EA
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 22:24:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AcNkqkjfuL/7KgC4HkZq+qwHNbQy2rHEa1ss2Rbv7F0=; b=AcFQinAm8ug0QT
-	y2/BcOf1fh04OiA0KEDInls5Snb3GGxECYewmIUFMqyEnZvhHFATDRY973LZflYNMKfO42Ra5IHtl
-	a/bpJMLOy/XZx9wO1MWLyfsfJWNbKf6JaMvxyUnSYY6fPsU+Q9TagZn3r2JA0PMeQ8FBvf4Y57Nrq
-	PRFgc4JapboUmLi3jNGhDcVmCcB4ZeN1+6oCm8l+ffZB91p8cgiU1imBZDjwGmmdgKHXfXOfMxWgk
-	52SGxFmCkckad3E+GqcBJQQws3/YlaeAp7Sz3XC2VScgzHqWMv+jAejMeJnulMPKMyAWTQifDJ1QJ
-	7wMf/IrRbQHx9AW/12aw==;
+	List-Owner; bh=Dr8FYwopE2VhQyabtMR5H9QfYTCyehLCmz3unOH7SBo=; b=IehjvQf4DFxuKZ
+	teiNmiEditgP4rj/j8NOfvMsfzgW3SA4ZPngzEAEsmpmcsRrIh0LNYKaMa7gPmg3DZUVXq0g1lyBd
+	y0OAiErQjS0Xi5+R7is3w/zzM2W5zAjLmK+uc2NaWPE+jTS/SOVrM4onAz1YNzfwuEIdP9vNBhIE4
+	S+h5N1GPmyx+mX7hwqqYyTtH0VOVQAb7E1A2pjCgoKn/PvHvpWv20TypY1ms2GSZz1fyHIS32MRV2
+	j8qTgPjZThIvgyZRhisJSYUxIJ/OtunyXd3r+YanfiFrDsjsPCj/0VToVhUu9kO/0ODmWxAeillVt
+	woSmBqvUD80dwIbyPE/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDVX5-0000000Equg-3gdU;
-	Mon, 27 Oct 2025 22:17:43 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1vDVdp-0000000ErTK-1JIy;
+	Mon, 27 Oct 2025 22:24:41 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDVX4-0000000Equ8-1MGb
+	id 1vDVdl-0000000ErSI-2KtN
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 22:17:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761603462; x=1793139462;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=LnEMgE/x17qT33vbhJOy4L+6r8csHSGMtdfdlckf+jg=;
-  b=DieTegfv+GcqNXVolUPGSCS0toGRI3p1FF0/9G6e8DzXmOTFPh0TU2Xk
-   /+Q0cZKSot+Y+lZ0Q5lhqaL6PU+jpmKXRG4X2LvuUEQp5puYirtOGFluh
-   2YoFSK93I6VMIYFLY3OsOdNY8tBrBzib7q+AtlYpUL1C7fgap9yN0vt77
-   OFnMhsMCNsAknXa+DkC6xYndmLTD1Aj6W4DFAcH5CgpX2gl7oCCu1zfjJ
-   Ow9e6YeU//MypjtsUUGjPM9krKPrGoSr6SXKOuhSH45nVGJvgta8ZL22W
-   gH5OOuzgjMxm1lOFuZeObWvp1qQkGkmx9uE+x82JF31QMP/ituYOGCOOw
-   A==;
-X-CSE-ConnectionGUID: ia1lwRzfRZaoGjIeJsCyvw==
-X-CSE-MsgGUID: 7m/N1ODNQqy2AXpd62RlSQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="89165077"
-X-IronPort-AV: E=Sophos;i="6.19,259,1754982000"; 
-   d="scan'208";a="89165077"
-Received: from fmviesa009.fm.intel.com ([10.60.135.149])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Oct 2025 15:17:42 -0700
-X-CSE-ConnectionGUID: PnyRSWRdSliwVE5cOE6Eww==
-X-CSE-MsgGUID: UOMBThvtTMKZvp6QtmnRgQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,259,1754982000"; 
-   d="scan'208";a="185634646"
-Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
-  by fmviesa009.fm.intel.com with ESMTP; 27 Oct 2025 15:17:39 -0700
-Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vDVWs-000IW5-0T;
-	Mon, 27 Oct 2025 22:17:32 +0000
-Date: Tue, 28 Oct 2025 06:17:09 +0800
-From: kernel test robot <lkp@intel.com>
-To: Prashanth K <prashanth.k@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Prashanth K <prashanth.k@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-Message-ID: <202510280637.c18uAF98-lkp@intel.com>
-References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+	Mon, 27 Oct 2025 22:24:39 +0000
+Received: by mail-io1-xd41.google.com with SMTP id ca18e2360f4ac-945a42fd465so89568939f.3
+        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 15:24:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1761603877; x=1762208677; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wM5uwMP02IQy2fgQls6S0qQat4rqlu7HXn5+aaktR2Y=;
+        b=eWXo2xJy5jbCdDi/tX40ne9JLlDrSmxIniDmPY71H1mrUr7OGdDHPh144K6vDKzR3q
+         B0YWPAV40/7rNXMUJaR5E3TShJCTYIVKvhpinf6jf8KklpPRhri+U5TUuhxAzY2pGP0d
+         HzuI4BorOoVMvjNXDIPFbMF1IELv1tqoZ0SyNWt0nFAYvpWZROLTDuo4MZm0zTXjqyMB
+         wCQat3NqBs2uenCQbZ6XPC7krWMUU+RX7uL1/xQbpUbWd2a6uz019sKqcbEX1B5afNki
+         fvgQcNmWnt7upmkh6sgBc7ajeL+thy8R0/dZgTIduZQjTTBBAyWbFhey/ms1N9piOCZk
+         zlAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761603877; x=1762208677;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wM5uwMP02IQy2fgQls6S0qQat4rqlu7HXn5+aaktR2Y=;
+        b=fob98Yxv3o1UhbnL1ZGY+5rVWVt+0rTlDGXpzSJSQSIF9r7IHh+O8BP072KaSXRygT
+         aOHbL5nIvtj8f5JFeFB4U2WX2z+HYxnBDuSZlP9o5Cy96/foPQeVW5CqJlea96BoMVRu
+         KH6uBiVlUsjfO8sWjUtQuQbxAYbBmWxtVoIZTL9bDCXl7cKVTbZISuwChMHkhEAjyY2b
+         Z0ARmNZvuRN9Db3TfBoRmbVmMO++tU82xk1u2R6I1lOsZ8BtqwkZAcpBzzWmpFzb9Z/S
+         700YpYCYc5438BMpgIC62LxoNLrch1TXe9NoAyxPgvMfqwYkEU9zEhHTXj9k7laAvVf1
+         WxAg==
+X-Forwarded-Encrypted: i=1; AJvYcCV37hW5xx0ALuFHgy6AriN1JzMWgsNaGolFE6vLzYO1uEmsy/FIO/EwD/aefwnQ8PTb4P4t7Enw674=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzfksWj0bhcnzO5zVZk1BCrNZrMP8/DBUnXEGeYJe8ky0yX3iEH
+	G0B11cHr2xW+rROtEQnFFTdCr9h31y0BEntmfMR82oegOv+zheAsT3h5L7gt1cEr96hs8eefFUF
+	+cUrZC+jeXw==
+X-Gm-Gg: ASbGncveIy+eBNFGdvsSsC0iaMIYG7d65Ll8Dolf8WMM2BA/kgur6EdGiMvZBf05Cng
+	irZwuD27ieOHNGwv4GkUbFfBaCAPgs4SfKG+rpz/AjGJz3VLTDrm1STI6tfHxEIMDSZ8B7fX6+L
+	akEfg9YjdhL07+kUeohZIziLm8iikHsoy6z/oPDA3ww3SlCDPHi9XUirZBsgFywIXLvc4uBNTQs
+	4QEP3tKI1BSQB/9GL178h77/nvf2fuM4laTMXI3XIWRnIQWeoQgbN7G7yJrQz+bkeL4Qg3O+YWi
+	+oboLFCbKUhY7LPkVzVQEbedzswcKB0pmgSeC8X9QS6Y6FiBnxZ5NZLIVgvRG7mddW+YYRSFCJJ
+	uZc4Wr+cH2ccZjMVC4oDVAugzCpiPxwIHhvmuSN3uTwbxflqYtMukQBKIqof/s5kzJuh4gNrpVU
+	vRGukEDhiPKtfL/FPjLoSf+604YC1TNyVr+YWW+cx5DYIqtUAVbCg=
+X-Google-Smtp-Source: AGHT+IEJrN3+Xz84SulzDfIciOJjJZgogpTlOlzimDxgN5DQZNhrRyWMLSpNLPzrSBpfR6FKNexDlA==
+X-Received: by 2002:a05:6e02:348f:b0:430:9bc3:e1d3 with SMTP id e9e14a558f8ab-4320f7be914mr26591695ab.12.1761603876603;
+        Mon, 27 Oct 2025 15:24:36 -0700 (PDT)
+Received: from [172.22.22.234] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
+        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-431f67dcb0csm35005605ab.5.2025.10.27.15.24.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Oct 2025 15:24:36 -0700 (PDT)
+Message-ID: <ae92d3f4-5131-46be-b9b1-e8ec437c9ae9@riscstar.com>
+Date: Mon, 27 Oct 2025 17:24:33 -0500
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 3/7] dt-bindings: pci: spacemit: introduce PCIe host
+ controller
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com,
+ pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+ p.zabel@pengutronix.de, christian.bruel@foss.st.com, shradha.t@samsung.com,
+ krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+ namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251013153526.2276556-1-elder@riscstar.com>
+ <20251013153526.2276556-4-elder@riscstar.com>
+ <u53qfrubgrcamiz35ox6lcdpp5bbzfwcsic466z5r6yyx6xz3n@c64nw2pegtfe>
+Content-Language: en-US
+From: Alex Elder <elder@riscstar.com>
+In-Reply-To: <u53qfrubgrcamiz35ox6lcdpp5bbzfwcsic466z5r6yyx6xz3n@c64nw2pegtfe>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_151742_403242_D3986D9B 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20251027_152437_851143_748D3F88 
+X-CRM114-Status: GOOD (  27.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,74 +108,186 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Prashanth,
+On 10/26/25 11:38 AM, Manivannan Sadhasivam wrote:
+> On Mon, Oct 13, 2025 at 10:35:20AM -0500, Alex Elder wrote:
+>> Add the Device Tree binding for the PCIe root complex found on the
+>> SpacemiT K1 SoC.  This device is derived from the Synopsys Designware
+>> PCIe IP.  It supports up to three PCIe ports operating at PCIe gen 2
+>> link speeds (5 GT/sec).  One of the ports uses a combo PHY, which is
+>> typically used to support a USB 3 port.
+>>
+>> Signed-off-by: Alex Elder <elder@riscstar.com>
+>> ---
+>> v2: - Renamed the binding, using "host controller"
+>>      - Added '>' to the description, and reworded it a bit
+>>      - Added reference to /schemas/pci/snps,dw-pcie.yaml
+>>      - Fixed and renamed the compatible string
+>>      - Renamed the PMU property, and fixed its description
+>>      - Consistently omit the period at the end of descriptions
+>>      - Renamed the "global" clock to be "phy"
+>>      - Use interrupts rather than interrupts-extended, and name the
+>>        one interrupt "msi" to make clear its purpose
+>>      - Added a vpcie3v3-supply property
+>>      - Dropped the max-link-speed property
+>>      - Changed additionalProperties to unevaluatedProperties
+>>      - Dropped the label and status property from the example
+>>
+>>   .../bindings/pci/spacemit,k1-pcie-host.yaml   | 156 ++++++++++++++++++
+>>   1 file changed, 156 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> new file mode 100644
+>> index 0000000000000..87745d49c53a1
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/pci/spacemit,k1-pcie-host.yaml
+>> @@ -0,0 +1,156 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/pci/spacemit,k1-pcie-host.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: SpacemiT K1 PCI Express Host Controller
+>> +
+>> +maintainers:
+>> +  - Alex Elder <elder@riscstar.com>
+>> +
+>> +description: >
+>> +  The SpacemiT K1 SoC PCIe host controller is based on the Synopsys
+>> +  DesignWare PCIe IP.  The controller uses the DesignWare built-in
+>> +  MSI interrupt controller, and supports 256 MSIs.
+>> +
+>> +allOf:
+>> +  - $ref: /schemas/pci/snps,dw-pcie.yaml#
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: spacemit,k1-pcie
+>> +
+>> +  reg:
+>> +    items:
+>> +      - description: DesignWare PCIe registers
+>> +      - description: ATU address space
+>> +      - description: PCIe configuration space
+>> +      - description: Link control registers
+>> +
+>> +  reg-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: atu
+>> +      - const: config
+>> +      - const: link
+>> +
+>> +  spacemit,apmu:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      A phandle that refers to the APMU system controller, whose
+>> +      regmap is used in managing resets and link state, along with
+>> +      and offset of its reset control register.
+>> +    items:
+>> +      - items:
+>> +          - description: phandle to APMU system controller
+>> +          - description: register offset
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: DWC PCIe Data Bus Interface (DBI) clock
+>> +      - description: DWC PCIe application AXI-bus master interface clock
+>> +      - description: DWC PCIe application AXI-bus slave interface clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: mstr
+>> +      - const: slv
+>> +
+>> +  resets:
+>> +    items:
+>> +      - description: DWC PCIe Data Bus Interface (DBI) reset
+>> +      - description: DWC PCIe application AXI-bus master interface reset
+>> +      - description: DWC PCIe application AXI-bus slave interface reset
+>> +      - description: Global reset; must be deasserted for PHY to function
+>> +
+>> +  reset-names:
+>> +    items:
+>> +      - const: dbi
+>> +      - const: mstr
+>> +      - const: slv
+>> +      - const: phy
+>> +
+>> +  interrupts:
+>> +    items:
+>> +      - description: Interrupt used for MSIs
+>> +
+>> +  interrupt-names:
+>> +    const: msi
+>> +
+>> +  phys:
+>> +    maxItems: 1
+>> +
+>> +  vpcie3v3-supply:
+>> +    description:
+>> +      A phandle for 3.3v regulator to use for PCIe
+> 
+> Could you please move these Root Port specific properties (phy, vpcie3v3-supply)
+> to the Root Port node?
+> 
+> Reference: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/st,stm32-pcie-host.yaml
 
-kernel test robot noticed the following build warnings:
+OK, I'll try to follow what that ST binding does (and the
+matching driver).
 
-[auto build test WARNING on linus/master]
-[also build test WARNING on v6.18-rc3 next-20251027]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> For handling the 'vpcie3v3-supply', you can rely on PCI_PWRCTRL_SLOT driver.
+I looked at the code under pci/pwrctrl.  But is there some other
+documentation I should be looking at for this?
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Prashanth-K/phy-qualcomm-m31-eusb2-Add-runtime-pm-ops/20251027-142647
-base:   linus/master
-patch link:    https://lore.kernel.org/r/20251027062458.1411096-1-prashanth.k%40oss.qualcomm.com
-patch subject: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-config: sh-randconfig-002-20251028 (https://download.01.org/0day-ci/archive/20251028/202510280637.c18uAF98-lkp@intel.com/config)
-compiler: sh4-linux-gcc (GCC) 13.4.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251028/202510280637.c18uAF98-lkp@intel.com/reproduce)
+It looks like it involves creating a new node compatible with
+"pciclass,0604".  And that the purpose of that driver was to
+ensure certain resources are enabled before the "real" PCI
+device gets probed.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202510280637.c18uAF98-lkp@intel.com/
+I see two arm64 DTS files using it:  x1e80100.dtsi and r8a779g0.dtsi.
+Both define this node inside the main PCIe controller node.
 
-All warnings (new ones prefixed by >>):
+Will this model (with the parent pwrctrl node and child PCI
+controller node) be used for all PCI controllers from here on?
 
->> drivers/phy/qualcomm/phy-qcom-m31-eusb2.c:253:12: warning: 'm31eusb2_phy_runtime_resume' defined but not used [-Wunused-function]
-     253 | static int m31eusb2_phy_runtime_resume(struct device *dev)
-         |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/phy/qualcomm/phy-qcom-m31-eusb2.c:243:12: warning: 'm31eusb2_phy_runtime_suspend' defined but not used [-Wunused-function]
-     243 | static int m31eusb2_phy_runtime_suspend(struct device *dev)
-         |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Or are you saying this properly represents the relationship of
+the supply with the PCIe port in this SpacemiT case?
 
+>> +
+>> +  device_type:
+>> +    const: pci
+>> +
+> 
+> This is part of the PCI bus schema itself.
 
-vim +/m31eusb2_phy_runtime_resume +253 drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+That means I don't have to specify it here.  I'll remove it.
+I will also remove it from the list of required properties.
 
-   242	
- > 243	static int m31eusb2_phy_runtime_suspend(struct device *dev)
-   244	{
-   245		struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-   246	
-   247		dev_dbg(dev, "Suspending M31 eUSB2 Phy\n");
-   248		clk_disable_unprepare(phy->clk);
-   249	
-   250		return 0;
-   251	}
-   252	
- > 253	static int m31eusb2_phy_runtime_resume(struct device *dev)
-   254	{
-   255		struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-   256		int ret = 0;
-   257	
-   258		dev_dbg(dev, "Resuming M31 eUSB2 Phy\n");
-   259		ret = clk_prepare_enable(phy->clk);
-   260		if (ret)
-   261			dev_err(dev, "failed to enable ref clock, %d\n", ret);
-   262	
-   263		return ret;
-   264	}
-   265	
+>> +  num-viewport:
+>> +    const: 8
+>> +
+> 
+> This property has been deprecated in favor of driver auto-detecting the iATU
+> regions.
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Yes, that got removed in v3 of the series.
+
+Thanks.
+
+					-Alex
+
+> 
+> - Mani
+> 
+
 
 -- 
 linux-phy mailing list
